@@ -1,0 +1,49 @@
+# CLAUDE.md — Inflection Alpha Pipeline
+
+Equity research pipeline for Indian small/micro-cap GARP transition
+analysis. Operator: Keerti Kaushik. Strategy: transition alpha, 25% CAGR
+target, 3-5 year holds.
+
+## NEVER
+- Never use any exit PE from outside Section 1B v3.3 (frameworks/). It is
+  the sole exit multiple authority. No round-number defaults, ever.
+- Never halt a run on company quality. Flags propagate; only mechanical
+  failures halt. There is no STOP verdict; the verdict set is PROCEED /
+  PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
+  EVIDENCE.
+- Never let INDETERMINATE cash conversion silently resolve to PROCEED.
+  It caps at PROCEED WITH CAVEATS with the missing evidence named.
+- Never treat low institutional ownership as a risk. UA multiplier per
+  Amendment 3: min(Raw x 1.25, Sector Cap), all three qualifiers evidenced.
+- Never conflate the Emerging Moat scan (stage 7) with FTTCP (inside
+  stage 11). Separate analyses, separate names.
+- Never estimate a missing number. NOT FOUND is the only valid fill.
+- Never credit one quality improvement through two mechanisms.
+- Never write X posts here. Publish candidates are flagged only.
+- Never let a maker verify its own work. Verifiers get fresh contexts
+  and artifact paths only.
+
+## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
+- opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
+- sonnet: all document-reading stages (1-9), verifier D
+- haiku: stage 10 assembly, verifier A
+Do not upgrade a stage's model without editing its agent file.
+
+## WORDS
+- "done" for a stage = full report written AND valid YAML block emitted
+- "anchored" = every number followed by (source, page/note)
+- "flag" = surfaced prominently in the verdict, decision stays human
+
+## STRUCTURE
+- prompts/       stage instructions, single source of truth
+- frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
+                 maintains; stage 11 reads at run time; amendments here
+                 propagate with zero pipeline edits)
+- runs/<ticker>-<date>/   one folder per run, see runs/_template
+- .claude/agents/         subagent definitions with model routing
+- /run-pipeline runs/<folder>   executes everything
+
+## STYLE (synthesis outputs only)
+No em-dashes or en-dashes as punctuation. No hyphens in compound
+modifiers except tickers/proper nouns. No AI vocabulary. Numbers first.
+Symmetric bull-bear. No landing lines. Headline is 6-7 words.

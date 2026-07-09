@@ -1,41 +1,38 @@
 
-## Confidence delta and acceptance rates
-| Component | Verifier | Acceptance rate |
-|---|---|---|
-| Numerical acceptance | A (B12a) | 84 |
-| Redflag coverage | B (B12b) | 71 |
-| Framework adherence | C (B12c) | 98 |
-| Peer utilisation | D (B12d) | N/A (skipped) |
-| Overall | | 71 |
-
-Band 60 to 74. REWORK gate triggered (B12a critical_count 2).
-
-## Findings, CRITICAL first
+Confidence delta: numerical 91.3, red flag 71, framework 98, peer N/A (excluded), overall 71 (60 to 74 band).
+Acceptance rates: Verifier A 91.3, Verifier B 71, Verifier C 98, Verifier D skipped.
+REWORK gate: cleared (critical_count 0; no acceptance below 60; overall 71).
 
 CRITICAL
-| Verifier | Location | Note |
-|---|---|---|
-| A | B10 p.113-126 | TAM 102.0 / SAM 73.4 / SOM 1.32 / SOM 1.62 Rs Cr should be Rs 10,200 / 7,340 / 132 / 162 Cr; 100x unit error; B09 5E confirms source; B11 corrected before valuation logic; FLAG-DATA on B10. |
-| A | B10 p.15 | shares_outstanding_cr 11.4463 should be 1.14463 Cr (114.46 lakh); 10x unit error; B11 flagged FLAG-DATA and corrected for per share math; no verdict impact. |
+None. Verifier A rerun confirms the two prior CRITICAL unit errors on B10 (100x TAM/SAM/SOM, 10x share count) are FIXED and re-verified.
 
 MAJOR
 | Verifier | Location | Note |
 |---|---|---|
-| A | B10 p.113 | market_cap_cr 169.0 versus reconciled 139.6 Cr (CMP 122 x 1.1446 Cr shares); per share valuation runs off CMP/EPS; secondary impact only. |
-| A | B07 p.107 | Export revenue FY25 Rs 6,716.52 L (+38.35%) versus Notice Annexure Rs 2,616.05 L (minus 31.28%); unreconciled internal AR contradiction; B07 carries caveat. |
-| B | B05 Section 4D / 2C-2D | No red flag on Directors' Report clean audit framing versus auditor Rule 11(g) / 143(3)(b) reservation; central disclosure integrity miss. |
-| B | B05 Section 4C | CARO (ix)(a) technical interest default (Rs 1.11 L Nov 2024) not surfaced; contradicts "Strong" balance sheet characterisation. |
-| B | B05 Section 4C / 4D | Remuneration above 11% of net profits (Section 197(16)) and buried remuneration disclosures not flagged; Rimika RPT raise. |
-| B | B05 Section 1A trigger 1 / 3B | 38% export growth accepted at face value; same AR (General Info section 4) reports exports down 31.28%; unreconciled. |
-| C | B11 Pillar 2 / Four-Pillar Summary | Cash multiplier 0.80x applied though cumulative CFO/PAT 2.80x and CFO positive every year; as written band 1.00x; recompute QAB 11.1x, Track1 7.8x, Hurdle still STOP, decision still AVOID; decision impact none. |
+| B (redflags) | B05 4D / 2C-2D | Directors' Report clean audit framing contradicts the auditor's Rule 11(g) and Section 143(3)(b) reservation (EasyERP audit trail not confirmed untampered, not enabled at database level); not flagged (AR p.17 vs pp.38-39; Note 48 pp.97-98). |
+| B (redflags) | B05 4C balance sheet | CARO (ix)(a) technical interest default, Axis term loan Rs 1.11L due end Nov 2024 paid 01 Dec 2024 despite sufficient CC balance; contradicts the "Strong" characterisation (AR Annexure A (ix)(a) p.42; Note 46(n) p.91). |
+| B (redflags) | B05 4C governance / 4D | Managerial remuneration exceeded 11% of net profits (Section 197(16)); minimum remuneration clause plus special resolution; Rimika Eaga RPT pay raised to Rs 30L; not flagged (AR p.39; Notice Item 4 p.9; Note 39(b) p.82). |
+| B (redflags) | B05 1A trigger 1 / 3B | 38% export growth accepted at face value while the same AR (Directors' Report General Info) reports exports down 31.28% (Rs 2,616.05L vs Rs 3,806.68L); unreconciled (AR p.14 and p.22 vs p.12). |
+| A (numerical) | B10 Financials row 50 | CFO/PAT cumulative stated 2.80x vs 2.18x per B01 p.83; Pillar 2 band (1.00x) does not rest on this figure, B11 verdict unaffected (window difference). |
+| A (numerical) | B07 Section 1B; AR Note 26 vs Annexure | Export +38.4% (Note 26 Rs 6,716.52L) vs Annexure negative 31.28% (Rs 2,616L) unreconciled; B07 carries the caveat and uses Note 26 as authoritative; E2 moat scoring carries it. |
+| C (framework) | B11 RRM Dual Track / verdict card | V20 RRM units ambiguity: RRM computed with (13.5 minus r) in decimal, giving 0.996 and Track 1 11.05x; under percentage point reading RRM floors at 0.70 and Track 1 is about 7.8x with true divergence about 42%. Error direction is conservative; Hurdle STOP and AVOID unaffected and reinforced. Keerti to adjudicate Master v3.3 line 392. |
 
 MINOR
 | Verifier | Location | Note |
 |---|---|---|
-| A | B10 p.61 | ROCE Latest FY26 marked NOT FOUND but exists in B01 (7.74%, from 6.34/81.88); B11 conservatively used 7.2% low bound; appropriate. |
-| A | B10 p.196 | 3 year Revenue CAGR NOT FOUND; FY24 full year not in input set; B11 anchored base 5% below SOM ceiling 9.0%; no verdict impact. |
-| A | B10 p.196 | 3 year PAT CAGR NOT FOUND; same data gap; B11 derived PAT bottom up; no verdict impact. |
-| B | B05 Section 3D / 4D | Customer concentration anchored to Note 45(d) p.24; figure correct, true location AR p.90; anchor imprecision only. |
-| C | B11 Pillar 1 / FTTCP integration | FTTCP ROCE forward verdict (DECLINING) self derived in stage, not injected from discrete FTTCP artifact; rule consistent and most conservative; procedural gap only; no numeric change. |
+| B (redflags) | B05 3D / 4D | Customer concentration anchored to "Note 45(d) p.24 of Notes"; figure correct, true location AR p.90; anchor imprecision only. |
+| A (numerical) | B10 Financials row 47 | Capex stated 8.47 Cr vs screener CFI negative 8.92 Cr; PDF p.9 not independently readable; likely scope difference, under 1% and immaterial to FCF or verdict. |
+| C (framework) | B11 / B10 Pillar 2 | Cumulative CFO/PAT cited 2.80x vs B01 full period 2.18x (likely 3 to 5 year vs 10 year window); band determination unchanged either way; flagged for Verifier A. |
 
-Verifier D (B12d): SKIPPED. Stage 6 skipped (no peer concalls); no B06 coverage map to audit; acceptance_rate N/A, excluded from the confidence delta minimum, not scored 0.
+Resolved on rerun
+| Verifier | Item | Status |
+|---|---|---|
+| A (numerical) | B10 shares outstanding 10x, and TAM/SAM/SOM 100x errors | FIXED and re-verified (shares 1.14463 Cr; TAM 10,200 Cr; SAM 7,340 Cr; SOM 132/162 Cr). |
+| C (framework) | Pillar 2 cash multiplier MAJOR | RESOLVED; 1.00x volatile band correctly applied; 0.80x correctly ruled out. |
+
+Verifier D (peer): SKIPPED. No peer concalls provided (B00); stage 6 and Verifier D not run; peer utilisation excluded from the confidence delta, not scored 0.
+
+Open MAJORs carried to the operator
+- RRM formula units ambiguity (B12c V20) for Keerti to adjudicate in Master v3.3 line 392; AVOID holds and strengthens under either reading.
+- Unreconciled AR export growth contradiction, +38.35% (Note 26) vs negative 31.28% (Directors' Report / Notice Annexure); B07 carries the caveat.
+- CFO/PAT window difference, 2.80x cumulative in B10 vs 2.18x full period in B01; decision neutral, does not drive the Pillar 2 band.

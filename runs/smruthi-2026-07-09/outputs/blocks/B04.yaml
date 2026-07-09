@@ -1,0 +1,71 @@
+stage: B04-bizmodel
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation not provided; revenue-mix detail, market share, competitor names and capacity utilisation not available beyond AR"
+  - "Concall transcript not provided (NO-CONCALL MODE)"
+  - "Peer-company concalls not provided (no basis for named competitive positioning)"
+flags:
+  - "Credit rating outlook is CARE BBB; Negative (long-term) — deteriorating risk trend (AR Corp Gov Report p.32)"
+  - "Managerial/related-party remuneration paid in excess of 11% of net profit under special resolution; combined family remuneration approaches full-year PAT (AR Auditor's Report p.39, Note 39 p.82)"
+  - "Top-2 customer concentration jumped from ~11.6% (1 customer) to 27.7% (2 customers) YoY (AR Note 45(d) p.90)"
+  - "Rs.216.15 lakh trade receivables (4 parties) under litigation, >3 years overdue (AR Note 10 p.67)"
+  - "Debt Service Coverage Ratio fell 58.3% YoY (7.21x to 3.01x) as leverage rose (AR Note 44 p.88)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Bulk Drugs & Drug Intermediates (API), domestic + export", type: "manufacturing/product sale", pct_of_revenue: 98.71, predictability: "M"}
+  - {name: "Formulations (FDF) marketing", type: "trading/distribution", pct_of_revenue: 0.30, predictability: "L"}
+  - {name: "Export incentives (RoDTEP/duty drawback)", type: "government scheme income", pct_of_revenue: 1.00, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "defensive"
+moats_present:
+  - {moat: "DMF/regulatory filing library", durability: "moderate"}
+  - {moat: "Process know-how / backward integration", durability: "weak, emerging"}
+  - {moat: "35-year operating track record / customer qualification", durability: "weak-to-moderate"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Normalises for capex-heavy, debt-funded, depreciation- and finance-cost-heavy API manufacturing profile; standard peer-comparable basis"}
+  secondary: {method: "P/E", why: "Widely used cross-check but must be normalised for structurally high related-party/managerial remuneration load (>11% of net profit)"}
+  tertiary: {method: "DCF", why: "Useful once ANVISA/EDQM regulated-market ramp shows committed revenue; today's forecast inputs (capacity, per-molecule margin, timeline) are largely undisclosed"}
+  not_applicable: ["P/B", "EV/Sales (standalone)", "Sum-of-parts", "Replacement/asset-based", "Dividend Discount Model"]
+irrelevant_ratios:
+  - {ratio: "Headline revenue growth %", why: "Hides a full domestic (-26.5%) vs export (+38.4%) mix reversal"}
+  - {ratio: "Current ratio alone", why: "44.69% of current assets is inventory; quick ratio is more informative"}
+  - {ratio: "Reported PAT/net margin at face value", why: "Shaped materially by related-party remuneration decisions exceeding 11% of net profit"}
+  - {ratio: "Trade receivable days at face value", why: "Rs.219.42 lakh is >3 years overdue and under litigation, understating collection risk"}
+  - {ratio: "P/E in isolation", why: "Cannot separate genuine operating improvement from managerial remuneration policy effects"}
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: ">12%", red_flag: "<8%"}
+  - {metric: "Debt-Equity ratio", healthy: "<0.3x", red_flag: ">0.5x"}
+  - {metric: "Debt Service Coverage Ratio", healthy: ">3x", red_flag: "<1.5x"}
+  - {metric: "Top-2 customer concentration", healthy: "<20%", red_flag: ">35%"}
+  - {metric: "Inventory turnover", healthy: ">3x", red_flag: "<2x"}
+unit_economics:
+  unit: "1 kg of API sold"
+  revenue_per_unit: "Highly heterogeneous by molecule: ~Rs.229/kg (Metformin HCL, commodity, high volume) to ~Rs.1,947-2,545/kg (Phthaloyl Amlodipine, Diloxanide Furoate)"
+  margin_per_unit: "NOT FOUND, check investor presentation or concall (no per-product cost disclosed); blended raw material cost is 53.8% of total revenue"
+  key_lever: "DMF/regulated-market approvals unlocking higher-value, less-commoditised volume; raw material and power cost pass-through"
+first_deterioration_signals:
+  - {risk: "Customer concentration (top 2 = 27.7% of revenue)", first_signal: "Revenue from Operations decline concentrated in export line, or spike in a large customer's receivable balance"}
+  - {risk: "Commodity price erosion (Metformin ~65% of API revenue in top-3 products)", first_signal: "Cost of Material Consumed % of revenue rising while volumes hold"}
+  - {risk: "Raw material and power/fuel cost inflation without pass-through", first_signal: "Power and Fuel expense line and RM% of revenue"}
+  - {risk: "High related-party/managerial remuneration vs PAT", first_signal: "Employee Benefit Expense / Managerial Remuneration note growing faster than PAT"}
+  - {risk: "Rising leverage, falling coverage", first_signal: "Finance Cost line and Borrowings (Note 17/21)"}
+  - {risk: "Thin cash buffer", first_signal: "Cash and Cash Equivalents relative to Current Borrowings drawn"}
+  - {risk: "Inventory-heavy working capital, declining turnover", first_signal: "Inventories (Note 9) and Change in Inventories (P&L)"}
+  - {risk: "Regulated-market inspection risk (ANVISA/EDQM)", first_signal: "Absence of new regulated-market export revenue in subsequent MD&A, or capex utilisation stalling"}
+  - {risk: "FDF/formulations segment decay", first_signal: "Formulation segment revenue (Note 45)"}
+  - {risk: "Related-party concentration in promoter-family-run company", first_signal: "Related Party Transaction values growing disproportionately to results"}
+  - {risk: "Unresolved legacy labour litigation", first_signal: "Growth in Contingent Liabilities note or adverse court ruling"}
+mgmt_questions:
+  - "What is current capacity utilisation at Unit I/Unit II, and how much incremental capacity does the FY25 Rs.1,151.50 lakh capex unlock?"
+  - "What specific revenue is expected from ANVISA (Brazil) and EDQM (Europe) once FY25-26 inspections conclude, and what is the timeline to first shipment?"
+  - "Why did two customers reach 27.7% of FY25 revenue from ~11.6% a year earlier, and what is the diversification plan?"
+  - "With raw materials ~54% of revenue and power/fuel up 15.2% amid stagnant/declining prices, what specific initiatives will restore margin, and by when?"
+  - "Why is total family/related-party remuneration rising while PAT is flat, and how does the board justify this to minority shareholders?"
+  - "What is the status and expected recovery of the Rs.216.15 lakh litigated trade receivables and the Rs.95.91 lakh labour court contingent liability?"
+  - "Why did the FDF business shrink 36.4% on field-force attrition, and is management downsizing it deliberately or trying to fix it?"
+one_line_verdict: "Commoditised, price-taking API manufacturer betting margin recovery on an unproven regulated-market transition, while leverage rises and cash buffers stay thin."

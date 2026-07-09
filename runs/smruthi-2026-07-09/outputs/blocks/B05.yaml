@@ -1,0 +1,54 @@
+stage: B05-concall
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps: ["concalls absent (NO-CONCALL MODE)", "peer-concalls absent", "presentation absent"]
+flags: ["revenue_decline_unexplained_fy26", "regulatory_milestones_unconfirmed_anvisa_edqm", "promoter_family_governance_concentration", "credit_rating_negative_outlook_unconfirmed_current"]
+quarters_analysed: ["AR FY24-25 (guidance baseline)", "9M FY25-26 (Apr-Dec 2025)", "FY25-26 audited full year (to Mar 2026)"]
+triggers:
+  - {priority: 1, name: "Revenue recovery - China/Russia export momentum", type: "VOLUME/PRICE-MIX", timeframe: "near/medium-term", conviction: "L", confirm_signal: "Reversal of ~19% FY26 revenue decline in FY27 results; management finally explains the miss", kill_signal: "Continued or deepening revenue decline (Q4 trend already worse than 9M trend)"}
+  - {priority: 2, name: "Backward integration / cost rationalization", type: "COST", timeframe: "near-term, already delivering", conviction: "M-H", confirm_signal: "Sustained or further margin improvement FY26-27", kill_signal: "Raw material cost ratio reverts upward"}
+  - {priority: 3, name: "Regulated-market entry via ANVISA (Brazil) / EDQM (Europe) inspections", type: "REGULATORY-POLICY", timeframe: "medium-term", conviction: "L", confirm_signal: "Disclosed inspection clearance and resulting approvals/revenue in next AR", kill_signal: "Continued silence, delay, or failed inspection"}
+  - {priority: 4, name: "Balance sheet deleveraging", type: "COST", timeframe: "near-term, already delivered", conviction: "M-H", confirm_signal: "Continued debt reduction, improved gearing ratio", kill_signal: "Renewed borrowing build-up or working capital stress"}
+  - {priority: 5, name: "FDF/Formulation division exit - resource redeployment", type: "SECTORAL", timeframe: "near-term (executed FY26)", conviction: "M", confirm_signal: "No further cash drag from wind-down surfaces", kill_signal: "Unexpected exit costs/liabilities appear"}
+  - {priority: 6, name: "New API development / DMF filing pipeline", type: "REGULATORY-POLICY", timeframe: "medium-term", conviction: "L", confirm_signal: "Disclosure of continued DMF filings, new API approvals in next AR", kill_signal: "Continued silence on filing pace"}
+guidance:
+  - {item: "Regulatory inspections - ANVISA (Brazil), EDQM (Europe)", number: "N/A (qualitative)", timeframe: "FY 2025-26", stated_in: "AR FY24-25 MD&A"}
+  - {item: "Capex FY24-25 (base for continuation)", number: "Rs.1,151.50 lakh", timeframe: "FY 2024-25", stated_in: "AR FY24-25 MD&A"}
+  - {item: "DMF filings", number: "12 new (FY24-25), 22 prior year", timeframe: "FY 2024-25 historical / continuation guided", stated_in: "AR FY24-25 MD&A"}
+  - {item: "Export sales growth", number: "+38% YoY (FY24-25 actual)", timeframe: "FY 2024-25 historical baseline", stated_in: "AR FY24-25 MD&A"}
+  - {item: "Dividend", number: "Rs.1.5/share (15%)", timeframe: "FY 2024-25 proposed, matches prior year", stated_in: "AR FY24-25 Notice/Directors' Report"}
+  - {item: "R&D expenditure", number: "Rs.451.92 lakh, 3.58% of turnover", timeframe: "FY 2024-25 historical", stated_in: "AR FY24-25 Annexure II"}
+promise_delivery:
+  delivered: 2
+  partial: 0
+  missed: 1
+  rows:
+    - {promised_in: "AR FY24-25 MD&A", promise: "Stronger revenue contributions from China/Russia, continued export momentum, growth should improve", outcome: "MISSED - revenue fell ~19.1% YoY FY26 (Rs.10,196.71L vs Rs.12,600.79L), decline worsened through the year (9M -17.1%, Q4 alone -23.6%)", explanation: "None given in any FY26 results filing"}
+    - {promised_in: "AR FY24-25 MD&A", promise: "Backward integration and cost rationalization", outcome: "DELIVERED - material cost ratio fell from 53.85% to 44.35% of revenue; PBT before exceptional items rose slightly (Rs.512.69L vs Rs.490.00L) despite revenue decline", explanation: "Consistent with stated strategy"}
+    - {promised_in: "AR FY24-25 Notice", promise: "Dividend Rs.1.5/share (15%)", outcome: "DELIVERED - Board recommended same Rs.1.50/share (15%) for FY25-26", explanation: "Policy continuity maintained through weak revenue year"}
+    - {promised_in: "AR FY24-25 MD&A", promise: "ANVISA (Brazil)/EDQM (Europe) inspections in FY25-26, critical milestones", outcome: "NOT VERIFIABLE - no status update in Q3 or Q4 FY26 results filings", explanation: "Not found; excluded from delivered/partial/missed tally"}
+    - {promised_in: "AR FY24-25 MD&A", promise: "Sustained DMF filings in key global markets", outcome: "NOT VERIFIABLE - no FY26 DMF count disclosed", explanation: "Not found; excluded from tally"}
+excuse_pattern: "silence-on-largest-miss, honest-on-small-external-item"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Cost rationalization/backward integration guidance delivered with quantifiable evidence (material costs fell ~54%->~44% of revenue) and dividend held flat, but the central AR-stated revenue-growth outlook (China/Russia momentum) missed by ~19% YoY with zero explanation in FY26 results filings; ANVISA/EDQM regulatory milestones remain unconfirmed. Mixed record keeps grade at NO-CONCALL-MODE default C; cannot rise to A in this mode regardless."
+peer_questions:
+  - {question: "Did comparable Indian API/bulk-drug manufacturers also see ~19% revenue decline in FY25-26, or is this company-specific?", why: "Determines whether Smruthi's unexplained revenue miss reflects sector-wide weakness or company-specific execution failure", check_peers: ["Indian small/micro-cap API and bulk-drug manufacturers"]}
+  - {question: "Did China contribute rising or falling export dynamics for peer API companies in FY25-26?", why: "Tests credibility of AR's 'China as growth driver' claim made just before the FY26 decline", check_peers: ["API exporters with disclosed China exposure"]}
+  - {question: "Are peer bulk-drug companies showing similar raw-material cost ratio improvement in FY25-26?", why: "Tests whether Smruthi's margin resilience reflects genuine backward-integration execution or industry-wide raw-material price deflation", check_peers: ["Indian API/KSM-consuming bulk-drug manufacturers"]}
+  - {question: "Have peers referenced ANVISA/EDQM inspection outcomes or timelines for FY25-26?", why: "Assesses whether Smruthi's regulated-market narrative is a differentiated catalyst or generic sector aspiration", check_peers: ["Indian API exporters targeting EU/Brazil regulated markets"]}
+  - {question: "What raw-material (KSM/intermediate) price trend did the sector see in FY25-26?", why: "Directly tests the underlying driver of Smruthi's margin resilience despite falling revenue", check_peers: ["Any Indian bulk-drug/API manufacturer disclosing raw-material cost trends"]}
+red_flags:
+  - {flag: "~19% YoY revenue decline FY25-26 with zero management explanation in any available source", severity: "HIGH"}
+  - {flag: "CARE Edge long-term rating outlook Negative (CARE BBB; Negative) per FY24-25 AR; FY26 status unconfirmed", severity: "MEDIUM"}
+  - {flag: "Rising customer concentration - 2 customers >10% of sales FY24-25 (up from 1 in FY23-24), combined value nearly doubled", severity: "MEDIUM"}
+  - {flag: "Promoter/family concentration in ownership (~64.7%) and all executive roles, plus new family appointment (daughter as WTD, effective June 2026); full independent-director turnover simultaneous in July 2024", severity: "MEDIUM"}
+  - {flag: "ANVISA (Brazil)/EDQM (Europe) inspections flagged as critical FY25-26 milestones with no subsequent status disclosure", severity: "MEDIUM"}
+  - {flag: "Aged trade-receivable litigation (Rs.216.15 lakh, four parties) unchanged across at least two annual reports", severity: "LOW-MEDIUM"}
+  - {flag: "Formulation/FDF division ran losses for years before FY26 discontinuation with minimal disclosed rationale", severity: "LOW"}
+  - {flag: "New Labour Codes generated unplanned Rs.46.26 lakh exceptional gratuity cost FY26; further rule notifications could add more", severity: "LOW"}
+dropped_triggers: ["Formulation/FDF Marketing Division - discontinued in FY25-26 (Q4 FY26 results Note 1) after AR FY24-25 flagged declining secondary sales (-36.4% YoY) with no explicit discontinuation guidance given at the time"]
+timeline_slippages: ["ANVISA (Brazil) / EDQM (Europe) regulatory inspections planned for FY25-26 per AR FY24-25 MD&A - no confirmation of completion or outcome found in Q3 FY26 or Q4/FY26 results filings; status unknown, possible slippage or simply unreported due to results-filing format not requiring MD&A narrative"]

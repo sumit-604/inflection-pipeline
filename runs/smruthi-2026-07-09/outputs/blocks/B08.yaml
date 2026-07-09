@@ -1,0 +1,63 @@
+stage: B08-promoter
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: partial
+input_gaps: [concalls-absent, peer-concalls-absent, presentation-absent]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Combined promoter-family remuneration (MD, JMD, non-exec director daughter, JMD's wife) of Rs 444.56 lakh in FY25 equals ~125% of FY25 statutory PAT (Rs 356.29 lakh); auditor confirms managerial remuneration breached the 11% statutory cap, sustained via special resolutions across the 33rd and 34th AGMs (AR p.39, p.82)"
+      - "Related-party job-work vendor Smruthi Chemicals & Intermediates (sole proprietorship of MD's wife, Vaishnavi Eaga) grew 15% YoY to Rs 148.95 lakh in FY25 payments (AR p.82)"
+      - "Complete en-bloc turnover of all three independent directors on a single day (28-29 July 2024), including simultaneous Audit Committee chair change; new IDs individually well-credentialed but appointment was mandatory term-completion, not a voluntary governance overhaul (AR p.25-30)"
+      - "Title deeds for four company-used land parcels held in MD Purushotham Eaga's personal name for 24 years, disclosed only under mandatory CARO 2020 reporting (AR p.40-41, p.91)"
+      - "JMD Eaga Swapnil concurrently holds the CFO role — no independently staffed CFO function"
+      - "Zero institutional (FII/DII) ownership; nil promoter pledge; promoter stake rising modestly (63.84% to 64.73%)"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Managerial remuneration exceeded 11% statutory cap, per Section 197(16) auditor disclosure, sustained via special resolutions since 33rd/34th AGM", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, Independent Auditor's Report p.39", date: "2025-05-05"}
+  - {finding: "Combined promoter-family remuneration ~125% of FY25 PAT", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, RPT Note 39 p.82 and Directors' Report p.15", date: "2025-05-05"}
+  - {finding: "Job-work RPT to MD's wife's proprietorship rose 15% YoY to Rs 148.95 lakh", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, Note 39 p.82", date: "2025-05-05"}
+  - {finding: "Complete simultaneous independent-director turnover in FY25 (all 3 IDs replaced in one day)", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, Corporate Governance Report p.25", date: "2025-05-05"}
+  - {finding: "Title deeds of 4 land parcels held in MD's personal name for 24 years, disclosed under CARO mandate", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, Auditor's Annexure A p.40-41 and Note 46(m) p.91", date: "2025-05-05"}
+  - {finding: "Legacy labour-court dispute (illegal-strike findings favourable to company, but reinstatement-with-back-wages order under HC stay) with rising contingent liability", evidence_tier: "VERIFIED", source: "Smruthi Organics AR FY24-25, Note 40 p.83", date: "2025-05-05"}
+  - {finding: "Employee reviews cite below-market pay and poor increments, directionally consistent with rising family remuneration", evidence_tier: "MEDIA REPORTED", source: "Indeed.com / MouthShut Smruthi Organics reviews", date: "2026-07-09 (search date)"}
+  - {finding: "CARE Ratings outlook revised Stable to Negative (Aug 2024) citing pricing pressure and profitability decline", evidence_tier: "MEDIA REPORTED", source: "CARE Ratings press release, August 2024", date: "2024-08"}
+  - {finding: "Naming-collision between promoter-linked proprietorship (Smruthi Chemicals & Intermediates, wife) and LLP shareholder (Smruthi Chemicals and Intermediates Limited LLP, possibly daughter) not independently resolved due to blocked source access", evidence_tier: "UNVERIFIED", source: "AR shareholding table p.69 vs third-party aggregator snippet", date: "2026-07-09 (search date)"}
+transition_evidence:
+  - "New independent directors with genuine, verifiable domain credentials (PhD chemist ex-NCL Pune; IIT Bombay chemist; MBA-Finance Audit Committee chair) appointed 29 July 2024 — weak signal: mandatory term-completion refresh, en-bloc, not a voluntary governance overhaul"
+pledge_pct_latest: 0
+pledge_trend: "stable - nil pledge across all periods reviewed (FY24 and FY25 AR disclosures; corroborated by two independent data aggregators)"
+searches_performed: [
+  "Smruthi Organics Limited SEBI order adjudication",
+  "Smruthi Organics Purushotham Eaga promoter controversy",
+  "Smruthi Organics proxy advisory IiAS OR SES OR InGovern",
+  "Smruthi Organics CARE Ratings rationale negative outlook",
+  "Smruthi Organics AmbitionBox Glassdoor employee reviews",
+  "Eaga Purushotham director disqualified MCA OR NCLT OR RoC",
+  "Smruthi Organics ambitionbox.com rating reviews Solapur",
+  "Smruthi Chemicals and Intermediates LLP MCA",
+  "Smruthi Organics Solapur labour court strike workers reinstatement High Court",
+  "Smruthi Organics institutional investors mutual fund shareholding 2025",
+  "Shankarrao Myakal Smruthi Organics founder co-promoter",
+  "Smruthi Organics pledge promoter shares percentage",
+  "Smruthi Organics indiankanoon court case",
+  "Smruthi Organics BSE penalty non-compliance LODR fine",
+  "Smruthi Organics Q1 FY26 profit decline results analysis",
+  "Smruthi Fotochem writ petition Bombay High Court Maharashtra",
+  "Smruthi Organics insider trading SAST disclosure delay",
+  "Smruthi Organics AGM shareholder complaint SCORES resolution",
+  "Smruthi Organics OR Purushotham Eaga political donation electoral bond CSR philanthropy"
+]
+searches_skipped: [
+  "Direct MCA LLP-master-data lookup for Smruthi Chemicals and Intermediates Limited LLP (zaubacorp.com blocked HTTP 403)",
+  "Full-text Bombay HC WP 558/2018 Smruthi Fotochem retrieval (indiankanoon.org blocked HTTP 403)",
+  "screener.in historical promoter-holding/pledge time series (blocked HTTP 403)",
+  "Dedicated NCLT oppression-petition case-law deep search",
+  "Dedicated CCI/NGT/consumer-forum searches specific to Smruthi Organics",
+  "Peer/industry API-sector reputation benchmarking (out of scope, peer-concalls absent)"
+]
+verdict_basis: "Auditor-confirmed managerial remuneration breach of the 11% statutory cap, sustained via special resolutions across 3+ AGM cycles, consuming ~125% of FY25 net profit, combined with a growing related-party job-work vendor benefiting the MD's wife; no SEBI/criminal/auditor-independence violations found and promoter shareholding is unpledged and rising, but transition evidence is weak (one mandatory, en-bloc independent-director refresh only)."

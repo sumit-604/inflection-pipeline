@@ -1,0 +1,26 @@
+stage: B12b
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 14
+caught: 10
+partially_caught: 0
+missed:
+  - {severity: "MAJOR", item: "Directors' Report 'clean audit / no qualifications' framing contradicts auditor's reservation under Section 143(3)(b) and Rule 11(g) (EasyERP audit-trail: unable to confirm not-tampered; not enabled at database level)", anchor: "AR Directors' Report §18 p.17 vs Auditor's Report §2(b),§2(g),§2(h)(vi) pp.38-39; Note 48 pp.97-98"}
+  - {severity: "MAJOR", item: "CARO §(ix)(a) technical interest default — Axis Bank term-loan interest Rs 1.11L due end-Nov-2024 paid 01-Dec-2024 despite sufficient CC balance; contradicts B05 'Strong balance-sheet management'", anchor: "AR Annexure A §(ix)(a) p.42; Note 46(n) p.91"}
+  - {severity: "MAJOR", item: "Managerial remuneration exceeded 11% of net profits (Section 197(16)); minimum-remuneration clause + special resolution invoked; daughter-in-law Rimika Eaga RPT remuneration raised to Rs 30L; total exec pay large vs Rs 356.29L PAT", anchor: "AR Auditor's Report §3(i) p.39; Notice Item 4 / Explanatory Statement p.9; Note 39(b) p.82"}
+  - {severity: "MAJOR", item: "Internal AR contradiction on export performance: MD&A/FEE show exports +38%, but Directors' Report General Info §4 states exports fell 31.28% (Rs 2,616.05L vs Rs 3,806.68L) — undermines China/export growth narrative", anchor: "AR MD&A p.14 & Annexure II p.22 vs Directors' Report General Info §4 p.12"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C is correct and would not grade higher; the four missed disclosure-integrity items reinforce C, and the NO-CONCALL cap forbids any rise above C"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 4D / 2C-2D", claim: "no red flag raised on Directors' Report clean-audit framing vs auditor Rule 11(g)/§143(3)(b) reservation", note: "Board-signed contradiction of auditor's own 'reservation' wording; central disclosure-integrity miss"}
+  - {severity: "MAJOR", location: "B05 Section 4C 'Balance sheet management: Strong'", claim: "CARO §(ix)(a) technical interest default not surfaced", note: "Rs 1.11L Nov-2024 interest default flagged by auditor; contradicts 'Strong' characterization"}
+  - {severity: "MAJOR", location: "B05 Section 4C 'Governance structure' / 4D", claim: "remuneration >11% of net profits and buried remuneration disclosures not flagged", note: "§197(16) breach, minimum-remuneration clause, Rimika RPT raise"}
+  - {severity: "MAJOR", location: "B05 Section 1A trigger 1 / 3B", claim: "38% export growth accepted at face value", note: "same AR (General Info §4) reports exports down 31.28%; unreconciled internal contradiction"}
+  - {severity: "MINOR", location: "B05 Section 3D / 4D", claim: "customer-concentration anchored to 'Note 45(d) p.24 of Notes'", note: "figure correct; true location AR p.90 — anchor imprecision only"}
+critical_count: 0
+major_count: 4
+minor_count: 1
+acceptance_rate: 71

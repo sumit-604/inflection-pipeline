@@ -147,3 +147,34 @@ TRANSCRIPT 2 ({{QUARTER_2}}):
 
 TRANSCRIPT 3 ({{QUARTER_3}}):
 {{TRANSCRIPT_3}}
+
+---
+
+## ========================= NO-CONCALL MODE =========================
+
+When the orchestrator invokes this stage in NO-CONCALL MODE (manifest
+`concalls_available: false`), the sections above that depend on transcripts
+are OVERRIDDEN by the degraded procedure below. Everything else about the
+output contract (the four-section report followed by the fenced B05 YAML
+block) still holds.
+
+DEGRADED PROCEDURE:
+
+1. No transcripts are provided. Read instead the annual report's MD&A, the
+   chairman's / management letter, and the results commentary from the
+   results PDFs. These are your only sources; apply the same GROUNDED
+   CLAIMS and SOURCE ANCHOR rules to them.
+2. Extract every piece of stated guidance from these documents (revenue,
+   margin, capex with timeline, capacity, debt, returns, dividend), and
+   check delivery of that guidance against the numbers in the results PDFs.
+   The promise-vs-delivery tracker (Section 2A) is built from
+   AR-guidance-vs-results-delivery, not from cross-quarter transcript
+   comparison.
+3. `credibility_grade` DEFAULTS TO C. It may rise to B ONLY on documented
+   AR-guidance-vs-results delivery evidence. It NEVER rises to A in this
+   mode.
+4. Sections and tables that require transcript-only material (e.g. 2E
+   repeated question tracker, analyst Q&A tone) have no source here; state
+   that plainly rather than manufacturing content, and lean on the
+   guidance-vs-delivery record for the credibility verdict.
+5. Add `no_concall_mode: true` to the emitted B05 YAML block.

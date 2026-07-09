@@ -16,19 +16,25 @@ Run folder structure (Google Drive, mirrored to local before run):
 /inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
-    annual-report-FY<XX>.pdf          (exactly 1, required)
-    concall-Q<N>-FY<XX>.pdf           (exactly 3, main company, required)
-    results-Q<N>-FY<XX>.pdf           (exactly 3, required)
-    rating-<AGENCY>-<YYYY>.pdf        (exactly 1, required)
-    screener-data.txt                 (optional but strongly recommended)
-    investor-presentation.pdf         (optional)
-    peer-concalls/
-      <PEERTICKER>-Q<N>.pdf           (up to 12)
+    annual-report/    (1 PDF, required)
+    results/          (2-3 PDFs, required)
+    rating/           (1 PDF, required)
+    concalls/         (3 PDFs, required ONLY when manifest has concalls_available: true)
+    peer-concalls/    (0-12 PDFs, optional)
+    screening/        (optional; csv / txt / pdf / xlsx)
+    presentation/     (optional)
   outputs/                            (created by pipeline)
     blocks/                           (YAML handoff blocks, one per stage)
     reports/                          (full stage outputs)
     final/                            (narrative, verdict, verifier summary)
 ```
+
+Inputs are identified BY FOLDER, not by filename. Any filenames are
+accepted inside each subfolder; the pipeline reads whatever PDFs (or
+csv/txt/xlsx for screening/) a folder contains.
+
+Concall quarter map: from filename if evident, else read each transcript's
+first page; confirm chronology before stage 5.
 
 manifest.yaml schema (filled by Keerti before triggering):
 
@@ -46,6 +52,25 @@ notes: ""              # free text, passed to synthesis
 Stage 0 validates this contract. Missing required files: run halts with a
 named list of what is missing. Missing optional files: run proceeds, gap
 recorded in every downstream handoff block under `input_gaps`.
+
+### NO-CONCALL MODE
+
+Some companies hold no earnings calls. When `manifest.yaml` sets
+`concalls_available: false`, the `inputs/concalls/` folder is not required
+and the concall-dependent stages run in degraded mode:
+
+- **Stage 5** runs in degraded mode: instead of transcripts it reads the
+  annual report's MD&A, the chairman's letter, and the results
+  commentary. It extracts stated guidance and checks delivery against the
+  results PDFs. `credibility_grade` defaults to **C** and may rise to **B**
+  only on documented AR-guidance-vs-results delivery evidence, never to
+  **A**. The B05 block gains `no_concall_mode: true`.
+- **Stage 6** runs only if `inputs/peer-concalls/` contains files;
+  otherwise it is skipped, with `input_gaps` noting the skip.
+- **Verifier B** audits the communication analysis against the AR and
+  results sources instead of transcripts.
+- **Stage 7's F2 test** uses capex-completion evidence across AR timeline
+  statements in place of the promise-delivery record.
 
 ---
 

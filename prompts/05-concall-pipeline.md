@@ -147,3 +147,35 @@ TRANSCRIPT 2 ({{QUARTER_2}}):
 
 TRANSCRIPT 3 ({{QUARTER_3}}):
 {{TRANSCRIPT_3}}
+
+---
+## NO-CONCALL MODE (override)
+
+The orchestrator invokes this mode when the run manifest has
+`concalls_available: false`. When invoked in this mode, the instructions
+below OVERRIDE every transcript-based section above.
+
+Some companies hold no earnings calls. There are no transcripts and no
+quarter map. Run the credibility analysis in degraded mode:
+
+1. SOURCES. Read the AR's MD&A, the chairman's or managing director's
+   letter, and the results commentary (press releases / results PDFs)
+   in place of transcripts. Every claim still carries a source anchor
+   (document, section, approx location).
+2. GUIDANCE AND DELIVERY. Extract the guidance management stated in the
+   AR and letter (revenue, margin, capex with timeline, capacity,
+   commissioning dates, debt reduction, return targets), then check
+   delivery against the results PDFs. This AR-guidance-vs-results record
+   replaces the concall promise vs delivery tracker (Section 2A).
+3. CREDIBILITY GRADE. `credibility_grade` defaults to C. It may rise to B
+   only on documented AR-guidance-vs-results delivery evidence. It never
+   rises to A in this mode. Grade on the delivery record, not on tone.
+4. SECTIONS. Produce the report using the same four-section structure as
+   far as the written sources support it. Where a section depends on
+   live analyst Q&A that does not exist without a call (2E repeated
+   question tracker, 3C toughest analyst questions), state that the
+   source is unavailable in no-concall mode rather than manufacturing
+   content.
+5. BLOCK. Emit the same B05-concall YAML block, adding the field
+   `no_concall_mode: true`. `quarters_analysed` lists the periods the AR
+   and results cover.

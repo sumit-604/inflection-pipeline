@@ -10,11 +10,16 @@ error handling. Then:
 
 1. VALIDATE (stage 0, do this yourself): check the run folder against
    the input contract in the orchestrator. manifest.yaml must exist and
-   parse. Required inputs: 1 annual report, 3 main concalls, 3 results
-   PDFs, 1 rating PDF. Missing required file: STOP and list what is
-   missing. Missing optional (screener data, presentation, peers):
-   proceed, record in input_gaps. Create outputs/blocks, outputs/reports,
-   outputs/final inside the run folder.
+   parse. Identification is by subfolder, not filename. Required folder
+   counts: inputs/annual-report/ exactly 1 PDF; inputs/results/ 2 or 3
+   PDFs (both pass); inputs/rating/ exactly 1 PDF; inputs/concalls/
+   exactly 3 PDFs, but required ONLY when the manifest has
+   concalls_available: true (when false, concalls/ may be empty or absent
+   and the run proceeds in no-concall mode). Any folder missing or with
+   the wrong count: STOP and list the offending folders. Optional folders
+   (inputs/peer-concalls/, inputs/screening/, inputs/presentation/):
+   proceed if empty or absent, record in input_gaps. Create outputs/blocks,
+   outputs/reports, outputs/final inside the run folder.
 
 2. EXECUTE the stages by invoking the matching subagent for each, in
    dependency order (1 and 2 can interleave; 4, 5, 8, 9 after 3; 6 after

@@ -1,0 +1,41 @@
+stage: B02-notes
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps: [concalls absent (NO-CONCALL MODE), peer-concalls absent, presentation absent]
+flags:
+  - {type: FLAG-CASH, reason: "ECL provision on >3-year, litigated trade receivable bucket (Rs 219.67L, incl. Rs 216.15L unresolved legal-recovery case unchanged for 2 years) is only ~0.11% vs the company's own stated 2.5-7.5% policy band; top-2 customer concentration doubled to 27.5% of revenue with fully unhedged export FX exposure (Note 10, Note 26/45, Note 47)."}
+accounting_quality: 5        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Audit trail (edit log) not verifiable throughout the year and not enabled at database level for EasyERP software, a statutory Rule 11(g) compliance gap", note_ref: "Note 48, p.97-98; Auditors' Report para 2(h)(vi), p.38-39", rating: "Red Flag", why: "Undermines confidence in traceability of all financial records; understated by Directors' Report's 'clean, no qualifications' framing"}
+  - {rank: 2, finding: "Managerial remuneration paid in excess of the 11% statutory cap under Section 197/Schedule V, sustained via special resolutions; family remuneration exceeds FY25 PAT", note_ref: "Auditors' Report Section 197(16) para, p.39; Note 39, p.81", rating: "Red Flag", why: "Structural governance/RPT-fairness issue formally reported by the auditor, not flagged as such in the notes narrative"}
+  - {rank: 3, finding: "Four mortgaged factory-collateral land parcels registered in the Managing Director's personal name for ~24 years; SBI released its charge on them in Feb-2025", note_ref: "Note 46(m), p.91; Note 17, p.71; CARO Annexure A(i)(c), p.40", rating: "Red Flag", why: "Long-standing related-party title/governance defect on operating collateral, connected to reduced bank security cover this year"}
+  - {rank: 4, finding: "ECL provisioning on the >3-year, litigated receivable bucket is ~0.11% vs the company's own stated 2.5-7.5% policy band", note_ref: "Note 10, p.67; Note 3.3/3.19, p.52/60", rating: "Red Flag", why: "Material internal inconsistency between stated ECL policy and actual provisioning on the single highest-risk receivable bucket"}
+  - {rank: 5, finding: "Gratuity plan only 45.6% funded with a sudden funding catch-up and a large FY26 contribution projected", note_ref: "Note 41, p.84-86", rating: "Red Flag", why: "Materially underfunded defined-benefit plan with an unexplained, large prospective cash-flow call"}
+  - {rank: 6, finding: "Top-2 customer concentration roughly doubled to 27.5% of net revenue, alongside fully unhedged export receivables", note_ref: "Note 26/45, p.77/90; Note 47, p.94", rating: "Watch", why: "Growing concentration risk compounded by unhedged FX exposure on the same export book"}
+  - {rank: 7, finding: "Debt-financed capex weakened credit metrics: borrowings +43.5% YoY, Debt-Equity +38.4%, DSCR down 58.3%", note_ref: "Note 17/21/44/47, p.71/74/88/94", rating: "Watch", why: "Magnitude of DSCR deterioration warrants monitoring despite company's term-loan-drawdown explanation"}
+  - {rank: 8, finding: "Forged/altered cheque litigation ongoing since 2020, fully provided but unresolved 5+ years", note_ref: "Note 46(o), p.92; Note 8, p.66", rating: "Red Flag", why: "Indicative of a historical payment-control weakness that remains legally unresolved"}
+  - {rank: 9, finding: "Significant, growing related-party job-work/remuneration flows to the promoter family; personal guarantee backs Axis facilities", note_ref: "Note 39, p.81-82; Note 17/21, p.71/74", rating: "Watch", why: "Concentration of financial flows and personal guarantees within one family, not flagged as material RPT by the company"}
+  - {rank: 10, finding: "Stated FX hedging policy is not executed; both receivables and payables remain fully unhedged", note_ref: "Note 3.4/47, p.53/94", rating: "Watch", why: "Disclosed policy-vs-practice inconsistency on currency risk management"}
+  - {rank: 11, finding: "Trade payables collapsed 44% YoY, a large negative working-capital swing, alongside first-time delayed-MSME-payment interest", note_ref: "Note 22, p.75; Cash Flow Statement, p.48", rating: "Watch", why: "Significant cash-flow drag from working capital; first MSME-delay interest disclosure signals a payment-timing shift"}
+  - {rank: 12, finding: "Profit before tax presented as three different figures across the P&L, Cash Flow Statement and Segment Note, unreconciled, with a mislabeled cash-flow line", note_ref: "P&L p.47; Cash Flow Statement p.48; Note 45, p.89-90; Note 27.1, p.78", rating: "Watch", why: "Cross-statement numerical inconsistency; disclosure/preparation quality-control gap identified in pattern pass"}
+  - {rank: 13, finding: "Bank stock-statement reconciliation gap for Trade Payables peaks at fiscal year-end at ~8.5% of the reported balance", note_ref: "CARO Annexure A(ii)(b), p.40-41; Note 46(j), p.91", rating: "Watch", why: "Far larger than equivalent Inventory/Receivables gaps; coincides with the flagged payables collapse and affects secured drawing power"}
+  - {rank: 14, finding: "MD's wife is the second-largest shareholder (15.27%) while also proprietor of the growing RPT job-work vendor", note_ref: "Note 15(d), p.69; Note 39, p.81-82", rating: "Watch", why: "Sharpens the RPT-fairness picture: same family member is both a top-2 equity holder and a growing RPT counterparty"}
+  - {rank: 15, finding: "MD's remuneration is 63.55x median employee remuneration; JMD's is 42.37x", note_ref: "Directors' Report Annexure III, p.23", rating: "Watch", why: "Concrete quantification of internal pay disparity underlying the broader family-remuneration theme"}
+red_flags:
+  - "ECL under-provisioning (~0.11% vs 2.5-7.5% policy) on the highest-risk, litigated receivable bucket flatters both balance sheet and P&L"
+  - "Title deed defect and MD personal guarantee on core operating/collateral assets disclosed only in fine-print regulatory notes, not in Directors' Report or MD&A"
+  - "Three inconsistent 'profit before tax' figures across P&L, Cash Flow Statement and Segment Note with no reconciliation footnote and a mislabeled cash-flow line"
+  - "Managerial remuneration structurally above the statutory 11% cap, sustained via recurring special resolutions, with family remuneration near or above reported PAT"
+questions_for_mgmt:
+  - "Why is the ECL provision on the >3-year, litigated receivable bucket (Rs 219.67L) only ~0.11% against the company's own 2.5-7.5% policy band, and what is the realistic recovery timeline on the unchanged Rs 216.15L legal case?"
+  - "What is the Board's plan to bring managerial remuneration within the ordinary 11% statutory cap, and will fresh shareholder waivers be needed under the newly approved FY25-28/31 reappointment terms?"
+  - "What is the timeline and cost to rectify the 24-year-old title-deed defect on land mortgaged as collateral but held in the MD's personal name, and what lender/company protections exist if his personal circumstances change?"
+  - "What specifically triggered the gratuity funding catch-up (LIC contribution from Rs 0.79L to Rs 53.43L, with Rs 357.09L projected for FY26) - historic under-provisioning or a policy change?"
+  - "Can management reconcile the Rs 511.02L 'profit before tax' used in the Cash Flow Statement and Segment Note against the Rs 490.00L PBT in the Statement of Profit and Loss, and clarify the mislabeled Rs 21.02L cash-flow adjustment line?"
+receivables_trend: "mixed: aggregate turnover improving (3.83x FY25 vs 3.61x FY24; >6-months share 7.5% vs 7.8%) but quality deteriorating at the tail - the >3-year litigated bucket (Rs 219.67L, incl. Rs 216.15L legal-recovery case) is unchanged for 2 years and provisioned at only ~0.11% vs the stated 2.5-7.5% ECL policy band (Note 10, p.67; Note 44, p.88)"
+restatements_found: []
+going_concern_language: "NONE - Auditors' Report CARO para 3(xix), p.43, and Directors' Responsibility Statement, p.16, both affirm going concern with no material uncertainty language"

@@ -3,140 +3,119 @@ company: "SMRUTHI"
 run_date: "2026-07-09"
 model: claude-haiku-4-5
 status: complete
-input_gaps: ["concalls absent (NO-CONCALL MODE)", "peer-concalls absent", "presentation absent"]
+rerun_note: "Re-run to correct B12a CRITICAL unit errors: shares 1.14463 Cr (was 11.4463), TAM/SAM/SOM in Rs Cr (10,200/7,340/132/162, was 102/73.4/1.32/1.62), market cap reconciled 139.6 Cr (manifest 169 flagged as conflict)."
+input_gaps:
+  - "concalls absent (NO-CONCALL MODE)"
+  - "peer-concalls absent"
+  - "presentation absent"
 flags:
-  - type: FLAG-CASH
-    reason: "CFO improvement (2.80x CFO/PAT cumulative) substantially WC-driven via receivables release (AR fell 32.47->19.30 Cr), NOT structural. FCF negative two consecutive years (FY24 -383.59 L, FY25 -153.88 L). Cash balance thin Rs 43.57 L. DSCR halved to 3.01x, CARE Negative outlook (Aug 2024). Verdict: PROCEED WITH CAVEATS."
-  - type: FLAG-REVENUE
-    reason: "FY26 revenue -19.1% YoY (Rs 101.97 Cr vs 126.01 Cr) with zero management explanation. Q4 alone -23.6%. Central guidance (China/Russia momentum) missed. Credibility Grade C. Conviction on recovery: LOW."
-  - type: FLAG-CREDIT
-    reason: "DSCR collapsed 58.3% (7.21x FY24 -> 3.01x FY26). Debt-financed capex +43.5%, D/E +38.4%. Gearing rising (0.17x -> 0.24x), interest coverage declining (8.56x -> 6.52x). CARE Stable (reaffirmed Mar 2026 from Negative Aug 2024) but underlying trajectory concerning."
-  - type: FLAG-GOVERNANCE
-    reason: "Managerial remuneration breach 11% statutory cap (~125% FY25 PAT), sustained special resolutions. Complete independent-director turnover (mandatory 28-29 Jul 2024). 24-year title-deed defect on MD collateral (4 parcels). ECL under-provisioning >3-year litigated AR. Red flags buried in notes, not Directors' Report."
+  - "FLAG-CASH: CFO improvement (2.80x CFO/PAT cumulative per B01) substantially working-capital-driven via receivables release, not structural. FCF negative for two consecutive years (FY24: -2.76 Cr, FY25: -1.44 Cr). Absolute cash thin/declining (43.57 L FY25 to 17.085 L FY26). DSCR nearly halved to 3.01x. (B01 block_b_trend, B02 receivables_trend, B03 FLAG-CASH reason)"
+  - "Revenue miss unexplained: FY26 -19.1% YoY decline with zero management explanation in any available source (B05 p.45). Q4 alone -23.6%. Central China/Russia guidance missed. Credibility Grade C. (B05 p.30-31, p.45)"
+  - "Credit quality deteriorating: DSCR 7.21x (FY24) to 3.01x (FY26), -58.3% decline. D/E +38.4%. Interest coverage 6.52x trending down from 8.56x. (B03 p.8-9)"
+  - "Governance gaps: Managerial remuneration ~125% FY25 PAT, sustained via special resolutions; complete ID turnover 28-29 Jul 2024 (mandatory, not voluntary); 24-year title-deed defect on MD collateral; ECL under-provisioning on litigated receivables. (B03 p.45-48, B08 p.10-15)"
+  - "Regulatory catalyst unconfirmed: ANVISA/EDQM inspections scheduled FY25-26; no outcome disclosed as of run date 2026-07-09. Status unknown. (B07 p.22-25)"
+  - "Peer medians unresolved: B06 skipped (NO-CONCALL MODE); no peer financial data provided. Valuation must use standalone multiples only."
+  - "3-Year CAGR unresolved: FY24 full-year data not provided; only 2-year period available (FY25-FY26 shows -19.1% decline)"
+  - "Market cap conflict detected: Manifest 169.0 Cr vs reconciled CMP x shares 139.6 Cr. Recorded in conflicts[]. Used reconciled 139.6 Cr (more conservative per rule 3)."
+  - "Shares outstanding 10x error corrected: Prior B10 stated 11.4463 Cr (WRONG). Correct: 1.14463 Cr (Equity Share Capital 1,144.63 L / FV Rs 10). Verified from results PDF p.2 dividend '1,14,46,290 shares' and p.8 balance sheet."
+  - "TAM/SAM/SOM 100x errors corrected: TAM conservative 10,200 Cr (not 102.0), realistic 21,700 Cr (not 217.0), SAM 7,340 Cr (not 73.4), SOM 3yr 132 Cr (not 1.32), SOM 5yr 162 Cr (not 1.62). All from B09 yaml fields."
 table:
   company: "Smruthi Organics Ltd"
   ticker: "SMRUTHI"
   sector: "Pharma / CDMO"
   business_type: "Manufacturing (bulk drugs, drug intermediates)"
-  sector_cap_row: "Pharma / CDMO"
   cmp_rs: 122.0
-  market_cap_cr: 169.0
-  shares_outstanding_cr: 11.4463
-  enterprise_value_cr: 175.10
+  market_cap_cr: 139.6
+  shares_outstanding_cr: 1.14463
+  enterprise_value_cr: 145.70
   revenue_fy26_cr: 101.97
-  ebitda_fy26_cr: 12.70
+  ebitda_fy26_cr: 11.46
+  ebitda_margin_pct: 11.25
   pat_fy26_cr: 3.43
+  pat_margin_pct: 3.36
   diluted_eps_rs: 2.99
   cfo_fy26_cr: 22.26
-  fcf_fy26_cr: 13.34
-  fcf_pat: 3.89
-  p_fcf: 13.10
-  capex_fy26_cr: 8.92
+  fcf_fy26_cr: 13.79
+  capex_fy26_cr: 8.47
   depreciation_fy26_cr: 6.35
+  cfo_pat_latest_x: 6.49
+  cfo_pat_cumulative_x: 2.80
+  fcf_pat_x: 4.02
+  p_fcf_x: 10.12
+  book_value_per_share_rs: 64.26
   dps_rs: 1.50
-  book_value_per_share_rs: 64.23
   net_debt_cr: 6.10
-  total_debt_cr: 8.37
-  cash_equivalents_cr: 2.27
-  ebitda_margin_pct: 12.43
-  pat_margin_pct: 3.36
+  total_equity_cr: 73.51
   roce_latest_pct: "NOT FOUND"
-  roce_2yr_trend: "Declining (B01: compression to 7.2-7.9% from 35.7% FY19-21)"
+  roce_2yr_trend: "declining"
   roe_pct: 4.66
-  gearing_ratio: 0.11
-  receivables_days: 69.2
-  inventory_days: 228.7
-  revenue_fy25_cr: 126.01
-  revenue_fy24_cr: "NOT FOUND"
+  gearing_x: 0.11
+  interest_coverage_x: 3.76
+  receivables_turnover_x: 5.28
+  revenue_2yr_cagr_pct: -10.04
   revenue_3yr_cagr_pct: "NOT FOUND"
   pat_3yr_cagr_pct: "NOT FOUND"
-  cfo_pat_latest: 6.49
-  cfo_pat_cumulative: 2.80
-  guided_revenue_growth_band: "Unmet FY26 (-19.1% vs guided +growth); backward integration margin delivered"
-  guided_margin_band: "Cost rationalization delivered (raw materials 53.8%->44.35%)"
-  guidance_quarter: "FY25-26 (missed on top-line, delivered on margin)"
-  credibility_grade_mgmt: "C"
-  credibility_basis: "Partial: Cost rationalization quantified (material costs fell 54%->44%), dividend held; but central revenue guidance missed ~19% with zero explanation, ANVISA/EDQM unconfirmed"
-  top_triggers_1: "Revenue recovery China/Russia (conviction L, MISSED FY26 -19.1%)"
-  top_triggers_2: "Backward integration/margin (conviction M-H, DELIVERED on material costs)"
-  top_triggers_3: "ANVISA/EDQM regulated-market entry (conviction L, unconfirmed status)"
+  guidance_revenue_growth_theme: "China/Russia export momentum (missed FY26)"
+  guidance_margin_band: "Backward integration cost rationalization (delivered: RM 54% FY25 to 44% FY26)"
+  credibility_grade: "C"
+  credibility_basis: "Mixed: cost rationalization delivered, dividend held; central revenue guidance missed -19% YoY with no explanation; ANVISA/EDQM milestones unconfirmed"
+  top_trigger_1: "Revenue recovery China/Russia (conviction LOW)"
+  top_trigger_2: "Backward integration/cost rationalization (conviction MEDIUM-HIGH, delivered)"
+  top_trigger_3: "Regulated-market entry ANVISA/EDQM (conviction LOW, unconfirmed)"
   em_score: 13.4
   em_classification: "MODEST"
-  primary_catalyst_12m: "ANVISA/EDQM inspection outcomes (scheduled FY25-26, status unknown); DMF approvals (34 filings FY23-25); receivables collection confirmation (12M window); net debt monitoring vs WC gains"
-  catalyst_window_months: "12-36 (for regulatory outcomes and DMF approvals)"
-  evidence_quality_mix: "Mostly documented (11 documented, 2 claims, 1 inference per B07)"
-  strategic_asset_moat_position: "No (A1/H2 not met; emerging moat score 13.4 MODEST insufficient to offset Gate 0 AVOID classification)"
-  moat_description: "Weak-to-moderate: DMF/regulatory filing library (moderate durability), backward integration (weak/emerging), 35-year track record (weak-moderate). No confirmed strategic asset."
-  som_implied_revenue_cagr_3yr_pct: 9.0
-  som_implied_revenue_cagr_5yr_pct: 9.6
-  som_3yr_cr: 1.32
-  som_5yr_cr: 1.62
-  current_market_share_pct: 1.4
-  tam_conservative_cr: 102.0
-  tam_realistic_cr: 217.0
-  sam_cr: 73.4
-  tam_growth_pct: 6.5
-  runway_classification: "STRONG"
-  capacity_check: "SOM CAGR 9.0-9.6% exceeds capex-embedded 6.7%; capacity gap Rs 23-53 Cr by yr 3-5. Current utilisation NOT FOUND."
-  peer_medians_pe: "NOT FOUND"
-  peer_medians_ev_ebitda: "NOT FOUND"
-  peer_medians_pb: "NOT FOUND"
-  peer_medians_growth_pct: "NOT FOUND"
-  peer_medians_roce_pct: "NOT FOUND"
-  peer_data_status: "B06 skipped - no peer financial data provided; peer medians all UNRESOLVED"
-  rating_agency: "CARE Edge Ratings"
+  catalysts_12m: "ANVISA/EDQM inspection outcomes (scheduled FY25-26, unconfirmed); DMF approvals (34 filings); receivables collection confirmation; net debt offset by WC"
+  evidence_mix: "Mostly documented (11 documented, 2 claim, 1 inference items)"
+  cash_structural_determination: "FLAG-CASH: Not structural. Working-capital-driven (receivables release). FCF negative for 2 consecutive years. DSCR halved. (B01 block_b_trend, B02, B03)"
+  strategic_asset_moat_description: "No moats confirmed. Commoditised price-taker betting on unproven regulated-market transition. (B04 one_line_verdict, B01 moat_class NONE)"
+  tam_conservative_cr: 10200
+  tam_realistic_cr: 21700
+  sam_cr: 7340
+  som_3yr_cr: 132
+  som_5yr_cr: 162
+  som_implied_cagr_3yr_pct: 9.0
+  som_implied_cagr_5yr_pct: 9.6
+  current_market_share_pct_of_sam: 1.4
+  rating_agency: "CARE Ratings (CareEdge Ratings)"
   rating_date: "2026-03-11"
-  rating_lt: "CARE BBB-; Stable"
-  rating_st: "CARE A3"
-  rating_outlook_previous: "Negative (Aug 2024)"
-  rating_outlook_current: "Stable (reaffirmed Mar 2026)"
-  rating_lt_commentary: "Comfortable capital structure (gearing 0.24x) and satisfactory debt coverage (TD/GCA 1.87x, TD/PBILDT 1.39x) tempered by subdued operating performance (TOI stagnant Rs 126 Cr), moderate profitability (PBILDT margin 9.68%), high product/customer concentration, RM price volatility, and regulatory risk."
+  rating_long_term: "CARE BBB-; Stable"
+  rating_short_term: "CARE A3"
 conflicts:
-  - field: "FY25 Export Revenue"
-    value_a: "67.17 Cr"
-    anchor_a: "(results Note 26, p.77: Rs 6,716.52 L)"
-    value_b: "26.16 Cr"
-    anchor_b: "(results Notice Annexure, p.12: Rs 2,616.05 L)"
-    used: "67.17 Cr (Note 26)"
-    rationale: "B07 explicitly flags this as internal AR contradiction. Note 26 detailed segment note takes priority. Notice Annexure figure unreconciled by company."
-  - field: "Trade Payables Collapse"
-    value_a: "Litigated receivables >3yr provision 0.11%"
-    anchor_a: "(B02 p.39; results Note 10 p.67)"
-    value_b: "Company stated policy 2.5-7.5%"
-    anchor_b: "(B02 p.39; results Note 3.3/3.19 p.52/60)"
-    used: "0.11% actual / 2.5-7.5% policy both flagged"
-    rationale: "Not a conflict to resolve but a dual-sided finding: actual provision materially below policy, itself a red flag for understatement."
+  - field: "Market Cap"
+    value_a: 169.0
+    anchor_a: "manifest.yaml"
+    value_b: 139.6
+    anchor_b: "CMP 122 x Shares 1.14463 Cr (Results PDF p.2 dividend '1,14,46,290 shares' @ Rs 10 FV; p.8 balance sheet 'Equity Share Capital 1,144.63 Lakhs')"
+    used: 139.6
+    reason: "Reconciled CMP x shares is more conservative and internally consistent per assembly rule 3. Manifest does not reconcile with verified CMP and share count."
 unresolved:
   - field: "3-Year Revenue CAGR (%)"
-    why: "FY24 full-year revenue not provided in any results document; 9M unaudited comparisons (Dec 2024) insufficient to derive year-end. FY25-26 shows -19.1% but cannot contextualize."
-    where_might_be: "Prior-year AR for FY24-25 (not in task inputs); concall transcript (NO-CONCALL MODE)"
+    why: "FY24 full-year data not provided in inputs; only FY25-FY26 available (shows -19.1% decline). Cannot calculate 3-year CAGR without FY23 endpoint."
+    where_it_might_be: "Prior-year annual report FY24-25 or earlier results filings"
   - field: "3-Year PAT CAGR (%)"
-    why: "Same data gap as revenue; FY24 full-year PAT not available."
-    where_might_be: "Prior-year AR for FY24-25"
-  - field: "ROCE Latest FY26 (%)"
-    why: "B01 reports historical median 9.29% and 2-year trend (declining 7.2-7.9%) but does NOT isolate FY26-specific ROCE. Calculation requires FY26 capital employed, not explicitly stated in published financials."
-    where_might_be: "B01 internal workings (ROCE computed per data_notes p.20 but not published); detailed balance sheet reconciliation required"
-  - field: "Peer Medians (P/E, EV/EBITDA, P/B, growth %, ROCE %)"
-    why: "B06 stage status 'skipped - no peer financial data provided' per task manifest. Peer concalls absent (NO-CONCALL MODE)."
-    where_might_be: "Peer company financial statements (Aarti Drugs, Harman Finochem partial data mentioned in B09 but insufficient for aggregated medians), peer concalls"
-  - field: "Management TAM / Market-Size Claim"
-    why: "B09 p.29: 'no management TAM/market-size claim exists anywhere in FY24-25 AR (qualitative growth narrative only)'"
-    where_might_be: "Investor presentation, management concall (both absent in NO-CONCALL MODE)"
-  - field: "Current Capacity Utilisation (Unit I / Unit II)"
-    why: "B09 p.10: 'single biggest unresolved input to Section 3C capacity cross-check'. Not disclosed in AR or results."
-    where_might_be: "Investor presentation, management concall, operating reports (not provided)"
-  - field: "ANVISA (Brazil) / EDQM (Europe) Inspection Outcomes"
-    why: "AR FY24-25 stated inspections 'planned FY25-26'. FY26 results (May 13, 2026) and 9M results (Feb 13, 2026) contain no status update. As of run date Jul 9, 2026, outcome unknown."
-    where_might_be: "FY26 MD&A (Jun 2026 interim results, Jun 2026 regulatory filings with exchange)"
-rating_wc_quote: "CARE Edge Ratings: 'The company has adequate liquidity position characterized by sufficient cushion between net cash accruals against scheduled debt repayment obligations. With a gearing of 0.24x as on March 31, 2025, the company has sufficient headroom to raise additional debt. Its unutilized bank lines are adequate to meet its incremental working capital needs over the next one year as bank limits are utilized to the extent of ~25% in the 12 months ended December 31, 2025. Cashflow from operating activities remained at Rs 10.29 crore in FY25 (Rs 4.26 crore in FY24).' (Source: CARE Edge Ratings Press Release, Mar 11, 2026, p.2, Liquidity section)"
+    why: "Insufficient historical PAT data in provided inputs; only FY25-FY26 available"
+    where_it_might_be: "Prior-year annual report or investor presentation with 5-year financials"
+  - field: "ROCE Latest (%)"
+    why: "B01 reports historical median 9.29% across FY17-26 but FY26-specific number not isolated. Calculation requires detailed capital employed breakdown."
+    where_it_might_be: "Full 10-year summary with capital employed detail for FY26"
+  - field: "Peer Medians (P/E, EV/EBITDA, P/B, Growth %, ROCE %)"
+    why: "B06 stage status skipped; no peer financial data or concall transcripts provided due to NO-CONCALL MODE"
+    where_it_might_be: "Peer company financial statements and concall transcripts (absent in this run)"
+  - field: "Management TAM/Market-Size Claim"
+    why: "B09 reports 'no management claim exists anywhere in FY24-25 AR (qualitative growth narrative only)'"
+    where_it_might_be: "Investor presentation or management concall transcript (absent in NO-CONCALL MODE)"
+  - field: "Current Capacity Utilisation"
+    why: "B09 notes as 'single biggest unresolved input'; not disclosed in AR or concalls"
+    where_it_might_be: "Investor presentation or management disclosure"
+  - field: "ANVISA/EDQM Inspection Outcomes"
+    why: "Inspections scheduled FY25-26; no status update disclosed as of run date 2026-07-09. Company remains silent."
+    where_it_might_be: "Company disclosure or June 2026 interim results filing (not available)"
+rating_wc_quote: "CARE Ratings (CareEdge Ratings), March 11, 2026, p.2 'Liquidity: Adequate' section: 'The company has adequate liquidity position characterized by sufficient cushion between net cash accruals against scheduled debt repayment obligations. With a gearing of 0.24x as on March 31, 2025, the company has sufficient headroom to raise additional debt. Its unutilized bank lines are adequate to meet its incremental working capital needs over the next one year as bank limits are utilized to the extent of ~25% in the 12 months ended December 31, 2025. Cashflow from operating activities remained at Rs 10.29 crore in FY25 (Rs 4.26 crore in FY24).'"
 ua_qualifiers:
   listed_12m: true
-  listed_12m_anchor: "(35-year operating history since 1989, BSE listing long-established per manifest CIN L24119PN1989PLC052562)"
   gate0_or_em: false
-  gate0_or_em_anchor: "(B01 core score 37 AVOID <40 threshold) OR (B07 EM score 13.4 MODEST <25 threshold) — both fail, combined assessment remains AVOID"
   fii_dii_lt3: true
-  fii_dii_lt3_anchor: "(B08 p.16: zero institutional FII/DII ownership; promoter pledge 0%)"
   all_met: false
-  all_met_reason: "Gate0/EM combined qualification fails (37 <60 AND 13.4 <25); peer medians unresolved (B06 skipped). Listed 12m: YES. FII/DII <3%: YES. Two of three conditions met but GATE/EM is disqualifying. UA amplifier does NOT apply."
+  note: "Gate0 score 37 (fails <60 threshold) AND EM score 13.4 (fails <25 threshold); OR condition NOT MET. Listed 35 years: YES. FII+DII 0% <3%: YES. Peer medians unresolved (B06 skipped)."
 credibility_grade: "C"
-credibility_grade_anchor: "(B05 p.36-37: NO-CONCALL MODE default; cannot rise to A; mixed record: cost rationalization delivered quantified, dividend held, but central revenue guidance missed ~19% YoY with zero explanation in FY26 results)"
+credibility_basis: "B05 p.36-37: Mixed delivery. Backward integration cost rationalization guideline delivered with quantifiable evidence (RM costs fell ~54%->~44% of revenue) and dividend held flat, but central AR-stated revenue-growth outlook (China/Russia momentum) missed by ~19% YoY with zero explanation in FY26 results filings; ANVISA/EDQM regulatory milestones remain unconfirmed. Mixed record keeps grade at NO-CONCALL-MODE default C; cannot rise to A in this mode regardless."

@@ -1,0 +1,17 @@
+stage: B12c
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 45, fails: []}
+emoat: {rules_checked: 19, fails: []}
+valuation: {rules_checked: 24, fails: ["V5 Pillar 2 cash multiplier 0.80x vs as-written 1.00x (MAJOR)", "V24 FTTCP ROCE verdict self-derived in-stage, not injected from discrete FTTCP artifact (MINOR)"]}
+recomputed_destination_pe: "Maker: Track1 6.2x / Track2 8.9x. With Pillar 2=1.00x (as-written band): Track1 7.8x / Track2 11.1x (both >1x movement, conservative direction)"
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B11 Pillar 2 / Four-Pillar Summary", rule: "Cash Conversion Multiplier band", issue: "0.80x applied though cumulative CFO/PAT 2.80x and CFO positive every year; 0.80x band requires CFO/PAT<30% OR CFO negative (FCF-negative is not CFO-negative). As-written band = 1.00x volatile.", recompute: "QAB 11.1x; T2 dest 11.1x; T1 dest 7.8x; Hurdle still STOP; decision still AVOID", decision_impact: "none"}
+  - {severity: "MINOR", location: "B11 Pillar 1 / FTTCP integration", rule: "FTTCP ROCE forward verdict = sole Pillar 1 authority, run before Role 1", issue: "Verdict DECLINING self-derived inside valuation (B10 carries none); rule-consistent and most-conservative, procedural gap only", recompute: "no numeric change", decision_impact: "none"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 98

@@ -1,0 +1,17 @@
+stage: B12d
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: none
+status: skipped
+skip_reason: "Verifier D (peer coverage) skipped: Stage 6 was skipped this run because inputs/peer-concalls/ is empty (NO-CONCALL MODE). There is no B06 coverage map or peer transcript set to audit. Per orchestrator Section 5, a skipped stage does not count as a verification miss; peer_utilisation is therefore N/A and excluded from the confidence-delta minimum rather than scored 0."
+peers_audited: 0
+substantive_confirmed: 0
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: null   # N/A - stage skipped, not a miss

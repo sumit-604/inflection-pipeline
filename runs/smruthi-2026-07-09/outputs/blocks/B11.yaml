@@ -1,0 +1,47 @@
+stage: B11-valuation
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+input_gaps: ["concalls absent (NO-CONCALL MODE)", "peer-concalls absent", "presentation absent"]
+flags:
+  - "FLAG-CASH: cash multiplier applied 0.80x (volatile/non-structural per B10; INDETERMINATE band resolved conservatively; no growth offset, revenue declining)"
+  - "FLAG-DATA: B10 share-count/market-cap 10x units inconsistency (11.4463 Cr vs reconciled 1.1446 Cr, book-value-confirmed); per-share math run off CMP 122 and EPS 2.99"
+  - "FLAG-REVENUE / FLAG-CREDIT / FLAG-GOVERNANCE propagated from B10; reinforce AVOID"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 5.5, mid: 6.2, high: 6.5, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 8.0, mid: 8.9, high: 9.5}
+  divergence_pct: 30.3
+  governing_track: "Track 1 RRM - more conservative; governance CONCERN and weak durability best expressed via discount rate; sets entry zone"
+pillar_detail:
+  roce_used: 7.2
+  roce_base: 11.1
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.80
+  structural_or_growth: "volatile/non-structural (FLAG-CASH); INDETERMINATE band -> conservative 0.80x"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 38
+hurdle_ratio: {base: 0.18, bull_used: false, verdict: "STOP"}
+fair_values:
+  track1: {bear: 17, base: 33, bull: 52}
+  track2: {bear: 28, base: 51, bull: 77}
+expected_cagr_prob_weighted: -37.7
+entry_range: {low: 13.5, high: 16.9}
+mos_price: 13.5
+upside_downside_ratio: 0.0
+decision: "AVOID (on valuation) - CMP Rs 122 is ~4x base fair value; every scenario both tracks negative 3yr CAGR; HR STOP"
+unresolved_inputs_used:
+  - "ROCE latest FY26 -> 7.2% (low bound of declining 7.2-7.9% band; conservative-lower-bound + DECLINING verdict)"
+  - "3yr revenue CAGR -> not relied on; base 5% anchored below SOM 9.0% ceiling (FY24 revenue unavailable)"
+  - "3yr PAT CAGR -> not relied on; PAT built bottom-up from revenue x margin"
+  - "Peer medians (all) -> no relative uplift; exit multiples from Section 1B only (B06 skipped)"
+  - "Capacity utilisation -> non-constraining; base 5% CAGR < 6.7% capex-embedded capacity"
+  - "FTTCP ROCE forward verdict (absent in B10) -> derived DECLINING, biased down per FTTCP rule 12"
+  - "Forward net debt/interest/depreciation -> conservative upward drift (net debt 6->12 Cr) for debt-financed capex"
+som_cagr_crosscheck: "consistent - base revenue CAGR 5% below SOM-implied 9.0% (3yr) / 9.6% (5yr)"
+one_line_thesis: "Avoiding Smruthi Organics at Rs 122 because EPS grows only from Rs 2.99 to ~Rs 3.56 over 3 years (base +6% CAGR) at a four-pillar destination PE of 6-9x (ROCE ~7%, cash 0.80x non-structural, EM 13.4, sector cap 38x) = Rs 33-51 target = -35% to -25% CAGR; stock trades at 40.8x vs a 6-9x earned multiple. Key risk: unexplained -19% revenue decline and governance CONCERN. Cash quality: WC-driven, NOT structural."

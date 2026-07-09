@@ -1,438 +1,331 @@
-# STAGE 11 — ROLE 1 MULTI-MODAL VALUATION
-
-## Smruthi Organics Ltd (SMRUTHI) | Run Date: 2026-07-09 | Model: Opus 4.8
-
-Framework authority: Master Project Prompt v3.3 / Section 1B v3.3 Amendments / FTTCP v1.2 Consolidated.
-Sole input source: B10 (blocks/B10.yaml + reports/10-assembly.md). No number pulled from general knowledge.
-Pipeline mode: all sections executed in one pass; interim STOP/GO checkpoints written then continued. Conservative bias throughout.
+# STAGE 11 — ROLE 1 MULTI-MODAL VALUATION (RE-RUN on corrected B10)
+## Smruthi Organics Ltd (SMRUTHI) | Run Date 2026-07-09 | Model: Opus 4.8
+**Framework authority: Master Project Prompt v3.3 / Section 1B v3.3 Amendments / FTTCP v1.2. Where wrapper and framework conflict, framework wins. Section 1B is sole exit-multiple authority. Conservative bias throughout. All inputs from corrected B10 only.**
 
 ---
 
-## PRE-FLIGHT DATA INTEGRITY NOTE (carried as a flag)
+## 0. INPUT DISCIPLINE LEDGER (unresolved fields → conservative fills, no silent fills)
 
-B10 carries an internal inconsistency in the share/market-cap block that MUST be reconciled before any per-share math:
+| # | Field | B10 status | Conservative assumption used | Rule / anchor |
+|---|-------|-----------|------------------------------|---------------|
+| 1 | ROCE latest (%) | NOT FOUND (B01 median 9.29% FY17-26; FY23-26 compressed to 7.2-7.9%) | **7.2%** (lower bound of the recent compression band) | Master conservative-assumption rule; B10 roce_2yr_trend "declining", B01 "FY23-FY26 compression to 7.2-7.9%" |
+| 2 | FTTCP ROCE forward verdict | Not carried in B10 (NO-CONCALL MODE; FTTCP could not be robustly run) | **DECLINING** → Pillar 1 uses FY[Y+1] lower-bound ROCE, no recovery credit | FTTCP v1.2 "when in doubt, DECLINING"; ROCE trend declining, no confirmed forward catalyst (ANVISA/EDQM unconfirmed, revenue missed -19%) |
+| 3 | 3-Year Revenue CAGR / PAT CAGR | NOT FOUND (only FY24-26 2-yr available) | 2-yr revenue CAGR **-10.04%** used as trend proxy to anchor Bear | B10 revenue_2yr_cagr_pct |
+| 4 | Peer medians (P/E, EV/EBITDA, P/B, growth, ROCE) | Unresolved (B06 skipped) | Standalone multiples only; **no peer cross-check credited** | B10 unresolved; NO-CONCALL MODE |
+| 5 | Current capacity utilisation | Unresolved ("single biggest unresolved input") | Base revenue CAGR held **below** SOM-implied 9.0% and below capex-embedded 6.7% capacity | B09 capacity-SOM gap |
+| 6 | ANVISA/EDQM inspection outcomes | Unresolved (no update as of run date) | **No regulatory catalyst credited** (moot: EM 13.4 < 25 → Pillar 3 = +0x anyway) | B07 p.22-25 |
 
-| Field (B10) | Stated | Cross-check | Conclusion |
-|---|---|---|---|
-| shares_outstanding_cr | 11.4463 | PAT 3.43 Cr / EPS 2.99 = 1.147 Cr; Equity 73.51 Cr / BVPS 64.23 = 1.1445 Cr | Share count is ~1.1446 Cr (114.46 lakh); the "11.4463 Cr / 1,144.63 lakh" figure is a 10x units error |
-| market_cap_cr | 169.0 | 1.1446 Cr x Rs 122 = Rs 139.6 Cr | Stated mcap 169 not reconcilable with CMP x reconciled shares; treated as secondary |
-| cmp_rs | 122.0 | given | RELIABLE anchor |
-| diluted_eps_rs | 2.99 | given, matches PAT/reconciled-shares | RELIABLE anchor |
-
-Decision: all valuation runs off the two internally-consistent per-share anchors CMP Rs 122 and diluted EPS Rs 2.99 (Current PE = 122 / 2.99 = **40.80x**), and uses 1.1446 Cr shares for Cr-to-per-share conversions (confirmed by the book-value cross-check). The market-cap discrepancy does not affect per-share fair value. Flagged as FLAG-DATA for the verifier.
-
----
-
-# SECTION 1A — METHOD SELECTION & JUSTIFICATION
-
-Business type (B04): capital-heavy manufacturing — bulk drugs, drug intermediates, formulations. This is a manufacturer, NOT a lender. No lender carve-out (Pillar 2L / ROE-Pillar-1 / P/B-primary / 18x cap does NOT apply).
-
-### Method Suitability
-
-| Method | Suitable Here? | Rationale |
-|---|---|---|
-| EV/EBITDA | YES — PRIMARY | Capital-intensive manufacturing with rising leverage (net debt 6.10 Cr, D/E rising 0.17->0.24x per CARE); depreciation large relative to PAT (dep 6.35 vs PAT 3.43); EV/EBITDA neutralises capital-structure and D&A distortion. Per B04 primary method. |
-| P/E | YES — SECONDARY | Profitable (PAT 3.43 Cr) with clean-ish earnings, but thin margin (3.36%) and one-off receivables release make PAT lower-quality; secondary cross-check per B04. |
-| P/B | NO | Manufacturer, not a lender; book value does not anchor value here. No lender carve-out. Explicitly excluded per pipeline instruction. |
-| DCF | NO (support only) | Structural cash uncertainty (FLAG-CASH), negative FCF two of three years, revenue just fell -19.1% with no explanation; forward FCF too unreliable for a primary DCF. Used only as a directional sanity read, not weighted. |
-| EV/Sales, EV/Capacity, NAV, SOTP, sector-specific | NO | Not a commodity-capacity, holdco, or early-stage revenue story. Peer medians all NOT FOUND (B06 skipped), so relative EV/Sales cannot be benchmarked. |
-
-### Final Method Selection
-
-| Role | Method | Weight | Justification |
-|---|---|---|---|
-| PRIMARY | EV/EBITDA | 60% | B04 primary; best for capital-heavy manufacturer with rising leverage and heavy D&A |
-| SECONDARY | P/E | 40% | B04 secondary; four-pillar destination PE anchors the exit multiple |
-| — | (DCF directional only) | 0% | FLAG-CASH + negative FCF history make forward FCF unreliable |
-| | | 100% | |
-
-**INPUT UNRESOLVED: Peer Medians (P/E, EV/EBITDA, P/B, growth, ROCE). Conservative assumption used: no peer relative uplift applied; exit multiples derived purely from Section 1B four-pillar, because framework requires Section 1B as sole exit-multiple authority and B06 was skipped (no peer data).**
+INPUT UNRESOLVED lines are restated in-section at first use.
 
 ---
 
-# SECTION 1B — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3 (DUAL TRACK)
+## SECTION 1A — METHOD SELECTION & JUSTIFICATION
+
+Business type (B04): capital-employing manufacturer of bulk drugs / drug intermediates. Commoditised price-taker, no lender carve-out (not a financial), no BOO/annuity component. Heavy depreciation+interest load (D&A 6.35 + interest 1.68 = 8.03 Cr consumes ~70% of EBITDA 11.46 Cr), so PAT is thin relative to EBITDA — capital structure matters, which favours an EV method as primary.
+
+| Method | Suitable here? | Weight | Justification |
+|--------|----------------|--------|---------------|
+| **EV/EBITDA (PRIMARY)** | Yes | **60%** | Capital-intensive manufacturer; neutralises leverage and the large D&A load; B04 designates it primary. |
+| **P/E (SECONDARY)** | Yes, with caution | **40%** | Profitable (thin) earnings; captures equity holder's residual after the heavy D&A+interest. Held secondary because a single depressed FY26 PAT distorts it — but conservatively material. |
+| P/B | **No** | 0% | Manufacturer, not a lender; book value (Rs 64.26) does not capture value here and no lender carve-out applies (Section 1B Pillar 2L not invoked). |
+| PEG | No | 0% | Growth negative/erratic (-19% FY26); PEG undefined. |
+| EV/Sales | No | 0% | Mature, margin-volatile; misleads. |
+| DCF | No (cross-ref only) | 0% | FCF negative 2 of last 3 years, revenue declining, credibility C — terminal value would dominate and be unreliable. Not run as a weighted method; qualitative note only. |
+| EV/Capacity | No | 0% | Capacity utilisation unresolved; cannot anchor. |
+
+**Final selection: EV/EBITDA 60% (primary) + P/E 40% (secondary) = 100%.** P/B not applicable (manufacturer, no lender carve-out) per task discipline.
+
+---
+
+## SECTION 1B — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3
 
 ### Pillar 1 — ROCE Base Multiple (continuous formula)
 
-FTTCP ROCE forward verdict: B10 does not carry an explicit FTTCP verdict field. Deriving conservatively from the evidence in B10 (this is a first-workup; verdict must be inferred from the transition data, biased down per FTTCP rule 12):
+INPUT UNRESOLVED: ROCE Latest. Conservative assumption used: **7.2%**, because B10 marks FY26 ROCE NOT FOUND and B01 places the recent (FY23-26) band at 7.2-7.9% on a declining trend; the lower bound is the conservative fill.
 
-- Backward ROCE: compressed from 35.7% (FY19-21) to 7.2-7.9% (FY23-FY26) — i.e., **STRUCTURALLY LOW** (below 15% asset-heavy, sustained 3+ years).
-- "If growth stopped tomorrow, would ROCE recover to historical levels within 18-24 months?" NO — revenue is DECLINING (-19.1% FY26), regulatory catalysts (ANVISA/EDQM) unconfirmed, no identifiable temporary bloat unwind driving recovery. Bias toward DECLINING when in doubt.
-- **Forward ROCE verdict adopted: DECLINING (conservative). Mapping -> Pillar 1 uses FY[Y+1] expected ROCE (lower bound).**
+INPUT UNRESOLVED: FTTCP ROCE forward verdict (not carried by B10 in NO-CONCALL MODE). Conservative assumption used: **DECLINING**, because the ROCE trend is declining, no forward catalyst is confirmed (regulated-market milestones unconfirmed, central revenue guidance missed -19%), and FTTCP v1.2 mandates "when in doubt, DECLINING." DECLINING → Pillar 1 uses FY[Y+1] lower-bound ROCE; that lower bound is not separately disclosed, so the conservative documented floor 7.2% is used with **no recovery uplift**.
 
-**INPUT UNRESOLVED: ROCE Latest FY26 (%). Conservative assumption used: 7.2%, because B10 gives only historical median 9.29% and a declining 2-yr band of 7.2-7.9% (roce_2yr_trend); conservative bias takes the lower bound of the recent band, and the DECLINING verdict directs use of the lower-bound figure. No forward decline estimate exists, so 7.2% is held (this does NOT credit any recovery).**
+- ROCE (used for base): **7.2%**
+- Formula (ROCE ≤ 33%): Base PE = 0.5 × 7.2 + 7.5 = 3.6 + 7.5 = **11.1x** (floor 9x not binding; 11.1 > 9)
+- **ROCE recovery credited via: NOT CREDITED** (DECLINING verdict; no midpoint smoothing, no strategic re-rating optionality). Single-credit rule satisfied trivially.
 
-ROCE Base PE = 0.5 x ROCE + 7.5, floored 9x, capped 24x.
-= 0.5 x 7.2 + 7.5 = 3.6 + 7.5 = **11.1x** (above the 9x floor).
+### Pillar 2 — Cash Conversion Multiplier
 
-**ROCE recovery credited via: NOT CREDITED** (verdict DECLINING; no forward uplift entered Pillar 1; single-credit rule leaves the Strategic Premium ROCE-optionality route also unused — see Pillar 4).
+B10 determination (verbatim, do not re-litigate): **FLAG-CASH — "Not structural. Working-capital-driven (receivables release). FCF negative for 2 consecutive years. DSCR halved."** Rating agency (CARE, 11-Mar-2026) calls liquidity "Adequate" and does NOT classify WC as structurally negative — so the 0.65x structural band is ruled out by the framework's own evidence gate.
 
-### Pillar 2 — Cash Conversion Multiplier (standard business)
+Band determination (show the band and why):
+- Cumulative CFO/PAT = **2.80x** (280%); Latest FY CFO/PAT = 6.49x; FCF: FY26 +13.79 Cr but **FY24 -2.76, FY25 -1.44 (negative 2 of 3 years)**; CFO positive every year (B10).
+- The 1.30x / 1.15x elite bands both **require FCF positive** — not met (FCF negative 2 of 3 years, and FY26 CFO is a one-time receivables-release spike in a -19% revenue year, not sustained). RULED OUT.
+- The 0.80x band triggers on "CFO/PAT below 30% **or CFO negative**" — neither holds (CFO/PAT high, CFO positive every year). RULED OUT. (Verifier C confirmation: FCF-negative is NOT CFO-negative.)
+- The 0.65x structural band requires rating-agency-confirmed persistent WC — CARE says liquidity Adequate. RULED OUT.
+- **Remaining as-written fit: "CFO/PAT 30-50% OR volatile (some good years, some bad) → 1.00x."** The FY24/25 negative-FCF then FY26 receivables-spike pattern is textbook *volatile*. **Band applied: 1.00x (Neutral, volatile).** This is the band the framework actually prescribes for this determination (not INDETERMINATE); it also matches Verifier C's strict-as-written read.
+- Structural or growth-induced? Not structural (B10) — but also **not classic growth-induced** (revenue is *declining* -19%, no capacity-building drag to offset). Growth Offset therefore **N/A / +0** (the offset only modifies the 0.80x growth-induced band, which was not assigned; and revenue CAGR is not positive-growth-induced).
+- **Effective Cash Multiplier = 1.00x. Growth offset = +0.**
 
-- Cumulative CFO/PAT (B01): 2.80x | Latest FY26 CFO/PAT: 6.49x | FY26 FCF: +13.34 Cr (positive) BUT FCF negative FY24 (-3.84 Cr) and FY25 (-1.54 Cr).
-- Structural vs growth-induced (per B10 FLAG-CASH determination, NOT re-litigated): FLAG-CASH states the FY26 cash strength is "substantially WC-driven via receivables release (AR fell 32.47 -> 19.30 Cr), NOT structural." Revenue is DECLINING, so any underlying drag is NOT growth-induced (no capacity build to offset).
-- Rating agency (CARE, verbatim in B10.rating_wc_quote): benign — "adequate liquidity... sufficient headroom to raise additional debt... unutilised bank lines adequate." CARE does NOT confirm a persistent structural WC leak. Therefore the 0.65x "rating-agency-confirmed structural" band is NOT supported.
-- Band placement is INDETERMINATE between 1.00x (volatile/inconsistent: negative FCF FY24-25, strongly positive FY26) and 0.80x (CFO/FCF negative in recent years). Per pipeline rule, when INDETERMINATE use the more conservative multiplier and say so -> **0.80x**.
-- Growth Offset: NONE. The drag is not growth-induced (revenue declining -19.1%); offset applies only to growth-induced drag. Offset = +0.
+Destination-PE effect stated both ways (as instructed):
+- **Applied (1.00x, volatile band): Quality-Adjusted Base = 11.1 × 1.00 = 11.1x → Final Destination PE 11.1x.**
+- Alternative (if judged 0.80x on extra conservatism): 11.1 × 0.80 = 8.88x → Final Destination PE ≈ 8.9x (range 8.0-9.5x).
+- Either way the destination PE (8.9-11.1x) sits **far below the current PE of 40.8x**, so the Hurdle verdict (below) is invariant to this choice. I apply **1.00x** because it is the band whose triggers actually hold; the 0.80x alternative is shown for transparency, not applied.
 
-Effective Cash Multiplier = **0.80x** (no offset).
-
-**Quality-Adjusted Base = Pillar 1 x Cash Mult = 11.1x x 0.80x = 8.88x.**
+**Quality-Adjusted Base (C) = 11.1x.**
 
 ### Pillar 3 — Growth Visibility Premium
 
-- Emerging Moat Score (B07): 13.4 / 100 (MODEST). Catalyst proximity: 12-36 months (ANVISA/EDQM unconfirmed, DMF approvals). Evidence: mostly documented.
-- EM below 25 -> **+0x** (table: "EM below 25 -> +0x"). Catalyst proximity/evidence are moot below the 25 threshold.
+- Emerging Moat Score = **13.4** (B10) | Classification MODEST | Catalyst proximity: ANVISA/EDQM 12m but unconfirmed | Evidence: mostly documented.
+- Table: **EM below 25 → +0x.** No premium regardless of catalyst timing.
+- **Growth Visibility Premium (D) = +0x. Shared catalyst? No.**
 
-Growth Visibility Premium = **+0x**. Shared catalyst? NO (nothing credited in Pillar 1; no premium here).
+### Strategic Asset Premium
 
-### Pillar 4 — Strategic Asset Premium
+- B10: "No moats confirmed. Commoditised price-taker betting on unproven regulated-market transition." No rare licence, no franchise pricing power, no institutional-backed turnaround. ROCE re-rating optionality NOT available (recovery not credited anywhere; verdict DECLINING).
+- **Strategic Premium (E) = +0x.** Single-credit rule respected (nothing double-credited).
 
-- strategic_asset_moat_position (B10): "No" (A1/H2 not met; EM 13.4 insufficient to offset Gate 0 AVOID). No rare licence/monopoly, no documented pricing power.
-- ROCE re-rating optionality: single-credit rule — ROCE recovery was NOT credited in Pillar 1, but the FTTCP verdict is DECLINING (not STAGNANT/FIRING with genuine archetype-supported re-rating optionality). No credible recovery to credit. Strategic ROCE optionality = +0x.
+### Undiscovered Alpha Multiplier
 
-Strategic Premium = **+0x**.
-
-### Undiscovered Alpha (F2 UA row)
-
-UA qualifiers (B10.ua_qualifiers): listed >=12m TRUE; FII+DII <3% TRUE (zero institutional); **Gate0>=60 OR EM>=25 FALSE** (Gate 0 = 37 <60 AND EM = 13.4 <25). all_met = **FALSE**.
-
-**UA multiplier NOT applied.** Per Amendment 3, all three qualifiers must hold; the Gate0/EM qualifier is disqualifying. F2 = F (no 1.25x). This is not a risk flag — it is simply an un-met qualifier (low institutional ownership is never treated as a risk per CLAUDE.md).
+- UA qualifiers (B10 ua_qualifiers): listed ≥12m TRUE; Gate0 ≥60 OR EM ≥25 **FALSE** (Gate0 37, EM 13.4); FII+DII <3% TRUE. **all_met = FALSE.**
+- **UA NOT APPLIED.** F2 = F (no 1.25x). Sector-cap quality-uplift also not available (requires UA trigger + Moderate-Strong durability; neither holds).
 
 ### Sector Reality Cap
 
-Sector cap row (manifest/B10): **Pharma / CDMO = 38x**. Quality uplift NOT available (UA not triggered; durability weak-to-moderate, not Moderate-Strong-with-evidence). Cap = 38x absolute.
+- Sector row (B10 / manifest): **Pharma / CDMO → 38x.** Absolute. No quality uplift (UA not triggered).
 
-### Four-Pillar Summary (TRACK 2 — ADDITIVE)
+### Four-Pillar Summary (Track 2 — Additive)
 
 | Step | Calculation | Value |
-|---|---|---|
-| A. ROCE Base | ROCE 7.2% -> 0.5x7.2+7.5 | 11.1x |
-| B. Cash Multiplier (effective) | 0.80x + 0 offset | 0.80x |
-| C. Quality-Adjusted Base | A x B = 11.1 x 0.80 | 8.88x |
+|------|-------------|-------|
+| A. ROCE Base | ROCE 7.2% → 0.5×7.2+7.5 | 11.1x |
+| B. Cash Multiplier (effective) | 1.00x (volatile band) + offset 0 | 1.00x |
+| C. Quality-Adjusted Base | A × B = 11.1 × 1.00 | 11.1x |
 | D. Growth Visibility Premium | EM 13.4 (<25) | +0x |
-| E. Strategic Premium | No strategic asset; ROCE not credited | +0x |
-| F. Raw Destination PE | C + D + E | 8.88x |
-| F2. UA-Adjusted Raw PE | UA all_met FALSE -> F x 1.00 | 8.88x |
-| G. Sector Cap | Pharma / CDMO | 38x |
-| **H. Final Destination PE** | **min(F2, G) = min(8.88, 38)** | **8.9x** |
+| E. Strategic Premium | no scarcity | +0x |
+| F. Raw Destination PE | C + D + E | **11.1x** |
+| F2. UA-Adjusted Raw PE | UA all_met FALSE → F unchanged | 11.1x |
+| G. Sector Cap | Pharma/CDMO | 38x |
+| **H. Final Destination PE** | **min(F2, G) = min(11.1, 38)** | **11.1x** |
 
-**Track 2 Destination PE Range: 8.9x +/-7.5% = 8.23 to 9.57 -> rounded nearest 0.5x = 8.0x to 9.5x (mid 8.9x).**
+**Destination PE Range (H ±7.5%): 11.1 × 0.925 = 10.27; 11.1 × 1.075 = 11.93 → rounded to nearest 0.5x = 10.5x to 12.0x. Mid 11.1x.**
 
-### RRM Dual-Track Derivation (TRACK 1 — RRM)
+### RRM Dual-Track Derivation
 
-- Fundamental Base PE = quality-adjusted base = 8.88x (cash quality is a fundamental adjustment, not an additive premium; growth/strategic premiums are zero here regardless).
-- Base r: small/micro-cap = 14%. Adjustments: governance CONCERN (B08 Promoter Verdict CONCERN; remuneration breach, title-deed defect, ECL under-provisioning) and weak durability push r UP; revenue decline adds risk. Adopt **r = 16%** (14% base + 2% governance/durability/revenue-risk). Bounded [9%,18%]: OK.
-- RRM = 1 + (13.5 - r) x 0.12 = 1 + (13.5 - 16) x 0.12 = 1 + (-2.5 x 0.12) = 1 - 0.30 = **0.70** (at the lower bound 0.70).
-- **Track 1 Destination PE = 8.88 x 0.70 = 6.22x -> 6.2x**, capped at 38x (no bind).
+- **Track 2 (Additive):** Destination PE mid **11.1x** (10.5-12.0x), as above.
+- **Track 1 (RRM):** Destination PE = Fundamental Base PE × RRM, capped at sector cap.
+  - Fundamental Base PE = Quality-Adjusted Base = 11.1x (Pillar 3 and Strategic are +0, so the additive spine equals the fundamental base here).
+  - Base r: small/micro-cap 14%. Adjustments: **+2%** governance CONCERN (remuneration ~125% of PAT via special resolutions; full ID turnover; 24-yr title-deed defect; ECL under-provisioning — B08); **+1%** weak durability (no confirmed moat, commoditised). **r = 17%** (within [9%,18%]).
+  - RRM = 1 + (13.5% − 17%) × 0.12 = 1 + (−0.035)(0.12) = 1 − 0.0042 = **0.996** (within bound 0.70-1.60).
+  - Track 1 Destination PE = 11.1 × 0.996 = **11.05x**, cap 38 → 11.05x. Range ±7.5% ≈ **10.5x to 11.9x**, mid 11.05x.
+- **Divergence: (11.1 − 11.05)/11.05 = 0.45% (<15%).** The tracks converge because both Pillar 3 and Strategic premiums are +0, leaving the RRM's small coefficient nothing to move against. **Governing track: Track 1 (RRM), marginally the more conservative (11.05x); the entry zone is set on it, but the two are numerically identical to within 1%.** Both are carried through every fair value and the verdict card below.
 
-Alternative reading (RRM on pure Pillar-1 base 11.1x -> 11.1 x 0.70 = 7.8x) still sits far below the current 40.8x PE and does not change the verdict; the more conservative 6.2x is carried.
+### Hurdle Ratio (25% CAGR feasibility) — sole STOP authority
 
-**Track 1 Destination PE Range: 6.2x +/-7.5% = 5.74 to 6.67 -> rounded nearest 0.5x = 5.5x to 6.5x (mid 6.2x).**
+- Current PE = CMP 122 / EPS 2.99 = **40.80x** (the crux: the market already prices ~41x for a 7% ROCE, no-moat, declining, governance-flagged bulk-drug maker).
+- Destination PE mid = 11.1x (Track 2) / 11.05x (Track 1). Use 11.1x → ratio 11.1/40.8 = 0.2721.
+- Base EPS CAGR = **10%** (derived in Section 2: revenue +5% + delivered cost-rationalisation margin recovery).
+- Bull EPS CAGR for the HR check: **credibility grade C → Bull capped at Base + 5% = 15%** (grade A/B bull not permitted).
 
-### Track divergence
+| Row | EPS CAGR | (1+g)³ | × 0.2721 | HR | vs 1.953 |
+|-----|----------|--------|----------|----|----------|
+| Base | 10% | 1.3310 | | **0.362** | FAIL |
+| Bull (capped, C) | 15% | 1.5209 | | **0.414** | FAIL |
 
-Track 2 mid 8.9x vs Track 1 mid 6.2x -> divergence = (8.9 - 6.2)/8.9 = **30.3%** (>15%).
-**Governing track = TRACK 1 (RRM), the more conservative.** It best fits this company: durability is weak and governance is a CONCERN, which the RRM expresses cleanly through a high discount rate. Track 1 sets the entry zone.
+**HR(Bull) 0.414 < 1.953 → STOP.** The stock fails the 25% hurdle at current price even on bull-case earnings — the 41x current PE cannot be sustained toward an earned 11x destination. Per pipeline override, all remaining sections are completed for the record; the verdict card reads **AVOID-on-valuation.**
 
-### Hurdle Ratio (Section 1B sanity check)
+Would I personally pay 40.8x for a 7.2% ROCE, no-moat, -19% revenue, governance-concern bulk-drug maker? **No.**
 
-Current PE = 122 / 2.99 = **40.80x**.
-Grade C (B10.credibility_grade): Bull EPS CAGR NOT permitted in HR; Bull row = Base EPS CAGR + 5% max.
-Base EPS CAGR = 6.0% (Section 2); HR-Bull = 6.0 + 5.0 = 11.0%.
-
-HR = (1 + EPS CAGR)^3 x (Destination PE mid / Current PE). Threshold 1.953.
-
-Governing Track 1 (mid 6.2x):
-- HR(Base 6%) = (1.06)^3 x (6.2/40.80) = 1.1910 x 0.15196 = **0.181**
-- HR(Bull 11%) = (1.11)^3 x 0.15196 = 1.3676 x 0.15196 = **0.208**
-
-Track 2 (mid 8.9x), for the record:
-- HR(Base) = 1.1910 x (8.9/40.80 = 0.21814) = 0.260
-- HR(Bull) = 1.3676 x 0.21814 = 0.298
-
-All four values are far below 1.953. Even with the (impermissible-for-grade-C) true bull EPS CAGR of 28.3% and the generous Track 2 mid: (1.283)^3 x 0.21814 = 2.111 x 0.21814 = 0.460 — still below 1.953.
-
-**HURDLE RATIO = STOP.** 25% CAGR is infeasible from CMP 122 even on bull-case earnings, because the stock trades at 40.8x versus a four-pillar destination of 6-9x — the de-rating overwhelms any plausible EPS growth.
-
-Would I personally pay 40.8x for a bulk-drug maker with 7-8% ROCE, 3.4% PAT margin, declining revenue, governance CONCERN, and WC-driven (not structural) cash? No. Destination 6-9x is the honest quality-earned multiple.
-
-> INTERIM CHECKPOINT (framework STOP point): Section 1 complete. Methods: EV/EBITDA 60% primary, P/E 40% secondary, P/B N/A. Four-pillar destination PE 8.0x-9.5x (Track 2 additive); RRM track 5.5x-6.5x. Current PE 40.8x. Hurdle Ratio 0.18 (base) / 0.21 (bull) -> **STOP**. Per pipeline override: not halting; the framework directs completing all remaining sections for the record with the verdict card carrying AVOID-on-valuation. Continuing to Section 2.
+> **CHECKPOINT (framework STOP 1):** Section 1 complete. Methods: EV/EBITDA 60% + P/E 40%. Four-pillar destination PE 10.5x-12.0x (Track 2 mid 11.1x); RRM track 10.5x-11.9x (mid 11.05x). Current PE 40.8x. Hurdle Ratio 0.36 base / 0.41 bull → **STOP**. Proceeding without halt per pipeline mode.
 
 ---
 
-# SECTION 2 — EARNINGS & CASH FLOW PROJECTIONS
+## SECTION 2 — EARNINGS & CASH FLOW PROJECTIONS
 
 ### 2A. Revenue Projection
 
-Year 0 (FY26) revenue = Rs 101.97 Cr (results P&L p.6). Prior year FY25 = 126.01 Cr (-19.1% YoY). 3-yr CAGR NOT FOUND.
-
-**INPUT UNRESOLVED: 3-Year Revenue CAGR (%). Conservative assumption used: not relied upon for the base; base CAGR anchored to SOM-implied and TAM growth instead, because FY24 full-year revenue is unavailable (B10.unresolved) and the only clean datapoint is the -19.1% FY26 shock.**
+SOM cross-check first: SOM-implied revenue CAGR = **9.0% (3-yr) / 9.6% (5-yr)** (B10); capex-embedded capacity supports only ~6.7% (B09 capacity-SOM gap). Any base assumption must stay at/below these ceilings.
 
 | Assumption | Bear | Base | Bull |
-|---|---|---|---|
-| Logic | No recovery; share loss offsets TAM growth 6.5% | Partial recovery off trough, below SOM-implied ceiling | China/Russia + regulated-market entry fires to SOM ceiling |
-| Revenue CAGR | 0% | 5% | 9% |
-| Rev Yr0 (FY26) | 101.97 | 101.97 | 101.97 |
-| Rev Yr1 | 101.97 | 107.07 | 111.15 |
-| Rev Yr2 | 101.97 | 112.42 | 121.15 |
-| Rev Yr3 | 101.97 | 118.04 | 132.05 |
-| Rev Yr5 | 101.97 | 130.13 | 156.88 |
+|------------|------|------|------|
+| Logic | China/Russia stays dead, no regulated-market entry, further slippage | Partial stabilisation, cost-rationalisation holds, no new export ramp | China/Russia recovers + first ANVISA/EDQM approval; revenue re-ramps |
+| Revenue CAGR | **-8%** | **+5%** | **+9%** (= SOM ceiling) |
+| Year 0 (FY26) | 101.97 | 101.97 | 101.97 |
+| Year 3 | 101.97×0.92³ = **79.4** | 101.97×1.05³ = **118.05** | 101.97×1.09³ = **132.1** |
 
-Bull is held to 9% (SOM-implied 3yr 9.0%) and NOT to management face value, because credibility grade is C (bull-face-value only permitted for grade A/B).
-
-**SOM cross-check:** base revenue CAGR 5% < SOM-implied 3yr 9.0% and 5yr 9.6%. Assumption is BELOW the SOM ceiling -> **consistent** (conservative; no justification-of-excess needed).
+Cross-check verdict: **Base 5% < SOM-implied 9.0% and < 6.7% capacity → CONSISTENT (assumption below ceiling, no cut required).** Bull 9% sits at the SOM ceiling and against the 6.7% capacity limit — flagged as capacity-stretched, which is one more reason it is not credited in the Hurdle bull.
 
 ### 2B. Profitability Projection
 
 | Assumption | Bear | Base | Bull |
-|---|---|---|---|
-| EBITDA margin | 10.5% | 12.5% | 14.5% |
-| Margin logic | Compression; loss of scale + RM volatility | Near FY26 12.43%; cost rationalisation (RM 53.8->44.35%) sustained | Operating leverage + backward integration fully captured |
-| Depreciation (Yr3) | 7.0 | 7.35 | 8.0 |
-| Interest (Yr3) | 2.5 | 2.0 | 1.5 |
-| Tax rate | 26% | 26% | 26% |
-| Dilution | 0% (no data; neutral) | 0% | 0% |
-
-FY26 reconciliation: EBITDA 12.70, Dep 6.35, EBIT 6.35, Interest 1.68, PBT 4.67 + OI 0.12, PAT 3.43 -> effective tax ~26%.
+|------------|------|------|------|
+| EBITDA margin | 10.0% (compression on low utilisation) | 12.1% (delivered RM 54%→44% cost benefit, partial operating leverage) | 14.0% (full leverage + mix) |
+| Depreciation | ~6.5 | ~6.8 | ~7.0 |
+| Interest | ~1.6 | ~1.4 | ~1.3 |
+| Tax rate | 25% | 25% | 25% |
+| Share dilution | 0% (no raise disclosed) | 0% | 0% |
 
 ### 2C. Complete Projection Table (Base case primary)
 
-| Line | Yr0 (FY26) | Yr1 | Yr2 | Yr3 | Yr5 |
-|---|---|---|---|---|---|
-| Revenue (Cr) | 101.97 | 107.07 | 112.42 | 118.04 | 130.13 |
-| EBITDA (Cr) @12.5% | 12.70 | 13.38 | 14.05 | 14.76 | 16.27 |
-| EBITDA margin | 12.43% | 12.5% | 12.5% | 12.5% | 12.5% |
-| Depreciation (Cr) | 6.35 | 6.70 | 7.00 | 7.35 | 8.10 |
-| EBIT (Cr) | 6.35 | 6.68 | 7.05 | 7.41 | 8.17 |
-| Interest (Cr) | 1.68 | 1.90 | 1.95 | 2.00 | 2.10 |
-| PBT + OI (Cr) | 4.79 | 4.88 | 5.20 | 5.51 | 6.17 |
-| PAT (Cr) @26% tax | 3.43 | 3.61 | 3.85 | 4.07 | 4.57 |
-| EPS (Rs) | 2.99 | 3.16 | 3.36 | 3.56 | 3.99 |
-| Book Value/sh (Rs) | 64.23 | ~66 | ~68 | ~70 | ~74 |
-| Est. CFO (Cr) | 22.26* | ~8 | ~9 | ~10 | ~11 |
-| Est. FCF (Cr) | 13.34* | ~-1 | ~0 | ~1 | ~2 |
-| Est. Net Debt (Cr) | 6.10 | ~9 | ~11 | ~12 | ~13 |
-| Est. ROCE | ~7-8% | ~7-8% | ~8% | ~8% | ~8% |
+| Line item | Year 0 (FY26) | Year 1 | Year 2 | Year 3 |
+|-----------|---------------|--------|--------|--------|
+| Revenue (Cr) | 101.97 | 107.07 | 112.42 | 118.05 |
+| EBITDA (Cr) | 11.46 | 12.31 | 13.49 | 14.28 |
+| EBITDA margin | 11.25% | 11.5% | 12.0% | 12.1% |
+| PAT (Cr) | 3.43 | 3.7 | 4.1 | 4.56 |
+| EPS (Rs) | 2.99 | 3.23 | 3.58 | **3.98** |
+| Est. CFO (Cr) | 22.26* | 8-10 | 9-11 | 10-12 |
+| Est. FCF (Cr) | 13.79* | 2-4 | 3-5 | 3-5 |
+| Est. net debt (Cr) | 6.10 | ~5.5 | ~5.2 | ~5.0 |
+| Est. ROCE | ~7.2% | ~7.5% | ~8% | ~9% |
 
-*FY26 CFO/FCF inflated by one-time receivables release (AR 32.47->19.30 Cr); NOT repeatable — forward CFO normalised toward EBITDA-minus-WC-minus-interest-minus-tax.
+*FY26 CFO/FCF are inflated by a one-time receivables release (AR 32.47→19.30 Cr); normalised forward CFO reverts toward net-accrual levels — this is the FLAG-CASH point and the reason the Pillar 2 multiplier is not credited above 1.00x.
 
-**Scenario Year-3 EPS and EPS CAGR:**
-- Bear: Rev 101.97, EBITDA@10.5% 10.71, Dep 7.0, EBIT 3.71, Int 2.5, PBT+OI 1.31, PAT 0.97 -> EPS 0.85. CAGR = (0.85/2.99)^(1/3)-1 = **-34.3%**.
-- Base: Rev 118.04, EBITDA@12.5% 14.76, Dep 7.35, EBIT 7.41, Int 2.0, PBT+OI 5.51, PAT 4.07 -> EPS 3.56. CAGR = (3.56/2.99)^(1/3)-1 = **+6.0%**.
-- Bull: Rev 132.05, EBITDA@14.5% 19.15, Dep 8.0, EBIT 11.15, Int 1.5, PBT+OI 9.75, PAT 7.22 -> EPS 6.31. CAGR = (6.31/2.99)^(1/3)-1 = **+28.3%**.
+Scenario EPS Year 3: **Bear 2.33** (2.99×0.92³, ≈ -8% EPS CAGR under compression), **Base 3.98** (+10%), **Bull 5.17** (+20%, projections-only; hurdle uses capped 15%).
 
 ### 2D. Projection Sanity Checks
 
 | Check | Result | Pass? |
-|---|---|---|
-| Revenue growth faster than capacity allows? | Base 5% < capex-embedded 6.7% capacity (B09); no constraint | PASS |
-| Margins require something unprecedented? | Base 12.5% ~ FY26 12.43%; not aggressive | PASS |
-| ROCE stays above 15%? | NO — stays ~7-8% | FAIL (consistent with low-quality thesis; not a projection error) |
-| FCF funds growth without excessive new debt? | Marginal; net debt drifts 6->12 Cr; capex debt-financed | WEAK |
-| EPS growth operational, not financial engineering? | Yes — driven by revenue x margin, no buyback/leverage tricks | PASS |
-| Implied market share gain realistic? | Base share stays ~1.4% of SAM (headroom 72x); realistic | PASS |
-| CFO/PAT trajectory consistent with Pillar 2 (0.80x)? | Yes — forward CFO normalises down from the one-off; consistent with weak cash multiplier | PASS (FTTCP-consistency) |
-| Year-3 ROCE consistent with FTTCP verdict used in Pillar 1? | Base Yr3 ROCE ~8% (EBIT 7.41 / cap employed ~93) matches the DECLINING/structurally-low ROCE (7.2%) used in Pillar 1; NO recovery assumed | PASS (FTTCP-consistency) |
+|-------|--------|-------|
+| Revenue faster than capacity? | Base 5% < 6.7% capacity | PASS |
+| Margins require something unprecedented? | 12.1% below FY-prior highs; cost benefit delivered | PASS |
+| ROCE stays above 15%? | No — stays ~7-9% | **FAIL (consistent with low destination PE)** |
+| FCF funds growth without excess debt? | Marginal; forward FCF thin | CAUTION |
+| EPS growth operational not engineered? | Yes (margin + slight leverage) | PASS |
+| Implied market-share gain realistic? | Base holds ~1.4% of SAM | PASS |
+| CFO/PAT trajectory consistent with Pillar 2 (1.00x)? | Yes — normalises off the one-time spike to volatile/neutral | PASS |
+| **Year 3 ROCE consistent with FTTCP verdict used (DECLINING/low)?** | Yes — ~9% stays sub-15%, no recovery credited | PASS (FTTCP-consistency row) |
 
-> INTERIM CHECKPOINT: Section 2 complete. Base EPS CAGR +6.0%; bear -34.3%; bull +28.3%. Projections do not assume ROCE recovery, consistent with the not-credited Pillar 1. Continuing to Section 3.
-
----
-
-# SECTION 3 — APPLY EACH VALUATION METHOD
-
-Shares for Cr->per-share conversion: 1.1446 Cr (reconciled). Net debt Yr3: bear 15, base 12, bull 8 Cr.
-
-### 3.1 PRIMARY — EV/EBITDA
-
-Exit EV/EBITDA derived from four-pillar PE (rule of thumb ~0.65x of destination PE, adjusting for leverage and heavy D&A; no peer median available — NOT FOUND).
-- Track 2: 8.9x x 0.65 = 5.8x (range 5.5-6.0x).
-- Track 1 (governing): 6.2x x 0.65 = 4.0x (range 3.7-4.3x).
-
-**Track 2 (mid 5.8x):**
-
-| | Bear EBITDA 10.71 | Base EBITDA 14.76 | Bull EBITDA 19.15 |
-|---|---|---|---|
-| EV @5.8x (Cr) | 62.12 | 85.58 | 111.07 |
-| Less Net Debt Yr3 | 15 | 12 | 8 |
-| Equity Value (Cr) | 47.12 | 73.58 | 103.07 |
-| / 1.1446 Cr sh | Rs 41.2 | Rs 64.3 | Rs 90.1 |
-
-**Track 1 (mid 4.0x):**
-
-| | Bear | Base | Bull |
-|---|---|---|---|
-| EV @4.0x (Cr) | 42.84 | 59.02 | 76.60 |
-| Less Net Debt Yr3 | 15 | 12 | 8 |
-| Equity Value (Cr) | 27.84 | 47.02 | 68.60 |
-| / 1.1446 Cr sh | Rs 24.3 | Rs 41.1 | Rs 59.9 |
-
-### 3.2 SECONDARY — P/E (exit PE = Section 1B destination, no other source)
-
-**Track 2 (mid 8.9x):** Bear 0.85x8.9 = Rs 7.5 | Base 3.56x8.9 = Rs 31.7 | Bull 6.31x8.9 = Rs 56.2.
-**Track 1 (mid 6.2x):** Bear 0.85x6.2 = Rs 5.3 | Base 3.56x6.2 = Rs 22.1 | Bull 6.31x6.2 = Rs 39.1.
-
-### 3.3 P/B — NOT APPLIED (manufacturer; no lender carve-out).
-
-### 3.4 DCF — directional only (0% weight)
-
-FLAG-CASH + negative FCF FY24/FY25 make forward FCF unreliable; a DCF with normalised FCF/Revenue ~2% (consistent with the 0.80x cash multiplier — no magical cash improvement) and WACC 14%, terminal 4% produces an equity value in the Rs 25-45 range, corroborating the multiple methods' sub-CMP outputs. Not weighted.
-
-### Method-wise Fair Value Summary (Year-3 per share)
-
-| Method | Weight | Track | Bear | Base | Bull |
-|---|---|---|---|---|---|
-| EV/EBITDA | 60% | T2 | 41.2 | 64.3 | 90.1 |
-| P/E | 40% | T2 | 7.5 | 31.7 | 56.2 |
-| EV/EBITDA | 60% | T1 | 24.3 | 41.1 | 59.9 |
-| P/E | 40% | T1 | 5.3 | 22.1 | 39.1 |
-
-> INTERIM CHECKPOINT: Section 3 complete. All applicable methods applied both tracks. Every scenario fair value sits far below CMP 122. Continuing to Section 4.
+> **CHECKPOINT (framework STOP 2):** Section 2 complete. Base Year-3 EPS Rs 3.98; ROCE stays ~7-9% (sub-15%, consistent with the DECLINING Pillar-1 input). Proceeding.
 
 ---
 
-# SECTION 4 — TRIANGULATION, ENTRY PRICE & VERDICT
+## SECTION 3 — APPLY EACH VALUATION METHOD
 
-### 4A. Triangulated Fair Value (EV/EBITDA 60% + P/E 40%)
+### 3.1 EV/EBITDA (PRIMARY, 60%)
 
-**Track 2 (additive):**
+- Four-pillar PE destination 11.1x → implied EV/EBITDA ≈ 0.6-0.7× = 6.7-7.8x. Capex (8.47) > depreciation (6.35), so EBITDA overstates cash → use the **lower end**. **Exit EV/EBITDA range 6.5-7.5x, mid 7.0x.** (Current EV/EBITDA = 145.70/11.46 = 12.7x — the de-rating gap is the whole story.)
+
+| Year-3 | Bear (EBITDA 8.0) | Base (EBITDA 14.28) | Bull (EBITDA 18.5) |
+|--------|-------------------|---------------------|--------------------|
+| EV @ mid 7.0x | 56.0 | 100.0 | 129.5 |
+| Less net debt Y3 | 6.0 | 5.0 | 4.0 |
+| Equity value (Cr) | 50.0 | 95.0 | 125.5 |
+| ÷ 1.14463 Cr shares | **Rs 43.7** | **Rs 83.0** | **Rs 109.6** |
+
+EV/EBITDA fair value (Year 3): **Bear ~Rs 44 · Base ~Rs 83 · Bull ~Rs 110.**
+
+### 3.2 P/E (SECONDARY, 40%)
+
+Exit PE = Section 1B destination ONLY. Applied range 10.5x (low) / 11.1x (mid) / 12.0x (high). No other exit PE used.
+
+| Year-3 EPS | @10.5x | @11.1x | @12.0x |
+|------------|--------|--------|--------|
+| Bear 2.33 | 24.5 | 25.9 | 28.0 |
+| Base 3.98 | 41.8 | **44.2** | 47.8 |
+| Bull 5.17 | 54.3 | 57.4 | **62.0** |
+
+P/E fair value (Year 3): **Bear ~Rs 24.5 · Base ~Rs 44.2 · Bull ~Rs 62.**
+
+### 3.3 Method-wise Fair Value Summary (Track 2 / Additive)
+
+| Method | Weight | Bear | Base | Bull |
+|--------|--------|------|------|------|
+| EV/EBITDA (primary) | 60% | 44 | 83 | 110 |
+| P/E (secondary) | 40% | 24.5 | 44 | 62 |
+
+**Method divergence flag:** EV/EBITDA base (Rs 83) vs P/E base (Rs 44) spread is **~47% (>30%)**. Driver: the heavy D&A+interest load leaves PAT thin (3.36% margin) versus EBITDA (11.25%), so P/E de-rates far harder than EV/EBITDA. Both nevertheless sit **well below CMP 122**, so the AVOID conclusion is invariant to the blend. Conservative note: the equity-holder (P/E) view is the lower, and it governs the safety read.
+
+> **CHECKPOINT (framework STOP 3):** Section 3 complete. All methods point down from CMP 122; base blended fair value ~Rs 68 (Year 3). Proceeding.
+
+---
+
+## SECTION 4 — TRIANGULATION, ENTRY & VERDICT
+
+### 4A. Triangulated Fair Value (Year 3) — BOTH TRACKS
+
+Track 2 (Additive, destination PE mid 11.1x):
+
 | | Bear | Base | Bull |
-|---|---|---|---|
-| EV/EBITDA x0.60 | 24.72 | 38.58 | 54.06 |
-| P/E x0.40 | 3.00 | 12.68 | 22.48 |
-| **Weighted FV (Rs)** | **28** | **51** | **77** |
+|--|------|------|------|
+| EV/EBITDA × 60% | 44×0.6 = 26.4 | 83×0.6 = 49.8 | 110×0.6 = 66.0 |
+| P/E × 40% | 24.5×0.4 = 9.8 | 44×0.4 = 17.6 | 62×0.4 = 24.8 |
+| **Weighted FV** | **~Rs 42** | **~Rs 68** | **~Rs 89** |
 
-**Track 1 (RRM — governing):**
-| | Bear | Base | Bull |
-|---|---|---|---|
-| EV/EBITDA x0.60 | 14.58 | 24.66 | 35.94 |
-| P/E x0.40 | 2.10 | 8.83 | 15.65 |
-| **Weighted FV (Rs)** | **17** | **33** | **52** |
+Track 1 (RRM, destination PE mid 11.05x ≈ Track 2 within 0.5%): weighted FV **Bear ~Rs 42 · Base ~Rs 67 · Bull ~Rs 88** (identical within 1%). The tracks do not diverge materially; the conservative Track 1 governs entry.
 
 ### 4B. Methods Agreement
 
-- Both methods point the same direction (deeply below CMP). EV/EBITDA > P/E per share because heavy depreciation (6.35 vs PAT 3.43) makes EBITDA the more generous lens; the spread is method-structural, not a disagreement on direction.
-- Spread base (T1): 41.1 vs 22.1 = ~46%. Outlier is EV/EBITDA (more generous via D&A add-back); for a leverage-rising, capex-heavy manufacturer EV/EBITDA is the more trustworthy anchor, which is why it carries 60%.
-- Most-trusted for THIS company: EV/EBITDA (B04 primary).
+- All methods point the same direction: **DOWN from CMP.** Highest-lowest base spread ~47% (EV/EBITDA vs P/E). Outlier: EV/EBITDA (flattered by high D&A). Most-trusted for THIS company: a blend, leaning to the P/E floor for safety. Even the most generous single method (EV/EBITDA base Rs 83) is 32% below CMP 122.
 
-### 4C. Return at Current Price (Year-3, governing Track 1)
+### 4C. Return at Current Price (Year 3, Track 2 base)
 
-| Scenario | Weighted FV Yr3 | CMP | Total Return | 3-yr CAGR | Meets 25%? |
-|---|---|---|---|---|---|
-| Bear | 17 | 122 | -86% | -48.1% | RED |
-| Base | 33 | 122 | -73% | -35.3% | RED |
-| Bull | 52 | 122 | -57% | -24.7% | RED |
+| Scenario | Weighted FV (Y3) | CMP | Total return | 3-yr CAGR | ≥25%? |
+|----------|------------------|-----|--------------|-----------|-------|
+| Bear | 42 | 122 | -66% | -29.9% | 🔴 |
+| Base | 68 | 122 | -44% | -17.7% | 🔴 |
+| Bull | 89 | 122 | -27% | -10.0% | 🔴 |
 
-Track 2 (for record): Bear 28 -> -39.0% | Base 51 -> -25.3% | Bull 77 -> -14.4% CAGR. All negative.
+Every cell negative. 0/9 matrix cells reach 25%; 0/9 reach 15%.
 
 ### 4D. Probability-Weighted Expected Return
 
-Grade C (B10.credibility_grade) -> weights **Bear 35% / Base 45% / Bull 20%** (sole source: credibility grade).
+Credibility grade **C → weights 35 / 45 / 20** (sole source: B10 credibility_grade).
 
-Governing Track 1:
-| Scenario | Prob | 3-yr CAGR | Weighted |
-|---|---|---|---|
-| Bear | 35% | -48.1% | -16.84% |
-| Base | 45% | -35.3% | -15.89% |
-| Bull | 20% | -24.7% | -4.94% |
-| **Expected CAGR** | 100% | | **-37.7%** |
+| Scenario | Probability | 3-yr CAGR | Weighted |
+|----------|-------------|-----------|----------|
+| Bear | 35% | -29.9% | -10.47% |
+| Base | 45% | -17.7% | -7.97% |
+| Bull | 20% | -10.0% | -2.00% |
+| **Expected CAGR** | 100% | | **-20.4%** |
 
-Track 2 (record): 0.35(-39.0)+0.45(-25.3)+0.20(-14.4) = **-27.9%**.
+### 4E. Entry Price (governed by conservative Track 1, base FV Rs 67-68)
 
-### 4E. Entry Price (governing Track 1, Base FV Yr3 = 33)
+| Calc | Value |
+|------|-------|
+| Base FV Year 3 | Rs 68 |
+| 25% CAGR entry = 68 / 1.953 | **Rs 34.8** |
+| 30% CAGR entry = 68 / 2.197 | Rs 30.9 |
+| MoS price (20% below 25% entry) | **Rs 27.8** |
+| **Ideal entry range** | **Rs 28 to Rs 35** |
 
-| Calculation | Value |
-|---|---|
-| Base Case Fair Value (Yr3) | Rs 33 |
-| Price for 25% CAGR = 33 / (1.25)^3 = 33 / 1.953 | Rs 16.9 |
-| Price for 30% CAGR = 33 / (1.30)^3 = 33 / 2.197 | Rs 15.0 |
-| Margin-of-Safety Price (20% below 25% entry) | Rs 13.5 |
-| **Ideal entry range** | **Rs 13.5 to Rs 16.9** |
+CMP 122 is ~3.5x the top of the entry zone. Not remotely investable at current price.
 
-Buy only at the bottom of the revealed band. CMP 122 is ~7x the top of the entry range.
-
-### 4F. Risk-Reward Asymmetry (from CMP 122, Track 1)
+### 4F. Risk-Reward Asymmetry
 
 | | Value |
-|---|---|
-| Bull target Yr3 | Rs 52 -> Upside: -57% (no upside) |
-| Base target Yr3 | Rs 33 -> -73% |
-| Bear floor Yr3 | Rs 17 -> Downside: -86% |
-| Upside(base)/Downside(bear) ratio | **~0.0x** (no upside exists; far below the 2x minimum) |
+|--|-------|
+| Bull target (Y3) Rs 89 | Upside -27% |
+| Base target (Y3) Rs 68 | Upside -44% |
+| Bear floor (Y3) Rs 42 | Downside -66% |
+| Upside(base)/Downside(bear) | **Negative — both below CMP; ratio fails the ≥2x test (reported 0.0)** |
 
-### 4G. Four-Pillar Exit Multiple Validation
+### 4G. Four-Pillar Validation
 
 | Check | Result | Pass? |
-|---|---|---|
-| Yr3 ROCE justifies ROCE base + matches FTTCP verdict? | Yr3 ROCE ~8% matches 7.2% used; DECLINING verdict honoured | PASS |
-| Yr3 CFO/PAT justifies 0.80x cash mult? | Forward CFO normalises down from one-off; weak cash confirmed | PASS |
-| Primary catalyst fired by Yr3 (base)? | ANVISA/EDQM unconfirmed; base assumes NO catalyst fire | PASS (conservative) |
-| Strategic premium justified at Yr3 (single-credit)? | +0x; nothing credited; rule respected | PASS |
-| UA ordering correct min(Fx1.25, Cap)? | UA not applied (all_met FALSE); H=min(8.88,38) | PASS |
-| Would I buy a different stock at 8.9x with these Yr3 metrics? | Yes at 8.9x; NO at the current 40.8x | PASS (exit PE not revised up) |
+|-------|--------|-------|
+| Year-3 ROCE justifies ROCE base & matches FTTCP? | ~9% sub-15%; DECLINING input honoured, no recovery credited | PASS |
+| Year-3 CFO/PAT justifies cash multiplier? | Normalises off one-time spike to volatile/neutral 1.00x | PASS |
+| Primary catalyst fired by Year 3 (base)? | No — ANVISA/EDQM unconfirmed; not credited | PASS (nothing over-credited) |
+| Strategic premium justified (single-credit)? | +0x; nothing double-counted | PASS |
+| UA ordering correct — min(F×1.25, Cap)? | UA not applied (all_met false); min(11.1, 38) | PASS |
+| Would I buy a different stock at this exit PE with these Y3 metrics? | 11x for 9% ROCE — yes, that is fair; the problem is the 41x ENTRY, not the exit | PASS |
 
-No check fails; exit PE stands at the four-pillar destination. No upward revision.
+Exit PE needs no downward revision — it is already conservative. The failure is the entry price, correctly caught by the Hurdle Ratio.
 
 ### 4H. FINAL VALUATION VERDICT CARD
 
-**Smruthi Organics Ltd (SMRUTHI)** | CMP Rs 122 | Market Cap Rs 169 Cr as stated in B10 (see FLAG-DATA: reconciled per-share basis uses 1.1446 Cr shares; mcap ~Rs 140 Cr on CMP x reconciled shares) | Current PE 40.8x
+- **CMP Rs 122 | Market Cap Rs 139.6 Cr** (reconciled; manifest 169.0 recorded as conflict, not used) | EV Rs 145.70 Cr | Shares 1.14463 Cr
+- **FOUR-PILLAR EXIT PE:** ROCE Base 11.1x (FTTCP verdict DECLINING; ROCE used 7.2%, recovery NOT credited) × Cash Mult 1.00x (not-structural / WC-driven, *volatile* band; offset +0) = Quality Base 11.1x; Growth Prem +0x (EM 13.4 <25); Strategic +0x; **Raw PE 11.1x**; UA NOT applied (all_met false); Sector Cap 38x (Pharma/CDMO, no uplift); **DESTINATION PE 10.5x-12.0x (mid 11.1x, ±7.5%).**
+- **RRM TRACK:** r 17% (14 base +2 governance +1 durability); RRM 0.996; destination 10.5x-11.9x (mid 11.05x). Divergence vs additive 0.45% (<15%); tracks converge; RRM governs entry.
+- **HURDLE RATIO:** Base 0.36 / Bull(capped 15%, grade C) 0.41 → **STOP** (fails even on bull earnings).
+- **METHODS:** EV/EBITDA 60% (6.5-7.5x) + P/E 40% (10.5-12.0x). Method spread ~47% flagged.
+- **WEIGHTED FAIR VALUE (Year 3):** Track 2 — Bear 42 / Base 68 / Bull 89. Track 1 — Bear 42 / Base 67 / Bull 88.
+- **EXPECTED CAGR (prob-weighted, grade C 35/45/20):** **-20.4%.**
+- **UPSIDE/DOWNSIDE:** negative on all scenarios — fails ≥2x (0.0).
+- **ENTRY Rs 28-35 | MoS Rs 28.** CMP is ~3.5x above entry.
+- **DECISION: AVOID (on valuation).** Bands: MoS Rs 28 / Entry Rs 35 / all Year-3 targets (42/68/89) below CMP 122.
+- **KEY ASSUMPTIONS THAT COULD CHANGE IT:** ▲ a *confirmed* ANVISA/EDQM approval with order flow (would lift EM above 25 → Pillar 3 premium, and could re-rate FTTCP ROCE off DECLINING) — unconfirmed today; ▲ sustained ROCE recovery above 15% (would raise Pillar 1 base) — not visible; ▼ a further revenue leg down or ECL true-up (would deepen the de-rating). None reverse the STOP at Rs 122.
+- **EXIT FRAMEWORK:** target exit moot (AVOID); thesis-turn condition = EM >25 on a documented regulatory approval AND ROCE forward verdict off DECLINING; time stop N/A (not held); PE compression floor: fair value only near entry Rs 28-35.
+- **ONE-LINE THESIS:** Avoiding Smruthi at Rs 122 because a 7.2% ROCE, no-moat, -19%-revenue bulk-drug maker earns only an ~11x four-pillar destination PE (cash 1.00x volatile, EM 13.4, sector cap 38x) while the market already prices 40.8x, so the Hurdle Ratio STOPs even on bull earnings and the probability-weighted return is -20% CAGR. Key risk to the AVOID: a confirmed regulated-market approval. Cash quality: working-capital-driven, not structural.
 
-**FOUR-PILLAR EXIT PE**
-- Pillar 1 ROCE Base: ROCE 7.2% (INPUT UNRESOLVED, conservative low-bound; FTTCP verdict DECLINING) -> 11.1x. Recovery credited via: NOT CREDITED.
-- Pillar 2 Cash Mult: 0.80x (volatile/non-structural per FLAG-CASH; INDETERMINATE band -> conservative 0.80x; no growth offset, drag not growth-induced). Quality-Adjusted Base 8.88x.
-- Pillar 3 Growth Prem: +0x (EM 13.4 < 25).
-- Pillar 4 Strategic: +0x (no strategic asset; ROCE optionality not credited).
-- Raw PE (F): 8.88x. UA applied: NO (F2 = F). Sector Cap: 38x (Pharma/CDMO, no quality uplift). 
-- **DESTINATION PE (Track 2 additive): 8.9x (range 8.0x-9.5x).**
-
-**RRM TRACK (Track 1 — governing)**
-- r used 16% (14% micro + 2% governance/durability/revenue-risk); RRM 0.70 (lower bound). Fundamental base 8.88x.
-- **RRM Destination PE: 6.2x (range 5.5x-6.5x).**
-- Divergence 30.3% (>15%) -> Track 1 governs the entry zone (more conservative; durability/governance expressed via r).
-
-**HURDLE RATIO: 0.18 (base) / 0.21 (bull, grade-C capped at base+5%) -> STOP.** 25% CAGR infeasible even on bull earnings; stock at 40.8x vs 6-9x destination.
-
-**METHODS:** EV/EBITDA 60% (primary) + P/E 40% (secondary). P/B N/A.
-
-**WEIGHTED FAIR VALUE (Year-3):**
-- Track 1 (governing): Bear Rs 17 | Base Rs 33 | Bull Rs 52
-- Track 2 (record): Bear Rs 28 | Base Rs 51 | Bull Rs 77
-
-**EXPECTED CAGR (prob-weighted, grade C 35/45/20): -37.7% (Track 1) / -27.9% (Track 2).**
-
-**UPSIDE/DOWNSIDE RATIO: ~0.0x (no upside; below 2x minimum).**
-
-**ENTRY PRICE: Rs 13.5 to Rs 16.9 | MARGIN-OF-SAFETY PRICE: Rs 13.5.**
-
-**DECISION: AVOID (on valuation).** CMP Rs 122 is ~4x the base fair value (Rs 33 governing / Rs 51 record) and ~7x the top of the entry range. Every scenario, both tracks, delivers a negative 3-year CAGR. Overlaid quality vetoes reinforce (not override) this: Gate 0 = 37 (AVOID), Promoter Verdict CONCERN, FLAG-CASH/REVENUE/CREDIT/GOVERNANCE. The valuation alone is dispositive.
-
-**KEY ASSUMPTIONS THAT COULD CHANGE THE VALUATION**
-- (up) ROCE recovers structurally to 20%+ (ANVISA/EDQM approvals + regulated-market pricing) -> Pillar 1 base 17.5x, cash normalises toward 1.15x -> destination could reach ~20x; still below current 40.8x. Requires confirmed regulatory wins (currently NOT FOUND).
-- (up) Revenue re-accelerates to 15%+ with margin to 16% -> bull EPS higher; but grade C caps bull usage and HR still fails from 40.8x.
-- (down) Continued revenue decline / RM shock -> bear EPS collapse (-34% CAGR); FV toward Rs 17.
-- (down) Cash proves structurally negative (CARE re-downgrade) -> cash multiplier 0.65x, destination toward 7x.
-
-**EXIT FRAMEWORK (if ever owned):** target exit at destination 8-9x; thesis-broken if revenue decline persists a further year or ANVISA/EDQM fails; time stop 4 quarters without revenue stabilisation; PE-compression floor already breached (holding is a de-rating trade against the investor).
-
-**ONE-LINE THESIS:** Avoiding Smruthi Organics at Rs 122 because EPS grows only from Rs 2.99 to ~Rs 3.56 over 3 years (base +6% CAGR), at a four-pillar destination PE of 6-9x (ROCE ~7%, cash 0.80x non-structural, EM 13.4, sector cap 38x) = Rs 33-51 target = -35% to -25% CAGR; the stock trades at 40.8x versus a 6-9x earned multiple. Key risk: unexplained -19% revenue decline and governance CONCERN. Cash quality: WC-driven, NOT structural.
-
-> INTERIM CHECKPOINT (final framework STOP): Valuation complete. Four-pillar exit PE 8.0x-9.5x (RRM 5.5x-6.5x). Hurdle Ratio STOP. Entry price Rs 13.5-16.9. Decision: AVOID (on valuation).
+> **CHECKPOINT (framework STOP 4 / final):** Valuation complete. Four-pillar exit PE 10.5x-12.0x. Hurdle Ratio STOP. Entry Rs 28-35. Decision AVOID (on valuation).
 
 ---
 
-## UNRESOLVED INPUTS USED (each with conservative assumption)
-
-1. ROCE Latest FY26 -> assumed 7.2% (low bound of declining 7.2-7.9% band; conservative-lower-bound rule + DECLINING verdict).
-2. 3-Year Revenue CAGR -> not relied on; base 5% anchored to SOM/TAM below the SOM 9.0% ceiling (FY24 revenue unavailable).
-3. 3-Year PAT CAGR -> not relied on (same data gap); PAT built bottom-up from projected revenue x margin.
-4. Peer Medians (all) -> no relative uplift; exit multiples from Section 1B only (B06 skipped).
-5. Current Capacity Utilisation -> not constraining; base 5% CAGR < capex-embedded 6.7% capacity (B09).
-6. FTTCP ROCE forward verdict (not carried in B10) -> derived DECLINING from transition evidence, biased down per FTTCP rule 12.
-7. Forward net debt / interest / depreciation -> conservative upward drift (net debt 6->12 Cr) reflecting debt-financed capex.
-
-## FLAGS CARRIED FORWARD
-- FLAG-CASH: cash multiplier APPLIED = 0.80x (volatile/non-structural; INDETERMINATE band resolved conservatively).
-- FLAG-DATA: B10 share-count/market-cap inconsistency (10x units error on shares); per-share math run off reconciled 1.1446 Cr shares (book-value confirmed) and CMP/EPS anchors.
-- FLAG-REVENUE, FLAG-CREDIT, FLAG-GOVERNANCE: propagated from B10; reinforce the AVOID.
-
-**Report completed: 2026-07-09 | Opus 4.8 | NO STOPS | All numbers anchored to B10 or explicitly marked INPUT UNRESOLVED with the conservative assumption stated.**
+*Stage 11 complete. Framework: Master v3.3 / Section 1B v3.3 / FTTCP v1.2. All numbers anchored to corrected B10 or marked INPUT UNRESOLVED with the conservative fill named. FLAG-CASH carried forward with the applied multiplier (1.00x, volatile band).*

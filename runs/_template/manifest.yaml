@@ -4,5 +4,6 @@ cmp: 0.00              # as of run date
 market_cap_cr: 0
 run_date: YYYY-MM-DD
 run_type: full          # full | refresh | valuation-only
+concalls_available: true  # set false for companies that hold no earnings calls
 sector_cap_row: ""      # exact row name from Section 1B sector cap table
 notes: ""

@@ -16,13 +16,14 @@ Run folder structure (Google Drive, mirrored to local before run):
 /inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
-    annual-report/    (1 PDF, required)
-    results/          (2-3 PDFs, required)
-    rating/           (1 PDF, required)
-    concalls/         (3 PDFs, required ONLY when manifest has concalls_available: true)
-    peer-concalls/    (0-12 PDFs, optional)
-    screening/        (optional; csv / txt / pdf / xlsx)
-    presentation/     (optional)
+    annual-report/    (0-1 PDF)
+    results/          (0-3 PDFs; if more than 3, use the 3 most recent)
+    rating/           (0-1 PDF; if more than 1, use the most recent)
+    concalls/         (0-3 PDFs, honoring concalls_available)
+    peer-concalls/    (0-12 PDFs)
+    screening/        (0-N; csv / txt / pdf / xlsx)
+    presentation/     (0-N)
+    other/            (0-N; preserved, never consumed)
   outputs/                            (created by pipeline)
     blocks/                           (YAML handoff blocks, one per stage)
     reports/                          (full stage outputs)
@@ -32,6 +33,15 @@ Run folder structure (Google Drive, mirrored to local before run):
 Inputs are identified BY FOLDER, not by filename. Any filenames are
 accepted inside each subfolder; the pipeline reads whatever PDFs (or
 csv/txt/xlsx for screening/) a folder contains.
+
+No input folder is required. Every folder holds 0-N files. The pipeline
+inventories what exists per folder: annual-report (0-1), results (0-3,
+use the 3 most recent if more), rating (0-1, most recent if more),
+concalls (0-3, honoring `concalls_available`), peer-concalls (0-12),
+screening, presentation, and other (preserved, never consumed). Every
+absent document type is recorded in `B00.input_gaps` and carried on
+every downstream block. Degraded stages run per the DEGRADATION MAP
+below; the pipeline degrades gracefully rather than gatekeeping input.
 
 Concall quarter map: from filename if evident, else read each transcript's
 first page; confirm chronology before stage 5.
@@ -49,9 +59,11 @@ sector_cap_row: "Specialty chemicals"   # from Section 1B cap table
 notes: ""              # free text, passed to synthesis
 ```
 
-Stage 0 validates this contract. Missing required files: run halts with a
-named list of what is missing. Missing optional files: run proceeds, gap
-recorded in every downstream handoff block under `input_gaps`.
+Stage 0 inventories this contract. It halts ONLY if `manifest.yaml` is
+missing or unparseable, or the entire `inputs/` tree is empty. In every
+other case the run proceeds: each absent document type is recorded in
+`B00.input_gaps` and carried on every downstream handoff block under
+`input_gaps`. No document count ever halts the run.
 
 ### NO-CONCALL MODE
 
@@ -71,6 +83,30 @@ and the concall-dependent stages run in degraded mode:
   results sources instead of transcripts.
 - **Stage 7's F2 test** uses capex-completion evidence across AR timeline
   statements in place of the promise-delivery record.
+
+### DEGRADATION MAP
+
+When a document type is absent, the pipeline degrades rather than halts.
+Each absent type is named in `B00.input_gaps` and the affected blocks
+carry the gap.
+
+- **No annual report.** Stages 2 and 3 are skipped; their blocks are
+  emitted with `status: skipped` and the gap named. Stage 4 runs from the
+  presentation and results commentary if either is available; if neither
+  exists, stage 4 is skipped, block emitted with `status: skipped` and
+  the gap named.
+- **No results.** Gate 0 (stage 1) runs from screening data alone. Stage
+  10 marks the latest-period fields `unresolved`.
+- **No rating.** Stage 10 marks `rating_wc_quote` unresolved. Stage 11's
+  Pillar 2 determination proceeds without rating evidence, defaulting
+  conservative per the framework. INDETERMINATE handling follows the
+  existing flag rules (FLAG-CASH, Section 4).
+- **No screening data.** Gate 0 (stage 1) extracts from the results PDFs
+  and the annual report financial statements.
+
+Verifiers audit only against sources that exist. Skipped stages never
+fail the confidence delta; their absence flows to the synthesis instead
+of counting as a verification miss.
 
 ---
 

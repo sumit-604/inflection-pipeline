@@ -53,8 +53,14 @@ Verdict selection rules, applied in order:
 2. INSUFFICIENT EVIDENCE if the decision-relevant record has named gaps
    (B10 unresolved on pillar inputs, INDETERMINATE cash with the
    missing evidence identified, partial search stages on
-   decision-relevant questions). Name every gap and where to find the
-   missing piece.
+   decision-relevant questions). This rule also considers skipped core
+   stages: if both stages 2 and 3 were skipped (no annual report), or
+   Gate 0 (stage 1) ran without either screening data or results, the
+   verdict caps at INSUFFICIENT EVIDENCE with the missing documents
+   named and where to obtain them (BSE / exchange filings). Partial gaps
+   that leave the decision-relevant record intact do not trigger this
+   rule; they cap at PROCEED WITH CAVEATS per the existing rules. Name
+   every gap and where to find the missing piece.
 3. Otherwise, if FLAG-PROMOTER or FLAG-CASH is active: PROCEED WITH
    FLAGS, with the flag blocks inline in the verdict section, formatted
    exactly per the orchestrator: promoter flag with verdict, top two

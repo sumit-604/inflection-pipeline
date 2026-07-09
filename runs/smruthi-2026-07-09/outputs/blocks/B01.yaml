@@ -1,0 +1,20 @@
+stage: B01-gate0
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps: [concalls absent (NO-CONCALL MODE), peer-concalls absent, presentation absent]
+flags: [{type: FLAG-GATE0, reason: "Classification AVOID (Core 37/100). Historical depressors: median ROCE 9.29% driven by FY23-FY26 compression to 7.2-7.9% off a FY19-FY21 boom (up to 35.7%); revenue declined in 5 of 9 YoY periods (FY20, FY21, FY24, FY25, FY26), the latter three consecutive and compounded by FY26 discontinuation of the Formulations Marketing Division."}]
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 3, B: 14, C: 6, D: 14, E: 0}
+core_score: 37
+moat_score: 1
+grand_total: 38
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers: ["DB1: Block A <8 (actual 3) -> max GOOD", "DB3: median ROCE <10% (actual 9.29%, driven by FY23-FY26) -> max AVERAGE", "DB7: revenue declined in majority of years (5 of 9: FY20, FY21, FY24, FY25, FY26) -> max AVERAGE"]
+history_downgrade: false
+data_notes: ["ROCE/ROE computed, not provided by screener export (template rows blank); EBIT = PBT+Interest, Capital Employed proxied as Equity Share Capital+Reserves+Borrowings since 10-yr summary does not split current/non-current liabilities", "Capex proxied as full Cash from Investing Activity (FCF = CFO+CFI); investments held immaterial (Rs 0.05-0.20 Cr) throughout; FY25-26 cross-checked against results PDF cash flow statement, close match", "PAT loss-to-profit swing, FY18 to FY19 (mid-window); CAGR endpoints FY17/FY26 both positive so CAGR computed normally, not synthetic", "B4 (WC Days trend) and M12 (Negative WC/Float) scored 0, NOT FOUND: Trade Payables not itemized in screener 10-yr summary for FY17-FY24, only available via results PDFs for FY25 (Rs 15.99 Cr) and FY26 (Rs 13.77 Cr); cannot compute trend requiring earliest year FY17", "M2, M5, M7, M9 scored 0, PEER DATA NEEDED: no peer/sector financial data provided this run", "Block E (Shareholder Alignment) fully NOT FOUND: no shareholding pattern (promoter holding, pledge) or contingent liabilities data in any provided input", "FY26 results confirm discontinuation of Formulations Marketing Division (minor segment since FY21-22), a contributing driver of recent revenue decline alongside API segment softness (results Q4 FY26, Note 1, p.7)"]
+block_b_trend: "improving - FY26 CFO of Rs 22.26 Cr is the highest since FY21 (Rs 22.82 Cr) despite revenue falling 19% YoY, driven by working-capital release as trade receivables fell from Rs 32.47 Cr to Rs 19.30 Cr; reverses two weak FCF years (FY24: -Rs 2.76 Cr, FY25: -Rs 1.44 Cr)"

@@ -1,0 +1,26 @@
+stage: B12c
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (Gate 0 + Emerging Moat only); valuation deferred to phase 3"
+gate0:
+  rules_checked: 46
+  fails: []
+emoat:
+  rules_checked: 40
+  fails:
+    - {rule: "Section 2C capex_embedded_growth_pct", severity: MINOR, issue: "not-computable value emitted as numeric 0 in YAML; correctly NOT FOUND in narrative + input_gaps, but structured field loses the not-computable state", recomputed: "no score/classification impact"}
+valuation:
+  status: pending
+  note: "DEFERRED to phase 3; B10/B11 do not exist yet"
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MINOR, framework: emoat, location: "B07 Section 2C / YAML capex_embedded_growth_pct", note: "not-computable emitted as 0; documented as NOT FOUND in narrative and input_gaps, no estimation, no decision impact"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 99   # 85 of 86 checked phase-1 rules passed

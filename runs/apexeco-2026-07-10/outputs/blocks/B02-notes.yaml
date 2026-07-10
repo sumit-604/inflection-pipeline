@@ -1,0 +1,44 @@
+stage: B02-notes
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF provided"}
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables up 155.3% (Note 10, p.55: Rs.866.67 lakh FY24 to Rs.2,212.83 lakh FY25) against revenue growth of only 33.67% (Note 14, p.56); debtors turnover deteriorated from 6.77x to 4.61x (Note 29, p.63, implied days ~54 to ~79); zero doubtful-debt provision in the ageing table across both years (Note 30, p.64) despite the scale of the increase and an actively litigated receivable classified 'considered good' rather than doubtful"}
+accounting_quality: 4        # /10
+pass_2_empty: false
+pass_3_empty: true
+top_findings:                # max 15
+  - {rank: 1, finding: "Trade receivables up 155.3% (Rs.866.67 to Rs.2,212.83 lakh) vs revenue up 33.67%; zero doubtful-debt provision both years; debtors turnover fell 6.77x to 4.61x", note_ref: "Note 10 p.55, Note 30 p.64, Note 29 p.63", rating: "Red Flag", why: "Core cash-conversion/earnings-quality signal; growth funded by working capital with no provisioning discipline"}
+  - {rank: 2, finding: "Note 20(b) rupee figures imply a 169.3% FY25 pay rise for MD Dosajh and ED Aiyer vs 37.02% stated in Annexure III for the same individuals; third director's 53.35% vs implied 26.9% also inconsistent", note_ref: "Note 20(b) p.58 vs Annexure III p.31", rating: "Red Flag", why: "Direct numeric contradiction between two statutory disclosures on management compensation in the IPO year"}
+  - {rank: 3, finding: "Director's Remuneration +90.9% YoY; average managerial pay growth 38.79% vs average employee growth 7.19% in the listing year", note_ref: "Note 17 p.57; Annexure III p.31", rating: "Red Flag", why: "Disproportionate insider enrichment concurrent with the IPO"}
+  - {rank: 4, finding: "Three enterprises with directors' significant influence (Oakens Engineering, Flagmo Ea Technologies, Flagmo Marketing) named with zero disclosed transactions", note_ref: "Note 20(a) p.58", rating: "Red Flag", why: "Either dormant relationships disclosed unusually, or undisclosed transactions exist; answerable completeness question"}
+  - {rank: 5, finding: "Undisclosed Bank of India CC account debit balance of Rs.665.43 lakh (~11% of total assets) with no corresponding facility in Note 4 Borrowings, which shows Debt-Equity of 0.00", note_ref: "Note 11 p.55; no cross-ref Note 4 p.52", rating: "Watch", why: "Material banking facility with no limit, security, or terms disclosed; completeness gap in a 'debt-free' narrative"}
+  - {rank: 6, finding: "Unexplained, stale (>3 year) disputed non-MSME trade payable of Rs.10.81 lakh, unchanged across both years, no counterparty or nature disclosed", note_ref: "Note 30 p.64; no cross-ref Note 25", rating: "Red Flag", why: "Static unexplained liability signals a disclosure gap or unresolved dispute investors cannot assess"}
+  - {rank: 7, finding: "9:1 bonus issue (Rs.871.74 lakh capitalised from P&L surplus) immediately pre-IPO; promoter holding diluted 25.03pp (94.32% to 69.29%) in one year", note_ref: "Note 2 p.51, Note 3 p.52", rating: "Watch", why: "Pre-listing cosmetic action on per-share metrics; dilution magnitude worth tracking"}
+  - {rank: 8, finding: "Export revenue fell 59% (Rs.407.71 to Rs.167.10 lakh) with 100% customer/geography churn (Vietnam to Egypt/Nigeria), contradicting MDA's claim growth was driven by international and domestic contracts", note_ref: "Note 22 p.59 vs MDA p.32", rating: "Watch", why: "Narrative-vs-notes contradiction on a stated growth driver"}
+  - {rank: 9, finding: "MDA Risk Factors describe material litigations with financial/reputational exposure while Note 25's actual portfolio is modest (<1% of net worth) and company is predominantly a plaintiff", note_ref: "Note 25 p.60 vs MDA p.33", rating: "Watch", why: "Boilerplate risk language overstates actual exposure, or undisclosed litigation may exist"}
+  - {rank: 10, finding: "Trade Retentions now 47.7% of total trade receivables (Rs.1,056.03 of Rs.2,212.83 lakh), up 61.7% YoY", note_ref: "Note 10 p.55", rating: "Watch", why: "Large, growing, contractually-locked share of current assets slows cash conversion"}
+  - {rank: 11, finding: "Disputed DLF receivable fell unexplained Rs.15.51 to Rs.11.89 lakh in active litigation; Note 25's Rs.11.88 lakh does not match Note 30's Rs.11.89 lakh for the same balance", note_ref: "Note 30 p.64; Note 25 item 2 p.60", rating: "Watch", why: "Movement in a litigated asset with no settlement disclosed, plus an inter-note tie-out failure"}
+  - {rank: 12, finding: "Return on Equity fell from 60% to 28%; ROCE fell from 59.61% to 24.70%, equity-base (IPO) driven not operational", note_ref: "Note 29 p.63", rating: "Watch", why: "Resets forward profitability baseline materially lower for valuation purposes"}
+  - {rank: 13, finding: "No warranty provision and no gratuity actuarial assumptions disclosed; depreciation useful lives admitted to deviate from Schedule II with no independent justification", note_ref: "Note 1 p.49-50, Note 5 p.52", rating: "Watch", why: "Provisioning-adequacy and disclosure gaps standard for this business type but absent here"}
+  - {rank: 14, finding: "Note 1(i)'s DTA narrative states Rs.12.20 lakh FY25 closing balance; Note 23's table shows Rs.12.63 lakh for the same Fixed Assets DTA component", note_ref: "Note 1(i) p.50 vs Note 23 p.59", rating: "Watch", why: "Small but genuine cross-note tie-out failure; drafting/proofing quality signal"}
+  - {rank: 15, finding: "Three Company Secretaries within ~17 months spanning the IPO window, no reason disclosed", note_ref: "Note 20(a) p.58", rating: "Watch", why: "Compliance-continuity/governance observation during the most disclosure-sensitive period"}
+red_flags:
+  - "Zero doubtful-debt provisioning against receivables up 155.3% YoY (Note 10, Note 30)"
+  - "Cross-document remuneration inconsistency: Note 20(b) implies 169.3% pay rise vs Annexure III's 37.02% for same individuals (Note 20b p.58 vs Annexure III p.31)"
+  - "Disproportionate managerial remuneration growth (38.79% avg) vs employee growth (7.19% avg) in the IPO year (Note 17 p.57, Annexure III p.31)"
+  - "Three related enterprises named with zero disclosed transactions (Note 20a p.58)"
+  - "Unexplained, stale, disputed non-MSME trade payable of Rs.10.81 lakh (Note 30 p.64)"
+questions_for_mgmt:
+  - "Which FY25 remuneration increase figure is correct for Mr. Dosajh and Mr. Aiyer, the 169.3% implied by Note 20(b) or the 37.02% in Annexure III, and what explains the discrepancy?"
+  - "What is the nature and current transaction status with Oakens Engineering Services, Flagmo Ea Technologies, and Flagmo Marketing, the three related enterprises in Note 20(a) with zero disclosed transactions?"
+  - "What is the sanctioned limit, security, interest rate and terms for the Bank of India CC account showing a Rs.665.43 lakh debit balance in Note 11, and why is it absent from Note 4 Borrowings?"
+  - "What is the formal doubtful-receivables provisioning policy, and why is zero provision recognised despite 155% receivables growth and debtors turnover falling from 6.77x to 4.61x?"
+  - "Who is the counterparty and what is the nature of the Rs.10.81 lakh disputed non-MSME trade payable unchanged in the >3-year ageing bucket in both FY24 and FY25?"
+receivables_trend: "deteriorating - trade receivables up 155.3% (Note 10 p.55: Rs.866.67 lakh FY24 to Rs.2,212.83 lakh FY25) vs revenue up 33.67% (Note 14 p.56); debtors turnover ratio fell 6.77x to 4.61x, implied days ~54 to ~79 (Note 29 p.63); trade retentions now 47.7% of receivables, up 61.7% YoY (Note 10 p.55); zero doubtful-debt provision in ageing table both years (Note 30 p.64)"
+restatements_found:
+  - "Note 26 (p.60): 'Previous year figures have been regrouped and reclassified wherever required' - boilerplate, no itemized schedule of what moved or by how much; no quantified prior-period restatement identified elsewhere in Notes 1-31"
+going_concern_language: "NONE - no going concern qualification, material uncertainty, or discussion found anywhere in Notes 1-31 or cross-referenced Auditor's Report/CARO extracts; consistent with strong solvency ratios per Note 29 (current ratio 4.50x, Debt-Equity 0.00, Debt Service Coverage 34.15x)"

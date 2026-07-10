@@ -1,0 +1,64 @@
+stage: B04-bizmodel
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report absent for this run; business description, MD&A, and segment detail sourced from investor presentation only"]
+flags:
+  - "CDMO client concentration not disclosed in investor presentation (concall/annual report follow-up needed)"
+  - "Adj OCF/EBITDA conversion fell to 34.9% FY26 from 90.7% FY25 even after excluding EU-contract advance (Inv. Pres. slide 15, 23)"
+  - "API and Trade Generics segments remain structurally loss-making (Inv. Pres. slide 19)"
+  - "Net working capital days rose to 105 from 91 YoY (Inv. Pres. slide 15)"
+  - "Finance cost up 172% YoY FY26 despite IPO-proceeds debt repayment (Inv. Pres. slide 12, 21)"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "CDMO", type: "contract manufacturing (B2B services)", pct_of_revenue: 80.0, predictability: "H"}
+  - {name: "Domestic Branded Formulation", type: "branded product sales", pct_of_revenue: 10.2, predictability: "M"}
+  - {name: "API", type: "commodity product sales", pct_of_revenue: 4.2, predictability: "L"}
+  - {name: "International Branded Formulation", type: "branded product sales (export)", pct_of_revenue: 3.3, predictability: "M"}
+  - {name: "Trade Generics", type: "commodity/trade product sales", pct_of_revenue: 2.3, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory accreditations (EU GMP, US-NSF, WHO GMP, ANVISA, EFDA)", durability: "high"}
+  - {moat: "Client switching costs / multi-year contract relationships", durability: "moderate-high"}
+  - {moat: "Manufacturing scale (~5,059 Cr units combined capacity)", durability: "moderate, latent given 44% utilization"}
+  - {moat: "Formulation/technology IP (21 in-house platforms)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Standard for capital-intensive CDMO/manufacturing peer comparison, aligns with segment EBITDA disclosure quality and avoids P/E's exceptional-item distortion"}
+  secondary: {method: "Sum-of-the-Parts (SOTP)", why: "Five segments with very different margin/growth profiles (CDMO 13.4% margin vs branded 20-25%+ vs API/Trade Generics loss-making) warrant differentiated multiples"}
+  tertiary: {method: "DCF", why: "Cross-check for multi-year optionality from EU CDMO contract (FY28+) and Zambia JV (FY29), but constrained today by weak OCF/EBITDA conversion and lumpy capex"}
+  not_applicable: ["standalone P/E (PAT distorted by exceptional items and one-time deferred tax)", "P/B (asset-heavy but book value not the value driver)", "Dividend Discount Model (no dividend data found; capital redeployed into capex/debt repayment)"]
+irrelevant_ratios:
+  - {ratio: "Reported P/E (standalone)", why: "PAT distorted by exceptional items and FY25 one-time Rs 106 Cr deferred-tax impact"}
+  - {ratio: "Net profit margin", why: "Distorted by finance cost up 172% YoY from capex financing, not core operations"}
+  - {ratio: "Consolidated revenue growth alone", why: "Masks divergent segment trends - CDMO +8.6% vs API -15.9% vs Trade Generics -13.2% FY26"}
+  - {ratio: "Reported ROE", why: "Distorted by fair value changes and exceptional items; use Adj ROE instead"}
+must_track_metrics:
+  - {metric: "CDMO segment revenue growth & EBITDA margin", healthy: "high single/low double-digit growth, margin >=13-14%", red_flag: "flat/negative growth or margin below ~10%"}
+  - {metric: "Overall capacity utilization %", healthy: "rising toward 50%+", red_flag: "stuck at or below 44%"}
+  - {metric: "Adj OCF/EBITDA conversion", healthy: ">=60%", red_flag: "persistently below ~40%"}
+  - {metric: "Net working capital days", healthy: "stable or declining", red_flag: "rising past ~110-115 days"}
+  - {metric: "API + Trade Generics segment EBITDA", healthy: "losses narrowing toward breakeven", red_flag: "losses widening"}
+unit_economics:
+  unit: "one unit of dosage form manufactured (tablet/capsule/vial-equivalent, per Akums's disclosed 'Cr units' capacity metric)"
+  revenue_per_unit: "NOT FOUND, check annual report / concall"
+  margin_per_unit: "NOT FOUND, check annual report / concall"
+  key_lever: "capacity utilization (44% FY26) and mix shift toward higher-margin niche/branded/export portfolio"
+first_deterioration_signals:
+  - {risk: "CDMO client concentration/contract non-renewal", first_signal: "CDMO segment revenue growth deceleration"}
+  - {risk: "API price volatility feeding into COGS", first_signal: "Gross margin % decline quarter-on-quarter"}
+  - {risk: "Rising finance costs from debt-funded capex", first_signal: "Finance cost line and implied net debt"}
+  - {risk: "New facility ramp-up stalls", first_signal: "Capacity utilization % stagnant below 44%"}
+  - {risk: "API and Trade Generics structurally loss-making", first_signal: "Segment EBITDA for API and Trade Generics widening losses"}
+mgmt_questions:
+  - "What is CDMO client concentration (top-5/top-10 revenue share) and average contract tenure/renewal terms?"
+  - "What is the realistic timeline for the API segment to reach EBITDA breakeven?"
+  - "Why did Adj OCF/EBITDA conversion fall to 34.9% FY26 from 90.7% FY25 even after excluding the EU-contract advance?"
+  - "What is the capacity utilization roadmap beyond 44% and the incremental margin per utilization point?"
+  - "What supply-commitment protections exist on the Zambia JV if the plant is delayed beyond FY29?"
+  - "What is the expected leverage peak and de-leveraging timeline given finance cost up 172% YoY?"
+  - "What is the long-term revenue-mix target between CDMO and higher-margin branded/export segments, and the pace of that shift?"
+one_line_verdict: "Scale contract manufacturer earning thin CDMO margins on 80% of revenue, waiting on FY28-29 EU and Zambia catalysts to shift mix and margin."

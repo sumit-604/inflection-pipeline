@@ -108,6 +108,35 @@ Verifiers audit only against sources that exist. Skipped stages never
 fail the confidence delta; their absence flows to the synthesis instead
 of counting as a verification miss.
 
+### REFRESH RUNS
+
+When `manifest.yaml` sets `run_type: refresh`, stage 0 locates the most
+recent prior run folder for the same ticker under `runs/` (the highest
+`<ticker>-<YYYY-MM-DD>` date preceding this run) and passes its
+`outputs/blocks/` and, if present, `outputs/final/fttcp-deliberation.md`
+to every stage as **PRIOR RUN CONTEXT**. If no prior run folder exists,
+the run proceeds as a normal `full` run and `B00.input_gaps` notes that no
+prior run was found.
+
+Stages must explicitly compare against the prior run where relevant:
+
+- **Gate 0 (stage 1)** notes score movements per block (A..E, moat, grand)
+  against the prior `B01-gate0`, naming the direction and cause of each
+  material change.
+- **Emerging Moat scan (stage 7)** notes which catalysts from the prior
+  `B07-emoat.catalysts_12m[]` **fired, slipped, or died** since the prior
+  run, each anchored.
+- **Concall Analysis (stage 5)** checks the prior run's `B05-concall`
+  guidance against the new period's delivery, anchored to the new results
+  and transcripts.
+- **Synthesis (stage 13)** adds a **WHAT CHANGED** section listing every
+  material delta versus the prior run, each with an anchor.
+
+Prior operator overrides from the deliberation record
+(`fttcp-deliberation.md`) are surfaced, not silently inherited: synthesis
+lists each prior override with the question "does the new evidence still
+support this override?" and leaves the answer to Keerti.
+
 ---
 
 ## 2. STAGE SEQUENCE

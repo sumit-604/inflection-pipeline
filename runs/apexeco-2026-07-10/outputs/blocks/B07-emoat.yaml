@@ -1,0 +1,34 @@
+stage: B07-emoat
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: missing_document, detail: "FY26 Annual Report / Boards' Report not provided; FY26 figures sourced only from investor presentation and concall transcripts, not the audited AR narrative sections"}
+  - {type: missing_document, detail: "No FY26 employee headcount, R&D headcount, or ESOP scheme documentation provided despite ESOP being promised for end-FY26 and then dropped without mention"}
+  - {type: missing_document, detail: "No signed contract or regulatory filing evidencing the marketed Veolia 'strategic alliance,' which management itself denied is a partnership or JV on the May 2026 call"}
+flags:
+  - {type: FLAG-CONTRADICTION, reason: "AR MDA and Investor Presentation market a 'strategic alliance with the global technology leader Veolia' and 'strong collaborations with global OEMs... Veolia, Dupont, and Grundfos' as an investment-rationale bullet; on the May 2026 results call management directly states 'we are not in any partnership, any JV, any... understanding per se of this kind with any of the company in the world. We are integrators... these products, technologies are all available to everybody in the market.' Treated as NO EVIDENCE FOUND for H2 strategic partnerships, not as a moat."}
+  - {type: FLAG-PROMISE-BROKEN, reason: "Per injected B05 record and cross-checked against transcripts: H1/H2 revenue skew worsened (30/70 in FY25 to 22/78 in FY26) despite repeated management promises to reduce it; ESOP for core technical staff promised for end-FY26 (Nov 2025 call) and never mentioned again (May 2026 call); Vietnam/Indonesia/Middle East expansion explicitly reversed ('Gulf states... totally anti-modal to our thought process,' May 2026 call); quarterly reporting requested on all 3 calls, delivered only once as a percentage-only circular."}
+  - {type: FLAG-CONCENTRATION, reason: "Reliance Consumer Products Limited and its bottler Bhartiyam Beverages together anchor ~70% of H2 FY26 order-book execution per management's own repeated statement; scored as a risk (C2, no evidence of improving concentration) rather than credited as a moat, and flagged again under C1/F2 dependency."}
+em_score: 10.1
+em_classification: "NONE"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "mixed", time_to_materialise: "ongoing, mixed record"}
+  - {id: "C1", name: "Customer ecosystem", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic/technology first-mover", strength: "Moderate", evidence_type: "claim", time_to_materialise: "already claimed, unverified"}
+evidence_mix: {documented: 3, claim: 11, inference: 0}
+completionist_recount: "📄 recount performed: 3 documented items across 2 categories (G1 cash-balance growth + debt-free status; F2 audited FY26 revenue-growth figure). All other scored rows rest on management claims made in concalls, not signed contracts or filed regulatory approvals."
+catalysts_12m:
+  - {catalyst: "Completion of remaining ~30% Reliance Consumer Products order execution against stated 70%-within-year target", window: "0-6m", evidence_type: "claim", anchor: "Nov 2025 call; May 2026 call"}
+  - {catalyst: "Conversion of 6-7 pipeline jobs (₹15-30cr each) to signed orders beyond Reliance/L&T anchor", window: "0-12m", evidence_type: "claim", anchor: "May 2025 call; May 2026 call"}
+  - {catalyst: "Adoption of genuine quarterly (numeric) reporting after repeated investor requests across 3 calls", window: "0-12m", evidence_type: "claim", anchor: "May 2025, Nov 2025, May 2026 calls"}
+capex_embedded_growth_pct: 0
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward (B01, capped by cash-conversion deal-breakers) paired with NO MEANINGFUL EMERGING MOAT forward (10.1/80, below the 12 threshold) fails the GOOD/AVERAGE-plus-EXPANSION transition setup this operation targets; the one strong emerging item (G1 war chest) is a backward IPO artefact, not a forward catalyst."
+top_moat_risks:
+  - "Customer concentration disguised as customer ecosystem: Reliance group anchors ~70% of H2 FY26 execution and the single largest order in company history"
+  - "Broken execution promises on every qualitative commitment tracked (H1/H2 skew, ESOP, international expansion, quarterly reporting, order-book bridging) even as headline revenue guidance was beaten"
+  - "Marketed Veolia 'strategic alliance' directly contradicted by management as not a partnership or JV, undermining the H2 strategic-partnerships narrative in written investor materials"
+  - "No IP, no backward integration, no proprietary data or digital asset — the technology-first-mover claims (E1) are entirely self-reported and unverified"

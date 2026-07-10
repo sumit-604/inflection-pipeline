@@ -8,6 +8,52 @@ is permitted anywhere in the pipeline.
 
 ---
 
+## PHASES
+
+The pipeline runs in three phases, split so the FTTCP go/no-go and the
+operator's deliberation sit BETWEEN evidence gathering and the final
+investment decision. Each phase is a separate command; the phases share
+the run folder and hand off through files on disk.
+
+**PHASE 1 — EVIDENCE (`/run-pipeline runs/<folder>`).** Stages 0 through
+9, then verifiers A, B, D and the Gate 0 + Emerging Moat half of verifier
+C (its valuation-adherence checks are deferred to phase 3, since B10/B11
+do not yet exist). Then a synthesis-lite writes three files to
+outputs/final/: `business-narrative.md`, `gate-recommendation.md` (the
+FTTCP go/no-go per the verdict-selection rules, minus every
+valuation-dependent element), and `verifier-summary.md`. Stages 10, 11,
+verifier C's valuation half, and the full synthesis do NOT run in phase 1.
+Phase 1 ends by handing off: "Phase 1 complete. Next: /fttcp
+runs/<folder> for deliberation."
+
+**PHASE 2 — DELIBERATION (`/fttcp runs/<folder>`).** Operator-led FTTCP
+deliberation. It records the FTTCP ROCE forward verdict, confirms or
+overrides the cash-conversion structural / growth-induced determination,
+and captures every operator override, writing the deliberation record to
+`outputs/final/fttcp-deliberation.md`.
+
+**PHASE 3 — FINALIZE (`/finalize runs/<folder>`).** Refuses to start
+until `outputs/final/fttcp-deliberation.md` exists (naming /fttcp as the
+missing step). Then runs autonomously: stage 10 input assembly (now also
+consuming the deliberation record), stage 11 valuation, stage 14 Role 2
+investment thesis, stage 15 Role 3 devil's advocate, verifier C's
+deferred valuation-adherence audit (extended to check Role 2's decision
+rules and position sizing), then the full synthesis producing all four
+deliverables (including `fttcp-handoff.md` as the archive dossier) and the
+`outputs/final/notion-payload.md` save payload.
+
+**Phase-3 authority rule.** The FTTCP deliberation conclusions recorded in
+phase 2 are AUTHORITATIVE in phase 3. The deliberation-confirmed ROCE
+forward verdict, the structural / growth-induced determination as the
+operator confirmed or overrode it, and every recorded operator override
+become authoritative inputs at stage 10 and flow through valuation,
+thesis, and devil's advocate. Wherever a deliberation conclusion conflicts
+with a determination the pipeline made earlier in phase 1, the
+deliberation conclusion supersedes it, and the assembly anchors the value
+to the deliberation record.
+
+---
+
 ## 1. INPUT CONTRACT
 
 Run folder structure (Google Drive, mirrored to local before run):

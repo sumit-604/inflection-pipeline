@@ -1,0 +1,249 @@
+stage: B10-valinputs
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - field: "rating_pdf"
+    detail: "NOT PROVIDED; SME-listed companies exempt from mandatory credit rating per SEBI and AR Boards' Report p.26; no rating-agency working capital comment available"
+  - field: "fii_dii_holding_pct"
+    detail: "NOT FOUND in any input block, screener export, or results document; AR Note 2 provides promoter holding only (69.29%); full shareholder pattern not provided"
+  - field: "capex_fy26"
+    detail: "NOT ITEMIZED in screener; inferred from balance sheet movement (net block 1.18→1.96, CWIP 0.98, depreciation 0.2 = ~₹1.96 Cr); ±20% estimation uncertainty"
+  - field: "order_book_aging_detail"
+    detail: "NOT PROVIDED; book stated ₹125 Cr but no project-stage breakdown or fulfillment schedule; book-to-bill 0.84x, ~70% concentration in 2 customers"
+flags:
+  - type: "FLAG-GATE0"
+    severity: "critical"
+    field: "cash_conversion"
+    detail: "Classification capped at AVERAGE by cumulative CFO/PAT 0.41 (<0.50 threshold); FY25 CFO negative ₹5.24 Cr (restated) against PAT positive ₹8.56 Cr; post-IPO working-capital build. (B01-gate0)"
+  - type: "FLAG-CASH"
+    severity: "critical"
+    field: "receivables_and_cash_flow"
+    detail: "Trade receivables up 155.3% vs revenue 33.67%; zero doubtful-debt provision both years; CFO FY25 -₹14.08 Cr funded entirely by IPO proceeds; FY26 recovery 0.398x still below healthy 0.7x threshold. (B01, B02, B03)"
+  - type: "FLAG-CONCENTRATION"
+    severity: "major"
+    field: "customer_concentration"
+    detail: "Reliance Consumer Products and Bhartiyam Beverages anchor ~70% of H2 FY26 execution; single largest order in company history; book-to-bill 0.84x declining; diversification unknown. (B07)"
+  - type: "FLAG-GOVERNANCE"
+    severity: "major"
+    field: "governance_and_disclosures"
+    detail: "Independent directors <42% attendance in IPO year; remuneration disclosure contradicts Note 20(b) vs Annexure III; Company Secretary turnover 3x in 16 months; undisclosed Bank of India CC facility ₹665 lakh (~11% of assets). (B02, B03, B08)"
+  - type: "FLAG-DATA-GAP"
+    severity: "medium"
+    field: "roce_historical"
+    detail: "ROCE computable only FY25–FY26; FY18–FY24 N/A due to screener liability split unavailable. Block A score (ROCE) has low-confidence foundation. (B01)"
+  - type: "FLAG-NARRATIVE-CONTRADICTION"
+    severity: "medium"
+    field: "md_and_a_accuracy"
+    detail: "MD&A claims FY25 growth driven by international contracts; Note 22 shows export revenue fell 59% with 100% customer churn. MD claim of 'efficient working capital' contradicted by CFO collapse. (B03)"
+table:
+  company_identity:
+    company_name: "Apex Ecotech Ltd"
+    ticker: "APEXECO"
+    sector: "EPC / Civil construction"
+    business_model_type: "Hybrid: 96.4% project-based EPC turnkey, 3.6% recurring O&M/AMC"
+    cmp_rupees: 242.0
+    market_cap_cr: 319.0
+    shares_outstanding_diluted_cr: 1.319
+    net_cash_cr: 33.75
+    enterprise_value_cr: 285.25
+  latest_period_fy26:
+    revenue_cr: 148.65
+    revenue_anchor: "screener-Data_Sheet P&L Sales FY26"
+    ebitda_cr: 23.04
+    ebitda_margin_pct: 15.5
+    ebitda_anchor: "calculated PAT 17.02 + Tax 5.73 + Interest 0.09 + Depreciation 0.2"
+    pat_cr: 17.02
+    pat_margin_pct: 11.4
+    pat_anchor: "screener-Data_Sheet P&L Net Profit FY26"
+    diluted_eps_rupees: 12.91
+    eps_anchor: "B05-concall guidance FY26 actual EPS 12.91"
+    cfo_cr: 6.77
+    cfo_anchor: "screener-Data_Sheet Cash_Flow Operating Activity FY26"
+    fcf_cr: 4.81
+    fcf_note: "estimated CFO 6.77 - inferred capex 1.96; capex not itemized in screener"
+    bvps_rupees: 47.96
+    bvps_anchor: "calculated (Equity 13.19 + Reserves 50.07) / 1.319 Cr shares"
+    net_cash_per_share: 25.60
+    roce_latest_pct: 33.39
+    roce_anchor: "FTTCP deliberation authoritative: Pillar 1 reported 33.39%, ex-cash context-only 77%, operator ruling"
+    roce_trend_direction: "declining_sustain_at_premium"
+    roce_trend_anchor: "FTTCP: FY24 ~60%, FY25 ~25%, FY26 ~35%; verdict FIRING sustain not expand"
+    roe_pct: 22.9
+    roe_anchor: "calculated PAT 17.02 / avg equity 74.44"
+    revenue_cagr_3yr_pct: 67.3
+    revenue_cagr_anchor: "calculated (148.65/53.08)^0.5-1; FY24–FY26 screener data"
+    pat_cagr_3yr_pct: 60.2
+    pat_cagr_anchor: "calculated (17.02/6.63)^0.5-1; FY24–FY26 screener data"
+    cfo_pat_latest: 0.398
+    cfo_pat_anchor: "calculated 6.77/17.02; B01 cumulative 0.41 reported"
+    fcf_pat_latest: 0.283
+    fcf_pat_anchor: "estimated 4.81/17.02; capex estimated from balance sheet movement"
+    p_fcf_latest: 66.4
+    p_fcf_anchor: "calculated mcap 319.0 / fcf 4.81; flagged as very high/concerning"
+    capex_cr: 1.96
+    capex_anchor: "inferred from balance sheet: net block 1.18→1.96, CWIP 0.98, depreciation 0.2"
+    capex_note: "direct capex line not itemized in screener; estimation has ±20% uncertainty"
+    depreciation_cr: 0.2
+    depreciation_anchor: "screener-Data_Sheet P&L Depreciation FY26"
+    dps_rupees: 0.0
+    dps_anchor: "no dividend paid; screener shows zero across recent years"
+  forward_guidance_fy27:
+    revenue_growth_range_pct: "30-40"
+    revenue_growth_anchor: "B05-concall Q4 FY26 call, verbal non-numeric guidance"
+    ebitda_margin_expected_pct: 14.5
+    ebitda_margin_anchor: "FTTCP: margins flat mid-teens, no expansion assumed"
+    credibility_grade: "B"
+    credibility_basis: "Core numeric commitments met/exceeded; governance commitments show pattern of misses (quarterly reporting, ESOP, order-book reconciliation unresolved)"
+    credibility_anchor: "B05-concall credibility_grade and credibility_basis"
+  analysis_from_stages:
+    top_growth_triggers_1: "Reliance Consumer Products order execution (~₹70% of ₹100-125 Cr order within FY26); near-term (0–6 months)"
+    triggers_anchor: "B05-concall triggers priority 1"
+    top_growth_triggers_2: "Order-book-to-revenue conversion discipline within 6-10 month gestation window; book-to-bill tracking above 1.0"
+    triggers_2_anchor: "B05-concall triggers priority 2; B04 business model; B09 SOM capacity check shows order book growing slower than revenue"
+    top_growth_triggers_3: "ZLD/higher-margin product mix shift; margin stabilization at or above 14.6%"
+    triggers_3_anchor: "B05-concall triggers priority 3; FTTCP margin engine assessment"
+    emerging_moat_score: 10.1
+    em_classification: "NONE"
+    em_anchor: "B07-emoat: score below 12 threshold; 3 documented + 11 claim-based evidence items; Veolia partnership claim contradicted by management"
+    evidence_quality_mix: "mostly_claims"
+    evidence_anchor: "B07-emoat: documented 3, claim 11, inference 0; evidence_mix"
+    cash_determination: "GROWTH-INDUCED"
+    cash_anchor: "FTTCP deliberation operator final ruling: GROWTH-INDUCED with falsification trigger H1 FY27 CFO/PAT <0.7x AND working capital days rise faster than revenue"
+    cash_falsification_trigger: "H1 FY27 CFO/PAT below 0.7x while working capital days climb faster than revenue growth"
+    cash_trigger_anchor: "FTTCP: Step 5 Watch section"
+    cash_forward_outlook: "Expected to recover toward 0.6–0.7x by FY27; at risk if order-book replenishment and project execution do not stabilize"
+    strategic_asset_moat: "No"
+    strategic_moat_anchor: "B07-emoat EM score 10.1 / 80, no moat above threshold; no IP, no backward integration, OEM partnerships available to competitors"
+  ua_qualifiers:
+    listed_12m: false
+    listed_12m_anchor: "Listed Dec-2024; run date 2026-07-10 = ~7 months; fails criterion 1"
+    gate0_or_em: true
+    gate0_or_em_anchor: "Gate0 score 86 (exceeds 60); EM score 10.1 (below 25 but Gate0 qualifies); passes criterion 2"
+    fii_dii_lt3: null
+    fii_dii_lt3_anchor: "NOT FOUND in inputs; AR Note 2 promoter-only, no public/institutional split provided"
+    all_met: false
+    all_met_anchor: "Listed <12 months disqualifies under criterion 1; FII+DII unresolved (criterion 3). Position fails standard UA gate; proceeds only under operator override per FTTCP deliberation and CLAUDE.md."
+  peer_medians:
+    note: "Peer set provided (CEWATER, EIEL, EMSLIMITED, FELIX); individual peer financials extracted but aggregate medians NOT COMPUTED in provided blocks"
+    pe_median: null
+    pe_anchor: "B06-peers: peers_provided 4, verified 0; individual P/Es not formalized"
+    ev_ebitda_median: null
+    ev_ebitda_anchor: "B06-peers: no aggregate median table provided"
+    pb_median: null
+    pb_anchor: "NOT COMPUTED"
+    revenue_growth_peer_context: "Peer narrative: CEWATER -6.2% FY26, EIEL mixed, EMSLIMITED severe miss, FELIX strong; suggests Apex outperformed in FY26 but peers saw guidance cuts mid-year on execution/cash timing"
+    growth_context_anchor: "B06-peers industry_cross_read"
+    roce_peer_context: "Typical water-EPC peer ROCE 20–30%; Apex 33.39% reported (ex-cash ~77% context-only) appears premium but may be IPO-capital-base artefact"
+    roce_context_anchor: "FTTCP and B07 context"
+  som_and_tam:
+    tam_conservative_cr: 11250
+    tam_realistic_cr: 14500
+    tam_anchor: "B09-tam top-down Mordor Intelligence, CRISIL sector investment, bottom-up STP capacity-gap unit economics"
+    sam_cr: 6375
+    sam_pct_of_tam: 56.7
+    som_year3_cr: 277
+    som_year5_cr: 434
+    som_implied_cagr_3yr_pct: 23.1
+    som_implied_cagr_5yr_pct: 23.9
+    som_anchor: "B09-tam complete methodology"
+    current_sam_share_pct: 2.33
+    revenue_headroom_x: 42.9
+    runway_class: "STRONG"
+    som_capacity_check: "Gap ₹290 Cr required by Year 3 vs current ₹125 Cr book; book-to-bill 0.84x binding constraint; SOM trajectory optimistic given replenishment lagging"
+    capacity_anchor: "B09-tam capacity_check"
+  cash_flow_specifics:
+    cfo_fy25_restated: -5.24
+    cfo_fy25_anchor: "B01 data_notes: FY25 CFO conflict resolved to audited restated -₹5.24 Cr per AR Note 7 reclassification"
+    cfo_fy26: 6.77
+    cfo_fy26_anchor: "screener-Data_Sheet Cash_Flow FY26"
+    cfo_pat_fy25: -1.65
+    cfo_pat_cumulative_fy25_fy26: 0.41
+    cfo_cumulative_anchor: "B01-gate0: cumulative CFO/PAT 0.41, deal-breaker #4"
+    cash_quality_issue: "Trade receivables +155.3% vs revenue +33.67% with zero doubtful-debt provision; retentions now 47.7% of receivables (up 61.7%); debtors days 54→79"
+    cash_quality_anchor: "B02-notes top_findings rank 1; receivables_trend"
+    net_working_capital_cr: 61.72
+    nwc_anchor: "B05-concall Q4 FY26 call disclosure"
+    cash_and_bank_cr: 35.06
+    cash_anchor: "screener-Data_Sheet Cash & Bank FY26"
+conflicts:
+  - field: "cfo_fy25"
+    value_a: -14.08
+    anchor_a: "07-Nov-2025 filing (earlier screener export)"
+    value_b: -5.24
+    anchor_b: "FY26 annual audited report, Note 7 restated comparative (AR p.9)"
+    used: "Value B (audited restated) per B01 data_notes reconciliation"
+    reason: "Reclassification of trade retentions between TR and Other Current Assets; restated AR figure authoritative"
+  - field: "director_remuneration_fy25_increase_pct"
+    value_a: "169.3% implied from Note 20(b) rupee figures"
+    anchor_a: "AR Note 20(b) p.58"
+    value_b: "37.02% stated in Annexure III"
+    anchor_b: "AR Annexure III p.31, Section 197(12) disclosure"
+    used: "NOT RECONCILED; both figures flagged as conflicting"
+    reason: "Direct numeric contradiction between two statutory sections; governance-credibility concern; impact on forward valuation inputs immaterial but signals disclosure-quality issue"
+  - field: "input_cost_inflation_fy26_h2"
+    value_a: "25–40% increase claimed by management"
+    anchor_a: "B05-concall Q4 FY26 call"
+    value_b: "1–2pp EBITDA impact, later timing (Q4 FY26/Q1 FY27), tied to Middle East disruption per peer corroboration"
+    anchor_b: "B06-peers peer commentary"
+    used: "Apex's claimed magnitude not corroborated; forward margin guidance conservative ~14.5% flat"
+    reason: "Suggests company-specific cost-pass-through weakness; magnitude / timing unsupported by peer evidence"
+unresolved:
+  - field: "diluted_shares_exact_count"
+    why: "Screener Data_Sheet row 52 empty for FY26; row 63 also empty. Calculated from market-cap / CMP (1.319 Cr) but no direct equity-count filing verification."
+    where_it_might_be: "Recent shareholding pattern filing post-IPO, RHP DRHP archives, MCA portal"
+    impact: "Low: calculated value consistent with EPS back-calc (12.91 = 17.02 / 1.319) and market data; used throughout table"
+    status: "used with caveat"
+  - field: "free_cash_flow_fcf_fy26"
+    why: "CapEx for FY26 not itemized in screener; inferred from balance sheet movement (net block, CWIP, depreciation) with ±20% estimation uncertainty. Results PDF unreadable due to tool limitation."
+    where_it_might_be: "FY26 Annual Report Cash Flow Statement note detail; fixed-asset depreciation & capex schedule"
+    impact: "Medium: FCF is material to valuation. P/FCF benchmark very high (66.4x), flagged as concerning; FCF estimation uncertainty propagates to free-cash-flow valuation inputs"
+    status: "estimated_high_uncertainty"
+  - field: "fii_dii_holding_pct"
+    why: "Not disclosed in any block, screener export, or input document. AR Note 2 provides promoter-only holding (69.29% combined); full shareholder breakdown not provided."
+    where_it_might_be: "Latest shareholding pattern filing with stock exchange (NSE/BSE); Trendlyne public holdings; MCA portal shareholder registry"
+    impact: "High: affects UA qualifier gate (criterion 3 of all-three-met check). Currently NOT FOUND, position fails standard UA gate; proceeds only under operator override."
+    status: "blocks_ua_gate"
+  - field: "cash_bank_breakdown_by_currency_restriction"
+    why: "Screener shows ₹35.06 Cr combined; no breakdown by currency, geographic location, or restriction status (e.g., escrow, lien)."
+    where_it_might_be: "Audit report cash balance note; bank confirmations; possible forex-exposure disclosure in AR"
+    impact: "Low: consolidated cash figure sufficient for net-debt calculation; unlikely material restrictions for debt-free SME"
+    status: "immaterial"
+  - field: "borrowing_cost_of_debt"
+    why: "Borrowings ₹1.31 Cr shown; interest ₹0.09 Cr charged. Implied rate ~6.9%, but no disclosure of cost terms or lender identity."
+    where_it_might_be: "AR Note 4 Borrowings detail; B05 concall commentary on credit terms; Bank of India CC facility terms (currently undisclosed)"
+    impact: "Low: minimal debt, immaterial to leverage or WACC calculations. Bank of India CC account disclosure gap flagged separately under FLAG-GOVERNANCE."
+    status: "low_priority"
+  - field: "contingent_liabilities_rupee_detail"
+    why: "AR discloses material pending litigations (DLF, MSME, income-tax); B03 notes portfolio <1% of net worth. No exact rupee figure itemized for each case."
+    where_it_might_be: "AR Note 25 Contingent Liabilities full schedule with case name, amount, expected settlement timing"
+    impact: "Low: assessed <1% net worth; low financial materiality. Governance flag, not material to valuation numerics."
+    status: "low_materiality"
+  - field: "order_book_aging_fulfillment_schedule"
+    why: "Order book ₹125 Cr stated as of 31-Mar-2026; no breakdown by project stage, fulfillment timing, customer, or execution risk. Book-to-bill 0.84x thin and declining; no order-mix detail."
+    where_it_might_be: "Q4 FY26 concall transcript detailed commentary; AR investor presentation schedules or MDA order-book note; investor relations announcements"
+    impact: "High: order book is critical revenue visibility and SOM achievement lever. Current data insufficient for forward cash-conversion and revenue-growth confidence. Reliance order ~₹100 Cr dominates; diversification unknown. Flagged as major concentration risk (FLAG-CONCENTRATION)."
+    status: "blocks_forward_analysis"
+  - field: "quarterly_results_fy26"
+    why: "Screener-Quarters file is empty for APEXECO. Company reports H1/H2 (semi-annual) due to SME listing exemption; no quarterly P&L available in inputs."
+    where_it_might_be: "Investor presentation slides; Q4 FY26 concall transcript (may embed Q3/Q4 revenue/profit figures); possible Q3 FY26 investor circular per voluntary quarterly-reporting promise"
+    impact: "Low: H1/H2 data extracted from concalls in B05; sufficient for gate analysis. Quarterly granularity deferred to forward-looking analysis phase."
+    status: "deferred_phase3"
+  - field: "rating_agency_working_capital_comment"
+    why: "No rating PDF exists (SME-listed companies exempt from mandatory credit rating per SEBI and AR Boards' Report p.26). Rating-agency WC/cash-flow commentary typically used to corroborate or challenge cash-conversion assessment is NOT FOUND."
+    where_it_might_be: "Credit rating (if one were issued) would have been in input set; since SME exempt, no such document exists in the market"
+    impact: "Medium: FTTCP cash determination (GROWTH-INDUCED) relies on internal AR evidence + peer corroboration + operator ruling rather than third-party credit assessment. Determination stands; FTTCP addresses this gap explicitly."
+    status: "acceptable_per_operator"
+  - field: "capex_guidance_plan_fy27_fy29"
+    why: "No forward capex guidance provided in B05 concalls or B04 business-model analysis. Future investment requirements and capex-intensity assumption unknown."
+    where_it_might_be: "Q4 FY26 concall concall commentary on capex plans or CapEx/sales intensity going forward; AR management guidance section or investor presentation forward guidance"
+    impact: "Medium: affects FCF projection and cash-runway estimation in valuation phase. Conservatively assumed flat capex/sales ratio pending forward guidance."
+    status: "requires_forward_assumption"
+rating_wc_quote: "NOT PROVIDED — SME-listed companies exempt from mandatory credit rating. No rating agency or rating commentary available in inputs. FTTCP operator ruling: 'no credit rating exists to confirm it; no formal cash plan named.' Cash determination proceeds on AR evidence + peer + operator authority."
+ua_qualifiers:
+  listed_12m: false
+  gate0_or_em: true
+  fii_dii_lt3: null
+  all_met: false
+credibility_grade: "B"

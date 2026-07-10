@@ -154,6 +154,35 @@ Verifiers audit only against sources that exist. Skipped stages never
 fail the confidence delta; their absence flows to the synthesis instead
 of counting as a verification miss.
 
+### REFRESH RUNS
+
+When `manifest.yaml` sets `run_type: refresh`, stage 0 locates the most
+recent prior run folder for the same ticker under `runs/` (the highest
+`<ticker>-<YYYY-MM-DD>` date preceding this run) and passes its
+`outputs/blocks/` and, if present, `outputs/final/fttcp-deliberation.md`
+to every stage as **PRIOR RUN CONTEXT**. If no prior run folder exists,
+the run proceeds as a normal `full` run and `B00.input_gaps` notes that no
+prior run was found.
+
+Stages must explicitly compare against the prior run where relevant:
+
+- **Gate 0 (stage 1)** notes score movements per block (A..E, moat, grand)
+  against the prior `B01-gate0`, naming the direction and cause of each
+  material change.
+- **Emerging Moat scan (stage 7)** notes which catalysts from the prior
+  `B07-emoat.catalysts_12m[]` **fired, slipped, or died** since the prior
+  run, each anchored.
+- **Concall Analysis (stage 5)** checks the prior run's `B05-concall`
+  guidance against the new period's delivery, anchored to the new results
+  and transcripts.
+- **Synthesis (stage 13)** adds a **WHAT CHANGED** section listing every
+  material delta versus the prior run, each with an anchor.
+
+Prior operator overrides from the deliberation record
+(`fttcp-deliberation.md`) are surfaced, not silently inherited: synthesis
+lists each prior override with the question "does the new evidence still
+support this override?" and leaves the answer to Keerti.
+
 ---
 
 ## 2. STAGE SEQUENCE
@@ -313,7 +342,7 @@ forced REWORK.
 
 ## 6. SYNTHESIS OUTPUTS (stage 13)
 
-Three files in `outputs/final/`:
+Four files in `outputs/final/`:
 
 1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
@@ -326,6 +355,13 @@ Three files in `outputs/final/`:
    GROWTH-INDUCED determination. No STOP verdict exists.
 3. `verifier-summary.md`: all four verifier findings tables, sorted by
    severity, each finding with location anchor.
+4. `fttcp-handoff.md`: the self-sufficient input package for manual FTTCP
+   v1.2 deliberation in a separate Opus session with no source PDFs. The
+   four transition data series, catalyst inventory, all flags with full
+   underlying findings, credibility grade with the guidance-vs-delivery
+   table, the scorecards and market sizing, valuation pillar detail from
+   both tracks if stage 11 ran, and a gaps ledger. Density over brevity;
+   every figure carries its source anchor.
 
 Plus one Notion save to COMPANIES MASTER (data_source_id
 345bb2b9-d3ab-8032-9b46-000ba16ab827) per Notion_Save_Instructions.docx:

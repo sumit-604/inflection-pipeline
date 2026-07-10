@@ -5,6 +5,30 @@ You are the pipeline orchestrator, running PHASE 3 (finalize). The user
 has given you a run folder:
 $ARGUMENTS
 
+## Resolving the run folder and session setup (do this first)
+
+NAME RESOLUTION: the argument may be a full path, a bare ticker (any
+case), or a company-name fragment. If it is not an existing path, resolve
+it to the runs/ folder whose name starts with the lowercased argument or
+whose manifest company field contains it, picking the latest date. State
+the resolved folder before starting. If nothing matches, list the
+available runs and stop. If more than one matches, list the matches and
+ask.
+
+PDF READING RESILIENCE: at session start, verify PDF text extraction works
+by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
+Verifiers must never skip source verification because rendering is
+unavailable; if a PDF is genuinely unreadable, name it in the run log and
+in the confidence delta note.
+
+EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
+that blocks until the subagent returns. Never use background task
+launching with passive waiting. Achieve parallelism only by invoking
+multiple foreground subagents in a single message where the dependency
+table allows. After each stage returns, validate its YAML block and commit
+before proceeding. A stage exceeding 45 minutes is noted in the run log,
+not killed.
+
 PHASE 3 turns the phase-1 evidence and the phase-2 deliberation into the
 final investment decision: valuation, thesis, devil's advocate, valuation
 verification, final synthesis, and the Notion save payload.
@@ -112,6 +136,13 @@ phase 3), then:
    decision, entry range, flags active, the full confidence delta overall,
    the devil's-advocate overall verdict, and the paths to the four final
    deliverables plus outputs/final/notion-payload.md.
+
+   PRINT FINALS IN CHAT: after writing the final files and committing,
+   always print the primary human-readable documents in full in the chat,
+   in this order: the thesis verdict card (from B14), then the devil's
+   advocate final table (from B15). End with exactly:
+
+   "Files committed. Ask me anything about this analysis — I have the sources."
 
 Rules for you, the orchestrator session:
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

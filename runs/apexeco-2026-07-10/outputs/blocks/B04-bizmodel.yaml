@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF provided (AR p.26 states SME-listed companies are exempt from mandatory credit rating, so this is expected but confirmed as a gap for pipeline purposes)"}
+  - {type: shareholding, detail: "no shareholding pattern / pledge data in provided inputs; AR Note 2c/2d (p.51) gives promoter-only holding at FY25 (69.29% combined) but full public/institutional split and pledge status are NOT FOUND"}
+flags:
+  - "Operating cash flow negative in FY25 (-₹1,408.02L) despite positive PAT (₹856.08L), and FY26 OCF (₹676.68L) still materially below PAT (₹1,702.30L) — weak cash conversion despite strong headline growth"
+  - "Cost of Material Consumed rising as % of revenue: 68.9% (FY25) to 75.6% (FY26) — margin compression signal"
+  - "Debtors turnover fell from 6.77x (FY24) to 4.61x (FY25)"
+  - "Order book grew ~₹100Cr to ~₹125Cr while revenue more than doubled over the same period — replenishment pace lagging execution pace"
+  - "Material pending litigations and MSME/statutory dues overdue >6 months at FY25 (AR Note 25, Annexure A vii(a))"
+  - "Company Secretary turnover shortly after IPO listing (AR p.7, p.20)"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Sale of Products (turnkey EPC plant delivery: WTP/ETP/STP/ZLD/membrane recycling)", type: "Project-based EPC / capital goods", pct_of_revenue: 96.4, predictability: "M"}
+  - {name: "Supply of Services (O&M, AMC, aftersales)", type: "Recurring service fee", pct_of_revenue: 3.6, predictability: "M"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "OEM technology partnerships (Veolia, DuPont, Pentair, Grundfos)", durability: "medium"}
+  - {moat: "Client relationships / 250+ project execution track record", durability: "medium"}
+  - {moat: "Niche efficient scale in ZLD/EDR segment (self-claimed limited competition)", durability: "medium, unverified independently"}
+valuation_methods:
+  primary: {method: "Comparable company multiples (P/E, EV/EBITDA)", why: "identifiable listed EPC/capital-goods-services peer set explicitly named by the company (Ion Exchange, Thermax, Toshiba Water Solutions)"}
+  secondary: {method: "EV/Sales or Price/Order Book", why: "order book (₹125+Cr) gives forward revenue visibility for a high-growth, earnings-volatile EPC business with short listed history"}
+  tertiary: {method: "DCF", why: "usable as a sanity check on long-run growth/margin assumptions once cost ratio and cash conversion stabilize post-IPO"}
+  not_applicable: ["Dividend discount model - no dividend paid, resources being conserved", "Asset-based/book value - asset-light model, value not in physical assets", "Replacement cost - not a hard-asset business"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover in isolation", why: "abnormally high (23.59x FY25) because this is project/EPC material flow-through, not retail efficiency"}
+  - {ratio: "Gross margin as commonly defined", why: "Cost of Material Consumed embeds pass-through OEM equipment cost, conflating Apex's own value-add with third-party technology cost"}
+  - {ratio: "DSO/receivables days without adjusting for retentions", why: "~48% of FY25 trade receivables are contractual retention money, not overdue debt"}
+  - {ratio: "Revenue growth smoothed/annualized like a recurring-revenue business", why: "~96% of revenue is lumpy, milestone-billed EPC project revenue, not subscription/AMC revenue"}
+must_track_metrics:
+  - {metric: "Order book (₹Cr)", healthy: "growing faster than or in line with trailing revenue", red_flag: "flat or declining order book despite revenue growth"}
+  - {metric: "Cost of Material Consumed as % of Revenue", healthy: "stable or declining, below ~70%", red_flag: "rising trend, already at 75.6% in FY26"}
+  - {metric: "Operating Cash Flow vs PAT", healthy: "OCF tracking or exceeding PAT over a cycle", red_flag: "OCF persistently below or negative vs positive PAT (as in FY25 and FY26)"}
+  - {metric: "Trade Receivables (incl. retentions) growth vs Revenue growth", healthy: "receivables growth at or below revenue growth", red_flag: "receivables/retentions growing faster than revenue"}
+  - {metric: "EBITDA margin %", healthy: "mid-to-high teens, stable/improving", red_flag: "compression below ~10-12%"}
+unit_economics:
+  unit: "Single turnkey treatment-plant project/contract (or per MLD of treatment capacity delivered) - no per-unit disclosure available"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Cost of material/equipment procurement (68.9%-75.6% of revenue) and project execution efficiency; O&M/AMC mix shift toward recurring revenue"
+first_deterioration_signals:
+  - {risk: "Revenue/client concentration", first_signal: "Order book (₹Cr) flattening or YoY revenue growth decelerating sharply"}
+  - {risk: "Margin compression from rising material costs", first_signal: "Cost of Material Consumed % of revenue and EBITDA margin % in quarterly P&L"}
+  - {risk: "Working capital build / weak cash conversion", first_signal: "Net Cash from Operating Activities turning negative or lagging PAT materially"}
+  - {risk: "EPC execution risk (delays/cost overruns)", first_signal: "Retentions/other current liabilities rising disproportionately vs revenue, or warranty/contract-loss provisions appearing"}
+  - {risk: "Litigation/governance/structural risk", first_signal: "Expansion of contingent liabilities note or repeated KMP turnover"}
+mgmt_questions:
+  - "Cost of material consumed rose from 68.9% to 75.6% of revenue FY25-FY26 - mix shift or genuine margin compression, and where does this settle?"
+  - "Operating cash flow has lagged PAT in both FY25 and FY26 - what specifically is being done to accelerate retention/receivable conversion?"
+  - "Order book grew ~₹100Cr to ~₹125Cr while revenue more than doubled - is replenishment keeping pace with execution?"
+  - "How concentrated is revenue among the top 5-10 clients given single orders like L&T's ₹40+Cr and Reliance's ₹100+Cr?"
+  - "What is the status and likely financial impact of pending litigations (DLF Home Developers, MSME disputes, income-tax appeal)?"
+  - "What is being done to stabilize governance/compliance after the post-IPO Company Secretary resignation?"
+  - "Is international expansion (Bangladesh, Vietnam) a structured growth vector or opportunistic and lumpy, given export revenue fell FY24-FY25?"
+one_line_verdict: "Fast-growing niche water-EPC specialist with thin moat, rising material costs, and cash conversion materially lagging reported profit."

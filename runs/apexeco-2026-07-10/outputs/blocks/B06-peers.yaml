@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Claim 2 (raw material cost inflation 25-40% H2 FY26) not corroborated at claimed magnitude or window by any peer; two peers (CEWATER, EIEL) show smaller (1-2pp EBITDA), later (Q4 FY26/Q1 FY27) cost pressure tied to Middle East geopolitical/shipping disruption, not general H2 FY26 metals inflation — flagged for correction or tighter sourcing"
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "Peer water-treatment EPC players saw raw material/input cost inflation and partially offset via price-variation clauses on fixed-price contracts", peers: ["CEWATER", "EIEL", "FELIX"]}
+  - {claim: "Market consolidation toward larger ticket sizes among scaled EPC players", peers: ["EIEL", "CEWATER"]}
+  - {claim: "SME-listed peers voluntarily provide quarterly interim disclosure ahead of the SEBI six-month carve-out minimum", peers: ["FELIX"]}
+contradicted: []
+unverifiable:
+  - {claim: "ZLD/water-recycling penetration in Indian industrial water use is in the single-digit percent to ~1% range, and the two cited figures are the same metric", peers_checked: ["CEWATER", "EIEL", "EMSLIMITED", "FELIX"]}
+  - {claim: "Apex's revenue concentration in top 1/3/5 customers for FY26 relative to peer disclosure practices", peers_checked: ["CEWATER", "EIEL", "EMSLIMITED", "FELIX"]}
+peer_coverage_map:
+  - {peer: "CEWATER", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Baseline order book/segment mix; early small-to-medium ticket framing later contradicted by own Q4 shift"}
+  - {peer: "CEWATER", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "First guidance cut, Africa project delay feeding demand/execution pattern"}
+  - {peer: "CEWATER", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Guidance cut to ~2%, Kenya delay, SAP re-implementation, CBG financial-closure delays"}
+  - {peer: "CEWATER", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 revenue -6.2% YoY; raw material/freight cost and Sharjah/Middle East disruption commentary"}
+  - {peer: "EIEL", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Strong Q1 growth, TAM sizing, cyber fraud disclosure"}
+  - {peer: "EIEL", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Order book growth, JJM funding normalization commentary"}
+  - {peer: "EIEL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Revenue guidance miss, bid re-tendering delays, unbilled revenue build-up"}
+  - {peer: "EIEL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "EBITDA guidance cut on global crisis input costs, BESS/lithium-ion pricing, renewable capex race"}
+  - {peer: "EMSLIMITED", quarter: "Q1 FY26 (Sept 2025)", usage: "SUBSTANTIVE", contribution: "Monsoon commentary, JJM vs AMRUT funding distinction, fragmented competitor landscape"}
+  - {peer: "EMSLIMITED", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "26-27% YoY Q2 revenue decline from monsoon halting digging work"}
+  - {peer: "EMSLIMITED", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Uttarakhand flood disruption, further guidance miss, working capital stretch"}
+  - {peer: "EMSLIMITED", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 severe miss, West Bengal election disruption, SPARSH payment-portal delay, promoter pledge escalation"}
+  - {peer: "FELIX", quarter: "Q1 FY26 (Sept 2025)", usage: "SUBSTANTIVE", contribution: "Direct confirmation of voluntary SME quarterly reporting; EPC/BOOT business model detail"}
+  - {peer: "FELIX", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Fixed-price contract/price variation clause mechanics; peer margin comparison"}
+  - {peer: "FELIX", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Oman LNG contract, metal/plastic recycling diversification detail"}
+  - {peer: "FELIX", quarter: "Q4 FY26 (June 2026)", usage: "SUBSTANTIVE", contribution: "FY26 full-year results, war/Oman disruption, working capital stretch, main-board migration timeline"}
+industry_cross_read:
+  demand: "Three of four peers (CEWATER, EIEL, EMSLIMITED) show a consistent pattern of strong headline demand/TAM commentary early in FY26 followed by successive guidance cuts driven by execution and cash-timing issues (weather, government payment delays, elections) rather than demand destruction; FELIX is the outlier with strong FY26 execution but flags headwinds emerging by Q4 FY26/Q1 FY27"
+  pricing_inputs: "2 of 4 peers (CEWATER, EIEL) corroborate rising input costs but smaller (1-2pp EBITDA) and later (Q4 FY26/Q1 FY27) than the main company's claimed 25-40% H2 FY26 metals inflation, tied to a specific Middle East geopolitical/shipping disruption rather than a broad metals move; FELIX and EMSLIMITED show no evidence of input cost inflation driving results"
+  capex_cycle: "Industry-wide capacity/diversification race, not a lone expander: three of four peers (CEWATER, EIEL, FELIX) are aggressively expanding into adjacent recurring-revenue verticals (renewables/BESS/wind, oil/metal/plastic recycling) simultaneously in FY26; only EMSLIMITED remains conservative with an explicit debt-free, organic-growth-only philosophy"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Government payment-system risk as structural, not one-off (EMSLIMITED SPARSH portal delays, Q4 FY26)"
+  - "Election-driven work stoppages for underground-infrastructure EPC work (EMSLIMITED West Bengal election, Q4 FY26)"
+  - "Cyber/impersonation fraud risk in milestone-payment EPC businesses (EIEL Rs.11.15 crore loss, Q1 FY26)"
+  - "Promoter share pledging as a recurring governance-credibility flag (EMSLIMITED pledge rising ~7% to ~28% across FY26 with investor pushback, Q4 FY26)"
+  - "Unbilled revenue/working capital stretch from milestone-based government billing and GST/TDS-matching requirements (EIEL unbilled days to 195, Q4 FY26)"
+  - "Persistent competitive fragmentation at the unlisted/smaller-ticket tier limiting bid-win-rate improvement (EMSLIMITED, Q2 FY26)"
+net_narrative_effect: "complicates"

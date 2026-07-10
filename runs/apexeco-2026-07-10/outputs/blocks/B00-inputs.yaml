@@ -1,0 +1,32 @@
+stage: B00-inputs
+company: APEXECO
+run_date: 2026-07-10
+model: orchestrator
+status: complete
+manifest:
+  company: Apex Ecotech Ltd
+  ticker: APEXECO
+  cmp: 242.0
+  market_cap_cr: 319.0
+  run_type: full
+  concalls_available: true
+  sector_cap_row: "EPC / Civil construction"
+inventory:
+  annual_report: 1        # inputs/annual-report/Annual_Report_2025.pdf
+  results: 2              # Q4 FY26 (06-05-2026 signed), Q2 FY26 (07-11-2025 intimation)
+  rating: 0              # ABSENT
+  concalls: 3            # May 2025, Nov 2025, May 2026
+  peer_concalls: 16      # CEWATER x4, EIEL x4, EMSLIMITED x4, FELIX x4
+  screening: 6_company_plus_4_peers   # screener-*.csv (APEXECO) + CEWATER/EIEL/EMSLIMITED/FELIX
+  presentation: 1        # Investor_Presentation_1.pdf
+  other: 0
+input_gaps:
+  - type: rating
+    detail: "No credit rating PDF provided. Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative per framework."
+concalls_available: true
+no_concall_mode: false
+notes:
+  - "peer_concalls count 16 exceeds nominal 0-12 contract cap; all 16 retained across 4 peers (4 quarters each) for fuller triangulation and verifier-D coverage audit."
+  - "Company screening = screener-*.csv (6 files). Peer screening CSVs available for CEWATER, EIEL, EMSLIMITED, FELIX."
+  - "sector_cap_row auto-picked by collector (EPC / Civil construction); manifest notes to verify at stage 11."
+peers: [CEWATER, EIEL, EMSLIMITED, FELIX]

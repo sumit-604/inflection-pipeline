@@ -1,0 +1,54 @@
+stage: B03-ardeep
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF provided (confirmed by AR itself: SME Listed Company not required to obtain credit rating for its securities, Boards' Report p.26)"}
+  - {type: shareholding, detail: "no shareholding pattern / pledge data in provided inputs (AR provides only Note 2's promoter/5%+ holder table, no full shareholding pattern schedule or pledge disclosure)"}
+  - {type: order_book, detail: "MDA references an order book 'near Rs 100 Cr at IPO filing' (p.32) but no order-book note, backlog schedule, or execution/conversion disclosure exists in Notes 1-31 to verify or track this figure"}
+  - {type: revenue_concentration, detail: "MDA names blue-chip clients (p.32) and cites a Risk Factor for 'Dependence on Key Industries' (p.33) but no customer or industry revenue-concentration percentages are disclosed anywhere in the document"}
+flags:
+  - {type: FLAG-CASH, reason: "CFO FY25 -Rs 1,408.02 lakh against PAT +Rs 856.08 lakh (Cash Flow Statement p.48); CFO/PAT -1.65x, CFO/EBITDA -1.21x; funded entirely by IPO financing inflows (net Rs 2,261.36 lakh) not operations; driven by receivables +155.3% (Note 10 p.55) with zero doubtful provisioning (Note 30 p.64) plus a Rs 902.95 lakh buildup in other current assets and advances, while trade payables actually declined -4.9%, ruling out payable-stretching as the cause"}
+  - {type: FLAG-GOVERNANCE, reason: "All four independent directors attended below 42% of FY25 board meetings versus 100% of committee meetings (Boards' Report p.21); remuneration increase disclosure directly contradicts between Note 20(b) p.58 (169.3%/169.3%/26.9%) and Annexure III p.31 (37.02%/37.02%/53.35%) for the same three executive directors; Annexure III's stated median employee remuneration (Rs 22,059.50, p.31) is internally inconsistent with its own CEO-to-median ratio figures, which back-solve to an implied true median of approximately Rs 5.20 lakh"}
+  - {type: FLAG-NARRATIVE, reason: "MD&A claim that FY25 growth was driven by international and domestic contracts (Annexure IV p.32) is directly contradicted within the same annual report by Note 22 p.59 showing export revenue fell 59% with 100% customer/geography churn; MD's shareholder letter claim of a 'more efficient working capital cycle' (front matter p.3) is contradicted by the debtors turnover fall (Note 29 p.63) and the CFO collapse (Cash Flow Statement p.48), and the CFO/receivables issue is entirely absent from the MD letter and the formal Risk Factors section"}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Red Flag", p4: "Watch", p5: "Watch", p6: "Red Flag", p7_best_fit: "GARP Watchlist / Transition Alpha, cash-conversion caveat"}
+overall_quality: 4            # /10 with the four 25% components
+quality_components: {governance: 4, accounting: 4, balance_sheet: 7, earnings: 2}
+kill_switch_notes:
+  - "Phase 1: would not stop alone (clean opinion, no defaults/fraud), but drafting inconsistencies (KAM disclaimer, Sec 138/135 contradictions) warrant reading the rest with elevated skepticism"
+  - "Phase 2: would prompt management engagement given zero receivables provisioning concurrent with a 90.9% director remuneration jump and an unreconciled statutory disclosure on that same remuneration"
+  - "Phase 3: strong reason to pause given CFO/PAT of -1.65x entirely financing-plugged in the IPO year; does not halt the pipeline"
+  - "Phase 4: MD&A forward commentary would be discounted materially given the same-document export-growth contradiction, but would prompt questions rather than a stop"
+  - "Phase 5: board-attendance pattern flagged for AGM follow-up; not stop-worthy given no promoter selling and no pledge evidence"
+triple_pass_verification:     # Phase 2 reconciliation result
+  verified: 15                 # of 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Receivables/cash-conversion deterioration absent from formal Risk Factors section", evidence: "Note 10 p.55 receivables +155.3%; Cash Flow Statement p.48 CFO -Rs 1,408.02 lakh; MDA Risk Factors p.33 lists only Key Industries Dependence, Competition, Market Volatility, Litigation, Share Allotment Pricing"}
+  - {risk: "Related-party/remuneration disclosure inconsistency not flagged as a risk", evidence: "Note 20(b) p.58 vs Annexure III p.31"}
+  - {risk: "Statutory dues overdue >6 months (LBT/Service tax/WCT, Rs 10.79 lakh) not disclosed as a risk", evidence: "CARO Annexure A clause vii(a) p.41"}
+  - {risk: "Undisclosed Bank of India CC facility terms not flagged", evidence: "Note 11 p.55 vs Note 4 p.52"}
+  - {risk: "Export customer/geography concentration (100% churn) not flagged as customer-specific risk", evidence: "Note 22 p.59"}
+guidance_table:
+  - {claim: "FY25 revenue growth driven by international and domestic contracts", number: "~34% revenue growth to Rs 70.96 Cr", timeframe: "FY25", credibility: "Low - contradicted by Note 22 p.59 showing export revenue fell 59% with 100% customer/geography churn"}
+  - {claim: "Order book near Rs 100 Cr at IPO filing", number: "~Rs 100 Cr", timeframe: "as of IPO filing", credibility: "Not verifiable - no order-book note or execution disclosure in Notes 1-31"}
+  - {claim: "Working capital cycle now more efficient", number: "N/A (qualitative)", timeframe: "FY25", credibility: "Low - contradicted by debtors turnover fall 6.77x to 4.61x (Note 29 p.63) and CFO swing to -Rs 1,408.02 lakh"}
+  - {claim: "Continued investment in practical R&D", number: "N/A, no rupee figure given", timeframe: "ongoing", credibility: "Not verifiable - no R&D expense line in Note 19 or elsewhere"}
+monitorables:
+  - {metric: "CFO/PAT ratio", threshold: "return to above 0.7x", where: "FY26 Cash Flow Statement", why: "determines if FY25's cash-conversion collapse was a one-time IPO-year reset or structural"}
+  - {metric: "Debtors turnover / receivable days", threshold: "stabilize at or above 4.61x (~79 days)", where: "FY26 Notes 10/29", why: "core driver of the CFO problem; further fall below 4x is a serious deterioration signal"}
+  - {metric: "Bank of India CC account disclosure", threshold: "sanctioned limit/security/terms disclosed and reconciled to Note 4", where: "FY26 Notes 4 and 11", why: "currently an undisclosed ~11%-of-assets facility with no terms given"}
+  - {metric: "Related-party enterprise transactions (Oakens, Flagmo Ea, Flagmo Marketing)", threshold: "any transaction value greater than zero disclosed with pricing basis", where: "FY26 Note 20(b) / AOC-2", why: "currently zero-disclosed-transaction status is either genuinely dormant or an incomplete disclosure"}
+  - {metric: "Independent director board attendance", threshold: "at or above 75% for all four independents", where: "FY26 Boards' Report attendance table", why: "FY25's 33-42% attendance in the IPO year should not repeat post-listing"}
+  - {metric: "Overdue statutory dues (LBT/Service tax/WCT)", threshold: "cleared, Rs 0 outstanding beyond 6 months", where: "FY26 CARO Annexure A clause vii(a)", why: "Rs 10.79 lakh was overdue more than 6 months as of 31 March 2025; persistence signals a compliance/cash lapse"}
+strengths_top3:
+  - "Genuinely debt-free balance sheet, D/E 0.00, current ratio 4.50x, interest coverage 142.86x (Note 4 p.52, Note 29 p.62-63)"
+  - "Real revenue and profit growth (+33.67% / +29.1%) with consistent ~26% effective tax rate and no exceptional-item manipulation (Boards' Report p.18, P&L p.47)"
+  - "No promoter selling; dilution from 94.32% to 69.29% confirmed 100% mechanical from bonus issue plus fresh-issue-only IPO (Note 2c/2d p.51)"
+red_flags_top3:
+  - "CFO FY25 -Rs 1,408.02 lakh against PAT +Rs 856.08 lakh, CFO/PAT -1.65x, funded entirely by IPO financing inflows not operations (Cash Flow Statement p.48)"
+  - "Zero doubtful-debt provisioning against trade receivables up 155.3%, debtors turnover fell 6.77x to 4.61x (Note 10 p.55, Note 29 p.63, Note 30 p.64)"
+  - "Cross-document remuneration inconsistency: Note 20(b) implies 169.3%/169.3%/26.9% FY25 pay increases vs Annexure III's stated 37.02%/37.02%/53.35% for the same three executive directors (Note 20b p.58 vs Annexure III p.31)"
+best_fit_strategy: "GARP Watchlist / Transition Alpha (post-IPO scaling), pending FY26 cash-conversion resolution"
+one_line_verdict: "Profit up 29 percent, operating cash flow negative Rs 14.08 crore, IPO capital funding receivables not capacity."

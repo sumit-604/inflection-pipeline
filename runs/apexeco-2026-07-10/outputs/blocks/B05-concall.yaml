@@ -1,0 +1,78 @@
+stage: B05-concall
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF"}
+  - {type: shareholding, detail: "no shareholding pattern / pledge data"}
+flags:
+  - "Transcripts are semi-annual (H1/H2) calls, not discrete quarterly calls, despite the injected quarter map labelling them Q4 FY25 / Q2 FY26 / Q4 FY26 — figures are period-anchored to their true H1/H2 basis throughout this report"
+  - "Q4 FY25 call transcript states H2 FY25 EBITDA (INR8927.78 lakhs, +331.85%) inconsistent with the same call's FY25 full-year EBITDA (INR1105.67 lakhs) — likely a transcription/verbal error in the source document; do not use H2 FY25 EBITDA downstream without independent verification"
+  - "Order book figures cannot be reconciled by management across the three calls (55cr vs 62cr vs 145cr vs 125cr for overlapping reference points)"
+  - "Customer concentration (Reliance order plausibly majority of FY26 revenue) never quantified despite being asked twice"
+quarters_analysed: ["Q4 FY25", "Q2 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Reliance Consumer Products order execution", type: "volume", timeframe: "near", conviction: "H", confirm_signal: "Continued on-schedule conversion of the ~INR100-125cr Reliance order into revenue with no dispute/delay disclosed", kill_signal: "Disclosed delay, dispute, or scope-cut on the Reliance order, or a customer-concentration shock"}
+  - {priority: 2, name: "Order-book-to-revenue conversion discipline (6-10 month gestation)", type: "volume", timeframe: "near", conviction: "H", confirm_signal: "FY27 revenue continues to track disclosed order book within the historical gestation window", kill_signal: "A slippage in the gestation window or a repeat of the order-book-figure confusion seen in the Q4 FY26 call"}
+  - {priority: 3, name: "ZLD / higher-margin mix shift", type: "price-mix", timeframe: "medium", conviction: "M", confirm_signal: "A disclosed, updated ZLD percent of revenue paired with margin expansion", kill_signal: "Continued margin compression despite bigger ticket sizes"}
+  - {priority: 4, name: "Raw-material cost pass-through on new orders", type: "cost", timeframe: "near", conviction: "M", confirm_signal: "Stable or improving EBITDA margin in FY27 despite input cost volatility", kill_signal: "Renewed margin compression blamed again on commodities with no price-escalation clauses adopted"}
+  - {priority: 5, name: "Customer diversification beyond Reliance/L&T", type: "volume", timeframe: "medium", conviction: "L", confirm_signal: "Disclosed top-customer revenue concentration metric showing declining reliance", kill_signal: "Continued non-disclosure plus a second mega-order concentrated in the same handful of clients"}
+  - {priority: 6, name: "ESOP delivery for core team", type: "cost", timeframe: "near (deadline already passed)", conviction: "L", confirm_signal: "Future disclosure confirming the ESOP was implemented", kill_signal: "Continued silence on the ESOP commitment"}
+  - {priority: 7, name: "International expansion (Vietnam/Indonesia)", type: "sectoral", timeframe: "long", conviction: "L", confirm_signal: "A first disclosed order or revenue contribution from outside India", kill_signal: "Continued retreat to India-only focus as stated in the Q4 FY26 call"}
+  - {priority: 8, name: "Quarterly (or more frequent) financial disclosure", type: "regulatory-policy", timeframe: "near", conviction: "L", confirm_signal: "A genuine move to numeric quarterly reporting, not just a percentage-only circular", kill_signal: "Continued semi-annual-only reporting into FY27"}
+guidance:
+  - {item: "Opening order book", number: ">INR55 crore", timeframe: "start of FY26", stated_in: "Q4 FY25 call"}
+  - {item: "Minimum revenue growth expectation", number: "at least ~25%", timeframe: "FY26", stated_in: "Q4 FY25 call"}
+  - {item: "Order book (mid-year)", number: "INR145 crore (incremental to already-billed INR32.56cr H1)", timeframe: "as of Nov 2025", stated_in: "Q2 FY26 call"}
+  - {item: "Reliance Consumer Products order", number: "INR100-125 crore, ~70% to execute within FY26", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Bharatiyam Beverages order", number: "INR10-15 crore", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Pragati Power Corporation order", number: "INR3-5 crore", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "ESOP for core employees", number: "amount not disclosed", timeframe: "by end of FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 actual revenue", number: "INR148.65 crore, +109.5% YoY", timeframe: "FY26 (delivered)", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual EBITDA", number: "INR21.76 crore, +96.82% YoY", timeframe: "FY26 (delivered)", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual PAT", number: "INR17.02 crore, +98.85% YoY", timeframe: "FY26 (delivered)", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual EPS", number: "12.91, +63.21% YoY", timeframe: "FY26 (delivered)", stated_in: "Q4 FY26 call"}
+  - {item: "Cash and bank balance", number: "INR35.06 crore", timeframe: "as of 31-Mar-2026", stated_in: "Q4 FY26 call"}
+  - {item: "Working capital", number: "INR61.72 crore", timeframe: "as of 31-Mar-2026", stated_in: "Q4 FY26 call"}
+  - {item: "Closing order book", number: ">INR125 crore", timeframe: "as of 31-Mar-2026, spillover into FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 growth guidance", number: "verbal, non-numeric: 30-40% growth overall", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Raw material (metal) cost inflation absorbed", number: "25-40% increase", timeframe: "H2 FY26", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 3
+  rows:
+    - {promised_in: "Q4 FY25 call", promise: "Revenue growth at least ~25% for FY26", outcome: "delivered", explanation: "FY26 revenue grew 109.5% YoY, vastly exceeding the floor guidance"}
+    - {promised_in: "Q4 FY25 call", promise: "Order book (INR55cr+) will convert to revenue within the year via the 6-10 month gestation cycle", outcome: "delivered", explanation: "Consistently explained and delivered across both FY25 and FY26"}
+    - {promised_in: "Q4 FY25 call", promise: "Narrow the H1/H2 revenue skew (from a 30-70 split) toward a steadier year-round cadence", outcome: "missed", explanation: "FY26 actual split was roughly 22/78 (H1 INR32.56cr / H2 INR116.08cr), more skewed than before; not proactively acknowledged"}
+    - {promised_in: "Q4 FY25 call", promise: "Move to quarterly reporting from subsequent quarters", outcome: "partial", explanation: "Only a percentage-only, non-numeric circular was issued at Q3 FY26; full quarterly financials still not delivered across all three calls"}
+    - {promised_in: "Q2 FY26 call", promise: "ESOP for core people by the end of FY26", outcome: "missed", explanation: "Zero mention in the Q4 FY26 (FY26 year-end) call; no explanation offered"}
+    - {promised_in: "Q2 FY26 call", promise: "ZLD mix and bigger ticket sizes will be margin accretive", outcome: "partial", explanation: "Margins declined YoY in H2 FY26 due to raw-material and logistics cost inflation; original accretion claim not reconciled against the actual result"}
+    - {promised_in: "Q2 FY26 call", promise: "International expansion into Vietnam/Indonesia/Middle East", outcome: "missed", explanation: "Gulf effort explicitly abandoned by the Q4 FY26 call, with a rare honest admission of failure; focus retreated to India-only"}
+    - {promised_in: "Q2 FY26 call", promise: "Order book of INR145 crore as of Nov-2025 will convert cleanly", outcome: "partial", explanation: "Q4 FY26 closing order book of INR125cr could not be cleanly bridged from the 145cr figure; management and CFO gave conflicting historical order-book numbers on the same call"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Please consider quarterly (or at least one-paragraph, more frequent) financial reporting; six months is too large a gap", quarters_asked: ["Q4 FY25", "Q2 FY26", "Q4 FY26"], classification: "answer changed between quarters — from outright deferral, to an unfulfilled repeat of the same promise, to a partial percentage-only (non-numeric) delivery that still falls short of the original request"}
+credibility_grade: "B"
+credibility_basis: "Core numeric commitments (revenue growth, order-book conversion) were consistently met or exceeded across all three periods with clean FY26 internal reconciliation, but governance/communication commitments (quarterly reporting, ESOP, H1/H2 skew reduction, order-book number consistency, forward guidance specificity) show a recurring pattern of misses and unreconciled figures."
+peer_questions:
+  - {question: "Is ZLD/water-recycling penetration in Indian industrial water use genuinely in the 'single-digit percent' to '~1%' range as management claims, and are the two different figures cited a year apart (Q4 FY25 vs Q4 FY26 calls) actually the same metric?", why: "This is the core TAM/runway thesis for the investment case and the two cited figures are not reconciled by management.", check_peers: ["Ion Exchange", "Thermax", "Va Tech Wabag", "Concord"]}
+  - {question: "Did peer water-treatment EPC players also see 25-40% raw material (metal) cost inflation in H2 FY26, and how did they handle pricing on fixed-price contracts signed before the spike?", why: "Tests whether Apex's margin compression is industry-wide (lower company-specific risk) or company-specific.", check_peers: ["Ion Exchange", "Thermax", "Va Tech Wabag", "Concord"]}
+  - {question: "What is Apex's actual revenue concentration in the top 1/3/5 customers for FY26, and how does that compare to peer disclosure practices?", why: "Management was asked directly twice and never quantified this; a single order (Reliance) may represent a majority of FY26 revenue.", check_peers: ["Ion Exchange", "Thermax", "Va Tech Wabag"]}
+  - {question: "Is the 'market consolidation' claim (fragmented industry consolidating around scaled players with larger ticket sizes) supported by any peer commentary or industry data, given management itself hedged it as a guess?", why: "This underpins the bigger-ticket-order growth thesis central to the FY27 guidance narrative.", check_peers: ["Ion Exchange", "Thermax", "Va Tech Wabag", "Concord"]}
+  - {question: "Do SME-listed peers under the same SEBI six-month disclosure carve-out nonetheless provide voluntary interim (quarterly) updates, the way Apex has only partially done with one percentage-only circular?", why: "Tests whether the quarterly-reporting gap is an industry-wide SME feature or an Apex-specific governance/communication gap.", check_peers: ["other SME-listed water treatment / industrial EPC companies"]}
+red_flags:
+  - {flag: "ESOP promise (specific deadline: end of FY26) silently dropped, zero mention in the FY26 year-end call", severity: "medium"}
+  - {flag: "Order-book figures cannot be reconciled by management across calls (55cr vs 62cr vs 145cr vs 125cr for overlapping reference points)", severity: "medium"}
+  - {flag: "Chronic non-delivery of quarterly reporting despite three consecutive, repeated analyst requests across all three calls", severity: "medium"}
+  - {flag: "H1/H2 revenue-skew reduction explicitly promised, then result moved in the opposite direction, with no proactive acknowledgment", severity: "low-medium"}
+  - {flag: "Undisclosed customer concentration — a single order (Reliance) plausibly represents a majority of FY26 execution, never quantified despite being asked twice", severity: "medium"}
+  - {flag: "Inconsistent characterization of the Veolia relationship across calls (from 'strategic alliance deepened' to an explicit 'not in any partnership, any JV')", severity: "low"}
+  - {flag: "Data-quality issue in the Q4 FY25 call transcript: H2 FY25 EBITDA figure (INR8927.78 lakhs) is arithmetically inconsistent with the same call's stated FY25 full-year EBITDA (INR1105.67 lakhs); likely a transcription/verbal error, not a management misstatement, but should not be used downstream without independent verification", severity: "low (data quality, not credibility)"}
+dropped_triggers:
+  - "International expansion (Bangladesh, then Vietnam/Indonesia/Middle East) — Gulf effort explicitly abandoned by the Q4 FY26 call, focus retreated to India-only"
+  - "ESOP for core team — promised with a specific deadline (end of FY26), zero mention thereafter"
+timeline_slippages:
+  - "Quarterly (or more frequent) financial reporting — promised 'from subsequent quarters' in the Q4 FY25 call, still not fully delivered by the Q4 FY26 call three periods later, only a partial percentage-only circular issued"
+  - "H1/H2 revenue skew reduction — promised to narrow in the Q4 FY25 call, actually widened by FY26"

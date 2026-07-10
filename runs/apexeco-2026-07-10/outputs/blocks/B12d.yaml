@@ -1,0 +1,24 @@
+stage: B12d
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 13
+substantive_unsupported:
+  - "EIEL Q1 FY26 (Aug 2025) — '15 lakh crore urban / 3 lakh crore AMRUT' quote fabricated-sourced; actual speaker is EMSLIMITED's H.K. Kansal, EMSLIMITED Q1 FY26 (Sept 2025) call, not EIEL/Manish Jain"
+  - "FELIX Q2 FY26 (Nov 2025) — 'price variation clause' quote attributed to Nishant Sharma not found anywhere in the FELIX transcript corpus (checked Sept 2025, Nov 2025, Feb 2026, Jun 2026)"
+  - "CEWATER Q4 FY26 (May 2026) — L1/₹143cr steel-order quote is real and correctly dated but misattributed to 'Manish Jain,' who is EIEL's MD, not a CEWATER speaker; actual speaker is Prayas Goel"
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "CRITICAL", location: "B06 Claim 1, Peer evidence row / Part 3 coverage map, EIEL Q1 FY26 row", claimed: "EIEL's Manish Jain, Q1 FY26 call (Aug 2025): 'about Rs. 15 lakh crores potential of the work... only in urban cities' / 'only done 3 lakh crores in AMRUT'", source_truth: "Quote is real but spoken by EMSLIMITED's H.K. Kansal in EMSLIMITED's Q1 FY26 call (Sept 3, 2025); not present anywhere in the EIEL Aug 2025 transcript", note: "Complete misattribution of company, speaker, and date for a quote used as primary TAM evidence in Claim 1"}
+  - {severity: "CRITICAL", location: "B06 Claim 2, Peer evidence row, FELIX Q2 FY26 (Nov 2025) citation", claimed: "Nishant Sharma quote on price variation clauses offsetting cost increases, cited as 'directly on-point evidence of standard peer practice'", source_truth: "No such quote or discussion of price variation clauses appears in the FELIX Nov 21 2025 transcript, or in the Sept 2025, Feb 2026, or Jun 2026 FELIX transcripts", note: "Presented in quotation marks as verbatim; could not be located in the source corpus"}
+  - {severity: "MAJOR", location: "B06 Claim 4, Peer evidence row, CEWATER Q4 FY26 (May 2026) citation", claimed: "L1 status on ₹143cr orders incl. >₹100cr steel order, attributed to 'Manish Jain'", source_truth: "Quote is verbatim and correctly dated to CEWATER's May 2026 call, but the actual speaker is Prayas Goel; 'Manish Jain' does not appear on any CEWATER call across all four transcripts and is in fact EIEL's Managing Director", note: "Speaker name cross-contaminated from a different peer company; underlying data and call/quarter attribution are otherwise correct"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, EMSLIMITED Q1 FY26 (Sept 2025) row vs Part 1 Claim 4 text", claimed: "Part 3 attributes the 'fragmented unlisted-competitor landscape' datapoint to the Sept 2025 (Q1) call", source_truth: "The actual quote ('8, 10 sectors of size 8, 10 companies of our size') is from the Nov 2025 (Q2) call, correctly cited in Part 1's Claim 4 text", note: "Internal inconsistency within B06 itself; the correct citation exists elsewhere in the same report so this is not a fabrication"}
+  - {severity: "MINOR", location: "B06 Claim 4 net-read paragraph, EMSLIMITED Q4 FY26 (May 2026) citation", claimed: "'it does not take much to be transparent... give a realistic projection henceforth' presented as a single continuous investor quote", source_truth: "These are two separate remarks from two different individual investors (Azar and Sheetal Shah) in the same call, spliced together with an ellipsis", note: "Both fragments are real and correctly dated; splicing without speaker differentiation is a presentation issue, not fabrication"}
+critical_count: 2
+major_count: 1
+minor_count: 2
+acceptance_rate: 81

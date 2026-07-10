@@ -1,20 +1,14 @@
 stage: B12a
 company: "AKUMS"
 run_date: "2026-07-10"
-model: claude-haiku-4-5-20251001
+model: claude-haiku-4-5
 status: complete
-numbers_checked: 45
+numbers_checked: 43
 findings:
-  - {severity: "MATCHES", location: "B01 Gate 0, all blocks", claimed: "ROCE, CFO, FCF, revenue, EBITDA, capital structure (41 figures)", source_truth: "screener Data_Sheet, Cash_Flow, Balance_Sheet CSVs", note: "All ROCE figures FY15-26 verified. CFO cumulative 2672.78 Cr verified. Revenue CAGR 10.43%, PAT CAGR 17.56% verified. Net cash position 1523.17 Cr verified."}
-  - {severity: "MATCHES", location: "B04 Bizmodel, Section 1-2", claimed: "CDMO 80%, segment breakdown, gross margin 42.3%, capacity 5,059 Cr units, utilization 44%", source_truth: "Investor_Presentation_1.pdf slides 5, 11, 12, 15, 19, 20", note: "Exact matches on all segment percentages, EBITDA margins (CDMO 13.4%, Domestic 20.1%, Intl 25.4%), employee costs 754 Cr"}
-  - {severity: "MATCHES", location: "B05 Concall, Section 1", claimed: "Zambia US$45m (51% Akums), EUR35m/yr EU contract, capex guidance, volume growth", source_truth: "Concall_Nov_2025, Concall_Feb_2026, Concall_May_2026 primary transcripts", note: "All guidance figures verified word-for-word. Report correctly tracks progression of Zambia supply guidance from vague '2026' to specific 'Q2 FY27'"}
-  - {severity: "MATCHES", location: "B06 Peers, Claims 1-4", claimed: "WINDLAS IPM volumes flat-to-2.7%, INNOVACAP CDMO growth 8-10% organic, API prices down 8-25%, capex cycle verified", source_truth: "12 peer concall transcripts (COHANCE Q2-Q4, INNOVACAP Q2-Q4, WINDLAS Q1-Q4 FY26)", note: "IPM data from IQVIA/AIOCD per WINDLAS confirmed. COHANCE contradiction (Pharma CDMO flat/declining) correctly identified as material read"}
-  - {severity: "ANCHOR NOT FOUND", location: "B08 Promoter, Section 2C", claimed: "IT tax demand: Rs 133.75 Cr block-period group demand (May 2026)", source_truth: "Trade-press citations (scanx.trade, InvestyWise, Medical Dialogues, WhalesBook); no primary CBDT order accessed", note: "Reported as company-disclosed per investor disclosures. Material finding flagged MAJOR. Requires AR/tax disclosure verification in future run."}
-  - {severity: "ANCHOR NOT FOUND", location: "B09 TAM, Method 3", claimed: "FY24 CDMO revenue estimated at Rs 3,255 Cr (for reverse-engineering via market-share)", source_truth: "Estimated from FY25 ratio (77.9%) applied to FY24 total revenue (WebSearch, not primary-verified)", note: "Report correctly flags as estimate. Conservative method uses this; Method 1 (F&S/RHP) separate. Arithmetic sound."}
-  - {severity: "UNANCHORED", location: "B08 Promoter, Section 1C", claimed: "Sanjeev & Sandeep both discontinued education after 12th grade", source_truth: "Media profiles (Weekend Leader, News24Online) only; no university records accessed", note: "Report correctly marks as promotional sourcing. Biographical detail, no financial impact."}
-  - {severity: "UNANCHORED", location: "B06 Peers, PPLPHARMA", claimed: "PPLPHARMA concall transcript for API/cost verification", source_truth: "File is mislabeled; contains Piramal Finance Limited (NBFC), not Piramal Pharma", note: "Report correctly identifies; marks UNUSED. Claim 2 verified via COHANCE + INNOVACAP instead (sufficient)."}
+  - {severity: "MAJOR", location: "B01 Gate 0 deal-breaker analysis", claimed: "Rs 133.75 cr IT block-period tax demand", source_truth: "NOT FOUND in AR/results. AR explicitly states 'no demands raised as of reporting date'", note: "Appropriately identified as NOT FOUND by B01, not scored into verdict; originates from B08 web sources, contradicted by primary AR"}
+  - {severity: "MINOR", location: "02-notes.md anchor precision", claimed: "AR page citations 'p.20150'", source_truth: "These are text-file LINE NUMBERS, not PDF pages. All figures verify correct when cross-referenced to page markers", note: "Extraction labelling artefact; 100% of numerical figures verified exact"}
 critical_count: 0
 major_count: 1
-minor_count: 3
-acceptance_rate: 93
-coverage_note: "91% fully verified against primary sources (screener CSVs, investor presentation, concall transcripts). 4% secondary-sourced due to PDF blocks (arithmetically reconstructed). 5% unanchored (biographical or file-mismatch artifacts, no decision impact). Zero CRITICAL mismatches. One MAJOR: IT tax demand (Rs 133.75 Cr) company-disclosed, requires AR verification. Three MINOR: FY24 CDMO revenue estimated for TAM, promoter education unanchored, PPLPHARMA file mismatch. All Gate 0 inputs, segment financials, concall guidance, and TAM/SAM/SOM calculations verified clean."
+minor_count: 1
+acceptance_rate: 97.7
+coverage_note: "43 material figures audited. All verdict-card inputs (Gate 0 core 69/grand 79, Block E 18, em_score 26.3, ICRA AA/A1+, Total Debt/OPBDITA 0.2x) verified 100% to primary documents. Key figures verified: PAT -25.4% YoY (2,563.97M), ETR 32.9%, Operating PBT +22.4%, CFO 1,181.2cr, Adjusted CFO/PAT 0.99x, R&D 0.86%, Customer advance 1,032.31cr, capex-embedded-growth 20.6%. Re-run against full source set (AR FY26, Q3/Q4 results, ICRA rating) vs the prior screener-only pass."

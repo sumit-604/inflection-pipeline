@@ -1,0 +1,70 @@
+stage: B10-valinputs
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps: []
+flags:
+  - type: FLAG-CASH
+    reason: "Headline CFO Rs 1,181.2 cr (CFO/PAT 4.61x) is distorted by Rs 1,032.31 cr unnamed customer-advance contract liability (23.7% of FY26 revenue, financing construct). Adjusted CFO ex this inflow ~Rs 239.89 cr (CFO/PAT ~0.99x). Imputed finance cost Rs 77.61 cr inflates PBT. Normalize at stage 11; do not credit headline rate. NOTE: ICRA (10 Apr 2026) confirms this is NOT structural WC — liquidity 'Strong', Total Debt/OPBDITA 0.2x, WC stretch only a hypothetical downgrade trigger."
+  - type: FLAG-PROMOTER
+    reason: "Section 132 IT search Jan 2025; auditor Emphasis of Matter on it. NOTE CORRECTION: the Rs 133.75 cr Section 158BC demand from B08 web sources is NOT in the AR — AR states no demands raised as of reporting date. Live Drugs & Cosmetics prosecution (2016 Vicks Gel); CEO-CDMO resignation Jul 2025. Offset by 0% pledge, credentialed independent board, DII 14.3%, blue-chip anchor. Non-deal-breaker."
+  - type: FLAG-ACCOUNTING
+    reason: "Reported PAT fell -25.4% YoY (Rs 256.4 cr) on tax-shield gap (ETR 33.0% vs 25.17% statutory, unrecognised DTA Rs 263.97 cr). MD&A claims 'Adjusted PAT +27.3%' but zero GAAP reconciliation. Accounting quality 5/10, earnings quality 2/10 (B02/B03). Use audited PAT 256.4 cr for all ratios."
+  - type: FLAG-ROCE
+    reason: "Reported ROCE ~13.7% but idle-cash-adjusted operating ROCE ~26.3%. Idle cash Rs 1,654.4 cr. Pillar 1 normalization decision needed at stage 11."
+table:
+  company: "Akums Drugs & Pharmaceuticals Limited"
+  cmp_rs: 702
+  market_cap_rs_cr: 11052
+  sector: "Pharmaceuticals / CDMO"
+  business_model_type: "Hybrid (CDMO 80%, Domestic Branded 10.2%, Int'l Branded 3.3%, API 4.2%, Trade Generics 2.3%)"
+  shares_outstanding_diluted_cr: 15.74
+  net_debt_rs_cr: -1564.1
+  enterprise_value_rs_cr: 9487.9
+  revenue_from_operations_rs_cr: 4359.02
+  revenue_growth_yoy_pct: 5.85
+  ebitda_rs_cr: 522.02
+  ebitda_margin_pct: 11.98
+  pbt_rs_cr: 382.01
+  pat_rs_cr: 256.40
+  pat_yoy_change_pct: -25.4
+  pat_margin_pct: 5.88
+  cfo_rs_cr: 1181.20
+  adjusted_cfo_rs_cr: 239.89
+  cfo_pat_ratio: 4.61
+  adjusted_cfo_pat_ratio: 0.99
+  capex_rs_cr: 222
+  diluted_eps_rs: 16.67
+  current_pe_x: 42.1
+  wc_days: 79.53
+  dso_days: 66.7
+  roce_reported_pct: 13.7
+  roce_idle_cash_adjusted_pct: 26.27
+  gate0_score: 79
+  em_score: 26.3
+  em_classification: "STRENGTHENING"
+  capex_embedded_growth_pct: 20.6
+  b05_credibility_grade: "C"
+  b08_promoter_verdict: "CONCERN"
+  b09_tam_conservative_rs_cr: 13880
+  b09_sam_rs_cr: 11630
+  b09_revenue_headroom_x: 3.34
+conflicts: []
+unresolved:
+  - {field: "ROCE (idle-cash normalized) for Pillar 1", why: "Pillar 1 decision pending on surplus-cash normalization; reported 13.7% vs operating 26.3%", where_it_might_be: "Stage 11 Pillar 1 (operator has directed 28-30% ex-cash)"}
+  - {field: "Forward normalized ETR", why: "FY26 ETR 33.0% elevated; unrecognised DTA Rs 263.97 cr on loss-making subsidiaries", where_it_might_be: "Stage 11 tax assumptions; FY27 monitoring"}
+  - {field: "Contingent liabilities & tax-search timeline", why: "Section 132 search active, auditor EOM; no demand raised per AR, no provision booked", where_it_might_be: "Stage 11 risk weighting; FY27 AR"}
+  - {field: "Peer financial multiples", why: "Only 4 comparators; PPLPHARMA file mislabeled", where_it_might_be: "Stage 11 relative valuation"}
+rating_wc_quote: |
+  ICRA, 10 April 2026, [ICRA]AA (Stable)/[ICRA]A1+.
+  "Liquidity position: Strong. The Group's liquidity position is strong, characterised by healthy cash flow from operations, cash and cash equivalents of Rs. 1,654.4 crore and unutilised working capital limits of around Rs. 450 crore, as on September 30, 2025... Moreover, ADPL has no long-term debt repayment obligations." [Page 3]
+  Downgrade trigger (WC-relevant, hypothetical not current): "The ratings could be downgraded in case of ... a deterioration in the credit profile and liquidity position, owing to debt-funded capex or a stretch in the working capital cycle." [Page 3]
+  No structural-WC language anywhere; Total Debt/OPBDITA 0.2x.
+ua_qualifiers:
+  listed_12m: true
+  gate0_or_em: true
+  fii_dii_lt3: false
+  all_met: false
+  note: "DII ownership 14.3% (Mar 2026) exceeds 3% threshold. No UA uplift. High institutional ownership is strength, not constraint."
+credibility_grade: "C"

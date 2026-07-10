@@ -29,17 +29,28 @@ deliverables in the operator's voice.
 ## DELIVERABLE 1: business-narrative.md
 
 Line 1: the ultra-short headline, 6 to 7 words, no punctuation tricks.
-Then 10 to 12 lines of plain English narrative covering, in whatever
-order the story demands: what the business does and for whom; what is
-changing (the transition, if there is one); what the numbers say (Gate
-0 posture, cash reality, growth); what management says versus what it
-does (credibility grade with the delivery evidence); what the peers
-independently confirm or contradict; where the market opportunity
-actually sits (runway class, headroom); what the valuation concluded
-(both tracks, entry zone, decision). Every number in the narrative must
-trace to a block; no fresh figures.
+Then 6 to 8 short paragraphs, one idea per sentence, one theme per
+paragraph, covering in whatever order the story demands: what the
+business does and for whom; what is changing (the transition, if there
+is one); what the numbers say (Gate 0 posture, cash reality, growth);
+what management says versus what it does (credibility grade with the
+delivery evidence); what the peers independently confirm or contradict;
+where the market opportunity actually sits (runway class, headroom);
+what the valuation concluded (both tracks, entry zone, decision).
+
+Block references like (B04) are BANNED in this file. They are machine
+anchors and belong only in the handoff dossier. Specific numbers stay,
+but rounded for reading (Rs 102 Cr, not Rs 101.97 Cr) unless precision
+changes the meaning. Every number must still trace to a block in the
+underlying record; no fresh figures. Every paragraph must pass the
+test: would the operator say this sentence aloud to another investor?
 
 ## DELIVERABLE 2: fttcp-recommendation.md
+
+Block references like (B04) are BANNED in the prose of this file, same
+as the narrative. They may appear in exactly two places: inside the
+confidence delta table, and inside the flag blocks' evidence citations.
+Nowhere else.
 
 ### Verdict line (first line of the file)
 One of: PROCEED | PROCEED WITH CAVEATS | PROCEED WITH FLAGS | REWORK |
@@ -85,11 +96,13 @@ Verdict selection rules, applied in order:
 - Active flag blocks (if any), inline, per above.
 - Contradicted claims from the peer stage, each with its anchor; these
   are priority monitoring items.
-- Monitorables: merge B03.monitorables, B04.first_deterioration_signals,
-  and the trigger confirm/kill signals from B05 into ONE deduplicated
-  list of at most 8 items, each with metric, threshold, where to find
-  it, and which thesis element it tests. Fewer, sharper items beat a
-  long list.
+- Monitorables and triggers: merge the monitorables, the first
+  deterioration signals, and the trigger confirm/kill signals from the
+  underlying record into ONE deduplicated list of at most 8 items.
+  Write each as a plain instruction a person would act on, not a schema
+  row: say what to watch, the number that matters, where to find it,
+  and which part of the thesis it tests, in a sentence or two. Fewer,
+  sharper items beat a long list.
 - The falsification line: the single next-quarter print that would do
   the most damage to this thesis, named exactly.
 
@@ -143,6 +156,19 @@ notion_save:
   drive_link: "{{DRIVE_FOLDER_LINK}}"
   mode: append-never-overwrite-status
 ```
+
+## STYLE EXEMPLAR
+
+DELIVERABLE 1 must match the register and rhythm of the narrative below.
+This is the target: plain sentences an operator would say aloud, numbers
+rounded for reading, no block references, one theme per paragraph.
+
+Smruthi Organics in ten lines
+Smruthi is a thirty seven year old bulk drug maker in Solapur, run by the Eaga family, producing generic APIs like Metformin, Diloxanide Furoate, Amlodipine and Telmisartan for pharmaceutical companies in India and abroad. Two products make up 54% of sales, ten customers make up 65% of sales, and the plants source 40% of raw material from China. FY26 revenue was ₹102 Cr, PAT ₹3.4 Cr, and the shares trade at 40 times earnings.
+Transitions underway. The company is trying to shift from being a domestic and Pakistan focused bulk supplier to a regulated market API supplier for Europe and Brazil. It won its first EU CEP for Amlodipine in March 2026, is preparing for ANVISA and further EDQM inspections, and has filed 34 country registrations. It also shut down its formulations division in May 2026 and cut long term debt by two thirds during FY26.
+Future growth triggers. First European Amlodipine orders once customers qualify the site, ANVISA clearance opening Brazil, more CEPs on other molecules, and any early conversion of the 34 country registrations into recurring orders.
+Strengths. Genuinely strong balance sheet with net cash of ₹14 Cr and unused bank limits, thirty seven years of manufacturing continuity, DSIR recognised R&D, recent improvement in gross margins from cheaper raw material and better process yields, and a real, dated European regulatory credential.
+Weaknesses and risks. Revenue has fallen 19% in FY26 after Pakistan trade was closed, ROCE is only 8 to 9% outside the COVID pricing spike, customers work on purchase orders with no long term contracts, the credit rating was downgraded to BBB minus in August 2025, and the ₹100 Cr revenue trigger for a further cut sits ₹2 Cr away. The promoter family already draws salary equal to the entire company profit and has just added a third family member to the executive board from June 2026.
 
 ---
 ## INJECTED INPUTS (variable, below cache boundary)

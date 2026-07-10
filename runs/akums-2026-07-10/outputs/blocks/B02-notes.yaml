@@ -1,0 +1,13 @@
+stage: B02-notes
+company: AKUMS
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: skipped
+input_gaps:
+  - {type: annual-report, effect: "no AR in inputs/; notes triple-pass cannot run"}
+skip_reason: "No annual report provided. Per DEGRADATION MAP, stages 2 and 3 are skipped, block emitted with status: skipped, gap named. Absence flows to synthesis, does not count as a verification miss."
+accounting_quality: null
+top_findings: []
+red_flags: []
+questions_for_mgmt: []
+flags: []

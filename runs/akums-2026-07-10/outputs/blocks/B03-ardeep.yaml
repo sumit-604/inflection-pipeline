@@ -1,0 +1,13 @@
+stage: B03-ardeep
+company: AKUMS
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: skipped
+input_gaps:
+  - {type: annual-report, effect: "no AR in inputs/; AR deep dive cannot run"}
+skip_reason: "No annual report provided. Per DEGRADATION MAP, stages 2 and 3 are skipped, block emitted with status: skipped, gap named. Absence flows to synthesis, does not count as a verification miss."
+phase_verdicts: {}
+overall_quality: null
+kill_switch_notes: []
+monitorables: []
+flags: []

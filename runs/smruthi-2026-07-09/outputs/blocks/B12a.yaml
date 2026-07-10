@@ -1,0 +1,30 @@
+stage: B12a
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-haiku-4-5
+status: complete
+rerun_note: "Re-run after B10/B11 correction. Prior 2 CRITICAL unit errors confirmed FIXED; 0 CRITICAL now."
+numbers_checked: 46
+findings:
+  - {severity: "MAJOR", location: "B10 Financials row 50", claimed: "CFO/PAT cumulative 2.80x", source_truth: "2.18x per B01 p.83 and screener verification", note: "Error in B10 data assembly; Pillar 2 band (1.00x) does not rest on this figure, so B11 verdict unaffected"}
+  - {severity: "MAJOR", location: "B07 Section 1B; AR Note 26 vs Annexure", claimed: "Export revenue +38.4% (Note 26)", source_truth: "Note 26 Rs 6,716.52L vs Annexure -31.28% Rs 2,616L unreconciled", note: "B07 properly flags caveat; uses Note 26 as authoritative source; E2 moat scoring carries this caveat"}
+  - {severity: "MINOR", location: "B10 Financials row 47", claimed: "Capex 8.47 Cr", source_truth: "Screener CFI -8.92 Cr; PDF p.9 not independently readable", note: "Likely scope difference; <1% immaterial to FCF or verdict"}
+prior_corrections_verified:
+  - {item: "Shares outstanding", status: "FIXED", now: "1.14463 Cr", was: "11.4463 Cr (10x error)", anchor: "Results dividend 1,14,46,290 shares / 10 FV"}
+  - {item: "TAM", status: "FIXED", now: "10,200 Cr", was: "102.0 Cr (100x error)", anchor: "B09 Method 2 p.54"}
+  - {item: "SAM", status: "FIXED", now: "7,340 Cr", was: "73.4 Cr (100x error)", anchor: "B09 Section 3A p.95"}
+  - {item: "SOM 3yr", status: "FIXED", now: "132 Cr", was: "1.32 Cr (100x error)", anchor: "B09 p.111"}
+  - {item: "SOM 5yr", status: "FIXED", now: "162 Cr", was: "1.62 Cr (100x error)", anchor: "B09 p.111"}
+  - {item: "Market cap conflict", status: "RECORDED", reconciled: "139.6 Cr", manifest: "169.0 Cr", anchor: "B10 Conflicts table"}
+verdict_card_clean:
+  - {figure: "Destination PE Track 1", mid: "11.05x", status: "VERIFIED"}
+  - {figure: "Destination PE Track 2", mid: "11.1x", status: "VERIFIED"}
+  - {figure: "EBITDA FY26", value: "11.46 Cr", status: "VERIFIED"}
+  - {figure: "EPS", value: "2.99 Rs", status: "VERIFIED"}
+  - {figure: "Current PE", value: "40.8x", status: "VERIFIED"}
+  - {figure: "Entry range", value: "28-35 Rs", status: "VERIFIED"}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 91.3
+coverage_note: "100% verdict card (11 figures), 100% Section 1B pillars (11 inputs), 100% TAM/SOM (4 figures), 95% B10 financials (18/19 detailed), 90% B01/B07 (scores verified, conflicts flagged). Critical-path verdict-affecting numbers: 100% clean. AVOID verdict mathematically sound."

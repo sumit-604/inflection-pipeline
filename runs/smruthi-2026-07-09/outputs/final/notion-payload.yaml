@@ -1,0 +1,10 @@
+notion_save:
+  page_title: "Smruthi Organics Ltd (SMRUTHI)"
+  summary: "Commoditised API maker priced for unproven transition | PROCEED WITH FLAGS | Decision AVOID (on valuation) | Entry range Rs 28 to 35 | Destination PE ~11x both tracks vs 40.8x current | Prob-weighted return -20.4% CAGR"
+  drive_link: "stock analysis-_output Smruthi Organics Ltd"
+  mode: append-never-overwrite-status
+  instructions:
+    - "Fetch the live company page first if it already exists."
+    - "NEVER overwrite Decision Status from a pipeline run."
+    - "Append, do not replace; add this run as a dated entry under the existing record."
+    - "No public Drive URL this run; reference the folder name only."

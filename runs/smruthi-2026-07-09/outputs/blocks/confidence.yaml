@@ -1,0 +1,16 @@
+confidence_delta:
+  numerical_acceptance: 91.3     # B12a acceptance_rate (rerun, up from 84)
+  redflag_coverage: 71           # B12b acceptance_rate (unchanged; verifier B not re-run, B10/B11 fix does not affect it)
+  framework_adherence: 98        # B12c acceptance_rate (rerun; prior cash-multiplier MAJOR resolved)
+  peer_utilisation: null         # B12d N/A: stage 6 and verifier D skipped (NO peer-concalls); excluded from min, not scored 0
+  overall: 71                    # min of the three scored components (peer excluded); redflag coverage is binding
+band: "60-74 normal-lower: PROCEED-family verdicts downgrade one level"
+rework_gate:
+  triggered: false
+  reason: "CLEARED on rerun. Verifier A rerun reports critical_count: 0 (the prior two 100x/10x unit errors on B10 TAM/SAM/SOM and share count are confirmed FIXED). No verifier acceptance_rate below 60% (lowest is redflag 71). Overall 71 >= 60. The Stage-10 rerun also resolved Verifier C's prior Pillar-2 cash-multiplier MAJOR (1.00x now applied)."
+open_majors_for_operator:
+  - "B12c V20: RRM formula units ambiguity (percentage-point vs decimal reading). Under the strict pp reading Track 1 destination PE is ~7.8x (not 11.05x) and Track 1 governs; the AVOID decision holds and strengthens either way. Keerti to adjudicate the formula units in Master v3.3 line 392."
+  - "B12a: B10 lists cumulative CFO/PAT 2.80x vs 2.18x full-period per B01 (window difference); does not drive the Pillar 2 band (1.00x rests on latest CFO/PAT and FCF volatility), decision-neutral."
+  - "B12a/B07: unreconciled AR export-growth contradiction (+38.4% Note 26 vs -31.28% Notice Annexure); B07 carries the caveat."
+notes:
+  - "rerun history: B10 and B11 re-run to fix B12a CRITICAL unit errors; B12a and B12c re-run to re-audit; B12b (redflags) and B12d (peer, skipped) unaffected and not re-run."

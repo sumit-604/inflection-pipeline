@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH]
+confidence_delta: {numerical: 91.3, redflag: 71, framework: 98, peer: 0, overall: 71}
+valuation_decision: "AVOID"
+entry_range: {low: 28, high: 35}
+headline: "Commoditised API maker priced for unproven transition"
+falsification_metric: "Confirmed ANVISA or EDQM regulated market approval with disclosed first regulated market export revenue in the next results filing"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Same FY24-25 AR reports exports at +38.35% (Note 26) and -31.28% (Directors' Report), unreconciled; evergreen read-the-whole-filing disclosure-quality lesson"
+notion_save:
+  page_title: "Smruthi Organics Ltd (SMRUTHI)"
+  summary: "Commoditised API maker priced for unproven transition | PROCEED WITH FLAGS | AVOID | Entry Rs 28 to 35"
+  drive_link: "stock analysis-_output Smruthi Organics Ltd"
+  mode: append-never-overwrite-status

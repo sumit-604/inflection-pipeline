@@ -1,0 +1,22 @@
+stage: B12c
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+rerun_note: "Re-run after Stage 11 rerun. Prior Pillar 2 cash-multiplier MAJOR RESOLVED (1.00x applied). New MAJOR: RRM formula units ambiguity, decision-robust (conservative direction)."
+gate0: {rules_checked: 26, fails: []}
+emoat: {rules_checked: 7, fails: []}
+valuation:
+  rules_checked: 30
+  fails:
+    - {rule: "V20 RRM computation (Master v3.3 line 392)", severity: "MAJOR", as_written: "RRM = 1 + (13.5% - r) x 0.12, bounded 0.70-1.60", b11: "0.996 (read (13.5-r) in decimals); Track 1 destination PE 11.05x; divergence claimed 0.45% (<15%)", recomputed: "RRM 0.70 (floored) under percentage-point reading; Track 1 destination PE ~7.8x; true divergence ~42% (>15%), Track 1 conservative and governing", note: "bounds and >15%-divergence machinery only bind under pp reading; error direction is conservative; decision/Hurdle unaffected; formula text genuinely ambiguous - Keerti to adjudicate units"}
+recomputed_destination_pe: "Additive/headline unchanged 11.1x (concur); RRM-track ~7.8x vs stated 11.05x"
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B11 RRM Dual-Track Derivation / verdict card", issue: "RRM computed with (13.5-r) in decimal not percentage-point units; RRM 0.996 vs correct 0.70 floored; Track 1 ~7.8x not 11.05x; false <1% convergence claim (true divergence ~42%)", impact: "confined to secondary RRM cross-check track; primary additive PE 11.1x, Hurdle STOP, and AVOID decision unaffected and reinforced"}
+  - {severity: "MINOR", location: "B11/B10 Pillar 2", issue: "cumulative CFO/PAT cited 2.80x vs B01 full-period 2.18x (likely 3-5yr vs 10yr window); band determination unchanged either way", impact: "none on rule application; flagged for Verifier A"}
+prior_major_pillar2_cash_multiplier: "RESOLVED - 1.00x volatile band correctly applied; 0.80x correctly ruled out (CFO positive every year, CFO/PAT high; FCF-negative is not CFO-negative)"
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 98

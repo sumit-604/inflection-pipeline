@@ -1,0 +1,55 @@
+stage: B09-tam
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation not provided; no management TAM/market-size claim exists anywhere in the FY24-25 AR (qualitative growth narrative only)"
+  - "Concall transcript not provided (NO-CONCALL MODE)"
+  - "Peer-company concalls not provided (Harman Finochem revenue, top-3 concentration ratio, organised/unorganised split all NOT FOUND)"
+  - "Current capacity utilisation at Unit I/Unit II not disclosed — the single biggest unresolved input to the Section 3C capacity cross-check"
+flags:
+  - "Diloxanide Furoate has no sourced global market-size estimate; excluded from the quantified TAM bottom-up sum, so conservative/realistic TAM figures are likely modest understatements"
+  - "Telmisartan and Amlodipine API vendor market-size reports show 2.8x-3x divergence across commercial sources; lowest credible figures used per conservative bias, flagged LOW confidence data quality"
+  - "SOM-implied revenue CAGR (9.0%/9.6%) exceeds capex-embedded growth capacity (6.7%); capacity gap of ~Rs 23 Cr by yr3, ~Rs 53 Cr by yr5 — SOM is the optimistic side of the comparison"
+  - "Company's FY26 revenue fell ~19% YoY (task anchor) while estimated TAM grew ~6.5-8%; company is currently ceding relative share, in direct tension with the forward share-gain assumption embedded in SOM"
+  - "No quantified management TAM/market-size claim found anywhere in the FY24-25 Annual Report"
+  - "ANVISA (Brazil) and EDQM (Europe) regulated-market inspections pending FY25-26; the largest SAM-expansion lever is contingent and unconfirmed"
+market_definition: "Global market for Smruthi's key APIs/intermediates (Metformin HCl, Amlodipine-related, Telmisartan, Diloxanide Furoate) sold B2B to generic-formulation manufacturers, excluding regulated (US/EU-premium) markets not yet accessible"
+tam_cr: {conservative: 10200, realistic: 21700}
+sam_cr: 7340
+sam_pct_of_tam: 72
+som_3yr_cr: 132
+som_5yr_cr: 162
+som_implied_revenue_cagr: {yr3: 9.0, yr5: 9.6}
+current_sam_share_pct: 1.4
+revenue_headroom_x: 72.0
+tam_growth_pct: 6.5
+runway_class: "STRONG"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not_applicable_no_claim_found"
+capacity_check: "gap of ~Rs 23-53 Cr vs capex-embedded capacity (6.7%); SOM is the optimistic side"
+methods_used:
+  - "top-down (ICRA India API industry, context/outer-bound only — subtraction to product scope NOT FOUND)"
+  - "bottom-up (per-molecule global API market value: Metformin, Telmisartan, Amlodipine; Diloxanide Furoate NOT FOUND)"
+  - "peer revenue aggregation (partial — Aarti Drugs only; insufficient for independent estimate)"
+  - "import substitution (PLI scheme, China dependency — tailwind context, not a TAM figure)"
+  - "global benchmark (qualitative only — India ~8% global API share vs China)"
+stale_data_flags:
+  - {datapoint: "India bulk drug/API industry total size (Rs 1,10,000 Cr)", source: "ICRA", year: "2023"}
+searches_performed:
+  - "India API bulk drugs market size 2025 CRISIL ICRA IBEF Rs crore"
+  - "India active pharmaceutical ingredients market size 2024 2025 billion Mordor Intelligence"
+  - "India bulk drugs API exports value 2024 Pharmexcil crore"
+  - "Metformin API global market size tonnes 2024"
+  - "PLI scheme bulk drugs India 41 projects investment critical KSM API import substitution"
+  - "Metformin HCl API market size USD million 2024 2030 CAGR"
+  - "Amlodipine API market size USD million global 2024"
+  - "Telmisartan API market size global 2024 USD million"
+  - "India API industry unorganised organised sector share small players fragmentation CARE ICRA report"
+  - "India generic bulk drug exporters small cap API companies list competitors Solapur Hyderabad Metformin manufacturers"
+  - "Aarti Drugs Harman Finochem Ambalal Sarabhai API bulk drug company revenue crore FY24 FY25 Metformin Diloxanide"
+  - "India API import dependence China 70 percent Metformin Amlodipine intermediate import substitution"
+  - "Smruthi Organics share price P/E ratio 2026 screener"
+searches_skipped: []

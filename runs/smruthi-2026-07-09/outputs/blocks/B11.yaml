@@ -1,0 +1,55 @@
+stage: B11-valuation
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-opus-4-8
+status: complete
+rerun_note: "Re-run on corrected B10 (unit errors fixed). Cash multiplier now 1.00x (as-written volatile band, resolving B12c prior MAJOR); destination PE ~11x both tracks; decision unchanged AVOID."
+input_gaps:
+  - "ROCE latest NOT FOUND -> conservative 7.2% (B01 FY23-26 compression band lower bound)"
+  - "FTTCP ROCE forward verdict not carried by B10 (NO-CONCALL MODE) -> conservative DECLINING"
+  - "3-yr revenue/PAT CAGR NOT FOUND -> 2-yr -10.04% used as trend proxy"
+  - "Peer medians unresolved (B06 skipped) -> standalone multiples only, no peer cross-check"
+  - "Capacity utilisation unresolved -> base rev CAGR held below SOM-implied 9.0% and 6.7% capacity"
+  - "ANVISA/EDQM outcomes unresolved -> no regulatory catalyst credited"
+flags:
+  - "FLAG-CASH: not-structural / working-capital-driven; cash multiplier applied 1.00x (volatile band); FCF negative 2 of 3 yrs; FY26 CFO is one-time receivables release"
+  - "Governance CONCERN (B08): remuneration ~125% of PAT, full ID turnover, 24-yr title-deed defect, ECL under-provisioning -> +2% into RRM r"
+  - "Revenue miss unexplained -19% FY26; credibility grade C"
+  - "Method divergence ~47% (EV/EBITDA base Rs83 vs P/E base Rs44) from heavy D&A load; AVOID invariant to blend"
+  - "Market cap conflict: manifest 169.0 vs reconciled 139.6; used 139.6 per B10"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 10.5, mid: 11.05, high: 11.9, r_used: 17, rrm: 0.996}
+  track2_additive: {low: 10.5, mid: 11.1, high: 12.0}
+  divergence_pct: 0.45
+  governing_track: "Track1 RRM (marginally lower, 11.05x); tracks converge <1% because Pillar3 and Strategic premiums are both 0"
+pillar_detail:
+  roce_used: 7.2
+  roce_base: 11.1
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 1.00
+  structural_or_growth: "not-structural / working-capital-driven (volatile band applied)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 38
+hurdle_ratio: {base: 0.36, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 42, base: 67, bull: 88}
+  track2: {bear: 42, base: 68, bull: 89}
+expected_cagr_prob_weighted: -20.4
+entry_range: {low: 28, high: 35}
+mos_price: 28
+upside_downside_ratio: 0.0
+decision: "AVOID (on-valuation)"
+unresolved_inputs_used:
+  - "ROCE latest -> 7.2% (lower bound of B01 FY23-26 compression band)"
+  - "FTTCP ROCE forward verdict -> DECLINING (trend declining, no confirmed catalyst, FTTCP 'when in doubt DECLINING')"
+  - "3-yr CAGR -> 2-yr -10.04% proxy for Bear anchoring"
+  - "Peer medians -> none credited (standalone only)"
+  - "Capacity utilisation -> base rev CAGR capped below 6.7% capacity / 9.0% SOM"
+  - "ANVISA/EDQM outcomes -> no catalyst credited (moot; EM 13.4<25 => Pillar3 +0x)"
+som_cagr_crosscheck: "consistent - base revenue CAGR 5% below SOM-implied 9.0%/9.6%; bull 9% at ceiling and flagged capacity-stretched"
+one_line_thesis: "Avoiding Smruthi at Rs 122: a 7.2% ROCE, no-moat, -19%-revenue bulk-drug maker earns only ~11x four-pillar destination PE (cash 1.00x volatile, EM 13.4, cap 38x) while priced at 40.8x, so Hurdle STOPs even on bull earnings; prob-weighted return -20% CAGR. Risk to AVOID: a confirmed regulated-market approval. Cash: WC-driven, not structural."

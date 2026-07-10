@@ -1,0 +1,33 @@
+stage: B07-emoat
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["concalls_absent_no_concall_mode", "peer_concalls_absent", "investor_presentation_absent", "single_AR_FY24-25_provided_gate0_references_later_FY26_data_not_independently_verified_here"]
+flags:
+  - {type: "FLAG-DATA-INCONSISTENCY", reason: "AR Notice Annexure export figure (Rs 2616.05 lakh, -31.28% YoY, p.12) contradicts Note 26 geographic revenue disaggregation (export Rs 6716.52 lakh, +38.35% YoY, p.77) and MD&A export-growth claim; unreconciled by company. Export-growth evidence (E2) carries this caveat."}
+  - {type: "FLAG-CONCENTRATION", reason: "Customer concentration worsened, not improved: 2 major customers = Rs 3463.33 lakh FY25 vs 1 major customer = Rs 1453.74 lakh FY24 (Note 45d, p.90). Scored 0 for C2 per rubric (no negative score) but flagged as a live risk given the transition-hunt context."}
+  - {type: "FLAG-GATE0-CARRYOVER", reason: "Gate 0 block (AVOID, core 37) is confirmed, not offset: forward emerging-moat score (13.4, MODEST) is insufficient to support TURNAROUND/HIGH POTENTIAL; combined assessment remains AVOID."}
+em_score: 13.4
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing/already partly realized"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Weak", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "E2", name: "Export expansion / China+1-labeled category", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, 12-24m to confirm"}
+  - {id: "F2", name: "Execution moat (AR capex-completion substitute)", strength: "Weak", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, needs 2nd year to confirm"}
+  - {id: "R1", name: "Regulatory and policy tailwinds (DMF pipeline, ANVISA/EDQM)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36m"}
+evidence_mix: {documented: 11, claim: 2, inference: 1}
+completionist_recount: "11 documented items across 6 categories (A3, B1, E2, F2, G2, R1); recount confirms no over-crediting of management claims as documented evidence."
+catalysts_12m:
+  - {catalyst: "ANVISA (Brazil) / EDQM (Europe) inspection outcomes", window: "already scheduled FY25-26, likely elapsed by run date; outcome not yet disclosed", evidence_type: "documented", anchor: "AR MD&A p.14"}
+  - {catalyst: "DMF approval progress (34 filings FY23-24 + FY24-25, Russia/China/Africa/Korea)", window: "12-24m", evidence_type: "documented", anchor: "AR MD&A p.14"}
+  - {catalyst: "Second-year confirmation of receivables collection / CFO improvement vs. rising net debt and gearing", window: "12m", evidence_type: "documented", anchor: "AR Note 10 p.67, Cash Flow Statement p.48, Note 47 p.97"}
+capex_embedded_growth_pct: 6.7
+combined_assessment: "AVOID"
+combined_reasoning: "AVOID backward (core 37; Block A<8, ROCE compression, revenue decline 5/9 yrs) paired with only MODEST forward score (13.4, built on an unproven DMF/regulatory filing pipeline and mix-confounded RM/export claims) is insufficient to justify a TURNAROUND or HIGH POTENTIAL upgrade; combined assessment remains AVOID."
+top_moat_risks:
+  - "ANVISA/EDQM inspection failure or adverse observations would remove the single strongest forward thread (R1), which is entirely filing-stage with no approval or revenue evidence yet."
+  - "Export revenue concentration in China plus worsening customer concentration (2 customers = Rs 34.6 Cr FY25) creates fragility in the E2 growth narrative; also flagged for an unreconciled internal AR contradiction on the underlying export-growth figure."
+  - "Backward integration RM decline (-9.42%) is confounded by a product-mix shift (Telmisartan exited the top-3); not proven as a structural, repeatable RM-security gain (B1)."
+  - "Rising net debt (Rs 11.1 Cr to Rs 16.3 Cr) and a Negative CARE rating outlook undercut the one-year working-capital improvement story (G2)."

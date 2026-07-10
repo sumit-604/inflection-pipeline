@@ -1,0 +1,50 @@
+stage: B03-ardeep
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-sonnet-5
+status: complete
+input_gaps: [concalls absent (NO-CONCALL MODE), peer-concalls absent, presentation absent]
+flags:
+  - {type: FLAG-CASH, reason: "CFO improvement (2.80x CFO/PAT) is substantially working-capital-driven via receivables collection rather than structural cash generation; FCF negative for two consecutive years (-Rs 153.88L FY25, -Rs 383.59L FY24); absolute cash balance thin and declining (Rs 43.57L); DSCR nearly halved to 3.01x with CARE Negative outlook on the long-term bank facility rating."}
+  - {type: FLAG-GOVERNANCE-REMUNERATION, reason: "Combined promoter family remuneration/RPT flows (Rs 413.29L-443.96L) approach or exceed full FY25 PAT (Rs 356.29L); managerial remuneration structurally exceeds the Section 197 11% statutory cap per the auditor's Section 197(16) paragraph, while the Directors' Report characterizes the audit report as clean with no qualifications despite this and a Rule 11(g) audit-trail reservation."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Watch", p5: "Red Flag", p6: "Watch", p7_best_fit: "Turnaround (early-stage, WATCHLIST)"}
+overall_quality: 5            # /10 with the four 25% components (governance 3, accounting 5, balance sheet 5, earnings 5 = 4.5, rounded)
+quality_components: {governance: 3, accounting: 5, balance_sheet: 5, earnings: 5}
+kill_switch_notes:
+  - "P1: auditor's Rule 11(g) books-of-account reservation and CARO ix(a) technical borrowing default would give a reviewer reason to pause."
+  - "P2: ECL policy breach on highest-risk receivable bucket and cross-statement PBT inconsistency are quantifiable disclosure/provisioning gaps."
+  - "P3: DSCR nearly halved, CARE Negative outlook, two years of negative FCF, and thin absolute cash raise a financing-runway concern."
+  - "P4: gap between uniformly positive MD&A framing and risk items buried in notes, plus the incorrect 'clean, no qualifications' audit characterization."
+  - "P5: combined family compensation roughly equal to or exceeding total PAT, coinciding with complete independent-director turnover in the same year."
+triple_pass_verification:
+  verified: 15                # of 15
+  discrepancies: []
+missing_risks:
+  - "Customer concentration (27.5% top-2, doubled YoY) absent from MD&A (Note 46(d), p.90)"
+  - "FX hedging policy-practice gap not disclosed alongside export growth claims (Note 47(c), p.94)"
+  - "DSCR/leverage deterioration from the same capex program celebrated in MD&A (Note 44, p.88)"
+  - "Title-deed/personal-guarantee entanglement on MD-held collateral, absent from Directors' Report narrative (CARO A(i)(c) p.40; Note 46(m) p.91)"
+  - "ECL under-provisioning / unresolved litigated receivable not discussed outside Note 10 (p.67)"
+  - "CARO ix(a) technical borrowing default omitted from Directors' Report (p.42)"
+  - "Rule 11(g) audit-trail database-level gap omitted from Directors' Report (Auditors' Report para 2(h)(vi), p.38-39)"
+guidance_table:
+  - {claim: "Export momentum to continue, stronger China/Russia contribution", number: "38% YoY export growth achieved FY25 (Rs 6716.52L vs Rs 4854.91L)", timeframe: "FY25-26 outlook", credibility: "High - verified exact against Note 26"}
+  - {claim: "Sustained DMF filings pipeline", number: "12 new DMFs FY25 vs 22 FY24", timeframe: "ongoing", credibility: "Medium - filing pace decelerated YoY without explanation"}
+  - {claim: "ANVISA (Brazil) / EDQM (Europe) regulatory inspections", number: "not quantified", timeframe: "FY2025-26", credibility: "Medium - specific and checkable, no financial magnitude given"}
+  - {claim: "Foundations laid over past three years will translate into enhanced shareholder value", number: "not quantified", timeframe: "medium to long term", credibility: "Low - vague, unfalsifiable"}
+monitorables:
+  - {metric: "DSCR", threshold: "decline below 3.0x or covenant breach", where: "Note 44 / bank covenant disclosures, FY26 AR or quarterly results", why: "Tests whether capex-led growth is becoming a financing-risk story"}
+  - {metric: "ECL on >3yr litigated receivable bucket and 4-party legal case (Rs 216.15L, unchanged 2 yrs)", threshold: "court ruling, settlement, or provision increase", where: "Note 10 / Note 46(p), FY26 AR or exchange disclosures", why: "Tests whether the ECL policy breach resolves or crystallizes as a write-off"}
+  - {metric: "Managerial remuneration as % of PAT / fresh Section 197 waivers", threshold: "family remuneration continuing to exceed ~50-75% of PAT, or a fresh waiver request", where: "Auditors' Report Section 197(16) paragraph, AGM Notice, FY26", why: "Tests whether governance/capital-allocation overhang persists under new FY25-28/31 terms"}
+  - {metric: "CARE Edge Ratings outlook (CARE BBB;Negative long-term / CARE A3+ short-term)", threshold: "further downgrade or outlook change", where: "Company/exchange disclosures; FY26 Corp Gov Report", why: "Independent third-party corroboration of credit trajectory"}
+  - {metric: "EasyERP audit-trail database-level enablement", threshold: "confirmation of activation, or absence of further auditor comment", where: "Auditors' Report Rule 11(g) paragraph, FY26 AR", why: "Tests whether the Companies Act compliance gap is remediated"}
+strengths_top3:
+  - "Formulation segment turnaround real and quantified: PBT loss narrowed 69% (-Rs 237.09L to -Rs 73.00L), returns down 79%"
+  - "Export-led growth and R&D/regulatory pipeline independently verified: exports +38%, 12 new DMFs, R&D at 3.58% of turnover"
+  - "Promoter accumulating stake (+1.39% YoY to 64.73%), no pledge, fully independent board/committee structure, clean whistleblower/SEBI/fraud record"
+red_flags_top3:
+  - "Managerial remuneration structurally above statutory cap; family compensation (Rs 413.29L-443.96L) approaches/exceeds FY25 PAT (Rs 356.29L), while Directors' Report calls the audit clean with no qualifications"
+  - "Credit quality deteriorating on multiple corroborated measures: DSCR nearly halved, D/E +38.4%, CARE Negative outlook on long-term facility"
+  - "Three unresolved integrity/control gaps: ECL under-provisioning on highest-risk receivables, Rule 11(g) audit-trail database gap, 24-year title-deed/personal-guarantee entanglement on MD-held collateral"
+best_fit_strategy: "Turnaround (early-stage, WATCHLIST)"
+one_line_verdict: "Genuine formulation turnaround offset by remuneration concentration and deteriorating credit quality"

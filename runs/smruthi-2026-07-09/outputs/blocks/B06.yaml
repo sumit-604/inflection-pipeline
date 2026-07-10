@@ -1,0 +1,26 @@
+stage: B06-peers
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: none
+status: skipped
+input_gaps: ["peer-concalls absent: inputs/peer-concalls/ empty, so peer triangulation could not run"]
+skip_reason: "Stage 6 skipped per orchestrator DEGRADATION MAP and NO-CONCALL MODE: no peer concall transcripts were provided (inputs/peer-concalls/ is empty). B05.peer_questions were still produced (5 questions on FY26 revenue decline being sector-wide vs company-specific, China export dynamics, RM cost trend, ANVISA/EDQM) but remain UNVERIFIABLE this run for lack of peer evidence. Verifier D is correspondingly skipped; peer_utilisation does not enter the confidence delta (skipped stages do not count as verification misses)."
+flags: []
+peers_provided: 0
+verified: []
+partially_verified: []
+contradicted: []
+unverifiable:
+  - {claim: "FY26 ~19% revenue decline sector-wide vs company-specific", peers_checked: []}
+  - {claim: "China export dynamics rising/falling for API peers FY26", peers_checked: []}
+  - {claim: "Peer RM cost ratio improvement FY26 (tests margin-resilience driver)", peers_checked: []}
+  - {claim: "Peer ANVISA/EDQM regulated-market timelines", peers_checked: []}
+  - {claim: "Sector KSM/intermediate price trend FY26", peers_checked: []}
+peer_coverage_map: []
+industry_cross_read:
+  demand: "NOT AVAILABLE - no peer transcripts"
+  pricing_inputs: "NOT AVAILABLE - no peer transcripts"
+  capex_cycle: "NOT AVAILABLE - no peer transcripts"
+peer_mentions_of_company: []
+risks_peers_raise: []
+net_narrative_effect: "not-assessable (stage skipped, no peer evidence)"

@@ -1,0 +1,32 @@
+stage: B00-inputs
+company: SMRUTHI
+run_date: 2026-07-09
+model: orchestrator
+status: complete
+halt: false
+concalls_available: false
+no_concall_mode: true
+inventory:
+  annual-report: {present: 1, files: ["inputs/annual-report/ar.pdf"]}
+  results: {present: 2, files: ["inputs/results/3264e39f-8d92-4465-b63f-038a79f3d69a.pdf", "inputs/results/50e16328-5cf0-44b1-aadf-2b810122bfe1.pdf"]}
+  rating: {present: 1, files: ["inputs/rating/202603130318_Smruthi_Organics_Limited.pdf"]}
+  concalls: {present: 0, files: []}
+  peer-concalls: {present: 0, files: []}
+  screening: {present: 18, note: "screener/main/financials CSV sets, FY17-FY26 history"}
+  presentation: {present: 0, files: []}
+  other: {present: 0, files: []}
+input_gaps:
+  - {type: concalls, effect: "NO-CONCALL MODE per manifest concalls_available:false; stage 5 degraded to AR MD&A + chairman letter + results commentary, credibility caps at B"}
+  - {type: peer-concalls, effect: "stage 6 skipped; verifier D skipped; peer_utilisation not applicable to confidence delta"}
+  - {type: presentation, effect: "stage 4 runs from AR alone; stage 7 & 9 use AR extracts only"}
+  - {type: other, effect: "none present; never consumed regardless"}
+degradation_map_applied:
+  stage_04: "no presentation -> AR business sections + results commentary only"
+  stage_05: "NO-CONCALL MODE -> AR MD&A/chairman + results PDFs; credibility default C, max B"
+  stage_06: "SKIPPED -> no peer-concalls"
+  stage_07: "no concalls/presentation -> AR + B01; F2 uses capex-completion AR timeline evidence"
+  stage_09: "no presentation -> AR TAM/capacity extracts only"
+  verifier_b: "audits communication vs AR + results (no transcripts)"
+  verifier_d: "SKIPPED -> no B06 / peer transcripts"
+flags: []
+drive_folder: "stock analysis-_output Smruthi Organics Ltd"

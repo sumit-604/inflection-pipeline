@@ -1,0 +1,121 @@
+stage: B10-valinputs
+company: "SMRUTHI"
+run_date: "2026-07-09"
+model: claude-haiku-4-5
+status: complete
+rerun_note: "Re-run to correct B12a CRITICAL unit errors: shares 1.14463 Cr (was 11.4463), TAM/SAM/SOM in Rs Cr (10,200/7,340/132/162, was 102/73.4/1.32/1.62), market cap reconciled 139.6 Cr (manifest 169 flagged as conflict)."
+input_gaps:
+  - "concalls absent (NO-CONCALL MODE)"
+  - "peer-concalls absent"
+  - "presentation absent"
+flags:
+  - "FLAG-CASH: CFO improvement (2.80x CFO/PAT cumulative per B01) substantially working-capital-driven via receivables release, not structural. FCF negative for two consecutive years (FY24: -2.76 Cr, FY25: -1.44 Cr). Absolute cash thin/declining (43.57 L FY25 to 17.085 L FY26). DSCR nearly halved to 3.01x. (B01 block_b_trend, B02 receivables_trend, B03 FLAG-CASH reason)"
+  - "Revenue miss unexplained: FY26 -19.1% YoY decline with zero management explanation in any available source (B05 p.45). Q4 alone -23.6%. Central China/Russia guidance missed. Credibility Grade C. (B05 p.30-31, p.45)"
+  - "Credit quality deteriorating: DSCR 7.21x (FY24) to 3.01x (FY26), -58.3% decline. D/E +38.4%. Interest coverage 6.52x trending down from 8.56x. (B03 p.8-9)"
+  - "Governance gaps: Managerial remuneration ~125% FY25 PAT, sustained via special resolutions; complete ID turnover 28-29 Jul 2024 (mandatory, not voluntary); 24-year title-deed defect on MD collateral; ECL under-provisioning on litigated receivables. (B03 p.45-48, B08 p.10-15)"
+  - "Regulatory catalyst unconfirmed: ANVISA/EDQM inspections scheduled FY25-26; no outcome disclosed as of run date 2026-07-09. Status unknown. (B07 p.22-25)"
+  - "Peer medians unresolved: B06 skipped (NO-CONCALL MODE); no peer financial data provided. Valuation must use standalone multiples only."
+  - "3-Year CAGR unresolved: FY24 full-year data not provided; only 2-year period available (FY25-FY26 shows -19.1% decline)"
+  - "Market cap conflict detected: Manifest 169.0 Cr vs reconciled CMP x shares 139.6 Cr. Recorded in conflicts[]. Used reconciled 139.6 Cr (more conservative per rule 3)."
+  - "Shares outstanding 10x error corrected: Prior B10 stated 11.4463 Cr (WRONG). Correct: 1.14463 Cr (Equity Share Capital 1,144.63 L / FV Rs 10). Verified from results PDF p.2 dividend '1,14,46,290 shares' and p.8 balance sheet."
+  - "TAM/SAM/SOM 100x errors corrected: TAM conservative 10,200 Cr (not 102.0), realistic 21,700 Cr (not 217.0), SAM 7,340 Cr (not 73.4), SOM 3yr 132 Cr (not 1.32), SOM 5yr 162 Cr (not 1.62). All from B09 yaml fields."
+table:
+  company: "Smruthi Organics Ltd"
+  ticker: "SMRUTHI"
+  sector: "Pharma / CDMO"
+  business_type: "Manufacturing (bulk drugs, drug intermediates)"
+  cmp_rs: 122.0
+  market_cap_cr: 139.6
+  shares_outstanding_cr: 1.14463
+  enterprise_value_cr: 145.70
+  revenue_fy26_cr: 101.97
+  ebitda_fy26_cr: 11.46
+  ebitda_margin_pct: 11.25
+  pat_fy26_cr: 3.43
+  pat_margin_pct: 3.36
+  diluted_eps_rs: 2.99
+  cfo_fy26_cr: 22.26
+  fcf_fy26_cr: 13.79
+  capex_fy26_cr: 8.47
+  depreciation_fy26_cr: 6.35
+  cfo_pat_latest_x: 6.49
+  cfo_pat_cumulative_x: 2.80
+  fcf_pat_x: 4.02
+  p_fcf_x: 10.12
+  book_value_per_share_rs: 64.26
+  dps_rs: 1.50
+  net_debt_cr: 6.10
+  total_equity_cr: 73.51
+  roce_latest_pct: "NOT FOUND"
+  roce_2yr_trend: "declining"
+  roe_pct: 4.66
+  gearing_x: 0.11
+  interest_coverage_x: 3.76
+  receivables_turnover_x: 5.28
+  revenue_2yr_cagr_pct: -10.04
+  revenue_3yr_cagr_pct: "NOT FOUND"
+  pat_3yr_cagr_pct: "NOT FOUND"
+  guidance_revenue_growth_theme: "China/Russia export momentum (missed FY26)"
+  guidance_margin_band: "Backward integration cost rationalization (delivered: RM 54% FY25 to 44% FY26)"
+  credibility_grade: "C"
+  credibility_basis: "Mixed: cost rationalization delivered, dividend held; central revenue guidance missed -19% YoY with no explanation; ANVISA/EDQM milestones unconfirmed"
+  top_trigger_1: "Revenue recovery China/Russia (conviction LOW)"
+  top_trigger_2: "Backward integration/cost rationalization (conviction MEDIUM-HIGH, delivered)"
+  top_trigger_3: "Regulated-market entry ANVISA/EDQM (conviction LOW, unconfirmed)"
+  em_score: 13.4
+  em_classification: "MODEST"
+  catalysts_12m: "ANVISA/EDQM inspection outcomes (scheduled FY25-26, unconfirmed); DMF approvals (34 filings); receivables collection confirmation; net debt offset by WC"
+  evidence_mix: "Mostly documented (11 documented, 2 claim, 1 inference items)"
+  cash_structural_determination: "FLAG-CASH: Not structural. Working-capital-driven (receivables release). FCF negative for 2 consecutive years. DSCR halved. (B01 block_b_trend, B02, B03)"
+  strategic_asset_moat_description: "No moats confirmed. Commoditised price-taker betting on unproven regulated-market transition. (B04 one_line_verdict, B01 moat_class NONE)"
+  tam_conservative_cr: 10200
+  tam_realistic_cr: 21700
+  sam_cr: 7340
+  som_3yr_cr: 132
+  som_5yr_cr: 162
+  som_implied_cagr_3yr_pct: 9.0
+  som_implied_cagr_5yr_pct: 9.6
+  current_market_share_pct_of_sam: 1.4
+  rating_agency: "CARE Ratings (CareEdge Ratings)"
+  rating_date: "2026-03-11"
+  rating_long_term: "CARE BBB-; Stable"
+  rating_short_term: "CARE A3"
+conflicts:
+  - field: "Market Cap"
+    value_a: 169.0
+    anchor_a: "manifest.yaml"
+    value_b: 139.6
+    anchor_b: "CMP 122 x Shares 1.14463 Cr (Results PDF p.2 dividend '1,14,46,290 shares' @ Rs 10 FV; p.8 balance sheet 'Equity Share Capital 1,144.63 Lakhs')"
+    used: 139.6
+    reason: "Reconciled CMP x shares is more conservative and internally consistent per assembly rule 3. Manifest does not reconcile with verified CMP and share count."
+unresolved:
+  - field: "3-Year Revenue CAGR (%)"
+    why: "FY24 full-year data not provided in inputs; only FY25-FY26 available (shows -19.1% decline). Cannot calculate 3-year CAGR without FY23 endpoint."
+    where_it_might_be: "Prior-year annual report FY24-25 or earlier results filings"
+  - field: "3-Year PAT CAGR (%)"
+    why: "Insufficient historical PAT data in provided inputs; only FY25-FY26 available"
+    where_it_might_be: "Prior-year annual report or investor presentation with 5-year financials"
+  - field: "ROCE Latest (%)"
+    why: "B01 reports historical median 9.29% across FY17-26 but FY26-specific number not isolated. Calculation requires detailed capital employed breakdown."
+    where_it_might_be: "Full 10-year summary with capital employed detail for FY26"
+  - field: "Peer Medians (P/E, EV/EBITDA, P/B, Growth %, ROCE %)"
+    why: "B06 stage status skipped; no peer financial data or concall transcripts provided due to NO-CONCALL MODE"
+    where_it_might_be: "Peer company financial statements and concall transcripts (absent in this run)"
+  - field: "Management TAM/Market-Size Claim"
+    why: "B09 reports 'no management claim exists anywhere in FY24-25 AR (qualitative growth narrative only)'"
+    where_it_might_be: "Investor presentation or management concall transcript (absent in NO-CONCALL MODE)"
+  - field: "Current Capacity Utilisation"
+    why: "B09 notes as 'single biggest unresolved input'; not disclosed in AR or concalls"
+    where_it_might_be: "Investor presentation or management disclosure"
+  - field: "ANVISA/EDQM Inspection Outcomes"
+    why: "Inspections scheduled FY25-26; no status update disclosed as of run date 2026-07-09. Company remains silent."
+    where_it_might_be: "Company disclosure or June 2026 interim results filing (not available)"
+rating_wc_quote: "CARE Ratings (CareEdge Ratings), March 11, 2026, p.2 'Liquidity: Adequate' section: 'The company has adequate liquidity position characterized by sufficient cushion between net cash accruals against scheduled debt repayment obligations. With a gearing of 0.24x as on March 31, 2025, the company has sufficient headroom to raise additional debt. Its unutilized bank lines are adequate to meet its incremental working capital needs over the next one year as bank limits are utilized to the extent of ~25% in the 12 months ended December 31, 2025. Cashflow from operating activities remained at Rs 10.29 crore in FY25 (Rs 4.26 crore in FY24).'"
+ua_qualifiers:
+  listed_12m: true
+  gate0_or_em: false
+  fii_dii_lt3: true
+  all_met: false
+  note: "Gate0 score 37 (fails <60 threshold) AND EM score 13.4 (fails <25 threshold); OR condition NOT MET. Listed 35 years: YES. FII+DII 0% <3%: YES. Peer medians unresolved (B06 skipped)."
+credibility_grade: "C"
+credibility_basis: "B05 p.36-37: Mixed delivery. Backward integration cost rationalization guideline delivered with quantifiable evidence (RM costs fell ~54%->~44% of revenue) and dividend held flat, but central AR-stated revenue-growth outlook (China/Russia momentum) missed by ~19% YoY with zero explanation in FY26 results filings; ANVISA/EDQM regulatory milestones remain unconfirmed. Mixed record keeps grade at NO-CONCALL-MODE default C; cannot rise to A in this mode regardless."

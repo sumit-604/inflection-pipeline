@@ -97,15 +97,12 @@ Revenue: FY15 = 1464.27, FY26 = 4359.02 (screener Data_Sheet, both endpoints pos
 PAT: FY15 = 43.07, FY26 = 255.19 (screener Data_Sheet, both endpoints positive).
 - PAT CAGR = (255.19/43.07)^(1/11) - 1 = **17.56%**
 
-- **C1 Revenue CAGR = 10.43%** → band 10-14.9% = **4**
-
-Wait — recheck band: 10-14.9% = 4 per the table (not 3). Correcting: C1 = **4**.
-
+- **C1 Revenue CAGR = 10.43%** → band 10-14.9% = **3**
 - **C2 PAT CAGR = 17.56%** → band 15-19.9% = **4**
 - **C3 Positive YoY revenue years**: valid consecutive pairs only (FY16→20 excluded as a 4-year gap, not a true YoY): FY15-16 (+), FY20-21 (+), FY21-22 (+), FY22-23 (-, 3654.82 < 3671.89), FY23-24 (+), FY24-25 (-, 4118.16 < 4178.18), FY25-26 (+) — 5 of 7 positive = 71.4% (screener Data_Sheet) → band 50-74% = **1**
 - **C4 PAT CAGR − Revenue CAGR = 17.56% − 10.43% = +7.13pp** → ≥+3pp = **5**
 
-**Block C = 4 + 4 + 1 + 5 = 14 / 20**
+**Block C = 3 + 4 + 1 + 5 = 13 / 20**
 
 ---
 
@@ -135,12 +132,10 @@ No shareholding-pattern data was provided in any input file for this run (no pro
 
 ## CORE SCORE
 
-Blocks A(8) + B(13) + C(14) + D(14) + E(0) = **49 / 100**
+Blocks A(8) + B(13) + C(13) + D(14) + E(0) = **48 / 100**
 
-(Note: recomputing after the C1 band correction above changes core_score from an initial working total of 48 to 49 — carried through to the classification and YAML below.)
-
-Block scores as %: A 40% | B 65% | C 70% | D 70% | E 0%.
-**Strongest block: C (Growth) / D (Balance Sheet), tied at 70%. Weakest block: E (Shareholder Alignment) at 0%, driven entirely by absent shareholding data, not a scored quality failure.**
+Block scores as %: A 40% | B 65% | C 65% | D 70% | E 0%.
+**Strongest block: D (Balance Sheet Strength) at 70%. Weakest block: E (Shareholder Alignment) at 0%, driven entirely by absent shareholding data, not a scored quality failure.**
 
 ---
 
@@ -205,7 +200,7 @@ Moats "present" (score ≥3): M1 only. **moats_confirmed = 1 → THIN**
 ## CLASSIFICATION
 
 - Data confidence: 9 data points → band "7-9 = moderate" (no formal downgrade tier triggered; the FY17-FY19 gap is noted but the count itself sits in the moderate band, not the 3-4 LIMITED band).
-- Core score = 49/100 → **Core 40-59 = AVERAGE** (moat class does not branch the outcome at this tier per the classification matrix).
+- Core score = 48/100 → **Core 40-59 = AVERAGE** (moat class does not branch the outcome at this tier per the classification matrix).
 
 **Deal-breaker check:**
 1. Block A (8) <8? No (exactly 8, not below) — no trigger.
@@ -229,31 +224,31 @@ Since the matrix-derived base classification (AVERAGE) and the deal-breaker cap 
 ## DASHBOARD SUMMARY
 
 ```
-BLOCK A (Return on Capital)........  8/20  [####------] 40%
+BLOCK A (Return on Capital).........  8/20  [####------] 40%
 BLOCK B (Cash Generation Quality)... 13/20  [######----] 65%
-BLOCK C (Growth)..................  14/20  [#######---] 70%
-BLOCK D (Balance Sheet Strength)...  14/20  [#######---] 70%
-BLOCK E (Shareholder Alignment)....   0/20  [----------]  0%  (no shareholding data supplied)
+BLOCK C (Growth).................... 13/20  [######----] 65%
+BLOCK D (Balance Sheet Strength).... 14/20  [#######---] 70%
+BLOCK E (Shareholder Alignment).....  0/20  [----------]  0%  (no shareholding data supplied)
                                      -----
-CORE SCORE..........................49/100
+CORE SCORE...........................48/100
 
 MOAT PROFILE (12 tests, present = score >=3):
-M1 Pricing Power........  5  [FORTRESS-GRADE]  PRESENT
-M2 Cost Advantage........ 1
-M3 Capital Efficiency.... 1
-M4 Customer Stickiness... 1
-M5 Scale & Dominance..... 1
-M6 Technology/R&D........ 0  (N/A - not disclosed)
-M7 Regulatory/License.... 0  (PEER DATA NEEDED)
-M8 Distribution.......... 0  (N/A - not disclosed)
-M9 Brand.................. 0
-M10 Switching Costs...... 1
-M11 Network Effects...... 0
-M12 Negative WC/Float.... 0  (N/A - payables not disclosed)
+M1 Pricing Power.........  5  [FORTRESS-GRADE]  PRESENT
+M2 Cost Advantage......... 1
+M3 Capital Efficiency..... 1
+M4 Customer Stickiness.... 1
+M5 Scale & Dominance...... 1
+M6 Technology/R&D......... 0  (N/A - not disclosed)
+M7 Regulatory/License..... 0  (PEER DATA NEEDED)
+M8 Distribution............ 0  (N/A - not disclosed)
+M9 Brand................... 0
+M10 Switching Costs....... 1
+M11 Network Effects....... 0
+M12 Negative WC/Float..... 0  (N/A - payables not disclosed)
                           ---
-MOAT SCORE...............10/60   MOATS PRESENT: 1 -> THIN
+MOAT SCORE................10/60   MOATS PRESENT: 1 -> THIN
 
-GRAND TOTAL: 49 + 10 = 59/160
+GRAND TOTAL: 48 + 10 = 58/160
 
 +----------------------------------------------------+
 | CLASSIFICATION: AVERAGE                             |
@@ -262,7 +257,7 @@ GRAND TOTAL: 49 + 10 = 59/160
 | gap noted)                                           |
 +----------------------------------------------------+
 
-Strongest block: C/D (Growth / Balance Sheet Strength), 70%
+Strongest block: D (Balance Sheet Strength), 70%
 Weakest block: E (Shareholder Alignment), 0% - data gap, not
 a scored quality failure
 ```

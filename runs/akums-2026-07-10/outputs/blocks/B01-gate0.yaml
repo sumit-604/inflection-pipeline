@@ -1,0 +1,33 @@
+stage: B01-gate0
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report absent", "results absent", "rating absent"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE. Depressors: A2 min single-year ROCE -17.36% (FY22, one-off Other Expenses spike 565.07 cr); A3 median ROE 8.72%; deal-breaker #8 triggered by FY24 PAT -4.04 cr (Other Expenses spike 434.05 cr), both loss years coincide with IPO-period exceptional items and equity restructuring, flagged as possible post-IPO rebase/legacy cleanup for downstream position-sizing review; Block E = 0/20 and 4 of 12 moat tests = 0 solely because no shareholding-pattern data, R&D, distribution, or contingent-liability disclosures were supplied in this run's inputs."
+data_years: 9
+fy_range: "FY15 to FY26"
+blocks: {A: 8, B: 13, C: 13, D: 14, E: 0}
+core_score: 48
+moat_score: 10
+grand_total: 58
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers: ["8: PAT negative FY24 (-4.04 cr, screener Data_Sheet), max AVERAGE"]
+history_downgrade: false
+data_notes:
+  - "Data gap: FY17-FY19 not in export; history is FY15, FY16, FY20-FY26 (9 data points over an 11-year span)."
+  - "ROCE/ROE computed (screener ratio rows blank); Capital Employed = Equity+Reserves+Borrowings (Total Assets − Other Liabilities proxy)."
+  - "Trade Payables not disclosed; Payable Days and true (incl. payables) WC Days not computable — B4 and M12 use Receivable+Inventory Days only / scored N/A respectively."
+  - "Current Assets/Liabilities not split in export; D4 Current Ratio N/A, scored 0."
+  - "Capex proxied as Δ(Net Block+CWIP)+Depreciation; not computable for FY15 (no prior year) or FY20 (4-yr gap from FY16); B2/B3 computed over 7 valid pairs (FY16, FY21-FY26) only."
+  - "No shareholding-pattern file supplied; Block E (E1-E4) all N/A, scored 0 despite Akums being a professionally-run promoter (Jain family) company — FII+DII branch of E1 also inapplicable, no % data provided."
+  - "R&D expense, distribution/reach metrics, and contingent liabilities not disclosed anywhere in inputs; M6, M8, E4 scored 0/N/A."
+  - "M7 player-count test not verifiable beyond the 4 supplied peer comparators (COHANCE, INNOVACAP, PPLPHARMA, WINDLAS); PEER DATA NEEDED for full segment count, scored 0."
+  - "PAT loss-to-profit swings: FY21 profit to FY22 loss to FY23 profit to FY24 loss to FY25/FY26 profit; full-period Revenue and PAT CAGR (FY15 to FY26) computed on positive endpoints only per CAGR edge rules, no synthetic CAGR attempted across the loss years."
+  - "M9 brand GM proxy used: (Revenue − Material Cost) ÷ Revenue, Material Cost = Raw Material Cost + Change in Inventory, stated explicitly."
+  - "FY22 and FY24 losses both coincide with abnormal 'Other Expenses' spikes (565.07 cr and 434.05 cr vs ~75-100 cr normal run-rate) alongside bonus share issuances / capital base changes around the company's IPO period."
+block_b_trend: "improving: CFO FY26 = 1181.2 cr vs FY25 = 465.2 cr (screener Data_Sheet), +154% YoY; FCF (computed) turned positive FY24-FY26 after 4 straight negative-FCF years (FY16, FY21-FY23)"

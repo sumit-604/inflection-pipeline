@@ -4,18 +4,21 @@ run_date: "2026-07-10"
 model: claude-sonnet-5
 status: complete
 input_gaps:
-  - "annual-report (not provided this run; Section 1B v3.3 exit-PE and this stage's AR-dependent categories relied on concalls + investor presentation only)"
-  - "fixed_asset_turnover_ratio (no balance sheet net fixed assets/gross block disclosed in concalls or investor presentation; Section 2C capex_embedded_growth_pct cannot be computed)"
-  - "top-10 customer concentration % (not disclosed, C2 unscoreable)"
-  - "R&D headcount / PhD count / ESOP-to-technical-staff data (not disclosed, F1 thin)"
-  - "ESG data: renewables %, ratings, SBTi, ZLD (not disclosed, H3 unscoreable)"
+  - "external third-party ESG rating (CRISIL ESG, MSCI, Sustainalytics, EcoVadis) not disclosed anywhere in the AR or concalls; H3 scored on internal AR metrics only"
+  - "R&D headcount (370+ scientists, 200+ doctorates) is a single-year AR snapshot; no prior-year comparable figure disclosed, so no YoY talent-density trend can be computed for F1"
+  - "licensing revenue from IP (Triple Hair, Caregen deals) not quantified in the AR; A2 scored on patent/trademark counts and deal existence only"
+  - "ESOP allocation specifically to technical/R&D staff not disaggregated in the AR's ESOP Scheme 2022 disclosure"
+  - "management has not directly addressed the 90.9% YoY dealer/distributor count collapse (BRSR table, AR p.146) on any of the three concalls read; likely linked to the deliberate Trade Generics wind-down but not explicitly confirmed"
 flags:
-  - "G1 war chest: FY26 operating cash flow of INR1,181cr is largely a one-off EU contract advance (INR954cr per company's own Adj OCF definition); organic Adj OCF fell from INR465cr (FY25) to INR227cr (FY26) - opposite of the 'improving' framing in the injected Gate 0 note. Category downgraded to Weak on recount."
-  - "H1/R1 Schedule M credibility: management made a specific optimistic claim in the Q2 FY26 call, then gave two consecutive non-answers (Q3, Q4 FY26 calls), consistent with the B05 grade-C credibility record and its two flagged evasions."
-  - "G2 working capital: WC days worsened 91->105 (FY25->FY26), the opposite of an improving-WC moat signal; flagged explicitly as a negative finding, not left silent."
-  - "B2/E1/H2 evidence overlap: qualification lock-in, geographic first-mover, and strategic partnership categories substantially reuse the same two underlying facts (EU CDMO contract, Zambia JV). Operator should read these as 2 real developments, not 3 independent moats."
-em_score: 23.5
-em_classification: "MODEST"
+  - "G1 war chest: audited cash flow statement (AR p.299) confirms FY26 operating cash flow of INR1,181.2cr is driven almost entirely by a EUR100mn advance received under the European CDMO contract (AR p.69). Of the resulting INR930.3cr net investing outflow, only INR230.5cr was actual capex; INR746.1cr went into short-term deposits rather than growth deployment. Sharpens, does not resolve, the cash-quality flag."
+  - "H1/R1 Schedule M credibility: the AR's MD&A repeats the optimistic Schedule M framing management gave on the Q2 FY26 call, but management gave two consecutive non-answers on Q3/Q4 FY26 calls when asked about implementation - gap between written and live-call positioning, consistent with B05 grade C."
+  - "C2 customer concentration: NEW - AR BRSR table (p.146) discloses a 90.9% YoY collapse in dealer/distributor count (2,979 to 271) and top-10-dealer concentration jumping from 13.43% to 43.62% of dealer-channel sales. Most plausibly the Trade Generics wind-down, not explicitly addressed by management."
+  - "G2 working capital: WC days worsened 91->105 (FY25->FY26), confirmed against the audited cash flow statement (AR p.299)."
+  - "A2/A4/F1 thin R&D base: consolidated R&D revenue expenditure is only 0.86% of revenue FY26 (0.68% FY25), computed from AR Note 45 (p.360) - materially below the presentation's 3.2% framing. A2 patents, A4 platform, F1 talent all capped at Weak because of this, despite each now having genuine documented evidence."
+  - "B2/E1/H2 evidence overlap: qualification lock-in, geographic first-mover, and strategic partnership reuse the same two facts (EU CDMO contract, Zambia JV). Read as 2 real developments, not 3 independent moats."
+  - "em_score crossed the 25 STRENGTHENING threshold this run (23.5 -> 26.3), driven by evidence-quality upgrades in 5 categories (A2, A4, C1, F1, H3) rather than any new Strong/Moderate category; Strong/Moderate set (A1, B2, E1, F2, H2, R1) unchanged."
+em_score: 26.3
+em_classification: "STRENGTHENING"
 active_categories:
   - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active, 12-24m incremental"}
   - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "24-36m"}
@@ -23,18 +26,20 @@ active_categories:
   - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active, ongoing"}
   - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-36m"}
   - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Moderate", evidence_type: "mixed documented/claim", time_to_materialise: "12-24m"}
-evidence_mix: {documented: 14, claim: 8, inference: 3}
-completionist_recount: "recount performed: approximately 14 documented items across 6 active categories (A1, B2, E1, F2, H2, R1), versus 8 management-claim items and 3 analyst inferences; no Strong/Moderate category rests on claim/inference alone. Two initial Moderate reads (A4, G1) were downgraded to Weak on recount."
+evidence_mix: {documented: 34, claim: 10, inference: 4}
+completionist_recount: "recount performed: approximately 34 documented items across 14 categories with any documented evidence, versus ~10 management-claim items and 4 analyst inferences. Strong/Moderate set unchanged at 6 (A1, B2, E1, F2, H2, R1); AR evidence upgraded 5 additional categories (A2, A4, C1, F1, H3) from zero/claim-only to documented Weak, capped there by the audited 0.86%-of-revenue R&D-intensity finding (A2/A4/F1) and by longstanding-not-emerging or mixed-trend character (C1/H3)."
 catalysts_12m:
   - {catalyst: "European API facility audit outcome", window: "next quarter from May 2026", evidence_type: "claim", anchor: "Q4 FY26 call (May 18, 2026)"}
-  - {catalyst: "Zambia direct export supply commencement (~$25mn)", window: "by end of Q2 FY27", evidence_type: "documented", anchor: "Q4 FY26 call (May 18, 2026)"}
+  - {catalyst: "Zambia direct export supply commencement (~USD 25-50mn)", window: "by end of Q2 FY27", evidence_type: "documented", anchor: "Q4 FY26 call + AR MD&A"}
   - {catalyst: "Q1 FY27 CDMO double-digit volume print", window: "45-60 day visibility from May 2026", evidence_type: "documented (near-term revenue book)", anchor: "Q4 FY26 call (May 18, 2026)"}
   - {catalyst: "Domestic Oncology and steroid CDMO lines go-live", window: "FY27", evidence_type: "claim", anchor: "Investor Presentation slide 20"}
-capex_embedded_growth_pct: 0
-combined_assessment: "AVERAGE"
-combined_reasoning: "Core AVERAGE (48/100, 1/12 moats) meets forward MODEST (23.5/80, just under the 25 STRENGTHENING line); two real developments (EU contract, Zambia JV) not yet converted to revenue keep this short of a confirmed transition setup."
+  - {catalyst: "FY27 capex deployment (INR300cr guided) vs FY26's deposits-not-capex pattern", window: "FY27", evidence_type: "documented base / claim on FY27 execution", anchor: "AR cash flow statement p.299 + Q4 FY26 call"}
+capex_embedded_growth_pct: 20.6
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Core AVERAGE (69/100, 1/12 moats, capped by the FY24 loss-year deal-breaker) meets forward STRENGTHENING (26.3/80, crossing the 25 threshold on AR-confirmed EU contract and Zambia JV evidence) - a genuine TURNAROUND setup, one band below the EXPANSION-tier threshold that would justify HIGH POTENTIAL."
 top_moat_risks:
-  - "EU CDMO contract execution risk: dossier filing/country registration across multiple European markets still pending; no revenue booked yet, commercial supply not guaranteed until FY28."
-  - "Zambia JV counterparty risk: sovereign government partner (GRZ), plant construction not yet begun as of the most recent disclosed timeline, commissioning already slipped from CY2028 to FY29."
-  - "Schedule M / MIP credibility risk: management retreated from a specific optimistic claim (Nov 2025) to two consecutive non-answers (Feb, May 2026), consistent with the B05 grade-C credibility record."
-  - "Cash-flow quality risk: FY26 operating cash flow improvement is overwhelmingly a one-off EU contract advance; organic Adj OCF fell from INR465cr to INR227cr year-on-year, and working capital days lengthened rather than improved."
+  - "EU CDMO contract execution risk: dossier filing/country registration across multiple European markets still pending; no commercial revenue booked yet despite the EUR100mn advance already received and audited; commercial supply not guaranteed until FY28."
+  - "Zambia JV counterparty risk: sovereign government partner (GRZ), plant construction not yet begun, commissioning already slipped from CY2028 to FY29."
+  - "Cash-deployment risk (sharpened by the AR): of the EUR100mn EU-contract advance, only INR230.5cr of FY26 capex was actually spent against a INR930.3cr net investing outflow, with INR746.1cr parked in short-term deposits rather than deployed toward growth capex."
+  - "Schedule M / MIP credibility risk: the AR's MD&A repeats an optimistic Schedule M framing that management has twice declined to elaborate on live concalls (Feb, May 2026), consistent with the B05 grade-C credibility record."
+  - "Customer/channel concentration risk (new): a documented 90.9% YoY collapse in dealer/distributor count and a jump in top-10-dealer concentration to 43.62% of dealer-channel sales, not yet addressed by management on any concall."

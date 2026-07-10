@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # rule 3 (FLAG-CASH active); INDETERMINATE cash caps to PROCEED WITH CAVEATS
+flags_active: [FLAG-CASH, FLAG-GATE0]
+cash_determination: INDETERMINATE
+confidence_delta: {numerical: 89, redflag: 87, framework: 98, peer: 81, overall: 81}
+valuation_decision: ""         # not in lite mode (stages 10/11 not run)
+entry_range: {low: 0, high: 0} # not in lite mode
+headline: "Water treatment EPC scaling faster than cash"
+falsification_metric: "FY27 H1 operating cash flow negative again or CFO/PAT below 0.7x while receivables and retentions climb faster than revenue"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  mode: append-never-overwrite-status
+  note: "Notion save is phase 3 / not-in-lite; no payload emitted this run"

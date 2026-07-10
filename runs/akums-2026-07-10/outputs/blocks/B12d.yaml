@@ -1,0 +1,17 @@
+stage: B12d
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 1, Claim 1 (and YAML contradicted block); COHANCE Q2 FY26", claimed: "Cohance Pharma CDMO revenue -8% YoY reported / +14% adjusted for restocking, attributed to Himanshu Agarwal, Q2 FY26 call Nov 12 2025", source_truth: "The -8%/+14% figure in the transcript (p.6, Himanshu Agarwal opening financial remarks) is total consolidated company revenue (INR5,556mn/qtr, annualizing to ~INR22.2bn vs FY26 total of INR22.68bn), not a Pharma-CDMO-segment-specific figure; CDMO/FDF deferred shipments are cited as the primary driver but the number itself is company-wide", note: "Direction of B06's argument survives — Q3 (-27%/+7%) and Q4 ('early single digit') anchors for the same claim ARE genuinely Pharma-CDMO-segment-specific and independently confirmed accurate, so the underlying conclusion (Cohance's CDMO business underperforming an industry-wide surge narrative) is not undermined; only the Q2 anchor's segment label is imprecise"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100

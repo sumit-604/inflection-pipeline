@@ -3,19 +3,33 @@ company: "APEXECO"
 run_date: "2026-07-10"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH CAVEATS"
-verdict_rule_applied: 3        # rule 3 (FLAG-CASH active); INDETERMINATE cash caps to PROCEED WITH CAVEATS
-flags_active: [FLAG-CASH, FLAG-GATE0]
-cash_determination: INDETERMINATE
-confidence_delta: {numerical: 89, redflag: 87, framework: 98, peer: 81, overall: 81}
-valuation_decision: ""         # not in lite mode (stages 10/11 not run)
-entry_range: {low: 0, high: 0} # not in lite mode
+verdict_rule_applied: 4
+verdict_note: "Rule 3 (FLAG-CASH active) mechanically reads PROCEED WITH FLAGS; carried PROCEED WITH CAVEATS under rule 4 (Hurdle CONDITIONAL + MAJORs; confidence 81 no further downgrade). Cash now GROWTH-INDUCED, not INDETERMINATE. Both within the PROCEED family; investment decision WATCHLIST unaffected."
+flags_active: [FLAG-CASH, FLAG-GATE0, FLAG-GOVERNANCE, FLAG-CONCENTRATION, SHARED-CATALYST, FLAG-HURDLE-CONDITIONAL]
+confidence_delta: {numerical: 89, redflag: 87, framework: 97, peer: 81, overall: 81}
+valuation_decision: "WATCHLIST"
+position_size: "Small"
+entry_range: {low: 161, high: 202}
+mos_price: 161
+destination_pe: {track1_rrm_mid: 16.8, track2_additive: 20.0, governing: "track1_rrm"}
+hurdle_verdict: "CONDITIONAL"
+expected_cagr_prob_weighted: 16.7
+upside_downside_ratio: 1.9
+devils_advocate_overall: "WEAKENED BUT ALIVE"
+cash_determination: "GROWTH-INDUCED"
 headline: "Water treatment EPC scaling faster than cash"
-falsification_metric: "FY27 H1 operating cash flow negative again or CFO/PAT below 0.7x while receivables and retentions climb faster than revenue"
-monitorables_count: 8
+falsification_metric: "H1 FY27 CFO/PAT below 0.7x while working capital days climb faster than revenue"
+monitorables_count: 7
 publish_candidate: false
-publish_candidate_summary: ""
+deliverables:
+  - outputs/final/business-narrative.md
+  - outputs/final/fttcp-recommendation.md
+  - outputs/final/verifier-summary.md
+  - outputs/final/fttcp-handoff.md
+  - outputs/final/notion-payload.md
 notion_save:
+  page_title: "Apex Ecotech Ltd (APEXECO) — Inflection Alpha Run 2026-07-10"
   mode: append-never-overwrite-status
-  note: "Notion save is phase 3 / not-in-lite; no payload emitted this run"
+  drive_link: "NOT PROVIDED"

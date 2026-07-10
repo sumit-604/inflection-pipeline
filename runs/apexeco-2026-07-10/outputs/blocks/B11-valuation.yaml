@@ -1,0 +1,66 @@
+stage: B11-valuation
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - field: "fii_dii_holding_pct"
+    detail: "NOT FOUND; only promoter 69.29% disclosed. UA qualifier 3 unmet -> UA not applied (qualifiers 1 and 2 met after listing-date correction to ~19 months)."
+  - field: "free_cash_flow_fy26"
+    detail: "CapEx inferred from balance-sheet movement, +/-20% uncertainty; weakens DCF/P-FCF only (tertiary, 10% weight)."
+  - field: "order_book_aging_detail"
+    detail: "Book-to-bill 0.84x, ~70% two-customer concentration; caps base revenue CAGR at SOM 23%."
+  - field: "peer_medians"
+    detail: "Aggregate peer P/E, EV/EBITDA, P/B not computed in B06; relative cross-check qualitative only."
+flags:
+  - type: "FLAG-CASH"
+    severity: "critical"
+    detail: "CFO/PAT cumulative 0.41, latest 0.398; FY25 CFO negative. Cash multiplier APPLIED = 1.00x (growth-induced: 0.80 base + 0.20 offset). Falsification trigger H1 FY27 CFO/PAT <0.7x AND WC days > revenue growth flips to structural (0.65x -> destination PE ~11-16x)."
+  - type: "FLAG-HURDLE-CONDITIONAL"
+    severity: "major"
+    detail: "Hurdle base FAIL (1.63 Track1 / 1.94 Track2), bull PASS. Growth-dependent with de-rating headwind; verdict capped at WATCHLIST/BUY-ON-DIPS."
+  - type: "FLAG-GOVERNANCE"
+    severity: "major"
+    detail: "ID attendance <42%, remuneration disclosure contradiction, CS turnover 3x/16m, undisclosed BoI CC facility. Priced via RRM r=16.0% (governing Track 1)."
+  - type: "FLAG-CONCENTRATION"
+    severity: "major"
+    detail: "Reliance + Bhartiyam ~70% of H2 FY26 execution; single largest order in company history."
+  - type: "SHARED-CATALYST"
+    severity: "note"
+    detail: "Working-capital unwind drives both Pillar 1 ROCE and Pillar 2 cash (single lever); Role 3 must stress-test."
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 15.5, mid: 16.8, high: 18.0, r_used: 16.0, rrm: 0.70}
+  track2_additive: {low: 18.5, mid: 20.0, high: 20.0}
+  divergence_pct: 16.0
+  governing_track: "Track 1 (RRM), more conservative (16.8x vs 20.0x); additive track is pinned at the sector cap and cannot express governance/durability weakness which RRM prices via r"
+pillar_detail:
+  roce_used: 33.39
+  roce_base: 24.0
+  roce_recovery_route: "pillar1"
+  cash_multiplier: 1.00
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.20
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20
+hurdle_ratio: {base: 1.63, bull_used: true, verdict: "CONDITIONAL"}
+fair_values:
+  track1: {bear: 232, base: 394, bull: 572}
+  track2: {bear: 276, base: 469, bull: 635}
+expected_cagr_prob_weighted: 16.7
+entry_range: {low: 161, high: 202}
+mos_price: 161
+upside_downside_ratio: 1.9
+decision: "WATCHLIST"
+unresolved_inputs_used:
+  - field: "free_cash_flow_fy26"
+    assumption: "FCF/revenue ~5-7% held flat per Pillar 2 (cash not assumed to improve in DCF); tertiary weight only"
+  - field: "capex_guidance_fy27_fy29"
+    assumption: "flat capex/sales ratio (conservative; no forward guidance provided)"
+  - field: "peer_medians"
+    assumption: "peer relative multiple cross-check treated as qualitative; four-pillar destination PE is the sole exit authority regardless"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Watchlist Apex Ecotech at 242 (buy 161-202): EPS 12.91->23.4 over 3yr on ~22-23% growth at destination PE 16.8x RRM / 20.0x cap (ROCE 33.4% at 24x base capped, cash 1.00x growth-induced, EM none, EPC cap 20x) = 394 base = 17.6% CAGR; key risk H1 FY27 cash below 0.7x turns strain structural."

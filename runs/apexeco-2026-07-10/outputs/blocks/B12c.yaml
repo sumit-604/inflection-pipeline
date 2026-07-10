@@ -3,19 +3,27 @@ company: "APEXECO"
 run_date: "2026-07-10"
 model: claude-opus-4-8
 status: complete
+# Merged: gate0 + emoat audited in phase 1; valuation audited in phase 3.
 gate0:
   rules_checked: 39
   fails: []
 emoat:
   rules_checked: 14
   fails:
-    - {severity: MINOR, rule: "adjusted total sum", detail: "em_score stated 10.1; re-sum of the 7 non-zero adjusted values (0.7+1.4+1.4+1.4+4.0+0.7+0.7) = 10.3. Off by 0.2, non-decision-changing (both <12 -> NONE)."}
-valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
-recomputed_destination_pe: ""
-recomputed_decision: ""
+    - {severity: MINOR, rule: "adjusted total sum", detail: "em_score stated 10.1; re-sum of the 7 non-zero adjusted values = 10.3. Off by 0.2, non-decision-changing (both <12 -> NONE)."}
+valuation:
+  rules_checked: 25
+  fails:
+    - {rule: "Pillar 1 elite branch for ROCE>33%", severity: "MINOR", used: "24.0x", correct: "24.1x", impact: "none - Track2 capped at 20x, Track1 mid shifts <=0.1x"}
+recomputed_destination_pe: ""   # concur: Track1 16.8x / Track2 20.0x, governing 16.8x
+recomputed_decision: ""         # concur: WATCHLIST, Small, entry 161-202
 findings:
-  - {severity: MINOR, location: "B07 Section 5 scorecard / YAML em_score", claimed: "adjusted total = 10.1", framework_truth: "sum of stated per-row adjusted values = 10.3", note: "Arithmetic slip only; classification NONE unchanged. Individual multipliers and raw scores all correct."}
+  - {severity: MINOR, location: "B07 Section 5 scorecard / em_score", framework_truth: "sum of stated per-row adjusted values 10.3 vs stated 10.1", note: "Arithmetic slip only; classification NONE unchanged (phase 1)."}
+  - {severity: MINOR, location: "B11 Pillar 1 / Four-Pillar Summary row A", framework_truth: "elite branch 24.1x (Master v3.3, ROCE>33%) vs used 24.0x", note: "Immaterial; Track2 sector-capped at 20x, Track1 16.8x->16.9x; Hurdle/verdict unchanged (phase 3)."}
+  - {severity: MINOR, location: "B11 4F / B14 upside_downside_ratio", framework_truth: "1.9x is a structural-cash tail metric, not the framework 4F U/D", note: "Reconciled in text; AVOID gate does not fire on the framework metric; decision unaffected (phase 3)."}
 critical_count: 0
 major_count: 0
-minor_count: 1
-acceptance_rate: 98
+minor_count: 3
+acceptance_rate: 97   # combined: 76 of 78 rules passed (gate0 39/39, emoat 13/14, valuation 24/25)
+phase1_gate0_em_acceptance: 98
+phase3_valuation_acceptance: 96

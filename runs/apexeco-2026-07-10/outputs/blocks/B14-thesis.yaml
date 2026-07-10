@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 161, high: 202}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "H1 FY27 (~Nov 2026) operating cash flow to PAT prints below 0.7x while working capital days climb faster than sales, reverting cash to STRUCTURAL (Pillar 2 to 0.65x, destination PE ~11-16x)"
+monitoring_checklist:
+  - "H1 FY27 CFO/PAT rises toward 0.7x and does not fall below it (falsification trigger)"
+  - "Working capital days fall as growth cools; receivable days near 41-45; do not rise faster than revenue"
+  - "EBITDA margin holds at or above 14.6% at H1 FY27"
+  - "Order book above INR 150 Cr and book-to-bill back above 1.0 by H1 FY27"
+  - "Top-customer (Reliance) revenue concentration disclosed and falling below ~50%"
+  - "ROCE stays above 25% in FY27"
+  - "No bad-debt write-off taken against the concentration exposure in FY27"
+  - "FII/DII holding disclosed (UA test) and Bank of India cash-credit facility terms disclosed and reconciled to the borrowing note"

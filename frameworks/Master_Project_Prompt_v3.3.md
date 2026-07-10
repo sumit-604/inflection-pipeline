@@ -390,6 +390,7 @@ Quality uplift: when UA is triggered AND durability is at least Moderate-Strong 
 Durability and governance drive the discount rate via the Required-Return Multiplier, not additive PE points. Every Role 1 must produce BOTH derivations, carried through all fair values and verdict cards:
 
 - **Track 1 (RRM):** Destination PE = Fundamental Base PE × RRM, capped at the (quality-uplifted) sector cap. RRM = 1 + (13.5% − r) × 0.12, bounded ×0.70 to ×1.60. Base r: small/micro 14%, mid 13%, large-quality 12%; adjust for durability and governance; bound r in [9%, 18%].
+  - The term (13.5 − r) is in percentage points: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The ×0.70 to ×1.60 bounds confirm this reading.
 - **Track 2 (Additive):** the Four-Pillar Summary above, without RRM.
 - Present both fair value sets side by side. Where they diverge materially (>15%), state which track is more appropriate for this company and why; the more conservative track sets the entry zone.
 

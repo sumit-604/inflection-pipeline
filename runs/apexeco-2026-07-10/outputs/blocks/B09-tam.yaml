@@ -1,0 +1,59 @@
+stage: B09-tam
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF"}
+  - {type: shareholding, detail: "no shareholding pattern / pledge data"}
+flags:
+  - "Management provides no numeric TAM/market-size claim in either the FY26 investor presentation or the FY25 Annual Report (incl. MDA); only qualitative language used. mgmt_claim_ratio is not computable."
+  - "Order book (~INR 125 Cr) grew far slower than revenue (which more than doubled) over the same period; book-to-bill of 0.84x is thin and declining, and is the binding constraint on SOM achievement, not TAM size."
+  - "EBITDA margin has compressed each year FY24-FY26 (16.7% -> 15.6% -> 14.6%), and PAT margin similarly (12.5% -> 12.1% -> 11.4%); if this trend continues, earnings CAGR embedded in the SOM will run materially below the 23-24% SOM-implied revenue CAGR."
+  - "Current market P/E for APEXECO was not provided in injected inputs; the valuation-implication comparison in Section 5E is incomplete and must be closed out at Stage 11."
+  - "CRISIL top-down figure (Method 2) has a scope ambiguity - it may include municipal water-supply/distribution capex beyond Apex's treatment-plant EPC scope - and is used only as upper-bound context, not the central estimate."
+market_definition: "India turnkey EPC of industrial/commercial WTP, ETP, STP, ZLD and membrane-recycling water treatment plants plus attached O&M/AMC"
+tam_cr: {conservative: 11250, realistic: 14500}
+sam_cr: 6375
+sam_pct_of_tam: 56.7
+som_3yr_cr: 277
+som_5yr_cr: 434
+som_implied_revenue_cagr: {yr3: 23.1, yr5: 23.9}
+current_sam_share_pct: 2.33
+revenue_headroom_x: 42.9
+tam_growth_pct: 9.6
+runway_class: "STRONG"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not stated - no numeric TAM claim found in injected inputs"
+capacity_check: "gap of approximately INR 290 Cr in required order-book coverage by Year 3 versus current INR 125 Cr book; SOM trajectory is the optimistic side given replenishment already lagging revenue growth and weak/negative operating cash conversion"
+methods_used:
+  - "top-down (Mordor Intelligence India WWT technology market, industrial slice)"
+  - "top-down (CRISIL sector investment, annualised, used as context/upper bound)"
+  - "bottom-up (STP capacity-gap unit economics, MLD-based)"
+  - "peer revenue aggregation with explicit unorganised-sector estimate"
+  - "global per-capita benchmark (China comparison, directional only)"
+stale_data_flags:
+  - {datapoint: "64,484 industries requiring ETPs (62,653 with functional ETPs)", source: "CPCB/PIB", year: 2020}
+  - {datapoint: "193 CETPs serving 212 industrial areas", source: "CPCB", year: "2011-12"}
+searches_performed:
+  - "India water and wastewater treatment market size 2025 CRISIL ICRA report crore"
+  - "India industrial wastewater treatment market size zero liquid discharge ZLD market crore"
+  - "CRISIL water and wastewater investment Rs 3,946 billion / 6,310 / 6,510 2025-2028 source verification"
+  - "India industrial water treatment equipment market size TechSci Research 2025 USD billion"
+  - "Thermax water and waste solutions segment revenue crore FY25 annual report"
+  - "India water sector Rs 20 lakh crore investment opportunity CRISIL 2030"
+  - "Ion Exchange India revenue FY25 crore annual report water business"
+  - "VA Tech Wabag revenue FY25 crore order book"
+  - "Mordor Intelligence India water and wastewater treatment technology market size USD billion 2025 2030"
+  - "Thermax Industrial Products segment revenue FY25 crore water waste solutions breakup"
+  - "India zero liquid discharge market size 2025 crore report"
+  - "STP sewage treatment plant capex cost per MLD India crore 2024 2025"
+  - "CPCB number of water polluting industries Grossly Polluting Industries India count ETP CETP"
+  - "USD to INR exchange rate July 2026"
+  - "global water and wastewater treatment market size 2025 China market size USD billion comparison"
+searches_skipped:
+  - "India-only / EPC-only revenue split for VA Tech Wabag and Ion Exchange (peer data precision for Method 4)"
+  - "Sector-specific organised vs unorganised revenue split for Indian water-treatment EPC (used framework default 30-60% instead)"
+  - "Additional peer revenue: L&T Water and Effluent Treatment vertical, WPIL, EMS Ltd, Praj Industries water vertical, Doshion"
+  - "Current APEXECO market capitalisation / trading P/E multiple (deferred to Stage 11, which has live market data)"

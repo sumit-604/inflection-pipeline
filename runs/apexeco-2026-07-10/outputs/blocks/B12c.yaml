@@ -1,0 +1,21 @@
+stage: B12c
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 39
+  fails: []
+emoat:
+  rules_checked: 14
+  fails:
+    - {severity: MINOR, rule: "adjusted total sum", detail: "em_score stated 10.1; re-sum of the 7 non-zero adjusted values (0.7+1.4+1.4+1.4+4.0+0.7+0.7) = 10.3. Off by 0.2, non-decision-changing (both <12 -> NONE)."}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MINOR, location: "B07 Section 5 scorecard / YAML em_score", claimed: "adjusted total = 10.1", framework_truth: "sum of stated per-row adjusted values = 10.3", note: "Arithmetic slip only; classification NONE unchanged. Individual multipliers and raw scores all correct."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98

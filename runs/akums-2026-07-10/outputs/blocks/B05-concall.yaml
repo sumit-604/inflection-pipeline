@@ -1,0 +1,66 @@
+stage: B05-concall
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report absent", "results absent", "rating absent"]
+flags: ["repeated evasion on Schedule M ground-truth (Q3 & Q4 FY26)", "unresolved cash deployment plan across 3 quarters", "domestic branded formulation guidance miss (2.9% vs mid-teens guide)", "CDMO volume growth driver unexplained by management's own admission"]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "European CDMO Plant 2 ramp (EUR35m/yr, contract to Dec 2032)", type: "REVENUE/INORGANIC", timeframe: "medium (FY28 start)", conviction: "H", confirm_signal: "first commercial dispatch/revenue recognition from Plant 2 in FY28", kill_signal: "regulatory filing delays across European country registrations or loss of sole-supplier status"}
+  - {priority: 2, name: "CDMO core volume growth sustainability", type: "REVENUE/VOLUME", timeframe: "near-term", conviction: "M", confirm_signal: "continued double-digit volume growth in Q1/Q2 FY27 with clearer driver attribution", kill_signal: "reversion to flat/low-single-digit growth as seen pre-Q3 FY26"}
+  - {priority: 3, name: "Zambia JV revenue ramp", type: "INORGANIC/REVENUE", timeframe: "medium-long (2026-2029)", conviction: "M-H", confirm_signal: "US$25m India-to-Zambia supply commencing by Q2 FY27 as guided", kill_signal: "further slippage in local facility commissioning or changed Zambian tender terms"}
+  - {priority: 4, name: "API business turnaround / margin normalization", type: "COST", timeframe: "near-medium", conviction: "L-M", confirm_signal: "FY27 API EBITDA loss materially narrower than -INR40cr; cephalosporin COGS below 85%", kill_signal: "continued -INR40cr+ annual losses persisting into FY27"}
+  - {priority: 5, name: "Domestic branded formulation reaching IPM-parity growth", type: "PRICE-MIX/VOLUME", timeframe: "medium", conviction: "L-M", confirm_signal: "FY27 growth reaching high-single/low-double digits as newly promised", kill_signal: "continued single-digit growth despite repeated guidance resets"}
+  - {priority: 6, name: "Trade generics stabilization at small, profitable scale", type: "COST", timeframe: "near (delivered)", conviction: "H", confirm_signal: "continued modest positive EBITDA in FY27", kill_signal: "return to losses"}
+  - {priority: 7, name: "Schedule M-driven market-share shift to compliant manufacturers", type: "REGULATORY-POLICY", timeframe: "medium", conviction: "L", confirm_signal: "quantifiable AVD wins/customer additions disclosed in future calls", kill_signal: "continued 'no comment' with no evidence of realized share gains"}
+  - {priority: 8, name: "Cash deployment into inorganic growth (M&A)", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "an announced, closed acquisition with disclosed economics", kill_signal: "cash continues to sit idle with no deal into FY27"}
+guidance:
+  - {item: "Zambia JV total project cost", number: "US$45 million (51% Akums share)", timeframe: "commissioning CY2028", stated_in: "Q2 FY26 call"}
+  - {item: "Zambia India-to-Zambia supply value", number: "US$50 million cumulative over 2 years (US$25m/yr)", timeframe: "CY2026-27, refined to 'by end of Q2 FY27'", stated_in: "Q2 FY26 call; refined Q3 & Q4 FY26 calls"}
+  - {item: "European CDMO Plant 2 contract revenue", number: "EUR35 million/yr (MAT basis), contract to December 2032", timeframe: "commercial supply start FY28", stated_in: "Q2 FY26 call (initial); confirmed with figure Q3 & Q4 FY26 calls"}
+  - {item: "H2 FY26 capex guidance", number: "INR100-125 crore (additional to H1's INR107cr)", timeframe: "H2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 actual capex", number: "INR222 crore", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 capex target", number: "INR300 crore", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Domestic branded formulation growth guidance", number: "mid-teens % (implied, referenced by analyst as prior guide)", timeframe: "FY26", stated_in: "referenced in Q3 FY26 call Q&A; actual delivered 2.9% FY26"}
+  - {item: "Tax rate normalization", number: "~29% near-term, ~25% eventual", timeframe: "FY27 onward", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 dividend", number: "INR1/share final + INR2/share special", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "CDMO peak capacity utilization ceiling", number: "55-60%", timeframe: "structural ceiling", stated_in: "Q2 & Q3 FY26 calls"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "H2 CDMO margins should largely mimic H1 (~12%)", outcome: "delivered/exceeded", explanation: "CDMO EBITDA margin rose Q2 10.4% -> Q3 13.75% -> Q4 14.4%"}
+    - {promised_in: "Q2 FY26 call", promise: "trade generics will either take a provision or continue only profit-generating lines by year-end", outcome: "delivered", explanation: "EBITDA turned positive (+INR1.4cr) in Q4 FY26"}
+    - {promised_in: "Q2 FY26 call", promise: "full-year API losses lower than last year", outcome: "partial", explanation: "FY26 -INR40cr vs FY25 -INR44cr, only ~9% better and non-monotonic quarter to quarter; management calls it 'a year of miss'"}
+    - {promised_in: "referenced Q3 FY26 call", promise: "domestic branded formulation growth mid-teens", outcome: "missed", explanation: "actual FY26 growth 2.9%; reason (deprioritizing weak HQs) surfaced only under analyst pressure"}
+    - {promised_in: "Q2 FY26 call", promise: "Plant 2 EU GMP approval by Q4 CY2025", outcome: "partial", explanation: "actually received January 2026, ~1 month slip"}
+    - {promised_in: "Q2 FY26 call, refined Q3 FY26 call", promise: "Zambia India-supply of ~US$25m to commence", outcome: "delivered/on-track", explanation: "Q4 FY26 call refines to 'by end of Q2 FY27', consistent progression"}
+    - {promised_in: "Q2 FY26 call", promise: "H2 FY26 capex of INR100-125cr additional", outcome: "delivered", explanation: "actual FY26 capex INR222cr, within guided range"}
+    - {promised_in: "implied Q2/Q3 FY26 calls", promise: "API cost-efficiency trajectory improving quarter over quarter", outcome: "missed", explanation: "Q4 FY26 EBITDA loss (-INR12cr) worse than Q3 FY26 (-INR7cr)"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "CDMO volume growth sustained at double digits", outcome: "delivered (flagged)", explanation: "7% -> 16%+ -> 25%+ variance sustained, but driver 'still to be thought through' per management"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the plan for deploying the cash surplus / any inorganic acquisitions?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "Has Schedule M enforcement translated into visible volume/customer gains for Akums?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Delivered CDMO margin/volume beat and trade generics turnaround exactly as promised, capex within guidance, and a rare honest 'year of miss' admission on API; offset by a material domestic branded formulation guidance miss, a non-monotonic API turnaround despite continuous 'improving' language, and two repeated evasions (cash deployment, Schedule M ground-truth) across all three quarters."
+peer_questions:
+  - {question: "IPM volume growth cited as flat (Q2 FY26) to ~1-1.5% (Q3/Q4 FY26) versus Akums' own double-digit to 25%+ CDMO volume growth in the same period -- is this genuine share gain or a one-off/restocking effect?", why: "largest unexplained driver behind the FY26 earnings beat; management itself cannot fully explain it", check_peers: ["INNOVACAP", "COHANCE", "WINDLAS"]}
+  - {question: "Top-200 API basket prices cited down ~8% YoY (Q2 FY26) and ~20-25% over full FY26, with a single-high-digit rebound in early FY27 attributed to Middle East-linked crude/solvent inflation -- can this raw-material trend be corroborated?", why: "directly drives Akums' cost-plus CDMO/API margins", check_peers: ["PPLPHARMA", "COHANCE", "INNOVACAP"]}
+  - {question: "Management speculates the CDMO volume surge may reflect share shift from smaller/non-compliant manufacturers ahead of Schedule M enforcement, without confirming -- do peers report similar acceleration?", why: "would confirm an industry-wide Schedule M effect versus an Akums-specific, less-durable gain", check_peers: ["INNOVACAP", "WINDLAS"]}
+  - {question: "Akums is capex-cycling (FY26 INR222cr actual, FY27 INR300cr target, plus US$45m Zambia JV and EUR35m/yr European contract) -- is the broader CDMO sector in a similar capacity-expansion cycle, corroborating genuine demand?", why: "establishes whether Akums is outspending peers into unproven demand or riding a genuine sector capex cycle", check_peers: ["INNOVACAP", "COHANCE"]}
+red_flags:
+  - "MEDIUM: repeated evasion (Q3 and Q4 FY26 calls) on Schedule M enforcement ground-truth despite management framing it as a growth tailwind in the Q2 FY26 call"
+  - "MEDIUM: cash deployment plan for INR1,573-1,682cr surplus remains unresolved across all three quarters; only vague 'actively evaluating' language, 18% FY26 dividend payout"
+  - "MEDIUM: domestic branded formulation guidance miss -- implied mid-teens growth vs 2.9% FY26 actual delivery, reason surfaced only under analyst pressure in Q3 FY26 call"
+  - "LOW-MEDIUM: extraordinary CDMO volume growth (16%+ Q3 FY26, 25%+ variance Q4 FY26) attributed to existing customers only; management says driver 'is still to be thought through' (Q4 FY26 call)"
+  - "LOW: API segment loss trajectory non-monotonic (Q2 FY26 -INR14cr, Q3 FY26 -INR7cr, Q4 FY26 -INR12cr) despite repeated 'improving' commentary; FY26 full-year loss barely improved vs FY25; management calls FY26 API 'a year of miss'"
+  - "LOW: European CDMO growth pillar concentrated in a single MNC partner/single molecule portfolio via sole-supplier Plant 2 contract (EUR35m/yr to Dec 2032)"
+dropped_triggers:
+  - "Jammu plant capex expansion -- mentioned in Q2 FY26 call as on-hold due to a GST legislation change; never mentioned again in Q3 or Q4 FY26 calls"
+timeline_slippages:
+  - "European Plant 2 EU GMP approval: guided for Q4 CY2025 in Q2 FY26 call, actually received January 2026 per Q3 FY26 call (~1 month slip)"
+  - "Injectables facility utilization: 'teens' in Q3 FY26 call, still 'early teens' in Q4 FY26 call -- ramp effectively stalled one quarter despite repeated 'ramping up' language"
+  - "Zambia India-supply guidance progressively refined: CY2026 (Q2 FY26 call) -> H1 FY27 (Q3 FY26 call) -> 'by end of Q2 FY27' (Q4 FY26 call) -- increasing specificity but net effect is a later, more precise date than the original vague 2026 guide"

@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF provided"}
+  - {type: shareholding, detail: "no shareholding pattern / promoter holding / pledge / contingent liabilities data provided in screener exports or results PDFs; Block E scored 0/20 as a data gap, not a governance finding"}
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped at AVERAGE (pre-override GOOD+) by deal-breaker #2 (Block B=7, <8) and deal-breaker #4 (cumulative CFO/PAT=0.41, <0.50). Primary driver is FY25: CFO -5.24 Cr (restated per results Q4 FY26 p.9; screener/Nov-2025 filing shows -14.08 Cr) against PAT +8.56 Cr, a working-capital build in the year immediately following the Dec-04-2024 IPO listing (results Q4 FY26 p.10, Note 8). FY20-FY22 COVID-period CFO/PAT weakness also contributes. Possible documented post-IPO rebase case for downstream position-sizing review."}
+  - {type: FLAG-DATA-GAP, reason: "Block A (20/20) rests on only 2 of 9 years (FY25-FY26) of computable ROCE; FY18-FY24 ROCE is N/A because screener's Data Sheet 'Other Liabilities' line combines current and non-current liabilities with no split, and no balance sheet source exists for those years beyond screener. Treat Block A's full score as low-confidence."}
+  - {type: FLAG-DATA-GAP, reason: "Block E (shareholder alignment) is 0/20 solely because no shareholding pattern, pledge, or contingent-liability data was provided anywhere in the input set."}
+  - {type: FLAG-DATA-GAP, reason: "FY25 CFO conflicts between the 07-Nov-2025 filing (-14.08 Cr) and the FY26 annual audited report's restated comparative (-5.24 Cr), traced to a Note 7 reclassification of trade retentions between Trade Receivables and Other Current Assets. Restated audited figure used; does not change any score band."}
+data_years: 9
+fy_range: "FY18 to FY26"
+blocks: {A: 20, B: 7, C: 18, D: 20, E: 0}
+core_score: 65
+moat_score: 21
+grand_total: 86
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block A/B threshold: Block B = 7 (<8) -> caps at max GOOD"
+  - "#4 Cumulative CFO/PAT = 0.41 (<0.50) -> caps at max AVERAGE (most restrictive, applied)"
+history_downgrade: false
+data_notes:
+  - "FY25 CFO discrepancy between filings (see flags); restated audited figure -5.24 Cr used as primary"
+  - "ROCE computable only for FY25 and FY26 (current-liability split unavailable pre-FY25 in provided data); FY18-FY24 marked N/A"
+  - "WC Days (B4) computable only FY25->FY26 (payables data only in PDFs for those 2 years), not a true 9-year latest-vs-earliest comparison"
+  - "FCF/Capex (B2, B3) computable only FY25 and FY26 (purchase of fixed assets only itemized in PDFs for those years)"
+  - "EBITDA back-solved as PBT + Interest + Depreciation - Other Income for all years/companies because direct expense-line summation did not reconcile to reported PBT for APEXECO FY18-FY22 (incomplete sub-line disclosure in screener export)"
+  - "M9 gross-margin proxy used: (Revenue - Material Cost) / Revenue; EMS Ltd excluded from peer median for M9 (Raw Material Cost not disclosed in its screener export), PEER DATA NEEDED for that one comparison"
+  - "M7 scored 0: PEER DATA NEEDED for an authoritative count of listed players in the ETP/STP/ZLD segment"
+  - "M11 selling-expense trend assessed only FY23-FY25; FY26 selling & admin expense not separately disclosed (lumped into Other Expenses)"
+  - "PAT dipped negative in FY21 (-1.65 Cr) and FY22 (-0.66 Cr), both recovered by FY23; not a loss-to-profit swing across the CAGR window since both endpoints (FY18, FY26) are already positive, noted for context"
+block_b_trend: "deteriorating - cash conversion (CFO/PAT) fell from 100.9% in FY24 (6.69/6.63) to 39.8% in FY26 (6.77/17.02) even as CFO nominally recovered from FY25's negative print"

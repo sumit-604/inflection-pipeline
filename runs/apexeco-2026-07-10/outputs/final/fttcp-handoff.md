@@ -271,3 +271,19 @@ Stage 11 ran (B11). Both tracks in full.
 | Shareholding pattern / pledge detail | B01 Block E (0/20 data gap) | Exchange shareholding pattern filing; pledge disclosure |
 
 Sources for these gaps, general: BSE / NSE exchange filings, the FY26 audited Annual Report, the company investor relations page, and the four peer transcripts named above. No credit rating rationale is obtainable (SME exempt).
+
+---
+
+## POST-DELIBERATION SOURCE RECONCILIATION (appended 2026-07-10)
+
+Open item from finalize: FY26 trade receivables (~16.76 Cr per screener) did not obviously reconcile with management's stated 61.72 Cr working capital, and the earlier "+155% receivables / ~151 day working capital" framing looked structural. Resolved by reading the FY26 signed results PDF directly (APEXECO_06052026182523_Outcome_Apex_Final_Signed.pdf: balance sheet p.8, cash flow p.9, Note 7 p.10). All figures below are from that filing.
+
+- Working capital 61.72 Cr = total current assets 85.82 Cr minus total current liabilities 24.10 Cr (p.8), and it INCLUDES cash of 35.06 Cr. Operating working capital excluding cash is 26.66 Cr, about 65 days of revenue, not 151 days. The 151 day figure was cash inflated.
+- Note 7 (p.10) regrouped trade retentions out of Trade Receivables into Other Current Assets and restated FY25 the same way. On the restated like for like basis: trade receivables FY25 11.57 Cr to FY26 16.76 Cr, up about 45 percent, against revenue up 109.5 percent. Collection days fell from about 59 to about 41. The earlier "+155%" was the pre restatement, retention inclusive FY24 to FY25 number.
+- Retention money fell in absolute terms, 10.56 Cr (FY25) to 9.24 Cr (FY26, Note 7), while revenue doubled. Retentions releasing, not building.
+- Operating working capital ex cash days fell from about 89 (FY25) to about 65 (FY26).
+- FY26 cash flow (p.9): CFO 6.77 Cr. The largest working capital use was short term loans and advances, up 9.59 Cr (2.42 to 12.01 Cr), with trade receivables absorbing only 5.19 Cr. This is cash deployed forward to execute the scaling order book.
+
+Effect on the determination: NO CHANGE. GROWTH-INDUCED stands and is strengthened. Receivables grew slower than revenue, collection and operating working capital days both improved, retentions released, and the residual drag sits in execution advances. CFO/PAT at 0.40x reflects funding the ramp, the growth induced signature. The H1 FY27 falsification trigger (CFO/PAT below 0.7x while working capital days rise faster than revenue) remains the correct monitor.
+
+Residual item to confirm, not overturning: the 9.59 Cr rise in short term loans and advances is the single largest cash use. The filing labels it ordinary loans and advances with no related party tag, so on evidence it is growth induced; confirm the nature against the FY26 annual report advances note, given B08 flagged promoter group entities (Oakens, Flagmo) with zero disclosed transactions.

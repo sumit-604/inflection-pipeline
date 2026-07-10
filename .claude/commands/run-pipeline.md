@@ -65,6 +65,20 @@ handoff schemas, flag rules, and error handling. Then:
    inputs/ tree is empty. In every other case proceed, writing B00 with
    input_gaps naming each absent document type; degraded stages run per
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
+
+   EMPTY-FOLDER CONFIRMATION: after the inventory above, if ANY input
+   folder is empty or absent (annual-report, results, rating, concalls,
+   peer-concalls, screening, presentation), PAUSE before executing any
+   stage and ask the operator exactly once, listing all empty folders
+   together in one message: "These input folders are empty: [list].
+   Proceed with these gaps, or wait while you push the documents (py
+   collect_to_repo.py --push-again) and tell me to continue?" Proceed
+   only on the operator's explicit answer, then never ask again for the
+   rest of the run. If the manifest has concalls_available: false, do
+   not list concalls or peer-concalls as gaps: their absence is
+   declared, not accidental. This is the single permitted question in
+   the pipeline.
+
    Create outputs/blocks, outputs/reports, outputs/final inside the run
    folder.
 

@@ -1,0 +1,17 @@
+stage: B15-devil
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "destroyed"
+  management_trust: "weakened"
+  valuation_safety: "weakened"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "Cash drag is structural, not growth-induced: retentions/unbilled inherent to EPC, 0.40x CFO/PAT in a +110% boom year, no rating-agency adjudicator (SME exempt), no named WC program. Flips Pillar 2 to 0.65x, destination PE to ~11-16x; base case fails even at the 202 entry."
+  - "Shared single point of failure: one working-capital-release event carries BOTH Pillar 1 ROCE and Pillar 2 cash. Role 1's -33% tail held ROCE base at 24x; if WC does not release, capital employed swells and ROCE also falls, so true tail is ~-44% (13x raw / 9.1x RRM), pushing real upside/downside to ~1.4x."
+  - "One-contract EPC dressed as a compounder: Reliance + Bhartiyam ~70% of H2 FY26 execution, book-to-bill 0.84x, order book 125 Cr below one year's revenue (149 Cr). If not replaced, FY27 revenue can decline like peers (CEWATER -6.2%), not grow 23%."
+  - "No valuation safety at CMP: destination PE 16.8x is BELOW current 18.7x (de-rating, not alpha), base Hurdle Ratio 1.63 FAIL, probability-weighted CAGR 16.7% vs 25% target, upside/downside 1.9x under the 2.0x floor."
+  - "Compromised evidence base widens the error bars on a finely-balanced call: two CRITICAL peer-citation fabrications in B06 (incl. the fabricated FELIX price-variation quote that underpinned the cost-pass-through assumption) plus a CRITICAL 169.3%-vs-37.02% remuneration disclosure contradiction; management could not reconcile its own order-book figures on a live call."

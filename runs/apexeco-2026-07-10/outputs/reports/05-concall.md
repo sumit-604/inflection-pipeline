@@ -1,4 +1,4 @@
-applied# STAGE 5 — CONCALL ANALYSIS: APEX ECOTECH LIMITED (APEXECO)
+# STAGE 5 — CONCALL ANALYSIS: APEX ECOTECH LIMITED (APEXECO)
 Run date: 2026-07-10 | Model: claude-sonnet-5 | Pipeline stage B05-concall
 
 ## CHRONOLOGY AND LABELLING NOTE (read before the rest of this report)
@@ -165,7 +165,7 @@ No other question meeting the "asked in two or more quarters, never directly ans
 ### 3C. Toughest analyst questions across all three calls
 
 | Question | Management response | Satisfactory? | Real risk? |
-<br>
+|---|---|---|---|
 | Receivables tripling/spiking (Q4 FY25 call, multiple analysts) | Explained via Feb/March invoicing timing, 45-60 day standard terms, no bad-debt history | Reasonably satisfactory but never closed the loop with a later "receivables now at X" confirmation | Low-moderate — project-based billing lumpiness is structural, not necessarily a red flag, but the lack of follow-up data is a transparency gap |
 | Order book reconciliation across years (Q4 FY26 call, Agastya Dave, Madhur Rathi) | Management could not reconcile its own historical order-book figures; CFO gave yet a third number | **Not satisfactory** | Moderate — doesn't affect the cash economics much given the short gestation period, but it is a real specificity/credibility issue for anyone modelling order-book-to-revenue conversion |
 | Margin decline despite bigger ticket sizes (Q4 FY26 call, Agastya Dave) | Attributed to raw material and logistics cost spikes on already-committed fixed-price jobs | Satisfactory and specific | Real, ongoing risk — company is exposed to commodity price volatility on fixed-price contracts signed before input costs move |
@@ -268,7 +268,7 @@ triggers:
   - {priority: 7, name: "International expansion (Vietnam/Indonesia)", type: "sectoral", timeframe: "long", conviction: "L", confirm_signal: "A first disclosed order or revenue contribution from outside India", kill_signal: "Continued retreat to India-only focus as stated in the Q4 FY26 call"}
   - {priority: 8, name: "Quarterly (or more frequent) financial disclosure", type: "regulatory-policy", timeframe: "near", conviction: "L", confirm_signal: "A genuine move to numeric quarterly reporting, not just a percentage-only circular", kill_signal: "Continued semi-annual-only reporting into FY27"}
 guidance:
-  - {item: "Opening order book", number: ">INR55 crore", timeframe: "start of FY26", stated_in: "Q4 FY25 call"}
+  - {item: "Opening order book", number: "INR55 crore or more", timeframe: "start of FY26", stated_in: "Q4 FY25 call"}
   - {item: "Minimum revenue growth expectation", number: "at least ~25%", timeframe: "FY26", stated_in: "Q4 FY25 call"}
   - {item: "Order book (mid-year)", number: "INR145 crore (incremental to already-billed INR32.56cr H1)", timeframe: "as of Nov 2025", stated_in: "Q2 FY26 call"}
   - {item: "Reliance Consumer Products order", number: "INR100-125 crore, ~70% to execute within FY26", timeframe: "FY26", stated_in: "Q2 FY26 call"}
@@ -281,7 +281,7 @@ guidance:
   - {item: "FY26 actual EPS", number: "12.91, +63.21% YoY", timeframe: "FY26 (delivered)", stated_in: "Q4 FY26 call"}
   - {item: "Cash and bank balance", number: "INR35.06 crore", timeframe: "as of 31-Mar-2026", stated_in: "Q4 FY26 call"}
   - {item: "Working capital", number: "INR61.72 crore", timeframe: "as of 31-Mar-2026", stated_in: "Q4 FY26 call"}
-  - {item: "Closing order book", number: ">INR125 crore", timeframe: "as of 31-Mar-2026, spillover into FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Closing order book", number: "INR125 crore or more", timeframe: "as of 31-Mar-2026, spillover into FY27", stated_in: "Q4 FY26 call"}
   - {item: "FY27 growth guidance", number: "verbal, non-numeric: 30-40% growth overall", timeframe: "FY27", stated_in: "Q4 FY26 call"}
   - {item: "Raw material (metal) cost inflation absorbed", number: "25-40% increase", timeframe: "H2 FY26", stated_in: "Q4 FY26 call"}
 promise_delivery:

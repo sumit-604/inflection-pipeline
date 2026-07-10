@@ -1,38 +1,30 @@
 stage: confidence-delta
 company: APEXECO
 run_date: 2026-07-10
-phase: 1
+phase: 3-final
 model: orchestrator
-# Section 5 computation from the available phase-1 verifier blocks.
-# The valuation half of framework_adherence (B12c valuation section) is
-# DEFERRED to phase 3 (B10/B11 do not exist yet); framework_adherence
-# here reflects the Gate 0 + Emerging Moat portion only.
+# Full four-component delta. framework_adherence now covers all three
+# halves (Gate 0 + Emerging Moat from phase 1, valuation from phase 3).
 confidence_delta:
-  numerical_acceptance: 89      # B12a acceptance_rate (re-run; sources read directly)
-  redflag_coverage: 87         # B12b acceptance_rate (caught 13 / 15 independent flags)
-  framework_adherence: 98      # B12c Gate 0 (39 rules, 0 fails) + Emerging Moat (14 rules, 1 minor); valuation pending
-  peer_utilisation: 81         # B12d: substantive citations confirmed 13 / 16 peer-quarters provided
-  overall: 81                  # min of the four available components
-framework_adherence_status: "partial - Gate 0 + Emerging Moat only; valuation-adherence component pending phase 3"
+  numerical_acceptance: 89      # B12a acceptance_rate
+  redflag_coverage: 87         # B12b acceptance_rate (13 of 15 flags caught)
+  framework_adherence: 97      # B12c combined: gate0 39/39, emoat 13/14, valuation 24/25
+  peer_utilisation: 81         # B12d: 13 of 16 peer-quarters substantively confirmed
+  overall: 81                  # min of the four components
+framework_adherence_status: "complete - Gate 0 + Emerging Moat (phase 1) + valuation-adherence (phase 3, incl. Role 2 decision/position-sizing rules)"
 interpretation_band: "75-89 (normal confidence; note specifics). Above the 60-74 PROCEED-downgrade band and above the <60 forced-REWORK floor."
 rework_gate_check:
   triggered: false
   reasoning: >
-    Section 4 REWORK triggers are (a) any CRITICAL from Verifier A that is a
-    fabricated or materially misread figure, or (b) any verifier
-    acceptance_rate below 60%. Verifier A's single CRITICAL is a correctly
-    extracted source-internal contradiction (Note 20(b) vs Annexure III
-    remuneration), not a pipeline fabrication/misread, per Verifier A's own
-    note; it does not meet trigger (a). Verifier D's two CRITICALs are peer
-    citation-integrity errors in B06 (misattributed speaker/company on
-    otherwise-real quotes, plus one unlocatable FELIX price-variation quote)
-    - these are Verifier D findings, not Verifier A, so they do not meet
-    trigger (a). No verifier acceptance_rate is below 60% (min 81, Verifier D).
-    Therefore REWORK is not auto-triggered. Final verdict determination is
-    left to the synthesis stage per its rules; the B06 citation errors and
-    the remuneration contradiction propagate prominently as flags.
+    No Verifier A CRITICAL that is a fabricated or misread figure (its one
+    CRITICAL is a correctly extracted source contradiction). No verifier
+    acceptance_rate below 60% (min 81, Verifier D). Verifier C valuation
+    audit found 0 critical / 0 major (2 minor), concurring with the
+    WATCHLIST decision and destination PE. Verifier D's two CRITICALs are
+    B06 peer citation-integrity errors (not Verifier A), surfaced as flags.
+    REWORK not triggered; findings propagate to synthesis.
 verifier_severity_rollup:
   B12a: {critical: 1, major: 5, minor: 0, acceptance: 89}
   B12b: {critical: 0, major: 0, minor: 2, acceptance: 87}
-  B12c: {critical: 0, major: 0, minor: 1, acceptance: 98}   # phase-1 scope
+  B12c: {critical: 0, major: 0, minor: 3, acceptance: 97}   # full, both halves
   B12d: {critical: 2, major: 1, minor: 2, acceptance: 81}

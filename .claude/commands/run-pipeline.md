@@ -53,11 +53,12 @@ error handling. Then:
    orchestrator's Section 5, write it to outputs/blocks/confidence.yaml.
 
 5. INVOKE stage-13-synthesis with everything. Split its output into the
-   three files in outputs/final/ at its FILE dividers.
+   four files in outputs/final/ at its FILE dividers: business-narrative.md,
+   fttcp-recommendation.md, verifier-summary.md, and fttcp-handoff.md.
 
 6. COMMIT all outputs with message "pipeline run: <ticker> <date>" and
    report to the user: verdict line, decision, entry range, flags
-   active, confidence delta overall, and the three final file paths.
+   active, confidence delta overall, and the four final file paths.
 
 Rules for you, the orchestrator session:
 - You coordinate; you do not analyse. Never write analytical content

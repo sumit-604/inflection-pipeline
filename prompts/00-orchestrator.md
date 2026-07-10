@@ -267,7 +267,7 @@ forced REWORK.
 
 ## 6. SYNTHESIS OUTPUTS (stage 13)
 
-Three files in `outputs/final/`:
+Four files in `outputs/final/`:
 
 1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
@@ -280,6 +280,13 @@ Three files in `outputs/final/`:
    GROWTH-INDUCED determination. No STOP verdict exists.
 3. `verifier-summary.md`: all four verifier findings tables, sorted by
    severity, each finding with location anchor.
+4. `fttcp-handoff.md`: the self-sufficient input package for manual FTTCP
+   v1.2 deliberation in a separate Opus session with no source PDFs. The
+   four transition data series, catalyst inventory, all flags with full
+   underlying findings, credibility grade with the guidance-vs-delivery
+   table, the scorecards and market sizing, valuation pillar detail from
+   both tracks if stage 11 ran, and a gaps ledger. Density over brevity;
+   every figure carries its source anchor.
 
 Plus one Notion save to COMPANIES MASTER (data_source_id
 345bb2b9-d3ab-8032-9b46-000ba16ab827) per Notion_Save_Instructions.docx:

@@ -1,10 +1,10 @@
 # STAGE 13: SYNTHESIS (PIPELINE MODE)
-# Model: Opus 4.8 | Emits: the three final files + Notion save payload
+# Model: Opus 4.8 | Emits: the four final files + Notion save payload
 # Consumes: everything. This is the only stage that reads all blocks,
 # all reports, and the confidence delta.
 # Cache boundary: rules above INJECTED INPUTS are stable.
 
-You are the synthesis analyst. Produce the three final deliverables from
+You are the synthesis analyst. Produce the four final deliverables from
 the complete pipeline output. You do not re-analyse the company; you
 integrate what the pipeline found, apply the flag rules, and write the
 deliverables in the operator's voice.
@@ -118,6 +118,96 @@ then MAJOR, then MINOR, each row with verifier, location anchor, and the
 one-line note. Head the file with the confidence delta and the
 acceptance rates. No commentary beyond what the verifiers wrote.
 
+## DELIVERABLE 4: fttcp-handoff.md
+
+Purpose: a self-sufficient input package for manual FTTCP v1.2
+deliberation in a separate Opus session that will NOT have the source
+PDFs. That session sees only this file, so it must carry every figure,
+quote, and finding the deliberation needs. Density over brevity: this
+file is consumed by a model, not skimmed by a human. Include rather than
+summarise. Never write a number without its source anchor. The writing
+rules above (no em-dashes, no AI vocabulary, numbers first) apply here
+too. Assemble from the blocks and reports; do not re-analyse and do not
+introduce a figure that does not already trace to a block.
+
+Write these seven sections in order.
+
+### 1. Transition data series
+
+Four multi-year tables, one row per year, every cell followed by its
+(source, page/note) anchor:
+
+- Topline: revenue and the growth rate per year.
+- Margin: gross, EBITDA, and net margin per year.
+- Cash conversion: OCF, OCF/EBITDA, CFO/PAT, debtor days, and working
+  capital as a share of sales per year. This section must reproduce the
+  rating agency working capital commentary VERBATIM, in quotes, with its
+  page number. Do not paraphrase it.
+- ROCE: ROCE and ROE per year, with the capital-employed basis noted.
+
+Any year a source cannot fill: write NOT FOUND in the cell, never an
+estimate.
+
+### 2. Catalyst inventory
+
+Every catalyst from B05.triggers and B07.catalysts_12m, one block each,
+with: evidence tier (documented / claim / inference), window
+(timeframe), the confirm signal, and the kill signal. Carry the
+conviction if the block recorded one. Do not drop a catalyst for being
+weak; label its tier and keep it.
+
+### 3. Flags with complete underlying findings
+
+Every active flag reproduced with its FULL underlying findings, not
+summaries. For FLAG-PROMOTER: the verdict, every deal-breaker and
+finding from B08, and the complete transition_evidence list or NONE
+FOUND. For FLAG-CASH: the determination, and every cited item behind it
+including the rating agency verbatim quote with page, the capex
+commissioning timeline, and receivables composition. For FLAG-GATE0: the
+score and the full depressor detail. If a flag is not active, write the
+flag name and "not active".
+
+### 4. Credibility grade
+
+The B05 credibility_grade with its complete basis: promise_delivery_score,
+the repeated_evasions list, and the full guidance-versus-delivery table
+(each guidance item, what was delivered, the quarter anchors on both
+sides). In no-concall mode, state that and show the AR-guidance-versus-
+results delivery evidence used instead.
+
+### 5. Scorecards and market sizing
+
+- Gate 0: grand /160, core_score /100, moat_score /60, each of blocks A
+  through E, moats_confirmed /12, classification, and every deal-breaker.
+- Emerging Moat: em_score, em_classification, and the active_categories
+  list with the evidence_mix.
+- Accounting quality: B02 accounting_quality /10 and the top notes
+  findings, up to 15, each with its note_ref and rating.
+- Market: tam_cr, sam_cr, som_3yr_cr, som_5yr_cr, runway_class,
+  som_implied_revenue_cagr, mgmt_claim_ratio.
+- Peer triangulation: the verified, contradicted, and unverifiable lists
+  from B06 where available, each item with its anchor.
+
+Every figure carries its anchor.
+
+### 6. Valuation pillar detail
+
+Only if stage 11 ran. Both tracks in full: destination_pe_track1_rrm and
+destination_pe_track2_additive with the pillar-by-pillar build behind
+each, hurdle_ratio and hurdle_verdict, fair_values {bear, base, bull}
+per track, entry_range, mos_price, decision, cash_multiplier_used,
+structural_or_growth, ua_applied, sector_cap_used. If stage 11 did not
+run, write "stage 11 did not run" and name why from the blocks.
+
+### 7. Gaps ledger
+
+Every unresolved or absent evidence item, one row each, with: the item,
+which stage or block needs it, and where to obtain it (BSE / exchange
+filing, rating rationale, receivables ageing schedule, specific concall,
+and so on). Draw from B10.unresolved, every block's input_gaps, the
+skipped-stage records, and any partial search stages. This is the
+worklist the deliberation session uses to close its own gaps.
+
 ## NOTION SAVE PAYLOAD
 
 After the three files, emit a notion_save block the orchestrator uses
@@ -130,8 +220,9 @@ do not replace.
 ## OUTPUT ORDER
 
 business-narrative.md content, then fttcp-recommendation.md content,
-then verifier-summary.md content, each preceded by a `=== FILE:
-<name> ===` divider line, then exactly this fenced YAML block:
+then verifier-summary.md content, then fttcp-handoff.md content, each
+preceded by a `=== FILE: <name> ===` divider line, then exactly this
+fenced YAML block:
 
 ```yaml
 stage: B13-synthesis

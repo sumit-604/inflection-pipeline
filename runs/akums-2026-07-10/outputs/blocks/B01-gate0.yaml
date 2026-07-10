@@ -3,31 +3,34 @@ company: "AKUMS"
 run_date: "2026-07-10"
 model: claude-sonnet-5
 status: complete
-input_gaps: ["annual-report absent", "results absent", "rating absent"]
+input_gaps:
+  - "E2 true 3-year promoter-holding-change baseline (FY23): NOT FOUND — company listed 6 Aug 2024, pre-IPO cap table not publicly disclosed; scored on best available 1-year (FY25-26) window instead"
+  - "M7 segment listed-peer count: PEER DATA NEEDED — only 4 comparators supplied, not a full CDMO/formulations segment enumeration"
+  - "Rs 133.75 cr block-period tax demand (referenced in task brief): NOT FOUND in AR or Q3/Q4 FY26 results — AR explicitly states no demands raised as of reporting date"
+  - "Full-history Payable Days / WC Days (FY15-FY24): not disclosed in any provided document; only FY25-FY26 primary-sourced"
+  - "FY17-FY19 screener data gap (unchanged from prior run)"
+  - "E3 pledge: no explicit pledge/encumbrance line in AR primary text; scored via cross-reference to Stage 8 secondary-aggregator findings (08-promoter.md)"
 flags:
-  - type: FLAG-GATE0
-    reason: "Classification AVERAGE. Depressors: A2 min single-year ROCE -17.36% (FY22, one-off Other Expenses spike 565.07 cr); A3 median ROE 8.72%; deal-breaker #8 triggered by FY24 PAT -4.04 cr (Other Expenses spike 434.05 cr), both loss years coincide with IPO-period exceptional items and equity restructuring, flagged as possible post-IPO rebase/legacy cleanup for downstream position-sizing review; Block E = 0/20 and 4 of 12 moat tests = 0 solely because no shareholding-pattern data, R&D, distribution, or contingent-liability disclosures were supplied in this run's inputs."
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE, capped from base-matrix GOOD by deal-breaker #8 (FY24 PAT -4.04 cr); driver is a screener-evidenced one-off Other Expenses spike (434.05 cr) in a pre-IPO restructuring year, not independently re-verified against a primary FY24 document since AR FY26 carries only FY26-vs-FY25 comparatives"}
+  - {type: FLAG-TAX-RISK, reason: "IT Dept search and seizure (Section 132, Jan 2025), block period 1 Apr 2018-12 Mar 2025; auditors carry a formal Emphasis of Matter in both standalone and consolidated FY26 opinions; unquantified as of reporting date, AR states no demands raised (AR PDF p.280-281)"}
+  - {type: FLAG-CASH, reason: "WC Days (full formula, now primary-sourced) rose +7.86 days FY25-to-FY26 (71.66d to 79.53d) even as CFO and FCF both expanded sharply; monitor, not yet a cash-quality concern"}
 data_years: 9
 fy_range: "FY15 to FY26"
-blocks: {A: 8, B: 13, C: 13, D: 14, E: 0}
-core_score: 48
+blocks: {A: 8, B: 11, C: 13, D: 19, E: 18}
+core_score: 69
 moat_score: 10
-grand_total: 58
+grand_total: 79
 moats_confirmed: 1
 moat_class: "THIN"
 classification: "AVERAGE"
-deal_breakers: ["8: PAT negative FY24 (-4.04 cr, screener Data_Sheet), max AVERAGE"]
+deal_breakers: ["DB8: PAT negative FY24 (-4.04 cr), caps base-matrix GOOD to max AVERAGE"]
 history_downgrade: false
 data_notes:
-  - "Data gap: FY17-FY19 not in export; history is FY15, FY16, FY20-FY26 (9 data points over an 11-year span)."
-  - "ROCE/ROE computed (screener ratio rows blank); Capital Employed = Equity+Reserves+Borrowings (Total Assets − Other Liabilities proxy)."
-  - "Trade Payables not disclosed; Payable Days and true (incl. payables) WC Days not computable — B4 and M12 use Receivable+Inventory Days only / scored N/A respectively."
-  - "Current Assets/Liabilities not split in export; D4 Current Ratio N/A, scored 0."
-  - "Capex proxied as Δ(Net Block+CWIP)+Depreciation; not computable for FY15 (no prior year) or FY20 (4-yr gap from FY16); B2/B3 computed over 7 valid pairs (FY16, FY21-FY26) only."
-  - "No shareholding-pattern file supplied; Block E (E1-E4) all N/A, scored 0 despite Akums being a professionally-run promoter (Jain family) company — FII+DII branch of E1 also inapplicable, no % data provided."
-  - "R&D expense, distribution/reach metrics, and contingent liabilities not disclosed anywhere in inputs; M6, M8, E4 scored 0/N/A."
-  - "M7 player-count test not verifiable beyond the 4 supplied peer comparators (COHANCE, INNOVACAP, PPLPHARMA, WINDLAS); PEER DATA NEEDED for full segment count, scored 0."
-  - "PAT loss-to-profit swings: FY21 profit to FY22 loss to FY23 profit to FY24 loss to FY25/FY26 profit; full-period Revenue and PAT CAGR (FY15 to FY26) computed on positive endpoints only per CAGR edge rules, no synthetic CAGR attempted across the loss years."
-  - "M9 brand GM proxy used: (Revenue − Material Cost) ÷ Revenue, Material Cost = Raw Material Cost + Change in Inventory, stated explicitly."
-  - "FY22 and FY24 losses both coincide with abnormal 'Other Expenses' spikes (565.07 cr and 434.05 cr vs ~75-100 cr normal run-rate) alongside bonus share issuances / capital base changes around the company's IPO period."
-block_b_trend: "improving: CFO FY26 = 1181.2 cr vs FY25 = 465.2 cr (screener Data_Sheet), +154% YoY; FCF (computed) turned positive FY24-FY26 after 4 straight negative-FCF years (FY16, FY21-FY23)"
+  - "Loss-to-profit swing FY22 to FY23 (-252.54 cr to +94.86 cr)"
+  - "Loss-to-profit swing FY24 to FY25 (-4.04 cr to +338.18 cr)"
+  - "Screener Data_Sheet confirmed consolidated basis (exact match to Q4 FY26 results audited consolidated balance sheet, Sales/Receivables/Inventory/Cash all reconcile to the cent)"
+  - "FY26 EBITDA: audited cross-check (522.02 cr, 11.98% margin, from consolidated P&L) used in place of the annual line-item resum (549.90 cr, 12.61%) which omits purchase-of-stock-in-trade cost lines present in the audited P&L"
+  - "M9 GM proxy = (Revenue - Material Cost) / Revenue, stated proxy, unchanged basis from prior run"
+  - "Misappropriation of funds disclosed, AR Note 55(d), Rs 4.49 million / Rs 0.45 cr, immaterial in size, IT-asset procurement fraud at Head Office attributed to subsidiary employees, corrective action taken"
+  - "R&D/revenue 0.86% (FY26) / 0.68% (FY25) per audited AR — below the 1% M6 threshold; note this is materially lower than the investor presentation's '3.2% of revenue' R&D framing (different/broader definition)"
+block_b_trend: "improving, CFO +154% YoY (465.20 cr to 1181.20 cr FY25 to FY26, screener Data_Sheet cross-verified against results Q4 FY26 p.22)"

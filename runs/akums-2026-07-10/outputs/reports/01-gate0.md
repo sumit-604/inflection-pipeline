@@ -1,26 +1,32 @@
-# STAGE 1: GATE 0 SCORECARD — Akums Drugs & Pharmaceuticals Ltd (AKUMS)
+# STAGE 1: GATE 0 SCORECARD — Akums Drugs & Pharmaceuticals Ltd (AKUMS) — RE-RUN
 
-Run date: 2026-07-10 | Model: claude-sonnet-5 | Data source: screener.in CSV exports only (no annual report, no results PDFs, no rating note)
+Run date: 2026-07-10 | Model: claude-sonnet-5 | Data sources: screener.in CSV exports, AR FY26 (integrated annual report, 375pp, PDF `inputs/annual-report/40c769ef-bb37-46e6-a96d-e95b55734c3a.pdf`), Q4 FY26 results (14 May 2026, PDF `inputs/results/1a5e3be8-49f0-4e34-83cf-d45500c1c1c7.pdf`), Q3 FY26 results (13 Feb 2026), 4 peer screener CSVs (COHANCE, INNOVACAP, PPLPHARMA, WINDLAS)
 
-Data available: 9 years (FY15, FY16, FY20, FY21, FY22, FY23, FY24, FY25, FY26). Scoring adapted to this 9-data-point / 11-fiscal-year-span history. **Gap: FY17-FY19 not provided in the export** (screener Data_Sheet). Trend/CAGR metrics use FY15 as earliest and FY26 as latest available endpoints; single-year comparisons across the gap (FY16→FY20) are excluded from YoY counts.
+**This is a re-run.** The prior Gate 0 pass (screener-only, no AR/results/rating) scored 58/160 AVERAGE with Block E and several moat tests zeroed purely for missing documents. The AR and results are now available and have been mined directly (grep + targeted reads across the full 375-page AR and both results filings). This re-score is a full re-derivation, not a patch.
 
-No shareholding-pattern file, no results extracts, no annual report, no rating note were provided for this run — this depresses Block E and several moat tests to zero, not because of company quality but because of input scope. Flagged, not halted.
+Data available: 9 data points spanning FY15 to FY26 (screener-Data_Sheet; **gap FY17–FY19 not exported by screener**, unchanged from before). The AR FY26 and Q3/Q4 FY26 results filings carry Ind AS-standard 2-year comparatives only (FY26 vs FY25 on the balance sheet; FY26 vs FY25 on segment/MD&A summaries) — they do **not** independently re-disclose FY24 or earlier detail. What the new documents unlock: (1) full shareholding pattern and promoter detail (Block E), (2) primary-source trade payables for FY25–FY26 (full Working Capital Days formula, previously a partial proxy), (3) primary-source capex for FY25–FY26 (real FCF, previously a full-history accounting-identity proxy), (4) a current/non-current asset-liability split (D4 Current Ratio, previously N/A), (5) quantified R&D and distribution-network disclosures (M6, M8), (6) the full shareholding/pledge/contingent-liability picture. Scoring adapted to this 9-data-point core history with primary-source cross-verification for FY25–FY26.
 
 ---
 
 ## FORMULA BASIS NOTES (read before the blocks)
 
-- **ROCE/ROE**: screener-Balance_Sheet.csv and screener-Customization.csv ratio rows were exported blank (no populated ROCE/ROE column). Both are therefore **computed**, not sourced. ROCE = EBIT ÷ Capital Employed, where EBIT = PBT + Interest, and Capital Employed = Equity Share Capital + Reserves + Borrowings (= Total Assets − Other Liabilities, screener's standard bucket convention, used as the current-liabilities proxy since no current/non-current split is exported).
-- **Payable Days / full WC Days**: Trade Payables is not a separate line in screener-Data_Sheet (only "Other Liabilities," a combined bucket). Payable Days is therefore **not computable**. B4 and M12 use Receivable Days + Inventory Days only, stated as a partial proxy.
-- **Current Ratio (D4)**: Current Assets/Current Liabilities are not split out anywhere in the export (Other Assets and Other Liabilities are combined buckets). D4 is scored 0 / N/A.
-- **Capex/FCF**: screener-Data_Sheet gives only aggregate "Cash from Investing Activity," not a discrete capex line. Capex is proxied as Δ(Net Block + CWIP) + Depreciation for the year (an accounting-identity derivation, not an estimate), computable only for consecutive-year pairs. This excludes FY15 (no prior year) and FY20 (prior data point is FY16, a 4-year gap, so the identity would blend 4 years of capex into 1 year of depreciation and is invalid). B2/B3 therefore run over 7 valid pairs: FY16, FY21, FY22, FY23, FY24, FY25, FY26.
-- **Shareholding (Block E)**: no shareholding-pattern file was supplied for Akums in any input. Promoter holding, promoter holding change, pledge, and contingent liabilities are all N/A (not in provided data). Despite the operator note that Akums is a professionally-run promoter (Jain family) company, no FII+DII percentage was supplied either, so the "professionally managed: 3 if FII+DII>50%" branch of E1 cannot be applied — E1 is scored 0/N/A, not 3.
+- **Screener basis confirmed consolidated**: cross-checking screener-Data_Sheet FY26 Sales (4,359.02 cr), Receivables (796.56 cr), Inventory (755.71 cr) and Cash & Bank (1,680.60 cr) against the Q4 FY26 audited **consolidated** statement of assets and liabilities (results p.21) — Revenue from operations 43,590.17 million, Trade receivables 7,965.64 million, Inventories 7,557.13 million, Cash & equivalents 3,860.05m + other bank balances 12,945.93m = 16,805.98m — all match screener to the cent (₹1 million = ₹0.1 cr). Screener-Data_Sheet is confirmed **consolidated**, not standalone. All blocks below use consolidated figures for consistency.
+- **ROCE/ROE**: no populated ROCE/ROE ratio column in the export; both remain **computed**. ROCE = EBIT ÷ Capital Employed (Equity Share Capital + Reserves + Borrowings, screener Data_Sheet). EBIT = PBT + Interest.
+- **Payable Days / full WC Days — NOW COMPUTABLE for FY25–FY26**: Q4 FY26 results (p.21, consolidated) give Trade payables (MSME + others) = ₹6,021.58 million (FY26) and ₹6,427.85 million (FY25). This is primary-source data unavailable in the prior screener-only run. Full WC Days (Receivable + Inventory − Payable) is now computed for FY25 and FY26 using the true formula; FY15–FY24 payables remain undisclosed in any provided document (AR/results carry only 2-year comparatives), so the full-formula trend is a **2-year window**, below the general 3-year minimum — flagged explicitly, used as the best available primary evidence rather than discarded.
+- **Capex/FCF — NOW COMPUTABLE from primary cash-flow statements for FY25–FY26**: Q4 FY26 results consolidated cash flow (p.22): "Purchase of property, plant and equipment and intangible assets" = ₹2,305.29m (FY26) and ₹2,723.12m (FY25). These replace the FY25/FY26 rows of the prior run's accounting-identity capex proxy (Δ(Net Block+CWIP)+Depreciation). FY16, FY21–FY24 capex remain proxied (no primary cash-flow statement available for those years in any provided document) — stated explicitly per row.
+- **Current Ratio (D4) — NOW COMPUTABLE**: Q4 FY26 results consolidated balance sheet (p.21) gives Total current assets = ₹35,598.58m and Total current liabilities = ₹10,947.57m for FY26 — a genuine current/non-current split, unavailable in the screener export.
+- **EBITDA cross-check**: the annual line-item resum of screener P&L rows (Sales − RM − ΔInv − Power − OtherMfr − Employee − SellAdmin − OtherExp) gives FY26 EBITDA = ₹549.90 cr (12.61% margin) — this **excludes** "Purchase of stock-in-trade" and "Changes in inventories of stock-in-trade," which screener's Data_Sheet template omits as separate rows but which Q4 FY26 results (consolidated P&L, AR p.72) show as real cost lines for a group with trading/distribution subsidiaries. Recomputing from the audited consolidated P&L: EBITDA FY26 = Revenue 43,590.17m − (Total expenses 40,856.17m − Finance costs 940.73m − Depreciation 1,545.51m) = ₹5,220.24m = **₹522.02 cr (11.98% margin)** — this matches the quarters-summed Operating Profit figure used for peer comparison in the prior run almost exactly (522.03 cr) and is the more accurate, audited figure. **Used for FY26 in all cross-sectional/peer tests (M2, M5) and stated as the audited cross-check for M1's FY26 row; FY15–FY25 margins remain the line-item-computed screener figures since no audited multi-year EBITDA breakdown exists for those years in provided documents** — methodology stated per year.
+- **M9 Brand GM proxy**: (Revenue − Material Cost) ÷ Revenue, Material Cost = Raw Material Cost + Change in Inventory, stated proxy, unchanged basis from prior run.
+- **Shareholding (Block E) — NOW COMPUTABLE from AR primary source**: AR FY26 Corporate Governance Report, "Category-wise shareholding Pattern as on March 31, 2026" (AR PDF p.119, printed p.185) and Note 15.3 "Details of shareholders holding more than 5% shares... and shares held by promoters" (AR PDF p.244, standalone financial statements) give promoter holding, promoter-holding history since listing, and (by absence) the pledge picture. See Block E for full detail and the specific data-availability limit on the 3-year E2 window (company listed 6 August 2024 — AR PDF p.244/p.324).
+- **Contingent liabilities (E4)**: Note 37 "Contingent liabilities and litigations," consolidated financial statements (AR PDF p.338–340). Standalone equivalent is Note 35 (AR PDF p.251).
+- **R&D (M6)**: Note 45 "Research and development expenditure," consolidated financial statements (AR PDF p.360), corroborated by the standalone MD&A R&D narrative (AR PDF p.80).
+- **Distribution (M8)**: Business Responsibility & Sustainability Report, "Markets served" (AR PDF p.128) and "Openness of business" dealer/distributor concentration table (AR PDF p.146).
 
 ---
 
 ## BLOCK A: RETURN ON CAPITAL (Max 20)
 
-Per-year EBIT, Capital Employed, and ROCE (computed; screener Data_Sheet for underlying PBT/Interest/Equity/Reserves/Borrowings):
+Per-year EBIT, Capital Employed, and ROCE (computed; screener Data_Sheet for underlying PBT/Interest/Equity/Reserves/Borrowings — unchanged from prior run, screener export identical):
 
 | FY | PBT | Interest | EBIT | Cap. Employed | ROCE |
 |---|---|---|---|---|---|
@@ -36,112 +42,129 @@ Per-year EBIT, Capital Employed, and ROCE (computed; screener Data_Sheet for und
 
 (all inputs: screener Data_Sheet)
 
-- **A1 Median ROCE = 13.34%** (5th of 9 sorted values) → band 10-14.9% = **3**
+- **A1 Median ROCE = 13.34%** (5th of 9 sorted values) → band 10–14.9% = **3**
 - **A2 Minimum single-year ROCE = -17.36% (FY22)** → <8% = **0**
-- **A3 Median ROE = 8.72%** (computed: PAT ÷ average Net Worth; FY15 uses closing NW only, opening unavailable due to gap; FY20 likewise uses closing NW as opening is the missing FY19; see table below) → <12% = **0**
-- **A4 ROCE trend, FY26 (13.72%) vs FY15 (13.34%)**: latest ≥ earliest → **5**
+- **A3 Median ROE = 8.72%** (computed: PAT ÷ average Net Worth; FY15 and FY20 use closing NW only, opening unavailable due to the FY17-19 gap):
 
-ROE detail:
 | FY | PAT | Avg/Closing NW | ROE |
 |---|---|---|---|
-|15|43.07|494.02 (closing only, opening N/A)|8.72%|
+|15|43.07|494.02 (closing only)|8.72%|
 |16|61.48|561.70|10.95%|
-|20|43.65|722.40 (closing only, opening N/A — FY19 gap)|6.04%|
+|20|43.65|722.40 (closing only, FY19 gap)|6.04%|
 |21|122.71|803.63|15.27%|
 |22|-252.54|753.42|-33.52%|
 |23|94.86|669.59|14.17%|
 |24|-4.04|713.35|-0.57%|
 |25|338.18|1878.26|18.01%|
 |26|255.19|3180.18|8.02%|
-(all inputs: screener Data_Sheet)
 
-**Block A = 3 + 0 + 0 + 5 = 8 / 20**
+→ <12% = **0**
+- **A4 ROCE trend, FY26 (13.72%) vs FY15 (13.34%)**: latest ≥ earliest → **5**
+
+**Block A = 3 + 0 + 0 + 5 = 8 / 20** (unchanged — no new document affects this block; screener P&L/BS export is identical to the prior run)
 
 ---
 
 ## BLOCK B: CASH GENERATION QUALITY (Max 20)
 
-Cumulative CFO (9 yrs) = 2672.78 (screener Data_Sheet, sum FY15-FY26); Cumulative PAT (9 yrs) = 702.56 (screener Data_Sheet).
+- **B1 Cumulative CFO ÷ Cumulative PAT**: Cumulative CFO (9yr) = 2,672.78 cr; Cumulative PAT (9yr) = 702.56 cr (screener Data_Sheet, both sums verified by re-addition) = **3.80x** → ≥1.00 = **5**
 
-- **B1 Cumulative CFO ÷ Cumulative PAT = 2672.78 ÷ 702.56 = 3.80x** → ≥1.00 = **5**
+FCF, 7 valid consecutive-pair years. **FY25 and FY26 now use real capex from the audited consolidated cash-flow statement (Q4 FY26 results p.22, cross-checked against AR consolidated cash flow); FY16, FY21–24 remain the accounting-identity proxy (Δ(Net Block+CWIP)+Depreciation) since no primary cash-flow breakdown for those years exists in provided documents:**
 
-FCF (computed, capex proxy — see Formula Basis Notes), 7 valid years:
-| FY | CFO | Capex (proxy) | FCF |
-|---|---|---|---|
-|16|89.14|105.14|-16.00|
-|21|130.61|289.30|-158.69|
-|22|31.85|225.29|-193.44|
-|23|176.63|261.67|-85.04|
-|24|498.26|311.35|+186.91|
-|25|465.20|327.43|+137.77|
-|26|1181.20|227.58|+953.62|
-(CFO, Net Block, CWIP, Depreciation: screener Data_Sheet)
+| FY | CFO | Capex | Basis | FCF |
+|---|---|---|---|---|
+|16|89.14|105.14|proxy|-16.00|
+|21|130.61|289.30|proxy|-158.69|
+|22|31.85|225.29|proxy|-193.44|
+|23|176.63|261.67|proxy|-85.04|
+|24|498.26|311.35|proxy (no primary source available)|+186.91|
+|25|465.20|272.31|**real, results Q4 FY26 p.22 / AR consolidated CF**|+192.89|
+|26|1181.20|230.53|**real, results Q4 FY26 p.22 / AR consolidated CF**|+950.67|
 
-- **B2 FCF-positive years = 3 of 7 (42.9%)** → <50% = **0**
-- **B3 Cumulative FCF (825.13) ÷ Cumulative PAT over same 7 years (615.84) = 1.34x** → ≥0.60 = **5**
-- **B4 WC Days change, FY26 vs FY15** (partial: Receivable Days + Inventory Days only, payables unavailable — see Formula Basis Notes):
-  - FY15: RD = 272.76/1464.27×365 = 67.98d; ID = 260.85/1464.27×365 = 65.02d → 133.00d (screener Data_Sheet)
-  - FY26: RD = 796.56/4359.02×365 = 66.69d; ID = 755.71/4359.02×365 = 63.25d → 129.94d (screener Data_Sheet)
-  - Change = -3.06 days → within ±5 days = **3**
+- **B2 FCF-positive years = 3 of 7 (42.9%)** → <50% = **0** (unchanged conclusion; FY24-26 were already positive under the proxy, the primary-source correction to FY25/26 doesn't flip the pass/fail count)
+- **B3 Cumulative FCF (877.29) ÷ Cumulative PAT over same 7 years (615.84) = 1.42x** → ≥0.60 = **5**
+- **B4 Change in WC Days — recomputed with the true formula now that Trade Payables is primary-sourced for FY25 and FY26** (results Q4 FY26 p.21, consolidated; screener Data_Sheet for Receivables/Inventory/Sales):
+  - FY25: RD = 770.30/4118.16×365 = 68.28d; ID = 680.93/4118.16×365 = 60.35d; PD = 642.785/4118.16×365 = 56.97d → **WC Days = 71.66d**
+  - FY26: RD = 796.56/4359.02×365 = 66.69d; ID = 755.71/4359.02×365 = 63.26d; PD = 602.158/4359.02×365 = 50.42d → **WC Days = 79.53d**
+  - Change FY25→FY26 = **+7.86 days** → band "increased 5-15 days" = **1**
+  - **Data-availability caveat**: this is a 2-year window (FY25→FY26 only), not the full FY15→FY26 span used elsewhere, because Trade Payables is undisclosed for FY15-24 in any provided document. For context only (not scored): the prior run's partial Receivable+Inventory-only proxy across the full FY15→FY26 span showed a small *improvement* (-3.06 days). The now-available true-formula figure shows the opposite direction over the shorter, more recent window — **this is a real, primary-sourced finding, not noise**, and is flagged in data_notes for downstream attention.
 
-**Block B = 5 + 0 + 5 + 3 = 13 / 20**
+**Block B = 5 + 0 + 5 + 1 = 11 / 20** (down from 13 in the prior run — the true WC Days formula, now computable, is less favorable than the partial proxy it replaces; B1 and B3 both improved marginally on more accurate capex data)
 
-**block_b_trend = improving.** CFO jumped from 465.2 cr (FY25) to 1181.2 cr (FY26), +154% YoY (screener Data_Sheet); FCF (computed) also flipped decisively positive in FY24-FY26 (+186.91, +137.77, +953.62) after four straight negative-FCF years (FY16, FY21, FY22, FY23).
+**block_b_trend = improving.** CFO jumped from 465.20 cr (FY25) to 1,181.20 cr (FY26), +154% YoY (screener Data_Sheet, cross-verified against results Q4 FY26 p.22: ₹4,651.96m → ₹11,812.02m); FCF (now real, not proxied, for both years) also expanded sharply: +192.89 cr (FY25) → +950.67 cr (FY26). The one number showing deterioration, flagged separately: **WC Days (full formula) rose 71.66d → 79.53d (+7.86d) FY25→FY26**, driven by faster receivable build and slower payable-days (56.97d→50.42d, i.e., paying suppliers faster) even as inventory days held roughly flat — worth monitoring but not yet a cash-quality red flag given the CFO and FCF trajectory.
 
 ---
 
 ## BLOCK C: GROWTH (Max 20)
 
-Revenue: FY15 = 1464.27, FY26 = 4359.02 (screener Data_Sheet, both endpoints positive, 11-year span).
-- Revenue CAGR = (4359.02/1464.27)^(1/11) - 1 = **10.43%**
+Revenue: FY15 = 1,464.27, FY26 = 4,359.02 (screener Data_Sheet, both endpoints positive, 11-year span, unchanged from prior run).
+- Revenue CAGR = (4359.02/1464.27)^(1/11) − 1 = **10.43%**
+
 PAT: FY15 = 43.07, FY26 = 255.19 (screener Data_Sheet, both endpoints positive).
-- PAT CAGR = (255.19/43.07)^(1/11) - 1 = **17.56%**
+- PAT CAGR = (255.19/43.07)^(1/11) − 1 = **17.55%**
 
 - **C1 Revenue CAGR = 10.43%** → band 10-14.9% = **3**
-- **C2 PAT CAGR = 17.56%** → band 15-19.9% = **4**
-- **C3 Positive YoY revenue years**: valid consecutive pairs only (FY16→20 excluded as a 4-year gap, not a true YoY): FY15-16 (+), FY20-21 (+), FY21-22 (+), FY22-23 (-, 3654.82 < 3671.89), FY23-24 (+), FY24-25 (-, 4118.16 < 4178.18), FY25-26 (+) — 5 of 7 positive = 71.4% (screener Data_Sheet) → band 50-74% = **1**
-- **C4 PAT CAGR − Revenue CAGR = 17.56% − 10.43% = +7.13pp** → ≥+3pp = **5**
+- **C2 PAT CAGR = 17.55%** → band 15-19.9% = **4**
+- **C3 Positive YoY revenue years**: valid consecutive pairs (FY16→20 excluded as a 4-year gap): FY15-16(+), FY20-21(+), FY21-22(+), FY22-23(−, 3654.82<3671.89), FY23-24(+), FY24-25(−, 4118.16<4178.18), FY25-26(+) — 5 of 7 = 71.4% → band 50-74% = **1**
+- **C4 PAT CAGR − Revenue CAGR = 17.55% − 10.43% = +7.12pp** → ≥+3pp = **5**
 
-**Block C = 3 + 4 + 1 + 5 = 13 / 20**
+**Block C = 3 + 4 + 1 + 5 = 13 / 20** (unchanged — no new document changes the full-history revenue/PAT series)
 
 ---
 
 ## BLOCK D: BALANCE SHEET STRENGTH (Max 20, latest = FY26)
 
-- **D1 Net Debt ÷ EBITDA**: Borrowings 157.43 − Cash & Bank 1680.60 = **-1523.17 (net cash)** (screener Data_Sheet). EBITDA FY26 = Sales 4359.02 − (RM 2499.68 + ΔInv -13.84 + Power 184.29 + OtherMfr 110.90 + Employee 753.82 + SellAdmin 178.25 + OtherExp 96.02) = **549.90** (computed, screener Data_Sheet line items). Net cash position → **5**
+- **D1 Net Debt ÷ EBITDA**: Borrowings 157.43 − Cash & Bank 1,680.60 = **-1,523.17 cr (net cash)** (screener Data_Sheet; cash figure cross-verified exactly against results Q4 FY26 p.21: Cash & equivalents 386.005 cr + other bank balances 1,294.593 cr = 1,680.598 cr). Net cash regardless of which EBITDA base is used → **5**
 - **D2 Interest Coverage = EBIT ÷ Interest = 476.17 ÷ 94.07 = 5.06x** (screener Data_Sheet) → band 5-9.9x = **4**
 - **D3 Debt ÷ Equity = 157.43 ÷ 3313.35 = 0.048x** (screener Data_Sheet) → <0.1 = **5**
-- **D4 Current Ratio**: not computable — screener export has no current/non-current split for assets or liabilities → N/A = **0**
+- **D4 Current Ratio — NEWLY COMPUTABLE**: Total current assets ÷ Total current liabilities = 35,598.58 ÷ 10,947.57 million = **3.25x** (results Q4 FY26 p.21, consolidated audited balance sheet) → ≥2.0 = **5**
 
-**Block D = 5 + 4 + 5 + 0 = 14 / 20**
+**Block D = 5 + 4 + 5 + 5 = 19 / 20** (up from 14 — D4 was the sole zero in the prior run purely for lack of a current/non-current split; now resolved with primary data)
 
 ---
 
 ## BLOCK E: SHAREHOLDER ALIGNMENT (Max 20)
 
-No shareholding-pattern data was provided in any input file for this run (no promoter holding %, no pledge %, no FII/DII %, no contingent-liability disclosure).
+**Fully re-scored — the prior run's zero here was entirely a document-availability gap, now closed.**
 
-- **E1 Promoter holding**: N/A (not in provided data) → **0**
-- **E2 Promoter holding change**: N/A → **0**
-- **E3 Promoter pledge**: N/A → **0**
-- **E4 Contingent liabilities ÷ Net Worth**: N/A → **0**
+- **E1 Promoter holding (latest, FY26)**: **75.26%** — "Promoter and Promoter Group," 11,84,55,480 shares of 15,73,93,988 total (AR PDF p.119, printed p.185, Corporate Governance Report, "Category-wise shareholding Pattern as on March 31, 2026") → ≥60% = **5**
 
-**Block E = 0 / 20** — entirely a data-availability artifact, not a scored deficiency in the company.
+- **E2 Promoter holding change over 3 years**: **data-availability limited — company listed on NSE/BSE only on 6 August 2024** (AR PDF p.244, Note 15.3(a); results Q4 FY26 confirms the same date). A true FY23-baseline 3-year comparison is **NOT FOUND** — pre-IPO private-company cap tables are not subject to public shareholding-pattern disclosure, and no such document was supplied. Best available primary-sourced comparison (AR PDF p.244, Note 15.3, "Details of shareholders holding more than 5% shares... and shares held by promoters," full 12-month FY25→FY26 window, the only complete like-for-like promoter-group data available):
+  | Holder | FY26 | FY25 | % change during the year |
+  |---|---|---|---|
+  | Akums Master Trust (promoter) | 40.79% | 40.79% | — |
+  | Sanjeev Jain (promoter) | 17.21% | 17.21% | — |
+  | Sandeep Jain (promoter) | 17.23% | 17.23% | — |
+
+  Combined 75.23% (of the >5% holders shown) vs. total category "Promoter and Promoter Group" of 75.26% (AR p.119) — flat, **0.00% change** stated explicitly in the note. FY24-and-earlier data in the same note shows a large apparent swing (Sanjeev Jain 42.45%→17.21%, Sandeep Jain 15.09%→17.23%) but this is the creation of the Akums Master Trust as part of pre-IPO restructuring, not a sale to outside parties, and the note does not disclose full promoter-group % for FY24 (only >5% holders) — **not used, as it would not be a like-for-like total-promoter-group comparison.**
+  → within ±1% band = **3** (scored on the best available, fully-disclosed, like-for-like 1-year window; the requested 3-year window is explicitly NOT FOUND and flagged, not fabricated)
+
+- **E3 Promoter pledge (latest)**: The AR's full text (375 pages, searched for "pledge," "encumber*," "Regulation 31," "SAST") contains **no promoter-share-pledge/encumbrance disclosure of any kind** — every "pledge" hit in the AR concerns company assets pledged as security for working-capital/term loans (Note 39/40, unrelated to promoter shares), not promoter shareholding. This is consistent with, but does not by itself independently confirm, a nil-pledge position. Cross-referencing this pipeline run's Stage 8 promoter analysis (`outputs/reports/08-promoter.md`), which sourced pledge = 0% converging across three secondary aggregators (Trendlyne, IIFL, Angel One) — no source found a non-zero figure. Scored on this converging evidence, sourcing basis stated explicitly (secondary-aggregator cross-reference, not a primary AR disclosure line, since the AR simply does not carry the item): 0% → **5**
+
+- **E4 Contingent liabilities ÷ Net Worth (latest, FY26, consolidated)**: Note 37 "Contingent liabilities and litigations" (AR PDF p.338-340): Income-tax matters ₹765.58m + Indirect tax matters ₹103.71m + Product pricing (NPPA) matters ₹121.88m + Others ₹2.82m = **₹993.99m = ₹99.40 cr**. Net Worth (equity attributable to owners, FY26) = ₹3,313.35 cr (screener Data_Sheet; cross-verified exactly against results Q4 FY26 p.21 consolidated: ₹33,133.48m). Ratio = 99.40/3313.35 = **3.00%** → <5% = **5**
+
+  **Separately flagged, not included in the ratio (per "never estimate a missing number" — no number exists to include)**: the IT Department conducted a search-and-seizure operation under Section 132 of the Income Tax Act at Akums offices, manufacturing units, and KMP residences from 15–21 January 2025 (AR PDF p.280, Note 55(c), standalone; also consolidated Note (subsidiary) equivalent, and both statutory auditors' reports carry a formal **"Emphasis of Matter"** paragraph on this, without qualifying the audit opinion). The Company has been required to furnish returns of undisclosed income for the block period 1 April 2018 to 12 March 2025 under Section 158BC; it has filed those returns asserting no undisclosed income, and subsequently received a show-cause notice (post 31 March 2026) to which it has responded. **The AR states explicitly: "As of the reporting date, there have been no demands which have been raised on the Company"** (AR PDF p.280-281). The Rs 133.75 cr block-period tax demand figure referenced in this run's task brief was searched for specifically across the full AR text and both Q3/Q4 FY26 results filings — **NOT FOUND in any provided document**; it directly contradicts the AR's explicit "no demands raised" statement as of the FY26 reporting date. This is recorded as **NOT FOUND / possibly a different (unconfirmed) source or a post-report-date development**, not fabricated into the E4 ratio.
+
+  Also flagged (immaterial in size, ₹4.49 million / ₹0.45 cr, but a governance item): AR Note 55(d) discloses a case of misappropriation of funds relating to IT assets/services at Head Office, involving fictitious/inflated procurement via vendor entities, attributed to subsidiary-company employees; corrective/disciplinary action taken, insurance claim filed.
+
+**Block E = 5 + 3 + 5 + 5 = 18 / 20** (up from 0 — the entire block was a document-availability gap in the prior run; now resolved with the AR as primary source, one item (E2's exact 3-year window) still explicitly data-limited by the company's recent listing rather than by input scope)
 
 ---
 
 ## CORE SCORE
 
-Blocks A(8) + B(13) + C(13) + D(14) + E(0) = **48 / 100**
+Blocks A(8) + B(11) + C(13) + D(19) + E(18) = **69 / 100**
 
-Block scores as %: A 40% | B 65% | C 65% | D 70% | E 0%.
-**Strongest block: D (Balance Sheet Strength) at 70%. Weakest block: E (Shareholder Alignment) at 0%, driven entirely by absent shareholding data, not a scored quality failure.**
+Block scores as %: A 40% | B 55% | C 65% | D 95% | E 90%.
+**Strongest block: D (Balance Sheet Strength) at 95%. Weakest block: A (Return on Capital) at 40%, driven by the FY22 ROCE trough (-17.36%) and a sub-12% median ROE — both real operating-history findings, not data gaps.**
+
+(Grand total after moat score below: 79/160 — up from the prior run's 58/160, driven almost entirely by Block E, D4, and B4/B3 refinements once the AR/results primary sources were available; Blocks A and C are unchanged because no new document altered the full-history revenue/PAT/ROCE series.)
 
 ---
 
 ## BLOCK F: QUANTITATIVE MOAT SCORING (Max 60)
 
-EBITDA margin by year (computed, screener Data_Sheet — Sales minus RM, ΔInventory, Power, Other Mfr Exp, Employee, Selling/Admin, Other Expenses; excludes Other Income):
+EBITDA margin by year (computed, screener Data_Sheet line items FY15-25; **FY26 uses the audited consolidated P&L cross-check, see Formula Basis Notes**):
 
 | FY | EBITDA | Margin |
 |---|---|---|
@@ -149,47 +172,50 @@ EBITDA margin by year (computed, screener Data_Sheet — Sales minus RM, ΔInven
 |16|90.30|5.47%|
 |20|116.54|4.83%|
 |21|143.11|5.26%|
-|22|-264.10|-7.19% (one-off: Other Expenses spiked to 565.07 vs ~75-100 cr normal run-rate)|
+|22|-264.10|-7.19% (one-off: Other Expenses spiked to 565.07 vs ~75-100 cr normal run-rate; **no FY22 AR/results document was provided in this run to independently re-verify the driver, screener-derived pattern carried forward from the prior run**)|
 |23|342.03|9.36%|
-|24|147.99|3.54% (one-off: Other Expenses 434.05, IPO-period exceptional items)|
-|25|461.34|11.20%|
-|26|549.90|12.61% (annual-summed); cross-check via quarters-summed Operating Profit = 522.03/4359.02 = **11.98%** (screener Data_Sheet Quarters section) — quarters figure used for peer comparison in M2/M5 below since it is a directly reported field rather than a re-summed one|
+|24|147.99|3.54% (one-off: Other Expenses 434.05 cr, IPO-adjacent period; **AR FY26's own comparatives run FY26 vs FY25 only — it does not re-disclose FY24 P&L detail, so this driver also remains screener-pattern-only, not independently re-confirmed by a primary FY24 document**)|
+|25|461.34|11.20% (line-item; audited cross-check from results Q4 FY26 consolidated P&L: 464.48 cr / 11.28% — consistent within rounding)|
+|26|**522.02 (audited, results Q4 FY26 p.72/AR consolidated P&L cross-check)**|**11.98%** (line-item annual-summed alternative was 549.90/12.61% — audited figure used, see Formula Basis Notes)|
 
-**M1 Pricing Power**: margin expanded FY15 (4.39%) → FY26 (12.61%), +8.2pp, well past ≥2pp, AND revenue CAGR 10.43% ≥10% → **5**
+**M1 Pricing Power**: margin expanded FY15 (4.39%) → FY26 (11.98%, audited), +7.59pp, past ≥2pp, AND revenue CAGR 10.43% ≥10% → **5**
 
-**M2 Cost Advantage vs peer median EBITDA margin (FY26, quarters-summed Operating Profit ÷ Sales)**:
-- COHANCE: 426.99/2268.55 = 18.82% (COHANCE Data_Sheet, Quarters)
-- INNOVACAP: 238.46/1630.02 = 14.63% (INNOVACAP Data_Sheet, Quarters)
-- PPLPHARMA: 921.63/8869.07 = 10.39% (PPLPHARMA Data_Sheet, Quarters)
-- WINDLAS: 104.76/904.09 = 11.59% (WINDLAS Data_Sheet, Quarters)
+**M2 Cost Advantage vs peer median EBITDA margin (FY26, quarters-summed Operating Profit ÷ Sales — unchanged peer CSVs, re-verified identical to the prior run)**:
+- COHANCE: 426.99/2268.55 = 18.82%
+- INNOVACAP: 238.46/1630.02 = 14.63%
+- PPLPHARMA: 921.63/8869.07 = 10.39%
+- WINDLAS: 104.76/904.09 = 11.59%
 - Peer median = (11.59+14.63)/2 = **13.11%**
-- Akums (quarters basis) = 11.98%, which is 1.13pp *below* peer median, within ±2pp → **1**
+- Akums (audited, 11.98%) is 1.13pp *below* peer median, within ±2pp → **1**
 
-**M3 Capital Efficiency**: FAT = Sales ÷ Net Block = 4359.02/1455.80 = 2.99x (screener Data_Sheet); ROCE FY26 = 13.72%. FAT>3x AND ROCE>20% fails; FAT>2x AND ROCE>15% fails (ROCE short); FAT>1x AND ROCE>12% holds → **1**
+**M3 Capital Efficiency**: FAT = Sales ÷ Net Block = 4359.02/1455.80 = 2.99x; ROCE FY26 = 13.72%. FAT>3x AND ROCE>20% fails; FAT>2x AND ROCE>15% fails (ROCE short); FAT>1x AND ROCE>12% holds → **1**
 
-**M4 Customer Stickiness**: 2 revenue-decline years (FY22-23, FY24-25) identified in Block C3, overall CAGR positive → **1**
+**M4 Customer Stickiness**: 2 revenue-decline years (FY22-23, FY24-25), overall CAGR positive → **1**
 
-**M5 Scale & Dominance** (peer set limited to the 4 supplied comparators; broader listed universe not enumerable from provided data — noted as a limitation): Market cap ranking — PPLPHARMA 23598.52 > COHANCE 17270.55 > **AKUMS 11051.63** > INNOVACAP 5668.41 > WINDLAS 1713.64 (screener/COHANCE/INNOVACAP/PPLPHARMA/WINDLAS Data_Sheet, "Market Capitalization" field). Akums is 3rd of 5 by mcap. Margin ranking (FY26, computed above): COHANCE 18.82% > INNOVACAP 14.63% > AKUMS 11.98% > WINDLAS 11.59% > PPLPHARMA 10.39%. Akums is 3rd of 5 by margin (not top 2). Top-3 mcap holds, but margin-top-2 fails → falls to "top 5 mcap" band → **1**
+**M5 Scale & Dominance** (4 supplied comparators; broader listed universe not enumerable from provided data): Mcap ranking — PPLPHARMA 23,598.52 > COHANCE 17,270.55 > **AKUMS 11,051.63** > INNOVACAP 5,668.41 > WINDLAS 1,713.64. Akums is 3rd of 5. Margin ranking (FY26, audited) — COHANCE 18.82% > INNOVACAP 14.63% > AKUMS 11.98% > WINDLAS 11.59% > PPLPHARMA 10.39%. Akums is 3rd of 5 (not top 2). Top-3 mcap holds, margin-top-2 fails → falls to "top 5 mcap" band → **1**
 
-**M6 Technology/R&D**: R&D expense is not a separate disclosed line anywhere in the screener export → N/A (not in provided data) → **0**
+**M6 Technology/R&D — NEWLY QUANTIFIED (previously N/A/0 for lack of data; now an evidenced 0)**: AR Note 45 (consolidated, AR PDF p.360): Holding Company R&D revenue expenditure = ₹318.35m (FY26) / ₹235.67m (FY25). A group subsidiary (Barwala DSIR-recognised unit) R&D revenue expenditure = ₹56.57m (FY26, full year) / ₹44.19m (FY25, partial period from 28 Nov 2024). Combined consolidated R&D revenue expenditure: FY26 = ₹374.92m = ₹37.49 cr; FY25 = ₹279.86m = ₹27.99 cr.
+- R&D/Revenue FY26 = 37.49/4359.02 = **0.86%**
+- R&D/Revenue FY25 = 27.99/4118.16 = **0.68%**
+Both years fail even the lowest test band (≥1%) → **0** (also, separately, capital expenditure of ₹253.58m/₹150.95m was capitalised under PP&E in the same note — capitalised, not expensed, correctly excluded from the ratio)
 
-**M7 Regulatory/License**: cannot verify the true count of listed players in the regulated pharma-CDMO/formulations segment from provided data — only 4 comparators were supplied, not a full segment enumeration → PEER DATA NEEDED, scored **0**
+**M7 Regulatory/License**: still cannot verify the true count of listed players in the regulated pharma-CDMO/formulations segment — only 4 comparators supplied, not a full segment enumeration; AR contains qualitative "largest CDMO" claims (AR p.420, p.1900-ish narrative) but no quantified count of listed peers → PEER DATA NEEDED, scored **0** (unchanged)
 
-**M8 Distribution**: no outlet count, distributor count, or geographic-reach metric disclosed in any input → N/A → **0**
+**M8 Distribution — NEWLY QUANTIFIED (previously N/A/0 for lack of data; now an evidenced 0)**: AR Business Responsibility & Sustainability Report (p.128, p.146):
+- Reach is quantified: national, Pan-India (28 states + 8 union territories); international, 72 countries (AR p.128, p.9531); export contribution 4.4% of turnover.
+- But the only **year-over-year comparable** distribution metric disclosed (BRSR "Openness of business," AR p.146) shows a sharp **decline**, not growth: Number of dealers/distributors sold to fell from 2,979 (FY25) to 271 (FY26), a -90.9% drop; sales to dealers/distributors as % of total sales fell from 16.95% (FY25) to 5.74% (FY26); concentration among the top 10 dealers rose sharply (13.43%→43.62%), consistent with a distributor-base consolidation. No prior-year country count is disclosed for a like-for-like international-reach comparison (only the current 72-country figure).
+- Does not meet the "growing" criterion required for bands 5 or 3; the reach is genuinely quantified (not the "mentioned unquantified" band 1 case either) but the only YoY-comparable metric moved backward → **0**
 
-**M9 Brand** (GM proxy = (Revenue − Material Cost) ÷ Revenue, Material Cost = Raw Material Cost + Change in Inventory, FY26, stated proxy):
-- Akums: (4359.02 − 2485.84)/4359.02 = **42.97%** (screener Data_Sheet)
-- COHANCE: (2268.55 − 748.15)/2268.55 = 67.02% (COHANCE Data_Sheet)
-- INNOVACAP: (1630.02 − 849.16)/1630.02 = 47.90% (INNOVACAP Data_Sheet)
-- PPLPHARMA: (8869.08 − 3614.22)/8869.08 = 59.26% (PPLPHARMA Data_Sheet)
-- WINDLAS: (904.09 − 543.03)/904.09 = 39.94% (WINDLAS Data_Sheet)
-- Peer median = (47.90+59.26)/2 = 53.58%. Akums 42.97% is 10.61pp *below* peer median → at/below → **0**
+**M9 Brand** (GM proxy, FY26, unchanged basis and peer figures from the prior run):
+- Akums: (4359.02 − 2485.84)/4359.02 = **42.97%**
+- COHANCE: 67.02% | INNOVACAP: 47.90% | PPLPHARMA: 59.26% | WINDLAS: 39.94%
+- Peer median = 53.58%. Akums 42.97% is 10.61pp *below* peer median → at/below → **0**
 
-**M10 Switching Costs**: overall revenue growth (CAGR +10.43%) with 2 decline years identified (C3) → "overall growth, 2+ decline years" → **1**
+**M10 Switching Costs**: overall revenue growth (CAGR +10.43%) with 2 decline years → "overall growth, 2+ decline years" → **1**
 
-**M11 Network Effects** (7 continuous years FY20-FY26 available, ≥6-year threshold met, two-window test applied): Latest 3yr (FY23→FY26) revenue CAGR = (4359.02/3654.82)^(1/3)-1 = **6.05%**; Prior 3yr (FY20→FY23) CAGR = (3654.82/2414.16)^(1/3)-1 = **14.83%** (screener Data_Sheet). Latest 3yr CAGR is *lower* than prior (deceleration), and latest 3yr CAGR is well below the 20% threshold for the middle band → **0**
+**M11 Network Effects** (7 continuous years FY20-FY26, ≥6-year threshold met): Latest 3yr (FY23→FY26) CAGR = (4359.02/3654.82)^(1/3)-1 = **6.05%**; Prior 3yr (FY20→FY23) CAGR = (3654.82/2414.16)^(1/3)-1 = **14.82%**. Latest lower than prior (deceleration), and below the 20% threshold → **0**
 
-**M12 Negative WC/Float**: cannot be scored — payable days is not computable (Trade Payables not disclosed), so true (negative) WC days cannot be assessed; partial RD+ID figures (129-133 days) cannot demonstrate a negative-WC/float position without the payables offset → N/A → **0**
+**M12 Negative WC/Float — recomputed with the true formula now available**: FY25 WC Days = 71.66d; FY26 WC Days = 79.53d (both from Block B4 above, results Q4 FY26 p.21). Both years >45 days → **0** (unchanged conclusion, now on evidenced rather than N/A grounds)
 
 **Moat score = 5+1+1+1+1+0+0+0+0+1+0+0 = 10 / 60**
 
@@ -199,23 +225,24 @@ Moats "present" (score ≥3): M1 only. **moats_confirmed = 1 → THIN**
 
 ## CLASSIFICATION
 
-- Data confidence: 9 data points → band "7-9 = moderate" (no formal downgrade tier triggered; the FY17-FY19 gap is noted but the count itself sits in the moderate band, not the 3-4 LIMITED band).
-- Core score = 48/100 → **Core 40-59 = AVERAGE** (moat class does not branch the outcome at this tier per the classification matrix).
+- Data confidence: 9 data points → band "7-9 = moderate" (no formal downgrade tier triggered).
+- Core score = 69/100 → falls in **Core 60-79** band.
+- Moat class = THIN (not STRONG/FORTRESS) → per the classification matrix, "Core 60-79 + else = GOOD" → **base matrix classification = GOOD**
 
 **Deal-breaker check:**
-1. Block A (8) <8? No (exactly 8, not below) — no trigger.
-2. Block B (13) <8? No — no trigger.
+1. Block A (8) <8? No (exactly 8) — no trigger.
+2. Block B (11) <8? No — no trigger.
 3. Median ROCE (13.34%) <10%? No — no trigger.
 4. Cumulative CFO/PAT (3.80x) <0.50? No — no trigger.
-5. Pledge >15%? Not in provided data — cannot confirm, not triggered on absence of evidence.
+5. Pledge >15%? No (0%, per Stage 8 cross-reference, Block E3) — no trigger.
 6. ND/EBITDA >3x AND IC <3x? Net cash position — no trigger.
 7. Revenue declined in majority of years? 2 of 7 valid YoY pairs (28.6%) — not majority, no trigger.
 8. **PAT negative in any of last 3 years? YES — FY24 PAT = -4.04 cr (screener Data_Sheet). Triggers → max AVERAGE.**
 9. History <3 years? No, 9 data points — no trigger.
 
-**Deal-breaker #8 triggers, driven by FY24** (and note FY22 also carried a much larger loss, -252.54 cr, though it falls outside the strict "last 3 years" window). Both FY22 and FY24 losses coincide with abnormal "Other Expenses" spikes (FY22: 565.07 cr; FY24: 434.05 cr, vs a ~75-100 cr normal run-rate) and major equity-structure changes (bonus share issuances, face-value/capital-base changes) around the company's IPO period — consistent with a **documented post-IPO rebase / legacy cleanup pattern**. Per pipeline rules, this is recorded for downstream position-sizing consideration; it does not lift the Gate 0 cap here.
+**Deal-breaker #8 triggers, driven by FY24.** The FY24 loss coincides with an "Other Expenses" spike to ₹434.05 cr (vs. a ~75-100 cr normal run-rate) in the screener series, in a year adjacent to major equity-structure changes (bonus issuances, face-value/capital-base changes) ahead of the August 2024 IPO — consistent with the prior run's characterisation of a **documented post-IPO rebase / legacy cleanup pattern**. This characterisation could not be independently re-verified against a primary FY24 document in this run: the AR FY26 in hand carries only FY26-vs-FY25 comparatives (Ind AS standard), and no FY24 annual report or FY24-specific filing was supplied. The finding is therefore carried forward on screener evidence only, flagged as such, and recorded for downstream position-sizing consideration per pipeline rules — it does not lift the Gate 0 cap here.
 
-Since the matrix-derived base classification (AVERAGE) and the deal-breaker cap (max AVERAGE) coincide, the deal-breaker does not further depress the outcome — final classification is already AVERAGE on core-score grounds alone.
+Base matrix classification (GOOD) is capped down by the deal-breaker to **max AVERAGE**.
 
 **FINAL CLASSIFICATION: AVERAGE**
 
@@ -224,44 +251,44 @@ Since the matrix-derived base classification (AVERAGE) and the deal-breaker cap 
 ## DASHBOARD SUMMARY
 
 ```
-BLOCK A (Return on Capital).........  8/20  [####------] 40%
-BLOCK B (Cash Generation Quality)... 13/20  [######----] 65%
-BLOCK C (Growth).................... 13/20  [######----] 65%
-BLOCK D (Balance Sheet Strength).... 14/20  [#######---] 70%
-BLOCK E (Shareholder Alignment).....  0/20  [----------]  0%  (no shareholding data supplied)
+BLOCK A (Return on Capital)......... 8/20  [####------] 40%
+BLOCK B (Cash Generation Quality)...11/20  [#####-----] 55%
+BLOCK C (Growth)....................13/20  [######----] 65%
+BLOCK D (Balance Sheet Strength)....19/20  [#########-] 95%
+BLOCK E (Shareholder Alignment).....18/20  [#########-] 90%
                                      -----
-CORE SCORE...........................48/100
+CORE SCORE...........................69/100
 
 MOAT PROFILE (12 tests, present = score >=3):
-M1 Pricing Power.........  5  [FORTRESS-GRADE]  PRESENT
+M1 Pricing Power.........  5  PRESENT
 M2 Cost Advantage......... 1
 M3 Capital Efficiency..... 1
 M4 Customer Stickiness.... 1
 M5 Scale & Dominance...... 1
-M6 Technology/R&D......... 0  (N/A - not disclosed)
-M7 Regulatory/License..... 0  (PEER DATA NEEDED)
-M8 Distribution............ 0  (N/A - not disclosed)
+M6 Technology/R&D......... 0  (evidenced: R&D/Rev 0.86% FY26, 0.68% FY25 - AR Note 45)
+M7 Regulatory/License..... 0  (PEER DATA NEEDED - segment player count not enumerable)
+M8 Distribution............ 0  (evidenced: dealer count -90.9% YoY, AR BRSR p.146)
 M9 Brand................... 0
 M10 Switching Costs....... 1
 M11 Network Effects....... 0
-M12 Negative WC/Float..... 0  (N/A - payables not disclosed)
+M12 Negative WC/Float..... 0  (evidenced: WC days 71.7d/79.5d, both >45)
                           ---
 MOAT SCORE................10/60   MOATS PRESENT: 1 -> THIN
 
-GRAND TOTAL: 48 + 10 = 58/160
+GRAND TOTAL: 69 + 10 = 79/160
 
-+----------------------------------------------------+
-| CLASSIFICATION: AVERAGE                             |
-| Deal-breaker #8 (PAT negative, FY24) - capped at AVG |
-| Data confidence: MODERATE (9 data points, FY17-19    |
-| gap noted)                                           |
-+----------------------------------------------------+
++------------------------------------------------------+
+| CLASSIFICATION: AVERAGE                               |
+| Base matrix result GOOD (Core 69, moat THIN) capped   |
+| by Deal-breaker #8 (PAT negative, FY24, -4.04 cr)     |
+| Data confidence: MODERATE (9 data points, FY17-19     |
+| gap noted; AR/results add FY25-26 primary detail)     |
++------------------------------------------------------+
 
-Strongest block: D (Balance Sheet Strength), 70%
-Weakest block: E (Shareholder Alignment), 0% - data gap, not
-a scored quality failure
+Strongest block: D (Balance Sheet Strength), 95%
+Weakest block: A (Return on Capital), 40%
 ```
 
-**Decision line**: Gate 0 does not halt (no STOP verdict exists). AKUMS clears with an AVERAGE classification driven by weak return-on-capital consistency (FY22 ROCE -17.36%, FY24 near-zero) and a FY24 PAT loss deal-breaker, both traceable to one-off IPO-period expense items rather than sustained operating deterioration; cash generation is improving sharply (FY26 CFO +154% YoY) and the balance sheet is net-cash. Block E and four of twelve moat tests are zero purely because promoter/shareholding data and qualitative disclosures (R&D, distribution, contingent liabilities, full segment peer count) were not supplied in this run's input set — these should be revisited if richer inputs (annual report, shareholding pattern, results extracts) become available in a later run. Proceeds to Stage 2 with flags carried forward.
+**Decision line**: Gate 0 does not halt (no STOP verdict exists). With the AR and results now available, AKUMS clears with an AVERAGE classification — up materially from the prior screener-only pass in evidenced quality (Block E fully resolved at 18/20, D4 resolved, real capex/WC-days data for FY25-26) but landing on the same final tier because the FY24 PAT-negative deal-breaker is a hard cap independent of data richness. The underlying picture that emerges with full documents: promoter alignment is strong and clean (75.26% holding, flat since listing, 0% pledge per converging sources, contingent liabilities a clean 3.00% of net worth), balance sheet strength is very strong (net cash, 3.25x current ratio, 0.05x D/E), but the moat profile remains THIN (1 of 12 tests present) and Block A (return-on-capital consistency) is the genuine weak point — FY22's -17.36% ROCE trough and sub-12% median ROE are real historical volatility, not data gaps. Two items are explicitly flagged as NOT FOUND rather than fabricated: the Rs 133.75 cr block-period tax demand referenced in this run's brief (contradicted by the AR's explicit "no demands raised" statement) and the true 3-year E2 promoter-holding-change window (the company has only been listed since August 2024). The IT search-and-seizure matter (Section 132, Jan 2025, auditors' Emphasis of Matter in both standalone and consolidated opinions) is unquantified as of the FY26 reporting date and is flagged for downstream stages rather than folded into E4. Proceeds to Stage 2 with flags carried forward.
 
 ---

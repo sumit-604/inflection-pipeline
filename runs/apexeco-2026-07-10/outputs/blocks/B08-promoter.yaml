@@ -1,0 +1,60 @@
+stage: B08-promoter
+company: "APEXECO"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - {type: rating, detail: "no credit rating PDF; company itself discloses SME-listed companies are exempt from mandatory credit rating (Boards' Report), so this resolves as not-applicable rather than an unresolved gap"}
+  - {type: shareholding, detail: "no shareholding pattern / pledge data in provided inputs; verified via web (Trendlyne): promoter holding 69.29%, pledge 0.00%, consistent with AR Note 2(c)/(d)"}
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Fourth promoter Lalit Mohan Datta (13.72% holding) exited the board effective 31/03/2024, ~8 months pre-IPO, with no reason disclosed in AR", evidence_tier: "VERIFIED", source: "Annual Report 2024-25, Note 2(c)/(d) and Note 20(a)", date: "FY2024-25 AR, published 28 Aug 2025"}
+  - {finding: "Three promoter-controlled enterprises (Oakens Engineering Services, Flagmo Ea Technologies, Flagmo Marketing) share Apex's Delhi corporate-office address, are family-directed, and are disclosed as 'significant influence' related parties with zero FY24-25 transactions", evidence_tier: "VERIFIED", source: "AR Note 20(a)/(b); Zaubacorp/D&B/Tofler entity records", date: "FY2024-25 AR; entity records current as of search"}
+  - {finding: "Director remuneration rose 37-53% in the IPO year vs 11.98% median employee increase (avg managerial +38.79% vs avg employee +7.19%)", evidence_tier: "VERIFIED", source: "AR Annexure-III, Section 197(12) disclosure", date: "FY2024-25 AR"}
+  - {finding: "Independent director attendance 33-42% (4/12 to 5/12 meetings) vs 100% for all three executive/promoter directors; an executive director (Aiyer) sits on the Audit Committee", evidence_tier: "VERIFIED", source: "AR Boards' Report, Attendance table and Audit Committee composition", date: "FY2024-25 AR"}
+  - {finding: "Company Secretary turned over three times in ~16 months spanning the IPO window (Nidhi Sharma, Kirti Jain, Vishakha Rani); no reasons disclosed", evidence_tier: "VERIFIED", source: "AR Note 20(a), Boards' Report", date: "FY2024-25 AR"}
+  - {finding: "FY25 operating cash flow negative Rs 1,408.02 lakh against PAT Rs 856.08 lakh, driven by 155% trade-receivables surge vs 34% revenue growth; corroborated by third-party analytics showing similar pattern into FY26 (accrual ratio 0.51 TTM to Mar 2026)", evidence_tier: "VERIFIED", source: "AR Cash Flow Statement and MDA 'Significant Changes'; Simply Wall St (algorithmic, corroborating only)", date: "FY2024-25 AR; Simply Wall St snapshot current as of search"}
+  - {finding: "MDA self-discloses generic risk factor on equity allotted at a price potentially lower than IPO price; no specific transaction/price/allottee named in FY25 AR; RHP litigation chapter not retrievable to confirm or dismiss", evidence_tier: "UNVERIFIED", source: "AR Annexure-IV MDA, Risk Factors section", date: "FY2024-25 AR"}
+adverse_findings_none_found:
+  - "SEBI orders/actions against company or any promoter"
+  - "Criminal/economic offence cases against promoters"
+  - "SFIO, PMLA, benami, DRI proceedings"
+  - "MCA director disqualifications"
+  - "Auditor resignation, qualification, or restatement"
+  - "Promoter share pledge (0.00%) or evidenced promoter selling"
+transition_evidence:
+  - "Non-family professional CFO (Rakesh Kaul) in place since pre-IPO (02/03/2024)"
+  - "Standard IPO-readiness governance build-out: 4 independent directors (IICA-registered), Audit/NRC/Stakeholders committees, Vigil Mechanism/Insider Trading/RPT/Materiality policies adopted"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% since Dec-2024 listing through most recent available data (Trendlyne); no reduction trend to report as pledge has never been non-zero"
+searches_performed:
+  - "Apex Ecotech Limited APEXECO SEBI order"
+  - "Anuj Dosajh Apex Ecotech director"
+  - "'Ajay Raina' DIN 02042979 director companies"
+  - "'Ramakrishnan Balasundaram Aiyer' director DIN 02321328"
+  - "'Lalit Mohan Datta' Apex Ecotech director"
+  - "Oakens Engineering Services Private Limited"
+  - "Flagmo Ea Technologies Private Limited"
+  - "Flagmo Marketing Private Limited"
+  - "Apex Ecotech IPO share allotment lower price preferential concern"
+  - "Apex Ecotech DLF Home Developers litigation suit"
+  - "Apex Ecotech Limited AmbitionBox Glassdoor employee reviews"
+  - "Apex Ecotech Limited promoter pledge shares"
+  - "Apex Ecotech Limited RHP litigation disclosures promoters outstanding litigation"
+  - "Apex Ecotech Limited stock price crash listing gain SME"
+  - "'Apex Ecotech' news Moneycontrol Economic Times controversy"
+  - "Simply Wall St Apex Ecotech accrual ratio insider ownership concerns"
+  - "Apex Ecotech Limited chittorgarh litigation outstanding material"
+  - "Apex Ecotech company secretary compliance officer vacancy SEBI LODR"
+searches_skipped:
+  - "NSE-archived RHP/DRHP PDF full 'Outstanding Litigations & Material Developments' chapter (403 Forbidden)"
+  - "Screener.in red-flag panel direct fetch (403 Forbidden)"
+  - "Simply Wall St full article direct fetch (403 Forbidden, worked around via search snippet)"
+  - "Trendlyne detailed shareholding-trend direct fetch (403 Forbidden, worked around via search snippet)"
+  - "TheCompanyCheck full director-company listing for Anuj Dosajh (403 Forbidden)"
+  - "Firm-by-firm IiAS/SES/InGovern proxy advisory site searches (general search only)"
+  - "SEBI SCORES complaint portal (not queryable via available tools)"
+verdict_basis: "Legal/regulatory record is clean (no SEBI, criminal, SFIO, PMLA, pledge, or auditor-resignation findings), but five of ten scorecard dimensions carry structural governance caution flags (co-located dormant-RPT promoter entities, outsized executive-vs-employee pay divergence in the listing year, weak independent-director attendance with an executive on the Audit Committee, rapid CS turnover through the IPO window, and an unexplained 4th-promoter pre-IPO board exit), compounded by an AR-verified, externally-corroborated cash-conversion concern (FY25 operating cash flow negative against positive PAT) that appears to persist into FY26."

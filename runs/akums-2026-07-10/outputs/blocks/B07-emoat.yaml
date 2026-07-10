@@ -1,0 +1,40 @@
+stage: B07-emoat
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "annual-report (not provided this run; Section 1B v3.3 exit-PE and this stage's AR-dependent categories relied on concalls + investor presentation only)"
+  - "fixed_asset_turnover_ratio (no balance sheet net fixed assets/gross block disclosed in concalls or investor presentation; Section 2C capex_embedded_growth_pct cannot be computed)"
+  - "top-10 customer concentration % (not disclosed, C2 unscoreable)"
+  - "R&D headcount / PhD count / ESOP-to-technical-staff data (not disclosed, F1 thin)"
+  - "ESG data: renewables %, ratings, SBTi, ZLD (not disclosed, H3 unscoreable)"
+flags:
+  - "G1 war chest: FY26 operating cash flow of INR1,181cr is largely a one-off EU contract advance (INR954cr per company's own Adj OCF definition); organic Adj OCF fell from INR465cr (FY25) to INR227cr (FY26) - opposite of the 'improving' framing in the injected Gate 0 note. Category downgraded to Weak on recount."
+  - "H1/R1 Schedule M credibility: management made a specific optimistic claim in the Q2 FY26 call, then gave two consecutive non-answers (Q3, Q4 FY26 calls), consistent with the B05 grade-C credibility record and its two flagged evasions."
+  - "G2 working capital: WC days worsened 91->105 (FY25->FY26), the opposite of an improving-WC moat signal; flagged explicitly as a negative finding, not left silent."
+  - "B2/E1/H2 evidence overlap: qualification lock-in, geographic first-mover, and strategic partnership categories substantially reuse the same two underlying facts (EU CDMO contract, Zambia JV). Operator should read these as 2 real developments, not 3 independent moats."
+em_score: 23.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active, 12-24m incremental"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "24-36m"}
+  - {id: "E1", name: "Geographic first-mover (Zambia)", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m export / 3-5yr plant"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active, ongoing"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-36m"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Moderate", evidence_type: "mixed documented/claim", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 14, claim: 8, inference: 3}
+completionist_recount: "recount performed: approximately 14 documented items across 6 active categories (A1, B2, E1, F2, H2, R1), versus 8 management-claim items and 3 analyst inferences; no Strong/Moderate category rests on claim/inference alone. Two initial Moderate reads (A4, G1) were downgraded to Weak on recount."
+catalysts_12m:
+  - {catalyst: "European API facility audit outcome", window: "next quarter from May 2026", evidence_type: "claim", anchor: "Q4 FY26 call (May 18, 2026)"}
+  - {catalyst: "Zambia direct export supply commencement (~$25mn)", window: "by end of Q2 FY27", evidence_type: "documented", anchor: "Q4 FY26 call (May 18, 2026)"}
+  - {catalyst: "Q1 FY27 CDMO double-digit volume print", window: "45-60 day visibility from May 2026", evidence_type: "documented (near-term revenue book)", anchor: "Q4 FY26 call (May 18, 2026)"}
+  - {catalyst: "Domestic Oncology and steroid CDMO lines go-live", window: "FY27", evidence_type: "claim", anchor: "Investor Presentation slide 20"}
+capex_embedded_growth_pct: 0
+combined_assessment: "AVERAGE"
+combined_reasoning: "Core AVERAGE (48/100, 1/12 moats) meets forward MODEST (23.5/80, just under the 25 STRENGTHENING line); two real developments (EU contract, Zambia JV) not yet converted to revenue keep this short of a confirmed transition setup."
+top_moat_risks:
+  - "EU CDMO contract execution risk: dossier filing/country registration across multiple European markets still pending; no revenue booked yet, commercial supply not guaranteed until FY28."
+  - "Zambia JV counterparty risk: sovereign government partner (GRZ), plant construction not yet begun as of the most recent disclosed timeline, commissioning already slipped from CY2028 to FY29."
+  - "Schedule M / MIP credibility risk: management retreated from a specific optimistic claim (Nov 2025) to two consecutive non-answers (Feb, May 2026), consistent with the B05 grade-C credibility record."
+  - "Cash-flow quality risk: FY26 operating cash flow improvement is overwhelmingly a one-off EU contract advance; organic Adj OCF fell from INR465cr to INR227cr year-on-year, and working capital days lengthened rather than improved."

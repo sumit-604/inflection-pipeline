@@ -71,7 +71,7 @@ handoff schemas, flag rules, and error handling. Then:
    peer-concalls, screening, presentation), PAUSE before executing any
    stage and ask the operator exactly once, listing all empty folders
    together in one message: "These input folders are empty: [list].
-   Proceed with these gaps, or wait while you push the documents (py
+   Proceed with these gaps, or push the documents (py
    collect_to_repo.py --push-again) and tell me to continue?" Proceed
    only on the operator's explicit answer, then never ask again for the
    rest of the run. If the manifest has concalls_available: false, do

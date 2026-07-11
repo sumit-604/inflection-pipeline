@@ -808,6 +808,7 @@ Decision rules:
 - WATCHLIST: CMP above Entry Price but thesis is strong — wait for correction
 - AVOID: Gate 0 AVERAGE/AVOID OR Promoter CONCERN/AVOID OR Upside/Downside < 2x OR Hurdle Ratio = STOP
 - Transition-Alpha Filter default: a good business WITHOUT a clear inflection goes to WATCH-FOR-INFLECTION, not TRACK.
+- ENTRY CONJUNCTION (anti-value-trap): a BUY or BUY-ON-DIPS executes only when BOTH hold: price inside the entry zone AND the most recent quarterly monitoring checklist shows no thesis-broken trigger fired. Price entering the zone BECAUSE a trigger fired is a withdrawn zone, not an opportunity. Every thesis must state this conjunction explicitly in its Section 7 verdict box.
 
 Position size rules:
 

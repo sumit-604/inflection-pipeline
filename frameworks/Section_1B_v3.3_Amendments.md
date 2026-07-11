@@ -127,7 +127,9 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 
 ---
 
-## AMENDMENT 4 (v3.4) — PILLAR 3 DECOUPLED
+# V3.4 AMENDMENTS
+
+## AMENDMENT 4.1 (v3.4) — PILLAR 3 DECOUPLED
 
 **Change:** Pillar 3 splits into two additive components, combined hard cap **+6x** (the existing Pillar 3 maximum):
 
@@ -141,13 +143,19 @@ Award: **+2x if any two qualify; +3x if three or more qualify AND delivery grade
 
 **3b Moat Formation Premium** — the existing EM-gated table, unchanged, applied as before.
 
-**3c Duration Premium** — paid on documented forward revenue visibility. **+1x when visibility covers ≥2.5 years** (executable order book ÷ current annual revenue ≥2.5, or contracted/regulated revenue streams of equivalent tenor); **+2x when ≥4 years.** Evidence tier 📄 only — signed contracts, LoAs with stated values, regulatory annuity terms; management pipeline talk and TAM stories pay nothing. Example: order book 15x annual revenue, documented via LoAs → 3c = +2x.
-
-3a prices documented growth; 3b prices forming moats; 3c prices the duration of documented revenue. A company may earn any without the others. Combined 3a+3b+3c never exceeds the +6x Pillar 3 cap. Sector caps remain absolute.
+3a prices documented growth; 3b prices forming moats. A company may earn either without the other. Combined 3a+3b+3c never exceeds the +6x Pillar 3 cap (3c is added in Amendment 4.2). Sector caps remain absolute.
 
 ---
 
-## AMENDMENT 6 (v3.4) — TWO-TIER RETURN HURDLE
+## AMENDMENT 4.2 (v3.4) — PILLAR 3c DURATION PREMIUM
+
+**3c Duration Premium** — paid on documented forward revenue visibility. **+1x when visibility covers ≥2.5 years** (executable order book ÷ current annual revenue ≥2.5, or contracted/regulated revenue streams of equivalent tenor); **+2x when ≥4 years.** Evidence tier 📄 only — signed contracts, LoAs with stated values, regulatory annuity terms; management pipeline talk and TAM stories pay nothing. Example: order book 15x annual revenue, documented via LoAs → 3c = +2x.
+
+3c prices the duration of documented revenue. It counts inside the combined 3a+3b+3c +6x Pillar 3 cap set in Amendment 4.1. Sector caps remain absolute.
+
+---
+
+## AMENDMENT 4.3 (v3.4) — TWO-TIER RETURN HURDLE
 
 The single 25% CAGR hurdle is replaced by two declared tiers, assigned mechanically.
 
@@ -189,4 +197,4 @@ Tier B exists because discovered-quality names structurally do not offer 25% ent
 |---|---|---|
 | 3.2 | Jun 2026 | Prior spec (Notion: Valuation Framework v3.2) |
 | 3.3 | 02-Jul-2026 | Amendments 1-8 above. 20x rule deleted; Hurdle Ratio replaces STOP rule and 1.3x gap check; UA ordering codified as min(Raw × 1.25, Cap); ROCE single-credit rule (FTTCP v1.2); continuous Pillar 1 formula; proportional ±7.5% range; lender Asset-Quality Multiplier carve-out; six sector cap rows added. Premium-scaling proposal rejected (Appendix A). |
-| 3.4 | 11-Jul-2026 | Amendment 4 (v3.4): Pillar 3 decoupled into 3a Growth Visibility Premium (documented growth machinery, independent of EM score), 3b Moat Formation Premium (existing EM-gated table), and 3c Duration Premium (documented forward revenue visibility: +1x ≥2.5yr, +2x ≥4yr, 📄 only). Combined 3a+3b+3c hard-capped at +6x; sector caps absolute. |
+| 3.4 | 11-Jul-2026 | Amendments 4.1-4.3 above. Pillar 3 decoupled (3a growth visibility / 3b moat formation / 3c duration premium), combined +6x cap (4.1, 4.2); two-tier hurdle (Tier A 25% / Tier B 20%) (4.3); entry conjunction rule (Master v3.3 Role 2); optionality register (stage 7); zone reachability flag (synthesis + finalize); RRM percentage-points clarification. |

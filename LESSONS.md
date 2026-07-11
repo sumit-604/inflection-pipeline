@@ -19,6 +19,7 @@ for 2+ occurrences._
 ## WHAT BROKE AND THE FIX
 _A mechanical failure or wrong output this run, and what resolved it._
 
+- [2026-07-11] FTTCP rewrite drafted in chat but never landed in repo; old interactive behavior recurred across three companies. Law: every repo task ends with an explicit merge reminder, and no dependent session starts until the merge is confirmed on main.
 - [2026-07-11] Identical final filenames across run folders caused a wrong-company upload (Apex payload grabbed for an Akums save). Candidate law: finals get ticker-prefixed names (AKUMS-notion-payload.md), or the payload's first line must state ticker plus run date in bold.
 - [2026-07-11] Repo tasks are not done at 'pushed' — they are done at 'merged.' Unmerged branches are invisible to every new session. After any repo task: push, then immediately merge, then proceed.
 - [2026-07-10] Changelog entries must be written by the session that made the change, never pre-supplied by the operator or planner — a pre-supplied changelog claimed the RRM clarification existed when the task had been skipped. Caught by session cross-check; fixed as Amendment 4.4.

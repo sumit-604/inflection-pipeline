@@ -19,6 +19,7 @@ for 2+ occurrences._
 ## WHAT BROKE AND THE FIX
 _A mechanical failure or wrong output this run, and what resolved it._
 
+- [2026-07-11] Identical final filenames across run folders caused a wrong-company upload (Apex payload grabbed for an Akums save). Candidate law: finals get ticker-prefixed names (AKUMS-notion-payload.md), or the payload's first line must state ticker plus run date in bold.
 - [2026-07-11] Repo tasks are not done at 'pushed' — they are done at 'merged.' Unmerged branches are invisible to every new session. After any repo task: push, then immediately merge, then proceed.
 - [2026-07-10] Changelog entries must be written by the session that made the change, never pre-supplied by the operator or planner — a pre-supplied changelog claimed the RRM clarification existed when the task had been skipped. Caught by session cross-check; fixed as Amendment 4.4.
 - [2026-07-10] Documents added to a local run folder after the initial push do not exist for cloud sessions until --push-again runs. Cost: half a phase-1 re-run on AKUMS (AR, results, rating all local-only). Promoted to law: stage-0 empty-folder pause.

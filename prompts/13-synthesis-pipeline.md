@@ -91,6 +91,15 @@ Verdict selection rules, applied in order:
 - The valuation decision as computed (BUY / WATCHLIST / AVOID, entry
   range, MoS price, both destination PE tracks, Hurdle verdict), stated
   without re-derivation.
+- ZONE REACHABILITY line: the entry zone top versus the 52-week low and
+  versus the lowest tested price since listing, both as percentages,
+  computed from the screening CSVs where price history exists (state
+  "price history unavailable" otherwise). If the zone top sits >20% below
+  the lowest tested price since listing, print: "MARKET-UNLIKELY ZONE —
+  reaches entry only via thesis-relevant shock or broad de-rating;
+  classify DEEP WATCH not actionable WATCHLIST, or route to the trading
+  book." If a Tier B hurdle would move the zone to within 15% of tested
+  prices, print the Tier B zone alongside as "Tier B alternative: ₹___".
 - The confidence delta table with the four components and one line on
   the weakest.
 - Active flag blocks (if any), inline, per above.

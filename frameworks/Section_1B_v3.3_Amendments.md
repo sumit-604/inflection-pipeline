@@ -147,6 +147,32 @@ Award: **+2x if any two qualify; +3x if three or more qualify AND delivery grade
 
 ---
 
+## AMENDMENT 6 (v3.4) — TWO-TIER RETURN HURDLE
+
+The single 25% CAGR hurdle is replaced by two declared tiers, assigned mechanically.
+
+**Tier A — Transition / Undiscovered (hurdle 25% CAGR).** Default tier. Applies when FII+DII combined <3% (the UA institutional-absence test), OR the combined Gate0+EM assessment is TURNAROUND or HIGH POTENTIAL. This is the core strategy sleeve; nothing changes for it.
+
+**Tier B — Discovered Quality (hurdle 20% CAGR).** Applies only when ALL hold:
+- FII+DII ≥3% (the market has found it)
+- Gate 0 classification GOOD or better OR EM ≥25
+- promoter verdict TRUSTWORTHY or better
+- no structural FLAG-CASH
+
+Companies failing Tier B's quality gates stay at 25% regardless of discovery.
+
+**Cascade rules:**
+- Entry price = base fair value ÷ (1 + hurdle)³. Tier A divisor 1.953 (1.25³); Tier B divisor 1.728 (1.20³).
+- MoS price remains 20% below entry.
+- The Hurdle Ratio pass threshold becomes **1.953 for Tier A and 1.728 for Tier B.**
+- 4D probability weights unchanged.
+- Position sizing: Tier B positions default to a **Medium (4-6%) ceiling** unless the operator documents an override in the thesis — the lower-return sleeve must not crowd the core sleeve's capital.
+- The verdict card MUST state, on its first line: **"Tier: [A/B] | Hurdle: [25%/20%]".**
+
+Tier B exists because discovered-quality names structurally do not offer 25% entries in functioning markets; participating in them at 20% is a declared strategy choice, not a framework relaxation. The 25% tier remains the strategy's core.
+
+---
+
 ## APPENDIX A — REJECTED AMENDMENT (RECORDED FOR AUDIT TRAIL)
 
 **Proposal (rejected 02-Jul-2026):** Scale Growth and Strategic Premiums by the Cash Multiplier (or cap premiums at 50% of quality-adjusted base when multiplier <1.0x), on the grounds that a structurally cash-negative business can currently earn premiums exceeding its quality base.

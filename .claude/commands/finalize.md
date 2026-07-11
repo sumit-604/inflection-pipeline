@@ -155,7 +155,16 @@ phase 3), then:
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
    in this order: the thesis verdict card (from B14), then the devil's
-   advocate final table (from B15). End with exactly:
+   advocate final table (from B15). The verdict card must carry a ZONE
+   REACHABILITY line: the entry zone top versus the 52-week low and versus
+   the lowest tested price since listing, both as percentages, computed
+   from the screening CSVs where price history exists (state "price history
+   unavailable" otherwise). If the zone top sits >20% below the lowest
+   tested price since listing, print: "MARKET-UNLIKELY ZONE — reaches entry
+   only via thesis-relevant shock or broad de-rating; classify DEEP WATCH
+   not actionable WATCHLIST, or route to the trading book." If a Tier B
+   hurdle would move the zone to within 15% of tested prices, print the
+   Tier B zone alongside as "Tier B alternative: ₹___". End with exactly:
 
    "Files committed. Ask me anything about this analysis — I have the sources."
 

@@ -36,7 +36,20 @@ catalysts_12m:
   - {catalyst: "Q1 FY27 CDMO double-digit volume print", window: "45-60 day visibility from May 2026", evidence_type: "documented (near-term revenue book)", anchor: "Q4 FY26 call (May 18, 2026)"}
   - {catalyst: "Domestic Oncology and steroid CDMO lines go-live", window: "FY27", evidence_type: "claim", anchor: "Investor Presentation slide 20"}
   - {catalyst: "FY27 capex deployment (INR300cr guided) vs FY26's deposits-not-capex pattern", window: "FY27", evidence_type: "documented base / claim on FY27 execution", anchor: "AR cash flow statement p.299 + Q4 FY26 call"}
-capex_embedded_growth_pct: 20.6
+capex_embedded_growth_pct: 20.6   # guided FY27 capex Rs 300cr x FAT 3.0; contracted capital commitments basis (Rs 804.45cr, AR) implies ~55%
+optionality_register:             # scored 0 or claim/inference-only; watched, never scored (updated stage 7 spec)
+  - {optionality: "R&D pipeline monetization: 14 granted patents, 129 filed, 8 first-in-India-&-world triple-layer products, Triple Hair/Caregen in-licensed exclusivities - real IP, zero disclosed revenue or royalty", converting_evidence: "a patented/first-in-world product with disclosed revenue contribution, OR out-licensing royalty income disclosed", first_appears: "AR revenue/segment note; licensing-deal exchange filing", window: "12-36m"}
+  - {optionality: "Schedule M share-shift (management retreated to two consecutive non-answers)", converting_evidence: "quantified AVD wins / named customer additions", first_appears: "concall Q&A; AR MD&A", window: "12-24m"}
+  - {optionality: "API regulated-market (EU) upgrade - CEPs filed, facility audit pending", converting_evidence: "EU API facility approval + higher-realization API revenue booked", first_appears: "exchange filing; concall", window: "12-24m"}
+  - {optionality: "Oncology + steroid CDMO lines (announced FY27)", converting_evidence: "line go-live + disclosed order flow", first_appears: "concall; presentation", window: "FY27"}
+  - {optionality: "8-10 global CDMO customers vs 1 today (aspiration)", converting_evidence: "signed contract(s) with named new customers", first_appears: "exchange filing; concall", window: "2-3yr"}
+  - {optionality: "Zambia local-plant commercialization (announced, plant not started)", converting_evidence: "commissioning + first local-market revenue", first_appears: "exchange filing; concall", window: "3-5yr (FY29)"}
+  - {optionality: "GLP-1 (semaglutide-class) entry (concept, 'still evaluating')", converting_evidence: "committed capex or product filing", first_appears: "capex disclosure; concall", window: "undetermined"}
+pillar3_amendment4:               # v3.4 decoupled Pillar 3 determination
+  scale_3a_growth_visibility: 0   # only test 1 (capex-embedded) qualifies of 4; grade C; +0x (need >=2 to qualify)
+  scale_3b_moat_formation: 1      # EM 26.3 -> 25-29 band -> +1x
+  combined: 1                     # 3a+3b, cap +6x not binding; equals old undecoupled Pillar 3 (+1x); destination PE unchanged ~23x
+  tests_3a: {capex_embedded_ge15: true, order_book_ge1x_or_btb_ge1.2: false, som_cagr_ge20_capacity_pass: false, delivery_grade_A_or_B: false}
 combined_assessment: "TURNAROUND"
 combined_reasoning: "Core AVERAGE (69/100, 1/12 moats, capped by the FY24 loss-year deal-breaker) meets forward STRENGTHENING (26.3/80, crossing the 25 threshold on AR-confirmed EU contract and Zambia JV evidence) - a genuine TURNAROUND setup, one band below the EXPANSION-tier threshold that would justify HIGH POTENTIAL."
 top_moat_risks:

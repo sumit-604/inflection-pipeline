@@ -1,0 +1,65 @@
+stage: B09-tam
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Annual report not available this run"
+  - "RHP / F&S report PDF and HDFC Securities IPO note PDF returned HTTP 403; management TAM claim sourced via secondary search citations only, not primary-verified"
+  - "EU CDMO contract (EUR 200 Mn) annual revenue quantum not disclosed beyond aggregate multi-year figure"
+  - "Organised vs. unorganised split specific to the domestic CDMO market not found"
+  - "Full peer-by-peer CDMO revenue aggregation not performed (substituted disclosed market-share reverse-engineering)"
+  - "capex_embedded_growth_pct NOT COMPUTABLE (Stage 7 gap); physical capacity utilization used as proxy per injected instruction"
+flags:
+  - "SOM-implied CDMO segment CAGR (15.7-16.1%) is well above FY26 actual CDMO growth (8.6% YoY); assumes re-acceleration, not extrapolation"
+  - "Capacity cross-check gap of ~Rs 741 Cr (11.5%) vs FY29 SOM-implied total company revenue at management's disclosed peak utilization ceiling; SOM mildly optimistic"
+  - "Two independently top-down FY24 domestic-CDMO-market estimates diverge ~26% (Rs 14,500 Cr F&S headline vs Rs 10,780 Cr reverse-engineered); conservative (lower) figure used per bias rule"
+  - "Headline 'India CDMO market' figures from generic research houses ($8.5-25.5Bn) blend biologics/global CRAMS Akums does not compete in; excluded from headline TAM to avoid 6-13x overstatement"
+market_definition: "Indian domestic-facing pharma CDMO (formulation contract development & manufacturing) market for outsourced dosage-form production serving Indian branded pharma companies; excludes Akums' API, own-brand, international and trade-generics revenue streams and excludes global/export CRAMS and biologics CDMO"
+tam_cr: {conservative: 13880, realistic: 18580}
+sam_cr: 11630
+sam_pct_of_tam: 83.8
+som_3yr_cr: 5396
+som_5yr_cr: 7348
+som_implied_revenue_cagr: {yr3: 13.9, yr5: 14.3}   # company-level blended (CDMO segment alone: 15.7 / 16.1)
+current_sam_share_pct: 30.0
+revenue_headroom_x: 3.34
+tam_growth_pct: 13.2
+runway_class: "GOOD"
+mgmt_claim_cr: 23800
+mgmt_claim_ratio: 1.34
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs 741 Cr (11.5%) vs FY29 SOM-implied total company revenue at management's disclosed peak utilization ceiling (55-60%); SOM side is the optimistic one absent further capex clarity"
+methods_used:
+  - "top-down (F&S/RHP-sourced domestic CDMO market report)"
+  - "bottom-up unit economics (installed capacity x utilization x revenue/unit)"
+  - "peer/market-share reverse-engineering (Akums' own disclosed CDMO revenue and share trend)"
+  - "global benchmark (global CDMO market context, India penetration ~1.2%)"
+  - "capacity-based cross-check (installed capacity ceiling vs SOM revenue)"
+stale_data_flags:
+  - {datapoint: "India domestic CDMO market FY24 base (Rs 14,500 Cr)", source: "F&S Report per secondary IPO citations (HDFC Sec IPO note, July 2024)", year: 2024}
+  - {datapoint: "India CDMO market (broad scope) 2024 base (USD 17.51 Bn)", source: "IMARC Group", year: 2024}
+  - {datapoint: "India domestic formulations/IPM market (Rs 1.9 trillion base)", source: "Bain & Co-style secondary citation", year: 2023}
+  - {datapoint: "Unbranded 'generic generics' market (Rs 1,200 Cr base)", source: "WebSearch secondary citation", year: 2023}
+  - {datapoint: "China outsourced API/CDMO share (~35%) and India capture dynamics", source: "Bain & Co roadmap report", year: 2023}
+searches_performed:
+  - "Akums Drugs DRHP CDMO market size TAM India pharmaceutical CDMO market"
+  - "India pharmaceutical CDMO CRAMS market size 2025 2030 CRISIL report"
+  - "Indian Pharmaceutical Market IPM size 2025 2030 IBEF domestic formulations CAGR"
+  - "Akums largest CDMO India Frost Sullivan market share revenue FY23 F&S report"
+  - "India API market size 2025 2030 CAGR active pharmaceutical ingredient bulk drug"
+  - "Akums Drugs FY24 CDMO segment revenue crore RHP domestic CDMO market size value"
+  - "India trade generics market size 2024 2025 CAGR unbranded generics"
+  - "Global pharmaceutical CDMO market size 2025 USD billion CAGR"
+  - "India pharma outsourcing penetration percent vs China global average contract manufacturing formulations"
+  - "India pharmaceutical formulation outsourcing percentage of IPM manufactured by CDMO third party"
+  - "Akums IPO RHP domestic formulation outsourcing penetration percent third-party manufacturing India"
+  - "'14,500 crore' OR '23,800 crore' India CDMO market Akums FY24 FY28 F&S report"
+  - "India pharma contract manufacturing organised unorganised market share fragmented top players concentration"
+  - "WebFetch akums.in Global-and-India-CDMO-Market.pdf"
+  - "WebFetch HDFC Securities Akums IPO Note PDF"
+  - "WebFetch pharmasource.global India CDMO Market Set to Double article"
+searches_skipped:
+  - "Full peer-by-peer CDMO revenue aggregation (Windlas Biotech, Cadila Pharma CDMO arm, others) for literal Method 3 sum-with-unorganised-estimate"
+  - "EU CDMO contract annual revenue quantum breakdown"
+  - "Organised vs unorganised split specific to domestic CDMO market"

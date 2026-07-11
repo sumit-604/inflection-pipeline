@@ -1,0 +1,13 @@
+confidence_delta:
+  numerical_acceptance: 93      # B12a acceptance_rate
+  redflag_coverage: 67          # B12b caught (8) / independent flags found (12)
+  framework_adherence: 99       # B12c Gate 0 + Emerging Moat portion only (valuation half deferred to phase 3)
+  peer_utilisation: 83          # B12d substantive_confirmed (10) / peers_provided (12)
+  overall: 67                   # min of the four available components
+framework_adherence_note: "Phase-1 value covers Gate 0 (46 rules) and Emerging Moat (40 rules) only; the valuation-adherence component (B11/B10) is PENDING phase 3 and will be recomputed by /finalize."
+interpretation: "overall 67 falls in the 60-74 band: PROCEED-family verdicts downgrade one level. Not forced REWORK (>=60); no B12a CRITICAL; no verifier acceptance_rate below 60. Weakest component is redflag_coverage 67 — verifier B independently surfaced two MAJOR gaps the concall stage under-weighted (European contract is fixed-price to Dec-2032; FY26 OCF is largely a one-off customer advance), neither a repeated evasion, so no CRITICAL."
+rework_check:
+  b12a_critical: 0
+  any_acceptance_below_60: false
+  overall_below_60: false
+  forced_rework: false

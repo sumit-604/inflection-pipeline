@@ -1,0 +1,35 @@
+stage: B08-promoter
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: partial               # two primary-source fetches (Wikipedia, company PDF) returned 403; several items not checked against primary portals (MCA, SCORES, IiAS, NSE RPT filings) — see search log
+input_gaps: [annual-report, granular-RPT-schedule, promoter-group-full-entity-list, AmbitionBox-ratings, primary-FII-shareholding-filing, MCA-RoC-director-cross-memberships]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Income Tax Dept search-and-seizure (Jan 2025) followed by Section 158BC block-period (FY18-19 to FY24-25) assessment orders totalling Rs 133.75 crore across Akums standalone (Rs 60.09 cr) and subsidiary Akumentis Healthcare (Rs 73.66 cr), plus four other wholly-owned subsidiaries similarly assessed (disclosed ~May 2026)"
+      - "Live criminal prosecution under the Drugs and Cosmetics Act, 1940 (2016 expired-stock 'Vicks Gel' matter) — Supreme Court declined relief to Akums Drugs, trial continues"
+      - "CEO-CDMO Business (external professional hire, Amrut Medhekar, ex-Wockhardt) resigned after ~11 months (Jul 2025); no confirmed successor found — key-person risk reverting to the two founder-MDs"
+      - "Countervailing: 0% promoter pledge throughout, credentialed independent board (ex-Pfizer India MD Kewal Handa chairs Audit Committee), blue-chip IPO anchor book (ADIA, BlackRock, SBI MF, HDFC Life), rising DII ownership (~7.4% to ~14.3%), dividends initiated within 2 years of listing"
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 5, red: 1}
+deal_breakers: []              # none triggered — SEBI ban, conviction, SFIO, PMLA, auditor resignation, pledge>40%, multi mid-term ID exits, restatement all NOT TRIGGERED
+adverse_findings:
+  - {finding: "IT Dept search-and-seizure at Akums offices/manufacturing units, Jan 2025", evidence_tier: "MEDIA REPORTED", source: "Business Standard, Trade Brains, Healthcare Radius", date: "2025-01-22"}
+  - {finding: "Section 158BC block-period tax demand of Rs 133.75 cr (FY18-19 to FY24-25) across Akums + 5 subsidiaries", evidence_tier: "MEDIA REPORTED (company-disclosed)", source: "scanx.trade, InvestyWise, Medical Dialogues", date: "2026-05"}
+  - {finding: "Live Drugs & Cosmetics Act prosecution, 2016 expired Vicks Gel stock, SC declined relief to Akums", evidence_tier: "VERIFIED (court record) / MEDIA REPORTED", source: "casemine.com judgment; Medical Dialogues", date: "undated ruling, case originates 2016"}
+  - {finding: "Historical EPF Act facilitation allegation against a security-services contractor (~Rs 1.13 mn), 2011-2015", evidence_tier: "VERIFIED (RHP disclosure)", source: "Akums RHP, Outstanding Litigation section (via secondary summary)", date: "2011-2015"}
+  - {finding: "CEO-CDMO Amrut Medhekar resigned after 11 months (Aug 2024-Jul 2025); successor unconfirmed", evidence_tier: "MEDIA REPORTED", source: "eHealth Magazine, MarketScreener, Medical Dialogues", date: "2025-07-15"}
+transition_evidence:
+  - "Anchor book Rs 828.78 cr (29 Jul 2024): ADIA, BlackRock Emerging Frontiers, Smallcap World Fund, Franklin India Smaller Cos Fund, SBI MF, HDFC Life, ICICI Pru Life (Business Standard, 2024-07-29)"
+  - "DII ownership rose ~7.4% (Aug 2024, post-IPO) to ~14.3-14.35% (Mar/Jul 2026) per Trendlyne and Angel One"
+  - "Independent directors with genuine external credentials: Kewal Handa (ex-MD Pfizer India, ex-Chairman Union Bank of India), Anil Amin (ex-CBDO Viatris, ex-Head Global BD Mylan), Satwinder Singh (ex-Chairman ICSI Secretarial Standards Board)"
+  - "Professional CEO-CDMO hire attempted from outside family (Amrut Medhekar, ex-Wockhardt), effective Aug 2024, though tenure did not stick"
+  - "Dividends initiated within 2 years of listing: Rs 1/share (May 2026), Rs 3/share ex-date (Jul 2026)"
+  - "Quadria Capital (Ruby QC) fully exited at a reported 3x return, final ~4.62% tranche for Rs 311.52 cr, by 2026 — monetization, not distress sale"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% since IPO listing (Aug 2024) through latest available data (~Jul 2026); never pledged, per Trendlyne/IIFL/Angel One aggregator shareholding data"
+searches_performed: [promoter-family-background, ipo-shareholding-pattern, sebi-order-check, related-party-transactions, tax-demand-13375cr, drhp-corrigendum-reason, pledge-shares-check, cfo-independent-director-changes, it-search-seizure-jan2025, bafna-resignation-reason, statutory-auditor-identity, ipo-anchor-investors, haridwar-labour-unrest, quadria-capital-ruby-qc, promoter-group-companies, litigation-court-cases, usfda-gmp-recall-check, glassdoor-ambitionbox-reviews, iias-proxy-advisory-check, rhp-risk-factors-litigation, wikipedia-fetch-403, independent-director-credentials-batch1, akums-master-trust-structure, jain-family-succession, subsidiary-acquisitions-promoter-check, thakur-board-status-post-quadria, cfo-history-sumeet-sood, mutual-fund-fii-dii-trend, promoter-remuneration-fy25, dividend-history, fraud-ed-pmla-sfio-check, outstanding-litigation-count, promoter-share-sales-post-lockin, whistleblower-scores-check, 2026-controversy-stockprice, independent-director-credentials-batch2, cs-internal-auditor-identity, resignation-pdf-fetch-403, senior-management-resignation-jul2025, medhekar-ceo-appointment, medhekar-successor-check]
+searches_skipped: ["AmbitionBox direct rating retrieval", "IiAS/SES/InGovern direct website query for Akums-specific report", "MCA/RoC direct portal query for director disqualifications and cross-directorships", "SEBI SCORES complaint database direct check", "Primary RHP/DRHP full-text litigation section (blocked by 403 on PDF fetch, secondary summaries used instead)", "Primary BSE/NSE XBRL shareholding filing to resolve FII% inconsistency across aggregators"]
+verdict_basis: "CONCERN driven by a Section 132 IT search-and-seizure operation (Jan 2025) and a Rs 133.75 crore group-wide seven-year block-period tax demand (May 2026) plus a live Drugs & Cosmetics Act prosecution, materially offset by zero promoter pledge, a genuinely credentialed independent board, a blue-chip anchor-investor book, and rising DII ownership — transition evidence makes this a different object from a static CONCERN."

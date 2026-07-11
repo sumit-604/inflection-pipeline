@@ -1,0 +1,24 @@
+stage: B12b
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 8
+partially_caught: 3
+missed:
+  - {severity: "MINOR", item: "Working-capital days rose 91->105 with advance payments to creditors ('wartime' inventory buildup), volunteered in Q4 but not flagged", anchor: "Q4 FY26 call (May 18 2026), Sumeet Sood, p4"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C (Mixed); two added MAJOR gaps (European fixed-price risk, advance-driven OCF) nudge lower but stay within C"
+findings:
+  - {severity: "MAJOR", location: "B05 4D#6 / trigger #1", note: "European CDMO contract is FIXED-PRICE to Dec-2032 (Q3 p10; Q4 p11); 6-year input-cost exposure on the #1 growth pillar amid acknowledged Middle East crude/solvent inflation (Q4 pp6-7) not surfaced as a risk — only single-customer concentration was"}
+  - {severity: "MAJOR", location: "B05 red flags / cash-conversion", note: "FY26 OCF INR1,181cr 'majorly attributable to the European contract that was assigned' (Q4 p4); ex-advance FCF was INR90cr in Q2 (p4). Cash-quality caveat not elevated to a red flag / FY26 view — hand off to stage 11/13"}
+  - {severity: "MINOR", location: "B05 (absent)", note: "Working-capital 91->105 days + advance payments to creditors 'during the wartime' (Q4 p4) not captured"}
+  - {severity: "MINOR", location: "B05 3B", note: "Q3 lists and live-introduces two Managing Directors (Sanjeev + Sandeep Jain, p1/p2); B05 downgrades to 'listing anomaly / not a formal red flag', understating governance salience for a promoter-family company"}
+  - {severity: "MINOR", location: "B05 (absent)", note: "FY27 top-line guidance refused (Q4 Deeya, p13) after Q3 promise to 'better guide on next year' (p9)"}
+  - {severity: "MINOR", location: "B05 2A promise table", note: "Plant-2 EU GMP labeled '~1-month slip/partial'; under fiscal-Q4 reading Jan-2026 approval is on-time — slightly harsh classification"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 67

@@ -1,0 +1,38 @@
+stage: B06-peers
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["PPLPHARMA-Concall_Oct_2025_Transcript.pdf is mislabeled — content is Piramal Finance Limited (NBFC) Q2 FY26 earnings call, not Piramal Pharma Solutions; zero pharma/API/CDMO content, treated as UNUSED"]
+flags: ["Cohance Pharma CDMO revenue declined/grew only low-single-digit underlying in FY26, directly contradicting an industry-wide framing of Akums' claimed 25%+ CDMO volume surge — priority item for synthesis", "PPLPHARMA transcript file mismatch means Claim 2 (API pricing) relies on COHANCE and INNOVACAP plus supplementary WINDLAS evidence only, not the originally-designated three-peer set"]
+peers_provided: 12
+verified:
+  - {claim: "Top-200 API basket prices declined through FY26 with Middle East-linked crude/solvent/logistics cost inflation driving a rebound into Q4 FY26/early FY27", peers: [COHANCE, INNOVACAP, WINDLAS], anchor_count: 6}
+  - {claim: "Broader domestic CDMO/API sector is in a genuine capacity-expansion cycle in FY26-FY27, not an Akums-only outlier (Cohance's capex trajectory numerically mirrors Akums' FY26 actual and FY27 target)", peers: [COHANCE, INNOVACAP], anchor_count: 4}
+partially_verified:
+  - {claim: "IPM volume growth flat to ~1-1.5% (Q2-Q4 FY26) is confirmed, but Akums' 25%+ CDMO volume growth as a genuine industry-wide share gain is only partly corroborated at lower magnitude (Windlas 18-23%, Innovacap 6-10% organic)", peers: [WINDLAS, INNOVACAP]}
+  - {claim: "CDMO volume surge reflects Schedule M-driven share shift from smaller/non-compliant manufacturers", peers: [WINDLAS, INNOVACAP]}
+contradicted:
+  - {claim: "Industry-wide double-digit-to-25%+ CDMO volume growth mirroring Akums across the peer set", contradicting_peer: "COHANCE", quote_anchor: "COHANCE Q4 FY26 call (May 12, 2026), Yann D'Herve: 'Adjusting for the destocking impact in the two large commercial molecules, the business delivered an underlying growth of early single digit' for FY26 Pharma CDMO revenue of INR8.89 billion; Q3 FY26 call (Feb 12, 2026): Pharma CDMO revenue declined 27% YoY reported (+7% adjusted for destocking)"}
+unverifiable:
+  - {claim: "Akums' international capex dimension (US$45m Zambia JV, EUR35m/yr European contract) is mirrored by a broader sector trend", peers_checked: [COHANCE, INNOVACAP, WINDLAS]}
+peer_coverage_map:
+  - {peer: "COHANCE", quarter: "Q2 FY26 (Nov 12, 2025)", usage: "SUBSTANTIVE", contribution: "CDMO revenue -8% YoY reported/+14% adjusted; Claim 1 contradiction evidence; 2E risks (Nacharam OAI, leadership churn)"}
+  - {peer: "COHANCE", quarter: "Update call, Oct 28, 2025 (pre-earnings, MD resignation)", usage: "CITED-ONLY", contribution: "Governance/leadership-churn context (2E) only; no quarter financial data, call was in silent period"}
+  - {peer: "COHANCE", quarter: "Q3 FY26 (Feb 12, 2026)", usage: "SUBSTANTIVE", contribution: "Pharma CDMO -27% YoY reported/+7% adjusted; core evidence for Claim 1 contradiction"}
+  - {peer: "COHANCE", quarter: "Q4 FY26 (May 12, 2026)", usage: "SUBSTANTIVE", contribution: "Middle East input-cost inflation quote (Claim 2 core anchor); FY26 capex/FY27 guidance (Claim 4 core anchor); FY26 underlying CDMO growth 'early single digit' (Claim 1)"}
+  - {peer: "INNOVACAP", quarter: "Q2 FY26 (Nov 10, 2025)", usage: "SUBSTANTIVE", contribution: "CDMO volume growth 8-10% ex-Jammu; API price decline 10-12% (Claims 1 & 2); Schedule M question answered non-committally (Claim 3)"}
+  - {peer: "INNOVACAP", quarter: "Q3 FY26 (call Jan 27, 2026; filed Feb 2, 2026)", usage: "SUBSTANTIVE", contribution: "Volume growth 6-10% ex-Jammu; API prices still YoY-negative"}
+  - {peer: "INNOVACAP", quarter: "Q4 FY26 (May 8, 2026)", usage: "SUBSTANTIVE", contribution: "Middle East raw-material price uptick quote (Claim 2 core anchor); Schedule M question again non-committal (Claim 3); Baddi/Jammu capex guidance (Claim 4)"}
+  - {peer: "PPLPHARMA", quarter: "labeled Oct 2025 (actual: Piramal Finance Q2 FY26, Oct 17, 2025)", usage: "UNUSED", contribution: "File mismatch — this is Piramal Finance Limited (NBFC), not Piramal Pharma Solutions; no pharma/API/CDMO content"}
+  - {peer: "WINDLAS", quarter: "Q1 FY26 (Aug 13, 2025)", usage: "SUBSTANTIVE", contribution: "IPM volume growth +1% (Claim 1 core anchor); API-price-by-segment nuance (Claim 2); Schedule M/organized-player thesis stated (Claim 3)"}
+  - {peer: "WINDLAS", quarter: "Q2 FY26 (Nov 7, 2025)", usage: "SUBSTANTIVE", contribution: "IPM volume DECLINE -0.2% (Claim 1 core anchor); Schedule M enforcement-intensity commentary (Claim 3)"}
+  - {peer: "WINDLAS", quarter: "Q3 FY26 (Feb 6, 2026)", usage: "SUBSTANTIVE", contribution: "IPM volume +1.6% (Claim 1 core anchor); strongest peer confirmation Schedule M is a named driver of CDMO outperformance (Claim 3 strongest anchor)"}
+  - {peer: "WINDLAS", quarter: "Q4 FY26 (May 22, 2026)", usage: "SUBSTANTIVE", contribution: "IPM FY26 full-year volume +2.7% (Claim 1); Middle East API price inflation confirmed (Claim 2); codeine cough-syrup regulatory risk (2E)"}
+industry_cross_read:
+  demand: "Split/mixed — Windlas shows muted IPM (flat-to-2.7% volume) with own CDMO outperformance; Cohance shows destocking-dominated decline; Innovacap shows strong growth but attributed largely to facility ramp and M&A, not pure organic demand"
+  pricing_inputs: "Strong three-way consensus (Cohance, Innovacap, Windlas): API/raw-material prices declined through FY26, then rose from Q4 FY26/Q1 FY27 on Middle East-linked crude, logistics and solvent cost inflation, matching Akums' narrative closely"
+  capex_cycle: "Not a lone-expander situation domestically — Cohance and Innovacap both capex-cycling into FY27, Cohance's trajectory (~INR215cr FY26, ~INR300cr FY27) numerically close to Akums'; but Akums' international dimension (Zambia JV, European contract) has no peer analogue in this set"
+peer_mentions_of_company: []
+risks_peers_raise: ["Cohance: Nacharam FDF plant USFDA OAI-to-Warning-Letter escalation, ~INR55cr revenue impact, ongoing remediation", "Cohance: successive senior leadership departures (two MDs within FY26) and an investor rebuke on execution discipline", "Cohance: US biotech-funding-winter exposure via NJ Bio subsidiary causing order deferrals", "Windlas: codeine-based cough syrup regulatory market exit hitting Trade Generics by ~INR50-60cr annualized", "Innovacap: GST incentive cut from 12% to 5% eroding Jammu facility economics — a fiscal-policy risk potentially relevant to other Northern-India-incentivized manufacturers"]
+net_narrative_effect: "complicates"

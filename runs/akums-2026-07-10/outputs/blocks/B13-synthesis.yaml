@@ -1,0 +1,23 @@
+stage: B13-synthesis
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+phase: phase-1-lite
+verdict: "INSUFFICIENT EVIDENCE"
+verdict_rule_applied: 2
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+confidence_delta: {numerical: 93, redflag: 67, framework: 99, peer: 83, overall: 67}
+valuation_decision: null          # valuation did not run (phase 3 PENDING)
+entry_range: {low: null, high: null}
+headline: "India's largest CDMO awaiting export margin catalysts"
+cash_determination: "INDETERMINATE"
+falsification_metric: "Q1 FY27 CDMO volume growth reverting to flat or low single digit"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "Akums Drugs & Pharmaceuticals (AKUMS) — Phase 1 Lite"
+  summary: "India's largest CDMO awaiting export margin catalysts | INSUFFICIENT EVIDENCE (rule 2: stages 2 and 3 skipped, no annual report) | valuation not run (phase 3 pending) | flags: FLAG-PROMOTER (CONCERN), FLAG-CASH (INDETERMINATE), FLAG-GATE0 (58/160 AVERAGE)"
+  drive_link: "PENDING"
+  mode: append-never-overwrite-status

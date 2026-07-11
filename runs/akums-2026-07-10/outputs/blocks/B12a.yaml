@@ -1,0 +1,14 @@
+stage: B12a
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 43
+findings:
+  - {severity: "MAJOR", location: "B01 Gate 0 deal-breaker analysis", claimed: "Rs 133.75 cr IT block-period tax demand", source_truth: "NOT FOUND in AR/results. AR explicitly states 'no demands raised as of reporting date'", note: "Appropriately identified as NOT FOUND by B01, not scored into verdict; originates from B08 web sources, contradicted by primary AR"}
+  - {severity: "MINOR", location: "02-notes.md anchor precision", claimed: "AR page citations 'p.20150'", source_truth: "These are text-file LINE NUMBERS, not PDF pages. All figures verify correct when cross-referenced to page markers", note: "Extraction labelling artefact; 100% of numerical figures verified exact"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 97.7
+coverage_note: "43 material figures audited. All verdict-card inputs (Gate 0 core 69/grand 79, Block E 18, em_score 26.3, ICRA AA/A1+, Total Debt/OPBDITA 0.2x) verified 100% to primary documents. Key figures verified: PAT -25.4% YoY (2,563.97M), ETR 32.9%, Operating PBT +22.4%, CFO 1,181.2cr, Adjusted CFO/PAT 0.99x, R&D 0.86%, Customer advance 1,032.31cr, capex-embedded-growth 20.6%. Re-run against full source set (AR FY26, Q3/Q4 results, ICRA rating) vs the prior screener-only pass."

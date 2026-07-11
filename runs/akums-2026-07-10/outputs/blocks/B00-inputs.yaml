@@ -1,0 +1,31 @@
+stage: B00-inputs
+company: AKUMS
+run_date: "2026-07-10"
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+inventory:
+  annual-report: 0        # ABSENT
+  results: 0              # ABSENT (quarterly data present inside screening CSVs)
+  rating: 0               # ABSENT
+  concalls: 4             # using 3 most recent (Q2, Q3, Q4 FY26)
+  peer-concalls: 12
+  screening: 6            # AKUMS screener CSVs (+ peer CSV sets)
+  presentation: 1
+  other: 0
+concall_quarter_map:      # oldest first, 3 most recent used
+  - {file: "Concall_Nov_2025_Transcript.pdf", quarter: "Q2 FY26"}
+  - {file: "Concall_Feb_2026_Transcript.pdf", quarter: "Q3 FY26"}
+  - {file: "Concall_May_2026_Transcript.pdf", quarter: "Q4 FY26"}
+concall_excluded:
+  - {file: "Concall_Aug_2025_Transcript.pdf", quarter: "Q1 FY26", reason: "older than 3 most recent"}
+peer_set: [COHANCE, INNOVACAP, PPLPHARMA, WINDLAS]
+input_gaps:
+  - {type: annual-report, effect: "stages 2 and 3 SKIPPED; stage 4 runs from investor presentation; stage 7 runs without AR; stage 8 runs without AR governance extracts (web only)", obtain_from: "BSE/NSE filings, company IR site FY26 annual report"}
+  - {type: results, effect: "Gate 0 runs from screening CSVs alone; annual + quarterly figures present in screener Data_Sheet/Quarters CSVs so degradation is mild", obtain_from: "BSE/NSE quarterly results filings"}
+  - {type: rating, effect: "stage 10 rating_wc_quote unresolved (phase 3); stage 11 Pillar 2 defaults conservative", obtain_from: "CRISIL/ICRA/CARE rating rationale PDF"}
+degradation_notes:
+  - "NO annual report: stage 2 (notes triple-pass) and stage 3 (AR deep dive) emitted as status: skipped, gap named. Their absence flows to synthesis, does not count as a verification miss."
+  - "Screener Data_Sheet.csv carries FY15, FY16, FY20-FY26 annual data plus 10 quarters; Gate 0 uses this."
+flags: []

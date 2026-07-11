@@ -1,0 +1,43 @@
+stage: B03-ardeep
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "SEBI actions/penalties disclosure: NOT FOUND IN DOCUMENT (full-text search found no mention)"
+  - "Promoter pledge/encumbrance status: NOT FOUND IN DOCUMENT (no pledge line, nil or otherwise, located in the Corporate Governance Report shareholding section)"
+  - "YoY promoter shareholding change and FII/DII trend: NOT FOUND IN DOCUMENT (AR gives only the 31 March 2026 point-in-time table)"
+  - "Half-yearly (H1/H2) financial split referenced in MD&A: NOT FOUND at the granularity needed to verify"
+  - "Quarterly Trade Generics EBITDA-positive claim (Q4 FY26): NOT FOUND at quarterly granularity"
+  - "B02 rank-4 (Akumentis standalone exceptional Rs 630.48M): directional match via Note 49 profit-share swing; standalone quantum not independently re-pulled this pass"
+flags:
+  - {type: FLAG-CASH, reason: "Headline CFO/PAT of 4.61x (Rs 11,812.02M / Rs 2,563.97M) is materially misleading: 'Increase in other liabilities' of Rs 9,280.77M tied to the unnamed Rs 1,032.31 Cr customer-advance is 78.5% of reported CFO. Adjusted CFO ex this line is ~Rs 2,531M, adjusted CFO/PAT ~0.99x. Same advance is source of Rs 776.06M imputed non-cash finance cost depressing PBT growth to 10.7% from underlying operating 22.4%. Caps at PROCEED WITH CAVEATS pending stage 11/13 normalisation."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge disclosure and no YoY shareholding comparator in AR; promoter shareholding high (75.26%); promoter-chaired Risk Management Committee while the formal risk register omits the related-party credit exposure (Akums Healthcare ICD) entirely. Preliminary; B08 owns the full verdict."}
+phase_verdicts: {p1: "Red Flag - EOM 'may have adverse effect on functioning' + CARO xi qualified at 3 entities", p2: "Red Flag - reconciled with B02 5/10, 13/15 findings independently verified zero discrepancies, contingent liabilities 38.77% of PAT breaches 25% flag", p3: "Red Flag - headline CFO/PAT 4.61x is a WC artefact (adjusted ~0.99x); reported PAT fell -25.4% YoY on structural tax-shield gap despite operating-metric growth", p4: "Red Flag - risk register omits every internally-sourced governance/accounting risk; MD&A 'Adjusted PAT +27.3%' diverges from reported PAT -25.4%", p5: "Watch - board mechanics solid; promoter-chaired Risk Management Committee alongside pledge/shareholding evidence gaps", p6: "Red Flag - Adjusted-PAT-vs-reported-PAT gap is the standout finding; EBITDA margin '43%' vs correct 12%", p7_best_fit: "GARP and Turnaround both WATCHLIST"}
+overall_quality: 4
+quality_components: {governance: 5, accounting: 5, balance_sheet: 7, earnings: 2}
+kill_switch_notes:
+  - "Phase 1: statutory auditor flagged an active Section 132 tax search as potentially having 'an adverse effect on the functioning of the Group,' plus a CARO fraud qualification spanning three group entities."
+  - "Phase 3: two compounding distortions in the same year (CFO inflation via the customer advance; PAT decline via the tax-shield gap) - both need normalising before trusting any headline metric."
+  - "Phase 6: the Adjusted-PAT (+27.3%) vs reported-PAT (-25.4%) gap, unreconciled, is the most significant credibility finding of the deep dive."
+triple_pass_verification: {verified: 13, discrepancies: []}
+missing_risks:
+  - {risk: "Related-party credit-risk concentration (Rs 330.68 Cr unsecured ICD to Akums Healthcare Ltd, net worth -Rs 653.87M)", evidence: "Note 49 (AR p.364), Note 42(b) Standalone (AR p.261); absent from the formal Risk Management section (AR p.104-109)"}
+  - {risk: "Disclosure opacity on the Rs 1,032.31 Cr unnamed customer advance and its Rs 776.06M imputed finance cost", evidence: "Note 19/23 (AR p.327, p.330), Cash Flow (AR p.299); not in the risk register"}
+  - {risk: "Tax/litigation risk from the Section 132 search, which the auditor judged may have an adverse effect on the Group's functioning", evidence: "AR p.203, p.283, p.288; only in the audit opinion and notes, not the risk register"}
+  - {risk: "Governance/fraud-control risk (CARO clause xi qualified at 3 entities)", evidence: "AR p.287"}
+  - {risk: "Structural tax-shield gap on 5 loss-making subsidiaries, the direct driver of the -25.4% PAT decline", evidence: "Note 49 (AR p.364)"}
+guidance_table:
+  - {claim: "Zambia JV facility, 51% Akums", number: "USD 45m investment; USD 50m interim India-sourced supply over two years", timeframe: "Facility operational CY2028", credibility: "New, specific, no track record yet (AR p.18-19)"}
+  - {claim: "European CDMO contract part consideration received", number: "EUR 100 million", timeframe: "Already received", credibility: "Realised, verifiable in cash disclosures (AR p.30)"}
+  - {claim: "Europe regulatory dossier pipeline", number: "'10+' (AR p.19) vs '50' (AR p.129) - internally inconsistent", timeframe: "Ongoing", credibility: "Low - two sections give materially different numbers"}
+  - {claim: "Adjusted PAT growth", number: "+27.3% YoY to Rs 2,760M", timeframe: "FY26", credibility: "Not GAAP-supportable - reported PAT fell -25.4% to Rs 2,563.97M, no reconciliation (AR p.19 vs p.295-296)"}
+monitorables:
+  - {metric: "Akums Healthcare Ltd net worth and parent's unsecured ICD balance", threshold: "further net-worth deterioration beyond -Rs 653.87M, or any impairment on the Rs 330.68 Cr ICD", where: "FY27 Note 42(b)/Note 49", why: "largest related-party credit concentration, recoverability untested"}
+  - {metric: "Advance-from-customer contract liability - counterparty and revenue-recognition catch-up", threshold: "counterparty disclosure, or current portion failing to convert to revenue in FY27", where: "FY27 Notes 19/23/42(C)", why: "Rs 1,032.31 Cr (23.7% of revenue) opaque; conversion timing tests genuine-advance vs financing"}
+  - {metric: "Section 158BC block-assessment resolution", threshold: "any quantified demand, or escalation/resolution of the show-cause notice", where: "FY27 Auditor EOM; exchange filings", why: "unquantifiable per auditor's own EOM; judged possibly adverse to functioning"}
+  - {metric: "Reported GAAP PAT vs 'Adjusted PAT' framing", threshold: "any FY27 quarter repeating a non-GAAP metric without reconciliation, especially divergence >10pp as in FY26 (-25.4% vs +27.3%)", where: "quarterly releases vs reported P&L", why: "largest MD&A credibility gap found"}
+  - {metric: "Consolidated ETR and unrecognised-DTA pool on loss-making subsidiaries", threshold: "ETR materially above 25.17% statutory, or DTA pool growing beyond Rs 263.97M", where: "FY27 Note 44(a)", why: "direct driver of the FY26 PAT decline"}
+  - {metric: "CARO clause (xi) status at Holding Co, Pure & Cure, Plenteous", threshold: "qualification remaining in FY27 CARO", where: "FY27 Auditor's Reports CARO Annexure", why: "tests whether FY26 procurement-fraud remediation was effective"}
+best_fit_strategy: "GARP (watchlist) / Turnaround (watchlist)"
+one_line_verdict: "GARP watchlist: real CDMO growth, but reported earnings quality and MD&A credibility both fail independent verification this cycle."

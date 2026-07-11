@@ -3,21 +3,24 @@ company: "AKUMS"
 run_date: "2026-07-10"
 model: claude-opus-4-8
 status: complete
-phase: phase-1-lite
-verdict: "INSUFFICIENT EVIDENCE"
-verdict_rule_applied: 2
-flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
-confidence_delta: {numerical: 93, redflag: 67, framework: 99, peer: 83, overall: 67}
-valuation_decision: null          # valuation did not run (phase 3 PENDING)
-entry_range: {low: null, high: null}
-headline: "India's largest CDMO awaiting export margin catalysts"
-cash_determination: "INDETERMINATE"
-falsification_metric: "Q1 FY27 CDMO volume growth reverting to flat or low single digit"
+phase: phase-3-finalize
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-ACCOUNTING, FLAG-GATE0]
+confidence_delta: {numerical: 97.7, redflag: 67, framework: 97, peer: 83, overall: 67}
+valuation_decision: "AVOID"
+entry_range: {low: 254, high: 286}
+mos_price: 229
+destination_pe: {track1_rrm: "18.5-22.0x", track2_additive: "21.5-24.5x"}
+hurdle_verdict: "STOP"
+expected_cagr_pct: -8.9
+devil_advocate: "AVOID SURVIVES all 4 dimensions, robust and understated"
+headline: "India's largest CDMO priced above transition value"
+falsification_metric: "Net working capital days above 110-115 in Q1/Q2 FY27, or organic adjusted CFO/PAT below ~0.7x sustained"
 monitorables_count: 8
 publish_candidate: false
-publish_candidate_summary: ""
 notion_save:
-  page_title: "Akums Drugs & Pharmaceuticals (AKUMS) — Phase 1 Lite"
-  summary: "India's largest CDMO awaiting export margin catalysts | INSUFFICIENT EVIDENCE (rule 2: stages 2 and 3 skipped, no annual report) | valuation not run (phase 3 pending) | flags: FLAG-PROMOTER (CONCERN), FLAG-CASH (INDETERMINATE), FLAG-GATE0 (58/160 AVERAGE)"
+  page_title: "Akums Drugs & Pharmaceuticals (AKUMS)"
+  summary: "India's largest CDMO priced above transition value | PROCEED WITH CAVEATS | decision AVOID (over-determined) | entry Rs 254-286, MoS Rs 229 | dest PE T1 18.5-22.0x / T2 21.5-24.5x, Hurdle STOP, expected CAGR -8.9% | flags: PROMOTER CONCERN, CASH growth-induced, ACCOUNTING, GATE0"
   drive_link: "PENDING"
   mode: append-never-overwrite-status

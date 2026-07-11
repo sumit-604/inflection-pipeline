@@ -3,24 +3,24 @@ company: "AKUMS"
 run_date: "2026-07-10"
 model: claude-opus-4-8
 status: complete
-scope: "phase-1 (Gate 0 + Emerging Moat only); valuation deferred to phase 3"
-gate0:
-  rules_checked: 46
-  fails: []
+scope: "both halves: gate0+emoat (phase 1) and valuation (phase 3)"
+gate0: {rules_checked: 46, fails: []}
 emoat:
   rules_checked: 40
   fails:
-    - {rule: "Section 2C capex_embedded_growth_pct", severity: MINOR, issue: "not-computable value emitted as numeric 0 in YAML; correctly NOT FOUND in narrative + input_gaps, but structured field loses the not-computable state", recomputed: "no score/classification impact"}
+    - {rule: "Section 2C capex_embedded_growth_pct", severity: MINOR, issue: "not-computable emitted as numeric 0 in the pre-AR run; corrected to 20.6% on re-run, no score impact"}
 valuation:
-  status: pending
-  note: "DEFERRED to phase 3; B10/B11 do not exist yet"
-  rules_checked: 0
-  fails: []
-recomputed_destination_pe: ""
-recomputed_decision: ""
+  rules_checked: 23
+  fails:
+    - {severity: MINOR, rule: "Single-credit route label (Pillar 1)", detail: "route recorded 'pillar1-midpoint' but STAGNANT uses current ROCE, no recovery credited; honest label is 'not credited'. Substance intact (Strategic +0x), destination PE unchanged."}
+    - {severity: MINOR, rule: "Pillar 3 sub-scale as written (v3.4 Amendment 4)", detail: "pipeline added a '3c Duration Premium' not in the committed Section 1B file (framework has 3a+3b only; 3c lives on an unmerged branch). Nets to +0x so combined +1x and destination PE are correct; extra-framework structure flagged, latent +6x-cap bypass risk if 3c later pays."}
+recomputed_destination_pe: ""   # concur: 23.0x Track 2 / 20.25x Track 1 RRM
+recomputed_decision: ""         # concur: AVOID
 findings:
-  - {severity: MINOR, framework: emoat, location: "B07 Section 2C / YAML capex_embedded_growth_pct", note: "not-computable emitted as 0; documented as NOT FOUND in narrative and input_gaps, no estimation, no decision impact"}
+  - {severity: MINOR, phase: 3, location: "B11 pillar_detail.roce_recovery_route", note: "'pillar1-midpoint' mislabels a STAGNANT current-ROCE route; no recovery credited; no numeric impact."}
+  - {severity: MINOR, phase: 3, location: "B10/B11 Pillar 3", note: "'3c Duration Premium' not in committed Section 1B v3.4 (3a+3b only); scored +0x so destination PE unaffected; framework-integrity deviation."}
+  - {severity: MINOR, phase: 1, location: "B07 Section 2C", note: "capex_embedded_growth_pct emitted as 0 pre-AR; corrected to 20.6% on re-run."}
 critical_count: 0
 major_count: 0
-minor_count: 1
-acceptance_rate: 99   # 85 of 86 checked phase-1 rules passed
+minor_count: 3
+acceptance_rate: 97   # 106 of 109 rules passed across both halves (gate0 46, emoat 39/40, valuation 21/23)

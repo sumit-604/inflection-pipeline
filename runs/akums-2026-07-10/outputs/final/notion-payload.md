@@ -1,5 +1,7 @@
 Execute via the claude.ai project; never overwrite Decision Status.
 
+> SAVED 2026-07-10 at operator's explicit direction ("now write the Notion payload"). New page created in COMPANIES MASTER: https://app.notion.com/p/39abb2b9d3ab810a9f63d324c95bec70 . No existing Akums row was found (clean insert, nothing overwritten). Decision Status left UNSET for the operator to set manually. Drive folder link still PENDING.
+
 # Notion save payload — Akums Drugs & Pharmaceuticals (AKUMS)
 
 **Page title:** Akums Drugs & Pharmaceuticals (AKUMS)

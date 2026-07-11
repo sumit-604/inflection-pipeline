@@ -8,6 +8,8 @@ This gate verdict grades the analysis, not the company. The investment decision 
 
 ## Valuation decision
 
+**Tier: A | Hurdle: 25%** (Section 1B v3.4 Amendment 4.3). Akums fails the Tier B promoter gate: the promoter verdict is CONCERN, not TRUSTWORTHY or better [B08], so it stays Tier A at the 25% hurdle regardless of being discovered (FII+DII 14.3%) and EM 26.3. Confirmed from the Tier A side too, since combined Gate0+EM is TURNAROUND [B07]. The existing zones already used the 25% divisor 1.953, so the tier test confirms them.
+
 AVOID, on valuation and governance. Over determined by four inputs: Gate 0 AVERAGE, promoter CONCERN, Hurdle STOP, and an upside to downside ratio of 0.21.
 
 - Current price Rs 702, current PE 42.1x on FY26 diluted EPS of Rs 16.67.
@@ -16,6 +18,7 @@ AVOID, on valuation and governance. Over determined by four inputs: Gate 0 AVERA
 - Three year fair value: Track 1 bear Rs 343, base Rs 559, bull Rs 688. Track 2 bear Rs 399, base Rs 635, bull Rs 766. The current price sits above even the base three year fair value on both tracks.
 - Probability weighted expected return minus 8.9% a year.
 - Entry range Rs 254 to 286. Margin of safety price Rs 229. Re-engage only when price is inside the zone AND the latest quarterly checklist shows no thesis broken trigger fired.
+- ZONE REACHABILITY (Amendment 4.3 / finalize spec): entry zone top Rs 286 versus the lowest documented tested price since the 6 Aug 2024 listing (Rs 466, screener period-end Mar 2026; IPO issue price Rs 679; the sources carry period-end prints only, so the true intraperiod low may sit somewhat lower but is not in the record). Zone top is 38.6% below Rs 466, and below the FY25 close of Rs 473 too. That is more than 20% below the lowest tested price, so: MARKET-UNLIKELY ZONE, reaches entry only via a thesis-relevant shock or broad de-rating. Classify DEEP WATCH, not an actionable WATCHLIST. A Tier B hurdle would move the zone to Rs 323, still 30.7% below Rs 466, so the Tier B alternative does not rescue reachability either (and Akums is Tier A regardless).
 
 The lever is the earnings base, not the multiple. FY26 EPS is depressed by the tax shield gap, so a normalised base lowers the current PE, but even normalised the stock does not clear the 25% CAGR hurdle at Rs 702.
 

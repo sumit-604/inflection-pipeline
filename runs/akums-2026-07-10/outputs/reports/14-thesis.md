@@ -103,7 +103,10 @@ Return Matrix Summary (from Role 1 return table, CMP Rs 702):
 ## SECTION 7: RECOMMENDATION
 
 ┌──────────────────────────────────────────────────────────────┐
+│ Tier: A | Hurdle: 25%   (fails Tier B promoter gate: CONCERN)  │
 │ VERDICT:        AVOID                                          │
+│ Zone reachability: MARKET-UNLIKELY (top Rs 286 is 38.6% below  │
+│   lowest tested price ~Rs 466) -> DEEP WATCH, not actionable   │
 │                                                               │
 │ Entry Zone (re-engage only):  Rs 254 to Rs 286                │
 │ Margin of Safety Price:       Rs 229                          │

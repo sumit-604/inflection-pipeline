@@ -10,7 +10,9 @@ Execute via the claude.ai project; never overwrite Decision Status.
 - **Headline:** India's largest CDMO priced above transition value
 - **Run:** runs/akums-2026-07-10 | Run date 2026-07-10 | CMP Rs 702 | Market cap Rs 11,052 Cr
 - **Gate verdict (five-verdict set):** PROCEED WITH CAVEATS (rule 3 flags -> rule 4 band-60-74 downgrade)
+- **Tier (v3.4 Amendment 4.3): A | Hurdle 25%** (fails Tier B promoter gate: verdict CONCERN, not TRUSTWORTHY+; also TURNAROUND on the Tier A side)
 - **Investment decision:** AVOID (on-valuation + governance, over-determined: Gate 0 AVERAGE + Promoter CONCERN + Hurdle STOP + upside/downside 0.21x)
+- **Zone reachability:** MARKET-UNLIKELY ZONE — entry top Rs 286 is 38.6% below the lowest documented tested price (~Rs 466 since the Aug 2024 listing at Rs 679 IPO). Reaches entry only via a thesis-relevant shock or broad de-rating. Classify DEEP WATCH, not actionable WATCHLIST. Tier B alternative Rs 323 still 30.7% below tested prices (and Akums is Tier A regardless).
 - **Devil's advocate:** AVOID SURVIVES all four dimensions, robust and understated
 
 ## Valuation

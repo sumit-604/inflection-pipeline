@@ -38,3 +38,25 @@ upside_downside_ratio: 0.21
 decision: "AVOID (on-valuation + governance)"
 som_cagr_crosscheck: "consistent"
 one_line_thesis: "Avoid Akums at Rs 702: earned destination PE ~23x vs current 42.1x means normalised EPS still yields a Rs 635 3-yr target below CMP; Hurdle STOP, expected CAGR ~-9%; re-engage Rs 254-286."
+v34_tier_reachability_retrofit:
+  source_note: "Amendments 4.3 (two-tier hurdle), 4.4 (RRM units), reachability spec read from branch claude/pillar-3-entry-rules-l278il (not yet merged to main)"
+  tier: "A"
+  hurdle_pct: 25
+  hurdle_divisor: 1.953
+  tier_b_gates:
+    fii_dii_ge_3pct: {pass: true, evidence: "DII 14.3% Mar 2026 (B10/B08)"}
+    gate0_good_or_em_ge25: {pass: true, evidence: "Gate 0 AVERAGE fails but EM 26.3 >=25 passes via OR (B01/B07)"}
+    promoter_trustworthy_or_better: {pass: false, evidence: "B08 verdict CONCERN, below TRUSTWORTHY"}
+    no_structural_flag_cash: {pass: true, evidence: "FLAG-CASH growth-induced, ICRA-confirmed not structural"}
+    result: "FAILS Tier B on promoter gate -> stays Tier A. Also TURNAROUND on Tier A side (B07)."
+  rrm_units_check: "Track 1 used r=14.5%, RRM=0.88 = 1+(13.5-14.5)*0.12, the percentage-point reading per Amendment 4.4. Correct; no recompute. Governing track unchanged (Track 1 governs, divergence 12%)."
+  zone_reachability:
+    entry_zone_top_rs: 286
+    lowest_tested_price_rs: 466
+    lowest_tested_basis: "screener period-end Mar 2026 (Rs 466.1); FY25 close Rs 473.2; IPO issue price Rs 679, listed 6 Aug 2024. Sources carry period-end prints only; true intraperiod low may be lower but not documented."
+    zone_top_below_lowest_tested_pct: 38.6
+    flag: "MARKET-UNLIKELY ZONE (>20% below lowest tested price)"
+    disposition: "DEEP WATCH, not actionable WATCHLIST; reaches entry only via thesis-relevant shock or broad de-rating"
+    tier_b_alternative_zone_rs: 323
+    tier_b_alt_reachable: false   # 323 still 30.7% below Rs 466; and Akums is Tier A anyway
+  net: "Tier and RRM checks CONFIRM existing numbers (entry Rs 254-286, MoS 229, Hurdle STOP unchanged). New output is the reachability flag: MARKET-UNLIKELY -> DEEP WATCH."

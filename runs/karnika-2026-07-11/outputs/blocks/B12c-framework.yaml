@@ -1,0 +1,28 @@
+stage: B12c
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 48
+  fails: []
+emoat:
+  rules_checked: 46
+  fails:
+    - "C2 assigned documented(1.0) to un-contracted concall-stated new orders; taxonomy places at concall(0.7); MINOR, em_score 18.3->17.7, class MODEST unchanged"
+valuation:
+  rules_checked: 0
+  fails: []
+  status: pending-phase-3
+recomputed_destination_pe: ""   # pending phase 3 (valuation deferred)
+recomputed_decision: ""         # pending phase 3; Gate0 AVERAGE and Emoat MODEST both CONCUR
+findings:
+  - {severity: "MINOR", location: "01-gate0.md M9/M2", note: "peer 'median' from single peer (M9) and unreconciled Other-Income basis vs peers (M2); no score change"}
+  - {severity: "MINOR", location: "01-gate0.md M5/M11", note: "conservative zeros where a literal top-5=1 (M5) or trend read (M11) was arguable; moats-present count and STRONG class unaffected"}
+  - {severity: "MINOR", location: "07-emoat.md C2", note: "evidence over-tiered documented vs concall for un-contracted concall orders; em_score 18.3->17.7, MODEST unchanged"}
+  - {severity: "MINOR", location: "07-emoat.md F2", note: "F2 built from transcripts as B05 promise-delivery record not injected; disclosed, reasonable substitution, no score impact"}
+  - {severity: "MINOR", location: "07-emoat.md 6D", note: "combined classification reasoned without injected Master v3.3 matrix; disclosed; AVERAGE stands"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 99            # 93 clean of 94 checked (C2 tier the sole soft-fail); valuation excluded, phase 3

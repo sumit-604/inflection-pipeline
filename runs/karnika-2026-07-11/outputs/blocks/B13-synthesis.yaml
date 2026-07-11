@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT-EXECUTION", "FLAG-EMOAT-CONCENTRATION", "FLAG-EMOAT-CASH"]
+cash_determination: "INDETERMINATE"
+cash_missing_evidence: ["rating agency working capital rationale (no rating PDF)", "receivables ageing composition beyond >6-month figure"]
+confidence_delta: {numerical: 89.5, redflag: 65, framework: 99, peer: 75, overall: 65}
+valuation_decision: ""          # phase 1 lite: valuation deferred to phase 3
+entry_range: {low: 0, high: 0}  # not computed in phase 1
+headline: "Kidswear growth outpaces cash and governance"
+falsification_metric: "Q1 FY27 consolidated EBITDA margin below 15% (vs H1 FY26 19.67%) while the three apparel peers hold or expand"
+monitorables_count: 8
+partial_status_items: ["B08-promoter PARTIAL (IPO prospectus litigation p.186 403-blocked)", "B09-tam TAM management-claim unverified ($17.4bn/2034 not in AR)"]
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save: null               # phase 1 lite: no Notion payload
+final_files:
+  - runs/karnika-2026-07-11/outputs/final/business-narrative.md
+  - runs/karnika-2026-07-11/outputs/final/gate-recommendation.md
+  - runs/karnika-2026-07-11/outputs/final/verifier-summary.md

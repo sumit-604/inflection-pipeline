@@ -1,0 +1,55 @@
+stage: B09-tam
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating: absent (no rating PDF provided)"
+  - "presentation: absent for this run"
+  - "sector row in manifest mislabeled as Pharma/CDMO; verified apparel/textile (kidswear manufacturing, fabric trading, Kidcity retail); flagged for phase 3 correction"
+  - "$17.4bn-by-2034 Indian kidswear TAM figure supplied in this stage's brief not independently located in AR pages reviewed (pp.1-7,20-25,35-41); matches IMARC 'India Kidswear Market' report via independent web search but not confirmed as an actual Karnika management citation in documents available to this run"
+  - "precise organized-vs-unorganized % split for India kidswear specifically: NOT FOUND"
+  - "top-3 competitor concentration ratio for Indian kidswear: NOT FOUND"
+  - "peer revenue aggregation data-limited: FirstCry's broader baby/kids omnichannel revenue found (Rs2,637-7,659cr range, source/segment-dependent); Hopscotch, Gini & Jony, Toonz Retail, Cantabil kidswear-specific revenue NOT FOUND"
+  - "standard runway classification matrix (MASSIVE/STRONG/GOOD/MODERATE/LIMITED cutoffs) not injected into this stage's inputs; classification uses a conventional headroom-based convention, reconcile against Section 1B Master framework at synthesis"
+  - "current market cap/share price as of 2026-07-11 run date not available to this stage; valuation-implication P/E line uses AR FY25 year-end market cap (Rs796.92cr) against FY26 PAT (Rs28cr), a mismatch flagged explicitly given the Sept-2025 4:1 bonus issue"
+flags:
+  - "TAM_MGMT_CLAIM_UNVERIFIED: the $17.4bn/2034 Indian kidswear TAM figure was not found in the actual AR text reviewed; AR itself cites only the Rs9L crore textile-export target by 2030 (p.4, PIB-corroborated) and an unattributed GLOBAL (not India) kids wear figure of USD366.72bn by 2032 (p.39)"
+  - "SOM math shows management's implicit 30-35% group revenue CAGR ambition running ~6-10pp above the bottom-up SOM-implied CAGR of ~24-25%, consistent with the FLAG-EMOAT-EXECUTION 1-hit/3-miss delivery record already documented at stage 7"
+  - "Capacity cross-check gap (~Rs90cr at yr3) argues SOM is the mildly optimistic side versus the B07 capex-embedded-growth figure, though the binding constraint is working capital (HSBC CC ~99% utilized) and Kidcity execution, not raw job-work manufacturing throughput (currently ~44% utilized)"
+market_definition: "Indian infant & children's (0-14) readymade apparel via job-work manufacturing sold through wholesale/commission-agent channels plus emerging Kidcity multi-brand retail; excludes footwear, toys/gear, fabric trading, and Karnika's new adult-jeans line"
+tam_cr: {conservative: 105672, realistic: 200000}
+sam_cr: 23140
+sam_pct_of_tam: 21.9
+som_3yr_cr: 476
+som_5yr_cr: 750
+som_implied_revenue_cagr: {yr3: 24.3, yr5: 24.7}
+current_sam_share_pct: 1.07
+revenue_headroom_x: 93.3
+tam_growth_pct: 9.4
+runway_class: "MASSIVE"
+mgmt_claim_cr: 165648
+mgmt_claim_ratio: 1.57
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs90cr at yr3 (SOM Rs476cr vs capex-embedded-growth ceiling ~Rs386cr off B07's 55.6% figure); SOM is the optimistic side, though vendor-based job-work model (44% utilization of 850k units/month installed capacity) makes physical capacity a soft constraint - working capital and Kidcity execution are the more binding real constraints"
+methods_used:
+  - "top-down (IMARC India Kidswear Market, conservative)"
+  - "top-down (CMAI trade-body estimate, realistic)"
+  - "bottom-up (per-child spend, UNFPA population)"
+  - "peer aggregation (data-limited, qualitative only)"
+  - "import substitution (macro export-target context only, not usable for domestic TAM)"
+  - "global benchmark (directional only, not blended into headline TAM)"
+stale_data_flags: []
+searches_performed:
+  - "India kids apparel market size 2025 CAGR forecast crore billion"
+  - "India children's wear market size IMARC Mordor Intelligence 2025 2033"
+  - "India kidswear market organised unorganised share percentage CMAI"
+  - "India textile exports target Rs 9 lakh crore 2030 Ministry of Textiles PIB"
+  - "FirstCry Hopscotch kids apparel revenue crore FY25 India kidswear brands market share"
+  - "Cantabil Gini Jony Kidsville Toonz Mothercare India kids apparel revenue crore listed company"
+  - "India kidswear organised retail penetration percent unorganised 2025 apparel industry report"
+  - "Kidcity kids retail chain India stores Karnika Industries"
+  - "USD INR exchange rate July 2026"
+  - "India population age 0-14 percent 2025 UN data"
+  - "WebFetch: Business Standard mini-economy article (blocked, HTTP 403, relied on search snippet instead)"
+searches_skipped: []

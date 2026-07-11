@@ -181,6 +181,14 @@ Tier B exists because discovered-quality names structurally do not offer 25% ent
 
 ---
 
+## AMENDMENT 4.4 (v3.4) — RRM UNITS CLARIFICATION
+
+At the RRM formula (RRM = 1 + (13.5% − r) × 0.12, bounded ×0.70 to ×1.60; Master v3.3 Role 1 RRM Dual-Track Derivation), add:
+
+The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The bounds confirm this reading — under the percentage-point interpretation, r at the 9%/18% limits produces RRM of 1.54 and 0.46 (floored to 0.70), mapping exactly to the stated ×0.70–×1.60 bounds; under a decimal reading RRM never leaves 1.00±0.005 and the bounds would be meaningless. All RRM computations use the percentage-point reading.
+
+---
+
 ## APPENDIX A — REJECTED AMENDMENT (RECORDED FOR AUDIT TRAIL)
 
 **Proposal (rejected 02-Jul-2026):** Scale Growth and Strategic Premiums by the Cash Multiplier (or cap premiums at 50% of quality-adjusted base when multiplier <1.0x), on the grounds that a structurally cash-negative business can currently earn premiums exceeding its quality base.

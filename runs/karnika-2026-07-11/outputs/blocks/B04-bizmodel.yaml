@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation not provided; all figures sourced from FY2024-25 Annual Report only"
+  - "Credit rating absent from inputs available to this stage"
+  - "Sector row in manifest mislabeled as pharma; verified from AR as apparel/textile (kidswear manufacturing, fabric trading, retail); flagged for phase 3 correction"
+  - "Kidcity Solutions Pvt Ltd (retail subsidiary) not reflected in this AR (AR p.34: no subsidiaries as of 31.03.2025); per run brief, first consolidation expected FY26; all retail economics NOT FOUND"
+  - "No named competitors, market-share data, or peer multiples found anywhere in the AR"
+flags:
+  - "Related-party revenue concentration: Shree Garments alone ~11.7% of FY25 revenue, Rs 937.40 Lacs receivable balance (Note 33, AR p.89)"
+  - "HSBC cash-credit line ~99% utilized (Rs 3,365.50 Lacs drawn of Rs 3,400 Lacs sanctioned, Note 31, AR p.87)"
+  - "Rs 866.32 Lacs deployed in non-current securities/mutual funds plus ~Rs 885 Lacs net loans to body corporates while carrying Rs 5,887.27 Lacs short-term working-capital debt (Notes 12, 19, Cash Flow Statement)"
+  - "Export revenue (6.1% of FY25 revenue) exposed to 50% US tariff on Indian textiles/apparel; industry-wide 20-25% export volume decline projected over next six months (MD&A, AR p.38)"
+  - "Operating cash flow highly volatile: -Rs 602.78 Lacs FY24 to +Rs 414.27 Lacs FY25 (Cash Flow Statement, AR p.70), limiting DCF reliability"
+  - "Single AS17 segment self-disclosure (AR p.77) limits visibility into manufacturing vs trading margin split"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Manufactured garments - domestic", type: "manufacturing (outsourced job-work)", pct_of_revenue: 74.7, predictability: "M"}
+  - {name: "Manufactured garments - export", type: "manufacturing (outsourced job-work)", pct_of_revenue: 6.1, predictability: "L-M"}
+  - {name: "Traded goods (fabric)", type: "trading/distribution", pct_of_revenue: 19.0, predictability: "L-M"}
+  - {name: "Scrap sales", type: "byproduct trading", pct_of_revenue: 0.16, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Brand (KARNIKA + sub-brands)", durability: "Low-Moderate"}
+  - {moat: "Switching costs / customer relationships (>90% revenue from clients >3yrs)", durability: "Moderate"}
+  - {moat: "Distribution access (28-state network plus export relationships)", durability: "Moderate"}
+valuation_methods:
+  primary: {method: "P/E on normalized earnings", why: "Profitable small/microcap apparel manufacturer with clean EPS-reporting P&L; job-work model produces real accounting profit without heavy depreciation noise"}
+  secondary: {method: "EV/EBITDA", why: "Cross-check that captures the short-term cash-credit debt load (D/E 0.85x, ~Rs 5,887 Lacs of short-term WC borrowings) a pure equity multiple would understate"}
+  tertiary: {method: "P/B", why: "Sanity check on tangible book quality given only 3rd annual report since 2023 listing and limited multi-year operating history"}
+  not_applicable:
+    - "DCF - operating cash flow swung from -Rs 602.78 Lacs (FY24) to +Rs 414.27 Lacs (FY25), making multi-year FCF forecasting unreliable"
+    - "SOTP - company discloses a single AS17 segment; Kidcity retail not yet consolidated or separately reported"
+    - "NAV/asset-based - PP&E only 4.3% of revenue, not an asset-heavy business"
+irrelevant_ratios:
+  - {ratio: "Blended gross margin", why: "Blends manufacturing cost of materials consumed and trading purchase of stock-in-trade, two economically different cost lines"}
+  - {ratio: "Note 37 'Return on Investment' (3.31x)", why: "Denominator is the small Rs 866.32 Lacs non-core securities/MF book, not productive operating capital; use ROCE (22%) instead"}
+  - {ratio: "Management-stated EBITDA margin (16.88%)", why: "Computed on Total Income which includes Rs 373.12 Lacs Other Income, of which Rs 173.74 Lacs is non-operating capital gains on shares/MFs"}
+  - {ratio: "Current ratio vs textbook 2x rule", why: "1.68x is normal for a ~219-day cash-conversion-cycle business funded by hypothecated cash-credit lines; limit utilization headroom is the real test"}
+  - {ratio: "Debt-Equity ratio (0.85x) without composition", why: "~Rs 5,887 Lacs of ~Rs 6,020 Lacs total debt is short-term working-capital cash credit, not term debt funding fixed assets"}
+  - {ratio: "Fixed-asset turnover / capex-to-sales", why: "Job-work model means production capacity depends on third-party vendors, not just the Rs 734.26 Lacs of owned PP&E"}
+must_track_metrics:
+  - {metric: "EBITDA margin (on Revenue from Operations)", healthy: "16-17%+", red_flag: "Sustained decline below 10-12%"}
+  - {metric: "Trade receivable days", healthy: "~130 days stable", red_flag: "Rising past ~150 days"}
+  - {metric: "Inventory days", healthy: "~130 days stable", red_flag: "Rising past ~150 days"}
+  - {metric: "Interest coverage ratio", healthy: ">5x", red_flag: "Below 3x"}
+  - {metric: "Cash-credit / WC limit utilization", healthy: "<85% of sanctioned limits", red_flag: ">95% utilized (HSBC already ~99%)"}
+first_deterioration_signals:
+  - {risk: "Related-party revenue concentration (Shree Garments)", first_signal: "Related-party trade receivable balance rising faster than related-party sales"}
+  - {risk: "Raw-material/tariff margin risk", first_signal: "Cost of materials consumed as % of manufactured revenue rising; export revenue line declining QoQ"}
+  - {risk: "Working-capital funding strain / non-core capital allocation", first_signal: "Cash-credit utilization approaching 100% of sanctioned limits, or growth in loans to body corporates"}
+  - {risk: "Execution strain from job-work dependence and diversification", first_signal: "On-time delivery rate (currently 92%) declining; job-work charges rising disproportionately to revenue"}
+  - {risk: "Structural competitive erosion", first_signal: "Net profit or EBITDA margin reverting toward FY24 levels (7.94% / ~15.1%) despite continued revenue growth"}
+mgmt_questions:
+  - "What is the standalone revenue/margin contribution expected from Kidcity once consolidated in FY26, and how will retail working capital/lease liabilities affect the group balance sheet?"
+  - "Why did sales to related party Shree Garments reach ~11.7% of FY25 revenue, and is pricing independently verified as arm's-length?"
+  - "What is the plan for the ~Rs 866 Lacs in equities/mutual funds and ~Rs 885 Lacs loaned to body corporates while carrying ~Rs 5,887 Lacs of short-term CC debt?"
+  - "How exposed is the export book (6.1% of FY25 revenue) to the 50% US tariff, and what is the concrete new-geography diversification plan?"
+  - "What is the headroom on the HSBC cash-credit line (~99% utilized), and is an enhancement planned given 37% FY25 revenue growth?"
+  - "What share of production depends on third-party job-work capacity, and how is vendor concentration/quality risk managed as volumes scale?"
+  - "Is the FY25 EBITDA-margin jump (14.99% to 16.88%) structural (product-mix shift) or partly one-off?"
+one_line_verdict: "Asset-light job-work kidswear manufacturer funds a 219-day cash cycle on bank debt while weak brand moat and related-party concentration cap earnings quality."

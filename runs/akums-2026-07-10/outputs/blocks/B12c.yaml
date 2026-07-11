@@ -24,3 +24,6 @@ critical_count: 0
 major_count: 0
 minor_count: 3
 acceptance_rate: 97   # 106 of 109 rules passed across both halves (gate0 46, emoat 39/40, valuation 21/23)
+orchestrator_reconciliation:
+  note: "Verifier C findings preserved as recorded (it correctly audited against main, where 3c/4.3/4.4 were not yet committed). Operator has since confirmed the branch amendments (Section 1B 3a/3b/3c + Amendment 4.3 two-tier + 4.4 RRM + reachability spec, from claude/pillar-3-entry-rules-l278il) are AUTHORITATIVE and pending merge. Accordingly the '3c not in committed file' MINOR (valuation fail #2 / finding #2) is RESOLVED as a provenance artefact, not a framework-integrity defect. The 'pillar1-midpoint label' MINOR (fail #1 / finding #1) STANDS as a genuine labelling nit (STAGNANT credits no recovery; honest label 'not credited'), numerically inert. Effective post-reconciliation acceptance ~98% (107/109)."
+  three_c_status: "authoritative (branch pending merge); no re-run required on merge"

@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating: absent from inputs"
+  - "presentation: absent from inputs"
+  - "sector row misclassified upstream (phase 3), carried forward unresolved"
+  - "no kidswear-specific or D2C-retail peer available; all 3 peers are adjacent apparel segments (men's/family, woollens, export garmenting), so Kidcity-specific and kids-TAM claims remain structurally unverifiable from this peer set"
+flags:
+  - "Sector EBITDA margins expanded or held flat across all 3 peers in FY26 despite genuine cotton/yarn and logistics cost shocks; Karnika's implied H2 FY26 margin compression to ~11.5% is far sharper, pointing to company-specific (likely Kidcity-related) execution issues rather than sector-wide pressure"
+  - "H2 FY26 demand and discounting were resilient/improving across the 2 domestic-facing peers (GST-rationalization tailwind), complicating any implicit soft-H2-demand framing"
+  - "'No true integrated peer' claim is complicated by SPAL, which is a genuinely integrated yarn-to-garment operator with an explicit babywear-niche moat claim, albeit export/B2B rather than domestic retail"
+  - "Cotton/yarn cost shock is verified as genuine and sector-wide; the specific 'Gulf war' freight/insurance framing is only proxy-corroborated via SPAL's 'Strait of Hormuz' reference, not a verbatim match"
+peers_provided: 12
+verified:
+  - {claim: "Cotton/yarn cost inflation was a genuine, sector-wide shock in the Jan-Mar 2026 quarter, not Karnika-specific fabrication", peers: ["SPAL", "MONTECARLO", "CANTABIL"], anchor_count: 4}
+partially_verified:
+  - {claim: "No true integrated yarn-to-retail peer exists", peers: ["SPAL (contradicts, integrated + babywear moat)", "MONTECARLO (supports, explicitly non-integrated)", "CANTABIL (supports, non-integrated, non-kids)"]}
+  - {claim: "Gulf-war-linked freight/insurance cost shock specifically (as distinct from general cotton/yarn inflation)", peers: ["SPAL (Strait of Hormuz reference, proxy corroboration)"]}
+contradicted:
+  - {claim: "Karnika's FY26 margin compression (H1 19.67% to implied H2 ~11.5%) reflects an unavoidable sector-wide margin squeeze", contradicting_peer: "CANTABIL, MONTECARLO, SPAL (all expanded or held FY26 EBITDA margins)", quote_anchor: "CANTABIL Q4/FY26 call May 19 2026 p.3 (FY26 EBITDA margin 31% vs 28.4% FY25); MONTECARLO Q4/FY26 call May 19 2026 p.2 (FY26 EBITDA margin 17.81%, guidance achieved); SPAL Q4/FY26 call May 22 2026 p.5 (FY26 standalone adjusted EBITDA margin 16.5% vs 16.7% FY25, roughly flat)"}
+  - {claim: "H2 FY26 demand/discounting environment was weak or heavily promotional industry-wide", contradicting_peer: "CANTABIL, MONTECARLO", quote_anchor: "CANTABIL Q3 FY26 call Feb 6 2026 p.10 (GST-rationalization momentum 'is definitely there... long term'); MONTECARLO Q4/FY26 call May 19 2026 p.10 (discount % fell to 9.44% FY26 from 10.16% FY25)"}
+unverifiable:
+  - {claim: "Indian kids' apparel market ~5% CAGR to USD17.4bn by 2034, organized share rising", peers_checked: ["CANTABIL", "MONTECARLO", "SPAL"]}
+  - {claim: "Kidcity's claimed footprint (35+ malls, Spencer's tie-up, #2 on HopScotch) independently corroborated", peers_checked: ["CANTABIL", "MONTECARLO", "SPAL"]}
+  - {claim: "Zara, H&M and DMart are in active corporate-supply negotiation with Karnika", peers_checked: ["CANTABIL", "MONTECARLO", "SPAL"]}
+peer_coverage_map:
+  - {peer: "CANTABIL", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Raw-material price stability baseline pre-shock"}
+  - {peer: "CANTABIL", quarter: "Q2 FY26/H1 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "GST-rationalization demand tailwind first disclosed"}
+  - {peer: "CANTABIL", quarter: "Q3 FY26/9M (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Strong demand continuing, no cost complaint yet - timeline anchor"}
+  - {peer: "CANTABIL", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Explicit input-cost/supply-chain admission; margin expansion; falling discounting"}
+  - {peer: "MONTECARLO", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Cotton 50% of business baseline, no cost complaint at year start"}
+  - {peer: "MONTECARLO", quarter: "Q2 FY26/H1 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Raw material stabilized + price hike taken - margin mechanism detail"}
+  - {peer: "MONTECARLO", quarter: "Q3 FY26/9M (Jan 2026)", usage: "CITED-ONLY", contribution: "Cotton-segment volume growth stat, no decisive new evidence"}
+  - {peer: "MONTECARLO", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Explicit raw-material price-hike confirmation, immediate pass-through, no margin impact; falling discount %"}
+  - {peer: "SPAL", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Integrated model + babywear moat claim; cotton/yarn stability baseline; US tariff cost-sharing mechanics"}
+  - {peer: "SPAL", quarter: "Q2 FY26/H1 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Tariff-driven order impact; margin resilience via mix/cost discipline"}
+  - {peer: "SPAL", quarter: "Q3 FY26/9M (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Explicit 'Q3 was soft for the sector' statement"}
+  - {peer: "SPAL", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Decisive: cotton/yarn price increase with figures AND Strait of Hormuz cargo disruption, same quarter"}
+industry_cross_read:
+  demand: "Domestic-facing peers (Cantabil, Monte Carlo) report strengthening FY26 demand driven by GST rationalization (Sept 2025); SPAL's demand is bifurcated - strong EU/UK, tariff-disrupted (not organically weak) US"
+  pricing_inputs: "All 3 peers confirm real cotton/yarn/wool cost increases becoming visible by Q4 FY26 (Jan-Mar 2026), all passed through via price hikes without material margin damage"
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation - all 3 peers actively expanding (stores, machines, solar, new facilities) through FY26"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "US tariff exposure precisely quantified and managed via explicit customer/supplier cost-sharing arrangements (SPAL) - a level of disclosure Karnika's stalled US order commentary lacks"
+  - "Minimum-wage/new Labour Code compliance cost increases (SPAL Tamil Nadu wage hike; all 3 peers discuss Labour Code alignment) - not mentioned in Karnika's disclosures"
+  - "Specific shipping-lane disruption named (Strait of Hormuz, SPAL) vs Karnika's generic 'Gulf war' framing without mechanism"
+  - "Bangladesh losing EU LDC duty-free status by 2029 - trade-diversion tailwind SPAL is positioning for; not discussed by Karnika"
+  - "Granular return/EOSS provisioning and channel-inventory-day disclosure (Monte Carlo, Cantabil) at a level of transparency Karnika has not matched, consistent with the B05-flagged receivables/AR inconsistency"
+net_narrative_effect: "complicates"

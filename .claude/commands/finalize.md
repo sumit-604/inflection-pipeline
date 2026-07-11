@@ -131,16 +131,40 @@ phase 3), then:
    This file is a payload, not an action. Do not write to Notion from this
    session; the operator executes the save in the project.
 
-8. COMMIT all outputs with message "phase 3 (finalize): <ticker> <date>"
-   and report to the user: the recommendation verdict line, the valuation
-   decision, entry range, flags active, the full confidence delta overall,
-   the devil's-advocate overall verdict, and the paths to the four final
-   deliverables plus outputs/final/notion-payload.md.
+8. COMPANY MEMORY. Write or update companies/<TICKER>.md (create the
+   companies/ folder and the file if absent; see companies/_template.md for
+   the schema). Carry the existing file's content forward and update it from
+   this run: the one-line thesis (from B14 / synthesis), the Decision Status
+   and entry zone as of this run with the run date, every operator ruling
+   with its date (from outputs/final/fttcp-deliberation.md, appended and
+   never deleted), the active tripwires (thesis-broken triggers and
+   falsification metrics), the optionality register summary (from
+   B07.optionality_register), and a link to this run folder added to the
+   run-folder list. This is the durable per-company memory layer;
+   /run-pipeline stage 0 and /fttcp read it on the next run. It is memory,
+   never a source: it records what prior runs concluded, it does not anchor
+   new figures.
+
+9. COMMIT all outputs and the updated companies/<TICKER>.md with message
+   "phase 3 (finalize): <ticker> <date>" and report to the user: the
+   recommendation verdict line, the valuation decision, entry range, flags
+   active, the full confidence delta overall, the devil's-advocate overall
+   verdict, and the paths to the four final deliverables plus
+   outputs/final/notion-payload.md.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
    in this order: the thesis verdict card (from B14), then the devil's
-   advocate final table (from B15). End with exactly:
+   advocate final table (from B15). The verdict card must carry a ZONE
+   REACHABILITY line: the entry zone top versus the 52-week low and versus
+   the lowest tested price since listing, both as percentages, computed
+   from the screening CSVs where price history exists (state "price history
+   unavailable" otherwise). If the zone top sits >20% below the lowest
+   tested price since listing, print: "MARKET-UNLIKELY ZONE — reaches entry
+   only via thesis-relevant shock or broad de-rating; classify DEEP WATCH
+   not actionable WATCHLIST, or route to the trading book." If a Tier B
+   hurdle would move the zone to within 15% of tested prices, print the
+   Tier B zone alongside as "Tier B alternative: ₹___". End with exactly:
 
    "Files committed. Ask me anything about this analysis — I have the sources."
 

@@ -28,6 +28,12 @@ Read, in this order:
    blocks (B00-B13, confidence).
 6. Every file in the run folder's outputs/final/ — the synthesis outputs,
    including any existing FTTCP recommendation.
+7. companies/<TICKER>.md if it exists — the durable COMPANY MEMORY (prior
+   one-line thesis, Decision Status and entry zone, operator rulings with
+   dates, active tripwires, optionality register summary, run-folder links).
+   Inject it as COMPANY MEMORY alongside any refresh-run context. Treat it
+   as memory to weigh, never as anchored source: verify any figure against
+   the run's inputs/ before relying on it.
 Note where the inputs live: the run folder's inputs/ subfolders hold the
 source PDFs (annual-report/, results/, rating/, concalls/, peer-concalls/,
 presentation/). You will re-open these during deliberation.

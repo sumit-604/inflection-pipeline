@@ -79,6 +79,13 @@ handoff schemas, flag rules, and error handling. Then:
    declared, not accidental. This is the single permitted question in
    the pipeline.
 
+   COMPANY MEMORY: if companies/<TICKER>.md exists (the durable per-company
+   memory written by prior /finalize runs), read it at stage 0 and carry it
+   into every stage task message as COMPANY MEMORY, alongside any refresh-run
+   PRIOR RUN CONTEXT. It is memory, not a source: stages weigh it but never
+   treat its figures as anchored evidence; every number a stage reports
+   still comes from this run's own inputs, verified against the source PDFs.
+
    Create outputs/blocks, outputs/reports, outputs/final inside the run
    folder.
 

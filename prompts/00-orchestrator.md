@@ -402,6 +402,9 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 
 ## 9. WHAT THE ORCHESTRATOR NEVER DOES
 
+- JIT context is law: task messages carry file PATHS and small YAML blocks
+  only, never document contents; subagents read sources themselves. Curated
+  tables (B10) exist so downstream stages consume summaries, not archives.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
 - Never lets any exit PE enter from outside Section 1B v3.3.

@@ -784,3 +784,20 @@ top_moat_risks:
   - "Schedule M / MIP credibility risk: the AR's own written MD&A repeats an optimistic Schedule M framing that management has twice declined to elaborate on live concalls (Feb, May 2026), consistent with the B05 grade-C credibility record."
   - "Customer/channel concentration risk (new this run): a documented 90.9% YoY collapse in dealer/distributor count and a jump in top-10-dealer concentration to 43.62% of dealer-channel sales, not yet directly addressed by management on any concall."
 ```
+
+---
+
+## ADDENDUM — A2 RESCORE (operator-directed AR re-check, 2026-07-10)
+
+Operator requested a targeted AR check for four A2 Impact levers and a rescore. Findings:
+
+1. **New-product revenue share:** NOT FOUND. AR discloses activity metrics only — 290+ new product launches FY26, 8 first-in-India-&-world triple-layer products, 65 DCGI approvals (1,035+ cumulative), 129+ patents filed — but no % of revenue from new products.
+2. **Licensing/royalty income:** NOT FOUND (nil). No royalty income in the AR. The Triple Hair (Canada, patented alopecia topical) and Caregen (Korea, peptides) deals are IN-licensing — Akums is the licensee acquiring exclusive Indian rights, not an earner of royalty.
+3. **R&D spend % of revenue with trend:** DOCUMENTED. "R&D Expenditure as % of Total Income" FY24 3.1% -> FY25 2.6% -> FY26 3.2% (Rs 1,397mn FY26, AR p.34/44). This reconciles the earlier discrepancy: 0.86% = P&L-expensed R&D only (Note 45); 3.2% = total R&D incl. capitalised development. The 3.2% total-R&D figure is the fuller measure and carries a stable 3-year trend.
+4. **Patented-product exclusivities:** DOCUMENTED but unmonetised. 8 first-in-India-&-world triple-layer products; in-licensed exclusive Indian rights (Triple Hair, Caregen); EU exclusive-supply contract (already in B2). No revenue/margin attached to any.
+
+**Rescore:** The A2 cap was the 0.86% R&D figure (narrowest denominator). With total R&D intensity at 3.2% and a stable trend, plus 14 granted patents / 129 filed / 8 first-in-world products, the Impact moves from Low to Moderate. A2: raw 1 -> 2, adjusted 1.0 -> 2.0, strength Weak -> Moderate. Held below Strong because the revenue-monetisation legs (items 1 and 2) are absent.
+
+**em_score 26.3 -> 27.3. Still STRENGTHENING (not EXPANSION). Active Strong/Moderate categories 6 -> 7 (add A2). Combined assessment unchanged TURNAROUND. Pillar 3 unchanged at +1x (27.3 still in the EM 25-29 band); ~23x indicative destination PE unaffected.**
+
+Note (informational, not rescored here): the same 3.2%-vs-0.86% reconciliation means Gate 0 moat test M6 (scored 0 on the 0.86% figure) would move to at most 1 on the 3.2% basis — moat_score 10 -> 11, grand_total 79 -> 80, classification unchanged (AVERAGE, THIN). F1 remains Weak: the R&D-intensity correction strengthens its evidence base but the binding limiters (single-year headcount snapshot, no ESOP-to-R&D disaggregation) are unchanged.

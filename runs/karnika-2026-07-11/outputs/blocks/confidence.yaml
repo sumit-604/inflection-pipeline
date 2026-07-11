@@ -1,0 +1,18 @@
+stage: confidence-delta
+company: KARNIKA
+run_date: 2026-07-11
+phase: 1
+confidence_delta:
+  numerical_acceptance: 89.5      # B12a (source-grounded re-run); 0 CRITICAL, 2 MAJOR clarifications, no fabrication
+  redflag_coverage: 65            # B12b: 13/20 independent flags fully caught upstream; +4 partially caught (~85% incl. partial). 1 fully-missed MAJOR = one-time ~Rs9cr FY26 other-income gain not flagged by B05
+  framework_adherence: 99         # B12c PHASE-1 SCOPE ONLY (Gate 0 + Emerging Moat): Gate 0 clean 0/48; EM 1 MINOR tier soft-fail. Valuation-adherence component PENDING PHASE 3.
+  peer_utilisation: 75            # B12d: substantive_confirmed 9/12 provided; the 2 excluded are citation-accuracy defects on otherwise-substantive uses (effective ~92%)
+  overall: 65                     # min of the four available components
+overall_band: "60-74 (normal-to-cautious): note specifics; per orchestrator Section 5, PROCEED-type verdicts downgrade one level. Binding constraint is redflag_coverage (65, strict)."
+valuation_framework_adherence: pending-phase-3
+rework_check:
+  triggered: false
+  basis: "Verifier A source-grounded re-run has 0 CRITICAL and acceptance 89.5%; no verifier acceptance_rate below 60% (B12b 65, B12c 99, B12d 83). REWORK gate not triggered. (The first, degraded Verifier A pass reporting 5 CRITICALs and 70% is superseded: it could not access source PDFs and made at least one arithmetic error; the source-grounded re-run governs.)"
+notes:
+  - "Source gaps affecting confidence, per verifier-resilience rule: (a) B08 promoter partial — 2023 IPO prospectus litigation chapter (p.186) 403-blocked across 5 mirrors; (b) B12a could not locate the consolidated FY26 P&L in results pages 1-11 (Rs248cr revenue is concall/management-guidance-sourced, standalone Rs224.28Cr confirmed); (c) several screener multi-year CSV exports were empty (header-only), figures taken from results PDFs and AR."
+  - "All source PDFs render correctly (poppler installed at session start); the only degraded verifier pass was re-run successfully."

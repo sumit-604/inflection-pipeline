@@ -1,0 +1,43 @@
+stage: B01-gate0
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating: absent (no rating PDF provided)"
+  - "presentation: absent (no investor presentation provided)"
+  - "concalls: 2 FY26 concalls present in run inputs; not used in Gate 0 (quantitative-only stage), noted for continuity"
+  - "sector_cap_row 'Pharma / CDMO' in manifest appears misclassified for Karnika/peers (apparel/textile); flagged for phase 3, no Gate 0 impact"
+  - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv contain no populated historical data cells (headers/labels only); all annual figures sourced instead from results PDFs (FY25 & FY26 standalone) and screener-Data_Sheet.csv (FY26 consolidated single-year + quarterly)"
+  - "no shareholding pattern / promoter holding / pledge data in provided inputs; Block E scored 0/20 as N/A throughout"
+  - "no contingent liabilities note in either results PDF; E4 scored 0/N/A"
+  - "only 2 years of standalone annual financials available (FY25, FY26); consolidated FY25 comparative does not exist (subsidiary Kidcity Solutions Pvt Ltd first consolidated in FY26 per company note); history <3yr deal-breaker caps classification at AVERAGE"
+  - "peer data limited to 3 named peers (KITEX, MONTECARLO, SPAL) via screener Data_Sheet exports; not a full segment/industry universe, so M5 scale-and-dominance scored 0/PEER DATA NEEDED"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification capped at AVERAGE by the <3-year history deal-breaker (#9). Underlying computed matrix score (Core 63/100, moat STRONG, grand total 82/160) would map to GOOD+ absent that override. Only 2 years of standalone annual financials are available (FY25, FY26) because the screener's dedicated multi-year CSV exports were empty and no consolidated FY25 comparative exists (first-year consolidation of subsidiary Kidcity Solutions Pvt Ltd in FY26). All Block C growth metrics and moat tests M1/M10/M11 are single-period (n=1) YoY observations, not verified multi-year trends."
+data_years: 2
+fy_range: "FY25 to FY26"
+blocks: {A: 20, B: 11, C: 20, D: 12, E: 0}
+core_score: 63
+moat_score: 19
+grand_total: 82
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "#9 history <3 years -> AVERAGE (2 years of standalone annual data available: FY25, FY26; consolidated FY25 comparative does not exist per company disclosure); overrides raw matrix result of GOOD+"
+history_downgrade: true
+data_notes:
+  - "no loss-to-profit swing identified (both FY25 and FY26 standalone PAT positive)"
+  - "GM proxy used for M9: (Revenue - Material Cost)/Revenue; Karnika's Material Cost includes Purchase of Stock-in-Trade, peer sheets show no equivalent trading-purchase line item, so the comparison basis is not fully like-for-like"
+  - "M5 PEER DATA NEEDED: only 3 named peers available (KITEX, MONTECARLO, SPAL), not a full segment universe; scored 0"
+  - "M11 scored conservatively at 0: only 2 years available vs 6 required for the two-window test; selling expense not separately disclosed (bundled into Other Expenses)"
+  - "C1/C2/C4 CAGR figures are single-period YoY growth rates (n=1 year), not verified multi-year CAGRs, due to 2-year data availability"
+  - "FY25 ROE computed using closing net worth only (FY24 opening net worth not available in provided data), per formula fallback rule"
+  - "EBIT/EBITDA computed basis used throughout: PBT + Interest [+ Depreciation for EBITDA] minus Other Income; Other Income excluded as non-operating per standalone cash-flow-statement indirect-method adjustments (profit on sale of investments, interest income, dividend income)"
+  - "FCF capex figure uses standalone CF statement's single net line 'Sale/(Purchase) of Property, Plant & Equipments' (no separate gross purchase, intangibles, or acquisition breakdown disclosed)"
+  - "WC days computed on Revenue basis for all three components (Receivable/Inventory/Payable Days); COGS not explicitly disclosed as a standalone line"
+  - "cumulative CFO/PAT (B1) = 0.547, just above the 0.50 deal-breaker #4 threshold -- a watch item even though not formally triggered"
+  - "Karnika equity share capital rose from Rs1,239.95L (FY25) to Rs6,199.75L (FY26), a ~5x increase, sharply diluting EPS (FY25 14.54 vs FY26 6.41) despite higher PAT; noted for downstream context, does not affect Gate 0 scoring since no promoter-specific data was available regardless"
+block_b_trend: "improving - standalone CFO/PAT conversion rose from 18.3% in FY25 (CFO Rs329.60L / PAT Rs1,803.05L) to 79.3% in FY26 (CFO Rs2,115.91L / PAT Rs2,667.73L), though the cumulative two-year CFO/PAT of 0.55x remains below the 1.00x full-conversion bar"

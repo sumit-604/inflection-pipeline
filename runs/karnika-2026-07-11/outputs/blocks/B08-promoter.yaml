@@ -1,0 +1,37 @@
+stage: B08-promoter
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: partial               # IPO prospectus litigation chapter (p.186) inaccessible across 5 mirrors (HTTP 403)
+input_gaps: ["rating absent", "presentation absent", "sector row misclassified (phase 3)"]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Board's Report Item 22 (p.30) denies any conflicting RPT; directly contradicted by Note 33 showing 13.3% of FY25 revenue and 86.3% of total rent expense flowing to promoter/family counterparties"
+      - "Annexure III (p.46) states 'no increase in managerial remuneration'; directly contradicted by Note 33 showing all three promoter-directors' pay equalised to a uniform Rs.96.00L each (+2.8% to +9.1% YoY)"
+      - "Internal Auditor is 'Ajay Mundhra & Associates' (promoter surname), fee +300% YoY (Rs.1.20L to Rs.4.80L)"
+      - "Secretarial Auditor's registered e-mail across the AR (letterhead, Non-Disqualification Certificate, MR-3, e-voting scrutinizer contact) is poonammundhra@gmail.com / poonammundhra15@gmail.com, despite her professional name being 'Binani' — undisclosed"
+      - "Unnamed Rs.885.36L unsecured inter-corporate loan to unidentified 'Body Corporates' (Note 19), not tied to any named related party"
+      - "Post-IPO cash (down 90.5% YoY) redeployed into a new Rs.866.32L securities/derivatives book with unrealised losses at year-end"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 3, red: 4}
+deal_breakers: []              # none triggered: no SEBI ban, no criminal conviction, no SFIO/PMLA, no auditor resignation, pledge 0%, no mid-term ID exits, no restatement
+adverse_findings:
+  - {finding: "Board's Report Item 22 (p.30) states no conflicting RPTs; contradicted by Note 33 (13.3% of revenue, 86.3% of rent to promoter/family)", evidence_tier: "VERIFIED", source: "Annual Report FY2024-25, p.30 vs p.88-89/83/85", date: "AR dated 01-06 Sept 2025"}
+  - {finding: "Annexure III 'no increase in managerial remuneration' contradicted by Note 33's uniform Rs.96.00L equalisation (+2.8% to +9.1% YoY)", evidence_tier: "VERIFIED", source: "AR p.46 vs p.89", date: "AR FY2024-25"}
+  - {finding: "Internal Auditor 'Ajay Mundhra & Associates' (promoter surname), fee +300% YoY", evidence_tier: "VERIFIED", source: "AR p.29 (Item 19d); Note 28 p.85", date: "AR FY2024-25"}
+  - {finding: "Secretarial Auditor Poonam Binani's registered e-mail (poonammundhra@gmail.com / poonammundhra15@gmail.com) carries promoter surname, undisclosed relationship", evidence_tier: "VERIFIED", source: "AR p.19, p.48-49, p.50-54 (letterhead, certificates, MR-3)", date: "certificates dated 01-02 Sept 2025"}
+  - {finding: "Unnamed Rs.885.36L unsecured inter-corporate loan to unidentified 'Body Corporates', not matched to any named related party", evidence_tier: "VERIFIED", source: "Note 19 p.83; CARO Annexure A clause iii p.61", date: "AR FY2024-25"}
+  - {finding: "Rs.866.32L new securities/derivatives/MF book from post-IPO cash, gross churn Rs.4,650.88L, unrealised losses at year-end", evidence_tier: "VERIFIED", source: "Note 12 p.80/83; Note 18/22 p.83", date: "AR FY2024-25"}
+  - {finding: "Promoter-controlled Q Baazar India LLP (Niranjan & Mahesh Mundhra, same registered address as Karnika) is an active RPT counterparty, +155.6% YoY sales", evidence_tier: "VERIFIED", source: "Note 33 p.89; ZaubaCorp/Tofler LLP filings", date: "AR FY2024-25 / web search 2026-07-11"}
+  - {finding: "New family entity Deehub Lifestyle Ltd (inc. Sept 2024) began RPT transacting same year; business description inconsistent across registries (garments vs marble quarrying)", evidence_tier: "UNVERIFIED", source: "Note 33 p.89; Tracxn/TheCompanyCheck", date: "web search 2026-07-11"}
+  - {finding: "RPT purchases of Rs.320.37L flow to Sri Ganesh Enterprise (Prop. Deepak Karnani), surname matching CFO Krishan Kumar Karnani, undisclosed relationship", evidence_tier: "UNVERIFIED (relationship inference)", source: "Note 33 p.88-89", date: "AR FY2024-25"}
+  - {finding: "2023 IPO prospectus references 'Outstanding Litigations' involving company and a group company; full details inaccessible (5 mirrors returned HTTP 403)", evidence_tier: "UNVERIFIED", source: "prospectus p.186 (search-indexed snippet only)", date: "prospectus dated 22 Sept 2023"}
+  - {finding: "Preferential warrant issue: 39,66,860 warrants at Rs.121 (Rs.47.99cr) to 13 promoter/promoter-group allottees + 1 non-promoter, 25% paid up, alongside a ~5x bonus issue; shares fell ~18% post Q1 FY27", evidence_tier: "MEDIA REPORTED", source: "ScanX Trade, Tradebrains, Business Standard", date: "allotted 18 June 2026"}
+transition_evidence: []        # NONE FOUND — one procedural ID redesignation noted but not credited
+pledge_pct_latest: 0
+pledge_trend: "stable — no pledge evidence found in AR or aggregators across FY24-FY25-FY26 (not an explicitly confirmed Reg. 31 filing; absence-of-evidence basis)"
+searches_performed: ["Karnika Industries IPO NSE Emerge SME", "Niranjan Mundhra Karnika Industries MD", "Karnika Industries SEBI order", "Karnika Industries warrants allotment", "Karnika Industries promoter pledge shareholding 2026", "Karnika Industries Glassdoor AmbitionBox", "Karnika Industries warrant allottees list", "Karnika Industries bonus share Q1 FY26", "Karnika Industries litigation MCA disqualified", "Shree Garments Jagdish Prasad Mundhra", "Deehub Lifestyle Mundhra", "Ajay Mundhra & Associates CA Kolkata", "Poonam Binani CS Kolkata", "Kirti Taparia Shashikant Soni independent director", "Poonam Binani/Mundhra director DIN", "Karnika AGM proxy advisory IiAS SES", "Karnika Industries media coverage", "Suraj Kumar Singh Karnika promoter", "Karni International partnership Howrah", "Karnika prospectus litigation group companies", "Karnika prospectus promoter education", "Karnika consumer/civil/criminal case Mundhra", "Q Bazaar India LLP Kolkata Mundhra", "Karnika NSE exchange notice surveillance", "Karnika AmbitionBox employee review", "Karnika prospectus litigation cases pending", "Karnika CFO Krishan Kumar Karnani"]
+searches_skipped: ["IPO prospectus full-text fetch (SEBI.gov.in, cmlinks.com, beelinemb.com, newadmin.smeindiasolution.com, chittorgarh.com x2) — all HTTP 403, litigation chapter p.186 unresolved", "SCORES complaint database direct query — not accessible via available tools", "SEBI Reg. 31 pledge filing direct lookup — not independently retrieved"]
+verdict_basis: "Two direct self-contradictions inside the FY24-25 AR's own governance disclosures (RPT conflict-of-interest denial and remuneration 'no increase' claim, both refuted by Note 33 within the same document) combined with a promoter-surname internal auditor (+300% fee) and a promoter-surname secretarial-auditor e-mail, both undisclosed, outweigh an otherwise clean SEBI/criminal/pledge record and place this at CONCERN rather than CAUTION."

@@ -1,0 +1,85 @@
+stage: B05-concall
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: false
+input_gaps:
+  - "rating: absent from inputs"
+  - "presentation: absent from inputs"
+  - "only 2 concalls exist for this company; no Q3 FY26 standalone call was held (genuine gap, not a collection failure)"
+  - "sector row misclassified upstream (phase 3), carried forward unresolved"
+flags:
+  - "Kidcity FY28 revenue guidance escalated ~2x (Rs120cr to Rs200-250cr) within two quarters despite a FY26 base-year miss"
+  - "EBITDA margin reversal H1 FY26 19.67% to FY26 full-year 15% (implied H2 ~11.5%) never proactively disclosed as a number"
+  - "Kidcity 75+ counter target missed (55+ delivered) and never mentioned or explained by anyone on either call"
+  - "promised quarterly reporting cadence not honored; combined H2+FY26 call held instead of a standalone Q3 FY26 call"
+  - "US export order stalled across both calls with shifting excuse, no timeline"
+  - "receivables assurance (60-90 day target) never followed up with a hard number; inconsistent with external AR data (receivables +45.1% vs revenue +35.6%) flagged for valuation/quality stages"
+quarters_analysed: ["Q2 FY26", "Q4 FY26 (H2 FY26 & full year, combined call)"]
+triggers:
+  - {priority: 1, name: "Kidcity retail scale-up (D2C + SIS + kiosk)", type: "INORGANIC/VOLUME", timeframe: "medium", conviction: "L-M", confirm_signal: "Store count catches up to/exceeds 75+ and Kidcity revenue hits Rs30cr+ run-rate in FY27", kill_signal: "Further store-rollout miss or Kidcity revenue stagnates below Rs25cr"}
+  - {priority: 2, name: "Margin normalization/expansion", type: "COST/PRICE-MIX", timeframe: "near", conviction: "L", confirm_signal: "FY27 EBITDA margin returns above 17-18%", kill_signal: "Further compression below FY26's 15% level"}
+  - {priority: 3, name: "Export diversification (US/Europe/ME)", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "US order converts to a firm, quantified dispatch", kill_signal: "US order remains 'in the pipeline' for a third consecutive disclosure cycle"}
+  - {priority: 4, name: "Corporate/large-format retail pivot (Zara, H&M, DMart)", type: "VOLUME", timeframe: "near-medium", conviction: "L", confirm_signal: "A named order/contract with a large-format retailer disclosed", kill_signal: "Remains an unnamed aspiration in the next call"}
+  - {priority: 5, name: "Working capital cycle improvement", type: "COST/FINANCIAL", timeframe: "near", conviction: "L", confirm_signal: "Explicit receivable-days figure disclosed within the promised 60-90 day band", kill_signal: "Receivables continue outpacing revenue growth"}
+  - {priority: 6, name: "Manufacturing/property integration (West Bengal)", type: "CAPEX/INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "Capex amount and timeline disclosed", kill_signal: "No update in next disclosure"}
+  - {priority: 7, name: "Cost control / operating efficiency (in-house, CAD)", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "Efficiency gains hold despite Kidcity integration costs", kill_signal: "Margin continues to compress"}
+guidance:
+  - {item: "Combined Karnika+Kidcity revenue FY26", number: "Rs 24,500 lakhs", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Combined Karnika+Kidcity revenue FY28", number: "Rs 42,500 lakhs", timeframe: "FY28", stated_in: "Q2 FY26 call"}
+  - {item: "Kidcity revenue FY26 to FY28", number: "Rs 3,000 lakhs to Rs 12,000 lakhs", timeframe: "FY26-FY28", stated_in: "Q2 FY26 call"}
+  - {item: "Kidcity counters", number: "75+", timeframe: "by end FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Receivable cycle target", number: "60-90 days (from 90-120)", timeframe: "forward-looking, no date", stated_in: "Q2 FY26 call"}
+  - {item: "Peak EBITDA-type margin", number: "20-25%", timeframe: "by FY28", stated_in: "Q2 FY26 call"}
+  - {item: "Karnika standalone revenue target", number: ">Rs 300 crores", timeframe: "next 2-3 years", stated_in: "Q2 FY26 call"}
+  - {item: "Quarterly reporting cadence", number: "n/a", timeframe: "starting Dec-25 quarter", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 actual revenue/EBITDA/PAT", number: "Rs248cr / Rs37cr (15% margin) / Rs28cr (11.4% margin)", timeframe: "FY26", stated_in: "H2/FY26 call"}
+  - {item: "Kidcity actual FY26 revenue", number: "Rs 24-25 crores (vs Rs30cr guided)", timeframe: "FY26", stated_in: "H2/FY26 call"}
+  - {item: "Normalized consolidated PAT margin", number: "11-13%", timeframe: "next 2-3 years", stated_in: "H2/FY26 call"}
+  - {item: "Overall growth CAGR", number: "30-35% (Karnika standalone 25-30%)", timeframe: "next 3-4 years", stated_in: "H2/FY26 call"}
+  - {item: "Kidcity FY28/29 revenue (escalated)", number: "Rs 200-250 crores (~3x)", timeframe: "FY28/29", stated_in: "H2/FY26 call"}
+  - {item: "Working capital cycle", number: "4.5-5 months to 4 months, target -100 days further", timeframe: "FY25 to FY27", stated_in: "H2/FY26 call"}
+  - {item: "ROE", number: "~28-29%", timeframe: "FY26", stated_in: "H2/FY26 call"}
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 6
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "Kidcity to reach 75+ counters by end of FY26", outcome: "missed - 55+ stores delivered, never explained", explanation: "none given"}
+    - {promised_in: "Q2 FY26 call", promise: "Kidcity FY26 revenue ~Rs 3,000 lakhs", outcome: "missed - actual Rs 24-25cr (~82-83% of guide)", explanation: "deflected to combined entity beat"}
+    - {promised_in: "Q2 FY26 call", promise: "Combined Karnika+Kidcity FY26 revenue ~Rs 24,500 lakhs", outcome: "delivered - Rs248cr actual vs Rs245cr guided", explanation: "n/a"}
+    - {promised_in: "Q2 FY26 call", promise: "Move to quarterly reporting cadence starting Dec-25 quarter", outcome: "missed - combined H2+FY26 call held instead, no standalone Q3 call", explanation: "none given, not raised by analysts"}
+    - {promised_in: "Q2 FY26 call", promise: "EBITDA margin expanding, targeting 20-25% peak by FY28", outcome: "missed/reversed - FY26 full year margin 15% vs H1 19.67%, implied H2 ~11.5%", explanation: "external-blame: Kidcity consolidation transitional costs, high cotton prices; given only when asked"}
+    - {promised_in: "Q2 FY26 call", promise: "US export order in pipeline, implied progress", outcome: "missed/stalled - zero progress after 6 months", explanation: "external-blame: US clients holding back orders due to political changes"}
+    - {promised_in: "Q2 FY26 call", promise: "No yarn/raw-material volatility currently seen", outcome: "missed/reversed - cotton price spike confirmed as margin drag", explanation: "external-blame: cotton prices, Gulf war freight/insurance costs"}
+    - {promised_in: "Q2 FY26 call", promise: "Receivable cycle maintained at 60-90 days", outcome: "partial/unverifiable - reframed as WC-months metric, no days figure given, not reconciled with AR receivables growth data", explanation: "none - metric switched without explanation"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Status of the US export order", quarters_asked: ["Q2 FY26", "H2/FY26"], classification: "answer changed between quarters - status never resolved, reason for stall shifted, no timeline ever given"}
+  - {question: "Margin ceiling / normalized margin target", quarters_asked: ["Q2 FY26", "H2/FY26"], classification: "answer changed between quarters - 20-25% peak target quietly downgraded to 11-13% PAT margin guide without acknowledgment"}
+credibility_grade: "C"
+credibility_basis: "One major promise delivered (combined FY26 revenue, Rs248cr vs Rs245cr guided) against six missed/partial promises (Kidcity store count 55 vs 75+, Kidcity revenue Rs24-25cr vs Rs30cr, EBITDA margin reversal 19.67% to ~11.5% implied H2, broken quarterly-cadence promise, stalled US order, reversed raw-material-volatility denial), with guidance escalating rather than being walked back after the miss; absolute growth (revenue +44%, PAT +57%) is real but secondary-target delivery is weak and excuse pattern is external-blame-heavy."
+peer_questions:
+  - {question: "Is the Indian kids' apparel market genuinely growing at ~5% CAGR to USD17.4bn by 2034, and is organized share genuinely rising?", why: "Unsourced industry figure underpins the entire long-term growth narrative", check_peers: ["other listed kidswear/apparel names", "CMAI or similar industry-body data", "FirstCry/Hopscotch disclosures"]}
+  - {question: "Was cotton/yarn inflation and Gulf-war-linked freight/insurance cost increase a genuine sector-wide shock in the Mar-2026 quarter, or company-specific?", why: "Management denied volatility in Q2 FY26 call then blamed it for the margin miss six months later", check_peers: ["other textile/apparel manufacturers", "yarn-spinner Q4 FY26 commentary"]}
+  - {question: "Does the 'no true integrated peer' claim hold, or does Iris Clothing (Calcutta) or others run a comparably integrated yarn-to-retail model?", why: "This differentiation claim is used to justify the growth/margin narrative and any valuation premium", check_peers: ["Iris Clothing", "other Calcutta-based kidswear manufacturers", "any listed kidswear names"]}
+  - {question: "Is Kidcity's claimed footprint (35+ malls in two countries, Spencer's tie-up, #2 on HopScotch) independently corroborated?", why: "FY28 Kidcity revenue target nearly doubled within two quarters despite the FY26 base-year miss; independent verification is essential before crediting the escalated target", check_peers: ["HopScotch", "Spencer's Retail", "other kidswear D2C brands"]}
+  - {question: "Are Zara, H&M and DMart genuinely in active corporate-supply negotiation with Karnika, as newly claimed right after the US order stall was admitted?", why: "Presented as the replacement growth driver for the failed export order but entirely unquantified", check_peers: ["other Indian kidswear/garment job-workers supplying these retailers", "sourcing-side commentary from Zara/H&M/DMart"]}
+red_flags:
+  - {severity: "High", flag: "Kidcity FY28 revenue guidance escalated from ~Rs120cr (Q2 FY26 call) to Rs200-250cr (H2/FY26 call) within two quarters, despite Kidcity's own FY26 revenue missing its guide"}
+  - {severity: "High", flag: "EBITDA margin trajectory reversed: H1 FY26 19.67% ('expanding') vs FY26 full-year 15%, implying H2 margin ~11.5% by arithmetic, never proactively disclosed as a number"}
+  - {severity: "Medium", flag: "Kidcity 75+ counter target delivered at 55+ stores, a ~27% shortfall never raised or explained by anyone"}
+  - {severity: "Medium", flag: "Promised quarterly reporting cadence not honored; combined H2+FY26 call held instead of standalone Q3 FY26 call"}
+  - {severity: "Medium", flag: "US export order stalled across both calls (6+ months), reason shifted from 'U.S. issue' to 'recent political changes', no timeline offered"}
+  - {severity: "Medium", flag: "Raw material/yarn volatility explicitly denied in Q2 FY26 call then confirmed as margin drag by H2/FY26 call - full reversal within 6 months"}
+  - {severity: "Medium", flag: "Customer concentration disclosure inconsistency: 'not more than 19-20% per customer, no concentration problem' (Q2 FY26) vs top 10 commission agents = 60-65% of B2B clientele revenue (H2/FY26)"}
+  - {severity: "Low-Medium", flag: "D2C/omnichannel narrative heavily emphasised in Q2 FY26 call, but 99% of sales remain offline as of H2/FY26 call"}
+  - {severity: "Medium", flag: "Receivables assurance ('definitely tightened', 60-90 day target) never followed up with a hard number and is inconsistent with external AR data (receivables +45.1% vs revenue +35.6%); unresolvable from transcripts alone, flagged for cash-conversion/quality stages"}
+dropped_triggers:
+  - "Peak/industry-max EBITDA margin target of 20-25% by FY28 (Q2 FY26 call) - not repeated in H2/FY26 call, replaced by a lower 11-13% PAT-margin guide without reconciliation"
+  - "Karnika standalone revenue target of >Rs 300 crores in 2-3 years (Q2 FY26 call) - not repeated in H2/FY26 call"
+timeline_slippages:
+  - "Kidcity 75+ counters 'by end of FY26' (promised Q2 FY26 call) - delivered 55+ as of H2/FY26 call (post fiscal year-end), no revised date given"
+  - "Quarterly reporting transition promised to start with the Dec-25 quarter - slipped to a combined H2/FY26 call instead"
+  - "US export order 'in the pipeline' - no timeline ever given across either call, effectively indefinite slippage"

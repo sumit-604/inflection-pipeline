@@ -1,0 +1,55 @@
+stage: B03-ardeep
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating absent"
+  - "presentation absent"
+  - "sector row misclassified (phase 3) - company is apparel/textile kidswear, not pharma"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT 23.0% FY25 (Rs.414.27L/Rs.1,803.04L) and -59.7% FY24 (Rs.-602.78L/Rs.1,010.49L); CFO/EBITDA 13.9% FY25, -31.3% FY24; FCF Rs.66.67L FY25, Rs.-1,035.19L FY24 (Cash Flow Statement p.70). Driver: trade receivables +45.1% YoY outpacing revenue +35.6% (Note 17 p.82), partially offset by trade payables stretching +Rs.770.19L incl. MSME dues +266% (Note 8 p.80). Cash collapsed 90.5% (Note 18 p.83) while Rs.885.36L was diverted to an unnamed inter-corporate loan (Note 19 p.83) and Rs.866.32L to a new securities book (Note 12 p.80/83), and short-term borrowings simultaneously rose Rs.863.20L net (Cash Flow Statement p.70) with the short-term banking base almost entirely restructured (HDFC CC -73.8%, Citi CC -98.0%, new HSBC facility 99% utilised, Note 31 p.87)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Board 66.7% Mundhra-family (4 of 6 directors); promoter-director remuneration equalised to a uniform Rs.96.00L each (+2.8% to +9.1%, Note 26 p.84/Note 33 p.89) directly contradicting Board's Report Annexure III's statement of 'no increase in managerial remuneration' (p.46); Board's Report Item 22 (p.30) states no RPTs with potential conflict, directly contradicted by Note 33's disclosed 13.3% of revenue and 86.3% of rent to promoter/family counterparties; internal auditor (Ajay Mundhra & Associates, fee +300% YoY) and Company Secretary (Muskan Mundhra) share the promoter surname; Secretarial Auditor's registered email (poonammundhra@gmail.com, pp.20/48-54) matches a named promoter-group shareholder 'Poonam Mundhra' (Note 3F p.78), requiring clarification. Promoter shareholding itself is stable 73.38%, unpledged, no selling (full promoter verdict deferred to B08)."}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Red Flag", p4: "Red Flag", p5: "Red Flag", p6: "Red Flag", p7_best_fit: "GARP - Watchlist"}
+overall_quality: 4
+quality_components: {governance: 3, accounting: 4, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: reviewer would not stop (clean audit, no fraud/default/going-concern) but would question the absence of any KAM around the unnamed Note 19 loan and the new securities book."
+  - "Phase 2: reviewer would pause to demand direct answers on the unnamed Note 19 counterparty and RPT/rent concentration before sizing a position."
+  - "Phase 3: reviewer would have strong reason to pause - two consecutive years of CFO/PAT well below 0.7x (negative in FY24), FCF near-zero-to-negative both years, partly funded by MSME payables stretching."
+  - "Phase 4: reviewer would flag that the report's missing-risk pattern maps precisely onto its own governance/cash soft spots."
+  - "Phase 5: reviewer would seek direct clarification on Secretarial Auditor and internal auditor independence and the Annexure III remuneration-disclosure contradiction before relying on governance representations at face value."
+  - "Phase 6: reviewer would treat the Board's Report RPT-clean claim (Item 22) as a material, specific, falsifiable misstatement directly contradicted by Note 33 of the same filing."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Unnamed inter-corporate loan / counterparty concentration risk (Rs.885.36L)", evidence: "Note 19 p.83; CARO Annexure A clause iii p.61 - absent from MD&A/Board's Report risk language"}
+  - {risk: "Cash-conversion / working-capital risk (CFO/PAT 23.0% FY25, -59.7% FY24)", evidence: "Cash Flow Statement p.70 - MD&A Financial Overview p.40 discusses only revenue/EBITDA/PAT/EPS growth, never cash flow"}
+  - {risk: "RPT concentration and pricing risk (13.3% revenue, 86.3% rent to promoter/family counterparties)", evidence: "Note 33 p.88-89 - not disclosed as risk; Board's Report Item 22 p.30 asserts the opposite"}
+  - {risk: "Bank-facility concentration/covenant risk (near-total FY25 restructuring of short-term banking base)", evidence: "Note 31 p.87 (HDFC CC -73.8%, Citi CC -98.0%, new HSBC facility 99% utilised) - not discussed anywhere as a risk or even as a factual event"}
+  - {risk: "Investment/treasury market risk on the new Rs.866.32L securities/derivatives/speculation book", evidence: "Note 12 p.80/83, Note 22 p.83 (Speculation Profit, Profit from Derivatives line items) - not disclosed as a risk factor"}
+  - {risk: "Company-specific export-tariff exposure quantification", evidence: "MD&A p.38 discusses US 50% tariff threat at industry level only; Karnika's own 6.1%-of-revenue export exposure and US-bound share never quantified (Note 21 p.83)"}
+guidance_table:
+  - {claim: "Leverage growth capital to accelerate expansion, product quality, operational efficiency, market reach", number: "NOT FOUND", timeframe: "NOT FOUND", credibility: "Not assessable - too generic to verify against delivery (MD&A Outlook p.41)"}
+  - {claim: "Exports to the Middle East target the growing demand of the Indian diaspora", number: "NOT FOUND", timeframe: "NOT FOUND", credibility: "Low - export revenue mix declined 7.66% to 6.12% of total revenue in the same year this claim was made (Chairman's letter p.4 vs Note 21 p.83)"}
+  - {claim: "India's textile exports targeted to reach Rs.9 lakh crore", number: "Rs.9 lakh crore", timeframe: "2030", credibility: "Industry/government target, not a Karnika-specific commitment (MD&A p.4) - not assessable as company guidance"}
+monitorables:
+  - {metric: "Note 19 inter-corporate loan counterparty identity/recovery", threshold: "Named or not; any overdue/rollover status", where: "Next AR equivalent of Note 19, CARO clause iii", why: "Currently the single largest unresolved disclosure gap in the Company's filings"}
+  - {metric: "CFO/PAT ratio", threshold: "<0.7x sustained = concern", where: "Next AR Cash Flow Statement", why: "Two consecutive weak/negative years to date; a third would confirm a structural pattern"}
+  - {metric: "HSBC Bank CC utilisation", threshold: "Currently 99% of Rs.3,400L limit", where: "Next AR equivalent of Note 31", why: "Little headroom left on the largest single facility; further draw or covenant stress would be a hard signal"}
+  - {metric: "Related-party revenue % of total revenue", threshold: "Currently 13.3%; watch trend and arm's-length benchmarking disclosure", where: "Next AR equivalent of Note 33", why: "Tests whether the Board's Report RPT-clean claim is corrected and whether concentration is unwinding"}
+  - {metric: "Receivables days / >6 month ageing %", threshold: "Currently ~158 days, 6.0% >6m", where: "Next AR equivalent of Note 17", why: "Tests whether the FY25 deterioration continues or reverses"}
+  - {metric: "Director remuneration vs Annexure III disclosure consistency", threshold: "Any repeat contradiction", where: "Next AR Annexure III vs Notes 26/33", why: "Tests whether the FY25 discrepancy was a one-off or recurring disclosure-quality issue"}
+  - {metric: "Post-bonus (4:1, 1 Sept 2025) share count / EPS restatement", threshold: "5x share count increase", where: "Company filings/exchange disclosures", why: "Directly affects forward per-share valuation work at Stage 11; FY25 EPS of Rs.14.54 is pre-bonus"}
+  - {metric: "Secretarial Auditor / Internal Auditor independence clarification", threshold: "Direct management/professional confirmation", where: "Investor queries, next AR", why: "Currently an open, unresolved identity/independence question (Phase 5D)"}
+strengths_top3:
+  - "Clean, unqualified audit opinion with no fraud, no default, no going-concern flag, and mechanically sound core operating notes (inventory, PPE, deferred tax, EPS, borrowings) across two audited years (Auditor's Report p.55, CARO Annexure A/B)"
+  - "Genuine operating growth (revenue +35.6%, EBITDA margin 14.99% to 16.88%) with improving inventory efficiency (inventory +5.1% vs revenue +35.6%, Note 16 p.82)"
+  - "Stable, unpledged, unchanged 73.38% promoter shareholding with no selling, and a de-risking leverage profile (D/E 0.98 to 0.85, interest coverage 3.94x to 6.67x, Note 37xvii p.96)"
+red_flags_top3:
+  - "Weak cash conversion in both audited years: CFO/PAT 23.0% FY25 and -59.7% FY24; FCF Rs.66.67L FY25 and Rs.-1,035.19L FY24, driven by receivables outpacing revenue and partially propped up by MSME payables stretching (+266% YoY) (Cash Flow Statement p.70, Note 17 p.82, Note 8 p.80)"
+  - "Related-party concentration and governance-identity overlaps across every non-statutory assurance role: 13.3% of revenue and 86.3% of rent to promoter/family counterparties (Note 33 p.88-89), contradicted-by-Board's-Report RPT-clean claim (Item 22 p.30), Mundhra-surnamed internal auditor and Company Secretary, and an unresolved Secretarial Auditor email/promoter-name overlap (p.78 vs pp.20/48-54)"
+  - "Unnamed Rs.885.36L inter-corporate loan and a new, currently underwater Rs.866.32L speculative securities book, both funded from post-IPO cash that collapsed 90.5%, alongside an unexplained near-total restructuring of short-term banking relationships (Note 19 p.83, Note 12 p.80/83, Note 31 p.87)"
+best_fit_strategy: "GARP (Watchlist)"
+one_line_verdict: "GARP watchlist: fast, related-party-heavy growth not yet converting to cash."

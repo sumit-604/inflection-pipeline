@@ -1,0 +1,25 @@
+stage: B12d
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported:
+  - "CANTABIL (Q4/FY26, May 19 2026 call): Claim 7 cites 'Q4 FY26 revenue +36% YoY' at p.3 of Cantabil's own call; Cantabil's transcript actually shows +15% YoY at that page. The 36% figure belongs to MONTECARLO's Q4 FY26 revenue growth, not Cantabil's — apparent peer data mix-up."
+  - "MONTECARLO (Q4/FY26, May 19 2026 call): Claim 5 cites the Zara/Shein-as-competitors quote at 'p.18-19'; the transcript is only 16 pages long, so this page range does not exist. The quote is real and accurate but is actually on p.14."
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Claim 7 / B06-peers.yaml contradicted[1]; peer+quarter: CANTABIL Q4/FY26 (May 19 2026)", claimed: "Cantabil Q4 FY26 revenue +36% YoY, cited to Cantabil's own May 2026 call p.3", source_truth: "Cantabil's May 2026 call p.3 states Q4 FY26 revenue grew 15% YoY (INR253.5cr vs INR219.8cr); 36% is Monte Carlo's own Q4 FY26 revenue growth figure from the same call cycle", note: "Peer data mix-up; underlying CONTRADICTED verdict on Claim 7 survives on Cantabil's other genuine anchors (SSG 6.3%, GST quote) plus Monte Carlo's real discount data, but this specific figure should be struck/corrected"}
+  - {severity: "MAJOR", location: "06-peers.md Claim 5; peer+quarter: MONTECARLO Q4/FY26 (May 19 2026)", claimed: "Zara/Shein competitor quote cited at p.18-19", source_truth: "Transcript is 16 pages total; quote is actually on p.14", note: "Cited page range does not exist in the source document; content itself is accurate once located, but the anchor as written is unfindable"}
+  - {severity: "MINOR", location: "06-peers.md Claim 2; peer+quarter: CANTABIL Q4/FY26 (May 19 2026)", claimed: "CFO quote 'some input material has seen some hike' cited at p.10", source_truth: "Actual location p.5 (Tarun Sharma Q&A)", note: "Quote verbatim-accurate, page wrong"}
+  - {severity: "MINOR", location: "06-peers.md Claim 6; peer+quarter: CANTABIL Q4/FY26 (May 19 2026)", claimed: "Gross margin 60.4% FY26 vs 56.2% FY24 bundled under p.3", source_truth: "Actual location p.9 (Swapnil Gupta Q&A); EBITDA margin figure at p.3 is correctly anchored", note: "Two distinct data points from different pages bundled under one citation"}
+  - {severity: "MINOR", location: "06-peers.md Part 2A / Claim 7; peer+quarter: CANTABIL Q3 FY26 (Feb 6 2026)", claimed: "GST-momentum quote cited at p.10", source_truth: "Actual location p.6 (Harshit Q&A)", note: "Quote verbatim-accurate, page wrong"}
+  - {severity: "MINOR", location: "06-peers.md Claim 3; peer+quarter: MONTECARLO Q2 FY26 (Nov 13 2025)", claimed: "'We dropped that idea' quote cited at p.10", source_truth: "Actual location p.9 (Raman KV Q&A)", note: "Quote verbatim-accurate, page wrong"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+peer_utilisation: 75          # substantive_confirmed 9 of 12 provided; 2 MAJOR are citation errors on otherwise-substantive uses (verdicts survive)
+acceptance_rate: 83

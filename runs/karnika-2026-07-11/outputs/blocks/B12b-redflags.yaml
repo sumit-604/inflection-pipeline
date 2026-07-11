@@ -1,0 +1,27 @@
+stage: B12b
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 20
+caught: 13
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "FY26/Q4 PAT inflated by a management-confirmed one-time ~INR9cr other-income securities gain (IT investment bought Jan, sold Mar); undercuts B05's 'genuinely strong PAT +57%/Q4 +48.6%' delivery claim; caught for FY25 in B02/B03/B04 but absent from the concall analysis that should own the FY26 disclosure", anchor: "May 2026 call p.4 (Deepesh: other income one-time), p.7 (deflected on treasury-vs-capex), p.12 (Rishabh Bora: other income INR9cr from IT investment)"}
+  - {severity: "MINOR", item: "Gross-margin figures internally inconsistent within one May exchange: 'over 150% on unit economics' vs Kidcity '28-32%'", anchor: "May 2026 call p.5-6"}
+  - {severity: "MINOR", item: "Nov intra-call capacity-utilisation inconsistency: CFO 80-85% vs MD 90%", anchor: "Nov 2025 call p.6, p.13"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur with C, lean low-end: B05's 'genuinely strong absolute delivery' is overstated because FY26/Q4 PAT is materially inflated by a one-time ~INR9cr other-income gain B05 did not flag"
+findings:
+  - {severity: "MAJOR", location: "B05 concall (all sections)", claim: "FY26 PAT +57% / Q4 PAT +48.6% credited as genuinely strong real delivery", issue: "Missed management-confirmed one-time ~INR9cr other-income gain inflating those figures", anchor: "May p.4, p.7, p.12"}
+  - {severity: "MINOR", location: "B05 2C/consistency", claim: "intra-call inconsistency generally noted", issue: "Nov CFO projection garble (contradictory Kidcity figures; FY26 repeated for FY28) not surfaced", anchor: "Nov p.3, p.11"}
+  - {severity: "MINOR", location: "B05 (not surfaced)", claim: "n/a", issue: "Gross-margin 150% vs 28-32% inconsistency", anchor: "May p.5-6"}
+  - {severity: "MINOR", location: "B05 trigger #6", claim: "property integration carried as trigger", issue: "not framed as same-call contradiction of asset-light claim", anchor: "May p.3, p.7"}
+  - {severity: "MINOR", location: "B05/B06 (not surfaced)", claim: "n/a", issue: "concall fundraise/warrant-promoter dilution evasiveness not noted (owned by B08)", anchor: "May p.4, p.8"}
+  - {severity: "MINOR", location: "B05 (not surfaced)", claim: "n/a", issue: "Nov capacity-util inconsistency 80-85% vs 90%", anchor: "Nov p.6, p.13"}
+critical_count: 0
+major_count: 1
+minor_count: 5
+redflag_coverage: 65          # fully caught 13/20; +4 partially caught => ~85% including partial credit
+acceptance_rate: 65

@@ -1,0 +1,53 @@
+stage: B07-emoat
+company: "KARNIKA"
+run_date: "2026-07-11"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating: absent (no rating PDF provided, per B01)"
+  - "presentation: NOT PROVIDED for this run"
+  - "sector_cap_row 'Pharma/CDMO' in manifest is a known mislabel for Karnika/peers (apparel/textile, kidswear); flagged for phase 3, no impact on this scan"
+  - "B05 promise-delivery record not yet available at this pipeline stage; F2 derived directly from the two concall transcripts (Nov 2025 vs May 2026) rather than an injected B05 block"
+  - "manifest's concalls_available=false is a known collector mislabel; both transcripts used are genuine earnings calls"
+  - "no company-specific PLI Scheme enrolment or amount disclosed; R1 scored on generic sector-wide tailwind language only"
+  - "no capex programme table with named projects/commissioning dates exists in the provided documents; 2A reports only the FY24-25 actual capex figure from the cash flow statement"
+flags:
+  - type: FLAG-EMOAT-EXECUTION
+    reason: "F2 promise-vs-delivery check (derived directly from the two transcripts) shows 1 hit against 3 misses: combined FY26 revenue guide of ~Rs24,500L was met (Rs24,800L actual), but Kidcity's own FY26 revenue guide of Rs30cr was missed by ~17-20% (Rs24-25cr actual), the 75+ Kidcity counter target was missed by ~27% (55+ actual), and the US export order remained stalled across both calls. FY26 consolidated EBITDA margin also compressed to 15% from H1 FY26's 19.67%."
+  - type: FLAG-EMOAT-CONCENTRATION
+    reason: "The AR's '>90% repeat client' framing (C1) is undercut by the May 2026 call disclosure that the top 10 commission agents/wholesalers alone contribute 60-65% of revenue; repeat relationships run through intermediary agents, not direct embedded end-brand integration."
+  - type: FLAG-EMOAT-CASH
+    reason: "Cash & equivalents fell from Rs1,153.41L to Rs110.03L (FY24 to FY25) while short-term borrowings rose from Rs5,024.07L to Rs5,887.27L over the same period; G1 (war chest) and G2 (WC trajectory) both score zero, with G2 showing an outright contradiction between AR receivables data (worsening) and management's concall claim (improving)."
+em_score: 18.3
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "mixed", time_to_materialise: "already partial; further gains uncertain, FY26 margin compressed"}
+  - {id: "E1", name: "Geographic first-mover (Kidcity Tier 2/3 retail)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, 12-24m for further scale"}
+  - {id: "H1", name: "Industry consolidation beneficiary (bolt-on acquisition)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H2", name: "Strategic partnership (Kidcity)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing, already consolidated"}
+evidence_mix: {documented: 14, claim: 16, inference: 6}
+completionist_recount: "documented recount performed: 11 documented items across 7 categories (A3, C2, D2, E1, F2, H1, H2); nearly all trace back to one event (the Kidcity acquisition and its first quarter of consolidation), not broad-based moat formation."
+catalysts_12m:
+  - {catalyst: "Kidcity store count reaching the missed 75+ counter target (55+ actual as of May 2026)", window: "12m", evidence_type: "documented", anchor: "Nov 2025 call p.2; May 2026 call p.5"}
+  - {catalyst: "Kidcity FY27 revenue run-rate vs guided 3x growth (~Rs75cr implied off Rs24-25cr FY26 base)", window: "12-24m", evidence_type: "concall", anchor: "May 2026 call p.7"}
+  - {catalyst: "US export order resolution (stalled since Nov 2025, still pipeline-only in May 2026)", window: "12m, indeterminate", evidence_type: "concall", anchor: "Nov 2025 call p.13; May 2026 call p.9"}
+  - {catalyst: "Consolidated EBITDA margin recovery toward management's stated 20-25% ceiling (15% actual FY26 vs 19.67% H1 FY26)", window: "12-24m", evidence_type: "documented", anchor: "Nov 2025 call p.7-8; May 2026 call p.3"}
+capex_embedded_growth_pct: 55.6
+optionality_register:
+  - {optionality: "Fabric-trading segment as a customer alternative-options play", converting_evidence: "Fabric-segment revenue disclosed as a separate P&L line", first_appears: "Quarterly results filing", window: "12-24m"}
+  - {optionality: "Europe export expansion via a Russia channel partner", converting_evidence: "Signed distribution/export agreement or first Europe order disclosed", first_appears: "Concall/exchange filing", window: "12-24m"}
+  - {optionality: "US export order (stalled)", converting_evidence: "Order confirmation or shipment disclosed", first_appears: "Concall/exchange filing", window: "indeterminate, watch only"}
+  - {optionality: "Middle East retail chain targeting (Landmark Group, Lulu)", converting_evidence: "Signed supply agreement with a named chain", first_appears: "Concall/exchange filing", window: "12-24m"}
+  - {optionality: "Talent upgrade from marquee/global fashion retail firms", converting_evidence: "Named senior hire with disclosed role/background", first_appears: "Exchange filing / AR KMP note", window: "12-24m"}
+  - {optionality: "'One of a kind' technology development (vaguely referenced)", converting_evidence: "Specific technology/system named with capex or vendor disclosed", first_appears: "Concall / AR MD&A", window: "12m per management's own timeline"}
+  - {optionality: "Property acquisition for integrated in-house manufacturing", converting_evidence: "Signed purchase agreement with amount and location disclosed", first_appears: "Exchange filing / AR capex note", window: "12-24m"}
+  - {optionality: "Kidcity scale-up to Rs200-250cr revenue by FY28-29", converting_evidence: "Quarterly Kidcity revenue tracking toward the guided trajectory", first_appears: "Quarterly results", window: "24-36m, treat with material skepticism given the FY26 sub-target miss already documented"}
+  - {optionality: "Zara/H&M/DMart organised-sector corporate supply relationships", converting_evidence: "Named, signed supply agreement with any of these retailers", first_appears: "Concall/exchange filing", window: "12-24m"}
+  - {optionality: "Company-specific PLI Scheme enrolment", converting_evidence: "Confirmed enrolment with disclosed incentive amount", first_appears: "AR/exchange filing", window: "indeterminate; NOT FOUND whether even applied"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Backward AVERAGE (deal-breaker capped from raw GOOD+) plus MODEST forward moat evidence (18.3/80), dominated by an unproven Kidcity integration already showing a first-year delivery shortfall, keeps the combined call at AVERAGE rather than HIGH POTENTIAL."
+top_moat_risks:
+  - "Kidcity integration execution risk: FY26 revenue guide missed by ~17-20% (Rs24-25cr vs Rs30cr) and store-count target missed by ~27% (55 vs 75+ counters)"
+  - "FY26 consolidated EBITDA margin compressed to 15% from H1's 19.67%, management attributes part of this to Kidcity consolidation transitional costs"
+  - "US export order stalled across two consecutive concalls with no delivery"
+  - "Customer relationships are agent-intermediated (top 10 commission agents = 60-65% of revenue), not directly embedded with end brands, undercutting the C1 'ecosystem' claim"

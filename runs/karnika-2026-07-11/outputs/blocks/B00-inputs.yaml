@@ -1,0 +1,30 @@
+stage: B00-inputs
+company: KARNIKA
+run_date: 2026-07-11
+model: orchestrator
+status: complete
+run_type: full
+inventory:
+  annual_report: 1        # Annual_Report_2024.pdf (AR FY2024-25)
+  results: 2              # Jun-2026 quarter, Mar-2026 (FY26 results)
+  rating: 0               # absent
+  concalls: 2             # Concall_Nov_2025, Concall_May_2026 (FY26 Q4 call)
+  peer_concalls: 12       # CANTABIL x4, MONTECARLO x4, SPAL x4
+  screening: 24           # screener-*(Karnika, subject) + KITEX/MONTECARLO/SPAL peer CSVs
+  presentation: 0         # absent
+  other: 0
+input_gaps:
+  - "rating: absent (no rating/ folder). Stage 10 marks rating_wc_quote unresolved; Pillar 2 defaults conservative in phase 3."
+  - "presentation: absent (no presentation/ folder). Stage 4 runs from AR + results commentary."
+  - "concalls: manifest sets concalls_available=false, BUT 2 genuine Karnika FY26 earnings-call transcripts are present (Nov-2025, May-2026/Q4-FY26). Orchestrator decision: RUN IN NORMAL CONCALL MODE using both transcripts; the manifest flag is a collect_to_repo v3 mislabel. Operator may override to NO-CONCALL MODE at the gate."
+  - "sector_cap_row 'Pharma / CDMO' in manifest is almost certainly wrong: Karnika CIN (L17299 = textiles/apparel) and all provided peers (CANTABIL, MONTECARLO, KITEX, SPAL) are apparel/garment names. Flagged for phase-3 (stage 11) sector-cap verification. Does not affect phase 1."
+no_concall_mode: false
+concall_map:
+  - file: Concall_Nov_2025_Transcript.pdf
+    quarter: "Q2 FY26 (Sep 2025 quarter), call Nov 2025"
+  - file: Concall_May_2026_Transcript.pdf
+    quarter: "Q4 FY26 / FY26 full year (Mar 2026), call 18 May 2026"
+subject_screening_prefix: "screener-"    # Karnika = subject; KITEX/MONTECARLO/SPAL = peers
+company_memory: none        # companies/KARNIKA.md does not exist
+prior_run_context: none     # run_type=full; no prior KARNIKA run folder
+flags: []

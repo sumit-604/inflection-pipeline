@@ -131,6 +131,21 @@ scoring table, all 21 rows, adjusted total.
 Classification: ≥40 MOAT EXPANSION UNDERWAY | 25-39 MOAT STRENGTHENING |
 12-24 MODEST MOAT DEVELOPMENT | <12 NO MEANINGFUL EMERGING MOAT.
 
+## OPTIONALITY REGISTER
+A table of forward advantages that scored 0 or rest only on 🎙️/🔍
+evidence. Each row: the optionality in one line; the specific
+documentation that would convert it to 📄 (grant with revenue linkage,
+signed contract, committed capex, approval, disclosed metric); where that
+evidence would first appear (AR note, exchange filing, concall, order
+announcement); realistic conversion window.
+
+| Optionality (one line) | Converting 📄 evidence | Where it first appears | Conversion window |
+| --- | --- | --- | --- |
+
+Carried in the B07 block as optionality_register[]. Synthesis merges
+register items into the monitoring checklist. Registered options are
+watched, never scored.
+
 ## SECTION 6: TIMELINE, RISKS & COMBINED ASSESSMENT
 6A moat evolution timeline (next 12m, 12-24m, 24-36m, 3-5yr) with the
 key milestone to watch in each window. 6B risks to each top-scoring
@@ -166,6 +181,8 @@ completionist_recount: ""      # the 📄 recount line
 catalysts_12m:                 # feeds Pillar 3 catalyst proximity
   - {catalyst: "", window: "", evidence_type: "", anchor: ""}
 capex_embedded_growth_pct: 0   # from 2C
+optionality_register:          # scored 0 or 🎙️/🔍-only; watched, never scored
+  - {optionality: "", converting_evidence: "", first_appears: "", window: ""}
 combined_assessment: ""        # from 6D
 combined_reasoning: ""         # one line
 top_moat_risks: []

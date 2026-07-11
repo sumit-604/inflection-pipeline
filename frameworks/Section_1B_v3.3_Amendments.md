@@ -127,6 +127,24 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 
 ---
 
+## AMENDMENT 4 (v3.4) — PILLAR 3 DECOUPLED
+
+**Change:** Pillar 3 splits into two additive components, combined hard cap **+6x** (the existing Pillar 3 maximum):
+
+**3a Growth Visibility Premium** — paid on documented growth machinery, independent of EM score. Qualifying evidence (📄 documented tier only, never claims):
+- capex-embedded growth ≥15% (committed capex × historical fixed-asset turnover ÷ current revenue)
+- order book ≥1.0x revenue or book-to-bill ≥1.2x
+- SOM-implied revenue CAGR ≥20% with the capacity cross-check passing
+- management delivery grade A or B
+
+Award: **+2x if any two qualify; +3x if three or more qualify AND delivery grade is A or B; +0x otherwise.** Grade C caps 3a at +2x; grade D pays +0x.
+
+**3b Moat Formation Premium** — the existing EM-gated table, unchanged, applied as before.
+
+3a prices documented growth; 3b prices forming moats. A company may earn either without the other. Combined 3a+3b never exceeds +6x.
+
+---
+
 ## APPENDIX A — REJECTED AMENDMENT (RECORDED FOR AUDIT TRAIL)
 
 **Proposal (rejected 02-Jul-2026):** Scale Growth and Strategic Premiums by the Cash Multiplier (or cap premiums at 50% of quality-adjusted base when multiplier <1.0x), on the grounds that a structurally cash-negative business can currently earn premiums exceeding its quality base.
@@ -143,3 +161,4 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 |---|---|---|
 | 3.2 | Jun 2026 | Prior spec (Notion: Valuation Framework v3.2) |
 | 3.3 | 02-Jul-2026 | Amendments 1-8 above. 20x rule deleted; Hurdle Ratio replaces STOP rule and 1.3x gap check; UA ordering codified as min(Raw × 1.25, Cap); ROCE single-credit rule (FTTCP v1.2); continuous Pillar 1 formula; proportional ±7.5% range; lender Asset-Quality Multiplier carve-out; six sector cap rows added. Premium-scaling proposal rejected (Appendix A). |
+| 3.4 | 11-Jul-2026 | Amendment 4 (v3.4): Pillar 3 decoupled into 3a Growth Visibility Premium (documented growth machinery, independent of EM score) and 3b Moat Formation Premium (existing EM-gated table). Combined 3a+3b hard-capped at +6x. |

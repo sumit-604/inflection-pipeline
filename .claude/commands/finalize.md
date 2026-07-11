@@ -131,11 +131,26 @@ phase 3), then:
    This file is a payload, not an action. Do not write to Notion from this
    session; the operator executes the save in the project.
 
-8. COMMIT all outputs with message "phase 3 (finalize): <ticker> <date>"
-   and report to the user: the recommendation verdict line, the valuation
-   decision, entry range, flags active, the full confidence delta overall,
-   the devil's-advocate overall verdict, and the paths to the four final
-   deliverables plus outputs/final/notion-payload.md.
+8. COMPANY MEMORY. Write or update companies/<TICKER>.md (create the
+   companies/ folder and the file if absent; see companies/_template.md for
+   the schema). Carry the existing file's content forward and update it from
+   this run: the one-line thesis (from B14 / synthesis), the Decision Status
+   and entry zone as of this run with the run date, every operator ruling
+   with its date (from outputs/final/fttcp-deliberation.md, appended and
+   never deleted), the active tripwires (thesis-broken triggers and
+   falsification metrics), the optionality register summary (from
+   B07.optionality_register), and a link to this run folder added to the
+   run-folder list. This is the durable per-company memory layer;
+   /run-pipeline stage 0 and /fttcp read it on the next run. It is memory,
+   never a source: it records what prior runs concluded, it does not anchor
+   new figures.
+
+9. COMMIT all outputs and the updated companies/<TICKER>.md with message
+   "phase 3 (finalize): <ticker> <date>" and report to the user: the
+   recommendation verdict line, the valuation decision, entry range, flags
+   active, the full confidence delta overall, the devil's-advocate overall
+   verdict, and the paths to the four final deliverables plus
+   outputs/final/notion-payload.md.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,

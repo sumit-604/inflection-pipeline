@@ -34,12 +34,28 @@ Do not upgrade a stage's model without editing its agent file.
 - "anchored" = every number followed by (source, page/note)
 - "flag" = surfaced prominently in the verdict, decision stays human
 
+## MEMORY
+Every session reads LESSONS.md at start. Every /run-pipeline, /fttcp, and
+/finalize session appends one dated entry at close: what broke or dragged
+this run, in one line each; write 'clean run' if nothing. Never delete
+entries; promotion to a prompt file gets noted under PROMOTED TO LAW.
+
+Per-company memory lives in companies/<TICKER>.md, written or updated at
+/finalize close and read as COMPANY MEMORY by /run-pipeline stage 0 and by
+/fttcp. It carries the one-line thesis, Decision Status and entry zone,
+operator rulings with dates, active tripwires, the optionality register
+summary, and links to every run folder for the ticker. It is memory to
+weigh, never anchored evidence.
+
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
 - frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits)
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
+- companies/<TICKER>.md   durable per-company memory, written at /finalize,
+                 read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
+- LESSONS.md     operational memory, read at session start, appended at close
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
 

@@ -36,7 +36,34 @@ catalysts_12m:
   - {catalyst: "Q1 FY27 CDMO double-digit volume print", window: "45-60 day visibility from May 2026", evidence_type: "documented (near-term revenue book)", anchor: "Q4 FY26 call (May 18, 2026)"}
   - {catalyst: "Domestic Oncology and steroid CDMO lines go-live", window: "FY27", evidence_type: "claim", anchor: "Investor Presentation slide 20"}
   - {catalyst: "FY27 capex deployment (INR300cr guided) vs FY26's deposits-not-capex pattern", window: "FY27", evidence_type: "documented base / claim on FY27 execution", anchor: "AR cash flow statement p.299 + Q4 FY26 call"}
-capex_embedded_growth_pct: 20.6
+capex_embedded_growth_pct: 20.6   # guided FY27 capex Rs 300cr x FAT 3.0; contracted capital commitments basis (Rs 804.45cr, AR) implies ~55%
+optionality_register:             # scored 0 or claim/inference-only; watched, never scored (updated stage 7 spec)
+  - {optionality: "R&D pipeline monetization: 14 granted patents, 129 filed, 8 first-in-India-&-world triple-layer products, Triple Hair/Caregen in-licensed exclusivities - real IP, zero disclosed revenue or royalty", converting_evidence: "a patented/first-in-world product with disclosed revenue contribution, OR out-licensing royalty income disclosed", first_appears: "AR revenue/segment note; licensing-deal exchange filing", window: "12-36m"}
+  - {optionality: "Schedule M share-shift (management retreated to two consecutive non-answers)", converting_evidence: "quantified AVD wins / named customer additions", first_appears: "concall Q&A; AR MD&A", window: "12-24m"}
+  - {optionality: "API regulated-market (EU) upgrade - CEPs filed, facility audit pending", converting_evidence: "EU API facility approval + higher-realization API revenue booked", first_appears: "exchange filing; concall", window: "12-24m"}
+  - {optionality: "Oncology + steroid CDMO lines (announced FY27)", converting_evidence: "line go-live + disclosed order flow", first_appears: "concall; presentation", window: "FY27"}
+  - {optionality: "8-10 global CDMO customers vs 1 today (aspiration)", converting_evidence: "signed contract(s) with named new customers", first_appears: "exchange filing; concall", window: "2-3yr"}
+  - {optionality: "Zambia local-plant commercialization (announced, plant not started)", converting_evidence: "commissioning + first local-market revenue", first_appears: "exchange filing; concall", window: "3-5yr (FY29)"}
+  - {optionality: "GLP-1 (semaglutide-class) entry (concept, 'still evaluating')", converting_evidence: "committed capex or product filing", first_appears: "capex disclosure; concall", window: "undetermined"}
+pillar3_amendment4:               # v3.4 decoupled Pillar 3 determination (3a + 3b + 3c, cap +6x)
+  scale_3a_growth_visibility: 0   # only test 1 (capex-embedded) qualifies of 4; grade C; +0x (need >=2 to qualify)
+  scale_3b_moat_formation: 1      # EM 26.3 -> 25-29 band -> +1x
+  scale_3c_duration: 0            # Duration Premium (+1x >=2.5yr / +2x >=4yr forward revenue visibility, doc only)
+  combined: 1                     # 3a+3b+3c, cap +6x not binding; equals old undecoupled Pillar 3 (+1x); destination PE unchanged ~23x
+  tests_3a: {capex_embedded_ge15: true, order_book_ge1x_or_btb_ge1.2: false, som_cagr_ge20_capacity_pass: false, delivery_grade_A_or_B: false}
+  three_c_detail:
+    order_book_ge_2.5x_revenue: false   # no executable order book disclosed anywhere
+    contracted_future_revenue_rs_cr: 2300   # EU EUR200m (~Rs1880cr, to Dec 2032) + Zambia USD50m (~Rs420cr, FY27-28)
+    contracted_over_annual_revenue_x: 0.53   # 2300/4359 - far below the 2.5x (+1x) and 4x (+2x) thresholds
+    documented_streams:
+      - "EU CDMO: fixed-price exclusive oral-liquid supply, extends till December 2032, ~EUR 35m/yr from FY28, EUR 200m total (AR + ICRA p.1). Stated tenure, but ~7.6% of revenue."
+      - "Zambia: government procurement commitment USD 25m/yr for FY27-28 (2 years), USD 50m total (AR). Stated tenure, ~4.8% of revenue."
+    verdict: 0   # +0x. Streams are 📄 with stated tenure but cover only ~12% of one year's revenue; domestic CDMO base (80%) has relationship length only, no stated contract tenure (excluded). Both branches fail.
+optionality_register_3c_nearmiss:   # near-miss duration items; watched, convert on the stated disclosure
+  - {optionality: "EU contract documented and long-tenored but only ~7.6% of revenue", converting_evidence: "additional signed EU/regulated contracts pushing cumulative contracted revenue toward >=2.5x annual revenue, or a disclosed % of revenue under multi-year contracts at that level", first_appears: "exchange filing; AR", window: "12-36m"}
+  - {optionality: "Domestic CDMO base (80% of revenue): multi-year relationships, no stated contract tenure", converting_evidence: "AR/DRHP-style disclosure of % of revenue under framework/master supply agreements WITH stated contractual tenure (not relationship length)", first_appears: "AR MD&A / segment note", window: "next AR"}
+  - {optionality: "Zambia commitment stated but only 2 years (FY27-28), ~4.8% of revenue", converting_evidence: "signed multi-year (>=2.5yr) offtake for the Zambia local plant (FY29+) with stated tenure and value", first_appears: "exchange filing; concall", window: "24-36m"}
+  - {optionality: "Client-dedicated facility: none disclosed", converting_evidence: "disclosure of a client-dedicated / take-or-pay facility arrangement with stated tenure and minimum offtake", first_appears: "exchange filing; AR", window: "12-36m"}
 combined_assessment: "TURNAROUND"
 combined_reasoning: "Core AVERAGE (69/100, 1/12 moats, capped by the FY24 loss-year deal-breaker) meets forward STRENGTHENING (26.3/80, crossing the 25 threshold on AR-confirmed EU contract and Zambia JV evidence) - a genuine TURNAROUND setup, one band below the EXPANSION-tier threshold that would justify HIGH POTENTIAL."
 top_moat_risks:

@@ -1,0 +1,22 @@
+stage: B14-thesis
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 254, high: 286}
+position_size: "Zero (no position; re-engage on triggers)"
+position_size_override: ""
+avoid_triggers: ["Gate 0 AVERAGE", "Promoter CONCERN", "Hurdle STOP", "upside/downside 0.21x"]
+thesis_broken_if: "Any of: net WC days above 110-115 in Q1/Q2 FY27; Section 158BC tax demand crystallising or Akums Healthcare ICD (Rs 330.68 Cr, subsidiary net worth minus Rs 653.87 Cr) impairing; CDMO volume reverting to flat/low single digit; organic adjusted CFO/PAT below ~0.7x sustained. Any fired makes a fall into Rs 254-286 a WITHDRAWN zone, not an entry."
+entry_conjunction: "v3.4 rule stated in Section 7 verdict box: BUY/BUY-ON-DIPS only when BOTH price in Rs 254-286 zone AND latest quarterly checklist shows no thesis-broken trigger fired."
+monitoring_checklist:
+  - "CDMO segment volume growth sustains double digit WITH a stated driver (red: reverts to flat/low single digit)"
+  - "Net working capital days stay below ~105 (red: above 110-115 in Q1/Q2 FY27)"
+  - "Organic adjusted CFO/PAT (ex Rs 1,032 Cr advance) about 1.0x (red: below ~0.7x sustained)"
+  - "Idle Rs 1,650 Cr cash deployed at ROCE above cost (red: stays idle into FY27)"
+  - "Capacity utilisation rising 44% toward 55% (red: flat at ~44%)"
+  - "ETR at/below 25.17% and GAAP PAT led (red: ETR above 25.17% or non-GAAP metric repeated without reconciliation)"
+  - "Governance: Sec 158BC quantum, CARO clause (xi) clearance at 3 entities, Akums Healthcare ICD recoverability (red: demand crystallises or ICD impairs)"
+  - "EU Plant 2 first commercial dispatch FY28 and Rs 1,032 Cr advance converting to revenue (red: registration slippage or advance not converting)"
+one_line_thesis: "Avoid Akums at Rs 702: real but back-loaded CDMO transition priced at 42x against an earned ~23x; Hurdle STOP; re-engage Rs 254-286 only if no thesis-broken trigger has fired."

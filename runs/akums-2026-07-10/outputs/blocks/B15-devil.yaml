@@ -1,0 +1,21 @@
+stage: B15-devil
+company: "AKUMS"
+run_date: "2026-07-10"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "survives"
+  moat_durability: "survives"
+  management_trust: "survives"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Ex-cash ROCE 26-30% frames a high-quality business -> FAILS: rests on stripping Rs 1,654 cr idle cash (48% of capital base) that management has evaded deploying for 3 calls; reported 13.7% earns only 14.4x"
+  - "Earnings are trough (tax-shield gap), normalised EPS Rs 18.16 -> FAILS: 9% EPS uplift cannot offset a required 45% multiple de-rate; and 25.17% base ETR assumes an undisclosed loss-making-subsidiary turnaround"
+  - "Two documented contracted engines (EU to 2032, Zambia) + EU GMP + EUR 100m received -> FAILS: back-loaded FY28-29, unexecuted, zero commercial revenue, EU counterparty is a de facto single point of failure across revenue/cash/moat"
+  - "Number-one domestic CDMO, sector cap 38x, Schedule M tailwind -> FAILS: Section 1B is sole exit authority and earns 23x at its most generous; Hurdle needs the stock to roughly halve; Cohance contradicts the surge (early single digit)"
+  - "Blue-chip anchors + rising DII validate the price -> FAILS: Quadria (most informed holder) fully exited at 3x; CEO-CDMO resigned in 11 months; unnamed counterparty on 23.7% of revenue = informed distribution and asymmetry against a buyer"
+single_point_of_failure: "Unnamed European counterparty likely spans 23.7% of revenue (Rs 1,032 cr advance), the entire cash-quality story, and two moat legs (B2/H2); analysis never reconciled whether the Rs 1,032 cr advance and the EUR 100m EU advance are the same money - either reading is a flag."
+governance_underweight_note: "B08 carries the Section 158BC demand as a company-disclosed May 2026 assessment with entity splits (Rs 60.09cr Akums + Rs 73.66cr Akumentis + 4 subs = Rs 133.75cr), more real than the thesis's 'web-sourced unconfirmed' framing; likely crystallised after the AR reporting date, which is why the AR shows no demand."
+avoid_robust: true
+avoid_understated: true

@@ -1,13 +1,9 @@
 confidence_delta:
-  numerical_acceptance: 93      # B12a acceptance_rate
-  redflag_coverage: 67          # B12b caught (8) / independent flags found (12)
-  framework_adherence: 99       # B12c Gate 0 + Emerging Moat portion only (valuation half deferred to phase 3)
+  numerical_acceptance: 97.7    # B12a re-run against full source set (AR, results, rating)
+  redflag_coverage: 67          # B12b caught (8) / independent (12); unchanged (concalls unchanged)
+  framework_adherence: 97       # B12c both halves: 106 of 109 rules passed (gate0 46, emoat 39/40, valuation 21/23)
   peer_utilisation: 83          # B12d substantive_confirmed (10) / peers_provided (12)
-  overall: 67                   # min of the four available components
-framework_adherence_note: "Phase-1 value covers Gate 0 (46 rules) and Emerging Moat (40 rules) only; the valuation-adherence component (B11/B10) is PENDING phase 3 and will be recomputed by /finalize."
-interpretation: "overall 67 falls in the 60-74 band: PROCEED-family verdicts downgrade one level. Not forced REWORK (>=60); no B12a CRITICAL; no verifier acceptance_rate below 60. Weakest component is redflag_coverage 67 — verifier B independently surfaced two MAJOR gaps the concall stage under-weighted (European contract is fixed-price to Dec-2032; FY26 OCF is largely a one-off customer advance), neither a repeated evasion, so no CRITICAL."
-rework_check:
-  b12a_critical: 0
-  any_acceptance_below_60: false
-  overall_below_60: false
-  forced_rework: false
+  overall: 67                   # min of the four
+phase: "phase-3 complete (all four components)"
+interpretation: "overall 67 in the 60-74 band: gate-family verdict downgrades one level. Weakest is redflag_coverage 67 (verifier B surfaced two MAJOR gaps the concall stage under-weighted). No B12a CRITICAL; no acceptance below 60; not forced REWORK. Investment decision AVOID is independent of the gate-confidence band and is over-determined (Gate 0 AVERAGE + Promoter CONCERN + Hurdle STOP + upside/downside 0.21x)."
+rework_check: {b12a_critical: 0, any_acceptance_below_60: false, overall_below_60: false, forced_rework: false}

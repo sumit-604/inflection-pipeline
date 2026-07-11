@@ -1,70 +1,120 @@
 stage: B10-valinputs
 company: "AKUMS"
 run_date: "2026-07-10"
-model: claude-haiku-4-5-20251001
+model: "claude-haiku-4-5-20251001"
 status: complete
 input_gaps: []
 flags:
   - type: FLAG-CASH
-    reason: "Headline CFO Rs 1,181.2 cr (CFO/PAT 4.61x) is distorted by Rs 1,032.31 cr unnamed customer-advance contract liability (23.7% of FY26 revenue, financing construct). Adjusted CFO ex this inflow ~Rs 239.89 cr (CFO/PAT ~0.99x). Imputed finance cost Rs 77.61 cr inflates PBT. Normalize at stage 11; do not credit headline rate. NOTE: ICRA (10 Apr 2026) confirms this is NOT structural WC — liquidity 'Strong', Total Debt/OPBDITA 0.2x, WC stretch only a hypothetical downgrade trigger."
+    reason: "Headline CFO Rs 1,181.2 cr (CFO/PAT 4.61x) distorted by Rs 1,032.31 cr customer-advance contract liability (23.7% of revenue). Adjusted CFO ~Rs 239.89 cr (CFO/PAT ~0.99x). ICRA (10 Apr 2026) confirms NOT structural WC - liquidity Strong, Total Debt/OPBDITA 0.2x. Authoritative: GROWTH-INDUCED, Pillar 2 multiplier 1.00x neutral (not 0.65x penalty)."
   - type: FLAG-PROMOTER
-    reason: "Section 132 IT search Jan 2025; auditor Emphasis of Matter on it. NOTE CORRECTION: the Rs 133.75 cr Section 158BC demand from B08 web sources is NOT in the AR — AR states no demands raised as of reporting date. Live Drugs & Cosmetics prosecution (2016 Vicks Gel); CEO-CDMO resignation Jul 2025. Offset by 0% pledge, credentialed independent board, DII 14.3%, blue-chip anchor. Non-deal-breaker."
+    reason: "Section 132 IT search Jan 2025 (auditor Emphasis of Matter). NOTE: Rs 133.75 cr Section 158BC demand from web sources NOT in AR; AR states no demands raised. CEO-CDMO resignation Jul 2025. Non-deal-breaker per 0% pledge, credentialed board, DII 14.3%, blue-chip anchor."
   - type: FLAG-ACCOUNTING
-    reason: "Reported PAT fell -25.4% YoY (Rs 256.4 cr) on tax-shield gap (ETR 33.0% vs 25.17% statutory, unrecognised DTA Rs 263.97 cr). MD&A claims 'Adjusted PAT +27.3%' but zero GAAP reconciliation. Accounting quality 5/10, earnings quality 2/10 (B02/B03). Use audited PAT 256.4 cr for all ratios."
+    reason: "Reported PAT fell -25.4% YoY (Rs 256.4 cr) on tax-shield gap (ETR 33.0% vs 25.17% statutory, unrecognised DTA Rs 263.97 cr). MD&A claims Adjusted PAT +27.3% but zero GAAP reconciliation. Accounting quality 5/10, earnings quality 2/10. Use audited PAT for ratios."
   - type: FLAG-ROCE
-    reason: "Reported ROCE ~13.7% but idle-cash-adjusted operating ROCE ~26.3%. Idle cash Rs 1,654.4 cr. Pillar 1 normalization decision needed at stage 11."
+    reason: "Reported ROCE 13.7% distorted by idle Rs 1,654 cr IPO cash (~48% of capital base). Operating ROCE 26.3% audited ex-cash. Authoritative Pillar 1: 28-30% (base 29%) per operator override, fttcp-deliberation.md."
 table:
   company: "Akums Drugs & Pharmaceuticals Limited"
+  ticker: "AKUMS"
   cmp_rs: 702
   market_cap_rs_cr: 11052
   sector: "Pharmaceuticals / CDMO"
   business_model_type: "Hybrid (CDMO 80%, Domestic Branded 10.2%, Int'l Branded 3.3%, API 4.2%, Trade Generics 2.3%)"
   shares_outstanding_diluted_cr: 15.74
-  net_debt_rs_cr: -1564.1
-  enterprise_value_rs_cr: 9487.9
-  revenue_from_operations_rs_cr: 4359.02
+  net_cash_rs_cr: 1564
+  enterprise_value_rs_cr: 9488
+  revenue_fy26_rs_cr: 4359.02
   revenue_growth_yoy_pct: 5.85
-  ebitda_rs_cr: 522.02
+  ebitda_fy26_rs_cr: 522.02
   ebitda_margin_pct: 11.98
-  pbt_rs_cr: 382.01
-  pat_rs_cr: 256.40
+  pbt_fy26_rs_cr: 382.01
+  pbt_underlying_operating_growth_pct: 22.4
+  pat_fy26_rs_cr: 256.40
   pat_yoy_change_pct: -25.4
-  pat_margin_pct: 5.88
-  cfo_rs_cr: 1181.20
-  adjusted_cfo_rs_cr: 239.89
-  cfo_pat_ratio: 4.61
-  adjusted_cfo_pat_ratio: 0.99
-  capex_rs_cr: 222
-  diluted_eps_rs: 16.67
+  effective_tax_rate_pct: 33.0
+  cfo_reported_rs_cr: 1181.20
+  cfo_adjusted_rs_cr: 239.89
+  cfo_pat_ratio_headline: 4.61
+  cfo_pat_ratio_adjusted: 0.99
+  fcf_implied_rs_cr: 17.89
+  capex_fy26_rs_cr: 222
+  capex_fy27_guidance_rs_cr: 300
+  wc_days_fy26: 79.53
+  dso_days_fy26: 66.7
+  diluted_eps_fy26_rs: 16.67
   current_pe_x: 42.1
-  wc_days: 79.53
-  dso_days: 66.7
+  dps_fy26_rs: 3.00
   roce_reported_pct: 13.7
-  roce_idle_cash_adjusted_pct: 26.27
+  roce_adjusted_operating_pct: 26.3
+  roce_trend: "STAGNANT"
   gate0_score: 79
+  gate0_classification: "AVERAGE"
   em_score: 26.3
   em_classification: "STRENGTHENING"
-  capex_embedded_growth_pct: 20.6
+  combined_gate0_em_assessment: "TURNAROUND"
   b05_credibility_grade: "C"
-  b08_promoter_verdict: "CONCERN"
-  b09_tam_conservative_rs_cr: 13880
-  b09_sam_rs_cr: 11630
-  b09_revenue_headroom_x: 3.34
+  tam_conservative_rs_cr: 13880
+  sam_rs_cr: 11630
+  som_3yr_rs_cr: 5396
+  som_implied_revenue_cagr_pct: 13.9
+  revenue_headroom_x: 3.34
+  capacity_gap_rs_cr: 741
+  capex_embedded_growth_pct: 20.6
+  rating_agency: "ICRA"
+  rating: "[ICRA]AA (Stable) / [ICRA]A1+"
+  rating_date: "2026-04-10"
 conflicts: []
 unresolved:
-  - {field: "ROCE (idle-cash normalized) for Pillar 1", why: "Pillar 1 decision pending on surplus-cash normalization; reported 13.7% vs operating 26.3%", where_it_might_be: "Stage 11 Pillar 1 (operator has directed 28-30% ex-cash)"}
-  - {field: "Forward normalized ETR", why: "FY26 ETR 33.0% elevated; unrecognised DTA Rs 263.97 cr on loss-making subsidiaries", where_it_might_be: "Stage 11 tax assumptions; FY27 monitoring"}
-  - {field: "Contingent liabilities & tax-search timeline", why: "Section 132 search active, auditor EOM; no demand raised per AR, no provision booked", where_it_might_be: "Stage 11 risk weighting; FY27 AR"}
-  - {field: "Peer financial multiples", why: "Only 4 comparators; PPLPHARMA file mislabeled", where_it_might_be: "Stage 11 relative valuation"}
+  - {field: "Book value per share / tangible book", why: "not extracted this pass", where_it_might_be: "AR consolidated balance sheet; stage 11 reference"}
+  - {field: "Peer financial multiples (P/E, EV/EBITDA, P/B)", why: "only 4 comparators; PPLPHARMA file mislabeled", where_it_might_be: "stage 11 relative valuation"}
+  - {field: "EU CDMO contract full annual run-rate beyond EUR 35m/yr Plant 2", why: "only Plant 2 leg disclosed", where_it_might_be: "future exchange filings; commercial FY28"}
+  - {field: "FY26 audited D&A full-year line", why: "not extracted this pass", where_it_might_be: "AR consolidated P&L note"}
 rating_wc_quote: |
   ICRA, 10 April 2026, [ICRA]AA (Stable)/[ICRA]A1+.
-  "Liquidity position: Strong. The Group's liquidity position is strong, characterised by healthy cash flow from operations, cash and cash equivalents of Rs. 1,654.4 crore and unutilised working capital limits of around Rs. 450 crore, as on September 30, 2025... Moreover, ADPL has no long-term debt repayment obligations." [Page 3]
-  Downgrade trigger (WC-relevant, hypothetical not current): "The ratings could be downgraded in case of ... a deterioration in the credit profile and liquidity position, owing to debt-funded capex or a stretch in the working capital cycle." [Page 3]
-  No structural-WC language anywhere; Total Debt/OPBDITA 0.2x.
+  LIQUIDITY: "The Group's liquidity position is strong, characterised by healthy cash flow from operations, cash and cash equivalents of Rs. 1,654.4 crore and unutilised working capital limits of around Rs. 450 crore, as on September 30, 2025... Moreover, ADPL has no long-term debt repayment obligations." [Page 3]
+  DOWNGRADE TRIGGER (hypothetical, not current): "The ratings could be downgraded in case of ... a deterioration in the credit profile and liquidity position, owing to debt-funded capex or a stretch in the working capital cycle." [Page 3]
+  No structural-WC language. Total Debt/OPBDITA 0.2x. Confirms GROWTH-INDUCED.
 ua_qualifiers:
   listed_12m: true
   gate0_or_em: true
   fii_dii_lt3: false
   all_met: false
-  note: "DII ownership 14.3% (Mar 2026) exceeds 3% threshold. No UA uplift. High institutional ownership is strength, not constraint."
+  note: "DII 14.3% (Mar 2026) > 3%; qualifier 3 fails. UA NOT applied. High institutional ownership a strength, not a constraint."
 credibility_grade: "C"
+deliberation_authoritative:
+  source: "fttcp-deliberation.md (AUTHORITATIVE for Role 1 stage 11)"
+  roce_for_pillar_1:
+    value_pct: 28.0
+    range_pct: [28.0, 30.0]
+    base_pct: 29.0
+    NOT_reported_pct: 13.7
+    audited_ex_cash_pct: 26.3
+    justification: "Idle-cash-adjusted operating ROCE; Rs 1,654 cr non-operating IPO cash ~48% of capital base. Operator override per deliberation."
+    pillar_1_pe: "0.5 x 29 + 7.5 = 22.0x base (range 21.5-22.5x). ROCE recovery single-credited to Pillar 1 only."
+  cash_conversion_determination:
+    determination: "GROWTH-INDUCED (NOT STRUCTURAL)"
+    multiplier: 1.00
+    multiplier_range: [0.90, 1.15]
+    adjusted_cfo_pat: 0.99
+    evidence: "ICRA AA/A1+, liquidity Strong, Total Debt/OPBDITA 0.2x, no structural-WC language"
+    falsification_metric: "Net WC days >110-115 in Q1/Q2 FY27, or sustained adjusted CFO/PAT <0.7x"
+    pillar_2: "1.00x neutral (no structural 0.65x penalty); Kernex-cap tail CLOSED"
+  pillar_3_growth_premium:
+    framework: "Section 1B v3.4 Amendment 4 (DECOUPLED 3a + 3b + 3c, cap +6x)"
+    scale_3a_growth_visibility: 0    # only capex-embedded of 4 tests; grade C
+    scale_3b_moat_formation: 1       # EM 26.3, 25-29 band
+    scale_3c_duration: 0             # order book none; contracted streams (EU+Zambia) 0.53x annual revenue, far below 2.5x
+    combined: 1                      # +1x total; cap +6x not binding; equals old undecoupled Pillar 3
+    three_c_basis: "No executable order book. Documented contracted future revenue EUR 200m (EU, to Dec 2032) + USD 50m (Zambia, FY27-28) ~= Rs 2,300 cr = 0.53x annual revenue, far below the 2.5x (+1x) / 4x (+2x) thresholds. Domestic CDMO base (80%) has relationship length only, no stated contract tenure. 3c = +0x."
+    carry_to_stage_11: "Pillar 3 total = +1x (moat-only); destination PE base 22.0x + Pillar2 offset 0 + Pillar3 +1x = ~23x before Strategic Premium"
+  ua: {decision: "NOT APPLIED", dii_pct: 14.3, reason: "FII+DII <3% qualifier fails"}
+summary_for_stage_11:
+  base_destination_pe_x: 23
+  current_implied_pe_x: 42.1
+  hurdle_ratio_computed: 0.99
+  hurdle_verdict: "STOP (fails even on ~23x destination)"
+  master_verdict: "AVOID (Gate 0 AVERAGE + Promoter CONCERN + Hurdle STOP + upside/downside <2x)"
+  forward_disposition: "DEEP WATCH leaning AVOID (FTTCP composite +2/8; cash tail resolved; binding concerns earnings quality & governance)"
+  indicative_fair_value_3yr_base_rs: 635
+  indicative_entry_zone_rs: [270, 325]
+ready_for_stage_11: true

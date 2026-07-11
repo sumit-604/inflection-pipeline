@@ -141,7 +141,9 @@ Award: **+2x if any two qualify; +3x if three or more qualify AND delivery grade
 
 **3b Moat Formation Premium** — the existing EM-gated table, unchanged, applied as before.
 
-3a prices documented growth; 3b prices forming moats. A company may earn either without the other. Combined 3a+3b never exceeds +6x.
+**3c Duration Premium** — paid on documented forward revenue visibility. **+1x when visibility covers ≥2.5 years** (executable order book ÷ current annual revenue ≥2.5, or contracted/regulated revenue streams of equivalent tenor); **+2x when ≥4 years.** Evidence tier 📄 only — signed contracts, LoAs with stated values, regulatory annuity terms; management pipeline talk and TAM stories pay nothing. Example: order book 15x annual revenue, documented via LoAs → 3c = +2x.
+
+3a prices documented growth; 3b prices forming moats; 3c prices the duration of documented revenue. A company may earn any without the others. Combined 3a+3b+3c never exceeds the +6x Pillar 3 cap. Sector caps remain absolute.
 
 ---
 

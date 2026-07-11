@@ -163,4 +163,4 @@ Award: **+2x if any two qualify; +3x if three or more qualify AND delivery grade
 |---|---|---|
 | 3.2 | Jun 2026 | Prior spec (Notion: Valuation Framework v3.2) |
 | 3.3 | 02-Jul-2026 | Amendments 1-8 above. 20x rule deleted; Hurdle Ratio replaces STOP rule and 1.3x gap check; UA ordering codified as min(Raw × 1.25, Cap); ROCE single-credit rule (FTTCP v1.2); continuous Pillar 1 formula; proportional ±7.5% range; lender Asset-Quality Multiplier carve-out; six sector cap rows added. Premium-scaling proposal rejected (Appendix A). |
-| 3.4 | 11-Jul-2026 | Amendment 4 (v3.4): Pillar 3 decoupled into 3a Growth Visibility Premium (documented growth machinery, independent of EM score) and 3b Moat Formation Premium (existing EM-gated table). Combined 3a+3b hard-capped at +6x. |
+| 3.4 | 11-Jul-2026 | Amendment 4 (v3.4): Pillar 3 decoupled into 3a Growth Visibility Premium (documented growth machinery, independent of EM score), 3b Moat Formation Premium (existing EM-gated table), and 3c Duration Premium (documented forward revenue visibility: +1x ≥2.5yr, +2x ≥4yr, 📄 only). Combined 3a+3b+3c hard-capped at +6x; sector caps absolute. |

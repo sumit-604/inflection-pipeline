@@ -4,49 +4,46 @@ run_date: "2026-07-12"
 model: claude-opus-4-8
 status: complete
 input_gaps:
-  - "rating_wc_quote NOT FOUND (no rating PDF); Pillar 2 held at 0.80x, no offset - conservative"
-  - "Peer medians (P/E, EV/EBITDA, P/B, ROCE) NOT COMPUTED per B10; peer-relative cross-check unavailable"
-  - "FY26 facility-level utilization % NOT FOUND; ROCE 6.6% accepted from deliberation, not independently re-verified"
+  - "rating_wc_quote NOT FOUND (no Rating PDF in run inputs); Pillar 2 held at conservative 0.80x, no offset"
+  - "Peer medians NOT COMPUTED (empty screener P&L/Balance_Sheet exports); peer-relative methods noted, not weighted"
 flags:
   - type: "FLAG-CASH"
     multiplier_applied: 0.80
-    note: "INDETERMINATE leaning structural; 0.80x band, no growth offset; rating confirmation absent"
-  - type: "SHARED-CATALYST"
-    note: "Dahej commissioning underpins Pillar 1 forward ROCE and would-be Pillar 3a; 3a resolved +0x so no premium credited, flag stands for Role 3"
+    reason: "INDETERMINATE leaning structural; FCF negative 8 years, cumulative FCF/PAT -1.32x; debtor days 48->86 FY22-26; top-3 receivables 61%, zero ECL; rating WC language NOT FOUND. Conservative 0.80x, no growth offset."
+  - type: "FLAG-EMOAT"
+    reason: "EM 19.2/80 MODEST; Pillar 3 premiums all +0x; Jolva execution slipped 3x; credit downgrades."
   - type: "FLAG-PROMOTER"
-    note: "CAUTION cluster (GPCB closure, remuneration vs PAT, 2x CRISIL downgrade) priced into RRM r=15%"
-  - type: "HURDLE-STOP"
-    note: "AVOID-on-valuation; destination PE ~9x vs current PE 73.75x"
-framework_versions: "Master v3.3 / Section 1B v3.3+v3.4 / FTTCP v1.2"
+    reason: "CAUTION: GPCB plant closure Sep 2024 (revoked); two CRISIL downgrades in window; remuneration +27.89% while PAT fell 98.9%."
+  - type: "SHARED-CATALYST"
+    reason: "Dahej commissioning drives both Pillar 1 (Amendment 4.5 unwind) and notional Pillar 3a; 3a paid +0x so no double-credit, flagged for Role 3."
+framework_versions: "Master v3.3 / Section 1B v3.3 + Amendment 4.5 (v3.5) / FTTCP v1.2"
 destination_pe:
-  track1_rrm: {low: 7.0, mid: 7.3, high: 8.0, r_used: 15, rrm: 0.82}
-  track2_additive: {low: 8.5, mid: 9.0, high: 9.5}
-  divergence_pct: 18.9
-  governing_track: "Track 1 RRM - more conservative and prices governance (FLAG-PROMOTER) via r; sets entry zone"
+  track1_rrm: {low: 8.5, mid: 9.4, high: 10.0, r_used: 15, rrm: 0.82}
+  track2_additive: {low: 10.5, mid: 11.4, high: 12.5}
+  divergence_pct: 22
+  governing_track: "Track 1 RRM — more conservative (lower FV) and appropriate for a governance-flagged cyclical micro-cap at r=15%; sets entry zone"
 pillar_detail:
-  roce_used: 7.36
-  roce_base: 11.2
+  roce_used: 13.51
+  roce_base: 14.26
   roce_recovery_route: "pillar1-midpoint"
   cash_multiplier: 0.80
-  structural_or_growth: "INDETERMINATE leaning structural (conservative 0.80x, no offset)"
+  structural_or_growth: "INDETERMINATE leaning structural (conservative 0.80x, no offset; rating_wc_quote NOT FOUND)"
   growth_offset: 0
   growth_premium: 0
   strategic_premium: 0
   shared_catalyst_flag: true
   ua_applied: false
   sector_cap_used: 35
-hurdle_ratio: {base: 0.169, bull_used: true, verdict: "STOP"}
+hurdle_ratio: {base: 0.22, bull_used: true, verdict: "STOP"}
 fair_values:
-  track1: {bear: 139, base: 237, bull: 347}
-  track2: {bear: 169, base: 282, bull: 408}
-expected_cagr_prob_weighted: -44.1
-entry_range: {low: 97, high: 121}
-mos_price: 97
-upside_downside_ratio: 0.82
-decision: "AVOID (on-valuation)"
+  track1: {bear: 201, base: 287, bull: 409}
+  track2: {bear: 245, base: 350, bull: 499}
+expected_cagr_prob_weighted: -39.8
+entry_range: {low: 118, high: 147}
+mos_price: 118
+upside_downside_ratio: 0
+decision: "AVOID (on valuation) — Hurdle STOP; CMP ~4.6x base fair value; unchanged from pre-4.5 run despite ~27% higher destination PE"
 unresolved_inputs_used:
-  - "rating_wc_quote NOT FOUND -> Pillar 2 held at 0.80x band, no growth offset (more conservative than rewarding an offset; not pushed to 0.65x absent rating confirmation)"
-  - "Peer medians unavailable -> triangulation used absolute four-pillar/EV-EBITDA/P-B only, no peer-relative multiple"
-  - "Y3 net debt estimated ~150 Cr (Y0 114.6 Cr + capex-funded creep, FCF turning positive by Y2-Y3) for EV/EBITDA equity bridge"
-som_cagr_crosscheck: "consistent (base revenue CAGR 14.0% <= SOM-implied 14.3% 3yr; no cut required)"
-one_line_thesis: "Avoiding TATVA at Rs 1,326: EPS recovers to base Rs 30.65 by FY29 but a ~7% ROCE below CoE and structural-leaning cash leakage earn only a ~9x (Track1 7.3x) four-pillar destination PE vs current 73.75x, implying -44% CAGR to a Rs 237 target; Hurdle Ratio STOP."
+  - "rating_wc_quote NOT FOUND -> Pillar 2 held at 0.80x with no growth offset (INDETERMINATE leaning structural, conservative treatment per framework)"
+som_cagr_crosscheck: "base 14.3% consistent with SOM 14.3%; bull 25% exceeds SOM (guidance-at-face, grade B), flagged growth-dependent with capacity-ceiling caveat"
+one_line_thesis: "AVOID TATVA at Rs 1,326: even crediting sustainable ROCE via the Amendment 4.5 normalized anchor (13.51% blend of pre-depression 22.45% / FY28 8.5% / current 6.6%), four-pillar destination PE is only 11.4x additive / 9.4x RRM, FY29 base fair value ~Rs 287-350 vs CMP ~4.6x higher; Hurdle STOP, expected 3yr CAGR ~ -40%. Cash quality: INDETERMINATE leaning structural."

@@ -1,0 +1,236 @@
+stage: B10-valinputs
+company: "TATVA"
+run_date: "2026-07-12"
+model: "claude-haiku-4-5"
+status: complete
+input_gaps:
+  - "No Rating PDF provided; rating_wc_quote unresolved"
+  - "Peer derivative metrics (EBITDA, ROCE, BVPS, medians) unresolved due to empty screener-Profit_Loss.csv and screener-Balance_Sheet.csv exports"
+  - "FY26 facility-level utilization % not available (noted as NOT FOUND in B07); next AR expected"
+flags:
+  - type: "FLAG-CASH"
+    reason: "INDETERMINATE leaning structural: Block B deteriorating (FCF negative across 8 years FY19-FY26, cumulative -1.32x); receivables grew 18.1% vs revenue decline FY25; top-3 customer concentration 61% with zero ECL provisioned; Consolidated CFS adverse swing Rs 305.47 Mn; debtor days 48→86 FY22-FY26 through flat-revenue years (B01, B02, B03). Pillar 2 multiplier conservative 0.80x band, no growth offset. Missing CRISIL rating rationale. Caps disposition at PROCEED WITH CAVEATS."
+  - type: "FLAG-EMOAT"
+    reason: "F2 execution moat scores zero with documented negative: Jolva groundbreaking slipped 3 consecutive quarters (Q2→Q3→Q4 FY26 calls, HIGH severity). G1 war chest scores zero: Credit rating downgraded A-/Stable to A-/Negative (FY24-25 AR) then to BBB+/Stable (May 2026 IP). Largest emerging-moat revenue (Jolva INR 400-500cr guided) sits on weakest execution track record in file. (B07)"
+  - type: "FLAG-PROMOTER"
+    reason: "CAUTION verdict: GPCB Section 33(A) Water Act direction closed Ankleshwar plant 13 Sept 2024, revoked after remediation (root cause not independently confirmed). Promoter-executive remuneration +27.89% YoY while standalone PAT fell 98.9% and EPS fell ₹12.82→₹0.14. CRISIL downgraded twice within review window. No red-flag deal-breakers but four amber items cluster in FY24-25. (B08)"
+table:
+  company: "Tatva Chintan Pharma Chem Ltd"
+  ticker: "TATVA"
+  sector_corrected: "Specialty Chemicals (35x cap, correcting manifest Pharma/CDMO 38x)"
+  sector_cap_row_anchor: "Deliberation record line 19"
+  business_model_type: "Manufacturing, four-product specialty chemicals (PTC 33.0%, SDA 31.5%, ESS 1.6%, PASC 33.9% FY26 revenue mix); asset-intensive, high WC intensity, moderate pricing power, cyclical"
+  cmp_rs: 1326.0
+  market_cap_cr: 3103.0
+  shares_diluted_cr: 2.339
+  net_debt_mn: 1146.1
+  enterprise_value_mn: 32176.1
+  revenue_fy26_mn: 5058.6
+  revenue_source: "Consolidated audited results Q4 FY26 line 325"
+  ebitda_fy26_mn: 967.1
+  ebitda_source: "Computed: PBT 570.09 + Interest 28.51 + Deprec 368.47 (Q4 FY26 results)"
+  ebitda_margin_pct: 19.1
+  pat_fy26_mn: 420.5
+  pat_source: "Consolidated audited results Q4 FY26 line 352"
+  pat_margin_pct: 8.3
+  diluted_eps_rs: 17.98
+  eps_source: "Consolidated audited results Q4 FY26 line 386"
+  cfo_fy26_mn: 314.9
+  cfo_source: "Consolidated cash flow FY26 line 501"
+  fcf_fy26_mn: -822.8
+  fcf_source: "CFO 314.9 - Capex 1137.74 (Q4 FY26 cash flow line 503)"
+  book_value_per_share_rs: 334.6
+  bvps_source: "Total equity 7817.59 Mn / Shares 2.339 Cr (Q4 FY26 balance sheet line 437)"
+  capex_fy26_mn: 1137.7
+  capex_source: "Consolidated cash flow line 503 (incl. ROU, CWIP, intangibles)"
+  depreciation_fy26_mn: 368.5
+  depreciation_source: "Consolidated results line 340"
+  dps_final_rs: 2.0
+  dps_source: "Consolidated results line 34 (recommended final dividend, subject to AGM approval)"
+  roce_latest_pct: 6.6
+  roce_source: "Deliberation record line 45 (authoritative for single-source rule)"
+  roce_2yr_trend: "Deteriorating (FY24: 10.91%, FY25: 1.20%, FY26: 6.6%)"
+  roce_trend_source: "B04 line 46; ROCE swing driven by Dahej capex cycle depressing CapE returns"
+  roe_standalone_pct: 5.4
+  roe_source: "Standalone PAT 390.82 / opening equity 7213.12 (standalone results)"
+  revenue_cagr_3yr_pct: 14.7
+  revenue_cagr_source: "FY24 393.5→FY26 505.86 screener Data_Sheet rows 11"
+  pat_cagr_3yr_pct: 17.6
+  pat_cagr_source: "FY24 30.35→FY26 42.05 screener rows 24, but FY25 was trough 5.71 (destocking). Cyclical interpretation advised."
+  cfo_pat_ratio_latest: 0.75
+  cfo_pat_source: "314.9 / 420.5 (Q4 FY26 results)"
+  cfo_pat_cumulative_fy19_26: -1.32
+  cfo_pat_cumulative_source: "B01 line 41 (negative FCF every year, cumulative drag)"
+  fcf_pat_ratio_latest: -1.95
+  fcf_pat_source: "FCF -822.8 / PAT 420.5"
+  p_fcf_multiple: "NOT APPLICABLE"
+  p_fcf_note: "FCF negative across all 8 computable years FY19-FY26 per B01 line 41"
+  
+  guided_revenue_growth_fy27_pct: 25.0
+  guided_margin_band_fy27_pct: "20-22% EBITDA"
+  guidance_source: "B05 guidance table rows 37-38 (Q4 FY26 call, 16 May 2026)"
+  guidance_quarter: "Q4 FY26"
+  management_delivery_credibility: "B (Good)"
+  credibility_grade_source: "B05 line 65"
+  credibility_basis: "Core financial guidance (revenue growth, 20-22% EBITDA margin band) delivered essentially on schedule (18.0%→19.4%→20.9% across three quarters Q2/Q3/Q4); most product commercialization promises landed with minor disclosed delays (Dahej plant ~2 mo late, agro intermediates timely, margin target hit, Electrolyte Salts delivered 1378% YoY Q4). Long-cycle capex commitments weakest: Jolva groundbreaking slipped 3 consecutive quarters (reframed as engineering optimization not acknowledged delay), semiconductor dispatch missed Q4 FY26 target unacknowledged in Q4 call. ROCE questions deflected twice with no forward target. Short of A grade due to capex/timeline and evasion pattern."
+  
+  top_growth_triggers_trigger_1: "SDA new-customer invoicing begins (Euro 7 emission-norm tailwind)"
+  trigger_1_timeframe: "Near-medium term (~Aug 2026)"
+  trigger_1_conviction: "HIGH"
+  trigger_1_source: "B05 trigger row 1; B07 catalysts_12m row 1"
+  
+  top_growth_triggers_trigger_2: "EBITDA margin sustaining 20-22% band"
+  trigger_2_timeframe: "Near-term (FY27 quarterly)"
+  trigger_2_conviction: "HIGH"
+  trigger_2_source: "B05 trigger row 2; Q4 FY26 call confirmed 20.9%, tracking into band"
+  
+  top_growth_triggers_trigger_3: "PASC agro intermediate ramp on new Dahej block"
+  trigger_3_timeframe: "Near-term"
+  trigger_3_conviction: "HIGH"
+  trigger_3_source: "B05 trigger row 4; Dahej block operational by Q4 FY26 (2mo late from Jan 2026 guidance)"
+  
+  em_score_total: 19.2
+  em_score_max: 80
+  em_classification: "MODEST"
+  em_source: "B07 lines 15-16"
+  em_evidence_mix: "Documented 24 items (technical moats, regulatory compliance, scale signals), Claim 21 items (market-share trajectory, customer exclusivity, supply optionality), Inference 4 items"
+  
+  catalysts_12m_primary: "SDA new-customer invoicing (~Aug 2026)"
+  catalysts_12m_secondary: "Semiconductor first commercial dispatch (Q1 FY27, 1x already slipped from Q4 FY26)"
+  catalysts_12m_tertiary: "Pharma intermediates first product (Q1 FY27, slipped ~4-6 mo once); Jolva groundbreaking (mid-July 2026, 3x already slipped per B05 timeline_slippages)"
+  catalysts_source: "B07 catalysts_12m rows 1-4; B05 timeline_slippages"
+  
+  strategic_position_monopoly: "YES — Multiple moats present (documented)"
+  strategic_moats_list: "1. Switching costs (multi-year customer requalification, HIGH durability). 2. Cost/process advantage (proprietary electrolysis route, continuous-flow chemistry, MODERATE). 3. Regulatory/compliance barriers (DSIR, ISO, REACH, ZLD, MODERATE). 4. Efficient scale in niche global markets (SDA, ESS, Glymes, MODERATE). 5. Intangible know-how (DSIR R&D centre, in-house process development, MODERATE). 6. Distribution/customer relationships (offshore subsidiaries, marquee clientele, MODERATE). 7. Brand (EcoVadis, Three Star Export House, LOW-MODERATE)."
+  moats_source: "B04 moats_present rows 1-7; B04 one_line_verdict"
+  
+  cash_conversion_determination: "INDETERMINATE leaning structural"
+  cash_evidence_summary: "No clean pass. Block B trend deteriorating per B01 line 41: FCF negative in all 8 computable years (FY19-FY26), cumulative FCF/PAT -1.32x. WC Days rising 175.3→185.3 FY25-FY26 (+9.98 days). FLAG-CASH extended by B03: Consolidated trade receivables adverse swing Rs 305.47 Mn on CFS. B02 receivables_trend: Gross trade receivables rose 18.1% (Rs 69.85→82.53 Cr) while revenue fell 2.7-4%; top-3 concentration 61% receivables; zero ECL provisioned in both years despite concentration (Note 15/41B(ii)). Debtor days rose 48→86 across FY22-FY26 including through flat-revenue years (growth does not explain). Structural drivers likely: customer credit terms, portfolio mix migration. Missing CRISIL rating PDF would resolve determinacy with working-capital assessment language."
+  cash_evidence_anchor: "B01 block_b_trend; B02 receivables_trend; B02 FLAG-CASH; B03 FLAG-CASH; B09 capacity_check (SOM headroom marginal if Jolva 4th slip occurs)"
+  pillar_2_multiplier_band: "0.80x (conservative, no growth offset)"
+  pillar_2_source: "Deliberation record line 48"
+  rating_wc_quote: "NOT FOUND"
+  rating_wc_why_missing: "No Rating PDF provided in inputs/rating/ directory; CRISIL rationale document not in run inputs"
+  rating_wc_resolution: "Cash determination therefore draws solely from Deliberation record determination (INDETERMINATE leaning structural) and empirical receivables/payables trend from B01/B02/B03. FLAG-CASH verdict stands without rating agency backing."
+  
+  som_3yr_revenue_cr: 754
+  som_5yr_revenue_cr: 968
+  som_implied_revenue_cagr_3yr: 14.3
+  som_implied_revenue_cagr_5yr: 13.9
+  som_source: "B09 som_3yr_cr, som_5yr_cr, som_implied_revenue_cagr rows"
+  
+  tam_conservative_cr: 15237
+  tam_realistic_cr: 22530
+  tam_source: "B09 tam_cr rows (conservative and realistic; inflated management claim 1,21,364 Cr @ 79.7x flagged as unverified)"
+  runway_classification: "GOOD"
+  runway_source: "B09 runway_class"
+  runway_capacity_note: "SOM 3yr (754 Cr) sits only ~23 Cr above conservative Jolva-inclusive capacity ceiling (731 Cr from B07); if Jolva 4th slip occurs (HIGH-severity risk per B07), capex becomes binding and SOM becomes optimistic side."
+  
+  peer_financials_provided: "YES (4 peers: ACUTAAS, CAMLINFINE, CLEAN, NEOGEN)"
+  peer_medians_p_e: "NOT COMPUTED"
+  peer_medians_ev_ebitda: "NOT COMPUTED"
+  peer_medians_p_b: "NOT COMPUTED"
+  peer_medians_growth: "NOT COMPUTED"
+  peer_medians_roce: "NOT COMPUTED"
+  peer_medians_why: "Screener-Data_Sheet.csv provided for all 4 peers with FY26 Revenue/PAT rows, but screener-Profit_Loss.csv and screener-Balance_Sheet.csv came back empty per B01 line 13. Derivative metrics (EBITDA, ROCE, BVPS) require balance-sheet capital employed derivation blocked by empty exports. Peer median extraction unresolved pending re-export or manual AR review."
+  
+  ua_qualifier_listed_12m: true
+  ua_qualifier_listed_12m_detail: "IPO 21 July 2021; as of run date 12 July 2026 = 4 years 11.6 months listed, exceeds 12-month threshold"
+  ua_qualifier_listed_12m_anchor: "Manifest run_date 2026-07-12; IPO announcement public record"
+  
+  ua_qualifier_gate0_or_em: false
+  ua_qualifier_gate0_score: 48
+  ua_qualifier_gate0_anchor: "B01 line 21: Core score 48/100 (AVERAGE classification), below 60 threshold"
+  ua_qualifier_em_score: 19.2
+  ua_qualifier_em_anchor: "B07 line 15: EM score 19.2/80 (MODEST), below 25 threshold"
+  
+  ua_qualifier_fii_dii_lt3: false
+  ua_qualifier_fii_dii_detail: "Mutual fund holding ~5.34% (B02 line 32, Note 16(ix)). FII and DII not separately disclosed in AR or screener data provided. Institutional ownership halved (12.84%→5.34%) but 5.34% MF holding alone suggests FII+DII aggregate >=3%, fails threshold."
+  ua_qualifier_fii_dii_anchor: "B02 Note 16(ix) shareholding pattern; note that B02 explicitly states not treating low institutional ownership as a risk per Amendment 3 (UA min multiplier, not a pass/fail factor)"
+  
+  ua_qualifiers_all_met: false
+  ua_qualifiers_summary: "1 of 3 met (listed >=12m only). Does NOT qualify for UA multiplier adjustment (requires all three). No Amendment 3 min multiplier applies since gate check is binary."
+  
+  credibility_grade: "B"
+  credibility_grade_source: "B05 line 65"
+
+conflicts:
+  - field: "Sector Cap Row"
+    value_a: "Pharma / CDMO, 38x"
+    anchor_a: "Manifest (auto-picked by screener)"
+    value_b: "Specialty Chemicals, 35x"
+    anchor_b: "Deliberation record line 19: 'Specialty chemicals, 35x, correcting the manifest's Pharma / CDMO 38x. Sure. Phase 3 stage 11 inherits 35x.'"
+    used_in_table: "35x (Specialty Chemicals)"
+    reason: "Deliberation record is authoritative corrected determination for stage 11 forward. Manifest sector auto-pick was flagged in B04 as incorrect business classification. Deliberation confirms sector cap override explicitly."
+  
+  - field: "ROCE FY26"
+    value_a: "6.32% (computed EBIT/CapE)"
+    anchor_a: "Consolidated results EBIT 570.09 / Capital Employed 9,021.32"
+    value_b: "6.6% (deliberation methodology)"
+    anchor_b: "Deliberation record line 45: 'current ROCE (6.6%, FY26)' as input to Pillar 1 calculation"
+    used_in_table: "6.6%"
+    reason: "Single-source rule: Deliberation record is downstream authoritative determination capturing full analysis. Uses consistent capital employed methodology across FTTCP analysis. Minor delta (6.32% vs 6.6%) within rounding/methodology variation but 6.6% is signed-off figure."
+
+unresolved:
+  - field: "Rating PDF WC Quote"
+    why: "No Rating PDF in inputs/rating/; CRISIL rationale document not provided in run deliverables"
+    where_it_might_be: "CRISIL Ratings sector review or company-specific rating rationale (issued separately from AR, not included in standard AR disclosure)"
+    handling: "Cash determination drawn solely from Deliberation record (INDETERMINATE leaning structural) and empirical receivables/payables trend (B01/B02/B03). FLAG-CASH verdict stands without rating agency working-capital commentary backing."
+  
+  - field: "Peer P/E Median"
+    why: "Screener-Profit_Loss.csv came back empty per B01 line 13; peer EPS extraction blocked"
+    where_it_might_be: "Peer screener Profit_Loss.csv export (should list Net Profit by quarter/year); alternate source = peer results PDFs or annual reports"
+    handling: "Unresolved. Peer medians left blank. Tatva P/E computed for reference only (CMP 1,326 / EPS 17.98 = 73.8x, highly cyclical; FY25 EPS 2.44 would give 544x, FY24 EPS 4.33 gives 306x; single-year P/E not reliable)."
+  
+  - field: "Peer EV/EBITDA Median"
+    why: "Peer EBITDA derivation requires balance-sheet data (Depreciation, Finance Costs); screener-Balance_Sheet.csv empty per B01"
+    where_it_might_be: "Peer screener Balance_Sheet.csv or re-derivation from peer P&L and Cash Flow statements"
+    handling: "Unresolved. Tatva EV/EBITDA computed for reference: 32,176 Mn / 967 Mn = 33.3x (for peer cross-check, unanchored)."
+  
+  - field: "Peer P/B Median"
+    why: "Peer BVPS requires peer shares and equity data; screener-Data_Sheet.csv provides reserve data but share counts require careful extraction"
+    where_it_might_be: "Peer screener-Data_Sheet.csv rows 39-40 (Equity Share Capital, Reserves) + row 52 (No. of Equity Shares); full peer BVPS derivation needed"
+    handling: "Unresolved. Tatva P/B for reference: CMP 1,326 / BVPS 334.6 = 3.96x (not peer-anchored)."
+  
+  - field: "Peer Revenue Growth CAGR (3-year)"
+    why: "Screener-Data_Sheet.csv provides FY24/FY26 Sales but FY23 figures require secondary lookup or assume 2-year CAGR as proxy"
+    where_it_might_be: "Screener-Data_Sheet.csv row 11 (Sales) for FY23, FY24, FY26 intersection; or peer annual reports"
+    handling: "Partial resolution: 2-year CAGR calculated from screener FY24→FY26 (ACUTAAS 36.6%, CAMLINFINE 9.0%, CLEAN 10.0%, NEOGEN 11.9%). True 3-year CAGR deferred pending FY23 extraction."
+  
+  - field: "Peer ROCE Median"
+    why: "ROCE = EBIT / Capital Employed; requires derivation of peer Capital Employed (Net Worth + Borrowings) and peer EBIT (PBT + Tax + Interest); screener Balance_Sheet.csv empty"
+    where_it_might_be: "Peer screener exports (Profit_Loss.csv for tax/interest; Balance_Sheet.csv for equity/borrowings) or peer AR financials"
+    handling: "Unresolved. Single-peer ROCE (Tatva 6.6%) stands alone; peer median cross-check deferred to verifier."
+  
+  - field: "FII+DII Shareholding (%) UA Qualifier"
+    why: "B02 Note 16(ix) discloses mutual fund 5.34%, promoter 72.02%, retail/HNI split. FII/DII not separately itemized in provided AR or screener export"
+    where_it_might_be: "Quarterly shareholding-pattern filings (SEBI Regulation 31) or BSE/NSE shareholding disclosure pages (not provided in run inputs)"
+    handling: "Estimated FII+DII >=3% (mutual fund 5.34% overlaps with institutional category likely containing foreign/domestic institutional holders). Assumed NO on UA qualifier but full resolution requires quarterly SHP filings. Note: B02 and CLAUDE.md (Amendment 3) clarify low institutional ownership is NOT a risk factor; min multiplier applies, not a pass/fail."
+  
+  - field: "FY26 Facility Utilization % (Quarterly breakdown)"
+    why: "B07 notes 'AR FY26 post-new-Dahej-block facility-level utilisation % not available (only FY23-FY25 utilisation table provided in AR; FY26 utilisation NOT FOUND)'"
+    where_it_might_be: "Next AR (FY26 full-year), expected disclosures in Management's Discussion & Analysis or Notes to Accounts (operational/capacity metrics section)"
+    handling: "Deferred. FY26 ROCE 6.6% from Deliberation accepted as authoritative but not independently verified against facility utilization % in this run. Reactor utilization noted as 64.11%, assembly-line 30.54% in FY24-25 (B04 unit_economics), suggesting significant idle capacity (upside to ROCE recovery on utilization ramp per B04 key_lever)."
+
+rating_wc_quote: "NOT FOUND — No Rating PDF provided in run inputs (inputs/rating/ directory absent)"
+
+ua_qualifiers:
+  listed_12m: true
+  listed_12m_basis: "IPO 21 July 2021; listed 4 years 11.6 months as of 2026-07-12"
+  listed_12m_anchor: "Public IPO record"
+  
+  gate0_or_em: false
+  gate0_or_em_detail: "Gate 0 core 48 (below 60) AND EM 19.2 (below 25); both thresholds missed"
+  gate0_score_anchor: "B01 line 21"
+  em_score_anchor: "B07 line 15"
+  
+  fii_dii_lt3: false
+  fii_dii_lt3_detail: "Mutual fund holding 5.34% disclosed; FII+DII aggregate >=3% estimated (full breakdown not provided)"
+  fii_dii_anchor: "B02 Note 16(ix) shareholding; quarterly SHP filings not provided"
+  
+  all_met: false
+  all_met_summary: "1 of 3 qualifiers met (listed >=12m only). NO UA multiplier applies. Per Amendment 3 and CLAUDE.md, low institutional ownership is not a risk; do not confuse UA qualifier with institutional-ownership risk assessment."
+
+credibility_grade: "B"
+credibility_grade_basis: "Good. Core financial guidance (revenue growth, 20-22% EBITDA margin band) delivered essentially on schedule with margins tracking 18.0% to 19.4% to 20.9% across three quarters. Most product commercialization promises landed with only minor disclosed delays (Dahej plant ~2 mo late, agro intermediates timely, margin target hit, Electrolyte Salts +1,378% YoY Q4). Long-cycle capex/timeline commitments weakest: Jolva groundbreaking slipped 3 consecutive quarters (reframed as engineering optimization, not acknowledged as delay per B05 line 11 HIGH flag), semiconductor dispatch missed original Q4 FY26 target unacknowledged in Q4 call. ROCE questions deflected in Q2 and Q3 with no forward target ever given. Short of A grade (Excellent) due to capex timeline track record and evasion pattern on capital efficiency questions."
+credibility_grade_anchor: "B05 line 65-66"

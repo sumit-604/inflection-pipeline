@@ -1,0 +1,14 @@
+stage: B13-synthesis
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+mode: phase-1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: GROWTH-INDUCED
+confidence_delta: {numerical: 96, redflag: 92, framework: 100, peer: 100, overall: 92}
+falsification_metric: "Q1 FY27 consolidated operating cash flow (Aug 2026): if negative while revenue grows and WC days hold at/above 344, growth-induced reading breaks to structural"
+monitorables_count: 8
+valuation_fields_omitted: true

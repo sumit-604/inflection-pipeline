@@ -6,7 +6,7 @@ Precision engineered metal components for automotive Tier 1s and OEMs (86% auto,
 Buying is not warranted at Rs 666: a real growth franchise (revenue +54% FY26, filed order book above Rs 1,200 Cr, Sanand ramp) trades near 64x trailing while its four-pillar earned exit multiple lands near 20x, so the 25% hurdle STOPs and fair entry sits near Rs 207 to 252, roughly a third of price.
 
 ## DECISION STATUS AND ENTRY ZONE
-As of 2026-07-12: DEEP WATCH / AVOID on valuation. Re-engagement zone Rs 207 to 252 (RRM-governing to additive), MoS Rs 166. MARKET-UNLIKELY ZONE (price history unavailable in run inputs; entry sits ~62% below CMP 666). FTTCP composite +2 of 8, DEEP WATCH leaning AVOID. Destination PE 16.5x RRM / 20.1x additive, Manufacturing 25x cap. Confidence 82.
+As of 2026-07-12: DEEP WATCH / AVOID on valuation. Re-engagement zone Rs 207 to 252 (RRM-governing to additive), MoS Rs 166. Entry sits ~62% below CMP 666, ~7% below the 52 week low (~Rs 270), and above the listing low (~Rs 116-135) per the operator's daily chart. The zone has been traded (early-to-mid 2025) so it is not a never-reached zone, but from a strong rising channel at new highs it needs a ~62% drawdown; DEEP WATCH, not actionable. FTTCP composite +2 of 8, DEEP WATCH leaning AVOID. Destination PE 16.5x RRM / 20.1x additive, Manufacturing 25x cap. Confidence 82.
 
 ## OPERATOR RULINGS
 - 2026-07-12: Cash conversion is GROWTH-INDUCED, not INDETERMINATE — ruled on the CRISIL rationale (working-capital-intensive, long export credit terms, no bad-debt flag) plus clean FY22-24 over-6-month receivables (2.0/0.6/2.7%) reconciling to anchored totals. Lifts the INDETERMINATE cap; cash multiplier 1.00x. Residual falsifier stands (over-12-month bucket never seen).

@@ -14,9 +14,9 @@ AVOID at CMP Rs 666. Deep watchlist for re engagement, no position now.
 
 ## Zone reachability
 
-Price history unavailable: the screening CSVs in this run carry no price series, so neither the 52 week low nor the lowest tested price since the October 2024 listing can be computed. The entry zone top Rs 252 sits about 62% below CMP Rs 666.
+Price history added from the operator's daily chart (TradingView, 2026-07-12), which the run inputs lacked. CMP Rs 666. The 52 week low is about Rs 270 (the early 2026 pullback). The lowest price tested since the October 2024 listing is about Rs 116 to 135 (the listing base and the March-May 2025 channel bottom). The entry zone top Rs 252 sits about 62% below CMP, about 7% below the 52 week low, and well above the listing low.
 
-MARKET-UNLIKELY ZONE. Reaches entry only via a thesis relevant shock or a broad de rating; classify DEEP WATCH, not an actionable WATCHLIST, or route to the trading book. No Tier B alternative is printed: the hurdle STOPs on both tracks and the zone remains roughly a third of CMP under either ROCE convention, so no reachable Tier B zone exists to show.
+The strict never-reached test does NOT fire: the zone top Rs 252 is above the lowest tested price since listing (~Rs 120), so the stock does not need new all time lows to reach it and it did trade through the zone in early-to-mid 2025. But from Rs 666 in a strong rising channel making new highs, a fall to Rs 207 to 252 is a 62 to 69% drawdown and sits below even the 52 week low, so near term reachability is low. Classify DEEP WATCH, not an actionable WATCHLIST: the entry comes only via a broad de rating or a thesis relevant shock, not from normal trading. No Tier B alternative: the hurdle STOPs on both tracks and the zone stays roughly a third of CMP under either ROCE convention.
 
 ## Confidence delta
 

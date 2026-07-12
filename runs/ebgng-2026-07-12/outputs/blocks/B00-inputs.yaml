@@ -1,0 +1,29 @@
+stage: B00-inputs
+company: EBGNG
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+concalls_available: true
+no_concall_mode: false
+run_type: full
+prior_run_found: false
+inventory:
+  annual_report: 1        # DRHP 2025-03-25, not a post-listing AR
+  results: 2              # Q3 FY26 unaudited, Q4/FY26 audited
+  rating: 1               # CARE BBB;Stable / A3+, 2026-04-08
+  concalls_present: 4
+  concalls_used: 3        # Nov2025 Q2FY26, Feb2026 Q3FY26, May2026 Q4FY26
+  peer_concalls: 12       # CNL x4, REDINGTON x4, RPTECH x4
+  screening_csv: 30
+  presentation: 0
+  other: 0
+concall_quarter_map:
+  Concall_Nov_2025: Q2 FY26
+  Concall_Feb_2026: Q3 FY26
+  Concall_May_2026: Q4 FY26
+input_gaps:
+  - presentation_absent: "inputs/presentation/ empty; stage 4 degrades to DRHP + results commentary; operator pause undeliverable (AskUserQuestion stream closed, remote session); proceeded on default"
+  - annual_report_is_drhp: "annual-report/ is an IPO DRHP dated 2025-03-25 (restated accounts through FY24), not a post-listing annual report; FY25/FY26 numbers from results PDFs and rating"
+  - sector_cap_mismatch: "manifest sector_cap_row 'Pharma / CDMO' wrong for an ICT-refurbishment / IT-hardware business; collect_to_repo auto-pick defect; flag for phase-3 stage-11 sector cap"
+  - concalls_4_available_3_used: "Aug-2025 (Q1 FY26, first post-IPO call) preserved but unused per 3-most-recent rule"
+flags: []

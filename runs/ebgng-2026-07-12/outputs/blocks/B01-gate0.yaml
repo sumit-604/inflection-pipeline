@@ -1,0 +1,32 @@
+stage: B01-gate0
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags:
+  - type: FLAG-GATE0
+    reason: "Core score 48/100 (AVERAGE). Block B=0/20 (cumulative CFO/PAT -0.93, cumulative FCF/PAT -1.80, WC days 136->178, CARE-corroborated working-capital-intensive scaling). Block E=0/20 is a data gap (no shareholding pattern or Notes to Accounts in the screener/results inputs; those data live in the DRHP and are covered by stages 2/3/8), not an evidenced weakness. Block A4 ROCE-trend score of 0 reflects one-year FY2026 post-IPO capital-base dilution (net worth ~226cr to ~758cr), not operating deterioration. Block C=20/20 (revenue CAGR 40.6%, PAT CAGR 107.8%) and 3 moats present (M1 pricing power, M3 capital efficiency, M4 customer stickiness) are strong."
+data_years: 7
+fy_range: "FY2020 to FY2026"
+blocks: {A: 15, B: 0, C: 20, D: 13, E: 0}
+core_score: 48
+moat_score: 16
+grand_total: 64
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (=0) -> max GOOD", "Cumulative CFO/PAT <0.50 (=-0.93) -> max AVERAGE"]
+history_downgrade: false
+data_notes:
+  - "Screener FY2025 CFO (+24.53cr) / Investing CF (+2.62cr) conflict with FY2026 audited report's restated FY2025 comparative (CFO -113.84cr, Investing -3.59cr); restated audited figures used for FY2025."
+  - "CARE rating states CFO negative 'since FY20' (consolidated basis, CARE rating p.2), conflicting with screener's positive FY2023 (+1.47cr) and FY2024 (+97.46cr) CFO; unresolved, no audited FY2023/FY2024 consolidated CF statement in the provided inputs."
+  - "Screener FY2026 'Other Expenses' (Rs 1,810.76cr) exceeds audited FY2026 Total Expenses (Rs 1,747.67cr) - line-item remapping error; audited results PDF Direct cost/Changes in inventory used instead for FY2026 gross-margin proxy (M9)."
+  - "ROCE (A1/A2/A4) computable only FY2025-FY2026; current-liabilities split absent pre-FY2025 in provided data; FY2020-FY2024 ROCE NOT FOUND."
+  - "WC Days (B4) computable only FY2025-FY2026; trade payables not separately disclosed pre-FY2025; FY2020-FY2024 NOT FOUND."
+  - "E1-E3 (promoter holding, change, pledge) NOT FOUND in screener/results inputs; DRHP carries them (stage 8 covers)."
+  - "E4 (contingent liab/net worth) NOT FOUND in results PDFs; partial corporate-guarantee disclosures (~AED 85m cumulative to subsidiary Electronics Bazaar FZC lenders) noted but not used to score E4."
+  - "No loss-to-profit PAT swing: PAT positive throughout FY2020-FY2026."
+  - "Net worth roughly tripled FY2025->FY2026 (Rs226.46cr to Rs757.79cr) on ~Rs400cr gross IPO proceeds (July 2025); dilutes FY2026 ROCE/ROE/D-E vs FY2025, flagged for downstream weighing, not auto-overridden here."
+  - "M2, M5, M9 scored 0, PEER DATA NEEDED (no peer financial data in stage-1 inputs; peer CSVs exist for stage 6/verifier D)."
+block_b_trend: "deteriorating - WC days (computed, revenue basis) 136.4 (FY2025) to 178.1 (FY2026), +41.7 days, results Q4 FY26 p.17 Consolidated BS; corroborated by CARE operating cycle 93 days (FY2024) to 122 days (FY2025), expected to stay above 150 days medium term, and gearing ~2.0x flagged working-capital-intensive (CARE rating p.2/p.4)."

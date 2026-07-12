@@ -1,0 +1,23 @@
+stage: B12b
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 11
+caught: 9
+partially_caught: 1
+missed:
+  - {severity: "MINOR", item: "Quick return to equity — Rs.43.3cr preferential issue within ~18 months of IPO while Rs.20cr IPO proceeds still unutilized (M25 p.3); IPO deployment plan never revisited in M26", anchor: "M26 p.3 preferential issue; M25 p.3 Rs.20cr unutilized"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B (Good) at the low end; over-promotion (Tesla/humanoid 'very large this year') is the real drag and roughly offsets the over-stated quarterly-cadence ding"
+findings:
+  - {severity: "MAJOR", location: "B05 4D red flag #1 / 2C Accountability / 4C", claimed: "broken quarterly-disclosure promise (HIGH) — only one further call in 12 months, unacknowledged", source_truth: "promise real and anchored (M25 p.11 Agastya Dave; M25 closing) but 'broken/only-one-call' inferred from absence in an input set B05 itself labels a 'known collector defect'; 'quarterly updates' not necessarily 'quarterly concalls'", note: "top-ranked flag drives Accountability sub-grade on over-confident evidentiary basis; B05 hedges elsewhere so calibration not fabrication"}
+  - {severity: "MINOR", location: "B05 4D red flags / 2C Over-promotion", claimed: "humanoid treated only as aspirational; over-promotion 4/5", source_truth: "M26 p.10 'Humanoids... very large part of your revenues this year itself?' — 'I hope so, yes. This year itself' on a trial-phase (>4,000-part) program", note: "PARTIALLY CAUGHT — specific near-term revenue over-promise not elevated to red-flag list"}
+  - {severity: "MINOR", location: "B05 4D red flag #5 / B06 Part1 Q5", claimed: "margin ambition quietly cut from +4-5pp/3-4yrs to ~1% FY27", source_truth: "M25 p.10 target 4-5pp over 3-4yrs; M26 p.4 guides +1% FY27 — arithmetically within the multi-year envelope; management neither restated nor abandoned the target", note: "'cut' overstates a low-end reaffirmation; B06 Q5 'guidance-cut' premise inherits the imprecision"}
+  - {severity: "MINOR", location: "B05 (capital allocation)", claimed: "Rs.43.3cr pref issue noted only as funding source; Rs.20cr IPO plan 'unconfirmed'", source_truth: "M26 p.3 pref issue within ~18 months of Oct-2024 IPO while M25 p.3 Rs.20cr IPO proceeds still unutilized", note: "quick equity return not surfaced as a capital-allocation/dilution flag"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 82
+redflag_coverage_caught_over_found: "9/11 = 82%"

@@ -1,0 +1,21 @@
+stage: B12d
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 14
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2E, MFT GmbH insolvency item", claimed: "Rs48.8cr full write-off", source_truth: "PRECAM Dec 2025 call states the exceptional item was INR49.7 crores, full write-off of MFT GmbH; no Rs48.8cr figure in transcript", note: "underlying claim (insolvency, full write-off) correctly sourced and used; only the rupee figure is wrong"}
+  - {severity: "MINOR", location: "B06 Part 2E, road-tax-linked export benefit", claimed: "benefit halved, ~Rs1cr annual hit", source_truth: "RACLGEAR Mar 2026: govt cut ~RoDTEP-type benefit by 50%, mgmt estimates 'around a crore of rupees' next year", note: "substance and figure correct; scheme-name gloss imprecise"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, RACLGEAR Q3 row", claimed: "CITED-ONLY, not decisive for Part 1", source_truth: "same transcript is sole source for a quantified Part 2E risk finding", note: "accurate for Part 1; undersells Part 2 contribution"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, RACLGEAR Q3 quarter label", claimed: "Feb 2026", source_truth: "filed Mar 3 2026 for a call held Feb 27 2026", note: "call-date vs filing-date labeling difference, not wrong-transcript"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+peer_utilisation_substantive_over_provided: "14/16 = 87.5%"
+acceptance_rate: 94

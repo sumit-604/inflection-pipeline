@@ -1,0 +1,53 @@
+stage: B08-promoter
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Proxy-advisory (IiAS/SES/InGovern) specific vote recommendation on FY25 AGM remuneration resolution not confirmed"
+  - "Reason for Ms. Bama Balakrishnan (former ED & COO) departure, 13-Nov-2023, not disclosed/found"
+  - "Shareholding pattern later than 31-Mar-2025 not reliably sourced (only aggregator found was internally inconsistent)"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["RBI KYC monetary penalty Rs 2.70L, order received 30-Jan-2026, Direction 50 AML-alert-system non-compliance", "RBI directive (16-May-2025) forcing exclusion of FLDG credit enhancements from ECL, Rs 8,041 lakh impact, auditor Emphasis of Matter", "BSE NCD-listing timeliness fines totalling ~Rs 18.87 lakh across FY22-FY25", "CEO remuneration +43% YoY, 1:173 CEO-to-median pay ratio vs 11.9% average employee increase", "No promoter/pledge structurally N/A - institutionally owned, IPO'd Sep-2024"]}
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 3, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "RBI monetary penalty Rs 2.70 lakh for KYC (AML alert system) non-compliance, order received 30-Jan-2026", evidence_tier: "VERIFIED", source: "psuconnect.in / ACAMS enforcement database / TradingView-Reuters / MarketScreener (cross-confirmed 5 outlets)", date: "2026-01-30"}
+  - {finding: "RBI directive to exclude FLDG credit enhancements from ECL computation, Rs 8,041 lakh impact, auditor Emphasis of Matter (opinion unmodified)", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Note 83 and Independent Auditor's Report", date: "2025-05-16"}
+  - {finding: "BSE NCD-listing timeliness fines, ~Rs 18.87 lakh aggregate across FY2021-22 to FY2024-25", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Corporate Governance Report", date: "FY22-FY25"}
+  - {finding: "CEO remuneration +43% YoY; CEO-to-median employee pay ratio 1:173", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Board's Report", date: "FY2024-25"}
+  - {finding: "Company Secretary role changed 3 times in ~18 months (Srividhya to Gurung to Panda)", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, RPT Note 42", date: "Nov-2023 to Apr-2024"}
+transition_evidence:
+  - {item: "Founder-generation CEO (Kshama Fernandes, 2012-2022) completed final board tenure, exited board fully effective 31-Mar-2026", source: "scanx.trade corporate announcement", tier: "MEDIA REPORTED"}
+  - {item: "External, non-family CEO Ashish Mehrotra (ex-Niva Bupa, ex-Citibank) in seat since Mar-2022, 4+ years", source: "Annual Report FY24-25 bio; company press release", tier: "VERIFIED"}
+  - {item: "Fresh institutional entry: IFC (INR 382cr, new 6.08% holder) and Eight Roads Mauritius II (new 7.35% holder) both entered FY25", source: "Annual Report FY24-25 Note 19(g)", tier: "VERIFIED"}
+  - {item: "New independent director Sandeep Dhar appointed May-2025; CRO/Group Risk Officer succession re-designation Nov-2024", source: "Annual Report FY24-25; corporate filings", tier: "VERIFIED/MEDIA REPORTED"}
+  - {item: "IPO (Sep-2024) broadened ownership from 86.39% concentrated in 7 holders (Mar-2024) to 58.55% (Mar-2025) plus public float, bringing SEBI LODR disclosure regime", source: "Annual Report FY24-25 Note 19(g)", tier: "VERIFIED"}
+pledge_pct_latest: 0
+pledge_trend: "not applicable - no promoter, no pledge to track"
+searches_performed:
+  - "Northern Arc Capital SEBI action promoter"
+  - "Ashish Mehrotra Northern Arc Capital CEO background Niva Bupa Citibank"
+  - "Northern Arc Capital LeapFrog Augusta stake sale block deal 2025"
+  - "Northern Arc Capital RBI FLDG ECL show cause"
+  - "RBI imposes monetary penalty Northern Arc Capital Limited KYC"
+  - "Northern Arc Capital IiAS proxy advisory remuneration governance"
+  - "Northern Arc Capital Glassdoor AmbitionBox employee reviews"
+  - "Northern Arc Capital Pragati Finserv subsidiary issue"
+  - "Northern Arc independent director resign OR exit 2025 2026"
+  - "Northern Arc Capital promoter group entities struck off RoC shell"
+  - "Northern Arc Capital shareholding pattern June 2026 institutional investors percentage"
+  - "Northern Arc Capital block deal 2026 LeapFrog OR Augusta OR Eight Roads sells"
+  - "Northern Arc Capital independent director appointment 2026 governance overhaul new"
+  - "Northern Arc Capital statutory auditor change Walker Chandiok Deloitte rotation"
+  - "Ashish Mehrotra Niva Bupa controversy OR complaint OR IRDAI"
+  - "IRDAI Max Bupa Health Insurance 2016 order penalty inspection 2012"
+  - "Northern Arc Capital history IFMR Capital founded Bindu Ananth Kshama Fernandes 2009"
+searches_skipped:
+  - "Dedicated SCORES complaint-count lookup (no portal access)"
+  - "Company-specific IiAS/SES/InGovern published voting-recommendation report"
+  - "AmbitionBox-specific review pull (only Glassdoor results returned)"
+  - "Entity-by-entity MCA/RoC portal lookup for each of the 7 institutional shareholders"
+verdict_basis: "No promoter (institutionally owned NBFC, IPO Sep-2024); CAUTION driven by a live RBI KYC penalty (Jan-2026), an RBI FLDG/ECL supervisory directive (May-2025), recurring BSE NCD timeliness fines, and an elevated CEO pay rise, set against strong verifiable KMP/board credentials and a completed founder-to-professional leadership transition."
+orchestrator_note: "verdict is CAUTION, not CONCERN/AVOID; per Section 4 flag rules the mandatory verdict-line FLAG-PROMOTER placement triggers on CONCERN/AVOID. This CAUTION is carried with its transition evidence for the operator, but does not force the verdict line."

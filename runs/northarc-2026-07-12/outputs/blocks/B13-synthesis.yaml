@@ -1,0 +1,32 @@
+stage: B13-synthesis
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 3
+verdict: "PROCEED WITH FLAGS"          # evidence gate (five-verdict set, rule 3)
+verdict_rule_applied: 3
+valuation_decision: "AVOID"            # on-valuation at CMP Rs 325
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER (CAUTION, non-forcing)", "FLAG-GATE0", "SHARED CATALYST"]
+confidence_delta: {numerical: 87.5, redflag: 75, framework: 96, peer: 93, overall: 75}
+fttcp_composite: "+4/8 DEEP WATCH leaning BUY-ON-DIPS"
+destination_pe: {additive_mid: 13.4, rrm_mid: 10.0, pb_primary_fair: 0.97}
+hurdle_ratio: {value: 1.53, verdict: "STOP"}
+entry_range: {low: 153, high: 173}
+mos_price: 138
+prob_weighted_cagr: 1.3
+devils_advocate_overall: "WEAKENED BUT ALIVE"
+headline: "Diversified retail NBFC strengthening after its IPO"
+falsification_metric: "Q1 FY27 consolidated credit cost above 3.2% with GNPA past 1.5%"
+monitorables_count: 10
+publish_candidate: false
+deliverables:
+  - business-narrative.md
+  - fttcp-recommendation.md
+  - verifier-summary.md
+  - fttcp-handoff.md
+notion_save:
+  page_title: "NORTHARC - Northern Arc Capital (full workup, 2026-07-12)"
+  summary: "Diversified retail NBFC strengthening after its IPO | PROCEED WITH FLAGS on evidence | valuation AVOID at Rs 325 | entry Rs 153-173, MoS Rs 138 | Hurdle 1.53 STOP | prob-weighted CAGR 1.3%"
+  drive_link: "NONE"
+  mode: append-never-overwrite-status

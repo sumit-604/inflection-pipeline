@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 97, high: 121}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "H1 FY27 operating cash flow negative on rising revenue with receivable days above 185 (cash confirmed structural), OR ROCE fails to clear 8% by FY28"
+monitoring_checklist:
+  - "CFO positive on rising revenue and debtor days falling toward 60; RED if CFO negative with revenue up or debtor days above 185"
+  - "ROCE above 8% in FY27 and rising toward 15%; RED if stuck in 6-8% band through FY28"
+  - "Revenue growth YoY at or above 20% with SDA at or above 20% reaching Rs 250-300 Cr; RED if YoY below 14%"
+  - "EBITDA margin holding the 20-22% band; RED if below 18%"
+  - "Jolva breaks ground mid-July 2026 with no 4th slip and semiconductor first dispatch in Q1 FY27; RED if 4th Jolva slip past FY27"
+  - "Credit rating no further downgrade below BBB+/Stable; RED if downgraded below BBB+"
+  - "Clean Science and Neogen demand tone flips from soft to recovery confirming Tatva's narrative; RED if peers stay soft while Tatva claims recovery"
+  - "Promoter remuneration realigns with PAT recovery; RED if fresh pay hike against flat or falling PAT"

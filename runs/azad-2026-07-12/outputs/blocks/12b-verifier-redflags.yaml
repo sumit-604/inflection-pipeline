@@ -1,0 +1,18 @@
+stage: B12b
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 12
+partially_caught: 1
+missed: []
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur — B is right; strong delivered revenue/margin record offset by correctly-flagged OCF/WC opacity and GTRE slippage, no misstatement of reported results"
+findings:
+  - {severity: "MINOR", location: "B05 3C/4D vs Q3 p9-10", note: "QIP INR156cr general-corporate-purposes use-of-proceeds question folded into broader dilution discussion, not isolated as a transparency item; presentational only"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 92

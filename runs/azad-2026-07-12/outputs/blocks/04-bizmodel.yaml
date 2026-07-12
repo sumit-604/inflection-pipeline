@@ -1,0 +1,59 @@
+stage: B04-bizmodel
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No per-part unit economics disclosed", "No explicit capacity utilization % disclosed", "No annual new-qualifications count disclosed", "No employee attrition rate disclosed", "No company-sourced competitive comparison vs MTAR/Dynamatic/PTC Industries/Unimech", "No raw-material/forex pass-through contract terms disclosed"]
+flags: ["High customer concentration: top-5 customers = 51.1% of FY25 revenue (AR notes p.173)", "Heavy ongoing capex funded partly by resumed debt in FY26 after net-cash FY25", "FY23 PAT margin anomaly (3.4%) driven by one-off items"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Energy & Oil & Gas components", type: "engineered-product sales under long-term supply agreements", pct_of_revenue: 79.1, predictability: "H"}
+  - {name: "Aerospace & Defence components", type: "engineered-product sales under long-term/phased contracts", pct_of_revenue: 17.9, predictability: "M"}
+  - {name: "Scrap & export incentives", type: "residual/ancillary income", pct_of_revenue: 3.0, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Switching costs (30-48 month qualification cycles, zero-PPM requirements, 10+ yr relationships)", durability: "high"}
+  - {moat: "Regulatory/qualification barrier (aerospace/defence/nuclear certifications)", durability: "high"}
+  - {moat: "Intangible know-how (1,700+ qualified parts, 45+ processes)", durability: "moderate"}
+  - {moat: "Cost advantage vs China/Europe/US/Japan (claimed, unverified with unit-cost data)", durability: "weak/unverified"}
+  - {moat: "B2B relationship trust/awards (MHI, GE Vernova, Siemens Energy)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Capital-intensive manufacturer mid capacity-ramp; EBITDA normalizes for elevated depreciation and non-recurring items"}
+  secondary: {method: "DCF", why: "Multi-year revenue visibility from ~Rs 6,080cr order book/LTAs supports explicit cash-flow modelling as a cross-check"}
+  tertiary: {method: "P/E", why: "Usable given consistent post-QIP PAT growth, but FY23 anomaly shows reported PAT can be noisy - cross-check only"}
+  not_applicable: ["P/B (book value excludes qualification/relationship moat)", "Sum-of-the-parts (single Ind AS 108 segment)", "Dividend discount model (no dividend)", "Replacement cost/asset-based (understates qualification moat)"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover vs general manufacturing benchmarks", why: "Long qualification-linked WIP cycles make elevated days structurally normal"}
+  - {ratio: "Current/quick ratio in isolation", why: "Capex-and-WC-heavy scaling model distorts these mechanically"}
+  - {ratio: "Blended YoY revenue growth without segment split", why: "A&D and Energy have very different base sizes and maturity"}
+  - {ratio: "Revenue per employee vs generic industrial peers", why: "Skilled-engineer, low-headcount model not comparable to mass manufacturing"}
+  - {ratio: "Same-store/like-for-like growth concepts", why: "Not a multi-site retail/franchise model"}
+must_track_metrics:
+  - {metric: "Order book value and YoY growth", healthy: "Rising multiple of trailing revenue (~13x currently)", red_flag: "Growth stalls or flat for 2+ quarters"}
+  - {metric: "Adjusted EBITDA margin", healthy: "Trending up, currently 36-37%", red_flag: ">200bps YoY compression without one-off explanation"}
+  - {metric: "Top-1/top-5 customer concentration", healthy: "Stable or declining from 51.1%/13.9%", red_flag: "Top-1 crosses ~20% or top-5 crosses ~65%"}
+  - {metric: "Net debt/equity", healthy: "Low/net-cash, leverage funds capacity converting to revenue in 12-18 months", red_flag: "Rises above ~0.5-1x without matching utilization"}
+  - {metric: "Adjusted ROCE", healthy: "20%+", red_flag: "Falls and stays below ~12-15% while capex continues"}
+unit_economics:
+  unit: "A qualified precision component (heterogeneous across 1,700+ qualified parts) - no standard SKU-level disclosure"
+  revenue_per_unit: "NOT FOUND, check investor presentation or concall"
+  margin_per_unit: "NOT FOUND, check investor presentation or concall"
+  key_lever: "OEM program production rates and wallet-share gains within already-qualified programs; new qualifications converting to orders"
+first_deterioration_signals:
+  - {risk: "Revenue model - customer concentration", first_signal: "Order-book growth deceleration or single-customer share crossing ~20%"}
+  - {risk: "Margin - input cost/forex squeeze on 91.9% export revenue", first_signal: "Adjusted EBITDA margin compression QoQ despite revenue growth"}
+  - {risk: "Balance sheet - debt-funded capex ahead of ramp", first_signal: "Net debt/equity re-crossing ~0.5x while utilization lags"}
+  - {risk: "Execution - new dedicated facility ramp risk", first_signal: "Depreciation/PP&E growth outpacing revenue for 2+ quarters"}
+  - {risk: "Structural - OEM capex cycle dependence", first_signal: "Order book stalling or non-renewal of a marquee LTA/LTCPA"}
+mgmt_questions:
+  - "What is current capacity utilization at existing vs newly commissioned dedicated facilities, and when do they reach steady-state?"
+  - "How much of the ~Rs 6,080cr order book is firm/binding vs indicative, and what is the revenue-conversion cadence over 3 years?"
+  - "What is the qualification pipeline for FY26-27, and how many new parts/programs convert to revenue?"
+  - "How is raw material and forex exposure managed given 90%+ export revenue - are LTAs pass-through or fixed-price?"
+  - "What is the capex plan beyond Phase-1/Phase-2, and how funded (accruals vs debt)?"
+  - "What drove the FY23 PAT margin anomaly (3.4%), and is there residual recurrence risk?"
+  - "Target for reducing customer and geographic concentration over 3-5 years?"
+one_line_verdict: "High-moat, high-concentration precision manufacturer scaling capacity into a genuine multi-year sector upcycle, but revenue and margin durability still ride on a handful of OEM relationships and unproven new-facility ramps."

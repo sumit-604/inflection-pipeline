@@ -42,3 +42,5 @@ _Lessons written into a prompt file so they cannot recur. Each entry names
 the file and the change._
 
 (none yet)
+
+- [2026-07-12] AZAD phase 1: large annual report (249-page, 8.5MB) crashed stage 3 with a 32MB request error from rendering too many PDF pages as images. Fixed by extracting a page-anchored plain-text cache (pypdf, "===== PDF PAGE n =====" markers) for every input PDF and routing all text-reading stages to it, PDF Read-pages kept only as small-range visual fallback. Printed AR page = PDF sheet minus 3. Poppler-utils was again absent at start (one apt mirror 404'd; fixed after apt-get update) plus pypdf/cffi force-reinstall. Consider promoting the text-cache step to a stage-0 preprocessing law for any AR over ~150 pages. Clean run otherwise: verdict PROCEED WITH FLAGS, FLAG-CASH GROWTH-INDUCED + FLAG-GATE0, confidence 92 high; manifest sector_cap_row 'Pharma / CDMO' wrong again (precision aerospace/energy engineering), flagged for phase 3.

@@ -1,0 +1,56 @@
+stage: B09-tam
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No per-tonne/per-unit revenue or volume data disclosed for any product line (confirmed NOT FOUND per B04) — prevented a true bottom-up (Method 2) build; PASC TAM relies on a revenue-mix-proportional proxy constructed for this report, not a market report"
+  - "No named competitor revenue disclosed anywhere in AR or IP (confirmed NOT FOUND per B04) — Method 3 peer aggregation could not produce an independent TAM figure"
+  - "Organised vs unorganised sector split NOT FOUND for any of the four segments; the standard 30-60% India unorganised-sector assumption does not transfer to these DSIR/ISO/REACH-regulated technical niches and was not applied"
+  - "No product-specific global market report found for Glymes-as-pharma/agro-solvent (Tatva's actual PASC core); the $8.67bn India Chemical Intermediate market proxy used is too broad to be a reliable TAM component"
+  - "Section 1B v3.3's exact runway-classification threshold matrix was not available inside this stage's inputs; MASSIVE/STRONG/GOOD/MODERATE/LIMITED bands used here (>50x/20-50x/10-20x/5-10x/<5x headroom) are stated as an explicit assumption, not sourced to the framework"
+flags:
+  - "Management's own Investor Presentation TAM claim (4-segment aggregate, $141.78bn, 2022 base) is ~79.7x the conservative product-specific TAM estimate ($1.78bn) — INFLATED, driven almost entirely by an unrelated $133bn 'global pharma+agro intermediates industry' figure attached to the PASC-adjacent box; even excluding that box, the remaining PTC+SDA+ESS aggregate ($8.78bn) is still ~4.9x conservative TAM, driven by an Electrolyte Salts figure ($6.4bn) that is 50-57x the independently-researched super-capacitor-electrolyte-specific market"
+  - "SDA global market size claimed in the Investor Presentation ($1.19bn, 2022) is roughly 2x both independent web-research estimates and the company's own more recent Annual Report figure ($600mn, 2023) — internally inconsistent across the company's own two most recent investor documents"
+  - "SOM 3yr (Rs754cr) sits only ~Rs23cr above the conservative, Jolva-inclusive capacity ceiling from B07 (Rs731cr); if Jolva's groundbreaking slips a fourth time (a well-evidenced HIGH-severity risk per B07), the capex plan becomes the binding constraint and the SOM becomes the optimistic side of the comparison"
+  - "5yr SOM (Rs968cr, +91% vs current revenue) carries materially more execution risk than the 3yr figure since it likely requires Jolva to be commissioned and partially ramped within the window"
+  - "India specialty chemicals market size shows material, unresolved divergence across sources (AR: ~$40bn 2023 at >11% CAGR; IBEF: ~$64bn by 2025 at 12% CAGR; IMARC/GVR: $62.5-64.5bn 2024 at 3.8-8.67% CAGR) — flagged rather than averaged, reflecting differing specialty-chemicals scope definitions across research houses, not resolvable from the documents provided"
+market_definition: "Four distinct global B2B specialty-chemical niches (Phase Transfer Catalysts, Structure Directing Agents for zeolites, super-capacitor Electrolyte Salts, and pharma/agro Intermediates dominated by Glymes) sold by a Gujarat-based manufacturer to industrial API/agrochemical/auto-catalyst/EV customers in 25-35+ export countries plus India"
+tam_cr: {conservative: 15237, realistic: 22530}
+sam_cr: 7909
+sam_pct_of_tam: 51.9
+som_3yr_cr: 754
+som_5yr_cr: 968
+som_implied_revenue_cagr: {yr3: 14.3, yr5: 13.9}
+current_sam_share_pct: 4.3
+revenue_headroom_x: 15.6
+tam_growth_pct: 6.5
+runway_class: "GOOD"
+mgmt_claim_cr: 1213637
+mgmt_claim_ratio: 79.7
+mgmt_claim_read: "inflated"
+capacity_check: "marginal — SOM 3yr (Rs754cr) is only ~Rs23cr above B07's conservative Jolva-inclusive capacity ceiling (Rs731cr); a 4th Jolva slip (HIGH-severity risk already flagged by B07) would make the capex plan the binding constraint and the SOM the optimistic side; 5yr SOM (Rs968cr) is more Jolva-dependent still"
+methods_used:
+  - "Method 1: top-down, product-line-specific global market sum (PTC + SDA + ESS), AR/Mordor-cited and independently cross-checked"
+  - "Method 2: bottom-up revenue-mix-proportional proxy for PASC (constructed for this report, not a sourced market estimate; realistic-case only)"
+  - "Method 3: peer/rank-claim qualitative cross-check (no independent revenue data available)"
+  - "Method 4: import-substitution/China+1 qualitative driver only (no sizeable $ figure found)"
+  - "Method 5: global benchmark (India vs global specialty chemicals share)"
+stale_data_flags:
+  - {datapoint: "SDA global market size $600M base year", source: "Tatva AR FY24-25 MD&A p.119", year: 2023}
+  - {datapoint: "Super-capacitor electrolyte market $112mn base year", source: "Independent web research (Valuates Reports)", year: 2023}
+  - {datapoint: "India specialty chemicals market ~$40bn", source: "Tatva AR FY24-25 MD&A p.117", year: 2023}
+  - {datapoint: "Global specialty chemicals market $285.4bn", source: "Tatva AR FY24-25 MD&A p.117", year: 2023}
+  - {datapoint: "China 39% share of global chemical industry (used in SAM geography filter)", source: "Tatva Investor Presentation p.29, citing CEFIC/IBEF", year: 2022}
+  - {datapoint: "PTC global market $1.07bn base year (borderline)", source: "Tatva AR FY24-25 MD&A p.118, citing Mordor Intelligence", year: 2024}
+searches_performed:
+  - "phase transfer catalyst market size 2024 2029 Mordor Intelligence USD billion"
+  - "structure directing agent zeolite market size global 2024 forecast"
+  - "supercapacitor electrolyte market size 2024 2030 CAGR"
+  - "India specialty chemicals market size 2024 2025 CRISIL IBEF billion CAGR"
+  - "glyme solvents market size global 2024 2030"
+  - "pharmaceutical agrochemical intermediates market size India 2024 2030 CAGR"
+  - "Tatva Chintan competitors phase transfer catalyst structure directing agent Sarchem India market share"
+  - "India semiconductor specialty chemicals market size opportunity ultra high purity chemicals"
+  - "India chemical industry size USD 220 billion 2024 sixth largest producer global"
+searches_skipped: []

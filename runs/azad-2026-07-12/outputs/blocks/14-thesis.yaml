@@ -1,0 +1,20 @@
+stage: B14-thesis
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 295, high: 368}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Q1 FY27 consolidated operating cash flow prints negative with working-capital days at or above 344 (August 2026)"
+monitoring_checklist:
+  - "Q1 FY27 consolidated OCF positive with WC days below 344 (falsifier; Aug 2026)"
+  - "Working-capital days declining toward the 160-170 day target; red if flat or above 344"
+  - "Revenue growth at or above 25% YoY; red if below 25% for 2 consecutive quarters"
+  - "EBITDA margin at or above 35%; red if compression more than 200bps YoY without one-off"
+  - "Order book rising above the static Rs 6,500 Cr with new-win reconciliation; red if flat 2+ quarters"
+  - "Top-5 customer concentration stable or below 51.1% and top-1 below ~20%; red if top-1 crosses 20% or top-5 crosses 65%"
+  - "Remaining 4-of-8 dedicated factories commissioned near the ~Nov 2026 guide with utilization disclosed"
+  - "SEBI PIT Code of Conduct matter resolved cleanly and RPT quantum stable; red if new adverse order or auditor/ID exit"
+  - "Price at Rs 295-368 with checklist clean before any buy; zone withdrawn if price enters because the OCF falsifier fired"

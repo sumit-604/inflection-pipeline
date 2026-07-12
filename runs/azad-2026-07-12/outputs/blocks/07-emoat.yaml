@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "3-year interim revenue mix split not disclosed; management gives only a 5-year target (Energy 55-60% / balance 40-45%)"
+  - "FY27 total capex quantum deflected in both Q2 and Q4 FY26 calls"
+  - "quarterly inventory/receivable WC days precisely not disclosed; deflected in Q3 and Q4 FY26 calls"
+  - "Safran contract value not disclosed (still MOU stage, defence NDA cited)"
+  - "GTRE/ATGG order quantity and revenue potential not disclosed; explicitly excluded from guidance"
+  - "facility-level utilization percentages not disclosed for any of the 4 commissioned dedicated factories"
+flags:
+  - {type: FLAG-F2-MIXED, reason: "F2 execution-moat test against B05 promise-delivery is mixed, not clean positive: FY26 revenue/margin/capex delivery beat (6 delivered), but WC normalization missed and target quietly loosened (140-150 to 160-170 days), and GTRE/ATGG engine slipped across all 3 FY26 calls (3 missed). Scored Moderate, not Strong."}
+  - {type: FLAG-ESG-ARTIFACT, reason: "AR BRSR energy table classifies nearly all grid electricity under 'renewable sources' (1,78,31,898 kWh) with non-renewable at token 64 kWh; no solar/wind/PPA/REC evidence anywhere. Read as a filing/template labeling artifact, not a genuine renewable claim. H3 ESG scored 0."}
+  - {type: FLAG-C2-CONTRARY, reason: "Customer concentration NOT improving: Energy & Oil and Gas share of standalone revenue rose 79.2% (FY25) to 81.5% (FY26), opposite of C2 definition. Scored 0 with contrary evidence, consistent with B05 red flag on ~81% three-OEM concentration."}
+  - {type: FLAG-G1G2-CONTRARY, reason: "G1 (war chest) and G2 (WC improvement) both scored 0 with active contrary evidence: FY26 standalone OCF -INR1,232.6mn, changes in WC -INR3,003mn (vs -INR879.5mn FY25), treasury falling as QIP deployed. Consistent with B01 deal-breakers 1,2,4."}
+em_score: 26
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing (0-12m)"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-24m"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/0-12m"}
+  - {id: "C1", name: "Customer ecosystem / wallet share", strength: "Moderate", evidence_type: "claim/documented", time_to_materialise: "12-36m"}
+  - {id: "F2", name: "Execution moat (mixed record)", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "ongoing, flagged"}
+  - {id: "H2", name: "Strategic partnerships (new, in-window)", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented/inference", time_to_materialise: "24-36m"}
+evidence_mix: {documented: 17, claim: 10, inference: 2}
+completionist_recount: "17 documented items across 7 of the 8 active categories (E2 excluded, claim-dominant); 8 of 21 rows scored Strong/Moderate, above the 3-6 base rate but below the 12-row hard stop, consistent with a qualification-locked Tier-1 manufacturer where signed multi-year contracts are the natural evidence unit; four weak/claim-only categories (E1, E2, F1, H1) downgraded to Optionality Register rather than scored active."
+catalysts_12m:
+  - {catalyst: "Remaining 4 of 8 dedicated facilities commissioning", window: "~Nov 2026 guided, at risk given prior slippage", evidence_type: "claim", anchor: "Q4 FY26 call p.9"}
+  - {catalyst: "FY27 Q1 results as first stabilization-conversion read", window: "Aug 2026", evidence_type: "inference", anchor: "derived from FY26 guidance pattern, Q4 FY26 call"}
+  - {catalyst: "Working capital days disclosure toward loosened 160-170 day target", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.7-8; B05 timeline_slippages"}
+  - {catalyst: "MHI hot-section Nozzle Vane revenue first appearing in segment disclosure", window: "FY27", evidence_type: "documented", anchor: "Inv. Pres. slide 10; Q4 FY26 call p.3-4"}
+  - {catalyst: "Rolls-Royce first qualification-batch shipment", window: "H2 FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.10"}
+capex_embedded_growth_pct: 146
+optionality_register:
+  - {optionality: "Saudi Arabia Baker Hughes manufacturing facility", converting_evidence: "Signed definitive facility/JV agreement with committed capex and construction start date", first_appears: "Exchange filing / concall capex disclosure", window: "FY28+ (timeline already slipped once)"}
+  - {optionality: "Safran Aircraft Engines relationship converting from MOU", converting_evidence: "Firm signed contract with disclosed value", first_appears: "Exchange filing / concall", window: "FY27"}
+  - {optionality: "GTRE/ATGG indigenous jet engine revenue", converting_evidence: "Actual physical engine delivery to DRDO/GTRE with disclosed follow-on order visibility", first_appears: "Concall / exchange filing / order announcement", window: "Uncertain, slipped 3 consecutive quarters"}
+  - {optionality: "Talent density at scale", converting_evidence: "Disclosed R&D headcount, technical retention metrics, ESOP grants to technical staff", first_appears: "AR note / BRSR disclosure", window: "FY27-28 AR"}
+  - {optionality: "'Only qualified Indian supplier' exclusivity claim", converting_evidence: "Third-party-verifiable peer/market-share data", first_appears: "Industry report / AR MD&A / analyst peer-check", window: "Uncertain, opportunistic"}
+  - {optionality: "Phase 2 capacity expansion (67,267 sq.m)", converting_evidence: "Civil-work-start announcement with committed capex", first_appears: "Concall / exchange filing", window: "FY28+"}
+  - {optionality: "Company-specific China+1 share-shift beyond generic export data", converting_evidence: "Disclosed Azad-specific contract-value increase tied to US-India trade deal", first_appears: "Concall / exchange filing", window: "FY27"}
+  - {optionality: "Higher-value product-line expansion (advanced gas/steam/nuclear turbines, landing gears)", converting_evidence: "Signed contract or committed capex for named new product lines", first_appears: "Exchange filing / concall", window: "FY28+"}
+  - {optionality: "Full in-house special-process stack", converting_evidence: "Capex commitment / facility announcement for remaining special processes", first_appears: "Concall / AR capex note", window: "FY27-28"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Backward AVOID (core 38, deal-breakers 1/2/4) is a mechanical QIP-capex-ramp artifact per B01, not eroding fundamentals, sitting on a FORTRESS backward moat (6/12); forward em_score 26 (STRENGTHENING) built on newly signed documented multi-year single-source contracts (MHI hot-section, Rolls-Royce, Pratt & Whitney, Arabelle/EDF, BHEL) inside 4 newly commissioned dedicated factories, contingent on FY27 working-capital normalization actually converting the capex into cash."
+top_moat_risks:
+  - "Working capital/cash conversion miss compounding into a structural liquidity constraint that slows the very capex (remaining 4 facilities, Phase 2, Saudi Arabia) the emerging moat depends on"
+  - "GTRE/ATGG credibility damage from a 4th consecutive quarter of undelivered 'couple of months away' promises"
+  - "Customer concentration (81%+ Energy & O&G, three OEMs) never quantified by management despite qualification lock-in cutting both ways as dependency"
+  - "Remaining 4-of-8 facility rollout slipping further past the ~Nov 2026 guide"
+  - "Saudi Arabia Baker Hughes facility timeline already shifted due to geopolitical conditions, at risk of further delay or lapse"

@@ -1,0 +1,13 @@
+stage: B12a
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 25
+findings:
+  - {severity: "MINOR", location: "B07-emoat.md, Section 2A capex table", claimed: "FY26 capex capitalized Rs 392cr (Q4 FY26 call p.5)", source_truth: "Full-year audited capex (cash outflow) Rs 5,707.07 Mn = Rs 570.71 Cr (results FY26 p.5 cash flow statement). Q4-specific figure not independently verified in text cache.", note: "Q4 quarterly figure distinct from full-year total; no numerical mismatch, sourcing clarity could improve. Full-year capex audited and confirmed."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 96
+coverage_note: "Verified 25 of ~60 material factual numbers (42% coverage). Verdict-card and core FY26 audited-FS figures: 100% coverage (Revenue 590.38 Cr, PAT 132.16 Cr, ROCE FY26 8.84%, ROCE FY25 8.12%, Revenue CAGR 30.04%, PAT CAGR 35.78%, CFO -123.26 Cr, Capex 570.71 Cr, EBITDA 217.75 Cr, Net Debt 280.44 Cr, ND/EBITDA 1.29x all verified to audited results or sound calculation). Block A/B/D scores confirmed. Notes findings (QIP Rs 700 Cr, idle funds Rs 637.54 Cr, ECL +98%, govt receivables +100.5%, capital advances +182%, P&M 15-yr life) verified to AR notes/CARO. Emerging Moat capex arithmetic verified. TAM figures verified to AR. No CRITICALs or MAJORs; one MINOR on Q4 capex attribution."

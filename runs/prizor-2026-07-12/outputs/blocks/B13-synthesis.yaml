@@ -1,0 +1,26 @@
+stage: B13-synthesis
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+phase: 1-lite
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: "FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; confidence band 60-74 forces one-level downgrade to PROCEED WITH FLAGS"
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_promoter: "not emitted (B08 CAUTION; reserved for CONCERN/AVOID)"
+confidence_delta: {numerical: 97.87, redflag: 62, framework: 94, peer: 75, overall: 62}
+valuation_decision: ""
+headline: "Fast growing CCTV maker with broken cash"
+cash_determination: INDETERMINATE
+falsification_metric: "FY26 audited operating cash flow at or below zero for a third straight year while PAT exceeds Rs 20 Cr (cash conversion under ~20% of PAT)"
+monitorables_count: 8
+publish_candidate: false
+phase3_dependencies:
+  - "Rating rationale detail and full FY26 audited cash-flow / receivables ageing (to resolve FLAG-CASH INDETERMINATE)"
+  - "Manifest sector_cap_row 'Pharma / CDMO' is wrong; re-pick the Section 1B row (electronics / electronic manufacturing) before valuation"
+  - "Identity of the unreconciled Rs3.00cr loan-to-equity conversion counterparty"
+  - "Verifier C valuation-adherence half (12c) deferred to phase 3"
+files:
+  - runs/prizor-2026-07-12/outputs/final/business-narrative.md
+  - runs/prizor-2026-07-12/outputs/final/gate-recommendation.md
+  - runs/prizor-2026-07-12/outputs/final/verifier-summary.md

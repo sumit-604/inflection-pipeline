@@ -1,0 +1,50 @@
+stage: B11-valuation
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "FII+DII shareholding %: NOT FOUND -> UA qualifier unverifiable, UA not applied"
+  - "Rating-agency WC quote: NOT FOUND -> 0.65x justified on filed cash-flow history"
+  - "Vadodara total capex / order book value: NOT FOUND -> Pillar 3a documented qualifiers unmet"
+  - "Peer financial medians: NOT FOUND -> no peer-relative multiple used"
+flags:
+  - {type: FLAG-CASH, cash_multiplier_applied: 0.65, reason: "INDETERMINATE cash; cumulative CFO/PAT -0.13x FY24-26; conservative multiplier applied; caps disposition at PROCEED WITH CAVEATS"}
+  - {type: FLAG-HURDLE-STOP, reason: "HR bull fails on both tracks; 25% CAGR infeasible at 75.2x current PE"}
+  - {type: FLAG-PROMOTER-CONCERN, reason: "Promoter verdict CONCERN -> AVOID cap per Master rule"}
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 8.2, mid: 8.9, high: 9.5, r_used: 16.5, rrm: 0.70}
+  track2_additive: {low: 11.5, mid: 12.7, high: 13.5}
+  divergence_pct: 30
+  governing_track: "Track 1 (RRM) - more conservative; routes promoter CONCERN and cash leak through required return; sets entry zone"
+pillar_detail:
+  roce_used: 24.0
+  roce_base: 19.5
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.65
+  structural_or_growth: "INDETERMINATE -> conservative (structural-side, 0.65x, no offset)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.23, bull_used: false, verdict: "STOP"}
+fair_values:
+  track1: {bear: 202, base: 314, bull: 353}
+  track2: {bear: 288, base: 448, bull: 504}
+expected_cagr_prob_weighted: -41.6
+entry_range: {low: 129, high: 161}
+mos_price: 129
+upside_downside_ratio: 0.0
+decision: "AVOID (on valuation)"
+tier: "A (25% hurdle; default - UA not affirmable, FII+DII NOT FOUND)"
+unresolved_inputs_used:
+  - "cash structural/growth INDETERMINATE -> 0.65x conservative, no offset"
+  - "FII+DII NOT FOUND -> UA not applied (all-three-qualifier rule)"
+  - "Vadodara capex / order book NOT FOUND -> Pillar 3a +0x"
+  - "rating WC quote NOT FOUND -> 0.65x on filed cash-flow history"
+som_cagr_crosscheck: "consistent (base revenue CAGR 27% < SOM 3yr 46.6%)"
+one_line_thesis: "AVOID Aimtron at Rs1,390 (75x PE): sustained-24%-ROCE, cash-INDETERMINATE (0.65x) EMS contract manufacturer earns a four-pillar destination of only 8.9x (RRM) to 12.7x (additive) vs 25x sector cap, so even 29% bull EPS growth cannot bridge the ~5-6x de-rating; Hurdle STOP, promoter CONCERN, entry only near Rs129-161."
+pillar1_worksheet_line: "ROCE used = 24.0% current (FTTCP STAGNANT, sole authority; normalization route NONE; Amendment 4.5/9 barred on STAGNANT); Base PE 19.5x; ROCE recovery NOT credited."

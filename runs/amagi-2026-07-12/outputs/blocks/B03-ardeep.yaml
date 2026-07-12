@@ -1,0 +1,36 @@
+stage: B03-ardeep
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "H1 FY26 (the Group's first-ever profitable period, PAT +Rs.64.70mn) recorded operating cash flow of Rs.-2,005.95mn -- a swing of over Rs.2.07bn between accrual profit and cash result, driven by Rs.1,000.44mn working-capital outflow (SAR/ESOP cash-settlement liability paydown, Note per B02 Finding #4) plus Rs.339.90mn in financing activities for the same purpose, and a Rs.1,039.01mn trade-receivables increase; separately, other income of Rs.291.09mn was 250% of PBT (Rs.116.50mn) and the operating result (Revenue less Total expenses) remained a loss of Rs.-174.59mn even in this 'profitable' half (Annexure II/III, Note 30, p.353/324)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter-group entity Vinculum Advisors LLP acquired a 10.19-10.60% stake at Rs.25.00/share via July 21, 2025 SPAs, approximately six months pre-IPO, versus institutional cost bases disclosed elsewhere in the Prospectus ranging Rs.21.45-172.16/share; independent fairness basis for the Rs.25/share price is not established in this document. Promoters themselves are NOT selling in the IPO Offer for Sale (clean signal on that specific point). Full promoter verdict deferred to B08 per pipeline design."}
+phase_verdicts: {p1: "Red Flag", p2: "Red Flag", p3: "Red Flag", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "GARP/Turnaround, both Watchlist"}
+overall_quality: 5.5            # /10, governance 5 + accounting 6 + balance_sheet 7 + earnings 3, average 25% each
+quality_components: {governance: 5, accounting: 6, balance_sheet: 7, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would have reason to pause -- an independent statutory auditor has stated across three consecutive audited years (FY23-FY25) that it cannot rule out audit-trail tampering in some applications and that prior-year audit trails were not preserved, weakening confidence in every downstream number. Run continued per pipeline rules."
+  - "Phase 2: a human reviewer would have reason to pause specifically on the Argoid goodwill point -- Rs.347.83mn of goodwill sits unimpaired on the most recent (Sep 30, 2025) balance sheet for a subsidiary whose liquidation the Board approved seven weeks later (Nov 17, 2025), with no impairment yet recognised and no forward risk-factor disclosure. Run continued per pipeline rules."
+  - "Phase 3: a human reviewer would have strong reason to pause -- the headline 'first-ever profitable half' required Rs.291.09mn of non-operating other income (250% of PBT) against an operating result that remained a Rs.-174.59mn loss, and coincided with Rs.-2,005.95mn operating cash flow in the same period; this is not clearly communicated in the KPI table or MD&A framing. Run continued per pipeline rules."
+triple_pass_verification:
+  verified: 15                  # of 15 -- 13 directly re-verified against primary source text in this pass, 2 accepted on B02's own triple-pass strength without independent line-by-line re-derivation (contract liability trend, variable consideration)
+  discrepancies: []              # zero hard discrepancies; three clarifying notes recorded in Phase 2.0 (rank 4 aggregate reconciliation ~1% variance, rank 7 denominator clarification 15.69% company-wide vs 21.72%/31.74% security-class-specific, rank 9 minor definitional variance on ESOP % of revenue)
+missing_risks:
+  - {risk: "Argoid Analytics Private Limited goodwill (Rs.347.83mn, 4.05% of Sep-30-2025 net worth) carried unimpaired on the balance sheet despite Board approval of the subsidiary's liquidation on November 17, 2025, seven weeks after the balance-sheet date", evidence_anchor: "Notes 4/39/53 (intangible assets roll-forward lines 20098-20135; events-after-reporting-date, p.377)"}
+  - {risk: "H1 FY26 reported profitability (PAT +Rs.64.70mn) is entirely dependent on non-operating other income (Rs.291.09mn, 250% of PBT); operating result before other income remained a loss of Rs.-174.59mn", evidence_anchor: "Annexure II P&L and Note 30, p.353"}
+  - {risk: "Aggregate tax-litigation exposure of Rs.1,175.07mn (13.7% of Sep-30-2025 net worth) across 13 cases is materially larger and more current than the Rs.592.48mn transfer-pricing-specific contingent liability emphasised via Note 42(b)", evidence_anchor: "Outstanding Litigation and Material Developments, p.417-420"}
+  - {risk: "Operating cash flow of Rs.-2,005.95mn in the same period the Group reported its first-ever profit, driven substantially by pre-IPO ESOP/SAR cash settlement and a receivables build, not disclosed as a forward risk despite full cash-flow-statement disclosure", evidence_anchor: "Annexure III, Restated Consolidated Summary Statement of Cash Flows, p.324"}
+guidance_table:
+  - {claim: "Net Proceeds deployment schedule (cloud infrastructure + inorganic growth/GCP)", number: "Rs.1,042.64mn FY26 / Rs.5,115.14mn FY27 / Rs.1,566.73mn FY28 (Rs.7,724.51mn total)", timeframe: "Fiscals 2026-2028", credibility: "Explicitly caveated by the Company as 'not appraised by any bank or financial institution or any other independent agency' and subject to change (p.154); this is the only quantified forward-looking figure in the document -- no numeric revenue/margin/profit guidance exists, consistent with SEBI ICDR's prohibition on forward financial projections in a prospectus"}
+strengths_top3:
+  - "Genuine multi-year operating-leverage trend: operating loss narrowed ~87% from Rs.-3,590.29mn (FY23) to Rs.-174.59mn (H1 FY26), revenue CAGR 30.70% FY23-FY25, NRR consistently above 120% every period"
+  - "Clean balance sheet and governance mechanics: zero debt, net cash throughout, no promoter pledge, promoters not selling in the IPO Offer for Sale, no SEBI or criminal actions against the Company"
+  - "Unusually well-quantified risk-factor and MD&A disclosure for an Indian prospectus -- real tables with real numbers reproduced throughout rather than generic boilerplate"
+red_flags_top3:
+  - "Earnings-quality gap: the sole profitable period (H1 FY26) required non-operating other income equal to 250% of PBT, with the underlying operating result still a loss, and coincided with Rs.-2,005.95mn operating cash flow"
+  - "Three-year unremediated, auditor-qualified audit-trail deficiency (FY23-FY25) including explicit inability to rule out tampering in some applications and unpreserved prior-year audit trails, independently confirmed by the statutory auditor"
+  - "Unimpaired Rs.347.83mn Argoid goodwill on the most recent balance sheet for a subsidiary whose liquidation was approved seven weeks later, alongside a broader and escalating Rs.1,175.07mn (13.7% of net worth) tax-litigation total"
+best_fit_strategy: "GARP / Turnaround (both Watchlist)"
+one_line_verdict: "Real revenue turnaround undercut by non-operating profit and cash burn this period."

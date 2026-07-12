@@ -1,0 +1,47 @@
+stage: B01-gate0
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating absent (carried from B00)"
+  - "sector_cap_row 'Pharma / CDMO' is a defect; company is media-SaaS, not pharma/CDMO (carried from B00)"
+  - "annual-report folder contains the IPO Prospectus, not an annual report (carried from B00)"
+  - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv are empty export templates; all screener figures pulled from screener-Data_Sheet.csv instead"
+  - "no shareholding-pattern CSV/sheet provided; Block E sourced entirely from IPO Prospectus"
+  - "FY2021 and FY2022 capex, FCF and Trade Payables: NOT FOUND in any provided source"
+  - "no contingent-liabilities note in Q3 9M FY26 or Q4 FY26 results filings; E4 uses IPO Prospectus figure as at Sep 30, 2025"
+  - "FII+DII post-listing holding %: NOT FOUND, could not test E1 professionally-managed exception"
+  - "FY2026 Selling & Admin expense not disaggregated by screener (folded into Other Expenses), affects M11 FY26 leg"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE driven by deal-breakers 3 (median ROCE -26.22%), 4 (cumulative CFO/PAT 0.19), and 8 (PAT negative FY24 and FY25), all attributable to the FY2022-FY2025 pre-IPO window (non-cash ESOP/stock-compensation charges and a CCPS liability-classification artifact in screener's Borrowings line). FY2026, the first post-IPO full year, shows a clean balance sheet (Block D 20/20) and a return to profit, but only one year of that pattern exists so far."
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 0, B: 1, C: 15, D: 20, E: 8}
+core_score: 44
+moat_score: 12
+grand_total: 56
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block A <8 (score 0) -> max GOOD, non-binding (result already AVERAGE)"
+  - "Block B <8 (score 1) -> max GOOD, non-binding (result already AVERAGE)"
+  - "Median ROCE <10% (-26.22%) -> max AVERAGE, binding; driven by FY2022 (-329.20% ROCE) through FY2025"
+  - "Cumulative CFO/PAT <0.50 (0.19) -> max AVERAGE, binding; driven by FY2022 PAT and negative CFO in FY2023/FY2024"
+  - "PAT negative in last 3 years (FY2024, FY2025 negative; FY2026 positive) -> max AVERAGE, binding"
+history_downgrade: false
+data_notes:
+  - "Unit conversion: IPO Prospectus reports in Rs million, divided by 10 throughout to reconcile to Rs Crore against screener-Data_Sheet"
+  - "Screener 'Borrowings' FY2024 (906.29 Cr) and FY2025 (911.00 Cr) is materially the CCPS instrument the Prospectus labels 'Instrument entirely equity in nature' (874.81 Cr FY2024, AR p.101); Prospectus Net Worth (equity treatment) is 496.80 Cr FY2024 vs screener-derived -378.01 Cr; resolves by FY2026 post-IPO conversion, does not change any score"
+  - "C2 PAT CAGR 28.18% computed on positive endpoints (FY21 20.72 Cr, FY26 71.67 Cr) but masks a loss-to-profit-to-loss-to-profit path: profit FY21, losses FY22-FY25, profit FY26; largest loss FY2022 driven by non-cash ESOP/stock-compensation fair-value charges"
+  - "B3 cumulative FCF/PAT literal ratio +0.82 (FY23-FY26 subset) mechanically bands to score 5 but is a double-negative artifact (cash burn / accounting loss); overridden to score 0, flagged for verifier review"
+  - "B1 cumulative CFO/PAT ratio 0.19 is also a positive-from-double-negative result but lands correctly in the worst band without override needed"
+  - "FY2021/FY2022 capex, FCF and Trade Payables NOT FOUND in any provided source; B2/B3 computed on FY2023-FY2026 subset only; B4 window is FY2023 (earliest with Trade Payables) vs FY2026, not FY2021 vs FY2026"
+  - "M6: R&D/Revenue is 24-33% consistently (FY23-FY25, H1FY26), well above all thresholds, but EBITDA margin FY26 (3.34%) blocks tiers 5/3; tier 1 needs peer margin data, PEER DATA NEEDED"
+  - "M2, M5, M9 scored 0, PEER DATA NEEDED, no peer data provided in any input source"
+  - "M11 scored conservatively: only 6 annual data points available, true two-window 3yr-vs-3yr test needs 7 (FY2020-FY2026)"
+  - "E4 uses IPO Prospectus contingent liabilities and Net Worth as at Sep 30, 2025 (latest matched pair available); no post-listing contingent-liabilities disclosure found in Q3 9M FY26 or Q4 FY26 results"
+  - "Data confidence: 6 years (5-6 band) flagged 'may not have seen full cycle'; not the 3-4yr LIMITED band so no automatic tier downgrade"
+block_b_trend: "improving but not yet sustainable - CFO -245.24 Cr (FY23) -> -182.99 Cr (FY24) -> +33.57 Cr (FY25) -> -9.24 Cr (FY26)"

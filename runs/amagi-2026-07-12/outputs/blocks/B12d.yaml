@@ -1,0 +1,19 @@
+stage: B12d
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 3 Peer Coverage Map, row NEWGEN Q2 FY26 (Nov 2025 call)", description: "The 'nothing material' competitive-framing quote attributed to this call as a contribution is not present in this transcript; it appears only in Newgen's Jul-2025 (Q1 FY26) call. Does not affect Claim 3's verdict, which correctly cites a different, verified quote from the Jan-2026 call."}
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 5 peer evidence row; B06 top-level flags: list (RateGain item)", description: "B06 characterizes RateGain as 'proactively' and 'contemporaneously' quantifying a lost-client (4% of MarTech revenue) and NRR-decline (110 to 100) figure 'in the same breath.' In the actual Nov-11-2025 transcript both figures are first stated by analysts (Shubham, Naeem Patel) in their questions; management responds with causal explanation but does not independently volunteer the numbers in the excerpt. The underlying comparison (RateGain discusses a comparable customer-loss event more openly than AMAGI's initial 'purely strategic' framing) still holds, but the stated evidentiary basis overstates RateGain's disclosure proactiveness and should be corrected before synthesis relies on this framing."}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 92
+peer_utilisation: "11 of 12 peer transcripts used substantively (1 correctly scoped as cited-only, non-contemporaneous background); all 4 distinct peer companies (Affle, Newgen, RateGain, Tata Elxsi) contributed substantively to at least one claim verdict"

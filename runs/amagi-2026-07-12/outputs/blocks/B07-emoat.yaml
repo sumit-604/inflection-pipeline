@@ -1,0 +1,53 @@
+stage: B07-emoat
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "2C capex-embedded-growth arithmetic NOT APPLICABLE: asset-light SaaS, no comparable fixed-asset base per B01; capex_embedded_growth_pct carried as NOT FOUND rather than estimated"
+  - "No revenue or customer-count figure disclosed for NEWSPULSE, the marketplace model, or any AI/agentic product; D1 and the AI/marketplace optionality items rest on management framing only"
+  - "No peer benchmark available for AWS/cloud cost structure, patent-portfolio materiality, or ESG posture (PEER DATA NEEDED, consistent with B01 M2/M5/M9 gaps)"
+  - "No PhD/specialist count, attrition, or retention-mechanics data disclosed for F1 (talent density) beyond the single R&D headcount % snapshot"
+  - "Jul-2026 'AI in Media' webinar excluded entirely from scoring per pipeline rule (thematic, not an earnings call); no evidence item in this report is sourced from it"
+flags:
+  - type: FLAG-C2-INVERTED
+    reason: "Customer concentration is worsening, not improving: largest/top-5/top-10 customer revenue share all rose from FY23 to H1 FY26 (e.g., largest customer 6.88% to 14.06%). This directly offsets the strength of C1 (customer ecosystem) and is carried into the combined assessment and top_moat_risks rather than scored as a moat."
+  - type: FLAG-D1-SELF-CHARACTERISED
+    reason: "The single most emphatic moat claim in the source material (CEO calling the data asset 'our second biggest moat', Q4 FY26 call) is also the least independently verified; scored Moderate at 0.7x evidence weight rather than Strong for exactly this reason."
+  - type: FLAG-CASH-DEPLOYMENT-UNTESTED
+    reason: "War chest (G1) scored Strong on balance-sheet facts, but management has twice declined to give M&A guardrails or size discipline (B05 repeated_evasions); capital-allocation track record on the ~INR1,664cr balance is untested."
+em_score: 30.0
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "D2", name: "Digital platform", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, thin 2-quarter sample"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active, deployment decision pending"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active, revenue contribution 12-24m"}
+evidence_mix: {documented: 29, claim: 11, inference: 4}
+completionist_recount: "recount performed: 6 of 7 active categories (A4, C1, D2, F2, G1, H2) carry primary documented evidence; only D1 rests primarily on a management self-characterisation, weighted 0.7x accordingly; 7 active categories out of 20 is within the realistic base rate, no re-examination triggered"
+catalysts_12m:
+  - {catalyst: "NEWSPULSE/agentic AI revenue scaling beyond first paid customer", window: "2-4 quarters (FY27)", evidence_type: "claim", anchor: "Q4 FY26 call; B05 trigger priority 4"}
+  - {catalyst: "Marketplace model metrics disclosed as a separated line", window: "next few quarters per management, test by FY27", evidence_type: "claim", anchor: "Q3 FY26 call and Q4 FY26 call, repeated framing"}
+  - {catalyst: "First M&A/Corp Dev deployment of ~INR1,664cr cash", window: "next 2 quarters", evidence_type: "claim", anchor: "Q4 FY26 call; B05 trigger priority 6"}
+  - {catalyst: "LatAm partnership (ADAMS, Anoki) revenue visibility", window: "FY27-FY28", evidence_type: "documented (partnership signed), claim (revenue)", anchor: "Inv. Pres. p.8-9; Q4 FY26 call"}
+  - {catalyst: "Customer concentration trend (worsening) either stabilises or keeps climbing", window: "next 2-4 quarters", evidence_type: "documented", anchor: "Prospectus PDF p.67 customer-concentration table"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "NEWSPULSE/agentic AI revenue scaling beyond the first paid customer", converting_evidence: "Disclosed revenue contribution or customer count from agentic products", first_appears: "Quarterly KPI annexure or earnings call", window: "2-4 quarters (FY27)"}
+  - {optionality: "Marketplace model (content-owner x distributor transaction layer)", converting_evidence: "Marketplace metrics disclosed as a distinct separated line for the first time", first_appears: "Earnings call / investor presentation KPI table", window: "next few quarters per management, test by FY27"}
+  - {optionality: "Proprietary data asset as a genuine, independently verified AI moat", converting_evidence: "Disclosed model-performance metric, absolute dataset scale, or AI-product-specific gross margin", first_appears: "Investor presentation or concall", window: "12-24 months"}
+  - {optionality: "LatAm/international geographic expansion (ADAMS, Anoki partnerships)", converting_evidence: "Disclosed regional revenue contribution or first wave of new-country customer wins", first_appears: "Segment/geography disclosure in quarterly results", window: "FY27-FY28"}
+  - {optionality: "M&A / Corp Dev deployment of ~INR1,664cr cash balance", converting_evidence: "First acquisition announced with disclosed strategic rationale and size discipline", first_appears: "Exchange filing / concall", window: "next 2 quarters"}
+  - {optionality: "Patent portfolio (10 granted, 11 pending) as defensive or licensing asset", converting_evidence: "Disclosed licensing revenue, litigation outcome, or patent-linked exclusivity claim", first_appears: "Annual report note / exchange filing", window: "24-36 months"}
+  - {optionality: "Headcount-by-function KPI disclosure", converting_evidence: "KPI sheet breaking out sales/tech/other headcount as investor feedback requested", first_appears: "Quarterly KPI annexure", window: "overdue once (Q3->Q4 FY26 miss); test again Q1 FY27"}
+combined_assessment: "HIGH POTENTIAL"
+combined_reasoning: "AVERAGE backward (B01, driven by pre-IPO non-cash ESOP/CCPS artifacts, not FY26 operating performance) paired with MOAT STRENGTHENING forward (7 categories, 6 primarily documented) is the transition-alpha setup this operation hunts, tempered by worsening customer concentration and two still-unconverted management claims (AI data moat, marketplace)."
+top_moat_risks:
+  - "Customer concentration (top-10 customers 33.7% to 40.2% of revenue, FY24 to H1 FY26) is worsening beneath the strongest scored category (C1, customer ecosystem)"
+  - "Cash deployment discipline on the ~INR1,664cr war chest is untested; management has twice declined to give M&A guardrails when directly asked"
+  - "Data-asset AI moat (D1) is currently the CEO's own self-characterisation more than an independently verified advantage; NEWSPULSE and marketplace revenue remain undisclosed"
+  - "Execution moat (F2) rests on only two quarters of public earnings history, credibility grade B, with two silently dropped investor commitments already on record"
+  - "Ad-impressions growth outpacing Monetization segment revenue growth signals early CPM/pricing pressure not yet stress-tested through a downturn"

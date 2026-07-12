@@ -1,0 +1,37 @@
+stage: B12c
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 38
+  fails:
+    - {rule: "B3 cumul FCF/PAT", issue: "override of mechanical band (literal +0.82 = band 5) down to 0; no negative-endpoint edge rule exists for cash-conversion ratios in the rubric, so the override is unauthorised by the letter — but it is conservative, flagged, and immaterial to classification (Core would be 49, still AVERAGE)", severity: "MINOR"}
+emoat:
+  rules_checked: 23
+  fails:
+    - {rule: "2C capex_embedded_growth_pct", issue: "YAML renders the NOT-APPLICABLE/NOT-FOUND result as literal numeric 0; narrative is correct and un-estimated, but 0 risks downstream misread as a scored zero-growth input", severity: "MINOR"}
+valuation:
+  status: pending-phase-3
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: ""   # N/A — valuation deferred to phase 3
+recomputed_decision: ""         # concur: Gate0 AVERAGE, EM STRENGTHENING, combined HIGH POTENTIAL all stand
+findings:
+  - {severity: "MINOR", location: "B01 Block C / C2", description: "PAT CAGR 28.18% scored 5 via the endpoint-CAGR edge rule (both endpoints positive) — correct per the literal rubric, and the loss-to-profit path was logged in data_notes as required. DECISION-SENSITIVE: if C2 were 0, Core = 39 → AVOID. The AVERAGE (not AVOID) classification rests entirely on this endpoint convention crediting a 28% CAGR across the FY22-FY25 loss window. Flag for human/synthesis awareness."}
+  - {severity: "MINOR", location: "B01 Block B / B3", description: "Mechanical band = 5 for literal +0.82; overridden to 0 as a double-negative artifact. Unauthorised by the written rubric (no cash-ratio edge rule) but conservative, transparently flagged, and immaterial to destination."}
+  - {severity: "MINOR", location: "B01 Block A / ROCE denominator", description: "Used 'Other Liabilities' as a current-liabilities proxy for FY2021-FY2025 (exact Current Liabilities used for FY2026) because the source does not split current/non-current. Disclosed; immaterial (every A-line scores 0 regardless)."}
+  - {severity: "MINOR", location: "B07 Section 2C / YAML capex_embedded_growth_pct", description: "NOT APPLICABLE result correctly un-estimated in prose but rendered as numeric 0 in the YAML; could be misread downstream as a scored zero-growth input."}
+  - {severity: "MINOR", location: "B07 Section 6D combined classification", description: "HIGH POTENTIAL assigned on an AVERAGE-backward + STRENGTHENING-forward (30.0, below the 40 EXPANSION threshold) pairing; the rubric's transition-setup language specifically cites EXPANSION forward. Reasoning is disclosed and symmetric; sits at the generous end of a defensible range. Combined matrix not reproduced in the stage prompt, so not a hard fail — flag for synthesis to confirm mapping."}
+  - {severity: "MINOR", location: "B07 D1/D2 throughput KPIs", description: "D1 and D2 both draw on the same KPI dashboard (content-hours/impressions vs participant counts). Maker separated the network-effect double-count (B3->D2) and discounted D1 to 0.7x, so overlap is handled; noted so synthesis does not re-credit the throughput KPIs a third time."}
+positive_confirmations:
+  - "FLAG-GATE0 is legitimate driver-attribution, not laundering: classification stays AVERAGE, all binding deal-breakers stay binding, driver years (FY22-FY25) named, self-limited to one clean post-IPO year."
+  - "Deal-breaker logic correct and complete; the only AVOID trigger (DB6: ND/EBITDA>3x AND IC<3x) correctly not triggered (net cash, IC 15.42x)."
+  - "EM evidence taxonomy honest; D1 (CEO self-characterisation) correctly held at claim-tier 0.7x/Moderate, not documented/Strong."
+  - "No-double-counting explicitly enforced: A3->F2, B2->C1/D2, B3->D2, each redirected item scored 0."
+  - "Completionist recount performed (7 active < 12 guard); all 21 categories addressed; EM/FTTCP not conflated; em_score 30.0 arithmetic correct."
+critical_count: 0
+major_count: 0
+minor_count: 6
+acceptance_rate: 96.7            # (37 gate0 + 22 emoat) passed / 61 checked
+scope_note: "Phase 1 only: Gate0 (B01) + Emerging Moat (B07). Valuation (B10/B11) deferred to phase 3."

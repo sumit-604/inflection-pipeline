@@ -1,0 +1,18 @@
+stage: B13-synthesis
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+flag_cash_determination: "INDETERMINATE"
+confidence_delta: {numerical: 93.6, redflag: 63, framework: 96.7, peer: 92, overall: 63}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Media cloud SaaS crossing into profitability"
+falsification_metric: "First clean post-IPO quarter reporting negative operating cash flow again with trade receivables still growing faster than revenue"
+monitorables_count: 8
+publish_candidate: false
+notion_save: {mode: append-never-overwrite-status, deferred_to: phase-3}

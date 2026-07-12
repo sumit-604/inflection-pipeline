@@ -2,25 +2,28 @@ stage: B13-synthesis
 company: "PRIZOR"
 run_date: "2026-07-12"
 model: claude-opus-4-8
-phase: 1-lite
+phase: 3-finalize
 status: complete
 verdict: "PROCEED WITH FLAGS"
-verdict_rule_applied: "FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; confidence band 60-74 forces one-level downgrade to PROCEED WITH FLAGS"
+verdict_rule_applied: 3
 flags_active: [FLAG-CASH, FLAG-GATE0]
-flag_promoter: "not emitted (B08 CAUTION; reserved for CONCERN/AVOID)"
-confidence_delta: {numerical: 97.87, redflag: 62, framework: 94, peer: 75, overall: 62}
-valuation_decision: ""
+confidence_delta: {numerical: 97.87, redflag: 62, framework: 100, peer: 75, overall: 62}
+valuation_decision: "AVOID"
+entry_range: {low: 63, high: 79}
+mos_price: 63
+destination_pe: {track1_rrm_mid: 16.2, track2_additive_mid: 15.0, governing: "Track 2 15.0x"}
+hurdle: {ratio: 0.23, verdict: "STOP"}
+expected_cagr_pct: -45
+zone_reachability: "MARKET-UNLIKELY (entry top Rs 79 ~90% below CMP Rs 825; classify DEEP WATCH not actionable WATCHLIST)"
+devils_advocate_overall: "SURVIVES"
 headline: "Fast growing CCTV maker with broken cash"
-cash_determination: INDETERMINATE
 falsification_metric: "FY26 audited operating cash flow at or below zero for a third straight year while PAT exceeds Rs 20 Cr (cash conversion under ~20% of PAT)"
 monitorables_count: 8
 publish_candidate: false
-phase3_dependencies:
-  - "Rating rationale detail and full FY26 audited cash-flow / receivables ageing (to resolve FLAG-CASH INDETERMINATE)"
-  - "Manifest sector_cap_row 'Pharma / CDMO' is wrong; re-pick the Section 1B row (electronics / electronic manufacturing) before valuation"
-  - "Identity of the unreconciled Rs3.00cr loan-to-equity conversion counterparty"
-  - "Verifier C valuation-adherence half (12c) deferred to phase 3"
-files:
+deliverables:
   - runs/prizor-2026-07-12/outputs/final/business-narrative.md
-  - runs/prizor-2026-07-12/outputs/final/gate-recommendation.md
+  - runs/prizor-2026-07-12/outputs/final/fttcp-recommendation.md
   - runs/prizor-2026-07-12/outputs/final/verifier-summary.md
+  - runs/prizor-2026-07-12/outputs/final/fttcp-handoff.md
+notes:
+  - "gate-recommendation.md (phase-1 lite) left in place; fttcp-recommendation.md is the authoritative phase-3 replacement (no delete tool)."

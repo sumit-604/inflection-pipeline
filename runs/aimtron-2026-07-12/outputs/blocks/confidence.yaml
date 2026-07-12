@@ -1,0 +1,14 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 95.2      # B12a
+  redflag_coverage: 63            # B12b (share of verifier-found red flags already caught upstream)
+  framework_adherence: 95         # B12c (Gate 0 + Emerging Moat scope only; valuation adherence pending phase 3)
+  peer_utilisation: 91.7          # B12d (11 substantive transcript instances / 12 files; 4/4 peers substantive)
+  overall: 63                     # min of the four
+  band: "60-74: PROCEED verdicts downgrade one level"
+  valuation_framework_adherence: "pending phase 3 (B10/B11 not yet produced)"
+  rework_triggered: false         # no CRITICAL numerical finding; no verifier acceptance_rate below 60
+  notes:
+    - "redflag_coverage 63% is the binding floor: Verifier B independently found 16 red flags, 10 caught + 2 partially caught upstream, and 2 MAJOR flags MISSED by B05 (FY27 growth largely inorganic/AIC-driven with organic near-flat; unexplained loans-and-advances to 'other parties' Rs70/58.3/16.8cr with the CFO unable to answer, amid negative FY26 CFO). These are additive evidence, surfaced in the gate recommendation, not pipeline fabrications."
+    - "No CRITICAL findings from any verifier. Verifier A numerical acceptance 95.2% (0 CRITICAL, 1 MAJOR = a company-disclosure error correctly flagged by B02)."
+    - "Two decision-relevant framework items deferred to phase 3 (Verifier C MAJOR): Gate 0 classification is order-sensitive (AVOID vs AVERAGE) and needs an operator ruling; B07 capex-embedded-growth 331% is a management capacity claim vs 41.9% by the prescribed capex x FAT method."

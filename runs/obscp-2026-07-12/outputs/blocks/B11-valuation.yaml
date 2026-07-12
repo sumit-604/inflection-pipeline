@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Peer median P/E, EV/EBITDA, P/B, ROCE NOT FOUND (B10) — no relative valuation cross-check; absolute multiples only"
+  - "FY26 over-12-month receivables ageing bucket unanchored (AR truncated) — falsifier for growth-induced cash verdict"
+  - "Supa mega-factory capex quantum/timeline undisclosed — long-term SOM/Pillar 3 not separately modeled"
+  - "FY27+ quarterly guidance unavailable (only 2 concalls) — forward EPS built on full-year guidance, labelled EXPECTED"
+flags:
+  - "FLAG-CASH: growth-induced (CRISIL-validated); cash multiplier APPLIED = 1.00x (0.80 base + 0.20 growth offset); falsifier over-12m receivables >15% or rising ECL reverts to STRUCTURAL 0.65x"
+  - "SHARED CATALYST: order book / capex commissioning drives Pillar 1 context, Pillar 3a and Pillar 3c plus revenue — single point of failure for Role 3"
+  - "FLAG-CUSTOMER-CONCENTRATION: top 5 = 50-55%, largest 15-20% (CRISIL) — priced via r=15% in RRM track"
+  - "FLAG-RELATED-PARTY / FLAG-ACCOUNTING-QUALITY / FLAG-QUARTERLY-DISCLOSURE carried from B10 into governance leg of RRM r"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 15.5, mid: 16.5, high: 17.5, r_used: 15.0, rrm: 0.82}
+  track2_additive: {low: 18.5, mid: 20.1, high: 21.5}
+  divergence_pct: 19.7
+  governing_track: "Track 1 RRM (16.5x) — more conservative, prices governance/durability via r=15%; sets entry zone. Both tracks STOP the hurdle."
+pillar_detail:
+  roce_used: 15.1
+  roce_base: 15.1
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 1.00
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.20
+  growth_premium: 5
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.74, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 279, base: 404, bull: 509}
+  track2: {bear: 340, base: 492, bull: 620}
+expected_cagr_prob_weighted: -10.4
+entry_range: {low: 207, high: 252}
+mos_price: 166
+upside_downside_ratio: 0.5
+decision: "WATCHLIST (deep) — AVOID on valuation at CMP Rs 666; Hurdle STOP"
+unresolved_inputs_used:
+  - "Peer financial medians NOT FOUND -> no relative cross-check; absolute multiples only (conservative)"
+  - "Over-12m receivables ageing bucket NOT FOUND -> cash multiplier held at 1.00x per operator-decided growth-induced ruling; falsifier flagged, not estimated"
+  - "Post-FY26 share dilution NOT FOUND -> base holds 2.58 Cr shares flat (dilution risk flagged in bear)"
+  - "ROCE convention: year-end 15.1% chosen for consistency with FY24/FY25 year-end basis and conservative bias; average 19.5% carried as sensitivity"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "OBSCP is a real growth franchise (Rs 1,200 Cr order book, Sanand ramp) but at Rs 666 / 63.7x trailing it is priced ~2.6x above a four-pillar base fair value of ~Rs 492 (destination PE 20.1x, ROCE 15.1% STAGNANT, cash 1.00x growth-induced); Hurdle STOP, WATCHLIST deep, re-engage Rs 207-252."

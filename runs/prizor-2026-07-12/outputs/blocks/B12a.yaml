@@ -1,0 +1,13 @@
+stage: B12a
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - {severity: "MINOR", location: "B01 gate0, Block A EBIT presentation", claimed: "FY25 Finance Costs text shows 1.42cr from screener", source_truth: "AR p.72 shows 12,401.64 thousands = 1.2402cr", note: "Screener Interest figure (1.42cr) does not match AR source (1.24cr). However, gate0's actual EBIT calculation (14.910cr) correctly used AR values. Screener data quality issue, not a gate0 calculation error."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97.87
+coverage_note: "Verified 47 material figures: 15 verdict-card figures (blocks A-E, moat score, grand total, classification), 12 balance-sheet/capital metrics, 14 P&L/profitability figures, 6 cash-flow metrics, 7 RPT/segment detail, 3 working-capital metrics. Verified against AR FY2024-25 (pages 71-90 spot-checked), Screener Data_Sheet.csv (all), Investor Presentation FY26 (segment detail, pages 24-27). One PDF visual spot-check (page 89 Note 32 ratio table). Verdict-card numbers for AVERAGE classification (core 63/100, moat 19/60, deal-breaker rules #4 and #9) all verified clean."

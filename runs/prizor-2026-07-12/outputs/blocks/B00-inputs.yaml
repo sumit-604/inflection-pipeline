@@ -1,0 +1,48 @@
+stage: B00-inputs
+company: PRIZOR
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: true
+resolved_folder: runs/prizor-2026-07-12
+company_name: Prizor Viztech Ltd
+inventory:
+  annual-report:
+    count: 1
+    files: [Annual_Report_2025.pdf]
+    note: "Genuinely FY2024-25 (NSE submission letter dated 27 Jun 2025, 8th Annual Report). 64.7MB / 128 pages; text-extracted to inputs/_textcache."
+  results:
+    count: 0
+    status: ABSENT
+  rating:
+    count: 0
+    status: ABSENT
+  concalls:
+    count: 0
+    status: "declared absent (concalls_available: false) -> NO-CONCALL MODE; not a gap"
+  peer-concalls:
+    count: 11
+    files: [CPPLUS x4 (Aug25, Nov25, Feb26, Jun26), OSELDEVICE x3 (May25, Nov25, Jun26), SAHASRA x4 (Nov24, Jun25, Nov25, Jun26)]
+    note: "Within 0-12 contract cap. D-Link India has screening CSVs but no concall."
+  screening:
+    count: 6_sets
+    prizor_files: [screener-Data_Sheet.csv (has values), screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv, screener-Customization.csv]
+    peer_sets: [CPPLUS, DLINKINDIA, OSELDEVICE, SAHASRA]
+  presentation:
+    count: 1
+    files: [Investor_Presentation_1.pdf]
+  other:
+    count: 0
+input_gaps:
+  - "results/ folder ABSENT: no quarterly/annual results PDFs. Gate 0 runs from screener Data_Sheet + AR financials (DEGRADATION MAP). Stage 10 (phase 3) marks latest-period fields unresolved."
+  - "rating/ folder ABSENT: no credit rating PDF. Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative. FLAG-CASH rating rationale quote will be NOT FOUND -> INDETERMINATE risk."
+  - "Prizor screener P&L/BS/CF/Quarters/Customization CSVs are EMPTY TEMPLATES (collect_to_repo v3 recurring defect, seen TATVA/KARNIKA). Only Data_Sheet.csv carries values, 2 years (FY24, FY25). Gate 0 uses Data_Sheet + AR."
+  - "MANIFEST DEFECT: sector_cap_row 'Pharma / CDMO' is WRONG. Prizor Viztech is a video-surveillance / security-electronics maker (CCTV, cameras, AI video); peers CP Plus, D-Link, OSEL Devices, Sahasra. Correct Section 1B row must be re-picked in phase 3 (electronics / electronic manufacturing). Recurring collect_to_repo defect (also TATVA, KARNIKA, AZAD)."
+  - "AR DIN inconsistency: DIN 07712190 attributed to both Mitali D. Gauswami (Chairman & MD) and a 'Dasharathbharthi Gauswami' in different resolution texts; 07712175 is Dasharathbharthi G. Gauswami (WTD & CFO). Flagged for stage 8 to disambiguate."
+  - "Only 2 years of financial history (FY24, FY25). Recently-listed SME/micro-cap; Gate 0 data_years low, history depth limited."
+  - "AskUserQuestion stream closed in this remote session (KARNIKA 2026-07-11 precedent). Single permitted stage-0 empty-folder pause could not be delivered; proceeded on documented evidence-maximizing defaults. Will not re-ask this run."
+tooling:
+  - "poppler-utils absent at start (apt mirror needed update); installed. pypdf/cffi broken; force-reinstalled (pypdf 6.14.2)."
+  - "Page-anchored text cache built at inputs/_textcache/ for all 13 PDFs ('===== PDF PAGE n =====' markers). All text-reading stages and verifiers routed to cache; PDF Read-pages kept as small-range visual fallback."
+flags: []

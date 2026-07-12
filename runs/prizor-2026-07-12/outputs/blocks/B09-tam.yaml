@@ -1,0 +1,42 @@
+stage: B09-tam
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Display products segment (~16% of revenue) TAM not separately sized - third-party manufactured, no scope-matched market data"
+  - "Granular peer revenue beyond CP Plus/Aditya Infotech (Godrej Security, Zicom, Matrix Comsec, Prama/Hikvision-JV) for fuller Method-3 aggregation"
+  - "India AI-camera-specific sub-segment sizing (SAM-expansion lever)"
+  - "Current market P/E / valuation multiple not provided to this stage - 5E valuation line left with P/E NOT FOUND"
+  - "Infrastructure claims (25m new homes by 2030, 80 new airports) management-sourced only, not independently verified this run"
+flags:
+  - "Corrected the injected B06 cross-check: Prizor's domestic chart, read correctly (Revenue INR Bn series 78->200, 2022-2029), implies ~14.4% CAGR, closely reconciled with CP Plus's cited Frost & Sullivan 16.46% - NOT double as the injected note suggested (which appears to have misread the chart's interleaved volume/revenue number sequence)"
+  - "CP Plus's disclosed 20.8% FY25 market share implies a ~41% larger total market (Rs 14,962 Cr) than the directly-cited Frost & Sullivan Rs 10,620 Cr FY25 figure - likely a scope/vintage difference; flagged, not silently averaged"
+  - "Capacity surplus: installed 16 lakh (scalable to 40 lakh) camera capacity implies a revenue ceiling of ~Rs 4,320-10,800 Cr, vastly exceeding the SOM_5yr CCTV requirement of ~Rs 238 Cr (~5.5% utilisation) - the debt-funded capex plan (B07) is the optimistic side, a utilisation/ROCE-dilution risk for stage 11"
+  - "SOM-implied revenue CAGR (15.9-17.0%) is far below Prizor's own FY23-26 track record (120.1%) and FY26 YoY (108.1%) - any stage-11 model extrapolating recent growth for 3-5 years should be tested against this market-size ceiling"
+  - "Formalisation/import-substitution driver (organised share >80%, up from ~two-thirds) is largely a one-time, already-substantially-realised event as of Feb 2026 - near-term SOM tailwind is real but has bounded remaining runway"
+market_definition: "India-domestic video surveillance hardware market (IP/analog/AI CCTV cameras, NVR/DVR), dealer/retail/SMB channel; excludes VMS/VSaaS/installation and the separately-unsized Display products segment"
+tam_cr: {conservative: 12370, realistic: 17425}
+sam_cr: 3580
+sam_pct_of_tam: 28.9
+som_3yr_cr: 237
+som_5yr_cr: 309
+som_implied_revenue_cagr: {yr3: 17.0, yr5: 15.9}
+current_sam_share_pct: 4.13
+revenue_headroom_x: 24.2
+tam_growth_pct: 16.46
+runway_class: "MASSIVE"
+mgmt_claim_cr: 12800
+mgmt_claim_ratio: 1.03
+mgmt_claim_read: "reasonable"
+capacity_check: "surplus - installed 16 lakh unit capacity (~Rs 4,320 Cr revenue ceiling) vs SOM_5yr CCTV requirement of ~Rs 238 Cr (~5.5% utilisation); the debt-funded capex plan is the optimistic side, not the SOM"
+methods_used: ["top-down (Frost & Sullivan / Prizor chart cross-check)", "bottom-up (unit x ASP, non-independent cross-check)", "peer revenue aggregation (CP Plus-implied)", "import substitution (qualitative, STQC ban)", "global benchmark (context only)"]
+stale_data_flags:
+  - {datapoint: "China cameras-per-1000-people (~494)", source: "SCMP/aithority secondary reporting", year: "likely ~2020-2021"}
+  - {datapoint: "Comparitech per-city camera density table (in Prizor's deck)", source: "Comparitech, via Investor Presentation FY26 p.20", year: "undated"}
+searches_performed_count: 10
+searches_skipped:
+  - "Direct WebFetch of Mordor / Frost & Sullivan / Grand View full paywalled primary reports"
+  - "Individual peer-revenue searches for Godrej Security, Zicom, Matrix Comsec, Prama/Hikvision-JV India"
+  - "Live INR/USD FX verification (indicative ~Rs 87/USD used for context-only figures)"
+  - "India AI-camera-specific sub-segment market sizing"

@@ -1,0 +1,39 @@
+stage: B02-notes
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "CFO negative both years and deteriorating sharply despite PAT growth (FY25 CFO -Rs14.10cr vs PAT +Rs10.15cr, cash conversion -139%; FY24 CFO -Rs1.82cr vs PAT +Rs5.52cr, -33%), driven by finished-goods inventory +281.7% YoY vs revenue +99.4% YoY and a simultaneous trade-payables squeeze; entirely IPO-funded, not organic (Cash Flow Statement p.73; Note 16 p.83; Note 32 p.89)"}
+accounting_quality: 4
+top_findings:
+  - {rank: 1, finding: "Operating cash flow negative both years despite PAT growth (FY25 CFO -Rs14.10cr vs PAT Rs10.15cr, -139% conversion; FY24 CFO -Rs1.82cr vs PAT Rs5.52cr, -33%), entirely IPO-funded", note_ref: "Cash Flow Stmt p.73; Notes 16/17/9", rating: "red_flag"}
+  - {rank: 2, finding: "Rs3.00cr loan-to-equity conversion (07-May-2024) unreconciled to any named lender; director loan account fully explained by cash alone", note_ref: "Note 3, Note 31", rating: "red_flag"}
+  - {rank: 3, finding: "Finished-goods inventory +281.7% YoY vs revenue +99.4% YoY; inventory turnover fell 4.19x to 3.32x", note_ref: "Note 16, Note 32", rating: "red_flag"}
+  - {rank: 4, finding: "Related-party revenue (Om Security Solutions) was 9.95% of FY24 revenue (Rs3.55cr) and fell to zero in FY25, the IPO year, unexplained", note_ref: "Note 31(ii)", rating: "red_flag"}
+  - {rank: 5, finding: "Pre-IPO capital sequence (loan conversion then bonus issue then IPO) reconciles exactly; correct bonus ratio is 5.5:1 on the post-conversion 12,00,000-share base, not 8.25:1", note_ref: "Note 3, Note 4", rating: "watch"}
+  - {rank: 6, finding: "Gratuity Provision Rs0.0978cr derecognised to NIL in FY25 with no disclosure; 3-line benefit-derecognition cluster (also Director's Insurance, Bonus & Incentive); cash-flow placement suggests payout, no actuarial assumptions disclosed either year", note_ref: "Note 7, Note 2(m), Note 26", rating: "watch"}
+  - {rank: 7, finding: "Business-model shift manufacturing to trading: Cost of Material Consumed -68.7%, Purchases of Stock-in-Trade +434%, net margin 15.47% to 14.27%", note_ref: "Note 23, Note 24, Note 32", rating: "watch"}
+  - {rank: 8, finding: "No customer-concentration or segment/geography disaggregation disclosed despite revenue roughly doubling and new export/import exposure", note_ref: "Note 21, 34, 35, 52", rating: "watch"}
+  - {rank: 9, finding: "Non-audit Professional Services fees to statutory auditor rose NIL to Rs0.3796cr (~19x audit fee) with no description", note_ref: "Note 30", rating: "watch"}
+  - {rank: 10, finding: "No deferred-tax component breakdown or effective-vs-statutory rate reconciliation despite swing net DTA to net DTL", note_ref: "Note 6, Note 14", rating: "watch"}
+  - {rank: 11, finding: "Current Ratio 5.08x reflects IPO cash overcapitalisation; FY24 ROE 141% / ROCE 70% are base-effect artefacts of a near-nil pre-IPO equity base -- do not use like-for-like downstream", note_ref: "Note 32", rating: "watch"}
+  - {rank: 12, finding: "Total Other Expenses +205% YoY vs revenue +99.4%; new GST/income-tax interest lines (Rs0.2948cr) appear first time in IPO year", note_ref: "Note 28", rating: "watch"}
+  - {rank: 13, finding: "No Capital Commitments note despite open capex pipeline (Rs1.1567cr P&M advance, Rs1.8634cr CWIP, Rs8.28cr FY25 PPE additions)", note_ref: "Note 19, 12, 39", rating: "watch"}
+  - {rank: 14, finding: "Finance Costs +91.9% despite falling period-end borrowings, consistent with higher average pre-IPO debt costs", note_ref: "Note 27", rating: "watch"}
+  - {rank: 15, finding: "IPO fund utilisation disclosed only as generic statement, no object-wise itemised table", note_ref: "Note 49", rating: "watch"}
+red_flags:
+  - "Rs3.00cr loan-to-equity conversion (Note 3, 07-May-2024) unreconciled to any named lender; director loan account fully explained by cash alone"
+  - "Operating cash flow negative both FY24 and FY25 despite PAT growth, cash conversion -139% FY25 / -33% FY24, funded entirely by IPO proceeds"
+  - "Finished-goods inventory +281.7% YoY vs revenue +99.4% YoY under delivery-triggered revenue policy, inventory turnover 4.19x to 3.32x"
+  - "Related-party revenue (Om Security Solutions) 9.95% of FY24 revenue, fell to zero in the IPO year with no explanation"
+questions_for_mgmt:
+  - "Who was the lender in the Rs3.00cr loan-to-equity conversion (Note 3, 4,00,000 shares at Rs75, 07-May-2024), on what terms, and why not a movement in the director loan account (Note 31)?"
+  - "What caused Om Security Solutions related-party revenue (Rs3.55cr, 9.95% of FY24) to fall to zero in FY25?"
+  - "What explains finished-goods inventory +281.7% vs +99.4% revenue, and is any of the build unsold goods recorded ahead of dispatch?"
+  - "What triggered the simultaneous derecognition of gratuity, Director's Insurance, and Bonus & Incentive to NIL in FY25, and what actuarial assumptions underlie gratuity?"
+  - "What professional services (Rs0.3796cr, ~19x audit fee) did the statutory auditor render in FY25, and what independence safeguards applied?"
+receivables_trend: "days roughly flat (~81 days FY25 vs 81.5 FY24), ageing composition improving (95% <6mo FY25 vs 99% in 6mo-1yr bucket FY24). Receivables are NOT the cash drain; inventory is. (Note 17, Note 32)"
+restatements_found: []
+going_concern_language: "NONE - no going-concern qualifying language; auditor's report and CARO para 19 affirm no material uncertainty"

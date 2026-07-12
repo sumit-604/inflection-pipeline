@@ -351,7 +351,6 @@ Watched, never scored beyond what is already in Section 5.
 - **24-36m**: AI-camera line (if launched at scale) contributing a disclosed revenue line; first
   meaningful export data point, if any; possible additional government scheme (PLI or equivalent) for
   domestic surveillance manufacturing — NOT FOUND as of this run.
-  the underlying financials.
 - **3-5yr**: Full backward integration to SoC-level chip supply (contingent on IndieSemic converting);
   a multi-year execution track record that would allow the credibility grade (currently C, per B05) to be
   re-tested against actual delivered guidance once management starts giving quantified targets.

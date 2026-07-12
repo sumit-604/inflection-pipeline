@@ -1,0 +1,45 @@
+stage: B07-emoat
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY26 statutory Annual Report not yet published; granular FY26 fixed-asset/segment notes, capacity utilisation %, and R&D/technology-absorption disclosure are NOT FOUND"
+  - "IndieSemic MoU date, binding terms, and capex commitment NOT FOUND"
+  - "Competitor BIS-ER/STQC certification status NOT FOUND (no peer comparison available)"
+  - "Composition of FY26 Intangible Assets under Development (Rs 12.22 Cr) and new Long-term loans & advances (Rs 10 Cr) NOT FOUND"
+  - "Facility-level capacity utilisation % NOT FOUND for SMT or assembly lines"
+flags:
+  - "Backward-integration capex (B1) is substantially debt-funded (short-term borrowings Rs 2.76 Cr to Rs 31.82 Cr FY25 to FY26) against cumulative negative CFO/PAT per Gate 0 - execution is real but cash-quality risk is unresolved"
+  - "R1 regulatory tailwind is category-wide, not company-exclusive; durability depends on competitor certification timelines, not yet observable"
+  - "A1, E2 and H1 evidence overlaps with B1 and R1 respectively; deliberately not double-scored per house rule against crediting one improvement through two mechanisms"
+  - "Dealer network (B3) and WC-days improvement (G2) are self-reported/unaudited metrics, not yet in an audited AR"
+em_score: 13.6
+em_classification: "MODEST"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "documented", time_to_materialise: "already underway (FY26)"}
+  - {id: "B3", name: "Supply chain network effect (dealer distribution)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "already contributing, scaling 12-24m"}
+  - {id: "R1", name: "Regulatory and policy tailwind (STQC/BIS-ER)", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active (FY26)"}
+evidence_mix: {documented: 18, claim: 7, inference: 4}
+completionist_recount: "18 documented items across 2 categories with Strong evidence (B1 backward integration, R1 regulatory tailwind); B3 dealer network relies on management-disclosed metrics not yet audited. Active category count held at 3, within the 3-6 base rate."
+catalysts_12m:
+  - {catalyst: "FY26 statutory Annual Report with audited capex/segment/utilisation detail", window: "12m", evidence_type: "documented (pending)", anchor: "AR FY26, not yet published"}
+  - {catalyst: "CFO turning positive, testing cash-conversion flag against capex narrative", window: "12m", evidence_type: "documented (pending)", anchor: "Gate 0 B01 flag; AR FY26 cash flow statement"}
+  - {catalyst: "IndieSemic MoU progression to signed/binding SoC agreement", window: "12-24m", evidence_type: "claim", anchor: "Inv. Pres. slide 13, slide 34"}
+  - {catalyst: "Dealer count and Tier 2/3 penetration data past 11,000", window: "12m", evidence_type: "claim", anchor: "Inv. Pres. slide 11-12"}
+  - {catalyst: "Competitor BIS-ER/STQC certification announcements (tests R1 durability)", window: "12-24m", evidence_type: "inference", anchor: "sector/exchange filings, not yet observed"}
+capex_embedded_growth_pct: 116
+optionality_register:
+  - {optionality: "IndieSemic MoU converts to signed SoC supply/co-development agreement", window: "12-24m"}
+  - {optionality: "PRIZOR PLUS AI camera range becomes a disclosed revenue line", window: "12-24m"}
+  - {optionality: "Dealer network converts into disclosed same-dealer revenue productivity", window: "12m"}
+  - {optionality: "Prizor Aitech India Ltd (51% subsidiary) commences actual operations", window: "12-24m"}
+  - {optionality: "SMT/assembly utilisation ramps toward the 40-lakh-unit scalability claim", window: "12-24m"}
+  - {optionality: "Export market entry beyond ~0.35% of revenue", window: "24-36m"}
+  - {optionality: "BIS-ER certification's competitive exclusivity holds versus peers", window: "12-36m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Backward score AVERAGE (Gate 0, grand 82) paired with only MODEST forward emerging-moat score (13.6/80, short of the 25 STRENGTHENING threshold); two genuinely strong, financial-statement-verified categories (B1 backward integration, R1 regulatory tailwind) are not yet backed by a broad enough or audited enough base to elevate the combined read to HIGH POTENTIAL."
+top_moat_risks:
+  - "Backward-integration capex funded by rising debt against negative cumulative CFO/PAT, not internal cash generation"
+  - "BIS-ER/STQC regulatory tailwind is category-wide, not exclusive to Prizor; durability erodes as competitors certify"
+  - "Dealer network and WC-days improvement are self-reported, unaudited metrics with no independent verification yet"

@@ -1,0 +1,41 @@
+stage: B06-peers
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: ["claim1_sole_supplier_exclusivity_unverifiable_no_peer_operates_in_azad_niche", "claim2_domestic_titanium_sourcing_margin_claim_complicated_by_stale_peer_evidence_dynamatech_feb2024", "claim5_share_gain_vs_howmet_pcc_no_peer_evidence_either_direction", "claim6_tariff_relief_confirmed_but_only_partial_not_full_removal_per_unimech_q4fy26"]
+peers_provided: 10
+verified:
+  - {claim: "Peers experience similarly elongated working-capital cycles during comparable capacity-ramp phases (informs Azad cash-conversion determination)", peers: ["MTAR Technologies", "Unimech Aerospace"], anchor_count: 6}
+  - {claim: "Azad's capex intensity and dedicated single-customer-factory model is typical of the sector's expansion cycle, not an outlier", peers: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"], anchor_count: 5}
+partially_verified:
+  - {claim: "Peers report a data-center-driven demand supercycle and OEM backlog growth matching Azad's framing", peers: ["MTAR Technologies", "Unimech Aerospace (Hobel Bellows)"]}
+  - {claim: "US-India trade deal removed a cost overhang for Indian aerospace/defence exporters", peers: ["Unimech Aerospace"]}
+contradicted: []
+unverifiable:
+  - {claim: "Azad is genuinely the only qualified Indian supplier for gas-turbine and nuclear-turbine airfoils", peers_checked: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+  - {claim: "Margin gains from domestic super-alloy/titanium sourcing are industry-wide, not Azad-specific", peers_checked: ["MTAR Technologies", "Dynamatic Technologies", "PTC Industries"]}
+  - {claim: "Azad has gained share against Howmet Aerospace/Precision Castparts in hot-section components", peers_checked: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+peer_coverage_map:
+  - {peer: "Dynamatic Technologies (DYNAMATECH)", quarter: "Facility tour / investor meet, Feb 2024", usage: "SUBSTANTIVE", contribution: "Only hard evidence on domestic vs Western titanium/superalloy sourcing status; no Q&A/financial section present"}
+  - {peer: "MTAR Technologies (MTARTECH)", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "WC days 229->267; data-center Bloom demand; tariff BOM stance; Israeli-conflict receivables risk"}
+  - {peer: "MTAR Technologies (MTARTECH)", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "WC days elevated 260; hot-box capacity plan to 20,000 units; AMCA EOI; tariff exposure quantified"}
+  - {peer: "MTAR Technologies (MTARTECH)", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "WC days 260, negative OCF -INR22cr; AEP $2.65bn data-center SOFC deal; capex to 30,000-unit plan"}
+  - {peer: "MTAR Technologies (MTARTECH)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "WC days normalize to 172, OCF +INR196.9cr; new AI-data-center customer; INR250-300cr capex guidance"}
+  - {peer: "PTC Industries (PTCIL)", quarter: "Investor/analyst meet, Jun 2023", usage: "SUBSTANTIVE", contribution: "Turbine-blade casting aspiration; domestic titanium/superalloy buildout; PCC capex benchmark; ~15x build-ahead capex. Stale (3yr)"}
+  - {peer: "Unimech Aerospace (UNIMECH)", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Pre-tariff-deal baseline with quantified tariff drag; WC days rising 90-100 to 140-150 on nuclear mix shift"}
+  - {peer: "Unimech Aerospace (UNIMECH)", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Direct dated quantified US-India tariff cut 50%->18%; WC days targeted 150-160"}
+  - {peer: "Unimech Aerospace (UNIMECH)", quarter: "Hobel Bellows update (Apr-May/Jun 2026)", usage: "SUBSTANTIVE", contribution: "Data-center/AI power demand driver for genset components; build-ahead capex rationale"}
+  - {peer: "Unimech Aerospace (UNIMECH)", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "WC days 120-125 to 150-160; tariff relief partial (~5% still absorbed); nuclear order book growth"}
+industry_cross_read:
+  demand: "Broad multi-sector consensus of strong secular demand (fuel cells, nuclear, aerospace tooling, semiconductor) across all peers, but none confirm gas-turbine-hot-section-specific backlog growth matching Azad's exact claim."
+  pricing_inputs: "PTCIL (2023, stale) shows aerospace-casting realization/kg and EBITDA/kg roughly doubling over 6 years, directionally consistent with margin-expansion narratives; no current-period peer discusses titanium/superalloy input-cost trends specifically."
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation - MTAR, PTCIL, and Unimech all deploy capital well ahead of utilization; MTAR's dedicated single-customer facilities directly mirror Azad's model and PTCIL's ~15x build-ahead ratio is even more extreme."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Tariff risk as an acute, quantified, multi-quarter earnings drag (Unimech Nov 2025/Feb 2026) - contrasts with Azad's dismissive 'tariffs will not affect deliveries or margins' stance"
+  - "Customer concentration explicitly quantified by peers (MTAR discloses Bloom %; Unimech ~93% two-OEM for Hobel) - Azad has not quantified its own concentration"
+  - "Geopolitical/regional-conflict receivables risk (MTAR: Israeli-conflict-delayed receivables inflating Q1 FY26 WC days) - no Azad analogue disclosed"
+  - "Customer-driven BOM/design cost-reduction pressure (MTAR: Bloom reducing bill-of-materials via material substitution) - not mentioned in Azad's disclosures"
+net_narrative_effect: "complicates"

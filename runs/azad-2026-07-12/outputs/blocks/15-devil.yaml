@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "Cash drag is half-structural, not growth-induced: CARE's own words say 163-day export receivables on 120-180 day OEM credit terms are 'likely to stay stretched considering operations' - Section 1B gives CARE precedence and forbids the growth offset, so the cash multiplier could be 0.65x not 0.90x, pulling destination PE to ~16-18x. (Operator confirmed growth-induced in deliberation; raised as the top contrarian risk.)"
+  - "Reported 37% EBITDA margin and operational ~12% ROCE are flattered by 15-year P&M depreciation vs the 7.5-year Schedule II default with no technical report (B03); the documented pricing power behind the +3x strategic premium is partly an accounting choice."
+  - "SHARED CATALYST single point of failure: one serial-production ramp carries Pillar 1 ROCE, Pillar 2 cash normalization AND the Pillar 3 +6x growth premium simultaneously; a single slip (8-factory rollout, GTRE, and WC target have all already slipped) re-rates the whole framework from ~21x toward ~14-16x, non-diversifiable."
+  - "The +3x strategic premium is customer dependency mispriced as scarcity: OEMs dual-source, the sole-qualified-Indian-supplier claim is unverified by every peer (B06), and 81% three-OEM / 51% top-5 concentration is rising; the file arguably supports +1 to +2x. (Operator overrode to +3x; authoritative.)"
+  - "The fortress balance sheet already broke: net cash (FY25) flipped to net debt Rs 280.44 Cr (FY26) with FCF -Rs 693.97 Cr and new unhedged EUR borrowing; if OCF stays negative through the remaining capex, the ramp is debt-funded and a core bull pillar is gone."
+  - "Management deflects the exact number that is the falsifier: OCF deflected every quarter, WC target missed and quietly loosened, GTRE 'a couple months' across three calls; a marginally positive OCF from non-recourse factoring would fake the turn without proving structural conversion."

@@ -1,0 +1,22 @@
+stage: B12b
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 9
+partially_caught: 3
+missed: []
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - Grade B; in-year delivery strong, forward guidance repeatedly softened, HFC/Aviom unresolved-but-provisioned not concealed"
+findings:
+  - {severity: "MAJOR", location: "B05 4D / 2D / 2A row 11 - HFC red flag", claim: "HFC/NCLT went 'completely unmentioned in the Q4 FY26 call with no analyst prompting'", truth: "Aviom (the HFC) was raised by Digant Haria and answered by Atul ('Aviom we continue to provide, no one-off'), Q4 PDF p.9; only the NCLT-resolution timeline update is missing", note: "overstated, drives the top red flag's severity on a false 'total silence' premise"}
+  - {severity: "MINOR", location: "B05 1C / 2A row 8 - FY27 credit cost", claim: "guided progressively worse across three consecutive calls", truth: "Q3->Q4 top improved 3.0%->2.8%; only Q2->Q3 worsened", note: "net-worse conclusion stands, phrasing imprecise"}
+  - {severity: "MINOR", location: "B05 2A row set - FY26 credit cost delivery", claim: "FY26 credit cost 2.8% delivered in line with guidance", truth: "net of FLDG benefit + Rs66cr overlay; gross ~2.9-3% per Pardhasaradhi Q4 PDF p.12", note: "earnings-quality nuance not connected to the delivered figure"}
+  - {severity: "MINOR", location: "B05 Q4 page anchors", claim: "anchors are PDF page numbers per marker", truth: "Q4 anchors use printed page numbers, one lower than PDF markers (cover letter = PDF p.1)", note: "findable but inconsistent convention"}
+  - {severity: "MINOR", location: "B05 1C / dropped_triggers - new funds", claim: "new fund launches never named again in Q3 or Q4", truth: "Q4 opening PDF p.8 has generic 'new sets of funds being launched'", note: "specific funds indeed not re-named; minor imprecision"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 75

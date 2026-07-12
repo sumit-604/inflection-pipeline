@@ -1,0 +1,17 @@
+stage: B12d
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 14
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1, Q7 verdict table", claimed: "MASFIN (Jan-2026, Q3 FY26 call): '...only 20-25 new branches planned per year going forward'", source_truth: "The '20 to 25 new branches' per year figure is found in MASFIN-Concall_Feb_2026_Transcript.txt (Vision 2036 Investor Day, 16-Feb-2026, page 12), not in the Q3 FY26 earnings call (MASFIN-Concall_Feb_2026_Transcript_2.txt) as cited. The '208 branches, stabilized, lesser pace than anticipated' portion IS correctly sourced to the Q3 FY26 call.", note: "Source misattribution; also makes B06's coverage-map claim that the Investor Day adds no incremental data point factually incorrect - the Investor Day should be reclassified SUBSTANTIVE, not CITED-ONLY. Directional Q7 conclusion (MASFIN calibrated slow-growth expander vs NORTHARC surge) survives on the correctly-attributed '208, lesser pace than anticipated' language alone."}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 93    # 13 of 14 coverage-map entries correctly handled (1 misattribution on MASFIN Investor Day / Q3 call pairing)

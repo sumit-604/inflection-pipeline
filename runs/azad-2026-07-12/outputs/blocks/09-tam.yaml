@@ -1,0 +1,26 @@
+stage: B09-tam
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial               # searches skipped, see search log
+input_gaps: ["Revenue-per-unit/margin-per-unit not disclosed (B04), Method 2 bottom-up data-limited", "No independent non-EY-sourced combined TAM estimate located", "Current P/E not provided as anchored input; 5E valuation line leaves multiple as NOT FOUND pending Stage 11"]
+flags: ["Management TAM claim is EY-report/DRHP-sourced (company-commissioned), not independent third-party research", "O&G TAM slice (Rs 930bn CY29) appears close to full global oilfield-equipment market rather than Azad's narrow drill-bit/slips/hatch-cover niche - heavy 10% product-fit filter applied", "AR FY24-25 TAM figures (2022 base year) are STALE per >2yr rule, used for direction only", "SOM 5yr (Rs 2,232 Cr) exceeds capacity implied by currently-committed capex (Rs 1,451 Cr) by ~Rs 781 Cr - achieving it requires capex phases beyond current disclosed commitments", "India precision aerospace/energy component segment is organised-dominated; standard 30-60% unorganised-sector uplift does NOT apply, deviation flagged"]
+market_definition: "Global OEM procurement of precision-engineered mission/life-critical rotating & stationary components (airfoils/blades, 3D rotating parts, engine/turbine/drilling-equipment subsystems) for Energy, Aerospace & Defence, and Oil & Gas Tier-1 supply chains"
+tam_cr: {conservative: 272000, realistic: 307500}
+sam_cr: 15230
+sam_pct_of_tam: 5.6
+som_3yr_cr: 1325
+som_5yr_cr: 2232
+som_implied_revenue_cagr: {yr3: 31.0, yr5: 30.5}   # FORMAL handoff to stage 11
+current_sam_share_pct: 3.9
+revenue_headroom_x: 25.8
+tam_growth_pct: 6.0
+runway_class: "MASSIVE"
+mgmt_claim_cr: 343000
+mgmt_claim_ratio: 1.0
+mgmt_claim_read: "reasonable"           # on pure magnitude vs mgmt's own prior vintage; O&G scope flagged separately as broad
+capacity_check: "sufficient for 3yr SOM (+Rs126 Cr spare); gap of ~Rs781 Cr for 5yr SOM on currently-committed capex alone - SOM 5yr is the optimistic side"
+methods_used: ["top-down (EY report, two vintages triangulated)", "bottom-up (data-limited, order-book/qualified-parts proxy only)", "peer revenue aggregation (India-listed precision component peers)", "import substitution / China+1 diversification (India defence indigenisation targets)", "global benchmark (external syndicated research: gas turbine, oilfield equipment, aerospace forging/parts manufacturing)"]
+stale_data_flags: [{datapoint: "A&D TAM Rs99,000cr and Energy/O&G broader TAM Rs128,000cr, base year 2022", source: "Azad Engineering AR FY24-25, MD&A printed p.5/p.17", year: 2022}, {datapoint: "A&D addressable market Rs1,190bn base year 2023 and CY29 targets", source: "Azad Investor Presentation May 2026, printed p.14/p.19", year: 2023}]
+searches_performed: ["global gas turbine components market size 2024 2030 CAGR", "aerospace forging and machining components market size India 2024 CAGR", "Azad Engineering EY report TAM aerospace defence energy oil gas crore", "global oilfield equipment market size 2024 drilling equipment billion CAGR", "MTAR Dynamatic PTC Unimech revenue FY25", "MTAR Technologies FY25 annual revenue crore full year results"]
+searches_skipped: ["CRISIL/ICRA/CARE India-specific precision-engineering/aerospace-component sector report", "China aerospace/energy-component supply-chain share quantification", "Boeing/Airbus/GE Aerospace outsourced-component procurement spend breakdown", "India unorganised-sector share for precision aerospace/energy forging", "Nuclear turbine component market size, standalone"]

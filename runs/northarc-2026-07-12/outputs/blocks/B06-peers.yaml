@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No Q4 FY26 FEDFINA transcript provided (only Q1-Q3 FY26 available)", "No peer operates a rural/MFI branch-lending book comparable to NORTHARC, structurally limiting Q1 and Q7 to UNVERIFIABLE"]
+flags:
+  - "Cost-of-funds 'bottomed, no further reduction' claim (Q4 FY26) contradicted by 2 of 4 peers guiding continued declines in the same quarter; NORTHARC's already-lower absolute funding cost vs peers is a plausible but unconfirmed idiosyncratic explanation"
+  - "'Industry-wide' framing of Q3 FY26 MSME credit-cost stress disputed by the most comparable peer (FEDFINA), which attributes its own comparable stress to company-specific collection gaps, not environment"
+  - "'Outpacing the industry' AUM growth claim not supported; CGCL grew 2-3x faster than NORTHARC in every overlapping quarter"
+  - "Co-lending/placement fee franchise 'differentiated moat' framing directly undercut by UGROCAP, which characterizes similar income as structurally thin, capital-inefficient, and is actively de-emphasizing it"
+peers_provided: 14
+verified: []
+partially_verified: []
+contradicted:
+  - {claim: "Incremental cost of funds bottomed at 8.5%-8.6% in Q4 FY26 with no further reduction expected", contradicting_peer: "UGROCAP", quote_anchor: "UGROCAP Apr-2026 Q4 FY26 call: 'fifth consecutive quarterly improvement' in cost of borrowing to 10.16%, guided to 'continue improving'"}
+  - {claim: "Q3 FY26 MSME credit-cost increase reflects an industry-wide PAR-accretion trend in small-ticket LAP", contradicting_peer: "FEDFINA", quote_anchor: "FEDFINA Jan-2026 Q3 FY26 call: 'It was our issue... not necessarily an environment issue'"}
+  - {claim: "AUM growth is outpacing the industry", contradicting_peer: "CGCL", quote_anchor: "CGCL Q2-Q4 FY26 calls: AUM growth 40%/47%/60% YoY vs NORTHARC's 20-25%"}
+  - {claim: "Placement/co-lending fee franchise is a differentiated moat (+73% YoY Q3 FY26)", contradicting_peer: "UGROCAP", quote_anchor: "UGROCAP Apr-2026 Q4 FY26 call: co-lending margin 'only 1%... not accretive to investors, shareholders'; strategic realignment away from co-lending income"}
+unverifiable:
+  - {claim: "Sector-wide MFI growth guide 15%-17% and ~30% MFI-market contraction", peers_checked: ["MASFIN", "CGCL", "FEDFINA", "UGROCAP"]}
+  - {claim: "Feb-2026 RBI FLDG/ECL guideline materially reduced ECL coverage (Stage 2 24% to 12%)", peers_checked: ["UGROCAP", "FEDFINA"]}
+  - {claim: "Rural/MFI branch network jumped 278 to 342 in a single quarter (Q4 FY26)", peers_checked: ["MASFIN", "CGCL"]}
+peer_coverage_map:
+  - {peer: "CGCL", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Baseline MSME/asset-quality and AUM comparator; confirms CGCL is not an MFI peer"}
+  - {peer: "CGCL", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "MSME NPA trend tests Q3 industry-wide framing"}
+  - {peer: "CGCL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "No elevated MSME credit-cost event found, contradicts Q3 claim; AUM growth 47% YoY"}
+  - {peer: "CGCL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Cost-of-funds trend contradicts Q2 plateau claim; aggressive branch expansion feeds 2C"}
+  - {peer: "FEDFINA", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Cost-of-borrowing baseline; ST LAP stress origin story"}
+  - {peer: "FEDFINA", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "Rural income/MFI-spillover qualitative commentary feeds Q1 and 2A/2E"}
+  - {peer: "FEDFINA", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE", contribution: "Primary contradicting source for Q3 ('our issue, not environment')"}
+  - {peer: "MASFIN", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "AUM growth comparator; MSME-cycle framing for 2A"}
+  - {peer: "MASFIN", quarter: "Q3 FY26 (29-Jan-2026, filed 5-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Cost-of-funds trend; calibrated/conservative branch growth directly informs Q7 and 2C"}
+  - {peer: "MASFIN", quarter: "Investor Day 'Vision 2036' (16-Feb-2026)", usage: "CITED-ONLY", contribution: "Distinct document from the Q3 FY26 earnings call (not a duplicate); strategic content only, no incremental quarterly financial disclosure"}
+  - {peer: "UGROCAP", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "FLDG/co-lending guideline mechanics baseline; AUM growth comparator"}
+  - {peer: "UGROCAP", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "MFI-adjacent stress disclosure feeds Q1 and 2E"}
+  - {peer: "UGROCAP", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Strategic pivot away from co-lending income directly contradicts Q6 moat framing"}
+  - {peer: "UGROCAP", quarter: "Q4 FY26 (Apr 2026)", usage: "SUBSTANTIVE", contribution: "Primary contradicting source for Q2 (cost of funds); AUM deliberately flat by design feeds Q5/2C"}
+industry_cross_read:
+  demand: "3 of 4 peers (MASFIN, UGROCAP, CGCL) report improving MSME demand through H2 FY26 after a stressed H1; FEDFINA is the outlier flagging rural income stagnation, in tension with NORTHARC's bullish rural/MFI framing"
+  pricing_inputs: "Cost of funds declined across all 4 peers through FY26, decelerating in pace but not flattening in any peer's own guidance; no peer corroborates a funding-cost bottom concurrent with NORTHARC's claimed Q4 FY26 plateau"
+  capex_cycle: "Genuinely split, not an industry-wide race: CGCL aggressive sustained expander (gold loans); FEDFINA moderate/disciplined; MASFIN explicitly conservative and calibrated; UGROCAP build complete and deliberately halted. NORTHARC's single-quarter 23% rural/MFI branch surge is a lone-expander situation relative to MASFIN, the peer closest in borrower profile"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Rural income stagnation and MFI-spillover stress into adjacent secured lending segments (FEDFINA, UGROCAP) not flagged by NORTHARC as a risk to its own rural/MFI book"
+  - "Structural capital-inefficiency of co-lending/DA income (gains do not accrete to regulatory net worth until realized, creating repeat capital-raise pressure) - UGROCAP explicit, relevant to NORTHARC's fee franchise but absent from NORTHARC's own risk disclosure"
+  - "Industry-wide transitional disruption from the new co-lending guideline effective Jan-2026 ('2 quarters of disruption', temporary co-lending volume slowdown) in the same regulatory window as NORTHARC's FLDG/ECL claim, not addressed in NORTHARC's materials"
+net_narrative_effect: "complicates"

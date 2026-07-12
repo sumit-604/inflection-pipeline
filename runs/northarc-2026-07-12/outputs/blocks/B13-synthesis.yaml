@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 1
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER (CAUTION, non-forcing)", "FLAG-GATE0"]
+confidence_delta: {numerical: 87.5, redflag: 75, framework: 91, peer: 93, overall: 75}
+valuation_decision: ""          # PHASE 1 LITE: valuation not run; forms in phase 3
+entry_range: {low: 0, high: 0}  # PHASE 1 LITE: not computed
+headline: "Diversified retail NBFC strengthening after its IPO"
+falsification_metric: "Q1 FY27 consolidated credit cost above 3.0% (vs 2.7-2.8% FY27 guide) with GNPA rising past 1.2%"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "NORTHARC - Northern Arc Capital (phase 1 evidence gate, 2026-07-12)"
+  summary: "Diversified retail NBFC strengthening after its IPO | PROCEED WITH FLAGS (FLAG-CASH, FLAG-PROMOTER CAUTION, FLAG-GATE0) | valuation decision pending phase 3 | no entry range yet"
+  drive_link: "NONE"
+  mode: append-never-overwrite-status

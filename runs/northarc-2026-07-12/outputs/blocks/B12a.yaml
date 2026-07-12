@@ -1,0 +1,15 @@
+stage: B12a
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 32
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md Block A commentary, ROE reconciliation", claimed: "FY26 computed ROE 11.08% reconciles to company-disclosed 11.1% (results PDF p.25)", source_truth: "Investor presentation Q4FY26 shows company-disclosed FY26 ROE = 14.0%; no 11.1% figure found for FY26 in source documents", note: "Report's computed 11.08% is correct (verified via screener PAT/NW), but sourcing claim is inaccurate - 11.1% may refer to different period (FY25 or Q-specific) not disclosed in report"}
+  - {severity: "MAJOR", location: "02-notes.md Finding #2 summary", claimed: "Standalone PAT rose +22.3% while consolidated fell 5.2%, driven by Pragati Finserv loss", source_truth: "FY25 standalone PAT (342.62 vs 280.17) = +22.3% growth occurred FY25; FY26 standalone PAT growth was 406.02 vs 342.62 = +18.5%, not +22.3%. Pragati loss also occurred in FY25, not FY26", note: "Conflation of FY25 phenomena (both Pragati loss and the 22.3% growth occurred in FY25 consolidated results). FY26 growth was lower at +18.5%"}
+  - {severity: "MINOR", location: "03-ardeep.md Phase 1E", claimed: "Audit fee: Note 29.1 shows Rs97.00 lakh; Corporate Governance Report shows Rs33.40 lakh", source_truth: "Both figures present in annual report without reconciliation; likely cash-paid vs accrued basis difference, not stated", note: "Immaterial to financial statements; audit fees <0.3% of PAT. Disclosure clarity gap only"}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 87.5
+coverage_note: "Audit focused on verdict card figures and Section 1B pillar inputs per instruction priority. 32 material numbers spot-checked across all nine stage reports; 28 verified clean (87.5%). Two MAJOR findings relate to data-sourcing accuracy and findings attribution, not underlying numerical calculations. No findings affect Gate 0 verdict or downstream pipeline scores. Coverage includes all ROCE/ROE series, revenue/PAT CAGR, CRAR/PCR/D/E (scoring inputs), CFO series, NPA ratios, operating metrics (branches/holdings/complaints/fraud/EPS), and 80% of B02's top-15 findings. NBFC unit conventions (lakhs->crores, Ind AS considerations) respected throughout."

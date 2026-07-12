@@ -1,0 +1,22 @@
+stage: B12d
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 26
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "CNL", missed_item: "Nov 2024 call: enterprise-business credit extension (40-day debtor terms) discussed a year before the claimed price-surge-driven receivables drift, directly relevant to Q5 net read", anchor: "CNL-Concall_Nov_2024_Transcript.txt lines 603-620, Abhijit Kanvinde"}
+  - {peer: "CNL", missed_item: "May 2025 call: working-capital days rising 32->39 (pre-window baseline), relevant to Q5", anchor: "CNL-Concall_May_2025_Transcript.txt lines 240-252, Abhijit Kanvinde"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3, coverage map, CNL Nov 2024 row", claimed: "UNUSED - no credit-term content relevant to the peer questions", source_truth: "transcript contains directly Q5-relevant enterprise-credit-extension discussion, lines 603-620", note: "mischaracterization of transcript content, not a fabrication; Q5 verdict itself not overturned"}
+  - {severity: "MAJOR", location: "B06 Part 3, coverage map, CNL May 2025 row", claimed: "UNUSED - no credit-term content relevant to the peer questions", source_truth: "transcript contains Q5-relevant receivable/working-capital-day trend, lines 240-252", note: "mischaracterization of transcript content, not a fabrication; Q5 verdict itself not overturned"}
+  - {severity: "MINOR", location: "B06 Part 1 Q3 net read, RPTECH May 2026 citation", claimed: "RPTECH's own guidance is unit volumes 'flattish'", source_truth: "no such term found; RPTECH guides 10-15% revenue growth via price+share gains against a market-level unit degrowth of 5-10%, not stated company-specific unit flatness", note: "unanchored gloss in quotation marks; directional substance supported"}
+  - {severity: "MINOR", location: "B06 Part 1 Q5 net read, Redington working-capital range", claimed: "Redington working-capital days held at 28-31 days throughout FY26", source_truth: "31 days confirmed (Nov 2025, line 160); 28-day endpoint not independently located in reviewed material", note: "imprecise range, non-material"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 92    # peers correctly handled (Redington + RPTECH fully; CNL partially, 2/4 coverage-map tags inaccurate); at citation level 26/28 = 93%

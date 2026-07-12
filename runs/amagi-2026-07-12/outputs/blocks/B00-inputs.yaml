@@ -1,0 +1,44 @@
+stage: B00-inputs
+company: AMAGI
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+concall_mode: normal
+run_type: full
+cmp: 580.0
+market_cap_cr: 12552.0
+manifest_sector_cap_row: "Pharma / CDMO"
+inputs_present:
+  annual_report: 1
+  results: 2
+  rating: 0
+  concalls: 3
+  peer_concalls: 12
+  screening: 30
+  presentation: 1
+  other: 0
+concall_quarter_map:
+  - file: Concall_Feb_2026_Transcript.pdf
+    period: "Q3 & 9M FY26 (Dec 2025)"
+    type: earnings
+    order: 1
+  - file: Concall_May_2026_Transcript.pdf
+    period: "Q4 & FY26 (Mar 2026)"
+    type: earnings
+    order: 2
+  - file: Concall_Jul_2026_Transcript.pdf
+    period: "AI in Media webinar (Jul 7 2026)"
+    type: non-earnings-webinar
+    order: supplementary
+results_map:
+  - file: "4c549f54-9024-4d60-a553-61415e1bcb7d.pdf"
+    period: "Q3 & 9M FY26 (Dec 31 2025), unaudited"
+  - file: "bb962637-be18-4f3c-8750-027b341217b5.pdf"
+    period: "Q4 & FY26 (Mar 31 2026), audited full-year"
+input_gaps:
+  - "rating: ABSENT. No credit-rating PDF. Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative per DEGRADATION MAP; FLAG-CASH follows standard rules with rating rationale NOT FOUND."
+  - "annual-report folder contains the IPO Prospectus (RHP/Prospectus), not a conventional annual report. Collector defect (folder label). Document is rich (restated consolidated financials, business, risk factors) and is used as the primary document source."
+  - "sector_cap_row 'Pharma / CDMO' is a collector defect: AMAGI is a streaming/media-SaaS company (peers AFFLE/NEWGEN/RATEGAIN/TATAELXSI are IT/software/media-tech). Correct cap row (IT Services / SaaS class) to be picked by stage 11 in phase 3. Recurring defect (KARNIKA/TATVA/NORTHARC)."
+  - "concalls/Concall_Jul_2026_Transcript.pdf is an 'AI in Media' webinar, not a quarterly earnings call. Stage 5 uses the two earnings calls (Feb=Q3FY26, May=Q4FY26); Jul webinar is supplementary thematic color only."
+  - "other: absent (never consumed; not a functional gap)."
+flags: []

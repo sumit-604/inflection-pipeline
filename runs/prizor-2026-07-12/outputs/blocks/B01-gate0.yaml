@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No results/ PDFs provided (quarterly results extracts unavailable)"
+  - "No rating/ PDF provided (credit rating unavailable)"
+  - "screener P&L/BS/CF/Quarters CSVs are empty templates; only Data_Sheet.csv populated (2 years, FY24-FY25)"
+  - "No peer screener/financial data for CP Plus, D-Link India, OSEL Devices, Sahasra provided to this stage (blocks M2, M5, M9 as PEER DATA NEEDED)"
+  - "History <3 years (SME IPO, listed within FY24-25); no FY23 or earlier balance sheet exists for a true 3-year promoter-holding or WC-trend test"
+  - "Manifest sector tag 'Pharma / CDMO' is a known collect_to_repo defect; actual sector is video surveillance / security electronics (CCTV, AI video systems), corrected per operator instruction"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE with historical depressors identified: cumulative CFO/PAT = -1.02x across both years available (deal-breaker #4); history <3 years, SME IPO with no pre-FY24 financials (deal-breaker #9); Block B scores 0/20 on all four sub-metrics; WC days rose +46 in the one measurable year."
+data_years: 2
+fy_range: "FY2023-24 to FY2024-25"
+blocks: {A: 15, B: 0, C: 15, D: 18, E: 15}
+core_score: 63
+moat_score: 19
+grand_total: 82
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "2: Block B <8 (0/20) -> max GOOD"
+  - "4: cumulative CFO/PAT <0.50 (-1.02x, both FY24 and FY25) -> max AVERAGE"
+  - "9: history <3 years (2 years, FY24-FY25) -> AVERAGE"
+history_downgrade: true
+data_notes:
+  - "A4 ROCE trend scored 0 (69.82% FY24 -> 31.29% FY25, decline 38.5pp) reflects a pre-IPO thin-equity base effect in FY24, not operating deterioration; scored literally per formula, context noted"
+  - "E2 promoter holding decline (99.99%->68.28%) is entirely IPO float creation (28,91,200 IPO shares + 66,00,003 bonus shares) plus bonus dilution, not open-market promoter selling; both promoters held their full pre-IPO share count unchanged at FY25 close; scored literally per formula (0), context flagged"
+  - "M2, M5, M9 scored 0 / PEER DATA NEEDED: no CP Plus / D-Link India / OSEL Devices / Sahasra financial data injected into this stage"
+  - "M11 Network Effects scored conservatively (1/5): only 2 years available vs the 6-year two-window test specified, per rule"
+  - "Working Capital Days computed on revenue basis (COGS not cleanly isolable from screener data); Payable Days sourced from AR Note 9 trade payables"
+  - "No PAT loss-to-profit swing: both FY24 and FY25 profitable, so C2/C4 CAGRs computed normally"
+block_b_trend: "deteriorating - cumulative CFO/PAT worsened from -33% (FY24: CFO -1.82cr / PAT 5.52cr) to -139% (FY25: CFO -14.10cr / PAT 10.15cr); WC days rose 167.7 -> 213.9 (+46.3 days) in the one measurable year"

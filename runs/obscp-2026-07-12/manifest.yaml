@@ -1,0 +1,9 @@
+company: OBSC Perfection Ltd
+ticker: OBSCP
+cmp: 666.0
+market_cap_cr: 1720.0
+run_date: 2026-07-12
+run_type: full
+concalls_available: false
+sector_cap_row: "EPC / Civil construction"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

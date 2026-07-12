@@ -1,6 +1,6 @@
-# STAGE 10: VALUATION INPUT ASSEMBLY
+# STAGE 10: VALUATION INPUT ASSEMBLY (AMENDMENT 4.5 REFRESH)
 ## Tatva Chintan Pharma Chem Ltd (TATVA)
-**Run Date:** 2026-07-12 | **Model:** Claude Haiku 4.5
+**Run Date:** 2026-07-12 | **Model:** Claude Haiku 4.5 | **Mode:** Valuation-only refresh, Amendment 4.5 normalized ROCE anchor
 
 ---
 
@@ -51,6 +51,32 @@
 | ROE (Standalone parent, FY26) | 5.4% | % | (Standalone PAT 390.82 / opening equity 7,213.12 from standalone results) |
 | 3-Year Revenue CAGR (FY24-FY26) | 14.7% | % | (sqrt(505.86/393.5)^(1/2) - 1; from screener FY24 393.5, FY26 505.86) |
 | 3-Year PAT CAGR (FY24-FY26) | 17.6% | % | (sqrt(42.05/30.35)^(1/2) - 1; from screener FY24 30.35, FY26 42.05, but note FY25 was trough 5.71) |
+
+---
+
+### NORMALIZED ROCE ANCHOR (AMENDMENT 4.5)
+
+**Pre-depression cycle identified: FY2018-FY2021 (pre-IPO / pre-capex build years; Dahej SEZ capex and July 2021 IPO cash bloat began depression from FY2022 onward per Deliberation record line 20)**
+
+| Fiscal Year | EBIT (Rs Cr) | Capital Employed (Rs Cr) | ROCE % | Anchor |
+|-------------|------------|------------------------|---------|--------|
+| FY2018 | 21.67 | 115.27 | 18.8% | Screener-Data_Sheet: PBT 19.04 + Interest 2.63; Equity 59.12 (8.04+51.08) + Borrowings 56.15 |
+| FY2019 | 31.34 | 156.86 | 20.0% | Screener-Data_Sheet: PBT 27.39 + Interest 3.95; Equity 79.71 (8.04+71.67) + Borrowings 77.15 |
+| FY2020 | 51.87 | 208.39 | 24.9% | Screener-Data_Sheet: PBT 47.6 + Interest 4.27; Equity 117.70 (8.04+109.66) + Borrowings 90.69 |
+| FY2021 | 65.15 | 256.22 | 25.4% | Screener-Data_Sheet: PBT 60.7 + Interest 4.45; Equity 165.97 (20.09+145.88) + Borrowings 90.25 |
+
+**Normalized ROCE (median of FY2018-FY2021):** **22.45%** (Median = (20.0% + 24.9%) / 2, screener-Data_Sheet, computed on B01 EBIT/Capital Employed basis)
+
+| Metric | Value | Anchor |
+|--------|-------|--------|
+| **Normalized ROCE (pre-depression median)** | **22.45%** | Screener-Data_Sheet rows: PBT + Interest (EBIT), Equity Capital (Net Worth), Borrowings (Debt) for FY18-21; median computed |
+| **Current ROCE (FY26)** | **6.6%** | (Deliberation record, line 45) |
+| **FY28 Expected ROCE (base case)** | **8.5%** | (Deliberation record, line 45: "Stage 11 (Role 1) builds the formal FY28 projection; this estimate is the working input") |
+| **FY28 Expected ROCE (bear case)** | **6.3%** | (Deliberation record, line 45) |
+| **FY28 Expected ROCE (bull case)** | **10.6%** | (Deliberation record, line 45) |
+| **Unwind Catalyst** | Dahej capacity commissioning entering revenue phase (new Dahej block commissioned Jan 2026 operational by Q4 FY26; reactor/assembly-line utilization 64.11%/30.54% with headroom for utilization ramp toward 75-80% target) | (B05 line 51: "Handed to production team Jan 2026, confirmed fully operational by Q4 FY26"; B04 unit_economics line 60: "reactor utilization 64.11%, assembly-line 30.54% in FY24-25"; B05 timing_slippages line 86; Deliberation record line 50: "Dahej commissioning drives both Pillar 1 forward ROCE and Pillar 3a growth") |
+| **Pillar 1 ROCE Calculation** | 60/40 weighted average of current ROCE (6.6%, FY26) and FY28 expected ROCE base (8.5%) = (0.60 × 6.6%) + (0.40 × 8.5%) = 7.36% | (Deliberation record, line 44) |
+| **ROCE Recovery Credited Via** | Pillar 1 only (not Strategic Premium) | (Deliberation record, line 47: "ROCE recovery credited via: Pillar 1") |
 
 ---
 
@@ -151,6 +177,10 @@
 | | ROCE | 6.6% | (Deliberation record) |
 | | CFO/PAT | 0.75x | (Latest year) |
 | | FCF/PAT | -1.95x | (Latest year) |
+| **Normalized ROCE** | Pre-depression median (FY18-21) | 22.45% | (Screener Data_Sheet, computed) |
+| | Current (FY26) | 6.6% | (Deliberation record) |
+| | FY28 base case | 8.5% | (Deliberation record) |
+| | Unwind catalyst | Dahej commissioning & utilization ramp | (B05, B04, Deliberation) |
 | **Cash Determination** | Status | INDETERMINATE leaning structural | (Deliberation record) |
 | | Evidence | Block B deteriorating (FCF negative 8yr); receivables up 18.1% vs revenue down; top-3 customer 61% concentration; zero ECL; debtor days 48→86 FY22-26 | (B01, B02, B03) |
 | | Pillar 2 Multiplier | 0.80x band (conservative, no growth offset) | (Deliberation record) |
@@ -160,7 +190,7 @@
 | **ROCE Forward** | Verdict | RECOVERING, probability 40-60% | (Deliberation record, line 45) |
 | | FY28 ROCE Estimate (Base) | 8.5% | (Deliberation record, line 45: "base 8.5%") |
 | | FY28 ROCE (Bear / Bull) | 6.3% / 10.6% | (Deliberation record, line 45: "bear 6.3%, bull 10.6%") |
-| | Pillar 1 ROCE Calc | 60/40 weighted avg of FY26 (6.6%) and FY28 est (8.5%) | (Deliberation record: "Pillar 1 ROCE = 60/40 weighted average") |
+| | Pillar 1 ROCE Calc | 60/40 weighted avg of FY26 (6.6%) and FY28 est (8.5%) = 7.36% | (Deliberation record: "Pillar 1 ROCE = 60/40 weighted average") |
 | | Recovery Credited Via | Pillar 1 only (not Strategic Premium) | (Deliberation record, line 47) |
 | | Shared Catalyst | Dahej commissioning drives both Pillar 1 forward ROCE and Pillar 3a growth premium | (Deliberation record, line 50) |
 | **Emerging Moat** | EM Score | 19.2 / 80 (MODEST) | (B07) |
@@ -174,8 +204,9 @@
 ## CONFIDENCE NOTES
 
 - **Data Freshness:** All latest-FY figures from audited Q4 FY26 results (16 May 2026, period 31 Mar 2026), fresher than FY25 AR.
+- **Normalized ROCE:** Computed on identical EBIT/(Net Worth + Borrowings) basis as B01 methodology across all four pre-depression years; median 22.45% is the evidenced normalized level per Amendment 4.5.
 - **Cash Determination:** Anchored to deliberation record determination (INDETERMINATE leaning structural) because NO RATING PDF provided. B01/B02/B03 provide empirical evidence (receivables trend, FCF trend, WC deterioration), but CRISIL rating language quote unavailable.
-- **ROCE Forward:** Deliberation-record RECOVERING verdict carries 40-60% probability; FY28 estimate base 8.5% is working input for Stage 11 formal projection.
+- **ROCE Forward:** Deliberation-record RECOVERING verdict carries 40-60% probability; FY28 estimate base 8.5% is working input for Stage 11 formal projection. Normalized ROCE 22.45% establishes the pre-depression benchmark; 4.5 blend incorporates current 6.6% and expected 8.5% in the Pillar 1 calculation.
 - **Sector Cap:** Corrected to 35x (Specialty Chemicals) per deliberation; overrides manifest auto-pick.
 - **UA Qualifiers:** All three NOT met; no UA multiplier applies.
 - **Peer Medians:** Screener-Data_Sheet.csv provides raw peer financials (sales, profit) but empty P&L and Balance_Sheet CSVs prevent derivative metrics (EBITDA, ROCE, BVPS) from being computed. Left unresolved for verifier cross-check.
@@ -188,6 +219,7 @@ company: "TATVA"
 run_date: "2026-07-12"
 model: "claude-haiku-4-5"
 status: complete
+mode: "Amendment 4.5 valuation refresh"
 input_gaps:
   - "No Rating PDF provided; rating_wc_quote unresolved"
   - "Peer derivative metrics (EBITDA, ROCE, BVPS, medians) unresolved due to empty screener-Profit_Loss.csv and screener-Balance_Sheet.csv exports"
@@ -199,6 +231,7 @@ flags:
     reason: "F2 execution moat scores zero with documented negative: Jolva groundbreaking slipped 3 consecutive quarters (Q2→Q3→Q4 FY26 calls, HIGH severity). G1 war chest scores zero: Credit rating downgraded A-/Stable to A-/Negative (FY24-25 AR) then to BBB+/Stable (May 2026 IP). Largest emerging-moat revenue (Jolva INR 400-500cr guided) sits on weakest execution track record in file. (B07)"
   - type: "FLAG-PROMOTER"
     reason: "CAUTION verdict: GPCB Section 33(A) Water Act direction closed Ankleshwar plant 13 Sept 2024, revoked after remediation (root cause not independently confirmed). Promoter-executive remuneration +27.89% YoY while standalone PAT fell 98.9% and EPS fell ₹12.82→₹0.14. CRISIL downgraded twice within review window. No red-flag deal-breakers but four amber items cluster in FY24-25. (B08)"
+
 table:
   company: "Tatva Chintan Pharma Chem Ltd"
   ticker: "TATVA"
@@ -251,6 +284,53 @@ table:
   p_fcf_multiple: "NOT APPLICABLE"
   p_fcf_note: "FCF negative across all 8 computable years FY19-FY26 per B01 line 41"
   
+  normalized_roce:
+    fy2018_pct: 18.8
+    fy2018_ebit_cr: 21.67
+    fy2018_capital_employed_cr: 115.27
+    fy2018_source: "Screener Data_Sheet: PBT 19.04 + Interest 2.63 = EBIT 21.67 Cr; Equity (8.04+51.08) + Borrowings 56.15 = Capital Employed 115.27 Cr"
+    
+    fy2019_pct: 20.0
+    fy2019_ebit_cr: 31.34
+    fy2019_capital_employed_cr: 156.86
+    fy2019_source: "Screener Data_Sheet: PBT 27.39 + Interest 3.95 = EBIT 31.34 Cr; Equity (8.04+71.67) + Borrowings 77.15 = Capital Employed 156.86 Cr"
+    
+    fy2020_pct: 24.9
+    fy2020_ebit_cr: 51.87
+    fy2020_capital_employed_cr: 208.39
+    fy2020_source: "Screener Data_Sheet: PBT 47.6 + Interest 4.27 = EBIT 51.87 Cr; Equity (8.04+109.66) + Borrowings 90.69 = Capital Employed 208.39 Cr"
+    
+    fy2021_pct: 25.4
+    fy2021_ebit_cr: 65.15
+    fy2021_capital_employed_cr: 256.22
+    fy2021_source: "Screener Data_Sheet: PBT 60.7 + Interest 4.45 = EBIT 65.15 Cr; Equity (20.09+145.88) + Borrowings 90.25 = Capital Employed 256.22 Cr"
+    
+    median_pct: 22.45
+    median_calculation: "Median of [18.8%, 20.0%, 24.9%, 25.4%] = (20.0% + 24.9%) / 2 = 22.45%"
+    median_source: "Screener-Data_Sheet.csv, computed on B01 EBIT/(Net Worth + Borrowings) basis, four pre-depression years FY2018-FY2021"
+    
+    pre_depression_rationale: "FY2018-FY2021 identified as pre-depression cycle (pre-IPO July 2021, pre-Dahej capex build). Dahej SEZ capex and IPO cash bloat began depression from FY2022 onward per Deliberation record line 20. ROCE deteriorated to single digits FY23-FY26 (min 1.17% FY25) per B01 line 15."
+    pre_depression_source: "Deliberation record lines 20, B01 line 15"
+    
+    current_roce_fy26_pct: 6.6
+    current_roce_source: "Deliberation record line 45"
+    
+    fy28_expected_roce_base_pct: 8.5
+    fy28_expected_roce_bear_pct: 6.3
+    fy28_expected_roce_bull_pct: 10.6
+    fy28_expected_roce_source: "Deliberation record line 45; Stage 11 builds formal projection"
+    
+    unwind_catalyst: "Dahej capacity commissioning entering revenue phase"
+    unwind_catalyst_detail: "New Dahej block commissioned January 2026, confirmed fully operational by Q4 FY26 call (~2 months late from guidance). Reactor utilization 64.11%, assembly-line 30.54% in FY24-25 (both cited as sub-optimal with headroom). Capacity ramp toward 75-80% target would support ROCE recovery toward normalized 22.45% level."
+    unwind_catalyst_sources: "B05 line 51 (commissioning timing and status); B04 unit_economics line 60 (utilization rates); B05 mgmt_questions line 69 (timeline to 75-80% utilization); Deliberation record line 50 (Dahej commissioning underpins Pillar 1 ROCE recovery)"
+    
+    pillar_1_roce_blend_pct: 7.36
+    pillar_1_roce_calculation: "60/40 weighted average of current ROCE (6.6%, FY26) and FY28 expected ROCE base (8.5%) = (0.60 × 6.6%) + (0.40 × 8.5%) = 3.96% + 3.4% = 7.36%"
+    pillar_1_roce_source: "Deliberation record line 44"
+    
+    roce_recovery_credited_via: "Pillar 1 only (not Strategic Premium)"
+    roce_recovery_source: "Deliberation record line 47"
+
   guided_revenue_growth_fy27_pct: 25.0
   guided_margin_band_fy27_pct: "20-22% EBITDA"
   guidance_source: "B05 guidance table rows 37-38 (Q4 FY26 call, 16 May 2026)"
@@ -419,21 +499,41 @@ ua_qualifiers:
 credibility_grade: "B"
 credibility_grade_basis: "Good. Core financial guidance (revenue growth, 20-22% EBITDA margin band) delivered essentially on schedule with margins tracking 18.0% to 19.4% to 20.9% across three quarters. Most product commercialization promises landed with only minor disclosed delays (Dahej plant ~2 mo late, agro intermediates timely, margin target hit, Electrolyte Salts +1,378% YoY Q4). Long-cycle capex/timeline commitments weakest: Jolva groundbreaking slipped 3 consecutive quarters (reframed as engineering optimization, not acknowledged as delay per B05 line 11 HIGH flag), semiconductor dispatch missed original Q4 FY26 target unacknowledged in Q4 call. ROCE questions deflected in Q2 and Q3 with no forward target ever given. Short of A grade (Excellent) due to capex timeline track record and evasion pattern on capital efficiency questions."
 credibility_grade_anchor: "B05 line 65-66"
+
+normalized_roce:
+  pre_depression_median_pct: 22.45
+  pre_depression_fy_range: "FY2018-FY2021"
+  fy2018_pct: 18.8
+  fy2019_pct: 20.0
+  fy2020_pct: 24.9
+  fy2021_pct: 25.4
+  median_calculation_note: "Median of [18.8%, 20.0%, 24.9%, 25.4%] = (20.0% + 24.9%) / 2 = 22.45%"
+  current_roce_fy26_pct: 6.6
+  fy28_expected_roce_base_pct: 8.5
+  fy28_expected_roce_bear_pct: 6.3
+  fy28_expected_roce_bull_pct: 10.6
+  pillar_1_roce_blend_pct: 7.36
+  unwind_catalyst: "Dahej capacity commissioning entering revenue phase (new block operational Jan 2026, reactor/assembly-line utilization 64.11%/30.54% with headroom)"
+  amplitude: "From normalized 22.45% to FY26 trough 6.6%, recovery to FY28 expected 8.5% base"
+  source_documentation: "Screener-Data_Sheet.csv (EBIT, capital employed for FY18-21); Deliberation record (current 6.6%, expected 8.5%); B05 (Dahej commissioning Jan 2026); B04 (utilization rates)"
 ```
 
 ---
 
 ## NOTES FOR VERIFIER
 
-1. **Single-Source Rule Enforced:** ROCE FY26 sourced from Deliberation record (6.6%), not recomputed. Sector Cap sourced from Deliberation (35x Specialty Chemicals), not manifest.
+1. **Normalized ROCE Amendment 4.5 Compliance:** Pre-depression median 22.45% computed directly from screener Data_Sheet on identical EBIT/(Net Worth + Borrowings) basis used in B01 Gate 0 analysis. Four years FY2018-FY2021 selected as pre-IPO / pre-capex build years. Dahej commissioning (Jan 2026 operational, 64%/31% utilization) documented as mechanical unwind catalyst.
 
-2. **Cash Determination Constraint:** No Rating PDF in run inputs. Cash verdict (INDETERMINATE leaning structural) drawn from Deliberation record + empirical B01/B02/B03 receivables/payables trend. FLAG-CASH prominent; Pillar 2 multiplier conservative 0.80x, no growth offset.
+2. **Single-Source Rule Enforced:** ROCE FY26 sourced from Deliberation record (6.6%), not recomputed. Sector Cap sourced from Deliberation (35x Specialty Chemicals), not manifest.
 
-3. **ROCE Forward Verdict & Shared Catalyst:** RECOVERING (40-60% probability) with Dahej commissioning as SHARED CATALYST driving both Pillar 1 ROCE recovery and Pillar 3a growth. Role 3 must stress-test this single point of failure.
+3. **Cash Determination Constraint:** No Rating PDF in run inputs. Cash verdict (INDETERMINATE leaning structural) drawn from Deliberation record + empirical B01/B02/B03 receivables/payables trend. FLAG-CASH prominent; Pillar 2 multiplier conservative 0.80x, no growth offset.
 
-4. **Peer Medians Unresolved:** Screener-Data_Sheet.csv provides raw sales/profit for peer cross-check but derivative metrics (EBITDA, ROCE, BVPS) blocked by empty screener-Profit_Loss.csv and screener-Balance_Sheet.csv. Verifier should re-request screener exports or manually extract peer balance-sheet/P&L from results PDFs.
+4. **ROCE Forward Verdict & Shared Catalyst:** RECOVERING (40-60% probability) with Dahej commissioning as SHARED CATALYST driving both Pillar 1 ROCE recovery and Pillar 3a growth. Role 3 must stress-test this single point of failure.
 
-5. **UA Qualifiers:** 1 of 3 met. No UA multiplier. Note: Low institutional ownership is NOT a risk per CLAUDE.md Amendment 3 and instruction 8; FII+DII threshold is binary, not a conservatism lever.
+5. **Peer Medians Unresolved:** Screener-Data_Sheet.csv provides raw sales/profit for peer cross-check but derivative metrics (EBITDA, ROCE, BVPS) blocked by empty screener-Profit_Loss.csv and screener-Balance_Sheet.csv. Verifier should re-request screener exports or manually extract peer balance-sheet/P&L from results PDFs.
 
-6. **Deliberation-Record Supremacy:** All FTTCP determinations (ROCE verdict, sector cap, cash determination, Shared Catalyst flag, operator override status) treated as Phase 2→Phase 3 handoff instructions. Do not re-deliberate.
+6. **UA Qualifiers:** 1 of 3 met. No UA multiplier. Note: Low institutional ownership is NOT a risk per CLAUDE.md Amendment 3 and instruction 8; FII+DII threshold is binary, not a conservatism lever.
 
+7. **Deliberation-Record Supremacy:** All FTTCP determinations (ROCE verdict, sector cap, cash determination, Shared Catalyst flag, operator override status) treated as Phase 2→Phase 3 handoff instructions. Do not re-deliberate.
+
+8. **Amendment 4.5 Inputs Complete:** Normalized ROCE 22.45% anchored; current ROCE 6.6% and FY28 expected 8.5% stated; unwind catalyst (Dahej commissioning with utilization ramp) documented with mechanical (non-speculative) evidence; Pillar 1 blend formula (7.36% = 60% × 6.6% + 40% × 8.5%) prepared for stage 11 valuation model.

@@ -3,6 +3,7 @@ company: "TATVA"
 run_date: "2026-07-12"
 model: "claude-haiku-4-5"
 status: complete
+mode: "Amendment 4.5 valuation refresh"
 input_gaps:
   - "No Rating PDF provided; rating_wc_quote unresolved"
   - "Peer derivative metrics (EBITDA, ROCE, BVPS, medians) unresolved due to empty screener-Profit_Loss.csv and screener-Balance_Sheet.csv exports"
@@ -14,6 +15,7 @@ flags:
     reason: "F2 execution moat scores zero with documented negative: Jolva groundbreaking slipped 3 consecutive quarters (Q2→Q3→Q4 FY26 calls, HIGH severity). G1 war chest scores zero: Credit rating downgraded A-/Stable to A-/Negative (FY24-25 AR) then to BBB+/Stable (May 2026 IP). Largest emerging-moat revenue (Jolva INR 400-500cr guided) sits on weakest execution track record in file. (B07)"
   - type: "FLAG-PROMOTER"
     reason: "CAUTION verdict: GPCB Section 33(A) Water Act direction closed Ankleshwar plant 13 Sept 2024, revoked after remediation (root cause not independently confirmed). Promoter-executive remuneration +27.89% YoY while standalone PAT fell 98.9% and EPS fell ₹12.82→₹0.14. CRISIL downgraded twice within review window. No red-flag deal-breakers but four amber items cluster in FY24-25. (B08)"
+
 table:
   company: "Tatva Chintan Pharma Chem Ltd"
   ticker: "TATVA"
@@ -66,6 +68,53 @@ table:
   p_fcf_multiple: "NOT APPLICABLE"
   p_fcf_note: "FCF negative across all 8 computable years FY19-FY26 per B01 line 41"
   
+  normalized_roce:
+    fy2018_pct: 18.8
+    fy2018_ebit_cr: 21.67
+    fy2018_capital_employed_cr: 115.27
+    fy2018_source: "Screener Data_Sheet: PBT 19.04 + Interest 2.63 = EBIT 21.67 Cr; Equity (8.04+51.08) + Borrowings 56.15 = Capital Employed 115.27 Cr"
+    
+    fy2019_pct: 20.0
+    fy2019_ebit_cr: 31.34
+    fy2019_capital_employed_cr: 156.86
+    fy2019_source: "Screener Data_Sheet: PBT 27.39 + Interest 3.95 = EBIT 31.34 Cr; Equity (8.04+71.67) + Borrowings 77.15 = Capital Employed 156.86 Cr"
+    
+    fy2020_pct: 24.9
+    fy2020_ebit_cr: 51.87
+    fy2020_capital_employed_cr: 208.39
+    fy2020_source: "Screener Data_Sheet: PBT 47.6 + Interest 4.27 = EBIT 51.87 Cr; Equity (8.04+109.66) + Borrowings 90.69 = Capital Employed 208.39 Cr"
+    
+    fy2021_pct: 25.4
+    fy2021_ebit_cr: 65.15
+    fy2021_capital_employed_cr: 256.22
+    fy2021_source: "Screener Data_Sheet: PBT 60.7 + Interest 4.45 = EBIT 65.15 Cr; Equity (20.09+145.88) + Borrowings 90.25 = Capital Employed 256.22 Cr"
+    
+    median_pct: 22.45
+    median_calculation: "Median of [18.8%, 20.0%, 24.9%, 25.4%] = (20.0% + 24.9%) / 2 = 22.45%"
+    median_source: "Screener-Data_Sheet.csv, computed on B01 EBIT/(Net Worth + Borrowings) basis, four pre-depression years FY2018-FY2021"
+    
+    pre_depression_rationale: "FY2018-FY2021 identified as pre-depression cycle (pre-IPO July 2021, pre-Dahej capex build). Dahej SEZ capex and IPO cash bloat began depression from FY2022 onward per Deliberation record line 20. ROCE deteriorated to single digits FY23-FY26 (min 1.17% FY25) per B01 line 15."
+    pre_depression_source: "Deliberation record lines 20, B01 line 15"
+    
+    current_roce_fy26_pct: 6.6
+    current_roce_source: "Deliberation record line 45"
+    
+    fy28_expected_roce_base_pct: 8.5
+    fy28_expected_roce_bear_pct: 6.3
+    fy28_expected_roce_bull_pct: 10.6
+    fy28_expected_roce_source: "Deliberation record line 45; Stage 11 builds formal projection"
+    
+    unwind_catalyst: "Dahej capacity commissioning entering revenue phase"
+    unwind_catalyst_detail: "New Dahej block commissioned January 2026, confirmed fully operational by Q4 FY26 call (~2 months late from guidance). Reactor utilization 64.11%, assembly-line 30.54% in FY24-25 (both cited as sub-optimal with headroom). Capacity ramp toward 75-80% target would support ROCE recovery toward normalized 22.45% level."
+    unwind_catalyst_sources: "B05 line 51 (commissioning timing and status); B04 unit_economics line 60 (utilization rates); B05 mgmt_questions line 69 (timeline to 75-80% utilization); Deliberation record line 50 (Dahej commissioning underpins Pillar 1 ROCE recovery)"
+    
+    pillar_1_roce_blend_pct: 7.36
+    pillar_1_roce_calculation: "60/40 weighted average of current ROCE (6.6%, FY26) and FY28 expected ROCE base (8.5%) = (0.60 × 6.6%) + (0.40 × 8.5%) = 3.96% + 3.4% = 7.36%"
+    pillar_1_roce_source: "Deliberation record line 44"
+    
+    roce_recovery_credited_via: "Pillar 1 only (not Strategic Premium)"
+    roce_recovery_source: "Deliberation record line 47"
+
   guided_revenue_growth_fy27_pct: 25.0
   guided_margin_band_fy27_pct: "20-22% EBITDA"
   guidance_source: "B05 guidance table rows 37-38 (Q4 FY26 call, 16 May 2026)"
@@ -234,3 +283,20 @@ ua_qualifiers:
 credibility_grade: "B"
 credibility_grade_basis: "Good. Core financial guidance (revenue growth, 20-22% EBITDA margin band) delivered essentially on schedule with margins tracking 18.0% to 19.4% to 20.9% across three quarters. Most product commercialization promises landed with only minor disclosed delays (Dahej plant ~2 mo late, agro intermediates timely, margin target hit, Electrolyte Salts +1,378% YoY Q4). Long-cycle capex/timeline commitments weakest: Jolva groundbreaking slipped 3 consecutive quarters (reframed as engineering optimization, not acknowledged as delay per B05 line 11 HIGH flag), semiconductor dispatch missed original Q4 FY26 target unacknowledged in Q4 call. ROCE questions deflected in Q2 and Q3 with no forward target ever given. Short of A grade (Excellent) due to capex timeline track record and evasion pattern on capital efficiency questions."
 credibility_grade_anchor: "B05 line 65-66"
+
+normalized_roce:
+  pre_depression_median_pct: 22.45
+  pre_depression_fy_range: "FY2018-FY2021"
+  fy2018_pct: 18.8
+  fy2019_pct: 20.0
+  fy2020_pct: 24.9
+  fy2021_pct: 25.4
+  median_calculation_note: "Median of [18.8%, 20.0%, 24.9%, 25.4%] = (20.0% + 24.9%) / 2 = 22.45%"
+  current_roce_fy26_pct: 6.6
+  fy28_expected_roce_base_pct: 8.5
+  fy28_expected_roce_bear_pct: 6.3
+  fy28_expected_roce_bull_pct: 10.6
+  pillar_1_roce_blend_pct: 7.36
+  unwind_catalyst: "Dahej capacity commissioning entering revenue phase (new block operational Jan 2026, reactor/assembly-line utilization 64.11%/30.54% with headroom)"
+  amplitude: "From normalized 22.45% to FY26 trough 6.6%, recovery to FY28 expected 8.5% base"
+  source_documentation: "Screener-Data_Sheet.csv (EBIT, capital employed for FY18-21); Deliberation record (current 6.6%, expected 8.5%); B05 (Dahej commissioning Jan 2026); B04 (utilization rates)"

@@ -1,0 +1,16 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 87.5      # B12a: 28 of 32 material numbers clean; 0 CRITICAL, 2 MAJOR (timeframe/sourcing), 1 MINOR
+  redflag_coverage: 75            # B12b: 9 of 12 verifier-found flags fully caught (3 PARTIAL, 0 MISSED); 0 CRITICAL, 1 MAJOR
+  framework_adherence: 91         # B12c PHASE-1 PORTION ONLY (Gate 0 + Emerging Moat); 0 CRITICAL, 1 MAJOR, 3 MINOR
+  peer_utilisation: 93            # B12d: 13 of 14 peer coverage-map entries correctly handled; all 4 peers substantive; 0 CRITICAL, 1 MAJOR
+  overall: 75                     # min of the four
+  band: "normal (75-89): note specifics"
+  valuation_framework_adherence: "PENDING PHASE 3 (verifier C valuation-adherence audit of B10/B11 deferred; B12c.valuation left blank)"
+rework_check:
+  triggered: false
+  reason: "No CRITICAL finding from any verifier (A/B/C/D all 0 CRITICAL); no verifier acceptance_rate below 60% (min 75). Analysis is trustworthy; the gate rests on evidence, not analysis defects."
+notes:
+  - "redflag_coverage 75 is the binding minimum but reflects 3 PARTIAL and 0 MISSED flags - the upstream concall work had no blind spot; the 3 partials are severity/phrasing nuances (chiefly the overstated 'HFC completely unmentioned' framing, which verifier B corrected: Aviom was discussed in Q4, only the NCLT-timeline update is missing)."
+  - "Two verifier MAJORs to carry into synthesis/phase 3: (1) B12a - the notes' standalone +22.3% PAT and Pragati loss are FY25 (AR) phenomena; FY26 standalone PAT growth was +18.5%; label timeframes carefully. (2) B12a/B12c - the Gate 0 ROE reconciliation cited 11.1% while the Q4FY26 investor presentation shows a disclosed FY26 ROE of 14.0% (basis difference, computed 11.08% is arithmetically correct); resolve the ROE basis at stage 10."
+  - "B12c MAJOR: Gate 0 AVERAGE classification is defensible on the operator-authorized adjusted-basis rescaling but its 'deal-breaker caps corroborate' justification is logically invalid (a cap is a ceiling, not a floor). Surface in FLAG-GATE0."

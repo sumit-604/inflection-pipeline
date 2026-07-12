@@ -189,6 +189,31 @@ The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −
 
 ---
 
+# V3.5 AMENDMENT
+
+## AMENDMENT 4.5 (v3.5) — NORMALIZED-ROCE ANCHOR FOR TEMPORARILY DEPRESSED VERDICTS
+
+**Problem:** Pillar 1's ROCE input for a RECOVERING forward verdict is a blend weighted toward the current and FY[Y+2] ROCE (FTTCP v1.2 Pillar 1 table). When the depression is a capital-cycle trough (post-IPO cash bloat, a plant deployed but not yet earning, a working-capital bulge) rather than structural decay, both the current ROCE and the FY[Y+2] figure understate sustainable earning power, because FY[Y+2] can still carry a fresh capex block that has not ramped. The formula then prices a discrete, ending trough as if it were permanent. The destination PE and the entry zone land far below any price the market has ever paid, and the process systematically misses the exact capital-cycle transition setups this operation hunts. Documented divergence (TATVA, 2026-07-12): trough-anchored model entry Rs 121 and MoS Rs 97 against a four-year market floor of Rs 590; once ROCE is normalized to the evidenced pre-capex 15-20%, fair value recomputes to Rs 350-600, matching where the market actually held.
+
+**Change — a THIRD Pillar 1 ROCE anchor applies ONLY when the FTTCP backward ROCE verdict is TEMPORARILY DEPRESSED AND the forward verdict is RECOVERING:**
+
+- **Normalized ROCE** = the median ROCE of the last complete pre-depression cycle, taken from the Gate 0 / annual-report history. It is 📄-gated: it requires both the historical ROCE series showing the pre-depression level AND the specific mechanical unwind catalyst (capex commissioning schedule, cash-bloat deployment, working-capital release). If either is NOT FOUND, this amendment does NOT apply and the standard FTTCP blend stands. Normalized ROCE may never exceed the evidenced pre-depression median; no invention, NOT FOUND is the only fill.
+
+- **Blend (replaces the RECOVERING rows of the FTTCP v1.2 Pillar 1 table for TEMPORARILY DEPRESSED cases only):**
+  - RECOVERING, probability >60% with Strong catalysts: Pillar 1 ROCE = 60% Normalized + 40% current.
+  - RECOVERING, probability 40-60%: Pillar 1 ROCE = 40% Normalized + 30% FY[Y+2] + 30% current.
+  - The blended ROCE still feeds the continuous formula (Amendment 5: 0.5 × ROCE + 7.5, floor 9x, cap 24x).
+
+- The Section 1B worksheet and the verdict card must show the three-anchor blend explicitly and cite the pre-depression ROCE evidence with its source. Single-credit is unchanged: the recovery is credited via Pillar 1; the Strategic Premium ROCE re-rating option stays barred.
+
+- **Conservative guard (the DECLINING backstop):** if the recovery does not show in the next reported ROCE print (fails the FTTCP re-engagement threshold, forward probability slips below the RECOVERING band, or the unwind catalyst dies), the Normalized anchor is WITHDRAWN at the next quarterly refresh and Pillar 1 reverts to the current-weighted blend. The normalized anchor is a forward credit that must keep earning its place.
+
+- **Re-open trigger note (from the TATVA devil's advocate, 2026-07-12):** for a TEMPORARILY DEPRESSED name held at DEEP WATCH, the WATCH-at-zone re-open condition keys off the evidence (ROCE reverting toward the pre-depression level AND cash conversion turning), not solely a fixed price line derived from the trough-anchored multiple, or the process will re-open too late or never on genuine capital-cycle recoveries.
+
+**Why this is not the rejected premium-scaling proposal (Appendix A) in reverse:** this does not scale a premium or relax a cap. It corrects the ROCE INPUT to the quality base so it reflects sustainable rather than trough earning power, and it is 📄-gated and self-withdrawing. Cash quality is still policed independently in Pillar 2 and FTTCP Transition 3; the sector cap is still absolute; the Hurdle Ratio still governs the buy price. A recovery that does not materialize is removed, not grandfathered.
+
+---
+
 ## APPENDIX A — REJECTED AMENDMENT (RECORDED FOR AUDIT TRAIL)
 
 **Proposal (rejected 02-Jul-2026):** Scale Growth and Strategic Premiums by the Cash Multiplier (or cap premiums at 50% of quality-adjusted base when multiplier <1.0x), on the grounds that a structurally cash-negative business can currently earn premiums exceeding its quality base.
@@ -206,3 +231,4 @@ The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −
 | 3.2 | Jun 2026 | Prior spec (Notion: Valuation Framework v3.2) |
 | 3.3 | 02-Jul-2026 | Amendments 1-8 above. 20x rule deleted; Hurdle Ratio replaces STOP rule and 1.3x gap check; UA ordering codified as min(Raw × 1.25, Cap); ROCE single-credit rule (FTTCP v1.2); continuous Pillar 1 formula; proportional ±7.5% range; lender Asset-Quality Multiplier carve-out; six sector cap rows added. Premium-scaling proposal rejected (Appendix A). |
 | 3.4 | 11-Jul-2026 | Amendments 4.1-4.3 above. Pillar 3 decoupled (3a growth visibility / 3b moat formation / 3c duration premium), combined +6x cap (4.1, 4.2); two-tier hurdle (Tier A 25% / Tier B 20%) (4.3); entry conjunction rule (Master v3.3 Role 2); optionality register (stage 7); zone reachability flag (synthesis + finalize); RRM percentage-points clarification. |
+| 3.5 | 12-Jul-2026 | Amendment 4.5 — Normalized-ROCE anchor for TEMPORARILY DEPRESSED + RECOVERING verdicts: a 📄-gated third Pillar 1 ROCE anchor (median pre-depression cycle ROCE, capped at the evidenced level, with a named unwind catalyst) blended per the recovery probability, so the framework stops pricing capital-cycle troughs as permanent and stops missing transition setups. Self-withdrawing if the recovery does not print. Prompted by the TATVA 2026-07-12 chart-vs-model divergence (model entry Rs 121 vs four-year market floor Rs 590). |

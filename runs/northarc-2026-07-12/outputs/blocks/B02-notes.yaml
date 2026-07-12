@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Loan-book asset quality (the NBFC analog to receivables/working-capital) deteriorated sharply in FY25: GNPA ratio doubled 0.47%->0.99%, Net NPA ratio ~4-5x'd (0.09%->0.39-0.43%, two unreconciled figures in the document), impairment P&L charge +207% YoY (Rs378.53 Cr vs Rs123.14 Cr), Stage 3 provision coverage fell from ~82-84% to ~68%, and this required a regulator-forced (RBI) exclusion of FLDG credit enhancements from the ECL model, Rs68.35 Cr already absorbed in Q4FY25 PBT (Note 83/49, Auditor's Emphasis of Matter)."}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "RBI-directed FLDG exclusion from ECL model: Rs80.41 Cr total impact, Rs68.35 Cr absorbed in Q4FY25 PBT; flagged as Auditor's Emphasis of Matter", note_ref: "Note 83 standalone / Note 49 consolidated, p.261/380", rating: "red flag", why: "Regulator-forced correction is direct evidence of prior ECL-model aggressiveness"}
+  - {rank: 2, finding: "Consolidated Group PAT fell 5.2% YoY (Rs301.32 Cr vs Rs317.69 Cr) while standalone PAT rose +22.3%, driven by Pragati Finserv swinging from +Rs19.55 Cr profit to -Rs29.39 Cr loss, net worth eroded 85.7%", note_ref: "Note 22 consolidated, p.353", rating: "red flag", why: "Standalone-only PAT reading materially overstates true Group earnings momentum; Pragati CGU goodwill test not shown re-run against this loss"}
+  - {rank: 3, finding: "Impairment on financial instruments (P&L) up 207% YoY (Rs378.53 Cr vs Rs123.14 Cr); GNPA ratio doubled 0.47%->0.99%; Stage 3 provision coverage fell ~82-84%->~68%", note_ref: "Notes 27, 36(i), 68-69, p.199-230", rating: "red flag", why: "Largest single P&L swing item in the notes; core credit-quality deterioration"}
+  - {rank: 4, finding: "Customer complaints up ~930-1000% YoY (91->938 headline; grounds-table 250->1,124) vs ~15% loan book growth; complaints pending year-end 1->129", note_ref: "Note 72, p.243-244", rating: "red flag", why: "Magnitude mismatch vs book growth signals operational/collections strain unaddressed in MD&A"}
+  - {rank: 5, finding: "Basic EPS fell 28.2% (Rs31.45->Rs22.59) despite PAT +22.3%, entirely from IPO + CCPS-conversion dilution (weighted avg shares +70.3%)", note_ref: "Note 32, p.217", rating: "red flag (investor-facing optical, not earnings-quality)", why: "Visible optical negative on trailing-EPS screens; one-time capital-structure effect"}
+  - {rank: 6, finding: "Fraud disclosure: 29 instances, Rs1.18 Cr, predominantly staff cash-handling (25 of 29, Rs1.10 Cr), no prior-year comparative given", note_ref: "Note 51, p.236-237", rating: "watch", why: "Third independent data point reinforcing an operational-control-strain theme alongside complaints and attrition"}
+  - {rank: 7, finding: "Related-party lending fully unwound in one year: loans to subsidiaries Rs100.98 Cr->Nil; loans to director-interested firms Rs305.78 Cr->Nil, no counterparty named", note_ref: "Note 76, p.248", rating: "watch", why: "Large, unexplained pre-IPO-adjacent related-party lending base eliminated with no disclosed rationale"}
+  - {rank: 8, finding: "Gratuity accounting policy states annual contributions to trust-funded plans; actual disclosure shows Rs0 plan assets both years, in both standalone and consolidated notes", note_ref: "Note 3k vs Note 40, p.156/222", rating: "watch", why: "Internal document inconsistency; proxy for note-maintenance rigour"}
+  - {rank: 9, finding: "FVOCI loan book fair-value markdown: OCI reserve fell Rs21.76 Cr (Rs37.38->Rs15.62 Cr); Level 3 gains-through-OCI swung -Rs28.51 Cr vs +Rs19.39 Cr prior year", note_ref: "Note 20(g), 35, p.209-210", rating: "watch", why: "Consistent with rising credit stress in the FVOCI-classified loan segment"}
+  - {rank: 10, finding: "Stage 1 provision +199% YoY (coverage 0.58%->1.53%) and Stage 2 provision +281% YoY (coverage 9.36%->18.19%) - broader provisioning build than Stage 3 alone", note_ref: "Note 36(i)A, p.215-216", rating: "watch (mitigant)", why: "Partial offset to the flat-LGD concern; shows genuine conservatism build across the performing book"}
+  - {rank: 11, finding: "Level 3 fair value discount on the amortised-cost loan book narrowed sharply from 24.3% (FY24) to 7.9% (FY25); driver not disclosed", note_ref: "Note 35(A), p.209-210", rating: "watch", why: "Large, undisclosed swing in an unobservable-input DCF valuation"}
+  - {rank: 12, finding: "ECL LGD is a flat 65% Basel II FIRB-recommended assumption, not empirically modelled, across a diversified secured/unsecured book", note_ref: "Note 36(i)A, p.228", rating: "watch", why: "Simplifying convention whose conservatism cannot be independently verified from disclosure"}
+  - {rank: 13, finding: "New Rs267.31 Cr related-party-managed AIF exposure from zero, plus a further Rs15.00 Cr AIF application money pending allotment", note_ref: "Notes 8, 42, 43, 53, 9; p.168-169, 231-232, 238", rating: "watch", why: "Concentration plus related-party-manager risk combined"}
+  - {rank: 14, finding: "EIS (Excess Interest Spread) receivable Stage 3 balance more than tripled (Rs0.53 Cr->Rs1.71 Cr, +219%) even as the aggregate EIS balance stayed flat", note_ref: "Note 9.1, p.169", rating: "watch", why: "Growing share of upfront-booked gain-on-assignment income sits against now-delinquent pools"}
+  - {rank: 15, finding: "Two different FY25 Net NPA ratios disclosed without cross-reference: 0.39% (Note 68(a), net-advances basis) vs 0.43% (regulatory ratio note, term-loans-only basis)", note_ref: "Note 68(a) vs ratio-analysis note, p.242/~254", rating: "watch", why: "Directionally consistent but numerically unreconciled; found only on pattern re-read"}
+red_flags:
+  - "Regulator-forced ECL correction (FLDG exclusion), Auditor's Emphasis of Matter, Rs68.35 Cr Q4FY25 PBT hit"
+  - "Standalone-consolidated PAT divergence (+22.3% vs -5.2%) not flagged by the Company; Pragati CGU goodwill test not shown re-run against the FY25 subsidiary loss"
+  - "Operational-strain triangulation across complaints (+930-1000%), fraud (Rs1.18 Cr staff-driven), and attrition assumption (38.1%), with no corresponding management discussion found in the notes"
+  - "Gratuity accounting policy text contradicts the actual unfunded plan-asset disclosure, identically in standalone and consolidated notes"
+  - "Two unreconciled Net NPA ratios (0.39% vs 0.43%) in the same annual report"
+questions_for_mgmt:
+  - "Name the counterparty(ies) behind the Rs305.78 Cr loans to director-interested firms eliminated in FY25 (Note 76) and the commercial rationale."
+  - "Was the Pragati CGU goodwill impairment test (Note 81) re-run using FY25 actuals given the subsidiary's Rs29.39 Cr consolidated loss and 85.7% net-worth erosion?"
+  - "What is driving the ~930-1000% complaints surge and the 38.1% attrition assumption, and is it linked to the Staff Interaction/Collection-related complaints category?"
+  - "Reconcile Note 3k's gratuity-trust-funding policy language against Note 40's Rs0 plan-assets disclosure in both years."
+  - "What drove the Level 3 loan-book fair-value discount to narrow from 24.3% to 7.9% YoY, and can the two different FY25 Net NPA ratios (0.39% vs 0.43%) be reconciled?"
+receivables_trend: "Not a meaningful metric in its trade-receivables form for an NBFC (trade receivables actually improved Rs14.38 Cr->Rs12.02 Cr, immaterial). The analogous asset-quality metric, loan-book credit quality, is DETERIORATING: GNPA ratio 0.47%->0.99%, Net NPA ratio 0.09%->0.39-0.43% (two figures disclosed, unreconciled), gross Stage 3 NPA Rs52.03 Cr->Rs127.83 Cr, net NPA rupee amount Rs9.61 Cr->Rs49.18 Cr (+412%), impairment P&L charge Rs123.14 Cr->Rs378.53 Cr (+207%), Stage 3 provision coverage ~82-84%->~68% (Notes 27, 36(i)A, 68-69, p.199-230, 241-242)."
+restatements_found: []
+going_concern_language: "NONE. Standard affirmative language only, identical across standalone and consolidated accounting policies: prepared on a going concern basis; management satisfied the Company/Group can continue for the foreseeable future and no material uncertainty exists. No going-concern qualification or Key Audit Matter in either Auditor's Report."

@@ -21,7 +21,7 @@ Devil's advocate: WEAKENED BUT ALIVE (valuation safety DESTROYED; growth, moat, 
 ## ENTRY ZONES
 
 - Entry range: Rs 295 to Rs 368 (Tier A, 25% hurdle). MoS price: Rs 295.
-- ZONE REACHABILITY: MARKET-UNLIKELY ZONE. Entry top Rs 368 sits 72.9% below the lowest tested annual close of Rs 1,359.65 since the December 2023 listing and 85.2% below CMP Rs 2,480. Classify DEEP WATCH, not an actionable WATCHLIST; reaches entry only through a thesis-relevant shock or a broad de-rating.
+- ZONE REACHABILITY: MARKET-UNLIKELY ZONE. Per operator-provided price history (TradingView, 2026-07-12), the stock has never traded below about Rs 670 since the December 2023 listing; entry top Rs 368 sits about 45% below that Rs 670 floor and 85% below CMP Rs 2,480. Classify DEEP WATCH, not an actionable WATCHLIST; reaches entry only through a thesis-relevant shock or a broad de-rating deeper than anything in the stock's listed history.
 
 ## THESIS-BROKEN TRIGGERS
 

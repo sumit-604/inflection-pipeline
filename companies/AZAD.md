@@ -6,13 +6,14 @@ BSE 544061 / NSE AZAD | Precision engineering: mission/life-critical airfoils, b
 AVOID on valuation: at Rs 2,480 (about 121x PE) a fortress-quality precision engineering franchise (37% EBITDA margins, marquee-OEM lock-in) earns a four-pillar destination PE of only about 21x, so base Year-3 fair value is about Rs 720 and the 25% hurdle needs a Rs 295-368 entry; the whole forward turn rests on Q1 FY27 operating cash flow going positive.
 
 ## DECISION STATUS AND ENTRY ZONE
-As of 2026-07-12: AVOID (on valuation) / DEEP WATCH. FTTCP composite +4/8 (DEEP WATCH leaning BUY-ON-DIPS). Entry zone Rs 295-368, MoS Rs 295, MARKET-UNLIKELY ZONE (entry top 72.9% below the lowest tested close Rs 1,359.65 and 85.2% below CMP). Hurdle Ratio STOP. Destination PE about 21x (Track 1 RRM 20.6x, Track 2 additive 21.9x). Confidence 92 (high). Devil's advocate WEAKENED BUT ALIVE.
+As of 2026-07-12: AVOID (on valuation) / DEEP WATCH. FTTCP composite +4/8 (DEEP WATCH leaning BUY-ON-DIPS). Entry zone Rs 295-368, MoS Rs 295, MARKET-UNLIKELY ZONE (entry top ~45% below the true lowest tested price since listing Rs 670 per operator chart 2026-07-12, and 85% below CMP; stock never traded below ~670 in 3 years). Hurdle Ratio STOP. Destination PE about 21x (Track 1 RRM 20.6x, Track 2 additive 21.9x). Confidence 92 (high). Devil's advocate WEAKENED BUT ALIVE.
 
 ## OPERATOR RULINGS
 - 2026-07-12: Sector cap corrected from manifest "Pharma / CDMO" (38x) to precision engineering / industrial-products manufacturing (25x) — Azad is a manufacturer, not pharma/CDMO; genuinely uncertain vs Defence/strategic 38x, used 25x conservatively; not binding at the current destination.
 - 2026-07-12: Pillar 1 ROCE on an operational basis, idle QIP capital stripped (residual cash + CWIP + capex advances) — "for calculating ROCE, we should calculate only operational ROCE. We should remove this idle QIP cash." FY26 operational ROCE about 12% vs statutory 8.8%; blended forward about 13.6%; base about 14.3x.
 - 2026-07-12: Strategic Premium given and set to +3x — "strategic premium should be given to it. It has got such a strong relation with strategic players... Don't they have a kind of monopoly?" Placed in the strong-franchise / limited-competition / documented-pricing-power tier; declined the +4 to +6x rare-licence monopoly tier (sole-Indian-supplier claim company-informed and unverified by peers; 81% three-OEM concentration is customer power, not monopoly).
 - 2026-07-12: Duration Premium (Pillar 3c) held at +2x (analyst call, operator did not override).
+- 2026-07-12: Operator provided price history (TradingView chart) — stock never traded below ~Rs 670 since Dec-2023 listing; corrects the synthesis anchor (which used lowest annual close Rs 1,359.65). Reinforces MARKET-UNLIKELY ZONE: entry top Rs 368 is ~45% below the Rs 670 floor.
 
 ## ACTIVE TRIPWIRES
 - FALSIFIER: Q1 FY27 consolidated operating cash flow negative with working capital days at or above 344 (August 2026 print). A positive OCF sourced from non-recourse factoring rather than operations does not count as confirmation.

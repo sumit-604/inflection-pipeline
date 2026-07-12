@@ -13,7 +13,7 @@ Evidence gate: PROCEED WITH FLAGS. Selection rule 3 fired: FLAG-CASH is active (
 
 ## Zone reachability
 
-Full intra-year price history is not in the screening CSVs; only three annual closing prices exist (FY24 Rs 1,367.85, FY25 Rs 1,359.65, FY26 Rs 1,484.00). No discrete 52-week low field is present, so the lowest tested price since the December 2023 listing is taken as the lowest annual close, Rs 1,359.65 (FY25, around March 2025). The entry zone top of Rs 368 sits 72.9% below that lowest tested price and 85.2% below CMP Rs 2,480, and below the December 2023 IPO level.
+Full intra-year price history is not in the screening CSVs; only three annual closing prices exist (FY24 Rs 1,367.85, FY25 Rs 1,359.65, FY26 Rs 1,484.00). Operator-provided price history (TradingView daily chart, 2026-07-12) establishes the true lowest tested price since the December 2023 listing at about Rs 670 (the listing-area low in early 2024); the stock has never traded below that level in three years. The entry zone top of Rs 368 sits about 45% below that Rs 670 all-time-since-listing low, the MoS price Rs 295 sits about 56% below it, and both are 85% or more below CMP Rs 2,480 and below the December 2023 IPO level.
 
 MARKET-UNLIKELY ZONE — reaches entry only via thesis-relevant shock or broad de-rating; classify DEEP WATCH not actionable WATCHLIST, or route to the trading book.
 

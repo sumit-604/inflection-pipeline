@@ -1,0 +1,14 @@
+stage: B12a
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 34
+findings:
+  - {severity: "MINOR", location: "B03-ardeep, Phase 3C (P&L margin section)", claimed: "FY25 Tax provision: Rs 4.65 Cr", source_truth: "AR P&L p.72: Rs 4.85 Cr", note: "Report transcribed provision as 465 lakh; AR shows 485 lakh. Error of Rs 0.20 Cr (4.3% on tax line, <0.3% on total income). Effective tax rate stated 18.8%, should be ~19.7% (0.9pp understatement). Not on verdict card. MINOR."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97
+rerun_note: "Re-run after first pass mislabeled two faithfully-transcribed company anomalies (Diluted EPS 8.12 > Basic 6.85; negative short-term provisions) as CRITICAL. Both confirmed to MATCH the audited AR exactly — company accounting issues, not pipeline errors — so they are NOT numerical-audit findings and do NOT trigger REWORK. Coverage widened to independently read the investor presentation and reconcile the EBITDA-margin basis difference."
+coverage_note: "34 material figures: Tier 1 (verdict card & Gate 0) 24/24 MATCH; Tier 2 (Section 1B pillar inputs) 10/10 MATCH; Tier 3 growth/profitability/cash fully covered. One MINOR (tax provision 465 vs 485 lakh, <0.3% impact, non-verdict). Two company anomalies correctly transcribed. EBITDA margin basis difference (rev-from-ops 19.88% vs total-rev 19.52%) transparent/immaterial. AR pp.3-59 corrupted, pp.78-101 truncated — does not affect verdict-card audit. FY26 capex validated via presentation. Zero fabrications or material misreadings."

@@ -1,0 +1,17 @@
+# Phase-1 confidence delta (orchestrator Section 5).
+# Valuation framework-adherence component pending phase 3.
+confidence_delta:
+  numerical_acceptance: 97      # B12a (re-run): 32/34 clean; 0 CRITICAL, 1 MINOR
+  redflag_coverage: 82          # B12b: caught 9 / 11 independently-found flags
+  framework_adherence: 95       # B12c: Gate 0 + Emerging Moat portion only (valuation deferred)
+  peer_utilisation: 88          # B12d: 14 / 16 peers used substantively
+  overall: 82                   # min of the four
+  band: "normal (75-89): note specifics; no forced downgrade, no REWORK"
+  valuation_framework_adherence: "PENDING PHASE 3 (verifier C valuation half deferred; B10/B11 not yet built)"
+rework_check:
+  any_verifier_a_critical: false      # re-run returned 0 CRITICAL
+  any_acceptance_below_60: false      # min acceptance 82
+  verdict: "REWORK not triggered"
+notes:
+  - "Verifier A first pass returned 2 false CRITICALs (faithfully-transcribed company anomalies mislabeled by severity); orchestrator sanity-checked per LESSONS (KARNIKA 2026-07-11) and re-invoked once with a severity-semantics + coverage addendum; source-grounded re-run returned 0 CRITICAL, 97%. Acceptance/REWORK computed from the re-run."
+  - "Confidence is capped by redflag_coverage (82): verifier B judges B05's top 'broken quarterly-disclosure' flag and the 'margin cut' framing as over-confident calibration (not fabrication), and notes one missed capital-allocation flag (Rs43.3cr preferential issue ~18 months post-IPO with Rs20cr IPO proceeds still unutilized)."

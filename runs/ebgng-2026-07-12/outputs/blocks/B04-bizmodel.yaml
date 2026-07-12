@@ -1,0 +1,59 @@
+stage: B04-bizmodel
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used, quarterly_product_geo_mix_not_disclosed_post_drhp]
+flags: [gross_margin_trails_all_named_peers, operating_cash_flow_negative_two_consecutive_years, top10_customer_concentration_above_55pct_FY24, top10_supplier_concentration_69pct_FY24_with_related_parties, no_formal_fx_hedge_policy_despite_75pct_export_revenue]
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Sale of laptops", type: "product sale (refurb/trading)", pct_of_revenue: 67.87, predictability: "M"}
+  - {name: "Sale of others (desktops/tablets/servers/smartphones/workstations/accessories)", type: "product sale (refurb/trading)", pct_of_revenue: 32.13, predictability: "M"}
+  - {name: "Incentive income", type: "ancillary/other operating income", pct_of_revenue: 0, predictability: "L"}
+  - {name: "Leasing", type: "rental/recurring (nascent)", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "OEM certification / switching costs (HP, Lenovo, Microsoft authorised refurbisher)", durability: "moderate"}
+  - {moat: "Regulatory/EPR licensing and R2v3/ISO certification stack", durability: "moderate-durable"}
+  - {moat: "Multi-geography distribution reach (35 countries, 5 facilities)", durability: "moderate, durable"}
+  - {moat: "Integrated procurement-refurb-sale scale/cost advantage", durability: "moderate, structural"}
+valuation_methods:
+  primary: {method: "DCF / FCFF with explicit working-capital forecast", why: "EBITDA/PAT growth has diverged sharply from operating cash flow, which was negative in FY25 and FY26; multiple-based methods anchored to EBITDA/PAT would overstate cash-generative value without explicit WC modeling"}
+  secondary: {method: "EV/EBITDA vs. growth cross-checked against named comps (New Jaisa, Close the Loop, MusicMagpie)", why: "Provides relative positioning context given GNG's margin trails all three peers despite superior scale/growth"}
+  tertiary: {method: "EV/Sales", why: "Useful sanity check given high revenue growth (34-48% YoY) and short listed history since July-2025 IPO"}
+  not_applicable: ["Dividend Discount Model (no dividend policy/history)", "Asset-based/Replacement value (asset-light, leased facilities)", "Sum-of-the-Parts (single reportable Ind AS 108 segment)"]
+irrelevant_ratios:
+  - {ratio: "Net profit margin in isolation", why: "PAT growing every year while operating cash flow negative two straight years; margin alone hides the cash-conversion problem"}
+  - {ratio: "Fixed-asset turnover as a moat signal", why: "Not a capex-heavy manufacturer; the real capital constraint is working capital, not fixed assets"}
+  - {ratio: "Same-store/like-for-like sales growth", why: "Not a retail-format business; growth comes from procurement/customer network expansion, not location comps"}
+  - {ratio: "Reported EBITDA margin trend alone", why: "EBITDA margin improving while operating cash flow deeply negative; EBITDA is a poor proxy for distributable cash here"}
+  - {ratio: "Standard receivable-days benchmark for a services company", why: "This is a trading/distribution model with material inventory risk layered on receivables risk; use combined NWC days instead"}
+must_track_metrics:
+  - {metric: "Operating cash flow / EBITDA (cash conversion)", healthy: "positive, >50-70% over a full WC cycle", red_flag: "negative for 3+ consecutive periods"}
+  - {metric: "Net working capital days", healthy: "40-70 days (FY22-24 historical range)", red_flag: "sustained above ~120-150 days annualized"}
+  - {metric: "Gross margin % (per DRHP Note 2-3 formula)", healthy: "trending toward peer range 20-30%+", red_flag: "reversal below 12.31% (FY24 trough)"}
+  - {metric: "Top-10 customer revenue concentration", healthy: "<40-45%", red_flag: ">55% and rising"}
+  - {metric: "Net debt / equity", healthy: "<1.0x post-IPO", red_flag: "re-leveraging above 1.5x"}
+unit_economics:
+  unit: "one refurbished ICT device sold (blended laptops + others)"
+  revenue_per_unit: "approx INR 30,822 (FY24, derived: revenue 11,381.38mn / 369,320 units, DRHP p.176)"
+  margin_per_unit: "approx INR 3,795 gross margin per unit (FY24, derived: gross margin 1,401.52mn / 369,320 units, DRHP p.176)"
+  key_lever: "procurement price of the used device (80-88% of revenue) versus category mix (laptop vs higher-ASP others) and new-device reference discount (33-65%)"
+first_deterioration_signals:
+  - {risk: "Revenue model - laptop and top-10 customer concentration", first_signal: "top-10 customer revenue % rising further or laptop revenue % of mix rising without volume growth"}
+  - {risk: "Margin - gross margin trailing peers, further mix/price pressure", first_signal: "gross margin % declining QoQ for two consecutive quarters"}
+  - {risk: "Balance sheet - working-capital-fuelled growth funded by debt", first_signal: "NWC days above ~150 annualized, or WC borrowings growing faster than revenue for two consecutive quarters"}
+  - {risk: "Execution - new-geography ramp (USA, Europe)", first_signal: "customer count/revenue growth in USA/Others geography stalling or reversing"}
+  - {risk: "Structural - related-party concentration and unhedged FX exposure", first_signal: "related-party terms diverging from arm's length, or realized FX loss exceeding historical <0.3%-of-revenue norm"}
+mgmt_questions:
+  - "Why does gross margin (12-20%) trail all three named peers (32-47%, 30-38%, 27-30%) despite superior scale and growth?"
+  - "Why was operating cash flow negative in both FY25 and FY26 despite consistently positive and growing PAT, and what is the targeted steady-state working-capital cycle?"
+  - "What is the sustainable steady-state debt-to-equity given the FY26 IPO-driven deleveraging (2.53x pre-IPO to ~0.53x post-IPO), and how quickly does leverage rebuild?"
+  - "With top-10 supplier concentration at 69.60% of FY24 inventory cost (several related parties) and no disclosed long-term contracts, what protects against losing a top-2 supplier?"
+  - "What is the parent's contingent exposure to Electronics Bazaar FZC's bank guarantees (now up to AED 20mn) given FZC generates the majority of consolidated revenue?"
+  - "Why is there no formal FX hedging policy despite 75.65% of H1FY25 revenue originating outside India?"
+  - "Is 48% CAGR revenue growth (FY22-24) a genuine organized-segment share gain, or simply riding the 33% CAGR industry formalization tailwind?"
+one_line_verdict: "Fast-growing, asset-light refurbishment trader with peer-lagging margins and cash conversion that has not yet caught up to its profit growth."

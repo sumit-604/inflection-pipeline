@@ -1,0 +1,70 @@
+stage: B05-concall
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags: [quarter_map_filing_date_vs_call_date_discrepancy, interest_cost_savings_promise_missed, debtor_days_slippage, elevated_commodity_sensitive_inventory, uae_geographic_operational_concentration, dropped_infrastructure_refurb_and_epr_narratives, distributor_partnership_contribution_not_yet_material]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Memory/component price shock sustaining refurbished-PC demand shift and ASP/margin expansion", type: "SECTORAL/PRICE-MIX", timeframe: "near-medium term (mgmt view: through ~2028)", conviction: "H", confirm_signal: "Continued ASP growth, IDC shipment-decline forecasts holding/deepening, gross margin sustaining >19%", kill_signal: "Memory/component prices normalize faster than guided, gross margin reverts toward 15-17%"}
+  - {priority: 2, name: "Distributor channel expansion (Ingram, Supertron, Europe/US talks in advanced stage)", type: "VOLUME", timeframe: "medium term", conviction: "M", confirm_signal: "Named-distributor revenue becomes a disclosed, material % of sales (not minuscule)", kill_signal: "Contribution stays negligible for 2+ more quarters, or partnerships lapse"}
+  - {priority: 3, name: "Capacity/geographic expansion trajectory (150k units/month, 46 countries)", type: "VOLUME", timeframe: "near term", conviction: "H", confirm_signal: "Continued country/touchpoint growth, capacity utilization rising toward stated ceiling", kill_signal: "Expansion stalls, utilization falls, headcount growth reverses"}
+  - {priority: 4, name: "FY27 guidance beat potential (guided 25% revenue/50bps margin vs FY26 actual 34%/166-209bps)", type: "VOLUME/PRICE-MIX", timeframe: "near term (FY27)", conviction: "M-H", confirm_signal: "Q1 FY27 results beat the 25% guide, consistent with FY26 sandbagging pattern", kill_signal: "Growth decelerates toward or below guided 25%/50bps levels"}
+  - {priority: 5, name: "Consumer financing/EMI retail push + India domestic consumption growth (80% YoY FY26)", type: "VOLUME", timeframe: "near-medium term", conviction: "L-M", confirm_signal: "EMI-channel volume becomes disclosed and material; India consumption growth continues elevated", kill_signal: "Negligible EMI uptake, or credit-quality issues emerge"}
+  - {priority: 6, name: "Working-capital/inventory strategy payoff (elevated Rs743cr inventory position)", type: "COST", timeframe: "near term", conviction: "M", confirm_signal: "Margin expansion continues while debt/finance cost stabilizes or declines", kill_signal: "Memory prices reverse suddenly, triggering inventory write-down or forced destocking"}
+guidance:
+  - {item: "FY26 revenue growth", number: "20-25%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 margin improvement", number: "+75bps", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "H2 FY26 interest cost savings", number: "~Rs10-12cr", timeframe: "H2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Capacity", number: ">120,000 units/month", timeframe: "current as of Q2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 revenue growth (revised)", number: "28-30%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 margin improvement (revised)", number: "+150-200bps", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Working capital days", number: "120-130 days", timeframe: "as of Dec-2025", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actual delivered", number: "Revenue +34% YoY; EBITDA margin +166bps; PAT margin +209bps", timeframe: "FY26 full year", stated_in: "Q4 FY26 call"}
+  - {item: "Capacity (updated)", number: "150,000 units/month", timeframe: "current as of Q4 FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue growth guidance", number: "~25%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 PAT margin expansion guidance", number: "~50bps", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "No capital raise needed", number: "through FY28-29", timeframe: "multi-year", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 4
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26", promise: "FY26 revenue growth 20-25%, margin +75bps", outcome: "Revenue +34% YoY, EBITDA margin +166bps, PAT margin +209bps (Q4 FY26 actuals)", explanation: "Beat guidance; no explanation needed"}
+    - {promised_in: "Q3 FY26", promise: "FY26 revenue growth revised to 28-30%, margin +150-200bps", outcome: "Revenue +34% (beat), EBITDA margin +166bps (within/near low end of range)", explanation: "Beat/within range; no explanation needed"}
+    - {promised_in: "Q2 FY26", promise: "H2 FY26 interest cost savings of ~Rs10-12cr", outcome: "Q3 FY26 finance cost ~Rs4-4.5cr higher than estimated; Q4 FY26 run-rate rose to ~Rs14.5cr/quarter", explanation: "Honest admission - CFO quantified overshoot, attributed to deliberate elevated-inventory strategy, not external factors"}
+    - {promised_in: "Q2 FY26", promise: "Debtor days to remain 30-35 days in the foreseeable future", outcome: "Risen to ~40-45 days by Q4 FY26", explanation: "Attributed to matching new distributor partners' credit terms; disclosed reactively when asked, not proactively"}
+    - {promised_in: "Q2 FY26", promise: "Sufficient equity/debt headroom, no near-medium-term capital raise needed", outcome: "No equity raise occurred through Q4 FY26, but net debt swung Rs158cr to Rs466cr back to Rs300cr", explanation: "Directionally kept (no raise) but debt trajectory far more volatile than implied"}
+    - {promised_in: "Q2 FY26", promise: "Capacity build-out (asset-light, no heavy capex)", outcome: "Capacity 120k to 150k units/month; UAE facilities 3 to 8; Mumbai 1 to 2; employees 1,194 to 2,148", explanation: "Delivered; no explanation needed"}
+    - {promised_in: "Q3 FY26", promise: "New distributor partnerships (Ingram, Supertron) to drive growth on top of 30% guide", outcome: "Q4 FY26: contribution 'very small,' 'minuscule' percentage of revenue", explanation: "Too early - three months post-tie-up; watch item not yet a miss"}
+    - {promised_in: "Q2 FY26", promise: "FY27 guidance to be given next earnings call", outcome: "Deferred again in Q3 FY26; finally issued in Q4 FY26 (25% revenue, 50bps PAT margin)", explanation: "One-quarter slip; guidance notably conservative relative to FY26 delivery"}
+excuse_pattern: "honest"
+repeated_evasions:
+  - {question: "When will you give FY27 guidance?", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "answered eventually"}
+  - {question: "What are debtor days / working capital days and will they stay stable?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Management beat both original (20-25%/75bps) and revised (28-30%/150-200bps) FY26 guidance (delivered 34% revenue growth, 166-209bps margin expansion), but missed two specific quantified promises (H2 FY26 interest cost savings of Rs10-12cr, and debtor days holding at 30-35 days), explaining both transparently with exact figures rather than concealing them; FY27 guidance reset conservatively (25% revenue/50bps margin) after a strong beat year, consistent with a deliberate lowball-guidance pattern."
+peer_questions:
+  - {question: "Is the magnitude and persistence of the memory/DRAM/SSD/processor price surge (DDR5 8GB $23.35 to ~$120, DDR5 16GB $54.85 to ~$210, 1TB SSD $70 to $249, Oct-2025 to Apr-2026) corroborated by other IT hardware distributors' commentary on component costs and new-device pricing?", why: "This is the single most load-bearing claim in GNG's FY26-FY27 growth and margin narrative; if overstated, the core investment thesis weakens materially", check_peers: ["Redington", "Rashi Peripherals (RPTECH)", "CNL"]}
+  - {question: "Do peer distributors/OEM-channel commentators corroborate new-PC retail price inflation of the magnitude GNG cites (India entry laptop Rs25,500 to ~Rs40,000, +57% in 6 months; international $315 to $440, +40% in 6 months)?", why: "Validates or undermines the core refurbished-becomes-only-affordable-option narrative driving GNG's volume and ASP guidance", check_peers: ["Redington", "Rashi Peripherals (RPTECH)", "CNL"]}
+  - {question: "Do IDC-cited global PC shipment decline figures (2026 forecast -11%, ~55-60mn unit demand gap) appear consistent with peer distributors' own shipment/order-book trends and guidance commentary?", why: "GNG relies heavily on third-party IDC data; peer concalls may show whether distributors actually see volume shift toward refurbished channels or simply weaker overall demand", check_peers: ["Redington", "Rashi Peripherals (RPTECH)", "CNL"]}
+  - {question: "Do Redington/RPTECH/CNL concalls mention GNG/Electronics Bazaar or refurbished product lines generally, corroborating GNG's claim of formal distributor channel access (named as Ingram and Supertron in Q4 FY26)?", why: "GNG asserts a market-share/channel-access gain via large distributor tie-ups but discloses no revenue contribution (minuscule as of Q4 FY26); independent confirmation would validate or deflate this claimed trigger", check_peers: ["Redington", "Rashi Peripherals (RPTECH)", "CNL"]}
+  - {question: "What credit/receivable terms do peer IT distributors extend to channel partners, and how do their debtor-day trends compare to GNG's stated 30-45 day range (drifted from ~30-35 to ~40-45 days over FY26)?", why: "Benchmarks whether GNG's working-capital drift is industry-standard or company-specific, and therefore a genuine execution/credibility concern", check_peers: ["Redington", "Rashi Peripherals (RPTECH)", "CNL"]}
+red_flags:
+  - "Interest cost/net debt volatility despite explicit savings guidance (Medium) - net debt Rs158cr to Rs466cr to Rs300cr across three quarter-ends; guided Rs10-12cr H2 FY26 interest savings not delivered"
+  - "Debtor days slippage from 30-35 days promised to ~40-45 days actual (Low-Medium)"
+  - "Large, commodity-price-sensitive inventory position of Rs743cr (~4-5 months of stock) built on an unhedged multi-quarter price-rise bet (Medium)"
+  - "Single-region operational concentration in UAE/Sharjah amid active regional conflict referenced in Q4 FY26 call (Medium)"
+  - "Dropped strategic narratives without explanation: infrastructure-level refurbishment and EPR-benefit evaluation raised in Q2 FY26, never mentioned again (Low-Medium)"
+  - "Elevated promotional/macro rhetoric disproportionate to company-specific disclosure, recurring every call (Low)"
+  - "Repeated conservative-guidance deflection when pressed on upside, used in Q2/Q3/Q4 FY26 (Low)"
+dropped_triggers:
+  - "EPR (extended producer responsibility) benefit monetization - evaluated in Q2 FY26, never mentioned again"
+  - "Infrastructure-level refurbishment (servers/data-center/enterprise IT) entry - heavily promoted in Q2 FY26 closing remarks, zero follow-up specifics in Q3 or Q4 FY26"
+  - "US tariff advantage narrative (HSN 8471 exemption) - extensively discussed Q2 FY26, not mentioned again"
+  - "ITAD business - raised only once (Q3 FY26) in response to analyst question, not revisited"
+timeline_slippages:
+  - "FY27 guidance promised for 'next earnings call' in Q2 FY26, deferred again in Q3 FY26, finally issued only in Q4 FY26 (two-quarter slip)"
+  - "H2 FY26 interest cost savings of Rs10-12cr guided in Q2 FY26 call did not materialize; finance cost rose instead (Q3 FY26 ~Rs4-4.5cr higher than estimated, Q4 FY26 run-rate ~Rs14.5cr/quarter)"
+  - "Debtor days guided to remain 30-35 days 'in the foreseeable future' (Q2 FY26) slipped to ~40-45 days by Q4 FY26"

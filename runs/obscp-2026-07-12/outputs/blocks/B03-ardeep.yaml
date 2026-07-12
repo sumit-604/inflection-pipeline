@@ -1,0 +1,49 @@
+stage: B03-ardeep
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR pp.3-59: corrupted/garbled font encoding, unreadable even visually (Board's Report, MD&A, Corporate Governance Report, MGT-9/shareholding) — Phases 4,5,6 narrative NOT FOUND throughout"
+  - "AR pp.78-101: blank/truncated — remainder of Note 2 plus entire numbered schedule-notes package (Note 3 through Note 29) NOT FOUND, none estimated"
+  - "RPT note number itself blank/illegible in source (CARO Annexure A para xiii, p.67)"
+  - "Auditor tenure/rotation and audit-fee ratio: NOT FOUND (Board's/CG report unreadable)"
+  - "Consolidated financial statements not prepared despite confirmed subsidiary/JV relationships (CARO iii, xxi); s.129(3) exemption basis NOT FOUND"
+  - "Promoter shareholding %, pledge, FII/DII trends, KMP compensation, board tenure/attendance: NOT FOUND (pp.3-59 unreadable)"
+flags:
+  - {type: FLAG-CASH, reason: "OCF Rs 8.85 Cr vs PAT Rs 16.76 Cr (52.8% conversion), falling to ~34.2% if interest paid reclassified from Financing to Operating; Trade Receivables +62.3% (DSO 89.3 vs 68.3d), Inventory +79.0% (92.0 vs 63.7d) vs 24.1% revenue; Trade Payables +118.3% (87.3 vs 49.6d) partially funding buildup; ageing/ECL unrecoverable (Notes 14/15 truncated) — caps at PROCEED WITH CAVEATS"}
+  - {type: FLAG-ACCOUNTING-QUALITY, reason: "Diluted EPS (Rs 8.12) exceeds Basic EPS (Rs 6.85) FY2025, independently reconfirmed (P&L p.72, Note 26); anomalous under AS 20; reconciliation unrecoverable"}
+  - {type: FLAG-ACCOUNTING-QUALITY, reason: "Short-term Provisions negative Rs (0.27) Cr FY25 vs positive Rs 0.66 Cr FY24, reconfirmed via balance-sheet cross-footing; cause unrecoverable (Note 11 truncated)"}
+  - {type: FLAG-CFO-QUALITY, reason: "Interest paid Rs 3.12 Cr classified as Financing outflow rather than Operating (Cash Flow p.73) — permitted but non-standard, inflates reported CFO; reclassifying drops CFO/PAT from 52.8% to ~34.2%"}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Red Flag", p4: "NOT ASSESSABLE - AR pp.3-59 unreadable", p5: "NOT ASSESSABLE - AR pp.3-59 unreadable", p6: "NOT ASSESSABLE - no Chairman's letter recoverable", p7_best_fit: "GARP/Turnaround - both WATCHLIST"}
+overall_quality: 4
+quality_components: {governance: 3, accounting: 3, balance_sheet: 6, earnings: 3}
+triple_pass_verification: {verified: 15, discrepancies: []}
+missing_risks:
+  - {risk: "Working-capital/cash-conversion: receivables +62.3%, inventory +79.0%, payables +118.3% vs 24.1% revenue; CFO/PAT 52.8% (~34.2% adjusted)", evidence: "Balance Sheet p.71; Cash Flow p.73"}
+  - {risk: "EPS computation anomaly: Diluted > Basic, AS 20-anomalous", evidence: "P&L p.72, Note 26"}
+  - {risk: "Negative short-term provisions, unexplained", evidence: "Balance Sheet p.71, Note 11"}
+  - {risk: "EPCG export-obligation clawback (Rs 8.09 Cr customs exposure; drafting inconsistency)", evidence: "Note 2.3(b), pp.75-76"}
+  - {risk: "Related-party/subsidiary lending concentration plus absence of consolidated statements", evidence: "CARO p.65,68; Note 13 p.71"}
+  - {risk: "Interest-paid financing-classification masking true operating cash run-rate", evidence: "Cash Flow p.73"}
+  - {risk: "Single-family board concentration (MD and a Director share Lekha surname)", evidence: "signature blocks p.71-72 (partial)"}
+guidance_table: []
+monitorables:
+  - {metric: "EPS reconciliation (Basic vs Diluted)", threshold: "Any restatement or weighted-average share disclosure", where: "FY26 AR Note 26 or clean FY25 AR", why: "Highest-priority open accounting item"}
+  - {metric: "Trade Receivables DSO", threshold: "Continued rise above 89.3 days (FY25)", where: "FY26 receivables ageing note", why: "Cash-conversion driver"}
+  - {metric: "Trade Payables days / MSME ageing", threshold: "Section-16 interest or overdue beyond terms", where: "FY26 Note 9 / MSME note", why: "Payables stretch finances ~half the WC buildup; reversal risk"}
+  - {metric: "Short-term Provisions balance", threshold: "Return to positive, explained", where: "FY26 Balance Sheet / Note 11", why: "One-off vs recurring"}
+  - {metric: "CFO/PAT and interest-paid classification", threshold: "Sustained CFO/PAT below 0.7x on either basis", where: "FY26 Cash Flow", why: "Earnings-quality read"}
+  - {metric: "Ind AS transition status", threshold: "First-time-adoption note or continued AS basis", where: "FY26 AR Note 1/2", why: "Affects ratio comparability"}
+  - {metric: "EPCG export obligation progress", threshold: "Actual exports vs Rs 8.09 Cr obligation", where: "FY26-29 contingent liability note", why: "Duty+penalty clawback risk"}
+  - {metric: "Consolidated financial statements", threshold: "CFS appears in FY26", where: "FY26 AR", why: "Resolves s.129(3) question"}
+strengths_top3:
+  - "Balance-sheet reset genuine, cross-verified: D/E 1.38x to 0.26x, Net Debt/EBITDA 1.87x to 0.37x, current ratio 1.45x to 2.52x, funded by Rs 57.16 Cr equity raise"
+  - "No adverse CARO remarks across 21 clauses, unmodified ICFR, no fraud/default/cash losses"
+  - "ROE margin-driven not leverage-driven per DuPont (equity multiplier only 1.52x FY25)"
+red_flags_top3:
+  - "Diluted EPS > Basic EPS FY2025, AS 20-anomalous, confirmed across three passes, unresolved"
+  - "Cash conversion weak and possibly overstated: CFO/PAT 52.8% falls to ~34.2% if interest reclassified; WC stretching far faster than revenue"
+  - "Negative Short-term Provisions Rs (0.27) Cr FY25, confirmed real, unexplained"
+best_fit_strategy: "GARP / Turnaround (both WATCHLIST, not yet PASS)"
+one_line_verdict: "Clean audit and genuine balance-sheet reset undercut by unresolved EPS anomaly and weak cash conversion."

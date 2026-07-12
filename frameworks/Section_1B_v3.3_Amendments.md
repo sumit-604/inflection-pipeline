@@ -206,3 +206,98 @@ The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −
 | 3.2 | Jun 2026 | Prior spec (Notion: Valuation Framework v3.2) |
 | 3.3 | 02-Jul-2026 | Amendments 1-8 above. 20x rule deleted; Hurdle Ratio replaces STOP rule and 1.3x gap check; UA ordering codified as min(Raw × 1.25, Cap); ROCE single-credit rule (FTTCP v1.2); continuous Pillar 1 formula; proportional ±7.5% range; lender Asset-Quality Multiplier carve-out; six sector cap rows added. Premium-scaling proposal rejected (Appendix A). |
 | 3.4 | 11-Jul-2026 | Amendments 4.1-4.3 above. Pillar 3 decoupled (3a growth visibility / 3b moat formation / 3c duration premium), combined +6x cap (4.1, 4.2); two-tier hurdle (Tier A 25% / Tier B 20%) (4.3); entry conjunction rule (Master v3.3 Role 2); optionality register (stage 7); zone reachability flag (synthesis + finalize); RRM percentage-points clarification. |
+
+---
+
+# PROPOSED AMENDMENTS — NOT YET ADOPTED (pending operator sign-off)
+
+**Status: PROPOSED, NON-OPERATIVE.** Stage 11 (valuation) and every Role 1 run
+MUST NOT apply anything in this section until Keerti adopts it and it is moved
+up into a numbered, dated amendment with a Version History entry. Until then it
+is a design note only. Prompted by the AZAD run (runs/azad-2026-07-12,
+2026-07-12): a fortress-quality precision-engineering franchise earned a
+four-pillar destination PE of ~21x while trading at ~121x, which the framework
+resolved to AVOID with an entry zone ~45% below the stock's lowest tested price
+since listing. Correct as a 25%-sleeve ENTRY verdict; incomplete as an intrinsic
+valuation. These two proposals close that gap.
+
+## PROPOSED AMENDMENT P1 — Mandatory Reverse-DCF + DCF Intrinsic Cross-Check
+
+**Problem.** The four-pillar destination PE is a 3-year, quality-anchored EXIT
+multiple, and the Hurdle Ratio is anchored to CURRENT PE. Together they make the
+framework an entry/timing screen, not an intrinsic valuation: it structurally
+prints AVOID on every already-discovered compounder (high current PE forces
+HR < 1.953), it truncates the reinvestment-driven value of a long-runway
+compounder at 3 years, and it never tests what the current price actually
+implies. This contradicts the framework's own empirical re-rating table
+(Polycab, APL Apollo, Astral, Deepak Nitrite re-rating to 45-80x), which the 25x
+sector caps would have vetoed through those entire runs.
+
+**Proposed change.** Every Role 1 adds an INTRINSIC-VALUE CROSS-CHECK block,
+computed alongside (never replacing) the four-pillar output:
+
+- **Reverse-DCF.** Solve for the EPS (or FCFF) CAGR the CURRENT price implies
+  over a 10-year horizon, exiting at the sector cap (or a stated fade multiple),
+  discounted at the archetype rate (reuse the RRM base r: small/micro 14%, mid
+  13%, large-quality 12%). Report the literal sentence: "the market is pricing
+  ___% EPS CAGR for 10 years." Compare that implied rate against the
+  SOM-implied revenue CAGR (B09) and the credibility grade, and label it
+  ACHIEVABLE / STRETCH / IMPLAUSIBLE. (AZAD worked example: ~31% EPS CAGR for
+  10 years to justify Rs 2,480 at 12% exiting at the 25x cap; labelled STRETCH.)
+- **Forward DCF.** An explicit 10-year FCFF DCF with stated revenue, margin,
+  capex and working-capital assumptions drawn from B10/B09/B05 guidance and an
+  explicit terminal value (Gordon growth or exit multiple), discounted at the
+  archetype rate, producing an intrinsic value per share. Conservative bias:
+  terminal growth <= nominal GDP; do not extrapolate peak margins.
+- **Reconciliation.** Present three numbers side by side: the four-pillar 3-year
+  target, the DCF intrinsic value, and the reverse-DCF implied growth. Where the
+  DCF intrinsic value exceeds the four-pillar 3-year target by >2x, print
+  "LONG-DURATION COMPOUNDER — four-pillar horizon truncates value" and state the
+  decade of growth the price requires and whether it is achievable.
+
+**Authority boundary (unchanged strategy).** The four-pillar + Hurdle output
+CONTINUES to govern the 25% transition-alpha ENTRY zone and the BUY/AVOID
+decision for that sleeve. The DCF/reverse-DCF layer governs only the INTRINSIC
+narrative and may set a separate "quality-at-a-price DEEP WATCH" classification;
+it does NOT relax the 25% entry hurdle or lift the sector cap. Section 1B remains
+the sole EXIT-PE authority for the sleeve decision.
+
+## PROPOSED AMENDMENT P2 — Mid-Cycle ROCE Anchor for Capex-Cycle Archetypes
+
+**Problem.** Pillar 1 anchors the base multiple to point-in-time ROCE, which is
+distorted (often meaningless) for a business mid-capex-deployment: idle raised
+capital and CWIP bloat the denominator. The AZAD run needed a per-run operator
+override to strip idle QIP capital, and statutory / operational / management-
+adjusted ROCE spanned 8.8% / 12% / 20.7%, swinging the destination PE 3-5x. A
+point-in-time ROCE anchor is the wrong physics for a capital cycle.
+
+**Proposed change.** For CAPEX-CYCLE ARCHETYPES — asset-heavy manufacturing
+mid-expansion, BOO/infrastructure pre-commissioning, or any name where
+(CWIP + idle raised capital + capex advances) exceeds ~20% of capital employed,
+OR the FTTCP ROCE verdict is TEMPORARILY DEPRESSED or RECOVERING — Pillar 1 uses
+a MID-CYCLE / NORMALIZED OPERATIONAL ROCE:
+
+- **Operational capital employed** = capital employed minus non-operating cash
+  and investments, minus CWIP, minus capex advances (capital not yet earning).
+  EBIT is adjusted to exclude the income those stripped assets generate (e.g.
+  interest on idle cash), so numerator and denominator stay consistent.
+- **Mid-cycle ROCE** = normalized EBIT on that operational base at target/steady-
+  state utilization, taken from the FTTCP RECOVERING blend where a recovery
+  verdict applies, else the trailing operational ROCE.
+- **Mandatory disclosure line** (no silent fills, never management's "adjusted
+  ROCE"): state statutory ROCE, each stripped non-operating item with its amount,
+  and the resulting operational ROCE.
+- **EV/EBITDA cross-check.** Where B04's primary method is EV/EBITDA (the usual
+  case for capex-heavy names), carry an EV/EBITDA-derived value alongside the
+  ROCE-anchored PE; where they diverge >25%, state which governs and why.
+
+This codifies the AZAD 2026-07-12 operator override as a standing archetype rule,
+so it no longer requires a per-run override.
+
+## ADOPTION CHECKLIST (for Keerti)
+
+- [ ] Adopt P1, P2, both, or neither; edit as needed.
+- [ ] On adoption, renumber as Amendment 9 (P1) and Amendment 10 (P2), add
+      Version History rows, and DELETE this "PROPOSED — NOT YET ADOPTED" banner
+      so stage 11 begins applying them.
+- [ ] If rejected, move to Appendix A with the rejection rationale.

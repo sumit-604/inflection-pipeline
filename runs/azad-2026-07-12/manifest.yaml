@@ -1,0 +1,9 @@
+company: Azad Engineering Ltd
+ticker: AZAD
+cmp: 2480.0
+market_cap_cr: 16013.0
+run_date: 2026-07-12
+run_type: full
+concalls_available: true
+sector_cap_row: "Pharma / CDMO"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

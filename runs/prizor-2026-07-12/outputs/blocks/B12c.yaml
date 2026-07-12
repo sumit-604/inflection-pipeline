@@ -1,0 +1,28 @@
+stage: B12c
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0:
+  rules_checked: 48
+  fails: []
+emoat:
+  rules_checked: 24
+  fails: []
+valuation:
+  rules_checked: 0
+  fails: []
+  note: "deferred to phase 3 (B11/B10 not yet produced)"
+recomputed_destination_pe: ""
+recomputed_decision: "concur: Gate 0 AVERAGE, EM 13.6 MODEST"
+findings:
+  - {severity: "MINOR", location: "B01 Block F / M7", issue: "Regulatory/License scored 0 'unregulated'; a BIS mandatory-cert regime (IS 13252) exists, at most M7=1 (>10 players), never >=3. Defensible on Gate 0's AR-only inputs; no moat-count or classification impact.", rule_ref: "prompts/01 lines 118-120"}
+  - {severity: "MINOR", location: "B01 Block F / M8", issue: "Distribution scored 0 (no network in AR); stage 7 with investor presentation documented an 11,000+ dealer network. Differing input set, not a rule error; even M8=1 is <3, no moat-count impact.", rule_ref: "prompts/01 lines 121-123"}
+  - {severity: "MINOR", location: "B01 Blocks A/B", issue: "ROCE computed from AR rather than taken from source per formula-def preference; justified by empty screener CSV templates. Same threshold bands; primarily a numbers-provenance matter (Verifier A).", rule_ref: "prompts/01 line 31"}
+  - {severity: "MINOR", location: "B07 Section 2C / capex_embedded_growth_pct", issue: "Headline 116% is capacity-based, not the prescribed FAT-turnover method (~237%). Conservative and reasoned; both clear the >=15% Pillar-3a qualifier, so zero destination-PE impact.", rule_ref: "prompts/07 line 50-52; Sec1B Amdt 4.1"}
+  - {severity: "MINOR", location: "B07 Section 5 / R1", issue: "R1 rated HH (impact High) despite the maker's own 'Moderate durability' finding; HM (=3.0) would drop total to 12.6, still MODEST. Within-tolerance judgment.", rule_ref: "prompts/07 lines 128-132"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 94

@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "AVOID is over-determined: even the full 35x specialty-chem cap on bull FY29 EPS Rs 43.74 = only ~5% CAGR from Rs 1,326; no legal multiple on any earnings case rescues CMP (B11 line 251)"
+  - "The destination PE / FY28 ROCE may be too conservative: the 0.5xROCE+7.5 formula treats a discrete, ending capex-cycle ROCE trough (6.6% vs 19-25% pre-capex, B01 line 17) as permanent, understating the recovery target and risking a re-open zone set too low"
+  - "Cash may be worse than INDETERMINATE: debtor days 48->86 through flat-revenue years, top-3 customers 61% of receivables with zero ECL (B11 line 96); one customer stretch is a write-down, and even Rs 237 would then be optimistic"
+  - "Demand recovery may be fictional: 2 of 4 peers (Clean, Neogen) describe persistent/reversing soft demand and overcapacity across the exact FY26 window (B06 line 8, 19); if so FY26 EPS 17.98 is a peak not a base"
+  - "SHARED CATALYST (Dahej) is asymmetric: its failure barely dents the AVOID (7.5x formula intercept) but is fatal to the recovery/entry-zone thesis; Jolva has slipped 3x and the 4th-slip decision is due this week (B05 line 56)"
+  - "Information asymmetry runs against a buyer: CRISIL (with WC/covenant access we lack) downgraded twice to BBB+, promoters paid themselves +28% into a 99% PAT collapse, and ROCE was deflected twice (B08 lines 16-17, 25; B05 line 62)"

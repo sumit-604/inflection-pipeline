@@ -10,9 +10,14 @@ gate0:
 emoat:
   rules_checked: 15
   fails: []
-valuation: {rules_checked: 0, fails: []}
-recomputed_destination_pe: "pending phase 3"
-recomputed_decision: "pending phase 3"
+valuation: {rules_checked: 50, fails: []}   # PHASE 3 merged: 50 lender-adapted Sec 1B + Role 2 rules, 0 fails, 3 MINOR advisory
+recomputed_destination_pe: "concur - 13.4x additive / 10.0x RRM reproduced"
+recomputed_decision: "concur - AVOID (on valuation); Hurdle Ratio 1.53 = STOP"
+phase3_valuation_findings:
+  - {severity: "MINOR", location: "B11 Pillar 3 3a (+2x)", note: "SOM-implied CAGR qualifier rests on B09 TAM inference; admissible (Amend 4.1 lists SOM-implied CAGR as eligible, capacity cross-check passes >=20%). Immaterial: v3.3 floor +0x still yields 11.4x -> STOP/AVOID."}
+  - {severity: "MINOR", location: "B11 RRM Track 1 (10.0x)", note: "'Fundamental Base PE' taken as quality-adjusted base 11.38x (x0.88) not additive raw 13.4x; Master term ambiguous. Conservative; P/B primary governs; decision unchanged."}
+  - {severity: "MINOR", location: "B14 position sizing", note: "Promoter CAUTION treated as non-forcing on verdict but binding as sizing cap. Conservative, immaterial - AVOID stands on Gate0/U-D/Hurdle grounds."}
+phase3_acceptance_rate: 100
 findings:
   - {severity: MAJOR, location: "B01 Classification", claimed: "AVERAGE, corroborated independently by deal-breaker caps + adjusted basis", framework_truth: "Core 32<40 = AVOID literally; deal-breaker caps set a ceiling (max AVERAGE), not a floor, so they do NOT lift AVOID to AVERAGE; AVERAGE is carried solely by the operator-authorized, boundary-exact (40.0) adjusted-basis rescaling, which is not a framework mechanism", note: "Classification defensible via operator instruction and consistent exclusion set, so it survives; the stated dual-justification overstates framework support. Cleaner native path (deal-breaker #9 on 1.75yr public history -> AVERAGE) was available but unused."}
   - {severity: MINOR, location: "B01 Block A / A4", claimed: "A4 = 3 for a 0.76pp ROCE decline", framework_truth: "0.76pp decline falls in the undefined gap between the 'latest>=earliest=5' and 'decline 1-3pp=3' bands; nearest-lower-band choice is conservative", note: "No impact: Block A=3<8 either way; deal-breaker #1 fires regardless. Flagged in-report."}

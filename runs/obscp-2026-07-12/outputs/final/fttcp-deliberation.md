@@ -50,14 +50,31 @@ FTTCP composite +3 out of 8, DEEP WATCH, Kernex cap lifted. The business is genu
 
 Note on authorship: the operator delegated the completion of this record ("complete the balance things") after making the two rulings above. The verdict here is the deliberation's conclusion built on those rulings, not a verbatim operator statement.
 
+## CRISIL rating integration (added post sign-off, 2026-07-12)
+
+The operator supplied the CRISIL rating rationale dated 2 July 2026 (now in inputs/rating/CRISIL_Rating_Rationale_2026-07-02.pdf). It anchors data that was previously NOT FOUND and supersedes the relevant items above.
+
+- CRISIL BBB+/Stable, Rs 100 Cr bank facilities. Rating gap closed.
+- Anchored financials: FY26 operating income 220.58 Cr, PAT 27.01 Cr, PAT margin 12.24%; debt/networth 0.40x; interest coverage 9.72x (implies EBITDA 43.64 Cr, 19.8% margin); NCA above 37 Cr a year; current ratio 1.60x; TOLANW 0.72x; bank utilisation 64% average, 95% peak Feb 2026.
+- Cash conversion GROWTH-INDUCED is now rating-agency confirmed: "working capital intensive operations," "long credit periods to export customers, leading to elevated debtor levels," no bad-debt or delinquency mention. Override 1 validated.
+- Order book Rs 1,200 Cr "to be executed over the next 5-6 fiscals" is now a filed source, not concall talk. Override 2 (3c +2x) validated.
+- Customer concentration anchored (was NOT FOUND): top five 50-55% of revenue, largest 15-20%. Carry to thesis and devil's advocate as a real risk.
+- Related party funding: Rs 15.45 Cr unsecured loans from group company and directors, treated as debt.
+
+ROCE forward verdict CHANGED on this evidence: FY26 EBIT is Rs 36.26 Cr (PBT 31.77 plus interest 4.49); on year-end capital employed ~240 Cr that is ~15%, on average capital employed ~19.5%. The recovery is not visible (year-end ROCE fell again from FY25's 19%, average roughly flat). Return on capital forward moves from RECOVERING to **STAGNANT**. FTTCP composite moves from +3 to **+2, DEEP WATCH leaning AVOID** (conservative alternative DECLINING = +1, same band). Pillar 1 under STAGNANT uses current ROCE (~15% year-end to ~19.5% average), base ~15x to 17x, destination ~20x to 22x. The valuation conclusion is unchanged: Hurdle STOP, WATCHLIST deep, entry ~Rs 280 to 320.
+
+Remaining gap: the numeric FY25-FY26 over-12-month receivables ageing bucket. CRISIL's qualitative comfort is strong; the exact bucket is still unseen because the annual reports did not arrive with this upload.
+
+Rating sensitivity (fold into monitorables): CRISIL upgrades on revenue growth above 40% with operating margin sustained above 18% and GCAs below 210 days; downgrades on net cash accrual below Rs 25 Cr, or large debt-funded capex or a substantial working capital increase.
+
 ## Phase 3 handoff (authoritative for /finalize)
 
 | Field | Value |
 |---|---|
-| ROCE forward verdict | RECOVERING at about 45%, Moderate catalyst |
-| Pillar 1 ROCE rule | 60/40 weighted average of current and FY28 expected ROCE. FY26 ROCE is NOT FOUND and MUST be anchored at stage 10 first |
-| ROCE recovery credit route | Pillar 1. Not the Strategic Premium |
-| Cash multiplier (Pillar 2) | 1.00x. Growth induced 0.80 plus 0.20 offset |
+| ROCE forward verdict | STAGNANT (changed from RECOVERING on the CRISIL-anchored FY26 data; recovery not yet visible) |
+| Pillar 1 ROCE rule | STAGNANT uses current ROCE. FY26 ROCE computes to ~15% (year-end capital employed) to ~19.5% (average); stage 10 should anchor the convention against the FY24 33.4% / FY25 19.0% basis and pick consistently |
+| ROCE recovery credit route | Not credited (STAGNANT). Strategic Premium remains +0x |
+| Cash multiplier (Pillar 2) | 1.00x. Growth induced 0.80 plus 0.20 offset. CRISIL-confirmed growth-induced |
 | Pillar 3 | +5x. 3a +3, 3b +0, 3c +2. SHARED CATALYST hardened |
 | Strategic premium (Pillar 4) | +0x. Single credit; ROCE in Pillar 1 |
 | UA multiplier | Not applied. Gate 0 core 52 below 60 and EM 23 below 25 |

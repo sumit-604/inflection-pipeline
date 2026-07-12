@@ -3,15 +3,20 @@ company: "TATVA"
 run_date: "2026-07-12"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-final
 verdict: "PROCEED WITH CAVEATS"
 verdict_rule_applied: 3        # FLAG-CASH active; INDETERMINATE cash caps flags verdict at CAVEATS
 flags_active: [FLAG-CASH, FLAG-GATE0]
 confidence_delta: {numerical: 94, redflag: 86, framework: 99, peer: 100, overall: 86}
-valuation_decision: null       # stages 10/11 not run in phase 1 lite
-entry_range: null              # stages 10/11 not run in phase 1 lite
-headline: "Niche specialty chemicals leader recovering from trough"
-falsification_metric: "Q1/H1 FY27 operating cash flow negative again on rising revenue with receivable days above 185 (confirms cash flag structural)"
+valuation_decision: "AVOID"    # AVOID (on-valuation)
+entry_range: {low: 97, high: 121}
+headline: "Real recovery undone by an unreachable price"
+falsification_metric: "Q1/H1 FY27 operating cash flow negative on rising revenue with receivable days above 185 (confirms cash flag structural)"
 monitorables_count: 8
 publish_candidate: true
 publish_candidate_summary: "Two of four listed specialty chemical peers (Clean Science, Neogen) describe persistent or reversing soft demand across the exact FY26 window Tatva frames as destocking-to-restocking recovery; industry cross-read, no price call."
+notion_save:
+  page_title: "Tatva Chintan Pharma Chem (TATVA)"
+  summary: "Real recovery undone by an unreachable price | PROCEED WITH CAVEATS | AVOID (on-valuation), DEEP WATCH | entry Rs 97-121, MoS Rs 97 | Track1 RRM 7.3x governs, Track2 9.0x, Hurdle STOP, prob-weighted CAGR -44%"
+  drive_link: "{{DRIVE_FOLDER_LINK}}"
+  mode: append-never-overwrite-status

@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF provided"
+  - "sector_cap_row 'Pharma / CDMO' auto-picked for D1/D2 bank-override check and flagged for verification; Tatva is specialty/performance chemicals, not pharma/CDMO (override branch not triggered since Tatva is not a bank/NBFC)"
+  - "promoter holding change over 3 years (E2) not present anywhere in the FY2024-25 Annual Report -- AR discloses only the single 31 March 2025 shareholding snapshot (Annexure-I to Corporate Governance Report, p.85), with no prior-year comparative promoter % and no multi-year shareholding table; this requires the quarterly BSE/NSE shareholding-pattern (SHP) filings across the relevant quarters, none of which were provided -- E2 N/A, scored 0"
+  - "promoter pledge / encumbrance (E3) not present anywhere in the FY2024-25 Annual Report -- checked the full Corporate Governance Report (pp.50-91) including the Annexure-I shareholding table and General Shareholders' Information / Other Disclosures sections; no pledge column or pledge disclosure found. This is a SEBI Reg. 31(1)(b) quarterly SHP disclosure, not an AR-native disclosure -- E3 N/A, scored 0; deal-breaker 5 (pledge >15%) remains NOT ASSESSABLE"
+  - "Trade Payables not disclosed anywhere for FY2018-FY2024 (screener-Data_Sheet.csv Balance Sheet section has no Payables line); Payable Days / full WC Days only computable for FY2025-FY2026 using results PDF balance sheets -- B4 not computable per strict latest-vs-earliest formula, scored 0"
+  - "R&D expense not disclosed in provided data (no R&D line item in P&L) -- M6 scored 0"
+  - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv and screener-Customization.csv (subject and all four peers) exported empty; screener-Data_Sheet.csv used as sole screener source, cross-validated against results PDFs"
+  - "targeted re-run of an existing Gate 0 scorecard for this ticker (same run folder/date) to fill Block E from the FY2024-25 Annual Report per the pipeline degradation map; no company memory file exists yet"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 48/100), up one tier from the prior run's AVOID (core 38/100) once Block E's E1 (promoter holding, 72.02%, AR p.85) and E4 (contingent liabilities/net worth, 0.71%, AR p.275-276) were sourced from the FY2024-25 Annual Report. Two remaining drivers: (a) Block E's E2 (3-year promoter holding change) and E3 (promoter pledge) are genuinely absent even from the AR -- quarterly BSE/NSE shareholding-pattern data not provided -- deal-breaker 5 (pledge >15%) stays NOT ASSESSABLE; (b) a genuine Block B weakness (2/20): FCF negative in all 8 computable years (FY19-FY26), cumulative FCF/PAT -1.32, against a FY22-FY26 capex cycle (Dahej SEZ expansion) that has depressed ROCE from ~19-25% (FY18-FY21) to single digits (FY23-FY26, min 1.17% in FY25). Recommend sourcing quarterly SHP filings (E2/E3) before treating AVERAGE as final."
+data_years: 9
+fy_range: "FY2018 to FY2026"
+blocks: {A: 8, B: 2, C: 12, D: 16, E: 10}
+core_score: 48
+moat_score: 5
+grand_total: 53
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 (Block B = 2) -> caps at max GOOD; non-binding, matrix result Core 40-59 -> AVERAGE is already below the GOOD cap"
+  - "Deal-breaker 5 (pledge >15%) STILL NOT ASSESSABLE -- promoter pledge not disclosed anywhere in the FY2024-25 Annual Report either; requires quarterly BSE/NSE shareholding-pattern filings"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit PAT swing across FY2018-FY2026 (PAT positive every year, low of 5.71cr in FY2025)"
+  - "Capex computed indirectly as Delta(Net Block+CWIP)+Depreciation for FY19-FY26 (screener Data_Sheet lacks a purchase-of-PPE cash flow line); cross-validated against results-PDF actual capex for FY25 (762.72mn actual vs 772.1mn indirect, ~1.2% diff) and FY26 (1,137.74mn actual vs 1,181.9mn indirect, ~3.9% diff)"
+  - "GM proxy used per M9 formula: (Revenue - Raw Material Cost) / Revenue, for Tatva and all four peers"
+  - "Receivable Days and Inventory Days computed on revenue basis (no separate COGS line disclosed); Payable Days computed on revenue basis using results-PDF trade payables, available only FY2025-FY2026"
+  - "M5 Scale & Dominance peer set limited to the 4 provided peers (ACUTAAS, CAMLINFINE, CLEAN, NEOGEN) plus Tatva; wider specialty-chemicals listed universe not in provided data"
+  - "Capital Employed for ROCE computed as Net Worth + Total Borrowings for all 9 years (screener Data_Sheet does not split current/non-current liabilities FY18-FY24; FY25/FY26 results-PDF balance sheets confirm non-current liabilities are a small residual, supporting this as a consistent proxy)"
+  - "PEER DATA NEEDED: none -- ACUTAAS, CAMLINFINE, CLEAN, NEOGEN screener-Data_Sheet.csv exports provided sufficient data for M2, M5, M9; M6 gap is Tatva's own missing R&D line, not a peer-data gap"
+  - "Block E sourced from the FY2024-25 Annual Report this run because the screener export omitted shareholding/pledge/contingent-liability data entirely -- E1 (promoter holding 72.02%, Annexure-I to Corporate Governance Report, AR p.85) and E4 (contingent liabilities Rs52.35mn / consolidated net worth Rs7,388.24mn = 0.71%, Notes 45-46 to Consolidated Financial Statements, AR p.275-276) resolved; E2 and E3 remain unresolved as they are not present even in the AR (quarterly SHP-filing data)"
+  - "E4 contingent-liabilities figure uses Part A only (claims not acknowledged as debts: indirect tax 11.99mn + direct tax 11.20mn + outstanding LC 29.16mn = 52.35mn), excluding Part B capital/other commitments (118.66mn + 0.64mn), per the standard contingent-liability definition; including Part B would still give 171.65/7388.24 = 2.32%, same score band (<5%)"
+block_b_trend: "deteriorating -- FCF negative in all 8 computable years (FY19-FY26, cumulative FCF/PAT -1.32); the one WC-days window that can be measured (FY2025 to FY2026, limited by missing payables data pre-FY2025) shows WC Days rising from 175.3 to 185.3, +9.98 days"

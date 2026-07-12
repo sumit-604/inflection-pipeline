@@ -1,0 +1,13 @@
+confidence_delta:
+  numerical_acceptance: 94      # B12a acceptance_rate (35 numbers checked, 0 CRITICAL, 0 MISMATCH, 2 MINOR anchor-not-found)
+  redflag_coverage: 86          # B12b: caught 12 / 14 independent verifier-found flags (0 CRITICAL, 0 MAJOR, 2 MINOR); credibility grade B concurred
+  framework_adherence: 99       # B12c Gate 0 + Emerging Moat portion only (Gate 0 46/46 pass; EM 25/26, 1 MINOR recount off-by-2)
+  peer_utilisation: 100         # B12d: 15 of 15 peers used substantively and confirmed (per Section 5 definition: peers used substantively / peers provided)
+  overall: 86                   # min of the four available components
+  band: "normal (75-89): note specifics; no verdict downgrade, no forced REWORK"
+  rework_triggered: false       # no B12a CRITICAL; all four acceptance rates >=60 (94/86/99/93)
+  valuation_framework_adherence: "PENDING PHASE 3 (B12c valuation half deferred; B10/B11 not yet produced)"
+  notes:
+    - "peer_utilisation is 100 by the Section 5 metric (all 15 peers used substantively, D confirmed 15/15). Separately, B12d logged one MAJOR wrong-anchor error in B06 (a CLEAN quote attributed to the Q3 FY26 call is actually from the Q4 FY26 call); content is real and changes no claim verdict, but it is carried in the verifier summary. D's peers-correctly-handled acceptance_rate is 93 because of it."
+    - "weakest component is redflag_coverage at 86: Verifier B found 14 red-flag items, 12 already caught upstream, 1 partially caught (SDA two-quarter sequential decline / metric-reframe on the #1 trigger), 1 MINOR miss (PTC narrative-vs-number tension). No CRITICAL, no repeated-evasion miss."
+    - "framework_adherence 99 covers Gate 0 + Emerging Moat only; the valuation-adherence audit runs in phase 3 and will complete this component."

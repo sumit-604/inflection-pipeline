@@ -1,0 +1,52 @@
+stage: B08-promoter
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "GPCB Section 33(A) order (13 Sept 2024): exact effluent/compliance violation and exact revocation date NOT FOUND (WebFetch to primary media source blocked, HTTP 403)"
+  - "Glassdoor/AmbitionBox employee review ratings and themes NOT FOUND (content not retrievable within search budget)"
+  - "GPCB interim environmental-damage compensation quantum NOT FOUND"
+  - "IiAS/SES/InGovern proxy-advisory coverage: no matches found; treated as data gap, not confirmed clean"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "GPCB Section 33(A) Water Act direction closed the Ankleshwar plant (13 Sept 2024); revoked after company implemented remedial measures — root cause not independently confirmed"
+      - "Promoter-executive remuneration rose 27.89% YoY (each drawing ₹17.13M incl. PF) while standalone PAT fell 98.9% (₹293.48M to ₹3.27M) and EPS fell from ₹12.82 to ₹0.14; dividend cut ₹2 to ₹1/share in parallel"
+      - "CRISIL downgraded bank-facility ratings twice within the review window: to A-/Negative/A2+ during FY24-25, then to BBB+/Stable/A2 in June 2025"
+      - "Promoter-group discloses 16 small, largely unrelated-business entities as related parties (jewellery, petroleum, medical, distribution) though none shows RPT transaction value in FY24-25 or FY23-24"
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "GPCB issued a Section 33(A) Water Act direction (13 Sept 2024) closing the Ankleshwar plant; revoked after company implemented remedial measures per GPCB", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Board's Report Item 22, p.53; Indian Chemical News", date: "2024-09-13"}
+  - {finding: "Promoter-executive remuneration rose 27.89% YoY while standalone PAT fell 98.9% (₹293.48M to ₹3.27M) and EPS fell from ₹12.82 to ₹0.14; final dividend cut from ₹2 to ₹1 per share", evidence_tier: "VERIFIED", source: "Annual Report FY24-25, Annexure-D to Board's Report p.63; Note 34 p.179; Board's Report p.50-51", date: "FY2024-25"}
+  - {finding: "CRISIL downgraded long/short-term bank facility ratings from an unspecified prior level to A-/Negative/A2+ during FY24-25, then to BBB+/Stable/A2 on 10 June 2025", evidence_tier: "VERIFIED", source: "Annual Report Corporate Governance Report Item 15, p.82; CRISIL Ratings rationale documents dated 2024-11-06 and 2025-06-10", date: "2024-11-06 / 2025-06-10"}
+  - {finding: "Prior CFO Mahesh Tanna resigned approximately one month after the July 2021 IPO listing; successor CFO Ashok Bothra appointed 3 December 2021 and stable since (no further CFO change)", evidence_tier: "MEDIA REPORTED", source: "Business Standard, 24 Aug 2021 and 4 Dec 2021 reports", date: "2021-08-24"}
+  - {finding: "Three modest disputed-tax matters (DGGI IGST refund ₹11.38M, CGST ₹0.56M, income-tax disallowances ₹1.00M and ₹10.20M for AY2020-21) are under appeal; company expects favourable outcomes", evidence_tier: "VERIFIED", source: "Annual Report Note 46, p.200", date: "FY2024-25"}
+transition_evidence: []
+pledge_pct_latest: 0
+pledge_trend: "stable — 0% pledge as at 31 March 2024 and 31 March 2025, explicitly confirmed in AR Note 16(v); no pledge history found since the July 2021 IPO"
+searches_performed:
+  - "Tatva Chintan Pharma Chem SEBI order adjudication"
+  - "Tatva Chintan Pharma Chem Ankleshwar plant closure GPCB Gujarat Pollution Control Board"
+  - "Tatva Chintan Pharma Chem GPCB direction 33A Water Act reason effluent violation September 2024"
+  - "\"Tatva Chintan\" promoter share transfer insider trading disclosure SEBI takeover"
+  - "Tatva Chintan Pharma Chem CRISIL rating downgrade negative outlook 2024 2025"
+  - "Tatva Chintan Pharma Chem Glassdoor AmbitionBox employee reviews"
+  - "Tatva Chintan Pharma Chem IiAS SES proxy advisory report"
+  - "Tatva Chintan Pharma Chem promoter pledge shares 2022 2023 2024"
+  - "Tatva Chintan Pharma Chem CFO resignation / company secretary resignation / independent director resign"
+  - "Tatva Chintan Pharma Chem company secretary resignation 2021 2022 appointment"
+  - "Tatva Chintan Pharma Chem short seller report activist investor concerns"
+  - "\"Chintan Nitinkumar Shah\" / \"Shekhar Rasiklal Somani\" / \"Ajaykumar Mansukhlal Patel\" director background"
+  - "Tatva Chintan Pharma Chem fraud scam controversy complaint"
+  - "Tatva Chintan Pharma Chem NCLT oppression mismanagement court case"
+  - "Tatva Chintan Pharma Chem promoter OFS stake sale institutional investor 2024 2025"
+  - "Tatva Chintan Dahej GPCB pollution violation notice history"
+searches_skipped:
+  - "WebFetch indianchemicalnews.com GPCB article (HTTP 403) — root cause/revocation date of GPCB order not independently confirmed beyond search snippet"
+  - "WebFetch trendlyne.com shareholding page (HTTP 403) — granular quarterly pledge/shareholding trend beyond the two AR-reported year-end dates not obtained"
+  - "WebFetch sustainalytics.com ESG rating page (HTTP 403) — governance risk sub-score not obtained"
+verdict_basis: "Zero red-flag/deal-breaker items (no SEBI/criminal record, 0% pledge, no auditor resignation, no minority-treatment breach) but four amber items cluster in FY24-25: a GPCB plant-closure order (resolved), promoter pay up 27.89% against a 98.9% profit collapse, modest routine tax disputes, and an unusually diversified promoter-group entity list (though unused for RPT) — placing this at CAUTION with no transition evidence of improvement."

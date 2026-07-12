@@ -1,0 +1,90 @@
+stage: B05-concall
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY25 baseline revenue not disclosed in the three transcripts reviewed, so the Q3 FY26 call's '20-30% FY26 revenue growth' guidance could not be independently confirmed to an exact percentage (directionally consistent with the >INR500cr FY26 milestone stated in Q4 FY26)."
+  - "The two results PDFs provided (Q3/9M and Q4/FY26) contained only SEBI regulatory cover/intimation letters, not detailed segment P&L pages, so quantified cross-checks relied on figures stated directly by management in the transcripts."
+  - "Q1 FY26 transcript (Jul 2025 call) was excluded per the 3-most-recent rule; some guidance items first referenced in that call (if any) could not be traced to their origin."
+flags:
+  - "Jolva greenfield groundbreaking slipped in all three calls reviewed, each time reframed as engineering optimization rather than acknowledged delay (HIGH)"
+  - "Semiconductor first commercial dispatch missed its original Q4 FY26 target, unacknowledged (MEDIUM)"
+  - "ROCE questions deflected in both Q2 FY26 and Q3 FY26 with no forward target given (MEDIUM)"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "SDA / Euro 7 emission-norm tailwind", type: "Volume/Regulatory", timeframe: "near-medium", conviction: "H", confirm_signal: "New-customer invoicing begins on schedule (~Aug 2026); FY27 SDA growth >=20% delivered", kill_signal: "Global EV shift reverses SDA demand, or Euro7 rollout delays beyond Europe"}
+  - {priority: 2, name: "EBITDA margin sustaining 20-22% band", type: "Margin/Cost", timeframe: "near term", conviction: "H", confirm_signal: "FY27 quarterly margins hold 20-22% as occupancy stays high", kill_signal: "RM cost shocks (Iran-type) not fully passed through"}
+  - {priority: 3, name: "Electrolyte Salts / ESS ramp to 8-10% of revenue", type: "Volume/Sectoral", timeframe: "medium", conviction: "M", confirm_signal: "FY27 revenue share actually reaches 8-10% as guided", kill_signal: "Hybrid-battery commercialization further delayed by tariffs/geopolitics"}
+  - {priority: 4, name: "PASC agro intermediate ramp on new Dahej block", type: "Volume/Cost", timeframe: "near term", conviction: "H", confirm_signal: "Sequential PASC revenue recovers post Q4 FY26 teething dip", kill_signal: "Further production bottlenecks, or agro demand slump per SRF caution"}
+  - {priority: 5, name: "Pharma intermediates new revenue stream (~INR70-75cr FY27)", type: "Volume/Price-mix", timeframe: "near term", conviction: "M", confirm_signal: "Q1 FY27 commercialization of first product materializes into billed revenue", kill_signal: "Validation slips again into FY28"}
+  - {priority: 6, name: "Jolva greenfield capacity (2nd agro intermediate, import substitute)", type: "Capex/Inorganic", timeframe: "long term", conviction: "L", confirm_signal: "Groundbreaking actually occurs by mid-July 2026 as newly promised", kill_signal: "Fourth consecutive slippage past FY27"}
+  - {priority: 7, name: "Semiconductor chemicals optionality", type: "Volume/Sectoral/Regulatory", timeframe: "long term", conviction: "L", confirm_signal: "First commercial dispatch actually occurs in Q1 FY27 as newly guided", kill_signal: "Further slippage past FY27, or customer disqualification at plant-scale audit"}
+guidance:
+  - {item: "EBITDA margin target", number: "20-22%, within ~2 quarters", timeframe: "by ~Q4 FY26", stated_in: "Q2 FY26"}
+  - {item: "Electrolyte Salts revenue", number: "~INR15cr FY26; 10% of revenue by FY27", timeframe: "FY26/FY27", stated_in: "Q2 FY26"}
+  - {item: "Agro+Pharma 7-8 molecules, full scale", number: "INR300-350cr", timeframe: "medium term", stated_in: "Q2 FY26"}
+  - {item: "Semiconductor commercial batches", number: "3 batches", timeframe: "targeted Q4 FY26", stated_in: "Q2 FY26"}
+  - {item: "New Dahej plant block commercial production", number: "operational", timeframe: "from January 2026", stated_in: "Q2 FY26"}
+  - {item: "Jolva greenfield groundbreaking", number: "n/a", timeframe: "January/February 2026", stated_in: "Q2 FY26"}
+  - {item: "New Dahej block capex", number: "~INR100-102cr", timeframe: "FY26", stated_in: "Q3 FY26"}
+  - {item: "Existing facility full-potential revenue", number: "INR850-900cr", timeframe: "2.5-3 years out", stated_in: "Q3 FY26"}
+  - {item: "FY26 revenue growth", number: "20-30% YoY", timeframe: "FY26", stated_in: "Q3 FY26"}
+  - {item: "Jolva capex", number: "INR250-275cr, 18-month build", timeframe: "groundbreaking 'this quarter' (by Mar 2026)", stated_in: "Q3 FY26"}
+  - {item: "Jolva commissioning", number: "n/a", timeframe: "~Sept/Oct 2027", stated_in: "Q3 FY26"}
+  - {item: "SDA growth FY26", number: "25-30%", timeframe: "FY26", stated_in: "Q3 FY26"}
+  - {item: "Electrolyte revenue (revised)", number: "7-8% of revenue", timeframe: "calendar 2026", stated_in: "Q3 FY26"}
+  - {item: "FY27 guidance", number: "revenue growth ~25%; EBITDA margin 20-22%", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Electrolyte Salts (reaffirmed)", number: "8-10% of revenue", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Jolva groundbreaking (re-revised)", number: "n/a", timeframe: "mid-July 2026", stated_in: "Q4 FY26"}
+  - {item: "Jolva commissioning (re-revised)", number: "n/a", timeframe: "January-March 2028", stated_in: "Q4 FY26"}
+  - {item: "Jolva Phase 1 revenue potential", number: "INR400-500cr", timeframe: "post-commissioning", stated_in: "Q4 FY26"}
+  - {item: "Pharma FY27 revenue (new add-on)", number: "INR70-75cr", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "SDA FY27 growth", number: "at least 20%, reaching INR250-300cr", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Semiconductor first commercial dispatch", number: "n/a", timeframe: "Q1 FY27 ('this quarter')", stated_in: "Q4 FY26"}
+  - {item: "Dividend", number: "INR2/share (20% of face value), ~10% payout ratio", timeframe: "FY26", stated_in: "Q4 FY26"}
+promise_delivery:
+  delivered: 3
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26", promise: "New Dahej plant block commercial production from January 2026", outcome: "Partial", explanation: "Handed to production team Jan 2026, targeted 'first week of March'; confirmed fully operational by Q4 FY26 call - ~2 months late"}
+    - {promised_in: "Q2 FY26", promise: "Two agro intermediates (incl. photochlorination) commercialized with revenue reflecting Q3 FY26", outcome: "Delivered", explanation: "'Timely fulfilled with minor delays' per Q3 FY26 call"}
+    - {promised_in: "Q2 FY26", promise: "EBITDA margin to reach 20-22% band within ~2 quarters", outcome: "Delivered", explanation: "Q4 FY26 margin computed ~20.9%, matching management's own 'achieved 21%' framing"}
+    - {promised_in: "Q2 FY26", promise: "Electrolyte Salts ~INR15cr FY26 revenue / 10% of revenue by FY27", outcome: "Delivered", explanation: "Re-framed twice en route (7-8% CY26, then 8-10% FY27) but Q4 FY26 delivered INR131mn in the quarter alone, +1,378% YoY"}
+    - {promised_in: "Q2 FY26", promise: "Semiconductor: 3 commercial-scale batches delivered in Q4 FY26", outcome: "Missed", explanation: "Dispatch pushed to Q1 FY27 in the Q4 FY26 call; original target not explicitly acknowledged as missed"}
+    - {promised_in: "Q2 FY26", promise: "Jolva greenfield plant: break ground January/February 2026", outcome: "Missed", explanation: "Pushed to 'this quarter' in Q3 FY26 call, then to mid-July 2026 in Q4 FY26 call - three consecutive quarters of slippage"}
+    - {promised_in: "Q2 FY26", promise: "Pharma: 3 products commercialized Dec 2025 to H2 2026", outcome: "Partial", explanation: "Slipped to Q1 FY27 for first product, Q3 FY27 for other two, per Q4 FY26 call"}
+    - {promised_in: "Q3 FY26", promise: "Jolva commissioning ~September/October 2027", outcome: "Missed", explanation: "Revised in Q4 FY26 call to January-March 2028, before construction even began"}
+    - {promised_in: "Q3 FY26", promise: "FY26 revenue growth of 20-30% YoY", outcome: "Partial", explanation: "Q4 FY26 states FY26 revenue crossed INR500cr milestone; exact YoY% and FY25 base not restated in transcripts reviewed - NOT FOUND for precise confirmation"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is your ROCE target/trajectory as occupancy rises?", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "deflected every time"}
+  - {question: "Electrolyte Salts revenue contribution - what number, by when?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "When does Jolva break ground?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Core financial guidance (revenue growth, 20-22% EBITDA margin band) delivered essentially on schedule with margins tracking 18.0% to 19.4% to 20.9% across the three quarters, and most product commercialization promises landed with only minor disclosed delays; but long-cycle capex/timeline commitments (Jolva groundbreaking slipped 3x, semiconductor dispatch missed its original target unacknowledged) and a twice-repeated ROCE dodge keep it short of an A."
+peer_questions:
+  - {question: "Are peers seeing the same destocking-to-restocking industry recovery narrative through FY26 that Tatva describes?", why: "Tests whether the sectoral tailwind cited across all three calls is real or company-specific optimism", check_peers: ["ACUTAAS", "CAMLINFINE", "CLEAN", "NEOGEN"]}
+  - {question: "Did peers see a similar ~30-40% raw-material cost spike in amines/ammonia-linked inputs in Q4 FY26/H1 2026 tied to the Iran conflict, and how much did they pass through?", why: "Cross-checks whether Tatva's RM inflation and pass-through claims are industry-wide or an outlier", check_peers: ["CAMLINFINE", "CLEAN"]}
+  - {question: "Do peers corroborate a genuine Euro 7-driven demand tailwind for automotive-catalyst intermediates, and is Tatva's claimed SDA market-share trajectory (15% today, up to 70% on Euro7 models vs Sarchem) plausible?", why: "Tests the single largest near-term growth trigger and a specific unverified market-share claim", check_peers: ["ACUTAAS", "CLEAN"]}
+  - {question: "Does Neogen Chemicals' commentary on lithium-ion/electrolyte and energy-storage demand corroborate Tatva's claim of being the 'sole India supplier' of hybrid-battery electrolytes and its +1,378% YoY Q4 FY26 growth?", why: "Tests the strongest single quarter-over-quarter delivery number in the dataset and an unverified exclusivity claim", check_peers: ["NEOGEN"]}
+  - {question: "Have peers with FY26 greenfield capex programs experienced similar multi-quarter groundbreaking/commissioning slippage, or is Jolva's delay pattern Tatva-specific execution risk?", why: "Tests whether the 3x-slipped Jolva timeline reflects an industry-wide EPC bottleneck or a company-specific credibility issue", check_peers: ["CLEAN", "ACUTAAS"]}
+  - {question: "Do any peers with semiconductor-chemical/ultra-high-purity initiatives corroborate an 8-9-year qualification-to-dispatch cycle and the speculative revenue range (up to 'INR2,000cr') Tatva floated?", why: "Tests plausibility of the longest-dated, most speculative trigger in the list", check_peers: ["ACUTAAS", "CLEAN"]}
+  - {question: "Is the crop-protection demand caution flagged by SRF (per an analyst question in the Q3 FY26 call) reflected in peers' own agro-intermediate order books, versus Tatva's confident product-specific demand visibility?", why: "Tests whether the PASC/agro growth trigger is insulated from or exposed to a broader agrochemical-sector downturn", check_peers: ["CAMLINFINE", "ACUTAAS"]}
+red_flags:
+  - {flag: "Jolva greenfield groundbreaking slipped in all three calls reviewed, each time reframed as engineering optimization rather than acknowledged delay", severity: "HIGH"}
+  - {flag: "Semiconductor first commercial dispatch missed its original Q4 FY26 target, unacknowledged in the Q4 FY26 call", severity: "MEDIUM"}
+  - {flag: "ROCE questions deflected in both Q2 FY26 and Q3 FY26 with no forward target ever given", severity: "MEDIUM"}
+  - {flag: "Electrolyte Salts guidance metric reframed three times across three calls, complicating like-for-like tracking", severity: "LOW"}
+  - {flag: "Dividend declared alongside rising short-term borrowings; analyst's finance-cost-vs-payout critique in Q4 FY26 not directly addressed", severity: "LOW"}
+  - {flag: "Working-capital/goods-in-transit disclosure (INR26cr flagged Q2 FY26) never updated or revisited in Q3 or Q4 FY26 calls", severity: "LOW"}
+dropped_triggers:
+  - "China SDA demand discussion (explicitly raised and answered in Q2 FY26 as 'practically negligible', not raised again in Q3 or Q4 FY26)"
+timeline_slippages:
+  - "New Dahej plant block: January 2026 (Q2 FY26) -> 'first week of March' (Q3 FY26) -> confirmed operational (Q4 FY26), ~2 months late"
+  - "Jolva groundbreaking: January/February 2026 (Q2 FY26) -> 'this quarter'/by Mar 2026 (Q3 FY26) -> mid-July 2026 (Q4 FY26)"
+  - "Jolva commissioning: ~September/October 2027 (Q3 FY26) -> January-March 2028 (Q4 FY26)"
+  - "Semiconductor first commercial batch: targeted Q4 FY26 (Q2 FY26) -> 'early February' 2026 (Q3 FY26) -> dispatch in 'current quarter' = Q1 FY27 (Q4 FY26)"
+  - "Semiconductor full commercialization: '2028, maybe end 27 early 28' (Q2 FY26) -> 'around 2028' (Q3 FY26) -> 'end 2028/early 2029' (Q4 FY26)"
+  - "Pharma commercialization: Dec 2025-H2 2026 (Q2 FY26) -> 'consolidate from Q2 FY27' (Q3 FY26) -> 1 product Q1 FY27, 2 more Q3 FY27 (Q4 FY26)"

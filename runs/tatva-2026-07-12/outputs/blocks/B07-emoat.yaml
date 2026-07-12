@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor Presentation slide 11 export/geography figures (75% exports, 25+ countries) conflict with two internally-consistent AR sources (AR p.9 ~62%/35+ countries, MD&A p.123 61.53%) for the same FY24-25 period; treated as a stale/unreconciled IP slide, not used for scoring"
+  - "Jolva and new-Dahej-block capex funding sources not disclosed anywhere in AR or concalls (NOT FOUND)"
+  - "Quantified tax benefit amounts for DSIR R&D recognition, Three Star Export House status, and any PLI/PCPIR scheme enrolment not disclosed (NOT FOUND); Section 10AA SEZ benefit loss at Dahej is disclosed only qualitatively (tax-rate spike to 38%, Q4 FY26 call), not quantified"
+  - "AR FY26 post-new-Dahej-block facility-level utilisation % not available (only FY23-FY25 utilisation table provided in AR; FY26 utilisation NOT FOUND)"
+  - "No patent filings, patent applications, or IP-licensing revenue disclosed anywhere in the documents provided; A2 scored NO EVIDENCE FOUND on that basis"
+flags:
+  - type: FLAG-EMOAT
+    reason: "F2 execution moat and G1 war chest both score 0 with well-evidenced NEGATIVE findings rather than mere absence of data: Jolva greenfield groundbreaking has slipped in all three tracked concall quarters (HIGH severity per B05) and the long-term credit rating has been downgraded twice in under a year (CRISIL A-/Stable to A-/Negative per the FY24-25 AR, then to BBB+/Stable per the May 2026 investor presentation). The largest single emerging-moat revenue item in the file (Jolva, INR400-500cr guided) rests entirely on the weakest-evidenced execution track record in the file."
+em_score: 19.2
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "claim", time_to_materialise: "active (SDA) / 1-3yr (semiconductor)"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing, 1-2yr revenue visibility"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "claim", time_to_materialise: "near-term (Aug 2026)"}
+  - {id: "H3", name: "ESG moat", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "R1", name: "Regulatory/policy tailwinds", strength: "Moderate", evidence_type: "claim", time_to_materialise: "active (Euro7), partially self-reversing (SEZ loss)"}
+evidence_mix: {documented: 24, claim: 21, inference: 4}
+completionist_recount: "22 distinct 📄-documented items anchored across 8 categories (A1 partial, A3, A4, E1 partial, E2 partial, H1 partial, H3, R1 partial); only 6 of 21 rows rate Strong/Moderate, within the 3-6 base rate; 11 of 21 rows are explicit NO EVIDENCE FOUND, several (F1, F2, G1, G2, C2, B1) carrying documented negative findings rather than absent data."
+catalysts_12m:
+  - {catalyst: "SDA new-customer invoicing begins", window: "~Aug 2026", evidence_type: "claim", anchor: "Q3 FY26 call, per B05 triggers row 1"}
+  - {catalyst: "Semiconductor first commercial dispatch", window: "Q1 FY27 (already once-slipped)", evidence_type: "claim", anchor: "Q4 FY26 call, per B05 timeline_slippages"}
+  - {catalyst: "Pharma intermediates first product commercialization", window: "Q1 FY27", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "Jolva greenfield groundbreaking", window: "mid-July 2026 (3x already slipped)", evidence_type: "claim", anchor: "Q4 FY26 call, B05 HIGH flag"}
+  - {catalyst: "FY27 EBITDA margin holding 20-22% band", window: "FY27 quarterly cadence", evidence_type: "claim/documented mix", anchor: "Q4 FY26 call guidance + 3-quarter delivery track record (18.0%->19.4%->20.9%)"}
+capex_embedded_growth_pct: 44.5
+optionality_register:
+  - {optionality: "Semiconductor chemicals full commercialization (speculative up to INR2,000cr opportunity)", converting_evidence: "Committed customer purchase order with disclosed revenue linkage beyond the small paid trial batch already received", first_appears: "Concall / exchange filing / segment revenue disclosure", window: "2028-2029, long-dated"}
+  - {optionality: "Jolva greenfield Phase 1 (INR400-500cr revenue potential)", converting_evidence: "Actual groundbreaking (exchange filing) followed by capex capitalisation in AR capital-commitments note", first_appears: "Exchange filing (Reg. 30) / next AR CWIP note", window: "Groundbreaking guided mid-July 2026 (3x slipped); commissioning Jan-Mar 2028"}
+  - {optionality: "Pharma intermediates new revenue stream (INR70-75cr FY27)", converting_evidence: "Q1 FY27 concall confirming first product actually billing revenue", first_appears: "Q1 FY27 concall / results", window: "FY27 (already slipped ~4-6 months once)"}
+  - {optionality: "SDA 'up to 70% share' on Euro7-qualified models vs Sarchem", converting_evidence: "Independent market-share data or a corroborating source beyond management framing", first_appears: "Peer concall cross-check or third-party market report", window: "NOT FOUND, no company-disclosed timeline"}
+  - {optionality: "Patent/IP pipeline", converting_evidence: "A filed patent application disclosed with product/revenue linkage", first_appears: "Future AR Technology Absorption / IP note", window: "NOT FOUND, no signal of intent"}
+  - {optionality: "Customer concentration improving", converting_evidence: "Disclosure of top-5/top-10 customer revenue % showing a declining trend", first_appears: "Future AR or concall", window: "NOT FOUND, management has not answered when asked"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward (Gate 0 core 48, moat THIN 1/12) plus MODEST forward (19.2/80 across 6 genuinely evidenced categories) stays AVERAGE, roughly 6 points short of the STRENGTHENING tier that would justify a HIGH POTENTIAL upgrade, and offset by well-evidenced negative findings on execution (Jolva 3x-slipped groundbreaking) and financial trajectory (credit downgraded A-/Stable to BBB+/Stable in under a year)."
+top_moat_risks:
+  - "Jolva greenfield groundbreaking has slipped in all three tracked quarters (HIGH flag); the single largest emerging-moat revenue figure in the file (INR400-500cr) sits on the weakest-evidenced execution record"
+  - "Credit rating downgraded from CRISIL A-/Stable to A-/Negative (FY24-25 AR) and again to BBB+/Stable (May 2026 investor presentation), undermining any G1 war-chest case"
+  - "PTC segment (23% of FY26 revenue) explicitly flagged by management as easily replicable, competitor count grown from 2 to 9-10; process-innovation moat is not durable across the full portfolio"
+  - "Dahej SEZ Section 10AA tax benefit already lost, driving the FY26 Q4 tax-rate spike to 38% and reversing rather than sustaining the R1 regulatory tailwind"

@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results/ absent — Gate 0 from screener CSVs + AR statements"
+  - "rating/ absent"
+  - "AR pages 78-101 lost (truncated download); detailed notes schedules unavailable"
+  - "AR pages ~3-59 (Board's Report, MGT-9/shareholding pattern, Corporate Governance Report) render with corrupted font encoding — unreadable"
+  - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv are blank export templates; all screener figures sourced from screener-Data_Sheet.csv only"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE driven by cumulative CFO/PAT deal-breaker (0.31x, Block B=1/20) and by Block E=0/20 which is a data-access gap (promoter holding/pledge/contingent liabilities NOT FOUND due to corrupted AR pages), not adverse evidence; Block C growth (20/20) and Block D balance sheet (16/20) are strong and fully anchored"}
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 15, B: 1, C: 20, D: 16, E: 0}
+core_score: 52
+moat_score: 14
+grand_total: 66
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 (=1) -> max GOOD (non-binding, base already AVERAGE)"
+  - "Cumulative CFO/PAT <0.50 (=0.31) -> max AVERAGE (binding); driven by weak conversion FY23 (0.32x) and FY24 (0.41x), turning negative in FY26 (CFO -1.95 Cr) amid working-capital build and capex-heavy plant expansion (AR Note 1: third Pune unit started production FY25)"
+history_downgrade: false
+data_notes:
+  - "Screener Sales FY25 (142.31 Cr) vs AR Income from Operations FY25 (142.79 Cr / Rs 14,278.92 lakh); PBT and PAT match exactly between sources despite the Sales-line reclass difference"
+  - "ROCE, Working Capital Days, capex, Trade Payables/Current Liabilities anchored only for FY24 and FY25 (AR standalone Balance Sheet + Cash Flow Statement); FY22/FY23/FY26 marked NOT FOUND for these sub-metrics"
+  - "A4 (ROCE trend) and D4 (Current Ratio) computed on the only anchored years available (FY24/FY25), not the full FY22-FY26 range"
+  - "Inventory Days and Payable Days computed on revenue basis (COGS not separately available across all years)"
+  - "M9 Brand GM proxy = (Revenue-Material Cost)/Revenue; FY26 proxy anomalous (23.7% vs 41-45% FY24-25), possibly a reclass of traded-goods purchases into raw material cost"
+  - "M11 scored conservatively: only 5 years available vs 6 required for two-window test; FY26 Selling and admin expense blank/NOT FOUND in screener"
+  - "No loss-to-profit swing; PAT positive and growing every year FY22-FY26"
+  - "Promoter holding, promoter pledge, contingent liabilities: NOT FOUND — AR shareholding/CG-report pages render with corrupted font encoding; Note 29 (contingent liabilities) falls beyond the legible Notes range"
+block_b_trend: "deteriorating — CFO/PAT fell from 1.78x (FY22) to -0.07x (FY26); FY26 CFO = -1.95 Cr against FY26 PAT of +27.01 Cr (screener-Data_Sheet)"

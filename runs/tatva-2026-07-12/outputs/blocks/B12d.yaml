@@ -1,0 +1,19 @@
+stage: B12d
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 15
+substantive_confirmed: 15
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "NEOGEN", missed_item: "NEOGEN's own Pakhajan/Dahej commissioning-approval delays (Feb 2026, May 2026 calls) are thematically relevant third-peer corroboration for Claim 5 (industry-wide greenfield/EPC slippage) but NEOGEN was not on B05's designated check_peers list for that claim, so B06 did not cite it there; already covered in a different framing (leverage/capacity-race) in Part 2C. MINOR, not a coverage failure attributable to B06.", anchor: "NEOGEN Feb 2026 call, e.g. 'why this repeated delay in the approvals'; NEOGEN May 2026 call, 'slight delay in terms of commissioning of the project'"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B, Part 2E, Peer Coverage Map (CLEAN Q3 FY26 row), YAML risks_peers_raise (repeated 4x)", claimed: "Quote 'calibrate our prices... to keep our market share within China as a market' attributed to CLEAN Feb 2026 (Q3 FY26) call", source_truth: "Quote is verbatim-accurate but occurs only in CLEAN-Concall_May_2026_Transcript.txt (Q4 FY26), not the Feb 2026 transcript; Feb 2026 transcript contains a different, related but distinct quote ('no choice but to lower our prices of MEHQ...') on the same general topic", note: "Content is real and independently supported elsewhere; the specific anchor as printed is wrong in all 4 locations it appears, a systematic copy-forward error rather than a one-off typo. Does not change any of the 7 claim verdicts."}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 6 evidence section", claimed: "Baba Fine Chemicals (BFC) generating INR42.1 crore in the Q3 FY26 segment", source_truth: "INR42.1cr is the total 'Specialty Chemicals segment' revenue (ACUTAAS Feb 2026 call), of which BFC's 'commodity chemical sub-segment' is a described contributor via recovery, not the segment's sole or exact figure", note: "Segment-vs-subsegment conflation; figure is anchored to a real number, just mislabeled in scope"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 93

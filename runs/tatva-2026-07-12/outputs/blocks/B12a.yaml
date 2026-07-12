@@ -1,0 +1,14 @@
+stage: B12a
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings:
+  - {severity: "ANCHOR NOT FOUND", location: "02-notes B02-Finding-7, DTA", claimed: "DTA on unabsorbed losses jumped 6.4x (₹2.15Cr→₹13.88Cr)", source_truth: "Aggregate DTA confirmed (₹122.97Mn FY24 vs ₹126.24Mn FY25), component breakdown NOT FOUND in extracted Note 23(iii)-(iv)", note: "Unverified component-level claim flagged for re-check from primary AR PDF Note 23(iii)-(iv) pp.247-248; aggregate trend corroborated"}
+  - {severity: "ANCHOR NOT FOUND", location: "02-notes B02-Finding-4, KMP compensation", claimed: "All three exec KMPs received 27.9% pay rise", source_truth: "Aggregate KMP benefits rose 27.9% (₹1,339Mn→₹1,713Mn per Note 42B). Per-director Annexure-D details NOT FOUND in extracted text", note: "Aggregate trend verified; per-director certification unverifiable from text extracts. Recommend direct cross-check of Board's Report Annexure-D p.63"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 94
+coverage_note: "35 material figures audited (verdict-card Block scores, consolidation reconciliations, segment metrics, guidance delivery, governance disclosures, market-sizing anchors). 33 verified clean against source documents (94.3%). 2 figures flagged as ANCHOR NOT FOUND (component-level data extraction gaps, not accuracy errors; aggregate trends corroborated). No MISMATCHES identified. Numerical discipline across all stages is strong; basis differences correctly labeled and converted. Critical verdict-card figures (Gate 0 classification, promoter holding, PBT/PAT collapse, destocking driver, receivables deterioration, contingent liability ratio) all verified to source."

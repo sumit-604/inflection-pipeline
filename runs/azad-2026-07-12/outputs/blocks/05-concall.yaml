@@ -1,0 +1,79 @@
+stage: B05-concall
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: ["cash_conversion_evidence_gap", "working_capital_target_loosened_without_acknowledgment", "gtre_engine_timeline_repeatedly_slipping"]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Ramp-up of 4 (of 8) dedicated OEM lean factories to stable/peak utilization", type: "VOLUME", timeframe: "near/medium - FY27 stable ops", conviction: "M", confirm_signal: "Quarterly revenue growth re-accelerating past 25%+; WC days declining toward guided targets", kill_signal: "Stabilization narrative resets again into FY28+ without margin/volume inflection"}
+  - {priority: 2, name: "New high-value contracts (MHI 8-yr hot-section Nozzle Vane, Pratt & Whitney) converting to shipped revenue", type: "PRICE-MIX", timeframe: "medium - FY27-28", conviction: "M", confirm_signal: "Disclosed revenue from hot-section parts; margin uplift above 33-35% band", kill_signal: "Contract value/ramp stays undisclosed or qualification slips materially"}
+  - {priority: 3, name: "Working capital / cash conversion normalization", type: "COST/cash", timeframe: "near - explicit FY27 priority after 2 quarters of slippage", conviction: "L", confirm_signal: "Quantified inventory/receivable day reduction with a stated positive OCF figure for FY27", kill_signal: "Continued silence on OCF; WC days remain elevated into FY28"}
+  - {priority: 4, name: "Aerospace & Defence diversification (Safran, Rolls-Royce, Pratt & Whitney qualification-to-production)", type: "VOLUME", timeframe: "long - FY27-28", conviction: "M", confirm_signal: "First qualification-batch shipments to Rolls-Royce (H2 FY27); Safran contract conversion with disclosed value", kill_signal: "Qualification cycle stretches beyond FY28 without firm disclosed contracts"}
+  - {priority: 5, name: "Oil & Gas segment ramp (Baker Hughes)", type: "VOLUME", timeframe: "near/medium - FY27", conviction: "M", confirm_signal: "Segment revenue growing materially beyond <INR10cr FY26 base", kill_signal: "Saudi capex stalled and domestic Baker Hughes ramp underwhelms"}
+  - {priority: 6, name: "GTRE/ATGG indigenous jet-engine program (revenue optionality, excluded from guidance)", type: "REGULATORY-POLICY", timeframe: "near-promised, historically slipping", conviction: "L", confirm_signal: "Actual physical engine delivery to DRDO/GTRE with disclosed follow-on order visibility", kill_signal: "Continued multi-quarter slippage without delivery"}
+  - {priority: 7, name: "Sectoral tailwind - data-center-driven gas-turbine demand supercycle", type: "SECTORAL", timeframe: "long", conviction: "M", confirm_signal: "OEM backlogs growing into disclosed Azad order-book growth beyond static INR6,500cr", kill_signal: "OEM capex slowdown or Azad order book stays flat despite new wins"}
+guidance:
+  - {item: "FY26 revenue growth guidance", number: "25%-30% YoY", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Multi-year revenue growth guidance (narrowed)", number: "25%+ per year", timeframe: "FY27+", stated_in: "Q3 FY26 call, reaffirmed Q4"}
+  - {item: "FY26 revenue actual delivery", number: "~30.2% YoY (INR590cr vs INR453cr FY25)", timeframe: "FY26 full year", stated_in: "Q4 FY26 call"}
+  - {item: "Long-term EBITDA margin guidance", number: "33%-35%", timeframe: "FY27 onward", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 EBITDA margin actual", number: "36.9% standalone / 37.4% consolidated", timeframe: "FY26 full year", stated_in: "Q4 FY26 call"}
+  - {item: "QIP capex allocation", number: "INR700cr: ~200-250cr infra + 450-500cr plant & machinery", timeframe: "FY26-28", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 capex capitalized", number: "INR392cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Dedicated lean factory plan", number: "8 total; 4 completed, 4 more in ~6 months", timeframe: "by ~Nov 2026", stated_in: "Q4 FY26 call"}
+  - {item: "Working capital days target H2 FY26", number: "140-150 days, later restated 160-170 days, pushed to FY27", timeframe: "H2 FY26 -> FY27", stated_in: "Q3 FY26; revised Q4"}
+  - {item: "Order book", number: "INR6,500cr+ (static)", timeframe: "Q3/Q4 FY26", stated_in: "Q3, reaffirmed Q4"}
+  - {item: "MHI combined contract value", number: "INR1,387cr, 5-year", timeframe: "5 years", stated_in: "Q2 FY26 call"}
+  - {item: "GTRE/ATGG engine delivery", number: "'a couple of months away' (never delivered in window)", timeframe: "promised across Q2-Q4 FY26", stated_in: "Q2, Q3, Q4 FY26 calls"}
+promise_delivery:
+  delivered: 6
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26", promise: "FY26 revenue growth 25%-30%", outcome: "delivered", explanation: "FY26 actual ~30.2% YoY"}
+    - {promised_in: "Q2 FY26", promise: "Sustain ~36% EBITDA margin", outcome: "delivered", explanation: "FY26 actual 36.9%/37.4% consolidated"}
+    - {promised_in: "Q2 FY26", promise: "Working capital improvement in H2 FY26", outcome: "missed", explanation: "Still in execution at Q4; target loosened 140-150 to 160-170 days; pushed to FY27"}
+    - {promised_in: "Q2 FY26", promise: "GTRE/DRDO engine delivery 'a couple of months'", outcome: "missed", explanation: "Still undelivered at Q4 FY26 call"}
+    - {promised_in: "Q2 FY26", promise: "Safran MOU to convert to firm contract 'very soon'", outcome: "partial", explanation: "Still pre-contract at Q4, queued behind RR and P&W"}
+    - {promised_in: "Q2 FY26", promise: "Rolls-Royce deliveries starting 'next financial year'", outcome: "partial", explanation: "Sharpened to H2 FY27 qualification batch"}
+    - {promised_in: "Q3 FY26", promise: "Pratt & Whitney engagement to convert to contract", outcome: "delivered", explanation: "Contract finalized within same quarter"}
+    - {promised_in: "Q2 FY26 (ongoing)", promise: "MHI wallet share to keep expanding", outcome: "delivered", explanation: "New 8-year single-source hot-section Nozzle Vane contract disclosed Q4"}
+    - {promised_in: "Q2 FY26", promise: "Tariffs will not affect deliveries or margins", outcome: "delivered", explanation: "Confirmed post US-India trade deal through Q4"}
+    - {promised_in: "Q1 FY26 (ref Q4)", promise: "8 total dedicated facilities within 12-18 months", outcome: "partial", explanation: "4 complete by Q4, remaining 4 ~6 more months, stretched"}
+    - {promised_in: "Prior MOU", promise: "Saudi Arabia Baker Hughes capacity build", outcome: "missed", explanation: "Timelines shifted due to geopolitical conditions"}
+    - {promised_in: "Q2/Q3 FY26", promise: "INR700cr QIP capex deployment pace", outcome: "delivered", explanation: "INR392cr capitalized FY26, balance guided FY27, on plan"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "How many more dedicated OEM facilities/lines are planned, on what timeline and total?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "answered eventually"}
+  - {question: "What are current inventory/working-capital days, precisely, this quarter?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the FY27 total capex quantum?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Consistent delivery/beat on core revenue (25-30% guided, ~30% delivered FY26) and margin (33-35% guided, 36-37% delivered) across all three quarters, but WC normalization promised H2 FY26 was missed and quietly re-targeted (140-150 to 160-170 days) without acknowledgment, OCF questions consistently deflected to WC-day language, and GTRE/ATGG defence engine promised 'a couple of months away' across all three calls (7+ months) without delivery."
+peer_questions:
+  - {question: "Is Azad genuinely the only qualified Indian supplier for gas-turbine and nuclear-turbine airfoils, as management repeatedly claims?", why: "Exclusivity claim underpins the wallet-share/pricing-power thesis", check_peers: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+  - {question: "Do peers corroborate margin gains from domestic super-alloy/titanium sourcing as Azad claims, or is this Azad-specific?", why: "Tests whether margin improvement is industry trend or Azad execution edge", check_peers: ["MTAR Technologies", "Dynamatic Technologies", "PTC Industries"]}
+  - {question: "Are peers reporting the same data-center-driven gas-turbine demand supercycle and OEM backlog growth Azad cites?", why: "Tests whether the industry growth rate underpinning 25%+ guidance is real and broad-based", check_peers: ["MTAR Technologies", "Dynamatic Technologies", "PTC Industries"]}
+  - {question: "Are peers experiencing similarly elongated working-capital cycles during comparable capacity-ramp phases?", why: "Directly informs the cash-conversion determination given Azad's negative FY26 OCF against positive PAT", check_peers: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+  - {question: "Has Azad genuinely gained share against Howmet Aerospace/Precision Castparts in hot-section components, as implied by the new MHI contract?", why: "Verifies the share-gain claim in the newest, highest-value contract win", check_peers: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+  - {question: "Do peers corroborate that the US-India trade deal meaningfully removed a cost overhang for Indian aerospace/defence exporters?", why: "Tests whether tariff resolution is genuine industry relief or Azad messaging", check_peers: ["Dynamatic Technologies", "MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+  - {question: "Is Azad's capex intensity (8 dedicated single-customer factories, ~INR700cr QIP) typical of the sector's expansion cycle, or an outlier?", why: "Tests capital-efficiency credibility of the capex-cycle claim", check_peers: ["MTAR Technologies", "PTC Industries", "Unimech Aerospace"]}
+red_flags:
+  - "Cash-conversion/OCF opacity - negative FY26 operating cash flow against positive PAT never quantified or directly addressed (HIGH)"
+  - "Working capital normalization promised H2 FY26, missed, target quietly loosened without acknowledgment, pushed to FY27 (HIGH)"
+  - "GTRE/ATGG defence engine promised 'a couple of months away' across 3 consecutive calls (7+ months) without delivery (MEDIUM)"
+  - "Order book static at INR6,500cr+ across Q3 and Q4 FY26 despite disclosed new contract wins, no reconciliation offered (MEDIUM)"
+  - "Customer concentration never quantified despite ~81% of FY26 revenue from three-OEM-dominated Energy/O&G segment (MEDIUM)"
+dropped_triggers:
+  - "Forging plant (Q2 FY26, never mentioned again)"
+  - "Center of excellence investment (Q2 FY26, not revisited)"
+  - "AMCA / indigenous engine ecosystem detail (Q2 FY26, replaced by vaguer language)"
+  - "Single crystal blades capability gap (flagged Q2 FY26 as 'not yet', never revisited)"
+timeline_slippages:
+  - "GTRE/ATGG engine: 'couple of months' (Q2) -> 'couple of months' (Q3) -> 'weeks away' still undelivered (Q4)"
+  - "Working capital: H2 FY26 promise (Q2) -> 140-150 day target unmet (Q3) -> loosened to 160-170 days, pushed to FY27 (Q4)"
+  - "Rolls-Royce: 'next financial year' (Q2) -> 'FY27' (Q3) -> 'H2 FY27 qualification, momentum Q4 FY27/early FY28' (Q4)"
+  - "Saudi/Baker Hughes: timelines shifted due to geopolitical conditions (Q4)"
+  - "8-facility rollout: 12-18 months original -> 4 done + 4 more in 6 months at Q4, stretching past window"
+no_concall_mode: false

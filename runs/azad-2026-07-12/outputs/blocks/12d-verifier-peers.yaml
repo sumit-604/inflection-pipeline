@@ -1,0 +1,21 @@
+stage: B12d
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 10
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "UNIMECH (Nov 2025 call)", missed_item: "Dheya Technologies DET-200/DET-500 micro gas turbine engine investment -- gas-turbine-adjacent but a different product category (small UAV-class engines) from Azad's hot-section airfoils; would not have changed the Claim 1 UNVERIFIABLE verdict", anchor: "UNIMECH-Concall_Nov_2025_Transcript, PDF p.9"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 1, Claim 1, PTCIL quote", claimed: "'very few companies and countries have this technology'", source_truth: "'very few companies and countries have this in the world' (PTCIL Jun 2023, PDF p.11)", note: "Paraphrase, not fabrication; substance preserved"}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 4, MTAR Aug 2025 WC-days citation", claimed: "Israeli-conflict receivables anchor at PDF p.6", source_truth: "Quote located at PDF page marker 7 (transcript internal 'Page 6 of 17')", note: "Real quote, page anchor off by one"}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 4, Unimech Nov 2025 WC-days citation", claimed: "90-100 to 140-150 days anchor at PDF p.9", source_truth: "Quote located at PDF page marker 15", note: "Real quote, six-page anchor discrepancy -- largest single page-citation error; content still findable in correct transcript"}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 7, PTCIL capex-intensity citation", claimed: "50-acre campus, INR330cr plant, 600-tons pattern anchored at PDF p.12-13", source_truth: "Facts drawn from PDF pp.13-14 and 25-26", note: "Citation compresses a multi-page arc under one tag; every figure independently confirmed present"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100

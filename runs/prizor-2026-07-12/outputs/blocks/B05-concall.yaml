@@ -1,0 +1,64 @@
+stage: B05-concall
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings-call transcripts or quarterly results PDFs available (concalls_available: false); Section 2E and 3C not assessable"
+  - "AR FY24-25 MD&A Outlook section contains no quantified guidance (revenue, margin, capex, debt, returns) to test against results"
+  - "No SME-IPO proceeds utilisation / monitoring-agency statement found in extracted AR text"
+  - "Audited AR segment-reporting note carries no disclosed content; CCTV-vs-Display segment split only available from unaudited investor presentation"
+flags:
+  - "Sharp FY25 operating cash flow deterioration (NP +Rs10.15cr vs OCF -Rs14.10cr) never mentioned or explained by management"
+  - "Internal ROCE/ROE inconsistency within the same Apr-2026 investor presentation (cover slide vs detailed ratio chart)"
+  - "MD&A outlook language is generic/boilerplate, not tailored to the CCTV/security-electronics business"
+quarters_analysed: []
+triggers:
+  - {priority: 1, name: "STQC/BIS-ER policy tailwind vs non-certified imports", type: "REGULATORY-POLICY", timeframe: "near-term, ongoing", conviction: "M", confirm_signal: "Continued/accelerating CCTV segment growth; peer concalls corroborate irreversibility framing", kill_signal: "Peers show import brands still competitive despite certification rules"}
+  - {priority: 2, name: "Dealer network scale-up (11,000+ dealers)", type: "VOLUME", timeframe: "near-medium term", conviction: "M", confirm_signal: "Continued dealer-count growth disclosed", kill_signal: "Dealer additions plateau; revenue-per-dealer declines"}
+  - {priority: 3, name: "Backward integration (in-house SMT/PCB) margin durability", type: "COST", timeframe: "near-medium term", conviction: "L-M", confirm_signal: "EBITDA margin holds/expands beyond 22-23% band", kill_signal: "Margin compression despite backward integration"}
+  - {priority: 4, name: "AI camera range (PRIZOR PLUS AI) ASP/value-chain uplift", type: "PRICE-MIX", timeframe: "medium term", conviction: "L", confirm_signal: "Disclosed AI-camera revenue contribution or ASP uplift", kill_signal: "AI SKUs remain marketing-only with no disclosed revenue share"}
+  - {priority: 5, name: "IndieSemic SoC backward integration", type: "INORGANIC", timeframe: "long term", conviction: "L", confirm_signal: "Dated MoU-to-production milestone appears", kill_signal: "MoU remains 'in pipeline' indefinitely, no dated milestone"}
+  - {priority: 6, name: "Display-products segment diversification", type: "PRICE-MIX", timeframe: "weakening", conviction: "L", confirm_signal: "Segment revenue re-accelerates", kill_signal: "Continued decline (-51% YoY H2 FY26 already observed)"}
+guidance:
+  - {item: "Revenue guidance FY25-26", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "AR MD&A Outlook FY2025-26"}
+  - {item: "Margin guidance", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "NOT FOUND"}
+  - {item: "Assembly capacity (installed, FY26)", number: "16 lakh cameras p.a. (2 lines x 8 lakh)", timeframe: "FY26", stated_in: "Inv. Pres. slide 13"}
+  - {item: "Assembly capacity (scalable ceiling)", number: "up to 40 lakh units p.a.", timeframe: "NOT FOUND (no date/capex given)", stated_in: "Inv. Pres. slide 13"}
+  - {item: "SMT/PCB capacity", number: "50 lakh PCB units p.a.", timeframe: "stated operational", stated_in: "Inv. Pres. slide 13"}
+  - {item: "Dividend policy", number: "nil, profits retained for business", timeframe: "FY24-25, standing policy", stated_in: "AR Directors' Report"}
+  - {item: "IndieSemic SoC completion date", number: "NOT FOUND ('In Pipeline')", timeframe: "NOT FOUND", stated_in: "Inv. Pres. slides 13, 34"}
+promise_delivery:
+  delivered: 0
+  partial: 0
+  missed: 0
+  rows:
+    - {promised_in: "AR FY24-25 Outlook", promise: "'To become leader in our industry' (no metric attached)", outcome: "Not scoreable - no baseline metric committed; FY26 revenue grew +108.1% YoY per Inv. Pres. slide 25 but this is observation, not promise-delivery", explanation: "No quantified guidance existed to test"}
+    - {promised_in: "AR FY24-25 Directors' Report", promise: "Retain profits, no dividend", outcome: "Consistent where checkable (no dividend disclosed in FY26 presentation)", explanation: "Policy honoured on the one checkable point"}
+excuse_pattern: "not assessable - no miss identified to test excuse pattern against; ratio-movement explanations in AR are procedural boilerplate"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Defaults to C per no-concall-mode rule: AR FY24-25 gave no quantified guidance to test against FY26 delivery, so no positive delivery evidence exists to justify B; strong reported financial growth (revenue +108%, EBITDA +121% FY25->FY26) offset by an unexplained FY25 operating-cash-flow shortfall, generic MD&A outlook, and an internal ROCE/ROE inconsistency in the company's own FY26 investor presentation."
+peer_questions:
+  - {question: "Do peer managements corroborate that STQC/BIS-ER enforcement has permanently displaced non-certified import brands from the Indian CCTV market, or describe a slower/partial shift?", why: "Prizor's entire narrative rests on this policy tailwind being structural and irreversible", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "What market-size/CAGR figures do peers cite for Indian/global video surveillance, and do they match Prizor's $35.9bn FY25 global market at 10.4% CAGR to FY30 and domestic trajectory (~28->200 INR Bn, 2022-2029)?", why: "Prizor's market-size slide carries no primary source", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "What do peers say about raw-material/component cost trends (semiconductors, PCB inputs, sensors) and backward integration as industry-wide vs company-specific?", why: "Prizor claims cost control from backward integration but discloses no unit-cost data", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "Do any peers claim market-share gains attributable to the STQC/BIS-ER regime, and at whose expense?", why: "If peers claim the same gains, the tailwind may be industry-wide rather than Prizor-specific", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "What EBITDA/PAT margin ranges do peers report for CCTV hardware assembly - is Prizor's 21-23% EBITDA / 14% PAT in line or an outlier?", why: "Prizor's margins are unusually high for an import-dependent hardware assembler and no peer benchmark exists in its disclosure", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "Do peers report a comparable capex cycle (assembly/SMT expansion, lakh-unit capacity) and over what timeline/capital intensity per unit?", why: "Prizor's capacity claims carry no capex quantum or date", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+  - {question: "Do peers discuss working-capital intensity and short-term debt funding of growth comparable to Prizor's FY26 pattern (short-term borrowings Rs2.76cr->Rs31.82cr)?", why: "Prizor's own documents are silent on this; peer disclosure is the best available cross-check", check_peers: ["CP Plus", "D-Link India", "OSEL Devices", "Sahasra"]}
+red_flags:
+  - {flag: "AR MD&A Outlook is two generic unquantified bullets; surrounding MD&A boilerplate not tailored to a CCTV assembler", severity: "MEDIUM"}
+  - {flag: "FY25 operating cash flow -Rs14.10cr vs net profit +Rs10.15cr never mentioned or explained", severity: "HIGH"}
+  - {flag: "Internal ROCE/ROE inconsistency within same Apr-2026 investor presentation (47.4%/38.0% cover vs 37.2%/35.5% chart)", severity: "MEDIUM"}
+  - {flag: "H1 FY26 Chairman quote placed under 'H2 FY26 FINANCIAL OVERVIEW' header in a document reporting full FY26 actuals", severity: "LOW-MEDIUM"}
+  - {flag: "No SME-IPO proceeds utilisation/monitoring-agency statement found in extracted AR text despite Jul-2024 IPO raising Rs25.15cr", severity: "MEDIUM"}
+  - {flag: "CCTV-vs-Display segment financials in investor presentation not traceable to audited AR segment note", severity: "MEDIUM"}
+  - {flag: "Short-term borrowings Rs2.76cr->Rs31.82cr (Mar-25 to Mar-26) funding working-capital build, unaddressed", severity: "MEDIUM"}
+  - {flag: "Director/promoter related-party loan balances ~16% of total assets in FY24, falling to ~3% by FY25", severity: "LOW"}
+  - {flag: "25 board meetings in FY24-25, unusually high, unexplained", severity: "LOW"}
+dropped_triggers:
+  - "Display-products diversification (LED TVs, monitors, touch panels) - presented as a core strategic pillar but FY26 full-year segment growth only +11% vs CCTV +152%, and H2 FY26 segment revenue fell -51% YoY, unaddressed"
+timeline_slippages:
+  - "IndieSemic SoC MoU remains 'In Pipeline' with no completion date in the Apr-2026 document; open-ended aspirational status across the only two data points is itself a flag"

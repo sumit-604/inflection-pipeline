@@ -1,0 +1,24 @@
+stage: B08-promoter
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["DRHP litigation schedule not retrieved (403)", "NSE letters PVL/038/2025-26 and PVL/022/2026-27 not retrieved (403)", "shareholding-pattern/pledge filings not retrieved (403)", "full promoter-group registry listing (ZaubaCorp/FileSure) not retrieved (403)"]
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 5, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Unverifiable Ph.D. credential (Frankford International University) claimed by CMD Mitali Gauswami", evidence_tier: "UNVERIFIED", source: "web search snippets (LinkedIn/company bio); institution accreditation not confirmed", date: "2026-07-12 (search date)"}
+  - {finding: "Related entity 'Om Security Solutions' carried ~Rs3.55 crore FY24 transaction with the company; ownership/control relationship to promoters not established", evidence_tier: "UNVERIFIED", source: "AR Note 31 (Related Party Disclosure)", date: "FY2023-24, disclosed in FY25 AR"}
+  - {finding: "Loan-to-equity conversion (4,00,000 shares) during FY25 coincided with an asymmetric shift in relative promoter ownership: Mitali 90.00%->45.18%, Dasharathbharthi 9.99%->23.10%", evidence_tier: "VERIFIED", source: "AR shareholding notes", date: "FY2024-25"}
+  - {finding: "Group company Prizor Snacks Private Limited shares CIN with 'Smartvis Technologies Private Limited' in registry search, implying an unexplained rename; unrelated-business (snacks) diversification under same promoter pair", evidence_tier: "MEDIA_REPORTED", source: "search-engine-cached ZaubaCorp snippets; AR Note 31", date: "2026-07-12 (search date)"}
+  - {finding: "Independent director Dahyalal Prajapati serves on multiple SME boards concurrently (Nakoda Group of Industries Ltd, Greenleaf Envirotech Ltd) and resigned mid-term from DMR Hydroengineering & Infrastructures Ltd on 11-Mar-2025 citing other commitments (at a different company, not Prizor)", evidence_tier: "MEDIA_REPORTED", source: "search-engine-cached snippet, source document not independently fetched", date: "2025-03-11"}
+  - {finding: "Promoter share pledge percentage could not be verified from any source this session (not confirmed as zero or otherwise)", evidence_tier: "UNVERIFIED", source: "AR contains no SEBI-format shareholding table with encumbrance column; SHP aggregator sites blocked (403)", date: "2026-07-12 (search date)"}
+adverse_findings_clean_sections: ["No SEBI action, criminal case, tax/revenue action, or other-regulator action found against either promoter (Section 2, all sub-areas)", "No auditor resignation, qualification, or whistleblower complaint (Section 3E)", "No proxy-advisory adverse call, AGM controversy, or SCORES complaint found (Section 3D)"]
+transition_evidence: []
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND - no SEBI-format shareholding/encumbrance table located in AR; shareholding-pattern aggregator sites returned HTTP 403 on every fetch attempt this session"
+searches_performed_count: 25
+searches_skipped: ["NSE letter PVL/038/2025-26 (09-Oct-2025) full text -- WebFetch 403", "NSE letter PVL/022/2026-27 (28-May-2026) full text -- WebFetch 403", "DRHP full litigation/promoter-group schedule PDF -- WebFetch 403", "ZaubaCorp full director/company listings -- WebFetch 403", "FileSure director associated-companies profile -- WebFetch 403", "Screener.in / Trendlyne / MarketsMojo shareholding-pattern and pledge pages -- WebFetch 403", "Chittorgarh dedicated IPO review page -- WebFetch 403", "prizor.in group-company and management pages -- WebFetch 403"]
+verdict_basis: "Legal/regulatory record is genuinely clean across every search angle (SEBI, criminal, tax, other regulators, civil litigation), but a cluster of unresolved items -- an unverifiable Ph.D. credential, an unclear large related party, an asymmetric loan-to-equity conversion between co-promoters, unverified pledge status, and an IPO-fresh independent board -- keeps this at CAUTION rather than TRUSTWORTHY for a company public only since July 2024."

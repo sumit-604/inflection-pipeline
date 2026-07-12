@@ -1,0 +1,24 @@
+stage: B12d
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 3
+substantive_unsupported: []
+unused_but_relevant: []
+peer_utilisation: 75
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 1, Q7 row", claimed: "an investor (Mahesh Attal, May 2025 call) directly challenged this as 'extreme capital allocation'", source_truth: "Quote is from Vivek Patel in the OSEL Nov 2025 call, the same call already cited for the associated figures; Mahesh Attal's May 2025 questions concern unrelated short-term loans/advances", note: "Wrong speaker and wrong quarter for an otherwise real, substantively-used quote; does not change the Q7 verdict but is a genuine sourcing defect"}
+  - {severity: "MINOR", location: "06-peers.md Part 2E", claimed: "OSEL restated/reclassified its cash flow after an NSE compliance query", source_truth: "OSEL Jun 2026 transcript confirms the reclassification (raised by analysts Pratiti Khara and Kailash Shah); no passage attributes origin to an NSE query", note: "Governance point stands on transcript evidence; NSE-query framing unanchored"}
+  - {severity: "MINOR", location: "06-peers.md Part 1, Q1 row", claimed: "single continuous Chinese-players-out quote", source_truth: "Compound of Prateek Chaudhary's question and Aditya Khemka's answer", note: "Faithful in substance; two-speaker composition not flagged"}
+  - {severity: "MINOR", location: "06-peers.md scope note vs body", claimed: "call-date label inconsistencies (Jun vs May)", source_truth: "Both correct: cache filenames follow SEBI filing date, body labels follow actual call date", note: "Internally reconcilable but never reconciled"}
+  - {severity: "MINOR", location: "06-peers.md Part 1, Q5 cell", claimed: "Sahasra EBITDA guidance 28-32%", source_truth: "Confirmed in Nov 2024 call; no call date given", note: "Figure accurate; missing granular anchor"}
+  - {severity: "MINOR", location: "06-peers.md Part 1, Q6 row", claimed: "OSEL JNPT SEZ land", source_truth: "OSEL Jun 2026 uses 'JNPA'", note: "Same entity, name variant; immaterial"}
+critical_count: 0
+major_count: 1
+minor_count: 5
+acceptance_rate: 100
+coverage_note: "Central Q5 margin contradiction (Prizor 21-23% EBITDA/14% PAT vs CP Plus 8.7-18.0% EBITDA/4.4-11.9% PAT + 14-15% 'new normal' guidance) exactly anchored and verified clean against CPPLUS transcripts. STQC/BIS displacement quotes, CP Plus market-share trajectory (20.8->31.4->39->45.4%), Sahasra DDR/memory shortage, and capex-cycle figures all verified accurate. Coverage classification (3 SUBSTANTIVE, 1 UNUSED for D-Link) correct; verdict discipline clean."

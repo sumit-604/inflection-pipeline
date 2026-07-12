@@ -1,0 +1,49 @@
+stage: B03-ardeep
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags:
+  - type: FLAG-CASH
+    reason: "Verified exactly against Restated Consolidated Cash Flow Statement (raw p.249): WCL draws classified as operating working-capital adjustment; FY24 WCL inflow Rs 2,070.62M exceeds reported cash generated from operations Rs 1,024.75M itself; FY22 net CFO negative Rs -38.26M; DSCR never exceeded 1.0x in any of 4 periods (0.43->0.40->0.25->0.12, Note 46 raw p.300); 81.9% of total group debt (Rs 4,086.20M of Rs 4,989.69M) is current/short-tenor across 20+ fragmented lenders (Note 19.1 raw p.274)."
+  - type: FLAG-PROMOTER-PRELIM
+    reason: "Promoters ARE Selling Shareholders in the Offer for Sale (~5.25% of pre-Offer capital, raw p.91/821-822); no pledge found (raw p.61); promoter entity Kay Kay Overseas Corporation carries a pending Rs 255.31M income-tax demand plus Rs 27.39M GST demand (raw p.334); entire board and both key financial-control KMPs (CFO, Company Secretary) appointed within 2.5-6 weeks of DRHP filing with zero prior tenure track record (raw p.218-221, 229). Full promoter verdict deferred to B08."
+phase_verdicts: {p1: "watch", p2: "red_flag", p3: "red_flag", p4: "watch", p5: "watch", p6: "watch", p7_best_fit: "GARP (watchlist)"}
+overall_quality: 3
+quality_components: {governance: 4, accounting: 3, balance_sheet: 3, earnings: 2}
+kill_switch_notes:
+  - "Phase 1: no adverse statutory findings, but the DRHP's ICDR examination report has never been tested against a full SA 700 statutory audit; accounting issues flagged in Phase 2 are audit-untested."
+  - "Phase 2: 81.9% of group debt is current/short-tenor, DSCR never above 1.0x, and reported CFO is structurally dependent on continued rollover of that same short-tenor book."
+  - "Phase 3: if the 20+-lender WCL book faces any pullback, both the balance sheet and cash flow statement deteriorate simultaneously."
+  - "Phase 5: entire board and finance-function KMPs are pre-IPO fresh appointments; insufficient operating history exists yet to weight governance quality fully."
+triple_pass_verification:
+  verified: 11
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "Undisclosed FY24 top customer characterized as anomalous, identity not stated anywhere, warrants scrutiny", ar_value: "DRHP explicitly discloses a uniform, standard reason for redacting ALL top-10 customer names (non-receipt of naming consent, raw p.311 footnote), applied whether or not the customer is a related party; the Rs 1,966.22M/17.28% concentration itself is confirmed accurate", note_ref: "MD&A Top Customer table raw p.311-312"}
+    - {finding_rank: 9, triple_pass_value: "Note 13 Advance to vendors Rs 411.23M H1FY25 substantially/exactly an Amiable Electronics prepayment", ar_value: "MD&A Risk Factor 46 states the Amiable-specific advance at Rs 313.07M (H1FY25) / Rs 198.94M (FY24), materially smaller than the Rs 411.23M total Note 13 vendor-advance line, which likely includes other vendors", note_ref: "Risk Factor 46, raw p.57"}
+    - {finding_rank: 10, triple_pass_value: "Inventory turnover fell across the track record", ar_value: "Note 46 shows FY22-FY24 turnover essentially flat (4.44x/4.51x/4.44x); the real step-down is concentrated in H1FY25 only (1.45x not annualised, ~2.9x annualised)", note_ref: "Note 46 Ratio Analysis, raw p.300"}
+    - {finding_rank: 13, triple_pass_value: "H1FY25 Rs 10.31M prior-year tax true-up unflagged", ar_value: "The Rs 10.31M short-provision true-up IS shown on the face of the P&L (raw p.248) and referenced in MD&A prose (raw p.319); disclosed, not hidden, though not narratively emphasized as a one-off", note_ref: "P&L raw p.248; MD&A raw p.319"}
+missing_risks:
+  - {risk: "WCL-as-operating-cash-flow-classification mechanism itself never named as a disclosure/accounting-presentation risk, despite Risk Factor 3 disclosing the economic (not accounting-presentation) dependency", evidence_anchor: "Cash Flow Statement raw p.249; Risk Factor 3 raw p.29; MD&A raw p.322 (no line-item cash-flow narrative)"}
+  - {risk: "DuPont leverage-driven ROE expansion never disclosed as a quality caveat in the MD&A KPI table", evidence_anchor: "MD&A KPI table raw p.310; Note 46 raw p.300"}
+  - {risk: "Three-different-foreign-auditor pattern for the ~78%-of-PAT UAE subsidiary disclosed only in the Auditor's Examination Report, not repeated in Risk Factors", evidence_anchor: "raw p.243-244; absence confirmed across risk-factor text block"}
+  - {risk: "Promoter entity Kay Kay Overseas Corporation's Rs 255.31M pending tax demand not cross-referenced in the RPT risk factor despite KKOC's multi-role entanglement (trading counterparty, lender-security-provider, registered-office landlord)", evidence_anchor: "Litigation section raw p.334; Risk Factor 46 raw p.52-53; raw p.223"}
+guidance_table: []
+monitorables:
+  - {metric: "DSCR", threshold: "move toward/above 1.0x (improvement) or below 0.12x (deterioration)", where: "Ratio note, first post-listing statutory annual report", why: "Direct read on whether IPO debt paydown (Rs 3,200M) de-risks the capital structure"}
+  - {metric: "WCL cash-flow classification", threshold: "reclassification to financing activity under full SA 700 audit", where: "Cash Flow Statement, first post-listing Annual Report", why: "Tests whether Rank 1 finding survives statutory audit scrutiny the ICDR examination report did not apply"}
+  - {metric: "Electronics Bazaar FZC audit assignment", threshold: "principal Indian auditor takes direct responsibility vs continued third-party reliance", where: "Auditor's Report, first post-listing Annual Report", why: "Tests whether the ~78%-of-PAT audit-scope gap is remediated post-listing"}
+  - {metric: "Note 45/Note 36 corrections", threshold: "static previous-GAAP equity figure and lease-liability roll-forward error corrected", where: "Notes to Financial Statements, first post-listing Annual Report", why: "Tests whether new CFO/finance team has remediated note-drafting QC failures"}
+  - {metric: "Contingent liabilities", threshold: "growth beyond Rs 109.04M toward 25%-of-net-worth / 25%-of-PAT flags", where: "Contingent Liabilities note, first post-listing Annual Report", why: "GST ITC-mismatch disputes recurring across multiple state jurisdictions"}
+  - {metric: "Undisclosed top customer (17.28% FY24 revenue)", threshold: "identity/continuity disclosed or revenue concentration changes materially", where: "Customer concentration disclosures, first post-listing Annual Report", why: "Tests durability of the largest single non-related-party customer relationship"}
+strengths_top3:
+  - "Genuine operating growth: revenue +72.6% FY24, expanding international footprint (outside-India revenue share 40.2%->75.65% FY22->H1FY25), no exceptional items or P&L smoothing found"
+  - "No hard governance red flags: no promoter pledge, no fraud, no SEBI action, no borrowing default in any period, unqualified examination opinion"
+  - "Candid disclosure of harder facts in Risk Factors (negative FY22 CFO, DSCR table, contingent liabilities, statutory-due delays) even where MD&A prose doesn't fully connect the dots"
+red_flags_top3:
+  - "Reported CFO structurally dependent on Working Capital Loan draws classified as operating not financing activity; FY24 WCL inflow (Rs 2,070.62M) exceeds reported cash generated from operations (Rs 1,024.75M) itself, verified exactly against the Cash Flow Statement"
+  - "DSCR never exceeded 1.0x in any of four periods (0.43x->0.40x->0.25x->0.12x) while D/E rose 0.92x->2.46x and 81.9% of total group debt is current/short-tenor across 20+ fragmented lenders secured by promoter personal guarantees and a residential-property mortgage"
+  - "~78% of consolidated FY24 PAT generated by a zero-tax UAE subsidiary never audited by the principal Indian statutory auditor in any of four periods (three different local auditors used); a step-down US subsidiary is wholly unaudited"
+best_fit_strategy: "GARP (Watchlist)"
+one_line_verdict: "Growth is real but structurally leveraged; earnings and cash flow quality do not yet support GARP conviction."

@@ -3,41 +3,51 @@ company: "TATVA"
 run_date: "2026-07-12"
 model: claude-opus-4-8
 status: complete
-scope: "full (phase 1 gate0+emoat + phase 3 valuation)"
+scope: "full (phase 1 gate0+emoat + phase 3 valuation, re-audited under Amendment 4.5)"
 gate0:
   rules_checked: 46
   fails: []
 emoat:
   rules_checked: 26
   fails:
-    - {severity: "MINOR", rule: "completionist recount vs evidence_mix", detail: "recount states 22 documented items; evidence_mix.documented=24. Off by 2; no score/classification impact."}
+    - {severity: "MINOR", rule: "completionist recount vs evidence_mix", detail: "recount 22 vs evidence_mix.documented 24; off by 2; no classification impact."}
 valuation:
-  rules_checked: 34
+  rules_checked: 27
   fails: []
   minor:
-    - "B14 cites Master L809 'Promoter CONCERN/AVOID' as an AVOID trigger for a CAUTION-band promoter; AVOID is over-determined by Gate 0 AVERAGE + Hurdle STOP + U/D 0.82x, so no decision impact (MINOR)"
+    - "B11 base PE 14.255 carried as 14.26x not one-decimal 14.3x (Amd 5 rounding); +0.03x downstream, no decision impact"
+    - "B10 normalized_roce block still shows the legacy pre-4.5 60/40 blend 7.36% labelled 'Pillar 1 ROCE Calculation'; B11 correctly overrode with the 4.5 three-anchor 13.51%; no effect on governing output"
   confirmed:
-    pillar1_continuous_formula: true
-    fttcp_verdict_sole_authority: "RECOVERING 40-60% -> 60/40 blend (7.36% -> 11.2x)"
-    single_credit_route: "Pillar 1; Strategic Premium withheld"
+    amd45_applies_only_temp_depressed_recovering: true
+    normalized_roce_median_fy18_21: 22.45
+    normalized_gated_both_evidences: "historical ROCE series + Dahej unwind catalyst"
+    normalized_capped_at_evidenced_median: true
+    blend_40_30_30: "0.40x22.45 + 0.30x8.5 + 0.30x6.6 = 13.51%"
+    continuous_formula: "0.5x13.51 + 7.5 = 14.26x"
+    single_credit_route: "Pillar 1; Strategic ROCE re-rating barred"
+    self_withdrawal_guard_stated: true
     pillar2_multiplier: "0.80x, no growth offset (INDETERMINATE leaning structural)"
+    quality_adjusted_base: 11.41
     pillar3: "3a +0x / 3b +0x (EM 19.2<25) / 3c +0x"
+    shared_catalyst_flagged_not_double_credited: true
     ua_applied: false
-    ua_order_correct: "F2 = F (all_met false); min(F2, 35)"
     sector_cap_absolute: 35
     both_tracks_carried: true
-    divergence_governing: "18.9% >15% -> Track 1 governs entry"
-    hurdle_ratio: {tier: "A", threshold: 1.953, base: 0.169, bull: 0.241, verdict: "STOP"}
+    divergence_governing: "22% >15% -> Track 1 governs entry"
+    destination_pe: {track2_additive_mid: 11.4, track1_rrm_mid: 9.4}
+    hurdle_ratio: {tier: "A", threshold: 1.953, base_t1: 0.216, bull_t1: 0.309, verdict: "STOP"}
     weights_4d: "25/50/25 (grade B)"
-    som_crosscheck: "consistent (14.0% <= 14.3%)"
-    b14_decision_consistent: true
-    b14_position_sizing: "Small cap correct; Medium/Large fail on Gate 0 AVERAGE + Promoter<TRUSTWORTHY"
+    som_crosscheck: "consistent (14.3% = 14.3%)"
+    entry_math: "287/1.953=147; MoS 147x0.80=118"
+    no_silent_fills: true
+    one_improvement_one_mechanism: true
 recomputed_destination_pe: ""
 recomputed_decision: ""
 findings:
-  - {severity: "MINOR", location: "B07 Section 3 recount / evidence_mix.documented", note: "documented recount 22 vs evidence_mix 24, off by 2; no classification impact (phase 1)"}
-  - {severity: "MINOR", location: "B14 L132 / verdict box", note: "Promoter CAUTION cited as L809 AVOID trigger (rule says CONCERN/AVOID); AVOID over-determined by Gate 0 AVERAGE, Hurdle STOP, U/D 0.82x; no decision impact (phase 3)"}
+  - {severity: "MINOR", location: "B07 recount / evidence_mix", note: "documented recount 22 vs 24; no impact (phase 1)"}
+  - {severity: "MINOR", location: "B11 Pillar 1 base PE", note: "14.255 shown as 14.26x not 14.3x; +0.03x, no decision change (phase 3 / 4.5)"}
+  - {severity: "MINOR", location: "B10 normalized_roce.pillar_1_roce_blend_pct", note: "legacy 7.36% label; B11 correctly used 13.51%; no governing effect (phase 3 / 4.5)"}
 critical_count: 0
 major_count: 0
-minor_count: 2
-acceptance_rate: 99    # 104 of 106 audited rules passed (gate0 46/46 + emoat 25/26 + valuation 34/34)
+minor_count: 3
+acceptance_rate: 99    # 98 of 99 audited rules passed (gate0 46/46 + emoat 25/26 + valuation 27/27)

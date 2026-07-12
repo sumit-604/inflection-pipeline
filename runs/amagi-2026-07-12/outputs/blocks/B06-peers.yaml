@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AFFLE-Concall_Nov_2025_Transcript_2.txt is mislabeled: content is the Q2 FY2025 call (quarter ended Sep 30 2024, held Nov 11 2024), one year earlier than the filename indicates and outside AMAGI's Q3-Q4 FY26 concall window; treated as CITED-ONLY, non-contemporaneous background"
+flags:
+  - "No peer discloses a quantified TAM/penetration/SAR figure comparable to AMAGI's $16.9bn/10%/$1.9bn Cloud Modernization framing; cannot verify precision is sector-standard vs. promotional"
+  - "Affle's 'CPCU pricing has never dipped' claim (Q2 FY26 call) sits in tension with AMAGI's framing that modest CPM pressure from volume growth is an unavoidable industry dynamic"
+  - "RateGain's contemporaneous, quantified disclosure of a revenue-impacting customer loss (4% of MarTech revenue, same call) contrasts with AMAGI's initial understatement of its top-5 client renegotiation's margin impact, later revealed a quarter after first mention"
+peers_provided: 12
+verified:
+  - {claim: "AMAGI's repeated deflection on specific 3-year revenue/margin guidance across two consecutive calls is sector-standard practice, not company-specific", peers: ["Newgen", "Tata Elxsi", "RateGain"], anchor_count: 5}
+partially_verified:
+  - {claim: "Ad impressions/volume growth outpacing monetization revenue growth ('modest CPM pressure offset by volume') reflects a real ad-tech-adjacent dynamic", peers: ["Affle"]}
+  - {claim: "CEO's absolute 'no competition' framing in AI/agentic tooling is a recognizable sector rhetorical style, not verifiable as literally true", peers: ["RateGain", "Newgen", "Tata Elxsi"]}
+  - {claim: "Peers with comparable customer-concentration risk manage and disclose it similarly to AMAGI's top-5 renegotiation margin-hit sequencing", peers: ["RateGain", "Affle"]}
+contradicted: []
+unverifiable:
+  - {claim: "AMAGI's quantified $16.9bn cloud TAM / ~10% penetration / $1.9bn SAR +11% YoY framing is consistent with standard peer disclosure practice", peers_checked: ["Newgen", "Tata Elxsi"]}
+peer_coverage_map:
+  - {peer: "Affle", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "CPM/volume mechanic; competitive framing; customer non-disclosure posture"}
+  - {peer: "Affle", quarter: "Q2 FY25 (mislabeled, actually Nov 2024 call)", usage: "CITED-ONLY", contribution: "Non-contemporaneous background on guidance discipline and M&A playbook; no decisive new evidence"}
+  - {peer: "Affle", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Guidance-discipline internal formula; M&A shortlisting disclosure style"}
+  - {peer: "Affle", quarter: "Q4 FY26 (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Explicit medium-term CAGR guidance; repeat-customer non-disclosure; Q4 softness demand signal"}
+  - {peer: "Newgen", quarter: "Q1 FY26 (Jul 2025 call)", usage: "SUBSTANTIVE", contribution: "No-guidance posture verbatim quote; no TAM disclosure; muted-quarter demand signal"}
+  - {peer: "Newgen", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "Partial demand recovery; hedged competitive framing"}
+  - {peer: "Newgen", quarter: "Q3 FY26 (Jan 2026 call)", usage: "SUBSTANTIVE", contribution: "AI-led decision-deferral risk; continued guidance deflection"}
+  - {peer: "RateGain", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "Contemporaneous customer-loss quantification; annual-only guidance cadence"}
+  - {peer: "RateGain", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Absolute 'no other provider comes close' claim; M&A/PPA earnings-drag risk"}
+  - {peer: "Tata Elxsi", quarter: "Q2 FY26 (Oct 2025 call)", usage: "SUBSTANTIVE", contribution: "No TAM disclosure; hedged competitive language; cybersecurity client-risk disclosure"}
+  - {peer: "Tata Elxsi", quarter: "Q3 FY26 (Jan 2026 call)", usage: "SUBSTANTIVE", contribution: "Explicit guidance refusal; cautious hiring/capex posture"}
+  - {peer: "Tata Elxsi", quarter: "Q4 FY26 (Apr 2026 call)", usage: "SUBSTANTIVE", contribution: "Mid-year FY27 aspiration downgrade; fixed-price execution risk"}
+industry_cross_read:
+  demand: "Mixed to cautious across peers Oct-2025 to May-2026: Newgen flags AI-led deferral and elongated decision cycles through Q3 FY26; Tata Elxsi shows volatile segment recovery with FY27 aspiration cut from double-digit to high-single-digit by its final call; Affle and RateGain remain resilient but both flag Q4 FY26 (Jan-Mar 2026) geopolitical softness; no peer describes an unambiguous industry-wide demand boom matching AMAGI's framing"
+  pricing_inputs: "Not closely comparable for most peers (no raw-material COGS); Affle is the nearest analog and reports its own per-conversion pricing has never declined despite rising impression supply, a partial corroboration of AMAGI's volume-outpacing-monetization dynamic but framed as Affle's differentiation, not a shared pressure; Tata Elxsi's cost narrative is wage inflation, not pricing power"
+  capex_cycle: "Split, not a uniform capacity race: Affle and RateGain are actively expanding (data/inventory investment, Sojern M&A, GTM headcount build); Newgen and Tata Elxsi are holding, keeping headcount roughly flat pending demand/utilization confirmation before re-investing"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "AI-driven enterprise decision deferral risk (Newgen, Q3 FY26 call, Jan 20 2026): customers delaying large commitments to see how AI reshapes requirements, relevant to AMAGI's own agentic-monetization adoption timeline but not addressed in AMAGI's concalls"
+  - "M&A integration drag on reported earnings via amortization/deal costs (RateGain, Q3 FY26 call, Feb 16 2026): reported PAT fell YoY despite EBITDA growth post-Sojern acquisition; relevant given AMAGI's undeployed INR1,664cr cash and stated M&A intent with no comparable caution offered"
+  - "Client-side operational risk (cybersecurity incident) cascading into vendor revenue for a full quarter (Tata Elxsi, Q2 FY26 call, Oct 09 2025); risk category not addressed in AMAGI's own concalls"
+  - "Fixed-price/outcome-based contract execution risk described as a 'double-edged sword' with revenue-leakage potential if not executed correctly (Tata Elxsi, Q4 FY26 call, Apr 21 2026); relevant if AMAGI's contract mix shifts toward outcome-linked pricing"
+net_narrative_effect: "complicates"

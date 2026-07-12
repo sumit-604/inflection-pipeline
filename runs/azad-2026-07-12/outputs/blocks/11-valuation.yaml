@@ -1,0 +1,47 @@
+stage: B11-valuation
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Peer P/E, EV/EBITDA, P/B, growth, ROCE unresolved in B10 - peer-relative multiples not used, not fabricated"
+  - "Year 3 net debt estimated (500 Cr base) from capex/CFO trajectory; FY27+ total capex quantum deflected in concalls"
+  - "Diluted shares approximated 6.46 Cr from mcap/CMP; ~0% incremental dilution assumed (QIP complete)"
+flags:
+  - {type: FLAG-CASH, determination: GROWTH-INDUCED, multiplier_applied: 0.90, anchor: "FTTCP ruling 7; CARE p.3; B01/B02/B03"}
+  - {type: FLAG-SHARED-CATALYST, anchor: "FTTCP ruling 10; serial-production ramp drives Pillar1 ROCE + Pillar3 growth"}
+  - {type: FLAG-VALUATION, anchor: "Current PE 121.2x vs destination ~21x -> Hurdle Ratio STOP"}
+  - {type: FLAG-GATE0, anchor: "B01 core 38 backward AVOID; forward read post-QIP artifact"}
+  - {type: FLAG-EXECUTION, anchor: "B05 grade B; WC target missed/re-targeted; GTRE engine slipped 3 calls"}
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 19.0, mid: 20.6, high: 22.0, r_used: 14.0, rrm: 0.94}
+  track2_additive: {low: 20.0, mid: 21.9, high: 23.5}
+  divergence_pct: 6.0
+  governing_track: "Track 1 (RRM) - more conservative; sets entry zone; divergence <15% so tracks agree"
+pillar_detail:
+  roce_used: 13.6
+  roce_base: 14.3
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 0.90
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.10
+  growth_premium: 6.0
+  strategic_premium: 3.0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.32, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 477, base: 720, bull: 951}
+  track2: {bear: 487, base: 737, bull: 975}
+expected_cagr_prob_weighted: -34.3
+entry_range: {low: 295, high: 368}
+mos_price: 295
+upside_downside_ratio: 0
+decision: "AVOID (on-valuation)"
+unresolved_inputs_used:
+  - "Year 3 net debt: conservative assumption ~500 Cr base / 550 bear / 450 bull, because FY27+ capex quantum deflected in concalls (B10 unresolved)"
+  - "FY[Y+2] operational ROCE 16.0%: implied from B10 blended-forward 13.6% and 60/40 weighting"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "AVOID-on-valuation: at Rs 2480 (121x PE) AZAD earns a four-pillar destination PE of only ~21x (ROCE 13.6%, cash 0.90x growth-induced, EM 26, +3x franchise), so base Year-3 fair value ~Rs 720 implies -34% CAGR; the 25% hurdle needs a Rs 295-368 entry. Key risk: Q1 FY27 OCF stays negative and cash turns structural."

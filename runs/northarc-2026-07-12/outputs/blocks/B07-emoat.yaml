@@ -1,0 +1,41 @@
+stage: B07-emoat
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["A2 patent/IP pipeline: BRSR explicitly discloses Not Applicable, no filing data exists to assess trend", "C2 customer/originator concentration: no top-5/top-10 originator-partner AUM concentration disclosure found", "R1 regulatory tailwind quantification postdates the FY24-25 AR and is concall-sourced only, not yet AR-audited", "F1 talent density: BRSR R&D% line blank, no tech/R&D headcount trend disclosed"]
+flags:
+  - {type: FLAG-DATA-INCONSISTENCY, reason: "Proprietary data-point figure inconsistent across sources: AR (audited, FY24-25) states 47.52 million; Q2 FY26 call (Oct-2025) claims 60 million; Q4 FY26 call (May-2026) claims 'over 50 million' - the Jan/May 2026 figures are both above the AR base but internally inconsistent with each other and with chronological order, suggesting loose figure discipline around the company's own headline data-moat claim."}
+  - {type: FLAG-SINGLE-DATAPOINT, reason: "Both Strong-rated categories (D1 proprietary data asset, D2 digital platform) ultimately rest on a single hard proof point each: one audited data-repository figure and one reference third-party client (South Indian Bank) for platform monetization. No second nPOS/NuScore external client is disclosed."}
+em_score: 22
+em_classification: "MODEST"
+active_categories:
+  - {id: "D1", name: "Proprietary data asset", strength: "Strong", evidence_type: "documented", time_to_materialise: "Already active"}
+  - {id: "D2", name: "Digital platform", strength: "Strong", evidence_type: "claim", time_to_materialise: "Already active, scaling"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Already active, improving"}
+  - {id: "B3", name: "Supply chain network effect", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Ongoing"}
+  - {id: "R1", name: "Regulatory & policy tailwind", strength: "Moderate", evidence_type: "claim", time_to_materialise: "Realized, two-sided risk"}
+evidence_mix: {documented: 15, claim: 17, inference: 3}
+completionist_recount: "9 documented items across 5 categories (D1: 47.52mn data-point repository AR p.53, NuScore FY22-23 launch AR p.17; D2: South Indian Bank nPOS co-lending volume AR p.17; G1: rating action AR p.241, cost-of-funds trend, debt/equity trend, DFI debt raise AR p.50, capital adequacy 22.6%; B3: originator-partner count growth 238-368 Inv. Pres. slide 20; F2: B05 promise-delivery reconciliation). 6 of 20 categories score Strong/Moderate, within the 3-6 realistic base rate; no 12+ over-crediting trip wire triggered."
+catalysts_12m:
+  - {catalyst: "D2C mix crossing 62-65% of AUM with loaded NIM holding above 10%", window: "12m", evidence_type: "claim", anchor: "B05 trigger 1; Concall_Jan_2026 line 505-509 (loaded NIM 10.7%)"}
+  - {catalyst: "Second nPOS/NuScore third-party licensing client beyond South Indian Bank", window: "12-24m", evidence_type: "claim", anchor: "Concall_Jan_2026 line 150-151 (early signs of monetization)"}
+  - {catalyst: "Placement + fund-management fee income sustaining >40% YoY growth", window: "12m", evidence_type: "claim", anchor: "B05 trigger 5; Concall_Jan_2026 line 135-138 (placement +73% YoY, fee income +50% YoY)"}
+  - {catalyst: "Cost of funds holding at/under 8.5-8.6% despite rate-cycle reversal", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 32-33; Concall_May_2026 line 272-273, 294"}
+  - {catalyst: "HFC/NCLT exposure resolution disclosed after Q4 FY26 silence", window: "overdue, next call", evidence_type: "documented", anchor: "B05 timeline_slippages; red_flags"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "NuScore/nPOS third-party monetization beyond the single South Indian Bank precedent", converting_evidence: "Second signed multi-year SaaS/API licensing contract with a bank or NBFC, disclosed fee run-rate", first_appears: "Exchange filing, next AR note, or concall", window: "12-24m"}
+  - {optionality: "New credit fund launches (climate, MSME x2, women-entrepreneur) named Q2 FY26, dropped since", converting_evidence: "Fund launch confirmed with initial-close AUM disclosed", first_appears: "Concall or SEBI AIF registration filing", window: "12m+, currently stalled"}
+  - {optionality: "Wealth and insurance distribution via Altifi as a new growth engine", converting_evidence: "Specific product launch, distribution licence, or revenue-line disclosure", first_appears: "Next AR Business Overview section or concall", window: "24-36m"}
+  - {optionality: "HFC exposure NCLT resolution, promised then dropped from disclosure", converting_evidence: "Explicit resolution update, NCLT filing confirmation, or write-back/write-off", first_appears: "Next concall or exchange filing", window: "Overdue, uncertain"}
+  - {optionality: "SMBC strategic-investor stake increase (3.77% to 7.84%) converting into an operational tie-up", converting_evidence: "Signed JV, co-lending, or distribution agreement naming SMBC", first_appears: "Exchange filing or AR related-party note", window: "24-36m, speculative"}
+  - {optionality: "MFI-sector consolidation benefiting NORTHARC's market share (management-claimed ~30% industry contraction)", converting_evidence: "Disclosed originator-partner or AUM market-share data corroborated against peer filings", first_appears: "Concall or industry data source", window: "12-24m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Emerging Moat score of 22 sits in the MODEST band, 3 points short of the 25-point STRENGTHENING threshold that would unlock a HIGH POTENTIAL or TURNAROUND read against the AVERAGE Gate 0 backward score."
+top_moat_risks:
+  - "Both Strong-rated categories (D1 data asset, D2 digital platform) rest on a single hard proof point each and would re-rate down without a second confirming data point in FY26-27 disclosure"
+  - "Proprietary data-point figure is internally inconsistent across the AR (47.52mn, audited) and two concalls (50mn, 60mn), undermining confidence in the headline data-moat claim"
+  - "G1 war chest sits atop structurally negative CFO every year since FY2019 (B01 FLAG-CASH); a funding-market shock would test whether the improved rating actually holds"
+  - "R1 regulatory tailwind (RBI FLDG/ECL clarity) is a two-sided risk, not a one-way benefit - the guideline could be revised again per B05's own kill_signal"

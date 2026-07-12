@@ -1,0 +1,43 @@
+stage: B00-inputs
+company: TATVA
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+concall_mode: NORMAL
+manifest:
+  company: "Tatva Chintan Pharma Chem Ltd"
+  ticker: TATVA
+  cmp: 1326.0
+  market_cap_cr: 3103.0
+  sector_cap_row: "Pharma / CDMO"
+  bse_code: 543321
+  nse_symbol: TATVA
+inventory:
+  annual_report: 1        # Annual_Report_2022.pdf (see gap note: content is FY2024-25)
+  results: 2              # Q3/9M FY26 (Dec 2025); Q4/full-year FY26 (Mar 2026)
+  rating: 0               # ABSENT
+  concalls: 4             # Q1 FY26 (Jul25 call), Q2 FY26 (Oct25), Q3 FY26 (Jan26), Q4 FY26 (May26)
+  concalls_used: 3        # 3 most recent: Q2, Q3, Q4 FY26 (oldest-first)
+  peer_concalls: 12       # ACUTAAS x3, CAMLINFINE x4, CLEAN x4, NEOGEN x3
+  screening: 6_sets       # TATVA + 4 peers (ACUTAAS, CAMLINFINE, CLEAN, NEOGEN), 6 CSVs each
+  presentation: 1
+  other: 0
+concall_quarter_map:      # verified from each transcript cover letter
+  - {file: "Concall_Jul_2025_Transcript.pdf", quarter: "Q1 FY26", call_date: "2025-07-24", period_end: "2025-06-30", used: false}
+  - {file: "Concall_Nov_2025_Transcript.pdf", quarter: "Q2 FY26", call_date: "2025-10-31", period_end: "2025-09-30", used: true}
+  - {file: "Concall_Jan_2026_Transcript.pdf", quarter: "Q3 FY26", call_date: "2026-01-21", period_end: "2025-12-31", used: true}
+  - {file: "Concall_May_2026_Transcript.pdf", quarter: "Q4 FY26", call_date: "2026-05-16", period_end: "2026-03-31", used: true}
+results_map:
+  - {file: "7675a64a-847f-4adc-932a-352bb723d809.pdf", period: "Q3 & 9M FY26 (ended 31 Dec 2025)", filing_date: "2026-01-21", audited: false}
+  - {file: "8a555fa9-3a0d-4363-a34e-3479ecf2f1ae.pdf", period: "Q4 & full-year FY26 (ended 31 Mar 2026)", filing_date: "2026-05-16", audited: true}
+input_gaps:
+  - "No rating PDF (inputs/rating/ absent). Stage 10 marks rating_wc_quote unresolved in phase 3; stage 11 Pillar 2 defaults conservative per DEGRADATION MAP. Phase 1 records the gap only."
+  - "Annual report file is named Annual_Report_2022.pdf but its content is the Annual Report for FY2024-25 (verified from cover/submission letter dated 26 Aug 2025, AGM 26 Sep 2025). Filename is a collector mislabel; stages read it as the FY25 AR. Not stale."
+  - "4 concall transcripts present; per the 3-most-recent rule the oldest (Q1 FY26, Jul 2025 call) was set aside. Q2/Q3/Q4 FY26 used in stage 5."
+  - "sector_cap_row 'Pharma / CDMO' was auto-picked by collect_to_repo (manifest note: 'Sector row auto-picked; verify'). Tatva Chintan is a specialty/performance chemicals maker (structure directing agents/zeolite templates, phase transfer catalysts, electrolyte salts, pharma & agro intermediates, PASC). Flag for phase-3 stage-11 sector cap selection; the Section 1B cap row may need to be specialty chemicals rather than Pharma/CDMO."
+  - "Results: 2 PDFs, both FY26 (Q3/9M and Q4/full-year). No standalone Q1/Q2 FY26 results PDFs, but the audited full-year FY26 print covers the year. Adequate for Gate 0 and assembly."
+flags: []
+company_memory: "none (companies/TATVA.md does not exist; first run for this ticker)"
+prior_run_context: "n/a (run_type full)"

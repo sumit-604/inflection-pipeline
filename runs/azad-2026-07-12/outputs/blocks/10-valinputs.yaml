@@ -1,0 +1,76 @@
+stage: B10-valinputs
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Diluted shares absolute (approximated 6.46 Cr from mcap/CMP)"
+  - "Peer P/E, EV/EBITDA, P/B, 3yr growth, ROCE (Gate 0 peer table has sales/EBITDA/mcap only)"
+  - "Capex and trade payables FY20-FY24 (partial; FY25-26 only)"
+  - "Promoter shareholding %/pledge, contingent liabilities, R&D spend (in AR/Reg.31, not in provided files)"
+flags:
+  - {type: FLAG-CASH, determination: GROWTH-INDUCED, multiplier_applied: 0.90, anchor: "B01/B02/B03; CARE p.3; FTTCP deliberation ruling 7"}
+  - {type: FLAG-GATE0, anchor: "B01 core 38 AVOID, FORTRESS moat 6/12"}
+  - {type: FLAG-EXECUTION, anchor: "B05 grade B; WC target missed and re-targeted; GTRE engine slipped 3 calls"}
+  - {type: FLAG-SHARED-CATALYST, anchor: "FTTCP ruling 10; serial-production ramp drives Pillar1 ROCE + cash multiplier + Pillar3 growth"}
+table:
+  company: "Azad Engineering Limited"
+  ticker: "AZAD"
+  sector: "Precision engineering / industrial-products manufacturing (override of manifest Pharma/CDMO)"
+  business_model_type: "Manufacturing (capital-intensive, Tier-1 OEM supply)"
+  sector_cap_row: "25x (FTTCP override from manifest Pharma/CDMO 38x)"
+  cmp_rs: 2480
+  market_cap_cr: 16013.0
+  diluted_shares_cr: 6.46
+  net_debt_cr: 280.44
+  enterprise_value_cr: 16293.44
+  revenue_fy26_cr: 590.38
+  ebitda_fy26_cr: 217.75
+  ebitda_margin_pct: 36.88
+  pat_fy26_cr: 132.16
+  diluted_eps_rs: 20.46
+  cfo_fy26_cr: -123.26
+  fcf_fy26_cr: -693.97
+  capex_fy26_cr: 570.71
+  book_value_per_share_rs: 240.34
+  dps_rs: 0.00
+  revenue_cagr_20_26_pct: 30.04
+  pat_cagr_20_26_pct: 35.78
+  roce_latest_fy26_statutory_pct: 8.84
+  roce_operational_fy26_pct: 12.0
+  roce_forward_verdict: "RECOVERING (40-60%); Pillar 1 sole authority"
+  roe_latest_fy26_pct: 8.90
+  cfo_pat_latest_fy26: -0.93
+  cfo_pat_cumulative_fy20_26: 0.04
+  wc_days_latest_fy26: 339.7
+  wc_days_2yr_trend: "deteriorating (+72.8d FY25->FY26); CARE 287->344"
+  credibility_grade: "B (Good)"
+  guided_revenue_growth: "FY27+ 25%+; long-term margin 33-35% (FY26 delivered 36.9%)"
+  em_score: 26
+  em_classification: "STRENGTHENING (combined TURNAROUND)"
+  som_implied_revenue_cagr_3yr_pct: 31.0
+  som_implied_revenue_cagr_5yr_pct: 30.5
+  revenue_headroom_x: 25.8
+  runway_class: MASSIVE
+  peer_median_ebitda_margin_pct: 20.69
+  rating_agency: "CARE Ratings Limited"
+  rating_grade: "CARE A; Stable"
+  rating_date: "22 Jun 2026"
+  pillar_1_roce_basis: "OPERATIONAL ~12% FY26; blended forward ~13.6%; base ~14.3x; NOT statutory 8.84% nor mgmt 20.7%"
+  cash_conversion_basis: "GROWTH-INDUCED; 0.80x base + 0.10x offset = 0.90x"
+  strategic_premium_override: "+3x (operator override)"
+  sector_cap_override: "25x (not binding; raw < 25x)"
+  ua_multiplier: "does NOT apply (FII+DII ~22% > 3%)"
+  return_tier: "Tier A (25% hurdle via TURNAROUND)"
+conflicts:
+  - {field: "Sector cap row", value_a: "Pharma/CDMO 38x (manifest)", value_b: "Precision engineering 25x (FTTCP deliberation ruling 4)", used: "25x"}
+  - {field: "Pillar 1 ROCE basis", value_a: "statutory 8.84% (B01) / mgmt adj 20.7% (B03)", value_b: "operational ~12% (FTTCP override 1)", used: "operational 12%"}
+  - {field: "Strategic Premium", value_a: "+2x (analyst draft)", value_b: "+3x (FTTCP override 2)", used: "+3x"}
+unresolved:
+  - {field: "Diluted shares absolute", why: "approximated from mcap/CMP", where: "DRHP / Reg.31 filing"}
+  - {field: "Peer P/E, EV/EBITDA, P/B, growth, ROCE", why: "peer EPS/net debt/BVPS not extracted", where: "peer ARs / screener"}
+  - {field: "Promoter holding/pledge, contingent liabilities", why: "in AR/Reg.31, not provided", where: "Reg.31 filing, AR FY26 notes"}
+  - {field: "FY27+ total capex quantum", why: "deflected in concalls", where: "Q1 FY27 concall"}
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: false, all_met: false}
+credibility_grade: "B"
+rating_wc_quote: "The company's working capital cycle remained elongated at 344 days as on March 31, 2026, compared to 287 days in the previous year, primarily considering increased inventory holding period. The average inventory holding period rose to 262 days in FY26 from 209 days in FY25, driven by higher inventory requirements for products under development that involve customised alloys, which must be procured in bulk due to minimum order quantity constraints. In addition, inventory levels remained elevated at the end of FY26 due to the commissioning of three dedicated units for key customers. This is expected to normalise once serial production begins. The average collection period also remained elevated at 163 days in FY26 (PY: 157 days) and is likely to stay stretched considering operations, with export receivables subject to extended credit terms of 120-180 days. Meanwhile, the average creditor period remained stable at 80 days in FY26 (PY: 79 days). To improve working capital efficiency, the company is evaluating a Just-in-Time (JIT) inventory model and is also exploring non-recourse factoring arrangements for receivables, which are expected to support a gradual reduction in inventory and debtor levels over the medium term. (CARE Ratings Limited, 22 Jun 2026, rating PDF p.3, Elongated working capital cycle subsection)"

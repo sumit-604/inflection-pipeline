@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+mode: phase-3-finalize
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-GATE0, FLAG-VALUATION, FLAG-EXECUTION, FLAG-SHARED-CATALYST]
+confidence_delta: {numerical: 96, redflag: 92, framework: 100, peer: 100, overall: 92}
+valuation_decision: "AVOID"
+entry_range: {low: 295, high: 368}
+mos_price: 295
+destination_pe: {track1_rrm_mid: 20.6, track2_additive_mid: 21.9}
+hurdle_verdict: "STOP"
+zone_reachability: "MARKET-UNLIKELY ZONE - entry top Rs 368 is 72.9% below lowest tested annual close Rs 1,359.65 and 85.2% below CMP Rs 2,480; classify DEEP WATCH not actionable WATCHLIST"
+headline: "Fortress moat cannot outrun 121x price"
+falsification_metric: "Q1 FY27 consolidated operating cash flow negative with working capital days at or above 344 (August 2026)"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Fortress-quality precision engineering franchise (37% EBITDA margins, marquee-OEM lock-in) earns a four-pillar destination PE of only ~21x yet trades at 121x, so entry needs an ~85% de-rating; entry-discipline teaching example, sharpened by CARE's 'receivables likely to stay stretched' language contradicting the management growth-induced framing."

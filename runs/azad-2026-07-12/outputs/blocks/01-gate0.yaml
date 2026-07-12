@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "promoter shareholding pattern (holding %, 3yr change, pledge) not in provided data (E1,E2,E3)"
+  - "contingent liabilities not in provided data (E4)"
+  - "R&D/revenue not disclosed anywhere in provided data (M6)"
+  - "regulated-segment listed-player count / licensing evidence not in provided data (M7)"
+  - "capex breakdown FY2020-FY2024 not in provided data, only aggregate investing CF (affects B2,B3)"
+  - "trade payables FY2020-FY2024 not in provided data (affects B4,M12)"
+flags:
+  - {type: FLAG-GATE0, reason: "Core score 38/100 = AVOID classification driven by Block A (4/20) and Block B (0/20), both traceable to FY2025 QIP (~Rs 700 Cr) and FY2024 IPO capital infusions funding an active capex ramp (CWIP Rs 79.78 Cr to Rs 256.68 Cr) ahead of incremental EBIT/CFO; deal-breaker 4 (cumulative CFO/PAT 0.04 <0.50) driven by FY2023, FY2024 and especially FY2026 (-123.26 Cr) operating cash outflows against working-capital build. Growth (18/20), balance sheet (16/20) and moat profile (FORTRESS, 6/12 present) are strong; this is a documented post-capital-raise rebase pattern, not an operating-quality deterioration; flagged forward, does not halt the run."}
+data_years: 7
+fy_range: "FY2020 to FY2026"
+blocks: {A: 4, B: 0, C: 18, D: 16, E: 0}
+core_score: 38
+moat_score: 26
+grand_total: 64
+moats_confirmed: 6
+moat_class: "FORTRESS"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A=4 <8 -> max GOOD (driven by FY2025 ROCE 8.12% and FY2026 ROCE 8.84%, post-QIP capital base expansion)"
+  - "2: Block B=0 <8 -> max GOOD (FY2023 -10.21 Cr, FY2024 -6.95 Cr, FY2026 -123.26 Cr CFO)"
+  - "4: cumulative CFO/PAT=0.04 <0.50 -> max AVERAGE (same years, most acute in FY2026)"
+history_downgrade: false
+data_notes:
+  - "ROCE FY2020-FY2024 computed via Capital Employed = Net Worth + Borrowings proxy (Data Sheet lacks current/non-current liability split for those years); FY2025-FY2026 use actual audited Total Assets - Current Liabilities (results FY26 p.4)"
+  - "ROE FY2020 uses closing Net Worth only, no FY2019 opening balance in provided data"
+  - "B2/B3 (FCF metrics) computed on FY2025-FY2026 subset only; capex not isolable for FY2020-FY2024, PARTIAL DATA"
+  - "WC Days (B4, M12) full formula only computable FY2025-FY2026 (payables data gap FY2020-FY2024); R+I-only proxy shown for earlier years"
+  - "M9 Brand gross-margin proxy used: (Revenue - Raw Material Cost) / Revenue, both AZAD and peers"
+  - "No loss-to-profit swing: PAT positive every year FY2020-FY2026 (low point FY2023, Rs 8.51 Cr)"
+data_years_note: "7 years FY2020-FY2026, pre-IPO financials included as reported in screener-Data_Sheet.csv"
+block_b_trend: "deteriorating - cumulative CFO/PAT of 0.04 across FY20-26, with FY2026 CFO of -123.26 Cr against PAT of +132.16 Cr the single clearest number"

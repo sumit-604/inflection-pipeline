@@ -1,0 +1,43 @@
+stage: B12c
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+scope: "full (phase 1 gate0+emoat + phase 3 valuation)"
+gate0:
+  rules_checked: 46
+  fails: []
+emoat:
+  rules_checked: 26
+  fails:
+    - {severity: "MINOR", rule: "completionist recount vs evidence_mix", detail: "recount states 22 documented items; evidence_mix.documented=24. Off by 2; no score/classification impact."}
+valuation:
+  rules_checked: 34
+  fails: []
+  minor:
+    - "B14 cites Master L809 'Promoter CONCERN/AVOID' as an AVOID trigger for a CAUTION-band promoter; AVOID is over-determined by Gate 0 AVERAGE + Hurdle STOP + U/D 0.82x, so no decision impact (MINOR)"
+  confirmed:
+    pillar1_continuous_formula: true
+    fttcp_verdict_sole_authority: "RECOVERING 40-60% -> 60/40 blend (7.36% -> 11.2x)"
+    single_credit_route: "Pillar 1; Strategic Premium withheld"
+    pillar2_multiplier: "0.80x, no growth offset (INDETERMINATE leaning structural)"
+    pillar3: "3a +0x / 3b +0x (EM 19.2<25) / 3c +0x"
+    ua_applied: false
+    ua_order_correct: "F2 = F (all_met false); min(F2, 35)"
+    sector_cap_absolute: 35
+    both_tracks_carried: true
+    divergence_governing: "18.9% >15% -> Track 1 governs entry"
+    hurdle_ratio: {tier: "A", threshold: 1.953, base: 0.169, bull: 0.241, verdict: "STOP"}
+    weights_4d: "25/50/25 (grade B)"
+    som_crosscheck: "consistent (14.0% <= 14.3%)"
+    b14_decision_consistent: true
+    b14_position_sizing: "Small cap correct; Medium/Large fail on Gate 0 AVERAGE + Promoter<TRUSTWORTHY"
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B07 Section 3 recount / evidence_mix.documented", note: "documented recount 22 vs evidence_mix 24, off by 2; no classification impact (phase 1)"}
+  - {severity: "MINOR", location: "B14 L132 / verdict box", note: "Promoter CAUTION cited as L809 AVOID trigger (rule says CONCERN/AVOID); AVOID over-determined by Gate 0 AVERAGE, Hurdle STOP, U/D 0.82x; no decision impact (phase 3)"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 99    # 104 of 106 audited rules passed (gate0 46/46 + emoat 25/26 + valuation 34/34)

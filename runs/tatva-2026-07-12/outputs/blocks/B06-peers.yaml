@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Destocking-to-restocking demand narrative CONTRADICTED by 2 of 4 peers (CLEAN, NEOGEN) describing persistent soft/subdued demand across the same FY26 window Tatva frames as recovery (HIGH)"
+  - "'Sole India supplier' framing for hybrid-battery electrolytes CONTRADICTED by NEOGEN's own overlapping India lithium-ion electrolyte/electrolyte-salt manufacturing business, though the narrower 'hybrid' sub-segment is never directly addressed by any peer (MEDIUM)"
+  - "Jolva's 3x groundbreaking/commissioning slippage looks more severe in magnitude and pattern (reframed as optimization) than the one comparable peer capex delay found (CLEAN, ~1 quarter, cost-contained, candidly disclosed) (MEDIUM)"
+  - "Semiconductor 8-9-year qualification cycle claim not corroborated in duration by the one peer with a comparable initiative (ACUTAAS's Indichem JV tracking to ~2-year capex-to-revenue), though the broader multi-year, revenue-guidance-shy pattern is corroborated (LOW-MEDIUM)"
+peers_provided: 15
+verified: []
+partially_verified:
+  - {claim: "~30-40% RM cost spike in amines/ammonia-linked inputs Q4 FY26/H1 2026 tied to Iran conflict", peers: ["CAMLINFINE", "NEOGEN"]}
+  - {claim: "Jolva-type greenfield groundbreaking/commissioning slippage as industry-wide EPC bottleneck vs Tatva-specific", peers: ["CLEAN", "ACUTAAS"]}
+  - {claim: "8-9-year semiconductor-chemical qualification-to-dispatch cycle and speculative INR2,000cr revenue range", peers: ["ACUTAAS"]}
+contradicted:
+  - {claim: "Destocking-to-restocking industry recovery narrative through FY26", contradicting_peer: "CLEAN, NEOGEN", quote_anchor: "CLEAN Nov 2025 call: 'Not Q3 for sure' on volume growth return; NEOGEN May 2026 call: 'the global chemical industry continues to operate in a challenging environment marked by persistent overcapacity, pricing volatility, and subdued demand across several end-use sectors'"}
+  - {claim: "'Sole India supplier' of hybrid-battery electrolytes", contradicting_peer: "NEOGEN", quote_anchor: "NEOGEN May 2026 call: 'Neogen is building India's first non-FEOC compliant electrolyte salt manufacturing platform backed by proven Japanese technology'; NEOGEN Ionics contributed INR13cr Q4 FY26 / INR36cr FY26 revenue from India-based lithium electrolyte salt production"}
+unverifiable:
+  - {claim: "Euro 7-driven SDA demand tailwind and 15%->70% market-share trajectory vs Sarchem", peers_checked: ["ACUTAAS", "CLEAN"]}
+  - {claim: "SRF's crop-protection demand caution reflected in peers' own agro-intermediate order books", peers_checked: ["CAMLINFINE", "ACUTAAS"]}
+peer_coverage_map:
+  - {peer: "ACUTAAS", quarter: "Q1 FY26", usage: "SUBSTANTIVE", contribution: "Baba Fine Chem semiconductor soft-demand quote; FY26 order-book/capex baseline"}
+  - {peer: "ACUTAAS", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Indichem JV groundbreaking/capex on-schedule, no slippage disclosed"}
+  - {peer: "ACUTAAS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "FY26 guidance raised 25%->30% on order-book strength; semiconductor revenue-guidance refusal"}
+  - {peer: "CAMLINFINE", quarter: "Q1 FY26", usage: "SUBSTANTIVE", contribution: "Sluggish demand, initial destocking-clearance timeline"}
+  - {peer: "CAMLINFINE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Confirmed destocking-clearance delay vs prior guide"}
+  - {peer: "CAMLINFINE", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Channel stocks still liquidating, not cleared; tariff/pricing context"}
+  - {peer: "CAMLINFINE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Quantified conflict-driven RM cost spike (phenol +76%, caustic +100%) and freight disruption"}
+  - {peer: "CLEAN", quarter: "Q1 FY26", usage: "SUBSTANTIVE", contribution: "Earliest 'slower demand / numbness' disclosure, longitudinal baseline"}
+  - {peer: "CLEAN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "'Not Q3 for sure' on volume recovery; phenol price disruption from US trade restrictions"}
+  - {peer: "CLEAN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Recovery pushed 3-4 quarters out; agchem cycles postponed; low RM cost commentary; China competitive pricing pressure"}
+  - {peer: "CLEAN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Performance Chemical 2 ~1-quarter capex delay, cost-contained; geopolitical uncertainty framing"}
+  - {peer: "NEOGEN", quarter: "Q1 FY26", usage: "SUBSTANTIVE", contribution: "Baseline Ionics/electrolyte revenue and volume-growth figures"}
+  - {peer: "NEOGEN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Battery-materials JV announcements; volume-growth commitment despite headwinds"}
+  - {peer: "NEOGEN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "'Steady recovery' framing that reverses by Q4; electrolyte demand still developing"}
+  - {peer: "NEOGEN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Explicit subdued-demand/overcapacity statement; named Middle East geopolitical RM cost pressure; India electrolyte-salt manufacturer positioning"}
+industry_cross_read:
+  demand: "Split and tilted cautious: CLEAN and NEOGEN describe persistent or reversing softness through FY26 (NEOGEN's own tone flips from 'steady recovery' Q3 to 'subdued demand' Q4); only ACUTAAS shows clean acceleration, concentrated in low-base new verticals, not a broad specialty-chem cycle."
+  pricing_inputs: "Two peers (CAMLINFINE, NEOGEN) independently corroborate a Middle East conflict-driven RM cost and freight shock in Q4 FY26, broadly consistent in timing and rough magnitude with Tatva's own claim though in different input chemistries (phenol/caustic/bromine, not amines/ammonia); CLEAN separately flags Chinese producer pricing power capping realizations even where Indian costs rise."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: 3 of 4 peers (ACUTAAS, CLEAN, NEOGEN) are actively expanding despite mixed-to-soft demand; NEOGEN notably expanding into its own 'subdued demand' commentary with rising leverage (INR1,330cr total debt). CAMLINFINE is the outlier, in active cash-conservation mode with no new capex disclosed."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Shipping/freight disruption and working-capital strain from the Middle East conflict (CAMLINFINE May 2026: ~20% quarterly sales impact from shipment delays) - not disclosed as a comparable risk in Tatva's own transcripts"
+  - "Chinese producer pricing power capping realizations even where Indian input costs rise (CLEAN Feb 2026, hydroquinone/MEHQ) - no parallel disclosure from Tatva"
+  - "Trade-policy risk (anti-dumping duties, tariff differentials) reshaping channel economics for a full year-plus (CAMLINFINE, all four calls) - absent from Tatva's disclosed risk set"
+  - "Customer-side inventory management disrupting even qualified/approved product flows (NEOGEN Feb 2026: semiconductor customer skipped an order despite qualification being complete) - relevant demand-side risk to Tatva's own semiconductor dispatch timeline"
+  - "Persistent industry-wide overcapacity as a standing structural condition (NEOGEN May 2026) - not framed this way anywhere in Tatva's own commentary"
+net_narrative_effect: "complicates"

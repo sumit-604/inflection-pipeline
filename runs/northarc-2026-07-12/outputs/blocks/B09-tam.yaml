@@ -1,0 +1,45 @@
+stage: B09-tam
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No disclosed borrower-count/penetration data for Consumer Finance or Rural segments (only available for MSME via SIDBI/CRISIL), so Method 2 bottom-up triangulation could only be built for the MSME segment"
+  - "No segment-level ATS/ticket-size cut of the INR 12.8tn 'secured MSME loans' formal-market figure, so the product-fit filter within MSME is judgment-based rather than sourced"
+  - "Affordable Housing Finance (~19.48tn market) and Vehicle Finance (~9.4tn NBFC AUM) market sizes were sourced but excluded from core TAM/SAM since these are IR-only pass-through/co-lending exposures (~6% and ~19% of the 6,802cr IR book), not core D2C product lines"
+  - "No disclosed 3-5yr targets for NAIM fund AUM, digital-partner channel, or AHF/VF graduation, so SAM-expansion-lever revenue additions are mostly NOT FOUND rather than estimated"
+flags:
+  - "AR's headline 'INR 82 trillion India retail credit market' figure (p.11) lacks disclosed scope/segment breakdown; not used as primary TAM anchor, treated as macro context only"
+  - "Rural/MFI segment: AR (CRISIL-dated 28-Jun-2025) projects industry GLP growing from 3.8tn to 5tn by FY27-28; independent MFIN/CareEdge data through Sep-Nov-2025 shows GLP actually contracted to ~2.9-3.34tn - AR's own sub-segment growth projection is stale/overtaken within months of publication"
+  - "mgmt_claim_cr uses the AR's MSME-only credit-gap figure (INR 117tn); Northern Arc does not publish a company-wide TAM claim spanning all three served segments in one number"
+market_definition: "Indian formal + credit-gap retail lending market across MSME, non-gold consumer finance, and rural microfinance, served via D2C branches/digital and Intermediate-Retail co-lending/placement channels"
+tam_cr: {conservative: 795600, realistic: 2851200}
+sam_cr: 606800
+sam_pct_of_tam: 21
+som_3yr_cr: 4777
+som_5yr_cr: 7286
+som_implied_revenue_cagr: {yr3: 26.0, yr5: 25.0}
+current_sam_share_pct: 0.39
+revenue_headroom_x: 254
+tam_growth_pct: 17
+runway_class: "MASSIVE"
+mgmt_claim_cr: 1872000
+mgmt_claim_ratio: 23.5
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient - CRAR 22.6% (Mar-26) vs ~15% regulatory floor gives balance-sheet headroom for guided AUM doubling; funding-mix access (bank/DCM), not capital adequacy or market size, is the real constraint"
+methods_used:
+  - "top-down (segment CRISIL/SIDBI credit-market sizing)"
+  - "bottom-up (MSME unit-economics on underserved-borrower count)"
+  - "peer AUM aggregation (directional cross-check)"
+  - "global benchmark (household-credit-to-GDP, India vs China)"
+stale_data_flags:
+  - {datapoint: "Rural/MFI industry portfolio growth to INR 5tn by FY27-28 at 8-10% CAGR", source: "Northern Arc AR FY24-25 MD&A, CRISIL report dated 28-Jun-2025", year: 2025}
+searches_performed:
+  - "India MSME credit gap CRISIL 2025 INR 117 trillion NBFC lending market"
+  - "MAS Financial Services Vivriti Capital Five-Star Business Finance AUM 2025 2026 crore"
+  - "India microfinance industry gross loan portfolio 2025 2026 MFIN report NBFC-MFI trillion"
+  - "Cholamandalam Investment Finance AUM FY26 Poonawalla Fincorp AUM FY26 crore IIFL Finance AUM FY26"
+  - "India affordable housing finance market size 2025 trillion CRISIL"
+  - "India vehicle finance market size 2025 CRISIL used vehicle commercial vehicle loan trillion"
+  - "India household debt to GDP ratio 2025 compared to China household credit GDP percent"
+searches_skipped: []

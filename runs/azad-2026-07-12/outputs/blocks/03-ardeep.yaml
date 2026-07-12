@@ -1,0 +1,51 @@
+stage: B03-ardeep
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "FY25 CFO/PAT ratio at/below the 0.7x quality threshold (standalone 0.71x = Rs62.89 Cr CFO / Rs88.53 Cr PAT; consolidated 0.62x = Rs53.67 Cr CFO / Rs87.32 Cr PAT), driven by a genuine ~Rs867 Mn negative net working-capital swing during the growth ramp, not by artificial inflators; per the task's Gate 0 context this deteriorated sharply into FY26 (CFO -Rs123 Cr vs PAT +Rs132 Cr), making this the top monitorable from this stage."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Watch", p5: "Clean", p6: "Watch", p7_best_fit: "GARP (watchlist, fundamentals-positive) / Capex-Led Growth (pass)"}
+overall_quality: 6.5            # /10 with the four 25% components
+quality_components: {governance: 7, accounting: 6, balance_sheet: 8, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not stop -- clean unmodified opinions, no fraud, no default, no going-concern language despite two qualified CARO clauses and subsidiary-level cash-loss qualifications."
+  - "Phase 2: would not stop -- 14 of 15 triple-pass findings verified exactly (1 unit-conversion discrepancy found and corrected); no restatement, no manipulation evidence."
+  - "Phase 3: would not stop on mechanical grounds, but would flag the consolidated CFO/PAT ratio and the adjusted-vs-statutory ROCE gap as the top items requiring management explanation."
+  - "Phase 4: would not stop -- every MD&A number checked ties out correctly, but the Adjusted ROCE headline and the QIP deployment-lag omission from the risk section warrant direct questions."
+  - "Phase 5: would not stop -- cleanest phase, no pledge, no promoter selling, no compliance breach."
+  - "Phase 6: would not stop -- front matter is factually accurate but selectively features flattering metrics over statutory equivalents."
+triple_pass_verification:     # Phase 2 reconciliation result
+  verified: 14                # of 15
+  discrepancies:
+    - {finding_rank: 15, triple_pass_value: "Non-audit ('other services') fee Rs0.30 Cr FY24 to Rs1.10 Cr FY25", ar_value: "Rs0.03 Cr FY24 to Rs0.11 Cr FY25 (i.e. Rs0.30 Mn to Rs1.10 Mn per Note 29(i) -- these are Rupee-Million figures, not Rupee-Crore as stated); the directional finding (more than tripled, +267%) and the cross-checked total-auditor-compensation figures (Rs1.53 Cr FY25 vs Rs1.64 Cr FY24, including capitalised IPO/QIP fees) are both correct and independently verified exactly", note_ref: "Note 29(i) standalone, p.161"}
+missing_risks:
+  - {risk: "Customer concentration (top-5 at 51.4% of revenue, up from 45.1%; internally contradictory 11-customer-vs-1-customer >10% disclosure)", evidence_anchor: "Note 31(c)/credit-risk note consol, p.229/p.234"}
+  - {risk: "New unhedged EUR-denominated borrowing exposure of Rs82.2 Cr (Rs0 FY24), no hedging programme disclosed", evidence_anchor: "FX exposure note, standalone p.177-178"}
+  - {risk: "QIP capital-deployment lag -- 91% of gross proceeds (Rs637.54 Cr) idle in FDs/escrow at FY25 year-end", evidence_anchor: "CARO Annexure B cl.x(b), standalone p.121"}
+  - {risk: "Cash-flow-to-earnings conversion risk (CFO/PAT at/below 0.7x threshold both bases)", evidence_anchor: "Standalone and consolidated cash flow statements, p.129 and p.192"}
+  - {risk: "P&M useful-life/depreciation-policy risk (15yr vs Schedule II 7.5yr, no independent technical report)", evidence_anchor: "Note 2.2.E(ii), standalone p.135-136"}
+  - {risk: "Subsidiary NCI put-option/redemption-liability crystallisation risk (Rs22.56 Cr floor, Rs17.15 Cr liability)", evidence_anchor: "Note 43 consolidated, p.243"}
+guidance_table:
+  - {claim: "FY26 promises continued momentum", number: "No numeric target given -- qualitative only", timeframe: "FY26", credibility: "Low -- no quantified target despite precise FY25 disclosure elsewhere, cannot be tested against delivery"}
+  - {claim: "Order book provides revenue visibility", number: "Rs6,080 Cr total (Energy ~Rs3,500 Cr, A&D ~Rs1,720 Cr, O&G ~Rs850 Cr)", timeframe: "Multi-year long-term contracts, no cadence disclosed", credibility: "Medium -- specific and segment-split, but conversion timeline not given"}
+  - {claim: "Adjusted ROCE 20.7%, healthy and strengthening", number: "20.7% adjusted vs 9% statutory Schedule III ROCE FY25 (19% FY24)", timeframe: "FY25", credibility: "Low -- headline metric diverges more than 2x from the company's own mandatory Schedule III disclosure"}
+  - {claim: "Named marquee OEM contract wins", number: "GE Vernova USD165.5Mn; Siemens Energy EUR90.1Mn; MHI USD83Mn 5-yr LTCPA; Honeywell USD16Mn Phase-1", timeframe: "FY25 disclosed, multi-year execution", credibility: "Medium-High -- specific, named, verifiable against future revenue recognition"}
+  - {claim: "QIP proceeds earmarked 75% capex / 25% general corporate purposes", number: "Rs525 Cr capex + Rs156.2 Cr GCP of Rs700 Cr gross QIP", timeframe: "FY25 raise, ongoing deployment", credibility: "Medium -- clear stated allocation, but actual deployment trails badly: 91% (Rs637.54 Cr) remained undeployed at FY25 close"}
+monitorables:
+  - {metric: "Consolidated CFO/PAT ratio", threshold: ">0.85x sustained (vs 0.62x FY25 consol, reportedly negative in FY26)", where: "Consolidated cash flow statement, quarterly results", why: "Top earnings-quality signal; already at/below threshold and reportedly worse in FY26 per task context"}
+  - {metric: "QIP idle-fund balance", threshold: "Declining toward zero from Rs637.54 Cr at FY25 close", where: "Quarterly monitoring-agency report to exchanges; capital advances and CWIP notes", why: "Tests whether QIP capital is converting into productive capacity or sitting idle earning FD yields"}
+  - {metric: "Top-5 customer revenue concentration", threshold: "No deterioration from 51.4% FY25; watch for any GE Vernova/Mitsubishi order deferral", where: "MD&A segment disclosure, quarterly investor presentations", why: "Concentration rose from 45.1% to 51.4% YoY; a top-5 OEM slippage directly hits the growth thesis"}
+  - {metric: "Capital advances conversion into capitalised PPE", threshold: "Rs108.43 Cr converting to Gross Block within 2-3 quarters", where: "Other non-current assets note, PPE note", why: "Large advance balance well ahead of capex/PPE growth signals execution lag risk"}
+  - {metric: "Statutory (unadjusted) Schedule III ROCE", threshold: "Recovery toward double digits from 9% FY25", where: "Schedule III ratio note, every filing", why: "Company's headlined Adjusted ROCE 20.7% diverges sharply from the statutory figure; track the unadjusted number"}
+strengths_top3:
+  - "Genuine, diversified Rs6,080 Cr order book with named marquee OEM contracts (GE Vernova, Siemens Energy, Mitsubishi Heavy Industries, Honeywell) spanning three end-markets, cross-verified across Chairman's letter, Highlights, and MD&A."
+  - "Exceptionally strong balance sheet: net cash position, D/E 0.17x, current ratio 5.30x, contingent liabilities just 1.13% of net worth, zero borrowing defaults confirmed by CARO clause ix, zero EPS dilution."
+  - "Clean, low-judgment point-in-time revenue recognition, single low-risk KAM, unqualified/clean-IFC opinion, no fraud/whistleblower/SEBI findings, and no promoter share pledge or selling through the QIP dilution (promoter's absolute share count unchanged FY24 to FY25)."
+red_flags_top3:
+  - "Consolidated CFO/PAT of 0.62x in FY25 (standalone 0.71x, right at threshold), deteriorating sharply into FY26 per Gate 0 context (CFO -Rs123 Cr vs PAT +Rs132 Cr) -- the largest earnings-quality concern."
+  - "Rs22.56 Cr direct-to-equity derivative/put-option charge on Azad Prime NCI bypasses the P&L entirely (25.8% of consolidated PAT) and was not selected as a Key Audit Matter in either auditor's report."
+  - "Plant & machinery depreciated over 15 years, exactly double the Schedule II default of 7.5 years, no independent technical report cited -- understates depreciation and inflates the Adjusted EBITDA/ROCE figures management headlines, which diverge more than 2x from the statutory Schedule III ROCE (9% vs 20.7%)."
+best_fit_strategy: "Capex-Led Growth (Pass); GARP Watchlist leaning Pass pending valuation assessment"
+one_line_verdict: "Genuine capex-led OEM growth on real order wins; cash conversion and idle QIP capital are the watch items."

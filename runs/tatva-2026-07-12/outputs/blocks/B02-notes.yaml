@@ -1,0 +1,49 @@
+stage: B02-notes
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Inventory write-downs/obsolescence provision: NOT FOUND as a separately disclosed line item (Note 13)"
+  - "Statutory CSR amount required (2% of average net profits under s.135): NOT FOUND in the notes reviewed (only actual spend of Rs 1.257 Cr disclosed, Note 32); likely in Board's Report, outside stage 2 scope"
+  - "Guarantees for subsidiaries: NOT FOUND as an explicit statement either way beyond the contingent liabilities claims table (Note 46)"
+  - "Top customer revenue in absolute Rs terms: NOT FOUND, disclosed only as percentages (Note 41B)"
+  - "Unsatisfied performance obligations: not disclosed, practical expedient used for contracts <=12 months (Note 36(ii))"
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables grew 18.1% (Rs 69.85 Cr to Rs 82.53 Cr) while revenue fell 2.7-4.0%; top-3 customer concentration in receivables rose to 61%; zero ECL/loss-allowance provisioned in either year despite this concentration (Note 15, Note 41B(ii), pp.240-241, 266)"}
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Consolidated PBT down 82.6% and PAT down 81.2% YoY, principally traced to a Rs 30.38 Cr negative swing in changes-in-inventories (destocking)", note_ref: "Notes 24, 28, 33; P&L p.213", rating: "Red Flag", why: "Single largest driver of the FY25 earnings collapse; confirmed against the face P&L"}
+  - {rank: 2, finding: "Parent's share of consolidated PAT collapsed from 97% to 6% while foreign trading subsidiaries captured 81%, even though parent holds 97% of net assets and 99.97% of non-current assets; standalone return on WOS equity rose 525%", note_ref: "Note 50(a) p.278; Note 41A(ii) p.266; standalone Note 50(l) p.203", rating: "Red Flag", why: "Near-total profit-share inversion in one year; raises a transfer-pricing/margin-migration question"}
+  - {rank: 3, finding: "Management's standalone explanation for the profit decline (rising raw material costs) contradicts the notes, which show cost of materials consumed down 2.8% YoY", note_ref: "Note 26/P&L p.213 vs standalone Note 50(l)(vi) p.204", rating: "Red Flag", why: "Direct narrative-vs-numbers mismatch from management"}
+  - {rank: 4, finding: "All three executive/whole-time director KMPs received a 27.9% pay rise in the year consolidated PAT fell 81.2%", note_ref: "Note 42B p.268", rating: "Red Flag", why: "Clearest governance red flag in the filing: direct pay-performance disconnect"}
+  - {rank: 5, finding: "Group swung from net cash (Rs -24.02 Cr) to net debt (Rs 22.29 Cr) within one year; cash fell 67.8%; three new working-capital lenders added; debt book almost entirely short-term/demand", note_ref: "Notes 18, 45 pp.244-245, 275", rating: "Watch", why: "Liquidity/financing profile materially changed; rollover risk on demand facilities, though undrawn headroom (Rs 184.25 Cr) is ample"}
+  - {rank: 6, finding: "First-time capitalisation of internally generated product-development costs; R&D capex roughly doubled", note_ref: "Notes 6, 7, 32(ii) pp.235, 252", rating: "Watch", why: "New capitalisation-policy judgement area; positive if genuine pipeline investment through the down-cycle, needs consistency monitoring"}
+  - {rank: 7, finding: "Deferred tax asset on unabsorbed losses jumped 6.4x (Rs 2.15 Cr to Rs 13.88 Cr) in the same year operating performance deteriorated", note_ref: "Note 23(iii)-(iv) pp.247-248", rating: "Red Flag", why: "Recoverability rests on management judgement of future taxable profits, now more exposed post profit-collapse"}
+  - {rank: 8, finding: "Zero ECL/loss-allowance on trade receivables in both years despite top-3 customers representing 61% of the receivables book", note_ref: "Notes 15, 41B(ii) pp.240-241, 266", rating: "Watch", why: "Fully unprovided, concentrated receivables book is a conservatism gap; feeds FLAG-CASH"}
+  - {rank: 9, finding: "SDA product revenue fell 27.7% YoY, the largest single product-line decline, coinciding with Customer 1's revenue share falling from 36% to 21%", note_ref: "Notes 36B(i), 41B(i) pp.254, 266", rating: "Red Flag", why: "Probable large-customer volume pullback in the core product line"}
+  - {rank: 10, finding: "Non-current assets are 99.97% India-based despite foreign subsidiaries capturing the majority of Group profit", note_ref: "Note 41A(ii) p.266", rating: "Watch", why: "Geography/asset-vs-profit mismatch sharpens the transfer-pricing question"}
+  - {rank: 11, finding: "Direct tax contingent liability jumped 10.2x on a new s.147/144B reassessment order for AY2020-21 received 24 March 2025", note_ref: "Note 46(iv) p.276", rating: "Watch", why: "Five-year-old assessment year reopened at FY25 close; track through appeal"}
+  - {rank: 12, finding: "Two children of executive-director KMPs employed in sales/business-development roles, drawing compensation", note_ref: "Note 42(1)(b), 42B(i), 42C pp.267-269", rating: "Watch", why: "Governance-relevant related-party disclosure alongside the pay-performance concern; amounts immaterial"}
+  - {rank: 13, finding: "Tax reconciliation shows near-perfect offsetting non-allowable/allowable expense lines (+/- Rs 23.59 Cr); contract asset and liability both roughly tripled amid auditor's #1 KAM being revenue cut-off risk", note_ref: "Note 33(i) p.253; Notes 21, 36 pp.246, 254-255; Auditor's Report p.205", rating: "Watch", why: "Disclosure-quality and revenue cut-off questions worth a direct management question"}
+  - {rank: 14, finding: "Debt service coverage improved to 6.35x (from 4.84x) and net capital turnover to 2.42x (from 1.83x); no covenant breaches; CWIP/intangible-under-development ageing clean with no overdue projects", note_ref: "Standalone Note 50(l) p.203; Note 18(ii) p.245; Notes 5(iii), 7(ii) pp.234-235", rating: "Clean", why: "Symmetric bull-bear counterweight; near-term financial discipline intact"}
+  - {rank: 15, finding: "Institutional (mutual fund) shareholding nearly halved (12.84% to 5.34%) while retail holders rose sharply; promoter holding unchanged at 72.02% and fully unpledged", note_ref: "Note 16(ix), 16(v) p.243", rating: "Watch", why: "Notable ownership-composition shift for the ownership/liquidity discussion; institutional-ownership level itself is not treated as a risk"}
+red_flags:
+  - "Consolidated PBT/PAT collapse (82.6%/81.2%) driven mainly by inventory destocking, not disclosed as such by management (Notes 24, 28, 33)"
+  - "Management's raw-material-cost narrative for the profit decline contradicts the notes' own cost-of-materials-consumed figure, which fell 2.8% YoY (Note 26; standalone Note 50(l)(vi))"
+  - "Parent company's consolidated profit share collapsed from 97% to 6% while foreign trading subsidiaries captured 81%, an unverified-arm's-length transfer-pricing question (Note 50(a); Note 33(iv))"
+  - "Executive KMP remuneration rose 27.9% in the year consolidated PAT fell 81.2% (Note 42B)"
+  - "Deferred tax asset on unabsorbed losses jumped 6.4x in the same year operating performance deteriorated sharply (Note 23)"
+  - "SDA product revenue fell 27.7% YoY coinciding with a large customer's revenue share falling from 36% to 21% (Notes 36B(i), 41B(i))"
+questions_for_mgmt:
+  - "Given cost of materials consumed fell 2.8% YoY, why does the standalone ratio note attribute the profit decline to rising raw material costs rather than the Rs 30.38 Cr inventory destocking swing the notes show is the actual driver?"
+  - "What is the transfer-pricing methodology governing parent-to-subsidiary sales, given the parent's profit share fell from 97% to 6% while subsidiaries holding under 0.01% of Group non-current assets captured 81%?"
+  - "What was the rationale for the 27.9% executive remuneration increase in a year consolidated PAT fell 81.2%, and will FY26 pay be linked more directly to performance?"
+  - "What customer-level credit assessment supports zero ECL allowance on trade receivables despite 61% concentration in the top three customers?"
+  - "Which Group entity generated the tax losses behind the 6.4x jump in the deferred tax asset on unabsorbed losses, and what supports management's probable-recovery judgement given FY25's profit collapse?"
+receivables_trend: "deteriorating - gross trade receivables grew 18.1% (Rs 69.852 Cr to Rs 82.527 Cr, Note 15 p.240) while revenue from operations fell 2.7-4.0% (Note 24 p.249); top-3 customer concentration in receivables rose to 61% in FY25 from a comparable prior-year concentration (Note 41B(ii) p.266); zero ECL/loss-allowance provisioned in either year despite this (Note 15 p.240); receivables >6 months remain immaterial (0.06% FY25) so ageing quality itself has not degraded, but the growth-vs-revenue divergence and zero provisioning against rising concentration together support a deteriorating classification for FLAG-CASH purposes"
+restatements_found:
+  - "Note 55(c) (General, consolidated p.279, standalone p.202): generic boilerplate only - 'Comparative figures for the previous year/s have been re-classified, re-grouped or re-arranged, wherever necessary, to conform with the presentation and classification of the current year.' No specific line-item restatement or quantified impact identified anywhere in the notes or Statement of Changes in Equity across all three passes."
+going_concern_language: "NONE - only standard SA 570 auditor-responsibility boilerplate present in the Independent Auditor's Report (p.207: '...whether a material uncertainty exists related to events or conditions that may cast significant doubt on the ability of the Group to continue as a going concern...'); unmodified opinion, no emphasis-of-matter paragraph, no CARO 2020 qualifications (p.209); Note 2(a) Basis of preparation (p.219) makes no reference to going-concern doubt"

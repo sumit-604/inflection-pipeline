@@ -67,6 +67,14 @@ Remaining gap: the numeric FY25-FY26 over-12-month receivables ageing bucket. CR
 
 Rating sensitivity (fold into monitorables): CRISIL upgrades on revenue growth above 40% with operating margin sustained above 18% and GCAs below 210 days; downgrades on net cash accrual below Rs 25 Cr, or large debt-funded capex or a substantial working capital increase.
 
+## Operator sign-off (2026-07-12)
+
+Operator Keerti Kaushik signed off, in the operator's words: "the Annual Report is corrupted, so I think we can move on. We can sign off the FTTCP protocol."
+
+Accepted at sign-off: the annual report is corrupted and unavailable, so the FY25-FY26 over-12-month trade receivables ageing bucket cannot be anchored from the primary source. The GROWTH-INDUCED cash conversion ruling stands on the CRISIL evidence (clean FY22-24 ageing reconciled to anchored totals, CRISIL's export-credit-terms framing with no bad-debt flag through FY26) without it. The single falsifier stays live: a future over-12-month bucket above roughly 15% of receivables, or rising ECL, reverts the determination to STRUCTURAL. FY26 ROCE is to be computed at stage 10 from the anchored components (EBIT Rs 36.26 Cr over capital employed), since a clean annual report ROCE is not obtainable.
+
+Final deliberation verdict as it stands: FTTCP composite +2 out of 8, DEEP WATCH leaning AVOID. On price, WATCHLIST deep: not a buy at Rs 666, fair entry near Rs 280 to 320, roughly half of CMP. The call turns on the FY27 operating cash flow print and the receivables ageing.
+
 ## Phase 3 handoff (authoritative for /finalize)
 
 | Field | Value |

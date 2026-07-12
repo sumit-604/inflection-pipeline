@@ -1,0 +1,52 @@
+stage: B03-ardeep
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent"]
+flags:
+  - {type: FLAG-CASH, reason: "Standalone CFO negative Rs -1,768.85 lakh FY25 (CFO/PAT -0.687) in the same year PAT grew 89.3% to Rs 2,573.78 lakh; driven by Trade Receivables consuming Rs 7,005.83 lakh of cash (Cash Flow Statement p.90), only partly offset by Trade Payables generating Rs 4,113.90 lakh; directly traceable to the 417% receivables spike that is 46.3% related-party (Note 15, Note 35(iii))"}
+  - {type: FLAG-RPT-CONCENTRATION, reason: "Related-party revenue 27.68%/31.53% of FY25 revenue with a forward FY26 AGM-approved combined ceiling of Rs 120cr (76% of FY25 revenue, 6.3x/1.3x statutory materiality threshold) for two same-management foreign entities; risk entirely absent from MD&A/Board's Report risk disclosures; Chairman personally chairs/directs the two most RPT-significant related parties (Note 35; AGM Notice Items 5&6, pp.152-153)"}
+  - {type: FLAG-DOCUMENT-QUALITY, reason: "Independent Auditor's Report (standalone p.80, consolidated p.114) cites 'Indian Accounting Standards... Rules, 2015' as the opinion basis, contradicting the company's own Note 2a 'Basis of Preparation' (p.92, p.126) which confirms Indian GAAP/AS under Section 133; Annexure C stated KMP remuneration % changes (CFO 30.93%, CS Nil) do not reconcile with Note 35(ii) figures (CFO ~55.0%, CS ~89.0%); Chairman's Message states 74% revenue growth vs 70.3%/70.26% stated elsewhere"}
+phase_verdicts: {p1: "red_flag", p2: "red_flag", p3: "red_flag", p4: "red_flag", p5: "red_flag", p6: "red_flag", p7_best_fit: "GARP (watchlist)"}
+overall_quality: 4            # /10 with the four 25% components
+quality_components: {governance: 4, accounting: 4, balance_sheet: 6, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: sole KAM is an uncorroborated contingent liability (later quantified at 81.24% of PAT) plus the auditor's opinion misstates the accounting framework (Ind AS vs actual Indian GAAP) in both standalone and consolidated reports"
+  - "Phase 2: 13 of 15 triple-pass Top findings verified exactly at source; sole KAM quantified at 81.24% of FY25 PAT with no independent corroboration"
+  - "Phase 3: standalone CFO negative (Rs -1,768.85 lakh) in the same year PAT grew 89.3% to a record high, driven by related-party-heavy receivables build-up"
+  - "Phase 4: management's own risk disclosures omit the filing's largest quantifiable risk (RPT concentration); Chairman's Message contradicts the MD&A's own EBITDA margin table"
+  - "Phase 5: Executive Director sits on the Audit Committee; Annexure C remuneration disclosures do not reconcile with Note 35(ii) for the CFO and Company Secretary"
+triple_pass_verification:
+  verified: 13                 # of 15
+  discrepancies:
+    - {finding_rank: 6, triple_pass_value: "RM intensity 69.2% of revenue FY25", ar_value: "~69.7-69.8% recomputed; MD&A COGS/Revenue gives ~72.9%", note_ref: "Notes 20/21 p.105-106; Note 20 p.139 consol; MD&A p.77"}
+    - {finding_rank: 12, triple_pass_value: "CARO Annexure A clause (iii)(b)", ar_value: "Correct clause is CARO Annexure A (ii)(b), p.83 standalone / p.117 consolidated", note_ref: "Note 36 p.111; CARO Annexure A ii(b)"}
+missing_risks:
+  - {risk: "Related-party revenue/receivable concentration with a forward FY26 ceiling (76% of FY25 revenue)", evidence: "Note 35; AGM Notice Items 5&6, pp.152-153; absent from MD&A 'Risks and Concerns' (p.76-77) and Board's Report risk-management policy (p.59)"}
+  - {risk: "Cash conversion / working-capital risk (negative FY25 CFO)", evidence: "Cash Flow Statement p.90-91; absent from MD&A 'Staying Financially Sound' framing (p.19)"}
+  - {risk: "Customer/counterparty concentration beyond related parties", evidence: "No top-5/top-10 customer disclosure found anywhere in the AR; NOT FOUND IN DOCUMENT"}
+  - {risk: "Contingent tax/litigation risk (sole KAM, 81.24% of PAT)", evidence: "Note 30/29, Auditor's KAM p.80/114; absent from MD&A risk table"}
+  - {risk: "Managerial remuneration escalation (+185.7% total director remuneration vs PAT +89.3%)", evidence: "Note 35(ii) p.109-110; AGM Notice Item 7 p.148-149; not framed as a risk anywhere"}
+guidance_table:
+  - {claim: "Revenue CAGR target", number: "40-50%", timeframe: "next 3-5 years", credibility: "Watch - aggressive given FY25 growth partly RPT-inflated"}
+  - {claim: "Order book", number: "Rs 189 crore (Rs 1,890 million)", timeframe: "as of FY25 year-end", credibility: "Unverifiable - no order-book note in Indian GAAP financials"}
+  - {claim: "AI project win", number: "USD 1.8 million", timeframe: "undated", credibility: "Low materiality, anecdotal"}
+  - {claim: "AS9100 aerospace certification", number: "in process", timeframe: "ongoing", credibility: "Watch - verifiable only at a future date"}
+monitorables:
+  - {metric: "Trade receivables turnover / DSO", threshold: "Return toward <60 days from ~118 days", where: "FY26 quarterly results, next AR Note 15/38", why: "Tests whether FY25 receivables spike normalises or entrenches"}
+  - {metric: "Related-party revenue % and FY26 Rs 120cr ceiling utilisation", threshold: ">35% RPT revenue or ceiling utilisation outpacing proportionate growth", where: "FY26 AR Note 35, quarterly RPT disclosures", why: "Tests whether growth genuinely diversifies from same-management counterparties"}
+  - {metric: "CFO and CFO/PAT ratio", threshold: "Positive CFO, CFO/PAT >0.7", where: "FY26 half-yearly/annual cash flow statement", why: "Direct test of earnings quality"}
+  - {metric: "EBITDA margin", threshold: "Recovery toward or above FY24's 25.4%", where: "FY26 quarterly/annual MD&A financial performance table", why: "Tests whether 'operational efficiency' narrative is real"}
+  - {metric: "GST Excess ITC Claim (Rs 1,300 lakh) / Income Tax appeal (Rs 790.81 lakh)", threshold: "Any adverse order or favourable settlement", where: "Next AR Note 30/CARO vii(b), subsequent-event disclosure", why: "Sole KAM, 81.24% of FY25 PAT"}
+  - {metric: "Audit Committee composition and Annexure C/Note 35 remuneration reconciliation", threshold: "Executive Director removed; figures reconcile", where: "FY26 Board's Report Annexure C, Note 35 equivalent", why: "Tests governance/disclosure-QC improvement"}
+strengths_top3:
+  - "Fully deleveraged balance sheet post-IPO (D/E 0.00 vs 0.28 FY24), clean traceable IPO fund utilisation, no goodwill/impairment/ESOP dilution"
+  - "Genuine capacity investment (capex +226% YoY, new SMT lines, AS9100 pursuit, US subsidiary) - real capex-led growth evidence"
+  - "Unmodified audit opinion, no going-concern exception, no fraud, no SEBI action, no pledge, clean whistleblower record, standalone and consolidated"
+red_flags_top3:
+  - "Negative operating cash flow (Rs -17.69cr standalone) in the same year PAT grew 89.3% to a record high, driven by a 417% receivables spike that is 46.3% related-party"
+  - "Related-party revenue concentration 27.68-31.53% of FY25 revenue with a forward FY26 ceiling of Rs 120cr (76% of FY25 revenue), unmentioned in management's own risk disclosures, compounded by a new unexplained Rs 404.99 lakh related-party expense and Chairman's directorships at the flagged related parties"
+  - "Multiple internal document inconsistencies (Chairman's narrative vs MD&A numbers on growth/margin; auditor's report citing wrong accounting framework in both reports; Annexure C vs Note 35(ii) remuneration mismatch for CFO and CS)"
+best_fit_strategy: "GARP (watchlist)"
+one_line_verdict: "GARP transition candidate on watchlist: growth is real but cash-backed quality is not yet proven"

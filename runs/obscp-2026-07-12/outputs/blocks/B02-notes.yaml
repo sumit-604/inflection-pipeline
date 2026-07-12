@@ -1,0 +1,43 @@
+stage: B02-notes
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR pp.3-59: corrupted/garbled font encoding, unreadable even visually (Board's Report, MD&A, Corporate Governance Report)"
+  - "AR pp.78-101: blank/truncated in source PDF — note-pages 5-6 of the 6-page Notes document plus the entire numbered schedule-notes package (Note 3 through at least Note 29: RPT table, contingent liabilities/litigation, receivables ageing, inventory detail, subsidiaries/investments, borrowings instrument table, payables MSME ageing, provisions movement, deferred tax reconciliation, revenue disaggregation, EPS reconciliation, CSR, capital commitments, segment reporting) — all NOT FOUND, none estimated"
+  - "RPT note number itself blank/illegible in source (CARO Annexure A para xiii, p.67)"
+flags:
+  - {type: FLAG-CASH, reason: "OCF Rs 8.85 Cr vs PAT Rs 16.76 Cr (~52.8% conversion); Trade Receivables +62.3% YoY and Inventory +79.0% YoY vs 24.1% revenue growth; Trade Payables +118.3% YoY partially funding buildup; receivables ageing and ECL adequacy unrecoverable (Notes 14/15 truncated) so flag cannot be resolved to clean, caps at PROCEED WITH CAVEATS"}
+  - {type: FLAG-ACCOUNTING-QUALITY, reason: "Diluted EPS (Rs 8.12) exceeds Basic EPS (Rs 6.85) FY2025, confirmed genuine and unexplained across two verification passes; arithmetically anomalous under AS 20; weighted-average reconciliation unrecoverable (Note 26 truncated)"}
+  - {type: FLAG-ACCOUNTING-QUALITY, reason: "Short-term Provisions negative Rs (0.27) Cr FY25 vs positive Rs 0.66 Cr FY24, confirmed arithmetically real via balance-sheet cross-footing; cause unrecoverable (Note 11 truncated)"}
+accounting_quality: 3
+top_findings:
+  - {rank: 1, finding: "Entire numbered notes-schedule package (Notes 3-29) NOT FOUND due to doubly-degraded source AR (pp.3-59 corrupted font, pp.78-101 truncated)", note_ref: "Notes 3-29, pp.78-101", rating: "RED"}
+  - {rank: 2, finding: "Diluted EPS (Rs 8.12) exceeds Basic EPS (Rs 6.85) FY2025, confirmed genuine and unresolved; FY2024 Basic=Diluted=Rs 6.84", note_ref: "Note 26, p.72", rating: "RED"}
+  - {rank: 3, finding: "Cash conversion weak: OCF Rs 8.85 Cr vs PAT Rs 16.76 Cr (~52.8%); receivables +62.3%, inventory +79.0% YoY vs 24.1% revenue growth", note_ref: "Balance Sheet p.71; Cash Flow p.73", rating: "RED"}
+  - {rank: 4, finding: "Trade Payables +118.3% YoY (Rs 25.31 Cr vs Rs 11.59 Cr) vs +25.3% combined purchase-base growth", note_ref: "Note 9, p.71", rating: "RED"}
+  - {rank: 5, finding: "Short-term Provisions negative Rs (0.27) Cr FY25 vs positive Rs 0.66 Cr FY24, confirmed real", note_ref: "Note 11, p.71", rating: "RED"}
+  - {rank: 6, finding: "Related-party loans aggregate Rs 1.53 Cr FY25 vs Rs 1.00 Cr FY24 (+52.9%); counterparty breakdown unrecoverable", note_ref: "Note 13, p.71; CARO iii, p.65", rating: "YELLOW"}
+  - {rank: 7, finding: "EPCG export obligation Rs 8.09 Cr over 6 yrs from 26-12-2024; blocks (50%+60%) sum to 110%, genuine AR drafting inconsistency", note_ref: "Note 2.3(b), pp.75-76", rating: "YELLOW"}
+  - {rank: 8, finding: "Auditor found voucher edits under mandatory audit-trail feature FY25, attributed to staff unfamiliarity", note_ref: "Auditor's Report, pp.62-63", rating: "YELLOW"}
+  - {rank: 9, finding: "Effective tax rate ~18.8% FY25 vs ~25.17% statutory; qualitative reconciliation unrecoverable", note_ref: "Note 6, pp.71-72", rating: "YELLOW"}
+  - {rank: 10, finding: "Private-to-Public conversion (28 Jun 2024) with Rs 57.16 Cr fresh capital/premium; Reserves +550.8%, Balance Sheet +83.2%", note_ref: "Note 1, p.74", rating: "GREEN"}
+  - {rank: 11, finding: "Deleveraging FY25 (LT borrowings -21.8%, ST -56.2%) funded by equity raise not operating cash; no default per CARO", note_ref: "Notes 5&8 p.71; CARO ix, p.66", rating: "GREEN"}
+  - {rank: 12, finding: "Finance costs +16% despite falling average borrowings; unreconciled (missing borrowings note)", note_ref: "Note 23, p.72", rating: "YELLOW"}
+  - {rank: 13, finding: "Other Income more than doubled (Rs 1.08 to Rs 2.41 Cr); ~Rs 1.55 Cr composition unexplained", note_ref: "Note 19, p.72", rating: "YELLOW"}
+  - {rank: 14, finding: "Disclosure contradiction: Note 2 states no investments while CARO confirms subsidiary/JV entities and RPT lending", note_ref: "Note 2/3 p.76; CARO iii,v pp.65,68", rating: "YELLOW"}
+  - {rank: 15, finding: "Statutory dues overdue >6 months per CARO, bounded by Rs 1.62 Cr Other Current Liabilities; RPT note ref blank in source", note_ref: "Note 10 p.71; CARO vii(b),xiii pp.66-67", rating: "YELLOW"}
+red_flags:
+  - "Diluted EPS (Rs 8.12) exceeds Basic EPS (Rs 6.85) FY2025 — anomalous under AS 20, confirmed, unresolved (Note 26, p.72)"
+  - "Negative short-term provisions Rs (0.27) Cr FY25, confirmed real, mechanism unexplained (Note 11, p.71)"
+  - "Working-capital quality: receivables +62.3%, inventory +79.0%, payables +118.3% vs 24.1% revenue growth; OCF/PAT ~52.8%"
+questions_for_mgmt:
+  - "Reconcile FY2025 EPS given Diluted (Rs 8.12) exceeds Basic (Rs 6.85) — what weighted-average share counts and dilutive instruments? (Note 26, p.72)"
+  - "What caused Short-term Provisions to swing from Rs 0.66 Cr to negative Rs (0.27) Cr? Provide movement schedule. (Note 11, p.71)"
+  - "Provide receivables ageing, single-customer concentration, and drivers of receivables +62.3%/inventory +79.0% vs 24.1% revenue."
+  - "Clarify EPCG export-obligation block structure (50%+60% = 110% over 6-year window) and progress on the Rs 8.09 Cr obligation."
+  - "Counterparty detail for the Rs 1.53 Cr related-party loans (Note 13, +52.9%); confirm RPT note number blank in CARO xiii (p.67)."
+receivables_trend: "deteriorating - Trade Receivables Rs 34.93 Cr FY25 vs Rs 21.53 Cr FY24 (+62.3%) vs Income from Operations +24.1%; ageing, concentration, ECL adequacy NOT FOUND (Note 15 truncated)"
+restatements_found: []
+going_concern_language: "NONE - CARO xix p.68 unmodified 12-month liquidity opinion; no management going-concern disclosure in readable Notes 1-2 or Auditor's Report"

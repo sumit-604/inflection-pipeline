@@ -1,0 +1,32 @@
+stage: B08-promoter
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial               # AR pages 2-59 and 78-101 unreadable; 10 of 12 WebFetch document reads blocked (HTTP 403 via proxy). WebSearch (32 queries) succeeded.
+input_gaps:
+  - "AR pages 2-59 unreadable (font corruption) — Board's Report, MGT-9, Corporate Governance Report, detailed RPT schedule not read"
+  - "AR pages 78-101 blank/truncated — RPT schedule likely lost here too"
+  - "DRHP/RHP 'Outstanding Litigation and Material Developments' section (p.235) not retrieved — WebFetch 403 on all 3 mirrors tried"
+  - "Glassdoor/AmbitionBox employee sentiment not retrieved — WebFetch 403"
+  - "Exact family relationships between several promoter individuals (Leekha-Narang-Verma pairs) unconfirmed"
+  - "SEBI SCORES complaint DB and exhaustive MCA/RoC directorship search not directly queryable this run"
+  - "Role of Bluwat AG / Blum family and ESS U Enterprises within promoter group not established"
+flags: []                      # verdict CAUTION, not CONCERN/AVOID — FLAG-PROMOTER not triggered
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "No non-compete agreement between promoters/promoter-group entities and OBSC Perfection (self-disclosed RHP risk factor)", evidence_tier: "VERIFIED", source: "OBSC Perfection RHP risk factors (via chittorgarh.com review summary)", date: "2024-10"}
+  - {finding: "Primary raw material (bright-bar steel) sourced structurally from promoter-controlled Omega Bright Steel & Components Pvt Ltd; pricing/arm's-length basis not independently verified", evidence_tier: "MEDIA REPORTED", source: "company investor materials via WebSearch aggregation", date: "2024-2025"}
+  - {finding: "Nov 2025 acquisition of cold-forging assets (Rs 12.45 cr) from Omega Bright Steel Pvt Ltd is a disclosed related-party transaction; independent valuation/fairness-opinion status not found", evidence_tier: "MEDIA REPORTED", source: "NSE corporate filing 'OBSCP Forging Machinery Acquisition Investor Release'", date: "2025-11-15"}
+  - {finding: "DRHP 'Outstanding Litigation' section could not be read — genuine evidence gap, not confirmed clean", evidence_tier: "UNVERIFIED", source: "DRHP index (p.235), content inaccessible", date: "2024"}
+transition_evidence:
+  - {item: "Two new independent directors added 2026 (Saurabh Priya Singh eff. ~31 Mar 2026; Mohit Bhardwaj eff. ~27 May 2026), expanding independent bench from 2 to 4", source: "NSE corporate announcements", date: "2026-03 / 2026-05"}
+  - {item: "CRISIL BBB+/Stable assigned to bank facilities, first third-party credit-rating anchor found", source: "CRISIL rating rationale", date: "2026-07-03"}
+  - {item: "Zero pledge maintained; explicit 'no new encumbrances' Reg 31(4) disclosure for FY26", source: "NSE filing", date: "FY26"}
+  - {item: "Oct 2024 IPO introduced public float (23.58%) and institutional float (2.94%) to a previously wholly family-owned company", source: "NSE shareholding pattern", date: "2024-10 to 2026-01"}
+pledge_pct_latest: 0
+pledge_trend: "stable at zero — no pledge at listing (Oct 2024) through latest disclosure; explicit 'no new encumbrances' filed for FY26"
+external_rating_found: "CRISIL BBB+/Stable dated 2026-07-03 (public; NOT in inputs/rating/ folder). Relevant to FLAG-CASH rating-rationale evidence; could be fetched for phase 3 if reachable."
+verdict_basis: "No red flags surfaced anywhere searches reached (clean SEBI/criminal/tax record, zero pledge, no auditor/CFO/CS churn, board actively adding independent directors) — but four scorecard dimensions rest on genuine unreadable/inaccessible evidence (DRHP litigation section, AR RPT schedule, employee sentiment) layered on a real structural RPT dependency (promoter-controlled raw-material supplier, no non-compete, recent related-party asset buy) whose pricing fairness is undisclosed; that gap-plus-structural-exposure combination holds this at CAUTION rather than TRUSTWORTHY."
+searches_skipped: ["WebFetch DRHP PDF (403)","WebFetch RHP mirrors (403)","WebFetch screener.in (403)","WebFetch zaubacorp (403)","WebFetch careratings Omega Bright Steel (403)","WebFetch glassdoor (403)","WebFetch sebi.gov.in (403)","Direct SEBI SCORES query (no tool access)","Exhaustive MCA/RoC per-individual search (no tool access)"]

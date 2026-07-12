@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Peer transcripts read from pdftotext -layout plain-text extractions, not source PDFs directly; image-heavy source PDFs (esp. Divgi TorqTransfer, ~3.6MB each) exceeded the read tool's effective 32MB size limit as native PDFs. No extraction-quality loss observed on cross-check."]
+flags:
+  - "Q5 CONTRADICTED: three peers facing comparable Iran-war/tariff cost pressure reaffirmed rather than cut medium-term margin-expansion guidance in the same period"
+  - "Q2: no peer corroborates an industry-projected CV softening ahead; peers are bullish into FY27"
+  - "Q6: no peer names BEL/BDL specifically; closest analog (RACL-BHEL) is slow and unquantified"
+peers_provided: 16
+verified: []
+partially_verified:
+  - {claim: "China+1 sourcing shift and INR depreciation vs Yuan translating into broad-based export order wins", peers: ["DIVGIITTS", "TALBROAUTO", "RACLGEAR"]}
+  - {claim: "Strong CV volumes in H2 FY26 with industry-projected softening ahead", peers: ["TALBROAUTO", "RACLGEAR"]}
+contradicted:
+  - {claim: "Precision-engineering/forging peers cutting medium-term margin-expansion guidance citing tariffs/Iran war/shipping costs", contradicting_peer: "PRECAM, RACLGEAR, TALBROAUTO", quote_anchor: "PRECAM Q4/FY26 (Jun 2026): 'we hope that this is a short-term scenario'; TALBROAUTO Q4/FY26 (May 2026): '17% definitely' margin guidance reaffirmed same call as West Asia cost-pressure disclosure; RACLGEAR Q4/FY26 (Jun 2026): Rs565cr FY27 guidance unchanged despite same-call inflation commentary"}
+unverifiable:
+  - {claim: "Tariff-driven pricing pressure followed by restoration/order surge as tariffs resolved", peers_checked: ["DIVGIITTS", "PRECAM"]}
+  - {claim: "Tata AutoComp aggressively expanding wallet share, jumping into top-3 customers within a year", peers_checked: ["RACLGEAR", "TALBROAUTO"]}
+  - {claim: "Defense-sector order wins with BEL, BDL, or other DPSUs, pace of defense revenue scaling", peers_checked: ["RACLGEAR", "PRECAM"]}
+  - {claim: "Capacity-driven margin dilution or elevated depreciation/overhead drag during large capex ramps comparable to Supa/Sanand", peers_checked: ["DIVGIITTS", "PRECAM"]}
+peer_coverage_map:
+  - {peer: "DIVGIITTS", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "DIVGIITTS", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "DIVGIITTS", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "DIVGIITTS", quarter: "Q4/FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "PRECAM", quarter: "Q1 FY26 (Aug 2025)", usage: "CITED-ONLY"}
+  - {peer: "PRECAM", quarter: "Q2 FY26 (Dec 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "PRECAM", quarter: "Q3 FY26 (Mar 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "PRECAM", quarter: "Q4/FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "RACLGEAR", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "RACLGEAR", quarter: "Q2 FY26 (Dec 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "RACLGEAR", quarter: "Q3 FY26 (Feb 2026)", usage: "CITED-ONLY"}
+  - {peer: "RACLGEAR", quarter: "Q4/FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "TALBROAUTO", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "TALBROAUTO", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "TALBROAUTO", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "TALBROAUTO", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE"}
+peers_substantive: 14
+peers_cited_only: 2
+peers_unused: 0
+industry_cross_read:
+  demand: "Broad FY26 recovery across all four peers, attributed predominantly to domestic GST 2.0 rate cuts (Sept 2025) rather than export/tariff dynamics; PCL outlier where Indian strength masks European deterioration (MFT GmbH insolvency)."
+  pricing_inputs: "Consensus Iran/West-Asia-war-linked RM and freight inflation from ~Apr-Jun 2026 across PCL, RACL, Talbros with 1-3 quarter OEM pass-through lag; all frame it as temporary; Divgi shows no such commentary and the most stable margins."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all four peers mid-cycle on order-visibility-backed capex, corroborating OBSC's Supa/Sanand buildout as consistent with sector behavior."
+peer_mentions_of_company: []
+risks_peers_raise: ["European subsidiary insolvency (PCL MFT GmbH, Rs48.8cr write-off)", "Cyberattack/operational disruption in export supply chain (Talbros-JLR, ~Rs10cr)", "Export incentive/policy reversal (RACL road-tax benefit halved, ~Rs1cr/yr)", "EV-to-ICE reversal among global OEMs (PCL)", "Single-customer concentration crystallizing (RACL-KTM insolvency, 6-8 month halt)", "Labour code cost impact (Divgi, PCL)"]
+net_narrative_effect: "complicates"

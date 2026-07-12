@@ -1,0 +1,41 @@
+stage: B00-inputs
+company: OBSCP
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: false          # manifest said concalls_available:false, OVERRIDDEN: 2 genuine transcripts present
+inventory:
+  annual-report: 1              # Annual_Report_2025.pdf (FY25) — RECOVERED, see ar_recovery
+  results: 0                    # folder absent
+  rating: 0                     # folder absent
+  concalls: 2                   # H2 FY25 (19 May 2025), Q4 FY26 (21 May 2026)
+  peer-concalls: 12             # DIVGIITTS x4, PRECAM x4, RACLGEAR x4? , TALBROAUTO x4
+  screening: 6_sets             # OBSCP screener-* plus 4 peers (DIVGIITTS, PRECAM, RACLGEAR, TALBROAUTO)
+  presentation: 1              # Investor_Presentation_1.pdf (37pp, reads clean)
+  other: 0
+concall_quarter_map:
+  - file: Concall_May_2025_Transcript.pdf
+    quarter: "H2 FY25"          # held 19 May 2025, per transcript p1 subject line
+  - file: Concall_May_2026_Transcript.pdf
+    quarter: "Q4 FY26"          # held 21 May 2026, per transcript p1 subject line
+input_gaps:
+  - "results/ folder absent — no standalone results PDFs. Gate 0 runs from screener CSVs; stage 10 will mark latest-period fields unresolved (phase 3)."
+  - "rating/ folder was absent at phase 1 — RESOLVED in phase 2: operator supplied CRISIL BBB+/Stable rationale dated 2026-07-02, now at inputs/rating/CRISIL_Rating_Rationale_2026-07-02.pdf. Anchors FY26 financials, confirms growth-induced WC, documents the Rs 1,200 Cr order book, and anchors customer concentration (top 5 = 50-55%, largest 15-20%). See fttcp-deliberation.md CRISIL integration section."
+  - "ANNUAL REPORT TRUNCATED BY COLLECTOR: source PDF (12.1MB) ended mid-stream with no xref/trailer/%%EOF and object 2 (shared /Resources map) lost. Rebuilt: reconstructed object 2 (TPL1..TPL101 -> Form XObjects), synthesized Catalog, null-stubbed 88 missing referenced objects, rebuilt xref. Pages 78-101 LOST (blank) — these hold the detailed numbered notes-to-accounts schedules (Notes 3-29: receivables ageing, related-party, revenue breakup, segment detail, borrowings table, provisions movement, deferred tax, EPS reconciliation). Original truncated file preserved at inputs/_recovery/."
+  - "ANNUAL REPORT FONT CORRUPTION (independent second defect, verified visually by orchestrator on p30 and by stage-02): pages ~3-59 (Board's Report, MD&A, business description, Corporate Governance Report) are a digital-text layer with a broken/subset embedded font — they render as glyph noise (e.g. '2024-25' appears as 'trtvtw') even visually, NOT recoverable by the Read tool. Only pages 1 (cover letter, digital text, clean) and 60-77 (SCANNED IMAGES: Auditor's Report + CARO/ICFR pp.60-70, Balance Sheet/P&L/Cash Flow pp.71-73, accounting-policy Notes 1-2 pp.74-77) are readable. NET READABLE AR = p1 + pp.60-77. Consequence: AR narrative (MD&A/board report/governance prose) is UNAVAILABLE from the AR; qualitative narrative is instead sourced from the investor presentation (clean, 37pp) + the 2 concalls; historical financials are sourced from screener CSVs (which carry the full history), not the AR front-matter. Stages 3 and 4 run degraded accordingly; every AR figure a stage cannot read is NOT FOUND, not cipher-decoded."
+  - "MANIFEST DEFECT (collector v3): concalls_available set false while two genuine FY26/FY25 earnings transcripts are present. Overridden to NORMAL concall mode using both. Same defect class as KARNIKA 2026-07-11."
+  - "MANIFEST DEFECT (collector v3): sector_cap_row = 'EPC / Civil construction' but OBSCP is precision auto-components / precision engineering (peer set: Divgi TorqTransfer, Precision Camshafts, RACL Geartech, Talbros Auto — all auto-parts). Sector cap almost certainly wrong; flagged for operator confirmation before phase-3 valuation (stage 11 sector cap selection)."
+  - "Stage-0 operator pause (single permitted question) could not be delivered: AskUserQuestion stream closed in this remote session (same as KARNIKA 2026-07-11). Proceeded on documented evidence-maximizing defaults per that precedent; all gaps recorded here and surfaced in the gate recommendation."
+company_identifiers:
+  cin: "L27100DL2017PLC314606"
+  nse_symbol: "OBSCP"
+  cmp: 666.0
+  market_cap_cr: 1720.0
+  known_directors: "Asha Narang (DIN 00296714, Director); associate/parent entity Omega Bright Steel (email domain omegabrightsteel.com)"
+degradation_applied:
+  - "Gate 0 (stage 1): from screener CSVs (OBSCP screener-*.csv); no results PDFs."
+  - "Stages 2, 3: AR pages 1-77 only; notes schedules 78-101 unavailable."
+  - "Stage 5: NORMAL mode on 2 transcripts (not degraded no-concall mode)."
+  - "Stage 6: runs on 12 peer transcripts (available)."
+flags: []

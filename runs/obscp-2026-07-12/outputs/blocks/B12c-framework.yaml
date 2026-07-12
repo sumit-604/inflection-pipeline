@@ -1,0 +1,36 @@
+stage: B12c
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 — Gate 0 (B01) + Emerging Moat (B07) only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 38
+  fails:
+    - {severity: "MINOR", rule: "stage-1 output contract", detail: "B01 report .md omits the mandatory closing stage:B01-gate0 fenced YAML block; values propagated to B07 and to outputs/blocks/B01-gate0.yaml but the persisted report artifact is incomplete"}
+    - {severity: "MINOR", rule: "core aggregation label", detail: "Grand Total labelled 66/100; correct denominator is 160 (Core 100 + Moat 60). Classification is Core-based and unaffected"}
+emoat:
+  rules_checked: 27
+  fails:
+    - {severity: "MINOR", rule: "Section 2C presentation", detail: "unrendered {{B07_CAPEX_FIGURE}} template token leaked into 2C prose; the numeric handoff (~18%) is intact in text and YAML"}
+valuation:
+  rules_checked: 34
+  status: "complete (phase 3)"
+  fails:
+    - {rule: "Pillar 2 growth-offset band (Master L263-264)", severity: "MINOR", recompute: "B11 used +0.20 (justified on PAT CAGR 48.7% / FY26 revenue +54%); anchored 3yr revenue CAGR 38.5% sits in the 25-40% band -> +0.10. The 1.00x multiplier is independently upheld by cumulative CFO/PAT 0.31 in the 30-50% neutral band, so destination PE, Hurdle STOP and the AVOID decision are unchanged. Even the stricter +0.10 reading (0.90x) only lowers destination PE, reinforcing AVOID."}
+  recomputed_destination_pe: "concur: 20.1x Track 2 additive / 16.5x Track 1 RRM"
+  recomputed_decision: "concur: AVOID at CMP / Hurdle STOP"
+  acceptance_rate: 97
+findings:
+  - {severity: "MINOR", location: "B11 Section 1B, Pillar 2 growth offset", note: "+0.20 offset justified on PAT CAGR 48.7% / single-year revenue 54%; anchored 3yr revenue CAGR 38.5% maps to +0.10. Outcome (1.00x cash mult, 20.1x destination) robust via cumulative CFO/PAT 31%. No effect on destination PE, Hurdle (STOP), or decision (AVOID)."}
+  - {severity: "MINOR", location: "B01 report end", note: "mandatory closing YAML block absent from persisted report .md (present as separate block file)"}
+  - {severity: "MINOR", location: "B01 Classification section", note: "grand_total denominator mislabelled 66/100 vs 66/160"}
+  - {severity: "MINOR", location: "B07 Section 2C", note: "unrendered {{B07_CAPEX_FIGURE}} template token in prose; value correct elsewhere"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+gate0_scores_rederived: "A15 B1 C20 D16 E0 Core52; moats M1/M3/M4/M11 STRONG; all match B01"
+emoat_rederived: "adjusted total 23.2 MODEST; matches B07; degradation handling correct"
+acceptance_rate_gate0_emoat: 95
+acceptance_rate_valuation: 97
+acceptance_rate: 96   # combined framework adherence (both halves, 95/99 rules clean)

@@ -1,0 +1,45 @@
+stage: B04-bizmodel
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR business description/MD&A/segment narrative (pp.3-59) rendered as corrupted-font glyph noise, unreadable; AR pp.78-101 blank/truncated. Input priority inverted: Investor Presentation (May 2026) used as PRIMARY source for business model/revenue mix/customers; AR contributed only audited financials (pp.60-77), cross-checked and consistent with presentation figures."
+  - "Concall transcripts (May-2025, May-2026) used for qualitative color."
+flags:
+  - "FY26 operating cash flow negative (-INR1.95cr) despite INR53cr capex, fully externally funded via debt + preferential equity issue"
+  - "Related-party raw material sourcing from promoter entity Omega Bright Steel; commercial terms/pricing not disclosed"
+  - "Customer concentration: top 2 SKUs ~40% of automotive revenue; top 3 named customers are large multinational OEMs with structural bargaining power"
+  - "Simultaneous multi-front expansion (new processes, new geographies, new end-markets) raises execution risk"
+  - "Listed on NSE Emerge (SME platform), not main board - liquidity/index-inclusion constraint"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Automotive components", type: "B2B contract manufacturing, nomination-based", pct_of_revenue: 85.6, predictability: "M"}
+  - {name: "Marine components", type: "B2B contract manufacturing, export-oriented", pct_of_revenue: 6.3, predictability: "M"}
+  - {name: "Defense components", type: "B2B contract manufacturing, PSU/government-linked", pct_of_revenue: 5.6, predictability: "M"}
+  - {name: "Renewables & Others (incl. emerging medical/humanoid/aerospace)", type: "B2B contract manufacturing, early-stage/optionality", pct_of_revenue: 2.5, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Normalises for heavy ongoing capex/depreciation cycle and rising leverage that distort P/E"}
+  secondary: {method: "Forward/normalised P/E", why: "Captures earnings-growth trajectory relevant to GARP thesis (PAT CAGR 48.8% FY24-26)"}
+  tertiary: {method: "EV/Sales", why: "Cross-check during scale-up phase where EBITDA not yet steady-state"}
+  not_applicable:
+    - "DCF - operating cash flow negative FY26, no FCF-positive timeline, terminal value unreliable during multi-year capex cycle"
+    - "P/B - historical-cost book does not capture qualification moat/order book; ROE distorted by dilution"
+    - "Dividend discount - no dividend, 100% reinvestment"
+    - "Sum-of-the-parts - single integrated business; non-auto only 14.4% of FY26 revenue"
+irrelevant_ratios:
+  - {ratio: "Trailing P/E", why: "Distorted by depreciation/interest step-up with each capacity tranche"}
+  - {ratio: "Trailing ROE", why: "Depressed by two recent capital raises (IPO Oct-24, Preferential Feb-26)"}
+  - {ratio: "Current ratio (absolute)", why: "Distorted by proactive inventory build; use cash conversion cycle days"}
+  - {ratio: "Dividend yield", why: "No dividend paid"}
+must_track_metrics:
+  - {metric: "Revenue growth vs guided (40-45% FY27)", healthy: "within guided band", red_flag: "two consecutive quarters below"}
+  - {metric: "Gross margin", healthy: "stable/improving from 28.7% FY26", red_flag: "sequential compression >100bps"}
+  - {metric: "Operating cash flow", healthy: "turning/staying positive", red_flag: "second consecutive year negative"}
+  - {metric: "Cash conversion cycle (days)", healthy: "growing slower than revenue (94 days FY26)", red_flag: "CCC expansion outpacing revenue"}
+  - {metric: "Debt-equity ratio", healthy: "near/below 0.40x FY26", red_flag: "rising past ~0.75-1.0x without matching commissioning"}
+one_line_verdict: "High-growth precision-engineering vendor with real qualification moats but thin near-term free cash flow and rising related-party/concentration risk to monitor closely."

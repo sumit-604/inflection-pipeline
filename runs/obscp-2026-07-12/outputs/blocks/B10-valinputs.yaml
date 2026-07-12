@@ -1,0 +1,160 @@
+stage: B10-valinputs
+company: OBSCP
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Results/ folder absent — FY26 latest-period financials sourced from CRISIL rating PDF (dated 2026-07-02) and screener-Data_Sheet.csv (FY22-FY26 history); no standalone quarterly results PDFs"
+  - "AR pages 3-59 corrupted font; AR pages 78-101 truncated — Notes 3-29 schedules unrecoverable"
+  - "Quarterly guidance unavailable — only 2 concalls collected"
+  - "FY22/FY23 ROCE historical NOT FOUND; only FY24-FY26 anchored"
+  - "Peer financial medians not extracted; valuation cross-check deferred to stage 11"
+  - "FY26 over-12-month receivables ageing bucket unanchored — falsifier for GROWTH-INDUCED, requires clean AR"
+flags:
+  - "FLAG-CASH: Negative CFO FY26 (Rs -1.95 Cr) despite positive PAT Rs 27.01 Cr; growth-induced per operator override, CRISIL-validated; falsifier: over-12-month ageing bucket >15% or rising ECL"
+  - "FLAG-CUSTOMER-CONCENTRATION: Top 5 customers = 50-55% of revenue, largest = 15-20% per CRISIL"
+  - "FLAG-AEROSPACE-CERT: AS9100D certification slip >12 months, unacknowledged; affects Pillar 3b optionality"
+  - "FLAG-RELATED-PARTY: Omega Bright Steel (promoter-controlled) raw material sourcing with no non-compete; Nov 2025 Rs 12.45 Cr asset buy; pricing fairness undisclosed"
+  - "FLAG-ACCOUNTING-QUALITY: FY25 Diluted EPS Rs 8.12 exceeds Basic EPS Rs 6.85 (AS 20-anomalous), unresolved"
+  - "FLAG-QUARTERLY-DISCLOSURE: Management broke promised quarterly cadence; credibility grade B"
+table:
+  company_identity:
+    company_name: "OBSC Perfection Ltd (OBSCP)"
+    sector: "Manufacturing (corrected from manifest EPC/Civil construction; fttcp-deliberation)"
+    business_model_type: "Asset-heavy precision engineering; contract manufacturing B2B (B04)"
+    sector_cap_row_authority: "Manufacturing 25x (fttcp-deliberation, supersedes manifest)"
+    cmp_rs: 666.0
+    market_cap_cr: 1720.15
+    shares_outstanding_diluted_cr: 2.58
+    enterprise_value_cr: 1787.45
+  latest_period_financials_fy26:
+    period_end: "2026-03-31"
+    revenue_cr: 219.54
+    ebitda_cr: 43.64
+    ebitda_margin_pct: 19.8
+    ebit_cr: 36.26
+    pbt_cr: 31.77
+    pat_cr: 27.01
+    pat_margin_pct: 12.24
+    cfo_cr: -1.95
+    capex_cr: 76.03
+    fcf_cr: -78.0
+    cfo_pat_ratio: -0.072
+    cfo_pat_cumulative_5yr: 0.31
+    interest_expense_cr: 4.49
+    depreciation_cr: 7.38
+    cash_on_hand_cr: 16.66
+    cash_note: "screener Cash & Bank 16.66; CRISIL reports cash & equivalents Rs 0.07 Cr (narrower definition) — classification difference, immaterial to hurdle"
+    receivables_cr: 66.08
+    inventory_cr: 47.18
+    gross_current_assets_days: 223
+    cash_conversion_nature: "GROWTH-INDUCED"
+    cash_conversion_forward_verdict: "STAGNANT"
+    cash_conversion_falsifier: "Over-12-month receivables bucket >15% of receivables or rising ECL -> reverts to STRUCTURAL"
+  balance_sheet_solvency:
+    total_networth_cr: 171.97
+    borrowings_bank_cr: 68.54
+    related_party_debt_cr: 15.45
+    total_debt_cr: 83.99
+    net_debt_cr: 67.33
+    debt_equity_ratio_adj: 0.40
+    current_ratio: 1.60
+    interest_coverage_x: 9.72
+    bvps_rs: 66.67
+  valuation_multiples_latest:
+    diluted_eps_rs: 10.47
+    trailing_pe_x: 63.6
+    ev_ebitda_x: 41.0
+    ev_sales_x: 8.1
+    price_book_x: 10.0
+    p_fcf: "NOT APPLICABLE (FCF negative)"
+  return_on_capital_profitability:
+    roce_fy26_year_end_pct: 15.1
+    roce_fy26_average_pct: 19.5
+    roce_fy25_pct: 19.01
+    roce_fy24_pct: 33.38
+    roce_trend_direction: "DECLINING"
+    roce_forward_verdict: "STAGNANT"
+    roe_fy26_pct: 20.5
+  revenue_and_growth:
+    revenue_cagr_fy24_26_pct: 38.5
+    pat_cagr_fy24_26_pct: 48.7
+    growth_trajectory: "FIRING"
+  emerging_moat:
+    em_score: 23
+    em_classification: "MODEST"
+    primary_catalyst_12m: "Capex commissioning: Sanand shock-absorber line (~Rs 40 Cr incremental revenue, FY27)"
+    evidence_mix: "Documented 16, Claim 15, Inference 1 = MIXED"
+  management_credibility:
+    credibility_grade: "B"
+    promise_delivery: "delivered 4, partial 7, missed 2 (B05)"
+  earnings_quality:
+    overall_quality_score: 4
+  rating_agency:
+    agency: "CRISIL Ratings Limited"
+    rating: "CRISIL BBB+/Stable"
+    instrument: "Long-term bank debt facilities, Rs 100 Cr total"
+    date: "2026-07-02"
+  rating_wc_quote: "Working capital intensive operations: GCAs remained elevated at 133-223 days over the three fiscals ended March 31, 2026. GCAs stood at 223 days as on March 31, 2026, driven by high receivables and inventory levels. The company is required to extend relatively long credit periods to its export customers, leading to elevated debtor levels. (CRISIL 2026-07-02, p.2)"
+  management_guidance_fy27:
+    revenue_growth_pct: "40-45%"
+    ebitda_margin_expansion_pp: "~1"
+    capex_incremental_cr: "15-20"
+    order_book_conversion_cr: "100-200 per year"
+    export_mix_pct: ">30-35% of business"
+  forward_earnings_drivers:
+    som_revenue_cagr_3yr_pct: 39.1
+    som_revenue_cagr_5yr_pct: 34.4
+    capex_embedded_growth_pct: 18
+  section_1b_pillar_inputs:
+    pillar_1_roce_verdict: "STAGNANT (not recovering)"
+    pillar_1_roce_used_pct: "15.1 (year-end) to 19.5 (average); stage 11 to fix convention"
+    pillar_1_base_multiple_range_x: "15-17.5x"
+    pillar_2_cash_multiplier: 1.00
+    pillar_2_growth_component: 0.80
+    pillar_2_offset_component: 0.20
+    pillar_2_growth_induced_validation: "CRISIL confirmed growth-induced WC, no bad-debt flag"
+    pillar_3_total_x: 5
+    pillar_3_capex_embedded_3a_x: 3
+    pillar_3_optionality_3b_x: 0
+    pillar_3_order_book_3c_x: 2
+    pillar_3_cap_x: 6
+    pillar_3_shared_catalyst: "YES (capex commissioning drives Pillar 1 context and Pillar 3a)"
+    pillar_4_strategic_premium_x: 0
+    destination_pe_range_x: "20-24"
+    destination_pe_midpoint_x: 22
+    sector_cap_manufacturing_x: 25
+    sector_cap_binding: false
+  ua_qualifiers:
+    listed_12m_status: "listed Oct 2024 (~21 months to run date) MET; but quality gate fails"
+    gate0_or_em_status: "NOT MET (Gate 0 core 52 < 60 AND EM 23 < 25)"
+    fii_dii_lt3_status: "MET (FII+DII 2.94% < 3%)"
+    all_met: false
+    ua_multiplier_applied: false
+  return_hurdle:
+    hurdle_tier: "Tier A (25% CAGR)"
+    cmp_rs: 666
+    destination_pe_midpoint: 22
+    hurdle_ratio_base: 0.85
+    hurdle_ratio_bull: 1.03
+    hurdle_pass_line: 1.953
+    hurdle_verdict: "STOP"
+    fair_entry_zone_rs: "280-350"
+    fair_mos_zone_rs: "235-280"
+    disposition: "WATCHLIST deep (not a buy at Rs 666)"
+  5yr_history:
+    sales_cr: {fy22: 55.55, fy23: 95.12, fy24: 114.54, fy25: 142.31, fy26: 219.54}
+    pat_cr: {fy22: 3.60, fy23: 4.57, fy24: 12.21, fy25: 16.76, fy26: 27.01}
+    cfo_cr: {fy22: 6.39, fy23: 1.45, fy24: 5.00, fy25: 8.85, fy26: -1.95}
+    borrowings_cr: {fy22: 18.98, fy23: 33.41, fy24: 41.48, fy25: 26.98, fy26: 68.54}
+    reserves_cr: {fy22: 1.38, fy23: 5.96, fy24: 12.22, fy25: 79.54, fy26: 146.12}
+conflicts:
+  - {field: "ROCE forward verdict", pipeline: "RECOVERING (B07)", deliberation: "STAGNANT", used: "STAGNANT (deliberation supersedes)"}
+  - {field: "Sector cap", manifest: "EPC/Civil 20x", deliberation: "Manufacturing 25x", used: "Manufacturing 25x (not binding at 22x)"}
+  - {field: "Cash conversion nature", pipeline: "INDETERMINATE (B01)", deliberation: "GROWTH-INDUCED", used: "GROWTH-INDUCED (operator override, CRISIL-validated)"}
+unresolved:
+  - "FY26 over-12-month receivables ageing bucket (falsifier for growth-induced) — AR truncated"
+  - "Supa mega-factory capex quantum and timeline — undisclosed"
+  - "FY22/FY23 ROCE — NOT FOUND"
+  - "Peer financial medians (P/E, EV/EBITDA, P/B, ROCE) — deferred to stage 11"
+  - "FY25 Diluted>Basic EPS reconciliation — Note 26 truncated"

@@ -1,0 +1,42 @@
+stage: B09-tam
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "management TAM claim - not stated in presentation or either concall reviewed"
+  - "ACMA process-wise (forging/casting/machining) breakdown of auto component turnover - not found, proxied via AIFI/Grand View external market sizing"
+  - "bottom-up Rs/vehicle forged-or-machined content figure - not found, Method 2 abandoned rather than estimated"
+  - "marine components market size - not found, marine (6.3% of revenue) not separately sized"
+  - "aerospace / humanoid-robotics / medical-implant market sizes - not found, too nascent, treated as unquantified optionality only"
+flags:
+  - "management made no explicit TAM/market-size claim anywhere reviewed; mgmt_claim_cr recorded as NOT FOUND rather than estimated"
+  - "global automotive forging market estimates diverge >2x across sources (USD 25bn vs USD 54-55bn, 2025) - not used for headline TAM, flagged per divergence rule"
+  - "3C capacity cross-check finds a gap of ~Rs150-250 Cr between yr-3 SOM and the currently-quantified FY27 capex plan (Rs15-20 Cr, '~2 years'); Supa mega-factory has no disclosed capex quantum/timeline - SOM is the optimistic side"
+  - "TAM/SAM excludes marine, aerospace, humanoid-robotics, medical-implant due to lack of sourced market-size data - the Rs61,000-70,000 Cr TAM is a conservative understatement vs OBSCP's strategic direction"
+market_definition: "India precision metal (forged/machined/cast) components for auto OEM Tier-1s plus defense ordnance manufacturing"
+tam_cr: {conservative: 61000, realistic: 70000}
+sam_cr: 18600
+sam_pct_of_tam: 30.5
+som_3yr_cr: 591
+som_5yr_cr: 964
+som_implied_revenue_cagr: {yr3: 39.1, yr5: 34.4}
+current_sam_share_pct: 1.18
+revenue_headroom_x: 84.7
+tam_growth_pct: 12.7
+runway_class: "MASSIVE"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not stated"
+capacity_check: "gap ~Rs150-250 Cr, SOM is the optimistic side (disclosed FY27 capex Rs15-20 Cr sustains ~2 years / ~Rs300-320 Cr revenue; Supa mega-factory capex/timeline undisclosed)"
+methods_used:
+  - "top-down (India forging + precision machining, auto-weighted)"
+  - "peer revenue aggregation + unorganized-sector uplift"
+  - "import substitution / segment-specific (defense ordnance)"
+  - "global benchmark (directional only, not used for headline number due to source divergence)"
+stale_data_flags:
+  - {datapoint: "India Metal Forging Market (USD 11,346.9M)", source: "Persistence Market Research", year: 2025}
+  - {datapoint: "India Precision Machining Market (USD 6,566.0M)", source: "Grand View Research", year: 2025}
+  - {datapoint: "India ammunition/ordnance market (Rs6,800-7,200 Cr)", source: "thesecretariat.in / Ken Research aggregate", year: "FY2024-25"}
+  - {datapoint: "ACMA auto component industry turnover (Rs7.6 lakh Cr FY26)", source: "ACMA Industry Performance Review", year: 2026}
+searches_skipped: []

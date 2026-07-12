@@ -1,0 +1,24 @@
+stage: B14-thesis
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+verdict_note: "AVOID at CMP Rs 666 (deep watchlist for re-engagement); AVOID-on-valuation, not on quality"
+entry_range: {low: 207, high: 252}
+entry_note: "RRM-governing to additive; re-engagement watch begins ~Rs 280 (avg-basis reconciliation); MoS Rs 166"
+position_size: "None"
+position_size_detail: "No position at CMP (Hurdle STOP). At re-engagement zone: Small max — Gate 0 AVERAGE and Promoter CAUTION caps both bind"
+position_size_override: ""
+thesis_broken_if: "FY27 operating cash flow stays negative a second consecutive year, OR the over-12-month trade receivables bucket exceeds ~15% of total receivables (or ECL/provisions rise materially) — either reverts cash conversion to STRUCTURAL (0.65x), collapsing the destination PE to ~14x and voiding the re-entry case"
+monitoring_checklist:
+  - "FY27 operating cash flow turns positive (>Rs 0); RED = second consecutive negative-CFO year"
+  - "Over-12-month trade receivables ageing bucket <~15% of receivables with no ECL jump; RED = >~15% or rising provisions"
+  - "Revenue growth YoY >=40% FY27 (CRISIL upgrade trigger); RED = <25%"
+  - "EBITDA margin sustained >18%; RED = <18%"
+  - "Gross current asset days <210 (CRISIL upgrade trigger); RED = >223 and rising"
+  - "Net cash accrual >Rs 25 Cr (above CRISIL downgrade floor); RED = <Rs 25 Cr"
+  - "Order book stable/growing with Rs 100-200 Cr/yr executed; RED = order book shrinks or conversion stalls"
+  - "Year-end ROCE lifts toward 19-20% (RECOVERING); RED = <18% with no FY27 lift"
+  - "Customer concentration: top-5 below 55% and largest below 20%; RED = top-5 above 55% or largest above 20%"
+  - "Entry conjunction: CMP enters Rs 207-280 with NO thesis-broken trigger fired; RED = price enters zone BECAUSE a trigger fired (withdrawn zone)"

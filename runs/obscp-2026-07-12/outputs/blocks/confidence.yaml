@@ -1,0 +1,17 @@
+# Full phase-1 + phase-3 confidence delta (orchestrator Section 5). Complete.
+confidence_delta:
+  numerical_acceptance: 97      # B12a (re-run): 32/34 clean; 0 CRITICAL, 1 MINOR
+  redflag_coverage: 82          # B12b: caught 9 / 11 independently-found flags
+  framework_adherence: 96       # B12c both halves: gate0+emoat 95% (65 rules) + valuation 97% (34 rules) = 95/99 clean
+  peer_utilisation: 88          # B12d: 14 / 16 peers used substantively
+  overall: 82                   # min of the four
+  band: "normal (75-89): note specifics; no forced downgrade, no REWORK"
+rework_check:
+  any_verifier_critical: false        # A, B, C (both halves), D all 0 CRITICAL
+  any_acceptance_below_60: false      # min acceptance 82
+  verdict: "REWORK not triggered"
+weakest_component: "redflag_coverage 82 — verifier B judged B05's top 'broken quarterly-disclosure' flag and the 'margin cut' framing as over-confident calibration (not fabrication), plus one missed capital-allocation flag (Rs43.3cr preferential issue post-IPO)."
+notes:
+  - "Verifier A first pass returned 2 false CRITICALs (faithfully-transcribed company anomalies mislabeled by severity); orchestrator sanity-checked per LESSONS (KARNIKA 2026-07-11) and re-invoked once; source-grounded re-run returned 0 CRITICAL, 97%."
+  - "Verifier C valuation-adherence (phase 3): 34 rules, 33 clean, 1 MINOR (Pillar 2 growth-offset stated rationale); destination PE, Hurdle STOP, and AVOID all recompute and concur."
+  - "Devil's advocate (B15): WEAKENED BUT ALIVE; valuation_safety DESTROYED. It challenges the operator's GROWTH-INDUCED override (plausibly structural; over-12m ageing never seen) and the order-book genuineness (nomination vs firm PO). Recorded as risks to the re-engagement case, not overrides; the operator's rulings stand."

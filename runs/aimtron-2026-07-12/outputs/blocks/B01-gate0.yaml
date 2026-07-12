@@ -1,0 +1,40 @@
+stage: B01-gate0
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "credit rating: NOT FOUND (no rating PDF provided)"
+  - "promoter pledge %: NOT FOUND in any provided document"
+  - "latest-quarter shareholding pattern: NOT FOUND; used AR2025 (31-Mar-2025) as latest verified anchor"
+  - "R&D expense / revenue: NOT FOUND"
+  - "peer data for M2, M5, M6, M9: NOT FOUND"
+  - "sector_cap_row 'Pharma / CDMO' is a manifest mis-pick; company is EMS/ESDM electronics manufacturing, not used in scoring"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID driven by deal-breaker #4 (cumulative CFO/PAT -0.13x, FY24-FY26 standalone) plus mandatory LIMITED 3-year-history downgrade; core+moat alone (Core 62, Moat MODERATE) reads GOOD. Growth (Rev/PAT CAGR both >65%) and balance sheet (net cash, current ratio 2.6x) are strong; shortfall is working-capital driven during funded post-IPO scale-up, not a profitability problem."}
+  - {type: FLAG-CASH, reason: "Block B = 0/20. Cumulative CFO/PAT = -0.13x FY24-FY26. FCF negative FY25 (-Rs 30.65 Cr) and FY26 (-Rs 3.89 Cr). WC days rose 183.5 to 220.0 (+36.6 days) FY24-FY26 on receivables Rs16.68cr->Rs117.42cr and inventory Rs35.74cr->Rs80.28cr."}
+  - {type: FLAG-DATA-QUALITY, reason: "screener-Data_Sheet FY26 P&L (Sales Rs301.16cr, implied expenses Rs370.71cr) is internally inconsistent and conflicts with audited standalone FY26 (Revenue Rs257.13cr, results 28-Apr-2026). Scorecard uses audited standalone figures throughout; downstream stages should do the same."}
+  - {type: FLAG-OWNERSHIP-GAP, reason: "Promoter holding anchored to AR2025 (31-Mar-2025, 71.35%); no FY26 shareholding pattern provided. Sep-2025 warrants (13,89,388 units) partially converted (1,95,352 shares) by 31-Mar-2026; current promoter % NOT FOUND. Pledge % NOT FOUND, E3 scored 0."}
+data_years: 3
+fy_range: "FY2024 to FY2026"
+blocks: {A: 14, B: 0, C: 20, D: 20, E: 8}
+core_score: 62
+moat_score: 10
+grand_total: 72
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "#2 Block B <8 -> max GOOD (Block B = 0/20, non-binding, already GOOD before #4)"
+  - "#4 cumulative CFO/PAT <0.50 -> max AVERAGE (ratio = -0.13x, FY24-FY26 standalone; FY25 and FY26 drive it)"
+history_downgrade: true
+data_notes:
+  - "screener-Data_Sheet FY26 P&L figures internally inconsistent (implied expenses exceed sales); audited standalone figures (AR2025 + results 28-Apr-2026) used throughout instead for FY24-FY26"
+  - "EBIT = PBT + Finance Costs; EBITDA = EBIT + Depreciation&Amortisation (P&L basis, not CF-statement D&A, which differs slightly in FY26: P&L Rs712.36 lakh vs CF Rs616.29 lakh, unreconciled minor gap in the source filing)"
+  - "ROCE and ROE computed (screener's own ROCE/ROE rows are blank for this company)"
+  - "GM proxy for M9 = (Revenue - [Cost of Material Consumed + Change in Inventories]) / Revenue: FY24 38.2%, FY25 27.2%, FY26 28.3% (computed); no peer median available"
+  - "FY24 promoter % (89.94%, 2 names) is pre-IPO (year-end 31-Mar-2024, IPO was 4-Jun-2024); FY25 (71.35%, 10 names) is first post-listing figure. E2 change reflects IPO float creation and first-time full promoter-group disclosure, not secondary-market divestment; true 3-year like-for-like trend NOT FOUND (company listed <2 years)"
+  - "FY26 net worth of Rs227.86cr includes Rs20.32cr 'money received against share warrants' (25% upfront on Sep-2025 preferential issue); excluding it, FY26 net worth = Rs207.54cr and ROE = 21.6% (same scoring band, A3 unaffected)"
+  - "M11 Network Effects scored conservatively at 0: only 3 years available vs the 6 years the test specifies"
+  - "No prior-run comparison performed: first run for this ticker (COMPANY MEMORY = none)"
+block_b_trend: "deteriorating - cumulative CFO/PAT = -0.13x (FY24-FY26 standalone); FY25 CFO -Rs17.69cr against PAT +Rs25.74cr is the single number that shows it"

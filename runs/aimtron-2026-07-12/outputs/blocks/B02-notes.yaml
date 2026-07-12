@@ -1,0 +1,46 @@
+stage: B02-notes
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent"]
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables +417% YoY (Note 15) vs 70.3% revenue growth; turnover collapsed 9.28x to 3.08x, implied DSO ~39 to ~118 days (Note 38); 46.3% of total receivables (Rs 3,992.14 lakh) owed by related parties including a Rs 2,152.54 lakh receivable that flipped from a Rs 1,061.76 lakh payable YoY on the same counterparty even as sales to it declined (Note 35(iii))"}
+accounting_quality: 4        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Related-party revenue 27.68% (sales) / 31.53% (sales+services) of FY25 revenue; FY26 AGM ceiling of Rs 120cr sought with two related entities = 76% of FY25 revenue", note_ref: "Note 35; AGM Notice Items 5&6, pp.147-148,152-153", rating: "red_flag", why: "Revenue quality hinges on same-management counterparties; forward ceiling signals continuation or growth, not reduction"}
+  - {rank: 2, finding: "Trade receivables +417% YoY vs 70.3% revenue growth; DSO ~39 to ~118 days; 46.3% owed by related parties incl. a payable-to-receivable flip on one counterparty", note_ref: "Note 15, Note 35(iii), Note 38, pp.103-104,108-111", rating: "red_flag", why: "Feeds FLAG-CASH; sharp cash-conversion deterioration concentrated with related counterparties"}
+  - {rank: 3, finding: "Contingent liabilities surged to Rs 20.91cr = 13.48% of net worth (from 0.08%); Key Audit Matter; no provision made", note_ref: "Note 17, Note 30, pp.96,108", rating: "red_flag", why: "Sizeable tail risk resting solely on management's own assertion, no independent corroboration disclosed"}
+  - {rank: 4, finding: "New, unexplained related-party expense of Rs 404.99 lakh (Services Availed), nil FY24 comparative, no description", note_ref: "Note 35(ii), p.109", rating: "red_flag", why: "Material new cost flow to a related party with zero disclosure of what was purchased"}
+  - {rank: 5, finding: "Note 38 mandatory variance explanation for inventory turnover ('higher proportionate increase in inventories') is factually wrong; inventory actually fell 1.85% YoY per Note 14/Balance Sheet", note_ref: "Note 38 vs Note 14, pp.111,102,88", rating: "red_flag", why: "A Schedule III-mandated disclosure states a fact directly contradicted by the company's own primary statements"}
+  - {rank: 6, finding: "EBITDA margin down ~390bps despite 70.3% revenue growth (raw material intensity 61.6% to 69.2% of revenue); PAT margin improvement traces to non-operating items, not operating leverage", note_ref: "Notes 20,21,24,38", rating: "watch", why: "Quality-of-earnings flag; bottom-line improvement not corroborated by operating trend"}
+  - {rank: 7, finding: "Finished goods inventory collapsed 93.9% while total inventory flat-to-down and revenue grew 70.3%", note_ref: "Note 14, p.102", rating: "watch", why: "Paired with the receivables spike, consistent with (not proof of) a year-end revenue-timing shift"}
+  - {rank: 8, finding: "Salaries and wages fell 15.8% YoY despite 70.3% revenue growth and an active-hiring narrative", note_ref: "Note 23, p.106", rating: "watch", why: "Unexplained divergence between P&L line and stated HR growth; possible undisclosed reclassification"}
+  - {rank: 9, finding: "Export revenue mix collapsed from 73.9% to 44.7% of total revenue; exports grew only 3.0% vs 70.3% total", note_ref: "Note 31 vs Note 19, p.108", rating: "watch", why: "Significant unexplained strategic shift toward domestic revenue"}
+  - {rank: 10, finding: "Trade payables +8.2x, MSME dues +35.8x; no MSMED Section 22 interest disclosure; but 99.93% of MSME dues still Undue (scale effect, not delay)", note_ref: "Note 6, 6.1, 6.2, pp.99-100", rating: "watch", why: "Genuine disclosure gap even though the underlying pattern looks like volume growth, not payment stress"}
+  - {rank: 11, finding: "Note 3 item 3 (no loans to related parties) directly contradicted by Note 35(ii) (Rs 28.33 lakh loan given, FY24; Rs 87.00 lakh repaid same year)", note_ref: "Note 3 vs Note 35(ii), pp.94,109", rating: "watch", why: "Direct cross-note contradiction within the same financial statements"}
+  - {rank: 12, finding: "Note 36 bank-reconciliation table blank in 'as per books' row for all four quarters, cannot substantiate CARO's assertion that returns agree with books", note_ref: "Note 36, p.111; CARO Annexure A(iii)(b), p.83", rating: "watch", why: "Disclosure appears deliberately minimal relative to detail given elsewhere"}
+  - {rank: 13, finding: "Chairman labelled Non-Executive Director yet draws Rs 24.00 lakh FY25 remuneration (+3.0x YoY); total director remuneration +185.7% vs PAT +89.3%; new WTD appointed 23 Apr 2025 as subsequent event (Rs 36-40 lakh/year)", note_ref: "Note 35(ii), p.109; AGM Notice pp.148,155", rating: "watch", why: "Governance: unreconciled remuneration classification plus layering-on of managerial cost"}
+  - {rank: 14, finding: "Unexplained Rs 936.80 lakh Securities Premium Adjustment line; FY24 Surplus restatement of (Rs 406.94) lakh consistent with pre-IPO SEBI ICDR restatement, never narratively explained in the Notes", note_ref: "Note 2, p.98; Cash Flow Statement, p.91", rating: "watch", why: "Material reserves movement and a restated-financials event, both invisible without cross-referencing outside the Notes"}
+  - {rank: 15, finding: "Consolidated PBT/PAT Rs 10.69 lakh lower than standalone despite a profitable subsidiary (AOC-1 PBT Rs 4.37 lakh); Rs 15.06 lakh gap unexplained; subsidiary shows 0% effective tax rate on positive PBT", note_ref: "Consolidated Notes vs Form AOC-1, pp.113,126-145", rating: "watch", why: "Consolidation mechanics do not cleanly reconcile using only what is disclosed"}
+red_flags:
+  - "Related-party revenue concentration 27.68-31.53% of FY25 revenue plus forward FY26 RPT ceiling of Rs 120cr (76% of FY25 revenue) (Note 35; AGM Notice Items 5&6)"
+  - "Trade receivables +417% vs revenue +70.3%, 46.3% related-party, thin bad-debt coverage, receivable/payable flip on one counterparty (Notes 15, 35, 38)"
+  - "New unexplained related-party expense of Rs 404.99 lakh with no description or prior-year comparative (Note 35(ii))"
+  - "Contingent liabilities up from Rs 4.04 lakh to Rs 20.91 crore (13.48% of net worth), Key Audit Matter, no provision made (Note 30)"
+  - "Note 38 mandatory ratio-variance disclosure states a factually incorrect driver for the inventory-turnover improvement (Note 38 vs Note 14)"
+  - "Note 3 assertion of no related-party loans directly contradicted by Note 35(ii) (Note 3 vs Note 35)"
+  - "Note 36 bank-reconciliation table blank for all four quarters, cannot substantiate CARO's agreement assertion (Note 36 vs CARO Annexure A)"
+questions_for_mgmt:
+  - "Nature of the Rs 404.99 lakh Services Availed from Aimtron Technologies Private Limited (nil FY24), and reason for the Aimtron Corporation USA balance flipping from a Rs 1,061.76 lakh payable to a Rs 2,152.54 lakh receivable YoY despite declining sales to that entity (Note 35)"
+  - "Driver of the 93.9% collapse in closing finished-goods inventory alongside a 417% rise in trade receivables at year-end; can Q4 invoicing/shipment timing be shared (Notes 14, 15)"
+  - "Reason salaries and wages fell 15.8% YoY despite 70.3% revenue growth and an active-hiring narrative; was production labour reclassified into cost of materials/inventory (Note 23)"
+  - "Given the AGM Notice's Rs 120 crore combined FY26 RPT ceiling (76% of FY25 revenue) with Aimtron Corporation USA and Aimtron Systems LLC, what is the intended trajectory for related-party revenue as a share of total revenue, and what arm's-length pricing benchmarking applies (Note 35; AGM Notice Items 5 and 6)"
+  - "Clarification of Chairman Mukesh Vasani's Non-Executive Director classification against the Rs 24.00 lakh FY25 Remuneration to Directors paid to him (+3.0x YoY) versus token sitting fees paid to genuinely independent non-executive directors; is this Section 197 commission and where is the required specific disclosure (Note 35; AGM Notice p.155)"
+receivables_trend: "deteriorating: Trade receivables Rs 8,621.71 lakh FY25 vs Rs 1,667.78 lakh FY24 (+417%) against 70.3% revenue growth; turnover collapsed 9.28x to 3.08x (implied DSO ~39 to ~118 days); 46.3% of total receivables (Rs 3,992.14 lakh) owed by related parties, incl. a Rs 2,152.54 lakh receivable that flipped from a Rs 1,061.76 lakh payable YoY on the same counterparty even as sales to it declined (Note 15, Note 35(iii), Note 38)"
+restatements_found:
+  - "FY24 Surplus 'Restatement adjustment' of (Rs 406.94) lakh (Note 2, p.98), corroborated by Cash Flow Statement financing line (p.91) - consistent with SEBI ICDR pre-IPO restatement but never narratively explained"
+  - "Unexplained Securities Premium 'Adjustment' line of Rs 936.80 lakh FY25 (Rs 105.19 lakh FY24) inside Note 2, pattern-consistent with bonus-share capitalisation but never named"
+going_concern_language: "NONE - standard template only; no material uncertainty flagged in standalone or consolidated opinion, CARO clause (xix) clean"

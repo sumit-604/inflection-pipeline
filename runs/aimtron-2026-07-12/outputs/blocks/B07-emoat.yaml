@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Credit rating absent (no rated instrument found)"
+  - "AR and Investor Presentation read from plain-text extraction; image-only charts may be under-read"
+  - "No total project cost disclosed for Aimtron Mechatronics greenfield facility (Rs cr); capacity figures are management assertions, not audited capex figures"
+  - "Design-engineer headcount claim inconsistent between AR FY25 (50+) and Inv. Pres. FY26 (150+), unreconciled"
+  - "Data-centre UPS order value inconsistent within the same call ($12 million once; ~Rs100 crore separately), unreconciled"
+  - "RDSO status inconsistent between certifications table ('In Progress') and 'Entry into Railways' slide (implies achieved) in the same Investor Presentation"
+flags:
+  - "Cash burn despite fresh capital raise: consolidated cash fell Rs355.8mn (FY25) to Rs138.8mn (FY26) after a Rs94.57cr warrant issue; FY26 operating cash flow -Rs40cr (G1/G2 contra-evidence)"
+  - "Credibility grade C carried from B05: 'no fundraising need' promise broken via warrant/preference share issuance; Airbus A350 qualification narrative dropped without explanation between Nov-2025 and May-2026 calls"
+  - "Related-party loans/advances (Rs16.8cr to Texas subsidiary for AIC acquisition) disclosed alongside the warrant capital raise, both drawing on the same funding pool"
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "B1", name: "Backward integration & RM security", strength: "Moderate", evidence_type: "claim", time_to_materialise: "24-48 months"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing, multi-year"}
+  - {id: "H2", name: "Strategic partnerships (AIC acquisition)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "R1", name: "Regulatory & policy tailwind (ECMS/RDSO)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "6-18 months"}
+evidence_mix: {documented: 11, claim: 19, inference: 4}
+completionist_recount: "recount performed: 11 documented items across 6 categories (AS9100D, IATF 16949, ISO 13485, CDSCO, CSA under B2; automation/yield under A3; Mechatronics subsidiary + CWIP under B1; European Box-Build order under E2; AIC acquisition closure under H2; ECMS/MeitY application under R1)."
+catalysts_12m:
+  - {catalyst: "RDSO approval decision (Railways vendor qualification)", window: "H1-Q3 FY27 (management target)", evidence_type: "claim", anchor: "May-2026 concall"}
+  - {catalyst: "ECMS/MeitY decision on optical transceiver (SFP) application", window: "not dated, application filed", evidence_type: "documented", anchor: "Inv. Pres. slide 22"}
+  - {catalyst: "AIC EBITDA margin print (guided 11% to 18-20%)", window: "next 2-4 quarters", evidence_type: "claim", anchor: "May-2026 concall, Sneh Shah"}
+  - {catalyst: "First Vadodara Mechatronics SMT line commissioning", window: "end of FY27 (edge of 12m window)", evidence_type: "claim", anchor: "Nov-2025 concall, Sneh Shah"}
+  - {catalyst: "FY27 operating cash flow turning positive (confirms/disconfirms G1/G2 contra-evidence)", window: "FY27 annual results", evidence_type: "inference", anchor: "B05 promise-delivery record; FY26 AR/Inv. Pres. cash flow"}
+capex_embedded_growth_pct: 331
+capex_note: "No disclosed total Rs cr project cost for Vadodara Mechatronics greenfield. Capacity target Rs1,000cr (Rs500cr existing + Rs500cr greenfield). ICS ~Rs10-12cr incremental capex against Rs280-300cr revenue potential at 90% utilisation. capex_embedded_growth_pct 331% is asserted-capacity-derived, not audited-capex-derived."
+optionality_register:
+  - {optionality: "Warrant proceeds fund Mechatronics without further WC-driven cash burn", window: "12-24 months"}
+  - {optionality: "5-6 evaluated M&A targets convert into a second bolt-on beyond AIC", window: "6-18 months"}
+  - {optionality: "Aimnet internal tool becomes a platform with disclosed metrics", window: "24-36 months"}
+  - {optionality: "Design-engineer headcount growth (50+ to claimed 150+) reconciled with ESOP grant", window: "12 months"}
+  - {optionality: "ODM lifecycle contracts convert into a reusable product-platform disclosure", window: "24-36 months"}
+  - {optionality: "Airbus A350 qualification re-emerges with a concrete milestone", window: "uncertain (10-20yr cycle)"}
+  - {optionality: "RDSO approval converts Railways from pilot to recurring vendor revenue", window: "6-12 months"}
+  - {optionality: "ECMS/PLI approval for optical transceivers with disbursed incentive", window: "12-24 months"}
+combined_assessment: "AVOID"
+combined_reasoning: "MODEST forward emerging-moat score (23/80) does not offset Gate 0's mechanical cash-conversion deal-breaker; the two strongest forward categories sit alongside active contra-evidence of cash burn and WC deterioration in the same document set."
+top_moat_risks:
+  - "Credibility grade C (B05): multiple dropped or reversed commitments, incl. a broken 'no fundraising need' promise and a silently-dropped Airbus A350 qualification narrative"
+  - "Cash burn despite fresh Rs94.57cr capital raise: consolidated cash nearly halved FY25 to FY26, FY26 operating cash flow -Rs40cr"
+  - "No disclosed total project cost for the Vadodara Mechatronics greenfield facility; capacity-to-revenue math (1 SMT line = Rs100cr) is asserted, not demonstrated (and peer Vinyas discloses Rs500-600cr/line - see B06)"
+  - "AIC EBITDA margin ramp (11% to 18-20%) and TOT negotiation for optical transceivers are both unconverted management claims with no interim disclosed metric"
+  - "RDSO and ECMS approvals both pending with no independently confirmed timeline; internal RDSO status inconsistent within the same Investor Presentation"

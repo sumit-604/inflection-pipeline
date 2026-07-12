@@ -1,0 +1,22 @@
+stage: B12d
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 4
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "Avalon", missed_item: "Top-10 customer concentration disclosed at 61% of FY26 revenue (Q4 FY26 call, CFO) - a direct, quantified benchmark against Aimtron's own unquantified customer-concentration gap flagged in B05/B04", anchor: "AVALON-Concall_May_2026_Transcript.txt, Suresh V.R.: 'our top 10 customers... It is 61% in FY26.'"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 2E and YAML risks_peers_raise", description: "Rs33 lakh new-labor-code cost impact is attributed to Centum but does not appear in any Centum transcript; it is Avalon's disclosure (Q3 FY26 call, Feb 2026, CFO Suresh Veerappan: 'estimated incremental impact of INR33 lakh has been recognized in the quarter'). Wrong-peer citation on a specific quantified figure."}
+  - {severity: "MINOR", location: "06-peers.md Q2 evidence block, Avalon PCB quote", description: "Ellipsis-joined quote attributes '90% of the PCB gets imported in India' to Avalon's CMD; the clause was actually spoken by the analyst (Chirag) framing his question. Parenthetical partially discloses this but the quote construction implies a continuous management statement."}
+  - {severity: "MINOR", location: "06-peers.md Q1 evidence block", description: "Quote attributed in the main sentence to 'Cyient DLM Chairman Krishna Bodanapu' is actually spoken by Rajendra Velagapudi, MD & CEO (correctly named in the report's own parenthetical, creating a self-contradiction). Evidence itself is correctly located."}
+  - {severity: "MINOR", location: "06-peers.md Part 2E / risks_peers_raise (omission)", description: "Avalon's quantified top-10-customer concentration figure (61% of FY26 revenue) is directly relevant to Aimtron's own unquantified customer-concentration gap but is not surfaced in B06."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 92
+peer_utilisation: "11 / 12"   # substantive transcript instances / files provided (1 duplicate correctly marked cited-only); at peer level 4/4 peers substantive

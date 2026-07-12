@@ -1,0 +1,46 @@
+stage: B03-ardeep
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only one Annual Report available (FY24/FY25 two-year data); all trend statements are two-point comparisons"
+  - "Predecessor statutory auditor identity NOT FOUND (M B Jajodia appointed 30-Apr-2024, after FY24 close)"
+  - "No borrowing maturity wall, no interest-rate table, no covenant disclosure anywhere in the AR (Note 5/8/42)"
+  - "Individual director attendance percentages NOT FOUND beyond one retiring director (SME Reg 15(2) CG-report exemption)"
+  - "FII/DII shareholding trend NOT FOUND (only Promoter/Public two-line split)"
+  - "CSR Committee composition NOT FOUND in extracted text"
+flags:
+  - {type: FLAG-CASH, reason: "CFO negative both years and deteriorating (FY25 -Rs14.10cr vs PAT +Rs10.15cr, -139%; FY24 -Rs1.82cr vs PAT +Rs5.52cr, -33%), re-verified from Cash Flow Statement (p.73) and further understated by the AS-3 choice to classify interest paid within Financing not Operating; entirely IPO-funded"}
+  - {type: FLAG-RPT-UNRECONCILED, reason: "Rs3.00cr loan-to-equity conversion (Note 3, 07-May-2024, 4,00,000 shares at Rs75) cannot be traced to any director, KMP, or named related party across three independent cross-checks (Note 31 director ledgers, AOC-2 Annexure-3, CARO clause xv); highest-priority open item"}
+  - {type: FLAG-DISCLOSURE-QUALITY, reason: "MD&A risk/industry sections generic and business-irrelevant (AI, cross-border data flows for a CCTV-hardware trading company); CSR self-contradiction (Board's Report 'not applicable' vs Note 51 Rs5.50L spent); inverted Section 197(12) remuneration-to-median ratio (0.12x disclosed vs 8.63x correct); undisclosed post-balance-sheet promoter remuneration ~150% increase approved same day as FY25 results"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge, no secondary selling (holding decline 99.99%->68.28% is 100% IPO/bonus dilution); but promoter-family remuneration approved for ~150% increase (Rs1.00L->up to Rs2.50L/month each) effective 01-Jul-2025, undisclosed as a subsequent event in financial notes; MD sits on both Audit Committee and Stakeholders' Relationship Committee. Full promoter verdict deferred to B08 (which landed CAUTION)."}
+phase_verdicts: {p1: "watch", p2: "red_flag", p3: "red_flag", p4: "red_flag", p5: "watch", p6: "watch", p7_best_fit: "GARP/Turnaround - WATCHLIST"}
+overall_quality: 4
+quality_components: {governance: 4, accounting: 4, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would not stop - clean opinion and CARO; fee-ratio/KAM-absence are disclosure-quality flags only"
+  - "Phase 2: would pause for direct management answer on the Rs3.00cr conversion counterparty before sizing any position, not a halt"
+  - "Phase 3: would flag for close FY26 Q1-Q2 CFO/inventory monitoring before material capital commitment, not a stop"
+  - "Phase 4: generic MD&A not a standalone stop; raises the bar for management engagement"
+  - "Phase 5: not a standalone stop - no evidenced fraud, pledge, or default"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+monitorables:
+  - {metric: "CFO (quarterly cumulative FY26)", threshold: "should turn positive or materially narrow vs FY25's -Rs14.10cr pace", where: "Cash Flow Statement, next AR/interim", why: "tests whether FY25 cash burn was one-time IPO-year build or structural"}
+  - {metric: "Finished-goods inventory growth vs revenue growth", threshold: "FG growth should decelerate toward/below revenue growth (was +281.7% vs +99.4%)", where: "Inventory note, next AR", why: "tests sell-in vs sell-through"}
+  - {metric: "Identity of the Rs3.00cr loan-conversion counterparty", threshold: "any specific name/entity disclosed", where: "RPT note or direct management Q&A", why: "resolves the largest open governance question"}
+  - {metric: "Trade payables trend vs purchase growth", threshold: "payables should stabilise, not keep shrinking against rising purchases", where: "Trade Payables note / CF", why: "tests supplier-relationship strain under the trading-model shift"}
+  - {metric: "Non-audit fee vs audit fee ratio, FY26", threshold: "should fall materially from ~19x or be accompanied by service description", where: "Auditors' Remuneration note", why: "tests whether FY25 spike was IPO one-time or recurring"}
+  - {metric: "Actual FY26 promoter-family remuneration paid", threshold: "compare to approved up-to-Rs2.50L/month ceiling", where: "Employee Benefit Expense note / Board's Report FY26", why: "tests scale of approved 150% increase against actual payout"}
+strengths_top3:
+  - "Clean CARO across all applicable clauses - no default, no fraud, no pledge, no disputed statutory dues, no contingent liabilities"
+  - "DuPont-confirmed operational (not leverage-driven) ROE mechanics - FY24-FY25 ROE decline is a mechanical IPO-equity-base effect"
+  - "No promoter share pledge, no promoter secondary selling; fresh, genuinely independent-by-tenure board additions"
+red_flags_top3:
+  - "Unreconciled Rs3.00cr pre-IPO equity-conversion counterparty (Note 3), untraceable across three independent cross-checks including CARO clause xv"
+  - "Operating cash flow negative and worsening (CFO/PAT -139% FY25), understated further by the AS-3 interest-classification choice; running on IPO proceeds not organic cash"
+  - "MD&A/risk disclosure materially generic, compounded by a CSR self-contradiction, an inverted Section 197(12) ratio, and an undisclosed post-balance-sheet promoter remuneration hike"
+best_fit_strategy: "GARP/Turnaround - WATCHLIST (cash-conversion resolution and equity-counterparty disclosure are the re-test triggers)"
+one_line_verdict: "Cash-starved growth conceals an unnamed pre-IPO equity buyer."

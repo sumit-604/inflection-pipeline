@@ -1,0 +1,40 @@
+stage: B00-inputs
+company: OBSCP
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: false          # manifest said concalls_available:false, OVERRIDDEN: 2 genuine transcripts present
+inventory:
+  annual-report: 1              # Annual_Report_2025.pdf (FY25) — RECOVERED, see ar_recovery
+  results: 0                    # folder absent
+  rating: 0                     # folder absent
+  concalls: 2                   # H2 FY25 (19 May 2025), Q4 FY26 (21 May 2026)
+  peer-concalls: 12             # DIVGIITTS x4, PRECAM x4, RACLGEAR x4? , TALBROAUTO x4
+  screening: 6_sets             # OBSCP screener-* plus 4 peers (DIVGIITTS, PRECAM, RACLGEAR, TALBROAUTO)
+  presentation: 1              # Investor_Presentation_1.pdf (37pp, reads clean)
+  other: 0
+concall_quarter_map:
+  - file: Concall_May_2025_Transcript.pdf
+    quarter: "H2 FY25"          # held 19 May 2025, per transcript p1 subject line
+  - file: Concall_May_2026_Transcript.pdf
+    quarter: "Q4 FY26"          # held 21 May 2026, per transcript p1 subject line
+input_gaps:
+  - "results/ folder absent — no standalone results PDFs. Gate 0 runs from screener CSVs; stage 10 will mark latest-period fields unresolved (phase 3)."
+  - "rating/ folder absent — no credit rating rationale PDF. Stage 10 will mark rating_wc_quote unresolved; FLAG-CASH determination loses the rating-rationale evidence source; Pillar 2 defaults conservative in phase 3."
+  - "ANNUAL REPORT TRUNCATED BY COLLECTOR: source PDF (12.1MB) ended mid-stream with no xref/trailer/%%EOF and object 2 (shared /Resources map) lost. Rebuilt: reconstructed object 2 (TPL1..TPL101 -> Form XObjects), synthesized Catalog, null-stubbed 88 missing referenced objects, rebuilt xref. Pages 1-77 render with full content (verified visually: auditor's report p60-73, primary statements, accounting-policy notes begin ~p74). Pages 78-101 LOST (blank) — these hold the detailed numbered notes-to-accounts schedules (receivables ageing, related-party, revenue breakup, segment detail). Stages 2 and 3 run on pages 1-77 and must flag missing schedules; downstream cash/receivables/RPT evidence is partial."
+  - "MANIFEST DEFECT (collector v3): concalls_available set false while two genuine FY26/FY25 earnings transcripts are present. Overridden to NORMAL concall mode using both. Same defect class as KARNIKA 2026-07-11."
+  - "MANIFEST DEFECT (collector v3): sector_cap_row = 'EPC / Civil construction' but OBSCP is precision auto-components / precision engineering (peer set: Divgi TorqTransfer, Precision Camshafts, RACL Geartech, Talbros Auto — all auto-parts). Sector cap almost certainly wrong; flagged for operator confirmation before phase-3 valuation (stage 11 sector cap selection)."
+  - "Stage-0 operator pause (single permitted question) could not be delivered: AskUserQuestion stream closed in this remote session (same as KARNIKA 2026-07-11). Proceeded on documented evidence-maximizing defaults per that precedent; all gaps recorded here and surfaced in the gate recommendation."
+company_identifiers:
+  cin: "L27100DL2017PLC314606"
+  nse_symbol: "OBSCP"
+  cmp: 666.0
+  market_cap_cr: 1720.0
+  known_directors: "Asha Narang (DIN 00296714, Director); associate/parent entity Omega Bright Steel (email domain omegabrightsteel.com)"
+degradation_applied:
+  - "Gate 0 (stage 1): from screener CSVs (OBSCP screener-*.csv); no results PDFs."
+  - "Stages 2, 3: AR pages 1-77 only; notes schedules 78-101 unavailable."
+  - "Stage 5: NORMAL mode on 2 transcripts (not degraded no-concall mode)."
+  - "Stage 6: runs on 12 peer transcripts (available)."
+flags: []

@@ -1,0 +1,42 @@
+stage: B06-peers
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["D-Link India nominated peer has no concall transcript in cache (screener CSVs only); could not be substantively covered."]
+flags:
+  - "Q5 CONTRADICTED: Prizor's claimed 21-23% EBITDA / 14% PAT for CCTV hardware assembly exceeds the category-leading, most-scaled direct peer (CP Plus) in every quarter examined (8.7%-18.0% EBITDA, 4.4%-11.9% PAT), including CP Plus's own 'new normal' guidance of 14-15% EBITDA. Priority item for synthesis."
+  - "Q2 magnitude gap: peer-cited domestic CCTV market CAGR (16.5%, Frost & Sullivan via CP Plus, repeated across 4 quarters) is roughly half of the ~32-33% CAGR implied by Prizor's cited INR28bn(2022)->INR200bn(2029) domestic figures. Global $35.9bn/10.4% CAGR figure has zero peer evidence either way."
+  - "No peer transcript ever mentions Prizor Viztech by name or unmistakable description, including when analysts directly asked CP Plus management to name STQC-certified competitors gaining traction (Prama, Matrix were named; Prizor was not)."
+  - "Only one true CCTV/video-surveillance direct peer (CP Plus) exists in this cache; every CCTV-specific verdict (Q1, Q2, Q4, Q5) is therefore single-peer by construction and capped at PARTIALLY VERIFIED or below per this stage's own verdict rules."
+peers_provided: 4
+peers_substantive: 3
+verified:
+  - {claim: "Rising semiconductor/DDR/Flash component costs and industry-wide backward integration are genuine sector dynamics, not company-specific to Prizor", peers: ["CP Plus", "Sahasra"], anchor_count: 6}
+  - {claim: "Comparable assembly/SMT capacity expansion (capex cycle) is occurring industry-wide across CCTV, EMS, and diversified electronics peers, not a lone-expander situation", peers: ["CP Plus", "Sahasra", "OSEL Devices"], anchor_count: 5}
+partially_verified:
+  - {claim: "STQC/BIS-ER enforcement has permanently displaced non-certified import brands from the Indian CCTV market", peers: ["CP Plus"]}
+  - {claim: "Domestic/global video-surveillance market size and CAGR figures match Prizor's cited global and domestic figures", peers: ["CP Plus"]}
+  - {claim: "Peers report market-share gains attributable to the STQC/BIS-ER regime, at the expense of Chinese/import brands", peers: ["CP Plus"]}
+  - {claim: "Working-capital intensity and short-term debt funding of growth comparable in direction to Prizor's FY26 short-term borrowings increase (Rs2.76cr->Rs31.82cr)", peers: ["OSEL Devices", "Sahasra", "CP Plus"]}
+contradicted:
+  - {claim: "Prizor's claimed 21-23% EBITDA / 14% PAT margins are in line with CCTV hardware assembly peers", contradicting_peer: "CP Plus / Aditya Infotech", quote_anchor: "CP Plus Q4 FY26 (Jun 2026 call): EBITDA 18.0% best quarter (partly one-off), PAT 11.89%; FY26 full year EBITDA 13.7%, PAT 8.72%; FY27 guidance EBITDA 14-15% called 'the new normal' -- all below Prizor's claimed 21-23%/14%"}
+unverifiable:
+  - {claim: "Global video surveillance market is $35.9bn in FY25 growing at 10.4% CAGR to FY30", peers_checked: ["CP Plus", "OSEL Devices", "Sahasra"]}
+peer_coverage_map:
+  - {peer: "CP Plus / Aditya Infotech (CPPLUS)", quarter: "Q1 FY26 (Aug 2025) through Q4/FY26 (Jun 2026), 4 calls", usage: "SUBSTANTIVE", contribution: "Only direct CCTV peer; anchors Q1, Q2, Q4, Q5 and demand/pricing/competitive cross-read"}
+  - {peer: "OSEL Devices (OSELDEVICE)", quarter: "H2 FY25 (May 2025) through H2 FY26 (Jun 2026), 3 calls", usage: "SUBSTANTIVE", contribution: "No CCTV overlap; informs short-term-debt pattern and governance/cash-flow-restatement risk base rate"}
+  - {peer: "Sahasra Electronic Solutions (SAHASRA)", quarter: "H1 FY25 (Nov 2024) through H2/FY26 (Jun 2026), 4 calls", usage: "SUBSTANTIVE", contribution: "Corroborates DDR/memory shortage and capex race; strongest evidence for negative operating cash flow accompanying growth and guidance-credibility base rate"}
+  - {peer: "D-Link India", quarter: "n/a", usage: "UNUSED", contribution: "No concall transcript available in cache (screener CSVs only)"}
+industry_cross_read:
+  demand: "Strong but decelerating-from-hoped-for demand (CP Plus cut FY27 volume growth from >20% to 15-20% on price-hike elasticity); government/railway/school mandates a multi-year tailwind with unpredictable timing; adjacent peers (Sahasra, OSEL) show tariff/geopolitical demand volatility and repeated guidance misses."
+  pricing_inputs: "DDR/Flash/SoC shortage and price inflation confirmed independently by CP Plus and Sahasra (AI-driven global demand diversion); CP Plus warns profitability growth may lag revenue growth on cost-pass-through lag, and its best-quarter gross margin was partly a now-exhausted one-off -- a direct complication for any margin-expansion narrative."
+  capex_cycle: "Industry-wide capacity race, not a lone-expander: CP Plus (1.5m->2.5m units/month, ~INR200-300cr/yr), Sahasra (4->8 SMT lines plus ~INR110-140cr+ subsidized ATMP capex), OSEL (SMT expansion, JNPT SEZ land) all expanding, funded mostly via internal accruals and government subsidy rather than heavy leverage."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Margin-timing lag between input-cost inflation and price pass-through (CP Plus, Jun 2026: 'profitability growth may not mirror the pace of revenue growth')"
+  - "Demand elasticity risk at the entry/low end from price hikes (CP Plus cut its own volume-growth assumption, Feb/Jun 2026)"
+  - "Forward/advance payment to secure chip/memory supply mechanically extending cash conversion cycles even at well-capitalized peers (CP Plus, May 2026)"
+  - "Sustained negative operating cash flow as a STRUCTURAL, multi-year feature of scaling in this peer cohort, not a one-off (Sahasra: negative CFO FY25 and FY26, no return to positive guided before FY2028)"
+  - "Governance/reporting-quality pattern in the small-cap Indian electronics-IPO cohort: guidance-vs-execution credibility gaps (Sahasra) and cash-flow-statement reclassification after an NSE compliance query (OSEL, Jun 2026)"
+net_narrative_effect: "complicates"

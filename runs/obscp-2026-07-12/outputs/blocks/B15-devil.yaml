@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "SHARED CATALYST is unaudited: the Rs 1,200 Cr order book is customer nomination / lifetime program value, not firm POs; CRISIL merely repeats management's 'to be executed over 5-6 fiscals' framing in a credit note and does not audit firmness; a volume cut evaporates Pillar 3c +2x and much of 3a with no breach and no disclosure."
+  - "Order-book math contradicts the growth it underwrites: Rs 100-200 Cr/yr conversion off a Rs 1,200 Cr book implies annual order-book revenue at or below the current Rs 219.5 Cr base, so the 40-45% growth guide leans on business outside the credited book."
+  - "Cash is plausibly STRUCTURAL not growth-induced: the ruling rests on FY25-26 over-12-month ageing that was NEVER SEEN plus a credit analyst's silence, while CRISIL's own words ('long credit periods to export customers', GCAs 223 days) describe a permanent export-credit model; if structural, cash multiplier 0.65x drops destination PE to ~13-14x and the entry zone with it."
+  - "ROCE is DECLINING not STAGNANT (33.4 to 19.0 to 15.1% year-end); the year-end basis already sits below the 18% falsifier, only the average basis rescues STAGNANT, and continued capex keeps bloating the capital base faster than EBIT."
+  - "Reported gross margin is promoter-mediated and opaque: bright-bar steel sourced from promoter-controlled Omega Bright Steel with no non-compete and undisclosed arm's-length pricing, while the FY26 gross-margin proxy collapsed to 23.7% from 41-45% (possible traded-goods reclass); margins are not independently verifiable and the AR is corrupted."
+  - "The re-engagement zone Rs 207-252 is not a margin of safety because it is derived from the same contested destination PE; if any one of order book / cash / ROCE lands bearish, fair value and the entry both fall toward ~Rs 140-170, so true re-entry should be conditional and lower."

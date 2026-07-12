@@ -3,16 +3,17 @@
 Durable per-company memory. Memory to weigh, not a source. Read by /run-pipeline stage 0 and /fttcp.
 
 ## THESIS (one line)
-Real FY26 recovery (revenue +32%, EBITDA margin to ~21%) in a specialty chemicals maker still trading at ~74x on a 6.6% ROCE, so a four-pillar destination PE of ~9x (Track 1 RRM 7.3x governs) makes it AVOID on valuation at Rs 1,326 despite the operating turn; a genuine buy only far below the market.
+Real FY26 recovery (revenue +32%, EBITDA margin to ~21%) in a specialty chemicals maker still trading at ~74x on a 6.6% ROCE, so even crediting the ending capex-cycle recovery via the Amendment 4.5 normalized-ROCE anchor (blend 13.51% off the pre-depression 22.45%), the four-pillar destination PE is only ~9.4x RRM (governs) / 11.4x additive, making it AVOID on valuation at Rs 1,326; a genuine buy only far below the market.
 
 ## DECISION STATUS AND ENTRY ZONE
-As of 2026-07-12 (first workup): DEEP WATCH (AVOID on-valuation, Hurdle STOP). Entry zone Rs 97 to 121, MoS Rs 97. MARKET-UNLIKELY ZONE: entry top Rs 121 is ~82% below the lowest tested closing price since listing (Rs 677.15, FY25), so reachable only via a thesis-relevant shock or broad de-rating. FTTCP composite +3/8 (revenue FIRING, margin STARTING, ROCE RECOVERING, cash DECLINING), Kernex cap engaged on cash. Gate: PROCEED WITH CAVEATS. Confidence delta overall 86.
+As of 2026-07-12 (first workup, valuation refreshed under Section 1B Amendment 4.5 v3.5): DEEP WATCH (AVOID on-valuation, Hurdle STOP base 0.22). Entry zone Rs 118 to 147, MoS Rs 118 (pre-4.5 run was Rs 97-121; the normalized-ROCE anchor lifted the destination PE ~27% but did not change the verdict). MARKET-UNLIKELY ZONE: entry top Rs 147 is ~78% below the lowest tested closing price since listing (Rs 677.15, FY25), so reachable only via a thesis-relevant shock or broad de-rating; per Amendment 4.5 the re-open keys off ROCE reverting and cash turning, not the fixed price line. FTTCP composite +3/8 (revenue FIRING, margin STARTING, ROCE RECOVERING, cash DECLINING), Kernex cap engaged on cash. Gate: PROCEED WITH CAVEATS. Confidence delta overall 86.
 
 ## OPERATOR RULINGS
 - 2026-07-12: Signed off the FTTCP as it stands (DEEP WATCH). No override to any transition verdict or to the valuation.
 - 2026-07-12: Sector cap corrected from the manifest's Pharma/CDMO 38x to Specialty chemicals 35x. Reasoning: Tatva makes PTC, SDA, electrolyte salts and pharma/agro intermediates, sold as process chemicals, not contract drug manufacturing.
 - 2026-07-12: Raised whether Pillar 3b (moat) and 3c (duration) should score above zero for R&D and a large TAM; not adopted. EM 19.2 is the evidence-weighted audited score (below the 25 paying line) and 3c pays only for documented long-tenor contracts, not TAM. Operator signed off as it stands.
 - 2026-07-12: Asked to hand-set the destination PE (15x, then 50x); not adopted. Round-number exit PE is prohibited (sole-authority rule) and 50x breaches the absolute 35x cap; no framework-legal multiple passes the hurdle at Rs 1,326 (even the 35x ceiling gives HR 0.86 vs 1.953).
+- 2026-07-12: Put the weekly chart next to the model (four-year floor ~Rs 590 vs model entry Rs 121) and called out that the entry number was detached. Diagnosis accepted: the trough-ROCE anchoring understated fair value. Directed (1) a normalized-ROCE sensitivity, then (2) a framework amendment. Result: Section 1B Amendment 4.5 (v3.5) written (normalized-ROCE anchor for TEMPORARILY DEPRESSED + RECOVERING verdicts), and TATVA re-valued under it (entry Rs 97-121 -> Rs 118-147; verdict unchanged AVOID). The fair value under 4.5 (Rs 287-499) reconciles with where the market floored; the 25% entry still sits below the market's floor, so the pass stands.
 
 ## ACTIVE TRIPWIRES
 - Falsification (thesis-broken): Q1/H1 FY27 operating cash flow negative on rising revenue with consolidated receivable days above 185 -> confirms cash flag structural.

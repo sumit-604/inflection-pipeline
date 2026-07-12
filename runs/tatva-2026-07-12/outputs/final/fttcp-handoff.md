@@ -1,6 +1,6 @@
 # FTTCP handoff dossier, Tatva Chintan Pharma Chem (TATVA)
 
-Archive input package for a separate FTTCP v1.2 deliberation session that will not have the source PDFs. Every figure carries a source anchor. Block references (B01 etc.) are the machine anchors; page numbers are from the FY2024-25 Annual Report unless stated. Company Tatva Chintan Pharma Chem Ltd, ticker TATVA, CMP Rs 1,326, market cap Rs 3,103 Cr, run date 2026-07-12, NORMAL concall mode.
+Archive input package for a separate FTTCP v1.2 deliberation session that will not have the source PDFs. Every figure carries a source anchor. Block references (B01 etc.) are the machine anchors; page numbers are from the FY2024-25 Annual Report unless stated. Company Tatva Chintan Pharma Chem Ltd, ticker TATVA, CMP Rs 1,326, market cap Rs 3,103 Cr, run date 2026-07-12, NORMAL concall mode. The valuation pillar (section 6) was refreshed under Section 1B Amendment 4.5 (v3.5); see the note at the head of that section.
 
 ---
 
@@ -50,12 +50,15 @@ Rating agency working capital commentary, verbatim: NOT FOUND. No rating PDF was
 
 | FY | ROCE | ROE | Anchor |
 |---|---|---|---|
-| FY18-FY21 | 19% to 25% (band) | NOT FOUND | B01 flags reason (ROCE ~19-25% FY18-FY21) |
+| FY18 | 18.8% | NOT FOUND | B10 normalized_roce fy2018_pct (EBIT 21.67 Cr / CapE 115.27 Cr) |
+| FY19 | 20.0% | NOT FOUND | B10 normalized_roce fy2019_pct |
+| FY20 | 24.9% | NOT FOUND | B10 normalized_roce fy2020_pct |
+| FY21 | 25.4% | NOT FOUND | B10 normalized_roce fy2021_pct |
 | FY24 | 10.91% | NOT FOUND | B10 roce_2yr_trend (FY24 10.91%) |
 | FY25 | 1.20% (min 1.17%) | 0.05% (standalone) | B10 roce_2yr_trend (FY25 1.20%); B01 (min 1.17%); B03 red_flags_top3 (standalone ROE 0.05% FY25) |
 | FY26 | 6.6% | 5.4% (standalone) | B10 roce_latest_pct 6.6 (Deliberation line 45); B10 roe_standalone_pct 5.4 |
 
-Capital employed basis for ROCE is Net Worth + Total Borrowings across all 9 years; screener Data_Sheet does not split current/non-current liabilities FY18-FY24, and FY25/FY26 results-PDF balance sheets confirm non-current liabilities are a small residual (B01 data_notes). The ROCE collapse tracks the FY22-FY26 Dahej SEZ capex cycle depressing capital-employed returns (B10 roce_trend_source; B04 line 46). Deliberation record uses 6.6% as the single-source authoritative FY26 ROCE; a directly computed EBIT/CapE gives 6.32% (B10 conflicts ROCE FY26), within methodology variation.
+Pre-depression FY18 to FY21 median ROCE 22.45%, median of [18.8, 20.0, 24.9, 25.4], on the EBIT/(Net Worth + Borrowings) basis (B10 normalized_roce median_pct / median_source). Capital employed basis for ROCE is Net Worth + Total Borrowings across all 9 years; screener Data_Sheet does not split current/non-current liabilities FY18-FY24, and FY25/FY26 results-PDF balance sheets confirm non-current liabilities are a small residual (B01 data_notes). The ROCE collapse tracks the FY22-FY26 Dahej SEZ capex cycle depressing capital-employed returns (B10 roce_trend_source; B04 line 46). Deliberation record uses 6.6% as the single-source authoritative FY26 ROCE; a directly computed EBIT/CapE gives 6.32% (B10 conflicts ROCE FY26), within methodology variation.
 
 ---
 
@@ -123,11 +126,11 @@ Stage 8 ran partial: WebFetch to indianchemicalnews.com (GPCB article), trendlyn
 
 ### SHARED-CATALYST flag (ACTIVE, for Role 3)
 
-Dahej commissioning underpins both Pillar 1 forward ROCE and the would-be Pillar 3a growth premium; 3a resolved +0x so no premium credited, but the flag stands as a single point of failure to stress-test (B11 flags; Deliberation line 50).
+Dahej commissioning drives both Pillar 1 forward ROCE via the Amendment 4.5 normalized-ROCE unwind and the would-be Pillar 3a growth premium; 3a resolved +0x so the catalyst is credited once, but the flag stands as a single point of failure to stress-test (B11 flags; Deliberation line 50).
 
 ### HURDLE-STOP flag
 
-AVOID-on-valuation; destination PE ~9x (Track 1 7.3x) vs current PE 73.75x (B11 flags).
+AVOID-on-valuation; destination PE mid 9.4x on the governing Track 1 (11.4x additive Track 2) vs current PE ~74x (B11 destination_pe; hurdle_ratio STOP).
 
 ---
 
@@ -197,7 +200,7 @@ going_concern_language: NONE beyond standard SA 570 boilerplate; unmodified opin
 
 ### Market sizing (B09)
 
-tam_cr conservative 15,237 / realistic 22,530. sam_cr 7,909 (51.9% of TAM). som_3yr_cr 754, som_5yr_cr 968. runway_class GOOD. som_implied_revenue_cagr yr3 14.3%, yr5 13.9%. current_sam_share_pct 4.3, revenue_headroom_x 15.6, tam_growth_pct 6.5. mgmt_claim_cr 12,13,637 (Rs 1,21,364 Cr), mgmt_claim_ratio 79.7x, mgmt_claim_read inflated. capacity_check marginal: SOM 3yr Rs 754 Cr is only ~Rs 23 Cr above B07's conservative Jolva-inclusive capacity ceiling Rs 731 Cr; a 4th Jolva slip makes capex the binding constraint.
+tam_cr conservative 15,237 / realistic 22,530. sam_cr 7,909 (51.9% of TAM). som_3yr_cr 754, som_5yr_cr 968. runway_class GOOD. som_implied_revenue_cagr yr3 14.3%, yr5 13.9%. current_sam_share_pct 4.3, revenue_headroom_x 15.6, tam_growth_pct 6.5. mgmt_claim_cr Rs 1,21,364 Cr, mgmt_claim_ratio 79.7x, mgmt_claim_read inflated. capacity_check marginal: SOM 3yr Rs 754 Cr is only ~Rs 23 Cr above B07's conservative Jolva-inclusive capacity ceiling Rs 731 Cr; a 4th Jolva slip makes capex the binding constraint.
 
 ### Peer triangulation (B06)
 
@@ -207,38 +210,52 @@ verified: [] (none fully verified). partially_verified: RM cost spike ~30-40% Q4
 
 ## 6. Valuation pillar detail (stage 11 ran)
 
-framework_versions: Master v3.3 / Section 1B v3.3+v3.4 / FTTCP v1.2 (B11).
+REFRESH NOTE: this valuation was regenerated under Section 1B Amendment 4.5 (v3.5). The amendment introduced the normalized-ROCE three-anchor blend for Pillar 1 when ROCE is TEMPORARILY DEPRESSED and forward RECOVERING. Versus the pre-4.5 run, it lifted the destination PE about 27% (Track 1 mid 7.3x to 9.4x, Track 2 mid 9.0x to 11.4x) and the entry zone from Rs 97-121 to Rs 118-147. The AVOID (on-valuation) decision and the Hurdle STOP are unchanged, because CMP remains ~4.6x base fair value.
+
+framework_versions: Master v3.3 / Section 1B v3.3 + Amendment 4.5 (v3.5) / FTTCP v1.2 (B11).
 
 Inputs (B10 table): CMP Rs 1,326; shares_diluted 2.339 Cr; net_debt Rs 1,146.1 Mn; EV Rs 32,176.1 Mn; revenue FY26 Rs 5,058.6 Mn; EBITDA FY26 Rs 967.1 Mn (margin 19.1%); PAT FY26 Rs 420.5 Mn (margin 8.3%); diluted EPS Rs 17.98; CFO Rs 314.9 Mn; FCF Rs -822.8 Mn; BVPS Rs 334.6; capex Rs 1,137.7 Mn; ROCE 6.6%; standalone ROE 5.4%; guided FY27 revenue +25%, EBITDA band 20-22%; credibility B.
 
-### Destination PE, Track 1 RRM
+### Normalized-ROCE three-anchor blend (Amendment 4.5, Pillar 1)
 
-track1_rrm low 7.0 / mid 7.3 / high 8.0; r_used 15%, rrm 0.82 (B11 destination_pe). Governs: more conservative and prices governance (FLAG-PROMOTER) via r; sets the entry zone. FLAG-PROMOTER CAUTION cluster (GPCB closure, remuneration vs PAT, 2x CRISIL downgrade) priced into RRM r=15% (B11 flags).
+Applicability gate: Amendment 4.5 applies only because ROCE is TEMPORARILY DEPRESSED backward and RECOVERING forward, gated on both the historical ROCE series and the Dahej unwind catalyst, and capped at the evidenced pre-depression median (B12c confirmed amd45_applies_only_temp_depressed_recovering true, normalized_gated_both_evidences, normalized_capped_at_evidenced_median true).
+- Anchor 1, pre-depression FY18 to FY21 median 22.45%, weight 40% (median of 18.8/20.0/24.9/25.4, B10 normalized_roce).
+- Anchor 2, FY28 expected ROCE base 8.5% (bear 6.3%, bull 10.6%), weight 30% (B10; Stage 11 projection off FY27 guided +25% revenue, 20-22% margin, Jolva capital landing before it earns).
+- Anchor 3, current FY26 ROCE 6.6%, weight 30% (B10 roce_latest, Deliberation line 45).
+- Blend: 0.40 x 22.45 + 0.30 x 8.5 + 0.30 x 6.6 = 13.51% (B11 roce_used; B12c blend_40_30_30).
+- Continuous formula: 0.5 x 13.51 + 7.5 = 14.26x, the Pillar 1 base (B11 roce_base; B12c continuous_formula). One-decimal 14.3x per Amendment 5 rounding; B11 carried 14.26x, a +0.03x MINOR with no decision impact (B12c minor).
+- Single credit via Pillar 1 only; Strategic ROCE re-rating barred (B12c single_credit_route). Self-withdrawal guard stated: if ROCE stays in the 6-8% band through FY28 or forward RECOVERING probability slips below 40-60%, Pillar 1 reverts to the current-weighted blend (B12c self_withdrawal_guard_stated; B14 thesis_broken_if).
+
+### Quality-adjusted base
+
+Pillar 1 base 14.26x times Pillar 2 cash multiplier 0.80x = quality-adjusted base 11.41x (B12c quality_adjusted_base). Pillar 3: 3a +0x (growth premium withheld, shared catalyst credited via Pillar 1), 3b +0x (EM 19.2 < 25 threshold), 3c +0x (no documented long-tenor contracted revenue) (B12c pillar3; B11 pillar_detail).
+
+### Destination PE, Track 1 RRM (governs)
+
+track1_rrm low 8.5 / mid 9.4 / high 10.0; r_used 15%, rrm 0.82 (B11 destination_pe). Governs: more conservative (lower FV) and appropriate for a governance-flagged cyclical micro-cap at r=15%; sets the entry zone (B11 governing_track). FLAG-PROMOTER CAUTION cluster (GPCB closure, remuneration vs PAT, 2x CRISIL downgrade) priced into RRM r=15%.
 
 ### Destination PE, Track 2 additive
 
-track2_additive low 8.5 / mid 9.0 / high 9.5 (B11). divergence_pct 18.9%, above the 15% line, so Track 1 governs the entry zone (B11 destination_pe governing_track; B12c divergence_governing).
+track2_additive low 10.5 / mid 11.4 / high 12.5 (B11). Divergence 22%, above the 15% line, so Track 1 governs the entry zone (B11 divergence_pct; B12c divergence_governing).
 
-### Pillar build (B11 pillar_detail)
+### Other pillar settings
 
-- roce_used 7.36% (Pillar 1, RECOVERING 40-60% -> 60/40 blend of FY26 6.6% and FY28 estimate); roce_base 11.2; roce_recovery_route pillar1-midpoint. Single-credit route: Pillar 1; Strategic Premium withheld (B12c single_credit_route).
-- cash_multiplier 0.80 (INDETERMINATE leaning structural, no offset); growth_offset 0.
-- Pillar 3: 3a +0x, 3b +0x (EM 19.2 < 25), 3c +0x (no documented long-tenor contracted revenue); growth_premium 0, strategic_premium 0 (B12c pillar3).
-- shared_catalyst_flag true (Dahej).
-- ua_applied false (UA qualifiers 1 of 3 met, listed >=12m only; all_met false; F2 = min(F, 35)); sector_cap_used 35 (Specialty Chemicals, correcting manifest Pharma/CDMO 38x, per Deliberation line 19). weights 25/50/25 for grade B (B12c weights_4d).
+- cash_multiplier 0.80 (INDETERMINATE leaning structural, no offset); growth_offset 0; growth_premium 0; strategic_premium 0 (B11 pillar_detail).
+- shared_catalyst_flag true (Dahej); ua_applied false (UA qualifiers 1 of 3 met, listed >=12m only; all_met false); sector_cap_used 35 (Specialty Chemicals, correcting manifest Pharma/CDMO 38x, per Deliberation line 19); weights 25/50/25 for grade B (B12c weights_4d).
 
 ### Hurdle and outputs
 
-hurdle_ratio base 0.169, bull_used true (bull 0.241), Tier A threshold 1.953, verdict STOP (B11 hurdle_ratio; B12c hurdle_ratio).
-fair_values Track 1: bear 139, base 237, bull 347. Track 2: bear 169, base 282, bull 408 (B11).
-expected_cagr_prob_weighted -44.1%. entry_range Rs 97-121. mos_price Rs 97. upside_downside_ratio 0.82. decision AVOID (on-valuation) (B11).
-som_cagr_crosscheck consistent (base revenue CAGR 14.0% <= SOM-implied 14.3% 3yr; no cut) (B11).
-One-line thesis (B11): "Avoiding TATVA at Rs 1,326: EPS recovers to base Rs 30.65 by FY29 but a ~7% ROCE below CoE and structural-leaning cash leakage earn only a ~9x (Track1 7.3x) four-pillar destination PE vs current 73.75x, implying -44% CAGR to a Rs 237 target; Hurdle Ratio STOP."
-Devil's advocate note (B15): AVOID over-determined; even 35x cap on bull FY29 EPS Rs 43.74 = ~5% CAGR from Rs 1,326. Entry zone may be conservative because the 0.5xROCE+7.5 formula treats the ending capex-cycle ROCE trough (6.6% vs 19-25% pre-capex) as permanent.
+hurdle_ratio base 0.216, bull 0.309 (bull_used true), Tier A threshold 1.953, verdict STOP (B11 hurdle_ratio; B12c hurdle_ratio).
+fair_values Track 1: bear 201, base 287, bull 409. Track 2: bear 245, base 350, bull 499 (B11 fair_values).
+expected_cagr_prob_weighted -39.8%. entry_range Rs 118-147. mos_price Rs 118. upside_downside_ratio 0. decision AVOID (on-valuation), unchanged from pre-4.5 despite ~27% higher destination PE (B11 entry_range, mos_price, decision).
+entry math: 287 / 1.953 = 147 (zone top); MoS 147 x 0.80 = 118 (B12c entry_math).
+som_cagr_crosscheck consistent: base 14.3% matches SOM-implied 14.3%; bull 25% exceeds SOM (guidance-at-face, grade B), flagged growth-dependent with capacity-ceiling caveat (B11 som_cagr_crosscheck).
+One-line thesis (B11): "AVOID TATVA at Rs 1,326: even crediting sustainable ROCE via the Amendment 4.5 normalized anchor (13.51% blend of pre-depression 22.45% / FY28 8.5% / current 6.6%), four-pillar destination PE is only 11.4x additive / 9.4x RRM, FY29 base fair value ~Rs 287-350 vs CMP ~4.6x higher; Hurdle STOP, expected 3yr CAGR ~ -40%. Cash quality: INDETERMINATE leaning structural."
+Devil's advocate note (B15, run pre-4.5): AVOID over-determined; even 35x cap on bull FY29 EPS Rs 43.74 = ~5% CAGR from Rs 1,326. Its central caveat, that the entry zone was too conservative because the 0.5xROCE+7.5 formula treated the ending capex-cycle ROCE trough (6.6% vs 19-25% pre-capex) as permanent, is PARTLY ADDRESSED by this Amendment 4.5 refresh, which raised the zone about 27%; the devil's SURVIVES verdict stands because even the higher zone remains far below any tested price.
 
 ### Zone reachability (price history)
 
-Screener year-end closing prices since July 2021 listing: FY22 Rs 2,308.4, FY23 Rs 1,669.05, FY24 Rs 1,078.6, FY25 Rs 677.15, FY26 Rs 1,052.4. Intraday 52-week low NOT in the data. Lowest tested price since listing Rs 677.15 (FY25 close). Entry zone top Rs 121 is ~82% below the lowest tested price and ~88% below the FY26 close. Zone top >20% below lowest tested price => MARKET-UNLIKELY ZONE, classify DEEP WATCH. Tier A (25% hurdle) applies; Tier B does not (fails Gate 0 GOOD+, promoter TRUSTWORTHY+, no-structural-cash gates), so no closer Tier B zone.
+Screener year-end closing prices since July 2021 listing: FY22 Rs 2,308.4, FY23 Rs 1,669.05, FY24 Rs 1,078.6, FY25 Rs 677.15, FY26 Rs 1,052.4. Intraday 52-week low NOT in the data (limitation stated). Lowest tested price since listing Rs 677.15 (FY25 close). Entry zone top Rs 147 is ~78% below the lowest tested price and ~86% below the FY26 close. Zone top >20% below lowest tested price => MARKET-UNLIKELY ZONE, classify DEEP WATCH. Tier A (25% hurdle) applies; Tier B does not (fails Gate 0 GOOD+, promoter TRUSTWORTHY+, no-structural-cash gates), so no closer Tier B zone. Amendment 4.5 re-open guidance: key the re-open off ROCE reverting toward the pre-depression band and cash conversion turning, not the fixed price line.
 
 ---
 
@@ -259,4 +276,5 @@ Screener year-end closing prices since July 2021 listing: FY22 Rs 2,308.4, FY23 
 | Per-tonne/per-unit revenue and volume, named competitor revenue | B04, B09 bottom-up TAM (Method 2/3) | Not disclosed; would need company data or third-party market report |
 | Q1 FY26 concall (set aside per 3-most-recent rule) | B05 origin-tracing of some guidance | Company concall archive (Jul 2025 call) |
 | CLEAN quote correct anchor | B06/B12d MAJOR (Q3 vs Q4 FY26) | CLEAN May 2026 (Q4 FY26) transcript; corrective note only, no verdict change |
+| B10 legacy 7.36% Pillar 1 blend label | B10 normalized_roce, B12c MINOR | Stale pre-4.5 label; B11 correctly used 13.51%; cosmetic cleanup only, no governing effect |
 | Glassdoor/AmbitionBox, IiAS/SES/InGovern, Sustainalytics ESG | B08 promoter partial checks | WebFetch returned HTTP 403 / no matches; retry outside search budget |

@@ -3,26 +3,34 @@ company: "PRIZOR"
 run_date: "2026-07-12"
 model: claude-opus-4-8
 status: complete
-phase: 1
-gate0:
-  rules_checked: 48
-  fails: []
-emoat:
-  rules_checked: 24
-  fails: []
+phase: "1+3 merged"
+gate0: {rules_checked: 48, fails: []}
+emoat: {rules_checked: 24, fails: []}
 valuation:
-  rules_checked: 0
+  rules_checked: 34
   fails: []
-  note: "deferred to phase 3 (B11/B10 not yet produced)"
-recomputed_destination_pe: ""
-recomputed_decision: "concur: Gate 0 AVERAGE, EM 13.6 MODEST"
+  rules_checked_detail:
+    pillar1: 5
+    pillar2: 4
+    pillar3: 5
+    strategic_ua_sectorcap: 5
+    tracks_divergence: 6
+    hurdle_twotier: 6
+    entry_returns_crosschecks: 3
+    role2_decision_position_zone: 4
+recomputed_destination_pe: "CONCUR: Track1 16.2x mid / Track2 15.0x mid"
+recomputed_decision: "CONCUR: AVOID / DEEP WATCH"
 findings:
-  - {severity: "MINOR", location: "B01 Block F / M7", issue: "Regulatory/License scored 0 'unregulated'; a BIS mandatory-cert regime (IS 13252) exists, at most M7=1 (>10 players), never >=3. Defensible on Gate 0's AR-only inputs; no moat-count or classification impact.", rule_ref: "prompts/01 lines 118-120"}
-  - {severity: "MINOR", location: "B01 Block F / M8", issue: "Distribution scored 0 (no network in AR); stage 7 with investor presentation documented an 11,000+ dealer network. Differing input set, not a rule error; even M8=1 is <3, no moat-count impact.", rule_ref: "prompts/01 lines 121-123"}
-  - {severity: "MINOR", location: "B01 Blocks A/B", issue: "ROCE computed from AR rather than taken from source per formula-def preference; justified by empty screener CSV templates. Same threshold bands; primarily a numbers-provenance matter (Verifier A).", rule_ref: "prompts/01 line 31"}
-  - {severity: "MINOR", location: "B07 Section 2C / capex_embedded_growth_pct", issue: "Headline 116% is capacity-based, not the prescribed FAT-turnover method (~237%). Conservative and reasoned; both clear the >=15% Pillar-3a qualifier, so zero destination-PE impact.", rule_ref: "prompts/07 line 50-52; Sec1B Amdt 4.1"}
-  - {severity: "MINOR", location: "B07 Section 5 / R1", issue: "R1 rated HH (impact High) despite the maker's own 'Moderate durability' finding; HM (=3.0) would drop total to 12.6, still MODEST. Within-tolerance judgment.", rule_ref: "prompts/07 lines 128-132"}
+  # phase-1 gate0 + emoat MINORs (retained)
+  - {severity: "MINOR", location: "B01 Block F / M7", issue: "Regulatory/License scored 0 'unregulated'; a BIS mandatory-cert regime exists, at most M7=1, no moat-count impact.", rule_ref: "prompts/01 lines 118-120"}
+  - {severity: "MINOR", location: "B01 Block F / M8", issue: "Distribution scored 0 (AR-only); stage 7 documented 11,000+ dealers; differing input set, even M8=1 is <3, no impact.", rule_ref: "prompts/01 lines 121-123"}
+  - {severity: "MINOR", location: "B01 Blocks A/B", issue: "ROCE computed from AR rather than source per formula preference (empty screener CSVs); same bands.", rule_ref: "prompts/01 line 31"}
+  - {severity: "MINOR", location: "B07 Section 2C", issue: "capex_embedded_growth 116% capacity-based not FAT-method (~237%); both clear >=15% qualifier, no PE impact.", rule_ref: "prompts/07 line 50-52"}
+  - {severity: "MINOR", location: "B07 Section 5 / R1", issue: "R1 rated HH despite 'Moderate durability'; HM would drop total to 12.6, still MODEST.", rule_ref: "prompts/07 lines 128-132"}
+  # phase-3 valuation MINOR
+  - {severity: "MINOR", location: "B14-thesis zone_reachability (14-thesis.md vs B14 YAML field)", issue: "md says 'Lowest tested LISTED price since July 2024: NOT FOUND'; yaml says '~25% below the only price reference Rs 105.25'. Cross-artifact anchor inconsistency; MARKET-UNLIKELY/DEEP WATCH classification correct either way; no decision impact.", rule_ref: "Master v3.3 Role 2 / Amdt 4.3-4.4 zone-reachability flag"}
 critical_count: 0
 major_count: 0
-minor_count: 5
-acceptance_rate: 94
+minor_count: 6
+acceptance_rate: 100
+acceptance_note: "106 rules passed / 106 checked across all three sections (gate0 48, emoat 24, valuation 34). Both destination-PE tracks, Hurdle, two-tier assignment, UA ordering, sector cap 25x, and the Role 2 decision chain independently recomputed and tie exactly to B11/B14. Concur AVOID."

@@ -1,0 +1,86 @@
+stage: B05-concall
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "HFC/NCLT resolution promised for Q4 FY26 with a 4-6 week timeline went entirely unmentioned in the Q4 FY26 call"
+  - "FY27 RoA/RoE/credit-cost guidance diluted and pushed out across all three calls without explicit acknowledgment"
+  - "Segment-level MSME credit-cost disclosure narrowed from quarterly to annual-only by Q4 FY26"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "D2C mix shift to 65-70% of AUM", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "H", confirm_signal: "Mix crosses 62-65% with NIM expanding toward 10-10.25%", kill_signal: "Mix stalls below 60% or NIM compresses"}
+  - {priority: 2, name: "Rural/MFI re-acceleration (CGFMU + MFIN guardrails)", type: "VOLUME", timeframe: "near-medium", conviction: "M-H", confirm_signal: "Rural AUM growth holds near Q4 FY26 pace (+8% QoQ), credit cost stays under 2%", kill_signal: "PAR 0+ reversal or a Karnataka-style ordinance in a new state"}
+  - {priority: 3, name: "RoA/RoE trajectory to 3%+ / mid-to-high-teens", type: "combined", timeframe: "long", conviction: "M", confirm_signal: "FY27 actual RoA >=3%, RoE trending toward 14-15%", kill_signal: "Further downward revision of target, or RoA stalling below 2.8%"}
+  - {priority: 4, name: "Cost-of-funds discipline despite rate-cycle reversal", type: "COST", timeframe: "near", conviction: "H", confirm_signal: "COF holds at/under 8.5-8.6% through FY27", kill_signal: "COF rises above 8.7-9% on G-Sec/hedge-cost pressure"}
+  - {priority: 5, name: "Fee franchise scale-up (placement, funds, Altifi, NPOS)", type: "REVENUE", timeframe: "medium-long", conviction: "M", confirm_signal: "Fee income growth sustains >40% YoY, new fund launches materialize", kill_signal: "Credit fund AUM keeps shrinking"}
+  - {priority: 6, name: "RBI FLDG/ECL clarity monetization", type: "REGULATORY-POLICY", timeframe: "realized", conviction: "H", confirm_signal: "ECL coverage stays stable at the new lower level with no reversal surprise", kill_signal: "RBI revises guideline again or provisioning proves inadequate"}
+  - {priority: 7, name: "HFC exposure NCLT resolution", type: "REGULATORY-POLICY", timeframe: "overdue", conviction: "L", confirm_signal: "Explicit update/resolution given on the next call", kill_signal: "Continued silence"}
+  - {priority: 8, name: "MSME secured LAP growth (100% registered mortgage)", type: "VOLUME", timeframe: "medium", conviction: "H", confirm_signal: "Collection efficiency holds near 99%+", kill_signal: "Bounce rates rise again"}
+  - {priority: 9, name: "New credit fund launches (climate/MSME/women-entrepreneur)", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "Fund launches confirmed with AUM growth", kill_signal: "Continued no-mention / fund AUM decline persists"}
+guidance:
+  - {item: "AUM growth", number: "20%-22%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "RoA", number: "~2.8%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Credit cost", number: "2.6%-2.8%", timeframe: "H2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Credit cost", number: "2.3%-2.5%", timeframe: "FY27", stated_in: "Q2 FY26 call"}
+  - {item: "Opex ratio", number: "3.7%-3.8%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Cost of funds", number: "8.5%-8.7%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "RoA trajectory", number: "+100bps from 2.7-2.8% base", timeframe: "next 4-6 quarters", stated_in: "Q2 FY26 call"}
+  - {item: "RoE", number: "late teens", timeframe: "next 2-3 years", stated_in: "Q2 FY26 call"}
+  - {item: "AUM growth (revised)", number: "upward of 20%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Credit cost (revised)", number: "2.8%-3%", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "RoA", number: "3.2%", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "RoE", number: "15%-16% within 6-7 quarters", timeframe: "forward", stated_in: "Q3 FY26 call"}
+  - {item: "Credit cost (revised again)", number: "2.7%-3.0%", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "AUM growth", number: "22%-25%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "RoA", number: "3 plus", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "RoE", number: "15%-17% within 8-10 quarters", timeframe: "forward", stated_in: "Q4 FY26 call"}
+  - {item: "Credit cost", number: "2.7%-2.8%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Cost of funds", number: "8.5%-8.6%, bottomed out", timeframe: "forward", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 6
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "AUM growth FY26: 20%-22%", outcome: "Delivered", explanation: "FY26 actual AUM growth 22% YoY"}
+    - {promised_in: "Q2 FY26 call", promise: "RoA FY26: ~2.8%", outcome: "Delivered", explanation: "FY26 actual RoA 2.8%"}
+    - {promised_in: "Q2 FY26 call", promise: "Opex ratio FY26: 3.7%-3.8%", outcome: "Delivered", explanation: "FY26 actual opex ratio 3.6%, beat"}
+    - {promised_in: "Q2 FY26 call", promise: "Cost of funds FY26: 8.5%-8.7%", outcome: "Delivered", explanation: "FY26 actual COF 8.5%"}
+    - {promised_in: "Q2 FY26 call", promise: "Credit cost H2 FY26: 2.6%-2.8%", outcome: "Partial", explanation: "Q3 FY26 spiked to ~2.9%-3.5% on a one-off FLDG correction; FY26 full year landed at 2.8%, top of band"}
+    - {promised_in: "Q2 FY26 call", promise: "Rural/MFI scale-up confidence", outcome: "Delivered with lag", explanation: "Q3 FY26 still cautious (branches cut), Q4 FY26 sharp scale-up delivered"}
+    - {promised_in: "Q2 FY26 call", promise: "Fee/other income 80-90bps FY26, 90-110bps forward", outcome: "Delivered directionally", explanation: "Fee income +50% YoY/QoQ Q3 FY26, loaded NIM improved to 10.7%"}
+    - {promised_in: "Q2 FY26 call", promise: "FY27 credit cost: 2.3%-2.5%", outcome: "Missed", explanation: "Revised to 2.7%-3.0% (Q3 FY26 call), then 2.7%-2.8% (Q4 FY26 call), never reconciled to original number"}
+    - {promised_in: "Q2 FY26 call", promise: "RoA trajectory +100bps in 4-6 quarters (implies ~3.7-3.8%)", outcome: "Missed", explanation: "FY27 target given as 3.2% (Q3 FY26 call), then '3 plus' (Q4 FY26 call), well short of implied original number"}
+    - {promised_in: "Q2 FY26 call", promise: "RoE late teens within 2-3 years", outcome: "Partial, timeline slipping", explanation: "Revised to 15-16% in 6-7 quarters (Q3 FY26), then 15-17% in 8-10 quarters (Q4 FY26)"}
+    - {promised_in: "Q3 FY26 call", promise: "HFC/NCLT resolution within 4-6 weeks, this quarter", outcome: "Missed, silent", explanation: "No mention at all in Q4 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "New credit fund launches (climate/MSME/women-entrepreneur) in coming quarters", outcome: "Missed, dropped", explanation: "Never named again; credit fund AUM fell Q3 FY26 to Q4 FY26"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What is the credit cost/asset quality split between branch-led and digital/merchant MSME lending?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the medium-term RoA/RoE target and by when?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answered every time but answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "FY26 in-year guidance (AUM growth, RoA, opex ratio, cost of funds) delivered as promised across all three calls with granular reconciliation of misses; but FY27 RoA/RoE/credit-cost targets were diluted and pushed out across all three calls without full acknowledgment, and the promised near-term HFC NCLT resolution update went completely unmentioned in the Q4 FY26 call."
+peer_questions:
+  - {question: "Management guides sector-wide MFI growth of 15%-17% (Q3 FY26 call) and cites an industry MFI-market contraction of ~30%. Do peer NBFC/MFI concalls corroborate this shrinkage and growth guide for the same period?", why: "Validates whether NORTHARC's rural recovery narrative and sector framing is consistent with peer disclosures or overstated.", check_peers: ["MASFIN", "CGCL", "FEDFINA", "UGROCAP"]}
+  - {question: "NORTHARC says incremental cost of funds bottomed at 8.5%-8.6% in Q4 FY26 with no further reduction expected. Do peer NBFC concalls for the same quarter echo a cost-of-funds plateau/reversal?", why: "Tests whether the funding-cost tailwind reversal is company-specific or sector-wide, material to margin guidance credibility.", check_peers: ["CGCL", "FEDFINA", "MASFIN", "UGROCAP"]}
+  - {question: "NORTHARC attributes its Q3 FY26 MSME credit-cost increase to an 'industry-wide' PAR-accretion trend in small-ticket LAP. Do peer secured-MSME lenders report similar deterioration in the same quarter, at similar magnitude?", why: "Verifies whether the stress is genuinely sector-wide, as claimed, or NORTHARC-specific underwriting slippage.", check_peers: ["CGCL", "FEDFINA"]}
+  - {question: "NORTHARC states the Feb-2026 RBI FLDG/ECL guideline materially reduced its ECL coverage (Stage 2 from 24% to 12%). Do peers with co-lending/FLDG-backed digital books report a comparable ECL coverage release from the same RBI guideline in Q4 FY26?", why: "Tests whether the earnings benefit reflects a genuine, consistently-applied regulatory clarification or a company-specific interpretation flattering reported profitability.", check_peers: ["UGROCAP", "FEDFINA"]}
+  - {question: "Management repeatedly claims AUM growth is 'outpacing the industry.' What AUM/loan growth did peer NBFCs report for the same quarters (Q2-Q4 FY26)?", why: "Verifies the repeated market-share/outperformance claim used to justify the premium growth narrative.", check_peers: ["CGCL", "FEDFINA", "MASFIN", "UGROCAP"]}
+  - {question: "NORTHARC frames its placement/co-lending fee franchise as a differentiated moat, citing +73% YoY placement volume growth in Q3 FY26. Do peers running comparable co-lending/placement models report similar fee economics or growth?", why: "Assesses whether the 'unique franchise' claim is defensible versus peers running similar models.", check_peers: ["UGROCAP", "MASFIN"]}
+  - {question: "NORTHARC's rural/MFI branch network jumped from 278 to 342 branches in a single quarter (Q4 FY26) after two quarters of calibration. Are peer MFI-exposed NBFCs similarly re-accelerating branch/disbursement growth in Q4 FY26?", why: "Tests whether the aggressive rural re-acceleration reflects sector-wide confidence or an outlier risk appetite.", check_peers: ["MASFIN", "CGCL"]}
+red_flags:
+  - "HFC exposure/NCLT resolution, promised for 'this quarter' with a 4-6 week timeline in the Q3 FY26 call, went completely unmentioned in the Q4 FY26 call with no analyst prompting or proactive update. Severity: Medium-High"
+  - "Long-term RoA/RoE guidance diluted and pushed further out across all three calls without explicit acknowledgment of the revision. Severity: Medium"
+  - "Segment-level (branch vs digital) MSME credit-cost disclosure reduced from quarterly to annual-only reporting by Q4 FY26 despite repeated analyst requests. Severity: Medium"
+  - "ECL coverage ratios fell sharply (Stage 2 from 24% to 12%) concurrent with a new RBI guideline management itself applied, while simultaneously creating a new INR66cr prudential overlay for unforeseen events. Severity: Medium"
+  - "Credit fund AUM declined sequentially (INR3,207cr Q3 FY26 to INR3,092cr Q4 FY26) despite a Q2 FY26 promise of multiple new fund launches never confirmed launched. Severity: Low-Medium"
+  - "Rural/MFI branch count showed a volatile, unbridged trajectory (285 -> 278 -> 342) with an aggressive single-quarter scale-up into the segment that was the primary stress driver of the prior two years. Severity: Low"
+dropped_triggers:
+  - "New credit fund launches (climate fund, two MSME funds, women-entrepreneur fund) named in Q2 FY26 call, never mentioned again in Q3 or Q4 FY26 calls"
+  - "HFC exposure NCLT resolution timeline, actively discussed in Q2 and Q3 FY26 calls, absent entirely from Q4 FY26 call"
+timeline_slippages:
+  - "HFC NCLT resolution: promised 'this quarter' (by end Q4 FY26, per Q3 FY26 call) with a 15-Feb-2026 filing target; no confirmation of filing or resolution provided in the Q4 FY26 call"
+  - "Mid-to-late-teens RoE target: '2-3 years' (Q2 FY26 call) -> '6-7 quarters' (Q3 FY26 call) -> '8-10 quarters' (Q4 FY26 call); target date effectively moved later at each restatement"
+  - "FY27 credit cost guidance raised progressively across three consecutive calls: 2.3%-2.5% (Q2 FY26 call) -> 2.7%-3.0% (Q3 FY26 call) -> 2.7%-2.8% (Q4 FY26 call)"
+no_concall_mode: false

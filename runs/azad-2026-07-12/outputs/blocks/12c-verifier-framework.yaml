@@ -2,17 +2,19 @@ stage: B12c
 company: "AZAD"
 run_date: "2026-07-12"
 model: claude-opus-4-8
-status: complete   # PHASE 1 partial: gate0 + emoat only; valuation deferred to phase 3
+status: complete   # both halves complete: phase-1 gate0+emoat, phase-3 valuation
 gate0: {rules_checked: 47, fails: []}
 emoat: {rules_checked: 36, fails: []}
-valuation: {rules_checked: 0, fails: []}   # PENDING phase 3 (B10/B11 not yet produced)
-recomputed_destination_pe: ""
-recomputed_decision: ""
+valuation: {rules_checked: 50, fails: []}
+recomputed_destination_pe: ""   # concur: Track2 21.9x / Track1 20.6x
+recomputed_decision: ""          # concur: AVOID (on-valuation), Small, Tier A
 findings:
-  - {severity: "MINOR", location: "B01 Block B / B4", claimed: "WC-day change FY26 vs FY25 (+72.8d) used as proxy for 'latest vs earliest'", source_truth: "framework specifies FY26 vs FY20; FY20 payables absent, deviation disclosed, score 0 under any admissible reading", note: "score- and classification-neutral; NOT-FOUND handling correct"}
-  - {severity: "MINOR", location: "B07 Section 5 / B1", claimed: "B1 typed 'documented/claim' in summary but scored at documented 1.0 multiplier", note: "defensible — real documented anchor exists (NADCAP approval); mixed categories elsewhere (C1,E2) took conservative 0.7; no inflation, no score impact"}
-  - {severity: "MINOR", location: "B07 Section 5 narrative", claimed: "'six categories scoring zero ... (nine, in fact)'", note: "self-corrected count slip; enumerated list of 9 zeros is correct; no scoring impact"}
+  - {severity: MINOR, phase: 1, location: "B01 Block B / B4", note: "WC-day change FY26 vs FY25 used as proxy for latest-vs-earliest (FY20 payables absent); score/classification-neutral"}
+  - {severity: MINOR, phase: 1, location: "B07 Section 5 / B1", note: "B1 typed documented/claim but scored at 1.0x; real documented anchor (NADCAP) exists; no score impact"}
+  - {severity: MINOR, phase: 1, location: "B07 Section 5 narrative", note: "self-corrected zero-category count slip; no scoring impact"}
+  - {severity: MINOR, phase: 3, location: "B11 Pillar 3 / 3a", note: "capex-embedded growth >=15% qualifier not explicitly evaluated; +3x already over-satisfied by order book + SOM + grade B"}
+  - {severity: MINOR, phase: 3, location: "B11 Pillar 1 / unresolved_inputs_used", note: "FY[Y+2] operational ROCE 16.0% back-solved from B10 blended 13.6% via 60/40 weight; flagged as implied, not silently filled"}
 critical_count: 0
 major_count: 0
-minor_count: 3
-acceptance_rate: 100
+minor_count: 5
+acceptance_rate: 100   # 133 rules (47 gate0 + 36 emoat + 50 valuation), 0 fails

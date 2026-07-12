@@ -1,0 +1,40 @@
+stage: B07-emoat
+company: "OBSCP"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR pages 3-59 (Board's Report/MD&A/business narrative) render as corrupted-font glyph noise; unreadable. Business/product/capex narrative sourced entirely from investor presentation and concall transcripts instead."
+  - "Customer concentration (top 5/10 customer revenue share) NOT FOUND in any reviewed source."
+  - "Supa mega-factory capex quantum and commissioning timeline NOT FOUND; management explicitly declined to disclose."
+flags:
+  - "G1 (war chest) is contradicted, not supported: FY26 CFO -Rs1.95cr vs PAT +Rs27.01cr (B01), and management confirms capex is financed by continued equity/debt raises, not internal cash generation. The entire capex-funded emerging-moat pipeline (Sanand, Supa, stamping, Faridabad forging) is financing-dependent."
+  - "AS9100D aerospace certification pending across two consecutive concalls a year apart, unacknowledged as a slip."
+  - "Medium-term EBITDA margin ambition cut once within 12 months, from +4-5pp (H2 FY25 call) to ~1% for FY27 (Q4 FY26 call)."
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Active"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "Active"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "C2", name: "Customer concentration / geographic diversification", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Active"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "claim", time_to_materialise: "Ongoing"}
+evidence_mix: {documented: 16, claim: 15, inference: 1}
+completionist_recount: "documented recount performed: 16 documented items across 6 categories (B1, B2, C2, E2, F2, G2)."
+catalysts_12m:
+  - {catalyst: "AS9100D aerospace certification issuance", window: "2-6 months (already slipped once)", evidence_type: "claim", anchor: "Q4 FY26 call p.7"}
+  - {catalyst: "Sanand/Tenneco shock-absorber-rod revenue ramp (~Rs40cr incremental)", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.9"}
+  - {catalyst: "Stamping capacity completion (remaining ~30% of Rs9cr)", window: "Q1 FY27", evidence_type: "documented", anchor: "Inv. Pres. slide 10; Q4 FY26 call p.20"}
+  - {catalyst: "Humanoid-robotics parts scale from trial to disclosed revenue", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call p.9"}
+  - {catalyst: "Supa land acquisition completion (remaining ~2 acres)", window: "Near-term", evidence_type: "claim", anchor: "Inv. Pres. slide 10"}
+capex_embedded_growth_pct: 18
+capex_notes: "FY27 incremental capex Rs15-20cr (Q4 FY26 call); stamping ~Rs9cr (~70% done); Sanand line ~Rs40cr incremental revenue; Supa quantum undisclosed. For stage 9 {{B07_CAPEX_FIGURE}}."
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward Gate 0 score plus MODEST forward emerging-moat development, both capped by the binding cumulative CFO/PAT 0.31x deal-breaker that makes the entire capex-funded moat pipeline financing-dependent rather than self-funded."
+top_moat_risks:
+  - "Cash-conversion collapse (CFO/PAT -0.07x FY26) makes the capex-funded emerging-moat pipeline dependent on continued external financing."
+  - "AS9100D aerospace certification slipped >12 months, unacknowledged; credibility grade B (B05)."
+  - "Tariff/geopolitical volatility threatens the China+1/export-growth moat; a 10% price subsidy was already granted once to keep an export project viable."
+  - "European auto slowdown threatens the ZF-linked share of the qualification-lock-in moat."
+  - "True customer concentration (top 5/10 %) never disclosed; genuine concentration risk unverifiable from available evidence."

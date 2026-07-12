@@ -1,0 +1,64 @@
+stage: B09-tam
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial               # searches skipped, see searches_skipped[]
+input_gaps:
+  - "Amagi's own active/current channel count under management not disclosed (only cumulative deliveries since inception, 9,425 FY26), limiting a company-specific bottom-up TAM cross-check"
+  - "No management-disclosed medium-term margin trajectory/target beyond historical trend, limiting precision of the SOM-to-earnings-CAGR bridge in 5E"
+  - "FY26 average USD/INR rate not independently confirmed (approximated ~87/$ via IPO market-cap cross-check); TAM/SAM/SOM Rs Cr conversions use July 2026 spot rate (~95.5) per run-date convention, creating a modest FX-timing basis difference vs revenue earned across FY26"
+  - "1Lattice CY2029P segment-level TAM figures incomplete (Cloud Modernization funnel TAM 2029P not stated, only its SAM); yr5 SAM extrapolated 2 years beyond the disclosed CY2029P horizon using the same 13.3% CAGR, an unverified extension"
+  - "AI-broadcast-solutions incremental/non-overlapping TAM addition ($5bn to $20bn pool, CY2024-2029P) not separately quantified vs existing three-funnel TAM; not added to avoid double-counting"
+flags:
+  - "Investor presentation's headline '$42.5bn global CTV ad spend' (growing >10%/yr) is gross ad-spend flowing through CTV, not Amagi's software/platform TAM (the disclosed $16.9bn/$5.1bn 3-funnel TAM/SAM); using the ad-spend figure as Amagi's addressable opportunity would overstate TAM by ~2.5x"
+  - "Investor presentation states Cloud Modernization SAM growing '11% Y/Y' but the prospectus's own forward CY2024-2029P CAGR for the same segment is 8.4% (11.7% is the trailing CY2019-2024 CAGR relabelled) - minor communications-quality flag, not a magnitude flag"
+  - "AWS can terminate the cloud-capacity agreement on 2 years' notice with no reciprocal notice obligation on Amagi (per B04); a hyperscaler-dependency risk distinct from, but adjacent to, the capacity-sufficiency finding in 3C"
+  - "SOM-to-earnings-CAGR bridge in 5E could not credit a specific margin trajectory (NOT FOUND as management guidance); valuation-support conclusion uses a flat-margin floor only, understating the bull case if margin expansion continues"
+market_definition: "Global cloud-native SaaS platform for broadcast-to-streaming media operations (cloud playout, OTT/FAST channel unification, CTV ad-tech monetization), enterprise B2B, Americas-led (~73% revenue)"
+tam_cr: {conservative: 161395, realistic: 194820}
+sam_cr: 48705
+sam_pct_of_tam: 30.2
+som_3yr_cr: 3484
+som_5yr_cr: 5638
+som_implied_revenue_cagr: {yr3: 32.3, yr5: 30.2}   # FORMAL handoff to stage 11
+current_sam_share_pct: 2.8
+revenue_headroom_x: 32.3
+tam_growth_pct: 13.3
+runway_class: "MASSIVE"
+mgmt_claim_cr: 161395
+mgmt_claim_ratio: 1.0
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient - asset-light, elastic cloud infra; AWS Rs 2,417.6 Cr six-year minimum-spend commitment (May 2025-Apr 2031) is a pricing floor not a usage cap; real constraint on SOM is GTM/execution capacity, not infrastructure"
+methods_used:
+  - "top-down (1Lattice 3-funnel TAM/SAM, cross-checked vs independent third-party market reports)"
+  - "bottom-up (FAST channel count x per-channel platform spend, partial/Streaming-Unification-only sanity check)"
+  - "peer revenue aggregation (5 named public comps + estimated 40% private/unorganised long-tail)"
+  - "global benchmark (US vs rest-of-world regional SAM share trajectory 2024-2029P, non-independent cross-check)"
+stale_data_flags:
+  - {datapoint: "TAM $16.9bn / SAM $5.1bn three-funnel figures", source: "1Lattice Report via IPO Prospectus Industry Overview", year: "as of 31 Dec 2024 (~19mo old at run date) - aging, not yet STALE"}
+  - {datapoint: "FAST channel count 9.7K (CY2024) / 33.2K (CY2029P)", source: "1Lattice Report via IPO Prospectus", year: "2024"}
+  - {datapoint: "Global CTV ad spend $42.5bn, >10% annual growth", source: "eMarketer/WPP via Amagi Q4 FY26 investor presentation", year: "presentation dated 21 May 2026, underlying data vintage not independently dated"}
+  - {datapoint: "Grass Valley revenue $966.4m", source: "Owler estimate (private company)", year: "vintage unclear - lower confidence"}
+searches_performed:
+  - "global FAST channel free ad-supported streaming TV market size 2026 forecast billion"
+  - "cloud playout master control software market size 2026 Omdia Devoncroft"
+  - "connected TV CTV advertising market size 2026 eMarketer forecast billion"
+  - "Grass Valley Evertz Harmonic annual revenue 2025"
+  - "USD INR exchange rate July 2026"
+  - "number of FAST channels globally 2026 Ampere Analysis Digital TV Research count"
+  - "Amagi competitors Wowza Vizrt Imagine Communications SintecMedia WideOrbit market share cloud broadcast"
+  - "Amagi IPO listing valuation P/E revenue multiple 2026"
+  - "Amagi Media Labs share price market cap P/E July 2026 NSE BSE"
+  - "Harmonic Inc full year 2025 revenue annual report"
+  - "Magnite PubMatic FreeWheel CTV ad-tech revenue 2025 annual"
+  - "broadcast media cloud software market size Grand View Research MarketsandMarkets 2026 forecast"
+  - "India OTT streaming market size 2026 FICCI EY report billion"
+  - "average annual cost per FAST channel operate cloud playout technology spend"
+  - "Evertz Technologies fiscal year 2025 revenue CAD annual report"
+  - "PubMatic full year 2025 total revenue annual results"
+  - "Amagi cloud penetration broadcast industry 10%"
+searches_skipped:
+  - "Wowza / Imagine Communications / WideOrbit exact annual revenue - private companies, no reliable public figures located"
+  - "Precise RBI reference-rate average for FY26 (Apr 2025-Mar 2026) - approximated instead via IPO market-cap FX cross-check"
+  - "Independent (non-CEO-interview) third-party verification of the ~10% cloud workload penetration claim via a paid analyst report"
+  - "Full disaggregated CY2029P TAM (not SAM) for the Cloud Modernization funnel specifically - proprietary 1Lattice figure, unlikely to be independently published"

@@ -1,0 +1,20 @@
+stage: B14-thesis
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 63, high: 79}
+position_size: "None"
+position_size_override: ""
+zone_reachability: "MARKET-UNLIKELY. Entry zone top Rs 79 is ~90% below CMP Rs 825 and ~25% below the only price reference in the screening data (Rs 105.25). Full price history unavailable in the screening CSVs. Classify DEEP WATCH not actionable WATCHLIST."
+thesis_broken_if: "AVOID stands while price > Rs 79 OR audited FY26 operating CFO < 40% of PAT; AVOID hardens to structural if a third straight audited year shows CFO <= 0 with PAT > Rs 20 Cr"
+monitoring_checklist:
+  - "Audited operating CFO vs PAT: green if CFO >= 40% of PAT; red if CFO <= 0 with PAT > Rs 20 Cr (third straight year)"
+  - "Finished-goods inventory growth vs revenue growth: green if FG growth <= revenue growth; red if FG growth > revenue growth (was +281.7% vs +99.4%)"
+  - "Rs 3.00 Cr loan-to-equity conversion counterparty named and reconciled: green if disclosed; red if still untraceable"
+  - "Audited EBITDA margin: green if sustains >= 18% and reconciles to peer; red if reverts toward CP Plus 13.7% or premium unexplained"
+  - "Short-term borrowings / trailing EBITDA: green below 1.5x; red above 2x (was Rs 2.76 Cr -> Rs 31.82 Cr)"
+  - "Working-capital days: green declining toward ~90; red rising above 214 (FY25 213.93)"
+  - "Audited FY26 ROCE: green sustained >= 25% and internally consistent; red compressing below 25% or repeat inconsistency"
+  - "Price vs entry zone Rs 63-79 with conjunction: green if enters zone with no thesis-broken trigger fired; red if reached only because a trigger fired (withdrawn zone)"

@@ -1,0 +1,50 @@
+stage: B08-promoter
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating absent - no CRISIL/ICRA/CARE rating found for Aimtron Electronics Ltd"
+  - "AGM/EGM voting-margin detail for FY26 RPT resolutions (Items 5 & 6) not accessible - PDF fetch blocked (403)"
+  - "nature/business rationale of Rs404.99 lakh 'Services Availed' from Aimtron Technologies Private Limited (FY25, nil FY24) not disclosed anywhere"
+  - "nature of Rs406.94 lakh FY24 'Restatement adjustment' in opening reserves not explained in AR"
+  - "AmbitionBox reviews for the Indian listed entity specifically not located"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Chairman Mukesh Vasani is externally disclosed as CEO of Aimtron Corporation USA, the company's single largest related-party counterparty (~19-22% of FY25 standalone revenue alone)"
+      - "~31.5% of FY25 standalone revenue (Rs4,991.12 lakh of Rs15,830.73 lakh) transacted with four non-consolidated 'Foreign Company with same management' entities"
+      - "New, unexplained Rs404.99 lakh 'Services Availed' RPT expense from Aimtron Technologies Private Limited appeared in FY25 (nil FY24), ~15.7% of FY25 PAT"
+      - "FY26 AGM sought combined Rs120 crore RPT ceiling (Rs100cr Aimtron Corporation USA + Rs20cr Aimtron Systems LLC) = ~75.4% of FY25 consolidated turnover, no external valuation report"
+      - "FY25 material RPTs executed under Audit-Committee-only omnibus approval; only one RPT (Rs5.01 lakh rent) itemized in mandatory AOC-2 disclosure"
+      - "Chairman's remuneration tripled (Rs8 lakh to Rs24 lakh FY25) and is excluded from the statutory Section 197(12) remuneration-ratio disclosure table"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Chairman Mukesh Vasani is CEO of Aimtron Corporation USA, largest RPT counterparty", evidence_tier: "MEDIA REPORTED", source: "LinkedIn/RocketReach/Crunchbase cross-checked with AR Note 35", date: "2026-07-12 (accessed)"}
+  - {finding: "~31.5% of FY25 revenue with non-consolidated promoter-controlled foreign entities", evidence_tier: "VERIFIED", source: "AR FY24-25, Note 35 (standalone)/Note 34 (consolidated), p.109-110,143-144", date: "FY2024-25"}
+  - {finding: "New Rs404.99 lakh 'Services Availed' from Aimtron Technologies Private Limited, nil prior year, unexplained", evidence_tier: "VERIFIED", source: "AR FY24-25, Note 35, p.110", date: "FY2024-25"}
+  - {finding: "Rs120 crore combined FY26 RPT ceiling sought (~76% of FY25 consolidated turnover), no external valuation", evidence_tier: "VERIFIED", source: "AR FY24-25, Notice of 14th AGM, Items 5 & 6, p.147-148,152-153", date: "2025-08-21"}
+  - {finding: "FY25 material RPTs approved via omnibus Audit Committee approval only, bypassing Section 188 board/shareholder approval", evidence_tier: "VERIFIED", source: "AR FY24-25, Board's Report clause 25, p.58", date: "FY2024-25"}
+  - {finding: "Contingent liabilities jumped ~500x (Rs4.04 lakh to Rs2,090.94 lakh) FY25 (GST/Income Tax disputes)", evidence_tier: "VERIFIED", source: "AR FY24-25, standalone Note 30/consolidated Note 29", date: "FY2024-25"}
+  - {finding: "Rs406.94 lakh unexplained 'Restatement adjustment' in FY24 opening reserves", evidence_tier: "VERIFIED (unexplained nature)", source: "AR FY24-25, Note 2 Reserves and Surplus, p.98/132", date: "FY2023-24"}
+transition_evidence:
+  - {finding: "American Pinball USA (RPT counterparty) sold by Aimtron group to unrelated third party JB Vincent LP", evidence_tier: "MEDIA REPORTED", source: "pinballnews.com/kineticist.com/InterGame", date: "2026-01-15"}
+  - {finding: "0% promoter pledge, confirmed free of encumbrance for FY2025-26 under Reg 31(4)", evidence_tier: "MEDIA REPORTED (exchange filing)", source: "scanx.trade", date: "FY2025-26"}
+  - {finding: "Promoter Mukesh Vasani net buyer of shares in open market (4,000 shares)", evidence_tier: "MEDIA REPORTED (exchange disclosure)", source: "Trendlyne insider-trading disclosure", date: "2025-03-31"}
+  - {finding: "Non-family professional Sneh Shah elevated to Whole-Time Director with disclosed remuneration cap and committee memberships", evidence_tier: "VERIFIED", source: "AR FY24-25, p.148-149,153-155", date: "2025-04-23"}
+  - {finding: "SEBI LODR Reg 23 material-RPT shareholder-approval regime applies from FY2025-26, related directors must abstain", evidence_tier: "VERIFIED", source: "AR FY24-25, Notice of 14th AGM, p.150-151", date: "2025-08-21"}
+  - {finding: "Related-party loan balances shrinking (Mukesh Vasani loan Rs173.32 to Rs64.06 lakh; Aimtron Corporation & Aimtron Technologies loans repaid to nil)", evidence_tier: "VERIFIED", source: "AR FY24-25, Note 5/35", date: "FY2024-25"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - confirmed free of encumbrance FY2025-26 under Reg 31(4); no pledge history in any period reviewed"
+searches_performed:
+  - "Aimtron Electronics SEBI order adjudication; Mukesh Vasani background; IPO controversy litigation; Aimtron Corporation USA Vasani; Glassdoor/AmbitionBox reviews; American Pinball Aimtron; Aimtron Technologies Pvt Ltd; pledge/shareholding; Nirmal Vasani education; NCLT oppression; fraud/scam allegations; DIN 06542536 other companies; IiAS/SES proxy reports; RPT analyst concern; American Pinball sold JB Vincent; RHP prospectus risk factors; insider trading SAST disclosure; AGM voting results 2025; EGM Aug 2025 special resolution"
+searches_skipped:
+  - "WebFetch pinballnews.com full article (403 - used snippet)"
+  - "WebFetch Simply Wall St price-jump article (403 - used snippet)"
+  - "WebFetch NSE AGM Scrutinizer's/Voting Results 11-Aug-2025 (403 - voting margins unconfirmed)"
+  - "WebFetch Aimtron RHP full prospectus PDF (403 - used snippet)"
+  - "AmbitionBox India-entity-specific reviews (not surfaced)"
+verdict_basis: "Chairman Mukesh Vasani personally runs (as CEO) Aimtron Corporation USA, the listed company's largest related-party counterparty, with ~31.5% of FY25 revenue flowing to non-consolidated promoter-controlled entities, a new unexplained Rs404.99 lakh RPT expense, and a proposed Rs120cr (~76% of FY25 turnover) FY26 RPT ceiling with no external valuation - offset by 0% pledge, promoter net buying, divestment of one RPT vehicle (American Pinball, Jan-2026), and a new FY26 shareholder-vote control on material RPTs."

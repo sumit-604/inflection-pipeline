@@ -1,0 +1,74 @@
+stage: B08-promoter
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: partial               # several primary-source fetches (SEBI.gov.in, indiaratings.co.in, whalesbook.com, drvijaymalik.com) returned HTTP 403; relied on search-result snippets for those items
+input_gaps: []
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "~50.8% of FY24-25 standalone revenue is related-party (parent Oilmax + majority-owned JVs Zuberi/AESL FFIL/Asian Indwell/Asian Oilmax)"
+      - "Promoter's private company Oilmax Energy Pvt Ltd is merging into listed AESL (NCLT order 22-Apr-2026, shareholder approval 12-Jun-2026); swap ratio and valuation (~53x FY25 EPS per media commentary) flagged as rich by outside commentary"
+      - "MD Kapil Garg's remuneration is disclosed inconsistently within the same Annual Report: Rs 277 Lakhs (Corporate Governance Report) vs Rs 157.00 Lakhs (Related Party Transactions note)"
+      - "Professional CEO Ashutosh Kumar was replaced by promoter Kapil Garg as Executive MD in June 2023 - promoter-centricity increasing, not decreasing"
+      - "Subsidiary loan to AOSL Petroleum Pte Ltd (Rs 208.50L) fully impaired; auditor states 'Reasonable steps have not been taken by the Company for recovery'"
+verdict: "CONCERN"
+scorecard: {clean: 1, caution: 6, red: 3}
+deal_breakers: []              # none triggered - pledge 0%, no SEBI/criminal action found, no auditor resignation (mandatory rotation only), no ID exodus, no restatement
+adverse_findings:
+  - {finding: "Related-party revenue ~50.8% of standalone FY24-25 revenue (Rs 23,552.60L / Rs 46,402.75L), concentrated in newly-formed majority-AESL-owned JVs", evidence_tier: "VERIFIED", source: "Annual Report standalone Note 50(c), p.129", date: "2025-05-16"}
+  - {finding: "MD Kapil Garg remuneration disclosed as Rs 277L in Corporate Governance Report vs Rs 157L in RPT Note 44 in the same Annual Report", evidence_tier: "VERIFIED", source: "Annual Report Corporate Governance Report p.47 and Note 44B.5.i p.125", date: "2025-05-16"}
+  - {finding: "Loan to subsidiary AOSL Petroleum Pte Ltd (Rs 208.50L) fully credit-impaired since FY22-23; auditor states reasonable recovery steps not taken; interest overdue >90 days across 21 instances", evidence_tier: "VERIFIED", source: "Statutory Auditor Annexure A to standalone audit report, para (iii)(d), p.68", date: "2025-05-16"}
+  - {finding: "New trade payable to parent Oilmax Energy of Rs 344.14L at Mar-25 vs Nil at Mar-24", evidence_tier: "VERIFIED", source: "Annual Report Note 44C, p.126", date: "2025-05-16"}
+  - {finding: "Reverse merger of promoter's private company Oilmax into listed AESL; swap ratio 117 AESL:10 OEPL; Oilmax valuation ~Rs 2,582cr (~53x FY25 EPS, ~36x EV/EBITDA) called rich by commentary; stock fell ~13% on announcement", evidence_tier: "MEDIA_REPORTED", source: "Whalesbook 'Profit Surge Masks Merger Risks & Valuation Concerns' (snippet only, fetch blocked); corroborated by scanx.trade merger-approval coverage", date: "2025-09 to 2026-06"}
+  - {finding: "Historical SEBI adjudication order (10-Oct-2014) against Samara Capital Partners Fund I Ltd 'in the matter of Asian Oilfield Services Limited' - predates current Oilmax promoter era (2016+), concerns prior institutional shareholder", evidence_tier: "VERIFIED", source: "SEBI.gov.in enforcement-orders index (title/date confirmed; full text fetch blocked HTTP 403)", date: "2014-10-10"}
+  - {finding: "Professional CEO Ashutosh Kumar resigned May 2023; replaced by promoter Kapil Garg as Executive MD June 2023", evidence_tier: "MEDIA_REPORTED", source: "MarketScreener corporate announcement coverage", date: "2023-05-24"}
+  - {finding: "India Ratings downgraded AESL to IND BBB- in FY22-23 on sharp revenue decline; later revised to Positive outlook; ratings later placed on 'Rating Watch Developing' then voluntarily withdrawn 24-Apr-2026 (same date as NCLT merger order)", evidence_tier: "MEDIA_REPORTED", source: "India Ratings press releases (snippets only, fetch blocked); Whalesbook/Business Upturn coverage", date: "2022-11 to 2026-04-24"}
+  - {finding: "Rent of Rs 42L/year each paid to MD Kapil Garg and to Ritu Garg personally; Rs 72L/year professional fees paid to Non-Executive Director Mukesh Jain (practising lawyer) beyond sitting fees", evidence_tier: "VERIFIED", source: "Annual Report Note 44B.5, p.125-126", date: "2025-05-16"}
+  - {finding: "Ritu Garg's shareholding percentage fell 50.65% in FY22-23 via open-market sale; relationship to Kapil Garg never explicitly disclosed in AR despite 'Promoter' classification and joint personal guarantees", evidence_tier: "VERIFIED", source: "Annual Report Note 20(e) footnote, p.104", date: "2025-05-16"}
+  - {finding: "Independent directors are retired heads of the same PSUs (Oil India, Indian Oil, Coal India) that are AESL's major clients (ONGC/Oil India/SCCL/ECL/CCL contracts)", evidence_tier: "VERIFIED", source: "Annual Report Board of Directors profiles, p.14-15", date: "2025-05-16"}
+  - {finding: "Zero mutual fund ownership in public shareholding despite ~Rs 1,206cr market cap; FII holding only 2.36%", evidence_tier: "VERIFIED", source: "Annual Report Note 20(c) shareholding table, p.104", date: "2025-05-16"}
+transition_evidence:
+  - "Promoter pledge 0%, stable, no change (Trendlyne aggregator, May 2025) - MEDIA_REPORTED"
+  - "Credentialed independent directors added in recent years: ex-CMD Oil India (Chairman), ex-Chairman Indian Oil, ex-CMD Coal India - VERIFIED, Annual Report Board profiles"
+  - "Majority-of-minority (public shareholder only) vote passed decisively on the largest-ever related-party transaction (Oilmax merger): 99.99% assent (26,28,026 votes) vs 0.01% dissent - MEDIA_REPORTED, corroborated across two sources"
+  - "2% equity ESOP pool established (AESL ESOP 2024) - VERIFIED, Annual Report"
+  - "COUNTERWEIGHT (reduces confidence this is genuine transition): professional CEO replaced by promoter as Executive MD (2023); statutory auditor stepping down to a smaller-network firm via mandatory rotation coincident with the mega-merger; the Oilmax reverse merger itself is a NEW and LARGER related-party transaction actively increasing promoter-linked complexity as of the run date"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - no pledge disclosed in Annual Report at any point in FY24-25; third-party tracker (Trendlyne, May 2025) confirms 0%, unchanged"
+searches_performed:
+  - "Oilmax Energy Private Limited Kapil Garg promoter background Asian Energy Services"
+  - "Asian Energy Services OR Asian Oilfield Services SEBI order adjudication"
+  - "SEBI adjudication order Samara Capital Partners Fund Asian Oilfield Services Limited 2014 penalty details"
+  - "Asian Energy Services Oilmax Energy merger scheme NCLT 2026 approval"
+  - "Samara Capital Asian Oilfield Services SEBI penalty insider trading OR disclosure"
+  - "Asian Energy Services Limited Kapil Garg controversy OR fraud OR complaint"
+  - "Asian Energy Services ASIANENE promoter pledge shares percentage"
+  - "Asian Energy Services Limited AGM 2025 IiAS OR proxy advisory OR institutional investor"
+  - "Asian Energy Services ambitionbox OR glassdoor reviews employees"
+  - "Asian Energy Services Limited Ashutosh Kumar CEO resignation 2023"
+  - "Ritu Garg Kapil Garg Asian Energy Services wife OR spouse promoter"
+  - "Asian Oilfield Energy Services DMCC vendor dispute court order settlement Dubai"
+  - "Asian Energy Services Limited SEBI show cause OR penalty 2024 2025 LODR non-compliance"
+  - "Mukesh Jain Asian Energy Services director Sunteck Realty background"
+  - "Kapil Garg OR Oilmax Energy ED PMLA SFIO income tax raid enforcement directorate"
+  - "Asian Energy Services India Ratings IND BBB positive outlook rating rationale"
+  - "India Ratings Downgrades Asian Energy Services IND BBB-"
+  - "Asian Energy Services India Ratings withdraws loan ratings 2026 voluntary"
+  - "Oilmax Energy Asian Energy Services merger swap ratio valuation minority shareholders dilution"
+  - "Asian Energy Services rating downgrade 2026 Rating Watch reason deterioration"
+  - "Asian Energy Services Oilmax merger public shareholders objection SEBI complaint valuation report Bansi Mehta"
+  - "Asian Energy Services merger majority of minority public shareholders vote result"
+  - "Asian Energy Services Kapil Garg MD re-appointment postal ballot remuneration terms 2026"
+  - "Zuberi Asian Joint Venture OR Asian Indwell Joint Venture OR AESL FFIL Joint Venture partner company background"
+  - "Asian Energy Services Limited whistleblower OR SCORES complaint OR shareholder grievance"
+  - "Asian Energy Services Nirav Talati CFO appointment date history previous CFO resignation"
+  - "Asian Energy Services Kuiper Group acquisition Gulf Capital $9.25 million reaction analyst concerns"
+searches_skipped:
+  - "Full text of SEBI adjudication order (sebi.gov.in PDF) - HTTP 403 on fetch, relied on search-index snippet only"
+  - "Full text of India Ratings press releases (indiaratings.co.in) - HTTP 403 on fetch, relied on aggregator snippets"
+  - "Full text of Whalesbook merger-risk analysis article - HTTP 403 on fetch, relied on search snippet"
+  - "Full text of Dr Vijay Malik fundamental analysis - HTTP 403 on fetch, not incorporated"
+  - "Full text of BSE/NSE merger scheme filing PDFs (swap ratio rationale, valuation report detail) - HTTP 403 on fetch, relied on secondary news aggregation"
+verdict_basis: "Half of standalone revenue is now related-party, concentrated in newly-formed majority-AESL-owned JVs, and the promoter's own private company (Oilmax) is being merged into the listed entity via a reverse merger flagged as richly-valued by outside commentary, occurring alongside an unreconciled discrepancy in disclosed MD remuneration and a promoter (not professional-management) tightening of executive control since 2023 - this pattern of increasing rather than decreasing promoter-centricity, despite zero pledge and a credentialed board, is what caps the verdict at CONCERN rather than TRUSTWORTHY or CAUTION."

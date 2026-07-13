@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Monsoon-delay excuse for AESL's Q2 FY26 EBITDA miss is contradicted by both peers' strong, uninterrupted Jul-Sep 2025 quarters with zero weather mention"
+  - "JINDRILL has no transcript covering Jan-Mar 2026, limiting Q4 FY26 West Asia conflict peer-verification to one peer (DEEPINDS) only"
+  - "Three of seven handoff claims (ONGC/Oil India model adoption, GST impact management, DSF Round 4 benchmarking) are structurally untestable against this peer set because neither peer's business model would surface comparable evidence"
+peers_provided: 8
+verified:
+  - {claim: "No comparable Indian peer combines E&P asset ownership with a large third-party services business (AESL's differentiation claim)", peers: ["DEEPINDS", "JINDRILL"], anchor_count: 2}
+partially_verified:
+  - {claim: "West Asia conflict (Strait of Hormuz) supply-chain disruption/client delays caused AESL's Q4 FY26 guidance miss", peers: ["DEEPINDS"]}
+  - {claim: "Sharp reversal in upstream capex since 2016, backed by India's ~$100bn committed oil & gas investment by 2030", peers: ["DEEPINDS", "JINDRILL"]}
+contradicted:
+  - {claim: "AESL's Q2 FY26 EBITDA miss was caused by a prolonged, unseasonal, industry-wide monsoon", contradicting_peer: "DEEPINDS", quote_anchor: "DEEPINDS Q2 FY26 call (Nov 2025): 'Revenue for Q2 FY26 stood at Rs. 221 crores up by 69.2% year-on-year... EBITDA margin of 46.6%' with no monsoon/weather mention anywhere in the call"}
+unverifiable:
+  - {claim: "AESL's integrated field development model (Vedanta contract) is being evaluated/adopted by ONGC/Oil India as a broader industry template", peers_checked: ["DEEPINDS", "JINDRILL"]}
+  - {claim: "GST hike (12% to 18%) cost impact is 'negligible' via AESL's in-house/integrated execution", peers_checked: ["DEEPINDS", "JINDRILL"]}
+  - {claim: "Peers' DSF Round 4 bid activity and win-rate, to benchmark AESL's 3 submitted bids", peers_checked: ["DEEPINDS", "JINDRILL"]}
+peer_coverage_map:
+  - {peer: "DEEPINDS", quarter: "Q1 FY26 (Aug 2025 call)", usage: "SUBSTANTIVE", contribution: "Pre-monsoon-window demand/capex baseline; no monsoon or GST content"}
+  - {peer: "DEEPINDS", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "Direct contradiction evidence for AESL's monsoon-delay excuse"}
+  - {peer: "DEEPINDS", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Mori-5 HSE/regulatory stop-production risk feeds missing-risks analysis"}
+  - {peer: "DEEPINDS", quarter: "Q4/FY26 (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Primary source for West Asia macro corroboration and $100bn/2030 capex figure; Kandla legacy-receivable write-off risk"}
+  - {peer: "JINDRILL", quarter: "Q4 FY25 (Jun 2025 call)", usage: "SUBSTANTIVE", contribution: "Origin of ONGC customer-concentration risk theme and competitive bid-rate collapse risk theme"}
+  - {peer: "JINDRILL", quarter: "Q1 FY26 (Aug 2025 call)", usage: "SUBSTANTIVE", contribution: "Confirms capex/demand backdrop and conservative revenue-guidance methodology"}
+  - {peer: "JINDRILL", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "No-monsoon-mention evidence; introduces litigation-driven earnings-swing risk"}
+  - {peer: "JINDRILL", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Most recent JINDRILL data point; confirms silence on GST/DSF/West Asia; reverses arbitration income; capex-cycle expansion"}
+industry_cross_read:
+  demand: "Both peers report robust, broadly consistent demand and growing order books across the full window (DEEPINDS FY26 revenue +55% YoY; JINDRILL guided >INR925cr FY26 revenue), consistent with AESL's sectoral-tailwind framing but without AESL's specific post-2016-reversal language"
+  pricing_inputs: "Neither peer's margin narrative is driven by GST; DEEPINDS margins stable-to-improving (44-48%), JINDRILL margin swings driven by competitive rig-rate bidding dynamics, not input-cost inflation"
+  capex_cycle: "Capacity-race, not lone-expander: AESL, DEEPINDS, and JINDRILL are all simultaneously adding capacity (rigs, vessels, PEC/processing assets) in response to a shared read of rising sector demand"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer/counterparty concentration risk explicitly challenged by an analyst (JINDRILL: 'all our eggs in the ONGC basket'; ~60-100% single-client dependence across both peers at various points)"
+  - "Competitive bid-rate collapse from irrational underbidding by distressed rivals in PSU tenders (JINDRILL's Jindal Explorer rate collapsed to $35-36k/day vs an expected $60k+)"
+  - "Long-tail litigation/arbitration risk directly swinging reported profitability quarter to quarter (JINDRILL booked ~INR100cr other income from a 15-year ONGC case, then reversed it after a Supreme Court appeal)"
+  - "HSE/regulatory stop-production risk on enhancement-style field contracts (DEEPINDS's Mori-5 gas leak triggered an APPCB stop-production order and a 5-6 month ramp delay)"
+  - "Distressed-acquisition legacy-receivable write-off risk (DEEPINDS's Kandla Energy acquisition, from insolvency for ~INR2cr, carried ~INR350cr+ of legacy receivables, ~INR208cr ultimately written off)"
+net_narrative_effect: "complicates"

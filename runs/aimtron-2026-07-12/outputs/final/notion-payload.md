@@ -23,8 +23,12 @@ Cash conversion is INDETERMINATE (cumulative CFO/PAT -0.13x FY24-26; 0.65x multi
 - Devil's advocate: SURVIVES (robust AVOID)
 
 ## Entry zones
-- Tier A (25% hurdle): entry Rs129-161, MoS Rs129
-- Zone top Rs161 is ~88% below CMP Rs1,390 (MARKET-UNLIKELY; price history unavailable from inputs)
+Two methods, both far below CMP Rs1,390. The four-pillar model is the decision of record; the forward-P/E cross-check is the more generous market lens.
+
+- Four-pillar (Stage 11, RRM Track 1), Tier A 25% hurdle: entry Rs129-161, MoS Rs129. Destination PE 8.9x (RRM) / 12.7x (additive) vs 25x sector cap. Zone top Rs161 is ~88% below CMP (MARKET-UNLIKELY; price history unavailable from inputs).
+- Forward P/E cross-check (consolidated FY30 earnings, 13-15x terminal, 25% hurdle): fair value ~Rs330, entry Rs305-385, MoS buy price ~Rs250. Sensitivity is a margin bet: at a peer-like clean 10-11% margin the MoS falls to ~Rs210-245; only a durable 15% margin justifies an entry near Rs600.
+- All-in read: high-conviction accumulation Rs130-160; watch / first-tranche ceiling ~Rs250; against CMP Rs1,390 fair value ~Rs330 means the stock trades at ~4x fair value (downside to fair value ~76%).
+- Nothing actionable at any of these levels until the H1 FY27 (~Nov-2026) consolidated operating cash flow turns positive on THIRD-PARTY collections (not related-party netting), the related-party revenue share falls with an external fairness opinion on the Rs120cr ceiling, and the margin holds above ~20% as the acquisition consolidates.
 - Decision Status suggestion (operator sets, pipeline never overwrites): DEEP WATCH / AVOID
 
 ## Thesis-broken and re-open triggers
@@ -54,6 +58,7 @@ numerical 95.2 | redflag 63 (binding floor) | framework 95 | peer 91.7 | overall
 - Run folder: runs/aimtron-2026-07-12/
 - Drive folder: NOT PROVIDED
 - Deliverables: outputs/final/business-narrative.md, fttcp-recommendation.md, verifier-summary.md, fttcp-handoff.md
+- Supplementary: outputs/final/forward-pe-valuation.md (forward P/E cross-check; fair value ~Rs330, entry Rs305-385, MoS ~Rs250; does not override the four-pillar AVOID)
 
 ## Notion field hygiene (per Notion_Save_Instructions)
 - Clean < and -> characters from text properties before saving.

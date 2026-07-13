@@ -152,7 +152,8 @@ Cap state: Kernex cap not engaged. TRIM rule not engaged. INDETERMINATE cash cap
 | Pillar 1 ROCE input | OPERATIONAL ex-surplus-cash ROCE ~28.3% (FY26), NOT the cash-diluted 24.06%; Pillar 1 base ~21.5x; FY[Y+2] not anchored so blend defaults to current operational; Amendment 4.5 normalized anchor available but pre-depression evidence thin, operational-current preferred |
 | ROCE recovery credit route | Pillar 1 (single credit); Strategic Premium ROCE re rating barred |
 | Cash conversion determination | INDETERMINATE; caps disposition at PROCEED WITH CAVEATS; missing evidence is the first statutory cash flow statement |
-| Sector cap row Phase 3 must use | Recycling / Manufacturing, 25x (corrects manifest "Pharma / CDMO" 38x); genuinely uncertain, alternative near 20x if judged pure WC heavy distribution |
+| Destination PE (OPERATOR OVERRIDE, 2026-07-12) | 20x, set directly by the operator on a growth-duration argument (large India laptop and electronics consumption, low penetration, long runway), overriding the mechanical additive ~16x; may be read as a forward PE of 20x. Sits below the 25x sector cap, so admissible. The cash flag stays a live monitorable but does not reduce the operator-set exit multiple. Phase 3 uses 20x. |
+| Sector cap row Phase 3 must use | Recycling / Manufacturing, 25x (corrects manifest "Pharma / CDMO" 38x); genuinely uncertain, alternative near 20x if judged pure WC heavy distribution; not binding, the operator-set 20x is below it |
 | SHARED CATALYST flag | Memory and component price supercycle underlies revenue, margin and the inventory bet; single macro point of failure for Role 3 |
 | Business type | Standard operating business, asset light, working capital heavy |
 | Promoter | CAUTION (KKOC multi role RPT plus Rs 305 M tax demand; offset by institutional entry, CARE upgrade, zero pledge) |

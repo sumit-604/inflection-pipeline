@@ -1,0 +1,30 @@
+stage: B01-gate0
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (core 37/100) is driven jointly by (a) historical depressors: FY23 revenue collapse to Rs110cr from Rs260cr FY22 with a Rs44.36cr loss, plus an FY17 loss year, and (b) a severe data-availability gap: Block E (promoter holding/pledge/contingent liabilities) is 0/20 entirely because no shareholding data was in any provided input, and Block A/B metrics (ROCE, FCF, WC Days with payables) are anchored for only FY25-FY26 of the 10-year window because the screener export lacks current-liability, trade-payables and capex splits for FY17-FY24. FY24-FY26 show a fully anchored recovery: Sales Rs305cr to Rs465cr to Rs791cr, PAT positive and rising each year, plus the Kuiper Group acquisition (concluded Aug-2025) and pending OEPL merger (NCLT order 22-Apr-2026). Downstream review should source a shareholding pattern and full FY17-FY24 balance sheets before treating AVOID as final."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 7, B: 7, C: 6, D: 17, E: 0}
+core_score: 37
+moat_score: 10
+grand_total: 47
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["1: Block A=7 (<8) caps max GOOD, no effect (base AVOID already below cap)", "2: Block B=7 (<8) caps max GOOD, no effect (base AVOID already below cap)"]
+history_downgrade: false
+data_notes:
+  - "ROCE, FCF, and payables-based WC Days computable only for FY25 and FY26 (audited balance sheets/cash flow statements in results PDFs); FY17-FY24 lack current-liability, trade-payables, and capex breakdowns in the provided screener Data_Sheet.csv, marked NOT FOUND, never estimated."
+  - "Loss-to-profit swings: FY17 (-18.20cr) to FY18 (+10.30cr); FY23 (-44.36cr) to FY24 (+25.47cr)."
+  - "Block E (E1-E4) entirely N/A: no shareholding pattern, promoter pledge, or contingent-liability disclosure in any provided input file."
+  - "M2, M5 moat tests: PEER DATA NEEDED (peer files DOLPHIN/DEEPINDS/JINDRILL exist but excluded from scoring per task scope)."
+  - "M9 GM proxy could not be computed: Raw Material Cost row blank across all 10 years in Data_Sheet.csv; peer median also unavailable."
+  - "M11: FY26 Selling and admin expense figure blank/NOT FOUND in Data_Sheet.csv; scored conservatively (3, not 5) pending that data point."
+  - "Inventory Days and Payable Days computed on revenue basis (COGS not separately itemized; Raw Material Cost row blank all years), stated per formula rule."
+  - "Data_Sheet.csv figures cross-checked and confirmed consolidated, attributable-to-owners basis via exact ties to results FY26 annual PDF (p.9-11) for FY25/FY26 Sales, PAT, CFO, Borrowings, Cash, Total Assets."
+  - "Kuiper Group acquisition concluded 31-Aug-2025 (~Rs123cr); OEPL merger scheme pending NCLT final approval (order 22-Apr-2026, shareholder meeting 12-Jun-2026), not yet reflected in financials."
+block_b_trend: "improving — CFO moved -44.10cr (FY24) to -33.08cr (FY25) to +52.99cr (FY26) (screener-data, Data Sheet, cross-checked results FY26 annual p.11)"

@@ -14,7 +14,7 @@ inventory:
   annual-report:
     count: 1
     files: [Annual_Report_2023.pdf]
-    note: "FY2023 annual report only; 3 years stale vs current FY2026. Latest full-year financials come from the FY26 audited results PDF, not the AR."
+    note: "MISLABELED FILENAME. Content is the 30th Annual Report for FY2024-25 (year ended 31-Mar-2025, FY24 comparative), statements in Rs lakh, NOT FY2023. Confirmed by stage-2 pass-1 and stage-1. So the AR is ~1 year stale vs FY26 (not 3). Backward deep dive ends at FY25/FY24; current full-year FY26 financials come from the FY26 audited results PDF + screener Data_Sheet."
   results:
     count: 2
     files:
@@ -50,7 +50,7 @@ inventory:
 
 input_gaps:
   - "rating/: NO credit-rating PDF. FLAG-CASH structural-vs-growth resolution loses its primary evidence (rating rationale); resolution defaults conservative and any INDETERMINATE cash finding caps the verdict at PROCEED WITH CAVEATS with the missing rating rationale named. Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 proceeds without rating evidence, defaulting conservative. Mitigant: company is net-cash / effectively debt-free."
-  - "annual-report/: only FY2023 AR provided (3 years stale). Stages 2 and 3 read the FY23 AR for accounting-quality and deep-dive history; current-period financials (FY24-FY26) are anchored to the FY26 audited results PDF and screener Data_Sheet, not the AR. Backward deep dive necessarily ends at FY23."
+  - "annual-report/: file named Annual_Report_2023.pdf is actually the FY2024-25 AR (year ended 31-Mar-2025), collect_to_repo filename defect. So AR is ~1 year stale vs FY26 (not 3). Stages 2/3/4/7 read it as the FY25 AR (statements in Rs lakh); current full-year FY26 financials are anchored to the FY26 audited results PDF and screener Data_Sheet, not the AR. Backward deep dive ends at FY25/FY24."
   - "manifest sector_cap_row defect: manifest sets 'Pharma / CDMO' (collect_to_repo v3 auto-pick defect, recurring across KARNIKA/NORTHARC/AMAGI). MapMyIndia is a geospatial / digital-mapping + IoT/SaaS company; peers are NEWGEN, NUCLEUS, RATEGAIN, GENESYS (IT products / SaaS). Stage 11 (phase 3) must select the correct IT-products / SaaS cap row; primary valuation method is per B04, not a Pharma exit PE."
   - "screener P&L/BS/CF/Quarters/Customization CSVs are empty templates; only Data_Sheet.csv carries data."
   - "operator empty-folder pause could not be delivered (AskUserQuestion stream closed in this remote session, same as KARNIKA/AMAGI); proceeded on evidence-maximizing defaults with the rating gap recorded."

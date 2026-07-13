@@ -1,0 +1,35 @@
+stage: B09-tam
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Management's ~$100bn O&G investment-by-2030 claim is capex commitment, not services TAM; ratio to conservative independent TAM (~41.8x) reads inflated per >2x threshold."
+  - "Standalone FY26 organic revenue growth (6.0% YoY) is below the ~12% estimated TAM growth rate; consolidated 70.1% growth is Kuiper-acquisition-driven, not organic share gain."
+  - "SOM-implied India-organic revenue CAGR is ~9-13%; the higher consolidated ~20-28% blended figure depends materially on Kuiper's own management guidance, not independent market sizing."
+  - "Capacity cross-check gap: B07's 2.5%/yr capex-embedded growth implies materially less capacity than SOM's ~Rs180-220cr incremental 3yr revenue need; SOM is the optimistic side, conditional on continued working-capital-funded growth already flagged as stretched in B04 (WIP near-doubling, borrowings up ~6.7x)."
+  - "Coal India CHP ~Rs20,000cr/5yr claim (pre-surfaced for verification) could not be located in the reviewed Annual Report or Investor Presentation text; treated as unverified, though directionally consistent with the independent mineral/CHP estimate."
+  - "Kuiper's addressable market could not be reliably sized from available secondary research (stale, high-dispersion Middle East staffing/oilfield-services data); excluded from the core TAM/SAM funnel and tracked via management's own $100M-by-FY29 guidance only, labelled management-guided not independently sized."
+market_definition: "Indian oilfield/upstream energy services (seismic, O&M, integrated field development, production enhancement) plus mineral/coal material-handling infrastructure services; Kuiper's Middle East/SE Asia energy manpower solutions tracked separately via management guidance, outside the core TAM/SAM funnel."
+tam_cr: {conservative: 22850, realistic: 29580}
+sam_cr: 7290
+sam_pct_of_tam: 31.9
+som_3yr_cr: 1666
+som_5yr_cr: 1971
+som_implied_revenue_cagr: {yr3: 28.2, yr5: 20.0}
+current_sam_share_pct: 6.8
+revenue_headroom_x: 14.8
+tam_growth_pct: 12.0
+runway_class: "GOOD"
+mgmt_claim_cr: 955000
+mgmt_claim_ratio: 41.8
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs180-220 Cr over 3 years between B07's 2.5%/yr capex-embedded growth and SOM's implied incremental standalone revenue need; SOM is the optimistic side"
+methods_used: ["top-down industry reports", "bottom-up PSU capex-linked", "peer revenue aggregation with unorganised add-back", "global benchmark (qualitative)", "bottom-up tonnage/handling-cost proxy for mineral-CHP segment"]
+stale_data_flags:
+  - {datapoint: "Middle East staffing & recruitment market size", source: "industry vendor report", year: 2022}
+  - {datapoint: "Middle East Oilfield Services Market size", source: "industry vendor report", year: 2022}
+  - {datapoint: "Coal MDO share of production (~54%)", source: "KPMG report", year: 2019}
+searches_performed: ["India oilfield services market size 2026", "India upstream E&P services market CAGR", "CRISIL ICRA India oil gas services report", "Coal India material handling contracts market size", "coal handling plant CHP India market", "Middle East oilfield services market size", "Middle East staffing recruitment market size", "India seismic survey services market", "MoPNG capex budget FY27", "Coal Ministry asset monetization target", "India crude oil import dependency demand forecast", "Indian upstream oil gas services listed peers revenue", "unorganised sector share oilfield services India"]
+searches_skipped: []

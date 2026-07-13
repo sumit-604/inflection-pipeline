@@ -1,0 +1,39 @@
+stage: B09-tam
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used, tablets_servers_submarket_not_sized, uae_organized_share_not_found]
+flags: [drhp_internal_inconsistency_28.3B_vs_38.3B_and_4.6B_vs_3.3B, mgmt_claim_ratio_reasonable_but_scope_mismatch_coincidental, som_implied_cagr_is_mechanical_extrapolation_not_forecast, som_5yr_exceeds_disclosed_capacity_by_5606cr_no_committed_expansion_plan, uae_and_smartphone_organized_share_proxied_not_sourced, tablets_servers_workstations_unsized_likely_understates_tam]
+market_definition: "Refurbished/certified ICT devices (laptops, desktops, tablets, servers, premium smartphones) sold via organized channels in India + USA/UAE/Europe export markets; excludes new-device retail, non-ICT refurb, and e-waste recycling"
+tam_cr: {conservative: 1252452, realistic: 1320660}
+sam_cr: 149900
+sam_pct_of_tam: 12.0
+som_3yr_cr: 4734
+som_5yr_cr: 11154
+som_implied_revenue_cagr: {yr3: 35.7, yr5: 42.5}
+current_sam_share_pct: 1.26
+revenue_headroom_x: 79.1
+tam_growth_pct: 11.8
+runway_class: "MASSIVE"
+mgmt_claim_cr: 1804380
+mgmt_claim_ratio: 1.44
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient through 3yr SOM (17.2% cushion); gap of Rs 5,606 Cr at 5yr SOM vs current disclosed facility capacity - SOM_5yr is the optimistic side, no committed capacity-expansion plan evidenced"
+methods_used: [top_down_segment_aggregation_1lattice, geography_product_channel_capability_filtering, peer_revenue_aggregation_india, bottom_up_unit_economics_idc_cross_check, global_benchmark_penetration_comparison]
+stale_data_flags:
+  - {datapoint: "Global refurb+used PC market ($34.06B/$57.4B)", source: "1Lattice/DRHP", year: "CY23/28"}
+  - {datapoint: "Global premium smartphone refurb+used market ($109.9B/$193.7B)", source: "1Lattice/DRHP", year: "CY23/28"}
+  - {datapoint: "India refurb-PC market and organized share (11%/32%)", source: "1Lattice/DRHP", year: "FY24/29"}
+  - {datapoint: "USA, Europe used+refurb PC and smartphone markets", source: "1Lattice/DRHP", year: "CY23/28"}
+  - {datapoint: "India PC penetration (75-95/1,000)", source: "1Lattice/DRHP", year: "filing-vintage"}
+  - {datapoint: "GNG FY24 units and revenue/unit (Rs 30,822)", source: "B04 marker", year: "FY24"}
+  - {datapoint: "UAE refurbished laptop market ($282.9M)", source: "CustomMarketInsights web search", year: "2024"}
+searches_performed: 12
+searches_skipped:
+  - "dedicated RedSeer/Frost & Sullivan competing-report cross-check (DRHP cites only 1Lattice)"
+  - "tablets/servers/workstations standalone submarket sizing"
+  - "UAE/Middle East organized-vs-unorganized channel split"
+  - "Africa-specific refurb market sizing"
+  - "2025/2026-vintage primary report refresh beyond low-tier aggregators"
+  - "India premium-smartphone organized/unorganized channel split"

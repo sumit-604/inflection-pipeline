@@ -1,0 +1,26 @@
+stage: B12c
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: partial   # valuation (B11/B10) adherence deferred to phase 3; not run
+gate0:
+  rules_checked: 38
+  fails: []
+emoat:
+  rules_checked: 24
+  fails:
+    - {id: "F-1", severity: "MAJOR", rule: "evidence multiplier (inference=0.5)", location: "B07 Section 5, row H1", detail: "H1 labelled inference but multiplier 0.7 applied (claim rate); should be 0.5. Adj 2.1->1.5, total 23.0->22.4, classification MODEST unchanged"}
+valuation:
+  rules_checked: 0
+  fails: []          # DEFERRED to phase 3 - B11/B10 artifacts do not exist yet
+recomputed_destination_pe: ""   # pending phase 3 (valuation deferred)
+recomputed_decision: ""         # concur: Gate 0 AVERAGE and combined AVERAGE unchanged by F-1
+findings:
+  - {severity: "MAJOR", location: "B07 Sec 5 row H1", claimed: "inference x 0.7 = 2.1", correct: "inference x 0.5 = 1.5", note: "adjusted total 23.0->22.4; classification MODEST and combined AVERAGE both unchanged, hence not CRITICAL"}
+  - {severity: "MINOR", location: "B07 Sec 2C", claimed: "capex_embedded_growth_pct=0 (method not applied)", correct: "documented, evidence-based deviation (asset-light; avoids double-counting leasing-asset line)", note: "disclosed and conservative, not a silent skip"}
+  - {severity: "MINOR", location: "B01 Block F M4/M8/M10", claimed: "tier scores 3/1/1", correct: "defensible closest-tier mapping where rubric text is ambiguous for a 0-decline-year, unstable-receivables profile", note: "conservative; moats-present stays MODERATE under any variant, no classification effect"}
+  - {severity: "MINOR", location: "B01 Block B B1 vs B3", claimed: "B1 denom = 7yr sum PAT, B3 denom = 2yr sum PAT", correct: "basis mismatch driven by FCF availability", note: "both score 0, non-material; disclosed"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 98    # 61 of 62 rules passed (gate0 38/38 + emoat 23/24)

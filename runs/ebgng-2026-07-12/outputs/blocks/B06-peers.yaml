@@ -1,0 +1,38 @@
+stage: B06-peers
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags: ["Q4 unverifiable - no peer evidence on GNG/Electronics Bazaar/Ingram/Supertron channel access", "Q5 partial divergence - RPTECH debtor days improved (61->46-47) over same window GNG's worsened (30-35->40-45)", "CNL is adjacent-segment peer (consumer/licensing distribution, minimal IT-hardware exposure) - all CNL corroborations downweighted", "Redington Jun-2026 investor day transcript UNUSED - entirely SSG-focused, zero relevant content"]
+peers_provided: 3
+verified:
+  - {claim: "Memory/DRAM/component price surge is industry-wide, AI-datacenter-driven, and persisted Oct-2025 through Apr-2026 (direction and persistence only; exact magnitude only partially verified)", peers: ["REDINGTON", "RPTECH"], anchor_count: 5}
+partially_verified:
+  - {claim: "DDR5/SSD price surge magnitude (~4-5x DRAM, ~3.5x SSD)", peers: ["RPTECH", "CNL"]}
+  - {claim: "India entry-laptop retail price inflation of +57% in 6 months", peers: ["RPTECH", "REDINGTON"]}
+  - {claim: "IDC 2026 global PC shipment decline of -11% and ~55-60mn unit demand gap", peers: ["RPTECH", "REDINGTON"]}
+  - {claim: "GNG receivable/credit terms 30-45 days, drifted 30-35 to 40-45 days over FY26", peers: ["RPTECH", "CNL"]}
+contradicted: []
+unverifiable:
+  - {claim: "Formal distributor channel access via Ingram and Supertron named Q4 FY26", peers_checked: ["REDINGTON", "RPTECH", "CNL"]}
+peer_coverage_map:
+  - {peer: "REDINGTON", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Pre-shortage baseline: PC refresh cycle, AI PC penetration, working capital days"}
+  - {peer: "REDINGTON", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Direct component-shortage commentary, 20% ESG price hike passed through, 12-18mo recovery timeline"}
+  - {peer: "REDINGTON", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "RAM shortage flagged, component-driven PC/ASP growth, West Asia supply-chain disruption"}
+  - {peer: "REDINGTON", quarter: "Investor Day (Jun 2026)", usage: "UNUSED", contribution: "Entirely SSG/software strategy focused; zero matches on any peer-question topic"}
+  - {peer: "RPTECH", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Baseline credit terms '30 to 45 days only' - near-exact match to GNG's stated range"}
+  - {peer: "RPTECH", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "First peer confirmation of global CPU/memory/SSD shortage from AI datacenter demand"}
+  - {peer: "RPTECH", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Quantified RAM 2-3x price increase, notebook +20-30%, Micron/Crucial supply risk, debtor days improving"}
+  - {peer: "RPTECH", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Direct IDC citation (5-10% CY26 dip), laptop price trajectory Rs30-35k to Rs50k, sustained component pricing firmness"}
+  - {peer: "CNL", quarter: "Q2 FY24/FY25 (Oct 2024)", usage: "UNUSED", contribution: "Predates Oct-2025 surge window; Honeywell licensing strategy only"}
+  - {peer: "CNL", quarter: "Q4 FY25 (May 2025)", usage: "UNUSED", contribution: "Predates surge window; no component-cost or credit-term relevance"}
+  - {peer: "CNL", quarter: "Q2 FY26 (Nov 2025)", usage: "CITED-ONLY", contribution: "Minor receivables data point (51->58 days); dominated by Honeywell/surveillance strategy, low IT-hardware relevance"}
+  - {peer: "CNL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Explicit confirmation of memory/storage/CPU cost inflation and receivable-day drift from new-category credit extension"}
+industry_cross_read:
+  demand: "Windows-10-EOL refresh super-cycle plus anticipatory pre-buying ahead of further price hikes, confirmed by Redington and RPTECH across Q2-Q4 FY26; both explicitly distinguish current cycle from COVID (supply/price-driven, not demand-spike-driven) and flag H2 consumer affordability softness risk."
+  pricing_inputs: "Strong multi-peer corroboration of component-cost-driven pricing: percentage margins held structurally flat while per-unit profitability rises with ASP; revenue/ASP tailwind confirmed but not gross-margin-percentage expansion from the shortage itself."
+  capex_cycle: "Sector-wide capacity/category race, not a lone expander - Redington (SSG/AI/data center), RPTECH (branches, semiconductor subsidiary), and CNL (surveillance/AI/data center, new distribution center) are all expanding concurrently with GNG's own investment narrative."
+peer_mentions_of_company: []
+risks_peers_raise: ["Vendor/supply discontinuation risk (Micron discontinuing Crucial consumer brand - RPTECH Feb 2026)", "Currency depreciation compounding component price inflation (RPTECH Aug 2025)", "Extended-credit/receivables risk from entering new high-growth categories (CNL, explicit management commentary)", "Possible Windows-10-refresh extension blunting the refresh tailwind (Redington Nov 2025)", "Inventory/slow-moving stock provisioning risk materializing despite general tailwind (RPTECH May 2026)", "Geopolitical/logistics disruption to supply chains - Red Sea freight costs up 4-5x, direct revenue/margin hit (CNL, Redington May 2026)"]
+net_narrative_effect: "supports"

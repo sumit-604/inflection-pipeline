@@ -1,0 +1,39 @@
+stage: B07-emoat
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags: [working_capital_deterioration_caps_upgrade, distributor_tie_ups_pre_revenue_minuscule, no_committed_capex_pipeline_asset_light, capacity_built_ahead_of_demand_utilisation_slack]
+em_score: 23.0
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "already active, deepening"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "already active, ongoing"}
+  - {id: "H3", name: "ESG moat", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "already active, EU policy tailwind through 2025-2040"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "ongoing through FY27-28"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "MANAGEMENT CLAIM/DOCUMENTED", time_to_materialise: "ongoing, tested quarterly"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "ANALYST INFERENCE", time_to_materialise: "24-36m (EPR targets step up through FY27-28)"}
+evidence_mix: {documented: 15, claim: 9, inference: 5}
+completionist_recount: "Documented recount performed: 6 documented items across 6 categories (B2, C2, H3, R1, B3, E1); B3 and E1 held at Weak strength despite documented status due to thin scale; C1 and H2 (Ingram/Supertron partnerships, contribution explicitly 'minuscule' per management) excluded from the active list and routed to the optionality register instead of being credited as scored moats. Final active (Strong/Moderate) count = 6, at the upper edge of but within the 3-6 base rate."
+catalysts_12m:
+  - {catalyst: "FY27 guidance delivery (25% revenue growth, +50bps PAT margin)", window: "12m", evidence_type: "MANAGEMENT CLAIM", anchor: "Concall_May_2026_Transcript"}
+  - {catalyst: "Ingram Micro / Supertron distributor revenue becoming quantifiable", window: "12-18m", evidence_type: "MANAGEMENT CLAIM", anchor: "Concall_May_2026_Transcript"}
+  - {catalyst: "Debtor days reverting toward 30-35 day guided range from current 40-45", window: "6-12m", evidence_type: "DOCUMENTED", anchor: "B05 promise-delivery record / Concall_May_2026_Transcript"}
+  - {catalyst: "US and Europe distributor discussions (advanced stage) converting to signed agreements", window: "6-12m", evidence_type: "MANAGEMENT CLAIM", anchor: "Concall_May_2026_Transcript"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Ingram Micro / Supertron distributor tie-ups scale beyond 'minuscule'", converting_evidence: "Disclosed % of revenue from named distributors or a signed multi-year distribution agreement", first_appears: "Investor presentation, AR segment note, or exchange filing", window: "12-18 months (FY27)"}
+  - {optionality: "Netherlands (Electronics Bazaar B.V.) becomes an operating EU hub, not just an office", converting_evidence: "Disclosed EU revenue/headcount/facility metrics for the subsidiary", first_appears: "AR note, exchange filing", window: "24-36 months"}
+  - {optionality: "Leasing / device-as-a-service revenue crosses materiality", converting_evidence: "Leasing revenue exceeding ~2% of consolidated revenue or a named enterprise leasing contract", first_appears: "AR segment note / restated financials", window: "24-36 months (FY27-28)"}
+  - {optionality: "LCD repolarisation/LGP 'rare capability' translates into a disclosed pricing premium or exclusivity", converting_evidence: "Independent (non-company-commissioned) verification or disclosed ASP premium", first_appears: "Investor presentation, analyst day, or AR", window: "NOT FOUND (uncertain)"}
+  - {optionality: "Right to Repair framework enacted with GNG-relevant provisions", converting_evidence: "MCA finalises and gazettes the framework", first_appears: "Government gazette / exchange filing", window: "12-36 months (draft stage as of DRHP)"}
+  - {optionality: "ESOS 2024 actually used to retain technical/production staff", converting_evidence: "Options granted to named technical/production employees disclosed in AR", first_appears: "AR ESOP note", window: "12 months (FY27 AGM disclosure)"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE Gate 0 backward score meets MODEST forward emerging-moat score; certification depth and customer/procurement diversification are real but largely shared with compliant competitors, while cash conversion is deteriorating exactly where a transition thesis would need it to improve."
+top_moat_risks:
+  - "Working capital/debtor-day deterioration (Gate 0 Block B 0/20, WC days 136->178, debtor days guided 30-35 running 40-45) narrows the balance-sheet capacity to fund the distributor and EU pushes that would convert optionality into scored moat"
+  - "Ingram/Supertron and US/Europe distributor expansion remain pre-revenue-scale ('minuscule') with no committed contracts disclosed"
+  - "Certifications (R2V3, EPR, ISO stack) are attainable by any compliant competitor, so R1/H3/B2 compound industry-wide rather than exclusively for GNG"
+  - "Recent capacity build (UAE 3->8 facilities, employees 1,194->2,148) appears to be running ahead of demand, an unquantified utilisation slack"
+  - "Component/memory price supercycle currently boosting ASPs and margins is a macro tailwind, not a company-specific moat, and could normalise"

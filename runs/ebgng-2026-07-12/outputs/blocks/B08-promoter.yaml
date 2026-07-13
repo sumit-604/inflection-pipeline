@@ -1,0 +1,49 @@
+stage: B08-promoter
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: partial
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch, concalls_4_available_3_used]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "KKOC (promoter firm) multi-role RPT entanglement: registered-office landlord + trading counterparty + Cholamandalam facility security provider, no arm's-length benchmark disclosed"
+      - "KKOC pending tax demand Rs 305.32M aggregate (Rs 255.31M direct tax AY23-24 + Rs 27.39M GST detailed; balance ~Rs 41.8M unitemised), unresolved as of latest search"
+      - "Entire board and both finance KMPs (CFO, CS) freshly appointed within 6 weeks pre-DRHP, no pre-IPO track record, though stable through one full post-listing fiscal year"
+      - "UAE subsidiary (~78% of FY24 consolidated PAT) never audited by principal Indian auditor in any period; 3 different local audit firms used across 4 periods"
+      - "Unresolved social-media speculation re: KKOC required a public company rebuttal (Apr-2026); underlying claim could not be located/verified"
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "KKOC pending income-tax demand AY2023-24", evidence_tier: "VERIFIED", source: "DRHP raw p.334", date: "2025-03-25"}
+  - {finding: "KKOC pending GST demand FY2018-19", evidence_tier: "VERIFIED", source: "DRHP raw p.334", date: "2025-03-25"}
+  - {finding: "KKOC total promoter tax proceedings Rs 305.32M (5 direct + 5 indirect cases), balance unitemised", evidence_tier: "VERIFIED", source: "DRHP raw p.334", date: "2025-03-25"}
+  - {finding: "KKOC registered-office landlord to the Company (Rs 125,000/month) plus trading counterparty plus WCL security provider", evidence_tier: "VERIFIED", source: "DRHP raw p.223, 237, Note 19.1", date: "2025-03-25"}
+  - {finding: "No arm's-length pricing benchmark disclosed for any RPT despite Risk Factor 46 assurance language", evidence_tier: "VERIFIED", source: "DRHP raw p.52-53", date: "2025-03-25"}
+  - {finding: "Amit Midha Rs 585.62M unsecured, on-demand, no-stated-rate loan to Electronics Bazaar FZC; origin/rationale of relationship not disclosed", evidence_tier: "VERIFIED", source: "DRHP raw p.223, Note 16.2", date: "2025-03-25"}
+  - {finding: "Electronics Bazaar FZC (~78% of FY24 PAT) never audited by principal Indian auditor in any of 4 periods; 3 different local auditors used", evidence_tier: "VERIFIED", source: "DRHP raw p.243-244", date: "2025-03-25"}
+  - {finding: "Entire board and CFO/CS appointed within ~6 weeks pre-DRHP, zero pre-IPO track record in current roles", evidence_tier: "VERIFIED", source: "DRHP raw p.218-221, 229", date: "2025-03-25"}
+  - {finding: "Company publicly refuted social-media misinformation specifically about KKOC; underlying claim not independently located", evidence_tier: "MEDIA REPORTED", source: "Whalesbook corporate news aggregation", date: "2026-04-22"}
+  - {finding: "Consumer complaints re: tampered seals, warranty-processing delays, OS/battery issues on refurbished units", evidence_tier: "FORUM-SOCIAL", source: "consumercomplaints.in", date: "undated, various"}
+transition_evidence:
+  - {item: "Institutional investor entry: Goldman Sachs, Motilal Oswal, Mirae Asset MF, ITI MF, Edelweiss MF, Trust MF, MCP Emerging Markets Fund, Mobius Investment Trust acquired ~3.94% block (~Rs 175cr)", tier: "MEDIA REPORTED", source: "Business Standard", date: "2026-06-11/12"}
+  - {item: "CARE credit rating upgraded: BBB-/Positive (pre-IPO) to BBB/Stable, short-term A3 to A3+", tier: "VERIFIED", source: "CARE Ratings press release / Whalesbook", date: "2026-04-08"}
+  - {item: "Director Ajay Pancholi on-market insider share purchases post-listing (two tranches, ~Rs 2.37cr and ~Rs 4.1cr)", tier: "MEDIA REPORTED", source: "ScanX corporate filings", date: "2026"}
+  - {item: "Emkay Global initiated sell-side coverage, Buy rating, Rs 725 target", tier: "MEDIA REPORTED", source: "MarketScreener/Whalesbook", date: "2026"}
+  - {item: "Auditor and CFO/CS continuity through one full post-listing fiscal year, unmodified FY26 opinion", tier: "VERIFIED", source: "scanx.trade FY26 results filing", date: "2026-05-27"}
+  - {item: "Amit Midha (existing GNG director) appointed to Lenovo global board, adding independent external credibility check", tier: "VERIFIED", source: "Lenovo StoryHub press release", date: "2026"}
+  - {item: "Mandatory MPS-compliance sale absorbed cleanly by institutions at rising share price (+6-7% same day), not a distress signal", tier: "MEDIA REPORTED", source: "Business Standard", date: "2026-06-11/12"}
+verdict_basis: "Legal record against individual promoters is genuinely clean (no SEBI/criminal/NCLT action, zero pledge, no auditor resignation) and one full post-listing year shows improving trajectory (institutional entry, credit upgrade, board/KMP stability), but the single structural red item -- promoter firm KKOC's multi-role RPT entanglement (landlord/trading counterparty/loan-security provider) compounded by its unresolved Rs 305.32M pending tax demand -- has not itself improved and caps the verdict at CAUTION rather than TRUSTWORTHY."
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% per DRHP (raw p.61, as of 2025-03-25); no post-listing pledge-creation news found through 2026-07-12, but this is absence-of-evidence from web search, not an independently confirmed exchange disclosure at the latest date"
+searches_performed: 27
+searches_skipped:
+  - "Direct SEBI SCORES portal company-specific query (interactive portal, unreachable)"
+  - "Direct MCA company-master-data/RoC query for KKOC and AEPL (interactive portal, unreachable)"
+  - "ValuePickr forum thread full read (403 on fetch)"
+  - "Bastion Research GNG IPO article full read (403 on fetch)"
+  - "CARE Ratings full PDF rationale for KKOC and GNG (403 on fetch, relied on secondary summaries)"
+  - "Original source of April-2026 social-media KKOC claim (multiple phrasings tried, not located)"
+  - "Independent verification of Sharad Khandelwal's 1994 ICAI all-India-rank-6 claim"

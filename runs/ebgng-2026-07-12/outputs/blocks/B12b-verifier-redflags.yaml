@@ -1,0 +1,25 @@
+stage: B12b
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 16
+caught: 12
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Broken Q3-closing assurance 'no Q4 margin compression like last year' - Q4 EBITDA margin fell 11.2%->9.8% sequentially and mgmt reused the dismissed seasonal excuse; B05 promise tracker uses full-year figures only and omits it", anchor: "Q3 FY26 closing, Sharad Khandelwal, p17; Q4 FY26, Ajay Pancholi to Nishant Sharma p9 & Raj Sarraf p12-13"}
+  - {severity: "MINOR", item: "IPO-linked related-party transaction volunteered in Q3 (sales to 100% subsidiary; 'one of the important points during the time of our IPO') not tracked in B05", anchor: "Q3 FY26, Ajay Pancholi, p5-6"}
+  - {severity: "MINOR", item: "Warranty-provisioning policy shift not surfaced: Q2 'no provisioning mechanism' -> Q3 cumulative Rs 1.3cr provision over and above actual costs", anchor: "Q2 FY26 Ajay p7; Q3 FY26 Ajay p5-6"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - B (with flags) is fair; broken Q4-margin assurance is offset by full-year guidance beat and honest interest-cost admission"
+findings:
+  - {severity: "MAJOR", location: "B05 sec2A/sec4D", note: "MISSED broken Q3->Q4 margin-compression assurance; full-year framing masks it"}
+  - {severity: "MINOR", location: "B05 sec2D/sec4D", note: "MISSED volunteered IPO-linked related-party item"}
+  - {severity: "MINOR", location: "B05 accounting", note: "MISSED warranty-provisioning policy shift Q2->Q3"}
+  - {severity: "MINOR", location: "B05 sec4A#3", note: "utilization (~40%, non-rising) framed positively; low level and utilization-% dodge not flagged"}
+  - {severity: "MINOR", location: "B05 sec2A promise#4", note: "debtor-day promise-baseline conflation; 40-45 sits inside Sharad's own 30-45 range, so 'Missed' marginally overstated vs 'partial'"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 75

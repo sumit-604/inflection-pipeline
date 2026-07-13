@@ -1,0 +1,43 @@
+stage: B02-notes
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "All four working-capital-efficiency ratios (trade receivable turnover -15.4%, trade payable turnover -37.8%, net capital turnover -23.5%, inventory turnover -22.9%) deteriorated simultaneously in FY25 despite 52% revenue growth and 43% PAT growth; contract assets (unbilled WIP) grew 234% YoY, far outpacing revenue; related-party trade receivables are 56.4% of the gross book with a 13-month-old JV alone at 26.9%. Cash conversion quality materially lags reported earnings growth (Note 54, Note 18, Note 44/50, standalone)."}
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Corporate Overview narrates the Kuiper Group acquisition as 'closed' with a completed '100% Stake' metric, directly contradicting audited Note 48B which treats it strictly as a post-balance-sheet SPA not reflected in any FY25 number.", note_ref: "Note 48B (consolidated, p.201); Corp. Overview p.6, 13, 18", rating: "red flag", why: "Investors reading the front-of-book narrative risk conflating an unaudited, not-yet-consolidated transaction with actual FY25 results."}
+  - {rank: 2, finding: "Related-party revenue at ~50.8% of standalone revenue (up from 36.8%); RP trade receivables 56.4% of gross book; Asian Indwell JV alone is 26.9% of all receivables.", note_ref: "Note 44/50, pp.100, 123-129 standalone", rating: "red flag", why: "Core business-model dependency on a small number of JV vehicles AESL does not wholly own."}
+  - {rank: 3, finding: "All four working-capital-efficiency ratios deteriorated simultaneously despite strong revenue and profit growth.", note_ref: "Note 54, pp.131-132 standalone", rating: "red flag", why: "Classic earnings-quality warning sign; cash conversion lags reported earnings growth."}
+  - {rank: 4, finding: "Contract assets (unbilled WIP) grew 234% YoY, far outpacing 52% revenue growth.", note_ref: "Note 18/50, pp.102, 129 standalone", rating: "red flag", why: "Revenue recognized well ahead of billing at an accelerating rate."}
+  - {rank: 5, finding: "FY24's brought-forward tax-loss shield is fully utilized; FY25 effective tax rate sits at statutory rate versus FY24's non-recurring benefit.", note_ref: "Note 11.3, p.99 standalone", rating: "red flag", why: "Easily-missed valuation input; future years should be modeled with no tax shield."}
+  - {rank: 6, finding: "No impairment on ADMCC investment despite -₹921.38L accumulated deficit and nil turnover; AOSL Petroleum insolvent shell with auditor recovery flag on its 100%-provided loan.", note_ref: "Note 7/9, pp.96-98 standalone; Auditor Annexure A, p.68; AOC-1, p.29", rating: "red flag", why: "Governance and subsidiary-asset-quality flag; recoverability basis undisclosed."}
+  - {rank: 7, finding: "MD Kapil Garg's FY25 remuneration disclosed inconsistently: ₹277 Lakhs (CG Report) vs ₹157 Lakhs (RPT Note 44).", note_ref: "CG Report p.51; Note 44, p.125", rating: "red flag", why: "Unresolved internal contradiction on a core governance disclosure."}
+  - {rank: 8, finding: "Asian Indwell JV revenue figure differs by ₹315.28 Lakhs (2.9%) between standalone and consolidated RPT notes for the identical transaction.", note_ref: "Note 44.B(3)(iii) standalone p.124; Note 46.B(2)(iii) consolidated p.199", rating: "red flag", why: "Largest, newest, most receivables-concentrated related party has internally inconsistent numbers."}
+  - {rank: 9, finding: "Related-party bargain purchase of Indrora oilfield interest from promoter Oilmax generated a ₹411 Lakh capital reserve gain bypassing the P&L; fairness of price/discount rate unverifiable.", note_ref: "Note 55, pp.132-133 standalone", rating: "watch", why: "Related-party asset purchase generating an immediate ~23% gain outside the P&L."}
+  - {rank: 10, finding: "AESL ESOP 2024 granted at a 68.2% discount to market price; KMP now hold ~33.5% of all outstanding dilutive options.", note_ref: "Note 43.2(iii), pp.121-123 standalone", rating: "watch", why: "Materially more generous than the 2021 scheme; dilution concentrated in decision-makers."}
+  - {rank: 11, finding: "Quarterly current-asset returns filed with lenders mismatched audited books in all four FY25 quarters, by up to 5.2% in March 2025.", note_ref: "Note 21(b)(iv), p.106 standalone; Auditor Annexure A, p.67", rating: "watch", why: "Recurring pattern independently flagged by the statutory auditor."}
+  - {rank: 12, finding: "Unhedged FX trade payable exposure of ₹946.07 Lakhs concentrated at loss-making/insolvent foreign subsidiaries.", note_ref: "Consolidated Note 41, p.189", rating: "watch", why: "Compounding risk layered on subsidiaries already flagged as cash-strapped."}
+  - {rank: 13, finding: "Undisclosed ₹65 Lakh loan to an unnamed 'other party', given and fully repaid within the year.", note_ref: "Auditor's Annexure A, para 3(a), p.68 standalone", rating: "watch", why: "Unnamed counterparty in a related-party-heavy annual report."}
+  - {rank: 14, finding: "New related-party payable to parent Oilmax of ₹344.14 Lakhs (Nil in FY24), layered on top of existing Oilmax receivable.", note_ref: "Note 44.C, p.126 standalone", rating: "watch", why: "Deepens related-party working-capital entanglement in both directions."}
+  - {rank: 15, finding: "Headline 'EBITDA' in Financial Highlights includes JV equity-pickup profit, a non-standard construction inflating the operating-margin metric.", note_ref: "Financial Highlights, p.14", rating: "watch", why: "Investors modeling off reported EBITDA multiples should strip out the JV equity pickup."}
+red_flags:
+  - "Cross-document contradiction: Kuiper acquisition narrated as 'closed' in Corporate Overview vs treated as a post-balance-sheet SPA subsequent event in audited Note 48B."
+  - "MD remuneration disclosed inconsistently between Corporate Governance Report (₹277L) and RPT Note 44 (₹157L), unresolved."
+  - "Asian Indwell JV revenue mismatch between standalone and consolidated RPT notes (₹315.28L gap)."
+  - "Non-GAAP 'EBITDA' in Financial Highlights includes JV equity-pickup profit, inflating the headline operating margin."
+  - "All four working-capital-efficiency ratios deteriorated simultaneously despite strong reported earnings growth."
+  - "No impairment recognized on ADMCC investment despite substantial accumulated deficit and nil turnover; auditor flags inadequate recovery effort on AOSL Petroleum related-party loan."
+questions_for_mgmt:
+  - "Which MD remuneration figure for FY25 is correct -- Rs 277 Lakhs (Corporate Governance Report) or Rs 157 Lakhs (RPT Note 44) -- and why do they not reconcile?"
+  - "Why does the Asian Indwell JV sale-of-services figure differ by Rs 315.28 Lakhs between the standalone and consolidated related-party notes, and which is correct?"
+  - "Has the Kuiper Group acquisition actually completed as of the date of this report given the audited notes describe only a Share Purchase Agreement entered after the balance sheet date, and what is the funding structure and expected leverage impact once consolidated?"
+  - "What is the recoverability basis for the Rs 620.23 Lakh investment in ADMCC given its accumulated deficit and nil turnover, and why has recovery not been pursued on the fully-provided AOSL Petroleum loan?"
+  - "What is driving contract assets to grow 234% against 52% revenue growth, and what is the ageing/collectability outlook for this unbilled balance, particularly the related-party-JV portion?"
+receivables_trend: "deteriorating -- Not-due bucket fell from 77.9% to 72.1% of gross trade receivables; 6-months-to-1-year overdue bucket rose 870% (Rs 40.10L to Rs 389.23L); trade receivable turnover declined -15.4% (3.14x to 2.66x); receivables grew 69.9% vs revenue growth of 52.1%; retention money more than doubled (Rs 2,303.49L to Rs 5,347.20L) (Note 15/54, standalone)"
+restatements_found: []
+going_concern_language: "NONE -- Board's Report (p.23), Directors' Responsibility Statement, and both standalone and consolidated Independent Auditor's Reports contain no material uncertainty / emphasis-of-matter language; both audit opinions are unmodified."

@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 261, high: 293}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "FY27 revenue growth prints <20% YoY, OR gross margin reverts below 15%, OR the first post-IPO statutory cash-flow statement confirms a structural (not growth-induced) cash leak, OR an inventory write-down is taken on the Rs 743 Cr position"
+monitoring_checklist:
+  - "Revenue growth >20% YoY each quarter (FY27 guide 25%); red if <20% or decelerating 2 quarters"
+  - "Gross margin sustaining >19% and EBITDA margin not falling QoQ; red if gross margin <15% or EBITDA margin down 2 consecutive quarters (Q4 FY26 already 11.2%->9.8%)"
+  - "First post-IPO statutory cash-flow statement: CFO turning positive over a full WC cycle and CFO/PAT trending toward >50%; red if CFO negative again with WCL draws still inside operating"
+  - "NWC days falling from 178 toward <150 and debtor days back toward 30-35; red if NWC days sustained >150-178 or debtor days above 45"
+  - "Rs 743 Cr inventory: no write-down or slow-moving provision; red if any write-down or forced destocking"
+  - "Distributor (Ingram/Supertron) revenue disclosed as a material %; red if stays 'minuscule'/undisclosed 2+ quarters or partnerships lapse"
+  - "Governance: KKOC Rs 305.32M tax demand resolved and arm's-length RPT benchmarks disclosed, pledge stays 0%; red if demand crystallizes, RPT terms diverge, or new pledge created"
+  - "Net debt/equity <1.0x post-IPO; red if re-leveraging above 1.5x"

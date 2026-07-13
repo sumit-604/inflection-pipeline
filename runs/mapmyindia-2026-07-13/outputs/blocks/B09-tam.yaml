@@ -1,0 +1,50 @@
+stage: B09-tam
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF provided"
+  - "AR provided is FY2024-25 (as at 31.03.2025), mislabeled 'Annual_Report_2023.pdf' in the input filename — one year stale vs FY26 audited results"
+  - "manifest sector_cap_row 'Pharma/CDMO' is incorrect; company is geospatial mapping / digital-mapping + IoT/SaaS, corrected throughout"
+  - "no named competitor disclosure found in the AR, investor presentation, or web search results; market structure (4C) competitor count / concentration / organised-unorganised split could not be independently sourced, only a flagged working assumption stated"
+  - "per-vehicle-per-module automotive ARPU is NOT FOUND disclosed; Method 2's bottom-up automotive TAM relies on a derived blended proxy (A&M segment revenue / new vehicles built-in), flagged lower confidence"
+  - "publisher of the 'India Digital Map Market' USD 726 Mn (2025) figure could not be cleanly attributed from the search result set; excluded from the headline Method 3 sum on that basis"
+  - "no India-specific government GIS/digital-twin market-size report was found separately from the overall geospatial-market figure; government sizing is folded into the top-down/peer-aggregation totals rather than isolated"
+flags:
+  - "SOM-implied revenue CAGR (16.2% 3yr / 16.6% 5yr) is dramatically below the 45.3% CAGR management's FY28 Rs1,000 Cr target implies over FY26-FY28 — formal cross-check for Stage 11"
+  - "FY26 execution stumble (revenue growth collapsed to +2.3% vs a 24% 5-year IPO-to-date CAGR, per B07 F2, adverse and propagated here) is the reason SOM captures only 4.0-5.5% of a MASSIVE-class SAM by year 3-5; market size is not the constraint, execution is"
+  - "capacity cross-check shows SOM 3yr sits Rs79 Cr above the capex-embedded-growth ceiling (~Rs665 Cr, B07); SOM is the modestly optimistic side, though closeable from the Rs685 Cr treasury"
+  - "market structure (competitor count, concentration, organised/unorganised split) is a genuine data gap, not resolved by this stage's web search — flagged for downstream stages to treat as unverified if referenced"
+market_definition: "India digital-map & GIS data licensing (automotive, enterprise, government) plus IoT fleet-telematics SaaS and hardware; India-only, SEA JV excluded"
+tam_cr: {conservative: 30000, realistic: 35000}
+sam_cr: 18590
+sam_pct_of_tam: 62
+som_3yr_cr: 744
+som_5yr_cr: 1022
+som_implied_revenue_cagr: {yr3: 16.2, yr5: 16.6}
+current_sam_share_pct: 2.55
+revenue_headroom_x: 39.2
+tam_growth_pct: 13.45
+runway_class: "MASSIVE"
+mgmt_claim_cr: 1000
+mgmt_claim_ratio: 1.56
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ₹79 Cr (SOM 3yr Rs744 Cr vs capex-embedded ceiling ~Rs665 Cr from B07's 40.3% capex_embedded_growth_pct); SOM is the modestly optimistic side, closeable from the Rs685 Cr treasury without new financing"
+methods_used:
+  - "Method 1: top-down (Indian geospatial market industry report, with relevance haircut for non-MMI segments)"
+  - "Method 2: bottom-up unit economics (automotive vehicle attach rate x derived ARPU proxy, subset cross-check)"
+  - "Method 3: peer/segment aggregation (India Location-Based Services market + India Fleet Telematics Platforms market)"
+  - "Method 4: import substitution (qualitative only, NGP 2022 data-localisation as domestic-reservation mechanism; not separately quantified)"
+  - "Method 5: global per-capita benchmark (directional ceiling only, excluded from headline TAM on scope-mismatch grounds)"
+stale_data_flags: []
+searches_performed:
+  - {query: "India geospatial market size 2025 2030 crore report", source: "GeoSmart World 2025 / Amitabh Kant (Convergence Now, Daily Pioneer, Communications Today), Nov 2025"}
+  - {query: "India digital map location based services market size 2025", source: "Mordor Intelligence (India Location-based Services Market), 2025"}
+  - {query: "India connected car market size automotive navigation 2025 2030 billion", source: "multiple (Virtue Market Research, Grand View Research, Mobility Foresights) — divergent scope, not used as headline due to inconsistency"}
+  - {query: "India GIS market size government 2025 2030 crore", source: "GeoSmart World 2025 / Ken Research / Grand View Research"}
+  - {query: "India fleet management telematics market size 2025 2030", source: "MarkNtel Advisors (India Fleet Telematics Platforms Market), 2025"}
+  - {query: "USD INR exchange rate July 2026", source: "x-rates.com / Federal Reserve H.10, 13-Jul-2026 spot"}
+  - {query: "global geospatial analytics market size 2025 billion India share", source: "Mordor Intelligence, Fortune Business Insights, GII Research, Grand View Research, 2025"}
+  - {query: "India vehicle sales total units FY2025 2-wheeler passenger vehicle commercial vehicle SIAM", source: "SIAM via Autocar Professional / IBEF, 2025"}
+searches_skipped: []

@@ -1,0 +1,9 @@
+stage: B12c
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 47
+  fails:
+    - {severity: "MINOR", rule: "Stage 1 output spec (closing YAML block)", detail: "Saved 01-gate0.md ends at line 351 with no mandatory 

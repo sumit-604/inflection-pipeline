@@ -1,0 +1,19 @@
+stage: confidence-delta
+company: ASIANENE
+run_date: 2026-07-13
+phase: 1
+confidence_delta:
+  numerical_acceptance: 91.4      # B12a acceptance_rate (35 numbers checked, 0 critical, 1 major)
+  redflag_coverage: 67            # B12b acceptance_rate (12 independent flags found, 8 fully caught upstream; +3 partially caught = 92% if partials counted)
+  framework_adherence: 97         # B12c Gate 0 + Emerging Moat portion only (84/87 rule applications clean); VALUATION adherence PENDING phase 3
+  peer_utilisation: 100           # B12d (8/8 peers substantive, all with findable citations)
+  overall: 67                     # min of the four available components
+interpretation_band: "60-74: PROCEED verdicts downgrade one level; not forced REWORK"
+rework_triggered: false           # no verifier CRITICAL; no acceptance_rate below 60%
+rework_check:
+  verifier_a_critical: 0
+  any_acceptance_below_60: false
+notes:
+  - "framework_adherence is the Gate 0 + Emerging Moat portion only; the valuation-adherence component (B11/B10) is deferred to phase 3 and will be folded in at /finalize."
+  - "redflag_coverage 67 is the binding (lowest) component: Verifier B found 12 flags, 8 fully caught, 3 partially caught (would be ~92% including partials), 1 minor missed. The one MAJOR gap: the standalone FY26 guidance miss is under-weighted in B05 because the consolidated +70% headline masks a ~20-28% standalone shortfall once ~Rs290cr of Kuiper (7 months) is stripped out. Surface this in synthesis; it does not fabricate a signal."
+  - "B12c MINOR: the saved 01-gate0.md report file lacks its closing YAML block (the B01 block was returned by the stage but not embedded in the report file); the block is present and correct in outputs/blocks/B01-gate0.yaml and was consumed downstream. Artifact-completeness note only."

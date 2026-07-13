@@ -1,0 +1,62 @@
+stage: B04-bizmodel
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Consolidated EBITDA margin fell from 15.6% (FY25) to 12.5% (FY26) despite 70.1% revenue growth, driven by Kuiper/lower-margin mix dilution (Inv. Pres. slide 12) — margin trajectory needs scrutiny before applying peer multiples."
+  - "Net-cash positioning is eroding: borrowings rose roughly 6.7x from FY25 to FY26 (Inv. Pres. slide 13) even as management continues to describe the company as 'net zero-debt' (Inv. Pres. slide 6)."
+  - "Unbilled contract assets (WIP) nearly doubled year-on-year, outpacing revenue growth (Inv. Pres. slide 13) — cash-conversion and billing-lag risk for stage 11/monitoring."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Oil & Gas Integrated Services (seismic, O&M, Indrora crude, Kuiper manpower from Sep'25)", type: "blended project-based + recurring MSA services + commodity sale", pct_of_revenue: 80.0, predictability: "M"}
+  - {name: "Mineral & Other Energy Services (CHP, material handling, coal logistics O&M)", type: "project-based EPC + O&M services", pct_of_revenue: 20.0, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/license scarcity (RSC oil-block awards, DSF/PEC contracts)", durability: "medium-high"}
+  - {moat: "Long-duration MSA switching costs (O&M, Kuiper 2-5yr contracts)", durability: "low-medium"}
+  - {moat: "Emerging integrated end-to-end capability (post-Kuiper, self-claimed sole Indian-listed integrated upstream services player)", durability: "unproven/medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA (blended)", why: "Captures operating leverage across a capital-intensive, cyclical services-plus-upstream mix without the earnings-line distortions from exceptional items (Kuiper acquisition cost, write-offs) that currently blur P/E."}
+  secondary: {method: "Sum-of-the-parts (services EV/EBITDA + E&P DCF/NAV on reserves)", why: "Business is structurally bifurcating into a fee-based services arm and a reserve-owning E&P arm (Indrora, pending Oilmax merger ~70mn boe reserves); a blended multiple misprices the two risk/return profiles once the merger completes."}
+  tertiary: {method: "P/E", why: "Cross-check only once earnings normalize post-Kuiper integration and Oilmax merger; currently distorted by exceptional items, warrant-driven share-count changes and Kuiper margin dilution."}
+  not_applicable:
+    - "Dividend Discount Model - dividend track record only 2 years old with no stated payout policy"
+    - "Replacement cost - not meaningful for an asset-light services business"
+    - "PEG ratio - current earnings growth driven by inorganic consolidation and one-off items, not a clean organic rate"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover", why: "Inventory is trivial (₹17.78L crude oil only); not a goods-turnover business."}
+  - {ratio: "Gross margin (standard COGS/Revenue)", why: "No clean COGS line; project-related expense conflates subcontracting, stores, labour and machinery hire across all segments."}
+  - {ratio: "Current ratio", why: "Inflated by large non-cash-like contract assets/liabilities structural to percentage-of-completion accounting, not true liquidity."}
+  - {ratio: "ROE (unadjusted)", why: "Equity base distorted by warrant conversions and a bargain-purchase capital reserve on the Indrora acquisition."}
+  - {ratio: "Fixed asset turnover", why: "Blends an asset-light services core with a growing, asset-heavy E&P book; segment-wise view needed instead."}
+must_track_metrics:
+  - {metric: "Consolidated order book & order-book/TTM-revenue coverage", healthy: "coverage >1.5x TTM revenue, order book growing QoQ", red_flag: "order book flat/declining, coverage <1x"}
+  - {metric: "Consolidated EBITDA margin", healthy: "sustained above 15%", red_flag: "below 12% for two consecutive quarters (already occurred in FY26)"}
+  - {metric: "Contract-asset (unbilled WIP) growth vs revenue growth", healthy: "WIP growth ≤ revenue growth", red_flag: "WIP growth materially exceeds revenue growth (already occurring)"}
+  - {metric: "Net debt / net cash position", healthy: "net cash or net debt/EBITDA <1x", red_flag: "net debt/EBITDA >1.5x (borrowings already up ~6.7x FY25→FY26)"}
+  - {metric: "Top-1/top-3 customer revenue concentration", healthy: "top-3 <50% of standalone revenue", red_flag: "concentration rising further from FY25's ~53%, or a repeat contract-suspension event"}
+unit_economics:
+  unit: "Barrel of crude oil produced/sold (Indrora participatory interest)"
+  revenue_per_unit: "~₹5,160/bbl (₹515.75L crude oil sales ÷ ~10,000 bbl FY24-25 production)"
+  margin_per_unit: "NOT FOUND at a clean per-barrel opex level; field-expense share (₹354.99L, FY24-25) bundles multiple cost categories and is not comparable to the ~US$5/bbl figure cited for the separate Oilmax asset base"
+  key_lever: "Production ramp-up at Indrora/Mewad (targeting ~1,000 BOPD by FY27) and Oilmax merger completion (adding ~70mn boe reserves, targeting ~10,000 BOPD by FY29/30); for services, order-book conversion and mix-shift toward higher-predictability O&M/Kuiper contracts"
+first_deterioration_signals:
+  - {risk: "Revenue model - PSU client contract suspension/holiday order", first_signal: "order book or seismic-segment revenue declining QoQ without replacement contracts"}
+  - {risk: "Margin - Kuiper/lower-margin mix dilution or project cost overruns", first_signal: "consolidated EBITDA margin below prior-year comparable quarter (already occurred FY26)"}
+  - {risk: "Balance sheet - capex-driven leverage build-up", first_signal: "borrowings rising faster than cash/liquid balances (already occurred FY25→FY26)"}
+  - {risk: "Execution - billing/collection lag on project milestones", first_signal: "contract-asset growth persistently exceeding revenue growth (already occurred FY25→FY26)"}
+  - {risk: "Structural - Oilmax merger delay or Kuiper Middle East disruption", first_signal: "NCLT/SEBI approval timeline slippage, or Kuiper segment decline attributed to West Asia conflict"}
+mgmt_questions:
+  - "What is the realized per-barrel production cost and netback for Indrora today versus the ~US$5/bbl Oilmax target?"
+  - "How much of FY26 consolidated EBITDA growth is Kuiper versus organic AESL services, and what is Kuiper's own margin trajectory?"
+  - "What is driving the near-doubling of unbilled contract assets relative to revenue growth, and what is the expected cash-conversion timeline?"
+  - "What are the realistic risk factors that could delay the Oilmax merger beyond September/October 2026?"
+  - "What is the strategy for the seismic vertical now that it is a low single-digit share of the order book?"
+  - "How much of the ₹1,750cr standalone order book is executable within FY27, and what conversion rate underpins FY27 guidance?"
+  - "Will the 'net zero-debt' positioning be maintained as E&P capex needs grow, or is a leveraged capital structure anticipated?"
+one_line_verdict: "Asset-light services franchise turning into a levered, working-capital-hungry oil and gas platform bet."

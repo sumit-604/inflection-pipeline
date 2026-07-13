@@ -43,6 +43,9 @@ Two methods, both far below CMP Rs1,390. The four-pillar model is the decision o
 4. Related-party revenue share below 20% and external valuation adopted for the Rs120cr ceiling; red if >~30% or ceiling drawn without valuation
 5. Vadodara SMT lines shipping on FY27 schedule; red if delay past FY27-Q4 or per-line far below Rs100cr (peer Vinyas discloses Rs500-600cr/line)
 6. Price re-rating into Rs129-161 vs the 8.9-12.7x destination; red if price stays multiples above destination (value trap)
+7. Reverse-merger of the promoter's US entities (Aimtron Corp etc.) into the listed entity: mainboard eligibility opens ~post-June-2027 (3 yrs after SME listing, >25cr paid-up trigger). GREEN if executed with an external fairness opinion visibly favouring minorities; RED if the private entities are injected at a rich valuation without independent valuation (value transfer from minorities to promoter)
+8. AIC/AIC margin ramp confirmation IN FILINGS (call/analyst notes suggest ~15% already vs the 11% acquisition base); confirm before anchoring
+9. Reconcile the related-party revenue % on filings: on-call figure ~20% vs audited FY25 Note 35 ~27.7-31.5%; the audited number is authoritative
 
 ## Flags
 - FLAG-PROMOTER: CONCERN
@@ -53,6 +56,22 @@ Two methods, both far below CMP Rs1,390. The four-pillar model is the decision o
 
 ## Confidence delta
 numerical 95.2 | redflag 63 (binding floor) | framework 95 | peer 91.7 | overall 63 (band 60-74). No CRITICAL; REWORK not triggered.
+
+## Updated view (2026-07-12, post external-analysis review)
+Decision of record is UNCHANGED (AVOID on valuation / DEEP WATCH; cash INDETERMINATE). This addendum records nuance added after reviewing an external bull writeup and re-reading the source. It is analyst opinion plus externally-sourced (non-anchored) inputs to verify against filings; it does not alter the pipeline's anchored conclusions.
+
+Softened (three genuine upgrades):
+- Operator quality: the promoter is a credentialed technocrat, not a shell operator - prior EMS experience at Creative Electronics and Sigmatron (1998-2008) before founding Aimtron (2009); group holds an ITAR-compliant defence/aerospace unit (Aimtron Systems, ex-Target Corp, 2016) and did genuine ODM (American Pinball). This narrows the fly-by-night tail; the CONCERN flag now reads "capable operator WITH governance flags," not "unknown operator."
+- Acquisition quality (AIC/ICS): ~Rs75cr for ~Rs16cr EBITDA (~5x), ~Rs150cr revenue at ~50% utilisation, Caterpillar/John Deere clientele, ruggedized ODM capability. Cheap and capability-additive; a genuine EMS-to-ODM step. Externally cited AIC margin already ~15% (vs 11% base) would mean the ramp is partly proven - verify in filings.
+- Related-party overhang is time-limited and resolvable, not necessarily permanent: >25cr paid-up capital forces a mainboard listing, allowed only ~3 years after the SME listing (post-June-2027), so the promoter's likely path is a reverse-merger of the US entities into the listco. RPT share is already declining (55% FY23 -> ~30% audited FY25). Selling loss-making American Pinball to an OUTSIDE party (JB Vincent, Jan-2026) rather than dumping it on the listco is a positive intent signal.
+
+Held (decision-binding, unchanged):
+- Price: ~60-75x trailing with negative consolidated OCF. Even the full bull case (FY30 EPS ~Rs79) at a generous 25x gives ~Rs935, below CMP. The price only works on multiple-persistence, i.e. a growth/theme bet, not a margin-of-safety investment.
+- Cash: the bull case explicitly "overlooks working capital for now" - that is the entire risk. It does not address the FY25 receivable flip (sales to Aimtron Corp USA fell yet its balance swung ~Rs32cr toward "they owe us") or the unexplained loans-and-advances to "other parties" the CFO could not answer.
+- The reverse-merger is two-sided: it can clean up the overhang OR monetize the promoter's private ~Rs500cr US entity into the listco at minority expense. Fairness is unknowable today; treat as an unpriced governance event (see monitorable 7).
+- The externally-cited "~20%" RPT is the on-call figure; audited FY25 Note 35 is ~27.7-31.5% (authoritative).
+
+Net: business realness and operator quality upgraded; the AVOID stands on price and unproven cash. This is a reasonable SPECULATIVE growth position for someone who consciously accepts the cash risk; it is not yet a disciplined buy. Convergence to a buy needs (1) a clean third-party-driven H1 FY27 cash print and (2) a reverse-merger, if it happens, visibly fair to minorities.
 
 ## Links
 - Run folder: runs/aimtron-2026-07-12/

@@ -35,3 +35,25 @@ As accepted, the verdict is DEEP WATCH leaning AVOID at a composite of +1 of 8, 
 - Sector cap row for stage 11: Recycling / Manufacturing, 25x (manifest 38x overridden).
 - Promoter verdict CONCERN and credibility grade C carry into thesis and devil's advocate.
 - No SHARED CATALYST flag.
+
+## Addendum — refined view after external-analysis review (2026-07-12)
+
+The signed record above stands unchanged; the operator sign-off and every ruling and the verdict (DEEP WATCH leaning AVOID, composite +1/8) are unaltered. This addendum records nuance added after the operator shared an external bull writeup and the analyst re-read the source. It is opinion plus externally-sourced (non-anchored) inputs to verify against filings, appended per the never-delete memory discipline. It does not change any framework figure or the disposition.
+
+What refined (three genuine upgrades, none decision-changing):
+1. Operator quality upgraded. The promoter is a credentialed technocrat, not a shell operator: prior EMS experience at Creative Electronics and Sigmatron (1998-2008) before founding Aimtron (2009); the group holds an ITAR-compliant defence/aerospace unit (Aimtron Systems, ex-Target Corp, 2016) and did genuine ODM (American Pinball). The fly-by-night tail narrows; the promoter CONCERN now reads "capable operator with governance flags," not "unknown operator."
+2. Acquisition quality (AIC/ICS) upgraded. ~Rs75cr for ~Rs16cr EBITDA (~5x), ~Rs150cr revenue at ~50% utilisation, Caterpillar/John Deere clientele, ruggedized ODM capability, a real EMS-to-ODM step. Externally cited AIC margin already ~15% (vs the 11% base) would mean the ramp is partly proven; verify in filings before crediting.
+3. Related-party overhang re-read as time-limited and resolvable. >25cr paid-up capital forces a mainboard listing, allowed only ~3 years after the SME listing (post-June-2027), so the likely path is a reverse-merger of the promoter's US entities into the listco. RPT share is already falling (55% FY23 -> ~30% audited FY25). Selling loss-making American Pinball to an OUTSIDE party (JB Vincent, Jan-2026) rather than dumping it on the listco is a positive intent signal.
+
+What did NOT change (the disposition rests on these):
+- The margin premium's own best explanation (small-batch custom design, design cost apportioned over small volume) implies COMPRESSION as volumes scale toward Rs1,000cr - consistent with the STAGNANT margin verdict, not a bull re-rating.
+- Cash conversion stays INDETERMINATE. The bull case openly "overlooks working capital"; it does not address the FY25 receivable flip (sales to Aimtron Corp USA fell while its balance swung ~Rs32cr toward "they owe us") or the unexplained loans-and-advances to "other parties" the CFO could not answer. The Kernex cap stands.
+- The reverse-merger is two-sided: it can clean up the overhang OR monetize the promoter's private ~Rs500cr US entity at minority expense. Fairness is unknowable today; it is an unpriced governance event.
+- The externally-cited "~20%" RPT is the on-call figure; audited FY25 Note 35 (~27.7-31.5%) is authoritative.
+
+Verdict impact: none. Composite +1/8, DEEP WATCH leaning AVOID, disposition PROCEED WITH CAVEATS, all unchanged. The business-realness and operator-quality axes improved; the call was never mainly about those. It turns on price and cash, and both are unchanged.
+
+New monitorables added to the recommendation (see notion-payload):
+- Reverse-merger fairness: GREEN if executed with an external fairness opinion favouring minorities (watch ~post-June-2027); RED if private entities injected at a rich valuation without independent valuation.
+- AIC margin ramp confirmation in filings (~15% claimed vs 11% base).
+- Reconcile RPT % on filings (on-call ~20% vs audited ~27.7-31.5%).

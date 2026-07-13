@@ -1,0 +1,33 @@
+stage: B14-thesis
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+one_line_thesis: "AVOID Aimtron at Rs1,390 (~75x FY26 standalone PE): a genuinely fast-growing EMS contract manufacturer with premium 24% ROCE and net cash, but INDETERMINATE cash conversion (cumulative CFO/PAT -0.13x), promoter CONCERN (~31.5% related-party revenue, Chairman is CEO of the largest counterparty), and a four-pillar destination of only 8.9-12.7x vs a 25x sector cap mean the market prices it 3-10x above fair value; entry only near Rs129-161."
+tier: "A (25% hurdle)"
+entry_range: {low: 129, high: 161}
+mos_price: 129
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "Re-open requires price inside Rs129-161 AND H1 FY27 consolidated operating cash flow solidly positive with debtor days <120 AND promoter verdict upgrading from CONCERN; a third straight negative consolidated OCF (H1 FY27) or rising related-party receivables confirms structural cash leak and makes the AVOID permanent."
+monitoring_checklist:
+  - "H1 FY27 consolidated operating cash flow (~Nov-2026): solidly positive with debtor days <120 = green; third straight negative or rising RPT receivables = red (falsification metric)"
+  - "Trade receivables turnover >=6x (~60 days) recovering from 3.07x FY25; red if <4x or DSO >120 days"
+  - "Consolidated EBITDA margin >=18-20% with AIC ramp from 11% toward 18-20%; red if sustained sub-18%"
+  - "Related-party revenue share falling below 20% and external valuation adopted for the Rs120 Cr ceiling; red if RPT share >~30% or ceiling drawn without valuation"
+  - "Vadodara SMT lines shipping on FY27 schedule with per-line revenue converging to plan; red if delay past FY27-Q4 or per-line far below Rs100 Cr"
+  - "Price re-rating into Rs129-161 entry zone vs the four-pillar destination 8.9-12.7x; red if price stays multiples above destination (value trap)"
+verdict_card:
+  decision: "AVOID"
+  cmp: 1390
+  fair_value_base_track1_rrm: 314
+  fair_value_base_track2_additive: 448
+  bull_ceiling: 504
+  entry_zone: "Rs129-161"
+  mos_price: 129
+  destination_pe: "8.9x (RRM) / 12.7x (additive) vs 25x sector cap"
+  hurdle_verdict: "STOP"
+  prob_weighted_cagr_at_cmp: -41.6
+  flags: [FLAG-CASH INDETERMINATE, FLAG-PROMOTER CONCERN, FLAG-HURDLE-STOP]
+  zone_reachability: "Entry zone top Rs161 is ~88% below CMP Rs1,390. Price history from the screening CSVs is unavailable (empty export), so the 52-week low and lowest-tested-price-since-listing cannot be computed from inputs; on CMP alone the zone is deeply market-unlikely."

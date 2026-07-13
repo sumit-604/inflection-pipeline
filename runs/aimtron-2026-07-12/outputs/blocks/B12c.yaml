@@ -13,18 +13,26 @@ emoat:
   fails:
     - {rule: "2C capex_embedded_growth_pct methodology", severity: "MAJOR", reported: "331 (management capacity claim)", recomputed: "41.9 (capex x FAT documented)", note: "headline is a claim, not the prescribed capex*FAT output; documented floor carried but 331 fed forward"}
     - {rule: "active_categories label consistency (C1)", severity: "MINOR", note: "C1 tagged Weak-Moderate in Section 3 but omitted from active_categories; no score impact"}
-valuation:
-  status: "pending-phase-3"
-  rules_checked: 0
-  fails: []
-recomputed_destination_pe: ""   # pending phase 3
-recomputed_decision: ""         # pending phase 3; note Gate 0 label is AVOID vs AVERAGE under G0-1
+valuation:                       # PHASE 3 valuation-adherence half (merged 2026-07-12)
+  status: "complete"
+  model: claude-opus-4-8
+  rules_checked: 38
+  fails: []                      # no rule misapplied in a way that changes a value or verdict
+  minor_notes:
+    - "Pillar 2 0.65x: Master band names rating-agency-confirmed structural WC (NOT FOUND); maker used documented INDETERMINATE-conservative rule. More conservative, decision-neutral (0.80x -> QAB 15.6x still STOP/AVOID)."
+    - "Role 2 frames Gate0 AVOID as WATCHLIST-floor-overridden (Master L915) vs direct AVOID trigger (Master L809); coexisting framings, three other AVOID triggers fire, no decision impact."
+  acceptance_rate: 95
+  concur_destination_pe: "8.9x (RRM) / 12.7x (additive)"
+  concur_decision: "AVOID (on valuation), Hurdle STOP"
+recomputed_destination_pe: "concur 8.9x RRM / 12.7x additive"
+recomputed_decision: "concur AVOID; Gate 0 label AVOID vs AVERAGE under G0-1 remains an operator-ruling item (phase-1 finding), decision-neutral here (three other AVOID triggers fire)"
 findings:
   - {severity: "MAJOR", location: "B01 classification cascade (01-gate0.md L173-194)", description: "Deal-breaker #4 cap (max AVERAGE) vs LIMITED-history one-tier downgrade ordering is unspecified. Report order (cap then downgrade) yields AVOID; alternative order (downgrade then cap) yields AVERAGE. Decision-sensitive; perverse-outcome argument favours AVERAGE. Needs operator ruling."}
   - {severity: "MAJOR", location: "B07 Section 2C / YAML capex_embedded_growth_pct (07-emoat.md L279)", description: "capex_embedded_growth_pct=331% is a management capacity claim, not the prompt-specified capex x FAT computation (41.9% documented). Transparent but claim-based headline fed downstream."}
   - {severity: "MINOR", location: "B07 Section 3 L98 / active_categories (07-emoat.md L264-270)", description: "C1 labelled Weak-Moderate in Section 3 but excluded from active_categories list; cosmetic, no score impact."}
   - {severity: "MINOR", location: "B01 Block B WC-delta / Block D interest coverage", description: "Rounding: WC delta 36.5 shown as 36.6; interest coverage 80.4x shown as 80.6x. No score impact; number-domain (Verifier A)."}
-critical_count: 0
+critical_count: 0               # phase-1 gate0+emoat: 0 CRITICAL, 2 MAJOR, 2 MINOR
 major_count: 2
-minor_count: 2
-acceptance_rate: 95
+minor_count: 4                  # phase-1 (2) + phase-3 valuation (2)
+acceptance_rate: 95             # phase-1 gate0+EM 95; phase-3 valuation 95; combined framework adherence 95
+valuation_acceptance_rate: 95

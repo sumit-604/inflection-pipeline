@@ -1,0 +1,114 @@
+stage: B10-valinputs
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "rating_wc_quote: NOT FOUND (no credit rating PDF provided; check CRISIL/ICRA/CARE)"
+  - "FII+DII shareholding %: NOT FOUND (latest shareholding pattern not in inputs; AR2025 31-Mar-2025 is latest confirmed)"
+  - "Peer financial medians (P/E, EV/EBITDA, P/B, growth, ROCE): NOT FOUND (peer transcripts provided narrative validation only)"
+  - "Customer concentration top-5/top-10 %: NOT FOUND"
+  - "R&D expense / revenue: NOT FOUND (not line-itemed in P&L)"
+  - "Vadodara Greenfield total capex (Rs Cr): NOT FOUND (only capacity targets Rs500Cr stated)"
+  - "H1 FY27 operating cash flow (critical for cash-determination tie-break): NOT YET REPORTED (expected Nov-2026)"
+flags:
+  - {type: FLAG-CASH, reason: "Cumulative CFO/PAT -0.13x (FY24-26 standalone); FY26 CFO 0.47 Cr vs PAT 39.16 Cr (1.2%); FY25 CFO -17.69 Cr vs PAT +25.74 Cr (the driver); receivables +417% YoY, 46.3% related-party. INDETERMINATE cash verdict caps disposition at PROCEED WITH CAVEATS (FTTCP-deliberation).", anchor: "B01.block_b_trend, B02.receivables_trend, FTTCP-deliberation"}
+  - {type: FLAG-RPT-CONCENTRATION, reason: "Related-party revenue 27.68-31.53% FY25 (vs <20% on concall); Chairman Mukesh Vasani is CEO of Aimtron Corporation USA (largest RPT counterparty); FY26 AGM Rs120 Cr combined RPT ceiling (~76% FY25 turnover) with no external valuation.", anchor: "B02, B03, B08.adverse_findings"}
+  - {type: FLAG-CREDIBILITY, reason: "Grade C (mixed): revenue/order/certification promises beaten, but two transparency commitments unmet, H2 FY25 WC reassurance did not hold (FY26 OCF -40 Cr consolidated), fundraising stance reversed without notice.", anchor: "B05.credibility_grade"}
+  - {type: FLAG-DATA-CONFLICT, reason: "Revenue-per-SMT-line claim (~Rs100Cr by Aimtron) contradicted 5-6x by peer Vinyas disclosure (Rs500-600Cr/line); affects capacity-scaling credibility (SOM5yr = Rs1,300Cr = combined ceiling with zero margin).", anchor: "B06.contradicted, B07, B09.capacity_check"}
+  - {type: FLAG-CONTINGENT-LIABILITY, reason: "Sole KAM: GST/Income-Tax contingent liabilities Rs20.91 Cr = 81.24% of FY25 PAT, unprovisioned, no independent corroboration.", anchor: "B02, B03, B08"}
+  - {type: FLAG-SECTOR-CAP-OVERRIDE, reason: "Manifest sector cap Pharma/CDMO 38x OVERRIDDEN by FTTCP to Recycling/Manufacturing 25x; authoritative sector cap for the exit multiple.", anchor: "FTTCP-deliberation"}
+table:
+  company_identity_block:
+    company: "Aimtron Electronics Ltd"
+    ticker: "AIMTRON"
+    sector: "Electronics Manufacturing (EMS/ESDM)"
+    business_model_type: "Contract manufacturing (PCBA, Box Build, ODM design services)"
+    sector_cap_row: "Recycling / Manufacturing, 25x (FTTCP-deliberation, overrides manifest 38x)"
+    CMP_Rs: 1390
+    market_cap_Rs_Cr: 2864
+    shares_outstanding_diluted_Cr: 2.06
+    enterprise_value_Rs_Cr: 2855.84
+  latest_financials_FY26_standalone_audited_27Apr2026:
+    revenue_Rs_Cr: 257.13
+    revenue_anchor: "Results PDF (28-Apr-2026) P&L: Revenue from Operations 25,713.41 lakh"
+    EBITDA_Rs_Cr: 61.85
+    EBITDA_margin_pct: 24.05
+    PAT_Rs_Cr: 39.16
+    PAT_anchor: "Results PDF (28-Apr-2026): Profit after tax 3,916.15 lakh"
+    PAT_margin_pct: 15.23
+    diluted_EPS_Rs: 18.49
+    diluted_EPS_anchor: "Results PDF (28-Apr-2026) standalone: Diluted EPS 18.49 Rs"
+    CFO_Rs_Cr: 0.47
+    capex_Rs_Cr: 4.36
+    FCF_Rs_Cr: -3.89
+    depreciation_Rs_Cr: 6.16
+    book_value_per_share_Rs: 100.71
+    net_cash_Rs_Cr: -8.16
+    ROCE_latest_FY26_pct: 24.00
+    ROCE_latest_anchor: "FTTCP-deliberation: authoritative forward ROCE for Pillar 1 (SUSTAINED, 24.0% FY26)"
+    ROCE_trend_3yr: "declining_then_recovering (FY24 31.48% -> FY25 20.79% -> FY26 24.00%)"
+    ROE_pct: 22.21
+    revenue_CAGR_2yr_FY24_26_pct: 66.2
+    PAT_CAGR_2yr_FY24_26_pct: 70.0
+    CFO_PAT_latest_FY26: 0.012
+    CFO_PAT_cumulative_FY24_26: -0.13
+    FCF_PAT_FY26_pct: -10.0
+    DPS_Rs: 0
+  strategic_and_analytical_inputs:
+    guided_revenue_growth_pct_CAGR: "40-50%"
+    margin_band_guidance_PAT_pct: "13-17% (+/-2%); EBITDA ~20%+"
+    management_credibility_grade: "C"
+    management_delivery_track_record: "5 Delivered / 2 Partial / 4 Missed of 11 promises"
+    top_growth_trigger_1: "Greenfield Vadodara Mechatronics facility (6 SMT lines, Rs500Cr capacity), volume, medium term (FY27), medium conviction"
+    top_growth_trigger_2: "AIC/ICS US acquisition margin ramp (11% to 18-20% EBITDA), cost/margin, near-medium, medium conviction"
+    top_growth_trigger_3: "Working capital / cash conversion normalization, cost, near term, low conviction"
+    emerging_moat_score: 23
+    EM_classification: "MODEST"
+    evidence_mix: "mixed (11 documented + 19 claim + 4 inference)"
+    primary_catalyst_12m: "RDSO approval decision (Railways vendor qualification), H1-Q3 FY27 target"
+    cash_conversion_verdict: "INDETERMINATE -> caps disposition PROCEED WITH CAVEATS (FTTCP authoritative)"
+    SOM_implied_revenue_CAGR_3yr_pct: 46.6
+    SOM_implied_revenue_CAGR_5yr_pct: 34.0
+    TAM_conservative_Rs_Cr: 205600
+    SAM_Rs_Cr: 48500
+    current_SAM_share_pct: 0.62
+    revenue_headroom_multiple: 161.0
+    capacity_assessment: "Sufficient but tight; SOM5yr Rs1,300Cr equals combined disclosed India+US ceiling with zero margin; per-line productivity Rs100Cr asserted, contradicted by peer Vinyas Rs500-600Cr/line"
+  promoter_and_governance:
+    promoter_verdict: "CONCERN"
+    pledge_pct_latest: 0.0
+    promoter_trading_signal: "NET BUYER (positive): 4,000 shares open-market purchase as of 31-Mar-2025"
+  UA_qualifiers:
+    listed_12_months: "YES (IPO 4-Jun-2024)"
+    gate0_or_EM_60_or_25: "YES (Gate0 72 exceeds 60)"
+    FII_DII_under_3pct: "NOT FOUND"
+    all_three_met: "NO (FII+DII data missing; cannot affirm all three)"
+  peer_medians:
+    note: "NOT FOUND in input data (B06 validated narrative claims, not financial medians)"
+  rating_and_WC_commentary:
+    credit_rating: "NOT FOUND"
+    rating_wc_quote_verbatim: "NOT FOUND (no rating PDF supplied)"
+conflicts:
+  - {field: "sector_cap_row", value_a: "Pharma / CDMO, 38x (manifest)", value_b: "Recycling / Manufacturing, 25x (FTTCP-deliberation)", used: "25x", resolution: "deliberation supersedes manifest; 25x binding for exit multiple"}
+  - {field: "related_party_revenue_share_FY25", value_a: "<20% (H2FY25 concall)", value_b: "27.68-31.53% (AR Note 35, B02/B03/B08)", used: "29.6% audit midpoint", resolution: "audited AR primary; concall understated; reconciliation unresolved"}
+  - {field: "revenue_per_SMT_line_productivity", value_a: "~Rs100Cr/line (Aimtron)", value_b: "Rs500-600Cr/line (peer Vinyas)", used: "UNRESOLVED (flagged)", resolution: "Aimtron assumption contradicted 5-6x; affects capacity-scaling credibility and SOM5yr tight-margin"}
+unresolved:
+  - {field: "rating_wc_quote", why: "No credit rating PDF in inputs", priority: "HIGH"}
+  - {field: "FII_DII_shareholding_pct", why: "Latest shareholding pattern not provided (AR2025 only)", priority: "MEDIUM (UA qualifier closure)"}
+  - {field: "peer_financial_medians", why: "Peer transcripts narrative only", priority: "MEDIUM (sense-check)"}
+  - {field: "customer_concentration_top5_top10", why: "No top-customer disclosure in AR/presentation", priority: "MEDIUM"}
+  - {field: "Vadodara_Greenfield_total_capex_Rs_Cr", why: "No audited total project cost", priority: "MEDIUM"}
+  - {field: "H1_FY27_operating_cash_flow", why: "CRITICAL to break INDETERMINATE cash verdict; not yet reported (expected Nov-2026)", priority: "CRITICAL"}
+data_quality_notes:
+  - "Standalone vs Consolidated: core financials are STANDALONE (audited 27-Apr-2026); stage 11 values the standalone entity. Consolidated FY26 (rev Rs301.16Cr, PAT Rs45.97Cr, OCF -Rs40Cr) for reference."
+  - "ROCE authority: FTTCP-deliberation is sole authority. Pillar 1 uses CURRENT 24.0%; Amendment 4.5 normalized-ROCE DOES NOT APPLY (SUSTAINED not depressed)."
+  - "Cash cap: INDETERMINATE caps disposition at PROCEED WITH CAVEATS until H1 FY27 evidence."
+  - "Related-party revenue gap: concall <20% vs AR Note 35 27.68-31.53%; FY26 AGM Rs120Cr ceiling (~76% turnover). Promoter verdict CONCERN driver."
+  - "KAM tail risk: contingent liabilities Rs20.91Cr = 81.24% FY25 PAT, unprovisioned; material overhang outside core valuation."
+  - "Warrant/preferential: Sep-2025 issue; FY26 diluted shares 206.04 lakh; adjusted NW Rs207.54Cr for BVPS."
+deliberation_authoritative_overrides:
+  ROCE_forward_verdict: "STAGNANT -> use current 24.0% (no recovery credit; Amendment 4.5 does not apply)"
+  cash_conversion: "INDETERMINATE -> caps PROCEED WITH CAVEATS (pending H1 FY27 print)"
+  sector_cap_row_for_stage_11: "Recycling / Manufacturing, 25x (manifest 38x overridden)"
+  promoter_verdict_credibility_grade: "CONCERN, grade C (carry into thesis and devil's advocate)"

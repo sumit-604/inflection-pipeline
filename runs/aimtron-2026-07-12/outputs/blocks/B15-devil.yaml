@@ -1,0 +1,19 @@
+stage: B15-devil
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "survives"
+  moat_durability: "survives"
+  management_trust: "survives"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+interpretation: "The AVOID thesis survives the challenge on all four dimensions; the bear case is robust and the devil's advocate strengthens rather than weakens it."
+top_counters:
+  - "24% EBITDA margin and 24% ROCE may be non-genuine: ~31.5% related-party revenue at unproven arm's-length pricing (B08) plus a 15.8% salaries-line drop on 70.3% revenue growth consistent with labour reclassification (B02 rank 8), and a Note-38 disclosure that misstates its own inventory direction (B02 rank 5). If so, Pillar 1's 19.5x ROCE base is overstated; normalized peer-like ~10-12% ROCE keeps the destination single-digit-to-low-teens on clean pillars too. Threatens the entry-zone buyer, not just the CMP buyer."
+  - "No earnings path closes 75.2x to the 9-20x earned destination. Hurdle STOP survives on bull EPS (0.25/0.36 vs 1.953); resolving cash as growth-induced (0.90x), crediting +2x growth, and neutralizing RRM still caps near ~18-20x (B11). De-rating is 3-5x on every path."
+  - "The falsification metric is spoofable: a positive H1 FY27 consolidated OCF can be manufactured by netting related-party receivables against new related-party payables (B02 payable-to-receivable flip). Re-open condition must be hardened with RPT-receivable-falling, no-RPT-payable-build, and third-party-DSO guards."
+  - "FY27 growth largely inorganic and capacity-constrained: Rs450-600 Cr guidance 'depending on inorganic contribution' (AIC/ICS, B05); per-line productivity Rs100 Cr contradicted 5-6x by Vinyas Rs500-600 Cr (B06); SOM5yr Rs1,300 Cr at the combined capacity ceiling with zero margin (B09)."
+  - "Governance tail bites at any price: Rs120 Cr RPT ceiling = 76% of turnover without external valuation (B08); contingent liability Rs20.91 Cr = 81.24% of FY25 PAT unprovisioned (B02); Section 188 bypass via omnibus approval; auditor misnames the accounting framework in both reports (B03). Reported numbers are not fully trustworthy at Rs1,390 or Rs161."
+hardened_reopen_condition: "Re-open requires price inside Rs129-161 AND H1 FY27 consolidated OCF solidly positive DRIVEN BY third-party collections (related-party receivables falling, no offsetting related-party payable build, third-party DSO <120) AND promoter verdict upgrading from CONCERN. A netted or RPT-manufactured positive OCF does NOT count."

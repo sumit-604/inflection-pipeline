@@ -62,11 +62,27 @@ Run folder structure (Google Drive, mirrored to local before run):
 /inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
+    prospectus/       (0-2 PDF; DRHP / RHP. MANDATORY to attempt when the
+                       company listed within ~3 years of run_date. Carries
+                       promoter/group history, the full group-company map,
+                       and restated pre-IPO financials that fill the backward
+                       baseline.)
     annual-report/    (0-1 PDF)
     results/          (0-3 PDFs; if more than 3, use the 3 most recent)
     rating/           (0-1 PDF; if more than 1, use the most recent)
     concalls/         (0-3 PDFs, honoring concalls_available)
     peer-concalls/    (0-12 PDFs)
+    announcements/    (0-N PDFs; exchange filings / SEBI Reg 30 material
+                       events, last ~12 months: acquisitions, capital raises,
+                       order wins, board changes, divestments. The 📄
+                       documented-ACTION record for the intent-and-action
+                       cross-check and for stages 5/7/8.)
+    shareholding/     (0-N; latest quarterly shareholding pattern filing.
+                       Closes the FII+DII UA qualifier and the promoter
+                       holding/pledge trend.)
+    research/         (0-N; sell-side / broker notes. NON-ANCHORED, leads and
+                       management-intent cross-check only, never anchored
+                       evidence — same status as COMPANY MEMORY.)
     screening/        (0-N; csv / txt / pdf / xlsx)
     presentation/     (0-N)
     other/            (0-N; preserved, never consumed)
@@ -81,13 +97,24 @@ accepted inside each subfolder; the pipeline reads whatever PDFs (or
 csv/txt/xlsx for screening/) a folder contains.
 
 No input folder is required. Every folder holds 0-N files. The pipeline
-inventories what exists per folder: annual-report (0-1), results (0-3,
-use the 3 most recent if more), rating (0-1, most recent if more),
-concalls (0-3, honoring `concalls_available`), peer-concalls (0-12),
-screening, presentation, and other (preserved, never consumed). Every
-absent document type is recorded in `B00.input_gaps` and carried on
-every downstream block. Degraded stages run per the DEGRADATION MAP
-below; the pipeline degrades gracefully rather than gatekeeping input.
+inventories what exists per folder: prospectus (0-2), annual-report (0-1),
+results (0-3, use the 3 most recent if more), rating (0-1, most recent if
+more), concalls (0-3, honoring `concalls_available`), peer-concalls (0-12),
+announcements, shareholding, research, screening, presentation, and other
+(preserved, never consumed). Every absent document type is recorded in
+`B00.input_gaps` and carried on every downstream block. Degraded stages run
+per the DEGRADATION MAP below; the pipeline degrades gracefully rather than
+gatekeeping input.
+
+RECENTLY-LISTED PRIORITY: when the company listed within ~3 years of
+run_date (derive from `manifest.listed_date` if present, else from the
+prospectus/IPO evidence in inputs), the IPO prospectus is the foundational
+document — it carries the promoter and group history, the group-company map
+with business descriptions, and the restated pre-IPO financials that no
+other input holds. If `inputs/prospectus/` is empty for such a company,
+stage 0 records it as a HIGH-priority gap (not merely absent), because the
+backward baseline, the promoter/group picture, and the related-party
+trajectory will otherwise be built on fewer years and thinner evidence.
 
 Concall quarter map: from filename if evident, else read each transcript's
 first page; confirm chronology before stage 5.
@@ -102,6 +129,8 @@ market_cap_cr: 1240
 run_date: 2026-07-09
 run_type: full         # full | refresh | valuation-only
 sector_cap_row: "Specialty chemicals"   # from Section 1B cap table
+listed_date: ""        # optional YYYY-MM-DD; if within ~3y of run_date the
+                       # IPO prospectus is a MANDATORY collect + HIGH gap
 notes: ""              # free text, passed to synthesis
 ```
 
@@ -149,10 +178,34 @@ carry the gap.
   existing flag rules (FLAG-CASH, Section 4).
 - **No screening data.** Gate 0 (stage 1) extracts from the results PDFs
   and the annual report financial statements.
+- **No prospectus.** For a company listed within ~3 years, this is a HIGH
+  gap (see RECENTLY-LISTED PRIORITY above): stages 2 and 3 build the notes
+  and backward history from the annual report alone (fewer years); the
+  FTTCP backward baseline runs on the post-listing years only and says so;
+  stage 8 sources promoter/group background from web search and the AR
+  governance section instead of the prospectus, and flags the group-company
+  map as web-derived not filing-anchored. For a long-listed company the
+  prospectus is not expected and its absence is not a gap.
+- **No announcements.** Stages 5, 7, and 8 lose the documented-ACTION
+  record (Reg 30 acquisitions, capital raises, order wins, divestments);
+  the intent-and-action cross-check runs on concall/AR evidence only and
+  cannot grade recent 📄 actions. Stage 8 relies on web search for material
+  events. Note: FTTCP Step 0C already lists recent exchange announcements as
+  a required input; its absence lowers confidence and is flagged.
+- **No shareholding pattern.** Stage 10 marks FII+DII `unresolved`; stage 11
+  cannot affirm the UA institutional-absence qualifier, so UA is withheld
+  (the all-three-qualifier rule). Promoter holding/pledge trend falls back
+  to the AR/last-known figure with the staleness noted.
+- **No research.** No effect on anchored evidence (research is never
+  anchored). The intent-and-action cross-check and synthesis lose a
+  lead-generation and management-intent cross-check source only.
 
 Verifiers audit only against sources that exist. Skipped stages never
 fail the confidence delta; their absence flows to the synthesis instead
-of counting as a verification miss.
+of counting as a verification miss. Research and prospectus/announcement
+provenance rules: research notes are leads, never anchored figures;
+prospectus and announcement facts ARE anchored evidence (they are filings)
+and every number taken from them still carries its source anchor.
 
 ### REFRESH RUNS
 

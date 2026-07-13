@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps: [ebitda_fy26_reconstructed, fy27_fy30_eps_projected, fy_y2_roce_not_found, peer_medians_not_found]
+flags:
+  - {type: FLAG-CASH, applied_multiplier: 0.65, note: "INDETERMINATE; growth offset BARRED; caps disposition at PROCEED WITH CAVEATS"}
+  - {type: FLAG-PROMOTER, note: "CAUTION - KKOC multi-role RPT + Rs 305.32M tax demand"}
+  - {type: SHARED-MACRO-CATALYST, note: "Memory/component supercycle drives revenue, margin and Rs 743 Cr inventory bet"}
+  - {type: FLAG-MARGIN, note: "Gross margin ~12% trails peers 27-47%"}
+  - {type: FLAG-GATE0, note: "Core 48/100 AVERAGE, Block B 0/20"}
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 15.2, mid: 16.5, high: 17.7, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 14.9, mid: 16.1, high: 17.3}
+  divergence_pct: 2.4
+  governing_track: "Operator override 20x forward (deliberation Overrides 2 & 4) supersedes both ~16x mechanical tracks; sets fair value, entry and Hurdle."
+pillar_detail:
+  roce_used: 28.3
+  roce_base: 21.65
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 0.65
+  structural_or_growth: "INDETERMINATE"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.90, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 302, base: 573, bull: 758}
+  track2: {bear: 302, base: 573, bull: 758}
+expected_cagr_prob_weighted: -5.6
+entry_range: {low: 261, high: 293}
+mos_price: 235
+upside_downside_ratio: 0.37
+decision: "AVOID (on-valuation) at CMP Rs 634; actionable only in entry zone Rs 261-293, MoS Rs 235"
+exit_pe_used: 20
+exit_pe_basis: "forward: 20x on projected FY30 EPS (~Rs 28.65) at FY29 exit (operator override)"
+current_trailing_pe: 54.7
+unresolved_inputs_used:
+  - "EBITDA FY26 NOT FOUND -> reconstructed EBIT 190.15 + D&A 10.35 = Rs 200.50 Cr (EV/EBITDA cross-check only)"
+  - "FY[Y+2] ROCE NOT FOUND -> RECOVERING blend defaults to current operational 28.3% (no uplift)"
+  - "FY27-FY30 EPS NOT FOUND -> projected from FY26 EPS 11.58 + guidance, all below guidance/SOM/history"
+  - "Peer P/E, EV/EBITDA, P/B medians NOT FOUND -> exit PE rests on Section 1B/operator override, no peer triangulation"
+som_cagr_crosscheck: "consistent - base 3yr revenue CAGR 22.3% below SOM-implied 35.7%"
+one_line_thesis: "GNG can grow EPS from Rs 11.58 to ~Rs 28.65 (FY30) on the memory supercycle, but at Rs 634 (~55x trailing) a governing 20x forward exit gives a Rs 573 base target = negative 3yr CAGR (Hurdle STOP); AVOID on valuation until Rs 261-293, cash quality still INDETERMINATE."

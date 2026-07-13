@@ -14,17 +14,19 @@ Media SaaS turning profitable, priced far ahead. FY26 revenue Rs 1,505.61 Cr (+3
 PROCEED WITH FLAGS (confidence delta overall 63, band 60-74; numerical 93.6, redflag 63, framework 96.8, peer 92; no forced REWORK).
 
 ## Valuation decision
-AVOID on valuation at CMP Rs 580 (name is WATCHLIST / DEEP WATCH leaning BUY-ON-DIPS; no BUY NOW, INDETERMINATE cash bar).
-- Destination PE: 21.0x additive (Track 2) / 14.7x RRM (Track 1). Sector cap Platform / SaaS / IT services 45x (absolute; manifest Pharma/CDMO 38x corrected).
+DEEP WATCH. No buy at CMP Rs 580 for the 25% hurdle. This is HURDLE-RELATIVE, not a mispricing claim (deliberation round 2): the business is plausibly FAIRLY VALUED if SaaS-margin normalization holds; the stand-aside is "we do not get our required 25% return at this price," not "the market is wrong."
+- Destination PE: 21.0x additive (Track 2) / 14.7x RRM (Track 1) on the conservative evidence base (~10% guided EBITDA). Sector cap Platform / SaaS / IT services 45x (absolute; manifest Pharma/CDMO 38x corrected).
 - Exit basis: forward PE, FY29 exit priced on FY30 EPS (operator instruction).
-- Fair value (FY29 exit): base Rs 303 additive / Rs 212 RRM. FY30 base EPS Rs 14.44.
-- Hurdle Ratio: STOP on both tracks and both base and bull. Prob-weighted 3yr CAGR about -22% at CMP.
+- Conservative-base fair value (FY29 exit): base Rs 303 additive / Rs 212 RRM, FY30 base EPS Rs 14.44. This base carries an ~8.5% net margin and must NOT be read as "market ~90% too high" (framing withdrawn, round 2).
+- SaaS-normalized alternative (documented, round 2): at ~20% EBITDA / ~15% net by FY30, FY30 EPS ~Rs 25, additive exit ~Rs 530; with cash resolving growth-induced (multiplier ~0.95x, destination ~24-26x) exit ~Rs 660. Under this case Rs 580 is roughly fair.
+- Hurdle Ratio (conservative base): STOP on both tracks and both base and bull; prob-weighted 3yr CAGR about -22% at CMP. The market prices ~16% terminal net margin (SaaS-peer level); the AVOID hinges on that single assumption.
 - Tier A, 25% hurdle. UA not applicable.
 
 ## Entry zones
-- Entry range: Rs 109 to Rs 155 (governing RRM Rs 109). MoS price Rs 87.
+- Market-real accumulation zone (round 2, actionable): ~Rs 300 to Rs 460 (the chart's rising-channel support and the April 2026 base of ~Rs 300), and only with the margin trajectory and the first clean OCF print confirming. This is the zone to watch, not a standing bid.
+- Conservative evidence-only floor: Rs 109 to Rs 155 (governing RRM Rs 109), MoS Rs 87. Superseded for ACTIONABILITY in round 2 as an artifact of the 8.5% margin base; retained only as the strict evidence floor.
 - Position size if entered: Small (2-3%) starter only, upon entry conjunction. No operator size override.
-- ZONE REACHABILITY: MARKET-UNLIKELY. Entry top Rs 155 is about 52% below the lowest tested price since listing (~Rs 326 screener FY26 anchor; IPO offer ~Rs 361) and about 73% below CMP Rs 580. Reaches entry only via a thesis-relevant shock or broad de-rating. Classify DEEP WATCH, not actionable WATCHLIST, or route to the trading book.
+- ZONE REACHABILITY: the Rs 109-155 evidence floor is MARKET-UNLIKELY (about 52% below the ~Rs 300 lowest tested price). The market-real zone Rs 300-460 is reachable on an ordinary channel pullback; a break below ~Rs 300 would need a thesis-relevant shock. Classify DEEP WATCH.
 
 ## Thesis-broken triggers
 - First two clean quarters (from Q2 FY27, post ESOP settlement) print negative reported OCF while trade receivables still grow ~35%+ faster than revenue: cash resolves DECLINING/structural, voids the operating-ROCE-recovering premise and the entry zone.

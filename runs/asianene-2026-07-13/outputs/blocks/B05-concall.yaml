@@ -1,0 +1,87 @@
+stage: B05-concall
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Transcript 1 (Sep 2025) is a merger/business-update call, not a Q1 FY26 earnings call as the quarter map suggested; no Q1 FY26 quarterly financials exist in the provided transcripts"
+  - "Related-party Oilmax valuation fairness (~50x trailing earnings) unresolved after two analyst challenges in Sep25 call"
+  - "FY26 full-year guidance missed in Q4 after confident reaffirmation in Q2, both misses externally attributed (monsoon, then West Asia conflict)"
+quarters_analysed: ["Business Update Call - Sep 2025 (not a quarterly earnings call)", "Q2 FY26 / H1 FY26 (Nov 2025)", "Q4 FY26 / FY26 Full Year (May 2026)"]
+triggers:
+  - {priority: 1, name: "Oilmax merger completion and consolidation", type: "INORGANIC", timeframe: "medium (target Sep/Oct 2026)", conviction: "M",
+     confirm_signal: "NCLT/shareholder approvals proceed on schedule; Oilmax consolidates into AESL financials", kill_signal: "NCLT delay or renewed valuation-fairness challenge stalls the scheme"}
+  - {priority: 2, name: "Kuiper Group scale-up to $60-65mn FY27, $100mn FY29 target", type: "INORGANIC/VOLUME", timeframe: "medium-long", conviction: "M",
+     confirm_signal: "Monthly run-rate sustains/rises above ~INR40-45cr, EBITDA margin expands toward 11-12%, new-geography wins", kill_signal: "Run-rate stagnates, West Asia disruption spreads, EBITDA margin fails to expand"}
+  - {priority: 3, name: "Vedanta/ONGC integrated field development model replication", type: "VOLUME", timeframe: "medium", conviction: "M",
+     confirm_signal: "ONGC or Oil India award a similar integrated contract to AESL", kill_signal: "ONGC tenders evaluated but not awarded; model stays single-client"}
+  - {priority: 4, name: "Oilmax organic field ramp (Amguri, Tiphuk, Duarmara, Indrora/Mevad)", type: "VOLUME", timeframe: "near-medium, has slipped every quarter", conviction: "L",
+     confirm_signal: "Any of the delayed fields begins production with a hard confirmed date", kill_signal: "Further slippage without a firm revised date, especially on Duarmara"}
+  - {priority: 5, name: "FY27 revenue growth guidance (30-40% standalone)", type: "VOLUME/COST", timeframe: "near (FY27)", conviction: "M",
+     confirm_signal: "Q1-Q2 FY27 prints track the 30-40% growth path; deferred FY26 revenue recognises as promised", kill_signal: "Repeat of the FY26 pattern of reaffirmed guidance followed by a late-year external-blame miss"}
+  - {priority: 6, name: "CHP/minerals infrastructure and critical-minerals logistics pipeline", type: "SECTORAL", timeframe: "medium-long", conviction: "M",
+     confirm_signal: "L1 minerals-infra tender converts to award; additional CHP contracts won", kill_signal: "Award pace slows or competitors (Samanta, Madhucon) win disproportionately"}
+  - {priority: 7, name: "DSF Round 4 / new E&P block wins", type: "REGULATORY-POLICY/VOLUME", timeframe: "medium", conviction: "L",
+     confirm_signal: "Any of the 3 submitted DSF Round 4 bids awarded", kill_signal: "All bids lost or round delayed indefinitely"}
+guidance:
+  - {item: "Asian Energy standalone FY26 revenue", number: "INR650-700 crore", timeframe: "FY26", stated_in: "Business Update Call, Sep 2025"}
+  - {item: "Asian Energy standalone FY26 EBITDA", number: "INR110-120 crore", timeframe: "FY26", stated_in: "Business Update Call, Sep 2025"}
+  - {item: "Merger completion timeline", number: "~12 months from Sep 2025, target Sep/Oct 2026", timeframe: "FY27", stated_in: "Business Update Call, Sep 2025; reaffirmed Q4 FY26 call"}
+  - {item: "Promoter post-merger fully diluted stake", number: "47.3%", timeframe: "at scheme effectiveness", stated_in: "Business Update Call, Sep 2025"}
+  - {item: "FY26 full year revenue actual", number: "INR791 crore (+70% YoY)", timeframe: "FY26", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "FY26 full year EBITDA actual", number: "INR99 crore (12.5% margin, +37% YoY)", timeframe: "FY26", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "Order book ex-GST ex-Kuiper (Nov 2025)", number: "INR2,000+ crore", timeframe: "as of 14 Nov 2025", stated_in: "Q2/H1 FY26 call, Nov 2025"}
+  - {item: "Order book ex-GST ex-Kuiper (May 2026)", number: "INR1,750 crore", timeframe: "entering FY27", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "FY27 standalone growth guidance", number: "30-40% YoY", timeframe: "FY27", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "FY27 Kuiper revenue target", number: "$60-65 million", timeframe: "FY27", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "Kuiper FY29 revenue/margin target", number: "~$100 million revenue, 11-12% EBITDA margin", timeframe: "FY29", stated_in: "Q4 FY26 call, May 2026 (referencing prior AGM presentation)"}
+  - {item: "FY29 group PAT target", number: "INR450-500 crore", timeframe: "FY29", stated_in: "Q4 FY26 call, May 2026 (referencing prior AGM presentation)"}
+  - {item: "Oilmax FY29-30 revenue target", number: "INR800-900 crore", timeframe: "FY29-30", stated_in: "Q4 FY26 call, May 2026"}
+  - {item: "Duarmara peak production and revenue (AESL 50% share)", number: "~3,000 boe net, INR350-400 crore/yr topline at peak, 70-75% EBITDA margin, peak in FY29-30", timeframe: "FY29-30", stated_in: "Q2/H1 FY26 call, Nov 2025"}
+  - {item: "Indrora/Mevad production target", number: "1,000 boepd by FY27, 1,500 boepd in 2-3 years", timeframe: "FY27-29", stated_in: "Q4 FY26 call, May 2026"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Kuiper acquisition to complete 'earlier this month'", outcome: "delivered", explanation: "Closed 1 Sep 2025 as stated, confirmed in Nov 2025 call"}
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Merger process ~12 months, completion by Sep/Oct 2026", outcome: "partial", explanation: "On track as of May 2026 call: SEBI approval received, NCLT meeting scheduled Jun 2026"}
+    - {promised_in: "Business Update Call, Sep 2025 (reaffirmed Nov 2025)", promise: "Asian standalone FY26 revenue INR650-700cr / EBITDA INR110-120cr", outcome: "missed", explanation: "Q2 miss blamed on unseasonal monsoon; Q4/full-year miss blamed on West Asia conflict and client-side delays, framed as timing deferred to FY27"}
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Amguri to connect to Indradhanush Gas Grid 'later this year'", outcome: "missed", explanation: "Still pending as of May 2026 call: 'expected over next few months'"}
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Tiphuk field into production 'in the near future'", outcome: "missed", explanation: "Still not started as of May 2026 call: 'commencing production in the coming months'"}
+    - {promised_in: "Business Update Call, Sep 2025 (reaffirmed Nov 2025)", promise: "Duarmara field into production 'later in the year'", outcome: "missed", explanation: "Well tested tighter than expected, testing ongoing, management could not commit to a date as of May 2026 call"}
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Indrora drilling campaign to start within 1 month", outcome: "delivered", explanation: "By May 2026, 2 new wells drilled at Mevad/Indrora, performing better than initial expectations"}
+    - {promised_in: "Business Update Call, Sep 2025 / Q2 FY26 call, Nov 2025", promise: "South Rewa CBM environmental clearance and testing progression", outcome: "partial", explanation: "Clearance expected end of Nov 2025; by May 2026, work had commenced after receiving necessary permissions"}
+    - {promised_in: "Business Update Call, Sep 2025", promise: "Provide Oilmax FY23/FY24 revenue and EBITDA numbers separately", outcome: "missed", explanation: "Never supplied or referenced again in Nov 2025 or May 2026 transcripts"}
+    - {promised_in: "Q2/H1 FY26 call, Nov 2025", promise: "Vedanta contract execution mobilised 2 months in advance, smooth takeover", outcome: "delivered", explanation: "Reaffirmed as reference case for ONGC/Oil India model replication in May 2026 call"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "What is Oilmax's standalone financial performance and when will fuller disclosure come?", quarters_asked: ["Business Update Call Sep 2025", "Q2/H1 FY26 Nov 2025", "Q4 FY26 May 2026"], classification: "answered eventually"}
+  - {question: "When will Amguri/Tiphuk/Duarmara actually come into production?", quarters_asked: ["Business Update Call Sep 2025", "Q2/H1 FY26 Nov 2025", "Q4 FY26 May 2026"], classification: "answer changed between quarters"}
+credibility_grade: "C"
+credibility_basis: "Strong execution on complex corporate actions (merger process, Kuiper close, Vedanta mobilisation ahead of schedule) offset by a missed FY26 guidance (twice externally blamed), three consecutive quarters of slipping Oilmax field-production timelines with no firm date ever pinned down, a declining order book despite raised FY27 growth guidance, and an unresolved related-party valuation-fairness challenge on the Oilmax merger."
+peer_questions:
+  - {question: "Is AESL's integrated field development model (Vedanta contract) being evaluated or adopted by ONGC/Oil India as a broader industry template, as management claims?", why: "Tests management's flagship growth-replication thesis for company-specific spin vs industry corroboration", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "How are peers managing the oil and gas GST hike from 12% to 18%, and does the cost impact match AESL's 'negligible via in-house execution' claim?", why: "Tests a specific quantified regulatory cost-trend claim", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "Did peers experience comparable unseasonal monsoon-driven execution delays in Q2 FY26 (Jul-Sep 2025)?", why: "Tests whether AESL's Q2 EBITDA-miss excuse is sector-wide or company-specific", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "Did peers report West Asia conflict-related supply chain disruption or client delays in Q4 FY26 (Jan-Mar 2026)?", why: "Tests whether AESL's full-year guidance miss cause is corroborated industry-wide", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "Do peers corroborate a sharp reversal in upstream capex after a decade of constraint since 2016, backed by India's ~$100 billion committed oil and gas investment by 2030?", why: "Tests the core sectoral growth-rate claim underpinning AESL's investment thesis", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "Does any peer combine E&P asset ownership with a large third-party services business, or is AESL's 'no comparable peer' claim overstated relative to segment-level competition?", why: "Tests a market-structure and competitive-differentiation claim", check_peers: ["DEEPINDS", "JINDRILL"]}
+  - {question: "What is peers' DSF Round 4 bid activity and win-rate experience?", why: "Tests the realism of AESL's block-acquisition pipeline as a growth trigger", check_peers: ["DEEPINDS", "JINDRILL"]}
+red_flags:
+  - {flag: "Related-party Oilmax merger valued at implied ~50x trailing earnings; fairness challenges from two analysts met with circular, non-substantive responses, unresolved across all three calls", severity: "HIGH"}
+  - {flag: "FY26 full-year guidance missed after confident reaffirmation in the immediately preceding call, following an already-monsoon-blamed Q2 miss; two consecutive external-blame guidance shortfalls in one fiscal year", severity: "MEDIUM"}
+  - {flag: "Amguri, Tiphuk and Duarmara production-start promises slipped in every one of the three calls; Duarmara ended the window with no committable date", severity: "MEDIUM"}
+  - {flag: "Order book (ex-GST, ex-Kuiper) declined from INR2,000+ crore to ~INR1,750 crore between Nov 2025 and May 2026 even as FY27 growth guidance was raised to 30-40%", severity: "LOW-MEDIUM"}
+  - {flag: "Promise to separately provide Oilmax FY23/FY24 standalone financials never fulfilled or revisited", severity: "LOW"}
+  - {flag: "Kuiper acquisition purchase consideration/valuation never disclosed across any of the three calls", severity: "LOW"}
+  - {flag: "Anirit Ventures (Oilmax subsidiary) rights-issue plan raised once, deflected, never revisited", severity: "LOW"}
+dropped_triggers:
+  - "Anirit Ventures / rights-issue plan (raised Nov 2025, deflected, never revisited in May 2026 call)"
+  - "'Rare earth metals' as a named sub-theme (Sep 2025) quietly folded into broader 'critical minerals' framing by May 2026 without a specific bid or transaction ever named"
+timeline_slippages:
+  - "Amguri gas-grid connection: 'later this year' (Sep 2025) -> still pending, 'next few months' (May 2026)"
+  - "Tiphuk production start: 'near future', rig mobilising 'next week' (Sep 2025) -> still not started, 'coming months' (May 2026)"
+  - "Duarmara production start: 'later this year' (Sep 2025, reaffirmed Nov 2025) -> testing ongoing, no committable date (May 2026)"
+  - "FY26 revenue/EBITDA guidance: reaffirmed with confidence in Nov 2025 despite an already-missed Q2 -> missed in Q4/full-year (May 2026), externally blamed"

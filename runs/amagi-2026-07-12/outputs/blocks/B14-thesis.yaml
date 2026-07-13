@@ -1,0 +1,27 @@
+stage: B14-thesis
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"                 # AVOID at CMP; DEEP WATCH leaning BUY-ON-DIPS per authoritative FTTCP
+entry_range: {low: 109, high: 155}   # governing RRM entry 109; additive 155
+mos_price: 87
+position_size: "Small"               # 2-3%, starter only, upon entry conjunction; Tier A
+position_size_override: ""           # no documented operator override to size
+one_line_thesis: "Buying AMAGI only near Rs 109 to Rs 155, not at Rs 580, because base FY30 EPS Rs 14.4 at the earned four-pillar destination PE 21.0x (RRM 14.7x) implies a Rs 303 to Rs 212 FY29 exit, so at CMP the 25% hurdle fails even on the bull case; thesis breaks if the first two clean quarters print negative reported OCF while receivables still grow ~35% faster than revenue."
+thesis_broken_if: "First two clean quarters (from Q2 FY27, post ESOP settlement) print negative reported OCF while trade receivables still grow ~35%+ faster than revenue — cash resolves DECLINING / structural, voiding the operating-ROCE-recovering premise and the entry zone."
+thesis_broken_conditions:
+  - "Cash: first two clean quarters print negative reported OCF with trade receivables still growing ~35%+ faster than revenue (cash DECLINING / structural; Kernex cap engages)"
+  - "Revenue: constant-currency growth falls below 20% for two consecutive quarters, or NRR falls below 120%"
+  - "Concentration: top-10 customers exceed 45% or largest exceeds 15%, or a top-5 customer non-renewal"
+  - "Margin: adjusted EBITDA margin plateaus below 10% or gross margin declines >200-300bps QoQ on sustained basis"
+  - "Capital allocation: a large dilutive or overpriced acquisition of the Rs 1,664 Cr war chest with no disclosed size discipline"
+monitoring_checklist:
+  - "Reported OCF positive with trade receivables growth <= revenue growth (RED: negative OCF with receivables >~35% ahead for 2 consecutive clean quarters)"
+  - "Constant-currency revenue growth >=25% and NRR >=120% (RED: cc <20% or NRR <120%)"
+  - "Adjusted EBITDA margin >=10% and trending up (RED: YoY compression or plateau below 10%)"
+  - "Top-10 customer concentration <=40% and largest <=14% (RED: top-10 >45% or largest >15%, or top customer non-renewal)"
+  - "Gross margin 65-75% steady; cloud infra cost <=~29% of revenue (RED: QoQ gross margin decline >200-300bps)"
+  - "NEWSPULSE/agentic AI and marketplace revenue disclosed as a separated line by FY27 (RED: continued non-disclosure through FY27)"
+  - "Cash deployment with disclosed size discipline; CRISIL/ICRA WC rationale confirms non-structural (RED: large dilutive/overpriced deal or rating confirms structural WC)"
+  - "Price inside Rs 109-155 AND no thesis-broken trigger fired (entry conjunction; RED: price in zone because a trigger fired = withdrawn zone)"

@@ -64,3 +64,23 @@ Operator sign-off: given 2026-07-12. Overrides above adopted. Proceed to Phase 3
 - Return tier: **Tier A, 25% hurdle**. UA: **not applicable**.
 - SHARED CATALYST flag: none.
 - Devil's advocate focus: whether the first clean quarter's reported OCF can be positive while receivables are still ~35% ahead over six months; and whether the operating-ROCE-ex-cash treatment is being applied honestly (not laundering a low-return business by netting out a cash pile that management shows no plan to deploy).
+
+---
+
+## DELIBERATION ROUND 2 (2026-07-12) — VALUATION FRAMING (post phase-3 review)
+
+**Operator observation.** Shown the AMAGI daily chart: since the ~February 2026 listing the lowest tested price is about Rs 300 (April 2026); the stock trades in a rising channel, currently ~Rs 576 near the channel top, support ~Rs 500, midline ~Rs 460. The operator's point: the published entry zone Rs 109-155 and the base fair value ~Rs 303 sit below the all-time low, so "our valuation framework is too strict."
+
+**Diagnosis (recorded).** The exit multiple is not the strict part. The four-pillar destination PE is 21.0x additive / 14.7x RRM against a 45x sector cap; 21x on a 30% grower with 125% NRR is not aggressive. The gap to the market is the terminal MARGIN assumption. The base case carried ~8.5% net / ~10% EBITDA (management guided "steady ~10%"). Back-solving: for Rs 580 to be fair at the 21x additive destination, FY30 EPS must be ~Rs 27.6, which on FY30 revenue ~Rs 3,676 Cr and 21.63 cr shares is a ~16% net margin (~22-25% EBITDA) — the SaaS-peer level. So the entire fair-value gap is one variable: does a 69%-gross-margin SaaS reach peer EBITDA margins by FY30.
+
+**Operator question: "so you mean the market is wrong?" Ruling: NO.** The verdict is hurdle-relative, not a mispricing claim. The strategy demands a 25% CAGR; a fairly-priced quality business returns its cost of equity (~13-15%), which fails the 25% hurdle by construction. "AVOID at Rs 580" is compatible with "the market has it about right." We sit on the show-me side of two unproven forward variables (margin normalization, cash conversion), not declaring the market irrational. We assert neither that margins will fail to normalize nor that cash is structurally broken (it is INDETERMINATE).
+
+**Override 3 — valuation framing (adopted 2026-07-12).**
+- The published fair value must NOT be presented as a mispricing. The Rs 303 base read as "the market is ~90% too high," and that framing is withdrawn. The defensible statement: at Rs 580 the risk-reward does not clear our 25% hurdle, and it clears only at a market-real pullback if peer margins are underwritten.
+- The SaaS-normalized margin sensitivity is recorded as the documented alternative: at ~20% EBITDA / ~15% net by FY30, FY30 EPS ~Rs 25, additive exit ~Rs 530; with cash resolving growth-induced (cash multiplier ~0.95x, destination ~24-26x) exit ~Rs 660. Under that case Rs 580 is roughly fair, not a mispricing.
+- The market-real accumulation zone is the chart's ~Rs 300-460 channel / prior base, NOT Rs 109-155. The Rs 109-155 zone was an artifact of the 8.5% margin base and is superseded for ACTIONABILITY (it remains the conservative evidence-only floor).
+- Operator's stated reasoning, in the operator's words: the framework is "too strict"; the lowest price ever "was 300 only," so a fair-value/entry below the all-time low implies a mispricing we are not actually claiming.
+
+**Decision after round 2.** DEEP WATCH. No buy at CMP Rs 580 for the 25% hurdle. The business is plausibly FAIRLY VALUED (not a mispricing) if SaaS-margin normalization holds; the stand-aside is "we do not get our required return at this price," not "the market is wrong." Accumulate only on a market-real pullback into ~Rs 300-460 AND with the margin trajectory and the first clean OCF print confirming. The tell is the print (EBITDA margin toward 20%, first clean reported OCF positive), not a valuation debate.
+
+**Mechanical note.** A full stage-11 re-run under the SaaS-normalized margin base would move B11/B14 to destination ~24-26x and an FY29 exit ~Rs 530-660. The operator requested only the record documents this round, so the B11 and B14 blocks retain the conservative evidence base and this round-2 ruling overlays the corrected framing on top of them. If a re-priced B11/B14 is wanted, re-run /finalize stage 11 onward with the ~20% terminal EBITDA margin as a documented base-case input.

@@ -1,0 +1,286 @@
+stage: B10-valinputs
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "capex (FY26, historical): NOT FOUND in screening or provided results extracts"
+  - "free cash flow (FCF, clean): investing-activity line includes capex, securities, and WC; cannot disaggregate"
+  - "rating PDF / credit-agency working-capital commentary: rating absent per B01; INDETERMINATE cash flag depends on this"
+  - "peer P/E, EV/EBITDA, P/B medians: peer financial extracts available but metrics not harmonized in B06; marked UNRESOLVED"
+  - "FII+DII post-IPO shareholding %: NOT FOUND; assumed well above 3% per deliberation"
+  - "Remaining Performance Obligation / RPO backlog: not disclosed (Ind AS 115 practical expedient invoked for <=1yr contracts)"
+  - "Headcount by function KPI: promised Q3 FY26, not delivered by Q4 FY26"
+
+flags:
+  - type: FLAG-CASH
+    reason: "Trade receivables grew 43.9% YoY (FY25→FY26) vs 29.5% revenue growth; ECL allowance swung from release to addition; H1 FY26 operating cash flow −Rs 2,005.95 Mn despite first-ever profitable PAT, driven by Rs 1,000.44 Mn ESOP settlement and Rs 1,039.01 Mn receivables increase. Cash conversion INDETERMINATE pending first clean quarter and rating agency WC commentary. Caps disposition no better than PROCEED WITH CAVEATS. No growth offset applied to cash multiplier in stage 11."
+    authority: "(B02 Finding #12, B03 FLAG-CASH, fttcp-deliberation.md line 20, 62)"
+
+  - type: FLAG-GATE0-AVERAGE
+    reason: "Classification AVERAGE driven by deal-breakers: median ROCE −26.22% (FY21–FY26 inclusive of pre-IPO losses), cumulative CFO/PAT 0.19 (from cash-burn period FY23–FY24), PAT negative FY24–FY25. All attributable to FY22–FY25 non-cash ESOP/CCPS artifacts and pre-IPO window. FY26 (first post-IPO full year) shows clean balance sheet and return to profit; only one-year pattern exists. Forward ROCE RECOVERING per operator override."
+    authority: "(B01 block analysis, classification AVERAGE line 27; fttcp-deliberation.md override 1)"
+
+  - type: FLAG-CUSTOMER-CONCENTRATION
+    reason: "Top-10 customer revenue share worsened 33.7% (FY24) → 40.2% (H1 FY26); largest customer 6.88% → 14.06%. Concentration trending up, not moat-positive. Top-5 customer renegotiation in FY26 carried margin cost, initially understated in Q3 FY26 call, revealed in Q4 FY26 call (B05 promise_delivery row 5). Concentration risk worsening beneath strongest moat category (C1 Customer Ecosystem)."
+    authority: "(B04 risk line 11, B07 FLAG-C2-INVERTED line 14, B05 promise_delivery row 5)"
+
+  - type: FLAG-CREDIBILITY-GRADE-B
+    reason: "Single testable guidance figure (EBITDA ~10%) delivered accurately (FY26 10.4% actual). Cost-leverage trends (S&M, R&D, ESOP) tracked as described. Offset by two silently dropped investor commitments (headcount-by-function KPI, Labour Code run-rate clarity) without acknowledgment, and an understated-then-revealed margin cost from top-5 client renegotiation. Identical deflection on forward 3-year guidance (revenue/margin targets) across two consecutive quarters (Q3 & Q4 FY26) without fresh rationale; ceiling at Tier B credibility."
+    authority: "(B05 credibility_grade B, credibility_basis lines 49, red_flags lines 57–62)"
+
+  - type: FLAG-CASH-DEPLOYMENT-UNTESTED
+    reason: "War chest (G1 moat, Strong balance-sheet score) = Rs 1,447 Cr net cash. Management declined twice to give M&A guardrails or deal-size discipline (B05 repeated_evasions). Capital-allocation track record on prior two acquisitions (Tellyo, Argoid) both ended in write-off or liquidation within 12–18 months (B02 Finding #6). Deployment strategy untested; deployment decision pending."
+    authority: "(B07 FLAG-CASH-DEPLOYMENT-UNTESTED line 17, B05 repeated_evasions line 46, B02 Finding #6)"
+
+  - type: PROCEEDING-WITH-CAVEATS-DISPOSITION
+    reason: "Forward business FIRING (revenue RECOVERING, margin STARTING, ROCE RECOVERING on operating base) but cash conversion INDETERMINATE caps overall disposition. Stage 11 applies PROCEED WITH CAVEATS disposition pending (1) first clean quarter confirmation of OCF post-ESOP settlement, (2) rating agency working-capital commentary if available, (3) resolution of structural vs growth-induced cash deterioration."
+    authority: "(fttcp-deliberation.md line 24, 49–56, deliberation summary: 'Composite +4 out of 8. DEEP WATCH leaning BUY-ON-DIPS')"
+
+table:
+  company_identity:
+    ticker: AMAGI
+    sector_manifest: "Pharma / CDMO (38x) — COLLECTOR DEFECT"
+    sector_authoritative: "Platform / SaaS / IT services (45x) — OPERATOR OVERRIDE per fttcp-deliberation.md"
+    business_model_type: "Hybrid: subscription/usage-blend SaaS, three divisions (Streaming Unification 57%, Monetization & Marketplace 24%, Cloud Modernization 19%)"
+    cmp_rs: 580
+    market_cap_cr: 12552
+    shares_diluted_cr: 21.63
+    enterprise_value_cr: 11135
+
+  latest_financials_fy26:
+    revenue_cr: 1505.61
+    revenue_anchor: "screener line 11, task message confirmation"
+    gross_margin_pct: 69.0
+    gross_margin_anchor: "B05 guidance line 29"
+    adjusted_ebitda_cr: 156
+    adjusted_ebitda_anchor: "B05 guidance line 24, Q4 FY26 call"
+    adjusted_ebitda_margin_pct: 10.4
+    pat_cr: 71.67
+    pat_anchor: "screener line 24, task message confirmation, Q4 FY26 audited results (consolidated)"
+    pat_margin_pct: 4.76
+    diluted_eps_rs: 3.31
+    diluted_eps_calculation: "PAT 71.67 Cr ÷ shares 21.63 Cr"
+    ocf_cr: -9.24
+    ocf_anchor: "screener line 57"
+    cfo_pat_ratio: -0.129
+    book_value_per_share_rs: 81.20
+    book_value_calculation: "(equity capital 108.17 + reserves 1648.64) ÷ 21.63 Cr shares"
+    price_to_book_x: 7.14
+    net_cash_cr: 1416.7
+    net_cash_calculation: "(cash 1218.30 + investments 229.38 − borrowings 30.98)"
+    roe_pct: 4.08
+    roe_calculation: "PAT 71.67 ÷ equity 1756.81"
+    roce_reported_pct: "~5% (depressed by idle cash and ESOP)"
+    roce_reported_anchor: "deliberation line 21, B01 block analysis"
+    roce_operating_normalized_pct: "~25% (range 20–30%), RECOVERING"
+    roce_operating_anchor: "fttcp-deliberation.md override 1, lines 35–43; operating capital ~340 Cr"
+    roce_2yr_trend: "backward negative (pre-IPO losses), forward RECOVERING per operator override"
+    revenue_cagr_3yr_pct: 30.9
+    revenue_cagr_calculation: "(1505.61 ÷ 879.16)^0.5 − 1, FY24–FY26"
+    pat_cagr_3yr: "NOT COMPUTED (negatives FY24–FY25; computed on positive endpoints FY21–FY26 = 28.18% per B01)"
+    cfo_pat_cumulative: 0.19
+    cfo_pat_cumulative_anchor: "B01 block score, line 40"
+    fcf_cr: "NOT FOUND"
+    capex_cr: "NOT FOUND"
+    depreciation_cr: 21.6
+    depreciation_anchor: "screener line 20"
+    dps_rs: 0
+    dps_note: "no dividend policy, pre-payout growth stage"
+
+  receivables_and_cash_conversion:
+    trade_receivables_cr: 404.56
+    trade_receivables_pct_revenue: 26.8
+    receivables_growth_yoy_pct: 43.9
+    receivables_growth_h1_pct: 35.7
+    receivables_growth_anchor: "screener FY25–FY26; B02 Finding #12 H1 data"
+    dso_days: 98
+    dso_calculation: "(404.56 × 365) ÷ 1505.61"
+    ecl_trend: "swung from release (FY25) to addition (H1 FY26)"
+    ecl_anchor: "B02 Finding #12"
+    receivables_aging_gt6mo_pct: 2.6
+    receivables_aging_anchor: "B02 receivables_trend, Sep 30 2025"
+    customer_concentration_top10_fy24: 33.7
+    customer_concentration_top10_h1fy26: 40.2
+    largest_customer_fy24_pct: 6.88
+    largest_customer_h1fy26_pct: 14.06
+    concentration_trend: "worsening"
+    concentration_anchor: "B04 line 11, B07 FLAG-C2-INVERTED"
+    cash_conversion_verdict: INDETERMINATE
+    cash_conversion_anchor: "fttcp-deliberation.md line 20, 62"
+    cash_multiplier_band: "weak (~0.80x), no growth offset until structural-vs-growth resolves"
+    rating_pdf_status: "NOT FOUND; rating absent per B01 input_gaps line 7"
+
+  growth_and_guidance:
+    guided_revenue_growth_pct_min: 25
+    guided_revenue_growth_pct_max: 30
+    guided_growth_currency: "constant currency"
+    guided_growth_anchor: "B05 guidance line 20"
+    guided_growth_credibility: "delivered FY26 30% reported, 23% cc within range"
+    guided_ebitda_margin_pct: 10.0
+    guided_ebitda_margin_anchor: "B05 guidance line 19"
+    guided_ebitda_margin_delivered: "FY26 10.4% actual; promise_delivery row 1 line 37"
+    management_credibility_grade: B
+    credibility_basis: "single testable figure (EBITDA 10%) delivered accurately; cost-leverage trends tracked; offset by two dropped investor commitments and understated-then-revealed top-5 renegotiation margin cost; identical deflection on 3-year guidance across two quarters"
+    credibility_anchor: "B05 credibility_grade line 48, credibility_basis lines 49"
+
+  moats_and_catalysts:
+    em_score: 30.0
+    em_classification: STRENGTHENING
+    em_anchor: "B07 em_score line 19, em_classification line 20"
+    active_moat_categories: 7
+    moat_categories_documented_pct: 86
+    moat_class: MODERATE
+    moat_class_anchor: "B01 moat_class line 26"
+    strongest_moat: "C1 Customer Ecosystem (Strong, documented)"
+    weakest_moat: "D1 Proprietary data asset (Moderate, self-characterised, 0.7x weight)"
+    concentration_offset: "worsening customer concentration (top-10 rising 33.7%→40.2%) directly offsets C1 strength"
+    primary_catalyst_12m: "NEWSPULSE/agentic AI revenue scaling beyond first paid customer (2–4 quarters, FY27)"
+    catalyst_anchor: "B07 catalysts_12m line 32"
+    evidence_quality_mix: "documented 66%, claim + inference 34%"
+    evidence_anchor: "B07 evidence_mix line 29"
+
+  tam_and_runway:
+    tam_conservative_cr: 161395
+    sam_cr: 48705
+    som_3yr_cr: 3484
+    som_5yr_cr: 5638
+    som_implied_3yr_cagr_pct: 32.3
+    som_implied_5yr_cagr_pct: 30.2
+    som_anchor: "B09 som_implied_revenue_cagr line 23"
+    revenue_headroom_x: 32.3
+    revenue_headroom_anchor: "B09 revenue_headroom_x line 25"
+    runway_class: MASSIVE
+    tam_growth_underlying_pct: 13.3
+    capacity_constraint: "GTM/execution, not infrastructure (asset-light, elastic cloud infra)"
+
+  forward_eps_trajectory:
+    note: "Basis for forward PE at exit. Hold horizon 3 years to FY29 exit; exit applies Section 1B destination PE to FY30 EPS (year forward from exit year), NOT FY29 EPS. Marked FY27–FY30 as ESTIMATES with growth/margin assumptions stated."
+    fy26_actual_revenue_cr: 1505.61
+    fy26_actual_eps_rs: 3.31
+    fy26_actual_pat_cr: 71.67
+    
+    fy27_estimate_revenue_cr: 1882
+    fy27_estimate_revenue_assumption: "25% cc growth (conservative end of 25–30% guidance band)"
+    fy27_estimate_ebitda_margin_pct: 10.0
+    fy27_estimate_pat_margin_pct: 6.0
+    fy27_estimate_pat_cr: 113
+    fy27_estimate_eps_rs: 5.22
+    fy27_estimate_note: "ESOP normalizing from 7% FY26 toward 4–5% SaaS norm"
+    
+    fy28_estimate_revenue_cr: 2352
+    fy28_estimate_revenue_assumption: "compounded 25% growth"
+    fy28_estimate_ebitda_margin_pct: 10.0
+    fy28_estimate_pat_margin_pct: 7.0
+    fy28_estimate_pat_cr: 165
+    fy28_estimate_eps_rs: 7.62
+    
+    fy29_estimate_revenue_cr: 2941
+    fy29_estimate_revenue_assumption: "25% cc growth [EXIT YEAR]"
+    fy29_estimate_ebitda_margin_pct: 10.0
+    fy29_estimate_pat_margin_pct: 8.0
+    fy29_estimate_pat_cr: 235
+    fy29_estimate_eps_rs: 10.88
+    
+    fy30_estimate_revenue_cr: 3676
+    fy30_estimate_revenue_assumption: "25% cc growth [PE APPLIED HERE]"
+    fy30_estimate_ebitda_margin_pct: 10.0
+    fy30_estimate_pat_margin_pct: 8.5
+    fy30_estimate_pat_cr: 312
+    fy30_estimate_eps_rs: 14.4
+    fy30_estimate_note: "EXIT PE multiple (Section 1B 45x) applies to this FY30 EPS. Implied FY29 exit target = 45x × 14.4 = Rs 648 per share (before entry-zone and scenario adjustments)."
+    
+    bear_scenario_revenue_growth_pct: -15
+    bear_scenario_ebitda_margin_pct: 8.0
+    bear_scenario_pat_margin_pct: 5.0
+    bear_scenario_fy30_eps_rs: 3.19
+    bear_scenario_note: "receivables continue outpacing revenue, cash conversion worsens, customer concentration crystallizes, operating leverage stalls"
+    
+    bull_scenario_revenue_growth_pct: 30
+    bull_scenario_ebitda_margin_pct: 12.0
+    bull_scenario_pat_margin_pct: 10.0
+    bull_scenario_fy30_eps_rs: 8.50
+    bull_scenario_note: "NEWSPULSE/AI moat scales profitably, marketplace launches, top-customer renegotiation resolved, margin expansion toward SaaS norms"
+
+  ua_qualifiers:
+    listed_12m: false
+    listed_12m_reason: "IPO Jan 16, 2026; as of run date July 12, 2026 = 6.3 months"
+    listed_12m_anchor: "fttcp-deliberation.md line 27, B08 Prospectus date 2026-01-16"
+    gate0_or_em: true
+    gate0_or_em_reason: "Gate 0 score 56 (AVERAGE), EM score 30.0 (STRENGTHENING > 25 threshold)"
+    gate0_or_em_anchor: "B01 grand_total 56, B07 em_score 30.0"
+    fii_dii_lt3: false
+    fii_dii_lt3_reason: "NOT FOUND but deliberation confirms 'FII+DII well above 3%'; Premji ~26%, Accel ~15.6%, Norwest ~11%, GenAmerica ~7% per B08"
+    fii_dii_lt3_anchor: "B01 input_gaps line 14, fttcp-deliberation.md line 27, B08 transition_evidence line 25"
+    all_met: false
+    ua_multiplier_status: "DOES NOT APPLY (listed <12 months + FII+DII >>3%)"
+    ua_multiplier_anchor: "fttcp-deliberation.md line 27: 'UA: does NOT apply (listed under 12 months; FII+DII well above 3%)'"
+
+  deliberation_authoritative_instructions:
+    sector_cap_row_authoritative: "45x (Platform / SaaS / IT services). Manifest 38x overridden as collector defect."
+    sector_cap_anchor: "fttcp-deliberation.md line 16"
+    
+    roce_forward_verdict: RECOVERING
+    roce_forward_anchor: "fttcp-deliberation.md line 22, override 1"
+    roce_pillar1_input_pct_central: 25
+    roce_pillar1_input_pct_range: "20–30%"
+    roce_pillar1_normalized_basis: "operating ROCE ex surplus cash, normalized ESOP (4–5% SaaS norm, down from 7% FY26)"
+    roce_operating_capital_employed_cr: 340
+    roce_operating_capital_calculation: "(equity 1756.81 + borrowings 30.98 − cash 1218.30 − investments 229.38)"
+    roce_reported_for_context_only_pct: 5
+    roce_reported_anchor: "deliberation line 21: depressed by idle cash and ESOP"
+    roce_strategic_premium_barred: true
+    roce_strategic_premium_note: "single-credit rule per operator override 1"
+    
+    cash_conversion_verdict: INDETERMINATE
+    cash_conversion_anchor: "fttcp-deliberation.md line 20, 62"
+    cash_multiplier_band: "weak (~0.80x)"
+    cash_growth_offset: "NONE until structural-vs-growth resolves"
+    cash_dependency_resolution: "first clean quarter's reported OCF post-ESOP settlement and receivables normalization; rating agency working-capital commentary if available"
+    
+    return_tier: "Tier A, 25% hurdle"
+    return_tier_anchor: "fttcp-deliberation.md line 26"
+    ua_multiplier_apply: false
+    ua_multiplier_reason: "listed <12 months; FII+DII well above 3%"
+    
+    exit_structure: "FY29 exit applies Section 1B PE to FY30 EPS (year forward from exit year)"
+    exit_structure_anchor: "task message valuation instruction, fttcp-deliberation.md line 24"
+    exit_pe_multiple_x: 45
+    fy30_eps_base_estimate_rs: 14.4
+    implied_fy29_exit_target_rs: 648
+    implied_target_calculation: "45x × 14.4 Rs per share (before entry-zone and scenario adjustments)"
+
+conflicts: []
+
+unresolved:
+  - field: "capex (FY26, historical)"
+    why: "investing-activity line −Rs 559.9 Cr includes capex, securities, and WC; not separately itemized; B01 data_notes line 12 flags FY21–FY22 capex NOT FOUND"
+    where_it_might_be: "Q4 FY26 audited cash-flow statement Notes to Accounts"
+  
+  - field: "free cash flow (FCF, clean)"
+    why: "cannot isolate capex from investing activities"
+    where_it_might_be: "once capex segregated from above"
+  
+  - field: "rating PDF / credit-agency working-capital commentary"
+    why: "B01 input_gaps line 7: rating absent; no CRISIL/ICRA/other rating provided"
+    where_it_might_be: "CRISIL, ICRA, or other agency post-IPO rating announcement; company investor relations"
+  
+  - field: "peer P/E, EV/EBITDA, P/B medians"
+    why: "B06 peer concalls reviewed but detailed financial metrics not extracted/harmonized; Affle, Newgen, RateGain, Tata Elxsi peer data available but not tabulated"
+    where_it_might_be: "peer annual reports (FY26) or synchronized investor presentations"
+  
+  - field: "FII + DII post-IPO shareholding %"
+    why: "B01 input_gaps line 14: post-listing holding % NOT FOUND; deliberation assumes well above 3%"
+    where_it_might_be: "BSE / NSE shareholding pattern filings (quarterly); AMAGI investor relations"
+  
+  - field: "Remaining Performance Obligation (RPO) / contracted backlog"
+    why: "B04 flags line 10: not disclosed (Ind AS 115 practical expedient for <=1yr contracts); B02 Finding #13 notes falling unearned revenue with RPO/backlog elected out"
+    where_it_might_be: "future SEBI disclosure if company elects to provide, or management commitment for next quarters"
+  
+  - field: "headcount by function (KPI breakdown)"
+    why: "B05 dropped_triggers line 66: promised Q3 FY26, not delivered in Q4 FY26; marked overdue"
+    where_it_might_be: "Q1 FY27 earnings call (if management addresses accumulated feedback)"
+
+rating_wc_quote: "NOT FOUND. Rating PDF absent per B01 input_gaps line 7. Designation of cash flag as INDETERMINATE depends on credit-agency working-capital language not yet available. Trade receivables growth (43.9% YoY), ECL provision swing (release to addition), and H1 FY26 operating cash flow −Rs 2,005.95 Mn despite first-ever PAT Rs 64.70 Mn documented in B02 Finding #12, B03 FLAG-CASH. Cannot disambiguate structural vs growth-induced deterioration without rating rationale. Per fttcp-deliberation.md line 62, named phase-3 dependency: a CRISIL or ICRA rating rationale and full-year FY26 receivables ageing schedule."
+
+credibility_grade: "B"

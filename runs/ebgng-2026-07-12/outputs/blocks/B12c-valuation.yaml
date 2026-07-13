@@ -1,0 +1,27 @@
+stage: B12c-valuation
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 3
+note: "Phase-3 valuation-adherence half of Verifier C. The Gate 0 + Emerging Moat half was completed in phase 1 (see B12c-verifier-framework.yaml: 61/62 rules, 1 MAJOR emoat H1 multiplier)."
+gate0: {status: "completed phase 1", rules_checked: 38, fails: []}
+emoat: {status: "completed phase 1", rules_checked: 24, fails: ["H1 inference multiplier 0.7 vs 0.5, MAJOR, classification unchanged"]}
+valuation:
+  rules_checked: 28   # 25 Section 1B / Role 1 + 3 Role 2 extension (decision + sizing)
+  fails: []           # no CRITICAL, no MAJOR rule fails
+  override_application:
+    exit_pe_20x_forward: "CORRECT - 20x on forward FY30 EPS at FY29 exit throughout"
+    pillar1_roce_28_3_ex_cash: "CORRECT - fed to continuous formula; reported 24.06% not used"
+    cash_indeterminate_offset_barred: "CORRECT - growth_offset 0, no offset on INDETERMINATE/structural"
+    sector_cap_25x: "CORRECT - 20x governing sits below 25x cap, admissible"
+  hurdle_math_note: "HR uses FY30/FY26 EPS ratio; correct ONLY because forward-exit convention values FY29 exit on forward FY30 EPS; equals true 3yr price ratio 573/634=0.90"
+recomputed_destination_pe: ""   # concur - 20x forward stands
+recomputed_decision: ""         # concur - AVOID (on-valuation) at CMP Rs 634
+findings:
+  - {severity: MINOR, location: "B11 Section 4A triangulation", note: "Weighted FV computes Rs 566 (P/E 85% x573 + EV/EBITDA 15% x528) then anchors base FV to governing P/E Rs 573; presentational, +1.2%, does not move entry/MoS/Hurdle/decision"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100   # 28 rules passed / 28 checked (valuation half)
+framework_adherence_combined: 99   # phase1 61/62 + phase3 28/28 = 89/90 = 98.9%

@@ -1,10 +1,10 @@
 confidence_delta:
   numerical_acceptance: 87     # B12a: 47 numbers checked, 0 critical, 4 major (precision/scope/confidence), 87% clean
-  redflag_coverage: 75         # B12b: 12 of 16 independent flags caught; 1 major miss (broken Q3->Q4 margin assurance masked by full-year framing)
-  framework_adherence: 98      # B12c PHASE-1 PORTION ONLY (Gate 0 38/38 + Emerging Moat 23/24); valuation adherence PENDING phase 3
-  peer_utilisation: 92         # B12d: 3 peers audited, 26 substantive citations confirmed, 0 verdict-discipline fails; 2 major CNL coverage-map mis-tags (Q5 verdict not overturned)
-  overall: 75                  # min of the four available components
+  redflag_coverage: 75         # B12b: 12 of 16 independent flags caught; 1 major miss (broken Q3->Q4 margin assurance)
+  framework_adherence: 99      # B12c FULL (phase 1 Gate0+EM 61/62 + phase 3 valuation 28/28 = 89/90)
+  peer_utilisation: 92         # B12d: 3 peers audited, 26 substantive citations confirmed, 0 verdict-discipline fails
+  overall: 75                  # min of the four
   band: "normal (75-89): note specifics, no verdict downgrade"
-  binding_constraint: "redflag_coverage 75 - the one MAJOR miss is the broken Q3-closing 'no Q4 margin compression' assurance (Q4 EBITDA margin fell 11.2%->9.8% sequentially), omitted because the B05 promise tracker used full-year figures"
-  valuation_component: "PENDING - verifier C valuation-adherence audit (B11/B10) deferred to phase 3; overall will be recomputed there"
-  rework_check: "NO REWORK - zero CRITICAL findings across all four verifiers; lowest acceptance_rate is 75% (>= 60% floor)"
+  binding_constraint: "redflag_coverage 75 - one MAJOR miss (broken Q3-closing 'no Q4 margin compression' assurance; Q4 EBITDA margin fell 11.2%->9.8% sequentially)"
+  phase3_valuation_adherence: "COMPLETE - verifier C valuation half 100% (28/28), 0 critical/major; all four operator overrides applied correctly; concurs 20x forward exit and AVOID decision"
+  rework_check: "NO REWORK - zero CRITICAL across all verifiers; lowest acceptance_rate 75% (>= 60% floor)"

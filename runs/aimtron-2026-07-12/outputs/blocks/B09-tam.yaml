@@ -1,0 +1,50 @@
+stage: B09-tam
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating absent (carried from orchestrator)"
+  - "AR_2025.txt exceeded 256KB Read tool limit; read via targeted offset/grep, not full linear read"
+  - "current P/E multiple not provided to this stage; 5E valuation-implication line incomplete, deferred to stage 11"
+  - "exact origin date of NITI Aayog/govt Rs43.1L cr ($500bn)-by-FY2030 target not independently confirmed"
+  - "Vadodara greenfield total project cost not disclosed (carried from B07)"
+  - "customer concentration not disclosed (carried from B04)"
+flags:
+  - "mgmt TAM claim (Rs43.1L cr / $500bn by FY30) is India's entire national electronics manufacturing output target, not Aimtron's addressable EMS TAM; ~21x conservative estimate, read INFLATED"
+  - "SOM5yr (Rs1,300cr) sits at the combined disclosed capacity ceiling with ~zero margin of safety; capacity plan itself carries credibility risk per B07 (per-line revenue ~Rs100cr vs peer Vinyas Rs500-600cr/line, no audited total Vadodara project cost)"
+  - "TAM estimates diverge up to ~2x across independent current sources (KPMG $40-45bn FY25 vs company's own AR-cited SICCI $80bn 2024 vs PSMR $65bn 2025); conservative KPMG anchor used"
+  - "management's 40-50% CAGR claim exceeds SOM-implied 5yr CAGR (34.0%) though it fits within SOM-implied 3yr CAGR (46.6%); back half of claim not fully supported by disclosed capacity"
+market_definition: "India B2B contract EMS/ESDM (PCBA, Box Build, ODM) for medical/auto/aerospace-defence/industrial/telecom/IoT verticals, excluding consumer/mobile mass assembly, bare PCB fab, and semiconductor fab"
+tam_cr: {conservative: 205600, realistic: 231000}
+sam_cr: 48500
+sam_pct_of_tam: 23.6
+som_3yr_cr: 950
+som_5yr_cr: 1300
+som_implied_revenue_cagr: {yr3: 46.6, yr5: 34.0}
+current_sam_share_pct: 0.62
+revenue_headroom_x: 161.0
+tam_growth_pct: 20
+runway_class: "STRONG"
+mgmt_claim_cr: 4310000
+mgmt_claim_ratio: 21.0
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient but tight, SOM5yr equals combined disclosed India+US capacity ceiling (~Rs1,290-1,300cr) with zero margin; ceiling itself carries credibility risk (unaudited per-line productivity, no audited total project cost)"
+methods_used: ["top-down", "bottom-up", "peer aggregation", "import substitution", "global benchmark"]
+stale_data_flags:
+  - {datapoint: "India medical device contract manufacturing $5,701.7mn", source: "Grand View Research", year: "2024"}
+  - {datapoint: "India telecom equipment market $22.5-24.46bn", source: "IMARC/Techsci", year: "2024"}
+  - {datapoint: "India automotive/A&D vertical inputs used in Method 2", source: "PSMR / custommarketinsights", year: "2025 (base), some 2024 inputs"}
+  - {datapoint: "Bare PCB $5bn market, 88% import dependence", source: "Avendus/Circuit Digest", year: "NOT FOUND"}
+  - {datapoint: "India EMS market $80bn (AR-cited, SICCI)", source: "SICCI via Aimtron AR_2025.txt", year: "2024"}
+  - {datapoint: "NITI Aayog/govt $500bn-by-FY2030 electronics output target", source: "IBEF/SICCI/MeitY (company-cited)", year: "NOT FOUND (long-standing target, no single primary date confirmed)"}
+searches_performed:
+  - "India EMS electronics manufacturing services market size 2025 2030 CAGR crore"
+  - "India PCB assembly PCBA box build contract manufacturing market size report"
+  - "India ESDM $500 billion 2030 target India Semiconductor Mission"
+  - "Kaynes Syrma SGS Avalon Cyient DLM revenue FY26 EMS peers"
+  - "India EMS market segment breakdown mobile consumer industrial automotive medical share"
+  - "global EMS market size 2025 India share percentage"
+  - "India automotive/aerospace-defence/medical device contract manufacturing market size"
+  - "India telecom networking equipment manufacturing market size industrial electronics"
+searches_skipped: []

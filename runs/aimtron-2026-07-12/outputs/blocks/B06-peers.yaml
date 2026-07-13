@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Stage-5 peer list (Kaynes, Syrma, Dixon, Data Patterns, Paras, MTAR) not represented in the 12 supplied transcripts; substituted with 4 available genuine EMS/ESDM peers (Avalon, Centum, Cyient DLM, Vinyas) per task instructions."
+  - "VINYAS-Concall_Nov_2025_Transcript_2.txt is a duplicate of VINYAS-Concall_Nov_2025_Transcript.txt (same Q2 FY26 call); only 11 substantive transcript instances across 4 peers, not 12."
+  - "rating absent"
+flags:
+  - "Q4 revenue-per-SMT-line figure (~Rs100cr) contradicted 5-6x by Vinyas peer disclosure (Rs500-600cr/line) - priority flag for synthesis, affects capacity/growth assumptions."
+  - "Q5 defence-margin-erosion framing contradicted by Centum's disaggregated BTS (20-25% EBITDA) vs EMS (9-11% EBITDA) disclosure - defence shown as higher-margin, not lower."
+  - "Q6 Aimtron's RFQ pipeline described as static while all four peers show quarter-on-quarter order-book growth in the same period - comparative underperformance signal worth flagging."
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "NITI Aayog Rs500bn EMS revenue target FY2030 and $1 trillion ESDM opportunity figure", peers: ["Cyient DLM"]}
+  - {claim: "Raw-material sourcing mix (~70% imported, <50% China trending ~40%) and full cost pass-through on semiconductor/DRAM shortage", peers: ["Avalon", "Centum", "Vinyas"]}
+  - {claim: "Static ~Rs700-900cr RFQ pipeline and 20-40% EMS win-ratio; broader demand/order-inflow environment", peers: ["Avalon", "Centum", "Cyient DLM", "Vinyas"]}
+contradicted:
+  - {claim: "~Rs100cr revenue-per-SMT-line productivity claim", contradicting_peer: "Vinyas", quote_anchor: "VINYAS H2/FY26 call (May 2026), Sumukh Narendra: 'for us each SMT line caters to between INR500 crores to INR600 crores in terms of revenue'"}
+  - {claim: "EMS peers show margin erosion in defence contracts (defence business but many don't make money)", contradicting_peer: "Centum", quote_anchor: "CENTUM Q3 FY26 call (Feb 2026), Sundararajan Parthasarathy: 'the BTS segment, we carry a margin profile of around 20% at EBITDA level, whereas the EMS segment... is fairly pegged at between 9% and 10%'"}
+unverifiable:
+  - {claim: "Aimtron's claimed insulation from L&T's ESDM entry (Coimbatore facility) via niche positioning", peers_checked: ["Avalon", "Centum", "Vinyas"]}
+peer_coverage_map:
+  - {peer: "Avalon", quarter: "Q2 FY26 (Nov 2025)", usage: "substantive"}
+  - {peer: "Avalon", quarter: "Q3 FY26 (Feb 2026)", usage: "substantive"}
+  - {peer: "Avalon", quarter: "Q4 FY26 (May 2026)", usage: "substantive"}
+  - {peer: "Centum", quarter: "Q2 FY26 (Nov 2025)", usage: "substantive"}
+  - {peer: "Centum", quarter: "Q3 FY26 (Feb 2026)", usage: "substantive"}
+  - {peer: "Centum", quarter: "Q4 FY26 (May 2026)", usage: "substantive"}
+  - {peer: "Cyient DLM", quarter: "Q1 FY26 (Jul 2025)", usage: "substantive"}
+  - {peer: "Cyient DLM", quarter: "Q2 FY26 (Oct 2025)", usage: "substantive"}
+  - {peer: "Cyient DLM", quarter: "Q3 FY26 (Jan 2026)", usage: "substantive"}
+  - {peer: "Vinyas", quarter: "Q2 FY26 (Nov 2025, transcript 1)", usage: "substantive"}
+  - {peer: "Vinyas", quarter: "Q2 FY26 (Nov 2025, transcript 2, duplicate)", usage: "cited-only"}
+  - {peer: "Vinyas", quarter: "H2/FY26 (May 2026)", usage: "substantive"}
+industry_cross_read:
+  demand: "Strong, broad-based, accelerating across all four peers through FY26 (Avalon raised guidance three times to actual 46%; Centum ~25%; Cyient DLM book-to-bill above 1 for three straight quarters; Vinyas 43% H1). Supports Aimtron's sector-level demand narrative; contrasts with Aimtron's own pipeline described as static."
+  pricing_inputs: "Pass-through pricing confirmed as sector standard (absolute margins protected, optical GM% compressed by grossing-up). Centum independently confirms AI-datacenter-driven memory/DRAM tightness - direct corroboration of Aimtron's shortage claim; specific import-mix percentages remain unverifiable from any peer."
+  capex_cycle: "Industry-wide capacity expansion race - all four peers investing concurrently; Aimtron's capex sits within a sector-wide pattern, not as an outlier."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer/order concentration: Cyient DLM's growth disrupted for multiple quarters by a single large defense order"
+  - "Dual-shore/geographic diversification cost: Avalon's US manufacturing ran at sustained quarterly loss for years"
+  - "Overseas subsidiary/M&A execution risk: Centum Canada/France restructuring >Rs200cr impairments; Cyient DLM $17.75mn failed-M&A write-off"
+  - "Geopolitical component-supply risk beyond China: Cyient DLM Middle East air-freight disruption; Vinyas 10-15% Israel-sourced dependency"
+  - "Regulatory/labor cost risk: Centum and Cyient DLM both quantified new-labor/wage-code one-off impacts in FY26"
+net_narrative_effect: "complicates"

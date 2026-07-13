@@ -1,0 +1,27 @@
+stage: B12b
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 16
+caught: 10
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "FY27 40-50% growth largely inorganic (AIC/ICS); ex-ICS organic growth near-flat; 3 analysts pressed, management conceded math 'doesn't fit'", anchor: "APR26 H2FY26 call: Rushin Shah p.8 L431, Deepak Poddar L707, Sumit Chopra L833, Mukesh Vasani L856"}
+  - {severity: "MAJOR", item: "Unexplained loans & advances to 'other parties' (Rs70cr/58.3/16.8cr inconsistent); CFO could not answer; related-party outflow amid negative FY26 cash flow", anchor: "APR26 H2FY26 call: Akshay Kaila L631, Nikita Shah L641, Mukesh Vasani L657"}
+  - {severity: "MINOR", item: "Falling year-on-year effective tax rate (~19.9% FY25 vs 24% cited) flattering PAT, analyst-flagged, unexplained", anchor: "APR25 H2FY25 call: Manan Madlani L994, Nikita Shah L1004"}
+  - {severity: "MINOR", item: "SMT-line count 5->9 across calls with no capex event; capacity/line math inconsistent (9 lines vs ~Rs500cr stated capacity at Rs100cr/line rule)", anchor: "NOV25 H1FY26 L217 vs APR26 H2FY26 L393; Rs100cr/line NOV25 L1151"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C (Mixed) holds; strong operating delivery offsets, but the basis under-weights that FY27 growth is materially inorganic"
+findings:
+  - {severity: "MAJOR", location: "B05 (missed) - APR26 call, organic-vs-inorganic reconciliation", description: "FY27 40-50% growth appears largely AIC-driven; ex-ICS organic near-flat; management could not reconcile the math when 3 analysts pressed. Thesis-critical growth-quality flag not surfaced by B05."}
+  - {severity: "MAJOR", location: "B05 (missed) - APR26 call, cash-flow line items", description: "Unexplained loans & advances to 'other parties' (Rs70/58.3/16.8cr), CFO fumbled; related-party fund outflow during negative FY26 CFO. Not mentioned in B05."}
+  - {severity: "MINOR", location: "B05 (missed) - APR25 call, tax rate", description: "Falling YoY effective tax rate (~19.9% FY25 vs 24% guided) flattering PAT; analyst-flagged, unexplained; B05 records only the 24% headline."}
+  - {severity: "MINOR", location: "B05/B06 (missed) - NOV25 vs APR26, SMT lines", description: "SMT-line count 5->9 with no capex event and capacity/line math inconsistency; internal to Aimtron, distinct from B06's peer per-line contradiction."}
+  - {severity: "MINOR", location: "B05 (partially caught) - APR25 call, Aimtron Corporation", description: "Separate promoter-owned US 'Aimtron Corporation' with fold-in/customer-diversion dynamic under-weighted; B05 caught the RPT % but not the mechanism explaining why '<20%' is soft."}
+  - {severity: "MINOR", location: "B05 (partially caught) - APR26 call, box-build/margin", description: "Box-build mix rose but EBITDA margin flat, contradicting management's own higher-margin claim; specific logical contradiction under-surfaced beyond the generic margin-mix evasion."}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 63

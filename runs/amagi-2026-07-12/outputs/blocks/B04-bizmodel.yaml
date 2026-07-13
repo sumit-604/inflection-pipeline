@@ -1,0 +1,70 @@
+stage: B04-bizmodel
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Exact revenue split by pricing mechanism (subscription $ vs usage $ vs revenue-share $) not disclosed, only divisional totals"
+  - "Per-channel/per-unit revenue and cost figures not disclosed (bespoke pricing); unit economics quantified at aggregate level only"
+  - "Remaining Performance Obligation / contracted backlog not disclosed (Ind AS 115 practical expedient invoked for <=1yr contracts)"
+  - "Customer concentration trending up: top-10 customers 33.74% (FY25) to 40.19% (H1FY26); largest customer >10% of revenue two periods running"
+  - "AWS commitment increased to Rs 24,176.20 million over 6 years (May 2025-Apr 2031), terminable by AWS on 2-year notice with no reciprocal notice obligation"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Streaming Unification", type: "subscription/usage hybrid", pct_of_revenue: 57.14, predictability: "M"}
+  - {name: "Monetization & Marketplace", type: "usage/revenue-share hybrid", pct_of_revenue: 24.15, predictability: "L"}
+  - {name: "Cloud Modernization", type: "subscription/usage hybrid", pct_of_revenue: 18.71, predictability: "H"}
+asset_intensity: "light"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "switching costs", durability: "high"}
+  - {moat: "network effects", durability: "moderate, strengthening"}
+  - {moat: "scale/cost economies", durability: "moderate, emerging"}
+  - {moat: "intangible assets/IP", durability: "moderate"}
+  - {moat: "process power", durability: "moderate"}
+  - {moat: "brand", durability: "weak-moderate"}
+valuation_methods:
+  primary: {method: "EV/Revenue (forward/NTM)", why: "High-growth vertical SaaS with only one year of GAAP profitability; company itself IPO-priced on revenue multiple (6.42-6.72x FY25 revenue)"}
+  secondary: {method: "EV/EBITDA (Adjusted, forward)", why: "Adjusted EBITDA margin crossed into double digits in FY26 (10.3%); cross-check comparable to Indian-listed IT/SaaS peers"}
+  tertiary: {method: "DCF (multi-stage)", why: "Long-duration secular cloud-migration runway supports a cross-check, but terminal assumptions carry low confidence this early in the margin curve"}
+  not_applicable:
+    - "P/E (trailing) - three years of losses through FY25, only turned PAT-positive in FY26"
+    - "Asset-based/book value - asset-light, value is in IP/customer relationships not PP&E"
+    - "Dividend discount model - no dividend history, pre-payout growth stage"
+    - "Replacement cost - not meaningful for intangible/software-IP-driven platform"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover", why: "Inventory is Rs 0.70 million, a rounding error on a Rs 13.5bn balance sheet"}
+  - {ratio: "Fixed-asset/classic asset turnover", why: "PP&E is 1.2% of total assets; value drivers are off-balance-sheet"}
+  - {ratio: "Trailing P/E", why: "Losses in FY23-FY25, PAT-positive only from FY26"}
+  - {ratio: "Interest coverage / Debt-to-equity", why: "Zero borrowings across all reporting dates"}
+  - {ratio: "Capex-to-sales", why: "Capex is trivial for this asset-light SaaS model"}
+  - {ratio: "Dividend yield/payout", why: "No dividend history, reinvestment-stage company"}
+must_track_metrics:
+  - {metric: "Net Revenue Retention (NRR)", healthy: ">120%", red_flag: "<110%"}
+  - {metric: "Gross margin", healthy: "65-75%", red_flag: "QoQ decline >200-300bps"}
+  - {metric: "Adjusted EBITDA margin", healthy: "trending 15-25%+", red_flag: "YoY margin compression"}
+  - {metric: "Top-10 customer concentration", healthy: "<35%", red_flag: ">45% or top-1 >15%"}
+  - {metric: "Trade receivables growth vs revenue growth", healthy: "receivables growth <= revenue growth", red_flag: "receivables outpacing revenue for 2+ consecutive quarters"}
+unit_economics:
+  unit: "one channel delivered/managed"
+  revenue_per_unit: "NOT FOUND - bespoke, negotiated pricing not disclosed per-channel"
+  margin_per_unit: "NOT FOUND - cloud infra and support costs disclosed only in aggregate (28.59% of revenue, FY25)"
+  key_lever: "Operating leverage from R&D and S&M cost declining as % of revenue as customer base scales (opex ratio fell from 85.47% to 67.30% of revenue, FY23 to FY25)"
+first_deterioration_signals:
+  - {risk: "Ad-market cyclicality (Monetization & Marketplace division)", first_signal: "Monetization & Marketplace divisional revenue growth decelerating faster than other divisions; ad impressions monetized flattening YoY"}
+  - {risk: "Hyperscaler (AWS) cost/dependency risk", first_signal: "Gross margin declining QoQ; technology & cloud infrastructure cost rising above ~29% of revenue"}
+  - {risk: "Trade receivables/cash-conversion risk", first_signal: "Trade receivables growth outpacing revenue growth for 2+ consecutive quarters; rising allowance for credit-impaired receivables"}
+  - {risk: "Customer concentration/execution risk", first_signal: "NRR falling below 120%; largest-customer revenue % declining or non-renewal"}
+  - {risk: "Competitive/structural risk from legacy and point-solution vendors", first_signal: "New-logo win rate slowing; gross margin compression from deal-level discounting"}
+mgmt_questions:
+  - "What is the rupee/dollar split of revenue by pricing mechanism (subscription vs usage vs ad revenue-share) across the three divisions?"
+  - "What is the renewal status of the largest customer (>10% of revenue)?"
+  - "How much of the FY26 Adjusted EBITDA margin improvement is structural vs one-time?"
+  - "Given the new Rs 24,176.20 million 6-year AWS commitment, is per-unit cloud cost declining as the platform scales?"
+  - "What is the Remaining Performance Obligation / contracted backlog beyond the reporting period?"
+  - "How is competitive intensity evolving as legacy hardware vendors accelerate their cloud pivots and point-solution vendors price aggressively?"
+  - "What is the expected trajectory of Adjusted OCF/FCF conversion relative to Adjusted EBITDA over the next 2-3 years?"
+one_line_verdict: "Asset-light, debt-free vertical SaaS platform crossing from growth-at-a-loss into growth-with-margin-expansion, with genuine switching-cost and network-effect moats offset by hyperscaler dependency and rising customer concentration."

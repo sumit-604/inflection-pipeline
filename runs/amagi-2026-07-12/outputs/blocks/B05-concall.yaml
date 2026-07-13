@@ -1,0 +1,70 @@
+stage: B05-concall
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Only two earnings calls exist in AMAGI's public history (Q3 FY26, Q4 FY26); promise-delivery and credibility grade rest on a thin two-quarter sample"
+  - "Jul-2026 webinar is thematic/AI-strategy only, not an earnings call; excluded from promise-delivery scoring per pipeline rule"
+quarters_analysed: ["Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Cloud Modernization tailwind (10% cloud penetration of $16.9bn TAM; SAR $1.9bn +11% YoY)", type: "SECTORAL/VOLUME", timeframe: "long", conviction: "H", confirm_signal: "Segment revenue sustains >25% YoY growth; SAR growth continues double-digit", kill_signal: "Segment growth decelerates below 15-20%; SAR growth stalls"}
+  - {priority: 2, name: "Operating leverage / margin expansion (S&M and R&D cost leverage)", type: "COST", timeframe: "near-medium", conviction: "H", confirm_signal: "EBITDA margin continues expanding toward cited 25-30% SaaS benchmark over successive years", kill_signal: "Margin plateaus or reverses; opex ratios stop declining"}
+  - {priority: 3, name: "Streaming/CTV secular shift (FAST viewership, CTV ad spend growth)", type: "SECTORAL", timeframe: "medium-long", conviction: "H", confirm_signal: "Streaming Unification and Monetization segments sustain >25% growth", kill_signal: "Growth decelerates sharply; CPM pressure outpaces volume growth"}
+  - {priority: 4, name: "AI/Agentic monetization (NEWSPULSE and product roadmap)", type: "REVENUE", timeframe: "medium-long", conviction: "M", confirm_signal: "Disclosed revenue contribution or customer count from agentic products; gross margin clarity delivered as promised", kill_signal: "Pilots fail to convert to paid deals through FY27; unit economics remain undisclosed past near-term promise window"}
+  - {priority: 5, name: "Marketplace model (content owner x distributor transaction layer)", type: "INORGANIC/VOLUME", timeframe: "long", conviction: "L", confirm_signal: "Marketplace metrics disclosed as a distinct line for the first time", kill_signal: "Continued non-disclosure with no metrics through FY27"}
+  - {priority: 6, name: "M&A / Corp Dev deployment of ~INR1,664cr cash", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "First acquisition announced with disclosed strategic rationale and size discipline", kill_signal: "Cash remains undeployed with no framework beyond 2 more quarters, or a large dilutive/overpriced deal is announced"}
+guidance:
+  - {item: "Steady-state adjusted EBITDA margin", number: "~10%", timeframe: "near-term run rate", stated_in: "Q3 FY26 call"}
+  - {item: "Underlying revenue growth ex-timing effects", number: "25-30% constant currency", timeframe: "Q3 FY26 and ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "R&D as % of revenue", number: "21.8% in Q3 FY26, declining trend", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "ESOP expense as % of revenue", number: "6.6% in Q3 FY26, down from 8.4%", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 full-year revenue", number: "INR1,506 crore, +30% reported / +23% CC", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 adjusted EBITDA", number: "INR156 crore, ~10% margin", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 PAT", number: "INR72 crore, swing of ~INR140cr YoY", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "Net revenue retention", number: "126% FY26 (122% FY24, 127% FY25)", timeframe: "trailing 3-year", stated_in: "Q4 FY26 call"}
+  - {item: "$1M+ ARR customers", number: "Grew from 28 to 35 (+25%)", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "Cash & investments balance", number: "INR1,664 crore", timeframe: "FY26 year-end", stated_in: "Q4 FY26 call"}
+  - {item: "Full-year gross margin", number: "~69%, steady over 3 years", timeframe: "multi-year", stated_in: "Q4 FY26 call"}
+  - {item: "Q1 FY27 seasonality", number: "~22% of full-year revenue, ~11% of full-year EBITDA", timeframe: "Q1 FY27", stated_in: "Q4 FY26 call"}
+  - {item: "3-year revenue CAGR / margin target", number: "Explicitly declined, aspirational only", timeframe: "3-year", stated_in: "Q3 FY26 call AND Q4 FY26 call (repeated, near-identical deflection)"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "Steady-state adjusted EBITDA margin ~10%", outcome: "delivered", explanation: "FY26 full-year EBITDA margin ~10.4%; Q4 FY26 margin 10%"}
+    - {promised_in: "Q3 FY26 call", promise: "Underlying revenue growth ex-timing effects 25-30% CC, with Q4 growth 'appearing softer'", outcome: "partial", explanation: "FY26 grew 30% reported/23% CC within range, but Q4 growth (29% reported) rebounded above Q3 (22%) rather than staying 'softer' as predicted"}
+    - {promised_in: "Q3 FY26 call", promise: "R&D and S&M cost leverage continuing", outcome: "delivered", explanation: "FY26: S&M+CS 44%->24% of revenue FY24->FY26, R&D 33%->23%"}
+    - {promised_in: "Q3 FY26 call", promise: "ESOP costs declining as % of revenue", outcome: "delivered", explanation: "FY26 ESOP ~7% of revenue, down from ~12% two years prior"}
+    - {promised_in: "Q3 FY26 call", promise: "Top-5 customer renegotiation framed as purely strategic, no margin cost flagged", outcome: "partial", explanation: "Q4 FY26 call reveals same renegotiation was one of three drivers of sequential gross margin compression; near-term cost undisclosed when first described"}
+    - {promised_in: "Q3 FY26 call", promise: "Add headcount-by-function to KPI disclosures (investor feedback accepted)", outcome: "missed", explanation: "No such disclosure found in Q4 FY26 call or referenced materials; no acknowledgment given"}
+    - {promised_in: "Q3 FY26 call", promise: "Provide Labour Code provision run-rate clarity in subsequent quarters", outcome: "missed", explanation: "Topic not revisited in the Q4 FY26 call"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Can you give forward 2-3 year revenue CAGR / margin guidance?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What are your M&A guardrails / target deal size?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "The single specific, testable guidance figure given (steady-state EBITDA margin ~10%, Q3 FY26 call) was delivered almost exactly the next quarter, and all cost-leverage trends (S&M, R&D, ESOP) tracked as described; offset by two silently dropped investor commitments, an understated-then-revealed margin cost from a top-5 client renegotiation, and an identically repeated deflection on forward guidance across both existing quarters."
+peer_questions:
+  - {question: "AMAGI cites $16.9bn cloud TAM with ~10% cloud penetration and a $1.9bn SAR growing 11% YoY for Cloud Modernization. Is this framing consistent with how peers describe their own addressable-market transition stories?", why: "Tests whether the TAM framing is standard disclosure practice or an AMAGI-specific promotional number.", check_peers: ["Newgen", "Tata Elxsi"]}
+  - {question: "AMAGI states ad impressions grew 62% YoY vs. Monetization segment revenue growth of only 36% YoY, attributed to 'modest CPM pressure offset by volume.' Do ad-tech-adjacent peers describe similar CPM/volume divergence?", why: "Direct test of a volume-price-mix claim central to the Monetization segment thesis.", check_peers: ["Affle", "RateGain"]}
+  - {question: "AMAGI's CEO claims 'no competition that we see today' in AI/agentic media tooling (Q4 FY26 call), stronger than the prior quarter's framing. Do peer managements make similarly absolute claims, and how do such claims typically age?", why: "Tests whether this is company-specific over-promotion or a sector-wide rhetorical pattern; direct credibility check.", check_peers: ["Affle", "Newgen", "RateGain", "Tata Elxsi"]}
+  - {question: "AMAGI has declined specific 3-year revenue/margin guidance in two consecutive earnings calls with near-identical phrasing. Do comparable post-IPO peers give more specific multi-year guidance?", why: "Benchmarks AMAGI's guidance discipline against peers to judge whether the repeated deflection is a red flag or sector norm.", check_peers: ["Newgen", "RateGain", "Tata Elxsi"]}
+  - {question: "AMAGI reports ~40% top-10 customer concentration and disclosed a client-renegotiation-driven gross margin hit. How do peers with comparable concentration discuss and manage similar risk?", why: "Tests whether AMAGI's concentration risk disclosure is in line with sector practice.", check_peers: ["Affle", "RateGain"]}
+red_flags:
+  - {flag: "Client renegotiation understated at first mention (Q3 FY26 call) then revealed to carry a real gross margin cost (Q4 FY26 call)", severity: "medium"}
+  - {flag: "Two consecutive quarters of identical, non-specific deflection on 3-year revenue/margin guidance", severity: "low-medium"}
+  - {flag: "Two investor commitments silently dropped with no acknowledgment (headcount-by-function KPI; Labour Code run-rate clarity)", severity: "low"}
+  - {flag: "Unsubstantiated, strengthening 'no competition' claim in a fast-moving AI/agentic tooling market with no named comparator or evidence", severity: "medium"}
+  - {flag: "Top-10 customer concentration ~40% of revenue with no disclosed ceiling, plus a mission-critical top-5 customer whose rev-rec timing already caused a full-half-year growth distortion in FY26", severity: "medium"}
+  - {flag: "Persistent non-disclosure of LTV/CAC and gross margin payback period despite direct investor requests", severity: "low-medium"}
+  - {flag: "Q4 FY26 phasing outcome (29% reported growth) did not match Q3 FY26 call's own prediction of a 'softer' Q4", severity: "low"}
+dropped_triggers:
+  - "Managed Services as an AI-driven expansion opportunity (raised Q3 FY26 call, never mentioned again in Q4 FY26 call)"
+  - "Headcount-by-function KPI disclosure (investor feedback accepted Q3 FY26 call, not delivered by Q4 FY26 call)"
+timeline_slippages:
+  - "Labour Code provision run-rate clarity promised 'in subsequent quarters' (Q3 FY26 call), not delivered by Q4 FY26 call"
+  - "Marketplace model detail promised for 'the next few quarters' (Q3 FY26 call framing), still 'nothing meaningful' as of Q4 FY26 call"
+  - "Q3 FY26 call's own phasing prediction (Q4 growth 'will appear softer') did not materialize as predicted in the Q4 FY26 call"

@@ -1,0 +1,15 @@
+stage: B12a
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - {severity: "MINOR", location: "B02, Finding #2; B04, Section 1E", claimed: "AWS Technology Agreement six-year commitment ₹24,176.20 mn", source_truth: "Cited via Prospectus 'Objects of the Issue' cross-reference in B02, but independent extraction from full Prospectus text not performed", note: "Contingent liability disclosed in Sep 30 2025 balance (₹22,531.72 mn); forward six-year total sourced only via B02's secondary report interpretation"}
+  - {severity: "MINOR", location: "B02, Finding #3; B03, Phase 1 p. 41", claimed: "Transfer-pricing contingent liability ₹592.48 mn; total tax litigation ₹1,175.07 mn", source_truth: "Unanchored: Prospectus 'Outstanding Litigation' section cited in B03 p. 417–420 but not independently extracted", note: "Material for governance; does not affect core financial-metrics scorecard"}
+  - {severity: "MINOR", location: "B04, Section 1C, line 60", claimed: "H1 FY26 revenue segment split: Streaming Unif. 52.86%, Monetization 25.28%, Cloud Modernization 21.86%", source_truth: "Unanchored: Prospectus p. 236 cited but percentages not independently verified", note: "Supporting detail; percentages sum to 100% (mechanical reasonableness check passes)"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 93.6
+coverage_note: "Verified all material quantitative inputs to the core scorecard (Blocks A–E, grand total 56/160), revenue, PAT, EBIT, ROCE, CFO, capex, working-capital days, block scores, and arithmetic. Prospectus-sourced contingent liabilities and H1 FY26 segment detail remain partially unanchored due to scope constraints; these do not affect the core financial metrics or classification. Qualitative sections in B04–B09 (business model, peer context, framework classifications) fall outside numerical-accuracy scope. No CRITICAL or MAJOR findings detected."

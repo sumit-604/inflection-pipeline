@@ -1,0 +1,74 @@
+stage: B05-concall
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent"]
+flags:
+  - "related-party revenue disclosure conflict: <20% stated on H2FY25 call vs 27.68-31.53% prior-stage evidence; FY26 AGM RPT ceiling of Rs120cr never raised in any call"
+  - "cash conversion deterioration: FY26 operating cash flow -Rs40cr (consolidated), receivables+inventory Rs240cr; H2FY25 call's 'no significant working capital challenge' reassurance did not hold"
+  - "transparency commitments (reclassification press release, quarterly reporting) promised H2FY25 call, undelivered through H2FY26 call"
+  - "fundraising stance reversed (equity dilution) without proactive disclosure between H2FY25 and H1FY26 calls"
+reconciliation_note: "Concall FY26 revenue Rs301.2cr is CONSOLIDATED (incl. AIC/ICS US acquisition + subsidiary) and matches the screener Data_Sheet Rs301.16cr that Gate 0 flagged; audited STANDALONE FY26 revenue is Rs257.13cr (results 28-Apr-2026). Standalone vs consolidated split to be reconciled in phase 3 stage 10."
+quarters_analysed: ["H2 FY25", "H1 FY26", "H2 FY26"]
+triggers:
+  - {priority: 1, name: "Greenfield Vadodara Mechatronics facility (6 SMT lines, Rs500cr incremental capacity)", type: "volume", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "SMT lines operational and shipping per phased schedule", kill_signal: "delay past FY27-Q4 or cost overrun"}
+  - {priority: 2, name: "AIC/ICS US acquisition margin ramp (11% to Aimtron-level EBITDA)", type: "cost/margin", timeframe: "near-medium", conviction: "M", confirm_signal: "consolidated EBITDA trends toward 18-20%+ within a year", kill_signal: "AIC margins stay stuck in low double digits, drags consolidated PAT"}
+  - {priority: 3, name: "Working capital / cash conversion normalization", type: "cost", timeframe: "near", conviction: "L", confirm_signal: "positive operating cash flow reported, receivables days fall", kill_signal: "continued negative CFO or rising receivables-inventory"}
+  - {priority: 4, name: "ODM model expansion (US infra/$8bn customer group and other Tier-1 prospects)", type: "price-mix/volume", timeframe: "medium-long", conviction: "M", confirm_signal: "follow-on orders materialize from same customer group", kill_signal: "one-off project with no repeat business"}
+  - {priority: 5, name: "PSU/defence orders scaling from pilot to production", type: "volume/regulatory-policy", timeframe: "medium", conviction: "L-M", confirm_signal: "production-scale PO received", kill_signal: "orders remain stuck in pilot/proto phase"}
+  - {priority: 6, name: "Data-centre UPS project (Fortune 500 Ohio customer)", type: "volume/price-mix", timeframe: "medium", conviction: "M", confirm_signal: "order value scales as more variants added", kill_signal: "stays a single small pilot order"}
+guidance:
+  - {item: "FY26 revenue target", number: "Rs270-280cr+", timeframe: "FY26", stated_in: "H2 FY25 call"}
+  - {item: "PAT margin", number: "16% +/-2-3%", timeframe: "ongoing", stated_in: "H2 FY25 call"}
+  - {item: "CAGR growth", number: "40-50%", timeframe: "ongoing", stated_in: "all three calls"}
+  - {item: "Capex", number: "3-5% of topline", timeframe: "next 3 years", stated_in: "H2 FY25 call"}
+  - {item: "EBITDA/PAT margin (revised)", number: "EBITDA ~20%+; PAT 15% +/-2%", timeframe: "ongoing", stated_in: "H1 FY26 call"}
+  - {item: "Capacity target", number: "Rs1,000cr (Rs500cr existing + Rs500cr greenfield)", timeframe: "multi-year", stated_in: "H1 FY26 and H2 FY26 calls"}
+  - {item: "FY26 actual results (consolidated)", number: "revenue Rs301.2cr, PAT Rs46cr, EBITDA margin 22.6%, PAT margin 15.3%", timeframe: "FY26 (delivered)", stated_in: "H2 FY26 call"}
+  - {item: "FY27 guidance", number: "40-50% CAGR, framed as Rs450-600cr depending on inorganic contribution", timeframe: "FY27", stated_in: "H2 FY26 call"}
+  - {item: "AIC standalone EBITDA ramp", number: "11% now to 18-20% within a year", timeframe: "FY27", stated_in: "H2 FY26 call"}
+  - {item: "FY26 operating cash flow", number: "-Rs40cr (negative)", timeframe: "FY26 (reported)", stated_in: "H2 FY26 call"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 4
+  rows:
+    - {promised_in: "H2 FY25 call", promise: "FY26 revenue 270-280cr+", outcome: "delivered", explanation: "beaten - actual Rs301.2cr (consolidated)"}
+    - {promised_in: "H2 FY25 call", promise: "PAT margin sustainable 16% +/-2-3%", outcome: "delivered", explanation: "FY26 actual 15.3%, within band"}
+    - {promised_in: "H2 FY25 call", promise: "AS9100 certification closing Q1", outcome: "delivered", explanation: "AS9100D achieved, confirmed H1 FY26 call"}
+    - {promised_in: "H2 FY25 call", promise: "Rs1.8mn aerospace/defence AI order under execution", outcome: "delivered", explanation: "confirmed closed and executing, H1 FY26 call"}
+    - {promised_in: "H2 FY25 call", promise: "no significant working capital challenge, receivables collection underway", outcome: "missed", explanation: "FY26 operating cash flow -Rs40cr, Rs240cr locked in inventory+receivables, no resolution timeline given when directly asked"}
+    - {promised_in: "H2 FY25 call", promise: "press release explaining accounting reclassifications for like-to-like comparison, within a short time", outcome: "missed", explanation: "never delivered through H2 FY26 call; same margin-mix explanation repeated instead"}
+    - {promised_in: "H2 FY25 call", promise: "move to quarterly reporting as soon as possible", outcome: "missed", explanation: "still half-yearly at H2 FY26 call; repeated deferral citing SME-phase readiness"}
+    - {promised_in: "H2 FY25 call", promise: "equity precious to dilute, no fundraising need", outcome: "missed", explanation: "preferential shares and warrants issued before H1 FY26 call, disclosed only when analyst raised it directly"}
+    - {promised_in: "H1 FY26 call", promise: "greenfield facility 2 SMT lines operational end of FY27 Q3/early Q4", outcome: "partial", explanation: "H2 FY26 call reaffirms similar timeline but discloses previously unstated Phase1/Phase2 mechanical-then-electronics split"}
+    - {promised_in: "H1 FY26 call", promise: "M&A - 5-6 preliminary opportunities under evaluation", outcome: "delivered", explanation: "AIC/ICS acquisition closed and consolidating by H2 FY26 call, faster than management's own stated 12-15 month cycle"}
+    - {promised_in: "H1 FY26/H2 FY26 calls", promise: "RFQ pipeline Rs700-900cr converting to order book growth", outcome: "partial", explanation: "order book roughly tripled but the pipeline figure itself stayed static across all three calls with no stated conversion bridge"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Will you move to quarterly reporting / issue an interim press release?", quarters_asked: ["H2 FY25", "H2 FY26"], classification: "deflected every time"}
+  - {question: "Can you substantiate margin/gross-margin swings with a like-to-like breakdown, ideally via the promised press release?", quarters_asked: ["H2 FY25", "H1 FY26", "H2 FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Revenue, order-book and named product/certification commitments delivered or beaten across all three calls, but two explicit transparency promises (reclassification press release, quarterly reporting) went unmet from H2 FY25 through H2 FY26, the H2 FY25 working-capital reassurance did not hold with cash flow turning -Rs40cr negative in FY26, and a material related-party revenue figure stated on calls (<20%) is unreconciled against prior-stage evidence (27.68-31.53%) with the FY26 AGM RPT ceiling of Rs120cr never once raised."
+peer_questions:
+  - {question: "Does NITI Aayog's Rs500bn EMS revenue target by FY2030 and the '$1 trillion' ESDM opportunity figure match what peers cite?", why: "underpins Aimtron's entire growth/pipeline narrative", check_peers: ["Kaynes Technology", "Syrma SGS Technology", "Avalon Technologies", "Cyient DLM", "Dixon Technologies"]}
+  - {question: "Is the claimed raw-material sourcing mix (~70% imported, <50% from China trending to ~40%) and full cost pass-through on semiconductor/DRAM shortage realistic versus sector norms?", why: "tests pricing power and China-exposure claims", check_peers: ["Kaynes Technology", "Syrma SGS Technology", "Avalon Technologies", "Cyient DLM"]}
+  - {question: "Is Aimtron's claimed insulation from L&T's ESDM entry (Coimbatore facility) via niche positioning credible?", why: "tests competitive-moat claim against a much larger, better-capitalised new entrant", check_peers: ["Kaynes Technology", "Syrma SGS Technology", "Avalon Technologies"]}
+  - {question: "Is the ~Rs100cr revenue-per-SMT-line and 3-5%-of-topline capex claim realistic versus EMS industry capex intensity and asset turns?", why: "tests capex-efficiency claims underlying the low-capex growth story", check_peers: ["Kaynes Technology", "Syrma SGS Technology", "Avalon Technologies", "Cyient DLM", "Dixon Technologies"]}
+  - {question: "Do listed defence-EMS peers show the margin erosion in defence contracts that Aimtron implies?", why: "tests whether Aimtron's selective defence approach is genuine differentiation", check_peers: ["Data Patterns", "Paras Defence", "MTAR Technologies"]}
+  - {question: "Is the static ~Rs700-900cr RFQ pipeline figure (repeated across all three calls despite order book roughly tripling) and the cited 20-40% EMS win-ratio consistent with peer disclosure?", why: "tests whether pipeline commentary is being freshly updated or recycled", check_peers: ["Kaynes Technology", "Syrma SGS Technology", "Avalon Technologies"]}
+red_flags:
+  - {flag: "related-party revenue disclosure conflict: <20% stated on call vs 27.68-31.53% prior-stage evidence; FY26 AGM RPT ceiling of Rs120cr never mentioned in any call", severity: "High"}
+  - {flag: "cash conversion deterioration: receivables 40 to 200+ days, FY26 operating cash flow -Rs40cr, inventory+receivables Rs240cr; H2 FY25 reassurance did not hold", severity: "High"}
+  - {flag: "broken transparency commitments: reclassification press release and quarterly reporting both promised H2 FY25, undelivered through H2 FY26", severity: "Medium"}
+  - {flag: "fundraising stance reversal without proactive disclosure between H2 FY25 and H1 FY26 calls", severity: "Medium"}
+  - {flag: "static/recycled RFQ pipeline figures (~Rs700-900cr) across all three calls despite order book roughly tripling", severity: "Medium"}
+  - {flag: "dropped trigger: Airbus A350 aerospace qualification prominent in H1 FY26 call, absent from H2 FY26 call with no explanation", severity: "Low-Medium"}
+  - {flag: "customer concentration never quantified despite repeated qualitative acknowledgment that single orders imbalance the numbers", severity: "Low"}
+dropped_triggers:
+  - "Airbus A350 aerospace qualification - raised prominently in H1 FY26 call, zero mention in H2 FY26 call, no explanation given"
+timeline_slippages:
+  - "Press release on accounting reclassifications and move to quarterly reporting - promised 'within a short time' in H2 FY25 call, still undelivered as of H2 FY26 call"
+  - "Greenfield facility SMT-line commissioning - H1 FY26 target 'end of FY27 Q3/early Q4' revised in H2 FY26 to a two-phase (mechanical then electronics) sequence, 'probably Q4 FY27'"
+  - "PLI ECMS scheme participation - 'exploring' since H1 FY26 call, still only 'applied for'/'TOT in progress' by H2 FY26 call"

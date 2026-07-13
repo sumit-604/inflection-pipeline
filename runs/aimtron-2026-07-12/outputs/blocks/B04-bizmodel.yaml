@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Credit rating absent"
+  - "AR and Investor Presentation PDFs exceeded image-render size limit; both read from pre-extracted text; image-only charts may be under-read"
+  - "Customer concentration (top-5/top-10 % of revenue) NOT FOUND in either document"
+  - "Named competitor benchmarking / market share NOT FOUND in either document"
+  - "FY26 figures are company-disclosed (Investor Presentation) only, not yet confirmed by an audited FY26 Annual Report"
+flags:
+  - "PCBA/Box-Build revenue mix fully inverted in one year (69%/27% to 29%/69%, standalone), making blended gross margin non-comparable YoY without mix adjustment"
+  - "Trade receivables turnover collapsed from 9.28x (FY24) to 3.07x (FY25) even as revenue grew, a working-capital/cash-conversion stretch"
+  - "First-time long-term debt drawn in FY26 (Rs 548.2 Mn) funding greenfield capacity and US acquisition; interest coverage (135.72x FY25) to be tracked as debt scales"
+  - "Material related-party balances with Aimtron Corporation, USA (common management, non-subsidiary) swung from nil to Rs 2,152.54 lakh debit in FY25"
+  - "Geography concentration in India rose sharply (58.3% to 74.3%, standalone) even as international expansion narrative continues"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "PCBA (PCB Assembly)", type: "contract manufacturing, point-in-time product sale", pct_of_revenue: 28.6, predictability: "M"}
+  - {name: "Box Build", type: "contract manufacturing, point-in-time product sale", pct_of_revenue: 68.8, predictability: "M"}
+  - {name: "ODM / End-to-End Solutions (design services)", type: "design & engineering services, milestone revenue", pct_of_revenue: 2.6, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/certification stack (ISO 13485, IATF 16949, AS9100D, CDSCO, RDSO pending)", durability: "medium-high"}
+  - {moat: "Switching costs in qualified customer programs", durability: "medium-high, unproven at scale"}
+  - {moat: "Economies of scale (emerging, via ICS acquisition utilisation ramp)", durability: "medium, emerging"}
+  - {moat: "Efficient scale in ruggedized/harsh-environment niche (via ICS)", durability: "medium, unproven"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Normalises for FY26 new debt, capex-heavy expansion, and mix-driven margin swings"}
+  secondary: {method: "P/E relative to growth (PEG)", why: "EPS is the headline market metric; exit multiple set by Section 1B v3.3 at valuation stage, not here"}
+  tertiary: {method: "EV/Sales", why: "Cross-check during current capacity-ramp phase while EBITDA margin normalises"}
+  not_applicable: ["DCF (short listed history, high-growth uncertainty)", "DDM (no dividend)", "Asset-based/NAV (not asset-heavy)", "Sum-of-the-parts (insufficient US subsidiary disclosure)"]
+irrelevant_ratios:
+  - {ratio: "Price-to-Book", why: "IPO share premium inflated FY25 equity base one-time; book value understates design/engineering capability"}
+  - {ratio: "Dividend yield", why: "Zero dividend by design (100% reinvestment for CAGR target)"}
+  - {ratio: "Blended gross margin % YoY unadjusted", why: "PCBA/Box-Build/ODM mix inverted in one year, distorting the ratio independent of execution"}
+  - {ratio: "Same-store-sales / like-for-like growth", why: "Retail metric, not applicable to order-book driven contract manufacturing"}
+  - {ratio: "Net Interest Margin / banking spread ratios", why: "Not a lender"}
+must_track_metrics:
+  - {metric: "Order book / book-to-bill", healthy: ">=1.5x trailing revenue", red_flag: "book-to-bill <1x for 2 consecutive quarters"}
+  - {metric: "Trade receivables turnover", healthy: ">=6x (~60 days)", red_flag: "<4x (already at 3.07x FY25)"}
+  - {metric: "EBITDA margin", healthy: "20-25%", red_flag: "sustained sub-18%"}
+  - {metric: "Inventory turnover", healthy: ">=4x", red_flag: "<3x"}
+  - {metric: "Net capital turnover ratio", healthy: ">=1.5x", red_flag: "<1x (already at 1.32x FY25, trending down)"}
+unit_economics:
+  unit: "One production line/cell (SMT, THT, or Box Build); ICS Decatur facility as clearest disclosed case"
+  revenue_per_unit: "NOT FOUND at board/project level; best proxy ICS facility guided USD 25-30 Mn p.a. (~Rs 280-300 Cr) at 90% utilisation vs ~54% today"
+  margin_per_unit: "NOT FOUND at unit level; incremental capex ~Rs 10-12 Cr against ~Rs 280-300 Cr revenue potential implies high incremental margin once capacity is filled"
+  key_lever: "Utilisation of existing/new SMT and box-build lines; vertical/segment mix (Box Build carries more pass-through material value than PCBA)"
+first_deterioration_signals:
+  - {risk: "Undisclosed customer/program concentration", first_signal: "Sudden drop in orders executed vs opening order book in a single quarter"}
+  - {risk: "Box-Build mix shift compressing blended margins", first_signal: "EBITDA margin below 18-19% sustained across 2+ quarters"}
+  - {risk: "Working capital stretch", first_signal: "Trade receivables turnover falling further below 3x / DSO crossing 120+ days"}
+  - {risk: "New debt-funded capacity (Vadodara greenfield, ICS integration)", first_signal: "Interest coverage declining from 135.72x as debt service grows faster than EBIT"}
+  - {risk: "Reliance on policy tailwinds and newly entered verticals (Telecom 0% to 22.3% in one year)", first_signal: "Order book growth decelerating sharply QoQ or a new vertical's share reversing"}
+mgmt_questions:
+  - "Customer concentration (top-5/top-10 % of revenue) and repeat vs new share of FY26 growth?"
+  - "Why did trade receivables turnover fall from 9.28x to 3.07x even as revenue grew - timing artefact or looser credit terms?"
+  - "Do Box-Build contracts carry cost pass-through/escalation clauses?"
+  - "What committed order book supports the new greenfield Vadodara facility relative to planned capacity?"
+  - "Is the ICS acquisition's Year-1 EPS accretion net of integration costs; actual vs planned 54%-90% ramp?"
+  - "Commercial nature of related-party balances with Aimtron Corporation, USA; are these arm's-length, board-approved?"
+  - "Funding plan (debt/equity/internal accruals) for the capex and working capital the 40-50% CAGR requires?"
+one_line_verdict: "High-growth EMS/ODM story with real certification moats, but working-capital quality and customer concentration need independent confirmation before the mix-shift growth can be trusted at face value."

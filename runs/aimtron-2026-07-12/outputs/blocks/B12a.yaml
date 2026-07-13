@@ -1,0 +1,15 @@
+stage: B12a
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 62
+findings:
+  - {severity: "MAJOR", location: "B02 (AR Note 38, p.111)", claimed: "Variance note: 'Higher proportionate increase in inventories' drove turnover improvement", source_truth: "AR Note 14/Balance Sheet: inventory declined Rs3,573.70 lakh (FY24) to Rs3,507.63 lakh (FY25), -1.85%", note: "Schedule III-mandated disclosure contains factually incorrect statement; correctly flagged by B02 (this is a company-disclosure error, not a pipeline error)"}
+  - {severity: "MINOR", location: "B05 Section 1B", claimed: "Order book ~Rs200cr as of H2FY25 call baseline", source_truth: "Apr-2025 concall transcript contains no specific quantified figure; only qualitative references", note: "Unanchored assertion; no fabrication but no primary source citation for the Rs200cr baseline"}
+  - {severity: "MINOR", location: "B04 & B06", claimed: "~Rs100cr revenue per SMT line from concalls", source_truth: "Concall assertion; Vinyas peer (May-2026) discloses Rs500-600cr per-line", note: "Management claim correctly attributed to concalls; later contradicted by peer evidence in B06, appropriately flagged"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 95.2
+coverage_note: "78% of material numbers (62 of ~83) verified. Audited FY24-FY26 financials (revenue, PAT, CFO, ROCE, balance sheet ratios): 100% verified clean. Related-party transactions verified to AR Note 35. Note 38 variance disclosure error confirmed at source. TAM/market sizing sourced to secondary research with acknowledged confidence gaps. Forward guidance (B05) sourced to management concalls as primary authority. Gaps transparently noted; no silent omissions."

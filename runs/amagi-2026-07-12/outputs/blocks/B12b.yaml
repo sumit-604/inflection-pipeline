@@ -1,0 +1,27 @@
+stage: B12b
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 19
+caught: 12
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "No cash-conversion red flag: FY26 adjusted FCF ₹38cr is ~24% of adjusted EBITDA ₹156cr; 9M reported OCF NEGATIVE ₹76cr; positive story rests on 'adjusted' OCF that strips IPO and ESOP-buyback cash", anchor: "Feb call Vijay p.5-6; May call Vijay p.9"}
+  - {severity: "MAJOR", item: "Intra-call contradiction unflagged: perpetual license 'drove H1 front-loading' (Vijay) vs 'no such overhang because of any perpetual license' (Baskar), same Feb call", anchor: "Feb call p.11 vs p.18"}
+  - {severity: "MINOR", item: "'Underlying' growth number drifts 30% -> 27% -> 26% within the Feb call; pipeline fixes it as a single 25-30%", anchor: "Feb call Vijay p.8/p.11/p.15"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B is defensible, but under-weighted cash-conversion, FX-flattered NRR/growth, and net-add-deceleration flags push it to the low end of B"
+findings:
+  - {severity: "MAJOR", location: "B05 cash-conversion gap", description: "FY26 adjusted FCF ₹38cr ~24% of adjusted EBITDA ₹156cr; 9M reported OCF NEGATIVE ₹76cr; adjusted OCF strips IPO + ESOP-buyback cash; no cash-conversion red flag raised despite CLAUDE.md INDETERMINATE-cash-conversion rule"}
+  - {severity: "MAJOR", location: "B05 §2A/§4D revenue quality", description: "FX-flattered growth quality not flagged: 30% reported vs 23% CC (~7pt FX), NRR 127->126 down-tick, CC NRR only north of 120%"}
+  - {severity: "MAJOR", location: "B05 §3C customer adds", description: "Net logo adds decelerated >50% (67->29) and Q4 net-negative (27 add/30 churn); B05 rates risk 'Low', under-weighted alongside softening CC NRR"}
+  - {severity: "MAJOR", location: "B05 contradiction (Feb call)", description: "Missed intra-call contradiction on perpetual-license overhang between Vijay (drove H1 swing) and Baskar (no overhang)"}
+  - {severity: "MINOR", location: "B05 §1B", description: "'Underlying' growth drifts 30%->26% within Feb call; presented as single 25-30%"}
+  - {severity: "MINOR", location: "B05 red_flags", description: "Q3 'largely able to hold price' vs Q4 rate-haircut admission not called out as its own contradiction"}
+  - {severity: "MINOR", location: "B05 §3B", description: "Streaming (>half of revenue) is slowest segment (+26% reported, ~19% CC); 'all three over 25%' is reported-INR framing"}
+critical_count: 0
+major_count: 4
+minor_count: 3
+acceptance_rate: 63

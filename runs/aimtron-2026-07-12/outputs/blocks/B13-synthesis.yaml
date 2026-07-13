@@ -1,0 +1,23 @@
+stage: B13-synthesis
+company: "AIMTRON"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 1
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-DATA-QUALITY]
+cash_determination: INDETERMINATE
+confidence_delta: {numerical: 95.2, redflag: 63, framework: 95, peer: 91.7, overall: 63}
+valuation_decision: ""          # phase 1: no valuation ran (B10/B11 absent)
+entry_range: {low: 0, high: 0}  # phase 1: not computed
+headline: "Aimtron grows fast, cash conversion unproven"
+falsification_metric: "H1 FY27 consolidated operating cash flow negative a third straight period, or debtor days above 120"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "Aimtron Electronics (AIMTRON) - Phase 1 Evidence (2026-07-12)"
+  summary: "PROCEED WITH CAVEATS. Real EMS growth (Rev/PAT CAGR >65%, net cash) against active promoter flag (CONCERN, ~31.5% related-party revenue, Chairman is CEO of largest counterparty) and INDETERMINATE cash flag (FY25 CFO -Rs17.69cr, FY26 consolidated OCF -Rs40cr, receivables +417%). Overall phase-1 confidence 63. Valuation deferred to phase 3."
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

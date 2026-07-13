@@ -1,0 +1,81 @@
+stage: B00-inputs
+company: AIMTRON
+run_date: 2026-07-12
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+
+company_identity:
+  legal_name: Aimtron Electronics Limited
+  former_name: Aimtron Electronics Pvt. Ltd.
+  nse_symbol: AIMTRON
+  isin: INE0RUV01018
+  cin: L31900GJ2011PLC065011
+  registered_office: "Plot No. 1/A GIDC Estate, Waghodia, Dist. Vadodara, Gujarat 391760"
+  sector_actual: "Electronics Manufacturing Services (EMS) / Euse design + PCBA + box-build"
+  cmp: 1390.0
+  market_cap_cr: 2864.0
+  promoters:
+    - name: Mukesh Jeram Vasani
+      role: Chairman & Director
+      din: "06542536"
+    - name: Nirmal Vasani
+      role: Sr Technology Director
+      din: null
+  key_management:
+    - name: Sneh Shah
+      role: Director - Sales
+    - name: Nikita Shah
+      role: Chief Financial Officer
+    - name: Priyanka Shah
+      role: Company Secretary & Compliance Officer
+
+inventory:
+  annual-report: 1        # Annual_Report_2025.pdf (FY2024-25)
+  results: 2              # H1 FY26 (BM 04-11-2025), H2/FY26 (28-04-2026 standalone)
+  rating: 0               # ABSENT
+  concalls: 4_present_3_used
+  peer-concalls: 15_present_12_used
+  screening: 6_company_plus_24_peer_csv
+  presentation: 1
+  other: 0
+
+concall_quarter_map:            # oldest first, used for stage 5
+  - file: inputs/concalls/Concall_Apr_2025_Transcript.pdf
+    period: "H2 FY25"
+    call_held: 2025-04-24
+  - file: inputs/concalls/Concall_Nov_2025_Transcript.pdf
+    period: "H1 FY26"
+    call_held: 2025-11-06
+  - file: inputs/concalls/Concall_May_2026_Transcript.pdf
+    period: "H2 FY26"
+    call_held: 2026-04-28
+  dropped_beyond_cap:
+    - file: inputs/concalls/Concall_Nov_2024_Transcript.pdf
+      period: "H1 FY25"
+      reason: "4 concalls present; used 3 most recent per contract"
+  note: "Aimtron reports HALF-YEARLY (H1/H2), not quarterly. Calls are post H1/H2 earnings."
+
+peer_transcripts_used:          # 12, 3 most recent per peer (contract cap 0-12)
+  AVALON: [Nov_2025, Feb_2026, May_2026]
+  CENTUM: [Nov_2025, Mar_2026, May_2026]
+  CYIENTDLM: [Jul_2025, Oct_2025, Jan_2026]
+  VINYAS: [Nov_2025, Nov_2025_2, Jun_2026]
+  dropped_beyond_cap:
+    - AVALON-Concall_Aug_2025_Transcript.pdf
+    - CENTUM-Concall_Aug_2025_Transcript.pdf
+    - VINYAS-Concall_Jun_2025_Transcript.pdf
+
+input_gaps:
+  - type: rating
+    status: absent
+    impact: "No credit-rating PDF. Operator confirmed none available (2026-07-12). Stage 10 marks rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative per framework; FLAG-CASH handling per Section 4."
+  - type: sector_cap_row_defect
+    status: data_quality_defect
+    detail: "manifest sector_cap_row = 'Pharma / CDMO' but Aimtron is an EMS/electronics manufacturer; all four peers (Avalon, Centum, Cyient DLM, Vinyas) are EMS names. Collector (collect_to_repo v3) mis-picked the sector row. Correct row is the EMS/electronics manufacturing row from the Section 1B cap table. Must be corrected before Stage 11 UA sector-cap logic in phase 3."
+  - type: manifest_note
+    status: informational
+    detail: "manifest.notes flags 'Sector row auto-picked; verify.' Confirmed mis-picked; see sector_cap_row_defect above."
+
+flags: []

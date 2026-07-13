@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Supercycle is a triple-coupled single point of failure (revenue+margin+ROCE+Rs743Cr inventory); a reversal is a write-down year, not the +6.9% PAT-growth bear Role 1 modeled, so the bear tail sits below Rs 302 and below the Rs 235 MoS."
+  - "The 20x destination PE is a generous operator override vs the mechanical ~16x stack; the entry zone Rs 261-293 is derived off it and is ~25% too high (mechanical base FV Rs 458 -> entry ~Rs 234)."
+  - "Cash drag is plausibly STRUCTURAL not growth-induced: CFO negative since FY20, DSCR never >1.0x (0.43->0.12), FY24 WCL inflow Rs 2,070.62M exceeds reported CFO Rs 1,024.75M, WCL draws classified as operating and audit-untested."
+  - "Pillar 1's 28.3% ex-cash ROCE flatters: only ~4 of ~14pp fall is mechanical cash unwind; the rest is IPO equity into a low-turn WC base that recovers only if WC/margins improve (neither is). Whole-company number is 24.06%, falling."
+  - "Governance is worse than CAUTION on the axes that matter for a cash story: promoters selling in the OFS, 78% of FY24 PAT in an unaudited UAE subsidiary, undisclosed 17.28% customer, KKOC multi-role RPT + Rs 305.32M unresolved tax demand."
+  - "Entry zone likely unreachable with thesis intact (withdrawn-zone / value trap): a ~54-59% fall to Rs 261-293 almost certainly means a thesis-broken trigger fired, so the 'opportunity' is largely a mirage; value-trap risk rises at the zone, not falls."

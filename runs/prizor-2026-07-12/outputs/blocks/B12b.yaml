@@ -1,0 +1,28 @@
+stage: B12b
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+mode: no-concall (audited communication analysis against AR + investor presentation)
+independent_flags_found: 13
+caught: 8
+partially_caught: 3
+missed:
+  - {severity: "MAJOR", item: "Rs10.0cr 'Long term Loans & Advances' newly on FY26 balance sheet, purpose undisclosed, while borrowing Rs31.82cr short-term", anchor: "Inv.Pres. slide26/p27"}
+  - {severity: "MINOR", item: "FY25 cost split self-contradicts across two deck slides (Purchase/Materials 2,201.3/4,532.8 vs 6,282.9/552.7); totals reconcile, EBITDA unaffected", anchor: "Inv.Pres. slide25/p26 vs slide30/p31"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 3, confirmed: 3, wrong: 0}
+credibility_grade_concur: "concur - C is correct; the missed Rs10cr loans, persistent near-zero FY26 cash conversion, and audited single-segment contradiction all reinforce C, none would lift it"
+findings:
+  - {severity: "MAJOR", location: "Stage 5 Sec 2A/4D omission", claimed: "no mention of FY26 long-term loans out", source_truth: "Inv.Pres. slide26/p27 LT Loans & Advances 0->Rs10.0cr, undisclosed purpose", note: "material capital-allocation / possible related-party flag missed"}
+  - {severity: "MAJOR", location: "Stage 5 2D/flag #2 under-weight", claimed: "FY25 OCF -Rs14.10cr flagged; FY26 'barely positive'", source_truth: "OCF FY24 -1.82cr, FY25 -14.10cr, FY26 +0.29cr vs PAT 20.76cr (Inv.Pres. slide32/p33)", note: "3-year broken cash conversion; FY26 ~1.4% conversion not surfaced"}
+  - {severity: "MAJOR", location: "Stage 5 flag #6 misframe", claimed: "segment data 'not traceable', possible extraction gap, MEDIUM", source_truth: "AR affirmatively declares single reportable segment; deck reports two (slide23/p24)", note: "audited-vs-unaudited contradiction, should be MAJOR"}
+  - {severity: "MINOR", location: "Stage 5 omission", claimed: "FY25 cost split not examined", source_truth: "Inv.Pres. slide25/p26 vs slide30/p31 differ", note: "EBITDA unaffected; disclosure-quality signal"}
+  - {severity: "MINOR", location: "Stage 5 flag #7 framing", claimed: "receivables build noted", source_truth: "H2 FY26 = 72% of FY revenue (10,592.7 vs 4,201.4), receivables 15.74->38.63cr", note: "back-ending / channel-loading angle not drawn"}
+  - {severity: "MINOR", location: "Stage 5 4C/flag #8 add-on", claimed: "director-loan trend noted", source_truth: "CFO = promoter WTD, spouse of CMD", note: "segregation-of-duties concentration not called out"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 62
+redflag_coverage: 62
+coverage_note: "Stage 5 ran in degraded NO-CONCALL mode (no transcripts, worked from AR + deck); lower coverage is partly structural. All three MAJOR misses were surfaced from FY26 investor-presentation data and reinforce the FLAG-CASH / governance read rather than contradict any pipeline finding. No pipeline flag was found unsupported."

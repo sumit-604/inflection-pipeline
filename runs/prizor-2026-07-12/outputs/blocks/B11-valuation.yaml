@@ -1,0 +1,51 @@
+stage: B11-valuation
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Rating agency WC/cash quote NOT FOUND (no rating PDF) - Pillar 2 defaulted conservative 0.65x"
+  - "FII+DII shareholding NOT FOUND (aggregator 403) - UA third qualifier unverifiable, UA not applied"
+  - "Peer P/E and EV/EBITDA medians NOT FOUND (only CP Plus) - no external multiple anchor"
+  - "FY26 audited financials absent - valuation anchored to FY25 audited; FY26 unaudited excluded"
+  - "Forward net debt/margins are scenario assumptions (flagged); conclusion insensitive"
+flags:
+  - "FLAG-CASH HIGH: cash multiplier 0.65x applied (INDETERMINATE leaning structural, conservative default); disposition capped at PROCEED WITH CAVEATS"
+  - "FLAG-INTERNAL-ROCE-INCONSISTENCY: FY26 ROCE 37.2% vs 47.4% unaudited - excluded, FY25 31.29% used"
+  - "FLAG-FORWARD-ROCE-DILUTION: mechanical ROCE compression risk - STAGNANT verdict, no uplift credited"
+  - "FLAG-MARGIN-PEER-CONTRADICTED: claimed 21-23% EBITDA above CP Plus 13.7% - base compresses to 18%"
+  - "FLAG-RPT-UNRECONCILED / FLAG-DISCLOSURE-QUALITY / FLAG-GATE0-DEAL-BREAKER propagate into RRM r=16%"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 15.0, mid: 16.2, high: 17.5, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 14.0, mid: 15.0, high: 16.0}
+  divergence_pct: 8.0
+  governing_track: "Track 2 additive - more conservative (15.0x), sets entry zone"
+pillar_detail:
+  roce_used: 31.29
+  roce_base: 23.1
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.65
+  structural_or_growth: "INDETERMINATE leaning structural (conservative 0.65x per framework)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.23, bull_used: false, verdict: "STOP"}
+fair_values:
+  track1: {bear: 84, base: 170, bull: 253}
+  track2: {bear: 76, base: 154, bull: 231}
+expected_cagr_prob_weighted: -45.4
+entry_range: {low: 63, high: 79}
+mos_price: 63
+upside_downside_ratio: 0.0
+decision: "AVOID (on valuation)"
+unresolved_inputs_used:
+  - "rating_wc_quote NOT FOUND -> conservative Pillar 2 multiplier 0.65x (INDETERMINATE leaning structural)"
+  - "fii_dii_lt3 NOT FOUND -> UA multiplier NOT applied (all three qualifiers not evidenced)"
+  - "current PE uses FY25 audited EPS 9.495 (86.9x); FY26 unaudited EPS excluded"
+  - "forward net debt Bear45/Base25/Bull10 Cr - scenario assumptions, conclusion insensitive"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Prizor at Rs 825 trades at 87x FY25 audited EPS vs a four-pillar destination of 15x (ROCE 31.29% stagnant, cash 0.65x structural, EM 13.6, cap 25x); base Year-3 fair value Rs 154 = -43% CAGR; Hurdle Ratio STOP; AVOID on valuation."

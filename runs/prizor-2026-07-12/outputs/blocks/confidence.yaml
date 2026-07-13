@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: "PRIZOR"
+run_date: "2026-07-12"
+phase: 3-final
+confidence_delta:
+  numerical_acceptance: 97.87    # B12a: 0 CRITICAL, 0 MAJOR, 1 MINOR of 47 numbers checked
+  redflag_coverage: 62           # B12b: 8 of 13 verifier-found flags caught upstream (stage 5 degraded no-concall)
+  framework_adherence: 100       # B12c FULL: gate0 (48) + emoat (24) + valuation (34) = 106 rules, 0 fails
+  peer_utilisation: 75           # B12d: 3 of 4 nominated peers used substantively (D-Link no transcript)
+  overall: 62                    # min of the four
+band: "60-74"
+band_interpretation: "Overall 62 sits in the 60-74 band. The one-level PROCEED-family downgrade applied in phase 1 to the gate verdict (PROCEED WITH CAVEATS -> PROCEED WITH FLAGS). The phase-3 INVESTMENT decision is AVOID on valuation, independent of the confidence band. No forced REWORK (no CRITICAL numerical finding; min verifier acceptance 62, at/above the 60 floor)."
+rework_gate_check:
+  verifier_a_critical: 0
+  min_verifier_acceptance: 62
+  forced_rework: false
+components_evolution:
+  phase1: {numerical: 97.87, redflag: 62, framework: 94, peer: 75, overall: 62}
+  phase3: {numerical: 97.87, redflag: 62, framework: 100, peer: 75, overall: 62}
+  note: "framework_adherence rose 94 -> 100 once the phase-3 valuation-adherence audit (34 rules, 0 fails) merged with the gate0+EM checks. Overall unchanged, still bound by redflag_coverage (62)."
+notes:
+  - "Binding constraint remains redflag_coverage (62), a structural discount from stage 5 running in NO-CONCALL degraded mode. The uncaught flags all reinforce the FLAG-CASH / governance read and the AVOID."
+  - "Valuation framework adherence is a clean 100: both destination-PE tracks, Hurdle STOP, UA-not-applied, sector cap 25x, and the Role 2 AVOID/position-None chain all recomputed and tie exactly (verifier C phase 3)."

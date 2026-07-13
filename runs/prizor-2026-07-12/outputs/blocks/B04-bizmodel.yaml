@@ -1,0 +1,61 @@
+stage: B04-bizmodel
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR MD&A section (p.53-58) is generic/templated boilerplate, not company-specific; qualitative claims sourced from Notes to Accounts and Board's Report instead"
+  - "AR discloses a single reportable business segment (Note 52, p.94) with no product-wise revenue split; all CCTV vs Display revenue-mix figures are sourced from the Investor Presentation only and do not foot exactly to total revenue (residual 5-6%, composition undisclosed)"
+  - "Named peers CP Plus, D-Link India, OSEL Devices, Sahasra do not appear in the AR or Investor Presentation text; competitive positioning vs these peers is NOT FOUND in the provided documents"
+  - "Per-unit revenue, per-unit cost, and manufacturing capacity utilization percentage are NOT FOUND in either document"
+flags:
+  - "Related-party sale of Rs.354.8 lakh (~9.9% of FY24 revenue) to related entity Om Security Solutions in FY24, dropping to nil in FY25 (AR Note 31, p.87-88)"
+  - "Manufacturing capacity build (16 lakh camera assembly, 50 lakh PCB SMT line) occurred almost entirely within FY26; plant & machinery net block was near-nil (Rs.0.69 lakh) at FY25 (AR Note 12, p.78) - the backward-integration/manufacturing narrative is largely unproven at scale"
+  - "Operating cash flow diverged sharply from PAT in both FY25 (OCF -Rs.1,409.5 lakh vs PAT Rs.1,015.3 lakh) and FY26 (OCF Rs.29.0 lakh vs PAT Rs.2,075.8 lakh, Inv. Pres. slide 27/32)"
+  - "ROCE/ROE figures internally inconsistent within the Investor Presentation: slide 5 headline states 47.4% ROCE / 38.0% ROE for FY26, while slide 29 chart shows 37.2% ROCE / 35.5% ROE for FY26"
+  - "Short-term borrowings rose from Rs.275.6 lakh (FY25) to Rs.3,182.4 lakh (FY26), ~11.5x, funding inventory and receivables build (Inv. Pres. slide 26)"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "CCTV cameras & surveillance systems (IP/analog/AI, NVR/DVR)", type: "hardware product sale, trading + rising own-manufacture", pct_of_revenue: 77.2, predictability: "M"}
+  - {name: "Display products (LED TV, monitor, touch panel)", type: "hardware product sale, pure trading", pct_of_revenue: 16.4, predictability: "L"}
+  - {name: "Other / unallocated (residual, undisclosed composition)", type: "NOT FOUND", pct_of_revenue: 6.4, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {name: "Distribution network (11,000+ dealers, 21 states, 9 years built)", durability: "medium-high"}
+  - {name: "Regulatory/licensing (BIS, BIS-ER/STQC certification excluding non-certified foreign brands)", durability: "medium-high, policy-dependent"}
+  - {name: "Cost advantage from backward integration (Gandhinagar SMT/assembly)", durability: "medium, unproven at scale"}
+  - {name: "Brand (Prizor)", durability: "low-medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Normalizes across the large FY24-FY25 leverage/equity swing and the trading-to-manufacturing cost-structure transition, without P/E financing-structure noise"}
+  secondary: {method: "EV/Sales", why: "Cross-check for a still-scaling, still-transitioning hardware business where EBITDA margin mix is unsettled"}
+  tertiary: {method: "P/E", why: "Sanity-check only; earnings base not comparable across the transition and only ~2 years of listed history"}
+  not_applicable: ["DCF", "Asset-based/Book value", "Sum-of-the-parts", "Replacement cost"]
+irrelevant_ratios:
+  - {ratio: "Trailing P/E", why: "Only ~2 years of scaled listed history mid a business-model transition"}
+  - {ratio: "Net profit margin trend alone", why: "Mechanically driven by the trading-vs-manufacture COGS mix, which flipped between FY25 and FY26"}
+  - {ratio: "Return on Equity", why: "Distorted by the FY24 IPO equity-base jump"}
+  - {ratio: "Debt/Equity point-in-time", why: "Fell on IPO equity infusion even as short-term WC borrowings rose ~11.5x the following year"}
+  - {ratio: "Fixed-asset turnover pre-FY26", why: "Plant & machinery net block effectively nil at FY25; manufacturing asset base only appears from FY26"}
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: "20-24%", red_flag: "sustained drop below ~18%"}
+  - {metric: "Materials-consumed % vs Stock-in-Trade purchase % of revenue", healthy: "materials-consumed ratio rising, margin held/improved", red_flag: "reversal toward trading-dominant mix without margin gain"}
+  - {metric: "Short-term borrowings / trailing EBITDA", healthy: "below 1.5x", red_flag: "above 2x"}
+  - {metric: "Inventory turnover", healthy: "3-4x", red_flag: "below 2.5x"}
+  - {metric: "Working capital days", healthy: "declining trend (~90 days)", red_flag: "rising again as growth continues"}
+unit_economics:
+  unit: "one CCTV camera unit sold"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "manufactured-vs-purchased mix (Gandhinagar SMT/assembly) and dealer-network volume growth"
+mgmt_questions:
+  - "What proportion of FY26 revenue was manufactured in-house at Gandhinagar versus purchased as stock-in-trade, and target mix for FY27?"
+  - "Current utilization of the 16 lakh unit camera assembly capacity and 50 lakh unit SMT line?"
+  - "Status of the IndieSemic SoC MoU and impact on ~20% import dependency?"
+  - "Why did OCF diverge so sharply from PAT in FY26, and how is the WC gap funded?"
+  - "What drove the FY24 Om Security Solutions related-party sale, why nil in FY25, other related entities in the dealer network?"
+  - "Realistic AI-camera revenue contribution in FY27, and margin premium?"
+  - "How dependent is the thesis on the BIS-ER exclusion of non-certified foreign brands staying in force?"
+one_line_verdict: "Fast-growing, policy-tailwind-driven hardware assembler mid-transition to manufacturing, with margin and cash-conversion durability not yet proven."

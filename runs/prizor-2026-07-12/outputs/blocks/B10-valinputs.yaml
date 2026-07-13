@@ -1,0 +1,124 @@
+stage: B10-valinputs
+company: "PRIZOR"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Results/ PDFs (quarterly & annual) ABSENT - no latest-period results beyond investor presentation"
+  - "Rating/ PDF ABSENT - credit rating, rating agency WC/cash commentary unresolved"
+  - "Screener P&L/BS/CF/Quarters CSVs EMPTY (collect_to_repo defect) - only Data_Sheet.csv populated"
+  - "FY26 (audited) revenue, PAT, ROCE, CFO, receivables ageing - all unaudited (investor presentation) or NOT FOUND"
+  - "3-year revenue/PAT CAGRs NOT FOUND - only 2 years history (SME IPO, no pre-FY24 balance sheet)"
+  - "Concall transcripts ABSENT - no-concall mode; credibility grade defaults to C"
+  - "FII/DII shareholding NOT FOUND - aggregator sites blocked (HTTP 403)"
+  - "Peer P/E, EV/EBITDA, P/B, ROCE medians - only CP Plus available as direct CCTV peer"
+  - "Capex: FY26 itemised by project NOT FOUND; IndieSemic SoC capex and timeline NOT FOUND"
+  - "Facility utilisation % (SMT, assembly lines) NOT FOUND"
+flags:
+  - {type: FLAG-CASH, severity: HIGH, reason: "CFO negative both years and deteriorating (FY25 -14.10cr vs PAT +10.15cr, -139%; FY24 -1.82cr vs PAT +5.52cr, -33%), inventory +281.7% vs revenue +99.4%, IPO-funded. INDETERMINATE caps disposition at PROCEED WITH CAVEATS."}
+  - {type: FLAG-INVENTORY, severity: MEDIUM-HIGH, reason: "Finished-goods inventory +281.7% YoY vs revenue +99.4%; turnover 4.19x to 3.32x; sell-in vs sell-through and write-down risk."}
+  - {type: FLAG-RPT-UNRECONCILED, severity: HIGH, reason: "Rs3.00cr loan-to-equity conversion (07-May-2024, 4,00,000 shares at Rs75) unreconciled to any named lender."}
+  - {type: FLAG-RELATED-PARTY-REVENUE, severity: MEDIUM, reason: "Om Security Solutions 9.95% of FY24 revenue (Rs3.55cr), fell to zero in FY25 (IPO year), unexplained."}
+  - {type: FLAG-DISCLOSURE-QUALITY, severity: MEDIUM, reason: "Generic MD&A; CSR self-contradiction; inverted remuneration ratio; undisclosed post-balance-sheet promoter remuneration hike."}
+  - {type: FLAG-FORWARD-ROCE-DILUTION, severity: MEDIUM, reason: "Installed capacity vastly exceeds SOM_5yr (~5.5% utilisation); capex debt-funded against negative CFO; ROCE likely to compress mechanically."}
+  - {type: FLAG-MARGIN-PEER-CONTRADICTED, severity: MEDIUM, reason: "Claimed 21-23% EBITDA / 14% PAT exceeds CP Plus (13.7% EBITDA / 8.72% PAT FY26, FY27 guide 14-15%)."}
+  - {type: FLAG-INTERNAL-ROCE-INCONSISTENCY, severity: MEDIUM, reason: "ROCE/ROE inconsistency in Apr-2026 deck (47.4%/38.0% vs 37.2%/35.5% FY26); unaudited, do not use until audited."}
+  - {type: FLAG-GATE0-DEAL-BREAKER, severity: MEDIUM, reason: "Classification AVERAGE (cumulative CFO/PAT -1.02x, history <3 years, Block B 0/20); flags propagate."}
+table:
+  company_identity:
+    company: "Prizor Viztech Ltd"
+    ticker: "PRIZOR"
+    sector_corrected: "Video Surveillance / Security Electronics"
+    business_model: "Hybrid (trading + manufacturing)"
+    sector_cap_row: "Manufacturing / Industrial products, 25x"
+    cmp_rs: 825
+    market_cap_cr: 891
+    shares_outstanding_cr: 1.069
+    net_debt_cr: 7.389
+    enterprise_value_cr: 898.389
+  latest_audited_financials_fy25:
+    revenue_cr: 70.98
+    ebitda_cr: 15.077
+    pat_cr: 10.15
+    ebitda_margin_pct: 21.42
+    pat_margin_pct: 14.29
+    diluted_eps_rs: 9.495
+    cfo_cr: -14.10
+    capex_cr: 8.276
+    fcf_cr: -22.371
+    depreciation_cr: 0.166
+    book_value_per_share_rs: 40.07
+    net_debt_or_net_cash: "Net Debt 7.389 Cr"
+    roce_latest_pct: 31.29
+    roce_2yr_trend: "Declining (69.82% FY24 -> 31.29% FY25, base-effect)"
+    roe_latest_pct: 41.02
+    cfo_pat_latest_ratio: -1.39
+    cfo_pat_cumulative_ratio: -1.02
+    fcf_pat_ratio: -2.20
+    dps_rs: 0
+  growth_metrics_limited:
+    revenue_3yr_cagr_pct: "NOT FOUND (2 years history only)"
+    pat_3yr_cagr_pct: "NOT FOUND (2 years history only)"
+    revenue_1yr_growth_pct: 99.07
+    pat_1yr_growth_pct: 83.88
+  management_credibility_guidance:
+    credibility_grade: "C"
+    guidance_revenue_fy26_cr: "NOT FOUND"
+    guidance_ebitda_margin_pct: "NOT FOUND"
+    top_trigger_1: "STQC/BIS-ER policy tailwind, Regulatory-Policy, near-term ongoing"
+    top_trigger_2: "Dealer network scale-up (11,000+), Volume, near-medium term"
+    top_trigger_3: "Backward integration (SMT/PCB margin durability), Cost, near-medium term"
+  emerging_moat:
+    em_score: 13.6
+    em_classification: "MODEST"
+    combined_backward_forward: "AVERAGE"
+    evidence_mix: "Mostly documented (18 documented, 7 claim, 4 inference)"
+    primary_catalyst: "FY26 statutory AR with audited capex/segment/utilisation; CFO positive test; IndieSemic MoU progression"
+    catalyst_proximity_months: 12
+  cash_conversion_wc:
+    determination: "INDETERMINATE, leaning structural"
+    evidence: "Cumulative CFO/PAT -1.02x, inventory +281.7% vs revenue +99.4%, payables squeezed, cash burn IPO-funded"
+    rating_wc_quote: "NOT FOUND"
+    wc_days_latest_fy25: 213.93
+    wc_days_trend: "Deteriorating +46.3 days"
+    receivables_aging: "Improving composition (95% <6mo), days flat at ~81"
+    inventory_turnover: "Fell 4.19x -> 3.32x"
+    payables_quality: "Squeezed, payable days 59.96 -> 13.57"
+    cash_multiplier_disposition: "INDETERMINATE caps at PROCEED WITH CAVEATS"
+  fttcp_authoritative:
+    roce_forward_verdict: "STAGNANT - use FY25 audited 31.29%; FY26 unaudited internally inconsistent"
+    sector_cap_authoritative: "Manufacturing / Industrial products, 25x (manifest Pharma/CDMO REJECTED)"
+    confidence_overlay: "NO-CONCALL MODE, forward confidence materially reduced"
+  valuation_methodology:
+    primary_method: "EV/EBITDA"
+    secondary_method: "EV/Sales"
+    tertiary_method: "P/E (sanity-check only)"
+    peer_median_pe: "NOT FOUND"
+    peer_median_ev_ebitda: "NOT FOUND"
+  tam_sam_som:
+    tam_conservative_cr: 12370
+    tam_realistic_cr: 17425
+    sam_cr: 3580
+    som_3yr_cr: 237
+    som_5yr_cr: 309
+    som_implied_revenue_cagr_3yr: 17.0
+    som_implied_revenue_cagr_5yr: 15.9
+    revenue_headroom_x: 24.2
+    runway_classification: "MASSIVE"
+    tam_growth_cagr_pct: 16.46
+credibility_grade: "C"
+conflicts: []
+rating_wc_quote: "NOT FOUND (credit rating PDF unavailable; deliberation names it a phase-3 dependency)"
+ua_qualifiers:
+  listed_12m: true
+  gate0_or_em: true
+  fii_dii_lt3: null
+  all_met: false
+unresolved:
+  - "FY26 audited revenue/PAT/ROCE/CFO/receivables ageing (FY26 AR not yet published; only unaudited presentation)"
+  - "Rating agency name/rating/outlook + WC/cash rationale (rating PDF absent)"
+  - "3-year revenue and PAT CAGR (only 2 years history)"
+  - "FY26 itemised capex, IndieSemic SoC capex/timeline, facility utilisation %"
+  - "Peer P/E, EV/EBITDA, P/B, ROCE medians (only CP Plus direct peer)"
+  - "Current TTM EPS (only unaudited FY26 PAT); P/FCF (negative FCF)"
+  - "FII/DII shareholding %, promoter pledge % (aggregator 403; AR lacks SEBI-format encumbrance table)"

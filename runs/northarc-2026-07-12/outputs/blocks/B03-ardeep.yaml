@@ -1,0 +1,48 @@
+stage: B03-ardeep
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Credit-cost/asset-quality deterioration continues to be the dominant earnings-quality driver: GNPA doubled 0.47%->0.99%, NNPA ~4-5x'd (two unreconciled figures, 0.39%/0.43%), impairment P&L charge +207% (Rs378.53 Cr vs Rs123.14 Cr), Stage 3 coverage fell (multiple unreconciled figures: ~68% notes vs 61.1% MD&A), regulator-forced FLDG/ECL correction (Rs68.35 Cr Q4FY25 PBT hit, Auditor's Emphasis of Matter), and consolidated PAT fell 5.2% (Pragati Finserv subsidiary loss, 85.7% net-worth erosion) even as standalone-only PAT rose 22.3% and was the figure emphasized in front-matter narrative."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No promoter/promoter-group exists for NORTHARC (professionally/institutionally managed, confirmed by exhaustive document search) -- Phase 5D promoter-selling/pledge checks are a structural N/A, not a clean pass. CEO remuneration grew 43% YoY (CEO-to-median ratio 1:173) against 16% median-employee growth and a -5.2% consolidated PAT year, a pay-for-performance mismatch worth flagging for the human reviewer even absent a promoter."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "Turnaround-within-growth (Watchlist), GARP (Watchlist)"}
+overall_quality: 6.5
+quality_components: {governance: 7, accounting: 6, balance_sheet: 8, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not stop -- unmodified opinion, EOM/KAM items are disclosure-quality not going-concern/fraud"
+  - "Phase 2: would not stop -- unreconciled duplicate figures are non-directional-misleading disclosure-hygiene issues, not fraud"
+  - "Phase 3: would not stop -- credit-cost spike is disclosed, KAM'd, EOM'd, quantified consistently; no cash-flow manipulation or balance-sheet fragility"
+  - "Phase 4: would not stop -- but would want explicit management commentary on the complaints surge and the consolidated-vs-standalone PAT gap"
+  - "Phase 5: would not stop -- SEBI/BSE penalties are administrative-timeliness issues (~Rs15.74 lakh aggregate), not fraud or governance-capture"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Customer-complaints surge (+930-1000% YoY) never mentioned in MD&A's Risk Management/Enterprise Risk Management sections despite detailed collections-capability narrative there", evidence: "Note 72, PDF p.243-244 vs MD&A 4.3/4.5, PDF p.52-54"}
+  - {risk: "Standalone-vs-consolidated PAT divergence (+22.3% vs -5.2%) never narrated in Chairman's/MD&CEO's letters or MD&A, only visible in the Board's Report financial-highlights table", evidence: "Board's Report table, PDF p.25; Note 22 consolidated, PDF p.353-354"}
+  - {risk: "Asset-cover-on-NCDs tightening (1.15x->1.08x) omitted from MD&A's upbeat 'Strong Liability Franchise' section", evidence: "Note 82, PDF p.253 vs MD&A 4.4, PDF p.52"}
+  - {risk: "Rural/Pragati segment's 6.8% credit cost (highest of any segment) not called out in MD&A's primary segment commentary, only findable via the raw segment table plus the subsidiary write-up", evidence: "MD&A 4.2 segment table, PDF p.51 vs Board's Report subsidiary section, PDF p.30"}
+guidance_table:
+  - {claim: "AUM CAGR", number: "20-25%", timeframe: "next 3 years from FY25", credibility: "FY25 base-year actual 16.4% was below guided range; FY26 actual +22% YoY is within range -- credible, tracking"}
+  - {claim: "Return on Assets", number: "3.7%-4.0%", timeframe: "next 3 years from FY25", credibility: "FY25 actual 2.4%; FY26 actual 2.8% -- improving but well short after year 1 of 3 -- stretched"}
+  - {claim: "Return on Equity", number: "16.0%-18.0%", timeframe: "next 3 years from FY25", credibility: "FY25 actual 10.0%; FY26 actual 11.1% -- improving but materially short after year 1 of 3 -- stretched"}
+  - {claim: "D2C portfolio increase", number: "no specific target given", timeframe: "next 3 years", credibility: "FY25 51.8% of AUM, FY26 59% -- genuine progress, target itself non-specific"}
+monitorables:
+  - {metric: "Consolidated GNPA/NNPA ratio", threshold: "continued rise beyond FY26's 1.2%/0.6%", where: "quarterly results/investor presentation", why: "clearest leading indicator credit cycle has not troughed despite improving PAT"}
+  - {metric: "Pragati Finserv net worth / goodwill impairment trigger", threshold: "further erosion below FY25's Rs4.96 Cr, or any impairment disclosure", where: "quarterly subsidiary disclosures; next AR Note 81", why: "determines if Rs20.85 Cr goodwill (100% Pragati CGU) remains supportable"}
+  - {metric: "ROA/ROE vs 3.7-4.0%/16-18% 3-year guided range", threshold: "gap not closing materially by FY27 (guidance year 2)", where: "quarterly results, next AR MD&A", why: "FY26 actuals remain well short after year 1; persistence would be a guidance-divergence flag"}
+  - {metric: "Asset cover on listed NCDs", threshold: "further narrowing below 1.08x", where: "next AR ratio-analysis note / bond covenant filings", why: "already tightened from 1.15x to 1.08x FY25, covenant-adjacent"}
+  - {metric: "Customer complaints count", threshold: "no normalization from FY25's 91->938 surge", where: "next AR Note 72-equivalent", why: "unaddressed operational-strain signal; persistence would confirm structural issue"}
+  - {metric: "SEBI/BSE compliance penalties", threshold: "any further FY26 LODR/listing-compliance penalty", where: "exchange disclosures / next Corporate Governance Report", why: "a penalty recurred within FY25 itself; recurrence in FY26 confirms unresolved process gap"}
+strengths_top3:
+  - "Post-IPO balance-sheet transformation is real: CRAR 18.26%->24.72%, D/E 4.02x->2.87x, LCR 154% vs 100% RBI minimum, cost of funds down 20bps to 9.0% despite sector-wide NBFC funding squeeze"
+  - "Granular, genuinely diversified retail franchise: D2C AUM +21.1% to Rs7,064 Cr (51.8% of book), largest segment (Intermediate Retail, Rs6,570 Cr) shows cleanest asset quality at 0.6% GNPA"
+  - "Clean audit/governance mechanics: no fraud, no covenant breach, no going-concern issue, no whistleblower matter, full CSR compliance -- concerns are disclosure-hygiene and narrative-framing, not integrity/solvency"
+red_flags_top3:
+  - "Regulator-forced ECL correction (FLDG exclusion) elevated to Auditor's Emphasis of Matter in the new auditor's first year, Rs68.35 Cr absorbed in Q4FY25 PBT -- direct evidence of prior ECL-model aggressiveness"
+  - "Consolidated PAT fell 5.2% (Pragati Finserv swung to Rs29.39 Cr loss, 85.7% net-worth erosion) while standalone-only +22.3% headline was the figure emphasized throughout Chairman's/MD&CEO's letters and front-matter"
+  - "Recurring pattern of unreconciled duplicate figures across the document (dual NNPA ratios, dual Stage-3 coverage figures, three different total-borrowings figures, mismatched audit-fee and CEO-remuneration figures, and a twice-repeated front-matter 'Total Income Rs2,071 Cr' that ties to none of the three audited Total Income figures)"
+best_fit_strategy: "Turnaround-within-growth (Pragati/credit-cycle normalization inside an otherwise-scaling, well-capitalized retail NBFC)"
+one_line_verdict: "Balance sheet strong, credit cycle unresolved, disclosure discipline needs work."

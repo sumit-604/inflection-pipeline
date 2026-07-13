@@ -1,0 +1,29 @@
+stage: B12c
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete   # PHASE 1 SCOPE: gate0 + emoat only; valuation deferred to phase 3
+gate0:
+  rules_checked: 30
+  fails:
+    - {rule: "Classification matrix + deal-breaker application", severity: MAJOR, detail: "Literal core 32<40 = AVOID per matrix; AVERAGE rests solely on operator-instructed adjusted-basis rescaling (32/80=40%, exactly the 40.0 boundary). Report's second justification - deal-breakers #3/#4 'cap at max AVERAGE, converging on AVERAGE' - is logically invalid: a cap is a ceiling not a floor, and AVOID satisfies 'max AVERAGE'. Class survives on operator authority (exclusion set is consistent and defensible) but is not independently corroborated as the report claims."}
+emoat:
+  rules_checked: 15
+  fails: []
+valuation: {rules_checked: 50, fails: []}   # PHASE 3 merged: 50 lender-adapted Sec 1B + Role 2 rules, 0 fails, 3 MINOR advisory
+recomputed_destination_pe: "concur - 13.4x additive / 10.0x RRM reproduced"
+recomputed_decision: "concur - AVOID (on valuation); Hurdle Ratio 1.53 = STOP"
+phase3_valuation_findings:
+  - {severity: "MINOR", location: "B11 Pillar 3 3a (+2x)", note: "SOM-implied CAGR qualifier rests on B09 TAM inference; admissible (Amend 4.1 lists SOM-implied CAGR as eligible, capacity cross-check passes >=20%). Immaterial: v3.3 floor +0x still yields 11.4x -> STOP/AVOID."}
+  - {severity: "MINOR", location: "B11 RRM Track 1 (10.0x)", note: "'Fundamental Base PE' taken as quality-adjusted base 11.38x (x0.88) not additive raw 13.4x; Master term ambiguous. Conservative; P/B primary governs; decision unchanged."}
+  - {severity: "MINOR", location: "B14 position sizing", note: "Promoter CAUTION treated as non-forcing on verdict but binding as sizing cap. Conservative, immaterial - AVOID stands on Gate0/U-D/Hurdle grounds."}
+phase3_acceptance_rate: 100
+findings:
+  - {severity: MAJOR, location: "B01 Classification", claimed: "AVERAGE, corroborated independently by deal-breaker caps + adjusted basis", framework_truth: "Core 32<40 = AVOID literally; deal-breaker caps set a ceiling (max AVERAGE), not a floor, so they do NOT lift AVOID to AVERAGE; AVERAGE is carried solely by the operator-authorized, boundary-exact (40.0) adjusted-basis rescaling, which is not a framework mechanism", note: "Classification defensible via operator instruction and consistent exclusion set, so it survives; the stated dual-justification overstates framework support. Cleaner native path (deal-breaker #9 on 1.75yr public history -> AVERAGE) was available but unused."}
+  - {severity: MINOR, location: "B01 Block A / A4", claimed: "A4 = 3 for a 0.76pp ROCE decline", framework_truth: "0.76pp decline falls in the undefined gap between the 'latest>=earliest=5' and 'decline 1-3pp=3' bands; nearest-lower-band choice is conservative", note: "No impact: Block A=3<8 either way; deal-breaker #1 fires regardless. Flagged in-report."}
+  - {severity: MINOR, location: "B01 Block F / M4,M10", claimed: "M4=3, M10=3", framework_truth: "'=5' band requires a receivable-days sub-condition that is N/A for an NBFC; dropping to '=3' is the conservative mapping", note: "No effect on moats_confirmed (still 3) or MODERATE class; flagged lower-confidence in-report."}
+  - {severity: MINOR, location: "B07 Section 3 summary", claimed: "'6 of 20' Strong/Moderate", framework_truth: "5 of the 20 (D1,D2,B3,F2,G1) + R1 (the 21st category) = 6; YAML active_categories lists all 6 correctly", note: "Presentational only; no effect on score, completionist recount, or classification."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 91

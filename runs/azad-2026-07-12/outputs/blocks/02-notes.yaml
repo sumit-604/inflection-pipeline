@@ -1,0 +1,40 @@
+stage: B02-notes
+company: "AZAD"
+run_date: "2026-07-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Mixed working-capital signal: trade receivable ageing improved (>6mo overdue 15.3% to 8.0%, Note 10 p.149) and DSO roughly flat (182 to 178 days), but inventory turnover slowed (0.39x vs 0.42x, Note 46 p.182), government-authority receivables more than doubled (+100.5% vs +32.9% revenue growth, Note 12 p.151), and capital advances nearly tripled (+182%, Note 8 p.148) -- non-trade working capital intensity rising faster than revenue even as trade receivables improved."}
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Rs22.56 Cr direct-to-equity derivative/put-option charge on Azad Prime NCI plus Rs17.15 Cr redemption liability, bypassing P&L, equal to 25.8% of consolidated FY25 PAT", note_ref: "Note 43 consol p.243; Note 12(v)/18 pp.216,221", rating: "Red Flag", why: "Largest, most judgment-intensive accounting item in the filing; creates an off-P&L contingent cash outflow"}
+  - {rank: 2, finding: "Plant & machinery depreciated over 15 years vs Schedule II norm of 7.5 years, own technical estimate with no independent report cited", note_ref: "Note 2.2.E(ii) p.136", rating: "Watch", why: "Materially understates annual depreciation on a Rs383.74 Cr net PPE base"}
+  - {rank: 3, finding: "Contradictory customer-concentration disclosures in the same consolidated notes: 11 customers each >10% of revenue (Note 31c) vs only 1 customer >10% (Note 34B)", note_ref: "Note 31(c) p.229 vs Note 34(B) p.235", rating: "Watch", why: "Drafting/QC lapse undermines confidence in disclosure accuracy elsewhere"}
+  - {rank: 4, finding: "Top-5 customer revenue concentration rose from 45.1% to 51.1% YoY while single-largest customer held flat at ~13.9%", note_ref: "Note 36(B)(ii) standalone p.172", rating: "Watch", why: "Broadening but deepening dependence on a small customer set"}
+  - {rank: 5, finding: "Rs637.54 Cr (~91% of gross QIP proceeds) still idle in bank deposits/escrow at FY25 year-end, vs IPO proceeds confirmed fully utilised", note_ref: "CARO Annexure B cl.x(a)/(b) p.121; Note 43 standalone p.180", rating: "Watch", why: "Capital-deployment lag; monitor FY26 conversion into capex"}
+  - {rank: 6, finding: "Title deeds for Rs25.90 Cr of PPE land (Tunkibollaram) not held in Company's name, and this land is pledged as loan collateral", note_ref: "Note 3 p.144; CARO Annexure B cl.i(c) p.119", rating: "Watch", why: "Governance/legal-risk item independently corroborated by a qualified CARO clause"}
+  - {rank: 7, finding: "FY24 comparative year was 86% inflated by non-recurring other income (Rs27.36 Cr of Rs31.99 Cr), all zero in FY25", note_ref: "Note 24 standalone p.159", rating: "Watch", why: "YoY growth-rate analysis using FY24 as base needs adjustment for this comparability distortion"}
+  - {rank: 8, finding: "Tax-rate reconciliation internally inconsistent between standalone and consolidated notes for the same Rs37.49 Cr total tax expense; unexplained Rs1.91 Cr Other timing difference deferred-tax line", note_ref: "Note 38(F) standalone p.177 vs Note 36(F) consol p.239", rating: "Watch", why: "Genuine cross-note puzzle with no narrative explanation anywhere"}
+  - {rank: 9, finding: "Both Independent Auditor's Reports name only one Key Audit Matter (routine revenue cut-off) and are silent on the Rs22.56 Cr equity-bypass derivative/NCI item", note_ref: "Standalone p.114; Consolidated p.183", rating: "Watch", why: "Disclosure-emphasis mismatch between notes depth and audit-risk focus on the filing's largest judgment item"}
+  - {rank: 10, finding: "New unhedged EUR-denominated borrowing exposure of Rs82.2 Cr appeared in FY25 with no hedging programme disclosed", note_ref: "Note 36(C)(ii) p.175", rating: "Watch", why: "Unmitigated FX risk on a new borrowing exposure"}
+  - {rank: 11, finding: "Trade receivables ECL allowance doubled YoY (+98%) while >6-month-overdue proportion of the book improved from 15.3% to 8.0%", note_ref: "Note 10 p.149", rating: "Watch", why: "Seemingly inconsistent provisioning signal worth reconciling with management"}
+  - {rank: 12, finding: "Capital advances outstanding nearly tripled YoY (+182%), well ahead of capex/PPE growth", note_ref: "Note 8 p.148", rating: "Watch", why: "Large cash outflow ahead of asset capitalisation; track FY26 conversion rate"}
+  - {rank: 13, finding: "Government-authority receivables more than doubled YoY (+100.5%), roughly 3x revenue growth", note_ref: "Note 12 p.151", rating: "Watch", why: "Increasing working capital tied up in government dues, a non-obvious drag on operating cash conversion"}
+  - {rank: 14, finding: "IT general-controls gap: audit-trail feature not enabled at database level; for subsidiaries auditors could not assess if it operated throughout the year", note_ref: "Annexure B/Rule 11(g) pp.117,186", rating: "Watch", why: "Genuine internal-controls gap, more pronounced at newly-formed subsidiaries, tempered by an otherwise clean IFC opinion"}
+  - {rank: 15, finding: "Non-audit fees to the statutory auditor more than tripled; true total auditor compensation including IPO/QIP-capitalised fees materially exceeds the P&L-visible line", note_ref: "Note 29(i) p.161", rating: "Watch", why: "Audit-independence-adjacent item, not disqualifying but worth monitoring"}
+red_flags:
+  - "Rs22.56 Cr direct-to-equity derivative/put-option charge on Azad Prime NCI, bypassing P&L, neither Key Audit Matter addressed (Note 43 consol p.243)"
+  - "Plant & machinery useful life of 15 years vs Schedule II statutory default of 7.5 years, no independent technical report disclosed (Note 2.2.E(ii) p.136)"
+  - "Contradictory customer-concentration disclosures within the same consolidated notes (Note 31c p.229 vs Note 34B p.235)"
+questions_for_mgmt:
+  - "What is the technical/engineering basis for the 15-year useful life on plant & machinery vs the Schedule II default of 7.5 years, and is an independent technical assessment available?"
+  - "Can management reconcile the contradictory customer-concentration disclosures: Note 31(c) states 11 customers each exceed 10% of revenue vs Note 34(B) which states only one customer exceeds 10%?"
+  - "What caused the Rs1.91 Cr Other timing difference deferred-tax line in FY25, and why do the standalone and consolidated tax-rate reconciliations allocate the same Rs1.97 Cr earlier-year tax charge so differently?"
+  - "What is the deployment plan and timeline for the Rs637.54 Cr of QIP proceeds still held in fixed deposits/escrow at FY25 year-end, and what is the expected capitalisation schedule for the Rs108.43 Cr of capital advances already paid?"
+  - "Under what circumstances could Leo Primecomp exercise its put option on the 49% Azad Prime stake (fixed floor Rs22.56 Cr), and what is the funding plan should the Rs17.15 Cr redemption liability crystallise?"
+receivables_trend: "improving on trade-receivable ageing basis (>6mo overdue 15.3% FY24 to 8.0% FY25, Note 10 p.149; DSO ~182 to ~178 days) but broader working capital intensity rising: inventory turnover slowed 0.42x to 0.39x (Note 46 p.182), government-authority receivables +100.5% YoY (Note 12 p.151), capital advances +182% YoY (Note 8 p.148) -- all well ahead of 32.9% revenue growth"
+restatements_found: []
+going_concern_language: "NONE -- both standalone and consolidated Independent Auditor's Reports (p.114, p.183) are clean, unqualified opinions with no emphasis-of-matter; Section 143(3)/Rule 11(g) reservation limited solely to the audit-trail database-level exception; IFC opinion clean in both Annexure C reports"

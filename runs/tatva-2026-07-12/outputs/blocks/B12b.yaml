@@ -1,0 +1,20 @@
+stage: B12b
+company: "TATVA"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 14
+caught: 12
+partially_caught: 1
+missed:
+  - {severity: "MINOR", item: "PTC described Q4 as 'steady organic growth in line with historical trends' the same quarter it printed -20% YoY (INR311mn); narrative-vs-number tension not surfaced (segment ~24% of revenue, but figure was openly disclosed)", anchor: "Q4 FY26 call, Ajesh Pillai, p.2-3"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B: precise, delivered financial guidance offset by repeated long-cycle slippage, a twice-dodged ROCE target, and an industry-recovery framing peers do not corroborate"
+findings:
+  - {severity: "MINOR", location: "B05 1C trigger-evolution table / 4C management verdict", claimed: "SDA trend 'Strengthening'; SDA delivered", source_truth: "SDA revenue declined sequentially in Q3 (INR534mn, -10% QoQ) and Q4 (INR525mn, -2% QoQ); Q3 FY26 Chintan Shah deflected the sequential question with 'Don't track SDA on a sequential basis ... please track SDAs on an annual basis'", note: "PARTIALLY CAUGHT — B05 notes campaign lumpiness and cites QoQ figures but does not flag the two-quarter sequential decline or the metric-reframe on the #1 trigger; legitimate campaign dynamics and open disclosure keep this MINOR"}
+  - {severity: "MINOR", location: "B05 red_flags / Section 3B", claimed: "PTC treated only as commoditization risk", source_truth: "Q4 FY26 PTC -20% YoY while outlook narrative is 'steady organic growth in line with historical trends'", note: "MISSED narrative-vs-number tension; low severity as the number was disclosed and PTC is a mature, de-emphasized segment"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 86

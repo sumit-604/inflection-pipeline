@@ -1,0 +1,21 @@
+stage: B14-thesis
+company: "NORTHARC"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 153, high: 173}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "FY27 Q1/Q2 consolidated credit cost re-accelerates above 3.2% WITH GNPA past 1.5% (SHARED CATALYST / structural reclassification), OR exit RoE stalls below 11% for two quarters (FTTCP Transition 4 falsifier)"
+monitoring_checklist:
+  - "Q1/Q2 FY27 consolidated credit cost: green <=2.8% two quarters, red >3.2% (decisive shared catalyst)"
+  - "GNPA (Gross Stage 3): green <=1.2%, red >1.5%"
+  - "Provision coverage (PCR): green rebuilding above 50% toward 60%, red stays <50%"
+  - "FY27 AUM growth: green >=15% YoY, red <15% YoY (Transition 1 falsifier)"
+  - "NIM/spread: green >9.7% two quarters (FIRING), red <9.0% two quarters (STAGNANT)"
+  - "Exit RoE: green >=11% trending to 14-15%, red <11% two quarters (Transition 4 falsifier)"
+  - "RoA: green >=2.8% tracking FY27 '3 plus' guide, red <2.8%"
+  - "D2C mix and loaded NIM: green mix >62-65% with loaded NIM >10%, red mix stalls below 60% or NIM compresses"
+  - "Cost of funds: green holds at/under 8.5-8.6% through FY27, red rises above 8.7-9% (peer-contradicted claim)"
+  - "HFC/NCLT exposure resolution + fee franchise: green explicit resolution disclosed and fee income >40% YoY, red continued silence and credit-fund AUM shrinking"

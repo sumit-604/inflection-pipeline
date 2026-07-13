@@ -1,0 +1,145 @@
+stage: B10-valinputs
+company: "EBGNG"
+run_date: "2026-07-12"
+model: claude-haiku-4-5
+status: complete
+unit_correction_applied: true
+unit_correction_note: "Results PDFs report in Rs Million; all _cr fields corrected to Rs Crore (Million/10). Orchestrator also corrected fy25 revenue_cr from 141.11 to 1411.11 (source 14,111.10M)."
+
+company_identity:
+  company: "GNG Electronics Ltd"
+  ticker: EBGNG
+  cmp_rs: 634.0
+  market_cap_cr: 7227.0
+  business_model_type: "Asset-light, working-capital-intensive refurbishment and trading"
+  sector_cap_row: "Recycling / Manufacturing, 25x"
+
+capital_structure:
+  equity_share_capital_cr: 22.802     # Rs 228.02 M
+  face_value_rs: 2
+  diluted_shares_cr: 11.401           # 114.01 M shares; CMP check 7227/11.401 = Rs 634
+  source: "Equity share capital 228.02 M / Rs 2 face = 114.01 M shares = 11.401 Cr shares (results Q4 FY26 p.17)"
+
+net_debt_and_ev:
+  cash_and_bank_cr: 118.24            # 1,182.38 M (cash 689.03 + bank 493.35)
+  total_borrowings_cr: 405.75         # 4,057.46 M (current 4,038.09 + non-current 19.37)
+  surplus_cash_per_fttcp_cr: 118.24
+  net_debt_cr: 287.51
+  enterprise_value_cr: 7514.51        # market cap 7,227 + net debt 287.51
+  anchor: "Results Q4 FY26 Consolidated Balance Sheet p.17"
+
+fy26_consolidated_financials:
+  revenue_cr: 1891.08                 # 18,910.75 M
+  ebitda_cr: null                     # NOT FOUND explicitly; CARE PBILDT proxy only
+  pat_cr: 132.02                      # 1,320.16 M; PBT 1,477.42M - tax 157.26M
+  eps_diluted_rs: 11.58               # results Q4 FY26 Note 5 (split/bonus adjusted)
+  cfo_cr: -215.30                     # -2,153.02 M; NEGATIVE
+  fcf_cr: -238.15                     # CFO -215.30 + capex -22.85
+  capex_cr: -22.85                    # -228.50 M
+  depreciation_cr: 10.35             # 103.52 M
+  book_value_per_share_rs: 66.5       # total equity attributable 757.79 Cr / 11.401 Cr
+  total_equity_cr: 759.33             # attributable to owners 757.79 + NCI 1.55
+  pat_margin_pct: 6.98
+  dps_rs: null
+  anchor: "Results Q4 FY26 Consolidated P&L p.20, Cash Flow p.18-19"
+
+fy25_comparable:
+  revenue_cr: 1411.11                 # 14,111.10 M (orchestrator-corrected from 141.11)
+  pat_cr: 69.03                       # 690.33 M
+  cfo_cr: -133.84                     # -1,338.41 M
+
+cash_flow_ratios:
+  cfo_pat_latest: -1.63               # -215.30 / 132.02
+  cfo_pat_cumulative: -0.93           # B01, FY20-FY26
+  fcf_pat_latest: -1.80               # -238.15 / 132.02
+  p_fcf_ratio: null
+
+growth_metrics:
+  revenue_cagr_pct: 40.6              # FY20-FY26, B01
+  pat_cagr_pct: 107.8                 # FY20-FY26, B01
+
+roce_metrics:
+  roce_latest_pct: 28.3              # OPERATIONAL ex-surplus-cash FY26 (deliberation-authoritative Pillar 1 anchor)
+  roce_latest_basis: "EBIT 190.15 Cr / (Capital Employed 790.40 Cr - Surplus Cash 118.24 Cr)"
+  roce_reported_cash_diluted_pct: 24.06   # superseded for valuation
+  roce_2yr_trend: "DEPRESSED->RECOVERING; 42.0% (FY25 operational) to 28.3% (FY26 operational)"
+  roce_forward_verdict: "RECOVERING"
+  roce_recovery_probability: "40-60% (12m)"
+  roe_pct: null
+
+valuation_inputs_fttcp_authoritative:
+  exit_pe_multiple: 20
+  exit_pe_basis: "Forward: 20x on FY30 EPS at FY29 exit (operator override 2 & 4)"
+  sector_cap_multiple: 25
+  sector_cap_row: "Recycling / Manufacturing"
+  pillar_1_roce_pct: 28.3
+  pillar_1_roce_basis: "Operational ex-surplus-cash FY26; supersedes reported 24.06%"
+  roce_recovery_credit: "Pillar 1; Strategic Premium ROCE re-rating barred"
+  cash_conversion: "INDETERMINATE (not overridden; caps disposition at PROCEED WITH CAVEATS; growth offset BARRED while INDETERMINATE)"
+  business_type: "Standard operating business, asset-light, WC-intensive refurbisher/trader"
+  macro_catalyst_flag: "Memory/component price supercycle underlies revenue, margin, Rs 743 Cr inventory bet; single point of failure for Role 3"
+  anchor: "fttcp-deliberation.md"
+
+ua_qualifiers:
+  listed_12m: false                   # listed 2025-07-30, 347 days at run date
+  gate0_or_em: false                  # Gate 0 core 48 <60 AND EM 23 <25
+  fii_dii_lt3: false                  # institutional entry ~3.94%
+  all_met: false
+
+governance_quality:
+  credibility_grade: "B"
+  promoter_verdict: "CAUTION"
+  pledge_pct: 0.0
+  institutional_ownership_pct: 3.94
+  accounting_quality_score: 3         # /10, B02
+
+cash_conversion_detail:
+  determination: "INDETERMINATE"
+  caps_disposition_at: "PROCEED WITH CAVEATS"
+  resolving_evidence: "First post-IPO statutory cash flow statement"
+  wc_days_fy25: 136.4
+  wc_days_fy26: 178.1
+
+rating:
+  agency: "CARE Ratings"
+  long_term: "CARE BBB; Stable (upgraded from BBB-; Positive)"
+  short_term: "CARE A3+"
+  date: "2026-04-08"
+
+emerging_moat:
+  em_score: 23.0
+  em_classification: "MODEST"
+  combined_assessment: "AVERAGE"
+  active_categories: 6
+
+som_tam:
+  sam_cr: 149900
+  som_3yr_cr: 4734
+  som_5yr_cr: 11154
+  som_implied_cagr_3yr_pct: 35.7
+  som_implied_cagr_5yr_pct: 42.5
+  runway_class: "MASSIVE"
+  mgmt_claim_ratio: 1.44
+
+flags:
+  - {type: FLAG-CASH, reason: "Negative CFO FY25/FY26, WCL draws as operating not financing, DSCR <1.0x all periods, WC days 136->178; caps at PROCEED WITH CAVEATS"}
+  - {type: FLAG-PROMOTER, reason: "KKOC multi-role RPT + Rs 305.32M tax demand; CAUTION; offset by institutional entry, CARE upgrade"}
+  - {type: FLAG-MARGIN, reason: "Gross margin 12.31% FY24 trails all peers 27-47%"}
+  - {type: FLAG-GATE0, reason: "Core 48/100 AVERAGE, Block B 0/20"}
+  - {type: SHARED-MACRO-CATALYST, reason: "Memory/component supercycle single point of failure for revenue+margin+inventory"}
+
+conflicts:
+  - {field: "sector_cap_row", value_a: "Pharma/CDMO 38x (manifest)", value_b: "Recycling/Manufacturing 25x (deliberation)", used: "Recycling/Manufacturing 25x", reason: "deliberation authoritative; manifest collector defect"}
+  - {field: "FY26 ROCE (Pillar 1)", value_a: "24.06% cash-diluted (B01)", value_b: "28.3% operational (deliberation)", used: "28.3%", reason: "operational is Pillar 1 anchor per operator steer"}
+
+unresolved:
+  - {field: "EBITDA FY26", why: "not explicitly disclosed; CARE PBILDT proxy only", where: "stage 11 reconstruct from EBIT + D&A"}
+  - {field: "FY27-FY30 EPS projections", why: "assembly only, no forward EPS in sources", where: "stage 11 to project from FY26 EPS 11.58 + guidance (FY27 25% rev, +50bps margin)"}
+  - {field: "current ROE", why: "not verified in audited consolidated", where: "~24% estimate"}
+  - {field: "forward capex schedule", why: "no multi-year guidance", where: "asset-light, capacity via facilities/labour"}
+
+input_gaps: [presentation_absent, annual_report_is_drhp, sector_cap_mismatch_resolved_recycling_mfg, concalls_4_available_3_used, quarterly_mix_not_disclosed_post_drhp]
+
+rating_wc_quote: "CARE Ratings, April 08, 2026, p.2 - Working capital intensive nature of business: GEL's business remains working capital intensive owing to requirements of sizeable stocking of both old and refurbished laptops, which leads to high inventory holding... the sizeable inventory holding requirements translated into increase in average operating cycle to 122 days in FY25 (PY: 93 days)... Working capital intensity is also reflected in negative cash flow from operations since FY20... GEL's ability to maintain liquidity cushion and acceptable level of inventory and receivables remain key monitorable."
+
+credibility_grade: "B"

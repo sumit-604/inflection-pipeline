@@ -1,0 +1,36 @@
+stage: B00-inputs
+company: ASIANENE
+run_date: 2026-07-13
+model: orchestrator
+status: complete
+run_type: full
+cmp: 340.0
+market_cap_cr: 1654.0
+concalls_available: true
+no_concall_mode: false
+prior_run: none
+company_memory: none
+inventory:
+  annual_report: 1
+  results: 2
+  rating: 1
+  concalls_present: 4
+  concalls_used: 3
+  peer_concalls: 8
+  screening_files: 24
+  presentation: 1
+  other: 0
+concall_map:
+  - {file: Concall_Sep_2025_Transcript.pdf, quarter: "Q1 FY26 (to confirm)", order: 1}
+  - {file: Concall_Nov_2025_Transcript.pdf, quarter: "Q2/H1 FY26", order: 2}
+  - {file: Concall_May_2026_Transcript.pdf, quarter: "Q4 FY26", order: 3}
+concalls_dropped: [Concall_May_2025_Transcript.pdf]
+peers_with_concalls: [DEEPINDS, JINDRILL]
+peers_screening_only: [DOLPHIN]
+revenue_anchor_fy26_cr: 791.05
+input_gaps: []
+flags:
+  - type: SECTOR_CAP_ROW_MISMATCH
+    detail: "manifest sector_cap_row 'Agri processing' inconsistent with oilfield/energy-services business; correct before Section 1B exit-PE in phase 3"
+    severity: MAJOR
+    decision: deferred_to_phase3

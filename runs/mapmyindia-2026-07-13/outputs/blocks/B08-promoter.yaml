@@ -1,0 +1,60 @@
+stage: B08-promoter
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No rating agency PDF available for this run"
+  - "AR used is FY2024-25 but filename/manifest labels it Annual_Report_2023"
+  - "Manifest sector classification row reported wrong by prior stage, not independently re-verified here"
+  - "Vineet Jaipuriar / Navneet Jaipuriar precise family relationship to Vermas: NOT FOUND"
+  - "Rohan Verma's new B2C venture corporate name: NOT FOUND"
+  - "MCA/RoC direct disqualification-register query not performed (search-engine coverage only)"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Attempted transfer of B2C business to founder's son Rohan Verma via 10% stake plus Rs 35 Cr CCD, reversed within ~24 hours of investor pushback (Nov-Dec 2024); InGovern publicly rebuked governance; stock fell ~25%"
+      - "ClarityX Analytics and Zenithra Tech, both promoter-family-directed, RPT volume +638% YoY (Rs0.83 Cr to Rs6.13 Cr FY25) against Rs24+ Cr approved ceilings, disclosed only as 'entity with common director' without naming the promoters"
+      - "74-year-old sole Managing Director Rakesh Kumar Verma re-appointed to 2030 with no succession plan disclosed; CEO seat vacated (Rohan Verma) with no external replacement named"
+verdict: "CONCERN"
+scorecard: {clean: 6, caution: 1, red: 3}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Proposed Rs 35 Cr CCD investment plus 10% stake to transfer B2C consumer business to CEO Rohan Verma's personal new venture; reversed after investor backlash", evidence_tier: "MEDIA REPORTED", source: "Medianama, Business Standard, YourStory, Inc42, Entrackr, inves4, The Morning Context (multi-source corroborated)", date: "2024-11-29 to 2024-12-09"}
+  - {finding: "InGovern founder publicly stated MapmyIndia's 30-year investor goodwill 'has now been lost' over the B2C transfer plan", evidence_tier: "MEDIA REPORTED", source: "YourStory, 'Beyond the Rs 35 crore: Why MapmyIndia's governance crisis won't end here'", date: "2024-12"}
+  - {finding: "ClarityX Analytics and Zenithra Tech RPT +638% YoY (Rs0.83 Cr to Rs6.13 Cr), disclosed as 'entity with common director' without naming promoters Rashmi Verma, Rakhi Prasad (ClarityX) and Rakesh Kumar Verma, Rashmi Verma, Rohan Verma (Zenithra) as the directors", evidence_tier: "VERIFIED (AR figures) + MEDIA REPORTED (director identities)", source: "AR L10304-10308, L3172-3216; thecompanycheck.com, planetexim.net, business-standard.com", date: "FY2024-25 / accessed 2026-07-13"}
+  - {finding: "Rakesh Kumar Verma re-appointed MD to age 79 (2030) via special resolution; no succession plan disclosed; CEO role vacated with no external replacement named in KMP table", evidence_tier: "VERIFIED", source: "AR L15960-16028, L2129-2137", date: "FY2024-25 AR"}
+  - {finding: "AR internally mislabels Rakhi Prasad (promoter's daughter) as 'Non-Executive Independent Director' in two committee attendance tables despite correctly classifying her as promoter-group elsewhere", evidence_tier: "VERIFIED", source: "AR L2211, L3967 vs L3401-3409", date: "FY2024-25 AR"}
+  - {finding: "Rakesh Kumar Verma sold 6.1 lakh shares (~1.1%) for Rs142.6 Cr via block deal, stated reason philanthropy/startup investing, first liquidity since IPO, promoter group holding fell 5,00,000 shares / 1.20pp in FY25 AR reconciliation with a minor quantity discrepancy versus the reported block-deal size", evidence_tier: "MEDIA REPORTED (transaction, reason) + VERIFIED (AR net change)", source: "Business Standard, Inc42; AR L9665, L4730-4731", date: "2024-06-26 / FY2024-25 AR"}
+transition_evidence:
+  - "Institutional ownership (MF/AIF/FPI/IC/NBFC) rose +1.89pp to 13.34% in FY25 from 11.45% in FY24 (AR L4732-4736)"
+  - "Board reversed the Rs35 Cr CCD self-dealing commitment within ~24 hours of investor pushback, retaining the MAPPLS brand and cutting the new venture stake to a nominal Rs10 lakh for 10% (Business Standard, Medianama, 2024-12)"
+  - "Statutory auditor rotation from Brijesh Mathur & Associates to M S K A & Associates (BDO International network affiliate), effective FY26 per mandatory Companies Act rotation (AR L2502-2522)"
+  - "New independent director Dr Ranjan Kumar Mohapatra appointed 9 May 2025 with multiple external directorship credentials (AR L3427-3428, L3419)"
+  - "Promoter pledge remains 0% (clean baseline, not a reduction trend)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - no pledge disclosed in AR or in independent market-data cross-check"
+searches_performed:
+  - "Rakesh Kumar Verma MapmyIndia promoter stake sale reason"
+  - "MapmyIndia promoter shareholding reduction block deal 2024-2025"
+  - "ClarityX Analytics Rakhi Prasad MapmyIndia"
+  - "Zenithra Tech MapmyIndia related party and directors"
+  - "MapmyIndia promoter pledge shares encumbrance"
+  - "MapmyIndia CE Info Systems SEBI order adjudication insider trading"
+  - "MapmyIndia IiAS/InGovern/SES proxy advisory governance report"
+  - "MapmyIndia Rohan Verma resign CEO new venture Rs35 crore CCD"
+  - "MapmyIndia governance controversy Rohan Verma B2C venture investors December 2024"
+  - "MapmyIndia stock price crash Rohan Verma resignation percent"
+  - "MapmyIndia CFO change history Anuj Kumar Jain"
+  - "MapmyIndia AmbitionBox/Glassdoor employee reviews"
+  - "Vineet Jaipuriar / Navneet Jaipuriar MapmyIndia promoter group relative"
+  - "Rakesh Verma MapmyIndia philanthropy CSR foundation"
+  - "MapmyIndia NCLT oppression / SFIO / economic offence litigation"
+  - "MapmyIndia IPO 2021 promoters offer for sale controversy pricing"
+  - "Rakhi Prasad family relation Rakesh Verma Rashmi Verma"
+  - "Rakesh Verma Rashmi Verma MapmyIndia founders education background"
+  - "Rohan Verma new B2C venture launched name status update 2025"
+  - "CE Info Systems promoter pledge percentage trendlyne screener"
+searches_skipped: []
+verdict_basis: "Attempted self-dealing transfer of the B2C business to the founder's son (Rs35 Cr CCD plus 10% stake), reversed only under investor pressure and accompanied by a public InGovern rebuke and ~25% stock decline, combined with promoter-family-directed RPT vehicles (ClarityX, Zenithra) growing 638% YoY under euphemistic disclosure and elevated succession/key-man risk (74yo sole MD to 2030, no successor named) outweigh an otherwise clean legal, pledge, and audit record; no deal-breaker was triggered."

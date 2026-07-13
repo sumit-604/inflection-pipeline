@@ -1,0 +1,17 @@
+stage: B12d
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+peers_audited: 8
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, row 'DEEPINDS | Q1 FY26 (Aug 2025 call)'", note: "Contribution text cites '69% revenue growth' for Q1 FY26; actual Q1 FY26 figure in the transcript is 61.6% YoY (Rs.199.5cr). The 69.2% figure belongs to Q2 FY26 (Nov 2025 call) and is used correctly elsewhere in the report (Part 1, Q3 analysis). No verdict is affected."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100

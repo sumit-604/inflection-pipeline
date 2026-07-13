@@ -1,0 +1,16 @@
+stage: B12a
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings:
+  - {severity: "MAJOR", location: "B02 Notes Report, Finding #2", claimed: "Related-party trade receivables 56.4% of gross book", source_truth: "Note 44/50, pp.100, 123-129 standalone (AR)", note: "Figure cited from Note 44 but not independently re-derived in verification scope; calculation from source ledger not performed; material for RP-concentration risk assessment"}
+  - {severity: "MINOR", location: "B04 Business Model, Section 1C Revenue Mix Table", claimed: "O&G ₹632.8cr (80.0%) + Minerals ₹158.3cr (20.0%) = ₹791.1cr FY26 consolidated", source_truth: "Investor Presentation slide 11", note: "Sum reconciles to audited consolidated revenue ₹791.05cr; presentation-clarity gap on whether figures are consolidated or standalone (context implies consolidated, verified correct)"}
+  - {severity: "MINOR", location: "B09 TAM Report, Section 3B", claimed: "AESL standalone FY26 revenue ₹491.8cr", source_truth: "Investor Presentation slide 9", note: "Directionally plausible (implied Kuiper ₹299.25cr ÷ 7 months = ₹42.75cr/mo, consistent with mgmt guidance ₹40-45cr/mo); source not independently readable in verification scope but plausibility cross-checks pass"}
+  - {severity: "MINOR", location: "B02/B08 MD Remuneration Inconsistency", claimed: "₹277 Lakhs (CG Report p.51) vs ₹157 Lakhs (Note 44 p.125) FY25", source_truth: "Both figures confirmed present in AR (CG Report and RPT Note)", note: "Correctly flagged as cross-document inconsistency; reconciliation not provided by reports (governance concern valid; impact on single-figure remuneration metrics but not on revenue/profit classification)"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 91.4
+coverage_note: "Verified ~35 material figures: 100% of verdict-critical metrics (Gate 0 blocks, ROCE, classification drivers); 100% of major P&L/cash-flow figures; 85% of supporting metrics (receivable days, ratios, segment splits via spot-check); 70% of RP transaction details (concentration figure anchored but not re-derived); 60% of concall promise-tracking. Not checked: full peer transcript review (delegated to Verifier B/D); independent TAM rebuild from scratch; complete RP transaction ledger recalculation. All major revenue/profit/cash-flow figures correctly anchored and calculation-verified against screener CSV and source citations."

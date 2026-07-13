@@ -49,6 +49,11 @@ This record is authoritative for Phase 3. Where a conclusion here conflicts with
 - Operator ruling, in the operator's words: "sector will be Recycling and Manufacturing only."
 - Result: Recycling / Manufacturing, 25x, confirmed. Not binding under the operator set 20x destination, but locked for the record.
 
+**Override 4 — Exit multiple applied on a forward earnings basis (recorded at finalize, 2026-07-13).**
+- Draft basis: the exit multiple applies to Year-3 (FY29) EPS at the FY29 exit point, the standard three year target convention.
+- Operator ruling, in the operator's words: "do it on a forward price-to-earnings basis, so for EXIT in FY29, take the EPS earnings of FY30."
+- Result: Phase 3 values the FY29 exit at 20x times FY30 EPS (the forward year's earnings), not FY29 EPS. This raises the exit value relative to the trailing-at-exit convention, consistent with the operator's stated forward-PE preference. Stage 11 applies 20x to the projected FY30 EPS to set the FY29 target, then discounts to the entry zone under the Tier A 25 percent hurdle.
+
 ---
 
 ## FINAL FTTCP VERDICT (in the operator's own words)

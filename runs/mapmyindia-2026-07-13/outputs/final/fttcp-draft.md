@@ -1,4 +1,4 @@
-# FTTCP v1.2 Draft — MapMyIndia (C.E. Info Systems Ltd)
+# FTTCP v1.2 Draft: MapMyIndia (C.E. Info Systems Ltd)
 
 Company: C.E. Info Systems Ltd (MAPMYINDIA). CMP Rs1,185. Market cap Rs6,488 Cr. Run date 2026-07-13.
 Mode: FIRST WORKUP (no prior company memory, run_type full). Role 1 fields (destination PE, prior thesis, prior devil's advocate) are N/A because FTTCP runs before valuation.
@@ -40,7 +40,7 @@ Every call below is made. Confidence is tagged. The single fact that would flip 
 
 ---
 
-## TRANSITION 1 — REVENUE GROWTH
+## TRANSITION 1: REVENUE GROWTH
 
 | Year | Revenue Rs Cr | YoY % | Basis |
 |---|---|---|---|
@@ -57,7 +57,7 @@ Every call below is made. Confidence is tagged. The single fact that would flip 
 
 What it means: three years of 22 to 40% growth stopped dead at 2.3% in FY26. The most recent quarters read plus 20%, plus 10%, minus 18%, plus 1%, so the deceleration is real and choppy, not a rounding artefact. Management pins it on government fiscal-grant delays, state elections, and re-tenders, and Newgen and Nucleus confirm the same government and enterprise deferral pattern, so the demand looks postponed rather than lost. The documented order book above Rs1,750 Cr, about 3.7 times revenue, plus the signed IOCL and Survey of India contracts, is a real forward catalyst. The illustrative FY27 to FY31 columns are built from the roughly 16% SOM-implied CAGR and the order book, and they deliberately do NOT use management's Rs1,000 Cr by FY28 target, which implies about 45% annual growth and reads as inflated at a 1.56 claim ratio. Backward STAGNANT. Forward STARTING.
 
-## TRANSITION 2 — MARGIN EXPANSION
+## TRANSITION 2: MARGIN EXPANSION
 
 | Year | EBITDA margin ex other income % | Basis |
 |---|---|---|
@@ -74,7 +74,7 @@ What it means: three years of 22 to 40% growth stopped dead at 2.3% in FY26. The
 
 What it means: the blended EBITDA margin has fallen about 740 basis points over four years, because the highest-margin map and data licensing revenue is shrinking 8.7% while lower-margin IoT carries the growth. Two facts pull the other way: the Q4 FY26 blended margin snapped back to about 44%, and IoT's own margin rose from 14% to 16%. But one strong quarter against a four-year compression, with the premium core still eroding, is not yet a turn. Backward COMPRESSING. Forward STAGNANT, rounded down from the STARTING boundary.
 
-## TRANSITION 3 — CASH CONVERSION (the critical one)
+## TRANSITION 3: CASH CONVERSION (the critical one)
 
 | Year | PAT Rs Cr | CFO Rs Cr | CFO/PAT | Debtor days | Basis |
 |---|---|---|---|---|---|
@@ -87,7 +87,7 @@ What it means: the blended EBITDA margin has fallen about 740 basis points over 
 
 What it means: cash conversion at 0.70 times PAT is not by itself alarming, but the debtor-day line is: 79, 76, 101, 105, 136, a jump of 31 days in FY26 alone on flat revenue. Receivables rose 32% to Rs176 Cr while sales rose 2.3%. It cannot be growth-induced because there was no growth. It is concentrated at the Gtropy hardware and IoT subsidiary, whose overdraft is fully utilised, while the standalone map core improved. It has no peer analogue, Newgen DSO held at 123 to 125 days and Nucleus receivables fell, so it is company specific. Whether it is a transient government-collection lag or a permanent structural leak cannot be resolved, because the credit rating rationale and the FY26 receivables ageing schedule are both absent, and management deflected the DSO question twice. This is INDETERMINATE and it never resolves to a clean pass. Backward DETERIORATING. Forward DECLINING, catalyst strength WEAK.
 
-## TRANSITION 4 — ROCE / CAPITAL EFFICIENCY
+## TRANSITION 4: ROCE / CAPITAL EFFICIENCY
 
 | Year | Reported ROCE % | Operating ROCE ex-cash % | Basis |
 |---|---|---|---|
@@ -122,7 +122,7 @@ The forward composite is 0 out of 8: revenue STARTING at plus 1, margin STAGNANT
 
 ---
 
-## STEP 3 — FORWARD SCORECARD
+## STEP 3: FORWARD SCORECARD
 
 | Transition | Backward | Catalyst strength | Forward probability | Forward verdict | Score |
 |---|---|---|---|---|---|
@@ -134,7 +134,7 @@ The forward composite is 0 out of 8: revenue STARTING at plus 1, margin STAGNANT
 
 Cap state: Kernex cap NOT engaged (cash catalyst judged WEAK, not NONE; flagged as a close call). TRIM rule not triggered. Disposition cap: PROCEED WITH CAVEATS (INDETERMINATE cash).
 
-## STEP 5 — MONITORING TRIGGERS (90 to 180 days)
+## STEP 5: MONITORING TRIGGERS (90 to 180 days)
 
 | # | Trigger | Threshold | Horizon | Changes in FTTCP |
 |---|---|---|---|---|

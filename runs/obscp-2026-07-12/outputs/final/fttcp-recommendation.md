@@ -18,6 +18,8 @@ Price history added from the operator's daily chart (TradingView, 2026-07-12), w
 
 The strict never-reached test does NOT fire: the zone top Rs 252 is above the lowest tested price since listing (~Rs 120), so the stock does not need new all time lows to reach it and it did trade through the zone in early-to-mid 2025. But from Rs 666 in a strong rising channel making new highs, a fall to Rs 207 to 252 is a 62 to 69% drawdown and sits below even the 52 week low, so near term reachability is low. Classify DEEP WATCH, not an actionable WATCHLIST: the entry comes only via a broad de rating or a thesis relevant shock, not from normal trading. No Tier B alternative: the hurdle STOPs on both tracks and the zone stays roughly a third of CMP under either ROCE convention.
 
+Operator-directed valuation variant (forward FY30 EPS at exit). The operator directs that the FY29 exit multiple be applied to FY30 one-year-forward EPS rather than trailing FY29 EPS, on the India growth-runway view. The destination PE is unchanged (16.5x RRM / 20.1x additive); only the earnings base moves. This lifts the re-engagement zone by about one year of growth to **Rs 267 (RRM) to Rs 325 (additive), MoS about Rs 214 to Rs 261**. On the additive track the entry top Rs 325 sits at or above the 52 week low (~Rs 270), so the zone becomes reachable on a normal 40-50% correction. The decision is unchanged: AVOID at CMP Rs 666, hurdle STILL STOPs (base 0.96, bull 1.23), probability-weighted CAGR about -3.1% (additive) to -9.3% (RRM). Use Rs 267-325 as the operator's re-engagement zone; the trailing-based Rs 207-252 (MoS Rs 166) is retained as the conservative floor.
+
 ## Confidence delta
 
 | Component | Score | Source |

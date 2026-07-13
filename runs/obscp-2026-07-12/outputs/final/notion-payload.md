@@ -15,12 +15,12 @@ OBSC Perfection Ltd (OBSCP) — Precision auto components — 2026-07-12
 - Destination PE: 16.5x (RRM track, governing) / 20.1x (additive track); Manufacturing 25x cap not binding
 - Hurdle verdict: STOP (base Hurdle Ratio 0.74, Tier A 25%); probability-weighted expected CAGR -10.4%
 - Fair value base: Rs 404 (RRM) to Rs 492 (additive)
-- Entry zone: Rs 207 to Rs 252; MoS Rs 166 (roughly a third of CMP; MARKET-UNLIKELY ZONE)
+- Entry zone: operator variant Rs 267 to 325 (forward FY30 EPS at exit), MoS Rs 214 to 261; conservative floor Rs 207 to 252 (trailing FY29 EPS), MoS Rs 166. AVOID at CMP on both; forward-variant top Rs 325 is at/above the 52 week low (~Rs 270), reachable on a 40-50% correction
 - Confidence delta overall: 82 (numerical 97, redflag 82, framework 96, peer 88)
 - Devil's advocate: WEAKENED BUT ALIVE; valuation safety DESTROYED
 
 ## Decision Status (text field; do not overwrite the select)
-DEEP WATCH / AVOID on valuation. Re-engage only near Rs 207 to 252 AND only if no thesis-broken trigger has fired.
+DEEP WATCH / AVOID on valuation. Re-engage near the operator zone Rs 267 to 325 (forward FY30 EPS variant), or the conservative floor Rs 207 to 252 (trailing), AND only if no thesis-broken trigger has fired.
 
 ## Promoter verdict (text field)
 CAUTION. Structural related party dependency on promoter-controlled Omega Bright Steel (raw material, no non-compete, Rs 12.45 Cr Nov-2025 asset buy); clean regulatory and pledge record otherwise.

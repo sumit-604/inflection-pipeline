@@ -89,3 +89,20 @@ Final deliberation verdict as it stands: FTTCP composite +2 out of 8, DEEP WATCH
 | Sector cap | Manufacturing 25x. Corrected from the manifest EPC 20x. Only ceiling |
 | Return hurdle | Tier A, 25%. FII plus DII 2.94% below 3% |
 | Data to fetch before finalize | Clean FY25 or FY26 annual report for the receivables ageing and to anchor FY26 ROCE; the CRISIL BBB+/Stable rationale dated 2026-07-03 |
+
+## Operator-directed valuation variant — forward FY30 EPS at exit (added 2026-07-12, post-finalize)
+
+Operator direction: for the FY29 exit, apply the destination PE to FY30 (one-year-forward) EPS rather than trailing FY29 EPS, on the view that India offers a long growth runway so the exit multiple should be paid on forward earnings. This is a methodology variant the operator is directing; it does NOT change the framework-governed destination PE (16.5x RRM governing / 20.1x additive), only the earnings base the multiple sits on.
+
+Illustrative EPS path (FY26 anchored Rs 10.47; forward years labelled EXPECTED): base FY29 ~Rs 25.3, FY30 ~Rs 31.7; bull FY30 ~Rs 40.6; bear FY30 ~Rs 19.4.
+
+FY29 exit target = FY30 EPS x destination PE:
+- Base: Rs 522 (RRM 16.5x) to Rs 636 (additive 20.1x)
+- Bull: Rs 670 to Rs 817
+- Bear: Rs 320 to Rs 390
+
+Return math from CMP Rs 666: base 3yr price CAGR about -1.5% (additive) to -7.7% (RRM); bull about +7.0% (additive) to +0.2% (RRM); probability-weighted (grade B, 25/50/25) about -3.1% (additive) to -9.3% (RRM). Hurdle Ratio STILL STOPs (base 0.96, bull 1.23, both below the 1.953 pass line): a 25% return would need the FY29 target near Rs 1,300, i.e. FY30 EPS near Rs 65 at 20x, about 58% compound growth for four straight years, not a base case.
+
+Effect on the decision: UNCHANGED, AVOID at CMP Rs 666. The variant's value is that it lifts the re-engagement zone by about one year of growth (~28%): forward-EPS entry Rs 267 (RRM) to Rs 325 (additive), MoS about Rs 214 to Rs 261. On the additive track the entry top Rs 325 now sits at or above the 52-week low (~Rs 270), so the zone is reachable in a normal 40-50% correction rather than needing the stock to nearly halve. The trailing-based zone Rs 207-252 (MoS Rs 166) is retained as the conservative floor.
+
+Caveat recorded: FY30 is a fourth forecast year and more speculative; the devil's-advocate single points of failure (order-book firmness, growth-induced-vs-structural cash, STAGNANT-vs-DECLINING ROCE) bind on it too, since the growth funding that year is capital-consuming (negative FCF). The pipeline canonical output stays the trailing-based AVOID / Rs 207-252; this forward-EPS variant is the operator's runway lens, entry Rs 267-325.

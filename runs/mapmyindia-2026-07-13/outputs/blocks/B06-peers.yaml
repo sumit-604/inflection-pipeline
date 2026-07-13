@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF available (carried forward from prior stages)"
+  - "annual report provided is FY25, mislabeled as 2023 in source filename (carried forward from prior stages)"
+  - "manifest sector row incorrect (carried forward from prior stages)"
+  - "peers are adjacent Indian IT-products/SaaS companies (Newgen: ECM/BPM enterprise software; Nucleus: lending/transaction-banking software; RateGain: travel MarTech/DaaS/distribution), not direct digital-mapping or IoT-telematics competitors to MMI"
+flags:
+  - "MMI's ~32% trade-receivables rise on flat FY26 revenue has no peer analogue (Newgen DSO +2 days, Nucleus receivables declined) — undercuts the industry-wide government-payment-cycle mitigating read and strengthens the company-specific cash-conversion caveat"
+  - "MMI's FY28 target-timing hedge (Q2 to Q4 FY26) has no peer parallel — the one peer with a comparable multi-year target (RateGain) showed rising, not falling, confidence and hit its target a year early; the other two peers give no numeric multi-year guidance at all by policy"
+  - "New Indian Labour Code cost impact, quantified and flagged by both Newgen and Nucleus in the same fiscal year, is entirely absent from MMI's own concall disclosure — a missing-risk item for synthesis"
+peers_provided: 9
+verified:
+  - {claim: "FY26 government/BFSI client order deferral is industry-wide, not MMI-specific", peers: ["NEWGEN", "NUCLEUS"], anchor_count: 5}
+partially_verified:
+  - {claim: "Order-book-to-revenue conversion-rate compression similar to MMI's 13-18%", peers: ["NEWGEN", "NUCLEUS"]}
+  - {claim: "AI-related scope changes/customer AI-readiness causing FY26 revenue/billing delays", peers: ["NEWGEN"]}
+  - {claim: "Single-customer/OEM concentration explicitly dragging segment growth (Hyundai analogue)", peers: ["RATEGAIN"]}
+  - {claim: "Government/enterprise capex-to-opex contract transitions in IoT-analogue business lines", peers: ["NEWGEN"]}
+contradicted:
+  - {claim: "Receivable-days/DSO increases in FY26 comparable to MMI's ~32% rise on flat revenue", contradicting_peer: "NEWGEN, NUCLEUS", quote_anchor: "NEWGEN Q1-Q3 FY26 calls (Jul 2025 PDF p.4, Oct 2025 PDF p.4-5, Jan 2026 PDF p.4): DSO 123->124->125 days; NUCLEUS Aug/Nov/Feb calls (PDF p.4, p.4, p.5): receivables Rs126.12cr->116.19cr->117.44cr (declining)"}
+  - {claim: "Peers walked back a multi-year revenue target's timing confidence within the same fiscal year", contradicting_peer: "RATEGAIN", quote_anchor: "RateGain Q2 FY26 call (Nov 2025, PDF p.1): 'well ahead of that goal... achieving this milestone a year ahead of schedule'; Q3 FY26 call (Feb 2026, PDF p.13): confirms early hit and issues new $1bn-by-2030 target"}
+unverifiable:
+  - {claim: "Peer citing ~18% end-market volume growth similar to MMI's auto-production reference", peers_checked: ["RATEGAIN"]}
+  - {claim: "Peers seeing hardware/component (DRAM/NAND) cost inflation pressuring margins", peers_checked: ["NEWGEN"]}
+peer_coverage_map:
+  - {peer: "NEWGEN", quarter: "Q1 FY26 (Jul 2025)", usage: "SUBSTANTIVE", contribution: "Established baseline large-deal/public-sector deceleration pattern; explicit denial of top-20-account churn"}
+  - {peer: "NEWGEN", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "DSO/receivables data point; subscription-mix data; order-book qualitative color"}
+  - {peer: "NEWGEN", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE", contribution: "Direct, time-aligned AI-readiness/customer-hesitation quote — strongest corroboration in the peer set"}
+  - {peer: "NUCLEUS", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Established board-level/regulatory due-diligence delay mechanism; baseline order book and receivables"}
+  - {peer: "NUCLEUS", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "'Experienced all across, not only in India' quote strengthens industry-wide read; receivables data"}
+  - {peer: "NUCLEUS", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Conversion improvement signal; Labour Code cost impact; receivables data"}
+  - {peer: "NUCLEUS", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Flat YoY revenue explanation (base effect, Middle East war order postponement); order book jump to Rs1,044cr; continuing Labour Code cost impact"}
+  - {peer: "RATEGAIN", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Strongest single-customer/segment-concentration match in the peer set; guidance-raise evidence contradicting target-timing-erosion claim"}
+  - {peer: "RATEGAIN", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Confirms early achievement of FY27 target and new $1bn-by-2030 target; Sojern M&A integration/leverage detail"}
+industry_cross_read:
+  demand: "Split by end-market: Newgen and Nucleus (MMI's closer analogues, government/BFSI-facing) both show persistent large-deal decision-cycle elongation through FY26, corroborating MMI's deferral narrative; RateGain (unrelated travel end-market) shows a genuine demand boom, an outlier that does not bear on MMI's sector"
+  pricing_inputs: "No peer corroborates MMI's DRAM/NAND hardware-cost-inflation claim (Newgen has no hardware line); the dominant unaddressed peer-set cost theme is the new Indian Labour Code, quantified by both Newgen and Nucleus in FY26 and entirely absent from MMI's own concall record"
+  capex_cycle: "Newgen and Nucleus are cautious organic investors during a soft demand window; RateGain is a lone expander via a large debt-funded acquisition (Sojern) — this is peer-specific to RateGain's travel-tech consolidation thesis, not an industry-wide capacity race relevant to MMI"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "New Indian Labour Code one-time and ongoing cost impact (quantified Rs18-35cr at Nucleus; wage revisions at Newgen) — not mentioned anywhere in MMI's own concall disclosure"
+  - "Global platform-player competitive entry into India (Salesforce, ServiceNow, Mendix, OutSystems named by Newgen) — MMI's management avoids naming any competitor across four consecutive calls per B05"
+  - "Board-level/regulatory due-diligence escalation as a specific, named mechanism lengthening BFSI/enterprise deal cycles (Nucleus) — MMI cites fiscal-grant timing and elections but never names a comparable governance-escalation mechanism"
+  - "M&A integration and leverage risk from debt-funded acquisitions (RateGain/Sojern) — a risk category not currently faced by MMI at its much smaller Zepto-scale commitments, but relevant if MMI's own M&A ambitions scale up"
+net_narrative_effect: "complicates"

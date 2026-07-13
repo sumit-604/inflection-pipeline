@@ -1,0 +1,54 @@
+stage: B11-valuation
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "capex / clean FCF: NOT FOUND — cannot confirm cash conversion structural vs growth-induced"
+  - "rating agency WC commentary: NOT FOUND — cash conversion remains INDETERMINATE"
+  - "RPO / order book: undisclosed — Pillar 3c pays +0x"
+  - "peer P/E, EV/EBITDA, P/B medians: UNRESOLVED in B10 — EV/Sales and EV/GP used as context only"
+flags:
+  - "FLAG-CASH carried forward: cash conversion INDETERMINATE; weak-band cash multiplier 0.80x applied, NO growth offset; caps disposition at PROCEED WITH CAVEATS / no BUY NOW"
+  - "FLAG-GATE0-AVERAGE, FLAG-CUSTOMER-CONCENTRATION, FLAG-CREDIBILITY-GRADE-B, FLAG-CASH-DEPLOYMENT-UNTESTED propagated from B10"
+  - "AVOID-ON-VALUATION: Hurdle STOP on both tracks and both base/bull scenarios"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+exit_multiple_basis: "Destination PE applied to FY30 EPS (forward PE at FY29 exit; 3-year hold). FY30 EPS built fresh in Section 2; B10 45x/Rs648 stray line ignored."
+destination_pe:
+  track1_rrm: {low: 13.5, mid: 14.7, high: 16.0, r_used: 16.0, rrm: 0.70}
+  track2_additive: {low: 19.5, mid: 21.0, high: 22.5}
+  divergence_pct: 30
+  governing_track: "Track 1 RRM (more conservative) sets the entry zone; Track 2 additive is the Section 1B headline. Even Track 2 STOPS, so the decision is robust to the choice."
+pillar_detail:
+  roce_used: 25
+  roce_base: 20.0
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 0.80
+  structural_or_growth: "INDETERMINATE — weak band 0.80x applied, no growth offset (offset requires CONFIRMED growth-induced; 0.65x structural needs rating confirmation not available)"
+  growth_offset: 0.0
+  growth_premium: 5.0
+  strategic_premium: 0.0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 45
+hurdle_ratio: {base: 0.52, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 90, base: 212, bull: 292}
+  track2: {bear: 128, base: 303, bull: 418}
+fy30_eps: {bear: 6.10, base: 14.44, bull: 19.88}
+expected_cagr_prob_weighted: -22
+entry_range: {low: 109, high: 155}
+mos_price: 87
+upside_downside_ratio: 0
+decision: "AVOID (on valuation) — Hurdle STOP; no BUY NOW independently barred by INDETERMINATE cash cap"
+unresolved_inputs_used:
+  - "capex/FCF NOT FOUND → cash multiplier held at conservative weak band 0.80x, no offset (framework conservative rule)"
+  - "rating WC commentary NOT FOUND → structural vs growth-induced left INDETERMINATE, no 0.65x and no offset"
+  - "RPO NOT FOUND → Pillar 3c = +0x (conservative, no duration credit)"
+  - "ESOP in Rs Cr not stated → adjusted-PE context derived as 7% of revenue = Rs 105 Cr (arithmetic on B10 stated 7%); Hurdle uses reported-basis identity, invariant to this"
+som_cagr_crosscheck: "consistent — base revenue CAGR 25% is below the SOM-implied 32.3% ceiling"
+cash_multiplier_used: 0.80
+structural_or_growth: "INDETERMINATE (weak-band 0.80x, no offset)"
+ua_applied: false
+sector_cap_used: 45
+one_line_thesis: "At Rs 580 AMAGI trades near 40x FY30 EPS while the four-pillar destination PE is 21.0x (RRM 14.7x); base FY30 EPS Rs 14.4 implies a Rs 303 exit below CMP, so the 25% hurdle fails on the bull case too — AVOID on valuation, INDETERMINATE cash independently bars any BUY NOW."

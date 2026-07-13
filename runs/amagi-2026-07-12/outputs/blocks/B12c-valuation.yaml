@@ -1,0 +1,26 @@
+stage: B12c-valuation
+company: "AMAGI"
+run_date: "2026-07-12"
+model: claude-opus-4-8
+status: complete
+phase: 3
+scope: "valuation-adherence (B10, B11) + Role 2 (B14) decision & position-sizing"
+valuation:
+  rules_checked: 32
+  fails: []
+role2:
+  rules_checked: 6
+  fails: []
+  decision_adherence: "WATCHLIST / AVOID-at-CMP consistent with Master Role 2; no BUY NOW under INDETERMINATE cash; Small starter ceiling correct; entry conjunction stated; no exit PE from outside Section 1B"
+  position_sizing_adherence: "Large and Medium correctly excluded on Gate0 band / EM band / CMP>entry; Small starter only upon entry conjunction; PROCEED WITH CAVEATS cap honored"
+recomputed_destination_pe: ""   # concur: Track 2 21.0x / Track 1 14.7x
+recomputed_decision: ""         # concur: AVOID on valuation / WATCHLIST at CMP; Hurdle STOP
+findings:
+  - {severity: "MINOR", location: "B11 Section 1B Pillar 3b", description: "3b +3x rests on a CLAIM-tier 0-12m catalyst (NEWSPULSE) and 0.7x-weighted self-characterized D1 moat; sits at generous edge of the EM-gated table. Even at +2x, destination PE 20.0x and Hurdle STOP / decision AVOID unchanged. Exact 3b table row not independently re-derivable from available docs."}
+  - {severity: "MINOR", location: "B11 RRM derivation", description: "Cash uncertainty double-penalized (0.80x in base AND +1.0% in r). Self-disclosed and conservative; a double-penalty not a double-credit, so single-credit rule not breached; decision unaffected."}
+  - {severity: "MINOR", location: "B14 Section 7 verdict card", description: "Verdict labeled WATCHLIST while three Master AVOID triggers (Gate0 AVERAGE, HR STOP, U/D<2x) fire; reconciled via Gate0<60 default-WATCHLIST rule + authoritative FTTCP investable override. Identical operating instruction (no buy at CMP); no decision impact."}
+  - {severity: "MINOR", location: "B11 Hurdle Ratio", description: "'Invariant to EPS basis' phrasing is loose; HR computed as Exit/CMP on FY30 EPS honors the forward-PE-at-exit instruction and is correct; STOP verdict unaffected."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 97   # 38 rules checked, 0 material fails; discount reflects 4 minor imprecisions

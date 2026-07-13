@@ -1,18 +1,21 @@
 confidence_delta:
-  numerical_acceptance: 93.6      # B12a: 44/47 numbers clean, 0 CRITICAL, 0 MAJOR
-  redflag_coverage: 63            # B12b: 12 of 19 independently-found concall red flags already caught upstream
-  framework_adherence: 96.7       # B12c: Gate 0 + Emerging Moat scope only, 0 CRITICAL, 0 MAJOR (59/61 rules); valuation component deferred
-  peer_utilisation: 92            # B12d: 11 of 12 peer transcripts used substantively, all 4 peers contributed
-  overall: 63                     # min of the four available components
-  band: "60-74 — PROCEED verdicts downgrade one level; NOT forced REWORK (>=60)"
-  binding_component: "redflag_coverage 63 (Verifier B: B05 under-weighted cash conversion, FX-flattered NRR/growth, and net-logo-add deceleration)"
-  valuation_framework_adherence: pending-phase-3   # verifier C valuation-adherence half runs in phase 3 (B10/B11 not yet produced)
+  numerical_acceptance: 93.6      # B12a (phase 1): 44/47 numbers clean, 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 63            # B12b (phase 1): 12 of 19 concall red flags caught upstream
+  framework_adherence: 96.8       # combined: B12c phase-1 Gate0+EM 96.7% (59/61) AND phase-3 valuation-adherence 97% (38 rules, 0 material fails); 0 CRITICAL, 0 MAJOR across both halves
+  peer_utilisation: 92            # B12d (phase 1): 11 of 12 peer transcripts substantive
+  overall: 63                     # min of the four; now the FULL four-component delta (valuation half added in phase 3)
+  band: "60-74 — PROCEED-family verdicts downgrade one level; NOT forced REWORK (>=60, no CRITICAL)"
+  binding_component: "redflag_coverage 63 (Verifier B: B05 under-weighted cash conversion / FX-flattered revenue quality)"
+  status: complete-phase-3
 rework_check:
-  verifier_a_critical: 0          # no forced REWORK
-  min_acceptance_rate: 63         # >= 60 floor; no forced REWORK
+  verifier_a_critical: 0
+  verifier_c_valuation_critical: 0
+  verifier_c_valuation_major: 0
+  min_acceptance_rate: 63         # >= 60 floor
   forced_rework: false
+framework_adherence_detail:
+  phase1_gate0_emoat: 96.7        # B12c gate0+emoat, 0 CRITICAL/0 MAJOR, 6 MINOR
+  phase3_valuation_role2: 97      # B12c-valuation, 0 CRITICAL/0 MAJOR, 4 MINOR; destination PE / Hurdle STOP / decision all confirmed
 notes:
-  - "Confidence is redflag-bound at 63. Verifier B's four MAJOR misses are all directionally negative on cash and revenue quality and reinforce the FLAG-CASH already raised by B02 (receivables +35.7% H1) and B03 (H1 OCF -2,006 mn); they do not overturn any number (Verifier A clean 93.6%)."
-  - "Verifier C flagged two decision-sensitive-but-rubric-compliant items for synthesis awareness: (1) B01 C2 endpoint-CAGR convention — if C2 scored 0, Core would be 39 -> AVOID rather than AVERAGE; (2) the HIGH POTENTIAL combined EM classification rests on a STRENGTHENING (30.0, below the 40 EXPANSION threshold) forward read, at the generous end of a defensible range."
-  - "Verifier C/B moat-data note: AMAGI peer screener CSVs (Affle/Newgen/RateGain/Tata Elxsi) were available but not consumed by Gate 0 stage 1 (M2/M5/M9 = 0 'PEER DATA NEEDED'); moat_score 12/60 is mildly depressed by an avoidable data gap. Does not change the AVERAGE classification (driven by core deal-breakers) and is superseded by the stage-7 EM authority (em_score 30 STRENGTHENING)."
-  - "Verifier D MAJOR: B06 overstated RateGain's disclosure 'proactiveness' (the lost-client/NRR figures were first raised by analysts, not volunteered by management); the underlying comparison holds but synthesis must correct the framing."
+  - "Overall stays 63, redflag-bound. The clean phase-3 valuation-adherence (97%) does not move the min; the binding floor remains Verifier B's concall red-flag coverage."
+  - "Devil's advocate (B15) is WEAKENED BUT ALIVE on all four dimensions and challenges the adopted operating-ROCE override (argues the Rs 109-155 zone is ~2x inflated vs a reported-ROCE floor of ~Rs 55-80, and that FY26's negative OCF makes INDETERMINATE lean DECLINING). The AVOID-at-CMP is robust to this: both floors sit far below CMP Rs 580."

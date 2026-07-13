@@ -3,16 +3,17 @@ company: "AMAGI"
 run_date: "2026-07-12"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH FLAGS"
-verdict_rule_applied: 3
+valuation_decision: "AVOID"
+headline: "Media SaaS turning profitable, priced far ahead"
 flags_active: ["FLAG-CASH", "FLAG-GATE0"]
-flag_cash_determination: "INDETERMINATE"
-confidence_delta: {numerical: 93.6, redflag: 63, framework: 96.7, peer: 92, overall: 63}
-valuation_decision: ""
-entry_range: {low: 0, high: 0}
-headline: "Media cloud SaaS crossing into profitability"
-falsification_metric: "First clean post-IPO quarter reporting negative operating cash flow again with trade receivables still growing faster than revenue"
-monitorables_count: 8
+confidence_delta: {numerical: 93.6, redflag: 63, framework: 96.8, peer: 92, overall: 63}
+entry_range: {low: 109, high: 155}
+mos_price: 87
+destination_pe: {track1_rrm: 14.7, track2_additive: 21.0}
+hurdle_verdict: "STOP"
+devil_overall: "WEAKENED BUT ALIVE"
+zone_reachability: "MARKET-UNLIKELY (entry top Rs 155 ~52% below lowest tested price ~Rs 326; ~73% below CMP Rs 580)"
+falsification_metric: "First clean post-settlement quarter reports negative reported OCF while trade receivables still grow ~35%+ faster than revenue"
 publish_candidate: false
-notion_save: {mode: append-never-overwrite-status, deferred_to: phase-3}

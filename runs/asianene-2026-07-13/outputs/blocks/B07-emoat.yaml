@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-EXECUTION, reason: "F2 execution moat scored Weak (0.7 adjusted) despite substantial forward moat-building activity: Duarmara, Tiphuk and Amguri production/connection timelines all slipped across all three concalls reviewed (Sep-25, Nov-25, May-26), consistent with the injected B05 record (credibility grade C, external-blame-heavy). Standalone FY26 revenue/EBITDA guidance (Rs650-700cr/Rs110-120cr) was missed (actual Rs491.8cr/Rs78.3cr). This caps the combined assessment below EXPANSION-tier despite Strong/Moderate scores on 7 of 20 categories."}
+  - {type: FLAG-DATA-DISCREPANCY, reason: "B01 (Gate 0) states Kuiper acquisition concluded 31-Aug-2025 for ~Rs123cr; the Annual Report states the cash consideration was US$9.25M (~Rs77cr at ~83 INR/USD). Difference likely reflects a broader deal-value metric (e.g. including assumed working capital, per AR language that Kuiper 'came with considerable working capital to fund operations') rather than the cash consideration alone. Not reconciled; flagged for downstream awareness."}
+em_score: 28.0
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B1", name: "Backward integration (Oilmax merger)", strength: "Strong", evidence_type: "📄", time_to_materialise: "12-18m (NCLT completion guided Sep/Oct-2026)"}
+  - {id: "B2", name: "Qualification lock-in (Vedanta/MCL contracts)", strength: "Strong", evidence_type: "📄", time_to_materialise: "Already active, multi-year execution underway"}
+  - {id: "C1", name: "Customer ecosystem", strength: "Moderate", evidence_type: "📄", time_to_materialise: "Already active"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "📄", time_to_materialise: "Already active, ongoing"}
+  - {id: "E1", name: "Geographic first-mover (Kuiper)", strength: "Strong", evidence_type: "📄", time_to_materialise: "Already active (Kuiper); Nigeria 12-24m"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "📄", time_to_materialise: "Already active"}
+  - {id: "H2", name: "Strategic partnerships (AGCL BOOT)", strength: "Moderate", evidence_type: "📄", time_to_materialise: "Already active"}
+evidence_mix: {documented: 17, claim: 9, inference: 4}
+completionist_recount: "📄 recount performed: 17 documented items across 7 categories (B1 Oilmax merger, B2 Vedanta/MCL contracts, C1 order-book ecosystem, C2 customer concentration, E1 Kuiper acquisition close, G1 war chest, H2 AGCL BOOT). Above the 3-6 base rate but judged genuine: two independently-verifiable M&A/merger events plus two large signed contracts inside a single 12-month window, each anchored to a specific concall or AR page. F2 (execution) and G2 (working capital) held at Weak, not upgraded, since their evidence is claim-only or unrealised."
+catalysts_12m:
+  - {catalyst: "Oilmax merger NCLT completion", window: "Sep/Oct-2026 (guided)", evidence_type: "📄", anchor: "May-26 call; SEBI approval and NCLT scheduling per Sep-25 and May-26 calls"}
+  - {catalyst: "Kuiper FY27 revenue trajectory first visible in quarterly results", window: "through FY27, first read likely Q1 FY27 results", evidence_type: "🎙️", anchor: "May-26 call, $60-65M FY27 target"}
+  - {catalyst: "Tiphuk/Amguri gas-grid connections", window: "next few months from May-2026", evidence_type: "🎙️", anchor: "May-26 call"}
+  - {catalyst: "Duarmara production start", window: "no committable date, watch for further slippage", evidence_type: "🎙️", anchor: "May-26 call ('within a month or so'), following slippage in Sep-25 and Nov-25 calls"}
+  - {catalyst: "L1 NE India O&M contract award", window: "next 2-3 quarters", evidence_type: "🎙️", anchor: "AR (L1 bidder status disclosed)"}
+capex_embedded_growth_pct: 2.5
+optionality_register:
+  - {optionality: "Coal gasification / critical minerals technology entry", converting_evidence: "Signed technology-partner agreement or committed pilot capex", first_appears: "Concall or exchange filing", window: "24-36 months, evaluation-stage only"}
+  - {optionality: "Kuiper international expansion into Nigeria", converting_evidence: "Signed local contract or registered local entity disclosure", first_appears: "Concall or AR", window: "12-24 months"}
+  - {optionality: "Coal handling opportunity beyond MCL Lakhanpur (Rs20,000cr/5yr Coal India sizing)", converting_evidence: "Additional CHP contract award(s) beyond MCL", first_appears: "Exchange filing / order announcement", window: "12-24 months"}
+  - {optionality: "South Rewa CBM clearance", converting_evidence: "Clearance grant with defined production timeline", first_appears: "AR / exchange filing", window: "12-24 months"}
+  - {optionality: "Oilmax standalone pre-merger financials never disclosed", converting_evidence: "Full audited standalone financials in merger scheme/NCLT documents", first_appears: "Merger scheme filing / NCLT documents", window: "At merger completion (Sep/Oct-2026 guided)"}
+  - {optionality: "L1 bid status for NE India O&M contract", converting_evidence: "Signed contract / letter of award", first_appears: "Exchange filing", window: "Next 2-3 quarters"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID backward score (core 37/100, driven by an FY23 revenue-collapse year and an entirely unscored Block E data gap, against a B01-documented FY24-26 recovery) meets a 28.0/80 STRENGTHENING forward score built on 📄-anchored Oilmax merger, Kuiper acquisition, and Vedanta/MCL contract wins, held below EXPANSION by a Grade-C, external-blame-heavy execution record on Duarmara, Tiphuk and Amguri production timelines."
+top_moat_risks:
+  - "Execution credibility (F2): Duarmara, Tiphuk and Amguri all slipped across all three concalls reviewed, external-blame-heavy pattern (credibility grade C) — same execution capability the Rs800-900cr Oilmax FY29/30 target depends on."
+  - "Oilmax merger completion risk: NCLT/shareholder timeline has already shifted once; further slippage would delay the largest single structural catalyst (B1)."
+  - "Kuiper integration risk: newly acquired (Sep-2025), already caused a one-time negative-PAT quarter; margin ramp from 7% to 11-12% by FY29 is guided but unproven."
+  - "GST rate increase (12% to 18%) on oilfield services is a documented, active headwind to field-ownership economics, only partly offset by management's in-house execution plan."
+  - "Minerals/CHP segment profit declined YoY in FY26 despite the large MCL win, showing uneven near-term execution even on delivered contracts."

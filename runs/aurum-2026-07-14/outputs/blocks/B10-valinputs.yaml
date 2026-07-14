@@ -1,0 +1,240 @@
+stage: B10-valinputs
+company: "Aurum Proptech Ltd"
+ticker: "AURUM"
+run_date: "2026-07-14"
+model: "claude-haiku-4-5-20251001"
+status: complete
+
+company_identity:
+  sector: "Platform / SaaS / IT services"
+  sector_cap_row: "45x (authority: FTTCP deliberation, manifest.yaml)"
+  cmp: 240
+  market_cap_cr: 1726
+  shares_outstanding_cr: 7.19
+  face_value: 5
+  enterprise_value_cr: 1646.73
+  ev_calculation: "Market Cap (1726) + Net Cash ex-lease (79.27 = Cash 81.0 - Financial Debt ex-lease 1.73)"
+
+latest_financials_fy26:
+  revenue_cr: 424
+  revenue_anchor: "OPERATOR_CONTEXT.md item 4; results press release Q4 FY26 p.2"
+  adjusted_ebitda_cr: 25.02
+  adjusted_ebitda_margin_pct: 5.9
+  ebitda_anchor: "OPERATOR_CONTEXT.md item 4; FY26 margin 5.9%"
+  pat_cr: 1.90
+  pat_margin_pct: 0.45
+  pat_anchor: "screener-Data_Sheet.csv Net profit row FY26"
+  cfo_cr: 62.93
+  cfo_anchor: "screener-Data_Sheet.csv Cash Flow row"
+  capex_cr: 15.85
+  capex_anchor: "B01 report p.100; results Q4 FY26 PDF p.17 (continuing ops only)"
+  fcf_cr: 47.08
+  fcf_anchor: "Calculated: CFO 62.93 - Capex 15.85 (B01 report p.100)"
+  book_value_per_share: 70.39
+  bvps_anchor: "Net Worth 506.25 Cr / Shares 7.19 Cr"
+  net_cash_position_cr: 79.27
+  net_cash_anchor: "Cash 81.0 - Financial Debt ex-lease 1.73 (B01 p.38; screener-Data_Sheet FY26)"
+  lease_liabilities_cr: 223.03
+  lease_anchor: "B01 report: 150.18 + 72.85 Cr non-current + current lease liabilities"
+  capex_as_pct_revenue: 3.74
+  depreciation_cr: 103.74
+  depreciation_anchor: "screener-Data_Sheet.csv FY26 (includes Ind AS 116 lease RoU)"
+  dps: "NOT FOUND"
+
+returns_latest:
+  roce_pct: 3.32
+  roce_anchor: "B01 report p.56 ROCE table FY26 row"
+  roce_fy25_pct: -2.78
+  roce_trend: "improving (FY25 -2.78 → FY26 +3.32)"
+  roce_trend_anchor: "B01 report, 5-year ROCE table"
+  roe_pct: 0.49
+  roe_anchor: "B01 report p.71"
+  roce_forward_verdict: "STAGNANT (Pillar 1 uses current ROCE, no forward uplift)"
+  roce_forward_anchor: "FTTCP deliberation: 'Pillar 1 uses current ROCE. No forward ROCE uplift enters Pillar 1.'"
+
+growth_metrics:
+  revenue_3yr_cagr_pct: 40.8
+  revenue_cagr_anchor: "Calculated: [424 FY26 ÷ 214.05 FY24]^0.5 - 1 = 40.8%; screener-Data_Sheet FY26 endpoints"
+  pat_3yr_cagr: "N/M (turnaround: FY24 -55.75 → FY25 -33.37 → FY26 +1.90)"
+  arr_fy26_cr: 500
+  arr_anchor: "OPERATOR_CONTEXT.md item 4: 'ARR crossed ₹500 Cr in FY26'; results press release Q4 FY26"
+  arr_3yr_target_cr: 1000
+  arr_target_anchor: "B05-concall.yaml guidance; OPERATOR_CONTEXT.md: '3 years / 10-12 quarters'"
+  q4_revenue_yoy_growth_pct: 72
+  q4_growth_anchor: "results press release Q4 FY26 p.2: 'Q4 total income ₹135 Cr (+72% YoY)'"
+
+cash_conversion:
+  cfo_pat_latest: 33.1
+  cfo_pat_note: "Mechanically inflated due to low PAT base (1.90 Cr FY26); flagged as ratio distortion"
+  cfo_pat_cumulative_5yr: -0.29
+  cfo_pat_cumulative_anchor: "B01 report p.82-84 Block B: CFO cumulative 36.50 ÷ PAT cumulative -127.27"
+  fcf_pat_latest: 24.8
+  fcf_pat_anchor: "FCF 47.08 ÷ PAT 1.90"
+  cash_determination: "INDETERMINATE (Pillar 2 default conservative; disposition caps at PROCEED WITH CAVEATS)"
+  cash_determination_anchor: "FTTCP deliberation: 'Cash / Pillar 2: INDETERMINATE, default conservative'"
+  named_missing_evidence:
+    - "Credit rating rationale (not collected in-run)"
+    - "FY26 receivables ageing note (needed to validate receivables-trend FLAG-CASH)"
+
+segment_revenue_sotp_inputs:
+  rental_segment:
+    revenue_fy26_cr: "~148-170 (est. 35-40% of 424, exact FY26 segment note NOT FOUND)"
+    revenue_anchor: "OPERATOR_CONTEXT.md; B04 Section 1C; results FY26 segment disclosure NOT in collected inputs"
+    profit_fy26_cr: "Targeting breakeven/small profit FY27 (FY25 was -14.54 Cr loss)"
+    profit_anchor: "OPERATOR_CONTEXT.md item 4; results Q4 FY26 press release"
+    current_occupancy_pct: 76
+    occupancy_anchor: "OPERATOR_CONTEXT.md item 4; NestAway Q4 FY26"
+  distribution_segment:
+    revenue_fy26_cr: "~254 (est. 60% of 424 Cr income)"
+    revenue_anchor: "OPERATOR_CONTEXT.md item 7: 'Distribution now ~60% of income'"
+    profit_fy26_cr: 32.3
+    profit_anchor: "OPERATOR_CONTEXT.md item 4: 'FY26 segment profit ₹32.3 Cr'"
+    profit_margin_pct: 12.7
+    margin_calc: "32.3 ÷ 254 = 12.7%"
+  capital_segment:
+    revenue_fy26_cr: "<10 (est. <3% of 424)"
+    status: "Pre-scale, loss-making, nascent SM-REIT scheme not yet launched"
+    anchor: "OPERATOR_CONTEXT.md item 4; results Q4 FY26 press release"
+
+em_score_and_catalysts:
+  em_score: 25.2
+  em_classification: "STRENGTHENING"
+  em_anchor: "B07-emoat.yaml em_score and em_classification fields"
+  evidence_mix: "14 documented + 11 claim + 3 inference (total 28 points; 50% documented)"
+  evidence_anchor: "B07-emoat.yaml evidence_mix breakdown"
+  primary_catalyst: "SM-REIT first scheme launch (or continued 'wait and watch' delay); window FY27"
+  catalyst_anchor: "B07-emoat.yaml catalysts_12m list; FTTCP: 'FY27 (mgmt-stated this financial year)'"
+  secondary_catalysts:
+    - "Debt-free completion (completed May 21, 2026 per building sale)"
+    - "Rental segment profitability target FY27"
+    - "Ecosystem revenue % disclosure (mgmt's own FY27 timeline)"
+
+credibility_grade:
+  grade: "B"
+  basis: "Strong delivery on core financials (adj EBITDA+, PBT/PAT+, ARR ₹500cr); but SM-REIT timeline slipped 4 calls, ecosystem revenue untracked until Q4, NestAway rationalization contradicted"
+  anchor: "B05-concall.yaml credibility_grade and credibility_basis fields"
+
+ua_qualifiers:
+  listed_12m_months: true
+  listed_12m_anchor: "B01 report: long-listed company"
+  gate0_gte60_or_em_gte25: true
+  qualifier_values: "Gate 0 = 58, EM = 25.2 (meets ≥25 threshold)"
+  qualifier_anchor: "B01-gate0.yaml grand_total 58; B07-emoat.yaml em_score 25.2"
+  fii_dii_lt3: true
+  fii_pct: 0.13
+  dii_pct: "NOT FOUND (3-row view, no separate DII row)"
+  fii_dii_anchor: "OPERATOR_CONTEXT.md shareholding table Mar-2026; note: FII alone 0.13% << 3%"
+  all_three_met: true
+
+rating_credit_metrics:
+  credit_rating: "NOT FOUND"
+  rating_agency: "NOT FOUND"
+  rating_date: "NOT FOUND"
+  rating_outlook: "NOT FOUND"
+  rating_gap_reason: "rating/ folder absent from inputs (B01 input_gaps)"
+  wc_commentary_quote: "NOT FOUND"
+  cfo_commentary_quote: "NOT FOUND"
+  interest_coverage_d2: 0.90
+  ic_anchor: "B01 report Block D D2 line (EBIT 24.25 ÷ Interest 26.86)"
+  ic_ex_one_time: 0.24
+  ic_ex_one_time_note: "Worse without the one-time building-sale gain, per B01 FLAG-ONE-TIME-ITEM"
+  net_debt_ebitda_d1: 1.12
+  nd_ebitda_anchor: "B01 report Block D D1 line; note: ratios vary sharply depending on lease liability treatment"
+
+input_gaps:
+  - "FY26 Segment Revenue/Profit (Audited Ind AS 108 Note) — not in collected FY26 segment press release; OPERATOR_CONTEXT splits are secondary"
+  - "Credit Rating (Agency, Rating, Outlook, Date, WC/CFO commentary) — rating/ folder absent from inputs"
+  - "FY26 Receivables Ageing Note Detail — explicitly named as FTTCP missing evidence; FY25 ageing in B02 but FY26 pending"
+  - "Q5/Q6 Building Sale Reg 30 Filing — mentioned in results/concall, but underlying filing not collected"
+  - "July-2026 Fund-Raise Board Meeting Reg 30 Filing — post-run-date event"
+  - "Peer Financial Statements (margins, market cap) — only concall transcripts collected for M2/M5/M9 moat tests"
+  - "FY26 Standalone P&L Split (Continuing vs Discontinued detail) — screener-data FY26 PBT diverges from audited segment split"
+  - "DII Shareholding % — 3-row view shows no separate DII row; may be embedded in Public"
+  - "Promoter Pledge % (E3) — not found; flagged for phase-3 confirmation via BSE/screener"
+
+flags:
+  - type: "FLAG-METRIC-DISTORTION"
+    finding: "Reported EBITDA 30.3% Q3 FY26 vs Adjusted EBITDA 6.5% differ ~4-5x due to Ind AS 116 lease accounting"
+    severity: "MEDIUM"
+    anchor: "B04 Section 3A; B04 Section 3B must-track"
+  - type: "FLAG-ONE-TIME-ITEM"
+    finding: "Q4 FY26 PAT includes ~₹17.72 Cr building-sale gain (discontinued); underlying operating profitability lower; stress test required"
+    severity: "HIGH"
+    anchor: "B01 FLAG-ONE-TIME-ITEM; results Q4 FY26 PDF p.15 Note 5"
+  - type: "FLAG-CASH"
+    finding: "Consolidated receivables ageing deteriorated sharply (>1yr buckets +327% YoY); lease cash outflow ₹70.50 Cr vs CFO ₹27.68 Cr FY25 = 2.5x coverage gap"
+    severity: "HIGH"
+    anchor: "B02-notes rank 1 & 6; FTTCP: Named missing evidence includes FY26 receivables ageing note"
+  - type: "FLAG-NARRATIVE-VS-EVIDENCE"
+    finding: "Central AI Unified Brain narrative is weakest-evidenced moat category (D1, A2 both Weak); no disclosed model-performance metric or monetized AI product"
+    severity: "MEDIUM"
+    anchor: "B07-emoat.yaml; B04 Section 2C moat assessment; FLAG-NARRATIVE-VS-EVIDENCE"
+  - type: "FLAG-SHARED-CATALYST"
+    finding: "Entire inflection hinges on Distribution segment scaling profitably; that profit is partly one-time-aided; stress test by excluding one-time gains"
+    severity: "HIGH"
+    anchor: "FTTCP deliberation: SHARED CATALYST flag"
+  - type: "FLAG-GOODWILL-IMPAIRMENT-RISK"
+    finding: "Goodwill ₹174.25 Cr = 61% of net worth; 80.5% in two negative-net-worth subsidiaries; real impairment risk"
+    severity: "HIGH"
+    anchor: "B02-notes rank 2; AR FY25 Note 3.c / Note 25"
+  - type: "FLAG-LEASE-LIABILITY-DOMINANCE"
+    finding: "Lease liabilities ₹192.33 Cr are 2.4x financial borrowings ₹81.01 Cr; real leverage understated by standard debt ratios"
+    severity: "MEDIUM"
+    anchor: "B02-notes rank 10; B04 Section 3A"
+  - type: "FLAG-SM-REIT-TIMELINE-SLIPPAGE"
+    finding: "SM-REIT launch timeline slipped in all 4 consecutive concalls since Jul-2025 license; still no quarter or AUM given as of Q4 FY26"
+    severity: "MEDIUM"
+    anchor: "B05-concall.yaml repeated_evasions"
+  - type: "FLAG-GOVERNANCE"
+    finding: "Unexplained auditor withdrawal (MSKA Sep-2024); Integrow CARO ix(a) confirmed loan default (unquantified); 7-entity CARO exception year under 56%-coverage-only auditor"
+    severity: "MEDIUM-HIGH"
+    anchor: "B08-promoter.yaml deal_breaker; B02-notes rank 1"
+
+conflicts:
+  []
+
+unresolved:
+  - field: "FY26 Segment Revenue/Profit (Audited Ind AS 108 Note)"
+    why: "No FY26 results press release segment table or detailed Q4 PDF segment note provided in-run; OPERATOR_CONTEXT splits are secondary"
+    where_it_might_be: "FY26 Audited AR Note 23 (segment reporting); Q4 results PDF detailed notes section"
+  - field: "Credit Rating (Agency, Rating, Outlook, Date, WC/CFO commentary)"
+    why: "rating/ folder absent from inputs; no credit agency PDF collected in-run"
+    where_it_might_be: "CARE Ratings, ICRA, Fitch, or other credit agency website; BSE/NSE filings"
+  - field: "FY26 Receivables Ageing Note (Aged Bucket Detail)"
+    why: "FY25 ageing detail available in AR, but FY26 ageing critical for cash conversion flag-CASH not yet disclosed in collected inputs"
+    where_it_might_be: "FY26 Audited AR Note 4 (trade receivables) ageing table"
+  - field: "Q5/Q6 Building Sale Filing (Reg 30 Intimation)"
+    why: "Building sale mentioned in results and concall, but Reg 30 filing not collected in-run"
+    where_it_might_be: "NSE/BSE Reg 30 filing, Mar-Apr 2026 timeframe; company investor relations"
+  - field: "July-2026 Fund-Raise Board Meeting Filing (Reg 30 Intimation)"
+    why: "Board meeting Jul-16-2026 post-run-date (2026-07-14); equity/QIP/preferential issuance terms unknown"
+    where_it_might_be: "NSE/BSE Reg 30 filing post-Jul-14-2026"
+  - field: "Peer Financial Statements (Margins, Market Cap for Moat Benchmarking)"
+    why: "Only peer concall transcripts collected; no margin/market-cap dataset provided for ZAGGLE/RATEGAIN/NAZARA/CARTRADE"
+    where_it_might_be: "Screener.in financial datasets or individual company ARs"
+  - field: "DII (Domestic Institutional Investors) Shareholding %"
+    why: "Shareholding table shows 3-row view (Promoters / FIIs / Public) with no separate DII row; DII may be embedded in Public"
+    where_it_might_be: "Screener.in or NSE/BSE shareholding pattern filings; company investor relations"
+  - field: "Promoter Pledge % (Shares Pledged as Collateral, E3 Metric)"
+    why: "B01 scored E3=0, flagged as not found in any provided source; stage 8 flagged for confirmation"
+    where_it_might_be: "BSE/NSE shareholding pattern (SHP) Table II; company RHP filings; Screener pledge tracker"
+
+authoritative_deliberation_inputs_from_fttcp:
+  roce_forward_pillar1: "STAGNANT (use current ROCE 3.32% FY26, no forward uplift)"
+  roce_forward_anchor: "FTTCP deliberation: 'Pillar 1 uses current ROCE. No forward ROCE uplift enters Pillar 1.'"
+  roce_recovery_credited_via: "NEITHER (Pillar 1 forward uplift nor Strategic Premium applies)"
+  roce_recovery_anchor: "FTTCP: 'not credited (STAGNANT, no premium crossing in the window)'"
+  cash_pillar2_determination: "INDETERMINATE (default conservative, disposition caps at PROCEED WITH CAVEATS)"
+  cash_pillar2_anchor: "FTTCP: 'Cash / Pillar 2: INDETERMINATE, default conservative; disposition caps at PROCEED WITH CAVEATS'"
+  cash_named_missing_evidence:
+    - "Credit rating rationale"
+    - "FY26 receivables ageing note"
+  cash_anchor: "FTTCP: 'Named missing evidence: credit rating rationale and the FY26 receivables ageing note'"
+  sector_cap_row_applied: "Platform / SaaS / IT services, 45x"
+  sector_cap_anchor: "FTTCP: 'Sector cap row: Platform / SaaS / IT services, 45x. Confirmed against B04, not corrected.'"
+  valuation_method_caution: "FY26 barely profitable; earnings PE four-pillar output is STRAINED; SOTP primary lens (EV/Revenue + EV/EBITDA per segment); PE cross-check only"
+  valuation_method_anchor: "FTTCP: 'SOTP with EV/Revenue and EV/EBITDA per segment is the primary lens, PE a cross check only'"
+  segment_valuation_guidance: "Rental segment (asset-heavier) must be valued separately rather than stretching 45x across it; Distribution uses 45x (platform cap)"
+  segment_guidance_anchor: "FTTCP: 'B04 primary method is SOTP; the Rental segment is asset heavier and must be valued separately'"
+  shared_catalyst_flag: "The whole inflection rests on Distribution segment scaling profitably; that profitability is partly one-time-aided. Stress test by stripping one-time other income and asset sale gains."
+  catalyst_anchor: "FTTCP: 'SHARED CATALYST flag for the devil's advocate: the whole inflection (revenue, margin, ROCE) rests on the Distribution segment scaling profitably, and that profitability is partly one time aided.'"

@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No promoter shareholding, pledge, or contingent-liability data in provided CSV (Block E entirely N/A, E1-E4 all scored 0)"
+  - "No trade payables breakout (Payable Days, full WC Days N/A -> B4 and M12 scored 0)"
+  - "No current vs non-current asset/liability split in CSV (Current Ratio D4 N/A, scored 0)"
+  - "No itemized cash-flow capex line; capex proxied via delta(Net Block+CWIP)+Depreciation. FY2024 capex/FCF marked N/A (Kurlon/Furlenco acquisition consolidation cannot be isolated from organic capex in provided data). FY2017 capex N/A (no FY2016 base year)"
+  - "No R&D expense or distribution-network/outlet-count disclosure (M6, M8 N/A, scored 0)"
+  - "Peer moat comparisons (M2, M5, M9) limited to 3 provided peers (CENTURYPLY, GREENLAM, NILKAMAL) -- not an exhaustive segment view; PEER DATA NEEDED for full confirmation"
+  - "screener-Profit_Loss.csv and other screener template CSVs are empty; not used"
+  - "Annual report on file is FY2022 (~4y stale); not used for any Gate 0 number, screener-data is the source per DEGRADATION MAP"
+  - "No results/ PDFs available for this stage"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 32/100) driven substantially by FY2024 Kurlon/Furlenco acquisition-related capital-employed inflation (Borrowings Rs571.10cr FY23 -> Rs1493.11cr FY24) that collapsed computed ROCE to a FY2025 trough (5.00%, min single-year, drives A2=0) and depressed the FY2017-FY2026 endpoint trend (A4=0); PAT troughed FY2025 (Rs89.35cr) and recovered FY2026 (Rs159.61cr, +78.6% YoY) as borrowings were paid down to Rs907.98cr (FY2026, -39.2% from FY2024 peak). Gate 0 is backward-looking and mechanical; flagged for downstream (Section 1B / stage 11 / stage 13) qualitative weighing of transition/recovery vs structural decline."
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 7, B: 10, C: 7, D: 8, E: 0}
+core_score: 32
+moat_score: 7
+grand_total: 39
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A 7/20 (<8) -> caps classification at max GOOD; non-binding, AVOID (from Core<40) already below this cap. Years driving it: FY2024-FY2026 (acquisition-inflated capital employed, FY2025 ROCE trough of 5.00%)"
+history_downgrade: true
+data_notes:
+  - "EBIT computed as PBT+Interest throughout (no standalone EBIT/ROCE field in screener CSV)"
+  - "ROCE computed as EBIT / (Net Worth + Borrowings), a proxy for Capital Employed since CSV lacks current/non-current liability split; applied consistently across all years and peers"
+  - "Capex proxy = delta(Net Block+CWIP) + current-year Depreciation; FY2024 marked N/A due to Kurlon/Furlenco acquisition consolidation distorting the delta; FY2017 marked N/A, no base year"
+  - "Cumulative FCF/PAT (B3) computed over the 8 years where FCF is derivable (FY18,19,20,21,22,23,25,26), excluding FY17 and FY24 from both numerator and denominator for consistency"
+  - "Gross margin proxy used for M9: (Revenue - Material Cost) / Revenue, as permitted by instruction"
+  - "No loss-to-profit PAT swing occurred (PAT positive in all 10 years); FY2025 is a trough, not a loss, so no synthetic-CAGR note applies"
+block_b_trend: "improving -- FCF swung from -Rs21.6cr (FY2023) to +Rs212.5cr (FY2026); FY2026 CFO/PAT conversion 2.56x (Rs409.32cr / Rs159.61cr) vs 10yr cumulative average 1.37x"

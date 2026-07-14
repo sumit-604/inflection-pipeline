@@ -1,0 +1,54 @@
+stage: B07-emoat
+company: "Aurum Proptech Ltd"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No B05 promise-delivery block was available in this run; F2 (execution moat) was self-derived directly from the three concall transcripts (Q2/Q3/Q4 FY26) rather than cross-referenced against a pre-built injected record."
+  - "Q5/Q6 building-sale Reg 30 filing not collected in-run; G1 (war chest) evidence rests only on the ₹17.72 Cr one-time gain in audited Q4 FY26 results plus concall narrative, not the underlying filing. Downgraded from Moderate to Weak on this basis."
+  - "PropTiger standalone post-acquisition profitability (vs. Distribution-segment-wide profitability) is not separately disclosed in any provided source; F2's PropTiger sub-claim is only partially verifiable."
+  - "AR IP section (p.51) describes a registered trademark ('PropTech'), not patents; no patent count, filing trend, or licensing revenue disclosed anywhere in-run for A2."
+  - "Nestr Dubai (E1) has no update in Q3 or Q4 FY26 transcripts after its Q2 FY26 launch; current status beyond 'early days POC' is NOT FOUND."
+flags:
+  - type: FLAG-NARRATIVE-VS-EVIDENCE
+    reason: "Company's central strategic narrative ('AI-native PropTech ecosystem,' 'Unified Brain,' management's own quote 'data is the biggest moat') maps to the two weakest-evidenced categories in this scan (D1 proprietary data asset, A2 patent/IP pipeline) — both Weak, dominated by 🎙️ claims with no disclosed model-performance metric, monetised AI product beyond a calling bot/lead-scoring, or IP filing. Flagged for stage 11/13 to weigh narrative-heavy AI positioning against thin documented proof."
+  - type: FLAG-DATA-GAP
+    reason: "Building-sale (Q5/Q6, ~INR 112 Cr) Reg 30 filing and July-2026 fund-raise board-meeting filing were not collected in-run (per B00-inputs.yaml); both are load-bearing for G1 (war chest) and for near-term dilution risk. Carried as operator-secondary context only."
+  - type: FLAG-SELF-UNDERCUT
+    reason: "Founder Ashish Deora directly undercut the customer-ecosystem/cross-sell thesis in the Q4 FY26 call: 'we have not been able to do justice to the ecosystem revenue... those numbers are still in single digit.' C1 evidence is real and quantified (22% multi-product customers, 27% developer multi-product billing) but management's own words confirm low current P&L materiality."
+em_score: 25.2
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim+documented", time_to_materialise: "12-24m"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already emerging, 12m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already emerging, 0-12m"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already emerging, 12m"}
+  - {id: "H2", name: "Strategic partnerships (REA Group 5.5% equity stake)", strength: "Strong", evidence_type: "documented", time_to_materialise: "already in place"}
+  - {id: "R1", name: "Regulatory & policy tailwinds (SM-REIT registration + Supreme Court GST ruling)", strength: "Strong", evidence_type: "documented", time_to_materialise: "already in place"}
+evidence_mix: {documented: 14, claim: 11, inference: 3}
+completionist_recount: "📄 recount performed: 14 documented items across 9 categories (A3, C1, D2, F1, F2, G1, G2, H2, R1); active Moderate+/Strong categories total 6 (within the 3-6 realistic base rate), with G1 deliberately downgraded from an initial Moderate read to Weak after the supporting Reg 30 filing was found not to be collected in-run."
+catalysts_12m:
+  - {catalyst: "SM-REIT first scheme launch (or continued 'wait and watch' delay)", window: "FY27 (mgmt-stated 'this financial year' as of Q4 FY26 call)", evidence_type: "claim", anchor: "Q4 FY26 call, Reuben M exchange"}
+  - {catalyst: "Debt-free completion via Q5/Q6 building-sale LRD paydown", window: "30-Jun-2026 target", evidence_type: "claim (filing not collected)", anchor: "Q4 FY26 call; OPERATOR_CONTEXT.md item 3"}
+  - {catalyst: "Rental segment (HelloWorld+NestAway) reaching profitability", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call, Nishita Jain/Aditya Yadav exchanges"}
+  - {catalyst: "Ecosystem/cross-sell revenue % first formally disclosed", window: "FY27, management's own committed timeline", evidence_type: "claim", anchor: "Q4 FY26 call, Ashish Deora: 'this year will be focused on cross-selling... we have started to track it'"}
+  - {catalyst: "July-2026 board-approved fund-raise terms (equity/QIP/preferential)", window: "board meeting 16-Jul-2026, post run-date", evidence_type: "operator-secondary, filing not collected", anchor: "OPERATOR_CONTEXT.md item 6"}
+  - {catalyst: "REA Group relationship evolving beyond passive 5.5% equity stake", window: "12-24m", evidence_type: "claim", anchor: "Q2 FY26 call, Onkar Shetye"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "A2: patent/IP narrative never backed by an actual filing", converting_evidence: "Disclosed patent filing/grant with application number", first_appears: "AR IP note or exchange filing", window: "24-36m, low probability"}
+  - {optionality: "A4: '10+ products' platform architecture claim", converting_evidence: "Disclosed SKU/launch-frequency data tied to margin outcome", first_appears: "Investor presentation KPI slide", window: "12-24m"}
+  - {optionality: "D1: 'Unified Brain'/data-moat claim", converting_evidence: "Disclosed AI model-performance benchmark tied to a monetised product, or signed AI licensing contract", first_appears: "Concall KPI disclosure or Reg 30 filing", window: "12-24m; highest-value if converted"}
+  - {optionality: "E1: Nestr Dubai first-mover, silent since Q2 FY26", converting_evidence: "Disclosed Dubai revenue/unit-count line", first_appears: "Quarterly results segment note or concall", window: "12m, at risk of quiet discontinuation"}
+  - {optionality: "G1: 'AI war chest' from building-sale proceeds", converting_evidence: "Itemised AI capex/opex disclosure (INR Cr, timeline)", first_appears: "FY27 AR capex note or the building-sale Reg 30 filing (not yet collected)", window: "12m"}
+  - {optionality: "H1: industry-consolidation-beneficiary pattern", converting_evidence: "New completed acquisition of a distressed/VC-backed PropTech peer with disclosed terms", first_appears: "Reg 30 filing / concall", window: "12-24m; management has explicitly closed the door for now"}
+  - {optionality: "C1: 'ecosystem revenue' cross-sell thesis materiality", converting_evidence: "Specific disclosed ecosystem-revenue percentage", first_appears: "Investor presentation or concall (management's own committed FY27 disclosure)", window: "12m"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID backward (Gate 0, driven mechanically by FY22-FY25 post-Majesco-rebuild loss years) paired with STRENGTHENING forward (25.2, six Moderate/Strong categories anchored on documented events: REA 5.5% equity stake, SM-REIT registration, Supreme Court GST ruling, cash-flow inflection, two consecutive delivered guidance milestones) is the AVOID-plus-real-forward-momentum transition setup that TURNAROUND is built to capture, not yet EXPANSION because the company's own loudest narrative (AI/data moat) is its weakest-evidenced category."
+top_moat_risks:
+  - "SM-REIT (R1) stays in 'wait and watch' for a fourth consecutive quarter with no scheme filed"
+  - "REA equity stake (H2) remains purely financial with no board seat, technology licensing, or joint GTM ever announced"
+  - "Distribution concentration (~60% of income, D2) decelerates below the historical 40%+ growth trend as PropTiger integration synergies remain unquantified ('early days' per management)"
+  - "F2 execution record (two quarters) proves fragile without the one-time building-sale gain that Gate 0 already flags as making interest coverage worse ex-gain"
+  - "G2 cash-generation inflection reverses off its still-low base"
+  - "C1 cross-sell thesis stays P&L-immaterial, as management itself admits, and the promised FY27 ecosystem-revenue disclosure never materialises"

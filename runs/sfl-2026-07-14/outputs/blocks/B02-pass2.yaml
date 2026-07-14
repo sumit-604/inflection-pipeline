@@ -1,0 +1,23 @@
+stage: B02-notes
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+pass: 2
+status: pass2_complete
+pass_2_empty: false
+provenance_note: "Source file is FY2022 Annual Report (50th AGM, year ended 31-Mar-2022 with FY2021 comparatives), not FY2023 as filename suggests; ~4 years stale vs run date. Unchanged from Pass 1."
+new_findings_count: 8
+new_top_findings:
+  - {rank: 1, finding: "Consolidated PAT fell 8.9% YoY (INR 24,015.17 lakh to INR 21,872.80 lakh) and Group total comprehensive income fell 16.25%, while consolidated revenue grew 22.4%, driven by ~68% collapse in aggregate subsidiary profit contribution", note_ref: "CON Note 58 p.200-201; cross-ref CON Note 33 p.180-182", rating: "RED", why: "Previously unflagged Group-level earnings-quality deterioration broad-based across foreign and Indian subsidiaries"}
+  - {rank: 2, finding: "Standalone SEBI ratio note shows broad profitability/return compression (Net Profit Margin 10.82pct to 9.23pct; ROE 18.08pct to 16.22pct; ROCE 23pct to 21pct; Current Ratio 1.67 to 1.56) despite 25.4pct revenue growth; variance narrative given only for improving ratios", note_ref: "STA Note 60 p.135-136", rating: "RED", why: "Margin compression signal not surfaced in Pass 1, corroborates Group PAT decline"}
+  - {rank: 3, finding: "Warranty charge nearly doubled YoY (STA +97.2pct, CON +94.7pct) and advertisement expense grew 35-41pct YoY, both far outpacing revenue growth", note_ref: "STA Note 40 p.115; CON Note 42 p.184", rating: "YELLOW", why: "Quantified driver of margin compression; warranty jump unexplained, possible product-quality signal"}
+  - {rank: 4, finding: "Depreciation and amortisation expense grew only 0.4pct (STA) / 10.9pct (CON) YoY against 25.4pct/22.4pct revenue growth and continued capex; WDV depreciation method confirmed", note_ref: "STA Note 2.2 p.88; STA Note 39 p.115; CON Note 41 p.184", rating: "YELLOW", why: "First quantified corroboration of Pass 1's extended-useful-life flag using actual reported figures"}
+  - {rank: 5, finding: "CWIP note reveals a INR 1,819 lakh physical under-construction asset transferred to ICT during the year, first such transfer", note_ref: "STA Note 3 p.98-99", rating: "YELLOW", why: "Adds asset-transfer composition detail to the already-flagged ICT capital deployment"}
+  - {rank: 6, finding: "Sleepwell Enterprises Pvt Ltd, a pure trademark/royalty licensing subsidiary, flipped to a net loss with eroding net assets", note_ref: "CON Note 58 p.200; CON Note 59 p.201", rating: "YELLOW", why: "Unusual for a licensing-only entity; unexplained in the notes"}
+  - {rank: 7, finding: "Board's Report references five step-down subsidiaries including Staqo-linked Hungary/USA/UAE entities not named in Note 59 CON's ownership table or the auditor's 2-step-down consolidation scope count", note_ref: "CON Note 59 p.201; auditor Other Matters paragraph", rating: "YELLOW", why: "Consolidation-scope reconciliation gap, partly outside strict notes scope but relevant"}
+  - {rank: 8, finding: "Legal and professional charges up 101.5pct YoY at Group level and a first-year INR 382.97 lakh FVTPL mark-to-market loss, both unexplained", note_ref: "CON Note 42 p.184; STA Note 8 p.102", rating: "YELLOW", why: "Unexplained cost step-up plausibly linked to increased RPT/financing structuring activity"}
+input_gaps_new:
+  - "Cause of IFT Spain OCI swing (INR +1,388.98 lakh FY21 to -INR 8.53 lakh FY22) not explained (CON Note 58)"
+  - "Cause of warranty charge near-doubling not explained (STA Note 40 / CON Note 42)"
+  - "Cause of Legal and professional charge near-doubling at Group level not explained (CON Note 42)"
+  - "Reconciliation of Board's Report five-step-down-subsidiary count against Note 59 CON's two-step-down disclosure not addressed anywhere in the notes"

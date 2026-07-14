@@ -1,0 +1,44 @@
+stage: B00-inputs
+company: AURUM
+run_date: 2026-07-14
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+operator_ruling:
+  empty_folder_pause: "Asked once (AskUserQuestion delivered this run). Operator answered PROCEED WITH GAPS 2026-07-14."
+inventory:
+  prospectus: absent                # NOT a gap: AURUM long-listed (ex-Majesco, BSE 539289 since ~2015)
+  annual-report: 1                  # Annual_Report_2023.pdf == FY2024-25 AR (12th AGM, filed 2025-09-01)
+  results: 2                        # Q3+9M FY26 (Dec-2025 unaudited) + Q4/FY26 (Mar-2026 audited)
+  concalls: 4                       # Q1..Q4 FY26; using 3 most recent (Q2/Q3/Q4 FY26) per contract
+  peer-concalls: 14                 # CARTRADE(4), NAZARA(4), RATEGAIN(2), ZAGGLE(4)
+  presentation: 4                   # incl. 1 misfiled broker note (Dolat Capital initiating coverage)
+  screening: 30                     # screener + CARTRADE/NAZARA/RATEGAIN/ZAGGLE CSV sets; screener Data_Sheet populated FY17-FY26
+  rating: absent
+  announcements: absent
+  shareholding: absent
+  research: 0                       # Dolat note present-but-misfiled under presentation/; NON-ANCHORED
+input_gaps:
+  - "rating/ ABSENT: no credit-rating rationale. Weakens FLAG-CASH structural/growth determination; stage 11 Pillar 2 defaults conservative. (Note: company declared debt-free May-2026 per operator context, so cash-flow-coverage rating logic is partly mooted; still no rationale PDF.)"
+  - "announcements/ folder ABSENT but PARTIALLY FILLED by operator: last-6-months announcements supplied in chat (see outputs/_working/OPERATOR_CONTEXT.md). Underlying Reg 30 filing PDFs still NOT collected, so building-sale / rights-issue-CARE-deviation / July-fund-raise are operator-secondary, not filing-anchored. Q3+Q4 items ARE corroborable from in-run concalls/results."
+  - "shareholding/ folder ABSENT but FILLED by operator: screener shareholding screenshot supplied in chat (Jun-2023..Mar-2026), treated as anchored for holding %/shareholder-count. UA institutional qualifier still decided phase-3 (FII 0.13%, no DII row). Pledge NOT in the screenshot; source from AR/web at stage 8."
+  - "prospectus/ ABSENT but EXPECTED-ABSENT: AURUM long-listed (ex-Majesco). Not a gap; no RECENTLY-LISTED priority."
+collector_defects:
+  - "AR filename Annual_Report_2023.pdf is actually the FY2024-25 Annual Report (Notice of 12th AGM, submission letter dated 2025-09-01). Same mislabel class as MAPMYINDIA/TATVA. Backward deep dive ends at FY25/FY24; FY26 from results PDFs."
+  - "research note (Dolat_Capital initiating coverage) misfiled under inputs/presentation/. Treated as NON-ANCHORED research (leads only), not a presentation."
+  - "sector_cap_row 'Platform / SaaS / IT services' looks CORRECT for a proptech-SaaS company (not the usual Pharma/CDMO defect); manifest note asks to verify. Confirm at phase-3 stage 11."
+concall_quarter_map:
+  Concall_Aug_2025_Transcript.pdf: "Q1 FY2026 (call 2025-07-25) — AVAILABLE, not used (3-most-recent rule)"
+  Concall_Oct_2025_Transcript.pdf: "Q2 FY2026 (call 2025-10-17)"
+  Concall_Jan_2026_Transcript.pdf: "Q3 FY2026 (call 2026-01-21)"
+  Concall_Apr_2026_Transcript.pdf: "Q4 FY2026 (call 2026-04-27)"
+derived_text:
+  note: "All input PDFs pre-extracted to page-marked .txt under outputs/_working/ (pypdf) to avoid the 32MB image-render wall. Subagents given .txt for bulk reading + source PDF path for table page-render fallback."
+pdf_tooling: "pypdf 6.14.2 installed + poppler-utils installed at stage 0 (recurring session-start gap); verified real extraction."
+key_financials_screener:
+  fy_sales_cr: {FY19: 988.1, FY20: 10.24, FY23: 126.87, FY24: 214.05, FY25: 263.84, FY26: 381.09}
+  fy_net_profit_cr: {FY24: -55.75, FY25: -33.37, FY26: 1.9}
+  quarterly_pat_fy26_cr: {Q1: -9.42, Q2: -8.56, Q3: 3.26, Q4: 16.64}
+  note: "Majesco US divestment collapsed FY19 sales 988 -> FY20 10; proptech rebuild to FY26 381. FY26 first profit year; PAT turned positive Q3 FY26."
+flags: []

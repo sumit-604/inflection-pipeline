@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Annual report is FY2022-vintage (year ended 31-Mar-2022) despite filename; four-year gap to the FY26 investor presentation with no bridging document"
+  - "Furlenco/House of Kieraya rental business referenced in task context not evidenced in either supplied document"
+  - "PDF page rendering unavailable (poppler-utils missing); image-heavy investor presentation slides (company snapshot, dealer/outlet counts on slide 21) assessed only via thin text extract"
+  - "India manufacturing capacity/utilization figures not disclosed in either document (only Australia 10,500 TPA and Spain 22,000 tonnes given)"
+  - "No named competitors in either document; competitive positioning map is qualitative only"
+flags:
+  - "FY22 AR 'Interest Coverage Ratio' (0.03x/0.04x) appears mislabeled/inverted; not used as an anchor, verify at concall or in restated filings"
+  - "Reported ROE/ROCE and reported EPS are materially distorted downward vs Cash ROE/ROCE/EPS due to KEL-merger goodwill/brand intangibles and non-cash D&A/deferred tax; do not use reported book-based ratios without the cash-basis cross-check"
+  - "Sleepwell/Kurlon dual-brand channel overlap post-merger is an unquantified execution risk not addressed in either document"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic branded mattress/home comfort (Sleepwell, Kurlon, Starlite, Feather Foam, SleepX)", type: "branded consumer manufacturing (B2C)", pct_of_revenue: 55, predictability: "M"}
+  - {name: "Domestic technical/institutional foam (automotive, furniture cushioning, filtration, sound absorption)", type: "industrial manufacturing (B2B)", pct_of_revenue: 15, predictability: "M"}
+  - {name: "International B2B foam (Joyce Foam Australia, Interplasp Spain)", type: "industrial manufacturing (B2B), overseas", pct_of_revenue: 30, predictability: "M"}
+  - {name: "IT/tech services (Staqo World)", type: "services", pct_of_revenue: 1, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Distribution network (13,000+ dealers, 1,800+ EBOs)", durability: "moderate-high"}
+  - {moat: "Brand (Sleepwell; Kurlon added 2024)", durability: "moderate-high, but dual-brand overlap is an execution risk"}
+  - {moat: "Intangible technology (Neem Fresche antimicrobial foam)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "P/E (relative, vs branded consumer-manufacturing peers)", why: "mature, brand-supported, positive-FCF earnings stream; standard for GARP-style consumer-manufacturing names; requires reconciling Cash EPS vs reported EPS gap first"}
+  secondary: {method: "EV/EBITDA (Core EBITDA basis)", why: "captures post-merger leverage change and international subsidiary margin mix; aligns with company's own non-GAAP Core EBITDA framing"}
+  tertiary: {method: "Sum-of-the-parts", why: "distinct economic units (domestic B2C mattress, domestic B2B technical foam, Australia+Spain foam, Staqo IT) with different growth/margin/currency profiles that a single blended multiple may mask"}
+  not_applicable:
+    - "Price/Book or NAV — balance sheet carries large KEL-merger goodwill/brand intangibles not economically meaningful as book capital"
+    - "Dividend Discount Model — no dividend paid FY22 standalone; current payout policy NOT FOUND"
+irrelevant_ratios:
+  - {ratio: "Price/Book or reported ROE/ROCE in isolation", why: "distorted by KEL-merger goodwill/brand intangibles; reported ROCE 10%/9% vs Cash ROCE 21%/18% FY26"}
+  - {ratio: "Reported EPS alone", why: "reported EPS Rs14.6 vs Cash EPS Rs35.2 FY26 due to non-cash D&A/deferred tax from purchase price allocation"}
+  - {ratio: "Gross margin as standalone profitability signal", why: "42-44% gross margin vs ~10-11% Core EBITDA margin gap is structural (freight, advertising, distribution), not a red flag by itself"}
+  - {ratio: "Static Debt/Equity ratio", why: "FY22 standalone was debt-free; FY26 shows active net-debt post-merger, a single-point ratio is stale without the trend"}
+  - {ratio: "FY22 AR 'Interest Coverage Ratio' (0.03x/0.04x)", why: "appears mislabeled/inverted; not usable as an anchor"}
+must_track_metrics:
+  - {metric: "Core EBITDA margin (ex-forex MTM)", healthy: "10-12%, FY26 run-rate 10.7-10.8%", red_flag: "sustained fall below ~8% (FY25 trough)"}
+  - {metric: "Gross margin, quarter over quarter", healthy: "42-44% standalone range", red_flag: "sequential drop >200bps unexplained by RM/pricing"}
+  - {metric: "Cash ROCE (EBIT / operating capital employed ex-goodwill/brands)", healthy: "18-21% (FY26 level)", red_flag: "converging toward reported ROCE (9-10%)"}
+  - {metric: "Net debt trend", healthy: "sustained reduction (Rs156cr in FY26)", red_flag: "reduction stalling or reversing"}
+  - {metric: "Working capital days (inventory + receivables - payables)", healthy: "cash conversion cycle ~20-30 days (FY22 standalone ~24 days)", red_flag: "material CCC extension"}
+unit_economics:
+  unit: "one mattress unit (also tracked: one tonne of foam)"
+  revenue_per_unit: "~Rs4,055 per mattress unit; ~Rs2.50 lakh per tonne of foam (FY26 standalone, computed from Inv. Pres. slide 15)"
+  margin_per_unit: "NOT FOUND — unit-level cost/margin not disclosed; only blended Core EBITDA margin (~10.7-10.8% FY26) available"
+  key_lever: "Volume growth against a largely fixed manufacturing/opex base — Q4 FY26 revenue +24% YoY drove Core EBITDA margin +407bps, evidencing strong operating leverage"
+first_deterioration_signals:
+  - {risk: "E-commerce/D2C channel disintermediation of dealer network", first_signal: "dealer/EBO net additions slowing or e-commerce growth decelerating"}
+  - {risk: "Polyol/TDI price spike without pass-through", first_signal: "gross margin decline quarter over quarter"}
+  - {risk: "Post-KEL-merger leverage/integration cost overrun, goodwill impairment", first_signal: "net debt trend stalling/rising; Cash ROCE converging toward reported ROCE"}
+  - {risk: "Sleepwell/Kurlon channel conflict or cannibalization", first_signal: "combined mattress volume growth diverging from brand-level trajectory or dealer attrition"}
+  - {risk: "Unorganized-market/counterfeiting persistence and bulky-product logistics cost structure", first_signal: "distribution/freight cost as % of revenue rising instead of falling with scale"}
+mgmt_questions:
+  - "What is SFL's actual India organized-mattress market share today, combined with Kurlon, and how has it moved since the merger?"
+  - "What is the plan and timeline to reduce standalone net debt further post-KEL merger, beyond the Rs156cr FY26 reduction?"
+  - "How much of the FY26 Core EBITDA margin improvement is a temporary RM-cost tailwind versus structural/mix improvement, and is it sustainable if Polyol/TDI prices reverse?"
+  - "How is SFL managing Sleepwell/Kurlon brand and dealer-channel overlap to avoid cannibalization?"
+  - "Why is reported ROE/ROCE running at roughly half of Cash ROE/ROCE, and does this gap normalize over time?"
+  - "What is the capacity utilization across the Indian manufacturing footprint, and what capex is planned to support further volume growth?"
+  - "What is the current status, scale, and cash contribution of the furniture-rental business (Furlenco/House of Kieraya), and is it consolidated in the reported numbers?"
+one_line_verdict: "Brand-and-distribution-led branded mattress/foam manufacturer mid-way through a leveraged, two-brand integration"

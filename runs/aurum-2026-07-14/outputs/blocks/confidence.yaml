@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: AURUM
+run_date: 2026-07-14
+scope: phase-1
+confidence_delta:
+  numerical_acceptance: 95      # B12a: 47 numbers checked, 0 CRITICAL/0 MAJOR, 2 MINOR (already-disclosed limitations)
+  redflag_coverage: 81          # B12b: 16 independent flags, 11 caught + 4 partial + 1 missed; strict 69% but coverage 81%
+  framework_adherence: 96       # B12c PHASE-1 SCOPE ONLY (Gate 0 + Emerging Moat): 49 rules, 47 pass, 0 CRIT/0 MAJ, 4 MINOR
+  peer_utilisation: 100         # B12d: 4/4 peers used substantively (peer_utilisation 1.0)
+  overall: 81                   # min of the four -> redflag-bound
+band: "75-89 normal (note specifics)"
+rework_triggered: false         # no verifier CRITICAL; no acceptance_rate below 60%
+valuation_framework_adherence: pending-phase-3   # verifier C valuation half (B10/B11) deferred to phase 3
+notes:
+  - "Binding component is redflag_coverage 81% (Verifier B). The one MISSED and one UNDER-WEIGHTED item both bear on profitability QUALITY: Integrow sub->associate deconsolidation (1-Jul-2025) removes a loss-maker; the maiden Q3 PAT-positive quarter rode INR 9.72 Cr of other income (HelloWorld lease-liability reversal), an operating loss ex that. Carry both into the gate recommendation."
+  - "No REWORK: numerical 95, framework 96, peer_util 100 all high; the 3 Verifier D MAJORs are peer-citation attribution errors that change no verdict; the 2 Verifier A MINORs are already-disclosed anchor gaps."
+  - "Framework adherence is the phase-1 (Gate 0 + EM) portion only; the valuation-adherence component is computed in phase 3."

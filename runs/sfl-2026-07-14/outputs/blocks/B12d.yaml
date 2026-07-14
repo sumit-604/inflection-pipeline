@@ -1,0 +1,19 @@
+stage: B12d
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 3
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 1, Claim 3 (organised-share progression quote)", description: "Quote '4%,4.5% -> 8%,8.5%' from CENTURYPLY Feb-2026 (Q3 FY26) call is attributed to Keshav Bhajanka; transcript shows the actual speaker is Nikita Bansal (lines 367-379 of CENTURYPLY-Concall_Feb_2026_Transcript.txt). Quote content and quarter are correct; speaker name only is wrong."}
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 3 and Part 3 peer coverage map, CENTURYPLY Nov-2025 (Q2 FY26) row", description: "Quote 'we need to stop looking at cycles... capturing the unorganized to organized... irrespective of the real estate cycle' (Nikita Bansal) is cited as sourced from the Nov-2025 (Q2 FY26) call; this exact quote is not present in that transcript. It is found instead in the Aug-2025 (Q1 FY26) transcript (lines 450-459), correctly attributed to Nikita Bansal there. Wrong-call/quarter citation; the Nov-2025 SUBSTANTIVE tag still stands on other correctly-cited material (Punjab flood spike, Sanjay Agarwal's <10% organised-share exchange) but this specific anchor is not findable at the stated location."}
+peer_utilisation: 0.75    # 3 of 4 peer entities used substantively (WAKEFIT, CENTURYPLY, GREENLAM); NILKAMAL correctly UNUSED, no transcript available. All 9 available transcript-instances were used substantively (9/9 = 100% of transcripts actually provided).
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 91    # 21 of 23 sampled citations verified clean against the transcripts

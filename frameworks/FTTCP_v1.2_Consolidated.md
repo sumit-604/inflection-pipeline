@@ -2,7 +2,7 @@
 
 *Companion to Role 1 (Valuation), Role 2 (Investment Thesis), Role 3 (Devil's Advocate), Role 4 (Quarterly Results Review), Role 5 (Concall Analysis), and Role 6 (Annual Report Deep Dive). Every preceding protocol is backward-looking by construction — they measure what HAS happened. FTTCP is the only protocol that explicitly tests whether forward catalysts exist for the transitions that drive shareholder returns. It is the bridge between historical analysis and the forward investment decision, and it runs BEFORE valuation.*
 
-*Version 1.2 | July 2026 | Dhruva Research. This single document replaces BOTH the v1.0 protocol and the v1.1 Quadruple Transition Addendum in full. Do not use those files alongside this one.*
+*Version 1.2 | July 2026 | Dhruva Research. This single document replaces BOTH the v1.0 protocol and the v1.1 Quadruple Transition Addendum in full. Do not use those files alongside this one. Amended v1.3 (12 July 2026): adds Step 2E, the Management Intent-and-Action Ledger, a governed cross-check against over-conservatism; see Step 2E and the version history.*
 
 ## THE CORE INSIGHT THAT MOTIVATES THIS PROTOCOL
 
@@ -253,6 +253,45 @@ List 3-5 SPECIFIC catalysts that could improve or sustain this transition over t
 
 Note the discipline this imposes on ROCE: even at >60% probability with Strong catalysts, a TEMPORARILY DEPRESSED backward verdict yields forward RECOVERING (not FIRING) until the recovery is confirmed in reported numbers — at which point it becomes FIRING. "RECOVERING-to-FIRING" and "STAGNANT-to-STARTING" are hybrid labels and no longer exist.
 
+## STEP 2E — MANAGEMENT INTENT-AND-ACTION LEDGER (v1.3)
+
+**Why this step exists.** A backward-anchored process is structurally biased toward the Type II error: missing a genuine inflection by being too conservative. Steps 1 and 2 measure evidence; they do not systematically ask whether management's own vision and, more importantly, its DOCUMENTED ACTIONS argue that a pillar verdict is too harsh. Step 2E is that cross-check, run AFTER the per-transition catalyst tables (2A-2D) and BEFORE the scorecard (Step 3). The operating principle: the biggest risk is not a small position that fails, it is missing the compounder, so before defaulting a transitioning business toward AVOID, look explicitly for real management action on each pillar the model marked weak.
+
+**The one discipline that stops it from becoming confirmation bias or narrative capture** — separate the two things that get lazily bundled as "management is doing X":
+
+- **VISION = words** (concall / AR / presentation statements of intent). Graded 🎙️, discounted 30-50% by track record. **Vision alone can NEVER move a pillar verdict.** "We will improve working capital," "ROCE will go up as we scale," "we are targeting Rs1,000cr" are vision, not evidence.
+- **ACTION = documented moves** (📄): a signed/closed acquisition, a commissioned line, a factoring or receivables-discounting facility that is *sanctioned and operational* (with amount and date), a disclosed debtor-day target actually HIT in reported numbers, capex genuinely deployed, a divestment closed, a rating action. Full weight, then reduced by the Role 5 promise-vs-delivery discount (an additional 20% if this management has missed on this dimension before).
+
+**Rules of application:**
+
+1. Only **net-📄 ACTION**, after the promise-vs-delivery discount, may loosen a pillar verdict, and only by **ONE state** (DECLINING→STAGNANT, STAGNANT→STARTING, STARTING→FIRING). Never leapfrog. Never on vision alone.
+2. If a pillar has vision but no action, Step 2E **CONFIRMS** the Step 2 verdict, including a conservative one. Absence of action on a missing transition is itself diagnostic and reinforces the negative read, consistent with the Kernex principle.
+3. Step 2E **does not manufacture optimism and does not independently tighten** a verdict below what Step 2 produced (downside is already governed by Step 2's evidence and the promise-vs-delivery discount). Its sole job is to catch a too-conservative verdict where real action exists.
+4. When Step 2E finds genuine 📄 action that a Step 2B catalyst table under-weighted, **do NOT patch it here** — return to Step 2B/2C, re-score that transition's catalyst with the action as evidence, and let the scorecard recompute. Step 2E is a check; the catalyst tables remain the system of record.
+5. **Kernex-cap interaction:** the cap (a transition DECLINING with catalyst NONE holds the composite at DEEP WATCH) can be lifted ONLY if Step 2E surfaces real 📄 action on that transition, which by definition means the catalyst was NONE-in-error and must be re-scored in Step 2B. Management vision to fix the missing transition, with no action, NEVER lifts the cap.
+
+**Evidence source.** The 📄 action feed is `inputs/announcements/` (exchange / Reg 30 filings), `inputs/prospectus/` for recently-listed names, the results filings, and the Role 5 promise-vs-delivery tracker. If `inputs/announcements/` is absent, Step 2E runs on concall/AR evidence only, says so, cannot grade recent documented action, and lowers confidence (see the orchestrator input contract and `docs/collector-input-sources-spec.md`).
+
+**The ledger (one row per transition):**
+
+| Transition | Stated vision (🎙️) | Documented action (📄, with source) | Promise-vs-delivery discount | Argues verdict too conservative? | Verdict adjustment |
+|---|---|---|---|---|---|
+| Revenue | | | | yes/no + why | none / +1 state (via re-score) |
+| Margin | | | | | |
+| Cash Conversion | | | | | |
+| ROCE / Capital Efficiency | | | | | |
+
+### Worked example — AIMTRON (2026-07-12): the ledger CONFIRMING, not loosening
+
+| Transition | Vision (🎙️) | Action (📄) | Too conservative? | Adjustment |
+|---|---|---|---|---|
+| Revenue | "Rs1,000cr journey", EMS→ODM | AIC/ICS acquisition closed; greenfield underway; ~Rs600cr order book | Slightly under-credited, but already FIRING (max) | none |
+| Margin | "sustain 20-24%" | AIC rationalisation (claimed ~15% vs 11% base) — mostly claim, thin documented action | Watch, not yet documented at group level | none (STAGNANT holds) |
+| **Cash** | **"stabilises once we hit Rs1,000cr"** | **NONE — no factoring, no debtor-day target, explicit deferral** | **No — vision without action** | **none; CONFIRMS DECLINING/NONE, Kernex cap stands** |
+| ROCE | "sweat the SMT lines, minor capex" | AIC utilisation headroom (~50%→90%) is real, but the greenfield capex counter-acts | Real lever, but net holds at premium | none (STAGNANT holds) |
+
+Result: Step 2E confirmed the AVOID. On the binding pillar (cash) management had vision and zero action, so the cross-check validated the conservatism rather than loosening it, and the cap held. Had Aimtron instead filed (Reg 30) a sanctioned, operational factoring facility with a debtor-day target, Step 2E would have flagged Cash as DECLINING-in-error, returned it to Step 2B for re-scoring toward STARTING, and lifted the cap. That is the Type II miss this step prevents, and the discipline that stops it firing on a mere promise.
+
 ## STEP 3 — FORWARD QUADRUPLE TRANSITION SCORECARD
 
 | Transition | Backward Verdict | Catalyst Strength | Forward Probability | Forward Verdict | Score |
@@ -393,6 +432,7 @@ After every quarterly result + concall cycle: Q result → Role 4 → Role 5 →
 13. **The re-rating premium is archetype-dependent.** Full for asset-light crossing compounder ROCE; partial for asset-heavy; none for BOO treadmills.
 14. **Hybrid verdict labels are banned; round down.** Each transition gets exactly one defined state; ambiguity resolves conservatively; scores are never promoted to fit a better verdict row (there are no rows — only the sum).
 15. **Single-credit for ROCE recovery.** Pillar 1 or Strategic Premium, never both; the choice is stated in writing.
+16. **Intent-and-action is a cross-check, not a licence (Step 2E, v1.3).** Only documented 📄 action, net of the promise-vs-delivery discount, may loosen a pillar verdict, and only by one state via a Step 2B re-score. Management vision alone never moves a verdict and never lifts the Kernex cap. The step exists to catch over-conservatism where real action exists, not to import optimism from narrative.
 
 ## INTEGRATION WITH OTHER ROLES
 
@@ -467,3 +507,4 @@ FTTCP is the discipline that catches the cases where everything looks good but n
 | 1.0 | June 2026 | Initial three-transition forward catalyst protocol: probability bands, verdict rules, monitoring trigger structure. Worked example: Kernex Microsystems. |
 | 1.1 | 24 June 2026 | Quadruple Transition addendum: ROCE added as fourth co-equal transition, mandatory for capital-intensive archetypes. TEMPORARILY DEPRESSED vs DECLINING test. Pillar 1 forward-ROCE decision table, SOTP rules for hybrid annuity-EPC, ROCE re-rating optionality premium, empirical re-rating tables. Worked example: Pace Digitek. |
 | 1.2 | 02 July 2026 | Consolidated into one document (v1.0 + v1.1 merged; both prior files retired). Sequencing corrected to Gate 0 → Role 4 → Role 5 → FTTCP → Roles 1-3 with first-workup/refresh Step 0A variants. FTTCP ROCE verdict made SOLE authority for Pillar 1; Role 1 standalone trajectory rule deleted; single-credit rule for ROCE recovery with shared-catalyst flag; Pace example annotated (strategic +1x withdrawn). Scored verdict system (FIRING +2 / STARTING-RECOVERING +1 / STAGNANT 0 / DECLINING −1, bands −4 to +8) replaces enumerated rules; hybrid labels banned; round-down rule; Kernex cap codified; both worked examples reproduce identical verdicts. Composite probability formula defined (best Moderate+ catalyst +10% per independent Moderate+, max +20%, cap 90%). "Positive" defined for the backward composite. Lender transition set added (AUM growth / NIM / asset quality / RoA-RoE) tied to Role 4 v1.2 Steps 1L-5L and Section 1B v3.3 Pillar 2L. Empirical tables annotated for FY21-22 endpoint bias. |
+| 1.3 | 12 July 2026 | Added Step 2E, the Management Intent-and-Action Ledger: a governed cross-check, run between Step 2 and Step 3, that tests whether management's documented ACTION (not vision) argues a pillar verdict is too conservative. Rules: only net-📄 action loosens a verdict, by one state, via a Step 2B re-score; vision alone never moves a verdict and never lifts the Kernex cap; absence of action confirms the conservative read. A Type II (missed-compounder) reducer with a governor against narrative capture, paired with the input-contract addition of inputs/announcements/ (the 📄 action feed) and inputs/prospectus/. Worked example: AIMTRON, where the ledger confirmed the cash-driven AVOID rather than loosening it. Discipline rule 16 added. Prompted by the AIMTRON 2026-07-12 run and operator's "biggest risk is missing the compounder" principle. |

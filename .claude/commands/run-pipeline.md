@@ -51,6 +51,11 @@ handoff schemas, flag rules, and error handling. Then:
    parse. Inputs are identified by subfolder, not filename. Inventory
    what exists per subfolder, recording every absent document type in
    input_gaps:
+     - inputs/prospectus/     0-2 PDF (DRHP/RHP; MANDATORY-to-attempt and a
+                              HIGH gap if the company listed within ~3 years
+                              of run_date, per manifest.listed_date or IPO
+                              evidence — it carries promoter/group history and
+                              the restated pre-IPO financials nothing else has)
      - inputs/annual-report/  0-1 PDF
      - inputs/results/        0-3 PDFs (use the 3 most recent if more)
      - inputs/rating/         0-1 PDF (most recent if more)
@@ -58,6 +63,11 @@ handoff schemas, flag rules, and error handling. Then:
                               concalls_available is false the run proceeds
                               in NO-CONCALL MODE
      - inputs/peer-concalls/  0-12 PDFs
+     - inputs/announcements/  0-N PDFs (exchange / Reg 30 filings, last ~12m;
+                              the documented-ACTION record)
+     - inputs/shareholding/   0-N (latest quarterly shareholding pattern;
+                              closes FII+DII UA qualifier and pledge trend)
+     - inputs/research/       0-N (broker notes; NON-ANCHORED, leads only)
      - inputs/screening/      0-N (csv / txt / pdf / xlsx)
      - inputs/presentation/   0-N
      - inputs/other/          0-N (preserved, never consumed)
@@ -67,10 +77,12 @@ handoff schemas, flag rules, and error handling. Then:
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
 
    EMPTY-FOLDER CONFIRMATION: after the inventory above, if ANY input
-   folder is empty or absent (annual-report, results, rating, concalls,
-   peer-concalls, screening, presentation), PAUSE before executing any
-   stage and ask the operator exactly once, listing all empty folders
-   together in one message: "These input folders are empty: [list].
+   folder is empty or absent (prospectus, annual-report, results, rating,
+   concalls, peer-concalls, announcements, shareholding, research,
+   screening, presentation), PAUSE before executing any stage and ask the
+   operator exactly once, listing all empty folders together in one
+   message, and calling out an empty prospectus/ as HIGH priority when the
+   company listed within ~3 years: "These input folders are empty: [list].
    Proceed with these gaps, or push the documents (py
    collect_to_repo.py --push-again) and tell me to continue?" Proceed
    only on the operator's explicit answer, then never ask again for the

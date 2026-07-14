@@ -1,0 +1,49 @@
+stage: B01-gate0
+company: "Aurum Proptech Ltd"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating/ folder absent from inputs"
+  - "announcements/ folder absent; operator-supplied summary only, partially corroborated"
+  - "shareholding % filled from operator-supplied screener screenshot, not fresh CSV"
+  - "prospectus not expected (long-listed, not recent IPO)"
+  - "sector_cap_row 'Platform / SaaS / IT services' unconfirmed, flag for phase-3"
+  - "promoter pledge % (E3) not found in any provided source; scored 0, not a confirmed breach"
+  - "FY22/FY23 capex not available; B2/B3 computed on FY24-FY26 subset only"
+  - "FY22/FY23 trade payables not available; B4 computed on FY24-FY26 subset only"
+  - "peer financial statements not provided; M2/M5/M9 marked PEER DATA NEEDED"
+  - "latest contingent-liability disclosure available is FY25 AR, not FY26 (one-year lag)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (<=AVERAGE) driven by FY22-FY25 loss years of a post-Majesco-divestment business rebuild; FY26 is the first profit year with two consecutive profitable quarters (Q3, Q4 FY26) and a STRONG moat class (5/12) built on non-historical signals (pricing power, switching costs, negative WC, growth). Flagged for stage 11/13 to weigh the inflection against the mechanical score, analogous to the deal-breaker override note for documented legacy-cleanup cases."
+  - type: FLAG-DATA-GAP
+    reason: "Promoter pledge % (E3) not found in any provided source (operator screenshot, AR_FY25.txt, results PDFs); scored 0 per rule 5. Needs phase-3 confirmation via BSE/screener pledge disclosure before being treated as clean."
+  - type: FLAG-ONE-TIME-ITEM
+    reason: "FY26 PBT/PAT and EBIT/EBITDA-based ratios (D1, D2) include a ~INR 17.72 Cr one-time gain from the partial Q5/Q6 building sale (results Q4 FY26 PDF p.15, Note 5). D1 (Net Debt/EBITDA) score is unaffected by stripping it (1.12x vs 1.30x, same band); D2 (Interest Coverage) is actually WORSE ex-gain (0.24x vs 0.90x), so this is not inflating the weak score."
+  - type: FLAG-DATA-GAP
+    reason: "Moat tests M2 (Cost Advantage), M5 (Scale and Dominance), M9 (Brand) all require peer financial data not provided in this run (only peer concall transcripts available, no margin/market-cap datasets); scored 0 and marked PEER DATA NEEDED, not guessed."
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 5, B: 3, C: 10, D: 9, E: 9}
+core_score: 36
+moat_score: 22
+grand_total: 58
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A (5) <8 -> max GOOD [triggered, moot vs matrix result]"
+  - "2: Block B (3) <8 -> max GOOD [triggered, moot vs matrix result]"
+  - "3: median ROCE (-9.42%) <10% -> max AVERAGE [triggered, driven by FY22-FY26 ROCE all near-zero or negative except FY26]"
+  - "4: cumulative CFO/PAT (-0.29) <0.50 -> max AVERAGE [triggered, driven by FY22-FY23 negative CFO]"
+  - "8: PAT negative in any of last 3 years -> max AVERAGE [triggered, driven by FY24 (-55.75) and FY25 (-33.37); FY26 (+1.90) is the exception]"
+history_downgrade: true
+data_notes:
+  - "Pre-FY22 (FY17-FY21) figures belong to the divested Majesco US software business; excluded from all scoring as a different enterprise."
+  - "C2/C4: PAT CAGR marked N/M (negative endpoint); loss-to-profit swing, FY25 to FY26."
+  - "FY26 profit includes ~INR 17.72 Cr one-time building-sale gain (results Q4 FY26 PDF p.15, Note 5); flagged wherever it affects an FY26 ratio (see D1/D2)."
+  - "screener-Data_Sheet FY26 PBT (-2.61 Cr) does not cleanly reconcile to the audited PDF's continuing-vs-discontinued PBT split (continuing -14.96 Cr + discontinued +16.50 Cr = +1.54 Cr combined); Data_Sheet's own P&L rows are internally self-consistent (Sales+OI-Expenses-Dep-Interest=PBT exactly) and used as primary per task instructions, but the divergence vs the audited segment disclosure is disclosed as a data-quality caveat, not resolved by estimation."
+  - "Capital Employed for ROCE (Block A) uses Net Worth + Total Borrowings as a proxy (current/non-current liability split unavailable FY22-FY24); validated within 0.2% of the strict Total Assets - Current Liabilities figure for FY26, diverges up to ~10% for FY25."
+  - "M2, M5, M9 (moat block) scored 0 and marked PEER DATA NEEDED; no peer financial statements provided in-run."
+block_b_trend: "improving — CFO went from -24.26 Cr (FY22) to +62.93 Cr (FY26); FCF swung from -84.24 Cr (FY24) to +47.08 Cr (FY26), even though every banded B1-B4 sub-score is weak because the bands are calibrated on cumulative figures dominated by the FY22-FY25 loss years."

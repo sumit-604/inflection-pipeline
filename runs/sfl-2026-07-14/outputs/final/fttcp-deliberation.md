@@ -51,6 +51,35 @@ phase-1 determination they conflict with, and stage 10 anchors to them.
   would be +6, still inside the same BUY-candidate band (5 to 6), so the band
   decision is settled either way and the print only refines the score inside it.
 
+**Override 2 — Strategic Premium / destination PE floor (phase-3 review, post-valuation).**
+
+- **Draft/analysis determination:** Role 1 (B11) set the Strategic Premium at
+  +0x and the governing destination PE at 16.7x RRM (17.8x additive). The brand
+  gate was judged to fail its documented-pricing-power sub-condition (FY25 core
+  EBITDA collapsed to 7.3 percent on the TDI and polyol shock, competition not
+  limited, showroom target missed three times).
+- **Operator ruling:** grant the Strategic Premium for the largest-brand
+  franchise (Sleepwell plus Kurlon, about 30 percent organized share) and floor
+  the governing destination PE at 20x. Operator's words: "growth premium is only
+  one [notch]. Duration premium will be there. It is the largest brand of this
+  particular mattress and other things. The consumption will always be there.
+  Either give it the strategic premium, being the largest brand," and "take the
+  destination price to earning into 20 at least."
+- **Resolution:** Strategic Premium set to +3.5x (operator override; additive
+  raw 21.3x, times RRM 0.94 = 20.0x governing, under the 22x sector cap). B11
+  re-run. Note on 3c duration: a B2C mattress maker has no contracted revenue or
+  order book, so the framework's 3c (duration of documented revenue) does not
+  apply; the brand-demand-persistence point was routed into the Strategic
+  Premium per the operator's ruling, not 3c.
+- **Effect (decision UNCHANGED):** destination PE 16.7x -> 20.0x; entry Rs
+  302-378 -> Rs 362-453; MoS Rs 302 -> Rs 362; fair values Year-3 Track 1 Bear
+  549 / Base 884 / Bull 1,243; prob-weighted 3yr CAGR -3.6 percent -> +2.4
+  percent; Hurdle base 0.79 -> 0.95, bull 1.01 -> 1.21, still STOP; decision
+  stays AVOID (on valuation), WATCHLIST-for-entry. The stock must fall about 44
+  percent (was 53 percent) to reach the entry zone. The override lifts the
+  numbers but does not change the call, because current PE 55.2x still embeds
+  the full recovery relative to even a 20x floored destination.
+
 ## Cross-cutting note carried to phase 3
 
 The operator's price argument (multi-year consolidation has already discounted

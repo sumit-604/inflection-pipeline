@@ -1,12 +1,13 @@
 # FTTCP handoff dossier — Sheela Foam Ltd (SFL)
 
-Run runs/sfl-2026-07-14. Date 2026-07-14. CMP Rs 807, market cap Rs 8,812 Cr (manifest). Shares outstanding 10.92 Cr, face value Rs 5 (screener-Data_Sheet.csv FY26). Self-sufficient input package for manual FTTCP v1.2 deliberation; carries every figure with its source anchor. Frameworks: Master v3.3 / Section 1B v3.3 / FTTCP v1.2 (B11).
+Run runs/sfl-2026-07-14. Date 2026-07-14. CMP Rs 807, market cap Rs 8,812 Cr (manifest). Shares outstanding 10.92 Cr, face value Rs 5 (screener-Data_Sheet.csv FY26). Self-sufficient input package for manual FTTCP v1.2 deliberation; carries every figure with its source anchor. Frameworks: Master v3.3 / Section 1B v3.3 / FTTCP v1.2 (B11). This is a RE-RUN reflecting operator override #2.
 
 Authoritative decision chain (do not re-derive):
 - Phase-1 evidence GATE: PROCEED WITH FLAGS (rule 3). Flags FLAG-GATE0, FLAG-PROMOTER CAUTION, FLAG-CASH growth-induced, earnings-quality.
 - FTTCP phase 2 (fttcp-deliberation.md): composite +5 of 8, BUY-candidate, standard conviction, SMALL-MEDIUM sizing, after operator override Margin STAGNANT(0)->STARTING(+1). Cash FIRING(+2), ROCE RECOVERING(+1), Revenue STARTING(+1), Margin STARTING(+1).
-- Role 1 (B11): AVOID on valuation, WATCHLIST-for-entry Rs 302-378, Hurdle STOP.
-- Role 2 (B14): AVOID, WATCHLIST-for-entry, Tier A, position Small.
+- Operator override #2 (phase-3 review, authoritative, fttcp-deliberation Override 2): Strategic Premium +3.5x granted for the largest-brand franchise (Sleepwell + Kurlon, ~30% organized share); governing destination PE floored to 20.0x RRM / 21.3x additive. Framework read was +0x (brand-gate pricing-power sub-condition not independently met). The operator's duration-premium point does not enter Pillar 3c (a B2C mattress maker has no contracted revenue/order book); the brand-durability substance was routed into the Strategic Premium per the ruling. Decision UNCHANGED (AVOID on valuation). Pre-override record: destination 16.7x RRM / 17.8x additive, Strategic +0x, entry Rs 302-378.
+- Role 1 (B11 re-run): AVOID on valuation, WATCHLIST-for-entry Rs 362-453, Hurdle STOP.
+- Role 2 (B14 re-run): AVOID, WATCHLIST-for-entry, Tier A, position Small.
 - Role 3 (B15): overall SURVIVES; AVOID at 807 indestructible.
 - Confidence: numerical 98, redflag 90, framework 96, peer 100, overall 90 (high). REWORK not triggered.
 
@@ -163,7 +164,7 @@ H2 FY26 PAT concentration Rs 144 Cr of Rs 161 Cr (89%) in H2 (Q4 FY26 call, Amit
 
 ### SHARED CATALYST — active (B10, B11, fttcp-deliberation ruling 8)
 
-Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 EM growth premium at once. Single point of failure for Role 3: a fifth synergy-machine slip takes down three pillars together; base-case FV Rs 738 that sets the entry zone assumes it fires.
+Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 EM growth premium at once. Single point of failure for Role 3: a fifth synergy-machine slip takes down three pillars together; base-case FV Rs 884 that sets the entry zone assumes it fires.
 
 ---
 
@@ -240,26 +241,31 @@ peers_provided 4 (CENTURYPLY, GREENLAM, WAKEFIT, NILKAMAL). net_narrative_effect
 
 ---
 
-## 6. Valuation pillar detail (B11, stage 11 ran)
+## 6. Valuation pillar detail (B11 re-run, stage 11 ran, OPERATOR OVERRIDE #2 applied)
 
 framework_versions Master v3.3 / Section 1B v3.3 / FTTCP v1.2.
 
-destination_pe_track1_rrm: low 15.5, mid 16.7, high 18.0; r_used 14.0; rrm 0.94. GOVERNS (more conservative, prices governance CAUTION, sets entry zone).
-destination_pe_track2_additive: low 16.5, mid 17.8, high 19.0. divergence 6.2%.
+OPERATOR OVERRIDE #2 (2026-07-14, phase-3 review, authoritative): the operator granted the Strategic Premium for the largest-brand franchise (Sleepwell + Kurlon, ~30% organized share) and floored the governing Track 1 destination PE at 20.0x. Implemented as Strategic Premium +3.5x (additive raw 16.8 + 1.0 + 3.5 = 21.3x; x RRM 0.94 = 20.0x, under the 22x sector cap). The framework brand-gate pricing-power sub-condition was NOT independently met (FY25 core EBITDA collapse on the TDI/polyol shock, competition not limited — Wakefit, Duroflex, large unorganized, showroom target missed 3x); the premium is operator-granted, not framework-earned. ROCE re-rating route remains BARRED (single-credit preserved). The operator's duration-premium point does not enter Pillar 3c (a B2C mattress maker has no contracted revenue/order book); the brand-durability substance was routed into the Strategic Premium per the ruling. Pre-override record: Strategic +0x, destination 16.7x RRM / 17.8x additive.
 
-Pillar build (pillar_detail): roce_used 14.2, roce_base 13.0 (operating/tangible Cash ROCE, not reported 6.7%, not pre-acq 17%), roce_recovery_route pillar1-midpoint (60/40 current+FY28 expected). cash_multiplier 1.15 (structural_or_growth growth-induced; elite 1.30x tempered for receivables build + absent rating PDF). growth_offset 0.0; growth_premium 1.0; strategic_premium 0.0 (Strategic Premium ROCE re-rating barred, single-credit). shared_catalyst_flag true. ua_applied false (FII+DII 24.70% > 3%, qualifier 3 fails; Amendment 3 does not apply). sector_cap_used 22.0 (Building materials; manifest "Agri processing" 20x overridden per deliberation; non-binding). Promoter CAUTION forces Tier A (Tier B gate fails) and adds +1% to RRM discount rate.
+destination_pe_track1_rrm: low 18.5, mid 20.0, high 21.5; r_used 14.0; rrm 0.94. GOVERNS (operator-floored, more conservative, prices governance CAUTION, sets entry zone).
+destination_pe_track2_additive: low 19.7, mid 21.3, high 22.0 (22x sector cap binds Track 2 high only). divergence 6.1%.
+pre_override: destination_pe_track1_rrm mid 16.7 / track2_additive mid 17.8.
 
-hurdle_ratio base 0.79, bull_used true, verdict STOP (25% CAGR infeasible at CMP even on bull earnings; price embeds recovery at ~18x FY30 earnings).
+Pillar build (pillar_detail): roce_used 14.2, roce_base 13.0 (operating/tangible Cash ROCE, not reported 6.7%, not pre-acq 17%), roce_recovery_route pillar1-midpoint (60/40 current+FY28 expected). cash_multiplier 1.15 (structural_or_growth growth-induced; elite 1.30x tempered for receivables build + absent rating PDF). growth_offset 0.0; growth_premium 1.0; strategic_premium 3.5 (OPERATOR OVERRIDE #2, largest-brand franchise; framework read +0x; ROCE re-rating still barred, single-credit). shared_catalyst_flag true. ua_applied false (FII+DII 24.70% > 3%, qualifier 3 fails; Amendment 3 does not apply). sector_cap_used 22.0 (Building materials; manifest "Agri processing" 20x overridden per deliberation; binds Track 2 high only). Promoter CAUTION forces Tier A (Tier B gate fails) and adds +1% to RRM discount rate.
 
-fair_values Track 1: bear 460, base 738, bull 1040. Track 2: bear 490, base 787, bull 1098. expected_cagr_prob_weighted -3.6%. entry_range 302-378. mos_price 302. upside_downside_ratio -0.2. decision AVOID (on valuation) — WATCHLIST-for-entry Rs 302-378. som_cagr_crosscheck consistent.
+hurdle_ratio base 0.95, bull 1.21, bull_used true, verdict STOP (25% CAGR infeasible at CMP even on bull earnings; current PE 55.2x reported / 22.9x cash embeds the recovery relative to even a 20x floored destination; pre-override base 0.79 / bull 1.01). Current PE 55.2x reported = 807/14.62; base 3yr reported EPS CAGR FY26->FY29 37.9%; HR(base) = (1.379)^3 x (20.0/55.2) = 2.622 x 0.3623 = 0.95.
+
+fair_values Track 1: bear 549, base 884, bull 1243. Track 2: bear 585, base 941, bull 1272. expected_cagr_prob_weighted +2.4% (Track 1; weights 25/50/25; bear -12.0% / base +3.1% / bull +15.5%). entry_range 362-453. mos_price 362. upside_downside_ratio 0.30 (base +9.5% vs bear -32.0% at CMP; bull/bear 1.69x also fails 2x). decision AVOID (on valuation) — WATCHLIST-for-entry Rs 362-453, UNCHANGED by override #2. som_cagr_crosscheck consistent. Pre-override for the record: fair_values Track 1 bear 460 / base 738 / bull 1040; entry 302-378; MoS 302; expected CAGR -3.6%; U/D -0.2x.
+
+Secondary EV/EBITDA cross-check: destination EV/EBITDA ~0.65 x 21.3 ~13.8x; base FY30 core EBITDA ~Rs 812 Cr -> EV ~Rs 11,206 Cr less net debt ~Rs 150 Cr = equity ~Rs 11,056 Cr / 10.92 = ~Rs 1,012/share base (Year-3), agrees with the PE base within ~10-14%; P/E track governs.
 
 unresolved_inputs_used: Rating PDF absent -> Pillar 2 conservative 1.15x; forward EPS not guided -> derived from revenue x margin guidance, grade-B discounted; FY28 operating ROCE 16% derived (below barred pre-acq 17%), Amendment 4.5 normalized anchor NOT applied (permanent goodwill re-basing, no evidenced unwind to 17%).
 
-Role 2 (B14): verdict AVOID, tier A, position Small (FTTCP SMALL-MEDIUM down-capped by promoter CAUTION, rule application not override). target_3yr base 738 / bull 1040 / bear 460. thesis_broken_if: operating Cash ROCE fails >14% by FY28 OR Kurlon synergy machine slips a fifth consecutive quarter with no hard install date. return_matrix cells at 25% 0/9, at 15% 0/9. verdict_consistency: Hurdle STOP AND U/D -0.2x (<2x) AND Gate 0 AVOID.
+Role 2 (B14 re-run): verdict AVOID, tier A, position Small (FTTCP SMALL-MEDIUM down-capped by promoter CAUTION, rule application not override; override #2 recorded no position-size change). target_3yr base 884 / bull 1243 / bear 549. thesis_broken_if: operating Cash ROCE fails >14% by FY28 OR Kurlon synergy machine slips a fifth consecutive quarter with no hard install date. return_matrix cells at 25% 0/9, at 15% 1/9 (Track 1 bull-high Rs 1,243 at +15.5%). verdict_consistency: Hurdle STOP AND U/D 0.30x (<2x) AND Gate 0 AVOID. must_fall_to_entry ~44% (CMP ~1.78x entry top).
 
-Role 3 (B15): dimensions growth_triggers weakened, moat_durability survives, management_trust weakened, valuation_safety survives; overall SURVIVES. Top counters: (1) Cash ROCE 13% may double-count Kurlon add-back (strips goodwill from denominator while adding ~Rs 231 Cr PPA amortization to EBIT); true return ~7-11% -> destination PE ~12x, entry below Rs 302; (2) FY26 recovery optics-flattered (Rs 144/161 Cr H2, ~20% dep cut, Furlenco Rs 42 Cr spike unverified, RM timing), reversing into 25-35% RM shock with competition rising; (3) SHARED CATALYST single point of failure — 5th synergy slip takes 3 pillars; base FV Rs 738 assumes it fires; (4) entry zone Rs 302-378 likely unreachable (stock consolidated through the trough, did not fall), effectively a never-buy; internally consistent zone near mid Rs 200s; (5) informed money leaving (FII+DII 31%->24.7%, FII 6.6%->4.15%); (6) +5 composite rests on one operator margin override the next print can invalidate to +4 DEEP WATCH.
+Role 3 (B15): dimensions growth_triggers weakened, moat_durability survives, management_trust weakened, valuation_safety survives; overall SURVIVES. Top counters: (1) Cash ROCE 13% may double-count Kurlon add-back (strips goodwill from denominator while adding ~Rs 231 Cr PPA amortization to EBIT); true return ~7-11% -> destination PE ~12x, internally consistent entry in the mid Rs 200s, below the Rs 362 MoS; (2) FY26 recovery optics-flattered (Rs 144/161 Cr H2, ~20% dep cut, Furlenco Rs 42 Cr spike unverified, RM timing), reversing into 25-35% RM shock with competition rising; (3) SHARED CATALYST single point of failure — 5th synergy slip takes 3 pillars; base FV Rs 884 assumes it fires; (4) entry zone Rs 362-453 now touches the tested price floor (top ~2.6% below the Rs 465.05 lowest annual close), reachable on a normal drawdown, though the devil's mid-Rs-200s internally consistent zone still needs a crash; (5) informed money leaving (FII+DII 31%->24.7%, FII 6.6%->4.15%); (6) +5 composite rests on one operator margin override the next print can invalidate to +4 DEEP WATCH.
 
-Zone reachability: entry top Rs 378 is 18.7% below Rs 465.05 (lowest annual close since listing, FY26; screener PRICE row FY17-FY26 562.6/746.03/629.75/642.95/988.53/1737.4/993.9/943.7/710.0/465.05). Borderline inside the >20% MARKET-UNLIKELY threshold at Tier A. On the devil's mid-Rs-200s zone the gap exceeds 40% and it becomes MARKET-UNLIKELY (DEEP WATCH). No intraday 52-week low available (annual closes only). No Tier B alternative (promoter CAUTION bars Tier B).
+Zone reachability: entry top Rs 453 is ~2.6% below Rs 465.05 (lowest annual close since listing, FY26; screener PRICE row FY17-FY26 562.6/746.03/629.75/642.95/988.53/1737.4/993.9/943.7/710.0/465.05), essentially at the tested price floor and well inside the >20% MARKET-UNLIKELY threshold — NOT MARKET-UNLIKELY at Tier A. Material change from the pre-override top Rs 378 (18.7% below): the 20x floor lifted the zone to touch the floor; reachable on a normal drawdown to prior levels, though CMP Rs 807 is ~1.78x the entry top and must fall ~44%. On the devil's mid-Rs-200s internally consistent zone the gap exceeds 40% below the tested close and that lower zone remains MARKET-UNLIKELY (DEEP WATCH). No intraday 52-week low available (annual closes only). No Tier B alternative (promoter CAUTION bars Tier B).
 
 ---
 
@@ -287,7 +293,7 @@ Zone reachability: entry top Rs 378 is 18.7% below Rs 465.05 (lowest annual clos
 
 notion_save (orchestrator writes; do not overwrite Decision Status):
 - page_title: "SFL — Sheela Foam Ltd — Run 2026-07-14"
-- summary: "Turnaround is real, entry sits far below | PROCEED WITH FLAGS | AVOID on valuation (WATCHLIST-for-entry) | entry Rs 302-378, MoS Rs 302 | destination PE 16.7x RRM / 17.8x additive, Hurdle STOP"
+- summary: "Turnaround is real, entry sits far below | PROCEED WITH FLAGS | AVOID on valuation (WATCHLIST-for-entry) | entry Rs 362-453, MoS Rs 362 | destination PE 20.0x RRM / 21.3x additive (operator override #2, Strategic +3.5x), Hurdle STOP"
 - drive_link: NOT FOUND (no Drive folder link in manifest or run inputs)
 - mode: append-never-overwrite-status
 - instruction: fetch the live company page first if it exists; NEVER overwrite Decision Status from a pipeline run; append, do not replace.

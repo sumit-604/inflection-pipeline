@@ -13,6 +13,8 @@
 
 Confidence delta: numerical 98, redflag 90, framework 96 (Gate0+EM 97 merged with valuation 94), peer 100, overall 90. All five passes returned 0 CRITICAL. Both MAJOR findings are decision-neutral. Verifier C valuation concurs with destination PE 17.8x additive / 16.7x RRM and the AVOID-on-valuation / Hurdle STOP decision; no recompute required. REWORK not triggered.
 
+Note (re-run): operator override #2 (Strategic Premium +3.5x, governing destination floored to 20.0x RRM / 21.3x additive) postdates this verification pass. It moves the valuation figures the verifiers audited (16.7x RRM / 17.8x additive, Hurdle base 0.79, entry Rs 302-378) to their re-run values (20.0x RRM / 21.3x additive, Hurdle base 0.95, entry Rs 362-453) but changes neither the decision (AVOID-on-valuation, Hurdle STOP) nor any confidence-delta component. The delta stands as recorded: numerical 98, redflag 90, framework 96, peer 100, overall 90.
+
 ## Findings, sorted by severity
 
 ### MAJOR
@@ -46,7 +48,7 @@ Confidence delta: numerical 98, redflag 90, framework 96 (Gate0+EM 97 merged wit
 
 - 47 rules checked, 0 fails, 3 MINOR passed-with-note; acceptance 94%.
 - Framework adherence HIGH: Pillars 1 to 3, single-credit, UA ordering (Amendment 3), Building-materials 22x sector cap (genuine Master row, manifest "Agri processing" 20x correctly overridden), both RRM tracks (Amendment 4.4 percentage-point reading), Hurdle Ratio plus Tier A (Amendment 2/4.3), and Role 2 hardest-verdict-wins plus Small/Tier-A sizing all applied as written. Amendment 4.5 correctly NOT applied (permanent goodwill re-basing, documented unwind catalyst absent).
-- Concurs: destination PE 17.8x additive / 16.7x RRM; AVOID-on-valuation, Hurdle STOP. No recompute required.
+- Concurs: destination PE 17.8x additive / 16.7x RRM; AVOID-on-valuation, Hurdle STOP. No recompute required. (Operator override #2 re-rated these to 21.3x additive / 20.0x RRM after the pass; the STOP verdict and AVOID decision the verifier concurred with are unchanged.)
 
 ## Cross-verifier spot checks
 

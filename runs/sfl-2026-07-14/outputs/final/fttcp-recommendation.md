@@ -6,24 +6,25 @@ Verdict rule applied: 3. FLAG-CASH and FLAG-PROMOTER are both active, no CRITICA
 
 ## Valuation decision
 
-AVOID on valuation at Rs 807. WATCHLIST-for-entry at Rs 302 to 378.
+AVOID on valuation at Rs 807. WATCHLIST-for-entry at Rs 362 to 453.
 
-- Entry range: Rs 302 to 378. Margin-of-safety price: Rs 302.
-- Current price is 2.13 times the top of the zone and 2.67 times the MoS price.
-- Destination PE, Track 1 RRM: 16.7 times (governs, prices the governance CAUTION, sets the zone). Track 2 additive: 17.8 times. Divergence 6.2%, both tracks STOP.
-- Hurdle verdict: STOP. Hurdle Ratio 0.79. A 25% compounding return is not reachable at Rs 807 even on bull earnings; the price already embeds the recovery at roughly 18 times FY30 earnings.
-- Year-3 fair value, Track 1: bear Rs 460, base Rs 738, bull Rs 1,040. Track 2: bear Rs 490, base Rs 787, bull Rs 1,098.
-- Probability-weighted three-year CAGR: negative 3.6%. Upside-to-downside ratio: negative 0.2 times.
+- Operator override #2 (phase-3 review, authoritative): the operator granted the brand-franchise Strategic Premium for the largest mattress brand (Sleepwell plus Kurlon, about 30% organized share) and floored the governing destination PE at 20 times. The framework earned +0x on the brand gate because the documented-pricing-power sub-condition was not independently met; the +3.5x premium is operator-granted, not framework-earned. The decision is unchanged: even at the 20 times floor Rs 807 fails the hurdle, which sharpens rather than softens the AVOID.
+- Entry range: Rs 362 to 453. Margin-of-safety price: Rs 362.
+- Current price is 1.78 times the top of the zone and 2.23 times the MoS price; the stock must fall about 44% to enter.
+- Destination PE, Track 1 RRM: 20.0 times (governs, prices the governance CAUTION, sets the zone). Track 2 additive: 21.3 times. Divergence 6.1%, both tracks STOP.
+- Hurdle verdict: STOP. Hurdle Ratio 0.95 (bull 1.21). A 25% compounding return is not reachable at Rs 807 even on bull earnings; the price already embeds the recovery at roughly 18 times FY30 earnings.
+- Year-3 fair value, Track 1: bear Rs 549, base Rs 884, bull Rs 1,243. Track 2: bear Rs 585, base Rs 941, bull Rs 1,272.
+- Probability-weighted three-year CAGR: positive 2.4%. Upside-to-downside ratio: 0.30 times (base +9.5% vs bear negative 32.0% at CMP).
 - Position size if the zone is reached with no broken trigger: Small. Promoter CAUTION bars Tier B and caps at Tier A.
 
 ## Zone reachability
 
-Entry zone top Rs 378 against the price history.
+Entry zone top Rs 453 against the price history.
 
-- Lowest tested price since listing: Rs 465.05, the FY26 (March 2026) annual close. The zone top of Rs 378 sits 18.7% below it.
-- 52-week intraday low: price history unavailable at intraday resolution. The only series on file is the screener annual PRICE row FY17 to FY26 (562.6, 746.03, 629.75, 642.95, 988.53, 1737.4, 993.9, 943.7, 710.0, 465.05); no intraday or rolling 52-week low is available, so the 18.7% gap is measured against the lowest annual close, not a true low.
-- At 18.7% below the lowest tested close, the Tier A zone is borderline inside the reachability threshold. It is not a MARKET-UNLIKELY ZONE by the greater-than-20% rule, but only just.
-- On the devil's internally consistent zone (mid Rs 200s, from a 7 to 11% true cash-ROCE read that pulls destination PE toward 12 times), the gap widens past 40% below the lowest tested close and the zone becomes a MARKET-UNLIKELY ZONE: reached only via a thesis-relevant shock or a broad de-rating; classify DEEP WATCH not actionable WATCHLIST.
+- Lowest tested price since listing: Rs 465.05, the FY26 (March 2026) annual close. The zone top of Rs 453 sits about 2.6% below it, essentially at the lowest tested price.
+- 52-week intraday low: price history unavailable at intraday resolution. The only series on file is the screener annual PRICE row FY17 to FY26 (562.6, 746.03, 629.75, 642.95, 988.53, 1737.4, 993.9, 943.7, 710.0, 465.05); no intraday or rolling 52-week low is available, so the 2.6% gap is measured against the lowest annual close, not a true low.
+- At about 2.6% below the lowest tested close, the Tier A zone is well inside the reachability threshold and is NOT a MARKET-UNLIKELY ZONE. This is a material change from the pre-override zone: the top was Rs 378, 18.7% below the tested floor; the operator's 20 times floor lifted the zone to touch that floor, so it is reachable on a normal drawdown to prior levels. CMP Rs 807 is still about 1.78 times the entry top, a required fall of about 44%.
+- On the devil's internally consistent zone (mid Rs 200s, from a 7 to 11% true cash-ROCE read that pulls destination PE toward 12 times), the gap widens past 40% below the lowest tested close and that lower zone becomes a MARKET-UNLIKELY ZONE: reached only via a thesis-relevant shock or a broad de-rating; classify DEEP WATCH not actionable WATCHLIST.
 - No Tier B alternative applies. Promoter CAUTION bars the Tier B hurdle.
 
 ## Confidence delta
@@ -36,7 +37,7 @@ Entry zone top Rs 378 against the price history.
 | Peer utilisation | 100 | B12d: all 9 provided peer transcripts used substantively; entity 3/4 only because NILKAMAL is screener-only |
 | Overall | 90 | Min of the four; high-confidence band; bound by redflag coverage |
 
-Weakest component: redflag coverage at 90, bound by one partially caught item, the FY26 H2-loaded PAT run-rate quality caveat that names its three lifts (depreciation change, Furlenco Q4 step-up, RM inventory timing) but does not tie them together as one run-rate warning. Decision-neutral. REWORK not triggered.
+Weakest component: redflag coverage at 90, bound by one partially caught item, the FY26 H2-loaded PAT run-rate quality caveat that names its three lifts (depreciation change, Furlenco Q4 step-up, RM inventory timing) but does not tie them together as one run-rate warning. Decision-neutral. REWORK not triggered. Operator override #2 postdates the verification passes; it moves the valuation figures but not the decision and not any delta component.
 
 ## Active flags
 
@@ -68,7 +69,7 @@ Rs 144 Cr of the Rs 161 Cr FY26 PAT landed in H2 (B05, B10). The H2 run-rate is 
 
 ### SHARED CATALYST — active
 
-Kurlon integration plus deleveraging drives Pillar 1 ROCE, the margin path, and any Pillar 3 growth premium at once (B10, B11, fttcp-deliberation ruling 8). One failure, a fifth synergy-machine slip, takes down three pillars together and the base-case fair value of Rs 738 that sets the entry zone itself assumes the machine fires.
+Kurlon integration plus deleveraging drives Pillar 1 ROCE, the margin path, and any Pillar 3 growth premium at once (B10, B11, fttcp-deliberation ruling 8). One failure, a fifth synergy-machine slip, takes down three pillars together and the base-case fair value of Rs 884 that sets the entry zone itself assumes the machine fires.
 
 ## Contradicted peer claims (priority monitoring)
 
@@ -84,7 +85,7 @@ Kurlon integration plus deleveraging drives Pillar 1 ROCE, the margin path, and 
 5. Net debt glide toward FY28 net cash (about Rs 300 Cr remaining): continues falling each quarter. Kill if reduction stalls or reverses as it did versus the original FY26 path. Source: quarterly borrowings. Tests deleveraging and the war-chest EM category.
 6. Depreciation policy durability: no further useful-life changes that flatter EPS. Kill on another unexplained policy change. Source: PPE accounting policy note. Tests earnings quality.
 7. Board and institutional stability: second consecutive dividend for FY27, stable board, no further FII/DII exit. Kill on a dividend skip or continued institutional churn. Source: results and shareholding filings. Tests the promoter transition evidence.
-8. Entry conjunction: price enters Rs 302 to 378 with NO thesis-broken trigger fired. A zone entered because a trigger fired is withdrawn, not actioned.
+8. Entry conjunction: price enters Rs 362 to 453 with NO thesis-broken trigger fired. A zone entered because a trigger fired is withdrawn, not actioned.
 
 ## Falsification line
 

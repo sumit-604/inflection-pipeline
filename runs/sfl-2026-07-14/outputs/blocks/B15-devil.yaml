@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "survives"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Cash ROCE 13% double-counts the Kurlon add-back: it strips goodwill from the denominator (the exact move barred for the pre-acq 17% anchor) while adding ~Rs231cr PPA amortization back to EBIT; true return on deployed capital is ~7-11%, which drops destination PE toward ~12x and the entry zone below Rs302."
+  - "The FY26 recovery is optics-flattered: Rs144cr of Rs161cr PAT (89%) landed in H2, propped by a ~20% depreciation-policy cut, a Furlenco single-quarter Rs42cr spike (unverified), and RM-inventory timing, all reversing into a 25-35% RM shock with competition rising (Wakefit)."
+  - "SHARED CATALYST single point of failure: the Kurlon synergy machine slipped 4 consecutive quarters on the same excuse; a 5th slip takes down Pillar 1 ROCE, the margin path AND Pillar 3 at once, and the base-case FV (Rs738) that sets the entry zone itself assumes it fires."
+  - "The entry zone Rs302-378 is likely unreachable: the stock consolidated (did not fall) through a real earnings trough, so a 53% drop absent a crash or a thesis-breaking rupture is improbable, making the watchlist-for-entry an effectively unactionable never-buy dressed as a live opportunity; internally consistent zone sits near the mid Rs200s."
+  - "Informed money is leaving: FII+DII fell 31% to 24.7% (FII 6.6% to 4.15%) over the turnaround-building window; explicitly not mandate exclusion, a real adverse info-asymmetry signal that the CAUTION-as-sizing-cap treatment under-weights."
+  - "The +5 composite rests on one operator margin override (STAGNANT to STARTING) that the very next print (Q1/Q2 FY27 margin, into a live RM shock management calls 'crystal ball gazing') can invalidate back to +4 DEEP WATCH."

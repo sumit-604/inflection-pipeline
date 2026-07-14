@@ -1,0 +1,59 @@
+stage: B11-valuation
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+rerun: true
+operator_override:
+  id: "OVERRIDE #2 (2026-07-14, phase-3 review, authoritative)"
+  ruling: "Grant Strategic Premium for largest-brand franchise (Sleepwell + Kurlon, ~30% organized share); floor governing Track 1 destination PE at 20.0x"
+  implemented_as: "Strategic Premium +3.5x (additive raw 16.8 + 1.0 + 3.5 = 21.3x; x RRM 0.94 = 20.0x). Under 22x sector cap."
+  framework_note: "Brand-gate pricing-power sub-condition NOT independently met; premium is operator-granted, not framework-earned. ROCE route still barred (single-credit preserved)."
+  pre_override: "Destination PE 16.7x RRM / 17.8x additive, Strategic +0x, decision AVOID-on-valuation (HR base 0.79)"
+  changes_decision: false
+input_gaps:
+  - "Rating PDF absent — Pillar 2 held conservative at 1.15x (structural-WC quality unconfirmable)"
+  - "Segment-level profitability (U2O/e-com/Kurlon) unverified — forward margins are management-guided"
+  - "Peer medians used as directional cross-check only (cohort in earnings trough, PEs distorted)"
+flags:
+  - "FLAG-CASH: cash conversion FIRING but growth-induced (receivables +27.7%); multiplier applied 1.15x (elite 1.30x tempered)"
+  - "SHARED CATALYST: Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 — single point of failure for Role 3"
+  - "OPERATOR OVERRIDE #2: Strategic Premium +3.5x granted (largest-brand franchise); framework read was +0x (brand gate fails on pricing power). Governing destination floored to 20.0x."
+  - "HURDLE = STOP even post-override: 25% CAGR infeasible at CMP on bull earnings; price still embeds recovery"
+  - "Depreciation-policy change flatters reported PAT — projections held dep above guidance to neutralise"
+  - "Promoter verdict CAUTION forces Tier A (Tier B gate fails) and adds +1% to RRM discount rate"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 18.5, mid: 20.0, high: 21.5, r_used: 14.0, rrm: 0.94}
+  track2_additive: {low: 19.7, mid: 21.3, high: 22.0}
+  divergence_pct: 6.1
+  governing_track: "Track 1 (RRM) 20.0x — operator-floored, more conservative, prices governance CAUTION; sets the entry zone"
+  pre_override: {track1_rrm_mid: 16.7, track2_additive_mid: 17.8}
+pillar_detail:
+  roce_used: 14.2
+  roce_base: 13.0
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 1.15
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.0
+  growth_premium: 1.0
+  strategic_premium: 3.5
+  strategic_premium_note: "OPERATOR OVERRIDE #2 (largest-brand franchise); framework brand-gate pricing-power sub-condition NOT independently met; granted by operator ruling. Pre-override +0x."
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 22.0
+hurdle_ratio: {base: 0.95, bull: 1.21, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 549, base: 884, bull: 1243}
+  track2: {bear: 585, base: 941, bull: 1272}
+expected_cagr_prob_weighted: 2.4
+entry_range: {low: 362, high: 453}
+mos_price: 362
+upside_downside_ratio: 0.30
+decision: "AVOID (on valuation) — WATCHLIST-for-entry at Rs 362-453; UNCHANGED by operator override #2"
+unresolved_inputs_used:
+  - "Rating PDF absent → Pillar 2 conservative 1.15x (framework conservative-assumption rule)"
+  - "Forward EPS not guided → derived from revenue x margin guidance, grade-B discounted"
+  - "FY28 operating ROCE 16% derived (below barred pre-acq 17%), Amendment 4.5 normalized anchor NOT applied (permanent goodwill re-basing, no evidenced unwind to 17%)"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Even with the operator's brand-franchise override flooring the destination at 20x, Sheela Foam at Rs 807 fails the 25% hurdle (HR base 0.95, STOP) and returns +2.4% prob-weighted over 3 years; a genuine turnaround (operating ROCE 13%->16%, cash FIRING, EM 27) investable only at Rs 362-453. Decision unchanged: AVOID-on-valuation. Key risk: shared Kurlon-synergy catalyst slipping again. Cash quality: growth-induced."

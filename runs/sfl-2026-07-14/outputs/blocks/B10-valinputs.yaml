@@ -1,0 +1,335 @@
+stage: B10-valinputs
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Rating PDF absent; WC/cash-flow commentary unresolved; Pillar 2 conservative (1.15x default per fttcp-deliberation.md)"
+  - "Historical pledge % trend unconfirmed (only current-state Apr 2026 NIL declaration available)"
+  - "Segment-level profitability (U2O, e-commerce, Kurlon vs Sleepwell) — management assertions only, not independently verified"
+  - "Forward EPS guidance — must be derived from revenue x margin targets; stage 11 computation required"
+  - "Peer valuation medians (P/E, EV/EBITDA, P/B, ROCE) — peer Data_Sheets not found in inputs/screening folder; B06 qualitative only"
+  - "Unit economics (margin per mattress, cost per tonne) — B04 notes not disclosed; blended Core EBITDA margin available only"
+  - "Depreciation policy change exact magnitude — pure policy effect likely smaller than full ~Rs35-40cr guidance reduction; Kurlon intangible amortisation rolloff separate"
+
+flags:
+  - "Reported ROCE 6.7% FY26 goodwill-depressed; Cash ROCE ~13-14% estimated. Stage 11 must decide operating/tangible-capital base per fttcp-deliberation.md."
+  - "Kurlon synergy tail (Rs40-60cr) slipped 4 consecutive quarters; now targeted Q1 FY27 (HIGH RISK to Pillar 1 ROCE/margin recovery timeline)."
+  - "Depreciation policy change (useful-life extension) mechanically reduces FY27 D&A ~20% vs prior run-rate, flattering reported PAT during recovery narrative."
+  - "H2 FY26 PAT concentration (Rs 144cr of Rs 161cr) — run-rate lifted by one-off RM inventory timing and Furlenco Q4 step-up (Rs42cr single quarter, needs verification)."
+  - "Management credibility grade B (Good) — 7/13 commitments delivered; 3 missed (showroom cut 3x, synergy slipped 4x); execution moat (F2) not credited in EM score."
+  - "FII+DII institutional ownership declined from ~31% (Sep 2023) to 24.70% (Mar 2026) — institutional REDUCTION not entry; UA multiplier per Amendment 3 does not apply."
+  - "Receivables build +27.7% FY26 is growth-induced (Kurlon consolidation + U2O scaling); B02 receivables_trend rates as improving; CFO/PAT 2.56x (strong)."
+
+table:
+  company_identity:
+    company_name: "Sheela Foam Ltd (B00-inputs)"
+    ticker: "SFL (manifest)"
+    sector: "Building materials (fttcp-deliberation.md override; manifest 'Agri processing' overridden)"
+    business_type: "Branded and technical foam manufacturing; 5 domestic brands + B2B industrial + intl foam + IT services (B04-bizmodel)"
+    sector_cap_row_pe: 22x
+    sector_cap_row_anchor: "fttcp-deliberation.md ruling #5; manifest 'Agri processing' 20x overridden by deliberation to 'Building materials 22x'"
+    cmp_rs: 807
+    cmp_anchor: "manifest"
+    market_cap_cr: 8812.0
+    market_cap_anchor: "manifest"
+    shares_outstanding_cr: 10.92
+    shares_outstanding_anchor: "screener-Data_Sheet.csv FY26 No. of Equity Shares 109,198,924"
+    face_value_rs: 5
+    face_value_anchor: "screener-Data_Sheet.csv"
+    enterprise_value_cr: 9683.59
+    enterprise_value_calc: "Mcap 8812.0 + Net Debt 871.59 (= Borrowings 907.98 - Cash 36.39)"
+    enterprise_value_anchor: "screener-Data_Sheet.csv FY26"
+
+  latest_financials_fy26:
+    revenue_cr: 3820.84
+    revenue_anchor: "screener-Data_Sheet.csv, Sales FY26"
+    ebitda_cr: 455.57
+    ebitda_calc: "PBT 181.84 + Interest 95.15 + Depreciation 178.58"
+    ebitda_anchor: "screener-Data_Sheet.csv FY26 P&L"
+    ebitda_margin_pct: 11.9
+    pat_cr: 159.61
+    pat_anchor: "screener-Data_Sheet.csv, Net profit FY26"
+    pat_margin_pct: 4.18
+    diluted_eps_reported_rs: 14.62
+    diluted_eps_reported_anchor: "screener-Data_Sheet.csv: PAT 159.61 Cr / Shares 10.92 Cr"
+    cash_eps_estimated_rs: 35.2
+    cash_eps_estimated_anchor: "B04-bizmodel: 'reported EPS Rs14.6 vs Cash EPS Rs35.2 FY26 due to non-cash D&A/deferred tax from PPA'"
+    cfo_cr: 409.32
+    cfo_anchor: "screener-Data_Sheet.csv, Cash from Operating Activity FY26"
+    fcf_cr: 212.49
+    fcf_calc: "CFO 409.32 - Capex 196.83"
+    fcf_anchor: "screener-Data_Sheet.csv FY26; Capex proxy: delta(Net Block + CWIP) + D&A"
+    book_value_per_share_rs: 297.62
+    book_value_calc: "(Reserves 3197.36 + Equity Capital 54.60) / Shares 10.92"
+    book_value_anchor: "screener-Data_Sheet.csv FY26"
+    net_debt_cr: 871.59
+    net_debt_calc: "Borrowings 907.98 - Cash 36.39"
+    net_debt_anchor: "screener-Data_Sheet.csv FY26"
+    roce_reported_pct: 6.7
+    roce_reported_anchor: "B01-gate0; calculated EBIT 276.99 / Capital Employed 4159.94 (EBIT = PBT + Interest; CapEmp = Net Worth + Borrowings)"
+    roce_reported_flag: "Goodwill-depressed; Kurlon PPA impact; cash-basis ~13-14% estimated per B04"
+    roce_cash_basis_pct: 13.0
+    roce_cash_basis_anchor: "B04-bizmodel: estimated range 13-14% FY26"
+    roce_trend_direction: "Improving (FY25: 5.00% trough → FY26: 6.7%)"
+    roce_trend_anchor: "B01-gate0 (FY25 trough); deliberation ROCE forward RECOVERING"
+    roce_forward_verdict: "RECOVERING, ~55% probability (40-60% band), Strong catalysts"
+    roce_forward_anchor: "fttcp-deliberation.md ruling #6; Pillar 1 ROCE = 60/40 weighted avg of current and FY[Y+2] expected"
+    roe_pct: 4.91
+    roe_calc: "PAT 159.61 / Net Worth 3251.96"
+    revenue_cagr_3yr_pct: 13.2
+    revenue_cagr_3yr_calc: "(3820.84 / 2982.31)^0.5 - 1; FY24 base 2982.31"
+    revenue_cagr_3yr_anchor: "screener-Data_Sheet.csv FY24-FY26"
+    pat_cagr_3yr_pct: -6.5
+    pat_cagr_3yr_calc: "(159.61 / 182.44)^0.5 - 1; FY25 trough 89.35 drives negative"
+    pat_cagr_3yr_anchor: "screener-Data_Sheet.csv FY24-FY26 (FY25 trough)"
+    cfo_pat_latest: 2.56
+    cfo_pat_latest_anchor: "screener-Data_Sheet.csv: 409.32 / 159.61; also B01 block_b_trend"
+    cfo_pat_cumulative_10yr: 1.37
+    cfo_pat_cumulative_anchor: "B01-gate0: computed over FY18,19,20,21,22,23,25,26 (excludes FY17, FY24)"
+    fcf_pat_latest: 1.33
+    fcf_pat_latest_calc: "FCF 212.49 / PAT 159.61"
+    p_fcf: 41.46
+    p_fcf_calc: "Mcap 8812.0 / FCF 212.49"
+    capex_proxy_cr: 196.83
+    capex_proxy_calc: "delta(Net Block + CWIP) + Depreciation per B01 methodology"
+    capex_proxy_anchor: "screener-Data_Sheet.csv FY26; Net Block 3197.63 + CWIP 32.19 vs prior year"
+    depreciation_cr: 178.58
+    depreciation_anchor: "screener-Data_Sheet.csv, Depreciation FY26"
+    dps_rs: 1.00
+    dps_calc: "Dividend Amount 10.92 Cr / Shares 10.92 Cr (20% on face value Rs 5)"
+    dps_anchor: "screener-Data_Sheet.csv FY26 Dividend Amount; B05 first-ever dividend declared"
+
+  historical_eps_ladder:
+    fy22_pat_cr: 217.33
+    fy22_shares_cr: 9.76
+    fy22_eps_rs: 22.27
+    fy22_anchor: "screener-Data_Sheet.csv FY22"
+    fy23_pat_cr: 198.93
+    fy23_shares_cr: 9.76
+    fy23_eps_rs: 20.37
+    fy23_anchor: "screener-Data_Sheet.csv FY23"
+    fy24_pat_cr: 182.44
+    fy24_shares_cr: 10.87
+    fy24_eps_rs: 16.78
+    fy24_anchor: "screener-Data_Sheet.csv FY24 (post-Kurlon issuance)"
+    fy25_pat_cr: 89.35
+    fy25_shares_cr: 10.87
+    fy25_eps_rs: 8.22
+    fy25_anchor: "screener-Data_Sheet.csv FY25 (trough year post-acquisition integration)"
+    fy26_pat_cr: 159.61
+    fy26_shares_cr: 10.92
+    fy26_eps_rs: 14.62
+    fy26_anchor: "screener-Data_Sheet.csv FY26"
+    eps_series_note: "Reported EPS distorted by Kurlon PPA (goodwill/intangible amortisation). Cash EPS FY26 ~Rs 35.2 per B04. Stage 11 must reconcile reported vs operating basis."
+
+  management_credibility:
+    credibility_grade: "B (Good)"
+    credibility_anchor: "B05-concall credibility_grade"
+    credibility_basis: "7/13 commitments delivered; 3 partial; 3 missed (showroom target cut 3x and still missed, synergy tail slipped 4x)"
+    guided_revenue_growth_pct: 12.0
+    guided_revenue_growth_range: "12-15% (India business), 3-5 year horizon"
+    guided_revenue_anchor: "B05 guidance table; reiterated Q2/Q3/Q4 FY26 calls"
+    guided_margin_pct: 12.0
+    guided_margin_range: "12-12.5% next year (FY27), 14-15% year after (FY28), Core EBITDA basis"
+    guided_margin_anchor: "B05 guidance table; Q2 FY26 call reiterated Q3 FY26"
+    current_margin_pct: 10.8
+    current_margin_note: "Core EBITDA FY26 10.8%; improved from 7.3% FY25 (+350bps)"
+    current_margin_anchor: "B05 promise_delivery row; confirmed in Q4 FY26 call"
+
+  emerging_moat:
+    em_score: 27
+    em_classification: "STRENGTHENING"
+    em_anchor: "B07-emoat em_score and em_classification"
+    em_evidence_mix: "6 documented + 9 claims + 2 inference (mostly-mixed)"
+    em_evidence_anchor: "B07-emoat evidence_mix; completionist_recount"
+    em_catalysts_12m: 6
+    em_catalysts_anchor: "B07-emoat catalysts_12m section (Kurlon machine, GCC retail, Furlenco stores, U2O scale-up, pillow category, debt reduction)"
+    combined_garp_assessment: "TURNAROUND (Gate 0 AVOID + EM STRENGTHENING recovery trajectory)"
+    combined_assessment_anchor: "B07-emoat combined_assessment; fttcp-deliberation.md BUY-candidate composite +5/8"
+    strategic_asset_present: true
+    strategic_asset_description: "Distribution network (13,000+ dealers, 1,800+ EBOs), dual brands (Sleepwell + Kurlon acquired Jan 2026), Neem Fresche technology"
+    strategic_asset_anchor: "B04-bizmodel moats_present; B07-emoat A3, C2, D2 categories"
+    moat_risks_top3: "Kurlon synergy tail (slipped 4 qtrs), H1 RM-disruption (time-bound), GCC execution (sub-scale)"
+    moat_risks_anchor: "B07-emoat top_moat_risks"
+
+  cash_conversion:
+    verdict: "FIRING, growth-induced (not structural, not INDETERMINATE)"
+    verdict_anchor: "fttcp-deliberation.md ruling #4"
+    pillar2_cash_multiplier_recommended: 1.30
+    pillar2_cash_multiplier_conservative: 1.15
+    pillar2_guidance: "Temper 1.30x elite band for growth-induced receivables build (+27.7% FY26) and absent rating PDF; default to 1.15x if uncertain"
+    pillar2_anchor: "fttcp-deliberation.md handoff section"
+    receivables_build_pct: 27.7
+    receivables_build_anchor: "screener-Data_Sheet.csv FY26 441.53 Cr vs FY25 345.61 Cr; flagged as growth-induced per B02"
+    cfo_conversion_quality_latest: 2.56
+    cfo_conversion_quality_cumulative: 1.37
+
+  capital_employed_components:
+    net_worth_cr: 3251.96
+    net_worth_calc: "Reserves 3197.36 + Equity Capital 54.60"
+    net_worth_anchor: "screener-Data_Sheet.csv FY26"
+    borrowings_gross_cr: 907.98
+    borrowings_anchor: "screener-Data_Sheet.csv FY26 borrowings row; -39.2% YoY from FY24 peak 1493.11"
+    goodwill_intangibles_cr: 251.99
+    goodwill_note: "FY22 AR level plus Kurlon/Furlenco added Jan 2026; unexplained reduction 11.08 Cr FY22"
+    goodwill_anchor: "B02-notes, B03-ardeep (FY22 AR); Kurlon intangible amortisation rolling off FY27+"
+    stage11_note: "Reported ROCE depressed by goodwill; stage 11 must decide operating/tangible-capital base per fttcp-deliberation cross-cutting note"
+
+  rating_document:
+    rating_pdf_available: false
+    rating_pdf_anchor: "B00-inputs input_gaps: 'rating/ absent'"
+    agency: null
+    rating: null
+    outlook: null
+    date: null
+    wc_commentary_verbatim: null
+    pillar2_default: "Conservative 1.15x per fttcp-deliberation.md due to absent rating rationale"
+
+  shareholding:
+    promoter_pct: 65.69
+    promoter_anchor: "operator_shareholding_screener.md Mar 2026"
+    fii_pct: 4.15
+    fii_anchor: "operator_shareholding_screener.md Mar 2026"
+    dii_pct: 20.55
+    dii_anchor: "operator_shareholding_screener.md Mar 2026"
+    fii_dii_pct: 24.70
+    fii_dii_anchor: "operator_shareholding_screener.md Mar 2026"
+    public_retail_pct: 9.60
+    public_anchor: "operator_shareholding_screener.md Mar 2026"
+    promoter_trend: "Stable 65.48-65.69% since Sep 2023 (fell from 72.95% Jun 2023 via QIP)"
+    promoter_trend_anchor: "operator_shareholding_screener.md full table"
+    institutional_trend: "DECLINED from ~31% (Sep 2023) to 24.70% (Mar 2026)"
+    institutional_trend_note: "Institutional REDUCTION, not entry; relevant to transition_evidence claims"
+    pledge_pct_current: 0
+    pledge_pct_anchor: "B08-promoter web declaration Apr 2026 (current state only)"
+    pledge_trend: "unconfirmed (no multi-year historical series found)"
+    promoter_verdict: "CAUTION (10-year dividend drought, CFO/CEO turnover, 4 director term-expirations 2026)"
+    promoter_verdict_anchor: "B08-promoter verdict"
+
+  ua_qualifiers:
+    listed_12m: true
+    listed_12m_anchor: "B03-ardeep ~Dec 2016 IPO; ~10 years prior to run date"
+    gate0_or_em: true
+    gate0_or_em_anchor: "B01 Gate0 32 (below 60); B07 EM 27 (above 25); EM criterion met"
+    fii_dii_lt3: false
+    fii_dii_lt3_anchor: "operator_shareholding_screener.md Mar 2026: 24.70% (ABOVE 3%, not below)"
+    all_met: false
+    all_met_note: "Qualifier #3 not satisfied; FII+DII 24.70% >> 3%; UA multiplier rules per Amendment 3 do not apply"
+    fii_dii_mtm_note: "High institutional ownership (24.70%) does not trigger low-institution-confidence adjustment per CLAUDE.md"
+
+  tam_som_analysis:
+    market_definition: "India mattress + branded PU-foam home-comfort, organized + unorganized, all price segments, all channels, residential + institutional"
+    tam_conservative_cr: 20880
+    tam_realistic_cr: 22359
+    tam_growth_rate_pct: 8.6
+    tam_anchor: "B09-tam tam_cr, tam_growth_pct"
+    organized_sam_cr: 7000
+    sam_pct_of_tam: 33.5
+    som_3yr_cr: 3246
+    som_5yr_cr: 4318
+    som_implied_cagr_yr3_pct: 15.6
+    som_implied_cagr_yr5_pct: 15.5
+    current_sam_share_pct: 30.0
+    revenue_headroom_multiple: 3.33
+    runway_class: "STRONG"
+    capacity_check: "SOM_yr5 requires 2.06x domestic-mattress volume, within management 2.0-2.5x debottlenecking headroom"
+    tam_anchor: "B09-tam tam_cr, som_3yr_cr, som_5yr_cr, runway_class"
+    mgmt_inflated_claim_cr: 100000
+    mgmt_claim_flag: "INFLATED (4.8x conservative, likely wider home-and-sleep-economy conflation)"
+
+  peer_medians:
+    pe_ratio: null
+    pe_note: "Peer Data_Sheets not found in inputs/screening folder; B06 qualitative peer analysis only"
+    ev_ebitda: null
+    pb_ratio: null
+    growth_pct: null
+    roce_pct: null
+    peer_anchor: "B06-peers peer_coverage_map; qualitative analysis of WAKEFIT, CENTURYPLY, GREENLAM, NILKAMAL"
+    stage11_note: "Stage 11 must source peer medians independently if required for relative-valuation cross-check"
+
+  shared_catalyst_flag:
+    flag_raised: true
+    catalyst: "Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 growth premium"
+    impact_areas: ["Pillar 1 ROCE recovery", "Margin expansion", "Pillar 3 EM band"]
+    anchor: "fttcp-deliberation.md ruling #8"
+
+  forward_eps_framework:
+    fy27_revenue_driver: "12-15% guidance (midpoint ~13.5%); FY26 base 3820.84 → ~4330 Cr"
+    fy27_margin_driver: "Core EBITDA 12-12.5% target; D&A Rs140-145cr consolidated (vs FY26 run-rate ~Rs180cr)"
+    fy27_shares_cr: 10.92
+    fy27_note: "Depreciation-policy change embedded; stage 11 to compute"
+    fy28_revenue_driver: "12-15% continuation; U2O scale-up, e-commerce >100% YoY, Kurlon synergy tail realization"
+    fy28_margin_driver: "14-15% target; RM shock assumed normalized"
+    fy29_revenue_driver: "Mid-term guidance continuation; SOM capture 15.5% CAGR toward Rs 4318 Cr by FY31"
+    fy29_margin_driver: "14-15% sustainable maturation"
+    forward_stage11_note: "Stage 11 to compute; anchor on recovered normalized ROCE (60/40 current+FY28 per fttcp-deliberation), not FY26 trough or pre-acq 17%"
+
+conflicts:
+  - field: "Consolidated Revenue Growth FY22 vs FY21"
+    value_a: "22.4%"
+    anchor_a: "B02 Finding #1 (AR Chairman's 23%, MD&A 22.4% variant cited)"
+    value_b: "20.57%"
+    anchor_b: "screener-Data_Sheet.csv actual calc (2981.81 - 2473.19) / 2473.19"
+    used: "20.57% (more conservative)"
+    note: "B12a MINOR severity; AR-internal variance already flagged by B03"
+  - field: "EBO/Showroom Count (Q1 vs Q2 FY26)"
+    value_a: "6,000"
+    anchor_a: "B05 Q1 FY26 call cross-ref"
+    value_b: "5,300"
+    anchor_b: "B05 Q2 FY26 call (420 net additions stated)"
+    used: "Unreconciled; bucket definition shift unexplained"
+    note: "B05 repeated_evasion; B12b flags definition/bucket change without reconciliation"
+  - field: "H2 FY26 PAT Run-rate Quality"
+    value_a: "Rs 144 Cr of Rs 161 Cr (89%) in H2"
+    anchor_a: "B05 promise_delivery row, Q4 guidance"
+    value_b: "Annualised >Rs 70 Cr/quarter H2 run-rate"
+    anchor_b: "Q4 FY26 call (Amit Gupta p.5-6)"
+    used: "Both cited; components flagged separately"
+    note: "B12b FLAG: run-rate lifted by RM inventory timing, depreciation policy change, Furlenco Q4 step-up; not tied together as quality caveat"
+  - field: "Reported vs Cash ROCE (FY26)"
+    value_a: "6.7% (reported)"
+    anchor_a: "B01-gate0"
+    value_b: "~21%/18% (range, cash-basis estimated)"
+    anchor_b: "B04-bizmodel"
+    used: "Reported as Pillar 1 anchor; cash-basis decision deferred to stage 11"
+    note: "fttcp-deliberation.md: stage 11 decides reported vs operating/tangible base"
+
+unresolved:
+  - field: "Rating PDF (Agency, Rating, Outlook, WC Commentary verbatim)"
+    why: "No rating document provided in inputs"
+    where_it_might_be: "Results/ or documents/ folder if added post-stage-10; alternatively India Ratings, CRISIL, ICRA public filings for SFL"
+    severity: "HIGH (blocks Pillar 2 conviction level per fttcp-deliberation.md)"
+  - field: "Pledge % (Multi-year Historical Trend)"
+    why: "Only current-state NIL declaration (Apr 2026 web) available; NSE/BSE shareholding-pattern filing not provided"
+    where_it_might_be: "NSE/BSE shareholding archives; B08 notes screener.in HTTP 403 proxy block prevented MCA/portal access"
+    severity: "MEDIUM (UA qualifier impact only; no transaction risk flagged)"
+  - field: "Segment-Level Profitability (U2O, e-commerce, Kurlon vs Sleepwell)"
+    why: "No segment-revenue disclosure in any provided document; B07 notes management assertions only"
+    where_it_might_be: "Q4 FY26 call or Q1 FY27 concall expected to provide break-outs; management said 'not disclosed' in Q3 FY26 per B05"
+    severity: "MEDIUM (individual margin drivers not independently verified)"
+  - field: "Forward EPS Guidance (FY27, FY28, FY29)"
+    why: "No explicit EPS guidance provided; only revenue/margin guidance given"
+    where_it_might_be: "Can be derived from revenue x margin targets; Q1 FY27 concall expected to provide post-quarter reckoning"
+    severity: "LOW (stage 11 must build forward model)"
+  - field: "Peer Valuation Medians (P/E, EV/EBITDA, P/B, ROCE)"
+    why: "Peer Data_Sheets not found in inputs/screening folder; B06 qualitative peer analysis only"
+    where_it_might_be: "Separate peer-screener CSVs if available in repo"
+    severity: "LOW (complementary, not blocking; B06 qualitative sufficient)"
+  - field: "Unit Economics (Margin per Mattress, Cost per Tonne Foam)"
+    why: "B04 notes not disclosed; B07 notes no unit-level breakout in any document"
+    where_it_might_be: "Management IR calls or investor presentation slide 15 (poppler-utils unavailable so PDF not rendered)"
+    severity: "LOW (not required for base valuation; CFO-level allocation available)"
+  - field: "Dividend Payout Policy (Forward Rate)"
+    why: "First-ever dividend declared FY26 (20% = Rs 1/share); current policy NOT FOUND per B04"
+    where_it_might_be: "B05 trigger #8; Q1 FY27 concall expected to clarify continuation/step-up"
+    severity: "LOW (not material to core valuation)"
+  - field: "Current Capacity Utilization %"
+    why: "No plant-level utilisation disclosed anywhere; management 2-2.5x headroom claim is qualitative only"
+    where_it_might_be: "Management guidance; Q1 FY27 concall or IR presentation"
+    severity: "LOW (SOM analysis assumes headroom exists; qualitative sufficient for TAM runway)"
+
+credibility_grade: "B"
+credibility_grade_anchor: "B05-concall credibility_grade; Role 1 probability weights 25/50/25 per fttcp-deliberation.md"
+
+verifier_acceptance_notes: "B12a 98.1% numerical (0 CRITICAL, 0 MAJOR, 1 MINOR); B12b 90% flag coverage (9/10 caught upstream, 1 partial); B12c 97% framework adherence (65/67 gate0+em rules, 0 CRITICAL, 1 MAJOR decision-neutral); B12d 91% peer utilisation (3/4 peers substantive, 21/23 citations verified clean). Overall confidence 90% (HIGH band ≥90); valuation rules deferred to phase 3."

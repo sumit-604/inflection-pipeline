@@ -1,0 +1,62 @@
+stage: B14-thesis
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+rerun: true
+operator_override_context:
+  id: "OVERRIDE #2 (2026-07-14, phase-3 review, authoritative)"
+  ruling: "Granted Strategic Premium for largest-brand franchise; floored governing Track 1 destination PE at 20.0x"
+  effect_on_thesis: "All fair values, entry zone, hurdle and destination PE updated; decision UNCHANGED (AVOID on valuation)"
+  strengthens_avoid: true   # even at the 20x floor, Rs 807 still fails the hurdle
+verdict: "AVOID"
+one_line_thesis: "Even with the operator's brand-franchise override flooring the destination at 20x, Sheela Foam at Rs 807 fails the 25% hurdle (Hurdle Ratio 0.95, STOP) because the price already embeds the recovery at ~18x FY30 earnings; a genuine turnaround (operating ROCE 13%->16%, cash FIRING, first dividend, EM 27 STRENGTHENING) but only investable at Rs 362-453. Key risk: shared Kurlon-synergy catalyst slipping again. Thesis breaks if operating ROCE fails >14% by FY28 or core EBITDA margin compresses >150bps in Q1/Q2 FY27."
+tier: "A"
+entry_range: {low: 362, high: 453}
+mos_price: 362
+target_3yr_base: 884
+target_3yr_bull: 1243
+target_3yr_bear: 549
+hurdle_ratio_band: "STOP"
+hurdle_ratio: {base: 0.95, bull: 1.21}
+destination_pe: {track1_rrm_mid: 20.0, track2_additive_mid: 21.3, pre_override_track1: 16.7}
+upside_downside_ratio: 0.30
+expected_cagr_prob_weighted: 2.4
+position_size: "Small"
+position_size_override: ""   # none recorded; override #2 addressed Strategic Premium/destination PE only. FTTCP SMALL-MEDIUM down-capped to Small by promoter CAUTION (rule application, not an override)
+position_size_reasoning: "Promoter CAUTION bars Tier B and limits to Tier A; Gate 0 AVOID plus no BUY-NOW condition removes Medium/Large; applies only if price enters the entry zone with no broken trigger"
+thesis_broken_if: "Operating (Cash) ROCE fails to print above 14% by FY28 OR the Kurlon synergy machine slips a fifth consecutive quarter with no hard install date"
+thesis_broken_conditions:
+  - "Operating (Cash) ROCE fails to print above 14% by FY28 (converges toward reported 9-10%)"
+  - "Core EBITDA margin compresses more than 150bps YoY in Q1 or Q2 FY27 (RM pass-through fails)"
+  - "Kurlon synergy tail (Rs 40-60 Cr) slips a fifth consecutive quarter with no hard installation date"
+  - "Net-debt reduction stalls or reverses off the FY28 net-cash glide-path"
+  - "Earnings quality breaks: further depreciation-policy changes flatter EPS, or receivables +>20% while CFO/PAT falls below 1.0x"
+monitoring_checklist:
+  - "Core EBITDA margin (ex other income) above 12% in BOTH Q1 and Q2 FY27; red if compression >150bps YoY or below 10%"
+  - "Kurlon synergy machine installed with Rs 40-60 Cr EBITDA step-up visible in Q1 FY27; red on a fifth slip with no hard date"
+  - "Operating (Cash) ROCE trending to 16% FY28 and above 14% by FY28; red converging toward reported 9-10%"
+  - "Net debt continues falling toward FY28 net-cash (~Rs 300 Cr remaining); red if reduction stalls or reverses"
+  - "Receivables grow at or below revenue and CFO/PAT stays above 1.0x; red if receivables +>20% with CFO/PAT below 1.0x"
+  - "Second consecutive dividend declared FY27, stable board, no further institutional exit; red on skip or continued churn"
+  - "Entry conjunction: price enters Rs 362-453 with NO thesis-broken trigger fired; a zone entered because a trigger fired is withdrawn"
+verdict_consistency: "Consistent with Role 1 (B11 re-run) AVOID-on-valuation; triggered on Hurdle STOP (base 0.95, bull 1.21) AND Upside/Downside 0.30x (<2x) AND Gate 0 AVOID"
+combined_rating: "TURNAROUND"
+fttcp_composite: "+5 of 8, BUY-candidate"
+gate0_classification: "AVOID"
+em_classification: "STRENGTHENING (EM 27)"
+promoter_verdict: "CAUTION"
+management_grade: "B"
+tam_runway: "STRONG"
+return_matrix_cells_25pct: "0/9"
+return_matrix_cells_15pct: "1/9"
+must_fall_to_entry_pct: 44
+shared_catalyst_flag: true
+active_flags:
+  - "FLAG-GATE0: Gate 0 AVOID is a mechanical acquisition-trough artefact, not structural decline"
+  - "FLAG-CASH: cash conversion FIRING but growth-induced (receivables +27.7%)"
+  - "SHARED CATALYST: Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 (single point of failure)"
+  - "Earnings quality: H2-loaded PAT and depreciation-policy change flatter reported earnings"
+  - "Promoter CAUTION: clean legal, mixed transition, institutions declined not entered"
+  - "OPERATOR OVERRIDE #2: Strategic Premium +3.5x granted (largest-brand franchise), destination floored to 20.0x; framework read was +0x; decision UNCHANGED (AVOID on valuation)"
+publication_candidate: false

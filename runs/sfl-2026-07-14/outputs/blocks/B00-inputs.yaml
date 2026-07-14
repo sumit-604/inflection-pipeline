@@ -1,0 +1,31 @@
+stage: B00-inputs
+company: SFL
+run_date: 2026-07-14
+model: orchestrator
+status: complete
+concalls_available: true
+concall_map:
+  - {file: Concall_Aug_2025_Transcript.pdf, quarter: Q1 FY26}
+  - {file: Concall_Nov_2025_Transcript.pdf, quarter: Q2 FY26}
+  - {file: Concall_Feb_2026_Transcript.pdf, quarter: Q3 FY26}
+  - {file: Concall_May_2026_Transcript.pdf, quarter: Q4 FY26}
+peer_map:
+  CENTURYPLY: {concalls: 4, screener: true}
+  GREENLAM: {concalls: 3, screener: true}
+  WAKEFIT: {concalls: 2, screener: false}
+  NILKAMAL: {concalls: 0, screener: true}
+input_gaps:
+  - "results/ absent; financials from screener Data_Sheet FY17-FY26 + Q3FY24-Q4FY26; concalls carry results commentary"
+  - "rating/ absent; FLAG-CASH structural determination lacks rating rationale; Pillar 2 conservative (phase 3)"
+  - "announcements/ folder had no PDFs; PARTIALLY filled mid-run by operator digest inputs/announcements/operator_6mo_digest.md (lead/cross-check layer, not original filings); Jan 2026 Kurlon scheme + 1-Jan-2026 depreciation change captured"
+  - "shareholding/ folder had no filing; PARTIALLY filled mid-run by operator screener screenshot inputs/shareholding/operator_shareholding_screener.md; FII+DII now resolvable (Mar 2026 24.70%); PLEDGE % still unconfirmed"
+  - "research/ absent; no lead-generation source"
+  - "annual-report is FY2022 (~4y stale); backward baseline FY22; 4y gap to FY26 concalls; qualitative AR content as of FY22"
+  - "screener P&L/BS/CF/Quarters/Customization CSVs empty templates; Data_Sheet.csv populated"
+  - "presentation image-heavy (~19k chars); thin text"
+  - "prospectus/ absent but long-listed (~2016); NOT a gap"
+defects:
+  - "manifest sector_cap_row 'Agri processing' WRONG for a foam/mattress maker; phase-3 stage 11 must correct to consumer/building-products cap row"
+  - "annual-report file mislabeled Annual_Report_2023.pdf but is FY2022 AR"
+  - "manifest listed_date blank; derived ~Dec 2016"
+flags: []

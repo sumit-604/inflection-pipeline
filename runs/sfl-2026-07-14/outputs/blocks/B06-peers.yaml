@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Greenlam's most recent available transcript (Q3/9M FY26, Jan 30 2026 call) predates the acute March-May 2026 phase of the TDI/polyol/chemical cost shock described in Wakefit's and Centuryply's May-2026 calls; no Greenlam call covering that window was provided, so Greenlam contributes no direct evidence on the acute-phase RM claim"
+  - "NILKAMAL has no concall transcript in this run's inputs (screener financials only per task brief); recorded as unused-in-this-stage, not a mechanical failure"
+flags:
+  - "Peer (Wakefit) management explicitly states competitive intensity and price-matching/discounting have increased, not moderated, over the last six to nine months as of its May-2026 call, directly contradicting SFL's implicit assumption that competitive discipline improves for better-funded post-IPO peers (medium-high severity, bears on SFL's ASP-premiumisation margin thesis)"
+  - "SFL's stated RM pass-through of 25-35% is notably higher than the ~15% cumulative pass-through Wakefit reports and the ~15% (MDF) / 7-12% (plywood, laminates) Centuryply reports achieving over the same window; magnitude gap not explained by segment mix alone and should be checked against SFL's own disclosed pricing actions (medium severity)"
+  - "Neither Wakefit, Centuryply nor Greenlam cite third-party market-tracking data for the unorganised-to-organised shift either; SFL's uncited assertion of this trend is industry-standard practice among peers, not a distinguishing evasion (softens an existing B05 red flag; informational, not a new risk)"
+peers_provided: 4
+verified:
+  - {claim: "Market-share shift from unorganised to organised (mattress/adjacent categories) is occurring", peers: ["WAKEFIT", "CENTURYPLY", "GREENLAM"], anchor_count: 5}
+partially_verified:
+  - {claim: "TDI/polyol raw-material price shock (Middle East/Iran war-driven) and pass-through taken by SFL", peers: ["WAKEFIT", "CENTURYPLY"]}
+  - {claim: "Capex intensity / spare-capacity claim (2-2.5x spare capacity, minimal new production capex through FY27)", peers: ["WAKEFIT", "CENTURYPLY", "GREENLAM"]}
+contradicted:
+  - {claim: "Competitive discipline on pricing/promotions has improved industry-wide post-listing for better-funded peers", contradicting_peer: "WAKEFIT", quote_anchor: "WAKEFIT Q4 FY26 (May-2026) call, C. Ramalingegowda: 'the competition intensity has definitely gone up over the last six to nine months... increased advertising spending as well as increased matching of prices similar to Wakefit'"}
+unverifiable:
+  - {claim: "Organised e-commerce mattress market is ~Rs2,000cr, growing 15-20% annually, with SFL plausibly on track to ~30% share", peers_checked: ["WAKEFIT"]}
+  - {claim: "Peers report a similar online-vs-offline price-hike asymmetry (offline hikes taken broadly, online lagging)", peers_checked: ["WAKEFIT"]}
+peer_coverage_map:
+  - {peer: "WAKEFIT", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "U2O-shift language, premiumisation/channel detail, competitive-intensity baseline"}
+  - {peer: "WAKEFIT", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "RM/TDI-polyol shock and pass-through; direct contradiction of competitive-discipline claim; capex framing; analyst 10-year industry-profitability study"}
+  - {peer: "CENTURYPLY", quarter: "Q1 FY26 (Aug-2025 call)", usage: "SUBSTANTIVE", contribution: "Early U2O/organised-share commentary; QCO/BIS formalisation thesis; pre-shock cost baseline"}
+  - {peer: "CENTURYPLY", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Explicit U2O framing; temporary Punjab flood timber spike; capex/utilisation context"}
+  - {peer: "CENTURYPLY", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Large capex announcements reinforcing capacity-race read; organised-share estimate progression"}
+  - {peer: "CENTURYPLY", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Best corroboration of RM/chemical shock and pass-through, same Iran/Middle East war reference as SFL"}
+  - {peer: "GREENLAM", quarter: "Analyst meet (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Explicit U2O commentary from independent director; QCO/BIS thesis; capex buildout baseline"}
+  - {peer: "GREENLAM", quarter: "Q2/H1 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Further capacity-race evidence; FX mark-to-market risk on project debt; US tariff exposure"}
+  - {peer: "GREENLAM", quarter: "Q3/9M FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "Softening domestic-demand commentary; pre-shock chemical-cost commentary (no coverage of acute March-May 2026 window)"}
+  - {peer: "NILKAMAL", quarter: "n/a", usage: "UNUSED", contribution: "No concall transcript provided; screener financials only"}
+industry_cross_read:
+  demand: "Mixed-to-softening into Q4 FY26/Q1 FY27 across the peer set (Centuryply strongest and broad-based; Wakefit explicitly flags H2 FY26 demand moderation; Greenlam reports the softest domestic demand and a Q3 FY26 revenue shortfall) -- no peer describes an unqualified industry-wide demand boom"
+  pricing_inputs: "Timber/wood inputs stable-to-softening through FY26 across peers; chemical/resin inputs (TDI, polyol, phenol, melamine) spike sharply from Feb-Mar 2026, tied to the same Iran/Middle East conflict SFL's calls reference -- matches SFL's margin narrative on which input and when, though SFL's reported pass-through magnitude exceeds peers'"
+  capex_cycle: "Split by segment: Wakefit (closest comp) is in a low-capex, retail-led mode; Centuryply and Greenlam (adjacent wood-panel/laminate makers, not direct comps) are both in an industry-wide capacity race at 80-99%+ utilisation with large multi-year capex programmes -- this is a capacity-race situation in the adjacent category, not a lone-expander situation, though it is not a same-segment match for SFL's own spare-capacity claim"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Structural mattress-industry EBITDA-pool erosion over a 10-year horizon amid new D2C entrant competition (raised by an analyst on Wakefit's Q4 FY26 call, not addressed with the same framing in SFL's own calls per B05)"
+  - "FX mark-to-market losses on import-linked project debt (Greenlam's euro-denominated chipboard loan; Centuryply's imported-machinery credit exposure) -- a distinct cash-adjacent earnings-quality risk category worth checking against SFL's Australia/Spain international exposure and any foreign-currency borrowings"
+net_narrative_effect: "complicates"

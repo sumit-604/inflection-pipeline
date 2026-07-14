@@ -1,0 +1,93 @@
+stage: B05-concall
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Deepali Kumari's Q4 FY26 question on U2O market scalability across states was cut off by audio issues and never answered (technical gap, not evasion)"
+  - "Portion of Amit Mehendale's Q4 FY26 debt-level follow-up garbled in transcript ([[that]]); substance reconstructable from surrounding context"
+flags:
+  - "Depreciation policy change (useful-life extension) reduces FY27 consolidated D&A guidance to Rs140-145cr from a prior ~Rs180cr run-rate cited by an analyst, mechanically boosting reported PAT during the profit-recovery narrative; framed only as an accounting correction, not as profit-flattering (medium severity)"
+  - "Showroom/EBO network expansion target revised down three consecutive quarters (1,000 in Q1 FY26 cross-ref -> 800 in Q2 FY26 -> 700 in Q3 FY26) and still missed at ~600 actual net additions for FY26 (medium severity)"
+  - "Kurlon synergy tail of Rs40-60cr has slipped across all four quarters analysed (Q1 FY26 cross-ref through Q4 FY26 calls), always attributed to the same overseas machine delivery delay, now pushed to Q1 FY27 (medium severity)"
+  - "EBO/showroom count disclosure inconsistent across quarters (6,000 in Q1 FY26 -> 5,300 in Q2 FY26 -> 3,800 under a new bucket definition in Q3 FY26), never fully reconciled despite being asked twice (low-medium severity)"
+  - "Raw-material cost shock from the Middle East war (TDI/polyol up 25-35%) creates a live, unresolved margin risk for Q1-Q2 FY27; management itself calls the pricing outlook 'crystal ball gazing' (medium severity, time-bound)"
+  - "Furlenco Q4 FY26 PAT step-up (~Rs42cr in a single quarter against a 9-month run-rate implying ~Rs6cr/quarter) is large enough to warrant independent verification against Furlenco's own financials at a later stage (low-medium severity)"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Raw-material pass-through holding through Q1-Q2 FY27 despite 25-35% TDI/polyol spike", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Gross margin flat-to-up YoY in Q1/Q2 FY27 prints", kill_signal: "Gross margin compression >150bps in either of the next two quarters"}
+  - {priority: 2, name: "Kurlon synergy tail (Rs40-60cr) finally realised post four-quarter delay", type: "cost", timeframe: "near", conviction: "L-M", confirm_signal: "Machine installed and EBITDA margin step-up visible in Q1 FY27 print", kill_signal: "Further delay disclosed in Q1 FY27 call without a hard installation date"}
+  - {priority: 3, name: "Showroom/EBO network re-acceleration after three consecutive downward revisions", type: "volume", timeframe: "medium", conviction: "L-M", confirm_signal: "FY27 net additions meet or exceed the FY26 actual (~600) with no further guidance cuts", kill_signal: "Another downward revision or repeat of unreconciled EBO-count reporting"}
+  - {priority: 4, name: "E-commerce (brand.com) scale continuing at >100% YoY", type: "volume+price-mix", timeframe: "near-medium", conviction: "H", confirm_signal: "Brand.com growth sustained above 50-60% YoY in FY27", kill_signal: "Growth decelerates sharply below 50% as base scales"}
+  - {priority: 5, name: "U2O (unorganized-to-organized) segment scaling profitably", type: "volume", timeframe: "medium", conviction: "M-H", confirm_signal: "Value growth continues materially ahead of volume growth without margin dilution", kill_signal: "Segment margin disclosed as dilutive to blended EBITDA"}
+  - {priority: 6, name: "Furlenco value realisation (IPO or stake monetisation)", type: "inorganic", timeframe: "medium", conviction: "M", confirm_signal: "A firm IPO timeline or process announced within two quarters", kill_signal: "Furlenco raise/IPO process shelved or valuation cut in a subsequent raise"}
+  - {priority: 7, name: "Debt reduction to net-cash by FY28", type: "cost", timeframe: "medium", conviction: "M", confirm_signal: "Net debt continues to fall each quarter consistent with the FY28 net-cash target", kill_signal: "Reduction pace stalls again as it did in FY26 versus the original Q1/Q2 FY26 glide path"}
+  - {priority: 8, name: "Dividend policy continuation/step-up", type: "capital-allocation", timeframe: "near-medium", conviction: "M", confirm_signal: "A second consecutive dividend declared for FY27", kill_signal: "Dividend skipped or cut given capex/debt priorities"}
+  - {priority: 9, name: "Australia/Spain margin sustaining at 10-12%", type: "margin", timeframe: "near", conviction: "H", confirm_signal: "Margins hold in the 10-12% band through FY27", kill_signal: "Margin reverts below 8%"}
+  - {priority: 10, name: "Depreciation-policy change durability / earnings quality", type: "margin (reported)", timeframe: "ongoing", conviction: "L", confirm_signal: "Useful-life assumptions independently verified against Schedule III policy and not revisited again to flatter EPS", kill_signal: "Further depreciation-policy changes in subsequent years without clear technical justification"}
+guidance:
+  - {item: "Showroom additions FY26 (original)", number: "1,000 new showrooms", timeframe: "FY26", stated_in: "Q1 FY26 call (cross-ref)"}
+  - {item: "Showroom additions FY26 (revision 1)", number: "~800 by year-end", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Showroom additions FY26 (revision 2)", number: "~700 by year-end", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Showroom additions FY26 (actual)", number: "~600 net new", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Kurlon synergy total programme", number: "Rs250cr", timeframe: "cumulative since acquisition", stated_in: "Q2 FY26 call"}
+  - {item: "Synergy realised to date", number: "Rs190cr (Q2) -> Rs200cr (Q3)", timeframe: "run-rate", stated_in: "Q2 FY26 call; Q3 FY26 call"}
+  - {item: "Synergy balance pending machine install", number: "Rs40-60cr", timeframe: "end-Q3 FY26 -> mid-Q4 FY26 -> Q1 FY27 (slipped)", stated_in: "Q2 FY26 call; Q3 FY26 call; Q4 FY26 call"}
+  - {item: "Top-line growth target", number: "12-15% (India business, later framed 15%+)", timeframe: "3-5 year horizon", stated_in: "Q2 FY26 call; reiterated Q3/Q4 FY26 calls"}
+  - {item: "EBITDA margin target", number: "12-12.5% next year, 14-15% year after", timeframe: "2-3 years", stated_in: "Q2 FY26 call; reiterated Q3 FY26 call"}
+  - {item: "Debt-free / net-cash target", number: "Net cash by FY28", timeframe: "2-3 years", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 net debt reduction (actual)", number: "Rs156cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Furlenco FY26 revenue", number: "Rs370cr (target and actual)", timeframe: "FY26", stated_in: "Q1 FY26 call (cross-ref, target); Q4 FY26 call (actual)"}
+  - {item: "Furlenco FY26 PAT (actual)", number: "~Rs60cr vs Rs3cr FY25", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 capex guidance", number: "Rs125-150cr consolidated", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 depreciation guidance", number: "Rs140-145cr consolidated", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 dividend", number: "20% (first-ever)", timeframe: "FY26, subject to shareholder approval", stated_in: "Q4 FY26 call"}
+  - {item: "RM price pass-through taken", number: "25-35%", timeframe: "Q4 FY26 / Q1 FY27", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 7
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q1 FY26 call (cross-ref)", promise: "1,000 new showrooms in FY26", outcome: "missed", explanation: "Reclassified as a Kurlon-driven 'aberration' year; base expected to normalise lower next year (Q2 FY26 call)"}
+    - {promised_in: "Q1/Q2 FY26 calls", promise: "Kurlon synergy tail Rs40-60cr from new machine, installed end-Q3 FY26, results Q4 FY26", outcome: "missed", explanation: "Overseas machine delivery/installation delay, now pushed to Q1 FY27 (Q4 FY26 call)"}
+    - {promised_in: "Q2 FY26 call", promise: "Debt-free/net-cash glide path implying faster net debt reduction toward Rs300-400cr by FY26 year-end", outcome: "partial", explanation: "Direction achieved but FY26 net debt reduction of only Rs156cr was slower than the original path implied; no explicit excuse offered, surfaces only on cross-quarter comparison"}
+    - {promised_in: "Q2 FY26 call", promise: "Top-line growth to reach 12-15%, margin to reach 12-12.5% next year", outcome: "partial", explanation: "FY26 standalone growth landed at 11%, below range; framed as 'halfway there' rather than a miss (Q3 FY26 call)"}
+    - {promised_in: "Q1 FY26 call (cross-ref)", promise: "Furlenco FY26 revenue of Rs370cr", outcome: "delivered", explanation: "FY26 actual revenue landed at exactly Rs370cr (Q4 FY26 call)"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "Furlenco PAT trajectory improving toward Rs500-550cr revenue scale", outcome: "delivered", explanation: "FY26 PAT of ~Rs60cr vs Rs3cr FY25, ahead of the 9-month trajectory implied in Q3 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "Interest cost/other income normalising post debt paydown to ~Rs50-60cr interest, ~Rs40cr other income per annum", outcome: "delivered", explanation: "Q4 FY26 call guides finance cost ~Rs50cr consolidated forward, broadly consistent"}
+    - {promised_in: "Q2 FY26 call", promise: "EBO/showroom count reconciliation (6,000 in Q1 vs 5,300 in Q2 despite 420 net additions)", outcome: "missed", explanation: "Never reconciled; Q3 FY26 call introduced a new bucket split (3,800 + 2,500) without bridging to the earlier figure"}
+    - {promised_in: "Q3 FY26 call", promise: "Board 'reviewing' a dividend", outcome: "delivered", explanation: "First-ever 20% dividend recommended for FY26 (Q4 FY26 call)"}
+    - {promised_in: "Q1 FY26 call (cross-ref)", promise: "No new production capex needed before 2029-2030", outcome: "partial", explanation: "Q3/Q4 FY26 calls guide Rs125-150cr FY27 capex incl. debottlenecking, materially earlier than original framing though characterised as maintenance/efficiency, not new capacity"}
+    - {promised_in: "Q2 FY26 call", promise: "Consolidated core EBITDA margin trajectory improving quarter on quarter", outcome: "delivered", explanation: "10.9% Q3, 11.5% Q4, FY26 full year 10.8% vs 8.5% FY25"}
+    - {promised_in: "Q2 FY26 call", promise: "PAT recovery on the back of Kurlon integration and top-line growth", outcome: "delivered", explanation: "FY26 consolidated PAT Rs161cr vs Rs89cr FY25, +78% YoY per company figures (Q4 FY26 call)"}
+    - {promised_in: "Q2 FY26 call", promise: "Kurlon merger completion (NCLT order received) and full integration", outcome: "delivered", explanation: "Merger completed in all respects with ROC filings made by Q3 FY26 call"}
+excuse_pattern: "external-blame-heavy for discrete misses (synergy machine delay, showroom base 'aberration'), balanced with genuine self-credit for positive numbers and one clear unprompted admission of past struggle in Q4 FY26"
+repeated_evasions:
+  - {question: "Reconcile the EBO/showroom count discrepancy across quarterly presentations (6,000 -> 5,300 -> 3,800 under changing bucket definitions)", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "deflected every time / answer changed between quarters"}
+  - {question: "What is Tarang/Aaram (or U2O) volume as a % of total mattress volume?", quarters_asked: ["Q1 FY26 (cross-ref)", "Q3 FY26"], classification: "deflected every time"}
+  - {question: "Is the Australia/international business still being explored for sale?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answered consistently, but unchanged non-committal hedge each time (not a true evasion, no new information across quarters)"}
+credibility_grade: "B"
+credibility_basis: "Strong delivery on headline financial commitments (margin expansion, 78% PAT growth, first-ever dividend, Furlenco outperformance, directional debt reduction) offset by chronic under-delivery and repeated downward revision on discrete operational commitments (showroom target cut three times and still missed, synergy tail slipping across all four quarters analysed) plus an earnings-flattering depreciation policy change not proactively flagged as such."
+peer_questions:
+  - {question: "Is the organised e-commerce mattress market really ~Rs2,000cr and growing 15-20% annually, and is SFL plausibly on track to a ~30% share of it?", why: "Underpins SFL's e-commerce growth guidance and its FY26 brand.com +136% YoY print; a smaller or slower-growing market narrows the runway", check_peers: ["Wakefit"]}
+  - {question: "What raw-material (TDI/polyol) price trend and pass-through experience did peers report over the same period, and did they achieve a similar 25-35% pass-through amid the Middle East war-driven spike?", why: "This is the single largest near-term margin risk identified in the calls; peer corroboration or divergence changes confidence in SFL margin durability through Q1-Q2 FY27", check_peers: ["Wakefit", "Centuryply", "Greenlam"]}
+  - {question: "Do peers corroborate a market-share shift from unorganised to organised mattress/adjacent categories, and do they cite third-party tracking data SFL does not?", why: "SFL asserts this shift twice without a cited source; it underpins the U2O growth thesis and broader India-demand narrative", check_peers: ["Wakefit", "Centuryply", "Greenlam"]}
+  - {question: "Has competitive discipline on pricing/promotions actually improved industry-wide, or do peers still describe heavy discounting as of their most recent calls?", why: "SFL's ASP-premiumisation strategy assumes competitive intensity moderates post-listing for better-funded peers; continued heavy discounting is a margin risk SFL itself flagged as unresolved through Q3 FY26", check_peers: ["Wakefit"]}
+  - {question: "What capex intensity and capacity-utilisation approach do peers describe, and does it corroborate SFL's claim of 2-2.5x spare capacity requiring minimal new production capex through FY27?", why: "Direct capex-cycle claim affecting SFL's free cash flow and debt-reduction/dividend trajectory", check_peers: ["Wakefit", "Centuryply", "Greenlam"]}
+  - {question: "Do peers report a similar online-vs-offline price-hike asymmetry (offline hikes taken broadly, online lagging)?", why: "Specific, checkable market-structure claim relevant to channel-mix economics into FY27", check_peers: ["Wakefit"]}
+red_flags:
+  - "Depreciation policy change (useful-life extension) mechanically reduces FY27 D&A guidance ~20% versus prior run-rate, boosting reported PAT during the profit-recovery narrative; framed only as an accounting correction (medium severity)"
+  - "Showroom/EBO expansion target cut three consecutive quarters (1,000 -> 800 -> 700) and still missed at ~600 actual for FY26 (medium severity)"
+  - "Kurlon synergy tail Rs40-60cr slipped across all four quarters analysed, always the same overseas machine-delay excuse, now pushed to Q1 FY27 (medium severity)"
+  - "EBO/showroom count disclosure inconsistent across quarters and never fully reconciled despite being asked twice (low-medium severity)"
+  - "Kurlon-vs-Sleepwell segment profitability never disclosed, limiting independent verification of brand-level margin catch-up (low severity)"
+  - "Middle East war-driven raw-material cost shock (TDI/polyol up 25-35%) is a live, unresolved margin risk for Q1-Q2 FY27; management calls its own pricing outlook 'crystal ball gazing' (medium severity, time-bound)"
+  - "Furlenco Q4 FY26 PAT step-up (~Rs42cr in a single quarter vs a 9-month run-rate implying ~Rs6cr/quarter) is large enough to warrant independent verification (low-medium severity)"
+dropped_triggers:
+  - "Aviation foam / Tier-2 Boeing supplier qualification push (mentioned only in Q1 FY26 cross-ref call, absent from Q2/Q3/Q4 FY26 calls)"
+  - "Home Comfort / COCO experience-store format as a distinct, already-mature growth narrative (detailed as 24-25 profitable stores in Q2 FY26, then reframed as a nascent 6-month pilot in Q3 FY26 -- narrative inconsistency, not mentioned at all in Q4 FY26)"
+  - "'Rightful e-commerce market share of ~30% in coming years' framing (Q2 FY26 call) not repeated with the same specificity in Q3/Q4 FY26 calls"
+timeline_slippages:
+  - "Showroom/EBO network expansion target: 1,000 new showrooms (Q1 FY26 cross-ref) -> revised to ~800 by year-end (Q2 FY26) -> revised to ~700 by year-end (Q3 FY26) -> actual ~600 net additions for FY26 (Q4 FY26) -- missed on every successive revision"
+  - "Kurlon synergy tail of Rs40-60cr tied to a new malleable-fibre machine: promised installed by end-Q3 FY26 with results in Q4 FY26 (Q1/Q2 FY26 calls) -> still pending, targeted 'mid of Q4 FY26' (Q3 FY26 call) -> delayed a further 1.5 quarters, now expected Q1 FY27 (Q4 FY26 call)"
+  - "Furlenco IPO decision: 'FY27, once revenue crosses Rs500-700cr' (Q3 FY26 call) -> softened to 'decision in the next 3-4 months' with revenue still at Rs370cr and no firm date set (Q4 FY26 call)"

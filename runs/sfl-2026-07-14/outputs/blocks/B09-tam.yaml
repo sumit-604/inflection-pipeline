@@ -1,0 +1,68 @@
+stage: B09-tam
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Rs 1 lakh crore organized-market TAM claim (Jul-2023 press release) not independently verified against primary PDF; source blocked by HTTP 403 on direct fetch, relied on secondary-aggregator search synthesis"
+  - "ISPF 18.6 million units bottom-up figure's reference year not confirmed via available search snippets; treated as directional, not dated"
+  - "Redseer Rs33,500cr furniture-rental-market figure is April 2021 vintage (~5 years stale); used for direction only per staleness rule, excluded from any headline number"
+  - "International (Australia/Spain) local foam-market TAM not sized in this pass (time/search-budget constraint); secondary leg addressed only via current revenue run-rate, not a market-size estimate"
+  - "Furlenco (furniture-rental) SOM not modeled with full 5-method rigor given distinct subscription-rental business economics; management's own FY27 Rs500-700cr revenue target noted but not independently cross-checked"
+  - "No explicit 'e-commerce ~30% mattress share' management claim located in this search pass; only e-commerce channel growth rates (FY26 +39% platform / +136% brand.com) found and used instead"
+  - "Wakefit FY25/26 revenue estimated (+~20% growth assumed on FY24 actual of Rs986cr) rather than directly sourced; flagged as an estimate within Method 3"
+flags:
+  - "Rs1,00,000cr organized-market TAM claim is 4.8x the conservative total-market TAM estimate (Rs20,880cr) and ~14x the organized-SAM estimate (Rs7,000cr) under either denominator; read as INFLATED/broad, likely conflates a wider home-and-sleep-economy category than 'organized mattress' strictly defined"
+  - "Organized-market-size cross-check diverges materially: SFL-implied market size (~Rs7,000cr, from stated 30% share / SFL mattress revenue) vs Duroflex-implied market size (~Rs14,175cr, from stated 8% share / Duroflex revenue), a ~2x divergence likely reflecting inconsistent self-reported share denominators (organized-only vs total market); conservative (lower) figure of Rs7,000cr carried forward per conservative-bias rule"
+  - "SOM_yr5 revenue requires ~2.06x current domestic-mattress volume, near the lower-middle of management's stated 2.0-2.5x debottlenecking capacity headroom; not a hard constraint but less slack than SOM_yr3's 1.55x"
+  - "Valuation-implication line depends materially on which EPS basis (reported vs cash) is used; reported-basis P/E (~51.8x) does not clearly support the earnings growth embedded in this SOM, cash-basis P/E (~21.5x) does; resolution deferred to stage 11 per B04's flagged reported-vs-cash-EPS structural gap"
+market_definition: "India mattress and branded PU-foam home-comfort market, organized plus unorganized, all price segments, all channels (dealer/EBO, modern trade, e-commerce, GCC-export), residential plus institutional; excludes international AU/Spain foam, furniture-rental (Furlenco), and IT services legs, which are sized/discussed separately"
+tam_cr: {conservative: 20880, realistic: 22359}
+sam_cr: 7000
+sam_pct_of_tam: 33.5
+som_3yr_cr: 3246
+som_5yr_cr: 4318
+som_implied_revenue_cagr: {yr3: 15.6, yr5: 15.5}
+current_sam_share_pct: 30.0
+revenue_headroom_x: 3.33
+tam_growth_pct: 8.6
+runway_class: "STRONG"
+mgmt_claim_cr: 100000
+mgmt_claim_ratio: 4.8
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient — SOM_yr5 requires ~2.06x current domestic-mattress volume, within management's stated 2.0-2.5x debottlenecking headroom (SOM_yr3 requires only ~1.55x); no capex-plan gap identified, demand/execution rather than physical capacity is the more likely binding constraint at yr5"
+methods_used:
+  - "top-down (industry reports: Mordor Intelligence, IMARC, Research & Markets)"
+  - "bottom-up (unit count x average selling price)"
+  - "peer revenue aggregation (SFL, Duroflex, Wakefit, organized long-tail residual)"
+  - "global per-capita benchmark (China comparison, directional only)"
+stale_data_flags:
+  - {datapoint: "Rs1,00,000cr organized mattress TAM claim", source: "Sheela Foam press release (secondary-sourced)", year: 2023}
+  - {datapoint: "Rs33,500cr India rental-furniture-and-appliance market", source: "Redseer", year: 2021}
+  - {datapoint: "18.6 million units India mattress market", source: "Indian Sleep Products Federation (ISPF)", year: "unconfirmed, pre-2022 likely"}
+  - {datapoint: "Wakefit revenue Rs986cr", source: "Inc42 / Morning Context", year: 2024}
+searches_performed:
+  - "India mattress market size 2025 2026 CRISIL IMARC organized unorganized"
+  - "India polyurethane foam market size 2025 CAGR"
+  - "India furniture rental market size Furlenco Rentomojo CAGR crore"
+  - "Sheela Foam investor presentation market share mattress India organized market TAM"
+  - "Sheela Foam Rs 1 lakh crore mattress market TAM press release"
+  - "Sheela Foam Kurlon 30% market share mattress India"
+  - "India organized mattress market size crore CRISIL 15000 20000 25000"
+  - "mattress market India Rs crore 2024 2025 economic times organized"
+  - "Wakefit Duroflex market share India mattress organized 2025"
+  - "IMARC India mattress market 2025 value USD billion volume units organized share foam spring"
+  - "India mattress replacement cycle years per capita households number mattresses sold annually"
+  - "global mattress market size China US per capita comparison India benchmark"
+  - "Sheela Foam Kurlon Furlenco acquisition 2023 Rs 1,00,000 crore mattress market opportunity"
+  - "Redseer rental furniture appliance market India 33,500 crore year"
+  - "Sheela Foam 12-15% OR 14-15% CAGR revenue growth target management"
+  - "Sheela Foam e-commerce mattress 30% share online channel concall"
+  - "India technical PU foam automotive furniture cushioning market size crore 2025"
+  - "Sheela Foam SFL share price P/E ratio July 2026"
+searches_skipped:
+  - {query: "WebFetch backend.sheelafoam.com Press-Release_17-07_2023.pdf", reason: "HTTP 403, substituted with WebSearch synthesis of secondary sources"}
+  - {query: "WebFetch mordorintelligence.com India mattress market report page", reason: "HTTP 403, substituted with WebSearch synthesis"}
+  - {query: "WebFetch ispf.co.in total-market-for-mattresses-18-6-million-units page", reason: "HTTP 403, substituted with WebSearch synthesis, year left unconfirmed"}
+  - {query: "WebFetch mnacritique.mergersindia.com Sheela Foam Kurlon Furlenco acquisition page", reason: "HTTP 403, substituted with WebSearch synthesis"}
+  - {query: "WebFetch tejimandi.com India mattress market feature article", reason: "HTTP 403, substituted with WebSearch synthesis"}

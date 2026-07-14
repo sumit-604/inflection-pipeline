@@ -1,0 +1,27 @@
+stage: B12c
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+scope: phase-1-only   # Gate 0 + Emerging Moat; valuation deferred to phase 3
+gate0:
+  rules_checked: 30
+  fails:
+    - {rule: "history_downgrade field usage", severity: MINOR, detail: "Set true for a 5-year history though the field is tied to the 3-4-year LIMITED band; no tier downgrade was applied and AVOID is the Core<40 floor, so zero decision impact. Correct mechanical value is false with the caveat in data_notes (already narrated)."}
+emoat:
+  rules_checked: 19
+  fails:
+    - {rule: "B2 evidence-tier vs multiplier consistency", severity: MINOR, detail: "Summary table labels B2 evidence 📄 but scorecard applies the 🎙️ 0.7 multiplier; runs in the conservative (understating) direction, no inflation. Would add +0.3 if corrected; band unchanged."}
+valuation: pending-phase-3
+framework_adherence_pct: 96   # phase-1 scope only (Gate 0 + Emerging Moat)
+recomputed_destination_pe: ""   # N/A in phase 1 (valuation deferred)
+recomputed_decision: ""         # concur: Gate 0 AVOID+FLAG-GATE0 and combined TURNAROUND are framework-correct
+findings:
+  - {severity: MINOR, area: gate0, location: "B01 YAML history_downgrade / report Data-window section", issue: "history_downgrade=true outside the 3-4yr band; field repurposed as a qualitative caveat", decision_impact: "none, AVOID unchanged"}
+  - {severity: MINOR, area: gate0, location: "B01 Block B, B3", issue: "cum FCF/PAT 0.33 scored 1 on a ratio that is positive only because both FCF and PAT are negative; literal band application, flagged by maker", decision_impact: "none; B3=0 would give Core 35, still AVOID"}
+  - {severity: MINOR, area: emoat, location: "B07 scorecard row 6 (B2) vs Section 3 summary", issue: "📄 tier in summary vs 🎙️ 0.7 multiplier in scorecard; conservative direction", decision_impact: "none; band unchanged"}
+  - {severity: MINOR, area: emoat, location: "B07 scorecard row 21 (R1) / classification", issue: "em_score 25.2 sits 0.2 above the 25.0 STRENGTHENING/MODEST boundary; R1 raw HH=4 impact is generous vs the report's own 'wait-and-watch, ~2% loss-making segment, sector-shared GST' narrative; R1 at HM(3) -> 24.2 -> MODEST. Discretionary judgment, not a rule breach, but decision-relevant.", decision_impact: "potential em_classification band flip; surfaced, not rescored"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 96            # rules passed (47) / rules checked (49), phase-1 scope

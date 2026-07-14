@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Fixed-asset turnover ratio / Net Block figure not disclosed in any document injected into this stage; Section 2C arithmetic (capex x turnover = implied incremental revenue) could not be computed and is marked NOT FOUND, not estimated"
+  - "No plant-level utilisation % disclosed anywhere (AR, four concalls, investor presentation); management's 2-2.5x capacity-headroom claim is qualitative only"
+  - "No vertical/segment-level profitability disclosure for U2O, e-commerce, or Kurlon vs Sleepwell (consistent with B01 input gap); margin claims for these categories are management assertions, not verified"
+  - "No R&D headcount, patent filing, or IP-pipeline disclosure anywhere in the injected documents (A2, F1 both NO EVIDENCE FOUND)"
+  - "Annual Report on file is FY2022 (~4y stale); used only for background structural/manufacturing context (Section 3, A3/A4 background), not for any current-period number"
+flags:
+  - type: "FLAG-B07-H1-TIMEBOUND"
+    reason: "H1 (industry consolidation beneficiary), the joint-largest scored category, rests on hard Q4 FY26 volume data but a management-only causal narrative (RM-disruption-driven competitor share loss) that is explicitly time-bound; management itself expects the underlying RM shock to normalise, which would remove this category's contribution to the em_score without a corresponding structural replacement yet evidenced"
+  - type: "FLAG-B07-F2-MIXED"
+    reason: "F2 execution moat, explicitly cross-referenced against B05's promise-delivery record, comes back mixed/unsupportive (showroom target cut three consecutive quarters and still missed; Kurlon synergy tail slipped across all four quarters analysed); this caps the combined classification at TURNAROUND rather than HIGH POTENTIAL despite genuine strategic substance in the scored categories"
+em_score: 27
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A3", name: "Process innovation (VPF line, Jabalpur)", strength: "Strong", evidence_type: "documented", time_to_materialise: "already realising, ongoing"}
+  - {id: "C2", name: "Customer concentration improving (U2O unorganized-to-organized)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "D2", name: "Digital platform (e-commerce brand.com/platforms, Staqo)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic first-mover (GCC/UAE local manufacturing and retail)", strength: "Moderate", evidence_type: "documented/claim mix", time_to_materialise: "24-36m"}
+  - {id: "G1", name: "War chest (debt paydown, asset monetisation, first-ever dividend)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "H1", name: "Industry consolidation beneficiary (RM-disruption share gain)", strength: "Moderate", evidence_type: "documented data / management-claim causation", time_to_materialise: "0-12m, likely to reverse"}
+  - {id: "H2", name: "Strategic partnerships (Furlenco store integration, Kurlon Composite Scheme completion, UAE manufacturing partner)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 6, claim: 9, inference: 2}
+completionist_recount: "6 items genuinely 📄 documented across 6 categories (A3, C2, D2, E1, G1, H2); H1 carries hard volume data but a claim-quality causal narrative and is scored at reduced (0.7x) quality; F2 execution moat explicitly tested against B05 and found mixed/unsupportive, not credited"
+catalysts_12m:
+  - {catalyst: "Kurlon synergy machine (malleable fibre/comfort layer, Rs40-60cr tail) installation and results", window: "Q1 FY27", evidence_type: "claim (slipped 4 consecutive quarters per B05)", anchor: "Q4 FY26 call"}
+  - {catalyst: "GCC retail-chain collaborations execution", window: "3-6 months from Feb 2026", evidence_type: "claim", anchor: "Q3 FY26 call"}
+  - {catalyst: "Furlenco integrated stores scaling toward 100", window: "FY27", evidence_type: "documented (40+ live) / claim (target)", anchor: "Q4 FY26 call / Digest"}
+  - {catalyst: "U2O run-rate continuing to scale (~Rs120-125cr FY26 exit run-rate)", window: "ongoing FY27", evidence_type: "documented", anchor: "Q3/Q4 FY26 calls"}
+  - {catalyst: "Pillow standalone category build-out (~Rs100cr market)", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "India debt reduction toward FY28 net-cash target (~Rs300cr remaining, ~1-1.5yr)", window: "12-18 months", evidence_type: "claim", anchor: "Q4 FY26 call"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Aviation-grade technical foam / Boeing Tier-2 supplier qualification", converting_evidence: "Signed qualification/certification confirmation or repeated status update", first_appears: "Concall or exchange filing", window: "Uncertain, dropped since Q1 FY26; 24-36m+ if revived"}
+  - {optionality: "Home Comfort/COCO store format maturity", converting_evidence: "Consistent store count and disclosed unit economics across quarters", first_appears: "Investor presentation or concall", window: "12-24m"}
+  - {optionality: "Patent/IP pipeline (Neem Fresche and related branded technologies)", converting_evidence: "Actual patent filing with licensing-revenue linkage disclosed in AR", first_appears: "Annual Report", window: "Unclear"}
+  - {optionality: "Sofa manufacturing via Furlenco synergy", converting_evidence: "Signed supply/manufacturing agreement or launch announcement", first_appears: "Concall or exchange filing", window: "12-24m"}
+  - {optionality: "Furlenco IPO/monetisation event", converting_evidence: "Firm IPO timeline or process announcement", first_appears: "Exchange filing", window: "6-18m for decision, longer for execution; already slipped once"}
+  - {optionality: "Talent density / R&D headcount buildout", converting_evidence: "R&D headcount, specialist count, or technical-staff ESOP disclosure", first_appears: "Annual Report", window: "Unknown"}
+  - {optionality: "Pillow standalone category build-out beyond market-size framing", converting_evidence: "Disclosed segment revenue for pillows as a discrete line", first_appears: "Concall or investor presentation", window: "12-24m"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 AVOID (Core 32/100) is a mechanical, acquisition-driven trough per B01's own FLAG-GATE0 (PAT recovering +78.6% YoY, borrowings down 39.2% from FY24 peak) paired against a genuine but execution-unproven MOAT STRENGTHENING (27/80) forward score, capped below HIGH POTENTIAL by B05's mixed F2 execution record."
+top_moat_risks:
+  - "Kurlon synergy tail (Rs40-60cr) has slipped four consecutive quarters on the same overseas machine-delay excuse, testing whether any of the scored catalysts land on management's own timeline (B05 cross-ref)."
+  - "H1 industry-consolidation share gain is explicitly tied to a temporary RM supply disruption that management itself expects to normalise, making it the least durable of the seven scored categories despite being one of the largest."
+  - "GCC/UAE expansion (E1) remains sub-scale with no disclosed standalone revenue contribution, and SFL's own domestic showroom-target record (cut three consecutive quarters, still missed) is a weak precedent for disciplined execution in an unfamiliar market."
+  - "Furlenco integration (H2) rests partly on a single-quarter PAT step-up (~Rs42cr vs a ~Rs6cr/quarter 9-month run-rate) flagged in B05 as needing independent verification before being treated as a stable synergy."

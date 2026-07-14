@@ -1,0 +1,21 @@
+stage: B14-thesis
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 71, high: 89}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Any one of: (i) a 5th consecutive concall passes with SM-REIT unlaunched and no AUM disclosed; (ii) two consecutive quarters print an operating loss with one-time other income and asset-sale gains stripped out; (iii) organic revenue ex-PropTiger proves flat YoY; (iv) a goodwill impairment is taken on the Rs 174.25 Cr balance."
+monitoring_checklist:
+  - "Operating profit stripped of one-time other income and asset-sale gains is positive (red if operating loss ex one-times for 2 consecutive quarters)"
+  - "Organic revenue growth ex-PropTiger consolidation stays above 20% YoY (red if flat or declining)"
+  - "SM-REIT first scheme filed with a disclosed AUM figure within FY27 (red if 5th consecutive concall with no scheme and no AUM)"
+  - "Receivables ageing >1-year buckets (was +327% YoY) stop growing / reverse and DSO stable (red if bucket rises further)"
+  - "Rental segment crosses breakeven in FY27 from FY25 -Rs 14.54 Cr (red if loss widens or breakeven slips beyond FY27)"
+  - "Distribution segment margin held at or above 12% on growing revenue (red if compresses below 10%)"
+  - "Goodwill carrying value Rs 174.25 Cr (61% of net worth) not impaired (red if any impairment charge taken)"
+  - "Clean audit opinion, no new RPT to promoter entities (AREDL), auditor stable (red if qualified opinion, new promoter RPT, or auditor exit)"
+  - "July-2026 fund-raise priced at/above intrinsic with productive use of proceeds (red if deep-discount dilution or proceeds parked)"
+one_line_thesis: "AURUM at Rs 240 is a proptech-SaaS turnaround whose FY26 Rs 1.90 Cr reported PAT is entirely a Rs 17.72 Cr one-time building-sale gain (continuing-ops PAT -Rs 14.96 Cr); driven by Distribution scaling profitably (Rs 254 Cr revenue, Rs 32.3 Cr segment profit) plus Rental breakeven, SOTP fair value is Rs 85 today / Rs 173 Year-3 base at a 13.0x four-pillar destination PE (ROCE 3.32%, cash 0.80x INDETERMINATE, EM 25.2, sector cap 45x) = -10.9% expected CAGR, so AVOID on valuation, WATCHLIST at Rs 71-89 once an operating profit prints ex one-times. Key risk: one-time-aided earnings plus a +327% YoY jump in >1yr receivables. Cash quality: INDETERMINATE (conservative 0.80x)."

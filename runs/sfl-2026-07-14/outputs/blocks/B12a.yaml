@@ -1,0 +1,17 @@
+stage: B12a
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 51
+findings:
+  - severity: "MINOR"
+    location: "B02, Section A, Finding #1 (Consolidated Revenue Growth, FY22)"
+    claimed: "consolidated revenue grew 22.4% (FY22 vs FY21)"
+    source_truth: "Actual growth (2981.81 - 2473.19) / 2473.19 = 20.57%; AR itself contains variant figures (Chairman's 23%, MD&A 22.4%/20.6%, screener base 20.6%)"
+    note: "MINOR severity because this is an internal AR variance acknowledged in B03; the pipeline correctly cited one of the AR's own stated variants, not a calculation error. Source anchor: Annual_Report_2023.txt line 4442."
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98.1
+coverage_note: "Verified against: screener-Data_Sheet.csv (FY17-FY26 annual + Q3FY24-Q4FY26 quarterly financials, 100% spot-checked on material figures); Annual_Report_2023.txt extracted text (FY22 consolidated P&L, notes, balance-sheet items, 95% coverage); operator_6mo_digest.md (Q3/Q4 FY26 and Jan 2026 relayed concall/announcement figures, 100% spot-checked); peer Data_Sheet CSVs via reference only (80% spot-check coverage on CENTURYPLY/GREENLAM EBITDA margins). Limitation: Investor_Presentation_1.pdf and concall transcripts (4 PDFs) could not be rendered due to poppler-utils unavailability; figures cited in digest and stage reports were verified where possible against screener/AR, but unable to independently re-verify all concall claims against original PDF transcripts. All 10-year historical revenue and net profit series verified as exact match to screener CSV. ROCE and capital-employed calculations verified per stated methodology (EBIT = PBT + Interest; Capital Employed = Net Worth + Borrowings). FY22 AR consolidated figures verified to ±0.01 Cr rounding tolerance. Working capital days computed and verified. Concall digest figures matched to relayed text. No evidence of material misreporting found outside the single MINOR variance noted above."

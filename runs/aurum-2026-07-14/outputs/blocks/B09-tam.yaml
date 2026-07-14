@@ -1,0 +1,62 @@
+stage: B09-tam
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "India-specific real-estate CRM/SaaS software market size NOT FOUND independently; only global figures located (Real Estate CRM software market, global, USD 4.73 Bn 2025). Sell.do's specific addressable pool is likely partially embedded in the ₹38-39,000 Cr Distribution marketing-spend figure but could not be verified separately."
+  - "India-SM-REIT-specific asset-management fee rate NOT FOUND; used a generic real-estate AIF/AMC fee benchmark (0.5-2.0% of AUM p.a., non-India-specific) as a proxy to convert the SM-REIT asset-value TAM into a revenue-equivalent TAM. Flagged as an approximation."
+  - "B07-emoat capex_embedded_growth_pct is 0/NOT FOUND; no anchored physical-capacity ceiling exists for the Section 3C cross-check. Aurum's model is asset-light so this is a lower-severity gap than for a capex-heavy business, but it means capacity_check below is qualitative only."
+  - "FY26 segment-level revenue actuals are only partially disclosed in the injected documents (Q2-Q4 FY26 only, no Q1 FY26 figure, consistent with the same gap already flagged in B04); segment-level current-SAM-share figures use a Q4 FY26 annualized run-rate proxy, not a full FY26 actual segment split."
+  - "No anchored average-rent premium for organized vs unorganized rental stock; the AR-derived 4% organized-penetration unit-count ratio was applied directly to blended rental-market value, which likely understates true organized GMV since managed stock typically commands a rent premium (no sourced premium % found to correct for this)."
+  - "Co-living market-size estimates diverge sharply across sources (Colliers ₹4,000 Cr 2025 vs JLL ~USD 6-7 Bn vs Cushman & Wakefield USD 40 Bn); Colliers (freshest, most internally consistent with Aurum's own disclosed scale) used as the anchor, others excluded from the headline TAM and recorded only as divergence flags."
+  - "SM-REIT TAM diverges ~11x between the AR management claim (₹50,000 Cr near-term supply) and the CBRE independent estimate (~₹5,70,000 Cr eligible stock); the two figures most likely describe different scopes (near-term listing pipeline vs full eligible stock) but this reconciliation is inferred, not confirmed against a primary source that states both together."
+flags:
+  - type: FLAG-DIVERGENT-ESTIMATES
+    reason: "Co-living market-size estimates range from ₹4,000 Cr (Colliers 2025) to USD 6-7 Bn (JLL) to USD 40 Bn (Cushman & Wakefield) for essentially the same year/market — a 14x to 90x spread. Conservative, most-internally-consistent figure (Colliers) used as the TAM anchor; the divergence itself is a data-quality flag for any downstream stage citing India co-living TAM."
+  - type: FLAG-DIVERGENT-ESTIMATES
+    reason: "SM-REIT TAM diverges ~11x between AR management's ₹50,000 Cr near-term-supply claim and CBRE's independent ~₹5,70,000 Cr eligible-stock estimate. Likely different scope (near-term pipeline vs full eligible stock), not confirmed."
+  - type: FLAG-SOM-CAGR-VS-MGMT
+    reason: "Independent bottom-up SOM-implied revenue CAGR (57.8% yr3 / 52.3% yr5) is higher than both management's own implied ARR CAGR (~26%, from >₹500 Cr FY26 ARR to a ₹1,000 Cr 3-year target) and Dolat Capital's non-anchored broker guide (45-50%). Management is under-, not over-, claiming relative to this independent build (mgmt_claim_ratio 0.60x) — an atypical, mildly positive credibility signal, but it also means the SOM share-gain/SAM-growth assumptions used here should be pressure-tested at stage 11 rather than treated as a hard floor."
+  - type: FLAG-CAPACITY-CROSS-CHECK-INCOMPLETE
+    reason: "B07-emoat capex_embedded_growth_pct = 0/NOT FOUND; Section 3C capacity check is qualitative only (GTM/execution capacity, not physical capex, is the real constraint for this asset-light business model)."
+market_definition: "India-only, three separately-sized engines: organized/managed rental (co-living + commission-based rental marketplace), real-estate developer distribution (lead-gen + CRM SaaS + primary brokerage commission), and SM-REIT/fractional commercial real-estate asset management — concentrated in Aurum's ~15-city, Top-8-metro-weighted footprint."
+tam_cr: {conservative: 47057, realistic: 54407}
+sam_cr: 32915
+sam_pct_of_tam: 70.0
+som_3yr_cr: 1664
+som_5yr_cr: 3478
+som_implied_revenue_cagr: {yr3: 57.8, yr5: 52.3}
+current_sam_share_pct: 1.29
+revenue_headroom_x: 77.6
+tam_growth_pct: 15
+runway_class: "STRONG"
+mgmt_claim_cr: 1000
+mgmt_claim_ratio: 0.60
+mgmt_claim_read: "conservative"
+capacity_check: "no capex ceiling nameable — B07 capex_embedded_growth_pct = NOT FOUND; qualitative check (asset-light model) points to GTM/execution pace, not physical capacity, as the binding constraint on SOM"
+methods_used:
+  - "Top-down aggregator market size narrowed by an AR-anchored organized-penetration unit-count ratio (Rental)"
+  - "Bottom-up unit economics using Colliers 2025 co-living bed-count/realization data (Rental)"
+  - "Management-disclosed segment opportunity figures independently corroborated via web search (Distribution, Capital)"
+  - "Bottom-up commission-pool sizing using AR homes-purchased value x independently-sourced brokerage commission-rate range (Distribution)"
+  - "Asset-value TAM (independent, CBRE) converted to revenue-equivalent TAM via a generic AIF/AMC fee-rate benchmark (Capital)"
+  - "Share-gain-rule-based SOM build with segment-specific SAM growth rates, cross-checked against management's ARR target and a non-anchored broker CAGR guide"
+stale_data_flags:
+  - {datapoint: "Dolat Capital Initiating Coverage broker note (entire content, competitor bed-counts, per-bed realization)", source: "Dolat Capital, non-anchored", year: 2024}
+  - {datapoint: "Cushman & Wakefield co-living USD 6.6-13.9 Bn 2019-2025 estimate", source: "Cushman & Wakefield Jan-2020 report, cited via Dolat Capital broker note", year: 2020}
+  - {datapoint: "IMF India residential rental market USD 20 Bn valuation", source: "IMF 2012 study, cited via Dolat Capital broker note", year: 2012}
+  - {datapoint: "JLL India co-living USD 6-7 Bn by 2025 estimate", source: "secondary web-search summary attributing to JLL India, primary report/date not independently retrieved", year: "undated"}
+searches_performed:
+  - "India co-living market size 2025 2026 report crore billion"
+  - "India real estate CRM SaaS market size 2025"
+  - "SM-REIT India market size AUM opportunity 2025 2026 SEBI"
+  - "India real estate digital marketing lead generation proptech spend market size crore"
+  - "Colliers India co-living market report 2025 crore size"
+  - "India organized rental housing market size property management platform"
+  - "aurumproptech.in FAQ page fetch (what is the size of the proptech market in India) - failed, HTTP 403"
+  - "India real estate primary sales brokerage commission rate percentage developer channel partner"
+  - "CBRE India SM REIT USD 60 billion report REITable stock definition office space"
+  - "India REIT AIF real estate asset management fee percentage AUM typical rate 2025"
+  - "USD to INR exchange rate July 2026"
+searches_skipped: []

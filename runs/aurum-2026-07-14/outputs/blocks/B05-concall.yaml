@@ -1,0 +1,88 @@
+stage: B05-concall
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Rights-issue proceeds SEBI ICDR mutual-fund-parking deviation (CARE Ratings, Feb-2026, operator context) not addressed in any of the four transcripts; no analyst raised it."
+  - "Receivables ageing / cash conversion (flagged upstream at B02/B03) not discussed in any of the three main-quarter calls beyond the Q3 FY26 IndAS lease-liability explanation of the other-income spike; no DSO or CFO-vs-PAT commentary exists in-transcript."
+  - "PropTiger standalone P&L / confirmation of the promised 2-3 quarter profitability turnaround (promised Q2 FY26) is not confirmed or denied by name on the Q4 FY26 call."
+  - "Q3 FY26 PBT figure shows an unexplained restatement between the Q3 call (Rs2.04cr, Kunal Karan) and the Q4 call's 'previous quarter' reference (Rs2.93cr, Shrikant Jagtap), likely a continuing-vs-discontinued-operations reclassification, not explained on either call."
+flags:
+  - "SM-REIT launch timeline has slipped in every one of four consecutive calls since the Jul-2025 SEBI license; still no quarter or AUM given as of Q4 FY26."
+  - "Ecosystem/cross-sell revenue, management's own stated moat, admitted 'still single digit' after a full year of being untracked/unquantified."
+  - "NestAway rationalization declared 'completed' in Q3 FY26 was contradicted by continued -23% YoY house-count decline in Q4 FY26."
+  - "'Structurally profitable, not cyclical' claim (Q4 FY26) rests on two quarters of PAT positivity, one aided by a one-time Rs17.72cr building-sale gain kept outside the headline continuing-operations profitability figure."
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Rs1,000cr ARR organic scale-up (rental + distribution)", type: "VOLUME", timeframe: "long (3yr/10-12Q)", conviction: "M", confirm_signal: "Quarterly ARR bridge continues toward Rs1,000cr with organic-vs-PropTiger split disclosed", kill_signal: "Organic growth revealed materially below implied ~20%/yr pace, or target redefined to include further inorganic additions"}
+  - {priority: 2, name: "Rental segment profitability (HelloWorld adj-EBITDA breakeven achieved; company target FY27)", type: "COST", timeframe: "near (FY27)", conviction: "M", confirm_signal: "Rental segment posts positive adj-EBITDA/PAT in an FY27 quarter; NestAway unit count stabilizes", kill_signal: "Rental losses persist into FY28 or NestAway house count keeps declining without margin offset"}
+  - {priority: 3, name: "Debt-free status via Q5/Q6 building sale", type: "INORGANIC", timeframe: "near (closing ~Jun-2026)", conviction: "H", confirm_signal: "FY27 Q1 results show zero LRD debt on balance sheet", kill_signal: "Sale falls through, delayed, or proceeds redirected without disclosure"}
+  - {priority: 4, name: "Distribution segment margin durability through PropTiger scale-up", type: "INORGANIC", timeframe: "near-medium", conviction: "M", confirm_signal: "Distribution segment margin holds in the 20-25% band as PropTiger mandate mix grows", kill_signal: "Margin compresses as integration costs or mandate-mix shifts bite"}
+  - {priority: 5, name: "SM-REIT product launch", type: "REGULATORY-POLICY", timeframe: "medium (guided FY27, no quarter given)", conviction: "L", confirm_signal: "Actual SM-REIT scheme filed and launched with AUM disclosed", kill_signal: "FY27 passes with no launch, a fifth consecutive slippage"}
+  - {priority: 6, name: "Ecosystem/cross-sell revenue quantification and growth", type: "SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "Management discloses a specific percentage that trends up over successive quarters", kill_signal: "No disclosure by FY27 Q2, or percentage stays flat/single-digit"}
+  - {priority: 7, name: "AI-first repositioning / Unified Brain", type: "COST", timeframe: "medium-long", conviction: "L", confirm_signal: "Revenue-per-team-member metric shows measurable, attributable QoQ improvement", kill_signal: "Metric never disclosed with numbers, or gains indistinguishable from ordinary operating leverage"}
+guidance:
+  - {item: "Adjusted EBITDA positive", number: "near-future turn; delivered +3% vs -4% Q2 FY25", timeframe: "immediate", stated_in: "Q1 FY26 call, guidance; delivered Q2 FY26 call"}
+  - {item: "PBT positive", number: "next few quarters", timeframe: "near-term", stated_in: "Q2 FY26 call"}
+  - {item: "Rs500cr ARR", number: "Rs500 crore", timeframe: "Q4 FY26", stated_in: "Q2 FY26 call (Kunal Karan)"}
+  - {item: "Distribution segment ARR", number: "Rs200 crore", timeframe: "sooner than later", stated_in: "Q2 FY26 call"}
+  - {item: "Rs1,000cr ARR, organic only", number: "Rs1,000 crore", timeframe: "3 years / 10-12 quarters", stated_in: "Q3 FY26 call"}
+  - {item: "PAT margin at Rs1,000cr revenue", number: "8-10%", timeframe: "3 years", stated_in: "Q3 FY26 call"}
+  - {item: "Company breakeven, EBITDA/operational level", number: "Rs550-575 crore revenue", timeframe: "FY27", stated_in: "Q1 FY26 call"}
+  - {item: "Revenue CAGR ex-PropTiger", number: "38%", timeframe: "next 3 years", stated_in: "Q1 FY26 call"}
+  - {item: "SM-REIT AUM", number: "Rs2,000 crore", timeframe: "3-5 years", stated_in: "Q1 FY26 call (never repeated Q2-Q4)"}
+  - {item: "SM-REIT launch window", number: "n/a", timeframe: "Q4 FY26 or Q1 FY27, revised to 'this FY [FY27]' with no quarter by Q4 call", stated_in: "Q1 FY26 call, revised Q4 FY26 call"}
+  - {item: "PropTiger profitability", number: "n/a", timeframe: "12-18 months (Q1), tightened to 2-3 quarters (Q2)", stated_in: "Q1 and Q2 FY26 calls"}
+  - {item: "Rental/distribution revenue split", number: "50%-50%", timeframe: "post-PropTiger integration", stated_in: "Q2 FY26 call; actual outcome ~60% distribution by Q4 FY26 call"}
+  - {item: "Debt-free (LRD retirement)", number: "full LRD debt retirement", timeframe: "30-Jun-2026", stated_in: "Q4 FY26 call"}
+  - {item: "Rental segment profitability", number: "n/a", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 3
+  rows:
+    - {promised_in: "Q1 FY26 call", promise: "Adjusted EBITDA positive in the near future", outcome: "delivered", explanation: "Delivered Q2 FY26 (+3% vs -4% Q2 FY25)"}
+    - {promised_in: "Q2 FY26 call", promise: "PBT positive within next few quarters", outcome: "delivered (beaten - PAT positive, not just PBT)", explanation: "Q3 FY26: PBT +Rs2.04cr, PAT +Rs2.71cr"}
+    - {promised_in: "Q2 FY26 call", promise: "Rs500cr ARR by Q4 FY26", outcome: "delivered", explanation: "Q4 FY26 call: 'crossed Rs500cr ARR'"}
+    - {promised_in: "Q2 FY26 call", promise: "Distribution segment Rs200cr ARR sooner than later", outcome: "delivered", explanation: "Q3/Q4 distribution quarterly run-rate well above Rs200cr annualized"}
+    - {promised_in: "Q1 FY26 call", promise: "Company breakeven at Rs550-575cr revenue, FY27, EBITDA/operational level", outcome: "delivered (beaten on scale and timing)", explanation: "PAT positive already at ~Rs105cr quarterly (Q3 FY26), a year ahead and well below the revenue threshold cited"}
+    - {promised_in: "Q2 FY26 call", promise: "PropTiger profitable turnaround in 2-3 quarters", outcome: "partial / unconfirmed", explanation: "Q4 FY26 call cites record gross commission but never confirms or denies PropTiger standalone profitability"}
+    - {promised_in: "Q2 FY26 call", promise: "Rental/distribution revenue split to reach ~50%-50%", outcome: "partial (overshot)", explanation: "Distribution reached ~60% of income by Q4 FY26, framed positively rather than as a miss on the stated ratio"}
+    - {promised_in: "Q4 FY26 call", promise: "LRD debt retired in full by 30-Jun-2026 via Q5/Q6 sale", outcome: "partial (in progress at call date)", explanation: "Board-approved, sale not yet closed as of the 27-Apr-2026 call"}
+    - {promised_in: "Q3 FY26 call", promise: "NestAway rationalization completed, no further reduction foreseen", outcome: "missed", explanation: "Q4 FY26 call: houses still down 23% YoY, reframed as ongoing churn strategy"}
+    - {promised_in: "Q3 FY26 call", promise: "Detailed ecosystem/cross-sell revenue metrics within a few quarters", outcome: "missed (honestly admitted)", explanation: "Q4 FY26 call: founder admits the metric remains 'still single digit' and undelivered on cadence"}
+    - {promised_in: "Q1 FY26 call", promise: "SM-REIT launch within Q4 FY26 or Q1 FY27", outcome: "missed", explanation: "Q4 FY26 call: no launch yet, timeline revised to open-ended 'this financial year [FY27]'"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will the SM-REIT product actually launch?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time / answer changed (timeline slipped later at each restatement)"}
+  - {question: "What is the ecosystem/cross-sell revenue as a percentage of total, and is it growing?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answered eventually (partial quantification plus a direct admission of shortfall in Q4)"}
+  - {question: "What is the inflection point / timeline for rental segment margin and growth?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "answered eventually (Q4 supplied the FY27 date and HelloWorld breakeven fact that Q3 deferred)"}
+credibility_grade: "B"
+credibility_basis: "Core financial guidance (adjusted EBITDA positive Q2 FY26, PBT/PAT positive Q3 FY26, Rs500cr ARR by Q4 FY26, company breakeven target beaten a year early) delivered on or ahead of every stated timeline; but SM-REIT launch has slipped across all four calls since the Jul-2025 license, the company's own stated 'ecosystem revenue' moat went unquantified for a year until an honest single-digit admission in Q4, and a Q3 claim that NestAway rationalization was 'completed' was contradicted by continued portfolio shrinkage in Q4."
+peer_questions:
+  - {question: "Is a ~$10 billion India PropTech market by 2030 a credible, sourced figure?", why: "Underpins the plausibility of the Rs1,000cr ARR target and 'top two players' framing (Q3 FY26 call, Onkar Shetye)", check_peers: ["CARTRADE", "NAZARA", "RATEGAIN", "ZAGGLE"]}
+  - {question: "Does the cited Rs38,000cr distribution/lead-gen TAM (Rs4,000cr lead-gen + Rs34,000cr transaction management) hold up against independent estimates?", why: "It is the stated headroom behind the distribution segment growth thesis (Q3 FY26 call, reiterated Q4)", check_peers: ["CARTRADE"]}
+  - {question: "Is a still-single-digit cross-sell/ecosystem revenue share, after a year of being cited as a differentiator, typical or lagging versus sector norms?", why: "Tests whether Aurum's stated moat is ahead of or behind peers (Q3-Q4 FY26 calls, Ashish Deora)", check_peers: ["ZAGGLE", "RATEGAIN"]}
+  - {question: "How specific and evidenced are peer 'AI as a moat' claims versus Aurum's proprietary-data argument?", why: "Tests credibility of a now-common SaaS narrative claim (Q4 FY26 call, Jimit Gandhi/Reuben M questions)", check_peers: ["ZAGGLE", "RATEGAIN", "NAZARA"]}
+  - {question: "Do peers corroborate an IT-hiring-slowdown headwind with a Bangalore-resilient/Pune-weaker bifurcation?", why: "Cross-checks a specific macro claim used to explain rental softness (Q4 FY26 call, Onkar Shetye)", check_peers: ["CARTRADE", "ZAGGLE"]}
+  - {question: "Do peers describe a similar public-vs-private valuation gap and 'quality of revenue' rationalization?", why: "Tests whether management's valuation-discount framing is sector-standard or Aurum-specific (Q2 FY26 call, Ashish Deora)", check_peers: ["NAZARA", "CARTRADE"]}
+  - {question: "Do any peers claim counter-cyclicality of their core segment to a real estate/consumer downturn?", why: "Tests a specific resilience claim for the segment now ~60% of income (Q4 FY26 call, Onkar Shetye)", check_peers: ["CARTRADE"]}
+  - {question: "Was Aurum Analytica's claim of displacing an unnamed top lead-gen incumbent corroborated by any peer market-share commentary?", why: "Unverifiable specific market-share-gain claim (Q3 FY26 call, Onkar Shetye)", check_peers: ["CARTRADE"]}
+  - {question: "How specific are peer AI capex/opex disclosures versus Aurum's undisclosed-budget AI reinvestment plan?", why: "Tests whether vagueness on AI investment sizing is company-specific or sector-standard (Q4 FY26 call, Rihen Shah)", check_peers: ["ZAGGLE", "RATEGAIN", "NAZARA"]}
+red_flags:
+  - {severity: "Medium", flag: "'Structurally profitable, not cyclical' claim (Q4 FY26) rests on two quarters of PAT positivity, one aided by a one-time Rs17.72cr building-sale gain kept outside the headline continuing-operations profitability figure"}
+  - {severity: "Medium", flag: "SM-REIT launch timeline has slipped across all four consecutive calls since the Jul-2025 SEBI license, still no quarter or AUM given as of Q4 FY26"}
+  - {severity: "Medium", flag: "Ecosystem/cross-sell revenue, management's own stated moat, un-instrumented for a year and admitted 'still single digit' in Q4 FY26"}
+  - {severity: "Low-Medium", flag: "Organic-vs-inorganic revenue growth not answered with a clean number when directly asked (Q4 FY26); distribution's 117.7% FY26 YoY growth is materially PropTiger-consolidation-driven"}
+  - {severity: "Low", flag: "NestAway 'rationalization completed' claim (Q3 FY26) contradicted by continued -23% YoY house-count decline in Q4 FY26"}
+  - {severity: "Low", flag: "Unexplained governance change: Ashish Deora's title shifted from Founder & CEO/Director to Non-Executive Chairman between Q3 and Q4 FY26 calls, unasked and unexplained"}
+  - {severity: "Low", flag: "Rights-issue MF-parking SEBI ICDR deviation (operator context, since rectified) never raised in any transcript"}
+  - {severity: "Low", flag: "~75% of quarterly finance cost framed as non-cash IndAS lease accounting, used to minimize scrutiny of the headline PBT/PAT milestones"}
+dropped_triggers:
+  - "SM-REIT AUM target of Rs2,000 crore over 3-5 years (Q1 FY26 call) — never mentioned again in Q2, Q3, or Q4"
+  - "Rental SaaS revenue target of at least $3 million (implied earlier baseline, admitted stagnated in Q2 FY26 strategic-mistakes answer) — never mentioned again in Q3 or Q4"
+timeline_slippages:
+  - "SM-REIT launch: Q1 FY26 guided 'Q4 FY26 or Q1 FY27' -> Q4 FY26 call revised to open-ended 'this financial year [FY27]', no quarter or AUM given — four consecutive quarters of slippage"
+  - "PropTiger standalone profitability: Q1 FY26 guided 12-18 months -> Q2 FY26 tightened to 2-3 quarters -> not confirmed or denied by Q4 FY26 call"
+  - "NestAway portfolio rationalization: declared 'completed' in Q3 FY26 -> still actively shrinking (-23% YoY houses) in Q4 FY26"

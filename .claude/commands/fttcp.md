@@ -194,6 +194,25 @@ The file has these parts, in this order:
    8, the position band, whether the Kernex cap or the TRIM rule engaged, and
    the one print or event the whole call turns on.
 
+5. **MANAGEMENT VISION AND ACTION (Step 2E, must be a readable section, not
+   only a table).** Per transition, in plain sentences: what management SAYS it
+   will do (vision, discounted), what it is DOCUMENTED to be DOING (action,
+   📄), and whether that action argues the pillar verdict is too conservative.
+   The five-column ledger table may sit beneath, but the prose discussion is
+   mandatory and must be printed in chat (operator instruction 2026-07-14: this
+   was previously buried in the table and invisible in chat; it must be
+   visible every run).
+
+6. **BUSINESS SUMMARY (MANDATORY, 12 to 15 lines, plain language, anti-ai
+   style).** Close the draft with a plain-English summary a smart non-expert
+   can read in one pass. It answers, in order: what the business and business
+   model are; what transitions are going on in the business; what the future
+   opportunities are; what the strengths are; what the weaknesses are; what the
+   risks are. Numbers first, no jargon without a one-line gloss, no dashes as
+   punctuation, symmetric bull and bear. This is the narrative that tells the
+   operator what to do with the business, so it is not optional and it is
+   printed in chat every run.
+
 Also include, in tables where jargon is allowed: the Step 3 scorecard, the
 Step 5 watch list with specific measurable thresholds and time horizons, and a
 short handoff-to-valuation block (ROCE forward verdict, the Pillar 1 ROCE it
@@ -206,7 +225,10 @@ After the draft file is written, commit it with the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
 4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
-written, and end with this line and nothing after it:
+written. The printed draft MUST include, visibly in chat, the MY RULINGS
+block, the Step 2E management-vision-and-action discussion (part 5), and the
+12 to 15 line business summary (part 6). End with this line and nothing after
+it:
 
   Ask me anything or give me your overrides.
 

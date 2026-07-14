@@ -168,6 +168,22 @@ phase 3), then:
 
    "Files committed. Ask me anything about this analysis — I have the sources."
 
+10. PUBLICATION OFFER (mandatory, after everything else finishes). Once phase 3
+    is complete and committed, ASK the operator, in one line, whether they want
+    a publication written in anti-ai style: "Want me to draft a publication post
+    in anti-ai style for <ticker>? I will follow anti-ai-writing-style.md." Do
+    NOT draft it unprompted. If the operator says yes, read
+    anti-ai-writing-style.md (repo root) and draft the post following it
+    exactly: 4 to 5 word headline, numbered sections, a Risks block, and a
+    non-directional Verdict block (no buy/sell, no price target in the published
+    version), readable by a 15 year old, numbers first, no dashes or hyphens as
+    punctuation, no AI-tell vocabulary. Write it to
+    outputs/final/publication-draft.md, print it in chat, and let the operator
+    edit. Publish candidates and X-post drafting otherwise follow the NEVER rule
+    (drafting happens in the Dhruva Research Public project); this operator-asked
+    draft is the permitted exception, and it is still not posted anywhere by this
+    session.
+
 Rules for you, the orchestrator session:
 - You coordinate; you do not analyse. Every judgment comes from a subagent.
 - Deliberation conclusions supersede earlier pipeline determinations

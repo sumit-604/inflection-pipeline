@@ -1,0 +1,24 @@
+stage: B12c-valuation
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+scope: "valuation-adherence (B10/B11) + Role 2 (B14); gate0+emoat done in phase 1, not re-checked"
+valuation:
+  rules_checked: 47
+  fails: []
+  minor_notes:
+    - "F1: Pillar 1 current-ROCE input = operating/tangible Cash ROCE 13.0% (not reported 6.7%); deliberation-authorised, disclosed, decision-neutral (reported basis yields harder STOP)"
+    - "F2: RRM applied to full raw destination PE (17.8x) as 'Fundamental Base PE'; Master term ambiguous; defensible, decision-neutral (divergence 6.2%, both tracks STOP)"
+    - "F3: Pillar 1 multiple on operating ROCE vs PE-times-EPS on reported EPS; handled conservatively (reported ladder embeds PPA convergence; cash-basis robustness still STOP)"
+findings:
+  - {severity: "MINOR", location: "B11 Pillar 1 / B10 roce_cash_basis", description: "Current ROCE input uses operating/tangible Cash ROCE 13.0% not reported 6.7%; deliberation-authorised and disclosed; less-conservative direction but decision-neutral (reported basis gives an even harder STOP)"}
+  - {severity: "MINOR", location: "B11 RRM Track 1", description: "RRM applied to full raw destination PE (17.8x) read as 'Fundamental Base PE'; Master spine leaves the term undefined; interpretation defensible and decision-neutral (6.2% divergence, both tracks STOP)"}
+  - {severity: "MINOR", location: "B11 Section 3 basis interaction", description: "Pillar 1 multiple built on operating ROCE while PE x EPS uses reported EPS; handled conservatively via reported ladder PPA convergence and a cash-basis robustness pass that still returns STOP; no double-count"}
+recomputed_destination_pe: ""   # concur: 17.8x additive / 16.7x RRM
+recomputed_decision: ""         # concur: AVOID-on-valuation (Hurdle STOP)
+framework_adherence_valuation: "HIGH — Pillars 1-3, single-credit, UA ordering (Amendment 3), Building-materials 22x sector cap (genuine Master row, manifest 20x correctly overridden), both RRM tracks (Amendment 4.4 percentage-point reading), Hurdle Ratio + Tier A (Amendment 2/4.3), and Role 2 hardest-verdict-wins + Small/Tier-A sizing all applied as written; Amendment 4.5 correctly NOT applied (permanent goodwill re-basing, 📄-gated unwind catalyst absent); 0 CRITICAL, 0 MAJOR, 3 MINOR disclosed decision-neutral judgment calls"
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 94    # 44 clean of 47 rules checked; 3 MINOR passed-with-note, 0 fails

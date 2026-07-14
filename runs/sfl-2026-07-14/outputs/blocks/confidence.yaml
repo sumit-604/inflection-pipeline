@@ -1,11 +1,14 @@
 confidence_delta:
-  numerical_acceptance: 98      # B12a: 51/52 material figures clean; 0 CRITICAL, 0 MAJOR, 1 MINOR (AR-internal variance already flagged by B03)
+  numerical_acceptance: 98      # B12a: 51/52 material figures clean; 0 CRITICAL, 0 MAJOR, 1 MINOR
   redflag_coverage: 90          # B12b: 9 of 10 verifier-found flags fully caught upstream (+1 partial), 0 missed; 0 CRITICAL, 0 MAJOR
-  framework_adherence: 97       # B12c: Gate0+EM portion only (65/67 rules); 0 CRITICAL, 1 MAJOR (history_downgrade field semantics, decision-neutral), 1 MINOR. Valuation-adherence component DEFERRED to phase 3.
-  peer_utilisation: 100         # B12d: all 9 provided peer transcripts used substantively. Entity basis is 3/4 = 75% only because NILKAMAL is screener-only with NO transcript in inputs; per the orchestrator degradation rule a peer with no provided transcript is not a verification miss, so 100% of provided transcripts is the rule-consistent figure.
-  overall: 90                   # min of the four on the rule-consistent basis -> HIGH CONFIDENCE band (>=90). If the entity-basis 75% peer_utilisation were used literally, overall would read 75 (normal band); the 100% basis is used because Nilkamal's absent transcript is a degraded input, not a coverage failure.
-  band: "high confidence (>=90); note the valuation framework-adherence component is pending phase 3"
-  rework_triggered: false       # no CRITICAL numerical finding; no verifier acceptance_rate below 60
+  framework_adherence: 96       # MERGED four-component: phase-1 Gate0+EM 97% (65/67 rules) + phase-3 valuation 94% (47 rules, 0 CRITICAL/0 MAJOR/3 decision-neutral MINOR). Weighted 95.8 -> 96.
+  peer_utilisation: 100         # B12d: all 9 provided peer transcripts used substantively. Entity basis 3/4=75% only because NILKAMAL is screener-only with no transcript (not a coverage miss per the degradation rule).
+  overall: 90                   # min of the four -> HIGH CONFIDENCE band (>=90). Bound by redflag_coverage 90.
+  band: "high confidence (>=90); full four-component delta complete (phase 3 valuation-adherence now included)"
+  rework_triggered: false       # no CRITICAL numerical finding; no verifier acceptance below 60
+  components:
+    gate0_emoat_adherence: 97   # B12c phase 1
+    valuation_adherence: 94     # B12c-valuation phase 3 (0 CRITICAL/0 MAJOR, HIGH)
   notes:
-    - "All four verifiers returned 0 CRITICAL. The two MAJOR findings (B12c history_downgrade semantics; B12d wrong-quarter peer citation) are both decision-neutral: the Gate 0 AVOID / EM STRENGTHENING / combined TURNAROUND conclusions and the underlying peer claim (verified in the correct quarter) are unchanged."
-    - "Valuation-adherence half of verifier C (B10/B11 checks) is NOT run in phase 1 and is excluded from this delta; it is computed in phase 3."
+    - "All five verifier passes (A, B, D, C-gate0/emoat, C-valuation) returned 0 CRITICAL. The MAJOR findings (B12c history_downgrade semantics; B12d wrong-quarter peer citation) are decision-neutral; the valuation-adherence pass found 0 MAJOR."
+    - "Verifier C valuation concurs with destination PE 17.8x additive / 16.7x RRM and the AVOID-on-valuation / Hurdle STOP decision; no recompute required."

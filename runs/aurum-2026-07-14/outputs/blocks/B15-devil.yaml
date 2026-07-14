@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "SHARED CATALYST fails the strip test: reported FY26 PAT Rs 1.90 Cr is 100% one-time; ex the Rs 17.72 Cr building-sale gain and Rs 9.72 Cr Q3 lease reversal, operating base is -Rs 24.68 Cr. The one disclosed profit pool (Distribution Rs 32.3 Cr) must cover ~Rs 57 Cr of consolidated drag, and it is unaudited (OPERATOR_CONTEXT, not Ind AS 108)."
+  - "The SOTP spine is unaudited: Distribution is 76% of base segment EV (Rs 672 Cr of Rs 884 Cr), and both legs (rev ~Rs 254 Cr, profit Rs 32.3 Cr) rest on secondary operator context; the FY26 audited segment note is NOT FOUND, so the Rs 85 base is softer than presented."
+  - "Goodwill Rs 174.25 Cr = 61% of net worth, 80.5% in two negative-net-worth subs (NestAway 95% valuation cut); a partial impairment right-sizes net worth from Rs 506 Cr toward Rs 332 Cr and can push true fair value BELOW the Rs 71-89 re-entry zone itself."
+  - "Governance asymmetry against a buyer: unexplained MSKA auditor withdrawal 5 months into a 2nd term (reason NOT FOUND), Rs 50 Cr promoter-directed AREDL RPT, CARO ix(a) statutory default, and a CARE-flagged Rs 57.56 Cr ICDR proceeds-parking breach. These are hard control-quality facts the market at Rs 240 is not pricing."
+  - "Cash quality is a balance-sheet event, not a cash-generation moat: debt-free status was bought with a one-time Rs 112 Cr building sale; >1-yr receivables +327% YoY, lease service ~2.5x CFO, collections unaddressed across four concalls, cumulative 5-yr CFO/PAT -0.29."
+  - "Too-harsh caveat (opportunity cost): the Rs 71-89 zone is 63-70% below CMP Rs 240 and may be unreachable absent a crash, so the AVOID functions as a near-never-own; revenue is genuinely FIRING (+44% CAGR) and a News Corp-backed strategic bought 5.5%, so a clean turnaround could re-rate on the 45x platform cap and be missed entirely."

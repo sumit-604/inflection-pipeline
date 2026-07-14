@@ -1,0 +1,27 @@
+stage: B12c
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+scope: "phase 1 — gate0 + emerging moat only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 38
+  fails:
+    - {severity: "MAJOR", rule: "history_downgrade field semantics", detail: "set true while body states 10yr full confidence and 'no history-length downgrade applies'; framework's only history-downgrade mechanism (3-4yr LIMITED tier downgrade) does not fire at 10yr; recovery signal already carried by FLAG-GATE0. Does not change AVOID."}
+    - {severity: "MINOR", rule: "ROCE fixed formula", detail: "EBIT/(Net Worth+Borrowings) substituted for the fixed EBIT/(Total Assets - Current Liabilities); disclosed, consistent across years/peers, decision-neutral, but a deviation from a 'do not substitute' formula."}
+emoat:
+  rules_checked: 29
+  fails: []
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: "n/a (valuation deferred to phase 3)"
+recomputed_decision: ""   # concur: Gate 0 AVOID; EM 27/STRENGTHENING; combined TURNAROUND — all unchanged
+findings:
+  - {severity: "MAJOR", location: "B01 YAML history_downgrade + CLASSIFICATION section", description: "history_downgrade: true contradicts the report's own text (10yr full confidence, no history-length downgrade applies); framework ties history_downgrade to the 3-4yr LIMITED tier-downgrade rule, which does not apply. Misstates a structured handoff field; transition signal already carried by FLAG-GATE0. Does not flip AVOID."}
+  - {severity: "MINOR", location: "B01 methodology / Block A", description: "ROCE computed as EBIT/(Net Worth+Borrowings) against the framework's fixed EBIT/(Total Assets - Current Liabilities) under a 'do not substitute alternatives' header. Disclosed, consistent, decision-neutral proxy forced by CSV lacking current/non-current split."}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 97   # 65 of 67 combined gate0+emoat rules passed

@@ -1,0 +1,76 @@
+stage: B04-bizmodel
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No standalone Q4/FY26 investor presentation text was available in this run (only Q2 FY26 and Q3 FY26 presentations, plus the Q4 FY26 results press release which lacks a segment financial table); FY26 segment-level revenue/profit split therefore relies on OPERATOR_CONTEXT.md secondary figures (Distribution ~60% of income, Distribution FY26 segment profit Rs32.3 Cr), not an AR- or results-PDF-anchored Ind AS 108 segment note."
+  - "Sell.do per-license/per-seat pricing tiers not disclosed in any document reviewed; unit economics for Distribution stream could only be characterized qualitatively."
+  - "Contract liability / unearned revenue (SaaS deferred-revenue) balance not separately sized in the AR notes reviewed, so no verification of negative-working-capital SaaS dynamics was possible for Sell.do specifically."
+  - "SM-REIT/AMSA investment-management fee structure (beyond the disclosed 5%/15% investment-by-IM feature) not found in documents reviewed."
+  - "Competitive positioning names (NoBroker, Housing.com, Stanza Living, ZoloStays, Salesforce, Zoho, 99acres) are sourced only from the Dolat Capital broker note, explicitly non-anchored per operator instruction; no AR or investor-presentation source independently names competitors."
+flags:
+  - type: FLAG-METRIC-DISTORTION
+    reason: "Reported EBITDA margin (30.3% of Total Income, Q3 FY26) is not comparable to the company's own Adjusted EBITDA margin (6.5%) due to Ind AS 116 lease accounting; any downstream stage using 'EBITDA' without specifying which figure risks a ~4-5x overstatement of cash profitability."
+  - type: FLAG-NARRATIVE-VS-EVIDENCE
+    reason: "Central AI/'Unified Brain' narrative used to justify forward growth and margin expansion is the weakest-evidenced category in the parallel B07-emoat scan (D1, A2 both Weak); Section 4A and 4D carry this forward as the top monitorable and top management question."
+  - type: FLAG-ONE-TIME-ITEM
+    reason: "Q4 FY26 profitability (second consecutive profitable quarter) included a Rs17.72 Cr one-time building-sale gain in other income; the underlying two-quarter operating profitability trend should be assessed ex-this-item before it is treated as a clean base for any earnings-based valuation approach."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Rental (NestAway managed rentals + HelloWorld co-living)", type: "operating-lease / marketplace commission hybrid", pct_of_revenue: 63.9, predictability: "M"}
+  - {name: "Distribution (Aurum Analytica leads + Sell.do SaaS CRM + PropTiger brokerage)", type: "blended SaaS license + pay-per-lead + transaction commission", pct_of_revenue: 30.1, predictability: "M"}
+  - {name: "Capital (SM-REIT/AMSA + legacy Integrow/YieldWiseX/SPVs)", type: "asset management fee (nascent)", pct_of_revenue: 6.0, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licensing (SEBI SM-REIT registration, AMSA)", durability: "durable if scheme launches; currently unmonetized"}
+  - {moat: "Switching costs (Sell.do CRM embedding)", durability: "weak-to-moderate, unproven at scale"}
+  - {moat: "Ecosystem/cross-sell lock-in", durability: "weak, quantified as P&L-immaterial by management ('still in single digit')"}
+  - {moat: "Execution/management track record", durability: "improving but only two profitable quarters of evidence"}
+  - {moat: "Proprietary data/IP ('Unified Brain')", durability: "weak, central narrative claim not yet backed by disclosed model-performance or IP filing"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts (segment EV/Revenue and EV/EBITDA per SBU)", why: "Three disclosed SBUs (Rental, Distribution, Capital) have structurally divergent economics, margins, and lifecycle stages; a single blended multiple would misprice the profitable Distribution engine against the still-loss-making Rental segment and pre-revenue Capital optionality"}
+  secondary: {method: "Consolidated EV/Revenue (EV/ARR) cross-check", why: "FY26 is only the first barely-profitable year, so earnings multiples are not yet stable; EV/Revenue anchors against the market's evident preference (also used by Dolat Capital's broker model, non-anchored) for valuing this still-young-profitability platform story"}
+  tertiary: {method: "Segment-level DCF using company Adjusted EBITDA/FCF basis", why: "Becomes usable once 4+ consecutive clean profitable quarters exist past the Q4 FY26 one-time-gain-affected print; must use Adjusted EBITDA (post-lease-payment), not reported EBITDA, given the Ind AS 116 distortion identified in Section 3A"}
+  not_applicable: ["Trailing/forward P/E on single consolidated EPS (FY26 barely positive, Q4 inflated by one-time gain)", "Price-to-book (goodwill is 61% of consolidated net worth with real impairment risk)", "Dividend discount model (no dividend, capital being reinvested/raised)"]
+irrelevant_ratios:
+  - {ratio: "Reported (unadjusted) EBITDA margin", why: "Ind AS 116 lease accounting inflates it roughly 4-5x vs. the company's own Adjusted EBITDA (30.3% vs 6.5% of income, Q3 FY26)"}
+  - {ratio: "Trailing/forward P/E on a single consolidated EPS", why: "FY26 is the first barely profitable year and Q4 FY26 profit included a one-time Rs17.72 Cr building-sale gain"}
+  - {ratio: "Debt/Equity or interest coverage using reported borrowings only", why: "Consolidated lease liabilities (Rs192.33 Cr) are 2.4x reported borrowings (Rs81.01 Cr); real fixed-obligation leverage is understated"}
+  - {ratio: "Standalone current ratio", why: "The 8.70x standalone print is an intercompany-loan reclassification artifact per management, not real liquidity improvement"}
+  - {ratio: "Single blended gross margin %", why: "Masks which of three structurally different segments (SaaS-like, commission-based, lease-heavy) is actually driving profitability"}
+  - {ratio: "Inventory turnover / days inventory", why: "No physical inventory in this leads/software/managed-rental services business model"}
+must_track_metrics:
+  - {metric: "ARR", healthy: "sequential growth toward the stated Rs1,000 Cr 3-year target", red_flag: "deceleration or flat ARR vs. prior-quarter guidance"}
+  - {metric: "Adjusted EBITDA margin (company-defined, post-lease-payment)", healthy: "continued sequential improvement from FY26's 5.9%", red_flag: "quarter-on-quarter reversal"}
+  - {metric: "Segment revenue/profit split (Rental/Distribution/Capital)", healthy: "Distribution sustaining growth, Rental narrowing losses toward FY27 breakeven, Capital showing scheme activity", red_flag: "Distribution deceleration with no offsetting pickup elsewhere"}
+  - {metric: "Lease cash outflow vs. operating cash flow (CFO) coverage", healthy: "CFO catching up to/exceeding lease cash service", red_flag: "gap persists or widens, continued financing-funded lease service (FY25: Rs27.68 Cr CFO vs Rs70.50 Cr lease cash service)"}
+  - {metric: "Cross-sell / ecosystem revenue % disclosure", healthy: "management delivers the FY27 disclosure it committed to, showing a credible path to double digits", red_flag: "promised disclosure slips again, stays 'single digit' with no trajectory"}
+unit_economics:
+  unit: "One NestAway managed rental unit (Rental) and one Sell.do active CRM license (Distribution) — the two clearest disclosed unit economics"
+  revenue_per_unit: "NestAway: 10% recurring commission from landlord + ~5% blended commission from tenant on rent value (Inv. Pres. Q2 FY26 slide 13); Sell.do: per-seat/account SaaS license fee, exact pricing tiers NOT FOUND"
+  margin_per_unit: "NestAway: property lease/rent payments and on-ground management cost dominate; Sell.do: near-zero marginal cost per incremental license once built, high incremental margin"
+  key_lever: "Revenue per team member (Group, Rental, Distribution) is management's own stated guiding metric for the AI-driven operating-leverage thesis"
+first_deterioration_signals:
+  - {risk: "Distribution concentration decelerating as PropTiger synergies remain unquantified", first_signal: "Distribution segment revenue growth rate falling below the historical 40%+ trend"}
+  - {risk: "Ecosystem/cross-sell revenue thesis stays P&L-immaterial", first_signal: "disclosed cross-sell/ecosystem revenue % (management committed to FY27 disclosure) not delivered or stays single-digit"}
+  - {risk: "Reported vs Adjusted EBITDA reconciliation gap widens or disclosure stops", first_signal: "Adjusted EBITDA margin vs reported EBITDA margin spread widening beyond the Q3 FY26 baseline (30.3% vs 6.5%)"}
+  - {risk: "Rental segment misses FY27 profitability target", first_signal: "Rental segment result (FY25 baseline -Rs14.54 Cr) not narrowing quarter over quarter"}
+  - {risk: "Lease-liability cash service continues to exceed operating cash flow", first_signal: "CFO vs total lease cash outflow gap (FY25: Rs27.68 Cr CFO vs Rs70.50 Cr lease cash service)"}
+  - {risk: "Goodwill impairment against NestAway/HelloWorld crystallizes", first_signal: "any impairment charge line item in the P&L against the Rs174.25 Cr goodwill balance"}
+  - {risk: "Receivables ageing deterioration continues", first_signal: ">1yr receivables ageing buckets (already +327% YoY in FY25) growing further"}
+  - {risk: "Two-quarter profitability streak proves fragile without the one-time building-sale gain", first_signal: "PBT/PAT margin ex-one-off other income reverting negative in the next 1-2 quarters"}
+  - {risk: "SM-REIT (Capital) stays unmonetized indefinitely", first_signal: "a fourth+ consecutive quarter passing with no scheme filed/launched"}
+  - {risk: "Jul-2026 equity/QIP fund-raise dilutes faster than growth compensates", first_signal: "shares outstanding / EPS dilution outpacing ARR growth rate"}
+mgmt_questions:
+  - "What is the FY26 (and quarterly FY27) segment-level revenue and profit split under Ind AS 108, comparable to the FY25 AR Note 23 table?"
+  - "What specific, monetized product or signed contract backs the 'Unified Brain'/AI-native narrative today, beyond calling bots and lead scoring?"
+  - "What is the cure status, amount, and counterparty of the Integrow Asset Management CARO ix(a) loan/interest default?"
+  - "What is the use-of-proceeds plan for the Jul-16-2026 board-approved equity/QIP fund-raise, and at what expected dilution?"
+  - "When will the first SM-REIT (AMSA) scheme actually launch, and at what target AUM?"
+  - "What is the ecosystem/cross-sell revenue % today, and what is the credible path to double digits?"
+  - "Is the two-quarter profitability streak sustainable excluding the Q4 FY26 one-time Rs17.72 Cr building-sale gain?"
+one_line_verdict: "A three-segment turnaround where the profitable engine (Distribution) is real but the loudest narrative (AI moat) is the thinnest-evidenced part of the story."

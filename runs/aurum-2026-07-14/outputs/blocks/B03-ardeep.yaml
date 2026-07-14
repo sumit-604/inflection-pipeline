@@ -1,0 +1,59 @@
+stage: B03-ardeep
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Quantum, counterparty, and cure status of the Integrow Asset Management CARO ix(a) default not disclosed anywhere in this AR"
+  - "Amounts underlying the CARO exceptions at Monk Tech Ventures, NestAway (i(a)/(b) and vii(a)-(c)), K2V2, and Bonds Brain not disclosed in this AR (subsidiary-level detail sits in filings not collected for this run)"
+  - "Consolidated/group-wide statutory audit fee and non-audit fee not separately disclosed; only standalone auditor remuneration (Rs23L audit / Rs6L non-audit) found"
+  - "No single consolidated RPT-as-percentage-of-revenue figure tabulated in this AR"
+  - "No unbilled revenue / contract asset breakout found in the receivables note"
+  - "No covenant headroom/breach disclosure found in the borrowings notes"
+  - "Promoter share pledge status not disclosed either way (no pledge stated, no explicit nil-pledge confirmation) in this AR"
+  - "Per-CGU goodwill impairment test growth-rate/discount-rate assumptions not tabulated in the sections of this AR reviewed"
+  - "DTA-recoverability assessment methodology for the consolidated deferred tax credit not disclosed"
+  - "Whether the SEBI LODR Regulation 21 Risk Management Committee applies to this company, and if so its composition, is unresolved from this document alone"
+flags:
+  - type: FLAG-CASH
+    reason: "Reaffirmed from B02 and independently extended in Phase 3: consolidated lease liability repayment alone (Rs50.38 Cr, net of interest) exceeds FY25 CFO (Rs27.68 Cr) by 1.8x before adding lease interest; combined lease cash service (per B02, Rs70.50 Cr) exceeds CFO by ~2.5x, funded through financing (equity raise) rather than operations. Layered on top of B02's original receivables-ageing masking finding, independently re-verified in this stage against Note 4.c: 1-2yr bucket +259.8% YoY, 2-3yr bucket +1,233% YoY, ECL significant-increase-in-credit-risk bucket shrank Rs159L to Rs109L, while headline receivables growth (+24.8%) tracked revenue growth (+23.3%) and would mask this without the ageing-table detail."
+phase_verdicts:
+  p1: "Red Flag"
+  p2: "Red Flag"
+  p3: "Watch"
+  p4: "Red Flag"
+  p5: "Watch"
+  p6: "Watch"
+  p7_best_fit: "Turnaround (Watchlist, leaning Pass on operating evidence)"
+overall_quality: 5
+quality_components: {governance: 5, accounting: 4, balance_sheet: 5, earnings: 5}
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Goodwill impairment concentration (61% of consolidated net worth, 80.5% in two negative-net-worth subsidiaries)", evidence_anchor: "Note 3.c p.229 / Note 25 p.267, Consolidated Notes; Consolidated Balance Sheet p.211"}
+  - {risk: "Subsidiary-level statutory default / 7-entity CARO exception concentration", evidence_anchor: "Consolidated Auditor's Report Annexure B, p.208"}
+  - {risk: "Receivables ageing deterioration masked by headline growth", evidence_anchor: "Note 4.c, Consolidated Notes, p.236"}
+  - {risk: "Standalone entity's near-zero debt-service coverage (DSCR 0.11x)", evidence_anchor: "MD&A Table 4, p.53-54"}
+  - {risk: "Lease-obligation-dominated leverage exceeding operating cash flow", evidence_anchor: "Note 10.a p.243-245 (borrowings); Consolidated Cash Flow Statement p.214-215"}
+  - {risk: "~44% audit-coverage gap / first-year auditor transition", evidence_anchor: "Consolidated Auditor's Report Other Matters (a)-(b), p.204"}
+guidance_table:
+  - {claim: "Double revenues over the next two years", number: "2x FY25 consolidated revenue (Rs263.84 Cr baseline)", timeframe: "2 years from FY25 (i.e., by approx. FY27)", credibility: "Unsubstantiated within this AR by any segment or margin breakdown; sourced from CEO letter, not MD&A; FY26 delivery data sits outside this document's scope and is not independently checked by this stage"}
+monitorables:
+  - {metric: "Integrow CARO ix(a) default cure status", threshold: "Any disclosure of amount/counterparty/cure/cross-default", where: "Next AR, CARO Annexure B / Auditor's Report Other Matters", why: "Single most serious unresolved finding from this AR; currently confirmed but unquantified"}
+  - {metric: "NestAway/Helloworld goodwill impairment test outcome", threshold: "Any impairment charge against the combined Rs140.22 Cr goodwill exposure", where: "FY26 AR, Goodwill note", why: "Both subsidiaries carry negative, worsening net worth; a first impairment charge would directly hit reported equity and EPS"}
+  - {metric: "Receivables ageing >1yr buckets", threshold: "Continued growth or ECL-bucket upward reclassification", where: "FY26 AR, trade receivables ageing note", why: "Confirms whether FY25's masked deterioration was a one-off or a genuine trend"}
+  - {metric: "Promoter shareholding and pledge status", threshold: "Stage 8 determination of dilution vs open-market selling, corroborated by FY26 AR", where: "FY26 AR Corporate Governance Report; screener quarterly filings", why: "This AR's own period shows stable promoter holding (49.89%); the post-period decline needs primary-source confirmation before being read as a selling signal"}
+  - {metric: "Audit-coverage gap in FY26", threshold: "Directly-audited asset coverage expanding beyond 56%", where: "FY26 AR, Auditor's Report Other Matters", why: "Persistent heavy reliance on component auditors at exactly the CARO-flagged entities would sustain rather than resolve this AR's central audit-scope concern"}
+  - {metric: "Standalone DSCR", threshold: "Recovery from 0.11x", where: "FY26 AR, MD&A ratio table", why: "Near-zero standalone debt-service coverage; Group equity currently offsets but trend needs monitoring"}
+  - {metric: "Risk Management Committee disclosure", threshold: "Composition/meeting detail provided, or compliance-status claim corrected", where: "FY26 AR Corporate Governance Report", why: "Internal disclosure inconsistency identified in this stage (Reg 21 'Yes' claimed with no supporting committee detail disclosed)"}
+strengths_top3:
+  - "Genuine operating inflection evidenced directly in this AR: revenue +23.3%, loss narrowed 37.5%, CFO grew to Rs27.68 Cr, Distribution segment flipped to profit"
+  - "Conventional, clean board mechanics: no over-tenured independents, strong committee attendance, fully-attended independent-chaired Audit Committee, modest 15.72x CEO-to-median pay ratio"
+  - "Reasoned litigation provisioning and low contingent-liability exposure (1.4% of net worth); disciplined, tabulated rights-issue use-of-proceeds reporting"
+red_flags_top3:
+  - "Confirmed subsidiary-level statutory default (Integrow, CARO ix(a)) within a 7-entity CARO exception year, unquantified in this AR, under a first-year auditor covering only 56% of Group assets directly"
+  - "Six internally-inconsistent disclosures across one AR (IEPF auditor-vs-notes contradiction, >Rs100 Cr unreconciled CARO investment gap, deferred tax arithmetic error, K2V2 stake percentage inconsistency, lease write-back FY24 mismatch, liquidity boilerplate vs DSCR/lease-cash-flow facts), independently re-verified and affirmed in this stage (accounting quality 4/10)"
+  - "Goodwill concentration (61.3% of net worth, 80.5% in two negative-net-worth subsidiaries) never named as a risk anywhere in the MD&A risk section or CEO letter, part of a systematic pattern of six material findings entirely absent from the AR's own narrative sections"
+best_fit_strategy: "Turnaround (Watchlist, leaning Pass on operating evidence)"
+one_line_verdict: "Real operating turnaround, unresolved governance and disclosure quality below it."

@@ -1,0 +1,20 @@
+stage: B12d
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 4
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 peer_coverage_map ZAGGLE baseline row", description: "Coverage map credits the Nov-2024 baseline transcript for the '16% at IPO' cross-sell figure; the 16/20/21% points actually come from the Nov-2025 Q2 FY26 call (correctly credited elsewhere in the same table). Attribution error, not fabrication; no verdict changes."}
+  - {severity: "MAJOR", location: "06-peers.md Claim 9", description: "RATEGAIN Sojern $12M cost savings stated as 'within 100 days'; transcript says 'first 90 days' twice. Figure otherwise accurate."}
+  - {severity: "MAJOR", location: "06-peers.md Part 2E / risks_peers_raise", description: "ZAGGLE OCF flag conflates a YoY delta (~INR33cr) with a later absolute reading; the actual May-2026 data point shows OCF improving to -INR6cr, reversing the implied deterioration. Underlying point (ZAGGLE OCF scrutiny vs Aurum silence) stands."}
+  - {severity: "MINOR", location: "06-peers.md Claim 6", description: "CARTRADE CarDekho deal described as 'declining'; management said 'put it on hold'. Directionally consistent."}
+  - {severity: "MINOR", location: "06-peers.md Part 3", description: "'WCC4' vs 'WCC 4' cosmetic spacing."}
+critical_count: 0
+major_count: 3
+minor_count: 2
+acceptance_rate: 84
+peer_utilisation: 1.0

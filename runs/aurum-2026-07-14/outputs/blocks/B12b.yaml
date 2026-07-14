@@ -1,0 +1,24 @@
+stage: B12b
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 16
+caught: 11
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "Integrow reclassified subsidiary->associate (1-Jul-2025, board control 'in abeyance') removes a lossmaker from line-by-line consolidation and flatters profitability; Capital/SM-REIT segment revenue contracting FY25 INR15.94cr -> FY26 INR7.84cr while promoted as optionality", anchor: "Q2 call, Kunal Karan p.5 + Rahul Jain Q&A p.8-11; Q4 call, Shrikant Jagtap p.6 (segment revenue)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur (B, low end): guidance delivered on schedule, but Q3 PAT is other-income-driven and the Integrow deconsolidation/Capital-segment contraction go un-flagged, thinning the 'structurally profitable' claim"
+redflag_coverage: 81   # share of my flags caught upstream, partials at 0.5 (13/16)
+findings:
+  - {severity: "MAJOR", location: "B05 4D / red_flags — Q3 FY26 profitability", description: "Q3 maiden PAT (INR2.71cr) is driven by INR9.72cr non-operating other income (HelloWorld IndAS lease-liability reversal, Jan call p.7-8); ex-other-income the quarter is an operating loss. B05 attaches its one-time framing to the Q4 INR17.72cr building gain (which was excluded from reported profit) rather than to the reversal that produced the reported PAT milestone. Under-weighted/misclassified."}
+  - {severity: "MAJOR", location: "B05/B06 — omission", description: "Integrow subsidiary->associate deconsolidation and the shrinking Capital/SM-REIT segment (FY25 INR15.94cr -> FY26 INR7.84cr) are absent from both reports; profit-flattering plus contracting optionality is thesis-relevant."}
+  - {severity: "MINOR", location: "B05 2A#6 / timeline_slippages — PropTiger", description: "Promised PropTiger turnaround is framed on removing REA related-party charges (royalty, marketing fee, business support; Jul call p.9); the related-party-cost basis of the margin promise is not weighted."}
+  - {severity: "MINOR", location: "B05 2E — repeated question tracker", description: "Synergy/AI-benefit quantification dodge recurs Q3 (Jimit p.18, Dipesh p.21) and Q4 (Jimit p.15-16, Dipesh p.18); B05 explicitly declined to log it as repeated. Not CRITICAL as the ecosystem-revenue evasion is documented."}
+  - {severity: "MINOR", location: "B05 3A — REA/Housing.com", description: "Ongoing related-party lead-purchase contract with REA-owned Housing.com (REA also 5.5% holder; Q2 call p.17) presented only as a positive, not flagged as a related-party dependency."}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 69   # caught (11) / independent flags found (16)

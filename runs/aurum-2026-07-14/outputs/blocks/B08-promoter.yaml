@@ -1,0 +1,79 @@
+stage: B08-promoter
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Integrow Asset Management CARO ix(a) default: quantum, counterparty, cure status not found in AR or web search"
+  - "MSKA & Associates' stated reason for withdrawing consent as statutory auditor (25-Sep-2024) not disclosed in AR or found in web search; source Reg 30 PDFs returned HTTP 403 to available tools"
+  - "Reporting period for the Rs 10 Cr AREDL 'financial assistance' utilisation figure in the 12th AGM Notice is ambiguous (FY25 vs FY26-to-date)"
+  - "Primary SHP Table II filing not directly pulled for pledge confirmation; pledge=0% rests on two secondary/aggregator sources"
+  - "Credentials of new Independent Directors Ashim Desai and Lakshmi Kumar (appointed 23-Apr-2026) not independently verified"
+  - "Ashish Deora 'co-founder of ReNew Power' claim (multiple media bios) contradicted by ReNew's own leadership page naming Sumant Sinha as sole founder; unresolved"
+  - "Reg 30 filings for Q5/Q6 building sale, the CARE monitoring report itself, and the Jul-2026 fund-raise board-meeting intimation not collected in-run; conclusions rest on secondary media summaries"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Unexplained auditor withdrawal: MSKA & Associates reappointed for 2nd 5-yr term 29-Apr-2024, withdrew consent 25-Sep-2024 (AR FY24-25 p.53), no reason disclosed anywhere"
+      - "Rs 50 Cr omnibus RPT authorisation for the company to lend to promoter entity AREDL (18.95% of FY25 consolidated turnover), direction reversed vs. historical pattern of AREDL lending to the company"
+      - "Confirmed statutory default (CARO ix(a)) at Integrow Asset Management inside a 7-entity CARO exception year, unquantified, under a first-year auditor covering only ~56% of consolidated assets"
+      - "Strong offsetting transition evidence: REA Group 5.5% strategic equity stake, promoter net buying (not selling), full rights-issue subscription honoured, 0% pledge, above-valuation non-core asset sale, two consecutive PAT-positive quarters"
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 3, red: 3}
+deal_breakers:
+  - "Auditor resignation within 3 years: MSKA & Associates, reappointed 29-Apr-2024 for a second 5-year term, withdrew consent to act as Statutory Auditors via email dated 25-Sep-2024 (AR FY24-25, Directors' Report Item 22, p.53); no reason disclosed in the AR or in any filing/media source found in this run"
+adverse_findings:
+  - {finding: "Auditor MSKA & Associates withdrew consent within 5 months of second-term reappointment, no reason disclosed", evidence_tier: "VERIFIED", source: "AR FY24-25, Directors' Report Item 22, p.53", date: "2024-09-25"}
+  - {finding: "Confirmed loan/interest default at Integrow Asset Management (CARO ix(a)), one of 7 Group-entity CARO exceptions in one audit year", evidence_tier: "VERIFIED", source: "AR FY24-25 Auditors' Report Annexure B, consolidated p.204 / standalone p.90", date: "FY2024-25"}
+  - {finding: "Unreconciled >Rs100 Cr gap between CARO Annexure B subsidiary investment balance and audited Note 4.a.1/21(D)(i) balances", evidence_tier: "VERIFIED", source: "AR FY24-25 p.90, 102, 116", date: "FY2024-25"}
+  - {finding: "Rs 50 Cr omnibus shareholder approval sought for company to extend loans to promoter entity AREDL, Rs 10 Cr already utilised (18.95% of FY25 consolidated turnover)", evidence_tier: "VERIFIED", source: "12th AGM Notice bundled with AR FY24-25, p.16-19", date: "2025-09-01 (notice date)"}
+  - {finding: "CARE Ratings monitoring report found Rs 57.56 Cr of unutilised Rights Issue proceeds parked in debt mutual funds, contrary to SEBI ICDR; rectified within ~3 weeks", evidence_tier: "MEDIA REPORTED", source: "scanx.trade summary of CARE monitoring report; underlying filing not collected in-run", date: "2026-02-13 (report date); rectified 2026-01-23"}
+  - {finding: "NestAway co-founder litigation alleges signature forgery in the Rs 90 Cr sale to Aurum; Aurum is counterparty not accused; similar claims dismissed at NCLT Bengaluru", evidence_tier: "MEDIA REPORTED", source: "Business Standard, Entrackr, Inc42", date: "2025-01"}
+  - {finding: "Goodwill concentration: 61% of consolidated net worth, 80.5% in two negative-net-worth subsidiaries (NestAway, HelloWorld) acquired at distressed valuations", evidence_tier: "VERIFIED (AR) + MEDIA (valuation history)", source: "AR FY24-25 Note 3.c/25; TechCrunch/Entrackr on NestAway 95% valuation cut", date: "FY2024-25 / 2023-06"}
+transition_evidence:
+  - "REA India / REA Group (News Corp Australia-backed) received a 5.5% equity stake (42,42,537 shares) via share-swap consideration for the PropTiger acquisition, Jul-Aug 2025 (B07-emoat.yaml H2, media-confirmed)"
+  - "Promoter group honoured full Rights Issue subscription commitment (including standing ready for unsubscribed shares); final call completed by Mar-2025 record date (AR FY24-25 Note 9)"
+  - "Co-promoter open-market purchase of 25,000 shares, 10-Mar-2026 (media-reported), a net-buying not net-selling signal"
+  - "Promoter shareholding decline Jun-2025 (49.81%) to Sep-2025 (47.04%) reconciles arithmetically to new-share issuance to REA India for the PropTiger acquisition, not to promoter selling or rights-issue under-subscription; reframes an apparent adverse signal as strategic-partner dilution"
+  - "New statutory auditor (Kirtane & Pandit LLP) appointed via transparent Board-then-EGM shareholder process, five-year term from FY2025-26"
+  - "Board refresh: two new Independent Directors added 23-Apr-2026 (credentials not independently verified)"
+  - "Non-core building sale (Q5/Q6) at ~15% above independent valuer estimate, proceeds used for debt paydown to reach debt-free status, completed 21-May-2026"
+  - "Two consecutive PAT-positive quarters (Q3, Q4 FY26), FY26 revenue +49% YoY, adj. EBITDA margin swing -3.4% to +5.9%"
+  - "CARE ICDR parking deviation rectified within ~3 weeks of being flagged; subsequent quarterly filings report no deviation"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0%, moderate confidence (secondary/aggregator sources only: trendlyne shareholding aggregator states no pledged promoter holdings; AR CARO confirms no loans raised on pledge of subsidiary securities, a related but distinct point; primary SHP Table II not directly reviewed)"
+searches_performed:
+  - "Ashish Deora Aurum Ventures founder SEBI order litigation"
+  - "Majesco Limited special dividend 2020 Ashish Deora Aurum acquisition shell"
+  - "Aurum Proptech promoter pledge shares 2025 2026"
+  - "Aurum Proptech NestAway acquisition 2022 distressed valuation investors"
+  - "Integrow Asset Management default loan Aurum Proptech"
+  - "CARE Ratings Aurum Proptech rights issue monitoring report unutilised proceeds SEBI ICDR"
+  - "REA Group stake Aurum Proptech 5.5%"
+  - "Aurum Platz / Aurum RealEstate open offer Majesco Limited 2020-2021 minority shareholders"
+  - "Aurum Proptech CFO resignation independent director resignation"
+  - "Ashish Deora Aurum Ventures aviation mining telecom business history controversy"
+  - "site:sebi.gov.in Deora / Aurum Ventures / Aurum Proptech"
+  - "Aurum Proptech auditor change statutory auditor 2024 2025"
+  - "Aurum Proptech rights issue 2025 record date promoter subscription Rs 343 crore"
+  - "Ashish Deora ReNew Power co-founder claim"
+  - "Aurum Proptech promoter shareholding decline September 2025 rights issue dilution"
+  - "Aurum Proptech Glassdoor AmbitionBox employee reviews rating"
+  - "Aurum Proptech IiAS SES proxy advisory AGM vote against resolution"
+  - "Aurum Proptech promoter open market purchase shares 2025 2026"
+  - "Aurum Proptech NCLT litigation court case promoter"
+  - "NestAway co-founder Jitendra Jagadev fraud Tiger Global Chiratae Goldman Sachs NCLT Bengaluru Aurum signature"
+  - "Aurum Proptech CFO appointment 2023 2024 2025 chief financial officer"
+  - "Aurum Proptech previous statutory auditor before Kirtane Pandit resignation term"
+  - "MSKA Associates withdrew consent statutory auditor Aurum Proptech reason September 2024"
+  - "Aurum Proptech MSKA auditor withdrew/resign reason disclosed Reg 30 September 2024"
+  - "Aurum Proptech pledged shares percentage promoter encumbrance trendlyne"
+searches_skipped:
+  - "Direct SEBI order-database query (tooling could not query sebi.gov.in's order archive directly; relied on general web search coverage of sebi.gov.in, which is a materially weaker check)"
+  - "4D political/government-connection search (donations, land allotments, regulatory favours) — not run given low a priori relevance for a proptech operating company; noted as an open gap, not a clean finding"
+  - "Individual litigation/background checks on Srirang Athalye, Ramashrya Yadav (Integrow founder, now APTL NED), and Onkar Shetye beyond their AR-disclosed bios"
+  - "Deep dive on the other 6 CARO-flagged subsidiary entities (Monk Tech Ventures, NestAway's other exceptions, K2V2, Bonds Brain) individually beyond what B02/B03 already surfaced from the AR"
+  - "SCORES/consumer-forum complaint database direct query (relied on general web search, not the SCORES portal itself)"
+  - "Direct fetch of NSE/BSE Reg 30 PDFs (building sale, MSKA withdrawal, CARE report, fund-raise intimation) — all attempted fetches returned HTTP 403 to available tools"
+verdict_basis: "Clean on the classic fraud/SEBI/pledge/minority-treatment axes and net promoter-accumulating, but three independent red items on disclosure-and-control quality (unexplained short-notice auditor withdrawal after a second-term reappointment, a large and directionally-reversed Rs 50 Cr RPT loan-to-promoter authorisation, and a confirmed subsidiary-level statutory default inside a 7-entity CARO exception year with unreconciled AR disclosures) place this at CONCERN, materially offset by a credible strategic-investor entry (REA Group 5.5%) and a genuine operating inflection running in parallel."

@@ -1,0 +1,44 @@
+stage: B06-peers
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No pure Indian PropTech or real-estate-platform peer exists in the provided set; all four peers (CARTRADE, RATEGAIN, ZAGGLE, NAZARA) are adjacent-segment analogues, which drove 5 of 9 claims to UNVERIFIABLE for lack of any peer with direct visibility into Indian real estate lead-gen/TAM/market-share dynamics."
+  - "RATEGAIN provided only 2 quarters (Q2, Q3 FY26) versus 4 quarters for the other three peers, limiting quarter-over-quarter trend comparison for RateGain specifically (e.g. no Q1 or Q4 FY26 RateGain baseline)."
+  - "One ZAGGLE transcript labeled 'Nov_2025_Transcript_2' is actually the Q2 FY25 call (Nov-2024, one full year prior to the other Zaggle Q2 FY26 Nov-2025 call), not a duplicate quarter; it was used as a pre-period baseline for the cross-sell percentage trend line, not as an FY26 data point."
+  - "No peer mentions Aurum, PropTiger, NestAway, Sell.Do, Aurum Analytica or any unmistakable description of Aurum's business in any transcript, so Part 2D competitive-mention analysis is a confirmed null result, not a coverage gap."
+flags:
+  - "Claim 4 (AI-as-a-moat specificity) is CONTRADICTED: two of three checked peers (RateGain, Zaggle) back AI-moat claims with quantified, audited-sounding product metrics, while Aurum's equivalent claim rests on a single early-pilot anecdote on a ~25-30K interaction sample with a wide imprecise range — priority item for synthesis given AI-first repositioning is a B05 priority-7 trigger."
+  - "Claim 9 (AI capex/opex disclosure specificity) is CONTRADICTED: two of three checked peers (RateGain: $5-6mn GTM spend, $12mn synergies; Zaggle: Rs30cr/Rs56cr H1/H2 capitalized tech spend) disclose specific dollar/rupee figures for AI-adjacent investment where Aurum discloses none for its planned AI reinvestment of building-sale proceeds."
+  - "Peer set shows cash-conversion/OCF-vs-PAT divergence is a live, analyst-pressed, management-addressed topic at ZAGGLE every quarter, sharpening the significance of Aurum's total silence on this exact topic (never raised by any analyst across four calls, per B05) — feeds missing-risks analysis."
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "Is a still-single-digit cross-sell/ecosystem revenue share typical or lagging vs. sector norms?", peers: ["ZAGGLE", "RATEGAIN"]}
+  - {claim: "Do any peers claim counter-cyclicality of their core segment to a downturn?", peers: ["CARTRADE"]}
+contradicted:
+  - {claim: "How specific and evidenced are peer 'AI as a moat' claims versus Aurum's proprietary-data argument?", contradicting_peer: "RATEGAIN, ZAGGLE", quote_anchor: "RATEGAIN Q3 FY26 call (Feb-2026, Bhanu Chopra): 'up to 300% increase in ancillary revenue, 75% improvement in NPS, automation of up to 80% of guests queries'; ZAGGLE Q3 FY26 call (Feb-2026, Raj Narayanam): feature dev cycle cut from '75-80 days' to 'less than 30 days'"}
+  - {claim: "How specific are peer AI capex/opex disclosures versus Aurum's undisclosed-budget AI reinvestment plan?", contradicting_peer: "RATEGAIN, ZAGGLE", quote_anchor: "RATEGAIN Q3 FY26 call (Feb-2026, Rohan Mittal): '$5 million to $6 million' GTM investment, '$12 million in annualized cost savings'; ZAGGLE Q4 FY26 call (May-2026, Avinash Godkhindi): 'INR30 crores in H1 to INR56 crores in H2 FY26' capitalized tech/AI spend"}
+unverifiable:
+  - {claim: "Is a ~$10 billion India PropTech market by 2030 a credible, sourced figure?", peers_checked: ["CARTRADE", "NAZARA", "RATEGAIN", "ZAGGLE"]}
+  - {claim: "Does the cited Rs38,000cr distribution/lead-gen TAM hold up against independent estimates?", peers_checked: ["CARTRADE"]}
+  - {claim: "Do peers corroborate an IT-hiring-slowdown headwind with a Bangalore-resilient/Pune-weaker bifurcation?", peers_checked: ["CARTRADE", "ZAGGLE"]}
+  - {claim: "Do peers describe a similar public-vs-private valuation gap and 'quality of revenue' rationalization?", peers_checked: ["NAZARA", "CARTRADE"]}
+  - {claim: "Was Aurum Analytica's claim of displacing an unnamed top lead-gen incumbent corroborated by any peer market-share commentary?", peers_checked: ["CARTRADE"]}
+peer_coverage_map:
+  - {peer: "CARTRADE", quarter: "Q1-Q4 FY26 (4 calls)", usage: "SUBSTANTIVE", contribution: "Source of the counter-cyclicality claim (Claim 7) and the richest AI-moat/agentic-product discussion (Claim 4); closest distribution/lead-gen analogue"}
+  - {peer: "RATEGAIN", quarter: "Q2-Q3 FY26 (2 calls)", usage: "SUBSTANTIVE", contribution: "Source of the specific $7bn TAM figure, the NRR-decline cross-sell admission, quantified AI-moat product metrics, and specific dollar-denominated AI/GTM capex figures"}
+  - {peer: "ZAGGLE", quarter: "Q2 FY25 baseline + Q2-Q4 FY26 (4 calls)", usage: "SUBSTANTIVE", contribution: "Source of the tracked 16%->21% cross-sell percentage directly benchmarking Aurum's single-digit share, quantified AI dev-cycle-time claims, and capitalized AI-spend figures by half-year"}
+  - {peer: "NAZARA", quarter: "Q1-Q4 FY26 (4 calls)", usage: "SUBSTANTIVE", contribution: "Source of the AI-coded-game example and the Sportskeeda platform-dependency risk example; confirms comparable AI-capex vagueness to Aurum and the aggressive-M&A capex-cycle pattern"}
+industry_cross_read:
+  demand: "All four peers report resilient-to-strong underlying demand across the review window, several explicitly framing growth as decoupled from industry-level cycles; none speaks to Indian real estate demand directly, so this does not test Aurum's segment but is broadly consistent, non-damaging context."
+  pricing_inputs: "Not a meaningfully comparable dimension; all four peers are asset-light software/platform businesses with no raw-material exposure, and none maps onto Aurum's real-estate lead-gen pricing-power narrative."
+  capex_cycle: "Industry-wide capacity/M&A race, not a lone-expander situation: 3 of 4 peers (RATEGAIN via the Sojern acquisition, ZAGGLE via continuous bolt-ons, NAZARA via Curve/Smaaash/Bluetile) fund growth substantially through M&A, structurally similar to Aurum's PropTiger-driven inorganic growth; CARTRADE is the explicit outlier, sitting on cash and returning it to shareholders rather than acquiring."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Cash-conversion/OCF-vs-PAT divergence, discussed openly and repeatedly at ZAGGLE (analyst-pressed every quarter, management gives specific drivers and a stated glide path) versus never once raised on any Aurum call despite being flagged upstream at B02/B03."
+  - "AI/LLM disintermediation risk to organic search-driven traffic, discussed explicitly and repeatedly at CARTRADE (ChatGPT/Google AI Mode traffic diversion questioned by multiple analysts) versus Aurum's AI discussion being framed entirely as opportunity with no risk-side commentary from management or analysts."
+  - "Single-platform/algorithm dependency risk, concretely quantified at NAZARA (Sportskeeda lost 21-38% of revenue to one Google Core algorithm update, took 3+ quarters to recover) — structurally relevant to Aurum's own reliance on organic/SEO-driven lead-gen traffic for Aurum Analytica but never discussed on any Aurum call."
+  - "Explicit no-credit-risk governance stance repeatedly stated at ZAGGLE for its card/lending-adjacent products, a disclosure practice not mirrored in any Aurum commentary on its KuberX loan-origination product."
+net_narrative_effect: "complicates"

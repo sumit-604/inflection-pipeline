@@ -1,0 +1,16 @@
+stage: B15-devil
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "survives"
+  moat_durability: "survives"
+  management_trust: "survives"
+  valuation_safety: "weakened"
+overall: "SURVIVES"
+top_counters:
+  - "Anchored SOTP (Rs225 mid / Rs277 generous) sits only 18-34% below CMP, not the 73-78% implied by the Rs75-93 entry; the operator's 'standalone + Kuiper roughly cover today's price' is corroborated by the run's own generous-case SOTP."
+  - "Stacked conservatism (STAGNANT not RECOVERING + 0.85x on a 1.02x FY26 print + UA declined despite FII 2.36%/MF 0% making <3% near-certain + Track 1 RRM 0.70 floor governing) compounds into a punitive entry; un-stacking to Track 2 + UA + 1.0x cash lifts fair value to ~Rs290-320."
+  - "The shared Oilmax catalyst is symmetric: if it pools at book with audited 56%-EBITDA earnings, ROCE flips STAGNANT->RECOVERING (Pillar 1 lifts) AND the dilution ladder flips to accretion in one event; the AVOID prices only the downside tail of a verdict FTTCP itself flagged as having a 'live' upside to +5."
+  - "Information asymmetry runs against the outside buyer but supports AVOID: the promoter controls the unverified Oilmax financials that decide accretion vs dilution, and India Ratings was voluntarily withdrawn on the same day as the NCLT merger order (24-Apr-2026)."

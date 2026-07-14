@@ -1,0 +1,31 @@
+stage: B02-notes
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+pass: 1
+status: pass1_complete
+provenance_note: "Source file is FY2022 Annual Report (50th AGM, year ended 31-Mar-2022 with FY2021 comparatives), not FY2023 as filename suggests; ~4 years stale vs run date."
+notes_scope: "Standalone Notes 1-71 (pp.87-138) and Consolidated Notes 1-73 (pp.151-~204), both read in full."
+input_gaps:
+  - "Ind AS 116 lease discount rate not numerically disclosed (STA Note 45, CON Note 46)"
+  - "Discount/growth rates used in goodwill and investment-in-subsidiary impairment tests not disclosed (STA Note 6/7, CON Note 4, both KAMs)"
+  - "Interest rate on related-party loans not stated as a percentage in RPT note (STA Note 44)"
+  - "Cause of Goodwill reduction of INR 1,108.13 lakh not explained (CON Note 4)"
+  - "Cause of prior-year reclassification between Other Financial Liabilities and Trade Payables not explained (STA Note 71, CON Note 73)"
+  - "Inter-corporate deposit counterparty (INR 500 lakh, STA Note 18) not named"
+top_findings_preliminary:
+  - {rank: 1, finding: "Investment in Divya Software Solutions (INR 7,602 lakh at cost) shows zero impairment despite subsidiary's negative consolidated net assets of INR 1,131.10 lakh, worsening YoY", note_ref: "STA Note 6 p.101; CON Note 58 p.200-201", rating: "RED", why: "Carrying value materially exceeds underlying net assets with no impairment provision; KAM explicitly flags this judgement area"}
+  - {rank: 2, finding: "Corporate guarantees for subsidiary borrowings up 63.5% YoY to INR 29,300.85 lakh, entirely outside the Contingent Liabilities note", note_ref: "STA Note 44(C) p.122; Note 51 p.131", rating: "YELLOW", why: "True off-balance-sheet exposure (24.2% of standalone net worth) is far larger than disclosed contingent liabilities"}
+  - {rank: 3, finding: "Unexplained ~INR 73-100 crore reclassification of prior-year figures between Other Financial Liabilities and Trade Payables in both standalone and consolidated notes", note_ref: "STA Note 71 p.138; CON Note 73 ~p.204", rating: "RED", why: "Comparability-relevant restatement with no substantive explanation, affects working capital ratio trends"}
+  - {rank: 4, finding: "Over INR 118 crore of parent capital and credit support deployed into newly incorporated subsidiary ICT within FY22, which already shows negative net assets in its first period", note_ref: "STA Note 44(B)/(C) p.120-122; CON Note 58 p.200", rating: "YELLOW", why: "Concentrated, rapid related-party capital deployment into an entity already loss-making"}
+  - {rank: 5, finding: "Group borrowings up 64.3% YoY to INR 33,775.50 lakh entirely at subsidiary level while parent remains debt-free; gearing ratio rose 0.11 to 0.17", note_ref: "STA Note 49 p.130; CON Note 22/28/50 pp.175-196", rating: "YELLOW", why: "Leverage build understated by parent-only debt-free framing"}
+  - {rank: 6, finding: "Goodwill of INR 25,198.56 lakh (18% of consolidated net worth) with unexplained INR 1,108.13 lakh reduction this year", note_ref: "CON Note 4 p.166-167", rating: "YELLOW", why: "Material balance, standing KAM, unexplained movement"}
+  - {rank: 7, finding: "PPE useful lives extended well beyond Schedule II across nearly every asset class, no quantified P&L impact disclosed", note_ref: "STA Note 2.2 p.88", rating: "YELLOW", why: "Depresses depreciation expense, reduces comparability with Schedule-II-consistent peers"}
+  - {rank: 8, finding: "New deferred tax asset of INR 350.22 lakh recognised on Group business losses, in tension with no impairment on related investment carrying values", note_ref: "CON Note 27 p.178", rating: "YELLOW", why: "Inconsistent signals on recoverability of loss-making subsidiaries"}
+  - {rank: 9, finding: "Consolidated trade receivables doubtful-debt ratio (2.73%) nearly 7x the standalone ratio (0.39%)", note_ref: "CON Note 14 p.170-171; STA Note 15 p.104", rating: "YELLOW", why: "Overseas subsidiary receivable quality materially weaker than India parent book"}
+  - {rank: 10, finding: "69% of Group CSR spend routed through promoter-linked Sleepwell Foundation Trust, which is also an RPT sales counterparty; standalone ratio note's own commentary contradicts its own figures", note_ref: "STA/CON Notes 44/45/56/57, various; STA Note 60 p.135-136", rating: "YELLOW", why: "RPT concentration and an internal disclosure-consistency issue worth a pattern-pass check"}
+receivables_trend_preliminary: "Standalone: improving/clean, doubtful debt flat at 0.39% of gross, >6-month buckets at 1.05% of gross. Consolidated: improving YoY in absolute terms (gross down 7.8%) but doubtful-debt ratio (2.73% of gross) and >6-month ageing (3.43% of gross) remain materially worse than standalone, concentrated in overseas subsidiaries."
+going_concern_language: "NONE - standard SA 570 boilerplate only in both standalone (p.104 of audit report) and consolidated (p.111 of audit report) auditor sections; no emphasis of matter or qualification."
+restatements_found_preliminary:
+  - "STA Note 71 (p.138): FY21 comparatives restated - Non-current Other Financial Liabilities INR 8,444.62 lakh to INR 5,018.13 lakh; Current Trade Payables INR 16,020.56 lakh to INR 23,329.72 lakh; Current Other Financial Liabilities INR 8,373.06 lakh to INR 3,811.53 lakh; described only as 'Reclassification items'"
+  - "CON Note 73 (~p.204): same pattern - Current Trade Payables INR 22,964.51 lakh to INR 33,012.56 lakh; Current Other Financial Liabilities INR 12,586.54 lakh to INR 5,311.60 lakh"

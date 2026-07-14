@@ -1,0 +1,76 @@
+stage: B08-promoter
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No shareholding-pattern (SHP) filing in inputs; promoter/institutional holding and pledge sourced from operator-supplied screener.in aggregation (Jun 2023-Mar 2026) and web search, not the primary NSE/BSE filing"
+  - "Promoter pledge trend (multi-year) unconfirmed — only a single current-state NIL-encumbrance declaration (web, Apr 2026) is available; no historical pledge percentage series found"
+  - "Annual Report on file is FY2021-22 (~4 years stale); all governance facts from it are dated to 31-Mar-2022 and web-verified separately for 2023-2026 developments"
+  - "AmbitionBox-specific employee review data did not surface distinctly in this search round (Glassdoor data used instead)"
+  - "IiAS/SES/InGovern proxy-advisory reports specific to SFL resolutions (e.g. the Kurlon scheme) were not located; absence of an adverse finding is not confirmation of a clean report"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["decade of zero dividend (2016-2025) alongside profit-linked family remuneration of up to 3.75% of PBT combined across four whole-time directors", "CFO change 2022-2023 and external CEO (Nilesh Mazumdar) departure after ~2 years (Mar/Jul 2025) coinciding with a 66.7% YoY Q4 FY25 profit decline", "four of the board's longest-serving independent directors exited within ~3 months in 2026 on term-limit expiry, a temporary continuity gap even though replacements were seated concurrently", "promoter pledge trend unconfirmable from available data; current pledge is 0% per a web-sourced April 2026 declaration only"]}
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Zero dividend paid 2016 IPO through FY2024-25 despite sustained profitability, alongside family whole-time-director incentive caps of up to 3.75% of PBT combined", evidence_tier: "VERIFIED/MEDIA REPORTED", source: "AR FY22 proposed-dividend table (NIL all years) + AGM notice remuneration items 5-8; web corporate announcements on FY26 first dividend", date: "AR dated 12-May-2022; dividend declaration 2026"}
+  - {finding: "CFO turnover: Nikhil Datye resigned Dec 2022 (~18 months after Jun-2021 appointment); Amit Kumar Gupta appointed May 2023", evidence_tier: "MEDIA REPORTED", source: "AR FY22 + press (indiainfoline, boardstewardship.com)", date: "2022-2023"}
+  - {finding: "External CEO (India Business) Nilesh Mazumdar, hired Feb 2023, resigned 31-Mar-2025 citing personal reasons, relieved 1-Jul-2025, coinciding with a reported 66.7% YoY decline in Q4 FY25 consolidated net profit", evidence_tier: "MEDIA REPORTED", source: "NSE filing PDF (SFL_02072025185721_RelievingofCEO.pdf) + Business Standard/press", date: "Mar-Jul 2025"}
+  - {finding: "Four longest-serving independent directors (Som Mittal, Anil Tandon, Ravindra Dhariwal, V.K. Ahluwalia) ceased within a roughly 3-month window in 2026 on completion of second consecutive terms", evidence_tier: "MEDIA REPORTED", source: "corporate announcements via scanx.trade/boardstewardship.com aggregation of exchange filings", date: "Mar-Jun 2026"}
+  - {finding: "Institutional (FII+DII) ownership declined from ~31% (Sep 2023, post-QIP) to ~24.7% (Mar 2026); FII alone fell from ~6.6% peak (Sep 2024) to ~4.15% (Mar 2026)", evidence_tier: "operator-supplied screener aggregation (secondary source, not primary filing)", source: "operator_shareholding_screener.md (screener.in)", date: "Jun 2023-Mar 2026"}
+  - {finding: "Rangoli Resorts Pvt Ltd and Core Mouldings Pvt Ltd are classified as 'promoter and promoter group' in the shareholding note but as 'entities in which KMP have significant influence' in the related-party note within the same annual report — a disclosure inconsistency, though transaction values with these entities are trivial", evidence_tier: "VERIFIED", source: "AR FY22 Note 21(f) vs Note 44", date: "31-Mar-2022"}
+  - {finding: "CSR spend (~₹3.15-3.25 crore/year in the AR FY22 window) routed through Sleepwell Foundation, a trust classified as a related party in the same AR", evidence_tier: "VERIFIED", source: "AR FY22 Note 44", date: "31-Mar-2022"}
+transition_evidence:
+  - "External Group CFO Amit Kumar Gupta (ex-Samvardhana Motherson) hired May 2023, still serving — MEDIA REPORTED"
+  - "Four new independent directors with disclosed professional credentials seated in 2026 (Neeraj Jain, Hiroo Mirchandani, Rajeev Srivastava, Sudhir Shenoy), replacing term-expired legacy directors concurrently rather than leaving vacancies — MEDIA REPORTED"
+  - "First-ever dividend declared for FY2025-26 (Re 1/share) after a decade of zero payout since the 2016 listing — MEDIA REPORTED"
+  - "Non-family 33+ year veteran Rakesh Chahar elevated to Deputy Managing Director, Aug 2025 — MEDIA REPORTED"
+  - "Promoter group declared NIL new share encumbrance for FY2025-26 (current-state only, no historical pledge trend available) — MEDIA REPORTED/web-sourced, not filing-anchored"
+  - "COUNTER-EVIDENCE flagged explicitly: institutional (FII+DII) ownership declined, did not enter, from ~31% (Sep 2023) to ~24.7% (Mar 2026) per operator-supplied shareholding data; external CEO hire (Nilesh Mazumdar) departed after ~2 years amid a weak quarter — this tempers the transition-evidence read and must not be dropped in downstream synthesis"
+pledge_pct_latest: 0
+pledge_trend: "unconfirmed - only a single current-state NIL-encumbrance declaration (web, 6-Apr-2026) is available; no historical multi-year pledge percentage series was found in inputs or web search"
+searches_performed:
+  - "Sheela Foam Tushaar Gautam Managing Director appointment 2023"
+  - "Sheela Foam Kurlon Kurl-on acquisition promoter deal 2024"
+  - "Sheela Foam promoter pledge shares 2025"
+  - "Sheela Foam Furlenco House of Kieraya acquisition"
+  - "Sheela Foam three independent directors resign exit"
+  - "Sheela Foam Kurlon deal minority shareholders governance concern overpay"
+  - "Sheela Foam SEBI order investigation"
+  - "Sheela Foam CFO resignation 2024 2025"
+  - "Sheela Foam Nilesh Mazumdar CEO appointed date external professional"
+  - "Sheela Foam Pankaj Garg CFO resigns date"
+  - "Sheela Foam Amit Gupta CFO appointed 2025"
+  - "Sheela Foam institutional investors FII DII stake increase 2025 2026"
+  - "Sheela Foam new independent directors appointed 2026 board"
+  - "Sheela Foam Nilesh Mazumdar resignation reason controversy"
+  - "Sheela Foam Meena Jagtiani independent director"
+  - "Sheela Foam MSKA Associates auditor 2025 resign qualified opinion"
+  - "Sheela Foam Kurlon Nandagopal family founders retained stake after acquisition"
+  - "Sheela Foam Glassdoor AmbitionBox employee reviews rating"
+  - "Sheela Foam IiAS SES proxy advisory governance recommendation"
+  - "Sheela Foam litigation court case promoter family dispute"
+  - "Sheela Gautam BJP politician founder Sheela Foam biography"
+  - "Furlenco House of Kieraya financial trouble valuation markdown before Sheela Foam investment"
+  - "Sheela Foam Q4 FY25 profit decline Kurlon integration margin pressure"
+  - "Sheela Foam related party transaction Kurlon Rangoli Resorts Core Mouldings 2024 2025"
+  - "Sheela Foam India Ratings AA credit rating outlook debt 2025"
+  - "Sheela Foam promoter holding percentage 2023 2024 quarterly trend screener"
+  - "Sheela Foam income tax raid search seizure ED enforcement directorate"
+  - "Sheela Foam Kurlon amalgamation scheme minority shareholders objection proxy advisory"
+  - "Sheela Foam NCLT oppression mismanagement petition"
+  - "Sheela Foam Rakesh Chahar retirement 2024 2025 director"
+  - "Sheela Foam dividend history payout track record"
+  - "Rangoli Resorts Private Limited MCA status active"
+  - "Rahul Gautam Tushaar Gautam Namita Gautam DIN disqualified director MCA"
+  - "Sheela Foam QIP qualified institutional placement 2023 fund Kurlon acquisition"
+  - "Sheela Foam promoter OFS offer for sale 2023 stake sale block deal"
+  - "Winro Commercial India Sheela Foam promoter entity"
+  - "Sheela Foam QIP September 2023 anchor investors institutions allotment"
+searches_skipped:
+  - "Direct WebFetch of trendlyne.com and screener.in shareholding-pattern pages returned HTTP 403 (proxy-blocked); compensated via WebSearch snippets and the operator-supplied screener.in shareholding series, so no section was left uncovered as a result"
+  - "Direct MCA portal query (mca.gov.in disqualified-directors database) for Rahul/Namita/Tushaar Gautam was not run directly; relied on secondary aggregator search returning no match, which is lower-confidence than a direct portal check"
+  - "eCourtsIndia litigant-level search for Sheela Foam Ltd was not fully exhausted (single search only) given time budget; civil-litigation clean finding rests primarily on AR disclosure plus absence of adverse press, not an exhaustive court-database sweep"
+verdict_basis: "Clean legal/regulatory/criminal record across all five Section 2 sub-areas is the decisive positive; a decade of zero dividend with meaningful family profit-linked pay, CFO/external-CEO turnover during the Kurlon/Furlenco integration, a concentrated 2026 independent-director term-expiry wave, and an unconfirmed historical pledge trend are the decisive caution items — together placing this at CAUTION with mixed, not unambiguously positive, transition evidence."

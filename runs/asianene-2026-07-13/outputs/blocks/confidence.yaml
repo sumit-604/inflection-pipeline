@@ -1,0 +1,21 @@
+stage: confidence-delta
+company: ASIANENE
+run_date: 2026-07-13
+phase: 3 (full, all four components)
+confidence_delta:
+  numerical_acceptance: 91.4      # B12a (35 numbers checked, 0 critical, 1 major)
+  redflag_coverage: 67            # B12b (12 flags found, 8 fully caught, 3 partial, 1 minor missed)
+  framework_adherence: 97         # B12c full: phase-1 Gate0+EM (84/87) + phase-3 valuation-adherence (30/30) = 114/117 = 97.4%
+  peer_utilisation: 100           # B12d (8/8 peers substantive)
+  overall: 67                     # min of the four
+interpretation_band: "60-74: PROCEED verdicts downgrade one level; not forced REWORK"
+rework_triggered: false           # no verifier CRITICAL (A/B/C/D all 0 critical); no acceptance_rate below 60%
+components:
+  B12a_numerical: {critical: 0, major: 1, minor: 4, acceptance: 91.4}
+  B12b_redflags: {critical: 0, major: 1, minor: 3, acceptance: 67}
+  B12c_framework: {phase1_gate0_em_acceptance: 97, phase3_valuation_acceptance: 100, combined: 97, critical: 0, major: 0}
+  B12d_peers: {critical: 0, major: 0, minor: 1, acceptance: 100}
+notes:
+  - "framework_adherence is now the FULL component: phase-1 Gate 0 + Emerging Moat (84/87 rules clean) plus phase-3 valuation-adherence + Role 2 decision/sizing (30/30 rules clean, AVOID confirmed framework-consistent, destination PE and decision concur, no recompute)."
+  - "redflag_coverage 67 remains the binding (lowest) component; overall 67 unchanged from phase 1. The MAJOR gap was the standalone FY26 guidance miss under-weighting (consolidated +70% headline masking the ~20-28% standalone shortfall)."
+  - "No REWORK: every verifier returned 0 CRITICAL and no acceptance below 60%."

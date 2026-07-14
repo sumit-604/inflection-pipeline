@@ -1,0 +1,26 @@
+stage: B12c-valuation
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+scope: "Phase 3 valuation-adherence (rule 4) + extended Role 2 (B14) decision/sizing. Gate0 & EMoat done in Phase 1, not re-run."
+valuation:
+  rules_checked: 22
+  fails: []
+role2_check:
+  rules_checked: 8
+  verdict_consistent_with_role1: true
+  decision_rule_trace_correct: true      # AVOID triple-bound: Gate0 AVOID, Promoter CONCERN, Hurdle STOP + U/D<2x
+  tier_assignment: "A (25%) — correct; Tier B Medium-ceiling logic correctly NOT invoked"
+  position_sizing_correct: true          # Promoter-CONCERN cap binds -> Small (2-3%) ceiling, ZERO at CMP
+  fails: []
+recomputed_destination_pe: ""            # concur: Track2 13.2x / Track1 RRM 9.3x
+recomputed_decision: ""                  # concur: AVOID (on-valuation)
+findings:
+  - {severity: "MINOR", location: "B11 Pillar 2 offset", note: "Offset tempered +0.20->+0.05; conservative, FTTCP-authorized; immaterial (strict +0.20 -> 15.4x still Hurdle STOP)."}
+  - {severity: "MINOR", location: "B14 Section 7 re-engagement zone", note: "Zone offered for Gate0-AVOID + Promoter-CONCERN name; mitigated by ceiling caps + checklist gate; current decision AVOID unaffected."}
+  - {severity: "MINOR", location: "B11 Hurdle Ratio track choice", note: "Uses Track 2 mid 13.2x not governing Track 1 mid 9.3x; Track 1 gives deeper STOP; verdict robust."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100    # 30/30 rules substantively passed; 3 MINOR notes are conservative/presentational, no rule failed

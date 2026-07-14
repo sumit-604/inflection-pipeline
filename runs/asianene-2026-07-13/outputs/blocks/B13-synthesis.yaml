@@ -1,0 +1,24 @@
+stage: B13-synthesis
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+phase: 3
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-EXECUTION", "SHARED CATALYST (Oilmax merger)"]
+confidence_delta: {numerical: 91.4, redflag: 67, framework: 97, peer: 100, overall: 67}
+valuation_decision: "AVOID"
+entry_range: {low: 75, high: 93}
+mos_price: 75
+destination_pe: {track2_additive_mid: 13.2, track1_rrm_mid: 9.3, governing: "RRM"}
+hurdle_verdict: "STOP"
+prob_weighted_3yr_cagr: -12.1
+devil_overall: "SURVIVES"
+devil_valuation_safety: "weakened (magnitude not direction); anchored SOTP ~Rs225-277"
+headline: "Real oilfield turnaround, valuation says avoid today"
+falsification_metric: "Q1/Q2 FY27 standalone revenue ex-Kuiper below the 30-40% growth path (third consecutive reaffirm-then-miss)"
+fttcp_composite: 4
+fttcp_position: "DEEP WATCH leaning BUY-ON-DIPS"
+publish_candidate: true
+publish_candidate_summary: "Acquisition-inflated +70% (Rs791 Cr) headline masking a ~20-28% organic shortfall once 7 months of Kuiper is stripped, plus a monsoon excuse flatly contradicted by two peers growing through the quarter; educational/methodology teaching case, no recommendation attached."

@@ -1,0 +1,54 @@
+stage: B11-valuation
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Oilmax merger scheme financials + accounting basis (pooling-at-book vs fair-value) — pivotal, unresolved"
+  - "Post-merger diluted share count (117:10 swap known; exact issuance pending NCLT final order)"
+  - "Standalone capex for clean FCF (consolidated 60.64 Cr comingles Kuiper acquisition capex)"
+  - "Rating-agency WC/CF commentary (rating PDF not in bundle)"
+  - "DII % for UA FII+DII<3% test (FII 2.36% confirmed; DII unresolved)"
+  - "FY27 explicit margin guidance (only FY29 targets disclosed)"
+flags:
+  - "FLAG-CASH: growth-induced + RP-collection overlay; cash multiplier APPLIED = 0.85x (0.80 base + tempered 0.05). Falsifier: RP receivable >180 days FY27 -> revise to 0.65x."
+  - "FLAG-EXECUTION: credibility grade C; bull EPS CAGR capped at base+5% (25%)."
+  - "FLAG-MERGER: Oilmax reverse merger EPS-DILUTIVE at disclosed valuation (35-51% FY30 dilution at media-implied issuance); accretion contingent on unverified pooling-at-book + audited earnings."
+  - "FLAG-VALUATION: Hurdle STOP; probability-weighted CAGR -12.1%; no positive asymmetry at CMP."
+  - "SHARED CATALYST: Oilmax merger drives revenue/margin/ROCE; Role 3 to stress single point of failure."
+  - "FLAG-PROMOTER: verdict CONCERN -> AVOID default per Master."
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 8.5, mid: 9.3, high: 10.0, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 12.0, mid: 13.2, high: 14.0}
+  divergence_pct: 30
+  governing_track: "Track 1 RRM (more conservative; governance/durability priced via discount rate). Track 2 remains primary destination-PE authority."
+pillar_detail:
+  roce_used: 13.71
+  roce_base: 14.4
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.85
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.05
+  growth_premium: 1
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20
+hurdle_ratio: {base: 0.76, bull_used: false, verdict: "STOP"}
+fair_values:
+  track1: {bear: 118, base: 182, bull: 222}
+  track2: {bear: 173, base: 249, bull: 300}
+expected_cagr_prob_weighted: -12.1
+entry_range: {low: 75, high: 93}
+mos_price: 75
+upside_downside_ratio: 0.0
+decision: "AVOID (on-valuation)"
+unresolved_inputs_used:
+  - "FCF: capex comingled with Kuiper acquisition -> conservative assumption FCF neutral-to-negative, consistent with sub-1.0x cash band"
+  - "Post-merger share count: not fabricated; dilution shown as sensitivity across +50%/+100%/+168% issuance"
+  - "UA FII+DII<3%: unresolved -> UA NOT applied (conservative)"
+  - "Oilmax standalone earnings: not anchored -> merger accretion shown as labelled sensitivity only"
+  - "FY27 margin: no guidance -> base holds FY26 12.43% flat"
+som_cagr_crosscheck: "consistent — base revenue CAGR 20% cut below SOM-implied 28.2% for the capacity-funding gap"
+one_line_thesis: "AVOID ASIANENE at Rs340: 20-25% EPS growth to Rs19.6-22.2 by FY29 against a disciplined 13.2x four-pillar destination (ROCE 13.71% STAGNANT, cash 0.85x, EM 28, 20x cap) gives Rs249 base = -10% CAGR; Hurdle STOP, promoter CONCERN, reverse merger dilutive at disclosed valuation; re-engage only Rs75-93 or on audited Oilmax accretion."

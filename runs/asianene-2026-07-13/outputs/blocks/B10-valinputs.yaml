@@ -1,0 +1,112 @@
+stage: B10-valinputs
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Oilmax merger scheme financials and fair value assessment (post-shareholder approval expected Jun-2026)"
+  - "Post-merger diluted share count (117:10 swap ratio known, but exact issuance pending NCLT final order, target Sep/Oct-2026)"
+  - "Standalone capex (FY26 consolidated includes acquisition capex; balance sheet roll-forward needed)"
+  - "Rating agency working-capital and cash-flow commentary (rating PDF not in run bundle)"
+  - "Full shareholding pattern (FII 2.36% confirmed; DII % unresolved for UA <3% test)"
+  - "FY27 explicit margin guidance (only FY29 targets disclosed in concalls)"
+flags:
+  - "FLAG-CASH: Related-party trade receivables 56.4% of gross book (B02); Asian Indwell JV 26.9% of receivables alone. 6m-1y overdue bucket up 870% YoY (Note 54, B02 #3). Falsifier: if receivables >180 days past due in FY27, revise cash multiplier to offset growth."
+  - "FLAG-EXECUTION: Credibility grade C (B05); missed FY26 guidance twice. Duarmara/Tiphuk/Amguri production timelines slipped all three concalls. Bull EPS CAGR capped at Base + 5% per CLAUDE.md."
+  - "FLAG-MERGER: Oilmax reverse merger (117 AESL : 10 OEPL swap) drives consolidated FY27+ growth and margin uplift. Merger accounting basis (pooling at book vs fair value) unverified; Oilmax standalone financials not provided. Stage 11 to model pre-merger and post-merger EPS scenarios separately."
+  - "FLAG-VALUATION: Oilmax merger valued at ~53x FY25 EPS per media (snippet only, 403). Unresolved fairness challenge from two analysts (B05). Carry as monitoring flag."
+  - "CAPACITY-GAP: B07 capex-embedded growth 2.5%/yr implies <Rs50-55 Cr incremental capacity vs B09 SOM Rs180-220 Cr incremental 3yr need; SOM optimistic, WC-funded growth already stretched."
+table:
+  company: "Asian Energy Services Limited"
+  ticker: "ASIANENE"
+  cmp_rs: 340
+  market_cap_cr: 1654
+  business_type: "Hybrid: Oil & Gas Integrated Services (80%) + Mineral & Other Energy Services (20%)"
+  sector_cap_row: 20
+  sector_cap_anchor: "FTTCP-deliberation; primary EPC/Civil construction, alternative Mining/mineral exploration, both 20x"
+  shares_outstanding_diluted_lakh: 451.12
+  shares_outstanding_diluted_anchor: "Net profit attributable to owners 5,115.71 lakh / Diluted EPS 11.34 (Consolidated Audited FY26)"
+  shares_outstanding_basic_lakh: 448.894
+  shares_outstanding_basic_anchor: "Paid up equity capital 4,488.94 lakh / FV 10 (Consolidated BS 31-Mar-2026)"
+  post_merger_share_count_diluted_lakh: null
+  post_merger_share_count_unresolved: "Oilmax swap 117 AESL:10 OEPL locked; exact issuance contingent on NCLT final order (target Sep/Oct-2026). Merger scheme/valuation report not provided. Stage 11 model both: pre-merger baseline 451.12 lakh and post-merger illustration."
+  net_debt_cr: 29.68
+  net_debt_anchor: "Borrowings 158.14 Cr (curr 85.88 + non-curr 72.26) less Cash & equiv 48.97 Cr = 29.68 Cr NET DEBT (Consolidated BS 31-Mar-2026)"
+  enterprise_value_cr: 1683.68
+  enterprise_value_anchor: "Market cap 1,654 Cr + Net debt 29.68 Cr (arithmetic; note stage-10 chat mislabelled sign — net DEBT 29.68cr, EV = mcap + net debt)"
+  revenue_latest_cr: 791.05
+  revenue_latest_fy: "FY26"
+  revenue_latest_anchor: "Revenue from operations 79,104.74 lakh (Consolidated Audited P&L 31-Mar-2026)"
+  ebitda_latest_cr: 98.35
+  ebitda_latest_fy: "FY26"
+  ebitda_latest_anchor: "PBT 6,883.66 + Finance costs 1,065.12 + Depreciation 1,886.35 = 9,835.13 lakh (Consolidated Audited P&L 31-Mar-2026)"
+  ebitda_margin_pct: 12.43
+  pat_latest_cr: 51.84
+  pat_latest_fy: "FY26"
+  pat_latest_anchor: "Net profit after tax 5,183.87 lakh (Consolidated Audited P&L 31-Mar-2026); attributable to owners 5,115.71 lakh"
+  pat_margin_pct: 6.56
+  diluted_eps_rs: 11.34
+  diluted_eps_anchor: "Diluted EPS attributable to owners (Consolidated Audited P&L FY26)"
+  current_pe: 29.98
+  current_pe_anchor: "CMP 340 / diluted EPS 11.34 = 29.98x (arithmetic); on mcap/PAT-owners basis 1654/51.16 = 32.3x"
+  cfo_latest_cr: 52.99
+  cfo_latest_fy: "FY26"
+  cfo_latest_anchor: "Net cash from operating activities 5,298.52 lakh (Consolidated Audited CF FY26)"
+  fcf_latest_cr: null
+  fcf_unresolved: "Consolidated capex 6,064.15 lakh comingles acquisition/Kuiper integration with organic capex; standalone breakdown unavailable."
+  book_value_per_share_rs: 109.7
+  book_value_per_share_anchor: "Equity attributable to owners 49,497.62 lakh / 451.12 lakh shares (Consolidated BS 31-Mar-2026)"
+  capex_latest_cr: 60.64
+  capex_latest_anchor: "Purchase of PP&E and CWIP 6,064.15 lakh (Consolidated CF FY26)"
+  depreciation_latest_cr: 18.86
+  dps_rs: 1.25
+  roe_pct: 10.36
+  roce_latest_pct: 13.71
+  roce_latest_anchor: "FTTCP-authorized: Current ROCE ~13.71% consolidated FY26 (deliberation). STAGNANT verdict -> Pillar 1 uses this."
+  roce_verdict: "STAGNANT (Pillar 1 uses current ROCE; RECOVERING is noted upside only, if Oilmax pools at book, NOT base input)"
+  cfo_pat_ratio_latest: 1.02
+  cfo_pat_ratio_anchor: "CFO 5,298.52 / PAT 5,183.87 lakh (Consolidated FY26)"
+  cfo_pat_cumulative: null
+  cfo_pat_cumulative_note: "FY24 CFO -44.10, FY25 -33.08, FY26 +52.99 Cr. Two-year FY25-FY26 cumulative CFO/PAT = 19.91/93.96 = 0.21x; three-year negative. Single positive print FY26."
+  cffo_cash_quality: "GROWTH-INDUCED with related-party collection overlay; not structural, not indeterminate"
+  cffo_cash_quality_anchor: "FTTCP deliberation. B02 FLAG-CASH: RP receivables 56.4% of gross book, Asian Indwell JV 26.9%, 6m-1y overdue up 870%. Falsifier: TTM CFO/PAT <0.5x (currently 1.02x latest but 0.21x cumulative); negative CFO FY27 while revenue grows; RP receivable >180 days."
+  revenue_2yr_cagr_pct: 61.0
+  revenue_2yr_cagr_years: "FY24-FY26"
+  revenue_3yr_cagr_pct: 93.3
+  revenue_3yr_cagr_note: "FY23-FY26 distorted by FY23 trough (109.95cr loss year); two-year FY24-FY26 61.0% more representative"
+  pat_2yr_cagr_pct: 42.7
+  pat_2yr_cagr_years: "FY24-FY26"
+  pat_3yr_cagr_note: "FY23 PAT -44.36cr (loss); 3yr CAGR from negative base not computable; use 2yr 42.7% with trough-distortion flag"
+  guided_revenue_growth_fy27_pct: "30-40 YoY standalone"
+  guided_revenue_growth_fy27_anchor: "B05 Q4 FY26 call. FTTCP: order backed (Vedanta 865cr, Mahanadi 459cr; 90-95% order covered). Caveat: order book declined 2,000->1,750cr."
+  guided_margin_band: null
+  guided_margin_band_unresolved: "No explicit FY27 margin band in concalls; FY29 targets only (Kuiper 11-12%, Duarmara 70-75%, group PAT 450-500cr). Use FY26 actual 12.43% as baseline."
+  credibility_grade: "C"
+  credibility_grade_implication: "Bull EPS CAGR in Hurdle check capped at Base + 5%"
+  mgmt_delivery: {delivered: 5, partial: 2, missed: 4, track_record: "mixed"}
+  em_score: 28.0
+  em_classification: "STRENGTHENING"
+  em_catalyst_12m_primary: "Oilmax merger NCLT completion (target Sep/Oct-2026)"
+  em_evidence_mix: "17 documented, 9 claim, 4 inference"
+  promoter_verdict: "CONCERN"
+  promoter_pledge_pct: 0
+  promoter_related_party_revenue_pct: 50.8
+  ua_qualifier_listed_12m: true
+  ua_qualifier_gate0_or_em: true
+  ua_qualifier_fii_dii_lt3: null
+  ua_qualifier_fii_dii_unresolved: "FII 2.36%, MF 0%; DII total not extracted. If FII+DII<3% -> UA qualifies. Contingent YES."
+  ua_qualifiers_all_met: null
+  kuiper_consideration: "Cash US$9.25M (~Rs77 Cr, AR Note 4); B01 ~Rs123cr likely incl assumed working capital; ~3x EBITDA (cheap)"
+  oilmax_merger: "117 AESL:10 OEPL swap; promoter to ~47.3%; valued Rs2,582cr (~53x FY25 EPS, media); NCLT order 22-Apr-2026, shareholder mtg 12-Jun-2026, target close Sep/Oct-2026. Oilmax standalone (128cr rev/56% EBITDA/290cr networth) NOT in run inputs (merger scheme not collected) -> unresolved, deliberation-noted, NOT anchored."
+conflicts: []
+unresolved:
+  - {field: "Post-merger diluted share count", stage_11_action: "Model pre-merger (451.12 lakh) and post-merger (117:10 swap dilution) EPS scenarios, labelled"}
+  - {field: "FCF / standalone capex", stage_11_action: "Isolate standalone capex; FTTCP ~Rs50cr FY27 organic capex guide as proxy"}
+  - {field: "Rating agency WC/CF commentary", stage_11_action: "NOT FOUND in run; FLAG-CASH rests on FY26 CFO turn alone"}
+  - {field: "Oilmax standalone financials + merger accounting basis", stage_11_action: "Pooling-at-book vs fair-value pivotal; model post-merger EBITDA/EPS both ways; not anchored"}
+  - {field: "FY27 margin guidance", stage_11_action: "No guidance; use FY26 12.43% base, test Oilmax/Kuiper accretion sensitivity"}
+  - {field: "DII % for UA test", stage_11_action: "Extract; FII 2.36%+DII vs 3% threshold"}
+rating_wc_quote: "NOT FOUND — rating PDF not in run inputs; FLAG-CASH determination rests on FY26 CFO turn without rating-agency WC language"
+rating_agency: null
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: null, all_met: null}
+credibility_grade_source: "B05"

@@ -1,0 +1,20 @@
+stage: B14-thesis
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 75, high: 93}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Oilmax merger closes on a fair-value (non pooling-at-book) basis confirming 35-51% EPS dilution, OR any negative CFO quarter in FY27 while revenue grows / TTM CFO/PAT below 0.5x, OR any related-party receivable ages past 180 days"
+monitoring_checklist:
+  - "Oilmax merger accounting basis pooling-at-book vs fair value, plus audited Oilmax standalone earnings vs disclosed 128cr rev/56% EBITDA; share issuance vs media-implied ~760 lakh"
+  - "TTM CFO/PAT >=0.5x and no negative CFO quarter in FY27 while revenue grows"
+  - "Related-party receivable ageing: no bucket past 180 days; RP share of gross book falling below 56.4%"
+  - "FY27 standalone revenue tracking the 30-40% order-backed guide (no repeat of FY26 late-year external-blame miss)"
+  - "Consolidated order book above Rs1,750cr with coverage >1.5x TTM revenue"
+  - "Consolidated EBITDA margin sustained >=12.5% (red if below 12% two consecutive quarters)"
+  - "Net debt/EBITDA <1x (borrowings already up ~6.7x FY25->FY26)"
+  - "Duarmara/Tiphuk/Amguri production start with a hard confirmed date (grade-C slippage pattern)"
+one_line_thesis: "AVOID ASIANENE at Rs340: 20-25% EPS growth to Rs19.6-22.2 by FY29 against a disciplined 13.2x four-pillar destination (ROCE 13.71% STAGNANT, cash 0.85x, EM 28, 20x cap) gives Rs249 base = -10% CAGR; Hurdle STOP, promoter CONCERN, reverse merger dilutive at disclosed 117:10/~53x valuation; re-engage only Rs75-93 with entry conjunction satisfied. Cash quality: growth-induced with related-party overlay."

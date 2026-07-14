@@ -1,0 +1,22 @@
+stage: B12b
+company: "ASIANENE"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 8
+partially_caught: 3
+missed:
+  - {severity: "MINOR", item: "Unexplained 'write-off' bundled into the INR9cr Kuiper acquisition exceptional item is not surfaced or probed", anchor: "May26 call p.5 (Sumit Maheshwari): 'exceptional item of INR 9 crores related to Kuiper acquisition costs and a write-off'"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C (Mixed) is fair, at the low end, given the related-party 50x deflection and a standalone guidance miss partly masked by Kuiper consolidation"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 1B / promise-delivery table / red_flags", item: "Standalone FY26 guidance miss under-weighted: consolidated '+70% to INR791cr' headline masks an ~20-28% standalone shortfall vs INR650-700cr once ~INR290cr of Kuiper (7 months at INR40-45cr/mo) is stripped out", anchor: "May26 p.4 INR791cr/+70%; Nov25 p.10 Kuiper INR40-45cr/mo + ~INR250cr H2 est; Sep25 p.6 INR650-700cr standalone guidance"}
+  - {severity: "MINOR", location: "B05 promise-delivery table (Kuiper run-rate row)", item: "Kuiper FY27 guide ($60-65mn) is essentially flat on the current INR530-540cr annualized run-rate, contradicting Nov25 'grow significantly'; pipeline marks it 'delivered' without flagging the soft walk-back", anchor: "Nov25 p.10 'grow significantly from the current run rate'; May26 p.6 '$60 million to $65 million', p.9-10 'current annualized run rate of between INR530 crores to INR540 crores'"}
+  - {severity: "MINOR", location: "B05 repeated-question tracker / red_flags", item: "ESOP-deflection on Oilmax PAT-margin comparability not connected to the 50x valuation-fairness flag — the one metric that would test the valuation is waved off", anchor: "May26 p.5-6 (Charchit Maloo ~35% PAT margin) -> Sumit 'granted some ESOPs... PAT margins... may not be comparable'"}
+  - {severity: "MINOR", location: "B05 disclosure completeness", item: "Unexplained 'write-off' inside the INR9cr Kuiper exceptional not surfaced", anchor: "May26 p.5"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 67

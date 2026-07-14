@@ -1,0 +1,14 @@
+stage: B12a
+company: "C.E. Info Systems Ltd (MAPMYINDIA)"
+run_date: "2026-07-13"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 31
+findings:
+  - {severity: "MAJOR", location: "B01 p.84, Block B, FY26 capex line", claimed: "Rs 42.40 Cr (Payment for PP&E and intangible assets, per results FY26 p.9)", source_truth: "Rs 49.38 Cr (per results FY26 Consolidated Cash Flow Statement, line 486-488)", note: "Discrepancy affects B3 (FCF ratio) calculation; FY26 FCF would recalculate as Rs 43.95 Cr instead of Rs 50.93 Cr. Anchor explicitly cited as source (results FY26 p.9) but figure does not match audited statement."}
+  - {severity: "MAJOR", location: "B02 p.139, Finding 7 (top-15 findings, line: 'RPO conversion realism also questioned')", claimed: "13% actual FY25 conversion of FY24 RPO vs 15% guided a year earlier, 20% now guided forward", source_truth: "Terms 'RPO' and 'guided'/'guidance' (in business-guidance context) do not appear anywhere in the AR FY24-25 on full-text search — NOT FOUND IN DOCUMENT", note: "Sub-claim unanchored to provided source documents. The unbilled-revenue and POC-mix figures in the same Finding 7 are independently verified as exact matches. Only the RPO-conversion-percentage and forward-guidance percentages are NOT FOUND."}
+critical_count: 0
+major_count: 2
+minor_count: 0
+acceptance_rate: 90
+coverage_note: "Screener-Data_Sheet.csv (FY19-FY26 verified), AR FY24-25 text extract (verified against Notes 1-43), FY26 Results audited statements (verified CF/balance-sheet sections). All verdict-card figures (classification GOOD+, market cap Rs 6,488 Cr, CMP Rs 1185) verified exactly. Gate 0 scorecard Blocks A-E all inputs verified; Block F moat scores accepted on methodology (peer data sourced from peer CSVs per stated framework). Material transaction amounts (RPT, provisions, receivables, write-offs) cross-checked against source notes. 31 distinct numeric claims reviewed; 28 exactly verified, 1 discrepancy found on capex, 1 unanchored guidance claim, 1 directional/methodological acceptance for peer data. Acceptance rate 90% of checked figures."

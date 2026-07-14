@@ -1,0 +1,23 @@
+stage: B12d
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+peers_audited: 9
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B (Labour Code cross-read)", description: "Newgen wage-revision quote ('Out of 4,500 people, almost 3,500 people... wage hikes in October') cited as Q2 FY26 call PDF p.10; quote is actually in the Jan 2026 (Q3 FY26) transcript, PDF page 10 - wrong call cited entirely."}
+  - {severity: "MAJOR", location: "B06 Part 2E (competitive-entry risk)", description: "Newgen platform-competitor quote (Salesforce/ServiceNow/Mendix/OutSystems) cited as Q2 FY26 call PDF p.16; quote is actually in the Jul 2025 (Q1 FY26) transcript near PDF page 21 - wrong call and wrong page cited."}
+  - {severity: "MAJOR", location: "B06 Part 1 Q3 (AI-readiness claim)", description: "The report's own 'single strongest independent confirmation' quote (NEWGEN Jan 2026, 're-evaluation... large order bets') cited as PDF p.5-6; actual location is PDF page 11 of the correctly-identified transcript, a 5-6 page miss on the most load-bearing anchor in the report."}
+  - {severity: "MINOR", location: "B06 Part 1 Q1 (NEWGEN Jul 2025)", description: "'Public sector momentum... slightly lesser' cited PDF p.4, actual PDF page 7 (3 pages off); 'addressable market... has closed' cited p.16, actual PDF page 17 (1 page off)."}
+  - {severity: "MINOR", location: "B06 Part 1 Q5 (NEWGEN Jul 2025)", description: "'I don't think we have any churn... top 20, we don't lose anything' cited PDF p.16, actual PDF page 18 (2 pages off)."}
+  - {severity: "MINOR", location: "B06 Part 1 Q4 (NEWGEN Jul 2025 and Jan 2026 DSO data)", description: "Both DSO/receivables citations cited as PDF p.4; both actually on PDF page 5 (1 page off each). Underlying figures (123/125 days, Rs504cr/Rs530cr) are accurate."}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 78
+peer_utilisation: "9/9 (100%) - all provided peer transcripts substantively used with real, verbatim content; citation-location accuracy issues concentrated in NEWGEN transcripts (see findings) do not indicate non-use, only anchor imprecision"

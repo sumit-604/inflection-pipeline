@@ -1,0 +1,22 @@
+stage: B12c
+company: "C.E. Info Systems Ltd (MAPMYINDIA)"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+phase: "phase-1 (gate0 + emerging moat only); valuation deferred to phase 3"
+gate0: {rules_checked: 44, fails: []}
+emoat: {rules_checked: 14, fails: []}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3 (B10/B11 not yet produced; deferred)"}
+recomputed_destination_pe: "pending phase 3"
+recomputed_decision: ""   # concur: GOOD+ (Gate 0) / EXCELLENT+ (combined)
+findings:
+  - {severity: "MINOR", location: "B01 Block A / M3", description: "ROCE via proxy Capital Employed (Equity+Borrowings) not the fixed EBIT/(TA-CL) formula; permitted under grounding rule 5, disclosed, ~1% cross-check. No score impact."}
+  - {severity: "MINOR", location: "B01 Block B B2/B3/B4 + M12", description: "Computed on FY24-26 3yr subset (payables/capex NOT FOUND pre-FY24); B2=5 on a 3yr window is generous but disclosed. No classification impact."}
+  - {severity: "MINOR", location: "B01 E2", description: "3-year promoter-change rule applied on a 1-year proxy (-1.26pp), flagged; score 1 unchanged."}
+  - {severity: "MINOR", location: "B01 M3", description: "ROCE 20.92% includes ~11% Other Income; ex-OI M3 would step 5->3 (moat 22->20) but stays present; 5 moats, STRONG, GOOD+ all unchanged. Flagged in-report."}
+  - {severity: "MINOR", location: "B07 6D", description: "EXCELLENT+ combined placement not mechanically checkable vs an enumerated matrix in the stage prompt; verified for internal logic only."}
+  - {severity: "MINOR", location: "B07 E1/A4", description: "Scored 1.0x though evidence_type mixed 📄/🎙️; documented anchors dominate, defensible."}
+critical_count: 0
+major_count: 0
+minor_count: 6
+acceptance_rate: 100    # rules passed (58) ÷ rules checked (58), gate0+emoat scope only

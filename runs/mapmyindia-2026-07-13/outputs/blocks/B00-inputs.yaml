@@ -1,0 +1,58 @@
+stage: B00-inputs
+company: MAPMYINDIA
+company_full: C.E. Info Systems Ltd
+run_date: 2026-07-13
+run_type: full
+model: orchestrator
+status: complete
+cmp: 1185.0
+market_cap_cr: 6488.0
+concalls_available: true
+no_concall_mode: false
+
+inventory:
+  annual-report:
+    count: 1
+    files: [Annual_Report_2023.pdf]
+    note: "MISLABELED FILENAME. Content is the 30th Annual Report for FY2024-25 (year ended 31-Mar-2025, FY24 comparative), statements in Rs lakh, NOT FY2023. Confirmed by stage-2 pass-1 and stage-1. So the AR is ~1 year stale vs FY26 (not 3). Backward deep dive ends at FY25/FY24; current full-year FY26 financials come from the FY26 audited results PDF + screener Data_Sheet."
+  results:
+    count: 2
+    files:
+      - "442532f4-bbd9-4eb7-9995-8ded33023d7b.pdf  == Q4 & FY ended 31-Mar-2026 (AUDITED, full-year FY26)"
+      - "4a2e7d1a-466d-4fb9-9eed-7426bfda0732.pdf  == Q3 ended 31-Dec-2025 (Q3 FY26, limited review)"
+  rating:
+    count: 0
+    note: "ABSENT"
+  concalls:
+    count: 4
+    chronology:
+      - "Concall_Aug_2025_Transcript.pdf  == Q1 FY2026"
+      - "Concall_Nov_2025_Transcript.pdf  == Q2 & H1 FY2026"
+      - "Concall_Feb_2026_Transcript.pdf  == Q3 FY2026"
+      - "Concall_May_2026_Transcript.pdf  == Q4 FY2026"
+    used_for_stage5: [Concall_Nov_2025_Transcript.pdf, Concall_Feb_2026_Transcript.pdf, Concall_May_2026_Transcript.pdf]
+    note: "4 present; per input contract use 3 most recent (Q2/Q3/Q4 FY26), oldest first. Aug 2025 (Q1) retained as context, not a scored transcript."
+  peer-concalls:
+    count: 9
+    peers:
+      NEWGEN: [Jul_2025, Nov_2025, Jan_2026]
+      NUCLEUS: [Aug_2025, Nov_2025, Feb_2026, May_2026]
+      RATEGAIN: [Nov_2025, Feb_2026]
+  screening:
+    count: 30
+    note: "MapMyIndia screener + peer CSVs (GENESYS, NEWGEN, NUCLEUS, RATEGAIN). Only *-Data_Sheet.csv populated (FY19-FY26); Profit_Loss/Balance_Sheet/Cash_Flow/Quarters/Customization CSVs are empty screener.in templates (recurring collect_to_repo defect). Data_Sheet.csv suffices for Gate 0."
+  presentation:
+    count: 1
+    files: [Investor_Presentation_1.pdf]
+    note: "Q4 FY26 investor presentation; image-heavy, text extraction thin (19.7k chars/20 pp). Stages use Read-tool page render as fallback for tables/charts."
+  other:
+    count: 0
+
+input_gaps:
+  - "rating/: NO credit-rating PDF. FLAG-CASH structural-vs-growth resolution loses its primary evidence (rating rationale); resolution defaults conservative and any INDETERMINATE cash finding caps the verdict at PROCEED WITH CAVEATS with the missing rating rationale named. Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 proceeds without rating evidence, defaulting conservative. Mitigant: company is net-cash / effectively debt-free."
+  - "annual-report/: file named Annual_Report_2023.pdf is actually the FY2024-25 AR (year ended 31-Mar-2025), collect_to_repo filename defect. So AR is ~1 year stale vs FY26 (not 3). Stages 2/3/4/7 read it as the FY25 AR (statements in Rs lakh); current full-year FY26 financials are anchored to the FY26 audited results PDF and screener Data_Sheet, not the AR. Backward deep dive ends at FY25/FY24."
+  - "manifest sector_cap_row defect: manifest sets 'Pharma / CDMO' (collect_to_repo v3 auto-pick defect, recurring across KARNIKA/NORTHARC/AMAGI). MapMyIndia is a geospatial / digital-mapping + IoT/SaaS company; peers are NEWGEN, NUCLEUS, RATEGAIN, GENESYS (IT products / SaaS). Stage 11 (phase 3) must select the correct IT-products / SaaS cap row; primary valuation method is per B04, not a Pharma exit PE."
+  - "screener P&L/BS/CF/Quarters/Customization CSVs are empty templates; only Data_Sheet.csv carries data."
+  - "operator empty-folder pause could not be delivered (AskUserQuestion stream closed in this remote session, same as KARNIKA/AMAGI); proceeded on evidence-maximizing defaults with the rating gap recorded."
+
+flags: []

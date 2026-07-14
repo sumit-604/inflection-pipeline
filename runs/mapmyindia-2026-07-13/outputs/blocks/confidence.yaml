@@ -1,0 +1,18 @@
+confidence_delta:
+  # Phase-1 confidence delta per orchestrator Section 5.
+  # overall = min of the four available components.
+  numerical_acceptance: 90     # B12a: 0 CRITICAL, 2 MAJOR (capex anchor mismatch; RPO sub-claim not-in-AR, already caught by B03); 28/31 numeric claims verified clean. Non-degraded run confirmed by coverage_note.
+  redflag_coverage: 60         # B12b: 12/20 verifier-found concall flags fully caught upstream by B05 (85% handled to some degree); 0 CRITICAL, 0 unsupported flags, 5/5 promise-delivery confirmed. BINDING CONSTRAINT.
+  framework_adherence: 100     # B12c PHASE-1 SCOPE (Gate 0 + Emerging Moat only): 58/58 rule checks pass, 0 fails, 6 MINOR disclosed-proxy notes. Valuation-adherence component PENDING PHASE 3.
+  peer_utilisation: 100        # B12d: 9/9 provided peer transcripts used substantively with verbatim content; citation-anchor imprecision in NEWGEN cites (acceptance 78%) is a finding, not non-use.
+  overall: 60                  # min(90, 60, 100, 100) = 60, redflag-bound.
+
+interpretation:
+  band: "60-74"
+  rule: "Per Section 5, a 60-74 overall downgrades any PROCEED verdict one level. Not < 60, so no forced REWORK. No verifier returned a CRITICAL and no acceptance_rate fell below 60, so the Section 4 REWORK gate is not triggered either."
+  valuation_component_status: "framework_adherence valuation half deferred to phase 3 (B10/B11 not yet produced); overall may move when the phase-3 verifier-C valuation audit lands."
+
+rework_gate_check:
+  any_critical_numerical: false      # B12a critical_count 0
+  any_acceptance_below_60: false     # B12a 90, B12b 60 (== not <), B12c 100, B12d 78
+  forced_rework: false

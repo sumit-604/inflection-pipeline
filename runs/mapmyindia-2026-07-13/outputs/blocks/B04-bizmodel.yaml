@@ -1,0 +1,75 @@
+stage: B04-bizmodel
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No credit-rating PDF supplied."
+  - "Annual report file is mislabeled 'Annual_Report_2023.pdf' but contains the FY2024-25 Annual Report (year ended 31-Mar-2025)."
+  - "Manifest sector row is incorrect (pharma); this is a geospatial/digital-mapping + IoT company — corrected throughout this report."
+  - "Named competitors (domestic or global) are not disclosed in the AR or investor presentation; competitive positioning map (2B) could not be constructed from supplied documents."
+  - "Full-year IoT device unit count and per-device ARPU/BOM cost are not disclosed (only a quarterly device count data point exists); unit economics for the IoT hardware stream are largely NOT FOUND."
+  - "India-specific per-vehicle-module ARPU for automotive licensing is not disclosed (only a relative 2.5-3x comparison to the Indonesia JV ARPU)."
+flags:
+  - "Map-led (core, highest-margin) revenue declined 8.7% YoY in FY26 (Rs 345.6 Cr to Rs 315.5 Cr) even as total revenue grew only 2.3%; total growth was carried entirely by lower-margin IoT."
+  - "Working capital deteriorating: receivable days 94 to 119 and inventory days 77 to 107 (FY25 to FY26); cash conversion cycle approx 135 days."
+  - "Cash flow from operations fell alongside PAT in FY26 (Rs 113 Cr to Rs 93 Cr operating cash flow; Rs 147.6 Cr to Rs 134.0 Cr PAT)."
+  - "Company's self-reported 'ROCE (ex-cash)' (59-95%) is a non-standard metric that strips ~Rs 489-685 Cr of genuine treasury capital; conventional ROCE (~19.4% per B03) is the correct reference and should anchor valuation, not the headline ratio."
+  - "FY28 revenue target of Rs 1,000 Cr implies a sharp acceleration from FY26's +2.3% actual growth — execution risk."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Map data & software licensing (MaaS/SaaS/PaaS - automotive, enterprise, government)", type: "license/subscription/fixed-price project hybrid", pct_of_revenue: 66.5, predictability: "M"}
+  - {name: "IoT SaaS & data services (fleet management, telematics platforms)", type: "recurring subscription", pct_of_revenue: 22.4, predictability: "H"}
+  - {name: "IoT hardware sale (dashcams, trackers, telematics devices)", type: "one-time product sale / Device-as-a-Service", pct_of_revenue: 11.1, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Regulatory/data-localisation exclusivity (NGP 2022)", durability: "high"}
+  - {moat: "Switching costs (OEM design-in, enterprise API/platform integration)", durability: "medium-high"}
+  - {moat: "Proprietary map data / intangible asset", durability: "high, requires ongoing capex to stay fresh"}
+  - {moat: "Cost advantage / operating leverage on map licensing", durability: "high"}
+  - {moat: "Distribution / embedded OEM market share (80-85% embedded navigation)", durability: "high"}
+  - {moat: "Brand (Mappls consumer app)", durability: "medium"}
+valuation_methods:
+  primary: {method: "EV/Sales or EV/EBITDA on the core operating business, treasury valued separately", why: "Asset-light software/data + IoT platform economics with a large non-operating treasury book (Rs 685 Cr) that distorts P/E and standalone ROCE; correct sector comp set is software/data/IoT platforms, not pharma (manifest defect)."}
+  secondary: {method: "DCF on the core operating business (treasury stripped out)", why: "High-margin, recurring/licensing-heavy revenue (Map-led ~47-49% EBITDA) with order book at 3-4x revenue supports discounted cash flow once treasury is segregated as non-operating."}
+  tertiary: {method: "Sum-of-the-parts (operating EV + treasury book at liquid/book value)", why: "Treasury (Rs 685 Cr) is large relative to likely operating EV and should be separated rather than folded into a blended multiple."}
+  not_applicable:
+    - "P/E on reported PAT (inflated by treasury other income, ~10% of total income FY25)"
+    - "Book value/asset-based (core value is intangible map database, not on the PP&E line)"
+    - "Dividend discount model (modest payout, reinvestment-focused)"
+    - "Company's self-reported 'ex-cash ROCE' as a valuation anchor (excludes genuine treasury capital)"
+irrelevant_ratios:
+  - {ratio: "Company-reported ROCE (ex-cash)", why: "Strips ~Rs 489-685 Cr of genuine treasury investments; conventional ROCE (~19.4% per B03) is the correct capital-inclusive measure."}
+  - {ratio: "Debt/Equity, interest coverage", why: "Company is debt-free."}
+  - {ratio: "Fixed asset turnover", why: "PP&E is only Rs 31.1 Cr against Rs 941.8 Cr total assets; the real asset (map database) is not captured on the PP&E line."}
+  - {ratio: "Blended gross margin / generic inventory turnover", why: "Single reportable segment blends a ~47% EBITDA-margin licensing business with a ~16% EBITDA-margin hardware business; blended ratios hide the mix shift that drives performance."}
+  - {ratio: "Trailing P/E on reported PAT", why: "Total Income includes material treasury other income (Rs 52.4 Cr FY25, ~10% of total income) that inflates PAT relative to core operating earnings."}
+must_track_metrics:
+  - {metric: "Map-led vs IoT-led revenue split and margin", healthy: "Map-led EBITDA margin >=45%, stable or growing", red_flag: "Map-led revenue declines YoY (already occurred FY26)"}
+  - {metric: "Cash conversion cycle (receivable + inventory - payable days)", healthy: "under ~110 days", red_flag: "above ~130 days sustained (already ~135 days FY26)"}
+  - {metric: "Open order book to revenue conversion / new order mix", healthy: "order book growth exceeds revenue growth, balanced fixed-price/volume mix", red_flag: "order book growth falls below revenue growth"}
+  - {metric: "Conventional ROCE (capital-employed inclusive of treasury)", healthy: ">15-20%", red_flag: "declining trend or below cost of capital (~12-13%)"}
+  - {metric: "Cash flow from operations vs PAT", healthy: "CFO >= PAT", red_flag: "CFO materially below PAT (already occurred FY26)"}
+unit_economics:
+  unit: "One vehicle-module automotive license (NCASE) and, separately, one IoT device (hardware + attached SaaS)"
+  revenue_per_unit: "NOT FOUND - per-module and per-device ARPU not disclosed; only a relative data point that India-facing licenses are priced at roughly one-third to two-fifths of Indonesia JV ARPU"
+  margin_per_unit: "Map-led EBITDA margin ~47-49%; IoT-led blended EBITDA margin ~16% (Inv. Pres. slide 7)"
+  key_lever: "Attach rate (NCASE modules per vehicle; SaaS % of IoT revenue mix) against a largely fixed cost base - near-zero marginal cost on map data licensing"
+first_deterioration_signals:
+  - {risk: "Revenue model (POC/fixed-price estimate risk)", first_signal: "Unbilled revenue/contract assets growing faster than billed receivables, or downward revisions to recognised POC revenue"}
+  - {risk: "Margin (IoT mix dilution)", first_signal: "Blended EBITDA margin falling below ~35% for two consecutive quarters"}
+  - {risk: "Balance sheet (working capital build)", first_signal: "Cash flow from operations falling further behind PAT / cash conversion cycle exceeding ~150 days"}
+  - {risk: "Execution (FY28 Rs 1,000 Cr target)", first_signal: "Quarterly revenue growth staying below high-teens%, or order book/revenue conversion stretching beyond 4 years"}
+  - {risk: "Structural (regulatory moat erosion)", first_signal: "Policy announcements liberalising foreign access to high-resolution India geospatial data"}
+mgmt_questions:
+  - "What is the India per-vehicle-module ARPU for NCASE licenses versus the disclosed 2.5-3x Indonesia JV ARPU, and how is it trending as attach rate scales?"
+  - "Why did Map-led revenue fall 8.7% YoY in FY26 while IoT-led grew 35% - one-off timing or structural pressure on the core business?"
+  - "What is driving the rise in receivable days (94 to 119) and inventory days (77 to 107), and what is the plan to normalise working capital?"
+  - "What is the capital allocation plan for the ~Rs 685 Cr treasury, and what return hurdle governs new investments like Terra Link?"
+  - "What proportion of revenue is now POC/fixed-price, and what is the historical accuracy of cost-to-complete estimates on these contracts?"
+  - "Given ex-cash ROCE fell from 95% to 59% YoY, is this a temporary investment phase or a new steady state, and how should conventional ROCE be reconciled?"
+  - "How durable is the data-localisation moat if geospatial policy liberalises further, and what is the defence plan against well-capitalised entrants?"
+one_line_verdict: "Durable regulatory and OEM-switching moat on a high-margin data core, but FY26 core-revenue softness, rising working capital, and an aggressive FY28 target warrant close quarterly tracking before crediting a premium multiple."

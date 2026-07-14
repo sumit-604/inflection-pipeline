@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "C.E. Info Systems Ltd (MAPMYINDIA)"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF provided"
+  - "AR provided is FY2024-25 (as at 31.03.2025), not FY2023 as originally flagged in manifest; one year stale vs FY26 audited results"
+  - "manifest sector_cap_row 'Pharma / CDMO' incorrect; company is geospatial mapping / digital-mapping + IoT/SaaS"
+  - "screener P&L/BS/CF/Quarters template CSVs (separate from Data_Sheet.csv) are empty per orchestrator note; only Data_Sheet.csv populated and used"
+  - "trade payables and capex breakdown NOT FOUND for FY19-FY23 in screener-data; WC Days (B4, M12) and FCF (B2, B3) computed on FY24-FY26 subset only"
+  - "promoter pledge % NOT FOUND in any provided document"
+  - "promoter holding 3-year change NOT FOUND; only 1-year change available (FY24 to FY25, -1.26pp)"
+  - "R&D/Revenue NOT FOUND for MMI or any peer (M6)"
+  - "FY26 contingent liabilities NOT FOUND; FY25 figure used as latest available, one year stale"
+flags: []
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 15, B: 10, C: 17, D: 20, E: 10}
+core_score: 72
+moat_score: 22
+grand_total: 94
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE/ROE computed; screener-Data_Sheet.csv has no ratios section"
+  - "Capital Employed proxied as Equity+Borrowings, cross-checked ~1% vs exact FY26 balance sheet"
+  - "ROCE includes non-operating Other Income (~11% of FY26 revenue, investment income on IPO cash surplus)"
+  - "Trade payables and capex NOT FOUND for FY19-FY23; B2/B3/B4/M12 computed on FY24-FY26 subset only"
+  - "FY25 capex has two conflicting audited figures (AR: Rs49.38 Cr vs FY26-filing comparative: Rs40.34 Cr); used FY26-filing figure"
+  - "Promoter holding is FY25 year-end (one year stale); 3-year change NOT FOUND, 1-year proxy used for E2"
+  - "Promoter pledge % NOT FOUND; scored 0, absence of evidence not evidence of pledge"
+  - "Contingent liabilities are FY25 (AR); FY26 figure NOT FOUND"
+  - "R&D/Revenue NOT FOUND for MMI or peers; M6 scored 0"
+  - "M9 gross-margin proxy distorted by business mix: peers report zero material cost (pure SaaS) vs MMI ~13% of revenue in hardware material cost"
+  - "FY26 screener-data reclassifies Power & Fuel / Other Mfr Exp into Other Expenses for MMI and several peers; EBITDA totals cross-checked ~1% via quarterly Operating Profit sums, trusted; category-level FY26 comparisons flagged"
+  - "PAT declined YoY in FY26 (-8.85%) despite revenue growth, consistent with EBITDA margin compression from 41.38% (FY24) to 35.22% (FY26)"
+block_b_trend: "deteriorating — WC Days rose +16.24 days from FY24 (84.94) to FY26 (101.18), driven by receivable days rising +35.1 days over the same window"

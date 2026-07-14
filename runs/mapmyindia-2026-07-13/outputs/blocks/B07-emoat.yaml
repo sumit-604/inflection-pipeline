@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "C.E. Info Systems Ltd (MAPMYINDIA)"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF provided"
+  - "AR provided is FY2024-25 (as at 31.03.2025), mislabeled as 'Annual_Report_2023' in the input filename"
+  - "manifest sector_cap_row 'Pharma/CDMO' is incorrect; company is geospatial mapping / digital-mapping + IoT/SaaS"
+  - "B05 concall promise-delivery record was not injected into this stage; F2 (execution moat) was built directly from the four raw concall transcripts instead of a pre-built promise-delivery table"
+  - "IoT device unit-volume trend (Inv. Pres. p.8, 1.8+/2.1+ lakh units) is ambiguous in the text extract as to which figure is FY26 vs FY25; not resolved, flagged as a caution in Section 2B"
+  - "Survey of India contract value undisclosed by the counterparty; scored on existence/signing, not on quantified size"
+flags:
+  - "FY26 revenue growth collapsed to +2.3% (Rs463 Cr to Rs474 Cr) against a stated 5-year IPO-to-date CAGR of 24%; qualifies every emerging catalyst in this report"
+  - "Receivable days rose +35.1 days (FY24 to FY26, per injected B01 block) and +25 days FY25 to FY26 alone (94 to 119, Inv. Pres. p.11), driven by the growing government book"
+  - "FY28 Rs1,000 Cr revenue roadmap reaffirmed by management but explicitly hedged on timing as of the Q4 FY26 call"
+  - "Customer-concentration trend (C2) and execution-delivery trend (F2) are evidence-backed but adverse, not merely absent, and are scored 0 accordingly rather than omitted"
+em_score: 30
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m, ongoing"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/3-5yr"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m, ongoing"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-36m"}
+  - {id: "R1", name: "Regulatory / policy tailwind", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m, ongoing"}
+evidence_mix: {documented: 24, claim: 8, inference: 3}
+completionist_recount: "8 active categories out of 21 rows scored Strong/Moderate; 24 documented (📄) items counted across those 8 categories, well below the 12-category over-inflation trigger. Excluded categories (C2, F2, G2 in particular) carry genuine adverse evidence, not merely thin evidence, and are scored 0 rather than force-fit positive."
+catalysts_12m:
+  - {catalyst: "IOCL 5-year Rs110 Cr IoT/telematics contract ramp across 23,000 LPG trucks / 150 locations", window: "0-12m", evidence_type: "documented", anchor: "Q2 FY26 concall, Nov 2025"}
+  - {catalyst: "Government order book (Rs200+ Cr open) conversion recovery after three FY26 quarters of deferrals", window: "0-12m", evidence_type: "claim", anchor: "Q4 FY26 concall, May 2026"}
+  - {catalyst: "Survey of India national geospatial platform scale-up", window: "0-12m", evidence_type: "documented", anchor: "Q2 FY26 concall, Nov 2025"}
+  - {catalyst: "Geo-Verify (Geo-LLM) BFSI vertical scale-up beyond initial bank go-live", window: "0-12m", evidence_type: "claim", anchor: "Inv. Pres. Q4 FY26, p.9-10"}
+  - {catalyst: "PT Terra Link (Indonesia JV) first SEA OEM revenue recognition", window: "0-12m", evidence_type: "claim", anchor: "Q1 FY26 concall, Aug 2025"}
+capex_embedded_growth_pct: 40.3
+optionality_register:
+  - {optionality: "Formal patent/IP filing pipeline behind the 'creating intellectual property' capex bucket", converting_evidence: "Patent filed/granted disclosure with filing count or licensing revenue", first_appears: "AR IP/patent note (currently absent)", window: "unclear"}
+  - {optionality: "Kaiinos GeoSpatial stake (19.8%, Rs2 Cr) - ADAS/autonomous-simulation tech", converting_evidence: "Signed ADAS-sim commercial contract or revenue-sharing agreement", first_appears: "AR associate note / concall", window: "3-5yr"}
+  - {optionality: "Simdaas Autonomy stake (9.4%, Rs3 Cr) - autonomous-systems simulation", converting_evidence: "Signed commercial deployment/customer contract", first_appears: "AR/exchange filing", window: "3-5yr"}
+  - {optionality: "Indrones Solutions stake (~18.4%, associate) - drone data/DraaS", converting_evidence: "Signed DraaS contract with disclosed revenue linkage", first_appears: "AR associate note / concall", window: "2-4yr"}
+  - {optionality: "IwayPlus Technologies stake (6.06%, Rs2 Cr, Jan 2026) - indoor navigation", converting_evidence: "Signed indoor-mapping commercial deployment with disclosed revenue", first_appears: "Concall / next AR cycle", window: "2-3yr"}
+  - {optionality: "Prashant Advanced Survey LLP stake (20%, Rs2 Cr, Feb 2026) - HD/LiDAR survey pipeline", converting_evidence: "Disclosed HD-map coverage expansion tied to LLP survey output", first_appears: "AR/concall", window: "1-3yr"}
+  - {optionality: "MoRTH/MOHFW 'Golden Hour' road-safety national platform", converting_evidence: "Signed national/state contract with disclosed value", first_appears: "Exchange filing / order book breakup", window: "2-5yr"}
+  - {optionality: "Pan-India Railways platform beyond DMRC", converting_evidence: "Signed MoU/contract with Indian Railways beyond DMRC, disclosed value", first_appears: "Exchange filing/concall", window: "1-3yr"}
+  - {optionality: "PT Terra Link (SEA JV) reaching profitability / material revenue", converting_evidence: "Disclosed TLT revenue line; reduction of the ~Rs2-3 Cr/quarter associate PAT drag", first_appears: "Concall associate/segment disclosure, AR associate financials", window: "FY27-FY28 (2-3yr)"}
+  - {optionality: "FY28 Rs1,000 Cr revenue roadmap", converting_evidence: "FY27 quarterly results showing order-book conversion returning to >=20% and revenue growth re-accelerating toward 25-30%", first_appears: "Quarterly results/concalls", window: "FY27-FY28, ongoing watch"}
+combined_assessment: "EXCELLENT+"
+combined_reasoning: "GOOD+ backward (Core 72, moat STRONG) confirmed by a genuinely strengthening forward layer (em_score 30) anchored in signed contracts and a compounding data asset, not narrative alone, but capped below EXCEPTIONAL by a real FY26 execution stumble (revenue +2.3% vs 24% 5yr CAGR, receivables +35 days)."
+top_moat_risks:
+  - "Government payment delays/deferrals recurring into FY27, extending receivable days further"
+  - "FY26 revenue-growth collapse (2.3% vs 24% 5yr CAGR) repeating and delaying every emerging catalyst by a quarter or more"
+  - "Foundation-model/AI mapping products from global players eroding the exclusivity of the proprietary data moat over time"
+  - "Single-OEM (Hyundai) concentration risk inside the automotive qualification-lock-in moat"

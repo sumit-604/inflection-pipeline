@@ -1,0 +1,92 @@
+stage: B05-concall
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no rating PDF available (carried forward from prior stages)"
+  - "annual report provided is FY25, mislabeled as 2023 in source filename (carried forward from prior stages)"
+  - "manifest sector row incorrect (carried forward from prior stages)"
+flags:
+  - "FY26 revenue growth collapsed to +2.3% YoY (Rs463cr to Rs474cr) against a 20-25% run rate management endorsed in the Q2 FY26 call"
+  - "FY28 Rs1,000cr roadmap timing hedged in Q4 FY26 without reconciling the growth math against the 24% 5-year CAGR"
+  - "TerraLink Technologies (Indonesia JV) breakeven checkpoint (end FY26/Q1FY27, promised Q1 FY26) went entirely unaddressed in the Q4 FY26 call"
+  - "Zepto strategic business agreement and Rs25cr investment (Q1 FY26) never referenced again in Q2/Q3/Q4 FY26 calls"
+  - "Trade receivables up ~32% (Rs133cr to Rs176cr) on flat revenue with no DSO figure disclosed despite direct repeated questioning"
+  - "Order book effectively flat to down quarter-on-quarter (Rs1,770cr Dec-25 close vs >Rs1,750cr Mar-26 close) despite framing as a 'meaningful increase'"
+  - "Size of deferred government orders never quantified despite being asked directly in two consecutive quarters"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Deferred FY26 government orders converting in FY27", type: "REGULATORY-POLICY/VOLUME", timeframe: "near (FY27)", conviction: "M", confirm_signal: "Q1/Q2 FY27 govt-tagged revenue growth reaccelerates toward 15-20%+ YoY", kill_signal: "further government push-outs beyond Q2 FY27 or order-conversion rate falls back below 15%"}
+  - {priority: 2, name: "IOCL IoT/telematics contract ramp", type: "VOLUME", timeframe: "near-medium (5yr contract)", conviction: "M-H", confirm_signal: "~Rs20cr FY27 IOCL revenue materializes as guided", kill_signal: "installation/regulatory delays recur as seen with the separate Rs20cr automotive IoT slip in Q4 FY26"}
+  - {priority: 3, name: "Survey of India national geospatial platform", type: "INORGANIC/REGULATORY-POLICY", timeframe: "medium-long", conviction: "M", confirm_signal: "Rs7-8cr FY27 revenue delivered plus visible follow-on/add-on scale-up", kill_signal: "further indigenization-related delay or no follow-on multiplier"}
+  - {priority: 4, name: "FY28 Rs1,000cr revenue roadmap", type: "composite", timeframe: "long", conviction: "L-M", confirm_signal: "FY27 growth returns to 20%+", kill_signal: "FY27 growth stays single-digit, forcing an explicit roadmap reset"}
+  - {priority: 5, name: "IoT margin expansion (14%->16% FY26, 33% in Q4 alone)", type: "COST/PRICE-MIX", timeframe: "near", conviction: "M-H", confirm_signal: "full-year IoT EBITDA margin holds above 16% in FY27", kill_signal: "margin reverts to mid-teens as DRAM/NAND cost inflation outpaces SaaS mix shift"}
+  - {priority: 6, name: "Automotive attach-rate ramp ex-Hyundai concentration", type: "VOLUME/SECTORAL", timeframe: "medium", conviction: "M", confirm_signal: "A&M growth matches/beats auto industry growth without single-OEM dependency flagged again", kill_signal: "further Hyundai-specific declines drag A&M below industry growth again"}
+  - {priority: 7, name: "Amazon Now / quick-commerce API scale-up", type: "VOLUME", timeframe: "near-medium", conviction: "L-M", confirm_signal: "quantified corporate/API revenue contribution disclosed and growing in FY27 calls", kill_signal: "no follow-up mention in FY27 (repeat of the Zepto pattern)"}
+  - {priority: 8, name: "TerraLink Technologies (Indonesia JV) monetization", type: "INORGANIC/SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "JV commentary re-emerges with explicit breakeven/revenue update in FY27 calls", kill_signal: "continued silence implying a quiet write-down of the international narrative"}
+guidance:
+  - {item: "FY26 EBITDA margin", number: "35%+", timeframe: "FY26", stated_in: "Q1 FY26 call; reiterated Q3 FY26 call"}
+  - {item: "FY28 revenue target", number: "Rs1,000 crore", timeframe: "FY28", stated_in: "Q2 FY26 call (reaffirmed); Q3 FY26 call (reaffirmed); Q4 FY26 call (reaffirmed, timing hedged)"}
+  - {item: "FY28 open order book target", number: "~Rs2,000 crore", timeframe: "FY28", stated_in: "Q3 FY26 call"}
+  - {item: "IOCL contract value", number: "Rs110 crore over 5 years (~Rs10-15cr hardware component)", timeframe: "5-year contract, signed Oct 2025", stated_in: "Q2 FY26 call"}
+  - {item: "IOCL FY27 revenue contribution", number: "~Rs20 crore", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Survey of India FY27 revenue (order book in hand)", number: "~Rs7-8 crore", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Government open order book (FY27 opening)", number: ">Rs200 crore", timeframe: "FY27 opening", stated_in: "Q4 FY26 call"}
+  - {item: "Total open order book / pipeline (FY26 close)", number: ">Rs1,750 crore", timeframe: "as of Mar 31 2026", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 capital allocation (organic growth)", number: "Rs120 crore", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 final dividend", number: "Rs3.50/share (175% of Rs2 face value)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Order book conversion rate FY26", number: "~18% of opening order book converted to revenue", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "Gtropy stake increase", number: "75.98% to 96.0%, Rs25cr investment, option on remaining 4% over 4 years", timeframe: "Q1 FY26", stated_in: "Q1 FY26 call (context)"}
+promise_delivery:
+  delivered: 2
+  partial: 5
+  missed: 1
+  rows:
+    - {promised_in: "Q2 FY26", promise: "Technical outsourcing one-off expense (Rs10-15cr) to decline from Q3 FY26 onward", outcome: "Partial", explanation: "Firm 'that's correct' commitment in Q2 softened to 'I can't say right now' by Q4 FY26"}
+    - {promised_in: "Q2 FY26", promise: "20-25% FY26 revenue growth run rate consistent with FY28 plan ('your thinking is right')", outcome: "Missed", explanation: "FY26 actual revenue growth was +2.3% (Rs463cr to Rs474cr); explained via government fiscal-grant delays, state elections, AI-scope changes, re-tenders and account-specific regulatory delays"}
+    - {promised_in: "Q2 FY26", promise: "FY28 Rs1,000cr revenue target 'definitely not changing'", outcome: "Partial", explanation: "Number retained through Q3 and Q4 FY26 but confidence language softened to 'the timing is something we'll have to watch year every year'"}
+    - {promised_in: "Q1 FY26 (context)", promise: "Gtropy/IoT management transition stabilizes within a few quarters", outcome: "Delivered", explanation: "Q3 FY26 call confirms organization 'fully stable and geared up for accelerated growth'"}
+    - {promised_in: "Q1 FY26 (context)", promise: "TerraLink Technologies (Indonesia JV) breakeven by end FY26 or Q1 FY27", outcome: "Partial", explanation: "Still 'in build phase' per Q3 FY26; zero mention in Q4 FY26 call, the exact quarter the checkpoint falls in"}
+    - {promised_in: "Q3 FY26", promise: "100% of Q3 FY26 deferred government revenue consumed in Q4 FY26 and Q1 FY27", outcome: "Partial", explanation: "Q4 FY26 call reveals further specific deferrals (Rs20cr IoT-auto order, a state energy-response order, a re-tendered IoT govt tender) still pushed into Q1/Q2 FY27"}
+    - {promised_in: "Q3 FY26", promise: "Q4 FY26 revenue growth better than Q4 FY25", outcome: "Partial", explanation: "Q4 FY26 delivered strong sequential/YoY margin gains but a Rs45-50cr shortfall versus the implied bar was surfaced under analyst pressure and attributed to delayed/re-tendered orders"}
+    - {promised_in: "Q1 FY26 (reiterated Q3 FY26)", promise: "FY26 EBITDA margin guidance of 35%+", outcome: "Delivered", explanation: "Q4 FY26 EBITDA margin came in at 44.6% (+460bps YoY), consistent with the full-year ~35% guidance being met"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Do you still stand by the FY28 Rs1,000cr revenue target?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "Will the technical-outsourcing/one-off investment expense come down?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "Can you quantify the size of the deferred/delayed government orders?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Delivered the one hard numeric commitment (FY26 35% EBITDA margin) and Gtropy stabilization, but FY26 revenue growth collapsed to +2.3% against a 20-25% run rate endorsed in Q2 FY26; FY28 timing language softened materially by Q4; two of three repeated cross-quarter questions show a changed or deflected answer, and TLT/Zepto went silent exactly when updates were due."
+peer_questions:
+  - {question: "Is FY26 government client payment/order deferral an industry-wide phenomenon for government/BFSI-facing software vendors, or specific to MapmyIndia's execution/collections?", why: "Tests whether MMI's core FY26 revenue miss is sector-wide (mitigating) or company-specific (aggravating).", check_peers: ["NEWGEN", "NUCLEUS"]}
+  - {question: "Are peers reporting order-book-to-revenue conversion-rate compression similar to MMI's (21-22% FY22 to ~13% FY25 to ~18% FY26)?", why: "Tests whether declining execution efficiency reflects an industry pattern or an MMI-specific weakness.", check_peers: ["NEWGEN", "NUCLEUS"]}
+  - {question: "Are peer managements also citing AI-related scope changes or customer AI-readiness assurance requests as a cause of FY26 revenue/billing delays?", why: "Tests whether MMI's stated cause is a genuine sector-wide transition friction or a company-specific excuse.", check_peers: ["NEWGEN", "NUCLEUS", "RATEGAIN"]}
+  - {question: "Are peers seeing receivable-days/DSO increases in FY26 comparable to MMI's ~32% trade-receivables rise against flat revenue?", why: "Tests whether working-capital deterioration is sector-wide or MMI-specific, feeding the cash-conversion caveat.", check_peers: ["NEWGEN", "NUCLEUS"]}
+  - {question: "Do any peers report single-customer/OEM concentration explicitly dragging segment growth, the way MMI named Hyundai in Q4 FY26?", why: "Benchmarks whether concentration disclosure is standard peer practice or distinctive to MMI's auto-dependent segment.", check_peers: ["RATEGAIN", "NEWGEN"]}
+  - {question: "Have any peers walked back a multi-year revenue target's timing confidence within the same fiscal year, as MMI did between Q2 and Q4 FY26?", why: "Direct credibility benchmark on long-range guidance discipline under revenue pressure.", check_peers: ["NEWGEN", "NUCLEUS", "RATEGAIN"]}
+  - {question: "Did any peer cite industry end-market volume growth figures similar to the ~18% YoY auto production growth MMI referenced, and how does their own growth compare?", why: "Cross-checks MMI's explanation that A&M growth trailed industry growth due to connected-vehicle mix, not weakness.", check_peers: ["RATEGAIN"]}
+  - {question: "Are peers seeing hardware/component cost inflation (e.g. DRAM/NAND pricing) pressuring margins, and how is it being offset?", why: "Tests whether MMI's claimed SaaS-mix offset to hardware cost inflation is broadly available or company-specific.", check_peers: ["NEWGEN"]}
+  - {question: "Are peers seeing government/enterprise capex-to-opex transitions in their own contract structures similar to MMI's IoT business?", why: "Tests whether the capex-to-opex margin tailwind MMI claims is a structural industry shift or an MMI-specific one-off.", check_peers: ["NEWGEN", "NUCLEUS"]}
+red_flags:
+  - {severity: "HIGH", flag: "FY26 revenue growth collapsed to +2.3% YoY (Rs463cr to Rs474cr) against a 20-25% run rate management endorsed in the Q2 FY26 call"}
+  - {severity: "HIGH", flag: "FY28 Rs1,000cr roadmap timing hedged in Q4 FY26 without reconciling the growth math against the 24% 5-year CAGR"}
+  - {severity: "MEDIUM-HIGH", flag: "TerraLink Technologies (Indonesia JV) breakeven checkpoint went entirely unaddressed in the Q4 FY26 call"}
+  - {severity: "MEDIUM", flag: "Zepto strategic business agreement and Rs25cr investment never referenced again after Q1 FY26"}
+  - {severity: "MEDIUM", flag: "Trade receivables up ~32% (Rs133cr to Rs176cr) on flat revenue with no DSO figure disclosed despite repeated direct questioning"}
+  - {severity: "MEDIUM", flag: "Order book effectively flat to down quarter-on-quarter (Rs1,770cr Dec-25 vs >Rs1,750cr Mar-26) despite framing as a 'meaningful increase'"}
+  - {severity: "MEDIUM", flag: "Size of deferred government orders never quantified despite direct questioning in two consecutive quarters"}
+  - {severity: "LOW-MEDIUM", flag: "Segment reporting structure (C&E vs A&M) being restructured because, per Rakesh Verma, 'it confuses us also'"}
+  - {severity: "LOW-MEDIUM", flag: "Single-OEM (Hyundai) concentration risk to A&M named for the first time in Q4 FY26 with no exposure quantification"}
+dropped_triggers:
+  - "DMRC / Railways MoU follow-through (introduced Q2 FY26, absent Q3 and Q4 FY26)"
+  - "Zepto strategic business agreement and Rs25cr investment (introduced Q1 FY26, absent Q2/Q3/Q4 FY26)"
+  - "TerraLink Technologies Indonesia JV (discussed Q1-Q3 FY26, absent Q4 FY26 at its own promised breakeven checkpoint)"
+  - "MoRTH/MoHFW golden-hour road-safety 'few hundred crores' opportunity (named Q2 FY26, not referenced by name thereafter)"
+timeline_slippages:
+  - "TerraLink Technologies (Indonesia JV) breakeven: promised end FY26/Q1 FY27 (Q1 FY26 call); unconfirmed as of Q4 FY26 call"
+  - "Survey of India Integrated Geoportal indigenization: delayed per Q3 FY26 call, revenue pushed to Q4 FY26/Q1 FY27"
+  - "State government national flagship project fiscal grant: expected May-June 2025, delayed to October 2025 (Q3 FY26 call)"
+  - "Large state energy-response-system IoT project: should have executed by Q3/Q4 FY26, still delayed into FY27 per Q4 FY26 call"
+  - "Large government IoT tender sent to re-tender, no resolution timeline given (Q4 FY26 call)"
+  - "Rs20cr automotive IoT order delayed on regulatory approval, pushed from Q4 FY26 to Q1/Q2 FY27 (Q4 FY26 call)"

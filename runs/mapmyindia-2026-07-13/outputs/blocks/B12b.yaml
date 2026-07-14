@@ -1,0 +1,27 @@
+stage: B12b
+company: "MAPMYINDIA"
+run_date: "2026-07-13"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 20
+caught: 12
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Core C&E/API business stagnant ~Rs80-85cr for 3-4 years (down from Rs100-120cr), masked by IoT/government growth; not disputed by management", anchor: "Q4 FY26, Gautam Rathi / Rohan Verma, p.10-11"}
+  - {severity: "MAJOR", item: "Cash balance declined Rs676cr(Jun-25)->Rs639cr(Sep-25)->~Rs600cr(Mar-26) while management claimed 'the year, we generated a lot of cash'; receivables absorbed generation", anchor: "Aug Rakesh p.6; Nov Rakesh p.6; May Rakesh p.6"}
+  - {severity: "MINOR", item: "Proactive 'no Labour Code liability' claim (implemented FY23) is an outlier vs peers' quantified Rs18-35cr FY26 hits; missed by B05 though caught by B06", anchor: "Q3 FY26, Rakesh Verma, p.2"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C stands, biased to C-minus; added misses (core-C&E stagnation, PAT CAGR 11% vs revenue 24%, cash flat despite 'lots generated') sit at the low end of C but the one hard commitment (35% margin) was met, so not D"
+findings:
+  - {severity: "MAJOR", location: "B05 vs Q4 FY26 p.10-11 (Gautam Rathi/Rohan Verma)", note: "Missed: core C&E/API business stuck at ~Rs80-85cr for 3-4 years, down from Rs100-120cr — structural stagnation of the core, thesis-relevant"}
+  - {severity: "MAJOR", location: "B05 vs Q4 FY26 p.3 (Rakesh Verma)", note: "Recorded 5-yr CAGR (rev 24%/EBITDA 19%/PAT 11%) but did not flag PAT compounding at <half of revenue as a profitability-compression signal"}
+  - {severity: "MAJOR", location: "B05 vs Q4 FY26 p.6 (Rakesh Verma)", note: "Did not flag cash balance flat-to-down (Rs676->Rs639->~Rs600cr) against a 'generated a lot of cash' claim; cash-quality point beyond the receivables flag"}
+  - {severity: "MINOR", location: "B05 2C consistency vs Q4 FY26 p.8-9 (Gautam Rathi)", note: "Under-weighted the quarter-vs-full-year framing reversal an analyst directly challenged after years of 'look at full year' coaching"}
+  - {severity: "MINOR", location: "B05 2C over-promotion vs Q3 FY26 p.8 (Rakesh Verma)", note: "Noted Mappls metrics as promotional but not the internal implausibility: 100M MAU claim exceeds 45M cumulative downloads"}
+  - {severity: "MINOR", location: "B05 vs Aug-2025 p.3-4 (Rakesh/Rohan Verma)", note: "Caught Zepto silence but not the revenue-quality angle of a Rs25cr equity investment into a customer that then adopts MMI APIs"}
+  - {severity: "MINOR", location: "B05 vs Q3 FY26 p.2 (Rakesh Verma)", note: "Did not flag 'no Labour Code liability' claim as a peer outlier (peers took Rs18-35cr hits); B06 covered it at pipeline level"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 60

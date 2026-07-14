@@ -1,0 +1,48 @@
+stage: B11-valuation
+company: "SFL"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Rating PDF absent — Pillar 2 held conservative at 1.15x (structural-WC quality unconfirmable)"
+  - "Segment-level profitability (U2O/e-com/Kurlon) unverified — forward margins are management-guided"
+  - "Peer medians used as directional cross-check only (cohort in earnings trough, PEs distorted)"
+flags:
+  - "FLAG-CASH: cash conversion FIRING but growth-induced (receivables +27.7%); multiplier applied 1.15x (elite 1.30x tempered)"
+  - "SHARED CATALYST: Kurlon integration + deleveraging drives Pillar 1 ROCE, margin, and Pillar 3 — single point of failure for Role 3"
+  - "HURDLE = STOP: 25% CAGR infeasible at CMP even on bull earnings; price already embeds recovery"
+  - "Depreciation-policy change flatters reported PAT — projections held dep above guidance to neutralise"
+  - "Promoter verdict CAUTION forces Tier A (Tier B gate fails) and adds +1% to RRM discount rate"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 15.5, mid: 16.7, high: 18.0, r_used: 14.0, rrm: 0.94}
+  track2_additive: {low: 16.5, mid: 17.8, high: 19.0}
+  divergence_pct: 6.2
+  governing_track: "Track 1 (RRM) — more conservative and prices the governance CAUTION; sets the entry zone"
+pillar_detail:
+  roce_used: 14.2
+  roce_base: 13.0
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 1.15
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.0
+  growth_premium: 1.0
+  strategic_premium: 0.0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 22.0
+hurdle_ratio: {base: 0.79, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 460, base: 738, bull: 1040}
+  track2: {bear: 490, base: 787, bull: 1098}
+expected_cagr_prob_weighted: -3.6
+entry_range: {low: 302, high: 378}
+mos_price: 302
+upside_downside_ratio: -0.2
+decision: "AVOID (on valuation) — WATCHLIST-for-entry at Rs 302-378"
+unresolved_inputs_used:
+  - "Rating PDF absent → Pillar 2 conservative 1.15x (framework conservative-assumption rule)"
+  - "Forward EPS not guided → derived from revenue x margin guidance, grade-B discounted"
+  - "FY28 operating ROCE 16% derived (below barred pre-acq 17%), Amendment 4.5 normalized anchor NOT applied (permanent goodwill re-basing, no evidenced unwind to 17%)"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Sheela Foam at Rs 807 fails the 25% hurdle (HR 0.79, STOP) because the price already embeds the recovery at ~18x FY30 earnings; a genuine turnaround (operating ROCE 13%->16%, cash FIRING, EM 27) but only investable at Rs 302-378. Key risk: shared Kurlon-synergy catalyst slipping again. Cash quality: growth-induced."

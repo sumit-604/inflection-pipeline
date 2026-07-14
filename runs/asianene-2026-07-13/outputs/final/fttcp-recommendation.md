@@ -17,49 +17,67 @@ The FTTCP evidence composite is +4, DEEP WATCH leaning BUY-ON-DIPS. That is the
 posture on evidence. The valuation decision below is a separate output and it is
 AVOID at the current price.
 
+Two operator corrections were applied to the valuation after verification and are
+carried here. The undiscovered alpha 1.25x multiplier now applies, because the
+full May 2026 shareholding pattern confirms FII 1.18% plus DII 0.75% is 1.93%,
+under the 3% institutional test, with all three qualifiers met. The Pillar 3
+duration premium is now +2x, because the Vedanta 4.75 year and Mahanadi 7 year
+contracts, about 76% of the standalone order book, satisfy the four year
+documented visibility test. Together they roughly doubled the destination
+multiple. The decision is unchanged, and now holds on a fully un-stacked
+valuation.
+
 ## Valuation decision
 
-AVOID (on-valuation) at Rs340. The decision is triple bound: Gate 0 classifies
+AVOID (on valuation) at Rs340. The decision is triple bound: Gate 0 classifies
 AVOID, the promoter verdict is CONCERN, and the Hurdle check returns STOP.
 
-- Destination PE, Track 2 additive four pillar: 13.2x mid, range 12.0x to 14.0x.
-  This remains the destination PE authority.
-- Destination PE, Track 1 reverse rate method: 9.3x mid, range 8.5x to 10.0x,
-  built on r of 16 and an RRM of 0.70. On a 30% divergence between the two
-  tracks the more conservative Track 1 governs.
+- Destination PE, Track 2 additive four pillar: 19.1x mid, range 17.5x to 20.0x.
+  This remains the destination PE authority. Raw four pillar PE is 15.24x; the
+  undiscovered alpha adjustment lifts it to 19.05x via min(15.24 x 1.25, 20).
+- Destination PE, Track 1 reverse rate method: 10.7x mid, range 10.0x to 11.5x,
+  built on r of 16 and an RRM of 0.70. On a 44% divergence between the two
+  tracks the more conservative Track 1 governs the entry zone. Undiscovered alpha
+  applies to the Track 2 additive row only, not to the reverse rate track.
 - Pillar inputs: ROCE 13.71% STAGNANT, cash multiplier 0.85x (growth induced,
-  0.80 base plus a tempered 0.05 growth offset), growth premium 1, strategic
-  premium 0, Emerging Moat score 28, sector cap 20x, UA not applied.
-- Fair values, additive track: bear Rs173, base Rs249, bull Rs300.
-- Fair values, reverse rate track: bear Rs118, base Rs182, bull Rs222.
-- Hurdle: base ratio 0.76, verdict STOP. Probability weighted three year CAGR
-  minus 12.1%. Upside to downside ratio 0.0 at CMP.
-- Entry range Rs75 to Rs93. Margin of safety price Rs75. Position size Small,
+  0.80 base plus a tempered 0.05 growth offset), Pillar 3 growth premium +3x (3a
+  0, 3b +1 on Emerging Moat 28, 3c +2 duration), strategic premium 0, Emerging
+  Moat score 28, sector cap 20x (no quality uplift, durability moderate),
+  undiscovered alpha applied.
+- Fair values, additive track: bear Rs230, base Rs356, bull Rs436.
+- Fair values, reverse rate track: bear Rs139, base Rs210, bull Rs255.
+- Hurdle: base ratio 1.10, bull ratio 1.24, both below 1.953, verdict STOP.
+  Probability weighted three year CAGR minus 1.9%. Upside to downside ratio about
+  0.15x at CMP.
+- Entry range Rs86 to Rs108. Margin of safety price Rs86. Position size Small,
   which binds to zero at the current price.
 
-Devil's advocate caveat, carried honestly: valuation_safety is WEAKENED, on
-magnitude not direction. A straight anchored sum of the parts lands near Rs225
-to Rs277, and around Rs290 to Rs320 on generous inputs, which is only 18 to 34%
-below Rs340. The operator's read that standalone plus Kuiper roughly cover the
-current price is corroborated by this run's own generous case sum of the parts.
-The Rs75 to Rs93 entry is punitive because the conservatism stacks: STAGNANT
-rather than recovering ROCE, 0.85x cash on a 1.02x FY26 print, UA declined
-despite FII 2.36% and MF 0% making the sub 3% test near certain, and a 0.70
-reverse rate floor governing. Un-stacking those toward Track 2, UA applied and
-1.0x cash lifts fair value toward Rs290 to Rs320. The AVOID direction survives
-that un-stacking; the entry zone magnitude does not, and is stated as punitive.
+The higher destination does not flip STOP. For the bull Hurdle ratio to reach
+1.953 the destination PE would have to reach about 30x, which is the current
+multiple. The absolute sector cap is 20x; even at that cap the bull ratio is
+1.30, still below 1.953. The current PE sits above the entire achievable
+destination range, so 25% CAGR is structurally infeasible at Rs340 regardless of
+the undiscovered alpha or the duration premium. The result is robust to the 3c
+call: at 3c +1x instead of +2x the destination is 17.8x and the Hurdle still
+reads STOP.
+
+Devil's advocate caveat, now largely resolved: valuation_safety was WEAKENED on
+magnitude, and the corrections close most of that gap. The entry zone rose from
+Rs75 to Rs93 up to Rs86 to Rs108, and the base additive fair value of about
+Rs356 sits beside the devil's own sum of the parts of about Rs290 to Rs320. What
+looked punitive is now confirmed robust: the AVOID holds even after un-stacking
+the conservatism the devil named, which is exactly what the devil predicted.
 
 ## Zone reachability
 
-Entry zone top Rs93 sits +43.6% ABOVE the lowest tested price since listing of
-Rs64.75 (FY19 annual close). The strict MARKET-UNLIKELY trigger, which fires
-only when the zone top is more than 20% BELOW the lowest tested price, does NOT
-fire. The 52 week intraday low is not in the screening CSVs, which carry annual
-snapshots only; the nearest proxy is the FY26 annual close of Rs238.85, with
-FY25 close Rs269. Against those, the zone top Rs93 is about 73% below CMP Rs340
-and far below the recent two to three year range. The zone is reachable in
-principle against deep listing history, but only via a thesis relevant shock or
-a broad de-rating from current levels; classify DEEP WATCH, not actionable
+Entry zone top Rs108 sits +67% ABOVE the lowest tested price since listing of
+Rs64.75 (FY19 annual close). The strict MARKET-UNLIKELY trigger, which fires only
+when the zone top is more than 20% BELOW the lowest tested price, does NOT fire.
+The 52 week intraday low is not in the screening CSVs, which carry annual
+snapshots only. Against CMP Rs340 the zone top Rs108 is about 68% below, and it
+sits below the FY25 to FY26 annual range of Rs239 to Rs269. The zone is reachable
+in principle against deep listing history, but only via a thesis relevant shock
+or a broad de-rating from current levels; classify DEEP WATCH, not actionable
 WATCHLIST, at Rs340.
 
 ## Confidence delta
@@ -72,13 +90,17 @@ WATCHLIST, at Rs340.
 | Peer utilisation | 100 | B12d (8/8 peers substantive) |
 | Overall | 67 | min of the four components |
 
-Weakest component: redflag coverage at 67 is binding. The single MAJOR gap is
-the standalone FY26 guidance miss being under weighted, because the consolidated
-+70% to Rs791 Cr headline masks a roughly 20 to 28% standalone shortfall against
-Rs650 to Rs700 Cr once about Rs290 Cr of Kuiper (7 months at Rs40 to 45 Cr per
-month) is stripped out. The phase-3 valuation adherence audit passed clean at
-100% (30 of 30 rules, 0 critical, 0 major); it confirmed the AVOID as framework
-consistent and concurred with both destination PE tracks without recompute.
+Weakest component: redflag coverage at 67 is binding, unchanged by the
+corrections. The single MAJOR gap is the standalone FY26 guidance miss being
+under weighted, because the consolidated +70% to Rs791 Cr headline masks a
+roughly 20 to 28% standalone shortfall against Rs650 to Rs700 Cr once about
+Rs290 Cr of Kuiper (7 months at Rs40 to 45 Cr per month) is stripped out. The
+phase-3 valuation adherence audit passed clean at 100% (30 of 30 rules, 0
+critical, 0 major); it confirmed the AVOID as framework consistent and concurred
+with both destination PE tracks without recompute. The two operator corrections
+applied after that audit only increase framework compliance, because they add
+the undiscovered alpha multiplier and the duration premium the framework
+provides for.
 
 ## Active flags
 
@@ -107,6 +129,15 @@ Transition evidence present (COUNTERWEIGHTS, not clearances):
   firm coincident with the merger, and the Oilmax merger itself is a new and
   larger related party transaction increasing promoter centricity as of the run
   date (B08).
+
+### FLAG-GOVERNANCE (promoter reduction) — new monitorable
+Promoter holding stepped down from 60.75% in March 2026 to 56.16% in May 2026,
+with public holding rising to 41.87% and institutional holding (FII 1.18% plus
+DII 0.75%) at 1.93% (B11 governance monitorable, May 2026 shareholding pattern).
+The promoter is reducing stake ahead of the related party Oilmax merger listing.
+This reinforces the existing promoter CONCERN verdict rather than creating a new
+verdict; it is carried as a monitorable, not a valuation input. Watch for further
+reduction, pledge creation, or selling timed to NCLT effectiveness.
 
 ### FLAG-CASH — determination GROWTH-INDUCED
 Cited evidence for the growth induced read:
@@ -147,8 +178,7 @@ Rs44.36 Cr loss, plus an FY17 loss year) and a data gap: Block E scored 0/20
 entirely because no shareholding, pledge or contingent liability data was in the
 Gate 0 inputs, and Block A/B metrics anchor only for FY25-FY26 because the
 screener lacks FY17-FY24 current liability, payables and capex splits (B01).
-Actual promoter holding is 60.83% with no pledge (B03). Backward looking; does
-not cap the decision.
+Backward looking; does not cap the decision.
 
 ### FLAG-EXECUTION — active
 F2 execution moat scored Weak (0.7 adjusted). Duarmara, Tiphuk and Amguri
@@ -183,31 +213,33 @@ the promoter and were not in the run inputs.
 1. Operating cash flow to PAT each quarter. If TTM CFO to PAT drops below 0.5x or
    quarterly CFO turns negative again in FY27 while revenue grows, the cash flag
    flips to structural and the multiplier drops to 0.65x. Source: quarterly cash
-   flow statement. Tests FLAG-CASH.
+   flow statement. Tests the cash flag.
 2. Oilmax merger accounting basis, pooling at book versus fair value, plus
    audited Oilmax standalone earnings against the disclosed 128 Cr revenue and
    56% EBITDA, and share issuance against the media implied ~760 lakh. This one
    fact swings the thesis from dilution to accretion. Source: merger scheme /
    NCLT filings. Tests the shared catalyst and the promoter flag.
-3. Asian Indwell JV receivables ageing. Any balance moving past 180 days, or a
+3. Promoter shareholding and pledge each quarter. Any further reduction below
+   56.16% (already down from 60.75% in March 2026), any pledge creation, or
+   selling timed to NCLT effectiveness deepens the governance concern. Source:
+   quarterly shareholding pattern, BSE and NSE filings. Tests the promoter flag.
+4. Asian Indwell JV receivables ageing. Any balance moving past 180 days, or a
    continued unreconciled standalone versus consolidated revenue gap. This 13
    month old JV is about 27% of receivables and leads the related party
    concentration risk. Source: related party note in quarterly and annual filings.
-4. Standalone (ex Kuiper) revenue against the raised 30 to 40% FY27 growth guide.
-   A third straight reaffirm then miss confirms the grade C credibility and the
-   execution flag. Source: quarterly results and investor presentation.
-5. Consolidated EBITDA margin sustained at or above 12.5%; red if below 12% for
+5. Standalone (ex Kuiper) revenue against the raised 30 to 40% FY27 growth guide,
+   and order book coverage. A third straight reaffirm then miss, or the order book
+   falling below Rs1,750 Cr, confirms the grade C credibility and the execution
+   flag. Source: quarterly results and investor presentation.
+6. Consolidated EBITDA margin sustained at or above 12.5%; red if below 12% for
    two consecutive quarters. The FY26 12.5% already fell from 15.6%. Tests Kuiper
    mix dilution. Source: quarterly results.
-6. Net debt to EBITDA below 1x. Borrowings already rose about 6.7x FY25 to FY26
+7. Net debt to EBITDA below 1x. Borrowings already rose about 6.7x FY25 to FY26
    against a net zero debt claim; above 1.5x breaks the balance sheet story.
    Source: quarterly balance sheet.
-7. Duarmara, Tiphuk and Amguri production start with a hard confirmed date.
+8. Duarmara, Tiphuk and Amguri production start with a hard confirmed date.
    Further slippage without a revised date, especially Duarmara, kills the
    organic field ramp trigger. Source: concall.
-8. MD remuneration reconciliation of the Rs277 Lakh versus Rs157 Lakh
-   discrepancy. Any restated figure is a governance disclosure integrity test.
-   Source: FY26 Corporate Governance Report and RPT disclosures.
 
 ## Falsification line
 

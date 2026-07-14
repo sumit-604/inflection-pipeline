@@ -16,16 +16,17 @@ Real oilfield turnaround, valuation says avoid today. Indian oilfield and upstre
 - FTTCP composite +4 of 8: DEEP WATCH leaning BUY-ON-DIPS. Revenue FIRING (order backed FY27), margin STARTING (Oilmax high-margin merger imminent), cash STARTING (FY26 CFO turned +Rs53 Cr), ROCE STAGNANT (RECOVERING upside if the merger pools at book).
 - Confidence delta: numerical 91.4, redflag 67, framework 97, peer 100; overall 67. No REWORK.
 
-## Valuation decision (Role 1 + Role 2)
+## Valuation decision (Role 1 + Role 2) — corrected re-run (UA applied + 3c duration premium)
 - Decision: AVOID (on-valuation) at Rs340. Triple bound: Gate 0 AVOID + Promoter CONCERN + Hurdle STOP.
-- Destination PE: Track 2 additive 13.2x mid (12.0-14.0x); Track 1 RRM 9.3x mid (8.5-10.0x). RRM governs on 30% divergence. Both below current ~30x (de-rating headwind).
-- Hurdle Ratio base 0.76 → STOP. Probability-weighted 3yr CAGR -12.1%.
-- Cash multiplier 0.85x (growth-induced with related-party overlay). UA not applied (DII unresolved, conservative). Sector cap 20x (EPC/Civil construction or Mining/mineral exploration; manifest "Agri processing" corrected).
-- Entry range Rs75-93, MoS Rs75. Position Small (Promoter-CONCERN ceiling; zero at CMP).
-- Devil's advocate: overall SURVIVES; valuation_safety WEAKENED on magnitude not direction. Anchored SOTP ~Rs225-277 (generous ~Rs290-320) sits only 18-34% below CMP; the Rs75-93 four-pillar entry is punitive from stacked conservatism.
+- Destination PE: Track 2 additive 19.1x mid (17.5-20.0x; raw F 15.24x, UA-adjusted F2 19.05x); Track 1 RRM 10.7x mid (10.0-11.5x). RRM governs entry on 44% divergence (UA applies to the additive track only). Both below current ~30x (de-rating headwind).
+- Pillar 3 = +3x (3a 0 + 3b 1 + 3c +2x on Vedanta 4.75yr and Mahanadi 7yr documented contracts). UA APPLIED (FII 1.18% + DII 0.75% = 1.93% < 3%, May 2026; all three qualifiers met). Cash multiplier 0.85x (growth-induced with related-party overlay). Sector cap 20x (manifest "Agri processing" corrected).
+- Hurdle Ratio base 1.10, bull 1.24 → STOP (even at the 20x cap, bull HR 1.30 < 1.953, because current PE ~30x exceeds the whole achievable destination). Probability-weighted 3yr CAGR -1.9%.
+- Fair values: Track 2 bear Rs230 / base Rs356 / bull Rs436; Track 1 bear Rs139 / base Rs210 / bull Rs255.
+- Entry range Rs86-108, MoS Rs86. Position Small (Promoter-CONCERN ceiling; zero at CMP).
+- Devil's advocate: overall SURVIVES; valuation_safety was WEAKENED on magnitude, now largely resolved by the corrections (entry rose to Rs86-108, base fair value ~Rs356 near the devil's SOTP ~Rs290-320). The AVOID is confirmed robust to a fully un-stacked valuation.
 
 ## Decision Status (proposed; operator decides, never auto-overwrite)
-AVOID at CMP / DEEP WATCH. Re-engage on Rs75-93 with entry conjunction satisfied, OR earlier if the Oilmax merger closes pooling-at-book with audited accretion (flips ROCE to RECOVERING and dilution to accretion).
+AVOID at CMP / DEEP WATCH. Re-engage on Rs86-108 with entry conjunction satisfied, OR earlier if the Oilmax merger closes pooling-at-book with audited accretion (flips ROCE to RECOVERING and dilution to accretion).
 
 ## Thesis-broken triggers
 - Oilmax merger closes on a fair-value (non pooling-at-book) basis confirming 35-51% EPS dilution.
@@ -47,6 +48,7 @@ AVOID at CMP / DEEP WATCH. Re-engage on Rs75-93 with entry conjunction satisfied
 - FLAG-CASH: GROWTH-INDUCED with related-party overlay. Falsifier: TTM CFO/PAT below 0.5x or negative CFO quarter FY27.
 - FLAG-GATE0: AVOID core 37 (backward + Block E data gap; actual promoter holding 60.83% no pledge).
 - FLAG-EXECUTION: credibility C; field timelines slipped all three concalls.
+- FLAG-GOVERNANCE (promoter reduction): promoter holding 60.75% (Mar-2026) -> 56.16% (May-2026), public to 41.87%; reducing ahead of the related-party Oilmax merger listing. Monitorable.
 - SHARED CATALYST: Oilmax merger drives revenue, margin and ROCE; pooling-at-book vs fair-value is the pivotal unverified swing.
 
 ## Phase 3 data gaps to close on refresh

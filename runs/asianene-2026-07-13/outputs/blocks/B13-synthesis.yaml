@@ -3,22 +3,28 @@ company: "ASIANENE"
 run_date: "2026-07-13"
 model: claude-opus-4-8
 status: complete
-phase: 3
+phase: 3 (corrected re-run: UA applied + 3c duration premium)
 verdict: "PROCEED WITH FLAGS"
 verdict_rule_applied: 3
-flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-EXECUTION", "SHARED CATALYST (Oilmax merger)"]
+flags_active: ["FLAG-PROMOTER", "FLAG-GOVERNANCE-PROMOTER-REDUCTION", "FLAG-CASH", "FLAG-GATE0", "FLAG-EXECUTION", "SHARED CATALYST (Oilmax merger)"]
 confidence_delta: {numerical: 91.4, redflag: 67, framework: 97, peer: 100, overall: 67}
 valuation_decision: "AVOID"
-entry_range: {low: 75, high: 93}
-mos_price: 75
-destination_pe: {track2_additive_mid: 13.2, track1_rrm_mid: 9.3, governing: "RRM"}
+entry_range: {low: 86, high: 108}
+mos_price: 86
+destination_pe: {track2_additive_mid: 19.1, track2_range: "17.5-20.0", track1_rrm_mid: 10.7, governing: "RRM (UA applies to additive only)"}
+pillar3: {p3a: 0, p3b: 1, p3c: 2, total: 3}
+ua_applied: true
+raw_pe_F: 15.24
+f2_ua_adjusted: 19.05
 hurdle_verdict: "STOP"
-prob_weighted_3yr_cagr: -12.1
+hurdle: {base: 1.10, bull: 1.24, at_20x_cap_bull: 1.30}
+prob_weighted_3yr_cagr: -1.9
+fair_values: {track2: {bear: 230, base: 356, bull: 436}, track1: {bear: 139, base: 210, bull: 255}}
 devil_overall: "SURVIVES"
-devil_valuation_safety: "weakened (magnitude not direction); anchored SOTP ~Rs225-277"
-headline: "Real oilfield turnaround, valuation says avoid today"
-falsification_metric: "Q1/Q2 FY27 standalone revenue ex-Kuiper below the 30-40% growth path (third consecutive reaffirm-then-miss)"
+devil_valuation_safety: "weakened->largely resolved on magnitude after UA+3c; entry rose to 86-108, fair value ~356 base near devil SOTP ~290-320; AVOID confirmed robust to a fully un-stacked valuation"
+governance_monitorable: "promoter holding 60.75% (Mar-2026) -> 56.16% (May-2026), public to 41.87%; reducing ahead of the related-party Oilmax merger listing"
+headline: "Real oilfield turnaround, valuation still says avoid"
+falsification_metric: "Q1/Q2 FY27 standalone (ex-Kuiper) revenue below the 30-40% order-backed growth path (third consecutive reaffirm-then-miss)"
 fttcp_composite: 4
 fttcp_position: "DEEP WATCH leaning BUY-ON-DIPS"
 publish_candidate: true
-publish_candidate_summary: "Acquisition-inflated +70% (Rs791 Cr) headline masking a ~20-28% organic shortfall once 7 months of Kuiper is stripped, plus a monsoon excuse flatly contradicted by two peers growing through the quarter; educational/methodology teaching case, no recommendation attached."

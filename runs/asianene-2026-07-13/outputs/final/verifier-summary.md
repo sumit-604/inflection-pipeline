@@ -11,13 +11,40 @@ Asian Energy Services Limited (ASIANENE) | Run date 2026-07-13
 | Peer utilisation | 100 | D (B12d) | 100 (8/8 peers substantive) |
 | Overall | 67 | min of four | Band 60-74; no REWORK (no CRITICAL, none below 60) |
 
-Framework adherence is now the FULL component: phase-1 Gate 0 + Emerging Moat
-(84/87 rules clean) plus the phase-3 valuation adherence and Role 2 decision
-audit (30/30 rules clean, 0 critical, 0 major). The phase-3 audit confirmed the
-AVOID as framework consistent, concurred with Track 2 13.2x and Track 1 RRM 9.3x
-with no recompute, and confirmed the Tier A assignment and Small (zero at CMP)
-sizing. Overall confidence 67 is unchanged from phase 1; redflag coverage
-remains binding.
+Framework adherence is the FULL component: phase-1 Gate 0 + Emerging Moat (84/87
+rules clean) plus the phase-3 valuation adherence and Role 2 decision audit
+(30/30 rules clean, 0 critical, 0 major). The phase-3 audit confirmed the AVOID
+as framework consistent, concurred with the pre-correction Track 2 13.2x and
+Track 1 RRM 9.3x with no recompute, and confirmed the Tier A assignment and Small
+(zero at CMP) sizing. Overall confidence 67 is unchanged from phase 1; redflag
+coverage remains binding.
+
+## Note on the two post-verification operator corrections
+
+Two operator corrections were applied to Role 1 AFTER this verifier pass and do
+not change any acceptance rate or the confidence delta. Both increase framework
+compliance rather than reduce it, because each supplies a framework provision the
+baseline had left off for missing data:
+
+1. Undiscovered alpha 1.25x now applied. The full May 2026 shareholding pattern
+   resolves the previously unresolved institutional test: FII 1.18% plus DII
+   0.75% is 1.93%, below 3%, with all three qualifiers met. The baseline had
+   declined undiscovered alpha only because the DII share was unresolved (a
+   conservative gap the verifiers noted, not a rule failure). Applying it is the
+   framework-correct treatment. Destination PE Track 2 additive moves from 13.2x
+   to 19.1x via min(15.24 x 1.25, 20) = 19.05x, applied to the Track 2 additive
+   row only, not the reverse rate track.
+
+2. Pillar 3c duration premium now +2x. The Vedanta 4.75 year and Mahanadi 7 year
+   documented contracts, about 76% of the standalone order book at 3.56x cover,
+   satisfy the four year documented visibility test the framework prices. Pillar
+   3 moves from +1x to +3x (3a 0, 3b +1, 3c +2).
+
+Net effect on the audited items: the AVOID decision, the STOP Hurdle verdict, the
+Tier A assignment, the triple bound decision trace, and the Small (zero at CMP)
+sizing all hold unchanged. The phase-3 valuation adherence rate remains 100%; the
+corrections would raise the count of framework provisions correctly applied, not
+lower it.
 
 ## Findings, sorted by severity
 
@@ -35,9 +62,9 @@ None across all five verifier passes (A, B, C phase-1, C phase-3, D).
 
 | Verifier | Location | Finding |
 | --- | --- | --- |
-| C-p3 (B12c-valuation) | B11 Pillar 2 offset | Offset tempered +0.20 to +0.05; conservative, FTTCP-authorized; immaterial (strict +0.20 gives 15.4x, still Hurdle STOP). |
+| C-p3 (B12c-valuation) | B11 Pillar 2 offset | Offset tempered +0.20 to +0.05; conservative, FTTCP-authorized; immaterial (strict +0.20 still Hurdle STOP). |
 | C-p3 (B12c-valuation) | B14 Section 7 re-engagement zone | Re-engagement zone offered under Gate0-AVOID + Promoter-CONCERN; mitigated by ceiling caps + checklist gate; current AVOID unaffected. |
-| C-p3 (B12c-valuation) | B11 Hurdle Ratio track choice | Hurdle uses Track 2 mid 13.2x not governing Track 1 mid 9.3x; Track 1 gives a deeper STOP; verdict robust either way. |
+| C-p3 (B12c-valuation) | B11 Hurdle Ratio track choice | Hurdle uses the Track 2 mid, not the governing Track 1 mid; Track 1 gives a deeper STOP; verdict robust either way. |
 | A (B12a) | B04 Revenue Mix Table | O&G Rs632.8cr (80%) + Minerals Rs158.3cr (20%) = Rs791.1cr reconciles to audited consolidated revenue; consolidated vs standalone clarity gap, verified correct (Inv. Pres. slide 11). |
 | A (B12a) | B09 TAM Report, Section 3B | AESL standalone FY26 revenue Rs491.8cr directionally plausible (implied Kuiper Rs42.75cr/mo, consistent with mgmt Rs40-45cr/mo); source not independently readable, cross-checks pass (Inv. Pres. slide 9). |
 | A (B12a) | B02/B08 MD remuneration | Rs277 Lakh (CG Report p.51) vs Rs157 Lakh (Note 44 p.125) FY25 correctly flagged as cross document inconsistency; reconciliation not provided; no revenue/profit impact. |
@@ -63,6 +90,8 @@ None across all five verifier passes (A, B, C phase-1, C phase-3, D).
   every evidence multiplier, the completionist recount, and the double-credit rule.
 - C (framework, phase-3) checked 22 valuation rules and 8 Role 2 rules, all
   substantively passed; AVOID triple-bound (Gate0 AVOID + Promoter CONCERN +
-  Hurdle STOP), destination PE and decision concur, no recompute needed.
+  Hurdle STOP), destination PE and decision concur, no recompute needed. The two
+  operator corrections were applied after this pass and increase, not reduce,
+  framework compliance.
 - D (peer) confirms all 8 peer inputs substantive with findable citations; no
   unsupported claims, no verdict discipline fails.

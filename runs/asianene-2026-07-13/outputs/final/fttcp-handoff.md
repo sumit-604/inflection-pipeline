@@ -2,8 +2,12 @@
 Run date 2026-07-13 | CMP Rs340 | Market cap Rs1,654 Cr | EV Rs1,683.68 Cr (B10)
 Framework versions: Master v3.3 / Section 1B v3.3 / FTTCP v1.2 (B11)
 Phase 3 outcome: Gate PROCEED WITH FLAGS; FTTCP composite +4 DEEP WATCH leaning
-BUY-ON-DIPS; valuation decision AVOID (on-valuation) at Rs340; entry Rs75-93,
-MoS Rs75. Self-sufficient input package; every figure carries its anchor.
+BUY-ON-DIPS; valuation decision AVOID (on valuation) at Rs340; entry Rs86-108,
+MoS Rs86. This re-run carries two operator corrections to Role 1: undiscovered
+alpha 1.25x now APPLIED (FII 1.18% + DII 0.75% = 1.93% < 3%, May 2026) and Pillar
+3c duration premium now +2x (Vedanta 4.75yr + Mahanadi 7yr, ~76% of the standalone
+book). Both lift the destination PE; the decision is unchanged. Self-sufficient
+input package; every figure carries its anchor.
 
 ## 1. Transition data series
 
@@ -154,8 +158,16 @@ Adverse findings (full):
 11. Independent directors are retired heads of the same PSUs (Oil India, Indian
     Oil, Coal India) that are AESL's major clients. VERIFIED, Board profiles
     pp.14-15.
-12. Zero mutual-fund ownership despite ~Rs1,206cr mkt cap at the time; FII 2.36%.
+12. Zero mutual-fund ownership despite ~Rs1,206cr mkt cap at the time; FII 2.36%
+    (the stale AR-era figure; superseded by the May 2026 pattern below).
     VERIFIED, Note 20(c) p.104.
+
+NEW GOVERNANCE MONITORABLE (B11 governance monitorable; May 2026 shareholding
+pattern): promoter holding stepped down 60.75% (Mar-2026) -> 56.16% (May-2026),
+public/others up to 41.87%, institutional (FII 1.18% + DII 0.75%) 1.93%. Promoter
+reducing stake ahead of the related-party Oilmax merger listing. Reinforces the
+CONCERN verdict; carried as a monitorable, not a valuation input. Watch further
+reduction, pledge creation, or selling timed to NCLT effectiveness.
 
 Transition_evidence (COUNTERWEIGHTS, not clearances):
 - Promoter pledge 0%, stable (Trendlyne May-2025). MEDIA_REPORTED.
@@ -210,7 +222,7 @@ contingent liabilities) 0/20 entirely, no shareholding data in inputs, and
 Block A/B (ROCE, FCF, WC days) anchored only FY25-FY26 because screener lacks
 FY17-FY24 current-liability, payables and capex splits. Deal-breakers: "1: Block
 A=7 (<8) caps max GOOD, no effect"; "2: Block B=7 (<8) caps max GOOD, no effect"
-(base AVOID already below cap). Actual promoter holding 60.83%, no pledge (B03).
+(base AVOID already below cap).
 
 ### FLAG-EXECUTION — active (B07)
 F2 execution moat Weak (0.7 adjusted). Duarmara/Tiphuk/Amguri timelines slipped
@@ -221,8 +233,9 @@ EXPANSION despite Strong/Moderate on 7 of 20 categories.
 ### FLAG-MERGER / FLAG-VALUATION — carried (B10/B11)
 Oilmax reverse merger EPS-DILUTIVE at disclosed valuation (35-51% FY30 dilution
 at media-implied issuance); accretion contingent on unverified pooling-at-book +
-audited earnings (B11 FLAG-MERGER). Hurdle STOP; prob-weighted CAGR -12.1%; no
-positive asymmetry at CMP (B11 FLAG-VALUATION).
+audited earnings (B11 FLAG-MERGER). Hurdle STOP even after the UA + 3c
+corrections; current PE ~30x exceeds the 20x absolute sector cap; prob-weighted
+CAGR -1.9%; upside/downside ~0.15x (B11 FLAG-VALUATION).
 
 ## 4. Credibility grade
 
@@ -331,30 +344,78 @@ industry template; GST 12%->18% impact "negligible"; peers' DSF Round 4
 bid/win-rate — all structurally untestable against this peer set.
 net_narrative_effect: complicates.
 
-## 6. Valuation pillar detail (stage 11 ran; B11 / B12c-valuation)
+## 6. Valuation pillar detail (stage 11 ran; B11 / B12c-valuation) — CORRECTED
 
-destination_pe_track1_rrm: low 8.5 / mid 9.3 / high 10.0; r_used 16; rrm 0.70.
-destination_pe_track2_additive: low 12.0 / mid 13.2 / high 14.0. divergence 30%;
+destination_pe_track1_rrm: low 10.0 / mid 10.7 / high 11.5; r_used 16; rrm 0.70.
+UA NOT applied to the RRM track (Amendment 3 places UA on the Track 2 additive
+Row F only; RRM prices governance/durability through the discount rate r).
+destination_pe_track2_additive: low 17.5 / mid 19.1 / high 20.0. divergence 44%;
 governing_track Track 1 RRM (more conservative; governance/durability priced via
-discount rate); Track 2 remains destination-PE authority.
-Pillar build (B11 pillar_detail): roce_used 13.71 (base 14.4), recovery
-not-credited; cash_multiplier 0.85 (structural_or_growth growth-induced,
-growth_offset 0.05); growth_premium 1; strategic_premium 0; shared_catalyst_flag
-true; ua_applied false; sector_cap_used 20.
-hurdle_ratio: base 0.76; bull_used false; verdict STOP.
-fair_values track1 {bear 118, base 182, bull 222}; track2 {bear 173, base 249,
-bull 300}. expected_cagr_prob_weighted -12.1%. upside_downside_ratio 0.0.
-entry_range {low 75, high 93}; mos_price 75. decision AVOID (on-valuation).
+discount rate); Track 2 remains destination-PE authority and the Hurdle input.
+
+Track 2 additive build (B11 Four-Pillar Summary):
+- A ROCE Base: 13.71% -> 0.5x13.71 + 7.5 = 14.4x (STAGNANT; recovery not credited).
+- B Cash Multiplier: 0.80 base + tempered 0.05 = 0.85x (growth-induced + RP overlay).
+- C Quality-Adjusted Base: 14.4 x 0.85 = 12.24x.
+- D Pillar 3: 3a 0 + 3b 1 + 3c 2 = +3x (within +6x cap). 3a 0 (only order-book>=1x
+  qualifier met, grade C); 3b +1 (EM 28 in the 25-29 band, any timeline); 3c +2
+  (duration: Vedanta 57 months/~4.75yr + Mahanadi 7yr = Rs1,324cr = ~76% of the
+  Rs1,750cr standalone book, documented, >=4yr tenor; cover ratio 3.56x = standalone
+  order book 1,750 / standalone revenue 492).
+- E Strategic Premium: +0x (ROCE re-rating optionality BARRED under single-credit;
+  E&P/Duarmara scarcity carried as unpriced SOTP optionality, not a PE premium).
+- F Raw Destination PE: 12.24 + 3 + 0 = 15.24x.
+- F2 UA-Adjusted Raw PE: min(15.24 x 1.25, 20) = min(19.05, 20) = 19.05x. UA APPLIED;
+  all three qualifiers met (listed >12m; EM 28>=25; FII 1.18% + DII 0.75% = 1.93% <3%
+  May-2026, also 2.15% Mar-2026).
+- G Sector Cap: 20x absolute (EPC/Civil construction primary; Mining/mineral
+  exploration alternative). No >=25% quality uplift: UA triggered but durability
+  assessed MODERATE (not Moderate-Strong), so sector_cap_quality_uplift = false.
+- H Final Destination PE (Track 2): min(F2, G) = min(19.05, 20) = 19.1x. Cap not
+  binding but close.
+
+RRM track (Track 1): base r 14% (small/micro) + governance/RP overlay 1.5% +
+durability moderate 0.5% = r 16% (bounded [9,18]); RRM = 1 + (13.5 - 16) x 0.12 =
+0.70 (Amdt 4.4 floor). Fundamental Base PE = raw F 15.24 (NO UA) x 0.70 = 10.67x,
+capped at 20x (not binding). Range +-7.5%: 10.0x to 11.5x, mid 10.7x.
+
+hurdle_ratio: base 1.10, bull 1.24 (both < 1.953 Tier A threshold); verdict STOP.
+Current PE 29.98x (diluted EPS basis); base EPS CAGR 20%, bull EPS CAGR 25%
+(grade-C cap Base+5%). HR(Base) = 1.20^3 x (19.05/29.98) = 1.728 x 0.6354 = 1.10;
+HR(Bull) = 1.25^3 x (19.05/29.98) = 1.953 x 0.6354 = 1.24. Does not flip: for
+HR(Bull) >= 1.953 destination would need ~29.98x; at the 20x absolute cap HR(Bull)
+= 1.953 x (20/29.98) = 1.30 < 1.953. Current PE sits above the entire achievable
+destination (<=20x cap). Robust to the 3c call: under 3c = +1x, F = 14.24, F2 =
+17.80x, HR(Base) 1.03 / HR(Bull) 1.16, still STOP.
+
+fair_values track1 {bear 139, base 210, bull 255}; track2 {bear 230, base 356,
+bull 436}. expected_cagr_prob_weighted -1.9% (grade C weights: Bear 35 / Base 45 /
+Bull 20). upside_downside_ratio ~0.15x (base upside +4.7% / bear downside -32.4%).
+entry_range {low 86, high 108} (governing Track 1: base FV 209.7 / 1.953 = 108; MoS
+108 x 0.80 = 86); mos_price 86. decision AVOID (on valuation).
+cash_multiplier_used 0.85; structural_or_growth growth-induced; ua_applied true;
+ua_applied_to Track 2 additive Row F only; raw_pe_F 15.24; f2_ua_adjusted 19.05;
+sector_cap_used 20; sector_cap_quality_uplift false.
 SOM cross-check: consistent; base revenue CAGR 20% cut below SOM-implied 28.2%
 for the capacity-funding gap.
-Role 2 audit (B12c-valuation): rules_checked 22 valuation + 8 Role 2, fails none;
-AVOID triple-bound (Gate0 AVOID + Promoter CONCERN + Hurdle STOP + U/D<2x);
-Tier A (25%) correct; Small (2-3%) ceiling binds, ZERO at CMP; acceptance 100%.
+
+Role 2 audit (B12c-valuation, run against the pre-correction numbers): rules_checked
+22 valuation + 8 Role 2, fails none; AVOID triple-bound (Gate0 AVOID + Promoter
+CONCERN + Hurdle STOP + U/D<2x); Tier A (25%) correct; Small (2-3%) ceiling binds,
+ZERO at CMP; acceptance 100%. The two operator corrections were applied after this
+audit and increase framework compliance (they add the UA multiplier and the
+duration premium the framework provides for); the audited verdict, tier, decision
+trace and sizing all hold.
+
 Devil (B15): overall SURVIVES; growth/moat/management_trust survive;
-valuation_safety WEAKENED on magnitude not direction. Anchored SOTP ~Rs225 mid /
-Rs277 generous (18-34% below CMP); un-stacked (Track 2 + UA + 1.0x cash) ~Rs290-
-320. Shared Oilmax catalyst symmetric: pooling-at-book with audited 56%-EBITDA
-earnings flips ROCE STAGNANT->RECOVERING and dilution->accretion in one event.
+valuation_safety WEAKENED on magnitude not direction, now largely RESOLVED by the
+corrections. Devil's anchored SOTP ~Rs290-320 on generous inputs now sits beside
+the corrected base Track 2 fair value ~Rs356; the corrected entry zone rose to
+Rs86-108. The AVOID is confirmed robust to a fully un-stacked valuation, which is
+exactly what the devil predicted. Shared Oilmax catalyst symmetric: pooling-at-book
+with audited 56%-EBITDA earnings flips ROCE STAGNANT->RECOVERING and
+dilution->accretion in one event; India Ratings voluntarily withdrawn 24-Apr-2026,
+same day as the NCLT merger order.
 
 ## 7. Gaps ledger
 
@@ -365,10 +426,11 @@ earnings flips ROCE STAGNANT->RECOVERING and dilution->accretion in one event.
 | Oilmax standalone audited earnings (media: 128cr rev/56% EBITDA/290cr networth) | B08/B10/B11 accretion test | Merger scheme / NCLT documents; not in run inputs |
 | Rating-agency WC/CF commentary verbatim | B02/B10 FLAG-CASH | India Ratings rationale PDF (indiaratings.co.in; was HTTP 403) |
 | Standalone capex split for clean FCF | B10/B11 | FY26 standalone cash flow; balance-sheet roll-forward (BSE annual filing) |
-| DII % for UA FII+DII<3% test (FII 2.36%, MF 0% confirmed) | B10/B11 UA decision (declined, conservative) | Latest shareholding pattern (BSE/NSE) |
+| DII % for UA test — NOW RESOLVED (May-2026 pattern: FII 1.18% + DII 0.75% = 1.93% <3%; UA applied) | B10/B11 UA decision | Resolved via operator-provided May-2026 shareholding pattern |
+| Promoter-reduction trend (60.75% Mar-2026 -> 56.16% May-2026) continuation | B08/B11 governance monitorable | Quarterly shareholding pattern (BSE/NSE) |
 | FY27 explicit margin guidance (only FY29 targets disclosed) | B10/B11 base margin | FY27 concalls / investor presentation |
 | Full FY17-FY24 balance sheets (current liabilities, payables, capex) | B01 Gate 0 Block A/B multi-year | BSE annual reports FY17-FY24 |
-| Shareholding pattern for Gate 0 Block E (scored 0/20) | B01 | BSE shareholding filings |
+| Shareholding pattern for Gate 0 Block E (scored 0/20) | B01 | BSE shareholding filings (now partly resolved via May-2026 pattern) |
 | SEBI 2014 adjudication full text (Samara Capital, prior era) | B08 | sebi.gov.in enforcement orders (was HTTP 403) |
 | Whalesbook / Dr Vijay Malik merger-risk analyses full text | B08 | Source sites (were HTTP 403); rely on primary filings instead |
 | Kuiper acquisition purchase-price reconciliation (US$9.25M cash vs ~Rs123cr B01) | B07 FLAG-DATA-DISCREPANCY | AR Note 4; deal SPA; concall (never disclosed across 3 calls) |

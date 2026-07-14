@@ -8,21 +8,22 @@ input_gaps:
   - "Post-merger diluted share count (117:10 swap known; exact issuance pending NCLT final order)"
   - "Standalone capex for clean FCF (consolidated 60.64 Cr comingles Kuiper acquisition capex)"
   - "Rating-agency WC/CF commentary (rating PDF not in bundle)"
-  - "DII % for UA FII+DII<3% test (FII 2.36% confirmed; DII unresolved)"
   - "FY27 explicit margin guidance (only FY29 targets disclosed)"
 flags:
   - "FLAG-CASH: growth-induced + RP-collection overlay; cash multiplier APPLIED = 0.85x (0.80 base + tempered 0.05). Falsifier: RP receivable >180 days FY27 -> revise to 0.65x."
   - "FLAG-EXECUTION: credibility grade C; bull EPS CAGR capped at base+5% (25%)."
   - "FLAG-MERGER: Oilmax reverse merger EPS-DILUTIVE at disclosed valuation (35-51% FY30 dilution at media-implied issuance); accretion contingent on unverified pooling-at-book + audited earnings."
-  - "FLAG-VALUATION: Hurdle STOP; probability-weighted CAGR -12.1%; no positive asymmetry at CMP."
-  - "SHARED CATALYST: Oilmax merger drives revenue/margin/ROCE; Role 3 to stress single point of failure."
+  - "FLAG-VALUATION: Hurdle STOP even after UA + 3c corrections; current PE ~30x exceeds the 20x absolute sector cap; prob-weighted CAGR -1.9%; upside/downside ~0.15x."
+  - "SHARED CATALYST: Oilmax merger drives revenue/margin/ROCE and underlies Pillar 3 3b; Role 3 to stress single point of failure."
   - "FLAG-PROMOTER: verdict CONCERN -> AVOID default per Master."
+  - "FLAG-GOVERNANCE-MONITORABLE: promoter holding 60.75% (Mar-2026) -> 56.16% (May-2026), public to 41.87%; reducing ahead of related-party Oilmax merger listing. Monitorable, not a valuation input."
+  - "UA-APPLIED: all three qualifiers met (listed >12m; EM 28>=25; FII 1.18%+DII 0.75%=1.93%<3% May-2026, also 2.15% Mar-2026). UA on Track 2 additive Row F only, not RRM."
 framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
 destination_pe:
-  track1_rrm: {low: 8.5, mid: 9.3, high: 10.0, r_used: 16, rrm: 0.70}
-  track2_additive: {low: 12.0, mid: 13.2, high: 14.0}
-  divergence_pct: 30
-  governing_track: "Track 1 RRM (more conservative; governance/durability priced via discount rate). Track 2 remains primary destination-PE authority."
+  track1_rrm: {low: 10.0, mid: 10.7, high: 11.5, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 17.5, mid: 19.1, high: 20.0}
+  divergence_pct: 44
+  governing_track: "Track 1 RRM (more conservative; UA applies to Track 2 additive Row F only, not RRM). Track 2 remains primary destination-PE authority + Hurdle input."
 pillar_detail:
   roce_used: 13.71
   roce_base: 14.4
@@ -30,25 +31,33 @@ pillar_detail:
   cash_multiplier: 0.85
   structural_or_growth: "growth-induced"
   growth_offset: 0.05
-  growth_premium: 1
+  growth_premium: 3              # Pillar 3 combined = 3a 0 + 3b 1 + 3c 2 (within +6x cap)
+  pillar3_3a: 0                  # only order-book>=1x qualifier met; grade C
+  pillar3_3b: 1                  # EM 28 (25-29 band), any timeline
+  pillar3_3c: 2                  # duration: Vedanta 57mo/4.75yr + Mahanadi 7yr = 76% of standalone book, >=4yr documented; cover 3.56x
   strategic_premium: 0
   shared_catalyst_flag: true
-  ua_applied: false
+  ua_applied: true
+  ua_qualifiers: "listed>12m YES; EM 28>=25 YES; FII 1.18%+DII 0.75%=1.93%<3% (May-2026) YES; Mar-2026 2.15% also <3%"
+  ua_applied_to: "Track 2 additive Row F only (Amendment 3); NOT the RRM track"
+  raw_pe_F: 15.24
+  f2_ua_adjusted: 19.05
   sector_cap_used: 20
-hurdle_ratio: {base: 0.76, bull_used: false, verdict: "STOP"}
+  sector_cap_quality_uplift: false   # UA triggered but durability only Moderate, not Moderate-Strong
+hurdle_ratio: {base: 1.10, bull_used: false, verdict: "STOP"}  # bull 1.24; does not flip; robust to 3c=+1
 fair_values:
-  track1: {bear: 118, base: 182, bull: 222}
-  track2: {bear: 173, base: 249, bull: 300}
-expected_cagr_prob_weighted: -12.1
-entry_range: {low: 75, high: 93}
-mos_price: 75
-upside_downside_ratio: 0.0
+  track1: {bear: 139, base: 210, bull: 255}
+  track2: {bear: 230, base: 356, bull: 436}
+expected_cagr_prob_weighted: -1.9
+entry_range: {low: 86, high: 108}
+mos_price: 86
+upside_downside_ratio: 0.15
 decision: "AVOID (on-valuation)"
 unresolved_inputs_used:
   - "FCF: capex comingled with Kuiper acquisition -> conservative assumption FCF neutral-to-negative, consistent with sub-1.0x cash band"
   - "Post-merger share count: not fabricated; dilution shown as sensitivity across +50%/+100%/+168% issuance"
-  - "UA FII+DII<3%: unresolved -> UA NOT applied (conservative)"
   - "Oilmax standalone earnings: not anchored -> merger accretion shown as labelled sensitivity only"
   - "FY27 margin: no guidance -> base holds FY26 12.43% flat"
+  - "E&P/Duarmara NAV: NOT FOUND -> carried as unpriced optionality in SOTP, not in anchored fair value"
 som_cagr_crosscheck: "consistent — base revenue CAGR 20% cut below SOM-implied 28.2% for the capacity-funding gap"
-one_line_thesis: "AVOID ASIANENE at Rs340: 20-25% EPS growth to Rs19.6-22.2 by FY29 against a disciplined 13.2x four-pillar destination (ROCE 13.71% STAGNANT, cash 0.85x, EM 28, 20x cap) gives Rs249 base = -10% CAGR; Hurdle STOP, promoter CONCERN, reverse merger dilutive at disclosed valuation; re-engage only Rs75-93 or on audited Oilmax accretion."
+one_line_thesis: "AVOID ASIANENE at Rs340: even with UA 1.25x and a +2x duration premium (Vedanta 4.75yr + Mahanadi 7yr, 3.56x order cover) lifting the four-pillar destination to 19.1x (ROCE 13.71% STAGNANT, cash 0.85x, EM 28, 20x cap), base FY29 fair value Rs356 = +1.5% CAGR; current PE ~30x sits above the entire achievable destination (<=20x cap) so Hurdle is structurally STOP, and promoter CONCERN independently forces AVOID; re-engage only Rs86-108 or on audited Oilmax accretion."

@@ -1,0 +1,49 @@
+stage: B01-gate0
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no prospectus", "no investor presentation", "no broker research", "no original announcement/shareholding filing PDFs (operator-supplied SHP screenshot and 6m update used instead)"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Core score 27/100 -> AVOID tier. Deal-breaker #6 independently triggers AVOID: Net Debt/EBITDA 4.10x (>3x) AND EBIT/Interest 2.37x (<3x), FY26. Historical depressors: FY21 PAT Rs63.62cr driven by a Rs53.09cr one-off Other Income item (likely NCLT-linked bargain-purchase gain on the distressed HDPP facility HPBL took over as formerly Gopala Polyplast Ltd), not operating profit; FY22-FY24 net losses during KP Woven subsidiary consolidation (acquired Feb 2022) and job-work-model phase; cumulative CFO negative every year FY21-FY25, turning positive only in FY26 (+Rs16.25cr). FY25-FY26 show a genuine operating turnaround (direct-export model from FY25, EBITDA margin 5.05%->9.55%) but leverage and cash-conversion deal-breakers are current-state facts, not solely historical."
+  - type: FLAG-GATE0
+    reason: "Promoter pledge (E3) and Contingent Liabilities/Net Worth (E4) both NOT FOUND in any provided source; pledge status unverified against the backdrop of an unexplained Company Secretary resignation Jan 2026 (operator 6m update). Deal-breaker #5 (pledge>15%) NOT confirmed, only unverified."
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 10, B: 1, C: 8, D: 3, E: 5}
+core_score: 27
+moat_score: 21
+grand_total: 48
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - id: 2
+    rule: "Block B <8 -> max GOOD"
+    value: "Block B = 1/20"
+    superseded_by: 6
+  - id: 4
+    rule: "cumulative CFO/PAT <0.50 -> max AVERAGE"
+    value: "-0.888 (cumulative CFO -Rs79.95cr / cumulative PAT Rs90.00cr, FY21-FY26)"
+    superseded_by: 6
+  - id: 6
+    rule: "ND/EBITDA >3x AND IC <3x -> AVOID"
+    value: "Net Debt/EBITDA 4.10x AND EBIT/Interest 2.37x, FY26 (binding override)"
+    binding: true
+  - id: 8
+    rule: "PAT negative in any of last 3 years -> max AVERAGE"
+    value: "FY24 PAT -Rs1.19cr (owners); FY25 +Rs9.63cr, FY26 +Rs23.20cr"
+    superseded_by: 6
+history_downgrade: false
+data_notes:
+  - "FY21 revenue Rs15.87cr is a pre-KP-Woven-consolidation (acquired Feb 2022) standalone-scale base; all CAGRs using FY21 as the start year are base-effect inflated. Supplementary non-scored windows given in report: FY23->FY26 revenue CAGR 18.7% (vs formula-mandated FY21->FY26 105.9% used for C1 scoring)."
+  - "PAT trajectory FY24->FY26 is a genuine loss-to-profit swing, FY24 to FY26 (-Rs1.19cr -> +Rs23.20cr); no formal CAGR computed on that window per edge rules (FY24 endpoint negative -> N/M)."
+  - "ROCE, Net Debt/EBITDA, Interest Coverage and Current Ratio use operating EBIT/EBITDA excluding Other Income; this basis was chosen because it is the only one that reconciles exactly to audited results (results PDF p.7/p.9/p.12) and to Infomerics rating-report EBITDA figures (rating PDF p.3, p.9)."
+  - "Capex for FY21-FY23 not available in any provided source (no earlier Annual Reports supplied); screener Cash-from-Investing-Activity used as a stated capex proxy for those 3 years only, flagged as likely to modestly overstate FCF."
+  - "Current Liabilities / Trade Payables (needed for ROCE capital employed and WC Days) recovered only for FY24-FY26 via AR p.127/p.130 and results PDF p.9/p.12; FY21-FY23 versions NOT FOUND, not scored."
+  - "M9 Brand test used gross-margin proxy (Revenue - Material Cost) / Revenue for HCP and 3 peers, FY26."
+  - "M5 Scale & Dominance and M2 Cost Advantage used a limited 3-peer set (COMSYN, EMMBI, KANPRPLA) from the run's screening folder; broader unlisted/import competition (China/Vietnam/Bangladesh, rating PDF p.7) is not covered -> marked PEER DATA - limited set."
+  - "M11 Network Effects two-window test unreliable due to FY21 base distortion; scored conservatively (1) per instruction rather than mechanically applying the distorted latest-vs-prior-3yr comparison."
+  - "E2 promoter-holding-change-over-3-years used Jun23 (89.00%) as nearest available proxy for the 3-year-back anchor; exact Mar23 figure not in the provided SHP table."
+block_b_trend: "improving - CFO swung from -Rs18.53cr (FY25) to +Rs16.25cr (FY26), first positive operating cash flow year in the FY21-26 window, but cumulative CFO remains -Rs79.95cr across the 6 years (5 of 6 years CFO-negative despite 4 of 6 years nominally profitable)"

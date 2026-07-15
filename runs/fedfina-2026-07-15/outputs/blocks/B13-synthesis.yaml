@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+phase: "phase-1 lite (evidence)"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4
+flags_active: ["FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT-PROVISIONAL"]
+promoter_posture: "CAUTION (surfaced, not flag-escalated; B08 not CONCERN/AVOID)"
+confidence_delta: {numerical: 100, redflag: 63, framework: 96, peer: 100, overall: 63}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Bank parented gold lender mid credit repair"
+falsification_metric: "Q4 FY26 credit cost above 1.1% of average assets"
+monitorables_count: 8
+b09_status: partial
+publish_candidate: true
+publish_candidate_summary: "Gold NBFC headline AUM growth is mostly gold price not tonnage: Fedfina 52% YoY gold AUM on flat 11.2t tonnage; Manappuram 2.8% YoY tonnage on 22-23% AUM. Evergreen/myth-busting slot, flagged only."
+files_written: ["outputs/final/business-narrative.md", "outputs/final/gate-recommendation.md", "outputs/final/verifier-summary.md"]
+notion_save: {performed: false, reason: "phase-1 lite; deferred to phase 3"}

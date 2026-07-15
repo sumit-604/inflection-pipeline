@@ -1,0 +1,40 @@
+stage: B07-emoat
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no investor presentation (structural, manifest presentation: 0)"
+  - "no earnings-call transcripts (structural, no_concall_mode: true); F2 test run on AR/rating capex-completion evidence in place of a concall promise-delivery record, cross-referenced against B05's own degraded promise_delivery table"
+  - "only one Annual Report (FY25) available; no multi-year cross-AR execution-moat comparison possible, only a single delivered-capex data point"
+  - "FY26 capacity utilisation % NOT FOUND in any provided source (only FY25's 31% baseline)"
+  - "Saudi Arabia JV (Bopp Woven Bags, Saeed Ghodran Group, MOU signed 2 Jul 2024, AR p.8) has zero status update in any FY26 source; treated as optionality only, not scored"
+  - "per-tonne/per-bag realisation and export customer count/geographic mix NOT FOUND (carried from B04), blocking a true capex-embedded-growth revenue computation"
+flags:
+  - type: FLAG-EMOAT
+    reason: "The Saudi Arabia Bopp Woven Bags JV (MOU signed 2 Jul 2024, AR p.8) shows the identical disclosure pattern as the Malaysia JV that was announced as a growth opportunity in the same FY25 AR (p.57) and then silently dissolved during FY26 with zero management explanation (B05 red_flags). Any future company commentary on the Saudi JV should be treated as PR, not moat evidence, until a signed definitive agreement or committed capex appears in a primary filing."
+em_score: 12.0
+em_classification: "MODEST"
+active_categories:
+  - {id: "C2", name: "Customer concentration improving (job-work to direct export)", strength: "Strong", evidence_type: "documented", time_to_materialise: "near-term, already in progress"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented+inference", time_to_materialise: "near-term, partially visible"}
+  - {id: "F2", name: "Execution moat (capex delivered on schedule)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "near/medium-term"}
+evidence_mix: {documented: 12, claim: 7, inference: 3}
+catalysts_12m:
+  - {catalyst: "Direct-export/direct-sales revenue mix continuing to displace job-work, holding at or above FY25's 53.70% export share", window: "12m", evidence_type: "documented", anchor: "RATING.txt p.6; B05 trigger 1"}
+  - {catalyst: "FY26 capacity utilisation % finally disclosed (FY25 base was 31% of the 24,300 MTPA post-expansion capacity)", window: "12m", evidence_type: "documented (pending)", anchor: "RATING.txt p.5; B05 trigger 2"}
+  - {catalyst: "Saudi Arabia Bopp Woven Bags JV — signed definitive agreement/committed capex, or continued silence matching the Malaysia-JV precedent", window: "12-24m", evidence_type: "documented (MOU) / optionality on delivery", anchor: "AR p.8"}
+  - {catalyst: "EBITDA margin sustaining above the rating agency's 7-9% band", window: "near-term", evidence_type: "documented", anchor: "RATING.txt p.3, p.7; B05 trigger 4"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Saudi Arabia JV (Bopp/Jumbo Woven Bags, Saeed Ghodran Group) — MOU only, silent 20 months", converting_evidence: "Signed definitive JV/shareholders' agreement with disclosed capex commitment and equity stake", first_appears: "Exchange Reg. 30 filing or next AR (FY26) Directors' Report", window: "12-24m, discounted for the Malaysia-JV silent-non-delivery precedent"}
+  - {optionality: "Capacity utilisation ramp beyond FY25's 31% base", converting_evidence: "Disclosed utilisation % for FY26 or any interim period", first_appears: "Next AR MD&A, or a quarterly/exchange disclosure", window: "12m"}
+  - {optionality: "75% EU / 72% US FIBC import-share claim (unnamed 'industry expert' source, AR p.56)", converting_evidence: "Named, verifiable source, or peer-concall corroboration per B05 peer_questions", first_appears: "Peer disclosures or a named trade-body citation", window: "NOT FOUND"}
+  - {optionality: "\"Digitalizing operations and enhancing transparency across the value chain\" (AR p.5)", converting_evidence: "Disclosed digital revenue %, named system/platform, or a measurable process metric", first_appears: "Next AR MD&A", window: "NOT FOUND"}
+  - {optionality: "Sustainable manufacturing / ESG language (AR p.5), BRSR not applicable to the company", converting_evidence: "Renewables %, formal ESG rating, SBTi target, or ZLD disclosure", first_appears: "Next AR MD&A (no BRSR trail available)", window: "NOT FOUND"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0's binding leverage deal-breaker (ND/EBITDA 4.10x AND IC 2.37x, FY26) floors the combined output at AVOID regardless of forward moat strength, and independently the Emerging Moat score of 12.0 falls far short of the EXPANSION threshold (40) needed for a HIGH POTENTIAL or TURNAROUND transition setup."
+top_moat_risks:
+  - "The entire forward case concentrates in one transition (job-work to direct export, C2) financed by rising short-term debt against a company that has already tripped a binding Gate 0 leverage deal-breaker; a working-capital or margin shock hits both problems simultaneously"
+  - "Capacity utilisation has been disclosed only once (31% FY25) against the newly expanded 24,300 MTPA base; if the FY26 figure (undisclosed everywhere) is stalled, the delivered F2 capex-completion evidence does not convert into the embedded volume growth the thesis needs"
+  - "The Saudi Arabia Bopp Woven Bags JV mirrors the disclosure pattern of the now-dissolved Malaysia JV (announced with fanfare, no follow-up); combined with the credibility grade C and repeat SEBI/BSE disclosure lapse, any further international-expansion claim should be treated as unconfirmed until a committed-capex or signed-definitive-agreement filing appears"

@@ -1,0 +1,50 @@
+stage: B11-valuation
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Credit rating rationale (NOT FOUND) — blocks formal 0.65x structural Pillar 2 confirmation; conservative 0.80x used"
+  - "FY26 receivables ageing note (NOT FOUND) — blocks structural-vs-growth cash resolution; INDETERMINATE held"
+  - "FY26 audited Ind AS 108 segment revenue/profit note (NOT FOUND) — SOTP segment splits are OPERATOR_CONTEXT secondary estimates"
+  - "Jul-2026 fund-raise terms (post-run-date) — dilution not modelled; EPS on current 7.19 Cr shares"
+flags:
+  - "FLAG-CASH (HIGH): cash multiplier APPLIED = 0.80x, growth offset DENIED (INDETERMINATE); disposition caps at PROCEED WITH CAVEATS"
+  - "FLAG-ONE-TIME-ITEM (HIGH): FY26 PAT ₹1.90 Cr is entirely the ₹17.72 Cr building-sale gain; continuing-ops PAT −₹14.96 Cr; operating base loss-making"
+  - "FLAG-SHARED-CATALYST (HIGH): revenue+margin+growth-premium all hinge on Distribution scaling profitably, partly one-time-aided"
+  - "FLAG-GOODWILL-IMPAIRMENT-RISK (HIGH): goodwill ₹174.25 Cr = 61% of net worth; impairment would right-size equity below SOTP base"
+  - "FLAG-GOVERNANCE (MEDIUM-HIGH): auditor withdrawal + CARO loan default + 7-entity exception; fed into RRM r=16% and 15% holdco discount"
+  - "FLAG-PE-UNRELIABLE: earnings-PE dual-track is a cross-check only on a 0.45% net / negative operating margin; SOTP is primary"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 6.5, mid: 7.3, high: 8.0, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 12.0, mid: 13.0, high: 14.0}
+  divergence_pct: 44
+  governing_track: "SOTP primary (PE unreliable at 0.45% net / negative operating margin); of the two PE tracks Track 1 RRM (7.3x, more conservative) is the cross-check anchor"
+pillar_detail:
+  roce_used: 3.32
+  roce_base: 3.32
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.80
+  structural_or_growth: "INDETERMINATE"
+  growth_offset: 0
+  growth_premium: 3
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: true
+  sector_cap_used: 45
+hurdle_ratio: {base: 0.23, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 9, base: 30, bull: 61}
+  track2: {bear: 17, base: 54, bull: 107}
+expected_cagr_prob_weighted: -10.9
+entry_range: {low: 71, high: 89}
+mos_price: 71
+upside_downside_ratio: 0.4
+decision: "AVOID (on valuation; WATCHLIST at entry ₹71-89; pipeline disposition caps at PROCEED WITH CAVEATS)"
+unresolved_inputs_used:
+  - "Pillar 2 cash multiplier: INDETERMINATE -> conservative 0.80x band assigned (negative 5yr cumulative CFO/PAT -0.29), growth offset DENIED; 0.65x structural not invoked because rating rationale is NOT FOUND"
+  - "SOTP segment revenue/profit splits: FY26 audited Ind AS 108 note NOT FOUND -> OPERATOR_CONTEXT secondary estimates used (Distribution ~254 Cr / Rental ~160 Cr / Capital <10 Cr)"
+  - "Lease liability in equity bridge: 223.03 Cr (B10 balance-sheet total) used as conservative debt-like claim; sensitivity to 192.33 Cr noted"
+som_cagr_crosscheck: "consistent (base revenue CAGR 20% sits below the 26% ARR-target SOM-implied CAGR and the 40.8% historical 3yr CAGR)"
+one_line_thesis: "AURUM at ₹240 prices a barely-profitable hybrid (FY26 PAT ₹1.90 Cr, -₹14.96 Cr ex the one-time building-sale gain) at ~3.9x EV/revenue; SOTP fair value ₹85 today / ₹173 Year-3 base at a 13.0x four-pillar destination PE = -10.9% expected CAGR, so AVOID on valuation, WATCHLIST at ₹71-89 once Distribution prints an operating profit ex one-times. Cash quality INDETERMINATE (conservative 0.80x)."

@@ -1,17 +1,19 @@
 stage: confidence-delta
 company: AURUM
 run_date: 2026-07-14
-scope: phase-1
+scope: phase-3-final
 confidence_delta:
-  numerical_acceptance: 95      # B12a: 47 numbers checked, 0 CRITICAL/0 MAJOR, 2 MINOR (already-disclosed limitations)
-  redflag_coverage: 81          # B12b: 16 independent flags, 11 caught + 4 partial + 1 missed; strict 69% but coverage 81%
-  framework_adherence: 96       # B12c PHASE-1 SCOPE ONLY (Gate 0 + Emerging Moat): 49 rules, 47 pass, 0 CRIT/0 MAJ, 4 MINOR
-  peer_utilisation: 100         # B12d: 4/4 peers used substantively (peer_utilisation 1.0)
+  numerical_acceptance: 95      # B12a: 47 numbers, 0 CRIT/0 MAJ, 2 MINOR
+  redflag_coverage: 81          # B12b: 16 flags, 11 caught + 4 partial + 1 missed
+  framework_adherence: 98       # B12c combined: phase-1 Gate0+EM 47/49 (96%) + phase-3 valuation 45/45 (100%) = 92/94 = 97.9%
+  peer_utilisation: 100         # B12d: 4/4 peers substantive
   overall: 81                   # min of the four -> redflag-bound
 band: "75-89 normal (note specifics)"
-rework_triggered: false         # no verifier CRITICAL; no acceptance_rate below 60%
-valuation_framework_adherence: pending-phase-3   # verifier C valuation half (B10/B11) deferred to phase 3
+rework_triggered: false         # no verifier CRITICAL anywhere; no acceptance_rate below 60%
+components:
+  framework_phase1_gate0_em: 96
+  framework_phase3_valuation: 100
 notes:
-  - "Binding component is redflag_coverage 81% (Verifier B). The one MISSED and one UNDER-WEIGHTED item both bear on profitability QUALITY: Integrow sub->associate deconsolidation (1-Jul-2025) removes a loss-maker; the maiden Q3 PAT-positive quarter rode INR 9.72 Cr of other income (HelloWorld lease-liability reversal), an operating loss ex that. Carry both into the gate recommendation."
-  - "No REWORK: numerical 95, framework 96, peer_util 100 all high; the 3 Verifier D MAJORs are peer-citation attribution errors that change no verdict; the 2 Verifier A MINORs are already-disclosed anchor gaps."
-  - "Framework adherence is the phase-1 (Gate 0 + EM) portion only; the valuation-adherence component is computed in phase 3."
+  - "Binding component is redflag_coverage 81% (Verifier B), unchanged from phase 1. Overall 81, band 75-89 normal, no downgrade."
+  - "Phase-3 valuation adherence 100% (45/45 rules): destination PE fully Section-1B-derived, FTTCP ROCE STAGNANT applied as sole Pillar 1 authority, cash 0.80x consistent with INDETERMINATE, UA per Amendment 3 (all three qualifiers evidenced), single-credit honored, Hurdle STOP correct, SOTP primary correct, Role 2 AVOID + sizing correct. Recomputed PE and decision CONCUR."
+  - "No REWORK: highest-severity verifier findings are 3 MINOR presentational items (phase 3) and the phase-1 MINOR set."

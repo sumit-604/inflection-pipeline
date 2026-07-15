@@ -1,0 +1,19 @@
+stage: B12c-valuation
+company: "AURUM"
+run_date: "2026-07-14"
+model: claude-opus-4-8
+status: complete
+valuation:
+  rules_checked: 45
+  fails: []
+framework_adherence_pct: 100
+recomputed_destination_pe: ""   # concur — Track2 12.95x->13.0x (12.0-14.0x); Track1 RRM 7.3x (6.5-8.0x); matches B11
+recomputed_decision: ""          # concur — AVOID; Small ceiling; Tier A; entry Rs71-89, MoS Rs71; matches B14
+findings:
+  - {severity: "MINOR", location: "B11 UA qualifier 3 / B10 ua_qualifiers", note: "FII+DII<3% rests on FII 0.13% + no separate DII row (DII NOT FOUND, embedded in Public); test genuinely satisfied, transparently handled"}
+  - {severity: "MINOR", location: "B11 Pillar 1", note: "'floored at 9x -> 9.2x' phrasing muddled; 9.16 clears floor and rounds to 9.2; value correct, presentational only"}
+  - {severity: "MINOR", location: "B11 dual-track governance", note: "entry zone set by SOTP (primary) not the more-conservative PE track; correctly justified by SOTP-primary instruction; both PE tracks concur expensive"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100    # rules passed 45 / rules checked 45

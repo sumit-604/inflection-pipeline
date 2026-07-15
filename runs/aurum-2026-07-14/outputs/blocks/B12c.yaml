@@ -25,3 +25,15 @@ critical_count: 0
 major_count: 0
 minor_count: 4
 acceptance_rate: 96            # rules passed (47) / rules checked (49), phase-1 scope
+
+# ---- PHASE 3 VALUATION-ADHERENCE HALF (merged 2026-07-14) ----
+valuation_phase3:
+  rules_checked: 45
+  passed: 45
+  framework_adherence_pct: 100
+  critical_count: 0
+  major_count: 0
+  minor_count: 3
+  recomputed_destination_pe: "concur: Track2 13.0x (12-14x), Track1 RRM 7.3x"
+  recomputed_decision: "concur: AVOID; entry 71-89; MoS 71; Small; Tier A"
+  note: "All 45 valuation + Role 2 decision/sizing rules pass. See B12c-valuation.yaml."

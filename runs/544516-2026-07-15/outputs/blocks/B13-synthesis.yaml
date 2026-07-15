@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "544516"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH"]
+flag_cash_determination: "STRUCTURAL"
+flag_promoter_handling: "B08 CAUTION (below CONCERN/AVOID inline threshold); governance surfaced proportionately, not as headline flag"
+confidence_delta: {numerical: 86.7, redflag: 74, framework: 100, peer: 100, overall: 74}
+confidence_band: "60-74 (holds PROCEED WITH FLAGS at the PROCEED-family floor; no REWORK)"
+valuation_decision: ""              # excluded — Phase 1 lite, valuation deferred to Phase 3
+entry_range: {low: 0, high: 0}     # excluded — Phase 1 lite
+headline: "Rail components maker grows, cash conversion worsens"
+falsification_metric: "H1 FY27 standalone OCF negative again with >6-month receivables share above 23.4% would confirm STRUCTURAL and remove the one downgrade condition"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Issuer blamed a 490bps EBITDA margin fall on sector-wide steel inflation while peer FRONTSP expanded margin 533bps in the identical steel window; clean checkable example of testing a sector-shock narrative against peer disclosure"
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save: {mode: "not-run-phase-1-lite", drive_link: "NOT PROVIDED"}

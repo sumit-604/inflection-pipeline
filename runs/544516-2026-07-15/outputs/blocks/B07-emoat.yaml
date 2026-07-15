@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "True post-listing FY26 statutory Annual Report (Directors' Report, full MGT-7 shareholding, FY26 contingent liabilities note): ABSENT — IPO Prospectus (16-Sep-2025) used as ANNUAL_REPORT per injected input, consistent with B01"
+  - "Janatics MOU, BBBS JV filing detail, CSR/RoC penalty orders, and Q1 FY27 business update sourced from an operator-provided secondary summary, not primary Reg 30 filing PDFs — provenance flagged and carried into evidence-quality weighting (B2, H2 anchors)"
+  - "No independent third-party equity research beyond the pre-IPO Minerva Capital 'Subscribe' note (08-Sep-2025, a sell-side/RA document) supplied; used only for specific factual disclosures (repeat-customer %, attrition rates, order-book segment split) not otherwise available"
+  - "Global manufacturer count and specific qualification-timeline data for A1 (rare manufacturing capability) not disclosed — certifications list is documented but competitive benchmarking is not"
+  - "Fixed-asset gross block / capex-specific asset turnover not disclosed with enough granularity to derive a reliable 2C figure independent of management's own stated multiplier — both derivation methods shown transparently in Section 2C, flagged as directional only"
+flags:
+  - type: FLAG-EMOAT
+    reason: "F2 (execution moat) scored a documented NEGATIVE, not a positive: IPO capex only ~21% (~Rs2.87cr of Rs13.68cr) deployed by FY26-end; 14-acre facility construction not started despite a Jan-2026/end-Dec-2026 timeline promised on the Nov-2025 call; Rs1,000cr order-book target for Mar-2026 missed by ~53% (actual Rs469cr); FY27 revenue guidance cut from Rs550cr+ to Rs500cr before FY27 began. This directly undermines confidence in the timelines attached to the four Moderate-strength emerging categories (A1, B2, H2, R1)."
+  - type: FLAG-EMOAT
+    reason: "Defense/aerospace narrative runs well ahead of evidenced execution: presentation revenue-mix bucket 'Aeronautical, defense and others' (28.4% of FY26 revenue) bundles non-government private-rail revenue with true defense/aerospace revenue; the more reliable order-book-based defense/aerospace share is ~6% (Rs29cr of Rs469cr), against a repeatedly-reasserted '50:50 within two years' target with a documented repeated-evasion pattern across both concalls (per B05)."
+  - type: FLAG-EMOAT
+    reason: "BBBS JV incorporation has slipped at least twice: promised 'within two weeks' on the 3-Jun-2026 call; per the operator's Q1 FY27 summary (14-Jul-2026), still only 'progressing as planned' with formal announcement 'expected during July 2026.' This is the single largest committed-capital item (Rs25cr) underpinning the H2 Moderate score and its own timeline is not being met."
+  - type: FLAG-EMOAT
+    reason: "Working capital / cash conversion signals conflict across sources and, on the more rigorous B01/B05 basis, are deteriorating, not improving: presentation shows debtor days improving 219->195 (FY25->FY26), while B01's COGS-basis WC-days calculation shows +26.9 days worsening (238.07->264.99) and B05's standalone OCF worsened from -Rs2.87cr (FY25) to -Rs57.45cr (FY26). G2 scored None/negative in this scan, consistent with B05's 'central risk' framing; not treated as an emerging strength despite the presentation's more favorable framing."
+em_score: 14.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now, scaling uncertain"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "FY27-28"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "mid-FY27 target, already once-slipped"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Moderate", evidence_type: "claim", time_to_materialise: "FY27"}
+evidence_mix: {documented: 5, claim: 9, inference: 0}
+completionist_recount: "📄 recount performed: 5 documented items across 5 categories (A1 defense/rail certifications AR p.8076-8089; B2 Janatics MOU + certs, operator summary + AR; C1 repeat-customer % data, Minerva IPO note; F1 headcount growth, Inv. Pres. slide 3; H2 BBBS JV board approval + Rs25cr commitment, Inv. Pres. slide 18 / Jun-2026 call). Only A1, B2 and H2 reach Moderate strength on documented evidence; C1 and F1 remain Weak because the documented data itself is noisy or offset by a disclosed negative (concentration, attrition). 4 categories total scored Strong/Moderate (A1, B2, H2, R1) — within the realistic 3-6 base rate, not an inflated scan."
+catalysts_12m:
+  - {catalyst: "BBBS JV formal incorporation and first bookable revenue", window: "already promised 'within two weeks' as of 3-Jun-2026; still pending per 14-Jul-2026 Q1 FY27 update — watch for a third slip", evidence_type: "claim", anchor: "Jun-2026 call; operator Q1 FY27 business update summary"}
+  - {catalyst: "Janatics door-systems order-win filings against the Rs95cr FY27-28 target", window: "FY27-28", evidence_type: "documented (MOU signed) for the commitment, claim for order conversion", anchor: "operator announcements summary, MOU dated 23-Jan-2026"}
+  - {catalyst: "14-acre facility construction start and resolution of the China machinery export-control delay", window: "FY27", evidence_type: "claim", anchor: "Jun-2026 call"}
+  - {catalyst: "First coach-refurbishment order booking against the Rs100cr FY27 target", window: "FY27", evidence_type: "claim", anchor: "Jun-2026 call"}
+  - {catalyst: "Defense/aerospace order-book share test vs. the '50:50 within two years' target", window: "12-24 months (target originally due ~H1 FY28)", evidence_type: "claim", anchor: "H1 FY26 call, reasserted without a bridging plan on the Jun-2026 call; B05 repeated_evasions"}
+  - {catalyst: "HAL/AMCA simulator pipeline conversion (Rs60-70cr) beyond current Rs29cr defense/aerospace order book", window: "FY27", evidence_type: "claim", anchor: "Jun-2026 call"}
+capex_embedded_growth_pct: 40.7
+optionality_register:
+  - {optionality: "Kavach-adjacent integrated train security system", converting_evidence: "RDSO/Railway Board trial approval or formal certification", first_appears: "exchange filing / concall", window: "9-24 months, repeatedly shifted; deflected twice per B05"}
+  - {optionality: "Vacuum toilet systems commercialization", converting_evidence: "signed order/contract", first_appears: "exchange filing", window: "unclear — dropped from discussion since Nov-2025 call"}
+  - {optionality: "Anti-drone laser system / autonomous drone platform (beyond JV structure)", converting_evidence: "completed prototype trial + Army/DRDO deployment order", first_appears: "concall / exchange filing", window: "1-2 years (management's own estimate)"}
+  - {optionality: "Electroluminescent dynamic display boards (new subsidiary)", converting_evidence: "technology disclosure + first signed order", first_appears: "exchange filing / AR note", window: "FY27, unquantified"}
+  - {optionality: "Channel-partner asset-light scaling model", converting_evidence: "disclosed partner count and revenue/margin contribution by segment", first_appears: "AR segment note or investor presentation", window: "FY27-28"}
+  - {optionality: "Coach refurbishment programme capture", converting_evidence: "signed/announced refurbishment orders under the Rs26,000cr programme", first_appears: "exchange filing (Reg 30 order win)", window: "FY27, zero orders booked as of Jun-2026 call"}
+  - {optionality: "Foreign OEM defense collaboration (unnamed)", converting_evidence: "named partner + signed agreement disclosed", first_appears: "exchange filing / concall", window: "unclear — vague on both concalls to date"}
+  - {optionality: "'2 new railway products per year' platform cadence", converting_evidence: "disclosed launch with revenue attribution, sustained across multiple years", first_appears: "investor presentation / AR", window: "ongoing, first checkpoint FY27"}
+  - {optionality: "Defense/aerospace 50:50 order-book mix target", converting_evidence: "order book showing defense/aerospace materially above current ~6% share", first_appears: "concall / exchange filing", window: "originally 'within two years' of H1 FY26 call (~H1 FY28); no bridging plan disclosed"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 backward AVERAGE (core_score 47, moat_score 15/60) paired with a forward MODEST MOAT DEVELOPMENT score (14.5, four Moderate categories only) falls one tier short of the STRENGTHENING/EXPANSION threshold this operation requires to upgrade an AVERAGE backward score to HIGH POTENTIAL; F2 execution moat scored a documented negative, the key disqualifier."
+top_moat_risks:
+  - "F2 execution moat is a documented negative (IPO capex 21% deployed, facility construction not started, order-book and revenue guidance both walked back) — undermines confidence in every Moderate-strength category's stated timeline"
+  - "BBBS JV incorporation (the largest committed-capital item, Rs25cr) has already slipped once past its own promised date and remains unincorporated as of the most recent operator update"
+  - "Defense/aerospace narrative (H2, R1) is running far ahead of actual order-book evidence (~6% share vs. a repeatedly-reasserted 50% target), with a documented repeated-evasion pattern across two consecutive concalls"
+  - "Cash conversion crisis (standalone OCF -Rs57.45cr FY26, worsening) could force equity dilution or curtail the very capex/JV investments underpinning the emerging-moat categories scored here"
+  - "China export-control machinery delay is an unresolved supply-chain dependency, not a China+1 beneficiary tailwind — direct contradiction of the E2 category this scan otherwise looks for"

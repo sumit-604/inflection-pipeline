@@ -1,0 +1,53 @@
+stage: B06-peers
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Muthoot Finance named in B05 Q1 as a check_peer but no Muthoot transcript was provided; Q1 verdict capped at PARTIALLY VERIFIED on single-peer (Manappuram) coverage"
+  - "Fedfina's own disclosed LTV figure not available in the injected evidence set, so Q2's direct LTV-conservatism comparison could not be fully tested (mix-effect mechanism only)"
+flags:
+  - "Manappuram's disclosed Y-o-Y tonnage growth (2.8%, Feb 2026 call) is roughly a quarter of the 10-12% CAGR figure Fedfina cited to justify AUM growth despite a flat branch count"
+  - "No peer (SBFC, Five-Star, MAS Financial) reports elevated Maharashtra or Tamil Nadu MSME/LAP stress; each names a different stress geography (Karnataka, Rajasthan/MP, Andhra), supporting Fedfina's company-specific framing but leaving the state-level narrative uncorroborated by any independent source"
+  - "Fedfina's cost-to-income (~56-57%) sits roughly 15-25 points above three independently quantified peers (SBFC 35%, Five-Star 31-41%, MAS Financial 36.6%)"
+peers_provided: 4
+verified:
+  - {claim: "Sub-Rs5L/Rs5-7L ticket LAP stress is consistent with MFI-sector spillover", peers: ["Five-Star Business Finance", "SBFC", "MAS Financial"], anchor_count: 4}
+  - {claim: "Fedfina's cost-to-income (~56-57%) is materially above peer levels", peers: ["SBFC", "Five-Star Business Finance", "MAS Financial"], anchor_count: 3}
+partially_verified:
+  - {claim: "Muthoot/Manappuram ~20% FY26 gold AUM growth benchmark vs Fedfina's 25% guidance/52% Q3 print", peers: ["Manappuram"]}
+  - {claim: "Conservative LTV / mix-driven (not competitive) yield compression logic", peers: ["Manappuram"]}
+  - {claim: "MT LAP/LAP yield compression across the industry", peers: ["SBFC"]}
+  - {claim: "Comparable FY26 branch-expansion capex cycle to Fedfina's 100-150 new gold branches", peers: ["SBFC", "Five-Star Business Finance", "MAS Financial"]}
+  - {claim: "DA-to-co-lending accounting shift from new RBI guidelines effective Jan 1 2026 affecting core yield", peers: ["MAS Financial", "SBFC"]}
+contradicted:
+  - {claim: "Peers report elevated Maharashtra/Tamil Nadu MSME-LAP stress matching Fedfina's framing", contradicting_peer: "Five-Star Business Finance / SBFC / MAS Financial", quote_anchor: "Five-Star Nov 2025: 'Tamil Nadu's NPA is sub-1.5%... performing very well'; SBFC Nov 2025: TN portfolio 'not very large,' stress named as Karnataka; MAS Financial Feb 2026: CV stress named as Rajasthan/MP"}
+  - {claim: "Industry gold tonnage growth runs 10-15%, comparable to Manappuram's disclosed tonnage CAGR", contradicting_peer: "Manappuram", quote_anchor: "Manappuram Feb 2026: 'tonnage was 58.9 up by 3.2% Q-o-Q and up by 2.8% Y-o-Y'"}
+unverifiable: []
+peer_coverage_map:
+  - {peer: "Manappuram", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Yield 22.2%->20.7%, LTV 57%, tonnage growth near-zero vs AUM +12%"}
+  - {peer: "Manappuram", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "20-25% CAGR gold-AUM guidance; branch count noted static by analyst"}
+  - {peer: "Manappuram", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "AUM +22-23% Y-o-Y, tonnage +2.8% Y-o-Y (key Q9 anchor)"}
+  - {peer: "Manappuram", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Tonnage +3.82 tons in quarter, yield guided to stabilize 17.5-18%"}
+  - {peer: "MAS Financial", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Opex-to-assets 2.84%, distribution-point staffing cost driver"}
+  - {peer: "MAS Financial", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "New RBI co-lending guideline confirmed live, rate/fee repricing in progress"}
+  - {peer: "MAS Financial", quarter: "Q3 FY26 (Feb 2026_2)", usage: "SUBSTANTIVE", contribution: "Cost-to-income 36.6% (key Q5 anchor); CV stress named Rajasthan/MP not MH/TN (key Q4 anchor)"}
+  - {peer: "MAS Financial", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Confirms resolution of prior MFI-linked NPA flow-through"}
+  - {peer: "SBFC", quarter: "Q1 FY26 (Jul 2025)", usage: "SUBSTANTIVE", contribution: "Gold branch co-location economics; 'hand loan' industry blind spot admission"}
+  - {peer: "SBFC", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Sub-7L LAP pullback (Q3 anchor); Karnataka-specific stress not TN/MH (Q4 anchor); no DA/co-lending income upfronting (Q8)"}
+  - {peer: "SBFC", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE", contribution: "Cost-to-income 35% (key Q5 anchor); yield -23bps on risk-driven LAP cuts"}
+  - {peer: "Five-Star Business Finance", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE", contribution: "Explicit MFI-overlap spillover mechanism (key Q3 anchor); cost-to-income 33%/41%"}
+  - {peer: "Five-Star Business Finance", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "TN NPA sub-1.5%; Maharashtra called a turnaround/growth state (key Q4 anchor)"}
+  - {peer: "Five-Star Business Finance", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Continued MFI-overlap discussion at small-ticket end"}
+  - {peer: "Five-Star Business Finance", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Opex-to-AUM 7-7.25%; Maharashtra branch push 40->70-80 (Q7)"}
+industry_cross_read:
+  demand: "Bifurcated: gold-loan demand structurally supported by unsecured/MFI crackdown but largely price/mix-driven not volume-driven for peers (Manappuram customer count flat); secured MSME/LAP peers show intact structural demand but are deliberately suppressing disbursal growth via underwriting tightening on MFI-linked overleverage. No peer approaches Fedfina's 52% Y-o-Y gold AUM print."
+  pricing_inputs: "Gold-loan yields compressing sector-wide as leading players cut rates for larger, safer tickets (Manappuram 22%->18% across the year), a genuine competitive dynamic alongside the mix effect; secured MSME/LAP yield moves are smaller and mostly risk-driven (SBFC) rather than competitive."
+  capex_cycle: "Industry-wide but modest capacity build among secured-lending peers (SBFC, Five-Star, MAS Financial each adding 20-90 branches/year on unit-economics thresholds); Manappuram is not branch-expanding (analyst-noted static branch count). Fedfina's single-year, single-product 100-150 branch program is materially larger and more concentrated than any peer's FY26 expansion — an aggressive outlier relative to a modest industry-wide trend, not a matched capacity race."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "State-level political/ordinance risk (SBFC: Karnataka ordinance 'rudely shook up' a 'superb portfolio' in two months, now treated as a structural risk category alongside credit risk)"
+  - "Climate risk as an explicitly named, monitored risk category (MAS Financial)"
+  - "RBI co-lending guideline compliance uncertainty on rate-of-interest and fee-structure setting, flagged as ongoing 'work in progress' for both banks and NBFCs (MAS Financial)"
+  - "Undisclosed informal 'hand loan' borrowing by MSME customers, conceded as 'a grey area for the entire industry' that underwriting cannot fully capture (SBFC)"
+net_narrative_effect: "complicates"

@@ -1,0 +1,17 @@
+stage: B12c
+company: "544516"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 38, fails: []}
+emoat: {rules_checked: 28, fails: []}
+valuation: {rules_checked: 0, fails: []}   # DEFERRED to Phase 3: B11/B10 not yet produced
+recomputed_destination_pe: ""  # valuation audit deferred to Phase 3
+recomputed_decision: ""        # valuation audit deferred to Phase 3
+findings:
+  - {severity: "MINOR", location: "B07 Section 5 scorecard, category B2", claim: "Janatics sole-source MOU credited at documented 1.0x multiplier though sourced via operator secondary summary, not primary Reg 30 filing", note: "Defensible under taxonomy (signed MOU = documented 'contract signed') and provenance flagged in-report; stress-test at 0.7x gives em_score 13.6, still MODEST — no classification change. Advisory, not a rule fail."}
+  - {severity: "MINOR", location: "B01 Data Confidence section", claim: "'<3 years' outcome labelled 'data confidence AVERAGE' vs framework phrasing 'auto AVERAGE' (a classification effect)", note: "Cosmetic; identical net effect, correct AVERAGE floor applied via deal-breaker #9 and classification matrix. No score impact."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100    # 66 Gate 0 + Emerging Moat rules checked, 0 fails; valuation deferred to Phase 3

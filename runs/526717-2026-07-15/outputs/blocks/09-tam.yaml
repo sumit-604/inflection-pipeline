@@ -1,0 +1,71 @@
+stage: B09-tam
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "No company-specific TAM claim from management; only third-party global industry figures reproduced unattributed in AR MD&A (p.56), not tailored to HPBL's addressable niche"
+  - "India domestic-only FIBC/bulk-bag market size (in ₹ or $) not found in any accessible source; only global and India-export-trade figures sourced"
+  - "Regional (North America/Europe/APAC) split of the global FIBC market is highly inconsistent across secondary sources (single-region shares ranging 20-45% depending on publisher); no primary-source report page could be fetched (WebFetch returned 403 on all eight attempted vendor URLs)"
+  - "Current, single-period P/E multiple not available within this stage's inputs; Section 5E uses a mixed-period (FY26 market cap / FY25 PAT) approximation instead, flagged"
+  - "Top-3 concentration and organised-vs-unorganised split for the Indian FIBC industry not found in any accessible source"
+  - "DGFT primary export-value data for the FIBC HS code could not be retrieved; only a secondary-source aggregate export-value estimate (accio.com, unverified) was found"
+  - "Rating agency's 'specialised segment, not commodity cement/fertiliser' characterisation (RATING p.4) contradicts AR's own product-application list including cement and fertiliser (AR p.57); no numeric split exists to resolve which governs the customer-segment SAM filter"
+flags:
+  - "FLAG-TAM-SOURCE-QUALITY: global FIBC market-size estimates diverge from US$4.1bn to US$8.8bn (2025) across secondary vendors; every primary report page attempted (Grand View Research, Mordor Intelligence, Future Market Insights, Straits Research, Towards Packaging, accio.com, PLEXCONCIL) returned HTTP 403 on WebFetch; AR's own cited US$12.6bn-by-2033 @ 5.4% CAGR figure used as the primary anchor since it is the only figure the company itself has adopted, even though its underlying publisher/date is unstated"
+  - "FLAG-SAM-GEOGRAPHY: the 55% geography filter applied to reach SAM is a synthesis of inconsistent regional-share sources, not a single sourced split — the single largest source of uncertainty in this stage's TAM/SAM/SOM chain"
+  - "FLAG-CAPACITY-GATE: raw SAM revenue headroom (~124x current revenue) is not achievable within 5 years; SOM is capacity-gated to ~3.6x current revenue by year 5 absent new capex, none of which is currently guided beyond FY28 (RATING p.5) — an aggressive (3pp+) SAM-share-gain scenario would require ~₹495 Cr of revenue beyond the capacity ceiling, meaning that scenario, not the capex guidance, would be the optimistic assumption"
+  - "FLAG-VALUATION-LINE-MIXED-PERIOD: Section 5E's ~15.5x P/E approximation mixes FY26 market cap with FY25 PAT; not a clean TTM multiple"
+market_definition: "Manufacture and export of specialised (food/pharma/chemical-grade) FIBC jumbo bags, small PP woven sacks, and AD Star bags for global bulk-packaging end-users, served from India via direct export (EU/US-weighted) and domestic sale"
+tam_cr: {conservative: 104170, realistic: 122474}
+sam_cr: 57294
+sam_pct_of_tam: 55
+som_3yr_cr: 1037
+som_5yr_cr: 1688
+som_implied_revenue_cagr: {yr3: 30.7, yr5: 29.5}
+current_sam_share_pct: 0.81
+revenue_headroom_x: 123.6
+tam_growth_pct: 4.9
+runway_class: STRONG
+mgmt_claim_cr: 121414
+mgmt_claim_ratio: 1.26
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient for 3yr SOM (~52% utilisation of 24,300 MTPA); 5yr SOM set at an 85% utilisation ceiling (~₹1,688 Cr) — an aggressive 3pp SAM-share-gain scenario would instead require ~₹2,183 Cr, a gap of ~₹495 Cr beyond the capacity ceiling (110% of installed MTPA), meaning SOM (not the 'no major capex planned FY27-28' guidance) would be the optimistic side absent new capacity"
+methods_used:
+  - "top-down (global FIBC + PP woven sack industry reports, AR-anchored)"
+  - "peer revenue aggregation (listed Indian FIBC/woven-sack peers + India export-trade estimate)"
+  - "capacity-based bottom-up cross-check (company-disclosed MTPA capacity, utilisation, blended realisation) substituting for market-wide Method 2"
+  - "global benchmark (qualitative only — domestic-vs-EU/US penetration gap, not quantified)"
+stale_data_flags:
+  - {datapoint: "Global FIBC market US$12.6bn by 2033 @ 5.4% CAGR", source: "Annual_Report.pdf p.56 (publisher/publish-date of underlying research not stated)", year: "unknown — AR itself is FY25 vintage"}
+  - {datapoint: "India FIBC exports ~US$0.7bn/yr, >25% of global FIBC trade", source: "accio.com supplier guide (secondary aggregator, WebFetch returned 403, publish date unstated)", year: "unknown"}
+  - {datapoint: "Global FIBC market regional share splits (NA 38.25% / APAC 33-45% / Europe 20-25%)", source: "Mordor Intelligence, Global Growth Insights, PW Consulting (all via WebSearch synthesis, WebFetch blocked)", year: "2025-dated per titles, unverified"}
+searches_performed:
+  - "India FIBC flexible intermediate bulk container market size 2025 2026 crore"
+  - "global FIBC bulk bag market size 2025 CAGR billion"
+  - "India woven sacks PP bags market size 2025 IMARC report"
+  - "India FIBC exports value USD 2025 DGFT top exporters"
+  - "India FIBC industry organized unorganized players number manufacturers Gujarat"
+  - "India plastic woven sacks export value 2025 USD million Ministry Textiles"
+  - "Jumbo Bag Limited Kanpur Plastipack Mahalaxmi Rubtech FIBC revenue crore FY25"
+  - "Kanpur Plastipack Limited FY25 annual revenue crore"
+  - "Jumbo Bag Limited FY25 revenue crore BSE"
+  - "Mahalaxmi Rubtech Limited FY25 revenue crore FIBC"
+  - "Gujarat Craft Industries FIBC revenue crore turnover"
+  - "India FIBC domestic market size versus export market share percent"
+  - "FIBC market regional share North America Europe Asia Pacific percent 2025 2026"
+  - "India FIBC exports USD million 2024-25 value DGFT trade statistics jumbo bags HS code"
+  - "India \"bulk bags\" market \"820 million\" OR \"1.42 billion\" 2025 2031 (verification attempt, could not corroborate, discarded)"
+  - "USD INR exchange rate July 2026"
+  - "FIBC market end use segment share food chemical agriculture pharma building material percent"
+  - "\"FIBC\" India exports \"billion\" 2024 2025 share global trade Gujarat Craft"
+  - "India flexible packaging market size 2025 billion IBEF crore"
+searches_skipped:
+  - "WebFetch: grandviewresearch.com/industry-analysis/flexible-intermediate-bulk-container-fibc-market (403)"
+  - "WebFetch: grandviewresearch.com/press-release/global-fibc-market (403)"
+  - "WebFetch: mordorintelligence.com/industry-reports/fibc-market (403)"
+  - "WebFetch: futuremarketinsights.com/reports/fibc-market (403)"
+  - "WebFetch: towardspackaging.com/insights/fibc-market-sizing (403)"
+  - "WebFetch: globenewswire.com Straits Research FIBC release (403)"
+  - "WebFetch: plexconcil.org India plastics export analysis PDF (403)"
+  - "WebFetch: accio.com/supplier/fibc_companies_in_india (403)"

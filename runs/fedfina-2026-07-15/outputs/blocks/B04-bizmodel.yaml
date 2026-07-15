@@ -1,0 +1,59 @@
+stage: B04-bizmodel
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["AUM-per-employee productivity metric not disclosed in AR or Inv. Pres.", "segment-level (Gold vs Mortgage) RoA/RoE/cost-to-income not disclosed, only company-level", "peer cost-to-income/RoA benchmarking only available from 2023 IPO-era RHP (dated)"]
+flags: ["FY25 PAT declined 8% YoY (Rs 2.25bn vs Rs 2.45bn) driven by Small Ticket LAP stress and unsecured business loan exit provisioning", "CRAR down 169bps YoY to 20.7% as of Q1 FY27 while AUM growth accelerates to 34.7% YoY", "off-book (DA+co-lending) capacity fell from 28.0% to 23.2% of AUM in one quarter following RBI co-lending reform", "geographic concentration ~75% AUM in top 5 states", "RHP-disclosed peer comparison (highest cost-to-income, lowest RoA in peer set) is dated to mid-2023 and unverified against current peer data"]
+business_type: "lending"
+revenue_streams:
+  - {name: "Interest on loans (Gold + Mortgage)", type: "net interest spread", pct_of_revenue: 85.2, predictability: "M"}
+  - {name: "Income on direct assignment / co-lending", type: "fee-plus-spread, transaction-linked", pct_of_revenue: 7.5, predictability: "L"}
+  - {name: "Fee and commission income", type: "recurring distribution/servicing fee", pct_of_revenue: 4.2, predictability: "M"}
+  - {name: "Other interest income (treasury) and net FV gains", type: "treasury/float income, non-core", pct_of_revenue: 3.1, predictability: "H"}
+asset_intensity: "heavy"
+wc_intensity: "low"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Federal Bank parentage / funding access", durability: "moderate"}
+  - {moat: "Regulatory/licensing barrier (NBFC-ND-SI + CRAR compliance)", durability: "moderate"}
+  - {moat: "Distribution build-out (757 branches, doorstep gold model, app)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "P/B (ROE-adjusted)", why: "Book value is the tangible capital base underlying the regulatory (CRAR) and earnings (RoE) engine of an NBFC; standard sector convention"}
+  secondary: {method: "P/E", why: "Useful cross-check once earnings normalise post FY25 provisioning spike and ST-LAP rebuild stabilises"}
+  tertiary: {method: "Sum-of-the-parts / segment AUM multiple", why: "Gold and Mortgage engines have materially different growth/yield/risk profiles; segment-level profitability disclosure would sharpen this, currently limited by data"}
+  not_applicable: ["EV/EBITDA - interest expense is core operating cost for a lender, not a financing add-back", "EV/Sales - interest income is not a comparable revenue base to operating-company sales multiples", "Standard FCFF/FCFE DCF - loan growth is leverage-funded balance sheet growth, not capex in the operating-company sense"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover / days inventory", why: "No inventory; the loan book is the balance-sheet asset, not a physical good"}
+  - {ratio: "Gross block / fixed asset turnover", why: "Fixed assets are trivial versus the loan book; capital intensity is regulatory (CRAR), not PP&E-based"}
+  - {ratio: "EV/EBITDA", why: "Interest expense is core operating cost, not a financing item to add back"}
+  - {ratio: "Gross margin %", why: "No COGS line; replace with Net Interest Margin / Spread"}
+  - {ratio: "D/E as standalone leverage red flag", why: "High leverage is structural to the NBFC model; correct lens is CRAR vs regulatory minimum and ALM matching"}
+must_track_metrics:
+  - {metric: "Spread (Yield minus Cost of Borrowings)", healthy: "7-9%", red_flag: "sustained compression below ~7% without explained mix shift"}
+  - {metric: "GNPA/NNPA by segment", healthy: "GNPA <2%, NNPA <1.5%", red_flag: "GNPA >2.5% or Mortgage Stage III rising further from 3.4%"}
+  - {metric: "CRAR", healthy: "comfortably >18-20%", red_flag: "falling toward high-teens without capital-raise plan"}
+  - {metric: "RoA / RoE", healthy: "RoA >2%, RoE toward mid-teens", red_flag: "RoA <1.5%, RoE stalling below 10%"}
+  - {metric: "Off-book % (DA + co-lending)", healthy: "stable 20-30% of AUM", red_flag: "sharp quarter-over-quarter decline signaling partner-bank pullback"}
+unit_economics:
+  unit: "Rs 1 lakh of average loan AUM outstanding for one year, by product (Gold vs Medium Ticket LAP vs Small Ticket LAP/HL)"
+  revenue_per_unit: "Product yield minus cost of funds: Gold ~17.8% yield, MT LAP ~12.0%, ST LAP/HL ~15.1% (Q1 FY27 origination yields); blended cost of borrowings ~7.7-7.8%"
+  margin_per_unit: "Blended spread 8.6% (Q1 FY27); net of opex (~4.8-5.5% of avg assets) and credit cost (~0.7-0.9% of avg assets in normalised quarters, spiked to 1.8% full-year FY25 during BL exit)"
+  key_lever: "AUM per branch (rising from Rs 13.0 Cr to Rs 17.7 Cr per gold branch over five quarters) driving operating leverage as cost-to-income falls from 58.2% to 52.8%"
+first_deterioration_signals:
+  - {risk: "Gold price correction reduces AUM/loan size mechanically", first_signal: "Gold AUM growth diverging from gold tonnage growth"}
+  - {risk: "RBI co-lending reform shrinks off-book capacity", first_signal: "Off-book % of AUM declining quarter over quarter"}
+  - {risk: "Cost of funds rises faster than reprice-able yields", first_signal: "Spread (Yield minus CoB) compressing"}
+  - {risk: "Small Ticket LAP rebuild fails a second time", first_signal: "Mortgage segment Gross/Net Stage III rising further"}
+  - {risk: "Growth outpaces capital generation", first_signal: "CRAR declining quarter over quarter"}
+  - {risk: "Branch/DSGL expansion outpaces underwriting capability", risk_note: "repeat of unsecured BL mistake", first_signal: "Credit cost / average total assets rising, or Stage 2 (SMA) build-up ahead of Stage 3"}
+mgmt_questions:
+  - "What is the explicit target ceiling/mix between Gold and Mortgage AUM, and why?"
+  - "What concrete underwriting/collections changes (beyond leadership change) fixed Small Ticket LAP, evidenced by new-cohort performance data?"
+  - "How will the RBI co-lending DLG cap and retention rules affect off-book capacity and capital consumption over the next 4-6 quarters?"
+  - "What is the sustainable through-cycle credit cost assumption per product versus the FY25 actual of 1.8% of average assets?"
+  - "What specific cost-to-income and AUM/branch operating-leverage targets is management committed to over 2-3 years?"
+  - "How much of current AUM/earnings growth is gold price versus tonnage/borrower-count growth, and what is the sensitivity to flat/falling gold prices?"
+  - "What is the plan and timeframe to reduce the ~75% top-5-state AUM concentration?"
+one_line_verdict: "Bank-parented secured twin-engine lender with a real but cost-of-funds-constrained moat, mid-repair on credit quality."

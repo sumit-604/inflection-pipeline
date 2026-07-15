@@ -1,0 +1,81 @@
+stage: B05-concall
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "ST LAP credit-scorecard/BRE rollout, dated to Q3 FY26 in the Q1 call, never referenced again"
+  - "CRAR/Tier 2 capital disclosure dropped entirely in Q3 FY26 amid rising leverage"
+  - "Collections in-housing completion slipped from early Q2 FY26 to Q4 FY26"
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26"]
+triggers:
+  - {priority: 1, name: "Gold branch rollout to 150 branches FY26, AUM/branch maturation", type: "VOLUME", timeframe: "near-medium", conviction: "H", confirm_signal: "Q4 FY26 branch count >=140-150 and AUM/branch rising past Rs 13.3cr", kill_signal: "branch count stalls below ~130 or AUM/branch flatlines into FY27"}
+  - {priority: 2, name: "Credit cost held inside 1% +/- 10bps through FY26 exit, FY27 guidance given", type: "MARGIN", timeframe: "near", conviction: "H", confirm_signal: "Q4 FY26 credit cost <=1.1% and an actual FY27 number is given", kill_signal: "credit cost breaches 1.1% or FY27 guidance deferred again"}
+  - {priority: 3, name: "ST LAP collection in-housing completes and disbursement growth resumes", type: "VOLUME/COST", timeframe: "near", conviction: "M", confirm_signal: "Q4 FY26 confirms in-house transition done and ST LAP disbursals rise meaningfully above Rs 208cr", kill_signal: "completion date pushed again or disbursals stay flat"}
+  - {priority: 4, name: "Cost-to-income inflects down in FY27 as branch/co-location investment matures", type: "COST", timeframe: "medium", conviction: "M", confirm_signal: "FY27 opening quarters show cost-to-income materially below ~57%", kill_signal: "cost-to-income stays flat or worsens into FY27"}
+  - {priority: 5, name: "CRAR/Tier 2 capital raise executed as promised in H2 FY26", type: "COST", timeframe: "near", conviction: "L", confirm_signal: "Q4 FY26 discloses a CRAR figure and confirms a Tier 2 raise", kill_signal: "CRAR remains undisclosed or falls further with no raise"}
+guidance:
+  - {item: "Credit cost", number: "1% +/- 10bps", timeframe: "FY26", stated_in: "Q1 FY26 call, reiterated Q2 and Q3"}
+  - {item: "New gold branches", number: "100-150 branches", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Branch co-location target", number: "75-80 branches", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Gold AUM growth (existing branches)", number: "25% Y-o-Y", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Gold loan mix of book", number: "45-49%", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Tonnage growth", number: "10-12% CAGR", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "Cost-to-income", number: "flat FY26, improve FY27", timeframe: "FY26/FY27", stated_in: "Q2 and Q3 FY26 calls"}
+  - {item: "ST LAP credit scorecards/BRE risk models", number: "rollout targeted", timeframe: "Q3 FY26", stated_in: "Q1 FY26 call (never confirmed delivered)"}
+  - {item: "Tier 2 capital supplementation", number: "planned", timeframe: "H2 FY26", stated_in: "Q2 FY26 call (no update in Q3)"}
+  - {item: "FY27 credit cost / opex guidance", number: "to be given", timeframe: "by Q4 FY26 call", stated_in: "Q3 FY26 call"}
+  - {item: "ECB issuance", number: "$100mn maiden, $150mn cumulative", timeframe: "Q1 to Q2 FY26", stated_in: "Q1 and Q2 FY26 calls"}
+promise_delivery:
+  delivered: 6
+  partial: 3
+  missed: 5
+  rows:
+    - {promised_in: "Q1 FY26", promise: "100% assignment of Rs 770cr BL portfolio this quarter", outcome: "delivered", explanation: "executed and derecognized same quarter"}
+    - {promised_in: "Q1 FY26", promise: "Credit cost range-bound 1% +/- 10bps for FY26", outcome: "delivered", explanation: "0.8% Q1, 0.9% Q2, 0.9% Q3, all at or below band"}
+    - {promised_in: "Q1 FY26", promise: "Collections leadership/field team hiring complete by early Q2", outcome: "missed", explanation: "still building through Q2 (200 to 400 headcount); Q3 call still targets completion by Q4"}
+    - {promised_in: "Q1 FY26", promise: "ST LAP credit scorecards/BRE risk models rollout by Q3 FY26", outcome: "missed", explanation: "never mentioned again in Q2 or Q3 calls"}
+    - {promised_in: "Q1 FY26", promise: "100-150 new gold branches FY26", outcome: "delivered", explanation: "113 cumulative through Q3, on pace for upper end of range"}
+    - {promised_in: "Q1 FY26", promise: "Reduce reliance on DA income", outcome: "delivered", explanation: "9M FY26 DA income Rs 1cr vs Rs 62cr in 9M FY25"}
+    - {promised_in: "Q1 FY26", promise: "Gold mix settles 45-49% of book", outcome: "delivered", explanation: "Q3 gold AUM/total AUM approx 45.2%"}
+    - {promised_in: "Q2 FY26", promise: "Supplement Tier 2 capital in H2 FY26", outcome: "missed", explanation: "Q3 call gives no CRAR figure and no Tier 2 update"}
+    - {promised_in: "Q1 FY26", promise: "Steady rise in ST LAP business activity", outcome: "partial", explanation: "ST LAP disbursals nearly flat Q2 to Q3 (Rs 206cr to Rs 208cr) despite doubled collection headcount"}
+    - {promised_in: "Q2/Q3 FY26", promise: "Cost-to-income flat FY26, improving FY27", outcome: "partial", explanation: "Q2 improved 136bps to 56.9%, Q3 worsened ~10bps on new-branch opex and labor-code charge, net roughly flat"}
+    - {promised_in: "Q1/Q2 FY26", promise: "GNPA will move up and down, credit cost will be managed", outcome: "delivered", explanation: "Gross Stage 3 rose to 2.1% in Q3 from 1.9%, credit cost held at 0.9%"}
+    - {promised_in: "Q1 FY26", promise: "Follow up on apparent error in geographic branch-mix disclosure", outcome: "missed", explanation: "never revisited in Q2 or Q3 transcripts"}
+    - {promised_in: "Q2 FY26", promise: "Co-locate 75-80 branches for the year", outcome: "partial", explanation: "63 cumulative by Q3, remainder plausible in Q4 but unconfirmed"}
+    - {promised_in: "Q1 FY26", promise: "MT LAP BRE/scorecard pilot planned in coming quarters", outcome: "missed", explanation: "no follow-up in Q2 or Q3 calls"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will the ST LAP/collections rebuild become predictable / when will stress normalize?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26"], classification: "deflected every time, timeline kept slipping (Q3 target then 6-months-out then Q4/FY27 target)"}
+  - {question: "Given the fully secured, de-risked book, will you raise the credit cost guidance?", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "deflected every time"}
+  - {question: "What geographies/segments are showing elevated stress?", quarters_asked: ["Q1 FY26", "Q3 FY26"], classification: "answered eventually"}
+credibility_grade: "B"
+credibility_basis: "Headline turnaround metrics (credit cost inside 1% +/-10bps every quarter, full secured-mix transition, DA reduction) delivered cleanly with honest, unprompted self-blame framing, but two dated technical commitments (ST LAP scorecards, MT LAP pilot) were silently dropped, collections in-housing slipped a full two quarters, and CRAR/Tier 2 disclosure disappeared exactly when leverage rose most."
+peer_questions:
+  - {question: "Did Muthoot/Manappuram guide or deliver ~20% FY26 gold AUM growth, as referenced by a Fedfina analyst in Q1 FY26, versus Fedfina's own 25% guidance and eventual 52% Y-o-Y Q3 print?", why: "Tests whether Fedfina's gold growth outperformance is genuine share gain or catching up to a normal sector run-rate.", check_peers: ["Manappuram"]}
+  - {question: "Does Manappuram's disclosed portfolio LTV and yield trend corroborate Fedfina's claim that its own LTV is more conservative than peers and that yield compression is a mix effect rather than competitive pricing?", why: "Fedfina explicitly disputed an analyst's higher-LTV framing; peer data can confirm or contradict.", check_peers: ["Manappuram"]}
+  - {question: "Do MAS Financial, SBFC, or Five-Star Business Finance report stress concentrated in the sub-Rs 5 lakh / Rs 5-7 lakh ticket LAP band, consistent with Fedfina's claim of MFI-sector spillover into that segment?", why: "Fedfina frames part of its ST LAP stress as sector-wide and part as company-specific; peer data validates the sector-wide portion.", check_peers: ["MAS Financial", "SBFC", "Five-Star Business Finance"]}
+  - {question: "Do SBFC or Five-Star Business Finance report elevated stress specifically in Maharashtra and Tamil Nadu MSME/LAP books over the same period Fedfina names?", why: "Fedfina insists its Maharashtra/Tamil Nadu stress is company-specific, not a state issue; directly testable against peers in the same states.", check_peers: ["MAS Financial", "SBFC", "Five-Star Business Finance"]}
+  - {question: "What cost-to-income and opex-to-average-assets ratios do SBFC and Five-Star Business Finance report for FY26, versus Fedfina's ~56-57%?", why: "Management concedes its cost-to-income is high vs peers and defers the fix to FY27 without giving a requested breakdown; peer data quantifies the gap.", check_peers: ["SBFC", "Five-Star Business Finance", "MAS Financial"]}
+  - {question: "Do MAS Financial and SBFC report MT LAP/LAP yield compression across the industry, as Fedfina characterizes it?", why: "Tests whether Fedfina's yield softness is sector-wide or company-specific.", check_peers: ["MAS Financial", "SBFC"]}
+  - {question: "Do SBFC, Five-Star, or MAS Financial describe a comparable FY26 branch-expansion capex cycle to Fedfina's 100-150 new gold branches funded from BL-exit capital release?", why: "Validates whether Fedfina's capex-cycle and funding logic is industry pattern or company-specific.", check_peers: ["SBFC", "Five-Star Business Finance", "MAS Financial"]}
+  - {question: "Do SBFC or MAS Financial confirm the same DA-to-co-lending accounting shift from the new RBI co-lending guidelines effective Jan 1 2026, and its effect on disclosed core yield?", why: "Fedfina attributes part of its Q3 yield compression purely to this accounting change; peer confirmation validates magnitude and direction.", check_peers: ["SBFC", "MAS Financial"]}
+  - {question: "Does industry tonnage growth for gold-loan NBFCs run at 10-15%, and does Manappuram disclose a comparable tonnage CAGR?", why: "Fedfina uses this figure to justify strong AUM growth despite a historically flat branch count.", check_peers: ["Manappuram"]}
+red_flags:
+  - {flag: "ST LAP credit-scorecard/BRE rollout, dated to Q3 FY26 in the Q1 call, never referenced again in Q2 or Q3", severity: "medium"}
+  - {flag: "CRAR/Tier 2 capital disclosure dropped entirely in Q3 FY26, the quarter leverage rose most (D/E 3.78 to 3.99)", severity: "medium"}
+  - {flag: "Collections in-housing completion date slipped from early Q2 FY26 to by Q4 FY26, a two-quarter delay", severity: "medium"}
+  - {flag: "ST LAP disbursement growth essentially flat (Rs 206cr to Rs 208cr, +1% QoQ) despite doubled collection headcount", severity: "low-medium"}
+  - {flag: "Internal inconsistency in Q3 call: opening remarks say 54 new gold branches opened, CBO later says 58 branches, unreconciled", severity: "low"}
+  - {flag: "Gross Stage 3 rose to 2.1% in Q3 FY26 from 1.9% in Q2 on higher stage2-to-stage3 forward flows", severity: "low"}
+  - {flag: "MT LAP BRE/scorecard pilot introduced as under evaluation in Q1, never referenced again", severity: "low"}
+dropped_triggers:
+  - "ST LAP credit scorecard/BRE risk model rollout (targeted Q3 FY26 in the Q1 call)"
+  - "MT LAP BRE/scorecard pilot (planned in coming quarters, per Q1 call)"
+timeline_slippages:
+  - "ST LAP collections in-housing: promised complete early Q2 FY26, still incomplete as of Q3 FY26, now targeted for Q4 FY26"
+  - "Tamil Nadu ST LAP disbursement normalcy: pushed from Q3 FY26 commentary to Q4 FY26/Q1 FY27"
+  - "FY27 credit cost and opex guidance: deferred from Q3 FY26 call to the Q4 FY26 call"
+no_concall_mode: false

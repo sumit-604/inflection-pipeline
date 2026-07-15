@@ -1,0 +1,28 @@
+stage: B08-promoter
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["dividend/buyback conduct history for FEDFINA", "named proxy-advisory (IiAS/SES) report specific to FEDFINA", "COO successor name (seat vacant as of latest search)", "exact FEMA penalty amount and NCD-interest RPT line value (truncated in source extract)", "political/government connection evidence"]
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers: ["borderline/qualified: near-total executive-layer turnover in ~18 months (MD&CEO, CRO x2, COO vacant, 2 CBOs, CS) reads in spirit like the 'multiple mid-term independent-director exits' trigger, though the two actual independent-director exits (Krishnamurthy, Shah) were scheduled 5-year statutory term completions, not resignations -- recorded, not enforced"]
+adverse_findings:
+  - {finding: "Near-total senior executive turnover FY25-FY26: Chairman, MD&CEO, CRO (twice within 6 months), COO (seat vacant, no successor named), 2 Chief Business Officers, Company Secretary all changed within ~18 months", evidence_tier: "VERIFIED", source: "annual-report.txt L6647-6661, L7019-7044 + web search exchange filings", date: "2024-08 to 2025-08"}
+  - {finding: "Anil Kothuri MD&CEO exit reason stated inconsistently: 'personal reasons' at Aug-2024 notice vs 'pursuing other opportunities' in FY25 Directors' Report", evidence_tier: "UNVERIFIED (inconsistency, not adverse conduct)", source: "annual-report.txt L5223-5225; web search", date: "2024-08 to 2024-11"}
+  - {finding: "FEDFINA reported frauds (staff/customer/third-party, gold-loan/retail-lending type) totalling INR 509.47 lakh to RBI/Board in FY25", evidence_tier: "VERIFIED", source: "annual-report.txt L5516-5526", date: "FY2024-25"}
+  - {finding: "Heavy and growing RPT dependency on promoter Federal Bank: FY26-27 shareholder-approved RPT ceiling INR 4,459 crore vs FY25-26 turnover INR 2,227 crore (~2x); includes Brand Usage Charges INR 244 lakh in FY25", evidence_tier: "VERIFIED", source: "annual-report.txt L6215-6299; web search postal ballot disclosure", date: "FY2024-25 and 2026-04/06"}
+  - {finding: "Promoter (Federal Bank) has a high volume of minor RBI penalties/caution letters/displeasure letters over preceding 5 years (Banking Regulation Act, KYC, currency chest, SWIFT controls etc.), all paid/resolved; plus one PMLA warning letter and one FEMA penalty", evidence_tier: "VERIFIED", source: "RHP-prospectus.txt L3787-3839", date: "RHP filing period, last 5 years"}
+  - {finding: "Two immaterial paid exchange fines: NSE INR 10,620 on promoter Federal Bank (NCD disclosure non-compliance); BSE INR 10,000 on FEDFINA (record-date notice delay)", evidence_tier: "VERIFIED", source: "RHP-prospectus.txt L32785-32791; annual-report.txt L5493-5508", date: "2023-03 and 2024-07"}
+transition_evidence:
+  - {item: "New professional MD&CEO hired externally via NRC process: Parvez Mulla, 29-year BFSI career (ICICI Bank, L&T Finance, HDFC Life, True North)", source: "annual-report.txt L5231-5234; web search", date: "2024-11"}
+  - {item: "Fresh institutional investor entry: Nomura India Equity Fund bought True North's entire 6.8644% stake via block deal INR 385.4 crore, muted market reaction", source: "web search (Business Standard, scanx.trade)", date: "2026-05-12"}
+  - {item: "Promoter pledge confirmed nil across FY26, verified exchange encumbrance filing", source: "web search, exchange filing", date: "2026-04-08"}
+  - {item: "Three new independent directors appointed FY25 with verifiable external credentials (Sonal Dave, Mona Bhide, Muralidharan Rajamani), replacing statutorily term-expired members", source: "annual-report.txt L6654-6661", date: "FY2024-25"}
+  - {item: "99.97% minority shareholder approval of FY26-27 material RPT resolution on ~18.91% of outstanding shares voting", source: "web search, postal ballot result", date: "2026-06"}
+pledge_pct_latest: 0
+pledge_trend: "nil since IPO (Nov-2023) through Mar-2026, confirmed via exchange encumbrance filing dated 2026-04-08; shareholding-pattern source file had listed pledge as NOT FOUND, resolved via web search"
+searches_performed: ["Anil Kothuri resignation reason", "Parvez Mulla appointment", "Federal Bank RBI action 2025-26", "FEDFINA SEBI order litigation", "Glassdoor reviews", "IiAS proxy report", "Brand Usage Charges RPT", "promoter pledge encumbrance 2026", "CRO re-designation chain", "CARO fraud FY25 509.47", "True North stake sale", "KVS Manian Federal Bank MD", "block deal reaction May 2026", "Company Secretary change", "Chairman resign Sept 2024", "independent director exits", "Parvez Mulla education", "COO successor", "scanx.trade fetch"]
+searches_skipped: []
+verdict_basis: "No SEBI ban, criminal conviction, SFIO, PMLA-with-assets, pledge, auditor resignation, or restatement found against corporate promoter Federal Bank or FEDFINA KMP; the decisive adverse finding is concentrated, genuine executive-layer turnover (Chairman, MD&CEO, CRO twice, COO still vacant, 2 CBOs, CS) within ~18 months, offset by credible external replacements, a fully verified nil pledge, strong minority RPT approval (99.97%), and a fresh institutional entrant (Nomura) replacing an exiting early PE investor (True North) without market distress -- net CAUTION with active positive governance-renewal momentum."

@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: partial          # multiple direct-source web fetches returned 403; substituted with search-snippet corroboration and cross-source triangulation
+input_gaps:
+  - "Venkatesan Dakshinamoorthy's formal education/degree not disclosed anywhere in the Prospectus (unlike the other three named promoters)"
+  - "Land title registration status for the ~Rs8.73 Cr unregistered parcel (Nehru Nagar) not found in any post-IPO announcement or filing via web search"
+  - "Purpose/RPT status of Apura Energy Pvt Ltd, Airflow Dafeng Rail Equipments Pvt Ltd, and Ultima Environmental Solutions Pvt Ltd (promoter-group entities) not found beyond directorship listing"
+  - "No Glassdoor/AmbitionBox employee reviews found for the company (platform coverage gap, not confirmed absence of sentiment)"
+  - "No sell-side analyst or proxy-advisory (IiAS/SES/InGovern) coverage exists (structural, SME-platform micro-cap)"
+  - "Raw BSE bulk-deal filing for the Ritu Bapna share purchase not independently fetched; relied on secondary aggregator (Trendlyne/X) citation"
+  - "Several direct-source fetches (BSE PDF, taxguru.in, thetaxcorp.in, studycafe.in, screener.in, marketsmojo.com) returned HTTP 403; findings cross-corroborated via search snippets and the operator announcements summary instead"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Chronic, multi-year (FY2018-19 to FY2022-23) Companies Act statutory-compliance laxity across CSR (Sec 135), AGM timing (Sec 96), Cost Auditor appointment (Sec 148) and related-party loans (Sec 185), now culminating in actual RoC Chennai adjudication orders (20-21 Jan 2026) imposing personal monetary penalties on both promoter-Managing-Directors, currently under appeal", "Rs38.0 Cr of company debt personally guaranteed by the two promoter-MDs, cross-collateralised against a recurring pool of family land, at least one parcel (~Rs8.73 Cr) with unregistered title", "Registered office and factory rented from promoters personally; two of four legal promoters hold zero shares despite board seats; one struck-off associated entity (Emrion Technologies) tied to a formation-stage compliance failure by two current director-promoters", "Offsetting: zero share pledge (stable through 2026), no promoter selling (fresh-issue-only IPO dilution), clean SEBI/criminal/civil record, genuinely credentialed independent directors (ex-Indian Railways GM/Vande Bharat lead; 35-year Siemens veteran), and a self-initiated CSR compounding filing made before the regulator acted"]}
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers: []          # none of the 8 standard deal-breakers triggered; see 6C for full checklist
+adverse_findings:
+  - {finding: "Chronic multi-year CSR non-compliance (FY19-20 to FY22-23) escalated to RoC adjudication orders (20-21 Jan 2026) imposing personal monetary penalties (~Rs2 lakh/director/year, capped) on both promoter-Managing-Directors; under appeal to Regional Director Chennai", evidence_tier: "VERIFIED", source: "Prospectus p.204 (SCN detail); RoC order gist and secondary coverage via web search; operator announcements summary", date: "SCN 29-Aug-2025; adjudication orders 20-21 Jan 2026"}
+  - {finding: "Section 96 (AGM delay) and Section 148 (Cost Auditor non-appointment since FY2018-19) both compounded via RoC applications filed May-2025, confirming a compliance pattern predating the restated financial window", evidence_tier: "VERIFIED", source: "Prospectus Risk Factor 8, p.36-38", date: "compounding applications filed May-2025"}
+  - {finding: "Rs38.0 Cr (Rs3,797.98 lakh) of company debt personally guaranteed by promoter-MDs Venkatesan Dakshinamoorthy and Manikandan Dakshna moorthy, cross-collateralised against recurring family land parcels, at least one (~Rs8.73 Cr) with unregistered title", evidence_tier: "VERIFIED", source: "Prospectus p.160 (Interest of Directors), Annexure XXXII collateral schedule; cross-referenced Stage 3 report", date: "FY25 (31-Mar-2025)"}
+  - {finding: "Registered office (6,179 sq ft) and manufacturing unit (7,200 sq ft) both rented from promoter-MDs and family members personally, claimed arm's length", evidence_tier: "VERIFIED", source: "Prospectus 'Our Management' p.161-162", date: "as of Prospectus, 16-Sep-2025"}
+  - {finding: "Emrion Technologies Pvt Ltd, where director-promoters Nandhini Manikandan and Sathishkumar Venkatesan previously served, was struck off suo-moto by RoC Chennai for non-payment of incorporation subscription money and failure to file Section 10A(1) declaration", evidence_tier: "VERIFIED", source: "Prospectus Risk Factor 12, p.38-39; Public Notice STK5/ROC/CHN/S.248(1)/2022", date: "struck off 2022, disclosed in Prospectus 2025"}
+  - {finding: "Two of four legal Promoters (Nandhini Manikandan, Sathishkumar Venkatesan) hold zero equity shares despite board seats and promoter-group designation", evidence_tier: "VERIFIED", source: "Prospectus Shareholding Pattern, p.75", date: "as of Prospectus, 16-Sep-2025"}
+  - {finding: "No SEBI action, no criminal proceedings, no civil litigation, no wilful-defaulter/fugitive-economic-offender status against Company, Directors or Promoters", evidence_tier: "VERIFIED", source: "Prospectus p.159, p.204 litigation table; independently corroborated via web search (no adverse hits)", date: "as of Prospectus and through run date 2026"}
+  - {finding: "Zero promoter share pledge, stable from Prospectus date through the most recent shareholding disclosure found; no promoter selling since listing (fresh-issue-only dilution)", evidence_tier: "VERIFIED", source: "Prospectus p.75; screener.in/marketsmojo.com company pages via web search", date: "16-Sep-2025 through 2026"}
+transition_evidence:
+  - "Two credentialed non-family independent directors (Sudhanshu Mani, ex-GM Integral Coach Factory/Vande Bharat project lead; Tilak Raj Seth, 35+ years Siemens) appointed Jul-Aug 2024 ahead of listing, with a compliant ID-chaired Audit Committee constituted 12-Dec-2024 (Prospectus p.157-159)"
+  - "Company self-initiated a CSR compounding application (Form GNL-1, SRN N30641906) with the RoC on 8-May-2025, before any show-cause notice was issued (29-Aug-2025) (Prospectus p.204)"
+  - "Company Secretary transition managed without a gap, replaced same-day 14-Nov-2025 (BSE filing via web search)"
+  - "Zero promoter pledge maintained through a full listing cycle into 2026; no promoter share sales at any point, despite the IPO being the family's first liquidity event in 27 years (Prospectus p.75; web search 2026)"
+  - "Named outside investor Ritu Bapna purchased 3,22,000 shares via BSE bulk deal 25-Sep-2025 and is reported to have built her stake to 5.02% via subsequent open-market purchases (Trendlyne portfolio tracking, 2026) -- individual, not institutional, but a genuine post-listing outside-investor accumulation signal"
+  - "Post-listing IR professionalisation: JMD Manikandan Dakshna moorthy's NDTV Profit media interaction (24-Mar-2026, BSE-disclosed) and regular post-results concalls (Jun-2026)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0.00% since IPO (16-Sep-2025) through the most recent shareholding disclosure found (screener.in/marketsmojo.com, 2026); Prospectus itself confirms no pledge pre-listing"
+searches_performed:
+  - "Airfloa Rail Technology promoter Venkatesan Dakshinamoorthy Manikandan Dakshna moorthy"
+  - "Airfloa Rail Technology RoC CSR penalty adjudication order 2026"
+  - "Airfloa Rail Technology RoC penalty Rs90 lakh CSR appeal Regional Director"
+  - "Airfloa Rail Technology land title registration Nehru Nagar promoter guarantee 2026"
+  - "Airfloa Rail Technology company secretary resignation CFO change 2025 2026"
+  - "Airfloa OR Air Flow Equipments Chennai promoter founder history 1998 railway"
+  - "Airfloa Rail Technology institutional investor mutual fund stake FII 2026"
+  - "Ritu Bapna Airfloa shares acquired stake"
+  - "Airfloa Rail Technology Glassdoor AmbitionBox employee reviews"
+  - "Big Bang Boom Solutions defence company promoter background"
+  - "Airfloa Rail Technology SEBI order OR NCLT OR oppression petition"
+  - "Airfloa Rail Technology NDTV Profit Joint MD interview interaction"
+  - "Airfloa Rail Technology stock news controversy fraud allegation"
+  - "Sree Dakssnaa Aerospace OR Airflow Energy Solutions OR Apura Energy OR Airflow Dafeng Rail Equipments RoC compliance"
+  - "WebFetch: BSE RoC-order PDF, taxguru.in, thetaxcorp.in, studycafe.in, screener.in, marketsmojo.com (all returned HTTP 403, substituted with search-snippet corroboration)"
+searches_skipped:
+  - "SEBI SCORES complaint database direct lookup (not accessible via general web search)"
+  - "MCA/RoC master-data direct portal lookup for real-time director-disqualification status (authenticated/captcha-gated, not fetchable)"
+  - "IiAS/SES/InGovern proxy-advisory paywalled database direct queries (no coverage exists for this SME-platform micro-cap per general search absence)"
+  - "Raw BSE bulk-deal filing PDF for the Ritu Bapna transaction (relied on secondary aggregator citation)"
+verdict_basis: "Chronic, multi-year (FY2018-19 to FY2022-23) Companies Act statutory-compliance laxity culminating in actual RoC-adjudicated personal monetary penalties on both promoter-Managing-Directors (Jan-2026, under appeal), plus Rs38 Cr personal-guarantee/collateral entanglement with unregistered family land title, outweighs an otherwise clean SEBI/criminal/civil record, zero pledge, no promoter selling, and genuinely credentialed independent directors -- net CAUTION, no deal-breakers triggered."

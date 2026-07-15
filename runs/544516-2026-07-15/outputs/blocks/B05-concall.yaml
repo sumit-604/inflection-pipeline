@@ -1,0 +1,91 @@
+stage: B05-concall
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY2028 revenue Rs1000cr / PAT Rs150cr target referenced by analyst Subhajit Das in the Jun-2026 call as stated 'three to four months back in some conference call' — that call is not among the two transcripts provided (Nov-2025, Jun-2026); cannot independently verify or anchor the original statement, only its Jun-2026 re-affirmation"
+  - "Reg 30 order-win filings, Janatics MOU, BBBS JV filing detail, CSR/RoC penalty orders, and Q1 FY27 business update are sourced from an operator-provided secondary summary, not primary filing PDFs; used only for the documented-action cross-check per its provenance note"
+  - "concalls_available:false in the manifest was a mis-set auto flag; operator confirmed concalls were in fact available and both transcripts were analysed in full"
+flags:
+  - "credibility_grade C: mixed promise-delivery record (order-book target and FY27 revenue guidance both walked back) despite genuine FY26 revenue delivery (Rs319.6cr vs >Rs300cr promised)"
+  - "cash conversion is the central risk surfaced in the calls: standalone OCF -Rs57.45cr in FY26 (worse than -Rs2.87cr in FY25) despite 66% revenue growth; management gives no firm turnaround date"
+  - "defense/aerospace narrative runs well ahead of execution: ~6% of order book vs the stated '50:50 within two years' ambition, reasserted without addressing the gap in both calls (repeated-evasion pattern)"
+  - "R&D spend step-up to 8-9% of sales (~Rs40-45cr) to be balance-sheet capitalized rather than expensed — accounting-optics flag for valuation stage"
+  - "intra-call numeric inconsistency in the H1 FY26 call (single-week orders of 'over INR1,013 crores' vs total order book of 'more than INR455 crores') — likely transcription artifact, reported as-extracted and unverified"
+quarters_analysed: ["H1 FY26 (call Nov-2025)", "FY26 / H2 FY26 (call Jun-2026)"]
+triggers:
+  - {priority: 1, name: "FY27 revenue execution vs Rs500cr guidance (70-75% covered by order book)", type: "VOLUME", timeframe: "near-term (FY27)", conviction: "M", confirm_signal: "Quarterly revenue prints tracking toward Rs500cr; receivables collected as promised", kill_signal: "Guidance cut again; order book shrinking faster than execution (Q1 FY27 order book already down to Rs433.8cr from Rs469cr)"}
+  - {priority: 2, name: "Cash conversion / standalone OCF turning positive", type: "CASH/MARGIN", timeframe: "near-term", conviction: "L-M", confirm_signal: "Positive standalone OCF reported in FY27 half-year results; receivable days genuinely falling", kill_signal: "Continued negative OCF into FY27; receivables collection lags the stated 70% June-end target"}
+  - {priority: 3, name: "Defense/aerospace optionality (BBBS JV, HAL simulators, R&D step-up)", type: "INORGANIC", timeframe: "medium/long-term", conviction: "L", confirm_signal: "BBBS JV formally incorporated and first bookable revenue recognized", kill_signal: "JV incorporation slips past its own restated deadline; HAL orders fail to convert beyond current Rs29cr"}
+  - {priority: 4, name: "Capacity expansion (14-acre facility)", type: "VOLUME/COST", timeframe: "medium-term", conviction: "M", confirm_signal: "Shed construction commences and China machinery issue resolves in FY27", kill_signal: "Further slippage into FY28; cost overrun beyond Rs30-35cr"}
+  - {priority: 5, name: "Coach refurbishment order intake (Rs26,000cr national programme)", type: "SECTORAL/VOLUME", timeframe: "medium-term", conviction: "M", confirm_signal: "Rs100cr refurbishment orders booked in FY27 as targeted", kill_signal: "No orders materialize by FY27-end"}
+  - {priority: 6, name: "Channel-partner asset-light scaling model", type: "VOLUME/COST", timeframe: "medium/long-term", conviction: "L", confirm_signal: "Revenue scales to Rs500cr+ without major capex, margin maintained", kill_signal: "Margin dilution greater than guided; execution/quality issues via partners surface"}
+  - {priority: 7, name: "Janatics door-systems partnership", type: "VOLUME/PRICE-MIX", timeframe: "near/medium", conviction: "M", confirm_signal: "Rs95cr business materializes over FY27-28 per MOU", kill_signal: "MOU fails to convert to firm orders"}
+  - {priority: 8, name: "EBITDA margin recovery from 20.1%", type: "COST", timeframe: "near-term", conviction: "L-M", confirm_signal: "Margin stabilizes/recovers toward 22-25% as raw material prices ease", kill_signal: "Further raw-material inflation; no margin recovery in FY27"}
+guidance:
+  - {item: "FY26 revenue", number: ">Rs300cr", timeframe: "FY26", stated_in: "H1 FY26 call"}
+  - {item: "FY27 revenue (superseded)", number: "Rs550cr+", timeframe: "FY27", stated_in: "H1 FY26 call"}
+  - {item: "Order book", number: "~Rs1,000cr by March-end FY26", timeframe: "Mar-2026", stated_in: "H1 FY26 call"}
+  - {item: "Defense revenue", number: "Rs100-120cr", timeframe: "FY27", stated_in: "H1 FY26 call"}
+  - {item: "New facility capex", number: "Rs20-30cr", timeframe: "start-up", stated_in: "H1 FY26 call"}
+  - {item: "Facility commissioning", number: "50,000 sq.ft by end-Dec-2026 (up to 1 lakh sq.ft)", timeframe: "Dec-2026", stated_in: "H1 FY26 call"}
+  - {item: "FY26 actual revenue", number: "Rs319.6cr (+66% YoY)", timeframe: "FY26 actual", stated_in: "FY26 call"}
+  - {item: "FY26 EBITDA / margin", number: "Rs64.2cr / 20.1% (down from ~25%)", timeframe: "FY26 actual", stated_in: "FY26 call"}
+  - {item: "FY26 PAT / margin", number: "Rs39.1cr / 12.2%", timeframe: "FY26 actual", stated_in: "FY26 call"}
+  - {item: "Order book (unexecuted)", number: "Rs486.9cr (May-2026); Rs469cr (Mar-2026)", timeframe: "current", stated_in: "FY26 call"}
+  - {item: "Bid pipeline", number: "~Rs1,200cr (Rs900cr rail, Rs120cr metro, Rs60-70cr defense)", timeframe: "current", stated_in: "FY26 call"}
+  - {item: "FY27 revenue guidance (current)", number: "Rs500cr", timeframe: "FY27", stated_in: "FY26 call"}
+  - {item: "FY27 PAT margin guidance", number: "12-13%", timeframe: "FY27", stated_in: "FY26 call"}
+  - {item: "ROE / ROCE", number: "22.4% / 24.9%", timeframe: "FY26 actual", stated_in: "FY26 call"}
+  - {item: "Debt raise", number: "Rs120cr at 8.25%", timeframe: "Jun-2026", stated_in: "FY26 call"}
+  - {item: "R&D spend", number: "4% historically to 8-9% of sales (~Rs40-45cr)", timeframe: "FY27", stated_in: "FY26 call"}
+  - {item: "BBBS JV investment", number: "Rs25cr", timeframe: "FY27", stated_in: "FY26 call"}
+  - {item: "Refurbishment order target", number: "~Rs100cr", timeframe: "FY27", stated_in: "FY26 call"}
+  - {item: "FY28 revenue/PAT (re-affirmed, unverifiable original source)", number: "Rs1,000cr+ revenue, Rs150cr PAT", timeframe: "FY28", stated_in: "FY26 call, referencing an untraced earlier call"}
+promise_delivery:
+  delivered: 1
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "H1 FY26 call", promise: "FY26 revenue >Rs300cr", outcome: "delivered", explanation: "Rs319.6cr actual, +66% YoY"}
+    - {promised_in: "H1 FY26 call", promise: "Order book ~Rs1,000cr by March-end FY26", outcome: "missed", explanation: "Actual Rs469cr (Mar-2026); management cited retendering low-margin projects and margin discipline over volume"}
+    - {promised_in: "H1 FY26 call", promise: "FY27 revenue Rs550cr+", outcome: "missed", explanation: "Guidance cut to Rs500cr before FY27 began; cited raw material inflation and selective bidding"}
+    - {promised_in: "H1 FY26 call", promise: "Defense reaches 50:50 mix with railways within two years", outcome: "partial", explanation: "Defense is only ~6% of order book/pipeline as of FY26 call; restated as aspiration without addressing shortfall"}
+    - {promised_in: "H1 FY26 call", promise: "Margin sustained/improving", outcome: "partial", explanation: "PAT margin held ~12%, but EBITDA margin fell from ~25% to 20.1% on raw material inflation"}
+    - {promised_in: "H1 FY26 call", promise: "New 14-acre facility live by end-Dec-2026", outcome: "partial", explanation: "Land acquired but construction not started as of Jun-2026; capex now allocated to FY27; cited China export-control machinery delay"}
+    - {promised_in: "H1 FY26 call", promise: "IPO capex bucket (machinery) deployment", outcome: "missed", explanation: "Only ~21% of Rs13.68cr capex allocation spent by FY26-end per audited results; further delayed by China end-user-certificate rule"}
+    - {promised_in: "H1 FY26 call", promise: "Two low-hanging-fruit products (door systems, vacuum toilet systems) commercializing within weeks", outcome: "partial", explanation: "Door systems materialized via Janatics MOU (Jan-2026); vacuum toilet systems never mentioned again, no explanation given"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Status/timeline of the Kavach-adjacent integrated train security system", quarters_asked: ["H1 FY26 call", "FY26 call"], classification: "deflected every time"}
+  - {question: "Progress toward the 50:50 defense/railway revenue or order-book mix", quarters_asked: ["H1 FY26 call", "FY26 call"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Genuine FY26 revenue delivery (Rs319.6cr vs >Rs300cr) and demonstrated capital discipline, but the order-book target (Rs1,000cr) and FY27 revenue guidance (Rs550cr+) were both missed/walked back, the defense 50:50 mix ambition is running at ~6% actual with no acknowledged catch-up plan, and standalone cash conversion worsened materially (OCF -Rs57.45cr FY26 vs -Rs2.87cr FY25) — a mixed record of 1 delivered / 4 partial / 3 missed promises."
+peer_questions:
+  - {question: "Is raw material inflation (aluminium +~80% YoY, stainless steel +~60-65% YoY) industry-wide, and are peers' price-variation clauses similarly limited to ~50-60% pass-through?", why: "Tests whether Airfloa's EBITDA margin compression (25%->20.1%) is sector-wide or company-specific procurement/hedging weakness", check_peers: ["FRONTSP", "TEXRAIL"]}
+  - {question: "Do peers report similarly stretched cash-conversion cycles / negative operating cash flow despite strong revenue growth?", why: "Tests whether Airfloa's back-ended execution and negative OCF (-Rs57.45cr FY26) is structural to the sector or company-specific working-capital weakness", check_peers: ["TEXRAIL", "FRONTSP"]}
+  - {question: "What growth rate, order-inflow pace, and bid-win ratio do peers cite for the national coach-refurbishment programme (~Rs26,000cr) and the Vande Bharat/Amrit Bharat/metro capex cycle?", why: "Airfloa's FY27 guidance and Rs1,200cr bid pipeline lean heavily on this sector tailwind; tests whether the framing is consensus or optimistic", check_peers: ["TEXRAIL", "FRONTSP"]}
+  - {question: "Have peers disclosed comparable Chinese-machinery export-control/end-user-certificate delays affecting capex plans since January 2026?", why: "Tests whether this is a genuine industry-wide supply-chain risk or an Airfloa-specific vendor-selection issue", check_peers: ["TEXRAIL", "FRONTSP"]}
+  - {question: "Do peers report market-share gains or losses versus the competitors Airfloa names (Kineco, Hindustan Fiberglass Works, DTL Ancillaries, Vibgyor, Universal Engineers; Tata/Fainsa in seating)?", why: "Airfloa asserts competitive strength without quantified share data; peer commentary can validate or contradict the implied positioning", check_peers: ["TEXRAIL", "FRONTSP"]}
+  - {question: "Are peers pursuing defense/aerospace diversification at a similarly aggressive R&D intensity, and is that R&D expensed or capitalized?", why: "Tests whether Airfloa's R&D step-up (4%->8-9% of sales) and its balance-sheet capitalization treatment is standard practice or aggressive accounting", check_peers: ["TEXRAIL", "FRONTSP"]}
+red_flags:
+  - "Standalone OCF sharply negative and worsening despite 66% revenue growth (FY26: -Rs57.45cr vs FY25: -Rs2.87cr) — HIGH"
+  - "Order-book guidance miss: Rs1,000cr promised by Mar-2026, actual Rs469cr (~53% shortfall) — HIGH"
+  - "FY27 revenue guidance walked back from Rs550cr+ to Rs500cr before the fiscal year began — MEDIUM"
+  - "Defense 50:50 mix target vs actual ~6% of order book, restated without addressing the gap — MEDIUM-HIGH"
+  - "EBITDA margin compression 25%->20.1% on raw material inflation, only partially covered by price-variation clauses — MEDIUM"
+  - "China export-control machinery delay: only ~21% of Rs13.68cr IPO capex allocation spent by FY26-end — MEDIUM"
+  - "R&D step-up to 8-9% of sales (~Rs40-45cr) to be capitalized on balance sheet rather than expensed — MEDIUM"
+  - "Intra-call numeric inconsistency in H1 FY26 call: 'single week... orders over INR1,013 crores' vs total order book of 'more than INR455 crores' — LOW-MEDIUM"
+  - "AMCA/HAL order description required analyst correction (simulators only, not aircraft production) — MEDIUM"
+  - "CSR/RoC penalties (~Rs90 lakh aggregate) never proactively disclosed in either concall — LOW"
+  - "Vacuum toilet systems commercialization and promised investor product-showcase presentation both silently dropped — LOW-MEDIUM"
+dropped_triggers:
+  - "Vacuum toilet systems commercialization (promised 'in two-three weeks' in H1 FY26 call, no update in FY26 call)"
+  - "Investor product-showcase presentation covering all developed/in-development products, promised for the 'next earnings call' in H1 FY26 call, not delivered in FY26 call"
+timeline_slippages:
+  - "New 14-acre facility: land-purchase completion promised by Jan-2026 and shed operational by end-Dec-2026 (H1 FY26 call); as of FY26 call, land acquired but construction not started, capex (Rs30-35cr) now allocated to FY27"
+  - "Order book Rs1,000cr milestone: targeted by March-end FY26 (H1 FY26 call); explicitly acknowledged in FY26 call as 'may extend modestly,' actual order book Rs469cr at Mar-2026"
+  - "Defense/aerospace revenue scale-up: Rs100-120cr FY27 defense revenue and 50:50 mix within two years targeted in H1 FY26 call; FY26 call shows only ~Rs29cr defense in current order book plus Rs60-70cr pipeline"
+  - "IPO capex utilization: delayed first by a machinery model change (H1 FY26 call, PONC deviation) then further by a China export-control end-user-certificate requirement (FY26 call); only ~21% of the Rs13.68cr capex allocation spent by FY26-end"

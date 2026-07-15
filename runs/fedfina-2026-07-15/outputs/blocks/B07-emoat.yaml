@@ -1,0 +1,42 @@
+stage: B07-emoat
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["B05_PROMISE_DELIVERY not available this run; F2 execution-moat evidence self-derived from 3 concall transcripts cross-referenced against actuals, not from stage 5's documented-action/Reg-30 record — reconcile when available", "inputs/announcements/ absent, so no exchange-filing corroboration of capex/branch-rollout claims beyond what concalls and AR disclose", "traditional Cr capex/plant table NOT FOUND (NBFC; branch leasehold buildout used as analogue in Section 2)"]
+flags: ["FLAG-EMOAT-BORDERLINE (em_score 25.3 sits at the bottom edge of the STRENGTHENING band, not a strong signal)", "FLAG-EMOAT-SHARED-TAILWIND (R1 and part of H1/H2 are industry-wide/partner-shared, not proprietary to FEDFINA)", "FLAG-EMOAT-UNTESTED-FY27 (the two hardest management promises — cost-to-income structural improvement and FY27 credit-cost guidance — are explicitly deferred to the Q4 FY26 call and unverified as of this run)"]
+em_score: 25
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already trending, multi-year"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already scaled"}
+  - {id: "F2", name: "Execution moat", strength: "Strong", evidence_type: "documented", time_to_materialise: "already demonstrated (3 quarters), FY27 test pending"}
+  - {id: "G1", name: "War chest / funding cost & diversification", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already demonstrated"}
+  - {id: "H2", name: "Strategic partnerships (Federal Bank, co-lending)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already demonstrated"}
+  - {id: "R1", name: "Regulatory & policy tailwind (RBI Gold Loan Framework)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already in effect, industry-wide"}
+evidence_mix: {documented: 19, claim: 12, inference: 7}
+completionist_recount: "8 categories carry at least one hard documented data point; only 6 categories (C2, D2, F2, G1, H2, R1) clear the Strong/Moderate bar, inside the 3-6 base-rate range. 14 of 21 rows score zero or near-zero."
+catalysts_12m:
+  - {catalyst: "FY27 cost-to-income and credit-cost guidance", window: "Q4 FY26 earnings call (~Apr-May 2026)", evidence_type: "claim", anchor: "Q3 FY26 call p.16"}
+  - {catalyst: "Maturation of FY26 150-gold-branch cohort", window: "9-12 months per branch, through FY27", evidence_type: "documented", anchor: "Q2 FY26 call p.5; Inv. Pres. p.20-21"}
+  - {catalyst: "BRE credit-scorecard go-live confirmation (ST LAP)", window: "targeted Q3 FY26, unconfirmed", evidence_type: "claim", anchor: "Q1 FY26 call p.3"}
+  - {catalyst: "Tier-2 capital supplementation", window: "H2 FY26", evidence_type: "claim", anchor: "Q2 FY26 call p.5"}
+  - {catalyst: "Stree Sakthi scheme scale beyond Rs.100 Cr", window: "12 months", evidence_type: "documented", anchor: "Inv. Pres. p.39"}
+capex_embedded_growth_pct: 12.6
+optionality_register:
+  - {optionality: "BRE credit scorecards becoming a genuine underwriting data-moat", converting_evidence: "disclosed model performance/default-rate delta or confirmed go-live %", first_appears: "concall (Q4 FY26/FY27) or AR MD&A", window: "6-12 months"}
+  - {optionality: "AI-driven risk flags / fully digital DSGL onboarding", converting_evidence: "concall confirmation of go-live plus quantified turnaround/credit-cost improvement", first_appears: "concall, investor presentation", window: "6-12 months"}
+  - {optionality: "Cost-to-income structural improvement (deferred to FY27)", converting_evidence: "sustained FY27 quarterly cost-to-income decline vs FY26 flat ~53-57%", first_appears: "quarterly results/investor presentation", window: "12 months"}
+  - {optionality: "FY27 credit-cost guidance", converting_evidence: "formal FY27 guidance issued and tracked against actuals", first_appears: "Q4 FY26 earnings call", window: "3-6 months"}
+  - {optionality: "Stree Sakthi scheme scaling into its own disclosed segment", converting_evidence: "segment-level AUM/yield/credit-cost disclosure", first_appears: "AR, investor presentation", window: "12-24 months"}
+  - {optionality: "Federal Bank branch network as formal cross-sell/referral channel", converting_evidence: "explicit disclosure of leads/originations sourced via Federal Bank branches", first_appears: "AR, concall, exchange filing", window: "unconfirmed if it exists"}
+  - {optionality: "Co-lending (CLM) scaling materially beyond current 15-18% of gold AUM", converting_evidence: "disclosed CLM % by product trending up with named bank partners", first_appears: "concall, AR", window: "12-24 months"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0's AVOID is driven by the same small-ticket LAP credit-cost/PCR problem that F2's documented 3-quarter promise-delivery record shows management actively fixing on schedule, but em_score sits at the bottom of the STRENGTHENING band, half the active categories are industry-shared not proprietary, and the two hardest FY27 promises (cost-to-income, forward credit-cost guidance) remain unverified — treat as provisional pending Q4 FY26 delivery and stage 5 reconciliation."
+top_moat_risks:
+  - "FY27's two deferred hardest promises (cost-to-income improvement, forward credit-cost guidance) go undelivered, undercutting F2 and validating Gate 0's original AVOID-level concerns"
+  - "R1/H1/part of H2 are industry-wide or partner-shared tailwinds, not proprietary — competitors capture the same benefit"
+  - "Gold-loan concentration (52.9% and rising, management 'unconstrained') increases price/LTV cyclicality risk that could offset execution-moat gains"
+  - "Digital-adoption metrics (downloads, registration %) have not yet translated into a cost-to-income improvement despite years of investment"
+  - "Channel concentration in Federal Bank (60.7% owner) and a small number of co-lending bank partners"
+  - "F2 evidence is self-derived from concalls in the absence of stage 5's B05 documented-action record and should be reconciled when available"

@@ -1,0 +1,23 @@
+stage: B12b
+company: "544516"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 19
+caught: 14
+partially_caught: 4
+missed:
+  - {severity: "MINOR", item: "Volunteered working-capital-stress signals — increased bill-discounting charges (receivable factoring) and reduction in delayed-payment charges (prior late-payment penalties) in the FY26-call other-expense and finance-cost bridges", anchor: "Jun-2026 call, opening remarks, p4"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C (Mixed) is right; 66% revenue delivery and candor on the order-book miss offset by broad missed/walked-back commitments, defense over-promotion, and WC stress"
+findings:
+  - {severity: "MINOR", location: "B05 vs Jun-2026 call opening p4", claimed: "Cash-conversion risk flagged at HIGH", source_truth: "MISSED: bill-discounting charges up and delayed-payment charges present — direct WC-stress corroboration not surfaced", note: "Additional evidence for an already-caught thesis-level risk, not a new risk"}
+  - {severity: "MINOR", location: "B05 4C/1B vs Jun-2026 call, Sahil Garg p11-12", claimed: "Defense in current order book recorded as Rs29cr", source_truth: "PARTIALLY CAUGHT: management gave Rs60-70cr, confirmed it, then retracted to Rs29cr in one exchange", note: "Live self-contradiction not flagged as a specificity/credibility issue"}
+  - {severity: "MINOR", location: "B05 2D/4D vs Jun-2026 call opening p4", claimed: "Elevated receivables and negative OCF flagged", source_truth: "PARTIALLY CAUGHT: receivable-day 'improvement' partly optical via reclassification of working capital into supplier advances under other current assets", note: "Specific optics not named under the cash-conversion umbrella"}
+  - {severity: "MINOR", location: "B05 4C vs Jun-2026 call opening p4 / Dhaval Pandya p7-8", claimed: "Net D/E 0.2x rated 'Good' capital discipline", source_truth: "PARTIALLY CAUGHT: Rs120cr new debt at 8.25% nearly doubles gross leverage against ~Rs175cr equity; tension with the 0.2x-as-strength framing not reconciled", note: "Both facts recorded separately, not connected"}
+  - {severity: "MINOR", location: "B05 1B/4A vs Nov-2025 Shubham p7 / Jun-2026 Krupashankar p6-7", claimed: "BBBS JV incorporation timing tracked as kill signal", source_truth: "PARTIALLY CAUGHT: Nov portrayed JV as already contracted/active; Jun revealed it was not incorporated and slipped for 'internal reasons'", note: "Consistency signal not flagged"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 74

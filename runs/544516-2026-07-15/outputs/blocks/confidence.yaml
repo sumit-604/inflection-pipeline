@@ -1,0 +1,17 @@
+stage: confidence-delta
+company: "544516"
+run_date: "2026-07-15"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 86.7      # B12a: 45 numbers checked, 39 clean, 0 CRITICAL, 2 MAJOR (both self-corrected downstream by B03)
+  redflag_coverage: 74            # B12b: 14 of 19 independent concall red flags caught upstream (4 partial, 1 MINOR missed)
+  framework_adherence: 100        # B12c: Gate 0 (38) + Emerging Moat (28) rules, 0 fails. VALUATION component deferred to Phase 3.
+  peer_utilisation: 100           # B12d: 8 of 8 peers used substantively
+  overall: 74                     # min of the four available components
+band: "60-74"
+band_effect: "PROCEED-family verdicts downgrade one level (per orchestrator Section 5)."
+rework_triggered: false           # no CRITICAL from Verifier A; no verifier acceptance_rate below 60%
+valuation_framework_adherence: pending-phase-3   # Verifier C valuation-adherence audit (B10/B11) runs in Phase 3
+notes:
+  - "Lowest component is redflag_coverage (74, Verifier B). The 5 gaps are all MINOR: additional corroboration of already-caught thesis-level risks (WC stress, receivable-day optics, leverage-vs-0.2x framing, BBBS JV consistency, live defense-order self-contradiction), not new undetected risks. Verifier B concurs with credibility grade C."
+  - "Verifier A's 2 MAJORs were both in B02 and both already caught and corrected by B03's triple-pass verification (high-cost debt not fully repaid; CSR active not cleared). No fabricated or uncorrected material figure survived to synthesis."

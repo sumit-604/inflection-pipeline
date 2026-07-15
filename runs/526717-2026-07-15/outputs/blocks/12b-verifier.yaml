@@ -1,0 +1,29 @@
+stage: B12b
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 8
+caught: 4
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Saudi Arabia JV MOU (Saeed Ghodran Group, 2 Jul 2024) disclosed in same FY25 AR (p.8) as a forward commitment, never tracked by B05 and no follow-up in any later filing — same failure mode as the Malaysia JV, on a different JV", anchor: "Annual_Report.pdf p.8 (Directors' Report, Material Events)"}
+  - {severity: "MAJOR", item: "Standalone short-term loans & advances surged Rs 211.66 lakh (FY25) to Rs 4,790.00 lakh (FY26); consolidated 1,482.20 to 6,284.55 lakh — ~Rs 45 cr out of a cash-negative, highly levered parent with heavy RPT concentration, unexplained in any filing (financial-forensics item, likely Stage 2/3, not in B05)", anchor: "RESULTS_1.txt p.18 (standalone) and p.9 (consolidated)"}
+  - {severity: "MINOR", item: "Maiden Rs 1/share interim dividend (paid 3 Dec 2025, ~Rs 106.75 lakh) declared while standalone operating cash flow was -759.44 lakh and consolidated gearing 3.63x; capital-allocation tension not flagged by B05", anchor: "RESULTS_2.txt p.4 (note); RESULTS_1.txt p.12/p.20; RATING.txt p.9"}
+pipeline_flags_not_supported: []   # every B05 red flag was independently reproducible from source; all SUPPORTED
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur (C) — additional uncaught flags all cut toward less credibility, reinforcing the C floor; would not grade higher"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 2A/4D vs Annual_Report.pdf p.8", description: "MISSED: Saudi Arabia JV MOU (2 Jul 2024) disclosed in the same AR is untracked; second abandoned international-expansion commitment, same failure mode B05 flagged for Malaysia"}
+  - {severity: "MAJOR", location: "B05 (whole) vs RESULTS_1.txt p.18/p.9", description: "MISSED: ~Rs 45 cr surge in parent loans & advances alongside negative parent CFO and RPT concentration, unexplained; financial-forensics red flag likely owned by Stage 2/3 but absent from B05"}
+  - {severity: "MINOR", location: "B05 Section 2A/4D vs Annual_Report.pdf p.22", description: "PARTIALLY CAUGHT: B05 states one Reg 30 board-outcome delay; Secretarial Audit lists five FY25 lapses incl. two separate board-outcome delays (14 Nov 2024 and 14 Feb 2025) plus delayed ROC e-forms; instance count understated (conclusion unchanged/reinforced)"}
+  - {severity: "MINOR", location: "B05 05.md guidance table vs RESULTS_2.txt p.4", description: "MISSED (partial): maiden dividend paid from cash-negative levered parent not flagged as a capital-allocation red flag"}
+  - {severity: "MINOR", location: "B05 05.md YAML excuse_pattern vs its own Section 2B", description: "OVERSTATED: YAML tags 'external-blame-heavy' while the prose explicitly finds no macro/competitor scapegoating and describes technical-minimisation/silence; label inconsistent with evidence"}
+  - {severity: "MINOR", location: "Annual_Report.pdf p.5 (Chairman's Message) — uncaught by B05", description: "Disclosure-quality error: total revenue labelled 'standalone basis' for both Rs 11,808.53 lakh and Rs 46,343.54 lakh; the second is the consolidated figure mislabelled"}
+  - {severity: "MINOR", location: "Annual_Report.pdf p.22 (MR-3) — uncaught by B05", description: "Disclosure-quality error: Secretarial Audit Report titled FY ended 31 March 2024 while its body/audit period is FY ended 31 March 2025"}
+critical_count: 0
+major_count: 2
+minor_count: 5
+acceptance_rate: 63             # redflag_coverage = (caught 4 + partially 1) / 8 independent flags = 62.5%
+redflag_coverage: 63           # same basis; share of verifier-found material red flags already caught upstream

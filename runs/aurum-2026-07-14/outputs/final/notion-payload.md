@@ -33,6 +33,17 @@ value present ₹48 / ₹85 / ₹127; Year-3 ₹76 / ₹173 / ₹310. Hurdle STO
 (HR base 0.23, bull 0.41). SOTP expected 3yr CAGR −10.9%. CMP ₹240 is ~2.8x
 base intrinsic. Business investable on the transitions, price is not.
 
+## Operator forward house case (post-finalize override, 2026-07-14)
+Operator locked a forward scenario: ROCE RECOVERING, 8% PAT margin at scale,
+20x destination PE, FY30 exit priced on FY31 earnings, 25% CAGR hurdle, then a
+20% margin of safety on the hurdle entry. Result: FY31 EPS ₹12.2, exit fair
+value ₹244, entry ₹80, MoS buy ₹64. Decision UNCHANGED AVOID at CMP ₹240 (five
+year CAGR from ₹240 ~+0.3%; 25% unreachable at ₹240 even at the 45x cap, ~18%
+at the cap). Accumulation zone ₹64-80. Higher-entry alternative on a 3yr FY29
+exit priced on FY30 earnings at the same 8% / 20x: entry ₹105, MoS buy ₹84. The
+8% margin is the single swing (it sets both the EPS and the ROCE-driven
+multiple); operator flagged doubt on operating leverage.
+
 ## Devil's advocate
 AVOID SURVIVES, over-determined. Per dimension: growth_triggers weakened,
 moat_durability weakened, management_trust weakened, valuation_safety

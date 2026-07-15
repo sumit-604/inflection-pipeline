@@ -1,0 +1,30 @@
+stage: B12c
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+phase_scope: "phase-1 (Gate 0 + Emerging Moat only); valuation adherence deferred to phase 3"
+gate0:
+  rules_checked: 45
+  fails:
+    - {rule: "M1 Pricing Power", severity: MAJOR, issue: "scored 5 via unauthorized (1-Cost/Income) EBITDA-margin proxy; no NBFC substitute is written for M1 and report's own N/A->0 discipline (A1/A2/A4,M3/M4/M6/M10/M12) implies M1=N/A->0. Recompute: moats_confirmed 2->1, moat_class MODERATE->THIN, moat_score 10->5, grand_total 48->43. Classification AVOID unchanged (Core 38<40).", location: "01-gate0.md L170,183-184"}
+emoat:
+  rules_checked: 25
+  fails:
+    - {rule: "E1 evidence multiplier", severity: MAJOR, issue: "raw LM=1 x 0.5 (paper-search) = 0.5 but recorded as 1.0; em_score overstated 24.8->25.3. STRENGTHENING survives on rounding but total sits on 24/25 boundary.", location: "07-emoat.md L113,161,211"}
+    - {rule: "F2 Execution moat grade", severity: MAJOR, issue: "full HH=4 x documented 1.0 = 4.0 (largest contributor) on a self-derived promise-delivery record; required B05 feed was absent. A 0.7x haircut (2.8) would flip em_classification to MODEST. Framework-permissible but swing-critical; maker flagged provisionality.", location: "07-emoat.md L121-130,214,281"}
+valuation: pending-phase-3
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MAJOR, framework: gate0, item: "M1 EBITDA-margin proxy unauthorized; strict apply -> moat_class MODERATE->THIN, moats_confirmed 2->1", location: "01-gate0.md L170,183-184"}
+  - {severity: MAJOR, framework: emoat, item: "E1 weighted score arithmetic 1x0.5 recorded as 1.0 not 0.5; inflates em_score to boundary", location: "07-emoat.md L113,161,211"}
+  - {severity: MAJOR, framework: emoat, item: "F2 graded HH/documented 4.0 on self-derived record with B05 absent; conservative haircut would flip band to MODEST", location: "07-emoat.md L121-130,214"}
+  - {severity: MINOR, framework: gate0, item: "M4/M10 N/A->0 despite zero revenue-decline years; defensible under Rule 5, immaterial", location: "01-gate0.md L173,179"}
+  - {severity: MINOR, framework: gate0, item: "M11 two-window CAGR uses overlapping windows; scored 0 regardless", location: "01-gate0.md L180"}
+  - {severity: MINOR, framework: emoat, item: "capex_embedded_growth_pct computed on AUM base as incremental AUM, framework 2C specifies revenue; NBFC-adapted, labeled, feeds phase-3", location: "07-emoat.md L66-72,332"}
+  - {severity: MINOR, framework: emoat, item: "evidence_mix counts self-reported, not independently item-recounted (Verifier A scope)", location: "07-emoat.md L324"}
+critical_count: 0
+major_count: 3
+minor_count: 4
+acceptance_rate: 96

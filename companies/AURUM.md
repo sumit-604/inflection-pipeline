@@ -20,6 +20,7 @@ one-times. Business investable on the transitions, price is not.
   segment profit AND no goodwill impairment on top of a clean operating print.
 
 ## OPERATOR RULINGS
+- 2026-07-14 (post-finalize operator override): operator locked a forward house case (ROCE RECOVERING, 8% PAT margin, 20x destination PE, FY30 exit on FY31 earnings, 25% CAGR hurdle then 20% MoS). Result: exit fair value Rs244, entry Rs80, MoS buy Rs64; decision UNCHANGED AVOID at CMP Rs240 (~+0.3%/yr 5yr CAGR; 25% unreachable at Rs240 even at the 45x cap). Higher-entry alt: 3yr FY29-on-FY30 at 8%/20x = entry Rs105 / buy Rs84. Margin/operating-leverage is the single swing and the operator flagged doubt on it.
 - 2026-07-14: PROCEED WITH GAPS at stage 0 — ran phase 1 on evidence-maximizing
   defaults despite empty rating/announcements/shareholding folders; operator
   then supplied the last-6-months announcements and a shareholding screenshot

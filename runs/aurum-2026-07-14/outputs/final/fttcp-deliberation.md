@@ -100,3 +100,40 @@ other income and asset sale gains are stripped out.
   profitability is partly one time aided. Stress test by stripping the one time
   other income and asset sale gains and re-asking whether the operating business
   is profitable.
+
+---
+
+## POST-FINALIZE OPERATOR OVERRIDE (2026-07-14, recorded after phase-3 close)
+
+The operator interrogated the valuation post-finalize and locked a forward
+house case. This override is authoritative for any refresh.
+
+- Operator ruling (2026-07-14): value on a forward scenario, not the trough.
+  Adopt ROCE RECOVERING (asset-light, revenue FIRING; ROCE rises with the
+  numerator as the margin prints), an 8% PAT margin at scale, and a 20x
+  destination PE (within the Platform/SaaS 45x cap; reasonable-to-conservative
+  given the implied ROCE). Exit FY30 priced on FY31 earnings (forward-PE at
+  exit, AMAGI convention). Discount at the operator's 25% CAGR hurdle, then a
+  20% margin of safety ON the hurdle entry (not on fair value).
+  Operator's stated reasoning: "the transition in ROCE from 3% to 28% is huge,
+  the transition in revenue is also strong... take margin as 8% and
+  price-to-earnings at 20... my criteria is a 25% CAGR hurdle, and the margin
+  of safety discount is on that entry price."
+
+- Result under the locked case (illustrative FY31 revenue ~Rs1,100 Cr,
+  7.22 Cr shares, pre July-2026 dilution):
+  FY31 PAT ~Rs88 Cr -> EPS Rs12.2; x20 -> exit fair value Rs244 (FY30);
+  entry at 25% CAGR (/3.052) = Rs80; MoS buy (-20%) = Rs64.
+  Decision UNCHANGED at CMP Rs240: 5yr CAGR from Rs240 is ~+0.3%/yr; 25% CAGR
+  is unreachable at Rs240 at any legal multiple (needs 60x vs the 45x cap; even
+  at the 45x cap the CAGR is ~18%). AVOID at CMP; accumulation zone Rs64-80.
+  Higher-entry alternative (operator noted): 3yr FY29 exit on FY30 earnings,
+  same 8%/20x -> entry Rs105, MoS buy Rs84 (the 25% hurdle compounds to less
+  over 3yr than 5yr, so the shorter horizon gives the higher entry).
+
+- Net: every generous choice the operator adopted (forward ROCE, 20x, 5yr,
+  forward-PE at exit) lifts the fair value but not the buy case at Rs240,
+  because Rs240 already prices the 8% margin inflection and the 25% hurdle is
+  demanding. The margin transition remains the single swing (it sets both the
+  EPS and the ROCE-driven multiple); operator flagged doubt on operating
+  leverage, which is the correct thing to underwrite before entry.

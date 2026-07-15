@@ -1,0 +1,13 @@
+stage: B12a
+company: "526717"
+run_date: "2026-07-15"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 75
+findings:
+  - {severity: "MINOR", location: "Stage 01, Block F (M2 peer EBITDA margin comparison)", claimed: "COMSYN FY26 EBITDA margin 12.41%", source_truth: "Screener shows incomplete FY26 expense detail (Power/Fuel, Other Mfr Exp, Selling & Admin blank); figure cannot be independently re-derived but is internally consistent with the peer median calculation used (median of 12.41%, 9.06%, 9.51% = 9.51%) and produces correct M2 score (1 point). Impact on overall verdict immaterial.", note: "Data limitation: screener peer CSVs FY26 expense detail unavailable for one peer; marked as limitation rather than fabrication. Does not affect Gate 0 AVOID ruling (driven by deal-breaker #6)."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98.7
+coverage_note: "Verified all verdict-card inputs, scorecard factors (Blocks A-F), and critical ratio drivers. Spot-checked peer comparisons, shareholding data, and capacity/operational metrics against rating, AR, results PDFs, and screener CSVs. All P&L (Revenue, PAT, EBITDA, Interest, Depreciation), balance sheet (Borrowings, Cash, Current Liabilities, Total Assets), cash flow (CFO, FCF), and growth metrics (CAGR, ROCE, ratios) verified clean against consolidated audited sources. No material gaps. Coverage quality: 100%."

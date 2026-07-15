@@ -1,0 +1,60 @@
+stage: B09-tam
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Precise wagon/coach/locomotive split of IR's Rs57,693cr FY26 rolling-stock budget: not disclosed; derived via bottom-up unit-cost triangulation, flagged as analyst estimate throughout Method 1(a)"
+  - "Exact addressable-content % of a coach's cost attributable to Airfloa's scope (interiors/AC/lighting/doors/seating) vs shell/bogie/underframe: no industry source found; used analyst-derived 20-30% range"
+  - "Revenue for 3 of 6 named B07 competitors (Hindustan Fiberglass Works, Vibgyor, Universal Engineers) and Tata/Fainsa's seating-specific revenue: NOT FOUND"
+  - "Metro rail car annual production/procurement count: NOT FOUND; metro segment sized via capex-fraction method instead of unit method"
+  - "Independent government/press confirmation of the ~Rs26,000cr / 25,000-coach refurbishment programme (largest single TAM driver, ~35% of realistic TAM): NOT FOUND via web search; carried from company concall/operator summary only"
+  - "Current run-date live trading P/E for Section 5E valuation line: NOT FOUND in stage 9 inputs; only IPO-pricing multiple (13.1x FY25 PAT) available — stage 11 must supply live multiple"
+  - "Top-3 competitor revenue-share concentration for the rail-interiors/components niche: NOT FOUND"
+flags:
+  - "Management's headline market-opportunity framing (Rs16.7 lakh crore Indian Railways investment pipeline through 2031, Inv. Pres. slide 35) is undifferentiated whole-of-sector infrastructure spend, not Airfloa's addressable component/interiors market -- mgmt_claim_ratio ~152x vs conservative TAM, read as inflated / textbook TAM=SAM conflation"
+  - "The coach refurbishment programme (~Rs26,000cr/25,000 coaches), ~35% of realistic TAM and the single largest incremental driver in this analysis, rests entirely on company-relayed concall commentary with no independent government/press confirmation found in this search -- if smaller, delayed, or differently scoped, both the refurb TAM slice and the SOM build are overstated"
+  - "SOM_3yr (Rs568cr) exceeds management's own stated near-term capacity ceiling (~Rs450cr from two-shift ops + new-facility capex claim) by ~Rs118cr; closing the gap depends on the unproven, metric-free channel-partner model (B07 B3, Weak) -- consistent with B07's F2 documented-negative execution-moat finding, the capacity/capex side is the more optimistic input, not the SOM share-gain math"
+  - "SOM-implied revenue CAGR (~21-22%) is materially below FY27 single-year guidance implied growth (~56.5%, Rs500cr vs Rs319.6cr FY26); stage 11 should treat guidance as order-book-execution-driven, not the sustainable 3-5yr trend rate"
+  - "Cash-conversion deterioration flagged in B04/B07 (FY26 standalone OCF -Rs57.45cr) is not itself a TAM constraint but caps confidence in the company's ability to fund the capacity needed to capture even the conservative SOM without further debt or dilution"
+market_definition: "India-only rail-coach interiors/components (AC ducting, blinds, lighting, seating, doors), coach refurbishment, metro rail interior/lighting systems, and defence/aerospace structures & simulators; excludes full coach-body/wagon/locomotive OEM manufacture, propulsion/signalling, and the pre-revenue BBBS EW/AI defence-platform JV"
+tam_cr: {conservative: 11000, realistic: 13150}
+sam_cr: 8600
+sam_pct_of_tam: 65.4
+som_3yr_cr: 568
+som_5yr_cr: 859
+som_implied_revenue_cagr: {yr3: 21.1, yr5: 21.9}
+current_sam_share_pct: 3.7
+revenue_headroom_x: 26.9
+tam_growth_pct: 8.3
+runway_class: "STRONG"
+mgmt_claim_cr: 1670000
+mgmt_claim_ratio: 152
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs118cr by yr3 vs management's own ~Rs450cr near-term capacity ceiling; capex/execution plan is the more optimistic side (B07 F2 documented negative), not the SOM share-gain assumption"
+methods_used:
+  - "top-down (railway/metro/defence budget & capex, segment by segment)"
+  - "bottom-up (coach unit economics)"
+  - "peer revenue aggregation (with explicit unorganised-sector allowance)"
+  - "import-substitution / policy-target (defence indigenization growth-rate corroboration)"
+  - "global/national benchmark (India rolling-stock market cross-check)"
+stale_data_flags:
+  - {datapoint: "India Railway Equipment Market size (USD 12.31bn)", source: "TechSci Research, via web search summary", year: 2024}
+  - {datapoint: "India Aerospace & Defence market size (USD 28.68bn), context-only, not used in headline TAM", source: "Expert Market Research, via web search summary", year: 2024}
+searches_performed:
+  - "India railway rolling stock components market size 2026 crore CRISIL ICRA"
+  - "Indian Railways capital expenditure FY27 budget 2026 lakh crore"
+  - "India coach interiors furnishing market size rail coach ancillary components India"
+  - "India metro rail capex investment pipeline 2026 2030 lakh crore"
+  - "WebFetch: mordorintelligence.com/industry-reports/rail-components-market (403 Forbidden, fell back to search snippets)"
+  - "Kineco Group revenue crore railway composites India"
+  - "India defence aerospace structures manufacturing outsourcing market size private players crore"
+  - "Indian Railways rolling stock procurement budget allocation coaches wagons crore FY26 annual"
+  - "coach refurbishment Indian Railways scheme 25000 coaches crore programme 2026"
+  - "Titagarh Rail Systems Jupiter Wagons order book FY26 revenue crore"
+  - "DTL Ancillaries OR Vibgyor railway coach revenue crore India component supplier"
+  - "Indian Railways coach refurbishment programme 26000 crore mid-life rehabilitation 2026"
+  - "USD INR exchange rate July 2026"
+searches_skipped:
+  - "Primary-document line-item extraction of PRS India Demand for Grants 2026-27 PDF for exact rolling-stock budget split -- only aggregate figure pulled from search snippets, full page-read not performed"
+  - "Individual revenue search for Hindustan Fiberglass Works, Vibgyor, Universal Engineers -- judged low-probability-of-yield after Kineco/DTL Ancillaries searches returned only partial data even for larger named entities; skipped rather than run to exhaustion"

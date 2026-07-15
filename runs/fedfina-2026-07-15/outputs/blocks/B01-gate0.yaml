@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "announcements (absent)"
+  - "screening-fedfina (peer-only screener; no FEDFINA-specific CSV)"
+  - "prospectus folder (absent; RHP present in annual-report/ and used as RESTATED backward-year source, FY21-FY23)"
+  - "promoter pledge % not in provided sources (E3 scored N/A)"
+  - "peer comp/market-cap data not provided to this stage (M2, M5, M7, M9 scored PEER DATA NEEDED)"
+  - "FY26 Annual Report / Note 53 Contingent Liabilities not yet published; E4 uses FY25 figure"
+  - "Current Liabilities not disclosed in NBFC Ind-AS balance sheet (A1/A2/A4/D4 N/A per company's own Reg 52(4) disclosure)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven by Core score 38/100: Block A (0/20, ROCE not computable - no Current Liabilities line in NBFC Ind-AS balance sheet, median ROE 11.5% below 12% threshold) and Block B (0/20, CFO/FCF negative every year FY21-FY26 - loan-book growth booked as operating outflow under Ind AS 7, financed via financing activities) are structural/mechanical, applying across the whole window not a single bad year, while Block C (20/20, revenue CAGR 26.1%, PAT CAGR 41.0%) and Block D (CRAR 20.71% latest) are strong to adequate. Genuine (non-structural) depressors: PCR fell 40.0%(FY25) to 32.29%(FY26); credit cost spiked to 1.8% of average assets in FY25 (from 0.7% FY24) on small-ticket LAP stress; PAT declined FY24 to FY25 before recovering FY26."
+  - type: FLAG-CASH
+    reason: "Cumulative CFO/PAT = -5.04x and cumulative FCF/PAT = -5.14x across FY21-FY26 (all 6 years FCF-negative). INDETERMINATE for a growth-stage NBFC (loan disbursement is an Ind AS operating outflow) rather than a proven earnings-quality failure - caps downstream verdict at PROCEED WITH CAVEATS per pipeline rule until explicitly adjudicated. Separately, direct-assignment gain-on-sale income rose from ~28% of PBT (FY24) to ~50% of PBT (FY25, rating.txt p.2) - a genuine, non-structural earnings-quality item warranting scrutiny."
+  - type: FLAG-ASSETQUALITY
+    reason: "Provision Coverage Ratio thinned from 40.0% (FY25) to 32.29% (FY26) to 38.36% (Q1FY27) even as headline GNPA/NNPA improved slightly; FY25 credit cost spiked to 1.8% of average assets (from 0.7% FY24) driven by small-ticket LAP stress (rating.txt p.2-3); mortgage-segment GNPA rose to ~3.4-3.8% vs gold-loan GNPA of ~0.1-0.3% (rating.txt p.3)."
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 0, B: 0, C: 20, D: 8, E: 10}
+core_score: 38
+moat_score: 10
+grand_total: 48
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A (0) <8 -> max GOOD, triggered, structural NBFC ROCE N/A across full window"
+  - "2: Block B (0) <8 -> max GOOD, triggered, structural NBFC CFO classification across full window"
+  - "4: cumulative CFO/PAT (-5.04x) <0.50 -> max AVERAGE, triggered, see block_b_trend caveat"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swing; PAT positive all 6 years FY21-FY26"
+  - "Proxy: Total Income (Rev from Ops + Other Income) used as consistent revenue basis across all sources for Block C"
+  - "Proxy: (1-Cost-to-Income%) used as operating-margin equivalent for M1 (no NBFC EBITDA/COGS split exists)"
+  - "PEER DATA NEEDED: M2, M5, M7, M9 (peer comp data not in this stage's source list)"
+  - "N/A (lender balance sheet, not a scoring judgment): A1, A2, A4, D4, B4, M3, M4, M10, M12"
+  - "E2 promoter-holding decrease (73.22%->60.7%) is entirely the Nov-2023 IPO dilution event; post-listing trend flat (60.80%->60.7%, -0.1pp) - analogous to documented post-IPO-rebase carve-out"
+  - "E3 pledge: data gap, not a 0%-pledge finding"
+  - "E4 uses FY25 contingent-liabilities figure; FY26 AR notes not yet published at run date"
+  - "AR chart (two-point average) vs Q1FY27 investor presentation (quarterly-average, restated) show modest FY22-24 Spread/ROA/ROE differences; both anchored, IP basis used for latest year"
+block_b_trend: "deteriorating — DA (direct assignment) gain-on-sale income rose to ~50% of PBT in FY25 from ~28% in FY24 (rating.txt p.2), while cumulative CFO/PAT FY21-FY26 = -5.04x (computed) and PCR fell from 40.0% (FY25) to 32.29% (FY26)"

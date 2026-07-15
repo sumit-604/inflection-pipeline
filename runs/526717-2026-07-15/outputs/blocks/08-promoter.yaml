@@ -1,0 +1,34 @@
+stage: B08-promoter
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "no prospectus (post-CIRP long-listed; group history sourced from web + AR governance)"
+  - "NCLT cause-list confirmation not fetched (403 proxy / time-box)"
+  - "primary BSE resignation-filing PDF not fetched (403); CS resignation language via operator-supplied transcription only"
+  - "MCA/RoC lookups for Cornucopia Tradelink / HCP Enterprise not completed"
+  - "SEBI SCORES complaint lookup not completed"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Related-party COGS concentration 62.6-70.4% involving an unlisted dominant counterparty (Plastene India Ltd, also 4.68% promoter-group shareholder) with a new 0%-interest loan and cross-guarantees exceeding 2x consolidated net worth"
+      - "Secretarial Auditor-confirmed Regulation 23(9)/30 non-compliance, FY25"
+      - "Three CS changes in ~14 months, latest an unresolved Jan-2026 resignation citing 'matters requiring internal clarification'"
+      - "Recurring special resolutions (2022-2024) to pay an Independent Director above SEBI LODR remuneration limits"
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers: []
+transition_evidence:
+  - "FII holding 0.07% -> 4.50% (Jun-Sep 2025), DII 4.80%"
+  - "0% pledge, 5+ consecutive quarters, exchange-confirmed"
+  - "Jan-2026 CS vacancy filled in ~1 month by credentialed outside hire (17 yrs experience)"
+  - "Secretarial Auditor upgraded to full 5-year statutory term post non-compliance finding"
+  - "MD forwent his own remuneration"
+  - "2022 capital raise was pro-rata rights issue, not preferential promoter allotment"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across 5+ consecutive quarters through Mar-2026"
+searches_performed: ["26 web searches across CIRP/NCLT history, promoter background, SEBI/criminal/regulatory record, RPT-entity mapping, board/KMP turnover, institutional ownership, media/employee/proxy-advisory reputation"]
+searches_skipped: ["NCLT cause-list confirmation", "primary BSE resignation-filing PDF", "MCA/RoC lookups for Cornucopia Tradelink/HCP Enterprise", "SEBI SCORES complaint lookup - all time-boxed or 403 tool errors"]
+verdict_basis: "Related-party revenue/COGS concentration up to 70.4%, a new 0%-interest loan and cross-guarantees exceeding 2x net worth involving an unlisted, equity-linked dominant counterparty, confirmed Reg. 23(9)/30 compliance breaches, and an unresolved Jan-2026 CS resignation citing unspecified 'matters requiring internal clarification' outweigh a personally clean current-promoter legal record, 0% pledge, and genuine institutional-entry and KMP-replacement transition evidence -> CONCERN, with the transition evidence concentrated in ownership/process rather than in the RPT structure itself."

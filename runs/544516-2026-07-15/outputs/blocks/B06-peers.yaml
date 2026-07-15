@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q1 (raw material inflation / margin compression) is CONTRADICTED by FRONTSP: same broadly elevated steel-price environment in the same period, but FRONTSP's EBITDA margin expanded 533bps (21.47%->26.80% FY25->FY26) via vendor negotiation and tender selection, versus Airfloa's margin falling ~490bps (25%->20.1%) — weakens the sector-wide-shock framing and points toward company-specific procurement/pricing execution as a contributing factor; priority item for synthesis"
+  - "Q5 (named competitors) and Q4 (China machinery delays) and Q6 (R&D capitalization treatment) are UNVERIFIABLE: neither peer operates in Airfloa's apparent interior-fitout/composite-component niche and neither discusses China export-control delays or R&D accounting treatment at all — these B05 concerns remain untriangulated, not confirmed or dispelled"
+  - "TEXRAIL's own investor-confirmed 6-year cumulative EBITDA-to-OCF gap (Rs1,625cr EBITDA vs Rs50cr OCF) both corroborates a structural sector cash-conversion pattern (supporting Q2 partial verification) and warns that such gaps can persist for years without a clear turnaround catalyst once established"
+  - "No peer mentions Airfloa Rail Technology by name or unmistakable description in any of the eight transcripts (2D null result)"
+  - "TEXRAIL shows the same repeated-evasion pattern on Kavach-related questions that B05 flagged for Airfloa specifically — an industry investor-relations pattern, not unique management behavior, which somewhat tempers (without erasing) that particular B05 red flag"
+peers_provided: 8
+verified: []
+partially_verified:
+  - {claim: "Peers report similarly stretched cash-conversion cycles / negative operating cash flow despite strong revenue growth", peers: ["TEXRAIL", "FRONTSP"]}
+contradicted:
+  - {claim: "Raw material inflation causing sector-wide EBITDA margin compression with limited price-variation clause pass-through", contradicting_peer: "FRONTSP", quote_anchor: "FRONTSP-Concall_Jun_2026 Transcript, Kapil Bhatia opening remarks: EBITDA margin improved to 26.80% in FY26 from 21.47% in FY25 despite steel prices remaining elevated through H2, offset via vendor negotiation and high-value tender focus"}
+unverifiable:
+  - {claim: "National coach-refurbishment programme (~Rs26,000cr) growth rate, order-inflow pace, and bid-win ratio", peers_checked: ["TEXRAIL", "FRONTSP"]}
+  - {claim: "Chinese-machinery export-control/end-user-certificate delays since January 2026", peers_checked: ["TEXRAIL", "FRONTSP"]}
+  - {claim: "Market share vs named competitors (Kineco, Hindustan Fiberglass Works, DTL Ancillaries, Vibgyor, Universal Engineers, Tata/Fainsa)", peers_checked: ["TEXRAIL", "FRONTSP"]}
+  - {claim: "Peer R&D intensity for defense/aerospace diversification and whether R&D is expensed or capitalized", peers_checked: ["TEXRAIL", "FRONTSP"]}
+peer_coverage_map:
+  - {peer: "FRONTSP", quarter: "Q2/H1 FY25 (Nov-2024 call)", usage: "SUBSTANTIVE", contribution: "Baseline margin trajectory, early defense exploration, competitive structure informing Q5/Q6 baseline"}
+  - {peer: "FRONTSP", quarter: "Q4/FY25 (May-2025 call)", usage: "SUBSTANTIVE", contribution: "FY25 margin 21.47%, defense approval timeline, market share disclosure, wheelset commentary"}
+  - {peer: "FRONTSP", quarter: "Q2/H1 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Margin surge to 27%, explicit peer cross-reference to Titagarh/Texmaco/Jupiter wheelset issue"}
+  - {peer: "FRONTSP", quarter: "Q4/FY26 (Jun-2026 call)", usage: "SUBSTANTIVE", contribution: "Steel inflation vs margin expansion (decisive Q1 contradiction), fixed-price contract mechanics, receivables, self-funded capex"}
+  - {peer: "TEXRAIL", quarter: "Q1 FY26 (Aug-2025 call)", usage: "SUBSTANTIVE", contribution: "Sector-wide wheel-set shortage disclosure, margin guidance, Kavach deflection pattern"}
+  - {peer: "TEXRAIL", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Margin 10.5%, US tariff impact on exports, 31% wagon market share"}
+  - {peer: "TEXRAIL", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Decisive 6-year cumulative EBITDA-vs-OCF disclosure (Q2 partial verification), Texmaco 2.0 diversification unveiling"}
+  - {peer: "TEXRAIL", quarter: "Q4/FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "FY26 revenue -14% YoY, Rs700cr contingency provision, Board-approved defense capex within Rs1,500-2,000cr envelope"}
+industry_cross_read:
+  demand: "Consensus: both peers independently cite strong, multi-year railway capex tailwinds (Rs2.65 lakh cr FY26 and Rs2.93 lakh cr FY27 Railways budgets) and LHB/Vande Bharat/Amrit Bharat/metro demand, supporting Airfloa's sector backdrop, though TEXRAIL's own FY26 revenue fell 14% YoY despite this tailwind due to execution constraints (wheel sets, tariffs) — sector demand does not guarantee individual-company delivery"
+  pricing_inputs: "FRONTSP confirms industry-relevant steel price inflation in the same period as Airfloa's margin compression but expanded margin 533bps rather than compressing, via vendor negotiation and tender selection; TEXRAIL's margin weakness is volume/operating-leverage driven, not input-cost driven — neither peer supports Airfloa's specific margin-compression narrative"
+  capex_cycle: "Not a uniform capacity race: FRONTSP is a measured, internally-funded bottleneck-clearing expander (Rs15-25cr/year); TEXRAIL is an aggressive multi-vertical diversifier (Rs1,500-2,000cr Vision 2030 envelope across defense/wheels/metro/Kavach/AI, plus a Rs700cr contingency provision). Airfloa's profile (14-acre facility, R&D step-up, defense diversification) sits structurally closer to TEXRAIL's lone-diversifier pattern than to FRONTSP's incremental-capacity pattern"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Sector-wide wagon wheel-set supply shortage from Indian Railways (TEXRAIL, three consecutive quarters, Aug-2025 through Feb-2026) — a different supply-chain risk than Airfloa's China machinery/EUC issue, not present in Airfloa's B05"
+  - "US tariff exposure on export volumes (TEXRAIL Foundry division, 30% export decline in a quarter, Nov-2025/Feb-2026 calls) — a geopolitical/trade risk theme absent from Airfloa's disclosures"
+  - "Rs700cr contingency provision and qualified audit opinion taken against large-contract execution risk in a volatile geopolitical environment (TEXRAIL, May-2026 call) — a governance/disclosure risk theme with no Airfloa analogue in B05"
+  - "Chronic multi-year EBITDA-to-operating-cash-flow gap persisting six years without full resolution (TEXRAIL, Feb-2026 call) — corroborates but also extends the severity horizon of Airfloa's own flagged cash-conversion risk"
+net_narrative_effect: "complicates"

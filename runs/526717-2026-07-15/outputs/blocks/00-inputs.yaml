@@ -46,6 +46,17 @@ degradation_active:
   - "Stage 10/11: FII+DII and UA institutional qualifier now evaluable from operator-supplied SHP (Mar26: FII 4.50, DII 4.79); anchored to operator-supplied screener, provenance tier flagged."
 manifest_warnings:
   - "sector_cap_row 'Pharma / CDMO' is inconsistent with the business (FIBC / bulk-packaging plastics; peers EMMBI, KANPRPLA, COMSYN). Manifest note flags it auto-picked. Does not gate phase 1; must be corrected before stage 11 (phase 3)."
+extraction_infra:
+  note: "Read-tool renders PDF pages as images and blows the 32MB request limit on the large PDFs (results_1 15MB, AR 8.2MB) if read whole. Two accommodations applied at orchestrator level: (1) pypdf text sidecars with page markers written to derived/ for cheap full-text grep, citing the original PDF p.<N>; (2) poppler-utils installed so the Read tool can render scanned/image pages in narrow page ranges."
+  sidecars:
+    - "derived/AR.txt      (AR text pages only; 80/205 pages have extractable text)"
+    - "derived/RATING.txt  (rating PDF, all 11 pages text)"
+    - "derived/RESULTS_1.txt (20 pages text; source is the 15MB results PDF)"
+    - "derived/RESULTS_2.txt (11 pages text)"
+  ar_ocr_map:
+    text_pages: "2-58 and 180-205 (directors' report, MD&A, notices, governance; in derived/AR.txt)"
+    image_only_pages: "59-179 (121 pages, SCANNED): standalone + consolidated auditor's reports, balance sheet, P&L, cash flow, equity, and the FULL Notes to Accounts. Not in the text sidecar. Must be read via the Read tool on inputs/annual-report/Annual_Report.pdf with the pages= parameter in chunks of <=8 pages. Confirmed readable (poppler installed)."
+  read_rule_for_subagents: "For AR notes/financials use the Read tool with pages= in <=8-page chunks over p59-179. For everything else grep derived/AR.txt. Always cite inputs/annual-report/Annual_Report.pdf p.<N>."
 company_memory: "none (no companies/526717.md)"
 operator_ruling: "Empty-folder confirmation asked 2026-07-15; operator chose PROCEED WITH GAPS."
 flags: []

@@ -1,0 +1,12 @@
+stage: B12a
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: "claude-haiku-4-5"
+status: complete
+numbers_checked: 47
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "Full coverage of verdict-card figures (Revenue CAGR, PAT CAGR, CRAR, PCR, ROE), Section 1B pillar inputs, and material financial metrics across all stage reports. No MISMATCH, ANCHOR NOT FOUND, or UNANCHORED errors detected. All 47 checked figures verified as MATCH to sources."

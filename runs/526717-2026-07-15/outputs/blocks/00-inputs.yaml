@@ -1,0 +1,51 @@
+stage: B00-inputs
+company: "526717"
+company_name: "HCP Plastene Bulkpack Ltd"
+run_date: "2026-07-15"
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: true          # manifest concalls_available: false
+inventory:
+  prospectus: 0
+  annual_report: 1
+  results: 2
+  rating: 1
+  concalls: 0                  # declared absent (no-concall mode)
+  peer_concalls: 8             # EMMBI x4, KANPRPLA x4
+  announcements: 1             # operator-supplied 6m update (CS resignation + rating paraphrase)
+  shareholding: 1             # operator-supplied screener SHP screenshot, Jun23-Mar26
+  research: 0
+  screening: 24               # screener-* (main) + COMSYN/EMMBI/KANPRPLA peers
+  presentation: 0
+  other: 0
+input_gaps:
+  - type: prospectus
+    priority: low
+    note: "Absent. HCP Plastene is long-listed (BSE 526717); prospectus not expected. Backward baseline built from AR alone."
+  - type: concalls
+    priority: declared
+    note: "concalls_available: false. NO-CONCALL MODE. Stage 5 degrades to AR MD&A + chairman letter + results commentary; credibility_grade caps at B."
+  - type: announcements
+    priority: partially-filled
+    note: "No original Reg-30 filing PDFs. Operator supplied a 6-month update (inputs/announcements/operator-update-6m-2026-07-15.md) 2026-07-15. Key documented action: Company Secretary/Compliance Officer resignation effective 8 Jan 2026 with concerning email language (governance signal for stage 8). Financial items in that file are an operator paraphrase of the March 2026 rating PDF; stages MUST anchor figures to the rating PDF directly, not to the summary. FTTCP Step 0C partially covered; still no full Reg-30 trail (order wins, board changes)."
+  - type: shareholding
+    priority: partially-filled
+    note: "No original BSE/NSE SHP filing PDF. Operator supplied a screener SHP screenshot (inputs/shareholding/shareholding-pattern-operator-supplied.md), quarterly Jun23-Mar26. Latest Mar26: Promoter 75.00, FII 4.50, DII 4.79, Public 15.72 (FII+DII 9.29%). Enables stage 10 FII+DII and the UA institutional qualifier evaluation in stage 11, anchored to operator-supplied screener. Pledge/encumbrance NOT FOUND from this source. Provenance tier: operator transcription of screener image, not an original filing PDF; verifier A cannot cross-check against a source PDF and should note this."
+  - type: research
+    priority: low
+    note: "Absent. No effect on anchored evidence (research is never anchored). Loses a lead-generation / management-intent cross-check source only."
+  - type: presentation
+    priority: low
+    note: "Absent. Stage 4 runs from AR + results commentary. Stage 7 investor-presentation input marked NOT PROVIDED."
+degradation_active:
+  - "Stage 5: NO-CONCALL MODE, reads AR MD&A / chairman letter / results commentary; credibility_grade default C, max B."
+  - "Stage 6: runs on 8 peer transcripts (EMMBI, KANPRPLA) against B05 peer_questions."
+  - "Stage 7 F2 test: capex-completion evidence from AR timeline in place of promise-delivery record."
+  - "Stage 8: promoter/material-events sourced from web + AR governance + operator-supplied 6m update (CS resignation 8 Jan 2026); no prospectus."
+  - "Stage 10/11: FII+DII and UA institutional qualifier now evaluable from operator-supplied SHP (Mar26: FII 4.50, DII 4.79); anchored to operator-supplied screener, provenance tier flagged."
+manifest_warnings:
+  - "sector_cap_row 'Pharma / CDMO' is inconsistent with the business (FIBC / bulk-packaging plastics; peers EMMBI, KANPRPLA, COMSYN). Manifest note flags it auto-picked. Does not gate phase 1; must be corrected before stage 11 (phase 3)."
+company_memory: "none (no companies/526717.md)"
+operator_ruling: "Empty-folder confirmation asked 2026-07-15; operator chose PROCEED WITH GAPS."
+flags: []

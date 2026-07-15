@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+phase: 1-lite
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3         # flags active -> PROCEED WITH FLAGS; INDETERMINATE cash caps at CAVEATS, 60-74 band steps back to FLAGS (cap not violated: FLAGS is not better than CAVEATS)
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-RPT, FLAG-GOVERNANCE, FLAG-DISCLOSURE, FLAG-EMOAT, FLAG-GATE0]
+cash_determination: INDETERMINATE
+confidence_delta: {numerical: 98.7, redflag: 63, framework: 96, peer: 75, overall: 63}
+framework_adherence_valuation: pending_phase_3
+valuation_decision: ""         # excluded in phase 1
+entry_range: {low: 0, high: 0} # excluded in phase 1
+headline: "FIBC turnaround real, cash conversion still unproven"
+falsification_metric: "Standalone operating cash flow negative for a second consecutive year in FY27 with consolidated CFO also reverting negative"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save:
+  mode: not-run-phase-1        # Notion save, drive link, fttcp-handoff deferred to phase 3

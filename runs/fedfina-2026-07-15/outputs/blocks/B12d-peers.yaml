@@ -1,0 +1,19 @@
+stage: B12d
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+peers_audited: 15
+substantive_confirmed: 15
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 3, MASFIN 'Feb 2026' rows", claimed: "single 'Feb 2026/Q3 FY26' label spans two distinct source files (investor/analyst meet + earnings call)", source_truth: "B06's own header discloses both files as 'Feb 2026' and 'Feb 2026_2' for the same quarter", note: "presentational ambiguity, self-disclosed by B06, not concealed"}
+  - {severity: "MINOR", location: "B06 Part 3, MASFIN May 2026 row", claimed: "contribution described as confirming prior MFI-linked NPA resolution", source_truth: "rests on one analyst-framed confirmation rather than a fresh management-disclosed figure", note: "citation is real and accurate; flagged only for relative thinness vs other SUBSTANTIVE rows"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100
+peer_utilisation: 100

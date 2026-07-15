@@ -1,0 +1,44 @@
+stage: B02-notes
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements feed absent", "screening-fedfina not available", "RHP used as prospectus-folder backup", "FY26 AR notes not yet published"]
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables >6-month ageing bucket worsened to 23.5% of gross (Note 7, p.189-190) from ~16.0% in FY24 even as absolute net receivables shrank 44.1% YoY (Rs 34.52 Cr to Rs 19.31 Cr); immaterial in absolute size relative to balance sheet but flagged per receivables_trend rule. Core loan-book asset quality (Stage 3/NPA vintage) is a separate, more material concern captured in red_flags below, not this trade-receivables item."}
+accounting_quality: 7
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Impairment on financial instruments (credit-cost charge) surged 228.6% YoY, Rs 65.85 Cr to Rs 216.36 Cr, the primary driver of an 8.0% PAT decline despite 29.0% interest-income growth", note_ref: "Note 32, p.208", rating: "Red Flag"}
+  - {rank: 2, finding: "NPA vintage aging: Doubtful (1-3yr) bucket up 292.6% YoY (Rs 8.83 Cr to Rs 34.67 Cr); Doubtful (>3yr) newly appeared at Rs 0.45 Cr, indicating the oldest Stage 3 tranche is not resolving", note_ref: "Note 48.30(A), p.248-249", rating: "Red Flag"}
+  - {rank: 3, finding: "FVOCI-book Stage 3 loans exploded 2,027.5% YoY (Rs 3.35 Cr to Rs 71.27 Cr), materially faster than the amortised-cost book's Stage 3 growth", note_ref: "Note 8(d)/(f), 44.1.2(b), p.192-193, 227", rating: "Red Flag"}
+  - {rank: 4, finding: "Customer complaints surged 897.3% YoY (37 to 369), led by Issuance of Foreclosure Letter complaints up 1,508% (12 to 193), an operations signal not yet in the ECL numbers", note_ref: "Note 48.17, p.242-243", rating: "Red Flag"}
+  - {rank: 5, finding: "Standard-asset (Stage 1&2) provisioning rose 792.7% YoY (Rs 8.26 Cr to Rs 73.73 Cr); Ind AS-over-IRACP buffer rose 7.1x (Rs 13.84 Cr to Rs 98.79 Cr), the single largest swing in the provisioning note", note_ref: "Note 48.15 / 48.30(A), p.243, 249-250", rating: "Red Flag"}
+  - {rank: 6, finding: "Funding mix shifted sharply to short-tenor on-demand borrowing (+331.6% YoY); CRAR declined 23.46% to 21.92%; asset-liability net position beyond 1 year swung to -Rs 529.27 Cr from +Rs 60.04 Cr", note_ref: "Note 17/42/48.29-31, p.199-201, 222, 244-251", rating: "Watch"}
+  - {rank: 7, finding: "Related-party dependency on parent Federal Bank intensified (term loans +39.9%, interest paid +71.8%); a new unexplained Brand Usage Charges RPT line of Rs 2.44 Cr appeared with no prior-year comparative or disclosed basis", note_ref: "Note 39.2/39.3, p.216-217", rating: "Watch"}
+  - {rank: 8, finding: "Direct assignment income +66.9% YoY (Rs 91.24 Cr to Rs 152.31 Cr) outpaced on-book loan growth, recognised upfront, with retained beneficial interest narrowing to 5%/10%", note_ref: "Note 26/48.04, p.206, 235-236", rating: "Watch"}
+  - {rank: 9, finding: "Real estate exposure = Rs 5,616.05 Cr, 47.4% of gross loan book, previously unquantified within the Notes", note_ref: "Note 48.08, p.238", rating: "Watch"}
+  - {rank: 10, finding: "Restructured loan book resolved 89.9% via write-off rather than cure/upgrade to standard during the year", note_ref: "Note 49, p.252", rating: "Watch"}
+  - {rank: 11, finding: "Mid-year statutory auditor transition disclosed only via a remuneration footnote, no reason or fee-split given within the Notes", note_ref: "Note 34.1, p.209", rating: "Watch"}
+  - {rank: 12, finding: "Net interest-rate sensitivity worsened 24.5% YoY: a +25bps shock now cuts PAT by Rs 11.19 Cr versus Rs 8.99 Cr in FY24", note_ref: "Note 44.3.2, p.229", rating: "Watch"}
+  - {rank: 13, finding: "Stage 3 gross-loan figure does not reconcile across three notes: Rs 19,042L vs Rs 23,888L vs Rs 26,602L, no bridge given", note_ref: "Notes 48.09, 48.30(A), 8.3(a), 8(d), p.191-192, 238, 248-250", rating: "Watch"}
+  - {rank: 14, finding: "Gold loan 90-day rebuttal mechanism kept Rs 77.56 Cr of 90+DPD accounts out of Stage 3 on collateral-sufficiency judgment; auction activity rose alongside", note_ref: "Note 48.28, 48.30(B), p.243-244, 250", rating: "Watch"}
+  - {rank: 15, finding: "Gross loan write-offs declined 14.0% YoY even as provisioning surged, supporting a forward-looking-overlay reading of the credit-cost increase", note_ref: "Note 50, p.252", rating: "Clean/Positive"}
+red_flags:
+  - "Impairment/credit-cost charge +228.6% YoY (Note 32) is the primary driver of the PAT decline, a genuine asset-quality signal"
+  - "NPA vintage aging: Doubtful 1-3yr bucket +292.6%, first-ever Doubtful >3yr bucket appeared (Note 48.30(A))"
+  - "FVOCI-book Stage 3 loans +2,027.5% YoY, a distinct and previously unflagged stress pocket (Note 8(d)/(f))"
+  - "Customer complaints +897.3% YoY, concentrated in foreclosure-letter issues, an operational red flag not yet in the ECL model (Note 48.17)"
+  - "Standard-asset provisioning swing of 792.7% YoY is judgment-heavy and large in magnitude even though corroborated by declining realised write-offs (Note 48.15, Note 50)"
+  - "Stage 3 gross-loan figure does not reconcile across three notes in the same document, a disclosure-transparency gap on the single most important credit metric (Notes 48.09, 48.30(A), 8.3(a), 8(d))"
+questions_for_mgmt:
+  - "What is the quantum basis and commercial rate for the new Brand Usage Charges of Rs 2.44 Cr paid to Federal Bank, and why does this line have no prior-year comparative or disclosed methodology (Note 39.2)?"
+  - "What drove the mid-year statutory auditor transition (Note 34.1), and can management confirm there was no disagreement with the outgoing auditor over financial reporting matters?"
+  - "Which portfolio segments or macro overlay assumptions drove the 792.7% rise in Stage 1&2 provisioning, and what portion is expected to reverse versus convert into realised losses in FY26 (Note 48.15/48.30(A))?"
+  - "What is the root cause of the 897.3% surge in customer complaints, particularly the 1,508% rise in foreclosure-letter complaints, and what operational remediation is underway (Note 48.17)?"
+  - "Can management reconcile the three different Stage 3 gross-loan totals in the Notes (Rs 19,042L vs Rs 23,888L vs Rs 26,602L) and provide the bridge that ties them together (Notes 48.09, 48.30(A), 8.3(a), 8(d))?"
+receivables_trend: "deteriorating on ageing mix, improving on absolute balance: net trade receivables fell 44.1% YoY (Rs 34.52 Cr to Rs 19.31 Cr, Note 7, p.189-190) but the >6-month past-due bucket rose to 23.5% of gross receivables (FY25) from ~16.0% (FY24); this is the minor trade-receivables book, not the core loan portfolio, whose asset quality is tracked separately in red_flags above (Note 45, p.231)"
+restatements_found:
+  - "Note 59 (p.258): prior year figures regrouped/reclassified wherever considered necessary with no specific line items or amounts disclosed - vague boilerplate, not quantified"
+going_concern_language: "NONE - no explicit going-concern qualifying language found; Note 40 (Capital Management) states full compliance with externally imposed capital requirements"

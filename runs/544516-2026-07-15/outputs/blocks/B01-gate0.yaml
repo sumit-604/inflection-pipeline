@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus: PRESENT — supplied under inputs/annual-report/1758608206692.pdf (IPO Prospectus dated 16-Sep-2025, not a post-listing Annual Report); used for promoter shareholding, capital structure, FY25 restated financials, contingent liabilities. This corrects the task brief's 'prospectus ABSENT' note."
+  - "annual report (true post-listing FY26 statutory AR with Directors' Report, MGT-7 full shareholding pattern, FY26 contingent liabilities note): ABSENT"
+  - "rating: ABSENT — no credit rating agency report supplied or found"
+  - "research: ABSENT — no third-party equity research supplied or found"
+  - "promoter shareholding more recent than 18-Sep-2025 (IPO listing date, post-issue disclosure): ABSENT — no quarterly shareholding pattern filing closer to run date supplied"
+  - "peer data (screener CSVs for FRONTSP, TEXRAIL): EXCLUDED per explicit instruction, not used for Airfloa's Gate 0 — drives PEER DATA NEEDED zero-scores on Moat tests M2, M5, M7, M9"
+  - "3-year restated financial history (FY23-FY25): NOT FOUND in prospectus despite a summary-page reference to FY2023/2024/2025 — the actual restated financial statement annexures (CFS/SFS) supplied cover FY2025 only, single year"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE with historical depressors identified: only 2 years of financial history (recently listed Sep-2025); cumulative CFO/PAT -0.93x with both years' FCF negative and worsening in absolute terms (-Rs8.5 Cr FY25 to -Rs74.6 Cr FY26), driven by working capital days rising +26.9 (COGS basis) as receivables outgrew revenue; ROCE declined 16.08pp YoY (41.30% to 25.22%) mechanically from IPO equity-base dilution, not operating deterioration; promoter holding fell from 100% (pre-Aug-2024) to 54.20% (post-IPO) entirely via primary capital raises, not secondary sale-down."
+  - type: FLAG-GATE0
+    reason: "Prospectus Annexure XLV(vii) discloses FY25 book-debt statements filed with working-capital lenders (Axis Bank, Union Bank) materially diverge from books of account, e.g. Q1 FY25 book debts per books Rs118.73 Cr vs Rs47.76 Cr reported to Axis Bank (Rs70.97 Cr gap); stated reason is stock-statement/netting scoping, not restated financial misstatement, but the magnitude warrants downstream lender-reporting diligence."
+data_years: 2
+fy_range: "FY25 to FY26"
+blocks: {A: 15, B: 0, C: 15, D: 17, E: 14}
+core_score: 47
+moat_score: 15
+grand_total: 76
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B < 8 (Block B = 0/20) -> max GOOD"
+  - "Cumulative CFO / PAT < 0.50 (ratio -0.93x) -> max AVERAGE"
+  - "History < 3 years (2 years: FY25-FY26, listed 18-Sep-2025) -> AVERAGE"
+history_downgrade: true
+data_notes:
+  - "CAGR metrics (C1-C4) computed with n=1 year (only FY25-FY26 comparison available); formula reduces to simple one-year growth, not a multi-year compounded trend -- stated, not hidden"
+  - "A3 ROE FY25 uses closing net worth only (opening/FY24 net worth not supplied), per formula fallback rule -- stated"
+  - "B4/M4/M10/M12 WC Days use Receivable Days on revenue basis (formula-fixed) and Inventory/Payable Days on COGS basis (Cost of Material Consumed explicitly disclosed) -- basis stated"
+  - "Data_Sheet.csv (screener) FY25 net profit Rs25.55 Cr reconciles to the prospectus's RESTATED CONSOLIDATED FY25 PAT (Rs25.5476 Cr), not the FY26-results-filing's STANDALONE FY25 comparative PAT (Rs25.78 Cr) used throughout this scorecard for like-for-like standalone comparability; ~0.9% gap disclosed, immaterial to all score bands"
+  - "M6 Technology/R&D scored 0: no R&D expense line disclosed for Airfloa standalone in any supplied statement -- N/A (not in provided data), not estimated"
+  - "M11 Network Effects scored 0 conservatively per instruction: only 2 years available vs the 6-year two-window test requirement; selling-expense % trend not verifiable from supplied P&L breakdowns"
+  - "Screener CSVs screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv are empty (headers only) -- not used; screener-Data_Sheet.csv was the only populated screener source and was cross-checked against, not substituted for, the primary results/prospectus filings"
+block_b_trend: "deteriorating -- cumulative CFO/PAT -0.93x across both available years; WC days rose from 238.07 to 264.99 (+26.92 days, COGS basis) as receivables (+Rs86.42 Cr YoY) outgrew revenue (+Rs127.21 Cr YoY); FCF went from -Rs8.5 Cr (FY25) to -Rs74.6 Cr (FY26), worsening in absolute terms even as PAT grew 52%"

@@ -1,0 +1,74 @@
+stage: B00-inputs
+company: 544516
+company_name: Airfloa Rail Technology Ltd
+run_date: 2026-07-15
+model: orchestrator
+status: complete
+run_type: full
+concalls_available_manifest: false
+concalls_available_effective: true   # operator override 2026-07-15: 2 company
+                                     # + 8 peer transcripts present; manifest
+                                     # flag mis-set by auto-collector
+inventory:
+  prospectus: 0            # ABSENT
+  annual-report: 1
+  results: 2
+  rating: 0                # ABSENT
+  concalls: 2              # Nov 2025 (H1 FY26, held 18-Nov-2025), Jun 2026 (H2/FY26, held 03-Jun-2026)
+  peer-concalls: 8         # FRONTSP x4, TEXRAIL x4
+  announcements: 1         # OPERATOR-PROVIDED summary (secondary, not raw filings)
+  shareholding: 1          # OPERATOR-PROVIDED screener screenshot (Sep 2025, Mar 2026)
+  research: 0              # ABSENT
+  screening: 18            # screener-*.csv x6 (main) + FRONTSP x6 + TEXRAIL x6 (peers)
+  presentation: 2
+  other: 0
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    note: >
+      Company listed within ~3 years (formerly Airflow Equipments India Pvt
+      Ltd; recent BSE scrip 544516). No DRHP/RHP present. Backward baseline,
+      promoter/group map, and related-party trajectory built from AR + web
+      only (fewer years); stages 2/3 build notes/history from AR alone and
+      say so; stage 8 sources promoter/group background from web + AR
+      governance and flags the group-company map as web-derived.
+  - type: rating
+    severity: MEDIUM
+    note: >
+      No credit-rating PDF. Stage 10 marks rating_wc_quote unresolved; stage
+      11 Pillar 2 defaults conservative. FLAG-CASH handling per Section 4.
+  - type: research
+    severity: LOW
+    note: No broker notes. No effect on anchored evidence (research never anchored).
+  - type: announcements-provenance
+    severity: MEDIUM
+    note: >
+      announcements/ holds an OPERATOR-PROVIDED chronological SUMMARY of Reg
+      30 filings, not the raw filing PDFs. Action items usable for the
+      intent-and-action cross-check; financial figures must be cross-checked
+      against and anchored to the June 2026 concall / presentations / results
+      PDFs. Verifier A: do not treat the summary as primary numerical source
+      where a PDF exists.
+  - type: shareholding-provenance
+    severity: LOW
+    note: >
+      shareholding/ holds an OPERATOR-PROVIDED screener.in screenshot (Sep
+      2025 + Mar 2026), not the raw Reg 31 filing PDFs. Closes FII+DII UA
+      qualifier; pledge trend NOT FOUND in this source.
+manifest_flags_for_operator:
+  - field: sector_cap_row
+    value: "Pharma / CDMO"
+    issue: >
+      WRONG for a rail-technology / engineering company. Auto-picked, manifest
+      note says verify. Does not affect Phase 1. MUST be corrected before
+      /finalize (Phase 3): stage 11 draws the exit-multiple sector cap from it.
+concall_quarter_map:
+  - file: inputs/concalls/Concall_Nov_2025_Transcript.pdf
+    period: H1 FY2025-26 (half year ended 30-Sep-2025)
+    held: 2025-11-18
+    order: 1
+  - file: inputs/concalls/Concall_Jun_2026_Transcript.pdf
+    period: H2 / full year FY2025-26 (year ended 31-Mar-2026)
+    held: 2026-06-03
+    order: 2
+flags: []

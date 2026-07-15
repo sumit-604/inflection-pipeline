@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no earnings-call transcripts exist (structural, manifest concalls_available: false)"
+  - "no FY26 Annual Report / MD&A / Directors' Report in run folder; only FY25 AR (guidance) plus bare FY26 results financial statements available, so Malaysia JV dissolution and standalone/consolidated cash-flow divergence have no management explanation in any source"
+  - "no FY26 capacity-utilisation percentage disclosed anywhere read this stage (only FY25's 31% baseline)"
+  - "rating agency's 'adjusted tangible net worth' gearing methodology not disclosed; FY26 gearing figure in this report is derived on an unadjusted-equity basis, approximate only"
+  - "no post-March-2026 rating action in run folder; FY26 audited results not yet independently assessed by Infomerics in any document available"
+  - "operator-supplied CS resignation-letter language is an operator transcription of an exchange filing, not read directly by this stage; treated as a lead, not anchored evidence"
+  - "no peer transcript (Emmbi or Kanpur) addresses HPBL's specific global FIBC market-size CAGR or 75%/72% EU/US import-share figures; these remain sourced only to HPBL's unnamed 'industry expert' (AR p.56) and cannot be triangulated with the peer evidence available"
+flags: []
+peers_provided: 8
+verified: []
+partially_verified:
+  - {claim: "RM (PP granule) pricing is 'completely pass through' via annual rate contracts (RATING p.5)", peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+  - {claim: "Specialised-FIBC-vs-commodity margin differential and competitive pricing pressure from China/Vietnam/Bangladesh support a durable 7-9% EBITDA band", peers: ["Kanpur Plastipack"]}
+contradicted:
+  - {claim: "31% FY25 capacity utilisation on the newly expanded 24,300 MTPA base is an industry-typical ramp curve", contradicting_peer: "Emmbi Industries and Kanpur Plastipack (both run FIBC/technical-textile capacity at 75-90% utilisation, including during active expansion phases)", quote_anchor: "Emmbi Q1 FY22 call, Aug 12 2021, p.3: 'capacity utilization was up to 87%, pre-COVID our capacity utilization was about 76%'; Kanpur Q1 FY26 call, Aug 19 2025, p.15: 'capacity utilization for the last financial year was about 75%'; Kanpur Q4/FY26 call, May 4 2026, p.5/17: '~83-85%'"}
+  - {claim: "'No major capex FY27-28' reflects an industry-wide capex pause rather than a company-specific stance", contradicting_peer: "Kanpur Plastipack", quote_anchor: "Kanpur Q2 FY26 call, Nov 13 2025, p.4: 'We have also planned a capex of INR105 crores for capacity expansion, process modernization and diversification to be implemented over the next 12-18 months'"}
+unverifiable:
+  - {claim: "Global FIBC market ~5.4% CAGR to US$12.6bn by 2033; India's 75%/72% share of EU/US FIBC imports (AR p.56, unnamed 'industry expert')", peers_checked: ["Emmbi Industries", "Kanpur Plastipack"]}
+peer_coverage_map:
+  - {peer: "Emmbi Industries", quarter: "Q4 FY2021 (Jun 28 2021)", usage: "CITED-ONLY", contribution: "Pre-COVID utilisation baseline (76%) provides background context; call does not directly decide any peer_question"}
+  - {peer: "Emmbi Industries", quarter: "Q1 FY2022 (Aug 12 2021)", usage: "SUBSTANTIVE", contribution: "Named 30-45 day RM pass-through lag; utilisation ramp to 87%; no-major-capex-18-24-months stance"}
+  - {peer: "Emmbi Industries", quarter: "Q2 FY2022 (Nov 8 2021)", usage: "SUBSTANTIVE", contribution: "84% utilisation during concurrent 3,000-tonne capacity addition; China+1 demand-shift commentary; low-capex-cycle expansion detail"}
+  - {peer: "Emmbi Industries", quarter: "Q3 FY2022 (Feb 15 2022)", usage: "CITED-ONLY", contribution: "Avana/B2C retail focus; FY19-vs-current EBITDA comparison is tangential margin colour only"}
+  - {peer: "Kanpur Plastipack", quarter: "Q1 FY26 (Aug 19 2025)", usage: "SUBSTANTIVE", contribution: "FIBC-vs-commodity margin split; 75-77% utilisation with FIBC ramp plan; Bangladesh/Vietnam UK competition and EU FTA moat; Valex acquisition/debt-reduction raise"}
+  - {peer: "Kanpur Plastipack", quarter: "Q2 FY26 (Nov 13 2025)", usage: "SUBSTANTIVE", contribution: "INR105cr capex program and Essegomma JV announced, decisive contradiction of capex-pause reading; 82% utilisation"}
+  - {peer: "Kanpur Plastipack", quarter: "Q3 FY26 (Feb 20 2026)", usage: "SUBSTANTIVE", contribution: "Cleanest FIBC-vs-fabric margin breakdown (12.5-13.5% vs 7%); explicit RM pass-through claim; US tariff tracking and EU FTA detail"}
+  - {peer: "Kanpur Plastipack", quarter: "Q4 & FY26 (May 4 2026)", usage: "SUBSTANTIVE", contribution: "Iran-conflict PP price shock and order-matched procurement risk management; 83-85% utilisation at FY26 close; per-kilo pass-through mechanism; explicit weekly forex hedging policy"}
+industry_cross_read:
+  demand: "Kanpur describes a structurally positive, export-led demand environment (China+1 shift, 80-85% repeat customers, stable order book) through most of the period, softening modestly in the final two calls due to RM-price-driven customer inventory adjustment, not demand destruction; Emmbi's 2021-22 COVID-recovery narrative is too dated to speak to current conditions. Neither peer corroborates HPBL's specific market-size/CAGR framing, but both are directionally consistent with a growing, export-led FIBC opportunity."
+  pricing_inputs: "RM cost recovery is real in both peers but neither automatic nor risk-free: Emmbi historically named a 30-45 day pass-through lag; Kanpur achieves margin protection via order-matched procurement and a per-kilo (not percentage) pass-through mechanism, and experienced real order-book softening during the FY26 Iran-conflict PP price spike (65% increase) even while claiming margins were protected."
+  capex_cycle: "Lone-expander situation, not an industry-wide capacity race: Kanpur is running a large, multi-pronged capex and M&A program (organic FIBC expansion, non-woven greenfield, UK acquisition, Italy JV) through the exact window HPBL frames as capex-free; Emmbi (dated) is also modestly expanding rather than pausing. No peer evidence supports a sector-wide capex pause; HPBL appears to be the more capital-conservative operator in its comparison set."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Explicit US tariff exposure and scenario planning (10%→25%→50%→18% progression tracked across three Kanpur calls, Aug 2025-May 2026), absent from HPBL's available risk disclosures"
+  - "Formal, weekly-reviewed forex hedging policy (Kanpur Q4/FY26 call, May 4 2026, p.13), not evidenced for HPBL"
+  - "Skilled-labour/manpower availability as a structural capacity constraint requiring in-house training investment (Kanpur Q2 FY26 call, Nov 13 2025, p.12)"
+  - "Recurring geopolitical supply-chain shocks named as a standing risk category (Red Sea crisis, Russia-Ukraine gas crisis, Iran conflict; Kanpur Q4/FY26 call, May 4 2026, p.13)"
+  - "RM price volatility with an explicitly forecast 'new normal' price band ($1,200-1,350/ton vs sub-$1,000 historically; Kanpur Q4/FY26 call, May 4 2026, p.8)"
+net_narrative_effect: "complicates"

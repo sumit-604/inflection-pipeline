@@ -1,0 +1,17 @@
+stage: B12d
+company: "544516"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+peers_audited: 8
+substantive_confirmed: 8
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 peer_coverage_map row 'TEXRAIL Q2 FY26 (Nov-2025 call)' / risks_peers_raise US tariff entry", claimed: "30% export volume decline attributed to TEXRAIL-Concall_Nov_2025/Feb_2026 (both)", source_truth: "the '30% less export volumes' figure appears only in the Feb-2026 transcript; the Nov-2025 transcript states general tariff impact with no numeric figure", note: "imprecise dual-citation of a single-sourced number; not a fabrication, no verdict or conclusion affected"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100

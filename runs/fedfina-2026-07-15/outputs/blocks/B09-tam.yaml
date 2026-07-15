@@ -1,0 +1,59 @@
+stage: B09-tam
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Current P/E multiple not provided in this stage's inputs; valuation implication line expressed in P/B(ROE-adj) terms per B04's designated primary method instead"
+  - "IIFL Finance / HDB Financial Services current AUM not retrieved for Method 3 peer aggregation (time-boxed); peer-aggregation universe is deliberately incomplete and used only as a consistency floor"
+  - "Direct CRISIL MI&A / ICRA source PDFs returned HTTP 403 via WebFetch; relied on secondary reporting (search snippets, Business Standard, Free Press Journal, ICRA press-release text) for FY25/FY26 market-size updates"
+flags:
+  - "Management's own TAM claim (INR 92 lakh crore MSME credit gap, footnoted 'Source: RHP') is FY23-vintage CRISIL data still being shown unrefreshed in the July 2026 investor deck; ratio to conservative TAM is ~4.0x, standard read is inflated, and the claim's scope (all-India, all-lender MSME credit gap) is much broader than FEDFINA's actual gold + secured-LAP niche"
+  - "SOM 5yr implied AUM CAGR (26.6%) exceeds B07's capex-embedded branch growth (12.6%) by a wide margin - gap of ~Rs 9,730 Cr (yr3) / ~Rs 30,340 Cr (yr5); achievable only via per-branch AUM productivity and off-balance-sheet co-lending/DA funding with Federal Bank, not branch expansion alone - named as a funding-capital dependency, not a physical-branch dependency, for Stage 11"
+  - "Bottom-up gold TAM (Method 2) relies on 2023-vintage household gold-stock survey inputs scaled forward only by gold price (2.43x since Aug 2023); diverges >3x from the top-down conservative estimate and is treated as directional only, not averaged into the headline TAM"
+market_definition: "Organized (bank+NBFC) secured lending to self-employed/MSME India via gold loans and property-backed LAP/small-ticket home loans, excluding unsecured credit and prime salaried housing finance"
+tam_cr: {conservative: 2310000, realistic: 2900000}
+sam_cr: 1248000
+sam_pct_of_tam: 54
+som_3yr_cr: 39900
+som_5yr_cr: 68600
+som_implied_revenue_cagr: {yr3: 23.6, yr5: 26.6}
+current_sam_share_pct: 1.7
+revenue_headroom_x: 59.1
+tam_growth_pct: 27
+runway_class: "MASSIVE"
+mgmt_claim_cr: 9200000
+mgmt_claim_ratio: 4.0
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs 9,730 Cr (yr3) / ~Rs 30,340 Cr (yr5) vs B07's 12.6% branch-capex-embedded growth; SOM is optimistic on a branch-capex basis but plausible via per-branch AUM productivity (gold AUM +76.7% YoY on flat branch count) plus co-lending/DA funding with Federal Bank - flagged as a funding-capital dependency for stage 11"
+methods_used:
+  - "top-down (current organized gold-loan + LAP market, ICRA/CRISIL-sourced, 2025-26 vintage)"
+  - "bottom-up (household gold-stock monetization price-scaled + SORP-based MSME/LAP addressable market, RHP 2023 methodology)"
+  - "peer AUM aggregation (named listed players, FY25, used as consistency floor not independent estimate)"
+  - "import substitution: N/A (domestic-collateral financial product)"
+  - "global benchmark: qualitative only (India's household gold stock vs China/US, no quantifiable international market-size comparator)"
+stale_data_flags:
+  - {datapoint: "Organized gold loan market size Rs 6.1 trillion", source: "RHP-prospectus.txt (CRISIL Report, Oct 2023)", year: 2023}
+  - {datapoint: "Indian mortgage market (housing+LAP) Rs 34tn FY23 / Rs 48tn FY26P", source: "RHP-prospectus.txt (CRISIL Report, Oct 2023)", year: 2023}
+  - {datapoint: "Household gold stock 27,000-28,000 tonnes, 7% pledged, Rs 23tn bottom-up gold TAM at Aug-2023 gold price", source: "RHP-prospectus.txt (CRISIL Report, Oct 2023)", year: 2023}
+  - {datapoint: "SORP-based Rs 22tn addressable MSME/LAP market (NSS 73rd/76th round survey inputs)", source: "RHP-prospectus.txt (CRISIL Report, Oct 2023, survey data 2015-2020)", year: 2023}
+  - {datapoint: "Management TAM claim: Rs 92tn MSME credit gap / Rs 25tn formal-sector gap", source: "investor-presentation.txt PDF p.14, footnoted 'Source: RHP', shown in Jul-2026 deck but FY23-vintage", year: 2023}
+searches_performed:
+  - "India gold loan market size 2025 CRISIL organised AUM trillion forecast"
+  - "India loan against property LAP market size 2025 2026 CRISIL ICRA forecast"
+  - "WebFetch: business-standard.com gold-loan-NBFCs AUM 4 trillion FY27 (403 blocked)"
+  - "WebFetch: icra.in mortgage finance market report (403 blocked)"
+  - "WebFetch: financialcontent.com gold loan market Rs15 trillion milestone (403 blocked)"
+  - "CRISIL Indian mortgage market housing loan LAP FY26 FY27 trillion forecast growth"
+  - "WebFetch: veritasfin.in CRISIL-report.pdf (403 blocked)"
+  - "'organised gold loan' AUM '11.8 trillion' OR '12 trillion' March 2025 CRISIL ICRA"
+  - "'loan against property' India market size Rs trillion outstanding 2025 CRISIL MSME"
+  - "India retail credit growth NBFC AUM FY25 FY26 CRISIL trillion secured lending"
+  - "gold price India per 10 gram July 2026 current rate"
+  - "Muthoot Finance Manappuram Finance gold loan AUM FY25 Rs crore standalone consolidated"
+  - "SBFC Finance Five Star Business Finance Aptus Value Housing AUM FY25 Rs crore"
+  - "Manappuram Finance consolidated AUM FY25 March 2025 Rs crore gold loan"
+searches_skipped:
+  - "IIFL Finance / HDB Financial Services current AUM - not retrieved, time-boxed, would have improved Method 3 completeness"
+  - "Direct CRISIL MI&A / ICRA full report PDFs - blocked by 403 on all three attempted domains; relied on secondary press coverage instead"
+  - "Global/China/SE Asia per-capita gold-loan or LAP market benchmark - not pursued quantitatively; no meaningful international comparator exists for India's gold-loan product category"

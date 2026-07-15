@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no investor presentation provided; used AR MD&A, results filings, and rating agency rationale in its place"
+  - "per-tonne/per-bag revenue and margin realisation not disclosed anywhere in provided documents"
+  - "export geographic mix (EU/US/other split) not disclosed numerically"
+  - "FIBC bag type mix (A/B/C/D, food/pharma-grade share) not disclosed numerically"
+  - "named competitors (domestic or export) not identified in any provided document"
+  - "number of active export customers / order book concentration not disclosed"
+flags:
+  - type: FLAG-CASH
+    reason: "Negative operating cash flow both entities in FY25 despite profit turnaround (carried from Stage 2/3; central to valuation-method and monitoring recommendations in this stage)"
+  - type: FLAG-RPT
+    reason: "46.6%/37.5% of standalone/consolidated revenue and 62.6%/70.4% of COGS run through related parties, extending into a new 0%-interest financing loan (carried from Stage 2/3; central to business-model risk assessment in this stage)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Woven Sacks Division (FIBC/jumbo bags, small PP sacks, AD Star bags, PP fabric/yarn)", type: "manufacturing - made to order", pct_of_revenue: 99.46, predictability: "M"}
+  - {name: "Woven Label Division (Jacquard labels)", type: "manufacturing - made to order", pct_of_revenue: 0.54, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Port location / logistics cost advantage (Kandla-Mundra proximity)", durability: "durable, location-fixed"}
+  - {moat: "Group purchasing scale (Champalal Group, one of largest HDPP granule importers)", durability: "durable at group level, not exclusive to listed entity"}
+  - {moat: "Export quality certifications / customer approvals (food-pharma grade FIBC)", durability: "moderate, replicable by well-capitalised competitors"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "EBITDA is the stable cross-cycle metric for this capital-intensive, cyclical-margin manufacturer; PAT is distorted by rising finance costs and leverage-driven returns"}
+  secondary: {method: "P/E", why: "Usable cross-check now that genuine profit has returned, but must be read against the leverage-driven ROE caveat (equity multiplier ~4.75x consolidated)"}
+  tertiary: {method: "EV/Sales", why: "Useful during the current capacity-utilisation ramp (31% FY25 of 24,300 MTPA base) where revenue growth is outrunning margin normalisation"}
+  not_applicable:
+    - "DDM - no established multi-year dividend policy; FY25 dividend section itself carries an apparent stale copy-paste error"
+    - "Sum-of-the-parts - Label Division is under 1% of consolidated revenue"
+    - "Asset-based/replacement cost - operating turnaround makes earnings-based approach more relevant than liquidation-style approach"
+irrelevant_ratios:
+  - {ratio: "Gross margin as reported", why: "RM cost is contractually pass-through; swings reflect pass-through timing lags, not pricing power changes"}
+  - {ratio: "ROE standalone/consolidated", why: "Leverage-driven (equity multiplier ~4.75x consolidated), not evidence of a self-funding operating model"}
+  - {ratio: "PAT/PAT growth alone", why: "Genuine turnaround but operating cash flow was negative both years; profit has not converted to cash"}
+  - {ratio: "Standalone-only revenue/margin figures", why: "Subsidiary K.P. Woven is 3.2x parent revenue; standalone alone understates scale and masks intercompany trading dominance"}
+  - {ratio: "Reported MD&A Risks & Concerns section", why: "Content-free boilerplate, omits all nine material risks evidenced elsewhere in the same filing"}
+must_track_metrics:
+  - {metric: "CFO/PAT and CFO/EBITDA", healthy: "sustainably positive, trending toward >0.7x", red_flag: "negative for a second consecutive year"}
+  - {metric: "EBITDA margin", healthy: "7-9% range per rating agency projection", red_flag: "sustained fall below 7%"}
+  - {metric: "Related-party % of revenue/COGS", healthy: "declining from FY25's 46.6%/37.5% revenue, 62.6%/70.4% COGS levels", red_flag: "further increase or disclosure-granularity regression"}
+  - {metric: "Capacity utilisation", healthy: "rising from FY25's 31% base", red_flag: "stalling or falling"}
+  - {metric: "Operating cycle (days)", healthy: "holding at or below FY25's 96 days", red_flag: "further elongation"}
+unit_economics:
+  unit: "one metric tonne (MT) of woven-plastic bulk-packaging product"
+  revenue_per_unit: "NOT FOUND - no per-tonne/per-bag realisation disclosed"
+  margin_per_unit: "NOT FOUND - same constraint"
+  key_lever: "capacity utilisation (31% FY25 of 24,300 MTPA post-expansion base) - operating leverage drove EBITDA margin from 5.66% to 7.60% consolidated as revenue grew 57.3%"
+first_deterioration_signals:
+  - {risk: "Structural related-party revenue/financing dependency", first_signal: "RPT % of revenue/COGS rising further, or related-party receivables share widening"}
+  - {risk: "RM pass-through lag / export price competition", first_signal: "quarterly EBITDA margin falling below 7%"}
+  - {risk: "Negative operating cash flow", first_signal: "second consecutive year of negative CFO, or CFO/PAT staying below 0.7x"}
+  - {risk: "Capacity ramp / job-work-to-export transition execution", first_signal: "capacity utilisation stalling below 31%, or operating cycle elongating past 96 days"}
+  - {risk: "CIRP-legacy governance overhang (KMP turnover, RPT-timing non-compliance, cross-guarantees)", first_signal: "any further KMP resignation within 12 months of Jan-2026 CS resignation, or guarantee invocation/covenant breach"}
+mgmt_questions:
+  - "Given negative operating cash flow in FY25 despite the profit turnaround, what is the specific plan and timeline to convert reported profit into cash?"
+  - "What is the basis for asserting all related-party transactions are on arm's-length terms, given the new 0%-interest loan from the dominant related customer?"
+  - "What is the exact ownership percentage in K.P. Woven Private Limited, and can the negative net book value in Plant & Machinery - Continuous Process be reconciled?"
+  - "What is the customer pipeline and geographic mix behind the 53.70% direct-export revenue, and how concentrated is it?"
+  - "With capacity utilisation at only 31% in FY25 against a newly expanded 24,300 MTPA base, what demand pipeline supports the 'no major capex' projection?"
+  - "Why does the Directors' Report dividend section reference 'loss during the year under review' when FY25 was profitable, and what is the actual forward dividend policy?"
+  - "What is driving the elongating operating cycle (88 to 96 days FY24 to FY25), and what specific levers will reverse it?"
+one_line_verdict: "Genuine capacity-utilisation-driven operating turnaround obscured by unresolved cash conversion and a structurally deep related-party dependency."

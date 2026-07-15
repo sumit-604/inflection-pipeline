@@ -1,0 +1,30 @@
+stage: B12c
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 ONLY (Gate 0 + Emerging Moat); valuation audit deferred to phase 3"
+gate0:
+  rules_checked: 43
+  fails:
+    - {severity: MAJOR, rule: "M11 Network Effects", location: "01.md Block F, M11", description: "Used the <6-year conservative fallback despite 6 years available; mechanical two-window test yields 3 (latest-3yr CAGR 41.2% >=20% AND selling% declining), assigned 1 does not match band-1 (which requires selling% rising). Would move moat_score 21->23, moat_class STRONG->FORTRESS. Conservative direction; does NOT change classification (AVOID via Core<40 and binding DB#6)."}
+emoat:
+  rules_checked: 25
+  fails: []
+  minor_observations:
+    - {severity: MINOR, location: "07.md Section 5, E2 vs C2", description: "C2 (4.0) and E2 (1.5) both rest on the same direct-export-growth fact; em_score 12.0 sits exactly on the MODEST/NONE (12) boundary, so any overlap discount on E2 drops the band to NONE. Decision unchanged (forward far below EXPANSION>=40; Gate 0 floors at AVOID). Taxonomy permits adjacent-category overlap and E2 already conservatively discounted."}
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: ""   # deferred to phase 3
+recomputed_decision: ""         # concur: Gate 0 classification AVOID stands
+findings:
+  - {severity: MAJOR, location: "01.md Block F, M11", description: "Conservative-fallback misapplication with 6 years present; mechanical score 3 not 1; assigned 1 also mismatches band-1 definition. moat_score 21->23, moat_class STRONG->FORTRESS; classification (AVOID) unchanged."}
+  - {severity: MINOR, location: "07.md Section 5, E2 vs C2", description: "C2/E2 rest on identical export-growth fact; em_score on the 12.0 MODEST/NONE boundary; decision unchanged."}
+  - {severity: MINOR, location: "01.md Block F, M5", description: "top-3/top-5 mcap thresholds applied against a 4-company peer universe; mechanically satisfied and flagged indicative-only by the maker. Data-adequacy caveat."}
+critical_count: 0
+major_count: 1
+minor_count: 2
+framework_adherence: 96         # phase-1 portion only (Gate 0 + Emerging Moat)
+acceptance_rate: 96             # rules passed / rules checked, phase-1 portion, %

@@ -1,0 +1,49 @@
+stage: B00-inputs
+company: FEDFINA
+run_date: 2026-07-15
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+
+inventory:
+  prospectus:      {count: 0, note: "folder absent; RHP (Red Herring Prospectus, dated 2023-11-16, 506pp) is physically present in annual-report/ and will be routed to stages 2,3,8"}
+  annual-report:   {count: 2, files: ["d9db86bb-98a4-4426-afb9-beb710b365af.pdf (annual report, 155pp)", "fedbank-financial-services-limited-rhp.pdf (RHP prospectus, 506pp)"]}
+  results:         {count: 2}
+  rating:          {count: 1, file: "202604150439_Fedbank_Financial_Services_Limited.pdf (Apr 2026)"}
+  concalls:        {count: 3, map: {Aug_2025: "Q1 FY26", Oct_2025: "Q2 FY26", Jan_2026: "Q3 FY26"}}
+  peer-concalls:   {count: 15, peers: [MANAPPURAM, MASFIN, SBFC, FIVESTAR]}
+  announcements:   {count: 0}
+  shareholding:    {count: 1, note: "operator-provided screener.in screenshot persisted as shareholding-pattern-screener.txt (Dec-2023..Mar-2026)"}
+  research:        {count: 2, note: "ICICI Securities notes 29Jul2025 + 29Apr2026, rerouted from presentation/; NON-ANCHORED leads only"}
+  screening:       {count: 24, note: "peer screener CSVs only (FIVESTAR/MANAPPURAM/MASFIN/SBFC); NO FEDFINA screening data"}
+  presentation:    {count: 1, file: "Investor_Presentation_1.pdf (42pp, dated 2026-07-15)"}
+  other:           {count: 0}
+
+input_gaps:
+  - type: prospectus
+    severity: MITIGATED
+    detail: "Company listed ~Nov 2023 (RHP dated 2023-11-16), within ~3y of run_date -> recently-listed priority. Prospectus FOLDER absent, but the RHP itself is present in annual-report/ and is routed to stages 2/3/8. Backward baseline and promoter/group history are therefore covered by filing evidence, not degraded."
+  - type: announcements
+    severity: HIGH
+    detail: "No Reg 30 / exchange announcements. Stages 5,7,8 lose the documented-ACTION record; stage 8 relies on web search + AR governance for material events; FTTCP Step 0C input absent. Lowers confidence; flagged downstream."
+  - type: screening-fedfina
+    severity: MEDIUM
+    detail: "screening/ contains peer CSVs only; no FEDFINA screener data. Gate 0 (stage 1) sources FEDFINA financials from results PDFs + annual report financial statements + investor presentation per DEGRADATION MAP (No screening data)."
+
+resolved_during_stage0:
+  - "shareholding gap CLOSED by operator-provided screener.in screenshot (persisted to inputs/shareholding/). Provenance is screener aggregation of exchange filings, not the raw filing PDF; promoter pledge NOT shown -> pledge = NOT FOUND from this source."
+  - "research gap CLOSED by 2 ICICI Securities notes rerouted to inputs/research/ (NON-ANCHORED, leads and management-intent cross-check only)."
+
+data_quality_flags:
+  - field: manifest.cmp
+    issue: "cmp: 0.0 (missing). ICICI note shows CMP ~INR 152 as of 29-Apr-2026 (NON-ANCHORED). Real CMP must be resolved before PHASE 3 valuation."
+  - field: manifest.market_cap_cr
+    issue: "market_cap_cr: 0.0 (missing). Resolve before PHASE 3."
+  - field: manifest.sector_cap_row
+    issue: "sector_cap_row: 'Pharma / CDMO' is WRONG. FEDFINA is a diversified NBFC (gold loans ~53% AUM + LAP/mortgages + residual MSME). Section 1B sector cap must use the correct NBFC/lending row in PHASE 3 stage 11. Flagged; not a phase-1 blocker."
+
+operator_context_note: "Operator provided a 6-month operational briefing in the gap-confirmation answer. Treated as operator context (weighed, never anchored). NOT injected into subagents; every stage derives its own numbers from this run's source PDFs."
+
+halt: false
+flags: []

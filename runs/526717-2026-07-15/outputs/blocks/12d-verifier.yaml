@@ -1,0 +1,20 @@
+stage: B12d
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+peers_audited: 8
+substantive_confirmed: 6
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1, Q5 narrative (Emmbi capex quote)", description: "Rs 7-10cr 'low capex cycle' / 3,000-tonne-addition quote cited as Aug 12 2021 call p.12; actual location is Nov 8 2021 call p.10. Part 3 peer coverage map of the same report correctly cites Nov 2021 p.10, so Part 1 and Part 3 are internally inconsistent. Content is genuine and correctly classified SUBSTANTIVE; only the Part 1 page/call pointer is wrong."}
+  - {severity: "MAJOR", location: "B06 Part 1, Q1 net read and Q4 verdict (Bangladesh EU-import-share / EU-FTA quote)", description: "'Bangladesh at about 12% of the EU imports' and '0% EU duty' quote cited as Aug 19 2025 call p.16-17; not present there. Actual source is Feb 20 2026 call p.16. Also conflates the UK-India FTA (genuinely discussed in the Aug 2025 call p.12) with the separate EU-India FTA/duty content (only in the Feb 2026 call), presenting both as one Aug-2025 citation."}
+  - {severity: "MAJOR", location: "B06 Part 2 (2E), YAML risks_peers_raise, and May 2026 peer_coverage_map contribution (forex hedging policy quote)", description: "'Formal, weekly-reviewed forex hedging policy' quote cited as Kanpur Q4/FY26 (May 4 2026) call p.13 in three separate locations in the report; not present there. Actual source is Feb 20 2026 (Q3 FY26) call p.13 (Manoj Agarwal answering Parth Patel). Repetition across three report sections indicates a systematic quarter mislabel rather than an isolated slip."}
+  - {severity: "MAJOR", location: "B06 Part 1, Q4 verdict and Part 4 'strongest independent confirmation' (Aug 2025 margin-split quote)", description: "'Standard product ~12% EBITDA, food-grade ~7% EBITDA' attribution presented as settled fact, but the Aug 19 2025 call p.8 source text ('One could be around 12%... the other could be around 7%') never explicitly states which category maps to which figure. B06's chosen direction runs counter to the conventional expectation that specialised/food-grade product carries the margin premium; if inverted, this would undercut rather than support the report's stated 'single strongest independent confirmation' of HPBL's margin-durability claim. Ambiguity should have been flagged rather than resolved silently."}
+critical_count: 0
+major_count: 4
+minor_count: 0
+acceptance_rate: 75

@@ -1,0 +1,67 @@
+stage: B05-concall
+company: "526717"
+run_date: "2026-07-15"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "no earnings-call transcripts exist (structural, manifest concalls_available: false)"
+  - "no FY26 Annual Report / MD&A / Directors' Report in run folder; only FY25 AR (guidance) plus bare FY26 results financial statements available, so Malaysia JV dissolution and standalone/consolidated cash-flow divergence have no management explanation in any source"
+  - "no FY26 capacity-utilisation percentage disclosed anywhere read this stage (only FY25's 31% baseline)"
+  - "rating agency's 'adjusted tangible net worth' gearing methodology not disclosed; FY26 gearing figure in this report is derived on an unadjusted-equity basis, approximate only"
+  - "no post-March-2026 rating action in run folder; FY26 audited results not yet independently assessed by Infomerics in any document available"
+  - "operator-supplied CS resignation-letter language is an operator transcription of an exchange filing, not read directly by this stage; treated as a lead, not anchored evidence"
+flags:
+  - type: FLAG-GOVERNANCE
+    reason: "Three Company Secretary transitions in ~15 months (Nov 2024, Feb 2025, Jan 2026 resignation, Feb 2026 appointment); newest CS concurrently serves as CS of Plastene India Ltd, the dominant related-party revenue counterparty and 4.68% promoter-group shareholder"
+  - type: FLAG-DISCLOSURE
+    reason: "Repeat SEBI/BSE compliance failure: missing Consolidated Cash Flow Statement in FY26 audited results (filed 28 May 2026, corrected via resubmission 11 June 2026), within ~9 months of a written assurance to prevent recurrence of a different disclosure lapse (Reg 23(9)/Reg 30, Aug 2025)"
+quarters_analysed: ["FY25 Annual Report (guidance)", "9M FY26 unaudited results (10 Feb 2026)", "FY26 full-year audited results (28 May 2026, resubmitted 11 June 2026)"]
+triggers:
+  - {priority: 1, name: "Direct-export/direct-sales mix continuing to displace job-work", type: "VOLUME+PRICE-MIX", timeframe: "near-term", conviction: "H", confirm_signal: "Continued standalone/consolidated revenue growth and export share at/above FY25's 53.70%", kill_signal: "Reversion toward job-work-dominated revenue or export order attrition"}
+  - {priority: 2, name: "6,000 MTPA incremental capacity (total 24,300 MTPA) utilisation ramp from FY25's 31% base", type: "VOLUME", timeframe: "medium-term", conviction: "M", confirm_signal: "Explicit utilisation % disclosure in next AR showing improvement beyond 31%", kill_signal: "Utilisation stagnant near 31% despite revenue growth"}
+  - {priority: 3, name: "Deleveraging toward <2x gearing by FY28, no major capex FY27-28", type: "financial-structure", timeframe: "medium-term", conviction: "M", confirm_signal: "FY27/FY28 gearing trending toward <2x on consistent methodology; LT borrowings not rising", kill_signal: "Fresh debt-funded capex reintroduced or gearing plateaus above 3x"}
+  - {priority: 4, name: "EBITDA margin sustaining above rating agency's 7-9% band (FY26 delivered ~9.55% consol/10.40% standalone, derived this stage)", type: "PRICE-MIX/COST", timeframe: "near-term", conviction: "M", confirm_signal: "Margin sustained above 9% for two or more consecutive full-year periods", kill_signal: "Margin reverts to 7% or below under export pricing competition (China/Vietnam/Bangladesh)"}
+  - {priority: 5, name: "Consolidated operating cash flow conversion (turned positive FY26)", type: "financial-structure", timeframe: "near-term", conviction: "L", confirm_signal: "Standalone operating cash flow also turns positive, closing parent/group divergence", kill_signal: "Consolidated CFO reverts negative or gap widens without explanation"}
+guidance:
+  - {item: "Direct export/direct sales expansion replacing job-work model", number: "NOT FOUND (no % target)", timeframe: "ongoing, FY25 onward", stated_in: "Directors' Report Future Outlook, Annual_Report.pdf p.7-8"}
+  - {item: "New capacity addition", number: "6,000 MTPA (total 24,300 MTPA)", timeframe: "operational from 1 Apr 2025", stated_in: "PR_HCP_Plastene_Bulkpack02_March26.pdf p.3,5 (AR itself unquantified, Annual_Report.pdf p.5)"}
+  - {item: "No major capex planned", number: "NIL", timeframe: "FY27-FY28", stated_in: "PR_HCP_Plastene_Bulkpack02_March26.pdf p.5"}
+  - {item: "Overall gearing reduction target", number: "<2x", timeframe: "by end FY28", stated_in: "PR_HCP_Plastene_Bulkpack02_March26.pdf p.5"}
+  - {item: "EBITDA margin range expected", number: "7%-9%", timeframe: "medium term", stated_in: "PR_HCP_Plastene_Bulkpack02_March26.pdf p.7"}
+  - {item: "Gross cash accrual projection", number: "Rs 30-50 crore p.a.", timeframe: "FY26-FY28", stated_in: "PR_HCP_Plastene_Bulkpack02_March26.pdf p.8"}
+  - {item: "Malaysia JV / international expansion opportunity", number: "NOT FOUND (qualitative only)", timeframe: "unspecified", stated_in: "MD&A Opportunities, Annual_Report.pdf p.57 (later dissolved, results PDF p.2-3)"}
+  - {item: "Timely SEBI disclosure compliance assurance", number: "NOT FOUND (qualitative assurance only)", timeframe: "future filings, stated Aug 2025", stated_in: "Directors' Report Secretarial Auditor observations, Annual_Report.pdf p.13"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Directors' Report Future Outlook, AR p.7-8", promise: "Continue shift from job-work to direct sales/exports", outcome: "delivered", explanation: "standalone revenue +145.1%, consolidated +26.8% FY25->FY26, RESULTS PDF p.7/17"}
+    - {promised_in: "Chairman's Message, AR p.5", promise: "New capacity additions on the horizon (unquantified)", outcome: "delivered per external source", explanation: "RATING PDF confirms +6,000 MTPA live from 1 Apr 2025; AR itself never quantified"}
+    - {promised_in: "MD&A Opportunities, AR p.57", promise: "Malaysia JV to strengthen international exposure", outcome: "missed/reversed", explanation: "JV dissolved during FY26, no explanation given anywhere, results PDF p.2-3,13-14"}
+    - {promised_in: "RATING PDF p.7 (agency reflecting management plan)", promise: "EBITDA margin 7-9% band medium term", outcome: "delivered/beat", explanation: "FY26 consol ~9.55%, standalone ~10.40% on like-for-like agency methodology, derived this stage"}
+    - {promised_in: "RATING PDF p.2", promise: "Sustained improvement in cash accruals/liquidity", outcome: "partial", explanation: "consolidated CFO turned positive (+1,624.72 lakh vs -1,852.78 lakh FY25); standalone CFO worsened (-759.44 vs -581.08 lakh)"}
+    - {promised_in: "RATING PDF p.5", promise: "Gearing below 2x by end FY28", outcome: "partial/on track, not yet due", explanation: "unadjusted debt/equity ~2.98x FY26 vs ~3.19x FY25, directionally improving; agency's adjusted methodology not available for FY26"}
+    - {promised_in: "Secretarial Auditor observations/mgmt reply, AR p.13 (Aug 2025)", promise: "Assurance of timely SEBI/BSE disclosures going forward", outcome: "missed - repeat compliance failure", explanation: "Consolidated Cash Flow Statement omitted from FY26 audited results (28 May 2026), corrected via resubmission letter 11 June 2026 citing 'inadvertent oversight'"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Mixed AR-guidance-vs-FY26-results record (3 delivered/beat, 2 partial, 2 missed of 7 trackable items) held at the default C rather than raised to B because the two misses are credibility-significant: a repeat SEBI/BSE disclosure compliance failure occurring within ~9 months of a written assurance to prevent recurrence, and a silently reversed Malaysia JV opportunity with zero management explanation, compounded by three Company Secretary transitions in ~15 months and a content-free AR risk-disclosure section."
+peer_questions:
+  - {question: "Do Emmbi and Kanpur Plastipack's concalls corroborate a ~5.4% CAGR global FIBC market (to US$12.6bn by 2033) and India's cited 75%/72% share of EU/US FIBC imports?", why: "HPBL's AR sources these figures to an unnamed 'industry expert' (AR p.56), unverified in this stage", check_peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+  - {question: "Do peer concalls describe raw material (PP granule) pricing as fully pass-through via annual rate contracts, or do they describe margin lag during PP price spikes?", why: "HPBL's margin-stability claim rests on a 'completely pass through' assertion (RATING p.5) untested against peers", check_peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+  - {question: "What capacity utilisation levels/ramp timelines do peers cite for their own recent FIBC capacity expansions, vs HPBL's 31% FY25 utilisation on its newly expanded 24,300 MTPA base?", why: "Tests whether 31% is an industry-typical ramp curve or company-specific execution lag", check_peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+  - {question: "Do peers corroborate a specialised-FIBC-vs-commodity margin differential and competitive pricing pressure specifically from China, Vietnam, Bangladesh?", why: "Tests durability of HPBL's forward 7-9% margin band claim", check_peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+  - {question: "Do peers' capex plans and gearing trajectories corroborate an industry-wide capex pause, or are peers investing counter-cyclically while HPBL holds back?", why: "Tests whether HPBL's 'no major capex FY27-28' stance is sector-wide or company-specific capital constraint", check_peers: ["Emmbi Industries", "Kanpur Plastipack"]}
+red_flags:
+  - "Malaysia JV, framed as a growth opportunity in FY25 AR, dissolved during FY26 with no management explanation anywhere in available filings (High)"
+  - "Repeat SEBI/BSE disclosure compliance failure (missing Consolidated Cash Flow Statement, FY26 audited results) within ~9 months of a written assurance to prevent recurrence of a different lapse (High)"
+  - "Three Company Secretary transitions in ~15 months, most recent resignation citing unresolved 'matters requiring clarification' per operator-supplied lead (Medium-High)"
+  - "New Company Secretary concurrently CS of Plastene India Ltd, the dominant related-party counterparty and 4.68% promoter-group shareholder (Medium)"
+  - "Standalone operating cash flow worsened in FY26 even as consolidated turned positive, divergence unexplained (Medium)"
+  - "FY25 AR Risks & Concerns section entirely generic, names no company-specific risk despite material risks evidenced elsewhere in the same filing (Medium)"
+dropped_triggers:
+  - "Malaysia JV / new subsidiary as international-exposure growth driver (MD&A Opportunities, AR p.57) - dissolved during FY26, no explanation given"
+timeline_slippages:
+  - "Regulatory disclosure compliance promised 'to ensure timely disclosures in future' (Aug 2025, AR p.13) recurred as a different compliance gap by May-June 2026 (Consolidated Cash Flow Statement omission, corrected via resubmission) - assurance did not hold beyond ~9 months"

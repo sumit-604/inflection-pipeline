@@ -1,0 +1,212 @@
+stage: B10-valinputs
+company: "544516"
+company_name: "Airfloa Rail Technology Ltd"
+run_date: "2026-07-15"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - type: credit_rating_pdf
+    severity: MEDIUM
+    note: "No credit rating PDF supplied. Rating agency working-capital commentary quote: NOT FOUND. Stage 11 Pillar 2 defaults conservative per CLAUDE.md Section 4."
+  - type: peer_data_completeness
+    severity: LOW
+    note: "FRONTSP Data_Sheet CSV is headers-only, no populated data. TEXRAIL Data_Sheet fully populated. Peer P/E / EV/EBITDA / P/B / growth / ROCE cross-check completed via TEXRAIL only."
+flags:
+  - "Negative operating cash flow (-Rs 57.45 Cr FY26, worsening from -Rs 2.87 Cr FY25) despite 52% PAT growth and 66% revenue growth; growth-induced per FTTCP but cash multiplier 0.80x applied with falsifier tracked for H1 FY27."
+  - "Order-book target missed (Rs 1,000 Cr promised Mar-2026, actual Rs 469 Cr); FY27 revenue guidance walked back Rs 550cr+ to Rs 500cr before fiscal year began; management credibility grade C."
+  - "BBBS JV incorporation (Rs 25 Cr committed capital) already slipped past 'within two weeks' 3-Jun-2026 promise; still pending as of 14-Jul-2026 Q1 FY27 update (second slip watch)."
+  - "EBITDA margin compressed 500bps YoY (25.1% FY25 to 20.1% FY26) despite capacity utilization 90%; raw material inflation partially offset by price-variation clauses (~50-60% pass-through)."
+  - "Shared catalyst risk: 14-acre facility capex and BBBS JV both depend on same committed capital pool, and working-capital drain competes for same capital (single point of failure for both Pillar 3 growth premium and ROCE lift)."
+table:
+  company_identity:
+    company: "Airfloa Rail Technology Ltd"
+    ticker: "544516"
+    sector_classification: "Cables / Industrial products (25x cap, corrected from Pharma/CDMO 38x manifest error)"
+    business_model_type: "Manufacturing (B2B project/tender-based contract manufacturing, railways/aerospace/defence)"
+    cmp_rs: 315.0
+    market_cap_cr: 756.0
+    shares_outstanding_diluted_cr: 2.397
+    net_debt_cr: 55.23
+    enterprise_value_cr: 811.23
+  latest_financials_fy26:
+    revenue_cr: 319.6
+    revenue_source: "Results FY26 (30-May-2026): Standalone Revenue from Operations Rs 31,959.76 lacs"
+    ebitda_cr: 64.2
+    ebitda_source: "B05 concall FY26 actual; verified 20.1% margin × 319.6 revenue"
+    ebitda_margin_pct: 20.1
+    ebitda_margin_source: "Results + B05 guidance"
+    pat_cr: 39.1
+    pat_source: "Results FY26: Standalone Rs 3,915.22 lacs"
+    pat_margin_pct: 12.2
+    pat_margin_source: "39.1 / 319.6"
+    diluted_eps_rs: 18.67
+    diluted_eps_source: "Results FY26 Line 303"
+    cfo_cr: -57.45
+    cfo_source: "Results FY26 Cash Flow: Standalone Net Cash from Operating Activities -5,745.24 lacs"
+    fcf_cr: -74.60
+    fcf_source: "CFO (-57.45) - Capex (17.15); verified in B04"
+    book_value_per_share_rs: 98.74
+    book_value_per_share_source: "FY26 equity (23,677.80 lacs) / 2.397 Cr shares"
+    p_b_current: 3.19
+    p_b_current_source: "CMP 315 / Book value 98.74"
+    p_e_current: 16.89
+    p_e_current_source: "CMP 315 / Diluted EPS 18.67"
+    roe_latest_pct: 22.4
+    roe_latest_source: "B05 management reported; verified Net Profit 39.1 / Avg Equity 172.76 = 22.67%"
+    roce_latest_pct: 24.9
+    roce_latest_source: "FTTCP: FY26 ~24.9% per Jun-2026 concall (management reported). Do NOT use B01 41.30%/25.22% split (formula artifact on IPO capital base)"
+    roce_2yr_trend: "STAGNANT"
+    roce_2yr_trend_source: "FTTCP ruling: FY24 26.42% → FY25 26.28% → FY26 24.9%; no recovery credit"
+    capex_cr: 17.15
+    capex_source: "Results FY26: Purchase of PP&E -1,715.42 lacs"
+    depreciation_cr: 3.47
+    depreciation_source: "Results FY26 Line 282: 346.94 lacs"
+    dps_rs: 0
+    dps_source: "No dividend track record disclosed; capital retained for capex/working capital"
+    net_debt_breakdown: "Borrowings 68.31 Cr (ST 64.19 + LT 4.12) - Cash 13.08 Cr = 55.23 Cr net debt"
+    net_debt_source: "Results FY26 Balance Sheet"
+  cash_flow_ratios:
+    cfo_pat_latest: -1.47
+    cfo_pat_latest_source: "-57.45 / 39.1"
+    cfo_pat_cumulative_2yr: -0.93
+    cfo_pat_cumulative_source: "[(-2.87) + (-57.45)] / [25.55 + 39.1] = -60.32 / 64.65; matches B01 block_b_trend"
+    fcf_pat: -1.91
+    fcf_pat_source: "-74.60 / 39.1"
+    p_fcf: "NOT APPLICABLE"
+    p_fcf_source: "FCF is negative; multiple not meaningful for negative denominator"
+  growth_metrics:
+    revenue_3yr_cagr_pct: 49.7
+    revenue_3yr_cagr_source: "(319.6 / 95.17)^(1/3) - 1 = 49.7% annualized; Prospectus restated FY23-FY25 + Results FY26"
+    pat_3yr_cagr_pct: 121.7
+    pat_3yr_cagr_source: "(39.1 / 1.49)^(1/3) - 1 = 121.7% annualized; backward series"
+    fy23_revenue_cr: 95.17
+    fy23_revenue_source: "Prospectus restated"
+    fy24_revenue_cr: 119.30
+    fy24_revenue_source: "Prospectus restated"
+    fy25_revenue_cr: 192.39
+    fy25_revenue_source: "Prospectus restated"
+    fy26_revenue_cr: 319.6
+    fy26_revenue_source: "Results FY26"
+    fy23_pat_cr: 1.49
+    fy23_pat_source: "Prospectus restated"
+    fy24_pat_cr: 14.23
+    fy24_pat_source: "Prospectus restated"
+    fy25_pat_cr: 25.55
+    fy25_pat_source: "Prospectus restated"
+    fy26_pat_cr: 39.1
+    fy26_pat_source: "Results FY26"
+  management_guidance:
+    credibility_grade: "C (Mixed)"
+    credibility_grade_source: "B05: 1 delivered / 4 partial / 3 missed promises"
+    guided_revenue_growth_fy27: "Rs 500 Cr (56.5% vs FY26 base)"
+    guided_revenue_source: "B05: Jun-2026 concall guidance; current; covers ~70% by order book"
+    guided_margin_band_fy27: "12-13% PAT margin"
+    guided_margin_source: "B05: Jun-2026 concall guidance"
+    top_trigger_1: "FY27 revenue execution vs Rs 500cr guidance"
+    top_trigger_1_type: "VOLUME"
+    top_trigger_1_timeframe: "near-term (FY27)"
+    top_trigger_1_confirmation: "Quarterly revenue prints tracking toward Rs 500cr"
+    top_trigger_1_source: "B05 priority 1"
+    top_trigger_2: "Cash conversion / standalone OCF turning positive"
+    top_trigger_2_type: "CASH/MARGIN"
+    top_trigger_2_timeframe: "near-term"
+    top_trigger_2_confirmation: "H1 FY27 positive standalone OCF; receivable days genuinely falling"
+    top_trigger_2_source: "B05 priority 2"
+    top_trigger_3: "Defense/aerospace optionality (BBBS JV, HAL simulators, R&D step-up)"
+    top_trigger_3_type: "INORGANIC"
+    top_trigger_3_timeframe: "medium/long-term"
+    top_trigger_3_confirmation: "BBBS JV formally incorporated and first bookable revenue recognized"
+    top_trigger_3_source: "B05 priority 3"
+  moat_and_catalyst:
+    em_score: 14.5
+    em_score_source: "B07"
+    em_classification: "MODEST"
+    em_classification_source: "B07: 4 Moderate-strength categories only; F2 execution moat scored documented negative"
+    strategic_asset_monopoly: "YES, with moderate durability"
+    strategic_asset_source: "B07: Regulatory/vendor qualification barriers (ICF/HAL/DRDO/IREPS), repeat-customer (62% FY25), certifications (IRIS/AS9100D/ISO 9001/EN 15085-2). Scale/cost advantage absent."
+    primary_catalyst_12m: "BBBS JV formal incorporation and first bookable revenue"
+    primary_catalyst_window: "FY27 (already once-slipped 3-Jun promise; watch for second slip)"
+    primary_catalyst_source: "B07 catalysts_12m; Jun-2026 call + operator Q1 FY27 update"
+    evidence_quality_mix: "mostly-📄 mixed (5 documented, 9 claim, 0 inference)"
+    evidence_quality_source: "B07 completionist_recount"
+  cash_conversion_determination:
+    character: "GROWTH-INDUCED"
+    character_source: "FTTCP Phase 2 operator override"
+    pillar_2_cash_multiplier: 0.80
+    cash_multiplier_source: "FTTCP: override from draft 0.65x on operator evidence and ruling"
+    falsifier_metric: "H1 FY27: if standalone OCF still negative AND >6m receivables share still rising above 23.4% AND debtor days tick back up → reverts to STRUCTURAL, multiplier 0.65x"
+    falsifier_source: "FTTCP deliberation record, dated 2026-07-15"
+    structural_vs_growth_evidence: "Long debtor days (gov/PSU buyer cycle) stable-to-improving (217-230 FY23-FY25 → 195 FY26). Over-6m receivables 23.38% FY25 with zero doubtful provision (collectible). Pre-surge years FY23-FY24 had positive OCF; negative OCF coincides with +66% revenue surge."
+    structural_vs_growth_source: "B02 receivables_trend, FTTCP operator reasoning"
+  ua_qualifiers:
+    listed_12m: false
+    listed_12m_evidence: "Listed 18-Sep-2025; as of run-date 15-Jul-2026 ~10 months elapsed"
+    listed_12m_source: "B00, manifest"
+    gate0_or_em: true
+    gate0_or_em_evidence: "Gate 0 score 76 (≥60 threshold met), EM score 14.5 (not ≥25 threshold)"
+    gate0_or_em_source: "B01 score 76, B07 score 14.5"
+    fii_dii_lt3: true
+    fii_dii_lt3_evidence: "FII 0.09% + DII 0.98% = 1.07% < 3% threshold"
+    fii_dii_lt3_source: "B00 operator shareholding (Mar 2026 screener)"
+    all_met: false
+    ua_multiplier: "WITHHELD"
+    ua_multiplier_reason: "Listed ~10 months, below 12-month qualifier. Eligible approx Sep 2026 if FII+DII remains <3%"
+    ua_multiplier_source: "FTTCP stage 10 determination"
+  sector_and_hurdle:
+    sector_cap_row_exit: "25x (Cables / Industrial products)"
+    sector_cap_source: "FTTCP overrides manifest Pharma/CDMO 38x (auto-collector error). Identical-cap alternative: Recycling/Manufacturing 25x. Defence/strategic 38x not applied (defence ~6% of order book only)."
+    return_hurdle_tier: "Tier A, 25% CAGR target"
+    return_hurdle_source: "FTTCP: Gate 0 AVERAGE (76) + EM MODEST (14.5) both Tier A. FII+DII 1.07% confirms full-risk hurdle."
+    shared_catalyst_flag: true
+    shared_catalyst_flag_reason: "14-acre facility capex and BBBS JV are same capital behind Pillar 3 growth premium and future ROCE lift; working-capital drain competes for same capital (single point of failure)"
+    shared_catalyst_source: "FTTCP Phase 3 handoff"
+  peer_valuation_check:
+    peers_provided: 2
+    peers_with_data: "TEXRAIL (fully populated), FRONTSP (headers-only, not populated)"
+    texrail_fy26_revenue_cr: 4377.27
+    texrail_fy26_pat_cr: 195.15
+    texrail_fy26_eps_rs: 4.79
+    texrail_fy26_ebitda_cr: 446.95
+    texrail_ev_ebitda: 11.96
+    texrail_p_e_cmp: 24.0
+    texrail_p_b_cmp: 1.97
+    airfloa_ev_ebitda: 12.6
+    airfloa_p_e_cmp: 16.89
+    airfloa_p_b_cmp: 3.19
+    peer_verdict: "Airfloa EV/EBITDA 12.6x sits at parity to TEXRAIL 11.96x despite lower scale and execution risk (negative OCF, order misses, capex delays). P/E discount (16.89x vs 24.0x) reflects higher execution/cash-conversion risk. Valuation appears neutral-to-demanding on fundamentals vs large-cap peer. Peer comparison directional only given scale/segment differences (TEXRAIL wagons/foundry; Airfloa components/interiors/defence)."
+    peer_data_source: "TEXRAIL Data_Sheet CSV (FY26 audited), screener provided"
+    ebitda_basis_note: "Airfloa EBITDA basis: 20.1% stated margin. TEXRAIL EBITDA basis: implied via PBT + Interest + Depreciation (no separate EBITDA line in data provided)"
+  som_and_tam:
+    som_3yr_revenue_cr: 568
+    som_implied_cagr_3yr_pct: 21.1
+    som_implied_cagr_source: "B09: SOM-implied CAGR yr3 21.1%, yr5 21.9% (conservative TAM 11,000 Cr, realistic TAM 13,150 Cr)"
+    tam_cr_conservative: 11000
+    tam_cr_realistic: 13150
+    tam_growth_pct: 8.3
+    tam_source: "B09 tam_analysis"
+    current_sam_share_pct: 3.7
+    tam_commentary: "Management's Rs 16.7 lakh crore claim is undifferentiated whole-of-sector spend (TAM=SAM conflation). Coach refurbishment programme (~Rs 26,000cr, ~35% of realistic TAM) lacks independent government/press confirmation; rests entirely on company concall commentary."
+    tam_source_note: "B09 flags: SOM-implied 21-22% CAGR is below FY27 guidance-implied growth ~56.5% (Rs 500cr vs Rs 319.6cr FY26). Gap consistent with B07 F2 documented-negative execution-moat finding."
+conflicts:
+  - field: "cash_conversion_character"
+    value_a: "STRUCTURAL"
+    anchor_a: "B01 Gate 0 initial scan: CFO/PAT -0.93x cumulative, Block B 0/20"
+    value_b: "GROWTH-INDUCED"
+    anchor_b: "FTTCP Phase 2 operator override: debtor days improving (217-230 to 195), pre-surge years FY23-FY24 had positive OCF, negative OCF aligns with +66% revenue surge not structural decay"
+    used: "GROWTH-INDUCED (FTTCP authoritative)"
+  - field: "sector_cap_row"
+    value_a: "Pharma / CDMO, 38x"
+    anchor_a: "manifest.yaml: auto-collector error, noted 'Sector row auto-picked; verify'"
+    value_b: "Cables / Industrial products, 25x"
+    anchor_b: "FTTCP Phase 2 correction: manufacturing company, defence only ~6% of order book, not 38x defence strategic"
+    used: "Cables / Industrial products 25x (FTTCP authoritative)"
+unresolved:
+  - field: "rating_wc_quote"
+    why: "No credit rating PDF supplied in file set; no external rating agency coverage identified"
+    where_it_might_be: "BSE filings (RHP/DRHP era or post-listing credit rating disclosure if later obtained); Prospectus Section on credit facilities (references Axis Bank, Union Bank but no formal rating agencies listed)"
+  - field: "frontsp_peer_data"
+    why: "FRONTSP-Data_Sheet.csv contains headers only; no populated financial data provided"
+    where_it_might_be: "FRONTSP audited results filing; screener.in full data pull"
+  - field: "live_trading_pe"
+    why: "CMP 315 and EPS 18.67 computed as of run-date 2026-07-15 snapshot; intraday/real-time P/E at valuation time may differ"
+    where_it_might_be: "To be supplied by stage 11 if refresh needed; use audited TTM EPS for consistency"

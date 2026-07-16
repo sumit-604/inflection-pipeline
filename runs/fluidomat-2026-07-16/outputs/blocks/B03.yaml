@@ -1,0 +1,54 @@
+stage: B03-ardeep
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY2017 AR was briefed; actual file is the FY2024-25 (49th) Annual Report — single most-recent-year AR on file, only FY25 vs FY24 data available"
+  - "Top customer / single-customer revenue concentration: NOT FOUND IN DOCUMENT"
+  - "Ind AS 19 actuarial assumptions for gratuity (discount rate, salary escalation, sensitivity): NOT FOUND IN DOCUMENT"
+  - "Effective vs statutory tax rate reconciliation table: NOT FOUND IN DOCUMENT (effective rate independently computed at 25.44% FY25 / 25.72% FY24)"
+  - "Section 115BAA concessional tax regime election status: NOT FOUND IN DOCUMENT (inferred but not confirmed)"
+  - "Reconciliation of realized 'Profit on Sale of Mutual Fund' (Cash Flow Statement, Rs57.59L FY25) into the Other Income note (Note 28, Rs345.94L total): NOT FOUND IN DOCUMENT"
+  - "No enumerated Key Audit Matters despite listed-entity SA 701 applicability: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "Receivable days deteriorated ~88.6 to ~113.6 days YoY (Note 11 vs Note 27); zero ECL on Rs143.33 lakh combined 2yr+ aged receivables; independently corroborated in Phase 3 by CFO/PAT falling to 64.4% (below the 0.7x threshold) and CFO/EBITDA falling to 46.5% FY25, driven by a Rs916.78 lakh working-capital absorption in trade receivables (Cash Flow Statement p.84)"}
+phase_verdicts: {p1: "WATCH", p2: "WATCH", p3: "WATCH", p4: "WATCH", p5: "WATCH", p6: "WATCH", p7_best_fit: "GARP (watchlist, pending FY26 order-book and receivables confirmation)"}
+overall_quality: 6.9
+quality_components: {governance: 6.5, accounting: 6.0, balance_sheet: 8.5, earnings: 6.5}
+kill_switch_notes:
+  - "Phase 1: no enumerated Key Audit Matters for a listed-entity audit, and non-audit fee (Rs3.70L) exceeding audit fee (Rs2.00L, ratio 1.85x), would warrant inquiry into audit scope/independence perception"
+  - "Phase 2: zero ECL on aged receivables combined with the BGR Energy IBC omission from Note 36 concerns completeness of loss-recognition and litigation disclosure"
+  - "Phase 3: CFO/PAT fell to 64.4% (below 0.7x threshold), independently corroborating the receivables-driven cash-conversion deterioration"
+  - "Phase 4: MD&A risk section states 'no major risks are foreseen' despite several identifiable, evidence-based risks (receivables, customer concentration, treasury volatility, order-book deceleration) going undiscussed"
+  - "Phase 5: promoter-family concentration across 3 of 6 board seats and at least 7 senior/KMP roles, plus 28.40x CEO pay ratio, alongside otherwise-clean process indicators"
+  - "Phase 6: the Radhica Sharma 'debt recovery' narrative claim (Notice p.22) directly contradicts the receivables-deterioration evidence corroborated across Phases 2-3"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Receivables/collection risk - zero ECL against an aging book", evidence: "Note 11 p.94 ageing schedule; CFO/PAT 64.4% FY25, Cash Flow Statement p.84"}
+  - {risk: "Customer credit/insolvency concentration risk (BGR Energy IBC precedent)", evidence: "Board's Report p.37-38"}
+  - {risk: "Treasury/investment NAV volatility risk (equity mutual fund exposure)", evidence: "Note 46.13 p.105, Return on Investment 38.78% to 3.72%"}
+  - {risk: "Order book deceleration versus revenue growth", evidence: "Board's Report p.26, -3.12% booking vs +30% revenue"}
+  - {risk: "Promoter-family governance concentration", evidence: "Note 45a p.102; Board's Report p.34, at least 7 family members in senior/KMP roles"}
+guidance_table:
+  - {claim: "7 orders booked from Govt's 25 new thermal power plant + 15 coal mining project tenders", number: "7 orders (of unspecified total tendered)", timeframe: "not specified", credibility: "medium - specific and traceable but no baseline/total addressable disclosed"}
+  - {claim: "Continuing efforts to introduce higher value products and broaden operating base", number: "NOT FOUND IN DOCUMENT", timeframe: "ongoing/unspecified", credibility: "low - boilerplate Schedule V language, no measurable target"}
+  - {claim: "Expected increase in productivity and profits", number: "NOT FOUND IN DOCUMENT", timeframe: "unspecified", credibility: "low - document itself states this cannot be ascertained"}
+monitorables:
+  - {metric: "Receivable days (closing-balance basis)", threshold: "further deterioration beyond ~113.6 days FY25, or continued growth in 2-3yr/>3yr ageing buckets", where: "Note 11-equivalent in FY26 AR / quarterly results", why: "tests whether FY25 deterioration is one-off or structural"}
+  - {metric: "Order booking (annual)", threshold: "continued decline or rebound vs FY25's Rs5815.76 lakh", where: "Board's Report Review of Operations, FY26 AR", why: "leading indicator diverged negatively from FY25 revenue growth; tests GARP growth sustainability"}
+  - {metric: "CFO/PAT ratio", threshold: "sustained below 0.70x for a second consecutive year", where: "Cash Flow Statement, FY26 AR", why: "confirms whether cash-conversion deterioration is structural or timing-related"}
+  - {metric: "ECL/doubtful-debt provision policy", threshold: "any policy change, or continued zero provisioning against >Rs143 lakh combined 2yr+ aged receivables", where: "Trade receivables note, FY26 AR", why: "tests whether management addresses the provisioning gap flagged across two stages"}
+  - {metric: "Litigation/contingent-liability disclosure discipline", threshold: "any new customer insolvency/recovery action, and whether Note 36 captures it in real time", where: "Note 36 + Board's Report litigation section, FY26 AR", why: "tests disclosure-discipline improvement following this stage's finding"}
+strengths_top3:
+  - "Debt-free balance sheet with ~Rs3,775 lakh in fixed deposits plus Rs831.63 lakh in mutual fund investments, funding a 278% capex increase (Rs644.23 lakh FY25) entirely from internal accruals (Notes 7, 14, 10; Cash Flow Statement p.84)"
+  - "Verified margin expansion: EBITDA margin rose from 31.09% to 40.64% (Board's Report p.35-36), corroborated by a ~670bps fall in raw material cost ratio and ~310bps fall in employee cost ratio (Notes 29, 31 vs Note 27)"
+  - "Clean governance-process indicators: 100% board/committee attendance, zero whistleblower complaints, zero SEBI strictures in 3 years, no promoter pledge, and a small (+0.03pp) promoter stake increase rather than selling (Corporate Governance Report pp.53-67)"
+red_flags_top3:
+  - "Zero ECL provisioning against trade receivables despite the 2-3yr bucket growing 128% (Rs42.80L to Rs97.57L) and >3yr bucket growing 79.5% (Rs25.49L to Rs45.76L), independently corroborated by CFO/PAT falling to 64.4% (below the 0.7x threshold) and CFO/EBITDA falling to 46.5% in FY25 (Note 11 p.94; Cash Flow Statement p.84)"
+  - "BGR Energy Systems IBC recovery action (2022-2024) never disclosed in Note 36 Contingent Liabilities, surfacing only in the Board's Report (p.37-38 vs Note 36.2 p.101); compounded by a non-audit fee (Rs3.70L) exceeding the audit fee (Rs2.00L) and zero enumerated Key Audit Matters in a listed-company audit (Note 33 p.100; Auditor's Report p.72-74)"
+  - "Order booking declined 3.12% YoY (Rs5815.76L vs Rs6003.22L) even as revenue grew 30%, and headline Basic/Diluted EPS in the P&L Statement is computed on Total Comprehensive Income rather than net profit, inflating FY24's reported EPS by 6.5% (Board's Report p.26; Note 35 p.101 vs P&L p.83)"
+best_fit_strategy: "GARP (watchlist, pending FY26 order-book and receivables confirmation)"
+one_line_verdict: "Strong debt-free margins and capex growth, but receivables quality and order-book deceleration keep this a GARP watchlist name."

@@ -1,0 +1,73 @@
+stage: B04-bizmodel
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Aftermarket spares/AMC revenue not disclosed separately from new-equipment sales in any provided document (commingled in AR Note 27 'Sale of products including spares & components') — the 'annuity-like' thesis cannot be quantified"
+  - "Named competitors not disclosed anywhere in AR or investor presentation"
+  - "Customer concentration (% of revenue from top client/top 5 clients) not disclosed"
+  - "Per-unit revenue and per-unit margin (ASP, unit volumes sold) not disclosed — only aggregate revenue and order-booking figures"
+  - "FY26 order booking figure not found in documents provided (only FY24/FY25 order booking disclosed in AR MD&A)"
+  - "No concalls available (no-concall mode) to cross-check margin/receivables commentary"
+flags:
+  - "EBITDA margin fell from 40% (FY25) to 35% (FY26) while trade receivables grew 32.0% against ~0.4% revenue growth over the same period — working capital and margin trend both need monitoring before the FY25 profitability level is assumed to be the new normal"
+  - "Family-concentrated management: Chairman & Managing Director (~age 76) plus two other executive family directors hold key roles and draw rising remuneration (~11.2% of FY25 PAT for the three combined), with further hikes approved into FY26 even as PAT fell — key-man and succession risk"
+  - "Aftermarket/spares revenue split, central to the operator's 'annuity-like' investment thesis, is not separately disclosed in any provided document"
+  - "Export revenue share has declined two years running (5.03% FY24 to 3.03% FY25 of revenue from operations) despite a stated 15+ country footprint and ATEX certification"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of products (new couplings + spares/components, commingled)", type: "one-time product sale, capital goods", pct_of_revenue: 99.1, predictability: "medium"}
+  - {name: "Income from services (installation/commissioning)", type: "fee-for-service", pct_of_revenue: 0.8, predictability: "low"}
+  - {name: "Scrap sales", type: "by-product sale", pct_of_revenue: 0.1, predictability: "low"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Intangible assets (55 years of engineering IP; ISO 9001/14001/45001 + ATEX certifications)", durability: "high"}
+  - {moat: "Switching costs (clients certified/trusted, described as not switching vendors post-installation)", durability: "medium-high"}
+  - {moat: "Cost advantage / vertical integration (in-house Al and CI foundries, CNC, fabrication, testing)", durability: "medium"}
+  - {moat: "Efficient scale (niche category, only 5 countries with indigenous capability)", durability: "medium"}
+  - {moat: "Process power (in-house R&D, 10 test benches, continuous product line extensions)", durability: "medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Standard cross-cycle multiple for a debt-free, cyclical, capital-intensive B2B capital-goods manufacturer; normalises for the capex-driven earnings/margin volatility already visible FY25 to FY26"}
+  secondary: {method: "P/E (normalised across 3-5 years)", why: "Consistent profitability and an unbroken dividend record support a P/E cross-check, but a single trailing year is unreliable given the 40%-to-35% EBITDA margin swing"}
+  tertiary: {method: "Price/Book (asset-based / replacement-cost floor check)", why: "Debt-free balance sheet with growing net worth and an active, not-yet-productive capex program make book value a useful floor-value sanity check"}
+  not_applicable:
+    - "DCF — margin/mix volatility and limited forward order-book visibility make a reliable long-horizon FCF projection unsupportable without invented assumptions"
+    - "EV/Sales — would understate a profitable, margin-rich niche manufacturer"
+    - "SOTP — company reports in a single segment only (manufacturing of fluid couplings)"
+irrelevant_ratios:
+  - {ratio: "Same-store sales growth", why: "Retail-specific metric; Fluidomat has no stores, only project/order-based B2B sales"}
+  - {ratio: "ARPU / subscriber churn", why: "No subscription revenue model; each coupling is a discrete engineered capital sale"}
+  - {ratio: "Net Interest Margin (NIM)", why: "Not a lender; company carries zero borrowings"}
+  - {ratio: "Loan loss provisioning / NPA ratio", why: "No lending book; not applicable to a manufacturer"}
+  - {ratio: "Footfall / occupancy rate", why: "Not a retail, hospitality or real-estate business"}
+  - {ratio: "Debt/Equity as a standalone risk signal", why: "Structurally zero for years by policy; a strength rather than an ongoing risk metric for this company"}
+must_track_metrics:
+  - {metric: "Order booking / order intake (₹ lakh)", healthy: "Growing YoY, at or above revenue growth", red_flag: "Two consecutive years of decline (already occurring: -3.12% FY24 to FY25)"}
+  - {metric: "EBITDA margin %", healthy: ">30%", red_flag: "<28% or -300bps+ sequential (already declining: 40% FY25 to 35% FY26)"}
+  - {metric: "Trade receivables growth vs revenue growth", healthy: "Receivables growth <= revenue growth", red_flag: "Receivables growing materially faster than revenue (already occurring: +32.0% vs +0.4% FY26)"}
+  - {metric: "Capex execution vs ₹35cr budget/timeline", healthy: "On-budget, on-time (FY26-FY29E)", red_flag: "Cost overrun or construction delay"}
+  - {metric: "Export revenue % of total", healthy: "Rising mix", red_flag: "Continued decline (already 5.03% to 3.03% over two years)"}
+unit_economics:
+  unit: "One engineered fluid coupling, built to customer kW/RPM specification (up to 6,000 kW)"
+  revenue_per_unit: "NOT FOUND, check investor presentation or concall — only aggregate revenue and lakh-level order booking are disclosed"
+  margin_per_unit: "NOT FOUND, check investor presentation or concall — no per-unit or per-kW-tier margin breakdown disclosed"
+  key_lever: "Order/product mix (large-kW, custom and ATEX/hazardous-duty orders vs standard small-kW units) combined with foundry/CNC fixed-cost absorption as capacity utilisation rises"
+first_deterioration_signals:
+  - {risk: "Revenue model / order-cycle risk", first_signal: "Order booking (₹ lakh) declining YoY, disclosed in AR MD&A"}
+  - {risk: "Margin risk (input cost / mix)", first_signal: "EBITDA margin % contracting sequentially in quarterly results"}
+  - {risk: "Balance sheet / capex execution risk", first_signal: "Capital Work-in-Progress (CWIP) rising without matching capacity commissioning/utilisation"}
+  - {risk: "Execution / key-man risk", first_signal: "KMP remuneration rising faster than PAT growth, or an unplanned change in family management"}
+  - {risk: "Structural / working-capital risk", first_signal: "Trade receivables growth outpacing revenue growth (already occurring)"}
+mgmt_questions:
+  - "What is the current order book/backlog by end market, and how does book-to-bill compare with last year?"
+  - "What specifically drove EBITDA margin compression from 40% (FY25) to 35% (FY26), and is 35% the new normalised run-rate?"
+  - "Can the company disclose the split between new-equipment sales and aftermarket spares/services going forward?"
+  - "What is the status and cost-to-date of the ₹35 crore modernisation/capacity program, and is it on schedule?"
+  - "Why did trade receivables grow ~32% while revenue was nearly flat in FY26, and what is the ageing profile?"
+  - "What is the succession plan for the Chairman & Managing Director, and how is leadership transition being structured?"
+  - "What explains the decline in export revenue share despite ATEX certification and a 15+ country footprint?"
+one_line_verdict: "Debt-free niche capital-goods moat mid-way through a capacity-doubling capex cycle, but margin compression and fast-rising receivables need close watching."

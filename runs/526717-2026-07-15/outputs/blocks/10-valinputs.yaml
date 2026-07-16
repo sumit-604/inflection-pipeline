@@ -1,0 +1,192 @@
+stage: B10-valinputs
+company: "526717"
+run_date: "2026-07-15"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - field: "FY26 Capacity utilisation %"
+    why: "Not disclosed in AR, results, or rating agency filings; only FY25 31% baseline known"
+    where_it_might_be: "Next AR MD&A or quarterly disclosure (pending)"
+    severity: "High"
+  - field: "Peer valuation multiples (compiled medians P/E, EV/EBITDA, P/B, growth)"
+    why: "Individual peer call citations present; no aggregated median table extracted in this run"
+    where_it_might_be: "Separate peer-financials synthesis module"
+    severity: "Medium"
+  - field: "Management plan to convert profit to operating cash (formal response)"
+    why: "Flagged as critical in B04.mgmt_questions; no answer in AR or results"
+    where_it_might_be: "Direct management communication or next concall (no concall_mode in this run)"
+    severity: "High"
+  - field: "Per-tonne / per-bag revenue realisation and margin"
+    why: "Not disclosed in any provided document"
+    where_it_might_be: "Investor presentation or concall"
+    severity: "Medium"
+  - field: "Subsidiary K.P. Woven ownership percentage detail (98.45% vs 51.33% vs rating agency 51.23%)"
+    why: "Conflicting figures across sources; Form AOC-1 shows 98.45% voting / 51.33% capital"
+    where_it_might_be: "Annual Report Note 4 or MCA filings"
+    severity: "Medium"
+
+flags:
+  - type: "FLAG-GATE0"
+    severity: "Binding"
+    reason: "Net Debt/EBITDA 4.10x AND EBIT/Interest 2.37x (FY26), both exceeding thresholds → AVOID classification on leverage alone (B01.deal_breakers id 6). Binding override; ceiling on valuation regardless of other metrics."
+  - type: "FLAG-CASH"
+    severity: "High"
+    reason: "Operating cash flow negative both standalone and consolidated despite profit turnaround; growth funded by fresh borrowings; CFO/PAT negative historically (-0.888x cumulative); cash conversion caps disposition below clean pass (INDETERMINATE verdict per FTTCP). Stage 11 uses 0.80x cash multiplier."
+  - type: "FLAG-RPT"
+    severity: "High"
+    reason: "Related-party revenue 46.6% standalone / 37.5% consolidated, COGS 62.6%/70.4%; dominant counterparty (Plastene India Ltd, also 4.68% promoter-group shareholder) provides new 0%-interest financing loan; cross-guarantees exceed 2x consolidated net worth; confirmed Reg. 23(9)/30 disclosure-timing breach."
+  - type: "FLAG-GOVERNANCE"
+    severity: "Medium"
+    reason: "Three Company Secretary changes in ~14 months; latest resignation (Jan 2026) citing unresolved 'matters requiring internal clarification'; repeat SEBI disclosure compliance failure (missing consolidated cash flow statement, May-June 2026) within ~9 months of Aug 2025 written assurance."
+  - type: "FLAG-EMOAT"
+    severity: "Medium"
+    reason: "Entire EM thesis concentrates in single transition (job-work to direct export, C2 catalyst); FY26 capacity utilisation % never disclosed (only FY25 31% baseline); Saudi Arabia JV mirrors Malaysia JV silent-abandonment pattern (announced FY25 AR, dissolved FY26 with zero explanation)."
+  - type: "SHARED-CATALYST"
+    severity: "Medium"
+    reason: "Utilisation ramp drives revenue, margin AND ROCE simultaneously (multiplier effect); devil's advocate must stress whether reported 28.62% ROCE survives re-capitalisation including related-party payables back in denominator (capital-structure flattener currently suppressing denominator)."
+  - type: "FLAG-DISCLOSURE-QUALITY"
+    severity: "Medium"
+    reason: "Repeat regulatory compliance failure; content-free MD&A risk section omits 9 material risks evidenced elsewhere in same filing; RPT disclosure granularity regressed year-over-year."
+
+table:
+  company_identity:
+    ticker: "526717"
+    name: "HCP Plastene Bulkpack Ltd"
+    sector_manifest: "Pharma / CDMO (collect_to_repo default)"
+    sector_cap_row_fttcp_override: "Packaging 22x (fttcp-deliberation.md p.1, overrides manifest)"
+    business_type: "Manufacturing — FIBC / woven plastic bulk-packaging (B04)"
+    cmp_rs: "194 (manifest)"
+    market_cap_cr: "207 (manifest)"
+    shares_diluted_lakhs: "106.748 (10,674,837 shares, screener FY26)"
+    equity_paid_up_lakhs: "1067.48 (RESULTS_1.txt p.9, FY26 audited)"
+    total_debt_cr: "244.43 (LT 54.89 + CT 189.54, RESULTS_1.txt p.9, FY26 audited)"
+    net_debt_cr: "228.98 (total debt 244.43 - cash 15.45, RESULTS_1.txt p.9 FY26 audited)"
+    enterprise_value_cr: "435.98 (mcap 207 + net debt 228.98, arithmetic)"
+    book_value_equity_cr: "81.975 (8,197.55 lakh consolidated owners' equity, RESULTS_1.txt p.9 FY26 audited)"
+    book_value_per_share_rs: "76.83 (81.975 cr / 1.0675 cr shares, arithmetic)"
+
+  latest_financials_fy26_consolidated_audited:
+    revenue_cr: "587.51 (58,750.76 lakh, RESULTS_1.txt p.7 FY26 line 1)"
+    ebitda_cr: "47.75 (EBIT 39.98 + depreciation 7.77, calculated from RESULTS_1.txt p.7 FY26 lines 5 + 4e)"
+    ebitda_margin_pct: "8.13 (47.75 / 587.51, arithmetic)"
+    pat_cr: "23.20 (2,319.97 lakh owners, RESULTS_1.txt p.7 FY26 line 16a continuing ops)"
+    pat_margin_pct: "3.95 (23.20 / 587.51, arithmetic)"
+    diluted_eps_rs: "21.60 (RESULTS_1.txt p.7 FY26 line 19b)"
+    cfo_cr: "16.25 (1,624.72 lakh, RESULTS_1.txt p.12 FY26 line A net cash from operating activities)"
+    capex_cr: "4.24 (423.84 lakh, RESULTS_1.txt p.12 line B purchase PPE)"
+    fcf_cr: "12.01 (CFO 16.25 - capex 4.24, arithmetic)"
+    depreciation_cr: "7.77 (776.85 lakh, RESULTS_1.txt p.7 FY26 line 4e)"
+    dps_rs: "1.00 (dividend 106.75 lakh paid in FY26 CFO statement / 1.0675 cr shares, approximately; B05.guidance line dividend section)"
+    cash_bank_cr: "15.45 (1,545.35 lakh, RESULTS_1.txt p.9 FY26 current assets cash)"
+    cfo_pat_ratio: "0.70 (16.25 / 23.20, FY26 arithmetic)"
+    cfo_pat_cumulative_6yr: "-0.888 (cumulative CFO -79.95 / cumulative PAT 90.00 cr FY21-26, B01.block_b_trend)"
+    fcf_pat_ratio: "0.52 (12.01 / 23.20, FY26 arithmetic)"
+    p_fcf_ratio: "17.2 (mcap 207 / FCF 12.01, arithmetic)"
+    capex_depreciation_ratio: "0.545 (4.24 / 7.77, FY26 arithmetic)"
+
+  return_metrics:
+    roe_pct: "32.76 (PAT 23.20 / avg equity 7.08 cr, leverage-driven per fttcp-deliberation.md p.2)"
+    roce_fy26_current_pct: "28.62 (fttcp-deliberation.md p.1 line 6, sole authority for Pillar 1 ROCE selection)"
+    roce_trend: "UP (FY24 8.26% → FY25 24.41% → FY26 28.62%, fttcp-deliberation.md p.1)"
+    revenue_cagr_3yr_pct: "41.23 ((587.51 / 294.56)^0.5 - 1, FY24-26, arithmetic)"
+    pat_cagr_3yr: "Not meaningful (FY24 base near-zero 0.31 cr; FY25-26 growth 73.6% YoY shown instead per B01.data_notes)"
+
+  guidance_and_triggers:
+    guided_revenue_growth: "NOT FOUND — directional only 'shift job-work to direct sales' (B05.guidance line 27, no % target)"
+    guided_ebitda_margin_range: "7–9% medium-term (B05.guidance line 31, RATING.txt p.5)"
+    guided_capex_posture: "NIL major capex FY27–28 (B05.guidance line 29, RATING.txt p.5)"
+    guided_gearing_target: "<2x by end FY28 (B05.guidance line 30, RATING.txt p.5)"
+    guided_gca_pa: "Rs 30–50 cr p.a. FY26–28 (B05.guidance line 32, RATING.txt p.8)"
+    management_credibility_grade: "C (Mixed): 3 delivered/beat, 2 partial, 2 missed of 7 trackable items; repeat SEBI compliance failure; silent Malaysia JV dissolution (B05.credibility_grade lines 49–50)"
+    primary_trigger: "Direct-export/direct-sales revenue ≥53.70% FY25 baseline (HIGH conviction, near-term, B05.triggers line 20–21)"
+    secondary_trigger: "Capacity utilisation ramp disclosure from FY25 31% base (MEDIUM conviction, medium-term, B05.triggers line 22–23)"
+    tertiary_trigger: "EBITDA margin sustaining >9% (MEDIUM conviction, near-term, B05.triggers line 24–25)"
+
+  emerging_moat_b07:
+    em_score: "12 (MODEST, below 25 expansion threshold)"
+    em_classification: "MODEST"
+    active_categories: "C2 Customer concentration (strong), E2 China+1 beneficiary (moderate), F2 Execution moat (moderate) (B07.active_categories)"
+    evidence_quality_mix: "Mostly documented (12 documented, 7 claim, 3 inference, B07.evidence_mix)"
+    primary_catalyst_12m: "Direct-export revenue mix sustaining ≥53.70% export share (B07.catalysts_12m line 24)"
+    secondary_catalyst_12m: "FY26 capacity utilisation % disclosure (pending; FY25 baseline 31% of 24,300 MTPA, B07.catalysts_12m line 25)"
+    optionality_concern: "Saudi Arabia Bopp JV (MOU Jul 2024) mirrors Malaysia JV silent-abandonment pattern (announced FY25 AR, dissolved FY26 zero explanation); treat as PR not evidence until signed capex commitment (B07.flags line 15)"
+
+  cash_conversion_and_wc:
+    fttcp_cash_determination: "INDETERMINATE (fttcp-deliberation.md p.2 line 56, authoritative)"
+    structural_vs_growth_induced: "Structural WC-driven not capex; capex near zero (0.55x depreciation); related-party receivables excluded from bank drawing power; FY26 consolidated CFO positive but standalone negative (fttcp-deliberation.md p.2 line 5)"
+    rating_agency_wc_comment: "\"The company's operations are working capital intensive, as reflected in an elongated operating cycle of 96 days in FY25 (88 days in FY24), driven mainly by higher receivable days of 61 days and inventory holding of 39 days. Consequently, the company continues to rely on bank working capital borrowings, which increased to ₹98.68 crore as on March 31, 2025, thereby increasing sensitivity to timely collections and inventory management.\" (RATING.txt p.5, Infomerics, March 2 2026)"
+    cash_multiplier_pillar2: "0.80x (fttcp-deliberation.md p.2 line 30, no growth offset applied)"
+    growth_offset_applied: "BARRED (applies only confirmed growth-induced drag, not structural, fttcp-deliberation.md p.2 line 30)"
+
+  gate0_and_leverage:
+    core_score: "27/100 AVOID (B01.core_score)"
+    binding_dealbreaker_6: "ND/EBITDA 4.10x AND Interest Coverage 2.37x FY26 (B01.deal_breakers id 6)"
+    pledge_status: "0% (stable 5+ quarters through Mar 2026, shareholding-pattern-operator-supplied.md line 21)"
+    contingent_liabilities: "NOT FOUND (B01.input_gaps)"
+
+  ua_qualifiers:
+    listed_12m: "YES (incorporated 1984, long-listed pre-CIRP)"
+    gate0_or_em: "NO (Gate 0 core 27, EM 12, both below thresholds)"
+    fii_dii_lt3: "NO (FII+DII 9.29%, above 3% gate, shareholding-pattern-operator-supplied.md line 21 Mar26)"
+    all_met: "NO (fails qualifiers 2 & 3)"
+
+  promoter_and_governance_b08:
+    verdict: "CONCERN (not deal-breaker, active risk)"
+    rpt_concentration: "46.6% standalone / 37.5% consolidated revenue; 62.6%/70.4% COGS from related parties; Plastene India Ltd dominant counterparty (4.68% promoter-group shareholder) provides 0%-interest loan 3,320.29 lakh; cross-guarantees >2x net worth (B08.top_findings)"
+    governance_flags: "3 CS changes 14 months; Jan 2026 resignation unresolved 'matters requiring clarification'; Secretarial Audit confirmed Reg. 23(9)/30 compliance breach; recurring special resolutions above LODR remuneration (B08.top_findings)"
+
+  accounting_quality_b02_b03:
+    quality_grade: "4/10 Weak"
+    red_flag_count: "15 (B02.red_flags)"
+    watch_count: "3"
+    dta_opaqueness: "~23% of assets (2,573 lakh); no realisability vs 4,316 lakh accumulated losses (B02.top_findings rank 9)"
+    restatement_history: "None found (B02.restatements_found)"
+
+  sam_tam_b09:
+    tam_cr_realistic: "122,474 (global FIBC USD 12.6bn by 2033 @ 5.4% CAGR, converted INR, B09.tam_cr)"
+    sam_cr: "57,294 (55% of TAM via geography + specialisation filter, B09.sam_cr)"
+    current_sam_share_pct: "0.81 (FY26 587.51 / SAM 57,294, B09.current_sam_share_pct)"
+    som_3yr_cr: "1,037 (B09.som_3yr_cr)"
+    som_5yr_cr: "1,688 (B09.som_5yr_cr)"
+    som_implied_revenue_cagr_3yr_pct: "30.7 (B09.som_implied_revenue_cagr yr3)"
+    som_implied_revenue_cagr_5yr_pct: "29.5 (B09.som_implied_revenue_cagr yr5)"
+    capacity_gate_5yr: "Ceiling ~85% utilisation 24,300 MTPA = 1,688 cr; aggressive 3pp SAM-gain scenario requires 2,183 cr (110% MTPA), gap 495 cr beyond capacity (B09.capacity_check)"
+    tam_data_quality_flags: "Primary global figure sourced unnamed publisher AR p.56, date unstated; all primary-vendor URLs (Grand View, Mordor, FMI, Straits, accio, PLEXCONCIL) returned 403 on fetch; SAM geography filter synthesised inconsistent sources (B09.flags)"
+
+  peers_b06:
+    peers_reviewed: "Emmbi Industries, Kanpur Plastipack (2 primary operational FIBC peers)"
+    peer_financial_data_compiled: "NOT PROVIDED (individual call citations present, no aggregated median table extracted)"
+    peer_valuation_multiples: "NOT FOUND (no P/E, EV/EBITDA, P/B, growth medians compiled in run)"
+    capacity_utilisation_peer_benchmark: "75–90% (Emmbi 87% Q1 FY22; Kanpur 75% Q1 FY26, 83–85% Q4 FY26) vs HPBL 31% FY25 (B06.contradicted)"
+    capex_cycle_peer_evidence: "Kanpur INR 105 cr capex program 12–18 months (Nov 2025) vs HPBL nil FY27–28 (B06.contradicted)"
+    rm_pass_through_durability: "Partially verified (Emmbi 30–45 day lag; Kanpur order-matched + per-kilo, not percentage); peers experienced real order-book softening during PP spikes (B06.partially_verified, pricing_inputs)"
+
+deliberation_inputs:
+  fttcp_roce_forward_verdict: "FIRING (sole authority Pillar 1 ROCE selection → current 28.62%)"
+  fttcp_roce_current: "28.62% (fttcp-deliberation.md p.1 line 6)"
+  cash_conversion_determination: "INDETERMINATE (fttcp-deliberation.md p.2 line 56 → multiplier 0.80x, no growth offset)"
+  sector_cap_row_override: "Packaging 22x (fttcp-deliberation.md p.2 line 4, overrides manifest Pharma/CDMO 38x)"
+  pillar_1_base_pe: "21.8 (0.5 × 28.62 + 7.5, fttcp-deliberation.md p.2 line 29, ROCE route, no normalization)"
+  pillar_2_cash_multiplier: "0.80 (fttcp-deliberation.md p.2 line 30)"
+  pillar_2_quality_adjusted_pe: "17.4 (21.8 × 0.80, fttcp-deliberation.md p.2 line 30)"
+  pillar_3_growth_visibility: "+0 (EM 12 <25 threshold, no embedded capex-growth, fttcp-deliberation.md p.2 line 31)"
+  strategic_premium: "+0 (no monopoly, ROCE route barred single-credit, FII passive not strategic anchor, fttcp-deliberation.md p.2 line 32)"
+  ua_multiplier_applied: "NOT APPLIED (fails 2 of 3 qualifiers, fttcp-deliberation.md p.2 line 33)"
+  raw_destination_pe: "17.4 (fttcp-deliberation.md p.2 line 34)"
+  destination_pe_range: "16.0–18.7 (bear 10–11, base 17.4, bull 20.5 capped 22, fttcp-deliberation.md p.2 lines 34–35)"
+  sector_cap_binding: "NO (17.4 < 22 not binding, fttcp-deliberation.md p.2 line 34)"
+  single_credit_ruling: "ROCE recovery via Pillar 1; Strategic Premium ROCE route BARRED (fttcp-deliberation.md p.2 lines 29, 59)"
+  shared_catalyst_flag: "FIRING (utilisation ramp drives revenue, margin AND ROCE; devil's advocate stress RP-payables ROCE denominator effect, fttcp-deliberation.md p.2 line 60)"
+
+rating_wc_quote: "The company's operations are working capital intensive, as reflected in an elongated operating cycle of 96 days in FY25 (88 days in FY24), driven mainly by higher receivable days of 61 days and inventory holding of 39 days. Consequently, the company continues to rely on bank working capital borrowings, which increased to ₹98.68 crore as on March 31, 2025, thereby increasing sensitivity to timely collections and inventory management. (Infomerics Ratings, March 2, 2026; RATING.txt p.5)"
+
+rating_metadata:
+  agency: "Infomerics Ratings"
+  rating: "IVR BBB-/Positive"
+  outlook: "Positive (revised from Negative)"
+  rating_date: "March 2, 2026"
+  rating_action: "Reaffirmed and outlook revised Negative to Positive"
+  pdf_source: "inputs/rating/PR_HCP_Plastene_Bulkpack02_March26_53530612b5.pdf"
+
+credibility_grade: "C"
+credibility_grade_basis: "Mixed delivery record (3 delivered/beat, 2 partial, 2 missed of 7 trackable items); repeat SEBI disclosure compliance failure (missing consolidated cash flow statement, May-June 2026) within ~9 months of Aug 2025 written assurance; silent Malaysia JV dissolution with zero explanation; three Company Secretary transitions in ~14 months and content-free AR risk-disclosure section compound credibility erosion (B05.credibility_basis)"

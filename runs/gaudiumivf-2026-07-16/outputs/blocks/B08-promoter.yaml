@@ -1,0 +1,64 @@
+stage: B08-promoter
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [rating, announcements, shareholding, research]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Combined company + Dr. Manika Khanna personal contingent tax exposure ~Rs49.75cr (~85% of Sept-25 net worth) from a 2022 IT survey alleging unaccounted cash from surrogacy patients, spanning AY2018-19 through AY2023-24, including a Rs385.81L Section 271DA cash-transaction penalty; all under appeal, unresolved (RHP p.322-325)"
+      - "Rs900L (Rs9cr) deployed FY25 into two unrelated, non-healthcare Mumbai private entities (Winners Industries 0% OCD Rs500L; Shri Baiju Trading unsecured loan Rs400L) with no disclosed business rationale; no common directorship found via MCA search but purpose remains opaque (RHP Notes 10-11)"
+      - "EKK Global subsidiary transferred from the company to Manika and Vishad Khanna personally on 5 Aug 2025, ~10 months after incorporation and months before listing, for a nominal Rs3.24L gain, with no disclosed rationale (RHP p.220, Note 27)"
+      - "Two independent directors (Alok Bhandari, Sanjay Kumar Mishra) resigned within ~12 weeks of appointment each, both in the Sept 2024-Jan 2025 pre-IPO board-reconstitution window, both citing generic personal reasons (RHP p.204-205) — triggers the deal-breaker check for multiple mid-term ID exits within 3 years"
+      - "Rs29.2cr Section 9 arbitration claim by Neomile Corporate Advisory naming both the company and Dr. Manika Khanna personally, open and unresolved as of run date; disputed by the company"
+      - "Dr. Manika Khanna, the largest RPT beneficiary (~Rs565L FY25 cash + GAAT capitalisation) and sole IPO selling shareholder, sits on the Audit Committee and chairs the Risk Management Committee overseeing her own related-party exposure; 23-year-old son Vishad Khanna holds seats on four of six board committees"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers:
+  - "Multiple mid-term independent-director exits within 3 years: Dr. Alok Bhandari (~12-week tenure, Oct 2024-Jan 2025) and Sanjay Kumar Mishra (~12-week tenure, Sept-Dec 2024), both citing personal/unavoidable circumstances during the pre-IPO board reconstitution window (recorded, not enforced)"
+adverse_findings:
+  - {finding: "Company AY2022-23 tax assessment alleging undisclosed income Rs2,479.22L from unaccounted surrogacy-patient cash receipts; current outstanding demand Rs3,764.85L incl. interest, under appeal", evidence_tier: "VERIFIED", source: "RHP p.322-323", date: "2026-02-13"}
+  - {finding: "Section 271DA cash-transaction penalty against the company, Rs385.81L (outstanding Rs458.48L incl. interest), under appeal", evidence_tier: "VERIFIED", source: "RHP p.323", date: "2026-02-13"}
+  - {finding: "Five separate IT assessment orders against Dr. Manika Khanna personally (AY2018-19 to AY2023-24), total demand Rs475.45L, alleging personal receipt of unaccounted surrogacy-patient cash via her erstwhile proprietorship; all under appeal", evidence_tier: "VERIFIED", source: "RHP p.322, p.324-325", date: "2026-02-13"}
+  - {finding: "Rs500L zero-coupon unsecured OCD investment in Winners Industries Private Limited (Mumbai, no disclosed rationale, no common directorship found)", evidence_tier: "VERIFIED", source: "RHP Note 10, p.253/PDF", date: "2026-02-13"}
+  - {finding: "Rs400L unsecured loan to Shri Baiju Trading and Investment Private Limited at 10% p.a., repayable within 36 months, purpose stated only as 'its business activities'", evidence_tier: "VERIFIED", source: "RHP Note 11, p.253/PDF", date: "2026-02-13"}
+  - {finding: "EKK Global Private Limited (subsidiary, incorporated 16 Oct 2024) transferred to Manika and Vishad Khanna personally on 5 Aug 2025 for a nominal Rs3.24L gain; rationale undisclosed", evidence_tier: "VERIFIED", source: "RHP p.220; Note 27 p.261/PDF", date: "2026-02-13"}
+  - {finding: "Two independent directors resigned within ~12 weeks of appointment each during the Sept 2024-Jan 2025 pre-IPO board reconstitution, both citing generic personal reasons", evidence_tier: "VERIFIED", source: "RHP p.204-205", date: "2026-02-13"}
+  - {finding: "Neomile Corporate Advisory Section 9 arbitration claim, Rs29.2cr incl. GST, naming company and Dr. Manika Khanna personally over alleged unpaid IPO advisory fees; open, disputed by company", evidence_tier: "VERIFIED", source: "BSE Regulation 30 filing / Indian Kanoon case record", date: "2026-04-01"}
+  - {finding: "Ramaa Capital Section 9 IBC petition at NCLT New Delhi dismissed/rejected in company's favour", evidence_tier: "VERIFIED", source: "BSE filing / NCLT order", date: "2026-05-15"}
+  - {finding: "Employee attrition 63% FY25, 51% FY24, 51% FY23, moderating to 31% in H1 FY26", evidence_tier: "VERIFIED", source: "RHP risk factors; corroborated by Business Standard, Whalesbook, ipocentral.in", date: "2026-02-16"}
+  - {finding: "Combined family RPT cash + capitalised outflow FY25 ~Rs640.84L (~33.5% of FY25 PAT incl. GAAT capitalisation); Manika Khanna sits on Audit Committee and chairs Risk Management Committee", evidence_tier: "VERIFIED", source: "RHP Note 42 p.267/PDF; RHP p.206, p.211", date: "2026-02-13"}
+  - {finding: "Chief Growth Officer Johnny Edwin Dhas resigned 20 April 2025, reason not disclosed", evidence_tier: "VERIFIED", source: "RHP p.216", date: "2026-02-13"}
+transition_evidence:
+  - "New professional CFO from outside the family: Rakesh Kumar Sharma, appointed 3 Oct 2024, ex-BSR & Co (KPMG network), former partner at Ryan & Associates (RHP p.215)"
+  - "New professional Company Secretary from outside the family: Naveen Kumar, appointed 18 Sept 2024 (RHP p.215)"
+  - "Independent board reconstituted within 12 months pre-listing with credentialed appointees: Brajesh Singh Bhadauria (ex-Tata Communications/ATC Telecom, Sept 2024), Suresh Marpu (Cost Accountant, multiple listed directorships, Nov 2024), Rajesh Chunilal Bhojani (ex-Motilal Oswal AMC/UTI Mutual Fund, Jan 2025) (RHP p.199-201)"
+  - "Gaudium Foundation philanthropy predating IPO by over a decade (est. 2014): Naari Jeevan Strot campaign (~10 million women reached), Poor Patient Fund (120+ couples supported)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% — no promoter shares pledged as of RHP filing (13 Feb 2026); no pledge history exists pre-IPO (RHP p.91, p.95)"
+searches_performed:
+  - "NSE/BSE listing codes and listing date for Gaudium IVF"
+  - "Neomile Corporate Advisory Gaudium IVF Bombay High Court Section 9 arbitration"
+  - "Ramaa Capital Gaudium IVF NCLT Section 9 IBC petition dismissed"
+  - "Winners Industries Private Limited MCA director"
+  - "Shri Baiju Trading and Investment Private Limited MCA director"
+  - "Gaudium IVF EKK Global Private Limited divestment 2025"
+  - "Gaudium IVF DRHP withdrawn refiled January 2025"
+  - "Dr Manika Khanna Gaudium IVF controversy news"
+  - "Gaudium IVF Glassdoor AmbitionBox employee reviews"
+  - "Gaudium IVF share price crash listing day 2026"
+  - "Gaudium IVF employee attrition FY25 risk factor"
+  - "Gaudium IVF SEBI show cause notice insider trading SAT appeal"
+  - "Gaudium IVF and Women Health auditor resignation qualification 2026"
+  - "Gaudium Foundation Manika Khanna CSR philanthropy"
+  - "Gaudium IVF IiAS SES InGovern proxy advisory"
+  - "Gaudium IVF IPO Winners Industries Shri Baiju investment red flag analyst"
+searches_skipped:
+  - "WebFetch of ipocentral.in forensic risk-factor article (blocked HTTP 403; used WebSearch snippet instead)"
+  - "WebFetch of whalesbook.com articles (blocked HTTP 403; used WebSearch snippet instead)"
+  - "WebFetch of univest.in share-price article (blocked HTTP 403; used WebSearch snippet instead)"
+  - "Full beneficial-ownership trace of Winners Industries / Shri Baiju Trading beyond registered directors (requires paid MCA database access not available)"
+  - "SEBI SCORES complaint lookup (no public search index available)"
+verdict_basis: "A five-year, company-plus-MD-personal pattern of tax/cash-conduct allegations (~Rs49.75cr contingent, ~85% of net worth) combined with an unexplained Rs9cr placement into unrelated entities and a subsidiary transferred to promoters personally outweighs a clean SEBI/criminal/pledge/auditor record and genuine governance-professionalisation evidence (external CFO/CS, credentialed independent board, decade-old philanthropy) — net CONCERN with real transition evidence, not a static one."

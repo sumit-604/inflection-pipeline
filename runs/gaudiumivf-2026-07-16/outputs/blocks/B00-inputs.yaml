@@ -1,0 +1,45 @@
+stage: B00-inputs
+company: GAUDIUMIVF
+run_date: 2026-07-16
+model: orchestrator
+status: complete
+run_type: full
+manifest:
+  company: Gaudium IVF and Women Health Ltd
+  cmp: 137.0
+  market_cap_cr: 997.0
+  sector_cap_row: "Pharma / CDMO"        # AUTO-PICKED, flagged for verify; likely mis-set (see note)
+  concalls_available_declared: false      # CONTRADICTED: a real concall exists (see note)
+listed_date_derived: 2026-02-27          # NSE/BSE listing; RHP dated 2026-02-13. Recently listed (<3y) => prospectus foundational.
+inventory:
+  prospectus: 0                           # folder empty BUT Gaudium_RHP.pdf recovered from annual-report/
+  annual-report: 3                        # 10.3 Annual Report FY2024-25.pdf; Annual_Report_2020.pdf; Gaudium_RHP.pdf (RHP, misfiled)
+  results: 2
+  rating: 0
+  concalls: 1                             # Concall_May_2026_Transcript.pdf (Q4 & FY26, 29 May 2026)
+  peer-concalls: 12                       # HCG x4, KAYA x4, RAINBOW x4
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 30                           # 526783/HCG/KAYA/RAINBOW/screener x6 CSVs each
+  presentation: 4
+  other: 0
+input_gaps:
+  - type: rating
+    priority: MEDIUM
+    effect: "Stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative; FLAG-CASH cannot cite rating rationale."
+  - type: announcements
+    priority: MEDIUM
+    effect: "No Reg 30 documented-ACTION record; stage 8 relies on web + RHP + operator-supplied leads; FTTCP Step 0C input degraded, flagged."
+  - type: shareholding
+    priority: MEDIUM
+    effect: "Stage 10 FII+DII unresolved; stage 11 cannot affirm UA institutional-absence qualifier => UA withheld; promoter pledge/holding falls back to RHP/AR with staleness noted."
+  - type: research
+    priority: LOW
+    effect: "No anchored effect (research never anchored). Operator supplied an operations/IPO summary as non-anchored leads."
+notes:
+  - "RHP (Gaudium_RHP.pdf, dated 2026-02-13) is misfiled in inputs/annual-report/. Treated as the prospectus; foundational for a company listed ~2026-02-27. Stages 2/3/8 pointed to it."
+  - "manifest concalls_available:false is CONTRADICTED by inputs/concalls/ (1 real transcript) and inputs/peer-concalls/ (12). Stage 5 runs in NORMAL mode with the actual transcript; NO-CONCALL degraded mode NOT used. concalls/peer-concalls NOT recorded as gaps."
+  - "sector_cap_row 'Pharma / CDMO' is auto-picked and almost certainly wrong for an IVF/fertility hospital chain. Flagged for operator/stage-11 correction; the actual Section 1B sector cap authority governs at valuation, not this manifest string."
+  - "Operator provided (2026-07-16) a non-anchored operations/IPO leads summary: IPO 2,08,86,200 sh @ Rs79 (~Rs165cr, listed 27-Feb-2026); 7 hubs+28 spokes/9 states; FY26 OPUs 2,255; avg rev/patient Rs2,97,998; D/E 0.45x FY25 -> 0.16x FY26; 150-day collection cycle; AI embryology (SiD/ERICA) live 01-Apr-2026; 19 new hubs FY27-29; Neomile Rs29.20cr arbitration; Ramaa Capital IBC petition dismissed 23-May-2026. Passed to stages 8/9/5/4 as LEADS only; every figure must be re-anchored to source PDFs."
+flags: []

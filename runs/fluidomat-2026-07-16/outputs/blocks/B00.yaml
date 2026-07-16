@@ -7,10 +7,10 @@ run_type: full
 no_concall_mode: true
 listed_status: long-listed        # AR from FY2017 on file; prospectus not expected
 input_gaps:
-  - {type: annual-report, severity: MEDIUM, detail: "only AR on file is FY2017 (~9y stale); AR-sourced stages 2/3/4/7 flagged for data currency"}
+  - {type: annual-report-mislabel, severity: LOW, detail: "file named Annual_Report_2017.pdf is actually the 49th AR FY2024-25 (y/e 31-Mar-2025, filed 31-Aug-2025) per stage-2 pass-1; AR is CURRENT not stale. No data-currency gap after all; provenance corrected."}
   - {type: rating, severity: MEDIUM, detail: "no credit-rating PDF; stage 10 rating_wc_quote unresolved, stage 11 Pillar 2 conservative default"}
   - {type: announcements, severity: MEDIUM, detail: "no Reg 30 filings; intent-and-action cross-check runs on AR/results/presentation only; operator supplied a 14-Feb-2026 expansion summary as memory"}
-  - {type: shareholding, severity: MEDIUM, detail: "no shareholding pattern; FII+DII unresolved, UA qualifier withheld, promoter pledge/holding stale"}
+  - {type: shareholding, severity: LOW, detail: "no filed SHP PDF, but operator supplied a screener.in shareholding screenshot (Jun2023-Mar2026): promoters ~53.45% flat/no pledge shown, FII 0.58% flat, DII 0.00->0.22% (Mar2026 first entry), public ~45.75%, shareholders 5734->9507. Memory not anchored; partially closes UA qualifier (institutional ~0.80%) and promoter holding trend for phase 3"}
   - {type: research, severity: LOW, detail: "no broker notes; no effect on anchored evidence"}
 input_defects:
   - {type: wrong-company-data, severity: HIGH, detail: "505750-*.csv are Josts Engineering Company Ltd, NOT Fluidomat; quarantined. Use screener-*.csv (FLUIDOMAT LTD) only."}

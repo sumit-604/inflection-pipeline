@@ -1,0 +1,28 @@
+stage: B00-inputs
+company: MENONBE
+run_date: 2026-07-16
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+listed_status: long-listed
+prospectus_expected: false
+annual_report_primary: inputs/annual-report/de806def-20b9-434f-85af-a00cb0667a00.pdf   # FY2025-26
+annual_report_backward: inputs/annual-report/Annual_Report_2023.pdf                    # FY2021-22
+results_fy26_q4: inputs/results/c3cc28e0-4724-4311-a02e-d41c1bd4c997.pdf
+results_q1fy27: inputs/results/eaf6cc16-058b-4f33-aa0c-b9ca5a291e42.pdf
+concalls_oldest_first:
+  - inputs/concalls/Concall_Aug_2025_Transcript.pdf   # Q1 FY26
+  - inputs/concalls/Concall_Nov_2025_Transcript.pdf   # Q2 FY26
+  - inputs/concalls/Concall_Jan_2026_Transcript.pdf   # Q3 FY26
+  - inputs/concalls/Concall_May_2026_Transcript.pdf   # Q4/FY26
+peers_with_concalls: [HARSHA, NRBBEARING, PRECAM]
+peers_screening_only: [BIMETAL]
+input_gaps:
+  - announcements: absent
+  - research: absent
+  - shareholding: partial (screener holdings only; pledge % not disclosed)
+provenance_defects:
+  - sector_cap_row_manifest_wrong: "Agri processing -> should be Auto ancillary/components (phase-3 stage-11)"
+  - ar_filename_mislabel: "Annual_Report_2023.pdf is actually FY2021-22"
+flags: []

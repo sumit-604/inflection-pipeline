@@ -1,0 +1,113 @@
+stage: B10-valinputs
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-haiku-4-5-20251001
+status: complete
+
+input_gaps:
+  - "Q4 FY26 result filing (dated 2026-04-29 per B02, not in run/derived folder) — Q4 credit cost, ROA, ROE actuals non-anchored in deliberation"
+  - "FY-wise historical ROE/ROA series (FY21-FY26) — only current 12.6% ROE and computed FY26 2.28% ROA available"
+  - "FY[Y+2] expected ROE — projection input for stage 11, not backfilled from prior stages"
+  - "Cost of equity — stage 11 task; required for P/B theoretical = ROE / CoE and destination PE calibration"
+  - "FII + DII shareholding % — not in manifest or B08; UA qualifier cannot be fully verified"
+
+flags:
+  - "FLAG-CASH (B01): CFO/PAT -5.04x (6-year cumulative), all years negative. Structural per NBFC Ind AS 7, NOT a cash-quality failure. Asset quality recovery credited via Pillar 1, direct-assignment reliance being wound down. (fttcp-deliberation.md)"
+  - "FLAG-ASSETQUALITY (B02): Impairment charge +228.6% YoY; PCR thinned 40.0% to 32.29%; NPA vintage aging in Doubtful 1-3yr bucket; Stage 3 reconciliation gap across notes. Real but recoverable per FTTCP STARTING (forward RECOVERING) verdict. (B02, B01)"
+  - "FLAG-EMOAT-BORDERLINE (B07): EM score 25.3 at bottom edge of STRENGTHENING band. Half of active categories industry-shared tailwinds (R1, H2). Two hardest FY27 promises unverified. (B07)"
+  - "FLAG-GUIDANCE-SLIPPAGE (B05): ST LAP in-housing slipped Q2->Q3->Q4 FY26; CRAR/Tier 2 disclosure dropped in Q3; ST LAP scorecards and MT LAP BRE pilot silently dropped. (B05)"
+  - "FLAG-ASSET-QUALITY-OVERRIDE (fttcp-deliberation.md override 2): Pillar 2L lifted to 1.00x (Sound band nominally wants PCR 60-70%, FEDFINA 32-38%). Self-withdraws to 0.80x if Q4 FY26 credit cost breaks 1.1% or PCR thins further."
+  - "FLAG-Q4-FY26-DATA-GAP: Q4 FY26 result filing (released 2026-04-29) not in run inputs. Non-anchored claims: credit cost 0.6%, RoA 2.6%, RoE 14%. Must be verified against actual filing."
+
+market_inputs:
+  cmp_rs: 164.0
+  market_cap_rs_cr: 6132
+  bvps_rs: 78.2
+  market_pb: 2.09
+  market_pe: 16.0
+  shares_lakh: 3742.1
+  anchor: "manifest.yaml / fttcp-deliberation.md (screener.in, 15 Jul 2026 close)"
+
+latest_financials_fy26:
+  total_income_rs_cr: 2226.61
+  pat_rs_cr: 343.60
+  diluted_eps_rs: 9.12
+  net_worth_rs_cr: 2926.10
+  finance_cost_rs_cr: 879.32
+  impairment_charge_rs_cr: 115.27
+  anchor: "results-B.txt (FY26 audited, Statement of P&L)"
+
+key_ratios:
+  roe_current_pct: 12.6
+  roe_note: "current; Pillar 1 uses 60/40 blend of current and FY[Y+2] expected ROE per RECOVERING verdict"
+  roa_fy26_pct: 2.28
+  roce_latest: "NOT FOUND (NBFC Ind AS balance sheet; ROCE non-computable, structural)"
+  crar_pct: 22.40
+  gnpa_pct: 1.87
+  nnpa_pct: 1.28
+  pcr_pct_fy26: 32.29
+  pcr_pct_q1fy27: 38.36
+  pcr_note: "thin vs 60-70% norm; latest 38.36% (Q1FY27, results-A.txt); FY26 year-end 32.29% (results-B.txt)"
+  lcr_pct: 152.0
+  de_ratio_x: 4.61
+  cfo_pat_cumulative_6yr_x: -5.04
+  anchor: "results-A.txt (Q1FY27) / results-B.txt (FY26 audited) / B01"
+
+growth_metrics:
+  revenue_3yr_cagr_fy24_fy26_pct: 17.3
+  pat_3yr_cagr_fy24_fy26_pct: 18.5
+  aum_3yr_cagr_fy24_fy26_pct: 19.8
+  anchor: "rating.txt / results-B.txt"
+
+deliberation_overlay_authoritative:
+  pillar1_basis: "ROE not ROCE (Section 1B Amendment 7). 0.5 x ROE + 7.5, floor 9x, cap 24x. RECOVERING 40-60% -> 60/40 blend of current 12.6% and FY[Y+2] expected ROE."
+  primary_method: "P/B (theoretical P/B = ROE / cost of equity); destination PE secondary cross-check"
+  pillar2L_asset_quality_multiplier: "1.00x (Sound), OPERATOR OVERRIDE (draft 0.80x). Self-withdraws to 0.80x if Q4 FY26 credit cost >1.1% or PCR thins further."
+  sector_cap_row: "Banks / NBFCs / MFIs, 18x absolute"
+  single_credit: "ROE recovery credited via Pillar 1; Strategic re-rating route barred"
+  strategic_premium_base: "+0x (optional +1x Federal Bank institutional backing left for stage 11/Role 3 to argue)"
+  shared_catalyst: "credit-cost normalisation drives both asset-quality and return transitions"
+  cash_determination: "STRUCTURAL and mechanical (not a quality failure)"
+  anchor: "fttcp-deliberation.md"
+
+emerging_moat:
+  em_score: 25.3
+  em_classification: "STRENGTHENING (borderline, bottom edge)"
+  combined_assessment: "TURNAROUND"
+  anchor: "B07"
+
+management:
+  credibility_grade: "B"
+  promoter: "Federal Bank Ltd, 60.80% stake, pledge nil"
+  promoter_verdict: "CAUTION"
+  new_md: "Parvez Mulla (Nov 2024)"
+  rating: "CARE AA+; Stable (10 Apr 2026)"
+  anchor: "B05 / B08 / rating.txt"
+
+tam:
+  runway_class: "MASSIVE"
+  revenue_headroom_x: 59.1
+  current_sam_share_pct: 1.7
+  mgmt_claim_read: "inflated (4.0x conservative TAM)"
+  anchor: "B09"
+
+peer_benchmark:
+  fedfina_cost_to_income_pct: "56-57"
+  peer_cost_to_income: "SBFC 35, Five-Star 31-41, MAS 36.6"
+  gold_growth_quality: "AUM growth price/mix-driven not volume; Manappuram tonnage 2.8% YoY vs FEDFINA claim 10-12%"
+  anchor: "B06"
+
+ua_qualifiers:
+  listed_12m: "YES (IPO Nov 2023)"
+  gate0_or_em: "PARTIAL (Gate0 48 AVOID fails; EM 25.3 clears)"
+  fii_dii_lt3: "NOT MET (DII alone ~18.8% per shareholding; FII+DII well above 3%)"
+  all_met: "NO -> UA does not apply"
+  note: "B10 originally marked FII/DII NOT FOUND; shareholding-pattern-screener.txt shows FII 0.66% + DII 18.82% (Mar-2026) = ~19.5%, so UA clearly fails the <3% test"
+
+unresolved:
+  - "FY-wise ROE/ROA series FY21-FY26 (only current available)"
+  - "Q4 FY26 standalone quarter filing and its credit cost / RoA / RoE (full-year FY26 IS anchored; Q4 breakout is not)"
+  - "FY[Y+2] expected ROE (stage-11 projection input for the Pillar 1 60/40 blend)"
+  - "Cost of equity (stage-11 task; drives P/B = ROE/CoE)"
+
+handoff_status: "Complete and ready for Stage 11 (Role 1 valuation, Opus)"

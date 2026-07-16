@@ -1,0 +1,12 @@
+stage: B06-peers
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: skipped
+reason: "Depends on B05 peer_questions; B05 skipped (no subject narrative). The 3 peer concalls present (AARTECH Jun-2026, DANISH May-2026, DANISH Nov-2025) were rerouted to stage 7 (emerging moat sector context) and stage 9 (TAM sizing), attributed to the peers, never to AVANA. No B05 claims exist to verify against peers."
+verified: []
+contradicted: []
+unverifiable: []
+peer_coverage_map: "peers routed to B07/B09 as sector context (3/3 concalls read there); B06 verification not run (no B05 claims)"
+input_gaps: ["B05 skipped — no subject claims to verify"]
+flags: []

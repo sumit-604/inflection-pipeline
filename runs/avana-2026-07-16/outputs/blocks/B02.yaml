@@ -1,0 +1,8 @@
+stage: B02-notes
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: skipped
+reason: "No annual report in inputs/annual-report/. Notes triple-pass has no source. Per DEGRADATION MAP: skip, gap named."
+input_gaps: ["annual-report absent"]
+flags: []

@@ -1,0 +1,13 @@
+stage: B05-concall
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: skipped
+no_concall_mode: true
+reason: "concalls_available: false AND no annual report / results / presentation exist. No-concall mode presupposes AR MD&A + chairman letter + results commentary to read; none exist for AVANA (NSE SME listed Jan-2026, no reporting cycle yet published in inputs). Zero subject-company narrative source, so stage 5 cannot run even degraded. credibility_grade: INSUFFICIENT (no evidence). Peer concalls (Aartech, Danish) rerouted to stages 7 and 9 as sector context only."
+credibility_grade: "INSUFFICIENT"
+guidance: []
+promise_delivery_score: null
+peer_questions: []
+input_gaps: ["concalls declared-unavailable", "annual-report absent", "results absent", "presentation absent"]
+flags: []

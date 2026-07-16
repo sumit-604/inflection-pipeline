@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "annual report absent (AVANA)"
+  - "company concalls absent (AVANA) - B05 promise-delivery record unavailable, F2 cannot be cross-referenced"
+  - "investor presentation absent (AVANA)"
+  - "prospectus absent (AVANA)"
+  - "rating absent (AVANA)"
+  - "shareholding absent (AVANA)"
+  - "announcements/exchange filings absent (AVANA)"
+  - "no segment/product/geography revenue split in screener Data_Sheet - Section 1C table not buildable"
+  - "CWIP (4.67cr, FY26) project name, capacity addition, funding source, and commissioning date all NOT FOUND - Section 2A incomplete"
+  - "no export/geography data disclosed for AVANA - E2/R1 assessed only via peer-concall sector context, never AVANA-specific"
+flags:
+  - {type: FLAG-DATA-THIN, reason: "Emerging Moat adjusted score (2.5/~80, NO MEANINGFUL EMERGING MOAT) rests on exactly one active category (G1 War chest, Moderate, 100% screener-derived analyst inference) and one Weak/inactive category (R1, sector-tailwind-by-timing-correlation only). Zero AVANA primary documents (AR/concall/presentation/prospectus) exist to corroborate any of the 20 categories. Consistent with and carried forward from B01 FLAG-DATA-THIN."}
+  - {type: FLAG-CAPEX-UNSPECIFIED, reason: "FY26 CWIP (4.67cr) is the only capex evidence available; its purpose, capacity, funding linkage to the FY26 equity raise (CFF +19.78cr), and commissioning date are all NOT FOUND. Section 2C's capex-embedded-growth arithmetic (87.8%) is a mechanical formula output on this thin base, not a forecast - flagged for stage 11/13 not to over-read."}
+  - {type: FLAG-CAPITAL-STRUCTURE, reason: "Carried from B01: FY26 equity capital jumped ~28.7x (0.79cr->22.65cr) coincident with the Kaycee->Avana rebrand; use of proceeds is undisclosed. Relevant to this stage because it is the sole basis for the G1 War chest signal and the entire optionality register."}
+em_score: 2.5
+em_classification: "NONE"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "inference", time_to_materialise: "already visible (FY26 data); conversion to durable moat unconfirmed"}
+evidence_mix: {documented: 0, claim: 0, inference: 8}
+completionist_recount: "📄 recount performed: 0 documented items across 0 categories (1 of 20+R1 categories active, all inference-grade; consistent with a total absence of AVANA primary documents, not force-fitted)"
+catalysts_12m:
+  - {catalyst: "First-ever AVANA primary document (AR/results/exchange filing) disclosing FY26 capital raise purpose and CWIP project detail", window: "12m", evidence_type: "inference (no confirmed publication date)", anchor: "screener Data_Sheet FY26 capital restructuring; B01 FLAG-CAPITAL-STRUCTURE"}
+  - {catalyst: "CWIP (4.67cr, FY26) conversion to Net Block / commissioning disclosure", window: "12-24m", evidence_type: "inference", anchor: "screener Data_Sheet, Capital Work in Progress row, FY26 (first appearance)"}
+  - {catalyst: "Sector demand supercycle (grid modernisation, renewables, data-centre power, NEP transmission/substation targets) continuing through FY27 per peer guidance - watch for any AVANA-specific segment disclosure confirming participation", window: "12m", evidence_type: "claim (peer, not AVANA) plus AVANA-inference on timing correlation", anchor: "Danish Power peer concall (May 2026, Nov 2025); Aartech peer concall (Jun 2026); AVANA revenue FY24-26 screener Data_Sheet"}
+capex_embedded_growth_pct: 87.8
+optionality_register:
+  - {optionality: "Undisclosed FY26 capex project (CWIP 4.67cr) of unknown purpose/capacity/timeline", converting_evidence: "AR capex note naming project, capacity added, commissioning date", first_appears: "First AR/exchange filing/results presentation", window: "12-24m"}
+  - {optionality: "FY26 equity capital raise (~28.7x, CFF +19.78cr) with no disclosed use-of-proceeds", converting_evidence: "Use-of-proceeds disclosure (filing or AR note)", first_appears: "Exchange filing / letter of offer / AR notes", window: "12m"}
+  - {optionality: "Kaycee->Avana rebrand may signal a strategic/product pivot", converting_evidence: "Management commentary explaining rebrand rationale and any new business line", first_appears: "AR / first company concall (none currently known) / exchange filing", window: "12-24m"}
+  - {optionality: "Net cash (27.83cr, FY26) could fund M&A or backward integration (cf. peer Danish Power's own backward-integration move)", converting_evidence: "Announced acquisition/JV or committed backward-integration capex", first_appears: "Exchange filing / AR", window: "24-36m"}
+  - {optionality: "Sector-wide demand supercycle (per Danish/Aartech peer concalls) may or may not include AVANA's specific product/customer mix", converting_evidence: "AVANA-specific order-book/segment/customer disclosure", first_appears: "AVANA investor presentation or concall (none currently exist)", window: "12-24m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 49/100, FORTRESS moat read flagged DATA-THIN) is not lifted by the Emerging Moat scan (2.5/~80, NO MEANINGFUL EMERGING MOAT, 1 of 20+R1 categories active) because the forward score is capped by total absence of AVANA primary documents rather than by a confirmed lack of forward initiatives; this is a data-ceiling AVERAGE to be revisited the moment any AVANA AR, concall, or filing becomes available."
+top_moat_risks:
+  - "FY26 equity raise and CWIP purpose/capacity/timeline wholly undocumented - the sole basis for the one active category (G1) could be recharacterised (e.g. related-party restructuring) by any future disclosure"
+  - "War chest signal rests entirely on screener-derived balance-sheet inference with zero qualitative corroboration (no AR, concall, rating, or management statement exists)"
+  - "WC days deteriorated +45.9 days FY20-FY26 (screener Data_Sheet) - working capital trend is negative, not supportive of any efficiency-based moat narrative"
+  - "Sector demand supercycle described by peers (Danish, Aartech) may not extend to AVANA's specific product/customer mix - no AVANA document confirms segment overlap"

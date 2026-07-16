@@ -1,0 +1,8 @@
+stage: B04-bizmodel
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: skipped
+reason: "No annual report, no presentation, no results commentary. Business Model Decoder has no source. Per DEGRADATION MAP: skip. NOTE: business identified via B09 web search = customised control & relay panels (11kV-220kV), protection relays, substation automation (to 400kV) for power T&D; that is web-derived, not a filing-anchored B04."
+input_gaps: ["annual-report absent", "presentation absent", "results absent"]
+flags: []

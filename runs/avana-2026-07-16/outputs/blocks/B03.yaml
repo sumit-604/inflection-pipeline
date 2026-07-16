@@ -1,0 +1,8 @@
+stage: B03-ardeep
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: skipped
+reason: "No annual report in inputs/annual-report/. AR backward deep dive has no source. Per DEGRADATION MAP: skip, gap named. Backward baseline unavailable; only 7y screener Data_Sheet exists."
+input_gaps: ["annual-report absent", "prospectus absent (HIGH — recently-listed NSE SME Jan-2026; DRHP would carry restated pre-IPO financials)"]
+flags: []

@@ -1,0 +1,59 @@
+stage: B05-concall
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating", "announcements", "shareholding", "research"]
+flags: ["single_transcript_only_no_cross_quarter_trend", "zero_bad_debt_claim_contradicted_by_fy26_ecl_allowance", "cash_conversion_deteriorating_fy25_to_fy26", "hub_capex_zero_utilised_as_of_fy26_year_end", "no_dividend_policy_disclosed", "tax_litigation_quantum_not_found"]
+quarters_analysed: ["Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Hub expansion (19 new hubs FY27-29; 3 near-term hubs opening now)", type: "VOLUME", timeframe: "near-long", conviction: "M", confirm_signal: "Q1 FY27 results show new hub openings and revenue contribution tracking the 10/8/1 FY27-29 split", kill_signal: "Zero further IPO-capex utilisation beyond FY26's ₹0 base; hub openings slip past FY27"}
+  - {priority: 2, name: "Receivables / cash-conversion fix", type: "COST", timeframe: "near", conviction: "L", confirm_signal: "Q1 FY27 trade receivables/DSO decline from the FY26 base and operating cash conversion improves from FY26's ~23-25% of PBT", kill_signal: "Receivables keep growing faster than revenue; ECL allowance grows further"}
+  - {priority: 3, name: "AI-embryology (SiD/ERICA) success-rate uplift", type: "VOLUME/PRICE-MIX", timeframe: "near-medium", conviction: "L", confirm_signal: "A full-quarter success-rate print confirms a durable uplift above the 58% pre-AI baseline", kill_signal: "Uplift claim not repeated or sustained in subsequent quarters"}
+  - {priority: 4, name: "International spokes / medical tourism (Nigeria, Sydney, Paris)", type: "VOLUME/PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "International-patient revenue mix rises materially above the stated 25-30% base", kill_signal: "Spokes do not open this quarter as promised; mix stays flat"}
+  - {priority: 5, name: "Patient financing tie-ups (HDFC Bank + NBFCs)", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "Tier 2/3 patient volume and average ticket size grow post-tie-up", kill_signal: "No visible Tier 2/3 volume uptick"}
+  - {priority: 6, name: "Regulatory consolidation tailwind (ART & Surrogacy Acts 2021)", type: "REGULATORY-POLICY/SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "Independent data shows organized-player share of the IVF market rising from ~30%", kill_signal: "No visible share shift; unorganized clinics persist"}
+  - {priority: 7, name: "Egg-freezing vertical", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "Management discloses a revenue number or cycle count for this vertical", kill_signal: "Vertical stays undiscussed and undisclosed in future calls"}
+guidance:
+  - {item: "New IVF hubs (total program)", number: "19 new hubs, 10 FY27 / 8 FY28 / 1 FY29; base 7 to 17 by FY27-end", timeframe: "FY27-FY29", stated_in: "Q4/FY26 call"}
+  - {item: "Near-term hubs", number: "South Delhi (opening ~1 month), Nagpur, Gurgaon (in progress)", timeframe: "next 1-2 months from call date", stated_in: "Q4/FY26 call"}
+  - {item: "New spokes", number: "9 domestic + 3 international (Nigeria, Sydney, Paris)", timeframe: "next couple of months / this quarter", stated_in: "Q4/FY26 call"}
+  - {item: "FY27 capex", number: "~INR 25 crore, avg INR 2.5 crore/hub", timeframe: "FY27", stated_in: "Q4/FY26 call"}
+  - {item: "ROCE target", number: "35-40%", timeframe: "3-5 years", stated_in: "Q4/FY26 call"}
+  - {item: "International patient mix", number: "~25-30% of current volume", timeframe: "current, targeted to grow", stated_in: "Q4/FY26 call"}
+  - {item: "First-cycle success rate", number: "58% (85% cumulative by 3rd attempt)", timeframe: "current", stated_in: "Q4/FY26 call"}
+  - {item: "AI-tool early success uplift", number: "~8% first-attempt uplift (tiny sample)", timeframe: "since 1-Apr-2026", stated_in: "Q4/FY26 call"}
+  - {item: "FY26 cycles (OPUs)", number: "2,255 pickups", timeframe: "FY26 actual", stated_in: "Q4/FY26 call"}
+  - {item: "Receivables collection cycle", number: "~150 average days currently; targeted significant reduction", timeframe: "by end of Q1 FY27", stated_in: "Q4/FY26 call"}
+  - {item: "Initial patient payment", number: "raised INR 40,000 to INR 80,000", timeframe: "effective now", stated_in: "Q4/FY26 call"}
+  - {item: "Late-transfer fee", number: "INR 40,000 after 1 year without transfer", timeframe: "effective now", stated_in: "Q4/FY26 call"}
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 1
+  rows:
+    - {promised_in: "Q4/FY26 call, CFO Rakesh Sharma", promise: "FY26 revenue INR 104.35cr (+47.56%), EBITDA INR 37.7cr (+31.69%), PAT INR 24.48cr, D/E 0.16x, cash INR 8.78cr; Q4 vs Q3 comparators", outcome: "Delivered - confirmed exactly against audited FY26 results and separately filed Q3 FY26 results", explanation: "Every figure independently recomputes from the primary filings"}
+    - {promised_in: "Q4/FY26 call, Manika Khanna (Q&A, Tushar Bajaj)", promise: "Zero bad debt till now", outcome: "Missed - contradicted", explanation: "FY26 audited cash flow statement, filed one day earlier, records a INR 31.97 lakh Allowance on Expected credit loss"}
+    - {promised_in: "Q4/FY26 call, Manika Khanna (Q&A, Deepali Sali)", promise: "58% first-cycle success rate is at par with global standards vs Indira Fertility's claimed 75-76%", outcome: "Partial - unverifiable", explanation: "ASRM benchmark citation is directionally reasonable but the cross-company comparison is not independently corroborated in these documents"}
+    - {promised_in: "Q4/FY26 call, Manika Khanna", promise: "South Delhi hub opens coming month; Nagpur/Gurgaon in progress; 9 domestic + 3 international spokes this quarter", outcome: "PENDING - not yet due, no subsequent quarter data available", explanation: "FY26 IPO-proceeds utilisation table shows INR 0 of INR 50cr hub-capex allocation deployed as of 31-Mar-2026"}
+    - {promised_in: "Q4/FY26 call, Manika Khanna", promise: "Trade receivables to reduce significantly by end of this quarter (Q1 FY27)", outcome: "PENDING - not yet due, no subsequent quarter data available", explanation: "Mechanism stated (payment hike, late fee) but no forward data to confirm"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Maiden listed-company call: every headline financial figure independently verifies against the audited FY26 filing and the separate Q3 FY26 filing, but the 'zero bad debt' claim is contradicted by a INR 31.97 lakh ECL allowance in the same-week audited cash flow, the dominant receivables/cash-conversion concern was raised only reactively under analyst questioning, forward hub and receivables promises are unverifiable pending future quarters, and no multi-quarter delivery record exists to grade against."
+peer_questions:
+  - {question: "Is AI-based embryo selection (comparable to SiD/ERICA) already standard among premium Indian fertility/specialty-health providers, or is Gaudium's first-in-India claim a genuine edge?", why: "The claimed ~8pp first-attempt-success uplift is based on days-old, tiny-sample data; if peers already use similar tools the differentiation claim weakens materially", check_peers: ["Rainbow", "HCG"]}
+  - {question: "Is a roughly 150-day collection cycle with revenue held in trade receivables until embryo transfer common practice across premium Indian specialty-healthcare chains, or specific to Gaudium's affordability model?", why: "Determines whether the dominant investor concern (receivables build-up, contradicted zero-bad-debt claim) is sector-structural or company-specific execution risk", check_peers: ["Rainbow", "HCG", "Kaya"]}
+  - {question: "Does a roughly 2.4x acceleration in centre build-rate (7 hubs in 16 years to 17 hubs in 3 years) have precedent among comparable asset-light healthcare rollouts in India?", why: "Tests credibility of the single most aggressive guidance item on the call, 10 new hubs in FY27 alone", check_peers: ["HCG", "Rainbow", "Kaya"]}
+  - {question: "Is a 25-30% international-patient revenue mix reasonable versus sector norms for Indian specialty/medical-tourism providers?", why: "Validates or challenges the medical-tourism growth narrative behind the Nigeria/Sydney/Paris spoke additions", check_peers: ["HCG", "Rainbow"]}
+  - {question: "Is the cited 13% CAGR India IVF market growth (USD1.32bn to USD4.54bn by 2034) and the unorganized-to-organized consolidation narrative corroborated by any independent industry source peers cite?", why: "This is the core sectoral tailwind for the entire investment case and is sourced solely to Gaudium management here", check_peers: ["HCG", "Rainbow", "Kaya"]}
+  - {question: "Does an independent source corroborate Gaudium's 58% first-cycle success rate as at par with global standards, against Indira Fertility's claimed 75-76%?", why: "Management disputed comparability rather than engaging directly; this is the single most consumer-facing competitive metric in the category", check_peers: ["HCG", "Rainbow"]}
+red_flags:
+  - "HIGH: FY26 operating cash conversion ~23-25% of PBT (down from FY25's ~34%), driven by a INR 19-21cr increase in trade receivables"
+  - "MODERATE: Zero bad debt claim on the call contradicted by INR 31.97 lakh ECL allowance in the FY26 audited cash flow statement filed the day before"
+  - "MODERATE: Zero IPO-capex utilised against the INR 50cr new-hub allocation as of 31-Mar-2026, despite imminent-opening claims two months later"
+  - "MODERATE: Success-rate comparison to Indira Fertility met with a methodology dispute rather than direct engagement"
+  - "LOW-MODERATE: Tax litigation against company and promoters unquantified, NOT FOUND"
+  - "STRUCTURAL: No multi-quarter delivery track record exists; this is the maiden call"
+dropped_triggers: []
+timeline_slippages: []

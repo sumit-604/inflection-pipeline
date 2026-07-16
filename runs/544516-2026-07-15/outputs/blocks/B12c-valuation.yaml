@@ -1,0 +1,23 @@
+stage: B12c
+company: "544516"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 0, fails: []}   # audited Phase 1 (12c-framework.md); not redone
+emoat: {rules_checked: 0, fails: []}   # audited Phase 1 (12c-framework.md); not redone
+valuation:
+  rules_checked: 21   # 17 B11 valuation + 4 Role 2 (B14)
+  fails:
+    - id: V-1
+      severity: CRITICAL
+      rule: "Amendment 4.1 Pillar 3a — SOM-implied CAGR qualifier requires the capacity cross-check to PASS"
+      what_happened: "B11 credited the SOM qualifier (+contributing to 3a +2x) claiming capacity 'supported by 90% utilisation + 14-acre expansion', but B09 Section 3C FAILED the capacity cross-check: SOM_3yr Rs 568 Cr exceeds the ~Rs 450 Cr near-term capacity ceiling by ~Rs 118 Cr. With the SOM qualifier disallowed, only the order-book qualifier (1.47x) holds; one qualifier pays +0x, not +2x."
+      recompute: "3a +0x (was +2x); Track 2 destination PE mid 16.0x (was 18.0x); Track 1 RRM destination PE mid 13.1x (was 14.8x); entry zone ~Rs 155-193 (was Rs 175-218). Hurdle STOP and decision AVOID unchanged (more decisive)."
+recomputed_destination_pe: "Track 1 RRM mid 13.1x (report 14.8x); Track 2 additive mid 16.0x (report 18.0x). 3a should be +0x not +2x (Amend 4.1 capacity cross-check failed per B09)."
+recomputed_decision: ""   # concur — AVOID stands; the correction hardens it, does not flip it
+findings:
+  - {severity: "CRITICAL", location: "B11 Pillar 3a (line 60) / verdict card / B14 thesis line", claimed: "3a +2x on order-book 1.47x + SOM 21.1%; destination PE Track2 18.0x / Track1 14.8x", source_truth: "Amend 4.1: SOM qualifier needs capacity cross-check passing; B09 3C failed it (SOM 568 > ~450 ceiling). One qualifier → 3a +0x; dest PE Track2 16.0x / Track1 13.1x", note: "Changes destination PE by >1x (CRITICAL by rubric); Hurdle STOP and decision AVOID robust and unchanged."}
+critical_count: 1
+major_count: 0
+minor_count: 0
+acceptance_rate: 95   # 20 rules passed / 21 checked

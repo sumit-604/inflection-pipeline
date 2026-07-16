@@ -1,0 +1,80 @@
+stage: B05-concall
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements: absent (no Reg 30 documented-action cross-check possible)", "research: absent", "shareholding: partial"]
+flags: ["dynamometer_4x_slippage", "alkop_target_inconsistent_same_period", "silence_on_alkop_negative_reserves", "dropped_growth_initiatives_no_closure"]
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "US export ramp (Allison, Federal-Mogul DRiV, tariff-exempt HCV/LCV)", type: "VOLUME/PRICE-MIX", timeframe: "near", conviction: "H", confirm_signal: "continued QoQ export revenue growth confirmed against filed results", kill_signal: "US tariff escalation with no customer burden-sharing, or reversal of HCV/LCV exemption"}
+  - {priority: 2, name: "Ex-works export-term conversion", type: "COST", timeframe: "near-medium", conviction: "M-H", confirm_signal: "ex-works % rising past 80% toward 90%, receivables days falling", kill_signal: "stalling at 80% with elevated receivables (FY26 receivables already up to Rs90.77cr from Rs60.63cr FY25)"}
+  - {priority: 3, name: "Alkop revenue ramp (John Deere/Eaton/TACO Prestolite pipeline)", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "a quarter meeting or exceeding the 25-29% guided growth rate, with one reconciled FY27 number instead of three", kill_signal: "continued shortfall vs any stated target, or a fourth unreconciled restatement"}
+  - {priority: 4, name: "Menon Brakes railway/OEM approval (dynamometer-gated)", type: "REGULATORY-POLICY/VOLUME", timeframe: "near (guided Aug-2026)", conviction: "L", confirm_signal: "actual dynamometer installation and first railway/OEM dispatch evidenced in a filing or subsequent call", kill_signal: "a fifth slippage past August 2026, or another unexplained vendor change"}
+  - {priority: 5, name: "RM cost pass-through / margin sustainability at 20-22%", type: "COST", timeframe: "ongoing", conviction: "M", confirm_signal: "FY27 quarterly margins holding 20-22% (Q1 FY27 actual ~21.9% is an early positive sign)", kill_signal: "a quarter below 18% with RM blamed again"}
+  - {priority: 6, name: "PTFE bushes for EV (7-part European qualification)", type: "VOLUME/REGULATORY", timeframe: "medium-long", conviction: "L", confirm_signal: "approval of 3-4 more parts and a first purchase order", kill_signal: "continued single-part-only progress with no new timeline"}
+  - {priority: 7, name: "Aerospace/industrial diversification (Honeywell, Mahindra, Mayekawa)", type: "SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "a named, quantified order in a subsequent call", kill_signal: "these names disappearing from commentary as Canada/US-competitor/distributor targets did"}
+guidance:
+  - {item: "FY26 revenue", number: "~Rs300cr", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 EBITDA margin (original)", number: "22%", timeframe: "FY26", stated_in: "Q1 FY26 call (referenced pre-existing guide)"}
+  - {item: "FY27 segment split (internally inconsistent vs Rs350cr headline)", number: "Alkop Rs120cr / Brakes Rs100cr / Bi-metal Rs250cr", timeframe: "FY27", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 revenue (revised down)", number: "Rs280-290cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Order book", number: "Rs290cr FY26 / Rs350cr FY27", timeframe: "FY26/FY27", stated_in: "Q2 FY26 call"}
+  - {item: "EBITDA margin", number: "19-20% FY26 / 20-21% FY27", timeframe: "FY26/FY27", stated_in: "Q2 FY26 call"}
+  - {item: "Capacity expansion + capex", number: "Bi-metal 486->530 lakh units, Alkop 1440->2880 tonnes, Brakes 18->24 lakh pcs; Rs25-30cr capex", timeframe: "2 years", stated_in: "Q2 FY26 call"}
+  - {item: "Export share of revenue", number: "30%->35% FY26-end, 40% FY27", timeframe: "FY26/FY27", stated_in: "Q2 FY26 call"}
+  - {item: "Order book", number: "Rs295cr FY26 / Rs350cr FY27 / Rs425cr FY28", timeframe: "FY26-28", stated_in: "Q3 FY26 call"}
+  - {item: "EBITDA margin", number: "20% FY26 / 21% FY27 / 22% FY28", timeframe: "FY26-28", stated_in: "Q3 FY26 call"}
+  - {item: "Capex next 2 years", number: "Rs20cr (Alkop Rs7cr, Bearing Rs7cr, Brakes Rs6cr)", timeframe: "2 years", stated_in: "Q3 FY26 call"}
+  - {item: "PTFE bushes for EV", number: "~Rs1.25cr/month potential, 7 parts", timeframe: "from FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Ex-works conversion target", number: "~90% of US exports (60-70% then-current)", timeframe: "in progress", stated_in: "Q3 FY26 call"}
+  - {item: "Alkop incremental revenue", number: "Rs50-60cr over next 2 years", timeframe: "2 years", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actual (audited)", number: "Total income >Rs300cr (+23.16% YoY); PAT Rs38.25cr (+53.41%)", timeframe: "FY26 delivered", stated_in: "Q4 FY26 call"}
+  - {item: "FY27/FY28 revenue target", number: "25% CAGR; FY27 >Rs360cr; FY28 Rs500cr", timeframe: "FY27/FY28", stated_in: "Q4 FY26 call"}
+  - {item: "EBITDA margin next 2 years", number: "20-22%", timeframe: "FY27/FY28", stated_in: "Q4 FY26 call"}
+  - {item: "Capex next 2 years (revised up from Rs20cr one quarter earlier)", number: "Rs35cr (Bi-Metal Rs25cr, Alkop Rs7cr, Brakes Rs3cr)", timeframe: "2 years", stated_in: "Q4 FY26 call"}
+  - {item: "Asset turnover target", number: "2-2.5x", timeframe: "by FY28", stated_in: "Q4 FY26 call"}
+  - {item: "Dynamometer ETA (4th restatement)", number: "August 2026", timeframe: "Aug-2026", stated_in: "Q4 FY26 call"}
+  - {item: "Alkop growth rate / target (re-timed from FY27 to '2 years')", number: "29% CAGR; >Rs120cr in next 2 years", timeframe: "2 years", stated_in: "Q4 FY26 call"}
+  - {item: "Alkop FY27 target (SAME-PERIOD, DIFFERENT DOCUMENT)", number: "Rs95cr by FY27 from Rs40cr now", timeframe: "FY27", stated_in: "Q4&FY26 Investor Presentation, dated May-2026 (inconsistent with the concall figure issued the same period)"}
+promise_delivery:
+  delivered: 1
+  partial: 5
+  missed: 6
+  rows:
+    - {promised_in: "Q1 FY26 call", promise: "FY26 revenue ~Rs300cr", outcome: "delivered", explanation: "FY26 actual Rs293.81cr per screener CSV, audited total income >Rs300cr incl other income"}
+    - {promised_in: "Q1 FY26 call", promise: "FY26 EBITDA margin 22%", outcome: "partial", explanation: "guidance revised down across Q2/Q3 calls to 19-20%; FY26 actual ~20.0%, delivered against revised guide only"}
+    - {promised_in: "Q1 FY26 call", promise: "Alkop FY26 revenue Rs85-90cr", outcome: "missed", explanation: "FY26 Alkop actual estimated ~Rs60-65cr from Q3/Q4 mix disclosures; management admits growth 'has been slower' (Q4 FY26 call)"}
+    - {promised_in: "Q1 FY26 call", promise: "Alkop FY27 revenue Rs120cr", outcome: "partial/inconsistent", explanation: "re-timed to 'next 2 years' in Q4 FY26 call; same-period investor presentation states Rs95cr by FY27 from Rs40cr base, never reconciled"}
+    - {promised_in: "Q1 FY26 call", promise: "Brakes dynamometer by end-Sept-2025, enabling railway/OEM approval and Rs100cr FY27 Brakes target", outcome: "missed", explanation: "slipped in Q2 (Q3/Q4 FY26), Q3 (~May-2026), and Q4 calls (Aug-2026); zero railway revenue booked to date; explanation degraded to explicit refusal to explain by Q4"}
+    - {promised_in: "Q2 FY26 call", promise: "Brakes FY26 revenue contribution Rs13-14cr", outcome: "partial", explanation: "H1 FY26 actual only ~Rs4cr; no explicit FY26 segment actual disclosed in Q4 call; Q3 run-rate (~Rs1cr/month) broadly consistent but unconfirmed"}
+    - {promised_in: "Q3 FY26 call", promise: "PTFE bushes for EV, 7 parts, ~Rs1.25cr/month potential", outcome: "partial", explanation: "only 1 of 7 parts orally approved by Q4 FY26 call; remaining 6 not yet quoted"}
+    - {promised_in: "Q3 FY26 call", promise: "Ex-works export conversion target ~90%", outcome: "partial", explanation: "80% achieved by Q4 FY26 call, up from 60-70% in Q3, trending toward target but not yet met"}
+    - {promised_in: "Q2 FY26 call", promise: "Canada OEM deal ~Rs50-60cr/yr, meeting set April-2026", outcome: "missed", explanation: "no mention in Q3 or Q4 FY26 calls despite the meeting date having passed; no explanation offered"}
+    - {promised_in: "Q1 FY26 call", promise: "Distributor network 35 to 150 (aftermarket, Brakes)", outcome: "missed", explanation: "never mentioned again in Q2, Q3, or Q4 calls"}
+    - {promised_in: "Q1 FY26 call", promise: "Menon Ventures EV-charging proposal", outcome: "missed", explanation: "never mentioned again after Q1 FY26 call"}
+    - {promised_in: "Q1 FY26 / Q3 FY26 calls", promise: "FY27 company revenue Rs350cr", outcome: "partial", explanation: "raised to >Rs360cr in Q4 FY26 call; Q1 FY27 actual (Rs91.79cr, screener CSV) annualises to ~Rs367cr, consistent so far but only one quarter of post-call evidence"}
+excuse_pattern: "balanced-with-one-notable-deflection"
+repeated_evasions:
+  - {question: "When will the Brakes dynamometer arrive, and when does railway/OEM approval and revenue start?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed every quarter, ETA moved 4 times, never delivered"}
+  - {question: "What is Alkop's real forward revenue target and timeline?", quarters_asked: ["Q1 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters, contradicted by a same-period investor presentation, never reconciled"}
+credibility_grade: "C"
+credibility_basis: "Core revenue/margin guidance broadly delivered (within ~2% of target, revised guide ultimately met), but the strategic growth-optionality promises central to the transition thesis -- Brakes/railway approval (4 consecutive quarterly slips, explanation degrading to explicit refusal to explain) and Alkop's revenue trajectory (3 different targets across 4 quarters, contradicted by a same-period investor presentation, never reconciled) -- were missed or left internally inconsistent, three named growth initiatives were dropped without closure, and management is silent on the Alkop subsidiary's negative-reserves governance question raised independently in stage B02."
+peer_questions:
+  - {question: "Is the China Plus One / Europe Plus One sourcing shift into India auto-component supply chains corroborated independently, and at what pace?", why: "MENONBE cites this as the structural driver behind Alkop and Bi-metal export growth across all four calls; needs independent corroboration", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Do peers report the same copper (~Rs745->Rs1275/kg) and aluminium (~Rs190->Rs280/kg) RM inflation trajectory Aug-2025 to May-2026, and the same escalation-clause lag?", why: "Determines whether MENONBE's recurring RM-timing margin misses are industry-wide or company-specific", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Do peers report the same US tariff treatment (HCV/LCV exemption, ~25% duty with customer burden-sharing) MENONBE describes, or a materially worse impact?", why: "Tests whether MENONBE's tariff-resilience narrative is real or overstated relative to peers with similar US exposure", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Are peers shifting export terms from DDP to ex-works, and at what conversion rate and margin/cash-cycle impact?", why: "Tests whether MENONBE's ex-works conversion progress (80% of target 90%) is a genuine differentiator or sector-wide catch-up", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Do MENONBE's stated competitor margin claims (Federal-Mogul KSPG 6-7%, unnamed aluminium peers 6-8%, Rane/Sundaram Brake Linings low-margin aftermarket) show up in peer disclosures?", why: "MENONBE uses these comparisons to justify its premium-margin narrative but never substantiates them quantitatively itself", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Is there peer evidence of a scarce/delayed dynamometer supply chain in India for railway/OEM brake-testing equipment?", why: "Tests whether MENONBE's single largest repeated promise-miss reflects a sector-wide equipment bottleneck or a company-specific vendor-selection failure", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Do any peers report a comparable capex-cycle stage ('major capex behind us, now sweating assets, targeting 2-2.5x asset turns')?", why: "Benchmarks whether MENONBE's asset-turn improvement claim is plausible relative to sector capex-cycle timing", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {question: "Has any peer disclosed a customer concentration table corroborating or contradicting MENONBE's unqualified 'no customer above 15%' claim?", why: "MENONBE's concentration claim is asserted, not evidenced, in all four calls", check_peers: ["HARSHA", "NRBBEARING", "PRECAM"]}
+red_flags:
+  - "Brakes dynamometer/railway approval missed 4 consecutive quarterly ETAs (Sept-2025 -> Q3/Q4 FY26 -> ~May-2026 -> Aug-2026); zero railway revenue to date; explanation degraded to explicit refusal to explain -- severity: high"
+  - "Alkop FY27 revenue target stated inconsistently in the SAME reporting period: >Rs120cr-in-2-years on the Q4 FY26 concall vs Rs95cr-by-FY27-from-Rs40cr-now in the same-period investor presentation, never reconciled -- severity: medium-high"
+  - "Three named growth initiatives (Canada OEM, US-competitor 800-part aftermarket offer, Menon Ventures EV-charging, distributor-network target) introduced then dropped with no closure -- severity: medium"
+  - "Management silent across all four calls on Menon Alkop's negative reserves / unimpaired carrying-value gap and the growing related-party advance to Menon Brakes (per stage B02), while promoting both subsidiaries as growth engines -- severity: high"
+  - "announcements/ folder absent for this run; no Reg 30 documented-action cross-check possible against any promise-delivery item -- severity: low (process/evidence-coverage flag)"
+  - "Order-book figure used interchangeably with annual revenue guidance throughout, no cancellation rate or definition given; one anomalous point-in-time figure (Rs32cr, Q4 FY26 call) not reconciled with the Rs190cr six-month target stated in the same answer -- severity: medium"
+dropped_triggers: ["Canada OEM deal (~Rs50-60cr/yr, introduced Q2 FY26, meeting set April-2026, never mentioned again)", "US competitor's 800-part US aftermarket offer (~Rs80cr, introduced Q2 FY26, partial update Q3 FY26, dropped by Q4 FY26)", "Distributor network target (35->150, introduced Q1 FY26, never mentioned again)", "Menon Ventures EV-charging proposal (introduced Q1 FY26, never mentioned again)"]
+timeline_slippages: ["Brakes dynamometer/railway approval: Sept-2025 -> Q3/Q4 FY26 -> ~May-2026 (4 months from Jan-2026) -> Aug-2026 (4 slips across 4 quarters)", "Alkop FY27 revenue target: FY27 (Q1 FY26 call) -> re-timed to 'next 2 years' i.e. effectively FY28 (Q4 FY26 call), with a contradicting same-period investor-presentation figure", "Alkop European new-parts pipeline (~Rs30cr): originally targeted to productionise 'by end of this year, last quarter' (implied FY26 Q3/Q4) -> postponed, 'productionised during the entire next year' (Q3 FY26 call)", "Capex next 2 years: Rs20cr guided in Q3 FY26 call, revised up to Rs35cr in Q4 FY26 call one quarter later, without explanation"]

@@ -1,0 +1,37 @@
+stage: B06-peers
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["TRF transcript is Jun 2021 (Q4 FY21), ~5 years stale; usable only for structural/industry cautionary context, not current-demand or current-margin verification. Only one live peer (ELECON) provides substantive current-period evidence, so no claim can clear the two-independent-peer bar for full VERIFIED status."]
+flags: ["Capacity utilisation contradiction: Fluidomat ~96% vs ELECON Gear division 56-60% (Q4 FY26) — segment-adjacent, not identical, but magnitude gap warrants a direct question to management.", "ELECON's own guidance was cut mid-FY26 (~5% revenue, ~2% EBITDA margin) and then missed again in Q4 FY26 despite consistent 'demand remains healthy' messaging every quarter — a caution against assuming brisk order-to-revenue conversion industry-wide.", "ELECON's raw-material cost commentary reversed from 'stagnant, no increase' (Q3 FY26) to 'anticipating increase' (Q4 FY26) within two quarters, remaining unquantified both times."]
+peers_provided: 5
+verified: []
+partially_verified:
+  - {claim: "Government-driven power/steel capex tailwind exists and is directionally real (specific targets of 25 thermal plants/15 coal projects/500GW/300MTPA steel unverifiable; order-conversion pace shown by peer to be slower than guided, not brisk)", peers: ["ELECON"]}
+  - {claim: "Unquantified input-cost and product/customer-mix margin headwinds in FY26 are real and industry-wide; mix effect is peer-quantifiable, raw-material driver remains unquantified and internally inconsistent quarter to quarter for the peer itself", peers: ["ELECON"]}
+  - {claim: "A distinct aftermarket/spares revenue line exists at material scale (30-41% of peer quarterly revenue) in this industry, but does not behave as an annuity independent of new-order cyclicality per the peer's own commentary", peers: ["ELECON"]}
+  - {claim: "A broad multi-country global-footprint claim can coexist with declining/stagnant actual export revenue realisation, as shown by one peer across FY26 (Middle East conflict, US tariffs cited as drivers)", peers: ["ELECON"]}
+contradicted:
+  - {claim: "Fluidomat's stated ~96% capacity utilisation, when benchmarked against the one peer disclosing a figure", contradicting_peer: "ELECON", quote_anchor: "ELECON, Q4 FY26 call (Apr 16, 2026), Dipak Dalwadi, Gear division head: 'capacity utilization is concerned, we are at this moment with the addition of capex is around 56% to 60% utilization'"}
+unverifiable:
+  - {claim: "Specific government policy targets: 25 new thermal plants, 15 coal mining projects, 500 GW power target, 300 MTPA steel target", peers_checked: ["ELECON", "TRF"]}
+peer_coverage_map:
+  - {peer: "ELECON", quarter: "Q4 FY26 (Apr 2026 call)", usage: "SUBSTANTIVE", contribution: "Capacity utilisation (56-60%), RM cost reversal, order-book/guidance miss, goodwill impairment, tariff/Strait of Hormuz risk"}
+  - {peer: "ELECON", quarter: "Q3 FY26 (Jan 2026 call)", usage: "SUBSTANTIVE", contribution: "Order intake slowdown, guidance cut, RM 'stagnant' claim, 5-year gross margin low, TRF/Mcnally competitive exit"}
+  - {peer: "ELECON", quarter: "Q2 FY26 (Oct 2025 call)", usage: "SUBSTANTIVE", contribution: "Guidance reaffirmation, product mix 54/46, export-margin framing, capex financing structure"}
+  - {peer: "ELECON", quarter: "Q1 FY26 (Jul 2025 call)", usage: "SUBSTANTIVE", contribution: "Export decline -7% YoY, aftermarket/service revenue percentages, brand-building cost drag, capex-vs-utilisation origin"}
+  - {peer: "TRF", quarter: "Q4 FY21 (Jun 2021 call)", usage: "CITED-ONLY", contribution: "Stale (~5yr); structural/legacy-EPC-risk cautionary context and corroboration of TRF's later MHE exit as referenced by ELECON; no current-period claim verification"}
+industry_cross_read:
+  demand: "Power and steel capex confirmed as the strongest verticals across all four ELECON quarters; cement stagnant/brownfield-skewed; sugar weak all year with speculative FY27 hope tied to the same war narrative that also depresses exports — an internally tension-filled peer narrative."
+  pricing_inputs: "No pricing-power evidence from any peer; margin commentary centres on product/customer mix and employee cost, not raw-material pricing power; RM cost narrative itself reversed from 'stagnant' (Q3 FY26) to 'rising' (Q4 FY26) within two quarters, unquantified both times."
+  capex_cycle: "Industry-wide capacity build, not a lone expander: ELECON is expanding capacity (INR400cr Gear + INR35-40cr MHE, FY26-28) while running at only 56-60% utilisation and absorbing accelerated depreciation ahead of matching revenue — a capacity-ahead-of-demand pattern worth flagging as a sector-wide oversupply risk if peers are building simultaneously."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Geopolitical/tariff pass-through risk to exports: Middle East conflict, Strait of Hormuz disruption risk, 50% US tariffs under Section 2(32) (ELECON, Q4 FY26)"
+  - "Persistent gap between order-book strength and actual revenue conversion driving repeated in-year guidance cuts (ELECON, Q3 and Q4 FY26)"
+  - "Legacy M&A goodwill impairment risk from historical acquisitions (ELECON, Q4 FY26, INR102cr impairment)"
+  - "Capital-allocation drag from large conservative cash/investment balances diluting ROCE (ELECON, Q4 FY26, INR700-800cr yielding ~8%)"
+  - "First-of-a-kind defense-order margin drag from developmental/learning-curve costs (ELECON, Q3-Q4 FY26)"
+  - "Structural downside of undiversified, EPC/legacy-project-dependent equipment manufacturing: negative net worth, chronic losses, dependence on parent-company support (TRF, Jun 2021, stale but illustrative)"
+net_narrative_effect: "complicates"

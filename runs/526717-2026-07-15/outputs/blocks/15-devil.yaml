@@ -1,0 +1,17 @@
+stage: B15-devil
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "destroyed"
+  valuation_safety: "destroyed"
+overall: "DESTROYED"
+top_counters:
+  - "RP-adjusted ROCE ~17-18% (vs reported 28.62%, FTTCP-flagged as flattered by related-party payables shrinking capital employed) collapses the destination PE from 17.4x to ~10-11x, erasing the entire re-rating and the apparent cheapness; exact add-back NOT FOUND but the direction is one-way (fttcp l.24, l.35; B11 bear)"
+  - "Standalone revenue +145.1% vs consolidated +26.8% FY25->FY26, inside a 70% RP-COGS structure with a 3.2x-parent subsidiary, points to intercompany reclassification, not genuine end-market volume growth (B05 promise_delivery; B04 irrelevant_ratios)"
+  - "70.4% consolidated COGS + 0% RP loan + cross-guarantees >2x net worth through one equity-linked promoter-group counterparty (whose CS also certifies HCP) make reported margins/ROCE non-verifiable by a minority; Promoter CONCERN + Gate 0 AVOID force AVOID regardless (B08; B10)"
+  - "SHARED CATALYST single point of failure: 31% utilisation vs peers' 75-90% carries revenue, margin AND ROCE together, and the FY26 figure is concealed (NOT FOUND); a stall breaks all three at once with no diversified second driver (B06 contradicted; B07 top_moat_risks)"
+  - "Structural cash/leverage trap: cumulative CFO/PAT -0.888x, standalone CFO worsening while consolidated flatters, ND/EBITDA 4.10x, IC 2.37x, rising bank WC borrowings, DTA ~23% of assets at risk; growth is negatively carried debt against a structural WC drain (B01; B10 rating_wc_quote)"

@@ -1,0 +1,67 @@
+stage: B09-tam
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: partial               # B04 absent, B07 capex_embedded_growth_pct not provided, mgmt_claim NOT FOUND, 3 paywalled fetches (403) worked around via search snippets
+input_gaps:
+  - "annual-report absent"
+  - "results absent"
+  - "presentation absent"
+  - "business-model (B04) skipped"
+  - "B07 capex_embedded_growth_pct not provided this run — 3C capacity cross-check left INDETERMINATE"
+  - "no Avana concall or RHP industry-chapter TAM claim located — mgmt_claim_cr NOT FOUND"
+flags:
+  - "sector_cap_row 'Pharma/CDMO' in manifest is a confirmed collection defect; Avana is a power-systems/electrical company (control & relay panels, protection relays, substation automation) — stage 11 must select the correct sector cap row"
+  - "504084-*.csv (KAYCEE INDUSTRIES LTD) confirmed via web search to be an unrelated, separate listed competitor, NOT a former identity/rename of Avana Electrosystems; Avana IPO'd fresh on NSE SME Jan-2026 with no prior listing history"
+  - "material divergence between protection-relay market-size sources (Markets&Data USD165.75M FY24 vs Straits Research USD2,423M 2024, ~14x gap for nominally the same market) — conservative (lower) figure used, divergence not resolved"
+  - "SOM-implied revenue CAGR (14.1-14.8%) sits well below Avana's realised historical CAGR (24.5% FY20-26, ~26% FY24-26 2yr) — formal tension flagged for stage 11 revenue-growth cross-check"
+  - "capacity_check left INDETERMINATE — B07 figure absent and no ASP data exists to convert physical unit capacity (70,000 relays/yr, 600 panels/yr) to a revenue-equivalent gap"
+  - "TAM/SAM built entirely from third-party market-research aggregator search snippets, no Avana-specific segment report exists; several HT/LT and BOQ-share splits used in Methods 1-2 are analyst assumptions, explicitly flagged as such, not sourced figures"
+market_definition: "India-domestic MV/HV (11kV-220kV) control & relay panels, protection relays and substation automation systems for power T&D utilities and industrial/renewable generators"
+tam_cr: {conservative: 1100, realistic: 1700}
+sam_cr: 800
+sam_pct_of_tam: 73
+som_3yr_cr: 127
+som_5yr_cr: 162
+som_implied_revenue_cagr: {yr3: 14.8, yr5: 14.1}   # FORMAL handoff to stage 11
+current_sam_share_pct: 10.5
+revenue_headroom_x: 9.5
+tam_growth_pct: 5.5
+runway_class: "GOOD"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "not applicable — no Avana management TAM claim located this run"
+capacity_check: "INDETERMINATE — B07 capex_embedded_growth_pct not provided this run; installed unit capacity (70,000 relays/yr, 600 panels/yr) known but no ASP data to convert to a Rs Cr revenue-equivalent gap"
+methods_used:
+  - "top-down (protection relay + HT control-panel carve)"
+  - "bottom-up (CEA/ICRA transmission capex-derived)"
+  - "peer revenue aggregation (informational only, not used as TAM anchor)"
+  - "import substitution (qualitative only, not quantifiable)"
+  - "global benchmark / switchgear ratio sanity-check"
+stale_data_flags:
+  - {datapoint: "India protection relay market base figure (USD165.75M)", source: "marketsandata.com", year: "FY2024"}
+  - {datapoint: "India electric control panel market base figure (USD394.80M)", source: "marketsandata.com/researchandmarkets.com", year: "FY2024"}
+  - {datapoint: "India protective relay market alternate figure (USD2,423.03M)", source: "straitsresearch.com", year: "2024"}
+searches_performed:
+  - "Avana Electrosystems Ltd products business Kaycee Industries"
+  - "\"Avana Electrosystems\" BSE NSE company profile switchgear"
+  - "India switchgear market size 2026 CRISIL Mordor Intelligence forecast"
+  - "India control and relay panel market size substation automation"
+  - "India transmission distribution equipment market size crore CEA capex plan 2026"
+  - "Avana Electrosystems IPO prospectus RHP order book capacity"
+  - "India protection relay market size crore report 2026"
+  - "India switchgear market size 2026 rupees crore IBEF"
+  - "Avana Electrosystems RHP DRHP industry overview market size control relay panel"
+  - "Marsons Ltd company transformer business products India NSE BSE"
+  - "Aartech Solonics control and relay panel BTS revenue segment mix FY26"
+  - "India substation automation system market size million USD 2026 2030"
+  - "USD to INR exchange rate July 2026"
+  - "\"control panel\" OR \"relay panel\" market India size crore Mordor OR IMARC OR TechSci"
+  - "\"India protection relay market\" \"million\" 2024 2032 marketsandata size forecast"
+  - "\"India electric control panel market\" size million USD researchandmarkets"
+  - "Avana Electrosystems DRHP industry overview CRISIL market size opportunity control panel protection relay India"
+  - "Avana Electrosystems investor presentation market opportunity TAM growth"
+searches_skipped:
+  - "WebFetch mordorintelligence.com/industry-reports/india-switchgear-market (HTTP 403, worked around via search snippets)"
+  - "WebFetch researchandmarkets.com/report/india-control-panel-market (HTTP 403, worked around via search snippets)"
+  - "WebFetch marketsandata.com/industry-reports/india-protection-relay-market (HTTP 403, worked around via search snippets)"

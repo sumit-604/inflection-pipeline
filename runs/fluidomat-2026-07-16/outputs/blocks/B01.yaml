@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "annual-report: only FY2017 annual report on file, stale; FY2018-26 history reconstructed from screener Data_Sheet + results PDFs"
+  - "rating: absent"
+  - "announcements: absent"
+  - "shareholding: absent (drives Block E to 0/20)"
+  - "research: absent"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 55/100) driven by data-completeness gaps, not fundamentals: Block E is 0/20 solely because no shareholding/pledge/contingent-liability source was provided; Block B (8/20) rests on a 2-year (FY25-26) subset for FCF and working-capital sub-tests because capex and trade-payables breakdowns are absent from screener-data for FY17-24. Core financial trend (Blocks A/C/D) and moat profile (STRONG, 5/12 confirmed) are otherwise clean over the full 10-year history."
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 11, B: 8, C: 16, D: 20, E: 0}
+core_score: 55
+moat_score: 26
+grand_total: 81
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "ROCE/ROE computed, not source-provided (screener-data has no ratio rows)"
+  - "Capex disclosed only FY25 (6.4423cr) and FY26 (3.2656cr), results FY26 annual p.6; FY17-24 capex/FCF N/A, not estimated"
+  - "Trade payables disclosed only FY25 (3.2544cr) and FY26 (3.9542cr), results FY26 annual p.5; B4 (WC days latest vs earliest) not scorable, set 0/N/A"
+  - "FY25 Sales discrepancy: screener-data 70.66cr vs FY26-annual-report FY25 comparative 72.18cr (~2.1% gap), likely regrouping/restatement; screener-data used as primary per task authority"
+  - "FY26 Employee Benefits includes one-off gratuity addition of 65.56 lakh (New Labour Codes), results FY26 annual note 6"
+  - "M9 GM proxy = (Revenue - Raw Material Cost)/Revenue, inventory-change not adjusted, as stated"
+  - "Peer set (ELECON, SHANTIGEAR, TRF) are power-transmission peers, not exact fluid-coupling comparables; TRF is a loss-making outlier retained for median calc"
+  - "M6 (R&D), M8 (distribution), E1-E4 (shareholding/pledge/contingent liabilities) all N/A, not in any provided source"
+  - "No loss-to-profit swing in FY17-26; PAT positive every year"
+  - "input_defect (informational): sector_cap_row in framework materials mislabeled Pharma/CDMO for this industrial company; no scoring impact at Gate 0"
+block_b_trend: "deteriorating - FY26 single-year CFO/PAT ratio 0.536 (10.75/20.06cr, screener-data) vs FY25's 0.643 (14.30/22.22cr, screener-data), driven by trade receivables rising from 22.46cr to 29.63cr (screener-data / results FY26 annual p.5)"

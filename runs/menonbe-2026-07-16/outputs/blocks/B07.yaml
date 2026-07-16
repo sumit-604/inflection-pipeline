@@ -1,0 +1,37 @@
+stage: B07-emoat
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements: absent, research: absent, shareholding: partial, B05_promise_delivery_record: not found - self-service concall cross-check substituted for F2]
+flags:
+  - {type: FLAG-EMOAT-WEAK, reason: "em_score 11 of ~84 falls in the <12 NO MEANINGFUL EMERGING MOAT band. Only E2 (export/China+1: Allison, Federal-Mogul DRiV, ex-works shift, export mix 34-35% to 37% target) scores Strong, with mixed documented+claim evidence. A1 (PTFE bushes) and C1 (EV customer ecosystem via Tesla/Porsche/Tata Tier-1s) score Moderate but are small in current dollar terms. All other 16 of 20 categories plus R1 are NO EVIDENCE FOUND, WEAK, or negative-leaning (F2 execution, G2 working capital)."}
+  - {type: FLAG-GUIDANCE-SLIPPAGE, reason: "Menon Brakes dynamometer/railway approval has slipped from an original end-Sep-2025 target (Q1 FY26 call) to end-Aug-2026 (Q4/FY26 call), an ~11-month delay with zero railway revenue booked to date. FY27 division-level targets set in Q1 FY26 (Alkop Rs120cr, Brakes Rs100cr) look materially disconnected from FY26 actuals (Alkop Rs72.18cr, Brakes Rs9.09cr), especially for Brakes given the still-pending regulatory unlock. Group-level FY26 revenue guidance (Rs275cr revised to Rs290cr) was credible and beaten by the Rs293.81cr actual, so the slippage is concentrated at the division level, not group level."}
+  - {type: FLAG-DATA-INCONSISTENCY, reason: "Investor Presentation (May-2026) contains two internally inconsistent Alkop forward-revenue anchors on different slides of the same deck: slide 33 states Alkop 'expects revenue of Rs95cr by FY27 from Rs40cr now,' but the Rs40cr base does not reconcile with Alkop's own disclosed FY24 (Rs63.1cr), FY25 (Rs65.94cr) or FY26 (Rs72.18cr) revenue two slides earlier (slide 10/20). Separately, the Q4/FY26 concall cites a Rs120cr-in-2-years Alkop target, a third inconsistent forward figure. Reduces confidence in company-disclosed forward targets generally."}
+em_score: 11
+em_classification: "NONE"
+active_categories:
+  - {id: "E2", name: "China+1 beneficiary / export growth", strength: "Strong", evidence_type: "documented+claim", time_to_materialise: "0-24m (partly realised)"}
+  - {id: "C1", name: "Customer ecosystem (EV supply via Tier-1s)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "A1", name: "Rare manufacturing capability (PTFE bushes for EV)", strength: "Moderate", evidence_type: "claim (partial documented)", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 12, claim: 14, inference: 2}
+completionist_recount: "recount performed: 12 documented items across 5 categories (E2, C1, A1, H3, R1/2A); no 🎙️ claims miscounted as 📄"
+catalysts_12m:
+  - {catalyst: "Menon Brakes dynamometer commissioning + first railway/OEM order", window: "retargeted end-Aug-2026 (3rd deadline)", evidence_type: "documented capex, claim on timing", anchor: "Q1 FY26 call (orig. target); Q4/FY26 call (retarget)"}
+  - {catalyst: "First firm PTFE bush order (1 of 7 parts orally approved)", window: "1-2 months from Q4/FY26 call", evidence_type: "claim", anchor: "Q4/FY26 call (May-2026)"}
+  - {catalyst: "Q1 FY27 results - first read on FY27 division-level guidance (Alkop Rs120cr, Brakes Rs100cr)", window: "Q1 FY27 (Aug-2026 reporting)", evidence_type: "claim", anchor: "Q1 FY26 call original guidance; Q4/FY26 call reaffirmation"}
+capex_embedded_growth_pct: 28.9
+optionality_register:
+  - {optionality: "Alkop reaching Rs120cr in 2 years vs Rs95cr-by-FY27 (two inconsistent management targets)", converting_evidence: "Firm POs / reconciled single forward target", first_appears: "Future concalls or corrected investor presentation", window: "12-24m"}
+  - {optionality: "John Deere/Eaton/Taco Prestolite/Mayekawa 51-part pipeline (~Rs30cr, Alkop)", converting_evidence: "Signed POs or disclosed production-commencement dates", first_appears: "Concalls, AR", window: "12m"}
+  - {optionality: "PTFE bushes - remaining 6 of 7 parts", converting_evidence: "Signed supply agreement or disclosed order value", first_appears: "Concalls, AR R&D section", window: "12-24m"}
+  - {optionality: "Menon Brakes FY27 revenue target Rs100cr contingent on railway approval", converting_evidence: "Dynamometer commissioning confirmation + first railway/OEM PO with disclosed revenue", first_appears: "Concalls, Reg 30 filing (absent this run)", window: "originally 12m, now 24m+ given slippage"}
+  - {optionality: "Africa distributor-network expansion", converting_evidence: "Named distributor agreement or disclosed African export revenue split", first_appears: "Concalls, AR exports-by-geography note", window: "12-24m, undated"}
+  - {optionality: "Menon Bearings New Ventures Ltd - new tech/EV charging", converting_evidence: "Any disclosed capex, headcount, or booked revenue", first_appears: "AR subsidiary note, future Reg 30 filing", window: "3-5yr, undated"}
+  - {optionality: "Company-wide FY27 revenue target Rs350-360cr (25% YoY for next few years)", converting_evidence: "Q1-Q4 FY27 actuals tracking against target", first_appears: "Quarterly results/concalls", window: "12m"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward AVOID (Core 54 AVERAGE downgraded for limited history, Block B cash deal-breaker) paired with forward NO MEANINGFUL EMERGING MOAT (em_score 11) is not the GOOD/AVERAGE-plus-EXPANSION transition setup this operation hunts; no forward signal is strong enough to lift the combined read."
+top_moat_risks:
+  - "Menon Brakes dynamometer/railway approval already ~11 months late against its own original timeline, with zero railway revenue booked to date and a FY27 Rs100cr target set against a Rs9.09cr FY26 actual"
+  - "Division-level guidance credibility (Alkop, Brakes) is weak even where group-level FY26 guidance was met; investors relying on division splits are relying on the weakest-evidenced disclosures"
+  - "Working capital is deteriorating (per B01, WC days +17.6d FY25-FY26) even as the capex-heavy growth pipeline this stage documents (~Rs34.5cr planned, ~28.9% implied revenue potential) continues, meaning near-term free cash flow is unlikely to improve alongside any of these emerging vectors"

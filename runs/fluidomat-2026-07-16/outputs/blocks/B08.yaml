@@ -1,0 +1,49 @@
+stage: B08-promoter
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "annual-report file was labeled Annual_Report_2017.pdf but its actual content is the FY2024-25 (49th) Annual Report, filed Aug 2025 - not stale as the task brief assumed; flagged for pipeline correction, treated as current primary source throughout"
+  - "no prospectus on file (company long-listed since 1978 incorporation; not a HIGH-severity gap per pipeline convention)"
+  - "no shareholding-pattern annexure in inputs folder - pledge (0.7%) and promoter-group % (53.45%) sourced from web aggregators (Trendlyne/Whalesbook); BSE/company direct PDF fetch returned HTTP 403 and could not be independently re-verified against the primary filing"
+  - "no announcements folder in inputs - the material June 2026 intra-family share-gift event was identified entirely via web search, not via a filed announcement provided to this stage"
+  - "Redwood Packaging Pvt Ltd and M/S Manav Enterprises corporate status/details could not be independently confirmed via web search (NOT FOUND)"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Secretarial auditor D.K. Jain & Co (proprietor Dr. Dilip Kumar Jain) was formerly employed as Fluidomat's own Company Secretary before founding the firm in 1995, and has audited the company in an unbroken ~30-year relationship, just renewed for a further 5-year term (FY25-26 to FY29-30)", evidence_tier: "MEDIA REPORTED", source: "LinkedIn/firm profile summary; corroborated by AR FY24-25 Notice Item 4 appointment terms", date: "2026-07-16 (search date); relationship ongoing since 1995"}
+  - {finding: "Seven family members drew combined FY24-25 remuneration of Rs.324.65 lakh, ~10.9% of profit before tax; every senior operating and finance function (CMD, ED, Jt.MD, CFO, VP-Marketing, Business Head-Intl Trade, GM-Costing) is held by a Jain/Sharma family member", evidence_tier: "VERIFIED", source: "Fluidomat AR FY2024-25, Annexure-5 and Note 45b", date: "FY2024-25 (AR filed 31-08-2025)"}
+  - {finding: "All three prior independent directors (Praful R. Turakhia, M.K. Shah, K.C. Jain) exited simultaneously on 14-08-2023 and were replaced same-date by three new independent directors; most parsimonious explanation is a compliance-driven consecutive-term-limit rotation (all three had served since 2014), but full-slate single-date exit is a pattern worth monitoring", evidence_tier: "VERIFIED", source: "Fluidomat AR FY2024-25, Corporate Governance Report and Note 45a related-party list", date: "14-08-2023"}
+  - {finding: "Two old MCA charges (repaid, lenders untraceable) remain formally unsatisfied on the MCA index; company discloses this transparently and is attempting to file Form CHG-4", evidence_tier: "VERIFIED", source: "Fluidomat AR FY2024-25, Note 46.12", date: "as of FY2024-25 AR"}
+transition_evidence:
+  - "Independent-director board refresh: full cohort replaced 14-08-2023 with IICA-registered directors including a qualified CA chairing the Audit Committee"
+  - "CFO Monica Jain holds a CFA charter - stronger formal finance credential than typical family appointment, though still a family member"
+  - "Active, transparent generational succession: Radhica Sharma elevated to Joint Managing Director (Oct 2025); June 2026 intra-family gift of 4% stake to three women relatives, fully SAST-disclosed, no encumbrance, no change in aggregate promoter-group holding"
+pledge_pct_latest: 0.7
+pledge_trend: "stable | ~0.7% of promoter holding, no change reported (web-derived via Trendlyne; not disclosed as a line item in the FY24-25 AR itself, which shows no pledge in its governance sections)"
+searches_performed:
+  - "Fluidomat Limited promoter shareholding pledge BSE 522017"
+  - "Fluidomat Limited Ashok Jain Kunal Jain SEBI order OR adjudication OR penalty"
+  - "Fluidomat Ashok Jain gift shares family members June 2026"
+  - "Fluidomat Ltd shareholding pattern trend promoter FII DII trendlyne"
+  - "Fluidomat Limited promoter pledge percentage encumbrance trend 2023 2024 2025"
+  - "Fluidomat Limited independent director resignation 2023 Praful Turakhia M K Shah K C Jain"
+  - "Fluidomat Limited AmbitionBox Glassdoor employee reviews"
+  - "Fluidomat court case OR litigation OR fraud OR NCLT OR income tax raid"
+  - "ambitionbox.com Fluidomat Limited Dewas reviews salary"
+  - "Fluidomat Limited Moneycontrol Economic Times management analyst coverage news"
+  - "Fluidomat Limited IiAS OR SES OR InGovern proxy advisory AGM voting recommendation"
+  - "Redwood Packaging Kunal Jain Ashok Jain Fluidomat director company"
+  - "Focus Eye Technocraft Private Limited zaubacorp Sandeep Sharma Indore"
+  - "Redwood Packaging Private Limited CIN Indore director"
+  - "Fluidomat Limited statutory auditor change 2022 appointment history J P Saraf"
+  - "Dilip Kumar Jain D K Jain Company Secretaries Indore Fluidomat secretarial auditor"
+  - "Fluidomat Ltd pledged shares percentage screener trendlyne 0.7%"
+  - "Manav Enterprises Indore Ashok Jain OR Kunal Jain partner Fluidomat"
+  - "valuepickr Fluidomat forum governance related party promoter concerns discussion"
+  - "WebFetch attempts (BSE/company shareholding PDF, Whalesbook, Screener.in, ValuePickr) - blocked HTTP 403, substituted via equivalent WebSearch queries"
+searches_skipped: []
+verdict_basis: "Clean legal/regulatory/conduct record across SEBI, criminal, tax, civil and minority-treatment checks, plus a stable immaterial 0.7% pledge and disciplined capital allocation, is offset only by structural (not behavioural) cautions - full family control of every senior function with ~11% of PBT paid to seven relatives, a 30-year former-insider secretarial auditor just renewed, and an aging founder-chairman - none of which trigger a deal-breaker, yielding TRUSTWORTHY."

@@ -2,24 +2,32 @@ stage: B13-synthesis
 company: "526717"
 run_date: "2026-07-15"
 model: claude-opus-4-8
-phase: 1-lite
+phase: 3-final
 status: complete
-verdict: "PROCEED WITH FLAGS"
-verdict_rule_applied: 3         # flags active -> PROCEED WITH FLAGS; INDETERMINATE cash caps at CAVEATS, 60-74 band steps back to FLAGS (cap not violated: FLAGS is not better than CAVEATS)
-flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-RPT, FLAG-GOVERNANCE, FLAG-DISCLOSURE, FLAG-EMOAT, FLAG-GATE0]
-cash_determination: INDETERMINATE
-confidence_delta: {numerical: 98.7, redflag: 63, framework: 96, peer: 75, overall: 63}
-framework_adherence_valuation: pending_phase_3
-valuation_decision: ""         # excluded in phase 1
-entry_range: {low: 0, high: 0} # excluded in phase 1
-headline: "FIBC turnaround real, cash conversion still unproven"
-falsification_metric: "Standalone operating cash flow negative for a second consecutive year in FY27 with consolidated CFO also reverting negative"
+verdict: "PROCEED WITH FLAGS"          # evidence gate
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-RPT, FLAG-GOVERNANCE, FLAG-DISCLOSURE, FLAG-EMOAT]
+confidence_delta: {numerical: 98.7, redflag: 63, framework: 94.5, peer: 75, overall: 63}
+valuation_decision: "AVOID"           # investment decision (governance/leverage, not price)
+entry_range: {low: 177, high: 222}
+mos_price: 177
+destination_pe:
+  track1_rrm: {low: 11.3, mid: 12.2, high: 13.1}
+  track2_additive: {low: 16.0, mid: 17.4, high: 18.7}
+hurdle_verdict: "PASS (overridden)"
+prob_weighted_cagr: 17.4
+devil_overall: "DESTROYED"
+headline: "Cheap turnaround, avoid on governance and leverage"
+falsification_metric: "FY27 standalone operating cash flow negative for a second consecutive year with consolidated CFO reverting negative and Net Debt/EBITDA above 3x"
 monitorables_count: 8
-publish_candidate: false
-publish_candidate_summary: ""
+publish_candidate: true
+publish_candidate_summary: "Value-trap anatomy: a passing 25% Hurdle and an in-zone CMP both overridden by a single Promoter CONCERN rule, binding leverage deal breaker and INDETERMINATE cash; reported 29% ROCE falls toward 18% once related party payables re-enter capital employed. Anonymised educational/framework teardown; drafting deferred to Dhruva Research Public per NEVER rule."
 files_written:
   - outputs/final/business-narrative.md
-  - outputs/final/gate-recommendation.md
+  - outputs/final/fttcp-recommendation.md
   - outputs/final/verifier-summary.md
+  - outputs/final/fttcp-handoff.md
 notion_save:
-  mode: not-run-phase-1        # Notion save, drive link, fttcp-handoff deferred to phase 3
+  page_title: "HCP Plastene Bulkpack Ltd (526717) - Run 2026-07-15"
+  mode: append-never-overwrite-status
+  drive_link: "NOT PROVIDED (fill at save time)"

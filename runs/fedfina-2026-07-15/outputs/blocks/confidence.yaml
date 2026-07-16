@@ -1,11 +1,11 @@
 confidence_delta:
-  phase: "phase-1 (evidence)"
+  phase: "phase-3 (finalize) — full four-component delta"
   numerical_acceptance: 100      # B12a: 47/47 figures MATCH, 0 findings
-  redflag_coverage: 63           # B12b: 12 of 19 independent flags caught upstream (acceptance_rate 63)
-  framework_adherence: 96        # B12c: 67/70 Gate0+EM rules clean; valuation-adherence component PENDING phase 3
+  redflag_coverage: 63           # B12b: 12 of 19 independent concall flags caught upstream (BINDING constraint)
+  framework_adherence: 97        # B12c combined: phase-1 Gate0+EM 96 (67/70) + phase-3 valuation/Role2 98 (55/56) = 122/126
   peer_utilisation: 100          # B12d: 4/4 peers substantive, 15/15 peer-quarter citations traced clean
   overall: 63                    # min of the four
-  band: "60-74 -> normal-low; per orchestrator Section 5, PROCEED-family verdicts downgrade one level"
-  binding_constraint: "redflag_coverage (Verifier B). Upstream Stage 5 missed 4 MAJOR concall red flags (asset-quality disclosure opacity / Stage 2 withheld, ~30% cure rate on secured paper, gold-mix ceiling walkback, gold growth ~90% price not tonnage). None are numerical fabrications; all are interpretive/omission misses, now surfaced in the verifier summary."
-  rework_check: "No verifier acceptance_rate below 60 (lowest is B12b at 63); Verifier A found 0 CRITICAL numerical findings. REWORK gate NOT triggered."
-  valuation_adherence_component: "PENDING phase 3 (Verifier C valuation half deferred; B10/B11 not yet built)"
+  band: "60-74 -> normal-low. Note: the phase-3 recommendation is AVOID, so the 'PROCEED-family downgrade one level' clause does not apply; the 63 flags moderate confidence, driven entirely by phase-1 concall red-flag coverage."
+  binding_constraint: "redflag_coverage (Verifier B). Phase-1 Stage 5 missed 4 MAJOR concall flags (asset-quality disclosure opacity, ~30% cure rate, gold-mix ceiling walkback, gold growth ~90% price not tonnage), all surfaced by Verifier B. Interpretive/omission misses, not numerical fabrication."
+  rework_check: "No verifier acceptance_rate below 60 (lowest B12b 63); Verifier A 0 CRITICAL numerical findings; Verifier C valuation 0 CRITICAL/MAJOR. REWORK gate NOT triggered."
+  valuation_adherence_component: "RESOLVED in phase 3: B12c-valuation 98% (was pending in phase 1). Concurs with the AVOID decision and the Hurdle STOP; 1 MINOR presentational finding only."

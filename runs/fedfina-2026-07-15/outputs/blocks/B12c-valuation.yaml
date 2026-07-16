@@ -1,0 +1,22 @@
+stage: B12c-valuation
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+phase: 3
+scope: "B11 valuation + B10 assembly (Section 1B v3.3 Four-Pillar, lender carve-outs) + B14 Role 2 decision/sizing (Master v3.3 Role 2)"
+valuation:
+  rules_checked: 56
+  fails:
+    - severity: "MINOR"
+      location: "11-valuation.md verdict card; 14-thesis.md verdict box"
+      rule: "Amendment 4.3 — verdict card MUST state on first line 'Tier: [A/B] | Hurdle: [25%/20%]'"
+      note: "Tier A correctly applied in the math (25% hurdle, 1.953 divisor); only the mandated first-line label is missing. Presentational; decision unaffected."
+recomputed_destination_pe: "concur — Track 1 14.3x mid, Track 2 15.3x mid reproduce exactly"
+recomputed_decision: "concur — AVOID (on valuation), Hurdle STOP"
+findings:
+  - {severity: "MINOR", location: "11-valuation.md / 14-thesis.md verdict cards", note: "Amendment 4.3 Tier/Hurdle first-line declaration absent; Tier A applied correctly in arithmetic"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98

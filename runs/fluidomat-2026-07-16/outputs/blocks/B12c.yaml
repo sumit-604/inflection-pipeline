@@ -1,0 +1,36 @@
+stage: B12c
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1: gate0 + emerging-moat only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 49
+  fails: []          # no rule failure; 1 MINOR presentational note (B2/B3 denominator), no decision impact
+emoat:
+  rules_checked: 30
+  fails:
+    - {severity: "MAJOR", rule: "S5 evidence multiplier (📄1.0/🎙️0.7/🔍0.5 only)", location: "B07 Section 5, R1 row", detail: "invented 'blended 0.85x'; total 12.0 lands exactly on MODEST boundary; defined-tier recompute gives 11.5 (NONE) or 12.4 (MODEST)"}
+    - {severity: "MINOR", rule: "S2C capex×FAT computation", location: "B07 2C / capex_embedded_growth_pct", detail: "headline +133% (capacity-unit) substituted for framework-prescribed capex×FAT +245%; both disclosed"}
+    - {severity: "MINOR", rule: "internal consistency", location: "B07 YAML evidence_mix vs completionist_recount", detail: "documented:15 vs '6 documented items' unreconciled"}
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: ""     # out of scope (valuation deferred to phase 3)
+recomputed_decision: ""           # concur at Gate0+EM scope: combined assessment AVERAGE unchanged under either EM band
+recomputed_em_classification: "MODEST (as reported) — but boundary-sensitive: strict 🎙️ tier on R1 yields 11.5 → NO MEANINGFUL EMERGING MOAT; combined 6D remains AVERAGE either way"
+findings:
+  - {severity: "MAJOR", location: "B07 Section 5 scorecard, R1 row", description: "Non-framework 'blended 0.85x' evidence multiplier; reported total 12.0 sits on the MODEST boundary and depends on the invented multiplier. Defined-tier recompute: 11.5 (NONE) or 12.4 (MODEST). Combined decision AVERAGE survives."}
+  - {severity: "MINOR", location: "B07 Section 2C / capex_embedded_growth_pct", description: "Framework prescribes capex × historical FAT (Method B, +245%); maker reported capacity-unit Method A (+133%). Both shown, deviation reasoned."}
+  - {severity: "MINOR", location: "B07 YAML evidence_mix vs completionist_recount", description: "documented:15 vs '6 documented items' unreconciled scopes; no guard breach, no score impact."}
+  - {severity: "MINOR", location: "B01 Block B, B2/B3", description: "Band thresholds applied to 2-year FY25-26 subset while B1 uses full 10-year window; compliant with grounded-claims and flagged; no classification impact."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+framework_adherence:
+  scope: "Gate 0 + Emerging Moat"
+  rules_checked: 79
+  rules_passed: 76
+  acceptance_rate: 96      # 76/79, Gate0+EM scope only; > 60% REWORK threshold
+acceptance_rate: 96

@@ -1,0 +1,63 @@
+stage: B09-tam
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Nova IVF and Birla Fertility & IVF revenue/cycle-volume not publicly disclosed; peer-aggregation (Method 3) relies on Indira IVF's disclosed Rs1,604.5cr FY25 figure alone, no unorganised-sector % derivable"
+  - "Top-3 organised-vs-unorganised concentration ratio for India's IVF market by revenue not found in any source; the ~40,000 estimated clinics/banks vs low registration-coverage figure is an imprecisely sourced/dated web claim, flagged not verified"
+  - "India's actual annual IVF cycle volume is contested across sources (65,000/yr in one older, undated estimate vs 200,000-250,000/yr in a 2026 industry-trends piece vs a stated 9-12x addressable-demand multiple) — a >6x spread that limits Method 2's precision"
+  - "No management-disclosed forward EBITDA margin target/trajectory; the 5E valuation-implication line uses an explicitly-named flat-margin simplification, not a sourced forecast"
+  - "Pure-IVF (ex-pharmacy) core-segment YoY revenue growth rate not cleanly reconcilable from disclosed cycle/OPU metrics; company-vs-TAM growth comparison in 5B uses the blended headline rate with an explicit inflation caveat"
+  - "Credit rating data not provided as an input to this stage"
+  - "Corporate announcements feed not provided as an input to this stage"
+  - "External research/broker notes beyond the two IPO broker notes referenced in B04 not provided as an input to this stage"
+flags:
+  - "Pharmacy-trading revenue (31% of FY26 revenue) is deliberately excluded from the TAM/SAM product scope and from the SAM-scope revenue base used for share/headroom math — flagged as an explicit analytical judgment, not a sourced exclusion"
+  - "Management's TAM claim (Infomerics, commissioned and paid for by Gaudium, RHP p.132) is unusually NOT inflated versus two independent non-commissioned estimates (ratio 0.76x vs conservative estimate) — a positive, atypical finding worth surfacing"
+  - "Bottom-up (cycles x price) TAM method produces a figure 2.3-3.7x below the top-down range, driven by contested national cycle-volume data (weak ART-sector reporting infrastructure); top-down range used for the headline, bottom-up disclosed as a downside sensitivity, not averaged in"
+  - "5-year SOM (Rs281 Cr) exceeds the current 5-embryologist / 7,200-cycle capacity ceiling (Rs214.6 Cr at FY26 ARPP) by ~Rs66.5 Cr (31%); hub-count growth (7->26, the capex-committed facilities metric) is not the binding constraint, embryologist headcount is, and no hiring plan tied to the rollout is disclosed (carried from B04)"
+  - "SOM-implied revenue CAGR (~31.4-31.7%) exceeds the strategy's 25% CAGR target, indicating the market itself is not the binding constraint on the thesis; execution/capacity and cash-conversion quality (CFO/PAT 0.45x FY25, per B04) are the more binding risks"
+  - "FX conversion for all USD-denominated TAM figures uses the CY2024 contemporaneous average rate (Rs83.68/USD), not the much weaker spot rate at run date (~Rs96.48/USD, ~16% weaker); using spot would have mechanically inflated every converted figure without any underlying market change"
+flags_from_prior_stages_carried: []
+market_definition: "India IVF/ART clinical-services market (IVF, ICSI, IUI, fertility preservation, male infertility, PGT, linked high-risk-pregnancy care), excluding pharmacy-trading resale and the government/public-hospital price segment"
+tam_cr: {conservative: 14560, realistic: 19665}
+sam_cr: 2017
+sam_pct_of_tam: 13.9
+som_3yr_cr: 161
+som_5yr_cr: 281
+som_implied_revenue_cagr: {yr3: 31.4, yr5: 31.7}
+current_sam_share_pct: 3.52
+revenue_headroom_x: 28.4
+tam_growth_pct: 13.13
+runway_class: "STRONG"
+mgmt_claim_cr: 11046
+mgmt_claim_ratio: 0.76
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs66.5 Cr at 5yr (SOM Rs281 Cr vs Rs214.6 Cr ceiling at today's 5-embryologist/7,200-cycle capacity); 3yr SOM (Rs161 Cr) fits within capacity at ~75% utilisation; SOM is the optimistic side at 5yr unless embryologist headcount grows ~31%+, a plan not yet disclosed"
+methods_used:
+  - "top-down (independent third-party + management-commissioned, triangulated)"
+  - "bottom-up (cycles x price, current-activity and full-penetration variants)"
+  - "peer revenue aggregation (partial — Indira IVF only, qualitative floor)"
+  - "global per-capita benchmark (China/US/Japan ART cycle rates)"
+stale_data_flags:
+  - {datapoint: "27.5-28 million infertile couples in India (addressable patient pool)", source: "RHP SWOT box p.161 / Parliamentary Standing Committee on Health & Family Welfare submission (PMC-indexed literature)", year: "2017"}
+  - {datapoint: "~65,000 couples/year opting for IVF in India", source: "fertilitydost.com web aggregation, primary source/date not identified", year: "undated, likely pre-2020"}
+  - {datapoint: "~40,000 estimated ART clinics/banks nationally, low registration coverage", source: "web search aggregation, primary source and date not independently verified", year: "unclear"}
+  - {datapoint: "US ART cycle count (306,197) and Japan (454,893)", source: "CDC National ART Summary via search aggregation", year: "likely ~2022-23 given typical CDC reporting lag"}
+  - {datapoint: "Independent top-down India IVF market figures (CMI USD2.35bn, Grand View USD1.74bn)", source: "web search aggregation, 2024 base year", year: "2024, ~2yrs old at run date, borderline STALE"}
+searches_performed:
+  - "India IVF market size 2024 billion CRISIL report fertility services"
+  - "India ART Act 2021 registered clinics number national registry ART banks"
+  - "India IVF cycles per year total number annual fertility treatments"
+  - "Indira IVF revenue FY25 crore annual report"
+  - "Mordor Intelligence India in vitro fertilization market size 2024 2029"
+  - "IVF India penetration rate infertile couples seeking treatment percentage"
+  - "number of registered ART clinics India total 2025 national registry count"
+  - "average cost IVF cycle India rupees lakh 2025"
+  - "China IVF cycles per year number annual ART cycles total"
+  - "USD INR exchange rate July 2026"
+  - "Nova IVF revenue crore FY25 annual cycles number"
+  - "USD INR average exchange rate 2024 full year RBI"
+  - "40,000 OR 40000 ART clinics India registered 5% fertility 2024 2025"
+searches_skipped: []

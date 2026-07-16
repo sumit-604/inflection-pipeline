@@ -1,0 +1,58 @@
+stage: B11-valuation
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - field: "RP-payable add-back to capital-employed denominator (bear ROCE)"
+    conservative_assumption: "~18% RP-adjusted ROCE + 0.65x structural cash -> 11x, anchored to B10 flagged 10-11x; exact figure NOT FOUND"
+  - field: "Peer valuation multiples (P/E, EV/EBITDA, P/B)"
+    conservative_assumption: "EV/EBITDA exit derived via 0.6-0.7x of PE destination, not peer-anchored (B06 NOT FOUND)"
+  - field: "FY26 capacity utilisation %"
+    conservative_assumption: "ramp bounded by SOM capacity gate; only FY25 31% baseline known"
+flags:
+  - "FLAG-CASH carried forward; cash multiplier APPLIED 0.80x (INDETERMINATE, no growth offset)"
+  - "FLAG-GATE0 binding (ND/EBITDA 4.10x AND IC 2.37x) -> AVOID on leverage"
+  - "FLAG-RPT / FLAG-GOVERNANCE -> Promoter CONCERN hard cap -> AVOID"
+  - "SHARED-CATALYST: utilisation ramp drives revenue+margin+ROCE; bear uses RP-adjusted ROCE"
+  - "EBIT-basis sensitivity: 28.62% (governs) vs results-line 23.7% -> ~1.9 PE points"
+framework_versions: "Master v3.3 / Section 1B v3.3 (+v3.4/3.5.1) / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 11.3, mid: 12.2, high: 13.1, r_used: 16.0, rrm: 0.70}
+  track2_additive: {low: 16.0, mid: 17.4, high: 18.7}
+  divergence_pct: 30
+  governing_track: "Track 1 RRM — prices governance/durability discount explicitly (central risk) and is the more conservative track that sets the entry zone"
+pillar_detail:
+  roce_used: 28.62
+  roce_base: 28.62
+  roce_recovery_route: "pillar1"
+  cash_multiplier: 0.80
+  structural_or_growth: "indeterminate"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 22
+hurdle_ratio: {base: 2.23, bull_used: false, verdict: "PASS"}
+hurdle_verdict: "PASS"
+destination_pe_track1_rrm: {low: 11.3, mid: 12.2, high: 13.1}
+destination_pe_track2_additive: {low: 16.0, mid: 17.4, high: 18.7}
+fair_values:
+  track1: {bear: 121, base: 433, bull: 579}
+  track2: {bear: 173, base: 618, bull: 824}
+expected_cagr_prob_weighted: 17.4
+entry_range: {low: 177, high: 222}
+mos_price: 177
+upside_downside_ratio: 3.27
+decision: "AVOID (on governance/leverage, not valuation; Promoter CONCERN + binding Gate0 leverage + INDETERMINATE cash override a PASS hurdle and an in-zone CMP)"
+cash_multiplier_used: 0.80
+structural_or_growth: "indeterminate"
+ua_applied: false
+sector_cap_used: 22
+unresolved_inputs_used:
+  - "RP-payable add-back (bear ROCE) NOT FOUND -> ~18% + 0.65x structural cash -> 11x per B10 flag"
+  - "Peer multiples NOT FOUND -> EV/EBITDA via 0.6-0.7x PE rule"
+  - "FY26 utilisation NOT FOUND -> ramp bounded by SOM capacity gate"
+som_cagr_crosscheck: "consistent (base revenue 18% < SOM-implied 30.7% 3-yr)"
+one_line_thesis: "HCP Plastene is cheap on earnings (8.9x FY26 EPS Rs 21.6, four-pillar destination 12.2x RRM / 17.4x additive, Hurdle PASS, CMP in the Rs 177-222 zone) but AVOID because a binding Gate0 leverage deal-breaker (ND/EBITDA 4.10x), Promoter CONCERN (RPT up to 70% consolidated COGS, cross-guarantees >2x net worth) and INDETERMINATE cash conversion make it uninvestable; re-engage only if gearing falls below 2x, RPT concentration drops, and CFO/PAT confirms above 0.70x for two years."

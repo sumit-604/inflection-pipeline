@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: ["capex_cycle_framing_contradicted_by_all_three_peers", "dynamometer_claim_unverifiable_no_adjacent_peer", "ddp_exworks_total_peer_silence", "menonbe_margin_outlier_vs_same_segment_screening_peer"]
+peers_provided: 3
+verified:
+  - {claim: "China+1 / Europe+1 sourcing shift into India auto-component supply chains", peers: ["HARSHA", "NRBBEARING", "PRECAM"], anchor_count: 3}
+  - {claim: "Copper and aluminium RM inflation with escalation-clause/pass-through lag is industry-wide", peers: ["HARSHA", "PRECAM"], anchor_count: 4}
+partially_verified:
+  - {claim: "Competitor margin claims (Federal-Mogul KSPG 6-7%, aluminium peers 6-8%, Rane/Sundaram low-margin)", peers: ["BIMETAL (screening cross-check)", "PRECAM"]}
+  - {claim: "Customer concentration, no customer above 15%", peers: ["NRBBEARING"]}
+contradicted:
+  - {claim: "Comparable capex-cycle stage: major capex behind us, sweating assets toward 2-2.5x asset turns", contradicting_peer: "NRBBEARING", quote_anchor: "NRBBEARING Q3 FY26 call (13-Feb-2026), Harshbeena Zaveri, p.11 of 17: 'NRB is not a company that operates like a multinational, which goes and puts in like a huge plant and massive capacities and then tries to sweat them and look for business. That's not how we operate.'"}
+unverifiable:
+  - {claim: "US tariff treatment: HCV/LCV exemption, ~25% duty with customer burden-sharing", peers_checked: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {claim: "Export terms shift DDP to ex-works", peers_checked: ["HARSHA", "NRBBEARING", "PRECAM"]}
+  - {claim: "Scarce/delayed dynamometer supply chain in India for railway/OEM brake testing", peers_checked: ["HARSHA", "NRBBEARING", "PRECAM"]}
+peer_coverage_map:
+  - {peer: "HARSHA", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "US tariff/exposure baseline (~10% of revenue) and cautious-optimism demand framing"}
+  - {peer: "HARSHA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "RM pass-through lag causing margin decline; Advantek capex-drag disclosure"}
+  - {peer: "HARSHA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Explicit copper-price-inflation and 4-month pass-through-lag quote; China brownfield 2x-turn expectation"}
+  - {peer: "HARSHA", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "US tariff on cages reduced to zero; geography mix disclosure; manufacturing-moving-to-India quote"}
+  - {peer: "NRBBEARING", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Customer-concentration disclosure (no customer above 10%, top 10 = 50%); capex/JV funding plans"}
+  - {peer: "NRBBEARING", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "China+1 sourcing example (named ZF relocation); explicit rejection of 'sweat the assets' capex model; US business decline data"}
+  - {peer: "NRBBEARING", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Margin resilience despite RM/forex pressure; weak 4% international growth; continued active capex build-out"}
+  - {peer: "PRECAM", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Europe recession backdrop and MFT subsidiary liquidity distress; generic US-market uncertainty"}
+  - {peer: "PRECAM", quarter: "Q2 FY26 (Dec-2025)", usage: "SUBSTANTIVE", contribution: "MFT formal insolvency/impairment disclosure; India-market resilience narrative"}
+  - {peer: "PRECAM", quarter: "Q3 FY26 (Mar-2026)", usage: "SUBSTANTIVE", contribution: "India-as-alternative-sourcing-destination quote; EV-strategy-reversal risk disclosure"}
+  - {peer: "PRECAM", quarter: "Q4/FY26 (Jun-2026)", usage: "SUBSTANTIVE", contribution: "Explicit aluminium-price-spike-plus-lag quote; capex-to-revenue ratio (1.5-2x) numeric evidence"}
+industry_cross_read:
+  demand: "Domestic India demand strong and resilient across all three peers, consistent with MENONBE; export/Europe demand described by all three as slow, uneven, and fragile (one peer subsidiary went insolvent), a materially more cautious tone than MENONBE's confident structural-shift narrative"
+  pricing_inputs: "Copper and aluminium inflation with 3-4 month lagged, partial pass-through corroborated industry-wide by HARSHA and PRECAM; NRB shows the lag is manageable via structural cost offsets (solar, automation), weakening any purely-external-factor excuse"
+  capex_cycle: "Industry-wide capacity build cycle, not a lone-expander situation -- all three peers are actively mid-expansion (HARSHA Bhayla+China, NRB Rs500cr roadmap+JV+acquisition, PRECAM Solapur) in the same period MENONBE frames itself as past its heavy-capex phase and sweating existing assets; no peer describes itself as in a comparable post-capex harvest stage"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Foreign-subsidiary financial distress escalating to formal insolvency within one quarter (PRECAM's MFT GmbH) -- structurally analogous to MENONBE's undisclosed Menon Alkop negative-reserves issue, which MENONBE's management has never addressed on any call"
+  - "Promoter-family ownership disputes and settlement costs, proactively disclosed with full financial detail (NRBBEARING) -- a governance-transparency standard MENONBE does not match on its own Alkop silence"
+  - "Greenfield/new-capacity loss-drag disclosed with granular quarterly figures (HARSHA's Advantek) -- a transparency standard MENONBE does not match for its own Brakes/Alkop capex"
+  - "EV-strategy reversal by major global OEMs back toward ICE/hybrid (PRECAM), directly relevant to but never addressed against MENONBE's own EV-linked growth bets (PTFE bushes, Alkop EV parts)"
+  - "Aftermarket cost-structure economics explained mechanically (NRBBEARING) -- context MENONBE never supplies for its own Rane/Sundaram Brake Linings margin comparison"
+  - "Forex volatility as a standalone margin swing factor (NRBBEARING) -- a risk category not discussed on any MENONBE call"
+net_narrative_effect: "complicates"

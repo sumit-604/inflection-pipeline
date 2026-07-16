@@ -8,17 +8,20 @@ input_gaps:
     severity: LOW
     note: "Rating-agency structural-WC quote NOT FOUND; Pillar 2 already fixed at 0.80x by operator override with falsifier, so proceed. No 0.65x structural confirmation available."
 flags:
+  - "PILLAR-3a CORRECTED: SOM-implied CAGR qualifier DISQUALIFIED under Amendment 4.1 (capacity cross-check FAILED: SOM_3yr Rs 568 Cr > ~Rs 450 Cr ceiling, B09 Section 3C). Only order-book qualifier (1.47x) holds = one qualifier = +0x. Pillar 3 total +0x; raw destination PE 16.0x."
   - "FLAG-CASH: negative operating cash flow (-Rs 57.45 Cr FY26); cash multiplier 0.80x GROWTH-INDUCED applied (operator override), NO double-credit growth offset; reverts to 0.65x STRUCTURAL if H1 FY27 falsifier trips (OCF still negative AND >6m receivables >23.4% AND debtor days rise)."
-  - "SHARED CATALYST: 14-acre facility capex + BBBS JV drive both Pillar 3 growth premium and future ROCE; working-capital drain competes for same capital; single point of failure."
-  - "Hurdle Ratio STOP on BOTH tracks: 25% CAGR infeasible at CMP even on grade-C-capped bull EPS CAGR (26%)."
+  - "FLAG-CAPACITY: Yr3 base revenue Rs 566 Cr exceeds ~Rs 450 Cr near-term capacity ceiling (B09 Section 3C); base assumes 14-acre expansion lands on time; slip pushes base toward bear (capacity-constrained)."
+  - "SHARED CATALYST: 14-acre facility capex + BBBS JV drive near-term growth and future ROCE; working-capital drain competes for same capital; single point of failure. No double-credit exposure this run since growth premium not credited; retained as forward risk."
+  - "Hurdle Ratio STOP on BOTH tracks: 25% CAGR infeasible at CMP even on grade-C-capped bull EPS CAGR (26%); requires ~33% (Track 2) / ~42% (Track 1)."
   - "EPS-basis: current PE fixed at 19.3x (current 2.397 Cr shares), NOT the 16.89x weighted-average-share figure; mixing them would fabricate a spurious hurdle pass."
   - "Grade C credibility: bull EPS CAGR capped at Base+5%=26%; order-book miss (Rs469 vs Rs1000 Cr), FY27 guidance walked back, BBBS JV slipped."
+  - "Risk-reward asymmetry collapsed to ~1.05x (below 2x) after the +0x Pillar 3 correction."
 framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
 destination_pe:
-  track1_rrm: {low: 13.5, mid: 14.8, high: 16.0, r_used: 15, rrm: 0.82}
-  track2_additive: {low: 16.5, mid: 18.0, high: 19.5}
-  divergence_pct: 17.8
-  governing_track: "Track 1 RRM (conservative); divergence 17.8% >15% so RRM sets the entry zone"
+  track1_rrm: {low: 12.1, mid: 13.1, high: 14.1, r_used: 15, rrm: 0.82}
+  track2_additive: {low: 14.8, mid: 16.0, high: 17.2}
+  divergence_pct: 18.1
+  governing_track: "Track 1 RRM (conservative); divergence 18.1% >15% so RRM sets the entry zone"
 pillar_detail:
   roce_used: 24.9
   roce_base: 20.0
@@ -26,21 +29,21 @@ pillar_detail:
   cash_multiplier: 0.80
   structural_or_growth: "growth-induced"
   growth_offset: 0
-  growth_premium: 2.0
+  growth_premium: 0
   strategic_premium: 0
   shared_catalyst_flag: true
   ua_applied: false
   sector_cap_used: 25
-hurdle_ratio: {base: 1.36, bull_used: false, verdict: "STOP"}
+hurdle_ratio: {base: 1.20, bull_used: false, verdict: "STOP"}
 fair_values:
-  track1: {bear: 288, base: 427, bull: 483}
-  track2: {bear: 350, base: 519, bull: 587}
-expected_cagr_prob_weighted: 6.8
-entry_range: {low: 175, high: 218}
-mos_price: 175
-upside_downside_ratio: 4.1
+  track1: {bear: 255, base: 378, bull: 427}
+  track2: {bear: 311, base: 461, bull: 522}
+expected_cagr_prob_weighted: 2.6
+entry_range: {low: 155, high: 193}
+mos_price: 155
+upside_downside_ratio: 1.05
 decision: "AVOID (on-valuation)"
 unresolved_inputs_used:
   - "rating_wc_quote: NOT FOUND. Conservative assumption: proceed at Pillar 2 0.80x (operator override with falsifier on record); no rating-agency structural-WC confirmation to force 0.65x this run."
-som_cagr_crosscheck: "consistent"
-one_line_thesis: "Avoiding Airfloa at Rs 315 because even at a four-pillar destination PE of 18x (ROCE 24.9%, cash 0.80x growth-induced, EM 14.5, sector cap 25x) the SOM-capped 21% base EPS CAGR (Rs 16.31 to Rs 28.83) yields only 11-18% 3-year CAGR and the Hurdle Ratio STOPs on both tracks; entry re-opens at Rs 175-218. Key risk: H1 FY27 OCF stays negative and cash reverts to structural 0.65x."
+som_cagr_crosscheck: "consistent-for-base-EPS (21% at SOM ceiling), BUT capacity cross-check FAILED (SOM 3yr Rs 568 Cr > ~Rs 450 Cr ceiling) — disqualifies Pillar 3a SOM qualifier per Amendment 4.1 and flags base-revenue capacity risk"
+one_line_thesis: "Avoiding Airfloa at Rs 315 because at a four-pillar destination PE of 16x (ROCE 24.9%, cash 0.80x growth-induced, growth premium +0x after the SOM qualifier fails Amendment 4.1's capacity cross-check, EM 14.5, sector cap 25x) the SOM-capped 21% base EPS CAGR (Rs 16.31 to Rs 28.83) yields only 6-13% 3-year CAGR and the Hurdle Ratio STOPs on both tracks; entry re-opens at Rs 155-193. Key risk: H1 FY27 OCF stays negative and cash reverts to structural 0.65x."

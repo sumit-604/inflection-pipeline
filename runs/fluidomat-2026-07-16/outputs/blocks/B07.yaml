@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no concalls available (no-concall mode; F2 substituted with capex-completion cross-reference across AR/results/presentation)"
+  - "rating agency actions not available"
+  - "exchange announcements beyond the investor presentation and two results filings not available"
+  - "shareholding pattern filing not available"
+  - "independent/sell-side research not available"
+  - "no separate aftermarket/spares revenue disclosure in any period (bundled into 'sale of products')"
+  - "40% capital subsidy sanction/receipt status unconfirmed as of run date"
+  - "~96% utilisation figure from operator context not independently found in primary AR/results/presentation text"
+  - "FY26 export revenue figure not disclosed in the results filings reviewed"
+flags:
+  - "R&D expenditure disclosed as NIL in AR Annexure-3 despite MD&A/journey-slide language describing continuous R&D activity"
+  - "Capex pacing gap: only ~9% (₹3.27cr of ₹35cr) spent in FY26 against a stated 2-3 year (FY26-FY29E) completion timeline"
+  - "Internal inconsistency in investor presentation: 'expected completion by end 2027' (Journey slide) vs 'FY26-FY29E' (Capex & Expansion Plan slide)"
+  - "Export revenue declined FY24 (₹279.23 lakh) to FY25 (₹219.05 lakh) even as presentation frames global footprint as a growth strength"
+  - "Working capital deteriorating (receivables ₹22.46cr→₹29.63cr; CFO/PAT 0.643→0.536, FY25→FY26), consistent with Gate 0 block_b_trend, and works against the self-funded-capex narrative"
+em_score: 12
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "📄", time_to_materialise: "2-3 years"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "📄", time_to_materialise: "ongoing"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "mixed 📄/🎙️", time_to_materialise: "12-36 months"}
+evidence_mix: {documented: 15, claim: 8, inference: 4}
+completionist_recount: "📄 recount performed: 6 documented items across 3 categories (A3, G1, R1) — within realistic 3-6 category base rate, no re-examination triggered."
+catalysts_12m:
+  - {catalyst: "Capex spend acceleration / civil construction milestone (86,988 sq ft)", window: "12m", evidence_type: "📄", anchor: "Inv. Pres. slide 22; Balance Sheet CWIP Mar-26"}
+  - {catalyst: "40% capital subsidy sanction/receipt confirmation", window: "12-24m", evidence_type: "🎙️", anchor: "Inv. Pres. slide 21 Management Commentary"}
+  - {catalyst: "FY27 AR/MD&A disclosure quantifying aftermarket/spares revenue", window: "12m", evidence_type: "🔍", anchor: "AR FY24-25 Note 27 (currently bundled, no split)"}
+  - {catalyst: "New government thermal/coal project order bookings beyond the 7 already booked", window: "12m", evidence_type: "📄", anchor: "AR FY24-25 p.35 MD&A"}
+capex_embedded_growth_pct: 133
+optionality_register:
+  - {optionality: "Aftermarket/spares annuity-like revenue on 60,000+ installed base", converting_evidence: "Disclosed spares/AMC revenue as a separate line or %, or a named AMC contract", first_appears: "Next AR revenue note or quantified investor-presentation breakout", window: "12-24 months"}
+  - {optionality: "40% capital subsidy on the ₹35cr capex", converting_evidence: "Subsidy sanction letter referenced in AR/exchange filing, or grant recorded in Capital Reserve", first_appears: "Subsequent AR (FY26-27/FY27-28) Capital Reserve note, or BSE filing", window: "12-24 months"}
+  - {optionality: "Capacity expansion delivering full 1,500→3,500 unit run-rate", converting_evidence: "Commissioning announcement/exchange filing, or disclosed unit-level output/utilisation data", first_appears: "BSE filing on commissioning, or AR FY28/FY29 capacity note", window: "24-36 months"}
+  - {optionality: "Export/ATEX-led international growth reversing current decline", converting_evidence: "Disclosed export revenue growth with country detail, or a named new-country order", first_appears: "AR Annexure-3 foreign exchange note (next year), or Regulation 30 filing", window: "12-24 months"}
+  - {optionality: "Higher-kW coupling range extension via new test beds", converting_evidence: "Product launch announcement above current 6,000 kW ceiling, or disclosed order for such a unit", first_appears: "Exchange filing/investor presentation announcing commissioning", window: "24-36 months"}
+  - {optionality: "Government thermal/coal project pipeline conversion beyond the 7 already booked", converting_evidence: "Specific new order value disclosures (Regulation 30 filings if material)", first_appears: "Next AR MD&A, or BSE order-win filings", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward core (55) meets only MODEST emerging moat (12/80, low end of band) with a deteriorating working-capital trend, so no upgrade to HIGH POTENTIAL is warranted yet."
+top_moat_risks:
+  - "Capex pacing gap: ~9% of ₹35cr spent in year one against a stated 2-3 year completion timeline"
+  - "Internal timeline inconsistency across the company's own investor deck ('end 2027' vs 'FY26-FY29E')"
+  - "Aftermarket 'annuity' revenue never disclosed as a separate, monitorable metric"
+  - "40% capital subsidy not yet sanctioned or received"
+  - "Export revenue declining even as the global-expansion narrative is emphasised"
+  - "Deteriorating working capital (receivables up, CFO/PAT ratio down) undercuts durability of the self-funded-capex claim"

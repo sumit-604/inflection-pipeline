@@ -1,0 +1,42 @@
+stage: B06-peers
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating", "announcements", "shareholding", "research"]
+flags: ["international_patient_mix_contradicted_by_both_peers_low_single_digits_vs_claimed_25_30pct", "collection_cycle_150_days_contradicted_by_hcg_105_115_days_and_kaya_prepaid_model", "ai_embryo_selection_claim_unverifiable_zero_peer_mentions_despite_rainbow_disclosing_own_ivf_vertical_every_quarter", "ivf_market_cagr_13pct_unverifiable_no_independent_source_cited_by_any_peer_rainbow_flags_market_data_fragmentation", "success_rate_58_vs_75_76_unverifiable_zero_peer_evidence", "build_rate_acceleration_partially_precedented_by_rainbow_but_peers_show_execution_delays_are_the_norm"]
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "~2.4x acceleration in centre build-rate (7 hubs/16y -> 17 hubs/3y) has precedent among comparable asset-light Indian healthcare rollouts", peers: ["Rainbow", "HCG", "Kaya"]}
+contradicted:
+  - {claim: "~150-day collection cycle is common across premium Indian specialty-healthcare chains", contributing_peer: "HCG", quote_anchor: "HCG-Concall_May_2025, Ruby Ritolia: receivable days new normal 105-107, was 115 at March-end"}
+  - {claim: "25-30% international-patient revenue mix is reasonable vs sector norms for Indian specialty/medical-tourism providers", contributing_peer: "HCG and Rainbow", quote_anchor: "HCG-Concall_Feb_2026, Manish Mattoo: currently ~3.5%, targeting 7% in 4 years; RAINBOW-Concall_Jun_2026, Vikas Maheshwari: FY26 international revenue INR28.9cr, ~1.7% of group revenue"}
+unverifiable:
+  - {claim: "AI-based embryo selection (SiD/ERICA) already standard among premium Indian fertility/specialty providers, or genuine Gaudium edge", peers_checked: ["Rainbow", "HCG"]}
+  - {claim: "~13% CAGR India IVF market growth and unorganized-to-organized consolidation narrative corroborated by independent source", peers_checked: ["HCG", "Rainbow", "Kaya"]}
+  - {claim: "Gaudium's 58% first-cycle success rate at par with global standards vs Indira Fertility's claimed 75-76%", peers_checked: ["HCG", "Rainbow"]}
+peer_coverage_map:
+  - {peer: "HCG", quarter: "Q4 FY25 (30-May-2025)", usage: "SUBSTANTIVE", contribution: "Baseline receivable-day metric ~105-115 days; international mix ~3-4%"}
+  - {peer: "HCG", quarter: "Investor/Strategy Day (11-Dec-2025)", usage: "SUBSTANTIVE", contribution: "Milann fertility subsidiary flagged for divestment as non-core; measured expansion cadence"}
+  - {peer: "HCG", quarter: "Q3 FY26 (13-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Medical value travel ~3.5% targeting 7% in 4 years; 15%+ organic growth guidance"}
+  - {peer: "HCG", quarter: "Q4 FY26 (26-May-2026)", usage: "SUBSTANTIVE", contribution: "Milann divestment finalised; EBITDA-to-CFO cash conversion 75-87%; bed-addition pace disclosed"}
+  - {peer: "Rainbow", quarter: "Q1 FY26 (4-Aug-2025)", usage: "SUBSTANTIVE", contribution: "Own IVF vertical detailed with no AI-embryo mention; asset-light build cost ~INR80 lakh/bed"}
+  - {peer: "Rainbow", quarter: "Q2 FY26 (20-Nov-2025)", usage: "SUBSTANTIVE", contribution: "International business recovering ~INR3cr/month; 780 beds added over 2 years"}
+  - {peer: "Rainbow", quarter: "Q3 FY26 (3-Feb-2026)", usage: "SUBSTANTIVE", contribution: "IVF ~4% of revenue; international revenue down to ~2%; third consecutive soft demand quarter"}
+  - {peer: "Rainbow", quarter: "Q4 FY26 (1-Jun-2026)", usage: "SUBSTANTIVE", contribution: "FY26 IVF revenue INR61.4cr/3.7% of revenue; international revenue flat INR28.9cr/~1.7%; CRISIL market-study commission; highest-ever annual bed addition"}
+  - {peer: "Kaya", quarter: "Q2 FY25 (28-Oct-2024)", usage: "SUBSTANTIVE", contribution: "Klear AI skin-diagnostic app shows adjacent AI adoption; prepaid loyalty-collection model contrasts with Gaudium receivables claim"}
+  - {peer: "Kaya", quarter: "Q3 FY25 (28-Jan-2025)", usage: "SUBSTANTIVE", contribution: "Confirms near-zero historical clinic expansion before modest FY25 restart"}
+  - {peer: "Kaya", quarter: "Q4 FY25 (29-May-2025)", usage: "CITED-ONLY", contribution: "Reiterates FY26 expansion/margin plans; no new decisive evidence"}
+  - {peer: "Kaya", quarter: "Q1 FY26 (6-Aug-2025)", usage: "SUBSTANTIVE", contribution: "Self-sourced '13% industry growth' citation with own growth trailing it for years - cautionary analogy for Q5"}
+industry_cross_read:
+  demand: "HCG reports structurally rising oncology demand (13-14% category growth); Rainbow reports 3 consecutive soft pediatric-seasonal quarters (framed as temporary); Kaya's growth trails its own cited industry rate for years. No peer operates IVF at comparable scale to directly read through to Gaudium's demand narrative."
+  pricing_inputs: "All three peers actively manage payor-mix and input-cost pressure (HCG oncology-mix dilution, Rainbow insurer renegotiation, Kaya consumable-cost inflation); general sector theme, not direct evidence on Gaudium's own margin story."
+  capex_cycle: "Industry-wide capacity-expansion picture, not a lone-expander situation: HCG (~1,000 beds through FY30), Rainbow (900-bed pipeline, highest-ever annual bed addition in FY26), Kaya (resuming clinic openings after a multi-year pause). Gaudium's claimed acceleration RATE remains an outlier vs any single peer's disclosed pace, and peers that do accelerate (Rainbow) disclose 9-12 month execution delays as routine."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Execution-delay risk on aggressive builds (Rainbow: Gurugram halted by pollution order, Coimbatore delayed 6 months, 9-12 month delays acknowledged as recent-cycle norm; HCG: zoning administrative delays) - not proactively flagged on Gaudium's own call"
+  - "Multi-quarter demand seasonality/softness (Rainbow: 3 consecutive soft quarters Q1-Q3 FY26) - risk category untested on Gaudium's single maiden call"
+  - "Payor/scheme concentration risk (HCG: Odisha scheme withdrawal cost ~INR4.5cr/quarter; CGHS and GST policy swings) - lower relevance given Gaudium's cash/EMI-financed base, but institutional-payor risk generally undiscussed"
+  - "Competitive entry from well-funded multi-specialty/corporate chains building fertility verticals (both HCG and Rainbow flag this pressure in their own categories) - not addressed on Gaudium's call"
+net_narrative_effect: "complicates and partially undercuts"

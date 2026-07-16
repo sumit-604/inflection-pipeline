@@ -1,0 +1,36 @@
+stage: B12c
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+scope: "phase 1 - gate0 (B01) + emerging moat (B07) only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 47
+  fails: []            # 0 CRITICAL, 0 MAJOR; 1 MINOR (M9 GM-proxy formula variant, band unchanged) logged in findings
+  core_score_recomputed: 49       # matches B01
+  classification_recomputed: "AVERAGE"   # matches B01
+  moat_class_recomputed: "FORTRESS"      # matches B01
+  grand_total_recomputed: 76             # matches B01
+  deal_breakers_verified: "all 9 correctly evaluated; #2 Block B<8 correctly triggered-but-non-binding; #5 pledge correctly not-triggered-by-absence"
+  history_downgrade_verified: true
+emoat:
+  rules_checked: 14
+  fails: []            # 0 CRITICAL, 0 MAJOR; 1 MINOR (evidence_mix inference:8 not reconciled) logged in findings
+  em_score_recomputed: 2.5        # matches B07
+  em_classification_recomputed: "NONE"   # matches B07
+  completionist_recount_verified: "0 documented / 0 categories; 1 active (G1) far below 3-6 base rate, consistent with total absence of AVANA primary docs; no inflation"
+  combined_assessment_recomputed: "AVERAGE"   # matches B07
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+  note: "B11/B10 do not exist yet; stages 10-11 not run. Deferred per task scope."
+recomputed_destination_pe: ""    # n/a this scope (valuation deferred)
+recomputed_decision: ""          # blank - concur with B01 AVERAGE and B07 NONE/combined AVERAGE
+findings:
+  - {severity: "MINOR", location: "B01 M9 (gross-margin proxy)", description: "Used (Rev - RawMaterial - ChangeInInventory)/Rev vs framework's stated (Rev - MaterialCost)/Rev. Disclosed in data_notes; +6.45pp vs peer median keeps M9 in the same 3/5 band under either formula. No score/classification impact."}
+  - {severity: "MINOR", location: "B07 YAML evidence_mix (inference:8)", description: "inference:8 counts narrative touchpoints, not the 2 nonzero-scored inference categories (G1,R1); unreconciled and potentially misleading downstream. Scorecard, active_categories(1), and completionist_recount are all internally correct. No score impact."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100   # scoring rules correctly applied / rules checked, gate0+emoat scope; 2 MINOR presentational notes, no band or verdict change

@@ -1,9 +1,9 @@
 company: Fedbank Financial Services Ltd
 ticker: FEDFINA
-cmp: 0.0
-market_cap_cr: 0.0
+cmp: 164.0            # updated 2026-07-16 from screener.in 15-Jul close (was 0.0); operator-provided
+market_cap_cr: 6132   # updated 2026-07-16 from screener.in (was 0.0); operator-provided
 run_date: 2026-07-15
 run_type: full
 concalls_available: true
-sector_cap_row: "Pharma / CDMO"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+sector_cap_row: "Banks / NBFCs / MFIs"   # corrected 2026-07-16 from auto-picked "Pharma / CDMO" (wrong for an NBFC); per FTTCP ruling, Section 1B cap 18x, P/B primary
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked as 'Pharma / CDMO' (WRONG) and corrected to 'Banks / NBFCs / MFIs' during FTTCP deliberation 2026-07-16. cmp/market_cap were 0.0 at collection and were filled from screener.in 15-Jul close (CMP 164, mcap 6132 Cr, BVPS 78.2, P/B 2.09x, ROE 12.6%, P/E 16.0x)."

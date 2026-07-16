@@ -1,0 +1,65 @@
+stage: B05-concall
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "no concalls available (no-concall mode); analysis substituted with AR FY24-25 MD&A/Board's Report, Q3 FY26 and FY26 annual results, and FY26 Investor Presentation"
+  - "no credit rating documentation provided"
+  - "no shareholding pattern filing provided"
+  - "no independent research reports available"
+  - "no primary board-resolution/SE-announcement document evidencing the 14-Feb-2026 capex approval was provided; all capex detail is single-sourced to the 29-Jun-2026 Investor Presentation"
+flags:
+  - "credibility_grade capped at C/B per no-concall mode rules; never A"
+  - "FY26 revenue essentially flat (+0.4%) and PAT down 9.7% against FY25 AR's bullish 'best-ever performance' framing"
+  - "capex completion timeline self-conflicts within the single Investor Presentation (end-2027 vs FY26-FY29E) for the same RS 35cr programme"
+  - "order-booking KPI, disclosed annually in the AR, is absent from all FY26 result filings"
+  - "only ~9% of announced RS 35cr capex spent in FY26 (RS 326.56 lakh per cash flow statement)"
+quarters_analysed: ["FY25 Annual Report (y/e Mar-2025)", "Q3 FY26 / 9M ended Dec-2025 (filed 14-Feb-2026)", "FY26 Annual Audited (y/e Mar-2026, filed 30-May-2026)"]
+triggers:
+  - {priority: 1, name: "Modernisation and capacity expansion (RS 35cr, 1500 to 3500 units/yr)", type: "CAPEX/VOLUME", timeframe: "conflicting: by end-2027 vs FY26-FY29E", conviction: "M", confirm_signal: "capex spend accelerates materially beyond the ~9% of plan spent in FY26 and a single reconciled completion date is disclosed", kill_signal: "capex pace stays token-level for another 1-2 years and/or completion date keeps slipping or conflicting across filings"}
+  - {priority: 2, name: "Q4 FY26 margin and volume rebound", type: "VOLUME/COST", timeframe: "near-term", conviction: "M", confirm_signal: "FY27 quarters sustain EBITDA margin at or above 38-40%", kill_signal: "margins revert to the 30-35% FY26 full-year range for two or more further quarters"}
+  - {priority: 3, name: "Government infra/power/coal capex tailwind and order pipeline", type: "SECTORAL", timeframe: "medium-to-long", conviction: "L-M", confirm_signal: "order-booking disclosure reappears in filings and shows renewed growth", kill_signal: "order-booking KPI remains undisclosed while revenue stays flat"}
+  - {priority: 4, name: "Aftermarket/spares annuity revenue from 60,000+ installed base", type: "REVENUE/PRICE-MIX", timeframe: "ongoing", conviction: "L", confirm_signal: "company discloses a distinct spares/services revenue line showing growth", kill_signal: "claim remains asserted only in IR material with no financial-statement support"}
+  - {priority: 5, name: "Export/ATEX international expansion", type: "REVENUE/SECTORAL", timeframe: "medium", conviction: "L", confirm_signal: "standalone export sales turn from decline to sustained growth", kill_signal: "export sales continue to decline or stay flat"}
+guidance:
+  - {item: "Modernisation and capacity expansion capex", number: "RS 35.00 crore; capacity 1500 to 3500 units/yr; ~40% capital subsidy expected", timeframe: "FY26-FY29E per capex slide, vs by end-2027 per Journey slide (conflicting)", stated_in: "Investor Presentation, 29-Jun-2026 (board approval referenced as Feb-2026, no primary filing provided)"}
+  - {item: "Dividend per share", number: "RS 7.50 (75%)", timeframe: "FY25 paid, FY26 proposed", stated_in: "AR FY25 Board's Report, 13-Aug-2025; FY26 audited results, 30-May-2026"}
+  - {item: "Additional gratuity liability (New Labour Codes)", number: "RS 42.04 lakh (9M FY26) revised to RS 65.56 lakh (FY26 full year)", timeframe: "FY26", stated_in: "Q3 FY26 results, 14-Feb-2026; FY26 annual results, 30-May-2026"}
+  - {item: "CSR unspent-amount transfer", number: "RS 5.20 lakh", timeframe: "committed by 30-Sep-2025, delivered 06-Aug-2025", stated_in: "Secretarial Audit Matter of Emphasis and CSR Annexure-2, AR FY25"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "FY25 AR MD&A (13-Aug-2025)", promise: "General commitment to modernise production/design capabilities and continue investing (no number or date given)", outcome: "Partial", explanation: "Crystallised ~6 months later into a specific RS 35cr plan (single-sourced to Investor Presentation); FY26 actual capex payment only ~9% of the RS 35cr plan; completion date internally conflicting"}
+    - {promised_in: "FY25 AR Board's Report / MD&A (13-Aug-2025)", promise: "Implicit continuation of best-ever-performance momentum: 28.33% revenue growth, 40.64% EBITDA margin, 39.40% PBT margin", outcome: "Missed", explanation: "FY26 audited results show revenue +0.4%, PAT -9.7%, EBITDA margin down to ~35%; management attributes this to product-customer mix shift and input cost pressures without quantification"}
+    - {promised_in: "FY25 AR Board's Report order-booking table plus MD&A narrative (13-Aug-2025)", promise: "Bullish narrative on thermal/coal project pipeline and refinery-sector penetration alongside a same-document order-booking table showing a 3.12% YoY decline", outcome: "Partial/mixed", explanation: "Internal tension between optimistic text and declining order-booking figure; no order-booking figure disclosed at all in FY26 filings to resolve which signal proved correct"}
+    - {promised_in: "FY25 AR Board's Report (13-Aug-2025)", promise: "Dividend RS 7.50/share (75%) for FY25", outcome: "Delivered", explanation: "FY26 audited results confirm the same RS 7.50/share proposed again for FY26, dividend held flat despite profit decline"}
+    - {promised_in: "Secretarial Audit Matter of Emphasis / FY25 AR CSR Annexure-2 (05-Aug-2025)", promise: "Unspent CSR balance RS 5.20 lakh transferred to specified fund by 30-Sep-2025", outcome: "Delivered", explanation: "Transferred to PM National Relief Fund on 06-Aug-2025, ahead of deadline, self-flagged transparently"}
+    - {promised_in: "Q3 FY26 results (14-Feb-2026)", promise: "Estimated additional gratuity liability RS 42.04 lakh (9M FY26) under New Labour Codes pending final rules", outcome: "Delivered/updated", explanation: "FY26 annual results recognise RS 65.56 lakh for the full year, a coherent quarter-to-annual progression; underlying rules remain unnotified, a genuine external uncertainty"}
+    - {promised_in: "Investor Presentation (29-Jun-2026), Journey slide vs Capex slide, same document", promise: "Modernisation programme completion by end-2027 (Journey slide) and separately 2-3 years / FY26-FY29E (Capex slide) for the identical RS 35cr programme", outcome: "Missed/unresolved", explanation: "Two different completion dates roughly 14+ months apart for the same project within one document, with no reconciliation offered"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "AR FY25's bullish framing and vague modernisation intent converted, single-sourced and ~6 months later, into a concrete RS 35cr capex plan, but FY26 actuals showed revenue essentially flat and PAT down 9.7% against that framing; the order-booking KPI that could have tested the sectoral-tailwind narrative was dropped from FY26 disclosure entirely; and the capex programme's own completion date conflicts by over a year within the same source document. No-concall default of C is held; delivery evidence is mixed-to-negative, not positive, so no upgrade to B is supported."
+peer_questions:
+  - {question: "Do ELECON/TRF corroborate the government-driven demand tailwind (25 new thermal plants, 15 coal mining projects, 500 GW power target, 300 MTPA steel target) and at what pace is order conversion occurring in power-transmission/rotating-equipment?", why: "Fluidomat's own order-booking KPI has gone dark in FY26 exactly when this narrative needed corroboration", check_peers: ["ELECON", "TRF"]}
+  - {question: "Are ELECON/TRF citing similar unquantified input-cost-pressure or product-customer-mix-shift margin headwinds in FY26, and can they quantify raw-material cost drivers?", why: "Tests whether Fluidomat's unquantified explanation reflects an industry-wide pattern or a company-specific disclosure gap", check_peers: ["ELECON", "TRF"]}
+  - {question: "Do ELECON/TRF report capacity utilisation near Fluidomat's stated ~96%, and are they undertaking comparable capex cycles with clearly stated, non-conflicting completion timelines?", why: "Benchmarks whether Fluidomat's capex/expansion trigger reflects a genuine sector-wide capacity crunch and provides a timeline sanity check against Fluidomat's internally conflicting dates", check_peers: ["ELECON", "TRF"]}
+  - {question: "Do ELECON/TRF disclose a distinct aftermarket/spares revenue line behaving as an annuity independent of new-order cyclicality?", why: "Fluidomat asserts an aftermarket-annuity narrative from its 60,000+ installed base but discloses no supporting revenue line", check_peers: ["ELECON", "TRF"]}
+  - {question: "What export demand trends are ELECON/TRF reporting for power-transmission/rotating equipment, and does this align with or contradict Fluidomat's declining standalone export sales alongside its 15+-country global-footprint claim?", why: "Direct claim-vs-peer-reality check on a quantified metric moving opposite to Fluidomat's own narrative", check_peers: ["ELECON", "TRF"]}
+red_flags:
+  - {flag: "Capex completion timeline self-conflicts within the single most detailed disclosure document (end-2027 vs FY26-FY29E) for the identical RS 35cr programme", severity: "Medium"}
+  - {flag: "Order-booking KPI, previously disclosed annually in the AR, is entirely absent from FY26 result filings, exactly when performance weakened", severity: "Medium"}
+  - {flag: "Only ~9% of the announced RS 35cr capex was actually spent by FY26 close (RS 326.56 lakh per cash flow statement)", severity: "Low-Medium"}
+  - {flag: "FY26 delivered materially weaker growth and margins than FY25 AR's bullish framing implied, miss attributed only to external factors", severity: "Medium"}
+  - {flag: "Two long-outstanding bank charges (CHG-4) remain unfiled with untraceable charge-holders despite loans repaid long back", severity: "Low"}
+  - {flag: "Standalone export sales declined FY24 to FY25 even as export/ATEX is framed as a core growth pillar in FY26 IR material", severity: "Low"}
+  - {flag: "Aftermarket-annuity claim (60,000+ installed base) has no supporting revenue-line disclosure anywhere in the financials", severity: "Low-Medium"}
+  - {flag: "Board and senior management heavily promoter-family concentrated, with managerial remuneration growth outpacing employee remuneration growth in FY25", severity: "Low-Medium"}
+dropped_triggers:
+  - "Order-booking figure (annually disclosed in FY25 AR) is absent from all FY26 result filings"
+timeline_slippages:
+  - "Modernisation/capacity-expansion completion date conflicts within the Investor Presentation: 'by end 2027' (Journey slide) vs 'FY26-FY29E' (Capex slide) for the identical RS 35cr programme"

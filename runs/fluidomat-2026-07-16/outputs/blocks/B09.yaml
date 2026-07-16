@@ -1,0 +1,62 @@
+stage: B09-tam
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "no concalls available"
+  - "rating/announcements absent"
+  - "shareholding data absent"
+  - "independent research/broker coverage absent"
+  - "B07 capex_embedded_growth_pct formal handoff not provided to this stage; capacity data sourced directly from AR/investor presentation instead"
+  - "precise organized/unorganized split for India fluid coupling market not available (estimated qualitatively at 25-35% unorganized)"
+  - "competitor count and market concentration (top-3 share) data for India fluid coupling market not available"
+  - "Voith India and Ghatge Patil Industries fluid-coupling-segment revenue not disclosed separately, blocking a clean peer-aggregation TAM"
+  - "precise India-share-of-global-fluid-coupling-demand percentage not sourced; estimated at 5-9% via end-industry capacity-share proxy"
+flags:
+  - "management's cited 'TAM' is a ₹11+ lakh crore economy-wide infra capex figure, not a fluid-coupling served-market size; ratio vs conservative TAM is ~2,200x and is not a meaningful comparison because no served-market number was ever given"
+  - "export share declined from ~5.0% (FY24) to ~3.0% (FY25) of revenue, directly contradicting the capex programme's stated 'enter new geographies' rationale"
+  - "FY26 revenue was flat YoY (0% growth) against an estimated ~7% TAM growth rate, i.e. company is currently losing relative share, not gaining it, on a trailing basis"
+  - "VFD (electronic variable-frequency drive) substitution risk: India VFD market (~₹4,200 Cr) is roughly 8-9x the conservative India fluid-coupling TAM, a structural long-run share-of-wallet risk"
+  - "capex plan (1,500 to 3,500 units/year by FY29) implies a revenue capacity (~₹175-280 Cr) well above the conservative SOM_3yr figure (₹101 Cr); the capex plan, not the SOM, is the more optimistic side of this comparison"
+  - "FY26 investor presentation dropped the order-booking KPI entirely versus FY25 AR's explicit disclosure (which itself showed a 3.12% YoY decline) — a disclosure-quality flag relevant to reading management's demand narrative"
+  - "company's own installed-base figures are internally inconsistent (60,000+ total couplings on one slide vs. '5,000+ variable speed | 60,000 fixed speed' = 65,000+ on another slide)"
+  - "market cap discrepancy: injected task context states ₹502 Cr while the FY26 investor presentation states ₹411 Cr 'as of 25-Jun-2026' (~3 weeks earlier); not resolved, both cited"
+market_definition: "India market for hydrodynamic fixed/variable-speed fluid couplings (up to 6,000 kW) for power, steel, cement, mining, material handling and off-highway/IC-engine drives, excluding electronic VFDs and automotive torque converters"
+tam_cr: {conservative: 500, realistic: 900}
+sam_cr: 275
+sam_pct_of_tam: 55
+som_3yr_cr: 101
+som_5yr_cr: 127
+som_implied_revenue_cagr: {yr3: 11.7, yr5: 11.9}
+current_sam_share_pct: 26
+revenue_headroom_x: 3.8
+tam_growth_pct: 7
+runway_class: "MODERATE"
+mgmt_claim_cr: 1100000
+mgmt_claim_ratio: 2200
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient — FY26-FY29 capex plan (1,500 to 3,500 units/yr) implies a ~₹175-280 Cr revenue ceiling versus SOM_3yr of ₹101 Cr; the capex plan is the more optimistic side of the comparison, not the SOM"
+methods_used:
+  - "top-down (global industry report triangulation × estimated India demand share)"
+  - "bottom-up (addressable units × realization, anchored to Fluidomat's own capacity/utilization)"
+  - "peer revenue aggregation (incomplete — two of three named peers do not disclose segment revenue) + unorganized-sector estimate"
+  - "global benchmark (India share of global steel/cement/thermal capacity as a cross-check on demand-share assumption)"
+stale_data_flags:
+  - {datapoint: "Global fluid coupling market ~US$1,273.3mn by 2026", source: "Transparency Market Research (via PRNewswire syndication)", year: "report vintage inferred ~2018-2019"}
+searches_performed:
+  - "fluid coupling market size India 2025 2026 crore"
+  - "global fluid coupling market size 2025 2030 million"
+  - "India variable frequency drive VFD market size 2025 crore"
+  - "India power transmission equipment gearbox couplings market size crore CRISIL ICRA"
+  - "fluid coupling manufacturers India competitors Voith Fenner Fluidomat market"
+  - "India thermal power capacity addition target 2030 GW coal new plants"
+  - "fluid coupling market Asia Pacific share percent India region 2025"
+  - "India steel capacity target 300 MTPA 2030-31 National Steel Policy"
+searches_skipped:
+  - "6wresearch.com India Fluid Coupling Market full report (403 Forbidden)"
+  - "maximizemarketresearch.com global fluid coupling report full text (403 Forbidden)"
+  - "expertmarketresearch.com fluid couplings report full text (403 Forbidden)"
+  - "grandviewresearch.com India VFD outlook page full text (403 Forbidden)"
+  - "Ghatge Patil Industries standalone fluid-coupling segment revenue (not attempted given peer-disclosure gap established elsewhere)"
+  - "Voith India entity/segment revenue (deprioritized — private German group, unlikely to disclose India fluid-coupling-segment financials)"

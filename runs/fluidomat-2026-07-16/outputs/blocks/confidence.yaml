@@ -1,0 +1,14 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 94      # B12a verifier A: 0 CRITICAL, 4 MAJOR (known items), 182 numbers checked
+  redflag_coverage: 79          # B12b verifier B (no-concall): 14 flags found, 8 caught + 3 partial; 3 missed all MINOR
+  framework_adherence: 96       # B12c verifier C, GATE 0 + EMERGING MOAT scope ONLY (76/79 rules); valuation half pending phase 3
+  peer_utilisation: 80          # B12d verifier D: 4/5 peers substantive; all 5 B06 verdicts hold on re-verification
+  overall: 79                   # min of the four (redflag-bound)
+  band: "normal (75-89): note specifics, no confidence-driven verdict downgrade"
+  rework_triggered: false       # no CRITICAL numerical finding; no verifier acceptance < 60%
+  valuation_framework_adherence: pending_phase_3
+  notes:
+    - "framework_adherence covers Gate 0 + Emerging Moat only; verifier C's valuation-adherence audit (B10/B11) runs in phase 3 and will revise this component"
+    - "overall 79 sits in the normal band; PROCEED-family verdicts are NOT downgraded (downgrade applies only in the 60-74 band)"
+    - "B12b/B12d MAJOR findings are citation-accuracy/coverage items, none flipping a verdict or fabricating a figure; B12a had 0 CRITICAL"

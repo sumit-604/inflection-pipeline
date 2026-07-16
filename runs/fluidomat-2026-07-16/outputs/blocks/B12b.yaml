@@ -1,0 +1,28 @@
+stage: B12b
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 14
+caught: 8
+partially_caught: 3
+missed:
+  - {severity: "MINOR", item: "Related-party self-dealing not surfaced: ED Kunal Jain leases office premises to the Company (Rs 2.48 lakh, Note 45c)", anchor: "AR FY25 Note 45c; Explanatory Statement Item 5/6"}
+  - {severity: "MINOR", item: "Related-party purchase from Focus Eye Technocraft P.Ltd (relative-of-director interested), Rs 2.69 lakh, not surfaced", anchor: "AR FY25 Note 45c"}
+  - {severity: "MINOR", item: "Presentation chart mislabel: slide-24 PAT-margin/EPS charts axis-labelled FY23-26 but carry Q4 values, conflicting with slide-23", anchor: "Investor Presentation p.23 vs p.24"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C is correct; mixed-to-negative delivery, external-blame framing, dropped order-booking KPI, unreconciled capex-date conflict, and Q4-only IR framing support C not B under the no-concall cap"
+findings:
+  - {severity: "MINOR", location: "B05 4D/red_flags", description: "Missed specific related-party lease from ED Kunal Jain to the Company (Rs 2.48 lakh, Note 45c); folded into generic family-concentration flag"}
+  - {severity: "MINOR", location: "B05 4D/red_flags", description: "Missed related-party purchase from Focus Eye Technocraft P.Ltd (Rs 2.69 lakh, Note 45c)"}
+  - {severity: "MINOR", location: "B05 2D", description: "Under-weighted: Investor Presentation omits the 9M/Q3 FY26 trough (Q3 PAT -58% YoY), showing only Q4 rebound and flat FY; selective-framing mechanism not named"}
+  - {severity: "MINOR", location: "B05 2C/2D", description: "Missed presentation internal inconsistency: slide-24 PAT-margin/EPS charts mislabelled vs slide-23"}
+  - {severity: "MINOR", location: "B05 2D", description: "Under-weighted stale related-party list (Note 45a lists former IDs as current; Fluidomat UK shown as present Wholly Owned Subsidiary post-divestment)"}
+  - {severity: "MINOR", location: "B05 3D", description: "Under-weighted cash-conversion deterioration: FY26 CFO 1074.98 lakh vs PAT 2006.18 lakh (~54%), CFO -25% YoY on receivables +32%, with management narrative silent"}
+  - {severity: "MINOR", location: "B06 inputs", description: "Peer transcripts absent from run inputs; B06 peer quotes unverifiable from provided artifacts. Deferred to Verifier D; sourcing-traceability limitation, not asserted fabrication"}
+critical_count: 0
+major_count: 0
+minor_count: 7
+acceptance_rate: 79

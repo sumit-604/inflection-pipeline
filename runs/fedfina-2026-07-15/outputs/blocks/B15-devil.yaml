@@ -1,0 +1,17 @@
+stage: B15-devil
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "ROE ~12.6% approx equals CoE 13.5% (negative economic spread); justified P/B 0.9-1.2x vs market 2.09x, so even the bull's most optimistic non-anchored ROE 14-16% implies ~1.0-1.2x book — the stock is ~1.8-2x its own justified value at CMP; the AVOID survives the symmetric Type II test."
+  - "52% gold-AUM growth is ~90% gold price, not tonnage (flat ~11.2t; Manappuram tonnage +2.8% YoY, contradicted in B06); strip the price effect and growth falls toward/below the 20% FTTCP falsifier — a leveraged gold-price bet dressed as a franchise."
+  - "SHARED CATALYST fragility: a single unseen Q4 FY26 credit-cost print >1.1% simultaneously self-withdraws the Pillar 2L 1.00x band AND weakens the Pillar 1 ROE-recovery leg; the four-pillar base is one catalyst counted twice, and the data to verify it (Stage 2 / old-new split / collection efficiency) was withheld on two calls."
+  - "The 1.00x 'Sound' asset-quality band is an operator override that overrides thin coverage: PCR 32-38% vs 60-70% norm, ~30% cure on secured paper, impairment +228.6% YoY, credit cost held in band while PCR was consumed (40% -> 32.29%); on the analyst's 0.80x the destination PE and fair value fall further and the AVOID hardens."
+  - "Governance/quality: near-total exec turnover in 18 months (MD&CEO, CRO x2, COO vacant, 2 CBOs, CS), CRAR disclosure dropped as leverage rose (D/E 3.78->3.99), RPT ceiling Rs 4,459 Cr ~2x turnover, True North (informed early PE) fully exited into the recovery — grade B flatters a book run opaquely at its most stressed phase; cost-to-income 56-57% is 15-25 pts worse than every quantified peer with the fix deferred to an unverified FY27."

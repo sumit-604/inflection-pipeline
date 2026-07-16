@@ -1,0 +1,50 @@
+stage: B01-gate0
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "annual report absent"
+  - "results absent"
+  - "rating absent"
+  - "shareholding absent"
+  - "announcements absent"
+  - "prospectus absent"
+  - "presentation absent"
+  - "research absent"
+  - "concalls declared-unavailable"
+  - "capex / PP&E purchase breakdown not separable from aggregate Cash from Investing Activity (screener Data_Sheet) — FCF not computable"
+  - "Trade Payables not separately reported (Other Liabilities is an aggregate current+other liabilities line)"
+  - "Current Assets / Current Liabilities not split from Total Assets / Total Liabilities in screener Data_Sheet"
+  - "R&D expense not disclosed"
+  - "promoter holding, pledge, and contingent liabilities data entirely absent"
+  - "FY26 Power & Fuel, Other Mfr. Exp., and Selling & Admin cells blank in AVANA P&L (screener Data_Sheet)"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE with historical depressors identified: FY21-FY22 sub-scale/declining revenue base (22.56->14.95->20.43cr, screener Data_Sheet) drags Block A (min ROCE 7.09% FY21, median ROE 13.79%) despite a strong FY24-FY26 inflection (Sales 52.99->61.49->83.86cr, PAT 4.02->8.31->11.72cr)."}
+  - {type: FLAG-CASH, reason: "Block B core score 1/20 is mostly a data-availability artifact (B2/B3 FCF not computable, B4 uses an Other-Liabilities-as-payables proxy), not confirmed weak cash quality; B1 (CFO/PAT=0.62, the only fully computed sub-metric) sits on a sharply improving CFO trend, FY23 -0.32cr to FY26 7.95cr (screener Data_Sheet)."}
+  - {type: FLAG-CAPITAL-STRUCTURE, reason: "FY26 Equity Share Capital jumped 0.79cr (FY25) to 22.65cr (FY26), ~28.7x, with Reserves 21.01->36.43cr and CFF +19.78cr (screener Data_Sheet, FY26); consistent with a capital raise / listing restructuring coincident with the Kaycee Industries -> Avana Electrosystems rebrand. Flag for stage 11 (share count/EPS base) and stage 13 synthesis."}
+  - {type: FLAG-DATA-THIN, reason: "Moat FORTRESS read (7/12 tests >=3) rests entirely on screener Data_Sheet-derived quantitative proxies (EBIT=PBT+Interest, GM proxy, 3-4 company peer set incl. one provenance-ambiguous member) with zero qualitative corroboration (no AR, concall, presentation, prospectus, or rating exists for AVANA). Verify qualitatively before crediting downstream."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 10, B: 1, C: 18, D: 20, E: 0}
+core_score: 49
+moat_score: 27
+grand_total: 76
+moats_confirmed: 7
+moat_class: "FORTRESS"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 (score=1/20) -> max GOOD cap; non-binding since base classification (AVERAGE) is already below the cap. Driven by capex/payables data unavailability (FY20-FY26), not confirmed poor cash conversion."
+history_downgrade: true
+data_notes:
+  - "No loss-to-profit swing: PAT positive all FY20-FY26 (screener Data_Sheet)"
+  - "EBIT computed as PBT + Interest (screener Data_Sheet); listed expense lines do not sum to reported PBT in any year (~2.4cr gap), so EBIT/EBITDA are not built bottom-up"
+  - "EBITDA = EBIT + Depreciation (screener Data_Sheet)"
+  - "Capital Employed proxy = Total Assets - Other Liabilities (= Net Worth + Borrowings), used for ROCE, since current/non-current liabilities are not split in the screener Data_Sheet"
+  - "Current Ratio proxy = (Receivables+Inventory+Cash) / Other Liabilities; current portion of Borrowings not separable (FY26 Borrowings=0.77cr, immaterial)"
+  - "Payable Days proxy = Other Liabilities / Revenue x 365 (Trade Payables not separately reported)"
+  - "M9 Gross Margin proxy = (Revenue - Raw Material Cost - Change in Inventory) / Revenue, per framework's stated proxy allowance"
+  - "M2/M5/M9 peer set = Aartech Solonics, Danish Power, Marsons (screener Data_Sheets, FY26); 504084-Data_Sheet (labeled KAYCEE INDUSTRIES LTD, likely AVANA's pre-rename listing) used only as a sensitivity check, excluded from primary peer median to avoid same-entity double count -- inclusion did not change any moat tier outcome"
+  - "M6 (R&D), M7 (Regulatory), M8 (Distribution): PEER DATA NEEDED / DATA NOT AVAILABLE, scored 0"
+  - "M11 selling-expense-% trend confirmed only through FY25; FY26 Selling and Admin cell is blank in the screener Data_Sheet"
+block_b_trend: "improving - CFO swung from -0.32cr (FY23) to 7.95cr (FY26, screener Data_Sheet), a 7-year high; cumulative CFO/PAT for the full FY20-FY26 window (0.62x) still reflects the earlier weak years FY20-FY23"

@@ -3,23 +3,30 @@ company: "544516"
 run_date: "2026-07-15"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH FLAGS"
 verdict_rule_applied: 3
-flags_active: ["FLAG-CASH"]
-flag_cash_determination: "STRUCTURAL"
-flag_promoter_handling: "B08 CAUTION (below CONCERN/AVOID inline threshold); governance surfaced proportionately, not as headline flag"
-confidence_delta: {numerical: 86.7, redflag: 74, framework: 100, peer: 100, overall: 74}
-confidence_band: "60-74 (holds PROCEED WITH FLAGS at the PROCEED-family floor; no REWORK)"
-valuation_decision: ""              # excluded — Phase 1 lite, valuation deferred to Phase 3
-entry_range: {low: 0, high: 0}     # excluded — Phase 1 lite
-headline: "Rail components maker grows, cash conversion worsens"
-falsification_metric: "H1 FY27 standalone OCF negative again with >6-month receivables share above 23.4% would confirm STRUCTURAL and remove the one downgrade condition"
+flags_active: ["FLAG-CASH", "FLAG-GATE0", "FLAG-PROMOTER", "FLAG-EMOAT", "SHARED-CATALYST"]
+confidence_delta: {numerical: 86.7, redflag: 74, framework: 95, peer: 100, overall: 74}
+valuation_decision: "AVOID"
+entry_range: {low: 155, high: 193}
+mos_price: 155
+destination_pe: {track1_rrm_governing: 13.1, track2_additive: 16.0}
+hurdle_verdict: "STOP"
+prob_weighted_cagr_3yr: 2.6
+devil_overall: "SURVIVES"
+cash_determination: "GROWTH-INDUCED (operator override; 0.80x; OR-gated falsifier, ageing primary)"
+headline: "Rail components growth outruns its cash conversion"
+falsification_metric: "H1 FY27 standalone OCF negative on a full-half basis while >6-month receivables hold above 23.4% with zero provisioning"
 monitorables_count: 8
 publish_candidate: true
-publish_candidate_summary: "Issuer blamed a 490bps EBITDA margin fall on sector-wide steel inflation while peer FRONTSP expanded margin 533bps in the identical steel window; clean checkable example of testing a sector-shock narrative against peer disclosure"
-files_written:
+publish_candidate_summary: "FRONTSP expanded EBITDA margin +533bps in the same steel window while Airfloa compressed ~490bps, contradicting the sector-wide margin excuse (peer-sourced)"
+deliverables:
   - outputs/final/business-narrative.md
-  - outputs/final/gate-recommendation.md
+  - outputs/final/fttcp-recommendation.md
   - outputs/final/verifier-summary.md
-notion_save: {mode: "not-run-phase-1-lite", drive_link: "NOT PROVIDED"}
+  - outputs/final/fttcp-handoff.md
+notion_save:
+  page_title: "Airfloa Rail Technology Ltd (544516) — AVOID on valuation, PROCEED WITH FLAGS"
+  mode: append-never-overwrite-status
+  drive_link: "NOT PROVIDED"

@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [rating, announcements, shareholding, research]
+flags:
+  - "GAAT IP capitalization (Rs738.50 lakh) includes Rs250 lakh paid to Promoter Dr. Manika Khanna, reclassified from 'Advance to Supplier' to development cost — related-party governance flag on A2"
+  - "AR FY24-25 discloses Foreign Exchange Earnings as NIL, contradicting the 25-30% international-patient-mix claim repeated across the Q4 FY26 call — unresolved contradiction on E2"
+  - "Employee attrition 51%/51%/63% FY23-25 against a 5-embryologist, 117-person org undermines F1 talent-density and the credibility of the 19-hub scaling plan"
+  - "Working-capital/receivables deterioration (net WC days 11->114->135, receivable days 7->104->170) is still the dominant documented fact as of FY26; management's corrective pricing actions (May-2026 call) are stated but unproven at scale"
+  - "AR FY24-25 discloses R&D expenditure NIL and technology absorption NIL, in tension with the AI-partnership and GAAT-innovation narrative"
+  - "capex_embedded_growth_pct computed per framework formula is not decision-useful for this asset-light, lease-based hub model (PP&E base near-zero); hub-count growth (+271%, 7->26 hubs by FY29) is the more defensible capacity proxy"
+  - "inputs/announcements/ folder is empty — no primary exchange filings available to corroborate any hub-opening dates, Lucknow hospital lead, or international-spoke agreements"
+em_score: 13
+em_classification: "MODEST"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "present"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-36m"}
+evidence_mix: {documented: 6, claim: 12, inference: 5}
+completionist_recount: "documented recount performed: 4 documented items across 3 categories (G1 audited FY26 consolidated balance sheet; H2 IVF 2.0 launch date/Ministerial inauguration and dated 01-May-2024 London collaboration agreement; A2 GAAT Intangible Asset Under Development, quality-flagged for related-party taint and excluded from active categories)."
+catalysts_12m:
+  - {catalyst: "3 new hubs (South Delhi, Nagpur, Gurgaon) opening on 'next couple of months' guidance", window: "12m", evidence_type: "claim", anchor: "Q4 FY26 call, 29-May-2026, p.5"}
+  - {catalyst: "3 international spokes (Nigeria, Sydney, Paris) signed/opened this quarter", window: "12m", evidence_type: "claim", anchor: "Q4 FY26 call p.5, p.9-10"}
+  - {catalyst: "WC/receivable-days reversal from doubled upfront payment (Rs40k->Rs80k) and Rs40k late-transfer fee", window: "12m", evidence_type: "claim", anchor: "Q4 FY26 call p.11-12"}
+  - {catalyst: "Non-NIL foreign-exchange earnings appearing in next AR, resolving E2 contradiction", window: "12-24m", evidence_type: "inference", anchor: "AR FY24-25 Board Report item 13C vs Q4 FY26 call international-mix claims"}
+capex_embedded_growth_pct: 335
+optionality_register:
+  - {optionality: "Lucknow women's-health hospital (30-yr lease, 10% revenue-share, up to Rs15cr) — unconfirmed in any document reviewed", converting_evidence: "Signed lease/board resolution filed with exchange, or AR capex note", first_appears: "Exchange filing or next AR", window: "12-24m"}
+  - {optionality: "GAAT genome-sequencing module commercial launch", converting_evidence: "Disclosed revenue linkage, patent grant, or independent clinical validation", first_appears: "AR intangible-asset note / investor presentation", window: "24-36m"}
+  - {optionality: "Overseas spokes (Nigeria, Sydney, Paris)", converting_evidence: "Signed local-partner agreements; FX earnings actually appearing (currently NIL)", first_appears: "Concall / next AR FX-earnings line", window: "12m"}
+  - {optionality: "IVF 2.0 AI success-rate uplift (+8-9% claim)", converting_evidence: "Statistically powered sample or third-party/peer-reviewed outcome data", first_appears: "Investor presentation / concall with larger n", window: "12-24m"}
+  - {optionality: "HDFC Bank + NBFC patient-financing tie-up", converting_evidence: "Disclosed AUM financed, patient volumes, receivables-days impact", first_appears: "Concall / AR", window: "12m"}
+  - {optionality: "Insurance inclusion for fertility treatment (policy tailwind)", converting_evidence: "IRDAI circular or government notification", first_appears: "Press / regulatory filing", window: "24-36m+"}
+  - {optionality: "Industry consolidation — Gaudium as acquirer rather than bystander", converting_evidence: "Signed acquisition agreement or disclosed M&A mandate", first_appears: "Exchange filing", window: "unclear"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "AVERAGE backward core (63/160) meets a MODEST forward emerging-moat score (13/80, 3 active categories) with no EXPANSION-level catalyst to justify a transition-alpha upgrade; the one solidly documented tailwind (war chest) sits alongside deteriorating cash conversion, a related-party-tainted IP asset, and an unresolved FX-earnings contradiction."
+top_moat_risks:
+  - "WC/receivables deterioration continues into FY26 despite management's stated corrective pricing actions, unproven at scale"
+  - "GAAT IP capitalization involves an undisclosed-then-reclassified related-party payment to the promoter, weakening A2 credibility"
+  - "Employee attrition 51-63% FY23-25 across a 5-embryologist bench threatens execution of the 19-hub rollout"
+  - "International-patient/medical-tourism narrative (25-30% mix) is unsupported by FY24-25 AR foreign-exchange earnings, recorded as NIL"
+  - "IVF 2.0 AI success-rate uplift (+8-9%) is a single-quarter, explicitly small-sample management claim with no independent verification"

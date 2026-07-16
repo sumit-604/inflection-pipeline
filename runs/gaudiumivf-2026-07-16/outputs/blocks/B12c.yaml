@@ -1,0 +1,23 @@
+stage: B12c
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 39, fails: []}
+emoat:
+  rules_checked: 13
+  fails:
+    - "B07 closing YAML block (stage: B07-emoat) NOT emitted; report ends at 'Input gaps carried forward'. Required by framework OUTPUT spec and CLAUDE.md 'done' definition; breaks machine-readable Pillar-3 handoff (em_score, active_categories, catalysts_12m, capex_embedded_growth_pct, optionality_register). Content present in prose; no value changed. MAJOR."
+valuation: pending-phase-3
+framework_adherence: 98            # gate0 + EM only; 52 passed / 53 checked
+recomputed_destination_pe: ""      # concur (valuation deferred to phase 3)
+recomputed_decision: ""            # concur: Gate0 AVERAGE, EM MODEST both stand
+findings:
+  - {severity: "MAJOR", location: "B07 §OUTPUT / end of report", claim: "B07-emoat closing YAML block required by framework", finding: "block absent; downstream structured EM handoff missing", recompute: "none — prose content intact, no score/decision change"}
+  - {severity: "MINOR", location: "B01 Block A", claim: "RoCE/RoE per stated framework formulas", finding: "RHP KPI definitions used (RoCE denom NW+Borrow+Lease+DTL; RoE closing NW) instead of framework defaults; source-permitted as screener CSVs empty; A3 band unchanged", recompute: "A3=5 on either basis"}
+  - {severity: "MINOR", location: "B01 Block F M2/M5/M9", claim: "peer-dependent moat tests", finding: "M2 credits foreign-peer EBITDA (score 5) while M5/M9 mark PEER DATA NEEDED; defensible under 'score 0 only if peer data not provided' but asymmetric", recompute: "no change; moat count stays 3"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 98                # rules passed / rules checked, gate0+EM only
+coverage_note: "Phase 1 scope: Gate 0 (B01) + Emerging Moat (B07) only. Valuation (B10/B11) deferred to Phase 3, excluded from acceptance_rate. Audited rule application, not raw-number accuracy (Verifier A) nor company quality."

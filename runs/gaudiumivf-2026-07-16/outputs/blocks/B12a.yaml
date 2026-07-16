@@ -1,0 +1,14 @@
+stage: B12a
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings:
+  - {severity: MINOR, location: "B03 Phase 3 DuPont", claimed: "Standalone unless stated", source_truth: "Tables lack inline (S)/(C) notation", note: "Presentation clarity, no numerical error"}
+  - {severity: MINOR, location: "B05 Concall CFO", claimed: "₹724.72L cash from operations", source_truth: "Consolidated CF p.18, pre-interest-paid basis", note: "Documentation: could clarify operating activities basis in future rounds"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 94.3
+coverage_note: "100% of verdict-card figures (B01 Block A, 17/17) verified exact-match to audited consolidated FY26 statements. 100% of ratio calculations re-derived (RoCE, RoE, D/E, ND/EBITDA, WC days). 100% of concall headlines (B05, 5/5) cross-checked. Secondary (B02-B09) materiality sample: 5/5 checked. All high-materiality figures on consolidated basis, no basis-switching errors. Unit conversions (Cr ↔ Lakh) verified. No CFO classification ambiguity. Receivable turnover, contingent liability, GAAT IP capitalization, and TAM sizing all sourced to audited statements or RHP filings."

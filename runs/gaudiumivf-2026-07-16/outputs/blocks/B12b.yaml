@@ -1,0 +1,22 @@
+stage: B12b
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 15
+caught: 12
+partially_caught: 2
+missed:
+  - {severity: "MINOR", item: "Q4 quarterly pickup count asked but never answered; only FY26 (2,255) given", anchor: "Call, Abhijeet Porwal, p.9"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C (Mixed); verifiable financials offset by the zero-bad-debt contradiction, reactive disclosure, a deflected embryologist-capacity question, unquantified promoter litigation, and no track record on a maiden call"
+findings:
+  - {severity: "MAJOR", location: "B05 §1B guidance / §4C", item: "Embryologist-productivity red flag under-weighted: 5 embryologists vs 2,255 pickups (~451 each) vs claimed 120 each; analyst's 'per embryologist cycle is high' pushback deflected with 'we are hardworking people'", anchor: "Call, Abhijeet Porwal / Manika Khanna, p.9-10"}
+  - {severity: "MINOR", location: "B05 §2C/§4C", item: "'Almost zero' debt framing not itemized against ₹24.56cr borrowings that rose in absolute terms from ₹20.61cr (only the ratio fell 0.45x→0.16x)", anchor: "Call, p.6 vs p.7"}
+  - {severity: "MINOR", location: "B05 §3D/§4C", item: "Q4 quarterly cycle-count question unanswered; only full-year figure given", anchor: "Call, p.9"}
+  - {severity: "MINOR", location: "B06 Q4", item: "International-mix contradiction is sound but conflates bases (Gaudium 25-30% patient-count share vs peers' 2-4% revenue share); contradiction survives but denominator difference should be stated", anchor: "Call, p.9-10; B06 Part 1 Q4"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 80

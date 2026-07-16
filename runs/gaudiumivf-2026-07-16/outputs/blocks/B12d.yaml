@@ -1,0 +1,19 @@
+stage: B12d
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3, peer coverage map row KAYA Q4 FY25 (29-May-2025)", issue: "Peer-quarter mislabeled CITED-ONLY; Part 1 Q2 actually relies on a verbatim, load-bearing Rajiv Suri quote from this exact call ('typically, in the business, you first get collections and net revenue follows... packages are consumed over a period of time') to support the Q2 CONTRADICTED verdict. Coverage map understates B06's own peer utilisation by one peer-quarter.", note: "True peer_utilisation is 12/12, not the 11/12 B06's own table implies."}
+  - {severity: "MINOR", location: "B06 Part 1, Q3 answer", issue: "Gurugram/pollution quote anchored to RAINBOW-Concall_Feb_2026 but the sentence is verbatim in RAINBOW-Concall_Nov_2025 instead; adjacent Coimbatore and nine-to-twelve-months quotes in the same sentence are correctly anchored to Feb 2026.", note: "Content genuine and peer-verified; wrong quarter only, verdict unaffected."}
+  - {severity: "MINOR", location: "B06 Part 1, Q3 answer", issue: "'~100 clinics (FY18) to 76' figure stated with no inline anchor in that sentence; fact is genuinely present in KAYA-Concall_Oct_2024 (Prateek Giri Q&A) but uncited there.", note: "Figure accurate, anchor merely missing at point of use."}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 92

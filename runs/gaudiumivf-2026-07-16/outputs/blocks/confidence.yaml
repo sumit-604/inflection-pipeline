@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: GAUDIUMIVF
+run_date: 2026-07-16
+phase: 1
+confidence_delta:
+  numerical_acceptance: 94.3      # B12a (re-audited against consolidated FY26 statements)
+  redflag_coverage: 87            # B12b: 12 fully-caught + 2 partial of 15 verifier-found flags = (12 + 0.5*2)/15 = 86.7% (strict fully-caught = 80%); single miss is MINOR
+  framework_adherence: 98         # B12c, Gate 0 + Emerging Moat portion ONLY; valuation-adherence component PENDING PHASE 3
+  peer_utilisation: 100           # B12d: 12/12 peers used substantively (D corrected B06's own map which understated at 11/12)
+  overall: 87                     # min of the four
+  band: "normal (75-89): note specifics; no verdict downgrade, no REWORK"
+  valuation_framework_adherence: pending-phase-3
+rework_gate:
+  triggered: false
+  basis: "No verifier CRITICAL survives; no verifier acceptance_rate below 60% (lowest is B12b 80%). Verifier A CRITICALs from its first pass were false positives caused by not accessing the consolidated FY26 statements (present on p16-19 of results PDF 46148cbb); re-audit against those pages returned 0 CRITICAL / 0 MAJOR at 94.3%. The 'zero bad debt' item is a MANAGEMENT concall claim that B05 correctly recorded as CONTRADICTED (by the Rs31.97L FY26 ECL allowance), i.e. a correctly-caught contradiction, not a pipeline numerical error."
+verifier_acceptance_rates:
+  B12a_numerical: 94.3
+  B12b_redflags: 80
+  B12c_framework: 98
+  B12d_peers: 92
+notes:
+  - "Verifier A re-run provenance: first pass (standalone-only view) preserved at outputs/reports/B12a-numerical-v1-standalone-only.md; canonical B12a is the consolidated re-audit."
+  - "B12c flagged B07's report prose lacked the closing YAML fence (MAJOR); already remediated by the orchestrator writing outputs/blocks/B07-emoat.yaml from the stage's returned block. No EM score/decision changed."

@@ -1,0 +1,33 @@
+stage: B01-gate0
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating", "announcements", "shareholding (no post-listing Reg.31 filing provided; RHP pre-listing indicative used)", "research"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification downgraded GOOD -> AVERAGE by the data-confidence rule (only 4 fiscal years of consolidated audited/restated history, FY23-FY26; company listed 27-Feb-2026). Depressor is short post-IPO history, not deterioration -- revenue and PAT grew every scored year."
+  - type: FLAG-GATE0
+    reason: "Block B (Cash Generation Quality) = 5/20 triggers deal-breaker #2 (max GOOD). Working capital days rose 11.3 (FY23) to 156.3 (FY26), receivables grew from 2.1% to 51.2% of revenue; cumulative CFO/PAT=64.1%, cumulative FCF/PAT=14.3%. Feeds block_b_trend / FLAG-CASH downstream."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 15, B: 5, C: 15, D: 17, E: 11}
+core_score: 63
+moat_score: 15
+grand_total: 78
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: ["#2 Block B score 5 (<8) -> capped at max GOOD", "Data-confidence LIMITED (4 yrs) -> one-tier downgrade GOOD->AVERAGE"]
+history_downgrade: true
+data_notes:
+  - "FY2022 screener data (Sales Rs36.52Cr, PAT Rs8.83Cr) excluded from scored window -- pre-dates RHP restated set and pre-dates subsidiary consolidation (RHP CF note b)."
+  - "FY26 RoCE decline (54.40%->20.11%) substantially a denominator effect: ~Rs81Cr of IPO proceeds sitting unutilised in bank deposits (non-current, not cash-equivalents) as of 31-Mar-2026."
+  - "D1 Net Debt/EBITDA scored on reported Cash & Equivalents only (Rs878.57L); including Rs8,113.08L near-cash bank deposits would flip company net-cash."
+  - "M4/M10 scored 0: zero revenue-decline years (positive) but receivable days rose 7.5->186.7 days -- no scoring band fits this combination cleanly, scored conservatively."
+  - "M5/M9 PEER DATA NEEDED -- RHP states no Indian listed peer exists; foreign peers (Progyny Inc, Inspire IVF) not comparable for scale/brand ranking."
+  - "M6 N/A -- no R&D/Revenue ratio disclosed anywhere in sources."
+  - "E4 contingent liabilities Rs3,141.78L (tax demand Rs3,089.07L under appeal + patient claim ~Rs52.71L) sourced from RHP Note 39 (p.266), nearest available disclosure to FY26 close; not a FY26-year-end-dated figure."
+  - "E2 -28.68pp promoter holding change is a mechanical IPO dilution artifact (OFS + fresh issue), not organic post-listing selling."
+  - "No loss-to-profit swings -- PAT positive and growing in all 4 scored years."
+block_b_trend: "deteriorating -- WC days rose from 11.3 (FY23) to 156.3 (FY26), a 145-day increase, driven by trade receivables growing from 2.1% to 51.2% of revenue while revenue grew only ~2.4x (receivables grew ~59x); cumulative CFO/PAT=64.1%, cumulative FCF/PAT=14.3%."

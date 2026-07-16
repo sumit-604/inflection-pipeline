@@ -1,0 +1,16 @@
+stage: B12a
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 32
+findings:
+  - {severity: "MINOR", location: "B09 Section 1B", claimed: "Order book ₹52.24 Cr (30-Nov-2025)", source_truth: "Not in screener; sourced from RHP/IPO-aggregator per report", note: "Anchor NOT FOUND in local sources; claimed from IPO document. No contradiction found in any other data."}
+  - {severity: "MINOR", location: "B07 Section 2C", claimed: "Implied incremental revenue = 4.67 × 15.76 = 73.60cr", source_truth: "Exact arithmetic = 73.6352cr", note: "Rounding within tolerance (<0.1%)"}
+  - {severity: "MINOR", location: "B07 Section 2C", claimed: "As % of current revenue = 87.8%", source_truth: "Exact arithmetic = 87.75%", note: "Rounding within tolerance (<0.05pp)"}
+  - {severity: "MINOR", location: "B09 entire TAM section", claimed: "TAM estimates ₹1,100-1,700cr based on protection-relay and control-panel market reports", source_truth: "Third-party reports (Mordor Intelligence, Markets & Data, ICRA) behind HTTP 403 paywalls; data recovered via search snippets only", note: "Web-sourced tier-❓/📰 confidence level, not local-PDF verified. Report explicitly acknowledges this limitation. No contradiction found in peer concalls or other available evidence."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 88    # 28 verified clean out of 32 checked; 4 minor unanchored or rounding findings
+coverage_note: "100% of verdict-card figures (Gate 0 classification, core/moat/grand scores, deal-breaker application) verified clean against screener Data_Sheet. 100% of Block A-E and Moat M1-M11 scorecard inputs verified. All AVANA revenue/EPS/P/E figures in B09 verified. Peer moat metrics (AARTECH, DANISH, MARSONS EBITDA and gross margins) verified. B01 uses disclosed proxies (EBIT=PBT+Interest, Capital Employed=Total Assets−Other Liabilities, payable/GM/FAT proxies) consistent throughout; no unsourced assumptions. B08 (promoter) is entirely web-derived per design (no local AR/prospectus available); multiple fetch attempts returned HTTP 403; findings rest on search-snippet evidence, not primary PDFs—this is noted in B08 itself and is working as intended for degraded input. B09 TAM market-sizing anchors sourced from third-party reports behind paywalls (Mordor, Markets & Data, ICRA), accessed via search snippets; analyst assumptions (HT/LT split %, BOQ share %) flagged as non-sourced but transparent. Order-book figure (52.24cr, 30-Nov-2025) claimed from RHP but not locally verifiable; no contradicting evidence found. CWIP 4.67cr matches screener exactly. Overall: no fabrications, no mechanical errors, no material misstatements of sources. All limitations explicitly stated in upstream reports."

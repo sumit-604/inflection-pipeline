@@ -1,0 +1,17 @@
+Debt free coupling maker with slipping cash
+
+Fluidomat has made hydrodynamic fluid couplings for 55 years from Dewas in Madhya Pradesh, run by the Jain and Sharma family, selling fixed and variable speed couplings up to 6,000 kW to power, steel, cement, mining and material handling customers across India and about 15 countries. FY26 revenue was Rs 72 Cr, PAT Rs 20 Cr, and the shares trade near 25 times earnings. The balance sheet is genuinely debt free with about Rs 38 Cr in fixed deposits.
+
+The company is refreshing its board and its next generation at the same time. It replaced all three independent directors in August 2023, put a CFA charter holder in the CFO seat, elevated Radhica Sharma to Joint Managing Director in October 2025, and completed a fully disclosed intra family share gift in June 2026. It has also approved a Rs 35 Cr plan to roughly double capacity from 1,500 to 3,500 units a year.
+
+Gate 0 lands AVERAGE on a core score of 55, with a STRONG moat profile of 5 confirmed moats out of 12, held down mostly by missing shareholding and older capex data rather than by weak fundamentals. Margins are the swing factor. EBITDA margin fell from about 41% in FY25 to about 35% in FY26, and revenue was essentially flat at plus 0.4%.
+
+Trade receivables tell the sharper story. They rose 32% while revenue stayed flat, receivable days stretched from about 89 to about 114, the 2 to 3 year ageing bucket grew 128% and the beyond 3 year bucket grew 80%, and the company still carries zero provision against any of it. Cash conversion fell below the 0.7 times mark, with CFO to PAT dropping to about 64% in FY25 and lower again in FY26.
+
+Management says more than it delivers right now. FY26 came in flat on revenue and down 10% on profit against FY25's best ever framing, the order booking number that used to appear every year vanished from FY26 filings, only about 9% of the Rs 35 Cr capex was spent, and the plan's own completion date conflicts by more than a year inside a single presentation. That earns a credibility grade of C, with explanations that lean on external blame.
+
+Peers complicate the story rather than confirm it. Fluidomat states capacity utilisation near 96%, while ELECON's gear division reported 56% to 60% for the same period, and the wider industry is building capacity ahead of demand with exports weak across the board. This is a sector oversupply risk to hold in view, not company specific noise.
+
+The addressable market is real but not large. The served fluid coupling market sits around Rs 500 Cr to Rs 900 Cr, the reachable slice around Rs 275 Cr, and a three year opportunity around Rs 101 Cr, giving about 3.8 times revenue headroom on roughly 7% market growth, which reads as a MODERATE runway. Management's own "TAM" of Rs 11 lakh crore is an economy wide capex figure, about 2,200 times the served market, and should be discounted. Variable frequency drives remain a long run substitution risk. This market read is partial because several source reports could not be opened.
+
+The promoter record is clean on law and conduct and rates TRUSTWORTHY, with no deal breakers. The cautions are structural. Every senior role sits with a family member, about 11% of profit before tax goes to seven relatives, the founder chairman is about 76, and the secretarial auditor is a former company insider now 30 years in the seat and freshly renewed for another five.

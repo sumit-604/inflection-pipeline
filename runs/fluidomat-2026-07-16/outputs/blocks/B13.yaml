@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # FLAG-CASH active; INDETERMINATE cash caps at PROCEED WITH CAVEATS per NEVER rule
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 94, redflag: 79, framework: 96, peer: 80, overall: 79}
+valuation_decision: ""          # deferred to phase 3 (lite mode, no valuation content)
+entry_range: {low: 0, high: 0}  # deferred to phase 3
+headline: "Debt free coupling maker with slipping cash"
+falsification_metric: "FY26 AR trade receivables ageing: 2-3yr and >3yr buckets grow again with zero ECL still booked, hardening FLAG-CASH from INDETERMINATE to STRUCTURAL"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save:
+  page_title: "Fluidomat Ltd — Phase 1 Gate (2026-07-16)"
+  mode: append-never-overwrite-status
+  note: "deferred; notion payload is a phase-3 deliverable"

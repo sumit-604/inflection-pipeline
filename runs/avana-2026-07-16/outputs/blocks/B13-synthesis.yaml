@@ -1,0 +1,17 @@
+stage: B13-synthesis
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+phase: "1 (evidence) — synthesis-lite"
+verdict: "INSUFFICIENT EVIDENCE"
+verdict_rule_applied: 2
+flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER, FLAG-CAPITAL-STRUCTURE, FLAG-CAPEX-UNSPECIFIED, FLAG-DATA-THIN]
+confidence_delta: {numerical: 88, redflag: "N/A", framework: 100, peer: "N/A", overall: 88}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Recently listed power grid equipment micro cap"
+falsification_metric: "First post-listing period: CFO negative or debtor days above FY26 level while revenue growth decelerates below the 15% SOM-implied floor"
+monitorables_count: 8
+publish_candidate: false
+files_written: [business-narrative.md, gate-recommendation.md, verifier-summary.md]

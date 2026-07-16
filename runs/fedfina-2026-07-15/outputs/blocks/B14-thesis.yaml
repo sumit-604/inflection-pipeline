@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 68, high: 77}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Q4 FY26 credit cost > 1.1% of average assets (Pillar 2L self-withdraws to 0.80x) OR ROE fails to cross 14% by FY28 OR PCR thins below 32%"
+monitoring_checklist:
+  - "Credit cost <= 1.1% of average assets with a formal FY27 guidance number issued"
+  - "PCR >= 38% and rising toward 50%+ (red if < 32%)"
+  - "Gold branch count 140-150 and AUM/branch above Rs 13.3 Cr"
+  - "Cost-to-income materially below ~57% and falling into FY27"
+  - "ROE trending toward 14-15% and ROA >= 2.5%"
+  - "GNPA/Gross Stage 3 holding at or below ~1.9-2.1%"
+  - "ST LAP collections in-housing completed and disbursals above Rs 208 Cr"

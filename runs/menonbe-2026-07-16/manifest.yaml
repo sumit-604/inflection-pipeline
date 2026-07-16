@@ -1,0 +1,9 @@
+company: Menon Bearings Ltd
+ticker: MENONBE
+cmp: 189.0
+market_cap_cr: 1065.0
+run_date: 2026-07-16
+run_type: full
+concalls_available: false
+sector_cap_row: "Agri processing"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

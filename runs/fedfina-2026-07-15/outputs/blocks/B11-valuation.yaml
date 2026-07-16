@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "FEDFINA"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "FY-wise ROE/ROA series FY21-FY26 NOT FOUND — blocks Amendment 9 Route B (pre-cycle normalized ROE); standard FTTCP RECOVERING blend used instead"
+  - "Q4 FY26 quarter-only credit cost / RoA / RoE not anchored — Pillar 2L 1.00x self-withdraw condition cannot be confirmed"
+flags:
+  - "FLAG-CASH: structural NBFC Ind AS 7 (CFO/PAT -5.04x); Pillar 2L used, NO cash multiplier penalty applied"
+  - "FLAG-ASSETQUALITY: PCR thin 32-38% vs 60-70% norm; impairment spike"
+  - "FLAG-ASSET-QUALITY-OVERRIDE: Pillar 2L 1.00x is operator override; self-withdraws to 0.80x if Q4 FY26 credit cost >1.1% or PCR thins"
+  - "FLAG-Q4-FY26-DATA-GAP: Q4 FY26 quarter-only actuals non-anchored"
+  - "FLAG-EMOAT-BORDERLINE: EM 25.3 bottom edge; Pillar 3 +1x"
+  - "FLAG-GUIDANCE-SLIPPAGE: ST-LAP in-housing slipped Q2->Q3->Q4"
+  - "SHARED-CATALYST: credit-cost normalisation drives both Pillar 1 (ROE) and Pillar 2L (asset quality) — Role 3 stress-test"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 13.0, mid: 14.3, high: 15.5, r_used: 13.5, rrm: 1.00}
+  track2_additive: {low: 14.0, mid: 15.3, high: 16.5}
+  divergence_pct: 7.0
+  governing_track: "Track 1 RRM (14.3x mid, more conservative); tracks converge within 7%, both below current ~18x PE (de-rating headwind)"
+pillar_detail:
+  roce_used: 13.56
+  roce_base: 12.6
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 1.00
+  structural_or_growth: "structural (lender; FLAG-CASH structural per Ind AS 7, no penalty; Pillar 2L applied)"
+  growth_offset: 0
+  growth_premium: 1
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 18
+hurdle_ratio: {base: 1.21, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 117, base: 150, bull: 186}
+  track2: {bear: 122, base: 156, bull: 193}
+expected_cagr_prob_weighted: -3.1
+entry_range: {low: 68, high: 77}
+mos_price: 61
+upside_downside_ratio: 0.47
+decision: "AVOID (on valuation)"
+unresolved_inputs_used:
+  - "FY[Y+2] expected ROE = 15.0% (set from ROA ~2.55% x leverage ~6.0x; rating agency ROA 2.50%, peer band; capped below peer best, conservative)"
+  - "Cost of Equity = 13.5% (small/mid NBFC base 13-14%; AA+ Federal Bank parentage offset by governance CAUTION and asset-quality flags)"
+  - "Pillar 2L 1.00x carried from operator override with self-withdraw condition (Q4 FY26 credit cost >1.1% or PCR thins -> 0.80x)"
+som_cagr_crosscheck: "consistent — base EPS CAGR 15% and implied revenue CAGR ~15-17% sit below B09 SOM-implied 23.6% (3-yr); no cut needed"
+one_line_thesis: "AVOID FEDFINA at Rs 164: a 12.6% ROE (ROE approx CoE 13.5%, near-zero economic spread) recovering NBFC already priced at 2.09x book / ~18x earnings, whose earned four-pillar destination PE of 14-16x sits BELOW the current multiple, so the Hurdle Ratio is STOP and probability-weighted 3-yr CAGR is -3.1%; entry only at Rs 68-77 (MoS Rs 61). Key risk / shared catalyst: credit-cost normalisation drives both the asset-quality and ROE transitions."

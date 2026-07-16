@@ -1,0 +1,50 @@
+stage: B03-ardeep
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating","announcements","shareholding","research"]
+flags:
+  - type: FLAG-CASH
+    reason: "Standalone CFO/PAT below 0.7x in both reported years (34.9% FY24, 45.4% FY25); FY25 free cash flow turned negative (CFO Rs843.65L minus capex Rs886.44L = -Rs42.79L) despite PAT growth of 87.2% YoY; receivables turnover 6.34x to 3.17x, 56.2% of book aged >6 months, first-ever ECL Rs9.83L (all per B02, verified against source on this stage). Per CLAUDE.md, this caps the verdict at PROCEED WITH CAVEATS minimum with the evidence named."
+  - type: FLAG-PROMOTER-PRELIM
+    reason: "Sole Promoter Selling Shareholder in the IPO is Dr. Manika Khanna (Chairperson & MD), monetising 94,93,700 shares, 15.6% of her pre-Offer holding (99.32% to 70.73% post-Offer), in the same listing where she is the largest RPT beneficiary (Rs586L combined FY25 KMP cash, 31.5% of PAT, incl. Rs250L capitalised as an intangible), sits on the Audit Committee that approves RPTs, and chairs the Risk Management Committee. No share pledge found (RHP Capital Structure p.92, explicit no-pledge confirmation). Full promoter verdict reserved for Stage 8 per pipeline design."
+phase_verdicts: {p1: "yellow-watch tilting red", p2: "red", p3: "red", p4: "red", p5: "yellow-watch tilting red", p6: "red", p7_best_fit: "GARP (watchlist)"}
+overall_quality: 4.25
+quality_components: {governance: 5, accounting: 4, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "P1: Board's Report twice asserts a 'no material' position (litigation, RPT) directly contradicted by the auditor's own Emphasis of Matter and CARO disclosures in the same document set."
+  - "P2: AOC-2 statutory RPT disclosure blends an expensed professional fee (Rs180L) with a capitalised RPT payment (Rs250L GAAT) into a single Rs430L line; the Rs900L non-core deployment was a single same-day Board decision; contingent liabilities grew 45.6% (Rs3,091.03L to Rs4,499.34L) in the six months after the balance sheet date."
+  - "P3: 87.2% PAT growth headline coincides with negative free cash flow and a ~31% RPT-capitalisation-driven share of the margin expansion."
+  - "P4: Statutory AR has no Risk Factors/MD&A section; 63% FY25 employee attrition and the post-FYE contingent-liability escalation are omitted from the AR entirely, surfacing only in the RHP."
+  - "P5: The individual who backstops the escalating contingent liability personally and receives the most RPT scrutiny sits on the Audit Committee, chairs the Risk Management Committee, and is the sole IPO share seller, with no dedicated RPT Committee interposed."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "63% FY25 employee attrition (up from 51% FY24/23), disclosed in the RHP but absent from the AR entirely", evidence: "RHP HR/KPI section p.~35-38; AR Directors' Report Item 41 instead praises employee 'dedication, loyalty' with no attrition figure anywhere"}
+  - {risk: "Post-FYE 45.6% escalation in tax contingent liabilities (Rs3,091.03L to Rs4,499.34L, 68.0% to 76.4% of net worth)", evidence: "RHP Risk Factor #1/Litigation section p.~31-34; not visible from the AR's 31 Mar 2025 balance sheet date alone"}
+  - {risk: "DRHP dated 20 Jan 2025 was submitted then withdrawn 'after deliberate discussion' with no stated reason, and a revised DRHP was filed later", evidence: "Directors' Report Item 12, p.~26, exact quote reproduced in report"}
+  - {risk: "No dedicated Internal Audit function (not statutorily required for FY25 status, but a gap heading into listing)", evidence: "CARO clause (xiv), p.~64"}
+  - {risk: "EKK Global Private Limited subsidiary incorporated 16 Oct 2024 and fully divested 5 Aug 2025, framed only as generic 'strategic restructuring'", evidence: "Directors' Report Item 12/19 footnote, p.26/45; AOC-1 p.50"}
+guidance_table:
+  - {claim: "19 new IVF centres (10 FY27, 8 FY28, 1 FY29)", number: "Rs5,000.00L total capex", timeframe: "FY26-FY29", credibility: "No prior-year guidance to check delivery against (first disclosed multi-year plan); historical organic centre-opening cadence (2009-2024) markedly slower than the proposed pace; premises not yet identified as of RHP date"}
+  - {claim: "Repayment/pre-payment of outstanding borrowings", number: "Rs2,000.00L", timeframe: "Fiscal 2026", credibility: "Directly relevant to Rs1,893.44L standalone debt load; not yet testable, no track record"}
+  - {claim: "No time or cost overrun in business operations", number: "n/a", timeframe: "To date", credibility: "Self-assessed, no independent benchmark located"}
+monitorables:
+  - {metric: "Standalone trade receivables turnover / >6-month ageing share", threshold: "Turnover below 3.0x or ageing above 56.2%", where: "Next AR Note 15/48; quarterly results", why: "Direct continuation test of the FLAG-CASH thesis"}
+  - {metric: "Tax contingent liabilities as % of net worth", threshold: "Any crystallisation or continued growth beyond Rs4,499.34L (30 Sept 2025)", where: "CIT(A) updates; next AR Note 38/39", why: "76.4% of net worth as of the last available figure"}
+  - {metric: "GAAT intangible-under-development", threshold: "Any impairment/write-off, or continued capitalisation without feasibility evidence", where: "Next AR Note 9; auditor's first mandatory KAM section as a listed entity", why: "Tests whether the Rs738.32L capitalisation was substantive or earnings management"}
+  - {metric: "CFO/PAT and free cash flow", threshold: "Sustained below 0.7x, or FCF remaining negative", where: "Next AR Cash Flow Statement; quarterly results", why: "Second consecutive sub-0.7x year removes the 'one bad year' interpretation"}
+  - {metric: "Employee attrition rate", threshold: "Continuation at/above 63% FY25 level", where: "Post-listing disclosures, next AR if voluntarily disclosed", why: "Severe, currently AR-undisclosed clinical-continuity risk"}
+  - {metric: "Segment reporting introduction", threshold: "Whether trading-subsidiary segment is voluntarily broken out", where: "Next AR Note 26; investor presentations", why: "Tests whether single-segment opacity persists post-listing"}
+strengths_top3:
+  - "Clean hard-compliance mechanics: no fraud reported, no whistleblower complaints, full CSR compliance, no promoter share pledge, no borrowing defaults, unmodified opinion with confirmed-absent going-concern language"
+  - "Strong headline operating metrics: revenue +28.4%, standalone ROCE ~39%/ROE ~41%, interest coverage 18.75x, D/E improving 0.59x to 0.42x, no basic/diluted EPS gap"
+  - "Specific, quantified forward capital-allocation plan (Rs5,000L, 19 new IVF centres FY26-29) with phased cost breakdown and a stated Rs2,000L FY26 debt-repayment intention"
+red_flags_top3:
+  - "Directors'-Report-level narrative directly contradicts the auditor's own report: 'no material litigation' and 'no materially significant RPT' statements sit against a Rs3,091.03L Emphasis of Matter and a Rs250L Chairperson-capitalised RPT payment within Rs586L (31.5% of PAT) total KMP cash to the promoter family"
+  - "Cash-conversion and earnings-quality deterioration: CFO/PAT below 0.7x in both reported years, FY25 free cash flow negative despite 87.2% PAT growth, ~31% of the FY25 margin expansion traceable to a single RPT capitalisation choice"
+  - "Escalating contingent liability (68.0% to 76.4% of net worth in six months) with governance concentrated around its principal beneficiary, who is also the sole Promoter Selling Shareholder monetising 15.6% of her holding in the same listing"
+best_fit_strategy: "GARP (watchlist)"
+one_line_verdict: "Strong growth headline undercut by cash conversion, capitalised related-party payments, and escalating tax risk."

@@ -1,0 +1,30 @@
+stage: B12d
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+peers_audited: 5
+substantive_confirmed: 4
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "ELECON Q2 FY26 (Oct-2025)", missed_item: "INR80cr power-sector Gear order ('one of the largest ever') and active defense pipeline (P-17 Bravo ~INR1,000cr, NGMV, aircraft carrier) not cited in Claim 1's tailwind analysis", anchor: "ELECON, Q2 FY26 call, Prayasvin Patel / Kamlesh Shah context"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "Claim 2, peer evidence bullet 1", description: "Quoted '18.2 percentage' for Q2 FY26 EBIT margin decline (Narasimhan R.) is a mismatch/blend: the actual Q2 FY26 transcript states 19.2 percentage; 18.2 percentage belongs to a different quarter's different comparison (Q3 FY26 Gear EBIT margin vs Q3 FY25 27.8%). Fabricated/blended quote, not a real citation as presented, though the underlying claim (mix/employee-cost driven margin compression) remains independently supported elsewhere."}
+  - {severity: "MAJOR", location: "Claim 1, peer evidence bullet 1", description: "Q4 FY26 Gear revenue decline quote ('delayed order inflows, extended dispatch timelines and customer-led deferment...') attributed to Chintan Shah, CFO, but actually spoken by Aayush Shah, Director, in the opening overview."}
+  - {severity: "MINOR", location: "Claim 3, peer evidence bullet 2", description: "Q1 FY26 capex quote ('capital expenditure budget for FY26 to FY28 is INR400 crores') attributed to Kamlesh Shah; actual speaker was Narasimhan Raghunathan (CFO) in the financial-highlights section."}
+  - {severity: "MINOR", location: "Claim 5, peer evidence bullet 2 / net read", description: "International revenue share stated as '21-24% in earlier FY26 quarters'; Q1 FY26 was actually 25% overseas, outside the stated range. Cosmetic, doesn't affect verdict."}
+  - {severity: "MINOR", location: "Part 2E, risk 5 (defense-order margin drag)", description: "Q3 FY26 Navy-order margin commentary attributed to 'Chintan Shah/Dipak Dalwadi'; actual Q3 FY26 speaker was Narasimhan R. (then-CFO). Also, ELECON's own figure for this item is internally inconsistent across quarters (0.5% in Q3 vs '1-2%' recalled in Q4) and B06 does not flag this self-contradiction as an additional finding."}
+  - {severity: "MINOR", location: "Part 2E, risk 1 (tariff/geopolitical risk)", description: "'50% US tariffs under Section 2(32)' quote attributed to Aayush Shah, Director; transcript tags this specific answer as unnamed 'Management'."}
+  - {severity: "MINOR", location: "Claim 3 / peer_coverage_map, Q3 FY26 row", description: "Q3 FY26 EP/CP mix figure (48%/52%) attributed to Narasimhan R.; transcript tags this specific line as unnamed 'Management'."}
+critical_count: 0
+major_count: 2
+minor_count: 5
+acceptance_rate: 80
+peer_utilisation:
+  peers_provided: 5
+  peers_used_substantively: 4
+  substantive_utilisation_rate_pct: 80
+  claim_verdicts_holding_up: "5 of 5 (100%) — every Part 1 verdict's direction survives independent transcript re-verification despite the citation-accuracy defects logged above"
+coverage_note: "All quoted material in B06 traces to a real transcript passage in every case checked (no wholesale fabrication); defects found are confined to quarter/speaker misattribution or one blended figure, none of which changes a verdict. TRF's 5-year-stale transcript is correctly and consistently confined to structural/cautionary use, never invoked for current-demand or current-margin verification. Spot-checked roughly two dozen of B06's cited quotes/figures against the five source transcripts; this is not exhaustive line-by-line coverage of every number in B06 (that is Verifier A's remit) but covers all quotes material to each of the five Part 1 claims and the Part 2E risk list."

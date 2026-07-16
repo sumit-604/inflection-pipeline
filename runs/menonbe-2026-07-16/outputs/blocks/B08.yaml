@@ -1,0 +1,50 @@
+stage: B08-promoter
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: partial               # two direct-fetch verification attempts (BSE pledge page, Trendlyne shareholding page) blocked by HTTP 403; relied on WebSearch summaries instead, which were internally conflicting on pledge
+input_gaps: [announcements: absent, research: absent, shareholding: partial]
+flags: []                     # verdict is CAUTION, not CONCERN/AVOID, so FLAG-PROMOTER is not triggered per pipeline rule; adverse_findings below still carry forward for synthesis
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 3, red: 1}
+deal_breakers: []              # none confirmed triggered; pledge >40% check specifically UNRESOLVED, not cleared -- see adverse_findings
+adverse_findings:
+  - {finding: "New CFO Chandrakant Ghatge's only disclosed prior employer is Mani Auto Components, Kolhapur -- the Executive Chairman's own private related-party sales counterparty -- not an external professional finance background; appointed effective 4-Mar-2026 simultaneously with the new MD", evidence_tier: "VERIFIED", source: "FY26 AR, Directors'/KMP remuneration table, AR p.42", date: "2026-05-14 (AR board adoption date)"}
+  - {finding: "Simultaneous Managing Director (R.D. Dixit, age ~82-83, resigned) and CFO (Arun Aradhye ceased CFO on becoming MD; Ghatge appointed CFO) change, both effective 4-Mar-2026, approximately four weeks before FY26 year-end", evidence_tier: "VERIFIED", source: "FY26 AR Board's Report, AR pp.4-5", date: "2026-03-04"}
+  - {finding: "New MD Arun Aradhye is 70 years old at the start of a fresh five-year term (would be 75 at term end); succession/key-person consideration", evidence_tier: "VERIFIED", source: "FY26 AR director profile, AR p.65-66", date: "2026-03-04 (effective date)"}
+  - {finding: "Promoter share pledge status could not be confirmed: AR contains zero occurrences of 'pledge'/'encumbrance'; web search produced two directly conflicting, unverified claims (8.3% pledged to Bajaj Finance Ltd vs. no shares pledged as of March 2025); direct BSE/Trendlyne pledge-page fetches blocked (HTTP 403)", evidence_tier: "UNVERIFIED (conflicting)", source: "web search, multiple aggregators; primary BSE Reg 31 filing not directly retrievable this run", date: "2026-07-16 (search date)"}
+  - {finding: "Promoter holding stepped down 70.18%->68.44% (~1.74pp) at Sep-2024 quarter with no reason disclosed in AR or shareholding data; an unverified web claim of a ~9.73 lakh share sale by Nitin Ram Menon at Rs.120.01/share around this period does not cleanly reconcile with the AR's own Mar-2026 individual holding figure (27.56%) and could not be corroborated via bulk-deal aggregators", evidence_tier: "UNVERIFIED", source: "shareholding transcription (screener.in-sourced) cross-checked against web search", date: "2024-09 (event quarter)"}
+  - {finding: "2018 NCLT (Mumbai) matter: Menon Bearings' bank accounts frozen by Axis Bank on Indian Banks' Association instruction during the Gitanjali Gems fraud investigation, reportedly because MENONBE shared one common independent director with Gitanjali Gems Ltd; director identity unconfirmed via available search; NCLT rejected MENONBE's plea for fund access; no subsequent SEBI/SFIO/ED action against MENONBE found connecting to this matter", evidence_tier: "MEDIA REPORTED", source: "Business Standard / Trendlyne / PressReader (2018 reporting), reviewed via web search 2026-07-16", date: "2018-05"}
+  - {finding: "Related-party sales to Mani Auto Components (Chairman is a Partner) are materially larger at consolidated level (~Rs19.47cr, 6.6% of group revenue) than the standalone note alone discloses (~Rs4.37cr, 2.1%); related-party advance to Menon Brakes Ltd grew 44.9% to Rs457.22 lakh, apparently interest-free/unsecured with no disclosed terms", evidence_tier: "VERIFIED", source: "FY26 AR Note 16 (AR pp.107-109); corroborated independently in B02.md Rank 8 and Rank 11", date: "2026-05-14 (AR board adoption date)"}
+transition_evidence:
+  - {finding: "Nandan Borgalkar appointed Independent Director effective 1-Oct-2025, replacing M.L. Shinde; 40 years of directly sector-relevant (logistics/supply chain) leadership experience at named, checkable employers (VRL Logistics, Kesineni Cargo, MRC Logistics, MSN Trans Logi Solutions)", evidence_tier: "VERIFIED", source: "FY26 AR director profile, AR p.65-66", date: "2025-10-01"}
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND - AR silent, web search sources conflict (one claims 8.3% pledged to Bajaj Finance Ltd, another claims nil pledge as of Mar-2025); unresolved, requires primary BSE Regulation 31 filing confirmation"
+searches_performed:
+  - "Menon Bearings Nitin Menon promoter pledge shares"
+  - "Menon Bearings Arun Aradhye Managing Director appointed March 2026"
+  - "Menon Bearings R D Dixit Managing Director resigns"
+  - "Menon Bearings SEBI order OR NCLT OR litigation OR fraud"
+  - "Menon Bearings Gitanjali Gems common independent director name"
+  - "\"Mani Auto Components\" Kolhapur company"
+  - "Menon Bearings encumbered shares promoter BSE disclosure regulation 31"
+  - "Menon Bearings Glassdoor AmbitionBox employee reviews"
+  - "Menon Bearings IiAS SES InGovern proxy advisory"
+  - "\"Menon Bearings\" promoter sold shares September 2024 open market bulk deal"
+  - "Menon Bearings CRISIL rating history BBB+ upgrade downgrade"
+  - "\"Menon and Menon Limited\" Kolhapur promoter same family as Menon Bearings"
+  - "\"Menon Pistons\" Kolhapur Ram Menon relation Menon Bearings"
+  - "Ram Menon founder Menon Bearings son Nitin Menon biography"
+  - "Menon Alkop Ltd financial performance losses reserves"
+  - "Menon Bearings news 2026 controversy management"
+  - "Nitin Menon Kolhapur political donations electoral bonds CSR philanthropy"
+  - "Menon Bearings promoter pledge percentage 2025 2026 trendlyne"
+  - "Menon Bearings pledge shares Bajaj Finance loan promoter"
+  - "Menon Bearings Nitin Menon sold shares September 2024 stake sale"
+searches_skipped:
+  - "WebFetch of https://www.bseindia.com/stock-share-price/menon-bearings-ltd/menonbe/523828/disclosures-consolidated-pledge-data/ -- HTTP 403, tool/proxy blocked; would have been the primary source for pledge_pct_latest"
+  - "WebFetch of https://trendlyne.com/equity/share-holding/1576/MENONBE/latest/menon-bearings-ltd/ -- HTTP 403, tool/proxy blocked; would have cross-checked pledge and quarterly promoter-sale history"
+  - "WebFetch of https://www.business-standard.com/article/companies/nclt-turns-down-menon-bearings-plea-in-gitanjali-gems-case-118051401249_1.html -- HTTP 403, tool/proxy blocked; would have named the shared independent director in the 2018 Gitanjali Gems NCLT matter"
+  - "MCA/RoC direct database query for director disqualification/compounding history -- not performed (no direct database access in this environment; relied on web search only)"
+  - "SEBI SCORES portal direct query for investor complaints -- not performed (no direct portal access in this environment)"
+verdict_basis: "CXO/board transition risk is decisive: simultaneous MD (fresh 70-year-old appointee, 5-year term) and CFO change four weeks pre-year-end, with the new CFO's career rooted entirely in the Chairman's own private RPT counterparty (Mani Auto Components) rather than an external professional hire, combined with an unresolved pledge-disclosure gap and an undisclosed 1.74pp promoter-holding step-down (Sep-2024) -- against a clean SEBI/criminal record, conservative capital allocation, and one genuinely credentialed new independent director (Borgalkar), holds the verdict at CAUTION: real governance-quality watch items, but no confirmed deal-breaker or proven extraction."

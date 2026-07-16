@@ -1,22 +1,26 @@
 stage: confidence-delta
 company: "526717"
 run_date: "2026-07-15"
-phase: 1
+phase: 3-final
 confidence_delta:
-  numerical_acceptance: 98.7      # B12a
-  redflag_coverage: 63            # B12b (5 of 8 material flags caught upstream; above 60 REWORK line)
-  framework_adherence: 96         # B12c, PHASE 1 PORTION ONLY (Gate 0 + Emerging Moat); valuation adherence pending phase 3
-  peer_utilisation: 75            # B12d (6 of 8 peers substantive)
-  overall: 63                     # min of the four
-framework_adherence_valuation: pending_phase_3
+  numerical_acceptance: 98.7      # B12a (phase 1)
+  redflag_coverage: 63            # B12b (phase 1); 5 of 8 material flags caught upstream
+  framework_adherence: 94.5       # B12c COMBINED: phase-1 Gate0+EM (65/68) + phase-3 valuation+Role2 (38/41) = 103/109
+  peer_utilisation: 75            # B12d (phase 1); 6 of 8 peers substantive
+  overall: 63                     # min of the four (redflag-bound)
+framework_adherence_detail:
+  phase1_gate0_emoat: 96          # B12c phase 1 (Gate 0 + Emerging Moat)
+  phase3_valuation_role2: 93      # B12c phase 3 (valuation adherence + Role 2 decision rules/sizing); 0 CRITICAL, 0 MAJOR, 3 MINOR
+  combined: 94.5
 band: "60-74"
-band_interpretation: "PROCEED-type verdicts downgrade one level; not high confidence. Driven by redflag_coverage 63 (B05 missed the Saudi JV MOU that stage 7 independently caught, and a parent loans/advances surge) and peer_utilisation 75 (B06 quote-misattribution majors from B12d; conclusions intact)."
+band_interpretation: "PROCEED-type verdicts downgrade one level; not high confidence. Overall remains redflag-bound at 63 (B05 missed the Saudi JV MOU that stage 7 independently caught, and a parent loans/advances surge). The valuation and Role 2 decisions reconcile cleanly (verifier C phase 3: 0 CRITICAL / 0 MAJOR), so the framework component is strong; the binding constraint on confidence is red-flag coverage, not valuation adherence."
 rework_triggered: false
 rework_check:
   verifier_a_critical: 0
+  verifier_c_valuation_critical: 0
   any_acceptance_rate_below_60: false
-  note: "No CRITICAL numerical finding and no verifier acceptance_rate below 60%, so no forced REWORK. Overall 63 sits in the one-level-downgrade band, not the REWORK band."
+  note: "No CRITICAL numerical or valuation-adherence finding and no verifier acceptance_rate below 60%, so no forced REWORK. The AVOID decision is a company-quality/governance outcome, not an analysis-quality REWORK."
 verifier_caveats:
-  - "B12b (Verifier B) could not open the 8 peer-concall PDFs individually via its tools; peer-side coverage is instead carried by B12d (Verifier D), which read all 8 transcripts in full."
-  - "B12a notes one peer (COMSYN) FY26 expense detail missing from screener; MINOR, does not affect any verdict input."
-  - "Operator-supplied shareholding and 6m-update files are transcriptions, not original filing PDFs; verifiers A/B could not cross-check them against a source PDF (provenance-limited, noted, not treated as fabrication)."
+  - "B12b (Verifier B) could not open the 8 peer-concall PDFs individually; peer-side coverage carried by B12d (Verifier D), which read all 8."
+  - "B12c phase-3 MINOR: cash multiplier 0.80x vs a defensible 0.65x structural read (verdict-invariant; bear uses 0.65x); and an EBIT-basis note (results-line 39.98 vs ex-OI 48.33) that shifts Track-1 Hurdle to ~1.98, still above 1.953 (Verifier A's domain, decision unchanged)."
+  - "Operator-supplied shareholding and 6m-update files are transcriptions, not original filing PDFs; provenance-limited, noted."

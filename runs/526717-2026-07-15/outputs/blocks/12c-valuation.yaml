@@ -1,0 +1,54 @@
+stage: B12c-valuation
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+scope: "phase3 valuation-adherence + role2 decision rules & position sizing (B10, B11, B14); Gate0 + EmergingMoat done in phase1, not re-audited"
+valuation:
+  rules_checked: 33
+  rules_clean: 30
+  pillar1_formula: "PASS (0.5x28.62+7.5=21.8x; floor/cap not binding)"
+  pillar1_roce_selection: "PASS (FTTCP FIRING -> current ROCE 28.62%)"
+  amendment9_route: "PASS (route NONE; Route A CWIP 0.04%<20%, Route B verdict not TEMPORARILY DEPRESSED/RECOVERING)"
+  pillar2_multiplier: "PASS with MINOR (0.80x under INDETERMINATE; 0.65x structural read also defensible; carried from authoritative FTTCP deliberation; bear uses 0.65x)"
+  pillar2_growth_offset: "PASS (barred; INDETERMINATE is not confirmed growth-induced)"
+  pillar3_total: "PASS (+0x: 3a one qualifier only, 3b EM12<25, 3c no >=2.5yr visibility)"
+  strategic_premium: "PASS (+0x; no scarcity; FII passive not strategic anchor)"
+  single_credit: "PASS (ROCE via Pillar 1; Strategic ROCE route BARRED; route stated)"
+  ua_ordering_and_qualifiers: "PASS (all-three fail -> not applied; F2=F; H=min(17.4,22)=17.4x)"
+  sector_cap: "PASS (Packaging 22x absolute, FTTCP override applied, not binding, no exit PE outside 1B)"
+  rrm_track1: "PASS (r=16.0%; RRM=1+(13.5-16.0)x0.12=0.70 floor; 17.4x0.70=12.2x)"
+  dual_track_and_divergence: "PASS (both tracks carried; divergence 30%>15% -> conservative Track 1 governs entry)"
+  hurdle_ratio: "PASS (Tier A 1.953; current PE 8.98x; T2 3.18 / T1 2.23; base>=1.953 -> PASS; bull EPS CAGR capped Base+5%=23% for grade C)"
+  entry_and_returns: "PASS (entry 433/1.953=222; MoS 177; U/D 3.27x>=2; grade-C weights 35/45/20; prob-weighted +17.4%)"
+  som_crosscheck: "PASS (base 18% < SOM-implied 30.7%; capacity-gated)"
+  unresolved_inputs: "PASS (RP add-back, peer multiples, FY26 utilisation carried NOT FOUND, no silent fills)"
+  fails: []
+role2:
+  rules_checked: 8
+  rules_clean: 8
+  promoter_concern_default_avoid: "PASS (CONCERN -> AVOID regardless, Master l.916)"
+  avoid_trigger_mapping: "PASS (Gate0 AVOID + Promoter CONCERN each trigger independently)"
+  buy_now_gate: "PASS (correctly excluded; fails Gate0 and Promoter conditions)"
+  entry_conjunction: "PASS (CMP in zone but caps live -> zone WITHDRAWN, value trap called)"
+  hardest_verdict_wins: "PASS (FTTCP conditional DEEP WATCH overridden by AVOID caps)"
+  tier_b_barred: "PASS (Promoter CONCERN bars Tier B; Tier A anyway)"
+  position_sizing: "PASS (None on AVOID; hypothetical capped Small; promoter cap binds)"
+  fails: []
+findings:
+  - severity: "MINOR"
+    location: "B11 11.md l.54 / Pillar 2; B10 cash_conversion_and_wc"
+    description: "Cash multiplier 0.80x under INDETERMINATE. Band table also supports 0.65x (Infomerics confirms persistent WC; cumulative 6yr CFO/PAT -0.888x, 5/6 yrs negative), while naive latest-year 0.70x would map 1.00-1.15x. 0.80x is the conservative midpoint faithfully carried from the authoritative FTTCP deliberation; base-case 0.80-vs-0.65 reconciliation could be tighter. Bear correctly uses 0.65x. Verdict-invariant."
+  - severity: "MINOR"
+    location: "B11 11.md l.117-119 / EBIT-basis reconciliation; carried from B10 ebitda build"
+    description: "ROCE-basis inconsistency: B10 EBITDA uses results-line EBIT 39.98 but Pillar 1 ROCE 28.62% derives from EBIT ex-other-income 48.33 (8.35cr gap). B11 correctly used the authoritative FTTCP ROCE (anchor-only) and disclosed the ~1.9-PE-point sensitivity; under the alternate basis Track-1 Hurdle recomputes to ~1.98 (still >1.953, narrow). Which EBIT basis is right is Verifier A's domain; not a framework misapplication. Decision unchanged."
+  - severity: "MINOR"
+    location: "B14 14.md l.17 / Section 1 one-line thesis"
+    description: "One-line frames 'two hard caps' with cash INDETERMINATE 'on top', while B11 and the risk matrix carry three overlapping caps (Gate0 leverage, Promoter CONCERN, INDETERMINATE cash). Cosmetic count mismatch; all three are surfaced and drive AVOID. Decision-invariant."
+recomputed_destination_pe: ""   # concur: Track 1 12.2x / Track 2 17.4x
+recomputed_decision: ""         # concur: AVOID
+critical_count: 0
+major_count: 0
+minor_count: 3
+valuation_framework_adherence: 93   # rules clean 38 / rules checked 41 = 92.7% -> 93%
+acceptance_rate: 93

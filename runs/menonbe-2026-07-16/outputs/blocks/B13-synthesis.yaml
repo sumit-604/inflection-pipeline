@@ -1,0 +1,16 @@
+stage: B13-synthesis
+company: MENONBE
+run_date: 2026-07-16
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: GROWTH-INDUCED
+falsification_metric: "Standalone trade receivables again growing faster than revenue with DSO climbing above 114 days in the next reported period flips FLAG-CASH to STRUCTURAL"
+confidence_delta: {numerical: 91.5, redflag: 75, framework: 99, peer: 100, overall: 75}
+headline: "Bearings maker grows fast, receivables grow faster"
+monitorables_count: 8
+publish_candidate: false
+valuation_decision: ""   # phase 1 lite: stages 10/11 deferred to phase 3

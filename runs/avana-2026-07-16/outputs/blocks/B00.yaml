@@ -1,0 +1,54 @@
+stage: B00-inputs
+company: AVANA
+run_date: 2026-07-16
+model: orchestrator
+status: complete
+concalls_available: false
+no_concall_mode: true
+manifest:
+  company: Avana Electrosystems Ltd
+  ticker: AVANA
+  cmp: 146.0
+  market_cap_cr: 331.0
+  run_type: full
+  sector_cap_row_manifest: "Pharma / CDMO"
+  sector_cap_row_flag: "WRONG — electrical/power-systems micro-cap; peers Aartech/Danish/Marsons. Correct row deferred to phase-3 stage-11."
+subject_data:
+  avana_financials_source: "inputs/screening/screener-Data_Sheet.csv (FY20-FY26 populated)"
+  screener_pl_bs_cf_status: "empty templates (only Data_Sheet populated)"
+peers_available:
+  concalls: [AARTECH Jun 2026, DANISH May 2026, DANISH Nov 2025]
+  screeners: [AARTECH, DANISH, MARSONS, "504084 (=Kaycee Industries Ltd)"]
+input_gaps:
+  - prospectus: absent (long-listed; not a HIGH gap)
+  - annual-report: absent (HIGH impact — stages 2,3,4 skipped)
+  - results: absent (Gate 0 on screener only; latest-period fields unresolved)
+  - rating: absent (Pillar 2 conservative; rating_wc_quote unresolved)
+  - announcements: absent (documented-ACTION record lost; stage 8 web-only)
+  - shareholding: absent (FII+DII unresolved; UA withheld; pledge from web)
+  - research: absent (no anchored-evidence effect)
+  - presentation: absent
+  - concalls: declared-unavailable (NOT a gap)
+provenance_notes:
+  - "sector_cap_row Pharma/CDMO is a collect_to_repo v3 defect (wrong sector)"
+  - "504084-*.csv = KAYCEE INDUSTRIES LTD, not Avana; subject = screener-*.csv"
+  - "screener P&L/BS/CF/Quarters/Customization are empty templates"
+stages_run: [1, 7, 8, 9]
+stages_skipped:
+  - stage: 2
+    reason: no annual report
+  - stage: 3
+    reason: no annual report
+  - stage: 4
+    reason: no AR/presentation/results commentary
+  - stage: 5
+    reason: no-concall mode with no AR/results narrative; zero subject narrative source
+  - stage: 6
+    reason: depends on B05; peer concalls rerouted to stages 7 and 9
+verifiers_run: [A, C]
+verifiers_skipped:
+  - verifier: B
+    reason: no subject concall/AR/results narrative to audit
+  - verifier: D
+    reason: no B06 to audit
+flags: []

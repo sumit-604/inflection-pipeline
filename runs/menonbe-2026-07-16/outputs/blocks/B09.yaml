@@ -1,0 +1,52 @@
+stage: B09-tam
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements: absent, research: absent, shareholding: partial]
+flags:
+  - {type: FLAG-SCOPE, reason: "This stage's TAM/SAM/SOM is built domestic-only, matching management's own market-sizing slide (Inv. Pres. slide 34, May-2026), because no independently-sourced, decomposable India-export-specific market figure could be found for bi-metal bearings or Alkop EV-parts. Exports are ~34% of FY26 revenue and the strongest-evidenced growth vector in this pipeline (B07 E2, STRONG). The som_implied_revenue_cagr below is therefore a domestic-market lower bound, not a full-company growth ceiling."}
+  - {type: FLAG-DATA-GAP, reason: "Braking friction (ex-Railways) domestic TAM (management claim Rs2,000cr) could not be independently triangulated despite four search attempts; conservative estimate applies a 20% haircut (Rs1,600cr) to the single, un-corroborated management figure rather than accepting it at face value."}
+  - {type: FLAG-VALUATION-GAP, reason: "Management's own 25% CAGR growth aspiration (FY27 Rs350-360cr, FY28 Rs500cr) is ~3.3x this stage's 3yr domestic-SOM-implied CAGR (7.5%). At 24.4x TTM P/E (Market Cap Rs1,072.65cr / TTM PAT Rs43.93cr), earnings growth embedded at the domestic-SOM growth rate (~7-8%, assuming stable ~20-22% margins) does not support the current multiple (PEG-equivalent ~3.2x); the reconciling factor is almost entirely the export growth leg, which sits outside the domestic TAM this stage could independently size."}
+  - {type: FLAG-METHOD, reason: "FX conversions (US$ to Rs) throughout Section 2 use the spot ~Rs96/US$ rate observed 16-Jul-2026 applied to 2024/2025-vintage US$ market-size figures, a working approximation that mixes a historical dollar estimate with a current FX rate; flagged wherever used."}
+market_definition: "Domestic India OEM/aftermarket/export markets for (1) bi-metal engine bearings/bushes/thrust washers for ICE vehicles (tractor/CV/industrial), (2) aluminium gravity/HPDC-cast and machined engine/industrial/EV-adjacent components up to 12kg, and (3) NAO brake lining/shoes for M&HCV, excluding the pending Railways vertical."
+tam_cr: {conservative: 8500, realistic: 10100}
+sam_cr: 1858
+sam_pct_of_tam: 21.9
+som_3yr_cr: 240.8
+som_5yr_cr: 269.4
+som_implied_revenue_cagr: {yr3: 7.5, yr5: 6.8}   # FORMAL handoff to stage 11; domestic-only scope, see FLAG-SCOPE
+current_sam_share_pct: 10.4
+revenue_headroom_x: 9.6
+tam_growth_pct: 6.5
+runway_class: "STRONG"
+mgmt_claim_cr: 9000
+mgmt_claim_ratio: 1.06
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient - 3yr capex-embedded revenue potential (Rs378.68cr, B07 arithmetic) modestly exceeds SOM-implied total-company revenue (Rs370.8cr, assuming 35% export share holds), a +Rs7.9cr gap in capacity's favour; capacity is not the binding constraint on the 3yr SOM. No disclosed capex plan exists beyond ~2 years, so the 5yr SOM's capacity sufficiency is NOT FOUND."
+methods_used: ["top-down (industry reports: Fortune Business Insights, Mordor Intelligence, ACMA)", "peer revenue aggregation (Bimetal Bearings Ltd, Rane Brake Lining Ltd)", "global benchmark (directional only, excluded from headline TAM per conservative bias)", "management-claim triangulation (Investor Presentation slide 34)", "bottom-up (partial - vehicle production volumes sourced, per-unit bearing content NOT FOUND, method left incomplete)"]
+stale_data_flags:
+  - {datapoint: "Chinese bearing exports to India Rs2,155.56cr to Rs3,826.45cr", source: "web search (all-bearing-types, not bi-metal-specific)", year: "FY17-FY22"}
+  - {datapoint: "India automotive bearing market USD503.3M base year", source: "Fortune Business Insights / OpenPR", year: "2024"}
+  - {datapoint: "India Railway Friction Material Market USD2,852.3M by 2029", source: "Valuates Reports (QYRE)", year: "ambiguous geographic scope, excluded from TAM entirely"}
+searches_performed:
+  - "India engine bearings market size crore 2025 2026 bushes thrust washers"
+  - "India aluminium die casting automotive market size crore CAGR 2025"
+  - "India automotive high pressure die casting market EV components market size"
+  - "India brake friction material market size crore railway brake blocks market"
+  - "ACMA auto component industry segment wise turnover engine parts India crore 2025"
+  - "India tractor production volumes 2025 2026 units FADA SIAM"
+  - "India commercial vehicle production 2025 2026 SIAM units CV LCV"
+  - "China plus one auto component exports India US Europe sourcing shift 2025 2026"
+  - "WebFetch: futuremarketinsights.com crankshaft-and-connecting-rod-engine-bearings-market (HTTP 403)"
+  - "Mordor Intelligence India automotive parts aluminum die casting market engine parts share 45.98%"
+  - "USD INR exchange rate July 2026"
+  - "India bi-metal engine bearings manufacturers Federal Mogul Goetze Menon Bearings competitors"
+  - "brake lining shoe manufacturers India market Rane Brake Lining Brakes India LCV HCV market share"
+  - "Bimetal Bearings Limited revenue FY25 FY26 crore Coimbatore"
+  - "Rane Brake Lining revenue FY25 FY26 crore"
+  - "engine bearing market India size crore OEM aftermarket report"
+  - "India off-highway engine industrial engine bearings bushes market size"
+  - "India automotive brake friction material market size million 2025 aftermarket OEM report"
+  - "ACMA auto component industry segment share suspension braking systems percentage 2025"
+searches_skipped: []

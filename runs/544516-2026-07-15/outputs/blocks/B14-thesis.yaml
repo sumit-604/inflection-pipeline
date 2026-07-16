@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "544516"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 175, high: 218}
+position_size: "None"                 # AVOID takes no position; Small is the ceiling on any future in-zone re-engagement (Gate 0 AVERAGE + Promoter CAUTION cap)
+position_size_override: ""            # no operator override to position size recorded in the deliberation
+thesis_broken_if: "H1 FY27 standalone operating cash flow negative AND over-6-month receivables share above 23.4% AND debtor days rise (cash reverts to structural 0.65x; quality base falls to about 13x; fair value and entry zone fall further)"
+monitoring_checklist:
+  - "Standalone OCF sign in H1 FY27 half-year results: green if >=0, red if negative (load-bearing falsifier)"
+  - "Over-6-month receivables share <=23.4% and debtor days ~195-200 (red if share >23.4% rising AND debtor days up)"
+  - "Order book / trailing revenue >=1.0x (was 1.47x; Q1 FY27 Rs 433.8 Cr) — red below 1.0x"
+  - "FY27 revenue tracking toward Rs 500 Cr guidance (~Rs 250 Cr by H1) — red if guidance cut again"
+  - "EBITDA margin stabilising toward 22-25% — red if compresses below 20.1%"
+  - "BBBS JV formally incorporated with first bookable revenue — red on a third slip past July 2026"
+  - "Governance: RoC appeal outcome, pledge stays 0%, no new promoter guarantees or RPTs — red on adverse appeal, pledge, or new guarantees"
+one_line_thesis: "Avoiding Airfloa Rail at Rs 315 because even at a four-pillar destination PE of 18x (ROCE 24.9%, cash 0.80x growth-induced, EM 14.5, sector cap 25x) the SOM-capped 21% base EPS CAGR (Rs 16.31 to Rs 28.83) yields only 11-18% 3-year CAGR and the Hurdle Ratio STOPs on both tracks; entry re-opens at Rs 175-218 only if the H1 FY27 cash falsifier resolves favourably. Key risk: H1 FY27 OCF stays negative and cash reverts to structural 0.65x."

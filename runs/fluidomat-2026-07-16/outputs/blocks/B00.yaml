@@ -1,0 +1,24 @@
+stage: B00-inputs
+company: FLUIDOMAT
+run_date: 2026-07-16
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: true
+listed_status: long-listed        # AR from FY2017 on file; prospectus not expected
+input_gaps:
+  - {type: annual-report, severity: MEDIUM, detail: "only AR on file is FY2017 (~9y stale); AR-sourced stages 2/3/4/7 flagged for data currency"}
+  - {type: rating, severity: MEDIUM, detail: "no credit-rating PDF; stage 10 rating_wc_quote unresolved, stage 11 Pillar 2 conservative default"}
+  - {type: announcements, severity: MEDIUM, detail: "no Reg 30 filings; intent-and-action cross-check runs on AR/results/presentation only; operator supplied a 14-Feb-2026 expansion summary as memory"}
+  - {type: shareholding, severity: MEDIUM, detail: "no shareholding pattern; FII+DII unresolved, UA qualifier withheld, promoter pledge/holding stale"}
+  - {type: research, severity: LOW, detail: "no broker notes; no effect on anchored evidence"}
+input_defects:
+  - {type: wrong-company-data, severity: HIGH, detail: "505750-*.csv are Josts Engineering Company Ltd, NOT Fluidomat; quarantined. Use screener-*.csv (FLUIDOMAT LTD) only."}
+  - {type: empty-template-csv, severity: LOW, detail: "both prefixes: Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs are empty templates; only screener-Data_Sheet.csv populated (FY17-FY26)"}
+  - {type: sector-cap-mislabel, severity: MEDIUM, detail: "manifest sector_cap_row 'Pharma / CDMO' wrong for an industrial fluid-coupling maker; correct to power-transmission/capital-goods row at stage 11"}
+prospectus_gap_high: false
+concalls_available: false
+valid_financial_source: "inputs/screening/screener-Data_Sheet.csv (FY2017-FY2026) + inputs/results/*.pdf"
+quarantined_files: ["inputs/screening/505750-Data_Sheet.csv", "inputs/screening/505750-Profit_Loss.csv", "inputs/screening/505750-Balance_Sheet.csv", "inputs/screening/505750-Cash_Flow.csv", "inputs/screening/505750-Quarters.csv", "inputs/screening/505750-Customization.csv"]
+peers_available: ["ELECON", "SHANTIGEAR (Shanthi Gears)", "TRF"]
+flags: []

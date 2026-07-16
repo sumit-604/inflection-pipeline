@@ -1,0 +1,49 @@
+stage: B02-notes
+company: "FLUIDOMAT"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY2017 AR was briefed; actual file is the FY2024-25 (49th) Annual Report — single most-recent-year AR on file, only FY25 vs FY24 data available"
+  - "FY26 trade receivables (29.63cr) and CFO/PAT figures referenced in the injected Gate 0 context are NOT FOUND in this AR"
+  - "Capitalisation threshold: NOT FOUND IN DOCUMENT"
+  - "Top customer / single-customer revenue concentration: NOT FOUND IN DOCUMENT"
+  - "Effective vs statutory tax rate reconciliation table: NOT FOUND IN DOCUMENT"
+  - "MAT credit entitlement/utilisation: NOT FOUND IN DOCUMENT"
+  - "P&L impact (gain/loss) of Fluidomat UK subsidiary disinvestment: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "Receivable days deteriorated ~88.6 to ~113.6 days YoY (closing-balance basis, Note 11 vs Note 27); 2-3yr ageing bucket +128% (Rs42.80L to Rs97.57L) and >3yr bucket +79.5% (Rs25.49L to Rs45.76L), with zero ECL/doubtful provision recognised in either year despite Rs143.33 lakh combined FY25 exposure beyond 2 years"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "BGR Energy Systems IBC recovery action (2022-2024) omitted from Note 36 Contingent Liabilities, disclosed only in Board's Report", note_ref: "Board's Report p.37-38, cf. Note 36.2 p.101", rating: "red", why: "Material disclosure-adequacy gap on a multi-year customer insolvency dispute concurrent with receivables deterioration"}
+  - {rank: 2, finding: "Zero ECL/doubtful provision on trade receivables despite Rs97.57L (2-3yr) and Rs45.76L (>3yr) FY25 aged buckets", note_ref: "Note 11, p.94", rating: "red", why: "Provisioning adequacy concern; feeds FLAG-CASH"}
+  - {rank: 3, finding: "Receivable days deteriorated ~88.6 to ~113.6 days YoY (closing-balance basis) even as the average-based turnover ratio showed only mild decline", note_ref: "Note 11 p.94; Note 27 p.98", rating: "red", why: "Cash conversion deterioration masked by average-based ratio; feeds FLAG-CASH"}
+  - {rank: 4, finding: "No Ind AS 19 actuarial disclosure for gratuity (no discount rate, salary escalation, funded-status reconciliation, sensitivity)", note_ref: "Note 3R(ii)(a), p.89-90", rating: "red", why: "Mandatory employee-benefit disclosure gap"}
+  - {rank: 5, finding: "Cash Flow Statement shows Rs16.54L FY24 subsidiary-disinvestment proceeds vs Rs13.70L in Note 45c and Annexure 3 for the identical transaction", note_ref: "Cash Flow Statement p.84; Note 45c p.103; Annexure 3 p.45", rating: "yellow", why: "Unreconciled Rs2.84L cross-statement gap, found on pattern re-read"}
+  - {rank: 6, finding: "Headline Basic/Diluted EPS in P&L Statement computed on Total Comprehensive Income (45.15/28.23) rather than net profit (45.10/26.50 per Note 35), inflating FY24 EPS 6.5% via one-off OCI", note_ref: "Note 35 p.101; P&L p.83; Board's Report p.25", rating: "yellow", why: "Non-standard EPS presentation vs Ind AS 33 numerator definition, found on pattern re-read"}
+  - {rank: 7, finding: "Two unresolved MCA charges (id 90205616, 90204976) from long-repaid loans; charge-holders untraceable, CHG-4 not filed", note_ref: "Note 46.12, p.104-105", rating: "yellow", why: "Unresolved governance/compliance loose end on public MCA registry"}
+  - {rank: 8, finding: "Related-party roster retains 3 departed independent directors alongside 3 current ones; 2 related entities (Redwood Packaging, Manav Enterprises) newly identified with NIL transactions", note_ref: "Note 45a, p.102", rating: "yellow", why: "Disclosure-hygiene lapse; confirms promoter-family outside directorships worth watching"}
+  - {rank: 9, finding: "Order booking down 3.12% YoY even as revenue grew ~30%", note_ref: "Board's Report p.26, cf. Note 27 p.98", rating: "yellow", why: "Possible forward revenue deceleration signal not visible from Notes alone"}
+  - {rank: 10, finding: "Company rents office premises from its own Executive Director, Kunal Jain", note_ref: "Note 45c, p.103", rating: "yellow", why: "Related-party self-dealing in real estate; no independent arm's-length benchmarking disclosed"}
+  - {rank: 11, finding: "CEO draws 28.40x median employee pay; managerial remuneration grew 12.85% vs 7-10% employee average", note_ref: "Board's Report p.34; Note 45b p.103", rating: "yellow", why: "Quantifies RPT/promoter-concentration concern with hard numbers"}
+  - {rank: 12, finding: "Return on Investment ratio collapsed 38.78% to 3.72% (-90.4%)", note_ref: "Note 46.13, p.105", rating: "yellow", why: "Treasury income is mark-to-market volatile; do not extrapolate prior-year investment income"}
+  - {rank: 13, finding: "Trade Payables Turnover improved while Trade Receivables Turnover slowed on closing-balance basis", note_ref: "Note 22 p.97-98; Note 11 p.94", rating: "yellow", why: "Lengthening cash conversion cycle, currently absorbed by debt-free cash/FD position"}
+  - {rank: 14, finding: "Unreconciled Rs0.73L FY24 mismatch between Note 38 (FX travel outgo) and Annexure 3 (FX outgo)", note_ref: "Note 38 p.101; Annexure 3 p.45", rating: "yellow", why: "Small cross-section number mismatch within same AR"}
+  - {rank: 15, finding: "Company fully debt-free with ~Rs3,775L in fixed deposits; contingent liabilities only 4.88% of net worth", note_ref: "Note 21 p.97; Notes 7 and 14 p.93/95; Note 36.2 p.101", rating: "green", why: "Genuine balance-sheet strength that should not be lost among the flags above"}
+red_flags:
+  - "Headline Basic/Diluted EPS computed on Total Comprehensive Income rather than net profit, inflating FY24 reported EPS by 6.5% via one-off OCI gain"
+  - "Zero ECL provisioning against aged trade receivables (2-3yr and >3yr buckets) in either year despite Rs143.33 lakh combined FY25 exposure"
+  - "Material multi-year BGR Energy Systems IBC litigation completely absent from Note 36 Contingent Liabilities"
+  - "Rs2.84 lakh unreconciled gap between Cash Flow Statement and Note 45c/Annexure 3 on subsidiary disinvestment proceeds"
+  - "Rs0.73 lakh unreconciled FY24 gap between Note 38 and Annexure 3 on foreign exchange outgo"
+questions_for_mgmt:
+  - "Why is there zero ECL/doubtful-debt provision against the Rs143.33 lakh of trade receivables aged beyond 2 years (FY25), and what is the actual collection status of the 2-3yr and >3yr buckets?"
+  - "Does the Rs47.77 lakh FY25 bad-debts/liquidated-damages line in Note 33 include any write-off from the BGR Energy Systems settlement, and why was this litigation never disclosed in Note 36?"
+  - "Why does the Cash Flow Statement show Rs16.54 lakh FY24 subsidiary-disinvestment proceeds while Note 45c and Annexure 3 both show Rs13.70 lakh for the same transaction?"
+  - "Why is headline Basic/Diluted EPS computed on Total Comprehensive Income rather than net profit for the period, contrary to Ind AS 33's numerator definition?"
+  - "What is the status of the two unsatisfied MCA charges (id 90205616 and 90204976), and what is the timeline to file Form CHG-4?"
+receivables_trend: "deteriorating: FY24 to FY25 total trade receivables Rs1347.46L to Rs2245.58L (+66.7%, Note 11); ageing 2-3yr bucket Rs42.80L to Rs97.57L (+128%), >3yr bucket Rs25.49L to Rs45.76L (+79.5%); receivable days (closing-balance) worsened ~88.6 to ~113.6 days; zero ECL provisioned against any bucket in either year. Note: FY26 figures cited in the injected Gate 0 context (29.63cr) are NOT FOUND in this AR, which contains only FY25/FY24 actuals."
+restatements_found: []
+going_concern_language: "NONE — Directors' Responsibility Statement (Board's Report p.28) and CARO Annexure A clause (xix) (p.79) both confirm going-concern basis with no material uncertainty language anywhere in the document"

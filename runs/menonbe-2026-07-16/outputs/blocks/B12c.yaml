@@ -1,0 +1,26 @@
+stage: B12c
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0:
+  rules_checked: 48
+  fails:
+    - {rule: "M10 Switching Costs", severity: MINOR, expected: 0, reported: 1, impact: "moat total 16->15 possible; moat count (3), MODERATE, grand-total band and AVOID classification all unchanged"}
+emoat:
+  rules_checked: 26
+  fails: []
+valuation: pending-phase-3
+recomputed_destination_pe: "pending-phase-3"
+recomputed_decision: ""   # concur: Gate0 AVOID, EM NONE, combined AVOID all re-derive unchanged
+findings:
+  - {severity: MINOR, location: "B01 Block F M10", description: "Scored 1 vs strict-band 0; immaterial to moat count/classification"}
+  - {severity: MINOR, location: "B01 Block E E2", description: "~2.75yr promoter-change window vs 3yr spec (data limitation, flagged); band unaffected"}
+  - {severity: MINOR, location: "B01 Block F M9", description: "+4.05pp GM/rev-CAGR falls between bands; score 1 defensible; no impact"}
+  - {severity: MINOR, location: "B07 F2", description: "B05 promise-delivery record absent; self-service concall substitute flagged; F2=0, no scoring impact"}
+  - {severity: MINOR, location: "B07 Section 5", description: "Scale ceiling ~84 vs prompt ~0-80; cosmetic, absolute bands unaffected"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 99   # 73 of 74 checked rules pass; sole fail is MINOR and immaterial

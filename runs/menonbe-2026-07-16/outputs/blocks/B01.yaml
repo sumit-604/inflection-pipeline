@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements: absent, research: absent, shareholding: partial (screener holdings only, no pledge), promoter_pledge_pct: not found in any provided source, contingent_liabilities_quantum: not found in AR notes extract (auditor negative-assurance statement only), capex_and_trade_payables_breakdown: only FY25-FY26 available, FY23-FY24 not found]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID driven by mandatory one-tier downgrade for LIMITED continuous history (4yr, FY23-FY26; FY06-08 disconnected by 15yr filing gap) plus deal-breaker Block B<8 (negative FCF both measurable years, WC days +17.6d); Block A (19/20) and Block D (18/20) are strong and moat is MODERATE (3 confirmed) - historical depressors are a filing-continuity gap and a capex-heavy expansion phase (Net Block +56%, borrowings +218% FY23-FY26), not distress signals."}
+  - {type: FLAG-DATA-BASIS, reason: "screener-Data_Sheet.csv is CONSOLIDATED basis for FY23-FY26, not STANDALONE as the task brief assumed - cross-verified exact match on Sales/PAT/Total Assets/CFO against results PDF consolidated statements. All screener-derived figures in this report are consolidated; standalone figures used only where explicitly marked."}
+  - {type: FLAG-CASH, reason: "Block B = 5/20. FCF negative in both measurable years (FY25 -3.97 Cr, FY26 -3.62 Cr); WC days rose +17.6 days FY25-FY26; only 2 of 4 years measurable for capex/FCF/trade-payables due to missing cash-flow-statement and balance-sheet breakdowns for FY23-FY24 in provided sources."}
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 19, B: 5, C: 6, D: 18, E: 6}
+core_score: 54
+moat_score: 16
+grand_total: 70
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["Block B <8 (5/20) -> max GOOD (non-binding, actual result already below this cap)"]
+history_downgrade: true
+data_notes:
+  - "screener-Data_Sheet.csv confirmed CONSOLIDATED basis (Menon Bearings + Menon Alkop + Menon Brakes + Menon Bearings New Ventures), not standalone - exact match to results PDF consolidated Sales/PAT/Total Assets/CFO for FY25-FY26."
+  - "FY06-08 legacy screener-data excluded from all CAGR/median/trend calculations due to 15-year disconnected filing gap (FY09-FY22 not filed/provided)."
+  - "ROCE (Block A) sourced primarily from AR Note 33 statutory ratio disclosure (consolidated, p.166) for FY25 (23.72%) and FY26 (29.80%) per the 'use source's own figure' principle; independent EBIT/(TA-CL) computation (20.31%/26.08%, closing-balance basis) shown as cross-check with ~3.5-4pp divergence, likely from AR using average capital employed and/or a different EBIT convention not fully legible via OCR."
+  - "ROE independently computed and cross-validated exactly against AR Note 33 (16.43% FY25, 22.25% FY26, consolidated, p.165)."
+  - "Capex (Purchase of Fixed Assets) available only FY25 (31.02 Cr) and FY26 (26.94 Cr) from results PDF consolidated cash flow statement p.14; FY23-FY24 NOT FOUND (screener-data gives only aggregate Cash from Investing Activity). B2/B3 scored on this 2-year subsample only."
+  - "Trade Payables available only FY25 (15.34 Cr) and FY26 (19.87 Cr) from results PDF consolidated balance sheet p.13; FY23-FY24 NOT FOUND (screener-data's 'Other Liabilities' line is an undifferentiated aggregate). WC-days-based tests (B4, and the stability legs of M4/M10) computed on this 2-year window only, on Revenue basis (COGS not cleanly isolated)."
+  - "Promoter pledge % not disclosed anywhere in provided sources (shareholding_screener_transcribed.txt explicitly flags this gap; AR text extract searched for pledge/encumbrance with no matches). E3 scored 0, deal-breaker #5 cannot be evaluated (not triggered, but unresolved)."
+  - "Contingent liabilities quantum not located in AR notes extract despite targeted search (Contingent Liabilities, Claims against, Commitments, disputed demands all searched); auditors state 'no pending litigations which would impact financial position' (AR p.93 standalone, p.133 consolidated) as a qualitative signal only, not used to score E4 (scored 0)."
+  - "Promoter holding step-down (70.18%->68.44%) occurred as a single step at Sep 2024, not a gradual decline; the source shareholding table itself notes 'classifications might have changed from Sep 2022 onwards,' consistent with a promoter-group reclassification rather than an open-market reduction in economic stake. Not re-scored, flagged for operator context."
+  - "M2/M9 peer benchmarks use the 4 operator-supplied peer CSVs (Bimetal, Harsha, NRB Bearings, Precision Camshafts); EBITDA computed as PBT+Interest+Depreciation for all names (screener-data cost-line detail incomplete for FY26 across the board) - validated by exact reproduction of Menon's own disclosed consolidated EBITDA (65.21 Cr vs results PDF 65.208 Cr, p.12)."
+  - "M5 (Scale & Dominance) marked PEER DATA NEEDED for true segment-wide ranking - the 4 named peers are not necessarily the full competitive set; Menon ranks 4th/5 by mcap within this limited peer basket but holds the highest EBITDA margin of the group."
+  - "R&D/Revenue (0.56%, AR p.54) is a STANDALONE Menon Bearings Limited disclosure, not consolidated; used as-is for M6 since no consolidated R&D figure is disclosed."
+  - "FY25 revenue shows a ~1.3% variance between screener-data (242.52 Cr) and the FY26 results PDF's FY25 comparative consolidated figure (239.28 Cr), likely a restatement/reclassification between original FY25 filing and the FY26 comparative presentation; screener-data used throughout for internal consistency with other screener-sourced BS/CF figures."
+block_b_trend: "deteriorating - WC days rose +17.6 days (108.99 FY25 -> 126.56 FY26, revenue basis) and cumulative FCF/PAT was -0.12x across the only two measurable years, despite strong 4-year cumulative CFO/PAT of 1.07x"

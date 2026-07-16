@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "526717"
+run_date: "2026-07-15"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 177, high: 222}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "FY27 standalone operating cash flow negative for a second consecutive year AND consolidated CFO reverts negative, with gearing (Net Debt/EBITDA) staying above 3x"
+monitoring_checklist:
+  - "Standalone operating cash flow: green if positive alongside positive consolidated CFO; red if standalone negative a second consecutive year and consolidated reverts negative (FY27 cash flow statement)"
+  - "Net Debt/EBITDA below 3x and Interest Coverage above 3x, trending to gearing below 2x by FY28; red if ND/EBITDA stays above 3x or bank WC borrowings rise above Rs 98.68 cr"
+  - "Related-party COGS below 70.4% consolidated and revenue below 37.5%, disclosure granularity maintained; red if RPT % rises or new related-party financing is added"
+  - "EBITDA margin sustained at or above 9% for two consecutive full years; red if it falls to 7% or below"
+  - "Capacity utilisation disclosed and rising above the FY25 31% base; red if undisclosed again or stalling near 31%, or operating cycle elongates past 96 days"
+  - "No KMP/CS resignation within 12 months of the Jan-2026 CS exit and no repeat SEBI/BSE disclosure lapse; red if either occurs"
+  - "Reported ROCE holds after adding related-party payables back to capital employed; red if the add-back collapses ROCE toward ~18%"

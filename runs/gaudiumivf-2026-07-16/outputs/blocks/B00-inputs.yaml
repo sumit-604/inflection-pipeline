@@ -32,8 +32,8 @@ input_gaps:
     priority: MEDIUM
     effect: "No Reg 30 documented-ACTION record; stage 8 relies on web + RHP + operator-supplied leads; FTTCP Step 0C input degraded, flagged."
   - type: shareholding
-    priority: MEDIUM
-    effect: "Stage 10 FII+DII unresolved; stage 11 cannot affirm UA institutional-absence qualifier => UA withheld; promoter pledge/holding falls back to RHP/AR with staleness noted."
+    priority: RESOLVED-PARTIAL
+    effect: "RESOLVED 2026-07-16 by operator-supplied screener screenshot (inputs/shareholding/operator-supplied-shareholding-2026-07-16.md). Mar2026->Jun2026: Promoters 71.29%->71.29%, FII 6.70%->3.01%, DII 2.63%->2.22%, Public 19.39%->23.47%. FII+DII 9.33%->5.23% (institutions present but declining). Stage 10/11: UA institutional-absence qualifier NOT cleanly met (institutions present), do not apply UA on that basis. Provenance is a screenshot not the raw Reg-31 PDF."
   - type: research
     priority: LOW
     effect: "No anchored effect (research never anchored). Operator supplied an operations/IPO summary as non-anchored leads."

@@ -1,0 +1,45 @@
+stage: B02-notes
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements: absent, research: absent, shareholding: partial]
+flags:
+  - {type: FLAG-CASH, reason: "Standalone trade receivables +72.1% YoY vs revenue +28.5%; >6-month ageing bucket 6.8%->22.2% of total (Note 31, AR pp.126-127); standalone operating cash conversion 35.3% (Cash from Ops Rs1,448.22L / Operating Profit before WC changes Rs4,097.81L, Standalone Cash Flow Statement AR pp.98-99); standalone cash & cash equivalents down 69.7% (Rs1,341.82L->Rs406.40L); ECL allowance static at Rs19.57L both years (Note 6). Consolidated ageing is stable (~11%), so deterioration is standalone-entity-specific. CRISIL (23 Apr 2026, pre-dating 14 May 2026 board adoption of audited FY26 financials) attributes group balance-sheet pressure to debt-funded capex and calls liquidity Adequate; this is the countervailing evidence to weigh."}
+accounting_quality: 5        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Standalone trade receivables +72.1% YoY vs revenue +28.5%; >6-month ageing bucket triples 6.8%->22.2%; DSO 85->114 days; consolidated ageing stable ~11%; ECL allowance static", note_ref: "Note 6, 31 (standalone, AR pp.114/126-127); Note 6 (consol, AR pp.150-151)", rating: "red_flag"}
+  - {rank: 2, finding: "Standalone cash conversion 35.3% (Cash from Ops Rs1,448.22L vs Operating Profit before WC changes Rs4,097.81L), driven by Rs2,784.87L absorbed by receivables build; standalone cash & equivalents down 69.7% in the year PAT grew 64.4%", note_ref: "Standalone Cash Flow Statement, AR pp.98-99", rating: "red_flag"}
+  - {rank: 3, finding: "Rs29 crore corporate guarantee to Menon Alkop Ltd (18.9% of standalone net worth) plus disputed TDS demand Rs12.78L, neither in any Contingent Liabilities table in standalone or consolidated Notes", note_ref: "CARO Annexure A (AR pp.92-93); Note 1 para 11(ii)", rating: "red_flag"}
+  - {rank: 4, finding: "AOC-1 shows Menon Alkop Ltd (SEBI material subsidiary) with negative Reserves & Surplus Rs(206.98)L (implied net worth ~Rs618.02L) vs parent's unimpaired carrying cost Rs2,823.50L, ~4.6x gap, no impairment recognised", note_ref: "AOC-1, Board's Report Annexure I (AR pp.41-42); Note 3", rating: "red_flag"}
+  - {rank: 5, finding: "Note 6's own >6-month sub-figure (Rs588.77L FY26 / Rs16.13L FY25) is 2.5x-16x smaller than Note 31's ageing-schedule total for the same balance date; internal contradiction, both show deterioration", note_ref: "Note 6 vs Note 31 (AR p.114/116 vs pp.126-127)", rating: "red_flag"}
+  - {rank: 6, finding: "Board's Report ratio table drawn from consolidated figures without disclosing basis, shows Debtors Turnover -6.27% vs standalone Note 33's +12.6% same year - opposite directions on the same metric", note_ref: "Board's Report Item 13 (AR p.60); consol & standalone Note 33", rating: "red_flag"}
+  - {rank: 7, finding: "CRISIL BBB+/Stable reaffirmation (23 Apr 2026) predates board adoption of audited FY26 financials (14 May 2026) by ~3 weeks; its Key Financial Indicators table has no FY26 full-year actuals", note_ref: "CRISIL rating rationale dated 23 Apr 2026 vs Note 1 board-adoption date", rating: "watch"}
+  - {rank: 8, finding: "Related-party advance to Menon Brakes Ltd (wholly owned subsidiary) grew 44.9% to Rs457.22L, interest-free and unsecured, no disclosed terms; interest income fell 50.9% same year", note_ref: "Note 8, Note 16, CARO Annexure A (AR pp.92-93/108-109)", rating: "watch"}
+  - {rank: 9, finding: "Trade payables +71.5% YoY tracking receivables growth, both far outpacing revenue +28.5%; payable days up ~51 to ~65", note_ref: "Note 14, 30 (AR pp.119, 125-126)", rating: "watch"}
+  - {rank: 10, finding: "Simultaneous MD (R.D. Dixit->Arun Aradhye) and CFO (Aradhye->Chandrakant Ghatge) change effective 4 March 2026, ~4 weeks before year-end; independent director also resigned during the year", note_ref: "Board's Report (AR pp.4-5); Note 16 RPT (AR pp.108, 145)", rating: "watch"}
+  - {rank: 11, finding: "Related-party sales to Mani Auto Components (Chairman is a partner) ~3x larger at consolidated level (Rs19.47cr, 6.6% of group revenue) than standalone note alone shows (Rs4.37cr, 2.1%)", note_ref: "Note 16 standalone vs consol (AR pp.108-109/145-146)", rating: "watch"}
+  - {rank: 12, finding: "No audited export/domestic revenue split or customer concentration disclosure despite MD&A citing ~35% export share; no Ind AS 115 contract asset/liability disclosure", note_ref: "Note 17 (AR pp.119-120)", rating: "watch"}
+  - {rank: 13, finding: "Disclosure-completeness regression vs FY2021-22 AR: Other Statutory Information note, Code on Social Security note, prior-year-regrouping note dropped (33 notes vs 36); no Ind AS 10 subsequent-events note found despite 45-day gap to board adoption", note_ref: "FY26 Notes end at 33; FY22 AR Notes 34-36; Note 1 board-adoption date", rating: "watch"}
+  - {rank: 14, finding: "No Ind AS 19 numeric actuarial assumptions (discount rate, salary escalation, mortality table) disclosed for gratuity/leave encashment in either year, a longstanding gap", note_ref: "Note 26, 27 (AR pp.123-124)", rating: "watch"}
+  - {rank: 15, finding: "Other operating revenue (duty drawback+forex) +170.9% and Other Income nearly tripled to 7.7% of PBT from 4.2%, both less-recurring; no MSME Section 16 interest-on-delayed-payment disclosure found", note_ref: "Note 18, 19 (AR p.120); Note 14 (AR p.119)", rating: "watch"}
+red_flags:
+  - "Standalone trade receivables +72.1% YoY, >6-month ageing bucket 6.8%->22.2%, DSO 85->114 days (Note 6, 31, AR pp.114/126-127)"
+  - "Standalone operating cash conversion 35.3%; standalone cash & equivalents down 69.7% (Standalone Cash Flow Statement, AR pp.98-99)"
+  - "Rs29cr corporate guarantee to Menon Alkop + Rs12.78L disputed TDS demand, no Contingent Liabilities table anywhere in Notes (CARO Annexure A, AR pp.92-93)"
+  - "Menon Alkop Ltd (material subsidiary) negative reserves Rs(206.98)L vs unimpaired parent carrying cost Rs2,823.50L (AOC-1, AR pp.41-42)"
+  - "Note 6 vs Note 31 internal contradiction on aged-receivables quantum for same balance date (AR p.114/116 vs pp.126-127)"
+  - "Board's Report ratio table (undisclosed consolidated basis) shows receivables turnover moving opposite to standalone Note 33 for same year (Board's Report Item 13, AR p.60)"
+questions_for_mgmt:
+  - "What is driving the standalone-only receivables ageing deterioration (>6-month bucket 6.8%->22.2%, DSO 85->114 days) when consolidated ageing is stable at ~11%, and has the ECL matrix been recalibrated?"
+  - "What are the commercial terms (interest rate, tenure, repayment schedule) of the Rs457.22 lakh advance to Menon Brakes Ltd, which grew 44.9% in FY26?"
+  - "Has the Board tested the Rs2,823.50 lakh Menon Alkop investment for impairment under Ind AS 36 given Menon Alkop's negative reserves, and what were the assumptions?"
+  - "Why is there no consolidated Contingent Liabilities table covering the Rs29 crore Menon Alkop corporate guarantee and the disputed TDS demand, and what is the group's total guarantee/dispute quantum?"
+  - "What drove the near-simultaneous MD and CFO change effective 4 March 2026, and what controls ensured reporting continuity through year-end close?"
+  - "Why do Note 6's own aged-receivables figure and the Note 31 ageing schedule differ by 2.5x-16x for the identical balance date?"
+  - "Has CRISIL been provided the final board-adopted FY26 standalone financials (14 May 2026), and is a follow-up surveillance review scheduled?"
+receivables_trend: "deteriorating (standalone); stable (consolidated) - standalone >6-month ageing bucket 6.8% (FY25) -> 22.2% (FY26) of total receivables, DSO 85->114 days (Note 31, AR pp.126-127); consolidated >6-month share ~11.5% (FY25) -> ~11.2% (FY26), broadly stable (Note 6, consol, AR pp.150-151)"
+restatements_found: []
+going_concern_language: "NONE"

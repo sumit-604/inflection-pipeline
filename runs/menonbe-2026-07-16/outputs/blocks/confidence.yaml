@@ -1,0 +1,12 @@
+# Phase-1 confidence delta (per orchestrator Section 5). Overall = min of the four.
+# Valuation framework-adherence component is DEFERRED to phase 3 (verifier C valuation half not run).
+confidence_delta:
+  numerical_acceptance: 91.5     # B12a: 43/47 clean, 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 75           # B12b: 12/16 verifier red flags fully caught upstream (effective 94% found-in-any-form); 1 MAJOR under-weighting
+  framework_adherence: 99        # B12c: Gate0 + Emerging Moat portion only (73/74 rules pass); valuation portion pending phase 3
+  peer_utilisation: 100          # B12d: 11/11 peer transcripts used substantively
+  overall: 75                    # min(91.5, 75, 99, 100)
+  band: "75-89 normal — note specifics; no verdict downgrade, no REWORK"
+  binding_component: redflag_coverage
+  valuation_framework_adherence: pending-phase-3
+  rework_triggered: false        # no CRITICAL numerical finding; all acceptance_rate >= 60%

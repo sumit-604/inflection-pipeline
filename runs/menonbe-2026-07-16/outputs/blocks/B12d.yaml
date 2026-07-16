@@ -1,0 +1,22 @@
+stage: B12d
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "HARSHA", missed_item: "HARSHA Nov-2025/Feb-2026/May-2026 calls describe 'railway' as a soft industrial end-demand segment for stamping/cage products (unrelated to dynamometer/brake-testing bottleneck); B06's Claim 6 net read frames peer silence on 'railway' as total, which is accurate in substance but not at the literal keyword level", anchor: "HARSHA Nov-2025 call, transcript text near '...segments like railway, which are a little bit soft from our point of view'"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06.md Claim 8, NRBBEARING Q2 FY26 (Nov-2025) citation", description: "Customer-concentration quote ('No single customer has more than 10%...top 10 = 50%') cited as p.7 of 20; actual internal page is p.8 of 20. Quote text and speaker exact."}
+  - {severity: "MINOR", location: "B06.md Claim 2, HARSHA Q3 FY26 (Feb-2026) citation", description: "'3 months...4 months total lag' quote (Maulik Jasani) cited as p.12 of 16; actual internal page is p.11 of 16. Quote text exact."}
+  - {severity: "MINOR", location: "B06.md Claim 1, HARSHA Q4/FY26 (May-2026) citation", description: "Composite quote cited as p.12-13 of 18; the 'manufacturing is moving to India' half is actually on p.11 of 18, and p.12 (included in the cited range) does not contain quoted material -- the second half is correctly on p.13."}
+  - {severity: "MINOR", location: "B06.md Part 2E, EV-strategy-reversal risk item", description: "'a complete U-turn' presented in quotation marks as a PRECAM quote; no such phrase exists in either the Dec-2025 or Mar-2026 PRECAM transcripts (verified by full-text search). Actual source wording is a paraphrase-equivalent: 'a nearly reversal of strategy from going all-electric to now looking at ICE and hybrid powertrains' (Karan Shah, Mar-2026 call)."}
+  - {severity: "MINOR", location: "B06.md Part 2/Claim 6 net read", description: "States peers show 'complete silence' on railway terminology; HARSHA's Nov-2025/Feb-2026/May-2026 calls do use the word 'railway' as an unrelated industrial end-demand segment. Substantively immaterial to the UNVERIFIABLE verdict, which stands correctly."}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100

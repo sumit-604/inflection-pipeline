@@ -1,0 +1,53 @@
+stage: B08-promoter
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "annual-report: absent (per B00) — no AR governance extracts available; this stage is web-only"
+  - "prospectus/DRHP: exists publicly but PDF fetch returned HTTP 403 on all mirrors tried (NSE archives, indcap.in); full text unread, only search-snippet coverage"
+  - "shareholding-pattern filing: absent from inputs/; pledge and FII/DII stake percentages not filing-verified this run"
+  - "announcements: absent from inputs/; NSE corporate-filing content (price-movement letter, Reg.33 reply) recovered only via search snippets, not primary PDF read (403)"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Identity resolved: AVANA is NOT a rename/successor of Kaycee Industries Ltd (BSE 504084); the 504084 data in this run's inputs is a mis-collected, unrelated company and should be discarded from AVANA analysis", "~6 months as a listed entity (IPO Jan-2026); no multi-year promoter conduct track record exists to assess", "KIADB commercial-production deadline missed by ~6 years (original: 1-Jun-2020), extended to 22-May-2026, per company's own DRHP risk factor; outcome as of run date unconfirmed", "Promoter-group disclosure gap: company lacks consents/details from R. Manoharan, father-in-law of promoter S. Vinod Kumar, who qualifies as Promoter Group under SEBI ICDR", "No SEBI/criminal/tax adverse finding, no pledge, unmodified FY26 audit opinion — no red-tier deal-breaker triggered"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "KIADB land-lease commercial-production deadline (originally 1-Jun-2020) missed by ~6 years; one-year extension granted to 22-May-2026; DRHP itself flags risk of KIADB action if missed again", evidence_tier: "MEDIA REPORTED (search-quoted DRHP risk-factor text, cross-confirmed across 2 independent search results)", source: "IPO-analysis aggregator search snippets citing Avana Electrosystems DRHP risk factors", date: "DRHP filed ~Sep-2025; deadline 22-May-2026"}
+  - {finding: "Promoter Group disclosure incomplete: no consents/confirmations obtained from R. Manoharan, father-in-law of promoter S. Vinod Kumar, who is Promoter Group under SEBI ICDR Regulations", evidence_tier: "MEDIA REPORTED (search-quoted DRHP disclosure)", source: "Web search snippet referencing Avana Electrosystems DRHP", date: "DRHP filed ~Sep-2025"}
+  - {finding: "NSE Surveillance price-movement clarification query (stock rose from Rs 77.50 listing to ~Rs 146 CMP in under 6 months); company's reply was standard boilerplate (no undisclosed price-sensitive information)", evidence_tier: "MEDIA REPORTED (NSE corporate-filing title/date confirmed via search; full letter text not opened, 403)", source: "NSE archives filing title 'Avana Price Movement Clarification Letter'", date: "10-11 April 2026"}
+  - {finding: "NSE Regulation 33 clarification sought on Q4/FY26 results outcome (Board meeting 21-May-2026); company replied; no restatement or qualification found; auditor issued unmodified opinion", evidence_tier: "MEDIA REPORTED (NSE filing existence/date confirmed via search; content of query itself not opened, 403)", source: "NSE archives filing 'Avana Electrosystems Reply to NSE'", date: "received 17-June-2026, replied 23-June-2026"}
+  - {finding: "No SEBI/criminal/tax/civil adverse action found against the company or any of its four named promoters across multiple targeted searches", evidence_tier: "VERIFIED-absence (multi-query, no primary SEBI order-database search performed)", source: "Multiple web searches incl. watchoutinvestors.com queries", date: "searched 2026-07-16"}
+transition_evidence: []
+pledge_pct_latest: 0
+pledge_trend: "not disclosed/found in any source this run; treat as unconfirmed absence, not a filing-verified zero — no shareholding-pattern filing was available in inputs/ or opened via web"
+searches_performed:
+  - "Avana Electrosystems Ltd Kaycee Industries name change BSE 504084"
+  - "Avana Electrosystems Ltd promoter shareholding"
+  - "Avana Electrosystems IPO promoters Anantharamaiah Panish Gururaj Dambal background"
+  - "Avana Electrosystems Ltd DRHP SME IPO business profile Bangalore"
+  - "\"Avana Electrosystems\" DRHP litigation promoter group companies related party"
+  - "Kaycee Industries Ltd business electrical heaters promoter Chheda family"
+  - "\"Avana Electrosystems\" IPO risk factors weaknesses litigation"
+  - "\"Avana Electrosystems\" auditor board of directors independent director"
+  - "\"Avana Electrosystems\" NSE exchange query clarification reply June 2026"
+  - "\"Avana\" price movement clarification letter April 2026 NSE unusual price"
+  - "Avana Electrosystems Regulation 33 clarification quarter March 2026 results NSE query outcome"
+  - "\"Avana Electrosystems\" promoter pledge shares encumbrance"
+  - "promoter names litigation SEBI court case (Panish Anantharamaiah / Gururaj Dambal / Vinod Kumar Sampatkumar / K N Sreenath)"
+  - "\"Avana Electrosystems\" group companies promoter other directorships Zauba"
+  - "Avana Electrosystems Glassdoor AmbitionBox employee reviews"
+  - "\"Avana Electrosystems\" order book results Q1 FY27 revenue growth news"
+  - "\"Avana Electrosystems\" institutional investor FII DII stake mutual fund"
+  - "Panish Anantharamaiah Avana Electrosystems founder managing director career LinkedIn Bangalore power electronics"
+  - "\"Avana Electrosystems\" site:watchoutinvestors.com OR SEBI order adjudication"
+  - "\"Avana Electrosystems\" KIADB land Karnataka government allotment"
+searches_skipped:
+  - "Direct SEBI order/adjudication portal search (only Google-indexed watchoutinvestors.com reachable via this tool)"
+  - "MCA/RoC master-data cross-reference of all four promoters' other directorships (Zauba fetch returned HTTP 403)"
+  - "Full DRHP/RHP/Prospectus primary-text read (NSE archives PDF and indcap.in mirror both returned HTTP 403)"
+  - "Full Glassdoor/AmbitionBox review text (Glassdoor page returned HTTP 403; only review-count metadata recovered via search)"
+  - "Confirmation of whether KIADB 22-May-2026 commercial-production deadline was actually met"
+  - "Primary shareholding-pattern filing to confirm exact FII/DII institution name and stake % (Equitymaster reference not chased to source filing)"
+verdict_basis: "No red-tier finding (no SEBI/criminal/tax action, no pledge, unmodified FY26 audit opinion) offset by a structurally short ~6-month public track record plus two disclosed, unresolved gaps: a ~6-year-overrun KIADB commercial-production deadline (DRHP risk factor) and an incomplete Promoter Group disclosure (R. Manoharan) — insufficient evidence yet for TRUSTWORTHY, no basis for CONCERN/AVOID."

@@ -20,7 +20,7 @@ peers_available:
   concalls: [AARTECH Jun 2026, DANISH May 2026, DANISH Nov 2025]
   screeners: [AARTECH, DANISH, MARSONS, "504084 (=Kaycee Industries Ltd)"]
 input_gaps:
-  - prospectus: absent (long-listed; not a HIGH gap)
+  - prospectus: absent (HIGH gap — AVANA IPO'd NSE SME 19-Jan-2026, recently-listed; DRHP is foundational, corrected post-B08)
   - annual-report: absent (HIGH impact — stages 2,3,4 skipped)
   - results: absent (Gate 0 on screener only; latest-period fields unresolved)
   - rating: absent (Pillar 2 conservative; rating_wc_quote unresolved)
@@ -31,7 +31,8 @@ input_gaps:
   - concalls: declared-unavailable (NOT a gap)
 provenance_notes:
   - "sector_cap_row Pharma/CDMO is a collect_to_repo v3 defect (wrong sector)"
-  - "504084-*.csv = KAYCEE INDUSTRIES LTD, not Avana; subject = screener-*.csv"
+  - "504084-*.csv = KAYCEE INDUSTRIES LTD, a DISTINCT unrelated company (B08-resolved); discard; subject = screener-*.csv"
+  - "AVANA IPO'd NSE SME 19-Jan-2026 (~6mo listed) — recently-listed; prospectus absence is a HIGH gap"
   - "screener P&L/BS/CF/Quarters/Customization are empty templates"
 stages_run: [1, 7, 8, 9]
 stages_skipped:

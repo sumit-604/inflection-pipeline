@@ -1,15 +1,20 @@
 stage: confidence-delta
 company: GAUDIUMIVF
 run_date: 2026-07-16
-phase: 1
+phase: 3-final
 confidence_delta:
   numerical_acceptance: 94.3      # B12a (re-audited against consolidated FY26 statements)
   redflag_coverage: 87            # B12b: 12 fully-caught + 2 partial of 15 verifier-found flags = (12 + 0.5*2)/15 = 86.7% (strict fully-caught = 80%); single miss is MINOR
-  framework_adherence: 98         # B12c, Gate 0 + Emerging Moat portion ONLY; valuation-adherence component PENDING PHASE 3
+  framework_adherence: 97         # B12c FULL (Gate 0 + Emerging Moat + phase-3 valuation-adherence): 88 passed / 91 checked; 0 CRITICAL, 3 MAJOR (2 are documented operator overrides)
   peer_utilisation: 100           # B12d: 12/12 peers used substantively (D corrected B06's own map which understated at 11/12)
-  overall: 87                     # min of the four
+  overall: 87                     # min of the four (unchanged; framework moved 98->97 but redflag 87 remains the binding minimum)
   band: "normal (75-89): note specifics; no verdict downgrade, no REWORK"
-  valuation_framework_adherence: pending-phase-3
+  valuation_framework_adherence: complete
+valuation_adherence_notes:
+  - "0 CRITICAL in the phase-3 valuation audit; destination PE and the Hurdle STOP / no-buy-at-CMP decision hold under every alternative reading tested."
+  - "MAJOR (operator override, authoritative): additive track governs the entry zone despite 38.6% divergence from the RRM track; the Section 1B default (conservative RRM track) would set entry ~Rs 57 / MoS ~Rs 45 instead of Rs 90-93. Load-bearing on the actionable entry, not on the buy/no-buy call."
+  - "MAJOR (operator override, authoritative): verdict labelled WATCHLIST vs the mechanical AVOID that Gate0 AVERAGE + Promoter CONCERN + Hurdle STOP would force; reconciled via the deliberation's reachable-entry reasoning; no-buy-at-CMP preserved, position size Small (promoter cap) correct."
+  - "MINOR: a framework-internal Pillar 1 second branch (ROCE>33%) would give 25.2x -> dest ~23x; STOP unchanged. B11 took the conservative cap-24 read."
 rework_gate:
   triggered: false
   basis: "No verifier CRITICAL survives; no verifier acceptance_rate below 60% (lowest is B12b 80%). Verifier A CRITICALs from its first pass were false positives caused by not accessing the consolidated FY26 statements (present on p16-19 of results PDF 46148cbb); re-audit against those pages returned 0 CRITICAL / 0 MAJOR at 94.3%. The 'zero bad debt' item is a MANAGEMENT concall claim that B05 correctly recorded as CONTRADICTED (by the Rs31.97L FY26 ECL allowance), i.e. a correctly-caught contradiction, not a pipeline numerical error."

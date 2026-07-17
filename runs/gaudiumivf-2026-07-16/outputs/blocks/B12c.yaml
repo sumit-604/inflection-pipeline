@@ -7,17 +7,25 @@ gate0: {rules_checked: 39, fails: []}
 emoat:
   rules_checked: 13
   fails:
-    - "B07 closing YAML block (stage: B07-emoat) NOT emitted; report ends at 'Input gaps carried forward'. Required by framework OUTPUT spec and CLAUDE.md 'done' definition; breaks machine-readable Pillar-3 handoff (em_score, active_categories, catalysts_12m, capex_embedded_growth_pct, optionality_register). Content present in prose; no value changed. MAJOR."
-valuation: pending-phase-3
-framework_adherence: 98            # gate0 + EM only; 52 passed / 53 checked
-recomputed_destination_pe: ""      # concur (valuation deferred to phase 3)
-recomputed_decision: ""            # concur: Gate0 AVERAGE, EM MODEST both stand
+    - "B07 closing YAML block (stage: B07-emoat) NOT emitted; report ends at 'Input gaps carried forward'. Required by framework OUTPUT spec and CLAUDE.md 'done' definition; breaks machine-readable Pillar-3 handoff. Content present in prose; no value changed. MAJOR."
+valuation:
+  rules_checked: 39
+  fails:
+    - "V28 Conservative-track-governs default overridden: track divergence 38.6% (>15%) so Section 1B default is that the RRM (conservative) track governs the entry zone; B11 let the additive track govern on a recorded operator override (deliberation p.74). Authoritative, not silent, but load-bearing: entry Rs 90-93 rests on Track 2; default (Track 1 base FV Rs 111 / 1.953) would set entry ~Rs 57, MoS ~Rs 45. Buy/no-buy at CMP unchanged (STOP). MAJOR."
+    - "R1 Role 2 verdict WATCHLIST vs mechanical AVOID: Master v3.3 lines 809/916 mandate AVOID at CMP on Gate 0 AVERAGE, Promoter CONCERN ('regardless of everything else'), and Hurdle STOP; B14 returns WATCHLIST reconciled to the authoritative FTTCP deliberation p.63-64 (reachable Rs 90-93 entry). No-buy-at-CMP preserved; position size correctly capped Small by Promoter CONCERN. MAJOR."
+recomputed_destination_pe: ""   # concur 22x mid; Master v3.3 two-branch alt 25.2x base -> ~23x dest, +0.96x, below >1x threshold, Hurdle STOP unchanged
+recomputed_decision: ""         # concur: no buy at CMP under every reading; Hurdle STOP holds on both Pillar-1 branches and both tracks
+framework_adherence: 97         # overall across all checked rules: 88 passed / 91 checked (gate0 39 + emoat 13 + valuation/role2 39)
 findings:
   - {severity: "MAJOR", location: "B07 §OUTPUT / end of report", claim: "B07-emoat closing YAML block required by framework", finding: "block absent; downstream structured EM handoff missing", recompute: "none — prose content intact, no score/decision change"}
+  - {severity: "MAJOR", location: "B11 §1B RRM Dual-Track / §4A-4E", claim: "conservative (RRM) track governs entry on >15% divergence (Section 1B default)", finding: "divergence 38.6%; additive track governs via recorded operator override (deliberation p.74); entry Rs 90-93 rests on Track 2, not the conservative default", recompute: "default entry = 111/1.953 = ~Rs 57, MoS ~Rs 45; decision (no buy at CMP) unchanged"}
+  - {severity: "MAJOR", location: "B14 §7 verdict box / recommendation", claim: "Promoter CONCERN + Gate0 AVERAGE + Hurdle STOP each mandate AVOID (Master lines 809, 916)", finding: "verdict returned as WATCHLIST via authoritative FTTCP deliberation p.63-64; departs from mechanical AVOID label", recompute: "no-buy-at-CMP preserved; position size Small (Promoter cap) correct; label-only departure, operator-authorized"}
+  - {severity: "MINOR", location: "B11 Pillar 1 / §1B step A", claim: "ROCE base 0.5x37+7.5 capped 24 = 24.0x (Amendment 5)", finding: "Master v3.3 §Pillar 1 lines 211-214 carry a second branch for ROCE>33% (24+0.3x(ROCE-33), cap 30x) giving 25.2x at 37%; framework-internal conflict; B11 took the conservative cap-24 read", recompute: "two-branch dest ~23x (+0.96x); HR base 1.38 / bull 1.55, both < 1.953; STOP and decision unchanged"}
+  - {severity: "MINOR", location: "B11 Pillar 3a / §1B step D", claim: "3a Growth +2x on two documented (📄) qualifiers, C-capped", finding: "only SOM-implied CAGR 31.4% is a clean 📄 qualifier; capex-embedded 335% is flagged by B10 as 'not decision-useful for asset-light', order-book N/A, grade C; strict read -> one qualifier -> +0x. +2x held by operator Override 2 (documented IPO earmark as second qualifier)", recompute: "if +0x, raw dest 20.2x; Hurdle still STOP; decision unchanged"}
   - {severity: "MINOR", location: "B01 Block A", claim: "RoCE/RoE per stated framework formulas", finding: "RHP KPI definitions used (RoCE denom NW+Borrow+Lease+DTL; RoE closing NW) instead of framework defaults; source-permitted as screener CSVs empty; A3 band unchanged", recompute: "A3=5 on either basis"}
   - {severity: "MINOR", location: "B01 Block F M2/M5/M9", claim: "peer-dependent moat tests", finding: "M2 credits foreign-peer EBITDA (score 5) while M5/M9 mark PEER DATA NEEDED; defensible under 'score 0 only if peer data not provided' but asymmetric", recompute: "no change; moat count stays 3"}
 critical_count: 0
-major_count: 1
-minor_count: 2
-acceptance_rate: 98                # rules passed / rules checked, gate0+EM only
-coverage_note: "Phase 1 scope: Gate 0 (B01) + Emerging Moat (B07) only. Valuation (B10/B11) deferred to Phase 3, excluded from acceptance_rate. Audited rule application, not raw-number accuracy (Verifier A) nor company quality."
+major_count: 3
+minor_count: 4
+acceptance_rate: 97             # rules passed / rules checked, all sections: 88 / 91
+coverage_note: "Phase 3 valuation-adherence audit of B10/B11 vs Section 1B v3.3 / Master v3.3 / FTTCP v1.2, extended to Role 2 (B14) decision rules and position sizing. Gate 0 (B01) and Emerging Moat (B07) carried forward from phase 1 unchanged. Audited rule application, not raw-number accuracy (Verifier A) nor company quality. Two MAJOR items (V28 conservative-track override; R1 WATCHLIST-vs-AVOID) are documented operator overrides, authoritative per CLAUDE.md; both preserve no-buy-at-CMP but are load-bearing on the actionable entry zone and verdict label, so surfaced. No CRITICAL: destination PE and the Hurdle STOP decision hold under every alternative reading tested."

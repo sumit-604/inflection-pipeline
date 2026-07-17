@@ -1,0 +1,47 @@
+stage: B11-valuation
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "announcements: absent"
+  - "research: absent"
+  - "shareholding: partial (screener holdings only, no pledge)"
+flags:
+  - "FLAG-CASH: cash multiplier 0.85x applied, GROWTH-INDUCED; falsification metric live (standalone receivables outrun revenue OR DSO >114d flips to 0.65x STRUCTURAL)"
+  - "SHARED CATALYST: export-led capacity ramp is both Pillar 3 growth driver and cause of receivables build; single point of failure for Role 3"
+  - "CREDIBILITY C: bull EPS CAGR capped at base + 5pp in Hurdle check"
+  - "CONDITIONAL hurdle: base fails, bull passes; STOP under SOM-only base and on RRM track; growth-dependent with de-rating headwind"
+  - "NO re-rating room: destination 25x approx equals current trailing 24.3x; whole return from earnings growth"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 20.5, mid: 22.4, high: 24.0, r_used: 14, rrm: 0.94}
+  track2_additive: {low: 23.0, mid: 25.0, high: 25.0}
+  divergence_pct: 11.6
+  governing_track: "Track 2 Additive (operator-authoritative 25x); RRM 22.4x conservative cross-check; divergence 11.6% under 15% so no forced switch"
+pillar_detail:
+  roce_used: 29.8
+  roce_base: 22.4
+  roce_recovery_route: "not-credited"
+  cash_multiplier: 0.85
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.05
+  growth_premium: 1
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: true
+  sector_cap_used: 25
+hurdle_ratio: {base: 1.73, bull_used: true, verdict: "CONDITIONAL"}
+fair_values:
+  track1: {bear: 137, base: 260, bull: 523}
+  track2: {bear: 153, base: 290, bull: 584}
+expected_cagr_prob_weighted: 13.4
+entry_range: {low: 132, high: 148}
+mos_price: 118
+upside_downside_ratio: 2.7
+decision: "WATCHLIST (BUY-ON-DIPS at Rs 132-148; AVOID-on-valuation at CMP 190; growth-dependent with de-rating headwind)"
+unresolved_inputs_used:
+  - "Promoter pledge % NOT FOUND (B08) — no valuation impact; not used as an input"
+  - "Consolidated segment P&L NOT FOUND — SOTP not applied quantitatively; conservative (relied on P/E and EV/EBITDA)"
+som_cagr_crosscheck: "consistent (base domestic FY29 ~Rs 241 Cr approx B09 SOM Rs 240.8 Cr; total growth is export-led beyond the domestic SOM scope)"
+one_line_thesis: "Premium-ROCE manufacturer priced for its own returns; the 25 percent case rests entirely on the export ramp firing while cash converts, so wait for Rs 132 to 148."

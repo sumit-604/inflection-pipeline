@@ -1,0 +1,17 @@
+stage: B14-thesis
+company: "GAUDIUMIVF"
+run_date: "2026-07-17"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 90, high: 93}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Trade receivable days stay above 150 for two consecutive quarters (through H1 FY27) while zero incremental IPO hub-capex is deployed / no new hub opens — the shared receivables-hub catalyst failing to fire"
+monitoring_checklist:
+  - "Trade receivable days / DSO: green <120 and falling from ~150-187 base; red >150 or rising, or receivables outgrowing revenue (FY26 +62.4% vs +47.6% rev)"
+  - "IPO hub-capex utilisation + hub openings vs 10/8/1 FY27-29 schedule: green capex deployed and hubs opening (7->17 by FY27-end); red zero incremental capex by Q2 FY27 (was Rs 0 of Rs 50 Cr at FY26 close)"
+  - "CFO/PAT cash conversion: green >0.5x toward 0.7x; red <0.5x (was 0.30x FY26) or ECL allowance grows"
+  - "Consolidated EBITDA margin + pharmacy mix: green consolidated >38% and pharmacy stabilising; red consolidated sustained <35% (was 36.13%) or pharmacy mix past ~35%"
+  - "Credibility grade progression: green two clean quarters lifting toward B; red missed guidance or new contradictions vs filings"
+  - "Contingent tax Rs 49.75 Cr + promoter governance: green favourable order/binding indemnity; red adverse crystallisation, new RPT outflow, or further independent-director exits"

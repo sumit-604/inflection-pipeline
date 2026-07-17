@@ -1,0 +1,37 @@
+stage: B14-thesis
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 132, high: 148}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Standalone DSO exceeds 114 days OR standalone receivables again grow faster than revenue in the next print, flipping cash conversion from GROWTH-INDUCED to STRUCTURAL and the Pillar 2 multiplier to 0.65x"
+one_line_thesis: "Premium-ROCE bearings manufacturer priced for its own returns; the 25% case rests entirely on the export ramp firing while cash converts, so wait for Rs 132 to 148 and act only when the receivables line confirms cash is real."
+thesis_broken_conditions:
+  - "Standalone DSO exceeds 114 days OR standalone receivables again grow faster than revenue in the next print (cash flips STRUCTURAL, Pillar 2 to 0.65x) [FALSIFICATION METRIC]"
+  - "Consolidated CFO/PAT below 70% for a second consecutive year (FY26 already 61%)"
+  - "Export revenue % of total stalls or reverses toward FY24's 28% vs guided 37% FY27 (SHARED CATALYST fails; hurdle reverts to STOP)"
+  - "Consolidated EBITDA margin falls sustainably below 18%"
+  - "Menon Brakes dynamometer/railway approval slips a fifth time past Aug-2026 with zero railway revenue booked [CREDIBILITY TRIPWIRE]"
+  - "A fourth unreconciled restatement of the Alkop revenue target, or continued shortfall vs any stated target [CREDIBILITY TRIPWIRE]"
+  - "Alkop impairment or the Rs 29cr guarantee crystallising, or a confirmed promoter pledge above threshold [GOVERNANCE TRIPWIRE]"
+monitoring_checklist:
+  - "Standalone DSO at or below 114 days and receivables growing slower than revenue (red: DSO >114d or receivables outrun revenue)"
+  - "Standalone >6-month receivables ageing at or below 6.8% (red: rising beyond FY26's 22.2%)"
+  - "Consolidated CFO/PAT above 70% (red: second consecutive year below 70%)"
+  - "Consolidated EBITDA margin 20-22% (red: sustained below 18%)"
+  - "Export revenue % tracking toward 37% by FY27 (red: stalling/reversing toward 28%)"
+  - "Ex-works conversion rising past 80% toward 90% with receivables days falling (red: stalling at 80% with elevated receivables)"
+  - "Dynamometer commissioned and first railway/OEM PO by Aug-2026 (red: fifth slip with zero railway revenue)"
+  - "Alkop on one reconciled target at ~29% growth (red: fourth restatement or shortfall)"
+  - "Quarterly revenue annualizing at or above Rs 360cr FY27 (red: materially below)"
+  - "Alkop reserves/Rs 29cr guarantee/promoter pledge disclosed and benign (red: impairment, crystallisation, or confirmed high pledge)"
+verdict_consistency: "Consistent with Role 1 (B11) WATCHLIST; BUY-ON-DIPS Rs 132-148, AVOID-on-valuation at CMP 190"
+tier: "A (25% hurdle); Tier B barred by live FLAG-CASH falsification metric + promoter CAUTION + credibility C"
+hurdle_band: "CONDITIONAL"
+operator_overrides_honored:
+  - "Pillar 3 growth premium +1x (Operator Override 1)"
+  - "Destination PE 25x = sector cap (Operator Override 2)"
+input_gaps: ["announcements: absent", "research: absent", "shareholding: partial (no pledge)"]

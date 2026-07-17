@@ -1,0 +1,44 @@
+stage: B14-thesis
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+one_line_thesis: "WATCHLIST AVANA at Rs 146: FY26 EPS Rs 5.19 compounds ~30% base to FY30 Rs 14.82 on the KIADB +150% capacity ramp and a Rs 52.24 Cr (0.62x revenue) order book, at a four-pillar destination PE of 20.9x (operating ROCE ~40%, cash 0.80x INDETERMINATE, EM 2.5, sector cap 25x) plus Rs 12 net cash = Rs 322 forward-PE-at-exit target = ~30% CAGR (prob-weighted 22.7%); held to WATCHLIST by Gate 0 AVERAGE, INSUFFICIENT evidence, INDETERMINATE cash and HR CONDITIONAL. Key risk: KIADB commissioning slip."
+verdict: "WATCHLIST"
+entry_range: {low: 145, high: 165}
+mos_price: 132
+position_size: "Small"
+position_size_override: ""
+thesis_broken_conditions:
+  - "KIADB facility fails to commission or ramp (SHARED CATALYST kills both Pillar 1 operating ROCE ~40% and the revenue ladder); another deadline extension or CWIP 4.67 Cr not converting to Net Block"
+  - "First post-listing revenue prints below the FY26 Rs 84 Cr run rate at sub-15% growth (below the SOM-implied 14.8% bear)"
+  - "Receivables ageing or rating rationale confirms a STRUCTURAL working-capital gap (WC cycle stuck/worsening beyond ~245 days); cash multiplier drops to 0.65x and destination PE falls toward ~17x"
+  - "Operating ROCE fails to hold ~40% as idle IPO cash is deployed (proceeds used unproductively / low-return capital)"
+monitoring_checklist:
+  - "KIADB commissioning: CWIP 4.67 Cr converts to Net Block and commercial production confirmed in first primary filing (RED: further extension or CWIP still parked)"
+  - "Revenue vs Rs 84 Cr FY26 run rate: annualised FY27 revenue > Rs 96 Cr / >15% YoY (RED: annualised < Rs 84 Cr or growth below SOM 15%)"
+  - "Working-capital cycle: net WC cycle holding or improving below ~245 days (RED: above ~245 days and rising)"
+  - "Cash conversion / receivables ageing resolves INDETERMINATE: receivables current, CFO/PAT sustained >50%, multiplier clears to 1.0x (RED: ageing >180 days or rating flags structural WC, multiplier to 0.65x)"
+  - "Operating ROCE ex-surplus-cash sustained near 40% after idle cash deployment; use-of-proceeds disclosed and productive (RED: ROCE falls as cash deploys)"
+  - "Order book book-to-bill: order book above 1.0x trailing revenue (from 0.62x) (RED: below 0.62x or cancellations)"
+  - "Governance: R. Manoharan Promoter Group disclosure gap closed, pledge zero confirmed, no new exchange/SEBI query (RED: any adverse action or widening disclosure gap)"
+flags:
+  - "FLAG-PROMOTER-CAUTION: verdict CAUTION (B08) caps position size; escalation to CONCERN would force AVOID"
+  - "FLAG-CASH-INDETERMINATE: cash multiplier 0.80x, no growth offset; caps disposition at PROCEED WITH CAVEATS; 1.0x only if receivables ageing clears it"
+  - "FLAG-GATE0: Gate 0 AVERAGE (core 49/100 < 60) hard-defaults to WATCHLIST"
+  - "FLAG-CAPITAL-STRUCTURE: FY26 equity capital +28.7x coincident with IPO/rebrand; use-of-proceeds undisclosed"
+  - "FLAG-CAPEX: KIADB facility commissioning unconfirmed; CWIP 4.67 Cr purpose/capacity/date NOT FOUND"
+  - "FLAG-DATA-THIN: zero primary AVANA documents; thesis provisional on primary filings (RHP PDF, FY26 audited results, receivables ageing, rating)"
+  - "SHARED-CATALYST: KIADB commissioning underlies both Pillar 1 operating ROCE and the forward revenue ladder; ~6-year deadline slip"
+  - "HURDLE-CONDITIONAL: HR base 2.12 (forward-PE method PASS) / 1.63 (trailing-exit fail); growth-dependent with de-rating headwind; caps verdict at WATCHLIST/BUY-ON-DIPS"
+  - "TENSION-SOM: base 30% PAT CAGR exceeds SOM-implied 14.8%; justified excess pending KIADB + order-book conversion"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+provisional: true
+provisional_reason: "INSUFFICIENT evidence gate; zero primary AVANA documents this run; verdict resets on first primary filing"
+tier: "A"
+hurdle_divisor: 1.953
+expected_cagr_prob_weighted: 22.7
+fair_values_track2: {bear: 202, base: 322, bull: 372}
+fair_values_track1_rrm_floor: {bear: 178, base: 283, bull: 327}
+upside_downside_ratio: 6.9
+entry_conjunction: "BUY executes only when price inside Rs 145-165 AND latest quarterly checklist shows no thesis-broken trigger fired; price entering the zone because KIADB slipped is a withdrawn zone"

@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "The CONDITIONAL verdict hinges on ONE operator override: revert Pillar 3 to its mechanical +0x (EM 11, NONE) while keeping the generous 29.8% ROCE and destination = 23.75x, Hurdle base 1.65 / bull 1.86, both fail -> STOP. Investability is manufactured by a single +1 point."
+  - "SHARED CATALYST third path (the only one observed): in FY26 exports rose ~50% YoY AND receivables grew 2.4x faster than revenue (60.63->90.77 Cr vs revenue +21.1%) AND the ECL stayed frozen at Rs 19.57L while >6mo ageing tripled 6.8%->22.2%. The catalyst firing and the cash breaking arrive together, contradicting the thesis's 'if exports fire, cash is benign' assumption."
+  - "ROCE basis flatters the whole build: 29.8% is avg-capital (Note 33); closing-basis operating is ~24%. On 24% + mechanical Pillar 3, destination = 20.7x, BELOW current trailing 24.3x (implied de-rating), Hurdle base 1.44 / bull 1.62 -> STOP. The RRM track (22.4x) already STOPs. Rs 290 FV and the Rs 132-148 zone are override artifacts."
+  - "Falsification metric is already on the line, not untriggered: FY26 DSO = 114 days (the exact threshold) up from 85; static ECL is a provision-adequacy tell; ex-works cure stalled at 80% for two quarters. Cash multiplier can only hurt (0.65x -> ~19.5x destination) and cannot help (1.00x pins to the 25x cap)."
+  - "Governance is weakest exactly where it matters: new CFO from the Chairman's RPT counterparty (Mani Auto) installed with a new 70-yr-old MD four weeks pre-year-end during the receivables break; pledge NOT FOUND with conflicting claims; Rs 29 Cr Alkop guarantee (18.9% of standalone net worth) off the contingent-liability table; Alkop negative reserves Rs (206.98)L vs unimpaired carrying Rs 2,823.50L never addressed on any call."
+  - "Zone likely reached only on thesis break: at CMP 190 vs zone 132-148 (28-44% above) with prob-weighted CAGR 13.4%, the price most plausibly enters the zone BECAUSE exports stalled or receivables blew out -- a withdrawn zone under the entry conjunction, not an opportunity. Peers call export/Europe demand fragile (one subsidiary insolvent) and reject the sweat-assets ROCE premise."

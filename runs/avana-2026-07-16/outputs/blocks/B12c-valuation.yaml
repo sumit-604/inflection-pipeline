@@ -1,0 +1,23 @@
+stage: B12c-valuation
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+scope: "Phase-3 valuation + thesis adherence pass. Gate 0 (B01) and Emerging Moat (B07) audited in Phase 1 (100%, 0 CRIT/0 MAJ) and NOT re-audited here. B14 (Role 2 thesis) not on disk at audit time; Role 2 decision logic audited as carried in B11 Section 4."
+gate0: {rules_checked: 0, fails: [], note: "audited Phase 1; not re-run"}
+emoat: {rules_checked: 0, fails: [], note: "audited Phase 1; not re-run"}
+valuation: {rules_checked: 48, fails: []}
+overrides_applied_as_written: true
+findings:
+  - {severity: "MINOR", location: "B11 Pillar 1 / Section 3", description: "Cash bridge asymmetry: ~Rs22 Cr removed from ROCE denominator but full net cash Rs27.06 Cr (Rs12/sh) added back separately at 1x; ~Rs5.8 Cr double-touched. <1% of FV, within Override 1's Rs22-27 Cr range, offset by the conservative 40% ROCE (vs ~44% computed). No decision impact."}
+  - {severity: "MINOR", location: "B11 Track 1 RRM", description: "Fundamental Base PE set to ROCE base 26.1x (->18.3x), not quality-adjusted 20.9x (->14.6x). Disclosed and reasoned (avoids double-penalising cash), but the alternate reading would push divergence 12.4%->~30% and force the conservative track to govern entry per L394. Moot: Override 1 anchors additive Track 2 as governing; destination PE and WATCHLIST unchanged."}
+  - {severity: "MINOR", location: "B11 Hurdle Ratio", description: "Authoritative HR written as (1+g)^4 x (trailing 28.13x); value 2.12 is identical to the internally-consistent forward-forward HR (entry FY27 forward PE 21.63x, exit FY30 forward). Substance correct (NOT the SFL inconsistency); should display forward entry PE for transparency. HR base 2.12>=1.953 is a technical PASS; CONDITIONAL is a conservative overlay with no decision impact."}
+  - {severity: "MINOR", location: "B11 Section 4H", description: "L809 (Gate0 AVERAGE->AVOID) vs L915 (Gate0<60->WATCHLIST) tension resolved correctly to WATCHLIST via L915 with all other AVOID sub-triggers confirmed not firing (U/D 6.9x>=2x, Hurdle CONDITIONAL not STOP, promoter CAUTION not CONCERN), but the conflict is not surfaced as an explicit cite. Correct outcome; transparency note."}
+  - {severity: "MINOR", location: "reports/ (B14 absent)", description: "Role 2 thesis report B14.md not on disk at audit time; decision logic audited as carried in B11 Section 4. B14 must reproduce WATCHLIST / Small(2-3%) / entry Rs145-165 / MoS Rs132; fresh Verifier C pass required if it diverges."}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100   # 48/48 rules passed on independent recomputation; 5 MINOR are imprecision/presentation/pending-report, no rule FAIL
+recomputed_destination_pe: ""   # blank: reproduces (Track 2 governing 20.9x; Track 1 RRM 18.3x)
+recomputed_decision: ""         # blank: reproduces (WATCHLIST, Small 2-3%)
+concur_or_dissent: "CONCUR"

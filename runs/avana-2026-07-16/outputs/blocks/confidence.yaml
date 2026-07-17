@@ -1,21 +1,27 @@
 confidence_delta:
-  numerical_acceptance: 88      # B12a: 28 clean / 32 checked; 0 CRITICAL, 0 MAJOR, 4 MINOR (rounding + web-sourced-not-locally-verifiable)
-  redflag_coverage: "N/A"       # verifier B not run — no subject concall/AR/results narrative exists to audit (NSE SME listed Jan-2026, no reporting cycle in inputs)
-  framework_adherence: 100      # B12c, Gate 0 + Emerging Moat scope; 0 CRITICAL, 0 MAJOR, 2 MINOR presentational; both stages reproduce exactly
-  peer_utilisation: "N/A"       # verifier D not run — no B06; 3/3 peer concalls (Aartech, Danish x2) routed to B07/B09 as sector context
+  numerical_acceptance: 88      # B12a (phase 1): 28 clean / 32 checked; 0 CRITICAL, 0 MAJOR, 4 MINOR. Valuation numbers (B10/B11) independently recomputed clean by verifier C phase-3.
+  redflag_coverage: "N/A"       # verifier B not run — no subject concall/AR/results narrative exists to audit
+  framework_adherence: 100      # B12c gate0+EM (phase 1) 100% AND B12c-valuation (phase 3) 100%; both 0 CRITICAL, 0 MAJOR; verifier C CONCUR on WATCHLIST
+  peer_utilisation: "N/A"       # verifier D not run — no B06; peer concalls routed to B07/B09 as sector context
   overall: 88                   # min of AVAILABLE components (redflag & peer N/A per orchestrator: skipped verifiers do not fail the delta)
   band: "75-89 normal — note specifics"
-  valuation_adherence: "pending phase 3"   # verifier C valuation half deferred (B10/B11 do not exist yet)
 components_run: [numerical_acceptance, framework_adherence]
 components_na: [redflag_coverage, peer_utilisation]
+phase3_valuation_adherence:
+  acceptance_rate: 100
+  critical: 0
+  major: 0
+  minor: 5
+  concur_or_dissent: CONCUR
+  recomputed: "Pillar 1 26.1x, quality-adjusted 20.9x, RRM 18.3x, HR base 2.12 (forward-PE, NOT the SFL trailing/forward inconsistency), FV 202/322/372, entry 145-165, MoS 132, WATCHLIST — all reproduce"
 CRITICAL_CAVEAT: >
   This confidence delta measures ANALYSIS FIDELITY TO SOURCES, not evidence
-  sufficiency. It is high (88/100) because every stage faithfully reported a
-  very thin evidence base and was honest about the data ceiling — verifiers A
-  and C confirm no fabrication and exact framework adherence. It does NOT mean
-  the case is well-evidenced. The subject evidence base is a SINGLE screener
-  Data_Sheet (FY20-FY26 financials); AVANA has NO annual report, results,
-  concall, rating, shareholding, prospectus, announcements, or presentation in
-  the run folder. No REWORK trigger fired (0 CRITICAL numerical findings, no
-  verifier acceptance below 60%), so the analysis is trustworthy — but the gate
-  verdict must weigh evidence SUFFICIENCY separately. See gate-recommendation.md.
+  sufficiency. It is high (88) because every stage faithfully reported a very
+  thin evidence base and applied the framework exactly (verifiers A and C both
+  clean, valuation adherence 100% CONCUR). It does NOT mean the case is
+  well-evidenced. The subject evidence base is a single screener Data_Sheet plus
+  an operator-relayed RHP/NSE digest (lead grade); AVANA has NO primary annual
+  report, results, concall, rating, or shareholding PDF in the folder. The
+  phase-1 evidence gate stayed INSUFFICIENT EVIDENCE and the cash determination
+  INDETERMINATE. The WATCHLIST decision and its entry zone are therefore
+  provisional on the primary filings arriving.

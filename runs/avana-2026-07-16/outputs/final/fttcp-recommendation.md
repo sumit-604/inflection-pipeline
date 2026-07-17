@@ -32,17 +32,17 @@ Weakest component: numerical acceptance at 88, and the four MINOR findings are a
 
 ## ACTIVE FLAGS
 
-**FLAG-PROMOTER — verdict CAUTION.**
+**FLAG-PROMOTER: verdict CAUTION.**
 - Finding 1: KIADB commercial production deadline originally 1 June 2020 missed by about 6 years, extended to 22 May 2026; the DRHP itself flags risk of KIADB action including potential loss of the land if missed again; outcome unconfirmed as of run date (B08).
 - Finding 2: Promoter Group disclosure incomplete, no consents obtained from R. Manoharan, father in law of promoter S. Vinod Kumar, who qualifies as Promoter Group under SEBI ICDR (B08). Secondary items: CS and Compliance Officer resignation effective 31 March 2026, and an NSE Regulation 33 / proceeds utilisation reply on 23 June 2026 (B00, B08).
 - Transition evidence: NONE FOUND (B08 transition_evidence empty). No red tier finding: no SEBI / criminal / tax action, no pledge, unmodified FY26 audit (B08).
 
-**FLAG-CASH — determination INDETERMINATE.**
+**FLAG-CASH: determination INDETERMINATE.**
 - Structural versus growth induced is unresolved. CFO/PAT FY26 67.8% (7.95 / 11.72) on an improving trend from minus Rs 0.32 Cr CFO in FY23, but cumulative FY20-26 CFO/PAT is 0.62x and FCF is not computable because capex is not separable from aggregate investing cashflow (B01, B10). Cash multiplier held at 0.80x with no growth offset; INDETERMINATE never resolves to a clean pass and caps disposition at PROCEED WITH CAVEATS (B10, FTTCP Ruling 7).
 - Rating agency working capital quote: NOT FOUND, no rating PDF in hand (B10 rating_wc_quote). Closest available evidence is the operator relayed RHP text, provenance lead grade not primary: "H1 FY26 net working-capital cycle ~245 days, with high inventory days" (operator-relayed-RHP-NSE-digest section 4).
 - Falsifying metric and threshold: the first post listing results showing net working capital cycle at or above the ~245 day H1 FY26 mark while CFO/PAT falls below 0.5.
 
-**FLAG-GATE0 — classification AVERAGE.**
+**FLAG-GATE0: classification AVERAGE.**
 - Core score 49/100, grand total 76/160, moat class FORTRESS 7/12 but flagged DATA-THIN (B01). Depressor: the sub scale, declining FY21-FY22 base (revenue 22.56 to 14.95 to 20.43 Cr, min ROCE 7.09% FY21, median ROE 13.79%) drags Block A despite the strong FY24-FY26 inflection. Block B core 1/20 is largely a data availability artifact, not confirmed weak cash quality. Gate 0 below 60 hard defaults the recommendation to WATCHLIST (B01, B11).
 
 **FLAG-CAPITAL-STRUCTURE.** FY26 equity share capital jumped from Rs 0.79 Cr to Rs 22.65 Cr, about 28.7x, with financing inflow Rs 19.78 Cr, coincident with the January 2026 IPO and Kaycee to Avana rebrand; detailed use of proceeds undisclosed beyond the Rs 8.6 Cr working capital tranche and the facility (B01, B10).

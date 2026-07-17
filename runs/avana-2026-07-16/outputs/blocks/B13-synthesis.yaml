@@ -3,15 +3,23 @@ company: "AVANA"
 run_date: "2026-07-16"
 model: claude-opus-4-8
 status: complete
-phase: "1 (evidence) — synthesis-lite; re-run to integrate operator RHP/NSE digest"
-verdict: "INSUFFICIENT EVIDENCE"
-verdict_rule_applied: 2
-verdict_note: "Rule 2 still binds — RHP/NSE reach the run only as an operator-relayed digest (lead/cross-check grade), not primary PDFs; stages 2/3 cannot deep-read it. Flag + confidence posture improved."
+phase: "3 (finalize)"
+gate_verdict: "INSUFFICIENT EVIDENCE"
+gate_verdict_rule: 2
+investment_decision: "WATCHLIST (provisional on primary filings)"
+entry_range: {low: 145, high: 165}
+mos_price: 132
+position_size: "Small (2-3%) ceiling; Tier A"
+destination_pe: {track2_additive_governing: 20.9, track1_rrm_floor: 18.3, range_t2: [19.5, 22.5], cap_1x_cash: 25.0}
+fair_values: {bear: 202, base: 322, bull: 372}
+hurdle_verdict: "CONDITIONAL"
+expected_3yr_cagr_pct: 22.7
+devil_overall: "WEAKENED BUT ALIVE"
+devil_valuation_safety: "DESTROYED"
 flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-CAPITAL-STRUCTURE, FLAG-CAPEX, FLAG-DATA-THIN]
 confidence_delta: {numerical: 88, redflag: "N/A", framework: 100, peer: "N/A", overall: 88}
 headline: "Listed grid equipment micro cap expanding capacity"
 falsification_metric: "First post-listing results showing net working capital cycle at or above the ~245-day H1 FY26 mark while CFO/PAT falls below 0.5"
-monitorables_count: 8
+devil_open_challenge: "Forward-PE method (Override 2) implies a ~27.2x TRAILING exit multiple on FY29 EPS, above the 25x absolute sector cap; honest trailing-destination math gives ~19.6% CAGR (HR 1.63 fail). Operator ruling needed on whether the sector cap binds forward or trailing."
 publish_candidate: false
-operator_context_integrated: "inputs/announcements/operator-relayed-RHP-NSE-digest-2026-07-17.md"
-files_written: [business-narrative.md, gate-recommendation.md, verifier-summary.md]
+files_written: [business-narrative.md, fttcp-recommendation.md, verifier-summary.md, fttcp-handoff.md]

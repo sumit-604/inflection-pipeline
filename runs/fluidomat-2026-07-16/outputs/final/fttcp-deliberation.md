@@ -3,6 +3,8 @@
 Company: Fluidomat Ltd | Ticker: FLUIDOMAT (BSE 522017) | CMP: Rs 1,018 | Run date: 2026-07-16
 Mode: first workup, NO-CONCALL MODE. This record is the authoritative Phase 2 output. Phase 3 (finalize) inherits the rulings and the handoff below.
 
+Notion COMPANIES MASTER page: https://app.notion.com/p/3a0bb2b9d3ab81be9007ec11c862799a (created 2026-07-16; Decision Status intentionally left unset, per the never-set-from-pipeline rule).
+
 ## How this deliberation went
 
 The autonomous FTTCP draft was written and printed in full with every call already made. The operator reviewed it and accepted it. No figure was questioned and no call was overridden. The operator's sign-off, in the operator's words: "OK, so prepare the FTTCP deliberation document and save everything to Notion." The operator did not restate the verdict in a separate sentence of their own; the draft disposition is accepted as it stands, and that gap is noted here as in prior runs.

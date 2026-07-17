@@ -1,0 +1,219 @@
+stage: B10-valinputs
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "FY23, FY24 audited revenue/PAT figures (3-year CAGR unresolved)"
+  - "Forward margin guidance/target band (management never disclosed)"
+  - "Peer financial medians (P/E, EV/EBITDA, P/B, ROCE) — only qualitative concall commentary available"
+  - "Rating agency assessment (rating/ folder empty)"
+  - "Second results PDF not located (path f7e7fe35-ae85-83c9-3c73206e7ee3.pdf does not exist)"
+  - "Forward guidance realization (Q1 FY27 hub openings, receivables fix) — PENDING as of run date"
+
+flags:
+  - type: SECTOR-CAP-CORRECTION
+    reason: "Manifest listed 'Pharma / CDMO' (wrong); corrected to 'Hospitals / dialysis / healthcare services, 35x' per fttcp-deliberation.md; material frame for sector ceiling"
+  - type: ROCE-DENOMINATOR-OVERRIDE
+    reason: "Reported FY26 ROCE 20.11% driven by denominator effect (Rs 81 Cr IPO proceeds in bank deposits); operator override: use operating ROCE 37% with surplus cash removed, valued separately in SOTP (fttcp-deliberation.md p.38-40)"
+  - type: CASH-CONVERSION-INDETERMINATE
+    reason: "CFO/PAT 0.30x FY26, receivable days ~187, deteriorating trajectory; determination INDETERMINATE per fttcp-deliberation.md p.19; caps verdict at PROCEED WITH CAVEATS minimum; cash multiplier 0.80x applied"
+  - type: PROMOTER-CONCERN
+    reason: "B08 verdict CONCERN: ~Rs 49.75 Cr contingent tax exposure (~85% of net worth), related-party placements Rs 9 Cr, multiple mid-term independent-director exits (fttcp-deliberation.md p.78)"
+  - type: CREDIBILITY-GRADE-C
+    reason: "Maiden call, headline financials verified, but 'zero bad debt' claim contradicted by Rs 31.97 L ECL allowance; no multi-quarter delivery track record; growth premium capped at +2x (v3.4 decoupled) and strategic at +1x (fttcp-deliberation.md p.46)"
+  - type: CAPEX-DEPLOYMENT-PENDING
+    reason: "Zero utilisation of Rs 50 Cr hub-capex allocation as of 31-Mar-FY26 (Q4 FY26 call 29-May-2026 promised near-term openings); forward capex claims unverified pending Q1 FY27"
+  - type: INSTITUTIONAL-OWNERSHIP-DECLINING
+    reason: "FII ownership halved from 6.7% (Mar 2026) to 3.01% (Jun 2026) in first full quarter post-listing; UA multiplier not applied (< 12 months listed, FII+DII 5.23%, not <3%) (shareholding-2026-07-16.md, fttcp-deliberation.md p.76)"
+
+table:
+  company_identity:
+    company_name: "Gaudium IVF and Women Health Ltd"
+    ticker: "GAUDIUMIVF"
+    sector: "Hospitals / dialysis / healthcare services (corrected from manifest)"
+    business_model_type: "Hybrid: IVF 64% + Pharmacy trading 31% + Hospital 4%"
+    sector_cap_row: "35x"
+    cmp_rs: 137.00
+    market_cap_cr: 997.04
+    shares_outstanding_diluted_cr: 7.28
+    total_debt_cr: 24.57
+    operating_cash_cr: 8.79
+    surplus_cash_cr: 81.00
+    net_debt_cr: 15.78
+    enterprise_value_cr: 1012.82
+  
+  latest_financials_fy26_consolidated:
+    revenue_cr: 104.36
+    ebitda_cr: 37.70
+    ebitda_margin_pct: 36.13
+    pat_cr: 24.49
+    pat_margin_pct: 23.47
+    diluted_eps_rs: 3.37
+    cfo_cr: 8.15
+    capex_cr: 6.72
+    fcf_cr: 1.43
+    depreciation_amortisation_cr: 4.04
+    book_value_per_share_rs: 20.89
+    cfo_pat_ratio_fy26: 0.33
+    cfo_pat_cumulative: 0.641
+    fcf_pat_fy26: 0.06
+    fcf_pat_cumulative: 0.143
+    p_fcf_x: 697
+    dps_rs: 0.00
+    roe_pct: 16.08
+    net_worth_cr: 152.30
+  
+  operating_metrics_trends:
+    roce_latest_pct: 37.0
+    roce_basis_flag: "operating, ex-surplus-cash (operator standing rule)"
+    roce_prior_year_pct: 54.40
+    roce_trend_direction: "SUSTAINED premium"
+    revenue_growth_fy25_fy26_pct: 47.6
+    revenue_cagr_3yr_pct: "NOT FOUND"
+    pat_growth_fy25_fy26_pct: 27.8
+    pat_cagr_3yr_pct: "NOT FOUND"
+    receivables_trend: "Deteriorating"
+    working_capital_trend: "Deteriorating"
+    cash_conversion_quality: "INDETERMINATE (deteriorating)"
+    cash_multiplier: 0.80
+  
+  management_guidance_credibility:
+    credibility_grade: "C"
+    credibility_basis: "Maiden call; headline financials verified; 'zero bad debt' contradicted by ECL; no multi-quarter track record"
+    guided_revenue_growth: "19 hubs: 10 FY27 / 8 FY28 / 1 FY29"
+    capex_guidance_fy27_cr: 25
+    margin_guidance: "NOT FOUND"
+    top_growth_trigger_1: "Hub expansion (19 new hubs, 3 near-term)"
+    top_growth_trigger_2: "Receivables collection fix"
+    top_growth_trigger_3: "AI-embryology uplift (claimed +8%)"
+    delivery_track_record: "None (maiden call, PENDING)"
+  
+  emerging_moat_assessment:
+    em_score: 13
+    em_classification: "MODEST"
+    active_moat_categories: "G1 (War chest, Strong); H2 (Strategic partnerships, Moderate); R1 (Regulatory tailwind, Moderate)"
+    evidence_mix: "documented 6, claim 12, inference 5 — mostly claim"
+    strategic_asset_monopoly: "Moderate: ART licensing + founder brand + GAAT IP, but replicable distribution"
+    primary_catalyst_12m: "3 new hubs opening (South Delhi, Nagpur, Gurgaon) in next 1-2 months"
+    secondary_catalyst_12m: "3 international spokes (Nigeria, Sydney, Paris)"
+    tertiary_catalyst_12m: "Receivables days reversal from pricing changes"
+    capex_embedded_growth_pct: 335
+    combined_assessment: "AVERAGE"
+  
+  promoter_governance:
+    promoter_flag: "CONCERN"
+    contingent_tax_exposure_cr: 49.75
+    promoter_pledge_pct: 0.0
+    key_governance_concern: "Promoter sits on Audit Committee, chairs Risk Committee; largest RPT beneficiary"
+    deal_breaker_status: "Multiple mid-term independent-director exits within 3 years"
+    transition_evidence: "External CFO (Oct 2024), external CS (Sept 2024), credentialed board reconstitution"
+  
+  peer_reference_data:
+    hcg_receivable_days: "105-115 (vs Gaudium ~187)"
+    hcg_international_patient_mix_pct: 3.5
+    rainbow_international_revenue_cr: 28.9
+    rainbow_ivf_revenue_cr: 61.4
+    kaya_collection_model: "Prepaid loyalty (vs Gaudium receivables-heavy)"
+    peer_financial_medians: "NOT FOUND"
+  
+  market_tam_assessment:
+    tam_conservative_cr: 14560
+    tam_realistic_cr: 19665
+    sam_cr: 2017
+    sam_pct_of_tam: 13.9
+    current_sam_share_pct: 3.52
+    revenue_headroom_x: 28.4
+    runway_classification: "STRONG"
+    som_3yr_cr: 161
+    som_5yr_cr: 281
+    som_implied_revenue_cagr_3yr_pct: 31.4
+    som_implied_revenue_cagr_5yr_pct: 31.7
+    management_tam_claim_cr: 11046
+    tam_growth_pct: 13.13
+    capacity_check_3yr: "Fits within 75% utilization"
+    capacity_check_5yr: "Gap ~Rs 66.5 Cr; embryologist headcount not disclosed"
+  
+  ua_multiplier_qualifiers:
+    listed_12m: false
+    gate0_or_em: false
+    fii_dii_lt3: false
+    all_met: false
+    ua_multiplier_applied: false
+  
+  cash_conversion_rating_data:
+    block_b_score: 5
+    block_b_trigger: "deal-breaker #2 (max GOOD)"
+    cash_conversion_determination: "INDETERMINATE (deteriorating)"
+    cash_multiplier_applied: 0.80
+    receivables_flag_evidence: "Turnover 6.34x (FY24) to 3.17x (FY25), -50%; 56.2% aged >6mo; first ECL Rs 9.83L FY25"
+    working_capital_flag_evidence: "WC days 11.3 (FY23) to 156.3 (FY26), +145dy; receivables grew 59x vs revenue 2.4x; cumulative CFO/PAT 64.1%, FCF/PAT 14.3%"
+    rating_agency_wc_quote: "NOT FOUND"
+
+conflicts:
+  - field: "Sector Classification"
+    value_a: "Pharma / CDMO"
+    anchor_a: "manifest.yaml"
+    value_b: "Hospitals / dialysis / healthcare services, 35x"
+    anchor_b: "fttcp-deliberation.md p.14 (operator correction authority)"
+    used: "Hospitals / dialysis (deliberation authority supersedes manifest)"
+  
+  - field: "Reported vs Operating ROCE (FY26)"
+    value_a: "20.11% (reported)"
+    anchor_a: "B01-gate0.yaml"
+    value_b: "37% (operating, surplus cash removed)"
+    anchor_b: "fttcp-deliberation.md Override 1 p.38-39"
+    used: "37% operating ROCE (operator override authority; surplus cash valued separately)"
+  
+  - field: "Zero Bad Debt Claim"
+    value_a: "Zero bad debt (management call)"
+    anchor_a: "B05-concall.yaml"
+    value_b: "Rs 31.97 L ECL allowance recognised FY26"
+    anchor_b: "Consolidated CF audited results (results PDF p.18)"
+    used: "Used as credibility downgrade evidence (C-grade), not as conflicting input value"
+  
+  - field: "International Patient Mix Claim"
+    value_a: "25-30% (management claim)"
+    anchor_a: "B05-concall.yaml guidance"
+    value_b: "1.03%-6.65% RHP patient-country data OR NIL forex earnings FY24-25"
+    anchor_b: "B04-bizmodel.yaml; B06-peers.yaml; AR foreign exchange"
+    used: "Flagged as unverified; not used for valuation input"
+
+unresolved:
+  - field: "Revenue Growth 3-Year CAGR"
+    why: "FY23 and FY24 audited revenue figures not in extracted results PDFs; only FY25, FY26 available"
+    where_it_might_be: "Full results PDF file (not fully extracted); earlier audited annual reports or ARs"
+    alternative: "1-year growth FY25-FY26 at 47.6% available; deliberation guidance covers forward modeling"
+  
+  - field: "PAT Growth 3-Year CAGR"
+    why: "FY23 and FY24 audited PAT figures not in extracted results PDFs"
+    where_it_might_be: "Full results PDF file; earlier audited annual reports or ARs"
+    alternative: "1-year growth FY25-FY26 at 27.8% available"
+  
+  - field: "Forward Margin Guidance (Target Band)"
+    why: "No explicit management margin band or trajectory disclosed in available sources"
+    where_it_might_be: "Investor presentations, concall transcripts (not fully provided)"
+    alternative: "FY26 realized: consolidated EBITDA 36.13%, PAT 23.47%; standalone 50.81%"
+  
+  - field: "Peer Financial Medians (P/E, EV/EBITDA, P/B, Growth, ROCE)"
+    why: "No structured peer financial statements or results tables provided; only qualitative concall commentary"
+    where_it_might_be: "Peer audited annual reports, equity research reports"
+    alternative: "Qualitative peer assessment (HCG, Rainbow, Kaya concalls) available for context; not for valuation medians"
+  
+  - field: "Rating Agency WC / Cash Flow Verbal Attestation"
+    why: "Rating PDF not provided; rating/ folder marked empty in task"
+    where_it_might_be: "External rating agency files (Crisil, ICRA, Acuite, India Ratings)"
+    alternative: "None; rating agency commentary unresolved per task instruction"
+  
+  - field: "Forward Guidance Realization (Hub Openings, Receivables Fix)"
+    why: "All major forward promises marked PENDING; zero subsequent quarter data available as of run date"
+    where_it_might_be: "Q1 FY27 results (due ~Aug-Sep 2026, post-run-date 2026-07-16)"
+    alternative: "Tracked as monitorables (B03, B07) for future verification; not usable as current input"
+
+rating_wc_quote: "NOT FOUND — rating PDF not provided; rating/ folder empty"
+ua_qualifiers:
+  listed_12m: false
+  gate0_or_em: false
+  fii_dii_lt3: false
+  all_met: false
+credibility_grade: "C"

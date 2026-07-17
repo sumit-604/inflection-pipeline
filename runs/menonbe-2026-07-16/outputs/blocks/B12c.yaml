@@ -3,24 +3,39 @@ company: "MENONBE"
 run_date: "2026-07-16"
 model: claude-opus-4-8
 status: complete
-phase: 1
-gate0:
+phase: 3
+gate0:                       # carried forward from phase 1, unchanged
   rules_checked: 48
   fails:
     - {rule: "M10 Switching Costs", severity: MINOR, expected: 0, reported: 1, impact: "moat total 16->15 possible; moat count (3), MODERATE, grand-total band and AVOID classification all unchanged"}
-emoat:
+emoat:                       # carried forward from phase 1, unchanged
   rules_checked: 26
   fails: []
-valuation: pending-phase-3
-recomputed_destination_pe: "pending-phase-3"
-recomputed_decision: ""   # concur: Gate0 AVOID, EM NONE, combined AVOID all re-derive unchanged
+valuation:                   # NEW this phase (B10/B11 four-pillar + Role 2 B14 decision rules/sizing)
+  framework_adherence_pct: 94
+  rules_checked: 52
+  fails:
+    - {rule: "Role 2 decision rule — Gate 0 AVOID leg (Master L809)", location: "B14 §7", severity: MAJOR, description: "Verdict WATCHLIST overrides literal L809 (Gate0 AVERAGE/AVOID -> AVOID); cites non-existent 'Gate 0 below GOOD defaults to WATCHLIST'. Defensible under pipeline flag-not-gate convention + FLAG-GATE0 backward artifact + Role 1 consistency; action-neutral at CMP (AVOID-on-valuation stated). Operator to adjudicate label."}
+    - {rule: "B10 Pillar 1 illustrative formula (line 211)", location: "B10", severity: MINOR, description: "Arithmetically incoherent illustrative formula; tagged illustrative, B11 re-derived correctly via Amendment 5. No impact."}
+  notes:
+    - "V3 MINOR: B10 line 297 bull-cap off 5yr base (16.2%); B11 correctly used 3yr 19%+5=24%. No impact."
+    - "V4 MINOR: Hurdle growth compounds off FY26 6.82 vs current PE on TTM 7.83 — same reported basis (SFL check met), conservative, label looseness only."
+    - "V5 MINOR: Tier B bar rationale over-elaborated; primary reason FII+DII<3% -> default Tier A. Conclusion correct."
+recomputed_destination_pe: ""   # concur: Track2 additive 25.0x and Track1 RRM 22.4x both re-derive exactly
+recomputed_decision: "Actionable outcome concurs (no buy at CMP; buy only Rs 132-148). Open item: Role 2 label WATCHLIST (pipeline convention) vs AVOID (literal Master L809 on Gate 0 AVOID) — operator to adjudicate; no change to destination PE, Hurdle verdict (CONDITIONAL), entry (132-148) or MoS (118)."
 findings:
+  - {severity: MAJOR, location: "B14 §7 decision-rule trace", description: "Gate 0 AVOID leg (Master L809) overridden to WATCHLIST with inaccurate 'defaults to WATCHLIST' citation; defensible under pipeline convention + Role 1 consistency, action-neutral at CMP; operator to adjudicate label"}
+  - {severity: MINOR, location: "B10 Pillar 1 line 211", description: "Illustrative Pillar 1 formula incoherent; tagged illustrative, B11 corrected via Amendment 5; no impact"}
+  - {severity: MINOR, location: "B10 line 297", description: "Bull-cap illustrated off 5yr base 16.2%; B11 correctly used 3yr 24%; no impact"}
+  - {severity: MINOR, location: "B11 §1C Hurdle EPS window", description: "Growth off FY26 6.82 vs current PE on TTM 7.83; same reported basis (SFL met), conservative; label looseness"}
+  - {severity: MINOR, location: "B14 §7 tier call", description: "Tier B bar rationale over-elaborated; primary reason FII+DII<3% -> default Tier A; conclusion correct"}
+  # phase-1 MINORs (carried, unchanged):
   - {severity: MINOR, location: "B01 Block F M10", description: "Scored 1 vs strict-band 0; immaterial to moat count/classification"}
   - {severity: MINOR, location: "B01 Block E E2", description: "~2.75yr promoter-change window vs 3yr spec (data limitation, flagged); band unaffected"}
   - {severity: MINOR, location: "B01 Block F M9", description: "+4.05pp GM/rev-CAGR falls between bands; score 1 defensible; no impact"}
   - {severity: MINOR, location: "B07 F2", description: "B05 promise-delivery record absent; self-service concall substitute flagged; F2=0, no scoring impact"}
   - {severity: MINOR, location: "B07 Section 5", description: "Scale ceiling ~84 vs prompt ~0-80; cosmetic, absolute bands unaffected"}
 critical_count: 0
-major_count: 0
-minor_count: 5
-acceptance_rate: 99   # 73 of 74 checked rules pass; sole fail is MINOR and immaterial
+major_count: 1
+minor_count: 10          # 5 valuation/Role2 (this phase) + 5 gate0/emoat (phase 1)
+acceptance_rate: 96      # combined 126 rules checked (48 gate0 + 26 emoat + 52 valuation), 121 clean of a decision-material sense; valuation-half adherence 94%, phase-1 halves 99%

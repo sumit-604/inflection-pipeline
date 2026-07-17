@@ -1,12 +1,11 @@
-# Phase-1 confidence delta (per orchestrator Section 5). Overall = min of the four.
-# Valuation framework-adherence component is DEFERRED to phase 3 (verifier C valuation half not run).
+# Full four-component confidence delta (phase 3 complete). Overall = min of the four.
 confidence_delta:
-  numerical_acceptance: 91.5     # B12a: 43/47 clean, 0 CRITICAL, 0 MAJOR
-  redflag_coverage: 75           # B12b: 12/16 verifier red flags fully caught upstream (effective 94% found-in-any-form); 1 MAJOR under-weighting
-  framework_adherence: 99        # B12c: Gate0 + Emerging Moat portion only (73/74 rules pass); valuation portion pending phase 3
-  peer_utilisation: 100          # B12d: 11/11 peer transcripts used substantively
-  overall: 75                    # min(91.5, 75, 99, 100)
+  numerical_acceptance: 91.5     # B12a (phase 1): 0 CRITICAL, 0 MAJOR
+  redflag_coverage: 75           # B12b (phase 1, BINDING): 12/16 fully caught; 1 MAJOR under-weighting
+  framework_adherence: 94        # B12c full: gate0+emoat 99% (phase 1) + valuation-adherence 94% (phase 3); 0 CRITICAL, 1 MAJOR (WATCHLIST-vs-AVOID label, action-neutral at CMP)
+  peer_utilisation: 100          # B12d (phase 1): 11/11 substantive
+  overall: 75                    # min(91.5, 75, 94, 100)
   band: "75-89 normal — note specifics; no verdict downgrade, no REWORK"
   binding_component: redflag_coverage
-  valuation_framework_adherence: pending-phase-3
-  rework_triggered: false        # no CRITICAL numerical finding; all acceptance_rate >= 60%
+  rework_triggered: false        # no CRITICAL numerical finding; all acceptance >= 60%
+  phase3_framework_note: "Verifier C phase-3 valuation adherence 94% (52+ rules, 0 CRITICAL, 1 MAJOR, 10 MINOR). MAJOR = Role 2 WATCHLIST label vs literal Gate0-AVOID rule, defensible under flag-not-gate convention, action-neutral at CMP; operator to adjudicate label."

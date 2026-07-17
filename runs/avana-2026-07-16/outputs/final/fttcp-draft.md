@@ -154,7 +154,7 @@ Cap state: no Kernex cap (no DECLINING-with-no-catalyst transition). No TRIM. Di
 | 8 | Margin catalyst absence | No documented margin lever named in the first result or filing | 6-12m | Absence keeps Margin STAGNANT (a catalyst absence trigger) |
 | 9 | IPO proceeds query | Resolution of the 23 June 2026 NSE proceeds utilisation query | near term | An adverse finding is a governance flag |
 
-## OPERATOR OVERRIDE (review, 2026-07-17) — valuation method for a high-growth, cash-bloated post-IPO name
+## OPERATOR OVERRIDE (review, 2026-07-17) valuation method for a high-growth, cash-bloated post-IPO name
 
 The draft's first pillar build was wrong and the operator corrected it. What the draft said: Pillar 1 anchored on a normalized ROCE of about 30% (Amendment 4.5 blend), no growth premium, destination PE about 18x, framed against a trailing 28x as a de-rating that sat below CMP. The operator's ruling, in the operator's frame: "It is a high-growth company and you are giving it a PE of less than 20. If FTTCP says future ROCE is near 40%, take that. A 40% ROCE company gets a higher base multiple. And you are giving no score for growth visibility, so you must take it to the forward price-to-earnings method, because the growth has to be priced somewhere." Reasoning: normalizing the ROCE down while leaving the idle IPO cash in the denominator double-penalizes, and denying a growth premium while valuing on trailing earnings strips the growth twice.
 

@@ -1,0 +1,346 @@
+stage: B10-valinputs
+company: "MENONBE"
+run_date: "2026-07-16"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps: 
+  - "announcements: absent"
+  - "research: absent"
+  - "shareholding: partial (screener holdings only, no pledge)"
+flags: 
+  - "SHARED CATALYST: Export-led capacity ramp is both revenue catalyst and cause of receivables build; exports stall scenario requires DSO/receivables stress test"
+  - "FALSIFICATION METRIC ACTIVE: Standalone receivables >6m ageing 22.2% (FY26) vs 6.8% (FY25); if exceeded or DSO >114 days again in FY27 print, Pillar 2 flips to 0.65x STRUCTURAL"
+  - "CREDIBILITY GRADE C: Bull EPS CAGR capped at base + 5pp for Hurdle check; management delivery mixed (1 delivered, 5 partial, 6 missed on B05 promise analysis)"
+  - "CURRENT PE vs DESTINATION: Trailing 24.3x vs destination 25x; no re-rating tailwind, return entirely from earnings growth"
+table:
+  company_identity:
+    - field: "Company"
+      value: "Menon Bearings Ltd (MENONBE)"
+      anchor: "BSE 523828"
+    - field: "Sector"
+      value: "Manufacturing / Industrial products"
+      anchor: "Deliberation record, corrected from manifest"
+    - field: "Business Model Type"
+      value: "Manufacturing, standard operating business"
+      anchor: "B04.business_type"
+    - field: "CMP (Rs)"
+      value: 190
+      anchor: "Deliberation record; screener 190.17"
+    - field: "Market Cap (Cr)"
+      value: 1073
+      anchor: "5.604 Cr shares × 190"
+    - field: "Shares Outstanding (Cr, diluted)"
+      value: 5.604
+      anchor: "Task manifest; screener"
+    - field: "Net Debt (Cr)"
+      value: 34.03
+      anchor: "Borrowings 46.63 - Cash 12.6, screener FY26"
+    - field: "Enterprise Value (Cr)"
+      value: 1107.0
+      anchor: "Market cap 1,073 + Net debt 34.03"
+
+  latest_financials_fy26:
+    - field: "Revenue (Cr, consolidated)"
+      value: 293.81
+      anchor: "Screener Data_Sheet, verified B01 match to results PDF"
+    - field: "EBITDA (Cr)"
+      value: 65.21
+      anchor: "B01: validated exact match results PDF p.12"
+    - field: "EBITDA Margin (%)"
+      value: 22.19
+      anchor: "65.21 / 293.81, computed"
+    - field: "PAT (Cr, consolidated)"
+      value: 38.25
+      anchor: "Screener Data_Sheet"
+    - field: "PAT Margin (%)"
+      value: 13.03
+      anchor: "38.25 / 293.81, computed"
+    - field: "Diluted EPS (Rs)"
+      value: 6.82
+      anchor: "38.25 / 5.604, computed"
+    - field: "CFO (Cr)"
+      value: 23.32
+      anchor: "Screener Data_Sheet, consolidated cash flow"
+    - field: "FCF (Cr)"
+      value: -3.62
+      anchor: "CFO 23.32 - Capex 26.94, B01 verified"
+    - field: "Book Value per Share (Rs)"
+      value: 33.05
+      anchor: "Equity 185.34 / Shares 5.604, screener computed"
+    - field: "P/B Ratio"
+      value: 5.75
+      anchor: "CMP 190 / Book 33.05"
+    - field: "ROCE (%)"
+      value: 29.8
+      anchor: "Deliberation record: AR Note 33, consolidated FY26"
+    - field: "ROCE (alt, closing-basis operating %)"
+      value: 24
+      anchor: "Deliberation record: B01 independent EBIT/(TA-CL) closure basis"
+    - field: "ROE (%)"
+      value: 22.25
+      anchor: "B01: AR Note 33, FY26 consolidated"
+    - field: "Debt / Equity"
+      value: 0.25
+      anchor: "Borrowings 46.63 / Equity 185.34"
+    - field: "CFO / PAT"
+      value: 0.609
+      anchor: "23.32 / 38.25, screener"
+    - field: "FCF / PAT"
+      value: -0.095
+      anchor: "-3.62 / 38.25"
+    - field: "Working Capital Days"
+      value: 126.56
+      anchor: "B01: WC days FY26, +17.6d vs FY25"
+
+  ttm_through_q1_fy27:
+    - field: "TTM PAT (Cr)"
+      value: 43.93
+      anchor: "FY26 38.25 - Q1 FY26 8.43 + Q1 FY27 14.11; deliberation confirms ~44 Cr"
+    - field: "TTM EPS (Rs)"
+      value: 7.83
+      anchor: "43.93 / 5.604; deliberation confirms ~7.8"
+    - field: "Trailing P/E"
+      value: 24.3
+      anchor: "CMP 190 / TTM EPS 7.83; deliberation ~24x"
+
+  q1_fy27_latest_quarter:
+    - field: "Q1 FY27 Revenue (Cr)"
+      value: 91.79
+      anchor: "Screener Data_Sheet 2026-06-30"
+    - field: "Q1 FY27 PAT (Cr)"
+      value: 14.11
+      anchor: "Screener Data_Sheet 2026-06-30"
+    - field: "Q1 FY27 Annualized Revenue Run Rate (Cr)"
+      value: 367.2
+      anchor: "91.79 × 4"
+
+  3yr_cagr_fy23_to_fy26:
+    - field: "Revenue 3yr CAGR (%)"
+      value: 10.22
+      anchor: "(293.81 / 219.36)^(1/3) - 1; screener FY23-FY26"
+    - field: "PAT 3yr CAGR (%)"
+      value: 5.45
+      anchor: "(38.25 / 32.6)^(1/3) - 1; screener FY23-FY26"
+
+  guidance_and_management:
+    - field: "Credibility Grade"
+      value: "C (Mixed)"
+      anchor: "B05: core revenue/margin delivered, growth optionality missed"
+    - field: "Management Delivery Track Record"
+      value: "1 delivered, 5 partial, 6 missed"
+      anchor: "B05.promise_delivery"
+    - field: "FY27 Revenue Guidance"
+      value: ">Rs 360 Cr"
+      anchor: "B05: Q4 FY26 call; Q1 FY27 run rate consistent"
+    - field: "FY27-28 EBITDA Margin Guidance"
+      value: "20-22%"
+      anchor: "B05"
+    - field: "Top Growth Trigger 1"
+      value: "US export ramp (Allison, Federal-Mogul DRiV)"
+      anchor: "B05 Priority 1, conviction HIGH"
+    - field: "Top Growth Trigger 2"
+      value: "Ex-works export conversion (~90% target)"
+      anchor: "B05 Priority 2, conviction M-H"
+    - field: "Top Growth Trigger 3"
+      value: "Alkop revenue ramp (John Deere/Eaton pipeline)"
+      anchor: "B05 Priority 3, conviction MEDIUM"
+    - field: "Top Growth Trigger 4"
+      value: "Menon Brakes railway/OEM approval (August 2026 ETA, 4th slip)"
+      anchor: "B05 Priority 4, conviction LOW; zero railway revenue to date"
+
+  emerging_moat_and_catalysts:
+    - field: "EM Score"
+      value: 11 (NONE band)
+      anchor: "B07: only E2 (export/China+1) scores Strong"
+    - field: "Forward Classification"
+      value: "AVOID"
+      anchor: "B07: no meaningful emerging moat; Core 54 average downgraded for limited history + Block B cash deal-breaker"
+    - field: "Primary Catalyst (12m window)"
+      value: "Export-led capacity ramp"
+      anchor: "B07.catalysts_12m: E2, documented+claim"
+    - field: "Evidence Mix"
+      value: "Documented 12, claim 14, inference 2"
+      anchor: "B07"
+
+  market_and_som:
+    - field: "Domestic TAM (Realistic, Cr)"
+      value: 10100
+      anchor: "B09: realistic band"
+    - field: "SAM (Cr)"
+      value: 1858
+      anchor: "B09"
+    - field: "Current SAM Share (%)"
+      value: 10.4
+      anchor: "B09"
+    - field: "3yr SOM-Implied Revenue (Cr)"
+      value: 240.8
+      anchor: "B09: som_3yr_cr"
+    - field: "SOM-Implied Domestic CAGR (3yr)"
+      value: 7.5
+      anchor: "B09: formal handoff to stage 11; domestic-only scope (excludes exports ~34%)"
+
+  moats_and_business_model:
+    - field: "Moat 1: Switching Costs"
+      value: "OEM approval cycles, sole/major-supplier status"
+      anchor: "B04.moats_present"
+    - field: "Moat 2: Cost Advantage"
+      value: "In-house tooling/machine-building"
+      anchor: "B04.moats_present"
+    - field: "Moat 3: Regulatory"
+      value: "Lead-free alloys, BS-VI readiness"
+      anchor: "B04.moats_present"
+    - field: "Strategic Asset / Monopoly"
+      value: "Yes (approval-barrier protected)"
+      anchor: "B04"
+    - field: "Primary Valuation Method"
+      value: "EV/EBITDA"
+      anchor: "B04: capital-structure neutral"
+    - field: "Secondary Method"
+      value: "Normalized P/E"
+      anchor: "B04"
+
+  cash_conversion_determination:
+    - field: "Cash Determination"
+      value: "GROWTH-INDUCED (not structural, not INDETERMINATE)"
+      anchor: "Deliberation record: authoritative"
+    - field: "Pillar 2 Multiplier (Base)"
+      value: 0.85
+      anchor: "Deliberation record: range 0.80-1.00"
+    - field: "Falsification Metric"
+      value: "Standalone receivables outrun revenue OR DSO >114 days → flip to STRUCTURAL 0.65x"
+      anchor: "Deliberation record: delivered to stage 10 for monitoring"
+    - field: "Current Standalone DSO"
+      value: "114 days (FY26) vs 85 days (FY25)"
+      anchor: "B02: Note 31, AR pp.126-127"
+    - field: "Standalone >6m Ageing Bucket"
+      value: "22.2% (FY26) vs 6.8% (FY25)"
+      anchor: "B02: Note 31, AR pp.126-127"
+    - field: "CRISIL WC Commentary"
+      value: "SIZEABLE STRETCH IN WORKING CAPITAL CYCLE listed as DOWNWARD SENSITIVITY (future trigger), not realized weakness; attributes to debt-funded capex"
+      anchor: "CRISIL PDF page 2, sensitivity section; Orchestrator note confirms capex-driven"
+
+  promoter_and_governance:
+    - field: "Promoter Holding (%)"
+      value: 68.44
+      anchor: "B08: Note 9, AR p.115; stable vs FY25"
+    - field: "Promoter Verdict"
+      value: "CAUTION (not CONCERN/AVOID)"
+      anchor: "B08.verdict: six clean, three caution, one red"
+    - field: "MD Appointment"
+      value: "Arun Aradhye, age 70, effective 4-Mar-2026"
+      anchor: "B08: FY26 AR pp.4-5"
+    - field: "CFO Appointment"
+      value: "Chandrakant Ghatge, ex-Mani Auto Components, effective 4-Mar-2026"
+      anchor: "B08: career in Chairman's own RPT counterparty"
+    - field: "Promoter Pledge Status"
+      value: "NOT FOUND (AR silent; web conflicts 8.3% vs nil; BSE fetch blocked HTTP 403)"
+      anchor: "B08: unresolved"
+    - field: "Independent Director (positive)"
+      value: "Nandan Borgalkar appointed 1-Oct-2025, 40yr sector experience"
+      anchor: "B08: FY26 AR p.65-66"
+
+  rating_pdf_extraction:
+    - field: "Rating Agency & Grade"
+      value: "CRISIL BBB+/Stable/A2"
+      anchor: "CRISIL PDF cover, dated 23-Apr-2026"
+    - field: "Reaffirmation Date"
+      value: "23 April 2026"
+      anchor: "CRISIL cover"
+    - field: "Outlook"
+      value: "Stable (moved from Positive in Oct-2023)"
+      anchor: "CRISIL rating history, page 3"
+    - field: "Liquidity Assessment"
+      value: "ADEQUATE"
+      anchor: "CRISIL page 2, LIQUIDITY section"
+    - field: "Working Capital Commentary (Verbatim)"
+      value: "Customer agreements include PRICE ESCALATION CLAUSES to periodically adjust selling prices for RM price movements; however there is a LAG in implementing price changes... [Downward factor] SIZEABLE STRETCH IN THE WORKING CAPITAL CYCLE, or larger-than-expected debt-funded capex or acquisition or sizeable dividend payout"
+      anchor: "CRISIL PDF page 2, WEAKNESSES and RATING SENSITIVITY sections"
+    - field: "Operating Margin Band (2yr through FY25)"
+      value: "18.65-20.39%"
+      anchor: "CRISIL page 1, STRENGTHS"
+    - field: "Export Share"
+      value: "30-35% of revenue"
+      anchor: "CRISIL page 1"
+    - field: "Interest Coverage"
+      value: "12.34x (FY25)"
+      anchor: "CRISIL page 1"
+    - field: "Current Ratio"
+      value: "2.45x (as on 31-Mar-2025)"
+      anchor: "CRISIL page 2, LIQUIDITY"
+
+  ua_qualifiers:
+    - field: "Listed 12+ Months"
+      value: "YES (listed since 1992)"
+      anchor: "Public knowledge; >30 years"
+    - field: "Gate 0 ≥60 OR EM ≥25"
+      value: "YES (Gate 0 = 70, EM = 11; Gate 0 metric met)"
+      anchor: "B01.grand_total 70; B07.em_score 11"
+    - field: "FII + DII <3%"
+      value: "YES (about 0.24%)"
+      anchor: "Deliberation record"
+    - field: "All Three Met"
+      value: "YES"
+      anchor: "Deliberation record"
+    - field: "UA Multiplier"
+      value: 1.25
+      anchor: "Deliberation record: applies"
+
+  valuation_framework_authoritative:
+    - field: "Forward ROCE Verdict"
+      value: "SUSTAINED (current ~29.8% per AR Note 33)"
+      anchor: "Deliberation record; alt ~24% closing-basis operating"
+    - field: "Pillar 1 (ROCE Premium)"
+      value: "Uses current ROCE 29.8% (base PE ~22.4x) or alt 24% (base PE ~19.5x); no recovery credit; Strategic Premium route barred"
+      anchor: "Deliberation record: stage 11 chooses basis"
+    - field: "Pillar 2 (Cash Multiplier)"
+      value: "0.85x base (range 0.80-1.00); falsification metric live"
+      anchor: "Deliberation record: authoritative"
+    - field: "Pillar 3 (Growth Premium)"
+      value: "+1x (Operator Override 1)"
+      anchor: "Deliberation record: 'India is a growing economy... give it at least an additional one point'"
+    - field: "Destination PE"
+      value: "25x (Operator Override 2, equals sector cap)"
+      anchor: "Deliberation record: authoritative exit multiple; at ROCE 22.4x + Pillar 2 0.85x + Pillar 3 +1x + UA 1.25x → 25x coherence confirmed"
+    - field: "Sector Cap Row"
+      value: "Manufacturing / Industrial products, 25x (absolute ceiling)"
+      anchor: "Deliberation record: corrected from manifest"
+    - field: "Hurdle Tier"
+      value: "Tier A (25% required return)"
+      anchor: "Deliberation record"
+    - field: "Credibility Grade Cap"
+      value: "C (bull EPS CAGR capped at base + 5pp for Hurdle check)"
+      anchor: "Deliberation record; B05 credibility_grade C"
+
+  shared_catalyst_flag:
+    - field: "Flag"
+      value: "Export-led capacity ramp is BOTH revenue catalyst AND cause of receivables build"
+      anchor: "Deliberation record: 'If exports stall, revenue decelerates while working capital releases. The devil must stress this single root'"
+    - field: "Implication"
+      value: "Stage 11 stress-tests joint export-volume-and-DSO scenario; if orders reverse, DSO decompresses (WC release) while revenue declines"
+      anchor: "Deliberation direction"
+
+conflicts: []
+unresolved:
+  - field: "Pledged Share %"
+    why: "AR contains zero pledging language; web search provided conflicting claims (8.3% pledged to Bajaj Finance Ltd vs. nil as of Mar-2025); primary BSE Reg 31 filing HTTP 403 blocked"
+    where: "BSE Regulation 31 consolidated pledging disclosure; future FY27 AR shareholding note"
+  - field: "Consolidated Segment P&L (Bimetal/Alkop/Brakes Split)"
+    why: "Single-segment accounting policy; no audited Note 108 (Ind AS 108) segment disclosure; splits from unaudited investor presentation only"
+    where: "Future audited segment note if company adopts multi-segment reporting; investor presentation updates"
+  - field: "Alkop Per-Unit Realisation (Conflicting Bases)"
+    why: "Investor Presentation slide 33 ~Rs7.5 lakh/MT vs Q3 concall Jan-2026 Rs2.0-2.2 lakh/MT; bases unclear (HPDC vs gravity casting? volume vs value denominator?)"
+    where: "B04 FLAG-DATA; future management Q&A or AR disclosure"
+  - field: "Standalone Note 6 vs Note 31 Ageing Contradiction"
+    why: "Note 6 own aged-receivables figure 2.5x-16x smaller than Note 31 ageing-schedule total for identical balance date; definitional or data-entry error unresolved"
+    where: "B02; management question for next AR or concall"
+  - field: "CRISIL Post-Audited FY26 Surveillance Review"
+    why: "CRISIL reaffirmation dated 23-Apr-2026 predates board adoption 14-May-2026 by ~3 weeks; no post-FY26 formal surveillance review noted"
+    where: "CRISIL website / next rating action (Q2 FY27 surveillance expected)"
+
+credibility_grade: "C"
+ua_qualifiers:
+  listed_12m: true
+  gate0_or_em: true
+  fii_dii_lt3: true
+  all_met: true
+rating_wc_quote: "Customer agreements include PRICE ESCALATION CLAUSES to periodically adjust selling prices for RM price movements; however there is a LAG in implementing price changes. Opmargin was 18.65-20.39% in the two years through March 2025; sustenance at healthy level remains monitorable. [DOWNWARD FACTOR:] SIZEABLE STRETCH IN THE WORKING CAPITAL CYCLE, or larger-than-expected debt-funded capex or acquisition or sizeable dividend payout [would trigger downgrade]. — CRISIL Rating Rationale, 23-Apr-2026, pages 1-2, WEAKNESSES and RATING SENSITIVITY sections."

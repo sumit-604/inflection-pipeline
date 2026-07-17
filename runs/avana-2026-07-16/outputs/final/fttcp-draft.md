@@ -154,16 +154,28 @@ Cap state: no Kernex cap (no DECLINING-with-no-catalyst transition). No TRIM. Di
 | 8 | Margin catalyst absence | No documented margin lever named in the first result or filing | 6-12m | Absence keeps Margin STAGNANT (a catalyst absence trigger) |
 | 9 | IPO proceeds query | Resolution of the 23 June 2026 NSE proceeds utilisation query | near term | An adverse finding is a governance flag |
 
-## HANDOFF TO VALUATION (Phase 3)
+## OPERATOR OVERRIDE (review, 2026-07-17) — valuation method for a high-growth, cash-bloated post-IPO name
 
-- **ROCE forward verdict: RECOVERING, about 45% probability, Moderate catalyst.**
-- **Pillar 1 ROCE (Amendment 4.5, TEMPORARILY DEPRESSED plus RECOVERING, probability 40 to 60%):** blend 40% Normalized plus 30% FY[Y+2] plus 30% current. Normalized anchor about 30% (FY24 reported, conservative, not the FY25 cash flattered 45%), current 27.8%. Implied Pillar 1 ROCE roughly 29% to 32%, feeding base PE 0.5 times ROCE plus 7.5, so about 22x to 23.5x before other pillars. Recovery credited via Pillar 1; Strategic Premium ROCE route barred (single credit).
-- **Pillar 2 cash multiplier: conservative, INDETERMINATE.** Structural versus growth unresolved; disposition capped at PROCEED WITH CAVEATS until a receivables ageing or rating rationale arrives.
-- **Sector cap row Phase 3 must use: Cables / Industrial products, 25x** (not Pharma / CDMO 38x). Alternative on documented energy transition positioning: EV charging / energy transition equipment, 28x.
+The draft's first pillar build was wrong and the operator corrected it. What the draft said: Pillar 1 anchored on a normalized ROCE of about 30% (Amendment 4.5 blend), no growth premium, destination PE about 18x, framed against a trailing 28x as a de-rating that sat below CMP. The operator's ruling, in the operator's frame: "It is a high-growth company and you are giving it a PE of less than 20. If FTTCP says future ROCE is near 40%, take that. A 40% ROCE company gets a higher base multiple. And you are giving no score for growth visibility, so you must take it to the forward price-to-earnings method, because the growth has to be priced somewhere." Reasoning: normalizing the ROCE down while leaving the idle IPO cash in the denominator double-penalizes, and denying a growth premium while valuing on trailing earnings strips the growth twice.
+
+Adopted for Phase 3:
+
+- **Pillar 1 on operating ROCE, not the normalized blend.** Operating ROCE ex idle IPO cash is about 40% to 44% (EBIT 16.65 over operating capital about 38 Cr, screener Data_Sheet, after stripping about Rs 22 Cr idle IPO cash). Base PE = 24 + 0.3 times (40 minus 33) = about 26x (the ROCE above 33% formula, cap 30x). The AMAGI precedent governs: value the operating business on operating capital and add the surplus cash separately at 1x (about Rs 22 to 27 Cr, about Rs 10 to 12 per share). This supersedes the Amendment 4.5 normalized-30% anchor for this name, because the depression is pure cash bloat, not an operating trough.
+- **Growth priced in the earnings, not the multiple.** Pillar 3a stays +0x (the documented gates are genuinely unmet on relayed evidence: order book 0.62x, SOM CAGR 14 to 15%, no delivery grade), so the destination PE is applied to the EXIT-YEAR FORWARD EPS per the operator's forward-PE-at-exit convention. No growth premium AND forward earnings, never trailing earnings with no premium.
+
+## HANDOFF TO VALUATION (Phase 3, corrected)
+
+- **ROCE forward verdict: RECOVERING, about 45% probability, Moderate catalyst.** Backward TEMPORARILY DEPRESSED is a cash-bloat artifact only.
+- **Pillar 1: operating ROCE about 40%, base PE about 26x** (24 + 0.3 times (ROCE minus 33), cap 30x). Surplus cash about Rs 22 to 27 Cr valued separately at 1x. Recovery credited via Pillar 1; Strategic Premium ROCE route barred (single credit). Amendment 4.5 normalized-30% blend is the conservative alternative that lands about 22.9x and is NOT used per the operator override.
+- **Pillar 2 cash multiplier: 0.80x, INDETERMINATE, the main swing factor.** Quality base 26 times 0.80 = about 20.8x; if the receivables ageing clears the drag to 1.0x the base is about 26x. Structural versus growth unresolved; disposition capped at PROCEED WITH CAVEATS until a receivables ageing or rating rationale arrives.
+- **Pillar 3: +0x, growth carried in forward earnings** (no double count). Pillar 4 Strategic: +0x.
+- **Destination PE band: about 21x (cash 0.80x) to about 25x (cash 1.0x, at the sector cap), mid about 23x,** applied to exit-year forward EPS, with surplus cash added separately.
+- **Sector cap row: Cables / Industrial products, 25x** (not Pharma / CDMO 38x). Alternative on documented energy transition positioning: EV charging / energy transition equipment, 28x.
 - **UA multiplier: barred this cycle** (listed under 12 months). **Tier A, 25% hurdle.**
-- **Current PE about 28x** (market cap Rs 330.63 Cr on FY26 PAT Rs 11.72 Cr; EPS about Rs 5.2 on 2.26 Cr shares), for the Phase 3 Hurdle Ratio.
-- **SHARED CATALYST flag for the devil's advocate:** the single KIADB commissioning event drives the Pillar 1 ROCE recovery, the Pillar 3a growth visibility, and the revenue verdict at once. It is one point of failure, and it carries a real execution risk given the six year KIADB deadline slip. Stress test it hard.
-- **Evidence caveat carried to Phase 3:** the RHP and NSE facts reach this run as an operator relayed digest, not primary PDFs, and there is no concall; every forward credit above is provisional on the primary documents arriving.
+- **Earnings ladder (illustrative, ~30% PAT CAGR, 2.26 Cr shares):** FY26 Rs 5.2, FY27 Rs 6.8, FY28 Rs 8.8, FY29 Rs 11.4, FY30 Rs 14.8. Base fair value = 23x times FY29 EPS plus cash = about Rs 273; forward-PE-at-exit (FY29 exit on FY30 EPS) = about Rs 353. Entry zone (base FV / 1.953) about Rs 140 to 180, straddling CMP 146.
+- **Hurdle at CMP 146 (current about 28x trailing):** destination 23x at 30% EPS CAGR gives HR about 1.80 (CONDITIONAL); destination 25x or growth about 35% gives HR about 1.96 (PASS). The call sits right at the Tier A hurdle at CMP.
+- **SHARED CATALYST flag for the devil's advocate:** the single KIADB commissioning event drives the operating ROCE holding near 40%, the revenue growth ladder, and the cash deployment at once. One point of failure, real execution risk given the six year KIADB deadline slip. Stress test it hard.
+- **Evidence caveat carried to Phase 3:** the RHP and NSE facts reach this run as an operator relayed digest, not primary PDFs, and there is no concall; the corrected valuation method is sound but every forward number is provisional on the primary documents arriving, and the evidence gate stays INSUFFICIENT EVIDENCE with the cash determination INDETERMINATE.
 
 ---
 

@@ -1,4 +1,4 @@
-# FTTCP DRAFT — Avana Electrosystems Ltd (AVANA)
+# FTTCP DRAFT: Avana Electrosystems Ltd (AVANA)
 
 CMP Rs 146. Market cap Rs 331 Cr. Run date 2026-07-16. First workup, not a refresh (no prior companies/AVANA.md, run_type full). Ran in NO-CONCALL MODE: the company holds no earnings calls and none exist in the folder, so forward catalysts are read from the screener financials and an operator relayed digest of the RHP and four NSE filings, never invented from narrative. Confidence is materially reduced and that reduction is stated wherever it bites.
 
@@ -40,7 +40,7 @@ Every call is a statement. Each carries a confidence tag and the single fact tha
 
 ---
 
-## TRANSITION 1 — REVENUE GROWTH
+## TRANSITION 1: REVENUE GROWTH
 
 | Period | Revenue (Rs Cr) | YoY % | Basis |
 |---|---|---|---|
@@ -57,7 +57,7 @@ Every call is a statement. Each carries a confidence tag and the single fact tha
 
 The expected columns are illustrative, built from the plus 150% capacity headroom (relays 70,000 to 175,000 units, panels 600 to 1,500 units, operator relayed RHP/NSE digest, 2026-07-17) and the recent momentum, not from guidance, since none exists. What it means: revenue is scaling fast off a small base, the capacity to keep scaling is being built, and the order book of Rs 52.24 Cr at 30 November 2025 (operator relayed digest) is about 0.62 times FY26 revenue, which is support but not deep cover. **Forward verdict: FIRING.**
 
-## TRANSITION 2 — MARGIN EXPANSION
+## TRANSITION 2: MARGIN EXPANSION
 
 | Period | Operating EBITDA margin % | Basis |
 |---|---|---|
@@ -70,7 +70,7 @@ The expected columns are illustrative, built from the plus 150% capacity headroo
 
 Margin expanded about 1,570 basis points over four years, which is real, but the last two years are flat near 19% to 20% and the FY26 raw material to sales ratio rose to about 63% from about 54% in FY24 (screener Data_Sheet), a mild input cost pressure. No documented catalyst exists to push margins higher (the capacity move adds floor space and bought in components, not a cost program), and there is no concall to reveal one. What it means: the margin transition already happened; from here the honest read is hold, not expand. **Forward verdict: STAGNANT.**
 
-## TRANSITION 3 — CASH CONVERSION
+## TRANSITION 3: CASH CONVERSION
 
 | Period | PAT (Rs Cr) | CFO (Rs Cr) | CFO/PAT | Debtor days | Basis |
 |---|---|---|---|---|---|
@@ -83,7 +83,7 @@ Margin expanded about 1,570 basis points over four years, which is real, but the
 
 The two most recent years show real improvement, CFO to PAT at 0.81 then 0.68 and debtor days compressing to 97 (screener Data_Sheet). Against that, the relayed RHP puts the H1 FY26 net working capital cycle near 245 days with heavy inventory, and the IPO set aside Rs 8.6 Cr to fund that cycle. What it means: the trajectory is improving but the working capital base is heavy, and growth will keep absorbing cash, so I do not credit a forward push past 0.70 sustained without a documented discipline program, which does not exist. The structural versus growth question is INDETERMINATE and caps the disposition at PROCEED WITH CAVEATS. **Forward verdict: STAGNANT.**
 
-## TRANSITION 4 — ROCE / CAPITAL EFFICIENCY
+## TRANSITION 4: ROCE / CAPITAL EFFICIENCY
 
 | Period | ROCE % | Capital employed (Rs Cr) | EBIT (Rs Cr) | Basis |
 |---|---|---|---|---|
@@ -97,7 +97,7 @@ The two most recent years show real improvement, CFO to PAT at 0.81 then 0.68 an
 
 ROCE looks like it fell hard in FY26, but the fall is an IPO artefact: capital employed jumped to Rs 59.85 Cr because about Rs 22 Cr of fresh IPO cash landed in the denominator not yet earning (screener Data_Sheet). Strip the idle cash and operating ROCE is still about 44%. What it means: this is temporarily depressed, not declining, and the recovery is mechanical, deploy the cash into the disclosed KIADB facility and working capital. I hold it at RECOVERING, not FIRING, until a print confirms it, and I discount the catalyst for the KIADB deadline having already slipped about six years. **Forward verdict: RECOVERING.**
 
-## STEP 2E — INTENT AND ACTION LEDGER
+## STEP 2E: INTENT AND ACTION LEDGER
 
 | Transition | Stated vision | Documented action (relayed) | Promise vs delivery discount | Too conservative? | Adjustment |
 |---|---|---|---|---|---|
@@ -128,7 +128,7 @@ The composite is plus 3 out of 8, which is DEEP WATCH, wait for confirmation. Re
 
 ---
 
-## STEP 3 — FORWARD SCORECARD
+## STEP 3: FORWARD SCORECARD
 
 | Transition | Backward | Catalyst strength | Forward probability | Forward verdict | Score |
 |---|---|---|---|---|---|
@@ -140,7 +140,7 @@ The composite is plus 3 out of 8, which is DEEP WATCH, wait for confirmation. Re
 
 Cap state: no Kernex cap (no DECLINING-with-no-catalyst transition). No TRIM. Disposition capped at PROCEED WITH CAVEATS by the INDETERMINATE cash determination. Band: DEEP WATCH.
 
-## STEP 5 — MONITORING TRIGGERS
+## STEP 5: MONITORING TRIGGERS
 
 | # | Trigger | Threshold | Horizon | Changes in FTTCP |
 |---|---|---|---|---|

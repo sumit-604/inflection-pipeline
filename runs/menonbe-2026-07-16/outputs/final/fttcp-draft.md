@@ -1,4 +1,4 @@
-# FTTCP v1.2 — Menon Bearings Ltd (MENONBE)
+# FTTCP v1.2: Menon Bearings Ltd (MENONBE)
 
 CMP Rs 190. Market cap Rs 1,073 Cr. Run date 2026-07-16. First workup, not a refresh (no prior companies/MENONBE.md). Concalls available, so this is NOT no-concall mode: four main transcripts read (Q1 to Q4 FY26) plus a Q1 FY27 result that post dates the last call.
 
@@ -36,7 +36,7 @@ Every call below is made. None is a question. Each carries a confidence tag and 
 
 ---
 
-## TRANSITION 1 — REVENUE GROWTH
+## TRANSITION 1: REVENUE GROWTH
 
 Actuals are anchored. FY27 onward is illustrative, built from management guidance and catalyst evidence, not fact.
 
@@ -57,7 +57,7 @@ What it means: growth stalled in FY24, recovered through FY25, and is now accele
 
 ---
 
-## TRANSITION 2 — MARGIN EXPANSION
+## TRANSITION 2: MARGIN EXPANSION
 
 | Year | EBITDA Margin % | Trajectory | Peer benchmark |
 |---|---|---|---|
@@ -73,7 +73,7 @@ What it means: margin is peer leading and cyclically stable, dipping to about 19
 
 ---
 
-## TRANSITION 3 — CASH CONVERSION (the critical one)
+## TRANSITION 3: CASH CONVERSION (the critical one)
 
 | Year | PAT Rs Cr | CFO Rs Cr | CFO/PAT | Debtor Days (consol) | Note |
 |---|---|---|---|---|---|
@@ -90,7 +90,7 @@ What it means: this is the one transition going the wrong way, and it is the swi
 
 ---
 
-## TRANSITION 4 — ROCE / CAPITAL EFFICIENCY
+## TRANSITION 4: ROCE / CAPITAL EFFICIENCY
 
 | Year | ROCE % | Source / note |
 |---|---|---|
@@ -106,7 +106,7 @@ What it means: ROCE is a genuine strength, premium at about 30% in FY26 and well
 
 ---
 
-## STEP 2E — INTENT AND ACTION LEDGER
+## STEP 2E: INTENT AND ACTION LEDGER
 
 | Transition | Vision (spoken) | Documented action | Too conservative? | Adjustment |
 |---|---|---|---|---|
@@ -133,7 +133,7 @@ A NONE FOUND is worth stating plainly: there is no documented catalyst that woul
 
 ---
 
-## STEP 3 — FORWARD SCORECARD
+## STEP 3: FORWARD SCORECARD
 
 | Transition | Backward | Catalyst Strength | Forward Probability | Forward Verdict | Score |
 |---|---|---|---|---|---|
@@ -145,13 +145,13 @@ A NONE FOUND is worth stating plainly: there is no documented catalyst that woul
 
 ---
 
-## STEP 4 — VERDICT
+## STEP 4: VERDICT
 
 Composite score is +1 out of a range of minus 4 to plus 8, which lands in the DEEP WATCH leaning AVOID band. The Kernex cap does NOT engage, because the weakest transition, cash, is STAGNANT with a weak catalyst rather than DECLINING with no catalyst. The TRIM rule does not apply, because all four transitions are not firing backward. This is a good business where only one of the four transitions is firing forward, the two quality transitions are already at their peak with no further transition to price, and the one broken transition is cash. The whole call turns on a single print: whether standalone receivables keep outrunning revenue. If they do, cash goes to DECLINING and the composite falls to AVOID. If ex-works actually collapses the cycle, cash goes to STARTING and the composite rises toward a small buy on dips.
 
 ---
 
-## STEP 5 — MONITORING TRIGGERS
+## STEP 5: MONITORING TRIGGERS
 
 | # | Trigger | Threshold | Horizon | Effect on FTTCP |
 |---|---|---|---|---|

@@ -1,0 +1,314 @@
+stage: B10-valinputs
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "annual-report (PDF) absent from folder inputs/"
+  - "results PDF (latest quarter / FY26) absent; FY26 Board outcome filed 21-May-2026 per operator but PDF not fetched"
+  - "rating PDF absent; no rating agency assignment"
+  - "shareholding-pattern filing absent from inputs/ (FII/DII %, promoter pledge %)"
+  - "concalls absent (company is 6 months old, no IR calendar published)"
+  - "investor presentation absent"
+  - "CWIP project details (name, purpose, capacity, commissioning date) NOT FOUND; screener shows 4.67 Cr but no note"
+  - "capex breakout absent in screener Data_Sheet; Cash from Investing Activity (-9.35 Cr) is aggregate, FCF not computable"
+  - "FY26 Power & Fuel, Other Mfr. Exp., Selling & Admin cells blank in screener"
+  - "management guidance (revenue, margin, capex) NOT FOUND; no concall or presentation"
+  - "receivables ageing NOT FOUND; critical for resolving INDETERMINATE cash determination"
+  - "peer financial multiples (P/E, EV/EBITDA, P/B, ROE, ROCE) not extracted this run"
+flags:
+  - {type: FLAG-DATA-THIN, reason: "All inputs are inference-based (screener financial proxies + operator-relayed RHP digest + peer sector context); zero AVANA primary documents (AR/concall/presentation/prospectus/rating) read this run. Carried from B01 and B07. Evidence quality: 0 documented, 0 claim, 8 inference. Confidence is HIGH on FY26 audited financials (screener = direct source), LOW on forward projections (no mgmt guidance, SOM-implied CAGR below realised). Resolution: first AVANA AR/results/concall will reset information base within 12 months (B07 catalyst 1)."}
+  - {type: FLAG-CASH-INDETERMINATE, reason: "CFO/PAT FY26 = 67.8%, improving trend (FY23 -0.32 to FY26 7.95), but structural vs growth-induced cash gap unresolved. Per FTTCP Ruling 7: cash determination INDETERMINATE (caps disposition PROCEED WITH CAVEATS). Multiplier 0.80x unless receivables ageing clears it to 1.0x. Awaiting AR receivables note or rating agency WC commentary."}
+  - {type: FLAG-CAPEX-UNSPECIFIED, reason: "CWIP 4.67 Cr FY26 (first appearance in screener) purpose, capacity, funding source, commissioning date all NOT FOUND. Operator-relayed RHP confirms KIADB facility +150% capacity, targeted commercial production May-2026, but commissioning outcome unconfirmed as of run-date 2026-07-16. Capex-embedded-growth pct (B07) flagged for stage 11/13 not to over-read. Awaiting AR capex note."}
+  - {type: FLAG-CAPITAL-STRUCTURE, reason: "FY26 Equity Share Capital jumped 0.79 Cr (FY25) to 22.65 Cr (FY26), ~28.7x increase, coincident with IPO (Jan-2026) and rebrand Kaycee -> Avana. Use-of-proceeds undisclosed (IPO fundraising purpose stated as working capital Rs 8.6 Cr + capex, but detailed allocation NOT FOUND). Flag for stage 11 share-count/EPS audit and stage 13 optionality assessment."}
+  - {type: FLAG-PROMOTER-CAUTION, reason: "Promoter verdict: CAUTION (per B08). ~6 months as listed entity (IPO 19-Jan-2026); no multi-year conduct track record. KIADB commercial-production deadline missed by ~6 years (original 1-Jun-2020, extended to 22-May-2026); outcome unconfirmed. Promoter Group disclosure gap (R. Manoharan not consented). No red-tier finding (no SEBI/criminal/tax, no pledge, unmodified audit), but structural track-record gap remains."}
+  - {type: SHARED-CATALYST-EXECUTION-RISK, reason: "Both operating ROCE recovery (~40% forward) and revenue ladder (30% BASE growth) hinge on KIADB facility commissioning (targeted May-2026, outcome unconfirmed as of run-date). CWIP project carries ~6-year deadline-slip history (DRHP risk factor per B08). Execution risk on facility ramp flagged for devil's advocate (stage 13)."}
+  - {type: TENSION-SOM-vs-REALISED, reason: "SOM-implied revenue CAGR (14.8% FY26-29, 14.1% FY26-31 per B09) sits below AVANA's realised 25.8% FY24-26. Conservative projection OR company pulling forward growth from order book (Rs 52.24 Cr, 30-Nov-2025). Stage 11 to reconcile: order-book-to-revenue conversion, capacity headroom (KIADB +150%), and sector supercycle timing (peer Danish/Aartech guidance)."}
+  - {type: TENSION-MOAT-SCORING, reason: "B01 moat class FORTRESS (7/12 tests >=3) vs B07 EM score 2.5 (NO MEANINGFUL EMERGING MOAT). No conflict: B01 measures operational current-year strength; B07 measures forward emerging catalysts (CWIP undisclosed, FY26 raise purpose unknown, sector timing unconfirmed). Both valid; B07 lower score reflects forward-visibility gap, not operational weakness."}
+  - {type: MANIFEST-DEFECT-SECTOR, reason: "Manifest sector cap row = 'Pharma / CDMO, 38x' is a confirmed collection defect. AVANA is a power transmission & distribution equipment maker (control & relay panels, protection relays, substation automation). Correct row per FTTCP Ruling 4: 'Cables / Industrial products, 25x'. Stage 11 must use 25x cap, not 38x."}
+
+table:
+  company: "Avana Electrosystems Ltd"
+  ticker: "AVANA"
+  sector: "Cables / Industrial products (power transmission & distribution equipment)"
+  business_model_type: "standard operating business (standard four transitions)"
+  sector_cap_row: "Cables / Industrial products, 25x (corrected; manifest error was Pharma/CDMO 38x)"
+  cmp_rs: 146.0
+  market_cap_cr: 330.63
+  shares_outstanding_diluted_cr: 2.26
+  enterprise_value_cr: 303.57
+  
+  revenue_latest_cr: 83.86
+  revenue_anchor: "screener Data_Sheet FY26"
+  
+  ebitda_latest_cr: 17.30
+  ebitda_anchor: "Computed: EBIT 16.65 + Depreciation 0.65 (screener Data_Sheet FY26)"
+  ebitda_margin_pct: 20.6
+  
+  pat_latest_cr: 11.72
+  pat_anchor: "screener Data_Sheet FY26 Net profit"
+  pat_margin_pct: 14.0
+  
+  diluted_eps_rs: 5.19
+  diluted_eps_anchor: "Computed: PAT 11.72 Cr / Shares 2.26 Cr (screener Data_Sheet)"
+  
+  book_value_per_share_rs: 26.13
+  book_value_ps_anchor: "Computed: Net Worth 59.08 Cr / Shares 2.26 Cr (screener Data_Sheet)"
+  pb_ratio: 5.58
+  
+  cfo_latest_cr: 7.95
+  cfo_anchor: "screener Data_Sheet FY26 Cash from Operating Activity"
+  
+  fcf_latest_cr: "NOT FOUND"
+  fcf_reason: "Capex not separately itemised in screener; Cash from Investing Activity (-9.35 Cr) is aggregate; cannot decompose"
+  
+  cfo_pat_pct: 67.8
+  cfo_pat_anchor: "Computed: 7.95 / 11.72 (screener Data_Sheet FY26)"
+  
+  cfo_pat_cumulative_pct: 0.62
+  cfo_pat_cumulative_anchor: "B01 block_b_trend: 'cumulative CFO/PAT for the full FY20-FY26 window (0.62x)' — reflects FY20-23 weakness; FY26 solo is 0.678 (improving)"
+  
+  net_cash_cr: 27.06
+  net_cash_anchor: "Computed: Cash 27.83 - Borrowings 0.77 (screener Data_Sheet FY26); company is net-cash position"
+  
+  depreciation_latest_cr: 0.65
+  depreciation_anchor: "screener Data_Sheet FY26"
+  
+  capex_latest_cr: "NOT FOUND"
+  capex_reason: "Breakout of capex vs other investing items (loans, deposits, acquisitions) not available in screener Data_Sheet"
+  
+  dps_rs: "NOT FOUND"
+  dps_reason: "Dividend row blank in screener; IPO company (6 months old) unlikely to have paid dividend"
+  
+  roce_latest_pct: 44.0
+  roce_latest_anchor: "Calculated per FTTCP Override 1: EBIT 16.65 Cr / Operating capital ex-surplus cash ~37.85 Cr = 44%. Operating capital = Capital Employed 59.85 minus idle IPO cash ~22 Cr (cash rose FY25 5.31 to FY26 27.83 = +22.52 Cr). (screener Data_Sheet)"
+  
+  roce_trend_direction: "RECOVERING"
+  roce_trend_anchor: "FTTCP Deliberation Ruling 8: backward TEMPORARILY DEPRESSED (post-IPO cash bloat, not operating trough); forward RECOVERING (~45% probability)"
+  
+  roe_latest_pct: 19.8
+  roe_latest_anchor: "Computed: PAT 11.72 / Net Worth 59.08 (screener Data_Sheet FY26); note FY25 was pre-IPO structure so single-year ROE more meaningful than multi-year trend"
+  
+  revenue_cagr_3yr_pct: 25.8
+  revenue_cagr_3yr_anchor: "FY24-FY26 CAGR: (83.86 / 52.99) ^ 0.5 - 1 = 25.8% (screener Data_Sheet)"
+  
+  pat_cagr_3yr_pct: 70.7
+  pat_cagr_3yr_note: "FY24-FY26 CAGR only spans 2 years compounding: (11.72 / 4.02) ^ 0.5 - 1 = 70.7%. FY23 was depressed (PAT 0.92, pre-IPO transition), so FY23-26 3-yr CAGR = (11.72/0.92)^(1/3)-1 = 134.7%, not meaningful. FY24-26 used for forward baseline."
+  pat_cagr_3yr_anchor: "screener Data_Sheet"
+  
+  credibility_grade: "INSUFFICIENT"
+  credibility_anchor: "B05 stage: skipped (no concall, no AR, no results PDF, no presentation). credibility_grade: INSUFFICIENT (no management narrative source)"
+  
+  guided_revenue_growth: "NOT FOUND"
+  guided_revenue_anchor: "No AR MD&A, no results presentation, no concall with guidance"
+  
+  guided_margin_band: "NOT FOUND"
+  guided_margin_anchor: "No AR MD&A available"
+  
+  management_track_record: "NOT APPLICABLE"
+  management_track_record_reason: "Credibility grade INSUFFICIENT precludes track-record assessment"
+  
+  top_growth_triggers:
+    - "Order book Rs 52.24 Cr (30-Nov-2025, operator-relayed RHP)"
+    - "Capacity expansion +150% (KIADB facility, relayed RHP, target commercial production May-2026)"
+    - "Sector demand supercycle (grid modernisation, renewables, data-centre power, NEP targets per peer Danish/Aartech concalls)"
+  top_growth_triggers_anchor: "operator-relayed-RHP-NSE-digest-2026-07-17.md; B07 catalysts; B09 sector analysis"
+  
+  em_score: 2.5
+  em_classification: "NO MEANINGFUL EMERGING MOAT"
+  em_anchor: "B07: EM score 2.5 / ~80; single active category G1 War chest (Moderate, inference-based on FY26 equity raise, purpose undocumented)"
+  
+  primary_catalyst_12m: "First-ever AVANA primary document (AR/results/exchange filing) disclosing FY26 capital raise purpose and CWIP project detail"
+  primary_catalyst_anchor: "B07 catalysts_12m: window 12m, evidence_type inference (no confirmed publication date yet)"
+  
+  evidence_quality_mix: "Mostly inference (zero primary AVANA documents: no AR, no concall, no results PDF, no presentation, no rating; all input via screener + operator-relayed RHP digest + peer sector context)"
+  evidence_mix_anchor: "B07 evidence_mix: {documented: 0, claim: 0, inference: 8}"
+  
+  cash_conversion_determination: "INDETERMINATE (unresolved between structural vs growth-induced gap)"
+  cash_conversion_anchor: "FTTCP Deliberation Ruling 7: 'structural versus growth INDETERMINATE. Caps disposition at PROCEED WITH CAVEATS. The receivables ageing or a rating rationale would settle it.'"
+  
+  cash_multiplier_pillar2: 0.80
+  cash_multiplier_anchor: "CFO/PAT FY26 = 67.8% (7.95 / 11.72); per FTTCP Override 2, multiplier 0.80x. Range 0.80-1.0x depending on cash determination resolution."
+  
+  strategic_asset_position: "YES — FORTRESS moat (power transmission & distribution products, narrow regulated customer base [power utilities, renewables, industrial generators], high switching cost, capacity constraint resolved by KIADB facility)"
+  moat_anchor: "B01 moat_class FORTRESS (7/12 tests >=3); B07 market definition confirms narrow, specialized market; operator-relayed confirms +150% capacity expansion"
+  
+  ua_qualifier_listed_12m: false
+  ua_qualifier_listed_12m_anchor: "IPO 19-Jan-2026; run date 2026-07-16 = ~6 months. FTTCP Ruling 12: 'UA multiplier barred (listed under 12 months)'"
+  
+  ua_qualifier_gate0_or_em: false
+  ua_qualifier_gate0_or_em_anchor: "B01 Gate 0 score 49 / 100 (AVERAGE, <60). B07 EM score 2.5 (NO MEANINGFUL EMERGING MOAT, <25). Both below thresholds."
+  
+  ua_qualifier_fii_dii_lt3: "NOT FOUND"
+  ua_qualifier_fii_dii_anchor: "B08 input_gaps: shareholding-pattern filing absent from inputs/ (FII/DII %, promoter pledge %)"
+  
+  ua_qualifiers_all_met: false
+  ua_qualifiers_note: "Qualifier 1 failed (listed <12m); Qualifier 2 failed (Gate 0 and EM both <threshold); Qualifier 3 NOT FOUND. UA multiplier barred."
+  
+  som_implied_revenue_cagr_3yr: 14.8
+  som_implied_revenue_cagr_5yr: 14.1
+  som_implied_anchor: "B09 som_implied_revenue_cagr: {yr3: 14.8, yr5: 14.1}. Formal tension: AVANA realised CAGR 25.8% FY24-26 > SOM-implied 14.8%. Stage 11 to reconcile order-book conversion vs capacity constraints."
+  
+  rating_agency: "NOT FOUND"
+  rating_status: "NOT FOUND"
+  rating_outlook: "NOT FOUND"
+  rating_date: "NOT FOUND"
+  rating_wc_quote: "NOT FOUND — no rating PDF in folder; FTTCP Deliberation notes receivables ageing or rating rationale would settle INDETERMINATE cash determination"
+
+conflicts:
+  - field: "sector_cap_row"
+    value_a: "Pharma / CDMO, 38x"
+    anchor_a: "Manifest YAML (auto-collected, confirmed defect)"
+    value_b: "Cables / Industrial products, 25x"
+    anchor_b: "FTTCP Deliberation Ruling 4 (authoritative operator correction)"
+    used: "Cables / Industrial products, 25x. FTTCP is authoritative; manifest row is confirmed collection defect."
+  
+  - field: "pillar_1_roce_anchor"
+    value_a: "Amendment 4.5 normalized 30%, base PE ~22.9x (draft)"
+    anchor_a: "FTTCP Deliberation draft determination (withdrawn)"
+    value_b: "Operating ROCE ~40-44%, base PE ~26x (operator override)"
+    anchor_b: "FTTCP Deliberation Override 1 (final ruling after operator sign-off)"
+    used: "Operating ROCE 40-44%, base PE ~26x. Override 1 supersedes draft; authoritative."
+  
+  - field: "pillar_3a_growth_premium"
+    value_a: "0x (gates unmet, stripped from trailing-PE valuation)"
+    anchor_a: "FTTCP Deliberation draft Ruling on Pillar 3a"
+    value_b: "0x (gates unmet, but carried in forward earnings via forward-PE method, not stripped)"
+    anchor_b: "FTTCP Deliberation Override 2 (final method change)"
+    used: "+0x premium value used (same numeric result); method changed from trailing-earnings-strip to forward-earnings-carry per Override 2."
+  
+  - field: "entity_identity"
+    value_a: "Avana is continuation/rename of Kaycee Industries Ltd (BSE 504084)"
+    anchor_a: "screener Data_Sheet peer-proxy include (504084 in inputs)"
+    value_b: "Avana is NOT a rename; 504084 is unrelated competitor; Avana IPO'd fresh NSE SME Jan-2026"
+    anchor_b: "B08, B09 web searches (search-snippet confirmation; Glassdoor, web archives)"
+    used: "504084 data DISCARDED. Avana has no prior listing history; 504084 is separate listed entity. Peer moat/financial comparisons in B01 using 504084 should not be given weight."
+
+unresolved:
+  - field: "annual_report"
+    why: "No AR in folder inputs/"
+    where: "Company publishes post-FY-end; FY26 AR expected by late May 2026 (60 days post 31-Mar-2026). As of run-date 2026-07-16, not yet in pipeline."
+    resolution_path: "Awaiting AR publication; expected within 12 months (B07 catalyst 1 'First-ever AVANA primary document')"
+  
+  - field: "results_pdf_fy26"
+    why: "Results PDF not in folder; FY26 Board meeting outcome filed 21-May-2026 per operator but PDF not fetched"
+    where: "NSE corporate filing, company investor relations"
+    resolution_path: "Fetch NSE filing PDF or AR capex note"
+  
+  - field: "latest_quarter_q1_fy27"
+    why: "Not yet in publication window (FY27 Q1 ends June 2026; results filed 30-45 days later, expected ~Aug 2026)"
+    where: "NSE filing, company results announcement"
+    resolution_path: "Will be available ~Aug 2026"
+  
+  - field: "rating_and_wc_commentary"
+    why: "No rating assigned or published; company is debt-free (Borrowings 0.77 Cr) so no rating incentive"
+    where: "Rating agency (ICRA, CRISIL, etc.)"
+    resolution_path: "Low probability absent debt issuance; alternatively, if receivables ageing disclosed in AR, FTTCP INDETERMINATE cash can be resolved without rating"
+  
+  - field: "shareholding_pattern_fii_dii_pct"
+    why: "NSE Regulation 31 filing absent from inputs/"
+    where: "NSE shareholding-pattern quarterly filing"
+    resolution_path: "Fetch NSE filing; B08 notes 403 errors on retrieval attempts this run"
+  
+  - field: "promoter_pledge_pct"
+    why: "Shareholding-pattern filing absent; no other source available"
+    where: "NSE shareholding-pattern filing"
+    resolution_path: "Fetch NSE filing; B08 treats current state as unconfirmed absence, not verified zero"
+  
+  - field: "cwip_project_details"
+    why: "Screener shows CWIP 4.67 Cr FY26 but no note naming project, purpose, capacity added, or commissioning date"
+    where: "AR capital notes, results MD&A, or capex schedule. Operator-relayed RHP mentions KIADB facility (+150% capacity, targeted May-2026 commercial production), but commissioning outcome unconfirmed as of run-date."
+    resolution_path: "AR capex note or results presentation slide; operator-relayed is lead-grade, awaiting primary filing confirmation. B07 FLAG-CAPEX-UNSPECIFIED flagged for stage 11/13."
+  
+  - field: "capex_pp_e_breakdown"
+    why: "Screener Cash from Investing Activity (-9.35 Cr FY26) includes capex, acquisitions, loan disbursals, deposits — no line-item breakout"
+    where: "AR cashflow note, results capex schedule"
+    resolution_path: "Primary filing capex line; FCF not computable until capex is separated"
+  
+  - field: "fcf_free_cash_flow"
+    why: "Capex not separately reported (see above); formula FCF = CFO - Capex cannot be calculated"
+    where: "Results capex line, AR cashflow note"
+    resolution_path: "Fetch capex detail; mandatory for stage 11 FCF analysis"
+  
+  - field: "fy26_power_and_fuel_expense"
+    why: "Cell blank in screener Data_Sheet P&L"
+    where: "AR P&L note or results breakdown"
+    resolution_path: "AR P&L; likely immaterial or consolidated elsewhere"
+  
+  - field: "fy26_other_mfr_expense"
+    why: "Cell blank in screener Data_Sheet P&L"
+    where: "AR P&L note"
+    resolution_path: "AR P&L"
+  
+  - field: "fy26_selling_admin_expense"
+    why: "Cell blank in screener Data_Sheet P&L; B01 notes 'M11 selling-expense-% trend confirmed only through FY25; FY26 Selling and Admin cell is blank'"
+    where: "AR P&L note"
+    resolution_path: "AR P&L; B01 moat scoring affected but not fatally (moat is FORTRESS)"
+  
+  - field: "dps_dividend_per_share"
+    why: "Dividend row blank in screener; no NSE announcement"
+    where: "AR dividend note, NSE announcement"
+    resolution_path: "IPO company (6 months old); unlikely to have paid dividend in first half-year"
+  
+  - field: "rd_expense"
+    why: "Not separately disclosed in screener Data_Sheet; B01 notes 'R&D expense not disclosed'"
+    where: "AR R&D note, operating expenses breakout"
+    resolution_path: "Operator-relayed mentions 'R&D: in-house engineers + firmware/software developers; R&D salary spend rising FY23-FY25' but not quantified"
+  
+  - field: "management_guidance_revenue_margin"
+    why: "No AR MD&A, no results presentation, no concall"
+    where: "First company concall (none exist yet), investor presentation, AR MD&A"
+    resolution_path: "B05 stage skipped (no-concall mode); awaiting first primary document"
+  
+  - field: "peer_financial_multiples"
+    why: "B01 names peer set (Aartech Solonics, Danish Power, Marsons) but does not extract P/E, EV/EBITDA, P/B, ROE, ROCE for comparison"
+    where: "Peer results PDFs, screener peer data"
+    resolution_path: "B10 does not extract peer multiples; stage 11 may source for comparison benchmarking if needed"
+  
+  - field: "current_ratio_wc_days"
+    why: "Current assets / current liabilities split not available in screener (only aggregate Total Assets / Total Liabilities); Trade Payables not separately itemised"
+    where: "AR balance-sheet note, results breakdown"
+    resolution_path: "AR note will provide split; operator-relayed H1 FY26 net WC cycle ~245 days provides directional lead"
+  
+  - field: "receivables_ageing"
+    why: "Not in screener; critical missing piece for INDETERMINATE cash determination"
+    where: "AR receivables note, results Regulation 33 customer/segment disclosure"
+    resolution_path: "Awaiting AR or rating agency note; FTTCP Deliberation: 'receivables ageing or a rating rationale would settle it'"
+
+rating_wc_quote: "NOT FOUND — no rating PDF in hand. FTTCP Deliberation notes: 'The receivables ageing or a rating rationale would settle [INDETERMINATE cash conversion]' — awaiting rating or primary filing."
+
+ua_qualifiers:
+  listed_12m: false
+  gate0_or_em: false
+  fii_dii_lt3: null
+  all_met: false
+
+credibility_grade: "INSUFFICIENT"
+
+fttcp_overrides_authoritative:
+  override_1_pillar1_roce_and_surplus_cash: "Operating ROCE ~40-44% (not normalized 30% blend). Surplus cash Rs 22-27 Cr valued separately at 1x. Base PE ~26x. Surplus cash treatment: idle IPO cash not left in ROCE denominator. Strategic Premium ROCE route barred (single credit per AMAGI precedent)."
+  override_1_anchor: "FTTCP Deliberation Override 1; operator's stated reasoning: 'It is a high-growth company, and you are giving it a price-to-earnings of less than 20. Have you gone mad?' and 'If it is a 40% ROCE company, your starting base multiple should be higher.'"
+  
+  override_2_forward_pe_method: "Destination PE applied to EXIT-YEAR FORWARD EPS (FY29 forward earnings). Growth priced in forward earnings, not stripped or double-counted. Pillar 3a = +0x (no growth score awarded; growth in forward ladder, not multiple premium)."
+  override_2_anchor: "FTTCP Deliberation Override 2; operator's stated reasoning: 'You are not giving any score for the growth visibility. Either you take it to the forward price-to-earnings method. If you are not giving a score in growth visibility, then you need to take it to the forward price-to-earnings.'"
+  
+  cash_multiplier_disposition: "0.80x per 67.8% CFO/PAT FY26. INDETERMINATE determination caps disposition at PROCEED WITH CAVEATS. 1.0x only if receivables ageing clears it."
+  cash_anchor: "FTTCP Deliberation Ruling 7, Ruling 8"
+  
+  sector_cap_corrected: "Cables / Industrial products, 25x (NOT Pharma/CDMO 38x manifest defect). Alternative EV charging/energy transition equipment 28x, not used absent documented AVANA energy-transition positioning."
+  sector_anchor: "FTTCP Deliberation Ruling 4"
+  
+  ua_multiplier: "BARRED. Listed under 12 months (IPO 19-Jan-2026). Tier A, 25% hurdle applies if qualifiers met."
+  ua_anchor: "FTTCP Deliberation Ruling 12"
+
+eps_ladder_illustrative_base_case:
+  fy26_actual: 5.19
+  fy27_projected: 6.75
+  fy28_projected: 8.77
+  fy29_projected: 11.40
+  fy30_projected: 14.82
+  growth_assumption_pct: 30
+  growth_anchor: "Illustrative BASE case at ~30% annual PAT CAGR (roughly 2-year realised FY24-26 at 70.7%, normalized to forward visibility). Bear/bull cases to be set by stage 11."
+  methodology: "Forward PAT growth carried in EPS ladder per FTTCP Override 2 (forward price-to-earnings method). No growth premium on multiple (Pillar 3a = 0x); all growth in forward earnings."
+  exit_year: "FY29 (per FTTCP forward-window, 12 months for ROCE exit)"
+  note: "Illustrative only; growth rate, bear/bull ranges to be determined by stage 11 based on order-book conversion, SOM reconciliation, capacity commissioning, and management guidance."

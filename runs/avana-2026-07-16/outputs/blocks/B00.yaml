@@ -29,6 +29,11 @@ input_gaps:
   - research: absent (no anchored-evidence effect)
   - presentation: absent
   - concalls: declared-unavailable (NOT a gap)
+operator_context_fill:
+  file: "inputs/announcements/operator-relayed-RHP-NSE-digest-2026-07-17.md"
+  provenance: "operator-relayed RHP + 4 NSE filings; lead/cross-check grade, not primary PDFs; cross-checked clean vs screener"
+  fills: ["prospectus (partial, relayed RHP)", "announcements (relayed NSE x3)", "results (FY26 audited/approved 21-May-2026; numbers still not in hand)"]
+  flag_effects: ["FLAG-CAPEX-UNSPECIFIED resolved (KIADB integrated unit, +150% capacity, commissioning unconfirmed)", "FLAG-CAPITAL-STRUCTURE use-of-proceeds partly known (Rs8.6cr WC + facility) + new 23-Jun NSE proceeds-deviation query", "FLAG-CASH sharpened (H1FY26 WC cycle ~245d, structural intensity real)", "FLAG-PROMOTER new items (CS resignation 31-Mar-2026; NSE proceeds query)", "order book Rs52.24cr 30-Nov-2025 confirmed"]
 provenance_notes:
   - "sector_cap_row Pharma/CDMO is a collect_to_repo v3 defect (wrong sector)"
   - "504084-*.csv = KAYCEE INDUSTRIES LTD, a DISTINCT unrelated company (B08-resolved); discard; subject = screener-*.csv"

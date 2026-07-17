@@ -1,4 +1,4 @@
-# FTTCP v1.2 draft — Fluidomat Ltd
+# FTTCP v1.2 draft: Fluidomat Ltd
 
 Company: Fluidomat Ltd | Ticker: FLUIDOMAT (BSE 522017) | CMP: Rs 1,018 | Run date: 2026-07-16
 Mode: first workup (no prior COMPANY MEMORY, run_type full). Role 1 derived fields are N/A because FTTCP runs before valuation.
@@ -38,7 +38,7 @@ Every call below is made. Each carries a confidence tag and the single fact that
 
 ---
 
-## Transition 1 — Revenue growth
+## Transition 1: Revenue growth
 
 | Year | Revenue (Rs Cr) | YoY | Status |
 |---|---|---|---|
@@ -57,7 +57,7 @@ Actuals anchored to the screener P&L sheet FY22 to FY26. The expected columns as
 
 What it means: the multi-year record is good, but the engine stalled in FY26. Revenue grew 0.4% on the annual report basis while receivables jumped 32%, the quarters swung from Rs 12 Cr to Rs 29 Cr, and the order-booking figure that appeared every prior year vanished from the FY26 filings. The one near-term positive is the Rs 29 Cr Q4 FY26 quarter, but a single lumpy quarter that also drove the receivables spike is not a trend. Forward verdict: **STAGNANT**.
 
-## Transition 2 — Margin expansion
+## Transition 2: Margin expansion
 
 | Year | EBITDA margin | PAT margin | Status |
 |---|---|---|---|
@@ -76,7 +76,7 @@ PAT margins anchored to the screener P&L; EBITDA margins FY24 to FY26 anchored t
 
 What it means: margins are genuinely high, roughly twice what ELECON or Shanthi Gears earn, which is the moat showing up in the P&L. But FY25 was a peak and FY26 gave back about 560 bps with no quantified explanation beyond mix and input costs. The level is already above the peer ceiling, so there is little room to expand and a real question of whether 35% or 40% is the true run-rate. Forward verdict: **STAGNANT** (backward SUSTAINED at a premium).
 
-## Transition 3 — Cash conversion (the critical one)
+## Transition 3: Cash conversion (the critical one)
 
 | Year | PAT (Rs Cr) | CFO (Rs Cr) | CFO/PAT | Debtor days | Net debt | Status |
 |---|---|---|---|---|---|---|
@@ -85,13 +85,13 @@ What it means: margins are genuinely high, roughly twice what ELECON or Shanthi 
 | FY24 | 13.05 | 10.31 | 0.79x | ~90 | net cash | ACTUAL |
 | FY25 | 22.22 | 14.30 | 0.64x | ~116 | net cash | ACTUAL |
 | FY26 | 20.06 | 10.75 | 0.54x | ~149 | net cash | ACTUAL |
-| FY27 | — | — | needs to clear 0.70x | needs to fall below ~114 | net cash | EXPECTED (unproven) |
+| FY27 | n/a | n/a | needs to clear 0.70x | needs to fall below ~114 | net cash | EXPECTED (unproven) |
 
 All actuals anchored to the screener cash flow and balance sheet sheets and the FY25 annual report ageing note. Debtor days computed on closing receivables over sales.
 
 What it means: this is where the case is decided. The company is debt-free with roughly Rs 38 Cr of fixed deposits, so there is no solvency issue. But the quality of profit is slipping. Cash conversion fell for two straight years, debtor days stretched to about 149, receivables grew 32% on flat revenue, and there is zero provision against Rs 143 lakh of receivables aged beyond two years. A multi-year customer insolvency dispute (BGR Energy, 2022 to 2024) sat outside the contingent-liability note. Most telling for a forward read: there is no catalyst. No factoring line, no debtor-day target, no payment-term renegotiation, and no management word on any of it. Forward verdict: **DECLINING, catalyst NONE FOUND**. Absence of any plan on the one transition going backward is itself the loudest signal here.
 
-## Transition 4 — ROCE / capital efficiency
+## Transition 4: ROCE / capital efficiency
 
 | Year | ROCE (reported) | Capital employed (Rs Cr) | PBT (Rs Cr) | Status |
 |---|---|---|---|---|
@@ -100,9 +100,9 @@ What it means: this is where the case is decided. The company is debt-free with 
 | FY24 | ~28.8% | 60.9 | 17.57 | ACTUAL |
 | FY25 | ~37.0% | 80.5 | 29.80 | ACTUAL |
 | FY26 | ~27.9% | 96.4 | 26.87 | ACTUAL |
-| FY27 | ~25-27% | ~110 | — | EXPECTED (capex + cash bloat drag) |
-| FY28 | ~26-28% | ~120 | — | EXPECTED (illustrative) |
-| FY29 | ~28-30% | ~130 | — | EXPECTED (capacity begins earning) |
+| FY27 | ~25-27% | ~110 | n/a | EXPECTED (capex + cash bloat drag) |
+| FY28 | ~26-28% | ~120 | n/a | EXPECTED (illustrative) |
+| FY29 | ~28-30% | ~130 | n/a | EXPECTED (capacity begins earning) |
 
 Reported ROCE is PBT over capital employed, debt-free so capital employed is net worth. Anchored to the screener balance sheet and P&L. Expected columns illustrative.
 
@@ -161,12 +161,12 @@ Kernex cap: ACTIVE (Cash DECLINING + catalyst NONE → caps at DEEP WATCH; raw s
 | Field | Value |
 |---|---|
 | ROCE forward verdict | STAGNANT → Pillar 1 uses current ROCE |
-| Pillar 1 ROCE to use | reported ~28% gives base PE ~21.5x (0.5 × 28 + 7.5); BUT flag operating ROCE ex surplus cash ~45-50% (roughly Rs 50 Cr of the Rs 96 Cr capital base is idle FDs/investments) — stage 11 to decide the base, AMAGI/MapMyIndia precedent, formula caps base at 24x |
+| Pillar 1 ROCE to use | reported ~28% gives base PE ~21.5x (0.5 × 28 + 7.5); BUT flag operating ROCE ex surplus cash ~45-50% (roughly Rs 50 Cr of the Rs 96 Cr capital base is idle FDs/investments). Stage 11 to decide the base, AMAGI/MapMyIndia precedent, formula caps base at 24x |
 | ROCE recovery credit route | not credited (SUSTAINED, no recovery); Strategic Premium ROCE re-rating barred |
 | Cash multiplier (Pillar 2) | conservative, INDETERMINATE structural-vs-growth, default ~0.80x; disposition capped at PROCEED WITH CAVEATS until FY26 ageing / rating rationale obtained |
 | Sector cap row | "Cables / Industrial products" 25x (corrected from manifest "Pharma / CDMO"); "Recycling / Manufacturing" 25x is an identical-value alternative |
 | Return tier | Tier A, 25% hurdle (FII+DII ~0.8% < 3%) |
-| SHARED CATALYST flag | the Rs 35 Cr capex, IF stage 11 credits it forward, would drive both future ROCE and future growth premium — flag for the devil's advocate as a single point of failure. Currently not credited (FY28-29, beyond window) |
+| SHARED CATALYST flag | the Rs 35 Cr capex, IF stage 11 credits it forward, would drive both future ROCE and future growth premium. Flag it for the devil's advocate as a single point of failure. Currently not credited (FY28-29, beyond window) |
 | Primary valuation method (B04) | EV/EBITDA primary, normalised P/E secondary, P/B tertiary; DCF, EV/Sales, SOTP not applicable |
 
 ---

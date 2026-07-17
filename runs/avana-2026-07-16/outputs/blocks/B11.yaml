@@ -1,0 +1,68 @@
+stage: B11-valuation
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "receivables ageing NOT FOUND — INDETERMINATE cash unresolved"
+  - "zero primary AVANA documents (AR/results/concall/rating/shareholding) this run"
+  - "FII+DII % NOT FOUND — UA qualifier 3 unevidenced"
+  - "capex/FCF not decomposable (screener aggregate investing cashflow)"
+flags:
+  - "FLAG-CASH-INDETERMINATE: multiplier 0.80x applied; caps disposition at PROCEED WITH CAVEATS; 1.0x sensitivity shown (destination 25.0x at cap)"
+  - "FLAG-DATA-THIN: zero primary docs; decision provisional on primary filings"
+  - "SHARED-CATALYST: KIADB commissioning underlies both Pillar 1 operating ROCE and the revenue ladder"
+  - "FLAG-PROMOTER-CAUTION; Gate 0 49/100 AVERAGE (<60) hard-defaults WATCHLIST"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+method: "forward-PE-at-exit"
+net_cash_added: 12.0
+destination_pe:
+  track1_rrm: {low: 17.0, mid: 18.3, high: 19.5, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 19.5, mid: 20.9, high: 22.5}
+  divergence_pct: 12.4
+  governing_track: "Track 2 additive (operator Override 1 anchors operating-ROCE four-pillar; divergence <15%); Track 1 RRM 18.3x is the conservative floor"
+destination_pe_track1_rrm: {low: 17.0, mid: 18.3, high: 19.5, r_used: 16, rrm: 0.70}
+destination_pe_track2_additive: {low: 19.5, mid: 20.9, high: 22.5, sensitivity_1x_cash_at_cap: 25.0}
+pillar_detail:
+  roce_used: 40
+  roce_base: 26.1
+  roce_recovery_route: "pillar1"
+  cash_multiplier: 0.80
+  structural_or_growth: "INDETERMINATE"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+cash_multiplier_used: 0.80
+structural_or_growth: "INDETERMINATE"
+ua_applied: false
+sector_cap_used: 25
+hurdle_ratio:
+  base: 2.12
+  bull: 2.47
+  bull_used: false
+  threshold: 1.953
+  verdict: "CONDITIONAL"
+  literal_trailing_exit_base: 1.63
+  literal_trailing_exit_bull: 1.83
+hurdle_verdict: "CONDITIONAL"
+fair_values:
+  bear: 202
+  base: 322
+  bull: 372
+  track1: {bear: 178, base: 283, bull: 327}
+  track2: {bear: 202, base: 322, bull: 372}
+expected_cagr_prob_weighted: 22.7
+entry_range: {low: 145, high: 165}
+mos_price: 132
+upside_downside_ratio: 6.9
+decision: "WATCHLIST (provisional on primary filings)"
+unresolved_inputs_used:
+  - "receivables ageing NOT FOUND -> conservative cash multiplier 0.80x (INDETERMINATE, no growth offset); 1.0x sensitivity to destination 25.0x shown"
+  - "FII+DII % NOT FOUND -> UA qualifier 3 unmet; UA barred regardless (listed <12m)"
+  - "management guidance NOT FOUND / credibility INSUFFICIENT -> base ladder from realised trajectory; bull capped at Base+5% (35%), realised 70.7% PAT CAGR not used"
+  - "capex/FCF NOT FOUND -> DCF not run; EV/EBITDA cross-check on margin-held EBITDA only"
+som_cagr_crosscheck: "justified excess (near-term): base 30% PAT CAGR exceeds SOM-implied revenue CAGR 14.8% and realised 25.8%; justified by KIADB +150% capacity + 0.62x order book; bear anchored to SOM 15% and weighted 45% (D weights) pulls expected CAGR to 22.7%"
+one_line_thesis: "WATCHLIST AVANA at Rs 146: FY26 EPS Rs 5.19 compounds ~30% (base) to FY30 Rs 14.82 on KIADB +150% capacity and a 0.62x order book, at a four-pillar destination PE of 20.9x (operating ROCE ~40%, cash 0.80x INDETERMINATE, EM 2.5, sector cap 25x) plus Rs 12 net cash = Rs 322 forward-PE-at-exit target = 30% CAGR; held to WATCHLIST by Gate 0 AVERAGE, INSUFFICIENT evidence and INDETERMINATE cash. Key risk: KIADB commissioning slip."

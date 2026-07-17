@@ -5,6 +5,12 @@ First workup, not a refresh. An actual earnings call transcript exists (Q4 and F
 
 ---
 
+## OPERATOR OVERRIDES (during review)
+
+1. **ROCE is calculated after taking out the spare cash (operator standing rule).** Draft first headlined reported ROCE of about 20%. Operator ruling: measure ROCE on operating capital with surplus cash removed. Applied throughout. FY26 operating ROCE ex the ~Rs 81 Cr idle IPO cash is about 37% (EBIT Rs 35.15 Cr / operating capital ~Rs 95.7 Cr), in line with the standalone core near 39%. Effect: backward ROCE moves from TEMPORARILY DEPRESSED to SUSTAINED premium; backward composite from 1 positive to 2 positive; Pillar 1 now uses the current ~37% operating ROCE at the 24x cap with the surplus cash valued separately in the SOTP, instead of a recovering blend. The FTTCP composite stays +2 and the verdict band is unchanged.
+
+---
+
 ## MY RULINGS
 
 Every call below is made. Each carries a confidence tag and the single fact that would flip it.
@@ -23,11 +29,11 @@ Every call below is made. Each carries a confidence tag and the single fact that
 
 7. **Backward cash conversion: DETERIORATING.** CFO over PAT was 0.46x in FY25 and 0.30x in FY26, and receivable days rose from single digits to about 187. `sure`. Wrong only if the FY26 receivables of Rs 53.38 Cr were misstated, and they tie to the audited balance sheet.
 
-8. **Backward ROCE: TEMPORARILY DEPRESSED, not DECLINING.** Reported ROCE fell from about 54% in FY25 to about 20% in FY26, and the cause is identified and mechanical: roughly Rs 81 Cr of unspent IPO money sits in the capital base earning almost nothing. The core business, stripped of that idle cash, still earns about 39% on standalone capital. `fairly sure`. Wrong if the receivables build, not the idle cash, turns out to be the real drag on returns, in which case the depression is structural and the verdict is DECLINING.
+8. **Backward ROCE: SUSTAINED at a premium level, on operating capital with surplus cash removed (operator standing rule, applied).** ROCE is measured after taking the idle IPO cash out of the capital base. On that basis FY26 operating ROCE is about 37%: EBIT Rs 35.15 Cr over operating capital of about Rs 95.7 Cr, after stripping roughly Rs 81 Cr of unspent IPO money that sits in bank deposits earning almost nothing. The reported 20% is an optical artifact of that idle cash, not the business. FY25 was about 54% on a tiny pre-IPO base. So the real return is high-30s and premium, roughly sustained, not depressed. `fairly sure`. Wrong only if the operating capital base is larger than assumed once leases and the receivables book are fully loaded, which would pull the high-30s toward the high-20s, still premium.
 
 9. **Forward cash conversion: DECLINING, and the determination is INDETERMINATE.** This is the pivot of the whole call. Receivable days were still rising into FY26, the only fix on offer is a price change management described on the call but has not yet shown in any print, and peers collect far faster, so the long cycle is not a sector norm. The structural-versus-growth test does not resolve cleanly because the affordability model, revenue booked at embryo transfer while patients pay across the cycle, is partly how they have chosen to sell, not only a growth artefact. Indeterminate cash never resolves to a clean pass, so it caps the disposition at DEEP WATCH / proceed with caveats. `fairly sure` on DECLINING, `genuinely uncertain` on structural versus growth-induced. Both readings: growth-induced would say a slowdown releases the receivables and the price change fixes it, structural would say the model itself carries the cash lag; the draft used INDETERMINATE, which is the conservative resolution and the one the missing rating rationale forces. Q1 FY27 receivable days settle it.
 
-10. **Forward ROCE: RECOVERING, at moderate probability, credited in Pillar 1.** The idle-cash depression is mechanical and the core return is high, so on a normalized basis the recovery is real. But the cash is being spent on new hubs that will not earn for 12 to 24 months, which delays the recovery showing in the reported consolidated number, and the receivables drag persists. `genuinely uncertain`. Both readings: RECOVERING credits the normalized core-return base and scores +1; STAGNANT says the fresh hub capex and the receivables drag keep reported ROCE flat near 20% for a year and scores 0. The draft used RECOVERING at the low end of moderate. It flips to STAGNANT if Q1 FY27 shows no receivables improvement and hub openings slip.
+10. **Forward ROCE: SUSTAINED premium, credited in Pillar 1 at the current operating return.** Because the real operating ROCE is already high-30s and premium, this is not a recovery story on the true base, it is a premium return being maintained through a funded reinvestment phase. The reported consolidated figure will climb back off 20% as the idle cash is put to work, but the operating return was never the problem. For valuation, Pillar 1 uses the current operating ROCE of about 37%, which lands the ROCE base multiple at the framework cap, with the roughly Rs 81 Cr of surplus cash valued separately. The transition score credits +1, a premium return sustained through reinvestment, not +2, because it is not expanding. `fairly sure`. Wrong downward only if the new-hub reinvestment earns well below core economics, which would erode the premium as capital deploys.
 
 11. **Forward revenue: FIRING; forward margin: STAGNANT.** Revenue momentum is strong before any new hub opens, on existing-centre volume, AI-assisted pricing and patient financing. Margin has no documented expansion catalyst and a live pharmacy-dilution trend, but management deprioritises pharmacy and the core margin is intact, so it rounds to STAGNANT rather than DECLINING. Revenue `fairly sure`, margin `fairly sure`.
 
@@ -85,14 +91,16 @@ This is the transition the whole call turns on. Cash generated from operations w
 
 ## Transition 4: Capital efficiency (ROCE)
 
-| Year | ROCE % | Note |
-|---|---|---|
-| FY25 | ~54 | ACTUAL (Gate 0 block); flattered by a tiny pre-IPO capital base |
-| FY26 | ~20 | ACTUAL (Gate 0 block); depressed by ~Rs 81 Cr idle IPO cash in the base |
-| FY26 core | ~39 | ACTUAL standalone, ex idle cash (AR deep-dive block) |
-| FY27-FY29 | ~22 to 30 | EXPECTED, illustrative; recovers only as idle cash is deployed AND the new hubs begin to earn |
+ROCE is measured on operating capital with surplus cash removed (operator standing rule).
 
-Reported ROCE more than halved in a year. The cause is mechanical: most of the IPO money is sitting in the bank, dragging the return down without changing the business. On the earning capital, the core still returns close to 39%. Forward verdict: RECOVERING, at moderate probability. The recovery is real on a normalized base but slow to show in the reported consolidated number, because the idle cash is being spent on hubs that take one to two years to earn, and the receivables drag sits on the same capital. This is the softest of the four calls.
+| Year | ROCE %, ex surplus cash | Note |
+|---|---|---|
+| FY25 | ~54 | ACTUAL operating; small pre-IPO capital base, little surplus cash to strip |
+| FY26 reported | ~20 | ACTUAL as reported (Gate 0 block); depressed purely by ~Rs 81 Cr idle IPO cash in the base |
+| FY26 operating ex-cash | ~37 | ACTUAL: EBIT Rs 35.15 Cr over operating capital ~Rs 95.7 Cr, after stripping the ~Rs 81 Cr IPO deposits (results p.16-17); ~40% on the tighter base; ties to standalone core ~39% (AR deep-dive block) |
+| FY27-FY29 | ~35 to 40 | EXPECTED, illustrative; stays premium if new hubs earn at core economics, with a near-term reinvestment drag |
+
+The reported halving to 20% is not the business, it is the idle IPO cash sitting in the denominator. Take that cash out and the operating return is about 37%, high and premium, in line with the standalone core near 39%. Forward verdict: SUSTAINED premium. The reported consolidated figure will climb back off 20% as the idle cash is deployed, but the real operating return was never depressed. The one genuine forward risk is that the new hubs earn below the core, which would pull the premium down as capital deploys.
 
 ---
 
@@ -133,10 +141,10 @@ Composite score +2 out of 8: revenue firing (+2), margin stagnant (0), cash decl
 | Revenue growth | FIRING | Moderate | >60% (3-6m) | FIRING | +2 |
 | Margin | COMPRESSING | Weak | 20-40% (3-6m) | STAGNANT | 0 |
 | Cash conversion | DETERIORATING | Weak | <20% improving (3-6m) | DECLINING | −1 |
-| ROCE | TEMPORARILY DEPRESSED | Moderate | 40-60% (12m) | RECOVERING | +1 |
+| ROCE (ex surplus cash) | SUSTAINED (~37% operating) | Moderate | premium maintained (12m) | SUSTAINED premium | +1 |
 | | | | | **COMPOSITE** | **+2 / 8** |
 
-Backward composite: 1 of 4 positive (revenue only) = BACKWARD FAIL. Forward scorecard lifts it to +2 on the strength of the revenue engine and the mechanical ROCE recovery, held down by cash.
+Backward composite: 2 of 4 positive (revenue FIRING, ROCE SUSTAINED once surplus cash is removed) = BACKWARD WEAK. Forward scorecard holds at +2: the revenue engine and a premium, sustained operating return on one side, cash conversion the single drag on the other. The ROCE score is credited +1 (a premium return sustained through reinvestment), not +2, because it is not expanding.
 
 ## Step 5 monitoring triggers
 
@@ -153,9 +161,9 @@ Backward composite: 1 of 4 positive (revenue only) = BACKWARD FAIL. Forward scor
 
 ## Handoff to valuation (Phase 3)
 
-- **ROCE forward verdict: RECOVERING, moderate probability (40-60%).** Pillar 1 uses the recovering path. Because the backward verdict is TEMPORARILY DEPRESSED and the cause is IPO cash bloat, the normalized-ROCE anchor (Amendment 4.5) applies: normalized ROCE is the evidenced pre-depression / core operating return, about 35 to 40% (standalone core ~39%, FY25 pre-IPO ~54% on a tiny base, cite both), blended per the 40-60% row as 40% normalized, 30% FY[Y+2], 30% current. Guard: if Q1 FY27 shows no receivables improvement and hubs slip, withdraw the normalized anchor at the next refresh and revert to the current-weighted blend.
+- **ROCE forward verdict: SUSTAINED premium, on operating capital ex surplus cash (operator standing rule).** Pillar 1 uses the CURRENT operating ROCE of about 37% (EBIT Rs 35.15 Cr / operating capital ~Rs 95.7 Cr, after stripping ~Rs 81 Cr idle IPO deposits), which lands the ROCE base multiple at the 24x Amendment-5 cap (0.5 x 37 + 7.5 = 26x, capped 24x). Do NOT use reported 20% and do NOT use the Amendment 4.5 normalized-recovery blend: that mechanism is for TEMPORARILY DEPRESSED plus RECOVERING, and this verdict is SUSTAINED, so current-ROCE-on-the-clean-base is the correct anchor. The ~Rs 81 Cr surplus cash is removed from the operating base here and must be valued SEPARATELY in the SOTP (treasury added to fair value, AMAGI / MAPMYINDIA precedent), not left in the ROCE denominator.
 - **Cash multiplier / Pillar 2:** cash conversion is INDETERMINATE and deteriorating; do not credit a clean pass. No rating rationale exists to lift it.
-- **ROCE recovery credited via: Pillar 1.** Strategic Premium ROCE re-rating stays barred (single credit).
+- **ROCE credited via: Pillar 1 at the sustained current level.** No separate Strategic Premium ROCE re-rating, because the return is already premium and is not re-rating from a low base, so there is nothing to credit twice (single credit satisfied).
 - **Sector cap row Phase 3 must use: Hospitals / dialysis / healthcare services, 35x.** Not Pharma / CDMO. This is a correction to the manifest.
 - **Tier A, 25% hurdle. UA multiplier not applied** (listed under 12 months; institutions near 5%, above the 3% absence test).
 - **SHARED CATALYST flag for the devil's advocate:** the IPO-cash-into-hubs event drives both the revenue growth premium and the ROCE recovery, and the receivables book sits across cash conversion, ROCE and the growth-funding model at once. Stress it as one point of failure.

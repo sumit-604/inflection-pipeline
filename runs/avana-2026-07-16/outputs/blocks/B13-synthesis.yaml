@@ -3,15 +3,15 @@ company: "AVANA"
 run_date: "2026-07-16"
 model: claude-opus-4-8
 status: complete
-phase: "1 (evidence) — synthesis-lite"
+phase: "1 (evidence) — synthesis-lite; re-run to integrate operator RHP/NSE digest"
 verdict: "INSUFFICIENT EVIDENCE"
 verdict_rule_applied: 2
-flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER, FLAG-CAPITAL-STRUCTURE, FLAG-CAPEX-UNSPECIFIED, FLAG-DATA-THIN]
+verdict_note: "Rule 2 still binds — RHP/NSE reach the run only as an operator-relayed digest (lead/cross-check grade), not primary PDFs; stages 2/3 cannot deep-read it. Flag + confidence posture improved."
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-CAPITAL-STRUCTURE, FLAG-CAPEX, FLAG-DATA-THIN]
 confidence_delta: {numerical: 88, redflag: "N/A", framework: 100, peer: "N/A", overall: 88}
-valuation_decision: ""
-entry_range: {low: 0, high: 0}
-headline: "Recently listed power grid equipment micro cap"
-falsification_metric: "First post-listing period: CFO negative or debtor days above FY26 level while revenue growth decelerates below the 15% SOM-implied floor"
+headline: "Listed grid equipment micro cap expanding capacity"
+falsification_metric: "First post-listing results showing net working capital cycle at or above the ~245-day H1 FY26 mark while CFO/PAT falls below 0.5"
 monitorables_count: 8
 publish_candidate: false
+operator_context_integrated: "inputs/announcements/operator-relayed-RHP-NSE-digest-2026-07-17.md"
 files_written: [business-narrative.md, gate-recommendation.md, verifier-summary.md]

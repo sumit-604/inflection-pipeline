@@ -12,6 +12,8 @@
 
 Verifier A acceptance rate: 88%. Verifier C acceptance rate: 100%. No REWORK trigger fired (0 CRITICAL, no acceptance below 60%).
 
+Note on the operator digest (2026-07-17): the mid-run operator relayed RHP/NSE digest improves evidence sufficiency (order book confirmed, capex purpose identified, KIADB dates precise, FY26 results audited) but does not change verifier fidelity scores, which remain 88 numerical and 100 framework. The digest is a lead and cross-check layer, not a primary PDF, so it does not re-open or re-score any verifier finding; it resolves one MINOR at the interpretation level, noted below.
+
 ## Findings, sorted by severity
 
 CRITICAL: none.
@@ -22,7 +24,7 @@ MINOR:
 
 | Verifier | Location | Note |
 |---|---|---|
-| A (numerical) | B09 Section 1B | Order book Rs 52.24 Cr (30-Nov-2025) not in screener; sourced from RHP/IPO aggregator. Anchor NOT FOUND in local sources; no contradiction found elsewhere. |
+| A (numerical) | B09 Section 1B | Order book Rs 52.24 Cr (30-Nov-2025) not in screener; sourced from RHP/IPO aggregator. Anchor was NOT FOUND in local sources. RESOLVED at interpretation level: the operator-relayed RHP/NSE digest (2026-07-17) confirms the same figure and cross-checks clean vs the screener; still relayed, not a primary PDF. |
 | A (numerical) | B09 TAM section | TAM Rs 1,100-1,700 Cr rests on third-party reports (Mordor, Markets & Data, ICRA) behind HTTP 403 paywalls, recovered via search snippets. Web-sourced tier, not local-PDF verified; report acknowledges the limit; no contradiction in peer concalls. |
 | A (numerical) | B07 Section 2C | Implied incremental revenue 4.67 x 15.76 = 73.60 Cr; exact 73.6352 Cr. Rounding within tolerance (<0.1%). |
 | A (numerical) | B07 Section 2C | Capex-embedded growth stated 87.8%; exact 87.75%. Rounding within tolerance (<0.05pp). |
@@ -34,3 +36,7 @@ MINOR:
 Verifier A confirmed 100% of verdict-card figures (Gate 0 classification, core/moat/grand scores, deal-breaker application) clean against the screener data sheet, plus all Block A-E and Moat M1-M11 inputs, all AVANA revenue/EPS/P/E figures in B09, and peer moat metrics. No fabrications, no mechanical errors, no material misstatements of sources; all limitations stated in upstream reports.
 
 Verifier C recomputed core score 49, classification AVERAGE, moat FORTRESS, grand total 76, em_score 2.5, em_classification NONE, and combined AVERAGE, all matching B01 and B07. All 9 Gate 0 deal-breakers correctly evaluated, including Block B<8 triggered-but-non-binding and pledge correctly not-triggered-by-absence. History downgrade verified. Valuation half deferred to phase 3 (B10/B11 do not exist).
+
+## Post-verification operator context (not verifier-scored)
+
+The operator-relayed RHP/NSE digest (2026-07-17) reached the run after verifiers A and C completed. It was not routed through a verifier because it is a relayed lead layer, not a primary PDF, and no fresh block was re-scored. Its effect on the record is documented in gate-recommendation.md: FLAG-CAPEX recast from unspecified to purpose-known/commissioning-unconfirmed, FLAG-CASH sharpened to evidenced structural intensity, FLAG-CAPITAL-STRUCTURE proceeds partly known plus a new 23-Jun-2026 NSE query, FLAG-PROMOTER adds the CS resignation and the proceeds query, and the B09 order book MINOR resolved at interpretation level.

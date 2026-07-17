@@ -44,11 +44,14 @@ primary filings.
   (the FLAG-CASH falsification metric; determination INDETERMINATE until the
   receivables ageing or a rating rationale arrives).
 - Promoter CAUTION escalating to CONCERN forces AVOID.
-- OPEN FRAMEWORK QUESTION for the operator: the authorised forward-PE method
-  implies a ~27.2x TRAILING exit multiple on FY29 EPS, above the 25x absolute
-  sector cap; honest trailing-destination math gives ~19.6% CAGR (Hurdle 1.63,
-  fail). Whether the sector cap binds forward or trailing is unresolved and
-  the devil rates valuation safety DESTROYED on it.
+- RESOLVED FRAMEWORK QUESTION (operator ruling 2026-07-17, Override 3): the
+  sector cap binds the FORWARD destination PE, not the implied trailing exit
+  multiple. "forward earnings should be kept by the sector cap." Destination PE
+  20.9x forward is within the 25x cap, so the valuation stands (target Rs 322,
+  entry Rs 145-165). The devil's cap-breach point is answered; its residual
+  counters (no-de-rating assumption in the forward method, contested cash strip,
+  SHARED CATALYST circularity, thin relayed evidence) still keep the stance at
+  no capital at CMP.
 
 ## OPTIONALITY REGISTER (summary)
 - Undisclosed FY26 capex project (CWIP Rs 4.67 Cr, the KIADB unit) → converts on

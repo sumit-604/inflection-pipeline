@@ -18,6 +18,7 @@ This is the authoritative Phase 2 record. Its conclusions govern Phase 3 (stage 
 10. Pillar 1 valuation anchor: CHANGED by Override 1. The draft's Amendment 4.5 normalized-30% blend is withdrawn for this name; Pillar 1 anchors on operating ROCE ex surplus cash.
 11. Valuation method: CHANGED by Override 2. Forward price to earnings (destination PE applied to exit-year forward EPS), surplus cash valued separately.
 12. UA multiplier barred (listed under 12 months). Tier A, 25% hurdle. Unchanged.
+13. Sector cap basis: the cap binds the FORWARD destination PE (Override 3). Destination PE 20.9x forward is within the 25x cap; valuation unchanged and compliant.
 
 ## OPERATOR OVERRIDES
 
@@ -30,6 +31,12 @@ This is the authoritative Phase 2 record. Its conclusions govern Phase 3 (stage 
 - Draft determination: Pillar 3a growth visibility +0x (documented gates unmet), destination PE about 18x framed against a trailing 28x as a de-rating that sat below CMP.
 - Operator ruling: giving zero growth premium AND valuing on trailing earnings strips the growth twice; apply the destination PE to the exit-year forward EPS (forward price to earnings). At sign-off: "use the forward price-to-earnings method for valuing."
 - Operator's stated reasoning (operator's words): "You are not giving any score for the growth visibility. Either you take it to the forward price-to-earnings method. That may work if you are not giving a score in growth visibility. If you are not giving a score in growth visibility, then you need to take it to the forward price-to-earnings."
+
+**Override 3 (post-finalize clarifying ruling): the sector cap binds the FORWARD destination PE, not the implied trailing exit multiple.**
+- Open question raised by the devil's advocate (B15): the forward-PE-at-exit method produces a 20.9x forward destination PE that equals a ~27.2x TRAILING multiple on FY29 exit-year EPS, above the 25x absolute sector cap; the devil argued this breaches the cap and rated valuation safety DESTROYED.
+- Operator ruling: the sector cap governs the forward-earnings destination PE. When valuing on forward earnings, the destination PE applied to forward EPS must stay at or below the sector cap (Cables / Industrial products, 25x); the same exit price re-expressed on the current-year (trailing) EPS implying a higher number does NOT breach the cap.
+- Operator's stated reasoning (operator's words): "forward earnings should be kept by the sector cap."
+- Effect: the destination PE 20.9x (forward) is within the 25x cap, so the cap was never the binding constraint and the Role 1 valuation is unchanged and framework-compliant: target Rs 322 base, entry Rs 145-165, MoS Rs 132, decision WATCHLIST all stand. The devil's valuation-safety DESTROYED verdict is downgraded to WEAKENED on the cap-basis point specifically; its other counters (the no-de-rating economic assumption embedded in the forward method, the contested cash strip / triple-claim, the SHARED CATALYST circularity, and the thin relayed evidence) still stand, so the decision remains WATCHLIST, provisional, no capital at CMP.
 
 **Effect of the two overrides, carried to Phase 3 as authoritative:**
 - Pillar 1: operating ROCE about 40%, base PE about 26x. Surplus cash about Rs 22 to 27 Cr valued separately at 1x. Recovery credited via Pillar 1; Strategic Premium ROCE route barred (single credit).

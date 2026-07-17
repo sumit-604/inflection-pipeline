@@ -1,0 +1,26 @@
+stage: B15-devil
+company: "AVANA"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+per_dimension:
+  valuation_safety: "destroyed"
+  growth: "weakened"
+  moat: "weakened"
+  management: "weakened"
+  cash_quality: "weakened"
+reentry_gate: "Tighten before any position: (1) re-anchor entry below ~Rs 120-130 (honest trailing-destination fair value ~Rs 250; govern off Track 1 RRM floor, not Track 2 forward-priced Rs 322) rather than the current Rs 145-165 zone / Rs 132 MoS; (2) hard-gate KIADB — require PRIMARY filing confirming commercial production AND CWIP 4.67 Cr → net block before entry, deadline already passed unconfirmed; (3) resolve INDETERMINATE cash to >=1.0x (receivables ageing/rating rules out structural) before crediting any destination >~17x; (4) require primary RHP PDF read (order book, 245-day WC, use-of-proceeds all currently relayed); (5) require two clean post-listing prints given NSE price-query and thin-float momentum; (6) surface to operator that the authorised forward-PE method implies a 27.2x TRAILING exit multiple, above the 25x absolute sector cap; (7) any promoter CAUTION->CONCERN escalation forces AVOID."
+top_counters:
+  - "The 25% hurdle clears ONLY on the forward-PE method: 20.9x on FY30 forward EPS = 27.2x trailing at FY29 exit (> 25x absolute sector cap), i.e. NO de-rating assumed; honest trailing-destination math gives 19.6% CAGR (matches the trailing-exit HR 1.63 FAIL). Method-manufactured pass (SFL failure mode)."
+  - "Override 1's ~40% ROCE base (26.1x) rests on stripping Rs 22 Cr cash that is NOT surplus — RHP earmarks it for WC ~8.6 Cr + KIADB capex. Blended/deployed ROCE is ~28-36% -> base PE ~21.4-24.8x. A modest, defensible haircut sinks the base case below 25% CAGR."
+  - "SHARED CATALYST is a CIRCULAR single point of failure: the cash-strip that produces 40% ROCE is only valid if KIADB proceeds; if KIADB slips, cash sits idle AND the ROCE base collapses AND revenue reverts to SOM 15% — Pillar 1 and Pillar 3 share a failure mode, not just a catalyst. Deadline 22-May-2026 already PASSED, unconfirmed, after a ~6-year slip."
+  - "Cash double-count: the Rs 22 Cr is stripped from the ROCE denominator (claimed non-operating) AND added at Rs 12/share as returnable surplus (claimed distributable) AND relied on to fund KIADB (claimed growth capital) — three incompatible claims on one cash pile."
+  - "245-day WC cycle is a working-capital furnace: 30% growth to ~Rs 200 Cr revenue needs ~Rs 130 Cr net WC vs a Rs 22 Cr cushion; growth self-funds a cash drain, not FCF. Cumulative CFO/PAT 0.62x; single FY26 CFO print likely an IPO-year collection artifact; INDETERMINATE leans structural-negative."
+  - "Variant perception is inverted: the market prices AVANA at 28.1x trailing and bid it +88% in <6 months (NSE-queried), not sub-20x. There is no hidden cheapness to arbitrage; the SME market has already paid a rich hope-multiple on thin float with no verifiable institutional floor (FII/DII NOT FOUND)."
+  - "Entire forward evidence base (order book 52.24 Cr, +150% capacity, 245-day cycle) is an operator-relayed RHP/NSE digest; DRHP PDF returned 403; zero primary AVANA documents read. Maximum information asymmetry against the buyer on the exact facts the thesis leans on."

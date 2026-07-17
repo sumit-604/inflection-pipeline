@@ -1,0 +1,50 @@
+stage: B11-valuation
+company: "GAUDIUMIVF"
+run_date: "2026-07-16"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Forward margin guidance NOT FOUND — held FY26 EBITDA margin 36.13% flat"
+  - "Peer financial medians NOT FOUND — no relative-multiple method; four-pillar PE sole authority"
+  - "3yr revenue/PAT CAGR NOT FOUND — base EPS CAGR set at 25% per deliberation, SOM cross-checked"
+  - "Rating agency WC/cash quote NOT FOUND — cash multiplier held conservative at 0.80x"
+flags:
+  - "FLAG-CASH: INDETERMINATE (deteriorating), cash multiplier 0.80x applied, no growth offset"
+  - "FLAG-PROMOTER: CONCERN — Rs 49.75 Cr contingent tax (~85% net worth), RPTs, ID exits"
+  - "SHARED CATALYST: IPO-cash hub deployment drives Pillar 1 ROCE and Pillar 3a growth; receivables book straddles cash/ROCE/growth-funding"
+  - "CREDIBILITY-C: bull EPS CAGR capped at base+5% (30%) in Hurdle; growth premium 3a capped +2x"
+  - "UA NOT applied: listed <12m, FII+DII ~5.23% (>3%)"
+  - "GOVERNING-TRACK OVERRIDE: additive governs over more-conservative RRM per operator endorsement (deliberation p.74)"
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 12.5, mid: 13.5, high: 14.5, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 20.5, mid: 22.0, high: 24.0}
+  divergence_pct: 38.6
+  governing_track: "Track 2 additive — operator-endorsed; RRM retained as conservative floor (overrides default conservative-track rule)"
+pillar_detail:
+  roce_used: 37.0
+  roce_base: 24.0
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 0.80
+  structural_or_growth: "INDETERMINATE (deteriorating) — conservative 0.80x, no offset"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 1
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 35
+hurdle_ratio: {base: 1.32, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 74, base: 111, bull: 140}
+  track2: {bear: 121, base: 181, bull: 231}
+expected_cagr_prob_weighted: 6.7
+entry_range: {low: 90, high: 93}
+mos_price: 74
+upside_downside_ratio: 2.7
+decision: "WATCHLIST (on-valuation) — not a buy at CMP (Hurdle STOP); buy only Rs 90-93"
+unresolved_inputs_used:
+  - "Forward margin guidance NOT FOUND → held FY26 EBITDA margin 36.13% flat (no expansion credited), per bear/base margin rule"
+  - "Peer medians NOT FOUND → no relative-multiple method; four-pillar destination PE is sole exit authority"
+  - "3yr CAGR NOT FOUND → base EPS CAGR 25% (deliberation), below SOM-implied 31.4%; conservative"
+som_cagr_crosscheck: "consistent — base 25% below SOM-implied 31.4% (3yr), capacity check passes"
+one_line_thesis: "Buying GAUDIUMIVF at Rs 90-93 (not Rs 137) because IPO-funded 7-to-26 hub build-out grows EPS Rs 3.37 to ~Rs 8.2 (FY30E) at a 22x four-pillar destination PE (ROCE 37% operating, cash 0.80x, EM 13, cap 35x) = Rs 181 target; Hurdle STOP at CMP, WATCHLIST; key risk cash INDETERMINATE + promoter CONCERN (shared catalyst)."

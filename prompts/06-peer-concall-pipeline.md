@@ -1,6 +1,8 @@
 # STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE, NEW PROMPT)
 # Model: Sonnet 5 | Emits: B06-peers
 # Consumes: up to 12 peer concall transcripts + B05.peer_questions
+# Protocol version: 1.1 (was unversioned = 1.0)
+#   1.1 — Part 5 Cross-Peer Hypothesis (mandatory closing step) added.
 # Purpose: this is why the 12 peer transcripts exist. Management claims
 # from the main company are triangulated against what peers are telling
 # THEIR analysts in the same period. Peers have no reason to support the
@@ -95,6 +97,31 @@ counts against this stage's acceptance rate.
 - The single strongest independent confirmation, if any, in 2-3 lines.
 - Overall: does the peer set support, complicate, or undercut the main
   company's narrative? One short paragraph, symmetric treatment.
+
+## PART 5: CROSS-PEER HYPOTHESIS (mandatory closing step)
+
+After completing the triangulation verdict, state one novel hypothesis about the
+sector, business model, or competitive dynamic that emerges from the combined
+pattern across the whole peer set but is NOT explicitly stated by any single
+peer's disclosures.
+
+Rules:
+- The hypothesis must be inferable from the combined data, not from any one source.
+- It must be specific and testable — not "the sector is competitive" but "peers A
+  and C are trading margin for volume while B and D are doing the opposite, which
+  suggests the sector is bifurcating along a specific axis."
+- If no such hypothesis emerges honestly from the data, state it explicitly:
+  "No cross-peer hypothesis identified — the peers do not reveal a pattern beyond
+  what each individually discloses."
+- Do not force a hypothesis where none exists. Absence of pattern is itself a finding.
+
+This step exists to catch sector-level shifts that individual peer analyses miss
+because each peer is only telling their own story.
+
+# RATIONALE (protocol note): catches implicit sector shifts. When several peers
+# all point to something none of them names, the pattern is real even though the
+# language is not. A mandatory closing question forces surfacing what would
+# otherwise sit as a pre-verbal analyst impression.
 
 ## OUTPUT
 

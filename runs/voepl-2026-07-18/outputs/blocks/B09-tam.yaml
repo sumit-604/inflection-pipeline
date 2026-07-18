@@ -1,0 +1,47 @@
+stage: B09-tam
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "EMS/LED/PCBA/controllers segment TAM: no source found splitting consumer-durables/lighting-relevant PCBA demand from India's total EMS/PCB market (dominated by mobile/telecom/auto) — excluded from headline TAM"
+  - "Components/washing machines/others segment (~7% of revenue) TAM: NOT FOUND"
+  - "Compressor total-market growth rate: no direct third-party anchor found; proxy used (~9%) in blended TAM growth calc"
+  - "Current share price / P/E multiple: NOT FOUND in stage 9 inputs — Section 5E valuation line could not be closed against current valuation"
+flags:
+  - "QCO 40%/30% figures previously flagged as contradictory by B06 are resolved: 40% applies to reciprocating (fridge) compressors [VOEPL], 30% to rotary (AC) compressors [peers] — both correct, different compressor types"
+  - "Management's Rs2,500cr+ peak-revenue claim converges almost exactly (0.99x) with independently-built 5yr SOM (Rs2,533cr); both exceed the currently-quantified capex-embedded ceiling (Rs1,828cr, from B07) by ~Rs705cr — the capex plan, not the SOM or the management claim, is the presently-incomplete side"
+  - "RAC industry FY26 volume estimates diverge materially across sources (ICRA 11.0-11.5mn units vs peer-cited 13-15mn units) — conservative figure used"
+  - "Reciprocating-compressor market TAM (Rs3,100-3,200cr) rests on a single management verbal disclosure with no independent third-party corroboration"
+  - "Two new reciprocating-compressor ODM entrants expected online by Q3/Q4 FY27, ending VOEPL's near-sole-player status within 12-18 months"
+market_definition: "India B2B contract manufacturing (ODM/OEM) for room ACs, reciprocating refrigeration compressors, and small commercial refrigeration/deep freezers"
+tam_cr: {conservative: 10400, realistic: 12600}
+sam_cr: 7560
+sam_pct_of_tam: 72.7
+som_3yr_cr: 1669
+som_5yr_cr: 2533
+som_implied_revenue_cagr: {yr3: 26.6, yr5: 25.2}
+current_sam_share_pct: 10.9
+revenue_headroom_x: 9.18
+tam_growth_pct: 14
+runway_class: "GOOD"
+mgmt_claim_cr: 2500
+mgmt_claim_ratio: 0.99
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs705 Cr for yr5 SOM vs B07 capex-embedded ceiling (Rs1,828cr); capex plan is the presently-incomplete side, not the SOM or management's own Rs2,500cr+ claim, which converge almost exactly"
+methods_used: ["top-down", "bottom-up", "peer revenue aggregation", "import substitution", "global benchmark (directional only, stale)"]
+stale_data_flags:
+  - {datapoint: "AC/LED penetration %, freezer market USD figures, deep freezer 1.3M units", source: "VOEPL Investor Presentation Industry Overview slide (Investor_Presentation_1.txt pp.33-35)", year: "~2022 (undated, boilerplate, marked 'needs update' by company)"}
+searches_performed:
+  - "India room air conditioner market size crore 2026 ODM contract manufacturing outsourcing"
+  - "India RAC industry volume million units FY26 CRISIL ICRA"
+  - "India electronics manufacturing services EMS market size 2026 crore CRISIL"
+  - "India reciprocating compressor market QCO import allowance 2026 2027 refrigerator"
+  - "India commercial refrigeration deep freezer market size crore 2026"
+  - "Amber Enterprises EPACK Durable PG Electroplast revenue FY26 crore RAC ODM"
+  - "India RAC ODM contract manufacturing market share unorganised Amber EPACK Dixon PGEL"
+  - "India LED lighting market size crore 2026 growth"
+  - "India consumer durables EMS PCBA controller board market size crore"
+  - "EPACK Durable FY26 annual revenue crore results"
+  - "PG Electroplast FY26 annual revenue crore results RAC segment"
+searches_skipped: []

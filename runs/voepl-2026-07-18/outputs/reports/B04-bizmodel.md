@@ -367,3 +367,71 @@ per AC unit, for example) is NOT FOUND in either document. What can be anchored:
   unaudited Investor Presentation; the statutory AS-17 segment note states VOEPL has only one
   reportable operating segment. This is itself a disclosure-quality flag for the valuation stage.
 ```
+
+
+---
+
+## Handoff block (reconstructed by orchestrator from the stage return; the report body above was written by the stage, the fenced block was returned in chat only)
+
+```yaml
+stage: B04-bizmodel
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Investor presentation is image-heavy; several tables (e.g., FY26 EBITDA-margin-by-category table) extracted with ambiguous row/column mapping", "Annual Report is FY24-25 (year ended Mar-2025); Investor Presentation is FY26 (year ended Mar-2026) - different fiscal years, not directly comparable line-by-line", "No customer name disclosed in either document", "Product-line revenue mix and margin-by-category sourced only from unaudited Investor Presentation; statutory AS-17 note discloses only one operating segment"]
+flags: ["Customer concentration in AC explicitly flagged by company itself as a monitored risk with no customer named", "Only ONE AS-17 operating segment reported in audited financials; all product-mix/margin data is voluntary/unaudited", "RoCE fell to 17.19% from 25.66% FY25, explicitly attributed to capacity not yet commercial", "CWIP grew ~6.9x and gross block +48.6% in FY25 - heavy capex phase with utilization risk", "Zero export revenue in FY25 despite stated 'India for Global' ambition"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Air Conditioners (IDU+ODU)", type: "contract manufacturing (OEM to ODM)", pct_of_revenue: 60, predictability: "M"}
+  - {name: "EMS (LED/PCBA/Controllers/Remotes)", type: "contract manufacturing", pct_of_revenue: 15, predictability: "M"}
+  - {name: "Commercial Refrigeration (Deep Freezers)", type: "contract manufacturing", pct_of_revenue: 10, predictability: "M"}
+  - {name: "Components/Washing Machines/Others", type: "contract manufacturing / captive component supply", pct_of_revenue: 7, predictability: "L"}
+  - {name: "Compressors", type: "contract manufacturing (backward integration + captive)", pct_of_revenue: 8, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Regulatory/licensing (PLI Rs.100 Cr sanction, QCO import exemption to Mar-2027)", durability: "medium - policy-contingent, multi-year window not permanent"}
+  - {moat: "Location/logistics (western India, port proximity)", durability: "high - structural, durable"}
+  - {moat: "Switching costs (ODM co-development, design ownership)", durability: "low-medium - early stage, first ODM customer only recently onboarded"}
+  - {moat: "Cost advantage (backward integration, in-house component mix)", durability: "medium - contingent on capex utilization, not yet proven"}
+valuation_methods:
+  primary: {method: "P/E", why: "Standard for an operating, profitable Indian manufacturer with a clean if thin PAT track record; most comparable to how EMS/durables contract manufacturers are typically valued"}
+  secondary: {method: "EV/EBITDA", why: "Capex-heavy, rising-depreciation phase distorts PAT more than EBITDA; standard for capital-intensive contract manufacturers mid-expansion"}
+  tertiary: {method: "EV/Sales", why: "Useful cross-check only while scaling through low-margin, high-growth phase; de-emphasize once utilization normalizes"}
+  not_applicable: ["DCF (fragile - no audited segment cash flow, payback management-guided not proven)", "P/B (asset base still ramping toward productive use)", "Dividend Discount Model (no dividend paid, cash retained for growth)", "Segment SOTP (only one AS-17 reportable segment in audited financials)"]
+irrelevant_ratios:
+  - {ratio: "Gross margin vs branded consumer companies", why: "Dominated by pass-through raw material cost (~87% of revenue); comparison overstates apparent inefficiency"}
+  - {ratio: "Same-store-sales / same-brand growth", why: "No retail/brand presence"}
+  - {ratio: "Segment-level margin from statutory disclosures", why: "Only ONE AS-17 operating segment reported; all mix/margin data is voluntary and unaudited"}
+  - {ratio: "Dividend yield / payout ratio", why: "No dividend proposed for FY25; cash retained to fund growth"}
+  - {ratio: "P/B vs asset-light EMS peers", why: "VOEPL is deliberately asset-heavy and mid-capex; asset turnover structurally worse during build phase"}
+must_track_metrics:
+  - {metric: "Non-AC revenue mix %", healthy: "continuing to rise from ~40%", red_flag: "stalling or reversing"}
+  - {metric: "EBITDA margin (consolidated)", healthy: "continuing to expand from 10.4% FY26 base", red_flag: "flat/declining despite rising non-AC mix"}
+  - {metric: "In-house component mix %", healthy: "moving toward 75-80% target", red_flag: "stuck near 60%"}
+  - {metric: "Debt-Equity ratio", healthy: "holding near/below 0.61x FY25 level", red_flag: "rising back toward/above 1.0x"}
+  - {metric: "RoCE", healthy: "recovering as new capacity turns commercial", red_flag: "continued decline once capacity IS commercial"}
+unit_economics:
+  unit: "NOT FOUND - no per-unit disclosure; proxy is per finished good shipped (AC set, freezer, compressor, EMS board)"
+  revenue_per_unit: "NOT FOUND, check investor presentation or concall"
+  margin_per_unit: "NOT FOUND, check investor presentation or concall; only aggregate raw-material-to-revenue ratio derivable (~87.3% FY25)"
+  key_lever: "Capacity utilization ramp toward >75% target at new facilities, described by management as a high-margin low-incremental-capex growth path"
+first_deterioration_signals:
+  - {risk: "Customer concentration in AC", first_signal: "Revenue from Operations single-quarter YoY deceleration, especially AC-heavy Q1/Q4"}
+  - {risk: "Raw material cost pass-through / commodity volatility", first_signal: "Cost of raw materials consumed as % of Revenue from Operations rising"}
+  - {risk: "Capex outrunning utilization", first_signal: "Depreciation growing faster than EBITDA; Interest expense as % of EBITDA rising"}
+  - {risk: "New-category execution (compressor, glass-top freezer)", first_signal: "Inventory Turnover Ratio deteriorating (finished-goods buildup)"}
+  - {risk: "QCO import-exemption deadline (Mar-2027, 40% cap)", first_signal: "Compressor segment gross margin / in-house mix % stalling in concall disclosure"}
+mgmt_questions:
+  - "What is the audited or at least consistently-defined revenue and EBITDA margin contribution of each product vertical, not just the voluntary presentation table?"
+  - "Who are VOEPL's top 3-5 customers by revenue, and what is customer concentration today vs a year ago?"
+  - "What is current utilization at each newly commissioned facility (Nashik Phase 2, Sanand, Chennai, compressor unit), and timeline to the >75% target?"
+  - "How much of the Rs.100 Cr PLI sanction has actually been disbursed in cash, and what conditions remain?"
+  - "What is the margin differential today between fully backward-integrated products and bought-out-component products, and how has it moved since compressor production began?"
+  - "What is the technology-transfer/IP arrangement with the Chinese compressor partner, and what happens if that partnership ends?"
+  - "What is the realistic timeline and funded plan to reach the export ambition, given FY25 export revenue was zero?"
+one_line_verdict: "Asset-heavy contract manufacturer mid-capex, betting backward integration and ODM can convert AC-customer-concentration risk into a diversified margin story."
+```

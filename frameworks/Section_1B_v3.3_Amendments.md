@@ -193,6 +193,14 @@ The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −
 
 ## AMENDMENT 4.5 (v3.5) — NORMALIZED-ROCE ANCHOR FOR TEMPORARILY DEPRESSED VERDICTS
 
+> **SUPERSEDED by Section 1B v3.5.1 (12-Jul-2026). RETIRED as a standalone number.**
+> Its mechanism survives ONLY as Route B inside the consolidated Amendment 9 in
+> `Section_1B_v3_5_1_Reconciliation.md`, governed by the route-selection rule
+> (Route A operational ROCE vs Route B pre-cycle ROCE, mutually exclusive, A
+> governs where both hold). Do NOT apply the text below on its own — used
+> without the v3.5.1 guard it can double-credit the recovery it also normalizes
+> via the denominator. Read this section for history; apply v3.5.1.
+
 **Problem:** Pillar 1's ROCE input for a RECOVERING forward verdict is a blend weighted toward the current and FY[Y+2] ROCE (FTTCP v1.2 Pillar 1 table). When the depression is a capital-cycle trough (post-IPO cash bloat, a plant deployed but not yet earning, a working-capital bulge) rather than structural decay, both the current ROCE and the FY[Y+2] figure understate sustainable earning power, because FY[Y+2] can still carry a fresh capex block that has not ramped. The formula then prices a discrete, ending trough as if it were permanent. The destination PE and the entry zone land far below any price the market has ever paid, and the process systematically misses the exact capital-cycle transition setups this operation hunts. Documented divergence (TATVA, 2026-07-12): trough-anchored model entry Rs 121 and MoS Rs 97 against a four-year market floor of Rs 590; once ROCE is normalized to the evidenced pre-capex 15-20%, fair value recomputes to Rs 350-600, matching where the market actually held.
 
 **Change — a THIRD Pillar 1 ROCE anchor applies ONLY when the FTTCP backward ROCE verdict is TEMPORARILY DEPRESSED AND the forward verdict is RECOVERING:**

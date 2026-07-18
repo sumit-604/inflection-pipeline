@@ -67,9 +67,12 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the three framework file paths from frameworks/
-   as its stable prefix plus B10. If frameworks/ is missing any of the
-   three files, STOP and tell the user which to add. The FTTCP ROCE
+   existing wrapper: pass the FOUR framework file paths from frameworks/
+   as its stable prefix plus B10 — Master_Project_Prompt_v3.3.md,
+   Section_1B_v3.3_Amendments.md, Section_1B_v3_5_1_Reconciliation.md (the
+   Pillar 1 normalization authority, which supersedes the standalone
+   Amendment 4.5), and FTTCP_v1.2_Consolidated.md. If frameworks/ is missing
+   any of the four files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. Collect B11.
 
@@ -114,6 +117,10 @@ phase 3), then:
        falsification line.
      - verifier-summary.md: all verifier findings including the phase-3
        valuation-adherence audit, sorted by severity with location anchors.
+     - verifier-disagreement-log.md: one row per point where a downstream
+       step conflicted with a Verifier A source-fidelity finding (or "none").
+       The source-fidelity gate is non-overridable: no figure Verifier A
+       flagged may reach any deliverable or the Notion payload as if valid.
      - fttcp-handoff.md: the ARCHIVE DOSSIER. The machine-anchored record
        carrying every block reference, the deliberation-confirmed inputs
        and overrides, the Role 1 / Role 2 / Role 3 outputs, and the full
@@ -129,7 +136,11 @@ phase 3), then:
    "Execute via the claude.ai project; never overwrite Decision Status."
 
    This file is a payload, not an action. Do not write to Notion from this
-   session; the operator executes the save in the project.
+   session; the operator executes the save in the project. When the operator
+   executes the save, the rows in outputs/final/verifier-disagreement-log.md
+   are appended to the "Verifier Disagreement Log" Notion page (skip if the
+   log says "none"); this is separate from the company page save and never
+   touches Decision Status.
 
 8. COMPANY MEMORY. Write or update companies/<TICKER>.md (create the
    companies/ folder and the file if absent; see companies/_template.md for
@@ -144,6 +155,16 @@ phase 3), then:
    /run-pipeline stage 0 and /fttcp read it on the next run. It is memory,
    never a source: it records what prior runs concluded, it does not anchor
    new figures.
+
+8b. PROVENANCE STAMP. Write outputs/final/provenance.yaml recording the exact
+   rulebook state this run was priced under, so a later review can open the
+   same rules. Fill it from the repo:
+     run: <ticker>-<date>
+     produced_at: <run date>
+     framework_git_commit: <output of `git rev-parse HEAD`>
+     framework_tag: <output of `git describe --tags --always`>
+     framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+   This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message
    "phase 3 (finalize): <ticker> <date>" and report to the user: the

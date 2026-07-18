@@ -1,3 +1,6 @@
 runs/*/outputs/reports/*.tmp
 .DS_Store
 _download/
+canary/state.json
+canary/DRIFT.flag
+canary/canary.log

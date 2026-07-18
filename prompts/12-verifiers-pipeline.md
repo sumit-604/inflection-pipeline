@@ -9,6 +9,18 @@
 # | MINOR (imprecision, weak anchor, cosmetic).
 # REWORK trigger (orchestrator enforces): any CRITICAL from Verifier A,
 # or any verifier acceptance_rate below 60%.
+# HARD SOURCE-FIDELITY GATE: Verifier A (Haiku) is the SOLE and FINAL
+# authority on source fidelity — whether a specific number actually appears
+# in the source PDF at the cited anchor. Its per-number source-fidelity
+# verdicts (MISMATCH, ANCHOR NOT FOUND, material UNANCHORED) are
+# NON-OVERRIDABLE: no Opus verifier (B, C), the synthesis stage, or the
+# orchestrator may downgrade, dismiss, or reason around one. The ONLY thing
+# that clears a source-fidelity finding is re-reading the source PDF and
+# showing the number does exist at a correct anchor, and that clearance is
+# itself logged as a disagreement. This is deliberate cross-family placement:
+# Haiku is the pipeline's only out-of-family read on the numbers, so it is the
+# read that binds. Verifiers B and C own judgment and framework, never the
+# existence-of-a-number question.
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER A: NUMERICAL ACCURACY
@@ -37,6 +49,14 @@ RULES:
    MAJOR.
 6. Do not assess judgment calls (classifications, premiums,
    determinations); numbers only. Judgment belongs to Verifier C.
+7. Your source-fidelity verdicts are a HARD, NON-OVERRIDABLE GATE. Every
+   ✗ MISMATCH, ⊘ ANCHOR NOT FOUND, and material ⊘ UNANCHORED is a
+   source-fidelity finding that STANDS until the source PDF itself disproves
+   it. You do not soften a finding because a figure "looks right" or is
+   internally consistent; only the PDF clears it. Mark each such finding
+   `source_fidelity: true` in the YAML so the gate and the disagreement log
+   can bind to it. Downstream Opus verifiers and the synthesis cannot clear
+   what you flag here — so flag precisely and anchor every call.
 
 OUTPUT: findings table (severity, report location, claimed value +
 anchor, source truth + location, note), coverage statement (what share
@@ -50,7 +70,7 @@ model: claude-haiku-4-5
 status: complete
 numbers_checked: 0
 findings:
-  - {severity: "", location: "", claimed: "", source_truth: "", note: ""}
+  - {severity: "", location: "", claimed: "", source_truth: "", note: "", source_fidelity: false}
 critical_count: 0
 major_count: 0
 minor_count: 0

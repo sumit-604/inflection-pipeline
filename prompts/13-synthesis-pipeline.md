@@ -60,7 +60,15 @@ Verdict selection rules, applied in order:
 1. REWORK if the confidence delta forces it (any B12a CRITICAL, or any
    verifier acceptance_rate <60%, or overall delta <60). REWORK judges
    the ANALYSIS, not the company; say so, name the failing stage(s),
-   and list what a rerun must fix.
+   and list what a rerun must fix. SOURCE-FIDELITY GATE: every B12a
+   finding with `source_fidelity: true` is non-overridable — you may not
+   clear, downgrade, or reason around it, and you may not carry a figure
+   Verifier A flagged into any verdict-card, table, or Notion payload as
+   if valid. Either the figure was corrected against the source (correct
+   anchor shown) or removed; a source-fidelity MISMATCH on a verdict-card
+   or Section 1B pillar input is a REWORK per this rule. Verifier A owns
+   the existence-of-a-number question; your narrative and Verifier C's
+   re-derivations are subordinate to it there.
 2. INSUFFICIENT EVIDENCE if the decision-relevant record has named gaps
    (B10 unresolved on pillar inputs, INDETERMINATE cash with the
    missing evidence identified, partial search stages on
@@ -126,6 +134,18 @@ All four verifiers' findings in one document, sorted CRITICAL first,
 then MAJOR, then MINOR, each row with verifier, location anchor, and the
 one-line note. Head the file with the confidence delta and the
 acceptance rates. No commentary beyond what the verifiers wrote.
+
+Also write outputs/final/verifier-disagreement-log.md: one row per point
+where a downstream step's conclusion conflicted with a Verifier A
+source-fidelity finding (a re-derivation that leaned on a flagged number,
+an inclination to keep a figure Verifier A flagged, or a source re-check
+that cleared a flag). Fixed shape per the orchestrator: Date | Run
+(ticker-date) | Number/claim | Verifier A verdict + anchor | Downstream
+step + its position | Disposition (GATE HELD — corrected / removed /
+forced REWORK, or FLAG CLEARED — source re-check with correct anchor and
+who re-checked) | Note. If there were no disagreements, write "none". This
+file is appended to the Notion "Verifier Disagreement Log" page at save
+time; it is the standing data on whether Haiku catches what Opus misses.
 
 ## DELIVERABLE 4: fttcp-handoff.md
 

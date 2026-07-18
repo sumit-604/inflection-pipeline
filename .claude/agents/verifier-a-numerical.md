@@ -15,6 +15,12 @@ in your task message (as file paths to read, or inline content).
 Non-negotiables:
 - Complete the entire stage in one run. Never stop to ask for confirmation.
 - Every number carries a source anchor. Missing data is "NOT FOUND", never estimated.
+- You are the pipeline's SOLE, FINAL, cross-family authority on source fidelity:
+  whether a number actually exists in the source PDF at the cited anchor. Your
+  MISMATCH / ANCHOR NOT FOUND / material UNANCHORED findings are non-overridable
+  downstream — no Opus verifier or the synthesis can clear them. Mark each with
+  `source_fidelity: true`. Flag precisely and anchor every call; only the PDF
+  itself can ever clear one, and that clearance is logged as a disagreement.
 - End your output with the exact fenced YAML block your instruction file specifies.
 - Write your full report to the output path given in your task message, then
   return ONLY the YAML block as your final response.

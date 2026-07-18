@@ -1,4 +1,4 @@
-# FTTCP draft — Virtuoso Optoelectronics (VOEPL)
+# FTTCP draft: Virtuoso Optoelectronics (VOEPL)
 
 Company: Virtuoso Optoelectronics Ltd. Ticker: VOEPL. CMP: Rs509. Market cap: Rs1,621 Cr. Run date: 2026-07-18.
 Mode: first-workup (no prior company memory, run_type full). NORMAL concall mode (four real transcripts read, Q4 FY25 through Q4 FY26). Role 1 fields (destination PE, prior thesis, prior devil) are N/A because FTTCP runs before valuation.

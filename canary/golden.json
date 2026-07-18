@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "calibrated": false,
+  "target_model": "claude-opus-4-8",
+  "endpoint": "https://api.anthropic.com/v1/messages",
+  "anthropic_version": "2023-06-01",
+  "prefix_chars": 200,
+  "request": {
+    "system": "You are a fixed calibration probe. Answer exactly as asked, with no preamble.",
+    "prompt": "Write a single twelve-word sentence about a canary in a coal mine. Output only the sentence, no quotes, no trailing punctuation beyond a full stop.",
+    "max_tokens": 64,
+    "temperature": 0
+  },
+  "calibrated_at": null,
+  "accepted": [],
+  "accepted_models": [],
+  "notes": "UNCALIBRATED placeholder. On a known-good day run `ANTHROPIC_API_KEY=... python canary/verifier.py --calibrate` to seed the accepted fingerprints, review the sampled outputs, then commit this file. The canary fails closed until calibrated. The prompt is deliberately generative (a short free-form sentence) so that a change in the underlying weights changes the output fingerprint; keep it fixed once calibrated, or drift detection resets."
+}

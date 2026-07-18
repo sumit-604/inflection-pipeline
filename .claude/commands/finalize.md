@@ -156,6 +156,16 @@ phase 3), then:
    never a source: it records what prior runs concluded, it does not anchor
    new figures.
 
+8b. PROVENANCE STAMP. Write outputs/final/provenance.yaml recording the exact
+   rulebook state this run was priced under, so a later review can open the
+   same rules. Fill it from the repo:
+     run: <ticker>-<date>
+     produced_at: <run date>
+     framework_git_commit: <output of `git rev-parse HEAD`>
+     framework_tag: <output of `git describe --tags --always`>
+     framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+   This is a plain record, not a decision. It gets committed with the rest.
+
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message
    "phase 3 (finalize): <ticker> <date>" and report to the user: the
    recommendation verdict line, the valuation decision, entry range, flags

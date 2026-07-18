@@ -2,7 +2,9 @@
 # Model: Opus 4.8 | Emits: B11-valuation
 # DESIGN: this file is a THIN WRAPPER. The framework itself is injected
 # from project knowledge at run time: Master Project Prompt v3.3 (Role 1
-# sections), Section 1B v3.3 Amendments, FTTCP v1.2 Consolidated. The
+# sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
+# (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
+# FTTCP v1.2 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
 # change, with no pipeline edit. If the injected framework and anything
@@ -44,6 +46,15 @@ mode:
   with the FTTCP ROCE forward verdict as sole Pillar 1 authority and the
   single-credit rule for ROCE recovery (Pillar 1 midpoint OR Strategic
   Premium, never both; state which route, flag shared catalysts).
+- Pillar 1 normalization for capital-cycle names per Section 1B v3.5.1
+  (consolidated Amendment 9): normalize through EXACTLY ONE route — A
+  (operational ROCE, denominator fix) when CWIP + idle raised capital + capex
+  advances exceed 20% of capital employed, else B (pre-cycle normalized ROCE,
+  numerator fix) when the denominator is clean but FTTCP is TEMPORARILY
+  DEPRESSED/RECOVERING with 📄-evidenced pre-depression history; A governs
+  where both hold; neither → statutory ROCE. Never invoke a route on a STAGNANT
+  or DECLINING verdict. The standalone Amendment 4.5 is retired; never apply it
+  without the v3.5.1 route-selection guard. Declare the route in the worksheet.
 - Pillar 2 structural vs growth-induced determination comes from the
   B10 table (which carries the rating agency verbatim quote). Do not
   re-litigate it; apply the multiplier and offset rules to the
@@ -90,7 +101,7 @@ status: complete
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
 destination_pe:
   track1_rrm: {low: 0, mid: 0, high: 0, r_used: 0, rrm: 0}
   track2_additive: {low: 0, mid: 0, high: 0}
@@ -100,6 +111,7 @@ pillar_detail:
   roce_used: 0
   roce_base: 0
   roce_recovery_route: ""      # pillar1-midpoint | strategic | not-credited
+  pillar1_normalization_route: ""  # v3.5.1: none | A-operational | B-pre-cycle | A-governs-B-suppressed
   cash_multiplier: 0
   structural_or_growth: ""     # as applied, from B10
   growth_offset: 0
@@ -128,7 +140,19 @@ one_line_thesis: ""
 FRAMEWORK (verbatim from project knowledge):
 {{MASTER_PROJECT_PROMPT_V33_ROLE1_SECTIONS}}
 {{SECTION_1B_V33_AMENDMENTS}}
+{{SECTION_1B_V351_RECONCILIATION}}
 {{FTTCP_V12_CONSOLIDATED}}
+
+PRECEDENCE (Pillar 1 normalization): Section 1B v3.5.1 GOVERNS. Its
+consolidated Amendment 9 supersedes the standalone Amendment 4.5 (v3.5) that
+appears in the amendments file above; Amendment 4.5 is RETIRED as a number and
+survives only as Route B inside v3.5.1's route-selection rule. Never apply
+Amendment 4.5 on its own. For any capital-cycle name, normalize Pillar 1 ROCE
+through EXACTLY ONE route per v3.5.1 (A operational / B pre-cycle, A governs
+where both conditions hold, else none) and declare the route in the worksheet.
+Applying both routes, or applying Amendment 4.5 standalone without the
+route-selection guard, double-credits the recovery and violates the
+single-credit rule.
 
 VALUATION INPUT TABLE (B10, sole input source):
 {{B10_FULL_OUTPUT}}

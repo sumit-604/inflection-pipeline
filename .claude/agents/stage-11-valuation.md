@@ -1,6 +1,6 @@
 ---
 name: stage-11-valuation
-description: Role 1 dual-track valuation per Master v3.3 Section 1B v3.3 FTTCP v1.2
+description: Role 1 dual-track valuation per Master v3.3 Section 1B v3.5.1 FTTCP v1.2
 tools: Read, Write, Grep
 model: opus
 ---

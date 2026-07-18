@@ -67,9 +67,12 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the three framework file paths from frameworks/
-   as its stable prefix plus B10. If frameworks/ is missing any of the
-   three files, STOP and tell the user which to add. The FTTCP ROCE
+   existing wrapper: pass the FOUR framework file paths from frameworks/
+   as its stable prefix plus B10 — Master_Project_Prompt_v3.3.md,
+   Section_1B_v3.3_Amendments.md, Section_1B_v3_5_1_Reconciliation.md (the
+   Pillar 1 normalization authority, which supersedes the standalone
+   Amendment 4.5), and FTTCP_v1.2_Consolidated.md. If frameworks/ is missing
+   any of the four files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. Collect B11.
 

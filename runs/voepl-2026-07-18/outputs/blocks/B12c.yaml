@@ -1,20 +1,65 @@
 stage: B12c
-company: "VOEPL"
-run_date: "2026-07-18"
+company: VOEPL
+run_date: '2026-07-18'
 model: claude-opus-4-8
 status: complete
-phase: 1
-gate0: {rules_checked: 44, fails: []}
+phase: 1+3 merged
+gate0:
+  rules_checked: 44
+  fails: []
 emoat:
   rules_checked: 27
+  fails: &id001
+  - 'B07 Section 5 scorecard, row H1 (Industry consolidation beneficiary): evidence type labeled 📄 (implies
+    1.0x) but the 0.7x (🎙️) multiplier was applied, adjusted=0.7. Inconsistent. If corrected to 📄x1.0
+    -> 1.0, em_score 31.3->31.6 (rounds 31->32), stays in 25-39 STRENGTHENING band; H1 is a non-active
+    Weak category so active_categories unchanged. MINOR.'
+valuation:
+  rules_checked: 38
   fails:
-    - "B07 Section 5 scorecard, row H1 (Industry consolidation beneficiary): evidence type labeled 📄 (implies 1.0x) but the 0.7x (🎙️) multiplier was applied, adjusted=0.7. Inconsistent. If corrected to 📄x1.0 -> 1.0, em_score 31.3->31.6 (rounds 31->32), stays in 25-39 STRENGTHENING band; H1 is a non-active Weak category so active_categories unchanged. MINOR."
-valuation: {rules_checked: 0, fails: [], status: "valuation adherence deferred to phase 3 (B10/B11 not produced in phase 1)"}
-recomputed_destination_pe: ""   # concur / out of phase-1 scope
-recomputed_decision: ""         # concur: Gate0 AVOID and B07 TURNAROUND both re-derived and confirmed
-findings:
-  - {severity: MINOR, framework: emoat, location: "B07 Section 5, row H1", claimed: "type 📄, mult 0.7x, adjusted 0.7", recomputed: "type/mult mismatch; 📄->1.0 or 🎙️->0.7 (0.7 likely intended, 📄 label the typo)", note: "+0.3 to em_score if corrected; no band change (STRENGTHENING), no active-category change, no decision impact"}
+  - severity: MAJOR
+    rule: Pillar 1 ROCE blend weights (Recon v3.5.1 Route B)
+    detail: Worksheet selected Route B as governing but applied the RETIRED Amendment 4.5 three-anchor
+      blend (40% norm + 30% FY[Y+2] + 30% current = 21.72%). Governing Route B specifies 60/40 current/anchor
+      = 20.58%. Overstates ROCE ~1.1pp, base 18.4x vs 17.8x, dest PE ~0.5x higher, less-conservative direction.
+      Does not flip Hurdle (STOP) or decision (AVOID).
+  - severity: MINOR
+    rule: Amendment 4.5 normalized-anchor evidence base
+    detail: Normalized 'cycle median' rests on a single pre-depression year (FY24 25.66%); FY22-FY23 NOT
+      FOUND. Applied under explicit operator LIVE designation and capped conservatively; acceptable but
+      thin.
+  - severity: MINOR
+    rule: Hurdle Ratio horizon form
+    detail: 4-year HR variant (threshold 1.25^4=2.4414) used vs written 3-year form (1.953). Operator
+      FY30 horizon authorizes it; outcome-invariant (STOP under both).
+recomputed_destination_pe: 'B11: Track2 20.6x / Track1 14.4x. Verifier C (governing Recon v3.5.1 Route
+  B 60/40 blend, ROCE 20.58%): Track2 20.1x / Track1 14.1x. Difference ~0.5x, within tolerance; decision
+  unchanged.'
+recomputed_decision: CONCUR — AVOID (on valuation); Hurdle Ratio STOP (base HR4 0.41, bull HR4 0.59 vs
+  threshold 2.4414; STOP invariant to the blend deviation and to 3yr-vs-4yr construct). Role 2 four hard
+  AVOID triggers concur (Gate0 AVOID, Promoter CONCERN, U/D 0.2x, Hurdle STOP); position size Small forward-ceiling
+  only, promoter CONCERN cap binds.
+findings_phase1_emoat: *id001
+findings_phase3_valuation:
+- severity: MAJOR
+  location: B11 Pillar 1 (Section 1B, lines 53-70)
+  claimed: three-anchor blend 40/30/30 = 21.72%, base 18.4x
+  framework: 'Recon v3.5.1 Route B: RECOVERING 40-60% blends 60/40 current/anchor = 20.58%, base 17.8x'
+  note: Used retired Amendment 4.5 formula after selecting Route B as governing; less-conservative; non-outcome-determinative
+    (STOP holds)
+- severity: MINOR
+  location: B11 Pillar 1 normalized anchor (line 59)
+  claimed: normalized 25.66% as pre-depression cycle median
+  framework: Amendment 4.5 requires 📄 historical ROCE series; single year only
+  note: Operator-designated LIVE; capped conservatively; thin evidence base
+- severity: MINOR
+  location: B11 Hurdle Ratio (lines 141-154)
+  claimed: HR4 with threshold 1.25^4=2.4414
+  framework: Master 398 HR is 3-year, threshold 1.953
+  note: Operator FY30 horizon authorizes; STOP invariant
 critical_count: 0
-major_count: 0
-minor_count: 1
-acceptance_rate: 99             # 70 of 71 phase-1 rules passed (98.6%)
+major_count: 1
+minor_count: 3
+acceptance_rate_gate0_em: 99
+acceptance_rate_valuation: 95
+framework_adherence_combined_pct: 96.3

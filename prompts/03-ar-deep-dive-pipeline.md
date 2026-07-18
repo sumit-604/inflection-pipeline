@@ -1,6 +1,8 @@
 # STAGE 3: ANNUAL REPORT DEEP DIVE, BACKWARD READ (PIPELINE MODE)
 # Model: Sonnet 5 | Emits: B03-ardeep
 # Requires: B02-notes output (injected below)
+# Protocol version: 1.2 (aligns with Annual Report Analysis Protocol v1.2)
+#   1.2 — Phase 6E Quiet Abandonment Check (mandatory) added.
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are an expert Indian equity research analyst with deep knowledge of
@@ -128,6 +130,27 @@ against what the financials show, ✅/❌ each. 6B strategic priorities:
 specific enough, capital allocated, execution evidence. 6C metrics
 showcased vs conspicuously absent. 6D tone and priority drift vs prior
 year if inferable.
+6E Quiet Abandonment Check (mandatory). Read the opening sections (Chairman's
+letter, MD&A opening, strategy section) side by side with the operational sections
+(segment results, factory-level detail, subsidiary performance). Identify any
+claim, ambition, initiative, or strategic priority that appears in the opening but
+is quietly missing, walked back, or contradicted by the operational sections. For
+each abandonment: quote the specific opening claim; name the operational section
+where it should have shown up but did not (or was walked back); classify it as
+(a) implicit retraction (opening says X, operations say not-X with no
+acknowledgement), (b) silent drop (opening says X, operations do not address X at
+all), or (c) hedged retreat (opening says X, operations say X-lite without naming
+the scale-back); and state materiality (does it change the thesis or is it
+framework noise). If none exist, state: "No quiet abandonments identified — opening
+claims are consistent with or exceeded by operational sections." This check is
+distinct from Phase 4's omission analysis (what the AR does NOT cover): Phase 4
+catches missing coverage; 6E catches present-but-withdrawn content. Do not merge
+the two.
+# RATIONALE (protocol note): silence audits (Phase 4) catch what is not there; 6E
+# catches what is there but withdrawn — the failure mode where management writes an
+# ambitious opening letter then quietly walks back the operational sections without
+# acknowledging the contradiction. It shows up disproportionately in the companies
+# most likely to fool a reader.
 Phase 6 summary + verdict.
 
 PHASE 7: MULTI-STRATEGY SIGNAL EXTRACTION

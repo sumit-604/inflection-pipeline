@@ -1,0 +1,19 @@
+stage: B15-devil
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "destroyed"
+  valuation_safety: "destroyed"
+overall: "SURVIVES"
+top_counters:
+  - "SHARED CATALYST single point of failure: one compressor commissioning (~March 2027) carries BOTH the Pillar 1 ROCE recovery and the Pillar 3 +5.0x growth premium; a slip, a QCO liberalisation, or faster competitor localisation zeroes both legs in one event and, via the Amendment 4.5 guard, self-withdraws the normalized-ROCE anchor."
+  - "The +4 FTTCP composite and the whole investable-business leg rest on two one-sentence operator overrides ('I think ROC is recovering'; 'cash is also improving'); the autonomous draft scored both STAGNANT (+2 composite). FY26 ROCE was not computable this run and the normalized anchor is a SINGLE pre-depression year (FY24 25.66%)."
+  - "Cash reality contradicts the STARTING override: FY26 CFO/PAT 0.22x, negative FCF, no documented WC program, Note 37 leaves receivables Rs3,044.71L and payables Rs13,138.60L unconfirmed; falsifier H1 FY27 CFO/PAT <0.5x flips the tag structural (0.65x)."
+  - "Earnings quality: ~75% of FY25 PBT growth is a WDV-to-SLM depreciation-method artifact (charge fell Rs806.83L, DTL nearly doubled) plus 100% of R&D capitalised; the 107.9x multiple sits on a partly manufactured base."
+  - "Governance CONCERN caps everything: HQ plot sold to the company for Rs2,418L with zero RPT disclosure, Reprolite directors match Note 32(c) KMP-relative names, unmodified audit opinion despite ~35% of assets unverified, pledge NOT FOUND so the >40% deal-breaker is uncleared."
+  - "Valuation is unbreakable to the downside: 107.9x trailing vs 14.4x RRM / 20.5x additive earned; Hurdle STOP; 18/18 cells negative; prob-weighted 4yr CAGR -20.8%; even at the 25x sector ceiling on bull EPS the 4yr CAGR is ~+0.5%, so being wrong on the AVOID costs almost nothing."
+  - "AVOID is not too harsh: removing the r=16% governance penalty (r=14, RRM 0.94) still yields 19.4x and a -5.7% bull CAGR; the entry zone Rs74-86 is itself conditional and can self-withdraw if the H1 FY27 falsifier fires."

@@ -1,0 +1,50 @@
+stage: B11-valuation
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "FY26 current ROCE UNRESOLVED (image-only balance sheet). Conservative fill: FY25 17.19% AR-basis trough feeds the current leg of the Amendment 4.5 blend (same basis as the FY24 25.66% normalized anchor); Gate-0 ~10% run as downside sensitivity."
+  - "Diluted shares: full cap table NOT FOUND; screener adjusted 3.18 Cr FY26 used (reconciles to CMP). FY30 assumed 3.50 Cr (~2.5%/yr dilution) as a stated modeling assumption."
+  - "EV/EBITDA UNRESOLVED: VOEPL net debt and EBITDA-definition bridge not extractable; secondary method carries zero effective weight, P/E governs."
+  - "FY[Y+2]=FY28 ROCE has no documented external figure; projected at 21.0% (partial-recovery midpoint of 17.19% trough and 25.66% normalized) as a transparent Section-2 model input, not an anchored fact."
+flags:
+  - {type: "FLAG-CASH", disposition: "GROWTH-INDUCED; cash multiplier 0.85x applied (0.80 band + 0.05 offset); no CAVEATS cap; residual Note 37 gap named; falsifier H1 FY27 CFO/PAT <0.5x with WC days expanding"}
+  - {type: "FLAG-GATE0", disposition: "AVOID classification (core 45/100; ND/EBITDA 4.0x + interest coverage 1.73x); propagates, decision human"}
+  - {type: "FLAG-EMOAT", disposition: "STRENGTHENING but execution-unproven; capacity tables treated as intent"}
+  - {type: "FLAG-PROMOTER", disposition: "CONCERN; related-party opacity + audit-scope inconsistency; drives RRM r to 16%"}
+  - {type: "SHARED-CATALYST", disposition: "compressor capex commissioning drives Pillar 1 ROCE recovery AND Pillar 3 growth premium; Role 3 must stress the single point of failure"}
+framework_versions: "Master v3.3 / Section 1B v3.3 / FTTCP v1.2"
+destination_pe:
+  track1_rrm: {low: 13.5, mid: 14.4, high: 15.5, r_used: 16.0, rrm: 0.70}
+  track2_additive: {low: 19.0, mid: 20.5, high: 22.0}
+  divergence_pct: 30
+  governing_track: "Track 1 (RRM), the more conservative; durability/governance genuinely weak (CONCERN promoter, B-grade execution, 4x leverage) are correctly priced via discount rate; sets the entry zone"
+pillar_detail:
+  roce_used: 21.7
+  roce_base: 18.4
+  roce_recovery_route: "pillar1-midpoint"
+  cash_multiplier: 0.85
+  structural_or_growth: "growth-induced"
+  growth_offset: 0.05
+  growth_premium: 5.0
+  strategic_premium: 0.0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.41, bull_used: true, bull: 0.59, verdict: "STOP"}
+fair_values:
+  track1: {bear: 114, base: 210, bull: 299}
+  track2: {bear: 163, base: 299, bull: 426}
+expected_cagr_prob_weighted: -20.8
+entry_range: {low: 74, high: 86}
+mos_price: 69
+upside_downside_ratio: 0.2
+decision: "AVOID (on-valuation); Hurdle Ratio STOP — 25% CAGR infeasible even on bull EPS from a 107.9x trailing multiple de-rating to a 14-20x earned destination PE"
+unresolved_inputs_used:
+  - "FY26 current ROCE -> FY25 17.19% AR-basis trough (conservative, basis-consistent)"
+  - "FY28 expected ROCE -> 21.0% projected partial-recovery midpoint"
+  - "Diluted shares FY30 -> 3.50 Cr assumed (~2.5%/yr dilution)"
+  - "EV/EBITDA -> zero weight (net debt/EBITDA bridge NOT FOUND); P/E governs"
+som_cagr_crosscheck: "consistent — base revenue CAGR 22% < SOM-implied 25.2%"
+one_line_thesis: "AVOID Virtuoso Optoelectronics at Rs509: FY26 EPS Rs4.7 can compound to about Rs14.6 by FY30 on 22% revenue growth and a compressor-led margin recovery, but the four-pillar destination PE is 14x (RRM, governing) to 20x (additive) against a 107.9x trailing multiple, so even 45% bull EPS growth gives a negative CAGR and the Hurdle Ratio is STOP; buyable only below about Rs86, MoS Rs69; shared single point of failure is the compressor commissioning that carries both the ROCE recovery and the growth premium; cash quality growth-induced, Note 37 unconfirmed"

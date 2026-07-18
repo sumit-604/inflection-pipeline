@@ -1,0 +1,31 @@
+stage: B13-synthesis
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+flag_promoter_verdict: "CONCERN"
+flag_cash_determination: "GROWTH-INDUCED"
+flag_cash_falsifier: "H1 FY27 CFO/PAT below 0.5x with net working capital days expanding vs FY26 exit"
+flag_gate0: "AVOID 55/160 (core 45, moat 10); sole trigger deal-breaker 6 (ND/EBITDA 4.00x AND interest coverage 1.73x, both FY26)"
+confidence_delta: {numerical: 98.8, redflag: 67, framework: 99, peer: 94, overall: 67}
+confidence_band: "60-74 (downgrade one level; REWORK not forced)"
+valuation_decision: ""      # deferred to phase 3
+entry_range: {low: 0, high: 0}
+headline: "AC contract maker bets on compressors"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "~75% of FY25 pretax profit growth traces to a WDV->SLM depreciation policy change, not operations; deferred to Dhruva Research Public per NEVER rule"
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+phase3_handoffs:
+  - "sector_cap_row: manifest 'Agri processing' is a collector defect; confirm Consumer electronics/EMS/durables cap vs Section 1B table at stage 11 (peers AMBER/ELIN/EPACK/PGEL)"
+  - "prospectus (SME-DRHP ~2022) absent: backward baseline ran on FY24-FY26 only (3 restated years, history_downgrade true)"
+  - "promoter pledge % NOT FOUND (BSE/screener 403): re-attempt in phase 3; pledge>40% deal-breaker recorded INDETERMINATE not enforced"
+  - "FLAG-CASH GROWTH-INDUCED rests on ICRA FY25 rationale + capex-year logic; FY26 working-capital balances unconfirmed (Note 37); H1 FY27 CFO/PAT is the falsifier"
+notion_save: "NOT executed in phase 1 (deferred; append-never-overwrite-status at phase 3)"

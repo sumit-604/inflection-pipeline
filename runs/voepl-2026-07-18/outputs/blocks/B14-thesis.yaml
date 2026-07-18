@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 74, high: 86}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "H1 FY27 CFO/PAT below 0.5x with working capital days expanding, OR first FY27 ROCE fails to clear the FY25 trough of 17.19% (SHARED-CATALYST compressor recovery fails)"
+monitoring_checklist:
+  - "H1 FY27 CFO/PAT >= 0.5x with working capital days flat or falling (falsifier item)"
+  - "First FY27 ROCE prints above the FY25 trough of 17.19% and on the path toward ~21%"
+  - "Compressor utilisation crossing 60% to 80%; FY27 compressor revenue ~Rs200cr at ~50% util; segment margin moving 6-7% toward 11-12%"
+  - "FY27 revenue tracking toward the diluted 35-40% guide (~Rs1,100-1,155cr) with no further guidance cut"
+  - "ND/EBITDA falling from 4.0x toward the <=1x target and interest coverage rising above 1.73x"
+  - "EBITDA margin holding >=10.4% and PAT margin recovering toward the guided 2.5-3%"
+  - "Filaments & Filaments and Reprolite Papers brought into the Note 32 related-party universe in the FY26 AR; promoter pledge disclosed under mainboard LODR and low (<40%)"
+  - "Voltas/top-customer AC share falling below 50% of AC revenue with realised margin uplift"

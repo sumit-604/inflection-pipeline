@@ -215,9 +215,35 @@ short handoff-to-valuation block (ROCE forward verdict, the Pillar 1 ROCE it
 implies, the credit route, the sector cap row Phase 3 must use, and any SHARED
 CATALYST flag for the devil's advocate).
 
+## CROSS-FAMILY GRADE (independent, grader-only)
+
+After the draft file is written and before you commit, run the cross-family
+FTTCP grader:
+
+    python verifiers/fttcp_crossgrade.py <run folder>
+
+It sends the written draft plus the FTTCP v1.2 rubric to a non-Claude model
+(Gemini by default; GPT-5.6 selectable) that grades rubric ADHERENCE only. It
+never re-runs the analysis, never generates a verdict, never invents a number,
+and never edits the draft; it does not adjudicate whether a cited number is true
+(that stays Verifier A's hard gate). It writes outputs/final/fttcp-crossgrade.md.
+This is the out-of-family check on the pipeline's most consequential step: B and
+C grade Opus on Opus, so this is the only third-family read on the FTTCP verdict.
+
+Handle its exit like a flag, never a halt:
+- exit 3 (SKIPPED, no cross-family key configured): say the cross-family check
+  did not run and treat FTTCP confidence as one notch lower; do not stop.
+- exit 0 / 1: include the grade summary — overall adherence, any CRITICAL rubric
+  violations with their artifact location, and any stated grader divergence — in
+  what you PRINT to the operator, clearly labelled as an independent third-family
+  opinion the operator weighs. It is advisory: it never overrides your verdict.
+  Where its read diverges from yours, surface the divergence for the operator;
+  do not silently reconcile it.
+
 ## COMMIT, PRINT, INVITE
 
-After the draft file is written, commit it with the message
+After the draft file is written, commit it (with fttcp-crossgrade.md if it was
+produced) using the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
 4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
@@ -249,6 +275,10 @@ carries:
   ruling, and the operator's stated reasoning (quote the operator).
 - The final FTTCP verdict in THE OPERATOR'S OWN WORDS, not your paraphrase and
   not the framework's language.
+- The cross-family grade outcome: overall adherence, any CRITICAL rubric
+  violation, and how the operator resolved any grader divergence (or "cross-family
+  check did not run" if it was skipped). It informs the record; it never
+  overrides the operator's verdict.
 Follow the CLAUDE.md STYLE rules for any prose. This file is what /finalize
 requires before Phase 3 can run; it does not exist until the operator signs
 off, so do not write it early.

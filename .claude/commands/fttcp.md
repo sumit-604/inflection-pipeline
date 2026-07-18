@@ -130,6 +130,21 @@ handoff. For a lender, run the Lender Transition Set instead. Skip a transition
 only if the framework's own business-type rule says it does not apply, and say
 so out loud.
 
+**DELIBERATION CAP (hard, 8 iterations, forced report-out).** The autonomous
+deliberation that produces the draft is capped at 8 iterations. One iteration is
+a full re-examination pass over the still-open judgment calls (the four setup
+calls, each transition forward verdict, structural vs growth-induced cash,
+TEMPORARILY DEPRESSED vs DECLINING, the composite, the position). You do not
+loop indefinitely refining a call. On the 8th iteration you FORCE report-out:
+close every still-open call by the standing conservative rule (round DOWN
+between two states, bias to DECLINING when genuinely torn, INDETERMINATE cash
+caps the disposition at PROCEED WITH CAVEATS), tag it `genuinely uncertain`,
+flag it prominently in MY RULINGS with the single missing fact named, and write
+the draft. A call that cannot be closed in 8 iterations is reported as
+unresolved, never a reason to keep iterating and never a reason to ask the
+operator. This bounds the whole deliberation the way the INDETERMINATE-cash cap
+bounds one gate.
+
 Make every judgment call and state your view on it:
 - Structural vs growth-induced cash conversion — decide it, apply the "if
   growth stopped tomorrow, would working capital release" test, state the
@@ -250,6 +265,14 @@ line to LESSONS.md per the MEMORY rule: what broke or dragged this session, or
   the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.
+- Never loop the deliberation past 8 iterations; force report-out per the
+  DELIBERATION CAP and flag any call still open.
+- Never expose this session's reasoning to a verifier. Any verifier or grader of
+  the FTTCP output receives artifact paths only — the written draft, the YAML
+  handoff block, and the source PDFs — never the maker's chain of reasoning, the
+  MY RULINGS narrative, or this session's context. A maker never verifies its
+  own work (CLAUDE.md); independence is enforced by what the verifier is given,
+  not by trust.
 
 End your final message to the operator with, on its own line:
 

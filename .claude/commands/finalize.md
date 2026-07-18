@@ -114,6 +114,10 @@ phase 3), then:
        falsification line.
      - verifier-summary.md: all verifier findings including the phase-3
        valuation-adherence audit, sorted by severity with location anchors.
+     - verifier-disagreement-log.md: one row per point where a downstream
+       step conflicted with a Verifier A source-fidelity finding (or "none").
+       The source-fidelity gate is non-overridable: no figure Verifier A
+       flagged may reach any deliverable or the Notion payload as if valid.
      - fttcp-handoff.md: the ARCHIVE DOSSIER. The machine-anchored record
        carrying every block reference, the deliberation-confirmed inputs
        and overrides, the Role 1 / Role 2 / Role 3 outputs, and the full
@@ -129,7 +133,11 @@ phase 3), then:
    "Execute via the claude.ai project; never overwrite Decision Status."
 
    This file is a payload, not an action. Do not write to Notion from this
-   session; the operator executes the save in the project.
+   session; the operator executes the save in the project. When the operator
+   executes the save, the rows in outputs/final/verifier-disagreement-log.md
+   are appended to the "Verifier Disagreement Log" Notion page (skip if the
+   log says "none"); this is separate from the company page save and never
+   touches Decision Status.
 
 8. COMPANY MEMORY. Write or update companies/<TICKER>.md (create the
    companies/ folder and the file if absent; see companies/_template.md for

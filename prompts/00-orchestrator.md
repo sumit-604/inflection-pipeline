@@ -372,6 +372,42 @@ verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
 
+**SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Haiku) is the
+sole final authority on whether a number exists in the source. No downstream
+step may clear, downgrade, or reason around a Verifier A source-fidelity
+finding (any B12a finding with `source_fidelity: true` — MISMATCH, ANCHOR NOT
+FOUND, or material UNANCHORED). A flagged number may not enter any downstream
+computation, verdict card, or Notion save as if valid: it is corrected against
+the source with the correct anchor shown, or removed. A MISMATCH on a
+verdict-card or Section 1B pillar input still forces REWORK per the rule above.
+Verifier C's re-derivations and the synthesis narrative are SUBORDINATE to
+Verifier A on the existence-of-a-number question; they own judgment and
+framework, never source fidelity. The only thing that clears a source-fidelity
+flag is re-reading the source PDF and showing the number does exist at a
+correct anchor, and that clearance is logged as a disagreement (below). The
+cross-family placement is the point: Haiku is the only out-of-family read on
+the numbers, so it is the one that binds.
+
+**LOG EVERY VERIFIER DISAGREEMENT (from day one).** A disagreement is any point
+where a downstream step's conclusion conflicts with a Verifier A source-fidelity
+finding: a Verifier C re-derivation that relied on a flagged number, a synthesis
+inclination to keep a figure Verifier A flagged, or a source re-check that
+CLEARED a Verifier A flag. Collect every one into a disagreement set. It is NOT
+a REWORK trigger by itself; it is the standing evidence that, over months, shows
+whether Haiku catches what the Opus verifiers miss or whether the disagreements
+are noise. Synthesis writes the set to `outputs/final/verifier-disagreement-log.md`
+and the Notion save appends each row to the "Verifier Disagreement Log" page.
+One row per disagreement, fixed shape:
+
+```
+| Date | Run (ticker-date) | Number/claim | Verifier A verdict + anchor |
+  Downstream step + its position | Disposition | Note |
+```
+Disposition is one of: GATE HELD — figure corrected at source (correct anchor
+shown) | GATE HELD — figure removed | GATE HELD — forced REWORK | FLAG CLEARED
+— source re-check found the number at a correct anchor (record who re-checked).
+Never resolve a disagreement silently; if there are none this run, write "none".
+
 ---
 
 ## 5. CONFIDENCE DELTA

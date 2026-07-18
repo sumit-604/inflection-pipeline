@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY26 Annual Report / Note 12 PP&E detail not yet published (only FY25 AR available); 2C fixed asset turnover uses FY24-FY25 historical ratio only"
+  - "Underlying exchange-filing PDF for the compressor OCD (DTD referenced as 28-May-2026) and the mainboard-migration announcement were not collected/independently verified; sourced only via concall statements and the non-anchored operator digest"
+  - "No customer-concentration or segment revenue disclosure in the filed Annual Report; all customer-mix percentages are sourced from concall verbal commentary, not filings"
+  - "No patent/IP filings, licensing revenue, or lab partnerships disclosed anywhere in the provided documents"
+  - "Export revenue % never disclosed in any filing despite repeated stated export intent"
+flags:
+  - "FLAG-EMOAT: G1 (war chest) has NO EVIDENCE and is directly contradicted by Gate 0's FY26 leverage deal-breaker (ND/EBITDA 4.0x, interest coverage 1.73x) — do not credit any 'net cash growing' narrative"
+  - "FLAG-EMOAT: G2 (WC improvement) shows a documented FY25 improvement (debtors/inventory turnover both up) that reverses sharply in FY26 per Gate 0's CFO/PAT collapse (2.17x to 0.22x); not credited as an active positive category"
+  - "FLAG-EMOAT: F2 execution moat rests on a B-grade promise-delivery record (4 delivered / 5 partial / 7 missed per B05), including a diluted FY27 revenue target (~2,000cr guided down to ~1,100-1,155cr) and a reversed Voltas-concentration-reduction promise; treat the 2A capacity tables as management intent, not certainty"
+  - "FLAG-EMOAT: PLI (R1) is shared across 26 companies and FY26 is stated by management to be its final year with no confirmed successor scheme — do not treat as a durable, VOEPL-specific moat"
+em_score: 31
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "documented", time_to_materialise: "active, targeted through FY27-28"}
+  - {id: "E2", name: "China+1 beneficiary (compressor QCO substitution)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now, policy review March 2027"}
+  - {id: "H2", name: "Strategic partnerships (Huayi/Jiaxipera; Maharashtra govt MOU)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "A1", name: "Rare manufacturing capability (reciprocating compressors)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "active now, window to ~FY28"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate (flagged, B-grade)", evidence_type: "claim", time_to_materialise: "ongoing, re-test each quarter"}
+  - {id: "R1", name: "Regulatory/policy tailwind (PLI + QCO)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active, PLI winds down FY26, QCO reviewed March 2027"}
+evidence_mix: {documented: 17, claim: 24, inference: 6}
+completionist_recount: "📄 recount performed: 17 documented items across 9 categories (A1, B1, B2, E2, F2, G2, H2, H3, R1) plus the Section 2 capacity/capex tables and the Section 1C revenue-mix disclosure; active_categories limited to 6 (3 Strong: B1, E2, H2; 3 Moderate: A1, F2, R1), within the realistic 3-6 base rate"
+catalysts_12m:
+  - {catalyst: "QCO government decision on compressor import cap", window: "due ~March 2027", evidence_type: "documented", anchor: "Inv. Pres. p.13"}
+  - {catalyst: "Compressor capacity ramp 2.8mn to 6.0mn units", window: "target ~March 2027", evidence_type: "documented", anchor: "Inv. Pres. p.11 capacity table"}
+  - {catalyst: "AC capacity ramp 1.0mn to 1.8mn units", window: "within FY27", evidence_type: "documented", anchor: "Inv. Pres. p.11 capacity table"}
+  - {catalyst: "Named competitor compressor-plant commissioning (2-3 players)", window: "late FY27/FY28", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "Execution of Rs250cr equity approval against Gate0 leverage flag", window: "FY27, unconfirmed", evidence_type: "claim", anchor: "Q4 FY26 call"}
+capex_embedded_growth_pct: 122
+optionality_register:
+  - {optionality: "R&D spend disclosed (Rs8.34cr FY25) but no patent filings, licensing revenue, or lab partnerships evidenced", converting_evidence: "Filed patent grant with disclosed product/revenue linkage, or licensing-revenue line item", first_appears: "Next AR Annexure II or exchange filing", window: "2-4 years"}
+  - {optionality: "IoT/connected-appliance R&D named as MD&A focus area but no product, data asset, or revenue evidenced", converting_evidence: "Launched connected/IoT SKU with disclosed shipments or subscription revenue line", first_appears: "AR product section or Investor Presentation", window: "3-5 years, speculative"}
+  - {optionality: "Export ambition stated repeatedly but export revenue negligible/undisclosed to date", converting_evidence: "Signed export order/contract or export revenue percent disclosed", first_appears: "AR Directors Report forex earnings note or concall", window: "1-2 years"}
+  - {optionality: "Senior hires from LG/Videocon/Haier/Liebherr disclosed but no R&D headcount trend or broad technical ESOP pool", converting_evidence: "Disclosed R&D headcount growth or expanded technical-staff ESOP grant", first_appears: "AR Annexure III or Directors Report HR section", window: "1-3 years"}
+  - {optionality: "Solar expansion (1.5MW to 3.5MW plus 2 more units) promised for March 2025 completion, not evidenced as delivered", converting_evidence: "Disclosed higher installed solar capacity or ESG rating upgrade", first_appears: "Next AR sustainability section", window: "1 year, already overdue once"}
+  - {optionality: "Compressor backward integration targeted 5-10 percent to ~60 percent over five years, contingent on capacity target first", converting_evidence: "Disclosed in-house component percent specific to compressor segment, or dedicated backward-integration capex commitment", first_appears: "Concall or Investor Presentation", window: "FY28-FY30"}
+  - {optionality: "Rotary (AC) compressor manufacturing explicitly not finalized by management", converting_evidence: "Announced tie-up/JV or capex commitment for rotary-compressor manufacturing", first_appears: "Exchange filing or concall", window: "NOT FOUND"}
+  - {optionality: "PLI successor scheme uncertain; government reportedly working on options post FY26 (final year of current PLI)", converting_evidence: "New PLI/scheme notification naming VOEPL as enrolled beneficiary", first_appears: "Exchange filing/government gazette plus company disclosure", window: "1-2 years, uncertain"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID-grade backward fundamentals (Gate0 leverage deal-breaker, cash-conversion collapse) meet a genuinely documented but execution-unproven forward moat (compressor QCO substitution, backward integration, partnerships), placing VOEPL in the weak-backward TURNAROUND bucket rather than a GOOD/AVERAGE-to-EXPANSION transition setup."
+top_moat_risks:
+  - "QCO policy reversal or faster-than-guided competitor localisation before VOEPL converts its first-mover compressor position into backward-integrated, durable economics"
+  - "Leverage deal-breaker (ND/EBITDA 4.0x) constrains funding of the remaining ~Rs265cr capex pipeline without further dilution or delay, risking repeat of the freezer-deferral pattern"
+  - "Huayi/Jiaxipera partnership is technology-supply based, not equity-locked, and could be extended to emerging domestic competitors once QCO eases"
+  - "B-grade execution record (7 missed vs 4 delivered) directly implicates the same capex-discipline and customer-concentration metrics the emerging-moat case depends on"

@@ -1,0 +1,85 @@
+stage: B05-concall
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "no Q1 FY26 call exists in the transcript set (sequence gap, not an evasion)"
+  - "FY27 revenue target diluted roughly in half (informal ~2000cr -> 35-40% CAGR ~1100-1155cr) without being framed as a revision"
+  - "mainboard listing timeline missed in four consecutive calls spanning over a year"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Compressor ramp 2.8mn->6mn units, margin 6-7% -> 11-12%", type: "volume+margin+regulatory", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "utilisation crossing 60%->80% as guided, QCO terms holding", kill_signal: "QCO further liberalised beyond 40% import cap or new entrants undercut on price before VOEPL scales"}
+  - {priority: 2, name: "AC capacity 1mn->1.8mn units incl. Chennai plant ramp", type: "volume", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "Chennai plant reaching >5-6% revenue contribution in FY27 as guided", kill_signal: "Chennai utilisation stays token or Voltas insourcing accelerates"}
+  - {priority: 3, name: "AC OEM->ODM transition and customer diversification", type: "price-mix+volume", timeframe: "medium", conviction: "L-M", confirm_signal: "Voltas share actually falls below 50% of AC revenue with realised margin uplift", kill_signal: "Voltas share continues to grow as seen in Q3 FY26 call reversal"}
+  - {priority: 4, name: "FY27 revenue delivery vs diluted 35-40% CAGR guide", type: "revenue", timeframe: "near-medium", conviction: "M", confirm_signal: "quarterly revenue tracking toward ~1100-1155cr without further guidance cuts", kill_signal: "another guidance cut repeating the FY26 pattern"}
+  - {priority: 5, name: "EMS capacity doubling (4->8->12 lakh CPH)", type: "volume", timeframe: "medium", conviction: "M", confirm_signal: "phase 1 completion within 3 months of Q4 FY26 call (~Sep-2026) as promised", kill_signal: "slippage similar to freezer/Chennai pattern"}
+  - {priority: 6, name: "Mainboard listing completion", type: "corporate/liquidity", timeframe: "near, historically slipping", conviction: "L", confirm_signal: "actual listing completed by end-August 2026 as latest guided", kill_signal: "another slippage past August 2026, a 5th consecutive miss"}
+  - {priority: 7, name: "Deep freezer/commercial refrigeration capacity 150k->400k", type: "volume", timeframe: "medium (Q1/Q2 FY27)", conviction: "M", confirm_signal: "phase 1 (to 2.5 lakh) completed before next AC season as re-guided", kill_signal: "further deferral beyond Q2 FY27"}
+  - {priority: 8, name: "Washing machine commercialisation", type: "volume", timeframe: "long, deprioritised", conviction: "L", confirm_signal: "reappearance in company commentary with concrete revenue numbers", kill_signal: "continued silence/absence from presentations"}
+guidance:
+  - {item: "FY26 revenue", number: "900-1100cr (baseline) -> revised 800-900cr -> delivered 823cr", timeframe: "FY26", stated_in: "FY25 call -> Q2 FY26 call -> Q4 FY26 call"}
+  - {item: "FY26 EBITDA margin", number: "8.5-9% guided -> 10.4% delivered", timeframe: "FY26", stated_in: "FY25 call -> Q4 FY26 call"}
+  - {item: "FY26 PAT margin", number: "2.5-3% guided -> 1.8% delivered", timeframe: "FY26", stated_in: "FY25 call -> Q4 FY26 call"}
+  - {item: "FY26 CapEx", number: "100-110cr guided -> 130-150cr revised/actual", timeframe: "FY26", stated_in: "Q2 FY26 call -> Q3 FY26 call"}
+  - {item: "FY27 CapEx", number: "compressor 150cr, AC 40-50cr, refrigeration 25-50cr, EMS 25cr (~240-275cr total)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "AC capacity", number: "1mn -> 1.8mn units", timeframe: "FY26->FY27", stated_in: "Q2 FY26 call, reaffirmed Q4 FY26 call"}
+  - {item: "Compressor capacity", number: "2.8mn -> 6mn units (7.5mn earlier floated, trimmed)", timeframe: "FY27", stated_in: "Q3 FY26 call -> Q4 FY26 call"}
+  - {item: "Deep freezer capacity", number: "150k -> 400k units, deferred ~6 months", timeframe: "FY27", stated_in: "Q2 FY26 call -> Q3 FY26 call"}
+  - {item: "EMS capacity", number: "4 lakh -> 8 lakh -> 12 lakh CPH", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue growth", number: "35-40% CAGR on 825cr base (~1100-1155cr), diluted from informal 2000cr target", timeframe: "FY27", stated_in: "Q2 FY26 call reference -> Q4 FY26 call"}
+  - {item: "Compressor FY27 revenue", number: "200cr at ~50% utilisation", timeframe: "FY27", stated_in: "Q2 FY26 call, reaffirmed Q3 FY26 call"}
+  - {item: "Debt/Equity", number: "target <=1x", timeframe: "ongoing", stated_in: "all three FY26 calls"}
+  - {item: "Equity approval", number: "250cr blanket approval, not committed/timed", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Mainboard listing", number: "target end-August 2026 (4th revision)", timeframe: "near-term, repeatedly slipping", stated_in: "FY25 call -> Q2 FY26 call -> Q3 FY26 call -> Q4 FY26 call"}
+  - {item: "ROE", number: "double-digit target for FY26, never revisited", timeframe: "FY26", stated_in: "FY25 call (untested thereafter)"}
+promise_delivery:
+  delivered: 4
+  partial: 5
+  missed: 7
+  rows:
+    - {promised_in: "FY25 call", promise: "FY26 revenue 900-1100cr", outcome: "missed", explanation: "revised down twice before delivering 823cr against a twice-cut range"}
+    - {promised_in: "FY25 call", promise: "FY26 EBITDA margin 8.5-9%", outcome: "delivered", explanation: "10.4% actual, better non-AC mix"}
+    - {promised_in: "FY25 call", promise: "FY26 PAT margin 2.5-3%", outcome: "missed", explanation: "1.8% actual, Ind AS/ROU transition"}
+    - {promised_in: "FY25 call", promise: "Compressor commercial production Q3 FY26", outcome: "delivered", explanation: "on schedule, less than 8 months build"}
+    - {promised_in: "FY25 call", promise: "ROE double-digit next FY (FY26)", outcome: "untested", explanation: "never revisited by management or analysts"}
+    - {promised_in: "Q2 FY26 call", promise: "Deep freezer capacity 150k->400k before end of next FY", outcome: "partial", explanation: "deferred ~6 months, honestly attributed to cash conservation"}
+    - {promised_in: "Q2 FY26 call", promise: "Chennai AC plant commercial production by end of Q4 FY26", outcome: "missed", explanation: "pushed to Q1 FY27, reframed rather than owned as a slip"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 CapEx 100-110cr", outcome: "missed", explanation: "revised to 130-150cr, no specific reason given"}
+    - {promised_in: "Q2 FY26 call", promise: "Voltas AC revenue share falling to 40-60% next year", outcome: "missed", explanation: "reversed to flat-or-growing by Q3 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "ODM transition adds 2-3% margin uplift over time", outcome: "partial", explanation: "not yet realised per Q4 FY26 call, masked by RM volatility"}
+    - {promised_in: "Q2 FY26 call", promise: "Mainboard listing filed by end of Nov-2025, listed in 2-4 months", outcome: "missed", explanation: "still slipping as of Q4 FY26 call (target now end-August 2026)"}
+    - {promised_in: "Q2 FY26 call", promise: "FY27 revenue ~2000cr (Arihant conference reference)", outcome: "missed", explanation: "diluted to ~1100-1155cr by Q4 FY26 call, framed as no revision"}
+    - {promised_in: "Q3 FY26 call", promise: "Compressor expansion to 7.5mn contingent on QCO", outcome: "partial", explanation: "trimmed to 6mn by Q4 FY26 call, reasoned as line-productivity optimisation despite favourable QCO outcome"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 guidance by end of March or April call", outcome: "missed", explanation: "actually delivered in the June-2026 (Q4 FY26) call"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will the mainboard listing complete?", quarters_asked: ["FY25 (baseline)", "Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the FY27 revenue guidance?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+  - {question: "What is your Voltas / top-customer concentration and its trajectory?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "FY26 revenue and EBITDA margin delivered within/above the final (twice-revised) guided range and the compressor launch executed close to original timeline with a favourable QCO resolution; offset by a missed PAT margin, a 30-40% CapEx overshoot, and a genuine multi-quarter dilution/slippage pattern on the two most-repeated questions (mainboard listing, FY27 revenue target) handled via reframing rather than direct ownership."
+peer_questions:
+  - {question: "Are OEM appliance brands (notably Voltas) genuinely expanding in-house AC manufacturing capacity enough to structurally reduce third-party ODM/EMS order flow, or is Tier-2/Tier-3 outsourcing growing fast enough to offset it as VOEPL claims?", why: "VOEPL's AC capacity expansion and Chennai plant bet depend on this assumption holding", check_peers: ["AMBER", "ELIN", "EPACK", "PGEL"]}
+  - {question: "What channel inventory levels and secondary-sales trends are peers reporting for RAC through Q4 FY26/Q1 FY27, and did the BEE table-change disruption resolve on VOEPL's stated timeline (dried up Oct/Nov-2025, rebuilding from Dec-2025)?", why: "VOEPL's strong Q4 FY26 delivery depends on this industry narrative being accurate rather than a one-off channel-fill effect", check_peers: ["AMBER", "EPACK", "PGEL"]}
+  - {question: "What copper/RM cost pass-through magnitude (VOEPL cites ~10-15% industry-wide) and margin resilience are peers reporting for FY26?", why: "Validates whether VOEPL's claim of fully offsetting RM inflation via price hikes is company skill or sector tailwind", check_peers: ["AMBER", "ELIN", "EPACK", "PGEL"]}
+  - {question: "Do peer filings/commentary confirm the QCO reciprocating-compressor 40% import allowance and the two new local competitors VOEPL describes (timelines end-Q3/Q4 FY27 and mid-FY28)?", why: "The compressor growth and margin-improvement thesis is a regulatory-policy bet requiring independent confirmation", check_peers: ["AMBER", "ELIN", "EPACK", "PGEL"]}
+  - {question: "Does the RAC industry volume figure VOEPL cites (~1.5-1.6 crore units CY25/CY26, roughly flat YoY) match what peers report?", why: "This underpins VOEPL's capacity-expansion rationale", check_peers: ["AMBER", "EPACK", "PGEL"]}
+  - {question: "Are peer EMS/appliance manufacturers in a similarly capex-heavy phase showing CapEx overshoots versus original guidance, and how are they funding it?", why: "Tests whether VOEPL's CapEx guidance discipline is weaker than sector norm, relevant given its uncommitted 250cr equity approval", check_peers: ["ELIN", "EPACK"]}
+red_flags:
+  - "Mainboard listing timeline missed in four consecutive calls, over a year of slippage (medium)"
+  - "FY27 revenue target diluted from informal ~2000cr to ~1100-1155cr without being framed as a guidance cut (medium-high)"
+  - "FY26 CapEx overshot original guidance by ~30-40% against an uncommitted 250cr equity approval (medium)"
+  - "FY26 PAT margin guidance missed, attributed to one-off Ind AS/ROU transition (low-medium)"
+  - "Top-customer (Voltas) concentration reduction promise reversed to flat-or-growing (medium)"
+  - "Compressor segment margin remains thin (5-7%) with path to 11-12% fully contingent on backward integration and QCO policy stability (low-medium)"
+  - "Washing machine vertical silently dropped from Q4 FY26 narrative with no status update (low)"
+  - "ROE double-digit promise for FY26 never revisited by management or analysts (low)"
+dropped_triggers:
+  - "Washing machine commercialisation (actively discussed Q2/Q3 FY26 calls, absent from Q4 FY26 call)"
+timeline_slippages:
+  - "Mainboard listing: promised imminent in FY25 call, Q2 FY26 call, Q3 FY26 call, and Q4 FY26 call, now targeting end-August 2026"
+  - "Chennai AC plant commercial production: promised end of Q4 FY26, revised to Q1 FY27"
+  - "Deep freezer capacity 150k->400k: promised before end of FY27 (from Q2 FY26 call framing), deferred ~6 months to Q1/Q2 FY27"
+  - "FY27 guidance disclosure: promised by end of March or the April call (Q3 FY26 call), actually delivered in the June-2026 Q4 FY26 call"

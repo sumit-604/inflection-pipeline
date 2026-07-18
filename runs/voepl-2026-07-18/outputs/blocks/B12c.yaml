@@ -1,0 +1,20 @@
+stage: B12c
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0: {rules_checked: 44, fails: []}
+emoat:
+  rules_checked: 27
+  fails:
+    - "B07 Section 5 scorecard, row H1 (Industry consolidation beneficiary): evidence type labeled 📄 (implies 1.0x) but the 0.7x (🎙️) multiplier was applied, adjusted=0.7. Inconsistent. If corrected to 📄x1.0 -> 1.0, em_score 31.3->31.6 (rounds 31->32), stays in 25-39 STRENGTHENING band; H1 is a non-active Weak category so active_categories unchanged. MINOR."
+valuation: {rules_checked: 0, fails: [], status: "valuation adherence deferred to phase 3 (B10/B11 not produced in phase 1)"}
+recomputed_destination_pe: ""   # concur / out of phase-1 scope
+recomputed_decision: ""         # concur: Gate0 AVOID and B07 TURNAROUND both re-derived and confirmed
+findings:
+  - {severity: MINOR, framework: emoat, location: "B07 Section 5, row H1", claimed: "type 📄, mult 0.7x, adjusted 0.7", recomputed: "type/mult mismatch; 📄->1.0 or 🎙️->0.7 (0.7 likely intended, 📄 label the typo)", note: "+0.3 to em_score if corrected; no band change (STRENGTHENING), no active-category change, no decision impact"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 99             # 70 of 71 phase-1 rules passed (98.6%)

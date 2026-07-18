@@ -1,0 +1,56 @@
+stage: B06-peers
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "ELIN-Concall_Mar_2026_Transcript.txt is mislabeled; its content is Elin's Q4 FY26 call (held 25-May-2026), not a March/Q3 call. Cited throughout as ELIN Q4 FY26 (25-May-2026)."
+flags:
+  - "QCO reciprocating-compressor import allowance: two independent peers (AMBER, EPACK) cite 30%, not the 40% VOEPL claims, both referencing an early-May-2026 government circular."
+  - "BEE table-change disruption timeline mismatch: peers place the real demand air-pocket in Jan-Feb 2026, not Oct/Nov 2025 as VOEPL frames it; December 2025 was a pre-cutoff production/channel-filling surge, not a 'rebuild from a dry period.'"
+  - "'Margin resilience' on RM cost pass-through is not supported by peer FY26/Q4-FY26 results; all peers reporting the period show real margin compression despite lagged pass-through mechanisms."
+  - "CapEx overshoot vs guidance is peer-specific (AMBER only), not sector-wide; ELIN underspent, EPACK tracked plan, PGEL cut guidance and met the lower number."
+peers_provided: 16
+verified:
+  - {claim: "OEM brand in-house AC capacity expansion is not structurally cutting third-party ODM/EMS order flow; Tier-2/3 outsourcing is growing fast enough to offset it", peers: ["AMBER", "EPACK", "PGEL"], anchor_count: 6}
+  - {claim: "Copper/RM cost pass-through magnitude of roughly 10-15% industry-wide in FY26", peers: ["AMBER", "ELIN", "EPACK", "PGEL"], anchor_count: 5}
+partially_verified:
+  - {claim: "BEE table-change disruption resolved on VOEPL's stated timeline (dried up Oct/Nov-2025, rebuilding Dec-2025)", peers: ["AMBER", "EPACK", "PGEL"]}
+  - {claim: "RAC industry volume ~1.5-1.6 crore units CY25/CY26, roughly flat YoY", peers: ["AMBER", "EPACK", "PGEL"]}
+  - {claim: "Peer EMS/appliance makers in a similarly capex-heavy phase showing CapEx overshoots vs guidance", peers: ["AMBER", "ELIN", "EPACK", "PGEL"]}
+contradicted:
+  - {claim: "QCO reciprocating-compressor 40% import allowance to Mar-2027", contradicting_peer: "AMBER and EPACK (independently, same circular)", quote_anchor: "AMBER Q4/FY26 call 18-May-2026: 'government has allowed to import 30% of last year imported volumes'; EPACK Q4 FY26 call 21-May-2026: 'the import has been allowed up to 30%... quantity imported in FY24'"}
+unverifiable:
+  - {claim: "Second new local compressor competitor emerging mid-FY28", peers_checked: ["AMBER", "EPACK", "PGEL"]}
+  - {claim: "Margin resilience (as opposed to pass-through magnitude) on RM cost inflation for FY26", peers_checked: ["AMBER", "ELIN", "EPACK", "PGEL"]}
+peer_coverage_map:
+  - {peer: "AMBER", quarter: "Q2 FY26 (07-Nov-2025)", usage: "SUBSTANTIVE", contribution: "RM pass-through mechanics, RAC industry -30/-35% decline, in-house-vs-outsource framing"}
+  - {peer: "AMBER", quarter: "Q3 FY26 (10-Feb-2026)", usage: "SUBSTANTIVE", contribution: "BEE channel-filling detail, industry volume 15M units, Mitsubishi backward-integration response"}
+  - {peer: "AMBER", quarter: "Q4/FY26 (18-May-2026)", usage: "SUBSTANTIVE", contribution: "QCO 30% import allowance, capex overshoot vs guidance, RM pass-through detail"}
+  - {peer: "AMBER", quarter: "Business update - Oppo JV (20-Jun-2026)", usage: "CITED-ONLY", contribution: "Confirms diversification into mobile-phone assembly; not decisive for RAC claims"}
+  - {peer: "ELIN", quarter: "Q1 FY26 (07-Aug-2025)", usage: "SUBSTANTIVE", contribution: "Outsourcing/backward-integration dynamics for non-RAC appliances, capex baseline"}
+  - {peer: "ELIN", quarter: "Q2 FY26 (10-Nov-2025)", usage: "SUBSTANTIVE", contribution: "RM cost commentary, capex tracking"}
+  - {peer: "ELIN", quarter: "Q3 FY26 (06-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Steel/copper/aluminum RM spike, quarterly-lag pass-through mechanics"}
+  - {peer: "ELIN", quarter: "Q4 FY26 (25-May-2026, filename mislabeled Mar_2026)", usage: "SUBSTANTIVE", contribution: "Major RM/rupee shock, capex underspend, Gulf-conflict risk disclosure"}
+  - {peer: "EPACK", quarter: "Q1 FY26 (21-Jul-2025)", usage: "SUBSTANTIVE", contribution: "Outsourcing % trend, channel inventory baseline, copper-tube customs risk"}
+  - {peer: "EPACK", quarter: "Q2 FY26 (05-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Detailed channel-inventory-by-quarter data, BEE production-cutoff mechanics"}
+  - {peer: "EPACK", quarter: "Q3 FY26 (21-Jan-2026)", usage: "SUBSTANTIVE", contribution: "BEE cost-impact %, 4-4.5M inventory estimate, industry growth outlook"}
+  - {peer: "EPACK", quarter: "Q4 FY26 (21-May-2026)", usage: "SUBSTANTIVE", contribution: "QCO 30% import confirmation, compressor landscape, capex actuals, PLI reversal disclosure"}
+  - {peer: "PGEL", quarter: "Q1 FY26 (08-Aug-2025)", usage: "SUBSTANTIVE", contribution: "Channel-inventory data, insourcing-vs-outsourcing economics, capex guidance cut"}
+  - {peer: "PGEL", quarter: "Q2 FY26 (13-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Channel-inventory update, BEE-driven channel filling, outsourcing debate"}
+  - {peer: "PGEL", quarter: "Q3 FY26 (03-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Channel inventory ~5M estimate, compressor-JV status, market-share context"}
+  - {peer: "PGEL", quarter: "Q4/FY26 (28-May-2026)", usage: "SUBSTANTIVE", contribution: "Compressor own-build plan matching VOEPL's Q4 FY27 timeline, RM pass-through 10-15% direct match, industry volume 13-14M, capex/funding detail"}
+industry_cross_read:
+  demand: "All three RAC-direct peers report a genuinely bad FY26 (early monsoon, GST-cut purchase freeze, BEE disruption), with broad FY27 optimism (12-20% volume growth) off a weak base."
+  pricing_inputs: "Consensus 10-20%+ commodity/currency-driven cost inflation across peers with standard 1-2 quarter lagged pass-through; margins compressed in the shock quarter despite pass-through mechanisms being functional."
+  capex_cycle: "Mixed, not a uniform race - AMBER is a lone aggressive expander diversifying into PCB/electronics/mobile assembly and overshooting guidance; PGEL and ELIN pulled back/delayed capex post-FY26 shock; EPACK tracked plan."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Rupee depreciation (~20% YoY) as a distinct margin risk layered on commodity inflation (PGEL, AMBER, ELIN)"
+  - "Gulf-conflict-linked LPG/logistics disruption costing PGEL an estimated INR420cr of Q4 FY26 revenue"
+  - "Minimum-wage revisions in UP/Haryana (22-35%) and new Labour Code cost impact (AMBER, PGEL, ELIN)"
+  - "PLI terminal-year 'desperation' distorting industry pricing/discounting behavior (PGEL)"
+  - "Compressor JV/localization execution risk - PGEL's China-partner compressor JV collapsed after prolonged approval delays, forcing a slower self-funded pivot"
+  - "Persistent unpredictable Chinese underpricing despite BIS/QCO and rupee depreciation, limiting localization pricing power (ELIN)"
+  - "Counterparty and scheme-compliance risk generic to the ODM model: disputed trade receivable and PLI-income reversal pending government re-verification (EPACK)"
+net_narrative_effect: "complicates"

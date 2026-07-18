@@ -1,0 +1,16 @@
+confidence_delta:
+  numerical_acceptance: 98.8      # B12a: 160 numbers checked, 0 CRITICAL, 0 MAJOR, 2 MINOR (immaterial CAGR rounding)
+  redflag_coverage: 67            # B12b: 15 independent flags found, 10 caught + 3 partial upstream in B05; all 6 verifier findings MINOR (0 CRIT/0 MAJ)
+  framework_adherence: 99         # B12c PHASE-1 SCOPE ONLY: Gate 0 44/44 + Emerging Moat 26/27 (1 MINOR cosmetic); valuation-adherence DEFERRED to phase 3
+  peer_utilisation: 94            # B12d: 15 of 16 provided peer transcripts used substantively (93.75%); on an entity basis all 4 peers (AMBER/ELIN/EPACK/PGEL) are substantive = 100%
+  overall: 67                     # min of the four (bound by redflag_coverage)
+  valuation_adherence: pending    # phase 3 (verifier C 12c valuation half + B10/B11 do not exist yet)
+band: "60-74 (normal-low): PROCEED-family verdicts downgrade one level; not <60 so REWORK is NOT forced on confidence"
+rework_check:
+  verifier_a_critical: 0          # no fabricated/materially-misread figure -> no hard REWORK trigger
+  min_acceptance_rate: 67         # lowest verifier acceptance (B12b) is >= 60 -> no hard REWORK trigger
+  rework_forced: false
+notes:
+  - "redflag_coverage 67 is the binding component; every one of Verifier B's uncaught items is MINOR (EMS unit-metric reconciliation; an in-year compressor-revenue walkdown), and Verifier B concurs the B05 credibility grade B. The material red flags were caught upstream."
+  - "Verifier A ran on the page-marked text extracts (PDF render broken); anti-degradation + severity addendum held: 0 false CRITICALs, gaps (FY26 balance-sheet image-only, pledge access-blocked) correctly treated as NOT FOUND not findings."
+  - "B08 promoter is status: partial (pledge % and full ICRA rationale unsourceable, HTTP 403); B09 status complete, no web skips. Partial-status stages surfaced to synthesis."

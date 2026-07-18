@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "VOEPL"
+run_date: "2026-07-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY26 balance sheet (Total Assets split, Current Liabilities, Trade Payables) NOT FOUND - Q4 FY26 results filing balance sheet pages did not extract as text (image-only); blocks FY26 ROCE, FY26 Current Ratio, FY26 Payable Days / full WC Days"
+  - "Promoter pledge % NOT FOUND - operator SHP source carries no pledge row; not present in any other provided source"
+  - "Peer financials (AMBER/ELIN/EPACK/PGEL) not provided this run - blocks M2, M5, M9, and higher tiers of M6"
+  - "Pre-FY24 (pre-restatement/DRHP) financials not collected this run - history capped at 3 years (FY24-FY26)"
+  - "FY26 contingent liabilities / updated Note 30 not available - no FY26 Annual Report exists yet; E4 uses latest available (FY25 AR + CARO)"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (core 45/100 = AVERAGE band, downgraded one tier by LIMITED 3-year history; independently confirmed by deal-breaker 6: ND/EBITDA 4.00x AND Interest Coverage 1.73x, both FY26). Driving year is FY26 only - FY24 (2.56x/1.71x) and FY25 (2.78x/1.99x) do not independently trigger the leverage/coverage deal-breaker; deterioration concentrated in FY26's Rs143.24 Cr capex year funded by fresh borrowings and equity/warrant proceeds. Concurrent FY26 cash-conversion collapse: CFO/PAT 2.17x (FY25) -> 0.22x (FY26), screener-data. Growth strong (Rev CAGR 24.54%, PAT CAGR 21.57%, both FY24-FY26) and 3 moat tests present (Pricing Power, Capital Efficiency, Customer Stickiness - MODERATE class). Flags propagate; no STOP verdict, decision stays human per pipeline rules."}
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 9, B: 8, C: 18, D: 4, E: 6}
+core_score: 45
+moat_score: 10
+grand_total: 55
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["6: ND/EBITDA 4.00x AND Interest Coverage 1.73x (both FY26) -> AVOID"]
+history_downgrade: true
+data_notes:
+  - "FY26 capex (Rs143.24 Cr) reconstructed from OCR-garbled results-PDF cash flow table via column-order alignment; cross-validated against AR audited FY25 cash flow line items in the same table's comparative column (Trade Receivables -923.15, Inventories -4,770.37, Trade Payables +3,313.90, Capex -12,230.88, Share Warrants +6,026.74, ICD to subsidiary -880.46, closing cash 209.33, all Lakhs - all match AR p.55-56 exactly)"
+  - "A1/A2/A4 (ROCE median/min/trend) computed on FY24-FY25 only (2 of 3 years) - FY26 ROCE NOT FOUND due to missing Current Liabilities; true 3-year figures may differ, especially the minimum and the trend"
+  - "B4 (WC Days change) scored on FY25-vs-FY24, not FY26-vs-FY24, because FY26 Payable Days is NOT FOUND; FY26 Receivable Days alone more than doubled (14.65->32.01 days) - directional color only, not scored"
+  - "D3 (Debt/Equity) computed as Borrowings/(ShareCap+Reserves) from screener-data; differs from AR's own MD&A-disclosed Debt-Equity Ratio (0.61 FY25 matches; 0.94 FY24 does not match computed 0.64) - AR formula not disclosed, not reconciled"
+  - "M3 tested on FY25 (latest complete year), not FY26, since FY26 ROCE is NOT FOUND"
+  - "ROE FY24 uses closing Net Worth only (no FY23 opening figure available), per formula rule, and so stated"
+  - "E4 contingent liabilities combines AR Note 30 (Custom Duty EPCG 6.24 Cr) with the CARO Annexure A disputed-dues table (GST dispute 14.38 Cr, FY2017-18, at GST Commissioner of Appeals) - the CARO figure is not in Note 30 and both are captured per orchestrator instruction"
+  - "M6 R&D/Revenue ~1.20% is a single-year figure (FY25 only, AR Directors' Report) - 'consistently' higher tiers not assessable"
+  - "M11 scored conservatively per instruction: only 3 years available vs 6 required for the two-window test"
+  - "Deal-breaker 5 (pledge) not invoked - pledge % is NOT FOUND, not assumed >15%"
+block_b_trend: "deteriorating - CFO/PAT fell from ~2.17x (FY25) to ~0.22x (FY26), screener-data CFO and PAT rows"

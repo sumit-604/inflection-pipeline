@@ -3,29 +3,46 @@ company: "VOEPL"
 run_date: "2026-07-18"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
-verdict: "PROCEED WITH FLAGS"
+phase: 3-finalize
+gate_verdict: "PROCEED WITH FLAGS"
 verdict_rule_applied: 3
-flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+valuation_decision: "AVOID (on valuation)"
+hurdle_verdict: "STOP"
+destination_pe: {track1_rrm_mid: 14.4, track2_additive_mid: 20.5, trailing: 107.9, governing: "Track 1 RRM"}
+entry_range: {low: 74, high: 86}
+mos_price: 69
+fair_values: {track1: {bear: 114, base: 210, bull: 299}, track2: {bear: 163, base: 299, bull: 426}}
+prob_weighted_cagr_fy30_pct: -20.8
+tier: "A"
+hurdle_pct: 25
+ua_applied: false
+sector_cap_used: 25
+cash_multiplier_used: 0.85
+structural_or_growth: "growth-induced"
+fttcp_composite: 4
+fttcp_band: "DEEP WATCH leaning BUY-ON-DIPS"
+devil_overall: "SURVIVES"
+devil_dimensions: {valuation_safety: destroyed, management_trust: destroyed, growth_triggers: weakened, moat_durability: weakened}
+zone_reachability: "MARKET-UNLIKELY (entry top Rs86 ~59% below lowest tested price Rs211.3; DEEP WATCH not actionable WATCHLIST; Tier B barred and insufficient)"
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "FLAG-EMOAT"]
 flag_promoter_verdict: "CONCERN"
 flag_cash_determination: "GROWTH-INDUCED"
-flag_cash_falsifier: "H1 FY27 CFO/PAT below 0.5x with net working capital days expanding vs FY26 exit"
-flag_gate0: "AVOID 55/160 (core 45, moat 10); sole trigger deal-breaker 6 (ND/EBITDA 4.00x AND interest coverage 1.73x, both FY26)"
-confidence_delta: {numerical: 98.8, redflag: 67, framework: 99, peer: 94, overall: 67}
-confidence_band: "60-74 (downgrade one level; REWORK not forced)"
-valuation_decision: ""      # deferred to phase 3
-entry_range: {low: 0, high: 0}
+flag_cash_falsifier: "H1 FY27 CFO/PAT below 0.5x with net working capital days expanding"
+confidence_delta: {numerical: 98.8, redflag: 67, framework: 96.3, peer: 94, valuation: 95, overall: 67}
+confidence_band: "60-74 (redflag-bound); REWORK not forced (0 CRITICAL, min acceptance 67>=60, framework MAJOR non-decision-determinative)"
 headline: "AC contract maker bets on compressors"
+falsification_metric: "H1 FY27 CFO/PAT below 0.5x with working capital days expanding"
 monitorables_count: 8
 publish_candidate: true
-publish_candidate_summary: "~75% of FY25 pretax profit growth traces to a WDV->SLM depreciation policy change, not operations; deferred to Dhruva Research Public per NEVER rule"
-files_written:
+publish_candidate_summary: "~75% of FY25 PBT growth traces to the WDV-to-SLM depreciation policy change (charge fell Rs806.83L, deferred tax nearly doubled); earnings-quality teardown on a 108x trailing multiple; deferred to Dhruva Research Public per the NEVER rule"
+verifier_c_valuation_major: "Stage 11 used the retired Amendment 4.5 three-anchor ROCE blend (21.72%) vs the governing Recon v3.5.1 Route B 60/40 blend (20.58%); ~0.5x destination-PE overstatement; STOP/AVOID invariant; non-decision-determinative"
+deliverables:
   - "outputs/final/business-narrative.md"
-  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/fttcp-recommendation.md"
   - "outputs/final/verifier-summary.md"
-phase3_handoffs:
-  - "sector_cap_row: manifest 'Agri processing' is a collector defect; confirm Consumer electronics/EMS/durables cap vs Section 1B table at stage 11 (peers AMBER/ELIN/EPACK/PGEL)"
-  - "prospectus (SME-DRHP ~2022) absent: backward baseline ran on FY24-FY26 only (3 restated years, history_downgrade true)"
-  - "promoter pledge % NOT FOUND (BSE/screener 403): re-attempt in phase 3; pledge>40% deal-breaker recorded INDETERMINATE not enforced"
-  - "FLAG-CASH GROWTH-INDUCED rests on ICRA FY25 rationale + capex-year logic; FY26 working-capital balances unconfirmed (Note 37); H1 FY27 CFO/PAT is the falsifier"
-notion_save: "NOT executed in phase 1 (deferred; append-never-overwrite-status at phase 3)"
+  - "outputs/final/fttcp-handoff.md"
+notion_save:
+  page_title: "VOEPL - Virtuoso Optoelectronics - 2026-07-18"
+  summary: "AC contract maker bets on compressors. PROCEED WITH FLAGS (evidence) / AVOID (valuation), Hurdle STOP. Entry Rs74-86, MoS Rs69. Destination PE 14.4x RRM / 20.5x additive vs 107.9x trailing. Prob-weighted 4yr CAGR to FY30 -20.8%. DEEP WATCH not actionable."
+  drive_link: "runs/voepl-2026-07-18"
+  mode: append-never-overwrite-status

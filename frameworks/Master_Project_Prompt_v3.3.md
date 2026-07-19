@@ -354,6 +354,7 @@ The destination PE CANNOT exceed the sector cap regardless of how strong the pil
 | EV charging / energy transition equipment | 28x |
 | Cables / Industrial products | 25x |
 | Recycling / Manufacturing | 25x |
+| Steel — value-added stainless / specialty (durable pricing) | 25x |
 | Logistics (asset-light) | 25x |
 | Cybersecurity / VAD | 25x |
 | Consulting / Engineering services | 25x |
@@ -365,7 +366,7 @@ The destination PE CANNOT exceed the sector cap regardless of how strong the pil
 | Real estate | 20x |
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
-| Steel / Integrated metals (long + flat, ferro-alloys, commodity-cyclical) | 20x |
+| Steel — commodity (long + flat, ferro-alloys, integrated, cyclical) | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 Quality uplift: when UA is triggered AND durability is at least Moderate-Strong with documented evidence, a minimum 25% quality uplift on the sector cap applies. State the uplifted cap explicitly when used.

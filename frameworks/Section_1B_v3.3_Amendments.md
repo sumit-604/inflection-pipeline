@@ -121,20 +121,29 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 | Hospitals / dialysis / healthcare services | 35x |
 | Data centers / cloud infrastructure (capital-heavy) | 30x |
 | EV charging / energy transition equipment | 28x |
+| Steel — value-added stainless / specialty (durable pricing) | 25x |
 | City gas distribution | 22x |
 | Mining / mineral exploration | 20x |
-| Steel / Integrated metals (long + flat, ferro-alloys, commodity-cyclical) | 20x |
+| Steel — commodity (long + flat, ferro-alloys, integrated, cyclical) | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
-**Steel / Integrated metals row added 2026-07-19** (SHYAMMETL run). The table
-previously had no steel row, so the collector auto-picked "Pharma / CDMO" (38x)
-for an integrated steel producer. Cap set at 20x to sit in the commodity-cyclical
-band (Mining 20x neighbourhood; capital-intensive, price-taker, through-cycle
-margin swings), one notch below Building materials 22x, which remains the nearest
-alternative for a business tilted to long steel / downstream value-added. A
-pure high-end stainless or specialty-alloy converter with durable pricing may
-justify the 22x building-materials row instead; use judgement, the cap is the
-ceiling not a target.
+**Steel rows added 2026-07-19** (SHYAMMETL run), split 2026-07-19 into two.
+The table previously had no steel row, so the collector auto-picked "Pharma /
+CDMO" (38x) for an integrated steel producer. Two rows now cover the sector:
+- **Steel — commodity, 20x.** Long + flat carbon steel, ferro-alloys, sponge
+  iron, pellets, integrated producers. Capital-intensive, price-taker,
+  through-cycle margin swings; sits in the commodity-cyclical band (Mining 20x
+  neighbourhood).
+- **Steel — value-added stainless / specialty, 25x.** High-end stainless flat,
+  specialty and SBQ long products, and similar with durable pricing and a
+  differentiated mix; sits in the manufacturing band (Recycling / Manufacturing
+  25x neighbourhood).
+Pick the row that matches the revenue mix that DOMINATES the destination-year
+economics, not the current commodity base, for a company mid mix-shift; where a
+producer is genuinely split, a revenue-weighted blend of the two caps is
+permitted and must be shown on the worksheet. The cap is a ceiling, not a target.
+(SHYAMMETL priced under the 20x commodity row this run: its value-added stainless
+and aluminium are still emerging and 76% of that capex is unexecuted.)
 
 ---
 

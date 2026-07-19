@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 416, high: 468}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "FY27 ROCE print fails to turn up toward the pre-depression band (stays below ~14% while commissioned lines run) for two consecutive prints, OR consolidated finished-goods inventory growth exceeds 2x revenue growth for two straight quarters, OR the ED-PMLA Rs 159.51cr attachment on SSPL crystallizes as a cash outflow or extends to the parent"
+monitoring_checklist:
+  - "FY27 annualized ROCE rising toward 15-16% (red: below 14% or falling for two consecutive prints)"
+  - "Consolidated finished-goods inventory growth below 2x revenue growth (red: above 2x for two straight quarters)"
+  - "Consolidated EBITDA margin sustained at or above 14% (red: reverts below 13%)"
+  - "SHARED CATALYST commissioning on schedule: Aluminium FRP 60kTPA Sep-2026, Wagon Phase-I Sep-2026, DRI 0.5 MTPA by Mar-2027 (red: any slip)"
+  - "ED-PMLA Rs 159.51cr attachment on SSPL resolved with no cash cost and no extension to parent (red: cash outflow or spreads to parent)"
+  - "CPCB Rengali/Sambalpur closure lifted within the 3-month remediation window (red: unresolved or production loss)"
+  - "Standalone CFO/PAT at or above 0.7x after capex taper (red: below 0.7x once capex tapers)"
+  - "FY27 revenue growth above 25% or the 30% guide reconciled to the 15-20% base (red: reverts below 15-20% while guide stays unreconciled)"

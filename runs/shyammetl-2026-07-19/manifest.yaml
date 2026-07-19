@@ -5,5 +5,5 @@ market_cap_cr: 28541.0
 run_date: 2026-07-19
 run_type: full
 concalls_available: true
-sector_cap_row: "Pharma / CDMO"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+sector_cap_row: "Integrated steel / metals (commodity-cyclical, 20x)"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked as 'Pharma / CDMO' (38x) was WRONG for an integrated steel producer; corrected 2026-07-19 to the commodity-cyclical steel band, cap 20x, per outputs/final/fttcp-deliberation.md (operator-confirmed). Section 1B v3.3 has no dedicated steel row; mapped to the 20x commodity-cyclical band (Mining/EPC/Building-materials neighbourhood; Building materials 22x is the nearest alternative)."

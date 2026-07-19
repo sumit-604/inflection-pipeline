@@ -1,0 +1,25 @@
+stage: B12c-valuation
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+scope: "phase-3 valuation-adherence (B11 Role 1 + B14 Role 2); Gate 0 (B01) and Emerging Moat (B07) done in phase 1 (B12c-framework), not re-audited"
+valuation:
+  rules_checked: 43
+  fails:
+    - {rule: "Pillar 3b EM-gated table", severity: "MAJOR", expected: "+3x (EM 30-39/0-12m/mixed; +4x if mostly documented)", applied: "+1x", decision_impact: "none — operator 20x flat supersedes pillar build; HR STOP and AVOID unchanged"}
+    - {rule: "YAML roce_recovery_route label", severity: "MINOR", note: "labels Route B 60/40 blend as 'pillar1-midpoint'; narrative correct"}
+    - {rule: "YAML fair_values track labeling", severity: "MINOR", note: "track1/track2 both show applied-20x values 867/913/1006, not track-specific (RRM 680/717/790; additive 802/845/931); body correct"}
+    - {rule: "forward-basis horizon labeling", severity: "MINOR", note: "20x on FY27E (1yr-fwd) EPS treated as Year-3 target in 4C/thesis; operator-directed, conservative, decision unaffected"}
+recomputed_destination_pe: "applied 20x — concur (unchanged). Self-derived additive 18.5x understated -> 20.5x (cap 20x) if 3b credited at EM-gated +3x; does not flow to applied destination or decision."
+recomputed_decision: "concur AVOID"
+findings:
+  - {severity: "MAJOR", location: "B11 Pillar 3b / worksheet", description: "3b credited +1x vs EM-gated +3x (EM 30-39/catalyst 0-12m/mixed evidence); conservative under-credit carried from deliberation; corrects additive to 20.5x cap 20x; no change to applied 20x destination, HR STOP, or AVOID"}
+  - {severity: "MINOR", location: "B11 YAML pillar_detail.roce_recovery_route", description: "'pillar1-midpoint' mislabels the Route B 40-60% 60/40 current/anchor blend; narrative correct"}
+  - {severity: "MINOR", location: "B11 YAML fair_values.track1/track2", description: "both keys hold the applied-20x values, not the track-specific RRM/additive fair values shown correctly in the report body; downstream YAML consumers would be misled; decision unaffected"}
+  - {severity: "MINOR", location: "B11 Section 4C / B14 Section 5", description: "20x applied to FY27E (one-year-forward) EPS but used as a 3-year target and divided by the 3-year hurdle divisor; operator-directed forward basis, conservative, does not change AVOID"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 91
+coverage_note: "Audited B11 Pillars 1-3 + Strategic + UA + sector cap + RRM dual-track + Hurdle Ratio + entry/MoS/4D + operator-override application, and B14 decision rules + position sizing + entry conjunction. Decision AVOID and applied destination 20x confirmed; the single MAJOR is a superseded-pillar-build under-credit with zero decision impact."

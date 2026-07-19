@@ -1,0 +1,54 @@
+stage: B11-valuation
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "FY27E EPS not quantified by management; derived from FY26 EPS 38.70 x stated growth (base 18% = historical PAT CAGR); bear 12% / bull 30%"
+  - "Pre-cycle ROCE median ~20% is operator-authoritative (FY18-21 band); only FY18 23.4% firmly anchored in B10; 20% capped below the one evidenced print; Route B applied per ruling"
+  - "Peer comparables for stainless/aluminium/nickel absent; EV/EBITDA and P/B cross-checks use sector norms and company book only"
+  - "3-year PAT CAGR requires FY23 (not extracted); base growth anchored on 2-yr PAT CAGR 17.96% and 3-yr revenue CAGR 22.12%"
+flags:
+  - "FLAG-CASH: cash conversion GROWTH-INDUCED (not INDETERMINATE); Pillar 2 multiplier applied 1.0x provisional per operator; consolidated CFO/PAT ~1.9x, FY26 FCF -613.68cr from capex"
+  - "SHARED CATALYST YES: capex commissioning schedule drives BOTH Pillar 1 ROCE recovery and Pillar 3a growth premium; single point of failure; Role 3 stress test required"
+  - "OPERATOR 20x EXCEEDS COMPUTED TRACKS: applied destination 20x > additive 18.5x and RRM 15.7x; operator elected sector-cap ceiling; valued on 20x per override rule; HR STOPS even at 20x and harder on both self-derived tracks"
+  - "Hurdle Ratio STOP: base 1.24, bull 1.66, both < 1.953; 25% CAGR infeasible even on bull earnings; stock above bull fair value"
+  - "Gate 0 AVOID (Core 34/100) and Promoter CONCERN (live ED-PMLA attachment on SSPL Rs 159.51cr 15-Apr-2026; CPCB Rengali closure) each independently force AVOID"
+  - "FY27 guidance escalated unreconciled (Q2/Q3 15-20% CAGR vs Q4 ~30% FY27-only); base discounts to grade-B reality"
+  - "Route B self-withdrawal: if FY27 ROCE print does not turn up by Mar-2027 +1 quarter, pre-cycle anchor withdrawn and Pillar 1 reverts to statutory ROCE"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "20x flat (operator-approved sector-cap ceiling; commodity-cyclical integrated steel; manifest Pharma/CDMO 38x overridden)"
+destination_pe:
+  track1_rrm: {low: 14.5, mid: 15.7, high: 17.0, r_used: 14.75, rrm: 0.85}
+  track2_additive: {low: 17.0, mid: 18.5, high: 20.0}
+  divergence_pct: 15.1
+  governing_track: "RRM more conservative and fits a governance-flagged commodity cyclical; but operator-approved 20x (above both tracks) is authoritative and applied to fair values"
+pillar_detail:
+  roce_used: 15.93
+  roce_base: 15.5
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "B-pre-cycle"
+  cash_multiplier: 1.0
+  structural_or_growth: "growth-induced"
+  growth_offset: 0
+  growth_premium: 3
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20
+hurdle_ratio: {base: 1.24, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 867, base: 913, bull: 1006}
+  track2: {bear: 867, base: 913, bull: 1006}
+expected_cagr_prob_weighted: -3.3
+entry_range: {low: 416, high: 468}
+mos_price: 374
+upside_downside_ratio: 0.7
+decision: "AVOID (on valuation and governance; CMP above bull fair value, Hurdle Ratio STOP, Gate 0 AVOID, Promoter CONCERN)"
+unresolved_inputs_used:
+  - "FY27E EPS: conservative base growth 18% (historical PAT CAGR) applied to FY26 EPS 38.70; per Section 2A base rule (lower of discounted guidance or historical CAGR)"
+  - "Pre-cycle ROCE anchor 20%: operator-authoritative FY18-21 median, capped below the single evidenced print FY18 23.4%; Route B applied per ruling"
+  - "CoE/r 14.75%: mid-cap base 13% + governance 1.25% + durability 0.5% for RRM track"
+som_cagr_crosscheck: "justified excess — base ~18% EPS maps to ~16-18% revenue vs SOM-implied 14.8% (3yr); justified by actual 22.12% historical revenue CAGR and near-term commissioning; flagged as above bottom-up SOM; base does not rely on aggressive stainless ramp"
+one_line_thesis: "Avoid SHYAMMETL at Rs 1,022: even at operator-approved 20x forward (above the 18.5x additive / 15.7x RRM pillar build), FY27E EPS ~45.67 gives fair value ~913 (bull ~1,006), all below CMP; expected CAGR -3.3%, Hurdle Ratio STOP; SHARED CATALYST commissioning drives both ROCE and growth; cash growth-induced (1.0x)."

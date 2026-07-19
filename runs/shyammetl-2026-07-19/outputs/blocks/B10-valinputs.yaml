@@ -1,0 +1,92 @@
+stage: B10-valinputs
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "FY27E EPS (forward earnings basis for 20x exit PE application) — not quantified by management, must be derived by stage 11 from FY26 PAT + guidance assumptions"
+  - "CWIP & Idle Capital quantum as % of capital employed — needed to determine Pillar 1 normalization route (Route A vs B); balance sheet shows CWIP 106.47cr at Mar-26 (~0.85% of CE 12,527.88cr, so Route A >20% test FAILS); Route B candidate under RECOVERING verdict"
+  - "Peer Financial Comparables (P/E, EV/EBITDA, P/B, Growth, ROCE) for stainless, aluminium, nickel sectors — provided peer set (GPIL, JAIBALAJI, SARDAEN, GALLANTT) has zero coverage of Shyam's forward growth segments"
+  - "Three-year PAT CAGR — requires FY23 PAT data (9-year series exists in screener per B01, not extracted to B10)"
+  - "Contingent liabilities reconciliation — AR discrepancies (subsidy +/-15.33cr, electricity duty +/-5.00cr) and CPCB Rengali remediation cost quantum unanchored"
+flags:
+  - "SHARED CATALYST flag YES (capex commissioning drives both Pillar 1 ROCE recovery and Pillar 3a growth premium) — Role 3 stress test required; single point of failure"
+  - "Gate 0 AVOID classification (Core Score 34/100) driven partly by data absence (shareholding, contingents) — recommend re-test once shareholding available; genuine ROCE/margin/FCF deterioration underneath"
+  - "Promoter FLAG-CONCERN: live ED-PMLA provisional attachment on subsidiary SSPL (Rs 159.51cr, coal-mining investigation, 15-Apr-2026) unresolved; CPCB Rengali closure (Apr 2026) with 3-month remediation window pending"
+  - "FY27 revenue guidance escalated unreconciled: Q2/Q3 repeatedly guided 15-20% CAGR, Q4 FY26 call raised to ~30% for FY27 only without reconciliation to medium-term guidance"
+  - "Sector cap row OVERRIDE: manifest 'Pharma / CDMO' 38x rejected; operator approved 20x (commodity-cyclical integrated steel) per fttcp-deliberation — do NOT carry manifest row"
+  - "76% of capex (Rs 10,617cr of Rs 13,902cr) unexecuted with commissioning dates stretching to Mar/Sep-2029 against B05-graded B credibility record"
+table:
+  company_identity:
+    sector_cap_row: "20x (operator confirmed; overrides manifest 38x)"
+    cmp: "1022 (manifest)"
+    market_cap_cr: "28541 (manifest)"
+    shares_outstanding_diluted_cr: "27.92 (from FY26 diluted EPS 38.70 and PAT owners 1070.24, audited results Q4 FY26)"
+    enterprise_value_cr: "28520.61 (mcap 28541 + net cash -20.39, audited balance sheet results Q4 FY26)"
+  latest_financials_fy26_consolidated:
+    revenue_from_operations_cr: "18552.21 (audited consol P&L year ended 31-Mar-26, results Q4 FY26 p.10)"
+    ebitda_cr: "2536.65 (audited consol P&L, results Q4 FY26 p.10)"
+    pat_owners_cr: "1070.24 (audited consol P&L, results Q4 FY26 p.10)"
+    cfo_cr: "2023.56 (audited consol cash flow, results Q4 FY26 p.12)"
+    capex_ppe_intangibles_cr: "2637.24 (audited consol cash flow, results Q4 FY26 p.12)"
+    fcf_cr: "-613.68 (CFO 2023.56 minus capex 2637.24)"
+    diluted_eps: "38.70 (audited consol P&L, results Q4 FY26 p.10, line 17b)"
+    cwip_cr: "106.47 (Mar-26; vs 71.62 Mar-25; ~0.85% of capital employed -> Route A denominator-fix test FAILS)"
+    total_equity_excl_nci_cr: "11244.52 (audited consol balance sheet 31-Mar-26, results Q4 FY26 p.11)"
+    ebitda_margin_pct: "13.67"
+    roce_latest_pct: "13.21 (B12a verified)"
+    interest_coverage_x: "8.61 (B12a verified)"
+    current_ratio: "0.997 (B01)"
+    cfo_pat_latest: "1.89 (2023.56 / 1070.24)"
+    cfo_pat_cumulative_9yr: "1.35 (B01)"
+    net_debt_position: "Net cash -20.39cr (B12a audited balance sheet)"
+  fy25_comparatives:
+    revenue_fy25_cr: "15137.50"
+    ebitda_fy25_cr: "2096.16"
+    pat_fy25_cr: "908.10"
+  growth_metrics:
+    revenue_cagr_3yr_pct: "22.12 (B01, 9-yr screener FY18-26)"
+    revenue_growth_yoy_fy26_pct: "22.59"
+    guided_revenue_growth: "15-20% CAGR over 2-3 years (escalated to ~30% FY27 only, Q4 call unreconciled, B05)"
+  management_track_record:
+    credibility_grade: "B (B05)"
+  emerging_moat_analysis:
+    em_score: "30 (B07)"
+    em_classification: "STRENGTHENING (combined TURNAROUND)"
+    capex_embedded_growth_pct: "150 (B07)"
+  tam_som_runway:
+    som_5yr_cr: "33815 (B09)"
+    som_implied_cagr_5yr_pct: "12.7 (B09)"
+    mgmt_fy31e_revenue_target_cr: "42500 (B09, ~18% CAGR, above bottom-up SOM 12.7%)"
+    capacity_gap_alert: "Gap Rs 8500cr between bottom-up 5yr SOM 33815 and mgmt FY31E 42500; flagged stage 11 revenue-assumption cross-check"
+  rating_agency:
+    agency: "CRISIL"
+    long_term_rating: "AA+ / Stable (upgraded from AA/Positive)"
+    short_term_rating: "A1+"
+    date_issued: "November 05, 2025 (ratings.pdf p.1)"
+  fttcp_pillar_inputs_authoritative:
+    pillar_1_roce_forward_verdict: "RECOVERING at 40-60% probability over 12 months (fttcp-deliberation, sole authority)"
+    pillar_1_normalization_route: "Route A FAILS (CWIP 106.47cr ~0.85% of CE, well under 20%). Route B candidate: pre-cycle normalized ~20% capped at evidenced level, unwind catalyst = commissioning schedule, blended 60/40 current/anchor per RECOVERING 40-60%. Stage 11 confirms."
+    roce_recovery_credited_via: "Pillar 1 only; Strategic Premium ROCE route BARRED (single credit)"
+    pillar_2_cash_multiplier: "1.0x provisional growth-induced (superseded by flat 20x exit election; recorded for audit trail)"
+    pillar_3_growth_moat_premium: "~+3x: 3a +2x (capex-embedded growth 150%, grade B); 3b +1x (EM 30 STRENGTHENING); 3c 0x. Within +6x cap."
+    strategic_premium: "0x"
+    undiscovered_alpha_multiplier: "NOT APPLIED (FII+DII ~16.7% > 3% ceiling)"
+    return_hurdle_tier: "Tier A 25% (FII+DII>3% would allow Tier B but promoter CONCERN fails Tier B quality gate)"
+    sector_cap_row: "20x flat operator confirmed (manifest 38x OVERRIDDEN)"
+    approved_exit_pe_base: "20x FLAT (operator elects sector-cap ceiling over computed 17.7x additive / 15-16x RRM; single flat multiple, both computed tracks superseded)"
+    earnings_basis: "FORWARD one-year-forward FY27E EPS (operator ruling; fits cyclical mid-ramp)"
+    shared_catalyst_flag: "YES (capex commissioning drives BOTH Pillar 1 ROCE and Pillar 3a; Role 3 stress test)"
+  fttcp_verdict_summary:
+    composite_transition_score: "5 out of 8 BUY-candidate band"
+    disposition: "Constructive transitions, cautious position; small sizing, strict entry"
+    honest_consequence: "Even at 20x forward, hurdle tight: FY26 EPS 38.5-38.7, FY27E at 25-30% ~48-50, 20x -> fair value ~960-1000, around/below CMP 1022"
+  data_quality:
+    b12a_acceptance_rate_pct: "77"
+    source_fidelity_gate: "HELD; zero fabrications; all Gate-0 verdict-card inputs clean"
+    accounting_quality_score: "5/10 (B02)"
+    gate_0_classification: "AVOID Core 34/100 (partly data-gap artifact; genuine deterioration underneath)"
+conflicts: []
+rating_wc_quote: "Working capital management has been prudent. The group sells mainly on advance/letter of credit basis, leading to low receivables of 15-30 days. Inventory, at 70-90 days, mainly comprises raw materials. While the group does not have captive iron ore mines, its proximity to raw material sources and setting up of railway siding gives it access to iron ore at competitive rates because of lower logistics cost, thereby supporting profitability. (CRISIL Rating Rationale dated November 05, 2025, p.2, Key Rating Drivers Strengths section)"
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: false, all_met: false}
+credibility_grade: "B"

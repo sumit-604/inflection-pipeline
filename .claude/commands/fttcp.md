@@ -215,6 +215,24 @@ short handoff-to-valuation block (ROCE forward verdict, the Pillar 1 ROCE it
 implies, the credit route, the sector cap row Phase 3 must use, and any SHARED
 CATALYST flag for the devil's advocate).
 
+5. **THE P/E BASE CARD (for operator approval).** A plain preview of the exit
+   multiple the valuation will use, computed from Section 1B off the inputs known
+   now (this is a preview for the operator to approve, NOT the final valuation —
+   Role 1 still runs the full dual-track exercise in Phase 3). Show:
+   - Pillar 1: the ROCE used and the v3.5.1 normalization route (none / A / B) →
+     the base PE the continuous formula produces.
+   - Pillar 2: the cash multiplier (structural / growth-induced / INDETERMINATE).
+   - Pillar 3: the growth / emerging-moat premium.
+   - Strategic premium, Undiscovered Alpha, and the sector cap.
+   - The resulting DESTINATION (exit) PE on BOTH tracks (RRM and additive), each
+     anchored to its Section 1B line.
+   - THE EARNINGS-BASIS QUESTION, stated plainly for the operator to decide:
+     one-year-forward P/E (multiple applied to forward EPS) versus trailing P/E
+     (applied to trailing EPS), with a one-line note on which fits this business
+     and why. Do not pick it yourself; it is the operator's call at the gate.
+   Anchor every number. If a pillar input is genuinely not yet determinable,
+   mark it NOT FOUND and say the card is provisional on that input.
+
 ## CROSS-FAMILY GRADE (independent, grader-only)
 
 After the draft file is written and before you commit, run the cross-family
@@ -265,6 +283,26 @@ Record every override the moment it happens: what the draft said, what the
 operator ruled, and the operator's stated reasoning in the operator's words.
 Keep answering and recording until the operator signs off.
 
+## VALUATION PILLAR APPROVAL (mandatory operator gate — do not skip)
+
+Before sign-off, and after any figures the operator questioned are settled,
+present THE P/E BASE CARD and get the operator's explicit approval of the exit
+multiple base. This is the critical gate: the whole valuation inherits this
+base, so a wrong P/E here wastes the entire Phase 3 exercise. The operator does
+two things here, and you wait for both:
+
+1. APPROVE OR ADJUST the destination (exit) PE base. If the operator disagrees
+   with the PE, brainstorm it here — walk the pillar inputs, take the operator's
+   ruling and reasoning in their words, and recompute the card. Repeat until the
+   operator approves a base. Never proceed on a PE the operator has not approved.
+2. CHOOSE THE EARNINGS BASIS: one-year-forward P/E or trailing P/E. Record the
+   choice and the operator's one-line reason.
+
+This is the one place this command asks the operator to decide the valuation
+base; it is in the review phase, after the draft, so the no-questions-before-the-
+draft rule is not touched. Do not compute Phase 3 fair values here and do not
+run Role 1; this gate only fixes and approves the base the valuation must use.
+
 ## SIGN-OFF — write the deliberation file
 
 When the operator signs off, write outputs/final/fttcp-deliberation.md. It
@@ -279,9 +317,17 @@ carries:
   violation, and how the operator resolved any grader divergence (or "cross-family
   check did not run" if it was skipped). It informs the record; it never
   overrides the operator's verdict.
+- An OPERATOR-APPROVED VALUATION PILLARS block (authoritative for Phase 3). It
+  carries: the approved pillar inputs (Pillar 1 ROCE + v3.5.1 route, Pillar 2
+  cash multiplier, Pillar 3 premium, strategic premium, UA, sector cap), the
+  approved destination (exit) PE base on both tracks, the chosen earnings basis
+  (FORWARD or TRAILING) with the operator's one-line reason, and any operator
+  adjustment to the PE with its reasoning quoted. Phase 3 (stage 11) MUST use
+  this approved base and basis; it may not silently derive a different exit PE.
 Follow the CLAUDE.md STYLE rules for any prose. This file is what /finalize
 requires before Phase 3 can run; it does not exist until the operator signs
-off, so do not write it early.
+off, so do not write it early. The OPERATOR-APPROVED VALUATION PILLARS block is
+mandatory in it — /finalize refuses to run the valuation without it.
 
 Commit the deliberation file and push (same retry policy). Append one dated
 line to LESSONS.md per the MEMORY rule: what broke or dragged this session, or
@@ -295,6 +341,9 @@ line to LESSONS.md per the MEMORY rule: what broke or dragged this session, or
   the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.
+- Never sign off without the operator's explicit approval of the destination PE
+  base and the earnings basis (forward or trailing) at the VALUATION PILLAR
+  APPROVAL gate. Never pick the earnings basis yourself.
 - Never loop the deliberation past 8 iterations; force report-out per the
   DELIBERATION CAP and flag any call still open.
 - Never expose this session's reasoning to a verifier. Any verifier or grader of

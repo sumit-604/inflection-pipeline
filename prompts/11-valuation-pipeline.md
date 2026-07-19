@@ -38,6 +38,14 @@ mode:
 
 - Section 1B v3.3 is the SOLE exit multiple authority. No exit PE from
   any other source, no round-number defaults.
+- OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
+  the destination (exit) PE base and the earnings basis (FORWARD or TRAILING)
+  were approved by the operator at the FTTCP pillar-approval gate. Use that
+  approved exit PE base; apply the destination PE on the approved basis — a
+  one-year-forward multiple applies to forward EPS, a trailing multiple to
+  trailing EPS. Do not silently derive a different exit PE. If your independent
+  Section 1B derivation diverges from the approved base, REPORT the divergence
+  plainly but value on the approved base; do not overwrite the operator's call.
 - DUAL TRACK, both carried through ALL fair values, entry prices, and
   the verdict card: Track 1 (RRM) and Track 2 (additive Four-Pillar).
   Where they diverge >15%, state which track fits this company and why;
@@ -102,6 +110,8 @@ input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
 framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
+exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
   track1_rrm: {low: 0, mid: 0, high: 0, r_used: 0, rrm: 0}
   track2_additive: {low: 0, mid: 0, high: 0}

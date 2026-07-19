@@ -33,18 +33,30 @@ PHASE 3 turns the phase-1 evidence and the phase-2 deliberation into the
 final investment decision: valuation, thesis, devil's advocate, valuation
 verification, final synthesis, and the Notion save payload.
 
-## GATE: DELIBERATION MUST EXIST
+## GATE: DELIBERATION AND APPROVED PILLARS MUST EXIST
 
 Before anything else, check that outputs/final/fttcp-deliberation.md
-exists in the run folder. If it does NOT, REFUSE to start and tell the
-operator:
+exists in the run folder AND that it contains an OPERATOR-APPROVED
+VALUATION PILLARS block (the approved destination PE base on both tracks
+and the chosen earnings basis, forward or trailing). If the file is
+missing, REFUSE to start and tell the operator:
 
   "Cannot finalize: outputs/final/fttcp-deliberation.md is missing. Run
   /fttcp runs/<folder> first (PHASE 2 deliberation), then re-run
   /finalize."
 
-Do not run any stage until that file is present. Once it is present,
-proceed AUTONOMOUSLY through every step below in one run, no stops.
+If the file exists but the OPERATOR-APPROVED VALUATION PILLARS block is
+missing (or the earnings basis is unset), REFUSE and tell the operator:
+
+  "Cannot finalize: the operator has not approved the valuation P/E base.
+  Re-open /fttcp runs/<folder>, complete the VALUATION PILLAR APPROVAL
+  gate (approve the exit PE base and choose forward vs trailing), then
+  re-run /finalize."
+
+Running the valuation on an unapproved P/E base wastes the whole exercise;
+this gate is as hard as the deliberation gate. Do not run any stage until
+both are present. Once they are, proceed AUTONOMOUSLY through every step
+below in one run, no stops.
 
 Read prompts/00-orchestrator.md now (PHASES section and the rule that
 FTTCP deliberation conclusions supersede pipeline determinations in
@@ -61,6 +73,11 @@ phase 3), then:
        ROCE selection),
      - the cash-conversion structural / growth-induced determination as
        the operator confirmed or overrode it,
+     - the OPERATOR-APPROVED VALUATION PILLARS block: the approved
+       destination (exit) PE base on both tracks and the chosen earnings
+       basis (forward or trailing). These are authoritative; carry them
+       onto B10 so stage 11 uses the approved base and applies the
+       multiple on the approved basis.
      - every recorded operator override.
    Where any of these conflict with a value the pipeline assembled
    earlier, the deliberation value wins and the assembly must anchor it to

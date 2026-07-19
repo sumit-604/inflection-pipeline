@@ -1,9 +1,11 @@
-# Verifier Disagreement Log — SHYAMMETL 2026-07-19 (Phase 1)
+# Verifier Disagreement Log — SHYAMMETL 2026-07-19
 
 Every point where a downstream/other-family read conflicted with a Verifier A
 (Haiku, out-of-family) source-fidelity finding, and how it resolved. Haiku is
 the sole authority on whether a number exists in the source; clearances below
 were established by Verifier A re-reading the source PDF at the correct anchor.
+
+## Phase 1
 
 | Date | Run | Number/claim | Verifier A verdict + anchor | Downstream step + its position | Disposition | Note |
 |---|---|---|---|---|---|---|
@@ -17,4 +19,8 @@ were established by Verifier A re-reading the source PDF at the correct anchor.
 | 2026-07-19 | shyammetl-2026-07-19 | SSPL entity share-in-consol-profit 722.34->417.15cr (Note 47) | Recheck2: ANCHOR NOT FOUND — Note 47 table located (AR PDF p.298-302) but SSPL row not legible in extraction | B02 (two sonnet passes) + B03 independently sourced these figures | UNRESOLVED — rendering/legibility limit named per run-log rule; carry as source-supported-but-verifier-unconfirmed; re-read at phase 3 | Not a fabrication; three sonnet reads agree |
 | 2026-07-19 | shyammetl-2026-07-19 | B08 ED PMLA attachment 159.51cr; CPCB Rengali closure | UNANCHORED (no filing PDF in inputs) | B08 sourced via web (MEDIA-REPORTED) + operator context | GATE HELD as-designed — remain caveated MEDIA-REPORTED flags, not anchored figures; corroborated by Q4 FY26 concall ED-coal-notice deflection (B05) | announcements/ folder empty this run; expected UNANCHORED |
 
-**Summary:** 4 flags CLEARED by source re-check (false absences from the verifier not opening the AR on pass 1); 4 figures CORRECTED at source (CARO 11->10, RP receivables 78.1->77.77%, raw-material 72->73.68%, cross-holding % 65->35.18); 1 UNRESOLVED rendering-limit (SSPL Note 47 profit, source-supported); expected UNANCHORED web items retained as caveated. Zero fabrications. No verdict-card / Section 1B pillar input affected. Source-fidelity gate HELD.
+**Phase 1 summary:** 4 flags CLEARED by source re-check (false absences from the verifier not opening the AR on pass 1); 4 figures CORRECTED at source (CARO 11->10, RP receivables 78.1->77.77%, raw-material 72->73.68%, cross-holding % 65->35.18); 1 UNRESOLVED rendering-limit (SSPL Note 47 profit, source-supported); expected UNANCHORED web items retained as caveated. Zero fabrications. No verdict-card / Section 1B pillar input affected. Source-fidelity gate HELD.
+
+## Phase 3
+
+phase 3: none. Phase 3 produced no new Verifier A source-fidelity findings. The phase-3 verifier work was Verifier C valuation-adherence (B12c-valuation) on B11 Role 1 and B14 Role 2; a valuation-adherence finding is not a source-fidelity finding and does not belong in this log. The one carry-forward item from phase 1, the SSPL Note 47 entity profit (722.34->417.15cr), was scheduled for phase-3 re-read but remained rendering-limited (source-supported, three sonnet reads agree); no Verifier A re-adjudication occurred that would create a new disagreement row. No downstream phase-3 step leaned on or attempted to keep a figure Verifier A had flagged.

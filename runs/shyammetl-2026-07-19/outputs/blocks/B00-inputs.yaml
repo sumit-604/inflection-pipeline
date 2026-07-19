@@ -1,0 +1,45 @@
+stage: B00-inputs
+company: SHYAMMETL
+company_name: Shyam Metalics & Energy Ltd
+run_date: 2026-07-19
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+listed_note: "Listed ~June 2021 (>3y before run_date); long-listed, prospectus not expected."
+
+inventory:
+  prospectus: ABSENT          # not a gap (long-listed)
+  annual_report: 1            # Annual_Report_2023.pdf is actually FY2024-25 (cover letter Aug 4 2025); filename mislabeled
+  results: 2                  # 518b=Q4/FY26 (yr ended 31-Mar-2026); c8a0=Q3/9M FY26 (ended 31-Dec-2025)
+  rating: 1                   # ratings.pdf (9pp)
+  concalls: 4                 # using 3 most recent per contract
+  peer_concalls: 12           # GPIL x4, JAIBALAJI x4, SARDAEN x4, GALLANTT x1
+  announcements: ABSENT
+  shareholding: ABSENT
+  research: 3                 # broker notes filed under presentation/: Front Wave, ICICI Sec q3fy26 review, ICICI Sec 24-Dec-2025 (NON-ANCHORED)
+  screening: 6_sets           # screener (main co) + GALLANTT/GPIL/JAIBALAJI/SARDAEN peers
+  presentation: 1             # Investor_Presentation_1.pdf (60pp company deck); other 3 pres/ PDFs are broker notes (research)
+  other: ABSENT
+
+concall_quarter_map:          # oldest first, 3 most recent used
+  - {file: inputs/concalls/Concall_Nov_2025_Transcript.pdf, quarter: "Q2 FY26", call_date: "2025-11-13"}
+  - {file: inputs/concalls/Concall_Jan_2026_Transcript.pdf, quarter: "Q3 FY26", call_date: "2026-01-30"}
+  - {file: inputs/concalls/Concall_May_2026_Transcript.pdf, quarter: "Q4 FY26", call_date: "2026-05-12"}
+  excluded_older: inputs/concalls/Concall_Jul_2025_Transcript.pdf  # Q1 FY26, dropped (contract: 3 most recent)
+
+input_gaps:
+  - {type: prospectus, severity: none, note: "Long-listed (~2021); prospectus not expected, not a gap."}
+  - {type: announcements, severity: medium, note: "No Reg 30 filings folder. Stages 5/7/8 lose the documented-ACTION record; intent-and-action cross-check runs on concall/AR only. Stage 8 relies on web search. Operator pasted a 6-month operational/capex log in chat, carried as NON-ANCHORED operator context."}
+  - {type: shareholding, severity: medium, note: "No SHP filing. UA institutional-absence qualifier cannot be affirmed (deferred to phase 3 stage 11; UA withheld). Promoter/pledge trend falls back to AR/last-known with staleness noted. Operator pasted a SHP table (Sep-2023 to Jun-2026) in chat, NON-ANCHORED operator context."}
+  - {type: research, severity: none, note: "3 broker notes present (Front Wave, ICICI Sec) but NON-ANCHORED; leads and mgmt-intent cross-check only."}
+
+manifest_errors:
+  - field: sector_cap_row
+    manifest_value: "Pharma / CDMO"
+    problem: "WRONG. Shyam Metalics is integrated steel / ferro-alloys / stainless / aluminium. Manifest note flags 'verify'. Does NOT affect phase-1 evidence; MUST be corrected to the correct steel Section 1B sector row before /finalize (phase-3 valuation exit-PE selection depends on it)."
+
+operator_context_file: runs/shyammetl-2026-07-19/inputs/_operator_context.md
+operator_context_status: "NON-ANCHORED. Weighed as leads/company-memory only; every reported number still anchors to a source PDF in inputs/."
+
+flags: []

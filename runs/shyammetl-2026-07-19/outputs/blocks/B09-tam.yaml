@@ -1,0 +1,47 @@
+stage: B09-tam
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: partial
+current_annual_revenue_cr: 18552.21   # FY26 consolidated Revenue from Operations, results 518b...pdf
+input_gaps:
+  - "peer FY26 revenue figures for Method 3 aggregation (Rashmi Metaliks, Sarda Energy, Jai Balaji, Godawari Power, Jindal Stainless)"
+  - "precise long-vs-flat steel product split for India finished steel consumption (used a directional 50-55% analyst estimate)"
+  - "unorganised-sector % for India long steel / ferro alloys (commonly cited 30-40% in trade press, no single AR-anchored figure found)"
+  - "current market P/E multiple for SHYAMMETL (needed for Section 5E valuation-implication sentence, not supplied to stage 9)"
+  - "India rolling-stock and EV-battery-foil market sizing (would refine SAM-expansion illustrative figure in 5D)"
+flags:
+  - "No explicit management TAM claim found in AR/IR-Day extracts; used FY31E revenue roadmap (Rs42,500cr) as the only quantified forward claim for the mgmt_claim test - not a like-for-like TAM comparison"
+  - "Long-vs-flat steel product-scope split (50-55% assumed) for Method 1 top-down TAM is a directional analyst estimate, not directly sourced - flagged LOW-MEDIUM confidence"
+  - "Bottom-up 5yr SOM (Rs33,815cr, 12.7% CAGR) is below management's own FY31E revenue target (Rs42,500cr, 18% CAGR) by ~Rs8,500-8,700cr / ~5pp CAGR, concentrated almost entirely in the stainless steel segment's aggressive volume ramp (94,102t FY26 -> 699,733t FY31E target vs 0.6 MTPA nameplate SS finishing capacity) - flagged for stage 11 cross-check of revenue growth assumptions"
+  - "Method 3 peer revenue aggregation not completed this run (no company-by-company FY26 financials pulled) - retained as qualitative cross-check only, LOW confidence"
+  - "IR Day deck shows an internal capacity-figure inconsistency: 11.6 MTPA on the 'Rising Force' competitor-comparison slide (pg55) vs 16.78 MTPA cited elsewhere in the same deck as FY26 installed capacity (pg15) - not resolved this run"
+  - "USD/INR rate used for third-party market-value conversions (aluminium foil, stainless steel) was ~96.4 (18-Jul-2026 spot); using the FY26 average of ~93.3 instead would lower converted figures by ~3%"
+market_definition: "Indian carbon steel (long+flat), stainless steel, ferro alloys, and aluminium foil/FRP markets addressable by Shyam's current and committed product portfolio"
+tam_cr: {conservative: 424060, realistic: 484690}
+sam_cr: 381654
+sam_pct_of_tam: 90.0
+som_3yr_cr: 28090
+som_5yr_cr: 33815
+som_implied_revenue_cagr: {yr3: 14.8, yr5: 12.7}
+current_sam_share_pct: 4.86
+revenue_headroom_x: 20.6
+tam_growth_pct: 7
+runway_class: "STRONG"
+mgmt_claim_cr: 42500
+mgmt_claim_ratio: 0.10
+mgmt_claim_read: "conservative"
+capacity_check: "gap of ~Rs 8,500 Cr between bottom-up 5yr SOM (Rs33,815cr) and management's FY31E revenue target (Rs42,500cr); management's plan is the more optimistic side, concentrated in the stainless steel volume ramp (94,102t FY26 sales -> 699,733t FY31E target vs 0.6 MTPA nameplate SS finishing capacity) - flagged for stage 11"
+methods_used:
+  - "top-down (industry volume x Shyam's own realization, with product-fit subtractions)"
+  - "bottom-up (addressable-unit x penetration, full-penetration ceiling and disciplined variants)"
+  - "peer aggregation (qualitative cross-check only - data gap)"
+  - "import substitution (directional growth-driver signal, non-additive to TAM)"
+  - "global per-capita benchmark (forward-looking FY30-31 context, not blended into current-year TAM)"
+stale_data_flags:
+  - {datapoint: "National Steel Policy 2017 target (300MT capacity, 158-160kg per capita by 2030-31)", source: "steel.gov.in / PIB, cited via AR FY24-25 footnote", year: 2017}
+  - {datapoint: "India DRI producer capacity ranking (Shyam #5 nationally at 2.71 MTPA)", source: "web search aggregation of industry trackers", year: 2024}
+searches_skipped:
+  - "peer-by-peer FY26 revenue pull for Rashmi Metaliks / Sarda Energy / Jai Balaji / Godawari Power / Jindal Stainless (Method 3 aggregation) - skipped due to scope of a single-pass web-search run"
+  - "India rolling-stock / wagon-manufacturing market size and India EV-battery-foil market size - not pulled this run"
+  - "current market P/E multiple for SHYAMMETL - not pulled, out of stage-9 TAM/SAM/SOM scope"

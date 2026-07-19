@@ -1,0 +1,20 @@
+stage: confidence-delta
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 77      # B12a reconciled (24 clean / 31 distinct numbers). Verdict-card / Gate-0 Block A-D inputs all clean; corrections were red-flag texture figures only. Initial 64.3% was depressed by 8 false ANCHOR-NOT-FOUND (verifier had not opened AR/IP on pass 1); rechecks cleared 5, corrected 3.
+  redflag_coverage: 69          # B12b: 11 of 16 independently-found concall red flags already caught upstream (2 more partially). No CRITICAL; 1 MAJOR miss (Q4 margin earnings-quality caveat).
+  framework_adherence: 96       # B12c PHASE-1 SCOPE (Gate 0 + Emerging Moat only): AVOID and STRENGTHENING/TURNAROUND both re-derived exactly; 5 MINOR, 0 CRITICAL/MAJOR. Valuation-adherence component PENDING PHASE 3.
+  peer_utilisation: 75          # B12d: 3 of 4 peers used substantively (JAIBALAJI correctly cited-only, 0 of its calls intersect the questions). 1 MAJOR misattribution in B06 risk section (fact real, wrong peer).
+  overall: 69                   # min of the four
+  band: "60-74: normal-minus. PROCEED-family verdicts downgrade one level. Not < 60, so NOT forced REWORK on delta grounds."
+  valuation_framework_adherence: "PENDING PHASE 3 (B10/B11 not built in phase 1)"
+source_fidelity_gate: "HELD. One CRITICAL Verifier-A MISMATCH (CARO count 11->10) corrected at source with auditable per-entity anchor; it is a non-verdict-card red-flag count, so the correct-at-source remedy resolves it and it does not escalate to REWORK. Zero fabrications. All Gate-0 verdict-card / Section 1B pillar inputs verified clean. Full episode logged in verifier-disagreement-log.md."
+rework_triggers_checked:
+  critical_numerical_finding: "1 present (CARO 11->10), but it is a non-verdict-card off-by-one corrected at source per the gate's own remedy; conclusion unchanged. Not treated as a materially-misread verdict-driving figure."
+  acceptance_below_60: "No — reconciled numerical_acceptance 77%, all other components >= 69%."
+  verdict: "No forced REWORK. Gate recommendation formed on evidence merits, downgraded one level per the 60-74 band."
+notes:
+  - "B08 status partial (some promoter searches 403-blocked); B09 status partial (Method 3 peer aggregation skipped). Both surfaced in the gate recommendation."
+  - "manifest.sector_cap_row 'Pharma / CDMO' is wrong (steel company); must be corrected before phase-3 valuation. Does not affect phase-1 confidence."

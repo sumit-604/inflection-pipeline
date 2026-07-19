@@ -1,0 +1,27 @@
+stage: B13-synthesis
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+phase: 1
+mode: lite
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 77, redflag: 69, framework: 96, peer: 75, overall: 69}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Integrated steel expander mid transition, core still deteriorating"
+falsification_metric: "Q1 FY27 consolidated PAT falls year on year again despite higher revenue, confirming the SSPL led core decline is structural not a capex cycle trough"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - runs/shyammetl-2026-07-19/outputs/final/business-narrative.md
+  - runs/shyammetl-2026-07-19/outputs/final/gate-recommendation.md
+  - runs/shyammetl-2026-07-19/outputs/final/verifier-summary.md
+phase3_carryforward:
+  - "manifest.sector_cap_row 'Pharma / CDMO' must be corrected to a steel Section 1B row before valuation"
+  - "CRISIL AA+ (Stable) verbatim working-capital rationale to be pulled from ratings.pdf for the handoff (not extracted into a phase-1 block; not fabricated)"
+  - "Verifier C valuation-adherence audit (B10/B11) deferred to phase 3"
+  - "SSPL Note 47 entity profit (722.34->417.15cr) to be re-read at correct anchor (AR extraction legibility limit this run)"

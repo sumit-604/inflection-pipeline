@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/announcements/ empty this run — F2 execution-moat and capex-completion evidence drawn from AR + concall transcripts only, not cross-checked against Reg 30 exchange filings"
+  - "AR file is titled 'Annual_Report_2023.pdf' but is actually the FY2024-25 Annual Report; anchored to the fiscal year printed on the document, not the filename"
+  - "No patent/IP pipeline disclosure found anywhere in AR/concalls/presentation (A2 = NO EVIDENCE FOUND)"
+  - "No customer concentration (top 5/10 share) or formal qualification-lock-in certification (IATF/AS9100/NADCAP/cGMP) disclosure found (B2, C2 = NOT FOUND / NO EVIDENCE FOUND)"
+  - "HR mill/CSP thin-slab technology partner named only as 'world's #1 conglomerate supplying Nucor' in the Q3 FY26 concall; specific counterparty not disclosed in any run input"
+flags:
+  - "PLI stainless-steel benefit (management-estimated 400-500cr over 5 years, Q2 FY26 concall) reported dropped per injected B05 record — a previously tracked R1 optionality has already lapsed negative, not merely unconverted"
+  - "CPCB closure directions (13-Apr-2026) against pellet, ferro-alloy and power plant units at Rengali/Sambalpur for pollution non-compliance — active regulatory/ESG risk, relief granted with a 3-month remediation window"
+  - "Three non-reconcilable capex totals appear across sources (9,360cr new-approvals-only per B01/B05; 9,425cr IPO-era programme per Q2 FY26 concall; 13,902cr consolidated per Investor Day 17-Jun-2026) — the 13,902cr figure is used as the single consolidated figure below because it is the most current and most granular, but the scopes are not identical and should not be summed"
+em_score: 30
+em_classification: "STRENGTHENING"
+consolidated_capex_for_tam: {budgeted_cr: 13902, incurred_cr: 3285, pending_cr: 10617, anchor: "Investor Day deck 17-Jun-2026, Inv. Pres. p.29-33"}
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Strong", evidence_type: "documented", time_to_materialise: "already realised/ongoing"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-36 months (phased)"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "already realised"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Strong", evidence_type: "documented", time_to_materialise: "already realised"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing/12-36 months"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24 months"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24 months"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already realised (partly)"}
+  - {id: "R1", name: "Regulatory/policy tailwinds", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "mixed (active now, sustainability uncertain)"}
+evidence_mix: {documented: 19, claim: 10, inference: 6}
+completionist_recount: "19 documented items across 7 categories (A3, B1, G1, G2, H1, H2, F2) — below the 12-category red flag; excess above the 3-6 base rate is concentrated in one company (four independently named global technology partners under H2 is genuinely unusual, not claim-inflated); F2 and H1 held at Moderate to avoid over-crediting partial/claim-heavy evidence"
+catalysts_12m:
+  - {catalyst: "Aluminium FRP plant (60,000 TPA) commercial launch", window: "end-Sep-2026", evidence_type: "documented", anchor: "Inv. Pres. p.23 (17-Jun-2026 Investor Day)"}
+  - {catalyst: "Wagon plant Phase-I (2,400 wagons/yr) commissioning at Kharagpur", window: "Sep-2026", evidence_type: "documented", anchor: "Inv. Pres. p.26"}
+  - {catalyst: "DRI 0.5 MTPA commissioning", window: "during FY27 (by Mar-2027)", evidence_type: "claim", anchor: "operator context, cross-checked against DRI capacity table Inv. Pres. p.34-35"}
+  - {catalyst: "CPCB Rengali/Sambalpur compliance resolution (pellet, ferro-alloy, power plant units)", window: "~3 months from 13-Apr-2026 directive", evidence_type: "documented (regulatory action)", anchor: "operator context 6-month operational log"}
+  - {catalyst: "Aluminium segment EBITDA/tonne mix-driven margin ramp", window: "FY27", evidence_type: "claim", anchor: "operator context; per-tonne realisation trend Inv. Pres. p.40"}
+capex_embedded_growth_pct: 150
+optionality_register:
+  - {optionality: "Battery-grade aluminium foil commercial qualification (2-3 customers under NDA)", converting_evidence: "Signed supply agreement or disclosed battery-foil revenue line/volume", first_appears: "Concall disclosure of named customer/segment, or exchange filing", window: "12-24 months"}
+  - {optionality: "GoI stainless-steel-in-highway-bridges demand mandate translating into order wins", converting_evidence: "Disclosed order book/contract win tied to infrastructure stainless demand", first_appears: "Exchange filing (Reg 30 order announcement) or concall order-book commentary", window: "12-24 months"}
+  - {optionality: "Hot Strip Mill/CSP thin-slab technology partner (named only as 'world's #1 conglomerate supplying Nucor')", converting_evidence: "Named technology licensor plus definitive technology transfer/licensing agreement", first_appears: "Next AR, or exchange filing at financial closure of the HR mill project", window: "6-18 months"}
+  - {optionality: "Proprietary data/AI-enabled quality asset (SAP S/4HANA + IoT + predictive maintenance)", converting_evidence: "Quantified yield/defect-rate improvement or ML model deployment metric disclosed", first_appears: "Next AR 'R&D' or 'Quality Assurance' section", window: "24-36 months"}
+  - {optionality: "ESG rating sustained improving trajectory (currently mid-tier, 50-63.7 across four different agencies in one 5-month window)", converting_evidence: "A single agency's rating tracked over 2+ consecutive review cycles showing sustained upward trend", first_appears: "Next CRISIL/NSE/SES ESG rating update, or AR ESG section", window: "12-24 months"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 AVOID (grand_total 41, flagged partly a data-gap artifact but with genuine ROCE/margin/FCF deterioration underneath) paired with Emerging Moat STRENGTHENING (score ~30, anchored in backward integration, net-cash balance sheet, and four named global technology partnerships) is the transition-alpha pattern this operation hunts, one notch below the clean GOOD/AVERAGE-plus-EXPANSION setup — genuine and evidenced but not yet confirmed, with 76% of the consolidated capex programme still unexecuted and commissioning dates stretching to FY29."
+top_moat_risks:
+  - "76% of consolidated capex (10,617cr of 13,902cr) is unexecuted with commissioning dates stretching to Mar/Sep-2029, against a B05-graded B promise-delivery record with a dropped PLI benefit and unreconciled FY27 guidance jump"
+  - "Balance-sheet strength (net cash, WC discipline) is funding the transition but sits alongside genuinely deteriorating core profitability (ROCE 23%->13% FY18-26, EBITDA margin 20.85%->13.67%, FCF -613.68cr FY26) per Gate 0 — cash cushion could erode faster than the transition delivers if new capacity ramps slower than guided"
+  - "Technology-transfer/absorption risk on new-to-scale partnerships (Danieli stainless mill, Achenbach/battery foil) not yet proven at commercial volumes"
+  - "CPCB closure action already hit one plant cluster (Rengali) for pollution non-compliance in Apr-2026 — recurrence risk to the H3 ESG narrative and to operational continuity"
+  - "Safeguard duty (12%, provisional) underpinning R1 regulatory tailwind could lapse or be renegotiated; PLI stainless benefit already lapsed once"

@@ -1,0 +1,30 @@
+stage: B12c
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+phase: 1
+gate0:
+  rules_checked: 46
+  fails:
+    - {id: "GA-1", severity: "MINOR", location: "B01 Formula Notes / Block A", description: "ROCE computed from proxy Capital Employed (Equity+Reserves+Borrowings) instead of framework formula TA-CL or source ROCE, for FY18-24 where CL split is absent. Documented, cross-checked within 1.9-3.1% of audited; no band or score change."}
+emoat:
+  rules_checked: 44
+  fails:
+    - {id: "EM-1", severity: "MINOR", location: "B07 Section 5 scorecard (H1, R1)", description: "Blended 0.85x evidence multiplier applied; framework taxonomy specifies only 1.0/0.7/0.5. Non-directional, immaterial; STRENGTHENING unaffected."}
+    - {id: "EM-2", severity: "MINOR", location: "B07 Section 3 summary vs Section 5 (A4, C1, F1)", description: "Summary table classifies evidence as documented but scorecard applies 0.5x inference multiplier. Conservative (understates), does not inflate score or breach completionist guard; no classification change."}
+    - {id: "EM-3", severity: "MINOR", location: "B07 Section 3 count statement", description: "Active-category count stated inconsistently (headline '8 of 21', reconciliation '5+4=9', YAML lists 10). Correct count is 5 Strong + 5 Moderate = 10 per YAML; prose is muddled. Presentational; em_score 30 unaffected."}
+valuation: {status: "pending phase 3", rules_checked: 0, fails: []}
+recomputed_destination_pe: ""   # pending phase 3 (valuation not audited this run)
+recomputed_decision: ""          # concur: Gate 0 AVOID and EM STRENGTHENING / combined TURNAROUND re-derived and confirmed
+findings:
+  - {severity: "MINOR", location: "B01 Block A / Formula Notes", description: "ROCE proxy CE deviation from formula-as-written; data-justified, no score change (GA-1)"}
+  - {severity: "MINOR", location: "B01 Block F M10/M12", description: "FY26 Trade Receivables 904.59 identical to FY26 cash figure 904.59; possible transcription collision, routed to Verifier A (number-existence domain); M10 scoring logic holds regardless (GA-2 advisory)"}
+  - {severity: "MINOR", location: "B07 Section 5 (H1, R1)", description: "Unsanctioned 0.85x blended multiplier (EM-1)"}
+  - {severity: "MINOR", location: "B07 Section 3 vs 5 (A4, C1, F1)", description: "Evidence-type vs multiplier inconsistency, conservative direction (EM-2)"}
+  - {severity: "MINOR", location: "B07 Section 3 count", description: "Active-category count stated inconsistently; correct count 10 per YAML (EM-3)"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 96             # (90 rules checked - 4 rule fails) / 90, Gate 0 + EM scope; GA-2 is a Verifier-A-domain advisory, not a framework-rule fail
+scope_note: "Phase 1 scope: Gate 0 (B01) + Emerging Moat (B07) only. Valuation (B11/B10) audit deferred to phase 3; those artifacts do not exist this run."

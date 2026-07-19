@@ -1,0 +1,26 @@
+stage: B12d
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2E, risks-peers-raise (high-grade iron ore import dependency)", claimed: "SARDAEN Q3 FY26 notes Indian iron ore imports reached a seven-year high of 12+ MT, 'highlighting robust consumption trend' (implicit in GPIL's May 2026 call, p.4-5)", source_truth: "The quote, verbatim including 'highlighting robust consumption trend,' is explicit in GPIL Q4 FY26 (May 20, 2026), Page 5 of 23. It does not appear anywhere in the SARDAEN Q3 FY26 transcript (12 pages, read in full).", note: "Misattribution: primary source is GPIL (explicit), not SARDAEN (absent); GPIL's role is inverted from primary to 'implicit' secondary."}
+  - {severity: "MINOR", location: "B06 Q1 evidence, GPIL Q1 FY26 citation", claimed: "p.5", source_truth: "Page 4 of 21", note: "Quote verbatim and accurate; page off by one."}
+  - {severity: "MINOR", location: "B06 Q2 evidence, GPIL Q1 FY26 citation", claimed: "p.5", source_truth: "Page 4 of 21", note: "Quote verbatim and accurate; page off by one."}
+  - {severity: "MINOR", location: "B06 Q1 evidence, GPIL Q3 FY26 citation", claimed: "p.4", source_truth: "Page 5 of 19", note: "Quote verbatim and accurate; page off by one."}
+  - {severity: "MINOR", location: "B06 Q2 evidence, GPIL Q3 FY26 citation", claimed: "p.4", source_truth: "Page 5 of 19", note: "Quote verbatim and accurate; page off by one."}
+  - {severity: "MINOR", location: "B06 Q6 evidence, GALLANTT Q4 FY26 citation", claimed: "p.6, p.9", source_truth: "p.7 and p.9 (p.6 has no capex figure)", note: "One of two page anchors off by one; the other correct."}
+  - {severity: "MINOR", location: "B06 Q2 evidence, SARDAEN Q3 FY26 citation", claimed: "p.3", source_truth: "Passage spans Page 3 into Page 4 of 12", note: "Content accurate; anchor covers only the first half of a two-page quote."}
+  - {severity: "MINOR", location: "B06 Q2 evidence, SARDAEN Q4 FY25 citation", claimed: "no page number given, only '(outlook, forward-looking at that point)'", source_truth: "Page 5 of 20", note: "Content accurate and locatable; anchor omitted entirely."}
+critical_count: 0
+major_count: 1
+minor_count: 7
+acceptance_rate: 75
+peer_utilisation: "3 of 4 peers used substantively (GPIL, SARDAEN, GALLANTT); JAIBALAJI correctly cited-only (0 of 4 of its calls intersect the peer_questions)"
+peer_utilisation_pct: 75

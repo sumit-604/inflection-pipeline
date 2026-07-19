@@ -29,7 +29,7 @@ AVOID as of 2026-07-19 (CMP Rs 1,022). Entry zone Rs 416-468, MoS Rs 374 (Tier A
 - ESG rating sustained improving trajectory → converts on a single agency tracked over 2+ consecutive review cycles trending up, window 12-24 months.
 
 ## NOTES CARRIED FORWARD
-- manifest.sector_cap_row corrected 2026-07-19 to "Integrated steel / metals (commodity-cyclical, 20x)". A dedicated "Steel / Integrated metals" 20x row was added to the Section 1B cap table (Master v3.3 table + Amendment 8), so future runs resolve it directly. Upstream: collect_to_repo.py sector auto-pick still needs a steel guard.
+- manifest.sector_cap_row corrected 2026-07-19 to "Integrated steel / metals (commodity-cyclical, 20x)". The Section 1B cap table (Master v3.3 + Amendment 8) now carries two steel rows: "Steel — commodity" 20x and "Steel — value-added stainless / specialty" 25x. SHYAMMETL priced under the 20x commodity row this run (value-added stainless/aluminium still emerging, 76% of that capex unexecuted); revisit toward the 25x row only if the destination-year mix is dominated by value-added stainless/specialty. Upstream: collect_to_repo.py sector auto-pick still needs a steel guard.
 - FTTCP cross-family grade did not run this cycle (no Gemini/GPT key); FTTCP confidence taken one notch lower.
 - inputs/announcements/ and inputs/shareholding/ were empty this run; UA/pledge trend non-anchored, Step 2E limited. B08 and B09 closed partial.
 - Source-fidelity gate HELD; Verifier-A corrections applied (CARO 10 of 13; promoter cross-holding 35.18%; standalone RP receivables 726.53cr/77.77%; FY26 raw-material 73.68%).

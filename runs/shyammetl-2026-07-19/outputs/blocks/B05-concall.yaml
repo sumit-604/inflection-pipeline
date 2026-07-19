@@ -1,0 +1,83 @@
+stage: B05-concall
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/announcements/ is empty this run — no Reg 30 filings available to confirm 90 MW captive power plant commissioning status, the ED coal notice substance, or actual FY26 Mittal Corp revenue vs the INR1,500-2,000cr guidance; promise/delivery cross-check performed on transcripts alone per instructions"
+flags:
+  - "Quarter map call dates (13-Nov-2025, 30-Jan-2026) conflict with transcript internal dates (10-Nov-2025, 27-Jan-2026); transcript dates trusted, quarter attribution unaffected"
+  - "Q4 FY26 call: transcript states stainless steel capacity expansion at Sambalpur as '6 million tonnes,' inconsistent with operator context's 0.6 MTPA — likely verbal/transcription error, needs filing verification"
+  - "Management fully deflected on the Q4 FY26 ED coal notice ('you should meet me separately') — unresolved regulatory/legal question with no corroborating filing this run"
+  - "FY27 growth guidance raised to ~30% (Q4 FY26 call) from the previously reiterated 15-20% band (Q2 and Q3 FY26 calls), unreconciled"
+  - "90 MW captive power plant, guided for Q4 FY26 commissioning in both Q2 and Q3 FY26 calls, was never explicitly confirmed as commissioned in the Q4 FY26 call"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Aluminium FRP + foil ramp (Sambalpur/Pakuria)", type: "VOLUME/PRICE-MIX", timeframe: "near-medium", conviction: "M-H", confirm_signal: "FY27 aluminium EBITDA/tonne lands in guided INR35,000-40,000 range; oversold demand condition persists", kill_signal: "Commissioning delays beyond FY27; EBITDA/tonne well below guided range"}
+  - {priority: 2, name: "CRM Phase II Jamuria ramp (color-coated/CR coil)", type: "VOLUME", timeframe: "near-term", conviction: "H", confirm_signal: "CR coil volume growth trajectory sustains into FY27", kill_signal: "Volume growth stalls; guided doubling of color-coated volume not achieved"}
+  - {priority: 3, name: "Safeguard duty / pricing discipline", type: "REGULATORY-POLICY", timeframe: "near-term", conviction: "M", confirm_signal: "Price hikes stick, Q1 FY27 margin holds above 14%", kill_signal: "Duty diluted or reversed; price hikes fail to hold"}
+  - {priority: 4, name: "Stainless flat product, Odisha/Sambalpur expansion", type: "VOLUME/PRICE-MIX", timeframe: "long-term (Mar-2029)", conviction: "L-M", confirm_signal: "Filing confirms actual capacity figure; on-schedule progress updates", kill_signal: "Further slippage; capacity figure remains unreconciled or overstated"}
+  - {priority: 5, name: "FY27 growth guidance (~30%)", type: "SECTORAL", timeframe: "near-term", conviction: "L-M", confirm_signal: "Q1 FY27 results show growth above 25%", kill_signal: "Growth reverts to the previously guided 15-20% band or below"}
+  - {priority: 6, name: "DRI 0.5 MTPA", type: "VOLUME", timeframe: "medium-term (FY27)", conviction: "M", confirm_signal: "Commissioning confirmed within FY27", kill_signal: "Delay past FY27"}
+  - {priority: 7, name: "PLI scheme benefit, stainless/specialty steel", type: "REGULATORY-POLICY", timeframe: "long-term", conviction: "L", confirm_signal: "Re-emerges in disclosure with specific quantification", kill_signal: "Continued silence in subsequent calls / scheme lapses"}
+  - {priority: 8, name: "Wagon manufacturing plant, Kharagpur", type: "INORGANIC", timeframe: "long-term", conviction: "L", confirm_signal: "Phase 1 commissioning confirmed by target date", kill_signal: "Project shelved or no further disclosure"}
+  - {priority: 9, name: "90 MW captive power plant", type: "COST", timeframe: "near-term", conviction: "M", confirm_signal: "Explicit commissioning confirmation in FY27 disclosures/filings", kill_signal: "Continued silence or further delay confirmed"}
+  - {priority: 10, name: "Hot-rolling mill, Bengal (1.6 MTPA)", type: "VOLUME", timeframe: "long-term", conviction: "M", confirm_signal: "On-schedule capex disclosure each quarter", kill_signal: "Delay or cost overrun versus stated ~INR5,000cr"}
+guidance:
+  - {item: "Total capex plan (post DI-pipe drop)", number: "INR9,425 cr", timeframe: "cumulative since IPO", stated_in: "Q2 FY26 call"}
+  - {item: "PLI stainless/specialty benefit estimate", number: "INR400-500 cr", timeframe: "over 5 years, unconfirmed", stated_in: "Q2 FY26 call"}
+  - {item: "Revenue/EBITDA growth guidance", number: "15-20% avg; margin +200-300 bps", timeframe: "next 2-3 years", stated_in: "Q2 FY26 call"}
+  - {item: "Mittal Corp (stainless) FY26 revenue target", number: "INR1,500-2,000 cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "New board-approved capex", number: "INR6,660 cr", timeframe: "FY27-FY29", stated_in: "Q3 FY26 call"}
+  - {item: "Q4 FY26 margin improvement", number: "~10-20% relative to Q3 FY26", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "New board-approved capex", number: "INR2,700 cr (wire/bar mill INR900cr + stainless expansion INR1,800cr)", timeframe: "FY27-FY29", stated_in: "Q4 FY26 call"}
+  - {item: "Stainless expansion capacity (Sambalpur)", number: "6 million tonnes per transcript, likely error vs 0.6 MTPA per operator context", timeframe: "commission March 2029", stated_in: "Q4 FY26 call"}
+  - {item: "DRI capacity", number: "0.5 MTPA", timeframe: "commission FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 growth guidance", number: "close to 30%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Total remaining capex (post INR2,700cr)", number: "~INR10,000 cr; FY27 ~INR2,900-3,000 cr", timeframe: "next several years", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 6
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "Ramsarup 0.45 MTPA blast furnace, revenue from Dec 2025", outcome: "Delivered", explanation: "Q3 FY26 call confirms commissioning and start of commercial production"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "0.15 MTPA CRM Phase II (color-coated) commissioning, Q4 FY26", outcome: "Delivered", explanation: "Q4 FY26 call confirms CRM Jamuria Phase 2 commissioned; CR coil volume +200% YoY"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 margin improvement ~10-20% relative to Q3", outcome: "Delivered", explanation: "Q4 FY26 EBITDA margin 14.4% vs Q3 FY26 ~12.2%"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "90 MW captive power plant commissioning, Q4 FY26", outcome: "Partial/Unconfirmed", explanation: "No explicit confirmation of completion in Q4 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "Flat/stainless steel line commissioning 'maybe year 26/27'", outcome: "Partial/Slipped", explanation: "Q4 FY26 call sets formal target of March 2029, unreconciled with earlier informal date"}
+    - {promised_in: "Q2 FY26 call", promise: "DI pipe capex redirected to a named replacement project", outcome: "Partial", explanation: "No concrete replacement project named across Q3 or Q4 FY26 calls"}
+    - {promised_in: "Q2 FY26 call", promise: "Mittal Corp FY26 revenue target INR1,500-2,000 cr", outcome: "Unconfirmed", explanation: "Q4 FY26 call does not restate or confirm actual FY26 Mittal Corp revenue"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "Revenue/EBITDA growth guidance 15-20% CAGR", outcome: "Partial/Escalated", explanation: "Q4 FY26 call raises FY27 guidance to ~30% without reconciling the jump"}
+    - {promised_in: "Q3 FY26 call", promise: "Remaining capex ~INR7,500-8,000 cr over 3 years", outcome: "Partial/Inconsistent", explanation: "Q4 FY26 call restates as ~INR10,000 cr after new tranche, no cumulative reconciliation given"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "PLI stainless/specialty benefit, INR400-500 cr over 5 years", outcome: "Dropped", explanation: "Q3 FY26 pushes timeline out; Q4 FY26 makes no mention at all"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "Parallel flange beam line expansion", outcome: "Dropped", explanation: "Q3 FY26 hedges heavily; Q4 FY26 zero mention"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Why not take on more leverage to improve ROE given AA+ rating headroom and low leverage?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the status/timeline of the parallel flange beam project?", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "deflected every time, then dropped from discussion entirely by Q4 FY26"}
+credibility_grade: "B"
+credibility_basis: "Core capex milestones (Ramsarup blast furnace, CRM Phase II) were delivered on the exact quarter promised with disciplined capex-tracking disclosure every call, but the PLI-stainless and flange-beam triggers went silent, the 90 MW captive power plant's commissioning was never explicitly confirmed, and management deflected substantively on the Q4 FY26 ED coal notice and the unreconciled FY27 growth-guidance escalation."
+peer_questions:
+  - {question: "Is Indian steel demand genuinely tracking to management's cited ~11-12 million tonnes/year incremental demand (7-8% GDP-linked) and India's 300 MT production target?", why: "Underpins the entire volume-growth thesis and the FY27 ~30% growth guidance", check_peers: ["JSW Steel", "Tata Steel", "SAIL", "Jindal Steel & Power"]}
+  - {question: "Has the steel-import safeguard duty produced sustained sector-wide price/margin improvement from Q4 FY26 onward, or is Shyam's Q4 FY26 margin jump company-specific?", why: "Determines whether Q4 FY26 margin expansion is durable and systemic or a one-off", check_peers: ["JSW Steel", "SAIL", "Jindal Steel & Power"]}
+  - {question: "Is the ~20% nickel price rise since December 2025 (Indonesia supply cuts) corroborated, and how are stainless peers passing it through?", why: "Tests Shyam's claim that nickel cost is generally passed on and margin protected", check_peers: ["Jindal Stainless", "Jindal Stainless Hisar"]}
+  - {question: "Will Shyam Metalics be genuinely cost-competitive against Jindal Stainless once its Odisha/Sambalpur flat stainless capacity commissions (now guided March 2029)?", why: "This is the central multi-year capital-allocation bet in the stainless segment", check_peers: ["Jindal Stainless"]}
+  - {question: "Is the aluminium foil/FRP 'oversold' demand condition industry-wide, or specific to Shyam's defense/specialty-foil niche?", why: "Tests durability of pricing power and the implied market-share-gain claim", check_peers: ["Hindalco", "other aluminium foil/downstream players"]}
+  - {question: "Is Shyam's claimed HR-mill capex efficiency internally consistent, or does it risk understatement/cost overrun?", why: "Capex efficiency is central to the low-leverage growth story", check_peers: ["NMDC Steel", "JSW Steel", "AMNS India"]}
+  - {question: "What is the actual status and substance of the ED (Enforcement Directorate) notice on coal referenced in the Q4 FY26 call?", why: "Management fully deflected on the call; no Reg 30 filing available this run to corroborate", check_peers: ["other Bengal/Odisha steel or coal-linked companies potentially named in the same action"]}
+red_flags:
+  - "90 MW captive power plant commissioning never explicitly confirmed in the Q4 FY26 call despite being guided for that exact quarter across two prior calls (Medium severity)"
+  - "ED coal notice (Q4 FY26) fully deflected by management with no corroborating filing this run (Medium-High severity)"
+  - "Transcript states Sambalpur stainless expansion capacity as '6 million tonnes,' inconsistent with operator context's 0.6 MTPA (Medium, data-quality)"
+  - "FY27 growth guidance raised to ~30% from a repeatedly reiterated 15-20% band, unreconciled (Medium severity)"
+  - "PLI stainless benefit and parallel flange beam project both quantified/discussed then dropped without explanation (Low-Medium severity)"
+  - "Capex-remaining figures inconsistent across calls, not reconciled cumulatively (Low severity)"
+  - "Management declines to elaborate on West Bengal political-change topic despite raising it proactively (Low severity)"
+dropped_triggers:
+  - "PLI scheme benefit for stainless/specialty steel — quantified in Q2 FY26, stalled in Q3 FY26, absent entirely from the Q4 FY26 call"
+  - "Parallel flange beam line expansion — mentioned Q2 FY26, hedged/downgraded in Q3 FY26, absent from the Q4 FY26 call"
+  - "Wagon manufacturing plant — announced with detail in Q3 FY26, no mention at all in the Q4 FY26 call despite being part of the INR6,660cr package"
+timeline_slippages:
+  - "90 MW captive power plant — guided for Q4 FY26 commissioning in both Q2 FY26 and Q3 FY26 calls; Q4 FY26 call gives no explicit confirmation of completion"
+  - "Stainless steel flat/downstream expansion — Q2 FY26 informally guided '2026-27'; Q4 FY26 call sets a new Sambalpur stainless capex commissioning target of March 2029"
+  - "PLI stainless clarification — Q2 FY26 'pending clarification,' Q3 FY26 'wait another 1.5 years,' still unresolved by Q4 FY26"

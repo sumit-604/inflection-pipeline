@@ -1,0 +1,30 @@
+stage: B01-gate0
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus ABSENT (long-listed, not a gap)", "announcements ABSENT", "shareholding ABSENT", "research NON-ANCHORED"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 34/100). Genuine depressors: ROCE trend down 23.4%->13.2% FY18-26, EBITDA margin compressed 20.85%->13.67%, current ratio 0.997x, FCF negative and worsening (-434.89cr FY25 -> -613.68cr FY26) against active heavy capex (6,660cr + 2,700cr newly approved). BUT Block E scored 0/20 purely on data absence (shareholding, contingent liabilities not in provided inputs) and materially drives the sub-40 Core Score -> AVOID call should be re-tested once shareholding data is available; deal-breakers #1/#2 (Block A<8, Block B<8) independently cap classification at max GOOD regardless."
+data_years: 9
+fy_range: "FY18 to FY26"
+blocks: {A: 4, B: 5, C: 11, D: 14, E: 0}
+core_score: 34
+moat_score: 7
+grand_total: 41
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["Block A <8 (score 4) -> max GOOD", "Block B <8 (score 5) -> max GOOD", "Pledge >15% check: cannot evaluate, shareholding data NOT FOUND"]
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swings; PAT positive every year FY18-FY26."
+  - "Capital Employed for ROCE computed as proxy (Equity+Reserves+Borrowings) for all 9 years since current/non-current liability split absent FY18-24 in screener-Data_Sheet; cross-checked against audited FY25/FY26 actual Total Assets-Current Liabilities, variance 1.9-3.1%."
+  - "Capex (purchase of PPE+intangibles) NOT FOUND for FY18-24 in provided data; only FY25 (2,148.32cr) and FY26 (2,637.24cr) available from audited consolidated cash flow statement (results Q4 FY26 p.12). B2/B3 assessed on 2 of 9 years only."
+  - "Trade Payables NOT FOUND for FY18-24; only FY25/FY26 available from audited balance sheet (results Q4 FY26 p.11). Blocks B4 and M12 scored 0/N/A due to this gap, not a demonstrated WC deterioration."
+  - "Data source conflict: screener-Data_Sheet FY25 CFO = 1,964.15cr vs audited Q4 FY26 filing's FY25 comparative CFO = 1,713.43cr (regrouped/reclassified per filing note (x)). B1 used Data_Sheet series for 9-year consistency; B2/B3 used audited CF-statement figures paired with audited Capex for internal consistency."
+  - "PEER DATA NEEDED: M2, M5, M9 not scored (peer CSVs explicitly out of scope for Gate 0 per task instructions)."
+  - "M6 (R&D), M8 (Distribution), E4 (Contingent liabilities) scored 0, NOT FOUND in provided data."
+  - "Block E (E1-E4) entirely NOT FOUND: shareholding pattern absent (carried B00 input gap), contingent liabilities note not present in provided results extracts."
+block_b_trend: "deteriorating - FCF swung from -434.89cr (FY25) to -613.68cr (FY26); Capex (+22.8% YoY) outrunning CFO (+18.1% YoY), results Q4 FY26 p.12, while cumulative CFO/PAT (1.35x) remains strong on a 9-year basis"

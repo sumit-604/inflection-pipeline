@@ -1,0 +1,38 @@
+stage: B08-promoter
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["inputs/announcements/ empty this run", "inputs/shareholding/ empty this run", "MCA status not spot-checked for Subham Capital Pvt Ltd, Kalpataru Housefin & Trading Pvt Ltd, Dorite Tracon Pvt Ltd, Top Light Mercantiles Pvt Ltd", "NCLT case detail (Action Ispat, Mideast Integrated Steel) unconfirmed - source pages blocked (403)", "electoral bonds / political donation record not directly queried", "proxy advisory (IiAS/SES/InGovern) coverage of SHYAMMETL not located"]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "ED provisional PMLA attachment, Rs 159.51 cr, on wholly-owned material subsidiary Shyam Sel and Power Ltd (15-Apr-2026), tied to alleged illegal coal mining in ECL leasehold areas; live and unresolved as of run date"
+      - "CPCB closure direction at Rengali (Sambalpur) plant (7-13 Apr 2026) after a 2+ year non-compliance pattern; conditional relief granted with 3-month remediation window, not yet resolved"
+      - "Chairman and MD roles combined in Brij Bhushan Agarwal w.e.f. 10-May-2025, a departure from the company's own prior discretionary separate-Chair/CEO practice"
+      - "Transition evidence present: SAIL/NMDC-calibre independent director added Jul-2024, Rs 1,385 cr QIP-funded institutional entry/deleveraging FY23-24 (explains the promoter % drop as pure dilution, not a sale), orderly founder-to-second-generation succession"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers:
+  - "PMLA with attached assets: TRIGGERED - Rs 159.51 cr provisional attachment, subsidiary SSPL, 15-Apr-2026, live/unresolved"
+  - "Multiple mid-term independent exits within 3 years: TRIGGERED (borderline) - Yudhvir Singh Jain (demise, Oct-2024) and Malay Kumar De (personal reasons, May-2025); both benign-cause on available evidence"
+adverse_findings:
+  - {finding: "ED provisional attachment Rs 159.51 cr on subsidiary SSPL under PMLA, coal-mining investigation", evidence_tier: "MEDIA REPORTED (corroborated by ED press release)", source: "scanx.trade / TipRanks / ED press release PDF / Daily Pioneer / Whalesbook", date: "2026-04-15"}
+  - {finding: "CPCB closure of 21 furnaces/production lines at Rengali plant for sustained pollution non-compliance (PM 268 mg/Nm3 vs 50 mg/Nm3 limit)", evidence_tier: "MEDIA REPORTED (multiple independent outlets)", source: "Business Standard / India CSR / Sambad English / Business Upturn", date: "2026-04-07 to 2026-04-13"}
+  - {finding: "Chairman and MD roles combined in Brij Bhushan Agarwal, departing from prior discretionary separate-post compliance", evidence_tier: "VERIFIED (company AR disclosure)", source: "Annual Report FY2024-25, p.95, p.179", date: "2025-05-10"}
+  - {finding: "Long-running trademark/passing-off injunction against subsidiary SSPL in favour of unrelated competitor Shyam Steel Industries Ltd", evidence_tier: "VERIFIED (IndianKanoon case record)", source: "Calcutta High Court judgment; IndianKanoon", date: "2019-12-24 (ongoing at SC level)"}
+  - {finding: "External CFO (Shree Kumar Dujari) replaced by internal long-tenured executive (Deepak Agarwal) rather than another outside hire", evidence_tier: "MEDIA REPORTED", source: "MarketScreener / NSE filings", date: "2022-11-08 / 2023-05-05"}
+  - {finding: "Two minor exchange non-compliance fines (Reg 29(1) intimation timelines), Rs 11,800 each", evidence_tier: "VERIFIED (company disclosure)", source: "Annual Report FY2024-25, p.176", date: "2023-08-23"}
+transition_evidence:
+  - "Chandra Shekhar Verma (ex-CMD SAIL, ex-CMD NMDC) appointed Independent Director for a 5-year term, 4-Jul-2024 - AR p.95, VERIFIED"
+  - "Rs 1,385.35 cr QIP to 38 QIBs, FY23-24, proceeds used to deleverage parent and material subsidiary; explains promoter % drop as pure dilution with zero promoter share sale - AR Note 18, VERIFIED"
+  - "DII holding risen from 4.35% (Sep-23) to 13.75% (Jun-26) per operator-sourced screener trend - non-anchored, directionally consistent"
+  - "Internal auditor upgraded/changed KPMG to Ernst & Young LLP for FY25-26 - AR Corporate Information, VERIFIED"
+  - "Orderly founder-to-second-generation succession: Mahabir Prasad Agarwal to honorary non-executive Chairman Emeritus, 9/10-May-2025 - AR p.95, VERIFIED"
+  - "CPCB granted conditional relief with defined 3-month remediation window post closure - MEDIA REPORTED"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% throughout the period checked (no pledge found in any quarter searched, current or historical)"
+searches_performed: ["SEBI adjudication order Shyam Metalics", "Shyam Metalics promoter pledge shares", "CPCB closure Rengali Sambalpur 2026", "Malay Kumar De resignation", "Shyam Sel Power ED attachment coal mining", "Shyam Metalics proxy advisory IiAS/SES/InGovern", "Shyam Metalics Glassdoor/AmbitionBox reviews", "Shyam Metalics NCLT/oppression/litigation", "Shyam Metalics electoral bonds", "Anup Majee/coal syndicate link search", "Shyam Metalics auditor resignation/qualification/restatement", "Shyam Metalics short seller/fraud allegation", "Shyam Metalics CFO change history", "Shyam Metalics pollution history pre-2026", "Mahabir Prasad Agarwal history", "Narantak Dealcomm MCA status", "Subham Buildwell MCA status", "Shyam Metalics Great Place to Work", "Shyam Steel Industries vs Shyam Sel Power trademark case", "named promoters SEBI show cause/SAT search", "Shyam Metalics Foundation philanthropy", "Shyam Metalics promoter pledge trend 2023-2025", "Deepak Agarwal CFO family governance", "AR FY2024-25 close reading: Board's Report, Corp Gov Report, Notice/Annexure, Notes 7 & 18"]
+searches_skipped: ["Mondaq trademark case detail fetch (403 blocked)", "IBC Laws NCLT case detail fetch (403 blocked)", "ADR/ECI electoral bonds direct donor lookup for company/promoters", "SCORES complaint portal direct query", "MCA spot-check for Subham Capital, Kalpataru Housefin, Dorite Tracon, Top Light Mercantiles"]
+verdict_basis: "Two live, unresolved April-2026 regulatory actions (ED-PMLA provisional attachment on the material subsidiary; CPCB environmental closure at Rengali after a sustained non-compliance pattern) drive CONCERN, set against an otherwise clean-to-strong capital-allocation, pledge (0%), and auditor record, plus specific, dated transition evidence (SAIL/NMDC-calibre ID addition, QIP-funded institutional entry, orderly generational succession)."

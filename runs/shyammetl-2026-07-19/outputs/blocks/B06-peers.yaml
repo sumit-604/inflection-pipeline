@@ -1,0 +1,47 @@
+stage: B06-peers
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "4 of 7 peer_questions are structurally UNVERIFIABLE this run: the provided peer set (GPIL, JAIBALAJI, SARDAEN, GALLANTT) has zero coverage of stainless steel, aluminium, or nickel — the exact segments where Shyam's forward growth thesis concentrates. Correct comparators (Jindal Stainless, Hindalco, NMDC Steel exact match) were not provided."
+  - "Safeguard duty referenced in Q2's claim demonstrably lapsed provisionally in Oct-Nov 2025 (GPIL Q2 FY26, SARDAEN Q2 FY26) before being reimposed ahead of the Q3-Q4 FY26 price recovery — 'sustained' is not fully supported even though the underlying mechanism is corroborated by two independent peers."
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "Indian steel demand tracking to ~11-12 MT/year incremental demand (7-8% GDP-linked) and India's 300 MT production target", peers: ["GPIL", "SARDAEN", "GALLANTT"]}
+  - {claim: "Steel-import safeguard duty produced sustained sector-wide price/margin improvement from Q4 FY26 onward", peers: ["GPIL", "SARDAEN"]}
+  - {claim: "Shyam's HR-mill capex efficiency (~INR5,000cr for 1.6 MTPA) is internally consistent, not understated/at cost-overrun risk", peers: ["GPIL", "GALLANTT"]}
+contradicted: []
+unverifiable:
+  - {claim: "~20% nickel price rise since December 2025 (Indonesia supply cuts) and stainless pass-through", peers_checked: ["GPIL", "JAIBALAJI", "SARDAEN", "GALLANTT"]}
+  - {claim: "Cost competitiveness vs Jindal Stainless once Odisha/Sambalpur flat stainless capacity commissions (March 2029)", peers_checked: ["GPIL", "JAIBALAJI", "SARDAEN", "GALLANTT"]}
+  - {claim: "Aluminium foil/FRP 'oversold' demand condition industry-wide vs Shyam-specific niche", peers_checked: ["GPIL", "JAIBALAJI", "SARDAEN", "GALLANTT"]}
+  - {claim: "Status/substance of the ED (Enforcement Directorate) coal notice referenced in the Q4 FY26 call", peers_checked: ["GPIL", "JAIBALAJI", "SARDAEN", "GALLANTT"]}
+peer_coverage_map:
+  - {peer: "GPIL", quarter: "Q1 FY26", usage: "substantive", contribution: "Confirms safeguard duty already supporting prices in Q1 FY26; HR-coil commoditization counter-signal; own greenfield capex-intensity anchor"}
+  - {peer: "GPIL", quarter: "Q2 FY26", usage: "substantive", contribution: "Confirms the safeguard duty's provisional lapse; discloses fatal pellet-plant accident (missing-risk item)"}
+  - {peer: "GPIL", quarter: "Q3 FY26", usage: "substantive", contribution: "Quantifies 5-10% sector-wide price rise directly attributed to the reimposed safeguard duty"}
+  - {peer: "GPIL", quarter: "Q4 FY26", usage: "substantive", contribution: "Q4 EBITDA/revenue jump corroborates sector pricing momentum but shows volume/carryover contribution; introduces post-Q4 'war effect' pricing risk"}
+  - {peer: "SARDAEN", quarter: "Q4 FY25", usage: "substantive", contribution: "Earliest confirmation of the safeguard duty's April 2025 imposition and import-curtailing effect"}
+  - {peer: "SARDAEN", quarter: "Q1 FY26", usage: "substantive", contribution: "Demand growth figures (10.3% production, 8% finished-steel demand); notes duty present but prices still pressured"}
+  - {peer: "SARDAEN", quarter: "Q2 FY26", usage: "substantive", contribution: "Independently confirms the October 2025 duty lapse; calls the quarter 'the bottom of the steel pricing structure'"}
+  - {peer: "SARDAEN", quarter: "Q3 FY26", usage: "substantive", contribution: "Strongest single data point: quantified 10-15% price recovery and India's net-exporter turn, tied explicitly to the safeguard duty"}
+  - {peer: "GALLANTT", quarter: "Q4 FY26", usage: "substantive", contribution: "Independently corroborates net-exporter turn; industry-wide capacity-race evidence; modest EBITDA/ton comparator against Shyam's claimed Q4 jump"}
+  - {peer: "JAIBALAJI", quarter: "Q4 FY24", usage: "cited-only", contribution: "DI-pipe/ferro-alloy focus, no overlap with peer_questions, predates safeguard-duty window"}
+  - {peer: "JAIBALAJI", quarter: "Q1 FY25", usage: "cited-only", contribution: "General demand/order-book context only"}
+  - {peer: "JAIBALAJI", quarter: "Q2 FY25", usage: "cited-only", contribution: "General demand/order-book context only"}
+  - {peer: "JAIBALAJI", quarter: "Q4 FY25", usage: "cited-only", contribution: "Latest JAIBALAJI call still predates the Q3-Q4 FY26 duty-recovery window this run concentrates on"}
+industry_cross_read:
+  demand: "Three of four peers (GPIL, SARDAEN, GALLANTT) independently confirm a structurally strong, infrastructure-led Indian steel demand environment through FY26, capped by India's first net-exporter quarter in six quarters (SARDAEN Q3 FY26, corroborated by GALLANTT Q4 FY26); JAIBALAJI's earlier calls are a partial dissenting voice on government-order-dependent sub-segments but predate the recovery window."
+  pricing_inputs: "Coal and iron ore costs were broadly benign-to-declining through FY26; the dominant pricing story is the safeguard duty's lapse (Oct-Nov 2025, confirmed independently by GPIL and SARDAEN) followed by a genuine, quantified 5-15% sector-wide price recovery in Q3-Q4 FY26 — directionally consistent with but not fully proving 'sustained' for Shyam's Q4 margin narrative. Nickel, stainless, and aluminium input costs have zero coverage in this peer set."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: all four peers are simultaneously committing large capex programs (GPIL INR1,600cr+ CRM/BESS plus a further ~INR4,500-5,000cr evaluated greenfield steel plant; SARDAEN INR500-700cr/year across coal/hydro/solar; GALLANTT INR3,000cr steel/mine/solar program) in the same window Shyam is expanding into stainless, aluminium, and its HR mill."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Fatal industrial accident at a peer pellet plant (GPIL Q2 FY26) — safety/operational risk category absent from Shyam's own reviewed disclosures"
+  - "Active Supreme Court litigation over a peer's NCLT-acquired power asset (SARDAEN, all four calls, reserved for order as of Q3 FY26) — M&A/legal-integrity risk category absent from Shyam's own reviewed disclosures"
+  - "Commodity-grade HR coil margin compression persisting even with the safeguard duty active (GPIL Q1 FY26) — directly relevant to Shyam's own planned HR mill economics if its output competes in commodity grades"
+  - "An unnamed 'war' driving diesel/freight cost spikes and a ~10% post-April-2026 price softening (GPIL Q4 FY26/Q1 FY27) — a live geopolitical risk to the pricing recovery, framed differently (Middle East conflict as demand-redirector) in Shyam's own Q4 FY26 call"
+  - "Indian iron ore imports at a seven-year high (12+ MT, FY26) despite higher domestic production, signalling a persistent high-grade ore supply gap for the sector (SARDAEN Q3 FY26 context)"
+net_narrative_effect: "complicates"

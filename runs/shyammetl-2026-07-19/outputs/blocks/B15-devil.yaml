@@ -1,0 +1,17 @@
+stage: B15-devil
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Tiny CWIP (106.47cr = 0.85% of capital employed) means the depressed 13.21% ROCE is margin/return-structural, not a capital-cycle timing artifact; DECLINING is the defensible backward read, and the Route B ~20% pre-cycle anchor rests on a single 8-year-old FY18 print (23.4% capped to 20%). Strip it and Pillar 1 base falls to ~14x, cutting the entry zone below 416-468."
+  - "SSPL core subsidiary profit HALVED (722.34->417.15cr; 70.20%->45.88% of consol P&L) while its net assets grew 27.4% and it absorbed the bulk of capital injections — declining returns on incremental capital, the opposite of a recovery setup; FY26 Note 47 dispersion is undisclosed so the 'recovery' is unconfirmed at the core."
+  - "SHARED CATALYST is worse than a timing risk: the first commissioned value-add line (aluminium) already prints realization DOWN QoQ despite rising international prices, so the ramp economics driving BOTH Pillar 1 ROCE and Pillar 3a are under-delivering pre-launch; 76% of capex unexecuted to FY29 and the ROCE verdict is only 40-60% probable — a coin-flip carrying two pillars with no diversifying second catalyst."
+  - "Standalone cash is structural, not growth-induced: 0.57x CFO/PAT (from 1.44x), FCF -223.49cr in a +39.3% PAT year, driven by a ~924cr payables paydown (reversal of supplier stretch) plus 726.53cr/77.77% interest-free related-party receivables funding the deteriorating SSPL — the parent bankrolls the weak subsidiary; consol 1.9x launders this."
+  - "Information asymmetry runs against the minority: the CMD declines to explain the Q4 margin-to-price bridge ('will not be very appropriate in answering'), the AR omits the consol PAT decline and SSPL halving entirely, the 35.18% circular cross-holding carries no commentary, and a live ED-PMLA attachment (159.51cr) on the material subsidiary sits unresolved with the coal-notice question deflected on the concall."

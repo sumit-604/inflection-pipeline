@@ -123,7 +123,18 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 | EV charging / energy transition equipment | 28x |
 | City gas distribution | 22x |
 | Mining / mineral exploration | 20x |
+| Steel / Integrated metals (long + flat, ferro-alloys, commodity-cyclical) | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
+
+**Steel / Integrated metals row added 2026-07-19** (SHYAMMETL run). The table
+previously had no steel row, so the collector auto-picked "Pharma / CDMO" (38x)
+for an integrated steel producer. Cap set at 20x to sit in the commodity-cyclical
+band (Mining 20x neighbourhood; capital-intensive, price-taker, through-cycle
+margin swings), one notch below Building materials 22x, which remains the nearest
+alternative for a business tilted to long steel / downstream value-added. A
+pure high-end stainless or specialty-alloy converter with durable pricing may
+justify the 22x building-materials row instead; use judgement, the cap is the
+ceiling not a target.
 
 ---
 

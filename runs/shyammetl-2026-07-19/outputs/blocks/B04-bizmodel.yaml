@@ -11,6 +11,9 @@ flags:
   - "Revenue predictability Low for most product lines; company self-describes as operating in a commoditized, cyclical industry (AR p.3, p.66) with historical PAT margin swings ~3.5% to >20%"
   - "No disclosed captive iron ore mining; raw materials (iron ore, ferro alloys) shown as purchased inputs (Inv. Pres. p.7) despite 93.69% domestic sourcing (AR p.152)"
   - "~Rs 10,617 Cr pending capex vs ~Rs 2,023 Cr FY26 CFO; several FY31-roadmap line items (SBQ Mill, SS Hot Rolling/Annealing/Pickling Line) show near-zero capex incurred to date — material execution risk behind the value-add mix-shift thesis"
+verifier_a_corrections:
+  - "FY26 raw-material / cost-of-materials ratio: use 73.68% (13,680.15cr / 18,552.21cr per audited Q4 FY26 P&L), NOT ~72% (Inv. Pres. p.57, 13,352.6cr). Audited figure authoritative; deck uses a different COGS bundling. Applies to flags and irrelevant_ratios references to the ~72% raw-material share."
+  - "Captive power as ~81-83% of power needs: UNANCHORED — Verifier A did not locate this at Inv. Pres. p.37; treat as unverified this run."
 business_type: "manufacturing"
 revenue_streams:
   - {name: "Wire Rod", type: "manufacturing - carbon steel long, semi-commodity", pct_of_revenue: 19.80, predictability: "L"}

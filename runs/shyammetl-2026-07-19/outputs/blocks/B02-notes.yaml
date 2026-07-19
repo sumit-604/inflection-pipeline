@@ -4,6 +4,11 @@ run_date: "2026-07-19"
 model: claude-sonnet-5
 status: complete
 input_gaps: []
+verifier_a_corrections:
+  - "CARO clause 3(xvii) cash-loss entity count: use 10 of 13 (NOT 11). Verifier A auditable per-entity list at AR PDF p.233. Qualitative conclusion (systemic group-wide cash losses, ~77% of entities) unchanged. Applies to top_findings rank 4 and red_flags."
+  - "Standalone related-party trade receivables: use 726.53cr = 77.77% of 934.39cr (NOT 729.52cr / 78.1%). Verifier A, AR Note 42 standalone. Immaterial to conclusion. Applies to top_findings rank 6, red_flags, receivables_trend."
+  - "Circular cross-holding combined promoter-entity stake in SMEL: 35.18% CONFIRMED by Verifier A (Narantak 15.48% + Subham Capital 14.61% + Dorite 5.09%, AR Note 18(e)). This is correct; B03's ~65% is the erroneous figure. Standalone equity investment 253.05cr CONFIRMED; consol 352.31cr rendering-limited (unconfirmed this run)."
+  - "SSPL entity share-in-consolidated-profit 722.34->417.15cr (Note 47): source-supported (two sonnet passes) but Verifier A could not re-read due to AR table extraction legibility; re-verify at phase 3."
 flags:
   - {type: FLAG-CASH, reason: "Working capital deterioration at consol level: inventory +37.7% (finished goods +53.7%) vs revenue +13.9% (Note 11 consol p.291-292); standalone trade payables paid down 31.8% / payment days 92->67 while consol payables rose 23.2% (Note 26 standalone balance sheet; Note 26 consol p.305); standalone receivables 78.1% related-party concentration (Note 12 p.221, Note 42 p.245)."}
 accounting_quality: 5        # /10

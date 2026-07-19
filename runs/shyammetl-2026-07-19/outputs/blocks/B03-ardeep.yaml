@@ -58,7 +58,7 @@ strengths_top3:
   - "Capex delivery real and traceable in fixed-asset notes, not just narrative claim"
 red_flags_top3:
   - "Standalone CFO/PAT collapsed to 0.57x; standalone FCF negative -223.49cr in a 39.3% PAT-growth year"
-  - "Circular cross-holding: SMEL holds 352.31cr equity in entities that together hold ~65% of SMEL's own shares (NOTE: B02 stated ~35.18%; percent discrepancy flagged for verifier A adjudication)"
+  - "Circular cross-holding: SMEL holds equity in entities (Dorite Tracon, Narantak Dealcomm, Subham Capital) that together hold 35.18% of SMEL's own shares. [VERIFIER A CORRECTION: the ~65% stated in this pass is WRONG; true combined stake is 35.18% per AR Note 18(e); standalone equity investment 253.05cr confirmed, consol 352.31cr rendering-limited]"
   - "Consol PAT -11.6% despite 14.7% revenue growth; SSPL profit contribution halved (70.2%->45.9%); ~24% of PBT growth treasury-driven"
 best_fit_strategy: "GARP (Watchlist)"
 one_line_verdict: "Capex delivery is real; core-subsidiary earnings and standalone cash conversion are not confirming it yet."

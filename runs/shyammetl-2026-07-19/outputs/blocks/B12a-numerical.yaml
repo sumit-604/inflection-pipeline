@@ -1,0 +1,44 @@
+stage: B12a
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-haiku-4-5
+status: complete
+reconciled_from: ["B12a initial pass", "B12a-recheck (offset-corrupted, superseded)", "B12a-recheck2 (final clean read at verified PDF pages)"]
+numbers_checked: 31
+critical_count: 1          # CARO count off-by-one; handled by correct-at-source (see disposition). Not a verdict-card/pillar input.
+major_count: 3
+minor_count: 0
+clean_matches: 24
+acceptance_rate: 77        # reconciled: 24 clean / 31 distinct numbers adjudicated (see enumeration). Initial 64.3% was depressed by 8 false ANCHOR-NOT-FOUND from the verifier not opening the AR/IP on pass 1; rechecks cleared 5 and corrected 3.
+source_fidelity_gate: "HELD — one CRITICAL MISMATCH (CARO count 11->10) corrected at source with auditable per-entity anchor; not a verdict-card/Section 1B pillar input, so correct-at-source resolves it (no REWORK escalation). Zero fabrications. All Gate-0 Block A-D verdict-card inputs verified clean."
+
+verdict_card_status: "ALL CLEAN — ROCE 13.21%, median ROCE 13.38%, cum CFO 10,530.30cr, cum PAT 7,802.43cr, CFO/PAT 1.35, net debt -20.39cr, interest cov 8.61x, current ratio 0.997x, equity 11,522.81cr, revenue CAGR 22.12%, FY26 PAT 1,070.24cr, FY26 rev 18,552.21cr, FY25 rev 15,137.50cr, FY26/FY25 capex 2,637.24/2,148.32cr, FY26/FY25 CFO 2,023.56/1,713.43cr, FY26/FY25 EBITDA 2,536.65/2,096.16cr — all verified against screener + audited Q4 FY26 results."
+
+cleared_on_recheck:
+  - {item: "B02 consolidated PAT decline 1,034.79->908.10cr (FY24->FY25), EPS -17.3%", verdict: "MATCH", anchor: "AR consolidated Statement of P&L"}
+  - {item: "B02 unrecognised DTA on group tax losses 686.32->955.21cr gross, tax effect 240.43cr, FY24 one-off (338.57)cr", verdict: "MATCH", anchor: "AR Note 24(c) p.304; Note 37(c) p.309"}
+  - {item: "B02/B03 cross-holding standalone equity investment in the 3 promoter entities = 253.05cr", verdict: "MATCH", anchor: "AR Note 43, standalone"}
+  - {item: "B02 combined promoter-entity holding in SMEL = 35.18% (Narantak 15.48% + Subham Capital 14.61% + Dorite Tracon 5.09%)", verdict: "MATCH — resolves B02(~35.18%) vs B03(~65%) in B02's favor; B03's 65% is WRONG", anchor: "AR Note 18(e) p.296-297"}
+  - {item: "B02 standalone total trade receivables 934.39cr", verdict: "MATCH", anchor: "AR Note 12 standalone p.221"}
+
+corrections_applied:
+  - {location: "B02 CARO cash-loss entity count", was: "11 of 13", corrected_to: "10 of 13", severity: "CRITICAL (Verifier A)", anchor: "Consolidated Auditor's Report CARO clause-mapping table, AR PDF p.233 (printed p.260). Per-entity list: clause 3(xvii) carried by Shyam Energy, Shree Venkateshwara Electroplast, Melody Housing, Nirjhar Commercials, Whispering Developers, Shree Sikhar Iron & Steel, Shree Steel Structural, S.S. Natural Resources, Kolhan Complex, Kalinga Energy & Power = 10; NOT carried by Shyam Metalics (Holding), Shyam Sel & Power, Ramsarup Industries. Qualitative conclusion unchanged: systemic group-wide cash losses (10 of 13 = 77%)."}
+  - {location: "B02 standalone related-party trade receivables", was: "729.52cr (78.1% of 934.39cr)", corrected_to: "726.53cr (77.77%)", severity: "MAJOR (immaterial 2.99cr / 0.33pp)", anchor: "AR Note 42 related-party balances, standalone"}
+  - {location: "B04 FY26 raw-material / cost-of-materials ratio", was: "~72% (Inv. Pres. p.57, 13,352.6cr)", corrected_to: "73.68% (13,680.15cr / 18,552.21cr, audited P&L)", severity: "MAJOR source-basis (deck bundling vs audited); audited authoritative", anchor: "audited Q4 FY26 results P&L p.10"}
+
+rendering_limited_anchor_not_found:
+  - {item: "B02/B03 SSPL entity share-in-consolidated-profit 722.34cr(FY24)->417.15cr(FY25), 70.20%->45.88%", note: "Note 47 entity-wise table located at AR PDF p.298-302 but the SSPL row values were not legible in the verifier's text/image extraction. NOT a fabrication: stage-2 pass-1 and pass-3 (sonnet) and stage-3 independently sourced these exact figures at this note. Named here per the PDF-legibility run-log rule; carry as source-supported-but-verifier-unconfirmed, to be re-read at phase 3."}
+  - {item: "B02 cross-holding consolidated equity investment 352.31cr", note: "consolidated Note 7 breakdown not cleanly extractable; standalone 253.05cr MATCHED. Rendering limit, not fabrication."}
+
+unanchored_expected:
+  - {item: "B08 ED provisional PMLA attachment 159.51cr on SSPL (15-Apr-2026); CPCB Rengali closure", note: "web / MEDIA-REPORTED + operator context; no filing PDF in inputs, so correctly UNANCHORED by Verifier A's PDF-existence test. These remain MEDIA-REPORTED flags with B08's taxonomy caveat; corroborated by the Q4 FY26 concall ED-coal-notice deflection (B05). Not fabrications."}
+  - {item: "B04 captive power ~81-83% of power needs (Inv. Pres. p.37)", note: "not found at IP p.37 by verifier; remains UNANCHORED/unverified this run."}
+
+advisory:
+  - {item: "B01 Block D debt numerator", note: "audited 981.32cr vs screener 1,005.07cr (2.4% diff); Gate 0 correctly used the audited figure. Net debt negative on both bases; verdict unaffected."}
+
+findings:
+  - {severity: "CRITICAL", location: "B02 CARO clause 3(xvii) count", description: "Claimed 11 of 13; true 10 of 13 (auditable per-entity list, AR PDF p.233). Corrected at source. Non-verdict-card red-flag count; conclusion (systemic cash losses) unchanged.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02 standalone RP receivables", description: "729.52cr -> 726.53cr (78.1% -> 77.77%). Corrected.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B04 FY26 raw-material %", description: "72% (deck) -> 73.68% (audited). Corrected to audited.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02/B03 SSPL entity profit (Note 47)", description: "Table extraction not legible to verifier; sonnet stages sourced 722.34->417.15cr. Rendering limit, not fabrication; re-read phase 3.", source_fidelity: true}

@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAS Journey — 3D</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; font-family: system-ui, -apple-system, "Segoe UI", "Segoe UI Emoji", sans-serif; background: #87ceeb; color: #f8fafc; user-select: none; -webkit-user-select: none; touch-action: none; }
+  #canvas { display: block; width: 100vw; height: 100vh; cursor: pointer; }
+
+  /* Top status bar */
+  #topbar { position: fixed; top: 8px; left: 8px; right: 8px; z-index: 10; display: flex; justify-content: space-between; gap: 6px; flex-wrap: wrap; pointer-events: none; }
+  .hud-panel { background: rgba(15,23,42,0.85); color: #fef3c7; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; border: 1px solid rgba(251,191,36,0.35); pointer-events: auto; }
+  .hud-panel .label { color: #86efac; font-size: 10px; font-weight: 500; }
+  .hud-panel .val { color: #fbbf24; font-weight: 800; }
+  .stats-row { display: flex; gap: 4px; flex-wrap: wrap; }
+  .mini-stat { background: rgba(15,23,42,0.85); border: 1px solid rgba(251,191,36,0.3); padding: 4px 8px; border-radius: 8px; font-size: 11px; }
+  .mini-stat .v { color: #fbbf24; font-weight: 700; }
+
+  /* Interact prompt */
+  #prompt { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(15,23,42,0.92); color: #fef3c7; padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; border: 2px solid #fbbf24; display: none; z-index: 8; pointer-events: none; }
+  #prompt kbd { background: #fbbf24; color: #422006; padding: 2px 7px; border-radius: 4px; font-family: monospace; font-size: 12px; margin: 0 2px; }
+
+  /* Dialog */
+  #dialog { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 640px; margin: 0 auto; z-index: 12; background: rgba(15,23,42,0.97); color: #f8fafc; padding: 16px 22px; border-radius: 14px; border: 2px solid #fbbf24; display: none; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+  #dialog .speaker { font-weight: 800; color: #fbbf24; font-size: 14px; margin-bottom: 6px; }
+  #dialog .text { font-size: 15px; line-height: 1.55; color: #fef3c7; }
+  #dialog .choices { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+  #dialog .choice { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.4); color: #fef3c7; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 13px; text-align: left; transition: all 0.15s; }
+  #dialog .choice:hover { background: rgba(251,191,36,0.3); }
+  #dialog .hint { font-size: 11px; color: #94a3b8; margin-top: 8px; }
+  #dialog .hint kbd { background: #fbbf24; color: #422006; padding: 1px 6px; border-radius: 3px; font-family: monospace; font-size: 10px; }
+
+  /* Marker */
+  #marker { position: fixed; width: 36px; height: 36px; border: 3px solid #fbbf24; border-radius: 50%; pointer-events: none; display: none; z-index: 7; transform: translate(-50%, -50%); }
+  @keyframes ping { 0% { transform: translate(-50%,-50%) scale(0.4); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.8); opacity: 0; } }
+
+  /* Controls hint */
+  #ctrls { position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%); background: rgba(15,23,42,0.7); color: #fde68a; padding: 4px 12px; border-radius: 8px; font-size: 10px; z-index: 5; pointer-events: none; white-space: nowrap; }
+  #ctrls kbd { background: #fbbf24; color: #422006; padding: 1px 4px; border-radius: 3px; font-family: monospace; font-size: 9px; }
+
+  /* Stage transition */
+  #trans { position: fixed; inset: 0; z-index: 30; background: #000; display: none; align-items: center; justify-content: center; flex-direction: column; color: #fef3c7; text-align: center; padding: 20px; }
+  #trans h2 { font-size: clamp(24px, 5vw, 38px); color: #fbbf24; margin-bottom: 14px; }
+  #trans p { font-size: 15px; max-width: 520px; line-height: 1.7; margin-bottom: 22px; }
+  #trans button { background: #fbbf24; color: #422006; border: none; padding: 12px 28px; border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 800; font-family: inherit; }
+
+  /* Quiz overlay */
+  #quiz { position: fixed; inset: 0; z-index: 25; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .qp { background: #1e293b; border: 2px solid #fbbf24; border-radius: 14px; padding: 22px; max-width: 500px; width: 100%; color: #fef3c7; text-align: center; }
+  .qp h3 { color: #fbbf24; font-size: 18px; margin-bottom: 4px; }
+  .qp .qprog { font-size: 12px; color: #86efac; margin-bottom: 12px; }
+  .qp .qq { font-size: 15px; margin: 10px 0; text-align: left; line-height: 1.5; }
+  .qopts { display: flex; flex-direction: column; gap: 6px; }
+  .qopts button { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.4); color: #fef3c7; padding: 10px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 13px; text-align: left; }
+  .qopts button:hover { background: rgba(251,191,36,0.3); }
+  .qopts button.correct { background: rgba(34,197,94,0.4); border-color: #22c55e; }
+  .qopts button.wrong { background: rgba(239,68,68,0.4); border-color: #ef4444; }
+
+  /* Notif */
+  #notif { position: fixed; top: 70px; left: 50%; transform: translateX(-50%); background: rgba(34,197,94,0.95); color: white; padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 13px; z-index: 20; display: none; }
+
+  /* Chat input */
+  #chat-input-wrap { margin-top: 12px; display: flex; gap: 6px; }
+  #chat-input { flex: 1; background: rgba(0,0,0,0.4); border: 1px solid rgba(251,191,36,0.4); color: #fef3c7; padding: 10px 14px; border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; }
+  #chat-input:focus { border-color: #fbbf24; }
+  #chat-send { background: #fbbf24; color: #422006; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 800; }
+  #chat-send:hover { background: #f59e0b; }
+  .chat-log { max-height: 120px; overflow-y: auto; margin-top: 8px; font-size: 13px; }
+  .chat-msg { padding: 4px 0; }
+  .chat-msg .who { color: #fbbf24; font-weight: 700; margin-right: 6px; }
+  .chat-msg.you .who { color: #86efac; }
+
+  /* Action bar (contextual) */
+  #actions { position: fixed; bottom: 34px; left: 0; right: 0; z-index: 9; display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; padding: 0 8px; pointer-events: none; }
+  .act-btn { background: rgba(15,23,42,0.9); color: #fef3c7; border: 2px solid #fbbf24; padding: 7px 12px; border-radius: 10px; cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 700; pointer-events: auto; backdrop-filter: blur(6px); }
+  .act-btn:hover { background: #fbbf24; color: #422006; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<!-- ROLE SELECT MENU -->
+<div id="role-menu" style="position:fixed;inset:0;z-index:40;background:linear-gradient(135deg,#78350f,#422006);display:flex;align-items:center;justify-content:center;padding:20px">
+  <div style="max-width:600px;width:100%;text-align:center">
+    <h1 style="font-size:clamp(28px,5vw,42px);color:#fbbf24;margin-bottom:6px;letter-spacing:1px">🇮🇳 IAS Journey</h1>
+    <p style="color:#86efac;font-size:14px;margin-bottom:24px;font-style:italic">Choose who you want to play as</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:440px;margin:0 auto 20px">
+      <button class="role-card" data-role="Rishabh" style="background:rgba(0,0,0,0.35);border:2px solid rgba(251,191,36,0.3);color:#fef3c7;padding:22px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:all 0.15s">
+        <div style="font-size:52px;line-height:1.1">🧑</div>
+        <div style="font-weight:800;font-size:17px;margin-top:8px;color:#fbbf24">Rishabh</div>
+        <div style="font-size:12px;color:#fde68a">Big Brother</div>
+      </button>
+      <button class="role-card" data-role="Vatsal" style="background:rgba(0,0,0,0.35);border:2px solid rgba(251,191,36,0.3);color:#fef3c7;padding:22px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:all 0.15s">
+        <div style="font-size:52px;line-height:1.1">👦</div>
+        <div style="font-weight:800;font-size:17px;margin-top:8px;color:#fbbf24">Vatsal</div>
+        <div style="font-size:12px;color:#fde68a">Little Brother</div>
+      </button>
+    </div>
+    <button id="load-btn" style="background:rgba(255,255,255,0.1);color:#fef3c7;border:1px solid rgba(255,255,255,0.25);padding:10px 22px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;margin:4px">📂 Continue Saved Journey</button>
+    <button id="reset-btn" style="background:rgba(255,255,255,0.1);color:#fef3c7;border:1px solid rgba(255,255,255,0.25);padding:10px 22px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;margin:4px">🗑️ Reset Save</button>
+  </div>
+</div>
+
+<style>
+  .role-card:hover { border-color: #fbbf24 !important; background: rgba(251,191,36,0.15) !important; transform: translateY(-3px); }
+</style>
+
+<div id="topbar">
+  <div class="hud-panel">
+    <div class="label">You</div>
+    <span class="val" id="hud-name">Rishabh</span> • <span id="hud-stage">Aspirant</span>
+  </div>
+  <div class="hud-panel" id="hud-day">Day 1 • Morning</div>
+  <div class="stats-row" id="hud-stats"></div>
+</div>
+
+<div id="prompt"></div>
+<div id="marker"></div>
+<div id="actions"></div>
+
+<div id="dialog">
+  <div class="speaker"></div>
+  <div class="text"></div>
+  <div class="choices"></div>
+  <div class="hint">Click or <kbd>SPACE</kbd> to continue • <kbd>ESC</kbd> to close</div>
+</div>
+
+<div id="ctrls">Click to walk • Right-click drag to look • <kbd>WASD</kbd> move • <kbd>SPACE</kbd> interact</div>
+
+<div id="trans">
+  <h2 id="tr-title"></h2>
+  <p id="tr-text"></p>
+  <button id="tr-continue">Continue →</button>
+</div>
+
+<div id="quiz"><div class="qp" id="qp"></div></div>
+<div id="notif"></div>
+
+<script>
+(function(){
+'use strict';
+const SAVE_KEY = 'ias-3d:v1';
+
+// ================================================================
+// STATE
+// ================================================================
+const state = {
+  playerName: 'Rishabh',
+  stage: 1,   // 1=aspirant, 2=prelims-ready, 3=mains, 4=interview, 5=collector
+  player: { x: 0, y: 0, z: 3, yaw: Math.PI, pitch: 0.05 },
+  moveTarget: null,
+  interactAfter: null,
+  day: 1,
+  timeOfDay: 0,
+  interactions: 0,
+  // stats
+  knowledge: 30,
+  energy: 100,
+  happiness: 80,
+  family: 70,
+  reputation: 50,
+  money: 500,
+  // progression
+  mocksAttempted: 0,
+  mocksPassed: 0,
+  isEating: false,
+  isStudying: false,
+  district: null,
+  casesResolved: 0,
+  activeCase: null,
+  npcMemory: {},
+  // hooks
+  studyMinigameActive: false
+};
+
+const timeNames = ['Morning ☀️', 'Noon 🌤️', 'Evening 🌆', 'Night 🌙'];
+const stageNames = ['', 'UPSC Aspirant', 'Prelims Candidate', 'Mains Candidate', 'Interview Candidate', 'District Collector'];
+
+// Save loaded manually via Continue button — role menu shows first
+function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(state)); } catch(e) {} }
+
+// ================================================================
+// WORLD DEFINITION
+// ================================================================
+const HOUSE = { minX: -12, maxX: 12, minZ: -12, maxZ: 12 };
+
+// Rooms
+const rooms = [
+  { name: 'Study Room',  minX: -12, maxX: 0,   minZ: -12, maxZ: 0,   color: '#dbeafe' },
+  { name: 'Kitchen',     minX: 0,   maxX: 12,  minZ: -12, maxZ: 0,   color: '#fecaca' },
+  { name: 'Living Room', minX: -12, maxX: 0,   minZ: 0,   maxZ: 12,  color: '#bbf7d0' },
+  { name: 'Bedroom',     minX: 0,   maxX: 12,  minZ: 0,   maxZ: 12,  color: '#f5d0fe' }
+];
+function roomAt(x, z) {
+  for (const r of rooms) if (x >= r.minX && x <= r.maxX && z >= r.minZ && z <= r.maxZ) return r;
+  return { name: 'Outside' };
+}
+
+// Furniture / interactables
+const objects = [
+  // Study room
+  { id: 'desk',   x: -9, y: 0.5, z: -9, w: 2, h: 1, d: 1, color: '#78350f', emoji: '📚', label: 'Study Desk' },
+  { id: 'chair',  x: -9, y: 0.45, z: -7.5, w: 0.6, h: 0.9, d: 0.6, color: '#a16207', emoji: '', label: 'Study Chair' },
+  { id: 'shelf',  x: -2, y: 1, z: -10, w: 2, h: 2, d: 0.4, color: '#92400e', emoji: '📖', label: 'Bookshelf' },
+  { id: 'globe',  x: -9, y: 0.6, z: -3, w: 0.5, h: 0.7, d: 0.5, color: '#0ea5e9', emoji: '🌍', label: 'Globe' },
+  // Kitchen
+  { id: 'stove',  x: 3, y: 0.5, z: -9, w: 1.5, h: 1, d: 1, color: '#e5e7eb', emoji: '🍳', label: 'Stove' },
+  { id: 'sink',   x: 8, y: 0.5, z: -9, w: 1.5, h: 1, d: 1, color: '#94a3b8', emoji: '🚰', label: 'Sink' },
+  { id: 'diningTable', x: 6, y: 0.5, z: -3, w: 3, h: 0.9, d: 1.5, color: '#a16207', emoji: '🍽️', label: 'Dining Table' },
+  // Living room
+  { id: 'sofa',   x: -8, y: 0.5, z: 3, w: 3, h: 0.9, d: 1.1, color: '#1e40af', emoji: '🛋️', label: 'Sofa' },
+  { id: 'tv',     x: -2, y: 0.9, z: 8, w: 2, h: 1.2, d: 0.3, color: '#0f172a', emoji: '📺', label: 'TV' },
+  // Bedroom
+  { id: 'bed',    x: 8, y: 0.4, z: 8, w: 2.5, h: 0.7, d: 1.8, color: '#f472b6', emoji: '🛏️', label: 'Bed' },
+  { id: 'closet', x: 3, y: 1, z: 10, w: 1.5, h: 2, d: 0.5, color: '#78350f', emoji: '', label: 'Closet' }
+];
+
+// NPCs (family) — built after role is chosen
+const ALL_CHARS = {
+  Rishabh: { name: 'Rishabh', emoji: '🧑', color: '#3b82f6', skin: '#f5c69a', home: { x: 8, z: 5 } },
+  Vatsal:  { name: 'Vatsal',  emoji: '👦', color: '#22c55e', skin: '#f5c69a', home: { x: 8, z: 5 } },
+  ma:      { name: 'Ma',      emoji: '👩', color: '#f97316', skin: '#f3ba85', home: { x: 6, z: -8 } },
+  papa:    { name: 'Papa',    emoji: '👨', color: '#1e40af', skin: '#e3a578', home: { x: -8, z: 5 } }
+};
+// FAMILY holds the NPCs (everyone except the player)
+let FAMILY = {};
+// Runtime NPC positions
+const npcs = {};
+
+function setupFamily() {
+  // Clear
+  Object.keys(npcs).forEach(k => delete npcs[k]);
+  FAMILY = {};
+
+  const other = state.playerName === 'Rishabh' ? 'Vatsal' : 'Rishabh';
+  // The other brother becomes an NPC
+  FAMILY.brother = { ...ALL_CHARS[other], name: other };
+  FAMILY.ma = ALL_CHARS.ma;
+  FAMILY.papa = ALL_CHARS.papa;
+
+  Object.keys(FAMILY).forEach(k => {
+    npcs[k] = {
+      ...FAMILY[k],
+      x: FAMILY[k].home.x, z: FAMILY[k].home.z, y: 0,
+      yaw: Math.PI, walkTarget: null, arrivedCallback: null,
+      walkPhase: 0, isWalking: false, hasFood: false
+    };
+  });
+}
+
+// ================================================================
+// CANVAS + 3D CAMERA
+// ================================================================
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let W = window.innerWidth, H = window.innerHeight;
+function resize() { canvas.width = W = window.innerWidth; canvas.height = H = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+const FOV = Math.PI / 3;
+function focalLen() { return (W/2) / Math.tan(FOV/2); }
+
+function w2c(wx, wy, wz) {
+  const p = state.player;
+  let x = wx - p.x, y = wy - (p.y + 1.6), z = wz - p.z;
+  const cy = Math.cos(-p.yaw), sy = Math.sin(-p.yaw);
+  const x1 = cy*x - sy*z;
+  const z1 = sy*x + cy*z;
+  const cp = Math.cos(-p.pitch), sp = Math.sin(-p.pitch);
+  const y1 = cp*y - sp*z1;
+  const z2 = sp*y + cp*z1;
+  return { x: x1, y: y1, z: z2 };
+}
+function project(c) {
+  if (c.z <= 0.05) return null;
+  const f = focalLen();
+  return { x: W/2 + (c.x/c.z)*f, y: H/2 - (c.y/c.z)*f, depth: c.z };
+}
+function pd(x, y, z) { return w2c(x,y,z).z; }
+function screenToFloor(sx, sy) {
+  const f = focalLen();
+  const rx = (sx - W/2) / f;
+  const ry = -(sy - H/2) / f;
+  const rz = -1;
+  const p = state.player;
+  const cp = Math.cos(p.pitch), sp = Math.sin(p.pitch);
+  const y1 = cp*ry - sp*rz;
+  const z1 = sp*ry + cp*rz;
+  const cy = Math.cos(p.yaw), syw = Math.sin(p.yaw);
+  const wx = cy*rx - syw*z1;
+  const wz = syw*rx + cy*z1;
+  const wy = y1;
+  if (Math.abs(wy) < 0.001) return null;
+  // y=0 plane, player eye at 1.6
+  const t = -(-1.6) / wy;
+  if (t <= 0) return null;
+  return { x: p.x + t*wx, z: p.z + t*wz };
+}
+
+// ================================================================
+// RENDERING PRIMITIVES
+// ================================================================
+function drawQuad(pts, fill, stroke) {
+  const cs = pts.map(p => project(w2c(p[0], p[1], p[2])));
+  if (cs.some(c => !c)) return;
+  ctx.beginPath();
+  ctx.moveTo(cs[0].x, cs[0].y);
+  for (let i = 1; i < cs.length; i++) ctx.lineTo(cs[i].x, cs[i].y);
+  ctx.closePath();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1; ctx.stroke(); }
+}
+function shade(hex, amt) {
+  hex = hex.replace('#','');
+  let r = parseInt(hex.substr(0,2),16), g = parseInt(hex.substr(2,2),16), b = parseInt(hex.substr(4,2),16);
+  r = Math.max(0, Math.min(255, r+amt));
+  g = Math.max(0, Math.min(255, g+amt));
+  b = Math.max(0, Math.min(255, b+amt));
+  return `rgb(${r|0},${g|0},${b|0})`;
+}
+function drawBox(obj) {
+  const x0=obj.x-obj.w/2, x1=obj.x+obj.w/2;
+  const y0=obj.y-obj.h/2, y1=obj.y+obj.h/2;
+  const z0=obj.z-obj.d/2, z1=obj.z+obj.d/2;
+  const faces = [
+    { pts:[[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]], s: 0 },
+    { pts:[[x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0]], s: -25 },
+    { pts:[[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0]], s: -12 },
+    { pts:[[x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1]], s: -12 },
+    { pts:[[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0]], s: 18 },
+    { pts:[[x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1]], s: -35 }
+  ];
+  const wd = faces.map(f => {
+    let cx=0,cy=0,cz=0;
+    f.pts.forEach(p=>{cx+=p[0]; cy+=p[1]; cz+=p[2];});
+    return { f, d: pd(cx/4, cy/4, cz/4) };
+  });
+  wd.sort((a,b)=>b.d-a.d);
+  wd.forEach(item => drawQuad(item.f.pts, shade(obj.color, item.f.s), 'rgba(0,0,0,0.3)'));
+}
+
+// Draw a proper character (not just a box)
+function drawCharacter(char, isPlayer) {
+  const cx = char.x, cz = char.z;
+  const bounce = char.isWalking ? Math.abs(Math.sin(char.walkPhase * 2)) * 0.05 : Math.sin(char.walkPhase) * 0.01;
+
+  // Legs
+  const legY = 0.3 + bounce;
+  const legPhase = char.isWalking ? Math.sin(char.walkPhase) * 0.15 : 0;
+  drawBox({ x: cx - 0.12, y: legY + legPhase * 0.1, z: cz, w: 0.18, h: 0.6, d: 0.2, color: '#1e293b' });
+  drawBox({ x: cx + 0.12, y: legY - legPhase * 0.1, z: cz, w: 0.18, h: 0.6, d: 0.2, color: '#1e293b' });
+
+  // Body/torso
+  drawBox({ x: cx, y: 1.0 + bounce, z: cz, w: 0.55, h: 0.8, d: 0.35, color: char.color });
+
+  // Arms
+  const armSwing = char.isWalking ? Math.sin(char.walkPhase) * 0.3 : 0;
+  drawBox({ x: cx - 0.4, y: 1.0 + bounce - armSwing * 0.1, z: cz + armSwing * 0.15, w: 0.15, h: 0.6, d: 0.15, color: char.color });
+  drawBox({ x: cx + 0.4, y: 1.0 + bounce + armSwing * 0.1, z: cz - armSwing * 0.15, w: 0.15, h: 0.6, d: 0.15, color: char.color });
+
+  // Food plate if bringing food
+  if (char.hasFood) {
+    const plate = project(w2c(cx, 1.15 + bounce, cz + 0.3));
+    if (plate && plate.depth > 0) {
+      const r = Math.max(4, 30/plate.depth);
+      ctx.fillStyle = '#fff';
+      ctx.beginPath(); ctx.ellipse(plate.x, plate.y, r*1.2, r*0.4, 0, 0, Math.PI*2); ctx.fill();
+      ctx.font = r + 'px system-ui, "Segoe UI Emoji"';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('🍛', plate.x, plate.y - r*0.2);
+    }
+  }
+
+  // Head (skin colored)
+  drawBox({ x: cx, y: 1.65 + bounce, z: cz, w: 0.32, h: 0.35, d: 0.32, color: char.skin || '#f5c69a' });
+
+  // Face features (eyes/hair)
+  const face = project(w2c(cx, 1.72 + bounce, cz - 0.16));
+  if (face && face.depth > 0) {
+    const size = Math.max(6, 45/face.depth);
+    // Hair
+    ctx.fillStyle = '#1a0f08';
+    ctx.beginPath();
+    ctx.ellipse(face.x, face.y - size*0.5, size*0.6, size*0.35, 0, Math.PI, 0);
+    ctx.fill();
+    // Eyes
+    ctx.fillStyle = '#111';
+    ctx.beginPath();
+    ctx.arc(face.x - size*0.2, face.y, size*0.08, 0, Math.PI*2);
+    ctx.arc(face.x + size*0.2, face.y, size*0.08, 0, Math.PI*2);
+    ctx.fill();
+    // Mouth
+    ctx.strokeStyle = '#7f1d1d';
+    ctx.lineWidth = Math.max(1, size*0.05);
+    ctx.beginPath();
+    ctx.arc(face.x, face.y + size*0.3, size*0.15, 0, Math.PI);
+    ctx.stroke();
+  }
+
+  // Name tag above
+  if (!isPlayer) {
+    const tag = project(w2c(cx, 2.15 + bounce, cz));
+    if (tag && tag.depth > 0) {
+      const s = Math.max(10, 35/tag.depth);
+      ctx.font = 'bold ' + s + 'px system-ui';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      const tw = ctx.measureText(char.name).width;
+      ctx.fillStyle = 'rgba(15,23,42,0.85)';
+      ctx.fillRect(tag.x - tw/2 - 6, tag.y - s*0.6, tw + 12, s*1.1);
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillText(char.name, tag.x, tag.y);
+    }
+  }
+}
+
+function drawObjectLabel(obj) {
+  const c = project(w2c(obj.x, obj.y + obj.h/2 + 0.15, obj.z));
+  if (!c || c.depth <= 0) return;
+  if (obj.emoji) {
+    const scale = Math.max(14, Math.min(50, 350 / c.depth));
+    ctx.font = scale + 'px system-ui, "Segoe UI Emoji"';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(obj.emoji, c.x, c.y);
+  }
+  const scale = Math.max(9, Math.min(20, 130 / c.depth));
+  ctx.font = 'bold ' + scale + 'px system-ui';
+  ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = 3;
+  ctx.strokeText(obj.label, c.x, c.y + scale*1.4);
+  ctx.fillStyle = '#0f172a';
+  ctx.fillText(obj.label, c.x, c.y + scale*1.4);
+}
+
+function drawSky() {
+  const skies = [['#87ceeb','#fffbeb'], ['#60a5fa','#fef3c7'], ['#f59e0b','#fde68a'], ['#1e293b','#0f172a']];
+  const [top, bot] = skies[state.timeOfDay];
+  const g = ctx.createLinearGradient(0, 0, 0, H*0.6);
+  g.addColorStop(0, top); g.addColorStop(1, bot);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H*0.6);
+  // Ground far away
+  const gg = ctx.createLinearGradient(0, H*0.5, 0, H);
+  gg.addColorStop(0, '#4ade80'); gg.addColorStop(1, '#166534');
+  ctx.fillStyle = gg; ctx.fillRect(0, H*0.6, W, H*0.4);
+}
+
+function drawMoveTargetRing() {
+  if (!state.moveTarget) return;
+  const c = project(w2c(state.moveTarget.x, 0.05, state.moveTarget.z));
+  if (!c) return;
+  const t = (Date.now() % 900) / 900;
+  ctx.beginPath();
+  ctx.arc(c.x, c.y, 8 + t*22, 0, Math.PI*2);
+  ctx.strokeStyle = `rgba(251,191,36,${1-t})`;
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(c.x, c.y, 5, 0, Math.PI*2);
+  ctx.fillStyle = '#fbbf24';
+  ctx.fill();
+}
+
+// ================================================================
+// MAIN RENDER
+// ================================================================
+function render() {
+  ctx.clearRect(0, 0, W, H);
+  drawSky();
+
+  const list = [];
+
+  // Room floors
+  rooms.forEach(r => {
+    const cx = (r.minX+r.maxX)/2, cz = (r.minZ+r.maxZ)/2;
+    const d = pd(cx, 0, cz);
+    if (d > 0) list.push({ depth: d + 1000, draw: () => {
+      drawQuad([[r.minX,0,r.minZ],[r.maxX,0,r.minZ],[r.maxX,0,r.maxZ],[r.minX,0,r.maxZ]], r.color, 'rgba(0,0,0,0.15)');
+      const c = project(w2c(cx, 0.02, cz));
+      if (c) {
+        ctx.save(); ctx.globalAlpha = 0.35;
+        ctx.fillStyle = '#000'; ctx.font = 'bold 14px system-ui'; ctx.textAlign = 'center';
+        ctx.fillText(r.name, c.x, c.y);
+        ctx.restore();
+      }
+    }});
+  });
+
+  // Outer walls
+  const wh = 3;
+  const walls = [
+    { pts:[[-12,0,-12],[12,0,-12],[12,wh,-12],[-12,wh,-12]], color: '#fef3c7' },
+    { pts:[[12,0,12],[-12,0,12],[-12,wh,12],[12,wh,12]], color: '#fef3c7' },
+    { pts:[[-12,0,12],[-12,0,-12],[-12,wh,-12],[-12,wh,12]], color: '#fde68a' },
+    { pts:[[12,0,-12],[12,0,12],[12,wh,12],[12,wh,-12]], color: '#fde68a' }
+  ];
+  walls.forEach(w => {
+    let cx=0,cy=0,cz=0;
+    w.pts.forEach(p=>{cx+=p[0]; cy+=p[1]; cz+=p[2];});
+    const d = pd(cx/4, cy/4, cz/4);
+    if (d > 0) list.push({ depth: d, draw: () => drawQuad(w.pts, w.color, 'rgba(0,0,0,0.3)') });
+  });
+
+  // Inner low walls
+  const iw = 1.2;
+  const inner = [
+    { pts:[[0,0,-12],[0,0,-2],[0,iw,-2],[0,iw,-12]] },
+    { pts:[[0,0,2],[0,0,12],[0,iw,12],[0,iw,2]] },
+    { pts:[[-12,0,0],[-2,0,0],[-2,iw,0],[-12,iw,0]] },
+    { pts:[[2,0,0],[12,0,0],[12,iw,0],[2,iw,0]] }
+  ];
+  inner.forEach(w => {
+    let cx=0,cz=0;
+    w.pts.forEach(p=>{cx+=p[0]; cz+=p[2];});
+    const d = pd(cx/4, iw/2, cz/4);
+    if (d > 0) list.push({ depth: d, draw: () => {
+      drawQuad(w.pts, '#e0c896', 'rgba(0,0,0,0.25)');
+      drawQuad([w.pts[1],w.pts[0],w.pts[3],w.pts[2]], '#d4b078', 'rgba(0,0,0,0.25)');
+    }});
+  });
+
+  // Objects
+  objects.forEach(obj => {
+    const d = pd(obj.x, obj.y + obj.h/2, obj.z);
+    if (d > 0) list.push({ depth: d, draw: () => { drawBox(obj); drawObjectLabel(obj); } });
+  });
+
+  // NPCs
+  Object.keys(npcs).forEach(k => {
+    const n = npcs[k];
+    const d = pd(n.x, 1, n.z);
+    if (d > 0) list.push({ depth: d - 0.3, draw: () => drawCharacter(n, false) });
+  });
+
+  list.sort((a,b) => b.depth - a.depth);
+  list.forEach(item => item.draw());
+
+  drawMoveTargetRing();
+
+  // Vignette
+  const rg = ctx.createRadialGradient(W/2, H/2, Math.min(W,H)*0.4, W/2, H/2, Math.max(W,H)*0.7);
+  rg.addColorStop(0, 'rgba(0,0,0,0)'); rg.addColorStop(1, 'rgba(0,0,0,0.35)');
+  ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+}
+
+// ================================================================
+// INPUT
+// ================================================================
+const keys = {};
+let isDragging = false, lastMouse = {x:0,y:0};
+
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+canvas.addEventListener('mousedown', e => {
+  if (e.button === 2) {
+    isDragging = true; lastMouse = {x:e.clientX, y:e.clientY};
+    canvas.style.cursor = 'grabbing';
+  } else if (e.button === 0) {
+    handleClick(e.clientX, e.clientY);
+  }
+});
+window.addEventListener('mouseup', e => {
+  if (e.button === 2) { isDragging = false; canvas.style.cursor = 'pointer'; }
+});
+window.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const dx = e.clientX - lastMouse.x, dy = e.clientY - lastMouse.y;
+  lastMouse = {x:e.clientX, y:e.clientY};
+  state.player.yaw -= dx * 0.005;
+  state.player.pitch = Math.max(-Math.PI/3, Math.min(Math.PI/3, state.player.pitch - dy*0.005));
+});
+
+let touchLast = null;
+canvas.addEventListener('touchstart', e => {
+  if (e.touches.length === 2) {
+    touchLast = {x: (e.touches[0].clientX + e.touches[1].clientX)/2, y: (e.touches[0].clientY + e.touches[1].clientY)/2};
+    e.preventDefault();
+  }
+}, {passive: false});
+canvas.addEventListener('touchmove', e => {
+  if (e.touches.length === 2 && touchLast) {
+    const cx = (e.touches[0].clientX + e.touches[1].clientX)/2;
+    const cy = (e.touches[0].clientY + e.touches[1].clientY)/2;
+    state.player.yaw -= (cx - touchLast.x) * 0.005;
+    state.player.pitch = Math.max(-Math.PI/3, Math.min(Math.PI/3, state.player.pitch - (cy - touchLast.y)*0.005));
+    touchLast = {x:cx, y:cy};
+    e.preventDefault();
+  }
+}, {passive: false});
+canvas.addEventListener('touchend', e => {
+  if (e.touches.length < 2) {
+    if (touchLast && e.changedTouches.length === 1) {
+      const t = e.changedTouches[0];
+      handleClick(t.clientX, t.clientY);
+    }
+    touchLast = null;
+  }
+});
+
+window.addEventListener('keydown', e => {
+  // Ignore all game keys while typing in an input
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+  const k = e.key.toLowerCase();
+  keys[k] = true;
+  if (['arrowup','arrowdown','arrowleft','arrowright','w','a','s','d',' '].includes(k)) e.preventDefault();
+  if (k === ' ') {
+    if (dialogOpen()) closeDialog();
+    else tryInteractFront();
+  }
+  if (k === 'escape') closeDialog();
+});
+window.addEventListener('keyup', e => {
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+  keys[e.key.toLowerCase()] = false;
+});
+
+function handleClick(sx, sy) {
+  if (dialogOpen()) { closeDialog(); return; }
+
+  // NPC click
+  let hitNpc = null, best = Infinity;
+  Object.keys(npcs).forEach(k => {
+    const n = npcs[k];
+    const c = project(w2c(n.x, 1.5, n.z));
+    if (c && c.depth > 0 && c.depth < best) {
+      const scale = Math.max(24, Math.min(88, 480/c.depth));
+      if (Math.abs(sx-c.x) < scale*0.7 && Math.abs(sy-c.y) < scale*1.3) {
+        hitNpc = k; best = c.depth;
+      }
+    }
+  });
+  if (hitNpc) {
+    const n = npcs[hitNpc];
+    const dir = { x: state.player.x - n.x, z: state.player.z - n.z };
+    const len = Math.hypot(dir.x, dir.z) || 1;
+    state.moveTarget = { x: n.x + dir.x/len*1.6, z: n.z + dir.z/len*1.6 };
+    state.interactAfter = { kind: 'npc', target: hitNpc };
+    showMarker(sx, sy);
+    return;
+  }
+
+  // Object click
+  let hitObj = null, bestO = Infinity;
+  objects.forEach(obj => {
+    const c = project(w2c(obj.x, obj.y + obj.h/2, obj.z));
+    if (c && c.depth > 0 && c.depth < bestO) {
+      const scale = Math.max(14, Math.min(50, 350/c.depth));
+      if (Math.abs(sx-c.x) < scale*0.9 && Math.abs(sy-c.y) < scale*0.9) {
+        hitObj = obj; bestO = c.depth;
+      }
+    }
+  });
+  if (hitObj) {
+    const dir = { x: state.player.x - hitObj.x, z: state.player.z - hitObj.z };
+    const len = Math.hypot(dir.x, dir.z) || 1;
+    state.moveTarget = { x: hitObj.x + dir.x/len*1.6, z: hitObj.z + dir.z/len*1.6 };
+    state.interactAfter = { kind: 'object', target: hitObj.id };
+    showMarker(sx, sy);
+    return;
+  }
+
+  // Floor
+  let p = screenToFloor(sx, sy);
+  if (!p) {
+    const f = focalLen();
+    const rx = (sx - W/2) / f;
+    const cy = Math.cos(state.player.yaw), sy2 = Math.sin(state.player.yaw);
+    const dirX = cy*rx + sy2*(-1);
+    const dirZ = sy2*rx - cy*(-1);
+    const len = Math.hypot(dirX, dirZ) || 1;
+    p = { x: state.player.x + (dirX/len)*6, z: state.player.z + (dirZ/len)*6 };
+  }
+  state.moveTarget = { x: Math.max(HOUSE.minX+0.5, Math.min(HOUSE.maxX-0.5, p.x)), z: Math.max(HOUSE.minZ+0.5, Math.min(HOUSE.maxZ-0.5, p.z)) };
+  state.interactAfter = null;
+  showMarker(sx, sy);
+}
+
+function showMarker(sx, sy) {
+  const m = document.getElementById('marker');
+  m.style.left = sx + 'px'; m.style.top = sy + 'px';
+  m.style.display = 'block'; m.style.animation = 'none';
+  void m.offsetWidth; m.style.animation = 'ping 0.6s ease-out';
+  setTimeout(() => { m.style.display = 'none'; }, 600);
+}
+
+// ================================================================
+// MOVEMENT
+// ================================================================
+function movePlayer(dt) {
+  if (dialogOpen() || state.isEating || state.isStudying) return;
+  const speed = 4;
+  let kx = 0, kz = 0;
+  if (keys['w'] || keys['arrowup'])    { kx += Math.sin(state.player.yaw); kz -= Math.cos(state.player.yaw); }
+  if (keys['s'] || keys['arrowdown'])  { kx -= Math.sin(state.player.yaw); kz += Math.cos(state.player.yaw); }
+  if (keys['a'] || keys['arrowleft'])  { kx -= Math.cos(state.player.yaw); kz -= Math.sin(state.player.yaw); }
+  if (keys['d'] || keys['arrowright']) { kx += Math.cos(state.player.yaw); kz += Math.sin(state.player.yaw); }
+  const kl = Math.hypot(kx, kz);
+  let mx = 0, mz = 0;
+  if (kl > 0) {
+    mx = kx/kl*speed*dt; mz = kz/kl*speed*dt;
+    state.moveTarget = null; state.interactAfter = null;
+    state._stuckTime = 0;
+  } else if (state.moveTarget) {
+    const dx = state.moveTarget.x - state.player.x;
+    const dz = state.moveTarget.z - state.player.z;
+    const dist = Math.hypot(dx, dz);
+    if (dist < 0.3) {
+      state.moveTarget = null;
+      state._stuckTime = 0;
+      if (state.interactAfter) {
+        const ia = state.interactAfter;
+        state.interactAfter = null;
+        let tx, tz;
+        if (ia.kind === 'npc') { tx = npcs[ia.target].x; tz = npcs[ia.target].z; }
+        else { const o = objects.find(o=>o.id===ia.target); tx = o.x; tz = o.z; }
+        state.player.yaw = Math.atan2(tx - state.player.x, -(tz - state.player.z));
+        if (ia.kind === 'npc') talkToNpc(ia.target);
+        else useObject(ia.target);
+      }
+    } else {
+      mx = dx/dist*speed*dt; mz = dz/dist*speed*dt;
+      const ty = Math.atan2(dx, -dz);
+      let dy = ty - state.player.yaw;
+      while (dy > Math.PI) dy -= Math.PI*2;
+      while (dy < -Math.PI) dy += Math.PI*2;
+      state.player.yaw += dy * Math.min(1, dt*10);
+    }
+  }
+  if (mx || mz) {
+    const prevX = state.player.x, prevZ = state.player.z;
+    let nx = state.player.x + mx, nz = state.player.z + mz;
+    nx = Math.max(HOUSE.minX+0.4, Math.min(HOUSE.maxX-0.4, nx));
+    nz = Math.max(HOUSE.minZ+0.4, Math.min(HOUSE.maxZ-0.4, nz));
+
+    // Slide-along-wall collision: try X and Z separately
+    let bx = false, bz = false;
+    Object.keys(npcs).forEach(k => {
+      const n = npcs[k];
+      if (Math.hypot(nx - n.x, state.player.z - n.z) < 0.65) bx = true;
+      if (Math.hypot(state.player.x - n.x, nz - n.z) < 0.65) bz = true;
+    });
+    objects.forEach(o => {
+      // Only block furniture that would actually block a person (not tiny/tall things)
+      if (o.h < 0.3 || o.y > 1.5) return;
+      if (Math.abs(nx - o.x) < o.w/2 + 0.2 && Math.abs(state.player.z - o.z) < o.d/2 + 0.2) bx = true;
+      if (Math.abs(state.player.x - o.x) < o.w/2 + 0.2 && Math.abs(nz - o.z) < o.d/2 + 0.2) bz = true;
+    });
+    if (!bx) state.player.x = nx;
+    if (!bz) state.player.z = nz;
+
+    // Detect stuck: no progress for 1.5s → cancel target
+    if (state.moveTarget) {
+      const moved = Math.hypot(state.player.x - prevX, state.player.z - prevZ);
+      state._stuckTime = (state._stuckTime || 0) + (moved < 0.01 ? dt : 0);
+      if (moved > 0.02) state._stuckTime = 0;
+      if (state._stuckTime > 1.2) {
+        state.moveTarget = null;
+        state.interactAfter = null;
+        state._stuckTime = 0;
+      }
+    }
+  }
+}
+
+// NPC movement (walking to targets)
+function updateNpcs(dt) {
+  Object.keys(npcs).forEach(k => {
+    const n = npcs[k];
+    if (n.walkTarget) {
+      const dx = n.walkTarget.x - n.x;
+      const dz = n.walkTarget.z - n.z;
+      const dist = Math.hypot(dx, dz);
+      if (dist < 0.3) {
+        n.walkTarget = null;
+        n.isWalking = false;
+        if (n.arrivedCallback) {
+          const cb = n.arrivedCallback;
+          n.arrivedCallback = null;
+          cb();
+        }
+      } else {
+        const speed = 2.5;
+        n.x += (dx/dist) * speed * dt;
+        n.z += (dz/dist) * speed * dt;
+        n.yaw = Math.atan2(dx, -dz);
+        n.isWalking = true;
+        n.walkPhase += dt * 8;
+      }
+    } else {
+      if (n.isWalking) n.isWalking = false;
+      n.walkPhase += dt * 0.5;
+    }
+  });
+}
+
+function walkNpcTo(key, tx, tz, callback) {
+  const n = npcs[key];
+  n.walkTarget = { x: tx, z: tz };
+  n.arrivedCallback = callback;
+}
+
+function walkNpcHome(key) {
+  const n = npcs[key];
+  walkNpcTo(key, n.home.x, n.home.z);
+}
+
+// ================================================================
+// INTERACTIONS
+// ================================================================
+function tryInteractFront() {
+  const p = state.player;
+  let best = null, bd = Infinity;
+  Object.keys(npcs).forEach(k => {
+    const n = npcs[k];
+    const d = Math.hypot(n.x - p.x, n.z - p.z);
+    if (d < 2.5 && d < bd) { best = { kind: 'npc', target: k }; bd = d; }
+  });
+  objects.forEach(o => {
+    const d = Math.hypot(o.x - p.x, o.z - p.z);
+    if (d < 2.5 && d < bd) { best = { kind: 'object', target: o.id }; bd = d; }
+  });
+  if (!best) return;
+  if (best.kind === 'npc') talkToNpc(best.target);
+  else useObject(best.target);
+}
+
+// ==== TALKING TO FAMILY ====
+function talkToNpc(key) {
+  const n = npcs[key];
+  const stage = state.stage;
+
+  const dialogs = {
+    ma: {
+      1: ["Beta, khaana khaya? Come, dinner is ready. Bring your plate.",
+          "Padhai kaisi chal rahi hai? Take a break, drink water.",
+          "You've been at the desk for hours. Eat something.",
+          "Tere liye rajma banaya hai — your favorite."],
+      2: ["Prelims soon. Sleep on time.", "Aaj kya study kiya? Come, khaana thanda ho raha hai.", "Take care of health. Marks won't come from tension."],
+      3: ["Beta Mains hai. Concentrate. Ma is with you.", "Aaj tumhari pasandeeda subzi banayi hai."],
+      4: ["Interview hai bete, be yourself. That's enough."],
+      5: ["Beta Collector aa gaye! Kitne bade ho gaye. Come, khaana."]
+    },
+    papa: {
+      1: ["Padhai ho rahi hai? Show me your notes sometime.",
+          "Beta, discipline is more important than hours. Be consistent.",
+          "Any doubt in Polity? Ask me. I've read the Constitution too.",
+          "Current affairs read kiye? Newspaper on table."],
+      2: ["Prelims hai. Practice papers zyada karo.",
+          "Aaj current affairs kya tha, bata?",
+          "Optional subject ready hai?"],
+      3: ["Mains answer writing daily kar rahe ho? That's key.",
+          "Essay pe kaam karo, beta."],
+      4: ["Interview mein sacche raho. Everything else follows."],
+      5: ["Collector Sahab! Papa is proud of you, beta. Really proud."]
+    },
+    brother: (state.playerName === 'Vatsal' ? {
+      // Player is Vatsal, so brother is Rishabh (older)
+      1: ["Vatsal, homework kar liya?", "Chal thoda cricket khelte hain.", "Padhai serious lo, mai bhi UPSC dekh raha hoon.", "Mumma bula rahi hai — jaldi jao."],
+      2: ["Vatsal, tumhaari exam kab hai?", "Best of luck, chhote!"],
+      3: ["Vatsal, Mains ke baad time nikaalunga tere liye.", "Padhai pe focus, khel baad mein."],
+      4: ["Vatsal, interview mein confidence rakhna.", "Sacche answers dena bas."],
+      5: ["Vatsal! Collector Sahab! Ab main tera driver banunga? 😄", "Bhai, proud of you!"]
+    } : {
+      // Player is Rishabh, brother is Vatsal (younger)
+      1: ["Bhaiya, cricket khelne chalein?", "Bhaiya, cartoons dekhun?", "Bhaiya, help karo homework mein!"],
+      2: ["Bhaiya, tumhaari exam kab hai?", "Bhaiya, all the best!"],
+      3: ["Bhaiya, Mains ke baad game khelenge saath?", "Bhaiya, tumhaari kitaabein bahut moti hain!"],
+      4: ["Bhaiya, interview mein confidence rakhna!"],
+      5: ["Bhaiya! You're an IAS officer! Salute!", "Bhaiya, siren wali gaadi kab milegi?"]
+    })
+  };
+
+  const perStage = dialogs[key][stage] || dialogs[key][1];
+  const memKey = `${key}:${stage}`;
+  const idx = (state.npcMemory[memKey] || 0) % perStage.length;
+  state.npcMemory[memKey] = idx + 1;
+
+  const choices = [];
+
+  // Papa in stage 1-3 has study quiz option
+  if (key === 'papa' && stage <= 3) {
+    choices.push({ text: '📚 "Papa, quiz me on Polity"', action: () => { closeDialog(); papaQuizzes(); } });
+  }
+
+  // Ma in stages 1-4 offers to serve food
+  if (key === 'ma' && !state.isEating && state.stage <= 5) {
+    choices.push({ text: '🍽️ "Ma, please serve me dinner"', action: () => { closeDialog(); maServesFood(); } });
+  }
+
+  // Brother in stage 1 offers play/help
+  if (key === 'brother' && stage <= 3) {
+    const brotherIsYounger = state.playerName === 'Rishabh';
+    choices.push({ text: brotherIsYounger ? '💚 "Yes let\'s play — 5 min break"' : '💚 "Bhaiya, thanks — 5 min chill"', action: () => {
+      closeDialog();
+      applyStats({ happiness: 8, family: 6, energy: -5 });
+      advanceTime(1);
+      notify('Bonded with brother 🎮');
+    }});
+    choices.push({ text: '📚 "Not now, I have to study"', action: () => {
+      closeDialog();
+      applyStats({ happiness: -2, family: -3 });
+    }});
+  }
+
+  // Everyone stage 5 has proud dialog
+  if (stage === 5) {
+    choices.push({ text: '🙏 Feel proud', action: () => { closeDialog(); applyStats({ happiness: 6, family: 4 }); } });
+  }
+
+  // Always available: open chat
+  choices.push({ text: `💬 Type & talk to ${n.name}`, action: () => { closeDialog(); openFreeChat(key); } });
+
+  // Default close
+  if (choices.length === 1) {
+    choices.unshift({ text: '👍 Continue', action: () => closeDialog() });
+  }
+
+  showDialog(`${n.emoji} ${n.name}`, perStage[idx], choices);
+  state.interactions++;
+}
+
+// ==== FREE CHAT (player types, family replies in character) ====
+const chatHistory = { ma: [], papa: [], brother: [] };
+
+function openFreeChat(key) {
+  const n = npcs[key];
+  const d = document.getElementById('dialog');
+  d.querySelector('.speaker').textContent = `${n.emoji} ${n.name}`;
+  d.querySelector('.text').innerHTML = getGreeting(key);
+  const c = d.querySelector('.choices');
+  c.innerHTML = `
+    <div class="chat-log" id="chat-log"></div>
+    <div id="chat-input-wrap">
+      <input id="chat-input" type="text" placeholder="Type your message to ${n.name}..." autofocus maxlength="200">
+      <button id="chat-send">Send</button>
+    </div>
+    <button class="choice" style="margin-top:8px" id="chat-close">👋 End chat</button>
+  `;
+  d.style.display = 'block';
+
+  // Render existing history
+  const log = document.getElementById('chat-log');
+  chatHistory[key].forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'chat-msg' + (m.you ? ' you' : '');
+    div.innerHTML = `<span class="who">${m.you ? 'You' : n.name}:</span>${m.text}`;
+    log.appendChild(div);
+  });
+  log.scrollTop = log.scrollHeight;
+
+  const input = document.getElementById('chat-input');
+  const send = document.getElementById('chat-send');
+  const close = document.getElementById('chat-close');
+
+  function submit() {
+    const txt = input.value.trim();
+    if (!txt) return;
+    input.value = '';
+    // Show player's message
+    const you = document.createElement('div');
+    you.className = 'chat-msg you';
+    you.innerHTML = `<span class="who">You:</span>${escapeHtml(txt)}`;
+    log.appendChild(you);
+    chatHistory[key].push({ you: true, text: escapeHtml(txt) });
+
+    // Get reply
+    const reply = generateReply(key, txt);
+    const rep = document.createElement('div');
+    rep.className = 'chat-msg';
+    rep.innerHTML = `<span class="who">${n.name}:</span>${reply.text}`;
+    log.appendChild(rep);
+    log.scrollTop = log.scrollHeight;
+    chatHistory[key].push({ you: false, text: reply.text });
+
+    // Apply stat effects
+    if (reply.stats) applyStats(reply.stats);
+    input.focus();
+  }
+  send.onclick = submit;
+  input.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); submit(); } };
+  close.onclick = () => closeDialog();
+  setTimeout(() => input.focus(), 50);
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function getGreeting(key) {
+  const stage = state.stage;
+  const g = {
+    ma: {
+      1: 'Bolo beta, kya baat hai?',
+      2: 'Prelims ke pehle kuch chahiye?',
+      3: 'Mains ki tension mat lo. Kuch bolna hai?',
+      4: 'Interview aa raha hai. Batao?',
+      5: 'Aa gaye Collector Sahab. Kya baat karni hai?'
+    },
+    papa: {
+      1: 'Haan, batao. Kya poochhna hai?',
+      2: 'Prelims prep kaisi hai? Bolo.',
+      3: 'Mains chal raha hai. Kya baat?',
+      4: 'Interview ke liye ready ho? Baat karo.',
+      5: 'Beta, ab tum senior officer ho. Batao.'
+    },
+    brother: {
+      1: 'Haan bhaiya/bhai, kya bolna hai?',
+      2: 'Exam ke baare mein baat karni hai?',
+      3: 'Kya haal, kya bolna hai?',
+      4: 'Interview ki tension?',
+      5: 'Collector Sahab, aadesh?'
+    }
+  };
+  return g[key][stage] || g[key][1];
+}
+
+// Reply generation: keyword-based per character
+function generateReply(key, msg) {
+  const t = msg.toLowerCase();
+  const stage = state.stage;
+
+  // Detect many intents
+  const asksAboutFood = /\b(food|khaana|khana|dinner|lunch|breakfast|hungry|bhookh|eat|khaunga|khaayenge|roti|dal|rice|sabzi|paratha|tea|chai)\b/.test(t);
+  const asksAboutStudy = /\b(study|padh|padhai|exam|prelims|mains|book|prepare|prep|revision|notes|topic|syllabus)\b/.test(t);
+  const greeting = /^(hi|hello|hey|namaste|namaskar|pranam|kaise ho|kaise hain|kya haal)/.test(t);
+  const thanks = /\b(thank|thanks|dhanyavaad|shukriya|shukria)\b/.test(t);
+  const love = /\b(love|pyaar|miss|proud|dear|jaan)\b/.test(t);
+  const worried = /\b(worry|worried|scared|nervous|tension|stress|dar|fikar|chinta|afraid)\b/.test(t);
+  const goingOut = /\b(going out|bahar|market|walk|jaa raha|nikalna|shopping)\b/.test(t);
+  const health = /\b(health|tabiyat|sick|tired|thak|fever|bukhaar|cold|khansi|pain|dard)\b/.test(t);
+  const helpAsk = /\b(help|madad|dou?bt|solve|explain|samjhao|batao|clear kar)\b/.test(t);
+  const iasQ = /\b(ias|upsc|collector|officer|rank|service|dc|posting|allotment)\b/.test(t);
+  const familyQ = /\b(family|papa|mummy|maa|ma|father|mother|brother|bhaiya|vatsal|rishabh|dada|nana|dadi|nani|chachu|mama)\b/.test(t);
+  const goodMorning = /good morning|good night|subah|raat|shubh|sweet dreams/.test(t);
+  const question = /\?|kya|why|how|kaise|kyu|batao|bata|when|kab|where|kaha/.test(t);
+  const angry = /\b(idiot|stupid|shut|chup|bakwas|nonsense|useless|hate)\b/.test(t);
+  const play = /\b(play|khel|cricket|game|pubg|football|movie|film)\b/.test(t);
+  const weather = /\b(weather|mausam|rain|baarish|hot|garmi|cold|thand|winter|summer)\b/.test(t);
+  const time = /\b(time|samay|clock|kitne baje|what time)\b/.test(t);
+  const joke = /\b(joke|chutkula|funny|hasi|hasao|laugh)\b/.test(t);
+  const politics = /\b(modi|congress|bjp|election|neta|minister|government|pm|president|rahul|sarkar)\b/.test(t);
+  const news = /\b(news|khabar|akhbaar|newspaper|hindu|indian express|paper)\b/.test(t);
+  const money = /\b(money|paisa|paise|rupee|income|salary|expense|budget|kharch)\b/.test(t);
+  const future = /\b(future|dream|goal|sapna|plan|kal|tomorrow|later)\b/.test(t);
+  const past = /\b(past|childhood|bachpan|memory|yaad|remember|purana)\b/.test(t);
+  const friends = /\b(friend|dost|yaar|classmate|batchmate)\b/.test(t);
+  const marriage = /\b(shaadi|marriage|wedding|marry|dulhan|dulha|girl|ladki|ladka|boy)\b/.test(t);
+  const holiday = /\b(holiday|chhutti|vacation|trip|travel|goa|shimla|manali|mussoorie|beach|hills)\b/.test(t);
+  const feeling = /\b(feel|feeling|sad|udaas|happy|khush|angry|gussa|upset|mood|dukhi)\b/.test(t);
+  const sorry = /\b(sorry|maaf|apologise|apologize|galti|mistake)\b/.test(t);
+  const yesno = /^(yes|no|haan|nahi|nahin|haa|nah)/.test(t);
+  const compliment = /\b(beautiful|smart|good|nice|great|acha|badhiya|best|awesome)\b/.test(t);
+  const problem = /\b(problem|issue|dikkat|pareshan|trouble)\b/.test(t);
+  const bye = /\b(bye|goodbye|alvida|jaata|jaati|going now|chalo|chaltan|nikaltan)\b/.test(t);
+  const sleep_ = /\b(sleep|so raha|neend|so ja|sleep)\b/.test(t);
+  const bath = /\b(bath|nahaana|nahaya|shower)\b/.test(t);
+  const village = /\b(village|gaon|farmer|kisan|farming|kheti)\b/.test(t);
+
+  const replies = {
+    ma: {
+      food: ['Aa jao, khaana laga deti hoon.', 'Beta, dining table pe aa jao, garam-garam khaana serve karti hoon.', 'Rajma-chawal banaya hai. Baith jao.', 'Chai bana doon? Biscuit ke saath.'],
+      study: ['Padhai zaroor karo, par health ka bhi khayal rakho beta.', 'Consistency important hai. Rest bhi lena.', 'Zyada mat padho ek saath — break bhi lena.', 'Aankhon ka khayal rakho, itna kitab paas mat rakho.'],
+      greeting: ['Namaste beta! Kaise ho?', 'Aao, baitho. Chai banaun?', 'Aa gaye? Chalo pehle haath dho lo.'],
+      thanks: ['Are, tumhare liye toh kuch bhi karungi.', 'Bas beta, khush raho.', 'Kaunsi baat ki thanks, apna beta hai.'],
+      love: ['Mujhe bhi tumse bahut pyaar hai. God bless you.', 'Beta, tum hi meri duniya ho.', 'Ma ka dil hai, beta. Tumhaare bina kuch nahi.'],
+      worried: ['Chinta mat karo. Sab theek hoga. Ma hai na.', 'Bhagwan pe bharosa rakho. Mehnat karo.', 'Ek deep breath lo. Kuch nahi hoga.'],
+      health: ['Aaram karo beta. Haldi doodh peelo.', 'Doctor ke paas chalein? Zyada tabiyat kharab lagti hai.', 'Neend poori karo, sab theek ho jayega.'],
+      helpAsk: ['Kya madad chahiye? Bolo.', 'Beta, jo bhi ho, share karo.', 'Papa se poochho, unhe zyada aata hai.'],
+      goingOut: ['Sambhalke jaana. Time se ghar aa jaana.', 'Kuch chahiye toh market se le aana?', 'Rasta dhyaan se — traffic bahut hai.'],
+      ias: ['Beta, mujhe pura yaqeen hai — tum zaroor IAS banoge.', 'Tumhaari mehnat rang laayegi. Ma ki dua tumhaare saath hai.', 'Bhagwan pe bharosa rakho, sab theek hoga.'],
+      family: ['Sab theek hain. Papa office se aa gaye.', 'Family sab theek hai. Tumhari chinta lagi rehti hai.', 'Dadi ka phone aaya tha, tumhein yaad kar rahi thi.'],
+      goodMorning: ['Subah subah ashirwad! Doodh peene aao.', 'Shubh ratri beta, jaldi so jao.', 'Uth gaye? Chai banati hoon.'],
+      angry: ['Beta, aisi bhaasha mat bolo. Kya baat hai?', 'Achha nahi lagta beta, aise mat bolo.'],
+      weather: ['Aaj thanda hai, sweater pehen ke jaana.', 'Baarish aa sakti hai, umbrella le jaao.', 'Garmi bahut hai, paani zyada peena.'],
+      joke: ['Ma jokes nahi sunati beta, bas asheesh deti hoon.', 'Hasna zaroor, par padhai bhi karna!'],
+      politics: ['Beta, politics mein zyada mat pado. Padhai pe focus.', 'Newspaper padhna, current affairs ke liye.', 'Nazar rakho, par apna raste chalo.'],
+      news: ['Aaj kya kahaani thi paper mein? Padho, IAS ke liye important.', 'Papa akhbaar padh rahe hain, unse le lo.'],
+      money: ['Paise ki chinta mat karo. Padhai pe focus rakho.', 'Beta, jitna zaroori ho utna kharch karo. Papa manage kar lenge.'],
+      future: ['Sapne dekho beta, aur unpe kaam karo. Sab hoga.', 'Bhagwan ne kuch achha likha hai tumhare liye.'],
+      past: ['Bachpan mein bhi tum bahut serious the, yaad hai?', 'Kitni yaadein hain. Tumhari school ki daayarian abhi bhi hain mere paas.'],
+      friends: ['Dost achhe rakho beta. Zyada waqt bhi mat waste karo.', 'Dost jaise honge, waisi hi tumhari zindagi hogi.'],
+      marriage: ['Abhi padhai poori karo. Shaadi ke liye bahut time hai.', 'Pehle IAS bano, phir sochenge.'],
+      holiday: ['Chalo kuch din ke liye ghumne chalein? Fresh ho jaao.', 'Manali ya Rishikesh chalein? Achha lagega.'],
+      feeling: ['Kya baat hai beta? Ma ko bata do.', 'Sab theek hai na? Mood off kyu hai?'],
+      sorry: ['Kya sorry-worry beta! Aa jao.', 'Koi baat nahi, sab theek hai.'],
+      compliment: ['Are, meri jaan, tumhi mera pyaar ho.', 'Meethi baatein banate ho beta.'],
+      problem: ['Kya hua? Ma ko batao, hum solve karenge.', 'Papa se baat karo, wo help karenge.'],
+      bye: ['Sambhalke jaana. Jaldi aana.', 'Bhagwan tumhaari raksha kare.'],
+      sleep: ['So ja beta, subah jaldi uthana hai.', 'Neend puri karo, warna health kharab hogi.'],
+      village: ['Gaon mein sab theek hain. Dadi ka phone aaya tha.', 'Chalo kabhi gaon chalein, dadi ko dekh aayenge.'],
+      generic: ['Haan beta, aur batao?', 'Bolo, sun rahi hoon.', 'Achha... aur?', 'Hmm, phir?', 'Kuch aur baat karni hai?', 'Beta, sab theek hai na?', 'Bas, aur kuch chahiye?', 'Batao beta, Ma sun rahi hai.']
+    },
+    papa: {
+      food: ['Ma ne kuch banaya hai. Dining pe milte hain.', 'Haan, khaana time pe khao.', 'Chai piyoge? Main mangwaata hoon.'],
+      study: ['Discipline maintain karo. Time-table follow karo. Roz revision zaroori hai.', 'Beta, sirf padhai kaafi nahi — analysis important hai.', 'Optional pe strong ho jao — usse rank banega.', 'Answer writing daily practice karo.'],
+      greeting: ['Namaste beta. Baitho.', 'Aao, kya baat hai?', 'Kaise ho? Padhai kaisi chal rahi hai?'],
+      thanks: ['Beta, tumhaari mehnat matlab rakhti hai — mera kuch nahi.', 'Kya baat karte ho.'],
+      love: ['Beta, hum sabko tumpe garv hai.', 'Papa hamesha tumhaare saath hain.', 'Tum meri sabse badi taakat ho.'],
+      worried: ['Nervousness natural hai. Focus on preparation, results follow.', 'Beta, mehnat pe bharosa rakho. Baaki Bhagwan pe.', 'Panic mat karo. Sochke chalo.'],
+      health: ['Neend poori karo. Yoga karo. Body theek toh mind theek.', 'Doctor ko dikhao agar zyada tabiyat kharab hai.', 'Exercise chalu karo daily.'],
+      helpAsk: ['Bolo, kya doubt hai? Polity ka hoga toh main solve kar dunga.', 'Constitution pass karo, main help karta hoon.', 'Kya problem hai? Baitho, discuss karte hain.'],
+      goingOut: ['Time se aana beta. Kal padhai hai.', 'Sambhal ke jaana. Traffic pe dhyaan.', 'Zyada late mat karna.'],
+      ias: ['Beta, IAS bahut demanding hai — par tumhare mein hai. Bas focus.', 'Roz newspaper padho. Editorial section skip mat karna.', 'Coaching bhi karo, self-study bhi. Balance rakho.'],
+      family: ['Sab theek hai. Bas tumhari fikar rehti hai.', 'Hum sabko tumpe bharosa hai.', 'Dadi ne blessings bheji hai tumhare liye.'],
+      goodMorning: ['Good morning. Subah walk kiya?', 'Shubh raatri. Jaldi soo jao — kal padhai hai.', 'Uth gaye? Chai piyoge?'],
+      angry: ['Beta, aise nahi baat karte. Baap hoon main.', 'Kya baat hai? Kuch pareshaan ho?'],
+      weather: ['Aaj achha mausam hai. Walk pe chalein?', 'Baarish ho rahi hai, aaram karo ghar par.', 'Garmi kaafi hai, hydrated raho.'],
+      joke: ['Beta, ek chutkula sunata hoon: Ek Sardarji…', 'Hasi zaroori hai. Serious mat raho har waqt.'],
+      politics: ['Politics samajhna zaroori hai IAS ke liye. Neutral raho.', 'Newspaper padho, biases avoid karo.', 'Constitution samajho, phir politics samajh aayega.'],
+      news: ['Aaj Hindu mein editorial kya tha? Padhna zaroor.', 'Current affairs strong karo — Prelims ka core hai.'],
+      money: ['Beta, paise ki chinta mat karo. Padhai pe focus rakho.', 'Financial planning bhi seekhna zaroori hai future ke liye.'],
+      future: ['Beta, planning karo. 5 saal aage sochna hai.', 'Focus on the goal — IAS banna hai, phir posting sochenge.'],
+      past: ['Yaad hai, jab tum choti class mein the toh kya bolte the? IAS banunga!', 'Bachpan ki mehnat aaj rang la rahi hai.'],
+      friends: ['Dost achhe honge toh kaam achha hoga. Choose wisely.', 'Achhi sangat hi kaam aati hai zindagi mein.'],
+      marriage: ['Pehle career settle karo, phir shaadi ki soch.', 'Aisi cheezein waqt aane par hoti hain.'],
+      holiday: ['Break chahiye kabhi kabhi. Mansuri chalein 2-3 din?', 'Refresh ho jao, phir wapas padhai.'],
+      feeling: ['Kya baat hai beta? Papa se share karo.', 'Sab theek hai na? Baat karo.'],
+      sorry: ['Chal, koi baat nahi. Aage badho.', 'Galti sab se hoti hai. Seekho aur aage badho.'],
+      compliment: ['Achha, apni tareef mat karo. Kaam bolna chahiye.', 'Bas beta.'],
+      problem: ['Kya problem hai? Detail mein batao.', 'Solution nikalte hain — chinta mat karo.'],
+      bye: ['Sambhalke jaana. Alert raho.', 'Bhagwan bhala kare.'],
+      sleep: ['Neend poori karo. Kal exam hai kya?', 'Regular sleep schedule maintain karo.'],
+      village: ['Kisan hamesha se hamari nation ki backbone hain.', 'Gaon ka kaam bhi seekhna chahiye IAS ke liye.'],
+      generic: ['Hmm. Aur?', 'Achha. Batao.', 'Samjha. Kya karne wala hai?', 'Theek hai beta. Aur kuch?', 'Bolte raho.', 'Interesting. Aage bolo.', 'Achha point.', 'Continue karo.']
+    },
+    brother: {
+      food: ['Bhai/Bhaiya, mujhe bhi bhookh lag rahi hai! Chalo saath khaate hain.', 'Mumma ne kuch banaya hai kya?', 'Pizza mangaayein?'],
+      study: ['Bhaiya, aap kaise itna padhte ho? Mujhe boring lagta hai.', 'Bhai, mujhe bhi UPSC karna hai kya? Bata.', 'Mujhe padhna nahi hai, main sports mein jaunga.'],
+      greeting: ['Hey! Kya haal?', 'Namaste bhai/bhaiya!', 'Kaisa hai?'],
+      thanks: ['Are, koi baat nahi.', 'Kabhi bhi bhaiya.', 'No mention!'],
+      love: ['Bhai/Bhaiya, aap ke jaisa banna hai.', 'Love you too, bhai.', 'Mujhe bhi aapse pyaar hai.'],
+      worried: ['Bhaiya, tension mat lo. Aap kar loge.', 'Bhai, chill karo thoda. Cricket khelenge?', 'Sab theek hoga, don\'t worry.'],
+      health: ['Bhai, aaram karo. Cartoons dekho.', 'Bhaiya, tabiyat theek nahi? Mumma ko batao.', 'Get well soon!'],
+      helpAsk: ['Bhai, main choti-moti help kar sakta hoon.', 'Bhaiya, mujhe kya aata hai bataao.', 'Try karta hoon!'],
+      goingOut: ['Bhaiya, main bhi chalun?', 'Kahaan jaa rahe ho? Chocolate laao!', 'Mujhe bhi le chalo!'],
+      play: ['Haan bhaiya! Cricket khelenge?', 'Chalo game khelte hain, PUBG?', 'Yay! Chalo!'],
+      ias: ['Bhaiya, aap Collector ban jaao — mujhe siren-wali gaadi mein bithana!', 'Bhai IAS ke liye kaunsi book?', 'Bhai, aap toh legend ban jaoge!'],
+      family: ['Sab theek hain ghar mein.', 'Mumma-Papa tumhaari baat kar rahe the.', 'Sab normal hai.'],
+      goodMorning: ['Good morning bhaiya! Uth gaye?', 'Good night bhai!', 'Subah subah kya baat!'],
+      angry: ['Kyu daant rahe ho bhaiya?', 'Bhai, chill karo yaar.', 'Sorry sorry!'],
+      weather: ['Aaj thand hai bhai. Sweater pehen lo.', 'Baarish mein kagaz ki kishtiyaan chalayein?', 'Garmi mein ice cream chahiye!'],
+      joke: ['Ek joke sunau bhaiya? Teacher ne poochha…', 'Haha, kya joke hai!', 'Bhai, aap ke jokes toh super hote hain.'],
+      politics: ['Bhaiya, ye politics samajh nahi aati.', 'Aap batao na, kya chal raha hai?', 'Mujhe cricket zyada pasand hai.'],
+      news: ['Bhai, main sirf sports section padhta hoon.', 'Aap padho, mujhe cartoon dekhna hai.'],
+      money: ['Bhai, pocket money badha do na apna share karke!', 'Papa se maango, mujhe bhi zaroorat hai.'],
+      future: ['Bhaiya, mujhe cricketer banna hai. Aapko IAS.', 'Big dreams, bhai!'],
+      past: ['Bhaiya, yaad hai jab hum school mein fight karte the?', 'Bachpan mein maza aata tha, ab bhi.'],
+      friends: ['Mere dost bhi aapke fan hain bhai.', 'Aapke friends kaise the? Bataao na.'],
+      marriage: ['Bhaiya, aapki shaadi kab? 😂', 'Girlfriend hai kya bhai?'],
+      holiday: ['Chalo bhai, Goa chalein!', 'Ghumne chalna hai! Please please!', 'Beach beach beach!'],
+      feeling: ['Bhaiya, mood off kyu? Chalo game khelte hain.', 'Sad ho? Ma se baat karo.'],
+      sorry: ['Kya sorry bhai! Sab bhool jao.', 'Cool bhai, forget it.'],
+      compliment: ['Thanks bhaiya!', 'Aap bhi best ho!', 'Aap toh super ho!'],
+      problem: ['Bhai, kya hua? Bata.', 'Ma-Papa ko batao na.'],
+      bye: ['Bye bhaiya!', 'Milte hain.', 'Later!'],
+      sleep: ['Bhai, main bhi soo jaunga.', 'Bhaiya, kahaani sunao pehle.'],
+      village: ['Gaon jaana hai bhai. Aam khaane.', 'Dadi ke ghar chalein?'],
+      generic: ['Achha.', 'Aur bata bhaiya/bhai.', 'Hmm.', 'Kya?', 'Kool!', 'Interesting!', 'Sach mein?', 'Wow!']
+    }
+  };
+
+  const R = replies[key];
+  let picked, stats = null;
+
+  // Priority order — most specific first
+  if (angry)              { picked = R.angry; stats = { happiness: -3, family: -4 }; }
+  else if (bye)           { picked = R.bye; stats = { family: 1 }; }
+  else if (sorry)         { picked = R.sorry; stats = { family: 2 }; }
+  else if (compliment)    { picked = R.compliment; stats = { happiness: 3, family: 2 }; }
+  else if (asksAboutFood) { picked = R.food; }
+  else if (weather)       { picked = R.weather; }
+  else if (time)          { picked = ['Abhi ' + (['subah','dopahar','shaam','raat'][state.timeOfDay]) + ' hai.']; }
+  else if (joke)          { picked = R.joke; stats = { happiness: 4 }; }
+  else if (politics)      { picked = R.politics; stats = { knowledge: 1 }; }
+  else if (news)          { picked = R.news; stats = { knowledge: 2 }; }
+  else if (money)         { picked = R.money; }
+  else if (goingOut)      { picked = R.goingOut; }
+  else if (health)        { picked = R.health; stats = { family: 2 }; }
+  else if (helpAsk)       { picked = R.helpAsk; stats = { knowledge: key === 'papa' ? 2 : 0 }; }
+  else if (love)          { picked = R.love; stats = { happiness: 5, family: 6 }; }
+  else if (thanks)        { picked = R.thanks; stats = { family: 3 }; }
+  else if (worried)       { picked = R.worried; stats = { happiness: 3, family: 2 }; }
+  else if (feeling)       { picked = R.feeling; stats = { happiness: 2, family: 2 }; }
+  else if (iasQ)          { picked = R.ias; stats = { happiness: 3, knowledge: 1 }; }
+  else if (asksAboutStudy){ picked = R.study; stats = { knowledge: key === 'papa' ? 2 : 1 }; }
+  else if (goodMorning)   { picked = R.goodMorning; stats = { happiness: 2 }; }
+  else if (greeting)      { picked = R.greeting; stats = { family: 1 }; }
+  else if (play && key === 'brother') { picked = R.play; stats = { happiness: 4, family: 3, energy: -3 }; }
+  else if (future)        { picked = R.future; }
+  else if (past)          { picked = R.past; stats = { family: 2 }; }
+  else if (friends)       { picked = R.friends; }
+  else if (marriage)      { picked = R.marriage; }
+  else if (holiday)       { picked = R.holiday; stats = { happiness: 3 }; }
+  else if (sleep_)        { picked = R.sleep; }
+  else if (village)       { picked = R.village; }
+  else if (problem)       { picked = R.problem; stats = { family: 1 }; }
+  else if (familyQ)       { picked = R.family; }
+  else                    { picked = R.generic; }
+
+  const text = picked[Math.floor(Math.random() * picked.length)];
+  return { text: escapeHtml(text), stats };
+}
+function maServesFood() {
+  const ma = npcs.ma;
+  const dt = objects.find(o => o.id === 'diningTable');
+  // Ma goes to stove, gets food, then to dining table
+  const stove = objects.find(o => o.id === 'stove');
+  notify('👩 Ma is bringing food...');
+  walkNpcTo('ma', stove.x - 0.5, stove.z + 1.5, () => {
+    ma.hasFood = true;
+    // Then to dining table
+    walkNpcTo('ma', dt.x - 1, dt.z + 1.5, () => {
+      // Now prompt player to come sit
+      showDialog('👩 Ma', 'Aa jao, khaana thanda ho raha hai! Come sit at the table.', [
+        { text: '🍽️ Go sit at dining table', action: () => {
+          closeDialog();
+          // Auto-move player to dining table
+          state.moveTarget = { x: dt.x + 1, z: dt.z + 1.5 };
+          state.interactAfter = { kind: 'sitDining' };
+        }}
+      ]);
+      state.interactAfter = null; // clear so player can choose
+      // Custom handler for sitDining
+      state._sitDiningHandler = () => sitAndEat(ma);
+    });
+  });
+}
+
+// Sit at table and eat
+function sitAndEat(ma) {
+  state.isEating = true;
+  ma.hasFood = false;
+  showDialog('🍛 Dinner', `You sit down. Ma has served rajma-chawal — steaming hot. She sits beside you. "Khao, beta." <br><br><em>You eat quietly. The warmth of home, of a mother's cooking, fills you.</em>`, [
+    { text: '❤️ "Thank you, Ma"', action: () => {
+      closeDialog();
+      state.isEating = false;
+      applyStats({ energy: 30, happiness: 15, family: 12 });
+      advanceTime(1);
+      notify('🍛 Delicious dinner!');
+      walkNpcHome('ma');
+    }}
+  ]);
+}
+
+// ==== PAPA QUIZZES YOU ====
+function papaQuizzes() {
+  const qs = [
+    { q: 'Papa asks: "Which article gives Right to Education?"', o: ['Article 19', 'Article 21A', 'Article 32', 'Article 44'], c: 1 },
+    { q: 'Papa asks: "Who was the first President of India?"', o: ['Nehru', 'Rajendra Prasad', 'Gandhi', 'Ambedkar'], c: 1 },
+    { q: 'Papa asks: "Directive Principles are borrowed from?"', o: ['USA', 'UK', 'Ireland', 'France'], c: 2 },
+    { q: 'Papa asks: "How many schedules in Constitution?"', o: ['10', '12', '11', '9'], c: 1 }
+  ];
+  const q = qs[Math.floor(Math.random() * qs.length)];
+  askOne(q, (correct) => {
+    if (correct) {
+      showDialog('👨 Papa', 'Shabaash beta! Bilkul sahi. Very good.', [
+        { text: '😊 "Thanks, Papa"', action: () => {
+          closeDialog();
+          applyStats({ knowledge: 5, family: 6, happiness: 5 });
+          advanceTime(1);
+        }}
+      ]);
+    } else {
+      showDialog('👨 Papa', 'Nahi beta, sahi answer yaad karo. Constitution ki basics strong honi chahiye. Padho, phir batao.', [
+        { text: '📚 "Will study more"', action: () => {
+          closeDialog();
+          applyStats({ knowledge: 2, happiness: -3 });
+          advanceTime(1);
+        }}
+      ]);
+    }
+  });
+}
+
+function askOne(q, callback) {
+  const panel = document.getElementById('qp');
+  panel.innerHTML = `
+    <h3>👨 Papa's Question</h3>
+    <div class="qq">${q.q}</div>
+    <div class="qopts" id="qo">
+      ${q.o.map((op, i) => `<button data-i="${i}">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
+    </div>
+  `;
+  document.getElementById('quiz').style.display = 'flex';
+  panel.querySelectorAll('#qo button').forEach(b => {
+    b.onclick = () => {
+      const chosen = parseInt(b.dataset.i);
+      if (chosen === q.c) b.classList.add('correct');
+      else { b.classList.add('wrong'); panel.querySelector(`#qo button[data-i="${q.c}"]`).classList.add('correct'); }
+      panel.querySelectorAll('#qo button').forEach(x => x.disabled = true);
+      setTimeout(() => {
+        document.getElementById('quiz').style.display = 'none';
+        callback(chosen === q.c);
+      }, 1400);
+    };
+  });
+}
+
+// ==== USE OBJECTS ====
+function useObject(id) {
+  if (id === 'desk' || id === 'chair') {
+    startStudying();
+  } else if (id === 'diningTable') {
+    if (state.isEating) return;
+    // Only sittable if Ma has served
+    showDialog('🍽️ Dining Table', 'You look at the table. Nothing is served yet. Ask Ma to serve food first.', [
+      { text: '👍 Okay', action: closeDialog }
+    ]);
+  } else if (id === 'bed') {
+    showDialog('🛏️ Bed', 'Get some sleep? It\'ll restore energy.', [
+      { text: '😴 Sleep till morning', action: () => {
+        closeDialog();
+        applyStats({ energy: 60, happiness: 5 });
+        // Advance to next morning
+        while (state.timeOfDay !== 0) advanceTime(1, true);
+        notify('😴 Slept well. New day begins.');
+      }},
+      { text: '🚫 Not yet', action: closeDialog }
+    ]);
+  } else if (id === 'sofa') {
+    showDialog('🛋️ Sofa', 'You relax on the sofa for a few minutes.', [
+      { text: '➡️ Continue', action: () => {
+        closeDialog();
+        applyStats({ energy: 5, happiness: 3, knowledge: -1 });
+        advanceTime(1);
+      }}
+    ]);
+  } else if (id === 'tv') {
+    showDialog('📺 TV', 'News is on. Watching current affairs helps preparation.', [
+      { text: '📰 Watch news (15 min)', action: () => {
+        closeDialog();
+        applyStats({ knowledge: 3, happiness: 2, energy: -3 });
+        advanceTime(1);
+        notify('📰 Current affairs updated');
+      }},
+      { text: '🚫 Leave it', action: closeDialog }
+    ]);
+  } else if (id === 'shelf') {
+    showDialog('📖 Bookshelf', 'Laxmikanth, Bipan Chandra, NCERT, GC Leong. Pick one?', [
+      { text: '📚 Study for 1 hour', action: () => {
+        closeDialog();
+        applyStats({ knowledge: 4, energy: -8 });
+        advanceTime(1);
+        notify('📚 +4 Knowledge');
+      }},
+      { text: '🚫 Not now', action: closeDialog }
+    ]);
+  } else if (id === 'globe') {
+    showDialog('🌍 Globe', 'Study Geography.', [
+      { text: '🗺️ Study 30 min', action: () => {
+        closeDialog();
+        applyStats({ knowledge: 3, energy: -5 });
+        advanceTime(1);
+      }},
+      { text: '🚫 Later', action: closeDialog }
+    ]);
+  } else if (id === 'stove') {
+    showDialog('🍳 Stove', 'Ma cooks here. Better not disturb.', [
+      { text: '👍 OK', action: closeDialog }
+    ]);
+  } else if (id === 'sink') {
+    showDialog('🚰 Sink', 'You drink some water. Refreshing.', [
+      { text: '💧 OK', action: () => { closeDialog(); applyStats({ energy: 3 }); } }
+    ]);
+  } else if (id === 'closet') {
+    showDialog('👔 Closet', 'Your clothes.', [
+      { text: '👍 OK', action: closeDialog }
+    ]);
+  }
+}
+
+// ==== STUDY MINI-GAME ====
+function startStudying() {
+  if (state.energy < 15) {
+    showDialog('📚 Too Tired', 'You need to rest first. Sleep to restore energy.', [
+      { text: '👍 OK', action: closeDialog }
+    ]);
+    return;
+  }
+  state.isStudying = true;
+  const qs = [
+    { q: 'The Fundamental Rights are enshrined in which Part?', o: ['Part II', 'Part III', 'Part IV', 'Part V'], c: 1 },
+    { q: 'Who wrote "Discovery of India"?', o: ['Gandhi', 'Nehru', 'Ambedkar', 'Radhakrishnan'], c: 1 },
+    { q: 'Article 370 was related to?', o: ['Assam', 'Punjab', 'Jammu & Kashmir', 'Nagaland'], c: 2 },
+    { q: 'The Panchayati Raj was recommended by?', o: ['Balwant Rai Mehta', 'Sarkaria', 'Punchhi', 'Ashok Mehta'], c: 0 },
+    { q: 'GST Council is chaired by?', o: ['PM', 'President', 'Finance Minister', 'RBI Governor'], c: 2 },
+    { q: 'Tropic of Cancer passes through how many Indian states?', o: ['6', '7', '8', '9'], c: 2 }
+  ];
+  const q = qs[Math.floor(Math.random() * qs.length)];
+  const panel = document.getElementById('qp');
+  panel.innerHTML = `
+    <h3>📚 Study Session</h3>
+    <div class="qprog">Answer to earn Knowledge</div>
+    <div class="qq">${q.q}</div>
+    <div class="qopts" id="qo">
+      ${q.o.map((op, i) => `<button data-i="${i}">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
+    </div>
+  `;
+  document.getElementById('quiz').style.display = 'flex';
+  panel.querySelectorAll('#qo button').forEach(b => {
+    b.onclick = () => {
+      const chosen = parseInt(b.dataset.i);
+      if (chosen === q.c) b.classList.add('correct');
+      else { b.classList.add('wrong'); panel.querySelector(`#qo button[data-i="${q.c}"]`).classList.add('correct'); }
+      panel.querySelectorAll('#qo button').forEach(x => x.disabled = true);
+      setTimeout(() => {
+        document.getElementById('quiz').style.display = 'none';
+        state.isStudying = false;
+        if (chosen === q.c) { applyStats({ knowledge: 6, energy: -12, happiness: 3 }); notify('✅ Correct! +6 Knowledge'); state.mocksPassed++; }
+        else { applyStats({ knowledge: 2, energy: -12, happiness: -2 }); notify('❌ Wrong, but you learn something'); }
+        state.mocksAttempted++;
+        advanceTime(2);
+        checkStageAdvance();
+      }, 1400);
+    };
+  });
+}
+
+// ================================================================
+// STAGE PROGRESSION
+// ================================================================
+function checkStageAdvance() {
+  if (state.stage === 1 && state.knowledge >= 55 && state.mocksAttempted >= 3) {
+    showTransition('📝 PRELIMS DAY',
+      `<b>${state.playerName}, months of study have led to this day.</b> The exam center is waiting. Prelims is a test of speed and knowledge.`,
+      () => attemptExam('prelims', 5)
+    );
+  } else if (state.stage === 2 && state.knowledge >= 70 && state.mocksAttempted >= 6) {
+    showTransition('📝 MAINS EXAM',
+      `<b>You have cleared Prelims.</b> Now Mains — nine papers of writing. Depth and analysis.`,
+      () => attemptExam('mains', 6)
+    );
+  } else if (state.stage === 3 && state.knowledge >= 80 && state.mocksAttempted >= 9) {
+    showTransition('🎤 UPSC INTERVIEW',
+      `<b>You have cleared Mains.</b> Now UPSC Bhavan. The Personality Test. Be yourself.`,
+      () => attemptInterview()
+    );
+  }
+}
+
+function attemptExam(type, count) {
+  const bank = [
+    { q: 'Constitutional head of the State?', o: ['CM', 'Governor', 'President', 'PM'], c: 1 },
+    { q: 'First Indian Nobel Prize winner?', o: ['C.V. Raman', 'Tagore', 'Mother Teresa', 'Sen'], c: 1 },
+    { q: 'Fundamental Rights are in Part?', o: ['II', 'III', 'IV', 'V'], c: 1 },
+    { q: 'Battle of Plassey year?', o: ['1757', '1764', '1857', '1707'], c: 0 },
+    { q: 'Iron Man of India?', o: ['Nehru', 'Gandhi', 'Patel', 'Bose'], c: 2 },
+    { q: 'Simla Agreement year?', o: ['1971', '1972', '1975', '1966'], c: 1 },
+    { q: 'Highest civilian award?', o: ['Padma Vibhushan', 'Bharat Ratna', 'Padma Shri', 'Padma Bhushan'], c: 1 },
+    { q: 'GST Council chaired by?', o: ['PM', 'President', 'FM', 'RBI Gov'], c: 2 },
+    { q: '"Sorrow of Bengal" river?', o: ['Ganga', 'Damodar', 'Kosi', 'Brahmaputra'], c: 1 },
+    { q: 'ISRO headquarters?', o: ['Mumbai', 'Bengaluru', 'Chennai', 'Hyderabad'], c: 1 }
+  ];
+  const chosen = [];
+  const used = new Set();
+  while (chosen.length < count) {
+    const i = Math.floor(Math.random() * bank.length);
+    if (!used.has(i)) { used.add(i); chosen.push(bank[i]); }
+  }
+  let idx = 0, correct = 0;
+  function next() {
+    if (idx >= chosen.length) {
+      document.getElementById('quiz').style.display = 'none';
+      const bonus = Math.floor((state.knowledge - 50) / 15);
+      const eff = correct + Math.max(0, bonus);
+      const needed = type === 'prelims' ? 3 : 4;
+      if (eff >= needed) {
+        if (type === 'prelims') {
+          state.stage = 2;
+          showTransition('🎉 PRELIMS CLEARED!', `${correct}/${chosen.length} correct. Mains awaits — study harder!`, () => {
+            applyStats({ reputation: 15, happiness: 20, energy: -20 });
+            save();
+          });
+        } else {
+          state.stage = 3;
+          showTransition('🎉 MAINS CLEARED!', `${correct}/${chosen.length} correct. Interview call from UPSC!`, () => {
+            applyStats({ reputation: 20, happiness: 25, energy: -25 });
+            save();
+          });
+        }
+      } else {
+        showTransition('😔 Not Cleared', `${correct}/${chosen.length} correct. Prepare more and try again.`, () => {
+          applyStats({ happiness: -20, energy: -20 });
+          state.knowledge = Math.max(20, state.knowledge - 15);
+          state.mocksAttempted = 0;
+          save();
+        });
+      }
+      return;
+    }
+    const q = chosen[idx];
+    const panel = document.getElementById('qp');
+    panel.innerHTML = `
+      <h3>📝 ${type.toUpperCase()} — Q${idx+1}/${chosen.length}</h3>
+      <div class="qprog">Correct: ${correct}/${idx}</div>
+      <div class="qq">${q.q}</div>
+      <div class="qopts" id="qo">
+        ${q.o.map((op, i) => `<button data-i="${i}">${String.fromCharCode(65+i)}. ${op}</button>`).join('')}
+      </div>
+    `;
+    document.getElementById('quiz').style.display = 'flex';
+    panel.querySelectorAll('#qo button').forEach(b => {
+      b.onclick = () => {
+        const chosen_i = parseInt(b.dataset.i);
+        if (chosen_i === q.c) { correct++; b.classList.add('correct'); }
+        else { b.classList.add('wrong'); panel.querySelector(`#qo button[data-i="${q.c}"]`).classList.add('correct'); }
+        panel.querySelectorAll('#qo button').forEach(x => x.disabled = true);
+        setTimeout(() => { idx++; next(); }, 1200);
+      };
+    });
+  }
+  next();
+}
+
+function attemptInterview() {
+  const qs = [
+    { q: 'Board: "Why IAS?"', o: [
+      { text: 'To serve the last person in the last village', good: true },
+      { text: 'For power and prestige', good: false },
+      { text: 'Family pressure', good: false }
+    ]},
+    { q: 'Board: "What about reservation?"', o: [
+      { text: 'Serves a purpose, should evolve with society', good: true },
+      { text: 'Should be abolished', good: false },
+      { text: 'Should be expanded to all', good: false }
+    ]},
+    { q: 'Board: "If senior takes bribe?"', o: [
+      { text: 'Report via vigilance with evidence', good: true },
+      { text: 'Confront directly', good: false },
+      { text: 'Stay quiet', good: false }
+    ]},
+    { q: 'Board: "Handling communal tension?"', o: [
+      { text: 'Engage leaders early, prevent escalation', good: true },
+      { text: 'Curfew and arrests', good: false },
+      { text: 'Leave it to SP', good: false }
+    ]}
+  ];
+  let idx = 0, good = 0;
+  function nxt() {
+    if (idx >= qs.length) {
+      document.getElementById('quiz').style.display = 'none';
+      if (good >= 3) {
+        const rank = Math.max(3, Math.floor(300 - state.knowledge * 2 - (state.reputation - 50)));
+        const districts = ['Bareilly', 'Nashik', 'Guntur', 'Mysuru', 'Alwar', 'Ratnagiri', 'Solapur', 'Rewa'];
+        state.district = districts[Math.floor(Math.random() * districts.length)];
+        state.stage = 5;
+        showTransition(`🎉 RANK ${rank} — IAS!`,
+          `<b>You have made it, ${state.playerName}!</b> Family in tears of joy. District allotted: <b>${state.district}</b>. Ma is calling everyone. Papa can't stop smiling. Little brother is bragging to his friends.`,
+          () => {
+            applyStats({ reputation: 40, happiness: 40, family: 25 });
+            save();
+            notify('🇮🇳 You are now an IAS officer!');
+          });
+      } else {
+        showTransition('😔 Interview Not Cleared', 'The board wasn\'t convinced. Prepare stronger.', () => {
+          applyStats({ happiness: -30, energy: -20 });
+          state.stage = 1;
+          state.mocksAttempted = 0;
+          save();
+        });
+      }
+      return;
+    }
+    const q = qs[idx];
+    const panel = document.getElementById('qp');
+    panel.innerHTML = `
+      <h3>🎤 Interview — Q${idx+1}/${qs.length}</h3>
+      <div class="qprog">Impressive so far: ${good}</div>
+      <div class="qq">${q.q}</div>
+      <div class="qopts" id="qo">
+        ${q.o.map((op, i) => `<button data-i="${i}">${op.text}</button>`).join('')}
+      </div>
+    `;
+    document.getElementById('quiz').style.display = 'flex';
+    panel.querySelectorAll('#qo button').forEach(b => {
+      b.onclick = () => {
+        const chosen = parseInt(b.dataset.i);
+        if (q.o[chosen].good) { good++; b.classList.add('correct'); }
+        else b.classList.add('wrong');
+        panel.querySelectorAll('#qo button').forEach(x => x.disabled = true);
+        setTimeout(() => { idx++; nxt(); }, 1500);
+      };
+    });
+  }
+  nxt();
+}
+
+// ================================================================
+// COLLECTOR CASES (delivered by NPC who walks up to you)
+// ================================================================
+const CASES = [
+  {
+    title: 'Flood in villages',
+    icon: '🌊',
+    intro: 'Sir, urgent! 5 villages under water. 2000 stranded. What should we do?',
+    choices: [
+      { text: '🚨 "Rush to site, coordinate rescue"', outcome: 'Villagers rescued. Media covers your leadership.', stats: { reputation: 12, energy: -25, family: -5 } },
+      { text: '📞 "Deploy NDRF from office"', outcome: 'All safe, but locals wanted you there.', stats: { reputation: 3 } },
+      { text: '📋 "Delegate to SDM"', outcome: 'Rescue delayed. Casualties reported.', stats: { reputation: -15 } }
+    ]
+  },
+  {
+    title: 'Corruption complaint',
+    icon: '💰',
+    intro: 'Sir, farmers say the Tehsildar takes bribes for land records. Their complaints are here.',
+    choices: [
+      { text: '🔍 "Order investigation now"', outcome: 'Corruption confirmed. Tehsildar suspended.', stats: { reputation: 12 } },
+      { text: '📞 "Warn him personally"', outcome: 'Stops briefly but returns.', stats: { reputation: -5 } },
+      { text: '📁 "Forward to Vigilance"', outcome: 'Takes months. Nothing changes.', stats: { reputation: -3 } }
+    ]
+  },
+  {
+    title: 'Farmer protest',
+    icon: '🚜',
+    intro: 'Sir, 300 farmers protesting outside. Land acquisition dispute.',
+    choices: [
+      { text: '🤝 "I\'ll go talk to leaders"', outcome: 'Peaceful compromise reached.', stats: { reputation: 15, energy: -20, family: -5 } },
+      { text: '👮 "Police disperse them"', outcome: 'Turned violent. Major fallout.', stats: { reputation: -25 } },
+      { text: '📝 "Forward demands to govt"', outcome: 'Government slow. Protest continues.', stats: { reputation: -5 } }
+    ]
+  },
+  {
+    title: 'Hospital oxygen shortage',
+    icon: '🏥',
+    intro: 'Sir! District hospital — 12 hours of oxygen left. 40 critical patients!',
+    choices: [
+      { text: '🚛 "I\'ll personally coordinate supply"', outcome: 'Supply arrives in 8 hours. CM calls to appreciate.', stats: { reputation: 18, energy: -30, family: -8 } },
+      { text: '📞 "Ask for airlift"', outcome: 'Late arrival. Two casualties.', stats: { reputation: -12 } },
+      { text: '💰 "Buy from local supplier"', outcome: 'Poor quality. Complaints later.', stats: { reputation: -5, money: -200 } }
+    ]
+  }
+];
+
+function deliverCase() {
+  // Random NPC (papa or brother acting as assistant) walks up with a case
+  const messenger = Math.random() < 0.5 ? 'papa' : 'brother';
+  const case_ = CASES[Math.floor(Math.random() * CASES.length)];
+  const n = npcs[messenger];
+  // Walk to player
+  const dir = { x: state.player.x - n.x, z: state.player.z - n.z };
+  const len = Math.hypot(dir.x, dir.z) || 1;
+  walkNpcTo(messenger, state.player.x - dir.x/len*1.5, state.player.z - dir.z/len*1.5, () => {
+    state.activeCase = case_;
+    showDialog(`📁 Urgent Case: ${case_.title}`, case_.intro, case_.choices.map(c => ({
+      text: c.text,
+      action: () => {
+        closeDialog();
+        applyStats(c.stats);
+        state.casesResolved++;
+        state.activeCase = null;
+        showDialog(`${case_.icon} Outcome`, `<em>${c.outcome}</em>`, [
+          { text: '➡️ Continue', action: () => {
+            closeDialog();
+            walkNpcHome(messenger);
+            advanceTime(2);
+          }}
+        ]);
+      }
+    })));
+  });
+}
+
+// ================================================================
+// STATS / TIME
+// ================================================================
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function applyStats(delta) {
+  Object.entries(delta || {}).forEach(([k, v]) => {
+    if (k === 'money') state.money += v;
+    else if (k in state) state[k] = clamp(state[k] + v, 0, 100);
+  });
+  updateHUD();
+  save();
+}
+
+function advanceTime(steps = 1, silent) {
+  for (let i = 0; i < steps; i++) {
+    state.timeOfDay = (state.timeOfDay + 1) % 4;
+    if (state.timeOfDay === 0) {
+      state.day++;
+      state.energy = Math.min(100, state.energy + 20);
+      // Collector: chance of case
+      if (state.stage === 5 && Math.random() < 0.4) {
+        setTimeout(() => deliverCase(), 2000);
+      }
+    }
+  }
+  if (!silent) updateHUD();
+}
+
+function updateHUD() {
+  // Don't disrupt chat input focus
+  const activeIsChat = document.activeElement && document.activeElement.id === 'chat-input';
+
+  document.getElementById('hud-name').textContent = state.playerName;
+  document.getElementById('hud-stage').textContent = stageNames[state.stage] + (state.district ? ' • ' + state.district : '');
+  document.getElementById('hud-day').textContent = `Day ${state.day} • ${timeNames[state.timeOfDay]}`;
+  const stats = document.getElementById('hud-stats');
+  stats.innerHTML = `
+    <span class="mini-stat">🧠<span class="v"> ${Math.round(state.knowledge)}</span></span>
+    <span class="mini-stat">📝<span class="v"> ${state.mocksAttempted}</span></span>
+    <span class="mini-stat">⚡<span class="v"> ${Math.round(state.energy)}</span></span>
+    <span class="mini-stat">😊<span class="v"> ${Math.round(state.happiness)}</span></span>
+    <span class="mini-stat">👨‍👩‍👦<span class="v"> ${Math.round(state.family)}</span></span>
+    ${state.stage === 5 ? `<span class="mini-stat">🌟<span class="v"> ${Math.round(state.reputation)}</span></span>` : ''}
+  `;
+
+  // Prompt
+  const p = state.player;
+  let near = null, bd = Infinity;
+  Object.keys(npcs).forEach(k => {
+    const n = npcs[k];
+    const d = Math.hypot(n.x - p.x, n.z - p.z);
+    if (d < 2.5 && d < bd) { near = { kind: 'npc', name: n.name }; bd = d; }
+  });
+  objects.forEach(o => {
+    const d = Math.hypot(o.x - p.x, o.z - p.z);
+    if (d < 2.5 && d < bd) { near = { kind: 'object', name: o.label }; bd = d; }
+  });
+  const pr = document.getElementById('prompt');
+  if (near && !dialogOpen()) {
+    pr.innerHTML = near.kind === 'npc'
+      ? `Press <kbd>SPACE</kbd> to talk to <b>${near.name}</b>`
+      : `Press <kbd>SPACE</kbd> to use <b>${near.name}</b>`;
+    pr.style.display = 'block';
+  } else {
+    pr.style.display = 'none';
+  }
+}
+
+function dialogOpen() { return document.getElementById('dialog').style.display === 'block'; }
+function showDialog(speaker, text, choices) {
+  const d = document.getElementById('dialog');
+  d.querySelector('.speaker').textContent = speaker;
+  d.querySelector('.text').innerHTML = text;
+  const c = d.querySelector('.choices');
+  c.innerHTML = '';
+  (choices || []).forEach(ch => {
+    const b = document.createElement('button');
+    b.className = 'choice';
+    b.textContent = ch.text;
+    b.onclick = ch.action;
+    c.appendChild(b);
+  });
+  d.style.display = 'block';
+}
+function closeDialog() { document.getElementById('dialog').style.display = 'none'; }
+
+function showTransition(title, text, onCont) {
+  document.getElementById('tr-title').textContent = title;
+  document.getElementById('tr-text').innerHTML = text;
+  document.getElementById('trans').style.display = 'flex';
+  document.getElementById('tr-continue').onclick = () => {
+    document.getElementById('trans').style.display = 'none';
+    if (onCont) onCont();
+  };
+}
+
+function notify(msg) {
+  const n = document.getElementById('notif');
+  n.textContent = msg;
+  n.style.display = 'block';
+  clearTimeout(n._t);
+  n._t = setTimeout(() => { n.style.display = 'none'; }, 2200);
+}
+
+// Custom sit-and-eat handler triggered when player arrives at dining
+function checkSitDining() {
+  if (state._sitDiningHandler && !state.moveTarget) {
+    const dt = objects.find(o => o.id === 'diningTable');
+    if (Math.hypot(state.player.x - dt.x, state.player.z - dt.z) < 2.5) {
+      const h = state._sitDiningHandler;
+      state._sitDiningHandler = null;
+      h(npcs.ma);
+    }
+  }
+}
+
+let gameStarted = false;
+
+// Role menu handling
+document.querySelectorAll('.role-card').forEach(btn => {
+  btn.onclick = () => {
+    const role = btn.dataset.role;
+    // Fresh game — reset state
+    Object.assign(state, {
+      playerName: role,
+      stage: 1, player: { x: 0, y: 0, z: 3, yaw: Math.PI, pitch: 0.05 },
+      moveTarget: null, interactAfter: null,
+      day: 1, timeOfDay: 0, interactions: 0,
+      knowledge: 30, energy: 100, happiness: 80, family: 70, reputation: 50, money: 500,
+      mocksAttempted: 0, mocksPassed: 0,
+      isEating: false, isStudying: false,
+      district: null, casesResolved: 0, activeCase: null, npcMemory: {}
+    });
+    startGame();
+  };
+});
+
+document.getElementById('load-btn').onclick = () => {
+  const s = localStorage.getItem(SAVE_KEY);
+  if (!s) { alert('No saved journey found. Pick a role to start fresh.'); return; }
+  try {
+    Object.assign(state, JSON.parse(s));
+    startGame();
+  } catch(e) { alert('Save corrupted'); }
+};
+
+document.getElementById('reset-btn').onclick = () => {
+  if (!confirm('Reset all progress?')) return;
+  try { localStorage.removeItem(SAVE_KEY); } catch(e) {}
+  alert('Save cleared. Pick a role to start fresh.');
+};
+
+function startGame() {
+  setupFamily();
+  save();
+  document.getElementById('role-menu').style.display = 'none';
+  gameStarted = true;
+  updateHUD();
+
+  // Welcome for new game
+  if (state.day === 1 && state.stage === 1) {
+    setTimeout(() => {
+      const brotherName = state.playerName === 'Rishabh' ? 'Vatsal' : 'Rishabh';
+      const roleContext = state.playerName === 'Rishabh'
+        ? `You are <b>Rishabh</b>, the elder brother. Little brother ${brotherName} looks up to you.`
+        : `You are <b>Vatsal</b>, the younger brother. Bhaiya ${brotherName} is also home.`;
+      showDialog('🌅 Day 1 — Your Story', `<b>Morning at home.</b> ${roleContext} You've decided to attempt UPSC. Ma is in the kitchen. Papa is in the living room.<br><br><em>Walk to the study desk to study. Talk to Ma for dinner. Papa can quiz you on Polity. Sleep to advance the day.</em>`, [
+        { text: '💪 Begin the journey', action: closeDialog }
+      ]);
+    }, 400);
+  }
+}
+
+// Main loop guard
+function shouldRun() { return gameStarted; }
+
+let lastTime = performance.now();
+function loop() {
+  const now = performance.now();
+  const dt = Math.min(0.05, (now - lastTime) / 1000);
+  lastTime = now;
+  if (shouldRun()) {
+    movePlayer(dt);
+    updateNpcs(dt);
+    checkSitDining();
+    render();
+    updateHUD();
+  }
+  requestAnimationFrame(loop);
+}
+loop();
+
+})();
+</script>
+</body>
+</html>

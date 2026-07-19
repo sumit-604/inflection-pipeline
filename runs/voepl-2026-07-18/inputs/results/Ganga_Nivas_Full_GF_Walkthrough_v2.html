@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganga Nivas — Full Ground Floor Walkthrough</title>
+<style>
+  :root{ --ink:#2e2a24; --muted:#7a736a; --paper:#f6f3ec; --line:#d9d2c5; --accent:#8a6f4d; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);touch-action:none}
+  #scene{position:absolute;inset:0}
+  header{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;padding:12px 18px;pointer-events:none}
+  header h1{font-size:16px;font-weight:normal;letter-spacing:.04em}
+  header .sub{font-size:11px;color:var(--muted);font-style:italic}
+  #jump{position:absolute;right:12px;bottom:12px;z-index:10;display:flex;flex-direction:column;gap:4px;max-height:70vh;overflow:auto}
+  #jump button{font-family:inherit;font-size:11.5px;letter-spacing:.04em;background:rgba(246,243,236,.92);border:1px solid var(--line);color:var(--ink);padding:7px 11px;cursor:pointer;text-align:left;min-width:118px}
+  #jump button:hover{border-color:var(--accent);color:var(--accent)}
+  #jump button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  #hint{position:absolute;left:50%;transform:translateX(-50%);top:50px;z-index:9;font-size:11px;color:var(--muted);font-style:italic;pointer-events:none;text-align:center;background:rgba(246,243,236,.78);padding:4px 12px;border-radius:3px}
+  #hint span.kb{display:inline}
+  #stick{position:absolute;left:20px;bottom:20px;width:106px;height:106px;z-index:11;border:1px solid var(--line);border-radius:50%;background:rgba(246,243,236,.35);display:none}
+  #knob{position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;background:rgba(138,111,77,.55);border:1px solid var(--accent)}
+  @media (pointer:coarse){ #stick{display:block} #hint span.kb{display:none} }
+</style>
+</head>
+<body>
+<div id="scene"></div>
+<header>
+  <div>
+    <h1>Ganga Nivas — Ground Floor</h1>
+    <div class="sub">all rooms combined &middot; walk your house</div>
+  </div>
+</header>
+<div id="hint"><span class="kb">W A S D / arrows to walk &middot; drag to look &middot; Shift to hurry</span><span style="display:none">stick to walk &middot; drag to look</span></div>
+<div id="stick"><div id="knob"></div></div>
+<div id="jump">
+  <button data-v="gate">&#8594; Gate / garden</button>
+  <button data-v="living">&#8594; Living room</button>
+  <button data-v="kitchen">&#8594; Kitchen</button>
+  <button data-v="puja">&#8594; Puja ghar</button>
+  <button data-v="master">&#8594; Master bedroom</button>
+  <button data-v="kids">&#8594; Kids' room</button>
+  <button data-v="mbath">&#8594; Master bath</button>
+  <button data-v="rear">&#8594; Rear yard (WM)</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var container=document.getElementById('scene');
+  var scene=new THREE.Scene();
+  scene.background=new THREE.Color(0xdcebf4);
+  scene.fog=new THREE.Fog(0xdcebf4,50,120);
+  var camera=new THREE.PerspectiveCamera(62,window.innerWidth/window.innerHeight,0.05,300);
+  var renderer=new THREE.WebGLRenderer({antialias:true});
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  container.appendChild(renderer.domElement);
+
+  scene.add(new THREE.AmbientLight(0xfff2e0,0.55));
+  var sun=new THREE.DirectionalLight(0xfff0d6,0.8);
+  sun.position.set(10,26,-16); sun.castShadow=true;
+  sun.shadow.mapSize.set(2048,2048);
+  sun.shadow.camera.left=-25; sun.shadow.camera.right=25;
+  sun.shadow.camera.top=25; sun.shadow.camera.bottom=-25;
+  scene.add(sun);
+  function lamp(x,y,z,i,c,dist){ var L=new THREE.PointLight(c||0xffe4bc,i||0.5,dist||7,2); L.position.set(x,y,z); scene.add(L); return L; }
+
+  function lam(c,o){ var p={color:c}; if(o!==undefined){p.transparent=true;p.opacity=o;} return new THREE.MeshLambertMaterial(p); }
+  var M={
+    kota:lam(0x9aa18d),kotaD:lam(0x8d947f),wall:lam(0xf4f0e4),ceil:lam(0xefe9da),
+    wood:lam(0x7a5530),woodD:lam(0x5f4023),woodL:lam(0x9a7343),
+    brass:lam(0xb28c3e),counter:lam(0x4e4a42),steel:lam(0xa9adad),chimney:lam(0x3a3d40),
+    cotton:lam(0xe8e0cc),indigo:lam(0x3f5573),madder:lam(0x9c4a35),haldi:lam(0xc99a3d),terraCush:lam(0xb06a4e),
+    sofaWood:lam(0xb7a37e),conv:lam(0x8a97ad),convD:lam(0x6f7c93),rug:lam(0xe0d5b8),
+    glass:lam(0xbcd6e4,0.32),grass:lam(0x7fa85e),soil:lam(0x5e4a35),crop:lam(0x4f7d3a),
+    leaf:lam(0x557d3c),leaf2:lam(0x6d9450),trunk:lam(0x6b4d2e),terra:lam(0xb5653f),
+    bwall:lam(0xd8d0be),stone:lam(0x8f8577),paving:lam(0xdcd4bd),yard:lam(0xcfc8b4),
+    kitBase:lam(0xc9b491),pujaFloor:lam(0xe8d7c8),bathFloor:lam(0xc3c8c2),white:lam(0xf2f4f2),
+    gate:lam(0x4a4a45),
+    flame:new THREE.MeshLambertMaterial({color:0xffc963,emissive:0xff9a2e,emissiveIntensity:0.9})
+  };
+  function box(w,h,d,mat,x,y,z,noSh){
+    var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);
+    m.position.set(x,y,z); m.castShadow=!noSh; m.receiveShadow=true;
+    scene.add(m); return m;
+  }
+  function cylm(r1,r2,h,mat,x,y,z,seg){
+    var m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,seg||12),mat);
+    m.position.set(x,y,z); m.castShadow=true; m.receiveShadow=true;
+    scene.add(m); return m;
+  }
+  function plane(w,d,mat,x,y,z){
+    var m=new THREE.Mesh(new THREE.PlaneGeometry(w,d),mat);
+    m.rotation.x=-Math.PI/2; m.position.set(x,y,z); m.receiveShadow=true;
+    scene.add(m); return m;
+  }
+
+  // ===== collision =====
+  var colliders=[], R=0.26;
+  function solid(x1,z1,x2,z2){ colliders.push([Math.min(x1,x2),Math.min(z1,z2),Math.max(x1,x2),Math.max(z1,z2)]); }
+  function collide(nx,nz){
+    for(var i=0;i<colliders.length;i++){
+      var c=colliders[i];
+      if(nx>c[0]-R && nx<c[2]+R && nz>c[1]-R && nz<c[3]+R) return true;
+    }
+    return false;
+  }
+
+  // ================= PLAN: interior x0..7.5, z0..11.9; H 3.05 =================
+  var W=7.5,D=11.9,H=3.05,T=0.23;
+
+  // ---- terrain ----
+  plane(60,60,lam(0xc7b592),W/2,-0.03,6);
+  plane(30,6,M.grass,W/2,0,-3.6);                        // garden lawn
+  plane(W+2*T+3.0,2.2,M.yard,W/2,0.005,D+T+1.1);         // rear yard slab
+  plane(1.5,D+2.2+T,M.paving,-T-0.75,0.004,D/2+1.0);     // west passage
+  plane(1.5,D+2.2+T,M.paving,W+T+0.75,0.004,D/2+1.0);    // east passage
+  plane(W+1.6,1.15,M.stone,W/2,0.006,-0.62);             // verandah
+  box(W+2.2,0.12,1.35,M.ceil,W/2,2.62,-0.62,true);       // chajja
+
+  // ---- interior floors ----
+  for(var fz=0; fz<D; fz+=0.62){
+    plane(W,Math.min(0.62,D-fz),(Math.round(fz/0.62)%2===0)?M.kota:M.kotaD,W/2,0.01,fz+Math.min(0.62,D-fz)/2);
+  }
+  plane(2.55,1.55,M.pujaFloor,6.2,0.018,4.4);            // puja tint
+  plane(2.6,1.5,M.bathFloor,2.35,0.018,11.1);            // master bath floor
+  plane(2.6,1.5,M.bathFloor,5.05,0.018,11.1);            // kids bath floor
+  // ceiling + beams (living zone)
+  plane(W,D,M.ceil,W/2,H,D/2).rotation.x=Math.PI/2;
+  var c2=new THREE.Mesh(new THREE.PlaneGeometry(W,D),M.ceil);
+  c2.rotation.x=Math.PI/2; c2.position.set(W/2,H,D/2); scene.add(c2);
+  [0.9,2.0,3.1,4.2].forEach(function(bz){ box(4.9,0.12,0.18,M.woodD,2.45,H-0.06,bz,true); });
+  box(W+2*T,0.22,D+2*T,M.ceil,W/2,H+0.11,D/2,true);      // roof slab
+
+  // ================= exterior walls =================
+  function wallX(x,z1,z2,h,y0,mat){ if(z2>z1+0.01) box(T,h||H,z2-z1,mat||M.wall,x,(y0||0)+(h||H)/2,(z1+z2)/2); }
+  function wallZ(z,x1,x2,h,y0,mat){ if(x2>x1+0.01) box(x2-x1,h||H,T,mat||M.wall,(x1+x2)/2,(y0||0)+(h||H)/2,z); }
+
+  // NORTH z=-T/2: pier + glazing + main glass door gap x3.85..4.85 + kitchen wall with high window
+  wallZ(-T/2,0,0.2); solid(-T,-T,0.2,0.05);
+  wallZ(-T/2,0.2,3.85,0.55,H-0.55);
+  box(3.65,2.45,0.08,M.glass,2.02,1.28,-T/2,true);
+  for(var g=0;g<=3;g++){ box(0.07,2.45,0.12,M.wood,0.2+g*1.216,1.28,-T/2); }
+  box(0.07,2.45,0.12,M.wood,3.85,1.28,-T/2);
+  solid(0.2,-T,3.85,0.05);
+  wallZ(-T/2,4.85,5.6); wallZ(-T/2,6.6,7.5);
+  wallZ(-T/2,5.6,6.6,1.55,0); wallZ(-T/2,5.6,6.6,0.6,H-0.6);
+  box(1.0,0.8,0.08,M.glass,6.1,1.93,-T/2,true);
+  wallZ(-T/2,3.85,4.85,0.6,H-0.6);
+  solid(4.85,-T,7.5+T,0.05);
+  // main glass door leaf ajar
+  var mdl=box(0.9,2.3,0.06,M.wood,4.28,1.2,0.3); mdl.rotation.y=-0.9;
+  box(0.62,1.7,0.07,M.glass,4.28,1.35,0.33,true).rotation.y=-0.9;
+
+  // SOUTH z=D+T/2: baths solid w/ ventilators, store rear-door gaps x0.2..0.9 & x6.6..7.4
+  wallZ(D+T/2,0,0.2); wallZ(D+T/2,0.9,6.6); wallZ(D+T/2,7.4,7.5);
+  wallZ(D+T/2,0.2,0.9,0.75,H-0.75); wallZ(D+T/2,6.6,7.4,0.75,H-0.75);
+  box(0.6,0.4,0.08,M.glass,2.35,2.45,D+T/2,true);       // bath ventilators
+  box(0.6,0.4,0.08,M.glass,5.05,2.45,D+T/2,true);
+  solid(-T,D-0.05,0.2,D+T); solid(0.9,D-0.05,6.6,D+T); solid(7.4,D-0.05,7.5+T,D+T);
+  var sd1=box(0.65,2.1,0.06,M.woodD,0.32,1.05,D+T+0.28); sd1.rotation.y=0.9;   // store W rear door ajar
+  var sd2=box(0.75,2.1,0.06,M.woodD,7.15,1.05,D+T+0.28); sd2.rotation.y=-0.9;  // store E rear door ajar
+
+  // WEST x=-T/2: solid + master window z6.5..8.0 + master side door gap z9.3..10.2
+  wallX(-T/2,0,6.5); wallX(-T/2,8.0,9.3); wallX(-T/2,10.2,11.9);
+  wallX(-T/2,6.5,8.0,1.0,0); wallX(-T/2,6.5,8.0,0.7,H-0.7);
+  box(0.08,1.35,1.5,M.glass,-T/2,1.68,7.25,true);
+  wallX(-T/2,9.3,10.2,0.85,H-0.85);
+  solid(-T,-T,0.05,6.5); solid(-T,6.4,0.05,9.3); solid(-T,10.2,0.05,11.9+T);
+  solid(-T,6.5,0.05,8.0);                                 // window solid
+  var msd=box(0.85,2.15,0.07,M.woodD,-T-0.28,1.07,9.75); msd.rotation.y=1.2;   // master side door ajar
+
+  // EAST x=7.5+T/2: kitchen window z2.3..3.5, kids window z6.5..8.0, kids side door gap z9.3..10.2
+  wallX(W+T/2,0,2.3); wallX(W+T/2,3.5,6.5); wallX(W+T/2,8.0,9.3); wallX(W+T/2,10.2,11.9);
+  wallX(W+T/2,2.3,3.5,1.1,0); wallX(W+T/2,2.3,3.5,0.75,H-0.75);
+  box(0.08,1.2,1.2,M.glass,W+T/2,1.7,2.9,true);
+  wallX(W+T/2,6.5,8.0,1.0,0); wallX(W+T/2,6.5,8.0,0.7,H-0.7);
+  box(0.08,1.35,1.5,M.glass,W+T/2,1.68,7.25,true);
+  wallX(W+T/2,9.3,10.2,0.85,H-0.85);
+  solid(7.45,-T,7.5+T,6.5); solid(7.45,6.4,7.5+T,9.3); solid(7.45,10.2,7.5+T,11.9+T);
+  solid(7.45,6.5,7.5+T,8.0); solid(7.45,2.3,7.5+T,3.5);
+  var ksd=box(0.85,2.15,0.07,M.woodD,W+T+0.28,1.07,9.75); ksd.rotation.y=-1.2; // kids side door ajar
+
+  // ================= interior partitions =================
+  // x=4.9 partition: kitchen closed z0..3.75; puja opening z3.75..4.95; solid z4.95..5.2
+  box(0.14,H,3.75,M.wall,4.9,H/2,1.875); solid(4.83,0,4.97,3.75);
+  box(0.14,H-2.2,1.2,M.wall,4.9,2.2+(H-2.2)/2,4.35);
+  box(0.14,H,0.25,M.wall,4.9,H/2,5.075); solid(4.83,4.95,4.97,5.2);
+  // z=3.6 divider kitchen/puja: opening x5.5..6.4
+  box(0.6,H,0.14,M.wall,5.2,H/2,3.6); solid(4.9,3.53,5.5,3.67);
+  box(0.9,H-2.2,0.14,M.wall,5.95,2.2+(H-2.2)/2,3.6);
+  box(1.1,H,0.14,M.wall,6.95,H/2,3.6); solid(6.4,3.53,7.5,3.67);
+  // z=5.2 wall: master door x2.7..3.6, kids door x3.8..4.7
+  box(2.7,H,0.14,M.wall,1.35,H/2,5.2); solid(0,5.13,2.7,5.27);
+  box(0.2,H,0.14,M.wall,3.7,H/2,5.2);  solid(3.6,5.13,3.8,5.27);
+  box(2.8,H,0.14,M.wall,6.1,H/2,5.2);  solid(4.7,5.13,7.5,5.27);
+  box(0.9,0.9,0.14,M.wall,3.15,H-0.45,5.2);
+  box(0.9,0.9,0.14,M.wall,4.25,H-0.45,5.2);
+  var md=box(0.85,2.15,0.06,M.wood,2.42,1.07,5.48); md.rotation.y=1.1;
+  var kd=box(0.85,2.15,0.06,M.wood,4.98,1.07,5.48); kd.rotation.y=-1.1;
+  // x=3.7 bedroom divider z5.2..10.3
+  box(0.14,H,5.1,M.wall,3.7,H/2,7.75); solid(3.63,5.2,3.77,10.3);
+  // z=10.3 wall: master bath door x1.95..2.75, kids bath door x4.65..5.45
+  box(1.95,H,0.14,M.wall,0.975,H/2,10.3); solid(0,10.23,1.95,10.37);
+  box(1.9,H,0.14,M.wall,3.7,H/2,10.3);   solid(2.75,10.23,4.65,10.37);
+  box(2.05,H,0.14,M.wall,6.475,H/2,10.3); solid(5.45,10.23,7.5,10.37);
+  box(0.8,0.9,0.14,M.wall,2.35,H-0.45,10.3);
+  box(0.8,0.9,0.14,M.wall,5.05,H-0.45,10.3);
+  var bd1=box(0.78,2.12,0.06,M.woodL,2.0,1.06,10.55); bd1.rotation.y=0.9;
+  var bd2=box(0.78,2.12,0.06,M.woodL,5.4,1.06,10.55); bd2.rotation.y=-0.9;
+  // south band internal walls x=1.0, x=3.7, x=6.4 (z10.3..11.9)
+  box(0.14,H,1.6,M.wall,1.0,H/2,11.1); solid(0.93,10.3,1.07,11.9);
+  box(0.14,H,1.6,M.wall,3.7,H/2,11.1); solid(3.63,10.3,3.77,11.9);
+  box(0.14,H,1.6,M.wall,6.4,H/2,11.1); solid(6.33,10.3,6.47,11.9);
+
+  // ================= LIVING (x0..4.9, z0..5.2) =================
+  var rugM=plane(3.0,2.3,M.rug,2.5,0.014,3.0);
+  box(0.85,0.3,2.2,M.sofaWood,0.62,0.15,2.6);
+  box(0.8,0.13,2.1,M.cotton,0.62,0.365,2.6);
+  box(0.16,0.5,2.2,M.sofaWood,0.28,0.55,2.6);
+  box(0.45,0.28,0.45,M.indigo,0.62,0.55,1.85);
+  box(0.45,0.28,0.45,M.madder,0.62,0.55,3.35);
+  solid(0.15,1.45,1.1,3.75);
+  box(2.0,0.32,0.85,M.conv,1.5,0.16,4.55);
+  box(1.9,0.14,0.8,M.convD,1.5,0.39,4.55);
+  box(2.0,0.5,0.15,M.conv,1.5,0.55,4.92);
+  solid(0.45,4.1,2.55,5.0);
+  box(1.4,0.09,0.8,M.wood,2.55,0.33,2.95);
+  [[1.92,2.62],[3.18,2.62],[1.92,3.28],[3.18,3.28]].forEach(function(p){ box(0.09,0.3,0.09,M.woodD,p[0],0.15,p[1]); });
+  cylm(0.13,0.11,0.07,M.brass,2.3,0.41,2.95);
+  cylm(0.1,0.08,0.16,M.terra,2.85,0.46,2.95);
+  solid(1.8,2.5,3.3,3.4);
+  box(0.6,0.17,0.6,M.terraCush,4.25,0.085,1.35);
+  box(0.6,0.17,0.6,M.terraCush,2.05,0.085,3.85);
+  box(0.6,0.17,0.6,M.indigo,3.15,0.085,3.9);
+  box(0.6,0.17,0.6,M.haldi,1.25,0.085,0.85);
+  box(0.6,0.17,0.6,M.terraCush,2.25,0.085,0.85);
+  cylm(0.3,0.22,0.16,M.brass,3.15,0.09,0.7);
+  cylm(0.05,0.05,0.02,M.madder,3.05,0.18,0.65,8);
+  cylm(0.05,0.05,0.02,M.haldi,3.25,0.18,0.75,8);
+  cylm(0.09,0.12,0.3,M.terra,3.72,0.15,0.62);
+  cylm(0.02,0.02,0.05,M.flame,3.72,0.34,0.62,8);
+  cylm(0.14,0.18,0.03,M.brass,0.38,0.015,0.6);
+  cylm(0.025,0.025,1.5,M.brass,0.38,0.78,0.6);
+  cylm(0.2,0.27,0.24,M.cotton,0.38,1.62,0.6);
+  lamp(0.38,1.62,0.6,0.45,0xffdfae,4.5);
+  cylm(0.16,0.13,0.3,M.terra,4.6,0.15,1.2);
+  var pf=new THREE.Mesh(new THREE.SphereGeometry(0.3,8,7),M.leaf2); pf.position.set(4.6,0.62,1.2); pf.castShadow=true; scene.add(pf);
+  lamp(2.5,2.6,2.8,0.42,0xffe8c8,8);
+
+  // ================= KITCHEN (x4.9..7.5, z0..3.6) — closed =================
+  box(0.55,0.9,2.9,M.kitBase,7.2,0.45,1.95);
+  box(0.6,0.07,3.0,M.counter,7.2,0.935,1.95);
+  solid(6.85,0.4,7.5,3.45);
+  box(0.42,0.05,0.55,M.steel,7.2,0.97,2.9);
+  cylm(0.02,0.02,0.18,M.steel,7.35,1.1,2.9,8);
+  box(0.45,0.03,0.5,M.chimney,7.2,0.98,0.85);
+  [[-0.11,-0.13],[0.11,-0.13],[-0.11,0.13],[0.11,0.13]].forEach(function(p){ cylm(0.05,0.05,0.02,M.steel,7.2+p[0],1.0,0.85+p[1],10); });
+  box(0.6,0.45,0.7,M.chimney,7.2,1.95,0.85);
+  box(0.18,0.7,0.18,M.chimney,7.2,2.65,0.85);
+  box(0.5,0.9,2.3,M.kitBase,5.22,0.45,2.1);
+  box(0.55,0.07,2.4,M.counter,5.22,0.935,2.1);
+  solid(4.97,0.95,5.5,3.3);
+  box(0.3,0.04,1.1,M.steel,5.05,1.55,2.1,true);
+  box(0.3,0.04,1.1,M.steel,5.05,1.95,2.1,true);
+  cylm(0.09,0.075,0.16,M.brass,5.08,1.66,1.8);
+  cylm(0.1,0.08,0.15,M.terra,5.08,1.65,2.35);
+  box(0.6,1.7,0.65,M.steel,5.28,0.85,0.55);
+  solid(4.95,0.2,5.6,0.9);
+  lamp(6.2,2.5,1.9,0.5,0xffe8c8,6);
+
+  // ================= PUJA (x4.9..7.5, z3.6..5.2) — open =================
+  box(0.5,0.6,0.95,M.brass,7.18,0.3,4.4);
+  box(0.34,0.42,0.1,M.woodD,7.18,0.81,4.4);
+  box(0.18,0.28,0.14,M.brass,7.18,0.77,4.4);
+  cylm(0.05,0.065,0.13,M.brass,7.18,0.665,4.02);
+  cylm(0.022,0.022,0.055,M.flame,7.18,0.76,4.02,8);
+  cylm(0.05,0.065,0.13,M.brass,7.18,0.665,4.78);
+  cylm(0.022,0.022,0.055,M.flame,7.18,0.76,4.78,8);
+  solid(6.9,3.9,7.5,4.9);
+  box(0.6,0.035,0.6,M.madder,6.45,0.018,4.4);
+  lamp(6.8,1.1,4.4,0.6,0xffca7a,3.4);
+
+  // ================= MASTER (x0..3.7, z5.2..10.3) =================
+  box(2.1,0.32,2.1,M.wood,1.85,0.16,6.42);
+  box(2.04,0.16,2.04,M.cotton,1.85,0.4,6.42);
+  box(2.04,0.06,0.8,M.indigo,1.85,0.51,7.0);
+  box(0.6,0.12,0.4,M.cotton,1.3,0.54,5.62);
+  box(0.6,0.12,0.4,M.cotton,2.4,0.54,5.62);
+  box(2.1,0.7,0.12,M.woodD,1.85,0.67,5.42);
+  solid(0.8,5.35,2.9,7.5);
+  box(0.45,0.45,0.45,M.woodL,0.37,0.225,5.72);
+  cylm(0.05,0.05,0.24,M.brass,0.37,0.57,5.72);
+  lamp(0.37,0.62,5.72,0.3,0xffdfae,2.6);
+  solid(0.12,5.5,0.62,5.95);
+  box(0.55,2.3,2.0,M.wood,3.42,1.15,9.5);
+  solid(3.12,8.5,3.7,10.3);
+  box(0.6,0.06,1.2,M.wood,0.42,0.74,9.3);
+  box(0.06,0.74,1.05,M.woodD,0.15,0.37,9.3);
+  box(0.06,0.74,1.05,M.woodD,0.69,0.37,9.3);
+  cylm(0.06,0.08,0.02,M.brass,0.42,0.78,8.85);
+  cylm(0.013,0.013,0.26,M.brass,0.42,0.92,8.85,8);
+  cylm(0.07,0.1,0.09,M.haldi,0.47,1.06,8.88,10);
+  solid(0.1,8.68,0.75,9.95);
+  box(0.5,0.5,0.5,M.woodL,1.07,0.25,9.27);
+  box(0.5,0.48,0.06,M.woodL,1.07,0.72,9.5);
+  solid(0.8,9.0,1.35,9.55);
+  cylm(0.16,0.13,0.3,M.terra,1.17,0.15,9.98);
+  var mpf=new THREE.Mesh(new THREE.SphereGeometry(0.28,8,7),M.leaf2); mpf.position.set(1.17,0.6,9.98); mpf.castShadow=true; scene.add(mpf);
+  lamp(1.85,2.5,7.6,0.42,0xffe8c8,7);
+
+  // ================= KIDS (x3.7..7.5, z5.2..10.3) =================
+  function kidBed(cx,cz,quilt){
+    box(2.0,0.3,0.95,M.wood,cx,0.15,cz);
+    box(1.95,0.14,0.9,M.cotton,cx,0.37,cz);
+    box(0.7,0.05,0.9,quilt,cx-0.55,0.46,cz);
+    box(0.35,0.11,0.55,M.cotton,cx+0.72,0.48,cz);
+    box(0.1,0.55,0.95,M.woodD,cx+0.95,0.55,cz);
+  }
+  kidBed(6.4,7.83,M.indigo);
+  kidBed(6.4,8.8,M.haldi);
+  solid(5.4,7.35,7.4,9.28);
+  box(2.0,2.3,0.55,M.wood,5.9,1.15,5.55);
+  solid(4.9,5.27,6.9,5.83);
+  box(0.55,0.06,1.1,M.wood,4.06,0.72,7.9);
+  box(0.06,0.72,0.98,M.woodD,3.81,0.36,7.9);
+  box(0.06,0.72,0.98,M.woodD,4.31,0.36,7.9);
+  cylm(0.06,0.08,0.02,M.brass,4.06,0.76,7.5);
+  cylm(0.013,0.013,0.26,M.brass,4.06,0.9,7.5,8);
+  cylm(0.07,0.1,0.09,M.haldi,4.11,1.04,7.53,10);
+  solid(3.78,7.33,4.34,8.47);
+  box(0.5,0.5,0.5,M.woodL,4.65,0.25,7.9);
+  box(1.1,0.06,0.55,M.wood,5.05,0.72,8.55);
+  box(0.06,0.72,0.48,M.woodD,4.55,0.36,8.55);
+  box(0.06,0.72,0.48,M.woodD,5.55,0.36,8.55);
+  cylm(0.06,0.08,0.02,M.brass,4.62,0.76,8.55);
+  cylm(0.013,0.013,0.26,M.brass,4.62,0.9,8.55,8);
+  cylm(0.07,0.1,0.09,M.indigo,4.66,1.04,8.58,10);
+  solid(4.5,8.27,5.6,8.83);
+  box(0.5,0.5,0.5,M.woodL,5.05,0.25,8.05);
+  cylm(0.15,0.12,0.28,M.terra,7.15,0.14,5.7);
+  var kpf=new THREE.Mesh(new THREE.SphereGeometry(0.27,8,7),M.leaf2); kpf.position.set(7.15,0.56,5.7); kpf.castShadow=true; scene.add(kpf);
+  lamp(5.6,2.5,7.6,0.42,0xffe8c8,7);
+
+  // ================= BATHS =================
+  function bath(x0,x1,basinX,wcX){
+    var cz=11.1;
+    // WC
+    box(0.4,0.42,0.55,M.white,wcX,0.21,11.5);
+    box(0.4,0.55,0.14,M.white,wcX,0.62,11.75);
+    solid(wcX-0.25,11.2,wcX+0.25,11.85);
+    // basin + mirror near door
+    box(0.5,0.12,0.4,M.white,basinX,0.85,10.55);
+    box(0.08,0.7,0.08,M.steel,basinX,0.45,10.55);
+    box(0.5,0.6,0.04,M.glass,basinX,1.7,10.42,true);
+    solid(basinX-0.28,10.38,basinX+0.28,10.78);
+    // shower corner on shared plumbing wall (x=3.7 side)
+    var shX=(x0===1.0)? 3.4 : 4.0;
+    cylm(0.02,0.02,0.5,M.steel,shX,1.9,11.6,8);
+    box(0.18,0.04,0.18,M.steel,shX,2.15,11.55,true);
+    cylm(0.03,0.03,0.04,M.steel,shX,1.1,11.7,8);
+    plane(0.7,0.7,lam(0xb2b8b2),shX,0.02,11.5);
+    // geyser
+    box(0.35,0.35,0.25,M.white,(x0+x1)/2,2.5,11.75,true);
+    lamp((x0+x1)/2,2.4,11.0,0.32,0xfff0dd,3.4);
+  }
+  bath(1.0,3.7,3.25,1.35);    // master bath
+  bath(3.7,6.4,4.15,6.0);     // kids bath
+
+  // ================= STORES =================
+  function store(x0,x1){
+    var cx=(x0+x1)/2;
+    box(x1-x0-0.2,0.04,0.35,M.wood,cx,1.0,10.55,true);
+    box(x1-x0-0.2,0.04,0.35,M.wood,cx,1.6,10.55,true);
+    box(0.45,0.35,0.5,M.terra,cx-0.1,0.18,11.3);
+    box(0.4,0.28,0.45,M.woodL,cx+0.15,0.14,10.9);
+    solid(cx-0.35,10.7,cx+0.35,11.55);
+  }
+  store(0,1.0);
+  store(6.4,7.5);
+
+  // ================= GARDEN (abbreviated) =================
+  function gbed(x,z){ box(1.9,0.32,1.0,M.soil,x,0.16,z); box(1.7,0.12,0.85,M.crop,x,0.36,z); solid(x-0.95,z-0.5,x+0.95,z+0.5); }
+  gbed(0.8,-2.4); gbed(0.8,-3.9); gbed(3.1,-2.4); gbed(3.1,-3.9);
+  cylm(0.08,0.12,1.4,M.trunk,-1.6,0.7,-3.2);
+  var gf=new THREE.Mesh(new THREE.SphereGeometry(0.9,10,8),M.leaf); gf.position.set(-1.6,1.75,-3.2); gf.castShadow=true; scene.add(gf);
+  solid(-2.0,-3.6,-1.2,-2.8);
+  // shoe bench + tulsi on verandah
+  box(1.1,0.42,0.4,M.stone,5.7,0.21,-0.45);
+  box(1.05,0.05,0.38,M.wood,5.7,0.47,-0.45);
+  box(0.32,0.12,0.3,M.terraCush,5.4,0.09,-0.42,true);
+  solid(5.15,-0.65,6.25,-0.25);
+  cylm(0.14,0.17,0.35,lam(0xc46a4a),3.4,0.17,-0.62);
+  var tl=new THREE.Mesh(new THREE.SphereGeometry(0.2,8,6),M.leaf2); tl.position.set(3.4,0.55,-0.62); tl.castShadow=true; scene.add(tl);
+  solid(3.15,-0.85,3.65,-0.4);
+  // north boundary + open gate hint
+  box(9,1.0,0.15,M.bwall,0.8,0.5,-5.6,true); solid(-3.7,-5.7,5.3,-5.5);
+  box(3,1.0,0.15,M.bwall,8.6,0.5,-5.6,true); solid(7.1,-5.7,10.1,-5.5);
+  var gl=box(1.7,1.25,0.08,M.gate,5.6,0.95,-5.0); gl.rotation.y=1.1;
+
+  // ================= REAR YARD =================
+  // WM at east end where passage lands
+  box(0.6,0.85,0.6,M.white,6.85,0.43,12.65);
+  cylm(0.2,0.2,0.03,M.steel,6.85,0.55,12.35,16).rotation.x=Math.PI/2;
+  solid(6.5,12.3,7.2,13.0);
+  cylm(0.02,0.02,0.35,M.steel,7.35,0.9,12.55,8);           // tap
+  box(0.18,0.25,0.06,lam(0x8a8f94),7.42,1.3,12.55,true);   // power point
+  plane(0.35,0.35,lam(0x9aa0a4),7.15,0.012,13.1);          // drain
+  // drying line
+  box(0.06,1.7,0.06,M.steel,1.0,0.85,12.9); solid(0.9,12.8,1.1,13.0);
+  box(0.06,1.7,0.06,M.steel,4.6,0.85,12.9); solid(4.5,12.8,4.7,13.0);
+  var lineG=new THREE.Mesh(new THREE.CylinderGeometry(0.008,0.008,3.6,6),M.steel);
+  lineG.rotation.z=Math.PI/2; lineG.position.set(2.8,1.55,12.9); scene.add(lineG);
+  box(0.5,0.35,0.5,M.cotton,2.2,1.32,12.9,true);           // hanging cloth
+  box(0.5,0.3,0.5,M.indigo,3.3,1.35,12.9,true);
+  // compost
+  box(0.7,0.7,0.7,M.wood,0.4,0.35,12.7); solid(0.05,12.35,0.75,13.05);
+  // yard boundary walls
+  box(W+2*T+3.2,1.8,0.15,M.bwall,W/2,0.9,D+T+2.2,true); solid(-1.85,D+T+2.1,9.35,D+T+2.3);
+  box(0.15,1.8,D+2.2+2*T+6.2,M.bwall,-T-1.55,0.9,D/2-1.2,true); solid(-T-1.65,-5.6,-T-1.45,D+T+2.3);
+  box(0.15,1.8,D+2.2+2*T+6.2,M.bwall,W+T+1.55,0.9,D/2-1.2,true); solid(W+T+1.45,-5.6,W+T+1.65,D+T+2.3);
+  // passage gates at north ends (closed)
+  box(1.4,1.5,0.08,M.gate,-T-0.75,1.05,-0.1); solid(-T-1.5,-0.2,-T,0.0);
+  box(1.4,1.5,0.08,M.gate,W+T+0.75,1.05,-0.1); solid(W+T,-0.2,W+T+1.5,0.0);
+
+  // neighbours
+  box(8,6,9,lam(0xd6cfc2),15,3,7,true);
+  box(7,3.4,8,lam(0xd6cfc2),-13,1.7,8,true);
+
+  // ================= first-person controller =================
+  var pos={x:4.35,z:-4.2}, yaw=0.06, pitch=-0.02;
+  var keys={};
+  window.addEventListener('keydown',function(e){ keys[e.key.toLowerCase()]=true; if(['arrowup','arrowdown','arrowleft','arrowright',' '].indexOf(e.key.toLowerCase())>=0) e.preventDefault(); });
+  window.addEventListener('keyup',function(e){ keys[e.key.toLowerCase()]=false; });
+
+  var el2=renderer.domElement, looking=false, lx=0, ly=0;
+  el2.addEventListener('pointerdown',function(e){ looking=true; lx=e.clientX; ly=e.clientY; el2.setPointerCapture(e.pointerId); });
+  el2.addEventListener('pointermove',function(e){
+    if(!looking) return;
+    yaw+=(e.clientX-lx)*0.0036;
+    pitch-=(e.clientY-ly)*0.0026;
+    pitch=Math.max(-1.1,Math.min(0.8,pitch));
+    lx=e.clientX; ly=e.clientY;
+  });
+  el2.addEventListener('pointerup',function(){ looking=false; });
+  el2.addEventListener('wheel',function(e){ e.preventDefault(); tryMove(Math.sin(yaw)*-e.deltaY*0.004, Math.cos(yaw)*-e.deltaY*0.004); },{passive:false});
+
+  var stick=document.getElementById('stick'), knob=document.getElementById('knob');
+  var joy={active:false,dx:0,dz:0};
+  function joyHandle(e){
+    var r=stick.getBoundingClientRect(), t=e.touches[0];
+    var cx=r.left+r.width/2, cy=r.top+r.height/2;
+    var dx=(t.clientX-cx)/(r.width/2), dy=(t.clientY-cy)/(r.height/2);
+    var m=Math.sqrt(dx*dx+dy*dy); if(m>1){dx/=m;dy/=m;}
+    joy.dx=dx; joy.dz=dy; joy.active=true;
+    knob.style.transform='translate('+dx*28+'px,'+dy*28+'px)';
+  }
+  stick.addEventListener('touchstart',function(e){e.preventDefault();joyHandle(e);},{passive:false});
+  stick.addEventListener('touchmove',function(e){e.preventDefault();joyHandle(e);},{passive:false});
+  stick.addEventListener('touchend',function(e){e.preventDefault();joy.active=false;joy.dx=0;joy.dz=0;knob.style.transform='';},{passive:false});
+
+  function tryMove(dx,dz){
+    var nx=pos.x+dx, nz=pos.z+dz;
+    nx=Math.max(-T-1.4,Math.min(W+T+1.4,nx));
+    nz=Math.max(-5.4,Math.min(D+T+2.05,nz));
+    if(!collide(nx,pos.z)) pos.x=nx;
+    if(!collide(pos.x,nz)) pos.z=nz;
+  }
+
+  var jumps={
+    gate:{x:4.35,z:-4.2,yaw:0.06},
+    living:{x:3.1,z:4.3,yaw:Math.PI+0.45},
+    kitchen:{x:6.1,z:2.6,yaw:1.35},
+    puja:{x:6.15,z:4.4,yaw:1.57},
+    master:{x:1.3,z:8.9,yaw:Math.PI+0.15},
+    kids:{x:4.5,z:6.3,yaw:1.05},
+    mbath:{x:2.35,z:10.9,yaw:0.15},
+    rear:{x:4.6,z:12.7,yaw:1.25}
+  };
+  document.querySelectorAll('#jump button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=jumps[b.dataset.v];
+      pos.x=v.x; pos.z=v.z; yaw=v.yaw; pitch=-0.03;
+    });
+  });
+
+  window.addEventListener('resize',function(){
+    camera.aspect=window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+  });
+
+  var clock=new THREE.Clock();
+  function animate(){
+    requestAnimationFrame(animate);
+    var dt=Math.min(clock.getDelta(),0.06);
+    var sp=(keys['shift']?3.4:2.0)*dt;
+    var mx=0,mz=0;
+    if(keys['w']||keys['arrowup']){ mx+=Math.sin(yaw); mz+=Math.cos(yaw); }
+    if(keys['s']||keys['arrowdown']){ mx-=Math.sin(yaw); mz-=Math.cos(yaw); }
+    if(keys['a']||keys['arrowleft']){ mx+=Math.sin(yaw+Math.PI/2); mz+=Math.cos(yaw+Math.PI/2); }
+    if(keys['d']||keys['arrowright']){ mx+=Math.sin(yaw-Math.PI/2); mz+=Math.cos(yaw-Math.PI/2); }
+    if(joy.active){
+      mx+=Math.sin(yaw)*(-joy.dz)+Math.sin(yaw-Math.PI/2)*joy.dx;
+      mz+=Math.cos(yaw)*(-joy.dz)+Math.cos(yaw-Math.PI/2)*joy.dx;
+    }
+    var ml=Math.sqrt(mx*mx+mz*mz);
+    if(ml>0.001) tryMove(mx/ml*sp,mz/ml*sp);
+    camera.position.set(pos.x,1.55,pos.z);
+    camera.lookAt(
+      pos.x+Math.sin(yaw)*Math.cos(pitch),
+      1.55+Math.sin(pitch),
+      pos.z+Math.cos(yaw)*Math.cos(pitch)
+    );
+    renderer.render(scene,camera);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>

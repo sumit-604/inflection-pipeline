@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Tirthanaka Nivas — Cricket with Papa</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0a; color: #fff; overflow: hidden; height: 100vh; display: flex; flex-direction: column; align-items: center; }
+  #topbar { width: 100%; background: linear-gradient(180deg, #1a1a2e, #16213e); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #FFD700; }
+  #topbar h1 { font-size: 14px; color: #FFD700; font-weight: 600; letter-spacing: 1px; }
+  #stats { font-size: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  #stats span { background: rgba(255,215,0,0.15); padding: 4px 10px; border-radius: 12px; }
+  #gamearea { flex: 1; width: 100%; max-width: 900px; display: flex; flex-direction: column; position: relative; }
+  #canvas-wrap { flex: 1; position: relative; background: #7EC850; overflow: hidden; min-height: 300px; }
+  canvas { display: block; width: 100%; height: 100%; }
+  #minimap { position: absolute; top: 12px; right: 12px; width: 140px; height: 100px; background: rgba(0,0,0,0.6); border: 2px solid #FFD700; border-radius: 8px; z-index: 5; }
+  #dialog { position: absolute; bottom: 12px; left: 12px; right: 12px; background: linear-gradient(180deg, #1a1a2e, #0f0f1e); padding: 14px 18px; border-radius: 12px; display: none; border: 3px solid #FFD700; box-shadow: 0 4px 20px rgba(255,215,0,0.3); z-index: 10; }
+  #dialog .speaker { color: #FFD700; font-weight: 700; font-size: 13px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  #dialog-text { font-size: 15px; line-height: 1.5; }
+  #dialog-hint { font-size: 11px; color: #888; margin-top: 8px; }
+  #toast { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,215,0,0.95); color: #000; padding: 10px 24px; border-radius: 24px; font-weight: 700; font-size: 16px; display: none; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  #hint { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: #FFD700; padding: 6px 14px; border-radius: 12px; font-size: 12px; display: none; z-index: 5; }
+  #mode-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); padding: 6px 14px; border-radius: 12px; font-size: 12px; z-index: 5; }
+  #mode-badge b { color: #FFD700; }
+  #controls { background: linear-gradient(180deg, #1a1a2e, #0a0a0a); padding: 16px; display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #FFD700; min-height: 180px; }
+  #dpad { position: relative; width: 150px; height: 150px; }
+  .dpad-btn { position: absolute; width: 50px; height: 50px; background: linear-gradient(180deg, #444, #222); border: 2px solid #FFD700; border-radius: 8px; color: #FFD700; font-size: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 3px 0 #000, inset 0 1px 0 rgba(255,255,255,0.2); }
+  .dpad-btn:active, .dpad-btn.pressed { background: linear-gradient(180deg, #FFD700, #DAA520); color: #000; box-shadow: 0 1px 0 #000, inset 0 2px 4px rgba(0,0,0,0.3); transform: translateY(2px); }
+  #up { top: 0; left: 50px; } #down { top: 100px; left: 50px; } #left { top: 50px; left: 0; } #right { top: 50px; left: 100px; }
+  #action-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 220px; }
+  .action-btn { padding: 12px 8px; border: 3px solid; border-radius: 12px; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 3px 0 rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); color: #fff; text-align: center; line-height: 1.2; }
+  .action-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0,0,0,0.5), inset 0 2px 4px rgba(0,0,0,0.3); }
+  #btn-a { background: linear-gradient(180deg, #4CAF50, #2E7D32); border-color: #81C784; }
+  #btn-b { background: linear-gradient(180deg, #E91E63, #AD1457); border-color: #F06292; }
+  #btn-c { background: linear-gradient(180deg, #2196F3, #1565C0); border-color: #64B5F6; }
+  #btn-d { background: linear-gradient(180deg, #FF9800, #E65100); border-color: #FFB74D; }
+  @media (max-width: 600px) {
+    #minimap { width: 100px; height: 75px; }
+    #dpad { width: 130px; height: 130px; }
+    .dpad-btn { width: 42px; height: 42px; font-size: 20px; }
+    #up { left: 44px; } #down { top: 88px; left: 44px; } #right { left: 88px; }
+    #action-buttons { width: 180px; gap: 8px; }
+    .action-btn { padding: 10px 4px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>🏏 CRICKET WITH PAPA</h1>
+  <div id="stats">
+    <span id="stat-runs">🏏 Runs: 0</span>
+    <span id="stat-wickets">Wickets: 0</span>
+    <span id="stat-loc">📍 Home</span>
+  </div>
+</div>
+
+<div id="gamearea">
+  <div id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+    <canvas id="minimap" width="140" height="100"></canvas>
+    <div id="mode-badge">Mode: <b id="mode-text">EXPLORE</b></div>
+    <div id="toast"></div>
+    <div id="hint"></div>
+    <div id="dialog">
+      <div class="speaker" id="dialog-speaker">Papa</div>
+      <div id="dialog-text">Ready to play some cricket, son?</div>
+      <div id="dialog-hint">▸ Tap TALK to continue · Tap BACK to close</div>
+    </div>
+  </div>
+
+  <div id="controls">
+    <div id="dpad">
+      <div class="dpad-btn" id="up" data-dir="up">▲</div>
+      <div class="dpad-btn" id="left" data-dir="left">◀</div>
+      <div class="dpad-btn" id="right" data-dir="right">▶</div>
+      <div class="dpad-btn" id="down" data-dir="down">▼</div>
+    </div>
+    <div id="action-buttons">
+      <div class="action-btn" id="btn-a">A<br>TALK/HIT</div>
+      <div class="action-btn" id="btn-b">B<br>BAT MODE</div>
+      <div class="action-btn" id="btn-c">C<br>BOWL MODE</div>
+      <div class="action-btn" id="btn-d">D<br>BACK</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const minimap = document.getElementById('minimap');
+const mctx = minimap.getContext('2d');
+const dialog = document.getElementById('dialog');
+const dialogSpeaker = document.getElementById('dialog-speaker');
+const dialogText = document.getElementById('dialog-text');
+const toast = document.getElementById('toast');
+const hint = document.getElementById('hint');
+const statRuns = document.getElementById('stat-runs');
+const statWickets = document.getElementById('stat-wickets');
+const statLoc = document.getElementById('stat-loc');
+const modeText = document.getElementById('mode-text');
+
+let VIEW_W = 800, VIEW_H = 500;
+function resizeCanvas() {
+  const wrap = document.getElementById('canvas-wrap');
+  VIEW_W = wrap.clientWidth;
+  VIEW_H = wrap.clientHeight;
+  canvas.width = VIEW_W;
+  canvas.height = VIEW_H;
+}
+window.addEventListener('resize', resizeCanvas);
+setTimeout(resizeCanvas, 50);
+
+const WORLD_W = 2000, WORLD_H = 1400;
+
+// MODE: 'explore' | 'bat' | 'bowl'
+let gameMode = 'explore';
+
+// Cricket pitch — realistic proportions
+const pitch = { x: 340, y: 550, w: 110, h: 350 };
+const BATSMAN_POS = { x: 395, y: 870 };  // Where batsman stands (bottom of pitch)
+const BOWLER_POS = { x: 395, y: 580 };   // Where bowler runs up to (top of pitch)
+
+const player = { x: 1000, y: 700, size: 45, speed: 4, dir: 'down', walkFrame: 0,
+  hasBat: false, batSwing: 0, bowlArm: 0, holding: 'none' };
+
+// Papa (father) — NPC that comes to play cricket
+const papa = { name: 'Papa', x: 1150, y: 550, color: '#795548', size: 48,
+  atCrease: false, bowlAnim: 0, walkFrame: 0,
+  lines: [
+    "Come, let's play cricket at the stadium!",
+    "I'll bowl to you first, then we'll switch.",
+    "Show me your best cover drive!",
+    "Nice shot, son! You've been practising.",
+    "Now it's your turn to bowl, I'll bat."
+  ], idx: 0 };
+
+const wife = { name: 'Wife', x: 1080, y: 620, color: '#E91E63', size: 40, walkFrame: 0,
+  lines: [
+    "Welcome home, Keerti! How was the market today?",
+    "The nursery is looking beautiful this season.",
+    "Dinner will be ready soon.",
+    "Play with papa, I'll watch from here!"
+  ], idx: 0 };
+
+const son = { name: 'Son', x: 950, y: 650, color: '#2196F3', size: 32, walkFrame: 0,
+  lines: [
+    "Papa! I want to play too!",
+    "Hit a six papa!",
+    "I'll be the umpire!",
+    "Wow papa, great shot!"
+  ], idx: 0 };
+
+const daughter = { name: 'Daughter', x: 1030, y: 700, color: '#FF9800', size: 30, walkFrame: 0,
+  lines: [
+    "Papa, I planted a new sapling!",
+    "The Hyundai is my favourite!",
+    "Papa, cheering for you!",
+    "Yay papa, run scored!"
+  ], idx: 0 };
+
+const npcs = [papa, wife, son, daughter];
+
+const zones = {
+  house:   { x: 800,  y: 400, w: 500, h: 500, color: '#F4E4BC', border: '#8B6F47', label: 'HOUSE' },
+  stadium: { x: 100,  y: 300, w: 600, h: 800, color: '#4CAF50', border: '#2E7D32', label: 'CRICKET STADIUM' },
+  garage:  { x: 1400, y: 400, w: 500, h: 500, color: '#B0BEC5', border: '#546E7A', label: 'GARAGE' },
+  nursery: { x: 800,  y: 950, w: 500, h: 300, color: '#F8BBD0', border: '#C2185B', label: 'NURSERY' },
+  chair:   { x: 1200, y: 720, w: 60, h: 60, color: '#5D4037', border: '#3E2723' }
+};
+
+// Ball physics
+let ball = { x: 0, y: 0, vx: 0, vy: 0, active: false, mode: 'idle', life: 0 };
+let cricketRuns = 0;
+let wicketsTaken = 0;
+
+let dialogOpen = false;
+let currentNpc = null;
+let bowlPower = 0;
+let bowlCharging = false;
+let batTimer = 0;
+
+const keys = { up: false, down: false, left: false, right: false };
+function pressDir(dir, state) { keys[dir] = state; }
+
+document.querySelectorAll('.dpad-btn').forEach(btn => {
+  const dir = btn.dataset.dir;
+  const on = (e) => { e.preventDefault(); pressDir(dir, true); btn.classList.add('pressed'); };
+  const off = (e) => { e.preventDefault(); pressDir(dir, false); btn.classList.remove('pressed'); };
+  btn.addEventListener('touchstart', on, { passive: false });
+  btn.addEventListener('touchend', off, { passive: false });
+  btn.addEventListener('touchcancel', off, { passive: false });
+  btn.addEventListener('mousedown', on);
+  btn.addEventListener('mouseup', off);
+  btn.addEventListener('mouseleave', off);
+});
+
+document.getElementById('btn-a').addEventListener('click', doA);
+document.getElementById('btn-b').addEventListener('click', enterBatMode);
+document.getElementById('btn-c').addEventListener('click', enterBowlMode);
+document.getElementById('btn-d').addEventListener('click', doBack);
+
+window.addEventListener('keydown', e => {
+  const k = e.key.toLowerCase();
+  if (k === 'arrowup' || k === 'w') keys.up = true;
+  if (k === 'arrowdown' || k === 's') keys.down = true;
+  if (k === 'arrowleft' || k === 'a') keys.left = true;
+  if (k === 'arrowright' || k === 'd') keys.right = true;
+  if (k === 'enter') doA();
+  if (k === ' ') { e.preventDefault(); doA(); }
+  if (k === 'escape') doBack();
+});
+window.addEventListener('keyup', e => {
+  const k = e.key.toLowerCase();
+  if (k === 'arrowup' || k === 'w') keys.up = false;
+  if (k === 'arrowdown' || k === 's') keys.down = false;
+  if (k === 'arrowleft' || k === 'a') keys.left = false;
+  if (k === 'arrowright' || k === 'd') keys.right = false;
+});
+
+function nearestNpc() {
+  for (const npc of npcs) {
+    const dx = npc.x - player.x, dy = npc.y - player.y;
+    if (Math.sqrt(dx*dx + dy*dy) < 130) return npc;
+  }
+  return null;
+}
+
+function doA() {
+  if (gameMode === 'bat') { swingBat(); return; }
+  if (gameMode === 'bowl') { bowlBall(); return; }
+  if (dialogOpen && currentNpc) {
+    currentNpc.idx = (currentNpc.idx + 1) % currentNpc.lines.length;
+    showDialog(currentNpc.name, currentNpc.lines[currentNpc.idx]);
+    return;
+  }
+  const npc = nearestNpc();
+  if (npc) { currentNpc = npc; showDialog(npc.name, npc.lines[npc.idx]); }
+  else { showToast("Walk near someone to talk!"); }
+}
+
+function enterBatMode() {
+  // Move player to batting crease and papa to bowling end
+  gameMode = 'bat';
+  player.x = BATSMAN_POS.x;
+  player.y = BATSMAN_POS.y;
+  player.hasBat = true;
+  papa.x = BOWLER_POS.x;
+  papa.y = BOWLER_POS.y;
+  papa.atCrease = true;
+  modeText.textContent = 'BATTING (Papa bowls)';
+  showToast("You have the bat! Papa will bowl. Press A to swing!");
+  closeDialog();
+  // Start bowling after delay
+  setTimeout(startPapaBowling, 1500);
+}
+
+function enterBowlMode() {
+  gameMode = 'bowl';
+  player.x = BOWLER_POS.x;
+  player.y = BOWLER_POS.y;
+  player.hasBat = false;
+  papa.x = BATSMAN_POS.x;
+  papa.y = BATSMAN_POS.y;
+  papa.atCrease = true;
+  modeText.textContent = 'BOWLING (Papa bats)';
+  showToast("You're bowling now! Press A to bowl at Papa!");
+  closeDialog();
+}
+
+function doBack() {
+  if (dialogOpen) { closeDialog(); return; }
+  if (gameMode !== 'explore') {
+    gameMode = 'explore';
+    player.hasBat = false;
+    papa.atCrease = false;
+    ball.active = false;
+    modeText.textContent = 'EXPLORE';
+    showToast("Back to exploring");
+  }
+}
+
+function showDialog(speaker, text) {
+  dialogSpeaker.textContent = speaker;
+  dialogText.textContent = text;
+  dialog.style.display = 'block';
+  dialogOpen = true;
+}
+function closeDialog() { dialog.style.display = 'none'; dialogOpen = false; currentNpc = null; }
+
+let toastTimer = null;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.style.display = 'block';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 2000);
+}
+
+function startPapaBowling() {
+  if (gameMode !== 'bat' || ball.active) return;
+  papa.bowlAnim = 30;
+  // After runup, release ball
+  setTimeout(() => {
+    if (gameMode !== 'bat') return;
+    ball.active = true;
+    ball.mode = 'towards_bat';
+    ball.x = papa.x;
+    ball.y = papa.y + 40;
+    // Ball travels down the pitch to batsman
+    const dx = player.x - papa.x + (Math.random() - 0.5) * 30;
+    const dy = player.y - papa.y - 30;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const speed = 12;
+    ball.vx = (dx / dist) * speed;
+    ball.vy = (dy / dist) * speed;
+    ball.life = 60;
+    papa.bowlAnim = 0;
+  }, 700);
+}
+
+function swingBat() {
+  if (gameMode !== 'bat') return;
+  player.batSwing = 20;
+  batTimer = 15;
+  // Check if ball is in hitting range
+  if (ball.active && ball.mode === 'towards_bat') {
+    const dx = ball.x - player.x;
+    const dy = ball.y - player.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 80) {
+      // HIT!
+      hitBall();
+    }
+  }
+}
+
+function hitBall() {
+  ball.mode = 'hit';
+  const angle = -Math.PI/2 + (Math.random() - 0.5) * 1.4;
+  const power = 20 + Math.random() * 12;
+  ball.vx = Math.cos(angle) * power;
+  ball.vy = Math.sin(angle) * power;
+  ball.life = 100;
+  const runs = [1, 2, 4, 4, 6, 6][Math.floor(Math.random() * 6)];
+  cricketRuns += runs;
+  statRuns.textContent = `🏏 Runs: ${cricketRuns}`;
+  const shots = ["SIX!", "FOUR!", "Cover drive!", "Straight drive!", "Pulled to boundary!", "What a shot papa saw!"];
+  showToast(`${shots[Math.floor(Math.random() * shots.length)]} +${runs}`);
+  // Papa bowls again after delay
+  setTimeout(() => { if (gameMode === 'bat') startPapaBowling(); }, 2500);
+}
+
+function bowlBall() {
+  if (gameMode !== 'bowl' || ball.active) return;
+  player.bowlArm = 20;
+  setTimeout(() => {
+    ball.active = true;
+    ball.mode = 'towards_papa';
+    ball.x = player.x;
+    ball.y = player.y + 40;
+    const dx = papa.x - player.x + (Math.random() - 0.5) * 40;
+    const dy = papa.y - player.y - 30;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const speed = 12;
+    ball.vx = (dx / dist) * speed;
+    ball.vy = (dy / dist) * speed;
+    ball.life = 60;
+    // Papa will try to bat
+    setTimeout(() => {
+      if (gameMode !== 'bowl') return;
+      papa.batSwing = 20;
+      // Papa hits sometimes, misses sometimes
+      if (Math.random() > 0.35) {
+        // Papa hits
+        ball.mode = 'papa_hit';
+        const angle = -Math.PI/2 + (Math.random() - 0.5) * 1.4;
+        const power = 18 + Math.random() * 10;
+        ball.vx = Math.cos(angle) * power;
+        ball.vy = Math.sin(angle) * power;
+        ball.life = 100;
+        showToast(`Papa hit it! Nice shot!`);
+      } else {
+        // Wicket / miss!
+        wicketsTaken++;
+        statWickets.textContent = `Wickets: ${wicketsTaken}`;
+        ball.active = false;
+        const wicketMsgs = ["WICKET! Bowled papa!", "GREAT BALL! Papa missed!", "Clean bowled!", "Got him!"];
+        showToast(wicketMsgs[Math.floor(Math.random() * wicketMsgs.length)]);
+      }
+    }, 900);
+  }, 400);
+}
+
+function updateBall() {
+  if (!ball.active) return;
+  ball.x += ball.vx;
+  ball.y += ball.vy;
+  if (ball.mode === 'hit' || ball.mode === 'papa_hit') {
+    ball.vy += 0.4; // gravity for aerial shots
+  }
+  ball.life--;
+  if (ball.life <= 0 || ball.y > WORLD_H || ball.y < 200) {
+    ball.active = false;
+  }
+  // Ball reached batsman without being hit
+  if (ball.mode === 'towards_bat' && ball.y > player.y + 30) {
+    ball.active = false;
+    showToast("Missed! Play a shot next time.");
+    setTimeout(() => { if (gameMode === 'bat') startPapaBowling(); }, 2000);
+  }
+}
+
+function getLocation() {
+  if (player.x >= zones.house.x && player.x <= zones.house.x + zones.house.w &&
+      player.y >= zones.house.y && player.y <= zones.house.y + zones.house.h) return 'House';
+  if (player.x >= zones.stadium.x && player.x <= zones.stadium.x + zones.stadium.w &&
+      player.y >= zones.stadium.y && player.y <= zones.stadium.y + zones.stadium.h) return 'Cricket Stadium';
+  if (player.x >= zones.garage.x && player.x <= zones.garage.x + zones.garage.w &&
+      player.y >= zones.garage.y && player.y <= zones.garage.y + zones.garage.h) return 'Garage';
+  if (player.x >= zones.nursery.x && player.x <= zones.nursery.x + zones.nursery.w &&
+      player.y >= zones.nursery.y && player.y <= zones.nursery.y + zones.nursery.h) return 'Nursery';
+  return 'Estate grounds';
+}
+
+let cameraX = 0, cameraY = 0;
+function updateCamera() {
+  cameraX = player.x - VIEW_W / 2;
+  cameraY = player.y - VIEW_H / 2;
+  cameraX = Math.max(0, Math.min(WORLD_W - VIEW_W, cameraX));
+  cameraY = Math.max(0, Math.min(WORLD_H - VIEW_H, cameraY));
+}
+
+function update() {
+  if (gameMode === 'explore' && !dialogOpen) {
+    let dx = 0, dy = 0;
+    if (keys.up) { dy = -player.speed; player.dir = 'up'; }
+    if (keys.down) { dy = player.speed; player.dir = 'down'; }
+    if (keys.left) { dx = -player.speed; player.dir = 'left'; }
+    if (keys.right) { dx = player.speed; player.dir = 'right'; }
+    if (dx || dy) player.walkFrame = (player.walkFrame + 1) % 20;
+    player.x = Math.max(30, Math.min(WORLD_W - 30, player.x + dx));
+    player.y = Math.max(30, Math.min(WORLD_H - 30, player.y + dy));
+  } else if (gameMode === 'bat' || gameMode === 'bowl') {
+    // Small movement allowed for positioning
+    let dx = 0, dy = 0;
+    if (keys.left) dx = -2;
+    if (keys.right) dx = 2;
+    if (keys.up) dy = -2;
+    if (keys.down) dy = 2;
+    if (dx || dy) player.walkFrame = (player.walkFrame + 1) % 20;
+    // Constrain to pitch area
+    if (gameMode === 'bat') {
+      player.x = Math.max(BATSMAN_POS.x - 40, Math.min(BATSMAN_POS.x + 40, player.x + dx));
+      player.y = Math.max(BATSMAN_POS.y - 20, Math.min(BATSMAN_POS.y + 20, player.y + dy));
+    } else {
+      player.x = Math.max(BOWLER_POS.x - 40, Math.min(BOWLER_POS.x + 40, player.x + dx));
+      player.y = Math.max(BOWLER_POS.y - 20, Math.min(BOWLER_POS.y + 20, player.y + dy));
+    }
+  }
+  updateCamera();
+  updateBall();
+
+  if (player.batSwing > 0) player.batSwing--;
+  if (player.bowlArm > 0) player.bowlArm--;
+  if (papa.batSwing > 0) papa.batSwing--;
+  if (papa.bowlAnim > 0) papa.bowlAnim--;
+
+  statLoc.textContent = `📍 ${getLocation()}`;
+
+  if (gameMode === 'explore' && !dialogOpen) {
+    const npc = nearestNpc();
+    if (npc) { hint.textContent = `Press A to talk · Press B to bat with Papa · Press C to bowl`; hint.style.display = 'block'; }
+    else hint.style.display = 'none';
+  } else if (gameMode === 'bat') {
+    hint.textContent = "Wait for ball · Press A to swing bat!"; hint.style.display = 'block';
+  } else if (gameMode === 'bowl') {
+    hint.textContent = "Press A to bowl at Papa!"; hint.style.display = 'block';
+  }
+}
+
+function roundRect(c, x, y, w, h, r) {
+  c.beginPath();
+  c.moveTo(x + r, y);
+  c.arcTo(x + w, y, x + w, y + h, r);
+  c.arcTo(x + w, y + h, x, y + h, r);
+  c.arcTo(x, y + h, x, y, r);
+  c.arcTo(x, y, x + w, y, r);
+  c.closePath();
+}
+
+function wx(x) { return x - cameraX; }
+function wy(y) { return y - cameraY; }
+
+function drawZone(z) {
+  ctx.fillStyle = z.color; ctx.strokeStyle = z.border; ctx.lineWidth = 4;
+  roundRect(ctx, wx(z.x), wy(z.y), z.w, z.h, 16);
+  ctx.fill(); ctx.stroke();
+  ctx.fillStyle = z.border;
+  ctx.font = 'bold 22px sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText(z.label, wx(z.x + z.w/2), wy(z.y + 32));
+}
+
+function drawStadium() {
+  drawZone(zones.stadium);
+  ctx.strokeStyle = '#F5F5DC'; ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.ellipse(wx(zones.stadium.x + zones.stadium.w/2), wy(zones.stadium.y + zones.stadium.h/2), 220, 340, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  // Pitch (bigger, clearer)
+  ctx.fillStyle = '#DEB887';
+  ctx.fillRect(wx(pitch.x), wy(pitch.y), pitch.w, pitch.h);
+  // Crease lines
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(wx(pitch.x - 10), wy(pitch.y + 40));
+  ctx.lineTo(wx(pitch.x + pitch.w + 10), wy(pitch.y + 40));
+  ctx.moveTo(wx(pitch.x - 10), wy(pitch.y + pitch.h - 40));
+  ctx.lineTo(wx(pitch.x + pitch.w + 10), wy(pitch.y + pitch.h - 40));
+  ctx.stroke();
+  // Stumps at both ends
+  for (const stumpY of [pitch.y + 15, pitch.y + pitch.h - 5]) {
+    for (let i = 0; i < 3; i++) {
+      ctx.fillStyle = '#F5F5DC';
+      ctx.fillRect(wx(pitch.x + pitch.w/2 - 15 + i * 12), wy(stumpY), 5, 25);
+    }
+    // Bails
+    ctx.fillStyle = '#8B4513';
+    ctx.fillRect(wx(pitch.x + pitch.w/2 - 18), wy(stumpY - 3), 40, 3);
+  }
+  // Boundary dots
+  ctx.fillStyle = '#fff';
+  for (let a = 0; a < Math.PI * 2; a += 0.1) {
+    const bx = zones.stadium.x + zones.stadium.w/2 + Math.cos(a) * 220;
+    const by = zones.stadium.y + zones.stadium.h/2 + Math.sin(a) * 340;
+    ctx.fillRect(wx(bx), wy(by), 4, 4);
+  }
+}
+
+function drawHouse() {
+  drawZone(zones.house);
+  ctx.fillStyle = '#8B4513';
+  ctx.beginPath();
+  ctx.moveTo(wx(zones.house.x), wy(zones.house.y + 60));
+  ctx.lineTo(wx(zones.house.x + zones.house.w/2), wy(zones.house.y - 30));
+  ctx.lineTo(wx(zones.house.x + zones.house.w), wy(zones.house.y + 60));
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#5D4037';
+  ctx.fillRect(wx(zones.house.x + zones.house.w/2 - 30), wy(zones.house.y + zones.house.h - 100), 60, 100);
+  ctx.fillStyle = '#87CEEB';
+  ctx.fillRect(wx(zones.house.x + 50), wy(zones.house.y + 120), 70, 70);
+  ctx.fillRect(wx(zones.house.x + zones.house.w - 120), wy(zones.house.y + 120), 70, 70);
+  ctx.strokeStyle = '#5D4037'; ctx.lineWidth = 3;
+  ctx.strokeRect(wx(zones.house.x + 50), wy(zones.house.y + 120), 70, 70);
+  ctx.strokeRect(wx(zones.house.x + zones.house.w - 120), wy(zones.house.y + 120), 70, 70);
+  ctx.fillStyle = '#8B6F47';
+  ctx.fillRect(wx(zones.house.x + 60), wy(zones.house.y + 250), 160, 60);
+  ctx.fillStyle = '#333';
+  roundRect(ctx, wx(zones.house.x + 80), wy(zones.house.y + 260), 70, 45, 4);
+  ctx.fill();
+  ctx.fillStyle = '#4CAF50';
+  ctx.fillRect(wx(zones.house.x + 84), wy(zones.house.y + 264), 62, 35);
+  ctx.fillStyle = '#111';
+  roundRect(ctx, wx(zones.house.x + 170), wy(zones.house.y + 268), 22, 38, 5);
+  ctx.fill();
+  ctx.fillStyle = '#4FC3F7';
+  ctx.fillRect(wx(zones.house.x + 173), wy(zones.house.y + 272), 16, 30);
+  ctx.fillStyle = '#000';
+  roundRect(ctx, wx(zones.house.x + 280), wy(zones.house.y + 240), 130, 80, 8);
+  ctx.fill();
+  ctx.fillStyle = '#E91E63';
+  ctx.fillRect(wx(zones.house.x + 290), wy(zones.house.y + 250), 110, 60);
+  ctx.fillStyle = zones.chair.color;
+  roundRect(ctx, wx(zones.chair.x), wy(zones.chair.y), zones.chair.w, zones.chair.h, 8);
+  ctx.fill();
+}
+
+function drawGarage() {
+  drawZone(zones.garage);
+  const carColors = ['#1976D2', '#D32F2F'];
+  for (let i = 0; i < 2; i++) {
+    const cx = zones.garage.x + 60;
+    const cy = zones.garage.y + 120 + i * 170;
+    ctx.fillStyle = carColors[i];
+    roundRect(ctx, wx(cx), wy(cy), 380, 110, 20);
+    ctx.fill();
+    ctx.fillStyle = '#B3E5FC';
+    roundRect(ctx, wx(cx + 60), wy(cy + 15), 260, 45, 10);
+    ctx.fill();
+    ctx.fillStyle = '#212121';
+    ctx.beginPath(); ctx.arc(wx(cx + 70), wy(cy + 110), 18, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(wx(cx + 310), wy(cy + 110), 18, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 22px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('HYUNDAI', wx(cx + 190), wy(cy + 95));
+  }
+}
+
+function drawNursery() {
+  drawZone(zones.nursery);
+  for (let i = 0; i < 25; i++) {
+    const px = zones.nursery.x + 40 + (i % 8) * 55 + (Math.floor(i/8) % 2) * 25;
+    const py = zones.nursery.y + 90 + Math.floor(i/8) * 60;
+    ctx.fillStyle = '#5D4037';
+    ctx.fillRect(wx(px - 2), wy(py), 4, 18);
+    ctx.fillStyle = ['#4CAF50', '#66BB6A', '#81C784'][i % 3];
+    ctx.beginPath();
+    ctx.arc(wx(px), wy(py), 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = ['#FFEB3B', '#FF80AB', '#E1BEE7'][i % 3];
+    ctx.beginPath();
+    ctx.arc(wx(px), wy(py - 3), 5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawPerson(p, isPlayer) {
+  const s = p.size;
+  const walking = (isPlayer && gameMode === 'explore' && (keys.up || keys.down || keys.left || keys.right));
+  const bob = walking ? Math.sin(p.walkFrame * 0.5) * 3 : 0;
+  const px = wx(p.x);
+  const py = wy(p.y) + bob;
+
+  // Shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.3)';
+  ctx.beginPath();
+  ctx.ellipse(wx(p.x), wy(p.y + s + 8), s * 0.7, s * 0.15, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Legs
+  ctx.fillStyle = '#3E2723';
+  const legOffset = walking ? Math.sin(p.walkFrame * 0.5) * s * 0.15 : 0;
+  ctx.fillRect(px - s * 0.35, py + s * 0.6, s * 0.25, s * 0.7 + legOffset);
+  ctx.fillRect(px + s * 0.1, py + s * 0.6, s * 0.25, s * 0.7 - legOffset);
+  // Shoes
+  ctx.fillStyle = '#212121';
+  roundRect(ctx, px - s * 0.4, py + s * 1.25 + legOffset, s * 0.35, s * 0.15, 4);
+  ctx.fill();
+  roundRect(ctx, px + s * 0.05, py + s * 1.25 - legOffset, s * 0.35, s * 0.15, 4);
+  ctx.fill();
+
+  // Body
+  ctx.fillStyle = p.color || '#FFC107';
+  roundRect(ctx, px - s * 0.55, py, s * 1.1, s * 0.9, s * 0.15);
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+  ctx.lineWidth = 2; ctx.stroke();
+
+  // Neck
+  ctx.fillStyle = '#FFDBAC';
+  ctx.fillRect(px - s * 0.15, py - s * 0.1, s * 0.3, s * 0.2);
+
+  // Head
+  ctx.fillStyle = '#FFDBAC';
+  ctx.beginPath();
+  ctx.arc(px, py - s * 0.5, s * 0.45, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Hair (papa has different hair)
+  ctx.fillStyle = (p === papa) ? '#616161' : '#212121';  // Papa has grey hair
+  ctx.beginPath();
+  ctx.arc(px, py - s * 0.65, s * 0.42, Math.PI + 0.3, 0 - 0.3);
+  ctx.fill();
+
+  // Papa moustache
+  if (p === papa) {
+    ctx.fillStyle = '#424242';
+    ctx.fillRect(px - s * 0.15, py - s * 0.36, s * 0.3, s * 0.06);
+  }
+
+  // Eyes
+  ctx.fillStyle = '#fff';
+  ctx.beginPath();
+  ctx.arc(px - s * 0.15, py - s * 0.5, s * 0.08, 0, Math.PI * 2);
+  ctx.arc(px + s * 0.15, py - s * 0.5, s * 0.08, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#000';
+  ctx.beginPath();
+  ctx.arc(px - s * 0.15, py - s * 0.5, s * 0.04, 0, Math.PI * 2);
+  ctx.arc(px + s * 0.15, py - s * 0.5, s * 0.04, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Eyebrows
+  ctx.strokeStyle = '#212121'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(px - s * 0.22, py - s * 0.62);
+  ctx.lineTo(px - s * 0.08, py - s * 0.6);
+  ctx.moveTo(px + s * 0.08, py - s * 0.6);
+  ctx.lineTo(px + s * 0.22, py - s * 0.62);
+  ctx.stroke();
+
+  // Smile
+  ctx.strokeStyle = '#000'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(px, py - s * 0.28, s * 0.12, 0.2, Math.PI - 0.2);
+  ctx.stroke();
+
+  // Determine if this person is holding bat / bowling
+  const isBatting = (isPlayer && gameMode === 'bat') || (!isPlayer && p === papa && gameMode === 'bowl');
+  const isBowling = (isPlayer && gameMode === 'bowl') || (!isPlayer && p === papa && gameMode === 'bat');
+
+  // Arms
+  const armColor = p.color || '#FFC107';
+  ctx.fillStyle = armColor;
+  const armWalk = walking ? Math.sin(p.walkFrame * 0.5) * s * 0.1 : 0;
+
+  if (isBatting) {
+    // Batting stance — both arms holding bat down and to right
+    const swinging = (isPlayer ? player.batSwing : p.batSwing) > 0;
+    const swingAngle = swinging ? Math.sin((20 - (isPlayer ? player.batSwing : p.batSwing)) * 0.3) * 1.2 : -0.3;
+
+    // Left arm
+    ctx.save();
+    ctx.translate(px - s * 0.4, py + s * 0.15);
+    ctx.rotate(swingAngle);
+    roundRect(ctx, 0, 0, s * 0.2, s * 0.6, s * 0.08);
+    ctx.fill();
+    ctx.restore();
+
+    // Right arm
+    ctx.save();
+    ctx.translate(px + s * 0.2, py + s * 0.15);
+    ctx.rotate(swingAngle);
+    roundRect(ctx, 0, 0, s * 0.2, s * 0.6, s * 0.08);
+    ctx.fill();
+    ctx.restore();
+
+    // Bat — big cricket bat
+    ctx.save();
+    ctx.translate(px + s * 0.3, py + s * 0.4);
+    ctx.rotate(swingAngle + (swinging ? 0 : 0.5));
+    // Handle
+    ctx.fillStyle = '#8B4513';
+    ctx.fillRect(-s * 0.06, -s * 0.4, s * 0.12, s * 0.5);
+    // Grip
+    ctx.fillStyle = '#000';
+    for (let g = 0; g < 4; g++) {
+      ctx.fillRect(-s * 0.07, -s * 0.4 + g * s * 0.12, s * 0.14, s * 0.02);
+    }
+    // Blade
+    ctx.fillStyle = '#F5DEB3';
+    roundRect(ctx, -s * 0.14, s * 0.1, s * 0.28, s * 0.8, s * 0.05);
+    ctx.fill();
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 2;
+    ctx.stroke();
+    // Bat lines
+    ctx.strokeStyle = 'rgba(139,69,19,0.5)'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, s * 0.15);
+    ctx.lineTo(0, s * 0.85);
+    ctx.stroke();
+    ctx.restore();
+
+    // Cricket pads on legs
+    ctx.fillStyle = '#F5F5DC';
+    roundRect(ctx, px - s * 0.4, py + s * 0.65, s * 0.32, s * 0.65, 6);
+    ctx.fill();
+    roundRect(ctx, px + s * 0.08, py + s * 0.65, s * 0.32, s * 0.65, 6);
+    ctx.fill();
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 1;
+    ctx.stroke();
+
+  } else if (isBowling) {
+    // Bowling stance — arm raised up (or swinging over)
+    const bowling = (isPlayer ? player.bowlArm : p.bowlAnim) > 0;
+    const bowlPhase = bowling ? (20 - (isPlayer ? player.bowlArm : p.bowlAnim)) / 20 : 0;
+    const armAngle = bowling ? -Math.PI + bowlPhase * Math.PI * 1.3 : -Math.PI * 0.9;
+
+    // Non-bowling arm
+    roundRect(ctx, px - s * 0.75, py + s * 0.1 + armWalk, s * 0.2, s * 0.6, s * 0.08);
+    ctx.fill();
+
+    // Bowling arm (rotating)
+    ctx.save();
+    ctx.translate(px + s * 0.5, py + s * 0.1);
+    ctx.rotate(armAngle);
+    roundRect(ctx, 0, 0, s * 0.2, s * 0.7, s * 0.08);
+    ctx.fill();
+    // Ball in hand if not released yet
+    if (bowling && bowlPhase < 0.5) {
+      ctx.fillStyle = '#C62828';
+      ctx.beginPath();
+      ctx.arc(s * 0.1, s * 0.72, s * 0.15, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Hand
+    ctx.fillStyle = '#FFDBAC';
+    ctx.beginPath();
+    ctx.arc(px - s * 0.65, py + s * 0.72 + armWalk, s * 0.11, 0, Math.PI * 2);
+    ctx.fill();
+
+  } else {
+    // Normal arms
+    ctx.fillStyle = armColor;
+    roundRect(ctx, px - s * 0.75, py + s * 0.1 + armWalk, s * 0.2, s * 0.6, s * 0.08);
+    ctx.fill();
+    roundRect(ctx, px + s * 0.55, py + s * 0.1 - armWalk, s * 0.2, s * 0.6, s * 0.08);
+    ctx.fill();
+    // Hands
+    ctx.fillStyle = '#FFDBAC';
+    ctx.beginPath();
+    ctx.arc(px - s * 0.65, py + s * 0.72 + armWalk, s * 0.11, 0, Math.PI * 2);
+    ctx.arc(px + s * 0.65, py + s * 0.72 - armWalk, s * 0.11, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // Label
+  const label = isPlayer ? 'KEERTI (YOU)' : p.name.toUpperCase();
+  const bgColor = isPlayer ? 'rgba(255,215,0,0.95)' : 'rgba(0,0,0,0.75)';
+  const textColor = isPlayer ? '#000' : '#fff';
+  ctx.font = `bold ${Math.max(12, s * 0.35)}px sans-serif`;
+  const textW = ctx.measureText(label).width;
+  ctx.fillStyle = bgColor;
+  roundRect(ctx, px - textW/2 - 8, py - s * 1.15, textW + 16, s * 0.4, 8);
+  ctx.fill();
+  ctx.fillStyle = textColor;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(label, px, py - s * 0.95);
+  ctx.textBaseline = 'alphabetic';
+
+  if (currentNpc === p) {
+    ctx.fillStyle = '#FFD700';
+    ctx.beginPath();
+    ctx.arc(px + s * 0.6, py - s * 1.2, 10, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.fillText('!', px + s * 0.6, py - s * 1.16);
+  }
+}
+
+function draw() {
+  ctx.fillStyle = '#7EC850';
+  ctx.fillRect(0, 0, VIEW_W, VIEW_H);
+  ctx.fillStyle = '#6DB94A';
+  for (let i = 0; i < 200; i++) {
+    const gx = (i * 137) % WORLD_W;
+    const gy = (i * 89) % WORLD_H;
+    ctx.fillRect(wx(gx), wy(gy), 3, 3);
+  }
+  ctx.fillStyle = '#D7CCC8';
+  ctx.fillRect(wx(1030), wy(900), 40, 60);
+  ctx.fillRect(wx(1030), wy(1260), 40, 40);
+
+  drawStadium();
+  drawGarage();
+  drawHouse();
+  drawNursery();
+
+  const drawables = [...npcs, player].sort((a, b) => a.y - b.y);
+  for (const d of drawables) drawPerson(d, d === player);
+
+  // Ball
+  if (ball.active) {
+    ctx.fillStyle = '#C62828';
+    ctx.beginPath();
+    ctx.arc(wx(ball.x), wy(ball.y), 10, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(wx(ball.x), wy(ball.y), 10, 0, Math.PI);
+    ctx.stroke();
+    // Motion trail
+    ctx.fillStyle = 'rgba(198,40,40,0.3)';
+    ctx.beginPath();
+    ctx.arc(wx(ball.x - ball.vx), wy(ball.y - ball.vy), 6, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  drawMinimap();
+}
+
+function drawMinimap() {
+  const mw = minimap.width, mh = minimap.height;
+  const sxr = mw / WORLD_W, syr = mh / WORLD_H;
+  mctx.fillStyle = '#7EC850';
+  mctx.fillRect(0, 0, mw, mh);
+  for (const key of ['stadium', 'house', 'garage', 'nursery']) {
+    const z = zones[key];
+    mctx.fillStyle = z.color;
+    mctx.fillRect(z.x * sxr, z.y * syr, z.w * sxr, z.h * syr);
+    mctx.strokeStyle = z.border; mctx.lineWidth = 1;
+    mctx.strokeRect(z.x * sxr, z.y * syr, z.w * sxr, z.h * syr);
+  }
+  for (const npc of npcs) {
+    mctx.fillStyle = npc.color;
+    mctx.beginPath();
+    mctx.arc(npc.x * sxr, npc.y * syr, 3, 0, Math.PI * 2);
+    mctx.fill();
+  }
+  mctx.fillStyle = '#FFD700';
+  mctx.beginPath();
+  mctx.arc(player.x * sxr, player.y * syr, 4, 0, Math.PI * 2);
+  mctx.fill();
+  mctx.strokeStyle = '#000'; mctx.lineWidth = 1; mctx.stroke();
+  mctx.strokeStyle = 'rgba(255,215,0,0.7)'; mctx.lineWidth = 1;
+  mctx.strokeRect(cameraX * sxr, cameraY * syr, VIEW_W * sxr, VIEW_H * syr);
+}
+
+function loop() { update(); draw(); requestAnimationFrame(loop); }
+loop();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.rishabhsharma.superoverlegends",
+        "sha256_cert_fingerprints": ["24:B8:DE:CA:9C:AD:DD:35:69:5A:22:20:EC:BA:44:17:A5:C5:2A:C4:E7:D0:31:FF:CF:08:7E:04:78:39:BD:73"]
+      }
+    }]

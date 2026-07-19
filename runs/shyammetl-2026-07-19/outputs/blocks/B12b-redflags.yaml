@@ -1,0 +1,26 @@
+stage: B12b
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 16
+caught: 11
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Q4 FY26 margin (14.4%) earnings-quality left unexamined: deliberate favorable-cost inventory build (days 99->123, 'higher than warranted... liquidated in Q1/Q2') plus an evaded question on why Q4 EBITDA/tonne rose only ~INR2,600 vs a ~INR5,100 price rise", anchor: "Q4 FY26 call, Ashish Kejriwal / Deepak Agarwal p12; Brij Bhushan p13 ('will not be very appropriate in answering')"}
+  - {severity: "MINOR", item: "Aluminium (Trigger #1) segment realization DOWN QoQ in Q3 despite rising international prices; analyst-flagged mix deterioration met with a soft, non-committal answer", anchor: "Q3 FY26 call, Vikas Singh / Brij Bhushan p7"}
+  - {severity: "MINOR", item: "CMD terminated Q&A early on two consecutive calls citing personal scheduling ('another meeting'; 'flight to catch')", anchor: "Q3 FY26 p16; Q4 FY26 p17"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur"   # B is fair; capex delivery strong, offset by deflections, unreconciled 30% jump, and the missed Q4 margin earnings-quality caveat
+findings:
+  - {severity: "MAJOR", location: "B05 vs Q4 FY26 transcript (margin/earnings-quality)", note: "MISSED red flag: Q4 headline 14.4% margin partly rests on inventory-timing and unexplained cost-vs-price gap; bears directly on Trigger 3 durability and the 'delivered' margin promise"}
+  - {severity: "MINOR", location: "B05 2A / timeline_slippages", note: "PARTIALLY CAUGHT: stainless slippage captured but Q3 firmness ('commission by end of next year', ~FY27) understated, making the one-quarter slip to March 2029 sharper than portrayed; intra-Q2 26/27-vs-27/28 contradiction not noted"}
+  - {severity: "MINOR", location: "B05 4A / guidance (HR mill)", note: "PARTIALLY CAUGHT: HR/SMS capacity fixed at 1.6 MTPA; transcript wobbles across 0.8 / 1.6 / 2.0 MT without reconciliation"}
+  - {severity: "MINOR", location: "B05 vs Q3 FY26 transcript (aluminium)", note: "MISSED: QoQ aluminium realization decline contrary to prices, soft management answer"}
+  - {severity: "MINOR", location: "B05 2C defensiveness / Q3+Q4 transcripts", note: "MISSED: two consecutive CMD-initiated early call exits not surfaced"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 69   # caught 11 / 16 independent flags found
+redflag_coverage: 69

@@ -1,0 +1,71 @@
+stage: B04-bizmodel
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AS-108 segment reporting note (revenue/EBITDA/assets by reportable segment) not located within page budget; product-level revenue (AR p.24-31) used instead"
+  - "Customer concentration (top 5/10 customers % of revenue) NOT FOUND in AR or Investor Presentation"
+  - "Investor_Presentation_1.pdf is the 17-Jun-2026 'Investor & Analyst Day 2026' deck (FY26 actuals, FY31E targets), not the undated deck implied by the task brief; used as instructed"
+flags:
+  - "Revenue predictability Low for most product lines; company self-describes as operating in a commoditized, cyclical industry (AR p.3, p.66) with historical PAT margin swings ~3.5% to >20%"
+  - "No disclosed captive iron ore mining; raw materials (iron ore, ferro alloys) shown as purchased inputs (Inv. Pres. p.7) despite 93.69% domestic sourcing (AR p.152)"
+  - "~Rs 10,617 Cr pending capex vs ~Rs 2,023 Cr FY26 CFO; several FY31-roadmap line items (SBQ Mill, SS Hot Rolling/Annealing/Pickling Line) show near-zero capex incurred to date — material execution risk behind the value-add mix-shift thesis"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Wire Rod", type: "manufacturing - carbon steel long, semi-commodity", pct_of_revenue: 19.80, predictability: "L"}
+  - {name: "Sponge Iron", type: "manufacturing - intermediate, merchant sale", pct_of_revenue: 17.00, predictability: "L"}
+  - {name: "TMT Bars", type: "manufacturing - carbon steel long, branded (SEL Tiger)", pct_of_revenue: 15.91, predictability: "M"}
+  - {name: "Ferro Alloys", type: "manufacturing - alloy input, export-heavy", pct_of_revenue: 12.66, predictability: "L"}
+  - {name: "Structural Steel", type: "manufacturing - carbon steel long, commodity", pct_of_revenue: 8.63, predictability: "L"}
+  - {name: "Stainless Steel", type: "manufacturing - value-added long products", pct_of_revenue: 7.34, predictability: "M"}
+  - {name: "Aluminium Foil", type: "manufacturing - value-added, export/packaging", pct_of_revenue: 4.73, predictability: "M"}
+  - {name: "Iron Ore Pellets", type: "manufacturing - intermediate, merchant sale", pct_of_revenue: 4.80, predictability: "L"}
+  - {name: "Billets", type: "manufacturing - intermediate, merchant sale", pct_of_revenue: 4.60, predictability: "L"}
+  - {name: "Pig Iron", type: "manufacturing - intermediate, foundry feedstock", pct_of_revenue: 2.12, predictability: "L"}
+  - {name: "CR Coil/Sheet", type: "manufacturing - flat steel, emerging value-added", pct_of_revenue: 0.90, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "low"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+  - "Cost leadership via backward integration and captive power (durable/structural, ~20 years built)"
+  - "Niche scale leadership - ferro alloys, aluminium foil, sponge iron, pellets (moderate, sub-scale vs top-3 overall steel majors)"
+  - "Emerging brand - SEL Tiger in B2C TMT/roofing (weak/emerging, not yet durable)"
+  - "Technology/process edge - German Thermex TMT, Danieli stainless mill, Achenbach foil mill, thinner-gauge CRM (moderate, genuine but replicable over time)"
+  - "Distribution/relationship moat - preferred supplier to named export corporates across 40 countries (moderate)"
+  - "Regulatory tailwind - safeguard duty and PLI specialty-steel scheme (industry-wide, not company-specific)"
+valuation_methods:
+  primary: {method: "EV/EBITDA (through-cycle / forward)", why: "Standard sector metric for cyclical integrated metals producers; EBITDA is management's central KPI (guided Rs 2,333 Cr FY26 to ~Rs 6,200+ Cr FY31E, Inv. Pres. p.46); net debt near-zero so EV approximates equity value"}
+  secondary: {method: "Segment-wise Sum-of-the-Parts (EV/EBITDA or EV/tonne by vertical)", why: "EBITDA/tonne varies ~10x across segments (Aluminium ~Rs 32,592-36,562/t vs Carbon Steel ~Rs 5,204-7,460/t, Inv. Pres. p.57); explicit mix-shift strategy toward higher-value verticals makes a blended multiple mispricing-prone"}
+  tertiary: {method: "EV per tonne of installed/under-construction capacity", why: "Cross-check during heavy capex phase (~$1.1bn planned to FY31, Inv. Pres. p.6) where new capacity is not yet earning full returns"}
+  not_applicable:
+    - "DCF as primary method - multi-year steel/alloy price forecasting too uncertain; usable only as a sensitivity check"
+    - "Dividend Discount Model - payout modest and subordinate to reinvestment (~101% of CFO into capex FY26, Inv. Pres. p.43)"
+    - "EV/Sales (revenue multiple) - misleading given ~10x EBITDA/tonne variance across segments"
+    - "Un-normalized trailing/forward P/E as primary - earnings highly cyclical (PAT margin swung ~3.5% to >20% across cycles, AR p.14)"
+irrelevant_ratios:
+  - "Net Profit Margin alone - distorted by D&A/interest timing on a fast-growing asset base; use EBITDA margin and EBITDA/tonne instead"
+  - "Trailing/Forward P/E alone - earnings are highly cyclical, un-normalized P/E can badly misprice cycle position"
+  - "YoY Revenue growth without volume/price split - conflates company-controlled volume with market-set commodity price"
+  - "As-reported Gross Margin vs non-commodity peers - raw material is ~72% of revenue by design (Inv. Pres. p.57), not a quality signal"
+  - "Current Ratio alone - dominated by mark-to-market commodity inventory (100-123 days), can mask commodity price risk"
+  - "ROE alone without ROCE - mechanically declines during heavy capex phases as equity is deployed ahead of earnings ramp (35% to 13%, Mar-21 to Mar-26)"
+must_track_metrics:
+  - {metric: "EBITDA per tonne (blended and by segment)", healthy: "Blended >Rs 3,000/t; Aluminium >Rs 30,000/t; Stainless Steel >Rs 8,000/t sustained", red_flag: "Blended EBITDA/t below Rs 2,000/t, or any segment down >20% QoQ without volume offset"}
+  - {metric: "Net Debt / EBITDA", healthy: "Below 1.0x through FY26-FY31 capex cycle (currently net cash, -0.16x Mar-26)", red_flag: "Crosses 1.5x-2.0x or flips from net cash to net debt while capex remains unfunded by accruals"}
+  - {metric: "Capacity utilization / volume growth by segment (MT)", healthy: "Tracking toward FY31E volume glidepath (e.g. Stainless Steel 94,102t FY26 to 6,99,733t FY31E)", red_flag: "Utilization stalls below 60-70% of nameplate for 2+ consecutive quarters post-commissioning"}
+  - {metric: "Net working capital days", healthy: "Single digits to low teens (9 days Mar-26 vs 22 days Mar-25)", red_flag: "Sustained rise above 30-40 days signaling inventory build-up or receivables stress"}
+  - {metric: "Capex as % of Cashflow from Operations", healthy: "Broadly self-funded, ~90-110% of CFO with no incremental net debt (101% FY26)", red_flag: "Sustained materially above 120-130% funded by rising gross debt"}
+unit_economics:
+  unit: "one tonne of metal sold (blended; segment-level EBITDA/tonne is the decision-useful cut)"
+  revenue_per_unit: "Carbon Steel ~Rs 43,043/t; Stainless Steel ~Rs 1,40,443/t; Aluminium Foil ~Rs 3,79,805/t; Sponge Iron ~Rs 23,695/t; Iron Pellets ~Rs 9,085/t (FY26, Inv. Pres. p.40)"
+  margin_per_unit: "Blended EBITDA/t Rs 2,099-3,238 (Q3-Q4 FY26); Carbon Steel Rs 5,204-7,460/t; Stainless Steel Rs 8,512-8,978/t; Speciality Alloys Rs 14,481-18,780/t; Aluminium Rs 32,592-36,562/t (Inv. Pres. p.57)"
+  key_lever: "Product mix shift toward value-added segments (Stainless Steel, Aluminium, SBQ) plus capacity utilization ramp on newly commissioned blast furnace/coke oven/CRM, which lowers per-tonne conversion cost as fixed costs are absorbed"
+first_deterioration_signals:
+  - {risk: "Global/Chinese steel oversupply depressing realizations", first_signal: "Per-tonne realizations decline QoQ across Carbon Steel/Sponge Iron (already -3% and -7% FY25 to FY26, Inv. Pres. p.40)"}
+  - {risk: "Raw material (iron ore/coking coal) cost spike without pass-through", first_signal: "Gross profit margin % compression QoQ (ranged 26.7%-34.5% across recent quarters, Inv. Pres. p.57)"}
+  - {risk: "Capex overshoot funded by debt instead of internal accruals", first_signal: "Gross debt rising (Rs 768 Cr Mar-25 to Rs 957 Cr Mar-26) alongside Capex/CFO ratio sustained above 110%"}
+  - {risk: "Delayed capacity commissioning versus guided schedule", first_signal: "Slippage in quarterly capex-incurred-vs-budgeted disclosures for projects like SBQ Mill (Rs 0 of Rs 900 Cr spent) and SS Hot Rolling/Annealing/Pickling Line (Rs 0 of Rs 800 Cr spent), Inv. Pres. p.30-32"}
+  - {risk: "Trade protectionism reversal (safeguard duty lapse, export tariff escalation)", first_signal: "Export revenue % decline and/or Aluminium Foil realization compression (currently Rs 3,79,805/t, >60% of foil output exported)"}
+one_line_verdict: "Cost-leadership commodity metals producer executing a capital-intensive, self-funded mix-shift toward higher-EBITDA-per-tonne stainless steel and aluminium, with cyclicality and execution risk as the swing factors."

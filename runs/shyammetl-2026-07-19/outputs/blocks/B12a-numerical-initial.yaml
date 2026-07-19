@@ -1,0 +1,24 @@
+stage: B12a-initial
+company: "SHYAMMETL"
+run_date: "2026-07-19"
+model: claude-haiku-4-5
+status: superseded_by_recheck
+note: "INITIAL PASS. Verifier A did not open the Annual Report (inputs/annual-report/Annual_Report_2023.pdf, the FY2024-25 AR) or the Investor Presentation (inputs/presentation/Investor_Presentation_1.pdf), both of which ARE present and were read this session by stages 2/3/4/8. It therefore marked 6 AR-anchored items ANCHOR NOT FOUND and 2 IP-anchored items UNANCHORED for file-absence reasons that are factually wrong. A targeted Verifier-A re-read (B12a-recheck) re-verifies those 8 items against the actual files; the reconciled result is in B12a-numerical.yaml. No CRITICAL findings. All verdict-card / Gate-0 Block A-D scoring inputs verified clean."
+numbers_checked: 28
+critical_count: 0
+major_count: 8
+minor_count: 20
+acceptance_rate: 64.3
+false_absence_items:
+  - "B02 Consolidated PAT decline (Note 47 p.326-327) — marked ANCHOR NOT FOUND, AR is present"
+  - "B02 SSPL profit contribution decline (Note 47 p.326-327) — marked ANCHOR NOT FOUND, AR is present"
+  - "B02 Unrecognised DTA rise (Note 24(c) p.304; Note 37(c) p.309-310) — marked ANCHOR NOT FOUND, AR is present"
+  - "B02 CARO 3(xvii) cash-loss entity count (Consol Auditor CARO table p.260) — marked ANCHOR NOT FOUND, AR is present"
+  - "B02 Circular cross-holding (Note 7(a) p.220/289; Note 18(e)/(f) p.296-297) — marked ANCHOR NOT FOUND, AR is present"
+  - "B04 FY26 raw material cost % (Inv. Pres. p.57) — marked UNANCHORED, IP deck is present (also a genuine source-basis MISMATCH vs audited P&L: 73.68%)"
+  - "B04 Captive power capacity as % of needs 81-83% (Inv. Pres. p.37) — marked UNANCHORED, IP deck is present"
+  - "B02 SSPL/AR Note 47 entity breakdown generally — AR is present"
+genuine_findings_retained:
+  - "MAJOR: B04 FY26 raw material cost — real source-basis MISMATCH: B04 cites IP p.57 (13,352.6cr, ~72%) vs audited Q4 FY26 P&L cost of materials consumed 13,680.15cr (73.68%). Audited is authoritative; correct to 73.68%. Not a verdict-card/pillar input — does not force REWORK."
+  - "MAJOR (advisory): B01 Block D debt numerator 981.32 (audited) vs 1,005.07 (screener); Gate0 correctly used audited. Net debt negative either way; verdict unaffected."
+  - "MAJOR (UNANCHORED, expected): B08 ED attachment 159.51cr and CPCB Rengali — web/MEDIA-REPORTED + operator context; no filing PDF in inputs, so correctly UNANCHORED. Remain caveated MEDIA-REPORTED flags, not fabrications."

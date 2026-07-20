@@ -1,0 +1,26 @@
+stage: B09-tam
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["rating absent","announcements absent","research absent","annual-report is FY2024-25 only; no FY26 AR","shareholding filing absent (screener snapshot lead only)"]
+flags: ["management's growth ambition (20-25% revenue CAGR / double turnover in 5yrs) implies FY31 revenue ~Rs1,975 Cr, exceeding the plant's 100%-nameplate-utilization physical ceiling (~Rs1,391 Cr) by ~Rs584 Cr (~42%), against NIL committed capex (AR Note 1) -- claim is capacity-unsupported","top-down Method 1 and bottom-up Method 2 TAM estimates diverge >2x (Rs150,000-170,000 Cr vs Rs300,000-374,000 Cr); conservative (lower) figure carried per pipeline rule","no product-wise (TMT vs stainless) revenue split disclosed anywhere, so SAM/SOM necessarily blend both product lines using FY26 blended realization of Rs69,536/tonne","TMT national market-size anchor sourced from lower-tier aggregators (theindiawatch/adukiaindustries), not a CRISIL/ICRA/IBEF-grade report","USD/INR conversion for stainless-steel global-market figures uses an approximate July-2026 spot proxy (~Rs95/USD), not a hard-sourced contemporaneous rate","CRISIL/ICRA paywalled full reports and a dedicated NCR-only regional demand report were not directly accessible; national region-share proxy (31.78%) used instead"]
+market_definition: "North India/NCR carbon TMT rebar (Fe500/550/550D) + pan-India B2B stainless-steel billets/wire rods/bright bars, sold via dealer network and direct B2B channels"
+tam_cr: {conservative: 150000, realistic: 170000}
+sam_cr: 67000
+sam_pct_of_tam: 44.7
+som_3yr_cr: 900
+som_5yr_cr: 1110
+som_implied_revenue_cagr: {yr3: 8.1, yr5: 9.2}
+current_sam_share_pct: 1.07
+revenue_headroom_x: 93.6
+tam_growth_pct: 7.0
+runway_class: "GOOD"
+mgmt_claim_cr: 1975
+mgmt_claim_ratio: 2.4
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs584 Cr between management's implied 5yr revenue claim (~Rs1,975 Cr at 20-25% CAGR) and the plant's physical ceiling at 100% nameplate rolling-mill utilization (~Rs1,391 Cr); the growth/capex narrative is the optimistic side, not the SOM -- AR Note 1 discloses NIL committed capex"
+methods_used: ["top-down","bottom-up","peer_revenue_aggregation (directional)","import_substitution (qualitative)","global_benchmark_percapita (corroborating)"]
+stale_data_flags: [{datapoint: "TMT bar national consumption ~50.3 MT", source: "Market Decipher aggregator (via web search), FY23 vintage", year: 2023}]
+searches_performed: ["India TMT rebar market size 2025 rupees crore long steel products","India secondary steel induction furnace EAF route production million tonnes market share 2025","North India NCR TMT bar steel demand market share percent of India consumption","India stainless steel wire rod bright bar market size crore","India stainless steel market size 2024 2025 billion dollars long products flat products share","India TMT bar average realization price per tonne 2025 2026","USD INR exchange rate July 2026","India unorganized secondary steel sector share TMT rebar percent formalization organized","Kamdhenu Limited revenue FY2025 crore TMT steel","SRMB Srijan Rimjhim Ispat R R Ispat North India TMT bar company revenue crore"]
+searches_skipped: ["CRISIL/ICRA/CARE full paywalled steel-sector or TMT-segment sizing reports (relied on AR's own CRISIL quotes instead)","dedicated NCR/Delhi-UP-Haryana-only regional steel demand report (no such report found; national region-share proxy of 31.78% used)","India-specific stainless long-vs-flat product segmentation report (used global-consistent ~55-56% flat / ~44% long split as proxy)"]

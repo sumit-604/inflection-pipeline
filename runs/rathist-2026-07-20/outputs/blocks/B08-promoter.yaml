@@ -1,0 +1,67 @@
+stage: B08-promoter
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["rating absent","announcements absent","research absent","shareholding filing absent (screener snapshot lead only)"]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "2016 CBI Special Court conviction of promoters Pradeep Rathi and Udit Rathi (plus RSPL and AGM Kushal Aggarwal) for cheating (IPC 420) and criminal conspiracy (IPC 120B) in the Kesla North coal block allocation scam; 3-year sentences, appeal to Delhi HC unresolved as of this run, sentence suspended on bail."
+      - "FY25 AR Note 12 (Related Party Disclosure) omits PCR Holdings Pvt Ltd (26.41% equity, fresh FY25 preferential allotment) and personal guarantors Pradeep Rathi / Udit Rathi from related-party transactions, despite a clean CARO RPT sign-off — corroborates FLAG-RPT-INTEGRITY directly against primary source."
+      - "Five senior-leadership departures in ~9 months: CFO died in office, successor CFO resigned after ~6 months, Company Secretary resigned, MD resigned, one Independent Director resigned; plus a BSE fine (since waived) for NRC committee non-compliance."
+      - "Transition evidence: promoter family has left the board entirely in favour of professional non-promoter management; net worth recovered from -Rs100cr (FY23) to +Rs42cr (FY25) via negotiated lender OTS and non-promoter capital raise; pledge minimal; personal guarantees intact; ED's 2024 PMLA complaint on the coal-block matter was declined cognizance in March 2026."
+verdict: "CONCERN"
+scorecard: {clean: 2, caution: 5, red: 3}
+deal_breakers:
+  - "Economic offence conviction: CBI Special Court, 26-27 Jul 2016, IPC 420 + 120B — RSPL, Pradeep Rathi, Udit Rathi, Kushal Aggarwal — Kesla North coal block matter; sentences up to 3 years; appeal pending/unresolved (recorded, not enforced)."
+adverse_findings:
+  - {finding: "2016 CBI conviction of promoters Pradeep Rathi and Udit Rathi for cheating and criminal conspiracy (coal block allocation scam); appeal unresolved", evidence_tier: "MEDIA REPORTED (multi-source corroborated, incl. company exchange disclosure)", source: "The Tribune / India.com / Business Standard / ScanX (exchange disclosure)", date: "2016-07-26 conviction; 2026-03-06 latest development"}
+  - {finding: "Note 11 vs Note 12 mismatch: promoter guarantors and PCR Holdings' fresh preferential allotment absent from RPT disclosure despite clean CARO sign-off", evidence_tier: "VERIFIED", source: "FY24-25 Annual Report, Notes 11, 12, 13, 16 and CARO Annexure-A", date: "2025-05-30 (AR sign date)"}
+  - {finding: "Five senior leadership departures (CFO death, successor CFO resignation, CS resignation, MD resignation, ID resignation) within ~9 months", evidence_tier: "VERIFIED", source: "FY24-25 Annual Report, Board's Report and Corporate Governance Report", date: "Dec 2024 - Aug 2025"}
+  - {finding: "BSE fine Rs 2,12,400 for NRC committee non-compliance (Q4 FY25), since disputed and waived", evidence_tier: "VERIFIED / MEDIA REPORTED (waiver)", source: "AR Corporate Governance Report p.61; ScanX", date: "FY25; waiver 2026-02-26"}
+  - {finding: "Char Investment and Trading Ltd and Lenzing Poly Packs Ltd hold 100% of preference capital but are excluded from the Note 11 promoter-group table and from Note 12 RPT disclosure; beneficial ownership chain not found", evidence_tier: "VERIFIED (AR) / NOT FOUND (ownership chain)", source: "FY24-25 Annual Report Note 11", date: "2025-05-30"}
+  - {finding: "FII holding fell from 8.95% (Jun-24 peak) to 2.70% (Mar-26) even as promoter holding stabilised at 41.30%", evidence_tier: "UNVERIFIED (operator-provided screener snapshot, non-anchored)", source: "screener.in shareholding snapshot (operator-provided)", date: "2026-07-20"}
+transition_evidence:
+  - "Promoter family (Pradeep Kumar Rathi, Udit Rathi) holds no board seat on the FY25 board; Udit Rathi's only role is the newly created Chief Strategy Officer (senior management, non-board) from 01-06-2025 — day-to-day executive leadership handed to non-promoter professionals (MD Mahesh Pareek, WTDs Verma and Khurana)."
+  - "Net worth recovered from -Rs10,041 lakh (FY23) to +Rs4,176.76 lakh (FY25) via a negotiated One-Time Settlement with Bank of Baroda/ACRE (Feb 2024) and lender term-loan waivers, not an NCLT-imposed resolution; company resumed formal banking relationships (fresh Kotak Mahindra Bank facilities, Rs40.06cr availed FY25)."
+  - "FY24 Rs114.71cr preferential equity raise was to non-promoter allottees, broadening the shareholder base (count roughly doubled Dec-23 to Mar-25)."
+  - "Operational modernisation completed: cost-optimisation project, hot-charging technology adoption, idle TMT bar mill resumed production Q1 FY26."
+  - "BSE fine for NRC non-compliance waived (Feb 2026); ED's 2024 PMLA complaint on the coal-block matter declined cognizance by the Special Judge (6 March 2026) — near-term legal de-risking, though the underlying 2016 conviction/appeal remains unresolved."
+  - "Promoter pledge reported minimal/insignificant (exact % not anchored); personal guarantees by Pradeep Rathi and Udit Rathi for company bank debt remain in place — skin in the game intact."
+pledge_pct_latest: 0
+pledge_trend: "stable, minimal — screener.in (secondary aggregator) describes pledge as insignificant across the period reviewed; exact quarterly pledge % NOT FOUND in the AR or an exchange filing, so not anchored as a number"
+searches_performed:
+  - "Rathi Steel and Power Ltd promoter Pradeep Kumar Rathi Udit Rathi"
+  - "Rathi Steel and Power Ltd CDR corporate debt restructuring NPA default"
+  - "\"Rathi Steel\" NCLT SARFAESI bank case"
+  - "\"PCR Holdings\" \"Rathi Steel\" preferential allotment Mahesh Pareek"
+  - "Rathi Steel Power lenders debt waiver Kotak Mahindra Bank one time settlement OTS"
+  - "\"Rathi Steel and Power\" \"Reserve Bank of India\" wilful defaulter Supreme Court"
+  - "Rathi Steel Power Ghaziabad SEBI order settlement"
+  - "\"Char Investment and Trading\" OR \"Lenzing Poly Packs\" OR \"DBG Leasing\" Rathi"
+  - "\"Rathi Steel and Power\" Supreme Court RBI SLP wilful defaulter identification"
+  - "\"Rathi Steel\" coal block allocation case CBI conviction 2016"
+  - "Udit Rathi Pradeep Rathi coal block conviction appeal Delhi High Court sentence"
+  - "\"Kesala North\" coal block Rathi Steel CBI case verdict sentence years"
+  - "Rathi Steel Power ED PMLA coal block special judge 2026"
+  - "Rathi Steel Power coal block appeal Delhi High Court acquittal OR upheld 2025"
+  - "\"Rathi Steel And Power Ltd vs Union Of India\" February 2025 indiankanoon"
+  - "Rathi Steel Power executives coal scam appeal suspension sentence status 2025 2026"
+  - "Rathi Steel Power net worth erosion negative BIFR sick company revival"
+  - "\"Rathi Super Steels\" vs \"Rathi Steel and Power\" same group different company"
+  - "Rathi Steel Power lenders waiver term loan Kotak Bank of Baroda financial turnaround 2024"
+  - "Rathi Steel Power Ltd Glassdoor AmbitionBox employee reviews"
+  - "\"Rathi Steel\" auditor resignation M Lal statutory auditor change history"
+  - "Rathi Steel Power ASG Trading Pvt Ltd shareholder new investor"
+  - "screener.in Rathi Steel and Power pledge promoter percentage"
+  - "\"Sushila Rathi\" \"Rathi Steel\""
+searches_skipped:
+  - "ibclaw.in full SC case text (WebFetch blocked, HTTP 403)"
+  - "india.com full preferential-allotment article text (WebFetch blocked, HTTP 403)"
+  - "theprint.in full ED-chargesheet-rejection legal reasoning (WebFetch blocked, HTTP 403)"
+  - "business-standard.com full 2016 bail article text (WebFetch blocked, HTTP 403)"
+  - "indiankanoon.org full Feb-2025 Delhi HC judgment text (WebFetch blocked, HTTP 403)"
+  - "scanx.trade full coal-block court-relief article text (WebFetch blocked, HTTP 403)"
+verdict_basis: "2016 CBI conviction of both key promoter individuals (Pradeep Rathi, Udit Rathi) for cheating and criminal conspiracy in the coal-block allocation scam remains unresolved on appeal, compounded by a current-year (FY25) related-party-disclosure gap around promoter-controlled entities despite a clean CARO sign-off; tempered by verified board professionalization (promoter family off the board) and a lender-negotiated balance-sheet turnaround, which keeps this CONCERN rather than AVOID."

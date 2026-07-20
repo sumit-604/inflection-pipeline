@@ -22,9 +22,17 @@
 - [x] Stage 1 Gate 0 (B01): AVOID, core 24, moat THIN, FLAG-GATE0. Redeemable pref ₹8.89cr possible debt-like.
 - [x] Stage 2 notes triple-pass (B02): acct quality 4/10, FLAG-CASH, 15 findings, 9 red flags.
 - [x] Stage 3 AR deep dive (B03): quality 3/10, turnaround_watchlist. Flags: FLAG-CASH, FLAG-RPT-INTEGRITY, FLAG-GOVERNANCE-CHURN, FLAG-KAM-EMPTY. 15/15 stage-2 findings verified. Positives credited (promoter injection, no pledge, IC improving, clean audit).
-- [~] Stage 4 bizmodel — running.
-- [~] Stage 5 concall (Nov25/Feb26/Jun26) — running.
-- [~] Stage 8 promoter — running.
-- [ ] Stage 6 peers — after 5.
-- [ ] Stage 7 emoat — after 1 & 5.
-- [ ] Stage 9 TAM — after 4 & 7.
+- [x] Stage 4 bizmodel (B04): manufacturing, price-taker, cyclical, high WC. Primary val EV/EBITDA; DCF/PE/DDM/SOTP N/A. FY26 margin 4.03% down from 4.81% despite +42% rev.
+- [x] Stage 5 concall (B05): credibility C; promise 3d/4p/2m; excuse external-blame-heavy; margin flat ~4%; util unreconciled; direct-charging slipped. 6 peer questions.
+- [x] Stage 8 promoter (B08): FLAG-PROMOTER CONCERN. 2016 CBI coal-block conviction (Pradeep & Udit Rathi), appeal unresolved (deal-breaker). RPT-gap corroborated. Transition: family off board, lender OTS, ED complaint declined Mar26. STATUS PARTIAL (6 WebFetch 403s).
+- [x] Stage 6 peers (B06): 2 docs, neither a true concall (VRAJ=CARE rationale, Scan=IP deck). Scan contradicts 'India's first hot-charging'. Peers cleaner util, bigger equity-funded capex. net effect: complicates.
+- [x] Stage 7 emoat (B07): em 9.9/~80 NONE; combined AVOID. Flags: EMOAT-SPARSE, CAPEX-NIL-COMMITMENT (AR Note1 NIL vs verbal capex), F2-NEGATIVE-EXECUTION, STALE-CLAIM.
+- [~] Stage 9 TAM — running (last evidence stage).
+- [ ] Verifiers A/B/C(Gate0+EM)/D — after 9.
+- [ ] Confidence delta + synthesis-lite (3 files).
+
+## Additional flags surfaced (for gate recommendation)
+- FLAG-RPT-INTEGRITY (B03/B08): promoter-group entities excluded from RPT note; clean CARO sign-off.
+- FLAG-GOVERNANCE-CHURN (B03/B08): 5 leadership exits in ~9 months; disputed/waived BSE NRC fine.
+- FLAG-KAM-EMPTY (B03): empty Key Audit Matters.
+- FLAG-CASH (B02/B03): neg OCF vs +PAT; determination for gate-rec (STRUCTURAL/GROWTH-INDUCED/INDETERMINATE) to be set by synthesis-lite.

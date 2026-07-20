@@ -19,5 +19,12 @@
 ## Stage progress
 - [x] B00 inputs — written, committed.
 - [x] Stage 1 Gate 0 — running.
-- [x] Stage 2 pass 1 — done (02-notes-pass1.md). Flagged: neg OCF vs +PAT, FG inv +145.9%, profit exceptional-item-driven, ₹72.91cr DTA vs stated policy, contingent liab ~21% of net worth.
-- [ ] Stage 2 pass 2 — dispatched.
+- [x] Stage 1 Gate 0 (B01): AVOID, core 24, moat THIN, FLAG-GATE0. Redeemable pref ₹8.89cr possible debt-like.
+- [x] Stage 2 notes triple-pass (B02): acct quality 4/10, FLAG-CASH, 15 findings, 9 red flags.
+- [x] Stage 3 AR deep dive (B03): quality 3/10, turnaround_watchlist. Flags: FLAG-CASH, FLAG-RPT-INTEGRITY, FLAG-GOVERNANCE-CHURN, FLAG-KAM-EMPTY. 15/15 stage-2 findings verified. Positives credited (promoter injection, no pledge, IC improving, clean audit).
+- [~] Stage 4 bizmodel — running.
+- [~] Stage 5 concall (Nov25/Feb26/Jun26) — running.
+- [~] Stage 8 promoter — running.
+- [ ] Stage 6 peers — after 5.
+- [ ] Stage 7 emoat — after 1 & 5.
+- [ ] Stage 9 TAM — after 4 & 7.

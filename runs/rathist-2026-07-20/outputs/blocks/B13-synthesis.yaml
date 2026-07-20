@@ -1,0 +1,29 @@
+stage: B13-synthesis
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-opus-4-8
+status: complete
+phase: 1
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-RPT-INTEGRITY, FLAG-GOVERNANCE-CHURN, FLAG-KAM-EMPTY, FLAG-GATE0, FLAG-EMOAT]
+confidence_delta: {numerical: 88.2, redflag: 85, framework: 97, peer: 100, overall: 85}
+source_fidelity_gate: "HELD — both B12a CRITICALs corrected at audited source with no Gate 0 band change (equity 137.02cr; other income 0.12cr); FY25 borrowings conflict flagged as unresolved source-integrity issue between two audited sources. No REWORK."
+flag_cash_determination: "INDETERMINATE — caps at PROCEED WITH CAVEATS on its own; missing evidence: rating rationale, Rs24.77cr receivables Others-bucket composition + FY26 ageing, FY26 AR cash flow"
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Rathi Steel restarts its mill without margin"
+falsification_metric: "EBITDA margin at or below 4% in Q1/Q2 FY27 while utilization is claimed above 65%"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+corrections_applied:
+  - "Gate 0 M5 0 not 1 (moat 4/60, grand 28/160; AVOID unchanged)"
+  - "green-power ~30% comparator removed (unsupported)"
+  - "VRAJ capex softened (HDFC debt + accruals, not IPO)"
+  - "Q2 FY26 production-disclosure regression added"
+  - "FY25 equity corrected to 137.02cr; FY26 other income to 0.12cr; FY25 borrowings conflict flagged"

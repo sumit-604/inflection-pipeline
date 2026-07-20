@@ -27,9 +27,11 @@
 - [x] Stage 8 promoter (B08): FLAG-PROMOTER CONCERN. 2016 CBI coal-block conviction (Pradeep & Udit Rathi), appeal unresolved (deal-breaker). RPT-gap corroborated. Transition: family off board, lender OTS, ED complaint declined Mar26. STATUS PARTIAL (6 WebFetch 403s).
 - [x] Stage 6 peers (B06): 2 docs, neither a true concall (VRAJ=CARE rationale, Scan=IP deck). Scan contradicts 'India's first hot-charging'. Peers cleaner util, bigger equity-funded capex. net effect: complicates.
 - [x] Stage 7 emoat (B07): em 9.9/~80 NONE; combined AVOID. Flags: EMOAT-SPARSE, CAPEX-NIL-COMMITMENT (AR Note1 NIL vs verbal capex), F2-NEGATIVE-EXECUTION, STALE-CLAIM.
-- [~] Stage 9 TAM — running (last evidence stage).
-- [ ] Verifiers A/B/C(Gate0+EM)/D — after 9.
-- [ ] Confidence delta + synthesis-lite (3 files).
+- [x] Stage 9 TAM (B09): runway GOOD, mgmt claim inflated (ratio 2.4, capacity-unsupported vs NIL committed capex). STATUS PARTIAL (paywalled).
+- [x] Verifiers: A 88.2% (2 CRITICAL source-fidelity), B 85% (11/13), C 97% (gate0+EM; 2 MINOR), D 100% (2/2, 1 MAJOR VRAJ capex). All committed.
+- [x] Confidence delta overall 85 (normal band). Source-fidelity gate HELD.
+- [x] Synthesis-lite (B13): PROCEED WITH FLAGS. 3 files written. FLAG-CASH INDETERMINATE. All corrections applied.
+- Phase 1 COMPLETE. Handoff to /fttcp.
 
 ## Additional flags surfaced (for gate recommendation)
 - FLAG-RPT-INTEGRITY (B03/B08): promoter-group entities excluded from RPT note; clean CARO sign-off.

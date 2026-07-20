@@ -1,0 +1,51 @@
+stage: B00-inputs
+company: RATHIST
+company_name: "Rathi Steel & Power Ltd"
+run_date: 2026-07-20
+model: orchestrator
+status: complete
+cin: "L27109DL1971PLC005905"
+bse_scrip_actual: "504903"
+listed_era: "listed decades ago (CIN incorporated 1971); long-listed, prospectus not expected"
+cmp: 23.8
+market_cap_cr: 206.0
+
+inventory:
+  prospectus: 0
+  annual-report: 1        # Annual_Report_2023.pdf (FY2023 ONLY, stale vs FY26 transition)
+  results: 2              # Q3 FY26 (1492688d) + Q4/FY26 audited (1c2b1076)
+  rating: 0
+  concalls: 4             # Jun'25(Q4FY25), Nov'25(Q2FY26), Feb'26(Q3FY26), Jun'26(Q4FY26)
+  peer-concalls: 2        # VRAJ + one unlabeled (804f416c)
+  announcements: 0
+  shareholding: 1         # operator-provided screener snapshot, NON-ANCHORED lead
+  research: 0
+  screening: 24           # 4 companies x 6 files
+  presentation: 1
+  other: 0
+
+screening_map:
+  RATHIST_self: "screener-*.csv (COMPANY NAME = RATHI STEEL & POWER LTD)"
+  peer_kanishk: "513456-*.csv (COMPANY NAME = KANISHK STEEL INDUSTRIES LTD — mislabeled by BSE code)"
+  peer_scansteels: "SCANSTL-*.csv (SCAN STEELS LTD)"
+  peer_vraj: "VRAJ-*.csv (VRAJ IRON & STEEL LTD)"
+
+concall_quarter_map:
+  - {file: "Concall_Jun_2025_Transcript.pdf", quarter: "Q4 FY25", used_in_stage5: false, note: "excluded by 3-most-recent cap"}
+  - {file: "Concall_Nov_2025_Transcript.pdf", quarter: "Q2 FY26", used_in_stage5: true}
+  - {file: "Concall_Feb_2026_Transcript.pdf", quarter: "Q3 FY26", used_in_stage5: true}
+  - {file: "Concall_Jun_2026_Transcript.pdf", quarter: "Q4 FY26", used_in_stage5: true}
+
+input_gaps:
+  - "rating: ABSENT — no credit-rating rationale PDF. Stage 10 rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative; FLAG-CASH handling per Section 4."
+  - "announcements: ABSENT — no Reg 30 exchange filings. Intent-vs-action cross-check runs on concall/AR only; stage 8 sources material events from web search. FTTCP Step 0C input lowered, flagged."
+  - "research: ABSENT — no broker notes. No effect on anchored evidence."
+  - "annual-report: STALE — only FY2023 AR present; no FY24/FY25/FY26 AR. Stages 2 and 3 run on FY2023 AR; recent-year qualitative depth is thinner. FY26 financials come from results PDFs + screener CSV history; the transition (TMT restart) evidence comes from concalls + results + presentation."
+  - "shareholding: FILING ABSENT — exchange SHP filing not present. An operator-provided screener.in snapshot is saved in inputs/shareholding/ as a NON-ANCHORED lead only; UA institutional-absence qualifier cannot be filing-affirmed, so stage 11 withholds UA unless corroborated."
+  - "prospectus: ABSENT but NOT a gap — company long-listed (CIN 1971)."
+
+manifest_corrections_needed:
+  - "sector_cap_row = 'Pharma / CDMO' is WRONG for a steel & power company. Must be corrected to the integrated-steel / secondary-steel Section 1B cap row before stage 11 valuation (PHASE 3). Auto-picked and flagged 'verify' by collect_to_repo."
+  - "BSE scrip in manifest context (513456) is WRONG — that code is Kanishk Steel. Rathi's real BSE scrip is 504903 (per both results filings). Screening file 513456-* is therefore a PEER (Kanishk), not RATHIST self-data."
+
+flags: []

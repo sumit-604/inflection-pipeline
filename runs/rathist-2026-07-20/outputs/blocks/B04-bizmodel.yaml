@@ -1,0 +1,60 @@
+stage: B04-bizmodel
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent","announcements absent","research absent","annual-report is FY2024-25 only; no FY26 AR","shareholding filing absent (screener snapshot lead only)"]
+flags: ["single-segment reporting means no product-wise (TMT vs stainless) revenue split is disclosed anywhere in the AR or investor presentation","FY26 EBITDA margin fell to 4.03% from 4.81% even as revenue grew 41.76% and rolled tonnage grew 117%, so the volume ramp has not yet shown through to margin","current ratio 0.80x FY25 with short-term borrowings up from Rs 0 to Rs 34.17 cr and negative operating cash flow of Rs 11.06 cr despite positive PAT","elevated senior-management/KMP churn through and just after FY25 (MD, CFO twice, Company Secretary)","SMS billet output fell FY25 to FY26 even as rolling output nearly doubled, implying growing reliance on purchased billets or conversion work not disclosed in rupee or tonne terms"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of steel products (carbon TMT rebar + stainless-steel billets/wire rods/bright bars/flats, combined - no product-wise split disclosed)", type: "manufactured product sale, point-in-time", pct_of_revenue: 99.6, predictability: "L"}
+  - {name: "Other operating revenue (job-work/conversion charges and undisclosed other items)", type: "toll/conversion fee income (mixed, undisclosed)", pct_of_revenue: 0.4, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Process/technology - direct hot-billet charging (melting + rolling on one campus, India's only SS wire-rod producer using this route)", durability: "narrow, could erode as peers invest in similar integrated plants"}
+  - {moat: "Regional brand and dealer distribution network (Rathi legacy brand since the 1940s, North India dealer network)", durability: "moderate, geographically limited to North India/NCR"}
+  - {moat: "Logistics/location cost advantage (Ghaziabad-NCR proximity, freight claimed at Rs 800-1,000/MT vs Rs 1,500/MT for peers)", durability: "moderate, structural to plant location"}
+  - {moat: "GreenPro/BIS certification-enabled access to green-building and government procurement", durability: "narrow/emerging, unproven revenue or margin impact so far"}
+valuation_methods:
+  primary: {method: "EV/EBITDA (normalized, through-cycle)", why: "Strips out exceptional-item noise in PBT/PAT and is leverage-neutral for a company actively re-leveraging post-turnaround; standard for commodity/converter steel"}
+  secondary: {method: "Price/Book", why: "Asset-heavy turnaround only reaching zero-debt status in March 2024, with rising book value per share (Rs 13.25 to Rs 17.14 FY24-26); useful floor-value cross-check"}
+  tertiary: {method: "EV per tonne of installed capacity (replacement-cost cross-check)", why: "Captures optionality in unused capacity (SMS 53-64%, rolling 24-51% utilized) that trailing EV/EBITDA would miss"}
+  not_applicable: ["DCF - cyclical, thin/volatile free cash flow history, negative operating cash flow in FY25 despite positive PAT, only recently exited multi-year debt distress", "P/E - earnings low, volatile, distorted by exceptional items in both FY24 and FY25", "Dividend Discount Model - no equity dividend paid through FY25", "Sum-of-the-parts - single reportable segment, no subsidiaries or joint ventures"]
+irrelevant_ratios:
+  - {ratio: "P/E ratio", why: "Earnings dominated by exceptional/one-off items and a near-breakeven historical base; not representative of normalized earning power"}
+  - {ratio: "Dividend yield/payout ratio", why: "Company has paid no equity dividend through the review period"}
+  - {ratio: "Same-store sales growth", why: "Not applicable - B2B/dealer-wholesale manufacturer, not a retail-store network"}
+  - {ratio: "Net Promoter Score / brand-loyalty metrics", why: "Not relevant or disclosed - commodity steel purchase decisions are driven by price and BIS-spec compliance, not brand sentiment; ad spend is negligible"}
+  - {ratio: "R&D-to-sales ratio", why: "Not meaningful signal here - only qualitative in-house R&D disclosed with no spend figure; capacity utilization and specific energy consumption are the better quality proxies"}
+  - {ratio: "Standalone current ratio as a solvency verdict", why: "Misleading in isolation - management explicitly attributes the FY25 decline to capex-funded current liabilities; must be read with interest coverage and operating cash flow together"}
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: ">4.5%, in line with the FY24-26 historical band of 4.19-4.89%", red_flag: "below 3.5% for 2+ consecutive quarters"}
+  - {metric: "Operating cash flow vs EBITDA", healthy: "positive and converging with EBITDA", red_flag: "negative for a second consecutive full year"}
+  - {metric: "SMS + rolling mill capacity utilization", healthy: "rising toward the stated 80% target", red_flag: "utilization plateaus or reverses"}
+  - {metric: "Current ratio", healthy: "rising toward/above 1.0x", red_flag: "falls further below 0.80x"}
+  - {metric: "Raw material cost as % of revenue", healthy: "stable in the 75-80% band", red_flag: "rises above ~83% without offsetting price action"}
+unit_economics:
+  unit: "1 tonne of finished rolled steel (blended carbon TMT + stainless steel; product-wise volumes not disclosed)"
+  revenue_per_unit: "~Rs 1.06 lakh/tonne blended, FY25 (Rs 503.15 cr revenue from operations / 47,440 MT rolled output) - directional only, mixes product lines and includes SMS-billet sales not in the tonnage denominator"
+  margin_per_unit: "~Rs 51,000/tonne EBITDA blended, FY25 (Rs 24.31 cr EBITDA / 47,440 MT) - same blending caveat"
+  key_lever: "capacity utilization ramp - SMS ~53-64% and rolling ~24-51% of installed capacity utilized FY24-26; fixed employee/D&A base implies high theoretical operating leverage on incremental tonnes, though FY26 actuals show margin compression alongside the volume surge, so the leverage has not yet materialized in reported numbers"
+first_deterioration_signals:
+  - {risk: "Revenue-volume decoupling / price cyclicality", first_signal: "revenue per tonne falling QoQ while tonnage is flat or rising"}
+  - {risk: "Margin dilution from job-work/TMT mix shift", first_signal: "blended realization or gross margin narrowing even as volume grows"}
+  - {risk: "Fixed-cost under-absorption at low utilization", first_signal: "EBITDA margin stuck below the 4.2-4.9% historical band despite rising volume"}
+  - {risk: "Negative working capital funded by short-term debt", first_signal: "short-term borrowings or current liabilities rising further, or interest coverage falling below 4x"}
+  - {risk: "Cash-conversion weakness", first_signal: "continued negative or declining operating cash flow relative to reported PAT/EBITDA"}
+  - {risk: "TMT ramp execution / billet self-sufficiency", first_signal: "widening gap between SMS billet output and rolling-mill throughput"}
+  - {risk: "Contingent liability crystallization", first_signal: "any adverse order disclosed on the open VAT/excise/GST/civil disputes"}
+mgmt_questions:
+  - "What is the product-wise revenue split between carbon TMT bars and stainless-steel products, and how has that mix shifted over FY24-26?"
+  - "How much of FY26 rolling volume was internally melted billet versus purchased billet or third-party conversion work, given SMS output fell while rolled output nearly doubled?"
+  - "What specifically drove the EBITDA margin decline from 4.81% (FY25) to 4.03% (FY26) despite 41.76% revenue growth?"
+  - "What is the plan to normalize working capital and restore positive operating cash flow, given FY25 operating cash flow was negative despite positive PAT?"
+  - "What is the timeline, cost and quantified fuel/yield savings for extending direct-charging technology to stainless operations?"
+  - "What is the realistic timeline and incremental capex required to reach the stated 80% utilization target from the current ~53% (SMS) and ~51% (rolling)?"
+  - "What is the realistic probability-weighted exposure on the aggregate disputed tax/excise/GST/civil contingent liabilities, and is any near-term settlement expected?"
+one_line_verdict: "A post-turnaround NCR scrap-to-rebar converter whose TMT-mill restart delivered volume in FY26 but not yet margin, on a working-capital base that is already stretched."

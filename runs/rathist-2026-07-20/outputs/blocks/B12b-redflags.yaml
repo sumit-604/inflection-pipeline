@@ -1,0 +1,24 @@
+stage: B12b
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 11
+partially_caught: 0
+redflag_coverage_pct: 85
+missed:
+  - {severity: "MAJOR", item: "Production-number disclosure regression: SMS/rolling output dropped from the Q2 FY26 disclosure pack vs Q1; management declined to give figures on-call (Sandeep Goyal)", anchor: "Concall_Nov_2025 (Q2 FY26), Sandeep Goyal / Udit Rathi, p.19"}
+  - {severity: "MINOR", item: "FY26 PAT growth +39.24% is quoted excluding FY25 exceptional items; comparability caveat not flagged by B05", anchor: "Concall_Jun_2026 (Q4 FY26), Udit Rathi, p.3"}
+pipeline_flags_not_supported:
+  - {flag: "Green power (>25%) falls short of the ~30% headline green-power figure", assessment: "OVERSTATED — no transcript states a 30% green-power claim; management consistently says '>one-fourth'/'>25%'. The only ~30% in the calls is the TMT share of H1 FY26 revenue (Nov'25 p.6), a different metric. Rooftop-solar downscaling half of the same flag IS supported.", severity: "MINOR", location: "B05 4D#6 / 2A item7 / headline-claims table"}
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C (Mixed); dated commitments delivered but flat margin, unreconciled utilization, and deflected material questions; missed disclosure regression nudges toward but not past the low edge of C"
+findings:
+  - {severity: "MAJOR", location: "B05 (concall) — omission", claimed: "Q2 production-number disclosure regression not captured", source_truth: "Concall_Nov_2025 p.19 (Sandeep Goyal / Udit Rathi)", note: "Disclosure-quality red flag bearing on the volume-ramp narrative; single-quarter event so MAJOR not CRITICAL"}
+  - {severity: "MINOR", location: "B05 4D#6 / 2A#7 / headline-claims table", claimed: "green power >25% short of ~30% headline", source_truth: "No 30% green-power claim exists in any transcript; ~30% is the TMT revenue share (Nov'25 p.6)", note: "Overstated comparator; rooftop-solar downscaling portion is supported"}
+  - {severity: "MINOR", location: "B05 (concall) — omission", claimed: "FY26 PAT +39.24% comparability caveat not flagged", source_truth: "Concall_Jun_2026 p.3 — growth stated ex-FY25 exceptional items", note: "Openly disclosed by management; comparability note only"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 85

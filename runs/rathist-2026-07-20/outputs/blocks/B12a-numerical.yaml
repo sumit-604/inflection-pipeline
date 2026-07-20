@@ -1,0 +1,15 @@
+stage: B12a
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 34
+findings:
+  - {severity: "CRITICAL", location: "Gate0 Block A ROE FY25 calculation (verdict card input)", claimed: "Equity avg 120.40 Cr using end-FY25 equity 128.13 Cr (screener Data_Sheet)", source_truth: "Annual Report FY25 Balance Sheet p.79 and Q4 FY26 audited results PDF FY25 comparative p.8 both show Total Equity 13,702.46 Lakh = 137.02 Cr", note: "Gate0 sources FY25 equity from screener (128.13 Cr); two independently audited sources agree on 137.02 Cr. Divergence -6.6%, affects ROE calculation (9.25% vs corrected ~8.96%). Material for Block A verdict.", source_fidelity: true}
+  - {severity: "CRITICAL", location: "Gate0 Block D balance sheet metrics (borrowings FY25; Current Liabilities used in capital employed calc)", claimed: "FY25 Current Liabilities 121.23 Cr via Q4 FY26 audited results PDF p.7, FY25 comparative", source_truth: "Annual Report FY2024-25 p.79-82: FY25 total borrowings 37.74 Cr. Q4 FY26 audited results PDF p.8 FY25 comparative: Borrowings 0.00 Cr. Both audited; same company, same date (31 Mar 2025).", note: "Two independently audited financial statements show irreconcilable borrowings figures (37.74 Cr vs 0.00 Cr). Annual Report and Q4 results both signed by M. Lal & Co. No note explains divergence. Current Liabilities figure (121.23 Cr) matches both sources, but underlying breakdown contradicts. Source-integrity gate issue; only company/auditor clarification resolves.", source_fidelity: true}
+  - {severity: "MAJOR", location: "Gate0 Block D, Operating EBITDA and downstream ratios (Net Debt/EBITDA 1.50x, Interest Coverage 2.68x)", claimed: "FY26 Other Income 0.44 Cr (screener Data_Sheet); EBITDA = 12.87 + 7.42 + 8.61 - 0.44 = 28.46 Cr, cross-checked Q1-Q4 quarterly sum from screener", source_truth: "Q4 FY26 audited results PDF year ended 31.03.2026: Other Income 12.15 Lakh = 0.12 Cr. Screener not in provided PDF inputs; cannot verify quarterly cross-check independently.", note: "Q4 audited PDF shows 0.12 Cr (not 0.44 Cr). If 0.12 Cr correct, EBITDA = 28.78 Cr, affecting coverage ratios. Gate0 cross-validates via quarterly sum from screener, but screener is unanchored to provided PDFs. Scorecard input; gate-level materiality.", source_fidelity: true}
+critical_count: 2
+major_count: 1
+minor_count: 1
+acceptance_rate: 88.2
+coverage_note: "34 material figures audited: 30 clean (88.2%). Verdict-card core numbers (ROCE, ROE, D/E, Current Ratio, CAGR) all traced to audit level or flagged. All P&L, balance sheet, cash flow line items reconcile exactly between Annual Report (FY25) and Q4 audited results (FY26) except noted source-fidelity exceptions. No orphaned figures. Gate0 internal arithmetic sound; issues relate to upstream data quality (audited-source divergence FY25 borrowings, screener-vs-audited divergence FY25 equity and FY26 other income). High precision on numerical computation offset by source uncertainty on 3 items."

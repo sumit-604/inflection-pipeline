@@ -1,0 +1,26 @@
+stage: B12c
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-opus-4-8
+status: complete
+phase_scope: "phase 1 — gate0 + emoat only; valuation adherence deferred to phase 3"
+gate0:
+  rules_checked: 46
+  fails:
+    - {rule: "Block F M5 Scale & Dominance", severity: "MINOR", issue: "Scored 1 while marked PEER DATA NEEDED; Block F rule requires score 0 when peer data not provided. Moat total 5->4, grand total 29->28; classification unchanged (AVOID)."}
+emoat:
+  rules_checked: 30
+  fails:
+    - {rule: "Section 2C capex-embedded growth basis", severity: "MINOR", issue: "capex_embedded_growth_pct=0 uses NIL-committed basis and excludes Rs6.27cr CWIP arguably 'under execution' (~7.5% on alternative reading). Immaterial to EM class 9.9/NONE; flagged for Pillar 3 in phase 3."}
+valuation:
+  rules_checked: 0
+  fails: []
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B01 Block F, M5 Scale & Dominance", claimed: "score 1 (top 5 mcap) with PEER DATA NEEDED", framework_truth: "score 0 per Block F peer-data rule", note: "Immaterial: M5<3 not 'present', moat count 1/THIN and classification AVOID unchanged."}
+  - {severity: "MINOR", location: "B07 Section 2C", claimed: "capex_embedded_growth_pct = 0 (NIL committed)", framework_truth: "'capex under execution' arguably includes Rs6.27cr CWIP -> ~7.5%", note: "No effect on EM score 9.9 or NONE classification; carry to Pillar 3 phase 3."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 97

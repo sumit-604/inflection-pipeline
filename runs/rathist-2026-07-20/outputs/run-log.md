@@ -13,5 +13,11 @@
 5. Rating, announcements, research absent — degrade per map.
 6. Concalls: 4 present; stage 5 uses 3 most recent (Nov'25 Q2FY26, Feb'26 Q3FY26, Jun'26 Q4FY26). Jun'25 (Q4FY25) excluded by cap.
 
+## CORRECTION (stage 2 pass 1)
+- The file inputs/annual-report/Annual_Report_2023.pdf is MISNAMED. Its actual content is the 54th Annual Report for FY2024-25 (year ended 31 Mar 2025), with FY24 and FY23 comparatives. So the AR is NOT stale FY23 — it is FY25. Backward baseline = FY23..FY25 (AR) + FY26 (results). Downstream AR-consuming stages (3,4,7) told the AR is FY24-25.
+
 ## Stage progress
 - [x] B00 inputs — written, committed.
+- [x] Stage 1 Gate 0 — running.
+- [x] Stage 2 pass 1 — done (02-notes-pass1.md). Flagged: neg OCF vs +PAT, FG inv +145.9%, profit exceptional-item-driven, ₹72.91cr DTA vs stated policy, contingent liab ~21% of net worth.
+- [ ] Stage 2 pass 2 — dispatched.

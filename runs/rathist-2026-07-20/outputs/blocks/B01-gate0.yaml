@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating absent"
+  - "announcements absent"
+  - "research absent"
+  - "annual-report is FY2024-25 (not FY23 as filename suggests)"
+  - "shareholding filing absent (screener snapshot lead only)"
+flags:
+  - {type: FLAG-GATE0, reason: "Core score 24/100 (AVOID) driven by historical depressors: negative net worth FY2017-FY2023 (legacy debt-restructuring/recapitalization signature), FY2020 revenue collapse to Rs37.53cr, thin/volatile operating margins, and data gaps limiting ROCE/FCF/WC-days computation to FY2025-FY2026 only (screener Data_Sheet + audited Q4 FY26 results PDF)."}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 5, B: 5, C: 2, D: 9, E: 3}
+core_score: 24
+moat_score: 5
+grand_total: 29
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers:
+  - "Block A <8 (scored 5) -> cap max GOOD [superseded by Core<40 AVOID]; driven by the only two computable years, FY2025 ROCE 13.49%/ROE 11.59% and FY2026 ROCE 10.80%/ROE 9.25%"
+  - "Block B <8 (scored 5) -> cap max GOOD [superseded by Core<40 AVOID]; driven by negative FCF in the only two computable years, FY2025 -33.66cr and FY2026 -24.97cr"
+history_downgrade: false
+data_notes:
+  - "FY2021 shows an outsized Other Income (Rs200.67cr) and CFO (Rs196.32cr) spike (screener Data_Sheet, FY21 col), likely a one-off debt-restructuring/settlement item; materially inflates FY21 PAT and the cumulative CFO/PAT ratio used for B1; not adjusted per formula rules"
+  - "PAT swung loss-to-profit multiple times: losses FY2017-FY2020, profit FY2021, loss FY2022, profit FY2023-FY2026 (screener Data_Sheet); C2 PAT CAGR marked N/M due to negative FY2017 base, no synthetic CAGR attempted"
+  - "Net worth (Equity Share Capital + Reserves) was NEGATIVE FY2017 through FY2023 (screener Data_Sheet Balance Sheet), turning positive only in FY2024 after an equity issuance (shares outstanding rose 3.13cr to 8.51cr) -- consistent with a legacy debt-restructuring/recapitalization event. ROE for FY17-FY23 is N/M (negative denominator), excluded; FY24 ROE (108%) is a restructuring artifact (average net worth near zero) and excluded from A3 median; only FY25 (11.59%) and FY26 (9.25%) used"
+  - "ROCE (Block A) computable only for FY2025 and FY2026 using the audited standalone balance sheet current/non-current liability split (Q4 FY26 audited results PDF); screener Data_Sheet.csv aggregates all non-equity liabilities as 'Borrowings' and 'Other Liabilities' with no current/non-current split for FY2017-FY2024 -- marked NOT FOUND for those years"
+  - "FCF (B2/B3) and WC Days (B4) computable only for FY2025 and FY2026 for the same reason (capex line and Trade Payables only available from the audited results PDF); FY2017-FY2024 marked NOT FOUND (not in provided data)"
+  - "FY2020 Sales collapsed to Rs37.53cr (screener Data_Sheet) vs Rs350.27cr FY19 and Rs427.30cr FY21 -- a >90% single-year anomaly, likely a plant-shutdown/restructuring year; corrupts the M11 two-window CAGR test (prior-3yr CAGR computed off this near-zero base = +168.6%, not meaningful) -- M11 scored conservatively at 0"
+  - "M2/M9 peer margin comparisons use FY2026 figures for Kanishk Steel (513456-*), Scan Steels (SCANSTL-*), Vraj Iron & Steel (VRAJ-*); operating margin proxy = (PBT+Interest+Depreciation-Other Income)/Sales and gross-margin proxy = (Revenue-Material Cost)/Revenue, applied uniformly to Rathi and all three peers because Power&Fuel/Other Mfr./Selling&admin lines are blank for FY26 across all four companies in the screener export"
+  - "M5 Scale & Dominance scored on the 3-peer set provided only (Kanishk, Scan Steels, Vraj); no evidence of the full listed segment -- PEER DATA NEEDED for a complete answer, scored conservatively at 1 (Rathi 3rd of 4 by market cap and by margin in the available set)"
+  - "M6 (R&D) and M8 (Distribution) marked N/A (not in provided data), scored 0 -- no R&D or distribution-network disclosure in the provided sources"
+  - "E3 (promoter pledge) and E4 (contingent liabilities / net worth) marked NOT FOUND (not in provided data); scored 0 each; deal-breaker #5 (pledge >15%) cannot be confirmed and is not applied"
+  - "Redeemable Preference Shares of Rs8.89cr appear in the paid-up capital footnote of both results PDFs but are not included in screener's net-worth figure or the audited Total Equity line -- flagged for downstream review as a possible debt-like instrument not captured in D3 Debt/Equity"
+block_b_trend: "improving (but still negative) - CFO improved from -Rs11.06cr (FY25) to -Rs1.32cr (FY26); FCF improved from -Rs33.66cr (FY25) to -Rs24.97cr (FY26), both years remain cash-negative"

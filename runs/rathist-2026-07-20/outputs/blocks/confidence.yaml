@@ -1,0 +1,27 @@
+stage: confidence-delta
+company: "RATHIST"
+run_date: "2026-07-20"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 88.2      # B12a
+  redflag_coverage: 85            # B12b (11 of 13 verifier-found flags caught upstream)
+  framework_adherence: 97         # B12c PHASE-1 portion only (Gate 0 + Emerging Moat); valuation-adherence PENDING phase 3
+  peer_utilisation: 100           # B12d (2 of 2 peers used substantively)
+  overall: 85                     # min of the four
+band: "normal (75-89): note specifics; no confidence-driven downgrade or REWORK from the delta itself"
+valuation_component_status: "PENDING phase 3 (B10/B11 not yet produced; verifier C valuation-adherence deferred)"
+
+source_fidelity_gate:
+  note: "SEPARATE from the confidence delta. Verifier A (B12a) is the sole, non-overridable authority on source fidelity. It raised 2 CRITICAL source_fidelity findings and 1 MAJOR, all on Gate 0 (B01) inputs. These must be handled by synthesis per orchestrator Section 4: corrected against the audited source with the correct anchor shown, or removed; a MISMATCH on a verdict-card/pillar input forces REWORK if it is a fabrication or material misread. Orchestrator did NOT clear, downgrade, or reason around them."
+  critical_findings:
+    - "FY25 equity: Gate 0 used screener 128.13cr; two audited sources agree on 137.02cr (-6.6%). Feeds ROE. Correct anchor: AR FY25 BS p.79 / Q4 FY26 audited results FY25 comparative p.8."
+    - "FY25 borrowings: two AUDITED sources irreconcilable (AR 37.74cr vs Q4 results FY25 comparative 0.00cr), same date/auditor, no reconciling note. Source-integrity conflict; only company/auditor clarification resolves."
+  major_finding:
+    - "FY26 other income: screener 0.44cr vs Q4 audited 0.12cr; affects EBITDA/coverage marginally."
+  disposition_for_synthesis: "Synthesis-lite must decide REWORK vs GATE-HELD-corrected per Section 4 and record the disposition (nothing silent). Preliminary materiality read (for synthesis, not a resolution): the audited corrections do not change the Gate 0 score bands (ROE stays <12 -> A3=0) nor the AVOID classification; the borrowings conflict is between two audited sources, not a pipeline misread."
+
+other_verifier_majors_for_synthesis:
+  - "B12b MAJOR: B05 missed a Q2 FY26 production-number disclosure regression (Concall_Nov_2025 p.19)."
+  - "B12b MINOR (overstatement): B05's green-power '~30% headline' comparator is unsupported; no 30% green-power claim exists (the ~30% is TMT revenue share). Correct before narrative."
+  - "B12d MAJOR: B06 overstated VRAJ capex as IPO-funded (actually HDFC debt + internal accruals); revise the capital-market-access cross-peer hypothesis before it enters the narrative."
+  - "B12c MINOR: Gate 0 Block F M5 should be 0 not 1 (moat 5->4, grand 29->28; classification unchanged AVOID)."

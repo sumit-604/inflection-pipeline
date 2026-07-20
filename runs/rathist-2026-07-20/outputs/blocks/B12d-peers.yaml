@@ -1,0 +1,20 @@
+stage: B12d
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: complete
+peers_audited: 2
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+peer_utilisation_pct: 100
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2C / YAML industry_cross_read.capex_cycle", claimed: "VRAJ funded its ~Rs165cr sponge iron/MS billet/WHRB expansion plus a further ~Rs49cr, 15 MWp solar plant via a ~Rs171cr FY25 IPO (summed in YAML to ~Rs214cr 'via IPO proceeds')", source_truth: "CARE rationale p.2 and p.4 state the 15 MWp solar plant (Rs49cr) was financed via Rs38cr HDFC Bank term debt + Rs11cr internal accruals, unrelated to the IPO; the IPO's Rs171cr was used to repay Rs70cr of prior project debt and fund Rs59.5cr of the first project, not the solar plant", note: "Overstates VRAJ's equity-funded capex share; directly feeds the Part 5 capital-market-access cross-peer hypothesis, which should be revised before carrying into synthesis. Does not affect the Q1-Q6 verdicts.", source_fidelity: true}
+  - {severity: "MINOR", location: "B06 Part 2 (Scan Steels cross-read)", claimed: "n/a - completeness gap", source_truth: "Scan Steels p.22 (energy = 12-15% of TMT cost structure, WHRS vs grid power cost) and p.15/16 (working capital, valuation ratios) not mined into the analysis", note: "Not responsive to any of the 6 peer_questions; industry-context miss only", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 YAML industry_cross_read.pricing_inputs", claimed: "18.33%->13.20%->9.11% PBDIT as one continuous margin series", source_truth: "Source uses PBILDT for FY24/FY25 and PBDIT for H1/9M FY26; basis switch is CARE's own, not introduced by B06", note: "Direction of finding unaffected; precision slightly overstated", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 100

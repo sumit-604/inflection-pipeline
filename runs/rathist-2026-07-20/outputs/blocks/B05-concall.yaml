@@ -1,0 +1,81 @@
+stage: B05-concall
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent","announcements absent","research absent","shareholding filing absent (screener snapshot lead only)"]
+flags: ["EBITDA margin flat ~4% across all 3 quarters despite repeated improvement promises", "utilization figures unreconciled between Q3 FY26 (60-65%) and Q4 FY26 (51-53% avg)", "TMT direct-charging capex completion slipped past Q3 FY26-stated timeline", "green power ~30% headline claim overstates management's own >25% figure", "FY26 41.7% revenue growth beat substantially inflated by low FY25 base (TMT mill restart)"]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Steel melting shop utilization ramp toward 80%", type: "VOLUME/COST", timeframe: "near-to-medium", conviction: "M", confirm_signal: "Utilization reported consistently above ~65% for 2+ consecutive quarters with a reconciled, comparable methodology", kill_signal: "Utilization stalls below 55% for multiple quarters or disclosure stops being granular/comparable"}
+  - {priority: 2, name: "TMT direct-charging capex completion and realized cost savings", type: "COST", timeframe: "near-term", conviction: "M", confirm_signal: "Management confirms completion and reports realized fuel/power savings feeding EBITDA margin in a subsequent call", kill_signal: "Capex further delayed beyond FY27 or margin fails to move even after completion"}
+  - {priority: 3, name: "Revenue growth sustaining 20-25% CAGR beyond the low-base effect", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "FY27 growth sustains high-teens/20%+ off the now-normalized FY26 base", kill_signal: "FY27 growth falls to single digits once TMT-restart base effect fades"}
+  - {priority: 4, name: "EBITDA margin expansion off the flat ~4% base", type: "COST", timeframe: "medium", conviction: "L", confirm_signal: "A subsequent call reports a specific margin band above 4-4.5% with utilization evidence", kill_signal: "Margin remains stuck at ~4% for another 2+ quarters despite utilization gains"}
+  - {priority: 5, name: "Steel melting shop capacity expansion beyond 85,000 tpa", type: "VOLUME/INORGANIC", timeframe: "medium-to-long", conviction: "L", confirm_signal: "Formal board approval, capex number, and funding plan announced", kill_signal: "Plan remains 'under consideration' beyond FY27 with no capex commitment"}
+  - {priority: 6, name: "Green steel/GreenPro-led pricing premium or institutional demand", type: "REGULATORY-POLICY/PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "A quantified volume or price premium from green-certified sales is disclosed", kill_signal: "Certification remains marketing-only with no measurable revenue/margin impact after 2+ more quarters"}
+  - {priority: 7, name: "Inorganic growth / acquisition in allied steel businesses", type: "INORGANIC", timeframe: "medium-to-long", conviction: "L", confirm_signal: "An actual acquisition or JV is announced", kill_signal: "No deal materializes over the next 4+ quarters despite repeated mentions"}
+  - {priority: 8, name: "Cost of debt reduction below 16% via refinancing", type: "COST", timeframe: "near-term", conviction: "M", confirm_signal: "Cost of debt reported below 16% in a subsequent call", kill_signal: "Remains stuck at 16%+ or rises with the rate environment"}
+guidance:
+  - {item: "Revenue CAGR guidance", number: "~20%", timeframe: "next 2 years", stated_in: "Q2 FY26"}
+  - {item: "Revenue CAGR guidance (reiterated)", number: "~20%", timeframe: "FY26/FY27", stated_in: "Q3 FY26"}
+  - {item: "Revenue CAGR guidance (widened)", number: "20-25% average, 3-yr base FY25", timeframe: "FY27 onward", stated_in: "Q4 FY26"}
+  - {item: "Steel melting shop utilization target", number: "~80%", timeframe: "ongoing", stated_in: "Q2 FY26"}
+  - {item: "Steel melting shop utilization target", number: "80-85%", timeframe: "not dated", stated_in: "Q3 FY26"}
+  - {item: "Steel melting shop utilization target", number: "nearly 80%", timeframe: "going forward", stated_in: "Q4 FY26"}
+  - {item: "TMT mill direct-charging capex completion", number: "n/a (date only)", timeframe: "this quarter or early next quarter (Q3/Q4 FY26)", stated_in: "Q3 FY26"}
+  - {item: "Direct-charging cost saving, Rolling division", number: "Rs 3,000-4,000/ton (~6-7% incl. yield)", timeframe: "forward-looking, TMT not yet complete", stated_in: "Q4 FY26"}
+  - {item: "Cost of debt", number: "sanctioned ~16% (from 18%)", timeframe: "ongoing", stated_in: "Q2 FY26"}
+  - {item: "Cost of debt (actual)", number: "16%", timeframe: "as of Q4 FY26", stated_in: "Q4 FY26"}
+  - {item: "Balancing capex, last 3 years", number: "~INR40 crore", timeframe: "trailing", stated_in: "Q2 FY26"}
+  - {item: "FY26 capex", number: "~INR20 crore+", timeframe: "FY26, similar run-rate for a few years", stated_in: "Q4 FY26"}
+  - {item: "Working capital vs turnover", number: "~INR35cr WC on ~INR500cr turnover", timeframe: "trailing", stated_in: "Q3 FY26"}
+  - {item: "5-year turnover vision", number: "double current turnover", timeframe: "5 years", stated_in: "Q3 FY26"}
+  - {item: "GreenPro (CII) certification", number: "n/a (date only)", timeframe: "this quarter or early next quarter", stated_in: "Q3 FY26"}
+  - {item: "GreenPro certification delivered", number: "received, Rathi Powertech 550 grade TMT", timeframe: "as of Q4 FY26", stated_in: "Q4 FY26"}
+  - {item: "Green power share of consumption", number: ">25% (more than one-fourth)", timeframe: "FY26", stated_in: "Q4 FY26"}
+  - {item: "Rolling Mill production growth", number: "~117% YoY (47,440 -> ~1,02,000 tons)", timeframe: "FY26 vs FY25", stated_in: "Q4 FY26"}
+  - {item: "Rooftop solar sizing", number: "~1-2 MW", timeframe: "feasibility stage, no date", stated_in: "Q4 FY26"}
+  - {item: "Raw material cost", number: "75-80% of cost structure", timeframe: "FY26", stated_in: "Q3 FY26 / Q4 FY26"}
+  - {item: "FY26 average utilization", number: "Rolling ~51.4%, melting shop ~53%", timeframe: "FY26", stated_in: "Q4 FY26"}
+promise_delivery:
+  delivered: 3
+  partial: 4
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26", promise: "Replicate direct billet-charging model into TMT operations to cut costs", outcome: "missed", explanation: "By Q4 FY26 call still 'initiated implementation' / 'we are implementing', not complete"}
+    - {promised_in: "Q3 FY26", promise: "TMT mill direct-charging capex completed 'this quarter or early next quarter'", outcome: "missed", explanation: "As of Q4 FY26 call still 'implementing' - stated completion window not met"}
+    - {promised_in: "Q2 FY26", promise: "Ramp steel melting shop utilization toward 80% (from 55-60%)", outcome: "partial", explanation: "Q3 FY26 reported 60-65%; Q4 FY26 reported FY26 full-year average ~51-52%, an unreconciled step back with no explanation"}
+    - {promised_in: "Q2 FY26 and Q3 FY26 (repeated)", promise: "EBITDA margins to improve with higher utilization and backward integration", outcome: "missed", explanation: "Margin held flat ~4.0% in Q2, ~4.0% in Q3, ~4.04% for full FY26; attributed to industry oversupply/import pressure and working capital cost"}
+    - {promised_in: "Q2 FY26", promise: "Cost of debt to come down from 18%; sanction accorded at 16%, negotiating further", outcome: "delivered (partial)", explanation: "Confirmed at 16% by Q4 FY26; further reduction below 16% not yet achieved, still in talks with new lenders"}
+    - {promised_in: "Q3 FY26", promise: "GreenPro (CII) Type-1 Ecolabel certification expected this quarter or early next quarter", outcome: "delivered", explanation: "Received for Rathi Powertech 550 grade TMT bars, announced in Q4 FY26 call, on stated timeline"}
+    - {promised_in: "Q2 FY26", promise: "Explore renewable/open-access power, quantify savings once ready", outcome: "partial", explanation: "FY26 actual >25% of consumption via open access, short of the ~30% figure sometimes associated with headline claims"}
+    - {promised_in: "Q2 FY26 (reiterated Q3, widened Q4)", promise: "~20% CAGR revenue growth guidance (widened to 20-25% in Q4)", outcome: "delivered (beaten)", explanation: "FY26 total income grew 41.7% YoY, well above guidance, but substantially inflated by the low FY25 base from the idle TMT mill"}
+    - {promised_in: "Q2 FY26", promise: "Rooftop solar under exploration, capex/savings to be quantified once ready", outcome: "partial", explanation: "Still 'studying feasibility' as of Q4 FY26, seven months later; sizing scaled down to ~1-2 MW, framed as a small optimization exercise"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "What EBITDA margin level/band can the company realistically sustain as utilization improves?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "Is there quantifiable customer/pricing demand for green-certified (GreenPro/low-carbon) TMT products, or what portion of green rebar sales goes to real estate vs infrastructure?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "Can you provide a detailed product-wise/segment-wise revenue or volume breakup (TMT bars vs stainless steel)?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "C"
+credibility_basis: "Delivered on debt-cost reduction (18%->16%) and GreenPro certification on stated timelines, but EBITDA margin stayed flat at ~4% across all three quarters despite three consecutive promises of utilization-driven improvement, and utilization percentages disclosed in Q3 FY26 (60-65%) versus Q4 FY26 (51-53% FY26 average) are not reconciled."
+peer_questions:
+  - {question: "Is domestic steel/TMT demand growth genuinely tracking the government infra spending and tariff-relief narrative management cites (Budget 2026 capex, India-EU FTA, India-US tariff cuts)?", why: "This macro tailwind is management's core justification for the 20-25% CAGR guidance; if peers don't corroborate, Rathi's framing may be overstated relative to company-specific execution", check_peers: ["other small/micro-cap North India TMT and stainless steel producers"]}
+  - {question: "Do peers report similarly comfortable scrap/ferro-alloy sourcing and raw material cost ratios (~75-80% of sales, imports curtailed to 7-10%)?", why: "Tests whether Rathi's claimed sourcing advantage is sector-wide or company-specific to its NCR location", check_peers: ["other scrap-based EAF/IF steelmakers in North India"]}
+  - {question: "Do peers corroborate an industry-wide stainless steel oversupply from two large IBC-acquired plants ramping up over the last 2-3 years, pressuring pricing and margins?", why: "This is management's primary external excuse for Rathi's stagnant ~4% EBITDA margin; unverifiable without external corroboration since no company names are given", check_peers: ["other stainless steel wire rod/billet producers in the NCR/North India market"]}
+  - {question: "Is the claimed direct billet/hot-charging savings quantum (Rs 3,000-4,000/ton, ~6-7% incl. yield benefits) and the 'India's first and only' claim plausible versus what peers using similar hot-charging processes report?", why: "Underpins the forward margin-expansion thesis for the TMT division and is one of the headline claims flagged for independent testing", check_peers: ["other stainless steel wire rod manufacturers", "TMT/EAF-route peers using hot-charging technology"]}
+  - {question: "Is the green-steel/GreenPro-certified demand premium from institutional buyers a real, monetizable industry trend, or company-specific aspirational narrative?", why: "Management could never quantify this despite being asked in Q2 FY26 and twice in Q4 FY26", check_peers: ["other green-steel/EAF-route TMT and stainless steel producers with similar certifications or renewable power sourcing"]}
+  - {question: "Do peer disclosures on capacity utilization show similar quarter-to-quarter volatility/inconsistency (Rathi: 55-60% Q2 FY26, 60-65% Q3 FY26, ~51-53% FY26 average per Q4 FY26)?", why: "The unreconciled utilization figures directly affect confidence in the margin-expansion thesis", check_peers: ["other regional steel melting shop operators of comparable scale"]}
+red_flags:
+  - "[Medium] EBITDA margin stagnant at ~4% across all 3 quarters despite repeated promises of improvement"
+  - "[Medium] Inconsistent capacity utilization disclosure: 60-65% (Q3 FY26) vs ~51-53% FY26 average (Q4 FY26), unreconciled"
+  - "[Low-Medium] TMT mill direct-charging capex completion slipped past the Q3 FY26-stated timeline"
+  - "[Low] Repeated evasion on EBITDA margin band across 3 consecutive quarters, never given a number"
+  - "[Low] GST department disputes surfaced only under analyst questioning in Q4 FY26, not proactively disclosed"
+  - "[Low] Green power >25% actual falls short of ~30% headline figure; rooftop solar ambition scaled down to 1-2 MW over the window"
+  - "[Low] FY26 41.7% revenue growth beat substantially inflated by low FY25 base (TMT mill restart); ~117% rolling-volume claim computes to ~115.0% on disclosed tonnage"
+dropped_triggers:
+  - "Stainless steel rebar as an independent standalone product line (Q2 FY26 hope -> Q3 FY26 'not growing as anticipated' -> absent from Q4 FY26, folded into Fe 550D TMT narrative)"
+timeline_slippages:
+  - "TMT mill direct-charging capex: promised complete 'this quarter or early next quarter' in Q3 FY26 call; still 'initiated'/'implementing' as of Q4 FY26 call"
+  - "Steel melting shop utilization ramp to 80%: no committed date across 3 quarters, no clear progress evidenced toward the target given the Q3/Q4 FY26 data inconsistency"
+  - "Rooftop solar: no completion date ever given across Q2/Q3/Q4 FY26; scaled down in ambition over the window"

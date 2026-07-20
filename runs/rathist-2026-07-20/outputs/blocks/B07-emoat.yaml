@@ -1,0 +1,46 @@
+stage: B07-emoat
+company: "RATHIST"
+run_date: "2026-07-20"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating absent","announcements absent","research absent","annual-report is FY2024-25 only; no FY26 AR","shareholding filing absent (screener snapshot lead only)"]
+flags:
+  - {type: FLAG-EMOAT-SPARSE, reason: "Emerging moat scan lands at 9.9/~80, below the 12-point MODEST floor -> NO MEANINGFUL EMERGING MOAT. Only 4 of 20 categories score Moderate (A3 process innovation, A4 product platform, H3 ESG moat, R1 regulatory tailwinds), all evidence-capped at Low impact; none reaches Strong."}
+  - {type: FLAG-CAPEX-NIL-COMMITMENT, reason: "AR Note 1 Commitments (p.90) discloses Rs NIL contractually committed capex as at 31-03-2025, contradicting multiple verbal capex narratives across 3 concalls (TMT direct charging, melting-shop expansion, rooftop solar) -- every forward capex item in Section 2A is management claim only, not documented."}
+  - {type: FLAG-F2-NEGATIVE-EXECUTION, reason: "F2 execution-moat category scored 0 on active disqualifying evidence, not absence: B05 credibility grade C, flat ~4% EBITDA margin across 3 quarters despite repeated improvement promises, unreconciled utilization disclosure, TMT capex slippage past stated timeline."}
+  - {type: FLAG-STALE-CLAIM, reason: "Investor Presentation 'zero debt' framing (FY24 event) is stale: debt-equity ratio moved to 0.28 in FY25 as Kotak Mahindra Bank facilities were drawn (AR p.16, p.46)."}
+em_score: 9.9
+em_classification: "NONE"
+active_categories:
+  - {id: "A3", name: "Process innovation (hot/direct billet-charging)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "SS piece realized; TMT piece slipped, FY27+"}
+  - {id: "A4", name: "Product platform / modular architecture (Fe500/550/550D, SS rebar grades)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "realized; higher grades undated"}
+  - {id: "H3", name: "ESG moat (GreenPro cert, rising green-power share)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "certification realized; price/volume premium unmonetized"}
+  - {id: "R1", name: "Regulatory & policy tailwinds (BIS pipeline, safeguard duty)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active but shared/non-exclusive across peers"}
+evidence_mix: {documented: 15, claim: 10, inference: 3}
+completionist_recount: "documented recount performed: 6 documented items across 4 categories (AR Annexure 1 hot-charging completion + AR MD&A margin note supporting A3; BIS grade certifications for Fe500/Fe550/Fe550D and SS rebar 8-32mm supporting A4; GreenPro certificates + AR green-power >10% FY25 figure supporting H3; safeguard-duty documentation supporting R1)."
+capex_figure: "AR Note 1 Commitments (p.90): Rs NIL contractually committed capex as at 31-03-2025. Management-stated forward capex (claim only, not committed): ~Rs20 cr+/year FY26 run-rate for a few years (Q4 FY26 concall) and ~Rs40 cr trailing 3-year balancing capex (Q2 FY26 concall). capex_embedded_growth_pct = 0 (no documented committed capex)."
+catalysts_12m:
+  - {catalyst: "TMT/Rolling direct-charging capex completion and realized Rs3,000-4,000/ton saving flowing into EBITDA margin", window: "near-term, already slipped once", evidence_type: "claim", anchor: "Q4 FY26 concall; B05 trigger #2"}
+  - {catalyst: "Steel melting shop utilization reported consistently above ~65% with reconciled methodology", window: "near-to-medium", evidence_type: "claim", anchor: "Q2/Q3/Q4 FY26 concalls; B05 trigger #1"}
+  - {catalyst: "Cost of debt reduction below 16% via refinancing", window: "near-term", evidence_type: "claim", anchor: "Q4 FY26 concall; B05 trigger #8"}
+  - {catalyst: "Quantified price or volume premium from GreenPro/green-certified TMT sales", window: "medium", evidence_type: "claim", anchor: "Q2/Q4 FY26 concalls; B05 trigger #6 and repeated_evasions"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "TMT/Rolling direct-charging capex completion + Rs3,000-4,000/ton realized saving", converting_evidence: "Management confirms completion and discloses realized fuel/power saving feeding EBITDA margin", first_appears: "Subsequent concall or exchange filing", window: "Near-term, already slipped once"}
+  - {optionality: "Steel melting shop capacity expansion beyond 85,000 tpa", converting_evidence: "Formal board approval + capex number + funding plan", first_appears: "Exchange filing / AR capital-commitments note (currently NIL)", window: "Medium-to-long, undated"}
+  - {optionality: "Green Steel Certification (Ministry of Steel)", converting_evidence: "Certificate granted with quantified revenue/pricing linkage", first_appears: "Concall / exchange filing", window: "Undated"}
+  - {optionality: "Rooftop solar (1-2MW)", converting_evidence: "Committed capex + installation completion disclosed", first_appears: "AR capex note / concall", window: "Near-term but 7+ months delayed at feasibility"}
+  - {optionality: "Inorganic growth / allied-sector acquisition", converting_evidence: "Signed deal or JV announcement", first_appears: "Exchange filing", window: "Medium-to-long, no commitment yet"}
+  - {optionality: "Other downstream stainless products under planning stage", converting_evidence: "Launch announcement with revenue disclosure", first_appears: "AR / concall", window: "Undated"}
+  - {optionality: "NCR logistics/freight cost advantage for TMT", converting_evidence: "Quantified freight cost differential vs named peers disclosed", first_appears: "Concall / Investor Presentation", window: "Structural, may never be quantified"}
+  - {optionality: "GreenPro/green-steel pricing premium monetization", converting_evidence: "Quantified volume or price premium from green-certified sales disclosed", first_appears: "Concall", window: "Medium; deflected 3x already"}
+  - {optionality: "Dealer network (~300) / repeat-customer share (90-95% SS, 70%+ TMT)", converting_evidence: "Independently verifiable repeat-purchase or concentration metric with defined methodology", first_appears: "AR note or IR presentation", window: "Undated, single-source claim currently"}
+  - {optionality: "Cost of debt reduction below 16%", converting_evidence: "Refinancing completed, rate disclosed below 16%", first_appears: "Concall", window: "Near-term"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward Gate 0 already AVOID (core 24/100, THIN moat) and forward emerging-moat scan independently lands at NO MEANINGFUL EMERGING MOAT (9.9/~80); no GOOD/AVERAGE+EXPANSION transition setup exists, and the credibility-C execution record actively undercuts the four Moderate categories found."
+top_moat_risks:
+  - "A3/margin thesis stalling: EBITDA margin flat ~4% across 3 quarters despite the completed SS hot-charging piece and repeated improvement promises; TMT analogue still incomplete"
+  - "A4 product diversification stalling at 'early stage' per company's own SWOT; SS rebar line already dropped from Q4 FY26 narrative"
+  - "H3 ESG certifications (GreenPro, CBAM) remaining marketing-only with no monetized price/volume premium after 4+ quarters of the question being deflected"
+  - "R1 regulatory tailwinds (safeguard duty) are shared with all domestic peers and subject to policy reversal, not an exclusive company advantage"
+  - "Zero documented forward capex commitment (AR Note 1: NIL) against a management narrative built on several uncommitted capex projects"

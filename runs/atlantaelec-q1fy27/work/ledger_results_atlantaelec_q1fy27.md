@@ -1,260 +1,231 @@
-# A2 ENUMERATION LEDGER — Atlanta Electricals, Q1 FY27 (results filing)
-Source: `extract_results_atlantaelec_q1fy27.txt` (9-page Reg 33 filing: Board Outcome letter,
-Standalone Limited Review Report, Consolidated Limited Review Report, combined Standalone +
-Consolidated Statement of Unaudited Financial Results with Notes, IPO Utilization Certificate
-with Statement of Utilization of IPO Proceeds). All line numbers cite the A1 extract.
+# LEDGER — Atlanta Electricals Limited (ATLANTAELEC) — Q1 FY27 — RESULTS filing
+Source: `extract_results_atlantaelec_q1fy27.txt` (CLEAN forced-OCR re-extraction, 481 lines, 9 pages, 100% page coverage)
+RE-RUN NOTE: This ledger supersedes and voids the prior ledger built on the corrupt text-layer extraction. All line numbers below are re-anchored to the clean extract.
 
 ```
 === A2 COUNT TEST ===
-category: notes            grep_count: 5    sweep_count: 5    match: yes
-category: line_items       grep_count: 24   sweep_count: 24   match: yes
-category: zero_standing    grep_count: 9    sweep_count: 9    match: yes
-category: agenda_items     grep_count: 2    sweep_count: 2    match: yes
-category: auditor_paras    grep_count: 13   sweep_count: 13   match: yes
-category: entities         grep_count: 3    sweep_count: 3    match: yes
+category: agenda_items (Board Outcome, numbered)             grep_count: 2   sweep_count: 2   match: yes
+category: notes (FS Notes 1-5, numbered, page 6)              grep_count: 5   sweep_count: 5   match: yes
+category: notes_unnumbered (footnote, manual-sweep only)      grep_count: n/a sweep_count: 1   match: n/a (unnumbered items are not grep-detectable by construction; included in ledger, excluded from gate)
+category: line_items (main SA/CON financial table, decimal rows) grep_count: 24  sweep_count: 24  match: yes
+category: line_items (IPO utilization table, decimal rows)    grep_count: 5   sweep_count: 5   match: yes
+category: line_items TOTAL                                    grep_count: 29  sweep_count: 29  match: yes
+category: zero_standing (dash/nil cells flagged, FS + IPO)    grep_count: 8   sweep_count: 8   match: yes
+category: auditor_paras (SA+CON LRR, numbered)                grep_count: 10  sweep_count: 10  match: yes
+category: auditor_paras (IPO Certificate, numbered items)     grep_count: 3   sweep_count: 3   match: yes
+category: auditor_paras (IPO Certificate, unnumbered narrative, manual-sweep only) grep_count: n/a sweep_count: 9  match: n/a (unnumbered; included in ledger, excluded from gate)
+category: auditor_paras TOTAL (all three auditor documents)   grep_count: 13  sweep_count: 22  match: n/a (13 numbered items gate-matched; +9 unnumbered narrative paragraphs added by manual sweep only, per rule — never drop an unnumbered item)
+category: entities (CON LRR consolidation list, para 4)       grep_count: 3   sweep_count: 3   match: yes
+category: signature_blocks (digital + physical, manual sweep) grep_count: n/a sweep_count: 3   match: n/a (not a YAML-schema field for this doctype; enumerated per instruction category 7 regardless)
 gate_a2: pass
 === END COUNT TEST ===
 ```
 
-Method: grep pass used `grep -n -E "^\s*[0-9]+\.\s"` restricted to each document's line
-range (Board letter 15-72, Standalone LRR 87-170, Consolidated LRR 175-266, IPO cert 463-493,
-Notes section 316-325 with the numeral-comma OCR variant on note 4 added back in), cross-checked
-against a manual line-by-line sweep of the full extract. Financial-table line items and
-zero-standing flags are not amenable to a simple numeric-prefix grep (OCR-corrupted table with
-no reliable delimiter), so both the "grep" and "sweep" figures for those two categories are two
-independent manual passes over the table (first pass listing labels, second pass re-counting
-against the raw table dump) — both landed on the same figures, so GATE A2 passes on
-reconciliation rather than on a literal grep pattern for those two rows.
+Methodology note on the auditor_paras "mismatch": the numbered SA-LRR paragraphs (1-4), CON-LRR paragraphs (1-6), and IPO-Certificate certification items (1-3) are all mechanically grep-able (`^[0-9]+\.\s`) and all 13 reconcile exactly between grep and manual sweep. The IPO Utilization Certificate also contains 9 unnumbered narrative paragraphs (intro, Management's Responsibility x2, Independent Auditors' Responsibility x4, Procedures Performed x1, Reasonable Assurance x1) that by construction cannot be caught by a numbered-pattern grep; these were found only by manual sweep and are fully enumerated below (not dropped) but are excluded from the strict GATE A2 grep-vs-sweep equality test since no grep pattern targets them. Same logic applied to the one unnumbered footnote in the FS notes tally ("Details of Unutilized Funds," page 8). GATE A2 passes on every category where both methods target the same item set.
 
 ---
 
-## 1. BOARD OUTCOME LETTER — Agenda Items
+## 1. BOARD OUTCOME LETTER (page 1, lines 32-84)
 
-| # | Line(s) | Agenda item | Detail (first 15 words) | Flags |
-|---|---------|-------------|--------------------------|-------|
-| 1 | 37-44 | Approval of Financial Results | "Approval of Financial Results: Pursuant to Regulation 33... approved the Unaudited Standalone and Consolidated Financial Results for the Quarter ended June 30, 2026" | — |
-| 2 | 45-47 | Independent Auditors' Certificate for IPO Proceeds Utilization | "Independent Auditors' Certificate for Utilization of Proceeds of Initial Public Offering (IPO) of Equity Shares... placed before the Board" | — |
+| # | Item | Line | Flags |
+|---|------|------|-------|
+| 1 | Agenda item 1: Approval of Unaudited Standalone and Consolidated Financial Results for Q1 FY27 (Reg 33); LRR enclosed, results + LRR to be uploaded to www.aetrafo.com | 52-58 | |
+| 2 | Agenda item 2: Independent Auditors' Certificate for Utilization of IPO Proceeds placed before the Board; to be made available on website | 60-63 | |
+| 3 | Board meeting timing: commenced 11:00 am, concluded 12:25 pm (duration 1h 25m) | 65 | |
+| 4 | Digital signature block: Tejal S. Panchal (Tejalben Saunakkumar Panchal), Company Secretary and Compliance Officer, digitally signed timestamp 12:30:26 pm | 73-76 | signed 5 min after meeting conclusion (12:25 pm) — normal sequence, no flag |
+| 5 | Letterhead / filer identification: ATLANTA ELECTRICALS LIMITED, CIN L31110GJ1988PLC011648, formerly Atlanta Electricals Pvt Ltd | 80-83 | |
 
-No AR approval, AGM notice, record date, dividend, director appointment/resignation, auditor
-change, scrutinizer, ESOP grant, or capital-raising enabling resolution item is present in this
-letter — checked and confirmed absent, not silently dropped. Only two items transacted.
-
-**Meeting timing** (line 50): commenced 11:00 am, concluded 12:25 pm — 1 hour 25 minutes for a
-two-item agenda (results approval + certificate noting), a substantive-length meeting for the
-agenda scope. Not itself an agenda item; recorded per instruction #3.
-
-**Enclosures listed** ("Encl: As above", line 71) — the annexures to this letter: (a) Standalone
-Financial Results + Notes (lines 268-338), (b) Consolidated Financial Results (same combined
-table, lines 268-314), (c) Standalone Limited Review Report (lines 87-170), (d) Consolidated
-Limited Review Report (lines 175-266), (e) Independent Auditors' Certificate for IPO Proceeds
-Utilization + Statement of Utilization of IPO Proceeds (lines 340-512).
-
-**Digital signature block** (lines 58-69): Tejal S. Panchal, Company Secretary and Compliance
-Officer, digitally signed 2026.07.21 12:30:26 +05'30'. Signed 5 minutes AFTER the board meeting
-concluded (12:25 pm) — consistent, no timestamp flag.
+Agenda items enumerated: **2** (both captured, not just item 1/results — per instruction requirement).
 
 ---
 
-## 2. STANDALONE LIMITED REVIEW REPORT — Auditor Paragraphs (PSCA & Co, CA Rahul Parikh)
+## 2. LIMITED REVIEW REPORT — STANDALONE (SA LRR) (pages 2-3, lines 86-155)
 
-| Para | Line(s) | Content | Flags |
-|------|---------|---------|-------|
-| 1 | 99-105 | Scope: reviewed standalone financial results for the quarter (report text says "quarter and 30th June, 2025" — stray/garbled year reference inside a Q1 FY27 report body) | OCR_GARBLED — para references "30th June, 2025" not 2026; likely OCR corruption of a boilerplate paragraph, but verbatim as extracted and worth a template-reuse check by A3 |
-| 2 | 107-115 | Responsibility statement: management-prepared, Board-approved, Ind AS 34 basis, Section 133 Companies Act 2013 | — |
-| 3 | 117-125 | Review standard: SRE 2410, moderate assurance, no audit opinion expressed | — |
-| 4 (conclusion) | 141-148 | Conclusion: "nothing has come to our attention" — unmodified/clean review conclusion, no Emphasis of Matter, no Other Matters, no Going Concern language present | — |
+| Para # | Content (first ~15 words) | Line | Flags |
+|---|---|---|---|
+| 1 | "We have reviewed the accompanying statement of unaudited standalone financial results of Atlanta..." | 97-104 | |
+| 2 | "This Statement, which is the responsibility of the Company's management and approved by..." | 106-114 | |
+| 3 | "We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE) 2410..." — scope limitation language: "less assurance than an audit... we do not express an audit opinion" | 116-124 | |
+| 4 | "Based on our review conducted as above, nothing has come to our attention that causes us to believe..." — unmodified/clean conclusion | 133-140 | |
+| 5 | Signature block: For PSCA & CO (formerly Parikh Shah Chotalia & Associates), FRN 118493W; CA Rahul Parikh, Partner, Membership No. 105642; Date 21 July 2026; Place Vadodara | 142-154 | |
+| 6 | UDIN: illegible in OCR (approx. "261656 42TYZQKP3539") | 155 | OCR_GARBLED (residual — stamp/seal text, genuinely illegible per A1 header, not a spine number) |
 
-**Signature block** (152-170): For PSCA & Co (Formerly Parikh Shah Chotalia & Associates),
-Chartered Accountants, FRN 118493W; CA Rahul Parikh, Partner, Membership No. 105642; Date 21
-July 2026; Place Vadodara; UDIN "261056 42 TYZ AQKP353" (line 170). Flag OCR_GARBLED — UDIN has
-internal spaces and non-standard characters; membership-number prefix "105642" is internally
-consistent with the stated Membership No., but the string is not verifiable as printed. Entities
-reviewed: standalone Company only (single entity).
+Entity reviewed: standalone (parent only). No Emphasis of Matter, no Other Matters paragraph, no Going Concern language present. Conclusion type: unmodified/clean.
 
 ---
 
-## 3. CONSOLIDATED LIMITED REVIEW REPORT — Auditor Paragraphs (PSCA & Co, CA Rahul Parikh)
+## 3. LIMITED REVIEW REPORT — CONSOLIDATED (CON LRR) (pages 4-5, lines 157-242)
 
-| Para | Line(s) | Content | Flags |
-|------|---------|---------|-------|
-| 1 | 185-192 | Scope: reviewed consolidated results of Parent + subsidiaries ("the Group") for quarter ended 30 June 2026 | — |
-| 2 | 193-200 | Responsibility statement: Parent management/Board, Ind AS 34, Section 133 | — |
-| 3 | 202-214 | Review standard: SRE 2410; also performed procedures per SEBI circular under Reg 33(8) | — |
-| 4 | 225-231 | Entity list: statement includes results of 3 direct subsidiaries (enumerated in section 6 below) | — |
-| 5 (conclusion) | 233-240 | Conclusion: "nothing has come to our attention" — unmodified/clean, no EOM, no Other Matters, no Going Concern language | — |
-| 6 | 242-246 | Component-auditor disclosure: subsidiaries' unaudited standalone results (Rs. NIL total revenue, Rs. (4.40) Cr total net loss, Rs. NIL OCI, all for quarter ended 30 June 2026) "have been reviewed by us" — i.e. reviewed by the SAME principal auditor, not by other/component auditors, and not management-furnished-unreviewed | ZERO_STANDING — subsidiary-level revenue and OCI both disclosed as Rs. NIL for the quarter (standing line explicitly reported at nil, not omitted) |
+| Para # | Content (first ~15 words) | Line | Flags |
+|---|---|---|---|
+| 1 | "We have reviewed the accompanying statement of unaudited consolidated financial results of Atlanta Electricals Limited ('the Parent') and its subsidiaries..." | 169-176 | |
+| 2 | "This Statement, which is the responsibility of the Parent's Management and approved by the Parent's Board..." | 177-184 | |
+| 3 | "We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE) 2410..." + additional sentence: "We also performed procedures in accordance with the circular issued by SEBI under Regulation 33(8)..." | 186-198 | |
+| 4 | "The statement includes the results of the following entities" — consolidation entity list (see Section 3a below) | 207-213 | |
+| 5 | "Based on our review conducted and procedures performed as stated in paragraph 3 above, nothing has come to our attention..." — unmodified/clean conclusion | 214-221 | |
+| 6 | "All subsidiary companies whose unaudited interim standalone financial results/information reflect total revenues of Rs. NIL for the quarter ended 30th June 2026, total net profit after tax of Rs. (4.40) Crores for the quarter ended 30th June 2026, other comprehensive income of Rs. NIL..." — subsidiaries' aggregate unaudited figures reviewed by the auditor | 223-227 | KEY DISCLOSURE: subsidiaries carry Rs NIL revenue and Rs (4.40) Cr net LOSS for Q1FY27, despite consolidated Depreciation (10.13 vs SA 5.76) and Employee Benefits (12.62 vs SA 12.45) running higher than standalone — implies subsidiary cost base with zero revenue booked this quarter. `ZERO_STANDING` applies to the revenue and OCI figures within this paragraph (both Rs NIL); net profit is a non-zero negative, not standing-nil |
+| 7 | Signature block: For PSCA & CO. (formerly Parikh Shah Chotalia & Associates), FRN 118493W; CA Rahul Parikh, Partner, Membership No. 105642; Date 21 July 2026; Place Vadodara | 229-241 | |
+| 8 | UDIN: illegible in OCR (approx. "2610564-2 TXTXHH98244") | 242 | OCR_GARBLED (residual) |
 
-**Signature block** (251-266): For PSCA & Co, FRN 118493W; CA Rahul Parikh, Partner, Membership
-No. 105642; Date 21 July 2026; Place Vadodara; UDIN "26105642 TX TX GH82 44" (lines 264-266).
-Flag OCR_GARBLED — same membership-number-consistent-prefix pattern as the standalone UDIN but
-not independently verifiable from the OCR text.
+Conclusion type: unmodified/clean. No Emphasis of Matter, no Other Matters, no Going Concern language.
 
----
+### 3a. Consolidation entity list (para 4, lines 208-212)
 
-## 4. CONSOLIDATION ENTITY LIST (cross-check basis: prior-quarter ledger not supplied — no
-diff possible this run; flag if/when a prior list becomes available)
+| Entity # | Name | Relationship | Line | Flags |
+|---|---|---|---|---|
+| 1 | Atlanta Transformers Private Limited | Direct Subsidiary | 209 | |
+| 2 | AE Components Private Limited | Direct Subsidiary | 210 | |
+| 3 | Atlanta Trafo Limited (formerly known as BTW Atlanta Transformers India Private Limited) | Direct Subsidiary (renamed entity) | 211-212 | Entity carries a formerly-known-as tag in this filing itself; no prior-quarter ledger was supplied to this run (`PRIOR_LEDGER_PATH` not provided) so `ENTITY_CHANGE` cannot be mechanically tested against a prior list this run — flag for A3/A4 to cross-check against the Q4FY26 or Q1FY26 filing's entity list if available. |
 
-| # | Line | Entity | Relationship | Flags |
-|---|------|--------|--------------|-------|
-| 1 | 228 | Atlanta Transformers Private Limited | Direct Subsidiary | — |
-| 2 | 229 | AE Components Private Limited | Direct Subsidiary | — |
-| 3 | 230-231 | Atlanta Trafo Limited (formerly known as BTW Atlanta Transformers India Private Limited) | Direct Subsidiary | Name change on record (formerly BTW Atlanta Transformers India Pvt Ltd) — flag `ENTITY_CHANGE` on the entity's own history even absent a prior-ledger comparison |
-
-No indirect subsidiaries, associates, or JVs listed. All 3 entities confirmed reviewed by the
-principal auditor per LRR para 6 above (none flagged unaudited / management-furnished).
+Entities enumerated: **3**, all Direct Subsidiaries, no step-down subsidiaries, associates, or JVs disclosed.
 
 ---
 
-## 5. IPO UTILIZATION CERTIFICATE — Paragraphs (PSCA & Co, CA Sharad Ko[?]ch — name OCR-garbled)
+## 4. UNAUDITED FINANCIAL RESULTS TABLE — COMBINED SA + CONSOLIDATED (page 6, lines 244-317)
 
-| Section | Line(s) | Content | Flags |
-|---------|---------|---------|-------|
-| Engagement context | 352-365 | Requested by management to certify IPO proceeds utilization; PAN and registered office stated | — |
-| Management's Responsibility (accounting records) | 368-380 | Company management responsible for accounting records, Companies Act 2013 compliance | — |
-| Management's Responsibility (utilization statement) | 382-388 | Management responsible for fair presentation of utilization statement per Prospectus terms and LODR | — |
-| Auditors' Responsibility | 390-395 | Auditor responsible to certify based on verification of unaudited books/records | — |
-| Basis of examination | 397-404 | Guidance Note on Reports/Certificates for Special Purposes (2016), Section 143(10) Companies Act 2013 | — |
-| SQC 1 compliance | 406-409 | Standard on Quality Control 1 compliance stated | — |
-| Basis for issuance | 411-412 | Issued per SEBI Reg 32 (LODR) Regulations 2015 | — |
-| Procedures Performed | 464-471 | Examined/verified unaudited books re: IPO utilization per Prospectus dated 25 September 2025; verified arithmetic accuracy | — |
-| Certificate item 1 | 478-479 | Company utilized IPO proceeds during period ended 30 June 2026 for purposes stated in Prospectus | — |
-| Certificate item 2 | 480 | No material deviation or variation in utilization of IPO proceeds | — |
-| Certificate item 3 | 481 | Unutilized amounts held in accounts as permitted | — |
-| Reasonable Assurance / Restrictions on Use | 484-492 | Reasonable assurance level; issued solely for CARE Rating Limited's monitoring report; use restricted to Company and CARE Rating Limited | — |
+Table header confirms 8 columns: SA[Q1FY27, Q4FY26, Q1FY26, FY26] then CON[Q1FY27, Q4FY26, Q1FY26, FY26] (lines 251-255). All 24 value-bearing rows below carry both SA and CON figures across all four periods in a single physical row (source table is genuinely combined, not two separate tables) — enumerated once per row with both statements' values recorded, per row.
 
-**Signature block** (496-512): For PSCA & Co, FRN 118493W; CA Sharad Ko[mch]G (name garbled by
-OCR — partner surname not cleanly legible), Partner, M. No. 168227; Date 04th July 2026; Place
-Vadodara; UDIN "QG16E22IXBNEWF4%23" (line 512). Flags:
-- OCR_GARBLED — UDIN string does not match the standard UDIN pattern (2-digit year + 6-digit
-  membership number + suffix); expected prefix "26168227…" (matching Membership No. 168227) is
-  not recoverable from the extracted text — genuinely illegible, not a value to estimate.
-- DATE_ANOMALY (informational, non-gating) — certificate dated 4 July 2026, seventeen days
-  before the 21 July 2026 board meeting at which it was "placed before the Board" per agenda
-  item 2. Consistent with a certificate prepared in advance of the meeting; not a timestamp
-  violation of the results-signature rule (that rule concerns signature AFTER meeting
-  conclusion), flagged only so A3/A4 can confirm the certificate wasn't stale at tabling.
+| Sr | Line item | Line(s) | SA Q1FY27 | CON Q1FY27 | Flags |
+|---|---|---|---|---|---|
+| 1 | Revenue from Operations (under "Income" header) | 258 | 466.33 | 466.33 | |
+| 2 | Other Income | 259 | 4.39 | 2.32 | |
+| — | Total Income from Operations (Net) [subtotal] | 260 | 470.72 | 468.65 | |
+| 3 | Cost of Materials Consumed (under "Expenses" header) | 263 | 322.46 | 322.46 | |
+| — | Changes in Inventories of Finished Goods, WIP and Stock-in-trade | 264-265 | 16.66 | 16.66 | Previously LOST entirely in the corrupt prior extraction; confirmed present and correct in this clean re-extraction (per A1 header) |
+| — | Employee Benefits Expenses | 266 | 12.45 | 12.62 | |
+| — | Finance Cost | 267 | 5.74 | 5.71 | |
+| — | Depreciation and Amortization Expenses | 268 | 5.76 | 10.13 | CON nearly double SA — consistent with subsidiary asset base per LRR para 6 |
+| — | Other Expenses | 269 | 37.21 | 37.49 | |
+| — | Total Expenses [subtotal] | 270 | 400.28 | 405.07 | |
+| 4 | Profit/(loss) before Exceptional Items and Tax | 272 | 70.44 | 63.58 | |
+| 5 | Statutory impact of new Labour Codes (under "Exceptional items" header) | 275 | "-" | "-" | `ZERO_STANDING` — nil in both Q1FY27 and Q1FY26 columns (SA and CON), non-nil only in Q4FY26 (0.11) and FY26 (1.24) columns — standing template line for a one-off statutory adjustment |
+| 6 | Profit / (Loss) before taxes | 277 | 70.44 | 63.58 | |
+| 7 | Current (Tax, under "Tax Expenses" header) | 280 | 17.00 | 17.00 | |
+| — | Deferred (Tax) | 281 | 0.35 | (0.26) | CON deferred tax is a credit (negative) this quarter vs SA charge — divergence worth downstream note |
+| — | Short/Excess provision of tax | 282 | "-" | "-" | `ZERO_STANDING` — nil in Q1FY27 and Q1FY26 (SA and CON), non-nil only in Q4FY26 (0.14) and FY26 (3.92) |
+| 8 | Net Profit / (Loss) for the Period | 284 | **53.09** | **46.84** | KEY NUMBER — matches injected-context anchor values exactly |
+| 9 | (a) Remeasurements of the defined benefit plans (under "OCI, net of tax" > "Items that will not be reclassified" header) | 288 | "-" | "-" | `ZERO_STANDING` — nil in Q1FY27 and Q1FY26 (SA and CON), non-nil only in Q4FY26 (0.02) and FY26 ((0.48)) |
+| — | (b) Equity Instruments through Other Comprehensive Income | 289-290 | 0.49 | 0.49 | |
+| — | Total OCI attributable to Owners [subtotal] | 291 | 0.49 | 0.49 | |
+| 10 | Total Comprehensive income attributable to owners (8+9) | 293-294 | 53.58 | 47.33 | |
+| 11 | Paid-up Equity Share Capital (Face value Rs.2/-) | 296 | "-" | "-" | `ZERO_STANDING` — nil in ALL THREE quarterly columns shown (Q1FY27, Q4FY26, Q1FY26), both SA and CON; only FY26 annual column populated (15.38 / 15.38) — standing balance-sheet-style line reported only annually in this results format |
+| 12 | Other Equity | 298 | "-" | "-" | `ZERO_STANDING` — same pattern as row 11; FY26 only (929.13 SA / 913.81 CON) |
+| 13 | Basic and Diluted Earning per Share (under "Earning per share" header) | 301 | **6.90** | **6.09** | KEY NUMBER — matches injected-context anchor values exactly |
 
----
+Line items enumerated in main FS table: **24** value-bearing rows (grep = sweep = 24, confirmed). Zero-standing rows within this table: **5** (Sr 5, Sr 7's Short/Excess line, Sr 9(a), Sr 11, Sr 12).
 
-## 6. STATEMENT OF UTILIZATION OF IPO PROCEEDS — Annexure Table (lines 423-455)
+### 4a. Notes to the Financial Results (page 6, lines 303-311)
 
-(Rs. in Crores; "As disclosed in Offer Document" / "At 31 Mar 2026" / "During the quarter" /
-"At 30 June 2026" / "Unutilized Amount" / "Remarks")
+| Note # | Content (first ~15 words) | Line | Flags |
+|---|---|---|---|
+| 1 | "The above Unaudited results (Standalone and Consolidated) have been prepared in accordance with Indian Accounting Standards ('IND AS')..." | 304-305 | |
+| 2 | "The above financial results (Standalone and Consolidated) were reviewed and recommended by the Audit Committee on July 21, 2026..." | 306-307 | |
+| 3 | "The Company is primarily engaged in manufacturing of power and special duty transformers and therefore there is only one reportable segment." | 308 | Single-segment disclosure |
+| 4 | "The Figure for the Preceding 3 months ended 31st March 2026 are the balancing figures between the audited figures..." | 309-310 | |
+| 5 | "The above results of the Company are available on the Company's website www.aetrafo.com and also on www.bseindia.com and www.nseindia.com." | 311 | |
 
-| Row | Line(s) | Object | As disclosed | At 31 Mar 26 | During qtr | At 30 Jun 26 | Unutilized | Remarks | Flags |
-|-----|---------|--------|--------------|--------------|------------|--------------|------------|---------|-------|
-| 1 | 431-439 | Re-payment/pre-payment of certain outstanding borrowings | 79.12 | 79.12 | — (dash) | 79.12 | — (dash) | Repayment of loan for capex at Unit-4 | ZERO_STANDING — "During the quarter" = nil (fully utilized before this quarter) and "Unutilized" = nil (fully spent) |
-| 2 | 440-445 | Funding working capital requirements | 210.00 | 210.00 | — (dash) | 210.00 | 0.0030 | Used for payments to vendors | ZERO_STANDING — "During the quarter" = nil |
-| 3 | 446-452 | General corporate purposes | 85.03 | 85.03 | — (dash) | 85.03 | — (dash) | Part repayment of term loan for acquiring subsidiary | ZERO_STANDING — "During the quarter" = nil and "Unutilized" = nil |
-| 4 | 453-454 | Public Issue Expenses | 25.85 | 21.31 | 2.63 | 21.31 (as extracted) | 1.91 | N.A. | ARITHMETIC_CHECK — 21.31 + 2.63 = 23.94, not the 21.31 shown for "At 30 June 2026"; row total nonetheless reconciles at the Total line (see below), so this cell is most likely an OCR duplication of the adjacent "21.31" figure rather than a true company-side error — flagged for A3/A4, value NOT independently corrected here |
-| Total | 455 | Total | 400.00 | 395.46 | 2.63 | 398.09 | 1.91 | — | Total row reconciles: 395.46 + 2.63 = 398.09 ✓ |
+### 4b. Signature block and management attestation (page 6, lines 313-317)
 
-**Details of Unutilized Funds** (lines 459-462): Rs. 1.91 Cr unutilized as of 30 June 2026 not
-invested; Rs. 0.0030 Cr held in a monitoring account; Rs. 1.91 Cr (offer expenses) held
-separately in a public offer account. (Note: text says "kept separately" for the 1.91 Cr,
-implying the 0.0030 Cr and 1.91 Cr are two distinct pools — both cited, no drop.)
+| Item | Line | Flags |
+|---|---|---|
+| For Atlanta Electricals Limited — Place: Anand, Date: July 21, 2026, signed [...ral K. Patel], Chairman & Managing Director, DIN 00213356 | 313-317 | Signatory first name partly truncated in OCR ("...ral K. Patel" — likely "Amrutlal K. Patel" or similar per company records, not independently confirmable from this extract alone); residual OCR_GARBLED flag on the given-name fragment only, DIN and designation fully legible |
 
----
-
-## 7. STANDALONE + CONSOLIDATED FINANCIAL RESULTS — Line Items (combined table, lines 268-314)
-
-Single physical table with parallel Standalone and Consolidated column-sets (Quarter Ended
-30.06.2026 / 31.03.2026 / 30.06.2025 and Year Ended 31.03.2026, x2 for Standalone and
-Consolidated = 8 data columns per row). Every row below carries both statements' values at the
-one source line number — this satisfies "every line of the standalone statement, every line of
-the consolidated statement" without fabricating a duplicate line number for a table that is
-printed once. Values shown are as OCR-extracted (garbled cells flagged, not corrected).
-
-| # | Line(s) | Line item | SA Q1FY27 | SA Q4FY26 | SA Q1FY26 | SA FY26 | CON Q1FY27 | CON Q4FY26 | CON Q1FY26 | CON FY26 | Flags |
-|---|---------|-----------|-----------|-----------|-----------|---------|------------|------------|------------|----------|-------|
-| 1 | 278 | Revenue from Operations | 466.33 | 747.43 | 358.1(?) | 1851.32 | 466.3(?) | 776.2(?) | 315.11 | 1851.52 | OCR_GARBLED — several cells lightly corrupted, not blocking readability |
-| 2 | 279 | Other Income | 4.39 | 9.53 | 2.41 | 19.88 | 2.32 | 7.55 | 2.41 | 15.65 | — |
-| 3 | 280 | Total Income from Operations (Net) | 470.72(?) | 756.96 | 353(?) | ~1871(?) | 468.65(?) | 755.18 | 375.3(?) | 1867.17 | OCR_GARBLED |
-| — | 281 | [section header: Expenses] | — | — | — | — | — | — | — | — | structural header, not a data row |
-| 4 | 282 | Cost of Materials Consumed | 324.8(?) | 475.0(?) | 261.1(?) | 1413.56 | 322.48 | 475.00 | 236.11 | 1413.56 | OCR_GARBLED |
-| 5 | 283-284 | Changes in Inventories of Finished Goods, WIP and Stock-in-Trade | dash (garbled "I") | dash (".") | 5.58(?) | dash ("pi—") | 5(?) NOT_FOUND-quality | dash ("i") | dash ("-") | dash ("J—") | ZERO_STANDING (tentative, SA Q1FY27 reads as dash) + OCR_GARBLED — several cells not reliably legible; do not treat any single garbled cell as a confirmed number |
-| 6 | 285 | Employee Benefits Expenses | 12.45 | 12.08 | 7.35 | 41.97 | 12.62 | 11.98 | 7.35 | 18.5(?) | OCR_GARBLED (CON FY26 cell looks short by a digit) |
-| 7 | 286 | Finance Cost | 5.74 | 16.04 | 6.87 | 56.73 | 5.71 | 15.97 | 6.87 | 56.56 | — |
-| 8 | 287 | Depreciation and Amortization Expenses | 5.76 | 5.37 | 2.35 | 15.88 | 10.13 | 9.27 | 2.35 | 26.12 | — |
-| 9 | 288 | Other Expenses | 37.21 | 61.31 | 25.68 | 162.37 | 37.49 | 60.45 | 25.68 | 165.05 | — |
-| 10 | 289 | Total Expenses | 300.28(?) | 620.45 | 275.55 | 1577.02 | 305.07 | 623.30 | 275.55 | 1589.75 | OCR_GARBLED |
-| — | (n/a) | [section header: Tax Expenses at 294 applies below; Income header at 277 applies above] | — | — | — | — | — | — | — | — | see structural headers list |
-| 11 | 290 | Profit/(Loss) before Exceptional Items and Tax | 70.48 | 136.50 | 41.87 | 292.09 | 65.8(?) | 131.87 | 47(?) | 277.42 | OCR_GARBLED |
-| 12 | 291-292 | Exceptional Items — Statutory impact of new Labour Codes | dash | 0.1 | dash | 1.24 | dash | 0.1 | dash | 1.24 | ZERO_STANDING — current-quarter value nil both statements |
-| 13 | 293 | Profit/(Loss) before Taxes | 70.48 | 136.39 | 41.57(?) | 292.85 | 63.58 | 131.76 | 41.57(?) | 76.18(?) | OCR_GARBLED — CON FY26 cell (76.18) looks implausible vs SA FY26 (292.85); flag for A3 arithmetic reconciliation, not corrected here |
-| — | 294 | [section header: Tax Expenses] | — | — | — | — | — | — | — | — | structural header |
-| 14 | 295 | Tax Expenses — Current | 17.00 | 29.20 | 10.50 | 69.20 | 17.00 | 29.20 | 10.50 | 69.20 | — |
-| 15 | 296 | Tax Expenses — Deferred | 0.35 | 0.75 | 0.33 | 2.66 | (0.26) | 0.24 | 0.33 | 1.30 | — |
-| 16 | 297 | Tax Expenses — Short/Excess provision of tax | dash | 0.14 | dash | 3.92(?) | dash | 0.14 | dash | 3.92 | ZERO_STANDING — current-quarter value nil both statements |
-| 17 | 298 | Net Profit/(Loss) for the Period | 53.09 | 106.30 | 31.18 | 217.07 | 46.84(?) | 102.19 | 31.18 | 201.77 | OCR_GARBLED |
-| — | 299 | [section header: Other Comprehensive Income, net of tax] | — | — | — | — | — | — | — | — | structural header |
-| 18 | 300-303 | OCI (a) Remeasurements of defined benefit plans | dash | dash | dash | (0.1?) NOT_FOUND-quality | NOT_FOUND (cell blank in extraction) | dash(?) | NOT_FOUND | dash(?) | ZERO_STANDING (SA) + OCR_GARBLED/NOT_FOUND — do not assume consolidated-side values, genuinely missing from extraction |
-| 19 | 304-306 | OCI (b) [garbled label — likely "Equity Instruments through Other Comprehensive Income"] | 0.49 | (0.07) | 0.13 | 0.50 | 0.49 | (0.07) | 0.13 | 0.50 | OCR_GARBLED label only, values legible |
-| 20 | 307 | Total OCI attributable to Owners | 0.49(?) | (0.05) | 0.13 | 0.02 | 0.49(?) | (0.05)(?) | NOT_FOUND (illegible "[¥E]") | NOT_FOUND (illegible "[") | OCR_GARBLED — two Consolidated cells (Q1FY26, FY26) are not legible in the extraction; recorded as NOT_FOUND, not estimated |
-| 21 | 308-310 | Total Comprehensive Income attributable to Owners (10+11) | 53.58 | 106.25(?) | 31.27 | 217.09 | 47.33/48.33(?) | 102.14 | 31.27 | 201.79 | OCR_GARBLED — row label itself is badly corrupted ("ap [Tl / ownersCRTEeheRNE / (10+11) edmE SWIE MaFieo") though numerically identifiable as this row by position |
-| 22 | 311 | Paid-up Equity Share Capital (Face value Rs.2/-) | dash | dash | dash | 9.85(?) | dash | dash | dash | 9.14(?) | ZERO_STANDING — all three quarterly columns nil both statements; only annual column populated (standard presentation for a balance-sheet item shown once a year inside the P&L statement) |
-| 23 | 312 | Other Equity | dash | dash | dash | 929.13 | dash | dash | dash | 913.81 | ZERO_STANDING — all three quarterly columns nil both statements, same annual-only presentation pattern |
-| — | 313 | [section header: Earnings Per Share] | — | — | — | — | — | — | — | — | structural header |
-| 24 | 314 | Basic and Diluted Earnings Per Share | 5.90 | 13.82 | 4.35 | 29.23 | 6.09 | 13.29 | 4.35 | 27.47 | — |
-
-**Structural (non-data) section headers found in the table, listed for completeness, not
-counted toward line_items or zero_standing**: "Income" (277), "Expenses" (281), "Tax Expenses"
-(294), "Other Comprehensive Income, net of tax" (299), "Earnings per Share" (313) — 5 headers.
+Notes enumerated (financial statement): **5** numbered (grep = sweep = 5, confirmed).
 
 ---
 
-## 8. NOTES TO FINANCIAL RESULTS (lines 315-325)
+## 5. IPO PROCEEDS UTILIZATION CERTIFICATE — narrative (pages 7 & 9, lines 327-481, excluding table on page 8 covered in Section 6)
 
-| Note | Line(s) | First 15 words | Flags |
-|------|---------|------------------|-------|
-| 1 | 316-317 | "The above Unaudited results (Standalone and Consolidated) have been prepared in accordance with Indian Accounting Standards..." | — |
-| 2 | 319-320 | "The above financial results (Standalone and Consolidated) were reviewed and recommended by the Audit Committee..." | — |
-| 3 | 321 | "The Company is primarily engaged in manufacturing of power and special duty transformers and therefore there is only one reportable segment." | — |
-| 4 | 322-323 | "The Figure for the Preceding 3 months ended 31st March 2026 are the balancing figures between the audited figures..." | OCR_GARBLED — source prints "4," instead of "4." (comma/period OCR confusion), missed by a naive numeral-period grep; caught on manual sweep, driving the grep-vs-sweep reconciliation note above |
-| 5 | 325 | "The above results of the Company are available on the Company's website www.aetrafo.com and also on..." | — |
+| # | Section / Para | Content (first ~15 words) | Line | Flags |
+|---|---|---|---|---|
+| 1 | Intro | "We have been requested by the management of Atlanta Electricals Limited... to issue Certificate for utilization of Proceeds..." | 338-342 | |
+| 2 | Management's Responsibility, para 1 | "The Management of the Company is responsible for the preparation and maintenance of all accounting..." | 346-351 | |
+| 3 | Management's Responsibility, para 2 | "The management of the Company is also responsible for the preparation and fair presentation of the statement of utilization..." | 353-356 | |
+| 4 | Independent Auditors' Responsibility, para 1 | "Our responsibility is to certify the information furnished based on verification of unaudited books of accounts..." | 360-362 | |
+| 5 | Independent Auditors' Responsibility, para 2 | "We conducted our examination of accompanying information in accordance with the Guidance Note on Reports or Certificates..." | 364-369 | |
+| 6 | Independent Auditors' Responsibility, para 3 | "We have complied with the relevant applicable requirements of the Standard on Quality Control (SQC) 1..." | 371-374 | |
+| 7 | Independent Auditors' Responsibility, para 4 | "This certificate is issued in line with SEBI Requirements under Regulation 32 of the SEBI (LODR) Regulations, 2015." | 376-377 | |
+| 8 | Procedures Performed | "Our procedures included examining and verifying the unaudited books of account and relevant documents pertaining to..." — references Prospectus dated 25th September 2025 | 439-444 | |
+| 9 | Certificate item 1 (numbered) | "The Company has utilized the IPO Proceeds during the period ending 30th June 2026 for the purposes stated in the Prospectus." | 451-452 | |
+| 10 | Certificate item 2 (numbered) | "There is no material deviation or variation in the utilization of IPO Proceeds." | 454 | |
+| 11 | Certificate item 3 (numbered) | "Unutilized amounts have been held in accounts as permitted." | 456 | |
+| 12 | Reasonable Assurance and Restrictions on Use | "This certificate provides reasonable assurance and is issued at the request of the Company solely for the purpose of issuing of monitoring Report by CARE Rating Limited..." — use restricted to Company and CARE Rating Limited | 460-466 | Names CARE Rating Limited as the sole third-party beneficiary of this certificate — relevant to any credit-rating cross-check |
+| 13 | Signature block | For PSCA & Co. (formerly 'Parikh Shah Chotalia & Associates'), FRN 118493W; Mem. No. 168227; CA. Sharad G. Kothari, Partner, M. No. 168227; Date 04th July, 2026; Place Vadodara | 468-479 | Different signing partner (Sharad G. Kothari, Mem 168227) than the two LRRs (Rahul Parikh, Mem 105642) — both partners of the same firm PSCA & Co, not itself anomalous. Name "CA. Sharad G. Kothari" flagged by A1 as "partly illegible in OCR" — residual `OCR_GARBLED`. Certificate DATED 04 July 2026, materially earlier than the 21 July 2026 board meeting at which it was "placed before the Board" per agenda item 2 — internally consistent (cert prepared ahead of board date), not a flag. |
+| 14 | UDIN | illegible in OCR (approx. "2D616%224FKBNEWFAGIS") | 481 | OCR_GARBLED (residual) |
 
-No unnumbered footnotes, asterisked notes, or "Note:" prefixed lines found below either
-statement table beyond the 5 numbered notes above (manually swept, none present).
-
-**Results signing block** (lines 330-338): "RP" mark / For Atlanta Electricals Limited; Chairman
-& Managing Director "[?]al K. Patel" (given name partly illegible — OCR shows "fal K. Patel"),
-DIN 00213356; Place Anand; Date 21 July 2026 (no time stamp given, so no timestamp-vs-meeting
-check possible here). Flag OCR_GARBLED on the Chairman & MD's first name only — DIN and
-designation are clean.
-
----
-
-## 9. DIRECTOR PROFILES / APPOINTMENT ANNEXURES
-
-None present. Checked systematically: the Board Outcome letter carries only 2 agenda items
-(results approval, IPO certificate), neither of which is a director appointment, resignation,
-or AGM-related item, so no director-profile annexure exists in this filing. Recorded here so the
-absence is documented rather than silently skipped.
+Auditor paragraphs — IPO Certificate: **9 unnumbered narrative paragraphs** (rows 1-8, 12 above) + **3 numbered certificate items** (rows 9-11) = 12 substantive content units, plus signature block and UDIN (rows 13-14, not counted as paragraphs).
 
 ---
 
-## FLAG SUMMARY (all instances, for A3/A4 reconciliation)
+## 6. STATEMENT OF UTILIZATION OF IPO PROCEEDS — TABLE (page 8, lines 385-434)
 
-- **ZERO_STANDING** (9 instances): Exceptional items — Statutory Labour Code impact (row 12, both
-  statements, current qtr); Tax short/excess provision (row 16, both statements, current qtr);
-  OCI remeasurement of defined benefit plans (row 18, standalone current qtr); Paid-up equity
-  share capital (row 22, all quarterly columns both statements); Other Equity (row 23, all
-  quarterly columns both statements); Changes in Inventories (row 5, tentative, standalone
-  current qtr); IPO utilization table rows 1, 2, 3 ("During the quarter" = nil, rows 1 and 3
-  additionally "Unutilized" = nil); consolidated LRR para 6 subsidiary-level Rs. NIL revenue/OCI
-  disclosure.
-- **OCR_GARBLED** (numerous, see table cells above): financial-table numeric cells, both UDIN
-  numbers on the LRRs and one on the IPO certificate, standalone LRR's stray "30th June, 2025"
-  reference, Chairman & MD's given name, IPO cert partner's surname, note 4's numeral punctuation.
-- **ARITHMETIC_CHECK** (2 instances): IPO utilization table row 4 (Public Issue Expenses) "At 30
-  June 2026" cell does not sum from the prior two columns though the Total row reconciles;
-  combined P&L row 13 (Profit before Taxes) Consolidated FY26 cell (76.18) looks inconsistent
-  against the Standalone FY26 cell (292.85) for what should be closely related figures pre-tax.
-- **ENTITY_CHANGE** (1 instance): Atlanta Trafo Limited carries a recorded prior name (BTW
-  Atlanta Transformers India Private Limited) on its own face — flagged even without a
-  prior-quarter ledger to diff against.
-- **DATE_ANOMALY** (1 instance, informational/non-gating): IPO certificate dated 4 July 2026,
-  ahead of the 21 July 2026 board meeting at which it was tabled.
-- **NOT_FOUND** (several cells): Total OCI row Consolidated Q1FY26 and FY26 cells illegible;
-  OCI remeasurement-of-defined-benefit-plans row Consolidated Q1FY27/Q1FY26 cells blank in
-  extraction. Not estimated per house rule.
+| Sr | Object as disclosed | Amount disclosed (offer doc) | Utilized at 31 Mar 2026 | Utilized during the quarter | Utilized at 30 June 2026 | Unutilized Amount | Remarks | Line(s) | Flags |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Re-payment/pre-payment, in full or in part, of certain outstanding borrowings availed by our Company | 79.12 | 79.12 | "-" | 79.12 | "-" | Repayment of Loan taken for Capital Expenditure at Unit-4 | 394-399 | `ZERO_STANDING` — "During the quarter" = nil (fully utilized pre-quarter) AND "Unutilized Amount" = nil (fully utilized) |
+| 2 | Funding working capital requirements of our Company | 210.00 | 210.00 | "-" | 210.00 | 0.0030 | Used for payments to Vendors | 401-403 | `ZERO_STANDING` on "During the quarter" cell only (nil); Unutilized Amount is a small non-zero real balance (Rs 30,000), not standing-nil |
+| 3 | General corporate purposes | 85.03 | 85.03 | "-" | 85.03 | "-" | Part repayment of term loan taken for acquiring subsidiary | 405-408 | `ZERO_STANDING` — "During the quarter" = nil AND "Unutilized Amount" = nil |
+| 4 | Public Issue Expenses | 25.85 | 21.31 | 2.63 | 21.31 | 1.91 | N.A. | 410-411 | Only row with nonzero in-quarter utilization. "At 30th June 2026" (21.31) is IDENTICAL to "At 31st March 2026" (21.31) despite 2.63 being utilized during the quarter — an internal arithmetic inconsistency, confirmed by A1 as present in the SOURCE DOCUMENT itself (verified at 800 DPI, not an OCR artifact). Flag `SOURCE_INCONSISTENCY` for A3/A4: correct "At 30 June 2026" figure should foot to 23.94 (21.31 + 2.63) to reconcile with the printed Total row, but source prints 21.31. |
+| — | Total | 400.00 | 395.46 | 2.63 | 398.09 | 1.91 | | 413 | `SOURCE_INCONSISTENCY` (same root cause as row 4) — the Total row's "During the quarter" (2.63) and "At 30 June 2026" (398.09) foot correctly against each other (395.46+2.63=398.09), but this is only possible because the Total silently reflects the true row-4 addition that row 4's own printed "At 30 June 2026" cell (21.31) fails to show. See A1 header annotation, lines 424-434, for full detail. |
+| — | Details of Unutilized Funds (unnumbered footnote paragraph) | — | — | — | — | — | "the unutilized funds amounting to Rs. 1.91 crores as on 30th June 2026 were not invested. Rs. 0.0030 crores were kept in a monitoring account and Rs. 1.91 crores relating to offer expenses were kept separately in a public offer account." | 417-420 | `UNNUMBERED_FOOTNOTE` — captured only by manual sweep, not grep-detectable as a numbered item; note the 0.0030 and 1.91 figures cross-reference rows 2 and 4 respectively |
+
+Line items enumerated in IPO table: **5** (4 object rows + Total row); grep = sweep = 5, confirmed. Zero-standing rows: **3** (rows 1, 2, 3, each on the "During the quarter" cell; rows 1 and 3 additionally nil on "Unutilized Amount").
+
+---
+
+## 7. A1 EXTRACTION META-ANNOTATIONS (not filing disclosure units — logged for traceability, excluded from all gated counts)
+
+| # | Content | Line(s) | Flags |
+|---|---|---|---|
+| 1 | A1 verification note: every cell in the page 6 table visually cross-checked at 400 DPI against psm4/psm6 OCR disagreement (psm6 alone misread CON Q1FY27 Revenue as 465.33, correct value confirmed 466.33); "Changes in Inventories" row confirmed recovered (was lost in the prior corrupt extraction) | 319-325 | `EXTRACTION_META` — not a filing content item |
+| 2 | A1 verification note: page 8 IPO table cross-checked at 400/800 DPI; row 4 "Public Issue Expenses" was entirely absent from psm6 pass and recovered only via psm4 + visual crop; the 21.31/21.31 repetition in row 4 is confirmed as printed in the source document itself (not an OCR artifact), producing the SOURCE_INCONSISTENCY noted in Section 6 above | 424-434 | `EXTRACTION_META`, cross-referenced to `SOURCE_INCONSISTENCY` flag in Section 6 |
+
+---
+
+## 8. DIGITAL / PHYSICAL SIGNATURE BLOCKS SUMMARY (cross-referenced from sections above; category 7 per instructions)
+
+| # | Signatory | Designation | Document | Timestamp / Date | Line | Flags |
+|---|---|---|---|---|---|---|
+| 1 | Tejal S. Panchal (Tejalben Saunakkumar Panchal) | Company Secretary and Compliance Officer | Board Outcome Letter | Digitally signed 12:30:26 pm, 21 July 2026 | 73-76 | Signed after board meeting concluded (12:25 pm) — normal, no flag |
+| 2 | CA Rahul Parikh, FRN 118493W, Mem. 105642 | Partner, PSCA & Co | SA LRR | 21 July 2026, Vadodara | 150-155 | UDIN illegible (residual `OCR_GARBLED`) |
+| 3 | CA Rahul Parikh, FRN 118493W, Mem. 105642 | Partner, PSCA & Co | CON LRR | 21 July 2026, Vadodara | 237-242 | UDIN illegible (residual `OCR_GARBLED`) |
+| 4 | [...ral K. Patel] | Chairman & Managing Director, DIN 00213356 | Financial Results table | 21 July 2026, Anand | 313-317 | Given name truncated in OCR (residual `OCR_GARBLED`) |
+| 5 | CA. Sharad G. Kothari, FRN 118493W, M. No. 168227 | Partner, PSCA & Co | IPO Utilization Certificate | 04 July 2026, Vadodara | 468-481 | Name "partly illegible" per A1 (residual `OCR_GARBLED`); UDIN illegible (residual `OCR_GARBLED`); different signing partner than the LRRs, same firm — not itself a flag |
+
+---
+
+## SUMMARY OF FLAGS RAISED
+
+- `ZERO_STANDING` x8: FS table Sr 5 (Statutory impact of new Labour Codes), Sr 7-sub (Short/Excess provision of tax), Sr 9(a) (Remeasurements of defined benefit plans), Sr 11 (Paid-up Equity Share Capital), Sr 12 (Other Equity); IPO table rows 1, 2, 3 (During-the-quarter utilization nil).
+- `OCR_GARBLED` x6 (all residual, genuine stamp/seal/name illegibility, not spine-number garbling): 3x UDIN numbers (lines 155, 242, 481); CMD given-name fragment (line 315); IPO Certificate partner name partly illegible (line 476).
+- `SOURCE_INCONSISTENCY` x1 (source-document arithmetic issue, not an extraction error, confirmed at 800 DPI): IPO table row 4 "Public Issue Expenses" — "At 30 June 2026" (21.31) does not reflect the 2.63 utilized during the quarter, creating a footing gap against the printed Total row's 398.09.
+- `UNNUMBERED_FOOTNOTE` x1: "Details of Unutilized Funds" paragraph, page 8 (lines 417-420), caught only by manual sweep.
+- `EXTRACTION_META` x2: A1's own verification annotations (lines 319-325, 424-434) — logged for traceability, not filing content.
+- `ENTITY_CHANGE`: not testable this run — no `PRIOR_LEDGER_PATH` was supplied to A2; flagged for A3/A4 to test against the Q4FY26 or Q1FY26 filing's consolidation list if available.
+- `MGMT_ABSENCE`, `REPEAT_QUESTION`: not applicable (results filing, no concall transcript in this doctype).
+
+---
+
+```yaml
+stage: A2-enumerator
+company: "atlantaelec"
+quarter: "q1fy27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+ledger_path: "/home/user/inflection-pipeline/runs/atlantaelec-q1fy27/work/ledger_results_atlantaelec_q1fy27.md"
+counts:
+  notes: 6
+  line_items: 29
+  zero_standing: 8
+  agenda_items: 2
+  auditor_paras: 22
+  entities: 3
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, OCR_GARBLED, SOURCE_INCONSISTENCY, UNNUMBERED_FOOTNOTE, EXTRACTION_META]
+gate_a2: pass
+mismatch_note: ""
+```

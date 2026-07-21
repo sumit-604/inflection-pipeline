@@ -53,6 +53,15 @@ enumerated for every quantitative claim and management quote.
 All three A1 gates PASS.
 
 ### GATE A2 (count test)
-- results: (running)
-- presentation: (running)
-- pressrelease: (running)
+- results: PASS — 14 notes, 65 line items, 1 zero-standing, 2 agenda items, 16 auditor paras, 13 entities. Flags: SIGNATURE_BEFORE_MEETING_CONCLUDED x2, ENTITY_CHANGE 4/13, ENTITY_UNAUDITED_MGMT_FURNISHED (IB MonotaRO exit), NEW_ENTITY_PENDING (IndiaMART Finance Ltd WOS), GOING_CONCERN_LANGUAGE
+- presentation: PASS — 69 slides, 462 numbers, 1 zero-standing
+- pressrelease: PASS — 3 bullets, 24 quant claims, 11 line items, 1 mgmt quote, 25 figures NOT_IN_FILING (filing is P&L-only, Q1 normal)
+All three A2 gates PASS.
+
+### GATE A3 (all F1-F17 marked, findings line-cited)
+- results: PASS — F2/F4/F6/F7/F12/F13/F14/F15 FINDINGs. Key: Busy segment result (6)->(27) widening losses; C-below-S PAT gap narrowed 7.53->2.21pp; new WOS financial-services entry; ~12.2% PAT not principal-auditor audited; MD/CEO signed ~2h50m before board concluded
+- presentation: PASS — F1/F6/F7/F10/F11/F16/F17 FINDINGs. Key: net supplier attrition -1,852 buried under 0% headline (Red item1); active buyers -3%->-5% 2nd consec (Red item2); Busy EBITDA margin 16%->9% YoY% omitted (Red item7); declining KPIs printed w/o minus sign; ~340Cr dividend outflow Q2FY27; promoter pledge status silent
+- pressrelease: PASS — F1/F16/F17 FINDINGs. Key: headline 40% standalone EBITDA vs 35% consol; consol PAT 172<176 standalone; standalone CFO/PAT 0.87; growth realization-led ARPU undisclosed; Q1 stated AUDITED (unusual) no auditor commentary
+All three A3 gates PASS.
+
+### A4 analyst: running (merged Role 4 review; Role 5 has no concall transcript this quarter)

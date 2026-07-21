@@ -138,7 +138,7 @@ Cross-check: deck slide 6 (L443-447) states EBITDA excl OI Q1FY27 323 / Q1FY26 1
 | Effective Tax Rate | Tax / PBT | 27.2% | 39.7% | 25.9% | 26.5% | ND |
 | PAT Margin (on Revenue) | PAT / Rev | 4.7% | 6.8% | 7.1% | 7.9% | ND |
 
-**Anchor for the whole review (the standalone-vs-consolidated gap, first-class metric per A3 F2):** Q1FY27 standalone operating EBITDA margin is **16.4% vs consolidated 19.3%** — a 290 bps consolidated uplift, and standalone core PBT ex-OI *fell* QoQ (15.34 -> 10.06 Cr) while consolidated core PBT ex-OI *rose* (16.94 -> 18.33 Cr). The gap is created at the subsidiary line. Quantified in Step 4 and Step 6.
+**Anchor for the whole review (the standalone-vs-consolidated gap, first-class metric per A3 F2):** Q1FY27 standalone operating EBITDA margin is **16.4% vs consolidated 19.3%** — a 290 bps consolidated uplift, and standalone core PBT ex-OI *fell* QoQ (15.34 -> 10.06 Cr) while consolidated core PBT ex-OI *rose* (16.94 -> 18.33 Cr). The gap is created at the subsidiary line, and the standalone Other Income / PBT ratio of 28.6% (vs 6.6% FY26) flags a one-off treasury spike inside the parent this quarter. Both are stripped in Step 4.
 
 STOP cleared: every cell filled or ND (ND used only where the filing/deck does not disclose the figure — FY25 standalone, and intra-year quarterly cost splits).
 
@@ -154,7 +154,7 @@ STOP cleared: every cell filled or ND (ND used only where the filing/deck does n
 | Depreciation | 8.97 | 10.57 | +17.8% | Below revenue growth |
 | Finance Costs | 0.41 | 2.08 | **+403.9%** | Sharp rise (off tiny base) |
 | EBIT (operating) = OpEBITDA − D | 8.36 | 21.73 | +160.0% | Strong |
-| Other Income | 1.16 | 2.78 | +140.7% | Small absolute |
+| Other Income | 1.16 | 2.78 | +140.7% | Small absolute (consol) |
 | **Core Operating PBT (PBT − OI, after exc)** | 7.95 | 18.33 | **+130.7%** | Strong (real) |
 | Core Operating PBT (before exceptional) | 7.95 | 19.65 | +147.3% | Strong |
 | Reported PBT | 9.10 | 21.11 | +132.0% | Strong |
@@ -164,12 +164,12 @@ STOP cleared: every cell filled or ND (ND used only where the filing/deck does n
 ### YoY diagnostic answers (six mandatory)
 1. **Did revenue grow YoY?** Yes, **+42.9%** (Rs 116.86 -> 167.06 Cr; deck "+43%", L441). This is well above the FY26 full-year growth of +32% and above any GARP-transition run-rate. No company guidance figure disclosed in the filing/deck to benchmark against; Notion projections were not passed inline (marked ND in Step 6A).
 2. **Op EBITDA margin YoY?** **Expanded** — Q1FY27 19.3% vs Q1FY26 14.8% = **+448 bps YoY**. Genuine operating-leverage expansion off a weak comparable quarter. (But see Step 3: sequentially the margin *fell* 21.0% -> 19.3%; the YoY expansion and the QoQ compression are both true — the deck headlines only the YoY.)
-3. **Core operating PBT (ex-OI) YoY?** **+130.7%** (after exceptional) / **+147.3%** (before exceptional). Reported PAT +140.3% is *not* an Other-Income illusion — core operating PBT grew at a similar pace, so the growth is operational rather than treasury-driven. **But "operational" is not the same as "confirmably recurring": Step 4 shows 43.1% of the YoY PAT growth is subsidiary-sourced with unresolved durability (F2/F3/F4). Read this answer only as "not treasury-manufactured", and defer the recurrence question to the parent-vs-subsidiary split in Step 4.**
-4. **Gap between core-PBT growth and reported-PAT growth?** Core operating PBT +130.7% vs reported PAT +140.3% — a small +9.6pp reported uplift. Walk: Other Income +Rs 1.62 Cr (helped), exceptional −Rs 1.32 Cr (hurt, new), finance cost −Rs 1.67 Cr (hurt), depreciation −Rs 1.60 Cr (hurt), tax +Rs 2.68 Cr charge but ETR *fell* 26.9% -> 24.3% (helped PAT). Net: the reported-PAT uplift over core-PBT is driven mainly by the lower effective tax rate, not treasury. Quantified fully in Step 4.
+3. **Core operating PBT (ex-OI) YoY?** **+130.7%** (after exceptional) / **+147.3%** (before exceptional). Reported PAT +140.3% is *not* a consolidated-Other-Income illusion — consolidated core PBT grew at a similar pace, so the headline is **not treasury-manufactured at the group level**. But "not treasury-manufactured" is a weaker claim than "durably recurring": Step 4 shows the growth splits into only **~36% durably-recurring parent manufacturing core, ~28.5% one-off standalone Other Income at the parent, and ~43.1% subsidiary earnings whose durability is UNRESOLVED (F2/F3/F4)**. Read this answer only as "the group headline is operational, not a group-treasury artefact," and defer the recurrence quality to the three-way split in Step 4.
+4. **Gap between core-PBT growth and reported-PAT growth?** Core operating PBT +130.7% vs reported PAT +140.3% — a small +9.6pp reported uplift. Walk: Other Income +Rs 1.62 Cr (helped, consol), exceptional −Rs 1.32 Cr (hurt, new), finance cost −Rs 1.67 Cr (hurt), depreciation −Rs 1.60 Cr (hurt), tax +Rs 2.68 Cr charge but ETR *fell* 26.9% -> 24.3% (helped PAT). Net: the reported-PAT uplift over core-PBT is driven mainly by the lower effective tax rate, not treasury. Quantified fully in Step 4.
 5. **Are D&A and finance costs scaling faster than revenue?** Depreciation +17.8% vs revenue +42.9% — depreciation is growing **slower** than revenue, i.e. capex-absorption is *improving* (the FY24-FY26 plant build is being utilised; positive for ROCE trajectory). Finance costs +403.9% (Rs 0.41 -> 2.08 Cr) — a 5x jump, but off a near-zero base and immaterial in absolute terms (1.2% of revenue). It is the **early-warning leverage signal** (ties to A3-02 re-leveraging and F6-b borrowing-limit 3.3x), not yet a margin threat.
-6. **Is Other Income concentration changing?** No. Consolidated OI is tiny (Rs 2.78 Cr, 13.2% of PBT) and swung only because Q4FY26 carried a negative OI (−Rs 0.35 Cr, a fair-value/FX reversal). Stripping OI does not change the read — core operations carry the quarter. (Standalone OI Rs 4.03 Cr is *larger* than consolidated Rs 2.78 Cr, implying a negative OI at the subsidiary level — a minor consolidation-elimination artefact, immaterial.)
+6. **Is Other Income concentration changing?** Yes — at the parent. Consolidated OI is tiny (Rs 2.78 Cr, 13.2% of PBT), but **standalone OI spiked to Rs 4.03 Cr = 28.6% of standalone PBT** (vs 6.6% FY26; larger than consolidated OI, implying a negative OI at the subsidiary level on consolidation). This +Rs 2.66 Cr YoY standalone OI jump is a one-off treasury/FX item inside the parent and is stripped in Step 4's recurrence split. Consolidated core operations still carry the group headline once OI is removed.
 
-**YoY verdict: a strong operating quarter — revenue +43%, operating margin +448 bps YoY, core operating PBT +131%, PAT +140%, driven by operations (not treasury).** The cautions are QoQ (Step 3), the subsidiary earnings-quality concentration (Step 4/6 — 43.1% of the PAT growth is durability-unresolved), the new unexplained exceptional, and rising leverage.
+**YoY verdict: a strong operating quarter at the group level — revenue +43%, operating margin +448 bps YoY, core operating PBT +131%, PAT +140% — not a group-treasury artefact.** But the cautions are QoQ margin fade (Step 3), the recurrence quality of the PAT growth (Step 4 — only ~36% is durably-recurring parent core; ~28.5% is a one-off parent Other Income; ~43.1% is subsidiary durability-unresolved), the new unexplained exceptional, and rising leverage.
 
 ---
 
@@ -183,11 +183,11 @@ Only three discrete quarters are disclosed in the supplied documents (Q1FY26, Q4
 | Q2 FY26 | ND | ND | ND | ND | ND |
 | Q3 FY26 | ND | ND | ND | ND | ND |
 | Q4 FY26 | 134.14 (L286) | 21.0% | 16.94 | negative OI −0.35 (L287) | step-up |
-| Q1 FY27 | 167.06 (L286) | 19.3% | 18.33 | exceptional −1.32 (L301) | step-up on revenue, margin fade |
+| Q1 FY27 | 167.06 (L286) | 19.3% | 18.33 | exceptional −1.32 (L301); standalone OI spike +2.66 YoY (L485) | step-up on revenue, margin fade |
 
 ### QoQ diagnostics
 - **Run-rate trajectory:** Revenue **stepping up** — 116.86 -> 134.14 -> 167.06 Cr, +24.5% QoQ (deck "+25%", L441). Highest quarterly revenue in the disclosed set. Core PBT ex-OI also stepped up (16.94 -> 18.33 Cr, +8.2% QoQ).
-- **One-off distortion:** Q1FY27 carries the new Rs 1.32 Cr exceptional charge (unexplained). Q4FY26 carried a negative Other Income (−Rs 0.35 Cr). Neither materially distorts the trajectory, but the exceptional depresses reported Q1FY27 PBT by 6.3%.
+- **One-off distortion:** Q1FY27 carries the new Rs 1.32 Cr exceptional charge (unexplained) and a Rs 4.03 Cr standalone Other Income spike. Q4FY26 carried a negative Other Income (−Rs 0.35 Cr). Neither materially distorts the revenue trajectory, but the exceptional depresses reported Q1FY27 PBT by 6.3% and the OI spike flatters parent PAT (both handled in Step 4).
 - **Margin fade (A3-09 FORWARD-SIGNAL):** Operating EBITDA margin **compressed QoQ 21.0% -> 19.3% (−163 bps)** even as revenue rose +24.5%. The deck leads on "EBITDA +86% YoY" and shows the QoQ margin only as "-8%" relative in the summary table (L444). Q1FY27's 19.3% sits **below the FY27 20-22% target band** (Notion monitor #4) though above the 18% RED line. The sequential dilution likely reflects the +Rs 24.7 Cr QoQ jump in change-in-inventory build (stock accumulation ahead of shipment) and the +Rs 10 Cr QoQ rise in other expenses; the mix/utilisation story needs the concall.
 - **Latest vs H1 run-rate test (capex-commissioning):** Cannot compute an H1 average (Q2/Q3 FY26 ND). But Q1FY27 revenue Rs 167.06 Cr annualises to ~Rs 668 Cr vs FY26 actual Rs 505.86 Cr (+32% implied run-rate lift), consistent with the FY24-FY26 Dahej-SEZ capacity (combined 791 KL, deck L1224) now being absorbed. No *new* plant commissioned this quarter (Dahej-III is only board-approved).
 - **Implied Q2 FY27 base to hold trajectory:** to sustain the +24.5% QoQ momentum, Q2FY27 revenue would need >Rs 167 Cr; more realistically, holding the ~Rs 167 Cr quarterly run-rate (flat QoQ) already delivers ~+30% YoY given the Q2FY26 base. The cleaner test next quarter is **margin recovery back toward 20-22% and the H1 cash-flow statement** (Step 8C).
@@ -196,36 +196,40 @@ Only three discrete quarters are disclosed in the supplied documents (Q1FY26, Q4
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION (PAT bridge, CONSOLIDATED, YoY)
 
-Reported PAT YoY change = Rs 15.98 − 6.65 = **+Rs 9.33 Cr (+140.3%)**. First, the line-item bridge (Rs Cr; ties exactly). Note the "durability" column, which supersedes a plain recurring/non-recurring tag because ~43% of the operating uplift is subsidiary-sourced (see the parent-vs-subsidiary graft that follows):
+Reported PAT YoY change = Rs 15.98 − 6.65 = **+Rs 9.33 Cr (+140.3%)**. Two decompositions follow — a line-item bridge and an entity-plus-recurrence split — and they are reconciled to each other (the fix A5 required: the entity split must strip the same Other Income the line-item bridge already tags non-recurring).
+
+### 4A. Line-item bridge (Rs Cr; ties exactly)
 
 | Component | YoY Change (Rs Cr) | Durability tag |
 |---|---|---|
-| Operating EBITDA growth (excl OI): 17.33 -> 32.30 | **+14.97** | **SPLIT — parent piece recurring; subsidiary piece durability-UNRESOLVED (see graft below)** |
+| Operating EBITDA growth (excl OI): 17.33 -> 32.30 | **+14.97** | SPLIT — parent core recurring; subsidiary piece durability-UNRESOLVED (see 4B) |
 | Depreciation change: 8.97 -> 10.57 | −1.60 | Recurring (post-capex) |
 | Finance cost change: 0.41 -> 2.08 | −1.67 | Recurring (post-debt) |
-| Other Income change: 1.16 -> 2.78 | +1.62 | NON-RECURRING (typically) |
+| Other Income change (consol): 1.16 -> 2.78 | +1.62 | **NON-RECURRING** (treasury/FX; note standalone OI change is a larger +2.66, netted to +1.62 on consolidation) |
 | Exceptional item (new this quarter) | −1.32 | NON-RECURRING |
-| Tax change: 2.45 -> 5.13 charge (but ETR 26.9% -> 24.3%) | −2.68 | Mixed |
+| Tax change: 2.45 -> 5.13 charge (but ETR 26.9% -> 24.3%) | −2.68 | Mixed (parent current tax NIL, L502 — non-durable flatterer) |
 | **Reported PAT YoY change** | **+9.33** | — |
 
-### Parent-vs-subsidiary graft (the recurrence question, per A5 counter and A3 F2/F3/F4)
-The consolidated +Rs 9.33 Cr PAT growth is NOT uniformly recurring. Split it by entity, since the subsidiary contribution is exactly the earnings the forensics flag as durability-unresolved:
+### 4B. Entity + recurrence split of the +Rs 9.33 Cr (reconciled to 4A)
+The +Rs 9.33 Cr is NOT uniformly recurring. Split it by entity, then strip the parent's own non-recurring Other Income (the +Rs 2.66 Cr the 4A bridge already tags NON-RECURRING) so the two decompositions agree:
 
-| PAT bucket | Q1 FY26 (Rs Cr) | Q1 FY27 (Rs Cr) | YoY change (Rs Cr) | Share of +Rs 9.33 Cr growth | Durability |
-|---|---|---|---|---|---|
-| Parent (standalone, L505) | 5.13 | 10.45 | **+5.31** | **56.9%** | **Confirmably recurring at the parent this quarter** (manufacturing P&L, arm's-length) |
-| Subsidiary (consol − standalone; L307 − L505) | 1.52 | 5.54 | **+4.02** | **43.1%** | **DURABILITY-UNRESOLVED** — two foreign zero-cost distribution WOS; recurrence contingent on the F2/F3/F4 transfer-price / repeatability question |
-| **Consolidated (L307)** | **6.65** | **15.98** | **+9.33** | **100%** | mixed |
+| Bucket | Rs Cr | Share of +Rs 9.33 Cr | Durability |
+|---|---|---|---|
+| Parent standalone PAT growth (L505: 5.13 -> 10.45) | +5.31 | 56.9% | gross parent — contains a one-off OI spike, see next two rows |
+| — of which parent NON-RECURRING Other Income (L485: 1.37 -> 4.03, pre-tax) | +2.66 | 28.5% | **NON-RECURRING** (treasury/FX; 28.6% of standalone PBT) |
+| — of which parent core manufacturing/recurring (5.31 − post-tax OI ~1.97) | **≈ +3.3** | **≈ 36%** | **Durably recurring at the parent this quarter** |
+| Subsidiary (consol − standalone; L307 − L505: 1.52 -> 5.54) | +4.02 | 43.1% | **DURABILITY-UNRESOLVED** — two foreign zero-cost distribution WOS; recurrence contingent on the F2/F3/F4 transfer-price / repeatability question |
+| **Consolidated (L307)** | **+9.33** | 100% | mixed |
 
-(Check: parent +5.31 + subsidiary +4.02 = +9.33; 56.9% + 43.1% = 100%.)
+**Reconciliation / overlap note (one line, no false precision):** on a strict post-tax basis the split sums exactly — parent core +Rs 3.3 Cr + parent post-tax OI +Rs 2.0 Cr + subsidiary +Rs 4.02 Cr = +Rs 9.33 Cr (100%). Presented on the pre-tax OI figure A5 requested (+Rs 2.66 Cr), the three headline pieces (≈36% + ≈28.5% + 43.1% ≈ 107.6%) **overlap by ~Rs 0.65 Cr**, because the +Rs 2.66 Cr OI is a pre-tax delta sitting inside a post-tax parent PAT that is itself further flattered by **nil standalone current tax (L502)**; a strict pre-tax mechanical strip (5.31 − 2.66) would put parent core as low as **+Rs 2.65 Cr (~28%)**. Either basis lands the durably-recurring parent core in the **~28-36% band, materially below the earlier ~57%**.
 
-### Bridge diagnostics
-- **How much of the PAT growth is confirmably recurring?** **At most ~57% (the Rs 5.31 Cr parent standalone piece) is confirmably recurring at the parent this quarter. The remaining 43.1% (Rs 4.02 Cr) is subsidiary-sourced and durability-UNRESOLVED** — it sits in the two foreign wholly-owned distribution shells that carry ~zero materials/employees/depreciation (A3 F3-a), so its recurrence depends entirely on whether the Q1 export surge is a repeatable arm's-length channel or a one-off/transfer-priced timing effect (F2/F3/F4, top management question). Treasury did NOT manufacture the beat (Other Income is only Rs 2.78 Cr and net of the new exceptional is roughly neutral, +Rs 0.30 Cr), and the reported-over-core PAT uplift is a lower-ETR effect — but the earlier "quarter is real / 100%+ recurring" framing is **withdrawn**: only the parent ~57% is confirmably recurring; the subsidiary ~43% is provisional pending the durability answer. This is consistent with the INDETERMINATE cash-conversion flag and the subsidiary-concentration flag in the verdict block.
-- **If Other Income reverts to prior-year level:** OI is only Rs 2.78 Cr (13.2% of PBT); reverting to Rs 1.16 Cr trims PAT by ~Rs 1.2 Cr post-tax. Run-rate PAT is robust to OI reversion — the sensitivity that matters is subsidiary-earnings durability, not treasury.
+### 4C. Bridge diagnostics
+- **How much of the PAT growth is durably recurring?** **At most ~36% (≈Rs 3.3 Cr) is durably-recurring parent manufacturing core** — down from the ~57% gross parent figure once the parent's own +Rs 2.66 Cr one-off Other Income (28.5%, L485) is stripped, and remembering the parent PAT is additionally flattered by nil standalone current tax (L502, non-durable). Of the remainder, **~28.5% (Rs 2.66 Cr) is non-recurring parent Other Income** and **~43.1% (Rs 4.02 Cr) is subsidiary earnings whose durability is UNRESOLVED** (two foreign distribution shells with ~zero materials/employees/depreciation, A3 F3-a; recurrence contingent on the F2/F3/F4 transfer-price / repeatability answer). The group headline was **not treasury-manufactured at the consolidated level** (consolidated OI is only Rs 2.78 Cr), but the earlier "quarter is real / 100%+ recurring / ~57% parent-recurring" framing is **fully withdrawn**: only ~36% of the growth is durable, arm's-length, parent-manufacturing profit this quarter. This is consistent with the INDETERMINATE cash-conversion flag and the subsidiary-concentration flag.
+- **If Other Income reverts to prior-year level:** consolidated OI is only Rs 2.78 Cr; but the *standalone* OI reverting from Rs 4.03 Cr to ~Rs 1.37 Cr removes ~Rs 2.66 Cr pre-tax (~Rs 2.0 Cr post-tax) from parent run-rate PAT — a material haircut to the parent contribution, already reflected in the ~36% core figure above. The sensitivities that matter are (i) subsidiary-earnings durability and (ii) the parent OI spike not repeating.
 - **D&A / finance costs at steady state?** Depreciation is still rising with the asset base but slower than revenue (absorption improving). Finance costs are early in a *ramping* phase — with the borrowing limit raised 3.3x (F6-b) and Dahej-III debt-financed in part (F6-a), finance cost is the line most likely to scale materially over FY27-FY28. Steady-state finance cost cannot be estimated until the debt-draw schedule is disclosed (management question).
-- **Tax adjustments:** Consolidated ETR fell to 24.3% (from 26.9%). But the composition is the concern (F8-a): **standalone current tax was NIL this quarter** while a Rs 3.65 Cr deferred charge carried 100% of the standalone tax line; consolidated current tax of Rs 1.01 Cr is effectively the foreign subsidiaries' tax. Near-zero parent cash tax flatters cash flow (Notion monitor #1) but the deferred charge is future-crystallising tax = an ETR/cash-tax step-up risk. -> management question.
+- **Tax adjustments:** Consolidated ETR fell to 24.3% (from 26.9%). But the composition is the concern (F8-a): **standalone current tax was NIL this quarter** while a Rs 3.65 Cr deferred charge carried 100% of the standalone tax line; consolidated current tax of Rs 1.01 Cr is effectively the foreign subsidiaries' tax. Near-zero parent cash tax flatters parent PAT and cash flow (Notion monitor #1) — a further reason the durably-recurring parent core sits at the low end (~36% or below), not at the ~57% gross figure — but the deferred charge is future-crystallising tax = an ETR/cash-tax step-up risk. -> management question.
 
-### The subsidiary decomposition detail (A3 F2/F3/F4 — the quarter's central quality question)
+### 4D. The subsidiary decomposition detail (A3 F2/F3/F4 — the quarter's central quality question)
 Subsidiary contribution = consolidated − standalone:
 
 | Period | Subsidiary Revenue (Rs Cr) | Subsidiary PAT (Rs Cr) | Subsidiary PAT as % of consol PAT | Standalone (parent) PAT share |
@@ -235,9 +239,9 @@ Subsidiary contribution = consolidated − standalone:
 | **Q1 FY27** | **20.35** | **5.54** | **34.6%** | **65.4%** |
 | FY26 (year) | 9.56 | 2.97 | 7.1% | 92.9% |
 
-The two foreign wholly-owned subsidiaries (Tatva Chintan USA Inc., Tatva Chintan Europe B.V.) delivered **Rs 20.35 Cr revenue (up from Rs 1.48 Cr in Q4FY26) and Rs 5.54 Cr PAT = 34.6% of consolidated PAT** (vs 7.1% for full FY26), and **that same subsidiary line is 43.1% of the YoY PAT *growth*** (graft above). A3 F3-a establishes these entities carry ~zero materials, ~zero incremental employee cost and ~zero depreciation (consol cost lines are within Rs 0.01 Cr of standalone — e.g. materials 105.41 both, depreciation 10.57 vs 10.57), so the ~27% net / ~40% EBITDA margin they book is a **resale / transfer-pricing markup through distribution shells**, not independent manufacturing profit. Two triggers on F4 (>10% contribution AND a YoY jump 7.1% -> 34.6%) with **no Other Matters / component-auditor carve-out** in the review report -> the durability, transfer-price basis, and audit assurance of a third of consolidated PAT — and 43% of its growth — are the top management questions. **The parent (standalone) still supplies 65.4% of consolidated PAT — above the Notion monitor #7 >50% threshold — but the QoQ direction (87.4% -> 65.4%) is toward greater subsidiary reliance.**
+The two foreign wholly-owned subsidiaries (Tatva Chintan USA Inc., Tatva Chintan Europe B.V.) delivered **Rs 20.35 Cr revenue (up from Rs 1.48 Cr in Q4FY26) and Rs 5.54 Cr PAT = 34.6% of consolidated PAT** (vs 7.1% for full FY26), and **that same subsidiary line is 43.1% of the YoY PAT *growth*** (4B). A3 F3-a establishes these entities carry ~zero materials, ~zero incremental employee cost and ~zero depreciation (consol cost lines are within Rs 0.01 Cr of standalone — e.g. materials 105.41 both, depreciation 10.57 vs 10.57), so the ~27% net / ~40% EBITDA margin they book is a **resale / transfer-pricing markup through distribution shells**, not independent manufacturing profit. Two triggers on F4 (>10% contribution AND a YoY jump 7.1% -> 34.6%) with **no Other Matters / component-auditor carve-out** in the review report -> the durability, transfer-price basis, and audit assurance of a third of consolidated PAT — and 43% of its growth — are the top management questions. **The parent (standalone) still supplies 65.4% of consolidated PAT — above the Notion monitor #7 >50% threshold — but the QoQ direction (87.4% -> 65.4%) is toward greater subsidiary reliance, and of the parent's own contribution to *growth*, roughly half is the one-off OI spike rather than manufacturing core.**
 
-STOP cleared: bridge presented; parent-vs-subsidiary recurrence split grafted; recurrence conclusion downgraded to "~57% parent-confirmed recurring, ~43% subsidiary durability-unresolved," consistent with the flags block.
+STOP cleared: line-item bridge (4A) and entity+recurrence split (4B) reconciled; parent one-off Other Income (+Rs 2.66 Cr) and nil standalone current tax stripped; recurrence headline downgraded from ~57% to **~36% durably-recurring parent core (~28% on a strict pre-tax strip), ~28.5% one-off parent OI, ~43.1% subsidiary durability-unresolved** — the two decompositions no longer contradict.
 
 ---
 
@@ -281,7 +285,7 @@ The passed Notion thesis provided the Decision Status, entry/MoS/fair-value, mon
 |---|---|---|---|---|---|
 | Revenue | ND | ND | ND | Rs 167.06 Cr (~Rs 668 Cr annualised, +43% YoY) | ND (above FY26 +32% trend) |
 | EBITDA Margin | ND | ND | ND | 19.3% operating | ND (below 20-22% monitor, above 18% RED) |
-| PAT | ND | ND | ND | Rs 15.98 Cr (+140% YoY; ~57% parent-recurring, ~43% subsidiary durability-unresolved) | ND |
+| PAT | ND | ND | ND | Rs 15.98 Cr (+140% YoY; ~36% durably-recurring parent core, ~28.5% one-off parent OI, ~43.1% subsidiary durability-unresolved) | ND |
 | EPS | ND | ND | ND | Rs 6.83 (+140% YoY) | ND |
 | Net Debt | ND | ND | ND | ND (FY26 y/e ~Rs 111.58 Cr) | ND |
 | ROCE | ND | ND | ND | ND (FY26 ROE 7.2% deck; Notion ROCE 6.6%) | ND |
@@ -298,7 +302,7 @@ The passed Notion thesis provided the Decision Status, entry/MoS/fair-value, mon
 | 4 | EBITDA margin holding 20-22% | 20-22% | below 18% | Operating EBITDA margin **19.3%** (below band, above RED); QoQ fading from 21.0% | **AMBER** |
 | 5 | Dahej-III/Jolva groundbreaking (no 4th slip) + semiconductor first dispatch Q1FY27 | groundbreaking + dispatch | further slip / silence | Dahej-III **board-approved** (344 KL, Rs 200 Cr, 21 months, L64-68/179-182) but **no groundbreaking**; deck shows land-only since 2021 (A3-10); **semiconductor dispatch absent everywhere** | **AMBER/RED** (approval is progress; groundbreaking + dispatch not evidenced) |
 | 6 | Credit rating no downgrade below BBB+/Stable; net debt/EBITDA under ~0.65x | BBB+ held, <0.65x | downgrade / >0.65x | Rating **CRISIL BBB+/Stable & A2 held** (deck L722) GREEN on rating; **net debt/EBITDA ~1.2x >> 0.65x** RED on leverage; borrowing limit raised 3.3x to Rs 1,000 Cr | **AMBER** (rating green, leverage red) |
-| 7 | Standalone PBT > Rs 5-10 Cr AND parent profit share > 50% (from 6%) | both met | either fails | Standalone PBT **Rs 14.09 Cr** (>Rs 10 Cr) GREEN; parent PAT share **65.4%** (>50%) GREEN — but QoQ deteriorating from 87.4% | **GREEN** (both thresholds met; watch direction) |
+| 7 | Standalone PBT > Rs 5-10 Cr AND parent profit share > 50% (from 6%) | both met | either fails | Standalone PBT **Rs 14.09 Cr** (>Rs 10 Cr) GREEN, but Rs 4.03 Cr of it is one-off OI; parent PAT share **65.4%** (>50%) GREEN — QoQ deteriorating from 87.4% | **GREEN** (both thresholds met; watch direction + OI quality) |
 | 8 | Peer demand tone (Clean Science, Neogen) soft-to-recovery | recovery | soft | **No peer data in supplied documents** | **UNKNOWN** |
 
 ### 6C. Thesis-broken trigger check
@@ -338,7 +342,7 @@ Destination PE / valuation authority is Section 1B v3.3, read at run time by sta
 | Sector Cap | 35x (specialty chemicals) | Single segment "specialty chemicals" confirmed (note C4) — no reclassification | **Hold at 35x** |
 | **Hurdle Ratio recheck** | HR = (1+EPS CAGR)^3 x (Dest PE mid / Current PE) >= 1.953; Notion status **STOP** | CMP ~Rs 1,194 vs entry max Rs 121 (~9.87x); Current PE far above destination PE mid -> HR << 1.953 | **STOP holds** — nothing this quarter changes the valuation gate |
 
-**No destination-PE recompute triggered** (no pillar moved >10%). Fair values in Notion (entry Rs 97-121, MoS Rs 97, FV Rs 237) are **not stale on the basis of this quarter** — the operating beat does not reach the valuation gate at ~Rs 1,194. If anything, the strong quarter modestly *supports* the RECOVERING ROCE and margin path without changing the destination math. Leave fair values unchanged; the binding constraint remains price, not fundamentals.
+**No destination-PE recompute triggered** (no pillar moved >10%). Fair values in Notion (entry Rs 97-121, MoS Rs 97, FV Rs 237) are **not stale on the basis of this quarter** — the operating beat does not reach the valuation gate at ~Rs 1,194, and only ~36% of the PAT growth is durably-recurring parent core. If anything, the strong quarter modestly *supports* the RECOVERING ROCE and margin path without changing the destination math. Leave fair values unchanged; the binding constraint remains price, not fundamentals.
 
 STOP cleared.
 
@@ -351,8 +355,8 @@ STOP cleared.
 ### 8A-W walk
 - **Any thesis-broken condition FIRED?** No (Step 6C — both NOT FIRED; #1 pending H1). -> do not reclassify to AVOID-terminal.
 - **Actual BELOW BEAR on 2+ metrics?** No (bear cells not passed; operating quarter is strong, not sub-bear). -> no downward projection revision forced.
-- **Actual BETWEEN BEAR and BASE?** Indeterminate (projections not passed), but operationally the quarter is at/above any reasonable base trajectory (+43% revenue, +140% PAT, margin +448 bps YoY) — with the caveat that ~43% of the PAT growth is subsidiary durability-unresolved (Step 4).
-- **Actual AT or ABOVE BASE (operationally):** Yes on the P&L. Per 8A-W "AT or ABOVE BASE": *confirm or tighten the entry zone; if a pre-committed BUY gate threshold was met, state it and recommend the pre-committed action.* **The pre-committed BUY gate threshold was NOT met** — CMP ~Rs 1,194 is ~9.87x the entry-zone maximum of Rs 121, deep in the MARKET-UNLIKELY zone. No buy action is authorised.
+- **Actual BETWEEN BEAR and BASE?** Indeterminate (projections not passed), but operationally the group headline is at/above any reasonable base trajectory (+43% revenue, +140% PAT, margin +448 bps YoY) — with the material caveat that only ~36% of the PAT growth is durably-recurring parent core, ~28.5% is a one-off parent Other Income, and ~43% is subsidiary durability-unresolved (Step 4).
+- **Actual AT or ABOVE BASE (operationally):** Yes on the group P&L. Per 8A-W "AT or ABOVE BASE": *confirm or tighten the entry zone; if a pre-committed BUY gate threshold was met, state it and recommend the pre-committed action.* **The pre-committed BUY gate threshold was NOT met** — CMP ~Rs 1,194 is ~9.87x the entry-zone maximum of Rs 121, deep in the MARKET-UNLIKELY zone. No buy action is authorised.
 
 **Decision (8A-W output):**
 1. **Decision Status unchanged: WATCHLIST / AVOID (on-valuation; Hurdle STOP).** A4 flags; the human decides. No pre-committed trigger fired, so no status change.
@@ -361,7 +365,7 @@ STOP cleared.
 
 ### 8B. Add-Back / Trim trigger refinement
 - Original (Notion): no position; 2-3% ceiling only if entry zone Rs 97-121 reached intact.
-- **Revised:** unchanged in level, but **tighten the re-entry precondition** — even if price reached the zone, entry is conditional on (a) H1 FY27 OCF/EBITDA positive with receivable days not rising, and (b) the subsidiary earnings-quality question (F2/F3/F4) resolved as recurring, not one-off transfer-pricing — this matters more now that ~43% of the YoY PAT growth is subsidiary-sourced. The subsidiary-concentration and INDETERMINATE-cash items are new gating conditions this quarter.
+- **Revised:** unchanged in level, but **tighten the re-entry precondition** — even if price reached the zone, entry is conditional on (a) H1 FY27 OCF/EBITDA positive with receivable days not rising, and (b) the subsidiary earnings-quality question (F2/F3/F4) resolved as recurring, not one-off transfer-pricing — this matters more now that only ~36% of the YoY PAT growth is durably-recurring parent core and ~43% is subsidiary-sourced. The subsidiary-concentration, parent-OI-quality, and INDETERMINATE-cash items are new gating conditions this quarter.
 - Trim ladder: N/A (no position held).
 
 ### 8C. Single cleanest metric for next quarter (Q2 FY27, H1)
@@ -369,7 +373,7 @@ STOP cleared.
 - **Bull threshold:** H1 FY27 CFO positive, CFO/EBITDA >= 0.80x, receivable days flat-to-down (~86 or lower) despite +40% revenue -> cash conversion re-rates from INDETERMINATE toward growth-induced/benign; Pillar 2 multiplier can lift.
 - **Bear threshold:** H1 FY27 CFO negative on rising revenue with receivable days rising toward/above 185 -> **thesis-broken trigger #1 FIRES**, cash confirmed structural, reclassify toward AVOID-terminal.
 
-(Secondary watch metric: subsidiary PAT share and its transfer-price basis — the 34.6% contribution / 43.1% of PAT growth is confirmably recurring only if proven a repeatable arm's-length export channel; otherwise it is a quality flag.)
+(Secondary watch metric: subsidiary PAT share and its transfer-price basis — the 34.6% contribution / 43.1% of PAT growth is confirmably recurring only if proven a repeatable arm's-length export channel; otherwise it is a quality flag. Tertiary: whether the parent's Rs 4.03 Cr Other Income spike repeats.)
 
 STOP cleared.
 
@@ -381,21 +385,21 @@ Channel: **no concall was hosted/supplied this quarter (Role 5 N.A.).** Recommen
 
 | # | Question (references this quarter's numbers) | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|
-| 1 | Consolidated PAT Rs 15.98 Cr exceeded standalone Rs 10.45 Cr by Rs 5.54 Cr, so the two foreign WOS supplied **34.6% of consolidated PAT and 43.1% of the YoY PAT growth** (subsidiary PAT +Rs 4.02 Cr of the +Rs 9.33 Cr) on subsidiary revenue that jumped Rs 1.48 Cr (Q4FY26) -> Rs 20.35 Cr, while those entities carry ~zero materials/employees/depreciation. What products/customers drove this, at **what transfer price**, and is it recurring? | Central quality-of-earnings question; 43% of the profit growth is durability-unresolved | Named end-customer export orders (SDA/semiconductor), arm's-length transfer pricing, recurring | One-off inventory-in-transit markup / non-arm's-length timing | F2-a, F2-b, F3-a, A3-13 |
+| 1 | Consolidated PAT Rs 15.98 Cr exceeded standalone Rs 10.45 Cr by Rs 5.54 Cr, so the two foreign WOS supplied **34.6% of consolidated PAT and 43.1% of the YoY PAT growth** (subsidiary PAT +Rs 4.02 Cr of the +Rs 9.33 Cr; only ~36% of the growth is durably-recurring parent core) on subsidiary revenue that jumped Rs 1.48 Cr (Q4FY26) -> Rs 20.35 Cr, while those entities carry ~zero materials/employees/depreciation. What products/customers drove this, at **what transfer price**, and is it recurring? | Central quality-of-earnings question; 43% of the profit growth is durability-unresolved | Named end-customer export orders (SDA/semiconductor), arm's-length transfer pricing, recurring | One-off inventory-in-transit markup / non-arm's-length timing | F2-a, F2-b, F3-a, A3-13 |
 | 2 | The consolidated review report carries **no Other Matters / component-auditor / management-certified carve-out**. Were the two foreign WOS financials that now supply 34.6% of consolidated PAT **reviewed by component auditors, or management-certified**? | Audit assurance of a third of consol profit is undisclosed | Component-auditor reviewed | Management-certified, unreviewed | F4-a |
 | 3 | Board approved **Dahej-III (344 KL, Rs 200 Cr, ~21 months)**. Confirm the **groundbreaking date**, phased commissioning schedule, the Rs 200 Cr split between internal accruals and debt, and the **status of the semiconductor first dispatch** (a Q1FY27 catalyst absent from the deck). | SHARED CATALYST — single point of failure for Pillar 1 ROCE + Pillar 3 growth; no 4th slip | Groundbreaking dated, dispatch achieved | Land-only continues, dispatch silent again | F6-a, A3-04, A3-10 |
 | 4 | Operating EBITDA margin **compressed QoQ 21.0% -> 19.3% (−163 bps)** despite +24.5% QoQ revenue, and is below the FY27 20-22% band. Walk the QoQ margin bridge. **Does the FY27 20-22% EBITDA-margin guide still stand?** | Margin fade masked under the YoY +86% headline; guide not restated in deck | Guide reaffirmed, fade explained (mix/inventory timing) | Guide withdrawn / no answer | A3-09, A3-11 |
-| 5 | Nature of the **Rs 1.32 Cr exceptional charge** in Q1FY27 (identical in standalone and consolidated, no explanatory note), and of the historical Rs 3.59 Cr FY23 exceptional item? | Undisclosed one-off depressing reported PBT 6.3% | Clearly identified non-recurring item | Recurring cost mislabelled / evasive | F1-a, A3-01 |
-| 6 | Standalone **current tax was NIL** in Q1FY27 while the deferred-tax charge was Rs 3.65 Cr (100% of the tax line). What explains nil parent cash tax, is a deferred-tax liability building, and **when does cash tax normalise**? | Near-zero parent cash tax flatters cash flow; future ETR/cash-tax step-up risk | MAT-credit / timing, quantified normalisation | Unexplained; large DTL crystallising soon | F8-a |
+| 5 | Nature of the **Rs 1.32 Cr exceptional charge** in Q1FY27 (identical in standalone and consolidated, no explanatory note), and of the historical Rs 3.59 Cr FY23 exceptional item? Separately, what is the **Rs 4.03 Cr standalone Other Income** this quarter (28.6% of standalone PBT, up from Rs 1.37 Cr) and is it recurring? | Undisclosed one-off charge depresses PBT 6.3%; the OI spike flatters parent PAT and is ~28.5% of the PAT growth | Both clearly identified; OI recurring/operational | Recurring cost mislabelled; OI a one-off treasury/FX gain | F1-a, A3-01 |
+| 6 | Standalone **current tax was NIL** in Q1FY27 while the deferred-tax charge was Rs 3.65 Cr (100% of the tax line). What explains nil parent cash tax, is a deferred-tax liability building, and **when does cash tax normalise**? | Near-zero parent cash tax flatters parent PAT and cash flow; future ETR/cash-tax step-up risk | MAT-credit / timing, quantified normalisation | Unexplained; large DTL crystallising soon | F8-a |
 | 7 | FY26 added fresh LT debt Rs 5.01 Cr and lifted short-term borrowings +217% to Rs 115.36 Cr; finance costs rose ~5x YoY; the borrowing limit is now Rs 1,000 Cr (3.3x). What is the **FY27-FY28 debt-drawdown plan, peak net debt/EBITDA, and covenant headroom** on the BBB+ rating? | Net debt/EBITDA ~1.2x already >> 0.65x monitor; leverage funds capex | Modest, staged draw; net debt/EBITDA capped | Aggressive draw threatening rating | F6-b, A3-02 |
 | 8 | **SDA revenue was Rs 57.8 Cr in Q1FY27 (~Rs 231 Cr annualised) vs the Rs 250-300 Cr FY27 target.** Is the target intact? And reconcile the SDA/PASC share swap between the donut (SDA 34% / PASC 35%) and the product pages (SDA 35% / PASC 34%). | Growth trigger #3 run-rate below target; presentation inconsistency | Target reaffirmed with H2 ramp | Target lowered / silence | A3-08 (+ F12 note) |
 | 9 | Three promoter executives were **re-appointed to 31-Jan-2030** and the Sec 180(1)(c) Rs 1,000 Cr borrowing resolution goes to the "ensuing AGM". Confirm the **AGM date/record date** and whether the borrowing resolution signals a specific near-term funding round (debt or equity). | Governance continuity through the Dahej-III window; capital-enabling resolution | Continuity confirmed, no equity dilution planned | Funding round implies dilution | F13-a, F13-b |
 | 10 | The deck quotes **FY25 export intensity (75%)** with no FY26/Q1FY27 figure; **Continuous Flow Chemistry has been in R&D since 2018 with no commercialization date**; and paid-up capital jumped 80.35 -> 200.88 Mn FY20->FY21. Provide the current export mix, a CFC commercialization timeline, and explain the FY20->FY21 capital step. | Stale/absent forward metrics; pre-commercial margin lever undated | Current export mix + dated CFC roadmap | Vague / undated on all three | A3-03, A3-05, A3-12 (+ A3-04) |
 
 ### Top 3 by likelihood of producing thesis-changing information
-1. **Q1 (subsidiary 34.6% PAT / 43.1% of PAT growth + transfer price)** — would change the *Bull* case if the export channel is confirmed recurring and arm's-length; is the single largest quality-of-earnings swing this quarter.
+1. **Q1 (subsidiary 34.6% PAT / 43.1% of PAT growth + transfer price)** — would change the *Bull* case if the export channel is confirmed recurring and arm's-length; is the single largest quality-of-earnings swing this quarter, and with only ~36% of the growth durably-recurring parent core, the durability answer is decisive.
 2. **Q3 (Dahej-III groundbreaking + semiconductor dispatch)** — would confirm the *Bear/DELAYED* catalyst case if silence persists; the SHARED CATALYST is the whole growth-plus-ROCE thesis.
-3. **Q2 / Q6 (margin-guide reaffirmation + nil-current-tax)** — tests management *transparency*; a withdrawn margin guide or an evasive tax answer is itself diagnostic.
+3. **Q5 / Q6 (parent OI spike + nil-current-tax)** — tests whether the ~28.5% parent-OI slice and the nil-cash-tax flatter are one-offs; an evasive answer is itself diagnostic.
 
 **Channel recommendation:** IR email (all 10 verbatim) now; top 3 tabled for the ensuing AGM Q&A / next concall. Log each for cross-quarter answer-tracking (ANSWERED / PARTIAL / EVADED / NOT ADDRESSED) at Q2.
 
@@ -424,13 +428,13 @@ Channel: **no concall was hosted/supplied this quarter (Role 5 N.A.).** Recommen
 **Protocol verdict: PROCEED WITH FLAGS.** Nothing mechanically failed (both statements unmodified, GATE A2/A3 pass, ledger 100% reconciled) and no thesis-broken trigger fired, so the review proceeds. But the quarter carries material flags that propagate to the human decision:
 
 1. **Cash conversion INDETERMINATE and unresolvable at Q1** (no cash-flow statement) — per house rule this alone **caps the verdict below PROCEED, with the missing evidence named: the H1 FY27 operating cash flow / receivable-days reading due at Q2 FY27.**
-2. **PAT-growth recurrence is only partly confirmed** — of the +Rs 9.33 Cr YoY PAT growth, only ~57% (Rs 5.31 Cr, the parent standalone piece) is confirmably recurring this quarter; **~43% (Rs 4.02 Cr) is subsidiary-sourced and durability-UNRESOLVED** pending the F2/F3/F4 transfer-price / recurrence answer.
+2. **PAT-growth recurrence is thin** — of the +Rs 9.33 Cr YoY PAT growth, only **~36% (≈Rs 3.3 Cr) is durably-recurring parent manufacturing core** (~28% on a strict pre-tax OI strip); **~28.5% (Rs 2.66 Cr) is a one-off standalone Other Income spike** (L485, 28.6% of standalone PBT), further flattered by nil standalone current tax (L502); and **~43.1% (Rs 4.02 Cr) is subsidiary-sourced with durability UNRESOLVED** (F2/F3/F4).
 3. **Subsidiary earnings-quality concentration** — 34.6% of consolidated PAT (up from 7.1% FY26) and 43.1% of the YoY PAT growth from two foreign distribution-shell WOS with ~zero cost base and **no audit carve-out** (F2/F3/F4).
 4. **Rising leverage** — net debt/EBITDA ~1.2x already above the 0.65x monitor, borrowing limit raised 3.3x, finance costs +5x YoY (F6-b, A3-02).
 5. **QoQ operating-margin fade** 21.0% -> 19.3%, below the FY27 20-22% guide (not restated), masked under the YoY +86% headline (A3-09, A3-11).
 6. **Catalyst silence** on semiconductor dispatch and Continuous Flow Chemistry; Dahej-III still land-only despite board approval (A3-10).
 
-Set against strong operating fundamentals: revenue +43% YoY, operating EBITDA +86% YoY (+448 bps margin), core operating PBT +131%, PAT +140% — driven by operations, not treasury (Step 4 bridge). **But only ~57% of the YoY PAT growth is confirmably recurring at the parent; the remaining ~43% is subsidiary durability-unresolved.** The operating thesis is intact and improving at the parent, yet the valuation gate (Hurdle STOP, ~9.87x entry max), the unresolved cash-conversion pillar, and the subsidiary-concentration quality question keep the name at WATCHLIST / AVOID. Decision Status unchanged — A4 flags, human decides at the Q2 H1 cash-flow read.
+Set against a strong group headline: revenue +43% YoY, operating EBITDA +86% YoY (+448 bps margin), core operating PBT +131%, PAT +140% — not a group-treasury artefact (Step 4). **But once the parent's own one-off Other Income and nil current tax are stripped, only ~36% of the YoY PAT growth is durably-recurring parent manufacturing core; ~28.5% is a one-off parent Other Income and ~43% is subsidiary durability-unresolved.** The parent's manufacturing engine is improving but supplies a minority of the growth this quarter, and the valuation gate (Hurdle STOP, ~9.87x entry max), the unresolved cash-conversion pillar, and the earnings-quality questions keep the name at WATCHLIST / AVOID. Decision Status unchanged — A4 flags, human decides at the Q2 H1 cash-flow read.
 
 *Reviewed 2026-07-21 | Sources: BSE Reg 30/33 filing TCPCL/SEC/2026-27/00021 (17-Jul-2026) + Investor Presentation TCPCL/SEC/2026-27/00022 (17-Jul-2026); no concall transcript (Role 5 N.A.).*
 
@@ -458,18 +462,25 @@ sc_gap_pat_pct:
   - {period: "FY26", subsidiary_share_of_consol_pat_pct: 7.1}
 pat_growth_recurrence_split:
   yoy_consol_pat_growth_cr: 9.33
-  parent_standalone_cr: 5.31
-  parent_share_pct: 56.9
-  parent_durability: "confirmably recurring at parent this quarter"
+  parent_standalone_gross_cr: 5.31
+  parent_standalone_gross_share_pct: 56.9
+  parent_core_recurring_cr: 3.3
+  parent_core_share_pct: 35.8
+  parent_core_note: "tax-adjusted strip of parent OI (5.31 minus ~1.97 post-tax OI); strict pre-tax mechanical strip (5.31 minus 2.66) = ~Rs 2.65 Cr (~28%) floor"
+  parent_other_income_cr: 2.66
+  parent_other_income_share_pct: 28.5
+  parent_other_income_note: "non-recurring standalone Other Income (L485, pre-tax); 28.6% of standalone PBT; already tagged non-recurring in the 4A line-item bridge"
+  nil_standalone_current_tax_note: "standalone current tax NIL Q1FY27 (L502) further flatters parent PAT; non-durable"
   subsidiary_cr: 4.02
   subsidiary_share_pct: 43.1
   subsidiary_durability: "UNRESOLVED (contingent on F2/F3/F4 transfer-price / recurrence answer)"
+  reconciliation_note: "strict post-tax basis sums to 100% (core 3.3 + post-tax OI 2.0 + subsidiary 4.02 = 9.33); the ~36%/~28.5%/~43.1% headline uses pre-tax OI and overlaps ~Rs 0.65 Cr (~107%), explained rather than force-summed"
 questions_for_management:
-  - {q: "Subsidiary 34.6% of consol PAT and 43.1% of YoY PAT growth (+Rs 4.02 Cr) on Rs 20.35 Cr revenue vs Rs 1.48 Cr Q4FY26, zero-cost shells: drivers, transfer price, recurring?", from_finding_id: ["F2-a","F2-b","F3-a","A3-13"]}
+  - {q: "Subsidiary 34.6% of consol PAT and 43.1% of YoY PAT growth (+Rs 4.02 Cr); only ~36% of growth is durable parent core; on Rs 20.35 Cr revenue vs Rs 1.48 Cr Q4FY26, zero-cost shells: drivers, transfer price, recurring?", from_finding_id: ["F2-a","F2-b","F3-a","A3-13"]}
   - {q: "Were the two foreign WOS (34.6% of consol PAT) component-auditor reviewed or management-certified? No Other Matters carve-out.", from_finding_id: ["F4-a"]}
   - {q: "Dahej-III groundbreaking date, commissioning schedule, Rs 200 Cr accruals-vs-debt split, and semiconductor first-dispatch status?", from_finding_id: ["F6-a","A3-04","A3-10"]}
   - {q: "QoQ op EBITDA margin fade 21.0%->19.3% on +24.5% revenue; margin bridge; does FY27 20-22% guide still stand?", from_finding_id: ["A3-09","A3-11"]}
-  - {q: "Nature of the Rs 1.32 Cr Q1FY27 exceptional charge (unexplained, identical consol/standalone) and the FY23 Rs 3.59 Cr item?", from_finding_id: ["F1-a","A3-01"]}
+  - {q: "Nature of the Rs 1.32 Cr Q1FY27 exceptional charge and FY23 Rs 3.59 Cr item; and is the Rs 4.03 Cr standalone Other Income (28.6% of std PBT) recurring?", from_finding_id: ["F1-a","A3-01"]}
   - {q: "Nil standalone current tax vs Rs 3.65 Cr deferred charge: explanation, DTL build, cash-tax normalisation timing?", from_finding_id: ["F8-a"]}
   - {q: "FY27-FY28 debt drawdown, peak net debt/EBITDA, covenant headroom on BBB+ under the raised Rs 1,000 Cr limit; finance costs +5x YoY?", from_finding_id: ["F6-b","A3-02"]}
   - {q: "SDA ~Rs 231 Cr annualised vs Rs 250-300 Cr FY27 target: intact? Reconcile SDA/PASC share swap (donut vs product pages).", from_finding_id: ["A3-08"]}
@@ -489,12 +500,12 @@ monitorables:
   - {item: "ROCE clearing 8% (RED if 6-8% through FY28)", implied_date: "FY27-FY28", source_ref: "Notion monitor #2"}
 flags:
   - "INDETERMINATE cash conversion unresolvable at Q1 (no cash-flow stmt); caps verdict; H1 FY27 CFO/receivable-days is the named missing evidence"
-  - "PAT-growth recurrence split: only ~57% (Rs 5.31 Cr parent standalone) confirmably recurring; ~43% (Rs 4.02 Cr subsidiary) durability-UNRESOLVED (F2/F3/F4)"
+  - "PAT-growth recurrence split: only ~36% (Rs 3.3 Cr) durably-recurring parent core (~28% on strict pre-tax strip); ~28.5% (Rs 2.66 Cr) one-off parent Other Income; ~43.1% (Rs 4.02 Cr) subsidiary durability-UNRESOLVED (F2/F3/F4); parent PAT further flattered by nil standalone current tax (L502)"
   - "Subsidiary earnings concentration: 34.6% of consol PAT and 43.1% of YoY PAT growth from two foreign zero-cost distribution WOS, no audit carve-out"
   - "Rising leverage: net debt/EBITDA ~1.2x > 0.65x monitor; borrowing limit +3.3x to Rs 1,000 Cr; finance costs +5x YoY (F6-b,A3-02)"
   - "QoQ operating-margin fade 21.0%->19.3%, below FY27 20-22% guide (not restated), masked under YoY +86% headline (A3-09,A3-11)"
   - "Catalyst silence: semiconductor dispatch and Continuous Flow Chemistry undated; Dahej-III land-only despite board approval (A3-10)"
-  - "Unexplained Rs 1.32 Cr exceptional charge, no note; nil standalone current tax alongside deferred charge (F1-a,F8-a)"
+  - "Unexplained Rs 1.32 Cr exceptional charge, no note; Rs 4.03 Cr standalone Other Income spike (28.6% of std PBT); nil standalone current tax (F1-a,F8-a)"
   - "Notion monitor #1 internal inconsistency: receivable days stated ~185 vs its own 48->86 ruling and deck-implied ~86 FY26"
   - "Neither thesis-broken trigger fired; Decision Status unchanged WATCHLIST/AVOID; valuation gate Hurdle STOP holds (~9.87x entry max)"
 review_path: "/home/user/inflection-pipeline/runs/tatva-q1fy27/work/review_tatva_q1fy27.md"

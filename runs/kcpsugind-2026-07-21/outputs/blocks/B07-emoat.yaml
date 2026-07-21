@@ -1,0 +1,26 @@
+stage: B07-emoat
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no concall transcripts (NO-CONCALL MODE)", "no investor presentation", "no Reg 30/exchange filings (announcements folder empty)", "single annual report FY2020-21, ~5 years stale relative to run date", "no forward revenue guidance for Engineering Division or ethanol capacity expansion"]
+flags: ["FLAG-STALE-EVIDENCE", "FLAG-DIVERSIFICATION-RISK", "FLAG-NO-CONCALL"]
+em_score: 10.3                 # adjusted total, ~0-80 scale
+em_classification: "NONE"      # EXPANSION | STRENGTHENING | MODEST | NONE
+active_categories:
+  - {id: "H1", name: "Industry consolidation beneficiary (Engineering Division, IBC e-auction)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "unknown - no commissioning date disclosed"}
+  - {id: "R1", name: "Ethanol blending mandate (regulatory/policy tailwind)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "uncertain - own alcohol output fell 45.7% YoY in FY21"}
+evidence_mix: {documented: 5, claim: 4, inference: 2}
+completionist_recount: "5 documented items across 4 scored categories (A3 process innovation, E2 China+1 import substitution, H1 industry-consolidation-style capex, C2/2D export trading revenue) - within the 3-6 base rate."
+catalysts_12m:
+  - {catalyst: "Engineering Division commissioning / first disclosed segment revenue", window: "unknown - no timeline disclosed", evidence_type: "inference", anchor: "AR p.115 Note 55; AR p.32 MD&A 3(iv)"}
+capex_embedded_growth_pct: 17.4   # mechanical only; low-confidence, 86% of capex base is unrelated-business land purchase
+optionality_register:
+  - {optionality: "Engineering Division reaches commissioning and generates disclosed revenue", converting_evidence: "commissioning announcement / named Engineering segment sales figures", first_appears: "next AR segment note or exchange filing", window: "unknown", note: "OPERATOR-RELAYED (non-anchored): Eimco-KCP won a Rs 257 Cr Hyundai Engineering order 20 Jul 2026 - this is candidate conversion evidence, pending filing confirmation"}
+  - {optionality: "500 KW solar plant moves from proposal to committed capex", converting_evidence: "Board-approved capex order / commissioning certificate", first_appears: "future AR Conservation of Energy schedule", window: "1-2 years if pursued"}
+  - {optionality: "Ethanol/distillery capacity expansion tied to blending mandate committed", converting_evidence: "Board-approved distillery expansion capex / disclosed EBP supply contract", first_appears: "exchange filing or AR capex note", window: "2-4 years typical, undermined by FY21 production decline"}
+  - {optionality: "Cyclone technology absorption at Eimco-KCP converts to product/order", converting_evidence: "Technology Absorption schedule showing completed cyclone product", first_appears: "Eimco AR Technology Absorption schedule", window: "1-2 years"}
+  - {optionality: "New cane varieties KCP-13/KCP-15 show yield/adoption data", converting_evidence: "disclosed yield/quality results or licensing", first_appears: "AR R&D schedule", window: "2-3 years"}
+combined_assessment: "AVOID"
+combined_reasoning: "Deteriorating core fundamentals (Gate 0 core_score 7, 0 confirmed moats, CFO negative by FY26) combine with no meaningful emerging moat (10.3/80); the largest capital commitment found is an unrelated diversification with zero revenue evidence, not a reinforcement of the core thesis - continued erosion, not a transition-alpha setup."
+top_moat_risks: ["Unrelated diversification into engineering fabrication (Trichy, ~Rs 11.69 Cr via IBC e-auction) with zero revenue evidence and no commissioning timeline, undertaken while core Sugar segment posted a segment loss and leverage rose", "Ethanol/regulatory tailwind not captured operationally - own alcohol production fell 45.7% YoY in FY21 despite the favorable policy backdrop", "Entire scan rests on a single FY2020-21 annual report, 5+ years stale, no confirming document of whether any FY21 signal survived Gate 0's deterioration through FY26"]

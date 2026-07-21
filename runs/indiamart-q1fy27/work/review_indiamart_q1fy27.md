@@ -2,6 +2,7 @@
 
 Agent: A4 ANALYST | Protocols: Role 4 Quarterly Results Review v1.2 (FULL) + Role 5 Quarterly Concall Analysis v1.1 (PARTIAL SUBSTITUTE — no transcript, see scope note) | Model: claude-opus-4-8 | Date: 2026-07-21
 Unit discipline: results filing in INR **million** (x0.1 = Rs Cr); presentation and press release native **Rs Crore**. All analysis in Rs Cr. Every cell is a line-anchored number or the literal ND.
+Revision note (loop 1 of 2): revised in place to close four A5-adversary gaps — (1) grafted the DISCLOSED unrealized-vs-realized Other-Income composition (deck L1169/L1162/L1175) into Step 2 diag 6, Step 4, the Combined Verdict flag and Q9; (2) rebuilt both PAT bridges as fully additive walks that reconcile exactly to +18.7 / +10.1; (3) re-labelled the active-buyer −3%→−5% "2nd consecutive" framing as Notion prior-quarter memory vs document-cited −5%; (4) reconciled the enquiry −11% printed label vs −16% deck-series inconsistency. No correct prior finding weakened; verdict PROCEED WITH FLAGS and position HOLD both re-affirmed after quantifying the reversible MTM (see Combined Verdict).
 
 ---
 
@@ -170,7 +171,7 @@ Deck reconciliation: consol Operating EBITDA 146.5 ties to deck "EBITDA 146" (L1
 
 5. **Are D&A and finance costs scaling faster than revenue?** No — both **fell** YoY on both bases (asset-light model; no capex absorption gap). No ROCE-compression early warning from this vector.
 
-6. **Is Other Income concentration changing?** Consol OI +15.5% YoY and 46.1% of PBT — **treasury income remains ~46% of consolidated pre-tax profit**, a rate-sensitive tail on a Rs 3,553 Cr cash pile (F17-c). The FY-level OI (204 Cr) is not flat vs the quarterly run-rate; Q4FY26 printed **negative Rs 33.9 Cr** (mark-to-market), so quarterly OI is lumpy and can swing the reported figure materially. Strip it and the core (Step 2 core-PBT row) is the honest read.
+6. **Is Other Income concentration changing — and what is it made of?** Consol OI +15.5% YoY and 46.1% of PBT — **treasury income remains ~46% of consolidated pre-tax profit**, a rate-sensitive tail on a Rs 3,553 Cr cash pile (F17-c). **Composition is DISCLOSED, not an open question:** the deck's Cash Generation & Utilization table (page 39) splits the treasury contribution into **∆ Fair Value Gain on Treasury Investments = Rs 96 Cr (deck L1169)** — an **UNREALIZED mark-to-market** gain — and **realized Non-Operating Income = Rs 16 Cr (deck L1162, defined at footnote L1175 as realized treasury income + FDR/ICD income + gain on sale of associate stakes and other investments)**. So of the Rs 106.7 Cr consolidated Other Income, **~Rs 96 Cr (~90%) is unrealized fair-value MTM and only ~Rs 16 Cr is realized** (the small gap between 96+16=112 and the 106.7 P&L line is a cash-flow-classification-vs-P&L difference; directionally the OI is dominated by unrealized MTM). That ~Rs 96 Cr pre-tax MTM is **~41% of consolidated PBT (96/231.7)**; post-tax at the 25.7% ETR it is ~Rs 71 Cr, **~41% of the Rs 172.2 Cr "record" consolidated PAT (71/172.2)**. It is **demonstrably reversible**: the same L1169 line printed **(18), (85), 109, 89** across FY22-FY25, and Q4 FY26 consol OI was **negative Rs 33.9 Cr** (results L322). Strip it and the core (Step 2 core-PBT row) is the honest read; the reported PAT carries a large reversible unrealized tail.
 
 🛑 YoY complete on both bases.
 
@@ -194,40 +195,52 @@ Deck reconciliation: consol Operating EBITDA 146.5 ties to deck "EBITDA 146" (L1
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION (PAT bridge, Q1 FY27 vs Q1 FY26)
 
-### 4A. CONSOLIDATED PAT bridge (Rs Cr; total YoY ΔPAT = +18.7)
+### 4A. CONSOLIDATED PAT bridge (Rs Cr; ADDITIVE walk; total YoY ΔPAT = +18.7 = 172.2 − 153.5)
+
+Rebuilt as a fully additive line-item walk (each line is an actual reported delta; the walk reconciles exactly to +18.7). The prior draft mixed a pre-tax revenue-contribution line with a rate-only tax line and over-counted to ~+25.3; the stated total +18.7 was always correct and is preserved here.
 
 | Component | YoY Δ (Rs Cr) | Recurring? |
 |---|---|---|
-| Revenue growth → gross contribution (rev +42.3 at ~35% incremental op margin) | ≈ +15.0 | Recurring |
-| Operating margin change (−0.5pp on 414.4 rev) | ≈ −2.1 | Recurring |
-| Depreciation change (6.9→6.4) | +0.5 | Recurring |
-| Finance-cost change (1.0→0.5) | +0.5 | Recurring |
-| Other Income change (92.4→106.7) | +14.3 | **NON-recurring (treasury MTM/rate)** |
-| Associate-loss change ((14.1)→(14.6)) | −0.5 | Recurring drag |
-| Tax change (ETR 24.7%→25.7%) | ≈ −2.4 | Mixed |
+| Revenue from Operations (372.1→414.4) | +42.3 | Recurring |
+| Operating cost growth (employee +13.0 [161.0→174.0] + other opex +16.3 [77.6→93.9]) | −29.3 | Recurring |
+| **= Δ Operating EBITDA** (133.5→146.5) | **+13.0** | Recurring |
+| Depreciation (6.9→6.4) | +0.5 | Recurring |
+| Finance costs (1.0→0.5) | +0.5 | Recurring |
+| Other Income (92.4→106.7) — the +14.3 delta is treasury; ~Rs 96 Cr of the *level* is UNREALIZED fair-value MTM (deck L1169) | +14.3 | **NON-recurring (unrealized treasury MTM / rate)** |
+| Associate net loss (14.1→14.6) | −0.5 | Recurring drag |
+| **= Δ PBT** (203.9→231.7) | **+27.8** | — |
+| Tax (50.4→59.5; ETR 24.7%→25.7%) | −9.1 | Mixed |
 | Exceptional items | 0.0 | n/a |
-| **Reported PAT YoY change** | **+18.7** (153.5→172.2) | — |
+| **= Reported PAT YoY change** | **+18.7** (153.5→172.2) | — |
 
-### 4B. STANDALONE PAT bridge (Rs Cr; total YoY ΔPAT = +10.1)
+Arithmetic: +42.3 − 29.3 = +13.0; +13.0 +0.5 +0.5 +14.3 − 0.5 = +27.8; +27.8 − 9.1 = **+18.7** ✓ (ties exactly to 172.2 − 153.5).
+
+### 4B. STANDALONE PAT bridge (Rs Cr; ADDITIVE walk; total YoY ΔPAT = +10.1 = 176.1 − 166.0)
+
+Rebuilt additively; the prior draft over-counted to ~+16.1 by mixing a margin line with a rate-only tax line. Stated total +10.1 preserved.
 
 | Component | YoY Δ (Rs Cr) | Recurring? |
 |---|---|---|
-| Revenue growth → contribution (rev +29.6) | ≈ +13.3 | Recurring |
-| Operating margin change (+0.8pp) | ≈ +2.9 | Recurring |
-| Depreciation change (3.5→2.6) | +0.9 | Recurring |
-| Finance-cost change (0.8→0.5) | +0.3 | Recurring |
-| Other Income change (84.4→88.1) | +3.7 | **NON-recurring (treasury)** |
-| Tax change (ETR 22.7%→24.8%) | ≈ −5.0 | Mixed |
+| Revenue from Operations (346.3→375.9) | +29.6 | Recurring |
+| Operating cost growth (employee +8.6 [148.5→157.1] + other opex +6.4 [63.1→69.5]) | −15.0 | Recurring |
+| **= Δ Operating EBITDA** (134.7→149.3) | **+14.6** | Recurring |
+| Depreciation (3.5→2.6) | +0.9 | Recurring |
+| Finance costs (0.8→0.5) | +0.3 | Recurring |
+| Other Income (84.4→88.1) | +3.7 | **NON-recurring (treasury)** |
+| **= Δ PBT** (214.8→234.3) | **+19.5** | — |
+| Tax (48.8→58.2; ETR 22.7%→24.8%) | −9.4 | Mixed |
 | Exceptional items | 0.0 | n/a |
-| **Reported PAT YoY change** | **+10.1** (166.0→176.1) | — |
+| **= Reported PAT YoY change** | **+10.1** (166.0→176.1) | — |
+
+Arithmetic: +29.6 − 15.0 = +14.6; +14.6 +0.9 +0.3 +3.7 = +19.5; +19.5 − 9.4 = **+10.1** ✓ (ties exactly to 176.1 − 166.0). Standalone has no associate line; PBT = Total Income − Total Expenses.
 
 **Mandatory questions:**
-- **% of YoY PAT change from recurring core vs non-recurring:** Standalone — of +10.1, only +3.7 (37%) is Other-Income (non-recurring); the majority is recurring core (revenue + margin + D&A). Consol — of +18.7, +14.3 (76%) is Other Income; **consolidated PAT growth is materially treasury-driven**, standalone is not. This divergence is the honest frame: **the operating engine is standalone; the consolidated headline is inflated by treasury MTM.**
-- **If Other Income reverts to prior-year level:** standalone run-rate PAT falls by ~Rs 2.8 Cr (post-tax on +3.7 pre-tax) — negligible; consol falls by ~Rs 10.6 Cr (post-tax on +14.3), i.e. consol PAT growth would drop from +12.2% to ~+5%. Treasury dependence is a consolidated-headline risk, not an operating risk.
+- **% of YoY PAT change from recurring core vs non-recurring — two framings, both stated and non-contradictory:** (i) **Flow / delta framing:** consol — of the +18.7 YoY PAT rise, the Other-Income delta is +14.3 pre-tax ≈ **76% of the YoY increase** (standalone: +3.7 of +10.1 ≈ 37%). (ii) **Level / absolute framing:** the ~Rs 96 Cr **unrealized** MTM inside consol OI (deck L1169) is ~Rs 71 Cr post-tax ≈ **41% of the absolute Rs 172.2 Cr PAT**. The two describe different things: 76% describes the *change* year-on-year; 41% describes the *reversible unrealized slug inside the level*. The honest read: **consolidated PAT growth is materially treasury-driven AND the consolidated PAT level carries a large reversible unrealized-MTM tail; the operating engine is standalone (core operating PBT +12.1%), the consolidated headline is inflated by unrealized treasury MTM.**
+- **If Other Income reverts:** on the modest delta, standalone run-rate PAT falls by ~Rs 2.8 Cr (post-tax on +3.7 pre-tax) — negligible; consol falls by ~Rs 10.6 Cr (post-tax on +14.3), i.e. consol PAT growth would drop from +12.2% to ~+5%. More pointedly, if the ~Rs 96 Cr **unrealized** fair-value gain reverses toward zero (as the aggregate OI did to **−Rs 33.9 Cr** in Q4 FY26, L322), consol PBT loses up to ~Rs 96 Cr pre-tax / ~Rs 71 Cr post-tax — which is why the "record" reported PAT must be read alongside the reversible-MTM caveat. Treasury dependence is a consolidated-headline / reported-PAT-quality risk, not an operating risk.
 - **D&A/finance at steady state?** Yes; both falling, asset-light. No ramp.
 - **Tax adjustments inflating/deflating?** ETR rose on both bases (deferred-tax swing: standalone deferred tax 10.4→15.9; consol 11.5→16.5). No "earlier years" credit; ETR near statutory ~25% (A3 F8 PASS). The higher ETR is a genuine drag on YoY PAT, not a one-off.
 
-🛑 Bridge complete.
+🛑 Bridge complete; both walks additive and reconciled to the stated totals.
 
 ---
 
@@ -277,7 +290,7 @@ The passed Notion thesis gives a destination framework (operating EPS Rs 53→78
 |---|---|---|---|
 | Standalone revenue growth | ~13.6% CAGR HOLD path | +8.5% YoY | Below the aspirational base on **volume**; on-path on realization |
 | Standalone Op EBITDA margin | Sustained 33-37%+ | 39.7% | **At/above base** |
-| Consol PAT growth | Supports 30x destination | +12.2% YoY | At base (treasury-aided) |
+| Consol PAT growth | Supports 30x destination | +12.2% YoY | At base (treasury-aided; ~41% of the level is reversible unrealized MTM) |
 | Operating EPS run-rate | Rs 53→78 trajectory | Core operating PBT annualised ≈ Rs 62 op-EPS (consol core PBT 125.0 x4 x0.75 / 6.01 sh) | On the Rs 53→78 path |
 | Net cash / treasury | Rising | Rs 3,553 Cr | Above base |
 
@@ -288,15 +301,17 @@ The passed Notion thesis gives a destination framework (operating EPS Rs 53→78
 | # | Metric | Q1 FY27 value + cite | Green threshold | Red threshold | Status | Thesis-break relevance |
 |---|---|---|---|---|---|---|
 | 1 | Net paying suppliers (seq) | 218K base; **net −1,852** this qtr (deck L235); bridge −2K (L1043); 220→218 QoQ (L1012) | net adds >2,000 & base >222K | net adds <0 OR base <215K | **RED** (net adds <0 fired) | Direct — thesis-break metric #2 (base <209K 2 consec q). Base 218K, 9K above break floor |
-| 2 | Active buyers (LTM) | 41 Mn, **−5% YoY** (L1002); 2nd consecutive decline (−3%→−5%) | >42 Mn | <40 Mn any qtr | **AMBER (trending RED)** | Between floors; direction is the signal (F17-03) |
-| 3 | Unique business enquiries | 26 Mn/q, **−11% YoY** (L1004, L2024); series 31→29→28→27→26 (L2030-2034) | >28 Mn/q | <25 Mn OR −5% YoY 2Q | **RED** (−5% YoY 2Q fired) | Demand-side leading indicator deteriorating |
+| 2 | Active buyers (LTM) | 41 Mn, **−5% YoY** (deck L1002, document-cited). The **−3% prior-quarter figure and the "2nd consecutive decline" framing come from Notion Q4 FY26 memory, NOT this quarter's filings** | >42 Mn | <40 Mn any qtr | **AMBER (trending RED)** | Between floors; direction is the signal (F17-03) |
+| 3 | Unique business enquiries | **Deck's printed YoY label = −11%** (L1004 table: Q4FY26 27 → Q1FY27 26; L2024 chart caption "(11)% YoY"). **But the deck's own quarterly series 31→29→28→27→26 (L2030-2034) computes to −16% YoY** (26/31−1). **Deck-internal inconsistency (~5pp), unreconciled — see note below** | >28 Mn/q | <25 Mn OR −5% YoY 2Q | **RED** (−5% YoY 2Q fired on EITHER figure) | Demand-side leading indicator deteriorating |
 | 4 | Top 10% ARPU growth YoY | Rs 349K, **+10% YoY** (L1016) | >9% sustained | <8% for 2 consec q | **GREEN** | The pricing engine offsetting volume; only clearly-green demand metric |
 | 5 | Standalone EBITDA margin | **40%** reported / 41% adj (L1287/L1285) | 33-37% | <30% for 2 consec q | **GREEN (above band)** | Thesis-break metric #1 (EBITDA <30% 2Q) — nowhere near |
 | 6 | CFO/PAT (rolling 12m) | **≈1.41x** (FY26 1.46x; single-q 0.95x consol/0.87x SA) | >1.0x | <0.8x 2Q | **GREEN** | Cash quality intact |
 | 7 | Busy Infotech billing growth YoY | Billing 59 Cr **+10% YoY** (L1570); EBITDA margin **16%→9%** (L1566) | >25% | <20% OR margin declining | **RED** (both legs fired) | Busy SaaS catalyst decelerating (revenue +47% but off +80% FY26) |
 | 8 | Promoter shareholding & pledge | ~49% holding (L1798/1807); **pledge ND** | 48.5-49.5% & 0% pledge | <47% OR any pledge | **GREEN on level / ND on pledge** | Level in band; pledge unconfirmed (F17-01) |
-| 9 | Treasury Other Income (rolling 4Q) | FY26 204 Cr; Q1FY27 consol OI +107 Cr vs Q4FY26 −34 Cr (L1095) | Rs 180-280 Cr | seq drop >50% | **GREEN (volatile)** | In band but MTM-lumpy (F17-c) |
+| 9 | Treasury Other Income (rolling 4Q) | FY26 204 Cr; Q1FY27 consol OI +107 Cr vs Q4FY26 −34 Cr (L1095); of which ~Rs 96 Cr unrealized MTM (L1169) | Rs 180-280 Cr | seq drop >50% | **GREEN (volatile; large unrealized component)** | In band but MTM-lumpy and largely unrealized (F17-c) |
 | 10 | Auditor commentary | **Unmodified/clean** BOTH reports (filing L416, L650) | clean unmodified | qualification / KAM escalation / auditor change | **GREEN** | Clean — but note fully-unaudited board-furnished associate stub Rs 1.77 Cr (F4-01) |
+
+> **Note on item 3 (enquiries YoY — deck-internal inconsistency):** the deck labels Unique Business Enquiries YoY as **−11%** in both the operational-metrics table (L1004, Q4FY26 27 → Q1FY27 26) and the trend-chart caption (L2024). That −11% implies a Q1 FY26 base of ~29 Mn. However the chart's own printed quarterly series (L2030-2034) shows Q1 FY26 = **31** and Q1 FY27 = **26**, which computes to **−16%**. The two representations are irreconcilable from the extracts (~5pp gap, likely a rounding/labelling error in one). Both lines are cited; the RED status holds on either figure. The printed −11% is management's own label and is used as the headline; the −16% is derived from the series. Reconciliation requested of management (Q21).
 
 Scorecard tally: **3 RED (items 1, 3, 7), 1 AMBER trending red (item 2), 5 GREEN (4, 5, 6, 9, 10), 1 GREEN-with-ND (item 8 pledge).** The red cluster is entirely **demand-side volume + Busy deceleration**; the green cluster is **pricing, margin, cash, audit**. This is the exact bull/bear tension the DECISION-EVENT quarter was meant to resolve, and it resolves **split**: price/margin delivered, volume did not.
 
@@ -316,7 +331,7 @@ Scorecard tally: **3 RED (items 1, 3, 7), 1 AMBER trending red (item 2), 5 GREEN
 | ARPU expansion (realization-led growth) | Partially firing (decelerating) | Top-10% ARPU +10% YoY (L1016), re-accelerated from ~9%; blended ARPU Rs 69K +9% (L1014); standalone growth "primarily driven by improvement in realization" (press L88-89) | Volume base shrinking, so ARPU must carry all growth | **FIRING (re-accelerated)** — but now load-bearing |
 | Busy SaaS scale-up | On track | Revenue +47% YoY (L1224); billing +10% (L1570); deferred rev +44% (L248) | EBITDA margin 16%→9% (L1566); deceleration off +80% FY26 | **WEAKENED** (RED item 7) |
 | Silver subscriber recovery (guided Q1 FY27) | Delayed | — | Paying-supplier net −1,852 this quarter (L235); base 220→218 | **DELAYED / not evident** |
-| Active-buyer recovery (new risk) | New risk | — | 41 Mn −5% YoY, 2nd consecutive decline (L1002) | **WEAKENED / deteriorating** |
+| Active-buyer recovery (new risk) | New risk | — | 41 Mn −5% YoY (deck L1002); the "2nd consecutive decline" vs the Q4 FY26 −3% is from **Notion prior-quarter memory, not this quarter's filings** | **WEAKENED / deteriorating** |
 | Optionality: IndiaMART Finance Ltd (platform lending) | New (this quarter) | WOS approved (Agenda II, L26-32); financial-services industry, working-capital lending to users (Annexure B, L705-711) | Undated; Rs 5 lakh seed only; regulatory approvals pending | **NEW — initiated** (F6-01/F13-01) |
 
 🛑 6A-6D complete.
@@ -329,7 +344,7 @@ Scorecard tally: **3 RED (items 1, 3, 7), 1 AMBER trending red (item 2), 5 GREEN
 |---|---|---|---|
 | ROCE Base (0.5×ROCE+7.5, floor 9x cap 24x) | High-ROCE asset-light (destination PE 30x) | Standalone operating profit Rs 147 Cr/q (L1435), near-zero capital employed ex-treasury → ROCE remains capped-high | **HOLD** — no FTTCP re-run trigger; ROCE not the binding pillar |
 | Cash Multiplier | Elite (rolling CFO/PAT ~1.4x) | Rolling ≈1.41x retained (Step 5) | **HOLD** at elite band |
-| Growth Visibility Premium | + (EM 41/100, moat expansion underway) | Deferred revenue +16% (L1136) supports; BUT active buyers −5%/enquiries −11% pressure the volume leg | **HOLD this quarter; AT RISK** if volume decline persists 2nd quarter |
+| Growth Visibility Premium | + (EM 41/100, moat expansion underway) | Deferred revenue +16% (L1136) supports; BUT active buyers −5%/enquiries −11% (printed; −16% on series) pressure the volume leg | **HOLD this quarter; AT RISK** if volume decline persists 2nd quarter |
 | Strategic Premium | + (marketplace network effect; Busy SaaS) | Network intact (58% repeat buyers L628); Busy decelerating; **new lending optionality (F6-01) not yet creditable** | **HOLD** — do not credit unincorporated lending WOS |
 | UA Multiplier | Per Amendment 3 (if all 3 qualifiers) | Not the binding input for this name | **HOLD / n/a** |
 | Sector Cap | Internet/marketplace | No reclassification | **HOLD** |
@@ -346,10 +361,10 @@ Scorecard tally: **3 RED (items 1, 3, 7), 1 AMBER trending red (item 2), 5 GREEN
 **8A. Decision logic — HELD position:**
 - Any thesis-broken condition FIRED? **No** (Step 6C — both buffered).
 - Momentum bucket? No — this is a value/GARP HOLD.
-- Actuals below BEAR on 2+ key **financial** metrics? **No** — revenue +, margin +, PAT +, cash + all landed at/above base. The deterioration is in **operating volume KPIs**, which are monitoring reds, not P&L bear-case breaches.
+- Actuals below BEAR on 2+ key **financial** metrics? **No** — revenue +, margin +, PAT +, cash + all landed at/above base. The deterioration is in **operating volume KPIs**, which are monitoring reds, not P&L bear-case breaches. (Note: even after stripping the ~Rs 96 Cr unrealized MTM, consol core PBT +12.1% and standalone margin 40% keep the P&L at/above base — the MTM quantification sharpens the treasury-quality flag but does not push any financial metric below bear.)
 - Actuals AT or ABOVE BASE on the financial line? **Yes on margin, cash and consol PAT; below aspiration on volume-driven revenue growth.**
 
-→ **DECISION: HOLD the existing 2% position. No trim triggered.** Tighten monitoring on the volume cluster. This was the pre-flagged DECISION EVENT: the resolution is **split** — the price/margin thesis leg delivered (ARPU +10%, standalone margin 40%, cash elite, clean audit), the volume thesis leg deteriorated further (buyers −5%, enquiries −11%, supplier net adds negative, Busy decelerating). Because no pre-committed break fired and financials are at/above base, discipline says **hold and re-test next quarter**, not trim. **Thesis status: WEAKENED (unchanged from post-Q4FY26), not BROKEN.**
+→ **DECISION: HOLD the existing 2% position. No trim triggered.** Tighten monitoring on the volume cluster. This was the pre-flagged DECISION EVENT: the resolution is **split** — the price/margin thesis leg delivered (ARPU +10%, standalone margin 40%, cash elite, clean audit), the volume thesis leg deteriorated further (buyers −5%, enquiries −11% printed / −16% on series, supplier net adds negative, Busy decelerating). Because no pre-committed break fired and financials are at/above base, discipline says **hold and re-test next quarter**, not trim. **Thesis status: WEAKENED (unchanged from post-Q4FY26), not BROKEN.**
 
 **8B. Add-back / trim trigger refinement:**
 - Original trim ladder (Notion): pre-committed thesis-break = EBITDA <30% 2Q OR paying suppliers <209K 2Q.
@@ -373,13 +388,13 @@ Channel: no live concall was available to A4 (webinar recording pending). **Subm
 |---|---|---|---|---|---|
 | 1 | IB MonotaRO ceased to be an associate on 29 May 2026 (entity list L287) — was there a gain or loss on disposal/deconsolidation, what was the amount, and in which P&L line does it sit? No exceptional/disposal line appears. | A disposal with no visible P&L line is a comparability and completeness gap | Clean, immaterial, disclosed in notes | Undisclosed gain smoothing OI, or a loss buried in "other" | F15-01 |
 | 2 | On IndiaMART Finance Ltd (WOS approved this board): what is the planned capitalisation beyond the Rs 5 lakh seed, the lending product, the regulatory path (NBFC licence?), and the FY27/28 capital envelope? | New lending perimeter changes the risk model and pillar treatment | Small, ring-fenced, capital-light facilitation | Balance-sheet-heavy on-book lending using treasury | F6-01, F13-01 |
-| 3 | Active buyers −5% YoY (2nd consecutive decline, L1002) and unique enquiries −11% YoY (L1004): what is the specific cause, and what is the dated plan to return active buyers above 42 Mn? | The volume leg of the thesis; deck is silent on cause and on last quarter's ~50% SOM-saturation admission | Identified, temporary, dated recovery | Structural saturation, no plan | F16-01, F17-03, F17-04, F17-d |
+| 3 | Active buyers −5% YoY (deck L1002; the "2nd consecutive decline" vs the −3% prior quarter is from Notion Q4 FY26 memory, not the current filing) and unique enquiries −11% YoY per the deck's printed label (L1004) — though the deck's own series implies −16% (L2030-2034): what is the specific cause, and what is the dated plan to return active buyers above 42 Mn? | The volume leg of the thesis; deck is silent on cause and on last quarter's ~50% SOM-saturation admission | Identified, temporary, dated recovery | Structural saturation, no plan | F16-01, F17-03, F17-04, F17-d |
 | 4 | Paying suppliers fell a net 1,852 this quarter (L235) with the base at 218K; standalone growth is "primarily driven by improvement in realization" (press L88-89). How much ARPU runway remains before churn caps revenue, and when does net supplier addition turn positive? | Cleanest bull/bear resolver (Step 8C) | ARPU runway large, adds turn + in Q2 | Realization maxing out on a shrinking base | F1-a, F16-02, F16-05, F17-a |
 | 5 | Please disclose top-1%/top-10%/blended ARPU growth explicitly each quarter. Top-10% ARPU rose +10% (L1016) — is that price, mix, or pack-upgrade, and is +10% sustainable? | The single green demand metric now carries the whole growth story | Broad-based, sustainable pricing power | Narrow mix effect at the top, not repeatable | F17-a |
 | 6 | The press headline features standalone EBITDA margin 40% while consolidated margin is 35% (T4). What is the trajectory to close the ~5pp gap, i.e. Busy's path to group-margin accretion? | Selective framing masks subsidiary drag | Busy scaling to margin accretion on a timeline | Persistent structural dilution | F16-a |
 | 7 | Accounting-software segment result worsened from −Rs 0.6 Cr to −Rs 2.7 Cr (L381) and Busy's EBITDA margin fell 16%→9% (L1566) on +47% revenue. Is this deliberate investment or margin erosion, and when does Busy EBITDA margin recover? | Busy is a named catalyst now RED (item 7) | Front-loaded growth investment, margin recovers | Competitive/cost erosion | F12-01, F16-03, F17-b |
 | 8 | Busy collections (Rs 59 Cr) far exceed Busy revenue (Rs 36 Cr) with deferred revenue +44% (L248): what is driving the collections-over-revenue gap and the deferred-revenue build? | Tests billing quality vs lumpiness | Strong forward bookings | Billing pull-forward / one-time | F17-b, F12-02 |
-| 9 | Consolidated Other Income was +Rs 107 Cr this quarter vs −Rs 34 Cr last quarter (L1095), ~46% of consolidated PBT. Please break down the composition (interest vs dividend vs fair-value MTM) and the rate sensitivity on the Rs 3,553 Cr treasury. | ~46% of consol PBT is a rate-sensitive tail | Mostly stable interest income | Largely MTM, rate-exposed and volatile | F17-c, F2-01 |
+| 9 | The deck already discloses that of the Rs 106.7 Cr consolidated Other Income, ~Rs 96 Cr is the **unrealized** ∆ Fair Value Gain on Treasury Investments (L1169) and only ~Rs 16 Cr is realized non-operating income (L1162, footnote L1175). Confirm the realized-vs-unrealized split and the **rate/mark sensitivity**: how much of the Rs 3,553 Cr treasury sits in mark-to-market instruments, and what is the P&L fair-value impact of a +/−100bps yield move? | ~41% of the "record" consol PAT is post-tax unrealized MTM that reversed to −Rs 34 Cr as recently as Q4 FY26 | Small MTM book; income largely realized/accrual and stable | Large MTM book; reported PAT swings with yields | F17-c, F2-01 |
 | 10 | Consolidated PAT (Rs 172 Cr) is now only 2.2% below standalone PAT (Rs 176 Cr), narrowed from 7.5% a year ago (L341/L633). Is the narrowing a structural improvement in subsidiaries/associates, or treasury-driven noise? | S-vs-C gap is a first-class quality metric | Real subsidiary turnaround (Busy PAT +) | Treasury timing flattering the gap | F2-01 |
 | 11 | ~12.2% of consolidated PAT is not audited by B S R, including a fully unaudited board-furnished associate stub of Rs 1.77 Cr (MonotaRO, lines 215-227). What controls covered that figure and will it be audited at year-end? | Audit-scope quality on an otherwise clean opinion | Immaterial, will be fully audited | Recurring reliance on unaudited figures | F4-01 |
 | 12 | The Labour Codes note (consol N5/std N6, L436) defers an unquantified employee-cost impact to remaining-state rule notification. What is the estimated remaining charge vs the FY26 charge already taken? | Future margin step-down, unquantified | Small, already largely provided | Material future EBITDA hit | F6-02, F7-01 |
@@ -391,13 +406,14 @@ Channel: no live concall was available to A4 (webinar recording pending). **Subm
 | 18 | Standalone CFO/PAT was 0.87x this quarter and consolidated CFO fell −44% QoQ (T8). Confirm this is seasonal (Q1 weakest collections) and not a structural conversion change. | Cash-quality integrity | Seasonal, rolling 1.4x intact | Structural conversion slippage | F16-c |
 | 19 | The release states results are "Audited" (L23-24) rather than the usual Q1 limited review, yet carries no auditor commentary. Confirm full audit scope for Q1 and the reason for the earlier-than-usual full audit. | Disclosure-quality/consistency check | Voluntary full audit, positive | Wording overstates review level | F17-d |
 | 20 | The deck issues no dated guidance or recovery milestone anywhere despite two demand KPIs declining (Strategic Outlook slide 27 is purely qualitative). Will management commit to a dated buyer/enquiry recovery target? | Guidance silence amid deterioration is itself a signal | Commits to a dated target | Continued refusal to guide | F6-01(pres) |
+| 21 | Unique Business Enquiries YoY is labelled **−11%** in the deck (operational-metrics table L1004 and chart caption L2024) but the deck's own quarterly series (31→29→28→27→26, L2030-2034) computes to **−16%** (Q1FY26 31 → Q1FY27 26). Which figure is correct, and what is the actual Q1 FY26 enquiry base? | Deck-internal data inconsistency on a monitored demand KPI; determines the true rate of decline | Simple rounding/labelling; true decline is ~−11% | Underlying decline is steeper (−16%) and the headline understates it | F16-01, F17-03 |
 
 **Top-3 (ranked by likelihood of producing thesis-changing information):**
 1. **Q4 — paying-supplier net adds / ARPU runway** (F1-a/F17-a): the answer directly resolves the realization-only bull vs eroding-base bear and feeds Step 8C.
 2. **Q3 — cause of active-buyer/enquiry decline + dated recovery** (F16-01/F17-03): a credible dated plan lifts the Growth Visibility Premium; a non-answer confirms saturation (bear).
 3. **Q2 — IndiaMART Finance Ltd lending strategy** (F6-01/F13-01): tests capital allocation and whether the treasury will be put at credit risk; a governance/transparency probe.
 
-**Channel recommendation:** IR email with all 20 questions verbatim; submit Top-3 to the pending 21 Jul webinar Q&A if the window is open. Log answer-status next quarter (first entry in this ticker's promise-vs-delivery tracker).
+**Channel recommendation:** IR email with all 21 questions verbatim; submit Top-3 to the pending 21 Jul webinar Q&A if the window is open. Log answer-status next quarter (first entry in this ticker's promise-vs-delivery tracker).
 
 🛑 Questions complete; all forward/ambiguous findings mapped.
 
@@ -423,37 +439,39 @@ Channel: no live concall was available to A4 (webinar recording pending). **Subm
 | Promoter pledge | **NOT disclosed** | YES | Monitoring item 8 unresolved (F17-01) |
 | Any dated guidance | **NOT provided** | YES | Guidance silence amid deterioration (F17-04) |
 | Busy EBITDA YoY% | **Omitted** from Busy overview box (deck L256) | YES | Selective omission where numbers fell (F16-03) |
+| Realized-vs-unrealized OI split | **Disclosed in cash-gen table but NOT in the P&L/highlights** | YES | ~Rs 96 Cr of consol OI is unrealized MTM, buried in slide 39 not headlined (F17-c) |
 
 ### R5-Step 7 — Narrative vs filing reconciliation
 | Narrative claim | Filing/deck evidence | Reconciliation |
 |---|---|---|
 | "strong cash generation" (CEO L116) | CFO 163 consol, +2% YoY, single-q CFO/PAT 0.95x; rolling 1.41x | **PARTIALLY CONFIRMED** — true on rolling basis; single-quarter conversion sub-unity and QoQ −44% not acknowledged |
-| "sustainable growth" (L112) | Revenue +11% consol / +9% standalone, but buyers −5%, enquiries −11% | **PARTIALLY CONFIRMED** — revenue yes; the volume base is contracting, unaddressed |
+| "sustainable growth" (L112) | Revenue +11% consol / +9% standalone, but buyers −5%, enquiries −11% (printed; −16% on series) | **PARTIALLY CONFIRMED** — revenue yes; the volume base is contracting, unaddressed |
 | Headline "EBITDA margin of 40%" (L57/L71) | That is the **standalone** figure; consolidated is 35% (T4) | **CONFIRMED but selectively framed** (F16-a) |
+| "record" profitability (headline) | Consol PAT 172.2 record, but ~Rs 96 Cr / ~41% post-tax is unrealized treasury MTM (L1169) | **CONFIRMED yet quality-caveated** — the record level leans on a reversible unrealized gain |
 | "realization from paying suppliers" drove growth (L88-89) | ARPU +9% blended / top-10% +10%; supplier base flat-to-down | **CONFIRMED** — and confirms the growth is now realization-only |
 
 **Peer concall cross-check:** No analysed peer in the marketplace/SaaS set reported a concall within ±4 weeks that was supplied to this run — **stated explicitly as not available.**
 
 ### R5-Step 8 — Net concall (narrative) impact
-No transcript → cannot move the credibility ratio. The narrative **maintains** the management tone (confident, no guidance) while the deck's presentation choices (signed-decline hidden in highlight boxes F16-01, supplier attrition in fine print F16-02, Busy YoY omitted F16-03, headlined standalone margin F16-a) constitute a **presentation-optimism vs numbers-deterioration gap** — a soft governance/credibility negative to log, not yet a graded downgrade. **Net Role-5 (partial) impact on thesis: WEAKENED-leaning-neutral; defer graded credibility assessment to the webinar transcript next cycle.**
+No transcript → cannot move the credibility ratio. The narrative **maintains** the management tone (confident, no guidance) while the deck's presentation choices (signed-decline hidden in highlight boxes F16-01, supplier attrition in fine print F16-02, Busy YoY omitted F16-03, headlined standalone margin F16-a, and the ~Rs 96 Cr unrealized-MTM composition parked in the slide-39 cash-gen table rather than the P&L highlights F17-c) constitute a **presentation-optimism vs numbers-deterioration gap** — a soft governance/credibility negative to log, not yet a graded downgrade. **Net Role-5 (partial) impact on thesis: WEAKENED-leaning-neutral; defer graded credibility assessment to the webinar transcript next cycle.**
 
 ---
 
 # SECTION C — COMBINED VERDICT
 
-**Filing-derived signals (Role 4):** Revenue +11%/+9% (consol/SA); standalone operating EBITDA margin **40% (above band, +80bps YoY)**; core operating PBT **+12.1% both bases** (cleaner than headline PAT, which standalone is tax-dragged to +6%); consol PAT +12% but **76% of the YoY PAT increase is treasury Other Income**; rolling CFO/PAT **≈1.41x elite**; net cash **Rs 3,553 Cr**; **clean unmodified audit** both bases; S-vs-C PAT gap narrowed to **2.2%**. Against this: **buyers −5%, enquiries −11%, paying-supplier net −1,852, Busy EBITDA margin 16%→9%** — three RED monitoring items plus one AMBER, all demand-volume/subsidiary.
+**Filing-derived signals (Role 4):** Revenue +11%/+9% (consol/SA); standalone operating EBITDA margin **40% (above band, +80bps YoY)**; core operating PBT **+12.1% both bases** (cleaner than headline PAT, which standalone is tax-dragged to +6%); consol PAT +12% but **76% of the YoY PAT *increase* is treasury Other Income, and ~41% of the absolute Rs 172.2 Cr "record" PAT is post-tax UNREALIZED fair-value MTM** (deck L1169: ~Rs 96 Cr unrealized of the Rs 106.7 Cr consol OI; only ~Rs 16 Cr realized, L1162/L1175), **demonstrably reversible** (Q4 FY26 consol OI −Rs 33.9 Cr, L322; prior FV swings (18),(85),109,89 at L1169); rolling CFO/PAT **≈1.41x elite**; net cash **Rs 3,553 Cr**; **clean unmodified audit** both bases; S-vs-C PAT gap narrowed to **2.2%**. Against this: **buyers −5%, enquiries −11% printed / −16% on the deck's own series, paying-supplier net −1,852, Busy EBITDA margin 16%→9%** — three RED monitoring items plus one AMBER, all demand-volume/subsidiary.
 
-**Concall-derived signals (Role 5 partial):** No transcript; narrative is confident and **unquantified**; presentation reframes declines optimistically; silent on buyer-decline cause, SOM saturation, pledge, and guidance. Start promise-vs-delivery tracking next quarter.
+**Concall-derived signals (Role 5 partial):** No transcript; narrative is confident and **unquantified**; presentation reframes declines optimistically and parks the unrealized-MTM composition in a footnoted cash-gen table; silent on buyer-decline cause, SOM saturation, pledge, and guidance. Start promise-vs-delivery tracking next quarter.
 
-**Reconciliation between the two:** Filing numbers **win** where they meet the optimistic framing — the growth is realization-led on a **shrinking volume base**, and the consolidated PAT headline is treasury-flattered. The operating quality (margin, cash, audit, ARPU) is genuinely strong; the demand engine is genuinely weakening. Both are true simultaneously.
+**Reconciliation between the two:** Filing numbers **win** where they meet the optimistic framing — the growth is realization-led on a **shrinking volume base**, and the consolidated PAT headline is treasury-flattered by a large **unrealized** MTM slug. The operating quality (margin, cash, audit, ARPU) is genuinely strong; the demand engine is genuinely weakening; the "record" PAT is genuine but ~41% reversible-unrealized. All are true simultaneously.
 
 **Cash conversion classification:** **STRUCTURAL** (negative-WC subscription model; rolling 1.41x). Not INDETERMINATE — the house cap does not apply; missing evidence (full audited Q1 cash-flow statement, a Q2 item) is named.
 
 **Thesis-break conditions:** **NEITHER met nor approaching** (EBITDA 40%/35% >> 30%; paying suppliers 218K, 9K above the 209K floor). FLAG only.
 
-**Protocol verdict: PROCEED WITH FLAGS.** Financials clean and at/above base; audit unmodified; cash structural. Flags (surfaced, human decides): (1) demand-volume deterioration — 3 RED monitoring items; (2) Busy SaaS catalyst decelerating; (3) new lending WOS execution/regulatory/capital risk (F6-01); (4) ~12.2% of consol PAT unaudited-by-BSR incl. a fully board-furnished associate stub (F4-01); (5) MonotaRO exit with no visible disposal P&L line (F15-01); (6) MD/CEO signature ~2h50m before board conclusion (F14-01); (7) promoter pledge undisclosed (F17-01); (8) consolidated PAT ~76% treasury-driven this quarter.
+**Protocol verdict: PROCEED WITH FLAGS.** Financials clean and at/above base; audit unmodified; cash structural. **Verdict and position UNCHANGED after quantifying the reversible MTM:** stripping the ~Rs 96 Cr unrealized gain still leaves consol core PBT +12.1%, standalone margin 40% and elite cash — no financial metric drops below bear — so PROCEED WITH FLAGS and HOLD both stand; the MTM quantification does not lower the verdict, it **sharpens** the treasury-quality flag. Flags (surfaced, human decides): (1) demand-volume deterioration — 3 RED monitoring items; (2) Busy SaaS catalyst decelerating; (3) new lending WOS execution/regulatory/capital risk (F6-01); (4) ~12.2% of consol PAT unaudited-by-BSR incl. a fully board-furnished associate stub (F4-01); (5) MonotaRO exit with no visible disposal P&L line (F15-01); (6) MD/CEO signature ~2h50m before board conclusion (F14-01); (7) promoter pledge undisclosed (F17-01); (8) consolidated PAT ~76% treasury-driven on the YoY delta AND ~41% of the absolute "record" PAT is post-tax reversible UNREALIZED fair-value MTM (~Rs 96 Cr, deck L1169) that swung negative as recently as Q4 FY26; (9) deck-internal inconsistency — Unique Business Enquiries labelled −11% YoY (L1004/L2024) but its own quarterly series 31→26 (L2030-2034) computes to −16%, unreconciled.
 
-**Position decision (8A, HELD verified):** **HOLD the 2% position — no trim, no add.** Thesis status **WEAKENED (unchanged), not BROKEN.** The DECISION-EVENT quarter resolves **split**: price/margin/cash delivered, volume did not; discipline holds pending Q2 re-test. Probability re-weighting **not triggered** (financials not below bear); Q1 FY27 is the **first** quarter of a potential 2-quarter volume watch.
+**Position decision (8A, HELD verified):** **HOLD the 2% position — no trim, no add.** Thesis status **WEAKENED (unchanged), not BROKEN.** The DECISION-EVENT quarter resolves **split**: price/margin/cash delivered, volume did not; discipline holds pending Q2 re-test. Probability re-weighting **not triggered** (financials not below bear, even ex-MTM); Q1 FY27 is the **first** quarter of a potential 2-quarter volume watch.
 
 **Watchpoints for next quarter (Q2 FY27):**
 
@@ -462,15 +480,16 @@ No transcript → cannot move the credibility ratio. The narrative **maintains**
 | Item | Implied date | Source ref |
 |---|---|---|
 | Standalone paying-supplier net sequential additions (single cleanest metric) | Q2 FY27 results | Step 8C; deck L235/L1012 |
-| Active buyers vs 40 Mn floor; unique enquiries vs 25 Mn floor | Q2 FY27 | Monitoring items 2, 3 |
+| Active buyers vs 40 Mn floor; unique enquiries vs 25 Mn floor (and reconcile −11% vs −16% deck labels) | Q2 FY27 | Monitoring items 2, 3; Q21 |
 | Busy Infotech billing growth re-acceleration & EBITDA-margin recovery | Q2 FY27 | Monitoring item 7; F12-01 |
 | IndiaMART Finance Ltd incorporation + first capitalisation beyond Rs 5 lakh seed | On MCA/regulatory approval (undated) | Agenda II L26-32; Annexure B L690-726 (F6-01/F13-01) |
 | Labour Codes remaining-state rule notification → employee-cost recognition | Undated, on notification | Consol N5 L436 / Std N6 L671 (F6-02/F7-01) |
 | ~Rs 340 Cr FY26 dividend payable settlement (Q2 treasury draw) | Q2 FY27 | Deck L1142/L1179 (F11-01) |
 | Full audited H1 FY27 cash-flow statement (confirms structural conversion) | Q2 FY27 filing (Reg 33) | Step 5 data-availability |
+| Treasury fair-value MTM reversal risk (~Rs 96 Cr unrealized in Q1 OI) | Q2 FY27 (yield-sensitive) | Deck L1169; Step 2 diag 6 (F17-c) |
 | Q1 FY27 earnings webinar recording (Role 5 transcript; start promise-vs-delivery) | Post 21 Jul 2026 | Press release L160-170 |
 | Promoter pledge 0% confirmation | Q2 shareholding disclosure | F17-01 |
-| Answer-status of the 20 management questions | Q2 FY27 review | Step 8.5 |
+| Answer-status of the 21 management questions | Q2 FY27 review | Step 8.5 |
 
 *Reviewed 2026-07-21 | Sources: results filing (BSE, 16pp, INR mn), investor presentation (69pp), results press release (5pp) | Decision Status framed against: HELD 2% | Verdict: PROCEED WITH FLAGS | Position: HOLD*
 
@@ -501,13 +520,13 @@ sc_gap_pat_pct:
 questions_for_management:
   - {q: "MonotaRO disposal gain/loss and its P&L location", from_finding_id: "F15-01"}
   - {q: "IndiaMART Finance Ltd capitalisation, product, regulatory path, capital envelope", from_finding_id: "F6-01,F13-01"}
-  - {q: "Cause of active-buyer -5% / enquiry -11% decline and dated recovery plan", from_finding_id: "F16-01,F17-03,F17-04,F17-d"}
+  - {q: "Cause of active-buyer -5% (L1002) / enquiry -11% decline and dated recovery plan", from_finding_id: "F16-01,F17-03,F17-04,F17-d"}
   - {q: "Paying-supplier net -1,852; ARPU runway; when do net adds turn positive", from_finding_id: "F1-a,F16-02,F16-05,F17-a"}
   - {q: "Disclose top-1/10/blended ARPU growth; is top-10% +10% sustainable", from_finding_id: "F17-a"}
   - {q: "Path to close consolidated (35%) vs standalone (40%) EBITDA-margin gap", from_finding_id: "F16-a"}
   - {q: "Accounting-software/Busy widening losses and 16%->9% EBITDA-margin recovery", from_finding_id: "F12-01,F16-03,F17-b"}
   - {q: "Busy collections (59) >> revenue (36) and deferred-revenue +44% driver", from_finding_id: "F17-b,F12-02"}
-  - {q: "Composition and rate-sensitivity of ~Rs 107 Cr consol Other Income (~46% of PBT)", from_finding_id: "F17-c,F2-01"}
+  - {q: "Confirm realized-vs-unrealized OI split (deck L1169: ~Rs 96 Cr of Rs 106.7 Cr consol OI is unrealized MTM; ~Rs 16 Cr realized L1162/L1175) and treasury rate/mark sensitivity", from_finding_id: "F17-c,F2-01"}
   - {q: "S-vs-C PAT gap narrowed 7.5%->2.2% - structural or treasury noise", from_finding_id: "F2-01"}
   - {q: "~12.2% of consol PAT unaudited-by-BSR incl. board-furnished MonotaRO stub - controls and year-end audit", from_finding_id: "F4-01"}
   - {q: "Quantify remaining-state Labour Code cost vs FY26 charge taken", from_finding_id: "F6-02,F7-01"}
@@ -519,27 +538,30 @@ questions_for_management:
   - {q: "Standalone CFO/PAT 0.87x and CFO -44% QoQ - seasonal or structural", from_finding_id: "F16-c"}
   - {q: "'Audited' (not limited review) Q1 wording with no auditor commentary - confirm scope", from_finding_id: "F17-d"}
   - {q: "Commit to a dated buyer/enquiry recovery target given no guidance amid decline", from_finding_id: "F6-01p"}
+  - {q: "Reconcile Unique Business Enquiries -11% printed label (L1004/L2024) vs -16% implied by the deck's own series 31->26 (L2030-2034); what is the true Q1 FY26 base", from_finding_id: "F16-01,F17-03"}
 monitorables:
   - {item: "Standalone paying-supplier net sequential additions (single cleanest metric)", implied_date: "Q2 FY27", source_ref: "deck L235/L1012; Step 8C"}
-  - {item: "Active buyers vs 40Mn floor; unique enquiries vs 25Mn floor", implied_date: "Q2 FY27", source_ref: "monitoring items 2,3"}
+  - {item: "Active buyers vs 40Mn floor; unique enquiries vs 25Mn floor; reconcile -11% vs -16% deck labels", implied_date: "Q2 FY27", source_ref: "monitoring items 2,3; Q21"}
   - {item: "Busy Infotech billing growth & EBITDA-margin recovery", implied_date: "Q2 FY27", source_ref: "F12-01; deck L1566/L1570"}
   - {item: "IndiaMART Finance Ltd incorporation + first capitalisation", implied_date: "undated - on MCA/regulatory approval", source_ref: "Agenda II L26-32; Annexure B L690-726"}
   - {item: "Labour Codes remaining-state cost recognition", implied_date: "undated - on rule notification", source_ref: "Consol N5 L436 / Std N6 L671"}
   - {item: "~Rs 340 Cr FY26 dividend payable settlement (Q2 treasury draw)", implied_date: "Q2 FY27", source_ref: "deck L1142/L1179"}
   - {item: "Full audited H1 FY27 cash-flow statement", implied_date: "Q2 FY27 filing", source_ref: "Reg 33; Step 5"}
+  - {item: "Treasury fair-value MTM reversal risk (~Rs 96 Cr unrealized in Q1 consol OI)", implied_date: "Q2 FY27 (yield-sensitive)", source_ref: "deck L1169; Step 2 diag 6"}
   - {item: "Q1 FY27 earnings webinar recording (start promise-vs-delivery log)", implied_date: "post 2026-07-21", source_ref: "press release L160-170"}
   - {item: "Promoter pledge 0% confirmation", implied_date: "Q2 shareholding disclosure", source_ref: "F17-01"}
 flags:
-  - "Demand-volume deterioration: 3 RED monitoring items (paying-supplier net adds, unique enquiries, Busy billing) + 1 AMBER (active buyers -5%, 2nd consecutive decline)"
+  - "Demand-volume deterioration: 3 RED monitoring items (paying-supplier net adds, unique enquiries, Busy billing) + 1 AMBER (active buyers -5% YoY per deck L1002; the '2nd consecutive decline' vs -3% is Notion Q4 FY26 prior-quarter memory, NOT this quarter's filings)"
   - "Growth now realization-only: paying-supplier base shrinking (220K->218K, net -1,852) while ARPU carries all growth"
-  - "Consolidated PAT ~76% treasury-driven this quarter; standalone core operating PBT +12.1% is the honest read"
+  - "Consolidated PAT ~76% treasury-driven on the YoY delta; ~41% of the absolute Rs 172.2 Cr 'record' PAT is post-tax UNREALIZED fair-value MTM (~Rs 96 Cr of Rs 106.7 Cr consol OI, deck L1169; only ~Rs 16 Cr realized L1162/L1175), demonstrably reversible (Q4 FY26 consol OI -Rs 33.9 Cr, L322); standalone core operating PBT +12.1% is the honest read. Verdict/position unchanged after quantifying - P&L still at/above base ex-MTM"
+  - "Deck-internal inconsistency: Unique Business Enquiries labelled -11% YoY (L1004/L2024) but the deck's own quarterly series 31->26 (L2030-2034) computes to -16%; unreconciled, RED holds on either, management question raised (Q21)"
   - "New lending WOS IndiaMART Finance Ltd approved - execution/regulatory/capital risk; do not credit to pillars yet"
   - "~12.2% of consolidated PAT not audited by B S R, incl. fully board-furnished associate stub Rs 1.77 Cr (MonotaRO)"
   - "MonotaRO associate exit 29 May 2026 with no visible disposal P&L line"
   - "Governance: MD/CEO signed both results ~2h50m before the board meeting approving them concluded (15:15)"
   - "Promoter pledge undisclosed - monitoring item 8 cannot be cleared"
   - "Neither pre-committed thesis-break condition met or approaching (EBITDA 40%/35% >> 30%; suppliers 218K vs 209K floor)"
-  - "Presentation reframes declines optimistically (signed decline in highlight boxes, attrition in fine print, Busy YoY omitted)"
+  - "Presentation reframes declines optimistically (signed decline in highlight boxes, attrition in fine print, Busy YoY omitted, unrealized-MTM composition parked in slide-39 cash-gen table)"
   - "No concall transcript this quarter; Role 5 run as partial substitute on press-release narrative only"
 review_path: "/home/user/inflection-pipeline/runs/indiamart-q1fy27/work/review_indiamart_q1fy27.md"
 ```

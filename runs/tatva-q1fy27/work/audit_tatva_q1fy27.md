@@ -1,93 +1,103 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — TATVA CHINTAN (TATVA), Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — TATVA, Q1 FY27 (RE-AUDIT, post one loop)
 
-Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Fresh context (A4 review + A1 extracts + A2 ledgers only).
-Scope this run: NEW Role 5 concall content (Section B), Combined Verdict (Section C), and the rewritten narrative, with a full re-run of coverage and arithmetic across the whole file. Independent re-derivation; A4/A3 cites checked, not trusted.
-
----
-
-## 1. COVERAGE AUDIT
-
-Fresh enumeration by manual line-walk of `extract_concall_tatva_q1fy27.txt` (transcript body lines 21-138), diffed against `ledger_concall_tatva_q1fy27.md`. Results + presentation ledgers re-confirmed for continued citation (Section A audited COMPLETE in a prior run; re-checked for orphans only).
-
-| Category | A2 count | My fresh count | Basis of my count | Orphan rows | Status |
-|---|---|---|---|---|---|
-| Concall participants | 13 | 13 | 8 named analysts (Shlok Patel, "part", Raman K V, Nirani Gopani, Gor of Paul, Sam Bay Desai, Rohit, Ketan Chedda) + MD + CFO + IR(Ajay) + Host(Mr Mo) + Operator(Anushka) | none | PASS |
-| Concall turns | 118 | 118 | lines 21-138 inclusive = 138-21+1 = 118; zero blank lines in range | none | PASS |
-| Concall questions | 32 | 32 | 2+1+8+5+2+2+8+4 across the 8 analysts (Q1-Q32) | none | PASS |
-| Concall mgmt numbers | 56 | 56 | N1-N56 spot-verified at cited lines (headline block L22; guidance L41-133); 52 MGMT/IR + 4 ANALYST_CITED | none | PASS |
-| Concall fwd-commit + hedge phrases | 34 (23 FC + 11 H) | 34 | FC1-FC23, H1-H11 at cited lines | none | PASS |
-| Concall zero-standing | 5 | 5 | Z1 order book (L55), Z2 Li-battery (L89), Z3 semi capex (L68), Z4 flame-retardant (L127/129), Z5 contract mfg (L117) | none | PASS |
-| Results ledger rows (Section A) | 13 notes / 65 line items / etc. | re-confirmed cited | Section A preamble L15-20, Step 1A/1B, Step 4 | none | PASS (prior COMPLETE) |
-| Presentation ledger rows (Section A) | 36 slides / 64 line items / 6 footnotes | re-confirmed cited | Section A preamble; deck cross-checks Step 1C, Step 5 | none | PASS (prior COMPLETE) |
-
-**A3 concall finding-id coverage (A3-F01..A3-F18):** all 18 declared incorporated (Section B L535) AND each cited/reviewed in Section B/C body:
-F01 pharma ramp (L924/L1037); F02 green-field financing (L927/L1024); F03 ESS back-load (L630/L925); F04 semi ≥Q4CY28 (L932/L1039); F05 margin off 19.3% (L829/L1041/L1052); F06 asset-turn 3.0→1.5x (L723/L902/L1050); F07 no-risk-named (L698/L933); F08 China subsidy (L712/L931/L1042); F09 replicable moat (L719/L905/L1051); F10 pass-through lag (L707/L778); F11 informal offtake (L721/L928); F12 monoglime withdrawn (L724/L930/L1053); F13 ESS supply-fragile (L753/L925); F14 Dahej-III naming (L649/L872/L1035); F15 subsidiary silence (L673/L789/L1049); F16 exceptional/tax/S-vs-C silence (L677/L790/L1032); F17 cash/leverage silence (L679/L793/L1048/L1055); F18 SDA rupee absent (L601/L680/L795).
-
-**No orphan rows** (every ledger row cited or reviewed-no-finding). **Nothing found in my fresh pass that the ledger lacks.** COVERAGE = PASS.
+Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Fresh context (A4 review + A1 extracts + A2 ledgers only; re-derived independently).
+Prior loop: INCOMPLETE on ONE narrative-fidelity point — narrative asserted "management talked for over an hour" while the review marks call duration ND (no transcript timestamps). Coverage / arithmetic / adversarial passed clean last round. This run re-verifies all four, proportionate on the three that passed, forensic on the narrative fix.
 
 ---
 
-## 2. ARITHMETIC AUDIT (concall-vs-filing reconciliation, Step 7, recomputed independently)
+## 1. COVERAGE AUDIT (spot-check; passed clean last round)
 
-Raw inputs: filing L286 Revenue 167.06 Cr (=1670.6 mn); review Step 1C Operating EBITDA 17.33/28.13/32.30 Cr; segment values N7/N10/N13/N16.
+Fresh grep/sweep over `extract_concall_tatva_q1fy27.txt` (lines 21-138) diffed against `ledger_concall_tatva_q1fy27.md`, plus results and presentation ledger citation-coverage.
 
-| Metric | A4 / spoken value | My recompute | Source line | Status |
+| Category | A2 count | My fresh count | Orphan rows | Status |
 |---|---|---|---|---|
-| Revenue reconciliation | Rs 1,671 mn ≈ Rs 167.06 Cr | 167.06 Cr × 10 = 1670.6 mn; spoken 1,671 (Δ 0.4 mn) | concall L22 / filing L286 | PASS (rounding) |
-| EBITDA reconciliation | Rs 323 mn = Rs 32.30 Cr | 32.30 Cr × 10 = 323.0 mn | concall L22 / review 1C | PASS (exact) |
-| Revenue +43% YoY | +43% | 167.06/116.86 − 1 = +42.96% | L286 | PASS |
-| Revenue +25% QoQ | +25% | 167.06/134.14 − 1 = +24.54% | L286 | PASS |
-| EBITDA +86% YoY | +86% | 32.30/17.33 − 1 = +86.4% | review 1C | PASS |
-| EBITDA +15% QoQ | +15% | 32.30/28.13 − 1 = +14.83% | review 1C | PASS |
-| Segment split sum | PTC 428 + ESS 63 + PASC 584 + SDA 578 = 1,653 mn | 1,653 mn; residual = 18 mn (to spoken 1671) / 17.55 mn (to filing 1670.55) = deck "Others 1%" | concall L22 / deck slide 6 | PASS (ties to deck) |
-| Segment split vs deck donut | PTC26 / SDA34 / ESS4 / PASC35 / Others1 | 428/1671=25.6%; 578/1671=34.6%; 63/1671=3.8%; 584/1671=34.9%; 18/1671=1.08% | deck L76 | PASS (rounds to donut) |
-| Segment YoY/QoQ growth % (PTC +38QoQ/+47YoY; ESS −52QoQ/+676YoY; PASC +63QoQ/+25YoY; SDA +10QoQ/+47YoY) | as spoken | NOT INDEPENDENTLY RECOMPUTABLE — neither filing (single reportable segment, note C4/S4) nor deck discloses Q1FY26/Q4FY26 segment splits (deck slide 20 = full-year segments + current-Q only) | concall L22 | PASS-with-note (match ledger N8-N18; A4 reports as spoken, does not derive; not an A4 error) |
-| Credibility ratio | 62.5% (Grade B) | 2.5 ÷ (5 total − 1 UNCLEAR = 4) = 0.625; points 1.0+1.0+0.5+0.0 = 2.5 | review L656-658 | PASS |
-| Specificity ratio | ≈0.70 | 19 quantified fwd ÷ (19+8=27) = 0.7037 | review L817 | PASS |
+| Concall participants | 13 | 13 (3 mgmt/IR + host + operator + 8 analysts) | none | PASS |
+| Concall turns (lines 21-138) | 118 | 118 (138−21+1; zero blanks in range) | none | PASS |
+| Concall analyst questions | 32 | 32 (Q1-Q32; Shlok 2 + part 1 + Raman 8 + Nirani 5 + Gor 2 + Sam 2 + Rohit 8 + Ketan 4 = 32) | none — all 32 graded in Step 4A | PASS |
+| Concall mgmt/analyst numbers | 56 | 56 (N1-N56; 52 MGMT/IR + 4 ANALYST_CITED) | none | PASS |
+| Concall fwd-commit + hedge phrases | 34 | 34 (23 FC + 11 H) | none | PASS |
+| Concall zero-standing | 5 | 5 (Z1-Z5; all in Step 5A/8B) | none | PASS |
+| Concall A3 findings A3-F01..A3-F18 | 18 | 18 — every id cited in review body (Step 5A/5B silence audit, Step 6, Step 8A-8F, flags), not just the Section B preamble list | none | PASS |
+| Results A3 findings (F1-a..F14-b) | 13 | 13 — cited Step 0-8.5 / YAML | none | PASS |
+| Presentation A3 findings (A3-01..A3-13) | 13 | 13 — cited Step 6/8.5 / YAML | none | PASS |
 
-**No arithmetic mismatch above rounding.** Every spoken headline figure ties to the filing; the credibility and specificity ratios are internally consistent. ARITHMETIC = PASS.
-
-Note on segment growth rates: they are management-spoken (ledger N8-N18) and cannot be re-derived from the supplied extracts because quarterly segment history is disclosed nowhere. This is a disclosure limit, not an A4 error, and A4 correctly reconciles only the current-quarter split (which ties exactly to the deck). Not a FAIL.
+Fresh-pass rows the ledger lacks: none. No orphan rows (every ledger row cited or reviewed-no-finding). Coverage holds. **COVERAGE PASS.**
 
 ---
 
-## 3. ADVERSARIAL READ (three most positive claims + strongest bear counter)
+## 2. ARITHMETIC AUDIT (spot-check; passed clean last round)
 
-Materiality bar: a counter survives only if supported by the extract AND it changes a conclusion or an unflagged number. Points already disclosed and flagged are COMPLETE, not new gaps.
+Recomputed from raw extracted numbers.
 
-**Positive claim 1 — "The strong operating story is CONFIRMED; every spoken headline and segment number ties to the filing; the group headline is operational, not a group-treasury artefact" (L845-852, L946).**
-Bear counter: the confirmation is near-circular — a same-day, canned call whose entire opening (incl. the numbers) was read by IR "on behalf of" the MD (ledger A / L22); confirming the filing's own numbers validates arithmetic, not earnings quality, and the call is silent on the ~43% subsidiary + ~28.5% parent-OI composition of the growth.
-Survives? **NO.** Already flagged: the review states repeatedly that the call confirms REVENUE only and is SILENT on the subsidiary earnings-quality question, so "the filing wins on earnings quality and the flag stands UNRESOLVED" (L797, L850, L949, L952). Same-day/canned and IR-read-opening are both flagged (L558, L1056). No conclusion or unflagged number changes.
+| Metric | A4 value | My recompute | Source line | Status |
+|---|---|---|---|---|
+| Concall revenue Rs 1,671 mn -> Rs Cr | Rs 167.06 Cr (ties to filing) | 1,671 mn x 0.1 = 167.1 Cr; filing 1,670.55 mn = 167.06 Cr | extract L22 / filing L286 | PASS (rounding) |
+| Operating EBITDA Rs 323 mn -> Rs Cr | Rs 32.30 Cr | 323 x 0.1 = 32.30; 22.43 PBTbe + 10.57 D + 2.08 Fin − 2.78 OI = 32.30 | L22 / filing L296-300 | PASS (exact) |
+| Segment split (mn) | PTC 428 / ESS 63 / PASC 584 / SDA 578 | 428+63+584+578 = 1,653 mn; 1,670.55 − 1,653 = 17.55 mn unallocated (present in deck too) | L22 | PASS (residual disclosed both sources) |
+| Revenue +42.9% YoY | +42.9% (call "+43%") | 167.06/116.86 − 1 = +42.95% | Step 2 | PASS |
+| Revenue +24.5% QoQ | +24.5% (call "+25%") | 167.06/134.14 − 1 = +24.5% | Step 3 | PASS |
+| EBITDA +86.3% YoY | +86.3% (call "+86%") | 32.30/17.33 − 1 = +86.4% | Step 1C | PASS |
+| EBITDA QoQ | +14.8% (call "+15%") | 32.30/28.13 − 1 = +14.8% | Step 7A | PASS |
+| ESS −52% QoQ | −52% | 63 mn Q1 vs implied ~131 mn Q4 (analyst "six crores") | L22/L50 | PASS |
+| Credibility ratio | 62.5% (Grade B) | 2.5 points ÷ (5 total − 1 UNCLEAR = 4) = 0.625 | Step 3B | PASS |
 
-**Positive claim 2 — "Semiconductor first dispatch FIRED (first batch delivered AND qualified)" (L873, L775).**
-Bear counter: "FIRED" overstates thesis impact — only "few tons" delivered, needs 3-4 more plant-scale trials over 2 years, and management itself says large-volume revenue not before Q4 CY2028; near-zero cash impact inside the 3-5yr window.
-Survives? **NO.** Already flagged in the same cells: "FIRED — but large-volume revenue ≥Q4 CY2028" (L775, L873); narrative: "meaningful semiconductor revenue is unlikely before late 2028" (L1088). No unflagged number changes.
-
-**Positive claim 3 — "Management credibility Grade B (62.5%); archetype COMMITTED & CREDIBLE" (L960-963, L1003-1007).**
-Bear counter: 62.5% sits barely above the 60% line and is fragile to scoring choices — it excludes the softened pharma-2 promise from the denominator and scores monoglime 0 without the DROPPED one-grade downgrade; on a single quarter of 4 scoreable items, with the green-field GB (dated 3 days after the call) credited 0.5 as "occurrence to verify," the grade is provisional noise; a stricter read treating monoglime as a concealed drop would push below 60% and mandate a commentary discount.
-Survives? **NO.** Already disclosed and flagged: PROVISIONAL/trailing-1; the 83%-vs-62.5% sensitivity shown explicitly (L660); "no DROPPED-rule downgrade (monoglime acknowledged)"; GB credited only 0.5 with occurrence unverifiable (L649/L1013); explicit OVERPROMISER-boundary flag (L829, L963, L1052). No conclusion or unflagged number changes.
-
-**Surviving bear counters: NONE.** All three strongest counters are already incorporated and flagged in Section A/B/C. Nothing to graft into A4.
+No mismatch above rounding. **ARITHMETIC PASS.**
 
 ---
 
-## 4. NARRATIVE FIDELITY
+## 3. ADVERSARIAL READ (no rubber-stamp; re-run)
 
-Narrative present in **both** places: standalone `narrative_tatva_q1fy27.md` (L1-40) and the review final section (L1066-1104). Bodies substantively identical (only the framing sentence differs: "the combined Role 4 + Role 5 review" vs "the review above" — not a new number/claim/verdict).
+Three most-positive claims in the review, each with strongest bear counter from the same extracted text, and whether the counter is NEW-and-surviving (must be grafted) or already-disclosed-and-flagged (COMPLETE per materiality bar).
 
-Number/claim trace — supported in the review tables: revenue +43% to Rs 167 Cr; PAT +140% to Rs 16 Cr; EBITDA +86%; Rs 9.3 Cr growth split ~1/3 core (Rs 3.3 Cr) / ~28% one-off OI / ~43% overseas; 34.6% of group profit; 8 analysts / 32 questions; asset turn 3x→1.5x; China price crash >half in 30 days ($4.6-4.8→$2.1); margin 21%→19%, 20-22% target; ESS Rs 40-50 Cr target vs Rs 6 Cr / −52% QoQ; finance costs 5x; borrowing ceiling >3x to Rs 1,000 Cr; green-field ~Rs 200 Cr, GB 20-Jul-2026, 18-21 mo; semiconductor delivered+accepted, revenue not before late 2028; first pharma molecule in production; hybrid battery Oct/Nov 2026 → late 2027; CMP ~Rs 1,194; Rs 97-121 buy zone; ~10x gap (9.87x); receivable days past 185 trigger; Decision Status WATCHLIST/AVOID. All supported. No new verdict; does not contradict flags or Decision Status.
+**Claim 1 — "Strong operating quarter: revenue +43%, EBITDA +86%, PAT +140%, all tie to the filing."**
+Bear counter (from extract): only ~36% of the +Rs 9.33 Cr PAT growth is durably-recurring parent core; ~28.5% is a one-off parent Other Income (L485, plus nil standalone current tax L502); ~43.1% is subsidiary-sourced from two ~zero-cost foreign WOS with no audit carve-out; margin faded QoQ 21.0%->19.3%.
+Verdict: ALREADY FLAGGED — Step 4A/4B/4D, Section C, flags list, narrative para 2. No new surviving counter.
 
-**FIDELITY DEFECT (one, material):** the narrative asserts **"management talked for over an hour"** (standalone L11; review-embedded L1078). The review Step 0C explicitly enumerates **call duration as ND** — "Call duration / Q&A-duration % / exact clock time: ND (ASR transcript carries no timestamps)" (L558) and "duration ND" (L566). The transcript carries no timestamps, so this duration is not derivable from the extract. The narrative therefore adds a factual claim that (a) is not in the review's tables and (b) directly contradicts the review's own explicit ND on that exact field. Per the narrative-fidelity rule (a claim not in the review is a FAIL), this is a real defect. It does not change a verdict or the Decision Status, but it is an unsupported figure the analyst itself declined to state.
+**Claim 2 — "Semiconductor first-dispatch catalyst FIRED (delivered AND qualified)."**
+Bear counter (from extract): only "few tons" delivered; 3-4 more plant-scale trials over two years; management explicit that large-volume revenue is "not before Q4 of 2028" (L45/L46/L68); no semiconductor capex now (Z3).
+Verdict: ALREADY FLAGGED — Step 8A ("large-volume revenue >=Q4 CY2028"), narrative ("meaningful semiconductor revenue unlikely before late 2028"). No new surviving counter.
 
-**NARRATIVE = FAIL.** Loop back to A4.
+**Claim 3 — "Management COMMITTED & CREDIBLE; reaffirmed FY27 25-30% growth and 20-22% margin; credibility 62.5% Grade B."**
+Bear counter (from extract): reaffirmations are back-end-loaded off weak bases (20-22% off a 19.3% Q1, L72; ESS Rs 40-50 Cr off Rs 6.3 Cr / −52% QoQ, L51); management named NO execution risk when asked (L36, Grade D); offtake informal-only (L119); trailing-1 is single-quarter noise.
+Verdict: ALREADY FLAGGED — Step 6E OVERPROMISER-boundary flag, Step 3C, Section C, flags list, narrative para 6. No new surviving counter.
+
+No NEW surviving bear counter beyond what the review already flags. Per the stated materiality bar (already-disclosed-and-flagged is COMPLETE, not a gap), nothing must be grafted into A4. **ADVERSARIAL PASS.**
+
+---
+
+## 4. NARRATIVE FIDELITY (forensic — the looped item)
+
+**(a) Narrative present in both places?** YES. Standalone `narrative_tatva_q1fy27.md` (40 lines) AND review final section "PLAIN-LANGUAGE NARRATIVE (operator brief)" at review lines 1066-1107. Both carry the headline "TATVA Q1 FY27: a loud beat, quiet on the catch."
+
+**(b) Is "over an hour" / any call-duration claim GONE from BOTH copies?** YES. Fresh grep for `hour|over an hour|talked for|an hour` returns ZERO matches in `review_tatva_q1fy27.md`; grep for `hour` returns ZERO matches in `narrative_tatva_q1fy27.md`. The prior INCOMPLETE cause is fully removed from both, consistent with the review's own ND on call duration (Section B Step 0C: "Call duration / Q&A-duration % / exact clock time: ND").
+
+**(c) Are the two copies identical?** Body text IDENTICAL (headline, "What unfolded this quarter", "What the next 10 to 11 months will decide", "Bottom line" — all match word-for-word). ONE benign, expected divergence in the second sentence of the preamble paragraph:
+- Standalone (L3): "It translates the combined Role 4 + Role 5 review and adds no new number; every figure here already appears in a table in the review with its source."
+- Review-embedded (L1070): "It translates the review above and adds no new number; every figure here already appears in a table with its source."
+This is a self-locating pointer that MUST differ by context (a standalone file cannot say "the review above"). It introduces no number, no claim, no verdict, and contradicts nothing. NOT a fidelity gap; reported for transparency, not a FAIL.
+
+**(d) Every number/claim in the narrative supported in the review tables?** YES — spot-verified end to end:
+- Revenue +43% / Rs 167 Cr / highest in disclosed set (Step 2, Step 3); PAT +140% / Rs 16 Cr (Step 2); "EBITDA up 86%" led by deck and call (Step 1C, Section B claim 2); numbers tie to filing (Step 7A).
+- Rs 9.3 Cr growth split: ~1/3 (Rs 3.3 Cr) parent core, ~28% one-off parent OI + near-nil parent cash tax, ~43% two USA/Europe WOS with ~zero staff/plant/equipment booking a third of group PAT, no auditor comment (Step 4B/4D, F4-a).
+- 8 analysts / 32 questions / overseas arms asked by none (Section B Step 4B, Step 5B, A3-F15).
+- Asset turn "roughly halved, ~3x to ~1.5x", same ROC claimed (Step 4C Exch.1, N45/N46/N47, A3-F06); moat "copyable by any determined competitor" (Q24, A3-F09); monoglime withdrawn, China price crash >half in 30 days, equipment repurposed (Q29, N48-N53, A3-F12).
+- Margin 21%->19%, below 20-22%, reaffirmed with "lost one quarter with a little lesser margin" (Step 3, L72); ESS Rs 40-50 Cr target vs Rs 6 Cr / −52% QoQ / two months lost to war-driven shortage (Step 8A, N30, L51-53).
+- Finance costs 5x, borrowing ceiling >3x to Rs 1,000 Cr, debt/earnings above thesis level, call silent on debt/cash/collections (Step 5, F6-b, A3-F17).
+- Rs 200 Cr plant, GB 20-Jul-2026, 18-21 mo (N19/N20/N33/N34); semiconductor shipment delivered+accepted, revenue unlikely before late 2028 (L46/L68); first pharma molecule into production (L22).
+- No Q1 cash-flow statement by rule; call added nothing on cash (Step 5).
+- Forward forks: Q2 H1 (~Oct 2026) cash-flow read + rec days >185 tripwire (Step 6C, 8C); GB 20-Jul-2026 / Dahej-III naming (A3-F14); ESS ramp + margin recovery (8A); hybrid battery Oct/Nov 2026 -> late 2027 (N39/N40); overseas-arms durability open (5B).
+- Bottom line: CMP ~Rs 1,194 ~10x the Rs 97-121 zone (~9.87x entry max), WATCHLIST/AVOID unchanged (Step 0A, Step 8, Section C).
+No invented figure; no new claim; no new verdict.
+
+**(e) Contradicts flags or verified Decision Status?** NO. Narrative reaffirms WATCHLIST / AVOID (on-valuation; Hurdle STOP) and every flag (thin recurrence, subsidiary concentration, leverage, margin fade, catalyst timing, cash-conversion INDETERMINATE, replicable moat, asset-turn downshift).
+
+**NARRATIVE FIDELITY PASS.** The single looped defect is fixed in both copies; no new defect introduced.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Coverage PASS (no orphan rows, nothing missing from ledger, all 18 A3-F findings cited). Arithmetic PASS (every concall-vs-filing figure and the credibility/specificity ratios tie within rounding). Adversarial PASS (no surviving bear counter; the three strongest are already flagged). **Narrative FAIL:** the plain-language narrative (both `narrative_tatva_q1fy27.md` L11 and review L1078) states "management talked for over an hour," a call-duration claim absent from the review and contradicting the review's explicit ND at Step 0C (L558/L566: duration ND, transcript carries no timestamps).
-
-**Loop back to: A4.** Exact gap: remove the unsupported "over an hour" duration from the narrative (both locations), or replace it with phrasing carrying no undisclosed duration (e.g. "management spoke and took questions across 118 turns / 32 questions"), so the narrative adds no number the review marked ND. Re-run the A5 narrative-fidelity check after the fix; all other audits are clean and require no rework.
+**COMPLETE.** The prior INCOMPLETE cause ("over an hour" call-duration claim) is removed from BOTH narrative copies, consistent with the review's ND on call duration. Coverage (no orphan rows; all 18 concall A3 findings + all results/presentation findings cited), arithmetic (concall-vs-filing ties and the 62.5% credibility ratio all reconcile within rounding), and adversarial read (no new surviving bear counter beyond what is already flagged) all hold on re-run. Narrative numbers/claims are all supported and non-contradictory. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -95,15 +105,14 @@ company: "TATVA"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-narrative_ok: false
-narrative_issues:
-  - "Narrative asserts 'management talked for over an hour' (narrative_tatva_q1fy27.md L11; review L1078) - an unsupported call-duration claim contradicting review Step 0C explicit ND ('duration ND'; transcript carries no timestamps, L558/L566). No source in the review tables."
+narrative_ok: true
+narrative_issues: []
 surviving_bear_counters: []
-loop_back_to: "A4"
-gap: "Narrative adds unsupported duration claim 'management talked for over an hour' (both narrative file L11 and review L1078); review Step 0C marks call duration ND (no timestamps in transcript). Remove or rephrase so the narrative introduces no figure the review did not establish. Coverage, arithmetic and adversarial audits are all PASS."
+loop_back_to: ""
+gap: ""
 ```

@@ -12,7 +12,11 @@ inventory:
   annual-report:
     present: true
     files: ["inputs/annual-report/Annual_Report.pdf"]
-    note: "FY2024-2025 Annual Report (year ended 31.03.2025), 275 pages. First ~pages are scanned/OCR (garbled text extraction); financial statements and notes extract cleanly (149/275 pages >200 chars). Current, not stale."
+    text_cache: "inputs/_textcache/Annual_Report.txt"   # AR-consuming stages read THIS, not the PDF
+    note: "FY2024-2025 Annual Report (year ended 31.03.2025), 275 pages, 26.6 MB. MECHANICAL: the PDF exceeds the Read tool's 20 MB cap AND poppler/pdftoppm is not installable in this env (apt 404, no OCR), so subagents cannot page or render the PDF. WORKAROUND: orchestrator built a pypdf text cache at inputs/_textcache/Annual_Report.txt. Pages 1 and 3-150 (standalone AR: Directors' Report, MD&A, Chairman, Auditor, Balance Sheet, P&L, Cash Flow, Notes, Segment, start of Eimco subsidiary) extract cleanly. Page 2 and pages 151-275 (consolidated financials + full subsidiary schedules) are scanned images with NO extractable text and are UNAVAILABLE. Use the FY26 audited results PDF for consolidated/segment figures."
+  annual_report_unreadable_pages:
+    range: "2, 151-275"
+    reason: "scanned image pages, no text layer; OCR unavailable (no poppler/tesseract, apt mirror 404). Consolidated statements + subsidiary schedules affected. Named per orchestrator PDF-resilience rule; not fabricated around."
   results:
     present: true
     files:

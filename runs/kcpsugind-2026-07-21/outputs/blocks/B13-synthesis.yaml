@@ -1,0 +1,27 @@
+stage: B13-synthesis
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+promoter_verdict: "CAUTION (below CONCERN/AVOID threshold; formal FLAG-PROMOTER not fired; caution items surfaced in body)"
+flag_cash_determination: "STRUCTURAL"
+confidence_delta: {numerical: 97.9, redflag: 70, framework: 100, peer: "N/A", overall: 70}
+valuation_decision: ""      # deferred to phase 3
+entry_range: {low: 0, high: 0}
+headline: "Sugar core loses money, investments carry group"
+falsification_metric: "Sugar segment result more negative than FY26 Rs 17.31 Cr loss (fourth year of widening core losses)"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+notion_save:
+  page_title: "KCPSUGIND — Phase 1 Gate (2026-07-21)"
+  summary: "Sugar core loses money, investments carry group | PROCEED WITH FLAGS (rule 3, FLAG-CASH STRUCTURAL) | phase-1 lite, no valuation this phase | Gate 0 AVOID 27/160, Emerging Moat NONE, confidence 70"
+  mode: append-never-overwrite-status
+  note: "Notion save is a phase-3 (finalize) action; not written in phase 1."

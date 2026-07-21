@@ -4,23 +4,30 @@ run_date: 2026-07-21
 model: orchestrator
 status: complete
 run_type: full
-no_concall_mode: true            # manifest concalls_available: false
-listed_status: long-listed        # CIN L15421TN1995PLC033198, incorporated 1995; prospectus not expected
-sector_cap_row_unverified: "Pharma / CDMO"   # manifest auto-pick flagged 'verify'; company is a sugar producer. Phase-3 concern.
+restart: true                     # re-inventory after operator pushed AR(FY25)+results+rating on 2026-07-21
+no_concall_mode: true             # manifest concalls_available: false
+listed_status: long-listed        # BSE Scrip 533192; long-listed sugar producer; prospectus not expected
+sector_cap_row_unverified: "Pharma / CDMO"   # manifest auto-pick flagged 'verify'; company is a sugar/distillery/engineering producer. Phase-3 valuation concern.
 inventory:
   annual-report:
     present: true
     files: ["inputs/annual-report/Annual_Report.pdf"]
-    note: "26th Annual Report FY2020-2021 (year ended 31.03.2021). ~5 years stale vs run_date 2026-07-21."
+    note: "FY2024-2025 Annual Report (year ended 31.03.2025), 275 pages. First ~pages are scanned/OCR (garbled text extraction); financial statements and notes extract cleanly (149/275 pages >200 chars). Current, not stale."
+  results:
+    present: true
+    files:
+      - "inputs/results/47bc3c5b-280c-4fa9-8703-3262f3c3d43a.pdf"   # Q3 FY26: quarter ended 31.12.2025, UNAUDITED, standalone + consolidated (8pp)
+      - "inputs/results/731297df-7a79-4da5-915f-be09f866a9d4.pdf"   # FY26 audited full-year: year ended 31.03.2026 + Q4 FY26 vs Q4 FY25, AUDITED, standalone + consolidated + segment (44pp)
+    note: "Two filings. Most recent audited period = FY26 (year ended 31.03.2026). Q3 FY26 (Dec 2025) unaudited also present."
+  rating:
+    present: true
+    files: ["inputs/rating/202510121044_K.C.P._Sugar_and_Industries_Corporation_Limited.pdf"]
+    note: "CARE Ratings press release 07 Oct 2025. CARE A-; Stable (reaffirmed); LT bank facilities reduced 71.20 -> 63.20 cr; LT/ST 30.00 cr. 7pp. Supersedes the old FY21 AR's 'CARE Negative' outlook for current rating evidence."
   screening:
     present: true
     files:
-      - "inputs/screening/screener-Data_Sheet.csv"   # KCPSUGIND, 10y P&L FY2017-FY2026 + quarterly Q3FY24-Q4FY26
-      - "inputs/screening/screener-Balance_Sheet.csv"
-      - "inputs/screening/screener-Cash_Flow.csv"
-      - "inputs/screening/screener-Profit_Loss.csv"
-      - "inputs/screening/screener-Quarters.csv"
-      - "inputs/screening/screener-Customization.csv"
+      - "inputs/screening/screener-Data_Sheet.csv"   # KCPSUGIND 10y P&L FY2017-FY2026 + quarterly Q3FY24-Q4FY26
+      - "inputs/screening/screener-{Balance_Sheet,Cash_Flow,Profit_Loss,Quarters,Customization}.csv"
       - "inputs/screening/KMSUGAR-*.csv"       # peer: K.M. Sugar Mills
       - "inputs/screening/RAJSREESUG-*.csv"     # peer: Rajshree Sugars
       - "inputs/screening/UGARSUGAR-*.csv"      # peer: Ugar Sugar Works
@@ -29,37 +36,34 @@ input_gaps:
   - type: prospectus
     status: absent
     priority: normal
-    reason: "Long-listed company (incorporated 1995). Prospectus not expected; absence is not a gap per RECENTLY-LISTED rule."
-  - type: results
-    status: absent
-    priority: high
-    effect: "No standalone results PDFs. Gate 0 (stage 1) runs from screening Data_Sheet CSV. Stage 10 will mark latest-period fields unresolved (phase 3). Stage 5 loses results commentary for delivery check."
-  - type: rating
-    status: absent
-    effect: "Stage 10 rating_wc_quote unresolved; stage 11 Pillar 2 defaults conservative (phase 3). FLAG-CASH evidence base thinner."
+    reason: "Long-listed company. Prospectus not expected; absence is not a gap per RECENTLY-LISTED rule."
   - type: announcements
     status: absent
-    effect: "Stages 5, 7, 8 lose the documented-ACTION (Reg 30) record. Intent-and-action cross-check runs on AR only. Stage 8 relies on web search."
+    effect: "No Reg 30 documented-ACTION record in inputs. Stages 5/7/8 lose the filing-anchored action record. Operator relayed some items (EIMCO Rs 257cr order 20 Jul 2026; Reg 30 Change-in-Management 27-28 May 2026; Reg 29(2) shareholding disclosures Jun-Jul 2026) - carried as NON-ANCHORED context in outputs/reports/operator-context-recent.md. Stage 8 also uses web search."
   - type: shareholding
     status: absent
-    effect: "Stage 10 FII+DII unresolved; stage 11 withholds UA (all-three-qualifier rule, phase 3). Promoter holding/pledge falls back to AR figure with staleness noted."
+    effect: "Stage 10 FII+DII unresolved; stage 11 withholds UA (all-three-qualifier rule, phase 3). Promoter holding/pledge falls back to AR FY25 figure with staleness noted. Operator-relayed Reg 29(2) changes are non-anchored."
   - type: research
     status: absent
-    effect: "No anchored-evidence impact (research is never anchored). Loses a lead-generation / management-intent cross-check source only."
+    effect: "No anchored-evidence impact (research is never anchored)."
   - type: presentation
     status: absent
     effect: "Stage 4 runs from AR + results commentary; stage 7 loses investor-presentation evidence for capex/pipeline."
   - type: concalls
     status: declared-absent
-    reason: "manifest concalls_available: false. NO-CONCALL MODE. Not a gap. Stage 5 degraded (AR MD&A / chairman letter), credibility default C. Stage 7 F2 uses capex-completion evidence."
+    reason: "manifest concalls_available: false. NO-CONCALL MODE. Not a gap. Stage 5 degraded (AR MD&A / chairman letter + RESULTS commentary now available), credibility default C, may rise to B on AR-guidance-vs-results delivery. Stage 7 F2 uses capex-completion evidence."
   - type: peer-concalls
     status: declared-absent
     reason: "manifest concalls_available: false. Stage 6 SKIPPED (no peer transcripts). Not a gap."
 degradation_active:
-  - "NO-CONCALL MODE: stage 5 degraded, stage 6 skipped, verifier B audits vs AR, stage 7 F2 capex-completion."
-  - "No results: Gate 0 from screening data."
-  - "Stale AR (FY21): backward baseline / notes run on FY21 AR; current-period figures come from screening Data_Sheet CSV. Staleness flows to synthesis and confidence delta."
+  - "NO-CONCALL MODE: stage 5 degraded (now aided by results PDFs for delivery check), stage 6 skipped, verifier B audits vs AR/results, stage 7 F2 capex-completion."
+  - "No shareholding: stage 10 FII+DII unresolved, UA withheld in phase 3."
+  - "No announcements filings: documented-ACTION record absent from inputs; operator-relayed items are non-anchored."
+resolved_since_first_inventory:
+  - "AR upgraded FY2020-21 -> FY2024-25 (current)."
+  - "Results folder populated: Q3 FY26 + FY26 audited full-year."
+  - "Rating folder populated: CARE A-; Stable, 07 Oct 2025 (supersedes stale FY21 'CARE Negative')."
 operator_ruling:
   - date: 2026-07-21
-    ruling: "Operator confirmed PROCEED WITH GAPS on the empty folders (prospectus, results, rating, announcements, shareholding, research, presentation) and the FY21-stale AR. Single permitted question asked and answered."
+    ruling: "Operator approved PROCEED WITH GAPS (single permitted question). Then pushed AR(FY25)+results+rating and instructed 'PL RESTART THE ANALYSIS' - explicit go for the restart on the enriched set. Remaining empty folders (prospectus, announcements, shareholding, research, presentation) are a subset of the approved gap set; not re-asked."
 flags: []

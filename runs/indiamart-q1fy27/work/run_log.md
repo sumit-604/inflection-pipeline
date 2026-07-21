@@ -64,4 +64,12 @@ All three A2 gates PASS.
 - pressrelease: PASS — F1/F16/F17 FINDINGs. Key: headline 40% standalone EBITDA vs 35% consol; consol PAT 172<176 standalone; standalone CFO/PAT 0.87; growth realization-led ARPU undisclosed; Q1 stated AUDITED (unusual) no auditor commentary
 All three A3 gates PASS.
 
-### A4 analyst: running (merged Role 4 review; Role 5 has no concall transcript this quarter)
+### A4 analyst: PASS — merged review written. Verdict PROCEED WITH FLAGS; Decision Status verified HELD; position HOLD (8A); 21 management questions; 9 monitorables. Role 5 partial substitute (no concall transcript).
+
+### GATE A5 (adversary)
+- Loop 0: INCOMPLETE — 4 gaps: (1) consol Other Income ~Rs 96Cr of Rs 106.7Cr is unrealized FV MTM (deck L1169), ~41% of consol PAT, reversible — must be grafted not left as open Q; (2) non-additive PAT bridges Step 4A/4B; (3) cite-or-soften "-3%->-5% 2nd consec" buyer figure (-3% is Notion memory); (4) deck enquiries -11% vs 31->26 (-16%) inconsistency.
+- A4 revision loop 1: all 4 gaps closed; verdict PROCEED WITH FLAGS / HOLD re-affirmed (ex-MTM P&L still at/above base; treasury-quality flag sharper).
+- Loop 1 re-audit: **COMPLETE** — coverage clean, arithmetic reconciles (bridges sum to +18.7/+10.1), no surviving bear counters. GATE A5 PASS.
+
+## FINAL STATUS: pipeline COMPLETE. Protocol verdict PROCEED WITH FLAGS. Position HOLD (2%). Thesis WEAKENED (unchanged), not BROKEN. Neither pre-committed thesis-break condition fired.
+## Count reconciliation: 14 notes / 0 concall turns (no transcript) / 69 slides + 5-page press release — all reviewed.

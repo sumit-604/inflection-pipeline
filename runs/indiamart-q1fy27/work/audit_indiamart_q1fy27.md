@@ -1,117 +1,145 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — IndiaMART InterMESH Limited (INDIAMART), Q1 FY27
+# A5 ADVERSARY / COMPLETENESS RE-AUDIT — IndiaMART InterMESH (INDIAMART), Q1 FY27
+# Loop 1 of 2 (re-audit of REVISED A4 review). Model: claude-opus-4-8. Date: 2026-07-21.
+# Independence: every number below re-derived from the A1 extracts at cited line numbers; A4/A3 cites checked, not trusted.
 
-Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Date: 2026-07-21
-Fresh context: I saw only the A4 review, the three A1 extracts, and the three A2 ledgers. Every number below re-derived independently from the A1 extracts at their line numbers; A4's cites checked, not trusted.
-Unit discipline: results filing in INR **million** (x0.1 = Rs Cr); presentation and press release native **Rs Crore**.
+## SCOPE
+Re-audit of the revised A4 review after my prior INCOMPLETE (four gaps). Three audits re-run in full on the
+whole document, plus explicit confirmation each prior gap is genuinely closed and a NEW-error sweep on the
+rebuilt PAT bridges. Extracts: results (INR mn, x0.1 = Rs Cr), presentation (Rs Cr), press release (Rs Cr).
 
 ---
 
-## AUDIT 1 — COVERAGE
+## 1. COVERAGE AUDIT (fresh enumeration diffed against the three A2 ledgers)
 
-Fresh grep/manual enumeration re-run over each A1 extract, diffed against the A2 ledgers.
+| Category | A2 count | My fresh count | Method | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Results — notes | 14 | 14 | 5 consol (L415/419/423/425/428) + 6 standalone (L649/653/656/658/660/663) + 3 segment fn a/b/c (L402/405/408) | none | PASS |
+| Results — entities (Annexure I) | 13 | 13 | grep "Private Limited" in results extract → rows 1-13, L273-300 | none | PASS |
+| Results — line items | 65 | 65 (all P&L rows 5A/5B/5C spot-verified to source) | full read of both filings' tables | none | PASS |
+| Results — auditor paras | 16 | 16 | 9 consol + 7 standalone report sections (L66-305 / L464-604) | none | PASS |
+| Results — agenda / annexure / signatures | 2 / 8 / 5 | 2 / 8 / 5 | Board Outcome L17-32; Annexure B L690-726; 5 sig blocks | none | PASS |
+| Presentation — slides | 69 | 69 | grep `^\[page N\]$` in deck extract = 69 | none | PASS |
+| Presentation — numbers / footnotes / zero-standing | 462 / 58 / 1 | reconciled (material KPI rows spot-checked to source lines) | Table 4/5 cross-read; L1166 zero-standing confirmed | none | PASS |
+| Press release — bullets / claims / table items / quote | 3 / 24 / 11 / 1 | 3 / 24 / 11 / 1 | Tables 1-4; 38 NOT_IN_FILING/reconciles flags present | none | PASS |
 
-| Category | A2 count | My fresh count | Orphan / missing rows | Status |
+**Orphan-row test (ledger row present, absent from A4):** none found. A4's preamble (review L11) reads every A2
+row verbatim and marks the immaterial remainder "reviewed, no finding"; every KPI_WATCH / flagged row (notes
+table Step 0D, entities incl. MonotaRO exit, segment results, Annexure B lending WOS, Other-Matters a/b/c,
+signature-timing, all 10 monitoring KPIs, OI-composition, dividend payable) is cited at its line. All A3 finding
+IDs enumerated at review L18-20 are carried into the body.
+
+**Reverse test (row my fresh pass found, ledger lacks):** none. My grep counts equal the ledger counts on every
+count-tested category. No loop-back to A2.
+
+COVERAGE VERDICT: **PASS** — no orphan rows, no missing enumeration.
+
+---
+
+## 2. ARITHMETIC AUDIT (recomputed from raw extract lines; x0.1 applied to results mn)
+
+All Section 1A/1B cells re-derived from results L321-350 / L618-643 — every cell ties. Every 1C derived metric,
+Step 2 YoY, Step 3 QoQ, Step 4 bridge, Step 5 cash, and the S-vs-C gaps recomputed.
+
+| Metric | A4 value | My recompute | Source line(s) | Status |
 |---|---|---|---|---|
-| results — notes | 14 | 14 (5 consol numbered L415-437 + 6 standalone numbered L649-672 + 3 segment lettered fn L402-410) | none | PASS |
-| results — line_items | 65 | 65 (21 consol L321-350 + 25 segment L367-400 + 19 standalone L618-643) | none | PASS |
-| results — agenda_items | 2 | 2 (L17-25 results; L26-32 WOS) | none | PASS |
-| results — auditor_paras | 16 | 16 (9 consol + 7 standalone, section-level; structure spot-verified) | none | PASS |
-| results — entities | 13 | 13 (Annexure I L273-300; 5 subs + 8 assoc) | none | PASS |
-| results — annexure_rows | 8 | 8 (Annexure B L693-726) | none | PASS |
-| results — signature_blocks | 5 | 5 (Bagri L44; DCA consol L442; DCA std L677; Jones consol L244; Jones std L586) | none | PASS |
-| results — zero_standing | 1 | 1 (inter-segment rev, accounting software, dash all periods L372) | none | PASS |
-| presentation — slides | 69 | 69 (page markers L15→L2047) | none | PASS |
-| presentation — numbers | 462 | 462 (methodology reconciled; spot-checked across slides 6-9, 34, 37-39, 43-47, 52, 67-68) | none | PASS |
-| presentation — footnotes | 58 | 58 (52 numbered + 6 unnumbered; spot-checked) | none | PASS |
-| pressrelease — headline_bullets | 3 | 3 (L70-72) | none | PASS |
-| pressrelease — quantitative_claims | 26 anchors / 24 rows | 24 discrete rows / 26 anchors (rows 4,16 carry dual Rs anchors) — reconciled | none | PASS |
-| pressrelease — line_items | 11 | 11 (T1-T11, L144-165) | none | PASS |
-| pressrelease — mgmt_quotes | 1 | 1 (DCA, L112-117) | none | PASS |
+| Consol Op EBITDA Q1FY27 (PBTbefassoc+D+FC−OI) | 146.5 | 246.3+6.4+0.5−106.7 = 146.5 | res L332/328/327/322 | PASS |
+| Consol Op EBITDA margin Q1FY27 | 35.4% | 146.5/414.4 = 35.35% | res L321 | PASS |
+| Standalone Op EBITDA Q1FY27 | 149.3 | 234.3+2.6+0.5−88.1 = 149.3 | res L628/625/624/619 | PASS |
+| Standalone Op EBITDA margin Q1FY27 | 39.7% | 149.3/375.9 = 39.72% | res L618 | PASS |
+| Consol core PBT ex-OI Q1FY27 | 125.0 | 231.7−106.7 = 125.0 | res L334/322 | PASS |
+| Consol core PBT YoY | +12.1% | 125.0/111.5−1 = 12.11% | res | PASS |
+| Standalone core PBT YoY | +12.1% | 146.2/130.4−1 = 12.12% | res | PASS |
+| Consol ETR Q1FY27 | 25.7% | 59.5/231.7 = 25.68% | res L339/334 | PASS |
+| Standalone ETR Q1FY27 | 24.8% | 58.2/234.3 = 24.84% | res L632/628 | PASS |
+| Consol revenue YoY | +11.4% | 414.4/372.1−1 = 11.37% | res L321 | PASS |
+| Standalone revenue YoY | +8.5% | 375.9/346.3−1 = 8.55% | res L618 | PASS |
+| Consol PAT YoY | +12.2% | 172.2/153.5−1 = 12.18% | res L341 | PASS |
+| Standalone PAT YoY | +6.1% | 176.1/166.0−1 = 6.08% | res L633 | PASS |
+| **4A consol bridge total** | **+18.7** | +42.3−29.3+0.5+0.5+14.3−0.5−9.1 = +18.7 (=172.2−153.5) | res L321/326/329/328/327/322/333/339 | **PASS (additive, exact)** |
+| — 4A ΔOp EBITDA subtotal | +13.0 | 42.3−29.3 = 13.0 (=146.5−133.5) | res | PASS |
+| — 4A ΔPBT subtotal | +27.8 | 13.0+0.5+0.5+14.3−0.5 = 27.8 (=231.7−203.9) | res | PASS |
+| **4B standalone bridge total** | **+10.1** | +29.6−15.0+0.9+0.3+3.7−9.4 = +10.1 (=176.1−166.0) | res L618/623/626/625/624/619/632 | **PASS (additive, exact)** |
+| — 4B ΔOp EBITDA subtotal | +14.6 | 29.6−15.0 = 14.6 (=149.3−134.7) | res | PASS |
+| — 4B ΔPBT subtotal | +19.5 | 14.6+0.9+0.3+3.7 = 19.5 (=234.3−214.8) | res | PASS |
+| OI unrealized MTM Q1FY27 (consol) | ~Rs 96 Cr | deck L1169 Q1FY27 col = 96 | deck L1169 | PASS |
+| OI realized (non-op income) Q1FY27 | ~Rs 16 Cr | deck L1162 Q1FY27 col = 16 | deck L1162 | PASS |
+| Unrealized MTM as % of consol PBT | ~41% | 96/231.7 = 41.4% | res L334 | PASS |
+| Unrealized MTM post-tax as % of consol PAT | ~41% | 96×(1−0.257)=71.3; 71.3/172.2 = 41.4% | res L341 | PASS |
+| OI-delta reversion → consol PAT hit | ~Rs 10.6 Cr → +5% | 14.3×(1−0.257) = 10.6; new PAT 161.6 = +5.3% YoY | res | PASS |
+| Enquiries YoY (deck series) | −16% | 26/31−1 = −16.1% | deck L2030-2034 | PASS |
+| Enquiries YoY (printed label) | −11% | table L1004 "(11%)"; chart L2024 "(11)%" | deck | PASS (inconsistency real) |
+| Active buyers YoY (document-cited) | −5% | table L1002 "41 41 (5%)" | deck L1002 | PASS |
+| Rolling-12m CFO consol | 696 | 694−161+163 = 696 | deck L1907/L1160 | PASS |
+| Rolling-12m PAT consol | stated 493.7 | 474.7−153.5+172.2 = **493.4** | res L341 | within-rounding (Δ0.3; ratio 1.41x unchanged) |
+| Rolling CFO/PAT consol | ≈1.41x | 696/493.4 = 1.410x | — | PASS |
+| Single-q CFO/PAT consol Q1FY27 | 0.95x | 163/172.2 = 0.947 | deck L1160 | PASS |
+| Single-q CFO/PAT standalone Q1FY27 | 0.87x | 153/176.1 = 0.869 | deck L1971 | PASS |
+| CFO QoQ consol | −44% | 163/290−1 = −43.8% | deck L1907 | PASS |
+| S-vs-C PAT gap Q1FY27 | 2.2% | (176.1−172.2)/176.1 = 2.21% | res L341/633 | PASS |
+| S-vs-C PAT gap Q1FY26 | 7.5% | (166.0−153.5)/166.0 = 7.53% | res | PASS |
+| S-vs-C PAT gap Q4FY26 | 27.9% | (69.6−50.2)/69.6 = 27.87% | res | PASS |
+| Acct-software segment result | −0.6→−2.7 | L381 (6)→(27) mn ×0.1 = −0.6→−2.7 | res L381 | PASS |
+| Busy EBITDA margin | 16%→9% | deck L1566 "16% 9%" | deck L1566 | PASS |
 
-**Orphan-row check (ledger rows absent from A4):** Every A2 SUMMARY FLAG is traceable into A4: SIGNATURE_BEFORE_MEETING_CONCLUDED → A4 flag 7 / Q16; ENTITY_UNAUDITED_MGMT_FURNISHED (MonotaRO stub) → flag 5 / Q11; ENTITY_CHANGE MonotaRO exit → flag 6 / Q1 / F15-01; NEW_ENTITY_PENDING (IndiaMART Finance) → flag 4 / Q2 / monitorable; ENTITY_AUDITED_BY_OTHERS (4 subs) → Step 0D; GOING_CONCERN_LANGUAGE boilerplate → Step 0D (A3 F5); presentation sign-convention/attrition-in-fine-print → F16-01/F16-02 / flag 10; Busy EBITDA-PAT divergence → Q7/Q8; CFO %-of-collections seasonal → Step 5 / Q18. The two immaterial template rows (ZERO_STANDING inter-segment revenue; ZERO_STANDING "proceeds from issue of shares" L1166) and the two cosmetic renames (Busy f/k/a Tolexo; Livekeeping f/k/a Finlite) plus the Fleetex w.e.f. 11-Apr-2025 addition are covered only by A4's blanket "no ledger row is unreviewed" preamble, not by a specific line — acceptable, as all are non-material and non-numeric. **No material orphan row. No row in my fresh pass that the ledger lacks.**
+**Arithmetic mismatches above rounding: NONE.** The only numeric quibble — rolling-12m PAT stated 493.7 vs
+recomputed 493.4 — is a 0.3 Cr difference that leaves the reported ratio (1.41x) unchanged and sits within
+rounding; not a FAIL, no loop-back.
 
-**COVERAGE STATUS: PASS.**
-
-Two source-consistency observations (data quality, NOT count failures — logged for A3/A4, do not block save on their own):
-- **OBS-C1 (deck-internal):** Unique Business Enquiries quarterly bars read 31→29→28→27→26 (L2030-2034), so Q1FY27 26 vs Q1FY26 31 = −16.1%, yet the same deck labels the YoY −11% (Operational Metrics table L1004; chart header L2024). The A2 KPI cross-ref caught the sign-convention issue but not this magnitude mismatch. A4 quoted the deck's −11% (did not recompute), so this is a source inconsistency for A3/A4 to reconcile, not an A4 computational error.
-- **OBS-C2 (A4 specificity not in extract):** A4 monitoring item 2 asserts active buyers are in a "2nd consecutive decline (−3%→−5%)." The extract supports only the current Q1FY27 −5% YoY (L1002); the prior-quarter −3% YoY is not derivable from any supplied extract. Minor over-specification; A4 should cite its source or soften.
-
----
-
-## AUDIT 2 — ARITHMETIC
-
-Every A4 derived metric recomputed from raw extracted numbers.
-
-| Metric | A4 value | My recompute | Source lines | Status |
-|---|---|---|---|---|
-| Consol Op EBITDA Q1FY27 (PBTbefAssoc+D+FC−OI) | 146.5 | 246.3+6.4+0.5−106.7 = 146.5 | L332/328/327/322 | PASS |
-| Consol Op EBITDA margin Q1FY27 | 35.4% | 146.5/414.4 = 35.35% | L321 | PASS |
-| Std Op EBITDA Q1FY27 (PBT+D+FC−OI) | 149.3 | 234.3+2.6+0.5−88.1 = 149.3 | L628/625/624/619 | PASS |
-| Std Op EBITDA margin Q1FY27 | 39.7% | 149.3/375.9 = 39.72% | L618 | PASS |
-| Consol ETR Q1FY27 | 25.7% | 595/2317 = 25.68% | L339/334 | PASS |
-| Std ETR Q1FY27 | 24.8% | 582/2343 = 24.84% | L632/628 | PASS |
-| Consol ETR Q4FY26 | 36.0% | 282/784 = 35.97% | L339/334 | PASS |
-| Consol Core PBT ex-OI Q1FY27 | 125.0 | 231.7−106.7 = 125.0 | L334/322 | PASS |
-| Std Core PBT ex-OI Q1FY27 | 146.2 | 234.3−88.1 = 146.2 | L628/619 | PASS |
-| Consol Core PBT ex-OI YoY | +12.1% | (125.0−111.5)/111.5 = 12.11% | L334/322 | PASS |
-| Std Core PBT ex-OI YoY | +12.1% | (146.2−130.4)/130.4 = 12.11% | L628/619 | PASS |
-| Consol Revenue YoY | +11.4% | (414.4−372.1)/372.1 = 11.37% | L321 | PASS |
-| Std Revenue YoY | +8.5% | (375.9−346.3)/346.3 = 8.55% | L618 | PASS |
-| Consol PAT YoY | +12.2% | (172.2−153.5)/153.5 = 12.18% | L341 | PASS |
-| Std PAT YoY | +6.1% | (176.1−166.0)/166.0 = 6.08% | L633 | PASS |
-| Std Op EBITDA margin ΔYoY | +80bps | 39.7−38.9 = +0.8pp | L618/628 | PASS |
-| Consol Op EBITDA margin ΔYoY | −50bps | 35.4−35.9 = −0.5pp | L321/332 | PASS |
-| Consol OI YoY | +15.5% | (106.7−92.4)/92.4 = 15.48% | L322 | PASS |
-| Std OI YoY | +4.4% | (88.1−84.4)/84.4 = 4.38% | L619 | PASS |
-| EPS diluted YoY consol / std | +11.9% / +5.8% | 3.04/25.52=11.9% ; 1.61/27.59=5.84% | L350/643 | PASS |
-| Reported EBITDA consol Q1FY27 (incl OI) | 253.2 | 146.5+106.7 = 253.2 | L332/322 | PASS |
-| S-vs-C PAT gap Q1FY26 / Q4FY26 / Q1FY27 / FY26 | 7.5 / 27.9 / 2.2 / 9.6% | 12.5/166.0=7.53; 19.4/69.6=27.87; 3.9/176.1=2.21; 50.5/525.2=9.61 | L341/633 | PASS |
-| CFO/PAT single-q consol / std Q1FY27 | 0.95x / 0.87x | 163/172.2=0.947 ; 153/176.1=0.869 | deck L1160/1292; L341/633 | PASS |
-| Rolling-12m CFO/PAT consol | ≈1.41x | (694−161+163)/(474.7−153.5+172.2)=696/493.4=1.410 | deck L1160/1107; L341 | PASS |
-| Consol QoQ PAT / Std QoQ PAT | +243% / +153% | 172.2/50.2−1=243%; 176.1/69.6−1=153% | L341/633 | PASS |
-| Deferred rev consol QoQ | +49 (1,965→2,014) | 2,014−1,965 = 49 | deck L1136 | PASS |
-| Other Liabilities consol QoQ | +338 (169→507) | 507−169 = 338 | deck L1142 | PASS |
-
-**All headline derived metrics reconcile within rounding.** One flagged discrepancy:
-
-- **ARITH-1 (PAT bridge does not reconcile to its own stated total, Step 4A/4B).** The listed components do not sum to the stated ΔPAT on either basis:
-  - Consol (Step 4A): +15.0 −2.1 +0.5 +0.5 +14.3 −0.5 −2.4 = **+25.3**, but the table's stated total is **+18.7** (a +6.6 Cr overstatement if read additively). Correct total is right (172.2−153.5 = 18.7 ✓).
-  - Standalone (Step 4B): +13.3 +2.9 +0.9 +0.3 +3.7 −5.0 = **+16.1**, but stated total is **+10.1** (a +6.0 Cr overstatement). Correct total is right (176.1−166.0 = 10.1 ✓).
-  - Cause: the bridge mixes a **pre-tax** gross-contribution line (revenue +42.3 × ~35% and a separate margin line) with a **rate-only** tax line (−2.4 / −5.0) instead of the full YoY tax delta (consol tax +9.1 Cr; std +9.4 Cr). A4 tags components "≈", and each individual estimate is internally defensible, but a reader treating the columns as additive is misled. This is a presentation/methodology defect, not a wrong headline number. **Loop to A4** to either reconcile the components to the total or state explicitly that the rows are non-additive rate-vs-base estimates. Not verdict-determinative on its own.
-
-**ARITHMETIC STATUS: PASS on every headline derived metric; one non-additive-bridge defect (ARITH-1) for A4 to tidy.**
+ARITHMETIC VERDICT: **PASS**. Both rebuilt PAT bridges are fully additive and reconcile exactly to +18.7
+(consol) and +10.1 (standalone); the prior over-count (~+25.3 / ~+16.1) is gone; no new error introduced.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ
+## 3. PRIOR-GAP CLOSURE CONFIRMATION
 
-Three most positive claims in A4, each met with the strongest bear counter constructed from the SAME extracted text.
+- **Gap 1 (OI composition grafted into the verdict, not left open):** CLOSED. The ~Rs 96 Cr unrealized FV-gain
+  (deck L1169, verified = 96) vs ~Rs 16 Cr realized (deck L1162, verified = 16; footnote L1175) is quantified in
+  Step 2 diag 6 (review L174), Step 4 questions (L238-239), Combined-Verdict flag 8 (L472), Q9 (L397), and the
+  monitorables. ~41% of consol PBT / ~41% post-tax of the "record" PAT and the reversibility (Q4FY26 consol OI
+  −33.9, res L322; prior FV swings (18),(85),109,89 verified at L1169) are correctly stated. The 96+16=112 vs
+  106.7 gap is honestly labelled a cash-gen-table-vs-P&L classification difference, not a forced reconciliation.
+  PROCEED WITH FLAGS / HOLD explicitly re-affirmed after the ex-MTM stress.
+- **Gap 2 (non-additive PAT bridges):** CLOSED. Rebuilt as additive line-item walks; both reconcile exactly.
+- **Gap 3 (active-buyer −3%→−5% "2nd consecutive" phrasing):** CLOSED. Re-labelled everywhere (item 2 L304,
+  Step 6D L334, Q3 L391, flag L554): −5% is document-cited (L1002); the −3% and the "2nd consecutive decline"
+  framing are named as Notion Q4 FY26 prior-quarter memory, NOT this quarter's filings.
+- **Gap 4 (enquiries −11% vs 31→26 −16%):** CLOSED. Both figures cited (printed −11% at L1004/L2024; series
+  31→29→28→27→26 at L2030-2034 → −16.1%), the ~5pp inconsistency named as unreconciled, RED held on either, and
+  a management question raised (Q21). Verified line by line.
 
-**Positive claim 1 — "Standalone operating EBITDA margin expanded to 40% / 39.7%, +80bps YoY, above the 30% thesis floor (monitoring item 5 GREEN)."**
-Bear counter: the 40% headline is standalone-only (consol margin CONTRACTED −50bps to 35.4%), uses the more favourable of two coexisting deck figures (reported 40% vs "Adjusted EBITDA margin 41%", L1285), and does **not** yet absorb the unquantified remaining-state Labour Code employee-cost step-up (consol N5 / std N6, L428-437 / L663-672).
-Survives? **NO — already incorporated.** A4 discloses the consol −50bps (Step 2A/diagnostic 2), flags the selective standalone framing (F16-a, Q6), and carries the Labour Codes cost as flag/Q12/monitorable (F6-02/F7-01). No graft required.
+---
 
-**Positive claim 2 — "Core operating PBT grew +12.1% on both bases, cleaner than headline PAT; the operating engine is genuinely strong."**
-Bear counter: that +12.1% is realization-only growth on a **contracting** volume base — paying-supplier net −1,852 (L235), active buyers −5% (L1002), unique enquiries −11%/−16% (L1004 vs L2030-2034), Busy EBITDA margin 16%→9% (L1566); with the growth concentrated at the top (top-10% ARPU +10% vs blended +9%, L1016/L1014), this is late-cycle price compounding on an eroding base.
-Survives? **NO — already incorporated, and it is A4's central thesis.** Step 6B (3 RED + 1 AMBER), Step 8C (single cleanest metric = net supplier adds), flag 2/3, and growth-trigger table all carry this. No graft required.
+## 4. ADVERSARIAL READ (three most positive claims; strongest bear counter from the SAME extract)
 
-**Positive claim 3 — "Rolling CFO/PAT ≈1.41x elite / cash STRUCTURAL, and consol PAT +12.2% at/above base (record quarter)."**
-Bear counter (SURVIVES): **the quality of the consolidated headline is materially overstated because the bulk of consolidated Other Income this quarter is UNREALIZED mark-to-market gain, and A4 leaves this un-quantified even though the deck discloses it.** From the deck's own Cash Generation table: realized non-operating income Q1FY27 = **Rs 16 Cr** (L1162, footnote 2 = realized treasury income + stake-sale gains), while the change in **unrealized** fair-value gain on treasury Q1FY27 = **Rs 96 Cr** (L1169). Consol Other Income was Rs 106.7 Cr (filing L322) — i.e. **~90% of consol Other Income (~Rs 96 Cr) is unrealized fair-value MTM**, equal to **~41% of consol PBT** (96 / 231.7) and, post-tax, ~Rs 71 Cr or ~41% of the Rs 172.2 Cr "record" consol PAT. Its reversibility is already demonstrated in the same series: Q4 FY26 consol Other Income printed **−Rs 33.9 Cr** (L322). A4 surfaces treasury dependence at a high level (flag 8 "consol PAT ~76% treasury-driven"; Step 2 diagnostic 6 "~46% of PBT, MTM-lumpy") but treats the interest-vs-dividend-vs-MTM split as an **open question for management** (Q9 asks management to "break down the composition… fair-value MTM"), when the extract (L1162 + L1169) already answers it. The stronger, extract-grounded bear reading — that roughly two-fifths of record consolidated PAT is unrealized, non-cash, and reversible — is absent from A4 and must be grafted.
-Reinforcing leg (same claim): consolidated CFO grew only **+2% YoY** (161→163, deck L1107/L1907) against consol PAT **+12.2%** — a **same-season** (Q1-vs-Q1) conversion deterioration that seasonality does not explain; A4 attributes the cash softness to seasonality/advance-collection timing without addressing the like-for-like YoY divergence.
+1. **Positive: "Standalone Op EBITDA margin 40%, highest of trailing 5 quarters, +80bps YoY, above band."**
+   Bear counter (same text): part of the +14.6 Cr YoY standalone EBITDA gain is cost operating-leverage while
+   demand-gen spend is held flat — Selling & Marketing −1% YoY at Rs 54 Cr (deck L1419), falling to 14% of revenue
+   from 16% (L1421), even as active buyers −5% (L1002) and enquiries −11%/−16% (L1004/L2034), and D&A fell −26%
+   (res L625). SURVIVES? **No (already covered).** The review's central "split" thesis (price/margin delivered,
+   volume did not; growth realization-only on a shrinking base) plus the guidance-silence flag (Q20/F17-04)
+   carries the substance; the S&M-flat nuance sharpens but adds no missing risk.
+2. **Positive: "Core operating PBT +12.1% both bases — operations stronger than the headline."**
+   Bear counter: core PBT outpaces +8.5% standalone revenue via cost restraint on a contracting-volume base, not a
+   healthy growth engine; ARPU (+9%/+10%, L1014/L1016) is the sole load-bearing driver. SURVIVES? **No** —
+   explicitly incorporated (Step 6D "FIRING but now load-bearing"; Step 8C realization-only resolver).
+3. **Positive: "Rolling CFO/PAT ≈1.41x elite; net cash Rs 3,553 Cr; clean unmodified audit."**
+   Bear counter: single-quarter CFO/PAT sub-unity (0.87-0.95x), consol CFO +2% vs PAT +12% (L1107), ~12.2% of
+   consol PAT unaudited-by-BSR incl. a fully board-furnished MonotaRO stub (res L215-227), and a ~Rs 340 Cr
+   dividend payable (deck L1142) will draw the treasury in Q2. SURVIVES? **No** — every element already flagged
+   (Step 5 seasonality, F4-01 unaudited stub, F11-01 dividend draw).
 
-Survives? **YES.** The Rs 96 Cr unrealized-MTM composition (L1162/L1169) is a specific, material, extract-derivable bear fact not stated in A4, and it upgrades A4's Q9 from "please disclose composition" to "composition is already disclosed and ~90% is unrealized." **Must be grafted into A4 (loop to A4).**
+**Surviving bear counters requiring graft into A4: NONE.** All strongest same-text counters are already
+incorporated; the one incremental nuance (S&M held flat while the funnel contracts) refines an already-headlined
+flag rather than adding a missing risk, and does not meet the bar for mandatory graft.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Loop back to **A4**.
-
-Exact gap: A4 must graft the surviving bear counter under Adversarial claim 3 — that per the deck's own Cash Generation table, ~Rs 96 Cr of the Rs 106.7 Cr consolidated Other Income this quarter is **unrealized fair-value MTM gain** (realized non-operating income only Rs 16 Cr, L1162; Δ fair-value gain on treasury Rs 96 Cr, L1169), equal to ~41% of consol PBT and ~41% of the Rs 172.2 Cr record consol PAT, and demonstrably reversible (Q4 FY26 consol OI −Rs 33.9 Cr, L322). A4 currently poses this composition as an unanswered management question (Q9) rather than stating the extract-disclosed answer; the quantified, reversible-MTM framing must be added to flag 8 / the combined verdict before save. Secondary items for the same loop: reconcile the non-additive PAT bridge (ARITH-1); soften/cite the "active buyers −3%→−5% 2nd consecutive decline" claim (OBS-C2) which is not derivable from the extract; and flag the deck-internal enquiries −11% vs 31→26 (−16%) inconsistency (OBS-C1) for A3/A4 reconciliation.
-
-Coverage: PASS (all counts reconcile; no material orphan row). Arithmetic: PASS on every headline derived metric (one non-additive-bridge defect). Adversarial: one surviving counter unincorporated.
-
----
+**COMPLETE.** Coverage clean (no orphan rows; fresh counts equal the ledgers). Arithmetic clean (every derived
+metric re-derived from raw lines; both rebuilt PAT bridges additive and exact to +18.7 / +10.1; no error above
+rounding). All four prior gaps genuinely closed and no new error introduced by the revision. No surviving bear
+counter needs grafting. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -119,15 +147,12 @@ company: "INDIAMART"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "PAT bridge additivity (consol Step 4A)", a4_value: "components imply +25.3 vs stated total +18.7", recomputed: "stated total +18.7 correct (172.2-153.5); listed components non-additive (mix pre-tax contribution with rate-only tax)", source_line: "results L341; review Step 4A"}
-  - {metric: "PAT bridge additivity (standalone Step 4B)", a4_value: "components imply +16.1 vs stated total +10.1", recomputed: "stated total +10.1 correct (176.1-166.0); listed components non-additive", source_line: "results L633; review Step 4B"}
-surviving_bear_counters:
-  - {claim: "Rolling CFO/PAT ~1.41x elite and consol PAT +12.2% at/above base (record quarter)", counter: "~Rs 96 Cr of the Rs 106.7 Cr consolidated Other Income is UNREALIZED fair-value MTM gain (realized non-operating income only Rs 16 Cr); that is ~41% of consol PBT and ~41% of the Rs 172.2 Cr record consol PAT, demonstrably reversible (Q4 FY26 consol OI -Rs 33.9 Cr). A4 poses the OI composition as an open management question (Q9) when the deck already discloses it. Reinforcing: consol CFO +2% YoY vs PAT +12.2% is a same-season conversion deterioration seasonality does not explain.", source_line: "results L322/L334/L341; deck L1162/L1169/L1107/L1907"}
-loop_back_to: "A4"
-gap: "A4 must graft the extract-disclosed composition of consolidated Other Income: ~Rs 96 Cr (of Rs 106.7 Cr) is unrealized fair-value MTM gain (deck L1162 realized 16, L1169 fair-value gain 96), ~41% of consol PBT and ~41% of record consol PAT, reversible per Q4 FY26 OI -33.9 (L322). Currently framed only as unanswered Q9; the quantified reversible-MTM reading must be added to flag 8 / combined verdict. Secondary in same loop: reconcile non-additive PAT bridge (Step 4A/4B); cite-or-soften 'active buyers -3%->-5% 2nd consecutive decline' (not in extract); flag deck-internal enquiries -11% vs 31->26 (-16%) inconsistency."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

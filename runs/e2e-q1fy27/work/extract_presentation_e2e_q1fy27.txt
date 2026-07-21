@@ -1,0 +1,125 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: e2e_pressrelease_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 2
+formfeed_count: 2
+line_count: 96
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-21
+=== END HEADER ===
+
+NOTE: Source is a 2-page investor Press Release PDF (letter titled "Sub: Press
+Release" to NSE/BSE on page 1, followed by the press release body "E2E
+Networks Reports Q1 FY'27 Results" on page 2), classified doctype=presentation
+per orchestrator. All monetary figures in source are stated in Rs Millions
+(symbol Mn). No conversion applied below; multiply by 0.1 for Rs Crores.
+pdfimages check: page 1 contains one embedded raster image (company logo /
+digital-signature stamp graphic only, no data content). Page 2 contains no
+embedded images; the KPI summary boxes are native extractable text, not chart
+images -- confirmed by visual render of both pages. No [CHART] tags apply; no
+OCR fallback triggered (both pages well above 100-character threshold: page 1
+= 1,660 chars, page 2 = 5,287 chars).
+
+[page 1]
+                                                 E2E Networks Limited
+                                            CIN- L72900DL2009PLC341980
+                                 Uppal's Genesis A-32, Block B, Mohan Cooperative Industrial Estate,
+                                   Badarpur, New Delhi 110044, Phone No. +91-11-4084-4964
+                             Email: cs@e2enetworks.com, Website https://www.e2enetworks.com/
+
+
+                                                                                                 Date: July 21, 2026
+
+
+ To,                                                            To,
+ National Stock Exchange of India Ltd. (‘NSE’)                  The Manager- Listing
+ Exchange Plaza, 5th Floor,                                     BSE Limited,
+ Plot No. C/1, G Block,                                         Phiroze Jeejeebhoy Towers,
+ Bandra - Kurla Complex, Bandra (E), Mumbai – 400 051,          Dalal Street, Mumbai- 400 001
+ Maharashtra, India                                             Maharashtra, India
+ (Script Symbol: E2E)                                           (Scrip Code: 544783)
+
+
+
+Sub: Press Release
+
+Dear Sir/Madam,
+
+This is with reference to the captioned subject, please find attached herewith a press release titled “E2E
+Networks Reports Q1 FY’27 Results”, being issued by the Company. This is for the information of the
+Exchange and the members.
+
+Kindly take this on record.
+
+
+Thanking You,
+
+Yours faithfully,
+
+
+For E2E Networks Limited
+          Digitally signed
+
+RONIT     by RONIT
+          Date: 2026.07.21
+          13:54:36 +05'30'
+
+Ronit
+Company secretary & Compliance Officer
+ICSI M. No.: A59215
+
+[page 2]
+                                                                                                                                                                           FOR IMMEDIATE RELEASE
+E2E Networks Limited                                                                                                                                                                Contact: Investor Relations
+NSE & BSE Listed | AI-First Cloud GPU Platform |                                                                                                                                  investors@e2enetworks.com
+
+New Delhi, July 21, 2026
+
+     E2E Networks Reports Q1 FY’27 Results: Revenue Surges 334% YoY to ₹1,568 Mn; EBITDA Margin
+                                   Expands to 75.2%; PBT ₹586 Mn
+Company delivers another significant quarter as the B200 cluster goes live and Q1 EBITDA alone reaches 93% of full-year FY’26 EBITDA
+
+
+       ₹1,568 Mn                              75.2%                          ₹1,179 Mn                              ₹586 Mn                          ₹439 Mn                               ₹2.10
+                                                                                Q1 EBITDA
+       Q1 FY’27 Revenue                   EBITDA Margin                                                                Q1 PBT                           Q1 PAT                           Diluted EPS
+                                                                           93% of FY’26 full-year
+    +334.1% YoY | +63.9% QoQ                +1,450 bps QoQ                                                       vs ₹86 Mn in Q4 FY’26                Margin 28.0%                   vs ₹0.32 in Q4 FY’26
+                                                                                 EBITDA
+
+
+FINANCIAL PERFORMANCE OVERVIEW
+E2E Networks Limited, India’s premier AI-First Cloud GPU Platform, today announced its unaudited financial results for the first quarter ended June
+30, 2026. Q1 FY’27 revenue reached ₹1,568 Mn, up 334% year-on-year and 64% quarter-on-quarter, driven by the go-live of the B200 cluster, and
+improvement in utilisation of flagship GPUs and continued scale-up of the TIR AI/ML platform. The quarter also marked a significant milestone in the
+Company's capital markets journey, with a 10:1 stock split and a direct listing on the BSE Mainboard.
+
+Q1 FY’27 — KEY FINANCIAL HIGHLIGHTS                                                                         OTHER HIGHLIGHTS
+• ₹1,568 Mn Revenue from Operations (+334.1% YoY; +63.9% QoQ)                                                • B200 cluster successfully deployed on the TIR platform, contributing
+• EBITDA: ₹1,179 Mn | Margin: 75.2% (+1,446 bps QoQ; +4,609 bps                                                    to revenue within its first quarter
+     YoY)                                                                                                    •     GPU infrastructure scaled to approximately 5,100 GPUs
+•    PBT: ₹586 Mn vs ₹86 Mn in Q4 FY’26                                                                      •     Incorporated Sovcloud Technologies Limited, a wholly owned
+•    PAT: ₹439 Mn | PAT Margin: 28.0% (vs 6.7% in Q4 FY’26)                                                        subsidiary,
+•    Diluted EPS: ₹2.10 per share (vs ₹0.32 in Q4 FY’26)                                                     •     Operating large GPU clusters on the TIR platform, targeting industry
+                                                                                                                   benchmarks for NCCL and Model FLOPs Utilization (MFU)
+•    Depreciation: ₹606 Mn, up ₹93 Mn QoQ on new GPU capex
+                                                                                                             •     Investing in Organisational Capability through strengthening of teams
+                                                                                                             •     Cluster performance driven through meticulous, full stack
+                                                                                                                   optimisations across multiple layers
+
+
+MANAGEMENT COMMENTARY
+“Q1 FY’27 marks another significant quarter for E2E Networks — revenue grew 4.3x year-on-year, EBITDA margin expanded to 75.2%, and profit
+before tax stands at ₹586 Mn. The B200 cluster went live within the quarter, and utilization across our GPU fleet remains strong, reflecting robust
+demand from AI ecosystem. We remain focused on aggressive and judicious capacity expansion through the rest of FY’27.”
+
+— Management, E2E Networks Limited
+
+About E2E Networks Limited: E2E Networks is India’s leading AI-First Cloud GPU Platform, listed on the NSE and BSE. The Company provides high-performance GPU cloud infrastructure
+for AI/ML workloads, including B200, H200, H100 and legacy GPU series, alongside Linux, Windows, Storage and Managed Cloud solutions from data centres in Noida and Chennai.
+This press release may contain forward-looking statements based on current expectations and assumptions. Actual results may differ materially. All financial figures for Q1 FY’27 are unaudited and subject to
+limited review by the Statutory Auditors.

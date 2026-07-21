@@ -1,0 +1,53 @@
+stage: B08-promoter
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "no primary SEBI/NSDL shareholding-pattern XBRL/PDF (aggregator-sourced promoter %/pledge/FII only)"
+  - "no primary BSE text for 27-28 May 2026 Change in Management Reg 30 disclosure"
+  - "no primary BSE text for 30-Apr-2026 SEBI Large Corporate initial disclosure"
+  - "Reg 29(2) filings for Jun 9/16/19/29 and 3-Jul-2026 not individually located; only the Sethi Funds Management 18-24 Jun tranche corroborated"
+  - "Kiran Velagapudi 'third executive on minimum remuneration' not independently confirmed in FY25 AR (only Irmgard Velagapudi and Vinod Sethi named in Schedule V ratification items)"
+flags:
+  # NOTE (orchestrator): verdict is CAUTION, below the CONCERN/AVOID threshold, so the formal
+  # FLAG-PROMOTER verdict-line block is NOT triggered per Section 4 rules. Caution items still surface in synthesis.
+  - {type: FLAG-PROMOTER-CAUTION, verdict: "CAUTION", top_findings: ["related-party public deposits risen to ~26.9% of deposit book (family FD yields at/above disclosed rate tiers)", "5th consecutive year of Schedule-V minimum remuneration to MD + Chairman coinciding with first loss year, ratification pending beyond statutory 3-year cap", "promoter group is a net buyer with 0% pledge through the loss year - positive transition evidence alongside the caution items"]}
+verdict: "CAUTION"
+scorecard: {clean: 8, caution: 2, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Related-party fixed deposits (Irmgard Velagapudi, Durgamba Investment, Eimco-K.C.P., Quality Engineering Co) rose to ~26.9% of the public deposit book (FY25) from ~20.2% (FY24); family FD yields (~8.2-9.1%) appear at/above disclosed rate tiers (7.25/7.00/6.50%)", evidence_tier: "VERIFIED", source: "AR Note 53B/53C, pp.123-124", date: "FY2024-25 AR"}
+  - {finding: "5th consecutive year of Schedule V minimum remuneration to MD (Irmgard Velagapudi) and Executive Chairman (Vinod Sethi), coinciding with company's first loss year; ratification beyond statutory 3-year cap sought at Aug-2025 AGM", evidence_tier: "VERIFIED", source: "AR Notice Items 4-5 (pp.24-25) and Auditor's Report s.197(16) (Note 54)", date: "FY2024-25 AR, notice dated 13-08-2025"}
+transition_evidence:
+  - {item: "Promoter-side open-market buying through the loss year: Vinod Sethi personal purchases Feb-Mar 2026 (~3.5 lakh shares); Sethi Funds Management Pvt Ltd stake raised 0.43%->0.68% Jun 2026", evidence_tier: "MEDIA REPORTED", source: "ChiniMandi/ScanX/EquityBulls aggregator reports", date: "Feb-Jun 2026"}
+  - {item: "Promoter group stake rising ~40.6% (Mar-2025) -> ~42% (mid-2026) with 0% pledge/encumbrance across every period found", evidence_tier: "MEDIA REPORTED", source: "Trendlyne/Angel One/aggregator search snippets", date: "as of Jul-2026"}
+  - {item: "Orderly independent board refresh: 3 new Independent Directors appointed 01/04/2024 (Bakthavatsalam, Kalyanaraman, Malini Lakshmi Narasimhan), registered in statutory Independent Directors Data Bank, replacing one retiring-by-rotation director (Moturi)", evidence_tier: "VERIFIED", source: "AR pp.60-61, corroborated by boardstewardship.com", date: "01-04-2024"}
+  - {item: "Non-family, externally credentialed Executive Chairman already in seat (Vinod Sethi: IIT Bombay, NYU MBA, 12 years as Morgan Stanley India CIO)", evidence_tier: "MEDIA REPORTED", source: "company bio corroborated by IndiaMart/The Org/Bloomberg profile", date: "ongoing"}
+  - {item: "New non-family-dependent revenue vector: EIMCO-K.C.P. won Rs 257 crore Hyundai Engineering & Construction order (Reactor Clarifier Package)", evidence_tier: "MEDIA REPORTED (not a primary filing; operator-relayed and media-corroborated, pending exchange-filing confirmation)", source: "EquityBulls/TradeBrains/ChiniMandi", date: "20-07-2026"}
+  - {item: "TRANSITION EVIDENCE GAP - not found: no new outside/non-family CEO or CFO hire; no institutional (DII or dominant strategic FII) entry - FII holding thin/fragmented ~3.31% across 62 funds; no Big-4 auditor upgrade (regional Chennai firm since 27th AGM)", evidence_tier: "VERIFIED", source: "AR Corporate Information + aggregator shareholding data", date: "as of Jul-2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - no encumbrance found in any period searched (FY24 through FY26)"
+searches_performed:
+  - "KCP Sugar Irmgard Velagapudi Vinod Sethi promoter family background"
+  - "KCP Sugar shareholding pattern promoter pledge 2026"
+  - "KCP Sugar SEBI order"
+  - "KCP Sugar Change in Management BSE 533192 May 2026"
+  - "KCP Sugar director resignation/appointment 2026 KMP change"
+  - "KCP Sugar IiAS/SES/InGovern proxy advisory"
+  - "KCP Sugar promoter pledge encumbrance shares"
+  - "EIMCO KCP Hyundai order Rs 257 crore July 2026"
+  - "KCP Sugar Vinod Sethi open market share acquisitions 2026"
+  - "KCP Sugar large corporate SEBI disclosure April 2026"
+  - "Vinod Sethi KCP Sugar / Morgan Stanley litigation court case"
+  - "KCP Sugar NCLT / oppression / family dispute litigation"
+  - "Velagapudi Ramakrishna KCP group succession history"
+  - "Durgamba Investment / Sethi Funds Management registry check"
+  - "KCP Sugar mutual fund/FII institutional investor stake"
+searches_skipped:
+  - "Primary SEBI/NSDL shareholding-pattern XBRL/PDF fetch (403 on Trendlyne/Screener/moneyworks4me)"
+  - "Primary BSE corpfiling PDF text for 27-28 May 2026 Change in Management filing (403)"
+  - "Primary BSE corpfiling PDF text for 30-Apr-2026 Large Corporate disclosure (403)"
+  - "Primary NSE/BSE Reg 29(2) SAST filing text for each individual Jun/Jul 2026 date (not located)"
+  - "Full 5-year CFO/CS/internal-audit-head turnover history beyond FY24-25 AR"
+verdict_basis: "Clean legal/regulatory/litigation record across all five sub-areas, 0% pledge, and promoter-side net buying through the FY26 loss year, offset by a rising related-party share of the public deposit book (~26.9%) and a fifth consecutive year of Schedule-V minimum remuneration to the MD and Chairman landing in the company's first loss year - real, disclosed caution items but no red flags or deal-breakers, placing this at CAUTION with credible transition evidence rather than static CONCERN."

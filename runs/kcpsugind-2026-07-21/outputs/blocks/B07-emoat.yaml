@@ -1,0 +1,29 @@
+stage: B07-emoat
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no concall transcripts (NO-CONCALL MODE)", "no investor presentation", "AR pages 151-275 and page 2 scanned/not extractable", "Eimco-KCP standalone PPE/CWIP notes fall in non-extractable AR page range", "Eimco-Hyundai Rs 257cr order not present in inputs/announcements/, AR, FY26 results, or Q3FY26 results text caches - operator-relayed only"]
+flags: ["FLAG-NO-CAPEX-PROGRAMME", "FLAG-UTILISATION-DECLINE", "FLAG-UNCONFIRMED-ORDER-OPERATOR-RELAYED"]
+em_score: 5                    # adjusted total, ~0-80 scale
+em_classification: "NONE"
+active_categories:
+  - {id: "R1", name: "Regulatory & Policy Tailwinds - Ethanol/E20 blending mandate", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active nationally; company-specific capture 12-24m contingent on distillery utilisation recovery"}
+evidence_mix: {documented: 13, claim: 0, inference: 4}
+completionist_recount: "6 documented items inside the Section 3 table across 5 categories (A3, G1, G2, F2, H1); 17 of 20 categories are NO EVIDENCE FOUND; most genuine documented volume (13 items) sits in Section 1/2 (Urad Dal diversification, Eimco order book, capex/utilisation decline). Honest sparse scan."
+catalysts_12m:
+  - {catalyst: "Reg 30 filing confirming (or not) the Eimco-Hyundai Rs 257cr order", window: "0-6m", evidence_type: "operator-relayed pending filing confirmation", anchor: "operator-context-recent.md item 1; not in inputs/announcements/, AR, FY26 or Q3FY26 results"}
+  - {catalyst: "Consolidated Engineering segment revenue resuming YoY growth after FY26 dip (Rs 7,863.55 lakh FY26 vs Rs 9,687.12 lakh FY25)", window: "6-12m", evidence_type: "documented", anchor: "FY26 Audited Results p.4-5, segment note"}
+  - {catalyst: "Urad Dal / Others segment result turning positive after FY25 segment loss and FY26 revenue decline", window: "6-12m", evidence_type: "documented", anchor: "AR Note 76 p.128; FY26 Audited Results p.4-5"}
+  - {catalyst: "Distillery utilisation recovery under the now-active E20 national mandate", window: "6-12m", evidence_type: "documented (policy) / to-be-documented (company capture)", anchor: "CARE Ratings p.2; AR pp.36-37"}
+capex_embedded_growth_pct: 0   # CWIP Rs 25.11 lakh vs FY25 revenue Rs 22,735.39 lakh, ~0.11%, immaterial
+optionality_register:
+  - {optionality: "Eimco-Hyundai Rs 257cr Reactor Clarifier order (desalination-adjacent EPC diversification)", converting_evidence: "Reg 30 filing / signed-contract disclosure; Engineering segment revenue recognition", first_appears: "BSE/NSE Reg 30 filing; FY27 quarterly segment note; Eimco FY26-27 AR Directors' Report", window: "12-24 months", note: "OPERATOR-RELAYED, not filing-anchored"}
+  - {optionality: "Eimco order book growth (+30.4% YoY FY25) not yet converting to consolidated Engineering revenue growth (which fell FY26)", converting_evidence: "sustained YoY consolidated Engineering segment revenue growth", first_appears: "FY27 quarterly segment notes (Reg 33)", window: "12-24 months"}
+  - {optionality: "Urad Dal scaling (3.9% to 20.2% of standalone TOI) but turned loss-making, and Others segment declined ~12% in FY26", converting_evidence: "segment result turning positive with disclosed unit economics; resumed revenue growth", first_appears: "AR/quarterly segment note (successor to Note 76)", window: "12-24 months"}
+  - {optionality: "In-house FGD belt-filter import-substitution technology at Eimco (single disclosed item)", converting_evidence: "disclosed order pipeline or revenue tied to FGD/import-substitution projects", first_appears: "Eimco Directors' Report - Technology Absorption, future AR", window: "24-36 months"}
+  - {optionality: "Ethanol/E20 national policy tailwind active industry-wide but KCP distillery utilisation fell 82% YoY", converting_evidence: "disclosed recovery in distillery production/utilisation volumes", first_appears: "AR Directors' Report / MD&A Product-wise Performance", window: "12-24 months"}
+  - {optionality: "'Strong farmer relationship' (CARE characterization) as quasi-backward-integration for cane and black gram sourcing", converting_evidence: "disclosed multi-year procurement agreement or captive-sourcing arrangement", first_appears: "Directors' Report / MD&A Raw Material Risk section", window: "24-36 months"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward AVOID (core 26, moat_score 1, deteriorating CFO) meets forward NO MEANINGFUL EMERGING MOAT (em_score ~5, 17 of 20 categories NO EVIDENCE FOUND); the real diversification signal (Urad Dal, Eimco order book) is genuine but thin, largely unconverted to profit, and not a GOOD/AVERAGE-plus-EXPANSION transition setup."
+top_moat_risks: ["Urad Dal revenue scaling 4x YoY but segment turned loss-making, and successor 'Others' segment revenue fell ~12% in FY26", "Eimco order book grew 30.4% YoY (FY25) but consolidated Engineering segment revenue fell in FY26 - booking-to-revenue lag unconfirmed to resolve", "Eimco-Hyundai Rs 257cr order is operator-relayed only, absent from all filings and text caches searched", "Ethanol/E20 policy tailwind is fully industry-wide while KCP's own distillery utilisation collapsed 82% YoY in the same period", "No committed capex programme at the parent (capex down 36% YoY, CWIP ~0.1% of revenue) despite a net-debt-negative balance sheet"]

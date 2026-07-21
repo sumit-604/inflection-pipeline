@@ -1,0 +1,19 @@
+stage: B12d
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+peers_audited: 0
+substantive_confirmed: 0
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: false   # 5 B05 peer_questions remain unresolved; correctly declared as such, not a Stage 6 process failure
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06-peers.yaml skip_reason", claimed: "there are no B05 peer_questions", source_truth: "B05/05-concall.md Section 4B contains a fully-formed 5-question peer_questions list, explicitly preserved for downstream use", note: "wording imprecision; does not change the (correct) empty verification output"}
+not_applicable: true
+not_applicable_reason: "No peer-concall transcripts exist in this run (inputs/peer-concalls/ absent; manifest concalls_available: false, confirmed independently). Stage 6 skip is correctly recorded and evidenced. Standard Verifier D coverage checks (rules 2-5) cannot be performed against non-existent transcripts. Peer comparison this run exists only as quantitative screening CSVs (KMSUGAR, RAJSREESUG, UGARSUGAR), which is not concall verification of the B05 peer_questions; those 5 questions remain open into downstream stages."
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: "N/A - no peer transcripts provided"

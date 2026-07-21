@@ -140,11 +140,11 @@ Note on EBITDA definition: the deck's "EBITDA" line reconciles as Revenue − To
 1. **Did revenue grow YoY?** Yes, +53.5% (Q1 FY27 Rs 61.7 Cr vs Q1 FY26 Rs 40.2 Cr, pres L1033). Annualised Q1 run-rate (61.7 x4 = Rs 246.8 Cr) sits marginally ABOVE full FY26 (Rs 243.0 Cr), i.e. Q1 is already at/above the FY26 exit pace — supportive of the order-book conversion thesis, though one quarter is one data point.
 2. **Op EBITDA margin YoY:** expanded to **24.15% (Q1 FY27) vs 14.43% (Q1 FY26) = +972 bps** (pres L1039). This is a genuine YoY expansion, not merely sequential; it also matches the full-FY26 margin (23.99%), so the step-up achieved in FY26 is holding in Q1 FY27.
 3. **Did core operating PBT (ex-OI) grow YoY?** Yes, **+475%** (Rs 11.5 Cr vs Rs 2.0 Cr); ex-JV as well **+500%** (Rs 10.2 Cr vs Rs 1.7 Cr). The single cleanest test of operational health is passed decisively — headline growth IS real.
-4. **What drove the gap between core-op PBT growth (+475%) and reported PAT growth (+287.5%)?** The gap runs the OTHER way from the usual small-cap trap. Reported PAT grew SLOWER than core-op PBT because: Other Income FELL (−Rs 0.7 Cr, a drag on reported), and Tax ROSE (+Rs 1.9 Cr as profits normalised toward statutory ETR). JV share added +Rs 1.0 Cr. So reported PAT is if anything UNDERالسtated relative to the operating engine — the opposite of treasury-inflated. Quality-positive.
+4. **What drove the gap between core-op PBT growth (+475%) and reported PAT growth (+287.5%)?** The gap runs the OTHER way from the usual small-cap trap. Reported PAT grew SLOWER than core-op PBT because: Other Income FELL (−Rs 0.7 Cr, a drag on reported), and Tax ROSE (+Rs 1.9 Cr as profits normalised toward statutory ETR). JV share added +Rs 1.0 Cr. So reported PAT is if anything UNDERstated relative to the operating engine — the opposite of treasury-inflated. Quality-positive.
 5. **Are D&A and finance costs scaling faster than revenue?** No. Depreciation +42.9% vs revenue +53.5% (scaling below revenue); Finance Costs −15.0% (falling). No capex-absorption deficit visible on the P&L. Caveat: a fresh rig-capex order was announced (A3 F6.4) that will lift future depreciation.
 6. **Is Other Income concentration changing?** Yes, and favourably. OI/PBT collapsed from 35.5% (Q1 FY26) to 3.4% (Q1 FY27); at FY level from 22.4% (FY25) to 8.3% (FY26). Q1 FY27 PBT is now almost entirely operating. Stripping OI does not weaken the read — it strengthens it.
 
-**Step 2 verdict:** The P&L quality this quarter is genuinely strong and NOT a treasury/one-off artefact. The thesis risk is NOT the income statement; it is the cash conversion behind it (Step 5) and the unverified standalone gap (first-class metric below).
+**Step 2 verdict:** The P&L quality this quarter is genuinely strong and NOT a treasury/one-off artefact. The thesis risk is NOT the income statement; it is the cash conversion behind it (Step 5), the unverified standalone gap (first-class metric below), and the fact that the order-book "all-time high" is a gross closing balance whose net QoQ addition is smaller than a single pre-booked order (Step 6E).
 
 ---
 
@@ -267,13 +267,13 @@ Probability re-weighting rule: not triggered (no metric confirmed below bear on 
 | # | Watchlist Item | Green | Red | This-Quarter Reading | Status |
 |---|---|---|---|---|---|
 | 1 | CFO / CFO/PAT | >0.50 | <0.50 | ND (no cash-flow stmt) F17.1 | **UNKNOWN** |
-| 2 | HZL Rs 307 Cr Rajasthan revenue recognition / segment rev >15 Cr | >15 Cr | nil | Order "commences operations" (E5 L98); no recognised rev/segment figure; possible same order as HZL award (F16.2) | **UNKNOWN / AMBER** |
+| 2 | HZL Rs 307 Cr Rajasthan revenue recognition / segment rev >15 Cr | >15 Cr | nil | Order "commences operations" (E5 L98); no recognised rev/segment figure; the Rajasthan order IS the FY25 HZL award (sl.6 dates it 2024-25, L151-155; F16.2 now extract-supported, see 6E) | **UNKNOWN / AMBER** |
 | 3 | Receivable / debtor days | <=175 | >200 | 175 (FY26 der.); Q1 ND | **AMBER** (at ceiling, rising) |
 | 4 | Segment liabilities movement | — | — | ND (no segment schedule) F17.3 | **UNKNOWN** |
 | 5 | Coal-block GR submission (end-Jul 2026) & mine timeline | on time | slips | GR "being finalised for early submission" (sl.22 L682); production target FY27-28 (L687) | **GREEN (on track)** |
 | 6 | RIL CBM extension Rs 166 Cr & concentration | — | rising | Extension won (E6 L100); CBM Production 29% of order book (L532); RIL % of revenue ND | **AMBER (concentration ND)** |
 | 7 | Oman two JVs | progress | stall | JV1 operating; JV2 airborne survey done, report underway (sl.21 L659) | **GREEN** |
-| 8 | Order book Rs 761 Cr conversion | rising+converting | stalling | Book Rs 761 Cr / 7,613 Mn all-time high (E7 L101), +31% QoQ (F16.3); conversion pace ND | **AMBER (no conversion data)** |
+| 8 | Order book Rs 761 Cr conversion | rising+converting | stalling | Book Rs 761 Cr / 7,613 Mn all-time high (E7 L101), +31% QoQ; BUT net QoQ addition only Rs 180 Cr (5,812→7,613 Mn, L546), SMALLER than the single Rs 307 Cr pre-booked Rajasthan order — headline overstates fresh intake (F16.2/F16.3, see 6E); conversion pace ND | **AMBER (net add < flagship order; no conversion data)** |
 | 9 | Accreditation (1 of 21 coal+lignite agencies) | confirmed | — | Accredited prospecting agency notified (L158-159); "1 of 21" scarcity not quantified | **GREEN (qualitative)** |
 | 10 | Warrant conversion (balance 75%) | complete | — | Converted this quarter (E10 L105); share-count quantum ND (F10.1) | **GREEN (event) / AMBER (quantum)** |
 | 11 | Standalone-vs-consolidated PAT gap; unaudited-JV share | narrow | widening | S-vs-C gap ND (consolidated-only); JV share 14.0% of PAT disclosed | **UNKNOWN (gap) / AMBER (JV 14%)** |
@@ -285,7 +285,7 @@ Probability re-weighting rule: not triggered (no metric confirmed below bear on 
 | (a) Coal mine production timeline slips | FY29 slip | Target FY27-28 (sl.22 L687) — EARLIER than FY29 (A3 F6.1) | **NO** (favourable) |
 | (c) Receivable days / WC deteriorates | >200 = bear | 175 (FY26 der.); Q1 ND | **NO** (but rising; AMBER) |
 | Customer concentration on RIL (Reliance CBM) | material dependence | RIL extension won; RIL % of revenue ND; CBM 29% of book | **NO (ND to confirm)** |
-| Order-book conversion pace stalls | stall | Book +31% QoQ to Rs 761 Cr; conversion pace ND | **NO (ND to confirm)** |
+| Order-book conversion pace stalls | stall | Book +31% QoQ to Rs 761 Cr, but net add only Rs 180 Cr < the single Rs 307 Cr pre-booked order (F16.2, see 6E); conversion pace ND | **NO (ND to confirm; fresh intake overstated)** |
 | Coal-trading absence stops sustaining margins | margin fade | N.A. this doc (no coal-trading line) | **NO (N.A.)** |
 
 **No thesis-broken trigger has FIRED.** Two sit AMBER pending the concall (receivable days, order-book conversion).
@@ -295,12 +295,30 @@ Probability re-weighting rule: not triggered (no metric confirmed below bear on 
 | Trigger | Original Confidence | Confirming Evidence | Killing Evidence | Updated Status |
 |---|---|---|---|---|
 | Coal block (Jharkhand) to production | Medium | GR being finalised for early submission (L682); target FY27-28 (L687) — earlier than house FY29 | None; execution/binary GR-slip risk | **ON TRACK** |
-| HZL / Rajasthan Rs 307 Cr order conversion | Medium-High | Order "commences operations" (E5 L98) | No recognised revenue/segment figure; possible same order as HZL award, double-count risk (F16.2) | **ON TRACK (unconfirmed)** |
+| HZL / Rajasthan Rs 307 Cr order conversion | Medium-High | Order "commences operations" (E5 L98) on the FY25-awarded HZL order | No recognised revenue/segment figure; confirmed same order as the FY25 HZL award — double-count now extract-supported (F16.2, see 6E) | **ON TRACK (unconfirmed; recognition split open)** |
 | Oman JV1/JV2 optionality | Medium | JV1 operating; JV2 airborne survey complete, report underway (L659); JV share 14% of PAT | Resource declaration pending; ARL rights dilution risk (F6.6) | **ON TRACK** |
 | Accreditation (coal+lignite prospecting) | Low-Medium | Notified accredited agency (L158) | Scarcity framing unquantified | **ON TRACK (qualitative)** |
-| Order-book conversion (Rs 761 Cr) into revenue | Medium | Book at all-time high +31% QoQ; Q1 revenue annualises above FY26 | Conversion pace/definition ND; 59% single-segment concentration (F16.3) | **ON TRACK (conversion unproven)** |
+| Order-book conversion (Rs 761 Cr) into revenue | Medium | Book at all-time high (net QoQ add Rs 180 Cr); Q1 revenue annualises above FY26 | Net QoQ add < the single Rs 307 Cr pre-booked order — fresh intake overstated (F16.2, see 6E); conversion pace/definition ND; 59% single-segment concentration (F16.3) | **ON TRACK (fresh intake overstated; conversion unproven)** |
 
-**Step 6 verdict:** thesis INTACT; no trigger dead or fired; the decisive verifications (cash conversion, HZL revenue recognition, receivable days) remain ND and land squarely on the Aug concall.
+### 6E. ORDER-BOOK NET ADDITION vs THE FLAGSHIP ORDER (F16.2 double-count — now EXTRACT-SUPPORTED / near-resolved)
+
+The "+31% QoQ, all-time high Rs 761 Cr" headline is arithmetically a **gross closing-balance move, not fresh Q1 intake.** From the order-book bar chart (pres L533/L535/L542/L546):
+
+| Order-book measure | Rs Mn | Rs Cr | Source |
+|---|---|---|---|
+| FY26 closing order book | 5,812 | 581.2 | pres L535/L546 |
+| Q1 FY27 closing order book (all-time high) | 7,613 | 761.3 | pres L533/L542/L546 |
+| **Net QoQ addition (Q1 FY27 − FY26)** | **+1,801** | **+180.1** | derived (+31.0%) |
+| Single flagship Rajasthan order (touted this quarter) | 3,070 | 307.0 | pres L1003-1004 |
+| HZL-subsidiary core-drilling award (dated 2024-25) | 3,070 | 307.0 | pres sl.6 L151-155 |
+
+**The double-count is now resolvable in the extract itself, not merely "defer to management."** The net QoQ book addition (**Rs 180.1 Cr**) is SMALLER than the single **Rs 307 Cr** Rajasthan order the deck headlines as this quarter's marquee event (L1003-1004 "commences operations to execute single largest order value of INR 3,070 Mn"). Slide 6 dates the Rs 307 Cr / 3,070 Mn HZL-subsidiary core-drilling award to **2024-25** (L151-155: "Secured the largest-ever single order valued at INR 307 crore from a subsidiary of Hindustan Zinc Ltd. for core drilling"), and Q1 FY27 only "**commences operations**" on it (results E5 L98; pres L1003). Award (FY25) and commencement (Q1 FY27) are therefore the **same Rs 307 Cr / 3,070 Mn order, booked in FY25 and being executed/recognised now — not incremental Q1 intake.**
+
+**Consequence for the headline (positive downgraded to "net-of-pre-booked-order"):** because a single Rs 307 Cr pre-booked order alone exceeds the Rs 180 Cr net closing-balance rise, the "+31% QoQ / all-time high" framing **overstates fresh Q1 order intake.** Net of the pre-booked flagship, organic new bookings this quarter were at most ~Rs 180 Cr less whatever was burned off in Q1 revenue, and could be flat-to-negative ex-Rajasthan. The all-time-high order book remains a fact of the closing balance; it is not evidence of Rs 307 Cr of fresh Q1 demand.
+
+**F16.2 upgraded: EXTRACT-SUPPORTED / near-resolved** (was "defer to management"). The existence of the double-count is now established from the deck's own dating (sl.6, 2024-25) and arithmetic (net add Rs 180 Cr < the Rs 307 Cr order). What remains for the concall is narrow and is a **recognition-split** question, not an existence question: how much of the Rs 307 Cr is recognised as Q1 FY27 revenue versus still-in-book, and confirmation that no *second* same-sized order exists. See re-worded Question 2.
+
+**Step 6 verdict:** thesis INTACT; no trigger dead or fired. New this loop: the order-book "+31% QoQ all-time high" positive is downgraded to net-of-pre-booked — net Q1 book addition (~Rs 180 Cr) is smaller than the single Rs 307 Cr pre-booked HZL/Rajasthan order, so fresh intake is overstated and the F16.2 double-count is now extract-supported (6E). The decisive verifications (cash conversion, HZL revenue-recognition split, receivable days) remain ND and land squarely on the Aug concall.
 
 ---
 
@@ -312,13 +330,13 @@ This is not an FTTCP/Role 1 run; a full re-computation requires the concall inpu
 |---|---|---|---|
 | ROCE Base (0.5×ROCE+7.5, floor 9x, cap 24x) | Destination PE 27.5x (sector cap binds) | FY26 ROCE 16% (L1170) → 0.5×16+7.5 = 15.5x; **Q1 FY27 ROCE = ND** (deck omits it, A3 F16.1) | **HOLD** — FTTCP verdict is sole authority; do not re-set on a Q1 partial. Request Q1 ROCE at concall. |
 | Cash Multiplier | per Notion band | **INDETERMINATE** — CFO/PAT ND (Step 5) | **CANNOT REVISE** — hold pending Aug CFO print; do not upgrade |
-| Growth Visibility Premium | +x per EM | Order book +31% QoQ; coal FY28 target; catalysts proximate | **HOLD** |
+| Growth Visibility Premium | +x per EM | Order book +31% QoQ (but net add Rs 180 Cr < flagship order, 6E); coal FY28 target; catalysts proximate | **HOLD** |
 | Strategic Premium | +x | Moat expansion underway; JV/coal optionality intact (single-credit rule: ROCE recovery not double-credited) | **HOLD** |
 | UA Multiplier | per Amendment 3 | Not re-tested this run (no valuation refresh) | **HOLD** |
 | Sector Cap | binds at 27.5x | No sector reclassification | **HOLD** |
 | Hurdle Ratio recheck | HR = (1+EPS CAGR)³ × (Dest PE mid ÷ Current PE) >= 1.953 | EPS base itself unstable (warrant conversion not yet in count, F10.1); current PE moved (CMP Rs 216.30, L1202) | **DEFER** to concall/valuation refresh; EPS base must settle first |
 
-**No pillar is re-set. Destination PE held at 27.5x pending the concall.** Cash Multiplier explicitly cannot be revised upward while CFO/PAT is ND. No revised fair values issued this run.
+**No pillar is re-set. Destination PE held at 27.5x pending the concall.** Cash Multiplier explicitly cannot be revised upward while CFO/PAT is ND. The Growth-Visibility premium is explicitly NOT credited for the order-book "+31%" headline, since 6E shows the net QoQ addition (Rs 180 Cr) is smaller than a single pre-booked order. No revised fair values issued this run.
 
 ---
 
@@ -337,7 +355,7 @@ Held-name branch (8A) does NOT apply — position is not held; no ADD/TRIM/EXIT.
 | Gate | Threshold | Today's Evidence | Status |
 |---|---|---|---|
 | 1. Cash conversion CFO/PAT | > 0.50 | ND — no cash-flow statement (F17.1) | **UNRESOLVED** |
-| 2. HZL segment revenue | > Rs 15 Cr | Order "commences"; no recognised rev/segment figure; double-count risk (F16.2) | **UNRESOLVED** |
+| 2. HZL segment revenue | > Rs 15 Cr | Order "commences" on the FY25-awarded HZL order (double-count now extract-supported, F16.2 / 6E); no recognised rev/segment figure | **UNRESOLVED** |
 | 3. Receivable days | <= 185 (bull <=175) | 175 (FY26 der., at bull ceiling); Q1 FY27 ND | **PARTIAL / AMBER** |
 
 **0 of 3 gates cleared with hard current-period evidence** (gate 3 is suggestive at FY26 175 days but is not a Q1 FY27 reading). Per the Notion action matrix, 0-of-3 would imply "downgrade conviction" — BUT that matrix is written against the **Reg 33 filing + concall**, which are the designated gate documents and are NOT today's inputs. Today's docs (press release + deck) were never expected to clear the gates; the gates were always deferred to the mid-Aug concall (the master gate). **Therefore: DO NOT downgrade conviction on the absence of gate data that these document types structurally cannot provide.** Hold WATCHLIST/BUY; the initiate decision waits on the concall.
@@ -345,7 +363,7 @@ Held-name branch (8A) does NOT apply — position is not held; no ADD/TRIM/EXIT.
 **Position decision: WAIT. Remain WATCHLIST / BUY. No initiation today.** The 3% starter stays gated at the mid-Aug 2026 concall. Entry zone unchanged (Rs 99–232) — no projection change forces a recompute this quarter. Reconfirm entry zone after the concall clears/fails the three gates.
 
 ### 8B. Add-back / trim trigger refinement
-Not applicable (non-held). Initiation trigger refinement: tighten gate 2 to require **named recognised HZL/Rajasthan segment revenue** (not merely "commencement") and gate 1 to require the **printed CFO/PAT >0.50**, because the deck's "commences operations" language (E5) and silence on CFO (F17.1) show that qualitative commencement claims will precede any verifiable number. Add an initiation pre-condition: **the Reg 33 standalone column must show the S-vs-C PAT gap** (first-class metric currently ND).
+Not applicable (non-held). Initiation trigger refinement: tighten gate 2 to require **named recognised HZL/Rajasthan segment revenue** (not merely "commencement", and not the pre-booked Rs 307 Cr order re-counted into the book) and gate 1 to require the **printed CFO/PAT >0.50**, because the deck's "commences operations" language (E5) and silence on CFO (F17.1) show that qualitative commencement claims will precede any verifiable number. Add an initiation pre-condition: **the Reg 33 standalone column must show the S-vs-C PAT gap** (first-class metric currently ND).
 
 ### 8C. Single cleanest metric for next quarter
 **Operating cash flow / CFO-to-PAT for H1 FY27** (mandatory Reg 33 disclosure at Q2). It is the single cleanest resolver of the bull/bear split because the entire income-statement strength (+287% PAT) is uncontested; the only open question is whether that profit converts to cash given cash fell to Rs 1.3 Cr and receivable days sit at 175.
@@ -361,13 +379,13 @@ Channel: **mid-Aug 2026 concall** (master gate) + written IR follow-up. Every A3
 | # | Question | Why It Matters | Bull Answer | Bear Answer | From Finding(s) |
 |---|---|---|---|---|---|
 | 1 (GATE 1) | State Q1/H1 FY27 operating cash flow and CFO/PAT. Cash fell Rs 19.4→1.3 Cr (FY26) while PAT rose +287%; the deck carries no cash-flow statement. | Decisive gate-1 metric; resolves whether profit converts to cash | CFO/PAT >0.80, cash rebuilt | CFO/PAT <0.50, cash still Rs ~1 Cr | F17.1, F17-01 |
-| 2 (GATE 2) | Is the Rs 3,070 Mn Rajasthan order the SAME order as the HZL Rs 307 Cr award (award-vs-commencement), or a second same-sized order? What HZL/Rajasthan revenue was RECOGNISED in Q1, and the segment revenue figure? | Order-book credit and gate-2 (>Rs 15 Cr) depend entirely on the answer; double-count risk | Distinct orders; >Rs 15 Cr recognised | Same order re-counted; nil recognised | F16.2, F6.3 |
+| 2 (GATE 2) | The deck's own dating (sl.6 L151-155, dated 2024-25) and arithmetic (net QoQ book addition Rs 180 Cr < the Rs 307 Cr order, L546 vs L1003) indicate the Rs 3,070 Mn Rajasthan order IS the FY25-awarded HZL Rs 307 Cr order now merely commencing, not fresh Q1 intake. Confirm the RECOGNITION SPLIT: how much of the Rs 307 Cr is recognised as Q1 FY27 revenue vs still-in-book, and confirm no *second* same-sized order exists. | The double-count of existence is already extract-supported (6E); order-book credit and gate-2 (>Rs 15 Cr) now rest on recognition, not existence | Material revenue recognised in Q1; book genuinely deepening | Nil recognised; Rs 761 Cr book flattered by a pre-booked FY25 order | F16.2, F6.3 |
 | 3 (GATE 3) | Q1 FY27 receivable/debtor days and the managed DSO trajectory target. FY26 derived DSO is 175 days, at the bull ceiling and rising. | Gate-3 and tripwire (c); structural-vs-growth WC test | <=175 and falling | >200 | F17.2 |
 | 4 | Provide the Q1 FY27 STANDALONE PAT and the standalone-vs-consolidated gap. The release says standalone is "on similar lines" but gives no figure. | First-class metric; unaudited-JV reliance; prior memory flags ~23% gap | Gap narrow, standalone strong | Gap wide, consolidated JV-propped | F2 / F17.3 / F17-01 |
 | 5 | Post-conversion share count, paid-up capital and BASIC EPS after the balance 75% warrant conversion. Only diluted EPS (Rs 3.06) is shown; FY26 count still 29.83 Mn. | EPS base for all forward valuation; dilution quantum | Modest dilution, base settled | Large base step-up dilutes forward EPS | F10-01, F10.1 |
 | 6 | Confirm the coal GR submission date (targeted end-Jul 2026) and reaffirm/deny the FY27-28 first-production target vs the house FY29 assumption. | Growth-trigger anchor; binary near-term slip risk; promise-vs-delivery baseline | GR submitted on time, FY28 firm | GR slips, FY28 quietly dropped | F6.1, F6.2, F6-01 |
 | 7 | Amount, count and delivery timeline of the newly ordered rigs/equipment, and the FY27-28 capex envelope. | Forward depreciation and capex cash outflow; absorption-gap risk | Sized, funded from CFO | Large debt-funded capex into weak cash | F6.4 |
-| 8 | Order-book definition (gross/net of GST, executable vs pending) and the expected FY27 conversion/burn rate on the Rs 761 Cr book; comment on the 59% Survey-and-Exploration concentration. | Order book is the visibility pillar; +31% QoQ with no conversion data | Clear definition, fast burn | Vague, slow conversion, concentrated | F16.3, F17.3 |
+| 8 | Order-book definition (gross/net of GST, executable vs pending) and the expected FY27 conversion/burn rate on the Rs 761 Cr book; given net QoQ additions were only Rs 180 Cr, quantify GROSS fresh bookings vs order burn in Q1, and comment on the 59% Survey-and-Exploration concentration. | Order book is the visibility pillar; +31% QoQ is a gross closing balance, not fresh intake (6E) | Clear definition, fast burn, strong gross fresh bookings | Vague, slow conversion, book static ex-pre-booked order, concentrated | F16.3, F16.2, F17.3 |
 | 9 | RIL as a % of Q1 revenue and of the order book after the Rs 166 Cr CBM extension. | Customer-concentration tripwire; CBM is 29% of book | Diversified, RIL modest | RIL-dominant, single-customer risk | F17.3 |
 | 10 | Oman JV2 (Block 22-B / AHML) resource-declaration timeline; and the Alara structure — is "Alara Resources Ltd, Australia" the parent of "Alara Resources LLC, Oman"? SWPE's economic stake post-ARL rights issue and cash committed. | Optionality timeline + dilution if ARL rights under-subscribed; entity-naming clarity | Report imminent, stake maintained | Delay, stake dilutes | F6.5, F6.6, F14-02 |
 | 11 | Nature of the +Rs 0.6 Cr Q1 OCI swing (exceeds full FY26 −Rs 0.1 Cr): actuarial assumption change or FVOCI mark on the ARL/investment book (Investments Rs 4.1→9.0 Cr)? | Quality of comprehensive income; assumption durability | Routine FVOCI mark | Assumption change flattering equity | F9.1 |
@@ -380,7 +398,7 @@ Channel: **mid-Aug 2026 concall** (master gate) + written IR follow-up. Every A3
 
 **Top 3 by likelihood of producing thesis-changing information:**
 1. **Q1: CFO / CFO-to-PAT** — a print >0.80 clears the single largest open bear question and would raise bull-case probability; <0.50 confirms the cash-conversion bear (F17.1).
-2. **Q2: HZL/Rajasthan same-order-or-not + recognised revenue** — a "same order" answer would confirm the order-book-double-count bear and puncture the visibility narrative (F16.2).
+2. **Q2: HZL/Rajasthan recognition split** — the deck's own dating already shows the Rs 307 Cr Rajasthan order is the FY25 HZL award (double-count extract-supported, 6E); the recognised-revenue figure now decides whether the Rs 761 Cr book is genuinely deepening or is flattered by a pre-booked order (F16.2).
 3. **Q4: standalone PAT and S-vs-C gap** — tests management transparency on the exact metric memory flags as widening; evasion here is itself diagnostic (F2/F17-01).
 
 **Channel recommendation:** the mid-Aug 2026 concall is the master gate — submit Q1-Q3 for live Q&A and the remainder in writing to IR (Valorem Advisors / CFO Dinesh Agarwal). SWPE hosts concalls (IR agency Valorem, pres L1244), so an AGM-only channel is not required. Every question is pre-committed as a Q2 FY27 watchpoint for answer-status tracking (ANSWERED / PARTIAL / EVADED / NOT ADDRESSED).
@@ -397,12 +415,12 @@ The commitment register below (seeded from A3 F6 across both documents) is the *
 
 # SECTION C — COMBINED VERDICT
 
-- **Filing-derived signals (strong):** Revenue +53.5% YoY, operating EBITDA margin +972 bps to 24.15%, core operating PBT ex-OI +475%, PAT +287.5% — and crucially NOT treasury-led (Other Income fell, was a drag). Income-statement quality is genuinely strong. Coal first-production target FY27-28 is EARLIER than the house FY29 tripwire. Order book at an all-time Rs 761 Cr (+31% QoQ). No thesis-broken trigger fired.
-- **Filing-derived cautions:** Cash collapsed to Rs 1.3 Cr (FY26) while receivables ballooned to Rs 116.6 Cr (DSO 175 days, at bull ceiling); the deck is SILENT on CFO. Order-book Rs 307 Cr Rajasthan entry likely equals the HZL Rs 307 Cr award (double-count risk). Standalone column absent (S-vs-C gap ND). Warrant-conversion share count ND (EPS base unsettled). Selective slide-37 omission of Q1 balance-sheet-quality panels.
+- **Filing-derived signals (strong):** Revenue +53.5% YoY, operating EBITDA margin +972 bps to 24.15%, core operating PBT ex-OI +475%, PAT +287.5% — and crucially NOT treasury-led (Other Income fell, was a drag). Income-statement quality is genuinely strong. Coal first-production target FY27-28 is EARLIER than the house FY29 tripwire. Order book at an all-time Rs 761 Cr, though the +31% QoQ is a gross closing balance and net new bookings were only ~Rs 180 Cr (see caution below). No thesis-broken trigger fired.
+- **Filing-derived cautions:** Cash collapsed to Rs 1.3 Cr (FY26) while receivables ballooned to Rs 116.6 Cr (DSO 175 days, at bull ceiling); the deck is SILENT on CFO. Net QoQ order-book addition is only ~Rs 180 Cr (5,812→7,613 Mn, L546), SMALLER than the single Rs 307 Cr Rajasthan order the deck headlines — and that order is the FY25-awarded HZL order now merely "commencing" (sl.6 L151-155), so the +31% overstates fresh intake and the F16.2 double-count is now extract-supported (Step 6E). Standalone column absent (S-vs-C gap ND). Warrant-conversion share count ND (EPS base unsettled). Selective slide-37 omission of Q1 balance-sheet-quality panels.
 - **Concall-derived signals:** none — Role 5 N.A.
-- **Reconciliation between filing and (absent) concall:** the income statement is uncontested; every open question is a cash / balance-sheet / disclosure question that only the Reg 33 filing and the mid-Aug concall can close.
+- **Reconciliation between filing and (absent) concall:** the income statement is uncontested; every open question is a cash / balance-sheet / disclosure / order-book-recognition question that only the Reg 33 filing and the mid-Aug concall can close.
 - **Cash conversion: INDETERMINATE** → verdict capped at PROCEED WITH CAVEATS per house rule, missing evidence named (CFO statement, Q1 receivable days).
-- **Net thesis impact: MAINTAINED / INTACT.** Strong operating print offset by unresolved cash-conversion and order-book-double-count questions; all decisive verifications land on the mid-Aug concall.
+- **Net thesis impact: MAINTAINED / INTACT.** Strong operating print offset by unresolved cash-conversion and by the order-book fresh-intake overstatement (net add < the single pre-booked Rs 307 Cr order); all decisive verifications land on the mid-Aug concall.
 
 ## PROTOCOL VERDICT: **PROCEED WITH CAVEATS**
 
@@ -410,7 +428,7 @@ Caveats (each with the named missing evidence):
 1. **Cash conversion INDETERMINATE** — no consolidated cash-flow statement; CFO/PAT unquantifiable (F17.1). Missing: Reg 33 / concall CFO print.
 2. **All three verify-and-buy gates unresolved** — CFO/PAT ND, HZL recognised revenue ND, Q1 receivable days ND. Missing: Reg 33 filing + mid-Aug concall.
 3. **Standalone-vs-consolidated PAT gap ND** — consolidated-only docs; standalone "on similar lines" asserted without a figure (F2/F17-01). Missing: Reg 33 standalone column.
-4. **Order-book Rs 307 Cr double-count risk** — Rajasthan order may equal the HZL award (F16.2). Missing: management confirmation.
+4. **Order-book fresh intake overstated / double-count now extract-supported** — net QoQ book addition ~Rs 180 Cr (5,812→7,613 Mn) is SMALLER than the single Rs 307 Cr Rajasthan order, which is the FY25-awarded HZL order now merely "commencing" (sl.6 L151-155; L546 vs L1003); the "+31% QoQ, all-time high" is a gross closing balance, not fresh Q1 demand (F16.2, Step 6E). Missing: only the Q1 revenue-recognition split, NOT the existence of the double-count.
 5. **EPS base unsettled** — 75% warrant conversion not yet in the disclosed share count; basic EPS ND (F10.1). Missing: post-conversion capital structure.
 6. **Auditor opinion ND** — no auditor report in either doc; prior-memory EoM on SW Resources unverified (results K4). Missing: Reg 33 auditor report.
 
@@ -424,7 +442,7 @@ Caveats (each with the named missing evidence):
 | Reg 33 Q1 FY27 filing (standalone column, numbered notes, auditor report) | pending (with/around concall) | results K1-K15; F2 |
 | Coal-block Geological Report (GR) submission | end-Jul 2026 ("early submission") | pres sl.22 L682; F6.2 |
 | Coal first production (Jharkhand block) | FY 2027-28 | pres sl.22 L687; F6.1 |
-| HZL / Rajasthan Rs 307 Cr order — recognised segment revenue >Rs 15 Cr | Q2 FY27 onward | results E5 L98; F6.3, F16.2 |
+| HZL / Rajasthan Rs 307 Cr order — recognised segment revenue >Rs 15 Cr (order is the FY25 HZL award now commencing; recognition split pending, 6E) | Q2 FY27 onward | results E5 L98; F6.3, F16.2 |
 | RIL CBM extension Rs 166 Cr — execution/recognition | FY27 | results E6 L100; F6-01 |
 | Oman JV2 (Block 22-B / AHML) — report / resource declaration | near-term ("GR on cards") | pres sl.21 L659; F6.5 |
 | ARL rights-issue subscription & SWPE stake post-issue | ongoing | pres sl.30 L974; F6.6 |
@@ -432,9 +450,10 @@ Caveats (each with the named missing evidence):
 | Post-warrant-conversion share count in next balance sheet / basic EPS | Q2 FY27 | results E10 L105; F10.1 |
 | Q1 FY27 net worth, D/E, ROE/ROCE (omitted from slide 37) | concall | pres sl.37; F16.1 |
 | Receivable days trajectory (tripwire c; bull <=175, bear >200) | Q2 FY27 | pres L1132; F17.2 |
+| Order-book gross fresh bookings vs burn (net add only Rs 180 Cr QoQ; F16.2) | Q2 FY27 | pres L546/L1003; F16.2 |
 | Ritolia Independent-vs-Non-Executive status / board-independence ratio | concall / AR | pres sl.8; F14.1 |
 
-*Reviewed 2026-07-21 | Sources: pressrelease_southwest_q1fy27.pdf (results), presentation_southwest_q1fy27.pdf (40 slides). No concall / no Reg 33 filing this run — Role 5 N.A., master gate mid-Aug 2026.*
+*Reviewed 2026-07-21 | Sources: pressrelease_southwest_q1fy27.pdf (results), presentation_southwest_q1fy27.pdf (40 slides). No concall / no Reg 33 filing this run — Role 5 N.A., master gate mid-Aug 2026. A5 loop 1 revision: F16.2 order-book double-count upgraded to EXTRACT-SUPPORTED; order-book "+31% QoQ" positive downgraded to net-of-pre-booked (Step 6E).*
 
 ---
 
@@ -458,13 +477,13 @@ position_branch: "8A-W"
 sc_gap_pat_pct: ["ND (consolidated-only; Reg 33 standalone column not provided). JV share of consolidated PAT disclosed at 14.0% (1.3/9.3 Cr, Q1 FY27). Prior-run memory ~23% gap — unverified against today's inputs."]
 questions_for_management:
   - {q: "Q1/H1 FY27 operating cash flow and CFO/PAT (cash fell 19.4->1.3 Cr while PAT +287%)", from_finding_id: "F17.1"}
-  - {q: "Is the Rs 3,070 Mn Rajasthan order the SAME as the HZL Rs 307 Cr award, and what HZL/Rajasthan revenue was recognised in Q1?", from_finding_id: "F16.2"}
+  - {q: "Confirm the Q1 recognition split of the Rs 307 Cr Rajasthan order (extract already shows it is the FY25 HZL award now commencing, sl.6 L151-155; net QoQ book add Rs 180 Cr < the Rs 307 Cr order): how much recognised as Q1 revenue vs still-in-book, and that no second same-sized order exists", from_finding_id: "F16.2"}
   - {q: "Q1 FY27 receivable/debtor days and managed DSO target (FY26 derived 175, at bull ceiling, rising)", from_finding_id: "F17.2"}
   - {q: "Q1 FY27 standalone PAT and the standalone-vs-consolidated gap", from_finding_id: "F2/F17-01"}
   - {q: "Post-conversion share count, paid-up capital and basic EPS after the 75% warrant conversion", from_finding_id: "F10.1"}
   - {q: "Coal GR submission date (end-Jul 2026) and FY27-28 vs FY29 first-production target", from_finding_id: "F6.1/F6.2"}
   - {q: "Amount, count, timeline and FY27-28 envelope of the newly ordered rigs/equipment", from_finding_id: "F6.4"}
-  - {q: "Order-book definition and FY27 conversion/burn rate on Rs 761 Cr; 59% Survey-and-Exploration concentration", from_finding_id: "F16.3/F17.3"}
+  - {q: "Order-book definition and FY27 conversion/burn rate on Rs 761 Cr; gross fresh bookings vs burn given net QoQ add only Rs 180 Cr; 59% Survey-and-Exploration concentration", from_finding_id: "F16.3/F16.2/F17.3"}
   - {q: "RIL as % of Q1 revenue and of the order book after the Rs 166 Cr CBM extension", from_finding_id: "F17.3"}
   - {q: "Oman JV2 resource-declaration timeline; Alara Ltd(Australia)-vs-LLC(Oman) structure; SWPE stake post-ARL rights", from_finding_id: "F6.5/F6.6/F14-02"}
   - {q: "Nature of the +0.6 Cr Q1 OCI swing (actuarial assumption vs FVOCI mark on ARL book)", from_finding_id: "F9.1"}
@@ -479,7 +498,7 @@ monitorables:
   - {item: "Reg 33 Q1 FY27 filing (standalone column, notes, auditor report)", implied_date: "2026-08 (around concall)", source_ref: "results K1-K15"}
   - {item: "Coal-block GR submission", implied_date: "2026-07-end", source_ref: "pres sl.22 L682 (F6.2)"}
   - {item: "Coal first production (Jharkhand)", implied_date: "FY2027-28", source_ref: "pres sl.22 L687 (F6.1)"}
-  - {item: "HZL/Rajasthan Rs 307 Cr recognised segment revenue >15 Cr", implied_date: "Q2 FY27 onward", source_ref: "results E5 L98 (F6.3/F16.2)"}
+  - {item: "HZL/Rajasthan Rs 307 Cr recognised segment revenue >15 Cr (order is FY25 HZL award now commencing; recognition split pending)", implied_date: "Q2 FY27 onward", source_ref: "results E5 L98 (F6.3/F16.2)"}
   - {item: "RIL CBM extension Rs 166 Cr execution", implied_date: "FY27", source_ref: "results E6 L100 (F6-01)"}
   - {item: "Oman JV2 (Block 22-B/AHML) report / resource declaration", implied_date: "near-term", source_ref: "pres sl.21 L659 (F6.5)"}
   - {item: "ARL rights-issue subscription & SWPE stake", implied_date: "ongoing", source_ref: "pres sl.30 L974 (F6.6)"}
@@ -487,10 +506,11 @@ monitorables:
   - {item: "Post-warrant-conversion share count / basic EPS", implied_date: "Q2 FY27", source_ref: "results E10 L105 (F10.1)"}
   - {item: "Q1 FY27 net worth, D/E, ROE/ROCE (slide-37 omission)", implied_date: "concall", source_ref: "pres sl.37 (F16.1)"}
   - {item: "Receivable-days trajectory (tripwire c: bull<=175, bear>200)", implied_date: "Q2 FY27", source_ref: "pres L1132 (F17.2)"}
+  - {item: "Order-book gross fresh bookings vs burn (net QoQ add only Rs 180 Cr; +31% is gross closing balance)", implied_date: "Q2 FY27", source_ref: "pres L546/L1003 (F16.2)"}
   - {item: "Ritolia Independent-vs-Non-Executive / board-independence ratio", implied_date: "concall/AR", source_ref: "pres sl.8 (F14.1)"}
 flags:
   - "Cash conversion INDETERMINATE — CFO absent; verdict capped at PROCEED WITH CAVEATS (house rule)"
-  - "Order-book Rs 307 Cr Rajasthan likely equals HZL Rs 307 Cr award — double-count risk unresolved (F16.2)"
+  - "Order-book +31% QoQ overstates fresh intake: net add only Rs 180 Cr (5,812->7,613 Mn, L546) < single Rs 307 Cr Rajasthan order = FY25 HZL award now commencing (sl.6 L151-155); double-count now EXTRACT-SUPPORTED, recognition split is the only open item (F16.2, Step 6E)"
   - "Standalone column absent — S-vs-C PAT gap ND; Reg 33 not provided (F2)"
   - "Receivable days 175 (FY26) at bull ceiling and rising toward bear >200 (F17.2)"
   - "75% warrant conversion not yet in share count; basic EPS ND — EPS base unsettled (F10.1)"

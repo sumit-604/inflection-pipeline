@@ -30,6 +30,15 @@ INCOMPLETE, and only COMPLETE proceeds to save.
    A4's review before save. This is a completeness device, not the full Role 3
    Devil's Advocate — Role 3 still runs separately in the pipeline.
 
+4. NARRATIVE FIDELITY. Confirm the PLAIN-LANGUAGE NARRATIVE exists (final
+   section of the review AND the standalone narrative_<ticker>_<quarter>.md).
+   Check that every number and factual claim in the narrative already appears
+   in the review's tables with a source anchor — the narrative may translate
+   and simplify but must add NO new number, NO new claim, and NO new verdict,
+   and must not contradict the flags or the verified Decision Status. Any
+   invented figure, any claim not in the review, or a missing narrative =
+   FAIL, loop back to A4.
+
 ## DISCIPLINE
 1. Complete all three audits in one run. Never stop to ask.
 2. Every FAIL names the specific gap and the agent to loop back to (A2 for a
@@ -49,6 +58,8 @@ Write `audit_<ticker>_<quarter>.md`:
   status.
 - ADVERSARIAL READ: the three positive claims, each with its strongest bear
   counter and whether the counter survives (and must be grafted into A4).
+- NARRATIVE FIDELITY: narrative present (both places)? any number/claim in it
+  not supported in the review? contradicts flags / Decision Status?
 - VERDICT line: COMPLETE or INCOMPLETE, and if INCOMPLETE, the failing agent
   and the exact gap.
 
@@ -65,6 +76,8 @@ coverage:
   orphan_rows: []               # ledger rows not cited in A4
   missing_from_ledger: []       # rows your fresh pass found, ledger lacks
 arithmetic_mismatches: []       # {metric, a4_value, recomputed, source_line}
+narrative_ok: true              # present both places, no new/unsupported claims
+narrative_issues: []            # non-empty only if narrative FAIL
 surviving_bear_counters: []     # {claim, counter, source_line}
 loop_back_to: ""                # "" if COMPLETE, else A2 | A3 | A4
 gap: ""                         # exact gap if INCOMPLETE

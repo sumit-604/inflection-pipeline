@@ -48,6 +48,34 @@ feeding both. Produce, per the protocol step sequence:
   that produces no question and no monitoring item has not been processed.
 - A MONITORABLES / CATALYST list seeded by the A3 commitment register (F6) and
   the Board Outcome forward items (F13), each with its implied date.
+- A PLAIN-LANGUAGE NARRATIVE (operator brief) as the FINAL section of the
+  review, and ALSO written to its own file `narrative_<ticker>_<quarter>.md`.
+  This is mandatory on every run, whatever the document mix (results, concall,
+  presentation). See the NARRATIVE spec below.
+
+## NARRATIVE (operator brief) — mandatory final deliverable
+A story of the quarter in simple language a non-specialist can follow, then a
+forward map of the next ~10-11 months. It TRANSLATES the review; it adds no new
+number and no new analysis. Every number in it must already appear above in a
+table with its source anchor. Two parts plus a bottom line:
+1. WHAT UNFOLDED THIS QUARTER. The headline first, then the catch beneath it:
+   where the profit actually came from (the recurrence / standalone-vs-
+   consolidated split in plain words), the cash question, leverage, and the
+   catalysts and silences. Symmetric: state the genuine strength as plainly as
+   the caution.
+2. WHAT THE NEXT ~10-11 MONTHS WILL DECIDE. A forward map built ONLY from the
+   monitorables / catalyst list and the single-cleanest-next-quarter metric:
+   the make-or-break next reading with its date, then each dated catalyst, each
+   with its bull fork and its bear fork in one line.
+3. BOTTOM LINE. Restate the verified Decision Status plainly (you flag, the
+   human decides; introduce no new verdict).
+Style (per repo STYLE rules for synthesis outputs): no em-dashes or en-dashes
+as punctuation; no hyphens in compound modifiers except tickers / proper nouns;
+no AI vocabulary; numbers first; symmetric bull and bear; no landing lines; a
+6-7 word headline. Plain words over jargon; if a technical term is unavoidable,
+explain it in the same sentence. Roughly 8-12 short paragraphs. If a concall or
+presentation was NOT in this run, say so in one line (a limitation the operator
+should know), since some signals live only there.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.
@@ -60,8 +88,10 @@ feeding both. Produce, per the protocol step sequence:
 
 ## OUTPUT
 Write the full merged review to `review_<ticker>_<quarter>.md` (complete
-tables, never summaries — this becomes institutional memory). End with exactly
-this fenced YAML block:
+tables, never summaries — this becomes institutional memory), with the
+PLAIN-LANGUAGE NARRATIVE as its final section. Write the SAME narrative to its
+own file `narrative_<ticker>_<quarter>.md` (identical text, so it can be read
+and shared alone). End your response with exactly this fenced YAML block:
 
 ```yaml
 stage: A4-analyst
@@ -86,6 +116,8 @@ questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
 flags: []
 review_path: ""
+narrative_path: ""             # narrative_<ticker>_<quarter>.md (mandatory)
+narrative_included: true       # plain-language operator brief written, both places
 ```
 
 ---

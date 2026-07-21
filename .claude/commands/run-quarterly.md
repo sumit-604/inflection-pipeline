@@ -75,7 +75,11 @@ ledger path, every A3 forensics path, the protocol file paths, and the live
 Notion thesis inline. A4 states the ledger-reconciliation preamble, runs
 Role 4 first then Role 5, and writes the single merged review with the
 Questions-for-Management table (every A3 FORWARD-SIGNAL / AMBIGUOUS finding ->
-at least one question) and the monitorables/catalyst list.
+at least one question), the monitorables/catalyst list, and a mandatory
+PLAIN-LANGUAGE NARRATIVE (operator brief: what unfolded this quarter, then what
+the next ~10-11 months will decide) written both as the review's final section
+and as its own `narrative_<ticker>_<quarter>.md`. The narrative is required on
+every run, whatever the document mix.
 
 ## 3. A5 ADVERSARY (once)
 
@@ -103,7 +107,9 @@ Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
 to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 / N slides, all reviewed), the top forensic findings with their line cites,
 the protocol verdict, and the working-file paths. Print the merged review's
-headline tables and the Questions-for-Management table in full in chat.
+headline tables and the Questions-for-Management table in full in chat, and
+ALWAYS print the PLAIN-LANGUAGE NARRATIVE in full (it is the operator-facing
+deliverable produced after every results filing, concall, or presentation).
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

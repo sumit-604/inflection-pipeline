@@ -83,7 +83,9 @@ Named working files (master-prompt filenames, one set per document):
 - A1: `work/extract_<doctype>_<ticker>_<quarter>.txt` + header block
 - A2: `work/ledger_<doctype>_<ticker>_<quarter>.md`
 - A3: `work/forensics_<ticker>_<quarter>.md` (one per document, doctype in title)
-- A4: `work/review_<ticker>_<quarter>.md` (single merged review)
+- A4: `work/review_<ticker>_<quarter>.md` (single merged review) AND
+      `work/narrative_<ticker>_<quarter>.md` (the plain-language operator brief,
+      mandatory every run; also the review's final section)
 - A5: `work/audit_<ticker>_<quarter>.md`
 
 `<doctype>` is one of `results` | `concall` | `presentation`.
@@ -162,7 +164,10 @@ After all documents pass A1-A3:
 7. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+   reviewed), the top forensic findings, and the working-file paths. ALWAYS
+   print the PLAIN-LANGUAGE NARRATIVE (from narrative_<ticker>_<quarter>.md) in
+   full in chat — it is the operator-facing deliverable of every run, produced
+   after any results filing, concall, or presentation analysis.
 
 ---
 

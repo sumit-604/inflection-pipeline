@@ -16,3 +16,20 @@ Operator: Keerti Kaushik (via orchestrator)
 
 ## Gate log
 (to be appended as pipeline runs)
+
+## Gate log (all passed)
+- GATE A1 (page coverage 100%): results 7/7 pages; press release 2/2 pages. PASS.
+- GATE A2 (count reconciliation): results 18 notes / 60 line items / 4 ZERO_STANDING / 10 auditor paras / 1 entity; press release 29 line items / 2 slides. grep == manual sweep. PASS (first pass, both docs).
+- GATE A3 (17 checks, no blanks): results 7 findings (5 FORWARD-SIGNAL, 1 AMBIGUOUS, 1 NEUTRAL); press release 7 findings (3 FORWARD-SIGNAL, 2 AMBIGUOUS, 2 NEUTRAL). Ledger 100% reconciled. PASS.
+- A4: single merged review; Role 4 full, Role 5 N/A (no transcript). Verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE. 12 mgmt questions, 9 monitorables, 9 flags.
+- GATE A5 (verdict COMPLETE): coverage clean (0 orphan rows), arithmetic within rounding (1x 0.01 Cr slip, decision-irrelevant), no surviving bear counter. PASS first pass, no loop-backs.
+
+## Notion save (page 345bb2b9-d3ab-80ab-87ce-e5296355301b)
+- Full review appended at page end (headline tables, forensic synthesis, Questions-for-Management, monitorables, verdict, A5 COMPLETE note).
+- Key Notes property: Jul-21-2026 entry PREPENDED, Jun-30 entry preserved.
+- Decision Status UNCHANGED (WATCHLIST / BUY ON DIPS) — no pre-committed trigger fired.
+
+## Count-reconciliation line
+2 documents reviewed: results filing (18 notes / 60 line items / 10 auditor paras / 1 entity / 1 agenda item) + press release (29 line items / 2 slides). 0 concall turns (no transcript). 100% reviewed.
+
+LESSONS.md note: this run is a quarterly review (Role 4/5); LESSONS.md append is a /run-pipeline, /fttcp, /finalize convention. Quarterly runs log to this run folder.

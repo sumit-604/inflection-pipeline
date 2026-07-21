@@ -23,12 +23,15 @@ As of 2026-07-12 (first workup, valuation refreshed under Section 1B Amendment 4
 - Peers (Clean Science, Neogen) stay soft on demand while Tatva claims recovery -> FY26 EPS 17.98 is a peak not a base.
 
 ## OPTIONALITY REGISTER (summary)
-- Semiconductor chemicals full commercialization (speculative, up to ~INR2,000cr) -> converts on a committed customer PO; window 2028-2029.
+- Semiconductor chemicals (deep-dived 2026-07-12): ~5-product R&D pipeline; 2 pilot molecules management sizes at Rs 50-100cr EACH (the Rs 2,000cr is a distant ceiling, not near-term); first plant-scale VALIDATION batch Q1 FY27 (not revenue); real commercialization end-2028/early-2029; pilot plant built, sub-1-ppb purity achieved; sells via MNC integrators to fabs. All revenue/sole-supplier claims are management aspiration, ZERO independent corroboration (44-agent adversarial web pass verified only the macro India-semiconductor tailwind). Converts on: a signed supply agreement / named integrator or fab design-in / a disclosed dedicated semiconductor capex line / first booked semiconductor segment revenue. Watched, not scored (Pillar 3 duration +0x stands).
 - Jolva greenfield Phase 1 (INR400-500cr revenue) -> converts on actual groundbreaking (exchange filing); guided mid-July 2026 (3x slipped), commissioning Jan-Mar 2028.
 - Pharma intermediates new stream (INR70-75cr FY27) -> converts on Q1 FY27 concall confirming first product; already slipped once.
 - SDA up to 70% share on Euro7-qualified models vs Sarchem -> converts on independent market-share data; no disclosed timeline.
 - Patent/IP pipeline -> converts on a disclosed filed patent application; no signal of intent yet.
 - Customer concentration improving -> converts on top-5/top-10 revenue disclosure; management has not answered when asked.
+
+## POST-RUN NOTES
+- 2026-07-20: stock re-rated to Rs 1,714 (52-week high, upper circuit, +20% day) on strong Q1 FY27 results + an ICICI Securities note + its status as a Mukul Agrawal marquee-investor holding. Not a semiconductor catalyst. At Rs 1,714 it is ~95x trailing; AVOID-on-valuation strengthened, not weakened. Deep-dive research note filed at runs/tatva-2026-07-12/outputs/final/semiconductor-deep-research.md.
 
 ## RUN FOLDERS
 - runs/tatva-2026-07-12/

@@ -1,0 +1,44 @@
+stage: B09-tam
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Management TAM claim: NOT FOUND (AR MD&A gives qualitative outlook only, no quantified market size)"
+  - "Official government MSP for urad dal 2025-26: fetch failed (HTTP 403), substituted with current mandi price data"
+  - "Eimco-KCP standalone fabrication-capacity ceiling: NOT FOUND (relevant to 3C capacity cross-check for Engineering segment)"
+  - "Top-5 listed sugar peers' combined share of national crushing capacity: NOT FOUND (Method 3 gross-up left unquantified)"
+  - "FY26 Ethanol/Alcohol segment revenue not separately disclosed in filed segment table; FY25 AR figure (Rs 10.20 Cr sold value) carried forward flat as a placeholder"
+flags:
+  - "Engineering segment is 26.3% of FY26 gross consolidated revenue (Rs 78.64 Cr, filing-anchored), materially larger than B04's injected 6.1% (which reflects standalone-parent-only figures) — flagged for reconciliation at synthesis"
+  - "Ethanol/Alcohol output collapsed 82% YoY in FY25 (11.61 vs 65.41 lakh litres, AR p.37) even as the national E20/EBP TAM expands — company is not capturing the sector tailwind; unexplained operational red flag"
+  - "revenue_headroom_x (614.7x) is a mechanical SAM/current-revenue artifact of sugar being a vast national commodity market; runway_class overridden down from mechanical MASSIVE to MODERATE given zero capex-embedded growth (B07) and slow blended TAM growth (3.7%)"
+  - "Eimco-KCP Rs 257 Cr Hyundai order (20-Jul-2026) is operator-relayed, pending filing confirmation, and is EXCLUDED from all anchored TAM/SAM/SOM figures; if confirmed it is ~3.3x FY26 Engineering segment revenue"
+  - "SOM conservative CAGR (7.5-9.7%) is driven almost entirely by one evidenced, capex-free lever: Urad Dal running at ~21-26% of its already-installed 22,000 MTPA capacity; strip this out and the blended CAGR falls to mid-single digits, consistent with a low-growth cyclical commodity core"
+market_definition: "Sum-of-four-parts: India domestic sugar (national commodity), India cane/molasses-based ethanol (EBP-linked), India urad dal processing, and India industrial clarifier/thickener process-equipment (Eimco-KCP subsidiary)"
+tam_cr: {conservative: 168780, realistic: 183107}
+sam_cr: 159820
+sam_pct_of_tam: 94.7
+som_3yr_cr: 343.0
+som_5yr_cr: 372.6
+som_implied_revenue_cagr: {yr3: 9.7, yr5: 7.5}
+current_sam_share_pct: 0.16
+revenue_headroom_x: 614.7
+tam_growth_pct: 3.7
+runway_class: "MODERATE"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "not applicable - no quantified management TAM claim found; qualitative outlook language only"
+capacity_check: "sufficient - existing installed capacity (Sugar 7,500 TCD, Urad Dal 22,000 MTPA, Ethanol 50 KLPD) covers the conservative SOM without new capex, consistent with B07 capex_embedded_growth_pct=0; Urad Dal utilization catch-up (~21-26% to 35-65%) is the main growth engine; Engineering capacity ceiling NOT FOUND"
+methods_used:
+  - "top-down industry report (flagged divergent, excluded from headline - Sugar)"
+  - "bottom-up production x price (Sugar, Urad Dal)"
+  - "peer revenue aggregation (Sugar, directional only)"
+  - "import/policy-linked substitution (Ethanol, OMC procurement x feedstock share)"
+  - "global per-capita benchmark (Sugar, upside case)"
+stale_data_flags: []
+searches_skipped:
+  - "Official desagri.gov.in MSP PDF - HTTP 403, substituted with mandi price data"
+  - "Dedicated India clarifier/thickener market report - used 31.44% proxy from broader water-treatment report instead"
+  - "Eimco-KCP standalone fabrication capacity - not found"
+  - "Top-5 listed sugar peers' combined national crushing capacity share - not found"

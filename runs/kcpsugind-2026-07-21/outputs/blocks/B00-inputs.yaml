@@ -22,11 +22,15 @@ inventory:
     files:
       - "inputs/results/47bc3c5b-280c-4fa9-8703-3262f3c3d43a.pdf"   # Q3 FY26: quarter ended 31.12.2025, UNAUDITED, standalone + consolidated (8pp)
       - "inputs/results/731297df-7a79-4da5-915f-be09f866a9d4.pdf"   # FY26 audited full-year: year ended 31.03.2026 + Q4 FY26 vs Q4 FY25, AUDITED, standalone + consolidated + segment (44pp)
-    note: "Two filings. Most recent audited period = FY26 (year ended 31.03.2026). Q3 FY26 (Dec 2025) unaudited also present."
+    text_cache:
+      - "inputs/_textcache/FY26_Audited_Results.txt"   # from 731297df (44pp, born-digital, clean)
+      - "inputs/_textcache/Q3FY26_Results.txt"         # from 47bc3c5b (8pp, born-digital, clean)
+    note: "Two filings. Most recent audited period = FY26 (year ended 31.03.2026). Q3 FY26 (Dec 2025) unaudited also present. Both born-digital and cached to text; read the caches for deterministic access (some subagents mis-handle the PDF page-range path in this env)."
   rating:
     present: true
     files: ["inputs/rating/202510121044_K.C.P._Sugar_and_Industries_Corporation_Limited.pdf"]
-    note: "CARE Ratings press release 07 Oct 2025. CARE A-; Stable (reaffirmed); LT bank facilities reduced 71.20 -> 63.20 cr; LT/ST 30.00 cr. 7pp. Supersedes the old FY21 AR's 'CARE Negative' outlook for current rating evidence."
+    text_cache: "inputs/_textcache/CARE_Rating_2025-10-07.txt"   # 7pp, clean
+    note: "CARE Ratings press release 07 Oct 2025. CARE A-; Stable (reaffirmed); LT bank facilities reduced 71.20 -> 63.20 cr; LT/ST 30.00 cr; FD programme A-; Stable; ST A2+. Rationale: 8-decade track record, integrated sugar+distillery+cogen, comfortable capital structure + liquidity (sizeable MF/equity investments); constrained by lower cane availability/recovery and sugar cyclicality. Supersedes the stale FY21 'CARE Negative' outlook."
   screening:
     present: true
     files:

@@ -1,0 +1,25 @@
+stage: B12b
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 10
+caught: 7
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Q3 FY26 seasonal cost deferral (Rs.1,465.31L other exp + Rs.111.26L depreciation) flatters 9M profit and mechanically loads Q4; Stage 5 mis-weights the Q4-loss composition it flagged", anchor: "Q3R pp.4-5"}
+  - {severity: "MINOR", item: "FY26 standalone operating cash flow appears negative (~-Rs.23.10cr) vs +Rs.38.24cr prior year; not noted (stage-11 cash-conversion domain; p.7 OCR degraded)", anchor: "FY26R p.7 line 448"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 4, confirmed: 4, wrong: 0}
+credibility_grade_concur: "concur — C is defensible; my three added findings reinforce a low-C, not a higher grade"
+findings:
+  - {severity: "MAJOR", location: "05-concall.md 4C / 4D red-flag table", claimed: "Q4 loss driven partly by Other-Income mark-to-market swing", note: "MISSED the Q3 seasonal cost deferral (Rs.1,465.31L + Rs.111.26L dep) that flatters 9M profit and mechanically loads Q4; composition of the flagged Q4 loss is mis-weighted", source_ref: "Q3R pp.4-5"}
+  - {severity: "MAJOR", location: "05-concall.md 4C earnings quality", claimed: "Earnings quality Weak — Q4 Other-Income swing", note: "PARTIALLY CAUGHT/under-weighted: operating segments lost Rs.10.72cr FY26; near-breakeven PBT rests on ~Rs.16.27cr net unallocable investment income vs a Rs.247cr FVTPL book. Structural investment-driven earnings not surfaced", source_ref: "FY26R p.4; FY26R pp.12-13 KAM"}
+  - {severity: "MINOR", location: "05-concall.md 2D / 4D remuneration flag", claimed: "Four consecutive years of inadequate profits", note: "Under-weighted the Schedule V three-year-cap breach and 'subject to shareholder approval' governance angle", source_ref: "FY26R p.16 (g)"}
+  - {severity: "MINOR", location: "05-concall.md (cash not covered)", claimed: "n/a", note: "FY26 standalone operating cash flow appears negative ~-Rs.23.10cr vs +Rs.38.24cr prior year; adjacent to stage-11 domain; p.7 OCR degraded", source_ref: "FY26R p.7"}
+  - {severity: "MINOR", location: "05-concall.md 4D / 1C framing", claimed: "Others revenue -12.3% suggests Urad Dal pullback; standalone losses", note: "Asymmetry — omits Others segment PROFIT nearly doubling (+407.24 vs +206.91L) and consolidated FY26 PAT positive (+Rs.11.13cr)", source_ref: "FY26R pp.3-4"}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 70

@@ -784,7 +784,7 @@ STOP cleared: 4A (all 32 graded), 4B, 4C shown.
 
 ### 5B. What Was NOT Discussed (silence audit; seeded from A3-F15/F16/F17)
 
-| Expected Topic | Why it should have been discussed | Significance of silence |
+| Expected Topic | Why it should have been discussed | Significance of Silence |
 |---|---|---|
 | **Subsidiary earnings quality / transfer price** — two foreign WOS = 34.6% of consol PAT, 43.1% of PAT growth, ~zero cost base | Section A's single largest quality-of-earnings question; the quarter's headline PAT depends on it | **RED** — unraised by all 8 analysts, unvolunteered across 118 turns (A3-F15); the strong operating story is confirmed on revenue but the earnings-quality flag stands UNRESOLVED |
 | Rs 1.32 Cr unexplained exceptional charge | New this quarter, identical consol/standalone, no note | AMBER (A3-F16) |
@@ -916,7 +916,7 @@ No pillar moved enough to force a destination-PE recompute; the asset-turn and m
 
 ### 8F. Updated Questions for Management (forward — next quarter's Role 4 Step 8.5 input)
 
-Every concall A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to at least one row; the carried-forward earnings-quality silences (A3-F15/F16/F17) are row 11.
+Every concall A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to at least one row; the carried-forward earnings-quality silences (A3-F15/F16/F17) are row 12.
 
 | # | Question | Why it matters | What to watch next concall | From finding(s) |
 |---|---|---|---|---|
@@ -1046,14 +1046,14 @@ monitorables:
   - {item: "ROCE clearing 8% (RED if 6-8% through FY28; asset-turn 1.5x now a structural drag)", implied_date: "FY27-FY28", source_ref: "Notion monitor #2 / A3-F06"}
 flags:
   - "INDETERMINATE cash conversion unreadable at Q1 AND unaddressed on the concall (A3-F17); caps verdict; H1 FY27 CFO/receivable-days is the named missing evidence"
-  - "Concall CONFIRMS the operating/revenue story (segments 428/63/584/578 mn and revenue Rs1,671mn / EBITDA Rs323mn tie exactly to filing) but is SILENT on the subsidiary 34.6%-of-PAT / transfer-price question -> earnings-quality flag stands UNRESOLVED"
-  - "NEW structural negative: MD admits asset turnover halved 3.0x->1.5x on mix shift to multi-stage chemistry (L123); FTTCP Route B pre-cycle ROCE-anchor watch (flag, do not re-rate)"
-  - "NEW competitive negative: MD concedes continuous-flow-chemistry moat is replicable by any dedicated competitor (L113); Strategic Premium / terminal-multiple watch"
-  - "Guidance back-end-loaded off weak bases: 20-22% margin off 19.3% Q1 (A3-F05); ESS Rs40-50cr off Rs6.3cr Q1 -52% QoQ (A3-F03); OVERPROMISER-boundary archetype watch"
+  - "Concall CONFIRMS the operating/revenue story (revenue Rs1,671mn/EBITDA Rs323mn/segments 428/63/584/578mn all tie to filing) but is SILENT on the subsidiary 34.6%-of-PAT / transfer-price question -> earnings-quality flag stands UNRESOLVED"
+  - "NEW structural negative: MD admits asset turnover halved 3.0x->1.5x on mix shift (L123); FTTCP Route B pre-cycle ROCE-anchor watch (flag, do not re-rate)"
+  - "NEW competitive negative: MD concedes continuous-flow-chemistry moat replicable by any dedicated competitor (L113); Strategic Premium watch"
+  - "Guidance back-end-loaded off weak bases: 20-22% margin off 19.3% Q1; ESS Rs40-50cr off Rs6.3cr Q1 (-52% QoQ); OVERPROMISER-boundary archetype watch"
   - "Monoglime ~2,000t capex WITHDRAWN on Chinese price crash (acknowledged, not concealed); prior catalyst struck (A3-F12)"
-  - "PAT-growth recurrence thin: ~36% durable parent core, ~28.5% one-off parent OI, ~43.1% subsidiary durability-UNRESOLVED (Section A Step 4)"
-  - "Rising leverage: net debt/EBITDA ~1.2x > 0.65x monitor; borrowing limit +3.3x to Rs1,000cr; finance costs +5x YoY (concall silent on all leverage, A3-F17)"
-  - "CFO present but answered no Q&A on a call with tax/margin/leverage relevance (yellow flag); MD's opening incl capex read by IR"
+  - "PAT-growth recurrence thin: ~36% durable parent core, ~28.5% one-off parent OI, ~43.1% subsidiary durability-UNRESOLVED"
+  - "Rising leverage: net debt/EBITDA ~1.2x > 0.65x monitor; borrowing limit +3.3x to Rs1,000cr; concall silent on all leverage (A3-F17)"
+  - "CFO present but answered no Q&A on a call with tax/margin/leverage relevance (yellow flag); MD opening incl capex read by IR"
   - "Management credibility Grade B provisional (62.5%, trailing-1); archetype COMMITTED & CREDIBLE (provisional); no DROPPED downgrade; re-score at Q2"
   - "Neither thesis-broken trigger fired; Decision Status unchanged WATCHLIST/AVOID; Hurdle STOP holds (~9.87x entry max)"
 review_path: "/home/user/inflection-pipeline/runs/tatva-q1fy27/work/review_tatva_q1fy27.md"
@@ -1075,7 +1075,7 @@ The quarter looked great on the surface. Revenue rose 43% over the same quarter 
 
 But most of the profit growth did not come from the core business. When you split the Rs 9.3 Cr of profit growth into its real parts, only about a third (Rs 3.3 Cr) came from Tatva's own factories earning more. About 28% came from a one time jump in other income at the parent, helped further by the parent paying almost no cash tax this quarter. And about 43% came from two small overseas arms in the USA and Europe that have almost no staff, no factory and no equipment, yet booked a third of the group's entire profit. Those arms look like resale desks, not real operations, and the auditor gave no separate comment on them. So the durability of nearly half the profit growth is an open question.
 
-Here is the important part about the call: management talked for over an hour, eight analysts asked 32 questions, and not one of them asked about those overseas arms. Management did not raise the topic either. So the single biggest question about profit quality went completely untouched. The call confirmed the good operating story and left the hard question exactly where the filing left it.
+Here is the important part about the call: eight analysts asked 32 questions, and not one of them asked about those overseas arms. Management did not raise the topic either. So the single biggest question about profit quality went completely untouched. The call confirmed the good operating story and left the hard question exactly where the filing left it.
 
 On the call, management did admit one thing that matters a lot. As the business shifts from its old products to newer multi step chemistry, the sales it earns per rupee of plant has roughly halved, from about three times down to about one and a half times. In plain terms, the new growth needs about twice as much plant and capital to produce the same sales as the old products did. Management still claims the same return on capital, which only works if margins rise a lot to make up for it, and the numbers do not yet show that. This is a structural change to how profitable the growth can be, and it is new information the filing alone did not reveal.
 

@@ -13,7 +13,7 @@ Ledger contains 0 notes / 0 turns / 34 slides. All 34 reviewed.
 - A2 count test: GATE A2 = pass. 34 slides / 34 formfeeds / 7 OCR slides / 8 footnote-source lines / 17 P&L build-up rows (slide 26) / 8 board directors / 12 leadership bios / 1 signature block — every count matched grep-vs-sweep.
 - A3 reconciliation: 100%. Every A2 row read verbatim at its cited line. No unread rows.
 - Findings incorporated: A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14 (all 14).
-- Doctype adaptation: this is a narrative marketing artifact, not an audited filing. It carries no balance sheet, no cash-flow statement, no standalone column, no numbered notes, no auditor opinion, and no tax line. Standard Role-4 balance-sheet/notes/auditor checks are therefore ND-by-doctype and are anchored instead to the companion Reg-33 filing (reviewed 2026-07-20). The center of gravity of this review is narrative-vs-evidence: the deck against the filing numbers and against the live Notion thesis.
+- Doctype adaptation: this is a narrative marketing artifact, not an audited filing. It carries no balance sheet, no cash-flow statement, no standalone column, no numbered notes, no auditor opinion, and no tax line. Standard Role-4 balance-sheet/notes/auditor checks are therefore ND-by-doctype and are anchored instead to the companion Reg-33 filing (reviewed 2026-07-20). The center of gravity of this review is narrative-vs-evidence: the deck against the filing numbers, against the live Notion thesis, and against the deck's own internal disclosures.
 
 **ROLE 5 (Concall Analysis) — N.A. THIS RUN.** No Q1 FY27 concall transcript exists in this run (no PDF supplied; the deck is a Reg-30 investor presentation, not a transcript). Every forward/ambiguous item the deck raises is therefore routed into the Questions-for-Management table below for the PENDING Q1 FY27 concall. Role 5 Steps 1–9 (claims inventory, guidance table, promise-vs-delivery scoring, Q&A decomposition, credibility ratio, archetype) cannot be run and are marked N.A. — the credibility ratio and management grade carry forward unchanged from the prior cycle until a transcript exists.
 
@@ -101,15 +101,17 @@ Arithmetic check (all ties): EBITDA 38.56 / TI 120.79 = 31.9% ✓; PBT 2.35 / TI
 | Reported total PAT (filing) | ND | 45.18 | n/a | Positive ONLY via Rs.52.35 Cr one-time building-sale gain in discontinued ops |
 | EPS | ND | ND | ND | ND |
 
+**Segment KPI cross-read (deck's own slide-6 grid, l.187-188 — recorded here because it undercuts the growth headline):** Rental volume is CONTRACTING YoY — Signed Units 9,278 (−28%) and Beds under Management 16,463 (−8%). Only Distribution KPIs grow — Projects 276 (+20%), Active Licenses 11,814 (+41%), Leads Sold 1,34,221 (+77%). The deck's group-wide "Continued growth" (l.104) does not hold at the Rental segment; the Rental "₹2 Cr segment profit" (l.143) is earned on a shrinking book (see contradiction C10 and 6B item 5).
+
 **Six diagnostics:**
-1. **Did revenue grow?** Yes: Total Income +56.9% YoY (deck l.108); continuing revenue +71% (filing). But this is **inorganic** — full-quarter PropTiger consolidation vs zero PropTiger in Q1 FY26 (A3-13). Organic ex-PropTiger YoY is disclosed in neither deck nor filing → withheld → QfM.
+1. **Did revenue grow?** Yes at group level: Total Income +56.9% YoY (deck l.108); continuing revenue +71% (filing). But this is **inorganic** — full-quarter PropTiger consolidation vs zero PropTiger in Q1 FY26 (A3-13) — AND it is not broad-based: Rental unit volumes fell (Signed Units −28%, Beds −8%, l.187-188). Organic ex-PropTiger YoY is disclosed in neither deck nor filing → withheld → QfM.
 2. **Margin YoY?** Deck's headline Adjusted-EBITDA margin −3.0%→10.2% (+1320 bps, l.116) and PBT margin −14.0%→1.9% (+1590 bps, l.123) both expand. But the Adjusted-EBITDA figure adds back Rs.24.31 Cr of long-term lease payments — a real cash cost — plus ESOP and RoU (A3-12, l.803-804). Strip nothing artificial and the filing's clean operating PBT ex-OI is −4.86.
 3. **Did core operating PBT ex-OI grow?** No — it is **negative −4.86 Cr** (filing). Deck's +2.35 "PBT" is not the same line: it is pre-tax, before the Integrow associate loss (−1.01), before exceptionals, and it credits Rs.2.99 Cr RoU other income inside EBITDA. Reported PAT (+45.18) grew while core operations lost money — the headline growth is NOT real operating profit (A3-10, A3-11).
 4. **What drove the gap between deck-PBT +2.35 and continuing PAT −0.34?** Walk: deck +2.35 (before associate) − associate loss 1.01 ≈ +1.30 (filing continuing PBT after associate) − tax → −0.34 continuing PAT. Separately, reported total PAT +45.18 is +45.52 discontinued (Rs.52.35 Cr Navi Mumbai building-sale gain, program now complete) plus −0.34 continuing. The entire "profit" is a one-time asset-sale gain (ONE-TIME-ITEM flag).
 5. **D&A / finance vs revenue?** D&A +12.7% on Total Income +56.9% — not an absorption alarm on these two columns; finance cost fell −36.1%. Both are secondary to the one-time-gain story.
 6. **Other-income concentration?** The deck's own RoU "other income" of Rs.2.99 Cr is folded into EBITDA (l.793/801). More materially, the reported PAT is dominated by the Rs.52.35 Cr building-sale gain — the deck never shows it (build-up capped "before Exceptional Items", A3-01/A3-11). Strip it and the quarter is a continuing-ops loss.
 
-🛑 YoY complete. The single cleanest read: **ex the one-time building-sale gain and ex other income, Q1 FY27 continuing operations lost money (−4.86 Cr operating PBT ex-OI; −0.34 Cr continuing PAT). The deck's "third consecutive profitable quarter" (l.104) is contradicted by the filing.**
+🛑 YoY complete. The single cleanest read: **ex the one-time building-sale gain and ex other income, Q1 FY27 continuing operations lost money (−4.86 Cr operating PBT ex-OI; −0.34 Cr continuing PAT). The deck's "third consecutive profitable quarter" and "Continued growth" (l.104) are contradicted by the filing AND by the deck's own contracting Rental volumes (l.187-188).**
 
 ## STEP 3 — SEQUENTIAL QoQ TRAJECTORY
 
@@ -176,7 +178,7 @@ Bridge from deck's positive "PBT before exceptionals" to the filing's reported P
 
 | Metric | Reading | Lands In | Note |
 |---|---|---|---|
-| Revenue | +57% Total Income (deck) / +71% continuing (filing) | ND — no Bear/Base/Bull revenue split supplied to this run | Inorganic (PropTiger); organic ex-PropTiger ND → QfM |
+| Revenue | +57% Total Income (deck) / +71% continuing (filing) | ND — no Bear/Base/Bull revenue split supplied to this run | Inorganic (PropTiger); Rental volumes contracting (l.187-188); organic ex-PropTiger ND → QfM |
 | Operating profit ex one-times | −4.86 Cr (filing) | BELOW any positive base | Falsification metric FIRED |
 | PAT | +45.18 reported / −0.34 continuing | reported flattered by one-time gain | Non-recurring |
 | EPS / Net Debt / ROCE | ND | ND | Deck-silent |
@@ -188,10 +190,10 @@ Probability re-weighting rule: the second-consecutive-quarter BELOW-BEAR trigger
 | # | Item | This-cycle reading (deck unless noted) | Status |
 |---|---|---|---|
 | 1 | Operating profit ex one-times | Filing −Rs.4.86 Cr; deck masks via "before Exceptional Items" (l.809) and lease add-back (l.803) | RED (fired) |
-| 2 | Organic revenue ex-PropTiger YoY | Not disclosed in deck OR filing; deck frames +57% as organic (l.108, A3-13) | AMBER → concall |
+| 2 | Organic revenue ex-PropTiger YoY | Not disclosed in deck OR filing; deck frames +57% as organic (l.108, A3-13); Rental unit volumes actually fell (l.187-188) | AMBER → concall |
 | 3 | SM-REIT first scheme filed with AUM | Capital <2% mix, ₹2 Cr rev, (₹5) Lakhs loss (l.135-143); no scheme filed; slide-4 "Others 9" vs slide-5 "Capital 2" won't reconcile (A3-05) | RED (5th-strike risk at pending concall) |
 | 4 | Receivables >1yr buckets | ABSENT from deck (A3-14) | AMBER → Q2 half-year |
-| 5 | Rental segment breakeven | Deck Rental "₹2 Cr segment profit" (l.143) vs filing EBIT +Rs.0.63 Cr — see contradiction C4 | GREEN on filing basis, needs Q2/Q3 confirm |
+| 5 | Rental segment breakeven | Filing Rental EBIT +Rs.0.63 Cr (profit); deck shows "₹2 Cr segment profit" (l.143, see C4) — BUT the deck's own KPI grid shows the book is CONTRACTING: Signed Units 9,278 −28% and Beds under Management 16,463 −8% YoY (l.187-188). Breakeven is being reached while volume shrinks, not while it grows | GREEN-on-profit / QUALIFIED — breakeven achieved on a shrinking base (unit-shedding, not growth); durability now in question, needs Q2/Q3 confirm (C10) |
 | 6 | Distribution EBITDA margin | Deck ₹8 Cr on ₹56 Cr (~14%) (l.143); filing 14.2%, +196% YoY, PropTiger-aided (A3-06) | GREEN but mix-aided |
 | 7 | Goodwill Rs.174.25 Cr | ABSENT from deck (A3-14); only generic Ind AS boilerplate at l.812 | AMBER |
 | 8 | Audit / RPT / auditor stability | ABSENT from deck (A3-14); MSKA exit / Kirtane & Pandit / Varma & Varma unmentioned | RED |
@@ -202,7 +204,7 @@ Probability re-weighting rule: the second-consecutive-quarter BELOW-BEAR trigger
 | Condition | Threshold | Current reading | FIRED? |
 |---|---|---|---|
 | Two consecutive quarters operating loss ex one-times | 2 consecutive | Q1 FY27 continuing operating PBT ex-OI −4.86 (filing); this is 1 confirmed print — need one more | NOT YET (1 of 2) |
-| Organic revenue ex-PropTiger flat YoY | flat | Not disclosed; cannot confirm from deck/filing | UNKNOWN → QfM |
+| Organic revenue ex-PropTiger flat YoY | flat | Not disclosed; Rental unit volumes falling (l.187-188) is directional corroboration but the ex-PropTiger revenue line itself is withheld | UNKNOWN → QfM |
 | 5th consecutive concall SM-REIT unlaunched, no AUM | 5th call | Capital still absent; the tally is a concall trigger — pending Q1 FY27 concall | AT RISK — resolves at pending concall, not by deck |
 | Goodwill impairment on Rs.174.25 Cr | any impairment | Not disclosed in deck; deck omits goodwill entirely | NOT FIRED / UNKNOWN |
 
@@ -213,7 +215,7 @@ Probability re-weighting rule: the second-consecutive-quarter BELOW-BEAR trigger
 | BUY condition | Confirming evidence | Killing evidence | Status |
 |---|---|---|---|
 | Two consecutive quarters positive operating profit ex one-time OI + asset-sale gains | none | Q1 FY27 ex-OI operating PBT −4.86 (filing) | DEAD this quarter |
-| Organic revenue ex-PropTiger sustains >20% YoY | none disclosed | not disclosed | UNKNOWN → QfM |
+| Organic revenue ex-PropTiger sustains >20% YoY | none disclosed | not disclosed; Rental volumes contracting (Signed Units −28%, Beds −8%, l.187-188) | UNKNOWN, leaning negative → QfM |
 | No goodwill impairment | none disclosed | not disclosed (goodwill omitted) | UNKNOWN |
 
 BUY conversion is not remotely in reach: condition 1 is failing on the freshest clean print.
@@ -231,12 +233,12 @@ The presentation supplies **no** pillar-grade input: no ROCE, no CFO/PAT, no net
 Decision Status verified AVOID (Step 0A) → non-held → **branch 8A-W**.
 
 - No thesis-broken condition newly FIRED from the presentation (Step 6C).
-- Actuals (filing) land below any positive operating base on the clean metric (operating PBT ex-OI −4.86), consistent with the standing AVOID; the deck adds confirmatory narrative-vs-evidence weight, not a new trigger.
-- **Action: MAINTAIN AVOID.** Entry zone unchanged Rs.71–89 (MoS Rs.71); operator forward house case unchanged. The master decision gate is pushed to the **pending Q1 FY27 concall + Q2 FY27 half-year filing**, where the four withheld items resolve (organic ex-PropTiger growth, receivables buckets, SM-REIT 5th-strike tally, goodwill/impairment test).
+- Actuals (filing) land below any positive operating base on the clean metric (operating PBT ex-OI −4.86), consistent with the standing AVOID; the deck adds confirmatory narrative-vs-evidence weight — now including the deck's own contracting Rental volumes (l.187-188) — not a new trigger.
+- **Action: MAINTAIN AVOID.** Entry zone unchanged Rs.71–89 (MoS Rs.71); operator forward house case unchanged. The master decision gate is pushed to the **pending Q1 FY27 concall + Q2 FY27 half-year filing**, where the withheld items resolve (organic ex-PropTiger growth, Rental volume trajectory, receivables buckets, SM-REIT 5th-strike tally, goodwill/impairment test).
 - Decision Status changes ONLY when a pre-committed trigger formally fires. None did on this artifact. **Flag, do not decide.**
 
 ### 8C. Single cleanest metric for next quarter
-**Operating PBT ex-Other-Income and ex-asset-sale-gains (continuing operations).** Bull threshold: positive AND a second consecutive positive print (BUY condition 1). Bear threshold: a second consecutive negative print → fires thesis-broken condition 1. Q1 FY27 clean print = −4.86 Cr (filing) — one negative print on the board.
+**Operating PBT ex-Other-Income and ex-asset-sale-gains (continuing operations).** Bull threshold: positive AND a second consecutive positive print (BUY condition 1). Bear threshold: a second consecutive negative print → fires thesis-broken condition 1. Q1 FY27 clean print = −4.86 Cr (filing) — one negative print on the board. Secondary watch: Rental unit volume trajectory (Signed Units, Beds), currently −28% / −8% YoY.
 
 🛑 Position decision: AVOID maintained; branch 8A-W; gate pushed to Q1 FY27 concall + Q2 FY27 filing.
 
@@ -253,9 +255,9 @@ Decision Status verified AVOID (Step 0A) → non-held → **branch 8A-W**.
 
 # SECTION C — COMBINED VERDICT, CONTRADICTIONS, QUESTIONS, MONITORABLES
 
-## C1 — NARRATIVE-vs-EVIDENCE CONTRADICTION LOG (deck vs filing anchor; filing wins)
+## C1 — NARRATIVE-vs-EVIDENCE CONTRADICTION LOG (deck vs filing anchor, filing wins; plus deck-internal self-undercuts)
 
-| # | Deck claim (anchor) | Filing / evidence (anchor) | Reconciliation | Finding |
+| # | Deck claim (anchor) | Evidence (anchor) | Reconciliation | Finding |
 |---|---|---|---|---|
 | C1 | "a third consecutive profitable quarter" (l.104); "PBT Margin 1.9%" (l.785) | Continuing-ops PAT −Rs.0.34 Cr; operating PBT ex-OI −Rs.4.86 Cr; reported PAT +45.18 only via Rs.52.35 Cr building-sale gain | CONTRADICTED | A3-10 |
 | C2 | "PBT (before Exceptional Items) 2.35" (l.809) — build-up stops pre-tax, pre-exceptional | Tax line dropped (turns +1.30 into −0.34); Rs.52.35 Cr exceptional gain dropped; reported PAT 45.18 never shown | CONTRADICTED (masks post-tax continuing loss) | A3-11 |
@@ -266,8 +268,9 @@ Decision Status verified AVOID (Step 0A) → non-held → **branch 8A-W**.
 | C7 | New "Impact of IND AS 1.47" (l.808), only in Q1 FY27, no note on which standard | not explained anywhere in deck | UNVERIFIABLE | A3-01 |
 | C8 | Housing.com: 1,97,93,309 new shares to REA → 24.9% (l.298-300) — only dilution shown | Same 16-Jul board also approved 51-lakh FCW to promoter AREDL; goodwill Rs.174.25 Cr, +327% receivables, auditor changes ALL omitted (verified: grep returns only generic Ind AS "impairment" at l.812) | OMISSION (selective disclosure) | A3-04, A3-07, A3-14 |
 | C9 | Data hygiene: "16,463" beds (l.187) vs "16,460+" units (l.556) same book; "Others" vs "Capital"; AI watermark on financial deck; Shetye dual-listed | — | NEUTRAL-FACT, cumulative control-quality signal | A3-08 |
+| C10 | Headline "Continued growth" (l.104) applied group-wide | Deck's OWN KPI grid shows Rental volume CONTRACTING YoY: Signed Units 9,278 −28% and Beds under Management 16,463 −8% (l.187-188); only Distribution KPIs grow (Projects +20%, Active Licenses +41%, Leads +77%) | CONTRADICTED — DECK-INTERNAL SELF-UNDERCUT (not deck-vs-filing): the group growth headline is disproved by the deck's own Rental metrics; the Rental "₹2 Cr segment profit" (l.143) is earned on a shrinking book | A3-08/A3-13 (SELF-UNDERCUT) |
 
-**Narrative-vs-evidence flag: CONFIRMED and strengthened.** The deck systematically omits every deteriorating monitored metric (goodwill, receivables, auditor changes, the AREDL warrant leg) and reframes a one-time-gain quarter as recurring profitability. A presentation choosing to omit each deteriorating metric it is being monitored on is itself the signal (A3-14).
+**Narrative-vs-evidence flag: CONFIRMED and strengthened.** The deck systematically omits every deteriorating monitored metric (goodwill, receivables, auditor changes, the AREDL warrant leg) and reframes a one-time-gain quarter as recurring profitability. Beyond deck-vs-filing, the deck ALSO self-undercuts within its own pages: the group-wide "Continued growth" headline (l.104) is contradicted by the deck's own Rental KPI grid (Signed Units −28%, Beds −8% YoY, l.187-188) — Rental profit is being earned on a contracting book while only Distribution grows. A presentation choosing to omit each deteriorating metric it is being monitored on, and to headline "growth" over its own volume declines, is itself the signal (A3-08, A3-13, A3-14).
 
 ## C2 — QUESTIONS FOR MANAGEMENT (routed to the pending Q1 FY27 concall)
 
@@ -278,15 +281,16 @@ Contract: every A3 FORWARD-SIGNAL (A3-02, 03, 04, 07, 09) and AMBIGUOUS (A3-01, 
 | 1 | The slide-26 build-up terminates at "PBT before Exceptional Items = Rs.2.35 Cr" (l.809), omitting the tax line, the Integrow associate share, and the Rs.52.35 Cr building-sale gain — while continuing-ops PAT was −Rs.0.34 Cr. Why is the presentation choice to stop before tax and before exceptionals? [NEW] | Tests whether "third consecutive profitable quarter" survives on a standard, post-tax continuing basis | Commits to publishing standard continuing PAT next deck; concedes the framing | Defends the bespoke line; repeats "profitable quarter" | A3-01, A3-11 |
 | 2 | Quantify the EPS dilution from the 1,97,93,309 new shares to REA India (→24.9%, l.298-300); and why does the deck omit the 51-lakh Fully Convertible Warrants to AREDL approved by the SAME 16-Jul board — what is the warrant price and the promoter-stake impact? [NEW — filing flagged warrant; deck-omission is new] | Two dilution vectors; only one disclosed; promoter RPT + pricing undisclosed | Discloses warrant price at/above market and full pro-forma share count and EPS | Warrant price undisclosed / below market; deck silence defended | A3-04, A3-07 |
 | 3 | The lead "Adjusted EBITDA" (10.2%, +1320 bps) adds back Rs.24.31 Cr of long-term lease payments plus ESOP and RoU (l.803-804). On a full cash-rent basis, what are the segment and consolidated margins? [NEW] | Lease is a real recurring cash cost; add-back flatters the headline | Provides post-lease cash margin and commits to reporting it | Insists Adjusted EBITDA is the right metric; no cash-basis figure | A3-12 |
-| 4 | What is the Rs.1.47 Cr "Impact of IND AS" charge new in Q1 FY27 (l.808) — which standard/item, and is it recurring? | Unexplained new line inside the profit build-up | Names the standard, one-off, immaterial forward | Vague; recurring; unquantified | A3-01 |
-| 5 | Reconcile slide-4 "Others = 9" with slide-5 "Capital = ₹2 Cr" and the Capital segment loss (l.124, l.143); and when will the first SM-REIT scheme be filed WITH AUM? | Capital/SM-REIT is the shared-catalyst arm; still loss-making; item-3 RED, 5th-strike risk | Gives a filing date + target AUM; reconciles the segments | No date; "evaluating"; 5th consecutive non-launch | A3-05 |
-| 6 | Housing.com 100% acquisition (l.274): closure timeline, the valuation basis for the all-stock swap, and the expected goodwill created on consolidation. | Board-approved, unclosed; goodwill already Rs.174.25 Cr (61% of net worth) and omitted from deck | Firm close date, independent valuation, modest incremental goodwill | Open-ended; no valuation; large new goodwill | A3-02 |
-| 7 | Confirm the timing of Housing.com / Locon Solutions consolidation and provide pro-forma revenue and goodwill; and provide organic revenue ex-PropTiger YoY (the deck frames +57% as organic — l.108). | Consolidation-scope change + the withheld organic-growth number that BUY condition 2 turns on | Discloses organic ex-PropTiger >20% and clean pro-forma | Refuses organic split; only consolidated headline | A3-09, A3-13 |
-| 8 | "AI-first re-architecture of the core platform underway" (l.256) and "turning last quarter's roadmap into deployed capability" (l.244): completion date, and how much ecosystem/AI revenue is monetized today? | Tests the AI-moat-vs-single-digit-ecosystem-revenue flag; status word "underway" | Named completion date + quantified AI/ecosystem revenue | "Underway" repeats; no revenue quantum | A3-03 |
-| 9 | Goodwill Rs.174.25 Cr sits in two negative-net-worth subsidiaries and is 61% of net worth, yet is absent from this deck — what is the impairment-test status? Also confirm the over-1-yr receivables trend (Notion: +327% YoY) and the rationale for the MSKA consent withdrawal and the internal-auditor change. | The three deteriorating metrics the deck omits entirely (A3-14) | Clean impairment test, receivables moderating, benign auditor rationale | Impairment risk live; receivables worsening; auditor change unexplained | A3-14 (folds filing Qs) |
-| 10 | Rental segment profit is shown as ₹2 Cr on the deck (l.143) but Rental EBIT is +Rs.0.63 Cr in the filing. What bridges the ~3x gap, and is Rental breakeven sustainable into Q2/Q3? | Item-5 breakeven durability; deck-vs-filing segment gap | Reconciles cleanly; breakeven durable | Cannot reconcile; breakeven one-off | A3-05/C4 |
+| 4 | The deck headlines "Continued growth" (l.104), yet its own KPI grid shows Rental Signed Units 9,278 (−28% YoY) and Beds under Management 16,463 (−8% YoY) (l.187-188). Is Rental breakeven being achieved by deliberately pruning unprofitable inventory (a quality-over-volume shift) or is this churn/attrition — and what is the FY27 Rental volume trajectory? [NEW] | Rental profit (item 5) is earned on a shrinking book; determines whether breakeven is durable or one-off | Deliberate low-margin unit exit; occupancy/margin rising; volumes stabilise/re-grow FY27 | Involuntary attrition; volumes keep falling; breakeven not durable | A3-08/A3-13 (C10) |
+| 5 | What is the Rs.1.47 Cr "Impact of IND AS" charge new in Q1 FY27 (l.808) — which standard/item, and is it recurring? | Unexplained new line inside the profit build-up | Names the standard, one-off, immaterial forward | Vague; recurring; unquantified | A3-01 |
+| 6 | Reconcile slide-4 "Others = 9" with slide-5 "Capital = ₹2 Cr" and the Capital segment loss (l.124, l.143); and when will the first SM-REIT scheme be filed WITH AUM? | Capital/SM-REIT is the shared-catalyst arm; still loss-making; item-3 RED, 5th-strike risk | Gives a filing date + target AUM; reconciles the segments | No date; "evaluating"; 5th consecutive non-launch | A3-05 |
+| 7 | Housing.com 100% acquisition (l.274): closure timeline, the valuation basis for the all-stock swap, and the expected goodwill created on consolidation. | Board-approved, unclosed; goodwill already Rs.174.25 Cr (61% of net worth) and omitted from deck | Firm close date, independent valuation, modest incremental goodwill | Open-ended; no valuation; large new goodwill | A3-02 |
+| 8 | Confirm the timing of Housing.com / Locon Solutions consolidation and provide pro-forma revenue and goodwill; and provide organic revenue ex-PropTiger YoY (the deck frames +57% as organic — l.108). | Consolidation-scope change + the withheld organic-growth number that BUY condition 2 turns on | Discloses organic ex-PropTiger >20% and clean pro-forma | Refuses organic split; only consolidated headline | A3-09, A3-13 |
+| 9 | "AI-first re-architecture of the core platform underway" (l.256) and "turning last quarter's roadmap into deployed capability" (l.244): completion date, and how much ecosystem/AI revenue is monetized today? | Tests the AI-moat-vs-single-digit-ecosystem-revenue flag; status word "underway" | Named completion date + quantified AI/ecosystem revenue | "Underway" repeats; no revenue quantum | A3-03 |
+| 10 | Goodwill Rs.174.25 Cr sits in two negative-net-worth subsidiaries and is 61% of net worth, yet is absent from this deck — what is the impairment-test status? Also confirm the over-1-yr receivables trend (Notion: +327% YoY) and the rationale for the MSKA consent withdrawal and the internal-auditor change. | The three deteriorating metrics the deck omits entirely (A3-14) | Clean impairment test, receivables moderating, benign auditor rationale | Impairment risk live; receivables worsening; auditor change unexplained | A3-14 (folds filing Qs) |
+| 11 | Rental segment profit is shown as ₹2 Cr on the deck (l.143) but Rental EBIT is +Rs.0.63 Cr in the filing. What bridges the ~3x gap, and is Rental breakeven sustainable into Q2/Q3? | Item-5 breakeven durability; deck-vs-filing segment gap | Reconciles cleanly; breakeven durable | Cannot reconcile; breakeven one-off | A3-05/C4 |
 
-**Top 3 by likelihood of thesis-changing information:** Q1 (post-tax profitability framing — tests whether the entire "profitable" narrative holds), Q2 (dilution + omitted promoter warrant — governance + EPS), Q7 (organic ex-PropTiger growth — the number BUY condition 2 turns on). **Channel:** submit all 10 in writing ahead of the pending Q1 FY27 concall; prioritise Q1–Q3 for live Q&A. If no concall is scheduled, IR email verbatim.
+**Top 3 by likelihood of thesis-changing information:** Q1 (post-tax profitability framing — tests whether the entire "profitable" narrative holds), Q2 (dilution + omitted promoter warrant — governance + EPS), Q4 (Rental "growth" headline vs −28% / −8% volume declines — tests whether the segment breakeven is durable or a shrinking-book artefact); Q8 (organic ex-PropTiger growth) is the close runner-up. **Channel:** submit all 11 in writing ahead of the pending Q1 FY27 concall; prioritise Q1–Q4 for live Q&A. If no concall is scheduled, IR email verbatim.
 
 ## C3 — MONITORABLES / CATALYST LIST (seeded by A3 F6 commitment register + F13 board outcomes)
 
@@ -300,23 +304,24 @@ Contract: every A3 FORWARD-SIGNAL (A3-02, 03, 04, 07, 09) and AMBIGUOUS (A3-01, 
 | HelloWorld 2.0 brand repositioning | Q1 FY27 | completed — confirm traction Q2 | slide 7, l.224-228 |
 | AI suite Aurum Lens / Converse / Qonvo | Q1 FY27 | launched — confirm monetization Q2 | slide 7, l.230-234 |
 | SM-REIT first scheme filed WITH AUM (item 3) | pending — 5th-strike risk at Q1 FY27 concall | not filed | slide 5, l.135-143 (A3-05) |
+| Rental volume trajectory (Signed Units, Beds) — currently −28% / −8% YoY | Q2 / Q3 FY27 | contracting | slide 6, l.187-188 (C10) |
 | Goodwill Rs.174.25 Cr impairment test (item 7) | Q2 FY27 half-year | ND — omitted from deck | A3-14 |
 | Over-1-yr receivables buckets (item 4) | Q2 FY27 half-year | ND — omitted from deck | A3-14 |
 | Half-yearly CFO / lease-vs-CFO coverage (cash INDETERMINATE resolution) | Q2 FY27 half-year | ND | Step 5 |
-| Rental breakeven durability (item 5) | Q2 / Q3 FY27 | GREEN (filing) — confirm | l.143 / filing |
+| Rental breakeven durability (item 5) — profit on a shrinking book | Q2 / Q3 FY27 | GREEN-on-profit / QUALIFIED | l.143, l.187-188 / filing |
 | Auditor / RPT stability (item 8) | ongoing / AGM | RED — omitted from deck | A3-14 |
 | Organic revenue ex-PropTiger YoY (item 2 / BUY cond. 2) | Q1 FY27 concall | withheld | A3-13 |
 
 ## C4 — COMBINED VERDICT
 
 - **Filing-derived signal (anchor):** continuing operations lost money (operating PBT ex-OI −Rs.4.86 Cr; continuing PAT −Rs.0.34 Cr); reported PAT +Rs.45.18 Cr is a one-time Rs.52.35 Cr building-sale gain, program now complete. Falsification metric FIRED (already, 2026-07-20).
-- **Presentation-derived signal:** narrative-vs-evidence CONFIRMED and strengthened — 9-row contradiction log; the deck reframes inorganic (PropTiger) growth as organic, presents a pre-tax/pre-exceptional line as "profit", adds back Rs.24.31 Cr cash rent to build its lead margin, and omits every deteriorating monitored metric (goodwill, receivables, auditor changes) plus one of two dilution legs (AREDL warrant).
-- **Concall-derived signal:** N.A. (no transcript). Management credibility carries forward unchanged; all open items routed to the 10-row Questions table for the pending call.
-- **Reconciliation:** where deck and filing conflict, filing wins — logged nine times (C1). No new thesis-broken trigger fires from the presentation; the SM-REIT 5th-strike tally and the second consecutive operating-loss print both resolve at the pending concall / Q2 filing, not on this artifact.
+- **Presentation-derived signal:** narrative-vs-evidence CONFIRMED and strengthened — 10-row contradiction log; the deck reframes inorganic (PropTiger) growth as organic, headlines "Continued growth" over its own contracting Rental volumes (Signed Units −28%, Beds −8%, l.187-188), presents a pre-tax/pre-exceptional line as "profit", adds back Rs.24.31 Cr cash rent to build its lead margin, and omits every deteriorating monitored metric (goodwill, receivables, auditor changes) plus one of two dilution legs (AREDL warrant).
+- **Concall-derived signal:** N.A. (no transcript). Management credibility carries forward unchanged; all open items routed to the 11-row Questions table for the pending call.
+- **Reconciliation:** where deck and filing conflict, filing wins — logged nine times (C1–C9); plus one deck-internal self-undercut (C10, the "growth" headline vs the deck's own Rental volume declines). No new thesis-broken trigger fires from the presentation; the SM-REIT 5th-strike tally and the second consecutive operating-loss print both resolve at the pending concall / Q2 filing, not on this artifact.
 - **Net thesis impact:** MAINTAINED (AVOID). No pillar re-set on a marketing deck; entry zone Rs.71–89 (MoS Rs.71) and operator forward house case unchanged.
 - **Position decision:** **AVOID maintained** (branch 8A-W). Flag, do not decide. Decision Status changes only when a pre-committed trigger formally fires; none did.
 - **Cash conversion:** INDETERMINATE — caps the disposition at PROCEED WITH CAVEATS; the flag load places the actual disposition at **PROCEED WITH FLAGS**. Missing evidence to lift the cap: half-yearly CFO, over-1-yr receivables buckets, lease-vs-CFO coverage (all due Q2 FY27).
-- **Active flags surfaced:** NARRATIVE-VS-EVIDENCE (confirmed/strengthened), ONE-TIME-ITEM, PROMOTER-CONCERN, CASH-INDETERMINATE, GOODWILL-IMPAIRMENT-RISK, SHARED-CATALYST (SM-REIT/Capital), SELF-UNDERCUT, DILUTION (two legs, one omitted), SELECTIVE-DISCLOSURE, DATA_GAP_PRIOR_LEDGER (no prior-deck DROPPED_SLIDE diff), CONTROL-QUALITY (data-hygiene, AI watermark on a financial deck).
+- **Active flags surfaced:** NARRATIVE-VS-EVIDENCE (confirmed/strengthened), ONE-TIME-ITEM, PROMOTER-CONCERN, CASH-INDETERMINATE, GOODWILL-IMPAIRMENT-RISK, SHARED-CATALYST (SM-REIT/Capital), SELF-UNDERCUT (growth headline vs contracting Rental volumes), DILUTION (two legs, one omitted), SELECTIVE-DISCLOSURE, DATA_GAP_PRIOR_LEDGER (no prior-deck DROPPED_SLIDE diff), CONTROL-QUALITY (data-hygiene, AI watermark on a financial deck).
 
 **Disposition: PROCEED WITH FLAGS** (below the plain-PROCEED cap imposed by INDETERMINATE cash conversion; the flags dominate). AVOID stands. Next gate: pending Q1 FY27 concall + Q2 FY27 half-year filing.
 
@@ -344,6 +349,7 @@ questions_for_management:
   - {q: "Why does the slide-26 build-up stop at PBT-before-exceptionals (2.35), omitting tax, the Integrow associate share, and the Rs.52.35 Cr building-sale gain, while continuing PAT was -0.34?", from_finding_id: "A3-01/A3-11"}
   - {q: "Quantify EPS dilution from 1,97,93,309 shares to REA (24.9%); why is the 51-lakh AREDL promoter warrant leg omitted and at what price?", from_finding_id: "A3-04/A3-07"}
   - {q: "Adjusted EBITDA adds back Rs.24.31 Cr long-term lease payments plus ESOP/RoU; what are segment and consolidated margins on a full cash-rent basis?", from_finding_id: "A3-12"}
+  - {q: "The deck headlines 'Continued growth' (l.104) but its own KPI grid shows Rental Signed Units -28% and Beds under Management -8% YoY (l.187-188). Is breakeven being reached by pruning unprofitable inventory (quality-over-volume) or by churn/attrition, and what is the FY27 Rental volume trajectory?", from_finding_id: "A3-08/A3-13 (C10)"}
   - {q: "What is the new Rs.1.47 Cr Impact-of-IND-AS charge (l.808) - which standard, and is it recurring?", from_finding_id: "A3-01"}
   - {q: "Reconcile slide-4 Others=9 with slide-5 Capital=Rs.2 Cr and the Capital loss; when is the first SM-REIT scheme filed with AUM?", from_finding_id: "A3-05"}
   - {q: "Housing.com acquisition: closure timeline, all-stock swap valuation basis, expected goodwill created?", from_finding_id: "A3-02"}
@@ -357,10 +363,11 @@ monitorables:
   - {item: "Housing.com joins ecosystem", implied_date: "open-ended", source_ref: "slide 9 l.297-300 / A3-09"}
   - {item: "AI-first re-architecture of core CRM platform", implied_date: "next deck (Q2 FY27)", source_ref: "slide 8 l.256 / A3-03"}
   - {item: "SM-REIT first scheme filed with AUM", implied_date: "pending; 5th-strike risk at Q1 FY27 concall", source_ref: "slide 5 l.135-143 / A3-05"}
+  - {item: "Rental volume trajectory (Signed Units -28%, Beds -8% YoY) - is breakeven on a shrinking book durable?", implied_date: "Q2/Q3 FY27", source_ref: "slide 6 l.187-188 / C10"}
   - {item: "Goodwill Rs.174.25 Cr impairment test", implied_date: "Q2 FY27 half-year", source_ref: "Notion item 7 / A3-14"}
   - {item: "Over-1yr receivables buckets", implied_date: "Q2 FY27 half-year", source_ref: "Notion item 4 / A3-14"}
   - {item: "Half-yearly CFO / lease-vs-CFO coverage (cash INDETERMINATE resolution)", implied_date: "Q2 FY27 half-year", source_ref: "Step 5"}
-  - {item: "Rental breakeven durability", implied_date: "Q2/Q3 FY27", source_ref: "l.143 / filing item 5"}
+  - {item: "Rental breakeven durability (profit on a shrinking book)", implied_date: "Q2/Q3 FY27", source_ref: "l.143, l.187-188 / filing item 5"}
   - {item: "Auditor / RPT stability (MSKA exit, Kirtane & Pandit, Varma & Varma)", implied_date: "ongoing / AGM", source_ref: "Notion item 8 / A3-14"}
   - {item: "Organic revenue ex-PropTiger YoY (BUY condition 2)", implied_date: "Q1 FY27 concall", source_ref: "l.108 / A3-13"}
   - {item: "HelloWorld 2.0 + AI suite (Lens/Converse/Qonvo) traction/monetization", implied_date: "Q2 FY27", source_ref: "slide 7 l.224-234"}

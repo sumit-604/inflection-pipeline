@@ -62,6 +62,11 @@ weigh, never anchored evidence.
                  appended at close
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
+- /run-quarterly TICKER --docs ...   quarterly review pipeline (Role 4/5):
+                 five gated agents A1 extractor -> A2 enumerator -> A3
+                 forensic notes -> A4 analyst -> A5 adversary; enumeration
+                 before interpretation; writes runs/<ticker>-<quarter>/work/;
+                 needs the two Quarterly_*_Protocol files in frameworks/
 
 ## STYLE (synthesis outputs only)
 No em-dashes or en-dashes as punctuation. No hyphens in compound

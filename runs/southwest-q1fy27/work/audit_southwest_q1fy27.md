@@ -1,6 +1,18 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — SOUTHWEST — Q1 FY27 (re-audit, loop 2)
+# A5 ADVERSARY / COMPLETENESS AUDIT — SOUTHWEST — Q1 FY27 (re-audit, loop 3)
 
-Agent A5. Fresh context: I see only the A4 review, the two A1 extracts, and the two A2 ledgers. Every number re-derived independently from the extracts (Rs Mn x0.1 to Rs Cr per A1 headers, results L8 / presentation L8); A4's and A3's cites were checked, not trusted. This is a re-audit after the A4 loop-back that grafted the order-book bear counter (F16.2 / Step 6E). That graft is verified below and the review is re-attacked fresh.
+Agent A5. Fresh context: A4 review + the two A1 extracts + the two A2 ledgers only. Every number re-derived independently (Rs Mn x0.1 to Rs Cr per A1 headers). A4's and A3's cites checked, not trusted. This pass is a re-audit after A4's second loop-back, which was supposed to close the three gaps my prior audit raised: (1) orphan Oil India 2D/3D seismic empanelment row, (2) JV-recurrence bear counter, (3) ROCE label inconsistency. Each is verified below, then the review is re-attacked fresh.
+
+---
+
+## PRIOR-LOOP CLOSURE CHECK
+
+| Prior gap | Where it now lives in A4 | Re-check | Verdict |
+|---|---|---|---|
+| Orphan OIL 2D/3D empanelment (F6.7) | 6B item 12 (L282), 6D (L305), Step 6 verdict (L325), Q18 (L402), monitorable (L454/L513), flag (L528); sourced results E8 L102-103 + pres sl.32 L1011-1012 — both confirmed in extracts | Now carried as forward enabler/monitorable/question, not banked as a booked order | **CLOSED — properly grafted** |
+| JV-recurrence counter (F8.1) | Step 4 JV-normalisation flag (L195), First-Class Metric (L211), Step 2 diag-3 carve-out (L142), Q16 (L400), Caveat 7 (L439), flag (L526) | Q1 JV 13 vs FY26 14 Mn; 13/93=14.0% ✓; +333% ✓; normalise ~3.5 Mn → PAT 93→83.5 Mn=8.4 Cr (−10.2%) ✓; margin 83.5/617=13.5%≈13.6% ✓ | **CLOSED — grafted, math correct** |
+| ROCE label inconsistency (F16.4) | Step 7 pillar row (L335), Q12 (L396), Caveat 8 (L440), flag (L527) | 0.5×16+7.5=15.5x ✓; 0.5×23+7.5=19x ✓ (deck 16% panel vs 23% snapshot, L1165/L1170) | **CLOSED — grafted, math correct** |
+
+All three prior gaps are properly incorporated with correct sourcing and arithmetic. The F16.2 order-book double-count (Step 6E) was carried forward unchanged and is re-verified in Audit 3. Re-attack proceeds fresh.
 
 ---
 
@@ -10,121 +22,127 @@ Independent grep/manual re-enumeration of both extracts, diffed against the two 
 
 | Category | A2 count | My fresh count | Orphan / note | Status |
 |---|---|---|---|---|
-| Results: numbered notes | 0 | 0 (`^\s*[0-9]+\.\s` = 0; 4-page press release, not Reg 33) | — | PASS |
+| Results: numbered notes | 0 | 0 (`^\s*[0-9]+\.\s`=0; 4-page release, not Reg 33) | — | PASS |
 | Results: financial line items (L86-90) | 5 | 5 | — | PASS |
-| Results: financial period cells (5x4) | 20 | 20 | — | PASS |
-| Results: table footnote (L91 "* On Consolidated Basis") | 1 | 1 | — | PASS |
-| Results: Q1 highlight bullets (L93-111) | 13 | 13 | **E8 Oil India 2D/3D seismic empanelment (L102-103) enumerated but ABSENT from A4** | **FAIL → A3** |
+| Results: financial period cells (5×4) | 20 | 20 | — | PASS |
+| Results: table footnote (L91) | 1 | 1 | — | PASS |
+| Results: Q1 highlight bullets (L93-111) | 13 | 13 | E8 OIL empanelment now cited in A4 (closed) | PASS |
 | Results: CMD commentary claims (L115-148) | 9 | 9 | — | PASS |
-| Results: JV/coal statements (cross-ref) | 7 | 7 | — | PASS |
-| Results: absent Reg-33 unit classes (K1-K15) | 15 | 15 | all carried as first-class ND in A4 0D | PASS |
+| Results: JV/coal statements | 7 | 7 | — | PASS |
+| Results: absent Reg-33 units (K1-K15) | 15 | 15 | carried as first-class ND in A4 0D | PASS |
 | Results: letterhead/addressee/sig/about/contact | 11 | 11 | J2 phone-digit typo immaterial | PASS |
-| Presentation: slides (`[page N]`) | 40 | 40 | — | PASS |
-| Presentation: line items (sl33 16 + sl35 16 + sl36 42 + sl38 6) | 80 | 80 | each sub-count re-derived; sl36 42 = 22 asset + 20 eq/liab | PASS |
+| Presentation: slides | 40 | 40 | — | PASS |
+| Presentation: line items (16+16+42+6) | 80 | 80 | sl.36 42 = 22 asset + 20 eq/liab | PASS |
 | Presentation: chart data points | 110 | 110 (8+8+6+11+25+6+12+32+2) | — | PASS |
 | Presentation: footnotes | 7 | 7 | — | PASS |
-| Presentation: ZERO_STANDING rows | 7 | 7 | OCI/CWIP/Loans/held-for-sale/NCI/CurTaxLiab reviewed (F1.1/F1.2/F9.1) | PASS |
-| Presentation: DISCLOSURE_INCONSISTENCY (Ritolia sl8) | 1 | 1 | reviewed (F14.1, Q15) | PASS |
+| Presentation: ZERO_STANDING | 7 | 7 | OCI→F9.1, held-for-sale→F1.1, Curr-Tax-Liab→F1.2, CWIP→Step 5; NCI & Loans template-nil (reviewed, no finding) | PASS |
+| Presentation: Ritolia DISCLOSURE_INCONSISTENCY | 1 | 1 | F14.1 / Q15 | PASS |
 
-**No row my fresh pass found is missing from either ledger → no FAIL to A2.** (A2's results-ledger reconciliation prose is internally loose — it says Category G is "not added again" yet the stated total 70 only closes if the 7 G cross-refs are counted; 48 primary + 15 K = 63, +7 G = 70. This is A2 bookkeeping cosmetics only; every distinct disclosure unit is enumerated and no content is missed. Noted, not failed.)
+**No row my fresh pass found is missing from either ledger → no FAIL to A2.** No orphan ledger row is absent from A4 → no FAIL to A3.
 
-**Ledger-row → A4 disposition spot-check** (every flagged row must be cited in A4 or reviewed-no-finding):
-- `TITLE_LABEL_MISMATCH` "Q on Q" vs "Y on Y" → A4 F14-01, Step 3, Q14. Cited.
-- F2 standalone "on similar lines" → A4 First-Class Metric, Q4. Cited.
-- Slide 6 Rs 307 cr HZL vs slide 32 Rs 3,070 Mn Rajasthan → A4 F16.2 / Step 6E. Cited (A4 correctly overrides the ledger's "do not conflate" note).
-- Ritolia caption/body → A4 F14.1, Q15. Cited.
-- Slide 37 DATA_GAP (no Q1 net-worth/D-E/ROE-ROCE) → A4 F16.1, Q12. Cited.
-- OCI swing / Current Tax Liability / held-for-sale → A4 F9.1 / F1.2 / F1.1. Cited.
+**Ledger-flag → A4 disposition spot-check** (all cited):
+- TITLE_LABEL_MISMATCH "Q on Q" vs "Y on Y" → F14-01 / Step 3 / Q14. ✓
+- F2 standalone "on similar lines" → First-Class Metric / Q4. ✓
+- Slide-6 Rs 307 cr HZL vs slide-32 Rs 3,070 Mn Rajasthan → F16.2 / Step 6E (A4 correctly overrides the ledger "do not conflate" note). ✓
+- Slide-37 DATA_GAP (no Q1 net-worth/D-E/ROE-ROCE) → F16.1 / Q12. ✓
+- OCI swing / Current Tax Liability / held-for-sale → F9.1 / F1.2 / F1.1. ✓
 
-**Orphan row (ledger present, A4 absent) → FAIL to A3:**
-- **Results E8 / presentation slide-32 bullet:** *"Company empaneled by Oil India Limited for providing 2D/3D Seismic Data Acquisition Services across OIL's onshore"* (results L102-103; pres L1011-1012). A distinct forward growth catalyst — a new-scope empanelment with a marquee PSU client — enumerated by A2 (E8) and the slide-32 operational bullets. A4 carries it nowhere: not in the growth-trigger table (6D), not in the monitorables/catalyst list, not in Questions 1-17, not in Section C. A4's own rule (Step 8.5: "every A3 FORWARD-SIGNAL … maps to >= 1 row"; monitorables "seeded by A3 commitment registers F6") means the omission traces to a missing A3 commitment-register entry. A3 must add the empanelment as a forward-signal / monitorable; A4 then carries it.
+**Minor unaddressed cross-check (NOT elevated to FAIL):** the A2 pres-ledger slide-9 row flags a benign cross-check — the geographical map shows ~14 state labels vs "20 Operations across 8 States" (sl.32). A4 reviews slide 9 (geographical presence) but does not explicitly reconcile the count. It carries no forensic or financial content (all-time footprint map vs current-quarter operating-state count; the ledger itself supplies the benign resolution). Logged reviewed-benign; does not rise to an orphan-row FAIL.
 
-**Secondary coverage observation (recommend A3 flag; not the binding fail):** snapshot slide 3 (L94-95) labels **"23% ROCE"**, whereas slide 37 (L1170-1175) pairs FY26 as ROE 23% / ROCE 16%. A4 correctly used the conservative ROCE = 16% in Step 7 and held the pillar, so no valuation harm — but the same-metric label contradiction (snapshot mislabels ROE as ROCE) is the same class A3 flagged for Ritolia and is currently unlogged. Low materiality; recommend A3 add a one-line flag.
-
-**Coverage verdict: FAIL — one orphan (E8, Oil India empanelment) → A3.**
+**COVERAGE VERDICT: PASS.** 70/70 results rows and 40 slides / 80 line items / 110 data points / 7 footnotes reconcile exactly. No orphans; nothing found that the ledgers lack. All three prior loop-2 grafts confirmed present.
 
 ---
 
 ## AUDIT 2 — ARITHMETIC
 
-Every derived cell in A4's tables recomputed from raw extract numbers (slide 33 L1031-1063; slide 35 L1074-1106; slide 36 L1112-1142; slide 38 L1199-1210). All load-bearing cells shown; all others reconcile to rounding.
+Every derived cell recomputed from raw extract numbers (sl.33 L1031-63; sl.35 L1074-106; sl.36 L1112-42; sl.38 L1199-210). Load-bearing cells shown; all others reconcile to rounding.
 
-| Metric | A4 value | My recompute | Source line | Status |
+| Metric | A4 value | My recompute | Source | Status |
 |---|---|---|---|---|
-| Total Income Q1FY27 (Rev+OI) | 62.1 | 61.7+0.4 = 62.1 | L1033,L1041 | OK |
-| Op EBITDA (Rev−TotExp) Q1FY27 | 14.9 | 61.7−46.8 = 14.9 | L1033/35 | OK |
-| Op EBITDA margin Q1FY27 | 24.15% | 149/617 = 24.15% | L1037/33 | OK |
-| Op EBITDA margin Q1FY26 | 14.43% | 58/402 = 14.43% | L1035/33 | OK |
-| Reported EBITDA Q1FY27 (PBT+D+Fin) | 16.6 | 11.9+3.0+1.7 = 16.6 | L1051,43,45 | OK |
-| Core Op PBT ex-OI Q1FY27 | 11.5 | 11.9−0.4 = 11.5 | L1051,41 | OK |
-| Core Op PBT ex-OI ex-JV Q1FY27 | 10.2 | 10.6−0.4 = 10.2 | L1047,41 | OK |
-| Effective tax rate Q1FY27 (Tax/PBT) | 21.8% | 26/119 = 21.85% | L1053/51 | OK |
-| ETR pre-JV Q1FY27 (Tax/PBSJV) | 24.5% | 26/106 = 24.53% | L1053/47 | OK |
-| Revenue YoY | +53.5% | (617−402)/402 = 53.48% | L1033 | OK |
-| Op EBITDA YoY | +156.9% | (149−58)/58 = 156.9% | L1037 | OK |
-| Op EBITDA margin bps YoY | +972 | 2415−1443 = 972 | L1039 | OK |
-| Depreciation YoY | +42.9% | (30−21)/21 = 42.86% | L1043 | OK |
-| Finance cost YoY | −15.0% | (17−20)/20 = −15.0% | L1045 | OK |
-| Operating EBIT YoY | +221.6% | (11.9−3.7)/3.7 = 221.6% | der. L1037,43 | OK |
-| Core Op PBT ex-OI YoY | +475% | (11.5−2.0)/2.0 = 475% | der. | OK |
-| Core Op PBT ex-OI ex-JV YoY | +500% | (10.2−1.7)/1.7 = 500% | der. | OK |
-| Reported PBT YoY | +283.9% | (119−31)/31 = 283.9% | L1051 | OK |
-| PAT YoY | +287.5% | (93−24)/24 = 287.5% | L1055 | OK |
-| PAT margin bps YoY | +910 | 1507−597 = 910 | L1057 | OK |
-| EPS YoY | +287.3% | (3.06−0.79)/0.79 = 287.3% | L1063 | OK |
-| PAT bridge: Op EBITDA delta | +9.1 | 14.9−5.8 = 9.1 | L1037 | OK |
-| PAT bridge: = PBT change | +8.8 | 9.1−0.9+0.3−0.7+1.0 = 8.8; also 11.9−3.1 | L1051 | OK |
-| PAT bridge: = reported PAT change | +6.9 | 8.8−1.9 = 6.9; also 9.3−2.4 | L1055 | OK |
-| JV share of consolidated PAT | 14.0% | 13/93 = 13.98% | L1049/55 | OK |
-| Receivable days FY25 (TR/Rev x365) | 154.5 | 763/1803 x365 = 154.5 | L1132/76 | OK |
-| Receivable days FY26 | 175.0 | 1166/2430 x365 = 175.1 | L1132/76 | OK |
-| Inventory days FY26 (Inv/TotExp) | 100.6 | 509/1847 x365 = 100.6 | L1129/78 | OK |
-| Payable days FY26 (TP/TotExp) | 45.9 | 232/1847 x365 = 45.9 | L1133/78 | OK |
-| Cash conversion cycle FY26 | ~230 | 175.0+100.6−45.9 = 229.7 | der. | OK |
-| Capex FY26 (PPE+CWIP) | 92.2 | 918+4 = 922 Mn | L1114-15 | OK |
-| Cash & equiv FY25→FY26 | 19.4→1.3 (−93%) | 194→13 Mn, −93.3% | L1134 | OK |
-| Gross borrowings FY26 (LT+ST) | 78.6 | 160+626 = 786 Mn | L1120/31 | OK |
-| Net debt FY26 (gross−cash&equiv) | 77.3 | 78.6−1.3 = 77.3 | der. | OK |
-| Order book net QoQ add | +180.1 Cr (+31.0%) | (7613−5812)/10 = 180.1; /581.2 = 31.0% | L546 | OK |
-| ROCE base (0.5xROCE+7.5) | 15.5x | 0.5x16+7.5 = 15.5 | L1170 (sl.37 ROCE 16%) | OK |
+| Total Income Q1FY27 (Rev+OI) | 62.1 | 61.7+0.4=62.1 | L1033/41 | OK |
+| Op EBITDA Q1FY27 (Rev−TotExp) | 14.9 | 61.7−46.8=14.9 | L1033/35 | OK |
+| Op EBITDA margin Q1FY27 | 24.15% | 149/617 | L1037/33 | OK |
+| Op EBITDA margin Q1FY26 | 14.43% | 58/402 | L1035/33 | OK |
+| Reported EBITDA Q1FY27 (PBT+D+Fin) | 16.6 | 11.9+3.0+1.7 | L1051/43/45 | OK |
+| Core Op PBT ex-OI Q1FY27 | 11.5 | 11.9−0.4 | L1051/41 | OK |
+| Core Op PBT ex-OI ex-JV Q1FY27 | 10.2 | 10.6−0.4 | L1047/41 | OK |
+| Effective tax rate Q1FY27 (Tax/PBT) | 21.8% | 26/119=21.85% | L1053/51 | OK |
+| ETR pre-JV Q1FY27 (Tax/PBSJV) | 24.5% | 26/106=24.53% | L1053/47 | OK |
+| Revenue YoY | +53.5% | (617−402)/402=53.48% | L1033 | OK |
+| Op EBITDA YoY | +156.9% | (149−58)/58 | L1037 | OK |
+| EBITDA margin bps YoY | +972 | 2415−1443 | L1039 | OK |
+| Depreciation YoY | +42.9% | (30−21)/21=42.86% | L1043 | OK |
+| Finance cost YoY | −15.0% | (17−20)/20 | L1045 | OK |
+| Operating EBIT YoY | +221.6% | (11.9−3.7)/3.7 | der. | OK |
+| Core Op PBT ex-OI YoY | +475% | (11.5−2.0)/2.0 | der. | OK |
+| Core ex-OI ex-JV YoY | +500% | (10.2−1.7)/1.7 | der. | OK |
+| Reported PBT YoY | +283.9% | (119−31)/31 | L1051 | OK |
+| PAT YoY | +287.5% | (93−24)/24 | L1055 | OK |
+| PAT margin bps YoY | +910 | 1507−597 | L1057 | OK |
+| EPS YoY | +287.3% | (3.06−0.79)/0.79 | L1063 | OK |
+| PAT bridge: Op EBITDA Δ | +9.1 | 14.9−5.8 | L1037 | OK |
+| PAT bridge: PBSJV Δ | +7.8 | 10.6−2.8 | L1047 | OK |
+| PAT bridge: JV Δ | +1.0 | 1.3−0.3 | L1049 | OK |
+| PAT bridge: = PBT change | +8.8 | 7.8+1.0; also 11.9−3.1 | L1051 | OK |
+| PAT bridge: Tax Δ | −1.9 | 2.6−0.7 | L1053 | OK |
+| PAT bridge: = reported PAT change | +6.9 | 8.8−1.9; also 9.3−2.4 | L1055 | OK |
+| JV share of consolidated PAT | 14.0% | 13/93=13.98% | L1049/55 | OK |
+| JV normalise → PAT / margin | ~8.4 / ~13.6% | 93−9.5=83.5 Mn; 83.5/617=13.5% | L1092 | OK |
+| Receivable days FY25 | 154.5 | 763/1803×365 | L1132/76 | OK |
+| Receivable days FY26 | 175.0 | 1166/2430×365=175.1 | L1132/76 | OK |
+| Inventory days FY26 | 100.6 | 509/1847×365 | L1129/78 | OK |
+| Payable days FY26 | 45.9 | 232/1847×365 | L1133/78 | OK |
+| Cash conversion cycle FY26 | ~230 | 175.0+100.6−45.9=229.7 | der. | OK |
+| Capex FY26 (PPE+CWIP) | 92.2 | 918+4 Mn | L1114-15 | OK |
+| Cash & equiv FY25→26 | 19.4→1.3 (−93%) | 194→13, −93.3% | L1134 | OK |
+| Gross borrowings FY26 (LT+ST) | 78.6 | 160+626 Mn | L1120/31 | OK |
+| Net debt FY26 (gross−cash&equiv) | 77.3 | 78.6−1.3 | der. | OK |
+| Order book net QoQ add | +180.1 (+31.0%) | (7613−5812)/10=180.1; /581.2=31.0% | L546 | OK |
+| Survey-segment concentration | 59% | 4506/7613=59.2% | sl.17 | OK |
+| CBM share of book | 29% | 2222/7613=29.2% | sl.17 | OK |
+| Rev step-up FY24→25→26 | +35%/+35% | 46.9/133.4=35.2%; 62.7/180.3=34.8% | L1076 | OK |
+| FY26 avg quarterly run-rate | 60.75 | 243.0/4 | der. | OK |
+| Q1 annualised (×4) | 246.8 | 61.7×4 | der. | OK |
+| ROCE base (0.5×ROCE+7.5) | 15.5x | 0.5×16+7.5 | L1170 | OK |
 
-Standalone-vs-consolidated PAT gap: A4 records ND (both docs consolidated-only, results K5) — confirmed unrecoverable from today's extracts, correctly ND not fabricated; JV-share-of-PAT (14.0%) kept distinct from the S-vs-C gap. Correct handling.
+S-vs-C PAT gap: A4 records ND (both docs consolidated-only, K5) — confirmed unrecoverable from today's extracts, correctly ND not fabricated; JV-share-of-PAT (14.0%) kept distinct from the S-vs-C gap. Correct.
 
-**Arithmetic verdict: PASS — zero mismatches above rounding.** The PAT bridge closes exactly both ways (+6.9 Cr). Note (not a FAIL; no A4 table affected): the press-release body claim "PAT … more than 3.90 fold" (results L97) is a mild company overstatement (93/24 = 3.875x); A4 correctly used +287.5% throughout and did not import the 3.90 figure.
+**ARITHMETIC VERDICT: PASS — zero mismatches above rounding.** The PAT bridge closes exactly both ways (+6.9 Cr). Note (not a FAIL; no A4 table affected): the release body's "PAT … more than 3.90 fold" (results L97) is a mild company overstatement (93/24=3.875x); A4 correctly used +287.5% and did not import 3.90. (The narrative run-rate INFERENCE issue in Step 2/3 is treated in Audit 3, not here, because A4's table numbers are all correct — the defect is in prose interpretation, not arithmetic.)
 
 ---
 
 ## AUDIT 3 — ADVERSARIAL READ
 
-Three most positive claims in A4, each attacked from the same extracted text.
+Three most-positive A4 claims, each attacked from the same extracted text.
 
-**Positive claim 1 — "PAT +287.5% is genuinely operating-led, NOT treasury/one-off; ~100%+ recurring" (Step 2 D4, Step 4; bridge labels Share of JV "+1.0 Recurring").**
-Strongest bear counter from the extract: the equity-accounted **Share of Profit from JVs leapt 3 → 13 Mn YoY (+333%)** (L1049), and Q1 FY27's 13 Mn is **~93% of the ENTIRE FY26 full-year JV profit of 14 Mn** (L1092) — one quarter nearly equals a full prior year. It is now **14.0% of consolidated PAT** (1.3/9.3 Cr), sits below the operating line, and the JV audit status is ND (F8.1/Q16). Labeling a +333% single-line spike "Recurring" (Step-4 bridge) is unproven; the pattern (one quarter ~ one prior year) is the fingerprint of a lump / catch-up / revaluation in the Oman JV. Normalise the JV to its FY26 quarterly run-rate (~3.5 Mn) and Q1 PAT falls ~10% (9.3 → ~8.4 Cr) and the 15.07% PAT margin softens.
-**SURVIVES.** Extract-supported (L1049 vs L1092 vs L1055). A4 flags the JV concentration (14%) and audit status but nowhere notes the magnitude anomaly (Q1 JV ~ full FY26 JV, +333% YoY) and nowhere challenges the bridge's "Recurring" label at the PAT level. Must be grafted into A4. **→ FAIL to A4.**
+**Positive claim 1 — "Operating income statement genuinely strong, NOT treasury-led; core ex-OI +475%, ex-JV +500%; ~100%+ of PAT growth recurring/operating" (Step 2 verdict L147; Step 4 L190).**
+Strongest same-text counter: the deck-defined "EBITDA" carries no cost-line breakdown (materials/employee/other all ND, K9-K13, A4 L101); the CMD cites "substantial increase in input cost" (L123); the +972 bps margin is measured against a Q1FY26 base (14.43%) far below the FY26 full-year margin, so the expansion is undecomposable; and 14% of PAT sits in the JV line whose recurrence is unconfirmed.
+**DOES NOT SURVIVE as new.** A4 already records cost lines ND (L101), carves the JV +Rs1.0 Cr out of the "recurring" claim (Step 4 flag L195), notes the margin also holds at the full-FY26 level (23.99%, recurring FY24→26), and caps the verdict at PROCEED WITH CAVEATS. Fully incorporated.
 
-**Positive claim 2 — "Operating EBITDA margin +972 bps to 24.15%, genuine and holding FY26's 23.99%" (Step 2).**
-Bear counter: the deck discloses only an **aggregated "Total Expenses"** line — no materials/employee/other split (ND, results K9-K13) — while the CMD cites "substantial increase in input cost" (L123) and Intangibles-under-development rose 143 → 193 Mn (L1119). The margin jump cannot be decomposed into operating leverage vs classification/capitalisation.
-**DOES NOT SURVIVE.** The move also holds at the full-FY26 level (23.99%, L1082) and recurs annually FY24→FY26; the capitalised intangibles are coal-GR / Oman project costs, not services COGS, so they cannot mechanically inflate the services margin. A4 already flags the cost-line ND and the intangibles build (F12.1 / Q17). No graft.
+**Positive claim 2 — "Coal first-production target FY27-28 is EARLIER than the house FY29 tripwire (favourable); no thesis-broken trigger fired" (Step 6C L288; Combined verdict L423).**
+Strongest same-text counter: FY27-28 is a management target stated while the GR is only "being finalised for early submission" (sl.22 L682) and mine development "shall be undertaken now" (not yet begun, L143-145). A self-declared pull-forward with the enabling filing unsubmitted is promise-not-delivery; booking it as "favourable/earlier than FY29" credits an unfulfilled promise.
+**DOES NOT SURVIVE as new.** A4 logs "binary GR-slip risk" (L300), routes it to Q6 (reaffirm/deny FY27-28 vs FY29), and lists GR submission (end-Jul) and first production as dated monitorables (L450-451). The promise is flagged, not banked.
 
-**Positive claim 3 — "Coal first-production target FY27-28 is EARLIER than the house FY29 tripwire; no thesis-broken trigger fired" (Step 6C/6D).**
-Bear counter: FY27-28 is a management aspiration and the **GR has not even been submitted** ("being finalised for early submission," L682); the earlier date is promise, not delivery.
-**DOES NOT SURVIVE as new.** A4 already logs the binary GR-slip risk, AMBER-tracks it, and dedicates Question 6 to reaffirm/deny the target. Already incorporated.
+**Positive claim 3 — "Revenue +53.5% YoY; annualised Q1 (Rs 246.8 Cr) sits at/above the FY26 exit pace; no seasonal air-pocket; consistent with order-book pull-through beginning" (Step 2 diag-1 L140; Step 3 L167).**
+Strongest same-text counter: the extract's own arithmetic contradicts the exit-pace / no-air-pocket characterisation. FY26 = Rs 243.0 Cr with Q1FY26 = Rs 40.2 Cr, so the FY26 non-Q1 quarters (Q2-Q4) totalled Rs 202.8 Cr, averaging **~Rs 67.6 Cr/quarter** — Q1FY26 ran at only 66% of that. On the one quarterly data point available, **Q1 is the seasonally weakest quarter.** Therefore:
+- Q1FY27 at Rs 61.7 Cr is **BELOW the implied FY26 non-Q1 run-rate (~Rs 67.6 Cr)**, not "at/above the FY26 exit pace" (exit pace = Q4FY26, which is ND but implied ~Rs 67-70 Cr).
+- A4's Step-3 test compares Q1FY27 (61.7) to the **blended** FY26 average (60.75) — an average dragged down by the very weak Q1FY26 it also uses for the +53.5% YoY. Comparing to the blended average manufactures "marginally above / no seasonal air-pocket."
+- ×4 annualisation of a seasonally-low Q1 (246.8) is an unsound basis for asserting "exit pace." True QoQ vs Q4FY26 is ND.
+**SURVIVES.** Extract-supported (pres L1033 Q1FY26 40.2 / Q1FY27 61.7; L1076 FY26 243.0). A4 affirmatively asserts the opposite ("at/above the FY26 exit pace," "no seasonal air-pocket") and this counter is nowhere in A4. A4 cannot use Q1FY26 for its YoY while ignoring what that same data point implies about seasonality; its "one quarter is one data point" caveat does not neutralise the specific unsupported exit-pace assertion. **Must be grafted into A4. → FAIL to A4.**
 
-**Verification of the previously-grafted order-book counter (re-audit focus):** the F16.2 double-count / Step 6E graft is **properly and completely incorporated** — it appears in 6B (item 8), 6C, 6D, 6E, Step 7 (Growth-Visibility premium explicitly NOT credited), Step 8 gate 2, Section C, Caveat 4, the flags block, and Questions 2 & 8. Re-attacked fresh: the arithmetic (net QoQ add 180.1 Cr < the single 307 Cr order; L546) and the identity claim (3,070 Mn Rajasthan order = the FY25 HZL 307 Cr award: same value, same "single largest" descriptor, same HZL-subsidiary customer, same Rajasthan location; L151-155 vs L1003-1004) are both extract-supported. This graft holds. No further action on the order-book counter.
+**Re-verification of the previously-grafted order-book counter (F16.2 / Step 6E):** properly and completely incorporated — appears in 6B item 8, 6C, 6D, 6E, Step 7 (Growth-Visibility premium explicitly NOT credited), Step 8 gate 2, Section C, Caveat 4, flags block, Questions 2 & 8. Re-attacked fresh: net QoQ add Rs 180.1 Cr < the single Rs 307 Cr order (L546); the 3,070 Mn Rajasthan order = the FY25 HZL 307 Cr award (same value, same "single largest" descriptor, same HZL-subsidiary customer, same Rajasthan location; L151-155 vs L1003-1004). Graft holds. No further action.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
+**INCOMPLETE.** Loop back to **A4**.
 
-Two binding gaps:
-1. **Coverage orphan → A3.** Oil India 2D/3D seismic empanelment (results E8 L102-103; pres slide-32 bullet L1011-1012) is enumerated by A2 but reviewed nowhere in A4 — a forward growth catalyst dropped from the commitment register, monitorables, and questions. A3 must add it; A4 then carries it.
-2. **Surviving bear counter → A4.** The equity-accounted JV profit share is anomalously large this quarter (Q1 FY27 13 Mn ~ full FY26 14 Mn; +333% YoY; 14% of PAT; audit status ND). A4's "Recurring" bridge label and its "~100%+ recurring/operating PAT" framing must be qualified with this extract-supported non-recurrence risk before save.
+- Coverage: PASS (no orphans; 70 results rows / 40 slides / 80 line items / 110 data points reconcile; all three prior loop-2 grafts confirmed present and correctly sourced).
+- Arithmetic: PASS (all derived metrics reconcile within rounding; PAT bridge closes exactly).
+- Adversarial: one surviving bear counter — the revenue-momentum seasonality/exit-pace counter (claim 3) — is extract-supported and absent from A4; it must be grafted before save.
 
-**Re-entry point: A3** (earliest gate; the orphan originates in the A3 commitment register and cascades to A4). On the A4 re-run, graft the surviving JV-recurrence counter. Secondary (non-binding): A3 should also log the snapshot "23% ROCE" vs slide-37 "16% ROCE" label inconsistency — A4's number is already the conservative 16%.
-
-Arithmetic audit fully passes; the previously-grafted order-book counter is verified correctly incorporated.
+**Exact gap:** A4 Step 2 diag-1 (L140) and Step 3 (L167) assert Q1FY27 is "at/above the FY26 exit pace" with "no seasonal air-pocket," which the extract's own arithmetic contradicts — FY26 non-Q1 quarters averaged ~Rs 67.6 Cr (243.0 less Q1FY26 40.2, over three quarters) vs Q1FY27's Rs 61.7 Cr, and Q1FY26 (40.2, = 66% of the non-Q1 run-rate) shows Q1 is the seasonally weakest quarter. Graft the seasonality-tempered revenue-momentum bear counter (Q1FY27 below the FY26 non-Q1/exit run-rate; ×4 annualisation overstates; true exit/QoQ pace ND) and align the Step 2 / Step 6 / Combined-verdict "pull-through beginning" language. The verdict floor (PROCEED WITH CAVEATS) is unaffected; this is a completeness graft to a momentum positive.
 
 ```yaml
 stage: A5-adversary
@@ -134,14 +152,13 @@ model: claude-opus-4-8
 status: complete
 verdict: INCOMPLETE
 coverage:
-  orphan_rows:
-    - "Results E8 / pres slide-32 bullet: Oil India 2D/3D Seismic empanelment (results L102-103; pres L1011-1012) — forward catalyst enumerated by A2, reviewed nowhere in A4 (no growth-trigger, monitorable, or question)"
+  orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
 surviving_bear_counters:
-  - claim: "PAT +287.5% is operating-led / ~100%+ recurring; Share of JV labelled 'Recurring' in the PAT bridge (Step 2, Step 4)"
-    counter: "Equity-accounted JV profit share jumped 3->13 Mn YoY (+333%); Q1 FY27 (13 Mn) ~= the entire FY26 JV profit (14 Mn) and = 14% of consolidated PAT; JV audit status ND. One-quarter-~-one-prior-year is the fingerprint of a lump/catch-up, so the 'Recurring' label is unproven; normalising the JV run-rate cuts Q1 PAT ~10% (9.3->~8.4 Cr) and softens the 15.07% PAT margin"
-    source_line: "presentation L1049 (JV 13 vs 3), L1092 (FY26 JV 14), L1055 (PAT 93)"
-loop_back_to: "A3"
-gap: "A3: add the Oil India 2D/3D seismic empanelment (E8, results L102-103 / slide-32 L1011) as a forward-signal to the commitment register and monitorables (also recommend logging the snapshot '23% ROCE' vs slide-37 'ROCE 16%' label inconsistency). A4 (on re-run): graft the surviving JV-recurrence bear counter — qualify the 'Recurring' JV bridge label and the '~100%+ recurring PAT' claim with the +333% YoY / Q1~=full-FY26 JV-lump risk (L1049/L1092/L1055). The previously-grafted order-book counter (F16.2/Step 6E) is verified correctly incorporated; no action there."
+  - claim: "Revenue +53.5% YoY; annualised Q1 (Rs 246.8 Cr) at/above the FY26 exit pace; no seasonal air-pocket; order-book pull-through beginning (A4 Step 2 L140 / Step 3 L167)"
+    counter: "Extract arithmetic contradicts the exit-pace claim: FY26 Rs 243.0 Cr less Q1FY26 Rs 40.2 Cr = Rs 202.8 Cr over Q2-Q4 = ~Rs 67.6 Cr/qtr, so Q1FY26 ran at 66% of the non-Q1 run-rate (Q1 is seasonally weakest). Q1FY27 Rs 61.7 Cr is BELOW that ~Rs 67.6 Cr FY26 non-Q1/exit run-rate; A4 compares instead to the blended FY26 average (60.75) that is itself dragged down by the weak Q1FY26 used for the YoY. x4 annualisation of a seasonally-low Q1 overstates momentum; true QoQ vs Q4FY26 is ND. Graft this tempering and align the pull-through language."
+    source_line: "presentation L1033 (Q1FY26 402 / Q1FY27 617), L1076 (FY26 2430); A4 L140, L167"
+loop_back_to: "A4"
+gap: "A4 Step 2 diag-1 (L140) and Step 3 (L167) assert Q1FY27 is 'at/above the FY26 exit pace' with 'no seasonal air-pocket'; the extract's own arithmetic (FY26 non-Q1 avg ~Rs 67.6 Cr > Q1FY27 Rs 61.7 Cr; Q1FY26 Rs 40.2 Cr = seasonally weakest quarter, 66% of non-Q1 run-rate) contradicts this. Graft the surviving seasonality/exit-pace bear counter (Q1FY27 below FY26 non-Q1/exit run-rate; x4 annualisation overstates; true exit/QoQ pace ND) and align Step 2/Step 6/Combined-verdict momentum language before save. The three prior loop-2 gaps (OIL empanelment, JV-recurrence, ROCE label) and the F16.2 order-book counter are verified correctly incorporated; no action there."
 ```

@@ -1,0 +1,57 @@
+stage: B02-notes
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "post-listing annual report absent (company listed Feb-2026, first AR not yet due); this Notes analysis is sourced entirely from the IPO Prospectus' Restated Financial Statements (Annexure V/VI), carried from B00"
+  - "aye_screening_csv absent; no independent screener financial dataset to cross-check note-level figures against, carried from B00"
+  - "operator 6-month digest (announcements) is NON-ANCHORED, lead/cross-check only; not used to source any figure in this Notes analysis, carried from B00"
+flags:
+  - type: FLAG-ASSET-QUALITY
+    reason: "B02 reinforces and extends B01's FLAG-ASSET-QUALITY with note-level detail: Stage 3/GNPA (MSME sector) rose for 4 consecutive periods to 4.85% at Sep-25 (Note 53.13.4); Stage 2 ECL rate on the core book roughly tripled FY23->FY24 with no explanation (Note 49.1.8(c)); write-offs nearly quadrupled FY23->FY25 (Note 28); restructured book accelerated +66% WITHIN H1FY26 alone (Note 46.1). New and adjacent to this flag: covenant breaches on ~23.6% of total borrowings, majority unwaived (Note 53.36) — a funding/liquidity risk correlated with, though distinct from, the credit-quality deterioration."
+  - type: FLAG-DATA
+    reason: "B02 corroborates and quantifies B01's FLAG-DATA restatement-uplift observation with the exact source mechanism: Annexure VI shows FY24 PAT restated UP +Rs105.52mn (+6.5%) and FY25 PAT restated UP +Rs39.80mn (+2.3%) via prior-period tax-expense adjustments -- consistent with B01's independently-derived ~6.6%/~2.3% deltas vs ICRA's originally-audited PAT. New finding not in B01: FY23 PAT was restated DOWN -Rs139.23mn (-25.9%, Rs537.96mn->Rs398.73mn) via the same tax-expense mechanism, and a further small adjustment appears in H1FY26 (-Rs5.21mn). The restatement pattern touches 4 of 5 presented periods."
+  - type: FLAG-CASH
+    reason: "No trade receivables/working-capital concept exists for this lending NBFC (NOT APPLICABLE per B00 context); B02 does not add new evidence to B01's CFO-structural-negative determination. The credit-quality-equivalent trend (Stage 3/GNPA, write-offs, restructuring -- see FLAG-ASSET-QUALITY above) is deteriorating across the same window, which is a different signal from cash conversion but should be read alongside it; B01's INDETERMINATE cash-conversion read is not resolved by anything found in the notes and should not be silently upgraded to PROCEED."
+accounting_quality: 5.5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Covenant breaches on ~23.6% of total borrowings (Rs12,344.12mn of Rs52,184.98mn) at Sep-25, majority unwaived (9 of 23 waived)", note_ref: "Note 53.36, p.401-402/614", rating: "🔴", why: "Cross-default/acceleration risk on nearly a quarter of the funding base; unresolved at each period-end"}
+  - {rank: 2, finding: "Recurring tax-expense restatement: FY23 PAT cut 25.9% (Rs537.96mn->Rs398.73mn); adjustments in 4 of 5 periods presented, both directions", note_ref: "Annexure VI, p.404/614; cross-ref Note 40(b), p.358/614", rating: "🔴", why: "No presented full year of the IPO growth track record is free of a material prior-period tax correction"}
+  - {rank: 3, finding: "Stage 3/GNPA ratio rising 4 consecutive periods: 2.49%->3.19%->4.21%->4.85% (FY23->Sep-25)", note_ref: "Note 53.13.4, p.385/614", rating: "🔴", why: "Sustained multi-period credit-quality deterioration"}
+  - {rank: 4, finding: "Stage 2 ECL rate on core Hypothecated/Switch book roughly tripled FY23->FY24 (13.90%->40.73%), stayed elevated, unexplained", note_ref: "Note 49.1.8(c), p.369/614", rating: "🔴", why: "Unexplained step-change is a provisioning-methodology question mark compounding the GNPA trend"}
+  - {rank: 5, finding: "Write-offs nearly quadrupled: Rs500.00mn (FY23) -> Rs2,034.89mn (FY25), elevated pace continuing into FY26", note_ref: "Note 28, p.347/614", rating: "🔴", why: "Confirms Stage 3 migration is translating into realised credit losses"}
+  - {rank: 6, finding: "Restructured book accelerated +66% in borrowers/+65% in amount WITHIN H1FY26 alone (401->665 borrowers)", note_ref: "Note 46/46.1, p.361-364/614", rating: "🔴", why: "Sharpest, most recent data point in the credit-stress pattern; still small vs AUM (0.12%) but accelerating"}
+  - {rank: 7, finding: "CRAR fell 37.61% (Sep-24) -> 32.27% (Sep-25); Tier I capital flat/-0.23% within H1FY26 despite profit earned", note_ref: "Note 48, p.365/614", rating: "🟡", why: "Capital-consumption trend coinciding with sharpest credit deterioration; mitigated by IPO proceeds (pro forma Post-Offer CRAR 47.48%)"}
+  - {rank: 8, finding: "Rs290.51mn ARC security-receipt impairment (12.9% of FY25 PBT) not shown as a distinct line in any P&L note", note_ref: "Note 6 p.329/614; Annexure III p.315/614; Note 28 p.347/614; Note 30 p.348/614", rating: "🔴", why: "Material charge traceable only by cross-referencing three notes that do not reference each other"}
+  - {rank: 9, finding: "NPA-to-ARC sales reconciled: FY25 Rs2,593.70mn transfer was 100% already-written-off (recovery event); only FY23 Rs321.10mn unwritten-off portion fits the original GNPA-understatement concern", note_ref: "Note 53.27.1(d)(i) + footnote, p.393-394/614", rating: "🟡", why: "Materially tempers the raw transfer amount's implied severity; residual concern real but ~8x smaller and FY23-only"}
+  - {rank: 10, finding: "Ind AS 109 ECL provisioning exceeds RBI IRACP floor by Rs1,678.02mn (Sep-25), 3.4x the floor, cushion grown ~5x since FY23", note_ref: "Note 52, p.382-384/614", rating: "🟢", why: "Genuine offsetting strength against the credit-quality flags"}
+  - {rank: 11, finding: "Credit-rating trajectory improving through the same window: IndRa upgrade to A/Stable (Jul-2024), ICRA reaffirmed A/Stable with expanded limits (Nov-2025)", note_ref: "Note 53.11.4, p.390/614", rating: "🟢", why: "Independent external counter-signal to the credit-quality flags"}
+  - {rank: 12, finding: "Customer complaints and Ombudsman-tier complaints both rising faster than the book in places (FY24 complaints +113% vs ~58% AUM growth)", note_ref: "Note 53.16 / 53.16.1, p.386-390/614", rating: "🟡", why: "Consistent with, not proof of, collections-related friction alongside the credit-quality trend"}
+  - {rank: 13, finding: "Auditor-identified ITGC gap: audit-trail not enabled at database level for part of FY24, remediated from Sep-19-2024, no tampering found", note_ref: "Auditor's Examination Report, extract p.311-312/614", rating: "🟡", why: "Control-environment observation in the restated IPO track record"}
+  - {rank: 14, finding: "Unsecured loan mix rose from 31.3% (FY23) to 41.0% (Sep-25) of gross loans", note_ref: "Note 5, p.328/614", rating: "🟡", why: "Mix shift toward higher-risk unsecured lending running parallel to the credit-quality deterioration"}
+  - {rank: 15, finding: "Gain-on-derecognition income grew Rs125.10mn (FY23) to Rs375.93mn (FY25), front-loaded and growing as a share of profit", note_ref: "Note 25/53.27, p.346, 393-394/614", rating: "🟡", why: "Quality-of-earnings item: growing share of profit from day-one gain-on-sale rather than recurring NIM"}
+red_flags:
+  - "Covenant breaches on ~23.6% of total borrowings (Rs12,344.12mn of Rs52,184.98mn) at Sep-25, majority unwaived (Note 53.36)"
+  - "Recurring tax-expense restatement across 4 of 5 presented periods, including a 25.9% cut to FY23 PAT (Annexure VI)"
+  - "Stage 3/GNPA ratio rising 4 consecutive periods, 2.49%->4.85% FY23->Sep-25 (Note 53.13.4)"
+  - "Stage 2 ECL rate on the core book roughly tripled in one year with no explanation given (Note 49.1.8(c))"
+  - "Write-offs nearly quadrupled FY23->FY25, elevated pace continuing into FY26 (Note 28)"
+  - "Restructured book accelerated +66% within H1FY26 alone (Note 46.1)"
+  - "Rs290.51mn ARC security-receipt impairment (12.9% of FY25 PBT) not disclosed as a distinct P&L line item (Note 6; Annexure III; Note 28; Note 30)"
+questions_for_mgmt:
+  - "Of the 23 covenant-breach instances (Rs12,344.12mn) at Sep-30-2025, which are financial vs reporting/technical breaches, which lenders are involved, and what is the timeline to waiver on the 14 unwaived instances? (Note 53.36)"
+  - "What specifically drove the FY23 tax-expense restatement (-Rs139.23mn, -25.9% of PAT), and what process changes prevent the recurring prior-period tax corrections appearing in 4 of 5 periods presented? (Annexure VI)"
+  - "What caused the ~3x jump in the Stage 2 ECL rate on the Hypothecated/Switch book (13.90% FY23 -> 40.73% FY24, sustained since) -- genuine deterioration or a PD/LGD methodology recalibration? (Note 49.1.8(c))"
+  - "Why is the Rs290.51mn ARC security-receipt impairment charge in FY25 (12.9% of FY25 PBT) not disclosed as a distinct P&L line item, and will it be broken out separately in future filings? (Note 6; Annexure III; Note 28)"
+  - "What is driving the sharp acceleration in restructured accounts within H1FY26 alone (401->665 borrowers, +66% in one half-year) -- specific products, vintages, or geographies? (Note 46.1)"
+receivables_trend: "NOT APPLICABLE -- lending NBFC, no trade receivables. Credit-quality equivalent (Stage 3/GNPA, MSME sector) is deteriorating: 2.49% (FY23) -> 3.19% (FY24) -> 4.21% (FY25) -> 4.85% (Sep-25), rising for 4 consecutive periods (Note 53.13.4, p.385/614); net NPA/net advances also rose the last two periods, 0.91% (FY24) -> 1.40% (FY25) -> 1.78% (Sep-25) (Note 53.13.5(a), p.385/614)"
+restatements_found:
+  - "FY23 PAT restated DOWN 25.9%: Rs537.96mn (audited) -> Rs398.73mn (restated), -Rs139.23mn, entirely a tax-expense prior-period adjustment (Annexure VI, p.404/614)"
+  - "FY24 PAT restated UP 6.5%: Rs1,611.27mn (audited) -> Rs1,716.79mn (restated), +Rs105.52mn, tax-expense adjustment (Annexure VI, p.404/614)"
+  - "FY25 PAT restated UP 2.3%: Rs1,712.72mn (audited) -> Rs1,752.52mn (restated), +Rs39.80mn, tax-expense adjustment (Annexure VI, p.404/614)"
+  - "H1FY26 PAT restated DOWN 0.8%: Rs651.18mn (audited) -> Rs645.97mn (restated), -Rs5.21mn, tax-expense adjustment (Annexure VI, p.404/614)"
+  - "Equity restated DOWN at FY23 (-Rs140.11mn, Rs7,685.04mn -> Rs7,544.93mn) and at April-01-2022 opening (-Rs0.88mn); mixed direction at FY24 (-Rs34.59mn) and Sep-24 (-Rs34.59mn), consistent with the PAT-level tax adjustments carried into opening reserves (Annexure VI, p.404/614)"
+going_concern_language: "NONE -- standard boilerplate only ('The financial statements have been prepared on a going concern basis'), confirmed at every location it appears in the extract (lines ~20503, 20519, 27545, 27553); no material-uncertainty paragraph anywhere in the document"

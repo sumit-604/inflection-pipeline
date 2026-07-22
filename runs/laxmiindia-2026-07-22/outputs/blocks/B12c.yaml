@@ -1,0 +1,30 @@
+stage: B12c
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: partial-phase1        # Gate0 + EM audited; valuation deferred to phase 3
+phase: "1 of 3 (Gate 0 + Emerging Moat); B11/B10 valuation audit deferred — stages 10/11 not yet run"
+gate0:
+  rules_checked: 37
+  fails:
+    - "A4 ROCE-trend: −0.27pp decline scored 3 in a framework gap (below 'decline 1-3pp' floor, not 'latest>=earliest'); conservative, a case exists for 5; Block A 13 vs 15, Core 56 vs 58, AVERAGE->AVOID unchanged (MINOR)"
+    - "Deal-breaker #6 (ND/EBITDA>3x AND IC<3x -> AVOID) literally fired (~6.3x AND ~1.48x FY26) but was NOT applied; outcome-neutral (AVOID via history downgrade regardless); no NBFC carve-out in prompt text; recommend operator/framework ruling (MINOR)"
+emoat:
+  rules_checked: 18
+  fails:
+    - "D1 evidence multiplier: 🔍 tier mandates 0.5x but adjusted score set to 0.7x ('blend'); em_score 29.4 vs strict 29.2; STRENGTHENING band either way (MINOR)"
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "PENDING — phase 3; stages 10/11 not yet run; B11/B10 not audited"
+recomputed_destination_pe: ""   # pending phase 3
+recomputed_decision: ""         # blank — concur with AVOID (Gate 0) and STRENGTHENING/HIGH POTENTIAL (EM)
+findings:
+  - {severity: "MINOR", location: "B01 Block A / A4 ROCE trend", description: "0.27pp ROCE decline falls in an unspecified band gap; maker scored 3 (conservative), 5 is arguable; immaterial to classification (AVOID either way)"}
+  - {severity: "MINOR", location: "B01 deal-breaker #6", description: "ND/EBITDA~6.3x AND IC~1.48x FY26 literally triggers #6->AVOID but not applied; maker cites duplication with D1 CRAR redirection; outcome-neutral; no NBFC carve-out in text; flag for operator ruling"}
+  - {severity: "MINOR", location: "B07 scorecard / D1 multiplier", description: "🔍-tier D1 multiplied at 0.7x instead of 0.5x, inflating em_score to 29.4 vs strict 29.2; STRENGTHENING band unchanged"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+framework_adherence: 94.5       # Gate0 + EM portion only: 52 passed / 55 checked
+acceptance_rate: 94.5           # rules passed ÷ rules checked (Gate0+EM), %

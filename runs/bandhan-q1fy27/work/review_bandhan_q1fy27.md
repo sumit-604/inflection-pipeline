@@ -552,6 +552,16 @@ Rationale: extraction and reconciliation are complete (100% across three ledgers
 
 *Reviewed 22-Jul-2026 | Sources: results_bandhan_q1fy27.pdf (Reg 30+33, standalone), concall_bandhan_q1fy27 transcript (70 turns), presentation_bandhan_q1fy27.pdf (48 slides). Standalone-only filing (Note 14). Auditor: unmodified limited review.*
 
+## C7. A5 ADVERSARY AUDIT VERDICT (independent, fresh context)
+
+**VERDICT: COMPLETE.** Coverage audit — no orphan ledger rows, no rows missing from the ledger. Arithmetic audit — no mismatches above rounding on the PAT bridge, PPOP -18.6%, C/I 52.1%->61.5%, credit cost -40.5%, wholesale segment PBT -77.11 Cr / ~308 Cr annualised, the 40 bps ROA bridge (30 NIM + 10 opex), CRAR -114 bps, GNPA write-off-vs-recovery reconciliation, EEB 0-90 DPD 3.1%->3.5%. Adversarial read — no bear counter survived that was not already in the review.
+
+**Two non-gating advisories (logged, not FAILs):**
+1. CRAR -114 bps YoY is correct on the incl-profit basis (press 19.4%->18.2%; deck slide 29); the review also pairs it with the Reg 33 pair 19.08%->18.15% (=-93 bps). Number correct; basis-label imprecise. Both bases show capital consumed despite the IFR release — conclusion unchanged.
+2. Concall ARC quantum 291 Cr (turn 4) vs 290 Cr (turn 65) is the same transaction; review correctly anchors to audited Note 6(iii) principal 291.44 Cr.
+
+*A5 audit path: work/audit_bandhan_q1fy27.md. GATE A5 passed on first pass; no loop-back required.*
+
 ```yaml
 stage: A4-analyst
 company: "BANDHAN"

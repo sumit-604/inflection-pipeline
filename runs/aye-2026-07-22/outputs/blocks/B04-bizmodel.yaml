@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: []                # AR + investor presentation + FY26 results all available
+flags:
+  - "Gain-on-derecognition (securitisation) income is a rising share of total income (1.94% FY23 -> 2.50% FY25 -> 3.65% FY26, Results FY26 p.6) and is episodic/non-cash-upfront in nature; must be stripped for normalised P/E."
+  - "Net gain on fair value changes (FX/MTM/treasury) was the single largest non-interest income line in FY26 (5.68% of total income, Results FY26 p.6) and is market-driven, not operating."
+  - "No identifiable promoter; PE/VC-backed cap table with concentrated single-sponsor stakes (Elevation Capital 12.6%, LGT 10.1%, Inv. Pres. slide 38) is a structural overhang to monitor, not an operating flag."
+business_type: "lending"      # balance-sheet NBFC lender
+revenue_streams:
+  - {name: "Interest income on loans", type: "recurring spread income", pct_of_revenue: 83.6, predictability: "H"}
+  - {name: "Fees and commission income", type: "recurring transaction fee", pct_of_revenue: 4.0, predictability: "H"}
+  - {name: "Net gain on derecognition (securitisation/direct assignment)", type: "episodic non-cash gain", pct_of_revenue: 3.7, predictability: "L"}
+  - {name: "Net gain on fair value changes", type: "market/treasury gain", pct_of_revenue: 5.7, predictability: "L"}
+  - {name: "Other income", type: "non-operating", pct_of_revenue: 2.6, predictability: "L"}
+asset_intensity: "heavy"       # financial-asset heavy: loans 80.6% of total assets (Results FY26 p.5)
+wc_intensity: "NOT APPLICABLE" # lender; substitute metric is funding/ALM intensity, currently sound
+pricing_power: "moderate"      # expressed as yield/spread/NIM per lender adaptation, not gross margin
+cyclicality: "cyclical"        # credit cost / PAR track the SME and rural credit cycle
+moats_present:
+  - {moat: "Proprietary 70+ business-cluster underwriting IP (12+ years built)", durability: "durable, compounding"}
+  - {moat: "RBI NBFC-ML regulatory license", durability: "durable, but shared with 5-6 named peers"}
+  - {moat: "Cost/productivity edge (highest cost-to-income improvement and loans/employee among peers, FY23-25)", durability: "moderate, scale-dependent"}
+  - {moat: "Repeat-customer retention (41-50% retention rate)", durability: "moderate"}
+valuation_methods:
+  primary: {method: "P/B (price to adjusted book value)", why: "Standard for a balance-sheet lender; book value is the capital base generating spread income"}
+  secondary: {method: "P/E on normalised earnings (ex securitisation gain, ex FV-change gain)", why: "Reported EPS is inflated by episodic, non-repeatable gain-on-derecognition and treasury/FX gains (9.3% of FY26 total income combined)"}
+  tertiary: {method: "Excess-return / Gordon-growth on RoE vs cost of equity", why: "Cross-checks against management's own explicit 3-year RoA/RoE/AUM-growth guidance band"}
+  not_applicable: ["EV/EBITDA", "Standard FCF-to-firm DCF", "Sum-of-the-parts (single reportable segment, Results FY26 note 7)"]
+irrelevant_ratios:
+  - {ratio: "EV/EBITDA", why: "Finance cost is a core operating input for a lender, not a financing add-back"}
+  - {ratio: "EBITDA margin", why: "No EBITDA concept meaningfully applies; NIM/spread is the analogous metric"}
+  - {ratio: "Inventory days", why: "A lender carries no inventory"}
+  - {ratio: "Receivable days / DSO", why: "The loan book is measured via AUM, yield and NPA/PAR ageing, not DSO"}
+  - {ratio: "Asset turnover", why: "Conflates with yield and obscures leverage, the variable that actually matters for a lender"}
+must_track_metrics:
+  - {metric: "AUM growth (YoY)", healthy: "25-30% (FY27 guidance)", red_flag: "below 20% for two consecutive quarters"}
+  - {metric: "NIM / spread (on ATA)", healthy: "14.25-14.75% (FY27 guidance)", red_flag: "sustained compression below 14%"}
+  - {metric: "Credit cost (annualised, % ATA)", healthy: "3.5-4.0% (FY27 guidance), 3.25-3.75% (3yr normalised target)", red_flag: "re-acceleration above 4.5%"}
+  - {metric: "GNPA / PAR X", healthy: "continuation of multi-quarter improving trend (GNPA 4.77% FY26)", red_flag: "any QoQ increase for two consecutive quarters"}
+  - {metric: "CRAR / leverage headroom", healthy: "comfortably above regulatory minimum (42.24% FY26) with a deployment plan", red_flag: "rapid decline without a capital-raise plan"}
+unit_economics:
+  unit: "One average outstanding loan (Rs 1.5-4.9 lakh depending on product)"
+  revenue_per_unit: "Interest at ~21.95-22.95% yield on ATA plus servicing/application/delay fees (Inv. Pres. slide 8, AR p.427)"
+  margin_per_unit: "Yield less cost of borrowing (~10.2-10.8% incremental) less allocated credit cost (~4.0% ATA) less allocated opex"
+  key_lever: "Branch maturation (AUM/branch more than doubles from <3yr to 3yr+ vintage) and rising mortgage/secured mix driving operating leverage toward the 7.0-7.5% opex/ATA 3-year target"
+first_deterioration_signals:
+  - {risk: "Rising reliance on gain-on-derecognition for reported PAT", first_signal: "Net gain on derecognition of financial instruments (% of total income) line rising further, Results filing"}
+  - {risk: "NIM compression", first_signal: "Average Yield (%) narrowing relative to Cost of Borrowing (%), investor presentation"}
+  - {risk: "Unsecured-book / regional concentration stress", first_signal: "PAR X / PAR30 and Stage 2 assets ratio rising, results filing / investor presentation"}
+  - {risk: "Growth reliance shifting back to new-branch openings", first_signal: "AUM per branch declining despite rising branch vintage, MD&A"}
+  - {risk: "Sponsor/AIF ownership overhang", first_signal: "Bulk-deal / block-sale disclosures in shareholding pattern filings"}
+mgmt_questions:
+  - "What share of FY26/FY27 PAT would remain if gain-on-derecognition and net FV gain were excluded?"
+  - "What is the credit-cost and yield profile specifically on the unsecured hypothecation book (37-38% of AUM) versus secured/mortgage?"
+  - "How much of the FY27 25-30% AUM growth guidance depends on new-branch openings versus deepening the existing 571-branch network?"
+  - "What is the concentration and renewal risk on the securitisation/direct-assignment buyer base?"
+  - "Post the Feb-2026 IPO capital infusion, what is the capital-deployment glidepath to bring CRAR back toward an efficient range?"
+  - "How exposed is the Bihar/UP/Rajasthan-heavy portfolio (top-5 states 57% of AUM) to state-specific micro-lending stress episodes?"
+  - "What is management's target mix of mortgage/LAP vs hypothecation over the next 3 years, and what NIM/credit-cost trade-off does that imply?"
+one_line_verdict: "A differentiated, fast-growing micro-MSME lender with a real underwriting moat, whose reported profit growth increasingly leans on an episodic securitisation-gain line that must be stripped out before valuing the core spread business."

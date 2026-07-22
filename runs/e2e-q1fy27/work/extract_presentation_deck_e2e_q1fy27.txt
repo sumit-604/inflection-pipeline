@@ -1,0 +1,662 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: e2e_presentation_deck_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 22
+formfeed_count: 22
+line_count: 566
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (1 Cr = 10 Mn)
+ocr_pages: [2, 15]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-22
+=== END HEADER ===
+
+NOTES ON THIS EXTRACTION (mechanical, not interpretive):
+- Source: 22-page investor presentation PDF (PowerPoint via Acrobat PDFMaker), letter size, text layer present for 20/22 pages.
+- Primary pass: `pdftotext -layout` on the full PDF, form-feed count 22 == pdfinfo page count 22 == page marker count 22 in this file. No pages missing.
+- Per-page character count of the layout pass: pg1=1715 pg2=74 pg3=1814 pg4=334 pg5=1960 pg6=4090 pg7=1049 pg8=780 pg9=749 pg10=1357 pg11=781 pg12=1962 pg13=1624 pg14=1627 pg15=29 pg16=3070 pg17=1353 pg18=1940 pg19=1122 pg20=971 pg21=1236 pg22=384.
+- Two pages fell under the 100-char threshold: page 2 (74 ch, cover/title slide) and page 15 (29 ch, section-divider slide), matching the confirmed image-only pages flagged in the task brief. Both rasterised at 200dpi (`pdftoppm -jpeg -r 200`) and run through `tesseract`.
+  - Page 2: tesseract produced partial/garbled output (logo rendered as glyph noise) but recovered the slide text ("Q1 FY27", "Investor Presentation", "July 21, 2026"). Merged as [OCR page 2] with both the raw tesseract output and a visually-confirmed transcription (image inspected directly).
+  - Page 15: tesseract returned EMPTY output on two passes (default psm, --psm 11) — white bold text on a blue gradient/wave background defeated OCR thresholding. Content visually confirmed by direct inspection of the rasterised image: matches the pdftotext-layout text already captured ("Q1 FY27" / "Financial Highlights"), no chart, no additional data.
+- All other pages (>=100 ch) retained pdftotext -layout output as-is; no page other than 2 and 15 required rasterisation.
+- Six chart/graphic pages carry data labels captured natively by pdftotext -layout (embedded as text objects, not raster images); these are additionally flagged inline as [CHART, page N, OCR text: ...] blocks immediately after the page's layout text, per instruction, to make guidance-bearing chart data grep-able for downstream agents: page 5 (Global Neocloud Market Revenue), page 11 (GPU Trajectory), page 16 (EBITDA & EBITDA Margins; PAT & PAT Margins -- two charts, same page), page 17 (Capex), page 18 (Monthly Revenue Run-rate / MRR).
+- Unit convention: this deck states all financial figures in "INR Mn" / "In Mn" / "INR Million" throughout (pages 16, 17, 18, 19, 20, 21). No Lakhs or Crores figures appear in this document. Conversion factor stated per rule 5 (extracted text itself is NOT converted): Millions -> x0.1 to Rs Crores.
+- Page coverage: 22/22 pages accounted for (20 native text + 2 OCR-merged) = 100%. GATE A1 PASS.
+- detected_quarter read directly from slide text ("Q1 FY27", "Q1FY27" repeated across pages 2, 15, 16, 18, 19); filing date "July 21, 2026" confirmed on cover letter (page 1) and title slide (page 2).
+=== END NOTES ===
+
+[page 1]
+                                               E2E Networks Limited
+                                            CIN- L72900DL2009PLC341980
+                               Uppal's Genesis A-32, Block B, Mohan Cooperative Industrial Estate,
+                               Badarpur, New Delhi 110044, Phone No. +91-11-4084-4964
+                    Email: cs@e2enetworks.com, Website https://www.e2enetworks.com/
+
+
+Date: July 21, 2026
+
+
+
+To,                                                             To,
+National Stock Exchange of India Ltd. (‘NSE’)                   The Manager- Listing
+Exchange Plaza, 5th Floor,                                      BSE Limited,
+Plot No. C/1, G Block,                                          Phiroze Jeejeebhoy Towers,
+Bandra - Kurla Complex, Bandra (E), Mumbai –                    Dalal Street, Mumbai- 400 001
+400 051, Maharashtra, India                                     Maharashtra, India
+(Script Symbol: E2E)                                            (Scrip Code: 544783)
+
+
+Sub: Investor Presentation of E2E Networks Limited (“the Company”)
+
+Dear Sir/Ma’am,
+
+Pursuant to Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements)
+Regulations, 2015, please find enclosed herewith Investor Presentation of the Company.
+
+The aforesaid presentation is also accessible on the Company’s website at https://www.e2enetworks.com .
+
+This is for your information and records.
+
+Yours faithfully,
+
+For E2E Networks Limited
+            Digitally signed
+
+RONIT       by RONIT
+            Date: 2026.07.21
+            16:45:43 +05'30'
+
+
+Ronit
+Company Secretary & Compliance Officer
+Membership No.: A59215
+
+Encl.: As above
+
+[page 2]
+Q1 FY27
+Investor Presentation
+July 21, 2026
+
+
+
+
+                        1
+
+[OCR page 2] -- page yielded 74 chars from pdftotext -layout (under 100-char threshold); rasterised at 200dpi and OCR'd with tesseract. Raw tesseract output (logo rendered as glyph noise):
+{
+
+¢ E > E2E Networks
+
+QLFY27
+
+@
+Investor Presentation
+July 21, 2026
+Visually confirmed transcription of rasterised slide image (title/cover slide, E2E Networks logo):
+E2E Networks [logo]
+Q1 FY27
+Investor Presentation
+July 21, 2026
+1
+
+[page 3]
+Safe Harbour Statement
+This presentation has been prepared by E2E Networks Limited ("the Company") solely for information purposes and does not constitute
+an offer, invitation, solicitation or recommendation to purchase or subscribe for any securities, nor should it form the basis of, or be
+relied upon in connection with, any investment decision, contract or commitment.
+
+Certain statements contained in this presentation, including those relating to the Company's future business prospects, growth
+strategy, AI infrastructure capacity expansion, cloud platform capabilities, subsidiary operations, financial performance, capital
+allocation, and industry outlook, are forward-looking statements. These statements are based on management's current expectations,
+assumptions and estimates and are subject to known and unknown risks, uncertainties and other factors that may cause actual
+results, performance or achievements to differ materially from those expressed or implied by such statements. These factors include,
+but are not limited to, changes in economic and market conditions, demand for AI and cloud infrastructure services, competitive
+dynamics, technology advancements, availability and pricing of GPU infrastructure, execution of expansion plans, customer adoption,
+regulatory developments, cybersecurity risks, access to capital, and other risks beyond the Company's control.
+
+The Company undertakes no obligation to update or revise any forward-looking statements, whether as a result of new information,
+future events or otherwise, except as required under applicable law. Past performance should not be regarded as an indicator of
+future performance.
+
+
+
+
+                                                                                                                                           2
+
+[page 4]
+ Who We Are
+
+                 India’s Sovereign Provider
+                  of Advanced Cloud GPUs
+
+
+
+
+16+
+years of operational
+                                5100
+                                approx. cloud GPUs live at
+excellence                      Q1 FY27 exit
+
+                                                             3
+
+[page 5]
+A Structurally Undersupplied Market,
+Compounding Fast
+GPU demand for AI training and inference continues to outstrip hyperscale capacity —
+pulling capital into purpose-built neocloud providers worldwide
+
+
+                                                                                   US$6.7T
+                             Global Neocloud Market Revenue                        Global data center capital expenditure needed by
+                                                                                   2030
+                                           (US$ Billions)                          — ~70% driven by AI workloads
+
+
+                                                               $400B               Source: McKinsey & Company, "The cost of compute" (Apr 2025)
+
+
+
+
+                                                                                 100+
+                                                                                 Neocloud / GPU-cloud providers active globally
+                                                                                 today — a highly fragmented, fast-growing category
+                                              $180B
+                                                                                 Source: DriveNets; Thunder Compute (2026)
+
+
+
+
+                  $25B                                                           80%
+                                                                                 share of neocloud market revenue expected to come
+          2025 (Actual)                   2030 (Forecast)   2031 (Forecast)      from AI inference by 2030
+
+  Source: Synergy Research Group (2026)
+                                                                                 Source: ABI Research, "The State of Neocloud" (2026)
+
+
+
+
+                                                                                                                                                  4
+[CHART, page 5, OCR text: Global Neocloud Market Revenue (US$ Billions) -- 2025 (Actual): $25B | 2030 (Forecast): $180B | 2031 (Forecast): $400B -- Source: Synergy Research Group (2026)]
+
+[page 6]
+Sovereign AI Is Now National
+Infrastructure                                                                                                                                                                                                                                                                                                     Data as of July 2026
+
+
+Governments and enterprises are reclassifying AI as strategic national infrastructure — sovereignty is now about who controls the models,
+data and compute, not where they run.
+
+
+
+
+  US$1.5T                                                                                     US$6.7T                                                                      20%                                                                          250,000+
+  Estimated global sovereign-AI infrastructure
+  opportunity this decade                                                                      Global data-centre capex needed by                                          Neocloud/GPU-cloud share of the US$267B                                      GPUs South Korea committed in a single
+                                                                                               2030, ~70% driven by AI                                                     AI-cloud market by 2030                                                      2026 sovereign-AI deal with NVIDIA
+  Oppenheimer research estimate, 2025                                                          McKinsey, 2025                                                              Gartner, Jun 2026                                                            NVIDIA, 2026
+
+
+
+
+     India Is Building Sovereign Capacity at Scale
+                  8.33 GW                                                                                                                                                        ~$30 bn
+                  India’s total data-centre pipeline — over 5× today’s ~1.6 GW live capacity                                                                                     Investment underpinning India’s data-centre capacity build-out
+                  Knight Frank India, Jun 2026                                                                                                                                   Industry reports, 2026
+
+
+
+
+                     38,000+ GPUs                                                                                                                                                Chennai · Mumbai
+                     IndiaAI Mission                                                                                                                                             Mumbai (3.75 GW) and Chennai (1.36 GW) anchor India’s AI capacity
+                     PIB / MeitY, Govt. of India, 2026                                                                                                                           Knight Frank India, 2026
+
+
+
+
+                                   AI infrastructure is being reclassified — by governments and enterprises alike — from a procurable utility into a
+                                   strategic national asset. India’s 8 GW+ build-out is bringing sovereign compute within reach, and E2E Networks
+                                                                                  is building it at home.
+ Disclaimer: All third-party figures and any references to companies or individuals are drawn from publicly available sources and are shown for industry context only. Their inclusion does not imply any endorsement of, affiliation with, or association with E2E Networks Limited. Data is indicative and should be independently
+ verified.
+                                                                                                                                                                                                                                                                                                                                          5
+
+[page 7]
+Built in India,
+for India’s AI Future.
+                         Engineering Owned, Not Rented
+
+                         Since 2009 — India’s first NSE-listed cloud
+                         provider; GPU cloud since 2018.
+
+
+                         Full stack, in-house — 100+ engineers
+                         build our compute, networking,
+                         orchestration & AI software.
+
+                         Own AI platforms — two in-house
+                         platforms: TIR (training, fine-tuning, RAG &
+                         model endpoints) and Jarvislabs.ai
+                         (developer friendly GPU cloud).
+
+                         Sovereign compute — nearly 3,000
+                         Hopper GPUs deployed, now scaling
+                         NVIDIA Blackwell installations.
+
+                         Built for India — 5,100+ GPUs live, powering
+                         the IndiaAI Mission’s foundational models.
+
+
+
+
+                                                                        6
+
+[page 8]
+INTEGRATED AI PLATFORM & MONETIZATION MODELS
+
+AI INFRASTRUCTURE                                   Public Platforms – TIR & Jarvislabs.ai
+                                                    Training, fine-tuning & inference for LLM builders and
+NVIDIA GPUs (Hopper → Blackwell) in Delhi
+                                                    AI-native teams at cluster scale
+NCR & Chennai DCs
+
+
+
+
+GO-TO-MARKET                                        Sovereign / Private Platform
+Self-serve portal + enterprise sales + partners +   E2E’s own cloud software deployed for regulated &
+government empanelment                              data-residency-bound customers
+
+
+
+
+                                                                                                             7
+
+[page 9]
+TIR AI/ML Platform
+
+ From notebook to production AI —
+  build, fine-tune, deploy & scale
+
+
+     GPU Notebooks                Foundation Studio
+    GPU-backed Jupyter         Fine-tune Llama, Gemma &
+   notebooks, frameworks         Stable Diffusion models
+        preloaded
+
+
+
+      RAG Pipelines                Model Endpoints
+  Upload a knowledge base,       Inference APIs via vLLM,
+ launch a chatbot in minutes    SGLang, Triton or PyTorch
+
+
+
+
+   Datasets & Training           Any Model, One API
+ Managed datasets, model          Call any model via an
+ repo & distributed training   OpenAI-compatible endpoint
+
+
+
+                                                            8
+                                                                8 8
+
+[page 10]
+Jarvislabs.ai — Developer First GPU Cloud
+                          Spin up GPUs in seconds from CLI or code — an E2E Platform since December 2025
+
+
+
+
+           Instant GPU                                                                             CLI, SDK &
+                                     Pause & Resume              Per-Minute Billing
+            Instances                                                                              Templates
+        Launch H100, H200, A100     Pause an instance to pay     Pay only for the minutes
+       and RTX Pro 6000 GPUs on       only for storage — and      you compute, with no        Manage the full instance
+         demand, in seconds.        switch GPU type when you     commitments or lock-in.      lifecycle from terminal or
+                                              resume.                                           Python, with framework
+                                                                                              templates and persistent
+                                                                                                        storage.
+
+
+
+
+  Jarvislabs.ai: the developer-first GPU cloud — an E2E Platform since Dec 2025.
+
+
+
+
+                                                                                                                           9
+
+[page 11]
+The Growth Story | Capacity meets Demand
+
+  TODAY                           IN DEPLOYMENT                   ON THE ROADMAP
+  Hopper & Blackwell
+                                  Blackwell scale-up              B300 / Vera Rubin
+  GPUs
+  ~5100 GPUs live,                1024+ B200s planned             Next-generation Compute
+  (including 1024 B200)                                           planning underway
+
+
+
+
+                                       GPU Trajectory
+                                                        5,100
+                                              3,900
+
+
+
+                          1,900
+
+
+
+
+                           FY25                 FY26     FY27Q1
+
+
+                                                                                            10
+[CHART, page 11, OCR text: GPU Trajectory -- FY25: 1,900 | FY26: 3,900 | FY27Q1: 5,100]
+
+[page 12]
+Board with Founders, Finance and Tech Experience
+
+
+
+          Tarun Dua                       Srishti Baweja                    Megha Raheja                        Gaurav Munjal
+                                                                                                          Chairman, Independent Director
+       Managing Director                 Whole-Time Director               Whole-Time Director
+
+   Co-founder; 23+ yrs in open          CA; 20 yrs in finance &       CA; 22+ yrs in IT/ITES & telecom,      IIT Bombay; MD of Infollion
+  source, virtualization & cloud;    compliance; built the finance      accounting, treasury, M&A.         Research; Technology + HR on-
+    director since inception.         function from early stage.                                                   demand space.
+
+
+
+
+     Sonu Gosain Soni               Karthik Reddy Bezawada               Shrimati Ambastha                Prashant Chiranjive Jain
+     Independent Director                                            Non-Executive Non-Independent        Non-Executive Non-Independent
+                                        Independent Director
+                                                                                  Director                           Director
+IIM Bangalore; business strategy,   Co-founder & Managing Partner,   CEO, L&T-Cloudfiniti DC business;     Ex-MD GE Power India; 30+ yrs
+   revenue enhancement, key         Blume Ventures (~$650M AUM).     33 yrs across Oracle, VMware, NTT.      across energy, oil & gas, IT
+           accounts.                                                                                                consulting.
+
+
+                                                                                                                                            9
+                                                                                                                                            11
+
+[page 13]
+Leadership Team
+
+
+
+
+       Nitin Jain               Mohammed Imran                                  Bakshish Dutta                                     Ronit
+                                                                                                                           Company Secretary and
+   Chief Financial Officer        Chief Technology Officer                       Chief Business Officer
+                                                                                                                             Compliance Officer
+    Two decades of global      Cloud & networking depth; open-                Growth-focused SaaS sales               8+ years of experience in corporate
+  finance leadership; large-    source (FOSS) champion; leads              leader with a strong track record         governance, compliance and strategic
+        scale business              platform engineering.                    of scaling businesses across             advisory, with expertise in regulatory
+       transformation.                                                             India and SAARC.                                  matters.
+
+
+
+
+        Alok Ohrie                   Former President & MD, Dell Technologies India (2013–25); 35+ years in IT. Chairman, ASSOCHAM National Council of
+                                     Electronics Manufacturing; Super Mentor, Govt. of India’s Atal Innovation Mission.
+        Strategic Advisor
+
+
+
+
+                                                                                                                                                           12
+
+[page 14]
+What’s new this Quarter @E2E | Q1 FY27
+
+
+
+
+                                                                 SovCloud                     Advisory and
+    Stock Split &                                             Incorporated as
+                                  B200 1024 LIVE                                            Leadership Team
+     BSE Listing                                                   WOS                        Strengthened
+
+  Executed a 10:1 stock split   Expanded AI infrastructure   Deploying large-scale GPU         Alok Ohrie — former
+    and listed E2E equity          with NVIDIA B200 GPU          infrastructure and            President & MD, Dell
+  shares on BSE in addition      clusters, enabling large-        enabling funding           Technologies India (30+
+      to NSE — together            scale AI training and          arrangements to           years in enterprise tech &
+  broadening the investor                inference.          accelerate AI infrastructure   GTM) — joins as Strategic
+     base for retail and                                             expansion.               Advisor. Further senior
+ institutional participation.                                                                leadership hires across
+                                                                                            business and technology
+                                                                                                    functions.
+
+
+
+
+                                                                                                                         13
+
+[page 15]
+Q1 FY27
+Financial Highlights
+
+[OCR page 15] -- page yielded 29 chars from pdftotext -layout (under 100-char threshold, confirmed image-only per task brief); rasterised at 200dpi. tesseract returned EMPTY output on two passes (default psm and --psm 11) -- white bold sans-serif text on a blue gradient/wave background defeated OCR thresholding. Visually confirmed transcription by direct inspection of the rasterised image: section-divider slide reading "Q1 FY27" / "Financial Highlights" only. No chart, no data labels, no additional text, matches pdftotext-layout extraction already shown above for this page.
+
+[page 16]
+The Quarter’s Scoreboard | Q1 FY27
+
+ Revenue                               EBITDA                          PAT                                  Exit MRR (Jun-26)
+ INR 1568 Mn                           INR 1179 Mn                     INR 439 Mn                           INR 718 Mn
+ +334.3% YoY | +64.0% QoQ                75.2% Margin                  28.0% Margin                         vs ₹374 Mn (Mar-26)
+
+
+
+
+                 EBITDA & EBITDA Margins                                                    PAT & PAT Margins
+   1200                                                 75%     90%
+                                                                           500                                                      40%
+                                                                                                                              28%
+   1000                                      61%                70%       400                                                       30%
+                                57%
+                                                                           300                                                      20%
+    800                                                                                                           7%
+                     41%                                1179    50%                                                           439   10%
+                                             581                           200
+    600    29%                                                                    -8%                 -8%                           0%
+                                 397                            30%        100                                    64
+    400                                                                                                                             -10%
+                                                                             0    -28                                               -20%
+                     180                                        10%                         -31%
+    200    105                                                            -100                        -57
+                                                                                                                                    -30%
+      0
+                                                                                            -135
+                                                                -10%      -200                                                      -40%
+          Q1 FY26   Q2 FY26    Q3 FY26     Q4 FY26    Q1 FY27
+                                                                                 Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26    Q1 FY27
+                    EBITDA (INR Mn)        EBITDA Margin %                                  PAT (INR Mn)       PAT Margin %
+
+
+
+                                                                                                                                           14
+[CHART, page 16, OCR text: EBITDA & EBITDA Margins (INR Mn / %) -- Q1 FY26: 105 / 29% | Q2 FY26: 180 / 41% | Q3 FY26: 397 / 57% | Q4 FY26: 581 / 61% | Q1 FY27: 1179 / 75%]
+[CHART, page 16, OCR text: PAT & PAT Margins (INR Mn / %) -- Q1 FY26: -28 / -8% | Q2 FY26: -135 / -31% | Q3 FY26: -57 / -8% | Q4 FY26: 64 / 7% | Q1 FY27: 439 / 28%]
+
+[page 17]
+Financial Highlights
+ Capex (In Mn)
+                                                                                8700
+                                                                                                  6962
+
+
+
+
+                                                        1853
+                                                                                                                  177
+         249                     350
+         FY22                    FY23                   FY24                    FY25                  FY26       Q1FY27
+
+# FY26 includes CWIP of INR 5,334 Mn for GPU’s, deployed in May 2026.
+
+
+
+                            Raised Funds through Preferential issue of Equity shares (In Mn)
+
+      Period                        Fund raised                Utilized till FY26      Utilized in Q1’FY27   Balance funds
+
+      Q2’25                            4,056.56                    3,555.05                  501.51              0.00
+
+      Q3’25                            10,792.78                   10,021.98                468.26              302.54
+
+      Q4'26                             1,070.00                        27.61                 18.14             1,024.25
+
+      Total                          15,919.34                    13,604.64                  987.91             1,326.79     14
+[CHART, page 17, OCR text: Capex (In Mn) -- FY22: 249 | FY23: 350 | FY24: 1853 | FY25: 8700 | FY26: 6962 | Q1FY27: 177 -- footnote: FY26 includes CWIP of INR 5,334 Mn for GPU's, deployed in May 2026]
+
+[page 18]
+  Sixteen Quarters of Compounding Run-Rate
+
+                                    Monthly Revenue Run-rate (INR Mn),
+                                                      Jun-22 → Jun-26                                                                          14.1×
+                                                                                                                                               MRR growth in four years
+                                                                                                                                               (₹51 Mn → ₹ 718 Mn)
+                                                                                                                                       718
+
+
+
+
+                                                                                                                              374
+
+                                                                                                                       280
+
+
+                                                                                165                             160
+                                                                       145                             145
+
+                            61       68       72       85
+                                                              109                      113    112                                              75.2%
+ 51       56       58
+                                                                                                                                               Q1 FY27 EBITDA margin
+
+Jun-22   Sep-22   Dec-22   Mar-23   Jun-23   Sep-23   Dec-23 Mar-24   Jun-24   Sep-24 Dec-24 Mar-25   Jun-25   Sep-25 Dec-25 Mar-26   Jun-26
+
+
+
+
+                                                                                                                                                                          17
+[CHART, page 18, OCR text: Monthly Revenue Run-rate (INR Mn), Jun-22 to Jun-26 -- Jun-22: 51 | Sep-22: 56 | Dec-22: 58 | Mar-23: 61 | Jun-23: 68 | Sep-23: 72 | Dec-23: 85 | Mar-24: 109 | Jun-24: 113 | Sep-24: 112 | Dec-24: 145 | Mar-25: 145 | Jun-25: 165 | Sep-25: 160 | Dec-25: 280 | Mar-26: 374 | Jun-26: 718 -- annotated 14.1x MRR growth in four years (Rs51 Mn -> Rs718 Mn); Q1 FY27 EBITDA margin 75.2%]
+
+[page 19]
+Q1FY27 Financial Performance
+   Particulars (INR Mn)   Q1FY27   Q1FY26   Y-o-Y%     Q4FY26   Q-o-Q%
+
+   Operational Revenue    1,568     361     334.3%      956      64.0%
+
+   Total expenses          389      256      51.9%      375       3.7%
+
+   EBITDA                  1,179    105     1022.8%     581     102.9%
+
+   EBITDA Margin %        75.2%    29.1%    4610 bps   60.7%    1450 bps
+
+   Other Income             114     150     (24.0)%      55      107.3%
+
+   Depreciation            606      274      121.2%     513      18.1%
+
+   Finance Cost             101      18     449.0%       37      173.0%
+
+   PBT                     586      (37)    1683.8%      86     581.4%
+
+   Tax                     147      (9)     1733.3%      21     600.0%
+
+   PAT                     439      (28)    1667.9%     65      575.4%
+
+   PAT Margin %           28.0%    (7.9)%   3590 bps    6.7%    2130 bps
+
+   Basic EPS               2.14    (0.14)   1628.6%     0.32    568.8%
+
+   Diluted EPS             2.10    (0.14)   1600.0%     0.32    556.3%
+
+
+                                                                           18
+
+[page 20]
+Yearly Trends | Income Statement
+   Particulars (INR Million)             FY26     FY25    FY24    FY23
+
+   Operational Revenue                   2,456    1640    945     662
+
+   Total Expenses                         1,193   673     466      331
+
+   EBITDA                                1,263    967     479      331
+
+   EBITDA Margin %                       51.4%    59.0%   50.6%   50.0%
+
+   Other Income                           340     394      16      8
+
+   Depreciation & Amortization Expense   1,693     601     157     201
+
+   Finance Cost                           122      132     36      5
+
+   PBT                                   (212)    628     302      132
+
+   Tax Expenses                          (56)      153     84      33
+
+   PAT                                   (156)    475      219     99
+
+   PAT Margin %                          (6.3)%   29.0%   23.2%   14.9%
+
+
+
+                                                                          19
+
+[page 21]
+Yearly Trends | Balance Sheet
+   Particulars (In INR Million)                  Mar-26   Mar-25   Mar-24
+   EQUITY AND LIABILITIES
+   Equity share capital                           206      200      145
+   Other equity                                  16,645   15,728    564
+   Borrowings                                     1,032     114     1,031
+   Lease liability                                559      616      410
+   Other Non-Current liabilities                  197      245       93
+   Other Current liabilities                     4,643    8,904     309
+   TOTAL EQUITY AND LIABILITIES                  23,282   25,807   2,552
+
+
+   ASSETS
+   Property, plant and equipment                 14,966    9,471    1,558
+   Intangible Assets                              167      149      122
+   Right of Use Asset                             557      635      424
+   Non-Current Financial Assets and tax assets    1,506     66       63
+   Current Financial assets                      3,982    13,702    153
+   Other current assets                           2,104    1,784    232
+   TOTAL ASSETS                                  23,282   25,807   2,552
+
+                                                                            20
+
+[page 22]
+THANK YOU
+For further queries, please contact:
+
+Company Secretary & Compliance
+Officer
+investors@e2enetworks.com
+Tel No: +91–11–4113 3905
+
+Investor Relations Advisors
+Adfactors PR Pvt. Ltd.
+Snighter Albuquerque
+snighter.a@adfactorspr.com
+Mobile: +91 9819123804
+
+Vanessa Fernandes
+vanessa.fernandes@adfactorspr.com
+Mobile: +91 9773355200
+
+                                       20

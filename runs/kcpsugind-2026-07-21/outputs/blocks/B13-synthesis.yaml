@@ -3,25 +3,34 @@ company: "KCPSUGIND"
 run_date: "2026-07-21"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH FLAGS"
 verdict_rule_applied: 3
 flags_active: ["FLAG-CASH", "FLAG-GATE0"]
-promoter_verdict: "CAUTION (below CONCERN/AVOID threshold; formal FLAG-PROMOTER not fired; caution items surfaced in body)"
+promoter_verdict: "CAUTION (below CONCERN threshold; formal FLAG-PROMOTER not fired)"
 flag_cash_determination: "STRUCTURAL"
-confidence_delta: {numerical: 97.9, redflag: 70, framework: 100, peer: "N/A", overall: 70}
-valuation_decision: ""      # deferred to phase 3
-entry_range: {low: 0, high: 0}
-headline: "Sugar core loses money, investments carry group"
-falsification_metric: "Sugar segment result more negative than FY26 Rs 17.31 Cr loss (fourth year of widening core losses)"
+confidence_delta: {numerical: 97.9, redflag: 70, framework: 88, peer: "N/A", overall: 70}
+valuation_decision: "AVOID"
+sotp_base_fair_value: 22.50
+entry_range: {low: 10.24, high: 11.52}
+mos_price: 9.22
+hurdle_verdict: "STOP"
+hurdle_ratio: 0.37
+destination_pe: {additive: 6.2, rrm: 7.2, sector_cap: 20}
+devil_overall: "WEAKENED BUT ALIVE"
+fttcp_operating_verdict: "DEEP WATCH leaning AVOID (composite -2, Kernex cash cap)"
+headline: "Market already pays the full asset floor"
+falsification_metric: "Reg 30 filing fails to confirm the Rs 257 Cr Eimco-Hyundai order (or it is cancelled or materially shrunk), failing the revenue upgrade, the Eimco SOTP slice, and the reason-to-monitor at once"
 monitorables_count: 8
-publish_candidate: false
+publish_candidate: true
+publish_candidate_summary: "Base SOTP equity Rs 255 Cr sits on the Rs 246 Cr market cap; 0.54x price-to-book is a justified holdco-discount-plus-cash-burn markdown, not value. Cheap-on-book is not cheap. Educational/framework slot, not a stock call. Draft in Dhruva Research Public per NEVER rule."
 files_written:
   - "outputs/final/business-narrative.md"
-  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/fttcp-recommendation.md"
   - "outputs/final/verifier-summary.md"
+  - "outputs/final/verifier-disagreement-log.md"
+  - "outputs/final/fttcp-handoff.md"
 notion_save:
-  page_title: "KCPSUGIND — Phase 1 Gate (2026-07-21)"
-  summary: "Sugar core loses money, investments carry group | PROCEED WITH FLAGS (rule 3, FLAG-CASH STRUCTURAL) | phase-1 lite, no valuation this phase | Gate 0 AVOID 27/160, Emerging Moat NONE, confidence 70"
+  page_title: "KCPSUGIND — Finalize (2026-07-21)"
+  summary: "Market already pays the full asset floor | PROCEED WITH FLAGS (rule 3, FLAG-CASH STRUCTURAL) | AVOID at CMP Rs 21.71 on valuation, WATCHLIST the asset case | SOTP base Rs 22.50, entry Rs 10.24-11.52, MoS Rs 9.22, Hurdle STOP 0.37 | confidence 70, FTTCP DEEP WATCH leaning AVOID, devil WEAKENED BUT ALIVE"
   mode: append-never-overwrite-status
-  note: "Notion save is a phase-3 (finalize) action; not written in phase 1."

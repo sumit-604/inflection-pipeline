@@ -1,0 +1,53 @@
+stage: B07-emoat
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcripts exist for this run (no-concall mode); F2 tested via AR capex-completion timeline instead of promise-delivery record"
+  - "Investor presentation is FY2021-22 (Q4FY22) vintage, superseded by the AR; used only for pre-expansion historical baseline, weighted low"
+  - "FY2025-26 CFO/FCF figures cited in the injected B01-gate0 block (CFO Rs94.87cr, FCF -Rs198.65cr on Rs293.52cr capex) fall outside this AR's coverage period (ends 31-Mar-2025) and are not independently sourced or verified in this stage"
+  - "Identity/basis of the '1 moat confirmed' in the injected B01-gate0 block is not specified"
+  - "Duration of the Aatmanirbhar Gujarat Scheme subsidy (interest subsidy + electricity duty refund) is not disclosed in the AR"
+  - "No forward 3-year segment revenue-mix guidance disclosed by the company"
+flags:
+  - "Unit VI Dahej project (~Rs1,500cr) is operator-relayed only; no primary document in this stage's evidence set confirms it — carried in optionality register and catalysts, not scored"
+  - "Working capital and leverage trends are moving against the company (current ratio 1.60x->1.33x; D/E 0.63->0.70; interest coverage 17.60x->2.34x YoY) even as the new plant ramped to ~95% utilization — an execution/cash-conversion divergence flagged for the combined verdict"
+  - "FY25-26 CFO/FCF deterioration cited in B01-gate0, if accurate, materially weakens the F2 execution-moat read; this stage could not verify it against a primary document"
+  - "Most of the scored active-category breadth (7 of 21) traces to a single capital event (900 TPD plant + captive power plant), not to independently diversified moat sources"
+em_score: 19
+em_classification: "MODEST"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active (structural)"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate-Strong", evidence_type: "documented", time_to_materialise: "demonstrated over 12-24m, FY26 cash caveat unverified"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-36m, sector-cycle dependent"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, duration undisclosed"}
+evidence_mix: {documented: 9, claim: 5, inference: 2}
+completionist_recount: "9 documented items across 6 categories scored Moderate+ on documented evidence (A3, B1, E1, F2, H3, R1); one further category (H1) Moderate on management-claim evidence alone; 7 of 21 categories active, below the 12-category overcounting threshold"
+catalysts_12m:
+  - {catalyst: "Pulp Mill/converting-section balancing program completion (Rs150cr)", window: "by Sept 2025", evidence_type: "documented", anchor: "AR Directors' Report p.44"}
+  - {catalyst: "FY25-26 revenue guidance of Rs2,200cr (36% YoY) tested against results", window: "12m", evidence_type: "claim", anchor: "AR Chairman's letter p.8"}
+  - {catalyst: "Confirmation or denial of Unit VI Dahej / second greenfield paperboard unit", window: "12-24m", evidence_type: "claim (AR) / unconfirmed operator lead", anchor: "AR Chairman's letter p.7-8; operator-relayed 12-May-2026 announcement, not in AR"}
+  - {catalyst: "Value-added FBB revenue-contribution disclosure", window: "12m", evidence_type: "claim", anchor: "AR Chairman's letter p.8"}
+  - {catalyst: "Aatmanirbhar Gujarat Scheme subsidy continuation", window: "12m (next AR)", evidence_type: "documented (current year only)", anchor: "AR Notes 13, 35, 37"}
+capex_embedded_growth_pct: 13
+optionality_register:
+  - {optionality: "Unit VI Dahej project (~Rs1,500cr, 1,020-1,500 TPD, ~150 acres) - operator-relayed, unconfirmed by any primary document", converting_evidence: "Board resolution / exchange filing with committed capex and site details", first_appears: "exchange filing or FY25-26 AR", window: "12-24m"}
+  - {optionality: "Second greenfield paperboard unit referenced in Chairman's letter", converting_evidence: "Named site, capex figure, funding structure", first_appears: "exchange filing or next AR", window: "12-24m"}
+  - {optionality: "Value-added FBB becoming a genuine product platform", converting_evidence: "Segment/product revenue disclosure naming FBB contribution", first_appears: "next AR MD&A", window: "12-24m"}
+  - {optionality: "CFTRI certification converting into qualification lock-in", converting_evidence: "Disclosed multi-year customer agreement referencing certified grades", first_appears: "exchange filing", window: "NOT FOUND"}
+  - {optionality: "Customer concentration improving trend (currently single-year static disclosure)", converting_evidence: "Two-plus years of comparative top-10/top-5 customer share", first_appears: "next AR", window: "12m"}
+  - {optionality: "War chest reversal as 7-year term loan amortizes", converting_evidence: "Declining D/E with rising net cash", first_appears: "next 2-3 ARs", window: "24-36m"}
+  - {optionality: "Working capital normalization post-ramp", converting_evidence: "Declining receivable days / stable current ratio", first_appears: "next AR", window: "12-24m"}
+  - {optionality: "Strategic/technology partnership tied to Dahej lead ('foreign consultant appointed')", converting_evidence: "Named JV partner or technology licensing agreement", first_appears: "exchange filing", window: "12-24m"}
+combined_assessment: "AVOID"
+combined_reasoning: "THIN/AVOID backward moat paired with only MODEST forward emerging-moat evidence, most of it tracing to one debt-funded capital project whose FY26 cash conversion has reportedly deteriorated, does not clear the bar for a transition-alpha thesis"
+top_moat_risks:
+  - "FY25-26 CFO/FCF deterioration (per B01, unverified in this stage) despite successful operational ramp -- execution has not yet converted to cash"
+  - "Sector-wide paperboard realization downturn (Rs41/kg to Rs37/kg) could persist, eroding the scale/cost advantage the whole thesis rests on"
+  - "A further ~Rs1,500cr Dahej capex round, if real, would add leverage into an already-elevated and unresolved cash-conversion problem"
+  - "Working capital intensity rising (receivables +114% YoY vs +28% revenue growth) undermines the company's own 'low risk expansion' framing"
+  - "Most scored emerging-moat categories are facets of a single capital project, not independently diversified moat sources"

@@ -1,0 +1,78 @@
+stage: B05-concall
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Repeated (3-quarter) broken promise on NPA/asset-quality improvement; GNPA rose every quarter Q1-Q4 FY26 (1.28% to 2.13%)"
+  - "Up Money DA-counterparty default disclosed only reactively in Q3 FY26 under analyst pressure, not proactively flagged; unresolved as of Q4 FY26"
+  - "Every quantified maiden guidance metric from Q1 FY26 (Aug 2025) missed by FY26 close: AUM growth, PAT growth, branches, cost of borrowing, rating notch"
+  - "Q4 FY26 PAT/NIM growth materially aided by a single INR41cr DA pool sale (INR8.66cr upfront profit) against only 4.8% QoQ customer-base growth"
+  - "Unreconciled NIM restatement between Q1 FY26 and Q2 FY26 disclosures for the same quarter, attributed to 'misprint'"
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Rating upgrade / bank-line access widening cost-of-funds compression", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "Additional rating notch; incremental bank borrowing below 10%; cost of borrowing crossing single digits", kill_signal: "Rating stalls at A/Stable; cost of borrowing plateaus above 10.5%"}
+  - {priority: 2, name: "Up Money DA-pool recovery", type: "one-off/COST", timeframe: "near", conviction: "M", confirm_signal: "Favorable court order and cash recovery flowing directly to PAT in FY27", kill_signal: "Prolonged litigation, no recovery, further provisioning required"}
+  - {priority: 3, name: "Branch-network maturation lifting AUM/branch and cost-to-income", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "AUM/branch rising from ~8.5cr toward peer 15-20cr benchmark; cost-to-income falling from ~50%", kill_signal: "Cost-to-income stays elevated; new-state branches slow to breakeven"}
+  - {priority: 4, name: "New-state expansion (Maharashtra, UP) diluting Rajasthan concentration", type: "VOLUME/INORGANIC", timeframe: "medium", conviction: "M", confirm_signal: "AUM concentration in Rajasthan falls meaningfully below 82%", kill_signal: "Concentration persists above 80%; new-state branches underperform"}
+  - {priority: 5, name: "DA/securitization as a recurring funding-cost and PAT lever", type: "PRICE-MIX/COST", timeframe: "near", conviction: "L", confirm_signal: "Continued DA activity without further counterparty defaults; transparent disclosure of DA's share of quarterly PAT", kill_signal: "Another DA-counterparty stress event; rising DA reliance to hit PAT targets"}
+  - {priority: 6, name: "Asset-quality stabilization (GNPA reversing)", type: "risk-reduction", timeframe: "near", conviction: "L", confirm_signal: "GNPA declines for two consecutive quarters", kill_signal: "GNPA continues rising past the 2.13% Mar-26 print"}
+guidance:
+  - {item: "AUM growth", number: "35-40%", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "PAT growth", number: "~50%", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Branch additions", number: "35-44 new branches", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Cost of borrowing", number: "down 100-125 bps", timeframe: "coming months post-IPO", stated_in: "Q1 FY26 call"}
+  - {item: "Credit rating", number: "at least two-notch up", timeframe: "post-IPO", stated_in: "Q1 FY26 call"}
+  - {item: "ROE", number: "~15%", timeframe: "coming years", stated_in: "Q1 FY26 call"}
+  - {item: "3-5yr AUM ambition", number: "INR5,000-6,000 crore", timeframe: "3-5 years", stated_in: "Q1 FY26 call"}
+  - {item: "Branch plan (revised)", number: "29 branches (6 done, 23 planned)", timeframe: "FY26 remainder", stated_in: "Q2 FY26 call"}
+  - {item: "Branch plan (re-revised)", number: "20-23 branches YTD", timeframe: "9M FY26", stated_in: "Q3 FY26 call"}
+  - {item: "ROA target", number: "3.5-3.75%", timeframe: "medium-term", stated_in: "Q3 FY26 call"}
+  - {item: "AUM growth (FY27 forward)", number: "30-35% annually", timeframe: "medium-term", stated_in: "Q4 FY26 call"}
+  - {item: "PAT growth (revised down)", number: "40-45%", timeframe: "current year (FY27)", stated_in: "Q4 FY26 call"}
+  - {item: "Cost of borrowing (further)", number: "additional 20-25 bps down", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "ROE (revised down)", number: ">12%, 12.5% minimum", timeframe: "medium-term", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 5
+  rows:
+    - {promised_in: "Q1 FY26", promise: "AUM growth 35-40% FY26", outcome: "Missed - actual +27% YoY to INR1,626cr", explanation: "Competitive intensity/MSME slowdown cited; no reconciliation vs original figure"}
+    - {promised_in: "Q1 FY26", promise: "PAT growth ~50% FY26", outcome: "Partial - actual +38% YoY to INR49.7cr, aided by Q4 DA gain", explanation: "Cost-of-funds improvement and DA transactions credited; not reconciled vs 50%"}
+    - {promised_in: "Q1 FY26", promise: "35-44 new branches FY26", outcome: "Missed - actual +18 branches (159 to 176); guidance cut to 29 then 20-23 mid-year", explanation: "Q2 slowdown blamed on flood/weather; Q3 'bumper' recovery still short of original"}
+    - {promised_in: "Q1 FY26", promise: "Cost of borrowing down 100-125bps", outcome: "Missed - actual -68bps FY26 (11.48% to 10.80%)", explanation: "Benefit tied to rating-upgrade timing which landed late (March 2026)"}
+    - {promised_in: "Q1 FY26", promise: "At least two-notch rating upgrade", outcome: "Missed - one notch only (Acuite A-/Positive to A/Stable)", explanation: "Framed positively; shortfall vs two-notch promise not acknowledged"}
+    - {promised_in: "Q1 FY26, Q2 FY26, Q3 FY26 (repeated)", promise: "NPA trend will improve in coming quarters / below 1% in future", outcome: "Missed, repeatedly - GNPA rose every quarter 1.28% to 2.13%", explanation: "Flood/heavy-CV stress (Q2); Up Money DA-counterparty default (Q3-Q4); different excuse each time, improvement never realized"}
+    - {promised_in: "Q1 FY26", promise: "ROE ~15% in coming years", outcome: "Partial/miss - FY26 ROE 13.7%; forward target revised down to >12-12.5%", explanation: "Equity-infusion dilution cited as the drag on ROE translation"}
+    - {promised_in: "Q1 FY26", promise: "Move collections toward UPI/digital, reduce ~40% cash-recovery rate", outcome: "Delivered (directional) - UPI transactions rising quarter by quarter, collection efficiency 89% by Q3", explanation: "n/a - genuine follow-through"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "What AUM-per-branch level are you targeting in 2-3 years (peers benchmarked at 15-20cr vs LIFL ~8-8.5cr)?", quarters_asked: ["Q1 FY26", "Q3 FY26"], classification: "deflected every time - growth-rate framing substituted for a specific target number both times"}
+  - {question: "Can you provide granular asset-quality disclosure - Stage 2/SMA-1-2 buckets and segment-wise (MSME vs vehicle) NPA?", quarters_asked: ["Q2 FY26", "Q3 FY26"], classification: "deflected every time / promised-but-unverified - 'we will take care next time' in Q2, same gap still raised in Q3"}
+credibility_grade: "D"
+credibility_basis: "Missed all five quantified maiden guidance metrics from the Aug 2025 IPO call (AUM growth 27% vs 35-40% guided, PAT growth 38% vs ~50%, branches +18 vs 35-44 guided, cost of borrowing -68bps vs 100-125bps guided, rating one notch vs two notches promised); management additionally promised NPA improvement 'in coming quarters' in three consecutive calls (Q1, Q2, Q3 FY26) while GNPA nearly doubled 1.28% to 2.13% Jun-25 to Mar-26; the Up Money DA-counterparty default surfaced only reactively under analyst pressure in Q3 FY26, not proactively flagged; graded on this delivery record, not on the consistently confident/promotional tone."
+peer_questions:
+  - {question: "Did peers see similar Q2 FY26 asset-quality deterioration from Rajasthan/MP floods and heavy-commercial-vehicle stress, and how did their GNPA trend Q1-Q4 FY26 compare to LIFL's 1.28% to 2.13%?", why: "Tests whether LIFL's asset-quality miss is sector-wide or company-specific", check_peers: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"]}
+  - {question: "How dependent is each peer's quarterly PAT/NIM on DA/securitization gain-on-sale, and did any peer recognize a single-transaction upfront profit comparable to LIFL's INR8.66cr from one INR41cr DA pool in Q4 FY26?", why: "Tests the upstream concern that DA/ARC gain-on-sale materially drives reported PAT quality", check_peers: ["UGROCAP", "MONEYBOXX", "ARMANFIN", "MANBA"]}
+  - {question: "Did any peer have counterparty exposure to Up Money (Jalandhar NBFC) or a comparable DA-counterparty default, given management's claim that 30-35 lenders industry-wide were affected?", why: "Establishes whether this is idiosyncratic to LIFL or a genuine sector event", check_peers: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"]}
+  - {question: "What credit-rating notch movement did peers see after their most recent capital raise/IPO, versus LIFL's one-notch move against a promised two-notch upgrade?", why: "Benchmarks whether LIFL's guidance miss reflects overpromising or a realistic peer outcome", check_peers: ["ARMANFIN", "MANBA"]}
+  - {question: "What cost-of-borrowing reduction did peers realize in the 12 months after their most recent capital infusion, versus LIFL's realized -68bps against a guided -100 to -125bps?", why: "Tests whether LIFL's guidance was unrealistic from the outset or execution fell short of a reasonable benchmark", check_peers: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"]}
+  - {question: "Is the GST-regime tailwind and rural-liquidity improvement management cites independently corroborated in peer concalls?", why: "Any industry growth rate or macro tailwind claimed by management must be independently checked", check_peers: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"]}
+  - {question: "What per-branch AUM levels, cost-to-income ratios, and branch breakeven timelines do peers report?", why: "LIFL could not give a specific long-term AUM/branch target despite being asked twice; a peer benchmark supplies the missing number", check_peers: ["MANBA", "MONEYBOXX"]}
+red_flags:
+  - "Repeated, broken promise on asset-quality improvement across three consecutive quarters (Q1-Q3 FY26) while GNPA nearly doubled (1.28% to 2.13%) - HIGH"
+  - "Up Money DA-counterparty default surfaced only reactively in Q3 FY26 under analyst pressure, not proactively disclosed; unresolved as of Q4 FY26 - HIGH"
+  - "Single DA pool sale (INR41cr) generated INR8.66cr upfront profit recognized in Q4 FY26 NIM/revenue against only 4.8% QoQ customer-base growth - MEDIUM"
+  - "Every quantified maiden guidance metric from Aug 2025 IPO call missed by FY26 close - MEDIUM-HIGH"
+  - "NIM restated between Q1 FY26 and Q2 FY26 for the same quarter, attributed only to 'misprint' - MEDIUM"
+  - "Extreme geographic concentration persists (82% Rajasthan) despite multi-state expansion narrative - LOW-MEDIUM"
+  - "Repeated analyst requests for granular Stage 2/SMA and segment-wise NPA disclosure not confirmed fulfilled - LOW"
+dropped_triggers:
+  - "Original FY26 branch-count guidance of 35-44 new branches (Q1 FY26) stepped down to 29 (Q2 FY26) then 20-23 (Q3 FY26); final actual +18 (Q4 FY26) never explicitly reconciled against the original number"
+  - "ROE ~15% aspiration (Q1 FY26) walked down to '>12%, 12.5% minimum' medium-term target (Q4 FY26) without acknowledgment of the original target"
+timeline_slippages:
+  - "Two-notch credit rating upgrade promised on IPO capital (Q1 FY26) delivered as one notch, roughly 9-10 months later (Q4 FY26 confirmation)"
+  - "100-125bps cost-of-borrowing reduction promised 'in coming months' (Q1 FY26) realized as only 68bps over the full FY26 year (Q4 FY26 confirmation)"
+  - "NPA improvement promised 'in coming quarters' in Q1, Q2, and Q3 FY26 calls, not realized by Q4 FY26 - GNPA rose every single quarter"
+no_concall_mode: false

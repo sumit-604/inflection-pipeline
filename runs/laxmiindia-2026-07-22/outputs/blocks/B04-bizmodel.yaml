@@ -1,0 +1,39 @@
+stage: B04-bizmodel
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research, laxmiindia_screening, state_wise_gnpa, interest_income_by_vertical]
+flags:
+  - "Up Money Ltd DA pool default (~Rs 19 cr) is the single largest crack in an otherwise best-in-class asset-quality record; GNPA 2.13% reported vs 0.80% ex-partner FY26"
+  - "FY26 interest income embeds a ~Rs 7.53 cr upfront DA-assignment gain (FY26 Results Note 12); reported NIM/PAT growth partly non-recurring, read ex-one-off"
+  - "MSME concentration rising 76.3% (FY25) to 79.9% (FY26) despite stated diversification"
+business_type: "lending"
+revenue_streams:
+  - {name: "Interest income (NIM on MSME/vehicle/mortgage/other loans)", type: "spread/interest income", pct_of_revenue: 93.60, predictability: "M"}
+  - {name: "Fee and commission income (processing, co-lending/servicing)", type: "fee income", pct_of_revenue: 4.86, predictability: "L-M"}
+  - {name: "Net gain on fair value changes (incl. DA/assignment gains)", type: "trading-type gain", pct_of_revenue: 0.74, predictability: "L"}
+  - {name: "Other income", type: "other", pct_of_revenue: 0.80, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "not applicable (lender; CRAR/leverage is the analogous control, no trade WC cycle)"
+pricing_power: "weak"
+cyclicality: "cyclical"
+valuation_methods:
+  primary: {method: "P/B vs sustainable ROE", why: "Standard lender anchor; DRHP peer set benchmarked on P/B"}
+  secondary: {method: "P/E on normalised ex-one-off EPS", why: "Strip DA/assignment gains from PAT given FY26 quality-of-earnings caveat"}
+  tertiary: {method: "Asset-based / liquidation floor", why: "Downside context only, not going-concern"}
+  not_applicable: ["EV/EBITDA", "unlevered FCF DCF / DDM", "sum-of-the-parts (single segment)"]
+irrelevant_ratios:
+  - "Inventory turnover (no inventory)"
+  - "Asset turnover (98.6% of assets are loans)"
+  - "EBITDA margin (finance cost is core operating cost for a lender)"
+  - "Working capital cycle / receivable days (ALM gap is the analogue)"
+  - "Current ratio / quick ratio (managed via ALM and CRAR)"
+  - "Gross margin (NIM/Spread is the equivalent)"
+must_track_metrics:
+  - {metric: "NIM headline vs ex-one-off", healthy: "9-13%", red_flag: "<8% or growth driven by DA/assignment gains"}
+  - {metric: "GNPA/NNPA reported AND ex-DA-partner", healthy: "GNPA <~2%", red_flag: "reported vs ex-partner diverging, PCR Stage 3 <~45%"}
+  - {metric: "Cost of borrowing", healthy: "declining/stable with rating (10.80% FY26)", red_flag: "rising despite stable/improving rating"}
+  - {metric: "AUM growth vs disbursement growth", healthy: "20-35% AUM, disbursement tracking", red_flag: "AUM outpacing disbursement (accounting-driven)"}
+  - {metric: "CRAR and D/E", healthy: "CRAR >20% (26.12% FY26), D/E 2.87x", red_flag: "CRAR toward 15% floor or D/E >4x without capital"}
+one_line_verdict: "Best-in-class asset quality at small scale, now tested by one DA-partner default and rising MSME concentration."

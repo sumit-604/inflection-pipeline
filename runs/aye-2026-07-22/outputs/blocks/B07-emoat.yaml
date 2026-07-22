@@ -1,0 +1,45 @@
+stage: B07-emoat
+company: "Aye Finance Limited (AYE)"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B05 concall promise-delivery block was not available to this stage (Stage 5 report not yet produced in this run); F2 is a shallow, self-computed single-quarter check, not the intended cross-referenced record"
+  - "Only one AYE concall transcript is collected (Q3 FY26 maiden call, 2026-03-06); the Q4 FY26 and Q1 FY27 concalls referenced in the operator digest were not collected as anchored transcripts, limiting F1/F2/H1/H2 evidence depth"
+  - "No peer NBFC financial or underwriting-methodology data was provided in this run; CRISIL-sourced competitive-uniqueness claims (e.g. 'hardest to replicate,' 'most diversified') could not be independently tested against peers, and the CRISIL report itself was commissioned and paid for by Aye (Prospectus p.1550-1552) - same peer-data gap flagged at B01"
+  - "No company-specific priority-sector-lending (PSL) qualifying percentage for Aye's own loan book was found in any of the four anchored source classes (Prospectus, concall, investor presentation, IPO notes) - stated as NOT FOUND rather than estimated; R1 scored conservatively on that basis"
+  - "Generative-AI underwriting pilot (store images to sales estimates) is digest-only (operator-supplied, NON-ANCHORED); not corroborated in the Prospectus, the collected concall, or the Investor Presentation in this run"
+flags:
+  - type: FLAG-EMOAT-SOURCE-DEPTH
+    reason: "Emerging-moat score rests on a single concall and a company-commissioned industry report (CRISIL) for its strongest category (D1); score should be revisited once Q4 FY26/Q1 FY27 concall transcripts and any peer NBFC comparison data are collected."
+em_score: 19.6
+em_classification: "MODEST"
+active_categories:
+  - {id: "D1", name: "Proprietary data asset (cluster-based + AI/ML underwriting)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now, further conversion 12-24m"}
+  - {id: "G1", name: "War chest / funding access", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now, 12-24m upside tied to FY27 guidance"}
+  - {id: "C1", name: "Customer ecosystem / repeat-loan stickiness", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "A3", name: "Process innovation (cost-to-income, productivity)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now, 12-24m"}
+evidence_mix: {documented: 20, claim: 4, inference: 2}
+completionist_recount: "recount performed: 20 documented items across 5 categories (D1, G1, C1, A3, R1); R1 documented but scored Weak on shared-benefit impact; B3, F1, F2, H1, H2 rest on management-claim or analyst-inference evidence only. Four Strong/Moderate categories falls within the 3-6 base rate; no re-examination triggered."
+catalysts_12m:
+  - {catalyst: "Generative-AI underwriting pilot quantified disclosure", window: "6-18m", evidence_type: "claim", anchor: "operator digest, NON-ANCHORED lead"}
+  - {catalyst: "Mortgage/LAP mix crossing ~25% en route to 30-35% target", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 14/31/32; Prospectus p.237"}
+  - {catalyst: "FY27 delivery vs guided NIM 14.25-14.75%/RoA 4.0-4.5%/credit cost 3.5-4.0%/opex 8.25-8.75%", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 31"}
+  - {catalyst: "Further rating action / cost-of-borrowing trajectory below 10.78%", window: "6-12m", evidence_type: "documented", anchor: "Inv. Pres. slide 18; digest-only for the Jun-2026 India Ratings A+ upgrade"}
+  - {catalyst: "Bihar MFI-ordinance resolution and read-through to the ~17%-of-AUM Bihar book", window: "6-12m", evidence_type: "claim", anchor: "Q3 FY26 call p.9-10"}
+capex_embedded_growth_pct: 84
+optionality_register:
+  - {optionality: "Generative-AI (multimodal LLM) underwriting pilot converting store images to sales estimates", converting_evidence: "Quantified pilot results (% of underwriting volume, approval-rate/turnaround impact) disclosed in a filed concall or investor presentation", first_appears: "Next 1-3 quarterly concalls/Inv. Pres. decks", window: "6-18 months"}
+  - {optionality: "Data-science/AI talent density (headcount, specialist mix, retention)", converting_evidence: "Disclosed headcount trend for the data-science/AI function in a post-listing Annual Report or IR deck", first_appears: "First post-listing AR (~mid-2027) or a future IR deck", window: "12-24 months"}
+  - {optionality: "Investor tech-mentorship relationship (Google Capital/CapitalG)", converting_evidence: "A named co-development project, technology licensing arrangement, or joint initiative with a quantified outcome", first_appears: "Concall Q&A or a Regulation-30 filing", window: "12-24 months, discretionary"}
+  - {optionality: "MFI-stress consolidation beneficiary in Bihar and other regulated-MFI states", converting_evidence: "Disclosed market-share gain or new-customer-origination uplift attributed to competitor MFI stress", first_appears: "Quarterly Inv. Pres. state-level AUM/customer data", window: "6-12 months"}
+  - {optionality: "Geographic concentration reduction (currently worsening, not improving)", converting_evidence: "Top-state/top-5-state AUM concentration declining sequentially in a future Investor Presentation", first_appears: "Quarterly Inv. Pres. geographic-mix slide", window: "12-36 months; currently trending the wrong way"}
+  - {optionality: "Execution/guidance-delivery record (F2)", converting_evidence: "A multi-quarter promise-delivery cross-reference (the B05 block) once further concalls accumulate", first_appears: "Subsequent quarterly concalls (Q4 FY26, Q1 FY27 exist per digest but not yet collected as anchored transcripts)", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0's flagged AVOID reflects a listing-recency downgrade on a core-implied AVERAGE, not demonstrated deterioration; a MODEST (19.6/80) emerging-moat score with real but historically-unproven data/underwriting and funding-cost signals nets to AVERAGE, not a HIGH POTENTIAL or TURNAROUND transition setup."
+top_moat_risks:
+  - "D1's underwriting edge has not prevented a full asset-quality cycle: GNPA rose 3.2%->4.77% (Mar-24 to Mar-26) before improving; no peer data was available to test the relative-quality claim, and the 'hard to replicate' characterisation is sourced to a CRISIL report Aye itself commissioned and paid for."
+  - "G1's 42%+ CRAR is largely a post-IPO capital-infusion artefact (vs 32.8-34.9% pre-IPO); guided 25-30% FY27 AUM growth will rebuild gearing over 2-3 years, and rating upgrades are conditional on asset quality staying below ICRA's own 5% 90+dpd and 4.5x gearing sensitivities."
+  - "C1's repeat-loan stickiness rests on a single maiden concall's data with no multi-quarter record, and concentrates exposure in existing customer relationships."
+  - "A3's opex gains partly reflect deferred cost recognition (1,300-1,400 new mortgage staff not yet fully monetised) rather than pure automation, and would partially reverse if mortgage AUM growth disappoints."
+  - "R1 (PSL funding channel) is shared with every MSME-focused competitor and is explicitly disclosed as reversible if RBI PSL classification norms change, with no company-specific hedge."

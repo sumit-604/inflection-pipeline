@@ -1,0 +1,49 @@
+# report: runs/aye-2026-07-22/outputs/reports/01-gate0.md
+stage: B01-gate0
+company: "Aye Finance Limited (AYE)"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "NIM/spread-yield not anchored in the four provided sources (digest-only: 15.94% Q1FY27, non-anchored)"
+  - "Peer NBFC financial/market-cap data not provided; 6 of 12 moat tests (M2,M3,M5,M6,M7,M9) scored 0 as PEER DATA NEEDED"
+  - "Q1FY27 (2246e44a) full P&L/balance-sheet line items NOT FOUND — OCR extract is character-per-line garbled; only the Annexure-1 summary ratio block was reconstructable"
+  - "FY23 opening Total Assets / Net Worth (FY22 closing) not in the 3-year restated window; FY23 ROA/ROE computed on closing-only basis, stated"
+  - "Contingent liabilities / Net Worth latest available only as at 30-Sep-2025 (restated IPO stub); no later breakout in the FY26 or Q1FY27 filings extracts provided"
+  - "Selling-expense % not separately broken out in the anchored P&L (bundled in Other Expenses); M11 scored conservatively per the rule"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID is driven primarily by NBFC metric-scale mismatch in Blocks A/B under manufacturing-calibrated bands and by the LIMITED-history one-tier downgrade (4 FY periods, IPO Feb-2026), not by demonstrated fundamental deterioration. ICRA-anchored CRAR 42%, historically double-digit ROE (16.1% FY24), and 25% AUM CAGR (rating p.1) cut against a simple AVOID read; flagged for stage 13 human synthesis, not a stop."
+  - type: FLAG-CASH
+    reason: "Block B (cash generation) is INDETERMINATE, not a genuine failure — CFO is structurally negative every year for a balance-sheet lender funding loan-book growth via borrowings (Ind AS 7 classification). Per CLAUDE.md this caps any downstream verdict at PROCEED WITH CAVEATS minimum and must be named explicitly, not silently resolved to PROCEED."
+  - type: FLAG-ASSET-QUALITY
+    reason: "Gross Stage III/GNPA rose from 3.2% (Mar-24) to 4.77% (Mar-26 audited); 90+dpd breached ICRA's 5% rating sensitivity at 5.1% (Sep-25, rating p.2). Improved to 4.49% (Jun-26, results p.5/19) in the most recent two data points but this is not yet a demonstrated full asset-quality cycle."
+  - type: FLAG-DATA
+    reason: "Prospectus RESTATED FY24/FY25 PAT (Rs171.68cr/Rs175.25cr, annual report p.314) exceeds ICRA's originally-audited FY24/FY25 PAT (Rs161cr/Rs171cr, rating p.1) by ~6.6%/~2.3% - a restatement uplift. Both figures are independently anchored; the delta itself is not estimated. Flagged for operator awareness before relying on restated-basis growth CAGRs."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 5, B: 0, C: 20, D: 16, E: 11}
+core_score: 52
+moat_score: 7
+grand_total: 59
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A=5 <8 -> cap GOOD (non-binding, already below)"
+  - "2: Block B=0 <8 -> cap GOOD (non-binding)"
+  - "3: median ROA=2.94% <10% (ROCE substitute) -> cap AVERAGE (binding but non-differentiating; median ROE=10.68% would NOT trigger this test)"
+  - "4: cumulative CFO/PAT=-7.25x <0.50 -> cap AVERAGE (binding, tied to Block B INDETERMINATE read)"
+history_downgrade: true
+data_notes:
+  - "PAT basis mismatch: Prospectus RESTATED PAT for FY24 (Rs171.68cr, annual report p.314) and FY25 (Rs175.25cr) exceeds ICRA's originally-audited PAT for FY24 (Rs161cr, rating p.1) and the FY26 filing's audited FY25 comparator (Rs171.27cr, results p.6/26) by ~Rs10.7cr (+6.6%) and ~Rs4cr (+2.3%) respectively - restatement uplift, both bases anchored."
+  - "ROA/ROE FY23 computed on closing-only Total Assets/Net Worth (no FY22 opening balance in the 3-year restated window); likely understates true FY23 return - stated explicitly per formula rule."
+  - "Block A (A1/A2): ROCE->ROA substitution structurally scores near-zero for any NBFC under manufacturing bands (ROA is inherently low single-digit vs. bands calibrated to double-digit manufacturing returns); ROE (A3, framework-native) used instead of ROA for the deal-breaker #3 median-return test."
+  - "Block B is INDETERMINATE for a balance-sheet lender: CFO is structurally negative every year (loan disbursements = operating outflow under Ind AS 7). Literal formula scores B1-B3 at 0; this is not an earnings-quality or going-concern signal for an NBFC."
+  - "B4, M4, M10, M12 marked NOT APPLICABLE - no trade receivables/inventory/payables concept for a balance-sheet lender. GNPA/dpd trend (Block D) is the correct lender analog and is deliberately not reused here to avoid crediting/debiting one quality signal through two mechanisms (CLAUDE.md)."
+  - "M2,M3,M5,M6,M7,M9 = PEER DATA NEEDED - no peer NBFC financial or market-cap data was supplied in this run's four anchored sources; never guessed."
+  - "D4 (current ratio) substituted with Liquidity Coverage Ratio (LCR): 205.16% FY26 (results p.11/26), 269.61% Q1FY27 (results p.5/19) - both far above the ~85-100% regulatory floor for NBFC-ML. Substitution named explicitly as it is not framework-specified (unlike D1/D2)."
+  - "history_downgrade: 4 fiscal years (FY23-FY26 restated+audited) = LIMITED confidence band (3-4 yrs); classification downgraded one tier from the Core-score-implied AVERAGE to AVOID. Company IPO'd Feb-2026, so this reflects listing recency by construction, not disclosed-history quality problems - flagged for operator override consideration per CLAUDE.md's post-IPO rebase note (state which years drive the deal-breaker: all four, FY23-FY26, are the entirety of the company's disclosed financial history to date)."
+  - "E1: no identifiable promoter (Prospectus, PE/VC-backed). FII+DII institutional stake (37.05% Mar-26 -> 35.45% Jun-26, operator-supplied screener shareholding) used as the alignment proxy in place of promoter holding, below the framework's >50% 'professionally managed' carve-out, scored via literal analogy to the 30-39.9% band. Per CLAUDE.md this must NOT be read as an institutional-absence risk signal - ~35-37% is a substantial institutional base for a small-cap NBFC."
+  - "Q1FY27 (2246e44a) figures: only the Annexure-1 summary ratio block (Debt/equity 2.22x, net worth Rs2,528.01cr, PAT Rs74.50cr, total debt/assets 66.77%, net profit margin 15.22%, EPS 3.02/3.00, Gross Stage III 4.49%, Net Stage III 1.67%, PCR 63.80%, CRAR 42.38%, LCR 269.61%) was reconstructable from this heavily OCR-garbled filing; these figures are internally self-consistent (arithmetic ties) and directionally corroborated by the operator digest. Full Q1FY27 P&L/balance-sheet line items are NOT FOUND (anchored) - digest-only for AUM (Rs7,324cr)/NIM(15.94%) context."
+block_b_trend: "deteriorating - CFO/PAT ratio improved from -18.1x (FY23) to -4.6x/-4.7x (FY25) then worsened to -7.0x (FY26), tracking accelerated loan-disbursement growth post-IPO capital infusion (AUM +26-27% YoY FY26), a growth-scale signal rather than a profitability-quality deterioration signal."

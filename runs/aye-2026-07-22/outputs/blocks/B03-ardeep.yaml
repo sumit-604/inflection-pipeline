@@ -1,0 +1,58 @@
+stage: B03-ardeep
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No post-listing Annual Report exists (company listed Feb-2026); this deep-dive is sourced entirely from the IPO Prospectus, whose Restated Financial Statements function as the backward-history document, carried from B00/B02"
+  - "No CARO 2020 annexure exists in this document (restated-financial-information examination report format does not carry CARO); Phase 1D answered NOT FOUND IN DOCUMENT, not applicable to this report type"
+  - "No formal Key Audit Matters section exists in this examination-report format; Phase 1B uses the single disclosed ITGC/audit-trail remark as the nearest functional equivalent"
+  - "No Chairman's Letter exists; Phase 6 substitutes the Prospectus front-matter (Summary/Our Business Overview/Strategies) as the nearest functional equivalent"
+  - "Board-meeting attendance percentages NOT FOUND IN DOCUMENT — not disclosed in Prospectus format; will require the first post-listing annual report"
+  - "CEO-to-median-employee-pay multiple NOT FOUND IN DOCUMENT — no median-pay disclosure in Prospectus format"
+flags:
+  - type: FLAG-EARNINGS-QUALITY
+    reason: "New this stage (not in B01/B02, which were notes-focused): RoE fell from 17.28% (FY24) to 7.63% (H1FY26, annualized) and RoA from 4.29% to 1.92% over the same window, driven almost entirely by RoA/profitability (DuPont-verified: leverage stayed flat ~3.7x-4.0x throughout), not leverage. PBT margin nearly halved 20.10%->9.57% (H1FY25->H1FY26) and credit cost ratio roughly doubled since FY23 (2.70%->5.15% FY25, 5.14% H1FY26 annualized, not yet peaking). This is the P&L/balance-sheet-level realisation of the credit-quality deterioration B01/B02 flagged at the notes level -- the credit cycle has already reached realised earnings, not just provisioning notes."
+  - type: FLAG-DISCLOSURE-GAP
+    reason: "Risk Factor 9 (the section investors read first, extract p.45-47/614) materially understates the covenant-breach finding versus Note 53.36 (23 instances/Rs12,344.12mn, 23.6% of total borrowings, majority unwaived at Sep-25): the risk factor characterizes this only as 'certain instances of delay in payment... on account of technical issues' with no instance count, amount, or waiver status disclosed. Separately, the tax-restatement pattern (B02 finding #2, touching 4 of 5 presented periods including a 25.9% cut to FY23 PAT) has no dedicated risk factor anywhere in the document."
+  - type: FLAG-CASH
+    reason: "Carried forward, not resolved: CFO is structurally negative every period (FY23 -Rs7,203.90mn through H1FY26 -Rs4,548.76mn) because loan disbursements are classified as operating outflow for a growing NBFC -- this is business-model-structural, not a standalone quality signal, but B01's INDETERMINATE cash-conversion read is not resolved to PROCEED by anything found in this stage and remains capped per the NEVER rule."
+  - type: FLAG-FRONT-MATTER
+    reason: "Phase 6E Quiet Abandonment Check found a high-materiality implicit retraction: the front-matter claim 'our expertise... has enabled us to maintain stable credit costs' (extract p.219/614) is directly contradicted by the credit cost ratio nearly doubling (2.70%->5.15%->5.14% annualized, FY23 to H1FY26) documented elsewhere in the same document, with no acknowledgment of the divergence anywhere in the front matter."
+phase_verdicts: {p1: "🟢 Clean", p2: "🟡 Watch", p3: "🔴 Red Flag", p4: "🟡 Watch", p5: "🟡 Watch", p6: "🟡 Watch (bordering Red Flag on one claim)", p7_best_fit: "GARP (Watchlist)"}
+overall_quality: 5.6
+quality_components: {governance: 6.5, accounting: 5.5, balance_sheet: 6.0, earnings: 4.5}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would not stop -- audit opinions clean throughout, sole reportable item (ITGC gap) self-disclosed with no misuse found and remediated"
+  - "Phase 2: a human reviewer would not stop but would flag covenant-breach severity and the recurring restatement pattern as items requiring management clarification before sizing a position"
+  - "Phase 3: a human reviewer would have real pause (not a stop) -- RoE/RoA trajectory and credit-cost trend argue for treating H1FY26 as the base case for near-term earnings power rather than extrapolating FY24's 17.28% RoE forward"
+  - "Phase 4: a human reviewer would not stop but would specifically flag the covenant-breach framing gap between Risk Factor 9 and Note 53.36 as a due-diligence item"
+  - "Phase 5: a human reviewer would not stop on governance -- nothing rises above a watch-item (interim-CFO timing, unavailable attendance data)"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Covenant-breach severity (23 instances/Rs12,344.12mn, 23.6% of total borrowings, majority unwaived at Sep-25) is understated in Risk Factor 9 versus Note 53.36", evidence_anchor: "Risk Factor 9, extract p.45-47/614 vs Note 53.36, extract p.401-402/614"}
+  - {risk: "Recurring tax-restatement pattern (4 of 5 presented periods, including -25.9% to FY23 PAT) has no dedicated risk factor anywhere in the document", evidence_anchor: "Annexure VI, extract p.404/614; absent from Risk Factors section, extract p.38-77/614, confirmed by exhaustive search"}
+  - {risk: "Stage 2 ECL step-change on the core Hypothecated/Switch book (13.90%->40.73% in one year, unexplained) is not addressed in Risk Factors despite extensive GNPA/Stage-3 risk-factor coverage", evidence_anchor: "Note 49.1.8(c), extract p.369/614; absent from Risk Factors section"}
+guidance_table:
+  - {claim: "Reduce pace of new branch openings given adequate geographic diversification", number: "no explicit forward target", timeframe: "ongoing", credibility: "unverifiable -- no quantified target given"}
+  - {claim: "Continue scaling mortgage loan portfolio for stability/profitability", number: "1.86% (FY23) to 19.28% (Sep-25) mix already delivered", timeframe: "ongoing", credibility: "high -- clean, verifiable historical delivery trend in the same document"}
+  - {claim: "Augment capital base for onward lending and CRAR via IPO proceeds", number: "Rs6,722.42 million", timeframe: "post-IPO", credibility: "high -- single, narrow, independently checkable use-of-proceeds object; pro forma Post-Offer CRAR 47.48% disclosed"}
+  - {claim: "Continue reducing operating expenditure while improving efficacy (Improving Operating Leverage)", number: "cost-to-income 66.03% (FY23) to 50.10% (FY25), but 52.62% (H1FY26) vs 48.39% (H1FY25)", timeframe: "ongoing", credibility: "mixed -- multi-year trend real, but most recent half-year reverses direction, unacknowledged in front matter (Phase 6E)"}
+monitorables:
+  - {metric: "Credit cost ratio (impairment / average total assets)", threshold: "watch if >5% persists or rises past the H1FY26 5.14% annualized level", where: "next quarterly/annual results, credit cost / impairment-to-assets disclosure", why: "tests whether Phase 3's margin-compression finding is peaking or still worsening"}
+  - {metric: "RoE (annualized)", threshold: "watch for continued decline below H1FY26's 7.63%, or confirm rebound", where: "next results' RoE/RoA reconciliation", why: "tests whether the DuPont-verified RoA-driven decline starts reversing post-IPO-capital-infusion"}
+  - {metric: "Covenant-breach waiver status", threshold: "resolution vs persistence/growth of the 14 unwaived instances (Rs12,344.12mn) at Sep-25", where: "first post-listing quarterly/annual filing, borrowings/covenant note", why: "tests whether the Phase 4B under-disclosed risk resolves quietly or becomes a live funding issue"}
+  - {metric: "Stage 2 ECL rate, Hypothecated/Switch book", threshold: "watch for further unexplained step-changes, or a clarifying methodology disclosure", where: "next ECL staging note", why: "tests whether the unexplained 3x FY23->FY24 jump repeats or gets addressed"}
+  - {metric: "Provision Coverage Ratio (PCR)", threshold: "watch whether the FY24-peak-to-Sep25 decline (72.14%->64.47%) continues or stabilizes", where: "next Stage 3/GNPA and provisioning disclosure", why: "tests whether provisioning keeps pace with GNPA growth on a coverage basis, not just vs the regulatory floor"}
+strengths_top3:
+  - "Capital position post-IPO: CRAR pro forma 47.48%, LCR 406.03% (Sep-25), zero Tier II reliance, IPO proceeds earmarked entirely for onward lending -- capital question resolved, not an open risk"
+  - "Clean audit history and immaterial litigation/RPT exposure: unmodified opinions all 5 periods, contingent liabilities 0.92% of net worth, RPTs 0.46% of FY25 total income, no fraud/tampering/SEBI-enforcement found"
+  - "Independently verifiable, well-quantified growth track record: 42.60% AUM CAGR with a clean, delivered mortgage-mix diversification trend (1.86%->19.28%) and improving external credit ratings through the same window as the credit-quality stress"
+red_flags_top3:
+  - "Realised earnings deterioration already in the numbers: RoE 17.28%->7.63% and RoA 4.29%->1.92% (annualized), PBT margin 20.10%->9.57%, credit cost ratio roughly doubled since FY23 and not yet peaking through H1FY26"
+  - "Covenant-breach severity (23 instances/Rs12,344.12mn, 23.6% of borrowings, majority unwaived, Note 53.36) materially under-represented in Risk Factor 9, the section investors read first"
+  - "Recurring tax-restatement pattern touching 4 of 5 presented periods, including a 25.9% cut to the IPO track record's own FY23 base-year PAT, with no dedicated risk-factor discussion anywhere in the document"
+best_fit_strategy: "GARP (Watchlist)"
+one_line_verdict: "Growth is real, earnings quality has already turned; GARP on watchlist, not yet at entry."

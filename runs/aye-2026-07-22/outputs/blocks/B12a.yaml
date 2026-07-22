@@ -1,0 +1,13 @@
+stage: B12a
+company: "Aye Finance Limited (AYE)"
+run_date: "2026-07-22"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 40
+findings:
+  - {severity: "MINOR", location: "B04-bizmodel page 167", claimed: "NPS 89.65% in FY25", source_truth: "Prospectus p.230, self-reported non-audited metric", note: "Unanchored to audited statement; management guidance only, not core financial metric", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97.5
+coverage_note: "Tier 1 (verdict card): 100% verified (16 figures). Tier 2 (block inputs/ratios): 100% verified (24 figures). Tier 3 (table detail/KPIs): sample verified (40+ figures total). All material numbers traced to prospectus Annexures I-VI (restated FY23-FY25, Sep-24/25), FY26 Audited Results (Reg 33/52), Q1FY27 Annexure-1 (OCR-reconstructed ratio block only), ICRA rating, investor presentation, CRISIL benchmark data. Q1FY27 full P&L/B&S line items unrecoverable from OCR extract per B01 input_gaps; only ratio summary block verified. Self-reported metrics (NPS, AI/ML split, branch vintage) not audited; marked but not escalated. Zero fabricated numbers found; zero material misstatements; restatement pattern (4 of 5 periods) confirmed real and disclosed at Annexure VI."

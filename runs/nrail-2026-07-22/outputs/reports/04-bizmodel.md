@@ -278,3 +278,77 @@ The Indian paperboard packaging market is a **growth industry** on volume: $13.7
 ```
 
 ---
+
+
+```yaml
+stage: B04-bizmodel
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "announcements/ empty"
+  - "shareholding/ empty"
+  - "research/ empty"
+  - "screening/ is peer (JKPAPER) data not NRAIL"
+  - "presentation stale May-2022"
+  - "prospectus absent (long-listed, not-expected)"
+  - "no named competitors disclosed anywhere in AR or presentation"
+  - "no granular product-segment P&L (Ind AS 108 single segment reporting)"
+  - "writing & printing paper per-unit realized price not disclosed"
+flags:
+  - "Interest Coverage Ratio 2.34x (down from 17.60x) is already near the red-flag threshold defined in this report"
+  - "derived Net Debt/EBITDA ~4.3x is already above the red-flag threshold defined in this report"
+  - "management exploring a second large paperboard capex commitment while leverage/coverage metrics are stressed"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Packaging Board (duplex/FBB/SBS)", type: "product sales, commodity B2B", pct_of_revenue: 62.49, predictability: "L"}
+  - {name: "Writing & Printing Paper", type: "product sales, B2B/B2B2C", pct_of_revenue: 37.51, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Cost advantage - scale", durability: "moderate, erodable"}
+  - {moat: "Cost advantage - location (port proximity)", durability: "moderate, durable"}
+  - {moat: "Cost advantage - process/technology (captive power)", durability: "weak-moderate"}
+  - {moat: "Efficient scale (regional)", durability: "unclear, not quantified"}
+valuation_methods:
+  primary: {method: "EV/EBITDA (normalized, through-cycle)", why: "cyclical capital-intensive manufacturer at margin trough; EBITDA less distorted by financing-driven swings than P/E"}
+  secondary: {method: "EV/tonne of installed capacity", why: "company's own strategic narrative is built on capital cost per ton economics; asset-heavy commodity manufacturer"}
+  tertiary: {method: "P/B", why: "large recently-deployed fixed asset base, useful floor/sanity check given depressed near-term earnings"}
+  not_applicable:
+    - "Trailing P/E - distorted by trough-year earnings collapse"
+    - "DCF - high cyclicality and limited multi-year explicit guidance"
+    - "Sum-of-the-parts - single reportable segment, no subsidiaries/JVs"
+irrelevant_ratios:
+  - {ratio: "Trailing P/E", why: "cyclical earnings trough distorts the multiple"}
+  - {ratio: "Net profit margin (standalone)", why: "financing-cost step-up from new debt dominates the move, not comparable operating deterioration alone"}
+  - {ratio: "ROE (point-in-time)", why: "large capital base just deployed, mechanically depressed pre-normalization"}
+  - {ratio: "Current ratio (standalone)", why: "meaningful trade payables settled via bill-discounting/vendor financing, not a pure liquidity signal"}
+must_track_metrics:
+  - {metric: "EBITDA/Turnover margin", healthy: "12-16%", red_flag: "below 8%"}
+  - {metric: "Interest Coverage Ratio", healthy: ">4x", red_flag: "below 2x"}
+  - {metric: "Capacity utilization (new 900 TPD plant)", healthy: ">85%", red_flag: "below 75%"}
+  - {metric: "Net Debt/EBITDA (derived)", healthy: "<3x", red_flag: "above 4.5x"}
+  - {metric: "Paperboard realization (Rs/kg)", healthy: "stable/rising off Rs37/kg trough", red_flag: "further decline below Rs35/kg"}
+unit_economics:
+  unit: "1 metric ton (MT) of paper/paperboard produced and sold"
+  revenue_per_unit: "~Rs 43,100/MT (derived FY25 blended average)"
+  margin_per_unit: "~Rs 3,700/MT EBITDA (derived FY25)"
+  key_lever: "capacity utilization and paperboard realization (Rs/kg) against a now-heavy fixed cost base (depreciation + finance cost)"
+first_deterioration_signals:
+  - {risk: "Revenue model - continued global oversupply/import dumping", first_signal: "quarterly paperboard realization falling further below Rs37/kg trough"}
+  - {risk: "Margin - input cost inflation without pass-through", first_signal: "EBITDA/Turnover below 8% for a subsequent quarter"}
+  - {risk: "Balance sheet - leverage amid depressed earnings", first_signal: "Interest Coverage Ratio below 2.0x or Net Debt/EBITDA above 4.5x"}
+  - {risk: "Execution - second paperboard unit sanctioned prematurely", first_signal: "firm capex/board approval for second unit before realizations recover above Rs40/kg"}
+  - {risk: "Structural - digitalization erosion of writing & printing segment", first_signal: "Writing & Printing revenue share declining alongside absolute volume decline"}
+mgmt_questions:
+  - "What concrete evidence supports an expected paperboard price recovery and on what timeline?"
+  - "What capital-structure thresholds must be met before a second greenfield paperboard unit is sanctioned?"
+  - "How much of FY26 revenue guidance (Rs2,200 cr) is volume-led vs price-recovery-led, and what is the sensitivity to flat pricing?"
+  - "What is the FY26 debt repayment schedule and covenant headroom given the interest-expense step-up?"
+  - "How are related-party place-of-profit appointments and director loans benchmarked to arm's-length terms?"
+  - "Has a formal anti-dumping petition been filed, and what is its status?"
+one_line_verdict: "Newly-scaled paperboard leader betting on a cyclical trough turning, but leverage and coverage are already flashing amber."
+```

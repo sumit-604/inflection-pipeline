@@ -1,0 +1,27 @@
+stage: B12b
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+audit_basis: "no-concall: audited AR FY24-25 + Q3 FY26 + Q4/FY26 audited results in lieu of transcripts; 8 peer concalls for B06 peer-claim audit"
+environment_constraint: "all primary-source PDFs (AR, both results, 8 peer concalls) un-renderable: pdftoppm/poppler-utils not installed and no shell available; page anchors in B05/B06 not independently re-verified; source fidelity defers to Verifier A non-overridable gate; independent layer is analytical + arithmetic re-derivation, not a fresh documentary read"
+independent_flags_found: 10
+caught: 7
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Earnings quality of FY26 recovery un-interrogated: Q4-loaded (Q4 NPAT Rs1,419.84L = 32.5% of FY NPAT Rs4,369.91L; prior-year Q4 a net loss) and PBT Rs5,962.24L stated post-exceptional with no reconciliation of the flagged Rs444.29L discard loss against possible offsetting exceptional gains", anchor: "05-concall.md Section 2A row 3 / 4C; source: Q4/FY26 audited results filing (12-May-2026)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 4, confirmed: 4, wrong: 0}   # coherence/direction only; source-page render blocked, not fidelity-verified
+credibility_grade_concur: "concur (B) - but 'delivered strongly / honest' framing rests on un-interrogated earnings quality; no-concall B ceiling holds either way"
+redflag_coverage: 90   # share of my 10 independent flags at least surfaced upstream (7 full + 2 partial); 1 fully missed
+findings:
+  - {severity: "MAJOR", location: "05-concall.md Section 2A row 3 / 4C / 4D", note: "FY26 profit-recovery earnings quality not interrogated: Q4-concentration (32.5% of FY NPAT, prior Q4 a loss) framed as positive delivery; no pre-vs-post-exceptional bridge despite an unexplained Rs444.29L discard loss; underpins upper-B credibility grade"}
+  - {severity: "MINOR", location: "05-concall.md Section 4D flag 3", note: "Base-year mislabel weighted Low; inflates Chairman's headline 36% growth framing (true FY25->FY26 growth +29.3%); warrants low-medium"}
+  - {severity: "MINOR", location: "05-concall.md Section 2B / 4C", note: "excuse_pattern 'honest' in mild tension with base-year mislabel + two peer-contradicted narrative claims; communication credibility a notch lower, grade B survives"}
+  - {severity: "MINOR", location: "05-concall.md Section 2D / 4D", note: "Debt-funded capex noted but no cash-conversion/CFO-quality red flag raised; leverage-trajectory question handed to Stage 11 untagged (partly Stage 11 lane)"}
+  - {severity: "MINOR", location: "environment / whole audit", note: "Primary-source PDFs un-renderable (pdftoppm absent, no shell); B05/B06 page anchors not independently re-verified; disclosed, source fidelity defers to Verifier A"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 70   # cleanly caught (7) / independent flags found (10)

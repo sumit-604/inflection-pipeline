@@ -1,0 +1,21 @@
+stage: B12d
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+peers_audited: 8
+substantive_confirmed: 7
+substantive_unsupported: ["JKPAPER Q4 FY22 (filed \"May_2022\" transcript) — marked SUBSTANTIVE with no page-anchored citation in Part 1/2"]
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "Part 3 Peer Coverage Map / YAML peer_coverage_map[0]", claimed: "JKPAPER Q4 FY22 (May_2022) marked SUBSTANTIVE, contribution described as pre-downturn baseline incl. 'no major capex announcement industry-wide at that time'", source_truth: "No page-anchored quote from this file appears in Part 1/2; the closest source line is JK Paper's own statement about pausing its own further capex post its Rs2,000cr expansion, not an industry-wide observation", note: "SUBSTANTIVE without a real, findable citation; coverage-map summary also overstates a company-specific remark as industry-wide"}
+  - {severity: "MAJOR", location: "Part 1, Q1 evidence row", claimed: "EBITDA margin falling from 33.1% (FY23) cited to Q4 FY24 call (21-May-2024), p.2", source_truth: "33.1% figure appears verbatim in the Q4 FY23 call (19-May-2023), p.2 ('full year 33.1%'); Q4 FY24 call p.2 contains the 26-27% figure and outlier-year framing but not '33.1%'", note: "Genuine number, wrong call/date attribution -- cross-call misattribution of a specific sourced figure"}
+  - {severity: "MINOR", location: "Part 2E / YAML risks_peers_raise", claimed: "'1.5-2+ years' MIP/antidumping timeline cited to Kuantum Q4 FY26 call p.9-10", source_truth: "Exact quote ('about 1.5 to 2 years for it to start getting implemented') is on p.8 of that transcript", note: "Page-citation imprecision, quote itself is accurate"}
+  - {severity: "MINOR", location: "Stage-specific flags / YAML flags", claimed: "Notebook segment exit ~22% to ~7-8% cited to Kuantum Q4 FY26 call p.13, 17", source_truth: "First statement of the figure is on p.11, not p.13; p.17 citation (restatement) is correct", note: "Page-citation imprecision, figures themselves are accurate"}
+  - {severity: "MINOR", location: "Part 3 Peer Coverage Map, KUANTUM Q1 FY26 row", claimed: "Contribution listed as including 'wheat-straw/wood cost baseline'", source_truth: "This transcript (11-Aug-2025) does not mention wheat straw; wheat straw first appears in the Q2/H1 FY26 (10-Nov-2025) call, correctly cited elsewhere", note: "Content is not fabricated -- exists and is correctly cited under a different call -- but misattributed in this row"}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 88   # 7 of 8 peer-transcripts correctly handled (real, verified citations) ÷ 8 audited

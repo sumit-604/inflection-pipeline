@@ -1,0 +1,27 @@
+stage: B12c
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: complete
+phase_scope: "phase-1: gate0 + emoat only; valuation deferred to phase-3"
+gate0:
+  rules_checked: 40
+  fails:
+    - {id: "GATE0-1", severity: "MAJOR", rule: "Core Score / Grand Total must aggregate all core blocks A-E (160-pt scorecard: A-E=100 core, F=60 moat); YAML blocks{} template includes E", location: "01-gate0.md L214/L324; B01 YAML blocks{} L433 (E key omitted)", recompute: "Core 28 (not 20), Grand Total 33 (not 25) if E in core", decision_impact: "none — core still <40 and deal-breaker 6 both mandate AVOID"}
+    - {id: "GATE0-2", severity: "MINOR", rule: "5-6yr history = lower-confidence flag only, not the 3-4yr one-tier downgrade", location: "01-gate0.md L356 / B01 YAML L441 history_downgrade:true", decision_impact: "none — already at AVOID floor; defensible given 3yr full-statement window"}
+emoat:
+  rules_checked: 18
+  fails:
+    - {id: "EMOAT-1", severity: "MINOR", rule: "likelihood x impact tier should match stated evidence; R1 impact scored Moderate (HM=3) though subsidy is shared-eligibility, ~Rs9.1cr, duration-undisclosed", location: "07-emoat.md L204 vs Section 4C L170-174", recompute: "HL=2 -> EM ~18.1, still MODEST (12-24); no classification change", decision_impact: "none"}
+valuation: pending-phase-3
+recomputed_destination_pe: ""
+recomputed_decision: ""            # concur — Gate 0 AVOID and combined AVOID both stand
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md L214/L324; B01 YAML blocks{} L433", note: "Block E (Shareholder Alignment, 8/20) computed in body but dropped from Core Score, Grand Total, and the emitted blocks{} map. Rubric template enumerates E as a block; 160-pt structure implies core=A+B+C+D+E=100. Recompute: core 28, grand total 33 (report says 20/25). Decision UNCHANGED — AVOID via core<40 and deal-breaker 6."}
+  - {severity: "MINOR", location: "01-gate0.md L356 / B01 YAML L441", note: "history_downgrade:true set on a 5-year history that the report itself placed in the 5-6yr 'lower, flag-only' confidence tier (the one-tier downgrade attaches to 3-4yr LIMITED). Defensible (3yr full-statement window) and immaterial at the AVOID floor."}
+  - {severity: "MINOR", location: "07-emoat.md L204 (scorecard R1) vs L170-174 (Section 4C)", note: "R1 regulatory-tailwind impact scored Moderate (HM=3, 3.0) despite the report's own finding that the Gujarat subsidy is shared-eligibility, ~Rs9.1cr, and of undisclosed duration; a Low impact (HL=2) is at least as defensible. EM total would fall to ~18, still MODEST. Judgment within latitude; no verdict change."}
+  - {severity: "MINOR", location: "01-gate0.md Block A", note: "OBSERVATION (not counted): A1/A4 blend company-disclosed ROCE (FY22-25) with pipeline-computed FY26 per rubric L29; the resulting basis-mix was not flagged the way ROE/D-E/ICR were, but moves no band. Framework-sanctioned."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 95            # rules passed 55 / rules checked 58, Gate0 + EM only

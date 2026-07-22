@@ -1,0 +1,14 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 93.9      # B12a acceptance_rate (Verifier A, re-run against source PDFs)
+  redflag_coverage: 90            # B12b (Verifier B, no-concall: AR+results audit)
+  framework_adherence: 95         # B12c Gate0 + Emerging-Moat portion only (Verifier C); valuation adherence PENDING PHASE 3
+  peer_utilisation: 88            # B12d: 7 of 8 peers substantively confirmed (Verifier D; B06 claimed 8/8, one JKPAPER May-2022 call lacked a locatable citation)
+  overall: 88                     # min of the four available components
+  band: "normal (75-89): note specifics; no verdict downgrade"
+  valuation_framework_adherence: pending-phase-3
+  notes:
+    - "No CRITICAL from any verifier; no source-fidelity MISMATCH survived. Verifier A's initial CRITICAL (Chairman's-letter PBT/PAT mislabel) was reclassified to MAJOR on source re-read: it is an error IN the annual report that Stage 3 (B03) correctly caught, not a pipeline misread. Orchestrator independently confirmed at source (audited results p.4 / AR P&L): FY25 PBT Rs15.96cr vs PAT Rs17.65cr. No REWORK trigger."
+    - "All four verifiers >=88% acceptance; overall 88% sits in the normal band."
+    - "Verifier A and Verifier B initially could not use the Read tool's page-RENDER path (pdftoppm/poppler absent in this environment) and defaulted to report-citation/arithmetic cross-checks; plain Read (text extraction) does work and Verifier A's re-run + Verifier D used it. Orchestrator spot-verified the verdict-relevant figures at source directly. Source-fidelity authority (Verifier A) is satisfied; this environment limitation is logged, not a coverage miss."
+    - "Verifier C MAJOR (Block E dropped from Gate 0 core/grand totals; corrected core 28 / grand 33 vs 20/25) does not change the AVOID classification (core<40 and deal-breaker 6 both independently mandate AVOID)."

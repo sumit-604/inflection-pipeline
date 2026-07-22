@@ -1,0 +1,35 @@
+stage: B02-notes
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research, laxmiindia_screening]
+accounting_quality: 5   # /10
+flags:
+  - type: FLAG-CASH
+    determination: INDETERMINATE
+    reason: "DA/ARC upfront gain-on-sale drove 76.1% of PAT (FY23), 67.6% (FY24), 26.8% (FY25) (Note 52.2/98(a), pp.355,379); ARC Security Receipt investments grew 5.4x in FY26 vs ~31% loan-book growth; Note 98(c) NPA-to-ARC (Rs109.54cr FY25) vs Note 75/5.7 Sold-to-ARC (Rs0.61cr) unreconciled (~180x); three write-off figures do not reconcile. Cash conversion quality INDETERMINATE pending management reconciliation; caps at PROCEED WITH CAVEATS, missing evidence named."
+top_findings_summary:
+  - "1 RED: DA/ARC gain-on-sale = 26.8/67.6/76.1% of PAT FY25/FY24/FY23 (Note 52.2/98(a))"
+  - "2 RED: 4 GAAP errors in original FY23/FY24 audited financials, corrected only via IPO restatement (Note 104)"
+  - "3 RED: stressed-loan (NPA+SMA) ARC transfers +36x FY24-FY25, first year incl SMA/pre-NPA (Note 98(c))"
+  - "4 RED: Note 98(c) Rs109.54cr vs Note 75 Rs0.61cr NPA-to-ARC unreconciled ~180x"
+  - "5 RED: FY26 ARC Security Receipts +5.4x vs ~31% loan growth (FY26RESULTS BS)"
+  - "6 RED: CARO audit-trail qualification 2 yrs prev auditor, narrower gap persists FY25"
+  - "7 YELLOW: Gross Stage-3 0.58->0.73->1.07% FY23-FY25, pre-dating Up Money"
+red_flags:
+  - "DA/ARC gain-on-sale drove 76.1/67.6/26.8% of PAT FY23/FY24/FY25"
+  - "4 material GAAP errors corrected only at IPO restatement (Note 104)"
+  - "2 yrs CARO audit-trail qualification; persists FY25"
+  - "Stressed-loan ARC transfers +36x FY24-FY25, first year incl SMA"
+  - "~180x unreconciled NPA-to-ARC gap between notes"
+  - "FY26 ARC-dominated Investments +5.4x vs ~31% loan growth"
+  - "Going-concern 'lower gross NPA' language contradicts own rising Stage-3 disclosure"
+questions_for_mgmt:
+  - "Reconcile Note 98(c) Rs109.54cr NPA-to-ARC vs Note 75/5.7 Rs0.61cr for FY25"
+  - "Core lending profitability ex DA/ARC gain for FY23-FY26; will gain recognition normalise?"
+  - "Reconcile FY26RESULTS Note 9.4 Rs2.77cr vs DRHP Note 98(c) Rs4.614cr write-off"
+  - "Why begin selling SMA (pre-NPA) accounts to ARCs first time in FY25 (Rs155.27cr)?"
+  - "Remediation timeline for audit-trail deficiency; root cause of 4 Note 104 GAAP errors"
+receivables_trend: "NBFC: relevant metric is Gross Stage-3/NPA, DETERIORATING 0.58->0.73->1.07% FY23-FY25 (Note 75/93(d)) before the FY26 Up Money spike"
+going_concern_language: "Note 59 p.364 'lower gross NPA and net NPA' in tension with own rising Stage-3 disclosure; not a qualification, a disclosure-consistency flag"

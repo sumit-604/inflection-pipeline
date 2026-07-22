@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: announcements
+    severity: MEDIUM
+    note: "inputs/announcements/ empty; operator-context.md non-anchored summary used as lead only, not scored."
+  - type: shareholding
+    severity: MEDIUM
+    note: "inputs/shareholding/ empty; no post-listing SHP filing available. E1/E2 anchored to DRHP's own post-Offer computation (70.22%, Aug-25) and DRHP historical build-up tables; operator screener figures (60.17-60.45%, Sep25-Jun26) used as non-anchored cross-check only, landing in the same E1 scoring band."
+  - type: research
+    severity: LOW
+    note: "inputs/research/ empty. No effect on anchored evidence."
+  - type: laxmiindia_screening
+    severity: LOW
+    note: "No LAXMIINDIA screening CSV existed; this stage extracted all financials directly from drhp.pdf, Annual_Report_2024.pdf (FY26 audited results), the Q3 FY26 unaudited filing, and Investor_Presentation_1.pdf."
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven mechanically by (1) Block B scoring 0/15 because loan-book growth is classified as operating cash outflow under Ind AS for any scaling NBFC (CFO/PAT actually improving -10.57x to -5.63x FY23-FY26, not deteriorating), and (2) a mechanical one-tier downgrade for 4-year history, the maximum available for a company that IPO'd 2025-07-31. Growth (Block C 20/20), capitalisation (CRAR 26.12% FY26), leverage trend (D/E 4.4x to 2.9x post-IPO), and asset quality ex the identified one-off Up Money DA pool (GNPA 0.80%/NNPA 0.53% FY26 ex-pool) do not support a fundamentally weak read. Downstream stages should weight NIM/ROA/AUM growth over raw Block B/history-tier mechanics for this name."
+  - type: FLAG-CASH
+    reason: "Block B = 0/15, cumulative CFO/PAT = -7.93x, all four years FY23-FY26. Structural NBFC pattern (financing activities fund loan-book growth every year: +Rs212.7cr/177.5cr/389.8cr/354.3cr FY23-FY26), not a cash-quality red flag; see block_b_trend."
+  - type: FLAG-DATA-GAP
+    reason: "D2 (PCR) uses FY26=49.43%, below the 60% band in all 4 years (45.6/54.4/55.2/49.4%); likely reflects high secured-collateral coverage rather than under-provisioning but not confirmable without peer PCR data (PEER DATA NEEDED, same gap affects M2/M5/M9 moat tests)."
+  - type: FLAG-SHAREHOLDING-GAP
+    reason: "~10pp unexplained gap between DRHP's own post-Offer promoter computation (70.22%, Aug-25, anchored) and first post-listing operator/screener figure (60.45%, Sep-25, non-anchored). No SHP filing in inputs/ to reconcile. Does not change E1 scoring band (both >=60%) but flagged for stage 8/finalize."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 13, B: 0, C: 20, D: 8, E: 15}
+core_score: 56
+moat_score: 22
+grand_total: 78
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVOID"
+history_downgrade: true
+block_b_trend: "improving -- CFO/PAT ratio narrowed from -10.57x (FY23) to -5.63x (FY26); structural NBFC pattern, financing activities fund loan-book growth, not a deteriorating cash-quality signal."

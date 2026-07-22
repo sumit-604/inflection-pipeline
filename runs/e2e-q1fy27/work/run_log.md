@@ -39,3 +39,18 @@ LESSONS.md note: this run is a quarterly review (Role 4/5); LESSONS.md append is
 - Distinct from the earlier press release (also class presentation); artifacts suffixed "_deck" to avoid collision.
 - Image-only slides p2 (39 ch), p15 (26 ch) -> OCR required (A1 handles <100 ch pages).
 - Re-running A1->A2->A3 on deck, then A4 re-merge (results + press release + deck), A5, Notion update.
+
+## Deck run gate log (2026-07-22) — all passed
+- GATE A1 (deck): 22/22 pages, OCR on slides 2 & 15, Millions x0.1. PASS.
+- GATE A2 (deck): 42 line items / 22 slides / 1 ZERO_STANDING (zero named customers) / 46 third-party entity refs; grep == manual sweep. PASS. Flags DISCLOSED_IN_DECK, NUMERIC_INCONSISTENCY.
+- GATE A3 (deck): 17 checks, no blanks, ledger 100%. 10 findings (5 FORWARD-SIGNAL, 2 AMBIGUOUS, incl FND-01 zero named customers, FND-09 exit MRR/capex/BS, FND-08 SovCloud funding vehicle). PASS.
+- A4 v2: merged review across THREE docs (results + press release + deck). Verdict UNCHANGED PROCEED WITH FLAGS; cash conversion INDETERMINATE. Deck re-rates checklist #1 (Exit MRR Rs71.8 Cr) and #2 (CWIP->PPE) to GREEN; #4 (L&T board link) to AMBER partial; #3 hardened (zero named customers). 14 mgmt questions (2 new).
+- GATE A5 v2 (verdict COMPLETE): coverage clean (0 orphan rows across 3 ledgers), arithmetic within rounding (deck figures recompute: Exit MRR Rs71.8 Cr, Mar-26 net cash ~Rs239 Cr, capex/PPE series, dry powder Rs132.68 Cr), no surviving bear counter. PASS first pass. 4 non-blocking tightening notes (N1 PPE causal wording; N2 roster A3-F2/F11; N3 BS row display; N4 4608 vs 4609 bps), none verdict-affecting.
+
+## Notion update (deck)
+- Deck addendum appended at page end (deck tables, updated checklist, 14-question status table, verdict, A5 COMPLETE note).
+- Key Notes: Jul-22 deck entry PREPENDED; Jul-21 and Jun-30 entries preserved.
+- Decision Status UNCHANGED (WATCHLIST / BUY ON DIPS) — no pre-committed trigger fired.
+
+## Count-reconciliation line (3 docs)
+Results filing (18 notes / 60 line items / 10 auditor paras / 1 entity / 1 agenda) + press release (29 line items / 2 slides) + investor deck (42 line items / 22 slides / 46 entity refs). 0 concall turns. 100% reviewed.

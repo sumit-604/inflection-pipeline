@@ -1,4 +1,4 @@
-# Verifier Summary: Aye Finance Limited (AYE) — Phase 1
+# Verifier Summary: Aye Finance Limited (AYE): Phase 1
 
 Scope: Phase 1 verifiers only. Verifier A (numerical), Verifier B (red flags), Verifier D (peers), and the Gate 0 plus Emerging Moat portion of Verifier C (framework). Valuation framework re-derivation (the rest of C) is deferred to Phase 3.
 
@@ -10,7 +10,7 @@ Scope: Phase 1 verifiers only. Verifier A (numerical), Verifier B (red flags), V
 | Red flag coverage | 64 | B (B12b) | 64 | 9 of 14 flags caught; 1 MAJOR miss, 4 MINOR |
 | Framework adherence | 100 | C (B12c) | 100 | Gate 0 plus Emerging Moat CLEAN; 0 CRITICAL, 0 MAJOR, 1 MINOR |
 | Peer utilisation | 90.9 | D (B12d) | 100 | 11 peers audited, 11 substantive confirmed; 0 CRITICAL, 0 MAJOR, 5 MINOR |
-| Overall | 64 | min | — | Red flag bound; band 60 to 74, REWORK not forced |
+| Overall | 64 | min |: | Red flag bound; band 60 to 74, REWORK not forced |
 
 Source fidelity: PASS (Verifier A, 0 CRITICAL numerical, no flagged figure carried into any verdict input).
 

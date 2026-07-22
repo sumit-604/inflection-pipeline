@@ -1,0 +1,15 @@
+stage: B13-synthesis
+company: AYE
+run_date: 2026-07-22
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-ASSET-QUALITY, FLAG-EARNINGS-QUALITY, FLAG-DATA, FLAG-DISCLOSURE-GAP]
+flag_promoter: NOT_ACTIVE   # B08 TRUSTWORTHY
+confidence_delta: {numerical: 97.5, redflag: 64, framework: 100, peer: 90.9, overall: 64}
+headline: "Micro enterprise lender growth outpacing earnings quality"
+falsification_metric: "Gross Stage III (GNPA) reverses upward from 4.49% (Jun-2026) in the next anchored quarterly filing"
+publish_candidate: false
+valuation_decision: DEFERRED_PHASE_3

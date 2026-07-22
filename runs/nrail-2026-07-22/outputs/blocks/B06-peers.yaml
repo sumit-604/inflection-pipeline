@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements/ empty", "shareholding/ empty", "research/ empty", "screening/ is peer (JKPAPER) data not NRAIL", "presentation stale May-2022", "prospectus absent (long-listed, not-expected)"]
+flags:
+  - "Peer selection mismatch: neither JKPAPER (virgin fibre) nor KUANTUM (wood+agro fibre) sources waste/recovered paper -- NRAIL's waste-paper cost claim cannot be triangulated from this peer set"
+  - "Vintage gap: JKPAPER calls (May2022-May2024) predate NRAIL's FY25 realization trough; KUANTUM calls (Sep2025-Jun2026) cover the right period but the wrong product (writing/printing, not paperboard)"
+  - "Priority contradiction for synthesis: JKPAPER management explicitly rejects the dumping-driven consolidation narrative (Q4 FY24 call, 21-May-2024, p.12)"
+  - "Priority contradiction for synthesis: JKPAPER frames coated board as structurally import-dependent (50-60% imported, expected to continue), not an import-substitution opportunity being captured (Q1 FY23 call, p.5-6)"
+peers_provided: 8
+verified:
+  - {claim: "Industry-wide capex cycle underway during the downturn; NRAIL's second greenfield unit is consistent with sector behaviour, not a lone-expander bet", peers: ["JKPAPER", "KUANTUM"], anchor_count: 5}
+partially_verified:
+  - {claim: "Paperboard realization (Rs/kg) declining through FY24-25 as NRAIL discloses", peers: ["JKPAPER"]}
+  - {claim: "Peers explicitly link paperboard/paper demand growth to India GDP/consumption growth", peers: ["JKPAPER", "KUANTUM"]}
+contradicted:
+  - {claim: "Value-added coated board/FBB/SBS demand reflects import-substitution for peers", contradicting_peer: "JKPAPER", quote_anchor: "JKPAPER Q1 FY23 call (2-Aug-2022), p.5-6: coated paper 'traditionally 50%-60% has been imported... it will continue because the availability of coated paper in India from domestic manufacturing is limited'"}
+  - {claim: "Industry consolidation story: smaller mills exiting, capacity to larger organized players", contradicting_peer: "JKPAPER", quote_anchor: "JKPAPER Q4 FY24 call (21-May-2024), p.12: 'the smaller mill closing down may not be just because of the dumping. Their closure maybe because of their own inefficiencies, their own wrong management decisions... not the dumping'"}
+unverifiable:
+  - {claim: "Waste-paper (recovered fibre) input cost inflation is industry-wide, comparable to NRAIL's +46.2% YoY FY25", peers_checked: ["JKPAPER", "KUANTUM"]}
+peer_coverage_map:
+  - {peer: "JKPAPER", quarter: "Q4 FY22 (filed May_2022)", usage: "SUBSTANTIVE", contribution: "Pre-downturn packaging-board demand and pulp-cost baseline"}
+  - {peer: "JKPAPER", quarter: "Q1 FY23 (2-Aug-2022)", usage: "SUBSTANTIVE", contribution: "Coated-board import-dependency framing, India-growth demand link, confirms 100% virgin-fibre input"}
+  - {peer: "JKPAPER", quarter: "Q4 FY23 (19-May-2023)", usage: "SUBSTANTIVE", contribution: "Packaging-board price decline data, wood-cost inflation, corrugation fragmentation"}
+  - {peer: "JKPAPER", quarter: "Q4 FY24 (21-May-2024)", usage: "SUBSTANTIVE", contribution: "Direct contradiction of consolidation narrative; sharp FY24 packaging-board price decline; antidumping filing status"}
+  - {peer: "KUANTUM", quarter: "Q1 FY26 (11-Aug-2025)", usage: "SUBSTANTIVE", contribution: "Confirms non-paperboard segment status; DGTR anti-dumping probe initiation; wheat-straw/wood cost baseline"}
+  - {peer: "KUANTUM", quarter: "Q2/H1 FY26 (10-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Explicit 'not in paperboard segment' statement; GST inverted-duty risk; import-substitution language for specialty grades"}
+  - {peer: "KUANTUM", quarter: "Q3 FY26 (9-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Names multiple expanding peers, decisive evidence for industry-wide capex race"}
+  - {peer: "KUANTUM", quarter: "Q4 FY26/FY26 (29-May-2026)", usage: "SUBSTANTIVE", contribution: "Definitive repeated paperboard disclaimer; MIP-for-paperboard extension; West Asia trade-diversion risk; notebook segment exit"}
+industry_cross_read:
+  demand: "Both peer vintages describe steady-to-robust underlying volume demand; margin pressure across FY25-26 is import/pricing-driven, not demand-driven -- directionally consistent with NRAIL's own framing"
+  pricing_inputs: "Universal peer theme of realizations squeezed by cheap imports (Indonesia/China) while own-fibre costs (wood, wheat straw) simultaneously inflate 30-60% YoY on various peer calls -- same margin-squeeze shape as NRAIL's disclosed dynamic, different specific inputs"
+  capex_cycle: "Genuine industry-wide capacity race concurrent with the downturn, not a lone-expander situation -- JKPAPER, KUANTUM, and three more peers named by Kuantum (West Coast, Andhra Paper, Ruchira) are all expanding; concentrated in tissue and packaging board, less so in plain writing/printing"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "GST rate change creating inverted duty structure on notebook/paper segment (12%->18% on board, notebooks nil-rated), forcing input-tax-credit reversal and strategic segment exits"
+  - "Anti-dumping/anti-subsidy/MIP regulatory protection remains pending 1.5-2+ years after filing -- not fast or guaranteed"
+  - "West Asia geopolitical conflict creating freight disruption and risk of Chinese/Indonesian import surplus being diverted to India at predatory pricing"
+  - "Structural competition for wood/agro fibre from adjacent industries (MDF, plywood, pulp-board sector) inflating input costs independent of paper demand"
+  - "China's domestic 'anti-involution' overcapacity-reduction policy is an unconfirmed wildcard; peer management explicitly skeptical of near-term Chinese capacity reduction"
+net_narrative_effect: "complicates"

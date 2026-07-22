@@ -72,4 +72,16 @@ All three A3 gates PASS.
 - Loop 1 re-audit: **COMPLETE** — coverage clean, arithmetic reconciles (bridges sum to +18.7/+10.1), no surviving bear counters. GATE A5 PASS.
 
 ## FINAL STATUS: pipeline COMPLETE. Protocol verdict PROCEED WITH FLAGS. Position HOLD (2%). Thesis WEAKENED (unchanged), not BROKEN. Neither pre-committed thesis-break condition fired.
-## Count reconciliation: 14 notes / 0 concall turns (no transcript) / 69 slides + 5-page press release — all reviewed.
+## Count reconciliation (filing pass): 14 notes / 0 concall turns (no transcript) / 69 slides + 5-page press release — all reviewed.
+
+---
+## ADDENDUM — CONCALL (ROLE 5, FULL) added 2026-07-22
+Concall transcript supplied after the filing pass. Ran full Role 5 chain:
+- A1 concall: PASS — 105 lines verbatim, 100% coverage (text transcript, no PDF pages)
+- A2 concall: PASS — 64 turns / 22 questions / 76 mgmt numbers; CMD/promoter present (no MGMT_ABSENCE)
+- A3 concall: PASS — F6/F7/F17 FINDINGs; 15-row commitment register (C1-C15); 21-question silence scorecard 0 ANSWERED / 4 PARTIAL / 1 DUCKED / 16 NOT-ADDRESSED; 10-metric checklist 2 answered / 4 partial / 4 not-addressed
+- A4 Role 5: PASS — protocol verdict PROCEED WITH FLAGS; combined verdict UNCHANGED (HOLD 2%, thesis WEAKENED not BROKEN, SPLIT). Specificity ratio 0.47; archetype MEASURED & CREDIBLE (provisional) + Overpromiser-watch on Busy ladder.
+- A5 Role 5 audit: **COMPLETE on first pass** — coverage/arithmetic/adversarial all clean; 4 non-blocking cite-hygiene nits noted (no finding overturned).
+
+Concall net: CONFIRMS treasury-MTM PAT-quality flag (CFO l9) + volume/churn deterioration (net -1,850, silver churn ~7% unchanged, only ~4-5pts of enquiry -11% explained); ADDS selective-disclosure/credibility flag (0/21 financial-quality Qs answered); DE-RISKS lending flag (India Finance Ltd = LSP/partnership, capital-light, NOT own-balance-sheet); QUARANTINES advertising "Rs 78 Cr" as transcription artefact (~Rs 7-8 Cr). Volume question UNRESOLVED (mgmt refused net-adds timeline). Decision Status unchanged (HELD).
+Count reconciliation (concall pass): 64 turns / 22 questions / 76 mgmt numbers — all reviewed.

@@ -11,52 +11,56 @@ input_gaps:
   - "screening/ is peer (JKPAPER) data not NRAIL"
   - "presentation stale May-2022"
   - "prospectus absent (long-listed, not-expected)"
-  - "Q4/FY26 audited results file (d8e2ef04-109c-42d1-aec2-9e1fa90399eb.pdf) referenced in task brief not found in inputs/results/ after repeated attempts; FY26 full-year revenue delivery, capex completion, dividend payment confirmation, and Dahej Unit VI corroboration could not be verified"
   - "no earnings-call transcripts exist for NRAIL - Section 2E, live Q&A tone, and toughest-questions table not obtainable"
+  - "no FY25-26 Annual Report/MD&A exists yet - the ~Rs293.5cr FY26 capex program, the Rs150cr project's true completion status, and any FY27 guidance remain unexplained pending that document's future release"
 flags:
+  - "unexplained ~Rs293.5cr FY26 capex program / Rs227cr year-end CWIP with zero narrative explanation, funded by ~27% YoY increase in total borrowings"
   - "revenue-guidance base-year figure in Chairman's letter (Rs1617cr labelled FY23-24) inconsistent with Director's Report's own FY23-24 actual (Rs1293.38cr)"
-  - "Rs444.29 lakh Q2 FY26 asset-discard loss unexplained in Q3 FY26 filing"
-  - "recurring SEBI/exchange compliance fines across 3+ fiscal years"
-  - "zero MD&A/management commentary in Q3 FY26 quarterly filing despite specific AR guidance months earlier"
-quarters_analysed: ["AR FY24-25 (guidance baseline, MD&A + Chairman's letter)", "Q3 FY26 (9M ended Dec-31-2025, filed 11-Feb-2026)"]
+  - "Rs444.29 lakh Q2 FY26 asset-discard loss unexplained in both Q3 and Q4 FY26 filings"
+  - "recurring SEBI/exchange compliance fines across 3+ fiscal years (FY24-25 AR; FY25-26 pattern unconfirmed pending next AR)"
+  - "zero MD&A/management commentary in either Q3 or Q4 FY26 filing despite specific AR guidance and a large unexplained capex program"
+quarters_analysed: ["AR FY24-25 (guidance baseline, MD&A + Chairman's letter)", "Q3 FY26 (9M ended Dec-31-2025, filed 11-Feb-2026)", "Q4/FY26 full year (audited, ended Mar-31-2026, filed 12-May-2026)"]
 triggers:
-  - {priority: 1, name: "FY26 revenue to ~Rs2,200cr on 900 TPD plant ramp", type: "volume+price-mix", timeframe: "near (FY26)", conviction: "M", confirm_signal: "FY26 audited revenue print landing at/near Rs2,200cr", kill_signal: "FY26 print materially below ~Rs2,100-2,150cr run-rate implied by 9M actuals"}
-  - {priority: 2, name: "Operating-leverage-driven profit recovery", type: "both", timeframe: "near, already visible in 9M FY26", conviction: "H", confirm_signal: "continued PBT/NPAT growth in Q4 FY26 and FY27 guidance", kill_signal: "renewed realization decline or input-cost spike reversing 9M FY26 gains"}
-  - {priority: 3, name: "Value-added FBB mix shift (import substitution)", type: "price-mix", timeframe: "near-medium", conviction: "M", confirm_signal: "rising packaging-board realization/mix disclosed in FY26 AR", kill_signal: "FBB fails to gain adoption; no mix disclosure ever appears"}
-  - {priority: 4, name: "Rs150cr balancing capex (Pulp Mill + converting upgrade)", type: "volume", timeframe: "near, target already passed, status unconfirmed", conviction: "L", confirm_signal: "explicit completion confirmation in FY26 AR or exchange filing", kill_signal: "FY26 AR discloses delay or cost overrun without explanation"}
-  - {priority: 5, name: "Second greenfield unit / Dahej Unit VI (unconfirmed)", type: "inorganic/capex-cycle", timeframe: "long, unspecified", conviction: "L", confirm_signal: "formal board resolution or exchange announcement in NRAIL's own filings naming site, capacity, capex", kill_signal: "no such announcement appears in NRAIL's filed disclosures"}
+  - {priority: 1, name: "Operating-leverage-driven profit recovery", type: "both", timeframe: "near - already delivered in audited FY26", conviction: "H", confirm_signal: "continued PBT/NPAT growth in FY27 and any forward guidance in the FY26 AR (not yet issued)", kill_signal: "renewed realization decline or input-cost spike reversing FY26 gains"}
+  - {priority: 2, name: "FY26 revenue near-target delivery (97.5% of Rs2,200cr)", type: "volume+price-mix", timeframe: "delivered (near-miss)", conviction: "H", confirm_signal: "already resolved on audited FY26 numbers", kill_signal: "N/A - already resolved"}
+  - {priority: 3, name: "Unexplained ~Rs293.5cr FY26 capex/CWIP program (possible second-unit precursor)", type: "inorganic/capex-cycle", timeframe: "near-medium, undisclosed", conviction: "M", confirm_signal: "a named project, site, and capex figure appearing in the FY26 AR or an exchange filing", kill_signal: "capex turns out to be routine maintenance/replacement fully absorbed without a new-capacity narrative ever emerging"}
+  - {priority: 4, name: "Value-added FBB mix shift (import substitution)", type: "price-mix", timeframe: "near-medium", conviction: "M", confirm_signal: "rising packaging-board realization/mix disclosed in FY26 AR", kill_signal: "FBB fails to gain adoption; no mix disclosure ever appears"}
+  - {priority: 5, name: "Rs150cr balancing capex (Pulp Mill + converting upgrade)", type: "volume", timeframe: "target already passed, status still unconfirmed", conviction: "L", confirm_signal: "explicit completion confirmation in FY26 AR", kill_signal: "FY26 AR discloses delay or cost overrun without explanation"}
+  - {priority: 6, name: "Second greenfield unit / Dahej Unit VI (unconfirmed)", type: "inorganic/capex-cycle", timeframe: "long, unspecified", conviction: "L", confirm_signal: "formal board resolution or exchange announcement in NRAIL's own filings naming site, capacity, capex", kill_signal: "no such announcement appears in NRAIL's filed disclosures"}
 guidance:
   - {item: "FY26 revenue target", number: "Rs2,200 cr", timeframe: "FY2025-26", stated_in: "Chairman's letter, AR FY24-25 p.8"}
   - {item: "Balancing capex - Pulp Mill + converting upgrade", number: "Rs150 cr", timeframe: "targeted completion September 2025", stated_in: "Director's Report, AR FY24-25 p.44"}
   - {item: "Final dividend FY24-25", number: "Rs2/share (20%), Rs3.40cr total", timeframe: "AGM Sept 24 2025; payment by Oct 21 2025", stated_in: "Director's Report / Notice, AR FY24-25 p.23,45"}
   - {item: "Installed paperboard capacity", number: "~500,000 MT p.a.", timeframe: "starting FY2025-26", stated_in: "Chairman's letter, AR FY24-25 p.8"}
-  - {item: "Second greenfield paperboard unit", number: "not quantified in filed documents (operator-relayed unconfirmed lead only)", timeframe: "exploratory, no committed date", stated_in: "Chairman's letter, AR FY24-25 p.5,p.8; Dahej/Unit VI specifics NOT FOUND"}
+  - {item: "Second greenfield paperboard unit", number: "not quantified in filed documents (operator-relayed unconfirmed lead only)", timeframe: "exploratory, no committed date", stated_in: "Chairman's letter, AR FY24-25 p.5,p.8; Dahej/Unit VI specifics NOT FOUND even in the 12-May-2026 audited filing"}
 promise_delivery:
-  delivered: 1
+  delivered: 2
   partial: 1
   missed: 0
   rows:
-    - {promised_in: "Chairman's letter, AR FY24-25 (~Aug 2025)", promise: "FY26 revenue ~Rs2,200cr", outcome: "Partial - 9M FY26 revenue Rs1,540.05cr (70.0% of target); run-rate extrapolation implies 95.6%-97.5% of full-year guidance; actual FY26 print NOT FOUND", explanation: "N/A - no MD&A accompanies Q3 FY26 filing"}
-    - {promised_in: "Director's Report, AR FY24-25", promise: "Rs150cr balancing capex completed by September 2025", outcome: "NOT FOUND - no project-status disclosure in Q3 FY26 filing (~5 months post-target)", explanation: "NOT FOUND"}
-    - {promised_in: "Chairman's letter framing, AR FY24-25 (implicit)", promise: "Operating leverage from new plant drives profit recovery", outcome: "Delivered directionally - 9M FY26 PBT +85.2% YoY (Rs3,572.71 lakhs vs Rs1,929.40 lakhs); NPAT +20.6% YoY (tax-base effect); 9M FY26 EPS Rs17.33 already exceeds full FY25 EPS of Rs10.37", explanation: "N/A - positive delivery"}
-    - {promised_in: "Director's Report, AR FY24-25", promise: "Final dividend Rs2/share FY24-25 paid by Oct 21 2025", outcome: "NOT FOUND - no confirmation filing available (announcements/ empty)", explanation: "NOT FOUND"}
+    - {promised_in: "Chairman's letter, AR FY24-25 (~Aug 2025)", promise: "FY26 revenue ~Rs2,200cr", outcome: "Partial - narrow miss, confirmed on audited FY26 numbers: revenue from operations Rs2,145.45cr = 97.5% of target (Rs54.55cr / -2.5% short); YoY growth over FY25 audited actual was +29.3%", explanation: "N/A - no MD&A accompanies either Q3 or Q4 FY26 filing"}
+    - {promised_in: "Director's Report, AR FY24-25", promise: "Rs150cr balancing capex completed by September 2025", outcome: "NOT FOUND for explicit confirmation, but audited FY26 accounts show ~Rs293.5cr total capex spend and Rs227.16cr year-end CWIP - roughly double the guided figure - with zero explanatory note", explanation: "NOT FOUND"}
+    - {promised_in: "Chairman's letter framing, AR FY24-25 (implicit)", promise: "Operating leverage from new plant drives profit recovery", outcome: "Delivered strongly on audited full-year numbers - FY26 PBT +273.6% YoY (Rs5,962.24 lakhs vs Rs1,595.62 lakhs); FY26 NPAT +147.6% YoY (Rs4,369.91 lakhs vs Rs1,765.10 lakhs); FY26 EPS Rs25.68 vs Rs10.37; Q4 FY26 standalone NPAT Rs1,419.84 lakhs vs a Q4 FY25 net loss of Rs(681.94) lakhs", explanation: "N/A - positive delivery"}
+    - {promised_in: "Director's Report, AR FY24-25", promise: "Final dividend Rs2/share FY24-25 paid by Oct 21 2025", outcome: "Delivered - confirmed via audited FY26 Statement of Cash Flows showing Rs340.38 lakhs dividends paid during the year ended 31-Mar-2026, matching the AGM-approved FY24-25 dividend exactly", explanation: "N/A - positive delivery"}
 excuse_pattern: "honest"
 repeated_evasions: []
 credibility_grade: "B"
-credibility_basis: "9M FY26 revenue tracking ~95-98% of the FY26 guidance via run-rate extrapolation, with PBT +85.2% YoY and 9M EPS already exceeding all of FY25 - directionally strong, documented delivery on the profit-recovery narrative - though FY26 full-year confirmation, capex completion, and dividend payment are all NOT FOUND, capping this short of A."
+credibility_basis: "Audited FY26 full-year results confirm strong, documented delivery on the profit-recovery narrative (PBT +273.6% YoY, NPAT +147.6% YoY, EPS more than doubled) and exact delivery on the FY24-25 dividend (cash-flow-confirmed); FY26 revenue guidance was narrowly missed at 97.5% of the Rs2,200cr target rather than fully met. Capped at B by the no-concall mode ceiling (never A) despite the strength of the audited evidence; held back from a stronger B by the still-unexplained ~Rs293.5cr FY26 capex program and the Rs150cr project's unconfirmed completion status, both of which carry zero management narrative in the filed results."
 peer_questions:
-  - {question: "Is paperboard realization (Rs/kg) still declining or stabilizing/turning since NRAIL's disclosed Rs41-to-Rs37/kg move through FY24-25?", why: "validates whether NRAIL's cyclical trough is industry-wide and whether FY26 revenue guidance is plausible without a price recovery", check_peers: ["JKPAPER", "KUANTUM"]}
+  - {question: "Is paperboard realization (Rs/kg) still declining or stabilizing/turning since NRAIL's disclosed Rs41-to-Rs37/kg move through FY24-25?", why: "validates whether NRAIL's cyclical trough is industry-wide and whether the FY26 revenue near-miss reflects a sector-wide pricing headwind", check_peers: ["JKPAPER", "KUANTUM"]}
   - {question: "Is waste-paper (recovered fibre) input cost inflation industry-wide and by how much?", why: "NRAIL's waste-paper cost rose 46.2% YoY in FY25 even as realizations fell, a margin scissor; need to know if structural or NRAIL-specific", check_peers: ["JKPAPER", "KUANTUM"]}
   - {question: "Are peers seeing similar demand for value-added coated board/FBB/SBS as import-substitution?", why: "tests NRAIL's claim its new FBB launch targets an under-supplied, import-heavy segment", check_peers: ["JKPAPER"]}
   - {question: "Do peer managements corroborate an industry consolidation story (smaller mills exiting, capacity moving to larger organized players)?", why: "NRAIL frames this as a company-specific tailwind; independent corroboration would raise confidence materially", check_peers: ["JKPAPER", "KUANTUM"]}
-  - {question: "Is there a broader industry capex cycle underway during the downturn, and how do peers view a second large greenfield unit from any competitor?", why: "directly relevant to assessing NRAIL's unconfirmed second-unit exploration and the unconfirmed Dahej Unit VI lead", check_peers: ["JKPAPER", "KUANTUM"]}
+  - {question: "Is there a broader industry capex cycle underway during the downturn, and how do peers view a second large greenfield unit from any competitor?", why: "directly relevant to assessing NRAIL's unconfirmed second-unit exploration and the unconfirmed Dahej Unit VI lead, now circumstantially supported by an unexplained ~Rs293.5cr FY26 capex surge", check_peers: ["JKPAPER", "KUANTUM"]}
   - {question: "Do peers explicitly link paperboard demand growth to India GDP/consumption growth?", why: "tests the demand-elasticity assumption underlying NRAIL's medium-term optimism", check_peers: ["JKPAPER", "KUANTUM"]}
 red_flags:
+  - {flag: "unexplained ~Rs293.5cr FY26 capex program / Rs227cr year-end CWIP with zero narrative, funded by ~27% YoY rise in total borrowings", severity: "medium"}
+  - {flag: "rising leverage - debt/equity approx 0.97x FY26 vs 0.70x FY25 (AR-reported)", severity: "medium"}
   - {flag: "revenue-guidance base-year mislabeled (Rs1617cr called FY23-24, actually matches FY21-22)", severity: "low"}
-  - {flag: "unexplained Rs444.29 lakh Q2 FY26 asset-discard loss", severity: "low"}
+  - {flag: "unexplained Rs444.29 lakh Q2 FY26 asset-discard loss, still unexplained in full-year audited filing", severity: "low"}
   - {flag: "recurring minor SEBI/exchange compliance fines across 3+ fiscal years", severity: "low-medium"}
-  - {flag: "dense promoter-family employment/compensation, CMD 99.14:1 pay ratio despite 85.93% PAT decline", severity: "low"}
-  - {flag: "zero interim MD&A in Q3 FY26 filing despite specific AR guidance months earlier", severity: "low"}
+  - {flag: "dense promoter-family employment/compensation, CMD 99.14:1 pay ratio despite FY25 PAT decline", severity: "low"}
+  - {flag: "zero interim/annual-results MD&A in either Q3 or Q4 FY26 filing", severity: "low"}
 dropped_triggers: []
 timeline_slippages:
-  - "Rs150cr balancing capex (Pulp Mill capacity + converting-section upgrade) targeted for September 2025 completion - no confirmation found in Q3 FY26 filing (~5 months post-target); flagged as possible slippage, not confirmed"
+  - "Rs150cr balancing capex (Pulp Mill capacity + converting-section upgrade) targeted for September 2025 completion - still no completion confirmation even in the full audited FY26 accounts (filed 12-May-2026, 8 months post-target); audited capex actually spent (~Rs293.5cr) is roughly double this figure, making the Rs150cr project's individual status unresolvable from filed numbers alone"

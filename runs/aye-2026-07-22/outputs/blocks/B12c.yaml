@@ -1,0 +1,18 @@
+stage: B12c
+company: "Aye Finance Limited (AYE)"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: complete
+scope: "PHASE 1 - Gate 0 (B01) + Emerging Moat (B07) only; valuation (B10/B11) deferred to Phase 3"
+gate0: {rules_checked: 13, fails: []}
+emoat: {rules_checked: 11, fails: []}
+valuation: {pending: phase-3}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "07-emoat.md Section 6D / YAML combined_assessment", note: "combined_assessment=AVERAGE derived from the pre-downgrade core-implied AVERAGE rather than the injected AVOID classification, to avoid double-penalising the LIMITED-history downgrade; transparent and defensible judgment on a matrix cell the prompt underspecifies. No number changes."}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100
+framework_adherence: "CLEAN for Gate0+EM scope: all block math re-derives, all NBFC substitutions named and reasonable, history downgrade DATA-LENGTH-only (no transition/recovery conflation), no double-crediting, no unanchored/estimated fills, INDETERMINATE cash-conversion cap correctly invoked."

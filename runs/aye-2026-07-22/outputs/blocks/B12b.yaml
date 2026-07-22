@@ -1,0 +1,26 @@
+stage: B12b
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 14
+caught: 9
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Growth composition 39% repeat loans + 60% deepening existing branches = unaddressed over-lending / per-borrower-leverage risk in a micro-borrower book", anchor: "Q3 FY26 call, Sanjay Sharma, p.7"}
+  - {severity: "MINOR", item: "Flattering '77.5% secured by business assets' framing masking 37.5% unsecured-hypothecation (partial-cover) book", anchor: "Q3 FY26 call, Sanjay Sharma, p.3"}
+  - {severity: "MINOR", item: "Mortgage-ceiling internal inconsistency: ideal mix ~30% vs 'more than maybe a 50%-70% of our book'", anchor: "Q3 FY26 call, p.9 (Sovan) vs p.12 (Sanjay)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 4, confirmed: 3, wrong: 0}
+credibility_grade_concur: "concur"   # C is right — one material AUM miss vs genuine anchored delivery on Q4 PAT and asset-quality ratios
+redflag_coverage: 64                  # caught (9) / independent flags found (14), %; ~71% crediting the 2 partials at half weight
+findings:
+  - {severity: "MAJOR", location: "B05 red-flag list / 3D", claim: "Over-lending risk from repeat-loan (39%) + branch-deepening (60%) growth composition not surfaced", anchor: "transcript p.7"}
+  - {severity: "MINOR", location: "B05 red-flag list", claim: "Flattering collateral framing (77.5% 'secured' vs 37.5% unsecured hypothecation) not surfaced", anchor: "transcript p.3"}
+  - {severity: "MINOR", location: "B05 2C/3C", claim: "Bihar bucket-1 '~40% CE is a positive' reframe not flagged", anchor: "transcript p.10"}
+  - {severity: "MINOR", location: "B05 triggers/4A", claim: "Approval-rate tighten-then-loosen credit-quality tension framed only as growth upside", anchor: "transcript p.11, p.14"}
+  - {severity: "MINOR", location: "B05 red-flag list", claim: "Mortgage-ceiling inconsistency (30% vs 50-70%) not surfaced", anchor: "transcript p.9 vs p.12"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 64                   # caught (9) / independent flags found (14), %

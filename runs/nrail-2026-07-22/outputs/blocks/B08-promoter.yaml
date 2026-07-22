@@ -1,0 +1,71 @@
+stage: B08-promoter
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["shareholding/ input folder empty, no primary SEBI shareholding-pattern filing in run inputs", "WebFetch blocked (HTTP 403) on all BSE/exchange filing PDFs, screener.in, trendlyne.com, tijorifinance.com, marketsmojo.com, icra.in, and nrail.com pages attempted this run; findings from these sources are WebSearch-snippet-level only", "employee-review platform data (Glassdoor/AmbitionBox) not found", "proxy-advisory (IiAS/SES/InGovern) coverage not found", "Maruti Paper Corporation corporate-registry status not found", "MCA disqualified-directors registry not queried directly by name", "historical ZaubaCorp director list shows names not on current AR board with exit dates/reasons not found", "pledge_pct_latest not confirmed at primary source"]
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["Income Tax Department search-and-seizure at company premises and directors' residences, disclosed Sept 2, 2025, outcome undisclosed as of this run", "AR-confirmed pledge over promoters' entire equity shareholding at FY25 year-end (PNB, Note 18 p.135), evolving through a multi-lender pledge/non-disposal-undertaking structure that secondary sources put at ~99% total encumbrance through mid-2026 (not primary-source-confirmed)", "Three-way reconciliation failure in promoter-director remuneration disclosure including a direct Note-40(b)-vs-Corporate-Governance-Report contradiction on FY25 director commission", "All-promoter Finance & Strategy Committee (zero independent directors) overseeing ~Rs100Cr treasury investment book, met 20 times in FY25", "Countervailing: stable investment-grade ICRA rating, no promoter selling, new credentialed independent director added Sept 2025, FY25 meeting-cadence compliance fines remediated in FY26"]}
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers: ["pledge >40% — ambiguous/probable trigger on total-encumbrance basis (~99% per unconfirmed secondary sources against AR-confirmed 100%-of-holding pledge at FY25 year-end); not primary-source-confirmed this run, recorded not enforced"]
+adverse_findings:
+  - {finding: "Income Tax Department search-and-seizure at company premises, plant locations, and directors' residences; outcome undisclosed", evidence_tier: "VERIFIED (company's own exchange disclosure, corroborated by Reuters/TradingView and ScanX, though primary PDF text unreadable this run)", source: "BSE corporate filing referenced via WebSearch; Reuters via TradingView; ScanX", date: "2025-09-02"}
+  - {finding: "PNB term loan (Rs187.80Cr) secured by pledge over promoters' entire equity shareholding, unconverted to NDU at FY25 year-end", evidence_tier: "VERIFIED", source: "Annual Report Note 18, p.135 (via Stage 3 B03)", date: "FY25 (year-end 2025-03-31)"}
+  - {finding: "PNB pledge converted to non-disposal undertaking; stock +13.53% on announcement", evidence_tier: "MEDIA REPORTED", source: "hdfcsky.com via WebSearch", date: "2025-09-26"}
+  - {finding: "Separate Axis Bank pledge of 73.55% of total share capital for a Rs112 Crore loan, later transitioned to NDU via SBICAP Trustee multi-lender structure; corrected disclosure filed", evidence_tier: "MEDIA REPORTED", source: "scanx.trade, whalesbook.com via WebSearch", date: "approx. Nov 2025 pledge; Dec 16 2025 NDU transition; Mar 24 2026 correction filed"}
+  - {finding: "Total promoter share encumbrance (pledge+NDU) reported at ~99.2-99.4% of promoter holding, persisting through mid-2026; not confirmed against primary SAST filing this run", evidence_tier: "MEDIA REPORTED / secondary aggregator, unconfirmed", source: "marketsmojo.com automated stock notes via WebSearch (multiple articles)", date: "2025-09 through 2026-07 (recurring)"}
+  - {finding: "Three-way promoter-director remuneration reconciliation failure, including Note 40(b) 'Nil' commission vs Corporate Governance Report Rs660L aggregate commission for FY25", evidence_tier: "VERIFIED", source: "Annual Report Annexure 4 p.58, Note 40(b)/(d) pp.147-148, Corporate Governance Report p.73 (via Stage 3 B03)", date: "FY25"}
+  - {finding: "Spousal 'place of profit' RPT roles (Natasha Agarwal, Anuvaa Agarwal) disclosed as not at arm's length", evidence_tier: "VERIFIED", source: "AOC-2, Annual Report p.60 (via Stage 3 B03)", date: "FY25"}
+  - {finding: "Finance & Strategy Committee overseeing ~Rs100Cr treasury book has zero independent directors, met 20 times in FY25", evidence_tier: "VERIFIED", source: "Annual Report p.77 (via Stage 3 B03)", date: "FY25"}
+  - {finding: "Two CFO exits within an 18-month window (2021, Nov 2022) before stabilizing under P K Mundra since May 2023", evidence_tier: "MEDIA REPORTED", source: "TradingView, MarketScreener, IndiaInfoline via WebSearch", date: "2021-07 and 2022-11-30"}
+  - {finding: "Two BSE/NSE compliance fines for FY25 Board/Audit Committee meeting-cadence gaps", evidence_tier: "VERIFIED", source: "Annual Report Secretarial Audit Report, Annexure 2, p.54 (via Stage 3 B03)", date: "FY25"}
+transition_evidence:
+  - {item: "New independent director Mahendra Kumar Gupta (CA, ~30 yrs experience), 5-year term to 2030, approved 99.99% shareholder votes", source: "TipRanks/company disclosure via WebSearch", date: "2025-09-24"}
+  - {item: "FY26 Annual Secretarial Compliance Report confirms resolution of FY25 Board/Audit Committee meeting-cadence non-compliances", source: "scanx.trade via WebSearch (Parikh & Associates report)", date: "FY26"}
+  - {item: "PNB pledge converted to non-disposal undertaking (less severe enforcement mechanism than outright pledge)", source: "hdfcsky.com via WebSearch", date: "2025-09-26"}
+  - {item: "No promoter selling; net buying from 73.96% to 74.30% via off-market acquisition", source: "Annual Report (FY25 baseline) + scanx.trade via WebSearch", date: "2025-03-31 through 2026-02-16"}
+  - {item: "ICRA reaffirmed [ICRA]A-(Stable)/A2+ with adequate liquidity commentary despite encumbrance and IT search", source: "icra.in rating rationale via WebSearch", date: "2025 (reaffirmation, exact date not confirmed)"}
+pledge_pct_latest: 0
+pledge_trend: "NOT CONFIRMED AT PRIMARY SOURCE. AR-verified: pledge over 100% of promoter equity for the PNB facility, unconverted as of FY25 year-end (2025-03-31). Web/secondary-aggregator evidence (unconfirmed against a primary SAST filing) indicates total encumbrance (pledge + non-disposal undertaking combined, across PNB/Axis/SBI-linked structures) has remained at approximately 99% of promoter holding from around September 2025 through mid-2026, i.e. rising in mechanism-complexity but not falling in aggregate quantum, even as the PNB tranche specifically converted from pledge to the less-severe NDU form in September 2025."
+searches_performed:
+  - "N R Agarwal Industries SEBI order adjudication"
+  - "N R Agarwal Industries promoter shares pledge encumbrance"
+  - "N R Agarwal Industries NCLT OR SFIO OR PMLA OR ED raid"
+  - "N R Agarwal Industries R N Agarwal CMD profile background"
+  - "N R Agarwal Industries pledge non-disposal undertaking Punjab National Bank September 2025"
+  - "N R Agarwal Industries promoter stake 74.30% off-market acquisition"
+  - "N R Agarwal Industries BSE NSE shareholding pattern encumbered shares 2025 2026"
+  - "N R Agarwal Industries promoter pledge percentage July 2026"
+  - "N R Agarwal Industries encumbrance 99.24% promoter shares"
+  - "N R Agarwal Industries CFO resign OR appointed OR independent director resign 2024 2025"
+  - "N R Agarwal Industries Glassdoor OR AmbitionBox employee reviews rating"
+  - "N R Agarwal Industries IiAS OR SES OR InGovern proxy advisory AGM"
+  - "N R Agarwal Industries auditor GMJ resignation OR qualification"
+  - "N R Agarwal Industries AmbitionBox reviews rating"
+  - "N R Agarwal Industries promoter group entities Maruti Paper Corporation Vapi"
+  - "N R Agarwal Industries controversy news scandal fraud"
+  - "Rohan Agarwal N R Agarwal Industries CEO interview media"
+  - "zaubacorp N R Agarwal Industries Limited CIN L22210MH1993PLC133365 directors"
+  - "N R International Agarwal paper company related"
+  - "N R Agarwal Industries ICRA credit rating outlook 2025 liquidity"
+  - "Basant Kumar Bansal N R Agarwal Industries CFO resignation reason"
+  - "N R Agarwal Industries director disqualified MCA compounding penalty"
+  - "N R Agarwal Industries CSR philanthropy political donation electoral bond"
+  - "N R Agarwal Industries mutual fund FII institutional investor stake buy 2025 2026"
+  - "Mahendra Kumar Gupta independent director N R Agarwal Industries appointment"
+  - "Income Tax Department search N R Agarwal Industries"
+  - "N R Agarwal Industries income tax search September 2025 exact date premises directors residences"
+  - "N R Agarwal Industries income tax raid outcome follow-up undisclosed income tax demand"
+  - "N R Agarwal Industries income tax search continues status report exchanges regulation 30"
+  - "N R Agarwal Industries resolves prior meeting gaps in FY26"
+  - "N R Agarwal Industries founder history Nagin Agarwal father son succession Rajendra"
+  - "Reena Agarwal Raunak Agarwal Rohan Agarwal N R Agarwal Industries wife sons family relationship"
+  - "N R Agarwal Industries whistleblower complaint news"
+  - "N R Agarwal Industries paper industry peer reputation JK Paper Century Pulp comparison"
+searches_skipped:
+  - "Direct MCA (mca.gov.in) disqualified-directors portal query by DIN — not queried directly, only via general web search"
+  - "Direct primary-document read of BSE/NSE SAST/encumbrance filings — attempted via WebFetch on multiple URLs, all returned HTTP 403 and were not readable this run"
+  - "Direct primary-document read of icra.in rating rationale PDF — WebFetch returned HTTP 403"
+  - "Direct read of screener.in, trendlyne.com, tijorifinance.com shareholding-pattern pages — WebFetch returned HTTP 403 on all three"
+verdict_basis: "Unresolved Income Tax Department search-and-seizure at company premises and directors' residences (Sept 2025, outcome undisclosed) combined with an AR-confirmed pledge over promoters' entire equity shareholding at FY25 year-end that secondary sources describe as evolving into ~99% total multi-lender encumbrance through mid-2026 (not primary-source-confirmed), against a countervailing record of no SEBI/criminal action, a stable investment-grade credit rating, no promoter selling, and a real dated governance-remediation thread."

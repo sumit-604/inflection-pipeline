@@ -13,7 +13,7 @@ Framed against LIVE Notion Decision Status: **WATCHLIST — DO NOT INITIATE at C
 
 Three A2 ledgers were consumed. Every row was read at its cited line before analysis.
 
-- **RESULTS ledger** contains **7 numbered notes**, 32 P&L value rows (11 ZERO_STANDING), 26 segment value rows (4 ZERO_STANDING), 15 auditor-report paragraphs, 15 Note-4 entities, 6 signature blocks, 2 agenda items. **All reviewed.**
+- **RESULTS ledger** contains **7 numbered notes**, 32 P&L value rows (**7 ZERO_STANDING**, ledger L131), 26 segment value rows (**4 ZERO_STANDING**, ledger L170), **combined 11 ZERO_STANDING** across P&L + segment (ledger L176), 15 auditor-report paragraphs, 15 Note-4 entities, 6 signature blocks, 2 agenda items. **All reviewed.**
 - **PRESS-RELEASE ledger** (presentation-class) contains **0 numbered notes**, 13 tables, 43 discrete business figures, 7 highlight bullets, 1 consolidated results table (7 rows, 4 ZERO_STANDING), 5 named entities. **All reviewed.**
 - **PRESENTATION ledger** contains **22 slides**, 313 numeric tokens, 18 income-statement line items (1 ZERO_STANDING), 15 footnotes. **All reviewed.**
 - **Concall turns reviewed: 0** — no transcript supplied. The live Q&A silence-audit (Role 5 Step 5B / Step 4) is therefore **DEFERRED** to when the transcript lands. Unresolved silences are routed into the Questions-for-Management table below, per instruction.
@@ -163,7 +163,7 @@ Deck cross-check: consolidated Reported EBITDA 445.27, margin 23.25%, PAT 245.64
 |---|---|---|---|---|
 | Revenue from Operations | 871.02 | 1,914.98 | **+119.85%** | Very strong — but off a low base |
 | Operating EBITDA | 28.40 | 414.12 | +1,358% | Off near-breakeven base (n/m %) |
-| Op EBITDA Margin (pp) | 3.26% | 21.63% | **+1,837 bps** | Genuine mix-led expansion |
+| Op EBITDA Margin (pp) | 3.26% | 21.63% | **+1,837 bps** | Genuine mix-led expansion — but part is inventory-timing (see diagnostic 2) |
 | Reported EBITDA Margin (pp) | 4.93% | 23.25% | +1,832 bps | Matches deck |
 | Depreciation | 32.20 | 51.25 | +59.16% | Scaling faster than… no, below revenue |
 | Finance Costs | 55.62 | 62.48 | +12.33% | Well below revenue growth — good |
@@ -185,7 +185,7 @@ Deck cross-check: consolidated Reported EBITDA 445.27, margin 23.25%, PAT 245.64
 
 **Six mandatory diagnostics:**
 1. **Did revenue grow YoY?** Yes — consol +119.85% (871.02→1,914.98), standalone +103.7%. Against management's raised FY27 aspiration of 40% (deck line 162), the Q1 run-rate (annualised ~Rs7,660 cr) sits ~10% ABOVE the 40% implied ~Rs6,929 cr — a guidance-vs-run-rate tension (A3-F16a; see Step 6/8.5).
-2. **Did operating EBITDA margin expand?** Yes — **consol Op EBITDA margin 21.63% (Q1FY27) vs 3.26% (Q1FY26) = +1,837 bps**. This is YoY, not merely sequential; but the base quarter was near-breakeven, so the pp gain overstates the steady-state improvement. Vs Q4FY26 (17.25% operating), the sequential gain is +438 bps — the honest read.
+2. **Did operating EBITDA margin expand?** Yes — **consol Op EBITDA margin 21.63% (Q1FY27) vs 3.26% (Q1FY26) = +1,837 bps**. This is YoY, not merely sequential; but the base quarter was near-breakeven, so the pp gain overstates the steady-state improvement. Vs Q4FY26 (17.25% operating), the sequential gain is +438 bps — the honest read. **EBITDA-margin-QUALITY caveat (inventory-timing):** consolidated change-in-inventories was **−168.54 cr in Q1FY27 vs −32.09 cr in Q1FY26 (line 345), i.e. ~Rs136 cr MORE cost deferred into unsold inventory YoY.** Change-in-inventories is a contra-expense, so this cost deferral on an unshipped OFC/export ramp mechanically **LIFTS reported EBITDA**: part of the +1,837 bps YoY op-EBITDA-margin gain is inventory-timing, NOT yet earned margin. It is durable only on ship + cash conversion (ties to the INDETERMINATE cash conversion, Step 5, and the Telecom asset build, Step 5 WC proxy). This compounds the near-breakeven-base caveat above.
 3. **Did core operating PBT (ex-OI) grow YoY?** Yes and decisively — consol swung (59.23)→300.37. **The headline growth IS operationally real** (not treasury-driven): Other Income is only 9.40% of PBT (line 339 vs 365) and rose only Rs16.62 cr YoY against a Rs376.22 cr PBT swing.
 4. **What drove the gap between core operating PBT and reported PAT?** Core operating PBT swing +359.60; Other Income +16.62; JCE share −0.21; = Reported PBT swing +376.22; tax swung from a Rs15.40 cr credit to an Rs85.88 cr charge (−101.28 drag); = PAT swing +274.94. Each delta quantified in Step 4.
 5. **Are D&A and finance costs scaling faster than revenue?** No. Consol D&A +59.16% and finance costs +12.33% both trail revenue +119.85%. No capex-absorption deficit visible at the P&L level this quarter (but see Step 5 segment-asset build).
@@ -202,7 +202,7 @@ Deck cross-check: consolidated Reported EBITDA 445.27, margin 23.25%, PAT 245.64
 
 Q2FY26/Q3FY26 standalone/consolidated quarterly columns are not in this filing (ND) — only Q1FY26, Q4FY26, Q1FY27 and FY26 are disclosed. Trajectory read on the three available points:
 - **Run-rate trajectory: STEPPING UP** — revenue 871 → 1,824 → 1,915; Op EBITDA margin 3.26% → 17.25% → 21.63%; core PBT (59.23) → 205.67 → 300.37.
-- **One-off distortion:** Q4FY26 is a **balancing figure** (Note 6, line 494) — a derived number, so the Q4→Q1 QoQ (+4.98% revenue, +33.17% PAT) rests on a non-independently-reported base. Q1FY27 carries a large inventory build (change in inventories −168.54 cr, line 345) consistent with an export/OFC ramp not yet fully shipped.
+- **One-off distortion:** Q4FY26 is a **balancing figure** (Note 6, line 494) — a derived number, so the Q4→Q1 QoQ (+4.98% revenue, +33.17% PAT) rests on a non-independently-reported base. Q1FY27 carries a large inventory build (change in inventories −168.54 cr, line 345) consistent with an export/OFC ramp not yet fully shipped — which also lifts reported EBITDA via cost deferral (Step 2 diagnostic 2).
 - **QoQ vs H1 run-rate:** Q1FY27 revenue (1,914.98) exceeds Q4FY26 (1,824.12) by only 4.98% — sequential growth has flattened sharply after the Q1FY26→Q4FY26 jump. **Implied Q2FY27 base to hold trajectory:** revenue must exceed ~Rs1,915 cr; the raised 40% FY27 aspiration (~Rs6,929 cr) actually implies the remaining three quarters average ~Rs1,671 cr — i.e. **sequential flat-to-decline** (A3-F16a). This is the single most important tension in the quarter.
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION (PAT bridge, consolidated, YoY)
@@ -211,7 +211,7 @@ Base Q1FY26 was a loss, so the bridge is presented in Rs Cr swings (percentages 
 
 | Component | YoY Change (Rs Cr) | Recurring? |
 |---|---|---|
-| Operating EBITDA change (28.40 → 414.12) | **+385.72** | Recurring (core) |
+| Operating EBITDA change (28.40 → 414.12) | **+385.72** | Recurring (core) — but part inventory-timing (see below) |
 | Depreciation change (32.20 → 51.25) | (19.05) | Recurring (post-capex) |
 | Finance cost change (55.62 → 62.48) | (6.86) | Recurring (post-debt) |
 | JCE share change (0.19 → (0.02)) | (0.21) | Recurring |
@@ -223,7 +223,8 @@ Base Q1FY26 was a loss, so the bridge is presented in Rs Cr swings (percentages 
 | memo: NCI change (2.95 → 17.04) | (14.09) | Recurring (subsidiary minority) |
 
 **Mandatory answers:**
-- **Recurring vs non-recurring:** ~95.5% of the PAT swing is recurring core operations (core operating PBT +359.60 of +376.22 pre-tax); Other Income contributes only +16.62 (4.4%). **This is a clean, operationally-driven result** — the rare case where headline growth is real. The caveat is the tax normalisation (below) and the subsidiary concentration (A3-01).
+- **Recurring vs non-recurring:** ~95.5% of the PAT swing is recurring core operations (core operating PBT +359.60 of +376.22 pre-tax); Other Income contributes only +16.62 (4.4%). **This is a clean, operationally-driven result** — the rare case where headline growth is real. The caveats are the tax normalisation (below), the subsidiary concentration (A3-01), and the inventory-timing lift to EBITDA (below).
+- **EBITDA-margin quality (inventory-timing):** the +385.72 cr Operating EBITDA swing is partly flattered by cost deferral — consolidated change-in-inventories moved to **−168.54 cr (Q1FY27) from −32.09 cr (Q1FY26), ~Rs136 cr more cost capitalised into unsold inventory YoY (line 345).** Because change-in-inventories is a contra-expense, that portion of the margin gain is a **timing benefit on an unshipped OFC/export ramp**; it reverses into COGS on shipment and is durable only if the inventory ships and converts to cash. This ties directly to the INDETERMINATE cash conversion (Step 5) and the Telecom segment asset build (+Rs1,065 cr QoQ). A portion of the +1,837 bps YoY op-EBITDA-margin gain is therefore not yet earned margin.
 - **If Other Income reverts to prior-year level:** run-rate PBT falls only ~Rs16.62 cr — immaterial. Not a treasury-flattered quarter.
 - **D&A/finance at steady state?** D&A is ramping (+59% YoY) with the capacity build; finance costs are near-flat despite the ramp because idle QIP/warrant cash offsets. As the Rs215 cr / Rs580 cr / Rs275 cr capex programmes draw debt (A3-09), finance costs and D&A will both step up — a forward margin headwind.
 - **Tax adjustments:** consolidated ETR normalised to **25.91%** (near statutory 25.17%) from 19.08% in Q4FY26; the standalone deferred-tax shield compressed from ~1,089 bps to ~182 bps of PBT (A3-05 / F8-01). **Forward EPS carries a cash-tax headwind** — no residual shield remains to flatter future PAT.
@@ -257,7 +258,7 @@ Base Q1FY26 was a loss, so the bridge is presented in Rs Cr swings (percentages 
 
 **Mandatory answers:**
 - **CFO/PAT vs Pillar 2 assumption:** **INDETERMINATE** — no CFO at Q1. Per house rule, this caps the review verdict at PROCEED WITH CAVEATS at best; combined with the governance/receivables flags it resolves to PROCEED WITH FLAGS (Combined Verdict). The missing evidence is named: **Q1 CFO statement (not mandated), receivables/DSO/unbilled, net debt, pledge.**
-- **WC drag structural or growth-induced?** Cannot apply the "stopped growing tomorrow" test without receivables data. The Telecom segment asset build (+Rs1,065 cr QoQ) is consistent with growth-induced inventory/receivable absorption for the OFC/export ramp (inventory change −168.54 supports this), but the Turnkey segment shows **Rs3,565.77 cr of assets locked against flat-to-down revenue and a Rs87.53 cr loss** — that portion looks structural (BharatNet EPC working capital parked without revenue). Receivables silence prevents a clean split (tripwire #4-relevant).
+- **WC drag structural or growth-induced?** Cannot apply the "stopped growing tomorrow" test without receivables data. The Telecom segment asset build (+Rs1,065 cr QoQ) is consistent with growth-induced inventory/receivable absorption for the OFC/export ramp (inventory change −168.54 supports this, and is the same cost deferral that lifts EBITDA in Step 2/4), but the Turnkey segment shows **Rs3,565.77 cr of assets locked against flat-to-down revenue and a Rs87.53 cr loss** — that portion looks structural (BharatNet EPC working capital parked without revenue). Receivables silence prevents a clean split (tripwire #4-relevant).
 - **Did CWIP capitalise as expected?** ND — no PPE/CWIP split disclosed.
 - **Did net debt move within range?** ND in filing. Notion anchor Rs1,500 cr (FY26). The Rs215 cr capex is financed "internal accruals and/or debt" (line 92) — a forward net-debt watch.
 
@@ -271,13 +272,13 @@ Notion supplies FY-level anchors and FY29 EPS Base Rs6.19 (~45% PAT CAGR) but **
 | Metric | Bear | Base | Bull | Actual (annualised where noted) | Lands In |
 |---|---|---|---|---|---|
 | Revenue FY27 (implied) | ND | ~Rs6,929 cr (40% aspiration) | ND | Q1 x4 ≈ Rs7,660 cr; Q1 consol 1,914.98 | **Above the 40% aspiration on run-rate** (caveat: H2 lumpiness, A3-F16a) |
-| EBITDA Margin | ND | ~16.7% FY26 → 22-25% FY29 (deck 536) | ND | Op 21.63% / Reported 23.25% Q1 | Already inside the FY29 target band this quarter |
+| EBITDA Margin | ND | ~16.7% FY26 → 22-25% FY29 (deck 536) | ND | Op 21.63% / Reported 23.25% Q1 | Already inside the FY29 target band this quarter (part inventory-timing) |
 | PAT FY27 | ND | ND | ND | Q1 245.64; FY26 was 329.44 | Q1 alone = 74.6% of FY26 PAT |
 | EPS | ND | FY29 Base 6.19 | ND | Q1 1.49 (not annualised, Note 5) | Tracking well ahead early |
 | Net Debt | Rs1,500 cr (FY26 ref) | ND | ND | ND (not in filing) | UNKNOWN |
 | ROCE | ND | ND | ND | ND (no capital-employed at Q1) | UNKNOWN |
 
-**Read:** on the disclosed P&L, Q1FY27 lands **AT or ABOVE base** on revenue, margin and PAT run-rate. This does NOT trigger the probability re-weighting rule (that fires on BELOW-BEAR, not above-base). The tension is forward: the company's OWN raised guidance implies H2 sequential decline (Step 3), and cash/receivables are unverified (Step 5).
+**Read:** on the disclosed P&L, Q1FY27 lands **AT or ABOVE base** on revenue, margin and PAT run-rate. This does NOT trigger the probability re-weighting rule (that fires on BELOW-BEAR, not above-base). The tension is forward: the company's OWN raised guidance implies H2 sequential decline (Step 3), part of the margin beat is inventory-timing (Step 2/4), and cash/receivables are unverified (Step 5).
 
 ### 6B. Watchlist item status (Notion 9-item checklist) — GREEN / RED / AMBER / SILENT with cite
 
@@ -313,21 +314,21 @@ Notion supplies FY-level anchors and FY29 EPS Base Rs6.19 (~45% PAT CAGR) but **
 | $1.1B hyperscaler OFC (FY27-31) | High (thesis linchpin) | Exports +407% YoY to Rs1,063.30 cr (PR 81); export share 55.53% | Below Rs1,200 floor; not broken out (F16-01); OFC "Products" bucket only Rs4,227 cr (deck 9) | **ON TRACK but UNVERIFIED / WEAKENED disclosure** |
 | HASPL defence-aerospace consolidation (Rs1,930 cr OB) | Medium | Defence OB ~Rs2,300 cr framed (deck 15); Ammunition Complex initiated (PR 132) | ~Rs2,000 cr contingent on unclosed acquisition (F7-02); own backlog only ~Rs300 cr | **DELAYED / CONTINGENT** |
 | Capacity to 42.36 mn fkm by Dec-2026 | High | OF 28→34, OFC 34→43 "on track" (PR 122-123); deck 33.9/42.3 (slide 14) | **Completion date omitted on deck** (F16-03) | **ON TRACK (date needs reaffirming)** |
-| Margin transition (product mix) | Medium-High | Product mix 66%→85% (PR 83); Op EBITDA margin 21.63% | Backlog ~65% low-margin Networks (F16-05) | **FIRING (Q1) — durability unproven** |
+| Margin transition (product mix) | Medium-High | Product mix 66%→85% (PR 83); Op EBITDA margin 21.63% | Backlog ~65% low-margin Networks (F16-05); part of margin gain is inventory-timing (Step 2/4) | **FIRING (Q1) — durability unproven** |
 
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 
 | Pillar / Input | Original (Notion) | Current Reading (Q1FY27) | Action |
 |---|---|---|---|
 | ROCE Base (0.5×ROCE+7.5, floor 9x, cap 24x) | per last workup | **ROCE not computable at Q1** (no capital-employed / balance sheet); PAT run-rate strong but D&A/finance ramping | **HOLD — defer to FTTCP; no ad-hoc revision.** Re-run at Q2 with balance sheet |
-| Cash Multiplier | per last workup | **INDETERMINATE band** — no CFO at Q1 | **HOLD; cannot upgrade.** Resolve at Q2 half-yearly CFO |
+| Cash Multiplier | per last workup | **INDETERMINATE band** — no CFO at Q1; EBITDA partly inventory-timing (Step 2/4) reinforces the hold | **HOLD; cannot upgrade.** Resolve at Q2 half-yearly CFO |
 | Growth Visibility Premium | +x | Order book Rs26,665 cr (+~12% QoQ, deck 9); exports ramping | **HOLD** — supportive but hyperscaler unbroken-out |
 | Strategic Premium | +x | Defence acquisition optionality (contingent, F7-02); single-credit rule: ROCE recovery credited via **operations (Pillar 1)**, NOT double-counted here | **HOLD** |
 | UA Multiplier | NOT ELIGIBLE (FII+DII 18.54%) | Free-float 71.69% but institutional holding not re-disclosed by category to re-test the 3 qualifiers | **HOLD — remains ineligible** |
 | Sector Cap | 25x (user override) | No sector reclassification | **HOLD** |
 | Hurdle Ratio | HR = (1+EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Current PE ~96x (Notion) vs dest 25x → the (25/96)=0.26 multiple compression demands very high EPS CAGR; Q1 EPS Rs1.49 supports high near-term growth but H2 guidance implies deceleration | **CONDITIONAL — unchanged; entry only at Rs60-75 makes HR pass** |
 
-**No pillar changed on evidence this quarter** (ROCE and cash both deferred for lack of Q1 balance sheet). **Destination PE unchanged; Y3 Base FV Rs148-155 and entry zone Rs60-75 unchanged.** No fair-value recompute triggered.
+**No pillar changed on evidence this quarter** (ROCE and cash both deferred for lack of Q1 balance sheet; the inventory-timing lift to EBITDA is a further reason NOT to upgrade the cash multiplier). **Destination PE unchanged; Y3 Base FV Rs148-155 and entry zone Rs60-75 unchanged.** No fair-value recompute triggered.
 
 ## STEP 8 — POSITION DECISION (Branch 8A-W: WATCHLIST / non-held)
 
@@ -336,12 +337,12 @@ Decision Status verified = **WATCHLIST / DO NOT INITIATE at CMP ~Rs197** (Step 0
 - **Any tripwire FIRED?** No (Step 6C). → not reclassified to AVOID.
 - **Actual below bear on 2+ metrics?** No — Q1 lands AT/ABOVE base on revenue, margin and PAT (Step 6A). → no downward projection revision forced; no gate push-out for underperformance.
 - **Actual between bear and base?** No.
-- **Actual AT or ABOVE base?** Yes on the P&L. But **no pre-committed BUY gate threshold was met** — the BUY gate is price (entry Rs60-75) and CMP ~Rs197 is ~2.6-3.3x above it; and the quality gates (cash conversion INDETERMINATE, receivables/pledge SILENT, hyperscaler unverified) are not cleared. Above-base earnings at a ~96x PE do not convert a DO-NOT-INITIATE into a BUY.
+- **Actual AT or ABOVE base?** Yes on the P&L. But **no pre-committed BUY gate threshold was met** — the BUY gate is price (entry Rs60-75) and CMP ~Rs197 is ~2.6-3.3x above it; and the quality gates (cash conversion INDETERMINATE, receivables/pledge SILENT, hyperscaler unverified, part of the margin beat inventory-timing) are not cleared. Above-base earnings at a ~96x PE do not convert a DO-NOT-INITIATE into a BUY.
 
 **8A-W output:**
 - **Decision Status: UNCHANGED — WATCHLIST / DO NOT INITIATE at CMP ~Rs197.**
 - **Entry zone: UNCHANGED Rs60-75; MoS Rs60; stretch Rs99.** No pillar moved, so no recompute.
-- **Master decision gate: pushed to the Q1FY27 CONCALL + H1 FY27.** The concall transcript (live Q&A, scheduled 22-Jul-2026 16:30) is the near gate for the eight unresolved silences (receivables, BharatNet split, hyperscaler pace, pledge, Nivetti, fuze, acquisition terms, guidance basis). The H1 FY27 half-yearly result is the gate for CFO/receivables/net-debt verification (resolves the INDETERMINATE cash conversion).
+- **Master decision gate: pushed to the Q1FY27 CONCALL + H1 FY27.** The concall transcript (live Q&A, scheduled 22-Jul-2026 16:30) is the near gate for the eight unresolved silences (receivables, BharatNet split, hyperscaler pace, pledge, Nivetti, fuze, acquisition terms, guidance basis). The H1 FY27 half-yearly result is the gate for CFO/receivables/net-debt verification (resolves the INDETERMINATE cash conversion and tests whether the deferred inventory ships and converts to cash).
 
 ### 8B. Add-back / trim trigger refinement
 - Original entry trigger (Notion): Rs60-75. **Revised: unchanged.**
@@ -361,10 +362,10 @@ Channel: the concall is TODAY (22-Jul-2026 16:30). **Prioritise Q1-Q5 for the li
 | 3 | Consol PAT Rs245.64 cr exceeds standalone Rs179.21 cr by Rs66.43 cr (**37.1% of standalone, up from 3.9% in Q4FY26**); NCI rose 5.95→17.04. Which subsidiary carries this, what is its EBITDA margin (implied ~35.5% vs 20.9% standalone), and is it export-timing / transfer-pricing driven? | Earnings quality / location of profit | Named operating sub, arm's-length | Opaque overseas WOS, timing-driven | A3-01, A3-F2 |
 | 4 | Auditor Other-Matter paras 7-8 show **Rs1,262.06 cr (65.9%) of consol revenue and 46.9% of consol PAT** reviewed by only one joint auditor or foreign auditors, not both signing Indian auditors. Confirm the 3 unnamed HFCL B.V. step-down subs are fully captured in the Rs712.85 cr para-8 figure. | Audit reliance / consolidation integrity | Full reconciliation offered | Deflection | A3-03, A3-11 |
 | 5 | Telecom segment assets rose Rs1,065 cr QoQ while **Turnkey (BharatNet EPC) revenue is flat-down YoY (293.11→280.32) against Rs3,565.77 cr locked assets and a Rs87.53 cr segment loss.** Quantify Q1 BharatNet III revenue, PBT margin and receivables; when does it ramp into segment revenue? | Working capital / BharatNet monitor #6/#7 | Ramp dated, margin ≥7% | EPC buried, receivables silent | A3-08, A3-F12, F16-05 |
-| 6 | The filing, release and deck disclose **no receivables/DSO, unbilled revenue or working-capital data.** Provide Q1 DSO, TR/TTM revenue and >6-month aging %. | Tripwire #4 (receivables silence) | Full aging disclosed, DSO ≤110d | Continued silence (2nd quarter) | F16-05 (+ tripwire #4) |
+| 6 | The filing, release and deck disclose **no receivables/DSO, unbilled revenue or working-capital data.** Provide Q1 DSO, TR/TTM revenue and >6-month aging %. Consol change-in-inventories was −168.54 cr (vs −32.09 cr Q1FY26): how much of this ~Rs136 cr YoY cost deferral is OFC/export finished goods awaiting shipment, and when does it ship? | Tripwire #4 (receivables silence) + EBITDA-margin quality | Full aging disclosed, DSO ≤110d; inventory ships near-term | Continued silence (2nd quarter); inventory-timing margin | F16-05 (+ tripwire #4), A3-08 |
 | 7 | Standalone deferred-tax shield compressed from ~1,089 bps to ~182 bps of PBT and consol ETR normalised to 25.9%. **Is 25-26% the steady-state ETR** (shield exhausted)? | Forward EPS (cash-tax headwind) | Some shield remains | Fully taxed, EPS headwind | A3-05, F8-01 |
 | 8 | Consol **OCI of +Rs72.16 cr equals 29% of PAT and swung +Rs111 cr QoQ**; the not-reclassified item (+Rs74.49 cr) exceeds all of FY26. What drives it — FVOCI equity revaluation, actuarial change, or cash-flow hedge reserve on export receivables? | Quality of comprehensive income / FX exposure | Transparent, non-recurring named | Vague; hides FX/hedge risk | A3-06, F9-01 |
-| 9 | **Diluted EPS equals basic (Rs1.49) every period despite 7.5 cr promoter warrants at Rs74** (deeply in-the-money vs CMP ~Rs197); yet the deck's implied diluted count (164.9 cr) exceeds shares outstanding (153.06 cr) by ~11.8 cr. Why is no warrant dilution reflected in diluted EPS? | Dilution transparency / EPS integrity | Correct dilutive math shown | Overhang concealed | A3-07, F10-01 |
+| 9 | **Diluted EPS equals basic (Rs1.49) every period despite 7.5 cr promoter warrants at Rs74** (deeply in-the-money vs CMP ~Rs197). On owners-of-parent PAT Rs228.60 cr (line 387) / diluted EPS Rs1.49 (line 403), the implied diluted share count is **~153.4 cr — essentially equal to the 1,53,06,02,463 (~153.06 cr) shares outstanding** (deck line 622), so the 7.5 cr warrant overhang (~4.9% of shares outstanding) is entirely unreflected in diluted EPS. Why is no warrant dilution shown? | Dilution transparency / EPS integrity | Correct dilutive math shown | Overhang concealed | A3-07, F10-01 |
 | 10 | The **Rs215 cr Data-Centre-Connectivity facility** (2,70,000 assemblies/annum, commissioning Sep-2027) is "internal accruals and/or debt." Confirm the debt/equity split, revenue and margin at full utilization, and whether it is incremental to the Rs580 cr preform and Rs275 cr MMHG capex. | Capital allocation / forward net debt | Funded from accruals, high ROCE | Debt-funded, low visibility | A3-04, A3-09, A3-F6, A3-F13, F6-01 |
 | 11 | **~Rs2,000 cr of the Rs2,300 cr defence order book (87%) is "through an entity proposed to be acquired."** Name the target, consideration, structure and expected close, and confirm the order book is contractually transferable on close. | Defence thesis is acquisition-contingent | Named, priced, near close, transferable | Unnamed, indefinite, promoter-related | F7-02, A3-F16d |
 | 12 | The deck's free-float of 71.69% implies **promoter holding 28.29%** — at the monitoring floor and ~3 pts above the 25% exit tripwire. Confirm promoter holding and state **pledge = zero** (no document discloses pledge status). | Tripwires #2/#3 | ≥28% confirmed, zero pledge | Drifting toward 25% / pledge exists | F16-02 |
@@ -374,7 +375,7 @@ Channel: the concall is TODAY (22-Jul-2026 16:30). **Prioritise Q1-Q5 for the li
 
 **Top 3 by likelihood of thesis-changing information:**
 1. **Q1 (hyperscaler Export-OFC revenue)** — a number ≥Rs1,800 cr confirms the bull case; <Rs1,200 cr or "cannot break out" reveals the bear case. (A3-F16b / F16-01)
-2. **Q6 + Q5 (receivables/DSO and BharatNet WC)** — confirms or fires tripwire #4 and monitor #2/#6/#7; the cleanest governance/quality test. (F16-05)
+2. **Q6 + Q5 (receivables/DSO and BharatNet WC, plus the ~Rs136 cr inventory deferral)** — confirms or fires tripwire #4 and monitor #2/#6/#7 and tests how much of the margin beat is inventory-timing; the cleanest governance/quality test. (F16-05, A3-08)
 3. **Q3 + Q12 (subsidiary profit location; promoter holding/pledge)** — tests management transparency on where profit sits and on the governance CONCERN. (A3-01, F16-02)
 
 **Channel recommendation:** CONCALL TODAY (16:30) — prioritise Q1-Q5 live; submit Q6-Q15 in writing to IR. Log answer status against these questions next cycle (Role 5 Step 3E).
@@ -412,7 +413,7 @@ Channel: the concall is TODAY (22-Jul-2026 16:30). **Prioritise Q1-Q5 for the li
 | 15 | Export revenue target 60%+ from FY27 onwards | Forward Guidance | YES | deck 544 |
 | 16 | "well positioned to sustain this growth momentum" | Forward Soft | NO (hedge) | PR line 112 |
 
-**Diagnostics:** ~13 of 16 claims are quantified (~81% specificity on the framing) — a **highly specific** presentation. New vs reaffirmation: the **40% FY27 aspiration is a RAISE** (new/higher); the Rs215 cr facility and Ammunition Complex are **new**; capacity and margin targets are reaffirmations. Internal contradiction to flag: "sustain growth momentum" (claim 16) sits against a 40% guide that is BELOW the Q1 run-rate (claim 5 vs claim 2 — A3-F16a). Superlative stacking ("highest-ever" x3 in one headline, restacked in MD quote) — narrative-amplification (A3-F16d; Notion counter already at 2).
+**Diagnostics:** ~13 of 16 claims are quantified (~81% specificity on the framing) — a **highly specific** presentation. New vs reaffirmation: the **40% FY27 aspiration is a RAISE** (new/higher); the Rs215 cr facility and Ammunition Complex are **new**; capacity and margin targets are reaffirmations. Internal contradiction to flag: "sustain growth momentum" (claim 16) sits against a 40% guide that is BELOW the Q1 run-rate (claim 5 vs claim 2 — A3-F16a). Superlative stacking ("highest-ever" x3 in one headline, restacked in MD quote) — narrative-amplification (A3-F16d; Notion counter already at 2). The 23.25% EBITDA-margin claim (claim 3) is itself partly inventory-timing (Step 2/4) — a quality caveat on an otherwise-CONFIRMED number.
 
 ## R5 Step 2 — Forward guidance extraction
 
@@ -430,7 +431,7 @@ Channel: the concall is TODAY (22-Jul-2026 16:30). **Prioritise Q1-Q5 for the li
 | New product / contract milestones | Rs215 cr facility Sep-2027; preform Jul-2029 | ND | ND | New | HIGH |
 | Dividend / payout | Not addressed | ND | ND | — | — |
 
-**Diagnostics:** Management **widened the numeric footprint** (many new targets) but **withheld the two most thesis-relevant numbers** — hyperscaler pace and receivables/WC. Guidance internally: 40% revenue + 22-25% margin + Rs26,665 cr OB is arithmetically plausible but the 40% is BELOW the Q1 run-rate (sandbag-or-decline, A3-F16a). Vs Four-Pillar projections: Q1 actuals land **above base**; forward guidance is **at/above base on margin, ambiguous on revenue shape.** Analysts should press for hyperscaler pace and receivables (the refusals-to-quantify are the signal).
+**Diagnostics:** Management **widened the numeric footprint** (many new targets) but **withheld the two most thesis-relevant numbers** — hyperscaler pace and receivables/WC. Guidance internally: 40% revenue + 22-25% margin + Rs26,665 cr OB is arithmetically plausible but the 40% is BELOW the Q1 run-rate (sandbag-or-decline, A3-F16a). Vs Four-Pillar projections: Q1 actuals land **above base**; forward guidance is **at/above base on margin, ambiguous on revenue shape.** Analysts should press for hyperscaler pace and receivables (the refusals-to-quantify are the signal), and for how much of the 23.25% margin is durable vs inventory-timing (Step 2/4).
 
 ## R5 Step 3 — Promise vs delivery audit
 **First pass under protocol — no prior transcript log supplied. Historical scoring (3A/3B/3E) DEFERRED; tracker SEEDED below for next cycle.** Credibility ratio: NOT YET COMPUTABLE (needs a trailing transcript record). Provisional archetype read (6E) offered from framing only.
@@ -468,6 +469,7 @@ Seeded commitments to score next quarter (from all three commitment registers):
 | Export share ~55.53% (Rs1,063.30 cr) vs FY26 41.36% | Backward | YES | Confirms export ramp; below Rs1,200 floor |
 | Consol ETR normalised to 25.9%; shield gone | Financial | YES | Forward cash-tax headwind (A3-05) |
 | Defence OB ~Rs2,000 cr contingent on unclosed acquisition | Negative/contingent | YES | Backlog quality caveat (F7-02) |
+| Consol change-in-inventories −168.54 cr (vs −32.09 Q1FY26) | Financial (margin quality) | YES | ~Rs136 cr YoY cost deferral lifts EBITDA; inventory-timing (Step 2/4) |
 
 ### 5B. What was NOT discussed (silence audit — deck/release level; concall level DEFERRED)
 
@@ -482,7 +484,7 @@ Seeded commitments to score next quarter (from all three commitment registers):
 | Capacity completion DATE (Dec-2026) | Monitor for catalyst tracking | **AMBER** — date dropped from deck (F16-03) |
 | Net debt / cash-flow / CARE rating | Balance-sheet health | Neutral-to-AMBER — expected absent at Q1, but net-debt guidance withheld |
 
-**Silence interpretation:** the receivables and BharatNet silences are **thesis-tripwire-relevant** (not routine) and rate RED; the hyperscaler-pace silence rates AMBER→RED given it is the linchpin. These are the concall's burden of proof.
+**Silence interpretation:** the receivables and BharatNet silences are **thesis-tripwire-relevant** (not routine) and rate RED; the hyperscaler-pace silence rates AMBER→RED given it is the linchpin. The receivables silence is doubly material because the ~Rs136 cr YoY inventory deferral that lifts EBITDA can only be validated with the missing shipment/receivables data. These are the concall's burden of proof.
 
 ## R5 Step 6 — Tone & specificity
 
@@ -499,11 +501,11 @@ Seeded commitments to score next quarter (from all three commitment registers):
 | Framing Claim | Filing Evidence | Reconciliation |
 |---|---|---|
 | "Highest-ever revenue" (Rs1,914.98 cr) | Line 338 consol 1,914.98 | **CONFIRMED** |
-| "EBITDA margin crossed 23%" (23.25%) | Reported EBITDA 445.27 / rev = 23.25% | **CONFIRMED** (reported basis; operating basis 21.63% — state both) |
+| "EBITDA margin crossed 23%" (23.25%) | Reported EBITDA 445.27 / rev = 23.25% | **CONFIRMED** (reported basis; operating basis 21.63% — state both; part inventory-timing per Step 2/4) |
 | "Highest-ever profitability" (PAT 245.64) | Line 371 consol 245.64 | **CONFIRMED** (but 46.9% of it under limited/foreign auditor review — A3-03; and Rs66.43 cr sits in subsidiaries — A3-01) |
 | "Highest-ever order book" ~Rs26,665 cr | Not in results filing; deck slide 9 | **PARTIALLY CONFIRMED** (deck-only; ~65% Networks, F16-05) |
 | Exports Rs1,063.30 cr / 55.53% | Press release line 81; consistent with export-heavy revenue | **CONFIRMED** (but below Rs1,200 monitor floor) |
-| "Strong/profitable growth" (implied cash strength) | **No CFO/receivables in filing** | **UNVERIFIABLE** — cash conversion INDETERMINATE; the claim is technically true on P&L but silent on cash |
+| "Strong/profitable growth" (implied cash strength) | **No CFO/receivables in filing** | **UNVERIFIABLE** — cash conversion INDETERMINATE; the claim is technically true on P&L but silent on cash, and part of the margin is deferred cost in inventory |
 | 40% FY27 aspiration | Q1 run-rate annualises higher | **CONTRADICTED in direction** — guidance below run-rate (A3-F16a) |
 
 ### 7B. Peer concall cross-check
@@ -514,7 +516,7 @@ CARE rating action (01-Jul-26 upgrade to A Positive/A1, from Notion) is the only
 
 ## R5 Step 8 — Thesis & position updates (concall-derived)
 
-- **8A. Growth triggers:** unchanged from Section A Step 6D (hyperscaler ON TRACK-but-unverified; defence acquisition DELAYED/CONTINGENT; capacity ON TRACK date-unconfirmed; margin mix FIRING-but-durability-unproven).
+- **8A. Growth triggers:** unchanged from Section A Step 6D (hyperscaler ON TRACK-but-unverified; defence acquisition DELAYED/CONTINGENT; capacity ON TRACK date-unconfirmed; margin mix FIRING-but-durability-unproven and part inventory-timing).
 - **8B. Watchlist (concall-specific rows):** utilization/hyperscaler disclosure = **withheld (RED)**; contract wins = order book up but not hyperscaler-attributed; customer concentration = 92% private (deck 546/578) reframed positively.
 - **8C. Thesis-broken triggers:** none fired (Section A Step 6C). The framing did not move any tripwire closer to firing on evidence, but the receivables silence keeps tripwire #4 on the clock.
 - **8D. Four-Pillar (concall adjustments):** no pillar changed — ROCE and cash remain deferred (no balance sheet); guidance is framing, not filing, so it does not move Pillar 1/2. Single-credit rule respected (ROCE recovery credited to operations/Pillar 1, not double-counted in Strategic Premium).
@@ -527,16 +529,16 @@ CARE rating action (01-Jul-26 upgrade to A Positive/A1, from Notion) is the only
 
 **Filing-derived signals (win for valuation/trajectory):**
 - Genuinely strong, operationally-driven quarter: consol revenue +119.85% YoY, Op EBITDA margin 21.63% (+438 bps QoQ, +1,837 bps YoY off a low base), PAT Rs245.64 cr, **95%+ of the PAT swing from recurring core operations, not treasury** (Step 4). Telecom segment PBT margin 30.4% (monitor #3 GREEN).
-- Offsetting quality flags: **auditor scope-limitation on 65.9% of consol revenue / 46.9% of consol PAT** (A3-03); **S-vs-C PAT gap swung to 37.1%** with profit migrating to subsidiaries/NCI (A3-01); **ETR normalised to 25.9%, shield exhausted** (A3-05, forward EPS headwind); **inventory build −168.54 and Telecom asset build +1,065 cr QoQ** un-reconciled to receivables; **Turnkey/BharatNet segment loss (87.53) with Rs3,565.77 cr locked** (monitor #6/#7 RED).
-- **Cash conversion INDETERMINATE** — no Q1 CFO (not mandated) and no voluntary receivables disclosure. Caps the review at PROCEED WITH CAVEATS at best; the flag stack pushes it to PROCEED WITH FLAGS.
+- Offsetting quality flags: **auditor scope-limitation on 65.9% of consol revenue / 46.9% of consol PAT** (A3-03); **S-vs-C PAT gap swung to 37.1%** with profit migrating to subsidiaries/NCI (A3-01); **ETR normalised to 25.9%, shield exhausted** (A3-05, forward EPS headwind); **inventory build −168.54 (vs −32.09 Q1FY26; ~Rs136 cr more cost deferred into unsold inventory YoY, line 345) mechanically lifting reported EBITDA — part of the +1,837 bps YoY op-EBITDA-margin gain is inventory-timing, durable only on ship + cash conversion**, and **Telecom asset build +1,065 cr QoQ**, both un-reconciled to receivables; **Turnkey/BharatNet segment loss (87.53) with Rs3,565.77 cr locked** (monitor #6/#7 RED).
+- **Cash conversion INDETERMINATE** — no Q1 CFO (not mandated) and no voluntary receivables disclosure; the inventory-timing EBITDA lift cannot be validated without shipment/receivables data. Caps the review at PROCEED WITH CAVEATS at best; the flag stack pushes it to PROCEED WITH FLAGS.
 
 **Concall/framing-derived signals (inform credibility/catalysts):**
 - Hyper-specific, superlative-stacked promotional framing that **RAISES the 40% guide while withholding the two load-bearing numbers** (hyperscaler pace, receivables). Provisional **OVERPROMISER-watch** archetype (credibility ratio pending first scored transcript).
 - Real new catalysts (Rs215 cr facility Sep-2027; Ammunition Complex) but defence order book ~87% acquisition-contingent (F7-02).
 
-**Reconciliation between the two:** filing and framing agree on the headline P&L (CONFIRMED). They diverge on (a) the "growth momentum" narrative vs a 40% guide below run-rate (CONTRADICTED direction), and (b) implied cash strength vs undisclosed cash/receivables (UNVERIFIABLE). **Per protocol, the filing wins; the framing's silences are the diagnostic.**
+**Reconciliation between the two:** filing and framing agree on the headline P&L (CONFIRMED). They diverge on (a) the "growth momentum" narrative vs a 40% guide below run-rate (CONTRADICTED direction), and (b) implied cash strength vs undisclosed cash/receivables and a margin partly built on deferred inventory cost (UNVERIFIABLE). **Per protocol, the filing wins; the framing's silences are the diagnostic.**
 
-**Net thesis impact: MAINTAINED (not strengthened, not broken).** Earnings beat base on the P&L, but zero tripwire fired, no pillar could be upgraded (ROCE/cash deferred), and the governance/receivables silences keep the CONCERN intact.
+**Net thesis impact: MAINTAINED (not strengthened, not broken).** Earnings beat base on the P&L, but zero tripwire fired, no pillar could be upgraded (ROCE/cash deferred; part of the margin beat is inventory-timing), and the governance/receivables silences keep the CONCERN intact.
 
 **Cash conversion:** INDETERMINATE (Q1 CFO not mandated; receivables not disclosed).
 
@@ -544,7 +546,7 @@ CARE rating action (01-Jul-26 upgrade to A Positive/A1, from Notion) is the only
 
 **Position branch:** 8A-W (non-held). Output: entry zone Rs60-75 unchanged, MoS Rs60; master decision gate moved to the Q1FY27 **concall transcript** (near) and **H1 FY27 half-yearly** (CFO/receivables/net-debt resolution).
 
-**Protocol verdict: PROCEED WITH FLAGS** — the quarter is analysed and usable, but carries the auditor scope-limitation, the S-vs-C profit migration, the INDETERMINATE cash conversion, and the receivables/hyperscaler/pledge silences as named, unresolved flags.
+**Protocol verdict: PROCEED WITH FLAGS** — the quarter is analysed and usable, but carries the auditor scope-limitation, the S-vs-C profit migration, the INDETERMINATE cash conversion, the inventory-timing lift to EBITDA margin, and the receivables/hyperscaler/pledge silences as named, unresolved flags.
 
 **Watchpoints for next quarter (monitorables / catalysts, with implied dates and source):**
 
@@ -553,6 +555,7 @@ CARE rating action (01-Jul-26 upgrade to A Positive/A1, from Notion) is the only
 | Hyperscaler/Export-OFC revenue disclosed (Rs1,200/Rs1,800 bands) | ongoing; H1 FY28 pro-rata tripwire | PR line 81; deck slide 9 (F16-01) | RED/SILENT |
 | Receivables / DSO / unbilled disclosure (tripwire #4) | H1 FY27 half-yearly | filing/PR/deck silent (F16-05) | RED |
 | BharatNet III revenue + PBT margin split | H1 FY27 | results line 425, 433 (A3-08) | RED |
+| Inventory deferral ships + converts (EBITDA-margin quality) | H1 FY27 half-yearly | results line 345 (A3-08) | inventory-timing lift; unvalidated |
 | Promoter holding ≥28% + pledge = zero (tripwires #2/#3) | continuous | deck slide 20 (F16-02) | GREEN(holding)/SILENT(pledge) |
 | Rs215 cr DC-connectivity facility commissioning | Sep-2027 | results line 90 (A3-04) | initiated |
 | OFC→42.3/43 & OF→33.9/34 mn fkm capacity | Dec-2026 (reaffirm) | deck slide 14 (F16-03) | underway, date unconfirmed |
@@ -599,10 +602,10 @@ questions_for_management:
   - {q: "Which subsidiary carries the Rs66.43cr S-vs-C PAT gap (37.1%); margin and transfer-pricing basis", from_finding_id: ["A3-01","A3-F2"]}
   - {q: "Confirm 3 unnamed HFCL B.V. step-downs captured in Rs712.85cr para-8; 65.9% rev/46.9% PAT auditor scope", from_finding_id: ["A3-03","A3-11"]}
   - {q: "Quantify BharatNet III revenue/PBT margin/receivables vs Rs3,565.77cr locked assets and Rs87.53cr loss", from_finding_id: ["A3-08","A3-F12","F16-05"]}
-  - {q: "Provide Q1 DSO, TR/TTM revenue, >6m aging % (no receivables disclosed anywhere)", from_finding_id: ["F16-05"]}
+  - {q: "Provide Q1 DSO, TR/TTM revenue, >6m aging % (no receivables disclosed); how much of the ~Rs136cr YoY inventory deferral (chg -168.54 vs -32.09) is OFC/export FG awaiting shipment and when does it ship", from_finding_id: ["F16-05","A3-08"]}
   - {q: "Is 25-26% the steady-state ETR now the deferred-tax shield is exhausted", from_finding_id: ["A3-05","F8-01"]}
   - {q: "What drives the +Rs72.16cr OCI (29% of PAT, +Rs111cr QoQ) - FVOCI, actuarial, or FX hedge reserve", from_finding_id: ["A3-06","F9-01"]}
-  - {q: "Why diluted EPS = basic despite 7.5cr in-the-money promoter warrants; reconcile implied 164.9cr diluted count", from_finding_id: ["A3-07","F10-01"]}
+  - {q: "Why diluted EPS = basic despite 7.5cr in-the-money promoter warrants; owners-PAT 228.60/EPS 1.49 implies ~153.4cr diluted ~= 153.06cr shares outstanding, so ~4.9% warrant overhang unreflected", from_finding_id: ["A3-07","F10-01"]}
   - {q: "Rs215cr facility debt/equity split, revenue/margin at full utilization, incremental to Rs580cr+Rs275cr capex", from_finding_id: ["A3-04","A3-09","A3-F6","A3-F13","F6-01"]}
   - {q: "Name defence acquisition target/consideration/close; confirm ~Rs2,000cr OB transferable", from_finding_id: ["F7-02","A3-F16d"]}
   - {q: "Confirm promoter holding (28.29% via free-float) and pledge = zero", from_finding_id: ["F16-02"]}
@@ -613,6 +616,7 @@ monitorables:
   - {item: "Hyperscaler/Export-OFC revenue disclosed (Rs1,200/1,800 bands)", implied_date: "ongoing; H1FY28 pro-rata tripwire", source_ref: "PR line 81; deck slide 9 (F16-01)"}
   - {item: "Receivables/DSO/unbilled disclosure (tripwire #4)", implied_date: "H1FY27 half-yearly", source_ref: "filing/PR/deck silent (F16-05)"}
   - {item: "BharatNet III revenue + PBT margin split", implied_date: "H1FY27", source_ref: "results line 425,433 (A3-08)"}
+  - {item: "Inventory deferral ships + converts (EBITDA-margin quality)", implied_date: "H1FY27 half-yearly", source_ref: "results line 345 (A3-08)"}
   - {item: "Promoter holding >=28% + pledge = zero", implied_date: "continuous", source_ref: "deck slide 20 (F16-02)"}
   - {item: "Rs215cr DC-connectivity facility commissioning", implied_date: "2027-09", source_ref: "results line 90 (A3-04)"}
   - {item: "OFC->42.3/43 & OF->33.9/34 mn fkm capacity", implied_date: "2026-12 (reaffirm)", source_ref: "deck slide 14 (F16-03)"}
@@ -630,11 +634,12 @@ flags:
   - "AUDITOR_SCOPE_LIMITATION: 65.9% of consol revenue / 46.9% of consol PAT reviewed by one joint auditor or foreign auditors only (A3-03)"
   - "S-vs-C PAT gap swung to 37.1% of standalone; profit migrating to subsidiaries/NCI (A3-01)"
   - "CASH CONVERSION INDETERMINATE: no Q1 CFO (not mandated) + no receivables disclosure; caps at PROCEED WITH CAVEATS, resolved to PROCEED WITH FLAGS"
+  - "EBITDA-MARGIN QUALITY: consol change-in-inventories -168.54cr (Q1FY26 -32.09cr), ~Rs136cr more cost deferred into unsold inventory YoY (line 345); part of the +1,837 bps op-EBITDA-margin gain is inventory-timing, durable only on ship + cash conversion (A3-08)"
   - "RECEIVABLES SILENCE across all 3 docs keeps tripwire #4 on the clock (F16-05)"
   - "Hyperscaler Export-OFC not broken out; total exports Rs1,063.30cr below Rs1,200 floor (F16-01/A3-F16b)"
   - "40% FY27 guidance sits ~10% BELOW Q1 run-rate (A3-F16a)"
   - "Deferred-tax shield exhausted; ETR normalised to 25.9% = forward EPS headwind (A3-05)"
-  - "Diluted EPS = basic despite 7.5cr in-the-money promoter warrants (A3-07/F10-01)"
+  - "Diluted EPS = basic despite 7.5cr in-the-money promoter warrants; ~4.9% warrant overhang unreflected (A3-07/F10-01)"
   - "Promoter holding 28.29% at monitoring floor; pledge status undisclosed (F16-02)"
   - "Defence OB ~87% (Rs2,000cr) contingent on unclosed acquisition (F7-02)"
   - "Provisional OVERPROMISER-watch archetype; credibility ratio pending first scored transcript"

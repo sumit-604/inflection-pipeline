@@ -1,20 +1,24 @@
 stage: confidence-delta
 company: KCPSUGIND
 run_date: 2026-07-21
-phase: 1
+phase: 3-complete
 confidence_delta:
-  numerical_acceptance: 97.9    # B12a: 47 figures checked, 0 CRITICAL, 0 MAJOR, 1 MINOR rounding note; no source-fidelity MISMATCH
-  redflag_coverage: 70          # B12b: 7 of 10 independently-found red flags already caught upstream (1 partial); 2 MAJOR misses (Q3 cost-deferral loading Q4; investment-income dependence under-weighted)
-  framework_adherence: 100      # B12c PHASE-1 PORTION ONLY (Gate 0 + Emerging Moat): 72/72 rules applied as written, 0 fails, 4 MINOR disclosed-basis notes
-  peer_utilisation: "N/A"       # B12d: no peer-concall transcripts supplied (NO-CONCALL MODE); stage 6 skipped, correctly evidenced; per orchestrator a skipped stage never fails the delta - excluded from the min, NOT counted as 0
-  overall: 70                   # min of the available components (numerical 97.9, redflag 70, framework 100)
-band: "60-74 — normal-to-low; per orchestrator Section 5, PROCEED verdicts downgrade one level. NOT a REWORK trigger (no Verifier A CRITICAL; all verifier acceptance_rates >= 60)."
+  numerical_acceptance: 97.9    # B12a: 47 figures, 0 CRITICAL, 0 MAJOR, 1 MINOR rounding; no source-fidelity MISMATCH
+  redflag_coverage: 70          # B12b: 7 of 10 flags caught, 1 partial, 2 MAJOR misses (degraded no-concall Stage 5)
+  framework_adherence: 88       # B12c FULL: gate0+emoat 100 (phase 1) + valuation-adherence 88 (phase 3); binding half 88; weighted ~95.5
+  peer_utilisation: "N/A"       # B12d: no peer transcripts; stage 6 skipped correctly; excluded from the min
+  overall: 70                   # min of available components; redflag-bound
+band: "60-74 — normal-to-low; per orchestrator Section 5, PROCEED-family verdicts downgrade one level. NOT a REWORK trigger."
 rework_check:
   verifier_a_critical: 0
-  min_acceptance_rate_ge_60: true
+  min_acceptance_rate_ge_60: true   # numerical 97.9, redflag 70, framework 88, valuation 88
   source_fidelity_mismatch: false
   rework_triggered: false
-valuation_framework_adherence: "pending phase 3 (B12c valuation half deferred; B10/B11 not yet built)"
+framework_adherence_detail:
+  phase1_gate0_emoat: 100
+  phase3_valuation: 88
+  status: "complete (no longer pending)"
 notes:
-  - "overall is bound by redflag_coverage (70). The 2 MAJOR Verifier B misses are analytical under-weightings in the degraded no-concall Stage 5, not source-fidelity errors; they are surfaced in verifier-summary.md and carried into the FTTCP deliberation."
-  - "numerical acceptance is high (97.9) and framework adherence perfect on the phase-1 portion; the evidence base is sound. The low band reflects Stage 5's degraded no-concall coverage, not fabricated or misread numbers."
+  - "Overall is bound by redflag_coverage (70). Numerical 97.9 and framework 88-100 are strong; the low band reflects the degraded no-concall Stage 5 coverage, not fabricated or misread numbers."
+  - "FTTCP confidence sits one notch below this baseline: the cross-family grader did not run (no provider key), so there is no third-family read on the FTTCP verdict."
+  - "Verifier C (0 CRITICAL / 0 MAJOR) concurs with AVOID-on-valuation; the 5 phase-3 MINOR findings are decision-invariant (SOTP round-number multiples the largest, AVOID survives 12x Eimco)."

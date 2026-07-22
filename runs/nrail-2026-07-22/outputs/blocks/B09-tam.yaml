@@ -1,0 +1,28 @@
+stage: B09-tam
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["FY26 packaging-board vs W&P segment split (used FY25 62.49%/37.51% mix as proxy)", "precise kraft/corrugated vs duplex/FBB/SBS tonnage split within India's 15MT packaging-paperboard figure", "waste paper import tonnage into India (conflicting 4-7MT range across sources)", "FY25/FY26 peer revenue for JK Paper, Emami Paper, Century Pulp & Paper, ITC-PSPD, TNPL", "capacity/cost/timeline for management's stated 'second large greenfield paperboard unit'", "current market price / P/E multiple for NRAIL", "forward EBITDA margin trajectory guidance"]
+flags: ["Management/MD&A-cited TAM (US$13.72bn, ~Rs1,17,245cr) reads as inflated at 2.11x the conservative bottom-up estimate; likely bundles kraft/corrugated packaging segments NRAIL does not manufacture", "SAM product-fit filter (40% cut) is an explicitly flagged analyst estimate, not a sourced figure", "SOM (demand-side, share-gain method) exceeds NRAIL's installed 500,000 TPA capacity ceiling by ~Rs2,400-2,600cr at the 5yr mark - SOM is the optimistic side absent confirmed further expansion", "Unconfirmed ~Rs1,500cr Unit VI Dahej project excluded from capacity cross-check per instruction (not corroborated by any primary document in this run)", "FY26 came in at 97.5% of management's own guided Rs2,200cr FY26 revenue target"]
+market_definition: "Indian recycled-fibre packaging paperboard (duplex/FBB/SBS) and writing & printing paper, sold domestically (~83%) and exported (~17%) to converters, printers and institutional buyers"
+tam_cr: {conservative: 55500, realistic: 61500}
+sam_cr: 33300
+sam_pct_of_tam: 60
+som_3yr_cr: 3846
+som_5yr_cr: 5395
+som_implied_revenue_cagr: {yr3: 21.5, yr5: 20.3}
+current_sam_share_pct: 4.03
+revenue_headroom_x: 24.8
+tam_growth_pct: 8.2
+runway_class: "STRONG"
+mgmt_claim_cr: 117245
+mgmt_claim_ratio: 2.11
+mgmt_claim_read: "inflated"
+fy26_revenue_cr: 2145.45
+fy26_revenue_anchor: "Q4/FY26 audited results PDF p.4 (+29.3% YoY, 97.5% of Rs2,200cr mgmt FY26 target)"
+capacity_check: "gap of ~Rs2,400-2,600 Cr at 5yr mark (packaging-board segment) vs current 500,000 TPA installed capacity; SOM is the optimistic side, capex plan (absent unconfirmed Unit VI Dahej project) is the constraint"
+methods_used: ["top-down", "bottom-up", "peer-aggregation (data-constrained, directional only)", "import-substitution (qualitative risk only, no TAM figure)", "global-benchmark (directional only, not used in headline TAM)"]
+stale_data_flags: [{datapoint: "India packaging paperboard consumption 15MT / total 23MT market", source: "AR MD&A p.19 (Data Insights Markets/IBEF/Mordor Intelligence/Research and Markets)", year: 2024}, {datapoint: "India paperboard packaging market value US$13.72bn, CAGR 6.63%", source: "AR MD&A p.19", year: 2025}, {datapoint: "Global paperboard packaging market US$422.32bn->447.11bn, global consumption 519MT by 2035", source: "AR MD&A p.14-15", year: "2024-2025"}]
+searches_performed: ["India paperboard packaging market size 2025 CRISIL ICRA report tonnes", "India packaging board duplex FBB SBS market size CAGR 2025 2030", "India per capita paper consumption kg vs China global average 2024 2025", "JK Paper Emami Paper West Coast Paper Kuantum Papers Satia Industries revenue FY25 paperboard", "India waste paper imports tonnage recycled fibre paperboard 2024 2025", "India writing printing paper market size decline digitalization 2025 IPMA", "India paper industry organised unorganised sector share small mills capacity", "IBEF paper packaging industry page fetch (403 blocked)"]
+searches_skipped: []

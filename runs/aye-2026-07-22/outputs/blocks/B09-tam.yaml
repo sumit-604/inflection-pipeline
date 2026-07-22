@@ -1,0 +1,52 @@
+stage: B09-tam
+company: "Aye Finance Limited (AYE)"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B04 (business model block) was not available to this stage in this run (parallel stage not yet complete); market/product scope was derived directly from the Prospectus business description and operator digest per the task's explicit fallback instruction"
+  - "Exact % of India's ~56.5 million micro-enterprises falling within Aye's disclosed ₹20 lakh-₹1 crore target turnover band: NOT FOUND in any collected source; Section 3A 'customer' filter (70%) and Method 2 bottom-up 'addressability' assumption (25%) are both labelled analyst estimates"
+  - "Demand-side (not just outstanding-credit-side) breakdown of CRISIL's ₹76tn/₹34tn addressable-demand/gap figures by loan ticket size: NOT FOUND; Method 1's ticket-scoping uses the 12%-of-outstanding-credit share as a proxy, flagged inline as the method's main estimation-risk step"
+  - "CareRatings PDF ('MSME AUM for NBFCs to cross Rs 5.3 lakh crore by FY26') returned HTTP 403 on WebFetch; only the search-snippet headline figure could be used, not the full segment-scope definition"
+  - "Full earnings-CAGR build and current P/E multiple are outside this stage's scope (NOT FOUND here); Section 5E valuation-implication line left partially unresolved pending Stage 11"
+flags:
+  - type: FLAG-TAM-COMPANY-COMMISSIONED-SOURCE
+    reason: "CRISIL Report is exclusively commissioned and paid for by Aye (Prospectus p.223/614) and is the sole industry-data source in the Prospectus. Independently corroborated in headline scale (₹30-34 lakh crore) by SIDBI (May-2025) and Northern Arc investor material, but methodology/scope differs and was not independently verifiable in full."
+  - type: FLAG-TAM-METHOD-DIVERGENCE
+    reason: "Bottom-up Method 2 (₹3,17,800cr) sits below top-down Method 1 gap-only (₹4,08,000cr) despite nominally scoping to the same ticket bracket, because Method 2 stacks two unsourced assumptions (25% addressability, digest-sourced blended ticket size). Method 3 peer/unorganised gross-up (₹13,31,000cr) is a further ~3x above Method 1 because it conflates CRISIL's 'total demand' with 'addressable demand.' Neither Method 2 nor Method 3 is used as the headline conservative/realistic TAM; both are retained as bounds/corroboration only, with the divergence explained rather than averaged."
+  - type: FLAG-SAM-CUSTOMER-FILTER-UNSOURCED
+    reason: "The 70% 'customer' retention filter in the SAM cascade (Section 3A) rests on a labelled estimate, not a CRISIL-sourced split of micro-enterprises by target turnover band. No source found gives this split directly."
+  - type: FLAG-SOM-VS-MGMT-ASPIRATION
+    reason: "Management's own medium-term AUM CAGR aspiration (~28-33%, operator digest, NON-ANCHORED) runs roughly 1.5-1.8x faster than the SOM-implied 3yr CAGR (18.3%) derived from this stage's disciplined SAM/share-gain-rule framework. Stage 11 should treat management's guidance as the more aggressive case and the SOM-implied figure as the framework-disciplined floor case when setting revenue-growth assumptions for valuation."
+  - type: FLAG-CAPACITY-5YR-GAP
+    reason: "SOM_5yr AUM (₹14,540cr) exceeds B07's static 84%-headroom capital ceiling (₹13,476cr) by ₹1,064cr. SOM_3yr is sufficiently funded on the current capital base; the 5yr trajectory requires either organic net-worth accretion via retained earnings at the guided 17-20% RoE, or a further capital raise, to avoid breaching the rating agency's gearing sensitivity threshold."
+market_definition: "Formal secured (hypothecation, mortgage/LAP) and unsecured business credit to India's informal micro-enterprises, sub-₹10 lakh average ticket, branch-based/cluster-underwritten, delivered by banks, NBFCs and SFBs across 18-21 of India's 36 states/UTs."
+tam_cr: {conservative: 408000, realistic: 912000}
+sam_cr: 120400
+sam_pct_of_tam: 29.5
+som_3yr_cr: 12140
+som_5yr_cr: 14540
+som_implied_revenue_cagr: {yr3: 18.3, yr5: 14.7}
+current_sam_share_pct: 6.1
+revenue_headroom_x: 66.3
+tam_growth_pct: 19
+runway_class: "STRONG"
+mgmt_claim_cr: 3400000
+mgmt_claim_ratio: 8.3
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient at 3yr (₹1,336cr headroom); gap of ₹1,064cr by 5yr against B07's static 84%-headroom ceiling — SOM_5yr is the optimistic side of this cross-check absent further capital accretion"
+methods_used:
+  - "Method 1: top-down, CRISIL India-wide MSME credit-gap decomposition, ticket-scoped via a 12%-of-outstanding-credit proxy"
+  - "Method 2: bottom-up, micro-enterprise unit count x addressability estimate x blended ticket size"
+  - "Method 3: peer AUM aggregation (8 named NBFC peers) + unorganised-sector gross-up, flagged as an inflated upper bound"
+  - "Global credit-to-GDP benchmark (India vs China/US/UK), used as Section 4 growth-driver context only, not a headline TAM method"
+stale_data_flags:
+  - {datapoint: "U.K. Sinha Committee MSME credit gap estimate (₹20-25 lakh crore)", source: "RBI-constituted U.K. Sinha Committee report", year: 2019}
+  - {datapoint: "IFC 'Financing India's MSMEs' credit demand/gap methodology precedent (₹69.3tn demand / ₹58.4tn gap, Fiscal 2017)", source: "IFC report, cited in Prospectus p.183/614", year: 2018}
+searches_performed:
+  - "India MSME credit gap RBI SIDBI U.K. Sinha committee estimate trillion rupees"
+  - "MAS Financial Services AUM FY26 MSME loan book size"
+  - "Northern Arc Capital AUM 2026 MSME micro business loans India"
+  - "WebFetch: CareRatings PDF 'MSME AUM for NBFCs to cross Rs 5.3 lakh crore by FY26' (HTTP 403, blocked)"
+  - "SIDBI 2025 report MSME credit gap 30 lakh crore India"
+searches_skipped: []

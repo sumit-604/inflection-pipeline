@@ -1,0 +1,679 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_hfcl_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 22
+formfeed_count: 22
+line_count: 679
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (document states "All numbers in Rs. Crore" / "₹ IN CRORE(S)" explicitly on financial slides; no conversion needed)
+ocr_pages: [2]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-07-22
+=== END HEADER ===
+NOTES ON METHOD:
+- Primary extraction: pdftotext -layout presentation_hfcl_q1fy27.pdf, 22 pages, 22 form-feed page breaks, matches pdfinfo page count of 22.
+- Page-by-page character count of the raw layout extraction: page1=2368, page2=57, page3=804, page4=327, page5=6317, page6=449, page7=2027, page8=3687, page9=1613, page10=923, page11=5544, page12=2117, page13=2086, page14=992, page15=4853, page16=556, page17=3540, page18=3635, page19=372, page20=1820, page21=2194, page22=240.
+- Only page 2 fell under the 100-character threshold (57 chars: cover slide "Earnings Presentation / HFCL LIMITED" with page number "02", mostly background photo images). Rasterised at 200dpi (pdftoppm) and OCR'd (tesseract); OCR output merged inline at [page 2], labelled [OCR page 2], followed by the raw pdftotext output for the same page for cross-check.
+- pdfimages -list run against every page confirmed pages 7 and 9 (the two main financial bar-chart slides) contain ZERO embedded raster images -- all bar labels, axis values and data labels on those slides are native vector text and were captured verbatim by pdftotext -layout. Page 20 (shareholding pie/donut chart) contains one small decorative background-strip image (1929x166px, no data content); the pie-chart percentages themselves are native vector text and were captured verbatim. These three chart slides are flagged inline as [CHART, page N, ...] noting this and pointing to the verbatim data below the flag.
+- Layout preserved throughout via pdftotext -layout; no reflowing performed. Page markers [page N] inserted on their own line at every page boundary so any line citation resolves to a page.
+=== BEGIN EXTRACTED TEXT ===
+[page 1]
+       HFCL/SEC/26-27
+       July 22, 2026
+
+         The BSE Ltd.                                                 The National Stock Exchange of India Ltd.
+         1st Floor, New Trading Wing, Rotunda Building                Exchange Plaza, 5th Floor, C – 1, Block G
+         Phiroze Jeejeebhoy Towers, Dalal Street, Fort                Bandra – Kurla Complex, Bandra (E)
+         Mumbai – 400001                                              Mumbai – 400051
+         corp.relations@bseindia.com                                  cmlist@nse.co.in
+         Security Code No.: 500183                                    Security Code No.: HFCL
+
+       RE: Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and
+           Disclosure Requirements) Regulations, 2015.
+
+       Subject: Earnings' Presentation
+
+       Dear Sir(s)/ Madam,
+
+       This is in continuation to our earlier intimation of today.
+
+       In terms of Regulation 30 read with Para A of Part A of Schedule III to the Securities and Exchange
+       Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 ("SEBI
+       Listing Regulations"), we hereby submit a copy of the Earnings' Presentation, inter-alia, on the
+       Un-audited Financial Results of the Company for the 1st Quarter ended June 30, 2026, of the
+       Financial Year 2026-27, both on Standalone and Consolidated basis, to be discussed during
+       the Earnings' Call scheduled to be held today i.e. Wednesday, July 22, 2026 at 04:30 p.m.
+
+       It may be noted that the Board of Directors of the Company has, considered and approved the
+       aforesaid Financial Results of the Company, in its meeting held today i.e. July 22, 2026.
+
+       We request to take the above information on your records and disseminate the same on your
+       respective websites.
+
+       Thanking you,
+
+       Yours faithfully,
+       For HFCL Limited
+        MANOJ Digitally signed
+              by MANOJ BAID
+
+        BAID Date:  2026.07.22
+              14:34:03 +05'30'
+       (Manoj Baid)
+       President & Company Secretary
+
+       Encl: Earnings' Presentation
+
+
+Regd. Office & Works: 8, Electronics Complex, Chambaghat, Solan-173213 (H.P.) Tel: (01792) 230644, 230645, 230647 Fax: (01792) 231902
+                                          Corporate Identity Number: L64200HP1987PLC007466
+//July 2026
+
+
+
+
+[page 2]
+[OCR page 2 -- pdftotext yielded only 57 characters on this page; rasterised at 200dpi and OCR'd with tesseract. OCR output below, followed by the raw pdftotext -layout output for the same page.]
+[OCR page 2]:
+pryuly 202603
+
+Earnings
+Presentation
+[END OCR page 2]
+[raw pdftotext -layout output, page 2]:
+//July 2026
+
+
+
+
+Earnings
+Presentation
+      HFCL LIMITED
+
+[page 3]
+HFCL LIMITED | INVESTOR PRESENTATION 2026                                                               02
+
+
+
+
+                                     03-04                    05-08                        09-14
+
+
+
+
+01/ Message                                  02/ Financials           03/ HFCL – A
+    From the MD                                                           Differentiated
+                                                                          Play
+
+                                     15-17                    18-20
+
+
+
+
+04/ Strategic                                05/ Appendix
+    Focus                                                                                     Inside this
+                                                                                           Presentation
+
+[page 4]
+                                                                   Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                       From The MD   Fi nanci als   About HFCL   STRATEGIC FOCUS   APPENDIX   3
+
+//CHAPTER 04
+
+
+
+
+  Message From
+  the MD
+
+
+
+                                04 Message from The Managing Director
+
+[page 5]
+                                                                 Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                     From The MD                   Fi nanci als              About HFCL          STRATEGIC FOCUS                  APPENDIX   04
+
+
+
+                                                                     Message from
+                                                                     The Managing Director
+                                                                     The first quarter of FY27 marks an important milestone        During the quarter, we continued to strengthen our
+                                                                     in HFCL's growth journey. Over the past several years,        manufacturing capabilities, advanced our backward
+                                                                     we have consistently invested in technology, innovation,      integration into optical fibre preforms and accelerated
+                                                                     advanced manufacturing and research & development             the development         of    next-generation  defence
+                                                                     with a clear objective of building a globally competitive     technologies. Our upcoming Ammunition Manufacturing
+                                     Mahendra Nahata                 opportunities across our core businesses.                    Company.
+                                     PROMOTER AND                    We began the year with clear priorities to accelerate         Looking ahead, our priorities remain unchanged. We will
+                                     MANAGING DIRECTOR
+                                                                     growth, strengthen technology leadership and improve          continue to strengthen our technology leadership,
+                                                                     the quality of our earnings. I am pleased to share that we    expand our global presence, invest in innovation and
+                                     KEY PERFORMANCE                 have made an encouraging start on all these fronts.           execute with financial discipline. With multiple growth
+                                     METRICS FOR Q1FY27              Healthy order inflows across businesses, improving            platforms gaining momentum simultaneously and a
+                                                                     profitability and continued execution of our long-term        strong order pipeline providing healthy visibility, we
+
+                                     1914.98
+                                                                     strategic initiatives have strengthened our confidence in     believe HFCL is entering one of the most exciting phases
+                                                                     the Company's growth trajectory. Based on the                 in its history.
+                                                                     momentum achieved during the quarter, we have
+                                     REVENUE                                                                                       Our ambition extends beyond delivering growth. We are
+                                     (₹ IN CRORE)                    increased our FY27 revenue growth aspiration to the
+                                                                     best of our estimates to 40%, while also achieving our        building a globally respected technology enterprise that
+                                                                                                                                   consistently creates sustainable value for our
+                                   445.27 & 23.25%
+                                                                     EBITDA margin of over 23% in the very first quarter.
+                                                                                                                                   customers, employees and shareholders. The
+                                                                     The global technology landscape is undergoing a               opportunities before us have never been so stronger,
+                                     EBITDA & EBITDA MARGIN          structural transformation. Artificial Intelligence,           and we remain confident in our ability to convert them
+                                     (₹ IN CRORE & %)                hyperscale data centres, cloud computing and digital          into long-term value creation.
+                                                                     infrastructure are creating unprecedented demand for
+                                    245.64 & 12.83%                  advanced optical connectivity, while increasing focus on
+                                                                     national security and defence modernisation is opening
+                                     PAT & PAT MARGIN                significant long-term opportunities for indigenous
+                                     (₹ IN CRORE & %)                technology companies. HFCL is uniquely positioned at
+                                                                     the intersection of these powerful growth trends through
+                                                                     its diversified portfolio spanning Optical Connectivity,
+                                                                     Telecom Products, Defence & Aerospace and Digital
+                                                                     Infrastructure.
+                                                                         Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                            From The MD   FINANCIALS   About HFCL   STRATEGIC FOCUS   APPENDIX
+
+
+
+[page 6]
+//CHAPTER 05
+
+
+
+
+  Our
+  Financials
+
+
+                                06 Q1FY27 Financial Highlights
+                                07 Income Statement – Q1FY27
+                                08 Strong & Diversified Order Book
+                                                           Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026              From The MD          FINANCIALS            About HFCL            STRATEGIC FOCUS                   APPENDIX   6
+
+[page 7]
+[CHART, page 7, native vector text - no rasterised image on this page per pdfimages check. Bar chart data (Revenue/EBITDA/EBITDA Margin/PAT/PAT Margin, Q1FY26 vs Q4FY26 vs Q1FY27) is captured verbatim below as extracted text.]
+Q1FY27 Financial Highlights
+                                                                                                                                 Al l n umb ers i n Rs. Crore
+
+
+ Revenue from Operations                             EBITDA & EBITDA Margin                             PAT & PAT Margin
+
+
+
+                                                                                          445
+                                                                                                                                                   246
+                                                                                                                                   184
+                                            1,915                     18.5%
+                          1,824
+                                                                                         23.3%
+                                                                                                                                                  12.8%
+                                                                                                                                  10.1%
+                                                                      337
+
+
+                                                                                                               -3.4%
+                                                           4.9%
+         871
+
+
+
+                                                                                                                -29
+                                                            43
+
+       Q1FY26            Q4FY26             Q1FY27       Q1FY26      Q4FY26              Q1FY27                Q1FY26            Q4FY26          Q1FY27
+                                                                 Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                    From The MD                FINANCIALS              About HFCL             STRATEGIC FOCUS                           APPENDIX            7
+
+[page 8]
+Income Statement – Q1FY27
+                                                                                                                                                            AL L N U M B E R S I N R S . C R O R E
+
+
+
+PARTICULARS                                                                Q1FY27                    Q4FY26              Q-O-Q                   Q1FY26                              Y-O-Y
+
+Revenue from Operations                                                    1,914.98                  1824.12                  4.98%                871.02                           119.85%
+Other Income                                                                  31.15                    22.26                                         14.53
+TOTAL INCOME                                                               1,946.13                  1,846.38                 5.40%                885.55                           119.77%
+Total Expenses                                                             1,500.86                  1509.45                                       842.62
+EBITDA                                                                       445.27                   336.93                 32.16%                  42.93                          937.20%
+EBITDA MARGIN (%)                                                           23.25%                    18.47%                 478 Bps                4.93%                          1832 Bps
+Depreciation                                                                  51.25                    45.48                                         32.20
+Finance Cost                                                                  62.48                    62.78                                         55.62
+Share of net profits/(loss) of JV's accounted using equity
+                                                                              -0.02                     -0.74                                            0.19
+method
+Exceptional Items                                                                   -                       -                                                -
+PBT                                                                          331.52                   227.93                 45.45%                 -44.70
+PBT MARGIN (%)                                                              17.31%                    12.50%                 481 Bps               -5.13%
+Tax                                                                           85.88                    43.48                                        -15.40
+PROFIT AFTER TAX                                                             245.64                   184.45                 33.17%                 -29.30
+PAT MARGIN (%)                                                              12.83%                    10.11%                 272 Bps               -3.36%
+Other Comprehensive Income                                                    72.16                    -39.23                                        38.92
+TOTAL COMPREHENSIVE INCOME                                                   317.80                   145.22                                             9.62
+EPS (Diluted ₹)                                                                1.49                      1.21                                            -0.22
+                                                                          Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                             From The MD              FINANCIALS        About HFCL            STRATEGIC FOCUS                    APPENDIX   8
+
+[page 9]
+[CHART, page 9, native vector text - no rasterised chart image on this page per pdfimages check. Order Book bar chart data (Category Wise / Customer Wise / Total Order Book, Q3FY26/Q4FY26/Q1FY27) is captured verbatim below as extracted text.]
+Strong & Diversified Order Book – Q1FY27
+                                                                                                                                                   Al l n umb ers i n Rs. Crore
+
+
+
+
+  Category Wise                                                     Customer Wise                                     Total Order Book
+                                                    (₹ IN CRORES)
+
+
+
+
+                                                                                                                                                                26,665
+                                   4,227
+
+
+                                                                                                        10,502                                  21,206
+
+                                            5,099
+                                                                           16,164
+            17,339
+                                                                                                                              11,125
+
+
+
+
+        Networks     O&M     Products                                          Goverments   Private                           Q3FY26            Q4FY26           Q1FY27
+
+
+
+Diversified and growing Order book provides strong revenue visibility across telecom and defence
+                                                                           Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                              From The MD                 Fi nanci als   About HFCL   STRATEGIC FOCUS   APPENDIX   09
+
+[page 10]
+//CHAPTER 01
+
+
+
+
+  HFCL -
+  A Differentiated
+  Technology-Led
+  Play
+
+                                10   A Differentiated, Fully Integrated Platform Serving Telecom
+                                     And Defence
+                                11   With Presence Across 60+ Countries Supporting 80+
+                                     Marquee Customers
+                                12 Driving Product Innovation Through Deep In-house R&D
+                                13   Complemented By State-of-the-art Manufacturing
+                                     Infrastructure For Scalable Execution
+                                14   High-End Customised Product Portfolio
+                                                                                 Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                                    From The MD           Fi nanci als                 About HFCL           STRATEGIC FOCUS                            APPENDIX   010
+
+[page 11]
+A Differentiated, Fully Integrated Platform
+Serving Telecom and Defence
+  #1
+  OPTICAL FIBRE CABLE
+                                     6
+                                     MANUFACTURING
+                                                                          3
+                                                                          R&D
+                                                                                                       60+
+                                                                                                       COUNTRIES
+                                                                                                                                             80+
+                                                                                                                                             MARQUEE
+                                                                                                                                                                   ~26,665Cr
+                                                                                                                                                                                ROBUST
+  SUPPLIER IN INDIA                  FACILITIES                           CENTRES                      PRESENCE                              CUSTOMERS                          ORDER BOOK
+
+
+
+PRESENCE IN HIGH GROWTH SEGMENTS
+
+ OF, OFC, PCS                                        Telecom &                                     Defence                                               System Integration/
+                                                     Networking                                                                                          EPC Projects
+
+Product Categories
+
+ OF/OFC                 PCS                         • Point to Point and Point to Multipoint UBR   •   Electronic FUZE                                   Public Telecommunication
+ • Optic Fiber          • Cable Assemblies          • Indoor & Outdoor Wi-Fi 5, 6 and 7            •   High-capacity Radio Relay                         Established telecom integrator with proven
+                                                      Access Points                                    Ground Surveillance Radar                         expertise in large-scale BharatNet, OTN, rural
+ • Armoured &           • High Density Cabinets                                                    •
+   Unarmoured Cable                                 • AI powered Cloud Network                                                                           GSM, FTTH, in-building solutions, mobile
+                        • Fiber Termination Box                                                    •   Thermal Imaging Core (TI Core)
+                                                      Management System                                                                                  backhaul, nationwide optical networks, and
+ • Micro Cable          • PLC Splitters                                                            •   Thermal Weapon Sights (TWS)                       advanced Wi-Fi deployments.
+                                                    • Ethernet L2 /L3 Switches
+ • Micro Module         • Joint Closures                                                           •   Multi Mode Hand Grenade
+   Cable                                            • 5G Indoor & Outdoor FWA CPE
+                          Aerial/ FTTH                                                             •   Tactical Cables for defence
+ • Ribbon Cable
+                        •
+                                                    • IP/ MPLS Routers                                                                                   Defence Communication
+                          Accessories                                                              •   Aerostructure Solutions through proposed
+ • FTTH Cable                                                                                                                                            A fully dedicated nationwide MPLS network
+                        • FTTA Solution                                                                aerospace business being acquired
+                                                                                                                                                         delivering end-to-end connectivity via hybrid
+ • IBR Cable            • Installation Material                                                                                                          microwave broadband links for remote areas,
+ • Data Centre            Kitting for 4G/5G Sites                                                                                                        supported by an exclusive DWDM optical
+   Products                                                                                                                                              backbone and GSM-based fiber monitoring &
+                                                                                                                                                         management system.
+                                                     Message
+ HFCL LIMITED | INVESTOR PRESENTATION 2026       From The MD   Fi nanci als   About HFCL             STRATEGIC FOCUS               APPENDIX   011
+
+[page 12]
+With Presence Across 60+ Countries
+Supporting 80+ Marquee Customers
+     OVERSEAS OFFICES
+                                                                                           USA                         CANADA
+                                                                                           UK                          DUBAI
+                                                                                           POLAND                      TURKEY
+                                                                                           GERMANY
+
+
+
+
+                                                                                           Supplying to                Supplying to
+                                                                                           majority of Global          majority of Hyper-
+                                                                                           Tier 1 Telecom              scalers
+                                                                                           Customer
+
+
+                                                                                           Largest supplier of         Supplied for
+                                                                                           Optical Fibre Cable         nation-wide
+                                                                                           to Oil & Gas                OFC connectivity
+                                                                                           Companies in                projects in
+                                                                                           India                       multiple
+                                                                                                                       countries
+
+
+Map not to Scale only for illustration purpose
+                                                           Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026              From The MD                  Fi nanci als           About HFCL   STRATEGIC FOCUS    APPENDIX
+                                                                                                                                                      012
+
+[page 13]
+Driving Product Innovation Through
+Deep In-house R&D
+HFCL's strengthened R&D capabilities are enabling differentiated, future-ready products and
+reinforcing its transition into a technology-led enterprise.
+
+
+ STRENGTHENED IN-HOUSE R&D TEAM
+
+
+ Head Count
+
+
+
+
+                                                                                                                        3
+                                                                                                                        DEDICATED R&D CENTRES
+  55
+  5G PRODUCTS
+                            69
+                            WIRELESS AND
+                            SWITCHING
+                                            52
+                                            TECHNOLOGY &
+                                            DEFENCE
+                                                                     49
+                                                                     OPTIC FIBER &
+                                                                     OPTICAL FIBER CABLE
+                                                                                                   225
+                                                                                                   TOTAL
+                                                                                                                        IN BENGALURU, HYDERABAD
+                                                                                                                        AND GURUGRAM DRIVING
+                                                                                                                        INNOVATION
+                            SOLUTIONS
+                                                 Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026    From The MD          Fi nanci als    About HFCL     STRATEGIC FOCUS   APPENDIX   13
+
+[page 14]
+Complemented By State-of-the-art Manufacturing
+Infrastructure For Scalable Execution
+
+      6                                     28             MN FKM/ANNUM                   34    MN FKM/ANNUM
+      MANUFACTURING FACILITIES              OPTICAL FIBER CAPACITY                        OPTICAL FIBER CABLE
+      IN INDIA                              EXPANDING TO 33.9 MN                          CAPACITY EXPANDING TO
+                                            FKM/ANNUM                                     42.3 MN FKM/ANNUM
+
+
+
+
+      ₹580 Cr                               ₹275 Cr
+      PREFORM PROJECT CAPEX                 As Phase1 for creating facility for
+      300 MT/ANNUM BY JULY 2029             MMHG in upcoming 1000 Acre
+                                            Andhra Ammunition Complex
+                                                                               Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                                  From The MD                  Fi nanci als                    About HFCL                STRATEGIC FOCUS                         APPENDIX   14
+
+[page 15]
+High-End Customised Product Portfolio
+
+OF/OFC/PCS/DCS                                   TELECOM                                          DEFENCE                                                            NEW PRODUCTS
+
+
+                                                                                                                                                                                         Outdoor/ Indoor
+                                                                                                                                                                                         IBR Cable
+
+
+   Optic Fiber              Cable Assemblies        5G Indoor &                     Ethernet L2                        Multi Mode Hand Grenade
+                                                  Outdoor FWA CPE                    Switches
+
+                                                                                                                                                                                         HFCL Eka Fiber
+
+
+
+                                                                                                      Thermal               Drone Detection        Foliage
+                                                                                                    Weapon Sights               Radar         Penetration Radar                          HFCL A2- 180
+  Micro Cable      FTTH Cable     Ribbon Cable                   IP/ MPLS Routers                                                                                                        Fiber
+
+                                                                                                                       Electronic                High-capacity
+                                                                                                                       Fuzes                     Radio Relay
+                                                                                                                                                                     UNDER DEVELOPMENT
+
+
+                                                      Home Mesh              Indoor & Outdoor                          Aerospace and             Coastal
+  HD & UHD Fiber                Fiber Pathway
+                                                       Routers                 Wi-Fi 5, 6 and 7                        Defence Cable             Surveillance
+   patch panels                 Systems (FPS)
+                                                                                Access Points                          Assemblies                Radar
+                                                                                                                                                                       Maritime Patrol         Hollow Core
+                                                                                                                                                                       Radar                   Optical Fiber
+
+
+Optical Fiber & Optical Fiber Cable              Passive Connectivity &                           Defence - Emerging Growth Engine with Strong Visibility
+Emphasis on high-end, customized solutions       Data Center Solutions                            • ~₹2,300 Cr total Defence order book ( ~INR 2000 crs
+enables stronger customer engagement and         Emerging as a high-growth adjacency to             through an entity proposed to be acquired)
+higher value realization amid a structural       the OFC business, driven by exports and          • HAL – Preferred Supplier status                                    Loitering               Fuel Tank &
+demand upcycle.                                  hyper-scalers/ data centers                      • DRDO Technology Transfer (ToT)                                     Munition                Pylon Tank
+                                                                                                                                                                                               (Aerospace Products
+                                                                                                  • Strong Own-IPR portfolio                                                                   through Proposed
+                                                                                                  • Shift from L1 supplier to strategic partner                                                Acquisitions)
+                                                                       Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                          From The MD             Fi nanci als   About HFCL   STRATEGIC FOCUS   APPENDIX   15
+
+[page 16]
+//CHAPTER 02
+
+
+
+
+  HFCL -
+  Strategic Focus
+
+
+
+                                16 Well-Defined Growth Levers To Accelerate Revenues And
+                                   Profitability
+                                17 Making HFCL A Differentiated Play Across Telecom And
+                                   Defence Products
+                                                                         Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                            From The MD                  Fi nanci als                About HFCL            STRATEGIC FOCUS                    APPENDIX       16
+
+[page 17]
+Well-Defined Growth Levers To Accelerate
+Revenues And Profitability
+              STRATEGIC PRIORITIES FOR SUSTAINED AND PROFITABLE GROWTH
+
+                01                                                        02                                                               02    Optimising
+                       Increased Focus                                             Expanding
+                       on Higher Margin                                            Manufacturing                                                 Revenue Mix
+                       Product Revenue                                             Capacities
+
+                Focus on higher value-added products                       EBITDA margin to expand from ~16.7% in                          Targeting 80-85% Revenue from Product
+                on the back of continued R&D driven                        FY26 to 22-25% by FY29                                          and more than 60% Revenue from Export by
+                innovation to aid margins and ease                                                                                         FY27
+                working capital
+
+
+                            OFC                                            Increasing Optical Fiber Cable and Optical Fiber                • Expanding global reach for greater customer
+                                                                           capacity to ~43 mn fkm p.a. and ~34 mn fkm p.a.                   diversification with exports at 56% of revenues with a
+                            • Develop high end Optical Fiber Cable         respectively and creating preform manufacturing                   target to reach 60%+ from FY27 onwards
+                              & Interconnect Solutions customised          capacity to 300 MT p.a. as backward integration
+                              for hyperscalers                                                                                             • Revenue from private sector has increased to 92%,
+                                                                           Backward integration into preform manufacturing –                 reflecting a strategic shift from Government to
+                                                                           will strengthen supply chain and also help in margin              Private customers
+                                                                           expansion
+                                                                                                                                           • Pivoting to a product-led revenue mix while
+                            Defence                                                                                                          deliberately shifting from low-profit turnkey work
+                            • Develop and move towards higher                                                                              • Diversified Product Portfolio – OFC, PCS, Defence,
+                              value-added offerings in defence and                                                                           Telecom
+                              aerospace value chain
+                                                                        Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                           From The MD                  Fi nanci als           About HFCL        STRATEGIC FOCUS                 APPENDIX    17
+
+[page 18]
+Making HFCL A Differentiated Play Across OFC,
+Telecom And Defence Products
+ New Product                                Demand Tailwinds                  Vertically                           Defence                            Strong Order
+ Development,                               and Market                        Integrated                           Monetisation                       Book
+ Export Focus for                           Leadership                        Company                              Entering Inflection
+ Greater Scale and                                                                                                 Phase
+ Higher Margins
+
+Products segment now ~85% of            #1 in OFC and strong market          R&D, manufacturing and               Defence platform expected to       Strong, diversified order book
+revenues, improving revenue             share in Wifi and UBR                connectivity solutions under         gain global scale with a           of more than Rs. 26,000 crore
+stability and margin profile                                                 one roof                             confirmed export order book of     provides multi-year revenue
+                                                                                                                  Rs.~2,000 crores through           visibility across Telecom,
+                                        Hyperscaler, AI and DC-driving                                            proposed aerospace business        Defence and Connectivity
+Exports at ~56% of revenues             demand for HFCL's high-fiber-        Backward integration into preform    being acquired                     solutions
+positioning HFCL as a global            count cables                         manufacturing for strengthening
+player                                                                       supply chain resilience
+                                                                                                                  Domestic Defence segment
+                                        Actively catering to Domestic                                             expected to meaningfully
+Private customers contribute ~          telcos and Bharatnet for rapid       Vertically integrated EPC & system   enhance operating performance
+92% of revenues lowering                roll out                             integration provider with            as serial production commences
+working-capital intensity                                                    single-point accountability from     on the back of receipt of
+                                                                             design to deployment and lifecycle   multiple Indian defence
+                                        Defence segment is ready to          operations                           contracts
+                                        serve worldwide with ongoing
+                                        rebuilding of global defence         Integrated O&M ensuring uptime
+                                        inventories                          through proactive monitoring and
+                                                                             preventive maintenance.
+                                                                     Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                        From The MD   Fi nanci als   About HFCL   Strategi c Focus   Appendix   18
+
+[page 19]
+//CHAPTER 07
+
+
+
+
+  Appendix
+
+
+
+                                19 Shareholders Information
+                                20 Abbreviations / Description
+                                                                      Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                         From The MD      Fi nanci als         About HFCL        Strategi c Focus   Appendix   19
+
+[page 20]
+[CHART, page 20, shareholding pie/donut chart - percentages are native vector text, captured verbatim below; one small decorative background strip image present on page (1929x166px) with no data content per pdfimages check.]
+Shareholders Information
+SHAREHOLDING AS ON JUNE 30, 2026                                                SHARE INFORMATION (AS ON JUNE 30, 2026)
+(IN %)
+
+
+                                                                                NSE TICKER                           HFCL
+
+                                                                                BSE TICKER                           500183
+
+                                                       28.29%                   MARKET CAP (₹ CRORES)                32,563.57
+
+                                                                                % FREE-FLOAT                         71.69%
+                  45.05%
+                                                                                FREE-FLOAT MARKET CAP (₹ CRORES)     23,343.34
+
+                                                         10.92%
+                                                                                SHARES OUTSTANDING                   1,53,06,02,463
+
+                                            15.74%
+                                                                                3M ADTV (SHARES)                     59296662
+
+                                                                                3M ADTV (₹ CRORES)                   847.52
+
+                                                                                INDUSTRY                             Telecommunications – Equipment
+              Promoter             DII/MF       FII's & FPI's        Others                                          & Solutions
+                                                               Message
+HFCL LIMITED | INVESTOR PRESENTATION 2026                  From The MD   Fi nanci als            About HFCL      Strategi c Focus   Appendix   20
+
+[page 21]
+Abbreviations / Description
+                                            ABBREVIATION                 DESCRIPTION
+                                            ARP                          Aramid Reinforced Plastic
+                                            CAGR                         Compounded Annual Growth Rate
+                                            CPE                          Consumer Premises Equipment
+                                            DC                           Data Centers
+                                            MFKM                         Million Fiber kilometres
+                                            FRP                          Fiber Reinforced Plastic
+                                            FTTH                         Fiber To The Home
+                                            FWA                          Fixed Wireless Access
+                                            IGFR                         Impregnated Glass Fiber Reinforcement
+                                            HASPL                        HFCL Advance Systems Private Limited
+                                            IBR                          Intermittent Bonded Ribbon Cable
+                                            MMHG                         Multi-Mode Hand Grenades
+                                            MPLS                         Multi-Protocol Label Switching
+                                            O&M                          Operating & Maintenance
+                                            OFC                          Optical Fiber Cable
+                                            PtMP                         Point to Multipoint
+                                            PtP                          Point to Point
+                                            TWS                          Thermal Weapon Sight
+                                            UBR                          Unlicensed Band Radio
+
+[page 22]
+Thank You
+
+
+
+CORPORATE OFFICE
+8, Commercial Complex,
+Masjid Moth, Greater
+Kailash Part 2, New Delhi,
+Delhi - 110048
+
+
+AMIT AGARWAL
+HEAD – INVESTOR
+RELATIONS HFCL Limited
+Tel: +91-11-3520 9400
+Email: ir@hfcl.com
+
+
+
+
+            HFCL LIMITED
+=== END EXTRACTED TEXT ===

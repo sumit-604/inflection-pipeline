@@ -1,0 +1,42 @@
+stage: B09-tam
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: partial               # searches skipped/blocked; core triangulation complete
+input_gaps: [announcements, shareholding, standalone_annual_report, research, laxmiindia_screening, cmp_market_cap]
+flags:
+  - type: FLAG-MGMT-TAM-SCOPE
+    reason: "Management's commissioned CARE Report TAM (Rs 26,00,000 Cr, SORP-backed MSME loans, all-lender full-penetration) is 2.96x this stage's conservative NBFC-channel TAM, above the 2x 'likely inflated' threshold; scope caveats absent from the Prospectus's own presentation."
+  - type: FLAG-GUIDANCE-DISCOUNT-CARRIED
+    reason: "SOM share-gain used +3pp/3yr (low end of aggressive band) as a direct discount for B07-emoat's FLAG-F2-GUIDANCE-MISS (every FY26 guided metric under-delivered)."
+  - type: FLAG-CAPACITY-GAP
+    reason: "SOM_3yr AUM (Rs 3,763 Cr) exceeds the ~Rs 2,830 Cr capital-constrained AUM ceiling implied by FY26 net worth at RBI's 15% NBFC-ML CRAR floor, a ~Rs 930 Cr (33%) gap; SOM assumes further capital-market access not yet committed."
+  - type: FLAG-CMP-MISSING
+    reason: "5E valuation-implication P/E line cannot be completed; CMP/market cap unpopulated in manifest, carried from B00."
+  - type: FLAG-STALE-IFC-GAP-FIGURE
+    reason: "IFC 2018 (FY2017-base) MSME credit-gap figure (Rs 25.8 lakh crore) is >4yr stale; used for direction only, never as a headline number."
+market_definition: "NBFC-channel, branch-led secured MSME/vehicle/LAP lending to semi-urban and rural micro/small enterprises and vehicle owners across Laxmi's 6-state footprint, excluding medium/corporate enterprises, bank-channel and pure-digital lending."
+tam_cr: {conservative: 880000, realistic: 2600000}
+sam_cr: 71260
+sam_pct_of_tam: 8.1
+som_3yr_cr: 3763
+som_5yr_cr: 5188
+som_implied_revenue_cagr: {yr3: 32.3, yr5: 26.1}
+current_sam_share_pct: 2.28
+revenue_headroom_x: 223
+tam_growth_pct: 18
+runway_class: "MASSIVE"
+mgmt_claim_cr: 2600000
+mgmt_claim_ratio: 2.96
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs 930 Cr by year 3 vs capital-constrained ceiling at RBI's 15% NBFC-ML CRAR floor; SOM is the optimistic side pending further capital raise"
+revenue_anchor: "Rs 319.60 Cr FY26 Total Income (Annual_Report_2024.pdf audited P&L; Inv Pres slides 6,15)"
+searches_performed:
+  - "India MSME credit market size 2026 CRISIL ICRA NBFC lending"
+  - "Arman/Manba/Moneyboxx/UGRO Capital AUM FY2026"
+  - "India rural semi-urban NBFC credit penetration 2025-2026"
+  - "RBI NBFC middle layer CRAR 15% Scale Based Regulation"
+searches_skipped:
+  - "Individual AUM pulls for Five Star, Vistaar, Kogta, MAS, Veritas (Method 3 precision)"
+  - "Full CareEdge May-2025 Rs 5.3 lakh crore NBFC MSME AUM release (blocked HTTP 403; headline only)"
+  - "Top-3 concentration ratio NBFC MSME India (NOT FOUND, not estimated)"

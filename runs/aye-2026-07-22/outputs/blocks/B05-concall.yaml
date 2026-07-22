@@ -1,0 +1,86 @@
+stage: B05-concall
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only one AYE concall transcript collected (Q3 FY26, 06-Mar-2026); standard three-quarter
+     cross-call methodology (1C evolution, 2E repeated-question tracker, 2C consistency rating)
+     could not be run as designed — substituted with a two-point promise-vs-anchored-delivery
+     test per Section 2A"
+  - "Q4 FY26 concall (28-Apr-2026) not collected; digest-only summary used strictly as
+     non-anchored directional cross-check, never as sole basis for a delivered/missed verdict"
+  - "AUM, disbursements, credit-cost-%-of-AUM, NIM, collection efficiency and PAR X/PAR30 are
+     not disclosed in the anchored SEBI Reg 33/52 results filings (P&L/BS/Reg52(4) ratios only);
+     these metrics are digest-only (non-anchored) for FY26 Q4 and Q1 FY27"
+  - "Q1 FY27 results filing (results__2246e44a...) is a badly OCR'd, one-character-per-line
+     extraction; P&L and Reg 52(4) ratio figures were reconstructed manually with internal
+     cross-checks (e.g. PAT tie-out against Reg 52(4) net profit margin) but carry residual
+     transcription risk on line items not cross-checked"
+  - "FY26 audited filing's Q4 FY26 comparative Interest income/Total revenue figures do not
+     exactly match the Q4 FY26 comparative column shown in the later Q1 FY27 filing (Rs440.16cr
+     vs Rs426.80cr Interest income for the same quarter) — flagged as an unresolved data
+     reconciliation, not adjudicated here"
+flags:
+  - "AUM growth guidance (29-30% FY26) missed on anchored on-book loan growth (~26.6% YoY)"
+  - "CFO was Interim on the maiden call with no succession disclosure; changed within ~7 weeks"
+  - "Bihar AUM concentration (15.5%, digest-only) amid active state MFI regulatory stress, no
+     anchored geography-level asset-quality split available"
+quarters_analysed: ["Q3 FY26"]
+triggers:
+  - {priority: 1, name: "Credit-cost normalisation toward 3.25-3.75% comfort range", type: "COST", timeframe: "near-medium", conviction: "M", confirm_signal: "Anchored Gross/Net Stage III ratios continue improving in next filing (already 4.77%->4.49% GNPA FY26->Q1FY27)", kill_signal: "GNPA/NNPA reverses upward in next anchored filing"}
+  - {priority: 2, name: "AUM growth reacceleration toward 29-30%+ (missed in FY26)", type: "VOLUME", timeframe: "near-medium", conviction: "L-M", confirm_signal: "Anchored on-book Loans growth closes toward or exceeds 29-30% YoY in next filing", kill_signal: "On-book loan growth stays materially below guidance for a second consecutive period"}
+  - {priority: 3, name: "Mortgage mix build toward ~30% of portfolio", type: "PRICE-MIX", timeframe: "medium (3yr)", conviction: "M", confirm_signal: "Mortgage mix shows visible sequential increase beyond the current flat ~22-23%", kill_signal: "Mix stays flat or declines for multiple quarters despite continued headcount investment"}
+  - {priority: 4, name: "Hypothecation approval-rate normalisation (40-43% back toward 55%)", type: "VOLUME", timeframe: "near-medium (FY27)", conviction: "M", confirm_signal: "Anchored loan growth reaccelerates specifically in the hypothecation book", kill_signal: "Approval rates stay suppressed, growth stays mortgage-dependent only"}
+  - {priority: 5, name: "Operating leverage from mortgage-team cost absorption", type: "COST", timeframe: "medium", conviction: "M", confirm_signal: "Opex ratio trends toward 7-7.5% 3-year target once disclosed in an anchored filing", kill_signal: "Opex ratio stays elevated as mortgage AUM growth lags headcount already added"}
+  - {priority: 6, name: "Post-IPO capital base and funding-cost decline supporting NIM/RoA", type: "COST", timeframe: "near-medium", conviction: "M-H", confirm_signal: "Anchored PAT/EPS trajectory continues the Q3->Q4 FY26 step-up pattern", kill_signal: "Finance cost fails to decline despite lower incremental CoB and higher net worth"}
+  - {priority: 7, name: "Bihar/MFI-bill regulatory containment", type: "REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "Aggregate anchored asset-quality ratios keep improving despite 15.5% Bihar AUM concentration", kill_signal: "A visible break in the GNPA/collection trend coincident with Bihar-specific news flow"}
+guidance:
+  - {item: "AUM growth", number: "29-30%", timeframe: "FY26 full year", stated_in: "Q3 FY26 call, Sanjay Sharma, p.5"}
+  - {item: "AUM CAGR", number: "~30%", timeframe: "3-year vision", stated_in: "Q3 FY26 call, Sanjay Sharma, p.9"}
+  - {item: "Credit cost (exit)", number: "<4% annualised", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call, Sovan Satyaprakash, p.9-10"}
+  - {item: "Credit cost (comfort range)", number: "3.25-3.75%", timeframe: "3-year vision / medium term", stated_in: "Q3 FY26 call, Sanjay Sharma + Sovan Satyaprakash, p.9-10"}
+  - {item: "Opex ratio", number: "7-7.5%", timeframe: "3-year vision", stated_in: "Q3 FY26 call, Sanjay Sharma, p.9"}
+  - {item: "RoA", number: "4-4.5%", timeframe: "3-year vision", stated_in: "Q3 FY26 call, Sanjay Sharma, p.9"}
+  - {item: "Mortgage mix", number: "~30% of portfolio (from 22%)", timeframe: "3-year vision", stated_in: "Q3 FY26 call, Sovan Satyaprakash, p.9"}
+  - {item: "FY27 NIM guidance", number: "deferred, no number given", timeframe: "next earnings call", stated_in: "Q3 FY26 call, Sovan Satyaprakash, p.10"}
+promise_delivery:
+  delivered: 3
+  partial: 3
+  missed: 1
+  rows:
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "AUM growth 29-30% for FY26", outcome: "Missed - anchored on-book Loans grew 26.6% YoY (FY26 audited BS, filed 27-Apr-2026); digest-only AUM +26-27% YoY", explanation: "No anchored post-hoc explanation available; Q4FY26 concall not collected"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "Credit cost <4% annualised exiting Q4 FY26", outcome: "Partial/ambiguous - not disclosed in anchored filings; digest-only Q4FY26 credit cost 4.30% on ATA basis (different denominator than management's own AUM-basis metric)", explanation: "Basis mismatch prevents a clean anchored test"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "Exit FY26 with a fairly normalised credit book", outcome: "Delivered - anchored Gross Stage III 4.77% / Net Stage III 1.79% / PCR 63.66% at 31-Mar-2026, improving further to 4.49%/1.67%/63.80% at 30-Jun-2026 (Reg 52(4) disclosures, both filings)", explanation: "n/a - delivered"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "Robust improvement in profits from the coming quarter (Q4 FY26)", outcome: "Delivered - PAT Rs42.60cr (Q3FY26) -> Rs85.91cr (Q4FY26, +102% QoQ); FY26 full year PAT Rs193.63cr (FY26 audited results, filed 27-Apr-2026)", explanation: "n/a - delivered"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "Mortgage mix to build toward ~30% of portfolio (3-year target, from 22%)", outcome: "Partial/too early - digest-only mortgage mix ~23% (FY26-end) to ~21.8% (30-Jun-2026, reclassified) - essentially flat", explanation: "1-2 quarters of a 3-year target; not anchored"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "FY27 NIM guidance to be given at next earnings call (timing promise, not a number)", outcome: "Partial/not independently verifiable - digest-only report that FY27 NIM guidance (14.25-14.75%) was given at the Q4FY26 concall (28-Apr-2026, not collected)", explanation: "Cannot confirm against an anchored source"}
+    - {promised_in: "Q3 FY26 call (06-Mar-2026)", promise: "Bihar/MFI-bill exposure expected immaterial to AYE collections", outcome: "Delivered directionally - digest-only 'minimal impact from Bihar/local MFI regulatory issues'; anchored aggregate asset-quality ratios (row 3) continued improving with no visible break", explanation: "Geography-specific confirmation is digest-only; aggregate trend is anchored"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Maiden call, only one transcript available. The single most repeated,
+  most confidently stated guidance on the call (29-30% AUM growth for FY26) missed on an
+  anchored proxy (26.6% YoY on-book loan growth); credit-cost delivery is ambiguous on
+  anchored data due to a metric-basis mismatch. Set against that, the anchored Ind AS
+  asset-quality ratios (Gross/Net Stage III, provision coverage) and PAT genuinely improved
+  across both anchored post-call filings exactly as promised. Mixed evidence with one clear,
+  material miss on the headline number caps this below a Good/B grade; genuine anchored
+  delivery on asset quality and profit keeps it above Poor/D."
+peer_questions:
+  - {question: "Does peer MSME/microfinance-adjacent lender commentary corroborate a sector-wide credit-cost normalisation into FY26/FY27, or is AYE's four-quarter credit-cost decline company-specific?", why: "Tests whether AYE's underwriting moat or a cyclical sector recovery explains the improvement", check_peers: ["MASFIN", "Northern Arc", "SBFC"]}
+  - {question: "Do peers corroborate a sector-wide over-lending tightening cycle (approval rates down ~10-15pp) with an expected FY27 reversal, matching AYE's 40-43% -> 55% approval-rate normalisation narrative?", why: "Validates whether AYE's FY27 hypothecation reacceleration thesis is sector-wide or company-specific execution", check_peers: ["MASFIN", "SBFC", "Northern Arc"]}
+  - {question: "Do peers with MFI-linked exposure report minimal spillover from the Bihar ordinance/draft MFI bill into non-MFI business-loan books, matching AYE's Karnataka/Tamil Nadu parallel?", why: "AYE carries 15.5% AUM concentration in Bihar (digest-only); tests durability of its insulated claim", check_peers: ["Northern Arc", "SBFC", "MASFIN"]}
+  - {question: "Do peer MSME lenders show a similar collection-efficiency recovery trajectory specific to business-loan/micro-enterprise segments, as distinct from pure consumption-MFI lending?", why: "Corroborates whether AYE's collection recovery is company-specific or segment-wide", check_peers: ["MASFIN", "SBFC"]}
+  - {question: "Do peer rated NBFC-MSME lenders show comparable incremental cost-of-borrowing declines over the same window?", why: "Tests how much of AYE's NIM/margin story is idiosyncratic (post-IPO capitalisation, own rating upgrade) versus sector-wide funding tailwinds", check_peers: ["MASFIN", "SBFC", "Northern Arc"]}
+  - {question: "Is there any independent or peer-disclosed benchmark for the ~67 million unorganized-micro-enterprise addressable market and the almost-no-alternate-supplier hypothecation-lending claim?", why: "This company-sourced TAM and no-competition claim underlie the entire growth thesis and were not independently evidenced on the call", check_peers: ["MASFIN", "SBFC"]}
+  - {question: "What mortgage/micro-LAP credit-cost and seasoning experience do peers with a similar-vintage LAP book report, and does it support AYE's digest-only sub-2% mortgage credit-cost aspiration?", why: "AYE's own mortgage book is only ~3 years old and untested through a full stress cycle", check_peers: ["SBFC", "MASFIN"]}
+red_flags:
+  - "AUM growth guidance (29-30% FY26) missed, delivered ~26.6-27% on the best anchored proxy - severity Medium-High"
+  - "CFO was Interim on the maiden call with no succession disclosure; changed within ~7 weeks - severity Medium"
+  - "Bihar AUM concentration (15.5%, digest-only) inside an active state MFI regulatory/collection-stress environment, no anchored geography-level asset-quality split - severity Medium"
+  - "Credit-cost guidance basis ambiguity (AUM-basis vs ATA-basis) prevents a clean anchored test of the <4% exit claim - severity Low-Medium"
+  - "Analyst-requested QoQ PAR comparative not available on the call - severity Low"
+  - "3-year targets (30% CAGR, RoA 4-4.5%, opex 7-7.5%) issued on a short 4-quarter trend history - severity Low-Medium"
+dropped_triggers: []
+timeline_slippages: []

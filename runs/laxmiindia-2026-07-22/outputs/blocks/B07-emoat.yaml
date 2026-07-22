@@ -1,0 +1,66 @@
+stage: B07-emoat
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: announcements
+    severity: MEDIUM
+    note: "inputs/announcements/ empty; operator-context.md non-anchored summary used as lead only (NCD raises, Acuite rating action, CTO appointment, IPO proceeds utilisation). Cross-checked where possible against concalls/investor presentation; items not independently re-confirmed in this stage's own read are marked as such in the report body."
+  - type: shareholding
+    severity: MEDIUM
+    note: "inputs/shareholding/ empty; no post-listing SHP filing. Not required for the emerging-moat scan; carried forward from B00/B01 for downstream stages."
+  - type: research
+    severity: LOW
+    note: "inputs/research/ empty. No effect on anchored evidence in this stage."
+  - type: standalone_annual_report
+    severity: LOW
+    note: "No glossy standalone AR; DRHP restated financials (FY23-25) + FY26 audited results filing used as the AR-equivalent for Our Business/strategy content, per B00 routing."
+  - type: rating_pdf
+    severity: LOW
+    note: "inputs/rating/ratings.pdf is scanned/image-only; this stage relied on the DRHP's own rating table (BBB+ through A- trajectory to FY25) and operator-context for the Mar-2026 A/Stable action, which was not independently re-verified against a primary rating PDF within this stage's scope."
+flags:
+  - type: FLAG-F2-GUIDANCE-MISS
+    reason: "Q1 FY26 call (Aug 2025) guided to 35-40% AUM growth, ~50% PAT growth, 40-45% more branches, 100-125bps cost-of-borrowing cut, and at least a two-notch rating upgrade for FY26. Actual FY26 delivery: 27.35% AUM growth, 38.34% PAT growth, 11.4% branch growth (+18, vs 158 base), 68bps cost-of-borrowing cut, one-notch rating move (A- Positive to A Stable). Every headline metric under-delivered in the maiden post-IPO year; treat all forward guidance in this name with a discount until a second year of guidance is judged."
+  - type: FLAG-DIGITAL-NARRATIVE
+    reason: "Digital-channel share of disbursement (by value) declined from 1.70% (FY24) to 0.94% (FY25) even as investor materials market a 'digital-first operations' identity (Inv. Pres. slide 19). Branch/DSA sourcing remains >99% of volume. D2 scored WEAK despite the marketing framing."
+  - type: FLAG-DA-COUNTERPARTY-RISK
+    reason: "The same PSL/DA-assignment mechanism scored as a regulatory/funding tailwind (R1, B3) also transmitted the FY26 Up Money Ltd counterparty default onto LIFL's book (GNPA 2.13% including the pool vs 0.80% ex-pool, FY26). The lever cuts both ways; do not credit R1/B3 without this caveat."
+  - type: FLAG-BTA-STATUS-UNKNOWN
+    reason: "Business transfer agreement (₹533.34mn book acquisition, DRHP p.195, signed pre-IPO) — closing/completion status NOT FOUND in any of the four post-IPO concalls or the investor presentation read in this stage. Confirm status before crediting H1 further at synthesis."
+em_score: 29.4
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "B1", name: "Funding-source diversification & cost-of-funds advantage", strength: "Strong", evidence_type: "documented", time_to_materialise: "active, compounding"}
+  - {id: "G1", name: "War chest / capitalisation (CRAR, net worth, D/E, rating trajectory)", strength: "Strong", evidence_type: "documented", time_to_materialise: "active, compounding"}
+  - {id: "A3", name: "Process innovation (digitised underwriting/collections, TAT, KPI-verified collection efficiency)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "A4", name: "Product-platform broadening (EV loans, wholesale lending)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "C2", name: "Distribution-channel concentration declining (top-10 DSA share falling)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "E1", name: "Geographic density / first-mover in home cluster (Rajasthan) plus new-state cadence", strength: "Moderate", evidence_type: "claim", time_to_materialise: "24-36m"}
+  - {id: "F1", name: "Talent density (CTO hire, CXO bench build)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "H1", name: "Industry-consolidation bolt-on (signed business transfer agreement)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "PSL-eligible book actively monetised via DA/co-lending sales to banks", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 7, claim: 5, inference: 1}
+completionist_recount: "9 distinct documented items across 7 categories (A3, A4, B1, C2, D2, G1, H1); each anchors to an audited KPI table, a signed agreement, or an exchange-filed corporate action, not a management aspiration. F2 (execution) and D2 (digital) were explicitly scored down despite being the two categories management markets hardest."
+catalysts_12m:
+  - {catalyst: "e-Sign roll-out in loan-disbursal workflow", window: "0-12m (Q1-Q2 FY27 per management's own timeline)", evidence_type: "claim", anchor: "Q3 FY26 call; Inv. Pres. slide 26"}
+  - {catalyst: "FY27 Q1 results as first checkpoint against FY27 guidance (30-35% AUM CAGR, ~40-45% PAT growth)", window: "0-6m", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "Up Money DA-pool legal/servicer resolution", window: "0-12m", evidence_type: "claim", anchor: "Q3 FY26 call; Q4 FY26 call"}
+  - {catalyst: "Business transfer agreement closing confirmation", window: "0-12m", evidence_type: "documented (signing); completion status pending", anchor: "DRHP p.195"}
+  - {catalyst: "Maharashtra branch-network ramp (first full year)", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 22"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "ECB as a funding avenue", converting_evidence: "Signed ECB facility/term sheet disclosed via exchange filing", first_appears: "Exchange filing", window: "12-24m"}
+  - {optionality: "Cross-sell/data-analytics capability", converting_evidence: "Disclosed repeat-customer share materially above ~10%, or a named analytics tool with measured lift", first_appears: "Investor presentation KPI update / annual report note", window: "24-36m"}
+  - {optionality: "Proprietary underwriting data asset", converting_evidence: "Disclosed in-house scorecard/model performance or replicability statement", first_appears: "Annual report / rating-agency methodology note", window: "3-5yr"}
+  - {optionality: "Digital-platform scale-up", converting_evidence: "Digital-channel disbursement share reversing its FY24-25 decline past a disclosed threshold", first_appears: "Quarterly investor presentation KPI table", window: "12-24m"}
+  - {optionality: "PSL/DA-sale network effect", converting_evidence: "Disclosed recurring DA/co-lending revenue line with stated multi-bank counterparty count", first_appears: "Quarterly results presentation / concall", window: "12-24m"}
+  - {optionality: "ESG-linked funding", converting_evidence: "Signed ESG-linked or DFI facility with disclosed preferential pricing", first_appears: "Exchange filing / rating-agency note", window: "24-36m"}
+  - {optionality: "Business transfer agreement completion", converting_evidence: "Exchange filing confirming closing and integration of the acquired book", first_appears: "Exchange filing / next annual report", window: "0-12m"}
+combined_assessment: "HIGH POTENTIAL"
+combined_reasoning: "Mechanically-AVOID Gate 0 label masks a STRONG existing moat and a genuinely STRENGTHENING funding-cost/capitalisation moat, offset by a first-year post-IPO guidance miss on every headline metric -- HIGH POTENTIAL with guidance discounted."
+top_moat_risks:
+  - "PSL/DA-assignment mechanism cuts both ways: cheapens funding (B1/R1) but transmitted the Up Money counterparty default onto the book in FY26 (GNPA 2.13% incl. pool vs 0.80% ex-pool)."
+  - "FY26 guidance-delivery gap (F2) across AUM growth, branch additions, PAT growth, cost-of-borrowing quantum, and rating-upgrade quantum -- a repeat against FY27 guidance would discount every category scored above."
+  - "Digital-channel disbursement share declined FY24-FY25 even as management markets a digital-first identity; branch/DSA sourcing still >99% of volume, capping platform-style scalability."
+  - "Newer-state branches (MP, Chhattisgarh, UP, Maharashtra) unproven at replicating Rajasthan's density economics; business transfer agreement completion status unconfirmed."

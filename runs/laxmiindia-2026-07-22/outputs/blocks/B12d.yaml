@@ -1,0 +1,20 @@
+stage: B12d
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 4
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q2 DA/securitization gain-on-sale dependency", labeled_verdict: "VERIFIED", peers_backing: ["UGROCAP"], independent_peer_count: 1, rule_violated: "Rule 4 - VERIFIED requires >=2 independent peer anchors; single-peer support should be PARTIALLY VERIFIED", severity: "MAJOR"}
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Part 1 Q2 verdict line + closing YAML verified[] list", description: "Claim 'DA/securitization gain-on-sale materially drives reported NBFC PAT/NIM quality' is labeled VERIFIED resting on one peer (UGROCAP) with three anchors from the same single call; per the stage's own Rule 4 this should be PARTIALLY VERIFIED. Underlying UGRO evidence itself checked out exactly against the Feb-26 transcript (PAT INR43cr to INR6cr, '50% to 60% of ROA contribution' quote, INR100cr to INR56cr derecognition-gain quote all confirmed verbatim) - this is a verdict-label discipline failure, not a fabrication or misread of the peer evidence."}
+  - {severity: "MINOR", location: "06-peers.md Part 1 Q1, peer_coverage_map ARMANFIN rows", description: "ARMANFIN GNPA/NNPA figures (3.45%/0.5% Q1 Aug-25; 3.4%/0.95% Q4 May-26) are labeled 'on-book' in B06's narrative when the Q1 source transcript explicitly labels the figure 'consolidated level' (not on-book) and the Q4 figure's basis is not explicitly stated in the source context; values themselves match the transcripts exactly in both cases."}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 100    # peers correctly handled (real, accurate, findable substantive citations) / peers provided = 4/4; the one MAJOR finding is a verdict-aggregation discipline issue on a cross-peer claim, not a mishandled peer
+coverage_note: "6 of 15 peer transcripts independently re-read (40%), spanning all 4 peers and their most heavily-cited quarters (ARMANFIN Aug-25/May-26, MANBA Nov-25, MONEYBOXX Oct-25, UGROCAP Aug-25/Feb-26). Zero mismatches, zero unfindable citations across everything checked; the report's two headline findings (Q1 flood contradiction, Q2 DA-dependency corroboration) are both independently confirmed verbatim against source. The remaining 9 transcripts and their citations were not independently re-read and are unverified by this audit."

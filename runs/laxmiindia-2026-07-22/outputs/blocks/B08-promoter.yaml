@@ -1,0 +1,65 @@
+stage: B08-promoter
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: [standalone_annual_report, announcements, shareholding, research, laxmiindia_screening, post_listing_pledge_status, kmp_share_transaction_history, proxy_advisory_coverage_not_yet_available]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "Live, unresolved criminal FIR (IPC 406/420, breach of trust/cheating, alleged criminal conspiracy) against Aneesha Baid, sitting Whole-Time Director and individual Promoter, filed 19-Sep-2024 re: a personal land-sale dispute in Sikar, Rajasthan; investigation ongoing as of the Prospectus date (31-Jul-2025), current status as of this run date NOT FOUND. [PROSPECTUS] p.426"
+      - "Separate 22-year-old FIR (2003) against Deepak Baid, Managing Director/Promoter, re: alleged misuse of a repossessed truck by 'Baid Finance Company' for illegal liquor transport, still procedurally pending at the trial-court level as of the Prospectus date. [PROSPECTUS] pp.426-427"
+      - "Four-domain 'correction only under external scrutiny' compliance pattern at the Company level: four material GAAP errors restated (Note 104) by a new auditor engaged specifically ahead of the IPO; a 2-year audit-trail (Rule 11(g)) qualification narrowing but not fully closed; BSE listing-compliance penalties plus an Electronic Book Platform debarment (to 02-Jul-2024); and 5 years (FY2015-19) of RoC filing discrepancies, self-disclosed and remediated only Dec-2024. [PROSPECTUS] Risk Factors 4, 13; pp.44-45, 290-291; carried/verified from B03"
+      - "Related-party property complex: Rs30mn purchase of a property from the Managing Director (sale deed 23-Mar-2023) alongside a still-unresolved 2+ year property-title item at the same address held personally by the Managing Director. [PROSPECTUS] p.274, p.256"
+      - "Promoter-family board/committee concentration: 3 of 7 board seats (43%) held by one family (MD + 2 WTDs); the Managing Director sits as a voting member of the Audit Committee alongside 2 Independent Directors, at a Company with an active restatement history. [PROSPECTUS] pp.249, 258"
+      - "Extensive KMP and Independent Director turnover pre-IPO (CFO, CS, Internal Auditor, HR, Operations, Collections heads changed FY24; 2 Independent Directors exited within 2 days of each other in May-2024, one by death in office) continuing post-listing (HR AVP resignation, May-2026). [PROSPECTUS] pp.256-257, 267-268; web search"
+      - "Weak IPO listing (12.96-13.92% discount to issue price) and net-negative post-listing share performance (52-week low Rs71.06 vs Rs158 issue price; Rs129.50 as of run date, still ~18% below issue price), alongside a sharply declining FII holding trend (4.61%->1.40%, Sep2025-Jun2026, operator-supplied, NON-ANCHORED)."
+    mitigants:
+      - "Promoter pledge explicitly nil pre-IPO, cleanly disclosed. [PROSPECTUS] p.103"
+      - "No SEBI, RBI, or MCA enforcement action against Company or Promoters found in the Prospectus's own mandated disclosure or in web search."
+      - "No Wilful Defaulter / Fraudulent Borrower status for any Director. [PROSPECTUS] p.252"
+      - "Genuine board professionalization: 2 Independent Directors added pre-listing with 40+ and 47 years of senior banking/regulatory careers respectively (ex-Canara Bank ED/PNB CGM; ex-RBI/SBI/Shriram AMC/India Infoline). [PROSPECTUS] pp.250-251"
+      - "IPO capital-adequacy guidance delivered exactly as promised (FY26 CRAR 26.12%)."
+      - "Genuine institutional anchor-investor participation at IPO (Saint Capital Fund, BNP Paribas Financial Markets, Rs75.51cr)."
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 7, red: 0}
+deal_breakers:
+  - "Multiple mid-term independent-director exits within 3 years: Yaduvendra Mathur (death in office, 04-May-2024) and Kishore Sansi (resignation, 06-May-2024), 2 days apart -- RECORDED, not enforced"
+adverse_findings:
+  - {finding: "Live FIR (IPC 406/420, land dispute) against Aneesha Baid, Whole-Time Director/Promoter, investigation ongoing", evidence_tier: "VERIFIED (company self-disclosure in statutory Prospectus)", source: "[PROSPECTUS] p.426", date: "FIR dated 19-Sep-2024; disclosed as of Prospectus date 31-Jul-2025"}
+  - {finding: "22-year-old FIR against Deepak Baid (Baid Finance Company truck/liquor matter) still pending at trial-court level", evidence_tier: "VERIFIED (company self-disclosure)", source: "[PROSPECTUS] pp.426-427", date: "FIR dated 26-Nov-2003; still pending as of 31-Jul-2025"}
+  - {finding: "Rs30mn related-party property purchase from Managing Director plus unresolved 2+ year property-title item at the same address", evidence_tier: "VERIFIED", source: "[PROSPECTUS] p.274, p.256", date: "sale deed 23-Mar-2023; title item unresolved through FY25"}
+  - {finding: "Managing Director sits as a voting member of the Audit Committee alongside 2 Independent Directors", evidence_tier: "VERIFIED", source: "[PROSPECTUS] p.258", date: "as of Prospectus date 31-Jul-2025"}
+  - {finding: "Four erstwhile corporate promoter entities (Champalal Distributors, Gatik Realcon, Sulochana Sarees, Starpoint Construction) merged into Hirak Vinimay via NCLT scheme; original nature/purpose of the merged entities not disclosed at the detail level reviewed", evidence_tier: "VERIFIED merger fact / UNVERIFIED underlying entity purpose", source: "[PROSPECTUS] p.274", date: "NCLT order 12-Jan-2023, effective 21-Mar-2023"}
+  - {finding: "Weak IPO listing (12.96-13.92% discount) and post-listing share price decline to a 52-week low of Rs71.06 (vs Rs158 issue price), partial recovery to Rs129.50 by run date", evidence_tier: "MEDIA REPORTED / market data", source: "Business Standard, Groww; web search", date: "listing 05-Aug-2025; low and current price as of run date 22-Jul-2026"}
+  - {finding: "Extensive KMP/Independent Director turnover FY24-25, continuing post-listing (HR AVP resignation May-2026)", evidence_tier: "VERIFIED (Prospectus tables) + MEDIA REPORTED (post-listing filing)", source: "[PROSPECTUS] pp.256-257, 267-268; scanx.trade corporate filing summary", date: "FY24-25 changes per Prospectus; post-listing resignation effective 02-May-2026"}
+transition_evidence:
+  - "New externally-hired CTO Vinod Maheshwari (ex-Kogta Financial, ex-Midland Microfinance), appointed per board meeting 10-Feb-2026 (operator-context.md, NON-ANCHORED for exact date/title; corroborated in substance by web search)"
+  - "Institutional anchor investors Saint Capital Fund and BNP Paribas Financial Markets, Rs75.51cr of the Aug-2025 IPO anchor book"
+  - "2 Independent Directors added pre-listing with 40 and 47 years of senior banking/regulatory careers respectively (Brijmohan Sharma; K. Chandrachoodan) [PROSPECTUS] pp.250-251"
+  - "NCLT-approved consolidation of 4 erstwhile corporate promoter entities into 1 (Hirak Vinimay), effective 21-Mar-2023 [PROSPECTUS] p.274"
+  - "5 years of RoC filing discrepancies self-disclosed and remediated via e-Form GNL-2, filed 14-Dec-2024, ahead of listing [PROSPECTUS] Risk Factor 13"
+  - "Promoter pledge explicitly nil, cleanly confirmed pre-IPO [PROSPECTUS] p.103"
+  - "IPO capital-adequacy (CRAR) guidance delivered exactly as promised: FY26 CRAR 26.12% vs stated purpose of the Rs151.586cr net proceeds"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% (pre-IPO anchor, [PROSPECTUS] p.103, explicit and unambiguous); post-listing pledge status NOT FOUND in documents available to this stage -- input gap"
+searches_performed:
+  - "Deepak Baid Laxmi India Finance promoter"
+  - "Laxmi India Finance SEBI RBI penalty action"
+  - "Aneesha Baid FIR Sikar Rajasthan land"
+  - "Laxmi India Finance BSE penalty debarment electronic book platform"
+  - "Up Money Ltd NBFC Jalandhar default direct assignment"
+  - "Laxmi India Finance IPO controversy grey market listing"
+  - "Laxmi India Finance Glassdoor AmbitionBox employee reviews"
+  - "Laxmi India Finance IiAS SES InGovern proxy advisory"
+  - "Laxmi India Finance shares listing discount debut August 2025"
+  - "Laxmi India Finance stock price since listing performance 2026"
+  - "Laxmi India Finance CFO resignation OR auditor change news"
+  - "Vinod Maheshwari CTO Laxmi India Finance appointment"
+  - "Laxmi India Finance anchor investors mutual fund allotment"
+  - "Baid Finance Jaipur history NBFC 1996"
+  - "Deepak Baid director disqualified MCA"
+  - "Laxmi India Finance Q4 FY26 concall Up Money legal recovery analyst"
+searches_skipped: []
+verdict_basis: "No SEBI/RBI/MCA enforcement action and zero promoter pledge keep this well short of CONCERN, but a live unresolved criminal FIR against a sitting Whole-Time Director/Promoter (Aneesha Baid), a second decades-old unresolved FIR against the Managing Director, a four-domain company-level 'correction only under external scrutiny' compliance pattern, an unresolved related-party property complex involving the MD, promoter-family concentration on the board and Audit Committee, and extensive KMP/independent-director turnover continuing post-listing, together outweigh the genuine transition evidence (new external CTO, institutional anchor investors, 2 credentialed independent directors, delivered IPO guidance) enough to land at CAUTION rather than TRUSTWORTHY."

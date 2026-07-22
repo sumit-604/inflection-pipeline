@@ -1,0 +1,32 @@
+stage: B00-inputs
+company: NRAIL
+run_date: 2026-07-22
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false
+no_concall_mode: true
+inventory:
+  prospectus: {count: 0, note: "empty; NRAIL long-listed (CIN L22210MH1993PLC133365, since 1993) so prospectus not-expected, NOT a gap"}
+  annual-report: {count: 1, files: ["Annual_Report.pdf"], note: "NRAIL, 170pg"}
+  results: {count: 2, files: ["9c2bbfc6-...pdf = Q3FY26 filing 11-Feb-2026", "d8e2ef04-...pdf = Q4/FY26 audited filing 12-May-2026"]}
+  rating: {count: 1, files: ["144239.pdf = ICRA, N R Agarwal, 16-Jul-2026, reaffirmed + amount enhanced"]}
+  concalls: {count: 0, note: "declared absent via concalls_available:false -> NO-CONCALL MODE; not a gap"}
+  peer-concalls: {count: 8, files: ["JKPAPER May/Aug 2022, May 2023, May 2024", "KUANTUM Sep/Nov 2025, Feb/Jun 2026"]}
+  announcements: {count: 0, note: "empty folder; operator relayed Unit VI Dahej scale-up + board outcome in-chat (non-anchored, see operator-context.md)"}
+  shareholding: {count: 0, note: "empty folder; operator relayed Sep2023-Jun2026 pattern in-chat (non-anchored, see operator-context.md)"}
+  research: {count: 0, note: "empty"}
+  screening: {count: 6, note: "ALL JKPAPER peer CSVs, NOT NRAIL -> treated as NO NRAIL screener; Gate 0 runs from NRAIL results PDFs + AR financials per degradation map"}
+  presentation: {count: 1, files: ["Investor_Presentation_1.pdf"], note: "STALE: dated 19-May-2022 (~4y old, Q4FY22 vintage)"}
+  other: {count: 0}
+input_gaps:
+  - "announcements/ empty (Reg30 action record absent). Stages 5,7,8 lose documented-ACTION record; operator-context.md relayed items are non-anchored leads only."
+  - "shareholding/ empty. FII+DII UA qualifier and pledge trend cannot be filing-anchored; stage 10 marks FII+DII unresolved; UA withheld at stage 11 unless closed. operator-context.md pattern is a non-anchored lead."
+  - "research/ empty (no effect on anchored evidence; loses a lead source only)."
+  - "screening/ contains peer (JKPAPER) data, not NRAIL. NRAIL Gate 0 sourced from results PDFs + AR financials."
+  - "presentation/ stale (May 2022). Stage 4 uses it with staleness caveat; primary source is AR + results commentary."
+  - "prospectus/ empty but NRAIL long-listed -> not-expected, not a gap."
+data_quality_flags:
+  - "manifest sector_cap_row 'Pharma / CDMO' is WRONG. NRAIL is paper/paperboard (peers JKPAPER, KUANTUM). Must be corrected to the paper row of the Section 1B cap table before stage 11 (PHASE 3). Does not affect phase-1 evidence."
+  - "manifest cmp:0.0 and market_cap_cr:0.0 unfilled (not needed for phase-1 evidence; needed at stage 11)."
+flags: []

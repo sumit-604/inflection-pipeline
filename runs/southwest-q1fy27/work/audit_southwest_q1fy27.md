@@ -1,176 +1,185 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — SOUTHWEST — Q1 FY27 (confirming re-audit)
+# A5 ADVERSARY / COMPLETENESS AUDIT — SOUTHWEST (South West Pinnacle Exploration Ltd) — Q1 FY27
 
-Agent A5. Fresh context: A4 review + the two A1 extracts + the two A2 ledgers only. Every number
-re-derived independently (Rs Mn x0.1 to Rs Cr per A1 headers, results L7 / pres L8). A4's and A3's
-cites checked, not trusted. This pass confirms A4's operator-authorised graft of the previously-
-surviving seasonality / exit-pace bear counter, then re-attacks the review fresh.
+Agent A5, re-audit of the **now-merged Role 4 + Role 5 review** (concall present this run). Fresh
+context: only the A4 review, the three A1 extracts (results, presentation, concall), and the three
+A2 ledgers were read. Enumeration re-run independently; every derived metric recomputed from raw
+tokens (deck Rs Mn ×0.1 → Rs Cr; concall native Rs Cr ×1); every concall line-citation checked
+against the extract through the ASR glossary. I re-derive; I do not defer to A4's, A3's, or the
+prior-run A5's cites.
 
----
-
-## GRAFT-CONFIRMATION CHECK (task-directed)
-
-| Prior graft | Where it now lives in A4 | Re-check | Verdict |
-|---|---|---|---|
-| Seasonality / exit-pace counter | Step 2 diag-1 (L140), Step 3 (L167/L169), Step 6D+verdict (L304/L325), Step 7 (L343), Combined verdict (L424/L441), Q14 (L398), flag (L529), monitorable (L464) | "at/above FY26 exit pace" and "no seasonal air-pocket" WITHDRAWN; Q1FY27 61.7 placed BELOW FY26 non-Q1 run-rate 67.6; QoQ vs Q4FY26 marked ND; x4-annualisation flagged as overstating. Structurally incorporated — but see Arithmetic FAIL on the "66%" figure. | **INCORPORATED (defective on one number)** |
-| OIL 2D/3D empanelment (F6.7) | 6B#12 (L282), 6D (L305), Q18 (L402), monitorable (L455), flag (L532); sourced results E8 L102-103 + pres sl.32 L1011-1012 (both confirmed in extracts) | Carried as forward enabler, not banked as a booked order | CLOSED |
-| JV-recurrence counter (F8.1) | Step 4 flag (L195), First-Class Metric (L211), Q16 (L400), Caveat 7 (L439) | 13/93=14.0% ✓; normalise 3.5 Mn → 83.5 Mn=8.4 Cr (−10.2%) ✓; margin 13.5% ✓ | CLOSED |
-| ROCE label inconsistency (F16.4) | Step 7 (L335), Q12 (L396), Caveat 8 (L440) | 0.5×16+7.5=15.5x ✓; 0.5×23+7.5=19x ✓ | CLOSED |
-| Order-book double-count (F16.2/Step 6E) | 6E (L307-323), Caveat 4 (L436), Qs 2&8 | net add 180.1 < single 307 order; carried forward unchanged | CLOSED |
-
-The seasonality graft is present in substance; the other four prior grafts are confirmed intact.
+**Continuity note.** The output path held a STALE prior-run A5 audit (its header: "the two A1
+extracts + the two A2 ledgers only" — i.e. the Role-4-only run before the concall existed). That
+audit returned INCOMPLETE on two gaps: (i) an arithmetic error "Q1 FY26 ~66% of the non-Q1
+run-rate", and (ii) an unincorporated margin-durability bear counter. I independently re-checked
+BOTH against the current merged review and find **both resolved** (evidence below). This file
+supersedes the stale one.
 
 ---
 
-## AUDIT 1 — COVERAGE
+## AUDIT 1 — COVERAGE (fresh grep pass vs A2 ledgers; then A2 ledgers vs A4)
 
-Independent grep/manual re-enumeration of both extracts, diffed against the two A2 ledgers.
+### 1A. Fresh enumeration vs A2 counts
 
-| Category | A2 count | My fresh count | Orphan / note | Status |
-|---|---|---|---|---|
-| Results: numbered notes | 0 | 0 (`^\s*\d+\.\s`=0; 4-pg release, not Reg 33) | — | PASS |
-| Results: financial line items (L86-90) | 5 | 5 | — | PASS |
-| Results: financial period cells (5×4) | 20 | 20 | — | PASS |
-| Results: table footnote (L91) | 1 | 1 | — | PASS |
-| Results: Q1 highlight bullets (L93-111) | 13 | 13 | E8 OIL empanelment cited (closed) | PASS |
-| Results: CMD commentary claims (L115-148) | 9 | 9 | F3 input-cost admission -> Audit 3 | PASS |
-| Results: JV/coal statements | 7 | 7 | — | PASS |
-| Results: absent Reg-33 units (K1-K15) | 15 | 15 | carried as first-class ND in A4 0D | PASS |
-| Results: letterhead/addressee/sig/about/contact | 11 | 11 | J2 phone-digit typo immaterial | PASS |
-| Presentation: slides | 40 | 40 | — | PASS |
-| Presentation: line items (16+16+42+6) | 80 | 80 | sl.36 42 = 22 asset + 20 eq/liab | PASS |
-| Presentation: chart data points | 110 | 110 (8+8+6+11+25+6+12+32+2) | — | PASS |
-| Presentation: footnotes | 7 | 7 | — | PASS |
-| Presentation: ZERO_STANDING | 7 | 7 | OCI→F9.1, held-for-sale→F1.1, Curr-Tax-Liab→F1.2, CWIP→Step 5; NCI/Loans template-nil reviewed | PASS |
-| Presentation: Ritolia DISCLOSURE_INCONSISTENCY | 1 | 1 | F14.1 / Q15 | PASS |
+| Category | A2 count | My fresh count | Method | Orphan | Status |
+|---|---|---|---|---|---|
+| Results: numbered notes | 0 | 0 | `^\s*\d+\.` = 0; 4-pg release, not Reg 33 | none | PASS |
+| Results: financial line items (L86-90) | 5 | 5 | Income/EBITDA/EBITDA%/PAT/PAT% | none | PASS |
+| Results: Q1 highlight bullets (L92-111) | 13 | 13 | bullet sweep | none | PASS |
+| Results: CMD commentary claims (L115-148) | 9 | 9 | Jain-attributed paras | none | PASS |
+| Results: absent Reg-33 unit classes (K1-K15) | 15 | 15 | 0-hit greps confirm structural absence | none | PASS |
+| Results: total rows A–L | 70 | 70 | full sweep | none | PASS |
+| Presentation: slides | 40 | 40 | formfeed + page markers | none | PASS |
+| Presentation: financial line items | 80 | 80 | p33 16 + p35 16 + p36 42 + p38 6 | none | PASS |
+| Presentation: chart data points | 110 | 110 | 8+8+6+11+25+6+12+32+2 | none | PASS |
+| Presentation: footnotes | 7 | 7 | Table 7 | none | PASS |
+| Presentation: ZERO_STANDING rows | 7 | 7 | OCI, held-for-sale, CTL, CWIP, NCI/Loans | none | PASS |
+| Concall: turns | 83 | **83** | blank-line blocks, odd lines 23-187: (187−23)/2+1 = 83 | none | PASS |
+| Concall: strict `?`-terminated questions | 35 | **35 (24 lines)** | independent grep confirms exactly **24 distinct lines** carry `?` (ledger's stated spread); 35 tokens reconcile | none | PASS |
+| Concall: implied Qs (no terminal `?`) | 7 | 7 | IQ1–IQ7 | none | PASS |
+| Concall: management numeric tokens | 155 | 155 | regex token sweep; ledger row-by-row token-sum reconciles to 155; 20+ rows spot-checked verbatim | none | PASS |
+| Concall: participants | 11 announcements / 14 named | 14 named (P1–P14) | A4 uses the 14 named; 11 is the "from the line of" count | none | PASS |
 
-**No orphan ledger row absent from A4 (no FAIL to A3). No row my fresh pass found is missing from
-either ledger (no FAIL to A2).** Counts reconcile exactly on every category.
+Fresh pass found **no row the ledgers lack**. `missing_from_ledger = []`.
 
-**Ledger-flag → A4 disposition spot-check (all cited):** TITLE_LABEL_MISMATCH → F14-01/Q14 ✓;
-F2 standalone "on similar lines" → First-Class Metric/Q4 ✓; slide-6 Rs 307 cr HZL vs slide-32
-Rs 3,070 Mn Rajasthan → F16.2/Step 6E (A4 correctly overrides the ledger "do not conflate" note) ✓;
-slide-37 DATA_GAP → F16.1/Q12 ✓; OCI/Current-Tax-Liab/held-for-sale → F9.1/F1.2/F1.1 ✓.
+### 1B. Every ledger row cited in A4 OR reviewed-no-finding (orphan check)
 
-**One under-reviewed commentary row (routed to Audit 3, not a standalone coverage FAIL):** results
-F3 / CMD commentary L122-123 admits "this performance is despite ... substantial increase in input
-cost." The row is enumerated (ledger cat F) and the commentary category is reviewed, but A4 never
-reconciles that admission against its headline +972 bps margin expansion. Handled as a surviving
-counter below.
+Finding-bearing rows verified individually; administrative rows (letterhead, addressees, signature,
+contact, project photos, macro/industry charts) fall under A4's blanket "all rows/slides read"
+with no finding — acceptable.
 
-**Minor benign cross-check (reviewed, no finding):** pres slide-9 map shows ~14 state labels vs
-"20 Operations across 8 States" (sl.32) — all-time footprint vs current operating-state count; no
-forensic/financial content. Not an orphan.
+- Results TITLE_LABEL_MISMATCH (B5/D0b, Q-on-Q vs Y-on-Y) → F14-01, Step 3. ✓
+- Results F2 standalone "on similar lines" (unanchored) → First-Class Metric / Q4. ✓
+- Results F3 CMD "substantial increase in input cost" (L122-123) → **now reconciled** into the
+  margin-durability flag (Step 2 diag-2 L147; Watchlist #13; caveat 10; Q19). ✓
+- Results G3/L1 Alara entity relationship → F14-02 / RPT. ✓
+- Presentation Slide 8 Ritolia caption-vs-body → F14.1 / Q15 monitorable. ✓
+- Presentation Slide 22 coal FY2027-28 → covered as the F16-01 contradiction vs concall FY28-29. ✓
+- Presentation Slide 37 ROCE 16% vs Snapshot "23%" → F16.4, Step 7. ✓
+- Presentation Slide 30 AHML 17.5% / ARL rights → covered. ✓
+- Concall: all 9 analysts' topics (Q1–Q35, IQ1–IQ7) map to A4 Step 4A inventory + the 19-question
+  answered/evaded scorecard (Step 3E); NO_RESPONSE (Sahir Duala) noted in participants; both ledger
+  "most material" conflicts carried — FY27-28-vs-FY28-29 (F16-01) and 10-yr-vs-11-yr (F14-01). ✓
+- Presentation Slide 9 map (~14 state labels) vs "8 States" (Slide 32): all-time footprint vs
+  current ops; ledger itself deferred as a benign cross-check; within A4 blanket slide review — not
+  a material orphan.
+
+**No orphan finding-bearing row (no FAIL to A3). No missing row (no FAIL to A2).**
+`orphan_rows = []`.
 
 **COVERAGE VERDICT: PASS.**
 
 ---
 
-## AUDIT 2 — ARITHMETIC
-
-Every derived cell recomputed from raw extract numbers. Load-bearing cells shown; all others
-reconcile to rounding.
+## AUDIT 2 — ARITHMETIC (recomputed from raw tokens)
 
 | Metric | A4 value | My recompute (raw source) | Source | Status |
 |---|---|---|---|---|
-| Total Income Q1FY27 | 62.1 | 61.7+0.4 | L1033/41 | OK |
 | Op EBITDA Q1FY27 (Rev−TotExp) | 14.9 | 61.7−46.8 | L1033/35 | OK |
 | Op EBITDA margin Q1FY27 / Q1FY26 | 24.15% / 14.43% | 149/617 ; 58/402 | L1037/33 | OK |
 | Reported EBITDA Q1FY27 (PBT+D+Fin) | 16.6 | 11.9+3.0+1.7 | L1051/43/45 | OK |
 | Core Op PBT ex-OI / ex-OI ex-JV Q1FY27 | 11.5 / 10.2 | 11.9−0.4 ; 10.6−0.4 | L1051/47/41 | OK |
-| ETR Q1FY27 (Tax/PBT) | 21.8% | 26/119=21.85% | L1053/51 | OK |
-| ETR pre-JV Q1FY27 (Tax/PBSJV) | 24.5% | 26/106=24.53% | L1053/47 | OK |
-| Revenue YoY | +53.5% | (617−402)/402=53.48% | L1033 | OK |
-| Op EBITDA YoY / margin bps | +156.9% / +972 | (149−58)/58 ; 2415−1443 | L1037/39 | OK |
-| Depreciation / Finance YoY | +42.9% / −15.0% | (30−21)/21 ; (17−20)/20 | L1043/45 | OK |
-| Core ex-OI / ex-OI ex-JV YoY | +475% / +500% | (11.5−2.0)/2.0 ; (10.2−1.7)/1.7 | der. | OK |
-| Reported PBT / PAT / EPS YoY | +283.9% / +287.5% / +287.3% | (119−31)/31 ; (93−24)/24 ; (3.06−.79)/.79 | L1051/55/63 | OK |
-| PAT bridge (Op EBITDA/PBSJV/JV/tax → PAT) | +9.1/+7.8/+1.0/−1.9 → +6.9 | 14.9−5.8; 10.6−2.8; 1.3−0.3; 2.6−0.7; ties 9.3−2.4 | L1037-55 | OK |
-| JV share of consolidated PAT | 14.0% | 13/93=13.98% | L1049/55 | OK |
-| JV normalise → PAT / margin | ~8.4 / ~13.6% | 93−9.5=83.5 Mn; 83.5/617=13.5% | L1092 | OK |
-| Receivable days FY25 / FY26 | 154.5 / 175.0 | 763/1803×365 ; 1166/2430×365=175.1 | L1132/76 | OK |
+| ETR Q1FY27 / pre-JV | 21.8% / 24.5% | 26/119=21.85% ; 26/106=24.53% | L1053/51/47 | OK |
+| Revenue / Op EBITDA / margin-bps YoY | +53.5% / +156.9% / +972 | 215/402 ; 91/58 ; 2415−1443 | L1033/37/39 | OK |
+| Core ex-OI / ex-OI ex-JV YoY | +475% / +500% | 9.5/2.0 ; 8.5/1.7 | der. | OK |
+| Reported PBT / PAT / EPS YoY | +283.9% / +287.5% / +287.3% | 88/31 ; 69/24 ; 2.27/.79 | L1051/55/63 | OK |
+| PAT bridge → PAT | +9.1/+7.8/+1.0/−1.9 → +6.9 | ties 9.3−2.4 both ways | L1037-55 | OK |
+| JV share of consolidated PAT | 14.0% | 1.3/9.3=13.98% (deck); 1.32/9.3=14.19% (concall) | L1049/L109/L1055 | OK (within rounding) |
+| JV normalise → PAT / margin | ~8.4 / ~13.6% | 9.3−(1.32−0.35)=8.33 ; 8.4/61.7=13.6% | L1092/L109 | OK |
+| Receivable days FY25 / FY26 | 154.5 / 175.0 | 763/1803×365 ; 1166/2430×365=175.2 | L1132/76 | OK |
 | Inventory / Payable days FY26 | 100.6 / 45.9 | 509/1847×365 ; 232/1847×365 | L1129/33/78 | OK |
 | Cash conversion cycle FY26 | ~230 | 175.0+100.6−45.9=229.7 | der. | OK |
 | Cash & equiv FY25→26 | 19.4→1.3 (−93%) | 194→13 (−93.3%) | L1134 | OK |
 | Gross borrowings / net debt FY26 | 78.6 / 77.3 | 160+626 ; 78.6−1.3 | L1120/31/34 | OK |
-| Order book net QoQ add | +180.1 (+31.0%) | (7613−5812)/10=180.1 ; /581.2=31.0% | L546 | OK |
-| Survey concentration / CBM share | 59% / 29% | 4506/7613 ; 2222/7613 | sl.17 | OK |
+| Order book net QoQ add | +180.1 (+31.0%) | (7613−5812)/10 ; /581.2 | L546 | OK |
+| ROCE base (0.5×ROCE+7.5) | 15.5x / 19x | 0.5×16+7.5 ; 0.5×23+7.5 | L1170/L94 | OK |
 | FY26 non-Q1 run-rate | ~67.6 | (243.0−40.2)/3 = 67.6 | L1076/33 | OK |
-| FY26 simple-avg quarter | 60.75 | 243.0/4 | L1076 | OK |
-| Q1FY27 x4 annualised | 246.8 | 61.7×4 | L1033 | OK |
-| ROCE base (0.5×ROCE+7.5) | 15.5x / 19x | 0.5×16+7.5 ; 0.5×23+7.5 | L1170/1165 | OK |
-| **Q1FY26 as % of FY26 non-Q1 run-rate** | **~66%** | **40.2/67.6 = 59.5% (~60%)** | **A4 L140/167/169/424/529 vs pres L1033/L1076** | **FAIL → A4** |
+| **Q1 FY26 as % of non-Q1 run-rate** | **~60% (59.5%)** | **40.2/67.6 = 59.47%** | **review L146; pres L1033/L1076** | **OK — CORRECTED** |
 
-**ARITHMETIC FAIL (loop A4).** In the grafted seasonality passage A4 states five times that
-"Q1 FY26 (Rs 40.2 Cr) was only ~66% of the FY26 non-Q1 run-rate (~Rs 67.6 Cr)" — review L140, L167,
-L169, L424, and YAML flag L529. Against the denominator A4 itself names (the non-Q1 run-rate of
-Rs 67.6 Cr), the ratio is 40.2/67.6 = **59.5% (~60%), not ~66%.** The 66% figure is actually Q1FY26
-divided by the FY26 **simple-average** quarter (40.2/60.75 = 66.2%) — the smaller denominator A4
-explicitly distinguishes from the non-Q1 run-rate two sentences earlier (Step 3, L167). The two
-denominators have been swapped. Discrepancy 6.5 pp, well above rounding.
+**Prior-run FAIL re-checked and RESOLVED.** The stale audit failed A4 for stating "Q1 FY26 ~66% of
+the non-Q1 run-rate" in five places. The current merged review (L146) reads "Q1 FY26 (Rs 40.2 Cr)
+was **~60% (59.5%)** of that" — the correct ratio (40.2/67.6 = 59.5%). A full-text grep finds **no
+remaining "66%"** anywhere in the merged review. Corrected. No arithmetic mismatch survives.
 
-Direction is benign for the conclusion (at the correct 59.5% Q1FY26 is an even deeper seasonal
-trough, so "Q1 is the seasonally weakest quarter / withdraw at-or-above exit pace" still holds), but
-the specific quoted percentage is wrong in all five places and must be corrected to ~60% (or the
-label changed to "% of the FY26 simple-average quarter") before save. All other derived cells
-reconcile within rounding; the PAT bridge closes exactly both ways (+6.9 Cr). Separately noted (not
-a FAIL, not used by A4): the release's "PAT ... more than 3.90 fold" (results L97) mildly overstates
-93/24=3.875x; A4 correctly used +287.5% and did not import it.
+Within-rounding note (not a FAIL): JV-share-of-PAT is labelled "1.32/9.3 = 14.0%"; the literal
+quotient is 14.2%, while the deck-rounded 1.3/9.3 = 14.0%. Both inputs legitimately sourced, 0.2pp
+gap, material conclusion ("~14% of PAT from the JV") unchanged.
+
+Concall line-citation spot-check (23 cites: L27,47,59,69,73,79,89,93,105,109,111,127,139,141,145,
+149,155,157,171,175,179,181,183) — all carry the attributed text through the ASR glossary (HZL "7
+crores"=307 at L27, resolved L71; RIL "160/166"=166; "2829"=FY28-29). No citation defect.
+
+`arithmetic_mismatches = []`. **ARITHMETIC VERDICT: PASS.**
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims; strongest bear counter from same text)
 
-Three most-positive A4 claims, each attacked from the same extracted text.
+**Positive 1 — "Headline growth is REAL, not treasury-led: core ex-OI +475%, ex-JV +500% (Rs 10.2
+Cr); ~100%+ of PAT growth recurring/operating" (Step 2 verdict L147; Step 4 L196).**
+Same-text counter: +500% off a Rs 1.7 Cr seasonally-weakest base (L1047); Q1FY27 revenue 61.7 <
+non-Q1 run-rate 67.6 (L1076); profit uncorroborated by cash (CFO refused, L105); JV +Rs 1.0 Cr
+(14% of PAT) non-cash (L111); receivables 76.3→116.6, cash 19.4→1.3 (L1132/L1134).
+**Does not survive as new** — all incorporated: cash INDETERMINATE cap, seasonality-confirmed, JV
+non-cash flag, receivable build. Verdict already capped at PROCEED WITH CAVEATS.
 
-**Positive claim 1 — "Operating income statement genuinely strong, NOT treasury-led; core ex-OI
-+475%, ex-JV +500%; ~100%+ of PAT growth recurring/operating" (Step 2 verdict L147; Step 4 L190).**
-Same-text counter: the +500% is off a Rs 1.7 Cr base and the JV +Rs 1.0 Cr (14% of PAT, Q1 ≈ full
-FY26, audit ND) sits inside reported PAT.
-**DOES NOT SURVIVE as new.** A4 already carves the JV out of the "recurring" claim (Step 4 flag
-L195), notes OI was a drag, and caps the verdict. Fully incorporated.
+**Positive 2 — "EBITDA margin +972 bps to record 24.15%, holding the FY26 step-up; operating
+leverage genuine" (Step 2 diag-2 L147).**
+Same-text counter: record 24.15% (only +16 bps over FY26 full-year 23.99%, L1082) printed in the
+seasonally weakest quarter, cost stack ND (materials/employee/other = K9-K13; Q19 refused, L171),
+while the CMD admits a "substantial increase in input cost" (results L122-123) — could be
+project-mix or cost-recognition timing as the Rs 307 Cr Rajasthan core-drilling order commences.
+**Does not survive as new — NOW INCORPORATED.** The prior-run audit flagged this exact counter as
+surviving because the Role-4-only draft "framed the margin only as holding and never reconciled the
+input-cost admission." The merged review (L147) now states verbatim: *"The CMD's press-release
+'substantial increase in input cost' (results L122-123) was NOT reconciled on the call. Could be
+project-mix or cost-recognition timing."* It is further carried as Watchlist #13 (L295), Growth-
+trigger row (L320), Caveat 10 (L771), Q19 (L417) and 8F management question 10 (L852). Fully grafted;
+no residual gap.
 
-**Positive claim 2 — "EBITDA margin +972 bps to 24.15%, holding the FY26 step-up" (Step 2 diag-2
-L141).**
-Same-text counter: the record 24.15% margin (> FY26 full-year 23.99%, L1039/L1082) is printed in
-the quarter A4's own seasonality analysis calls the WEAKEST revenue quarter (Q1FY27 61.7 < non-Q1
-run-rate 67.6), and it is posted while the CMD admits a "substantial increase in input cost"
-(results L122-123) with the entire cost stack ND (only aggregate Total Expenses disclosed;
-materials/employee/other = K9-K13, A4 L101). A record margin on admitted rising input costs, in the
-seasonally weakest quarter, with cost composition ND, is not demonstrably a durable structural
-step-up — it could be project-mix or cost-recognition timing as the Rs 307 Cr Rajasthan core-
-drilling order commences.
-**SURVIVES.** Extract-supported (L1039, L1082, L122-123, cost lines ND). A4 addresses the JV and the
-cost-line ND generally but never reconciles the explicit input-cost admission against the +972 bps
-expansion, and frames the margin only as "holding." **Must be grafted into A4 as a margin-durability
-caution (route to a management question on cost mix / project margins). → completeness FAIL to A4.**
-This is a caution, not a restatement; the ex-OI ex-JV operating-growth read is unaffected.
+**Positive 3 — "Order book all-time high Rs 761 Cr, 3-5 yr visibility; utilization >100%; CRISIL
+BBB→BBB+" (Section C positives; Step 6E).**
+Same-text counter: "+31% / all-time high" is a gross closing balance — net QoQ add only Rs 180.1 Cr,
+smaller than the single pre-booked Rs 307 Cr HZL order that merely "kicked off 1.5 months back"
+(L73); ~60% of BOTH book and revenue is two contracts (L79); HZL Q1 recognition minimal (gate 2
+cannot clear); CRISIL BBB+ coexists with the unreconciled Rs 15-vs-78.6 Cr debt discrepancy
+(L93 vs L1120/1131).
+**Does not survive as new** — Step 6E is built on precisely this double-count; F16-02 concentration,
+F11-01 debt discrepancy, and "CRISIL does not resolve the CFO question" (Step 7C) all present.
 
-**Positive claim 3 — "Coal first-production target FY27-28 is EARLIER than the house FY29 tripwire
-(favourable); no thesis-broken trigger fired" (Step 6C L288; Combined verdict L423).**
-Same-text counter: FY27-28 is a management target asserted while the enabling GR is only "being
-finalised for early submission" (sl.22 L682) and mine development "shall be undertaken now" (not yet
-begun, L143-145) — a self-declared pull-forward on an unsubmitted filing is promise-not-delivery.
-**DOES NOT SURVIVE as new.** A4 logs "binary GR-slip risk" (L300), routes it to Q6, and lists GR
-submission and first production as dated monitorables. The promise is flagged, not banked.
+**Additional probes for a NEW surviving counter:**
+- Finance cost fell (2.0→1.7) while gross borrowings ROSE 62.9→78.6 (L1088/L1120/L1131): mild
+  tension, but rising borrowings + F11-01 already flagged; small line, FY26-year-end-weighted. Not
+  material enough to graft.
+- Concall L47 (JV1 profit "3-4 Cr, our share 35%" → ~1.05-1.4 Cr/qtr ≈ the Rs 1.32 Cr reported)
+  would UNDERCUT A4's "lump/recurrence-unconfirmed" framing — but that is a BULL counter, and A4's
+  conservative JV treatment is permitted by the house conservative-bias rule.
+- No other extract-supported bear counter found that A4 has not surfaced.
+
+`surviving_bear_counters = []`. **ADVERSARIAL VERDICT: PASS.**
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Loop back to **A4** (two localised, pre-save-fixable edits).
+**COMPLETE.**
 
-- Coverage: PASS — 70 results rows / 40 slides / 80 line items / 110 data points / 7 footnotes
-  reconcile exactly; no orphans; nothing found the ledgers lack; all five prior grafts confirmed
-  present.
-- Arithmetic: one FAIL — the seasonality "66% of the non-Q1 run-rate" figure is miscomputed
-  (correct ~60%; 66% is vs the simple-average quarter). All other derived metrics reconcile.
-- Adversarial: one surviving bear counter — the margin-durability counter (claim 2) — is extract-
-  supported and unincorporated; must be grafted before save.
+- COVERAGE: PASS. Fresh enumeration reproduces 70 results rows / 40 slides (80 line items, 110 chart
+  points, 7 footnotes) / 83 concall turns, 35 strict questions (24 `?`-bearing lines independently
+  confirmed), 7 implied questions, 155 management numbers. No orphan finding-bearing row; nothing the
+  ledgers lack.
+- ARITHMETIC: PASS. Every derived metric reconciles within rounding. The prior-run "66% vs 60%" FAIL
+  is RESOLVED — the merged review now states 59.5% (~60%) and no "66%" remains.
+- ADVERSARIAL: PASS. The three most positive claims each yield a strong same-text bear counter; all
+  three are already incorporated — including the margin-durability / input-cost counter the prior run
+  flagged as surviving, now fully grafted (L147, Watchlist #13, Caveat 10, Q19, 8F-Q10). No new
+  surviving counter.
 
-The seasonality/exit-pace graft this re-audit was convened to confirm IS substantively incorporated
-(claims withdrawn, Q1FY27 61.7 below the non-Q1 run-rate 67.6, QoQ ND) and fails only on the one
-propagated percentage. The PROCEED WITH CAVEATS verdict floor is unaffected by either gap. Not
-REWORK — the docs are internally coherent; both gaps are targeted A4 corrections.
+Both prior-run gaps that held this review INCOMPLETE are closed in the merged Role 4 + Role 5
+review. Cash conversion remains correctly INDETERMINATE (verdict floored at PROCEED WITH CAVEATS per
+house rule) — a substantive verdict, not a coverage/arithmetic defect. This review proceeds to Notion
+save.
+
+`loop_back_to = ""`. `gap = ""`.
 
 ```yaml
 stage: A5-adversary
@@ -178,19 +187,12 @@ company: "SOUTHWEST"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Q1 FY26 as % of FY26 non-Q1 run-rate (seasonality graft)"
-    a4_value: "~66%"
-    recomputed: "59.5% (40.2/67.6); the 66% is Q1FY26/simple-avg-quarter (40.2/60.75), a swapped denominator"
-    source_line: "review L140/L167/L169/L424/L529; raw pres L1033 (402) & L1076 (2430)"
-surviving_bear_counters:
-  - claim: "EBITDA margin +972 bps to 24.15% holding the FY26 step-up (Step 2 diag-2, L141)"
-    counter: "Record 24.15% margin (> FY26 full-year 23.99%) is printed in the seasonally weakest revenue quarter (Q1FY27 61.7 < non-Q1 run-rate 67.6) while the CMD admits a substantial increase in input cost (results L122-123) and the entire cost stack is ND (only aggregate Total Expenses; materials/employee/other = K9-K13). Durability of the step-up is unproven; could be project-mix or cost-recognition timing. A4 frames the margin only as 'holding' and never reconciles the input-cost admission. Graft a margin-durability caution + management question on cost mix/project margins."
-    source_line: "pres L1039/L1082; results L122-123; A4 L101/L141"
-loop_back_to: "A4"
-gap: "(1) ARITHMETIC: correct 'Q1 FY26 ~66% of the non-Q1 run-rate' to ~60% (40.2/67.6=59.5%; 66% is vs the simple-average quarter 40.2/60.75) in review L140/L167/L169/L424/L529. (2) SURVIVING COUNTER: graft the margin-durability bear counter -- reconcile the +972 bps expansion against the CMD 'substantial increase in input cost' admission (results L122-123), noting cost composition ND and the record 24.15% margin posted in the seasonally weakest quarter, and route to a cost-mix/project-margin management question. Seasonality/exit-pace graft, OIL empanelment, JV-recurrence, ROCE-label and order-book counters are all verified correctly incorporated; no action there."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

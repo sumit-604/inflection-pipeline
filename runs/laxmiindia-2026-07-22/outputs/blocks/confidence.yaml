@@ -1,0 +1,13 @@
+confidence_delta:
+  numerical_acceptance: 83      # B12a: 47 numbers checked, 39 clean; 0 critical mismatches on verdict/scorecard inputs; 4 ANCHOR-NOT-FOUND evidence gaps (DOBs, historic collection efficiency)
+  redflag_coverage: 94          # B12b: 17 independent flags, 11 caught + 5 partial = 94% coverage; 5/5 promise-delivery spot checks confirmed; no fabricated pipeline flags
+  framework_adherence: 94.5     # B12c PHASE-1 PORTION ONLY (Gate 0 + Emerging Moat): 52/55 rules passed, 0 critical/0 major/3 minor outcome-neutral. Valuation-adherence component PENDING phase 3 (B10/B11 not yet run)
+  peer_utilisation: 100         # B12d: 4/4 peers used substantively; two headline findings confirmed verbatim; 1 MAJOR verdict-label discipline issue (single-peer VERIFIED should be PARTIALLY VERIFIED), evidence itself accurate
+  overall: 83                   # min of the four; valuation framework-adherence marked pending phase 3
+band: "75-89 normal — note specifics"
+rework_triggered: false        # no CRITICAL numerical finding; no verifier acceptance_rate below 60 (B12a 83, B12b 65, B12c 94.5, B12d 100)
+source_fidelity_gate: "HELD — Verifier A found 0 source-fidelity failures on any verdict-card or scorecard input; the 4 ANCHOR-NOT-FOUND items are evidence gaps (DOBs, historic collection efficiency), not fabricated/misread verdict inputs"
+valuation_component_status: "pending phase 3"
+notes:
+  - "B12b acceptance_rate 65% (fully-caught share) is above the 60% REWORK floor; the confidence-delta redflag component uses coverage (94%) per orchestrator Section 5."
+  - "Overall 83 sits in the normal band: proceed, note specifics; no one-level downgrade (that is 60-74) and no forced REWORK (<60)."

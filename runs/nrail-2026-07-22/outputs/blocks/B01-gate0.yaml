@@ -1,0 +1,21 @@
+stage: B01-gate0
+company: "NRAIL"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements/ empty", "shareholding/ empty", "research/ empty", "screening/ is peer (JKPAPER) data not NRAIL", "presentation stale May-2022", "prospectus absent (long-listed, not-expected)"]
+flags:
+  - {type: FLAG-GATE0, reason: "Core score 20/80 and deal-breaker 6 (ND/EBITDA 3.96x AND IC 1.93x, FY26, with the same breach pattern in FY25) both independently drive AVOID. Historical depressor: FY24 debt-funded doubling of paperboard capacity (~Rs1,000cr, ~Rs665cr debt) commissioned into a sector-wide realization downturn, compressing EBITDA/coverage. Also flagging: E3 promoter-pledge % NOT FOUND but AR Note 18 loan-security language indicates a pledge over the entire promoter shareholding was pending release on the PNB facility as of the FY25 AR sign-off — needs SEBI shareholding-pattern confirmation downstream."}
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 1, B: 10, C: 4, D: 5}
+core_score: 20
+moat_score: 5
+grand_total: 25
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers: ["1: Block A(1)<8 -> max GOOD (superseded by AVOID)", "6: ND/EBITDA(3.96x FY26, 4.30x FY25)>3x AND IC(1.93x FY26, 1.26x FY25)<3x -> AVOID", "5: promoter pledge % NOT FOUND, qualitative loan-security note suggests possible full-shareholding pledge on PNB facility pending release -- unresolved, not scored as numeric trigger"]
+history_downgrade: true
+data_notes: ["no loss-to-profit PAT swing FY22-FY26", "company's disclosed ROE is PAT/share-capital not PAT/net-worth, true ROE computed independently", "company's disclosed D/E uses LT debt only, D3 computed on total borrowings per pipeline formula", "company's disclosed ICR methodology not reconcilable, D2 computed as EBIT/total finance costs per pipeline formula", "M2/M5/M9 PEER DATA NEEDED, JKPAPER peer CSVs excluded per orchestrator instruction", "E3 pledge % NOT FOUND, qualitative pledge disclosure in AR Note 18 flagged", "E2 3-year promoter holding change NOT FOUND, only FY25 snapshot available", "E4 uses FY25 contingent liabilities, FY26 note not in results filing", "FY26 EBITDA/ROCE computed pre-exceptional for comparability", "other income unusually large FY25/FY26 including unrealised investment gains, quality-of-earnings caveat on EBITDA"]
+block_b_trend: "deteriorating -- CFO fell from Rs176.11cr (FY25) to Rs94.87cr (FY26), a 46% decline despite 29% revenue growth; FCF swung from +Rs56.44cr (FY25) to -Rs198.65cr (FY26) on Rs293.52cr capex"

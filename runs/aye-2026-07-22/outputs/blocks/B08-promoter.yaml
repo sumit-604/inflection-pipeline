@@ -1,0 +1,52 @@
+stage: B08-promoter
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Krishan Gopal Jan-2026 CFO resignation: reason not found"
+  - "SCORES complaint data: not found"
+  - "AmbitionBox-specific employee review data: not found"
+  - "IiAS/SES/InGovern proxy advisory report: not found (company pre-first-AGM, next AGM 1-Sep-2026)"
+  - "Non-audit fee dominance by statutory auditor: not found"
+  - "Explicit MD-succession plan for Sanjay Sharma: not found"
+  - "Identity of the single quantified regulatory-action litigation-summary row against the Company: inferred (2019 RBI late-filing fee) but not verbatim-confirmed"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 8, caution: 2, red: 0}
+deal_breakers:
+  - "Multiple mid-term independent director exits within 3 years: TRIGGERED (3 IDs resigned same day, 2-Sep-2023, disclosed RBI-conflict reason; one re-appointed Aug-2024) — recorded, not enforced"
+adverse_findings:
+  - {finding: "RBI FY23 inspection observations (internal audit coverage, security perfection, credit-bureau reporting, interest-rate model, mortgage title-deed registration, MSME KYC)", evidence_tier: "VERIFIED", source: "Prospectus, Risk Factor 16, p.51-52", date: "letter dated 2023-03-31, remediated by 2024-09-19"}
+  - {finding: "RBI late-submission fee Rs17.5 lakh for delayed FC-GPR/ARF filing", evidence_tier: "VERIFIED", source: "Prospectus, Risk Factor 16, p.52", date: "2019-03-19 (levied), 2019-04-08 (acknowledged paid)"}
+  - {finding: "Three independent directors resigned same day citing scheduled-bank-directorship loan-approval conflict", evidence_tier: "VERIFIED", source: "Prospectus, Changes in our Board, p.289", date: "2023-09-02"}
+  - {finding: "CFO seat changed twice in ~4 months around listing (Krishan Gopal resigned; interim Sovan Satyaprakash; permanent Gaurav Seth)", evidence_tier: "MEDIA REPORTED", source: "operator digest + exchange filings (Business Standard, TradingView/Reuters, MediaNews4U)", date: "2026-01 through 2026-04-28"}
+  - {finding: "Pending tax proceedings against Company, 5 matters aggregating Rs158.83mn / contingent liabilities Rs158.92mn", evidence_tier: "VERIFIED", source: "Prospectus, litigation summary p.32 and Note 33, p.31", date: "as of 2025-09-30"}
+  - {finding: "BSE fine Rs1,48,680 for delayed Dec-2025 debt-segment results", evidence_tier: "MEDIA REPORTED", source: "operator digest, corroborated by Whalesbook", date: "2026-03-14"}
+  - {finding: "Immaterial RPT: relative of MD (Shashwat Sharma) employed by Company, ~0.01% of total income", evidence_tier: "VERIFIED", source: "Prospectus, RPT summary p.27", date: "FY23-FY25 / H1FY26"}
+transition_evidence:
+  - "New external professional CFO: Gaurav Seth (ex-CFO IIFL Home Finance, ex-CFO Airtel Payments Bank), appointed 2026-04-28"
+  - "SHA nominee-director rights of all institutional investors (Elevation Capital, A91, LGT Capital, CapitalG, Alpha Wave, BII, ABC Impact) automatically terminated upon listing, per Prospectus p.303"
+  - "2023-24 governance overhaul: independent-director bench rebuilt with ex-NABARD Chairman/ex-MD NABFINS (now Board Chairperson), ex-RBI Chief General Manager, ex-MD PNB Housing Finance, ex-GM SBI/SVP SBI Capital Markets, IIT-Delhi professor"
+  - "Auditor upgrade at term-end: incoming MSKA & Associates LLP is a BDO-network member firm, replacing S S Kothari Mehta & Co. LLP"
+  - "Second rating agency upgrade: India Ratings IND A -> IND A+ (Stable), NCDs to IND A+, CP to IND A1+, 2026-06-24, citing post-IPO capitalisation"
+  - "Fresh primary capital Rs710cr at Feb-2026 IPO; CRAR strengthened to 42.2% (Mar-2026) from 31.45% pre-IPO (Dec-2025) -- digest-only, not independently anchored in collected extract"
+pledge_pct_latest: 0
+pledge_trend: "NOT APPLICABLE - no identifiable promoter per Prospectus (SEBI ICDR/Companies Act 2013 confirmation); shareholding pattern carries no promoter row (screener, Mar-Jun 2026)"
+searches_performed:
+  - "Sanjay Sharma Aye Finance founder MD background career"
+  - "Aye Finance RBI action penalty SEBI"
+  - "Aye Finance CFO Gaurav Seth appointed 2026"
+  - "MSKA Associates auditor S S Kothari Mehta Aye Finance rotation"
+  - "Aye Finance IPO controversy litigation fraud governance"
+  - "Aye Finance microfinance overlending Bihar crisis 2024"
+  - "Elevation Capital A91 Partners British International Investment reputation India NBFC"
+  - "Aye Finance Sovan Satyaprakash interim CFO resign 2026"
+  - "Aye Finance Krishan Gopal CFO resignation January 2026 reason"
+  - "Aye Finance Glassdoor AmbitionBox employee reviews"
+  - "\"Aye Finance\" SFIO ED PMLA enforcement directorate"
+  - "Aye Finance IiAS SES proxy advisory report IPO"
+  - "Aye Finance news 2026 RBI inspection observation"
+  - "Aye Finance India Ratings upgrade IND A+ June 2026"
+searches_skipped: []
+verdict_basis: "No identifiable promoter (SEBI ICDR-confirmed); founder-MD Sanjay Sharma and the reconstituted board carry clean, verifiable, regulator-heavy track records; only caution items are listing-window CFO churn and a disclosed 2023 same-day 3-ID resignation cluster (one director since re-appointed), against strong multi-channel transition evidence (external CFO hire, board independence build, auditor network upgrade, second-agency rating upgrade)."

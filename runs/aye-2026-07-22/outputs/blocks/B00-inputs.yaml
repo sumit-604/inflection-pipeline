@@ -1,0 +1,64 @@
+stage: B00-inputs
+company: AYE
+run_date: 2026-07-22
+model: orchestrator
+status: complete
+run_type: full
+company_name: Aye Finance Limited (formerly Aye Finance Private Limited)
+business: MSME / micro-enterprise NBFC lender (secured + unsecured business loans)
+listed: "~2026-02 (BSE 544699 / NSE AYE); recently listed <3y -> prospectus foundational"
+identifiable_promoter: false   # Prospectus: "OUR COMPANY DOES NOT HAVE AN IDENTIFIABLE PROMOTER" (PE/VC-backed)
+
+# ---- document routing (folder != filename; collector defects corrected) ----
+doc_routing:
+  prospectus_present: true      # 614p final Prospectus MISFILED in annual-report/1770879625663.pdf
+  prospectus_note: "annual-report/1770879625663.pdf is the IPO Prospectus, not an AR. Carries Restated Financial Statements (p304+), risk factors, shareholder/board history, group map. Route to stages 2,3,7,8 as the foundational filing."
+  post_listing_ar_present: false   # no post-listing annual report exists yet (first AR not due; listed Feb 2026)
+  results:
+    - file: results/edbf1e94-d388-423a...  # edbf1e94-d388-423a-ae43... Q4 & FY26 AUDITED (board 2026-04-27, y/e 31-Mar-2026)
+      period: Q4_FY26_and_FY26_audited
+    - file: results/2246e44a-59ad-423a-ae43-c3e537e8c140.pdf  # board outcome dated 2026-07-22 -> LATEST period, likely Q1 FY27 (Jun-2026); stage to confirm from extract
+      period: likely_Q1_FY27_unaudited_confirm
+    - file: results/138929.pdf
+      period: NOT_A_RESULTS_DOC   # byte-identical (md5 af55d74e...) duplicate of rating/138929.pdf (ICRA rationale); do not double-count
+  rating:
+    - file: rating/138929.pdf
+      doc: "ICRA rationale 2025-11-12: [ICRA]A (Stable) assigned Rs400cr NCD; LT bank facilities reaffirmed. Notes asset-quality deterioration (90+dpd 5.1% Sep-2025 vs 3.5% Mar-2025), PAT Rs171cr FY25 / Rs31cr Q1FY26, CRAR 34.8% Jun-2025."
+  concall:
+    - file: concalls/Concall_Mar_2026_Transcript.pdf
+      period: Q3_FY26   # maiden earnings call, conducted 2026-03-06, unaudited Q3 FY26
+  peer_concalls:
+    MASFIN: [Nov_2025, Feb_2026, Feb_2026_2, May_2026]   # MAS Financial Services
+    NORTHARC: [Jul_2025, Oct_2025, Jan_2026, May_2026]    # Northern Arc Capital
+    SBFC: [Jul_2025, Nov_2025, Jan_2026]                  # SBFC Finance
+  screening_present: peers_only   # MASFIN/NORTHARC/SBFC CSVs only; NO AYE screening CSV -> Gate 0 sources from Prospectus restated financials + results PDFs
+  presentation: [Investor_Presentation_1.pdf, "IPO notes (idirect/1323P/f13c/ipo_09Feb) = broker research class, NON-ANCHORED", "Aye Finance IPO Note = NON-ANCHORED"]
+
+# ---- concall mode ----
+no_concall_mode: false
+concall_mode_note: "manifest concalls_available:false is a collector defect (recurring KARNIKA/OBSCP class). A genuine AYE Q3 FY26 concall + 11 peer transcripts ARE present. Overridden to NORMAL mode. Single AYE transcript (maiden call) so stage 5 promise/delivery baseline is one quarter."
+
+# ---- input gaps ----
+input_gaps:
+  - type: prospectus
+    status: PRESENT_MISFILED   # foundational doc present in annual-report/; NOT a real gap despite empty prospectus/ folder
+    priority: resolved
+  - type: annual-report
+    status: absent
+    priority: expected   # company listed Feb 2026, no post-listing AR yet; backward baseline uses Prospectus restated financials
+  - type: announcements
+    status: absent
+    priority: medium   # lose documented-ACTION record (Reg 30). Stage 8 uses web + prospectus; intent-action cross-check on concall/results only
+  - type: shareholding
+    status: absent
+    priority: medium   # stage 10 FII+DII unresolved; UA institutional qualifier withheld; use Prospectus post-issue shareholding as last-known with staleness note
+  - type: research
+    status: absent   # broker/IPO notes live in presentation/ (NON-ANCHORED, leads only); no anchored effect
+  - type: aye_screening_csv
+    status: absent   # only peer screening CSVs; Gate 0 from Prospectus restated + results PDFs
+
+# ---- flags for downstream ----
+sector_cap_mismatch: true
+sector_cap_note: "manifest sector_cap_row 'Pharma / CDMO' is WRONG (recurring collector defect). AYE is a lending NBFC; peer set MASFIN/NORTHARC/SBFC. Correct row (NBFC/Financials) to be confirmed at phase 3 stage 11 from Section 1B cap table. Valuation basis for a lender is P/B and P/E on adj. book, not EV/EBITDA."
+manifest_cmp_marketcap: "manifest cmp 0.0 / market_cap_cr 0.0 (collector left blank). Not needed for phase-1 evidence; phase-3 stage 10 must source CMP/mcap."
+operator_confirmation: "Stage-0 empty-folder question asked and ANSWERED: 'Proceed on defaults' (2026-07-22)."

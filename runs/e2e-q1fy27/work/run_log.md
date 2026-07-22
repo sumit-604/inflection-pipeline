@@ -33,3 +33,9 @@ Operator: Keerti Kaushik (via orchestrator)
 2 documents reviewed: results filing (18 notes / 60 line items / 10 auditor paras / 1 entity / 1 agenda item) + press release (29 line items / 2 slides). 0 concall turns (no transcript). 100% reviewed.
 
 LESSONS.md note: this run is a quarterly review (Role 4/5); LESSONS.md append is a /run-pipeline, /fttcp, /finalize convention. Quarterly runs log to this run folder.
+
+## ADDENDUM 2026-07-21: investor presentation added
+- `e2e_presentation_deck_q1fy27.pdf` (22pp, orig 176ef221) -> doctype **presentation** (slide deck). E2E Networks, Scrip 544783, Q1 FY27, dated 2026-07-21. Confirmed genuine E2E.
+- Distinct from the earlier press release (also class presentation); artifacts suffixed "_deck" to avoid collision.
+- Image-only slides p2 (39 ch), p15 (26 ch) -> OCR required (A1 handles <100 ch pages).
+- Re-running A1->A2->A3 on deck, then A4 re-merge (results + press release + deck), A5, Notion update.

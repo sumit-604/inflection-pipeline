@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+phase: "1 lite"
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_cap_reason: "FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; missing evidence named (ARC/NPA note reconciliation + ex-DA core lending profit)"
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0", "FLAG-PROMOTER (CAUTION, surfaced not verdict-forcing)", "FLAG-CREDIBILITY-D"]
+confidence_delta: {numerical: 83, redflag: 94, framework: 94.5, peer: 100, overall: 83}
+headline: "Rajasthan MSME lender leaning on assignment gains"
+falsification_metric: "GNPA rising past the 2.13% Mar-26 print next quarter while another DA/assignment gain simultaneously props up PAT"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+files_excluded_phase1: [fttcp-recommendation.md, fttcp-handoff.md, notion-payload.md]
+valuation_decision: ""    # deferred to phase 3

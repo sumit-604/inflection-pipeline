@@ -2,26 +2,29 @@
 
 Run: kcpsugind-2026-07-21. Model spine: stage 11 and 13 opus-4-8; document stages sonnet; assembly haiku. NO-CONCALL MODE. Consolidated screener spine (B01 data_notes confirm the CSV ties to consolidated FY25/FY26). AR pp.2 and 151-275 scanned, no text layer; consolidated statements sourced from FY26 Audited Results text cache. Eimco Rs 257 Cr order operator-confirmed, released 20-21 Jul 2026, pending Reg 30 (fttcp-deliberation.md override 1).
 
-Block index carried: B00 inputs, B01 gate0, B02 notes, B03 ardeep, B04 bizmodel, B05 concall, B06 peers (skipped), B07 emoat, B08 promoter, B09 tam, B10 valinputs, B11 valuation, B12a-d verifiers, B14 thesis, B15 devil, confidence.yaml.
+FINALIZE RE-RUN NOTICE: this dossier is re-issued after the operator, during the finalize review, ruled the Eimco engineering SOTP slice to 15x (was 8x) (fttcp-deliberation.md PHASE 3 OPERATOR OVERRIDE 5). The valuation and thesis were re-run; the decision moved from AVOID to WATCHLIST (BUY-ON-DIPS). The SOLE input change is the Eimco multiple; holdco discount (35% base), sugar token/negative, investment book, debt Rs 127.71 Cr, 11.34 Cr shares, and the four-pillar operating cross-check are all held. Sections 1 to 5 below are unchanged; section 6 (valuation) and the role summary carry the 15x numbers.
+
+Block index carried: B00 inputs, B01 gate0, B02 notes, B03 ardeep, B04 bizmodel, B05 concall, B06 peers (skipped), B07 emoat, B08 promoter, B09 tam, B10 valinputs, B11 valuation (Eimco 15x re-run), B12a-d verifiers, B14 thesis (WATCHLIST), B15 devil, confidence.yaml.
 
 Deliberation-confirmed inputs and overrides (fttcp-deliberation.md, authoritative for phase 3):
 - Override 1: Rs 257 Cr Eimco-KCP Hyundai order accepted as real, operator-confirmed, order date 20-21 Jul 2026, primary Reg 30 to follow. Carried as confirmed forward trigger for the Eimco SOTP slice.
 - Override 2: Revenue transition re-scored DECLINING to STARTING (+1) on the order as main trigger; composite -4 to -2; Kernex cash cap still binds.
 - Override 3: primary valuation method SUM-OF-THE-PARTS (lead); investment book direct at holdco discount; Eimco going concern with the order as revenue visibility; sugar core at asset/replacement or token operating value.
 - Override 4: earnings basis TRAILING P/E (operating cross-check only; investment book valued direct).
+- Override 5 (finalize, 2026-07-21): Eimco SOTP slice multiple raised from 8x to 15x on normalized Eimco earnings, operator's words "take Eimco multiple after discount to 15x". Rationale recorded: 100% engineering subsidiary, 31.3% segment PBIT margin (FY26 PBIT Rs 24.63 Cr on Rs 78.64 Cr revenue), rising order book, Rs 257 Cr Hyundai order at 3.3x segment revenue; 15x sits below the engineering sector cap (Consulting/Engineering 25x, Industrial products 25x, EPC 20x, Master v3.3) and reflects a discount from that ceiling for subsidiary / single-order-concentration / unfiled-order / data-gap risks. The Agri processing 20x cap applies only to the consolidated operating cross-check, not to this engineering slice. Both the pipeline devil (B15) and Verifier C had flagged the prior 8x as a plucked round number.
 - Sector cap corrected: manifest "Pharma / CDMO" to Agri processing 20x, operator approved.
 - Cross-family grade did not run (grader exit 3 SKIPPED, no provider key); FTTCP confidence one notch below the 70 baseline.
 
-Role outputs summary:
+Role outputs summary (post-override):
 - Role 1 (screen / Gate 0, B01): AVOID, grand 27/160, moats 0.
-- Role 2 (forward operating FTTCP, B10/deliberation): composite -2, DEEP WATCH leaning AVOID, Kernex cash cap binding.
-- Role 3 (valuation, B11): AVOID-on-valuation at CMP Rs 21.71, SOTP base Rs 22.50, entry Rs 10.24-11.52.
+- Role 2 (forward operating FTTCP, B10/deliberation): composite -2, DEEP WATCH leaning AVOID, Kernex cash cap binding. Unchanged by the override (a valuation-level move, not an operating-quality upgrade).
+- Role 3 (valuation, B11): WATCHLIST (BUY-ON-DIPS) at CMP Rs 21.71, SOTP base Rs 33.88 (+56% vs CMP; bear 18.66, bull 47.29), entry Rs 15.42-17.35, MoS Rs 13.88. Upgraded from the prior AVOID / SOTP base Rs 22.50 / entry Rs 10.24-11.52 by the Eimco 15x override.
 
 ---
 
 ## 1. Transition data series
 
-All rows FY2017 to FY2026. Primary source: inputs/screening/screener-Data_Sheet.csv (consolidated spine, B01 data_notes; B10). FY-anchored supplements from AR FY25 notes and FY26 Audited Results as noted.
+All rows FY2017 to FY2026. Primary source: inputs/screening/screener-Data_Sheet.csv (consolidated spine, B01 data_notes; B10). FY-anchored supplements from AR FY25 notes and FY26 Audited Results as noted. (Unchanged by the override.)
 
 ### 1a. Topline
 
@@ -57,7 +60,7 @@ Gross margin: screener is simplified; the material-cost-plus-inventory-change pr
 | FY25 | NOT FOUND | 43.20 (screener) | 13.9% | 4.6% (14.39/310.46) |
 | FY26 | 21.81% (B01 proxy) | 29.43 (screener; B10 29.43) | 11.3% | 4.3% (11.13/259.95) |
 
-Operating cross-reference (segment PBIT, FY26, FY26 Audited Results p.4; B10): Sugar -Rs 17.31 Cr; Engineering/Eimco +Rs 24.63 Cr; Others/urad +Rs 4.21 Cr. Sugar segment PBIT trajectory +6.51 (FY24) to -8.21 (FY25) to -17.31 (FY26) (B03/B04, AR Note 76 p.128; FY26 results p.4).
+Operating cross-reference (segment PBIT, FY26, FY26 Audited Results p.4; B10): Sugar -Rs 17.31 Cr; Engineering/Eimco +Rs 24.63 Cr (31.3% margin on Rs 78.64 Cr segment revenue); Others/urad +Rs 4.21 Cr. Sugar segment PBIT trajectory +6.51 (FY24) to -8.21 (FY25) to -17.31 (FY26) (B03/B04, AR Note 76 p.128; FY26 results p.4).
 
 ### 1c. Cash conversion
 
@@ -105,7 +108,7 @@ Median 10-year ROCE 6.93% (B01, below the 10% DB3 threshold). FTTCP ROCE verdict
 
 ## 2. Catalyst inventory
 
-From B05.triggers and B07.catalysts_12m. Weak catalysts kept and labelled.
+From B05.triggers and B07.catalysts_12m. Weak catalysts kept and labelled. (Unchanged by the override.)
 
 ### From B05.triggers
 
@@ -115,7 +118,7 @@ Catalyst 2 — Urad Dal segment re-acceleration. Tier: documented (segment histo
 
 Catalyst 3 — Sugar recovery/price normalisation. Tier: inference. Window: near, FY25-26 season, AR pending. Confirm: FY25-26 AR shows recovery% stabilising near 8.0-8.5% and cane-crushed volume recovering. Kill: further cane-crushed decline below FY24-25's 264,477 MT. Conviction: L (B05).
 
-Catalyst 4 — Eimco-KCP order pipeline (Rs 257 Cr Hyundai). Tier: operator-relayed pending filing confirmation (deliberation override 1 upgrades to operator-confirmed, Reg 30 pending). Window: near-medium. Confirm: Reg 30 disclosure confirming the order, then consolidated Engineering segment revenue recovery. Kill: no filing surfaces and consolidated Engineering keeps shrinking. Conviction: L (unconfirmed) at B05; upgraded to main trigger by operator (deliberation override 2).
+Catalyst 4 — Eimco-KCP order pipeline (Rs 257 Cr Hyundai). Tier: operator-relayed pending filing confirmation (deliberation override 1 upgrades to operator-confirmed, Reg 30 pending). Window: near-medium. Confirm: Reg 30 disclosure confirming the order, then consolidated Engineering segment revenue recovery. Kill: no filing surfaces and consolidated Engineering keeps shrinking. Conviction: L (unconfirmed) at B05; upgraded to main trigger by operator (deliberation override 2). This is the engine of the 15x re-rating (override 5); credited as visibility through the multiple, not base earnings.
 
 Catalyst 5 — Cane-price/FRP cost pressure (as risk). Tier: documented (industry data). Window: near. Confirm: next AR shows cane price paid rising with FRP without margin compression. Kill: sugar segment loss widens further despite stable-to-firm sugar prices. Conviction: M as risk (B05).
 
@@ -132,6 +135,8 @@ Catalyst D — Distillery utilisation recovery under the now-active E20 national
 ---
 
 ## 3. Flags with complete underlying findings
+
+(Unchanged by the override.)
 
 ### FLAG-PROMOTER — not fired (verdict CAUTION, below CONCERN/AVOID threshold; B08)
 
@@ -163,7 +168,7 @@ Cited items:
 - Rating agency verbatim (CARE 07 Oct 2025, pp.2-3): "free cash and investments Rs 204.08 Cr as on 31.03.2025; avg WC utilisation 37.65% (12m to Jun 2025); current ratio improved to 2.73x from 1.89x; nil term debt" (B10 rating_wc_quote).
 - Capex/commissioning: capex fell 36.1% YoY, capex/depreciation ~0.67x; CWIP Rs 25.11 lakh, ~0.11% of revenue, no committed capex programme (B02 finding 10; B07). Operator disclosure check: no new capacity, commissioning or capex decision 21 Jan-21 Jul 2026 (operator-context-recent.md item 4).
 - Receivables composition: net trade receivables Rs 1,030.72 lakh FY25 (fell 12.8%); 43.0% >6 months overdue; static Rs 372.67 lakh disputed balance unchanged two years (B02 finding 7, Note 10 AR pp.106-107).
-Pillar 2 cash multiplier 0.65x applied, no growth offset; bars Tier B; caps operating verdict (B11).
+Pillar 2 cash multiplier 0.65x applied, no growth offset; bars Tier B; caps operating cross-check at STOP (B11). Falsification metric: a second consecutive negative consolidated CFO year confirms the structural burn eroding the asset floor; positive CFO within two quarters weakens the STRUCTURAL label.
 
 ### FLAG-GATE0 — active
 
@@ -175,7 +180,7 @@ Depressor detail: Blocks A and C both 0/20 driven by a genuine multi-year sugar 
 
 ## 4. Credibility grade
 
-Grade: C (B05). NO-CONCALL MODE: default C confirmed rather than raised; no earnings-call transcript exists, so the AR MD&A / Chairman letter plus RESULTS commentary substitute for the delivery check.
+Grade: C (B05). NO-CONCALL MODE: default C confirmed rather than raised; no earnings-call transcript exists, so the AR MD&A / Chairman letter plus RESULTS commentary substitute for the delivery check. (Unchanged by the override.)
 promise_delivery_score: delivered 1, partial 2, missed 1 (B05).
 repeated_evasions: [] (none recorded; B05). excuse_pattern: external-blame-heavy (B05).
 Basis (B05): the AR's only forward outlook claims (recovery/price "stay firm", ethanol opportunity) either lack a verifiable FY26 metric or are contradicted by same-AR/FY26 delivery (sugar segment loss +71% wider, alcohol production -82% YoY); guidance is almost entirely unquantified, capping any upgrade to B.
@@ -191,6 +196,8 @@ B12b concur: credibility C defensible; three added findings reinforce a low-C, n
 ---
 
 ## 5. Scorecards and market sizing
+
+(Unchanged by the override.)
 
 ### Gate 0 (B01)
 grand_total 27/160; core_score 26/100; moat_score 1/60. Blocks: A 0/20, B 4/20, C 0/20, D 14/20, E 8/20. moats_confirmed 0/12. classification AVOID. Deal-breakers: DB1, DB2, DB3, DB7 triggered (superseded by AVOID); DB6 basis-dependent (FLAG-DATA-JUDGMENT). data_years 10, FY2017-FY2026.
@@ -228,54 +235,64 @@ Stage 6 SKIPPED (NO-CONCALL MODE, inputs/peer-concalls/ empty). verified: [] ; c
 
 ---
 
-## 6. Valuation pillar detail (stage 11 ran; B11)
+## 6. Valuation pillar detail (stage 11 ran; Eimco 15x re-run; B11)
 
-Framework versions: Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2. pe_basis trailing. Primary method SOTP (override 3); Four-Pillar exit PE is a subordinate operating cross-check.
+Framework versions: Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2. pe_basis trailing. Primary method SOTP (override 3); Four-Pillar exit PE is a subordinate operating cross-check. Eimco SOTP slice at OPERATOR OVERRIDE 15x (override 5), under the 25x engineering cap; the Agri 20x cap binds only the consolidated operating cross-check.
 
-Destination PE:
+Destination PE (operating cross-check, UNCHANGED by the override):
 - track1_rrm: low 6.65, mid 7.20, high 7.79; r_used 15.5, rrm 0.76.
 - track2_additive: low 5.70, mid 6.20, high 6.70.
 - divergence 16.1%. Governing: SOTP governs entry zone; within the operating cross-check the additive 6.2x is the more conservative track (B11).
 
-Pillar build (B11 pillar_detail): roce_used 4, roce_base 4, roce_recovery_route not-credited, pillar1_normalization_route none, Pillar 1 base PE 9.5x at the 9x floor (0.5xROCE+7.5); cash_multiplier 0.65 STRUCTURAL, growth_offset 0; Pillar 3 growth+moat+duration +0x, growth_premium 0; strategic_premium 0; shared_catalyst_flag false; ua_applied false; sector_cap_used 20 (Agri processing).
+Pillar build (B11 pillar_detail, UNCHANGED): roce_used 4, roce_base 4, roce_recovery_route not-credited, pillar1_normalization_route none, Pillar 1 base PE 9.5x at the 9x floor (0.5xROCE+7.5); cash_multiplier 0.65 STRUCTURAL, growth_offset 0; Pillar 3 growth+moat+duration +0x, growth_premium 0; strategic_premium 0; shared_catalyst_flag false; ua_applied false; sector_cap_used 20 (Agri processing, operating cross-check only); eimco_slice_multiple 15 (operator override, under 25x engineering cap).
 
-Hurdle: hurdle_ratio base 0.37, bull_used false, verdict STOP (both base and bull bases far below the 1.953 needed for 25% CAGR; B11).
+Hurdle: hurdle_ratio base 0.37, bull_used false, verdict STOP on the operating cross-check (subordinate; both base and bull operating bases far below the 1.953 needed for 25% CAGR). Governing SOTP 25% entry test: CONDITIONAL (base +16% fails 25%, bull +29.6% passes) (B11).
 
 Fair values (identical across tracks because SOTP governs; B11):
-- track1 {bear 10.97, base 22.50, bull 33.07}
-- track2 {bear 10.97, base 22.50, bull 33.07}
+- track1 {bear 18.66, base 33.88, bull 47.29}
+- track2 {bear 18.66, base 33.88, bull 47.29}
+(Prior 8x run: bear 10.97, base 22.50, bull 33.07.)
 
-SOTP build (11-valuation.md):
-- Investment book Rs 332.11 Cr at holdco discount: bear 50% (166.06), base 35% (215.87), bull 20% (265.69).
-- Eimco: multiples 6x/8x/10x on earnings 16.56 (FY25 proxy) bear / 18.47 base / 18.47 bull; values 99 / 148 / 185 Rs Cr.
-- Sugar + others: bear -13, base 19, bull 52 Rs Cr (sugar token/negative; urad 4x/6x/7x on post-tax 3.16).
+SOTP build (11-valuation.md, Eimco 15x):
+- Investment book Rs 332.11 Cr (FVTPL Rs 292.76 Cr + cash Rs 39.35 Cr) at holdco discount: bear 50% (166.06), base 35% (215.87), bull 20% (265.69). Holdco discount band held EXACTLY at the prior run's 50/35/20 (operator did not rule on the discount).
+- Eimco (OPERATOR OVERRIDE 15x): multiples bear 11.25x / base 15x / bull 18.75x (15x center held +/-25%; all below the 25x engineering cap) on earnings bear 16.56 (FY25 PAT proxy) / base 18.47 / bull 18.47 (FY26 segment PBIT 24.63 x 0.75); values 186.30 / 277.05 / 346.31 Rs Cr. Rs 257 Cr Hyundai order credited as visibility through the multiple, not as inflated earnings; pending Reg 30.
+- Sugar + others: bear -13, base 19, bull 52 Rs Cr (sugar token/negative: bear -25, base 0, bull +30; urad 4x/6x/7x on post-tax 3.16 = 12/19/22).
 - Less total borrowings Rs 127.71 Cr all cases; over 11.34 Cr shares.
-- Equity value bear 124.35 / base 255.16 / bull 374.98 Rs Cr; per share 10.97 / 22.50 / 33.07.
-- Secondary P/B cross-check: BV Rs 40.52 (72% marked financial assets); holdco P/B 0.50-0.55x gives Rs 20.3-22.3, brackets base and CMP.
+- Equity value bear 211.65 / base 384.21 / bull 536.29 Rs Cr; per share 18.66 / 33.88 / 47.29.
+- Internal consistency: base SOTP equity Rs 384.21 Cr vs market cap Rs 246.16 Cr, the market prices the equity ~36% below the re-rated base SOTP (was ~= market cap under 8x).
+- Secondary P/B cross-check: BV Rs 40.52 (72% marked financial assets); base SOTP Rs 33.88 = 0.836x book, still below book, no overreach.
 
-expected_cagr_prob_weighted -3.6% (B11) / return at CMP prob-weighted (grade C weights 35/45/20): bear -20.3% x35, base +1.2% x45, bull +15.1% x20 (11-valuation.md). entry_range {low 10.24, high 11.52}; mos_price 9.22; upside_downside_ratio 1.06 (bull/bear); base/bear 0.07 (both below 2x). structural_or_growth structural; cash_multiplier_used 0.65; ua_applied false; sector_cap_used 20.
+Returns and entry (B11):
+- expected_cagr_prob_weighted +11.4% (was -3.6% under 8x). Return at CMP Rs 21.71 (grade C weights 35/45/20): bear -4.9% x35 = -1.72, base +16.0% x45 = +7.20, bull +29.6% x20 = +5.93.
+- Scenarios clearing >=25% 3yr CAGR from CMP: 1 of 3 (bull only). Clearing >=15%: 2 of 3 (base and bull).
+- entry_range {low 15.42, high 17.35} (Tier A, 25% hurdle, divisor 1.953; 30% CAGR entry 15.42, 25% CAGR entry 17.35); mos_price 13.88; Tier B BARRED (FLAG-CASH STRUCTURAL).
+- Does base clear CMP? YES, Rs 33.88 vs Rs 21.71 (+56.1%). Does CMP clear the Tier A 25% entry on base? NO, entry Rs 17.35 < CMP; base implies only +16%. Bull 25% entry Rs 47.29 / 1.953 = Rs 24.21 > CMP, so CMP clears a 25% path to the bull only. CONDITIONAL case.
+- upside_downside_ratio 4.0x (base/bear) / 8.4x (bull/bear); both above 2x (were 0.07x / 1.06x under 8x). Bear floor -14% from CMP; base upside +56.1%, bull +117.8%.
+- structural_or_growth structural; cash_multiplier_used 0.65; ua_applied false; sector_cap_used 20 (operating cross-check); eimco_slice_multiple 15.
 
-decision: AVOID (on-valuation) at CMP Rs 21.71; WATCHLIST asset case, re-open zone Rs 10-12 (B11). Tier A, 25% hurdle; Tier B BARRED (FLAG-CASH STRUCTURAL). CMP is ~88% above the entry zone top; even the bull 25% entry Rs 16.93 sits below CMP (11-valuation.md).
+decision: WATCHLIST (BUY-ON-DIPS) at CMP Rs 21.71; buy into Rs 15.42-17.35, not at CMP. Upgraded from the prior AVOID by the Eimco 15x override; value-trap / discount-closure caveat keeps it off a clean BUY (B11).
 
-one_line_thesis (B11): "Not a buy at Rs 21.71 - market already pays the base SOTP Rs 22.50; the Rs 332 Cr investment book plus Eimco (Rs 148 Cr, Rs 257 Cr order pending Reg 30) net of Rs 128 Cr debt is only worth owning near Rs 10-12 against a cash-burning, structurally loss-making sugar core; AVOID-on-valuation, WATCHLIST the asset case."
+one_line_thesis (B11): "Eimco re-rated to 15x lifts base SOTP to Rs 33.88, ~56% above CMP Rs 21.71 with 4-8x asymmetry, but the base returns only +16% (25% path only on the bull) and the Rs 257 Cr order is still unfiled while the shell burns ~Rs 30 Cr/yr - WATCHLIST, BUY-ON-DIPS into Rs 15.42-17.35."
 
-Devil's advocate (B15): overall WEAKENED BUT ALIVE. Dimensions: growth_triggers weakened, moat_durability weakened, management_trust survives, valuation_safety weakened. Top counters: (1) 35% holdco discount too harsh (only ~Rs 65.59 Cr / 20-24% lien-marked, securing WCTL fully repaid, CARE net-debt-negative; at 20-25% base flips above CMP); (2) Eimco undervalued at 8x (31.3% PBIT margin, Rs 257 Cr order 3.3x segment revenue, 25x sector cap; 12x adds ~Rs 6.5/share); (3) "structural" sugar-loss overstated (PBIT +6.51 Cr FY24, collapsed on 39-42% cane-crush drop; recovery swings ~+20-25 Cr); (4) single point of failure (Rs 257 Cr order unfiled carries revenue upgrade + Eimco value + reason-to-monitor at once); (5) structural value trap (permanent discount, FII ~3.31% fragmented, family Schedule-V pay, 26.9% RPT FDs, ~Rs 30 Cr/yr cash burn erodes the asset).
+Devil's advocate (B15): overall WEAKENED BUT ALIVE. Dimensions: growth_triggers weakened, moat_durability weakened, management_trust survives, valuation_safety weakened. Top counters: (1) 35% holdco discount too harsh (only ~Rs 65.59 Cr / 20-24% lien-marked, securing WCTL fully repaid, CARE net-debt-negative; at 20-25% base flips above CMP); (2) Eimco undervalued at 8x (31.3% PBIT margin, Rs 257 Cr order 3.3x segment revenue, 25x sector cap; 12x adds ~Rs 6.5/share) — THIS COUNTER IS NOW ADOPTED: the operator override 5 re-rated Eimco to 15x, above the 12x the devil and Verifier C had argued survivable, and it is the lever that moved the decision to WATCHLIST; (3) "structural" sugar-loss overstated (PBIT +6.51 Cr FY24, collapsed on 39-42% cane-crush drop; recovery swings ~+20-25 Cr); (4) single point of failure (Rs 257 Cr order unfiled carries revenue upgrade + Eimco value + reason-to-monitor at once); (5) structural value trap (permanent discount, FII ~3.31% fragmented, family Schedule-V pay, 26.9% RPT FDs, ~Rs 30 Cr/yr cash burn erodes the asset). Counters 1, 3, 4, 5 now frame the WATCHLIST bear case.
 
-Thesis-broken-if (B14): investment book (Rs 332 Cr) drawn down >20% to fund operating/sugar losses; OR Eimco Rs 257 Cr order cancelled or not confirmed via Reg 30; OR sugar segment annual PBIT loss exceeds Rs 25 Cr.
+Thesis-broken-if (B14, updated): investment book (Rs 332 Cr) drawn down >20% to fund operating/sugar losses; OR Eimco Rs 257 Cr order cancelled or not confirmed via Reg 30; OR sugar segment annual PBIT loss exceeds Rs 25 Cr; OR Eimco segment PBIT margin falls below ~20% (invalidating the operator 15x). New tripwire per override 5: Eimco margin below ~20% invalidates the 15x independent of the order.
 
 ---
 
 ## 7. Gaps ledger
 
+(Unchanged by the override; the Eimco standalone data gap is now more load-bearing because the 15x rests on the 31% segment margin.)
+
 | Item | Stage/block needing it | Where to obtain |
 |---|---|---|
+| Eimco-KCP FY26 standalone financials, margins, audit-trail status (the 15x rests on the 31.3% segment margin holding) | B02, B03, B10, B11 | Eimco own FY26 AR / consolidated schedule (AR pp.151-275 scanned, unextractable) |
+| Reg 30 confirmation of Eimco Rs 257 Cr Hyundai order | B05, B07, B08, B11 (base credits as visibility only) | BSE/NSE Reg 30 corporate announcement (pending) |
 | FII + DII institutional shareholding % | B10, B03, B08, stage 10 (unresolved), stage 11 UA | SEBI/NSDL/BSE shareholding-pattern XBRL filing |
 | Promoter shareholding % latest and pledge (filing-anchored) | B10, B08, B01 E1 | SEBI SHP quarterly filing; B08 media-derived ~42%/0% only |
-| Reg 30 confirmation of Eimco Rs 257 Cr Hyundai order | B05, B07, B08, B11 (base credits as visibility only) | BSE/NSE Reg 30 corporate announcement (pending) |
 | Reg 30 text for 27-28 May 2026 Change in Management | B08 | BSE corpfiling (403 on fetch this run) |
 | SEBI Large Corporate initial disclosure 30-Apr-2026 | B08 | BSE corpfiling (403 this run) |
 | Reg 29(2) SAST filings Jun 9/16/19/29, 3-Jul-2026 | B08 | NSE/BSE SAST filings (only Sethi Funds tranche corroborated) |
-| Eimco-KCP FY26 standalone financials, margins, audit-trail status | B02, B03, B10, B11 | Eimco own FY26 AR / consolidated schedule (AR pp.151-275 scanned, unextractable) |
 | AR pp.2 and 151-275 (consolidated statements + subsidiary schedules) | B02, B03, B04 | Re-obtain AR with text layer / OCR (scanned, no text; apt/OCR unavailable this env) |
 | FY26 Ethanol/Alcohol segment revenue (distinct line) | B09, B05, B10, B11 | Next AR product-wise note; FY25 Rs 10.20 Cr proxy used |
 | FY25-26 sugar recovery % and cane-crushed volume | B05 | FY25-26 AR (not yet published) |

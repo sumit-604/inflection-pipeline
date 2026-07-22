@@ -4,20 +4,23 @@ BSE 533192. Sugar + distillery + cogeneration + Urad Dal + engineering
 (Eimco-KCP 100% subsidiary). Long-listed. Memory to weigh, not a source.
 
 ## THESIS (one line)
-Not a buy at Rs 21.71: the market already pays the base sum-of-the-parts of
-Rs 22.50, where the Rs 332 Cr investment book plus the Eimco engineering
-subsidiary (Rs 257 Cr Hyundai order pending Reg 30) net of Rs 128 Cr debt is
-worth owning only near Rs 10-12, against a cash-burning, structurally
-loss-making sugar core.
+An asset case: with Eimco re-rated to 15x, the base sum-of-the-parts is Rs 33.88
+(the Rs 332 Cr investment book plus the Eimco engineering subsidiary at 15x, with
+the Rs 257 Cr Hyundai order pending Reg 30, net of Rs 128 Cr debt), ~56% above
+CMP Rs 21.71, but the base returns only +16% from CMP so it is a buy into the
+dip zone, not at CMP, against a cash-burning, structurally loss-making sugar core.
 
 ## DECISION STATUS AND ENTRY ZONE
-AVOID (on valuation) at CMP Rs 21.71; WATCHLIST the asset case. As of 2026-07-21.
-Entry zone Rs 10.24 to 11.52, MoS Rs 9.22, SOTP base Rs 22.50 (bear 10.97 / bull
-33.07). Hurdle STOP (HR 0.37). Tier A. Gate verdict PROCEED WITH FLAGS.
-FTTCP operating verdict DEEP WATCH leaning AVOID (composite -2, Kernex cash cap).
-Devil WEAKENED BUT ALIVE. Zone note: entry top Rs 11.52 is ~12% below the
-10-year annual price low of Rs 13.1 (FY2020) and ~47% below CMP; a demanding
-sub-historic-low zone, reachable on a further de-rating or a thesis shock.
+WATCHLIST (BUY-ON-DIPS) at CMP Rs 21.71. As of 2026-07-21 (after the Eimco 15x
+operator override; the pre-override Eimco-8x run read AVOID at CMP with base
+Rs 22.50). Entry zone Rs 15.42 to 17.35, MoS Rs 13.88, SOTP base Rs 33.88 (bear
+18.66 / bull 47.29), +56% above CMP, upside/downside 8.4x, prob-weighted 3yr
+CAGR +11.4%. Tier A (Tier B barred by structural FLAG-CASH). Gate verdict
+PROCEED WITH FLAGS. FTTCP operating verdict DEEP WATCH leaning AVOID (composite
+-2, Kernex cash cap). Devil WEAKENED BUT ALIVE (value-trap risk). Position Small,
+entry-zone only, not at CMP. Zone note: entry top Rs 17.35 is ~20% below CMP and
+above the 10-year annual price low of Rs 13.1 (FY2020), so it is reachable on a
+normal pullback, not a market-unlikely zone.
 
 ## OPERATOR RULINGS
 - 2026-07-21: Proceed with the empty-folder gaps (prospectus, results, rating,
@@ -33,11 +36,18 @@ sub-historic-low zone, reachable on a further de-rating or a thesis shock.
   visibility, sugar core at asset/replacement or a token operating value; sector
   cap Agri processing 20x (corrected from the manifest's wrong Pharma/CDMO).
 - 2026-07-21: Earnings basis TRAILING P/E.
+- 2026-07-21 (finalize review): "take Eimco multiple after discount to 15x" —
+  judged the stage-11 draft's 8x on the 31%-PBIT-margin engineering subsidiary
+  too harsh (a point the devil's advocate and Verifier C had both flagged). 15x
+  is under the 25x engineering cap. Re-valuation lifted base SOTP Rs 22.50 to
+  Rs 33.88 and upgraded the decision AVOID to WATCHLIST (BUY-ON-DIPS).
 
 ## ACTIVE TRIPWIRES
 - Reg 30 filing fails to confirm the Rs 257 Cr Eimco-Hyundai order, or it is
   cancelled/materially shrunk (falsification metric: fails the revenue upgrade,
   the Eimco SOTP slice, and the reason-to-monitor at once).
+- Eimco (Engineering) segment PBIT margin falls below ~20% (FY26 31.3%),
+  invalidating the operator-approved 15x that the WATCHLIST rests on.
 - Investment book (Rs 332 Cr) drawn down >20% (below ~Rs 266 Cr) to fund losses.
 - Sugar segment annual PBIT loss exceeds Rs 25 Cr (FY26 base -Rs 17.31 Cr; a
   fourth widening year confirms structural, not cyclical).

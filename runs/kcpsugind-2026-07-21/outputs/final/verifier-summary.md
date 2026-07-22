@@ -1,5 +1,7 @@
 # Verifier summary — phase 3 (finalize)
 
+Decision context: WATCHLIST (BUY-ON-DIPS), gate verdict PROCEED WITH FLAGS. The four verifiers audited the pre-override valuation (Eimco 8x, decision AVOID-on-valuation). The operator Eimco 15x override post-dates the verifier pass and moved the decision to WATCHLIST; it changes one operator-approved input (the Eimco SOTP multiple), not any verifier finding, and Verifier C had itself flagged the 8x as an analyst round number. No finding below is invalidated by the override; the AVOID references in the Verifier C audit line are as-audited on the 8x run and are retained verbatim.
+
 ## Confidence delta and acceptance rates
 
 | Component | Verifier | Score | Acceptance rate |
@@ -38,15 +40,15 @@ None.
 | C (B12c) phase-1 | B01 DB8 | DB8 evaluated on consolidated PAT; standalone loss would independently trigger; AVOID already more restrictive. No outcome change. |
 | C (B12c) phase-1 | B07 R1 | R1 likelihood scored High versus L/M arguable; total under 12 / NONE either way. No classification impact. |
 | C (B12c) phase-3 valuation | Pillar 2 0.65x band label | 0.65x correctly earned via the structural test (seasonal agri), not the rating-agency limb; CARE frames liquidity strong. Operator-approved. No decision impact. |
-| C (B12c) phase-3 valuation | Sector cap source | Agri processing 20x operator-supplied; non-binding (6.2x far below 20x), zero effect. |
+| C (B12c) phase-3 valuation | Sector cap source | Agri processing 20x operator-supplied; non-binding on the operating cross-check (6.2x far below 20x), zero effect; the Eimco SOTP slice is capped by the engineering row 25x, not this. |
 | C (B12c) phase-3 valuation | RRM base selection (Master p.392) | Track 1 RRM applied on ROCE base 9.5x not quality-adjusted 6.2x; conservative additive track governs; no decision impact. |
-| C (B12c) phase-3 valuation | B11 upside_downside_ratio field | Reports bull/bear 1.06 not framework base/bear 0.07; both shown in the body; both fail the 2x minimum. |
-| C (B12c) phase-3 valuation | SOTP segment multiples | Eimco 6/8/10x and urad 4/6/7x are analyst round numbers, not four-pillar-derived; largest SOTP swing but AVOID survives even a 12x Eimco. Method operator-approved; multiples maker-filled. |
+| C (B12c) phase-3 valuation | B11 upside_downside_ratio field | On the pre-override run reports bull/bear 1.06 not framework base/bear 0.07; both shown; both failed the 2x minimum then. Under the Eimco 15x override both clear it (4.0x base/bear, 8.4x bull/bear). |
+| C (B12c) phase-3 valuation | SOTP segment multiples | Eimco 6/8/10x and urad 4/6/7x flagged as analyst round numbers, not four-pillar-derived, the largest SOTP swing; Verifier C noted AVOID survived even a 12x Eimco. The operator subsequently ruled the Eimco slice to 15x (above that tested 12x), which is the lever that moved the decision to WATCHLIST. Method operator-approved; multiple now operator-set. |
 | D (B12d) | B06-peers.yaml skip_reason | Skip reason states there are no B05 peer_questions, but 05-concall Section 4B contains a fully formed 5-question list preserved for downstream use. Wording imprecision only; does not change the correct empty verification output. |
 
 ## Phase-3 valuation-adherence audit (Verifier C, B12c valuation half)
 
-43 valuation rules checked (B11, B10, extended to B14), 38 clean, 5 MINOR fails (listed above), 0 MAJOR, 0 CRITICAL. Verifier C re-derived and concurs: destination PE 6.2x additive / 7.2x RRM, decision AVOID-on-valuation, Tier A, entry Rs 10.24 to Rs 11.52. All 9 combined findings across both halves are MINOR and decision-invariant; the SOTP round-number segment multiples are the largest single swing, and AVOID survives even a 12x Eimco. Verifier C concurs with AVOID-on-valuation, Emerging Moat NONE, Gate 0 AVOID, and the SOTP-led destination PE.
+43 valuation rules checked (B11, B10, extended to B14), 38 clean, 5 MINOR fails (listed above), 0 MAJOR, 0 CRITICAL. Verifier C re-derived and concurred (on the pre-override 8x run): destination PE 6.2x additive / 7.2x RRM, decision AVOID-on-valuation, Tier A, entry Rs 10.24 to Rs 11.52. All 9 combined findings across both halves are MINOR and were decision-invariant on that run; the SOTP round-number segment multiples were the largest single swing, and AVOID survived even a 12x Eimco. Verifier C concurred with AVOID-on-valuation, Emerging Moat NONE, Gate 0 AVOID, and the SOTP-led destination PE. Note for this finalize: the operator override to Eimco 15x is the one lever that carried the SOTP above the price and moved the final decision to WATCHLIST; it is operator-authoritative and was not re-verified this run.
 
 ## Verifier D scope note
 

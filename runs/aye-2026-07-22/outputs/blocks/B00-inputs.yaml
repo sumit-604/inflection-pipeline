@@ -47,11 +47,16 @@ input_gaps:
     status: absent
     priority: expected   # company listed Feb 2026, no post-listing AR yet; backward baseline uses Prospectus restated financials
   - type: announcements
-    status: absent
-    priority: medium   # lose documented-ACTION record (Reg 30). Stage 8 uses web + prospectus; intent-action cross-check on concall/results only
+    status: RETRO_FILLED_operator   # operator supplied a 6-month operational digest (late-Jan..22-Jul-2026) mid-run
+    file: inputs/announcements/operator_digest_6m_to_2026-07-22.md
+    provenance: NON-ANCHORED   # lead/cross-check only; underlying Reg 30 PDFs + Q4FY26 concall NOT collected. Corroborate every figure vs anchored sources.
+    priority: partially_closed
   - type: shareholding
-    status: absent
-    priority: medium   # stage 10 FII+DII unresolved; UA institutional qualifier withheld; use Prospectus post-issue shareholding as last-known with staleness note
+    status: RETRO_FILLED_operator   # operator supplied screener shareholding screenshot (Mar-2026 / Jun-2026) mid-run
+    file: inputs/shareholding/screener_shareholding_Mar-Jun2026.md
+    provenance: SCREENER   # anchored-equivalent; closes FII+DII qualifier and institutional trend
+    priority: closed
+    note: "FII+DII ~35-37% (heavily institution-owned, no promoter). UA institutional-absence multiplier NOT triggered for AYE. FII 18.66->15.70 QoQ, DII 18.39->19.75 QoQ."
   - type: research
     status: absent   # broker/IPO notes live in presentation/ (NON-ANCHORED, leads only); no anchored effect
   - type: aye_screening_csv

@@ -1,0 +1,59 @@
+stage: B06-peers
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Peer evidence (SBFC, Northern Arc) on the closest analogous MFI-ordinance shock (Karnataka)
+     shows deeper, longer, and less geographically contained collection/credit-cost spillover than
+     AYE's implicit Bihar-insulation framing suggests - no peer discusses Bihar directly, but the
+     nearest comparable event argues against a 'minimal spillover' read"
+  - "Peer set is split three ways on credit-cost normalisation in the same window (Northern Arc
+     improving off an MFI-specific shock, MASFIN flat/range-bound, SBFC still rising) - does not
+     support a clean sector-wide normalisation read for AYE's four-quarter credit-cost decline"
+  - "Approval-rate reversal timing is split across peers (MASFIN already recovering, SBFC still
+     falling through the most recent quarter collected) - undercuts a single sector-wide FY27
+     reversal timeline"
+  - "SBFC's closest product analogue (sub-Rs7-lakh secured MSME) is described as carrying enhanced
+     credit cost and slower recovery, a mild directional caution against AYE's sub-2% mortgage
+     credit-cost aspiration for an unseasoned ~3-year-old book"
+peers_provided: 11
+verified:
+  - {claim: "Peer rated NBFC-MSME lenders show comparable incremental cost-of-borrowing declines over the same window", peers: ["MASFIN", "NORTHARC", "SBFC"], anchor_count: 6}
+partially_verified:
+  - {claim: "Sector-wide credit-cost normalisation into FY26/FY27 vs company-specific (AYE four-quarter decline)", peers: ["NORTHARC", "MASFIN", "SBFC"]}
+  - {claim: "Sector-wide over-lending tightening cycle with expected FY27 approval-rate reversal", peers: ["SBFC", "MASFIN"]}
+  - {claim: "Collection-efficiency recovery specific to business-loan/micro-enterprise segments vs pure consumption MFI", peers: ["NORTHARC", "MASFIN", "SBFC"]}
+  - {claim: "Independent benchmark for MSME/hypothecation addressable market size", peers: ["SBFC", "MASFIN"]}
+contradicted:
+  - {claim: "Minimal spillover from a state MFI ordinance/bill into non-MFI business-loan books (Bihar parallel)", contradicting_peer: "SBFC / Northern Arc (Karnataka ordinance analogue)", quote_anchor: "SBFC Jul-2025 call, Aseem Dhru, p.3-4: 'the ordinance, which had nothing to do with us, brought our collection numbers down sharply... it is not about geography so much... it is more about ticket sizes'"}
+  - {claim: "Digest-only sub-2% mortgage/micro-LAP credit-cost aspiration supported by peer seasoning experience", contradicting_peer: "SBFC", quote_anchor: "SBFC Nov-2025 call, Mahesh Dayani, p.9: sub-Rs7-lakh secured MSME segment carries 'enhanced credit cost' and SARFAESI recovery timelines 'almost twice' the book average"}
+unverifiable:
+  - {claim: "~67 million unorganized-micro-enterprise TAM figure", peers_checked: ["MASFIN", "SBFC", "NORTHARC"]}
+  - {claim: "Near-no-alternate-supplier hypothecation-lending claim", peers_checked: ["MASFIN", "SBFC", "NORTHARC"]}
+  - {claim: "Bihar ordinance/draft MFI bill spillover, tested directly (as opposed to via the Karnataka analogue)", peers_checked: ["MASFIN", "SBFC", "NORTHARC"]}
+peer_coverage_map:
+  - {peer: "MASFIN", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Range-bound net Stage-3 trend and rejection-ratio commentary anchor Q1"}
+  - {peer: "MASFIN", quarter: "Vision-2036 Investor Day (Feb-2026)", usage: "SUBSTANTIVE", contribution: "SIDBI-CRISIL MSME TAM and competitive hypothecation value-chain description anchor Q6"}
+  - {peer: "MASFIN", quarter: "Q3 FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "Approval-ratio recovery (14-15%->20%) anchors Q2 and Q1"}
+  - {peer: "MASFIN", quarter: "Q4/FY26 (Apr-2026 call)", usage: "SUBSTANTIVE", contribution: "Cost-of-borrowing trend and DPD improvement anchor Q5, Q1, Q4"}
+  - {peer: "NORTHARC", quarter: "Q1 FY26 (Jul-2025 call)", usage: "SUBSTANTIVE", contribution: "Karnataka-ordinance spillover framing and cost-of-funds decline anchor Q3, Q5, Q7"}
+  - {peer: "NORTHARC", quarter: "Q2 FY26 (Oct-2025 call)", usage: "CITED-ONLY", contribution: "Confirms cost-of-funds/NIM trend already established elsewhere; no new decisive finding"}
+  - {peer: "NORTHARC", quarter: "Q3 FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "Microfinance PAR 0+ reversion and deliberate MFI de-risking anchor Q1, Q3"}
+  - {peer: "NORTHARC", quarter: "Q4/FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Collection-efficiency recovery data and FY27 credit-cost guidance anchor Q1, Q4, Q3"}
+  - {peer: "SBFC", quarter: "Q1 FY26 (Jul-2025 call)", usage: "SUBSTANTIVE", contribution: "Karnataka spillover into secured book, rejection-rate rise, CIBIL ticket-size deterioration data anchor Q2, Q3, Q6, 2E"}
+  - {peer: "SBFC", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Approval-rate decline, TAM disclosure, micro-LAP credit-cost commentary, SARFAESI risk anchor Q2, Q6, Q7, 2E"}
+  - {peer: "SBFC", quarter: "Q3 FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "Approval rate still falling despite tightening; credit cost still rising anchor Q1, Q2"}
+industry_cross_read:
+  demand: "Peers broadly report improving demand into H2 FY26 post-GST-cuts/festival season, consistent with AYE's framing but split on how fast it converts to approvable volume"
+  pricing_inputs: "No peer reports margin compression from competitive pricing; all show yield/spread holding or improving on declining funding costs, supportive of AYE's NIM narrative"
+  capex_cycle: "Industry-wide distribution/branch build-out across all three peers in the same window - not a lone-expander situation for AYE, but also not a differentiated edge versus peers investing at comparable pace"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Political/ordinance risk treated as a structural, recurring risk category (SBFC Nov-2025 call, p.3), not a one-off contained item as AYE's own record frames Bihar"
+  - "Borrower-level multi-lender 'hand loan' over-leverage invisible to bureau checks - an industry-wide grey area (SBFC Jul-2025 call, p.9-10)"
+  - "Household-debt-outpacing-financial-assets macro risk flagged as a multi-year systemic concern despite currently benign system-wide NPAs (SBFC Jan-2026 call, p.6)"
+  - "CIBIL industry data showing sub-Rs10-lakh MSME NPAs deteriorating 70bp even as larger-ticket MSME NPAs improved over the same year - a ticket-size-specific signal sitting in AYE's smallest-ticket zone (SBFC Jul-2025 call, p.9)"
+  - "Regulatory-arbitrage/SARFAESI-access gap between HFCs and NBFCs as a structural cost-of-recovery disadvantage relevant to AYE's mortgage-mix growth ambitions (SBFC Nov-2025 call, p.11)"
+net_narrative_effect: "complicates"

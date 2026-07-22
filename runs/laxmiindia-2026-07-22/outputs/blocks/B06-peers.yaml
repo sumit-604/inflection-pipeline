@@ -1,0 +1,68 @@
+stage: B06-peers
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - type: announcements
+    severity: MEDIUM
+    note: "Carried from B01-gate0: inputs/announcements/ empty; operator-context.md non-anchored summary used as lead only, not scored."
+  - type: shareholding
+    severity: MEDIUM
+    note: "Carried from B01-gate0: inputs/shareholding/ empty; no post-listing SHP filing available."
+  - type: research
+    severity: LOW
+    note: "Carried from B01-gate0: inputs/research/ empty. No effect on anchored evidence."
+  - type: laxmiindia_screening
+    severity: LOW
+    note: "Carried from B01-gate0: no LAXMIINDIA screening CSV existed; not relevant to this peer-verification stage."
+  - type: peer_transcripts_ugrocap
+    severity: LOW
+    note: "Only 3 UGROCAP transcripts provided (Aug/Nov/Feb) vs 4 for the other three peers; no Q4/FY26 UGROCAP call available to extend the Q1-Q2-Q3 DA-dependency finding through fiscal year-end."
+flags:
+  - "PRIORITY FOR SYNTHESIS: no peer corroborates LIFL management's Rajasthan/MP flood or heavy-CV framing for its Q2 FY26 GNPA deterioration; three of four peers show flat-to-improving GNPA through FY26 and the fourth improves sharply via ARC cleanup, directly contradicting the 'sector-wide, not company-specific' excuse pattern already flagged in B05"
+  - "UGRO Capital discloses that historically 50-60%+ of its ROA came from DA/co-lending derecognition gains and is executing a strategic pivot away from this dependency because the market prices it as lower-quality income - this substantially reinforces the DA-dependency earnings-quality concern already flagged at LIFL (B02, B05) and suggests the concern should be watched for growth, not treated as a one-off"
+  - "LIFL's 'at least two-notch' rating guidance was unrealistic against even a directly comparable peer (Manba achieved only an outlook shift, not a notch, over a similar post-raise window); LIFL's actual one-notch delivery compares favorably to this peer benchmark despite missing its own guidance"
+  - "LIFL's realized cost-of-borrowing reduction (-68bps) is in line with or better than the peer range (40-75bps) despite falling short of LIFL's own aggressive 100-125bps guidance"
+  - "Peer benchmarks (Manba, Moneyboxx, UGRO) all disclose granular AUM/branch, cost-to-income-by-vintage, and breakeven-timeline data routinely, sharpening rather than mitigating the concern that LIFL twice deflected the same question when asked"
+  - "LIFL is a lone continued branch-expander (159->176 branches through FY26) against a peer set where 3 of 4 peers have explicitly halted or completed branch expansion to focus on existing-footprint productivity - this is a lone-expander situation, not an industry-wide capacity race"
+peers_provided: 4
+peer_transcript_count: 15
+verified:
+  - {claim: "DA/securitization gain-on-sale materially drives reported NBFC PAT/NIM quality in this segment, comparable in kind (though not scale) to LIFL's INR8.66cr Q4 FY26 event", peers: ["UGROCAP"], anchor_count: 3}
+  - {claim: "Cost-of-borrowing reduction of 100-125bps within months of a capital raise is unrealistic; realized peer reductions cluster at 40-75bps over a comparable window, in line with LIFL's actual -68bps", peers: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"], anchor_count: 8}
+  - {claim: "Granular per-branch AUM, cost-to-income by vintage, and breakeven-timeline disclosure is a standard, available sector metric that LIFL twice declined to provide", peers: ["MANBA", "MONEYBOXX", "UGROCAP"], anchor_count: 3}
+partially_verified:
+  - {claim: "Credit-rating notch movement following a capital raise/IPO", peers: ["MANBA"]}
+  - {claim: "GST-regime tailwind and rural-liquidity improvement independently corroborated", peers: ["MANBA", "MONEYBOXX"]}
+contradicted:
+  - {claim: "Q2 FY26 asset-quality deterioration attributed to Rajasthan/MP floods and heavy-CV stress as a sector-wide (not company-specific) event", contradicting_peer: "ARMANFIN, MANBA, MONEYBOXX, UGROCAP (all four)", quote_anchor: "ARMANFIN GNPA flat 3.45pct-3.69pct-3.4pct-3.4pct (Aug25/Nov25/Feb26/May26 calls); MANBA GNPA stable-improving 3.47pct-3.52pct-3.38pct-3.33pct (Sep25/Nov25/Feb26/May26 calls); MONEYBOXX GNPA improves 7.28pct to 1.43pct (Jul25 to Feb26 calls); UGROCAP GNPA improves 2.5pct to 2.2pct (Aug25 to Feb26 calls); no peer names a flood or heavy-CV cause in any transcript"}
+unverifiable:
+  - {claim: "Up Money (Jalandhar NBFC) counterparty exposure or comparable DA-counterparty default affecting 30-35 lenders industry-wide", peers_checked: ["ARMANFIN", "MANBA", "MONEYBOXX", "UGROCAP"]}
+peer_coverage_map:
+  - {peer: "ARMANFIN", quarter: "Q1 FY26 (Aug-25)", usage: "substantive", contribution: "GNPA/NNPA baseline (3.45pct/0.5pct) for Q1 flat-trajectory contrast"}
+  - {peer: "ARMANFIN", quarter: "Q2 FY26 (Nov-25)", usage: "substantive", contribution: "GNPA continuation (3.69pct/0.53pct) plus cost-of-borrowing ~12.5pct for Q5"}
+  - {peer: "ARMANFIN", quarter: "Q3 FY26 (Feb-26)", usage: "substantive", contribution: "Segment-level GNPA breakdown confirming no flood/heavy-CV attribution"}
+  - {peer: "ARMANFIN", quarter: "Q4/FY26 (May-26)", usage: "substantive", contribution: "Full-year GNPA close (3.4pct/0.95pct) plus cost-of-borrowing marginal 11.75pct for Q5"}
+  - {peer: "MANBA", quarter: "Q1 FY26 (Sep-25)", usage: "substantive", contribution: "AUM/GNPA baseline, initial rating-upgrade target, cost of borrowing 11.05pct for Q4/Q5"}
+  - {peer: "MANBA", quarter: "Q2 FY26 (Nov-25)", usage: "substantive", contribution: "GST/two-wheeler demand corroboration, rating outlook upgrade to positive, cost of borrowing -38bps"}
+  - {peer: "MANBA", quarter: "Q3 FY26 (Feb-26)", usage: "substantive", contribution: "Rating held steady, cost of borrowing 10.12pct, DA/co-lending share of AUM"}
+  - {peer: "MANBA", quarter: "Q4/FY26 (May-26)", usage: "substantive", contribution: "Opex/AUM by branch vintage for Q7, GST/2W reiterated, rating maintained through year-end"}
+  - {peer: "MONEYBOXX", quarter: "Q1 FY26 (Jul-25)", usage: "substantive", contribution: "Baseline on-book GNPA 7.28pct, no flood/heavy-CV framing despite rural/agri stress commentary"}
+  - {peer: "MONEYBOXX", quarter: "Q2 FY26 (Oct-25)", usage: "substantive", contribution: "ARC-driven GNPA improvement mechanism (distinct from LIFL's DA), GST macro boilerplate"}
+  - {peer: "MONEYBOXX", quarter: "Q3 FY26 (Feb-26)", usage: "substantive", contribution: "Continued GNPA improvement, branch productivity data (~INR7cr/24mo), explicit halt to branch expansion"}
+  - {peer: "MONEYBOXX", quarter: "Q4/FY26 (Jun-26)", usage: "substantive", contribution: "Full-year GNPA/credit-cost close, explicit ARC/SARFAESI legal-recovery mechanism"}
+  - {peer: "UGROCAP", quarter: "Q1 FY26 (Aug-25)", usage: "substantive", contribution: "Richest peer branch AUM-by-vintage data for Q7, initial rating watch status, cost-of-borrowing gap disclosure"}
+  - {peer: "UGROCAP", quarter: "Q2 FY26 (Nov-25)", usage: "substantive", contribution: "DA/co-lending ~43pct off-book baseline, rating moved to watch-positive-implications, cost of borrowing -38bps"}
+  - {peer: "UGROCAP", quarter: "Q3 FY26 (Feb-26)", usage: "substantive", contribution: "Single most consequential finding: DA/co-lending derecognition-gain dependency quantified at 50-60pct+ of historical ROA, PAT collapse INR43cr to INR6cr tied directly to it, strategic pivot away from this dependency"}
+industry_cross_read:
+  demand: "Cautious-to-selectively-positive, not an industry-wide boom; UGRO actively curtails disbursement due to overleverage stress, Moneyboxx and Manba cite rural/GST-linked upticks in specific product lines only"
+  pricing_inputs: "Cost of borrowing is the dominant input-cost discussion across all four peers; all describe gradual sub-100bps/year declines toward single digits as a multi-year aspiration, consistent with the Q5 peer benchmark that undercuts LIFL's aggressive guidance"
+  capex_cycle: "Lone-expander situation - UGRO and Moneyboxx explicitly halted/completed branch expansion to focus on existing-footprint productivity; Manba shows no aggressive new-branch program; only Arman continues opening branches. LIFL kept adding branches (159->176) through FY26 against this consolidating peer backdrop"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "UGRO explicitly discloses and is actively correcting structural DA/co-lending gain-on-sale dependency as an earnings-quality risk - LIFL's own dependency was disclosed only reactively with no stated correction plan"
+  - "Moneyboxx and UGRO both name customer over-leverage as an explicit sector-wide risk with quantified mitigating actions - LIFL never frames its own GNPA deterioration in over-leverage terms"
+  - "Arman and Moneyboxx both discuss active legal-recovery infrastructure (Section 138 filings, SARFAESI) as a named lever - no comparable discussion appears in LIFL's concall record"
+  - "UGRO explicitly quantifies its US-tariff exposure assessment - LIFL's concalls do not address tariff exposure at all"
+net_narrative_effect: "complicates"

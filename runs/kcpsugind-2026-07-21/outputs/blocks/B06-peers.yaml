@@ -1,0 +1,13 @@
+stage: B06-peers
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: n/a
+status: skipped
+skip_reason: "NO-CONCALL MODE (manifest concalls_available: false) AND inputs/peer-concalls/ is empty. Per the orchestrator DEGRADATION MAP / NO-CONCALL MODE, stage 6 runs only if peer-concall transcripts exist; none were supplied. Stage 5 DID produce a 5-item peer_questions list (05-concall.md Section 4B), but with no peer-concall transcripts those questions could not be verified against peer calls; they remain open into downstream stages."
+input_gaps: ["no peer-concall transcripts", "no main-company concalls (NO-CONCALL MODE)"]
+verified: []
+contradicted: []
+unverifiable: []
+peer_coverage_map: {}
+note: "Peer financial comparison for KMSUGAR / RAJSREESUG / UGARSUGAR is available only as screening CSVs (quantitative), consumed at Gate 0 / valuation, not as concall verification. Verifier D audits this skip."
+flags: []

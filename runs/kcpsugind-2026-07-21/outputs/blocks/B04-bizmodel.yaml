@@ -1,0 +1,71 @@
+stage: B04-bizmodel
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor Presentation: NOT PROVIDED; report built from AR FY24-25 text cache + FY26 Audited Results + Q3FY26 Results text caches"
+  - "AR pp.151-275 (part of standalone notes plus full consolidated financial statements) are scanned images, no extractable text"
+  - "FY26 Results filing discloses segment revenue gross (pre-inter-segment elimination) only, and no longer breaks out Urad Dal as a distinct segment; FY26 product-level revenue mix is NOT FOUND"
+  - "MD&A (FY24-25 AR) has no narrative on Urad Dal despite it being ~20% of FY25 standalone revenue"
+flags:
+  - "Standalone core (Sugar + Urad Dal) loss-making in both FY25 and FY26; group-level profit depends on unlisted-but-consolidated Eimco subsidiary"
+  - "Sugar segment PBIT deteriorated YoY (FY26 vs FY25) alongside a 39.4% YoY drop in cane crushed (FY25 vs FY24)"
+  - "Urad Dal revenue scaled ~4x FY24 to FY25 but swung to a segment EBITDA loss over the same period"
+  - "Standalone short-term borrowings up 47% YoY in FY26 while core segments post losses"
+  - "Distillery/alcohol output fell 82% YoY (FY25) even as management frames ethanol diversion as the industry's key structural opportunity"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Sugar", type: "commodity manufacturing", pct_of_revenue: 56.7, predictability: "L"}
+  - {name: "Urad Dal (black gram) processing", type: "commodity processing/trading", pct_of_revenue: 20.2, predictability: "L"}
+  - {name: "Engineering (standalone, Trichy)", type: "contract fabrication", pct_of_revenue: 6.1, predictability: "M"}
+  - {name: "Molasses (by-product sale)", type: "commodity by-product", pct_of_revenue: 5.7, predictability: "L"}
+  - {name: "Industrial/Anhydrous Alcohol", type: "commodity manufacturing", pct_of_revenue: 4.5, predictability: "M"}
+  - {name: "Bio-Fertiliser", type: "by-product valorisation", pct_of_revenue: 2.4, predictability: "M"}
+  - {name: "Calcium Lactate", type: "specialty chemical manufacturing", pct_of_revenue: 2.0, predictability: "M"}
+  - {name: "Electrical Energy (Cogeneration)", type: "regulated/merchant power sale", pct_of_revenue: 1.1, predictability: "M"}
+  - {name: "Bagasse (by-product sale)", type: "commodity by-product", pct_of_revenue: 0.7, predictability: "L"}
+  - {name: "Others", type: "miscellaneous", pct_of_revenue: 0.7, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Cost advantage via by-product integration (bagasse/molasses/press mud)", durability: "weak, currently insufficient per FY25 segment loss"}
+  - {moat: "Intangible/IP (Eimco in-house filtration technology, import substitution)", durability: "moderate, confined to consolidated subsidiary, not standalone core"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts", why: "Group is structurally two different businesses (loss-making commodity core vs profitable order-book Eimco subsidiary) that a single multiple would misprice"}
+  secondary: {method: "Consolidated EV/EBITDA", why: "Cross-check once SOTP is built, capturing both the Eimco contribution and core drag, read alongside the segment split given management's own seasonality caveat"}
+  tertiary: {method: "Asset-based / replacement value", why: "Floor-type sanity check on capital-intensive Sugar/Cogen/Distillery plant given currently negative segment returns"}
+  not_applicable: ["DCF (negative/volatile standalone FCF, insufficient multi-year forecast granularity)", "P/E (negative standalone EPS, blended consolidated EPS across dissimilar businesses)", "DDM (token FY25 dividend against a standalone loss year)"]
+irrelevant_ratios:
+  - {ratio: "Consolidated PAT/net margin as a read on the core business", why: "Blends loss-making standalone core with profitable Eimco subsidiary"}
+  - {ratio: "QoQ PAT/EPS comparison", why: "Management explicitly states results are not comparable quarter-to-quarter due to seasonality"}
+  - {ratio: "Total-Income-inclusive profit lines", why: "Other Income swings sharply, including large negative marks, unrelated to operating performance"}
+  - {ratio: "FY25 reported Net Profit Margin/ROE (Note 73)", why: "Inflated by a one-off Rs.480.55 lakh exceptional gain on asset sale"}
+must_track_metrics:
+  - {metric: "Sugar segment PBIT", healthy: "positive and stable", red_flag: "widening loss YoY (already occurring)"}
+  - {metric: "Cane crushed (MT) and crushing days", healthy: "stable/growing YoY", red_flag: "further double-digit YoY decline"}
+  - {metric: "Urad Dal / Others segment result", healthy: "trending toward positive as volume scales", red_flag: "losses widening alongside revenue growth"}
+  - {metric: "Eimco orders in hand", healthy: "growing YoY", red_flag: "declining or flat"}
+  - {metric: "Standalone current borrowings", healthy: "stable, season-linked", red_flag: "continued double-digit YoY growth alongside core losses"}
+unit_economics:
+  unit: "1 Quintal (100kg) of bagged sugar"
+  revenue_per_unit: "~Rs.3,868/Quintal (FY25, Note 40, AR p.114)"
+  margin_per_unit: "negative before by-product credits — cane cost alone ~Rs.4,592/Quintal of sugar produced exceeds realisation (FY25, Note 41 and AR p.36; directional, not exact due to sold-vs-produced volume mismatch)"
+  key_lever: "By-product credit stack (power, alcohol, bio-fertiliser, bagasse sales) plus sugar recovery % and cane cost per MT; currently insufficient to offset negative core Sugar unit economics"
+first_deterioration_signals:
+  - {risk: "Sugar realisation structurally below cane cost per unit", first_signal: "Sugar segment PBIT turning more negative QoQ/YoY"}
+  - {risk: "Urad Dal scaling revenue without profitability", first_signal: "Others/Urad Dal segment result swinging further negative even as revenue grows"}
+  - {risk: "Rising short-term borrowings funding working capital amid core losses", first_signal: "Standalone current borrowings (Note 22) growth rate, already +47% YoY in FY26"}
+  - {risk: "Cane sourcing shortfall / shrinking crushing season", first_signal: "Cane crushed (MT) and crushing days YoY"}
+  - {risk: "Standalone core dependent on Eimco profit to keep group in the black", first_signal: "Gap between standalone PAT and consolidated PAT widening while Eimco orders-in-hand stall"}
+mgmt_questions:
+  - "Why did Distillery output fall 82% YoY in FY25 when ethanol/alcohol diversion is framed as the industry's structural opportunity?"
+  - "Is the Urad Dal segment loss a start-up/scale-up cost or a structural low-margin trading spread?"
+  - "What is driving the 47% YoY jump in standalone short-term borrowings in FY26?"
+  - "What is the realization/collection status on cogen power dues flagged as a named risk?"
+  - "What is Eimco's revenue/order visibility for the next 2-3 years, and is the order book concentrated in a few large projects?"
+  - "What specific operational plan restores standalone profitability after losses in both FY25 and FY26?"
+  - "Why is there no MD&A commentary on Urad Dal despite it being ~20% of FY25 standalone revenue?"
+one_line_verdict: "Weak-moat commodity core losing money, kept solvent at the group level by a profitable but unlisted engineering subsidiary."

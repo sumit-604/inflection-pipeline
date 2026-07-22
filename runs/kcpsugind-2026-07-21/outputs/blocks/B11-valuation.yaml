@@ -1,0 +1,53 @@
+stage: B11-valuation
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete
+revaluation: "Eimco 15x operator override (2026-07-21); supersedes the prior Eimco-8x run"
+input_gaps:
+  - "FII+DII institutional shareholding % UNRESOLVED (B10); did not affect UA (already withheld) or Tier (barred by structural FLAG-CASH)"
+  - "Eimco-KCP FY26 standalone margins/audit-trail not extractable; FY25 PAT Rs 16.56 Cr used as conservative bear earnings proxy"
+  - "Eimco Rs 257 Cr Hyundai order pending Reg 30 filing; credited as revenue visibility (via the 15x multiple), not as inflated earnings"
+flags:
+  - "OPERATOR OVERRIDE (Eimco 15x), operator-ruled 2026-07-21: Eimco SOTP slice at 15x (band 11.25/15/18.75x) on normalized earnings, below the 25x engineering cap; Agri 20x applies only to the consolidated operating cross-check, not this slice. Prior run 8x."
+  - "FLAG-CASH: STRUCTURAL. Pillar 2 multiplier 0.65x APPLIED, no growth offset. Bars Tier B; caps operating cross-check (STOP, subordinate)."
+  - "EIMCO ORDER pending Reg 30 (operator-confirmed, released 20-21 Jul 2026); credited as visibility via the 15x multiple, not earnings"
+  - "SUGAR segment PBIT -17.31 Cr, structurally widening; valued token/negative in SOTP"
+  - "VALUE-TRAP / DISCOUNT-CLOSURE CAVEAT: 35% holdco discount may not close; ~Rs 30 Cr/yr cash burn (CFO -30.89 Cr) erodes the Rs 332 Cr book underpinning ~56% of base SOTP"
+  - "SOTP-LEAD per operator Override 3; Four-Pillar exit PE is subordinate operating cross-check only"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "trailing"
+exit_pe_base_approved: "Operating cross-check (subordinate): Pillar 1 base 9.5x at 9x floor; destination ~6.2x additive / ~7.2x RRM. SOTP leads: investment book valued direct; Eimco slice at OPERATOR OVERRIDE 15x (engineering going concern, under 25x engineering cap)."
+destination_pe:
+  track1_rrm: {low: 6.65, mid: 7.2, high: 7.79, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 5.7, mid: 6.2, high: 6.7}
+  divergence_pct: 16.1
+  governing_track: "SOTP governs the entry zone; Eimco SOTP slice uses operator 15x under the 25x engineering cap, outside the operating-PE stack"
+pillar_detail:
+  roce_used: 4
+  roce_base: 4
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 0.65
+  structural_or_growth: "structural"
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 20
+  eimco_slice_multiple: 15   # operator override; engineering going concern, under 25x engineering cap
+hurdle_ratio: {base: 0.37, bull_used: false, verdict: "STOP"}   # subordinate operating cross-check; governing SOTP 25% entry test is CONDITIONAL (base fails, bull passes)
+fair_values:
+  track1: {bear: 18.66, base: 33.88, bull: 47.29}
+  track2: {bear: 18.66, base: 33.88, bull: 47.29}
+expected_cagr_prob_weighted: 11.4
+entry_range: {low: 15.42, high: 17.35}
+mos_price: 13.88
+upside_downside_ratio: 8.4
+decision: "WATCHLIST (BUY-ON-DIPS) at CMP Rs 21.71. Base SOTP Rs 33.88 clears CMP (+56%); CMP does NOT clear the Tier A 25% entry on base (entry Rs 17.35, base +16%); 25% path met only on bull. Entry zone Rs 15.42-17.35 below CMP. Upgraded from prior AVOID by the Eimco 15x override; value-trap/discount-closure caveat keeps it off a clean BUY."
+unresolved_inputs_used:
+  - "Eimco FY26 standalone earnings: base/bull on normalized Rs 18.47 Cr (segment PBIT 24.63 x 0.75); bear on conservative FY25 PAT proxy Rs 16.56 Cr (standalone audit-trail not extractable, B10)"
+  - "Eimco scenario multiple band: operator 15x center held +/-25% (bear 11.25x / base 15x / bull 18.75x); all below the 25x engineering cap"
+  - "Ethanol/Alcohol FY26 revenue not separately disclosed; subsumed in sugar/others segments"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Eimco re-rated to 15x lifts base SOTP to Rs 33.88, ~56% above CMP Rs 21.71 with 4-8x asymmetry, but the base returns only +16% (25% path only on bull) and the Rs 257 Cr order is still unfiled while the shell burns ~Rs 30 Cr/yr - WATCHLIST, BUY-ON-DIPS into Rs 15.42-17.35."

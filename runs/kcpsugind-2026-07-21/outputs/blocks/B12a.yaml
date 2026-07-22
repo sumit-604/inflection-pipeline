@@ -1,0 +1,18 @@
+stage: B12a
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - severity: "MINOR"
+    location: "Stage 02-notes, finding #11; Stage 04-bizmodel, section 2D"
+    claimed: "Distillery output decline: -82.3% (also stated as -82% in one reference)"
+    source_truth: "11.61 lakh litres (FY25) vs 65.41 lakh litres (FY24) = -82.25% (rounds to -82.2% or -82.3%)"
+    note: "Rounding artifact within tolerance. Underlying numbers (11.61 and 65.41) verified clean from Annual_Report.txt AR p.37 MD&A table."
+    source_fidelity: true
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97.9
+coverage_note: "47 material figures checked across 8 stage reports. Priorities: verdict-card inputs (ROCE, CFO, segment results, leverage), scorecard components, table/trend values. Not checked: web-sourced promoter/market figures (stages 08, 09 - no in-repo source exists). All 47 anchored figures trace to source doc/page/note. No source-fidelity MISMATCH or ANCHOR NOT FOUND; the single MINOR is a rounding tolerance note."

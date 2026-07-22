@@ -1,0 +1,46 @@
+stage: B02-notes
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR p.2 and pp.151-275 (consolidated financial statements and notes; Eimco-K.C.P. Ltd's own standalone financial statements/notes) are scanned images with no text layer and were NOT AVAILABLE for extraction across all three passes."
+  - "Several standard disclosures NOT FOUND IN DOCUMENT within the available standalone notes: covenant table for borrowings, FD scheme interest rate/tenure structure, single-customer revenue concentration, capitalisation threshold, impairment test growth/discount rate inputs, formal effective-vs-statutory tax rate reconciliation, 5-year debt maturity ladder, quantified detail behind the Note 75 regrouping/reclassification statement."
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivable turnover deteriorated 29% YoY (25.66x to 18.14x; implied days ~14.2 to ~20.1) even as absolute receivables fell 12.8%; 43% of FY25 receivables are >6 months overdue; DSCR collapsed to 0.25x from 1.52x (Note 10, Note 73, AR p.106-107, 126)."}
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Reported net loss Rs(172.24) lakhs FY25 vs profit Rs5,626.48 lakhs FY24, driven by a non-cash Rs663.89 lakh deferred tax charge on unrealised investment gains on top of a positive Rs530.03 lakh pre-tax profit; CARO confirms no cash loss either year", note_ref: "Note 22, P&L p.112; CARO Annexure A (xvii) p.83", rating: "Red Flag / clarified", why: "Sets the earnings-quality narrative; loss is non-cash, not a liquidity event"}
+  - {rank: 2, finding: "Core Sugar segment swung to operating loss of Rs(821.03) lakhs from +Rs651.41 lakhs; Chemicals also turned loss-making; Power & Fuel result fell 83%", note_ref: "Note 76, p.128", rating: "Red Flag", why: "Core operating deterioration independent of portfolio/tax noise"}
+  - {rank: 3, finding: "Managerial remuneration of Rs60.53 lakhs paid to Executive Chairman and MD for the fifth consecutive year of inadequate profits, in the first net-loss year of that stretch", note_ref: "Note 54, p.125; Auditor's Report (g), p.79", rating: "Red Flag", why: "Governance: pay decoupled from performance"}
+  - {rank: 4, finding: "Debt Service Coverage Ratio collapsed to 0.25x from 1.52x, -84% YoY", note_ref: "Note 73, p.126", rating: "Red Flag", why: "Harder financing-stress signal than Debt/Equity improvement alone conveys"}
+  - {rank: 5, finding: "Deferred tax liability on investment FV gains more than doubled (Rs583.87L to Rs1,299.04L) even as P&L-recognised gains slowed 90.9%", note_ref: "Note 22, p.110; Note 30, p.111", rating: "Watch", why: "Real, market-sensitive future cash tax exposure"}
+  - {rank: 6, finding: "RoCE fell to 3% from 18% and Return on Investment fell to 5% from 27%", note_ref: "Note 73, p.126-127", rating: "Watch", why: "Capital efficiency collapsed well below cost of capital"}
+  - {rank: 7, finding: "Receivable collection velocity deteriorated 29% YoY even as absolute receivables fell 12.8%; 43% of book >6 months overdue; static Rs372.67 lakh disputed balance unchanged two years", note_ref: "Note 10, p.106-107; Note 73, p.126", rating: "Watch", why: "Feeds FLAG-CASH; velocity and balance trends diverge"}
+  - {rank: 8, finding: "Balance sheet now more investment portfolio than sugar company: quoted equity + MF = 46% of total assets; unallocable segment assets exceed all six operating segments combined", note_ref: "Note 5, Note 9, Note 76, p.104-106, 128-129", rating: "Watch", why: "Structural, thesis-relevant capital allocation finding"}
+  - {rank: 9, finding: "Related-party fixed deposits with the company grew 82.5% YoY to Rs1,770.00 lakhs, now 26.9% of the public deposit book", note_ref: "Note 53(C), p.124", rating: "Watch", why: "RPT/governance fairness on a nominally public deposit scheme"}
+  - {rank: 10, finding: "Capex fell 36.1% YoY and is now below FY25 depreciation (capex/depreciation approximately 0.67x); Urad Dal growth segment received zero capex", note_ref: "Note 76, p.128; Note 35, p.112", rating: "Watch", why: "Under-investment signal relevant to transition thesis"}
+  - {rank: 11, finding: "Production volumes collapsed across every core line (Sugar -41.9%, Alcohol -82.3%, Molasses -34.4%, Power -24.2%), confirming volume-driven not price-driven revenue decline", note_ref: "Note 44, p.115", rating: "Watch", why: "Distinguishes demand/season problem from pricing problem"}
+  - {rank: 12, finding: "At least three one-off gain sources in FY25 (plant sale Rs480.54L, agricultural land Rs61.09L, investment FV gain Rs437.57L); new Rs239.50L Assets Held for Sale signals further FY26 exceptional gain", note_ref: "Note 16, Note 30, p.107-108, 111", rating: "Watch", why: "Core earnings harder to normalise than P&L presentation implies"}
+  - {rank: 13, finding: "Eimco-K.C.P. Ltd (wholly owned subsidiary) lacked mandatory audit-trail feature for part of FY25; parent's own audit trail was compliant throughout", note_ref: "Eimco Auditor cross-ref note 63 (text NOT AVAILABLE), AR p.147; Parent Auditor's Report (iv), p.80", rating: "Watch", why: "Subsidiary-level internal control weakness distinct from parent"}
+  - {rank: 14, finding: "Working-capital liabilities show large unexplained declines: Earnest Money/Other Deposits -83.3%, Advance from Customers -94.7%, Statutory Liabilities -66.8%", note_ref: "Notes 25, 26, p.111", rating: "Watch", why: "Order-book/demand signal not separately narrated"}
+  - {rank: 15, finding: "CARO clause (xvii) confirms no cash losses in FY25 or the prior year; no going concern material uncertainty, no Emphasis of Matter, unmodified audit opinion", note_ref: "CARO Annexure A (xvii), p.83; Auditor's Report pp.75-83", rating: "Clean", why: "Clarifies rank-1 finding is earnings-quality/tax-timing, not a liquidity crisis"}
+red_flags:
+  - "FY25 net loss driven entirely by non-cash deferred tax and core Sugar segment operating loss, not by cash-flow deterioration (CARO confirms no cash loss) (Note 22, P&L p.112; CARO p.83)"
+  - "Full managerial remuneration paid to promoter-family Executive Chairman and MD under the Schedule V inadequate-profits exception for a fifth consecutive year, coinciding with the first net-loss year (Note 54, p.125)"
+  - "DSCR collapsed to 0.25x from 1.52x, an 84% decline, despite an improving Debt/Equity ratio (Note 73, p.126)"
+  - "Related-party fixed deposits within the public deposit scheme grew 82.5% YoY to 26.9% of the total book (Note 53(C), p.124)"
+  - "Core Sugar segment result swung to a -Rs821.03 lakh operating loss from +Rs651.41 lakhs; Chemicals segment also turned loss-making (Note 76, p.128)"
+questions_for_mgmt:
+  - "What is the expected resolution timeline and worst-case cash exposure for the Rs578.87 lakh captive-power/electricity-duty case pending at the Supreme Court since July 2003 (~22 years)?"
+  - "Given FY25 is the first net-loss year within the disclosed five-year inadequate-profits stretch, will the Board revisit minimum remuneration paid to the Executive Chairman and MD before the next shareholder ratification?"
+  - "What is the nature, counterparty, and expected recovery timeline for the Rs403.48 lakh Deposit made as per Court Order (Note 7), not cross-referenced to any Note 45 contingent liability?"
+  - "Why did the doubtful supplier advance (Note 15) increase from Rs4.27 lakh to Rs40.27 lakh in FY25 (~9.4x), and who is the counterparty?"
+  - "What drove the Rs451.92 lakh decline in Earnest Money/Other Deposits and the Rs408.24 lakh (94.7%) collapse in Advance from Customers?"
+  - "Can management disclose the interest rate and tenure structure of the Rs6,584.25 lakh public Fixed Deposit scheme and confirm covenants on remaining secured bank borrowings?"
+  - "What is the identity and business rationale for the unquoted equity holding that grew from Rs5 lakh to approximately Rs119 lakh (>23x) in FY25 (Note 5(c))?"
+receivables_trend: "mixed / net deteriorating: absolute net trade receivables fell 12.8% (Rs1,182.31L to Rs1,030.72L) and the >6-months-overdue share improved from 52.6% to 43.0% of the book, but collection velocity worsened materially -- Trade Receivable Turnover Ratio fell 29% (25.66x to 18.14x FY24 to FY25, Note 73, p.126), implying DSO lengthened from ~14.2 to ~20.1 days (Note 10, p.106-107; Note 73, p.126) -- velocity deterioration is weighted deteriorating for FLAG-CASH purposes"
+restatements_found: []
+going_concern_language: "NONE -- only standard SA 570/SA 700 auditor-responsibility boilerplate regarding going concern; no company-specific material uncertainty, no Emphasis of Matter, unmodified (unqualified) audit opinion for FY25 and FY24 (Auditor's Report pp.75-83)"

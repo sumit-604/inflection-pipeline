@@ -1,0 +1,32 @@
+stage: B12c
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete   # both halves now complete: gate0+emoat (phase 1) + valuation-adherence (phase 3)
+# ---------- PHASE 1 HALF (Gate 0 + Emerging Moat) ----------
+gate0: {rules_checked: 45, fails: []}
+emoat: {rules_checked: 27, fails: []}
+phase1_findings:
+  - {severity: MINOR, location: "B01 Block D / D1", note: "D1 anchored to CARE FY25 net-cash (=5) vs framework 'latest'; both shown, decision-immaterial (AVOID either way)"}
+  - {severity: MINOR, location: "B01 Block E / E1", note: "Promoter holding from AR annual note, not latest SHP (none supplied); immaterial"}
+  - {severity: MINOR, location: "B01 DB8", note: "DB8 on consolidated PAT; standalone loss would independently trigger; AVOID already more restrictive"}
+  - {severity: MINOR, location: "B07 R1", note: "R1 likelihood High vs L/M arguable; total <12/NONE either way"}
+phase1_acceptance_rate: 100   # 72/72 gate0+emoat rules applied as written
+# ---------- PHASE 3 HALF (Valuation adherence, B11 + B10, extended to B14) ----------
+valuation:
+  rules_checked: 43
+  fails:
+    - {severity: MINOR, rule: "Pillar 2 0.65x band label", note: "0.65x correctly earned via the structural test (seasonal agri), not the rating-agency limb; CARE frames liquidity strong. Operator-approved."}
+    - {severity: MINOR, rule: "Sector cap source", note: "Agri processing 20x operator-supplied; non-binding (6.2 << 20), zero effect."}
+    - {severity: MINOR, rule: "RRM base selection (Master p.392)", note: "Track 1 RRM on ROCE base 9.5x not quality-adjusted 6.2x; conservative additive track governs. No decision impact."}
+    - {severity: MINOR, rule: "B11 upside_downside_ratio field", note: "Reports bull/bear 1.06 not framework base/bear 0.07; both shown in body, both fail 2x."}
+    - {severity: MINOR, rule: "SOTP segment multiples", note: "Eimco 6/8/10x, urad 4/6/7x are analyst round numbers not four-pillar-derived; largest SOTP swing but AVOID survives even 12x Eimco. Method operator-approved; multiple maker-filled."}
+recomputed_destination_pe: ""   # concur: 6.2x additive / 7.2x RRM
+recomputed_decision: ""         # concur: AVOID-on-valuation, Tier A, entry 10.24-11.52
+valuation_acceptance_rate: 88   # 38/43 clean
+# ---------- COMBINED ----------
+critical_count: 0
+major_count: 0
+minor_count: 9
+acceptance_rate: 88   # binding (lower) half; phase-1 gate0+emoat was 100; weighted ~95.5
+note: "0 CRITICAL, 0 MAJOR across both halves. Verifier C concurs with AVOID-on-valuation, Emerging Moat NONE, Gate 0 AVOID, and the SOTP-led destination PE. All 9 findings are MINOR, decision-invariant."

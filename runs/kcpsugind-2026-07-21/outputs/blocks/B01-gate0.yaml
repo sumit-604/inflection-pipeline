@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "shareholding-pattern (SEBI SHP) export not supplied; E1 uses AR FY25 annual promoter-holding note as substitute; E2 (3yr promoter change) and E3 (pledge %) NOT FOUND"
+  - "peer data (KMSUGAR/RAJSREESUG/UGARSUGAR) not supplied beyond this company's own screening CSV; M2/M5/M9 PEER DATA NEEDED"
+  - "screener Data_Sheet CSV simplified balance sheet lacks historical Trade Payables line and current/non-current split; B4 and M12 WC-days trend NOT FOUND (FY26 snapshot only)"
+  - "AR pp.151-275 scanned/not in text cache; any figure only there is NOT AVAILABLE"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID; Blocks A and C both 0/20 driven by a genuine multi-year sugar down-cycle (declining cane availability/recovery, CARE_Rating p.2), not a data or tooling gap. Zero confirmed moats (1/60)."}
+  - {type: FLAG-DATA-JUDGMENT, reason: "D1 (Net Debt/EBITDA) is anchor-dependent: CARE (standalone, FY25) frames the company as net-debt-negative by netting ~250cr of liquid investments against debt (D1=5); the strict mechanical Borrowings-minus-Cash-only formula gives ~10.5x standalone / ~3.0x consolidated (D1=0). CARE anchor used per instruction; flagged for operator review since it swings Block D by 5 points (does not change final AVOID classification)."}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 0, B: 4, C: 0, D: 14, E: 8}
+core_score: 26
+moat_score: 1
+grand_total: 27
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "DB1: Block A 0/20 <8 (cap: max GOOD) - triggered, superseded by AVOID"
+  - "DB2: Block B 4/20 <8 (cap: max GOOD) - triggered, superseded by AVOID"
+  - "DB3: median ROCE 6.93% <10% (cap: max AVERAGE) - triggered, superseded by AVOID"
+  - "DB6: ND/EBITDA vs IC<3x - basis-dependent (see FLAG-DATA-JUDGMENT); does not trigger under CARE anchor, would trigger under strict mechanical standalone figures"
+  - "DB7: revenue declined 6 of 9 YoY years, majority (cap: max AVERAGE) - triggered, superseded by AVOID"
+history_downgrade: false
+data_notes:
+  - "PAT dipped to loss in FY2020 (-6.26cr) mid-window despite positive endpoints FY2017/FY2026; CAGR edge rule does not fire (endpoints positive) but volatility is real"
+  - "ROCE computed via Capital Employed proxy = Equity+Reserves+Borrowings (screener simplified BS lacks current/non-current liability split for history); reported ROCE mildly overstated vs strict formula - does not change any score band"
+  - "FCF capex proxied as delta-NetBlock+Depreciation (screener CSV lacks a discrete PPE-purchase cash-flow line); cross-checked against actual FY26 standalone capex (3.34cr) vs proxy (6.26cr) - does not flip any year's FCF sign"
+  - "GM proxy for M9 = (Revenue-Material Cost incl. inventory change)/Revenue = 21.81% FY2026, computed but unscored - PEER DATA NEEDED"
+  - "consolidated FY26 figures reconcile exactly to screener-data (Revenue, Other Income, Depreciation, Interest, PBT, PAT for FY25 and FY26 all tie out) confirming the CSV spine is CONSOLIDATED, not standalone"
+  - "standalone sugar segment is loss-making per CARE; consolidated profitability carried by the Eimco engineering subsidiary + investment book"
+block_b_trend: "deteriorating - CFO swung from +47.79cr (FY2025) to -30.89cr (FY2026), screener-data"

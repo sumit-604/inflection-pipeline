@@ -1,0 +1,101 @@
+stage: B10-valinputs
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "FII+DII institutional shareholding (data absent from AR; aggregator reports ~3.31% across 62 funds, non-binding)"
+  - "Promoter shareholding % latest and pledge status (SEBI SHP table not in available AR; B08 media-derived ~42%, 0% pledge)"
+  - "Eimco-KCP FY26 standalone audit-trail status (AR pp.151-275 scanned, not extractable)"
+  - "FY26 Ethanol/Alcohol segment revenue (distinct line not separately disclosed; FY25 Rs 10.20 Cr carried as proxy)"
+flags:
+  - "CASH CONVERSION STRUCTURAL: FY26 first actual cash loss Rs 11.36 Cr (CARO), CFO Rs (30.89) Cr, DSCR 0.25x (B03/deliberation)"
+  - "EIMCO ORDER OPERATOR-CONFIRMED: Rs 257 Cr Hyundai order released 20-21 Jul 2026, not yet in filings; pending Reg 30 (fttcp-deliberation.md override 1)"
+  - "REVENUE TRANSITION UPGRADED BY OPERATOR: Eimco order as main trigger; DECLINING->STARTING (override 2)"
+  - "SUGAR SEGMENT LOSS WIDENING: FY24 +6.51 Cr -> FY26 -17.31 Cr; operating margin near zero (B03/B04)"
+  - "SECTOR CAP CORRECTED: manifest Pharma/CDMO -> Agri processing 20x (override 3, operator-approved)"
+table:
+  company_identity:
+    cmp_rs_per_share: "21.71 (screener row 7)"
+    market_cap_rs_cr: "246.16 (screener row 8)"
+    shares_outstanding_diluted_cr: "11.34 (screener rows 39, 63)"
+    sector_cap_row: "Agri processing 20x (deliberation operator override)"
+    enterprise_value_rs_cr: "334.52 (Mcap 246.16 + Net Debt 88.36)"
+  latest_financials_fy26:
+    revenue_operations_consolidated_rs_cr: "259.95 (screener FY2026)"
+    ebitda_reported_incl_other_income_rs_cr: "29.43 (PBT 15.73 + Int 7.75 + Dep 5.95); INCLUDES ~28.56 Cr investment income; operating EBITDA ex-other-income ~0.87 Cr"
+    pat_rs_cr: "11.13 (FY26 consolidated)"
+    eps_diluted_rs: "0.98 (FY26 results p.3 consolidated)"
+    cfo_rs_cr: "-30.89 (first cash loss per CARO xvii, B03)"
+    book_value_per_share_rs: "40.52 (Net Worth 459.51 / Shares 11.34)"
+    net_debt_rs_cr: "88.36 (Borrowings 127.71 - Cash 39.35); net debt NEGATIVE incl investments per CARE"
+    roce_latest_pct: "~4 reported / 0-2 operating (DECLINING)"
+    revenue_3yr_cagr_pct: "-10.5"
+    pat_3yr_cagr_pct: "-59.2"
+  segment_performance_fy26_consolidated:
+    sugar_revenue_rs_cr: "141.55 (FY26 results p.4)"
+    sugar_segment_pbit_rs_cr: "-17.31 (loss widening 3yr)"
+    engineering_eimco_revenue_rs_cr: "78.64 (FY26 results p.4, consolidated incl Eimco)"
+    engineering_segment_pbit_rs_cr: "24.63 (FY26 results p.4; profit engine)"
+    others_urad_dal_revenue_rs_cr: "45.16 (FY26 results p.4)"
+    others_segment_pbit_rs_cr: "4.21 (FY26 results p.4)"
+  balance_sheet_fy26:
+    net_worth_rs_cr: "459.51 (Equity 11.34 + Reserves 448.17)"
+    total_borrowings_rs_cr: "127.71"
+    cash_bank_rs_cr: "39.35"
+    investments_fvtpl_rs_cr: "292.76"
+    investment_book_total_rs_cr: "332.11 (Investments 292.76 + Cash 39.35)"
+    net_block_ppe_rs_cr: "99.22"
+    total_assets_rs_cr: "659.76"
+  fttcp_forward_transitions_authoritative:
+    revenue_verdict: "STARTING (+1) per operator override 2"
+    margin_verdict: "DECLINING (-1)"
+    cash_conversion_verdict: "DECLINING (-1), STRUCTURAL"
+    roce_verdict: "DECLINING (-1); v3.5.1 normalized anchor DOES NOT APPLY"
+    composite_score: "-2 (range -4 to +8)"
+    operating_verdict: "DEEP WATCH leaning AVOID; Kernex cash cap binds"
+  operator_approved_valuation_pillars_phase3_authoritative:
+    primary_method: "SUM-OF-THE-PARTS (lead); investment book direct at holding-company discount; Eimco going concern with Rs 257 Cr order; sugar at asset/replacement/token value"
+    pillar_1_base_pe: "9.5x at 9x floor (0.5xROCE+7.5)"
+    pillar_2_cash_multiplier: "0.65x STRUCTURAL, no growth offset"
+    pillar_3_growth_moat_duration: "+0x"
+    strategic_premium: "+0x"
+    destination_pe_additive_track: "~6x normalized operating earnings"
+    destination_pe_rrm_track: "~7x normalized operating earnings"
+    earnings_basis: "TRAILING P/E (operating cross-check only; investment book valued direct)"
+    sector_cap_corrected: "Agri processing 20x"
+    ua_status: "NOT APPLIED (Gate 0=26, EM=5; shareholding absent)"
+  sotp_components_for_stage_11:
+    investment_book_total_rs_cr: "332.11"
+    net_worth_rs_cr: "459.51"
+    eimco_revenue_fy26_consolidated_rs_cr: "78.64"
+    eimco_pbit_fy26_rs_cr: "24.63"
+    eimco_pat_fy25_proxy_rs_cr: "16.56 (B03/B08)"
+    eimco_forward_order: "Rs 257 Cr Hyundai Reactor Clarifier (20-21 Jul 2026, operator-confirmed, pending Reg 30)"
+    sugar_segment_revenue_fy26_rs_cr: "141.55"
+    sugar_segment_pbit_fy26_rs_cr: "-17.31 (structural loss)"
+    total_borrowings_fy26_rs_cr: "127.71"
+    shares_diluted_cr: "11.34"
+    market_cap_rs_cr: "246"
+  rating_agency_care:
+    rating: "CARE A-; Stable (Reaffirmed 07 Oct 2025)"
+    liquidity_quote: "free cash and investments of Rs 204.08 crore as on 31.03.2025; current ratio 2.73x; nil term debt (CARE p.3)"
+    constraint: "lower cane availability and recovery; cyclical/regulated sugar (CARE p.2)"
+  som_implied_revenue_cagr:
+    som_implied_cagr_3yr_pct: "9.7 (B09)"
+    som_implied_cagr_5yr_pct: "7.5 (B09)"
+    runway_class: "MODERATE"
+conflicts: []
+unresolved:
+  - {field: "FII+DII institutional shareholding %", why: "SEBI SHP export not provided", anchor: "B00/B03/B08"}
+  - {field: "Promoter shareholding % / pledge (filing-anchored)", why: "SHP table not in AR; B08 media-derived ~42%/0%", anchor: "B08"}
+  - {field: "Eimco-KCP FY26 standalone audit-trail / margins", why: "AR pp.151-275 scanned; Eimco own FY26 AR not published", anchor: "B03/B02"}
+  - {field: "FY26 Ethanol/Alcohol segment revenue", why: "not separately disclosed FY26; FY25 Rs 10.20 Cr proxy", anchor: "B09/B05"}
+rating_wc_quote: "CARE A-; Stable (07 Oct 2025). Liquidity strong: free cash and investments Rs 204.08 Cr as on 31.03.2025; avg WC utilisation 37.65% (12m to Jun 2025); current ratio improved to 2.73x from 1.89x; nil term debt. Constrained by lower cane availability/recovery and the cyclical, regulated sugar industry (CARE pp.2-3)."
+ua_qualifiers: {listed_12m: "YES", gate0_or_em: "NO (Gate 0=26; EM=5)", fii_dii_lt3: "UNRESOLVED", all_met: "NO -> UA withheld"}
+credibility_grade: "C"
+summary_for_stage_11:
+  - "SOTP leads: investment book Rs 332.11 Cr direct; Eimco Rs 78.64 Cr rev / Rs 24.63 Cr PBIT going concern with Rs 257 Cr order; sugar core Rs 141.55 Cr rev but -Rs 17.31 Cr PBIT"
+  - "Pillar 1 9.5x@9x floor; Pillar 2 0.65x STRUCTURAL; Pillar 3 +0x; Strategic +0x; destination ~6x/~7x normalized operating earnings (cross-check, far below 20x cap)"
+  - "UA NOT APPLIED; earnings basis TRAILING; sector cap Agri processing 20x"
+  - "Reported EBITDA/PAT investment-income-dependent; operating EBITDA ex-other-income ~0.87 Cr FY26; use segment PBITs for the operating read"

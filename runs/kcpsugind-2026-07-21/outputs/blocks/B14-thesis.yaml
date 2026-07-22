@@ -1,0 +1,21 @@
+stage: B14-thesis
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete
+revaluation: "Eimco 15x operator override (2026-07-21); verdict upgraded from AVOID to WATCHLIST"
+verdict: "WATCHLIST"
+entry_range: {low: 15.42, high: 17.35}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Investment book (Rs 332 Cr) drawn down >20% to fund operating/sugar losses, OR Eimco Rs 257 Cr Hyundai order cancelled or not confirmed via Reg 30, OR sugar segment annual PBIT loss exceeds Rs 25 Cr, OR Eimco segment margin falls below ~20% (invalidating the 15x)"
+monitoring_checklist:
+  - "Eimco Rs 257 Cr Hyundai order confirmed via Reg 30 filing within 2 quarters (else red)"
+  - "Eimco (Engineering) segment PBIT margin held at/above ~30% (FY26 31.3%); red if below ~20% (invalidates 15x)"
+  - "Investment book (investments + cash) held >= Rs 332 Cr; red if drawn down >20% (below ~Rs 266 Cr)"
+  - "Sugar segment PBIT loss not exceeding Rs 25 Cr/yr (base -Rs 17.31 Cr); narrowing = green"
+  - "Consolidated CFO returns positive (FY26 -Rs 30.89 Cr); red if second consecutive negative year"
+  - "Eimco/Engineering segment revenue resuming YoY growth and recognising the order (FY26 Rs 78.64 Cr)"
+  - "Standalone short-term borrowings stable/season-linked; red if continued double-digit YoY growth (+47% YoY FY26)"
+  - "Related-party deposit share not above ~27% (FY25 26.9%) and Schedule-V remuneration ratifications clean at AGM"
+  - "FVTPL portfolio (Rs 292.76 Cr) stable; red on material MTM drawdown compressing SOTP toward bear"

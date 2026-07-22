@@ -1,0 +1,37 @@
+stage: B13-synthesis
+company: "KCPSUGIND"
+run_date: "2026-07-21"
+model: claude-opus-4-8
+status: complete
+phase: 3-finalize
+revaluation: "Eimco 15x operator override (2026-07-21); decision upgraded AVOID -> WATCHLIST"
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+promoter_verdict: "CAUTION (below CONCERN threshold; formal FLAG-PROMOTER not fired)"
+flag_cash_determination: "STRUCTURAL"
+confidence_delta: {numerical: 97.9, redflag: 70, framework: 88, peer: "N/A", overall: 70}
+valuation_decision: "WATCHLIST"
+sotp_base_fair_value: 33.88
+entry_range: {low: 15.42, high: 17.35}
+mos_price: 13.88
+sotp_25pct_entry_test: "CONDITIONAL (base +16% fails, bull +29.6% passes)"
+operating_crosscheck_hurdle: "STOP (subordinate)"
+destination_pe: {additive: 6.2, rrm: 7.2, sector_cap: 20, eimco_slice: 15}
+devil_overall: "WEAKENED BUT ALIVE"
+fttcp_operating_verdict: "DEEP WATCH leaning AVOID (composite -2, Kernex cash cap)"
+headline: "Parts now worth more than price"
+falsification_metric: "Reg 30 filing fails to confirm the Rs 257 Cr Eimco-Hyundai order (or it is cancelled or materially shrunk), unwinding the 15x re-rating toward 8x, the base SOTP back toward Rs 22, and the revenue upgrade, the Eimco slice and the reason-to-monitor at once"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/fttcp-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/final/verifier-disagreement-log.md"
+  - "outputs/final/fttcp-handoff.md"
+notion_save:
+  page_title: "KCPSUGIND — Finalize (2026-07-21)"
+  summary: "Parts now worth more than price | PROCEED WITH FLAGS (rule 3, FLAG-CASH STRUCTURAL) | WATCHLIST (BUY-ON-DIPS) at CMP Rs 21.71, buy into Rs 15.42-17.35 | SOTP base Rs 33.88 (+56% vs CMP; bear 18.66, bull 47.29), MoS Rs 13.88, Eimco 15x operator override under the 25x engineering cap | operating Hurdle STOP subordinate, SOTP 25% entry CONDITIONAL | prob-weighted 3yr CAGR +11.4%, upside/downside 8.4x | confidence 70, devil WEAKENED BUT ALIVE | upgraded from AVOID by the Eimco 15x override"
+  mode: append-never-overwrite-status

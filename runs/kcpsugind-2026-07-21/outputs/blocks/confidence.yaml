@@ -1,0 +1,24 @@
+stage: confidence-delta
+company: KCPSUGIND
+run_date: 2026-07-21
+phase: 3-complete
+confidence_delta:
+  numerical_acceptance: 97.9    # B12a: 47 figures, 0 CRITICAL, 0 MAJOR, 1 MINOR rounding; no source-fidelity MISMATCH
+  redflag_coverage: 70          # B12b: 7 of 10 flags caught, 1 partial, 2 MAJOR misses (degraded no-concall Stage 5)
+  framework_adherence: 88       # B12c FULL: gate0+emoat 100 (phase 1) + valuation-adherence 88 (phase 3); binding half 88; weighted ~95.5
+  peer_utilisation: "N/A"       # B12d: no peer transcripts; stage 6 skipped correctly; excluded from the min
+  overall: 70                   # min of available components; redflag-bound
+band: "60-74 — normal-to-low; per orchestrator Section 5, PROCEED-family verdicts downgrade one level. NOT a REWORK trigger."
+rework_check:
+  verifier_a_critical: 0
+  min_acceptance_rate_ge_60: true   # numerical 97.9, redflag 70, framework 88, valuation 88
+  source_fidelity_mismatch: false
+  rework_triggered: false
+framework_adherence_detail:
+  phase1_gate0_emoat: 100
+  phase3_valuation: 88
+  status: "complete (no longer pending)"
+notes:
+  - "Overall is bound by redflag_coverage (70). Numerical 97.9 and framework 88-100 are strong; the low band reflects the degraded no-concall Stage 5 coverage, not fabricated or misread numbers."
+  - "FTTCP confidence sits one notch below this baseline: the cross-family grader did not run (no provider key), so there is no third-family read on the FTTCP verdict."
+  - "Verifier C (0 CRITICAL / 0 MAJOR) concurs with AVOID-on-valuation; the 5 phase-3 MINOR findings are decision-invariant (SOTP round-number multiples the largest, AVOID survives 12x Eimco)."

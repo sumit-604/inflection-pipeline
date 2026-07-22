@@ -1,0 +1,22 @@
+stage: B12d
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "NORTHARC (Q2 FY26, Oct-2025 call)", missed_item: "Sequential Stage-2 spike attributed to unsecured business loan segment (analyst Shweta / Ashish Mehrotra exchange) - a minor single-quarter negative data point inside a call B06 tags CITED-ONLY/confirmatory-only", anchor: "NORTHARC Oct-2025 call, Ashish Mehrotra, transcript line ~298-301 (page anchor not independently pinned down)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 1, Claim 2 (SBFC Nov-2025 approval-rate quote)", claimed: "p.6", source_truth: "p.12 of 14 (Mahesh Dayani, '45% to 50% odd... below 40% odd')", note: "Quote/speaker/call all correct, 6-page anchor drift", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 1 (NORTHARC May-2026 FY27 credit-cost guidance)", claimed: "p.4-5", source_truth: "p.11-13 for the specific 2.7-2.8% FY27 guidance figure (p.5 correct only for the FY26 2.8% figure)", note: "Two facts from different pages compressed into one citation range", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 3 (SBFC Jul-2025 'not about geography' quote)", claimed: "p.4", source_truth: "p.7 (Aseem Dhru)", note: "Quote/speaker/call correct, page wrong", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 1/Part 2, multiple citations (MASFIN Nov-2025 p.9, MASFIN Investor Day p.16, SBFC Nov-2025 cost-of-borrowing p.4, SBFC Nov-2025 sub-Rs7-lakh p.9)", claimed: "as cited", source_truth: "each one page earlier than cited (p.8, p.15, p.5, p.8 respectively)", note: "Systematic off-by-one, consistent direction, content verified correct in all cases", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 Part 3 (NORTHARC Q2 FY26 Oct-2025, CITED-ONLY classification)", claimed: "purely confirmatory, no new decisive finding", source_truth: "contains one minor unused negative data point (Stage-2 spike, unsecured business loans)", note: "Classification is fair overall; the missed item is industry-context grade, not claim-relevant grade", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100

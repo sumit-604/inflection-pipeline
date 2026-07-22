@@ -1,0 +1,14 @@
+stage: confidence-delta
+company: AYE
+run_date: 2026-07-22
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97.5      # B12a: 40 numbers checked, 0 CRITICAL, 0 MAJOR, 1 MINOR (unanchored NPS); source-fidelity PASS
+  redflag_coverage: 64            # B12b: 9 of 14 verifier-found flags caught upstream (+2 partial ~71%); 1 MAJOR miss (over-lending/per-borrower-leverage from growth composition); above 60 REWORK floor
+  framework_adherence: 100        # B12c: Gate0+EM portion CLEAN (0 CRIT/0 MAJ/1 MINOR). VALUATION component pending phase 3 (B10/B11 not yet built)
+  peer_utilisation: 90.9          # B12d: 10 of 11 peer transcripts used SUBSTANTIVE (1 CITED-ONLY), verifier D confirmed fair, acceptance 100, 0 CRIT/0 MAJ/5 MINOR (page-anchor precision only)
+  overall: 64                     # min of the four; redflag-bound
+band: "60-74 (PROCEED verdicts downgrade one level; REWORK not forced)"
+valuation_adherence_status: "pending phase 3"
+rework_check: "NOT triggered — Verifier A 0 CRITICAL numerical, source-fidelity PASS; every verifier acceptance >= 60 (min redflag_coverage 64)."
+notes: "overall 64 is bound by redflag_coverage; the single MAJOR miss is the over-lending / per-borrower-leverage risk (39% AUM growth from repeat loans + 60% from branch-deepening in a micro-borrower book that itself survived an over-lending cycle) — surfaced via the verifier layer into the gate recommendation. All other components >= 90 except peer_utilisation 90.9."

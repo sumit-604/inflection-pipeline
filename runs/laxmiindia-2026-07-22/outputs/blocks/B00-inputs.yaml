@@ -1,0 +1,61 @@
+stage: B00-inputs
+company: LAXMIINDIA
+run_date: 2026-07-22
+model: orchestrator
+status: complete
+run_type: full
+listed_date: 2025-07-31        # from prospectus title page; recently listed (<3y)
+recently_listed: true          # prospectus is foundational
+concalls_available: true
+
+document_routing:
+  prospectus: inputs/annual-report/drhp.pdf   # Prospectus dated 2025-07-31 (MISFILED under annual-report/)
+  annual_report_equivalent:
+    - inputs/annual-report/drhp.pdf            # restated financials FY23-FY25 + full notes = primary notes/backward source
+    - inputs/results/Annual_Report_2024.pdf    # FY26 AUDITED results (qtr & year ended 2026-03-31), misnamed
+  results:
+    - inputs/results/41b31cc6-d660-47af-b768-daaf6d68163d.pdf  # Q3 FY26 unaudited (qtr & 9M ended 2025-12-31)
+    - inputs/results/Annual_Report_2024.pdf                    # FY26 audited full year
+  rating: inputs/rating/ratings.pdf            # SCANNED / image-only (0 extractable text) -> read via Read tool page rendering
+  presentation: inputs/presentation/Investor_Presentation_1.pdf
+  concalls:                                    # oldest first; quarter map below
+    - inputs/concalls/Concall_Aug_2025_Transcript.pdf   # Q1 FY26 (maiden post-IPO)
+    - inputs/concalls/Concall_Nov_2025_Transcript.pdf   # Q2 FY26
+    - inputs/concalls/Concall_Feb_2026_Transcript.pdf   # Q3 FY26
+    - inputs/concalls/Concall_May_2026_Transcript.pdf   # Q4/FY26
+  peer_concalls:
+    ARMANFIN: [Aug_2025, Nov_2025, Feb_2026, May_2026]
+    MANBA: [Sep_2025, Nov_2025, Feb_2026, May_2026]
+    MONEYBOXX: [Aug_2025, Nov_2025, Feb_2026, Jun_2026]
+    UGROCAP: [Aug_2025, Nov_2025, Feb_2026]
+  screening: [inputs/screening/ARMANFIN-*.csv, inputs/screening/UGROCAP-*.csv]  # PEER only; no LAXMIINDIA screening data
+
+input_gaps:
+  - type: prospectus_folder
+    severity: RESOLVED
+    note: "inputs/prospectus/ folder empty, but the Prospectus (drhp.pdf) is present in inputs/annual-report/. Routed as prospectus. Not a gap."
+  - type: standalone_annual_report
+    severity: LOW
+    note: "No glossy standalone AR. Prospectus restated financials (FY23-25) + FY26 audited results filing serve as the AR-equivalent for notes/backward analysis. Backward baseline runs on restated pre-IPO years from the prospectus + post-listing FY26."
+  - type: announcements
+    severity: MEDIUM
+    note: "inputs/announcements/ empty. Operator supplied a non-anchored summary in chat (NCD raises, Acuite upgrade, CTO appointment, IPO utilization) -> operator-context.md. Intent-and-action cross-check for stages 5/7/8 anchors to concalls/results/rating PDFs; operator summary is leads only. FTTCP Step 0C flags reduced confidence."
+  - type: shareholding
+    severity: MEDIUM
+    note: "inputs/shareholding/ empty. Operator supplied a screener SHP screenshot (Sep2025-Jun2026) in chat -> operator-context.md, NON-ANCHORED. Stage 11 UA institutional qualifier withheld (no filing to affirm). Promoter holding/pledge trend falls back to prospectus + operator screenshot with staleness/non-anchor noted."
+  - type: research
+    severity: LOW
+    note: "inputs/research/ empty. No effect on anchored evidence."
+  - type: laxmiindia_screening
+    severity: LOW
+    note: "No LAXMIINDIA screening CSV. Gate 0 (stage 1) extracts from the results PDFs + prospectus restated financials."
+
+mechanical_notes:
+  - "SECTOR ROW MISMATCH (PHASE 3): manifest.sector_cap_row = 'Pharma / CDMO' is WRONG. Company is an NBFC (MSME/vehicle finance; peers ARMANFIN/MANBA/MONEYBOXX/UGROCAP are MFI/vehicle/MSME lenders). Stage 11 must use the correct NBFC/financials sector cap row from Section 1B, not Pharma. Flagged for /finalize."
+  - "manifest.cmp = 0.0 and market_cap_cr = 0.0 are unpopulated. Not needed for Phase 1 evidence; Phase 3 valuation requires CMP -> operator must populate before /finalize."
+  - "inputs/rating/ratings.pdf is scanned/image-only: pdftotext yields ~0 chars. Subagents reading it (stage 10, stage 11, verifier A) must use the Read tool page rendering, not text extraction. Named per PDF-resilience rule."
+  - "PDF text extraction verified working after installing poppler-utils (pdftotext/pdftoppm) at session start; Read tool page rendering confirmed on drhp.pdf."
+
+operator_context_file: operator-context.md   # NON-ANCHORED; leads/cross-check only; passed to stages 1,5,7,8
+
+flags: []

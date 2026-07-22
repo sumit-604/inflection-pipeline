@@ -145,4 +145,45 @@ derive a different exit PE or a different primary method.
 
 ---
 
-*Phase 3 next: /finalize runs/kcpsugind-2026-07-21*
+---
+
+## PHASE 3 OPERATOR OVERRIDE (finalize review, 2026-07-21)
+
+**Override 5 — Eimco SOTP multiple.** During the finalize review the operator
+judged the stage-11 draft's 8x Eimco multiple too harsh (a point the pipeline's
+own devil's advocate and Verifier C had both flagged as a plucked round number).
+
+- Operator ruling, in the operator's words: "take Eimco multiple after discount
+  to 15x."
+- Reasoning discussed and recorded: Eimco-KCP is a 100% engineering subsidiary
+  with a 31.3% segment PBIT margin (FY26 PBIT Rs 24.63 Cr on Rs 78.64 Cr
+  revenue), a rising order book, and the Rs 257 Cr Hyundai order at 3.3x segment
+  revenue; 15x sits below the engineering sector cap (Consulting/Engineering
+  services 25x, Industrial products 25x, EPC 20x, Master v3.3) and reflects a
+  discount from that ceiling for the subsidiary/single-order-concentration/
+  unfiled-order/data-gap risks. The Agri processing 20x cap applies only to the
+  consolidated operating cross-check, not to this engineering slice.
+- Disposition: stage 11 re-run with Eimco at 15x, everything else held (holdco
+  discount 35% unchanged, sugar token/negative, investment book, debt).
+
+**Resulting decision change (authoritative for the record):**
+- SOTP base fair value Rs 33.88/share (bear 18.66, bull 47.29), +56% above CMP
+  Rs 21.71.
+- Entry range Rs 15.42-17.35 (Tier A 25%), MoS Rs 13.88. CMP does NOT clear the
+  Tier A 25% entry on base (base +16% over 3 years from CMP; 25% path only on
+  bull). Upside/downside 8.4x. Prob-weighted 3yr CAGR +11.4%.
+- Decision: WATCHLIST (BUY-ON-DIPS), upgraded from the prior AVOID. Buy into the
+  entry zone Rs 15.42-17.35, not at CMP. Value-trap caveat live: the Rs 332 Cr
+  book underpins ~56% of the base and erodes at ~Rs 30 Cr/yr cash burn, and the
+  Rs 257 Cr order is unfiled. New tripwire: Eimco segment PBIT margin below ~20%
+  invalidates the 15x.
+
+**Updated OPERATOR-APPROVED VALUATION PILLARS delta:** the Eimco SOTP slice
+multiple is 15x (operator-approved, under the 25x engineering cap). All other
+approved pillars (Pillar 1 9.5x floor, cash 0.65x structural, Pillar 3/Strategic
+0, UA withheld, Agri 20x operating cross-check cap, trailing basis, SOTP-lead)
+are unchanged.
+
+---
+
+*Phase 3 completed with the Eimco 15x override: /finalize runs/kcpsugind-2026-07-21*

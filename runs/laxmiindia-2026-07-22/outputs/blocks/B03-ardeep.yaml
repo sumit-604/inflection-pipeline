@@ -1,0 +1,45 @@
+stage: B03-ardeep
+company: "LAXMIINDIA"
+run_date: "2026-07-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research, laxmiindia_screening, kam_underlying_statutory_reports, audit_fee_breakup, committee_composition_detail, board_attendance_percentages, deferred_tax_reconciliation]
+flags:
+  - type: FLAG-CASH
+    reason: "Carried forward from B02 and reframed at Phase 3: CFO is structurally negative (a normal Ind AS 7 artifact of a growing NBFC lender, not itself the cash-quality concern), but DA/ARC upfront gain-on-sale drove 76.1% of PAT (FY23), 67.6% (FY24), moderating to 26.8% (FY25) (Note 52.2/98(a)); the underlying ARC-transfer volume accelerated >36x FY24-FY25 including SMA/pre-NPA accounts for the first time (Note 98(c)); FY26 ARC Security Receipt investments grew 5.4x vs ~31% loan-book growth, now 8.74% of total assets ([FY26RESULTS] Balance Sheet); and the Note 98(c) NPA-transferred-to-ARC figure (Rs109.54cr FY25) remains unreconciled against the Note 75 Stage-3 Sold-to-ARC line (Rs0.61cr FY25), a ~180x gap independently verified at this stage. Cash conversion quality remains INDETERMINATE pending management reconciliation; caps at PROCEED WITH CAVEATS per Master v3.3."
+  - type: FLAG-PROMOTER-PRELIM
+    reason: "Two individual promoters (Prem Devi Baid, Aneesha Baid) diluted materially via the Offer for Sale component of the IPO itself (3.38%->0.96% and 5.41%->1.91% respectively); combined promoter-family board control is 43% of seats (MD + 2 WTDs, one family); combined promoter-family remuneration is ~16.3% of FY25 PAT; a two-year-plus unresolved property-title item involves the MD personally alongside a Rs30mm related-party property purchase agreement (FY23) not yet fully executed by FY25. Mitigants: no promoter shares pledged, no wilful-defaulter/fraudulent-borrower status, no post-listing insider selling evidenced in documents reviewed (listing is under 12 months old at run date). Full promoter verdict reserved for B08."
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "WATCH", p4: "WATCH", p5: "WATCH", p6: "WATCH", p7_best_fit: "GARP (WATCHLIST)"}
+overall_quality: 5            # /10 with the four 25% components
+quality_components: {governance: 5, accounting: 5, balance_sheet: 6, earnings: 4}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would not stop -- all audit opinions across FY23-FY26 are unmodified; audit-trail qualification is narrowing year over year (full CARO qualification FY23/FY24 to single-instance exception FY25) rather than worsening."
+  - "Phase 2: a human reviewer would pause to demand management reconciliation of the Note 98(c)/Note 75 ~180x gap and disaggregated core-lending-profitability-ex-DA/ARC-gain before relying on any single reported PAT figure without adjustment, but this is an evidence-quality flag, not a mechanical failure."
+  - "Phase 3: a human reviewer would not stop on balance-sheet or liquidity grounds (CRAR, ALM, D/E all sound post-IPO); would want core lending profitability ex-DA/ARC-gain disaggregated before treating FY24-FY26 PAT growth as fully organic."
+  - "Phase 4: a human reviewer would not stop -- omissions found (DA/ARC gain dependency not named as a risk factor; Note 98(c)/Note 75 gap not cross-referenced anywhere outside the notes) are correctable by direct management question, not evidence of concealment with intent."
+  - "Phase 5: a human reviewer would not stop on governance grounds alone -- clean pledge/wilful-defaulter/fraud confirmations are meaningful mitigants; board changes, while concentrated in timing pre-IPO, professionalised rather than weakened the independent cohort."
+triple_pass_verification:
+  verified: 13                 # of 15 (ranks 1,2,3,4,5,6,7,9(partial),13,14,15 independently re-verified at source-page level this stage; ranks 8,10,11,12 accepted per B02's own Pass-3 spot-verification without independent re-pull this pass)
+  discrepancies: []
+missing_risks:
+  - {finding: "DA/ARC gain-on-sale historical dependency (76.1%/67.6%/26.8% of PAT FY23-FY25) is not named as a standalone, quantified risk factor anywhere in the 39-page risk-factor section, despite being the single most consequential earnings-quality fact about the Company", evidence_anchor: "[PROSPECTUS] Note 52.2/98(a) pp.355,379 vs Risk Factors pp.33-71 (absence)"}
+  - {finding: "The Note 98(c)/Note 75 ~180x NPA-to-ARC disclosure gap is not referenced or cross-bridged anywhere in the risk factors or MD&A", evidence_anchor: "[PROSPECTUS] Note 98(c) p.379 vs Note 75 p.368 (absence of cross-reference)"}
+guidance_table:
+  - {claim: "Net Proceeds (100%) to be deployed for capital-base augmentation for onward lending, sufficient to satisfy Fiscal 2026 CRAR", number: "Rs151.586cr net proceeds", timeframe: "Fiscal 2026", credibility: "Delivered -- FY26 CRAR reached 26.12% vs pre-IPO FY25 20.80%, the cleanest guidance-vs-delivery match found in this deep dive"}
+  - {claim: "Continued KPI disclosure at least once a year for one year post-listing or until Net Proceeds utilisation, whichever is later", number: "qualitative", timeframe: "ongoing from 31-Jul-2025", credibility: "Not independently testable within documents provided to this stage"}
+monitorables:
+  - {metric: "Core lending profitability ex-DA/ARC gain-on-sale", threshold: "gain-on-sale share of PAT continuing to moderate below ~25-30%, or a management-disclosed ex-gain profitability figure", where: "Quarterly Reg 33 results, any non-GAAP reconciliation the Company publishes", why: "The single cleanest test of whether FY24-FY26 PAT growth is durable core-lending economics or continues to lean on a non-recurring, judgment-dependent gain"}
+  - {metric: "ARC Security Receipt carrying value vs realised cash recovery", threshold: "any material NAV write-down, or SR balance continuing to outgrow the loan book", where: "Quarterly balance sheet Investments line; Infomerics/CARE recovery-rating updates", why: "FY27 is when the FY25/FY26 ARC pools season and NAV marks are tested against actual recoveries"}
+  - {metric: "Gross/Net Stage-3 ratio and Up Money DA-pool resolution", threshold: "Gross Stage-3 remaining above or accelerating past the FY25 level of 1.07%", where: "Quarterly results, Reg 52(4) disclosures", why: "Tests whether the FY26 stress event is contained or a continuation of the FY23-FY25 organic deterioration trend"}
+  - {metric: "RoNW (RoE) trajectory post-IPO dilution", threshold: "recovery toward or above the pre-IPO FY25 level of 15.66% within 4-6 quarters", where: "Quarterly/annual RoNW disclosure", why: "Tests whether IPO capital is being deployed productively fast enough to offset near-term ROE dilution from the equity raise"}
+  - {metric: "Management's direct response to the Note 98(c)/Note 75 reconciliation question", threshold: "a specific, dated management clarification", where: "Exchange filings, analyst calls, subsequent annual report notes", why: "Until reconciled, no single NPA-disposition figure from this document can be treated as complete"}
+strengths_top3:
+  - "Post-IPO balance sheet genuinely repaired: CRAR 20.80%->26.12%, D/E 4.42x->2.87-2.88x, fully positive ALM gap ladder, IPO proceeds deployed to their single stated purpose"
+  - "Unusually candid compliance-history disclosure (CARO, BSE, RoC) for an IPO document, providing the evidentiary base for this report's own findings"
+  - "Improving core unit economics independent of the DA/ARC gain question: NIM 9.27%->9.73%, spread 9.10%->9.90%, operating-expense ratio 6.60%->6.19% FY23-FY25"
+red_flags_top3:
+  - "DA/ARC gain-on-sale dominated PAT in two of three restated years (76.1% FY23, 67.6% FY24, 26.8% FY25) while the underlying ARC-transfer volume accelerated >36x FY24-FY25, including SMA/pre-NPA accounts for the first time"
+  - "Unreconciled ~180x gap between Note 98(c) NPA-transferred-to-ARC (Rs109.54cr FY25) and Note 75 Stage-3 Sold-to-ARC (Rs0.61cr FY25), compounded by FY26's 5.4x jump in ARC Security Receipt investments to 8.74% of total assets"
+  - "Four-domain 'correction only under external scrutiny' pattern: four restated GAAP errors, a two-year audit-trail qualification narrowing but not fully closed, BSE penalties plus a platform debarment, and five years (FY2015-FY2019) of RoC filing discrepancies self-disclosed only in December 2024"
+best_fit_strategy: "GARP (WATCHLIST) -- growth is real and priced reasonably at IPO, but the 'E' in the P/E has not yet been demonstrated to be a clean, recurring earnings stream given the DA/ARC gain dependency"
+one_line_verdict: "Repaired balance sheet, unresolved earnings-composition and disclosure-reconciliation questions."

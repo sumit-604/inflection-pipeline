@@ -1,0 +1,19 @@
+stage: B15-devil
+company: "AYE"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "weakened"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "Entry zone Rs 133-166 rests on the single most generous of three lenses (15x additive); the framework's OWN primary lender method P/B gives Rs 81-90 and the RRM track gives entry Rs 115 - both materially below the buy zone (B11 s2, s5c)"
+  - "99% of FY26 growth is harvested from existing borrowers/branches (39% repeat loans + 60% existing-branch deepening, 1% new branches; 07-emoat.md line 85) in a book that just survived an over-lending cycle - the exact multi-lender over-leverage SBFC flags as invisible to bureau checks (B06)"
+  - "SHARED CATALYST single point of failure: asset-quality normalisation simultaneously underwrites the Pillar 1 ROE base, the Pillar 3 growth premium, and the forward EPS Rs 11.90 basis; if Gross Stage III turns from 4.49%, everything turns at once (fttcp line 59)"
+  - "Forward EPS Rs 11.90 is an unaudited projection off a single quarter (Q1FY27 annualized); Role 1 warns FY27 could land Rs 270-290 Cr if Q1 was a peak, breaking the >26% CAGR premise before it starts (B11 s4)"
+  - "Numbers-governance not clean despite TRUSTWORTHY people-verdict: restatement touching 4 of 5 periods incl. FY23 PAT -25.9% with no risk factor, front-matter 'stable credit costs' contradicted in the same document, covenant breaches (23.6% of borrowings, majority unwaived) understated in Risk Factor 9 (B03)"
+  - "Earnings-quality mirage: reported PAT growth leans on gain on derecognition (5.8% of revenue / ~3.65% of total income FY26 and rising), INDETERMINATE and unresolved pending FY27 audit (B11 s7)"
+  - "Even at CMP the base hurdle FAILS (1.77) and prob-weighted CAGR is 19.7% < 25%; the ~Rs 86 downside floor sits BELOW the MoS price Rs 133, so margin of safety is thin (B11 s5a, s5d, s5e)"

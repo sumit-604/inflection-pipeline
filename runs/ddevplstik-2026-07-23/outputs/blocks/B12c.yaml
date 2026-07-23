@@ -1,0 +1,19 @@
+stage: B12c
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+scope_note: "PHASE-1 partial: Gate 0 (B01) + Emerging Moat (B07) audited; valuation (B10/B11) deferred to phase 3, not run here."
+gate0: {rules_checked: 35, fails: [{rule: "E2 promoter-holding-change-over-3-years", severity: "MINOR", detail: "scored 3 (pm1% band) on a 1-year AR-anchored proxy (0.00pp) where a 3-year anchored window is unavailable; strict operating-rule-5 read scores unavailable data 0. Conservative (3 not 5), immaterial: E2=0 gives Block E=15, core=71, still 60-79 band, still GOOD."}]}
+emoat: {rules_checked: 27, fails: []}
+valuation: {rules_checked: 0, fails: [], status: "PENDING — deferred to phase 3 (B10/B11 not yet produced)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B01 Block E, E2", description: "E2 scored 3 using a 1-year holding-change window as proxy for the required 3-year window; deviates from the score-0-if-unavailable operating rule. Immaterial: does not move core out of the 60-79 GOOD band."}
+  - {severity: "MINOR", location: "B01 Block F, M8", description: "M8 Distribution scored 1 via the 'mentioned unquantified' band although reach is in fact quantified (55 countries); the higher 5/3 bands genuinely fail (no revenue-per-outlet, rev CAGR<15%). Defensible edge call, immaterial (M8<3 either way, moat class unchanged)."}
+  - {severity: "MINOR", location: "B07 Section 3 / scorecard", description: "7 active Strong/Moderate categories sits one above the stated 3-6 realistic base rate. Completionist recount was performed and disclosed and marginal rows carry conservative 0.7x multipliers; no category mis-tiered. Observation, not a scoring error."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 98    # 61 of 62 audited rules pass (E2 the sole minor fail); valuation rules not counted (pending)

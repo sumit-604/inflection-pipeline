@@ -55,3 +55,18 @@ management-narrative inputs feeding Role 4.
 - Order book Rs 23,700 Cr (~70% EV programs)
 - Novelic: Rs 350 Cr investment, Rs 19 Cr FY26 loss, impairment indicator
 - Total voting capital anchor: 62,20,34,837 shares (paid-up Rs 622.03 Cr)
+
+## Pipeline outcome (close 2026-07-23)
+- GATE A1: PASS x3 (results 10/10, deck 41/41 [OCR p2,5,13,29,30], press release 4/4)
+- GATE A2: PASS x3 (all count tests reconciled grep==manual)
+- GATE A3: PASS x3 (all F1-F17 explicit status, every FINDING line-cited)
+- A4 merged review: PROCEED WITH FLAGS; cash conversion INDETERMINATE; Branch 8A-W
+- GATE A5: loop 1 INCOMPLETE (FX-neutral qualifier + orphan press-release dateline)
+  -> A4 grafted both -> A5 re-audit COMPLETE (coverage 0 orphans, arithmetic within
+  rounding, no surviving bear counter)
+- Notion: full review + A3 forensics table + A5 verdict inserted (position end);
+  Key Notes line prepended (prior entries preserved); Decision Status UNCHANGED
+  (WATCHLIST/AVOID) - no thesis-broken trigger fired.
+- Clean run apart from one A5 loop (expected adversarial function) and cosmetic
+  pdftotext spacing garble in results notes (financial numerals intact; layout
+  file used for verbatim cross-checks).

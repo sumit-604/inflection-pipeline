@@ -41,6 +41,18 @@ carries it, so watch and accumulate on dips below Rs 166, not at market.
   size (4% vs framework Small 2-3%) and a fill at the MoS floor (Rs 132 < MoS Rs 133).
   Decision Status moved WATCHLIST (BUY-ON-DIPS) -> HELD by operator action.
 
+## QUARTERLY REVIEWS
+- Q1 FY27 (concall, reviewed 2026-07-23): PROCEED WITH CAVEATS, HOLD. No thesis-broken
+  trigger fired; Decision Status stays HELD. Tripwires 5 GREEN (GNPA 4.49% -28bps 4th
+  straight, DA nil so derecognition ~0%, AUM +28%, PAT run-rate ~Rs300cr, credit cost
+  4.01%) / 3 UNVERIFIABLE (PCR, covenants, over-lending all undisclosed on the call) / 0
+  RED. Key caveat: 4.01% credit cost includes a ~6cr overlay build (ex-overlay ~3.68%,
+  management-managed); slippage deferred twice; NIM 15.9% ran above 14.25-14.75% guidance;
+  other income stepped down (DA nil + forex to OCI). A5 adversary COMPLETE. Run:
+  runs/aye-q1fy27/. Q2 ADD-GATE: do not add above 4% unless gross slippage disclosed AND
+  PCR>=60% confirmed AND refined FY27 guidance delivered. Single cleanest Q2 metric: gross
+  quarterly slippage.
+
 ## ACTIVE TRIPWIRES
 - Gross Stage III (GNPA) reversing upward from 4.49% (Jun-2026) for two consecutive
   anchored quarters. The single print the whole call turns on (SHARED CATALYST:

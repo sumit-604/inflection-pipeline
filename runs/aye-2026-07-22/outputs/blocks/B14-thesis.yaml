@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "AYE"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 133, high: 166}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Gross Stage III reverses upward from 4.49% for two consecutive anchored quarters, OR net gain on derecognition exceeds ~4% of total income while reported PAT growth still depends on it, OR AUM growth stays below 20% YoY for two consecutive quarters"
+monitoring_checklist:
+  - "Gross Stage III (GNPA): green at/below 4.49% and declining; red rising QoQ for two consecutive anchored quarters (Reg 52(4) results)"
+  - "Net gain on derecognition as % of total income: green at/below ~3.65% and PAT not dependent on it; red above ~4% while PAT growth leans on it (results P&L)"
+  - "AUM growth YoY: green >=25%; red below 20% for two consecutive quarters (investor presentation/results)"
+  - "Forward EPS/PAT: green FY27 PAT ~Rs 300 Cr or higher (EPS ~Rs 11.90), on track for >26% forward CAGR; red FY27 PAT below ~Rs 270 Cr (audited results)"
+  - "Credit cost (% ATA): green within guided 3.5-4.0%; red re-accelerates above 4.5% (results/IP)"
+  - "PCR: green >=60% (Sound band); red below 60% while GNPA rises (provisioning disclosure)"
+  - "Covenant breach resolution: green 14 unwaived instances (23.6% of borrowings) resolved/waived; red persist or grow (borrowings/covenant note)"
+  - "Over-lending check: green AUM per borrower and repeat-loan share stable while GNPA falls; red both rising together while GNPA rises (IP/results)"

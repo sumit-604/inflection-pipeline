@@ -1,0 +1,59 @@
+stage: B08-promoter
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No RHP/prospectus available — group-company map is AR-derived + web-derived, not RHP-anchored"
+  - "No announcements folder — bulk/block deal timing and full material-events history not cross-checked"
+  - "AR provided as Annual_Report_2020.pdf but its actual content is FY2024-25 (used as such); no more recent AR available to confirm FY25-26 board/RPT tables"
+  - "Narrindra Suranna's full director-count/history across companies not cleanly enumerable (aggregator sites blocked WebFetch, 403)"
+  - "Employee reputation data (Glassdoor/AmbitionBox) not found for DPIL, KIIL, or Ddev Group"
+  - "NSE 19-Jun-2026 surveillance-reply PDF and HDFC Securities initiating-coverage note not independently readable (403)"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "BSE/NSE fine of INR 11,800 for delayed prior intimation of 10-Feb-2026 board meeting (interim dividend)", evidence_tier: "MEDIA REPORTED", source: "scanx.trade", date: "2026-02"}
+  - {finding: "Disputed income-tax demand of INR 221.20 lakh not acknowledged as debt, immaterial vs company scale", evidence_tier: "VERIFIED", source: "AR FY24-25 Note 36 (cache line 13952)", date: "31-03-2025"}
+  - {finding: "Statutory auditor (B. Mukherjee & Co.) is a small regional Kolkata firm, not a national-network firm, relative to a group scaling into a capital-intensive BESS vertical", evidence_tier: "VERIFIED (fact) / UNVERIFIED (materiality judgment)", source: "AR FY24-25 Section 43 (cache line 4262-4275)", date: "2021 appointment, current through 2026 AGM"}
+  - {finding: "Kkalpana Plastick Limited, a listed entity in the wider Surana-family orbit disclosed as a 'Fellow Subsidiary' in DPIL's RPT note, has reportedly had no operations since 2018-19", evidence_tier: "MEDIA REPORTED", source: "tracxn.com / cleartax.in company filings summary", date: "2026"}
+  - {finding: "Independent director Ramya Hariharan resigned from sister-listed entity Kkalpana Industries (India) Ltd effective 1-Jul-2026 citing professional preoccupations; she remains disclosed as a DPIL independent director in the FY24-25 AR and no DPIL-level resignation was found", evidence_tier: "MEDIA REPORTED", source: "scanx.trade", date: "2026-06-23 (resignation letter date)"}
+transition_evidence:
+  - {item: "NCLT-approved demerger (04-Mar-2022) separated DPIL as a standalone, cleanly-capitalised listed compounding business from parent KIIL", source: "AR FY24-25 (cache line 3241-3264); CRISIL rating pdf p.3", date: "2022-03-04"}
+  - {item: "Dr. Rakesh Tiwari, outside professional (non-family) hire, appointed CEO of Ddev Clean Energy/BESS vertical", source: "Concall transcripts Feb-2026 and May-2026", date: "2026"}
+  - {item: "CRISIL long-term rating upgraded across four steps: A2+ -> A/Stable -> A/Positive -> A+/Stable -> A+/Stable reaffirmed; short-term A2+ -> A1 -> A1+ -> A1+ reaffirmed", source: "CRISIL Rating Rationale p.4, Annexure - Rating History", date: "2023 to 2026-07-17"}
+  - {item: "Promoter group filed SEBI SAST Reg 31(4) disclosure confirming zero share encumbrance for FY26, all five promoter-group members", source: "scanx.trade citing BSE/NSE filing", date: "2026-04-01"}
+  - {item: "Chairman & MD remuneration fell YoY (INR 93.24 lakh to INR 87.20 lakh) while company PAT grew +9% to INR 202 Cr", source: "AR FY24-25 Note 41 (cache line 14205); CRISIL rating pdf p.3", date: "FY24-25 vs FY23-24"}
+  - {item: "Royalty expense paid to promoter-linked KIIL fell 72% YoY (INR 16.65 Cr to INR 4.58 Cr) against an unchanged INR 20 Cr shareholder-approved cap", source: "AR FY24-25 Note 41 (cache line 14267)", date: "FY24-25 vs FY23-24"}
+  - {item: "FII holding rose from 0.17% (Sep-2023) to 1.47% (Jun-2026), small but a rising institutional-entry trend", source: "NON-ANCHORED operator-relayed screener.in shareholding transcription", date: "2023-09 to 2026-06"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil; SEBI SAST Reg 31(4) filing dated 2026-04-01 confirms zero encumbrance created by any of the five promoter-group members during FY26"
+searches_performed:
+  - "\"Narrindra Suranna\" SEBI OR fraud OR case OR order"
+  - "\"Ddev Surana\" DDev Plastiks director SEBI OR case OR fraud"
+  - "Kkalpana Industries India Limited SEBI order OR NCLT OR fraud OR default"
+  - "Kkalpana Industries India Limited promoter pledge shares"
+  - "\"Kkalpana Industries\" BIFR OR CDR OR NPA OR corporate debt restructuring OR default history"
+  - "\"Ddev Plastiks\" Glassdoor OR AmbitionBox employee reviews"
+  - "\"Ddev Plastiks\" ambitionbox.com"
+  - "\"Kkalpana Industries\" ambitionbox.com reviews"
+  - "\"Ddev Plastiks Industries\" controversy OR scam OR concern OR allegations"
+  - "\"Ddev Plastiks\" IiAS OR SES OR InGovern OR proxy advisory"
+  - "Ddev Plastiks Industries exchange clarification volume movement June 2026"
+  - "\"Almond PolyTraders\" Private Limited"
+  - "\"Bbigplas Poly\" Private Limited company"
+  - "\"Kkalpana Plastick Limited\" company status"
+  - "\"Plastic Processor and Exporters\" Private Limited company status"
+  - "\"Ddev Plastic Limited\" unlisted company Suranna"
+  - "Kkalpana Industries India Limited business status 2026 operations revenue"
+  - "\"Ramya Hariharan\" independent director resign Ddev Plastiks OR Kkalpana 2026"
+  - "Ddev Plastiks Industries independent director resignation 2026"
+  - "\"Samir Kumar Dutta\" re-appointed independent director Ddev Plastiks June 2026"
+  - "\"Narrindra Suranna\" Chairman Managing Director profile biography Kkalpana founder"
+  - "\"Narrindra Suranna\" DIN 00060127 companies director list struck off"
+  - "\"Narrindra Suranna\" director companies zaubacorp OR tofler"
+  - "\"Ddev Plastiks\" \"no encumbrance\" promoter shares quarter 2026 disclosure"
+searches_skipped: []
+verdict_basis: "Clean legal/regulatory record (one immaterial tax dispute, one INR 11,800 LODR fine), zero pledge with a SEBI-filed 1-Apr-2026 confirmation, RPT conduct within shareholder-approved caps with royalty extraction falling 72% YoY, CMD pay falling while profit rose, and a four-notch CRISIL upgrade path under the current promoter -- offset only by unresolved data-completeness gaps (small regional auditor at growing scale, one dormant sister-listed entity, incomplete director-history enumeration, and a sister-entity independent-director exit to watch at DPIL's next AGM) that keep this at TRUSTWORTHY rather than EXEMPLARY."

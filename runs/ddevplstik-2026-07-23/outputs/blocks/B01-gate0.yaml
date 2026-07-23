@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "inputs/annual-report/Annual_Report_2020.pdf is mislabeled: actual content is Annual Report FY2024-25 (year ended 31-Mar-2025), not FY2020. Corrected and used as FY24-25 source throughout this stage; flagging for downstream stages so the label is not relied on."
+  - "No own DDEVPLSTIK screener export; Gate 0 built entirely from results PDFs (Q3/Q4 FY26) and the AR FY24-25 financial statements."
+  - "Full balance sheet history limited to 3 years (FY24-FY26); P&L history to 5 years (FY22-FY26) via the AR's Financial Highlights chart, which does not itself carry balance sheet detail for FY22/FY23."
+  - "No FY26 full Annual Report / contingent liabilities note (Q4 FY26 results filing is condensed, no notes); E4 scored off FY25 AR note, latest available."
+  - "3-year promoter holding change (E2) not computable from anchored filings; only a 1-year (FY24-FY25) AR-anchored comparison available, supplemented by a non-anchored operator-relayed screener trend for context only."
+  - "APCOTEXIND peer CSVs contain only FY2015-16 data, unusable as a current peer for M2/M5/M9; BEPL used as sole current peer."
+  - "No shareholding regulatory filing (only AR disclosure + non-anchored screener transcript); no prospectus; no announcements folder."
+  - "run_type is full (not refresh); no prior-run comparison performed."
+flags: []
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 15, B: 7, C: 14, D: 20, E: 18}
+core_score: 74
+moat_score: 12
+grand_total: 86
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers:
+  - "#2 Block B <8 (scored 7) -> caps classification at max GOOD. Drivers concentrated in FY26: WC days rose from 63.39 (FY24) to 82.02 (FY26), +18.63 days, mostly inventory days (30.82->48.55) tied to PVC/HFFR/XLPE capacity build-out and BESS entry capex; cumulative FY24-FY26 CFO/PAT = 0.594; cumulative FCF/PAT = 0.332. FY26 alone converted only 41.9% of PAT to CFO."
+history_downgrade: false
+data_notes:
+  - "AR file mislabeled Annual_Report_2020.pdf actually contains FY2024-25 statements (BS/P&L as at 31-Mar-2025, FY2024 comparatives) - all figures anchored as 'AR FY24-25 p.__'."
+  - "EBITDA margin uses the AR's own convention (PBT+Depreciation+Finance Costs, includes Other Income) for the FY22-FY26 trend and M1, since it reproduces the AR's published figures and matches the independent CRISIL cross-check (~10.7% vs computed 10.87% FY26); a separate operating-EBITDA-excl-other-income basis is used for the M2/M9 peer comparisons to avoid distortion from BEPL's unusually large other income (~Rs 39.8cr FY26 vs sales Rs 1,276cr)."
+  - "CRISIL rating rationale (17-Jul-2026) states borrowings ~Rs 223cr, materially above the audited 31-Mar-2026 point-in-time borrowings of Rs 52.27cr; likely reflects average/peak fund-based utilization (~31% of Rs 759cr limits, per operator context) rather than the balance-sheet figure. Net-cash conclusion (D1) holds under the audited figures; flagged, not resolved, for downstream stages."
+  - "M5 (Scale & Dominance) marked PEER DATA NEEDED - no segment-matched market-cap peer set was supplied; AR/presentation cite an unquantified '~1/3rd of cable-compounding market' claim not usable for the specific mcap+margin test."
+  - "M11 (Network Effects) scored conservatively at 0: fewer than the 6 years required for the two-window CAGR test, and DDEV's P&L does not break out a selling-expense line from 'Other Expenses' to test the selling% trend."
+  - "AR FY24-25 Chairman's letter (p.11, MD&A) separately cites a 5-year PAT CAGR of 46% off a FY2019-20 base of Rs 27cr - anchored supplementary color, not used in the formal FY22-FY26 CAGR window scored above since a full FY2019-20 balance sheet/P&L was not supplied."
+  - "FCF = CFO - Capex, capex = purchase of PPE + CWIP + Intangibles per the cash flow statement; excludes acquisitions (company has no subsidiaries/associates/JVs, confirmed AR FY24-25 note and Q4 FY26 results note)."
+  - "GM proxy (M9) stated as proxy per rule: (Revenue - Material Cost) / Revenue, ignoring inventory-change and other conversion costs."
+block_b_trend: "deteriorating - cumulative 3yr (FY24-FY26) CFO/PAT = 0.594, and WC days rose +18.63 days (63.39 to 82.02) driven almost entirely by FY26 inventory build (+14.68 days) during the capacity-expansion capex cycle"

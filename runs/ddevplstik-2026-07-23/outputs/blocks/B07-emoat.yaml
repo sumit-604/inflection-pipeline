@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR file mislabeled Annual_Report_2020.pdf actually contains FY2024-25 statements (BS/P&L as at 31-Mar-2025), consistent with B01's finding; anchored throughout as 'AR p.__' for the FY24-25 content."
+  - "CRISIL rating rationale text (inputs/rating/ratings.txt) extracted as empty/blank pages; not usable as a primary source in this stage, consistent with B01 data notes on the CRISIL borrowings discrepancy."
+  - "HFFR public-infrastructure mandate and 'only listed HFFR producer in India' claims are management assertions (concalls) with no gazette notification, circular, or independent market-share source produced in these documents; carried as management claim (0.7x), not documented (1.0x)."
+  - "No SKU-count time series, R&D headcount trend, or cross-sell/wallet-share metric disclosed anywhere in the file set, preventing A4, F1, and C1 from being scored above WEAK."
+flags:
+  - "C2 (customer concentration) and G2 (WC improvement trajectory) both show evidence running opposite to the category's defined positive direction (concentration rising, WC days rising); scored NONE, not credited as moats, and not double-counted against the Block B deal-breaker already carried in B01."
+  - "F2 (execution moat) is capped at MODERATE despite strong capex-completion evidence because of the FY26 volume guidance miss and twice-revised BESS revenue guidance (per injected B05 promise-delivery record, grade B)."
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "active, deepening"}
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Strong", evidence_type: "documented/claim", time_to_materialise: "active / 12-24m"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "ongoing / 2029-30"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 13, claim: 8, inference: 2}
+completionist_recount: "recount performed: 13 documented items across 6 categories (B2, A1, E1, F2, G1, R1); 7 active Strong/Moderate rows total, within the realistic base rate once F2's mixed delivered/missed record is accounted for."
+catalysts_12m:
+  - {catalyst: "Bhiwadi XLPE (48,000 MTPA) utilisation ramp from standing start", window: "12m", evidence_type: "documented", anchor: "Q4 FY26 call (commissioned last week of April 2026); AR p.20"}
+  - {catalyst: "BESS Phase-1 commissioning, Ahmedabad", window: "H2 FY27 (within 12m)", evidence_type: "claim (guidance revised twice)", anchor: "Q3 FY26 call; Q4 FY26 call"}
+  - {catalyst: "Two remaining US UL product-grade listings for direct Americas exports", window: "targeted from June 2026", evidence_type: "claim", anchor: "Q3 FY26 call"}
+  - {catalyst: "FY27 guidance delivery test: 231,000 MT volume / ~13% revenue growth / ~11% EBITDA margin", window: "12m", evidence_type: "claim", anchor: "Q4 FY26 call"}
+capex_embedded_growth_pct: 110
+optionality_register:
+  - {optionality: "220 kV XLPE cable compound qualification", converting_evidence: "certification/approval grant tied to disclosed revenue-linked launch", first_appears: "AR technology note / exchange filing / concall", window: "FY2029-2030"}
+  - {optionality: "440 kV / HVDC cable compounds", converting_evidence: "committed capex or formal R&D programme announcement with timeline", first_appears: "concall / AR", window: "undated, 5yr+"}
+  - {optionality: "Remaining two UL (US) product-grade listings", converting_evidence: "UL listing certificate issued, referenced in filing", first_appears: "exchange filing / concall", window: "~FY26-27"}
+  - {optionality: "BESS scale-up beyond Phase-1 (1 GWh to 5 GWh by FY30) and named Tier-1 developer relationships", converting_evidence: "signed MOU or supply contract with named counterparty, or disclosed order book", first_appears: "exchange filing / concall", window: "next 1-2 quarters for MOU signing; full 5 GWh target <3 years per management"}
+  - {optionality: "MWCNT / graphene / carbon-nanotube advanced materials R&D", converting_evidence: "filed or granted patent, or disclosed licensing arrangement", first_appears: "AR IP/technology note", window: "undated"}
+combined_assessment: "GOOD"
+combined_reasoning: "GOOD backward score (capped by the Block B cash-conversion deal-breaker) paired with a MODEST forward emerging-moat score corroborates rather than upgrades the Gate 0 classification; the same capex cycle that funds G1/R1 also drives the G2/Block B working-capital deterioration."
+top_moat_risks:
+  - "B2 qualification lock-in is real but not exclusive; well-capitalised new entrants (Adani, UltraTech in PVC) could pursue backward integration or license competing technology, eroding the 3-4 year certification barrier faster than expected."
+  - "G1 war chest is funded by the same capex cycle causing the Block B working-capital deterioration (WC days +18.63 FY24-FY26); further WC-day deterioration in FY27 would compress the net-debt-free buffer without new debt being drawn."
+  - "R1 regulatory tailwinds (HFFR public-infra mandate, BESS VGF) are sector-wide and policy-dependent, not DDEV-specific; scheme dilution or disbursement delay removes the tailwind without any company-specific failure."
+  - "F2 execution moat is the weakest of the active rows (FY26 volume miss, twice-revised BESS guidance per B05), directly undercutting confidence in the BESS and 220 kV timelines the rest of this scan relies on."

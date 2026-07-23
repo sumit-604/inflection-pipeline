@@ -1,0 +1,59 @@
+stage: B03-ardeep
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Lease discount rate % NOT FOUND IN DOCUMENT (Note 52 describes it only as 'the Company's actuarial discounting rate', no numeric % disclosed)."
+  - "Capitalisation threshold (Rs) NOT FOUND IN DOCUMENT."
+  - "3-year receivables ageing and 3-year inventory-days trend NOT FOUND (document discloses only FY25 and FY24 comparatives)."
+  - "MAT credit / unrecognised DTA disclosure NOT FOUND explicitly (Section 115BAA implied by the 25.168% statutory rate used, but not stated verbatim)."
+  - "Shareholding pattern / FII-DII-institutional ownership trend NOT FOUND IN THIS AR (no distribution-of-shareholding table located; only promoter % via Directors' Report is AR-anchored)."
+  - "Market price data (high/low, BSE/NSE) and P/E NOT FOUND IN THIS AR; manifest cmp and market_cap_cr are unfilled per B00, so Value-leg strategy screens cannot be completed from this stage."
+  - "Prior-year (FY23-24) Chairman's Letter not available in this pipeline's document set, so a true YoY tone-drift comparison (Phase 6D) is not possible."
+flags:
+  - {type: FLAG-CASH, reason: "FY25 finished-goods inventory +60.3% vs revenue +7.08% credited Rs 13.28 Cr to FY25 COGS (Note 29) against total PAT growth of only Rs 3.83 Cr; CFO/EBITDA is 0.48 (FY25) and 0.41 (FY24), persistently below the 0.7 threshold in both disclosed years despite CFO/PAT improving within this AR's own window (0.64 FY24 -> 0.74 FY25); reconciles with, does not contradict, Gate 0's cross-AR deteriorating cash-conversion flag (cumulative FY24-26 CFO/PAT 0.594) -- the deterioration crystallises in FY26, just outside this AR's window."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge, no disclosed promoter selling, stable 74.17% holding (Bbigplas Poly Pvt Ltd) -- clean on the preliminary checks available within this AR. Governance proximity flag (not a promoter-selling flag): 2 of the Company's 3 independent directors (Samir Kumar Dutta, Ramya Hariharan) also serve as independent directors of Kkalpana Industries (India) Ltd, the fellow-subsidiary counterparty in the material, only partly explained royalty/purchase RPTs (Note 41). Full promoter verdict deferred to B08."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "GARP (Watchlist) / Capex-Led Growth (Pass-Watchlist)"}
+overall_quality: 6            # /10 with the four 25% components
+quality_components: {governance: 6, accounting: 6, balance_sheet: 8, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would not have reason to stop -- clean audit opinion, all CARO hard-stop clauses (fraud, borrowing default, adverse cash flow, unspent CSR) clean."
+  - "Phase 2: a human reviewer would not have reason to stop -- Note 52's arithmetic break is a disclosure/review-quality failure, not a balance-sheet misstatement (BS figures reconcile correctly to Note 17)."
+  - "Phase 3: a human reviewer would not have reason to stop -- no adverse cash flows, no default, no going-concern indicator; the FG-inventory/cash-conversion pattern is a monitorable, not a halt trigger."
+  - "Phase 4: a human reviewer would not have reason to stop -- the D/E reason-for-variance mischaracterization and the FX-hedging overclaim are narrative-precision issues, not fraud or misstatement."
+  - "Phase 5: a human reviewer would not have reason to stop -- no SEBI action, no fraud, no pledge; cross-board RPT-counterparty overlap and committee concentration are governance texture items to monitor."
+triple_pass_verification:     # Phase 2 reconciliation result
+  verified: 15                 # of 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Related-party concentration / Kkalpana Industries dependency (purchases + royalty, with an unexplained ~76-point swing in royalty-volume coverage)", evidence_anchor: "Note 41 (p.176), Directors' Report Sec.42 RPT limit table (p.48)"}
+  - {risk: "Working-capital / inventory-buildup risk tied to the FY25 finished-goods swing specifically", evidence_anchor: "Note 10/29 (p.161-162, 170)"}
+  - {risk: "Gratuity underfunding (16% funded, Rs 0 employer contribution 2 consecutive years vs actuary's own recommended contribution)", evidence_anchor: "Note 39(b) (p.173)"}
+  - {risk: "Promoter-family / KMP succession concentration (3 of 6 board seats, CMD/WTD/CEO roles held by the Surana family)", evidence_anchor: "Directors' Report Sec.27 (p.53), Corporate Governance Report Sec.2 (p.91)"}
+  - {risk: "Single-segment / export-market concentration (single reportable operating segment; 21.2% overseas revenue with growing unhedged FX exposure)", evidence_anchor: "Note 40(a) (p.176), Note 43 (p.179-180)"}
+guidance_table:
+  - {claim: "Long-term revenue target", number: "Rs 5,000 Cr", timeframe: "FY2030", credibility: "Requires ~14%/yr forward CAGR vs trailing 4-yr CAGR of only 5% (Financial Highlights chart, p.12) and FY25's own 7% delivered growth; rests on capacity (XLPE Bhiwadi) not yet commercial as of this AR"}
+  - {claim: "Capex programme", number: "Rs 300 Cr over 3 years", timeframe: "FY25-FY27, beginning FY24-25", credibility: "FY25 actual capex (incl. ROU) was Rs 57.70 Cr, ~19% of the 3-year total in year one -- plausible early-ramp pace, not yet independently provable as on-schedule"}
+  - {claim: "HFFR capacity expansion", number: "5,000 -> 20,000 MTPA", timeframe: "by FY27", credibility: "Partly executed (5,000 MTPA achieved); remaining 15,000 MTPA forward-looking, not verifiable within this AR"}
+  - {claim: "PE capacity expansion", number: "-> 25,000 MTPA", timeframe: "by FY27", credibility: "Forward-looking, not verifiable within this AR"}
+  - {claim: "132 KV cable compound commercial rollout", number: "n/a", timeframe: "end of FY2026", credibility: "Forward-looking, outside this AR's window"}
+  - {claim: "220 KV cable compound commercial availability", number: "n/a", timeframe: "FY2029", credibility: "Forward-looking, long-dated"}
+  - {claim: "Historical 5-year PAT CAGR", number: "46%, from Rs 27 Cr FY20 base", timeframe: "FY20-FY25", credibility: "Arithmetic checks out; FY20-22 base years are asserted (pre-demerger entity), not independently re-tabulated within this AR"}
+monitorables:
+  - {metric: "FY26 finished-goods inventory days / FG-to-revenue ratio", threshold: "Should normalize toward FY24's ~9.6% FG/revenue ratio; a further rise above FY25's ~14.4x FG-to-quarterly-COGS pace would extend the earnings-quality caution", where: "Next annual report Note 10/29, or quarterly results inventory disclosure", why: "Rs 13.28 Cr of FY25's Rs 3.83 Cr PAT growth traces to this single line; unwind risk if sell-through lags"}
+  - {metric: "Note 52-equivalent lease-liability roll-forward reconciliation in the FY25-26 AR", threshold: "Roll-forward should foot to the balance sheet without a residual gap", where: "Next annual report, Leases note", why: "Tests whether the disclosure-control weakness was a one-off or a recurring review-quality issue"}
+  - {metric: "Kkalpana Industries royalty expense and royalty-implied volume coverage (royalty Rs Lacs / Re 1 per kg / total disclosed sales volume MT)", threshold: "A further decline toward 0% or a reversion back toward 100% coverage without explanation should both be questioned directly", where: "Next annual report Note 41, cross-referenced against MD&A/Directors' Report volume disclosure", why: "The FY24->FY25 collapse from ~100% to ~24% coverage is unexplained; management should be asked directly at the next opportunity (concall or AGM)"}
+  - {metric: "CFO/EBITDA and CFO/PAT, extended into FY26 using results PDFs", threshold: "CFO/EBITDA sustaining below 0.5 or cumulative multi-year CFO/PAT staying below 0.7 would confirm the Gate-0 deterioration seen just outside this AR's window", where: "FY26 results PDFs (Q3/Q4 FY26) and the next annual report", why: "This AR shows within-window improvement (0.64->0.74 CFO/PAT) that Gate 0's cross-AR view shows reversing in FY26 -- resolving this gap is central to the cash-conversion quality-of-earnings question"}
+  - {metric: "Gratuity plan employer contribution", threshold: "Any continued Rs 0 contribution against the actuary's own recommended ~Rs 90-110 Lacs would extend a 3rd consecutive year of non-funding", where: "Next annual report Note 39(b)", why: "Governance/cash-discipline signal; liability is fully recognized so not a going-concern issue, but a persistence pattern worth tracking"}
+  - {metric: "FX hedge coverage ratio (hedged forwards / total unhedged trade receivable + payable exposure)", threshold: "A stated hedge-ratio policy or target coverage %, or continued growth in the unhedged PBT sensitivity beyond the FY25 63.6% YoY increase", where: "Next annual report Note 43, or investor presentation", why: "MD&A's 'careful and regular hedging' claim currently overstates the disclosed partial coverage; a stated policy would resolve the Phase 6E gap"}
+strengths_top3:
+  - "Net-cash, low-leverage balance sheet (Debt/Equity 0.06x, net cash Rs 58.09 Cr) funding a real, internally-financed capex programme (capex/depreciation stepped up to 3.84x FY25) with zero new debt and no dilution."
+  - "Clean, unqualified audit opinion with hard-clean CARO checks on fraud, borrowing default, adverse cash flow, and unspent CSR; no pledge, no whistleblower complaints, no SEBI action."
+  - "Candid, verifiable volume-vs-price disclosure (14% volume growth vs 7% revenue growth explained by price correction) -- a genuine, checkable credibility point rather than narrative spin."
+red_flags_top3:
+  - "Note 52 lease-liability roll-forward: a verified, self-contained Rs 492.02 Lacs internal arithmetic break -- a genuine disclosure-control/review-quality failure (not a balance-sheet misstatement)."
+  - "Kkalpana Industries royalty-implied volume coverage collapsed from ~100% (FY24) to ~24% (FY25) of total sales volume, fully AR-anchored via the disclosed Re 1/kg mechanism, with no explanation anywhere in the document."
+  - "Earnings-quality/cash-conversion caution: Rs 13.28 Cr FY25 finished-goods inventory P&L credit against only Rs 3.83 Cr total PAT growth; CFO/EBITDA persistently below 0.7 in both disclosed years; within-AR CFO/PAT improvement (0.64->0.74) that Gate 0's cross-AR view shows reversing in FY26."
+best_fit_strategy: "GARP (Watchlist), corroborated by Capex-Led Growth (Pass/Watchlist)"
+one_line_verdict: "Financially clean, cash-conversion-cautious grower; GARP thesis intact but not yet accelerating."

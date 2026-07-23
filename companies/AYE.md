@@ -10,10 +10,14 @@ returns recovery is real and documented, but at CMP Rs 183 the stock already
 carries it, so watch and accumulate on dips below Rs 166, not at market.
 
 ## DECISION STATUS AND ENTRY ZONE
-- As of 2026-07-22: WATCHLIST (BUY-ON-DIPS), on-valuation. CMP Rs 183.22.
-- Entry Rs 133-166, MoS Rs 133. Base fair value Rs 324 on the operator-approved
+- As of 2026-07-23: HELD. Operator took a 4% position at Rs 132 (2026-07-23),
+  right at the bottom of the zone (Rs 132 is just below the MoS Rs 133).
+- Pipeline verdict was WATCHLIST (BUY-ON-DIPS) at CMP Rs 183.22 (2026-07-22);
+  entry Rs 133-166, MoS Rs 133, base fair value Rs 324 on the operator-approved
   15x FORWARD destination PE (additive track 15.4-16.0x).
-- Tier A (25% hurdle). Position size Small (2-3%), starter accumulate-on-dips.
+- Two operator overrides on the buy: size 4% is above the framework Small (2-3%)
+  ceiling, and the fill Rs 132 sits at the MoS floor. Both documented below.
+- Tier A (25% hurdle).
 - Gate: PROCEED WITH CAVEATS (FLAG-CASH residual INDETERMINATE earnings quality).
   FTTCP composite +4/8 DEEP WATCH leaning BUY-ON-DIPS. Devil's advocate WEAKENED
   BUT ALIVE (all four dimensions weakened, none destroyed).
@@ -33,6 +37,9 @@ carries it, so watch and accumulate on dips below Rs 166, not at market.
   the 18x cap and the pillar band.
 - 2026-07-22: Earnings basis FORWARD (forward P/E on forward EPS, horizon FY29).
   Reasoning: "since the growth is strong."
+- 2026-07-23: BOUGHT 4% at Rs 132. "I have taken position 4% at 132." Override on
+  size (4% vs framework Small 2-3%) and a fill at the MoS floor (Rs 132 < MoS Rs 133).
+  Decision Status moved WATCHLIST (BUY-ON-DIPS) -> HELD by operator action.
 
 ## ACTIVE TRIPWIRES
 - Gross Stage III (GNPA) reversing upward from 4.49% (Jun-2026) for two consecutive

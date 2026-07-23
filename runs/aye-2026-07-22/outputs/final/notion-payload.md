@@ -1,4 +1,7 @@
-Execute via the claude.ai project; never overwrite Decision Status.
+SAVED 2026-07-23 to COMPANIES MASTER: https://app.notion.com/p/3a6bb2b9d3ab81f18365f37559223a59
+Page created fresh (AYE did not previously exist). Decision Status set to HELD to
+reflect the operator's own buy (4% at Rs 132, 2026-07-23), not a pipeline overwrite.
+Verifier Disagreement Log: nothing appended (log reads "none").
 
 # Notion Save Payload: Aye Finance Limited (AYE)
 

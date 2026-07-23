@@ -1,0 +1,58 @@
+stage: B09-tam
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No current DDEVPLSTIK CMP/market cap/P/E in this run's inputs (manifest cmp=0.0, market_cap_cr=0.0 per B00-inputs); 5E valuation-implication line left as NOT FOUND rather than estimated."
+  - "Two WebFetch attempts (KNN India CRISIL cable-sector article; INDmoney Adani-cable-industry article) returned HTTP 403; their figures are referenced only via WebSearch snippet summaries, not full source text, and are given lower weight."
+  - "Exact cable-compound-specific revenue split for KLJ Polymers and Chemicals Ltd (vs its broader plasticizer/PVC-compound business) NOT FOUND; a 40-50% cable-allocation assumption is used transparently in Method 3, flagged as an estimate not a documented split."
+  - "No quantified import-substitution data (compound import volume/value) found for Method 4; Dow/Borealis import competition in HV XLPE is a named, sourced qualitative claim (May-2026 concall) but not quantifiable, so Method 4 is NOT FOUND/not usable rather than estimated."
+  - "No independent, transparent India-specific 'cable/wire compound market' research report found; all methods rely on a single non-transparent aggregator (IndexBox), assumption-heavy bottom-up construction, or global-benchmark extrapolation."
+flags:
+  - "Management's core-market volume claim ('~2.5 lakh tonnes cable-compounding industry, DDev ~1/3rd share', AR MD&A p.12 / Inv. Pres. p.19) is undated and internally inconsistent with DDev's own reported FY26 production of 2,01,370 MT (80% of the claimed total market while claiming only 1/3 share is mathematically impossible in a stable market); most likely a stale, unrevised statistic predating DDev's own capacity build-out; given zero weight in the formal triangulation."
+  - "Investor presentation carries two different FY30 BESS revenue targets in the same document: '₹2,000-2,500cr from BESS by FY30' (p.33, Key Priorities) vs '~₹4,000-4,500cr Commercial Scale FY30' (p.13, Strategic Roadmap chart); this report uses the lower, more clearly-labelled figure per the conservative-bias rule and flags the inconsistency, consistent with B07's own flag of twice-revised BESS guidance."
+  - "Core-TAM triangulation methods diverge materially (M1 ~₹17,280-21,120cr vs M2/M3/M5 clustering ₹3,200-13,300cr); resolved by selecting a conservative (M3-based, ₹7,100cr) and realistic (₹12,000cr) pair rather than averaging, per pipeline instruction; every core figure carries L confidence given the absence of a dedicated third-party compound-market report."
+  - "Third-party 'market size' reports for the adjacent (finished-cable, not compound) scope show 10-20x variance depending on methodology (Mordor's $23.13bn/₹2,22,000cr 2026 India wire & cable figure vs the investor presentation's own ₹1,20,000cr FY27E chart) - market-research-firm figures for this space are directional only."
+  - "TAM/SAM figures in this YAML are CORE compounding business only, per the SOTP structure the business actually has; BESS is sized as a separate runway in the report body (cumulative FY26-30 equipment-scope opportunity ~₹1.67-1.87 lakh Cr). som_3yr_cr, som_5yr_cr, and som_implied_revenue_cagr below are COMBINED core+BESS, since those are the figures stage 11 needs as an actual company-revenue cross-check."
+  - "mgmt_claim_cr/mgmt_claim_ratio below monetise management's own '~2.5 lakh tonne market' statistic at DDev's own realisation and compare it to the conservative TAM estimate; the resulting sub-1x ratio reads as 'unusually conservative' by the standard rubric but reflects a stale/internally-inconsistent management statistic, not genuine forecasting conservatism - see Section 2 for the full reasoning."
+market_definition: "India domestic B2B market for polymer-based cable/wire/allied compounds (PVC, XLPE/Sioplas/Semicons, HFFR, engineering, Antifab) sold to cable/wire and allied manufacturers, excluding finished cables, captive/backward-integrated compounding, and BESS (sized separately)."
+tam_cr: {conservative: 7100, realistic: 12000}
+sam_cr: 9600
+sam_pct_of_tam: 80
+som_3yr_cr: 5378
+som_5yr_cr: 7666
+som_implied_revenue_cagr: {yr3: 22.1, yr5: 21.0}
+current_sam_share_pct: 30.8
+revenue_headroom_x: 3.25
+tam_growth_pct: 9
+runway_class: "STRONG"
+mgmt_claim_cr: 3628
+mgmt_claim_ratio: 0.51
+mgmt_claim_read: "unusually conservative (but stale/internally-inconsistent, not credible management modesty - see Section 2)"
+capacity_check: "sufficient — core SOM_3yr (₹4,078cr) achievable at ~89-90% blended utilisation of current ~3,15,000 TPA installed capacity, further supported by disclosed FY27 capex; BESS SOM (₹1,300-2,600cr) well within committed 5 GWh Phase-1 capacity envelope"
+methods_used: ["top-down", "bottom-up", "peer-aggregation", "global-benchmark", "capacity-target-bottom-up (BESS)"]
+stale_data_flags:
+  - {datapoint: "Cable-compounding industry ~2.5 lakh tonnes, DDev ~1/3rd share", source: "AR MD&A p.12 / Investor Presentation p.19", year: "undated; inferred pre-FY22 given inconsistency with DDev's own FY26 volume"}
+  - {datapoint: "Wires and Cables Industry Value chart underlying source (RRKabel Industry Report)", source: "cited in Investor Presentation p.19", year: "2023"}
+  - {datapoint: "Shakun Polymers revenue >₹500cr", source: "Tofler, via web search", year: "FY24"}
+  - {datapoint: "KLJ Polymers and Chemicals Ltd revenue ₹1,900cr", source: "Tofler, via web search", year: "FY24"}
+  - {datapoint: "India plastic compounding market base year $4,016.3mn (Grand View Research)", source: "web search", year: "2023"}
+searches_performed:
+  - "India wire and cable industry market size 2026 crore IBEF"
+  - "India wire and cable industry growth rate GDP CAGR CRISIL ICRA 2026"
+  - "India BESS battery energy storage market size 2030 GWh crore CRISIL"
+  - "CEA National Electricity Plan battery energy storage 2029-30 GW GWh investment crore"
+  - "India cable compound polymer compounding market size crore Shakun Polymers KLJ Polymers"
+  - "India PVC cable compound price per kg XLPE compound price per kg 2026"
+  - "\"cable compound\" market India 2.5 lakh tonnes OR \"250000 tonnes\" OR \"2,50,000\""
+  - "India BESS market VGF tender pipeline 2026 GWh awarded cumulative"
+  - "India polymer compounding market size 2026 billion USD Mordor OR Grand View"
+  - "USD to INR exchange rate July 2026"
+  - "Shakun Polymers revenue crore FY25 FY26 IPO"
+  - "KLJ Group polymer compounds revenue turnover crore India"
+  - "India HFFR halogen free flame retardant compound market size 2026 million USD"
+  - "global XLPE cables market size 2025 billion 2034 report"
+  - "WebFetch: knnindia.co.in CRISIL cable-sector article (403, failed)"
+  - "WebFetch: indmoney.com Adani-cable-industry article (403, failed)"
+searches_skipped: []

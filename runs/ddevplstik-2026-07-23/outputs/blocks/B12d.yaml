@@ -1,0 +1,21 @@
+stage: B12d
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+peers_audited: 5
+substantive_confirmed: 4
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "APCOTEXIND", missed_item: "Q1 FY26 call (31-Jul-2025), Q&A Dhaval Shah/Abhiraj Choksey: 'There is an application for, in batteries, in these car batteries, I think specialty application... the large battery plants are in China and Japan, US' -- a directly claim-relevant statement to Q4 (peer entry into battery-adjacent applications) that was never used, and that directly falsifies B06's own 'never once uses the word battery' claim", anchor: "inputs__peer-concalls__APCOTEXIND-Concall_Aug_2025_Transcript.txt lines 413-421"}
+  - {peer: "BEPL", missed_item: "Screening CSV (Data_Sheet.csv) contains CWIP rising Rs11.4cr (FY25) to Rs30.7cr (FY26) and a Q1 FY27 sales/profit spike (Rs472.15cr / Rs65.6cr vs Rs341.61cr / Rs51.6cr the prior quarter) coinciding with the RM-shock window -- unused by any pipeline stage as a coarse cross-check; out of stage 6's injected-input scope (transcripts only) so this is an input-assembly gap, not a B06 execution failure", anchor: "inputs/screening/BEPL-Data_Sheet.csv, Balance Sheet and Quarterly blocks"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06.md lines 88, 119 (and the BEPL row of B06-peers.yaml peer_coverage_map via inherited prose)", description: "BEPL business characterization ('synthetic rubber/latex/emulsion polymer producer') is attributed to 'its screening CSV' and 'Stage 5', but neither source contains this text anywhere (grep-confirmed zero occurrences of rubber/latex/emulsion/ABS/synthetic/Bhansali in all 12 screening CSVs and in B05.md/B05-concall.yaml); a fabricated anchor inflating the BEPL blind-spot framing"}
+  - {severity: "MAJOR", location: "B06.md lines 18-19 and the Q4 answer (lines 61-69)", description: "'Apcotex never once uses the words ... battery ... across all four transcripts' is false; 'battery' appears in the Q1 FY26 call (31-Jul-2025, textcache lines 413-421) in a directly claim-relevant context (peer battery-application exposure) never surfaced in Q4's analysis, despite that transcript being marked SUBSTANTIVE and claimed as read in full"}
+  - {severity: "MINOR", location: "inputs/screening/BEPL-Data_Sheet.csv", description: "BEPL's quantitative screening data (CWIP trend, Q1 FY27 sales/margin spike) was available in this run's inputs and left completely unexamined by the pipeline as even a coarse cross-check on Q2/Q4; outside stage 6's own injected-input scope, so an input-assembly gap rather than a B06 execution fault"}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 80

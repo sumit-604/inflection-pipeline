@@ -1,0 +1,13 @@
+confidence_delta:
+  numerical_acceptance: 98.6      # B12a: 0 CRITICAL, 1 MAJOR (Note 52 disclosure gap, already flagged by B02/B03)
+  redflag_coverage: 64          # B12b: 9 of 14 independent flags caught; 1 MAJOR (132kV 'delivered' generous, tally honestly 4/4/4); BINDING component
+  framework_adherence: 98       # B12c: Gate 0 + Emerging Moat portion only; valuation adherence PENDING phase 3
+  peer_utilisation: 80          # B12d: peer-fit judgment sound; 2 MAJOR B06 fabrications on peripheral BEPL/battery points
+  overall: 64             # min of the four; redflag-bound
+  band: "60-74 -> PROCEED verdicts downgrade one level (not REWORK; all acceptance >=60, Verifier A 0 CRITICAL)"
+  valuation_framework_adherence: pending_phase_3
+rework_triggers:
+  verifier_a_critical: false      # 0 CRITICAL numerical findings
+  any_acceptance_below_60: false  # min acceptance 64 (B12b)
+  source_fidelity_mismatch: false # B12a MAJOR is an ANCHOR-NOT-FOUND on a known disclosure gap, not a verdict-card MISMATCH
+  rework: false

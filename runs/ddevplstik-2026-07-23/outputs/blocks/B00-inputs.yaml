@@ -41,9 +41,9 @@ input_gaps:
   - type: own_screening
     severity: medium
     effect: "Gate 0 (stage 1) has NO DDEVPLSTIK screening; extracts from results PDFs + AR financial statements per degradation map"
-  - type: stale_annual_report
-    severity: high
-    effect: "only AR is FY2020; stages 2/3/4/7 build on ~6yr-old report; backward baseline thin; recent-year detail comes from results PDFs + concalls + presentation only"
+  - type: mislabeled_annual_report
+    severity: low   # CORRECTED by stage-2 pass1: file "Annual_Report_2020.pdf" is actually the FY2024-25 AR
+    effect: "the AR named Annual_Report_2020.pdf is really the FY2024-25 Annual Report (year ended 31-Mar-2025, auditor+board signed 15-May-2025, comparatives FY2023-24). Only the FILENAME is stale; content is ~14mo old, NOT 6yr. STANDALONE financials (CARO XXI: not a holding company, no consolidation). Reveals fellow-subsidiary Kkalpana Industries (RPT royalty + purchases). Stages 2/3/4/7/8 run on a RECENT report; backward baseline is FY24-25 depth, not thin. Same collector mislabel class as MAPMYINDIA/AMAGI."
 notes:
   - "manifest cmp=0.0 and market_cap_cr=0.0 unfilled; affects phase-3 valuation entry math, not phase-1 evidence"
   - "manifest sector_cap_row 'Pharma / CDMO' is WRONG for a plastics/polymer compounder; auto-picked, must be corrected before phase-3 stage 11"

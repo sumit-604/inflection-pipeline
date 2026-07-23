@@ -1,0 +1,67 @@
+stage: B04-bizmodel
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Granular per-product-line revenue % (XLPE vs Sioplas vs HFFR vs Engineering vs Antifab individually) NOT FOUND in AR or Inv. Pres.; only aggregate PVC/PE/Others splits disclosed, and those two documents use non-identical bucketing (AR standalone FY25: PE ~85.6%; Inv. Pres. consolidated FY26: PE 72% + Others 18%)."
+  - "Named BESS customer contracts/LOIs beyond the generic EPC/integrator target description NOT FOUND in AR or Inv. Pres."
+  - "Segment-level (core vs BESS) P&L disclosure not yet available; BESS revenue recognition starts 2HFY27 per Inv. Pres. p.11."
+flags:
+  - "AR (standalone FY25, PE ~86% of revenue) and Inv. Pres. (consolidated FY26, PE 72% / Others 18%) use apparently different product-category bucketing for the same underlying business; reconcile before relying on either split for segment modelling."
+  - "R&D expenditure is only 0.06% of turnover (AR FY25) despite an innovation/certification-led positioning narrative; the durability of the R&D-based moat component is unclear and should be probed with management."
+  - "BESS is a genuinely distinct business (assembly/integration, not compounding) with zero operating history as of this run; treat all FY27+ BESS figures as guidance, not track record."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "PVC Compounds", type: "manufacturing - cost-plus B2B compounding", pct_of_revenue: 11, predictability: "M"}
+  - {name: "PE Compounds (XLPE/Sioplas/Semicons + HFFR + Engineering + Antifab)", type: "manufacturing - specialty cost-plus B2B compounding", pct_of_revenue: 86, predictability: "H"}
+  - {name: "BESS (battery storage assembly/integration)", type: "manufacturing - project-linked assembly", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Customer qualification / certification switching costs", durability: "high"}
+  - {moat: "Scale and coastal-logistics cost advantage", durability: "medium"}
+  - {moat: "Regulatory/product certification (KEMA, CPRI, VDE, POWERGRID, NTPC, UL)", durability: "medium"}
+  - {moat: "R&D / innovation claims", durability: "low-medium (spend is only 0.06% of turnover, undermines durability)"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts: core compounding on EV/EBITDA + BESS on EV/Sales-or-capacity (Rs/GWh)", why: "Core and BESS have materially different margin profiles, capital intensity, and growth/track-record maturity; a single blended multiple misprices one or both segments"}
+  secondary: {method: "EV/Sales, BESS segment stand-alone cross-check", why: "BESS is pre-EBITDA-visibility (recognition starts 2HFY27, initial margins 5-8%), so a revenue multiple is the only usable cross-check until margin ramps"}
+  tertiary: {method: "DCF, core compounding business only", why: "Core business has a long enough track record (FY21-26) for defensible cash-flow assumptions; BESS should be excluded from DCF until it has several quarters of reported revenue"}
+  not_applicable:
+    - "Dividend Discount Model - company is in a multi-year reinvestment phase funded by internal accruals, not a distribution story"
+    - "Asset-based / Book value (P/B, NAV) - ROE of 20-28% materially exceeds what a book-value lens would capture; BESS has no comparable asset base yet"
+    - "Order-book-based (EPC-style) valuation - core sales cycle is short (max ~90-day export contracts), no multi-year order book discipline exists in the core business"
+irrelevant_ratios:
+  - {ratio: "Gross margin % as a standalone trend", why: "Mechanically moves with the absolute RM price level under cost-plus pricing; track EBITDA/kg spread instead"}
+  - {ratio: "Standalone blended trailing P/E", why: "Understates BESS optionality pre-earnings and blends two businesses with different growth/margin trajectories into one number"}
+  - {ratio: "Order book / backlog", why: "Not a project/EPC business model; sales are short-cycle spot/repeat orders"}
+  - {ratio: "Dividend yield", why: "Company is in a multi-year capex/reinvestment phase (core + BESS), not an income story"}
+  - {ratio: "Debt/Equity as the primary leverage-risk lens", why: "Company has been net debt-free since Q4FY24; growth is accrual-funded, so capex-execution risk matters more than balance-sheet leverage risk"}
+must_track_metrics:
+  - {metric: "EBITDA per tonne/kg (spread)", healthy: "Rs 14,000-16,000/tonne (Rs 14-16/kg)", red_flag: "Sustained fall below ~Rs 10,000-12,000/tonne"}
+  - {metric: "Capacity utilization by product line (esp. PVC, HFFR)", healthy: "Trending toward 70%+ within 2-3 quarters of commissioning", red_flag: "Stuck below ~50% for 3+ quarters post-commissioning"}
+  - {metric: "Production volume growth (MT)", healthy: "Double-digit YoY, in line with FY27 guided ~15%", red_flag: "Sub-5% for two consecutive quarters"}
+  - {metric: "Net working-capital days (receivables + inventory - payables)", healthy: "~65-73 days (derived from AR FY25 standalone)", red_flag: "Stretching past ~90 days"}
+  - {metric: "BESS revenue vs. guided ramp (Rs 200-250 Cr FY27, Rs 800-900 Cr per GWh at scale)", healthy: "On or above guided range once recognition starts 2HFY27", red_flag: "Materially below guided range with no stated explanation, or Q3FY27 commissioning slippage"}
+unit_economics:
+  unit: "One tonne (MT) of polymer compound sold (core); one GWh of BESS capacity delivered (new vertical)"
+  revenue_per_unit: "Rs 1,45,136/tonne FY26 (core, Inv. Pres. p.26); ~Rs 800-900 Cr per GWh at scale (BESS, Inv. Pres. p.12)"
+  margin_per_unit: "Rs 15,768/tonne EBITDA FY26 (core, Inv. Pres. p.26), roughly stable in the Rs 14-16k/tonne band FY24-26; BESS EBITDA margin guided 5-8% initial ramping to >10% at scale (Inv. Pres. p.11-12)"
+  key_lever: "Mix-shift toward higher-margin lines (HFFR/XLPE at 8-15% EBITDA margin vs Antifab's 3-5%) and utilization gains on largely fixed manufacturing overhead; RM pass-through caps but does not eliminate margin risk during price shocks"
+first_deterioration_signals:
+  - {risk: "Loss of a top qualification-based customer", first_signal: "Trade receivables/revenue growth by top-5/top-10 customer concentration"}
+  - {risk: "Pass-through lag failing during a violent RM spike", first_signal: "EBITDA/tonne falling below the ~Rs 14-16k/tonne band"}
+  - {risk: "BESS capex overrun or funding shift to debt", first_signal: "Net Debt/Equity moving off ~0.0x"}
+  - {risk: "BESS Phase-1 commissioning slippage or customer-contract shortfall", first_signal: "BESS segment revenue vs. guided Rs 200-250 Cr FY27 / Rs 300-500 Cr FY28-window ranges once disclosed"}
+  - {risk: "R&D underinvestment eroding the certification/innovation moat", first_signal: "R&D expenditure as % of turnover staying flat near 0.06%, and stalling new certification/approval wins"}
+mgmt_questions:
+  - "Reconcile the AR standalone (PE ~86%) vs Inv. Pres. consolidated FY26 (PE 72% / Others 18%) product-category revenue split - what changed?"
+  - "What is the actual EBITDA-per-kg spread by individual product line (PVC, XLPE/Sioplas, HFFR, Engineering, Antifab), not just the blended average?"
+  - "Which named EPC/integrator customers or LOIs are secured for BESS ahead of Q3FY27 commissioning?"
+  - "Why is R&D expenditure only 0.06% of turnover despite the innovation-led positioning (WTR XLPE, 132kV/220kV roadmap)?"
+  - "If FY27 guided 15% volume growth does not materialise, is current ~49-50% PVC/HFFR utilization a stranded-asset risk or a demand-timing issue?"
+  - "Is the combined Rs 350-400 Cr core + Rs 150-200 Cr BESS capex genuinely fully accrual-funded through the full build, or could a term-loan drawdown be contemplated if BESS ramp slows?"
+  - "How much RM-price risk genuinely sits unhedged on DDev's books during the ~90-day export contract cycle, especially post the Feb-2026 Israel-Iran shock?"
+one_line_verdict: "Durably-moated cost-plus compounder self-funding an unproven, pre-revenue assembly bet - value the two halves separately."

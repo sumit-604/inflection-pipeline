@@ -1,0 +1,37 @@
+stage: B06-peers
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["BEPL has no concall transcript in this run's inputs, only a screening CSV; cannot be assessed and is recorded UNUSED rather than fabricated"]
+flags:
+  - "Peer set has zero product/end-market overlap with DDev (cable & wire, XLPE, HFFR, BESS) beyond shared crude-linked feedstock exposure; treat all UNVERIFIABLE verdicts here as peer-fit limitations, not evidence against DDev's claims"
+  - "Q2 'normalized by April 2026' sub-claim is contradicted by Apcotex's own 7-May-2026 commentary (Strait of Hormuz still closed, RM coverage managed only to end-June, ongoing competitive distortion in Turkey/Egypt) even though the core RM-shock existence/magnitude/timing is corroborated; flag for direct cross-check against DDev's own Q4 FY26/Q1 FY27 primaries"
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "Raw-material prices spiked >50% industry-wide from the Israel-Iran/West Asia conflict beginning ~28-Feb-2026, normalizing by April 2026", peers: ["APCOTEXIND"]}
+  - {claim: "APCOTEXIND/BEPL constitute a meaningful comparable peer set for DDev's claims", peers: ["APCOTEXIND"]}
+contradicted: []
+unverifiable:
+  - {claim: "Indian cable & wire sector growing at ~2x GDP", peers_checked: ["APCOTEXIND"]}
+  - {claim: "DDev self-reported market shares (XLPE >33%, ~80% Sioplas HV/MV, ~15-20% HFFR)", peers_checked: ["APCOTEXIND"]}
+  - {claim: "APCOTEXIND/BEPL disclosing capex/entry into HFFR/XLPE compounding or BESS assembly eroding DDev's runway", peers_checked: ["APCOTEXIND"]}
+  - {claim: "Adani/UltraTech beginning building-wire production sourcing PVC compound on DDev's guided Q1 CY2026/Q1 FY27 timeline", peers_checked: ["APCOTEXIND"]}
+peer_coverage_map:
+  - {peer: "APCOTEXIND", quarter: "Q1 FY26 (31-Jul-2025 call)", usage: "substantive", contribution: "Pre-shock demand/pricing/product-mix baseline; confirms zero product overlap with DDev"}
+  - {peer: "APCOTEXIND", quarter: "Q2 FY26 (6-Nov-2025 call)", usage: "substantive", contribution: "Rs 210cr capex disclosure detail underpins Q4 finding; RM price-decline mechanics inform pricing cross-read"}
+  - {peer: "APCOTEXIND", quarter: "Q3 FY26 (30-Jan-2026 call)", usage: "substantive", contribution: "Immediate pre-shock baseline; anti-dumping-delay and demand-recovery findings feed missing-risks and demand cross-read"}
+  - {peer: "APCOTEXIND", quarter: "Q4 FY26 (7-May-2026 call)", usage: "substantive", contribution: "Core evidence for the West Asia/Israel-Iran RM shock corroboration and the normalization-timing contradiction"}
+  - {peer: "BEPL", quarter: "n/a - no transcript", usage: "unused", contribution: "No concall transcript in this run's inputs, only a screening CSV; cannot be assessed"}
+industry_cross_read:
+  demand: "Apcotex's own end markets (paper, construction chemicals, carpet/textile, tires, gloves) show broad-based recovery through FY26, but cable & wire is never discussed and cannot corroborate or contradict DDev's 2x-GDP claim"
+  pricing_inputs: "Crude-linked RM prices fell through Q1-Q3 FY26 then spiked ~70% from ~1-Mar-2026 West Asia/Strait of Hormuz shock, matching DDev's shock timing and rough magnitude, with pass-through lag and customer pushback explicitly flagged; full normalization not evident even by Apcotex's own 7-May-2026 call"
+  capex_cycle: "Industry-wide expander pattern, not a lone expander: Apcotex is mid-expansion (Rs 210cr, later ~Rs130-140cr) and notes at least one other listed latex-segment peer also expanding concurrently; funded via internal accruals plus limited debt targeting FY27-28 commissioning, a capital-discipline pattern consistent with DDev's own stated approach though in unrelated products"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Trade-remedy execution risk: DGTR-recommended anti-dumping duty unnotified by Finance Ministry across 3+ consecutive quarters despite recommendation (APCOTEXIND, Q2/Q3/Q4 FY26 calls)"
+  - "Export-corridor freight/logistics fragility (Suez Canal, then Strait of Hormuz) disrupting specific geographies even absent direct war exposure (APCOTEXIND, Q1 FY26 and Q4 FY26 calls)"
+  - "Multi-year overcapacity-driven margin destruction risk for newly commissioned specialty-polymer capacity entering markets without an established order book (APCOTEXIND nitrile latex, 3+ years to partial recovery, Q4 FY26 call)"
+  - "Downstream customer price-elasticity/squeeze risk limiting RM pass-through even under cost-plus assumptions (APCOTEXIND automotive-linked customers running at a loss rather than accept full pass-through, Q4 FY26 call)"
+net_narrative_effect: "complicates"

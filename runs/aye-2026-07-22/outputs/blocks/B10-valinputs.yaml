@@ -1,0 +1,189 @@
+stage: B10-valinputs
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Forward EPS (FY27): FY27 PAT not audited; Q4FY26 concall not collected; awaits FY27 results filing"
+  - "Normalized PAT ex-Derecognition: episodic securitisation-gain line requires P&L note cross-reference; conservative strip-out applied (Rs 105.79 cr total gain-on-derecognition)"
+  - "Peer P/E, P/B, ROCE medians: screening CSVs provided but pre-calculated ratios not extracted; would require independent calculation from raw financial data"
+  - "Q1FY27 full P&L line items: only Annexure-1 summary ratios reconstructable from OCR; deep P&L detail awaits post-listing filings"
+  - "Dividend per share: no dividend declared post-IPO; set to zero"
+  - "Free cash flow: not applicable for balance-sheet lender model; ALM statement and interest-earning asset growth are the appropriate cash-generation proxies"
+flags:
+  - "FLAG-CASH: Structural CFO negative (balance-sheet lender model) + rising derecognition-gain dependency (5.8% of revenue FY26) → INDETERMINATE cash-conversion per fttcp-deliberation.md line 17; caps verdict at PROCEED WITH CAVEATS (CLAUDE.md NEVER rule). Not a going-concern signal but must be named in Phase 1 gate."
+  - "FLAG-ASSET-QUALITY: GNPA cycle 3.2% (Mar-24) → 4.85% (Sep-25 peak) → 4.49% (Jun-26 latest). Improving last 2 quarters; asset-quality transition forward STARTING (+1). Monitor for reversal (tripwire: GNPA rising QoQ for 2 consecutive quarters)."
+  - "FLAG-EARNINGS-QUALITY: RoE fell 17.28% (FY24) → 7.63% (H1FY26 annualized); PBT margin halved 20.10% → 9.57%; credit-cost ratio doubled. Credit cycle has reached realized P&L earnings, not just provisioning. Recovery trajectory depends on credit-cost normalization to 3.5-4.0% range per guidance."
+  - "FLAG-GATE0: Classification AVOID is listing-recency downgrade (4-year data history, IPO Feb-2026), not demonstrated deterioration. ICRA-anchored CRAR 42%, historical ROE 16.1%, AUM CAGR 25% cut against simple AVOID; flagged for stage 13 human synthesis."
+  - "FLAG-EXTERNAL-TRIPWIRES: (1) Covenant breaches on 23.6% of borrowings (Rs 12.3 bn), majority unwaived as of Sep-25 (B02 note 53.36); (2) Bihar MFI-ordinance exposure at 15.5% AUM concentration (B05 flags medium severity); (3) Tax-restatement pattern in 4 of 5 periods including -25.9% cut to FY23 PAT (B02 Annexure VI, p.404/614). All three are active triggers per fttcp-deliberation.md lines 62-68."
+
+table:
+  company_identity:
+    company: "Aye Finance Limited (AYE)"
+    sector: "Banks / NBFCs / MFIs (per FTTCP operator override, not manifest's Pharma/CDMO)"
+    business_model_type: "Lending (NBFC-ML, balance-sheet lender)"
+    sector_cap_row: "18x (P/B primary, PE secondary cross-check per Section 1B Amendment 7-8)"
+    cmp_rs: "183.22 (NSE, 2026-07-22, cmp_note.md line 7)"
+    market_cap_cr: "~4,614 (cmp_note.md line 8)"
+    shares_outstanding_cr: "~25.2 (cmp_note.md line 9)"
+    enterprise_value_cr: "4,614 + net debt 4,827.23 = 9,441.23 (computed from CMP + [total debt Rs 5,447.61 cr - cash Rs 620.38 cr])"
+    
+  latest_financials_fy26:
+    total_revenue_ops_cr: "1,814.73 (results__edbf1e94 page 6, line 378)"
+    ebitda_cr: "NOT FOUND (not applicable for lender; use NIM as proxy)"
+    ebitda_margin_pct: "NOT FOUND (not applicable)"
+    pat_cr: "193.63 (results__edbf1e94 page 6, line 447)"
+    pat_margin_pct: "11.39% (results__edbf1e94 Annexure 1 Reg 52(4) page 11, line 852)"
+    net_interest_margin: "14.5% range (B05 operator digest, non-anchored; management guidance 14.25-14.75% FY27)"
+    cfo_cr: "-1,354.64 (structural negative for lender model, results__edbf1e94 page 8, line 584)"
+    fcf_cr: "NOT FOUND (CFO negative; not meaningful for balance-sheet lender)"
+    cfo_pat_ratio: "-7.0x latest, -7.25x cumulative 4yr (results__edbf1e94, B01 line 36)"
+    fcf_pat_ratio: "NOT FOUND (not applicable)"
+    capex_cr: "11.66 (results__edbf1e94 page 8, line 586)"
+    depreciation_cr: "107.79 (results__edbf1e94 page 6, line 421)"
+    book_value_per_share_rs: "97.81 (net worth Rs 2,464.69 cr / 25.2 cr shares, FY26 audited basis; results__edbf1e94 page 11, line 849)"
+    net_debt_cr: "4,827.23 (debt Rs 5,447.61 cr - cash Rs 620.38 cr, computed)"
+    dps_rs: "0 (no dividend declared post-IPO)"
+    
+  q1fy27_latest:
+    pat_cr: "74.5 (B01 line 48, summary block reconstruction)"
+    eps_basic_rs: "3.02 (B01 line 48)"
+    eps_diluted_rs: "3.00 (B01 line 48)"
+    net_worth_cr: "2,528.01 (B01 line 48)"
+    book_value_per_share_rs: "100.32 (net worth Rs 2,528.01 cr / 25.2 cr shares, Q1FY27 latest)"
+    crar_pct: "42.38% (B01 line 48)"
+    lcr_pct: "269.61% (B01 line 48)"
+    gross_stage_iii_pct: "4.49% (B01 line 48, latest anchored)"
+    net_stage_iii_pct: "1.67% (B01 line 48)"
+    pcr_pct: "63.80% (B01 line 48)"
+    debt_equity_times: "2.22x (B01 line 48)"
+    
+  multiples_at_cmp_183_22:
+    trailing_pe_fy26: "18.8x (183.22 / 9.73 EPS, results__edbf1e94 page 6, line 854)"
+    trailing_pe_q1fy27_annualized: "15.1x (183.22 / [3.02 × 4] annualized, B01 line 48)"
+    forward_pe_fy27: "unresolved (FY27 PAT not audited; Q4FY26 concall not collected)"
+    pb_fy26: "1.87x (183.22 / 97.81 BVPS FY26)"
+    pb_q1fy27: "1.83x (183.22 / 100.32 BVPS Q1FY27)"
+    
+  historical_trends:
+    revenue_3yr_cagr_pct: "16.9% (FY24-FY26: from Rs 1,325.96 cr Prospectus-restated to Rs 1,814.73 cr FY26 audited)"
+    pat_3yr_cagr_pct: "5.9% (FY24-FY26 using restated FY24 baseline Rs 171.68 cr to FY26 Rs 193.63 cr; normalized ex-derecognition CAGR ~2.3% only, indicating margin compression)"
+    gnpa_trend: "3.2% (Mar-24) → 4.2% (Mar-25) → 4.6% (Jun-25) → 4.85% (Sep-25 peak) → 4.77% (Mar-26) → 4.49% (Jun-26 latest). 4-quarter rise then 2-quarter recovery. Cycle description: deteriorating then recovering."
+    roe_fy24: "17.28% (B03 line 24, DuPont-verified from Prospectus restated)"
+    roe_h1fy26_annualized: "7.63% (B03 line 24)"
+    roa_fy24: "3.7% (rating__138929 page 1, line 148)"
+    roa_fy25: "2.8% (rating__138929 page 1, line 148)"
+    roa_q1fy26: "1.7% (rating__138929 page 1, line 148)"
+    roce_latest: "NOT FOUND (not the appropriate metric for balance-sheet lender; ROE and ROA used instead per B01 line 41)"
+    roce_2yr_trend: "NOT DETERMINED (insufficient data; ROCE not applicable for lender model)"
+    
+  credit_cost_trajectory:
+    credit_cost_ratio_fy23: "2.70% of ATA (B03 line 15)"
+    credit_cost_ratio_fy25: "5.15% of ATA (B03 line 15)"
+    credit_cost_ratio_h1fy26_annualized: "5.14% of ATA (B03 line 15)"
+    credit_cost_trajectory_assessment: "Doubled since FY23, peaking in FY25-H1FY26. Forward guidance targets 3.5-4.0% comfort range (B05 line 42). Trajectory reflects credit-cycle realization; recovery path depends on GNPA stabilization below 4% and collection-efficiency gains."
+    
+  management_guidance_credibility:
+    guidance_aum_growth_fy26: "29-30% (MISSED: delivered ~26.6% YoY on-book loans, B05 line 39; actual 26-27% AUM per digest)"
+    guidance_credit_cost_exit_q4fy26: "Ambiguous basis mismatch (AUM-basis vs ATA-basis, B05 line 41)"
+    guidance_credit_cost_3yr_comfort: "3.25-3.75% (B05 line 42)"
+    guidance_nim_fy27: "14.25-14.75% (B05 line 46, digest-only since Q4FY26 concall not collected)"
+    guidance_opex_3yr: "7.0-7.5% target (B05 line 43)"
+    guidance_roa_3yr: "4.0-4.5% target (B05 line 44)"
+    guidance_mortgage_mix_3yr: "~30% from current 22% (B05 line 45, partial delivery at ~21.8% by Jun-26, flat)"
+    credibility_grade: "C (Mixed: genuine delivery on asset-quality ratios and PAT, but clear miss on headline AUM-growth guidance; basis mismatch prevents clean credit-cost test; B05 line 61-69 credibility basis)"
+    
+  emerging_moat_score:
+    em_score: "19.6 (B07 line 15)"
+    em_classification: "MODEST (below 25 premium threshold)"
+    active_categories: "D1 (proprietary underwriting), G1 (funding access), C1 (customer stickiness), A3 (process innovation) — all Strong/Moderate evidence documented (B07 lines 18-21)"
+    combined_assessment: "AVERAGE (not HIGH POTENTIAL or TURNAROUND; AVERAGE is gate-0's implied AVERAGE before 1-tier listing-recency downgrade to AVOID; B07 line 38)"
+    primary_catalyst_12m: "FY27 delivery vs guided NIM 14.25-14.75% / RoA 4.0-4.5% / credit-cost 3.5-4.0% (B07 line 27)"
+    secondary_catalysts: "Mortgage/LAP mix cross 25%; generative-AI pilot disclosure; rating action / funding-cost trajectory (B07 lines 25-28)"
+    capex_embedded_growth_pct: "84% (high leverage to branch expansion, B07 line 30)"
+    
+  valuation_pillars_operator_approved:
+    pillar_1_roe_normalization_route: "Route A governs (post-IPO excess capital stripped, operational RoE). Route B suppressed per single-credit rule. (fttcp-deliberation.md line 18, 50)"
+    pillar_1_roe_anchor: "11.7%-13% (current normalized, basis for 15x destination PE when combined with 1.00x AQ multiplier and +2x growth per fttcp-deliberation.md line 50)"
+    pillar_1_roe_recovery_credited: "YES, via Pillar 1 only; Strategic Premium barred at +0x (fttcp-deliberation.md line 50, 53)"
+    pillar_2_aq_multiplier: "1.00x (Sound) — GNPA 4.49% marginally above 4% but falling 4 qtrs; PCR 63.8% in 60-70% Sound band; ECL 3.4x RBI floor (fttcp-deliberation.md line 51)"
+    pillar_3_total: "+2x (3a growth +2x on documented 26% AUM growth, capped at +2x by delivery grade C; 3b moat +0x [EM 19.6 MODEST]; 3c duration +0x; fttcp-deliberation.md line 52)"
+    strategic_premium: "+0x (barred by single credit; RoE recovery in Pillar 1 only; fttcp-deliberation.md line 53)"
+    ua_applied: "NOT APPLIED (FII+DII ~35% far above 3% institutional absence test; fttcp-deliberation.md line 54)"
+    approved_destination_pe: "15x by FY29 (operator ruling, within 18x sector cap and pillar-derived 12.7-17x band; fttcp-deliberation.md line 27, 29)"
+    approved_earnings_basis: "FORWARD (one-year forward P/E applied to forward EPS, horizon FY29; operator's reason: 'since the growth is strong'; fttcp-deliberation.md line 35)"
+    sector_cap: "18x (Banks / NBFCs / MFIs, Section 1B Amendment 7; authority fttcp-deliberation.md line 55)"
+    
+  rating_extraction:
+    rating_agency: "ICRA"
+    rating: "A (Stable)"
+    rating_date: "Nov 12, 2025 (rating__138929 page 1, line 15)"
+    instruments: "Long-term bank facilities Rs 650 cr (reaffirmed, enhanced); NCDs Rs 400 cr (newly assigned)"
+    wc_commentary_verbatim: "Liquidity position: Adequate. The company's liquidity profile is adequate with unencumbered on-book liquidity of Rs. 1,078 crore as on June 30, 2025. This, along with the scheduled collections of Rs. 2,360 crore till June 30, 2026, is sufficient to meet the scheduled debt obligations of Rs. 2,108 crore during this period in a timely manner. The presence of Rs. 704 crore of sanctioned unutilised funding lines, as on June 30, 2025, also supports the liquidity profile. As per Aye Finance's asset-liability management (ALM) statement as on June 30, 2025, there were no cumulative mismatches across buckets. (rating__138929 page 2-3, lines 100-105)"
+    rating_sensitivities_negative: "Sustained deterioration in asset quality (90+ dpd/AUM beyond 5%), thereby impacting profitability. Continued increase in managed gearing above 4.5x or deterioration in liquidity profile. (rating__138929 page 2, lines 110-112)"
+    
+  peer_medians_if_available:
+    note: "Peer financial data (P/E, EV/EBITDA, P/B, growth, ROCE) as pre-calculated medians = UNRESOLVED. Peer screening CSVs at /inputs/screening/ provide raw data but no pre-calculated ratios. B06 peer concalls carry qualitative evidence but no summary median table."
+    recommendation: "Stage 11 should calculate peer medians independently if needed for secondary cross-check; not blocking for primary P/B valuation."
+
+conflicts:
+  - field: "PAT FY24"
+    value_a: "Rs 161 cr (ICRA original-audit)"
+    anchor_a: "rating__138929 page 1, line 146"
+    value_b: "Rs 171.68 cr (Prospectus restated)"
+    anchor_b: "B01 line 39 citing Prospectus p.314"
+    used: "Rs 171.68 cr (restated, filed basis)"
+    reason: "Prospectus restated PAT is official IPO filing; ICRA original-audit predates tax-expense restatement adjustment per B02 Annexure VI. Use filed/restated."
+    
+  - field: "Q4FY26 Interest Income"
+    value_a: "Rs 440.16 cr (FY26 audited filing's Q4 comparator)"
+    anchor_a: "results__edbf1e94 page 6, line 358"
+    value_b: "Rs 426.80 cr (Q1FY27 filing's Q4 comparator column)"
+    anchor_b: "B05 line 22"
+    used: "Unresolved mismatch (neither wrong per se; awaits management clarification)"
+    reason: "Two filings show different Q4FY26 comparative figures; likely definition or timing difference. No impact on FY26 full-year PAT used in this assembly. Flagged for awareness."
+
+unresolved:
+  - field: "Forward EPS (FY27)"
+    why: "FY27 full-year PAT not yet audited; Q4FY26 concall (which would contain forward guidance) not collected; digest-only estimates excluded per rules"
+    where_might_be: "Next FY27 results filing; Q4FY26 concall transcript if collected"
+    
+  - field: "Normalized PAT ex-Derecognition (all years)"
+    why: "Gain-on-derecognition breakdown by product line not disclosed in results extract; requires P&L note cross-reference"
+    where_might_be: "Full FY26 P&L notes (Note 25 / Note 53.27 per B02 p.346/393-394 Prospectus)"
+    
+  - field: "Peer P/E Medians"
+    why: "Peer screening CSVs provide raw data but not pre-calculated P/E ratios"
+    where_might_be: "Requires independent calculation from screening CSVs (latest PAT / latest market cap)"
+    
+  - field: "Peer P/B Medians"
+    why: "Peer screening CSVs lack pre-calculated book-value-per-share and P/B ratios"
+    where_might_be: "Requires independent derivation from balance-sheet data in CSVs"
+    
+  - field: "Peer 3-Year Revenue/PAT CAGRs"
+    why: "B06 cites peer concalls qualitatively but no summary CAGR table provided"
+    where_might_be: "B06 peer coverage map lines 36-47 references specific concalls; manual calculation from quarterly trends required"
+    
+  - field: "Q1FY27 Full P&L Line Items"
+    why: "Q1FY27 results filing (results__2246e44a...) not located; only Annexure-1 summary reconstructed from B01"
+    where_might_be: "First post-listing Annual Report; Q2FY27 results filing"
+    
+  - field: "Dividend per Share"
+    why: "No dividend declared post-IPO; not yet communicated"
+    where_might_be: "First shareholder meeting (AGM, scheduled ~Sep-2026)"
+    
+  - field: "Free Cash Flow"
+    why: "Not applicable for balance-sheet lender model; traditional FCF = CFO - Capex becomes negative (CFO negative by design)"
+    where_might_be: "N/A; use ALM statement and interest-earning asset growth as cash proxies"
+    
+  - field: "Full CFO/PAT History (>4 years)"
+    why: "Company IPO'd Feb-2026; phase 1 scope limited to 4-year restated/audited history (FY23-FY26)"
+    where_might_be: "Post-listing Annual Report (first post-IPO AR) may include 5-year history"
+
+ua_qualifiers:
+  listed_12m: "YES (listed NSE/BSE 16-Feb-2026, ~5.5 months as of run date 22-Jul-2026; cmp_note.md line 11; meets ≥12-month listing test waived pending second anniversary)"
+  gate0_or_em: "NO (Gate 0 classification AVOID, EM score 19.6 MODEST, both below qualifying thresholds; neither Gate0≥60 nor EM≥25 met)"
+  fii_dii_lt3: "NO (FII+DII 35.45% far above 3% threshold; B01 line 47)"
+  all_met: "NO (only 1 of 3 qualifiers met; UA not applied per fttcp-deliberation.md line 54)"
+
+credibility_grade: "C (Mixed: AUM-growth guidance missed on headline, but genuine delivery on asset-quality ratios and profit. Per B05 line 61-69, maiden call evidence with one clear material miss caps this below Good/B; genuine anchored delivery on asset quality keeps it above Poor/D.)"

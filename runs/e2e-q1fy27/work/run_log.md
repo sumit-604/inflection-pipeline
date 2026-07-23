@@ -54,3 +54,19 @@ LESSONS.md note: this run is a quarterly review (Role 4/5); LESSONS.md append is
 
 ## Count-reconciliation line (3 docs)
 Results filing (18 notes / 60 line items / 10 auditor paras / 1 entity / 1 agenda) + press release (29 line items / 2 slides) + investor deck (42 line items / 22 slides / 46 entity refs). 0 concall turns. 100% reviewed.
+
+## Concall run gate log (2026-07-23) — all passed
+- GATE A1 (concall): 39 speaker turns, md5-verified verbatim vs source, 100% coverage. PASS.
+- GATE A2 (concall): 39 turns / 31 questions / 24 mgmt numbers / 16 participants; grep == manual sweep. PASS. Flags DEFLECTED_NON_ANSWER, FORWARD_LOOKING, NUMERIC_INCONSISTENCY, REPEAT_QUESTION.
+- GATE A3 (concall): 17 checks, no blanks, ledger 100%. 10 findings (FN-01 loan Rs450 Cr net-cash->net-debt; FN-04 off-BS entities; FN-08 contract lengthening; FN-05/06/09 ambiguous). PASS.
+- A4 v3: merged review across FOUR docs; Role 4 AND Role 5 both run IN FULL. Verdict UNCHANGED PROCEED WITH FLAGS; cash conversion INDETERMINATE. Role 5: credibility ratio N/A (first tracked call), specificity 0.14, archetype EVASIVE-on-quantitatives, provisional grade C (Mixed). Checklist items 4 (L&T down to AMBER) and 5 (contract duration up toward GREEN) re-rated. 21 mgmt questions (6 new).
+- GATE A5 v3 (verdict COMPLETE): coverage clean across 4 ledgers, arithmetic within rounding (concall figures reconcile to filing; loan Rs450 Cr vs Mar-26 Rs103.2 Cr confirmed; net cash->net debt defensible), no surviving bear counter. PASS first pass, no loop-backs.
+
+## Notion update (concall)
+- Concall/Role 5 addendum appended (leverage read, Role 5 management grade, Q&A decomposition, updated checklist, revaluation impact, verdict).
+- Provisional revaluation: net cash -> net debt argues the 25% CAGR entry zone DOWN, not up. Formal Section 1B re-run still deferred to Q2 balance sheet.
+- Key Notes: Jul-23 concall entry PREPENDED; all four prior entries preserved.
+- Decision Status UNCHANGED (WATCHLIST / BUY ON DIPS) — no pre-committed trigger fired.
+
+## Count-reconciliation line (4 docs)
+Results filing (18 notes / 60 line items / 10 auditor paras / 1 entity / 1 agenda) + press release (29 line items / 2 slides) + investor deck (42 line items / 22 slides) + concall (39 turns / 31 questions / 24 mgmt numbers / 16 participants). 100% reviewed. Role 4 and Role 5 both complete.

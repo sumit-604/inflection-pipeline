@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "AYE"
+run_date: "2026-07-22"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Forward EPS (FY27): FY27 PAT not audited; Q4FY26 concall not collected. Built here as a LABELLED PROJECTION off anchored base (FY26 PAT Rs 193.63 Cr; Q1FY27 PAT Rs 74.5 Cr annualized ~Rs 300 Cr, FY27E EPS ~Rs 11.90). Never treated as an anchor."
+  - "Normalized PAT ex-derecognition by product line: unresolved in B10; needed to fully clear the residual INDETERMINATE earnings-quality element."
+  - "Peer P/E, P/B, ROCE/RoA medians: unresolved in B10; peer cross-check is secondary for a lender (P/B primary) and not blocking."
+flags:
+  - "FLAG-CASH: STRUCTURAL negative CFO (balance-sheet lender, Ind AS 7) with residual INDETERMINATE earnings-quality element (gain on derecognition 5.8% of revenue / ~3.65% of total income, FY26). Pillar 2 Asset-Quality Multiplier ACTUALLY APPLIED = 1.00x. Caps FTTCP gate at PROCEED WITH CAVEATS (CLAUDE.md NEVER rule); missing evidence named: normalized PAT ex-derecognition, FY27 audited PAT."
+  - "FLAG-RRM-DIVERGENCE: RRM track destination PE 10.4x is ~31% below the approved 15x; on RRM AYE is AVOID-on-valuation at CMP (base fair value Rs 225, entry Rs 115). Shown per deliberation; approved 15x governs and does NOT get overridden, but the required-return gap (approved implies ~13.5% vs ~15-16% reasonable for a grade-C FLAG-CASH transition NBFC) is the key valuation tension for Role 3/synthesis."
+  - "FLAG-HURDLE-CONDITIONAL: base HR 1.77 fails; only the grade-C-capped bull (27%) clears at 2.00. Growth-dependent with de-rating headwind; verdict capped at WATCHLIST/BUY-ON-DIPS."
+  - "FLAG-EARNINGS-QUALITY / FLAG-ASSET-QUALITY / FLAG-GATE0 / FLAG-EXTERNAL-TRIPWIRES carried forward from B10 unchanged."
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: 15.0
+destination_pe:
+  track1_rrm: {low: 9.6, mid: 10.4, high: 11.2, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 15.4, mid: 15.7, high: 16.0}
+  divergence_pct: 31
+  governing_track: "operator-approved 15x (additive-consistent, sits at additive floor = conservative); RRM 10.4x shown for transparency, does NOT override per FTTCP deliberation gate"
+pillar_detail:
+  roce_used: 12.35
+  roce_base: 7.63
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "A-governs-B-suppressed"
+  cash_multiplier: 1.00
+  structural_or_growth: "lender Asset-Quality Multiplier 1.00x (Sound); FTTCP cash STRUCTURAL with residual INDETERMINATE earnings-quality element (gain on derecognition)"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 18
+hurdle_ratio: {base: 1.77, bull_used: true, verdict: "CONDITIONAL"}
+fair_values:
+  track1: {bear: 188, base: 225, bull: 260}
+  track2: {bear: 272, base: 324, bull: 375}
+expected_cagr_prob_weighted: 19.7
+entry_range: {low: 133, high: 166}
+mos_price: 133
+upside_downside_ratio: 1.45
+decision: "WATCHLIST (BUY-ON-DIPS); on-valuation — accumulate Rs 133-166, not a buy at CMP Rs 183.22 (base hurdle fails, prob-weighted CAGR 19.7% < 25%)"
+unresolved_inputs_used:
+  - "Forward EPS FY27: conservative projection FY27E EPS ~Rs 11.90 from Q1FY27 PAT Rs 74.5 Cr annualized (~Rs 300 Cr / 25.2 Cr), because FY27 is unaudited and the framework requires a labelled forward projection for the operator-approved forward-basis PE and hurdle; stress-noted that a peak-quarter Q1 could imply FY27 nearer Rs 270-290 Cr."
+  - "CoE 14.5%: analyst input (not a B10 anchor), stated per instruction for the primary theoretical P/B; built from risk-free ~6.7% + beta ~1.15 x ERP ~6.5%, consistent with RRM r ~15-16% region."
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Recovering micro-enterprise NBFC priced at fair value on the approved 15x forward; 25% returns need >26% forward EPS CAGR a grade-C record and rising derecognition gains have not yet earned — watch, buy below Rs 166."

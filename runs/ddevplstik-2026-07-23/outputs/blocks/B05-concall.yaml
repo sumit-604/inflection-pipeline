@@ -1,0 +1,65 @@
+stage: B05-concall
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Exact completion date of the 132kV XLPE trial was never disclosed as a discrete milestone across any of the three calls, only inferable from later framing", "FY28 core-business capex figure, explicitly promised 'next quarter' in the Q3 FY26 call, was not delivered by the Q4 FY26 call", "Q1 FY26 (Aug-2025) call excluded per the 3-cap rule, so this promise/delivery chain begins at the Q2 FY26 baseline, not the fiscal year's first guidance"]
+flags: ["BESS FY27 revenue and Phase-1 capex guidance both revised materially within two quarters of the vertical's launch", "FY26 volume guidance (210k-220k MT) missed at 201,370 MT actual", "Adani/UltraTech PVC-offtake milestone silently dropped after its guided window passed", "A different external shock cited as the primary excuse in every one of the three quarters analysed", "Peer set assigned for verification (APCOTEXIND, BEPL) does not overlap with DDev's own named competitors (Dow, Borealis, KLJ Polymers, Shakun Polymer/Orbia, JSW, Page Digitek) -- flagged for Stage 6"]
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "BESS ramp (H2 FY27 commissioning, FY28 revenue Rs800-900 Cr/GWh)", type: "revenue/both", timeframe: "medium", conviction: "L-M", confirm_signal: "FY27 revenue lands in Rs200-250 Cr band, no commissioning delay past H2 FY27", kill_signal: "Commissioning slips beyond FY27 or FY28 revenue materially undershoots Rs800-900 Cr"}
+  - {priority: 2, name: "Bhiwadi XLPE 48k MTPA ramp driving FY27 volume to 231,000 MT", type: "volume", timeframe: "near", conviction: "M-H", confirm_signal: "Quarterly volume run-rate tracks toward 231k FY27 target", kill_signal: "Utilization stays materially below plan into FY28"}
+  - {priority: 3, name: "Export growth continuation (~30% FY26) on US certifications + MENA demand", type: "revenue/price-mix", timeframe: "near", conviction: "M-H", confirm_signal: "Q1 FY27 export growth sustains per management commentary", kill_signal: "Renewed US tariff escalation or fresh Middle East logistics disruption"}
+  - {priority: 4, name: "Adani/UltraTech PVC offtake materializing", type: "volume/price-mix", timeframe: "medium", conviction: "L", confirm_signal: "Management names actual revenue/offtake from these two customers", kill_signal: "Continued silence through FY27"}
+  - {priority: 5, name: "RM cost normalization post Israel-Iran, margin stabilization", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "EBITDA/ton resumes steady Rs150-200/quarter uptrend without new volatility", kill_signal: "Renewed geopolitical RM shock re-compresses margins"}
+  - {priority: 6, name: "FY30 core Rs5,000 Cr + BESS incremental Rs2,000-2,500 Cr", type: "revenue", timeframe: "long", conviction: "L-M", confirm_signal: "Interim FY27/FY28 milestones track the stated 13-15% CAGR path", kill_signal: "FY27 growth undershoots the 13-15% guided range"}
+guidance:
+  - {item: "FY26 volume", number: "210,000-220,000 MT", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 revenue", number: "Rs2,850-2,950 Cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 EBITDA margin", number: "10-12%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "EBITDA/ton trajectory", number: "Rs14,000-16,000/ton, improving", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 capex", number: "Rs110 Cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Capacity addition by CY2025-end", number: "+5,000 MT HFFR, +10,000 MT PVC", timeframe: "Dec-2025", stated_in: "Q2 FY26 call"}
+  - {item: "132kV XLPE trial", number: "targeted Jan-Mar 2026", timeframe: "Q1 CY2026", stated_in: "Q2 FY26 call"}
+  - {item: "220kV XLPE", number: "targeted 2029/2030", timeframe: "FY30", stated_in: "Q2 FY26 call, reaffirmed Q4 FY26 call"}
+  - {item: "FY30 core revenue target", number: "Rs5,000 Cr", timeframe: "FY30", stated_in: "Q2/Q3/Q4 FY26 calls"}
+  - {item: "BESS Phase-1 capacity", number: "5 GWh, phased", timeframe: "FY27-FY30", stated_in: "Q3 FY26 call"}
+  - {item: "BESS Phase-1 capex", number: "Rs150 Cr, revised to ~Rs200 Cr", timeframe: "Phase-1", stated_in: "Q3 FY26 call; revised Q4 FY26 call"}
+  - {item: "BESS commissioning", number: "H2 FY27", timeframe: "H2 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "BESS FY27 revenue", number: "Rs300-500 Cr cut to Rs200-250 Cr", timeframe: "FY27", stated_in: "Q3 FY26 call; revised Q4 FY26 call"}
+  - {item: "BESS FY28 revenue/margin", number: "Rs800-900 Cr per GWh, EBITDA margin >10% (~Rs80-90 Cr EBITDA)", timeframe: "FY28", stated_in: "Q3/Q4 FY26 calls"}
+  - {item: "BESS FY30 incremental revenue", number: "Rs2,000-2,500 Cr beyond core Rs5,000 Cr", timeframe: "FY30", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 core guidance", number: "volume 231,000 MT (~15%), revenue growth ~13%, EBITDA margin ~11%, utilization ~73%, BESS excluded", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 total capex", number: "Rs175 Cr (~Rs100 Cr core + ~Rs70+ Cr BESS)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 dividend", number: "Rs0.50/share interim + Rs1.25/share final = Rs1.75/share total", timeframe: "FY26", stated_in: "Q3 FY26 call; Q4 FY26 call/results filing"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 4
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "FY26 volume 210,000-220,000 MT", outcome: "missed", explanation: "Israel-Iran conflict from 28-Feb-2026 dampened demand via price pass-through; volume growth 'would have approached 10%' ex-shock vs 6% delivered"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 revenue Rs2,850-2,950 Cr", outcome: "delivered", explanation: "Delivered via RM-driven price pass-through rather than the guided volume route"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 EBITDA margin 10-12%", outcome: "delivered", explanation: "Landed at ~11%"}
+    - {promised_in: "Q2 FY26 call", promise: "Capacity +5,000 MT HFFR / +10,000 MT PVC by CY2025-end", outcome: "delivered", explanation: "Confirmed installed by Dec-2025 per Q3 FY26 call"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 capex Rs110 Cr", outcome: "partial", explanation: "Actual ~Rs100 Cr; no explanation volunteered for the ~9% shortfall"}
+    - {promised_in: "Q2 FY26 call", promise: "132kV XLPE trial in Jan-Mar 2026", outcome: "delivered", explanation: "Implied delivered by Q4 FY26 call framing; never explicitly announced as a completed milestone"}
+    - {promised_in: "Q2 FY26 call", promise: "Adani/UltraTech PVC offtake begins Q1 CY2026 / worst case Q1 FY27", outcome: "missed", explanation: "No mention in Q3 or Q4 FY26 calls despite guided window having passed"}
+    - {promised_in: "Q3 FY26 call", promise: "BESS 1 GWh contributes ~Rs800-900 Cr / ~20% of revenue (opening framing)", outcome: "missed", explanation: "Self-corrected within the same call to Rs300-500 Cr for FY27, then cut further in Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "BESS Phase-1 capex Rs150 Cr", outcome: "partial", explanation: "Revised to ~Rs200 Cr in Q4 FY26 call, no explanation given for the increase"}
+    - {promised_in: "Q3 FY26 call", promise: "BESS FY27 revenue Rs300-500 Cr", outcome: "missed", explanation: "Cut to Rs200-250 Cr in Q4 FY26 call, framed as breakeven aim, generic ramp-up explanation"}
+    - {promised_in: "Q3 FY26 call", promise: "'By next quarter, a lot of details [on FY28 capacity/capex] will be published'", outcome: "partial", explanation: "FY27 capex detailed in Q4 FY26 call; no distinct FY28 capex figure was given"}
+    - {promised_in: "Q3 FY26 call", promise: "Domestic revenue growth to pick up once US tariff uncertainty resolves", outcome: "partial", explanation: "Confounded by a new shock (Israel-Iran, from 28-Feb-2026) before the original thesis could be cleanly tested"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "Capacity build-out (PVC/HFFR/XLPE Bhiwadi), export growth (+30% FY26) and EBITDA margin band (10-12%) were delivered on schedule across the three calls, but FY26 volume missed the 210k-220k MT guidance (actual 201,370 MT) and BESS revenue/capex guidance was revised down/up materially twice within two quarters of the vertical's launch."
+peer_questions:
+  - {question: "Is the Indian cable & wire sector genuinely growing at ~2x India's GDP, as DDev management claimed (Q2 FY26 call)?", why: "Underpins DDev's TAM narrative and the FY30 Rs5,000 Cr target; if sector growth is closer to GDP-parity, the guided 13-15% CAGR requires larger share gains than disclosed.", check_peers: ["APCOTEXIND", "BEPL"]}
+  - {question: "Did raw material prices spike >50% industry-wide from the Israel-Iran conflict (from 28-Feb-2026) and normalize by April 2026, as DDev states (Q4 FY26 call)?", why: "Tests whether DDev's FY26 volume miss and margin softness were sector-wide exogenous shocks versus company-specific issues.", check_peers: ["APCOTEXIND", "BEPL"]}
+  - {question: "Do peers/downstream cable makers corroborate DDev's self-reported market share claims (XLPE >33% overall, ~80% Sioplas HV/MV, ~15-20% HFFR)?", why: "All share figures are self-sourced and unverified in these calls; if disputed, the pricing-power/moat thesis weakens.", check_peers: ["APCOTEXIND", "BEPL"]}
+  - {question: "Are Apcotex Industries or BEPL disclosing capex or entry plans into HFFR/XLPE compounding or BESS assembly that would erode DDev's claimed 3-5 year competitive runway?", why: "DDev argues technical complexity and approval cycles protect it from new-entrant margin pressure for 3-5 years; any peer capex signal would shorten that window.", check_peers: ["APCOTEXIND", "BEPL"]}
+  - {question: "Have Adani and UltraTech actually begun building-wire production and sourcing PVC compound, against DDev's Q1 CY2026/worst-case Q1 FY27 guidance?", why: "This milestone's guided window passed with zero mention in the Q4 FY26 call; peer-side confirmation or silence tests whether the PVC capacity build has real offtake behind it.", check_peers: ["APCOTEXIND", "BEPL"]}
+  - {question: "Is APCOTEXIND/BEPL actually a meaningful comparable for DDev's disclosed competitor set (Dow, Borealis, KLJ Polymers, Shakun Polymer/Orbia, JSW, Page Digitek)? If not, flag the mismatch rather than force a comparison.", why: "None of DDev's named competitors in these transcripts overlap with the assigned peer set; verification quality above will be limited if the operating overlap is thin.", check_peers: ["APCOTEXIND", "BEPL"]}
+red_flags: ["BESS revenue guidance revised down twice and Phase-1 capex revised up within the vertical's first two quarters of disclosure (Medium)", "FY26 volume guidance missed: 201,370 MT vs 210,000-220,000 MT guided (Low-Medium)", "A different external shock cited as primary excuse in every one of the three quarters analysed (Low-Medium)", "Adani/UltraTech PVC-offtake milestone passed with zero mention in Q4 FY26 call (Low-Medium)", "FY28 core capex figure promised 'next quarter' in Q3 FY26 call not delivered by Q4 FY26 call (Low)", "Dividend/capital-allocation rationale answered generically (Low)", "Recycled macro-commentary boilerplate opens all three calls in near-identical structure (Low)"]
+dropped_triggers: ["Adani/UltraTech PVC offtake confirmation (guided Q1 CY2026 / worst case Q1 FY27 in Q2 FY26 call; unmentioned in Q3 and Q4 FY26 calls despite the guided window having passed)"]
+timeline_slippages: ["132kV XLPE trial: guided Jan-Mar 2026 in Q2 FY26 call; appears completed by Q4 FY26 call but with no explicit milestone announcement in Q3 or Q4 calls", "BESS FY27 revenue guidance: implied ~20%-of-revenue/Rs800-900 Cr framing at launch (Q3 FY26 call), corrected same-call to Rs300-500 Cr, then cut further to Rs200-250 Cr by Q4 FY26 call", "BESS Phase-1 capex: Rs150 Cr guided in Q3 FY26 call, revised to ~Rs200 Cr (Rs70 Cr+ in FY27 alone) in Q4 FY26 call", "FY26 capex: Rs110 Cr guided in Q2 FY26 call; actual FY26 capex ~Rs100 Cr per Q4 FY26 call, a ~9% shortfall"]

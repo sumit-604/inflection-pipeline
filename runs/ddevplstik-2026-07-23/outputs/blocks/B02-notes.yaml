@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Lease discount rate % NOT FOUND IN DOCUMENT (Note 52 describes it only as 'the Company's actuarial discounting rate', no numeric % disclosed)."
+  - "Capitalisation threshold (Rs) NOT FOUND IN DOCUMENT."
+  - "3-year receivables ageing and 3-year inventory-days trend NOT FOUND (document discloses only FY25 and FY24 comparatives)."
+  - "MAT credit / unrecognised DTA disclosure NOT FOUND (company appears to be on Section 115BAA regime based on the 25.168% statutory rate used, but this is not stated explicitly in the notes)."
+flags:
+  - {type: FLAG-CASH, reason: "Finished-goods inventory +60.3% vs revenue +7.08% credited Rs 13.28 Cr to FY25 COGS (Note 29) against total PAT growth of only Rs 3.83 Cr; corroborates Gate 0's Block B deteriorating cash-conversion flag (WC days 63.39->82.02 FY24-FY26, inventory-days-driven). Receivable allowance decline (Rs 295.46 Lacs) is only partially explained by disclosed P&L write-off lines (Rs 79.44 Lacs), complicating the read of 'improved' receivables ageing (Note 12/32)."}
+accounting_quality: 6        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Finished-goods inventory +60.3% vs revenue +7.08%; Rs 13.28 Cr FY25 P&L credit (COGS) vs Rs 0.80 Cr FY24, a Rs 12.48 Cr favourable swing against Rs 3.83 Cr total PAT growth. Auditor names inventory valuation as a Key Audit Matter.", note_ref: "Note 10, Note 29", rating: "WATCH"}
+  - {rank: 2, finding: "Note 52 lease-liability roll-forward does not foot to balance sheet: printed closing balance (Rs 62.56 Lacs) vs actual Rs 429.46 Lacs, a Rs 492.02 Lacs gap almost exactly matching undisclosed Rs 504.78 Lacs ROU additions in the same note.", note_ref: "Note 52", rating: "RED FLAG"}
+  - {rank: 3, finding: "RoE fell 31.48%->24.82%, RoCE 0.36->0.30 despite PAT +2.1%; dividend payout only 5.6%, Other Equity +26.9% vs PAT +2.1%, Rs 61.39 Cr newly parked in low-yield mutual funds.", note_ref: "Note 53, Note 16, Note 44", rating: "WATCH"}
+  - {rank: 4, finding: "Royalty to fellow-subsidiary Kkalpana Industries fell 72.5% (Rs 16.65 Cr->Rs 4.58 Cr) while purchases from same entity rose 88.9%; no explanation or agreement terms disclosed.", note_ref: "Note 41", rating: "WATCH"}
+  - {rank: 5, finding: "Gratuity plan only ~16% funded; employer contribution Rs 0 in FY25 and FY24 against actuary's own recommended contribution of Rs 91.73 Lacs / Rs 106.91 Lacs.", note_ref: "Note 39(b)", rating: "WATCH"}
+  - {rank: 6, finding: "Receivables ECL allowance fell Rs 295.46 Lacs but disclosed P&L captions (zero new provisioning + Rs 79.44 Lacs write-off) account for only Rs 79.44 Lacs of the decline, complicating the 'improved ageing' read.", note_ref: "Note 12, Note 32", rating: "WATCH"}
+  - {rank: 7, finding: "MSME payables up 35.9% (Rs 16.67 Cr->Rs 22.65 Cr); Section 16 MSMED delayed-payment interest recurs both years; Acceptances secured (bank supplier financing) up 65.4% alongside large idle cash.", note_ref: "Note 21", rating: "WATCH"}
+  - {rank: 8, finding: "Company is net cash both years (negative net debt Rs 58.09 Cr FY25 / Rs 10.50 Cr FY24); no term borrowings; Rs 61.39 Cr newly parked in mutual funds this year vs zero FY24.", note_ref: "Note 44, Note 11", rating: "CLEAN"}
+  - {rank: 9, finding: "Plant & Machinery depreciated over 25 years vs 15-year Schedule II default, justified only by management's own experience claim with no independent technical assessment disclosed.", note_ref: "Note 3.2", rating: "WATCH"}
+  - {rank: 10, finding: "Clean, unqualified auditor's opinion; no going-concern qualification found anywhere in document on targeted search; no fraud; not a willful defaulter; no promoter pledge.", note_ref: "Auditor's Report, CARO Annexure A", rating: "CLEAN"}
+  - {rank: 11, finding: "Unhedged FX earnings exposure grew 63.6% YoY even as imported raw material dependency fell from 26% to 19% of consumption; two FX risk vectors move in opposite directions.", note_ref: "Note 43, Note 48", rating: "WATCH"}
+  - {rank: 12, finding: "Other Income fell 24.1% YoY, driven by exchange-difference income (-37.5%) and export incentive (-54.0%); ~60% of remaining Other Income is forex translation gain, a non-operating tailwind.", note_ref: "Note 27", rating: "WATCH"}
+  - {rank: 13, finding: "No contingent liability exceeds 10% of net worth (largest, LC outstanding, is 3.8%); capital commitments roughly quintupled YoY consistent with capex cycle.", note_ref: "Note 36", rating: "CLEAN"}
+  - {rank: 14, finding: "Auditor is a small regional firm; recurring pattern of small unreconciled inter-note gaps across at least four note pairs (payables, payable-days basis, export revenue, lease roll-forward) suggests lighter review depth than a national-tier auditor.", note_ref: "Auditor's Report; Notes 21, 40, 49, 52", rating: "WATCH"}
+  - {rank: 15, finding: "No customer >10% of revenue; no related-party receivables/payables/loans outstanding at year end; total RPT flow ~1.3% of revenue.", note_ref: "Note 41, Note 40(f), Note 37", rating: "CLEAN"}
+red_flags:
+  - "Note 52 lease-liability roll-forward internal arithmetic failure: Rs 492.02 Lacs unreconciled gap between the note's own computed closing balance (Rs 62.56 Lacs negative) and the correct balance-sheet figure (Rs 429.46 Lacs) printed within the same note, caused by an 'Additions during the year' line printed as nil that should show ~Rs 492 Lacs (near-exact match to the Rs 504.78 Lacs of ROU additions disclosed elsewhere in the same note). Verified directly against source text; disclosure-control weakness, not evidence of balance-sheet misstatement."
+questions_for_mgmt:
+  - "What is the mechanism and rate basis for the Kkalpana Industries royalty, and why did it fall 72.5% in FY25 while purchases from the same related party rose 88.9% in the same year?"
+  - "Can management reissue a reconciling Note 52 lease-liability roll-forward (the printed 'Additions during the year' line appears to be missing ~Rs 492 Lacs)?"
+  - "What is the funding policy for the gratuity plan given zero employer contributions for two consecutive years against the actuary's recommended Rs 91.73 Lacs / Rs 106.91 Lacs contributions?"
+  - "Is the 60.3% finished-goods inventory build tied to capacity ramp-up awaiting dispatch or a demand/sell-through slowdown, and what is the expected FY26 normalization path?"
+  - "What is the basis for the 25-year Plant & Machinery useful life against the Schedule II 15-year default, and is there an independent technical assessment supporting it?"
+receivables_trend: "mixed/deteriorating context - overdue >6 months improved YoY (1.44% to 0.24% of gross receivables per ageing, Note 12) and net receivable days rose modestly (~59.8 to ~65.4 days, corroborated by the company's own turnover ratio falling 6.39x to 6.02x, Note 53), but the ECL allowance decline (Rs 774.96 Lacs to Rs 479.50 Lacs) is only partly explained by disclosed P&L write-off/provisioning lines (Note 32), so the 'improvement' in ageing quality should be read with caution rather than as unambiguous strengthening; combined with the larger finished-goods inventory build (Note 10/29), this supports Gate 0's Block B deteriorating cash-conversion flag rather than offsetting it"
+restatements_found: []
+going_concern_language: "NONE - only standard SA-570 boilerplate in the auditor's responsibilities paragraph and the accounting-policies basis-of-preparation statement ('going concern basis of accounting'); no qualification, emphasis of matter, or management doubt language found anywhere in the document on targeted Pass 3 search"

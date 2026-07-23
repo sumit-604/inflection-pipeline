@@ -1,0 +1,22 @@
+stage: B12b
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 14
+caught: 9
+partially_caught: 4
+missed:
+  - {severity: "MINOR", item: "Headline EBITDA-per-ton metric includes non-operating other income (treasury interest/FX), a quality-of-earnings caveat on the number management redirects the margin question to", anchor: "Q1 FY26 call, Rajesh Kothari, p.11; Q2 FY26 call, Arihant Bothra, p.10/p.17"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "concur (B, lower end); 132kV 'delivered' classification is generous and BESS guidance instability is a genuine watch-item, but delivered core capacity/margin/export guidance supports a passing grade"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 2A / promise_delivery (132 kV row)", description: "132 kV XLPE trial graded 'delivered (implied)' and counted in the 5-delivered tally though no call confirms a successful trial/approval/commercial supply (Q4 p.19 only says 'reached up to the capacity of 132 kV'); honest tally is 4 delivered / 4 partial / 4 missed. Decision and B-grade survive; B05 disclosed the uncertainty elsewhere."}
+  - {severity: "MINOR", location: "B05 Section 3B / tone table (EBITDA/ton)", description: "EBITDA-per-ton, presented as a clean transparency positive, includes non-operating other income per management's own words (Q1 p.11); quality caveat not raised. Source partly in the 3-cap-excluded Q1 call."}
+  - {severity: "MINOR", location: "B05 Section 3D / red_flags", description: "BESS customer pipeline is entirely pre-order/pre-MOU (Q3 p.7-8, Q4 p.9-10); noted as 'pre-revenue' but absence of any binding order not elevated to a red flag despite BESS revenue weighting."}
+  - {severity: "MINOR", location: "B05 Section 2C over-promotion", description: "BESS ROCE 25-30% (Q3 p.11-12) sits against initial EBITDA margins management pegs 5-8% below the ~11% core (Q4 p.10-11); internal ROCE-vs-margin tension not surfaced."}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 64

@@ -3,16 +3,36 @@ company: "Aye Finance Limited (AYE)"
 run_date: "2026-07-22"
 model: claude-opus-4-8
 status: complete
-scope: "PHASE 1 - Gate 0 (B01) + Emerging Moat (B07) only; valuation (B10/B11) deferred to Phase 3"
+scope: "FULL — phase-1 Gate 0 + Emerging Moat (recorded 2026-07-22) AND phase-3 valuation-adherence (B10/B11/B14)"
+
+# ---- PHASE 1 (Gate 0 + Emerging Moat) ----
 gate0: {rules_checked: 13, fails: []}
 emoat: {rules_checked: 11, fails: []}
-valuation: {pending: phase-3}
-recomputed_destination_pe: ""
-recomputed_decision: ""
+
+# ---- PHASE 3 (valuation adherence: B10 Role 1 inputs, B11 Role 1 valuation, B14 Role 2 thesis) ----
+valuation:
+  rules_checked: 40
+  acceptance: 90
+  fails:
+    - "F-3 SOM cross-check (B11 s4): base AUM ~25% / EPS CAGR 22% benchmarked against 'documented machinery 25-28%' and declared consistent; the framework-disciplined SOM-implied 3yr AUM CAGR is 18.3% (B09/B14 s3E). Base exceeds the SOM ceiling; should have flagged or cut. MAJOR."
+    - "F-1 Pillar 2 band (B11 s3a): GNPA 4.49% (>4%) strictly maps to 0.80x Stressed not 1.00x Sound; 1.00x is the disclosed operator override reconciling the approved 15x. MINOR (ratified)."
+    - "F-2 Pillar 3a (B11 s3b): +2x rests on the lender-substitution of ~26% AUM machinery; under strict Amendment 4.1 only capex-embedded >=15% cleanly qualifies. Operator-ratified, immaterial to the fixed 15x. MINOR."
+    - "F-4 Role 2 decision rule (B14 s7): 'both paths converge on WATCHLIST' overclaims (Master line 809 Gate 0 AVOID trigger not reconciled); verdict stands via CONDITIONAL-hurdle cap + Master line 915. MINOR (presentational)."
+
+recomputed_destination_pe: "concur: operator-approved 15x forward, within the 18x cap; additive 15.4-16.0x and RRM 9.6-11.2x reproduced"
+recomputed_decision: "concur: WATCHLIST (BUY-ON-DIPS); supported by CONDITIONAL-hurdle cap (Amendment 2) + Master line 915 (sub-60 default)"
+
 findings:
-  - {severity: "MINOR", location: "07-emoat.md Section 6D / YAML combined_assessment", note: "combined_assessment=AVERAGE derived from the pre-downgrade core-implied AVERAGE rather than the injected AVOID classification, to avoid double-penalising the LIMITED-history downgrade; transparent and defensible judgment on a matrix cell the prompt underspecifies. No number changes."}
+  - {severity: "MAJOR", phase: 3, location: "B11 s4 (SOM cross-check)", description: "SOM cross-check read 'consistent' against a 25-28% documented-machinery benchmark instead of the framework-disciplined 18.3% SOM-implied 3yr AUM CAGR (B09); base AUM ~25% exceeds the SOM ceiling and should have triggered a cut or explicit justification. Does not change the operator-fixed 15x; would tighten the Hurdle toward STOP if propagated; the at-CMP 'no buy' action survives."}
+  - {severity: "MINOR", phase: 1, location: "07-emoat.md combined_assessment", description: "combined_assessment=AVERAGE derived from the pre-downgrade core-implied AVERAGE rather than the injected AVOID, to avoid double-penalising the LIMITED-history downgrade; defensible judgment, no number changes."}
+  - {severity: "MINOR", phase: 3, location: "B11 s3a / B10 Pillar 2", description: "Asset-Quality Multiplier 1.00x (Sound) applied where GNPA 4.49% (>4%) strictly falls in the 0.80x Stressed band; disclosed operator-ratified override reconciling the approved 15x (deliberation lines 29, 51). No growth offset applied (correct)."}
+  - {severity: "MINOR", phase: 3, location: "B11 s3b / deliberation line 52 (Pillar 3a)", description: "3a growth visibility +2x rests on the lender-substitution of documented ~26% AUM growth; strict Amendment 4.1 would pay less. Operator-ratified, immaterial to the operator-fixed 15x."}
+  - {severity: "MINOR", phase: 3, location: "B14 s7 (Role 2 decision-rule trace)", description: "'Both paths converge on WATCHLIST' overclaims (Master line 809 Gate 0 AVOID trigger not reconciled); verdict is independently correct via the CONDITIONAL-hurdle cap + Master line 915 sub-60 default. Presentational."}
+
 critical_count: 0
-major_count: 0
-minor_count: 1
-acceptance_rate: 100
-framework_adherence: "CLEAN for Gate0+EM scope: all block math re-derives, all NBFC substitutions named and reasonable, history downgrade DATA-LENGTH-only (no transition/recovery conflation), no double-crediting, no unanchored/estimated fills, INDETERMINATE cash-conversion cap correctly invoked."
+major_count: 1
+minor_count: 4
+gate0_em_acceptance: 100      # phase 1, 24/24 rules
+valuation_acceptance: 90      # phase 3, 36/40 rules
+acceptance_rate: 94           # combined 60/64 rules across both halves
+framework_adherence: 94       # the confidence-delta component (combined)

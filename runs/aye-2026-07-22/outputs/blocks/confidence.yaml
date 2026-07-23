@@ -1,14 +1,14 @@
 stage: confidence-delta
 company: AYE
 run_date: 2026-07-22
-phase: 1
+phase: 3-final
 confidence_delta:
-  numerical_acceptance: 97.5      # B12a: 40 numbers checked, 0 CRITICAL, 0 MAJOR, 1 MINOR (unanchored NPS); source-fidelity PASS
-  redflag_coverage: 64            # B12b: 9 of 14 verifier-found flags caught upstream (+2 partial ~71%); 1 MAJOR miss (over-lending/per-borrower-leverage from growth composition); above 60 REWORK floor
-  framework_adherence: 100        # B12c: Gate0+EM portion CLEAN (0 CRIT/0 MAJ/1 MINOR). VALUATION component pending phase 3 (B10/B11 not yet built)
-  peer_utilisation: 90.9          # B12d: 10 of 11 peer transcripts used SUBSTANTIVE (1 CITED-ONLY), verifier D confirmed fair, acceptance 100, 0 CRIT/0 MAJ/5 MINOR (page-anchor precision only)
-  overall: 64                     # min of the four; redflag-bound
+  numerical_acceptance: 97.5      # B12a: 40 numbers checked, 0 CRITICAL, 0 MAJOR, 1 MINOR; source-fidelity PASS
+  redflag_coverage: 64            # B12b: 9 of 14 verifier-found flags caught upstream (+2 partial ~71%); 1 MAJOR miss (over-lending/per-borrower-leverage); above 60 REWORK floor
+  framework_adherence: 94         # B12c FULL: Gate0+EM 100% (24/24) + valuation-adherence 90% (36/40); combined 60/64. 0 CRIT, 1 MAJOR (SOM cross-check optimism), 4 MINOR
+  peer_utilisation: 90.9          # B12d: 10 of 11 peer transcripts SUBSTANTIVE, verifier D confirmed fair, 0 CRIT/0 MAJ/5 MINOR (page-anchor precision)
+  overall: 64                     # min of the four; redflag-bound (unchanged from phase 1)
 band: "60-74 (PROCEED verdicts downgrade one level; REWORK not forced)"
-valuation_adherence_status: "pending phase 3"
-rework_check: "NOT triggered — Verifier A 0 CRITICAL numerical, source-fidelity PASS; every verifier acceptance >= 60 (min redflag_coverage 64)."
-notes: "overall 64 is bound by redflag_coverage; the single MAJOR miss is the over-lending / per-borrower-leverage risk (39% AUM growth from repeat loans + 60% from branch-deepening in a micro-borrower book that itself survived an over-lending cycle) — surfaced via the verifier layer into the gate recommendation. All other components >= 90 except peer_utilisation 90.9."
+valuation_adherence_status: "complete — 90% (36/40 rules), 0 CRITICAL, 1 MAJOR, 3 MINOR"
+rework_check: "NOT triggered — Verifier A 0 CRITICAL numerical + source-fidelity PASS; Verifier C valuation 0 CRITICAL; every verifier acceptance >= 60 (min redflag_coverage 64)."
+notes: "overall 64 bound by redflag_coverage (the over-lending / per-borrower-leverage MAJOR miss). Framework-adherence fell 100 -> 94 as the valuation half (90%) merged in: 1 MAJOR is the SOM cross-check reading 'consistent' against ~25-28% documented growth instead of the framework-disciplined 18.3% SOM ceiling; it would tighten the Hurdle toward STOP if propagated but does not change the operator-fixed 15x, and the at-CMP 'no buy' decision survives. All other components >= 90."

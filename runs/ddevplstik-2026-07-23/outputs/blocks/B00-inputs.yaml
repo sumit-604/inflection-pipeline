@@ -1,0 +1,57 @@
+stage: B00-inputs
+company: DDEVPLSTIK
+run_date: 2026-07-23
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+operator_confirmation: "proceed with gaps (2026-07-23)"
+inventory:
+  prospectus: 0
+  annual_report: 1        # Annual_Report_2020.pdf (~6yr stale vs run_date)
+  results: 2
+  rating: 1               # CRISIL A+/Stable/A1+ reaffirmed 2026-07-17; image-only PDF
+  concalls: 4             # Aug-25, Nov-25, Feb-26, May-26; use 3 most recent
+  peer_concalls: 4        # all APCOTEXIND
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 12           # PEER ONLY (APCOTEXIND, BEPL); no DDEVPLSTIK own data
+  presentation: 1
+  other: 0
+concalls_used:            # 3 most recent, oldest-first for stage 5
+  - inputs/concalls/Concall_Nov_2025_Transcript.pdf
+  - inputs/concalls/Concall_Feb_2026_Transcript.pdf
+  - inputs/concalls/Concall_May_2026_Transcript.pdf
+concalls_dropped:
+  - inputs/concalls/Concall_Aug_2025_Transcript.pdf   # 4th-oldest, over the 3-cap
+input_gaps:
+  - type: prospectus
+    severity: standard    # no listed_date; AR-2020 present implies listed >3yr; not HIGH
+    effect: "stage 8 sources promoter/group from web + AR governance, flagged web-derived"
+  - type: announcements
+    severity: low   # mitigated: key Reg 30 events corroborated inside concalls/presentation/rating
+    effect: "no announcements folder, but the material FY26 actions (Bhiwadi XLPE ops 28-Apr-2026, PVC/HFFR commissioning Oct/Dec-2025, BESS entry Jan-2026) are all disclosed in the Q3/Q4 concalls, Q4 presentation and CRISIL rating that ARE in the folder; stages 5/7/9 anchor them to those primaries; operator-context note maps where to look"
+  - type: shareholding
+    severity: low   # downgraded: operator relayed a screener.in shareholding trend Sep23-Jun26
+    effect: "no shareholding FILING PDF, but inputs/shareholding/_shareholding-screener-transcribed-2026-07-23.md (operator-relayed, NON-ANCHORED) carries promoter/FII/DII trend; promoter pinned ~74.99%, FII 0.17->1.47%, DII to 0.09%, institutions ~1.6% combined; stage 10 may weigh it for the UA qualifier but must flag non-filing provenance; confirm vs a real filing before anchored Phase-3 use"
+  - type: research
+    severity: low
+    effect: "no anchored impact; loses a leads/intent cross-check source only"
+  - type: own_screening
+    severity: medium
+    effect: "Gate 0 (stage 1) has NO DDEVPLSTIK screening; extracts from results PDFs + AR financial statements per degradation map"
+  - type: stale_annual_report
+    severity: high
+    effect: "only AR is FY2020; stages 2/3/4/7 build on ~6yr-old report; backward baseline thin; recent-year detail comes from results PDFs + concalls + presentation only"
+notes:
+  - "manifest cmp=0.0 and market_cap_cr=0.0 unfilled; affects phase-3 valuation entry math, not phase-1 evidence"
+  - "manifest sector_cap_row 'Pharma / CDMO' is WRONG for a plastics/polymer compounder; auto-picked, must be corrected before phase-3 stage 11"
+  - "rating PDF has no text layer; subagents/verifiers MUST read it via the Read tool pages param (image render), not pypdf"
+  - "peer coverage is single-peer (APCOTEXIND concalls only); BEPL has screening but no concall"
+  - "OPERATOR CONTEXT provided 2026-07-23 (inputs/_operator-context-2026-07-23.md): NON-ANCHORED 6-month operational map; carried into every stage task message; numbers still anchored to this run's own input PDFs"
+  - "results identified: 281f...=Q4 FY26 audited (full-year FY26, 25-May-2026); e921...=Q3 FY26 unaudited (10-Feb-2026)"
+  - "concall quarter map: Aug-25=Q1FY26, Nov-25=Q2FY26, Feb-26=Q3FY26, May-26=Q4FY26; stage 5 uses 3 most recent oldest-first (Q2->Q3->Q4 FY26)"
+  - "text caches built at inputs/_textcache/*.txt (page-marked); rating is image-only, read via Read pages param"
+  - "business is a polymer/plastics compounder (PVC/HFFR/XLPE) plus a new BESS assembly vertical; NOT pharma"
+flags: []

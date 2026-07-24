@@ -1,0 +1,45 @@
+stage: B00-inputs
+company: MAXIND
+run_date: 2026-07-24
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+company_name: Max India Ltd
+business: senior living (Antara Senior Living) + senior care services; deeply loss-making growth-stage
+cmp: 182.0
+market_cap_cr: 959.0
+sector_cap_row_manifest: "Pharma / CDMO"
+sector_cap_row_flag: "WRONG — MAXIND is senior-living/senior-care services + real-estate-linked, not pharma/CDMO. Collector auto-pick defect (recurring: SHYAMMETL/KCPSUGIND/MAPMYINDIA/AMAGI). Phase-3 stage-11 must pick correct cap row; B04 primary method likely EV/Sales, SOTP, or per-bed/occupancy metric, NOT an earnings exit PE (company is loss-making)."
+listed_status: "long-listed (relisted ~Jan 2022 after Max group composite scheme; scrip 543223); >3y before run_date so prospectus absence is NOT a gap"
+inventory:
+  prospectus: 0        # not expected (long-listed), not a gap
+  annual-report: 1     # Annual_Report.pdf = FY2024-25 (6th AGM)
+  results: 2           # d357=Q4+FY ended 31-Mar-2026 (audited); d9e6=Q3/9M ended 31-Dec-2025 (unaudited)
+  rating: 0            # GAP
+  concalls: 4          # Aug25=Q1FY26, Dec25(Nov14 call)=Q2FY26, Feb26=Q3FY26, Jun26=Q4FY26
+  peer-concalls: 16    # ASHIANA x4, GPTHEALTH x4, KRSNAA x4, MAXESTATES x4
+  announcements: 0     # GAP
+  shareholding: 0      # GAP
+  research: 0          # GAP
+  screening: 30        # screener + 4 peers (6 CSV each)
+  presentation: 1      # Investor_Presentation_1.pdf (41pg, image-heavy, thin text)
+  other: 0
+input_gaps:
+  - "rating: absent — Stage 10 marks rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative; weakens FLAG-CASH structural-vs-growth determination"
+  - "announcements: absent — Stages 5/7/8 lose documented-ACTION Reg30 ledger; intent-and-action cross-check runs on concall/AR only; FTTCP Step 0C input missing, lowers confidence"
+  - "shareholding: absent — Stage 10 marks FII+DII unresolved; Stage 11 cannot affirm UA institutional-absence qualifier so UA withheld; promoter holding/pledge trend falls back to AR/last-known with staleness noted"
+  - "research: absent — no effect on anchored evidence; loses lead-generation and management-intent cross-check source only"
+  - "presentation: image-heavy, thin extractable text (41pg -> 33KB); stages use Read-tool page render as fallback"
+concall_quarter_map:
+  Concall_Aug_2025_Transcript.pdf: "Q1 FY26 (call 06-Aug-2025, quarter ended 30-Jun-2025)"
+  Concall_Dec_2025_Transcript.pdf: "Q2 FY26 (call 14-Nov-2025, quarter ended 30-Sep-2025)"
+  Concall_Feb_2026_Transcript.pdf: "Q3 FY26 (call 10-Feb-2026, quarter+9M ended 31-Dec-2025)"
+  Concall_Jun_2026_Transcript.pdf: "Q4 FY26 (call Jun-2026, results 28-May-2026, year ended 31-Mar-2026)"
+peers:
+  ASHIANA: "Ashiana Housing — senior-living real estate (closest business analogue to Antara)"
+  MAXESTATES: "Max Estates — Max-group real estate"
+  GPTHEALTH: "GPT Healthcare — hospitals (senior-care-adjacent)"
+  KRSNAA: "Krsnaa Diagnostics — diagnostics (healthcare-adjacent)"
+operator_confirmation: "Empty-folder pause asked once; operator answered PROCEED WITH GAPS (2026-07-24)."
+textcache: "inputs/_textcache/*.txt built via pypdf, page-marked [[PAGE N]]; all 24 PDFs extracted clean. Route AR/results/rating-consuming stages to .txt to avoid PDF size/tooling wall."

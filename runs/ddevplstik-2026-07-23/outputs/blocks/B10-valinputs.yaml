@@ -1,0 +1,147 @@
+stage: B10-valinputs
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Rating PDF (17-Jul-2026) extracted as empty/blank pages; exact CRISIL WC/cash-flow verbatim quote NOT FOUND (image PDF not OCR'd). FLAG-CASH determination uses B01 Block B deteriorating trend and B02/B03 findings as anchor instead. Conservative approach: cash conversion INDETERMINATE per FTTCP-deliberation.md, capping disposition at PROCEED WITH CAVEATS (B10.md 'Rating PDF Extraction' section)."
+  - "BESS operating history and unit economics: segment pre-revenue (H2 FY27 start); no comparable margin/turnover history available. All BESS figures FY27-30 marked EXPECTED/illustrative. Next quarterly results post-commissioning (FY27 Q2-Q3) will resolve. Impact HIGH for FY30 projections (B10.md 'Structured Unresolved Gaps' section)."
+  - "FY28 core capex trajectory: promised 'next quarter' in Q3 FY26 call, not delivered by Q4 call. Expect resolution in Q1 FY27 concall (Jul-Aug 2026). Impact MEDIUM for DCF free-cash-flow forecasts (B10.md 'Structured Unresolved Gaps' section)."
+  - "Kkalpana Industries RPT mechanism: royalty fell 72% YoY (Rs 16.65 Cr → Rs 4.58 Cr) with zero explanation; formal agreement terms and volume coverage basis not disclosed. Next AR (FY26-27 Annual Report, ~Sep 2026) and concall Q&A will clarify. Impact MEDIUM if structural (B10.md 'Structured Unresolved Gaps' section)."
+  - "Cash conversion resolution (structural vs growth-induced): CFO/PAT deteriorated FY26 (0.42 vs 0.64-0.74 FY24-25); WC days +18.63 (FY24-FY26, inventory-driven); determination INDETERMINATE per FTTCP-deliberation.md. Critical gate: Q1 FY27 WC print due ~early Sep 2026. CRITICAL impact for cash multiplier revision (0.80x/1.15x off 1.00x) (B10.md 'Structured Unresolved Gaps' section)."
+  - "Product-line EBITDA margin splits (PVC vs XLPE vs HFFR vs Antifab): AR and investor presentation use different product-category bucketing. Next earnings call expected to clarify. Impact MEDIUM for segment SOM modeling (B10.md 'Structured Unresolved Gaps' section)."
+flags:
+  - "FLAG-CASH (B02/B03 corroborated by FTTCP-deliberation.md): FY26 finished-goods inventory +60.3% vs revenue +7.08% credited Rs 13.28 Cr to COGS against total PAT growth of only Rs 3.83 Cr; CFO/PAT dropped to 0.42 FY26 from 0.64-0.74 FY24-25; cumulative FY24-26 CFO/PAT 0.594; WC days +18.63 (FY24→FY26). Cash-conversion determination INDETERMINATE per FTTCP-deliberation.md (leaning growth-induced, awaits next print). Caps disposition at PROCEED WITH CAVEATS."
+  - "BESS GUIDANCE REVISION (B05-concall.yaml): FY27 revenue guidance cut twice within two quarters (Rs 300-500 Cr Q3 FY26 → Rs 200-250 Cr Q4 FY26); Phase-1 capex revised up Rs 150 Cr → ~Rs 200 Cr with no explanation. Management credibility grade B (Mixed). Treat all FY27+ BESS figures as illustrative, exclude from core EPS until mature."
+  - "SHARED CATALYST (FTTCP-deliberation.md): Bhiwadi XLPE ramp (Bhiwadi XLPE 48k MTPA, PVC, HFFR utilization ramp) is the single point of failure behind Revenue STARTING and Pillar 3a +2x growth premium. NOT double-credited into Pillar 1 (ROCE STAGNANT, current 28.90% used). First-print test: FY27 Q1-2 volume and WC trajectory will determine if growth-induced or structural capacity risk."
+  - "KKALPANA INDUSTRIES RPT OPACITY (B08-promoter.yaml, B03-ardeep.yaml): Royalty to fellow-subsidiary Kkalpana Industries fell 72.5% (Rs 16.65 Cr → Rs 4.58 Cr) while purchases from same entity rose 88.9%; no explanation or agreement terms disclosed. Governance-proximity flag (two independent directors also serve as independent directors of Kkalpana Industries Ltd). Next AR and concall will clarify mechanism."
+  - "WORKING-CAPITAL DETERIORATION CONCENTRATED IN FY26 CAPEX CYCLE (B01.md Block B, B02.md, B03.md): Inventory days jumped 30.82→48.55 (+17.73 days) almost entirely in FY26, coincident with Rs 73.18 Cr capex cycle (vs Rs 22.98 FY24). First-quarter FY27 WC read will test whether growth-induced (expected reversal post-stocking phase) or structural (demand-timing issue)."
+table:
+  company_identity:
+    company_name: "DDev Plastiks Industries Ltd (B00-inputs.yaml)"
+    ticker: "DDEVPLSTIK (B00-inputs.yaml)"
+    business_model_type: "Manufacturing: B2B polymer-based specialty compounding (PVC, XLPE, HFFR, engineering compounds, Antifab) + Battery Energy Storage System (BESS) assembly (pre-revenue H2 FY27 start) (B04-bizmodel.yaml)"
+    sector_cap_row: "Cables / Industrial products, 25x (FTTCP-deliberation.md; corrected from manifest Pharma/CDMO 38x)"
+    cmp_rs: 272 (FTTCP-deliberation.md, operator-supplied)
+    market_cap_cr: 2817 (FTTCP-deliberation.md, operator-supplied)
+    shares_outstanding_diluted_cr: 10.36 (implied from 2817 ÷ 272; Results Q4 FY26 note 15: 103,476,664 equity shares)
+    enterprise_value_cr: 2810.58 (computed: mcap 2817 + net cash (−6.42) from Results Q4 FY26 BS p.9-10)
+    net_debt_cr: −6.42 (net cash; borrowings 52.27 − cash 43.38 − investments 15.31 from Results Q4 FY26 p.9-10)
+  latest_financials_fy26:
+    revenue_from_ops_cr: 2947.87 (Results Q4 FY26 p.7, audited)
+    ebitda_cr: 320.27 (computed: PBT 273.63 + D&A 17.80 + FC 28.84 from Results Q4 FY26 p.7, p.11)
+    ebitda_margin_pct: 10.87 (computed: 320.27 ÷ 2947.87)
+    pat_cr: 201.82 (Results Q4 FY26 p.7, audited)
+    pat_margin_pct: 6.85 (computed: 201.82 ÷ 2947.87)
+    diluted_eps_rs: 19.50 (Results Q4 FY26 p.7, annualised)
+    trailing_eps_current_rs: 19.49 (FTTCP-deliberation.md, operator-supplied; used for entry PE 13.96x)
+    cfo_cr: 84.51 (Results Q4 FY26 p.11, cash flow statement)
+    fcf_cr: 11.33 (computed: CFO 84.51 − Capex 73.18)
+    capex_cr: 73.18 (Results Q4 FY26 p.11, purchase of PPE+CWIP+Intangibles)
+    book_value_per_share_rs: 97.80 (computed: Equity 1013.30 ÷ shares 10.36)
+    depreciation_cr: 17.80 (Results Q4 FY26 p.7, D&A line)
+    dps_rs: 1.75 (interim 0.50 + final 1.25, Results Q4 FY26 p.15, note 2)
+    trade_receivables_cr: 553.83 (Results Q4 FY26 p.10, BS)
+    inventories_cr: 391.96 (Results Q4 FY26 p.10, BS)
+    trade_payables_cr: 283.40 (Results Q4 FY26 p.10, BS, MSE 28.45 + Others 254.95)
+    borrowings_cr: 52.27 (Results Q4 FY26 p.10, BS, current financial liabilities)
+    cash_and_investments_cr: 58.69 (cash 43.38 + investments 15.31, Results Q4 FY26 p.10)
+  fy_series_actuals:
+    revenue_cr: [2227, 2504, 2431.24, 2603.32, 2947.87] (FY22-FY26: AR FY24-25 p.12 highlights FY22-FY25; Results Q4 FY26 p.7 FY26)
+    revenue_cr_fy_labels: ["FY22", "FY23", "FY24", "FY25", "FY26"]
+    ebitda_margin_pct: [6.0, 7.0, 12.0, 10.9, 10.87] (FY22-FY26: AR FY24-25 p.12 highlights; Results Q4 FY26 p.7 computed FY26)
+    pat_cr: [55, 104, 181.67, 185.50, 201.82] (FY22-FY26: AR FY24-25 p.12 highlights; Results Q4 FY26 p.7 FY26)
+    cfo_cr: [unresolved, unresolved, 116.20, 137.20, 84.51] (FY24-FY26: AR FY24-25 p.156-157; Results Q4 FY26 p.11)
+    fcf_cr: [unresolved, unresolved, 93.22, 84.55, 11.33] (FY24-FY26: AR FY24-25 p.156-157; Results Q4 FY26 p.11)
+    roce_pct: [unresolved, unresolved, 39.01, 31.32, 28.90] (FY24-FY26: B01.md Block A; FY26 per FTTCP-deliberation.md Pillar 1 input)
+    roe_pct: [unresolved, unresolved, 27.53, 24.83, 21.84] (FY24-FY26: B01.md Block A, ROE line)
+    wc_days: [unresolved, unresolved, 63.39, 71.00, 82.02] (FY24-FY26: B01.md Block B, B4 line)
+    net_debt_cr: [unresolved, unresolved, −10.73, −62.38, −6.42] (FY24-FY26 net cash: B01.md notes)
+  cagr_and_trends:
+    revenue_cagr_3yr_pct: 10.34 (FY24→FY26: B01.md)
+    pat_cagr_3yr_pct: 5.43 (FY24→FY26: B01.md)
+    revenue_cagr_4yr_pct: 7.27 (FY22→FY26: B01.md Block C, C1)
+    pat_cagr_4yr_pct: 38.44 (FY22→FY26: B01.md Block C, C2)
+    cfo_pat_cumulative_fy24_26: 0.594 (FY24-FY26 cumulative: B01.md Block B, B1)
+    fcf_pat_cumulative_fy24_26: 0.332 (FY24-FY26 cumulative: B01.md Block B, B3)
+    roce_trend_direction: "DECLINING (39.01% FY24 → 31.32% FY25 → 28.90% FY26, −10.11pp over 3yr; current 28.90% STAGNANT forward per FTTCP-deliberation.md) (B01.md Block A)"
+    roe_trend_direction: "DECLINING (27.53% FY24 → 24.83% FY25 → 21.84% FY26) (B01.md Block A)"
+  management_guidance_and_credibility:
+    credibility_grade: "B (Good) - Delivered on capacity build-out (PVC/HFFR/XLPE Bhiwadi), export growth (+30% FY26), EBITDA margin band (10-12%) across three calls; missed FY26 volume guidance (actual 201,370 MT vs 210k-220k guided); revised BESS revenue/capex twice within two quarters (Q3→Q4 FY26). (B05-concall.yaml credibility_grade)"
+    fy27_core_revenue_growth_pct: 13 (guided, ex-BESS; B05-concall.yaml; FTTCP-deliberation.md)
+    fy27_core_revenue_guided_cr: 3340 (computed from FY26 2947.87 × 1.13; B05-concall.yaml; FTTCP-deliberation.md)
+    fy27_ebitda_margin_pct: 11 (guided; B05-concall.yaml)
+    fy27_volume_growth_pct: 15 (guided 231,000 MT; B05-concall.yaml)
+    fy27_bess_revenue_cr: 200_to_250 (revised down from 300-500 Cr Q3 FY26; B05-concall.yaml promise_delivery rows)
+    fy27_bess_capex_cr: 70_to_75 (FY27 portion of ~200 Cr revised Phase-1 capex; B05-concall.yaml)
+    fy27_total_capex_cr: 175 (core ~100 + BESS ~75; B05-concall.yaml)
+    fy30_core_revenue_target_cr: 5000 (long-dated, ~13-14% forward CAGR required vs trailing 5-7% delivered; B05-concall.yaml; B09-tam.yaml)
+  emerging_moat_and_catalysts:
+    em_score: 23 (B07-emoat.yaml em_score)
+    em_classification: "MODEST (below 25 threshold; paired with Gate 0 GOOD yields stable profile) (B07-emoat.yaml)"
+    evidence_mix: "13 documented, 8 claim, 2 inference (B07-emoat.yaml evidence_mix)"
+    primary_catalyst_12m: "Bhiwadi XLPE 48k MTPA ramp from standing start (commissioned late Apr 2026), utilization target ~73% FY27; Shared Catalyst per FTTCP-deliberation.md, single point of failure, NOT double-credited into Pillar 1 (ROCE STAGNANT) (B07-emoat.yaml catalysts_12m; FTTCP-deliberation.md SHARED CATALYST)"
+    bess_commissioning_catalyst: "H2 FY27 Ahmedabad Phase-1, revised guidance twice (Q3: Rs 300-500 Cr → Q4: Rs 200-250 Cr FY27 revenue), claim-level credibility (B07-emoat.yaml)"
+  ua_qualifiers:
+    listed_12m_requirement_met: true (Incorporation 2020 per CIN; run date 2026-07-23, listed well >12 months; B01-gate0.yaml; B08-promoter.yaml)
+    gate0_ge60_or_em_ge25_requirement_met: true (Gate 0 core score 74 ≥60; EM 23 < 25 but Gate 0 exceeds; B01-gate0.yaml core_score: 74; B07-emoat.yaml em_score: 23)
+    fii_dii_lt3_pct_requirement_met: true (FII+DII ~1.6%, source operator-supplied context in FTTCP-deliberation.md Pillar 3 footnote)
+    all_three_ua_qualifiers_met: true (FTTCP-deliberation.md Undiscovered Alpha: applied)
+  peer_financial_data:
+    peer_set_note: "Peer product overlap limited: APCOTEXIND (adhesives/latex) and BEPL (engineering polymers) are adjacent, not direct cable-compound peers. APCOTEXIND concalls available (Q1-Q4 FY26); BEPL CSV only (no concall). (B06-peers.yaml flag)"
+    bepl_fy26_operating_ebitda_margin_pct: 15.11 (vs DDEV 9.73%, DDEV below peer −5.38pp; B01.md M2)
+    bepl_fy26_gross_margin_pct: 32.61 (vs DDEV 17.30%, DDEV below peer −15.31pp; B01.md M9)
+    apcotexind_pe_not_found: true (peer coverage mismatch; cable/polymer compound ≠ adhesive/latex; B06-peers.yaml unverifiable)
+  tam_sam_som:
+    tam_conservative_cr: 7100 (B09-tam.yaml tam_cr.conservative)
+    tam_realistic_cr: 12000 (B09-tam.yaml tam_cr.realistic)
+    tam_confidence: "Low (multiple methods diverge; no dedicated third-party compound-market report; B09-tam.yaml)"
+    sam_cr: 9600 (B09-tam.yaml sam_cr)
+    sam_pct_of_tam: 80 (B09-tam.yaml sam_pct_of_tam)
+    current_sam_share_pct: 30.8 (FY26 revenue ÷ SAM; B09-tam.yaml current_sam_share_pct)
+    som_3yr_cr: 5378 (FY26-28 cumulative; B09-tam.yaml som_3yr_cr)
+    som_5yr_cr: 7666 (FY26-30 cumulative; B09-tam.yaml som_5yr_cr)
+    som_implied_3yr_cagr_pct: 22.1 (B09-tam.yaml som_implied_revenue_cagr.yr3)
+    som_implied_5yr_cagr_pct: 21.0 (B09-tam.yaml som_implied_revenue_cagr.yr5)
+    revenue_headroom_x: 3.25 (SAM ÷ FY26 revenue; B09-tam.yaml revenue_headroom_x)
+    runway_class: "STRONG (B09-tam.yaml runway_class)"
+  promoter_governance:
+    promoter_verdict: "TRUSTWORTHY (scorecard 6 clean, 4 caution, 0 red; no pledge; RPT within shareholder caps; B08-promoter.yaml verdict)"
+    promoter_holding_pct: 75.00 (as at 31-Mar-2025, latest anchored; AR FY24-25 p.108)
+    pledge_pct_latest: 0 (SEBI SAST Reg 31(4) filing dated 1-Apr-2026 confirms zero encumbrance; B08-promoter.yaml pledge_trend)
+    contingent_liabilities_pct_nw: 1.18 (income tax 2.21 + bank guarantee 7.66 = 9.87 ÷ NW 834.71 FY25; B01.md E4; excludes capital commitments/LC)
+  rating_wc_quote: "NOT FOUND - Rating PDF (17-Jul-2026) extracted as empty/blank pages in this run (image PDF not OCR'd). Conservative approach: FLAG-CASH determination anchored to B01 Block B deteriorating trend (WC days +18.63, inventory-driven) and B02/B03 findings (FG inventory +60.3% vs revenue +7.08%) rather than rating agency verbatim. (B10.md 'Rating PDF Extraction' section; B01.md data_notes)"
+conflicts: []
+unresolved:
+  - field: "Rating agency WC/cash-flow commentary (verbatim quote required)"
+    why: "Rating PDF (CRISIL 17-Jul-2026) extracted as empty/blank pages; image PDF not OCR'd in this run's text cache"
+    where_it_might_be: "CRISIL rating PDF (inputs/rating/ratings.pdf) direct manual retrieval; OCR-capable PDF reader; next cached run with manual extraction"
+    impact: "LOW - FLAG-CASH determination uses B01 Block B evidence instead (conservative anchor)"
+  - field: "BESS operating history and unit economics post-commissioning"
+    why: "Segment pre-revenue; H2 FY27 recognition start; zero comparable track record as of run date"
+    where_it_might_be: "FY27-28 quarterly results post-commissioning (expected early FY28 Q1-2); comparable BESS provider filings (Sungrow, Fluence)"
+    impact: "HIGH - All FY28+ BESS projections (margin >10%, Rs 800-900 Cr/GWh revenue) rest on unproven assumptions"
+  - field: "FY28 core capex trajectory"
+    why: "Promised 'next quarter' in Q3 FY26 call (23-Jan-2026), not delivered by Q4 FY26 call (25-May-2026)"
+    where_it_might_be: "Q1 FY27 concall expected Jul-Aug 2026; next management guidance refresh"
+    impact: "MEDIUM - DCF free-cash-flow forecasts FY28-30 depend on core capex taper post-current cycle"
+  - field: "Kkalpana Industries RPT mechanism and royalty volume coverage basis"
+    why: "Royalty to related party fell 72% YoY (Rs 16.65 Cr → Rs 4.58 Cr) with zero explanation; formal agreement terms not disclosed"
+    where_it_might_be: "FY26-27 Annual Report Note 41 (due ~Sep 2026); concall Q&A next opportunity"
+    impact: "MEDIUM - If structural (not transactional), affects ongoing cash available for capex funding"
+  - field: "Cash conversion determination (structural vs growth-induced WC deterioration)"
+    why: "CFO/PAT dropped 0.64-0.74 (FY24-25) → 0.42 (FY26); WC days +18.63 (FY24-FY26, inventory-driven in FY26 capex cycle); INDETERMINATE per FTTCP-deliberation.md pending next print"
+    where_it_might_be: "Q1 FY27 working-capital print (expected early Aug-Sep 2026 in quarterly results/call). If WC days normalize post-inventory ramp = growth-induced; if stay >90 on flat volume = structural"
+    impact: "CRITICAL - Determines if cash multiplier (Pillar 2) stays 1.00x or revises to 0.80x (structural) / up to 1.15x (growth-induced reversing) in Phase 3 reassessment"
+  - field: "Product-line EBITDA margins (PVC vs XLPE vs HFFR vs Antifab) and segment revenue split"
+    why: "AR (standalone FY25: PE ~86%) and investor presentation (consolidated FY26: PE 72% / Others 18%) use different product-category bucketing; reconciliation needed"
+    where_it_might_be: "Next earnings call (Q1 FY27 expected Jul-Aug 2026) management commentary; detailed investor presentation update; next annual report note breakdown"
+    impact: "MEDIUM - SOM capacity check uses blended margins; product-mix shift toward higher-margin HFFR/XLPE could improve realized margin vs guided ~11%"
+summary:
+  assembly_completeness: "COMPLETE - Every value above carries source anchor. Six input gaps recorded in unresolved[]. Four flags (FLAG-CASH, BESS revision, SHARED CATALYST, Kkalpana RPT opacity) affect Phase 3 risk assessment and cash multiplier resolution gate."
+  authoritative_deliberation_inputs_status: "CARRIED VERBATIM from FTTCP-deliberation.md as required. Pillar 1 (ROCE 28.90%, STAGNANT forward), Pillar 2 (cash multiplier 1.00x, INDETERMINATE), Pillar 3 (+2x, all on growth 3a), Destination PE 25x (trailing basis), Sector cap 25x (Cables/Industrial products, operator-approved correction), UA applied (all three qualifiers met), Tier A 25% hurdle, Shared Catalyst (Bhiwadi ramp, single point of failure, not double-credited) - all recorded on B10 at their locations above. Stage 11 may NOT silently derive different exit PE."
+  next_stage_gates:
+    cash_multiplier_revision: "Awaits Q1 FY27 WC print (early Sep 2026) to resolve INDETERMINATE → 0.80x (structural) or 1.15x (growth-induced reversing). If resolution occurs before Phase 3 stage 11 run, deliberation record should be updated; if unresolved at Phase 3, cash multiplier holds at 1.00x per FTTCP-deliberation.md."
+    roce_recovery_option: "ROCE could move to RECOVERING on FY27 print >31% (per FTTCP-deliberation.md provisional inputs section). If so, Pillar 1 raises; same capex then routes through Pillar 1 only (single-credit rule applies, no simultaneous Pillar 3a credit)."
+    bess_operational_readiness: "First quarterly revenue recognition H2 FY27; materiality test at FY27 year-end. Avoid blending BESS into core EPS until operational stability evident (post Q1-2 FY28 results)."
+    management_credibility_reset: "Grade B (Mixed) delivers on capacity, capacity utilization, export growth; misses on BESS guidance stability and volume precision. Next proving ground is FY27 guidance delivery (volume 231k MT, revenue +13% core, margin ~11%, capex Rs 175 Cr)."

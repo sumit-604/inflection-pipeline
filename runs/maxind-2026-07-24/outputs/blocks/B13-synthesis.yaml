@@ -1,0 +1,19 @@
+stage: B13-synthesis
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+confidence_delta: {numerical: 98, redflag: 70, framework: 100, peer: 75, overall: 70}
+rework_decision: "NOT REWORK — B12d 50% driven by two localized attribution errors in directional peer stage B06; substance survives, provenance corrected; A had 0 CRITICAL/0 source-fidelity"
+flag_cash_determination: "INDETERMINATE — caps clean ceiling at PROCEED WITH CAVEATS; missing evidence = rating rationale + FY26 receivables ageing"
+flag_promoter: "CONCERN — inline in verdict line"
+flag_gate0: "AVOID (24/160), depressors investment-phase; FY26 first inflection"
+headline: "Three senior care build outs draining treasury"
+falsification_metric: "Q1 FY27 consolidated treasury falling toward ~Rs40 Cr with no Rs200-250 Cr fundraise announced"
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+publish_candidate: false

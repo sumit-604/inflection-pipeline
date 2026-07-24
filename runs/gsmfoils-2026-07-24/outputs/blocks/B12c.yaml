@@ -1,0 +1,23 @@
+stage: B12c
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 39
+  fails:
+    - {rule: "A1 median ROCE (2-yr median 34.77% vs 3-yr low-bound 24.67%)", severity: "minor", recomputed: "A1=4 not 5; Block A 19 not 20; Core 57; classification unchanged AVOID"}
+emoat:
+  rules_checked: 18
+  fails:
+    - {rule: "6D combined_reasoning attributes AVOID floor to mechanical cash/data failures", severity: "minor", recomputed: "outcome unchanged; forward em_score 4.8 (NONE) precludes any transition classification regardless of AVERAGE-vs-AVOID backward read"}
+valuation: pending-phase-3
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "minor", location: "B01 Block A / A1", note: "median ROCE on 2 clean years excludes bounded FY26; conservative low-bound inclusion gives A1=4 not 5; inconsistent with D4 low-bound treatment; no decision impact (still AVERAGE->AVOID)"}
+  - {severity: "minor", location: "B07 Section 6D combined_reasoning", note: "AVOID floor attributed to mechanical cash/data failures when substantive cap is AVERAGE and AVOID comes from the LIMITED-history downgrade B01 says not to re-use as a quality signal; outcome unaffected, forward em_score 4.8 (NONE) blocks any transition class"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 96             # 55 of 57 phase-1 rules passed (gate0 + emoat)

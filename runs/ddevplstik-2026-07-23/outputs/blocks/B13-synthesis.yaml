@@ -3,15 +3,16 @@ company: "DDEVPLSTIK"
 run_date: "2026-07-23"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH CAVEATS"
 verdict_rule_applied: 3
 flags_active: ["FLAG-CASH"]
-flag_cash_determination: "INDETERMINATE leaning growth-induced"
-confidence_delta: {numerical: 98.6, redflag: 64, framework: 98, peer: 80, overall: 64}
-valuation_decision: ""          # phase 1: deferred to phase 3
-entry_range: {low: 0, high: 0}  # phase 1: not computed
-headline: "Net cash compounder funding unproven storage bet"
-falsification_metric: "First FY27 quarter with net working-capital days above 90 while production volume is flat or below the 231,000 MT path"
-monitorables_count: 8
+confidence_delta: {numerical: 98.6, redflag: 64, framework: 97.5, peer: 80, overall: 64}
+valuation_decision: "BUY"
+entry_range: {low: 273, high: 341}
+mos_price: 273
+position_size: "Small (2-3%)"
+devil_overall: "WEAKENED BUT ALIVE"
+headline: "Cheap net cash compounder, one print governs"
+falsification_metric: "First FY27 quarter with net working capital days above 90 while production volume is flat or below the 231,000 MT path"
 publish_candidate: false

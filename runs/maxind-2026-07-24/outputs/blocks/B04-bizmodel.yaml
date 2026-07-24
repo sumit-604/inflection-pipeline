@@ -1,0 +1,68 @@
+stage: B04-bizmodel
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: []                # investor presentation was text-extractable; named-competitor data and AGEasy revenue-line reconciliation are NOT FOUND, flagged in body
+flags:
+  - "AGEasy FY25 revenue reconciliation gap: MD&A prose (AR p.43) states Rs21.3 Cr net vs Note 22 (AR p.262) gross Rs52.08 Cr before an unallocated segment-level discount of Rs21.79 Cr; not reconcilable from provided text"
+  - "MD&A/Board's Report Rs164.2 Cr FY25 'revenue' figure is actually Total Income (revenue from ops Rs145.49 Cr + other income Rs18.68 Cr, AR p.106); use Rs145.49 Cr as the revenue-mix denominator"
+  - "No named competitors disclosed in AR or investor presentation for any of the three verticals; competitive positioning map could not be built against named peers"
+  - "Multi-year regulatory approval risk evidenced (Noida Phase 1: launched Jan-2020, partial OC only 27-May-2026) directly delays revenue recognition and cash unlock"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Senior Living - Residences (unit sale/finance-lease income + DM fee + maintenance/club/F&B annuity)", type: "real estate development + annuity fee hybrid", pct_of_revenue: 45.7, predictability: "L"}
+  - {name: "Assisted Care - Care Homes, Care at Home and AGEasy combined (net segment; gross product-line split not reconcilable, see flags)", type: "services (occupancy-based) + consumer products (trading)", pct_of_revenue: 42.9, predictability: "M"}
+  - {name: "Business Investments (treasury interest, investment-property rent, shared services)", type: "financial/services", pct_of_revenue: 10.9, predictability: "H"}
+  - {name: "Others (unallocated)", type: "other", pct_of_revenue: 0.5, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Regulatory/licensing accreditation (NABH, HSSC)", durability: "moderate, improving"}
+  - {moat: "Brand (Max Group halo + Antara positioning)", durability: "moderate"}
+  - {moat: "Switching costs (post-relocation lock-in, security deposits)", durability: "moderate-high for Residences/Care Homes, low for AGEasy"}
+  - {moat: "First-mover reputational credentials (first NABH memory-care home, first HSSC care-at-home pilot)", durability: "narrow"}
+  - {moat: "Patents (AGEasy, 3 granted/3 filed)", durability: "low-moderate"}
+valuation_methods:
+  primary: {method: "Sum-of-the-parts (SOTP)", why: "Three verticals - Residences real-estate/DM-fee annuity, Assisted Care occupancy-ramp services, AGEasy D2C consumer products - have fundamentally different WC intensity, pricing power and correct valuation logic; a single consolidated multiple cannot capture this"}
+  secondary: {method: "Segment invested-capital / asset-based cross-check", why: "Company discloses segment invested capital directly (Senior Living ~Rs490 Cr, Assisted Care ~Rs484 Cr, plus other assets/cash, Inv. Pres. slide 36), giving a floor/sanity check against the SOTP build"}
+  tertiary: {method: "Forward EV/Sales, applied per segment only", why: "Usable once each vertical's revenue run-rate stabilises, benchmarked against segment-appropriate peers (D2C wellness for AGEasy, occupancy-stage senior-care for Care Homes); a blended consolidated EV/Sales figure should be avoided"}
+  not_applicable:
+    - "Consolidated trailing/forward P/E (group is EBITDA-loss-making; even if profitable, a single P/E would blend three margin profiles)"
+    - "Dividend discount model (no dividend paid or plausible in current investment phase)"
+    - "Blended consolidated EV/EBITDA (consolidated EBITDA is negative and, once positive, would still blend heterogeneous margin profiles)"
+irrelevant_ratios:
+  - {ratio: "Consolidated trailing P/E", why: "Loss-making consolidated entity; not computable/meaningful"}
+  - {ratio: "Consolidated blended EBITDA margin", why: "Blends a negative-margin build-out book with a positive-margin stabilising annuity tail, obscuring which vertical is actually improving"}
+  - {ratio: "Consolidated ROE/ROCE", why: "Distorted by equity-funded investment-phase losses and idle treasury cash pending deployment"}
+  - {ratio: "Standalone-entity financial ratios", why: "Standalone Max India Ltd is essentially a treasury/shared-services holdco, not representative of group operating economics"}
+  - {ratio: "Consolidated inventory turnover / receivables days", why: "Conflates multi-year real-estate WIP and deposit-based recognition mechanics with AGEasy's fast-turning e-commerce cycle"}
+  - {ratio: "YoY consolidated revenue growth as a same-store proxy", why: "Largely capacity-driven (e.g. Care Home beds nearly doubled within a quarter), not comparable-base growth"}
+must_track_metrics:
+  - {metric: "Residences units sold % and collection efficiency per live project", healthy: "90-100% sold, 87-98%+ collection efficiency", red_flag: "Sold% stalling below ~70% 12 months post-launch, or collection efficiency below ~85%"}
+  - {metric: "Residences DM fee billed (ITD/YTD, Rs Cr) vs underlying collections", healthy: "Growing in line with collections at the disclosed 8-10% fee rate", red_flag: "DM fee growth decoupling from collections growth"}
+  - {metric: "Care Homes blended occupancy % and ARPOB (Rs/day)", healthy: "Ramping toward 65-70% mature occupancy within 8-10 quarters; ARPOB stable-to-rising", red_flag: "Stuck below 40-45% breakeven band beyond 6-8 quarters, or ARPOB declining despite rising occupancy"}
+  - {metric: "AGEasy gross margin % and RoAS", healthy: "GM trending toward ~40-47%; RoAS above ~2.0-2.9x", red_flag: "RoAS below ~1.5x or GM compression despite revenue growth"}
+  - {metric: "Consolidated EBITDA loss trajectory (Rs Cr) and treasury/cash runway", healthy: "Sequential narrowing of loss toward FY27/FY28 breakeven guidance; runway comfortably exceeding time-to-breakeven", red_flag: "Loss widening/flat for 2+ quarters, or cash runway shorter than time-to-breakeven"}
+unit_economics:
+  unit: "Three distinct units (sum-of-parts business) - Residences: one apartment sold plus its DM/maintenance tail; Care Homes: one occupied bed-day; AGEasy: one customer order. See Section 3D for full per-vertical table."
+  revenue_per_unit: "Residences: ~Rs16,000-22,000/sqft x unit size (Inv. Pres. slides 13,17); Care Homes: ARPOB ~Rs6,100/day (Inv. Pres. slide 24); AGEasy: AOV Rs1,000+ (Inv. Pres. slide 29)"
+  margin_per_unit: "Residences: 20-25% steady-state EBITDA margin on maintenance income, 8-10% DM fee (Inv. Pres. slide 10); Care Homes: high marginal margin on occupied bed-days given largely fixed facility cost, target 30%+ contribution margin at maturity (operator-relayed); AGEasy: GM 26%->32% FY25->FY26, ~47% Mar-26 exit (Inv. Pres. slide 29)"
+  key_lever: "Occupancy/sell-through ramp against largely fixed capacity costs (Care Homes, Residences maintenance) and RoAS-driven customer acquisition efficiency (AGEasy)"
+first_deterioration_signals:
+  - {risk: "Residences regulatory/approval delay", first_signal: "Segment revenue for Senior Living turning volatile/declining independent of sales momentum; possession/OC milestone dates slipping further"}
+  - {risk: "AGEasy paid-acquisition dependency", first_signal: "AGEasy revenue growth decelerating in step with marketing-spend deceleration"}
+  - {risk: "Care Homes occupancy-ramp shortfall", first_signal: "Assisted Care segment result (loss) widening even as revenue grows"}
+  - {risk: "AGEasy channel-mix margin reversal", first_signal: "AGEasy gross margin % declining even as revenue grows (mix shift to Marketplace/Offline)"}
+  - {risk: "Treasury depletion / dilution risk (capital-intensive build-out against finite treasury)", first_signal: "Cash + other monetisable assets declining faster than consolidated EBITDA loss is narrowing"}
+mgmt_questions:
+  - "Reconcile AGEasy's FY25/FY26 net revenue across the MD&A prose figure and the Note 22 segment disclosure, with the discount allocated by product line"
+  - "What is the updated timeline for full possession/handover of Noida Phase 1, and what receivables/cash unlock is contingent on it?"
+  - "What are actual (not target) contribution margins by individual Care Home facility, and which remain behind the 4-6 quarter breakeven curve?"
+  - "What is AGEasy's cohort-level LTV/CAC and retention trend by acquisition channel, not just blended RoAS?"
+  - "What are the DM fee terms with Max Estates Gurgaon Ltd/2 Ltd, and is there any pending renegotiation risk?"
+  - "What is the current cash runway at the present EBITDA-loss burn rate before another capital raise is needed?"
+  - "What is the resolution status and worst-case liability on the Antara Purukul Rs31.53 Cr tax demand?"
+one_line_verdict: "Three loss-making build-outs under one holding company; value rests on occupancy, sell-through and DM-fee ramp, not current earnings."

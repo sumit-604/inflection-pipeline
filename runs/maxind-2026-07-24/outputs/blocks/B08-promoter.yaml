@@ -1,0 +1,59 @@
+stage: B08-promoter
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no filed shareholding pattern this run (shareholding folder empty) -- pledge_pct_latest cannot be anchored", "no announcements folder this run -- web search substituted for material-event detection"]
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["Shareholders rejected the special resolution renewing Chairman Analjit Singh's FY26 compensation (59.82% vs 75% required) -- CG Report postal ballot table, p.90-91", "Settled 2022-2025 NCLT oppression petition (fund-diversion and personal-conduct allegations) filed by Neelu Analjit Singh against Analjit Singh at Max Ventures Investment Holdings, the direct MAXIND promoter entity -- multi-sourced media, settled Jan-2025, not adjudicated", "Max Towers floor sale to promoter-linked Max Estates Ltd at Rs105.08 Cr vs an independent valuation of Rs65.50 Cr obtained ~7 months earlier -- unresolved pricing question, flagged as the auditor's own KAM at both standalone and consolidated levels", "Two independent directors (Sharmila Tagore, Rohit Kapoor) resigned mid-term within a ~5-month window in 2026, both citing time-commitment reasons -- triggers the deal-breaker check for multiple mid-term IND exits", "Media-reported (Al Jazeera, Deccan Herald) allegation, per police chargesheet, that the Antara Care Home facility where two residents died in a Jan-2023 fire operated under hostel/polyclinic rather than senior-care licensing -- absent from the AR's own safety narrative"]}
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers: ["Multiple mid-term independent-director exits within 3 years: Sharmila Tagore (resigned eff. 10-Feb-2026, 'personal commitments') and Rohit Kapoor (resigned eff. 01-Jul-2026, 'professional commitments'), both within the same calendar year -- recorded per pipeline rule, not enforced"]
+adverse_findings:
+  - {finding: "Shareholders rejected Chairman Analjit Singh's FY26 compensation renewal special resolution (59.82% vs 75% required)", evidence_tier: "VERIFIED", source: "Max India FY24-25 Annual Report, Corporate Governance Report Postal Ballot table and footnote", date: "p.90-91, postal ballot concluded ~29-Mar-2025"}
+  - {finding: "NCLT oppression petition by Neelu Analjit Singh against Analjit Singh alleging fund diversion, sham transactions, and an affair, at Max Ventures Investment Holdings Pvt Ltd (MAXIND's promoter entity); sought to have Analjit Singh declared unfit as director/shareholder", evidence_tier: "MEDIA REPORTED", source: "Free Press Journal; Business Standard; Editorji; BusinessWorld; Asia Samachar (multi-sourced)", date: "filed Mar-2022, settled Jan-2025"}
+  - {finding: "Max Towers floor sale to promoter-linked Max Estates Ltd for Rs105.08 Cr vs an independent valuation of Rs65.50 Cr ~7 months earlier; auditor's sole consolidated KAM and one of two standalone KAMs is RPT evaluation", evidence_tier: "VERIFIED", source: "Max India AR, Auditor's Report p.132-133/211, Consol Note 38 p.279-286, Chairman's Letter p.23", date: "sale approved Dec-2024, completed May-2025"}
+  - {finding: "Two independent directors resigned mid-term within ~5 months in 2026: Sharmila Tagore (eff. 10-Feb-2026, personal commitments) and Rohit Kapoor (eff. 01-Jul-2026, professional commitments/insufficient time)", evidence_tier: "MEDIA REPORTED", source: "scanx.trade (exchange-disclosure aggregator); boardstewardship.com", date: "Feb-2026 and Jul-2026"}
+  - {finding: "Two residents (Kanchan Arora, 86; Kamal, 92) died in a Jan-2023 fire at Antara Care Home, Greater Kailash II; police chargesheet reportedly found the facility operated under hostel/polyclinic licenses rather than dedicated senior-care licensing; family alleged profits prioritised over safety; Rs12 Cr settlement paid ~2 years later (Q3 FY25), absent from the AR's own safety-narrative section", evidence_tier: "MEDIA REPORTED", source: "Al Jazeera (24-Nov-2023 longform); Deccan Herald; Medical Dialogues; The Logical Indian; corroborated in AR Note 48 (settlement only, no licensing detail)", date: "incident 1-Jan-2023; settlement Q3 FY25 per AR"}
+  - {finding: "Two promoter-family directors (Analjit Singh, Tara Singh Vachani) each hold 11 external directorships, above the informal 8-seat scrutiny threshold though within SEBI hard caps", evidence_tier: "VERIFIED", source: "Max India AR Corporate Governance Report, p.84", date: "as at 31-Mar-2025"}
+  - {finding: "Historical (2016) Rs850 Cr non-compete fee proposed to the Analjit Singh-led promoter group in the since-collapsed HDFC Life-Max Life merger, structured so the fee would be substantially borne by the merged entity; IiAS and SES recommended voting against it", evidence_tier: "MEDIA REPORTED", source: "Business Standard, DNA India, Forbes India (multi-sourced)", date: "2016, deal called off 2017, fee not confirmed paid"}
+  - {finding: "Pledge percentage for MAXIND cannot be confirmed clean or otherwise -- no filed shareholding pattern this run, no pledge disclosure anywhere in the FY24-25 AR; historical (2011, 2019) group-level pledge/deleverage pattern found at sister entities", evidence_tier: "UNVERIFIED (data gap)", source: "AR (silent on pledge); operator-relayed screener screenshot (no pledge line); Business Standard archive (2011, 2019, sister-entity/historical)", date: "current: unknown; historical refs 2011 and 2019"}
+transition_evidence:
+  - {item: "Family-dispute overhang closed: Analjit Singh and Neelu Analjit Singh reached a global settlement (Jan-2025), all NCLT/Delhi HC suits withdrawn and disposed; Neelu Analjit Singh filed to re-classify from Promoter to Public at MAXIND (16-Apr-2025, AR-confirmed) and at Max Financial Services (announced 15-Apr-2025)", source: "Max India AR CG Report footnote p.101-102 (VERIFIED); Business Standard, Bar and Bench, LiveMint (MEDIA REPORTED)"}
+  - {item: "New credentialed independent director appointed: Mrinalini Mirchandani, former McKinsey Senior Partner, 5-year term from 15-Apr-2026", source: "scanx.trade exchange-disclosure aggregator (MEDIA REPORTED)"}
+  - {item: "Promoter entity Max Ventures Investment Holdings converted (did not let lapse) its warrant allotment in the 23-Jul-2026 tranche, contributing fresh promoter cash", source: "Operator-relayed context, non-anchored for this run"}
+  - {item: "MD Rajit Mehta exercised (rather than sold or let lapse) 2,73,856 ESOP shares in FY25", source: "Max India AR, Statement of Changes in Equity (VERIFIED via B03)"}
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND -- no filed shareholding pattern this run, no pledge disclosure in the FY24-25 Annual Report; operator-relayed screener screenshot also shows no pledge line. Historical (2011, 2019) references found are at sister Max Group entities, not confirmed for MAXIND currently."
+searches_performed:
+  - "Analjit Singh Max Group SEBI action controversy"
+  - "Max Life Axis Bank stake sale controversy IRDAI"
+  - "Max Financial Services Mitsui Sumitomo Axis Bank deal 2020"
+  - "Max India Analjit Singh 2016 demerger tripartite Max Financial Max Ventures"
+  - "Neelu Analjit Singh NCLT petition Analjit Singh fund diversion Max Group"
+  - "Analjit Singh Neelu Singh divorce affair Max Group family feud 2022"
+  - "Tara Singh Vachani Antara Senior Living background career"
+  - "Sahil Vachani Max Ventures resignation controversy"
+  - "Rohit Kapoor resigns independent director Max India reason date"
+  - "Max Life HDFC Life merger called off IRDAI non-compete fee Analjit Singh 2017"
+  - "Antara Senior Living Glassdoor AmbitionBox employee reviews"
+  - "Analjit Singh pledge shares Max India Max Financial insolvency"
+  - "Max India Limited independent director resignation 2026 board meeting outcome"
+  - "Max India CFO Sandeep Pathak resignation company secretary changes"
+  - "Neelu Analjit Singh settlement reclassification promoter to public shares Max Ventures 2025"
+  - "Max India Limited SEBI adjudication order penalty"
+  - "SEBI adjudication order India Max Group 2021 entities"
+  - "India Max SEBI order 2021 shell company GDR OR FPI OR manipulation"
+  - "India Max Global Emerging Markets OR investment fund SEBI 2021 adjudication order details entities"
+  - "Antara Purukul Dehradun fire resident death 2023 settlement news"
+  - "Max Group Analjit Singh philanthropy Max India Foundation CSR"
+  - "Max India Limited short seller report activist investor campaign"
+  - "Max India shares 20% upper circuit April 2025"
+  - "Max Towers floor sale Rs 105 crore valuation Max India related party"
+  - "IiAS SES proxy advisory Max India Analjit Singh compensation vote against"
+  - "Sharmila Tagore resigns independent director Max India board"
+  - "Al Jazeera fire two deaths Antara elder care India negligence Max"
+  - "Antara Care Home Greater Kailash fire chargesheet hostel polyclinic license Arora family"
+  - "Antara Care Home fire FIR criminal case negligence Max Group response statement"
+searches_skipped: ["Direct fetch of SEBI order text (sebi.gov.in 'India Max Group' adjudication, Jun-2021) -- blocked by 403; entity identity could not be confirmed via secondary search either, recorded as UNVERIFIED/likely unrelated rather than skipped as a topic", "Direct fetch of Al Jazeera longform article -- blocked by 403; substance was recovered via multiple secondary search summaries and corroborating outlets (Deccan Herald, Medical Dialogues, The Logical Indian), so the underlying finding is still evidenced, just not from the primary URL"]
+verdict_basis: "A rare, anchored shareholder rejection of the Chairman's own pay renewal, a settled but serious family fund-diversion/oppression dispute at the direct promoter entity, an auditor-KAM-flagged unresolved ~60%-premium related-party asset sale, two mid-term independent-director exits within 5 months, and a media-reported eldercare licensing allegation tied to two 2023 deaths together outweigh the clean SEBI/criminal/tax/auditor record and the genuine transition evidence (family dispute closed, one credentialed new independent director, promoter-funded capital raises) -- net CONCERN, not static."

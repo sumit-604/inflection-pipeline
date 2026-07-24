@@ -1,0 +1,26 @@
+stage: B12b
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 20
+caught: 14
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "Care Home maturity curve quietly lengthened from '4 and 8 quarters' (Q1 Aug-25) to '4-6 and 8-10 quarters' (Q4 May-26); B05 records it as 'reaffirmed/stable' on the single most load-bearing thesis assumption", anchor: "Q1 Aug-25 p10 (Ishaan) vs Q4 May-26 p13-14 (Rajit) / Keshari answer p16; B05 1B guidance table, 1C, 4C"}
+  - {severity: "MINOR", item: "'No debt at all' (Q1) vs 'net debt of Rs105cr has been repaid' (Q2) never reconciled", anchor: "Q1 Aug-25 p10 (Rajit/Ajay) vs Q2 Nov-25 p5 (Rajit)"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — grade C; ledger of 2 delivered/3 partial/4 missed plus quiet bed-cut, maturity-curve drift and treasury draw-down support C, offset by verified positives that keep it off D"
+redflag_coverage: "70% fully caught (14/20 independent flags); 90% caught at least partially (18/20). Only 2 fully MISSED, of which 1 MAJOR (maturity-curve drift), 1 MINOR (debt reconciliation)"
+findings:
+  - {severity: "MAJOR", location: "B05 1B guidance table / 1C / 4C consistency row", description: "Care Home maturity curve characterized as 'reaffirmed / stable' when it quietly lengthened Q1->Q4 (4 and 8 quarters -> 4-6 and 8-10 quarters); MISSED drift on the core Assisted Care assumption"}
+  - {severity: "MINOR", location: "B05 4D flag 7 / 3D", description: "Repeat-customer flag conflates Q3 '65,000 unique customers' with Q4 '44,000 repeat customers'; correct comparable is Q2 50,000 repeat -> Q4 44,000 repeat. Flag direction valid, anchor imprecise"}
+  - {severity: "MINOR", location: "B05 2A row 10 / 4A", description: "Q4 loss improvement (27.8->6.8cr) presented as clean delivery; substantially lumpy DM-fee timing (Rs26cr E360 fee accrued FY26) that management warns may reverse to EBITDA loss in FY27, plus treasury basis shift, under-weighted"}
+  - {severity: "MINOR", location: "B05 trigger-1 / Section 4A", description: "Management's Q4 admission that Noida Phase 1 is 'into red' (loss-making) not surfaced; value case rests on unapproved Phase 2"}
+  - {severity: "MINOR", location: "B05 guidance table (Care Home EBITDA margin)", description: "Steady-state Care Home EBITDA margin quoted as both 18-20% and 16-18% within the same Q4 call; only cross-quarter restatement captured"}
+  - {severity: "MINOR", location: "B05 (no location) / 2C consistency", description: "'No debt at all' (Q1) vs 'net debt of Rs105cr repaid' (Q2) never reconciled; likely SPV land-dues but unexamined"}
+critical_count: 0
+major_count: 1
+minor_count: 5
+acceptance_rate: 70

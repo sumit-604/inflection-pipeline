@@ -1,0 +1,50 @@
+stage: B01-gate0
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "rating: empty folder, not provided"
+  - "announcements: empty folder, not provided"
+  - "shareholding: empty folder, not provided (E1/E2/E3 scored 0/N/A)"
+  - "research: empty folder, not provided"
+  - "sector_cap_row in manifest reads 'Pharma / CDMO', wrong for this senior-living/assisted-care company, not used"
+  - "FY26 contingent liabilities not disclosed in the summary results filing; FY25 AR figure used as latest available (E4)"
+  - "FY20-FY23 current-liabilities/trade-payables split not in screener export; ROCE/WC-Days/Current-Ratio computed for FY24-FY26 only"
+  - "FY20-FY23 capex not in screener export; FCF computed for FY24-FY26 only"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 22/100, Grand Total 24/160, Moat NONE). Every metric in Block A (Return on Capital) and Block C (Growth) scores zero. Depressors are investment-phase: revenue declined FY23-FY25 while the group built out Antara senior-living communities (Noida/Dehradun/Gurugram), launched the Assisted Care (care-homes) network, and launched AGEasy consumer products, funded by rights-issue and warrant proceeds rather than operating cash flow; FY26 shows the first inflection (revenue +31.0%, EBITDA loss narrowing from ~Rs99.5 Cr to ~Rs83.1 Cr). Block B (Cash Generation) nominal score of 10/20 is a mechanical false positive per Data Note 6: cumulative CFO is more negative than cumulative PAT (cash burn exceeds accounting loss), not strong conversion; substantively Block B is closer to a floor score. Company quality flags propagate; this does not halt the run."
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 0, B: 10, C: 0, D: 9, E: 3}
+core_score: 22
+moat_score: 2
+grand_total: 24
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A<8 -> max GOOD (triggered, A=0)"
+  - "3: median ROCE<10% -> max AVERAGE (triggered, -21.3%)"
+  - "7: revenue declined majority of years -> max AVERAGE (triggered, 4/6 decline years)"
+  - "8: PAT negative in any of last 3 years -> max AVERAGE (triggered, all 3)"
+  - "2: Block B<8 -> max GOOD (NOT triggered on the letter, B=10; substantively should read as triggered, see data_notes)"
+  - "4: cumulative CFO/PAT<0.50 -> max AVERAGE (NOT triggered on the letter, ratio 1.33 both-negative artifact; substantively should read as triggered, see data_notes)"
+  - "5: pledge>15% -> cannot assess, no pledge data in provided inputs"
+  - "6: ND/EBITDA>3x AND IC<3x -> AVOID (NOT mechanically triggered, ND/EBITDA is N/M on negative EBITDA rather than literally >3x; IC is -7.94x; substantively at least as weak as the literal case)"
+  - "9: history<3 years -> AVERAGE (not triggered, 7 years of core history)"
+history_downgrade: false
+data_notes:
+  - "Screener FY24/FY25 revenue (190.55/162.6) is stale vs audited (175.63/145.49); audited figures used for FY24-FY26 revenue throughout"
+  - "Screener PAT matches audited CONSOLIDATED loss exactly (FY24 -56.38, FY25 -140.39, FY26 -121.85); confirms screener export is consolidated, not standalone as task brief stated"
+  - "FY20 PAT +297.06 driven by one-off Other Income (Rs325.22 Cr); C2 PAT CAGR marked N/M, profit-to-loss swing FY20 to FY26 (not computed as synthetic CAGR)"
+  - "Current-liabilities/trade-payables split absent from screener FY20-FY23; ROCE/WC-Days/Current-Ratio computed FY24-FY26 only using audited balance sheets"
+  - "EBITDA = Loss before exceptional items, tax, JV share + Depreciation + Finance costs (includes Other Income); reconciles exactly to company-reported ~Rs83 Cr FY26 / ~Rs99.5 Cr FY25 EBITDA loss"
+  - "B1/B3 mechanical scores of 5 are false positives: cumulative CFO more negative than cumulative PAT (cash burn exceeds accounting loss); ratio >=1.00 band is an artifact of both figures being negative"
+  - "D1 Net Debt/EBITDA is N/M (negative EBITDA); scored 0 as worst-case floor"
+  - "Shareholding/pledge/rating/announcements wholly absent from provided inputs; operator-relayed non-anchored screenshot (promoter ~49.76% Jun-26) noted as a lead only, not used as anchor"
+  - "M2/M9 peer comparisons: no true listed senior-living pure-play among provided peer CSVs; Ashiana Housing used as directional-only proxy for M2 (margin gap large enough to be robust); M9 proxy not usable due to differing COGS/land-cost accounting conventions, marked PEER DATA NEEDED"
+  - "M6 AGEasy patent/R&D claims are operator-relayed non-anchored; no R&D spend/revenue % in any provided document"
+  - "M8 AR 2024-25 p.29 anchors ~300 beds and 38% Care Homes segment growth (quantified, growing) but no FY26 anchored bed count exists; scored at closest defined band (1)"
+block_b_trend: "deteriorating — cumulative CFO (-135.05 Cr, FY20-26) is MORE negative than cumulative PAT (-101.20 Cr), i.e. cash burn exceeds the accounting loss, despite B1/B3 mechanically scoring 5; WC days worsened +61 days FY24 to FY26"

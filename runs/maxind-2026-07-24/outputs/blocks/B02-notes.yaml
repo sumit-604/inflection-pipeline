@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated trade receivables grew 4.5x YoY (Rs 4.94 Cr to Rs 22.20 Cr) while revenue fell 17.2%, with ECL allowance essentially static; ageing still 97.1% within 6 months so near-term quality intact, but the divergence is a deteriorating trend to confirm next year (Consol Note 8 p.253, Note 22 p.263, Note 45 p.298)"}
+accounting_quality: 5        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Consolidated pre-tax loss more than doubled YoY: Rs(138.5) Cr vs Rs(50.9) Cr, +172%", note_ref: "Consol Note 13, p.255", rating: "RED"}
+  - {rank: 2, finding: "82% of consolidated FY25 loss concentrated in Antara Assisted Care Services Ltd; Antara Purukul remained profitable", note_ref: "Consol Note 43, p.288-289", rating: "RED"}
+  - {rank: 3, finding: "Auditor's sole Key Audit Matter at each level independently corroborates the two biggest analyst-flagged risks: standalone subsidiary-investment impairment (Rs 758.61 Cr) and consolidated RPT arm's-length/completeness risk", note_ref: "Standalone KAM p.133/Note 5 p.166-168; Consol KAM p.211/Note 38 p.279-286", rating: "RED"}
+  - {rank: 4, finding: "Trade receivables grew 4.5x while revenue fell 17%, ECL allowance static", note_ref: "Consol Note 8 & 22, p.253/263", rating: "RED"}
+  - {rank: 5, finding: "Rs 12 Cr fire-incident settlement exceptional item, ~2yr lag from Jan-2023 fire, unclear prior provisioning", note_ref: "Consol Note 48, p.299-300", rating: "RED"}
+  - {rank: 6, finding: "Consolidated lease liabilities and ROU assets surged ~138% YoY (Rs 42.4 Cr to Rs 100.9 Cr on balance sheet)", note_ref: "Consol Note 3b, p.252; Note 36.1, p.274-275", rating: "RED"}
+  - {rank: 7, finding: "Contingent liabilities 14.4% of consolidated net worth, above 10% aggregate threshold", note_ref: "Consol Note 35, p.272-274", rating: "RED"}
+  - {rank: 8, finding: "Revenue decline is a finance-lease revenue-recognition timing artefact, not demand weakness", note_ref: "Consol Note 22 & 39.2, p.263/287-288", rating: "RED"}
+  - {rank: 9, finding: "Standalone parent swung to loss; parent treasury (Business Investments segment) collapsed 87.5% funding Rs 171.5 Cr fresh CCPS into AACSL", note_ref: "Standalone Note 20 & 5, p.176/166-167; Consol Note 39.2, p.292", rating: "RED"}
+  - {rank: 10, finding: "Unexplained Rs 31.49 Cr 'Tax relating to earlier years' reconciling item, 8.8% of consolidated net worth, no entity/matter identified", note_ref: "Consol Note 13, p.259-260", rating: "RED"}
+  - {rank: 11, finding: "Rising promoter-group RPT density: Max Estates Gurugram mgmt fee, Icare development deposit, Max Estates Noida stake, Max Towers floor sale", note_ref: "Consol Note 38 / Standalone Note 12, p.283-286/171", rating: "RED"}
+  - {rank: 12, finding: "Legacy fully-impaired related-party loan to Max Skill First Ltd, Rs 14.16 Cr, debtor carries negative net worth", note_ref: "Standalone Note 6/36C/41(a)/42, p.168/198/203-204; Consol Note 43, p.294-295", rating: "RED"}
+  - {rank: 13, finding: "Company itself flags loan to Contend Builders JV as SIGNIFICANT credit risk, rare departure from boilerplate", note_ref: "Consol Note 41(v), p.297", rating: "WATCH"}
+  - {rank: 14, finding: "AGEasy finished goods inventory +243% against -17% group revenue, no ageing/write-down disclosure", note_ref: "Consol Note 11, p.254", rating: "WATCH"}
+  - {rank: 15, finding: "AACSL runs its own separate ESOP scheme; MD personally holds 18.6 lakh AACSL options, up from 4.98 lakh", note_ref: "Consol Note 38E, p.291", rating: "WATCH"}
+red_flags:
+  - "Capital commitments reported as NIL for FY25 despite large ongoing E360/E361/AGEasy capex scale (Consol Note 35a, p.272)"
+  - "MSME 'nil interest' statement (Note 18(i)) inconsistent with ageing schedule showing MSME balances aged beyond one year (Consol Note 44, p.297-298)"
+  - "Two different figures (Rs 703.38 lakh vs Rs 713.23 lakh) for the identical Max Estates Noida Pvt Ltd equity stake transaction across cash flow/RPT note and investments note"
+  - "Two similarly-named, differently-scaled 'marketing fee(s)' lines in Note 22 (Rs 22.31 Cr, revenue) and Note 23 (Rs 2.39 Cr, other income) risk double-counting"
+  - "Static ECL allowance against a 4.5x-larger trade receivable base (Consol Note 8, p.253) - conservatism gap, not aggressive accounting, but a provisioning-adequacy question"
+questions_for_mgmt:
+  - "What changed operationally/in the market between the May-23-2024 independent valuation (Rs 65.50 Cr) and the Dec-23-2024 Board resolution to sell the same Max Towers floors to a promoter-group entity for Rs 105.08 Cr, seven months later?"
+  - "What specifically drives the Rs 31.49 Cr 'Tax relating to earlier years' reconciling item in the consolidated tax-rate reconciliation, and which entity/matter does it relate to?"
+  - "Was any provision carried in FY23/FY24 ahead of the Rs 12 Cr Q3 FY25 fire-incident settlement, or was it a surprise exceptional charge?"
+  - "Why did the 'MedCare' revenue line (Rs 13.62 Cr in FY24) disappear entirely in FY25 with no discontinuation/reclassification disclosure?"
+  - "Is the Rs 22.47 Cr 'lease surrender premium' (Note 29c) already included within the Rs 35.81 Cr marketing-expense total, or is it a separate additional expense not otherwise captured in Note 29?"
+receivables_trend: "deteriorating: consolidated trade receivables +349% YoY (Rs 4.94 Cr to Rs 22.20 Cr) against a -17.2% revenue decline, ECL allowance essentially static (Rs 4.57 lakh to Rs 4.55 lakh); ageing still 97.1% within 6 months (Rs 21.57 Cr of Rs 22.20 Cr), which is the mitigating factor, but the growth-vs-revenue divergence needs confirmation in the FY26 annual report (Consol Note 8, p.253; Note 22, p.263; Note 45, p.298)"
+restatements_found: []
+going_concern_language: "NONE - both standalone and consolidated auditor's reports carry unmodified/unqualified opinions with standard going-concern-basis boilerplate only, no material-uncertainty or emphasis-of-matter paragraph (Standalone Note 2(a) p.152 and Auditor's Report p.133-140; Consol Note 2(a) p.228 and Auditor's Report p.211-218). Going-concern-adjacent (not a formal qualification): parent has stated it 'may provide financial support to Antara Senior Living Limited and Antara Assisted Care Services Limited... to meet their future financial obligations' (Standalone Note 32A(ii), p.191)."

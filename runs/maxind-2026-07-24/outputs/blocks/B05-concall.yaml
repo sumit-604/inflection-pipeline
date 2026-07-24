@@ -1,0 +1,85 @@
+stage: B05-concall
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Announcements folder empty for this run — no Reg-30 documented-ACTION ledger available; the promise-vs-delivery tracker is built solely from cross-quarter transcript comparison, not corroborated against independent stock-exchange filings."]
+flags:
+  - "Bed-capacity target quietly reduced from 500 to 485 without management acknowledgment (Q2 FY26 -> Q3 FY26)"
+  - "Segment-level EBITDA/CM breakdown by business line requested twice (Q2 FY26, Q4 FY26) and never fully disclosed"
+  - "Fundraise timeline (Rs200-250cr) softened from a specific 6-9 month window to market-sentiment-contingent language as treasury fell from ~Rs105cr (Dec-25) to ~Rs58cr (Mar-26)"
+  - "Selective use of 'no forward-looking statements' specifically to deflect the consolidated-profitability-date question, inconsistent with other forward guidance given in the same calls"
+  - "Chandigarh residences project (1.01mn sq ft) silently dropped from the narrative between Q3 FY26 and Q4 FY26 calls"
+  - "RoAS metric reported inconsistently across quarters (quarterly average vs monthly exit rate conflated) -- needs reconciliation against results decks"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Noida Sector 150 Ph1 receivables collection (~Rs150cr) and Ph2 re-approval", type: "regulatory-policy/revenue", timeframe: "near-term (FY27)", conviction: "M", confirm_signal: "Cash actually collected into SPV; Ph2 building-plan revalidation granted", kill_signal: "Further litigation; Ph2 revalidation stalls beyond FY27"}
+  - {priority: 2, name: "Care Home cohort maturation to 65-70% occupancy / 16-18% EBITDA margin", type: "volume", timeframe: "medium-term (FY28 guide)", conviction: "M-H", confirm_signal: "Same-store occupancy keeps climbing; CM turns positive across remaining loss-making homes", kill_signal: "Blended occupancy stalls below 40% for facilities live >6 quarters"}
+  - {priority: 3, name: "AGEasy EBITDA breakeven (Q4 FY27)", type: "volume+cost", timeframe: "medium-term", conviction: "M", confirm_signal: "RoAS sustains; monthly run-rate hits Rs14-16cr guided range; GM holds near 46-50%", kill_signal: "RoAS regression; run-rate stalls below guide; China COGS pressure worsens"}
+  - {priority: 4, name: "Rs200-250cr fundraise", type: "inorganic/capital", timeframe: "near-medium, market-contingent", conviction: "L-M", confirm_signal: "Raise announced/completed within FY27", kill_signal: "Further deferral while treasury falls below ~Rs40-50cr"}
+  - {priority: 5, name: "1.5mn sq ft/yr residences pipeline (Noida Sector 105, Bangalore, Dehradun)", type: "volume/inorganic", timeframe: "medium-term", conviction: "M", confirm_signal: "At least 2 of 3 named FY27 projects formally signed/RERA-filed", kill_signal: "Repeat of a Chandigarh-style regulatory setback with no replacement named"}
+  - {priority: 6, name: "Estate 360/361 DM-fee annuity stream (~Rs130cr + ~Rs200cr lifetime)", type: "price-mix", timeframe: "medium-long term", conviction: "M-H", confirm_signal: "Estate 361 Ph2 (180 units) launches and sells at guided pace", kill_signal: "NRI/Gurugram demand softens materially"}
+  - {priority: 7, name: "Sector re-rating (new entrants, transaction multiples)", type: "sectoral", timeframe: "long-term", conviction: "L-M", confirm_signal: "Comparable transaction multiples become public and favorable", kill_signal: "New entrants undercut Antara pricing/differentiation"}
+guidance:
+  - {item: "Care Home unit economics (occupancy ramp)", number: "40-45% occ. in 4-6 qtrs; 65-70% occ. in 8-10 qtrs", timeframe: "per-facility", stated_in: "Q2 FY26, reaffirmed Q3/Q4 FY26"}
+  - {item: "Care Home ARPOB", number: "Rs6,000-6,500/day (Rs20-22 lakh/bed/yr)", timeframe: "current", stated_in: "Q2 FY26"}
+  - {item: "Care Home steady-state contribution margin", number: "30-32%", timeframe: "maturity", stated_in: "Q2 FY26"}
+  - {item: "Care Home steady-state EBITDA margin", number: "16-18%", timeframe: "maturity", stated_in: "Q2/Q3 FY26, restated Q4 FY26"}
+  - {item: "Care Home ROCE", number: "25-26%", timeframe: "maturity", stated_in: "Q4 FY26 (new)"}
+  - {item: "Bed capacity target", number: "500 beds -> quietly revised to 485", timeframe: "Aug/Sep-2025 -> Nov-2025 -> ongoing into Q4 FY26", stated_in: "Q1 FY26 baseline; Q2, Q3, Q4 FY26"}
+  - {item: "AGEasy breakeven", number: "Q4 FY27 (narrowed from 'late FY27/early FY28')", timeframe: "FY27 exit", stated_in: "Q1/Q2 FY26 broad; narrowed Q3/Q4 FY26"}
+  - {item: "AGEasy steady-state economics", number: "15-20% EBITDA margin, >30% ROCE at Rs400-500cr revenue", timeframe: "3-4 years out", stated_in: "Q3 FY26"}
+  - {item: "AGEasy capital deployed", number: "~Rs180cr by Mar-2026; another Rs40-50cr required", timeframe: "to date/near-term", stated_in: "Q3 FY26"}
+  - {item: "AGEasy FY27 exit monthly run-rate", number: "Rs14-16 crore/month", timeframe: "FY27 exit", stated_in: "Q4 FY26 (new)"}
+  - {item: "Residences vertical unit economics", number: "Min. 20% project IRR, 10-12% PAT margin", timeframe: "ongoing", stated_in: "Q4 FY26 (new)"}
+  - {item: "Estate 360 lifetime DM fee", number: "~Rs130cr total (Rs45.6cr earned till Mar-2026)", timeframe: "full project cycle", stated_in: "Q4 FY26"}
+  - {item: "Estate 361 lifetime DM fee (estimate)", number: "~Rs200cr total", timeframe: "full project cycle, contingent", stated_in: "Q4 FY26"}
+  - {item: "Noida Ph1 residual DM fee", number: "~Rs14-15cr on ~Rs150cr collections", timeframe: "on OC-linked collections", stated_in: "Q4 FY26"}
+  - {item: "Annuity income per 250-unit community", number: "Rs10-12cr/yr", timeframe: "post-completion", stated_in: "Q4 FY26"}
+  - {item: "1.5 million sq ft/year residences commitment", number: "1.5mn sq ft target; FY26 actual 1.1mn (0.4mn short)", timeframe: "annual, ongoing", stated_in: "Reiterated Q1-Q4 FY26; shortfall acknowledged Q4 FY26"}
+  - {item: "Fundraise", number: "Rs200-250cr", timeframe: "'Q1/Q2 FY27'/'6-9 months' (Q3 FY26) softened to 'sometime this year' (Q4 FY26)", stated_in: "Q3 FY26; softened Q4 FY26"}
+  - {item: "Labour Code impact", number: "Rs3-4cr across entities (mostly gratuity provisioning)", timeframe: "FY27", stated_in: "Q4 FY26 (new)"}
+  - {item: "Antara Purukul tax demand", number: "Rs31-32cr assessment; company expects near-nil after rectification", timeframe: "AY24-25", stated_in: "Q4 FY26"}
+promise_delivery:
+  delivered: 2
+  partial: 3
+  missed: 4
+  rows:
+    - {promised_in: "Q1 FY26 call", promise: "500 beds fully operational by Aug/Sep 2025", outcome: "missed", explanation: "Not addressed as a miss; simply restated with a later target date at the next call"}
+    - {promised_in: "Q2 FY26 call", promise: "500 beds operational by November 2025 end", outcome: "missed", explanation: "Total count quietly reduced to 485; only 333 operational as of Feb-2026, no acknowledgment of the changed target"}
+    - {promised_in: "Q3 FY26 call", promise: "Balance ~150 beds live 'in the next one week'", outcome: "partial", explanation: "All centres live except one 28-bed Gurgaon facility, still under renovation as of Q4 FY26 call (~3 months later than promised)"}
+    - {promised_in: "Q1 FY26 baseline / reiterated all calls", promise: "1.5 million sq ft/year residences commitment", outcome: "missed", explanation: "FY26 closed at 1.1mn sq ft, 0.4mn shortfall explicitly acknowledged, attributed to Chandigarh's regulatory setback"}
+    - {promised_in: "Q2 FY26 call", promise: "Noida Sector 150 OC hopeful from 18-Nov-2025 SC hearing", outcome: "partial", explanation: "Not received then; SC instead directed a fresh 2-week response window from Noida Authority"}
+    - {promised_in: "Q3 FY26 call", promise: "SC-directed 2-week Noida Authority response (~late Feb-2026)", outcome: "partial", explanation: "Partial OC actually granted 27-May-2026, ~3 months later; substance delivered, timeline missed"}
+    - {promised_in: "Q2 FY26 call", promise: "Estate 361 launch expected mid-December 2025", outcome: "delivered", explanation: "Launched 5-Dec-2025 as guided, 100/180 units booked by Dec-end"}
+    - {promised_in: "Q3 FY26 call", promise: "Fundraise Rs200-250cr planned in 'first/second quarter of this year' / '6-9 months'", outcome: "partial", explanation: "Not yet executed; softened to 'sometime this year,' market-sentiment-contingent, as treasury fell from ~Rs105cr to ~Rs58cr"}
+    - {promised_in: "Q2 FY26 call", promise: "Chandigarh project alive, alternatives being pursued", outcome: "missed", explanation: "Silently dropped from the narrative by Q4 FY26 call, no close-out statement, replaced by other named projects"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "Consolidated EBITDA loss trajectory improving quarter over quarter", outcome: "delivered", explanation: "Q4 FY26 loss of Rs6.8cr vs Rs27.8cr (Q3 FY26) vs Rs35.5cr (Q4 FY25) -- sharpest improvement delivered on any guided metric"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will the consolidated company be EBITDA/PAT positive -- what is the long-term vision/timeline?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "Can you break down profitability/EBITDA by business line (Care Home / Care at Home / AGEasy)?", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "deflected every time (answer framing changed, but no true segmental P&L given in either quarter)"}
+credibility_grade: "C"
+credibility_basis: "Of 9 scored promise-delivery items across Q2-Q4 FY26, 2 delivered / 3 partial / 4 missed, concentrated on the two most-repeated guided metrics (bed-count timeline slipped twice with a quietly reduced target, and the 1.5mn sq ft/year commitment missed by 0.4mn sq ft), plus a fundraise-timeline softening coincident with treasury falling from ~Rs105cr to ~Rs58cr; offset by genuine positives (sharp on-plan EBITDA-loss improvement, on-time Estate 361 launch, eventual delivery of the Noida OC, low-defensiveness engagement with hard questions) that keep it from falling to D."
+peer_questions:
+  - {question: "Is the senior-living/assisted-care sector genuinely seeing 'deals at established multiples' and marquee new entrants (DLF, J Estates) as claimed, with no multiple or deal-size ever disclosed by management?", why: "Management cites this as sector validation with zero supporting numbers; needs independent confirmation before treating it as a re-rating catalyst.", check_peers: ["Any listed senior-living/assisted-care operator disclosures", "Max Estates Limited commentary", "general Gurugram/Noida senior-living pricing research"]}
+  - {question: "Do peer assisted-living operators corroborate Antara's stated Care Home maturity curve (4-6 quarters to 40-45% occupancy/CM breakeven; 8-10 quarters to 65-70% occupancy/16-20% EBITDA margin)?", why: "This maturity curve is the single most load-bearing assumption behind the Assisted Care profitability case.", check_peers: ["Athulya Assisted Living", "Sukino Healthcare", "KITES Senior Care"]}
+  - {question: "Is the China-sourcing COGS/logistics-cost pressure AGEasy first flagged in Q4 FY26 consistent with what other India D2C health-product/medtech importers report for the same period?", why: "Verifies whether this is company-specific risk or a sector-wide cost shock, and whether stated mitigation is plausible.", check_peers: ["Other D2C healthtech/senior-product import-dependent consumer brands"]}
+  - {question: "Does the claimed 2-3x price appreciation for Noida Sector 150 Phase 2 (Rs16,000-18,000/sqft vs ~Rs11,000 in Phase 1) match independently reported Noida/Gurugram residential pricing trends over the same period?", why: "This appreciation is central to the value-unlock narrative for Noida Phase 2 and the Rs200cr Estate 361 lifetime DM-fee estimate.", check_peers: ["Max Estates Limited", "Godrej Properties (Sector 150, cited by management itself)", "other Noida/Gurugram developers"]}
+  - {question: "Has any peer or industry body quantified an addressable-market growth rate for organized senior care in India, which management references only qualitatively across all four calls?", why: "No company-provided industry CAGR/TAM figure exists; this is a gap the peer stage should attempt to fill independently.", check_peers: ["Any listed senior-care peer", "industry reports referenced by new entrants (DLF, J Estates)", "NITI Aayog senior-care policy work"]}
+  - {question: "Do other D2C senior/health-product companies show a comparable RoAS improvement trajectory to AGEasy's, and can the inconsistent RoAS reporting across MAXIND's own quarters (quarterly average vs monthly exit rate conflated) be reconciled against peer or results-deck data?", why: "RoAS trajectory underpins the AGEasy breakeven case; the metric definition appears to shift between calls without explicit reconciliation.", check_peers: ["Other D2C health/wellness e-commerce brands with disclosed RoAS or marketing-efficiency metrics"]}
+red_flags:
+  - "Bed-capacity target quietly reduced from 500 to 485 without management acknowledgment (medium severity)"
+  - "Segment-level EBITDA/CM breakdown requested twice (Q2 FY26, Q4 FY26) and never fully disclosed (medium severity)"
+  - "Fundraise timeline softened from a specific 6-9 month window to market-sentiment-contingent language as treasury fell ~Rs105cr -> ~Rs58cr (medium severity)"
+  - "Selective invocation of 'no forward-looking statements' specifically for the consolidated-profitability-date question (low-medium severity)"
+  - "Chandigarh residences project silently dropped between Q3 FY26 and Q4 FY26 calls, no close-out statement (low-medium severity)"
+  - "RoAS metric reported inconsistently across quarters -- needs reconciliation against results decks (low severity)"
+  - "AGEasy repeat-customer count (44,000, Q4 FY26) below prior quarter's figure (~65,000, Q3 FY26) despite lifetime-lives growth, unexplained on the call (low severity)"
+dropped_triggers:
+  - "Chandigarh residences project (1.01 million sq ft, 324 units) -- alive Q1/Q2 FY26 as a setback being worked around, still named Q3 FY26, absent entirely from Q4 FY26 call with no close-out statement"
+timeline_slippages:
+  - "500-bed target: promised Aug/Sep-2025 (Q1 FY26) -> Nov-2025 (Q2 FY26) -> still incomplete Feb-2026 (Q3 FY26, 333/485 live) -> still 1 facility not live May-2026 (Q4 FY26); target count itself quietly cut from 500 to 485"
+  - "1.5 million sq ft/year residences commitment: FY26 delivered only 1.1mn sq ft against the recurring annual target, 0.4mn shortfall rolled into FY27 pipeline"
+  - "Noida Sector 150 OC: SC-directed 2-week Noida Authority response window (~late Feb-2026, per Q3 FY26 call) slipped to actual partial OC grant on 27-May-2026, ~3 months late"
+  - "Rs200-250cr fundraise: specific 'Q1/Q2 FY27 / 6-9 months' window (Q3 FY26 call) softened to 'sometime this year,' market-sentiment-contingent (Q4 FY26 call)"

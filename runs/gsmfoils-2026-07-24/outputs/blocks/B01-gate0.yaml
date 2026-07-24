@@ -1,0 +1,40 @@
+stage: B01-gate0
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "CFO FY25 (screener Data_Sheet blank; Q4FY26 results filing p.8 cash-flow statement is scanned/OCR-corrupted, not used as a scored anchor)"
+  - "FY26 balance-sheet current/non-current liability split (results filing p.6-7 OCR corrupted; not carried in screener Data_Sheet) — bounded, not exact, for ROCE FY26 and Current Ratio FY26"
+  - "FY26 trade payables (not in screener Data_Sheet; results filing OCR corrupted) — B4 WC-days score is a bounded conclusion, not an exact figure"
+  - "Promoter pledge % (not disclosed in operator shareholding table, AR extract, or either results filing)"
+  - "Contingent liabilities (no note found anywhere in the FY25 AR extract)"
+  - "Peer/competitor financial and segment-structure data for moat tests M2, M5, M7, M9 (PEER DATA NEEDED, none provided in inputs)"
+flags:
+  - {type: FLAG-GATE0, reason: "AVOID classification: Core 58/100 (AVERAGE band) capped by Block B deal-breaker (cumulative CFO/PAT -2.38x on anchored years), then downgraded one tier by the mechanical LIMITED-tier history rule (3 yrs data, listed 31-May-2024). Blocks A (Return on Capital, 20/20) and C (Growth, 20/20) are strong; the depressors are Block B (0/20) and Block E (4/20, pledge/contingent-liability data gaps plus a -18.76pp promoter stake fall Sep2024-Jun2026 not yet adjudicated as dilution vs sell-down)."}
+  - {type: FLAG-CASH, reason: "Block B deteriorating: receivables grew 179% (Rs33.77cr to Rs94.31cr, FY25 to FY26, screener-data) against 93% revenue growth; CFO worsened from -Rs13.72cr (FY24) to -Rs36.79cr (FY26) against PAT growing +Rs1.37cr to +Rs19.84cr over the same span. FY25 CFO is INDETERMINATE (not in provided data) and is not resolved to any score; caps B1/B3 conclusions on the two anchored years only."}
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 20, B: 0, C: 20, D: 14, E: 4}
+core_score: 58
+moat_score: 13
+grand_total: 71
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "#2 Block B <8 -> max GOOD (Block B = 0)"
+  - "#4 cumulative CFO/PAT <0.50 -> max AVERAGE (ratio -2.38x, FY24+FY26 anchored years)"
+history_downgrade: true
+data_notes:
+  - "FY23 stub (9-month, to 31-Dec-2023, screener-data) excluded from FY count; FY24 (year ended 31-Mar-2024) is the first full fiscal year, consistent with the AR calling FY25 the company's '02nd Annual Report.'"
+  - "Inventory Days computed on Raw Material Cost (COGS proxy) basis per the formula's COGS-if-available rule, stated; Receivable and Payable Days on Revenue basis."
+  - "B1/B2/B3 computed from FY24+FY26 only (2 of 3 years) because FY25 CFO is not in provided data; a non-anchored cross-check (internal cash reconciliation of the OCR-garbled Q4FY26 results filing p.8) implies FY25 CFO approx -Rs17.69cr, directionally consistent (also deeply negative) but NOT used in any score."
+  - "Capex proxied via net-block-movement (closing Net Block - opening Net Block + Depreciation) for FY25 (Rs1.56cr) and FY26 (Rs3.43cr); FY24 capex taken directly from CFI (Rs0.97cr) since non-current investments were nil that year (screener-data)."
+  - "FY26 ROCE (A1/A2/A4) and Current Ratio (D4) were bounded via the accounting identity Total Assets = Equity+Reserves+NCL+CL against the company's historical near-all-short-term borrowings mix, rather than an exact extracted figure; A1's median uses FY24+FY25 only to avoid the bound's low end flipping bands; A4's latest-vs-earliest and A2's minimum are robust across the full bound range; D4 used the bound's conservative (lower) end."
+  - "M9 Brand test: gross-margin proxy (Revenue-Material Cost)/Revenue computed (FY24 12.88%, FY25 13.41%, FY26 9.12%, screener-data) but not scored — no peer median available, proxy basis stated per instruction."
+  - "M11 Network Effects: <6 years of history (3 available) makes the two-window test non-computable; scored conservatively at 0 per instruction. Partial, non-decisive signal: FY24-to-FY25 selling-expense/revenue ratio declined 1.54%->0.59% (screener-data); FY26 selling & admin expense not separately disclosed (merged into 'Other Expenses' in screener-data)."
+  - "Sector cap row in the run manifest ('Pharma/CDMO') is a mislabel -- GSM Foils manufactures aluminium pharma foils and ROPP caps, not CDMO services. Did not distort Gate 0 scoring since the peer-relative moat tests (M2, M5, M7, M9) already scored 0 for absent peer data regardless of sector label; flagged for phase-3."
+  - "history_downgrade fires under the framework's '3-4 yrs = LIMITED tier, downgrade one tier' rule (we have exactly 3 full fiscal years). This is a data-length rule tied to GSM Foils being ~2 years post-IPO with no sourceable pre-IPO history, not an independent company-quality judgment -- flagged explicitly per this run's instructions."
+  - "Q1 FY27 (quarter ended 30-Jun-2026, screener-data): Sales Rs96.89cr, Operating Profit Rs11.51cr (11.9% margin, tracking the operator-digest FY27 margin-sustain guidance of 11.5-12%), Net Profit Rs7.62cr -- supplementary momentum context only, not scored into any block above."
+block_b_trend: "deteriorating -- receivables grew 179% (Rs33.77cr to Rs94.31cr, FY25 to FY26, screener-data) against 93% revenue growth, and CFO worsened from -Rs13.72cr (FY24) to -Rs36.79cr (FY26) even as PAT grew from +Rs1.37cr to +Rs19.84cr"

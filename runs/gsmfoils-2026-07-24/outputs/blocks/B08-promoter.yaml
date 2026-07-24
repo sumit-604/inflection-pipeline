@@ -1,0 +1,44 @@
+stage: B08-promoter
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "No DRHP/prospectus in inputs; group-entity map (1B) is web-derived only, not filing-anchored"
+  - "Mohansingh Parmar: no education/qualification/DOB found in AR extract or web search"
+  - "Mechanism behind Jun-2026 promoter shareholding drop (66.54% -> 54.38%) is unconfirmed; 18-Jun-2026 and 23-Jul-2026 Reg 30 filings not in inputs and not locatable via web search"
+  - "Factory-rent landlord identity (Rs 50.70 lakh FY25) not disclosed in AR extract"
+  - "No Glassdoor/AmbitionBox coverage located for GSM Foils"
+  - "Primary-source fetches (NSE archives, Trendlyne, Screener, Tracxn, LinkedIn) returned HTTP 403; relied on WebSearch snippets as a lower-fidelity substitute"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter (Bhanushali) and Parmar remuneration each rose ~78-80% YoY in FY25, immediately post-listing", evidence_tier: "VERIFIED", source: "GSM Foils AR FY25, Annexure-II Section 197 disclosure, p.46-47", date: "2025-09-02"}
+  - {finding: "Sagar Bhanushali holds Chairman, Whole-Time Director, and CFO roles simultaneously with no deputy CFO identified", evidence_tier: "VERIFIED", source: "GSM Foils AR FY25, Corporate Information p.14", date: "2025-09-02"}
+  - {finding: "Promoter shareholding fell 66.54% to 54.38% in the Jun-2026 quarter with no confirmed public disclosure of the mechanism (preferential/QIP/rights/sale) located via web search", evidence_tier: "UNVERIFIED", source: "screener shareholding (operator-supplied 2026-07-24); cross-checked against Q1 FY27 EPS via ScanX/Univest web search 2026-07-24", date: "2026-07-24"}
+  - {finding: "GSM Foils is NSE Emerge (SME) listed and exempt from mandatory compliance with SEBI LODR Regulations 17, 17A, 18-27 and Schedule V Parts C/D/E", evidence_tier: "VERIFIED", source: "GSM Foils AR FY25, Certificate of Non-Applicability of Corporate Governance Report, p.62", date: "2025-09-02"}
+transition_evidence:
+  - "DII shareholding entered the register from 0.00% (through Jun-2025) to 2.46% (Jun-2026), with shareholder count rising from 450 to 1,719 (screener shareholding, operator-supplied 2026-07-24)"
+  - "Zero promoter pledge/encumbrance at every observed date across two dilutive capital raises (screener shareholding, operator-supplied 2026-07-24; no SEBI Reg 31 pledge disclosure located via web search 2026-07-24)"
+  - "Both confirmed capital raises (IPO May-2024; rights issue Sep-2025, Rs 23.06 cr) were directed to growth/working-capital funding, not promoter secondary-sale proceeds (GSM Foils AR FY25; rights issue objects, web search 2026-07-24)"
+  - "100% board and Audit Committee attendance in FY25 by all five directors, with unqualified statutory and secretarial audits and a clean non-disqualification certificate (GSM Foils AR FY25, p.33, p.37, p.61)"
+pledge_pct_latest: 0
+pledge_trend: "stable — nil pledge across all reported periods (screener shareholding, operator-supplied 2026-07-24); no adverse Reg 31 pledge disclosure located via web search 2026-07-24"
+searches_performed:
+  - "GSM Foils promoter shareholding / preferential allotment / QIP (2025-2026)"
+  - "GSM Foils promoter/director background, SEBI, criminal, tax, NCLT record"
+  - "AAPL Solutions Private Limited identity, directors, business, relation to GSM Foils"
+  - "GSM Foils LLP predecessor entity status and conversion history"
+  - "GSM Foils rights issue mechanics, subscription, objects, monitoring agency report"
+  - "GSM Foils pledge/encumbrance, bulk/block deals"
+  - "GSM Foils Q4 FY26 / Q1 FY27 results, EPS, capex funding, ROPP/Unit 4 announcements"
+  - "GSM Foils employee reputation (Glassdoor/AmbitionBox), media reputation, valuation sentiment"
+  - "AR FY25 extract: governance, AOC-2 RPT, Annexure-II remuneration, shareholding, auditor sections"
+searches_skipped:
+  - "Direct MCA/RoC filing pull for both DINs (no authenticated MCA access available)"
+  - "Direct ICAI membership-directory lookup by name"
+  - "Direct fetch of NSE archive PDFs, Trendlyne, Screener.in, Tracxn, LinkedIn pages (all returned HTTP 403; WebSearch snippets used as substitute)"
+  - "SEBI SCORES complaint-database direct query (not name-searchable via general web search)"
+verdict_basis: "Zero legal/regulatory/criminal findings and zero pledge across all periods, but an unconfirmed Jun-2026 promoter dilution event, steep post-listing remuneration growth, and SME-platform governance carve-outs keep this at CAUTION rather than TRUSTWORTHY."

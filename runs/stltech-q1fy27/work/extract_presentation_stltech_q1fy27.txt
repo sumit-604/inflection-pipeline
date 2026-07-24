@@ -1,0 +1,1133 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: stltech_q1fy27_presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 32
+formfeed_count: 32
+line_count: 1133
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (all P&L, order book and revenue figures on-slide are stated as "INR Cr."/"INR Crs"; no lakhs or millions figures found on any slide)
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-24
+=== END HEADER ===
+
+NOTE (mechanical, not interpretation): Every one of the 32 slides yielded more
+than 100 extracted characters via `pdftotext -layout` (minimum was slide 1,
+title page, at 138 raw characters before page-marker insertion). Per GATE A1
+extraction rule, the under-100-character OCR-fallback trigger therefore did
+not fire on any page and no rasterisation/tesseract OCR pass was run. This
+deck's chart data labels (order intake, order book, revenue/EBITDA/PAT
+bar-chart values, market-share percentages, QIP allocation and shareholding
+percentages) are present as native vector/text elements captured directly by
+pdftotext, not as flat raster images with no text layer -- confirmed by direct
+inspection of slides 9, 11, 12, 13 (industry tailwinds / market opportunity),
+15 (order intake), 20 (market share / attach rate), 23 (financial
+performance), 24 (revenue mix), 25 (order book / backlog), 26 (consolidated
+abridged financials), and 27 (QIP) prior to finalising this extract. Chart
+axis/data-label text as extracted by pdftotext is preserved verbatim below in
+its native (sometimes visually scrambled, non-tabular) reading order; no
+reflow, reordering, or interpretation has been applied.
+
+[page 1]
+        Earnings
+        Presentation
+        Earnings Call Q1FY27
+        24th July 2026
+
+
+
+
+© 2022-2023 Sterlite Technologies Limited
+
+[page 2]
+        Safe Harbour                                                                                                                                STl!
+       Certain words and statements in this communication concerning Sterlite Technologies Limited (“the Company”) and its prospects, and other statements
+       relating to the Company’s expected financial position, business strategy, the future development of the Company’s operations and the general economy
+       in India & global markets, are forward looking statements.
+       Such statements involve known and unknown risks, uncertainties and other factors, which may cause actual results, performance or achievements of the
+       Company, or industry results, to differ materially from those expressed or implied by such forward-looking statements.
+
+       Such forward-looking statements are based on numerous assumptions regarding the Company’s present and future business strategies and the
+       environment in which the Company will operate in the future.
+       The important factors that could cause actual results, performance or achievements to differ materially from such forward-looking statements include,
+       among others, changes in government policies or regulations of India and, in particular, changes relating to the administration of the Company’s industry,
+       and changes in general economic, business and credit conditions in India.
+       The information contained in this presentation is only current as of its date and has not been independently verified. No express or implied representation
+       or warranty is made as to, and no reliance should be placed on, the accuracy, fairness or completeness of the information presented or contained in this
+       presentation. None of the Company or any of its affiliates, advisers or representatives accepts any liability whatsoever for any loss howsoever arising
+       from any information presented or contained in this presentation. Please note that the past performance of the Company is not, and should not be
+       considered as, indicative of future results. Furthermore, no person is authorized to give any information or make any representation which is not
+       contained in, or is inconsistent with, this presentation. Any such extraneous or inconsistent information or representation, if given or made, should not be
+       relied upon as having been authorized by or on behalf of the Company.
+       The Company may alter, modify or otherwise change in any manner the contents of this presentation, without obligation to notify any person of such
+       revision or changes.
+       Persons should consult their own financial or tax adviser if in doubt about the treatment of the transaction for themselves
+       These materials are confidential, are being given solely for your information and for your use, and may not be copied, reproduced or redistributed to any
+       other person in any manner. The distribution of this presentation in certain jurisdictions may be restricted by law. Accordingly, any persons in possession
+       of this presentation should inform themselves about and observe any such restrictions
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                             2
+
+[page 3]
+                                                                                                  ST\!
+                                            Ankit Agarwal
+                                            Managing Director
+
+                                            A believer in purpose-led organizations, Ankit has been
+                                            leading STL’s growth journey as it transforms billions of lives
+                                            by connecting the world. He holds sustainability very close to
+                                            his heart and is leading the company’s ambitious Net-Zero
+                                            by 2030 target, from the front.
+
+                                            Ankit is extremely passionate about improvement in health,
+                                            education and the environment through digital inclusion.
+                                            Recognized as a 40 under 40 leader, Ankit is a strong
+                                            supporter of young and entrepreneurial talent. He is a fitness
+                                            enthusiast, an athlete, and a long-distance runner and
+                                            encourages his teams to work towards solid all-round growth
+                                            at work and in life.
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited
+
+[page 4]
+      Strategic Priorities for FY27
+
+
+
+
+                                1
+                                            Strategic        Industry Tailwinds &                              Financial
+                                            Priorities   2   Market Opportunity
+                                                                                    3 Business
+                                                                                      Performance Update
+                                                                                                           4   Performance Update
+                                            for FY27
+
+© 2026-2027 Sterlite Technologies Limited                                                                                           4
+
+[page 5]
+        STL is a leading player in global digital connectivity infrastructure                                              ST\!
+                                                 Customer Segments
+                                                                                                      #1
+                                                                                                      End-to-end optical manufacturer in India
+
+
+
+
+                                                                                                      9%
+                                                                                                      Global Market Share in OFC (Ex-China)
+
+
+
+
+         DC and Cloud                        Telcos          Citizen Networks Large Enterprises
+                                                                                                      30+
+                                                                                                      Years of industry leadership
+
+
+
+
+                          I,.
+                                                       Offerings
+                                                                                                  8 785+
+                                                                                                      Global Patent Filed and granted
+
+                      ~- Optical Fibre
+                                                                   ~,,. Specialty Cables
+                                                                                                  bl 10+
+                                                                                                  ~
+
+
+
+
+                    ~           Optical Fibre Cables           t}- Optical Connectivity               Advanced manufacturing facilities with
+                                                                                                      ZERO waste to landfill & Liquid Discharge
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                     5
+
+[page 6]
+         Glass to Gigabit Connectivity – Presence Across Value Chain                                                                                                 STC
+
+
+
+
+                                                              Breakthrough Innovations Redefining Optical Infrastructure
+
+                                    Stellar Bend-Insensitive Fiber
+                                              TM
+                                                                                                                    Celesta Ribbon Cables
+      stellar                       Industry-leading flexibility with minimal signal loss - optimized
+                                    for dense datacenter environments and challenging installations
+                                                                                                        celesta     Compact, high-density, faster installs - engineered for rapid
+                                                                                                                    hyperscale deployments with superior space efficiency
+
+
+
+                                    Multiverse Multicore Fiber                                                      OptoBlaze Plug‘n’Play Solution
+     multiverse                     4× capacity increase - a next-generation optical fiber solution
+                                    engineered to address the exponential growth in data
+                                                                                                        OptoBlaze   Compact, pre-connectorized plug-and-play solution that
+                                                                                                                    enables fast, tool-free, and reliable FTTH installations with
+                                    transmission demands across modern communication networks.                      minimal skill and maximum efficiency.
+© 2026-2027 Sterlite Technologies Limited
+                                                                                                                                                                                    6
+
+[page 7]
+        Strategic priorities for FY27                                                  STl!
+
+                                            • Grow revenue share of integrated
+                                              connectivity solutions
+
+
+                                            • Scale ‘Enterprise & DC’ segment’s
+                                              revenue contribution
+
+
+                                            • Technology leadership in next-gen
+                                              optical platforms
+
+
+                                            • Drive margin expansion through
+                                              relentless focus on operational & cost
+                                              efficiencies
+
+
+                                                                                              7
+© 2026-2027 Sterlite Technologies Limited
+
+[page 8]
+    Industry Tailwinds & Market Opportunity
+
+
+
+
+                                                                 Industry Tailwinds
+                                                             2
+                                            Strategic                                     Business
+                                  1                                                   3                        4   Financial
+                                            Priorities for       & Market                 Performance Update       Performance Update
+                                            FY27                 Opportunity
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                               8
+
+[page 9]
+       Three investments cycles coinciding                                                                                                                                                                          STl!
+                                                                       Multi-year network build cycle
+
+                               FTTx                                        Data Centres                                                         5G / 6G                                             Supported by:
+                                                                                        Global                                                                                                    • Morgan Stanley upgrades their
+              Global FTTx deployments – OFC mfkm                                                                                 6.4         Global 5G subscriptions by                             forecasts for hyperscalers’ capex
+                                              171                                                                                Bn          2030, making up 67% of total                           in CY 26 from $765Bn to $805Bn
+                     151                                                        CRU projects global optical                                  mobile subscriptions
+                                                                    63%         cable demand growth from
+                                                                                data centres at 63% y/y in                       180         is the forecasted milestone for                      • According to Jefferies proprietary
+                                                                                2026.                                            Mn          global 6G subscriptions by the                         data centre capacity analysis, only
+                                                                                                                                             close of 2031.                                         8.9GW of capacity became
+                    2025                 2030P                                                                    CRU                                                              CRISIL
+                                                                                                                                                                                                    operational in 2025, while demand
+                                                                                     North America                                                                                                  reached nearly 21.1 GW, resulting
+                            FTTx in NA in M fkm                                                                                                                                                     a deficit of about 12GW
+                                 +10%.
+                                                 63
+                                                       •67
+                                                                      Installed Data Centre Capacity (Thousand GW)
+                                                                                           14.8%
+                                                                                            CAGR       126.0                     460
+                                                                                                                                             projected 5G/6G subscriptions in
+                                                                                                                                             North America by 2031, up from
+
+             41
+                     47        52
+                                        58
+                                                                                 63.0
+                                                                                                                                 Mn          370 million at the end of 2025.                      Government programs
+                                                                                                                                              current 5G market penetration -                     • BharatNet (₹1.39Tn) Phase III
+                                                                                                                                 79%          positioning North America as the                      targets fibre to 1.5 crore rural
+                                                                                 2025                 2030P                                   global leader and an expected                         homes, driving the next stage of
+            2025    2026      2027     2028     2028   2030          US demand to more than double from 31 GW                                 early adopter for 6G.
+                  >140 Mn US homes await FTTH                               in 2025 to 66 GW in 2027                                                                            CRISIL
+                                                                                                                                                                                                    broadband expansion.
+                                                                                                           Rystad
+
+                                                                                         India                                                                                                    • U.S. Broadband Funding
+                                                                                                                                                                                                    (~$97B incl. BEAD) 54 states
+                    Indian Telcos Capex Spend ($ Mn)                     Installed Data Centre Capacity (GW)                            5G Subscribers in India (Mn)
+                                                                                                                                                                  1,020             1,040
+                                                                                                                                                                                                    approved by NTIA and 52 by
+                                                                 ~US$ 60 Bn investments till 2031 (Morgan Stanley)              942              990
+                                +14%                                                                                                                                                                NIST, unlocking grant funds &
+                                             22,515                                                  10.5
+                   19,723                                                                                                                                                                           signing their award agreements.
+                                                                                                                         5G                                                                         Market activity improving, with
+                                                                                                                                                                                                    uptick in orders & quoting, CRU
+                                                                               1.8                                                                                                                  anticipating meaningful demand
+                                                                                                                               FY25            FY26E             FY27P             FY28P
+                                                           CRU                                                                India’s 5G subscriptions to reach 1.1 billion by the end of 2031
+                                                                                                                                                                                                    from H2 2026.
+                   CY24                       CY25                            2026                 2031                                                                                  CRISIL
+
+© 2026-2027 Sterlite Technologies Limited                                                                      Years are Calendar Years ,* - CAGR, Source: Goldman Sach,Jefferies , FTTH Council Europe, Industry News,GSA, Deloitee & CRU)   9
+
+[page 10]
+      Fiber remains the backbone of all digital infrastructure
+      5G, FTTH, AI-DC all bank on the DNA that is optical fiber                                                                                     ST\!
+    “We’re building the UK’s digital backbone even faster                Airtel accelerating fibre rollout to power broadband growth
+    and further, connecting the country like no one else”
+
+    The next generation of artificial intelligence infrastructure will
+                                                                         we are future-proofing our network with accelerated fibre deployment
+                                                                         reflected in over 1,30,000 kilometres fibre rollout in the last three years.
+                                                                                                                                                               If)
+    require a substantial amount of optical connectivity because
+    computing demands are growing so rapidly that copper wiring can
+                                                                         We continue to expand fibre home passes for our broadband
+                                                                         businesses along with FWA rollout across 2,500 cities.                            airtel
+    no longer meet the requirements. -
+
+
+
+    “AT&T is focused on expanding where it can offer fiber
+    in a variety of ways”                                                “Charter’s broader strategy to add more than 100,000
+    We’re proud to now pass more than 30 million fiber locations -
+    halfway to our goal of reaching approximately 60 million homes
+                                                                         miles of fiber nationwide.”
+                                                                                                                                                        Charter
+                                                                                                                                                        COMMUNICATIONS
+
+
+    and businesses across America
+
+
+
+ Optical connectivity will power the next generation of AI
+ infrastructure
+                                                                          “AWS has built over nine million kilometers of network
+                                                                          infrastructure, so vast it could reach from Earth to the
+                                                                          Moon and back more than 11 times”
+                                                                                                                                                        aws
+ Jensen Huang, Founder & CEO of NVIDIA stated that the next
+ generation of artificial intelligence infrastructure will require a
+ substantial amount of optical connectivity because computing             “Hollow-core fiber provides the advanced data speeds
+ demands are growing so rapidly that copper wiring can no longer meet     necessary to solve AI latency and scalability challenges.”
+ the requirements                                                                                                                                              Microsoft
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                            Source: Newspaper Reports, Investor Decks & Insights   10
+
+[page 11]
+      AI revolution and data centre expansion presenting unprecedented
+      opportunity                                                                                                                                                                                                                                STl!
+                         Opportunity Size                                                                             STL’s AI-DC Portfolio                                                 Evolving GPU Architecture
+             Estimated global data centre                                                                              Make in India for the World
+             capacity demand, gigawatts                                                     219
+
+             •       Non-AI Workload
+                                                •      AI Workload
+
+                                                              153
+                                                                            181              64                                                                                   400G                           800G                               1.6T
+                                                                               56
+                                                 128
+                                                                50
+                                   103
+                                                      45
+              82
+                                   40                                                        156                                                                                  Standard
+              38                                                                                                                                                                                                 Current AI                        Upcoming
+                                                                              124
+                                                               102                                                                                                              (Netflix-scale)                  Sweet Spot                     "Super-Highway"
+                                                      83
+              44
+                                   62                                                                                End to end portfolio for DCs
+                                                                                                                                                                            As AI nodes scale, copper hits its limits, fibre takes over
+             2025             2026              2027          2028          2029           2030
+
+                          70% of Demand for AI-specific
+                                          infrastructure by 2030
+                                                                                    Source: Mckinsey                 Fibre explosion in DCI                                                        The Density Journey
+             Rising Capex by Hyperscalers, USD Bn.
+
+              ......,.                                                                                             ••                 A                                                           More AI Demand = Denser Fibre per Rack
+
+
+
+
+         I
+         i
+              11•
+
+
+                 -
+                 -
+                 ""
+                         • 1#114
+
+
+                         • ..,,
+                                    • OOOOL
+
+
+                                    • OIIIQ.
+                                               META
+
+
+
+
+                                                                                                                 2 DCs →1 DCI 3 DCs →3 DCIs 4 DCs →6 DCIs
+                                                                                                                                                                                                     Fibres per Switch Rack - Cloud to AI Era
+
+                                                                                                                                                                                                                               12,000                  .
+                                                                                                                                                                                                                                                     16,000
+
+
+
+
+                 ..-
+         u       -
+                                                                                                     ..,.                                                                                                  4,000
+                                                                                                                                                                                      500
+                 M et
+                                                                                               ."· ... .
+                                                                                               ...
+                                                                                                     ···••'
+                                                                                                            .,
+                                                                                                                                                                                        I
+                                                                                                                                                                                     Cloud            32 GPU AI Node       72 GPU AI Node        144–288 GPU
+                 ""                                                                                                                                                                 (<2023)              (2023–24)            (2025–26)         AI Node (Future)
+
+                                                                                                                    5 DCs → 8 DCIs         6 DCs →15 DCIs
+                                                                                                                      More AI data centres mean more                                  AI racks are becoming fibre-dense;
+             Data Center IT Capex to reach ~                                        $3T by                                                                                higher compute concentration drives much higher fibre count per
+                               2030                                                                                interconnects; each new site multiplies
+                                                             Source: Morgan Stanley, Citi Research
+                                                                                                                               DCI demand. Source: MarketsandMarkets                                   rack
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                              *Source- JLL,Mckinsey, Bharatnet.in, Economic Times, Press Releases, STL Analysis           11
+
+[page 12]
+      India Data Centre Expansion – A Structural Optical Fibre Tailwind
+                                                                                                                                                                                          STl!
+                                              India’s data centre expansion is creating a multi-year fibre demand tailwind, with optical cable
+                                                 demand projected to grow at ~11% CAGR from 17.6M F-km (2025) to 31.5M F-km (2030).
+
+
+
+                     India DC Capacity Expansion                                       Strategic Announcements                                                     Policy Tailwinds
+
+
+                                                                                                                          Q
+                                                                                                                                                                 State Incentives
+                     12
+
+
+
+
+                                            10.5 GW                 adani                                            Reliance
+                                                                                                                     lrn;l11,$tri~I.imit~
+                                                                                                                                                                 Subsidies & Power Benefits
+                                                                   5GW l $100Bn          ~5GW I $30 Bn I      ~3GW l $20-30Bn I Meta
+                                                                   I Across India                             168MW lease l Jamnagar
+                     10
+
+
+
+
+                                                                                        Maharashtra & AP
+                     8
+
+
+
+
+                                                                                                                  1■ Microsoft
+
+                                                                                                                                                        •
+                     6
+                                                                      aws
+                                                                      .._,                    Google                                                             Tax Holidays till 2047
+                     4
+                                                                  ~3GW I $21Bn I            $15Bn I Vizag &        ~2GW I $17.5Bn I                              Income Tax Exemptions
+                          1.6 GW                                    Hyderabad                across India            Across India
+                     2
+
+
+
+
+                     0
+
+
+
+
+                           2026             2031                     tos
+                                                                 1GW+ I Across India
+                                                                                                Ctr1s·
+                                                                                             60MW I Kolkata            50MW I Vizag                              Digital Infrastructure
+                                                                                                                                                                 Push
+                   Multi-Year DC Capex Boom Driving                                                                                                              AI & Connectivity Boost
+                                                                                        Fuelling Investment Surge
+                             Fibre Demand
+
+
+                                                                Higher DC Capex = Higher Fibre Intensity Across:
+
+                                              ✓ DCI Links                           ✓ Metro Fibre                                           ✓ Long-Haul Backbone
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                          Source: CRU, Morgan Stanley, CFO.com (The Economic Times)   12
+
+[page 13]
+       A clear multi-year upcycle in global fibre demand building from 2025                                                                                                  STl!
+                                                                                              800                                                                                          760
+          Reflections                                                                                                                                                       731
+                                                                                                                                                             696
+                                                                                              700                                              664
+          As per CRU;
+                                                                                                                                598
+
+
+
+
+                                                                        OFC Demand (Mn Fkm)
+          •    Global mid-term optical cable demand outlook                                   600                   553
+               strengthened: Following stabilisation in 2025,
+                                                                                                    537      528
+               CRU projects demand growth to accelerate to                                    500
+               ~8.2% y/y in 2026, with upward revisions driven
+               by improved project visibility and accelerating                                400
+          •    Supply-demand tightness has become more                                        300
+               visible: Demand acceleration, particularly in
+               high-value applications, is increasingly outpacing                             200
+               fibre and preform availability, leading to high
+               utilisation rates and longer lead times across key                             100
+               markets.
+                                                                                               0
+                                                                                                    2023     2024   2025       2026           2027           2028          2029           2030
+                                                                                                                                                                                  Calendar Year
+      Future Outlook
+      As per CRU;
+      •       Growth to be increasingly concentrated in North
+              America and APAC ex-China: Driven by AI-led
+                                                                          •    •   •          •   •    •
+                                                                                                     China   ROW
+
+                                                                    .- -------------------------------------- -.
+                                                                                                                    APAC (Ex China, India)           India       Europe          N. America
+
+
+                                                                    1                  N.America                                                                                       380            I
+              data centres, DCI and broadband rollouts in North                                       166     173   195          238           287           317          350
+                                                                    I                  & Europe                                                                                                       I
+              America, with India and Southeast Asia driving        I                  (Mn Fkm)                                       14.3% CAGR                                                      I
+              incremental growth in APAC ex-China.                  I                                                                                                                                 I
+                                                                    ~---------------------------------------~
+                                            STL’s focus markets North America expected to lead demand growth,
+                                                     with CRU projecting a 18.6% CAGR through 2030.
+© 2026-2027 Sterlite Technologies Limited                                                                                  Source: CRU Optical Fibre & Cable Market Outlook, May 2026; STL Analysis   13
+
+[page 14]
+     Execution Excellence & Competitive Differentiation
+
+
+
+
+                                                                                        3
+                                            Strategic            Industry Tailwinds &       Business
+                                  1                                                                       4   Financial
+                                            Priorities for   2   Market Opportunity         Performance       Performance Update
+                                            FY27                                            Update
+
+© 2026-2027 Sterlite Technologies Limited                                                                                          14
+
+[page 15]
+         STL poised to outpace market growth with strengthening order
+         momentum                                                                                                STl!
+                                                                   Key Strategic Wins:
+                                    Order Intake (INR Cr.)
+                                                                 ✓ Landmark $1.11 Billion Product Award Letter (PAL)
+                                                                    Secured (₹10,000+ Cr) from a hyperscaler to supply
+                                             1.7x
+                                                                    optical connectivity products from FY27 to FY29 for
+                                                                    next-gen AI data centers
+                                                                 ✓ Integrated Solutions Win: Secured multiple hyperscaler
+                                                                    orders worth $100 Mn+ for the Neuralis portfolio
+                                                                 ✓ Long Haul Applications: Secured a strategic order to
+                                                       13,100
+                                                                    supply long-haul, dark-fibre HD micro-cables to a major
+
+                               7,687                                connectivity infrastructure provider
+                                                                 ✓ Diversified Order Book: Healthy mix of order intakes
+                                                                    from all customer segments and product categories
+                                                                    across regions
+                               FY26                    Q1 FY27
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                     15
+
+[page 16]
+        Driving Innovation Leadership - Technology Update                                                                                                   STl!
+                 Key Developments This Quarter                           FIRST IN THE WORLD / INDIA                           BUILDING NEXT-GEN CAPABILITY
+
+
+
+        MMC Certification - Pre-Terminated Solutions             India’s First Quantum-Secured Network                 Hollow-Core Fibre (HCF)
+        US Conec-certified for AI data centers, delivering       Breakthrough enabled by Multi-Core Fibre.              Pioneering low-latency, low-loss communications
+        3X cabling density to power the 800G+ future.                                                                  for future networks.
+
+                                                                 Green Hydrogen
+                                                                 Pioneering sustainability in the optical industry.    STL and Microscan partner to deploy Sensron
+        Patent Dispute Win in Europe
+                                                                                                                       Standard networks transformed into real-time, AI-
+        Victory removes commercial barriers, clearing the                                                              powered smart city sensor grids.
+        runway for accelerated growth across the IBR             160-Micron Fibre
+        cable family.                                            World’s slimmest optical fibre.
+                                                                                                                       Hybrid Cable Architecture
+                                                                                                                       Engineered combining HCF, G.654.E, and NOVA
+        CONCAT Launch                                                      IP PORTFOLIO                                fibers to power AI Data Centre connectivity.
+        Spliceless, plug-and-play fiber connectivity that
+        accelerates FTTH rollouts and cuts labor costs.                    785+ patents filed & granted
+                                                                           9 new patents filed in Q1 FY27
+
+
+
+
+                              UK Fibre Awards 2026                                     NAMC Awards                                    CII’s Industrial Innovation Awards
+                              Highly Commended - Best Hardware                         Aatmanirbhar Nation Builder &                  2025
+                              Supplier                                                 NAMC Gold manufacturing                        Outstanding innovation capabilities
+                                                                                       excellence
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                                   16
+
+[page 17]
+        STL Neuralis: AI-Era Data Center Portfolio                                                                                                                                       STl!
+            TWO MISSION-CRITICAL PILLARS                                                                                                            STL ACHIEVES US CONEC CERTIFICATION FOR MMC
+                                                                                    FEATURED PRODUCT PORTFOLIO
+
+                       1
+
+
+                     eoo
+                     000
+                     000
+                           AI WHITESPACE
+                           Internal Connectivity
+
+
+                            Ultra-high-density MMC /
+                            MPO cabling
+                                                             • 1   Pre-Terminated Fiber Trunks
+                                                                                                     •2   Fiber Array Cords & Assemblies             STl!
+
+
+
+
+                            Factory termination for faster
+                            deployment
+
+                            Scales to support massive
+                            GPU clusters                     Factory-ready rapid deployment          Ultra-high-density backbone cable
+
+
+
+                                                                                                                                                        3x
+                       2   HIGH-SPEED DCI
+                           External Connectivity
+                                                             • 3   Celesta IBR Cables
+                                                                                                     •4   Fiber Enclosures & Panels
+                                                                                                                                                        CABLING DENSITY vs. TRADITIONAL MPO
+
+                            Campus-edge interconnect
+
+
+                            Petabyte-scale data
+                            movement
+                                                                                                                                                      •G     Certified Trust: Earned elite US Conec
+                                                                                                                                                             certification for hyperscale MMC solutions.
+
+                                                                                                                                                             AI-Scale Density: Maximizes rack space for
+                                                                                                                                                             800G+ scaling via compact VSFF design.
+
+                            Celesta IBR up to 6,912
+                            fibres
+                                                             Optimized for
+                                                             400G / 800G networks
+
+
+
+
+                    STL Neuralis emerges as the “central nervous system” for modern data centers—
+                                                                                                     Maximize rack density and simplify
+                                                                                                     management
+
+
+
+
+                                                                                                                                From North-
+                                                                                                                                                      •      Expanded Portfolio: Strengthens STL's end-to-
+                                                                                                                                                             end "Glass to Data Center" offering.
+
+
+
+
+                                                                                                                                                                                              Infrastructure
+                                                                                                                                                            Built for AI.
+                                                                                                                                South to East-                                                that scales with
+                    built to power AI workloads with speed, scale and simplicity.                                                                           Ready for what’s
+                                                                                                                                West architecture                                             intelligence
+                                                                                                                                                            next.
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                                                                        17
+
+[page 18]
+       Next-Generation Fiber Portfolio: Engineered for the AI-DC Era                                                                                                           ST'!
+                                    G.654.E                                            Hollow Core Fiber                                                Multi-Core Fibre
+
+
+
+
+         • 30% lower signal loss                                  • Light travels through an air-filled core, not solid silica   • 4–7x higher data capacity vs. single-core fibre
+         • 50% larger core area                                   • ~30–47% lower latency                                        • Same physical size — full space efficiency
+         • Handles extreme power of next-gen lasers used in AI-   • Broader spectrum support: 800G–1.6T and beyond
+           driven networks                                                                                                       • Reduces deployment & infrastructure costs
+
+          Applications:                                            Applications:                                                  Applications:
+        • Long-haul terrestrial & backbone                                                                                       • AI-driven data centres
+                                                                  • Data Centre Interconnect (DCI)
+        • High-capacity DWDM (400G/800G+)                                                                                        • Long-haul 5G networks
+                                                                  • Sensing & high-power laser delivery
+        • Data Center Interconnect (DCI)                                                                                         • High-performance interconnects
+                                                                  • Quantum communications
+        • Subsea landing links                                                                                                   • Quantum-safe networks (QKD-ready)
+
+             G.654.E Fiber Moves from NPD to Successful                 HCF cable launched, enabling ~46% faster                    MCF wins top honors at OFC 2026 Lightwave
+                          Commercialization                          transmission for AI Data Centres & hyperscalers             Innovation Reviews - now in UK market deployment
+
+
+
+                    MCF Deployment Milestones: India's first QKD over MCF with C-DOT (100km real-world trial) • India's first MCF testbed at IIT Madras
+                    (5+ km, aerial + underground) • Successful Colt Technologies (UK) trial — STL now leading global standards in MCF design and testing.
+
+© 2026-2027 Sterlite Technologies Limited                                                                                          Sources: STL Press Releases — C-DOT, IIT Madras, Colt Technologies (UK) 18
+
+[page 19]
+       CONCAT: Redefining U.S. FTTH Deployment Economics                                                                                                                STl!
+         W H AT C O N C AT D E L I V E R S
+                                                                                                                                  SOLUTION SPOTLIGHT
+
+
+
+
+          •  1     Reduced Complexity
+
+           Fiber preparation & termination shifted to a
+           controlled factory environment - consistent quality,
+           lower operational risk in the field.
+                                                                      • 2     True Plug-and-Play
+
+                                                                      Factory-assembled, pre-connectorized fiber
+                                                                      segments enable spliceless installation – faster
+                                                                      builds with fewer field errors.
+                                                                                                                         •
+                                                                                                                            I I
+
+
+
+
+          •  3     Modular Architecture
+
+           Concatenated MPO-to-LC cable assembly with
+           versatile enclosure & cassette design – supports
+                                                                      • 4     Faster Time-to-Revenue
+
+                                                                      Operators scale faster and connect customers
+                                                                      quicker – cutting truck rolls, rework, and skilled-
+                                                                                                                                     CONCAT pre-connectorized, spliceless closure
+
+                                                                                                                                  UP TO
+                                                                                                                                                            labor-cost savings
+
+
+                                                                                                                                  71%
+           aerial and duct deployments.                               labor dependency.                                                                     eliminates most field
+                                                                                                                                                            splicing via factory-
+                                                                                                                                                            assembled segments
+
+
+
+                                                                                                                                      Lightwave Innovation Awards
+                                                                                                                                      Rated 4.0 / 5 – “Excellent” category
+                       Purpose-built for new builds, expansions
+                       & overbuilds facing aggressive             Faster installs      Fewer truck rolls    Improved project          Commercially available
+                       broadband coverage targets.                fewer field errors   less rework          economics                 Field-validated with one of the largest U.S.
+                                                                                                                                      telecom operators
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                                            19
+
+[page 20]
+         Market share and optical connectivity attach rate                                                                                                    STl!
+                           Global (ex-China) OFC market share                                  Optical connectivity attach rate
+
+                                                                                                                                             16%
+                                                                                                        15%
+
+
+
+                                                                           9%
+                                        8%
+
+
+
+
+                                       FY26                            Q1FY27                          FY26                               Q1FY27
+
+
+                                     Market Share = STL Sales Volume / Total Market Demand         Attach rate = Optical connectivity revenue / OFC revenue
+
+
+
+
+                                   Increased OFC market share.                               Focused on scaling the attach rate above 20%
+                                 Focus on growing the market share                              from Q2 onwards & 25%+ by Q4FY27
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                            20
+
+[page 21]
+                                                                                                      ST\!
+                                            Ajay Jhanjhari
+                                            Chief Financial Officer
+
+                                            Ajay is Chartered Accountant and has a rich experience of
+                                            nearly 15 years bring a deep expertise in the areas of
+                                            fundraising, capital allocation, merger & acquisition, treasury
+                                            management, and Business partnering.
+
+                                            As the Chief Financial Officer at STL, his vision is to bolster the
+                                            company's strategy to deliver consistent shareholder value and
+                                            profitable growth.
+
+                                            He joined STL as a Management Trainee and has held various
+                                            leadership positions within the company before becoming CFO
+                                            for Optical Networking Business last year.
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited
+
+[page 22]
+       Focus on maintaining operating profitability
+       & reducing debt
+
+
+
+
+                                            Strategic
+
+                                                                                                               4
+                                 1          Priorities for       Industry Tailwinds &     Business                 Financial
+                                                             2                          3 Performance Update
+                                            FY26                 Market Opportunity                                Performance Update
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                               22
+
+[page 23]
+        STL Financial Performance – Highest Ever !                                                                                  STl!
+                               •       Revenue* (INR Crs)
+
+
+                                            1,441
+                                                                     1,910
+                                                                                       0 EBITDA %
+                                                                                                     •
+                                                                                                   218
+                                                                                                          EBITDA (INR Crs)            397
+
+                                                                                                                                     20.8
+
+                                1,257                       1,020
+                1,034                                                          141       129       15.1          140
+                                                                                         10.3
+                                                                               13.6                                  13.7
+
+              Q2FY26          Q3FY26        Q4FY26          Q1FY26   Q1FY27   Q2FY26    Q3FY26   Q4FY26           Q1FY26           Q1FY27
+
+
+
+
+                               □ PAT* (INR Crs)                       197
+                                                                                       Q1 FY27 Revenue: INR 1,910 Cr
+                                                                                       Driven by strong 87% Y-o-Y growth
+                                              59
+
+                                                                                       Q1 FY27 EBITDA Margin: 20.8%
+                                                                                       Significant Y-o-Y expansion of 184%
+                   4                                          10
+
+                                                            Q1FY26   Q1FY27            Q1 FY27 PAT: INR 197 Crores
+                              r        I                                               Robust growth of 3.3x Q-o-Q
+                                -17
+              Q2FY26          Q3FY26        Q4FY26
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                    * from continued operations   23
+
+[page 24]
+      Diversified revenue mix
+                                                                                                                              STl!
+                                                Segment distribution            Geographical distribution
+                                            Large order  wins
+                                                  Revenues*      in
+                                                            (INR Cr.)                   Revenues* (INR Cr.)
+                                                 Q3 FY26
+                                             4,745                  1,910       4,745                         1,910
+                                              1%
+                                             17%                        21%
+                                                                                39%
+                                                                                                              54%
+                                                                        18%
+
+
+
+
+                                             82%                                39%
+                                                                                                              25%
+                                                                        61%
+
+
+                                                                                22%                           22%
+
+                                             FY26                  Q1FY27       FY26                      Q1FY27
+
+
+         •      DC & Cloud □ Large Enterprise □ Telecom & Citizen Networks
+
+
+© 2026-2027 Sterlite Technologies Limited
+                                                                              □ Americas □ Europe         • ROW
+                                                                                                                      * from continued operations   24
+
+[page 25]
+        Open order book / Backlog highlights                                                       STl!
+
+                        Open order book / Backlog (INR Cr.)   Order book spread / Backlog Schedule (INR Cr.)
+
+                                            2.4x
+                                                   18,618                                 16,390
+
+
+
+
+                                   7,687
+
+
+
+                                                                          2,228
+
+
+                                   FY26            Q1FY27                Q2 FY27      Q3FY27 & Beyond
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                      25
+
+[page 26]
+        Consolidated financials: Abridged version
+                                                                                                                                                 ST\!
+         P&L (INR Cr.)                              Q4 FY26   Q1 FY26   Q1 FY27
+                                                                                  Key Updates#
+         Revenue*                                    1441      1,019     1,910
+                                                                                  • Net Debt-Free balance sheet
+         EBITDA*                                      218       140       397
+                                                                                  • Net cash balance stands at 483 Cr
+         EBITDA %                                    15.1      13.7      20.8
+
+         Depreciation                                (77)      (77)      (85)
+
+         EBIT*                                        141       63        312
+                                                                                  Credit Profile Strengthened:
+         Finance Costs                               (63)      (50)      (55)     CRISIL revised outlook to 'Stable',
+                                                                                  reaffirming AA- (Long-Term) and A1+
+         Exceptional Items                            31         0         0
+                                                                                  (Short-Term) ratings.
+         PBT*                                         109       13        257
+         (Before share of Associates and JV)
+                                                                                  ICRA upgraded long-term credit rating to
+         Tax                                         (50)       (3)      (60)     [ICRA] AA (Stable) and reaffirmed its
+         Net Profit*                                  59        10        197
+                                                                                  short-term rating at [ICRA]A1+
+         (After minority Interest & share of JV )
+
+
+
+                                                                                                                                            *From Continued operations
+                                                                                  #Includes restricted cash items: a) ~391 Crs for a legal matter related to the US entity
+
+© 2026-2027 Sterlite Technologies Limited                                                                b) ~1500 Crs of QIP amount pending allocation as on 30th Jun        26
+
+[page 27]
+       Successful QIP Secures Next Phase of Growth                                                                                                                STC
+                                                                                   ₹1,500 Cr
+                                                                                QUALIFIED INSTITUTIONAL PLACEMENT
+
+
+
+
+                                ---
+                                 ••• STRONG PARTICIPATION
+                              The issue witnessed strong participation from leading
+                                                                                                             USE OF PROCEEDS
+                                                                                                                               75% Allocation
+                                                                                                                               Deleveraging Balance Sheet
+
+                                                                                                                               25% Allocation
+                              domestic and global institutional investors.                                                     General Corporate Purposes (GCP)
+
+
+
+
+                               think
+                               INVESTME TS
+                                                          M OT Ii. AL O SWAI.
+                                                         lnVMtmt nt Stl'VlCf\
+                                                                                       ID
+                                                                                   HSBC Mutual Fund   I!! SHAREHOLDING   rd
+                                                                                                                                 STATUS
+                                                                                                          (Post QIP – 3 July, 2026)
+
+
+
+                                       ®
+                                                         NOA\URA H~IIIII.
+                                                                                                        25%
+                                                                                                                   42%
+                                                                                                                         ••    Promoters
+                                                                                                                               FIIs        Highest-ever
+                                OXBOW
+                                CAPITAL   MANAGEM E NT                                                 13%
+
+                                                                                                             20%
+                                                                                                                          ••   DIIs
+                                                                                                                               Public
+                                                                                                                                           Institutional > 33%
+                                                                                                                                           shareholding
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                               27
+
+[page 28]
+     Transforming lives through social responsibility initiatives                                                                              ST\!
+
+
+
+           RoboEdge: Empowering students with NextGen skills & focus on Robotics.       Jeewan Jyoti: Empowering underprivileged women by training them in
+                   Covered 12 schools and benefitted 10,000+ students.                              vocational skills. Benefitted 6,500+ women.
+
+
+
+
+           ESG Excellence: 4.5 MWp solar installed, 2.69 million m³ water replenished         Swashthya Suraksha: Hybrid healthcare programs across
+                      across 53 villages, and 4+ lakh saplings planted.                           Aurangabad & Silvassa, impacting 27 lakh lives.
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                                                                                                    28
+
+[page 29]
+         Committed to net-zero emissions - Progress with Purpose
+         Synesgy “A” Rating                                                                                                                                         STC
+            ENVIRONMENTALLY                                    SOCIALLY                                                 GOVERNED
+            SUSTAINABLE                                        RESPONSIBLE                                              WITH CARE
+
+            Eco-labelled products                             Committed to the UN SDGs1                                 Strong internal governance
+             286,200+ MT
+             Waste diverted from landfills (FY19 – Q1FY27)    16                                                        Two of the Big Four
+                                                              Aligned with 16 of the 17 SDGs
+                                                                                                                        as statutory & internal auditors
+             45,600+ tCO2e
+             Reduced through energy efficiency initiatives    920,000+
+             (FY21 – Q1FY27)                                  Lives benefitted through STL’s ed-tech & women            Executive and Management committees
+                                                              empowerment programmes (FY19 – Q1FY27)
+             11,61,000+ m3                                                                                              in place
+             of water recycled (FY19 – Q1FY27)                2.7 mn+
+                                                              Lives benefitted through STL’s healthcare
+                                                              programmes (FY19 – Q1FY27)                                100+ ESG awards won
+             32.00%
+                                                                                                                        (FY19 – Q1FY27)
+             Procurement (by value) done locally (FY27)       4,523 kWp
+                                                              Solar panels installed; reducing carbon footprint
+             The green hydrogen and oxygen plant
+             has been commissioned and has
+             successfully started supply
+
+                                                STL becomes world’s first optical manufacturer to be
+                                            zero liquid discharge certified & zero waste to landfill certified
+                                                                                                                  Source : 1 Cumulative till Q1FY27, SDG – Sustainable Development Goals   29
+© 2026-2027 Sterlite Technologies Limited
+
+[page 30]
+          Summary focus areas
+                                                                             STC
+
+                                            I
+                                            Drive technology and cost leadership
+
+
+
+
+                                            Drive sales of integrated connectivity
+
+                                            I
+                                            solutions in partnership with key
+                                            customers
+
+
+
+                                            Scaling data centre & cloud
+                                            business
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited                                            30
+
+[page 31]
+                                            Lets answer your queries!
+
+
+
+
+© 2026-2027 Sterlite Technologies Limited                               31
+
+[page 32]
+                         >   beyond tomorrow
+
+
+
+
+Registered Office            Rahul Darak
+Godrej Millenium, 9,         Head - Investor Relations,
+Koregaon Road, Pune          Sterlite Technologies
+Maharashtra                  Limited
+Phone: +91 2030514000.       email: investor@stl.tech
+
+
+                                                          32
+

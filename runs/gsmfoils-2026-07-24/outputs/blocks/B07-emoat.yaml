@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Unit 4 export unit (Vasai) specifics not in inputs; not mentioned in any of the 3 concall transcripts or the investor presentation; pending 23-Jul-2026 Reg 30 filing"
+  - "Unit 3 ROPP caps formal Reg 30 announcement (18-Jun-2026) not in inputs; only the July-2026 investor-presentation summary is available"
+  - "AAPL Solutions Pvt Ltd related-party status undisclosed: absent from the FY25 AR related-party note (which predates the MoU); no later related-party disclosure available"
+  - "State-wise / top-10 customer revenue concentration not disclosed for FY25 or FY26; only stale FY21-23 IPO-note data (NON-ANCHORED) is available"
+  - "GSM's own capex contribution (if any) to Unit 3 / Unit 4 not disclosed; structure appears to be leased/MoU-based via AAPL Solutions"
+flags:
+  - "FLAG-EMOAT-SPARSE: em_score 4.8/80, NO MEANINGFUL EMERGING MOAT; only 1 of 21 rows (H2) reaches Moderate strength"
+  - "FLAG-COUNTERPARTY: AAPL Solutions Pvt Ltd is the counterparty for both Unit 3 (documented MoU) and the uncorroborated Unit 4 lead; related-party status undisclosed in all inputs"
+  - "FLAG-UNIT4-UNCORROBORATED: Unit 4 export unit appears only in the operator-relayed digest, absent from all 3 concall transcripts and the investor presentation; treated as a lead, not scored"
+  - "FLAG-EXECUTION: cross-referencing B05 (credibility grade C) — Ahmedabad utilisation guidance missed twice, Lamitubes/Alu-Alu backward integration promised then silently reversed; this undermines the reliability of every forward-looking claim used in this scan"
+em_score: 4.8
+em_classification: "NONE"
+active_categories:
+  - {id: "H2", name: "Strategic partnerships (ROPP Caps Unit 3, MoU with AAPL Solutions)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "0-12m (already commercial)"}
+evidence_mix: {documented: 3, claim: 10, inference: 1}
+completionist_recount: "📄 recount performed: 3 documented items (Ahmedabad facility operational with disclosed monthly revenue; ROPP Unit 3 commercial production commenced; rights-issue capital fully utilised) across 2 categories (H2, C2) out of 21 rows scanned; all other rows are NO EVIDENCE FOUND, several with explicit counter-evidence from management's own statements (A1, B1, C1, E1, F2, G1, G2)."
+catalysts_12m:
+  - {catalyst: "ROPP Unit 3 first disclosed utilisation/revenue print against ₹50 Cr peak claim", window: "0-12m", evidence_type: "documented", anchor: "Inv. Pres. slide 14, Jul-2026"}
+  - {catalyst: "Ahmedabad utilisation progress against reset 80%+ by Mar-2027 target (third-miss risk)", window: "0-12m (interim checkpoints)", evidence_type: "claim", anchor: "Inv. Pres. slide 13; Q4 FY26 call (Apr-2026)"}
+  - {catalyst: "Forward integration into specialised printing/conversion: capex/site announcement or reversal", window: "6-12m, per management's own estimate", evidence_type: "claim", anchor: "Q4 FY26 call, Sandeep Dixit exchange (Apr-2026)"}
+  - {catalyst: "Unit 4 export unit (Vasai) confirmation via pending Reg 30 filing", window: "unconfirmed; operator digest cites end-Aug-2026", evidence_type: "lead-uncorroborated", anchor: "operator-relayed digest only; 23-Jul-2026 Reg 30 filing NOT in inputs"}
+  - {catalyst: "New Mumbai-area capacity finalisation (\"two or three proposals\")", window: "H1 FY27, per Inv. Pres.; twice promised, twice undelivered as of Q4 FY26 call", evidence_type: "claim", anchor: "Q3 FY26 call (Feb-2026); Inv. Pres. slide 22"}
+capex_embedded_growth_pct: 111
+optionality_register:
+  - {optionality: "Forward integration into specialised printing/conversion (8-10pp margin claim)", converting_evidence: "committed capex announcement/order + disclosed specialised-printing revenue line", first_appears: "Reg 30 capex filing / quarterly investor presentation revenue-mix breakout", window: "management guides end-FY27; discount for C-grade delivery record"}
+  - {optionality: "Unit 4 export unit, Vasai (AAPL Solutions lease)", converting_evidence: "23-Jul-2026 Reg 30 filing confirming commissioning/lease terms + first export/segment revenue disclosure", first_appears: "exchange filing / next quarterly results", window: "operator-relayed end-Aug-2026, uncorroborated"}
+  - {optionality: "New Mumbai capacity (\"two or three proposals\")", converting_evidence: "finalised site + committed capex disclosed", first_appears: "exchange filing / FY27 AR", window: "NOT FOUND; twice promised without delivery"}
+  - {optionality: "Direct export revenue (currently indirect via merchant exporters)", converting_evidence: "direct export contract/LC or export revenue segment line", first_appears: "quarterly results segment note", window: "NOT FOUND"}
+  - {optionality: "Northern-market geographic expansion (Baddi, Delhi, Sikkim, Jammu)", converting_evidence: "new sales office/distributor agreement or state-wise revenue disclosure", first_appears: "AR MD&A or state-wise revenue note", window: "NOT FOUND"}
+  - {optionality: "Top-tier pharma customer wins (Sun Pharma/Cipla-tier)", converting_evidence: "signed agreement with disclosed favourable payment terms", first_appears: "exchange filing", window: "NOT FOUND; management has explicitly deprioritised this"}
+  - {optionality: "AAPL Solutions relationship status (related-party or arm's length)", converting_evidence: "FY26 AR related-party note naming AAPL Solutions and transaction basis", first_appears: "FY26 Annual Report (not yet published)", window: "NOT FOUND"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward Gate 0 is already AVOID on mechanical grounds (cash conversion, data gaps), not a GOOD/AVERAGE floor to transition from, and the forward scan adds only one Moderate, counterparty-dependent item against a management team with a C-grade delivery record and worsening cash conversion, so this is not a transition setup."
+top_moat_risks:
+  - "AAPL Solutions counterparty concentration and undisclosed related-party status across both Unit 3 (documented) and Unit 4 (uncorroborated)"
+  - "C-grade promise-delivery record (B05) undermines every forward claim used in this scan: Ahmedabad utilisation missed twice, Lamitubes/Alu-Alu backward integration promised then silently reversed"
+  - "Deteriorating cash conversion (B01: CFO -Rs36.79cr FY26, receivables +179%) while funding two new units, raising re-dilution risk (promoter holding 66.54%->54.38% Mar-Jun 2026)"

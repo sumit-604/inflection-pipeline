@@ -1,0 +1,14 @@
+stage: B13-synthesis
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-CASH, FLAG-GATE0, FLAG-DISCLOSURE, FLAG-GOVERNANCE]
+confidence_delta: {numerical: 100, redflag: 72, framework: 96, peer: 92, overall: 72}
+valuation_decision: ""
+headline: "Foil converter scaling fast, cash conversion unproven"
+falsification_metric: "First FY26 statutory Cash Flow Statement showing CFO still deeply negative and far below reported PAT, with receivables holding above Rs 80 Cr into Q2 FY27"
+monitorables_count: 8
+publish_candidate: true

@@ -1,0 +1,14 @@
+# Phase-1 confidence delta (per orchestrator Section 5). Valuation framework-
+# adherence component is deferred to phase 3 (B10/B11 not yet produced).
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 91 numbers, 0 findings
+  redflag_coverage: 72           # B12b: 13 of 18 verifier-found flags caught upstream; 1 MAJOR missed (cyclical margin quality)
+  framework_adherence: 96        # B12c PHASE-1 portion only (Gate0 + Emerging Moat reproduce; 2 MINOR, decision-neutral)
+  peer_utilisation: 92           # B12d: 11 of 12 peer transcripts used substantively/justified
+  overall: 72                    # min of the four; redflag-bound
+  band: "60-74 -> PROCEED verdicts downgrade one level (redflag-bound)"
+  valuation_adherence: pending-phase-3
+  rework_triggered: false        # Verifier A 0 CRITICAL / source-fidelity clean; no verifier acceptance < 60
+verifier_major_findings:
+  - "B12b MAJOR: earnings-quality flag missing from B05 - the 7%->11.5% EBITDA margin build is partly cyclical aluminium inventory gain that reverses on a downcycle; valuation-critical, carry to phase 3."
+  - "B12d MAJOR: B06 Claim 2a spliced a fabricated CGRAPHICS Mar-2026 quote fragment ('first or second of each month... Hindalco letters') not present in any CGRAPHICS transcript; PARTIALLY-VERIFIED verdict holds on the real quotes, but the fabricated fragment must be struck from B06."

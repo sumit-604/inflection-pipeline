@@ -1,0 +1,20 @@
+stage: B12d
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 9
+substantive_unsupported: ["CGRAPHICS Mar-2026 (Hindalco 'first or the second of each month... based on the Hindalco letters' quote fragment not found in any of the four CGRAPHICS transcripts; the accompanying N-1-basis and order-carryover quotes in the same claim ARE real)"]
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md Claim 2a, CGRAPHICS Mar-2026 citation", claimed: "'the rate has been passed on the first or the second of each month... It is based on the Hindalco letters' (CGRAPHICS, Mar 2026 Arihant conference call, Deepanshu Goel / Subham Jain Q&A)", source_truth: "phrase not present in Mar-2026, Nov/Dec-2025, or May-2026 CGRAPHICS transcripts; only real Hindalco reference in the peer set is the unrelated 'preferred supplier list' quote", note: "fabricated quote fragment spliced next to a real quote from the same speaker/call; inflates the claimed closeness of match to GSM's own Hindalco-letter mechanism; does not flip Claim 2a's PARTIALLY VERIFIED verdict"}
+  - {severity: "MINOR", location: "06-peers.md Claim 3, CGRAPHICS May-2026 citation", claimed: "'I Get' packaging (~8-9,000 tons) named as a competitor", source_truth: "cited passage (lines 953-966) gives the ~8,000-9,000 ton tonnage figure but no competitor name is present in the searchable transcript text at that point; 'I Get' not found anywhere in the four CGRAPHICS transcripts", note: "does not change Claim 3's UNVERIFIABLE verdict"}
+  - {severity: "MINOR", location: "06-peers.md Claim 1, CGRAPHICS Nov/Dec-2025 citation", claimed: "Wahren guiding to Rs1,000cr, anchored inline to 'CGRAPHICS Nov 2025 call, Pulkit Agrawal'", source_truth: "Rs1,000cr guidance figure is real but first appears in the May-2026 call (lines 327, 352, 593, 771), not Nov/Dec-2025", note: "single citation covers two figures from two different quarters without disambiguation; both figures are genuinely peer-sourced"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 92    # 11 of 12 peer/quarter slots correctly handled (substantive-confirmed or justified cited-only) ÷ 12, %
+peer_utilisation: 0.917   # 11 of 12 peer transcripts used substantively or justifiably cited-only, 0 unused

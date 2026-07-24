@@ -1,0 +1,18 @@
+stage: B12a
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 50
+findings:
+  - severity: MINOR
+    location: "B02 p.19 Top Finding #3; corrected B03 p.1B"
+    claimed: "Standalone auditor's report carries a SOLE Key Audit Matter (impairment item)"
+    source_truth: "Standalone auditor's report (AR p.133) lists TWO KAMs: (1) Evaluation of impairment indicators in Investments in Subsidiaries, and (2) Evaluation of Related Party Transactions"
+    note: "B02 mischaracterized the count; B03 corrected it in phase 1B. The substantive finding (both items are auditor-flagged top risks) is correct; only the cardinality was misstated in B02."
+    source_fidelity: false
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 98
+coverage_note: "Verified 50+ material numbers across consolidated revenue (6 years), PAT (3 years), balance sheet items (trade receivables, lease liabilities, contingent liabilities, current ratio, equity), subsidiary standalone results (AOC-1), and operating metrics (AGEasy revenue, bed counts). All verified against audited AR FY25 (pages 1-306), FY26 Audited Results, and Q4 FY26 concall transcript. Screener data (FY20-FY23) marked as such throughout per B01's stated limitation; not audited. Operator-relayed non-anchored figures (11 items per B01 p.11) also properly marked; excluded from verification scope per CLAUDE.md rule. No PDF rendering required; all cited figures located in text extracts with page markers. Text extracts fully readable and internally consistent."

@@ -1,0 +1,26 @@
+stage: B09-tam
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["peer revenue for Columbia Pacific/Serene Communities and most Assisted Care/AGEasy peers not publicly disclosed", "precise organized-vs-unorganized split and top-3 concentration for Assisted Care and AGEasy sub-markets not found", "care-at-home India market size diverges 1.4-2.4x across sources by scope; narrower ₹12,000 Cr figure has imprecise vintage"]
+flags: ["AR's $12bn-by-2030 senior-housing claim cites only the most favourable of 3 published 2030 estimates ($8-14.14bn range) without disclosing the range; underlying Colliers data ~26 months old (past 2yr staleness line)", "Investor presentation's unattributed '~USD 30bn opportunity' slide (implicit whole-of-company claim) is ~4.6x the realistic sum-of-parts TAM and carries no source/date/methodology — the more inflated of the two management claims and the one warranting investor scrutiny", "AGEasy's ₹40,000 Cr 'self-care spend' claim is 4.0x the independent elderly-care-products TAM estimate — inflated via scope conflation (total chronic-condition self-care spend vs AGEasy's actual product categories)", "SOM_3yr (₹738 Cr) sits ₹180-340 Cr above what disclosed capacity/pipeline can bottom-up support in a steady-state read; closes by year 5", "Assisted Care and AGEasy TAM figures both carry L-M confidence given absence of a single clean third-party report for either sub-market"]
+market_definition: "Organized, fee-paying senior care in urban India across senior housing, assisted/home care, and senior consumer products — sum-of-parts across MAXIND's three verticals"
+tam_cr: {conservative: 45460, realistic: 62500}
+sam_cr: 17500
+sam_pct_of_tam: 38.5
+som_3yr_cr: 738
+som_5yr_cr: 1089
+som_implied_revenue_cagr: {yr3: 51.2, yr5: 38.5}
+current_sam_share_pct: 1.22
+revenue_headroom_x: 82.0
+tam_growth_pct: 25.0
+runway_class: "MASSIVE"
+mgmt_claim_cr: 115800
+mgmt_claim_ratio: 1.5
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~Rs180-340 Cr at 3yr mark (SOM optimistic pending Noida Ph2/Gurugram E361 revenue-recognition timing); gap closes by 5yr"
+methods_used: ["top-down industry reports (all 3 sub-markets)", "bottom-up units x penetration x price (Senior Living)", "peer revenue aggregation (attempted, downgraded to directional)", "global benchmark penetration comparison (Senior Living)", "residual top-down split (Assisted Care)", "assumption-flagged top-down cross-check (AGEasy)"]
+stale_data_flags: [{datapoint: "Colliers $2-3bn->$12bn by 2030 senior housing claim", source: "Business Standard citing Colliers, 13-May-2024 (as echoed in MAXIND AR FY24-25)", year: 2024}]
+searches_performed: ["India senior living market size 2025 2030 billion report", "India elderly population 60+ 2025 2050 Census projection million", "India home healthcare market size 2025 CAGR report crore", "India senior care market size assisted living CRISIL JLL report 2025", "India elderly consumer products market OTC self-care spending seniors crore", "India assisted living care homes market size crore beds organized unorganised", "CareEdge Ratings India eldercare industry USD 35 billion report 2026", "'senior living' India JLL ASLI report 2025 '22,157' units organized supply", "CareEdge eldercare 'USD 35 billion' India 2036 current market size senior living assisted living home care", "India senior care home nursing home market size crore 2025 organized beds", "Grand View Research India care services market size 2030 elder care child care", "Columbia Pacific Communities Serene senior living India revenue crore 2025", "Athulya Assisted Living Primus Senior Living Emoha revenue crore India 2025", "USD to INR exchange rate July 2026", "WebFetch: business-standard.com senior living 4x $8bn article (blocked, 403)", "WebFetch: JLL 'Elevating the Golden Years' report page (blocked, 403)", "WebFetch: careratings.com eldercare PDF (blocked, 403)"]
+searches_skipped: []

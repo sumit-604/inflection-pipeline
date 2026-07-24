@@ -1,0 +1,54 @@
+stage: B09-tam
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "India-specific ROPP caps market size (₹/USD) — not found, India-share proxy applied (4-6% of global) with low confidence"
+  - "Aluminium foil's exact cost-share of a blister/strip pack — not disclosed anywhere found; 45% mid-point estimate applied, flagged"
+  - "India-specific cold-form/Alu-Alu (CFF) foil market size — not found"
+  - "GSM's USFDA/EU-GMP facility approval status — not confirmed in extracts (certifications list omits it); customer-fit SAM filter assumes it is absent"
+  - "Top-3 concentration ratio and organised/unorganised split for aluminium pharma foil specifically — not found; standard 30-60% unorganised range used as an unsourced default only where noted"
+  - "Direct verification of management's 'market doubling in five years' claim at source (concall) — NSE archive fetch blocked (403); cross-checked indirectly against independent series instead"
+flags:
+  - "Management's own cited TAM figures (global aluminium foil market, India's total aluminium market, whole Indian packaging industry, whole Indian pharma market) are all the wrong denominator, 30-100x larger than GSM's actual addressable market — classic TAM=SAM conflation, not usable as an anchor"
+  - "Operator-relayed 'market doubling over five years' claim is NOT corroborated by any independent India pharma-packaging or blister-packaging series (1.47-1.70x growth over the relevant 5yr spans, not 2x); only the whole Indian pharmaceutical (drugs) market roughly doubles, which is the wrong market"
+  - "Capacity check shows a ₹190-250cr gap: GSM's own committed capacity (₹770-830cr/yr foil+ROPP run-rate by Mar-2027) exceeds the independently-modelled 3yr SOM (₹583cr) — the capex/guidance side is the more optimistic one; stage 11 should stress-test whether GSM's true served niche is narrower than the generic TAM used here"
+  - "USD/INR conversion used 96.5 (spot, accessed 2026-07-24), materially weaker than rates commonly used in older comparisons — flagged as it materially affects all ₹cr figures in this report"
+  - "IPO note's Indian packaging industry figure ($204.81bn by 2025 from $50.5bn) directly contradicts GSM's own Jul-2026 IP figure ($84bn 2024) — internal inconsistency in GSM's own document set, IPO note figure discarded"
+market_definition: "India-only aluminium-based pharmaceutical blister/strip foil converting plus aluminium ROPP caps (pharma syrup + alcohol/beverage); excludes cold-form/Alu-Alu foil, plastics, glass, cartons, and non-pharma aluminium foil"
+tam_cr: {conservative: 10780, realistic: 13020}
+sam_cr: 5120
+sam_pct_of_tam: 47
+som_3yr_cr: 583
+som_5yr_cr: 906
+som_implied_revenue_cagr: {yr3: 31.2, yr5: 28.6}
+current_sam_share_pct: 5.0
+revenue_headroom_x: 19.8
+tam_growth_pct: 8.5
+runway_class: "STRONG"
+mgmt_claim_cr: 425
+mgmt_claim_ratio: 0.73
+mgmt_claim_read: "reasonable"
+capacity_check: "gap of ~₹190-250cr by Year 3; corroborated capacity (foil+ROPP run-rate ~₹770-830cr/yr by Mar-2027) exceeds the independently-sized SOM_3yr (₹583cr) — the capex/guidance side is the optimistic one, or GSM's true served niche is narrower than the generic TAM used here"
+methods_used: ["top_down", "bottom_up", "peer_aggregation_directional", "import_substitution_limited", "global_benchmark_low_confidence"]
+stale_data_flags:
+  - {datapoint: "Global aluminum foil market USD23.1bn(2020)->USD30.4bn(2027), CAGR 3.8%", source: "GSM Foils AR FY25 MD&A, p.49-50", year: 2020}
+  - {datapoint: "India Aluminum Market USD13.79bn(2023)->USD21.46bn(2030)", source: "GSM Foils AR FY25 MD&A, p.50, citing 'India Aluminum Market Industry Trends & Forecast Report 2030'", year: 2023}
+  - {datapoint: "Indian packaging industry $204.81bn by 2025 from $50.5bn", source: "IPO Note (X-B4 Advisory, non-anchored, undated in extract)", year: "undated, internally inconsistent with GSM's own Jul-2026 IP figures"}
+searches_performed:
+  - "India pharmaceutical packaging market size 2025 2030 CRISIL CARE Mordor billion"
+  - "India aluminium foil pharma packaging blister foil market size CAGR"
+  - "global pharmaceutical packaging market size 2025 CAGR Grand View Research"
+  - "ROPP caps aluminium closures market size India"
+  - "blister packaging market India size 2025 2030 crore"
+  - "India pharma foil aluminium blister packaging companies CGRAPHICS Ester revenue market share"
+  - "GSM Foils market double pharma packaging management guidance"
+  - "India aluminium foil converting industry pharma grade blister foil manufacturers Ess Dee Positive Packaging Parksons market size tonnes"
+  - "CGRAPHICS NSE company aluminium pharma packaging Alu-Alu blister foil"
+  - "India pharma packaging market unorganised organised share fragmentation converters"
+  - "USD INR exchange rate July 2026"
+searches_skipped:
+  - "Proprietary CRISIL/ICRA/CARE rating-agency reports (paywalled)"
+  - "India-specific cold-form/Alu-Alu (CFF) foil market sizing (searched broadly, not resolved, not pursued further)"
+  - "Direct concall-transcript verification of 'market doubling' quote (NSE archive fetch returned HTTP 403)"

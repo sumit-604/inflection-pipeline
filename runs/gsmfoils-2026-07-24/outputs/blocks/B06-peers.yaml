@@ -1,0 +1,42 @@
+stage: B06-peers
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Uflex transcript not supplied among the 12 (B05 suggested peer for Claim 1)", "Cosmo/other film & foil converter transcript not supplied among the 12 (B05 suggested peer for Claim 2)"]
+flags: ["Only CGRAPHICS/Wahren is a true segment peer; ESTER/HUHTAMAKI/TCPLPACK evidence is adjacent-segment only and weighted down accordingly", "CGRAPHICS/Wahren's own EBITDA compressed to ~10.5% in the same March 2026 window GSM reports 11.5%, complicating rather than confirming GSM's margin-sustainability claim", "GSM-specific claims (Tier 2 top-3 share, Rs4-6cr capex threshold, Yemen/Vietnam merchant-exporter channel) are genuinely unverifiable, not silently dropped"]
+peers_provided: 12
+verified:
+  - {claim: "March 2026 aluminium/petrochemical price spike tied to Iran-Israel-US conflict disrupted margins industry-wide", peers: ["CGRAPHICS", "TCPLPACK", "ESTER", "HUHTAMAKI"], anchor_count: 4}
+partially_verified:
+  - {claim: "Indian pharma-packaging/blister-foil market tracking toward doubling over five years", peers: ["CGRAPHICS"]}
+  - {claim: "Monthly Hindalco pricing-letter pass-through mechanism", peers: ["CGRAPHICS"]}
+  - {claim: "90-150 day payment terms from large pharma as industry constraint", peers: ["CGRAPHICS"]}
+  - {claim: "Low-cost-entrant wave compressing margins/utilisation in pharma-packaging/Alu-Alu", peers: ["CGRAPHICS"]}
+  - {claim: "EBITDA margin ~11.5% sustainable amid RM inflation", peers: ["CGRAPHICS"]}
+  - {claim: "Receivables/working-capital stretch is industry-normal for pharma packaging", peers: ["CGRAPHICS"]}
+contradicted: []
+unverifiable:
+  - {claim: "GSM's top-3-in-Tier-2 domestic market-share claim", peers_checked: ["CGRAPHICS", "ESTER", "HUHTAMAKI", "TCPLPACK"]}
+  - {claim: "Capex asymmetry: Tier 1 rolling mill ~Rs50-60cr vs Tier 2 converter ~Rs4-6cr", peers_checked: ["CGRAPHICS", "ESTER", "HUHTAMAKI", "TCPLPACK"]}
+  - {claim: "Export pipeline via merchant exporters to Yemen, Vietnam, Europe, US", peers_checked: ["CGRAPHICS", "TCPLPACK"]}
+peer_coverage_map:
+  - {peer: "CGRAPHICS", quarter: "H1 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "Hindalco supplier relationship, 90-day pharma debtor norm, negative-CFO dynamics, low-cost-entrant pricing strategy"}
+  - {peer: "CGRAPHICS", quarter: "Investor summit (Mar 2026)", usage: "SUBSTANTIVE", contribution: "Verbatim Hindalco pass-through mechanism, 90-day debtor norm reconfirmed, 11-13% long-run Alu-Alu EBITDA target"}
+  - {peer: "CGRAPHICS", quarter: "FY26 results (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Dated/quantified March 2026 spike and war linkage, TAM sizing, named competitor shares, realised margin compression"}
+  - {peer: "ESTER", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE", contribution: "Pass-through model framing, US tariff/dumping industry backdrop"}
+  - {peer: "ESTER", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "PWMR/GST domestic demand strength, export-recovery timing context"}
+  - {peer: "ESTER", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Independent West Asia conflict/crude-price confirmation in same window; adjusted-vs-reported EBITDA gap"}
+  - {peer: "HUHTAMAKI", quarter: "Q3 CY25 (Oct 2025)", usage: "SUBSTANTIVE", contribution: "Demand-environment outlier/counter-example (flat volumes, deliberate mix choice)"}
+  - {peer: "HUHTAMAKI", quarter: "Q4 CY25 (Feb 2026)", usage: "CITED-ONLY", contribution: "Management transition, minimal US tariff exposure; no material new evidence"}
+  - {peer: "HUHTAMAKI", quarter: "Q1 CY26 (May 2026)", usage: "SUBSTANTIVE", contribution: "Independent confirmation of post-war RM spike and successful pass-through, matching timing"}
+  - {peer: "TCPLPACK", quarter: "Q2/H1 FY26 (Nov 2025)", usage: "CITED-ONLY", contribution: "General GST-disruption/export-softness backdrop, limited pharma relevance"}
+  - {peer: "TCPLPACK", quarter: "Q3/9M FY26 (Feb 2026)", usage: "SUBSTANTIVE", contribution: "Steady/calibrated capex cadence informing lone-expander vs capacity-race distinction"}
+  - {peer: "TCPLPACK", quarter: "Q4/FY26 (Jun 2026)", usage: "SUBSTANTIVE", contribution: "Explicit, dated Middle East conflict disruption to Q4 FY26 exports"}
+industry_cross_read:
+  demand: "Domestic demand broadly resilient-to-strong across peers; export demand the swing factor hit by tariffs then the West Asia conflict; Huhtamaki the one self-declared outlier (flat volumes by deliberate mix choice, not demand weakness) — largely consistent with GSM's own demand-intact/supply-constrained framing"
+  pricing_inputs: "Pass-through business models are near-universal across peers, but sharp spikes (vs gradual moves) cause temporary absorption/lag even in nominally full-pass-through segments, matching the pattern behind GSM's own Q4 FY26 EBITDA miss"
+  capex_cycle: "Segment-specific lone-expander pattern, not an industry-wide capacity race: GSM and CGRAPHICS/Wahren (pharma-packaging/Alu-Alu) both expanding aggressively and simultaneously, while Ester's film segment, TCPLPACK and Huhtamaki are calibrated-to-defensive in their adjacent segments — sharpens rather than dilutes GSM's own low-cost-entrant-wave concern"
+peer_mentions_of_company: []
+risks_peers_raise: ["CGRAPHICS: statutory-auditor qualification on gratuity/MSME/capitalisation observations in limited review report, a governance-control risk category GSM does not raise", "CGRAPHICS: explicit multi-quarter negative operating cash flow as a standing condition requiring debtor insurance and a second banking line, more forcefully framed than GSM's own working-capital disclosures", "ESTER: foreign-currency (EUR/USD) term-loan mark-to-market volatility materially distorting reported results, a risk class GSM would inherit only if it raises FX-denominated capex debt", "ESTER and TCPLPACK: structural dependence on government trade-remedy action (antidumping duty, minimum import price) to protect domestic pricing against import competition, a risk category not discussed in GSM's own concalls despite aluminium being a globally traded, tariff-sensitive input"]
+net_narrative_effect: "complicates"

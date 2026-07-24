@@ -1,0 +1,12 @@
+stage: B12a
+company: "GSMFOILS"
+run_date: "2026-07-24"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 91
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "Verified 100% of verdict-card inputs (ROCE, ROE, CFO/PAT ratio, growth rates, working capital days, balance sheet aggregates, shareholding %) and all Schedule III ratios. All 91 data points (P&L FY24-26, balance sheet lines, working capital calculations, ratios) traced to primary sources (screener CSV, AR extracts, AR images, concall confirmations). Zero mismatches, zero anchoring gaps, zero unit/basis errors detected. Acceptance rate 100%."

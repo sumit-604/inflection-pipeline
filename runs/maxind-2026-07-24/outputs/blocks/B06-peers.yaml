@@ -1,0 +1,39 @@
+stage: B06-peers
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "GPT Healthcare's own new-facility (Raipur hospital) EBITDA-breakeven guidance slipped from '12-15 months' (Aug/Nov-2025 calls) to '24-36 months' (Feb-2026 call) with actual occupancy only ~14-15% at month 10.5 -- a directly analogous, same-period precedent for guidance-to-actual slippage on the exact kind of occupancy-ramp claim underpinning Antara's Care Home maturity curve"
+  - "China-sourcing COGS/logistics pressure (AGEasy) and D2C RoAS trajectory comparability are both fully untested -- no assigned peer has a comparable business model, a structural peer-fit gap rather than a resolved finding"
+  - "MAXIND's claimed 'Godrej Sector 150' pricing comparator is never mentioned in any peer transcript and remains entirely unverified"
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "Sector seeing marquee new entrants (DLF, J Estates) at established multiples", peers: ["MAXESTATES"]}
+  - {claim: "Care Home maturity curve (4-6 qtrs to 40-45% occ/CM breakeven; 8-10 qtrs to 65-70% occ/16-20% EBITDA)", peers: ["GPTHEALTH"]}
+  - {claim: "Noida Sector 150 Ph2 2-3x price appreciation to Rs16-18k/sqft", peers: ["MAXESTATES"]}
+  - {claim: "Addressable-market growth rate for organized senior care in India", peers: ["ASHIANA", "KRSNAA"]}
+contradicted: []
+unverifiable:
+  - {claim: "'Deals at established multiples' (no specific multiple/deal-size ever independently disclosed) and J Estates as a named entrant", peers_checked: ["ASHIANA", "MAXESTATES", "GPTHEALTH", "KRSNAA"]}
+  - {claim: "China-sourcing COGS/logistics pressure (AGEasy) consistent with other importers", peers_checked: ["ASHIANA", "MAXESTATES", "GPTHEALTH", "KRSNAA"]}
+  - {claim: "D2C RoAS improvement trajectory comparable to other senior/health-product firms", peers_checked: ["ASHIANA", "MAXESTATES", "GPTHEALTH", "KRSNAA"]}
+  - {claim: "Godrej Properties' Sector 150 pricing as an independent comparator", peers_checked: ["MAXESTATES", "ASHIANA"]}
+peer_coverage_map:
+  - {peer: "ASHIANA", quarter: "Q1-Q4 FY26", usage: "substantive", contribution: "Explicit twice-stated senior-living CAGR (25% and >50%, 5-year, company-level); sole Antara name-mention; source of the 'care home as non-core outsourced service' pattern anchoring the Part 5 hypothesis; discloses Gurugram/Pune oversupply and talent-bandwidth risks not named by MAXIND"}
+  - {peer: "MAXESTATES", quarter: "Q1-Q4 FY26", usage: "substantive", contribution: "Direct JV/co-developer with Antara on Estate 360/361; sole independent DLF-entrant corroboration; Sector 105 GDV-doubling data point used to assess Noida pricing plausibility; independently echoes MAXIND's own 'geopolitical situation' language in the same quarter"}
+  - {peer: "GPTHEALTH", quarter: "Q1-Q4 FY26", usage: "substantive", contribution: "Only genuine new-facility occupancy/profitability ramp comparator (Raipur hospital); its guidance revision (12-15mo guided to 24-36mo actual) is the key cautionary cross-check on Antara's untested Care Home maturity curve; source of insurance-empanelment-lag risk category"}
+  - {peer: "KRSNAA", quarter: "Q1-Q4 FY26", usage: "cited-only", contribution: "Diagnostics/PPP-tender economics map poorly onto MAXIND's claims; one useful nugget -- analyst's '300 million senior citizens by 2030' demographic reference and a passing mention of an unnamed competitor tying up with senior living communities -- but nothing decisive enough alone to move any verdict past partially verified"}
+industry_cross_read:
+  demand: "Real-estate peers show resilient-to-strong demand moderating in the most recent quarter with explicit 'West Asia conflict' language independently echoing MAXIND's own 'geopolitical situation' framing (a genuine cross-corroboration, not company-specific excuse-making); healthcare/diagnostics peers show no comparable slowdown"
+  pricing_inputs: "Continued but decelerating pricing power across real-estate peers (16-29% realized appreciation ranges, not 2-3x); construction-cost inflation guided at 8-10% for FY27; no peer discusses China/import-cost pressure at all"
+  capex_cycle: "Industry-wide expansion, not a lone-expander situation -- all four peers are actively adding capacity/land/beds/labs in the same period MAXIND is expanding Care Homes, AGEasy and residences, meaning MAXIND competes for capital, land and talent within a broadly expansionary peer cohort rather than betting against a cautious sector"
+peer_mentions_of_company:
+  - "ASHIANA Q1 FY26 call (Aug-2025), individual investor Abhishek: benchmarks Ashiana's global marketing visibility against 'Antara... showcasing their project on a global scale by participating in events like Ageing Asia, World Ageing Festival' -- the only direct mention of Antara/MAXIND across all 16 peer transcripts, investor-sourced not management-sourced"
+risks_peers_raise:
+  - "ASHIANA: Gurugram and Pune residential oversupply risk building over the last two quarters (Q4 FY26 call) -- not raised by MAXIND for its own Gurugram/Noida exposure"
+  - "GPTHEALTH/KRSNAA: insurance-empanelment lag (12-15+ months) as a specific procedural driver of new-facility ramp slippage -- a risk-class analogue to regulatory/institutional-approval lag not named in MAXIND's own Care Home ramp commentary"
+  - "ASHIANA: management-bandwidth/talent-scaling risk explicitly named as a constraint on multi-city senior-living expansion -- not surfaced in MAXIND's own multi-city ambitions (Bangalore, Dehradun, Noida Sector 105)"
+net_narrative_effect: "complicates"

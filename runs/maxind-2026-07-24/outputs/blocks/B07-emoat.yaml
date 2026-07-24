@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B05 promise-delivery record not available (stage 5 has not run); F2 test built directly from the four FY26 concall transcripts instead of a stage-5 ledger or exchange-filing record"
+  - "announcements folder empty; documented-ACTION record for F2 unavailable from filings, concall self-reports used instead"
+  - "no segment-level EBITDA disclosure by business (management explicitly declined to bifurcate in Q2 FY26 call), so 1C revenue-mix table is partial"
+  - "no company-disclosed capex-to-revenue linkage for the asset-light Residences/AGEasy model; 2C capex_embedded_growth_pct could not be computed without estimation"
+flags:
+  - "F2 execution moat is a NEGATIVE finding, not an absence: Chandigarh definitive agreement collapsed, 1.5 mn sqft/year FY26 target missed by ~27% (1.1 mn vs 1.5 mn), Care Home 500-bed target slipped ~2-3 quarters and landed at 485"
+  - "G1 war chest is a NEGATIVE finding: treasury fell Rs320 Cr (Jun'25) to Rs58 Cr (Mar'26) over the four tracked quarters, consistent with B01 Gate 0's cash-burn-exceeds-accounting-loss flag"
+  - "planned Rs200-250 Cr fundraise is undated and explicitly market-sentiment-contingent per management (Q4 FY26 call); this is the single largest risk to continued emerging-moat investment"
+em_score: 27
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A2", name: "Patent and IP pipeline", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "A3", name: "Process innovation (AGEasy margin trend)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "A4", name: "Product platform / modular architecture (AGEasy SKU growth)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "B2", name: "Qualification / accreditation lock-in (NABH, HSSC)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing, deepening"}
+  - {id: "C1", name: "Customer ecosystem / quantified cross-sell", strength: "Strong", evidence_type: "documented", time_to_materialise: "24-36m to scale"}
+  - {id: "D2", name: "Digital platform (AGEasy D2C + marketplace)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing, scaling"}
+  - {id: "E1", name: "Geographic/category first-mover (accreditation firsts)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H2", name: "Strategic partnerships (Wellbeing Nutrition, boAt, IIT Delhi, Axis Bank)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 18, claim: 9, inference: 2}
+completionist_recount: "recount performed: 18 documented items across 8 categories (A2, A3, A4, B2, C1, D2, E1, H2); well below the 12-category guard threshold, so the 8-category active count was not inflated by crediting management claims as documented evidence"
+catalysts_12m:
+  - {catalyst: "AGEasy EBITDA breakeven target", window: "Q4 FY27", evidence_type: "claim", anchor: "Q4 FY26 call (29-May-2026)"}
+  - {catalyst: "Grant decisions on 3 pending AGEasy patents", window: "12-24m", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "3 new residence project signings (Noida Sector 105, Bangalore, Dehradun) to close FY26 sqft shortfall", window: "next few months", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "Rs200-250 Cr fundraise", window: "market-sentiment-contingent, flagged for this year", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "Noida Sector 150 Phase 2 building-plan re-application", window: "FY27", evidence_type: "claim", anchor: "Q4 FY26 call"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "EHR as unifying platform across verticals", converting_evidence: "platform live with disclosed usage metric", first_appears: "investor presentation / concall", window: "12-24m"}
+  - {optionality: "Antara Community app launch", converting_evidence: "app launch announced with user metrics", first_appears: "concall / exchange filing", window: "12-24m, status uncertain"}
+  - {optionality: "AGEasy quick commerce channel entry", converting_evidence: "signed listing agreement + disclosed revenue", first_appears: "concall", window: "12m"}
+  - {optionality: "Diagnostic-engine tech tools (lung/knee)", converting_evidence: "launch confirmation + adoption metric", first_appears: "concall / product announcement", window: "12m, untracked since Q1 FY26"}
+  - {optionality: "Integrated Wellness Clinic pilot scaling beyond first site", converting_evidence: "rollout to 2+ residences with disclosed uplift metric", first_appears: "concall / investor presentation", window: "12-24m"}
+  - {optionality: "Next-gen boAt wearable beyond underperforming watch", converting_evidence: "product launch + adoption metrics", first_appears: "concall", window: "12m"}
+  - {optionality: "Hyderabad market entry", converting_evidence: "signed definitive land/JV agreement", first_appears: "concall / exchange filing", window: "24-36m"}
+  - {optionality: "Data/AI stack converting to quantified retention or pricing advantage", converting_evidence: "disclosed cohort retention or ARPU uplift tied to the platform", first_appears: "concall / investor presentation", window: "24-36m"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID-grade Gate 0 fundamentals (loss-making, cash burn exceeding accounting loss, zero confirmed moats) paired with a genuinely STRENGTHENING forward score (accreditation, patent, cross-sell, digital-platform and partnership evidence), but two forward categories (F2 execution, G1 treasury) came back actively negative rather than absent, so this is a TURNAROUND bet contingent on the pending fundraise and FY27-28 breakeven guidance holding, not yet a high-conviction HIGH POTENTIAL read"
+top_moat_risks:
+  - "Capital runway: treasury fell to Rs58 Cr by Mar'26 against a still-Rs83.1 Cr FY26 EBITDA loss and an undated, market-contingent Rs200-250 Cr fundraise"
+  - "Accreditation and first-mover claims are replicable by name-brand new entrants already entering the sector (DLF, J Estates cited by management)"
+  - "AGEasy digital-platform economics have shown real fragility to third-party platform policy/technical changes (Meta GDPR miscategorisation Q1 FY26, Flipkart warehousing issue Q3 FY26)"
+  - "Execution track record on capex/footprint-linked commitments (Chandigarh, 1.5 mn sqft/year target, Care Home bed count) has slipped or broken across the four tracked quarters"

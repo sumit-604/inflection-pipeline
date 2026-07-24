@@ -1,0 +1,19 @@
+# PHASE-1 CONFIDENCE DELTA — MAXIND 2026-07-24
+# Per orchestrator Section 5. framework_adherence is the phase-1 (Gate0 + Emerging Moat)
+# portion only; the valuation-adherence component is PENDING PHASE 3 (B10/B11 do not exist yet).
+confidence_delta:
+  numerical_acceptance: 98      # B12a acceptance_rate; 0 CRITICAL, 0 MAJOR, 1 MINOR; NO source-fidelity flags
+  redflag_coverage: 70          # B12b: 14/20 independent flags fully caught (90% at least partial); 1 MAJOR miss (Care Home maturity-curve drift recorded as "stable")
+  framework_adherence: 100      # B12c PHASE-1 SCOPE ONLY (Gate0 + Emerging Moat recomputed clean, 0 CRIT/0 MAJ); valuation adherence PENDING PHASE 3
+  peer_utilisation: 75          # B06 coverage_map: 3 of 4 peers used substantively (ASHIANA, MAXESTATES, GPTHEALTH), KRSNAA cited-only. This is the UTILISATION ratio per Section 5 ("peers used substantively / peers provided"), distinct from B12d's accuracy acceptance_rate below.
+  overall: 70                   # min(98,70,100,75) = 70 — REDFLAG-BOUND. Band 60-74: PROCEED verdicts downgrade one level (interpretation bands, Section 5).
+  valuation_framework_adherence: pending-phase-3
+
+# SEPARATE REWORK-RULE INPUT (Section 4) — NOT part of the confidence-delta min:
+rework_rule_flags:
+  verifier_a_critical: false            # B12a: 0 CRITICAL numerical findings; 0 source_fidelity flags -> no source-fidelity REWORK
+  verifier_acceptance_below_60:
+    verifier_d: 50                      # B12d acceptance_rate = 50% (< 60%). Per Section 4 REWORK rule this is a REWORK CANDIDATE.
+    nature: "Two MAJOR findings, both localized ATTRIBUTION/SOURCING errors inside B06 (the peer stage, explicitly the weakest/most-directional — MAXIND has no listed pure-play analogue): (1) GPT Healthcare's '24-36 months to break even' ramp-slippage quote misdated to the Feb-2026 (Q3) call when it appears verbatim only in the May-2026 (Q4) call, and the Feb-2026 call actually reaffirmed the original timeline; (2) an insurance-empanelment-lag risk attributed jointly to GPTHEALTH+KRSNAA when KRSNAA transcripts contain zero mentions. The underlying SUBSTANCE (GPT Healthcare's new-facility ramp did slip; it is a valid cautionary analogue to Antara's untested Care Home maturity curve) SURVIVES — the defect is date/attribution precision, correctable, and confined to one directional cross-read stage. It does NOT touch the numerical audit (98%), framework compliance (100%), or any Section 1B / verdict-card input."
+    other_verifiers: "A 98, B 70, C 100 — all >= 60."
+  determination: "SYNTHESIS (stage 13) must adjudicate per Section 4: either (a) declare REWORK on the letter of the sub-60 verifier-acceptance rule, or (b) treat the B06 attribution errors as correctable/localized to the directional peer stage, downgrade the two affected peer cross-reads' confidence, correct their provenance, and let the gate rest on the clean numerical/framework/redflag layers. Orchestrator does not pre-decide; all four verifier blocks passed to synthesis."

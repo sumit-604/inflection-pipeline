@@ -1,0 +1,22 @@
+stage: B12d
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-sonnet-5
+status: complete
+peers_audited: 4
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "KRSNAA", missed_item: "Krsnaa's own '20%, 25% minimum CAGR' company-growth framing (May-2026 call) not cross-referenced in B06's Q5 industry-growth-rate discussion", anchor: "peer-concalls__KRSNAA-Concall_May_2026_Transcript.txt, line ~503"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Q2 / Part 4 (single most consequential caution)", description: "GPT Healthcare's '24 to 36 months to break even' guidance-slippage quote is attributed to the 'Q3 FY26 (Feb-2026 call)' but is found verbatim only in the May-2026 (Q4 FY26) transcript; the actual Feb-2026 transcript instead reaffirms the original ramp timeline ('on track... within the targeted time frame'). Misdates the report's key cross-read by one quarter."}
+  - {severity: "MAJOR", location: "B06 Part 2E / risks_peers_raise YAML", description: "'Insurance-empanelment lag (12-15+ months)' attributed jointly to GPTHEALTH and KRSNAA; a full-text search of all four KRSNAA transcripts shows zero mentions of empanelment or the concept. Only GPTHEALTH's May-2026 transcript supports this. A risk is invented for KRSNAA."}
+  - {severity: "MINOR", location: "B06 Part 1 Q4 and Q2 (MAXESTATES citations)", description: "MAXESTATES Q4 FY26 call (Sector 105 GDV-doubling quote, ~29% realization increase) consistently labeled 'May-2026' when the actual transcript file/cadence is Jun-2026 for this peer. Content accurate, month label wrong, recurs twice."}
+  - {severity: "MINOR", location: "B06 Part 2A (demand environment cross-read)", description: "Claims ASHIANA and MAXESTATES use 'nearly identical language' on 'West Asia conflict'; the exact phrase is found only in the MAXESTATES transcript. Ashiana references 'geopolitical situations'/'the war' but never the specific phrase. Directional point survives, quote-level precision overstated."}
+  - {severity: "MINOR", location: "B06 Part 1 Q5 / KRSNAA coverage entry", description: "Krsnaa's own disclosed '20-25% CAGR' company growth figure (May-2026 call) not mentioned as an available (if weak) industry-context data point alongside Ashiana's CAGR citations."}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 50

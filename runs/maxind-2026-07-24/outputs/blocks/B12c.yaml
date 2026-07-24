@@ -1,0 +1,36 @@
+stage: B12c
+company: "MAXIND"
+run_date: "2026-07-24"
+model: claude-opus-4-8
+status: complete
+phase: 1
+scope: "Gate0 (B01) + Emerging Moat (B07) framework-compliance only; valuation (B10/B11) deferred to phase 3"
+gate0:
+  rules_checked: 45
+  fails: []
+  recomputed_core_score: 22
+  recomputed_moat_score: 2
+  recomputed_grand_total: 24
+  recomputed_classification: "AVOID"
+  concur: true
+emoat:
+  rules_checked: 30
+  fails: []
+  recomputed_em_score: 27
+  recomputed_em_classification: "STRENGTHENING"
+  recomputed_combined_assessment: "TURNAROUND"
+  completionist_recount_verified: true
+  concur: true
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "pending-phase-3"    # B10/B11 do not exist yet; not audited
+recomputed_destination_pe: ""  # deferred to phase 3
+recomputed_decision: ""        # concur on Gate0 AVOID + combined TURNAROUND
+findings:
+  - {severity: "MINOR", location: "B01 Block F M8 Distribution", note: "conservative group-level read scored 1; segment-level read could support 3; no decision impact (Core 22 -> AVOID regardless)"}
+  - {severity: "MINOR", location: "B07 YAML capex_embedded_growth_pct", note: "body states NOT FOUND per no-estimation rule; YAML renders 0 (representational only)"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100   # Gate0+EM scope: 75 rules checked, 75 applied as written; 2 MINOR observations are within maker discretion, no rule misapplied

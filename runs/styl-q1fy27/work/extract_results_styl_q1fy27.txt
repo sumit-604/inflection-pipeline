@@ -1,0 +1,1088 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_styl_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 12
+formfeed_count: 12
+line_count: 1088
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (Rs 1 million = Rs 0.1 Crore)
+ocr_pages: [7, 8, 11, 12] (cross-check OCR run on financial statement table pages; primary pdftotext-layout text embedded in source PDF showed decimal-point/thousands-separator corruption on these pages from the source PDF's own Adobe Paper Capture OCR layer -- see NOTE below. All 12 pages independently passed the 100-character mechanical threshold; no page was image-only.)
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-07-24
+=== END HEADER ===
+
+NOTE ON SOURCE FILE: pdfinfo reports Producer "Adobe Acrobat (64-bit) Paper
+Capture Plug-in", meaning the filed PDF itself is a scanned document with an
+Adobe-generated OCR text layer (not native digital text). This source-level
+OCR layer contains visible artifacts (e.g. "Seshaasal" for "Seshaasai",
+"lndlan" for "Indian", missing decimal points and thousands separators in
+numeric table cells, e.g. "14,41 1 35" for what a fresh re-OCR resolves as
+"14,411.35"). Every page passed the 100-character mechanical test, so per
+protocol the primary spine below is pdftotext -layout output verbatim. As an
+additional mechanical fidelity step (not required by the character-count
+gate, but warranted because the launching task flagged financial-statement
+and balance-sheet/cash-flow pages as image-prone, and inspection confirmed
+numeric corruption in the source text layer), pages 7, 8, 11 and 12 -- the
+Consolidated and Standalone P&L statement pages and their accompanying notes
+tables -- were independently rasterised at 300dpi and re-OCR'd with
+tesseract. Both readings are preserved below, verbatim, unedited. No number
+has been interpreted, reconciled, or chosen as "correct" by this agent;
+downstream agents should treat the OCR CROSS-CHECK block as the more
+legible reading for numeric cells on these four pages.
+
+[page 1]
+SeshaasaiJ
+
+ July 23, 2026
+
+ BSE Limited                                    National Stock Exchange of India Limited
+ Department of Corporate Services               Listing Department
+ Phiroze Jeejeebhoy Towers,                     Exchange Plaza,
+ Dalal Street, Fort,                            Bandra Kurla Complex, Bandra (East)
+ Mumbai – 400 001                               Mumbai - 400051
+
+ Scrip Code: 544533                             NSE Symbol: STYL
+
+
+ Sub: Unaudited Financial Results for the quarter ended June 30, 2026
+
+ Dear Sirs,
+
+ We take reference to our letter dated July 20, 2026 on the above subject and wish to inform that at
+ the Board Meeting held today, the Directors have considered the Unaudited Financial Results of the
+ Company (Standalone and Consolidated) for the quarter ended June 30, 2026 and approved the same.
+ Pursuant to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+ Regulations, 2015, the said Financial Results, including a Press Release on the Consolidated
+ Financial Results are sent herewith, for your information and records. The Statutory Auditors have
+ conducted ‘Limited Review’ of the said Financial Results and their reports are enclosed.
+
+ The above information will also be made available on the website of the Company at
+ https://seshaasai.com/media-news/investor/.
+
+ The Board Meeting commenced at 05:45 p.m. and concluded at 07.00 p.m.
+
+ Thanking you,
+
+ Yours faithfully,
+ For Seshaasai Technologies Limited
+ (formerly known as Seshaasai Business Forms Limited)
+  MANALI   Digitally signed by
+           MANALI
+  SIDDHART SIDDHARTH SHAH
+           Date: 2026.07.23
+  H SHAH   19:21:19 +05'30'
+
+
+ Manali Siddharth Shah
+ Company Secretary and Compliance Officer
+
+
+ Encl: as above
+
+
+
+
+Seshaasai Technologies Limited
+(Formerly known as Seshaasai Business Forms Limited)
+
+Registered Office:
+9, Lalwani Industrial Estate, 14, Katrak Road
+Wadala, Mumbai – 400031
+Tel,: +91 22 66270919/99
+
+
+Email: info@seshaasai.com I Website: www.seshaasai.com I CIN No.: L21017MH1993PLC074023
+
+[page 2]
+                                      SeshaasaiY
+    Seshaasai Technologies Reports Strong Q1FY27 with 21.1% YoY Revenue Growth
+                         and PAT at ₹603.4 million up by 63.8% YoY
+
+Mumbai, India – 23rd July 2026: Seshaasai Technologies Limited (BSE: 544533) (NSE: STYL), a
+
+technology - driven solutions company empowering Payments, Communication, and IoT,
+
+announced today its financial results for the First Quarter of FY27, ended on 30th June 2026.
+
+
+KEY HIGHLIGHTS – Q1FY27 (CONSOLIDATED)
+
+•   Revenue from operation was at ₹3,764.7 million, a growth of 21.1% on a YoY basis.
+
+•   Continued to maintain momentum in its focused verticals:
+
+       o   Payment Solutions contributed 42% of the revenues.
+
+       o   Communication & Fulfilment Solutions contributed 40% of the revenues.
+
+       o   IOT Solutions contributed 18% of the revenues.
+
+•   EBITDA stood at ₹944.1 million, a growth of 28.0% on a YoY basis with an EBITDA margin of
+
+    25.1%, up 135bps on a YoY basis. The growth was primarily driven by disciplined execution and
+
+    operating efficiencies.
+
+•   Profit After Tax (PAT) stood at ₹603.4 million, a growth of 63.8% on a YoY basis with a PAT
+
+    margin of 16.0%.
+
+•   Top 10 customers contributed 56% of the revenues.
+
+COMMENTING ON THE RESULTS
+
+Pragnyat Lalwani, Managing Director, Seshaasai Technologies, said:
+
+“We are pleased to report a strong start to FY27, driven by healthy demand across our key
+
+business verticals and continued execution of our strategic priorities. All the three segments
+
+delivered encouraging performance, supported by deeper customer engagement and growing
+
+adoption of our technology-led solutions.
+
+During the quarter, ongoing geopolitical tensions resulted in higher fuel prices and increased INR
+
+inflation, leading to elevated input costs and pressure on gross margins. Despite these
+
+headwinds, our focus on operational efficiency and cost discipline enabled us to deliver EBITDA
+
+growth and maintain healthy margins.
+
+                                              Page 1 of 3
+
+[page 3]
+                                        SeshaasaiY
+The opportunities across metal cards, integrated communication & fulfilment and IOT solutions
+
+remain compelling. We are focused on deepening customer engagement, scaling our high-
+
+growth offerings and continuing our innovations across businesses. As we look ahead, we remain
+
+focused on sustaining growth momentum, strengthening our technology capabilities, and
+
+creating long-term value for all stakeholders.”
+
+Pavan Kumar, Chief Financial Officer, Seshaasai Technologies, said:
+
+“Q1FY27 was a strong quarter, driven by healthy revenue growth and improved profitability.
+
+Revenue from operations increased by 21.1% on YoY basis to ₹3,764.7 million, supported by
+
+sustained demand momentum across our businesses.
+
+While higher raw material costs weighed on gross margins during the quarter, disciplined cost
+
+management and operating leverage helped offset much of the impact, resulting in EBITDA
+
+growth of 28.0% to ₹944.1 million and a 135bps expansion in EBITDA margin to 25.1%. Lower finance
+
+costs following debt reduction further strengthened profitability, leading to a 48.8% increase in
+
+Profit Before Tax. As a result, Profit After Tax rose 63.8% YoY to ₹603.4 million.
+
+Looking ahead, we will continue to maintain financial discipline, enhance supply-chain agility,
+
+strengthen cash flows and allocate capital efficiently to support the Company’s long-term
+
+growth priorities.”
+
+
+ABOUT SESHAASAI TECHNOLOGIES LIMITED
+
+Seshaasai Technologies Limited (BSE: 544533) (NSE: STYL), is a technology-led, multi-location solutions
+
+provider with a strong focus on the banking, financial services, and insurance (BFSI) sector. The Company
+
+specializes in secure payment solutions, omnichannel communication, and fulfilment services, offering
+
+innovative, scalable technologies tailored to the evolving needs of its clients. With proprietary platforms
+
+at the core of its offerings, Seshaasai delivers recurring, enterprise-grade solutions that power critical
+
+operations across the BFSI ecosystem in India. In addition to its BFSI-centric services, the Company also
+
+provides IoT-enabled solutions for a diverse clientele spanning industries such as retail, renewables,
+
+logistics, and manufacturing. The Company’s facilities are accredited by global and national standards,
+
+including NPCI, PCI, Global Payment schemes and IBA, for the secure manufacturing of payment cards,
+
+
+
+
+                                                Page 2 of 3
+
+[page 4]
+                                             SeshaasaiY
+cheques, and data handling— ensuring full compliance with international IT, cyber and physical security
+
+protocols.
+
+For more information, please visit www.seshaasai.com
+
+
+ For Further Information, Please Contact
+
+ Asha Gupta                asha.gupta@in.ey.com
+
+ Pratik Jagtap             pratik.jagtap@in.ey.com
+
+ Manali Shah               companysecretary@seshaasai.com
+
+
+
+Disclaimer
+Some of the statements in this communication may be forward looking statements within the meaning of applicable
+laws and regulations. Actual results may differ from such expectations, projections etc., whether express or implied.
+These forward-looking statements are based on various assumptions, expectations and other factors which are not
+limited to, risk and uncertainties regarding fluctuations in earnings, competitive intensity, pricing environment in the
+market, economic conditions affecting demand and supply, change in input costs, ability to maintain and manage
+key customer relationships and supply chain sources, new or changed priorities of trade, significant changes in
+political stability in India and globally, government regulations and taxation, climatic conditions, natural calamity,
+commodity price fluctuations, currency rate fluctuations, litigation among others over which the Company does not
+have any direct control. These factors may affect our ability to successfully implement our business strategy. The
+Company cannot, therefore, guarantee that the ‘forward-looking’ statements made herein shall be realized. The
+Company, may alter, amend, modify or make necessary corrective changes in any manner to any such forward
+looking statement contained herein or make written or oral forward-looking statements as may be required from time
+to time on the basis of subsequent developments and events.
+
+
+
+
+                                                      Page 3 of 3
+
+[page 5]
+                                     Vatsaraj & Co. CHARTERED
+                                                    ACCOUNT ANTS
+
+
+          Independent Auditor's Review Report on the Quarterly Unaudited Consolidated Financial
+          Results of the Company pursuant to the Regulation 33 of the SEBI (Listing Obligations and
+          Disclosure Requirements) Regulations, 2015, as amended
+
+          Review report to
+          The Board of Directors
+          Seshaasai Technologies Limited (formerly known as Seshaasai Business Forms Limited which
+          was previously known as Seshaasai Business Forms Private Limited)
+
+    1.    We have reviewed the accompanying Statement of Consolidated Unaudited Financial Results of
+          Seshaasai Technologies Limited (formerly known as Seshaasai Business Forms Limited which
+          was previously known as Seshaasai Business Forms Private Limited) ("the Parent") which
+          includes two Subsidiaries (the Parent and its Subsidiaries together referred to as "the Group" ),
+          for the quarter ended June 30th, 2026 (the "Statement"), being submitted by the Parent pursuant
+          to the requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+          Requirements) Regulations, 2015, as amended (the " Listing Regulations").
+
+    2.    This Statement, which is the responsibility of the Parent's management and approved by the
+          Parent's Board of Directors, has been prepared in accordance with the recognition and
+          measurement principles laid down in Indian Accounting Standard 34 "Interim Financial Reporting"
+          ("Ind AS 34" ), prescribed under Section 133 of the Companies Act, 2013 as amended, read with
+          relevant rules issued thereunder and other accounting principles generally accepted in India and
+          in compliance with Regulations 33 of the Listing Regulations. Our responsibility is to express a
+          conclusion on the Statement based on our review.
+
+    3.    We conducted our review of the Statement in accordance with the Standard on Review
+          Engagements (SRE) 2410 'Review of Interim Financial Information Performed by the Independent
+          Auditor of the Entity', issued by the Institute of Chartered Accountants of India (' ICAI'). This
+          standard requires that we plan and perform the review to obtain moderate assurance as to
+          whether the stateme nt is free of material misstatement. A review of interim financial information
+          consists of making inquiries, primarily of Parent's personnel responsible for financial and
+          accounting matters, and applying analytical and other review procedures. A review is substantially
+          less in scope than an audit conducted in accordance with Standards on Auditing specified under
+          section 143(10) of the Companies Act, 2013 and consequently does not enable us to obtain
+          assurance that we would become aware of all sign ificant matters that might be identified in an
+          audit. Accordingly, we do not express an audit opinion.
+
+          We also performed procedures in accordance with the circular issued by the Securities and
+          Exchange Board of India under Regulation 33 (8) of the Listing Regulations, to the extent
+           applicable.
+
+    4.    The Statement includes the results of the following entity:
+           Subsidiaries:
+          Rite lnfotech Private Limited
+          Atoll Solutions Private Limited
+
+
+
+
+9 204- 205, lnizio Busi ness Centre, Cardinal Graciou s Road, Chakala, A ndheri Ea st. M umbai - 400099
+           9 1st Floor, Fort Cha m bers, C- B lock, Tamarind lane, Fort, M u mbai - 400023
+     ffi +91 22 69 78 3900              @ admin@vatsarajco.com               (@ www.vatsarajco.com
+
+[page 6]
+                .tl n1· & Co
+     Vu.n ts... ulu          I CHARTERED
+                             . ACCOUNTAN TS
+
+
+
+
+5.     Based on our review conducted and procedures performed as stated in paragraph 3 above and
+       based on the consideration of the review report of other auditor referred to in paragraph 7 below,
+       nothing has come to our attention that causes us to believe that the accompanying Statement,
+       prepared in accordance with recognition and measurement principles laid down in the aforesaid
+       Ind AS 34 and other accounting principles generally accepted in India, has not disclosed the
+       information required to be disclosed in terms of the Regulation 33 of the listing Regulations,
+       including the manner in which it is to be disclosed, or that it contains any material misstatement.
+
+6.     The accompany statement includes the unaudited interim standalone fin ancial result/ financial
+       information, in respect of -
+
+       a. 1 subsidiary, whose unaudited interim financial result and other information reflect total
+          revenue of Rs.2.65 Million, total net Loss after ta x of Rs.(2. 15) Million and total
+          comprehensive income of Rs.(2.11) Million for the quarter ended June 301h, 2026, as
+          considered in the Statement which have been reviewed by us.
+
+       b. 1 subsidiary, which have not been reviewed by us, whose unaudited interim financial result
+          and other information reflect total revenue of Rs.18.10 Million, total net profit after tax of
+          Rs.0.77 Million and total comprehensive income of Rs.0. 74 Million for the quarter ended June
+          30th, 2026, as considered in the Statement which have been reviewed by other auditor.
+
+       The interim financial informat ion of this entity has been reviewed by other auditor whose report
+       have been furnished to us by the Parent' s management, and our conclusion on the statement, in
+       so far as it relates to the amounts and disclosures included in respect of this entity, is based solely
+       on the report of such other auditor and the procedures performed by us as st ated in paragraph 3
+       above.
+
+       Our conclusion on the Statement is not modified in respect of this matter.
+
+       For Vatsaraj & Co.
+       Chartered Accountants
+       Firm Registration No: 111327W
+
+
+
+
+       CA Jwalant S Buch
+       Partn er
+       M . No. 039033
+       UDIN : 1GC:!>30°5"5L'f'KQ)(Z. °TLtOC)
+       Mumbai, 23 rd July, 2026
+
+
+
+
+                                                                                                    Page 2 of 2
+
+[page 7]
+                                                                 Seshaasal Technologies Limited
+                                                     (formerly known as Seahaasal Buslnoss Forms Limited)
+                                              (was previously known as Seshaasal Business Forms Private Limited)
+                                                                (CIN : L21017MH1993PLC074023)
+
+
+                        STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED ON JOTH JUNE, 2026
+                                                                                                                (All amounts are in lndlan Rs. million unless otherwise stated)
+                                                                                                         For the Quarter Ended                              Year ended
+
+Particulars                                                                          June 30 2026               March 31 2026            June 30 2025           March 31 2026
+
+                                                                                     (Unaudited)                  (Audited)              (Unaudited)              (Audited)
+
+
+1. Income:
+
+    Revenue from Operations                                                                  3,764.70                 4,041.76               3,108.73               14,41 1 35
+
+    Other Income                                                                                70.97                    60 65                  23.42                  145.78
+
+
+Total Income                                                                                 3,835.67                 4,102.41               3,132.15               14,557.13
+
+
+
+2. Expenses:
+                                                                                             2,283. 14                2,255 20               1,818.58                8,03316
+    Cost of Materials Consumed
+                                                                                                 8.32                     14 57                 11 .50                  54.53
+    Purchases of Stock-in-trade
+   Change ,n inventories of Finished goods, Work in progress,
+   Stock-in-trade                                                                              -95.05                   -124 53               -105.36                 -272 26
+
+
+                                                                                               175 35                   193 44                 149 75                  69584
+    Employee Benefit Expenses
+                                                                                                18 44                     2909                  7764                   208 79
+    Finance Cost
+                                                                                               107 80                     97 46                11020                   44215
+    Oeprecaatton and amortization
+                                                                                               519.80                   518 78                 520.10                2,104.97
+    Other Expenses
+
+
+ Total Expenses                                                                              3,017.80                  2,984.01              2,582.41               11,267.18
+
+
+                                                                                               817.87                  1,118.40                549.74                3,289 95
+ 3. Profit before exceptional Items and tax (1 -2)
+
+                                                                                                                           0.23                      .                   -2.51
+ 4. Exceptional items
+
+                                                                                               817.87                  1,118.63                549.74                3,287.44
+ 5. Profit before tax f or the period/ year (3-4)
+
+
+ 6. Tax expenses
+                                                                                               21387                     272 40                163.27                  834 49
+    Current year
+                                                                                                  1.16                      5.90                18.08                    28.98
+     Deferred tax
+                                                                                                                          21 57                   0.00                   25.84
+     Tax AdJUstrnents of Earlier Years
+
+ Total Tax Expenses                                                                            215.03                    299.87                181.35                  889.31
+
+
+                                                                                               602.84                    818.76                368.39                 2,398.13
+ 7. Profit for the period / year (5-6)
+                                                                                                 0.52                     -0 89                                           1 97
+ Add/(Less) Share of Non Controlhng Interest
+                                                                                               603.36                    817.87                 368.39                2,400.10
+ 7. Profit for the period / year (5-6)
+
+
+  8. Other Comprehensive Income (OCI)
+
+  (A) Items that will not be reclassifed to profit or loss
+                                                                                                  7.82                     14.00                  -3.89                   366
+     (1) Remeasurements of defined benefit plan
+
+                                                                                                  0.00
+     (i1) Equity instrument thrQUllh Other Comprehensive Income
+                                                                                                  -1 .95                    -3.52                 0.98                    -0 92
+     (iii) Income tax relating to Items no (i & ii) above
+
+  (B) Items that will be reclassifed to profit or loss                                                                                                                    _, 02
+                                                                                                                              0.00                _, 02
+                                                                                                   0.00
+     (1) Fair Value change on Cashflow hedge
+                                                                                                                              0.00                 0.26                    026
+                                                                                                   0.00
+     (II) Income tax relating to items that will De reclassified to profit or loss
+
+                                                                                                                            10.48                 ·3.67                       1.98
+  Total Othor Comprehensive Income (OCI), net off tax                                              5.87
+
+                                                                                                                              -0.01                                       -002
+  Add/(Less) Share of Non Controlhng Interest                                            .
+                                                                                                  -001
+                                                                                                                            10.47                 -3.67                       1.96
+   Total Other Comprehensive Income (OCI), net off tax                                             5.86
+
+
+   9. Total Comprehensive Income for the period / year (7•8)                                                               828.34                364.72                2,402.06
+                                                                                                 609.22
+
+
+
+
+   (Loss) Quarterly figures not annualised
+
+
+       (a) tlas1c
+                                                      Q
+   10. Earnings per equity share of Face value of Rs.10 each for profit/
+
+
+                                                                                                         3.73                     5.06
+
+                                                                                                                                  5.06
+                                                                                                                                                         2.50
+
+                                                                                                                                                         2 50
+                                                                                                                                                                               15.45
+
+                                                                                                                                                                               15 45
+                                                                                                         3.73
+       (b) Diluted                                                      ~
+[OCR CROSS-CHECK page 7 -- tesseract 300dpi re-OCR of source scan, numeric verification only]
+Seshaasai Technologies Limited
+, (formerly known as Seshaasai Business Forms Limited)
+(was previously known as Seshaasai Business Forms Private Limited)
+(CIN : L21017MH1993PLC074023)
+STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED ON 30TH JUNE, 2026
+(All amounts are in indian Rs. million unless otherwise stated)
+For the Quarter Ended [Yearended ended
+1. Income:
+
+Revenue from Operations 3,764.70 4,041.76 3,108.73 14,411.35
+
+Other income 70.97 60.65 23.42 145.78
+Total Income 3,835.67 | 4t0241 | 3,132.15 14,557.13
+2. Expenses:
+
+Cost of Materials Consumed 2,283.14 2,255.20 1,818.58 8,033.16
+
+Purchases of Stock-in-trade 8.32 14.57 11.50 54.53
+
+Change in inventories of Finished goods, Work in progress,
+
+Stock-in-trade -95.05 -124.53 -105.36 -272.26
+Employee Benefit Expenses 175.35 193.44 149.75 695.84
+Finance Cost 18.44 29.09 77.64 208.79
+Depreciation and amortization 107.80 97.46 110.20 442.15
+Other Expenses 519.80 518.78 520.10 2,104.97
+
+3. Profit before exceptional items and tax (1-2) 817.87 1,118.40 549.74 3,289.95
+4. Exceptional items : 0.23 . -2.51
+5. Profit before tax for the period / year (3-4) 817.87 a ee ce 3,287.44
+6. Tax expenses
+213.87 272.40 163.27 834.49
+Current year
+Deferred tax 1.16 5.90 18.08 28.98
+Tax Adjustments of Earlier Years 0.00 21.57 0.00 25.84
+pa Cs ee
+7. Profit for the period / year (5-6) 602.84 818.76 368.39 | 2,398.13 _|
+Add/(Less) . Share of Non Controlling Interest ————aaa a
+7. Profit for the period / year (5-6) f 603.36 | 817.87 368.39 2,400.10
+8, Other Comprehensive Income (OCI)
+(A) Items that will not be reclassifed to profit or loss
+7.82 14.00 -3.89 3.66
+(i) Remeasurements of defined benefit plan
+0.00
+(ii) Equity instrument through Other Comprehensive Income
+‘ F Fr -1.95 -3,52 0.98 -0.92
+(iii) Income tax relating to items no (i & ii) above
+(B) Items that will be reclassifed to profit or loss
+0.00 0.00 -1.02 1,02
+(i) Fair Value change on Cashflow hedge
+: 0.00 0.00 0.26 0.26
+(ii) Income tax relating to items that will pe reclassified to profit or loss
+
+9. Total Comprehensive Income for the period / year (7-8) 609.22 | anne | 364.72 2,402.06
+
+10. Earnings per equity share of Face value of Rs.10 each for profit/
+
+(Loss) Quarterly figures not annualised
+
+CRNOK
+KE 0,
+es 3 3.73 5.06 16.45
+(a) Basic = dO
+2(S3 y 3.73 5.06 15.45
+(b) Diluted Za OW
+
+[page 8]
+' Notes :
+
+ 1._The unaudited consolidate~ financial results of the Group for the Quarter ended June 30 , 2026 have been reviewed by the Audit Committee and approved by Board of
+ Directors of Group at its meeting held on July 23, 2026. The Statutory Auditors have carried out the a limited review of the results for the quarter ended 30th June 2026.
+
+
+
+
+ 2.The utilisation of the IPO proceeds in relation to fresh issue is summarised below:
+
+
+
+
+                                                                          Pre- IPO Proceeds        IPO Proceeds       Amount as per
+                                  Objects                                                                             offer document
+                                                                            (" in MIiiions)        (" In Millions)
+                                                                                                                       (' In Millions)
+
+ Funding capital expenditure for the expansion of existing
+ manufacturing units
+                                                                                               .           1 979.13          1 979.13
+ Repayment and I or prepayment, in part or in full, of certain
+ outstanding borrowings of our Company
+                                                                                         700.02           2 299.98           3 000.00
+ Issue Exoenses                                                                           41 .34            309.28             350.62
+General coroorate ourooses                                                             458.61               211 .64            670.25
+Total                                                                                1,199.97             4 800.03           6 000.00
+
+                                                                        Amount as per offer As at beginning of          During the          As at end of the     Unutlllzed
+                                  Objects                                   document            the quarter               quarter               quarter           amount
+                                                                          (" in MIiiions)     I" in Millions)         If in Millions)        '" in Millions)   '" In Millions\
+                                                                                IA)                 (B)                     (C)                   (B+C)            /A-B-Cl
+
+Funding capital expenditure for the expansion of existing
+manufacturino units                                                                  1 979.13               550.56              67.65                 618.21          1 360.92
+Repayment and I or prepayment, in part or in full, of certain
+outstanding borrowings of our Company                                                                                                   .                                        .
+                                                                                     3 000.00             3 000.00                                  3 000.00
+Issue Exoenses                                                                           350.62             293.03              39.05                 332.08             18.54
+General coroorate ourooses                                                             670.25               211 .61            137.30                 348.91            321 .34
+Total                                                                                6 000.00             4 055.20             244.00               4,299.20          1 700.80
+
+3. The Company only has a single business segment i.e. business of Security & variable data Printing and does not operate in any other reportable segment as per Ind AS
+108: Opearting Segments.
+
+
+
+4. The financial results have been prepared in accordance with the Companies (Indian Accounting Standards) Rules, 2015 (Ind AS) as amended prescribed under Section
+133 of the Companies Act, 2013 read with relevant rules thereunder and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 as amended and SEBI Circular dated July 5, 2016.
+
+5. The figures of Quarter ended 31st March 2026 are balancing figures between the audited figures in respect of the full financial year of FY 25-26 and the published year to
+date figure upto the third quarter of the FY 25-26.
+
+
+
+6. The figures for the corresponding previous period have been regrouped /rearranged/ recasted / wherever necessary for the purpose of comparison.
+
+
+
+   For and on behalf      the Board of Directors
+   Seshaasai Techn        gies Limited
+                              .
+  .] .... .
+   Managing
+   DIN: 01870792
+                  ector
+                              . ·"□
+                                .,,~
+                                   ~
+                                     e,"NOLoG;,
+
+                                     ~
+                                              <;,
+                                                   "'f
+                                      iS'-YS • (j?-.;
+
+
+
+   Date: 23rd July 2026
+   Place: Mumbai
+[OCR CROSS-CHECK page 8 -- tesseract 300dpi re-OCR of source scan, numeric verification only]
+‘[Notes :
+chante os financial results of the Group for the Quarter ended June 30 , 2026 have been reviewed by the Audit Committee and approved by Board of
+oup at its meeting held on July 23, 2026. The Statutory Auditors have carried out the a limited review of the results for the quarter ended 30th June 2026.
+2. The utilisation of the IPO proceeds in relation to fresh issue is summarised below:
+Amount as per
+Pre- IP!
+Objects oe we wien offer document
+(? in Millions)
+Funding capital expenditure for the expansion of existing fs erenal
+manufacturi it
+anufacturing units 1,979.13 1,979.13
+Repayment and / or prepayment, in part or in full, of certain
+outstanding borrowings of our Company
+700.02 2,299.98 3,000.00
+lssueEwenses 41.34 3o928| 350.62 |
+asact| 21.64 670.25
+LSE 1,199.97 4,800.03 6,000.00
+Amount as per offer! As at beginning of During the As at end of the Unutilized
+Objects document the quarter quarter quarter amount
+Zin Millions @ in Millions @ in Millions 2 in Millions @ in Millions
+i  aneeeen eee Se ee eee ee © ee ee ee
+Funding capital expenditure for the expansion of existing
+manufacturing units 1,979.13 67.65 1,360.92
+outa borrow 8 of our Ce i ny _ “ meen | sooot0| smote] | ——samoool
+outstanding borrowings of our Company 3,000.00 3,000.00 3,000.00
+lssuecwenses | aso] zane | sts] sane] sn |
+670.28 21161 197.20 348.91
+6,000.00 4,055.20 244.00 4,299.20 1,700.80
+3. The Company only has a single business segment i.e. business of Security & variable data Printing and does not operate in any other reportable segment as per Ind AS
+108: Opearting Segments.
+4. The financial results have been prepared in accordance with the Companies (Indian Accounting Standards) Rules, 2015 (Ind AS) as amended prescribed under Section
+133 of the Companies Act, 2013 read with relevant rules thereunder and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 as amended and SEBI Circular dated July 5, 2016.
+5. The figures of Quarter ended 31st March 2026 are balancing figures between the audited figures in respect of the full financial year of FY 25-26 and the published year to
+date figure upto the third quarter of the FY 25-26.
+6. The figures for the corresponding previous period have been regrouped / rearranged / recasted / wherever necessary for the purpose of comparison.
+For and on behalf of the Board of Directors
+Seshaasai Techn Ke gies Limited
+() ’
+; LEBNUG
+. Ate im
+= o
+7)
+< |
+Pyegnyat a S
+Managing Director IS 4 O2
+DIN: 01870792
+Date: 23rd July 2026
+Place: Mumbai
+
+[page 9]
+                                               CHARTERED
+                                Vatsaraj & Co. J\CCOUNT ANTS
+
+
+
+
+         Independent Auditor's Review Report on the Quarterly Unaudited Standalone
+         Financial Results of the Company Pursuant to Regulation 33 of the SEBI (Listing
+         Obligations and Disclosure Requirements) Regulations, 2015, as amended
+
+         Review report to
+         The Board of Directors
+         Seshaasai Technologies Limited (Formerly known as Seshaasai Business Forms
+         Limited which was previously known as Seshaasai Business Forms Private
+         Limited)
+
+         1. We have reviewed the accompanying statement of Unaudited Standalone
+            Financial Results ('the Statement') of Seshaasai Technologies Limited (formerly
+            known as Seshaasai Business Forms Limited which was previously known as
+            Seshaasai Business Forms Private Limited) ('the Company'), for the Quarter
+            ended June 30th , 2026, being submitted by the Company pursuant to the
+            requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+            Requirements) Regulations, 2015, as amended (the "Listing Regulations").
+
+         2. This statement, w hich is the responsibility of the Company's Management and
+            approved by Company's Board of Directors, has been prepared in accordance
+            w ith the recognition and measurement principles laid dow n in Indian
+            Accounting Standard 34, (Ind AS 34) "Interim Financial Reporting " prescribed
+            under Section 133 of the Companies Act, 2013 as amended, read with relevant
+            rules issued thereunder and other accounting principles generally accepted in
+            India and in compliance with Regulation 33 of the Listing Regulations. Our
+            responsibility is to express a conclusion on the Statement based on our review.
+
+         3. We conducted our review of the Statement in accordance with the Standard on
+            Review Engagements (SRE) 2410, "Review of Interim Financial Information
+            Performed by the Independent A uditor of the Entity" issued by the Institute of
+            Chartered Accountants of India ("ICAI"). This standard requires that we plan
+            and perform the review to obtain moderate assu rance as to whether the
+            Statement is free from material misstatement. A review of interim financial
+            information consists of making inquiries, primarily of persons responsible for
+            financial and accounting matters, and applying analytical and other review
+            procedures. A review is substantially less in scope than an audit conducted in
+            accordance w ith Standards on Auditing specified under section 143(10) of the
+            Companies Act, 2013 and consequently does not enable us to obtain assurance
+            that we would become aware of all significant matters that might be identified
+            in an audit. According ly, we do not express an audit opinion.
+
+
+
+
+9 204-205, lnizio Business Centre, Cardi nal Gracious Road, Chakala, Andheri East, Mumbai - 400099
+          9 1st Floor, Fort Chambers, C-Block, Tamarind lane, Fort, Mumbai - 400023
+      ffi +9122 6978 3900             ~ admin@vatsarajco.com            @) www.vatsarajco.com
+
+[page 10]
+      •   y •&
+  lllSlllc.lJ
+                     I
+                 C0 . CHARTERED
+                      ACCOUNTANTS
+
+
+
+
+4. Based on our review conducted as above, nothing has come to our attention
+   that causes us to believe that the accompanying Statement, prepared in
+   accordance with the recognition and measurement principles laid down in the
+   aforesaid Indian Accounting Standards ('Ind AS') specified under Section 133
+   of the Companies Act, 2013 as amended, read with relevant rules issued
+   thereunder and other accounting principles generally accepted in India, has not
+   disclosed the information required to be disclosed in terms of the Listing
+   Regulations, including the manner in which it is to be disclosed, or that it
+   contains any material misstatement.
+
+
+For Vatsaraj & Co.
+Chartered Accountants
+Firm Registration No: 111327W
+
+
+
+
+CA Jwalant S Buch
+Partner
+M. No. 039033
+UDIN: 2b0°!>9033 TLKVWV'-155'-i
+Mumbai, 23 rd July, 2026
+
+
+
+
+                                                                         Page 2 of 2
+
+[page 11]
+                                                                  Seshaasal Technologies Limited
+                                                      (fonneriy known as Seshaasal Business Fonns Limited)
+                                               (was previously known as Seshaasal Business Forms Private Limited)
+                                                                 (CIN : L21017MH1993PLC074023)
+
+
+
+                         STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED ON 30TH JUNE, 2026
+
+                                                                                                         (All amounts are In Indian Rs. million unless otherwise stated)
+                                                                                                    For the Quarter Ended                          Year ended
+
+Particulars                                                                        June 30 2026         March 31 2026           June 30 2025          March 31 2026
+
+                                                                                   (Unaudited)            (Audited)              (Unaudited)             (Audited)
+
+
+1. Income:
+
+    Revenue from Operations                                                             3,762.15               4,041.01              3,108.73              14,405.58
+
+    Other Income                                                                           70.86                  60.33                  23.04                144.56
+
+
+Total Income                                                                            3,833,01               4,101.34              3,131.77              14,550.1 4
+
+
+2. Expenses:
+
+   Cosl of Materials Consumed                                                           2,280.48               2,256.37              1,818.58               8,029.63
+
+   Purchases of Stock-in-trade                                                              8.32                  14.57                  11.50                 54.53
+   Change in inventones of Finished goods, Worl( in progress,
+   Stock-in-trade                                                                         -94.94                -124.63               -105,36                -272.15
+
+
+   Employee Benefit Expenses                                                             166.09                  184.62                142.27                 653.49
+
+   Finance Cost                                                                           18.42                   32.52                  77.64                208.77
+
+   Depreciation and amort,zation                                                         107.21                   96.80                110.11                 440.14
+
+   Other Expenses                                                                        514.57                  511 70                529.36               2,105 96
+
+
+Total Expenses                                                                          3,000.15               2,971.95              2,584.10              11 ,220.37
+
+
+3. Profit before exceptional It ems and tax (1-2)                                        832.86                1,129.39                547.67               3,329 77
+
+
+4. Exceptional Items
+
+
+5. Profit before tax for the period/ year (3-4)                                          832.86                1,129.39                547.67               3,329.77
+
+
+6. Tax expenses
+
+   Current year                                                                          213.50                  271 .30               162.80                 831 .80
+
+   Deferred tax                                                                            1.91                   11 .28                18.11                  35.16
+
+   Tax AdJUStments of Earlier Years                                                        0.00                   21.19                   0.00                 25.46
+
+Total Tax Expenses
+                                                                                         215.41                 303.77                 180.91                 892.42
+
+
+7. Profit for the period / year (5-6)                                                    617.45                 825.62                 366.76               2,437.35
+
+
+8. Other Comprehensive Income (OCI)
+
+(A) Items t hat w ill not be reclasslfed to profit or loss
+
+                                                                                           7.84                   14.08                  -3.93                  3.79
+   (i) Remeasurements of defined benefit plan
+
+                                                                                           0.00
+   (ii) Equity Instrument thiough Other Comprehensive Income
+
+   (iii) Income tax relating to items no (i & ii) above                                   -1 .97                  -3.54                  0.99                  -0.95
+
+(8) Items that will be reclasslfed to profit or loss
+
+   (i) Fair Value change on Cashflow hedge                                                 0.00                    0.00                  -1 .02                -1 .02
+
+                                                                                           0.00                    0.00                  0.26                   0.26
+   (II) Income tax relating to ilems that will be reclassified to profit or loss
+
+Total Other Comprehensive Income (OCI), net off tax                                        5.87                   10.54                  -3.70                  2.08
+
+
+9. Total Comprehensive Income for the period / year (7-8)
+                                                                                         623.32                 836.16                 363.06               2,439.43
+
+
+
+10. Eamlngs per equity share of Face value of Rs.10 each for profit/
+(Loss) Quarterly figures not annualised
+
+
+
+
+                                                     ~
+                                                                                             3.82                     5.10                  2.48                 15.70
+   (a) Basic
+                                                                                             3.82                     5.10                  2.48                 15.70
+   (b) Diluted
+
+
+
+                                                      ~:"Ii
+[OCR CROSS-CHECK page 11 -- tesseract 300dpi re-OCR of source scan, numeric verification only]
+; Seshaasai Technologies Limited
+(formerly known as Seshaasai Business Forms Limited)
+(was previously known as Seshaasai Business Forms Private Limited)
+(CIN : L21017MH1993PLC074023)
+STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED ON 30TH JUNE, 2026
+For the Quarter Ended
+(Unaudited) (Audited) (Unaudited) (Audited)
+1. Income:
+Revenue from Operations 3,762.15 4,041.01 3,108.73 14,405.58
+Other Income 70.86 60.33 23.04 144.56
+2. Expenses:
+Cost of Materials Consumed 2,280.48 2,256.37 1,818.58 8,029.63
+Purchases of Stock-in-trade 8.32 14.57 11.50 54.53
+Change in inventories of Finished goods, Work in progress,
+Stock-in-trade -94.94 -124.63 -105.36 272.15
+Employee Benefit Expenses 166.09 184.62 142.27 653.49
+Finance Cost 18.42 32.52 77.64 208.77
+Depreciation and amortization 107.21 96.80 110.14 440.14
+Other Expenses 514.57 511.70 529.36 2,105.96
+3. Profit before exceptional items and tax (1-2) 832.86 1,129.39 547.67 3,329.77
+4. Exceptional items . 7 = zi
+5. Profit before tax for the period / year (3-4) 832.86 1,129.39 547.67 3,329.77
+6. Tax expenses
+Current year 213.50 271.30 162.80 831.80
+Deferred tax 1.91 11.28 18.11 35.16
+Tax Adjustments of Earlier Years 0.00 21.19 0.00 25.46
+en Pes SS (ee
+7. Profit for the period / year (5-6) 617.45 825.62 366.76 2,437.35
+8. Other Comprehensive Income (OCI)
+(A) items that will not be reciassifed to profit or loss
+(i) Remeasurements of defined benefit plan sae 14:08 ‘liad ia
+0.00
+(ii) Equity instrument through Other Comprehensive Income
+(iii) Income tax relating to items no (i & ii) above “1.97 “3.54 0.99 0.95
+(B) Items that will be reclassifed to profit or loss
+(i) Fair Value change on Cashflow hedge 0.00 0.00 “1.02 “1.02
+0.00 0.00 0.26 0.26
+(ii) Income tax relating to items that will be reclassified to profit or loss
+=e (ee ae ee (eee
+9. Total Comprehensive Income for the period / year (7-8)
+836.16 363.06
+eee eer (Rees: (ee
+ss
+10. Earnings per equity share of Face value of Rs.10 each for profit/
+(Loss) Quarterly figures not annualised
+‘ 3.82 5.10 2.48 15.70
+(a) Basic n
+la
+0 f 7
+ry oma (\y¥3 3.82 5.10 2.48 15.70
+ON Sh :
+
+[page 12]
+' Not es :
+
+
+ 1._The unaudited standalone fina~cial results of the Company for the Quarter ended June 30 , 2026 have been reviewed by the Audit Committee and approved by Board of
+ Directors of Company at its meeting held on July 23, 2026. The Statutory Auditors have earned out the a limited review of the results for the quarter ended June 30, 2026.
+
+
+
+
+ 2.The utilisation of the IPO proceeds in relation to fresh issue is summarised below:
+
+
+
+                                                                         Pre- IPO Proceeds                              Amount as per
+                                   Objec ts                                                         IPO Proceeds
+                                                                           (l' In Millions)                             offer document
+                                                                                                    (l' In Millions)
+                                                                                                                         (l' in Millions)
+
+ Funding capital expenditure for the expansion of existing
+ manufacturing units
+ Repayment and I or prepayment, in part or in full, of certain
+                                                                                              -             1 979.13            1 979.13
+ outstanding borrowings of our Company
+                                                                                       700.02               2 299.98            3 000.00
+ Issue Excenses                                                                          4 1.34                309.28               350.62
+General corcorate curonses                                                          458.61                    211.64             670.25
+Total                                                                              1199.97                  4 800.03           6 000.00
+
+                                                                          Amount as per           As at beginning of      During the           As at end of the       Un utilized
+                                   Objects                                offer document              the quarter            quarter                 quarter            amount
+                                                                           It' In Milllonsl         fl' In Milllonsl    (l' in Milllonsl        ll' In Millions)   fl' in Millions\
+                                                                                 IAI                     IBI                  (Cl                   (B+C)             IA-B-CI
+Funding capital expenditure for the expansion of existing
+manufacturina units                                                                1 979.13                    550.56               67.65                618.21           1 360.92
+Repayment and I or prepayment, in part or in full, of certain
+outstandina borrowinas af our Company                                              3 000.00                 3 000.00                       -           3 000.00                       -
+Issue Excenses                                                                         350.62                  293.03               39.05                332.08               18.54
+General coroorate ourooses                                                           670.25                   211 .61            137.30                  348.91             321 .34
+Total                                                                              6,000.00                 4,055.20             244.00                4 299.20           1 700.80
+
+3. The Company only has a single business segment i.e. business of Security & va riable data Printing and does not operate in any other reportable segment as per Ind AS
+108: Opearting Segments.
+
+
+
+4. The financial results have been prepared in accordance with the Companies (Indian Accounting Standards) Rules, 2015 (Ind AS) as amended prescribed under Section
+133 of the Companies Act, 2013 read with relevant rules thereunder and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 as amended and SEBI Circular dated July 5, 2016.
+
+
+5. The figures of Quarter ended 31st March 2026 are balancing figures between the audited figures in respect of the full financial year of FY 25-26 and the published year to
+date figure upta the third quarter of the FY 25-26.
+
+
+
+6. The figures for the corresponding previous period have been regrouped / rearranged I recasted I wherever necessary for the purpose of comparison.
+
+
+
+   For and on be half of the Board o f Direc tors
+   Seshaasai Tech      logies Limited
+                           I
+
+
+                               ,
+                                     s□e,'t\NOto~
+                                     ~          ~
+   p gn                             "'          ,...
+             t Lalwa                 :'i             ii
+   Managi          ctor               -S-.s-~s * e:,'?~
+   DIN: 01870792
+
+
+   Date: 23rd July, 2026
+   Place: Mumbai
+[OCR CROSS-CHECK page 12 -- tesseract 300dpi re-OCR of source scan, numeric verification only]
+"INotes :
+‘ bis —— standalone financial results of the Company for the Quarter ended June 30 , 2026 have been reviewed by the Audit Committee and approved by Board of
+irectors of Company at its meeting held on July 23, 2026. The Statutory Auditors have carried out the a limited review of the results for the quarter ended June 30, 2026.
+2.The utilisation of the IPO proceeds in relation to fresh issue is summarised below:
+Amount as per
+Pre- IPO Proceeds} IPO Proceeds
+Objects offer document
+% in Milli
+(? in Millions) (2 in Millions) (® in Millions)
+Funding capital expenditure for the expansion of existing |
+nufacturi it
+ma uring units 1,979.13 1,979.13
+Repayment and / or prepayment, in part or in full, of certain
+outstanding borrowings of our Company
+700.02 2,299.98 3,000.00
+41.34 309.28 350.62
+458.61 670.25
+Amount as per | As at beginning of During the As at end of the Unutilized
+Objects offer document the quarter quarter quarter amount
+% in Millions @ in Millions Zin Millions Zin Millions Zin Millions
+CY (=) EY (= 73 =
+Funding capital expenditure for the expansion of existing
+manufacturing units 1,979.13 67.65 618.21 1,360.92
+Repayment and / or prepayment, in part or in full, of certain
+outstanding borrowings of our Compan 3,000.00 3,000.00 3,000.00
+lssueEwenses | sso] ston] ———noos| nance | ana
+670.25 21161 137.30 oes] 321.34,
+Total C—“‘“CS*™C™C~s@Y 6,000.00[ _—4,055.20[ 244.00] 4,299.20 | 1,700.80
+3. The Company only has a single business segment i.e. business of Security & variable data Printing and does not operate in any other reportable segment as per Ind AS
+108: Opearting Segments.
+4. The financial results have been prepared in accordance with the Companies (Indian Accounting Standards) Rules, 2015 (Ind AS) as amended prescribed under Section
+133 of the Companies Act, 2013 read with relevant rules thereunder and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 as amended and SEBI Circular dated July 5, 2016.
+5. The figures of Quarter ended 31st March 2026 are balancing figures between the audited figures in respect of the full financial year of FY 25-26 and the published year to
+date figure upto the third quarter of the FY 25-26.
+6. The figures for the corresponding previous period have been regrouped / rearranged / recasted / wherever necessary for the purpose of comparison.
+For and on behalf of the Board of Directors
+Seshaasai Tech f' logies Limited
+fy ,
+" TCRNOLG
+‘ Ke O
+f= pa
+Ppdanye ) we =
+Se S
+Managirtg_Diréctor 384 02
+DIN: 01870792
+Date; 23rd July, 2026
+Place: Mumbai

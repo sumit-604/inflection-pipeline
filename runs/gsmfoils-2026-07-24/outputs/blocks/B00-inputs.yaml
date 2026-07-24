@@ -1,0 +1,85 @@
+stage: B00-inputs
+company: GSMFOILS
+run_date: 2026-07-24
+model: orchestrator
+status: complete
+run_type: full
+listed_date: 2024-05-31           # from IPO note; ~2y before run -> recently listed
+recently_listed: true             # prospectus is a HIGH-priority gap
+
+inventory:
+  prospectus: 0                   # ABSENT - HIGH gap (listed <3y)
+  annual-report: 1                # Annual_Report_2025.pdf (FY25, 113pp)
+  results: 2                      # Q4/FY26 (17-Apr-2026), Q1FY27 (18-Jul-2026)
+  rating: 0                       # ABSENT
+  concalls: 4                     # Jul25, Nov25, Feb26, Apr26 (use 3 most recent)
+  peer-concalls: 16               # CGRAPHICS/ESTER/HUHTAMAKI/TCPLPACK x4 (cap 12: use 3 most recent per peer)
+  announcements: 0                # ABSENT (operator digest partially fills - NON-ANCHORED)
+  shareholding: 0                 # ABSENT (operator screener screenshot fills - anchored-equivalent)
+  research: 0                     # ABSENT
+  screening: 30                   # screener-* (GSMFOILS) + 4 peers x 6 files
+  presentation: 2                 # IPO note + Investor_Presentation_1
+  other: 0
+
+input_gaps:
+  - "prospectus ABSENT - HIGH gap: listed 2024-05-31 (~2y). No DRHP/RHP, so
+     promoter/group history, group-company map, and restated pre-IPO financials
+     are unavailable; backward baseline runs post-listing years only (FY24-FY26)
+     from AR + screener Data_Sheet + results; stage 8 sources promoter background
+     from web + AR governance and flags the group map as web-derived."
+  - "rating ABSENT - stage 10 marks rating_wc_quote unresolved; stage 11 Pillar 2
+     defaults conservative; FLAG-CASH cannot use a rating rationale quote."
+  - "announcements ABSENT accidentally - operator operations digest (NON-ANCHORED)
+     partially fills: references 18-Jun-2026 ROPP-caps and 23-Jul-2026 Unit 4
+     export announcements, but the underlying Reg 30 PDFs were NOT collected;
+     their specifics stay operator-relayed until collected. Documented-ACTION
+     record is thin; intent-and-action cross-check runs on concall/AR/results."
+  - "shareholding ABSENT accidentally - operator screener screenshot
+     (anchored-equivalent, quarterly Sep2024-Jun2026) FILLS it: closes Block E,
+     the FII+DII UA qualifier (FII~0, DII 2.46% Jun2026), and the promoter
+     holding/pledge trend. Promoter 73.14->54.38 over the window is a stage-8
+     dilution-vs-sell-down question."
+  - "research ABSENT - no effect on anchored evidence (research is never anchored)."
+
+collector_defects:
+  - "sector_cap_row 'Pharma / CDMO' is likely WRONG: GSM Foils is an aluminium
+     pharma-foil + ROPP-caps packaging maker; peers are CGRAPHICS/ESTER/
+     HUHTAMAKI/TCPLPACK (printing/polyester-films/packaging). Correct row is a
+     packaging / specialty-packaging class. Recorded for phase-3 stage-11 UA
+     sector-cap confirmation; do not resolve in phase 1."
+  - "screener P&L / Balance_Sheet / Cash_Flow / Quarters / Customization CSVs are
+     empty templates; only screener-Data_Sheet.csv is populated (P&L FY24-FY26 +
+     quarterly Q4FY24-Q1FY27). Gate 0 sources from Data_Sheet + results PDFs."
+
+operator_context:
+  file: outputs/_working/OPERATOR_CONTEXT.md
+  items:
+    - "screener shareholding screenshot (anchored-equivalent) - routed to stages 1,8"
+    - "6-month operations digest Feb-Jul 2026 (NON-ANCHORED lead/cross-check) - routed to stages 5,7,8,9,synthesis"
+  note: "operator answered 'proceed with gaps' AND supplied fill in the same turn;
+         did not ask again."
+
+setup:
+  pdf_extraction: "all 25 input PDFs pre-extracted to page-marked .txt under
+                   outputs/_working/extracts/ (pypdf; cffi force-reinstalled).
+                   Stages point at extracts to avoid flaky Read rendering."
+  concalls_available: true
+
+concall_quarter_map:
+  # 4 concalls present; use the 3 most recent (Jul-2025 dropped as oldest)
+  - {file: Concall_Nov_2025_Transcript.pdf, quarter: "Q2 FY26 (Jul-Sep 2025)", date: "2025-11-12"}
+  - {file: Concall_Feb_2026_Transcript.pdf, quarter: "Q3 FY26 (Oct-Dec 2025)", date: "2026-02-06"}
+  - {file: Concall_Apr_2026_Transcript.pdf, quarter: "Q4/FY26 (Jan-Mar 2026)", date: "2026-04-27"}
+
+peer_selection:
+  # 16 peer transcripts; cap 12: 3 most recent per peer
+  CGRAPHICS: [Dec_2025, Mar_2026, May_2026]
+  ESTER: [Nov_2025, Feb_2026, May_2026]
+  HUHTAMAKI: [Oct_2025, Feb_2026, May_2026]
+  TCPLPACK: [Nov_2025, Feb_2026, Jun_2026]
+
+promoters:
+  - "Sagar Girish Bhanushali (Chairman & Whole-Time Director; also CFO) DIN 09126902"
+  - "Mohansingh Laxmansingh Parmar (Managing Director) DIN 08413828"
+
+flags: []

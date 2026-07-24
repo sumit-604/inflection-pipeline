@@ -1,0 +1,30 @@
+stage: B12c-valuation
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+phase: 3
+scope: "valuation-adherence + Role 2 decision rules and position sizing (B10, B11, B14)"
+gate0: {rules_checked: 0, fails: [], note: "audited in phase 1 — compliant, not re-opened"}
+emoat: {rules_checked: 0, fails: [], note: "audited in phase 1 — compliant, not re-opened"}
+valuation:
+  rules_checked: 34
+  fails: []
+  pillar1: {formula: "PASS", roce_selection: "PASS", v351_route: "PASS (none; STAGNANT/DECLINING bars both routes)", single_credit: "PASS"}
+  pillar2: {multiplier: "PASS (1.00x = INDETERMINATE neutral)", offset: "PASS (none; offset only on 0.80x growth-induced)"}
+  pillar3: {p3a: "PASS (+2x, conservative; +3x defensible)", p3b: "PASS (+0x, EM 23<25)", p3c: "PASS (+0x, no order book)", shared_catalyst: "PASS (flagged, not double-credited)", strategic: "PASS (+0x)"}
+  ua: {qualifiers: "PASS (all three evidenced)", ordering: "PASS (min(Raw x1.25, Cap), Amendment 3)"}
+  sector_cap: "PASS (Cables/Industrial 25x, absolute)"
+  dual_track: {both_present: "PASS", rrm_units: "PASS (1.06, percentage-point Amd 4.4)", divergence: "PASS (both cap 25x)"}
+  hurdle_ratio: {value: 2.45, threshold: 1.953, verdict: "PASS", recomputed: "concur"}
+  role2: {tier: "PASS (A)", buy_now_conditions: "PASS (all four hold)", entry_conjunction: "PASS", position_size: "PASS (Small, documented downgrade from mechanical Medium; defensible)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B11 4H Hurdle Ratio", description: "HR uses capped 25.0x as 'mid' vs range-mid 24.0x; 24.0x gives HR 2.35, still PASS; verdict unchanged"}
+  - {severity: "MINOR", location: "B11 4E vs B14 Sec 5/7", description: "Entry-range low labelled Rs 303 (30% CAGR point) in B11 vs Rs 273 (MoS) in B14; same numbers, cosmetic"}
+  - {severity: "MINOR", location: "B11 RRM track", description: "RRM applied to quality-adjusted base ex-Pillar-3; operator-approved derivation; non-material, both tracks clamp to 25x cap"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 97

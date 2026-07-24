@@ -20,3 +20,12 @@ Branch: claude/route-mobile-quarterly-pkqpxv
 ## Orchestrator decisions
 - No concall transcript supplied. Role 4 (results) runs fully; Role 5 has no transcript. Deck + press release feed Role 4.
 - Press release: no native slide/note/turn structure. Enumerated with the INVESTOR PRESENTATION template (claims/numbers/footnotes as units), distinct `pressrelease` filenames to avoid collision with the investor deck.
+
+## Pipeline completion (2026-07-24)
+- A1 gates: results 12pp / presentation 18pp / pressrelease 3pp — all 100% coverage.
+- A2 gates: results (22 notes / 94 line-items / 16 zero-standing / 33 entities) / presentation (18 slides / 381 nums) / pressrelease (3 / 9 mgmt nums) — count tests reconciled.
+- A3 gates: all three docs, 17 checks marked, 100% ledger-reconciled, no blanks.
+- A4: PROCEED WITH FLAGS; cash conversion INDETERMINATE (capped); Decision Status held HELD 4% (flagged).
+- A5: verdict COMPLETE (0 orphan rows, 0 arithmetic mismatches, 0 surviving bear counters).
+- Notion save: full review appended to page body; Key Notes prepended (4 entries, 3 prior preserved); Decision Status UNCHANGED. Saved value recorded in work/_keynotes_new.txt.
+- No thesis-broken trigger formally fired. Cap-5% gate FAILED on GM. Deferred RDE trim re-put to operator.

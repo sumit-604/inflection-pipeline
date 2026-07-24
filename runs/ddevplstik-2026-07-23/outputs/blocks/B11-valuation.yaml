@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Rating-agency verbatim WC/cash-flow quote NOT FOUND (CRISIL 17-Jul-2026 image PDF not OCR'd); FLAG-CASH anchored to B01/B02/B03 evidence."
+  - "BESS unit economics and listed EV/GWh comparable NOT FOUND; BESS SOTP slice valued on EV/Sales, Rs/GWh cross-check left as explicit gap."
+  - "Peer P/E, P/B, growth, ROCE medians NOT FOUND (APCOTEXIND/BEPL not direct cable-compound peers)."
+flags:
+  - "FLAG-CASH: cash conversion INDETERMINATE leaning growth-induced; multiplier applied 1.00x; caps disposition at PROCEED WITH CAVEATS; resolves on FY27 Q1 WC-vs-volume print."
+  - "SHARED CATALYST: Bhiwadi/PVC/HFFR utilization ramp is single point of failure behind Revenue STARTING and Pillar 3a +2x; not double-credited into Pillar 1."
+  - "BESS optionality pre-revenue, guidance revised twice; valued as separate SOTP slice, not blended into core P/E."
+  - "KKALPANA RPT opacity: royalty -72% YoY, purchases +88.9%, terms undisclosed; governance-proximity watch-point."
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "trailing"
+exit_pe_base_approved: "25x (both tracks; additive raw 24x->UA 30x->cap 25x; RRM raw 23.3x r=13% RRM 1.06->UA 29.1x->cap 25x)"
+destination_pe:
+  track1_rrm: {low: 23.0, mid: 25.0, high: 25.0, r_used: 13, rrm: 1.06}
+  track2_additive: {low: 23.0, mid: 25.0, high: 25.0}
+  divergence_pct: 0
+  governing_track: "Both converge at the absolute 25x cap; RRM (raw 23.3x, more conservative) still breaches cap after UA, so 25x governs the entry zone on both."
+pillar_detail:
+  roce_used: 28.90
+  roce_base: 22.0
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "growth-induced (INDETERMINATE leaning; FLAG-CASH)"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: true
+  sector_cap_used: 25
+hurdle_ratio: {base: 2.45, bull_used: true, verdict: "PASS"}
+fair_values:
+  track1: {bear: 508, base: 666, bull: 790}
+  track2: {bear: 508, base: 666, bull: 790}
+expected_cagr_prob_weighted: 33.9
+entry_range: {low: 303, high: 341}
+mos_price: 273
+upside_downside_ratio: 14.1
+decision: "BUY (at MoS floor; PROCEED WITH CAVEATS; size Small 2-3% pending cash-flag resolution)"
+unresolved_inputs_used:
+  - "Cash conversion structural-vs-growth-induced: INDETERMINATE per fttcp-deliberation.md. Conservative assumption used: cash multiplier 1.00x (neither 1.15x reward nor 0.80x penalty), because B10 marks it INDETERMINATE and the deliberation fixed 1.00x pending the next WC print."
+  - "BESS EV/GWh comparable NOT FOUND. Conservative assumption used: EV/Sales 0.6x base / 0x bear on revised guidance revenue, because pre-revenue with twice-revised guidance warrants the low end and a zero bear."
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Buying DDev Plastiks at Rs 272 because core EPS grows Rs 19.49 to Rs 26.66 over 3 years on the Bhiwadi/PVC/HFFR utilization ramp, at a four-pillar destination PE of 25x (ROCE 28.9%, cash 1.00x, EM 23, sector cap 25x) = Rs 666 base target = 34.8% CAGR; entry sits at the MoS floor. Key risk: shared-catalyst utilization ramp and INDETERMINATE cash flag."

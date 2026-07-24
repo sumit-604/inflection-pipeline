@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "DDEVPLSTIK"
+run_date: "2026-07-23"
+model: claude-opus-4-8
+status: complete
+verdict: "BUY"
+entry_range: {low: 273, high: 341}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Net working capital days exceed 90 on flat or below-231,000 MT annualised volume for two consecutive quarters (structural cash drag confirmed), OR ROCE falls below 20%."
+monitoring_checklist:
+  - "Net working capital days: green if falling toward 82 or below as volume rises; red if above 90 on flat or below-231,000 MT annualised volume for two consecutive quarters (quarterly balance sheet)."
+  - "CFO/PAT conversion: green if trending back toward 0.60+; red if it stays below 0.45 (quarterly cash flow)."
+  - "Core volume run-rate: green if annualised toward 231,000 MT FY27 target; red if annualised below 215,000 MT (concall/results)."
+  - "Core EBITDA margin: green at or above 11%; red below 10% (quarterly P&L)."
+  - "ROCE: green at or above 25%; red below 20% (computed from quarterly financials)."
+  - "BESS Phase-1: green if commissioned H2 FY27 with FY27 revenue in the Rs 200-250 Cr band; red if commissioning slips past FY27 or guidance is cut again (concall)."
+  - "Kkalpana RPT terms: green if royalty/purchase terms disclosed and extraction flat or falling within caps; red if a fresh unexplained swing appears or purchases rise with terms still undisclosed (next Annual Report ~Sep 2026)."

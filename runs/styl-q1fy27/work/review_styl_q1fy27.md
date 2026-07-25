@@ -13,16 +13,25 @@ Reviewer: A4 ANALYST | Model: claude-opus-4-8 | Upgrade date: 2026-07-25
 Rs Cr. Concall is already in Rs Cr (x1). All figures below in Rs Cr unless
 stated. C = Consolidated, S = Standalone.
 
-*Revision note (A5 gate, preserved): three bounded fixes applied — ARI-1 (Q4FY26
-gross profit digit slip 190.66 → 189.65), BEAR-1 (PAT margin 16.0% vs FY26 16.7%
-benchmark added), COV-1 (net cash ~Rs 369 Cr disclosed, unaudited; cash
-CONVERSION still INDETERMINATE). Verdict, cash-conversion cap and Decision
-Status unchanged by those fixes.*
+*Revision note (A5 gate, results/presentation pass, preserved): three bounded
+fixes applied — ARI-1 (Q4FY26 gross profit digit slip 190.66 → 189.65), BEAR-1
+(PAT margin 16.0% vs FY26 16.7% benchmark added), COV-1 (net cash ~Rs 369 Cr
+disclosed, unaudited; cash CONVERSION still INDETERMINATE). Verdict,
+cash-conversion cap and Decision Status unchanged by those fixes.*
 
 *Upgrade note (Role 5 activation): concall transcript arrived after the A5-verified
 Role 4 pass. This document adds Section 5 (Role 5 concall analysis) and the
 concall forensic findings A3-01..A3-15, and re-runs Sections 6 (triggers), 7
 (questions), 8 (monitorables) and 9 (verdict). Role 4 Sections 1–4 are unchanged.*
+
+*Upgrade note 2 (A5 gate on the MERGED review): two further bounded fixes applied
+— **ARI-3** (§5.2: segment-guide bottom-up blend corrected — 0.42x(10-12%) +
+0.40x0% + 0.18x45% = **+12.3% to +13.1%**, ABOVE the 8-12% headline, which
+STRENGTHENS the soft-guidance / deceleration read) and **ADV-3** (retired the
+false "56%-vs-73% top-10 concentration conflict": 56% is company-wide, 73% is the
+Payment-Solutions segment — different bases, not a discrepancy; removed from
+Flags, Q23 re-scoped). Neither changes the PROCEED WITH FLAGS verdict, the
+INDETERMINATE cash cap, the trigger scorecard, or the HELD Decision Status.*
 
 ---
 
@@ -364,13 +373,19 @@ run-rate gap is the seed of A3-01 (Section 5.3).
 - **Widen/tighten:** N/A vs history; but management explicitly REFUSED to narrow
   margin to a number under three-analyst pressure — a widening of uncertainty on
   the single most thesis-relevant profitability metric.
-- **Internal consistency (arithmetic):** the 8-12% revenue guide does NOT
-  reconcile cleanly with the Q1 +21.1% print (see Section 5.3). Segment guides
-  are directionally consistent with a mix moving toward IoT but the blended math
-  is soft: Payments +10-12% (42% of mix) + CFS ~flat (40%) + IoT +45% (18%)
-  blends to roughly +5% to +10% weighted — i.e. **the segment guides themselves
-  imply ~8-12%, internally consistent with the headline guide but BELOW the Q1
-  +21.1% run-rate.**
+- **Internal consistency (arithmetic) — ARI-3 corrected:** the 8-12% revenue
+  guide does NOT reconcile cleanly with the Q1 +21.1% print (see Section 5.3), and
+  it does not even reconcile cleanly with management's OWN segment guides. A
+  bottom-up blend of the segment guides against the Q1 revenue mix foots
+  **ABOVE** the headline: **Payments 0.42 × (10-12%) + CFS 0.40 × 0% (flattish) +
+  IoT 0.18 × 45% = +12.3% to +13.1%.** So the segment-level guides, if delivered,
+  blend to **~+12-13% — ABOVE the 8-12% company guide.** The honest implication:
+  EITHER the 8-12% headline is CONSERVATIVE relative to the parts, OR one or more
+  segment guides (most plausibly Payments 10-12% or IoT 45%) is OPTIMISTIC
+  relative to the company number. This internal tension **STRENGTHENS** the
+  soft-guidance / deceleration read of Section 5.3: the headline and the bottom-up
+  do not agree with each other, and both still sit below the Q1 +21.1% run-rate.
+  (The A3-01 remaining-9M implied +4-10% YoY math is unchanged and A5-confirmed.)
 - **Vs our projections:** the Notion base assumes a ~34% probability-weighted
   CAGR path to FY29 with FY29 EPS Rs 21-22. An FY27 revenue guide of 8-12% sits
   BELOW the Notion trajectory's implied near-term growth and, if delivered as
@@ -394,15 +409,15 @@ frames **H2 FY27 as "stronger"** (seasonal BFSI pickup, steady CFS, continued Io
 stronger" is a **sequential** (H2 > H1) claim, while 8-12% is a **YoY** figure,
 and FY26's own H2 base was seasonally strong (Q4FY26 Rs 404 Cr). So a
 sequentially stronger H2 can still print low-single to high-single-digit YoY if
-it is only matching a tough H2FY26 comp. **But the residual signal stands:** the
-full-year YoY lands far below the Q1 run-rate, which means EITHER (a) management
-genuinely expects Q2-Q4 comps to be much harder / order timing to normalise, OR
-(b) management is guiding conservatively below run-rate (sandbagging). This is
-the OPPOSITE of the Overpromiser pattern — a guide set well below the reported
-run-rate — which is a relatively benign credibility posture, but it also means
-**the 8-12% number is "soft" and low-information as a gate criterion**: it is
-satisfied trivially by the Q1 print alone. A4 converts this to the lead
-management question (Section 7B, Q18).
+it is only matching a tough H2FY26 comp. **But the residual signal stands, and is
+now double-sided:** the full-year guide lands far below the Q1 run-rate AND below
+management's own bottom-up segment blend (~+12-13%, Section 5.2). This means
+EITHER (a) management genuinely expects Q2-Q4 comps to be much harder / order
+timing to normalise, OR (b) management is guiding conservatively below both its
+run-rate and its own segment parts (sandbagging). Either way, **the 8-12% number
+is "soft" and low-information as a gate criterion** — it is satisfied trivially by
+the Q1 print alone, and it does not even foot to the company's own segment guides.
+A4 converts this to the lead management question (Section 7B, Q18).
 
 ### 5.4 Margin-guidance refusal (A3-02, AMBIGUOUS)
 
@@ -501,7 +516,7 @@ provisional posture below-run-rate/conservative on revenue, refusing on margin.*
 | Bengaluru metal-card greenfield operational end-CY2026; certification by Q4FY27; meaningful revenue FY28 (L15/37/72/74) | Capex/Capacity | YES — datable commissioning catalyst | A3-14; FY28 revenue unquantified |
 | Capex Rs 140-160 Cr/yr reaffirmed (L37) | Capex | YES | Confirms sustained investment; feeds Pillar/FCF |
 | COMC 58.34% vs FY26 avg 54.23% (+411 bps) (L26) | Financial | YES — sizes the gross-margin driver | Confirms input-cost squeeze |
-| Top-10 customers 56%; >95% from existing clients (L26) | Customer conc. | YES — conflicts with deck ~73% | A3-06; reconcile basis |
+| Top-10 customers 56% company-wide; >95% from existing clients (L26) | Customer conc. | YES | Company-wide top-10 = 56% (NOT in conflict with the deck's ~73% Payment-segment figure — different bases; A3-06, resolved). Thin new-logo funnel is the live point |
 | Deliberate chip-inventory build raising WC days (L82) | Operational/WC | YES — adverse to cash conversion | A3-13; caps cash-conversion |
 | SIM = 20-25% of 3rd-largest operator's requirement (L33); SIM util ~40% (L62) | Operational | YES — capacity-absorption evidence | Trigger 4 borderline |
 | UPI-vs-cards / MDR thesis (L47) | Strategic | Medium — defends payments durability | Qualitative reassurance |
@@ -540,18 +555,19 @@ provisional posture below-run-rate/conservative on revenue, refusing on margin.*
   specific SIM operator-share and utilization; datable Bengaluru commissioning.
 - **Archetype (6E):** specificity ~0.5 with **credibility ratio not yet
   computable** (first Role 5). **Provisional classification: MEASURED-leaning** —
-  a conservative guider (revenue guided BELOW the run-rate, margin withheld
-  rather than over-committed). This is NOT the Overpromiser quadrant (that
-  requires hyper-specific guidance + poor delivery). **The archetype is
-  provisional until a delivery record exists**; the 8-12% guide is the first
-  testable commitment. Watch for a shift toward Overpromiser only if future
-  specific guides (IoT 45%, capex 140-160, Bengaluru FY28) are missed.
+  a conservative guider (revenue guided BELOW the run-rate AND below its own
+  segment-parts blend, margin withheld rather than over-committed). This is NOT
+  the Overpromiser quadrant (that requires hyper-specific guidance + poor
+  delivery). **The archetype is provisional until a delivery record exists**; the
+  8-12% guide is the first testable commitment. Watch for a shift toward
+  Overpromiser only if future specific guides (IoT 45%, capex 140-160, Bengaluru
+  FY28) are missed.
 
 ### 5.9 Cross-reference vs filing and peers (Step 7)
 
 **7A concall narrative vs filing:**
 
-| Concall claim | Filing evidence | Reconciliation |
+| Concall claim | Filing / deck evidence | Reconciliation |
 |---|---|---|
 | Revenue Rs 377 Cr, +21.1% YoY, -6.9% QoQ (L26) | 376.47 Cr; +21.1%; -6.9% (l.387/511) | CONFIRMED |
 | Gross profit Rs 157 Cr, GM 41.7% vs 44.5% (L26) | 156.83 Cr; 41.7% derived | CONFIRMED |
@@ -560,13 +576,19 @@ provisional posture below-run-rate/conservative on revenue, refusing on margin.*
 | "substantial reduction in finance cost" drove PBT (L26) | Finance cost 7.76→1.84 (-76%) l.407-408 | CONFIRMED (management concedes the flatterer) |
 | Net cash Rs 369 Cr at 30-Jun-2026 (L26) | deck ~Rs 369 Cr (L950-951); no BS in filing | PARTIALLY CONFIRMED (deck-only, unaudited) |
 | IoT 18% of revenue, +145% (L21/26) | PR 18% ≈ Rs 67.4 Cr; NOT a statutory segment | PARTIALLY CONFIRMED (unaudited segment) |
-| Top-10 customers 56% (L26) | deck ~73%; filing single-segment, no conc. data | CONTRADICTED / UNVERIFIABLE (basis differs) |
+| Top-10 customers 56% (L26) — COMPANY-WIDE | company-wide top-10 56% (deck slide 22 L683 / slide 16 L489 / PR L131); the ~73% is the Payment-Solutions SEGMENT top-10 (deck slide 12 L325; cf. CFS segment top-10 77.16%, slide 13 L362) | CONFIRMED (different bases — NOT a conflict) |
 | "healthy margins maintained" (L15) | operating EBITDA margin +22 bps; GM -286 bps | PARTIALLY CONFIRMED / narrative-flattering |
 
-The one material narrative-vs-source conflict is **top-10 concentration 56%
-(concall) vs ~73% (deck)** — likely different bases (top-10 customers vs a
-top-customer grouping), handed to Section 7B, Q23. No concall claim contradicts a
-FILING number; all headline figures tie out.
+**There is NO material narrative-vs-source conflict on the call.** The one
+apparent gap — top-10 concentration 56% (concall) vs ~73% (deck) — is a **FALSE
+conflict that the deck itself resolves** (ADV-3 correction): **56% is the
+COMPANY-WIDE top-10 concentration** (concall L26; deck slide 22 L683 and slide 16
+L489; press release L131), while **73% is the PAYMENT-SOLUTIONS SEGMENT top-10**
+(deck slide 12 L325 — compare the CFS-segment top-10 at 77.16%, slide 13 L362).
+Different measurement bases, no discrepancy. Company-wide top-10 at 56% with >95%
+of revenue from existing clients (L26) is retained as a concentration / new-logo
+MONITORABLE (Section 7B, Q23), not a reconciliation item. All concall headline
+figures tie out to the filing.
 
 **7B peer cross-check:** no company in the analysed universe reported a concall
 within ±4 weeks of this call that shares STYL's security-printing / payment-card
@@ -578,12 +600,12 @@ peer check if one becomes available.
 
 | A3 id | Classification | Finding & implication | Line |
 |---|---|---|---|
-| A3-01 | AMBIGUOUS (HEADLINE) | 8-12% FY guide vs Q1 +21.1% ⇒ implied 9M remaining +4-10% YoY = sharp YoY deceleration; H2-"stronger" is sequential not YoY; guide soft/below run-rate | 23/31 |
+| A3-01 | AMBIGUOUS (HEADLINE) | 8-12% FY guide vs Q1 +21.1% ⇒ implied 9M remaining +4-10% YoY = sharp YoY deceleration; H2-"stronger" is sequential not YoY; guide soft/below run-rate AND below own segment blend (~+12-13%, §5.2) | 23/31 |
 | A3-02 | AMBIGUOUS | FY margin refused 3x under 3-analyst pressure ("false precision"); drivers-not-outcomes; trigger 7 PARTIAL | 31/39/45 |
 | A3-03 | AMBIGUOUS / FWD | IoT +145% Q1 vs +45% FY27 / 35-40% FY28 ⇒ sharp H2 IoT deceleration; +145% a weak-base artifact; mix guided 15-18% | 21/53/68 |
 | A3-04 | AMBIGUOUS | CFS growth framing inconsistent: +13% this Q vs ~30% FY26 vs "flattish" ahead — three rates, two speakers | 19/55/56 |
 | A3-05 | AMBIGUOUS | Payments +5% Q1 vs 10-12% full-year guide ⇒ needs strong H2 payments ramp | 17/55 |
-| A3-06 | AMBIGUOUS | Top-10 concentration 56% (concall) vs deck ~73%; >95% existing-client dependence; reconcile basis | 26 |
+| A3-06 | AMBIGUOUS → RESOLVED | Top-10 concentration 56% is COMPANY-WIDE (concall L26; deck slide 22 L683 / slide 16 L489; PR L131); the deck's ~73% is the Payment-Solutions SEGMENT top-10 (slide 12 L325; cf. CFS 77.16% slide 13 L362). Different bases — NOT a conflict. >95% existing-client dependence retained as concentration/new-logo monitorable | 26 |
 | A3-07 | AMBIGUOUS | Insurance client count 13→10 life / 9→10 general (analyst slide) reframed by CFO as "almost zero" business, not lost | 63/64 |
 | A3-08 | NEUTRAL-FACT / AMBIGUOUS | 2 PSU tenders Rs 73 Cr over tender period = modest (<5% of one year); reconcile vs deck; size annualised | 15 |
 | A3-09 | CONFIRMATORY-NEG | Gautam Jain WTD introduced but SILENT; trigger 13 NOT fired (MGMT_ABSENCE) | 12 |
@@ -667,8 +689,9 @@ concall:**
 + 1 MARGINAL (Payments) + 1 NOT MET (EBITDA), i.e. ~1.5-2 of 4, versus the prior
 1 of 4.** The concall's provision of a REVENUE guide is the sole mover of the gate
 tally; **the margin half remains unprovided and the 8-12% figure is SOFT** (it is
-below the Q1 +21.1% run-rate and is satisfied by the Q1 print alone — Section
-5.3). Flagged for the operator's gate decision.
+below the Q1 +21.1% run-rate, is satisfied by the Q1 print alone, and does not
+even foot to the company's own segment guides which blend to ~+12-13% — Sections
+5.2/5.3). Flagged for the operator's gate decision.
 
 **Thesis-broken conditions (any 2 of 5) — status:** PAT margin < 14% for two
 quarters → NOT breached (16.0% this quarter). Promoter pledge initiated → NOT
@@ -713,12 +736,12 @@ raised by the concall (protocol Step 8F).
 
 | # | Question (references a concall number/line) | From finding | Why it matters | Bull answer | Bear answer |
 |---|---|---|---|---|---|
-| 18 | You printed +21.1% revenue in Q1 yet guide the full year to 8-12% (L23/31). Backing out Q1, that implies only ~+4-10% YoY for the remaining nine months. Is that a genuine expectation of tougher Q2-Q4 comps, an order-timing normalisation, or a conservative guide below run-rate? | A3-01 | The lead concall finding; sizes the H2 deceleration and tests whether the guide is sandbagged | Conservative guide; H2 comps tough but real momentum intact | Genuine sharp slowdown ahead |
+| 18 | You printed +21.1% revenue in Q1 yet guide the full year to 8-12% (L23/31). Backing out Q1, that implies only ~+4-10% YoY for the remaining nine months, and your own segment guides blend to ~+12-13% — both inconsistent with the headline. Is 8-12% a conservative guide, an order-timing normalisation, or a genuine slowdown expectation? | A3-01 | The lead concall finding; the headline neither matches the run-rate nor the segment parts | Conservative guide; H2 comps tough but momentum intact | Genuine sharp slowdown |
 | 19 | You declined a FY27 EBITDA/PAT-margin number three times (L31/39/45). At a self-declared decision quarter, what full-year EBITDA-margin range do you expect, and do you expect FY27 PAT margin to exceed FY26's 16.7% (Q1 was 16.0%)? | A3-02, BEAR-1, F7-01, X2 | The failed/withheld gate criterion; the single most thesis-relevant metric | Numeric band ≥27% EBITDA / >16.7% PAT with driver | Continued refusal; margin ≤ FY26 |
 | 20 | Payments grew only +5% YoY in Q1 (L17) but you guide 10-12% for the year (L55). What H2 payments ramp gets you there, and did Payments decline QoQ in Q1 (the deck shows two consecutive sequential declines)? | A3-05, trigger14 | Payments is ~42% of revenue and the laggard; H2 ramp is load-bearing for the full-year guide | Named order backlog; H2 seasonal ramp confirmed | Structural share erosion |
 | 21 | IoT grew +145% in Q1 (L21) but you guide ~45% FY27 and 35-40% FY28 (L53) and call the print "exaggerated" by a weak base (L68). What is the absolute IoT revenue run-rate you are underwriting for H2, and does mix stay at 15-18% (L68) despite 18% already in Q1? | A3-03 | Sizes the IoT catalyst and its H2 deceleration; IoT is the transition-alpha pillar | Absolute run-rate rising; mix expands past 18% | Sharp H2 IoT fade; mix flat/down |
 | 22 | The two PSU-bank tenders are Rs 73 Cr "over the tender period" (L15). What is the annualised revenue and start timing, and how does this reconcile with the three multi-year tenders in the deck? | A3-08, pres-F6 | Sizes forward backlog; <5% of one year spread over years is modest | Annualised figure + start date | Vague, immaterial |
-| 23 | The CFO cited top-10 customer concentration of 56% (L26), but the deck shows ~73%. Which basis is correct (top-10 vs top-customer grouping), and with >95% of revenue from existing clients, what is the new-logo pipeline? | A3-06 | Concentration is a core risk; a 56%-vs-73% gap needs a basis reconciliation | Clear basis; growing new-logo pipeline | Opaque; thin new-client funnel |
+| 23 | Please confirm company-wide top-10 customer concentration at 56% (L26) and, given >95% of revenue from existing clients (L26), describe the new-logo pipeline and any single-customer dependence within the top-10. | A3-06 | Concentration is a core risk; the 56% (company-wide) vs 73% (Payments-segment, deck slide 12) figures are DIFFERENT BASES, not a conflict — the live question is the thin new-logo funnel | Diversifying; growing new-logo pipeline | Static; >95% existing-client dependence |
 | 24 | eSIM: you cite only "platform readiness" (L21) with no commercial date or first revenue, at a quarter where the thesis flagged eSIM. When does eSIM commercially launch (first revenue or a specific date)? It has already slipped ~9 months. | A3-10, trigger8 | Named thesis catalyst; slippage past Q2 FY28 is a thesis-broken condition | Committed date / first revenue | Further slippage |
 | 25 | RFID remains "early stage," pilots only (L21), with no named anchor customer or volume. Can you name a reference customer and quantify RFID volume/revenue? | A3-11, trigger9, pres-F6 | Anchor-customer / concentration thesis; repeated qualitative optionality without a number | Named + sized customer | Unnamed, unquantified again |
 | 26 | Bengaluru metal-card greenfield is "operational by end CY2026" with "meaningful revenue FY28" but you declined to quantify (L72/74). What FY27 token and FY28 revenue do you underwrite, and what is the capex tied to it within the 140-160 Cr/yr envelope (L37)? | A3-14 | Datable commissioning catalyst + capex absorption; FY28 revenue unquantified | Sized FY28 revenue + capex schedule | Indefinite; capital idle |
@@ -734,10 +757,11 @@ row. Concall CONFIRMATORY-NEGATIVES A3-09/10/11/12 map to Q29/Q24/Q25/Q27 & Q16.
 
 **Top 3 by likelihood of thesis-changing information:** (1) Q19 (FY27 margin
 number / refusal) — the failed gate criterion; a refusal repeated next quarter is
-itself a downgrade signal. (2) Q18 (8-12%-vs-21% deceleration) — determines
-whether the guide is conservative or a genuine slowdown; the base thesis growth
-path depends on it. (3) Q27 (inventory-build cash impact) — resolves whether the
-INDETERMINATE cash-conversion cap tightens or clears at Q2.
+itself a downgrade signal. (2) Q18 (8-12%-vs-21% and vs-segment-blend
+deceleration) — determines whether the guide is conservative or a genuine
+slowdown; the base thesis growth path depends on it. (3) Q27 (inventory-build cash
+impact) — resolves whether the INDETERMINATE cash-conversion cap tightens or
+clears at Q2.
 
 ---
 
@@ -745,15 +769,16 @@ INDETERMINATE cash-conversion cap tightens or clears at Q2.
 
 | Item | Implied date | Source ref | Status word |
 |---|---|---|---|
-| FY27 revenue guide 8-12% — track full-year YoY vs the +21.1% Q1 run-rate (deceleration test) | FY27 | concall L23/31 | guided (soft/below run-rate) |
+| FY27 revenue guide 8-12% — track full-year YoY vs the +21.1% Q1 run-rate and vs the ~+12-13% segment blend (deceleration test) | FY27 | concall L23/31 | guided (soft/below run-rate and below own segment parts) |
 | FY27 EBITDA/PAT margin — WITHHELD; watch for a number next quarter | FY27 | concall L31/39/45 | refused (watch) |
 | IoT growth ~45% FY27 / 35-40% FY28; mix 15-18% | FY27-FY28 | concall L53/68 | guided (decelerating from +145% Q1) |
 | Payments growth 10-12% (needs H2 ramp; +5% Q1) | FY27 | concall L17/55 | guided (H2-loaded) |
 | Bengaluru metal-card greenfield operational; certification by Q4FY27 | end-CY2026 | concall L15/37 | under construction |
 | Bengaluru meaningful revenue (token FY27) | FY28 | concall L72/74 | committed (unquantified) |
 | Capex Rs 140-160 Cr/yr reaffirmed | FY27 (per year) | concall L37 | reaffirmed |
-| Chip-inventory BUILD / WC-days increase — quantify cash tied up | ongoing | concall L82 | confirmed (adverse to cash conversion) |
+| Chip-inventory BUILD / WC-days increase (adverse to cash conversion) — quantify cash tied up | ongoing | concall L82 | confirmed (adverse) |
 | Chip/FX forward price-rise risk; supplier lead times up | ~next year (uncertain) | concall L78/80/82 | watch |
+| Company-wide top-10 concentration 56%; >95% existing-client dependence — concentration / new-logo monitorable (NOT a discrepancy vs the deck's 73% Payment-segment figure) | ongoing | concall L26; deck slide 22 L683 / slide 16 L489; PR L131 | monitor |
 | SIM: 20-25% of 3rd-largest operator req.; SIM util ~40% | current | concall L33/62 | building (trigger 4 borderline) |
 | Deploy Rs 136.1 Cr IPO manufacturing-capex earmark; watch PPE/commissioning | none stated | Note 2 l.603/998; concall L26 | underway (Rs 6.7-6.77 Cr this qtr) |
 | Deploy Rs 32.1 Cr IPO general-corporate earmark | none stated | Note 2 l.608/1002; concall L26 (13.7 Cr) | underway |
@@ -774,15 +799,18 @@ INDETERMINATE cash-conversion cap tightens or clears at Q2.
 
 **VERDICT: PROCEED WITH FLAGS.** *(unchanged from the A5-verified Role 4 pass; the
 concall adds flags and information but does not fire any pre-committed trigger that
-would change the Decision Status.)*
+would change the Decision Status. ARI-3 and ADV-3 corrections do not move the
+verdict.)*
 
 Reasons:
 - **Numbers are reliable to rely on:** unmodified/unqualified Limited Review
   opinion both C and S; no Emphasis of Matter, no Going Concern; A2 ledger
   reconciled 100% across results, presentation AND concall (gate_a2/gate_a3 pass
   on all three). **The concall CONFIRMS every filing headline number** (Section
-  5.9 7A) — no narrative-vs-filing numeric conflict. Company quality never halts a
-  run — flags propagate, the operator decides.
+  5.9 7A) — no narrative-vs-filing numeric conflict; the apparent 56%-vs-73%
+  top-10 gap is a FALSE conflict the deck resolves (company-wide vs
+  Payment-segment bases; ADV-3). Company quality never halts a run — flags
+  propagate, the operator decides.
 - **FLAGS surfaced (filing + concall):** (1) **EBITDA margin breach** — 25.1%
   reported / 23.2% operating, both < 27% (#2), confirmed on the call; (2)
   **Payments two consecutive QoQ declines** (#14), +5% YoY, 10-12% guide needs an
@@ -794,7 +822,8 @@ Reasons:
   statutory segment; (6) **C-minus-S PAT sign-flip** to −Rs 1.41 Cr with ~Rs 1.3
   Cr unexplained eliminations; (7) **CONCALL-ADDED flags:** the **8-12% FY guide
   implies a sharp YoY deceleration** (only +4-10% YoY over the remaining 9M vs
-  +21.1% Q1) and is SOFT/below run-rate (A3-01); the **FY27 margin number was
+  +21.1% Q1) and is SOFT — below the run-rate AND below the company's own
+  segment-parts blend of ~+12-13% (A3-01, ARI-3); the **FY27 margin number was
   refused three times** at the decision quarter (A3-02); **IoT decelerates**
   sharply from +145% to a +45% guide (A3-03); a **deliberate chip-inventory build
   consumes cash** (A3-13, adverse to conversion); **Gautam Jain (WTD) silent** —
@@ -821,10 +850,10 @@ Reasons:
   gate tally moved from **1 of 4** clearly met to **~1.5-2 of 4** because a
   REVENUE guide (8-12%) is now provided (criterion 4 upgraded NOT-MET → soft/
   PARTIAL MET); the EBITDA criterion still fails, Payments is marginal, and **the
-  8-12% figure is soft vs the Q1 +21.1% run-rate** (satisfied by the Q1 print
-  alone), so the improvement is thin. **A4 flags; the operator decides** on the
-  gate and on any trim/hold/upgrade. No pre-committed trigger formally fired, so
-  A4 does not alter the Decision Status.
+  8-12% figure is soft** (satisfied by the Q1 +21.1% print alone and below the
+  company's own segment blend of ~+12-13%), so the improvement is thin. **A4
+  flags; the operator decides** on the gate and on any trim/hold/upgrade. No
+  pre-committed trigger formally fired, so A4 does not alter the Decision Status.
 
 **Position branch:** 8A (HELD). **Decision Status verified:** HELD (Notion page ts
 2026-06-16). **Cash conversion:** INDETERMINATE (concall-adverse). **Management
@@ -841,10 +870,10 @@ the confirmed inventory build.
 
 ---
 
-*Reviewed 2026-07-25 (Role 5 upgrade) | base Role 4 2026-07-24 | Sources:
-results_styl_q1fy27.pdf (Reg 33, 12 pp) + Investor Presentation Q1FY27 (32
-slides) + Q1FY27 concall transcript (ASR-normalised, 89 lines / 58 turns). Role 4
-+ Role 5 complete merged review.*
+*Reviewed 2026-07-25 (Role 5 upgrade + A5 merged-review gate fixes ARI-3/ADV-3) |
+base Role 4 2026-07-24 | Sources: results_styl_q1fy27.pdf (Reg 33, 12 pp) +
+Investor Presentation Q1FY27 (32 slides) + Q1FY27 concall transcript
+(ASR-normalised, 89 lines / 58 turns). Role 4 + Role 5 complete merged review.*
 
 ```yaml
 stage: A4-analyst
@@ -871,13 +900,16 @@ a5_fixes_applied:
   - "ARI-1: Q4FY26 gross profit 190.66 -> 189.65 Cr (Rev 404.18 - net materials 214.53; deck 1,897 Mn = 189.7 Cr, pres L445); Q4FY26 GM 46.9% unchanged"
   - "BEAR-1: added Q1FY27 PAT margin 16.0% BELOW FY26 16.7% (pres L529-532) to Section 3 + QfM"
   - "COV-1: net cash ~Rs 369 Cr disclosed unaudited (deck L950-951 / concall L26); cash CONVERSION still INDETERMINATE (no BS/CF)"
+  - "ARI-3 (merged-review gate, section 5.2): segment-guide bottom-up blend corrected from erroneous '+5-10% / implies ~8-12%' to 0.42x(10-12%) + 0.40x0% + 0.18x45% = +12.3% to +13.1%, i.e. ABOVE the 8-12% headline; implication stated honestly (headline conservative OR a segment guide optimistic); STRENGTHENS the soft-guidance/deceleration read; A3-01 remaining-9M +4-10% YoY math unchanged"
+  - "ADV-3 (merged-review gate, sections 5.7/5.9/5.10/7B/8/9 + flags): retired the false '56% vs 73% top-10 concentration conflict' — 56% is COMPANY-WIDE top-10 (concall L26; deck slide 22 L683 / slide 16 L489; PR L131), 73% is PAYMENT-SOLUTIONS SEGMENT top-10 (deck slide 12 L325; cf. CFS 77.16% slide 13 L362); different bases, not a discrepancy; removed from Flags; Q23 re-scoped to a company-wide-confirm + new-logo-pipeline monitorable question"
 role5_summary:
-  lead_finding: "A3-01: FY27 revenue guide 8-12% (concall L23/31) vs Q1 +21.1% => implied 9M remaining +4-10% YoY = sharp YoY deceleration; guide soft/below run-rate"
+  lead_finding: "A3-01: FY27 revenue guide 8-12% (concall L23/31) vs Q1 +21.1% => implied 9M remaining +4-10% YoY = sharp YoY deceleration; guide soft/below run-rate AND below own segment blend ~+12-13% (ARI-3)"
   margin_guidance: "WITHHELD 3x under 3-analyst pressure (A3-02, L31/39/45); trigger 7 PARTIAL"
   credibility_ratio: "not computable (first Role 5; no prior log)"
   management_archetype: "provisional MEASURED-leaning (conservative revenue guide, margin refused)"
   mgmt_absence: "Gautam Jain WTD introduced (L12) but silent; trigger 13 CONFIRMED-NEGATIVE"
   peer_cross_check: "N/A - no peer concall in the analysed universe within +/-4 weeks this pass"
+  top10_concentration: "56% company-wide (L26; deck slide 22 L683 / slide 16 L489; PR L131) vs 73% Payment-segment (deck slide 12 L325; cf. CFS 77.16% slide 13 L362) = different bases, NOT a conflict (ADV-3)"
   net_thesis_impact: "MAINTAINED to slightly WEAKENED"
 trigger_scorecard_tally:
   fired_favourably: ["#1", "#3(unaudited)"]
@@ -894,18 +926,18 @@ decision_gate_score:
   ebitda_gt_26pct: "NOT MET (25.1% reported / 23.2% operating)"
   payments_yoy_stable: "MARGINAL (+5% YoY, 10-12% guide, 2 QoQ declines)"
   fy27_guidance_provided: "PARTIAL / soft-MET (revenue 8-12% given; margin withheld)"
-  count: "~1.5-2 of 4 (was 1 of 4 pre-concall); mover = revenue guide, which is soft vs +21.1% Q1"
+  count: "~1.5-2 of 4 (was 1 of 4 pre-concall); mover = revenue guide, soft vs +21.1% Q1 and below own segment blend ~+12-13%"
 sc_gap_pat_pct:
   - {period: "Q1FY27", c_pat_cr: 60.34, s_pat_cr: 61.75, gap_cr: -1.41, gap_pct_of_standalone: -2.28}
   - {period: "Q1FY26", c_pat_cr: 36.84, s_pat_cr: 36.68, gap_cr: 0.16, gap_pct_of_standalone: 0.44}
   - {period: "FY26", c_pat_cr: 240.01, s_pat_cr: 243.74, gap_cr: -3.73, gap_pct_of_standalone: -1.53}
 questions_for_management:
-  - {q: "8-12% FY guide vs +21.1% Q1 => implied +4-10% YoY 9M: genuine slowdown, order timing, or conservative guide?", from_finding_id: "A3-01"}
+  - {q: "8-12% FY guide vs +21.1% Q1 and vs own segment blend ~+12-13%: conservative, order timing, or slowdown?", from_finding_id: "A3-01"}
   - {q: "FY27 EBITDA/PAT margin range and whether PAT margin exceeds FY26 16.7% (refused 3x)", from_finding_id: "A3-02/BEAR-1/F7-01/X2"}
   - {q: "Payments +5% Q1 vs 10-12% guide: H2 ramp and did Payments decline QoQ?", from_finding_id: "A3-05/trigger14"}
   - {q: "IoT absolute H2 run-rate underwriting +145% Q1 vs +45% guide; mix past 18%?", from_finding_id: "A3-03"}
   - {q: "Annualised revenue/timing of Rs 73 Cr PSU tenders; reconcile vs deck 3 tenders", from_finding_id: "A3-08/pres-F6"}
-  - {q: "Top-10 concentration 56% (concall) vs 73% (deck) basis; new-logo pipeline given >95% existing", from_finding_id: "A3-06"}
+  - {q: "Confirm company-wide top-10 concentration 56% (L26); new-logo pipeline given >95% existing-client dependence (56% company-wide vs 73% Payments-segment are different bases, not a conflict)", from_finding_id: "A3-06"}
   - {q: "eSIM commercial date / first revenue (no date given; ~9-mo slip)", from_finding_id: "A3-10/trigger8"}
   - {q: "RFID named anchor customer and volume (still early stage/pilots)", from_finding_id: "A3-11/trigger9/pres-F6"}
   - {q: "Bengaluru FY27 token + FY28 revenue quantification and tied capex within 140-160 Cr/yr", from_finding_id: "A3-14"}
@@ -924,9 +956,9 @@ questions_for_management:
   - {q: "FY27 revenue contribution/timing of Europe/Africa card exports", from_finding_id: "pres-F6"}
 answered_on_concall:
   - {q: "SIM utilization vs prior ~30%", status: "ANSWERED ~40% (L62); retire, monitor trajectory", from_finding_id: "trigger4"}
-  - {q: "FY27 revenue guidance", status: "ANSWERED 8-12% (L23/31); soft vs +21.1% run-rate", from_finding_id: "trigger7"}
+  - {q: "FY27 revenue guidance", status: "ANSWERED 8-12% (L23/31); soft vs +21.1% run-rate and below own segment blend", from_finding_id: "trigger7"}
 monitorables:
-  - {item: "FY27 revenue 8-12% guide vs +21.1% Q1 run-rate (deceleration test)", implied_date: "FY27", source_ref: "concall L23/31"}
+  - {item: "FY27 revenue 8-12% guide vs +21.1% Q1 run-rate and vs ~+12-13% segment blend (deceleration test)", implied_date: "FY27", source_ref: "concall L23/31"}
   - {item: "FY27 EBITDA/PAT margin number (withheld; watch)", implied_date: "FY27", source_ref: "concall L31/39/45"}
   - {item: "IoT ~45% FY27 / 35-40% FY28, mix 15-18% (decelerating from +145% Q1)", implied_date: "FY27-FY28", source_ref: "concall L53/68"}
   - {item: "Payments 10-12% (needs H2 ramp; +5% Q1)", implied_date: "FY27", source_ref: "concall L17/55"}
@@ -934,6 +966,7 @@ monitorables:
   - {item: "Bengaluru meaningful revenue (token FY27)", implied_date: "FY28", source_ref: "concall L72/74"}
   - {item: "Capex Rs 140-160 Cr/yr reaffirmed", implied_date: "FY27", source_ref: "concall L37"}
   - {item: "Chip-inventory build / WC-days increase (adverse to cash conversion) — quantify", implied_date: "ongoing", source_ref: "concall L82"}
+  - {item: "Company-wide top-10 concentration 56%; >95% existing-client dependence (concentration/new-logo monitorable, not a discrepancy vs deck 73% Payment-segment)", implied_date: "ongoing", source_ref: "concall L26; deck slide 22 L683 / slide 16 L489; PR L131"}
   - {item: "SIM 20-25% of 3rd-largest operator req.; SIM util ~40%", implied_date: "current", source_ref: "concall L33/62"}
   - {item: "Net cash ~Rs 369 Cr at 30-Jun-2026 (deck+concall, unaudited) vs Notion Rs 339 Cr — verify at Q2 BS", implied_date: "2026-06-30", source_ref: "deck l.950-951 / concall L26"}
   - {item: "eSIM commercial launch date vs Q2FY28 tripwire", implied_date: "pending", source_ref: "deck l.421 / concall L21"}
@@ -945,7 +978,7 @@ monitorables:
 flags:
   - "EBITDA margin BREACH: 25.1% reported / 23.2% operating, both < 27% trigger (#2); concall confirms 25.1% (L26)"
   - "Payments two consecutive QoQ declines (#14); concall +5% YoY, 10-12% guide needs H2 ramp"
-  - "CONCALL LEAD: FY27 revenue guide 8-12% (L23/31) implies sharp YoY deceleration (+4-10% 9M vs +21.1% Q1); guide soft/below run-rate (A3-01)"
+  - "CONCALL LEAD: FY27 revenue guide 8-12% (L23/31) implies sharp YoY deceleration (+4-10% 9M vs +21.1% Q1); guide soft — below run-rate AND below own segment blend ~+12-13% (A3-01, ARI-3)"
   - "FY27 margin number REFUSED 3x at the decision quarter (A3-02, L31/39/45); trigger 7 PARTIAL"
   - "IoT decelerates: +145% Q1 vs +45% FY27 guide / 35-40% FY28; mix flat 15-18% (A3-03)"
   - "Deliberate chip-inventory BUILD consumes cash (A3-13, L82); reinforces INDETERMINATE cash-conversion cap"
@@ -953,7 +986,6 @@ flags:
   - "eSIM undated / RFID unquantified at the pre-committed gate (A3-10/11)"
   - "PAT +63.8% flattered by finance-cost collapse (mgmt concedes L26) + ETR + Other Income +203%; core PBT ex-OI +41.9%"
   - "PAT margin 16.0% BELOW management's own FY26 16.7% (BEAR-1)"
-  - "Top-10 concentration 56% (concall L26) vs deck ~73% — basis reconciliation needed (A3-06)"
   - "Segment data unaudited: single statutory segment; C-minus-S PAT sign-flip -Rs 1.41 Cr; ~Rs 1.3 Cr unexplained eliminations"
   - "Cash CONVERSION INDETERMINATE: no Cash Flow (net cash ~Rs 369 Cr disclosed unaudited); WC build adverse"
   - "Re-engagement rule NOT met (2 clean favourable); hard-kill NOT mechanically met (no pledge); gate ~1.5-2 of 4 (was 1 of 4), mover = soft revenue guide"

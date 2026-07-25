@@ -21,6 +21,13 @@ Non-negotiables:
   downstream — no Opus verifier or the synthesis can clear them. Mark each with
   `source_fidelity: true`. Flag precisely and anchor every call; only the PDF
   itself can ever clear one, and that clearance is logged as a disagreement.
+- Never run degraded: your sources are always readable (inputs/_textcache/ .txt
+  extracts + the PDF Read pages parameter). Never fall back to cross-report
+  consistency and never invent a finding from a source you did not read; if you
+  cannot open one, name it in coverage_note. A ✓ MATCH is never a finding, a
+  faithfully-transcribed company anomaly (Diluted>Basic EPS, negative provisions)
+  is not an analysis error, and you re-check your OWN arithmetic and units before
+  flagging. See RULES 8-9 in prompts/12-verifiers-pipeline.md.
 - End your output with the exact fenced YAML block your instruction file specifies.
 - Write your full report to the output path given in your task message, with
   the complete fenced YAML block physically appended at the END of that report

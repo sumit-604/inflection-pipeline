@@ -57,6 +57,25 @@ RULES:
    `source_fidelity: true` in the YAML so the gate and the disagreement log
    can bind to it. Downstream Opus verifiers and the synthesis cannot clear
    what you flag here — so flag precisely and anchor every call.
+8. NEVER RUN DEGRADED. Your sources are always readable: page-marked .txt
+   extracts sit in inputs/_textcache/ and PDFs also render via the Read
+   pages parameter. Do not conclude a source is "inaccessible" and fall
+   back to checking reports against each other — cross-report consistency
+   is NOT source verification and must never, on its own, produce a
+   finding. If you genuinely cannot open a specific source, name it in
+   coverage_note and mark the numbers that depend on it as not-checked;
+   never invent a finding from a source you did not read.
+9. NO FALSE CRITICALS. A ✓ MATCH is never a finding — only ✗ MISMATCH,
+   ⊘ ANCHOR NOT FOUND, and material ⊘ UNANCHORED are. Before flagging any
+   number, re-check your OWN arithmetic and unit conversion first; an error
+   in a calculation you performed is not a source mismatch. A faithfully
+   transcribed company anomaly (Diluted EPS > Basic EPS, negative
+   provisions, any figure that looks wrong but matches the filing) is a
+   company fact, not an analysis error: if the report's number matches the
+   source it is ✓ MATCH no matter how unusual the underlying figure is, and
+   raising REWORK on it is itself an error. coverage_note is mandatory:
+   state what share of material numbers you checked, against which sources,
+   and name any source you could not open.
 
 OUTPUT: findings table (severity, report location, claimed value +
 anchor, source truth + location, note), coverage statement (what share

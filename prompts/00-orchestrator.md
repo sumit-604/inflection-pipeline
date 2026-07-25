@@ -272,9 +272,12 @@ prompt anchors every promise/delivery pair to named quarters.
 
 ## 3. HANDOFF BLOCK SCHEMA
 
-Every stage ends its output with a fenced YAML block. The orchestrator
-extracts it to `outputs/blocks/`. Prose above the block is the full report
-for `outputs/reports/`. Common fields on every block:
+Every stage ends its output with a fenced YAML block. The block MUST be
+physically appended at the end of the stage's written report in
+`outputs/reports/`, not returned only in chat; the orchestrator extracts it
+from that file (never from the chat return) to `outputs/blocks/`. Prose above
+the block is the full report. If a report has no closed block, the stage is
+not done: re-invoke it per Section 7. Common fields on every block:
 
 ```yaml
 stage: B01-gate0

@@ -15,11 +15,27 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
-PDF READING RESILIENCE: at session start, verify PDF text extraction works
-by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
-Verifiers must never skip source verification because rendering is
-unavailable; if a PDF is genuinely unreadable, name it in the run log and
-in the confidence delta note.
+PDF PRE-EXTRACTION (do this at session start, before launching any stage).
+Live PDF rendering is unreliable here: on a fresh container pypdf's cffi
+backend is often broken, poppler may not be installable, and large or
+image-heavy PDFs blow the Read tool's ~20-32MB render cap. Do not depend on
+live rendering. Instead:
+1. Make pypdf work: pip install pypdf, and pip install --force-reinstall
+   cffi if its backend errors; verify with one real extract.
+2. Pre-extract EVERY inputs/ PDF to a page-marked text cache at
+   inputs/_textcache/<name>.txt with [[PAGE N]] markers (reuse the cache if
+   a prior phase already built it). Cover every type present: annual-report,
+   results, rating, concalls, peer-concalls, prospectus, announcements,
+   presentation.
+3. Pass every stage and verifier the .txt cache path, never the raw PDF;
+   reserve a small PDF page-range Read only for an image-only table a stage
+   must see visually.
+4. Record in B00.input_gaps any PDF or page range that is scanned/image-only
+   and lost to text, so downstream stages know the coverage hole.
+Verifiers must never skip source verification because live rendering is
+unavailable; the .txt cache is the source of record. If a document is
+genuinely unreadable even after extraction, name it in the run log and the
+confidence delta note.
 
 EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
 that blocks until the subagent returns. Never use background task

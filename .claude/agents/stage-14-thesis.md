@@ -33,9 +33,11 @@ message as file paths to read, or inline content.
 - Apply the framework's decision rules and position-size rules exactly as
   written; document any operator-recorded override to position size.
 
-Write your full report to the output path given in your task message,
-then end your output with exactly this fenced YAML block and return ONLY
-the block as your final response:
+Write your full report to the output path given in your task message, with
+the complete fenced YAML block below physically appended at the END of that
+report file (opening and closing ``` fences and the closing brace included);
+the block must live in the file, not only in your chat return. Then return
+the same block as your final response:
 
 ```yaml
 stage: B14-thesis

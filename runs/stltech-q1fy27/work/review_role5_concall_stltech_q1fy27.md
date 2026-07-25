@@ -11,6 +11,8 @@ Unit convention: `Rs Crore` unless stated; USD amounts left as management stated
 
 **IMPORTANT correction to the Role 4 assumption.** Role 4 (written 2026-07-24) recorded the concall as "scheduled mid-August 2026" and DEFERRED Role 5. The transcript shows the call was in fact held **24-Jul-2026, the SAME DAY as the filing** (extract L2; deck "Earnings Call Q1FY27, 24-Jul-2026"). Role 5 is therefore executed now, not deferred. Same-day timing is logged in Step 0C (canned opening, minimal orchestration window).
 
+**A5 adversary graft (2026-07-25):** one surviving bear counter incorporated — the attach-rate walk is credibility-tested (not treated as a clean positive). See Steps 6D, 6E, 8B, 8F (row N5b), and the flags list.
+
 ---
 
 ## LEDGER-RECONCILIATION PREAMBLE (contractual, before Step 1)
@@ -87,7 +89,7 @@ Opening remarks span turns 3-15 (ledger rows 1-70). The inventory is dense (≈7
 | 13 | **Fujikura European/UK patent dispute (Celesta) "conclusively resolved" in STL's favour** | Strategic | binary milestone | t8, L33 |
 | 14 | Concat spliceless launch, up to 71% labor-cost cut | Operational | YES | t8/t10, L33/L37 |
 | 15 | G654E fiber fully commercialized, 30% lower loss; hollow-core up to 47% latency cut; multi-core 4-7x capacity | Operational | YES | t10, L37 |
-| 16 | **Attach rate 16% (up from 15%); target >20% next quarter; 25% by end-FY27** | Forward Guidance | YES | t11, L39 |
+| 16 | **Attach rate 16% (up from 15% last year); target >20% next quarter; 25% by end-FY27** | Forward Guidance | YES | t11, L39 |
 | 17 | **Revenue Rs1,910cr, +87% YoY** | Backward | YES | t12, L41 |
 | 18 | **"Previously guided 20% EBITDA margin by end-FY27 … delivered right here in Q1"; EBITDA Rs397cr +184% YoY** | Backward + Forward | YES | t12, L41 |
 | 19 | **EBITDA margin guidance RAISED 20%→23%** | Forward Guidance | YES | t12, L41 |
@@ -122,17 +124,18 @@ Opening remarks span turns 3-15 (ledger rows 1-70). The inventory is dense (≈7
 | Order book / pipeline | Rs18,618cr; **Rs2,228cr Q2, Rs16,390cr Q3+** (t14) | ~Rs1,500cr Q1-executable (referenced t28) | ND | **New / Raised (2.4x QoQ)** | HIGH on the number; **LOW on timing** of the Rs16,390cr (~88%) parked "Q3 & beyond," no dated schedule (FND-03) |
 | Capex envelope | **~Rs500cr/yr × 3yr = ~Rs1,500cr** (t52) | ND | ND | **New** | HIGH (specific) — but tension vs capacity-constrained "pick and choose orders" (FND-03) |
 | Utilization target/timeline | **REFUSED** — "we don't disclose actual numbers," only "improving QoQ" (t18, re-asked t24) | ND | ND | **Withdrawn/None** | LOW |
+| Attach rate (connectivity) | **>20% "from next quarter," 25% by Q4FY27** (16% now, up from 15% last yr) (t11/t44/t73) | ND (16% vs 15% is the only disclosed pace) | ND | **Raised / New** | LOW-MEDIUM — **demonstrated pace only +1pp/yr; guide needs +4pp in one quarter, +9pp by Q4 = 4x-9x acceleration with NO quantified mechanism** (see 6D; FND-01 margin-leg) |
 | Strategic order execution | $1.1bn hyperscaler **through FY29** (t7); counterparty **UNNAMED** (FND-04) | ND | ND | New (reaffirmed) | MEDIUM — real deal, unverifiable counterparty; monitor #9 red persists |
 | Working capital / CCC | Qualitative only — "reducing net WC by engaging customers on payment terms" (t71) | ND | ND | New (soft) | LOW |
 | Net debt trajectory | **"Net debt free even during FY27"** (t14/t71); net cash Rs483cr | net-debt-free claimed | ND | Claimed-achieved/Reaffirmed | MEDIUM — **QIP-funded + Rs391cr restricted; no Net-Debt/EBITDA ratio path** (FND-07) |
 | Export / segment guidance | Backward actuals only (NA 54%, Europe 25%, RoW 22%); no forward segment guide | ND | ND | n/a | — |
-| New product/contract milestones | Attach >20% Q2, 25% Q4; Neuralis/MMC cert; US plant $100M/5yr (t63) | ND | ND | New | MEDIUM |
+| New product/contract milestones | Neuralis/MMC cert; US plant $100M/5yr (t63) | ND | ND | New | MEDIUM |
 | Dividend / payout policy | **Not discussed** | ND | ND | Silent | — |
 
 **Diagnostics:**
 - **Widen or tighten?** Management **RAISED** two headline guides (margin 20→23%, mix 30→50%) — nominally a confidence signal — WHILE **withdrawing/refusing** revenue guidance and utilization (9 total refusals, FND-06). This is a **selective-disclosure profile**: specific and bullish on the promotable metrics, opaque on the verifiable levers analysts need to test them.
 - **Dropped/withdrawn without acknowledgment?** Revenue and full-year guidance refused (2x), utilization refused (2x), realization refused, connectivity/digital split refused, telecom-vs-DC margin split refused, germanium contract terms refused, US-plant capacity deferred — nine (FND-06). None was ever formally "given then dropped" (no prior transcript), but the refusal cluster sits on the exact inputs to the 23%/50% story.
-- **Internally consistent arithmetic?** **STRAINED.** 23% EBITDA raise + **flat gross margin** + input costs "increased to significant multiples" + pass-through only "up to a certain level" (t22/t33/t50). The raise is carried entirely by utilization/mix/attach, not price/cost — leaving a live gross-margin downside if volume or mix stalls (FND-01/05). The Rs16,390cr order book (~88%) vs ~Rs500cr/yr capex is a second consistency question (FND-03).
+- **Internally consistent arithmetic?** **STRAINED.** 23% EBITDA raise + **flat gross margin** + input costs "increased to significant multiples" + pass-through only "up to a certain level" (t22/t33/t50). The raise is carried entirely by utilization/mix/attach, not price/cost — leaving a live gross-margin downside if volume or mix stalls (FND-01/05). The Rs16,390cr order book (~88%) vs ~Rs500cr/yr capex is a second consistency question (FND-03). A THIRD: the attach-rate leg needs a 4x-9x acceleration off a +1pp/yr demonstrated pace with no stated mechanism (6D).
 - **Vs Four-Pillar projections:** Consistent with Role 4 — actuals/guidance land **AT or ABOVE base** on the reported metrics; but the operational-ex-tariff EBITDA (monitor #2) and CFO/EBITDA (monitor #7) are undisclosed, so the guide cannot be independently placed against bear/base on a QUALITY basis.
 - **Guidance analysts pressed for and were refused:** revenue/full-year run-rate (Shil Jain t27, Akhil t49), capacity utilization (Achan t17, Devarat t24), realization (Subramanium t46), telecom-vs-DC margin split (Naman t72), connectivity/digital split (Akhil t53). Refusal on metrics that a genuinely confident, mix-shifting manufacturer could address is itself information.
 
@@ -177,6 +180,7 @@ Opening remarks span turns 3-15 (ledger rows 1-70). The inventory is dense (≈7
 ### 3C. Pattern recognition
 - **Specific when promoting, opaque when verifying:** raised guidance on margin/mix (promotable) + refused revenue/utilization/realization/margin-split (verifiable). This is the OVERPROMISER *behavioural* signature (see 6E), even though the delivery grade is B this call.
 - **Consistently qualitative on input costs:** germanium/helium asked 4x (t21, t36, t67, t72) by 4 analysts; answered qualitatively every time — the market does not trust the first answer, and management will not quantify the drag.
+- **Unmechanism'd acceleration on the promotable ratios:** the attach-rate walk (+4-9x the demonstrated pace, 6D) and the mix recut (30→50%, FND-02) are both stepped up sharply without a quantified bridge — the same specific-but-unsupported pattern.
 - **Quality-impaired "deliveries":** both headline deliveries (20% margin; net-debt-free) are quality-caveated (tariff/OI-aided; QIP-funded). Specificity is not being matched by clean substance.
 - **Trend:** cannot establish a multi-quarter trend on one call; baseline set.
 
@@ -194,7 +198,7 @@ Credibility Grade **B (Good)** this call (self-asserted, quality-caveated). No d
 | **Q5** | The discontinued op behind "from continued operations" | **PARTIALLY ANSWERED** | "We've … demerged our system integration business into a separate entity" (t57) — the demerged op is NAMED; revenue/EBITDA drag/disposal quantum NOT given | Partial — identity confirmed, quantum silent |
 | **Q6** | Fully-diluted share count + OCI recycling | **NOT ADDRESSED** | Not raised | Carry forward |
 | **Q7** | Tabular segment split + slide-vs-filing reconciliation + like-for-like intake | **PARTIALLY ANSWERED** | Segment revenue shares given (DC 21%, NA 54%/Europe 25%/RoW 22%); connectivity/digital split **REFUSED** (t54) and telecom-vs-DC margin split **REFUSED** (t73); like-for-like ex-$1.1bn intake ~Rs3,000cr implicitly acknowledged, not rebutted (t34/t35). Rs-Cr tabular split and slide-1,034-vs-filing-1,019 reconciliation NOT provided | Partial — shares yes, splits refused |
-| **Q8** | Name the $1.1bn hyperscaler + phasing + attach rate | **PARTIALLY ANSWERED** | Counterparty **STILL UNNAMED** (EVADED); phasing only "through FY29"; attach rate specific (16% now, >20% Q2, 25% Q4) | Partial — attach yes, **name = monitor #9 red persists** |
+| **Q8** | Name the $1.1bn hyperscaler + phasing + attach rate | **PARTIALLY ANSWERED** | Counterparty **STILL UNNAMED** (EVADED); phasing only "through FY29"; attach rate specific (16% now, >20% Q2, 25% Q4) — but the acceleration is unmechanism'd (6D) | Partial — attach numbers yes, **name = monitor #9 red persists** |
 | **Q9** | Net-worth vs equity gap | **NOT ADDRESSED** | Not raised | Carry forward |
 | **Q10** | AGM remuneration ratification | **NOT ADDRESSED** | Not raised | Carry forward |
 | **Q11** | Promoter pledge + ex-tariff EBITDA + tariff/input-cost sensitivity | **PARTIALLY ANSWERED** | Promoter pledge **NOT ADDRESSED** (silent); ex-tariff EBITDA NOT disclosed; input-cost sensitivity qualitative only ("significant multiples," pass-through "up to a certain level," t22/t33/t50) — **no bps** | Partial on input-cost; pledge & ex-tariff silent |
@@ -243,7 +247,7 @@ Credibility Grade **B (Good)** this call (self-asserted, quality-caveated). No d
 - **Consistently C/D/E topics:** revenue guidance, utilization, realization, connectivity/digital split, telecom-vs-DC margin split, germanium terms, order size, US-plant capacity. These are precisely the verifiable levers behind the 23%/50% story — the topics management does not want quantified.
 - **Buy-side vs sell-side split:** only **Nuvama** is a recognisable institutional sell-side desk; the other 11 are small PMS / family offices / holding companies (Dwama, 7 Holding, Nishai, Inam, Arihant, Seven Holding, Sangi FO, Segel, PM Capital, Noah, Nishai Investment). **Notably absent from the Q&A: the marquee QIP subscribers** (Nomura, HSBC, Motilal Oswal, BoI) named at t14 — none asked a question on a "record" quarter. Thin marquee-institutional Q&A is a mild yellow flag (plausibly a same-day-call artifact, but logged).
 - **Hosting-broker orchestration:** no house broker leading; near-universal congratulatory openings ("congratulations on a fantastic/great set") set a celebratory tone with limited adversarial pressure.
-- **Genuine pushback (rare — so it marks contested ground):** Achan (t19) pushed back on the "very qualitative answer" re the ordering cycle; Patel (t34) pushed that ex-the-$1.1bn deal the regular intake was only ~Rs3,000cr. Both pushbacks were on **order-book substance / capacity** — the contested topic.
+- **Genuine pushback (rare — so it marks contested ground):** Achan (t19) pushed back on the "very qualitative answer" re the ordering cycle; Patel (t34) pushed that ex-the-$1.1bn deal the regular intake was only ~Rs3,000cr. Both pushbacks were on **order-book substance / capacity** — the contested topic. Notably, NO analyst pressed the attach-rate acceleration mechanism (an obvious question that didn't appear — see 6D).
 
 ### 4C. The three most thesis-relevant exchanges
 
@@ -293,6 +297,7 @@ Credibility Grade **B (Good)** this call (self-asserted, quality-caveated). No d
 | **Discontinued-op (SI) quantum** | "from continued operations" on every headline | AMBER — op named (t57) but revenue/EBITDA drag/disposal undisclosed (S7) |
 | **~21.8% of consol PAT not statutory-auditor-reviewed** | "record Rs197cr" touted (t12) | AMBER — record-PAT headline carries an un-caveated audit-scope gap (S8) |
 | **Net-cash composition (undeployed QIP + Rs391cr restricted)** | "net debt free" (t14) | AMBER — covered as FND-07/S9 |
+| **Attach-rate acceleration mechanism** (16%→>20%→25%) | Attach is one of the three legs of the 23% margin guide (t11/t152) | AMBER — the +4-9x-vs-demonstrated-pace jump got no analyst push and no volunteered mechanism (6D) |
 
 🛑 5A and 5B shown — silence is signal; Prysmian concealment is the headline of the silence table.
 
@@ -309,22 +314,26 @@ No prior transcript exists, so adjective-level diff across calls **cannot** be r
 - Refused forward (non-statements): revenue, full-year, utilization number, realization, telecom-vs-DC split, connectivity/digital split, germanium terms, order size, US-plant capacity = **9**.
 - **Specificity ratio (statements-made basis) = 10 / (10+4) ≈ 0.71 → HIGH.**
 - **Specificity ratio (including refusals as unquantified) = 10 / (10+4+9) ≈ 0.43 → MODERATE.**
-The split is itself the diagnostic: **highly specific on volunteered/promotable metrics, moderate-to-low once the 9 refusals on verifiable levers are counted.** Per v1.1, high specificity is NOT automatically positive — it must be read jointly with credibility (6E).
+The split is itself the diagnostic: **highly specific on volunteered/promotable metrics, moderate-to-low once the 9 refusals on verifiable levers are counted.** Per v1.1, high specificity is NOT automatically positive — it must be read jointly with credibility (6E). **Note further (A5 graft):** several of the "quantified" forward statements are specific NUMBERS without a quantified MECHANISM (attach 4-9x acceleration; mix 30→50% recut) — specificity of the target is not specificity of the path.
 
 ### 6C. Defensive-language count
 Explicit refusal/hedge phrases: "we don't disclose actual numbers" (t18); "we don't give any guidance on the revenue" (t28); "can't comment … for competitive reasons" (t37); "can't comment on any specific size" (t39); "we do not comment on realization" (t47); "we don't guide any numbers for the full year or longer term" (t50); "No we don't break that out" (t54); "once we're able to finalize … we'll be able to share" (t65); "we don't normally call out the margin difference" (t73). **Count = 9 → HEDGE-HEAVY** (protocol threshold >5). No prior call to compare the count against; baselined at 9.
 
-### 6D. Confidence indicators
-Named QIP investors (t14); specific capex Rs500cr/yr (t15/A15); dated attach-rate targets (t11); $1.1bn thru FY29; Fujikura binary win; ICRA/CRISIL upgrades. **Offsetting negatives:** promoter/Chairman ABSENT (0B); the $1.1bn customer UNNAMED; the load-bearing input-cost driver un-quantified; the "acknowledgment of a miss with a recovery timeline" (a genuine confidence tell) is **absent** because the one miss (Prysmian) is concealed rather than owned.
+### 6D. Confidence indicators — and the attach-rate STRETCH reclassification
+Genuine confidence tells: named QIP investors (t14); specific capex Rs500cr/yr (t15/A15); $1.1bn thru FY29; Fujikura binary win; ICRA/CRISIL upgrades.
+
+**Attach-rate dated target — RECLASSIFIED from a clean positive to a STRETCH / promotional-until-mechanised signal (A5 graft).** Management's OWN disclosed pace is **+1pp over a full year** (15% → 16%, extract L39 / turn 11, ledger row 35). The guide requires **+4pp in ONE quarter** (16% → >20% "from next quarter," L39/L107, rows 36-37/81) and **+9pp within ~3 quarters** (25% by Q4FY27, rows 37/81/89) — a **4x-to-9x acceleration off the only demonstrated base, with NO quantified mechanism** (no Concat ramp volumes, no named connectivity customers, no pricing bridge; the only qualitative support is "we continuously launch new products like Concat," t44/t94). Because attach rate is **one of the three legs management itself names for the raised 23% EBITDA guide** (t152: "utilization … + connectivity attach rate up to 25% by Q4 → the 23%"), an un-mechanism'd 4-9x acceleration is a **direct risk to the margin guide**, not a standalone positive. Treat the dated attach targets as promotional until a mechanism and volumes are shown.
+
+**Offsetting negatives:** promoter/Chairman ABSENT (0B); the $1.1bn customer UNNAMED; the load-bearing input-cost driver un-quantified; the attach-rate acceleration un-mechanism'd; and the "acknowledgment of a miss with a recovery timeline" (a genuine confidence tell) is **absent** because the one miss (Prysmian) is concealed rather than owned.
 
 ### 6E. Management archetype (Specificity × Credibility 2×2)
-- Specificity: HIGH on volunteered statements (0.71); MODERATE with refusals counted (0.43).
+- Specificity: HIGH on volunteered statements (0.71); MODERATE with refusals counted (0.43); and — per the 6D graft — several "quantified" targets lack a quantified path (attach, mix).
 - Credibility (3B): **Grade B (66.7%, self-asserted baseline, quality-caveated).**
-- **Mechanical quadrant:** at Grade-B credibility with high volunteered specificity, this call sits on the **COMMITTED & CREDIBLE / MEASURED & CREDIBLE boundary** — but the "conservative guider" descriptor of MEASURED&CREDIBLE is explicitly rejected: management RAISED two headline guides, so it is not conservative.
-- **Behavioural read (the operative one): OVERPROMISER-WATCH.** The call carries the OVERPROMISER *signature* — hyper-specific, RAISED guidance (23%/50%) resting on an unproven foundation (flat gross margin under input-cost pressure, undisclosed utilization/ex-tariff EBITDA), paired with a 9-refusal opacity cluster on the verifiable levers and a governance concealment (Prysmian). The only reason it is not classified outright OVERPROMISER is that the delivery grade is B, not <60% — and that grade is **self-asserted on one call**.
-- **Assigned archetype: COMMITTED & CREDIBLE (PROVISIONAL) with material OVERPROMISER-DRIFT risk.** The archetype is provisional because credibility is a one-call self-asserted baseline. **Archetype-shift flag:** if Q2 FY27 misses the 23% margin / 50% mix / attach walk, or the input-cost drag compresses gross margin, this flips to **OVERPROMISER (danger quadrant)** — treat ALL guidance as promotional, anchor to filing numbers, require pre-committed thresholds (not narrative) for any position action.
+- **Mechanical quadrant:** at Grade-B credibility with high volunteered specificity, this call sits on the **COMMITTED & CREDIBLE / MEASURED & CREDIBLE boundary** — but the "conservative guider" descriptor of MEASURED&CREDIBLE is explicitly rejected: management RAISED three promotable ratios (margin, mix, attach), so it is not conservative.
+- **Behavioural read (the operative one): OVERPROMISER-WATCH.** The call carries the OVERPROMISER *signature* — hyper-specific, RAISED guidance (23% / 50% / attach 25%) resting on an unproven foundation (flat gross margin under input-cost pressure, undisclosed utilization/ex-tariff EBITDA, **an attach-rate leg needing a 4-9x acceleration with no mechanism**), paired with a 9-refusal opacity cluster on the verifiable levers and a governance concealment (Prysmian). **The attach-rate reclassification (6D) REINFORCES the OVERPROMISER-drift read: a third promotable ratio is now shown to be stepped up beyond its demonstrated pace without a bridge.** The only reason it is not classified outright OVERPROMISER is that the delivery grade is B, not <60% — and that grade is self-asserted on one call.
+- **Assigned archetype: COMMITTED & CREDIBLE (PROVISIONAL) with material OVERPROMISER-DRIFT risk.** The archetype is provisional because credibility is a one-call self-asserted baseline. **Archetype-shift flag:** if Q2 FY27 misses the 23% margin / 50% mix / **attach walk (>20% next quarter)**, or the input-cost drag compresses gross margin, this flips to **OVERPROMISER (danger quadrant)** — treat ALL guidance as promotional, anchor to filing numbers, require pre-committed thresholds (not narrative) for any position action. The attach print at Q2 (>20% vs the +1pp/yr base) is the single earliest tell.
 
-🛑 6A-6E shown; archetype = COMMITTED & CREDIBLE (provisional) / OVERPROMISER-drift.
+🛑 6A-6E shown; archetype = COMMITTED & CREDIBLE (provisional) / OVERPROMISER-drift (reinforced by the attach-rate stretch).
 
 ---
 
@@ -340,7 +349,7 @@ Named QIP investors (t14); specific capex Rs500cr/yr (t15/A15); dated attach-rat
 | "Order book Rs18,618cr; intake Rs13,100cr = 1.7x FY26 Rs7,687cr" | Press/deck confirm; but 1.7x compares Q1 vs FULL-YEAR FY26 (period-mismatch, FND-09); ex-$1.1bn like-for-like ~Rs3,000cr (t34) | **CONFIRMED (numbers); framing CONTRADICTED (period-mismatched, flattering)** |
 | "DC 21% of revenue, up from 1%" | Deck slide 24 ~21% (FND-11) | **CONFIRMED** |
 | "NA 54% … reduces concentration risk" | NA 39%→54% = rising single-geography concentration (FND-08) | **CONTRADICTED (narrative inverts the data)** |
-| "23% margin driven by mix/utilization/attach" (t120/t152) | Gross margin flat; input costs "significant multiples" (FND-01/05) | **UNVERIFIABLE forward; internally strained** |
+| "23% margin driven by mix/utilization/attach" (t120/t152) | Gross margin flat; input costs "significant multiples" (FND-01/05); attach leg needs 4-9x un-mechanism'd acceleration (6D) | **UNVERIFIABLE forward; internally strained** |
 
 **Net 7A:** every hard NUMBER the call cites reconciles to the filing; every FRAMING choice (net-debt-free, 1.7x, "reduces concentration risk," "margin expansion") is promotional and loses to the filing where they diverge. Filing governs (protocol non-negotiable).
 
@@ -361,7 +370,7 @@ Management's TAM narrative rests on 18 third-party stats (CRU, McKinsey, Morgan 
 | Trigger | Pre-concall | Concall evidence | Post-concall |
 |---|---|---|---|
 | DC / AI-DC mix ramp | Moat underway | DC 1%→21%; $1.1bn thru FY29; 50% mix guide | **ON TRACK / FIRING — but counterparty unnamed (unverifiable)** |
-| Reported EBITDA to 20% | Guidance | 20.8% in Q1, re-raised to 23% | **FIRED early; ex-tariff sustainability TBD; 23% rests on flat gross margin** |
+| Reported EBITDA to 20% | Guidance | 20.8% in Q1, re-raised to 23% | **FIRED early; ex-tariff sustainability TBD; 23% rests on flat gross margin + an un-mechanism'd attach-rate leg (6D)** |
 | Order-book scale-up | Base thesis | Rs18,618cr; 2.4x QoQ | **ON TRACK — but 88% parked Q3+ vague timing; capacity-constrained (FND-03)** |
 | Deleveraging | Base thesis | net-debt-free claimed | **ON TRACK — QIP-funded, not operational; no ratio path (FND-07)** |
 | Prysmian resolution | Risk/overhang | **SILENT / concealed on call** | **DELAYED + governance-negative (FND-09)** |
@@ -372,6 +381,7 @@ Management's TAM narrative rests on 18 third-party stats (CRU, McKinsey, Morgan 
 |---|---|---|---|
 | 2 | Operational EBITDA ex-tariff ≥21% | Not disclosed (S5) | **AMBER / UNKNOWN** |
 | 5 | Enterprise+DC mix walk 22/25/27/30 | Redefined to 50%; DC-only 21% (FND-02) | **GREEN but definitionally leapfrogged — flag** |
+| 5b | **Attach-rate walk (16% → >20% Q2 → 25% Q4)** — a named leg of the 23% margin guide | Demonstrated pace is only **+1pp/yr** (15%→16%, L39); guide needs **+4pp in one quarter and +9pp by Q4 = 4x-9x acceleration**, with **NO quantified mechanism** (rows 35-37; L39/L107; 6D) | **GREEN CONDITIONED on the acceleration actually printing — STRETCH until mechanised; specific watch = the >20% print at Q2 vs the +1pp/yr base; feeds the 23% EBITDA margin leg** |
 | 7 | CFO/EBITDA ≥75% | No CFO number (S3) | **UNKNOWN / INDETERMINATE** |
 | 8 | Promoter pledge 0% | Silent (S2) | **UNKNOWN** |
 | 9 | Hyperscaler NAMED multi-year | Reaffirmed but UNNAMED (FND-04) | **RED persists** |
@@ -404,7 +414,7 @@ No destination-PE recompute (exit multiple only from Section 1B v3.3 at a Role 1
 ### 8E. Position decision (verify Decision Status first — 8A-W non-held branch)
 **Decision Status verified (0A): AVOID at CMP / passive monitoring; position EXITED near Rs600 Jun-2026.** The 8A-W (non-held) branch applies — no trim/exit mechanics for a name not held.
 - Any thesis-broken condition fired? **No** (8C). Undisclosed material risk revealed? The Prysmian **concealment** is a governance-negative, not a new risk (the risk was already known from Role 4). Undisclosed material positive? The Fujikura win is real but secondary. Credibility <60%? No (66.7%, Grade B). Two DROPPEDs? No (one concealment logged, not two).
-- **The concall's UPGRADED guidance is the durability signal the fresh Role 1 flagged as the confirm gate.** Assessment: it does **NOT** clear the gate on a QUALITY basis — the 23% raise rests on flat gross margin under input-cost pressure, cash conversion remains INDETERMINATE, the hyperscaler is unnamed, ex-tariff EBITDA and pledge are undisclosed, and the one live litigation trigger was concealed. If anything, the 9-refusal opacity cluster and the Prysmian concealment **reinforce** caution on paying up from Rs560.
+- **The concall's UPGRADED guidance is the durability signal the fresh Role 1 flagged as the confirm gate.** Assessment: it does **NOT** clear the gate on a QUALITY basis — the 23% raise rests on flat gross margin under input-cost pressure AND an un-mechanism'd 4-9x attach-rate acceleration (6D), cash conversion remains INDETERMINATE, the hyperscaler is unnamed, ex-tariff EBITDA and pledge are undisclosed, and the one live litigation trigger was concealed. If anything, the 9-refusal opacity cluster and the Prysmian concealment **reinforce** caution on paying up from Rs560.
 - **Outcome: Decision Status UNCHANGED — AVOID at CMP / passive monitoring.** No trigger auto-fires; CMP ~Rs560 sits far above the refreshed entry/MoS zone **Rs178-222**. The prob-weighted 3-yr CAGR from Rs560 (-8.8%) is unchanged by the call. Decision remains human; A4 flags only.
 
 ### 8F. Updated Questions for Management (forward — next-quarter Step 3E baseline)
@@ -417,7 +427,8 @@ Every A3 concall FORWARD-SIGNAL / AMBIGUOUS / CONFIRMATORY-NEGATIVE finding gene
 | N3 | Bridge ~Rs500cr/yr capex to the throughput needed to execute the **Rs16,390cr (~88%) parked "Q3 & beyond"**; give the quarter-by-quarter execution schedule. | Order-book growth outrunning funded capacity | FND-03 |
 | N4 | **Name the $1.1bn hyperscaler**; give FY27/FY28/FY29 revenue phasing and the attach rate at Q1 exit vs the >20%/25% walk. | Monitor #9 red persists; single-customer concentration unverifiable | FND-04 (+ prior Q8) |
 | N5 | Provide the **operational, ex-tariff EBITDA margin** and reconcile it to the 20.8% reported and the 23% guide; what tariff tailwind is embedded? | Monitor #2 undisclosed; reported vs operational never drawn | FND-01, FND-06 |
-| N6 | Give the **DC-only vs enterprise split** and the like-for-like mix walk (22/25/27/30 → 50%); is the 50% a definitional recut? | Monitor #5 leapfrogged by redefinition | FND-02 |
+| **N5b** | **Reconcile the demonstrated attach-rate pace of +1pp/yr (15%→16%, L39) with the guide of +4pp NEXT QUARTER (>20%) and +9pp by Q4FY27 (25%): what is the SPECIFIC mechanism — Concat ramp volumes, NAMED connectivity customers, or pricing — and what attach rate exactly exited Q1?** | Attach is a named leg of the 23% margin guide; a 4-9x acceleration with no mechanism is a direct risk to that guide, not a positive (6D) | FND-01, FND-06 |
+| N6 | Give the **DC-only vs enterprise split** and the like-for-like mix walk (22/25/27/30 → 50%); is 50% a definitional recut? | Monitor #5 leapfrogged by redefinition | FND-02 |
 | N7 | State the **promoter pledge %** (target 0%), the **H1 CFO / CFO-to-EBITDA**, and the **ex-QIP, ex-restricted net-debt** at 30-Jun. | Monitors #7, #8; net-debt-free quality | FND-07 (+ prior Q2, Q11) |
 | N8 | Confirm the **discontinued/demerged SI operation's** revenue, EBITDA drag and disposal status excluded from "from continued operations." | Named (t57) but quantum silent | prior Q5, FND-07(pres) |
 | N9 | On **rising NA concentration (54%)**: what is the US/India **tariff sensitivity** of the NA book, and how is it hedged? | Narrative inverts the concentration signal | FND-08 |
@@ -434,13 +445,13 @@ Every A3 concall FORWARD-SIGNAL / AMBIGUOUS / CONFIRMATORY-NEGATIVE finding gene
 Record, genuinely clean quarter: revenue Rs1,910cr (+87.4% YoY), operating EBITDA 20.2% ex-OI (+720bps), core operating PBT ex-OI Rs245cr (+4,800%), ~98% of PAT growth recurring; parent standalone turned operationally profitable (ex-OI PBT −Rs176cr FY26 → +Rs120cr Q1FY27) for the first time in the visible window; order book Rs18,618cr; reported EBITDA 3 quarters ahead of the 20%-by-Q4FY27 guide. **Filing protocol verdict: PROCEED WITH CAVEATS** (capped by INDETERMINATE cash conversion).
 
 ### Concall-derived signals (Role 5, this run)
-- Guidance RAISED (margin 20→23%, mix 30→50%) — but on a **flat gross margin under input-cost pressure** (FND-01/05), with **9 refusals** on the verifiable levers (FND-06), the **$1.1bn hyperscaler still UNNAMED** (FND-04, monitor #9 red), **88% of the order book parked with vague timing** against Rs500cr/yr capex (FND-03), **rising NA concentration mis-framed as de-risking** (FND-08), and **Prysmian concealed** behind the Fujikura win (FND-09).
+- Guidance RAISED (margin 20→23%, mix 30→50%, attach to 25%) — but on a **flat gross margin under input-cost pressure** (FND-01/05), with the **attach-rate leg needing a 4-9x acceleration off a +1pp/yr demonstrated pace and NO quantified mechanism** (6D), **9 refusals** on the verifiable levers (FND-06), the **$1.1bn hyperscaler still UNNAMED** (FND-04, monitor #9 red), **88% of the order book parked with vague timing** against Rs500cr/yr capex (FND-03), **rising NA concentration mis-framed as de-risking** (FND-08), and **Prysmian concealed** behind the Fujikura win (FND-09).
 - **Management credibility (this call): Grade B (66.7%, self-asserted baseline)** → **Role 1 track-record input = "Good."** Trailing-4 ratio not yet computable; baseline starts now.
-- **Archetype: COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift risk** — flips to OVERPROMISER on a single Q2 miss.
+- **Archetype: COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift risk** — reinforced by the attach-rate stretch (a third promotable ratio stepped up beyond its demonstrated pace without a bridge); flips to OVERPROMISER on a single Q2 miss, with the >20% attach print as the earliest tell.
 - **0 of 11 prior questions fully answered** (5 partial, 6 not addressed); the highest-priority (Prysmian) concealed.
 
 ### Reconciliation between filing and concall
-Every hard number reconciles; every FRAMING choice is promotional and loses to the filing. The concall **did not clear** the two caveats the filing left open — cash conversion is still **INDETERMINATE** (no CFO number given) and the net-debt-free claim is still QIP-funded — and it ADDED a governance-negative (Prysmian concealment) plus a forward margin risk (input costs). This is the "specific numbers that sound credible but rest on undisclosed levers" pattern the protocol warns against.
+Every hard number reconciles; every FRAMING choice is promotional and loses to the filing. The concall **did not clear** the two caveats the filing left open — cash conversion is still **INDETERMINATE** (no CFO number given) and the net-debt-free claim is still QIP-funded — and it ADDED a governance-negative (Prysmian concealment) plus two forward margin risks (input costs; the un-mechanism'd attach-rate leg). This is the "specific numbers that sound credible but rest on undisclosed levers" pattern the protocol warns against.
 
 ### Updated Section-8 monitoring-checklist status (post-concall)
 
@@ -451,24 +462,25 @@ Every hard number reconciles; every FRAMING choice is promotional and loses to t
 | 3 | Order intake TTM ≥Rs8,500cr | <Rs6,500cr | Q1 intake Rs13,100cr; ex-$1.1bn ~Rs3,000cr regular | **GREEN** (flag: mega-deal-carried, thin regular intake) |
 | 4 | Open order book Rs7,000+ | <Rs6,500 (2 consec) | Rs18,618cr | **GREEN** (flag: 88% parked Q3+ vague timing) |
 | 5 | Enterprise+DC mix walk (22/25/27/30) | stuck 19-22% thru Q3 | DC 21% + enterprise; 50% guide | **GREEN but redefined — flag (FND-02)** |
+| — | Attach-rate walk (leg of the 23% margin guide) | acceleration prints | 16% now (+1pp/yr pace); guide >20% Q2 / 25% Q4 = 4-9x accel, no mechanism (6D) | **GREEN CONDITIONED on the acceleration printing — STRETCH; watch the >20% Q2 print** |
 | 6 | Net Debt/EBITDA ≤1.2x by Q4FY27 | >1.5x | "net debt free," QIP-funded; no ratio path | **GREEN (quality-caveated, FND-07)** |
 | 7 | CFO/EBITDA annual ≥75% | <65% | No CFO number on call (S3) | **UNKNOWN / INDETERMINATE** |
 | 8 | Promoter pledge 0% | any new pledge | Silent (S2) | **UNKNOWN** |
 | 9 | Hyperscaler NAMED multi-year deal | continued vague language | Reaffirmed but UNNAMED (FND-04) | **RED persists** |
 
 ### Net thesis impact and position decision
-**Net impact: MAINTAINED.** Operationally the reported quarter is strong and the guidance raise is a positive data point; but forward DURABILITY is unproven on a quality basis (INDETERMINATE cash conversion, flat gross margin under input-cost pressure, unnamed hyperscaler, undisclosed pledge/ex-tariff EBITDA), and the call ADDED a governance-negative (Prysmian concealment). For a non-held AVOID name this is a positive-but-caveated monitoring update, **not** a re-entry event.
+**Net impact: MAINTAINED.** Operationally the reported quarter is strong and the guidance raise is a positive data point; but forward DURABILITY is unproven on a quality basis (INDETERMINATE cash conversion, flat gross margin under input-cost pressure, an un-mechanism'd attach-rate acceleration, unnamed hyperscaler, undisclosed pledge/ex-tariff EBITDA), and the call ADDED a governance-negative (Prysmian concealment). For a non-held AVOID name this is a positive-but-caveated monitoring update, **not** a re-entry event.
 
 **Combined protocol verdict: PROCEED WITH CAVEATS** (unchanged; the concall did not clear the INDETERMINATE cash conversion and added forward/governance flags — it cannot upgrade the verdict).
 
 **Position decision: AVOID at CMP / passive monitoring — UNCHANGED.** Refreshed entry/MoS zone **Rs178-222** (per the 2026-07-24 Role 1) — CMP ~Rs560 remains far above it; Hurdle Ratio 0.81/1.10 both < 1.953 STOP; prob-weighted 3-yr CAGR from Rs560 = -8.8%. No thesis-broken trigger fired; no pre-committed BUY gate met; the concall's upgraded guidance does NOT auto-fire the confirm gate on a quality basis. Decision remains human; A4 flags only.
 
 ### Watchpoints for next quarter (Q2 FY27)
-Single cleanest resolver (carried from Role 4 Step 8C, sharpened by the call): **operational, ex-tariff EBITDA margin sustained ≥21% AND a positive H1 CFO/EBITDA ≥75%** — the two undisclosed levers behind the 23% guide. Plus: name the hyperscaler (#9), promoter pledge (#8), Prysmian appeal outcome (trigger #4), and whether the 23%/50%/attach walk is delivered or the archetype flips to OVERPROMISER.
+Single cleanest resolver (carried from Role 4 Step 8C, sharpened by the call): **operational, ex-tariff EBITDA margin sustained ≥21% AND a positive H1 CFO/EBITDA ≥75%** — the two undisclosed levers behind the 23% guide. Plus: the **attach-rate >20% print** (the earliest OVERPROMISER-vs-delivery tell, vs the +1pp/yr base); name the hyperscaler (#9); promoter pledge (#8); Prysmian appeal outcome (trigger #4); and whether the 23%/50%/attach walk is delivered or the archetype flips to OVERPROMISER.
 
 ---
 
-*Role 5 concall reviewed 2026-07-25 | Source: extract_concall_stltech_q1fy27.txt (verbatim transcript, call held 24-Jul-2026). Merged with Role 4 results+presentation review (review_stltech_q1fy27.md, 2026-07-24). Peer concall cross-check: none in ±4-week window this run.*
+*Role 5 concall reviewed 2026-07-25 | Source: extract_concall_stltech_q1fy27.txt (verbatim transcript, call held 24-Jul-2026). Merged with Role 4 results+presentation review (review_stltech_q1fy27.md, 2026-07-24). A5 adversary graft (attach-rate credibility test) incorporated 2026-07-25. Peer concall cross-check: none in ±4-week window this run.*
 
 ```yaml
 stage: A4-analyst
@@ -497,12 +509,13 @@ concall:
   credibility_ratio_pct: 66.7
   credibility_basis: "this-call baseline, self-asserted; trailing-4 not yet computable (first concall under protocol)"
   role1_track_record_input: "Good"
-  archetype: "COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift risk"
-  specificity_ratio: 0.71        # statements-made basis; 0.43 including 9 refusals as unquantified
+  archetype: "COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift risk (reinforced by attach-rate stretch)"
+  specificity_ratio: 0.71        # statements-made basis; 0.43 including 9 refusals as unquantified; several targets lack a quantified mechanism (attach, mix)
   defensive_phrase_count: 9
   qa_response_distribution: {A: 1, B: 9, C: 8, D: 1, E: 4}
   refusals: 9
   prior_questions_answered: {answered_specifically: 0, partially: 5, not_addressed: 6}
+  attach_rate_stretch: "demonstrated +1pp/yr (15%->16%, L39) vs guide +4pp next-qtr (>20%) / +9pp by Q4 (25%) = 4x-9x accel, no mechanism; reclassified STRETCH; feeds 23% margin leg"
   net_thesis_impact: "Maintained"
   position_decision: "AVOID / passive monitoring UNCHANGED (entry zone Rs178-222)"
 questions_for_management:
@@ -511,6 +524,7 @@ questions_for_management:
   - {q: "Bridge Rs500cr/yr capex to Rs16,390cr parked order book; quarter-by-quarter execution schedule.", from_finding_id: ["FND-03"]}
   - {q: "Name the $1.1bn hyperscaler; FY27/28/29 phasing; attach rate at Q1 exit vs >20%/25% walk.", from_finding_id: ["FND-04"]}
   - {q: "Operational ex-tariff EBITDA margin; reconcile to 20.8% reported and 23% guide; embedded tariff tailwind?", from_finding_id: ["FND-01","FND-06"]}
+  - {q: "Reconcile +1pp/yr demonstrated attach pace (15%->16%, L39) with +4pp-next-qtr (>20%) / +9pp-by-Q4 (25%) guide: specific mechanism (Concat ramp volumes / named customers / pricing) and exact attach rate exiting Q1?", from_finding_id: ["FND-01","FND-06"]}
   - {q: "DC-only vs enterprise split; like-for-like mix walk 22/25/27/30 -> 50%; is 50% a definitional recut?", from_finding_id: ["FND-02"]}
   - {q: "Promoter pledge %; H1 CFO/EBITDA; ex-QIP ex-restricted net debt at 30-Jun.", from_finding_id: ["FND-07"]}
   - {q: "Discontinued/demerged SI op: revenue, EBITDA drag, disposal status excluded from 'continued operations'.", from_finding_id: ["FND-07"]}
@@ -520,7 +534,7 @@ questions_for_management:
 monitorables:
   - {item: "EBITDA margin to 23% (raised from 20% delivered Q1) - verify ex-tariff sustainability", implied_date: "FY27 exit", source_ref: "turns 12,73 / L41,L165"}
   - {item: "DC+enterprise mix to ~50% (from 30%); force DC-only vs enterprise split", implied_date: "FY27", source_ref: "turns 13,42 / L43,L103"}
-  - {item: "Attach rate >20% next qtr, 25% by Q4FY27 (16% now)", implied_date: "Q2 and Q4 FY27", source_ref: "turns 11,44,73 / L39,L107,L165"}
+  - {item: "Attach-rate walk >20% Q2 / 25% Q4 - STRETCH: demonstrated pace only +1pp/yr (15->16%) vs +4-9x guide, no mechanism; watch the >20% Q2 print; feeds 23% margin leg", implied_date: "Q2 and Q4 FY27", source_ref: "turns 11,44,73 / L39,L107,L165; rows 35-37"}
   - {item: "Net debt free during FY27 - verify ex-QIP ex-restricted; no ratio path given", implied_date: "FY27", source_ref: "turns 14,71 / L45,L161"}
   - {item: "Capex ~Rs500cr/yr x3 vs Rs16,390cr parked order book (capacity/conversion risk)", implied_date: "FY27-FY29", source_ref: "turn 52 / L123"}
   - {item: "US plant $100M/5yr; capacity number deferred to next quarter", implied_date: "Q2 FY27 update / ~FY31 spend", source_ref: "turns 63,65 / L145,L149"}
@@ -532,13 +546,14 @@ monitorables:
 flags:
   - "Prysmian US$101.25M loss / live Fourth-Circuit appeal (thesis-broken #4) CONCEALED on call behind the Fujikura win - governance-negative (FND-09); second such concealment would trigger auto one-grade downgrade"
   - "23% EBITDA guide RAISED on FLAT gross margin under input-cost 'significant multiples' + pass-through only 'up to a certain level' - forward margin downside (FND-01/05)"
+  - "ATTACH-RATE STRETCH: guide needs +4pp next quarter (>20%) and +9pp by Q4 (25%) off a demonstrated +1pp/yr pace (15%->16%, L39) = 4x-9x acceleration with NO quantified mechanism; attach is a named leg of the 23% margin guide, so this is a direct risk to that guide, not a clean positive (6D; rows 35-37)"
   - "9 refusals/evasions on the verifiable levers (revenue, utilization, realization, margin split, connectivity/digital split, germanium terms, order size) - hedge-heavy; opacity on exactly the 23%/50% inputs (FND-06)"
   - "$1.1bn hyperscaler still UNNAMED - monitor #9 RED persists (FND-04)"
   - "Rs16,390cr (~88% of order book) parked 'Q3 & beyond' vague timing vs only Rs500cr/yr capex; capacity-constrained 'pick and choose' - conversion/execution risk (FND-03)"
   - "NA revenue 39%->54% framed as 'reduces concentration risk' - rising single-geography + US/India tariff exposure (FND-08)"
   - "Cash conversion still INDETERMINATE - no CFO number on call (S3); caps verdict at PROCEED WITH CAVEATS"
   - "Promoter/Chairman ABSENT from a record-quarter call - candour yellow flag; marquee QIP subscribers (Nomura/HSBC/Motilal/BoI) asked no questions"
-  - "Management credibility Grade B (66.7%, self-asserted baseline); archetype COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift - flips to OVERPROMISER on a single Q2 miss"
+  - "Management credibility Grade B (66.7%, self-asserted baseline); archetype COMMITTED & CREDIBLE (provisional) with OVERPROMISER-drift - REINFORCED by the attach-rate stretch (third promotable ratio stepped up without a bridge); flips to OVERPROMISER on a single Q2 miss (>20% attach print is the earliest tell)"
   - "0 of 11 prior Questions-for-Management fully answered (5 partial, 6 not addressed); Prysmian (highest priority) concealed"
   - "Decision Status AVOID/passive-monitoring UNCHANGED; concall upgraded guidance does NOT clear the Role 1 confirm gate on a quality basis; entry zone Rs178-222"
 review_path: "/home/user/inflection-pipeline/runs/stltech-q1fy27/work/review_role5_concall_stltech_q1fy27.md"

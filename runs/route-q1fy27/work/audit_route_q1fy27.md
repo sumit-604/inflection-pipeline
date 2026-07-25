@@ -1,211 +1,182 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — Route Mobile Limited (ROUTE), Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — Route Mobile Limited (ROUTE) — Q1 FY27
 
-Agent: A5 ADVERSARY (Opus 4.8) | Fresh context: A4 review + A1 extracts + A2 ledgers only.
-Method: independent re-enumeration (fresh grep/sweep), independent recomputation of every derived
-metric from raw extracted numbers, adversarial read on the three most positive claims.
-Units re-derived at source: results Crores (x1), presentation Millions (x0.1 to Cr), pressrelease
-Crores (x1). All cross-document ties re-checked under those conventions.
-
----
-
-## AUDIT 1 — COVERAGE
-
-Fresh enumeration walked each extract top-to-bottom and was diffed against the three A2 ledgers.
-
-### 1A. Category counts (my fresh count vs A2 ledger)
-
-| Doc | Category | A2 count | My fresh count | Orphan rows (in ledger, absent from A4) | Status |
-|---|---|---|---|---|---|
-| results | notes (12 consol[9+3] + 10 standalone[9+1]) | 22 | 22 | none material | PASS |
-| results | line_items (ConsolA 39 + SegB 21 + StdA 22 + IPOx2 10 + forex 1 + divsub 1) | 94 | 94 | none | PASS |
-| results | zero_standing | 16 | 16 | none | PASS |
-| results | agenda_items | 4 | 4 | none | PASS |
-| results | auditor_paras (10 numbered + 4 continuation) | 14 | 14 | none | PASS |
-| results | entities (subsidiary list) | 33 | 33 | none (2 renames noted, immaterial) | PASS |
-| results | signature_blocks | 8 | 8 | none (Gupta/Shah/Mundra all referenced) | PASS |
-| results | annexures | 2 | 2 | none | PASS |
-| presentation | slides | 18 | 18 | none | PASS |
-| presentation | numbers (121 semantic rows / 381 tokens) | 381 | 381 | 2 minor (see 1C) | PASS w/ note |
-| presentation | zero_standing | 6 | 6 | none | PASS |
-| presentation | footnotes | 10 | 10 | 2 minor (see 1C) | PASS w/ note |
-| pressrelease | slides | 3 | 3 | none | PASS |
-| pressrelease | slide_numbers | 33 | 33 | none | PASS |
-| pressrelease | mgmt_claims_fwd_looking | 9 | 9 | none | PASS |
-| pressrelease | footnotes_disclaimers | 1 | 1 | none | PASS |
-| pressrelease | signatories_contacts | 2 | 2 | none | PASS |
-
-Every A2 count reproduced token-for-token on my fresh pass. No row exists in my fresh pass that
-the ledger lacks (no A2 loop-back). The A4 A2-reconciliation preamble (review L12-24) correctly
-restates 22 notes / 94 line_items / 16 zero_standing / 4 agenda / 14 auditor_paras / 33 entities
-and 18+3 slides; gate_a2 pass is confirmed independently.
-
-### 1B. Material ledger rows traced into A4 (no orphans among the load-bearing rows)
-
-- Consol P&L (all 39 rows) → Step 1.1, fully carried. Segment table (21 rows) → Step 4b (India
-  -4.00, overseas 85.67, assets/liabilities incl. overseas liabilities -Rs 242 Cr YoY). Standalone
-  (22 rows) → Step 1.2 / 4b.
-- IPO utilisation (Rs 65 Cr unutilised) → C-4. QIP Rs 867.50 Cr → C-5. Forex note → C-6.
-  Exceptional 7a/7b → C-7a/b. Dividend → C-8. Re-grouping → C-9. Dividend-from-subs Rs 4.22 → S-7.
-  Cash-flow-hedge OCI (3.80) → "Consol A OCI" note. FCTR (16.27 vs 52.95) → monitorables.
-- Auditor reliance (24 component-audited subs Rs 660.94 Cr / Rs 24.19 Cr; 11 foreign; 7 unreviewed
-  Rs 1.12 Cr / Rs 0.02 Cr) → Auditor-opinion check + AMBER data-reliance flag. ESOP lapses
-  (1,250 + 22,000) → 0C / checklist 12 / Q10. AGM, dividend record date, insider window → monitorables.
-- Deck: revenue/GP/Adj-EBITDA/Adj-PAT charts, billable txns, new products, net cash Rs 1,345 Cr,
-  Top-10 43%, partnerships (Truecaller/Konera/MWC), RCS "Coming Soon" → all carried (Steps 2/3/5/6,
-  Section B claims inventory, monitorables).
-- Press release: all 9 mgmt claims → Section B R5 Step 1 inventory (10 claims incl. 2 deck).
-  NO_SAFE_HARBOR_DISCLAIMER → R5 0D / Step 7. UNSPECIFIED_MARKET_FACTORS → heavily covered.
-  NO_PRIOR_MARGIN_COMPARATOR (7.94% PBT margin) → covered. ROLE_NOT_STATED (media contact) → trivial.
-
-### 1C. Minor coverage notes (NON-BLOCKING — theme incorporated, specific datapoint not cited)
-
-Two enumerated presentation rows carry a signal whose SUBSTANCE A4 incorporates but whose specific
-figure A4 does not cite. Neither is a thesis-changing orphan, so neither blocks save; both are
-recommended additions rather than FAILs:
-
-- Slide 17 HR (ledger R118/R119): "35 New Employees joined / 60 Employees left in Q1 FY26-27"
-  (net headcount -25 on a 783 base, excl. Call2Connect). A4 covers attrition via the ESOP-cessation
-  lapse (checklist 12 / Q10) but does not cite the direct net-attrition datapoint. Recommend A4 add
-  the 60-left/35-joined figure as corroboration of the attrition flag it already raised.
-- Slide 11 footnotes (ledger R67/R68 = F2/F3): "Top 50 countries c. 86% of revenue" and "Top 150
-  customers c. 92% of revenue." A4 covers concentration via Top-10 43% (GREEN) and the single
-  large-account traffic drop (item 7 AMBER); the broader 86%/92% figures are not cited. See
-  Audit 3, claim 3.
-
-COVERAGE VERDICT: PASS. No material orphan rows; no rows missing from the ledger. gate_a2 confirmed.
+Agent: A5 ADVERSARY (Opus 4.8). Fresh context: A4 review + A1 extracts + A2 ledgers only.
+Enumeration re-run independently; every derived metric recomputed from raw extract numbers; A4's and
+A3's cites checked, not trusted. This cycle includes the concall (full Role 5).
+Units re-derived at source: results Crores (x1), presentation Millions (x0.1), pressrelease Crores
+(x1), concall Millions (x0.1; ASR auto-transcript). Verdict set: COMPLETE | INCOMPLETE.
 
 ---
 
-## AUDIT 2 — ARITHMETIC
+## AUDIT 1 — COVERAGE (fresh grep/sweep vs A2 ledger; then A4-citation check)
 
-Every derived metric in A4's tables recomputed from raw extracted line items. Cross-document ties
-recomputed under the mixed unit conventions (deck mn x0.1 to Cr). Sample of the full recheck below;
-ALL A4 values reproduced within rounding.
-
-### 2A. Consolidated derived metrics (results L304-369)
-
-| Metric | A4 value | Recomputed | Source lines | Status |
+| Category | A2 count | My fresh count | Orphan rows | Status |
 |---|---|---|---|---|
-| Gross profit Q1FY27 (Rev-COGS) | 240.44 | 1,151.51-911.07 = 240.44 | L304,L309 | MATCH |
-| Gross margin Q1FY27 | 20.88% | 240.44/1,151.51 = 20.88% | L304,L309 | MATCH |
-| Gross margin Q1FY26 | 21.42% | 225.07/1,050.83 = 21.42% | L304,L309 | MATCH |
-| Operating EBITDA Q1FY27 (PBT+D+FC-OI) | 105.48 | 91.47+23.71+1.36-11.06 = 105.48 | L317,L312,L311,L305 | MATCH |
-| Op EBITDA margin Q1FY27 | 9.16% | 105.48/1,151.51 = 9.16% | — | MATCH |
-| Op EBITDA Q1FY26 | 93.90 | 76.57+22.48+5.82-10.97 = 93.90 | L317,L312,L311,L305 | MATCH |
-| Reported EBITDA Q1FY27 (PBT+D+FC) | 116.54 | 91.47+23.71+1.36 = 116.54 | — | MATCH |
-| Core PBT ex-OI Q1FY27 | 80.41 | 91.47-11.06 = 80.41 | L317,L305 | MATCH |
-| Effective tax rate Q1FY27 | 25.06% | 22.92/91.47 = 25.06% | L326,L321 | MATCH |
-| ETR Q4FY26 | 17.84% | 24.84/139.27 = 17.84% | L326,L321 | MATCH |
-| Current-tax-only rate Q1FY27 | 30.24% | 27.66/91.47 = 30.24% | L324,L321 | MATCH |
-| PAT margin Q1FY27 | 5.95% | 68.55/1,151.51 = 5.95% | L329,L304 | MATCH |
-| Other income / PBT Q1FY27 | 12.09% | 11.06/91.47 = 12.09% | L305,L321 | MATCH |
+| Results — notes | 22 | 22 (consol 9 + std 9 main + 4 sub-lettered: consol 4a/7a/7b, std 4a) | none | PASS |
+| Results — line_items | 94 | 94 (ConsolA 39 + SegB 21 + StdA 22 + IPOx2 10 + forex 1 + divsub 1) | none | PASS |
+| Results — zero_standing | 16 | 16 | none | PASS |
+| Results — agenda_items | 4 | 4 (results, AGM, ₹4 dividend, ESOP lapse) | none | PASS |
+| Results — auditor_paras | 14 | 14 (consol 6 numbered + 4 continuation; std 4 numbered) | none | PASS |
+| Results — entities | 33 | 33 (Annexure I L251-284; ties note C-1 "33 subsidiaries") | none | PASS |
+| Results — signature_blocks | 8 | 8 (Shah + Mundra x2 + Gupta x5) | none | PASS |
+| Results — annexures | 2 | 2 | none | PASS |
+| Presentation — slides | 18 | 18 | none | PASS |
+| Presentation — numbers | 121 rows / 381 tokens | 121 / 381 (row & token sub-sums reconcile) | none | PASS |
+| Presentation — zero_standing | 6 | 6 (all slide 16) | none | PASS |
+| Presentation — footnotes | 10 | 10 | none | PASS |
+| Press release — slides | 3 | 3 | none | PASS |
+| Press release — numbers | 33 | 33 | none | PASS |
+| Press release — mgmt_claims | 9 | 9 | none | PASS |
+| Press release — disclaimer / signatories | 1 / 2 | 1 / 2 | none | PASS |
+| Concall — participants | 9 (+1 absentee) | 9 in-transcript + MD absentee (MGMT_ABSENCE) | none | PASS |
+| Concall — turns | 91 | 91 (even lines 24-204: (204−24)/2+1 = 91) | none | PASS |
+| Concall — questions | 37 | 37 (Divy 2 + Bharat-r1 7 + Deep Ma 10 + Amit 6 + Kevin 6 + Bharat-r2 6) | none | PASS |
+| Concall — mgmt_numbers | 34 | 34 | none | PASS |
+| Concall — forward_commitment | 35 | 35 | none | PASS |
+| Concall — hedge_phrases | 20 | 20 | none | PASS |
 
-### 2B. Consolidated YoY (Step 2) and QoQ (Step 3)
+**Rows my fresh pass found that the ledger lacks (missing_from_ledger):** none. No atomic row in any
+of the four extracts is absent from the A2 ledgers.
 
-| Metric | A4 value | Recomputed | Status |
-|---|---|---|---|
-| Revenue YoY | +9.58% | (1,151.51-1,050.83)/1,050.83 = +9.58% | MATCH |
-| Gross profit YoY | +6.83% | (240.44-225.07)/225.07 = +6.83% | MATCH |
-| Gross margin YoY | -54 bps | 20.88-21.42 = -0.54 pp | MATCH |
-| Operating EBITDA YoY | +12.33% | (105.48-93.90)/93.90 = +12.33% | MATCH |
-| Adj. EBITDA YoY (mgmt) | -5.60% | (108.93-115.39)/115.39 = -5.60% | MATCH |
-| Adj. EBITDA margin YoY | -150 bps | 9.5-11.0 = -1.5 pp | MATCH |
-| Finance costs YoY | -76.63% | (1.36-5.82)/5.82 = -76.63% | MATCH |
-| Core operating PBT YoY | +22.58% | (80.41-65.60)/65.60 = +22.58% | MATCH |
-| Reported PBT YoY | +19.46% | (91.47-76.57)/76.57 = +19.46% | MATCH |
-| PAT YoY | +16.62% | (68.55-58.78)/58.78 = +16.62% | MATCH |
-| EPS YoY | +17.63% | (9.94-8.45)/8.45 = +17.63% | MATCH |
-| Revenue QoQ | +1.82% | (1,151.51-1,130.90)/1,130.90 = +1.82% | MATCH |
-| PAT QoQ | -40.09% | (68.55-114.43)/114.43 = -40.09% | MATCH |
-| GM QoQ | -246 bps | 20.88-23.34 = -2.46 pp | MATCH |
+**A4-citation check.** A4's ledger-reconciliation preamble reproduces all four A2 count vectors
+EXACTLY (results 22/94/16/4/14/33/8/2; presentation 18/381-121/6/10; press release 3/33/9/1/2;
+concall 9+1/91/37/34/35/20) and asserts no ledger row is unreviewed. I traced the load-bearing rows:
+- Consol P&L (39), segment (21), standalone (22) → Steps 1/2/4b. IPO Rs 65 Cr unutilised, QIP Rs
+  867.50 Cr, forex note C-6, exceptional 7a/7b, dividend, re-grouping, subs-dividend Rs 4.22, cash-
+  flow-hedge OCI −3.80, FCTR 16.27 → all carried in Section A / QFM / monitorables.
+- Auditor reliance (24 component subs Rs 660.94/Rs 24.19 Cr; 11 foreign; 7 unreviewed Rs 1.12/Rs 0.02
+  Cr) → 0D + AMBER data-reliance flag. ESOP lapses (1,250 + 22,000) → 0C / checklist 12.
+- Concall task item 2 (91 turns / 37 Q / 34 numbers): all 37 questions individually rowed with turn
+  refs + response grades (Step 4A); all 34 mgmt numbers covered across Step 1, Step 5A, Step 7A; 35
+  forward + 20 hedge phrases consumed in Step 6B/6C counts; all 91 turns accounted for (T2-T4 Step 1,
+  T5-T88 Step 4A, operator/close Step 0C). MGMT_ABSENCE, ASR_MERGED_SPEAKERS, UNANSWERED_QUESTION
+  (Q14), REPEAT_QUESTION (7) all surfaced. No concall row orphaned.
+- Press release: 9 mgmt claims → R5 Step 1 inventory; NO_SAFE_HARBOR / UNSPECIFIED_MARKET_FACTORS /
+  NO_PRIOR_MARGIN_COMPARATOR (7.94% PBT margin) all covered; ROLE_NOT_STATED trivial.
 
-### 2C. Standalone + S-vs-C gap (Step 1.4 / Step 4b)
-
-| Metric | A4 value | Recomputed | Status |
-|---|---|---|---|
-| Standalone Op EBITDA Q1FY27 | 5.57 | 20.25+3.90+0.39-18.97 = 5.57 | MATCH |
-| Standalone Op EBITDA margin | 2.81% | 5.57/197.93 = 2.81% | MATCH |
-| Standalone core PBT ex-OI | 1.28 | 20.25-18.97 = 1.28 | MATCH |
-| Standalone OI/PBT Q1FY27 | 93.68% | 18.97/20.25 = 93.68% | MATCH |
-| Standalone PAT YoY | -46.86% | (16.16-30.41)/30.41 = -46.86% | MATCH |
-| Standalone Op EBITDA YoY | -65.5% | (5.57-16.14)/16.14 = -65.5% | MATCH |
-| S-vs-C gap Q1FY27 (subs % of std PAT) | 324.2% | (68.55-16.16)/16.16 = 324.2% | MATCH |
-| S-vs-C gap Q1FY26 | 93.3% | (58.78-30.41)/30.41 = 93.3% | MATCH |
-| Standalone share of group PAT Q1FY27 | 23.6% | 16.16/68.55 = 23.6% | MATCH |
-| India segment result Q1FY27 | -4.00 | L390 raw | MATCH |
-| Overseas segment result YoY | +65.0% | (85.67-51.92)/51.92 = +65.0% | MATCH |
-
-### 2D. PAT bridge (Step 4) — closes to the penny
-
-+GP 15.37, -Employee 9.03, +Other-exp 5.24, -D&A 1.23, +Finance 4.46, +OI 0.09 = +14.90 PBT change
-(= 91.47-76.57). Less tax 5.13 (22.92-17.79) = +9.77 PAT change (= 68.55-58.78). MATCH.
-
-### 2E. Cross-document / unit-convention ties and deck non-GAAP recon
-
-| Tie | A4 value | Recomputed | Status |
-|---|---|---|---|
-| Deck EBITDA 1,054.8 mn -> Cr vs results-derived Op EBITDA | 105.48 | 1,054.8 x 0.1 = 105.48 = PBT+D+FC-OI | MATCH |
-| Deck GP 2,404 mn -> Cr vs Rev-COGS | 240.44 | 2,404 x 0.1 = 240.4 ~= 240.44 | MATCH (rounding) |
-| Deck Adj. EBITDA recon | 1,089.3 mn | 1,054.8-28.1+49.0+13.6 = 1,089.3 | MATCH |
-| Adj. EBITDA add-backs in Cr | 4.90 / 1.36 / 2.81 | 49.0/13.6/28.1 mn x0.1 | MATCH |
-| Net cash 13,452 mn -> Cr | 1,345.2 | 13,452 x 0.1 | MATCH |
-| New products YoY (deck chart 830/945) | 13.9% | (945-830)/830 = 13.86% | MATCH |
-| New products QoQ (855/945) | 10.5% | (945-855)/855 = 10.53% | MATCH |
-| New products mix Q1FY27 | 8.2% | 945/11,515 = 8.21% | MATCH |
-| Billable txns YoY (39.3/45.8 bn) | +16.5% | (45.8-39.3)/39.3 = +16.54% | MATCH |
-| Realization/txn change | ~-6% | 0.2514 vs 0.2674 Rs/txn = -5.98% | MATCH |
-| PR PBT margin | 7.94% | 91.47/1,151.51 = 7.944% | MATCH |
-| Component-auditor revenue share | 57.5% | (660.94+1.12)/1,151.51 = 57.49% | MATCH |
-| Component-auditor PAT share | 35.3% | (24.19+0.02)/68.55 = 35.32% | MATCH |
-| Hurdle Ratio @12% CAGR | ~1.89 | (1.12)^3 x (17.9/13.3) = 1.405 x 1.346 = 1.891 | MATCH |
-| TTM EPS | ~39.4 | 37.94-8.45+9.94 = 39.43 | MATCH |
-
-ARITHMETIC VERDICT: PASS. Zero mismatches above rounding across consolidated, standalone, YoY, QoQ,
-the PAT bridge, the S-vs-C gap, deck non-GAAP reconciliation, and all mixed-unit cross-ties.
-
-Note (not an arithmetic error): two figures A4 cites are carried from Notion/A3 memory and are NOT
-in this cycle's extracts — the "~Rs 491 Cr goodwill pile (Rs 40 Cr already impaired on M.R.
-Messaging)" (Q12) and the "New Products mix 11.3% in FY26" comparator. A4 attributes both to
-memory/finding sources, does not present them as derived from the filing, and the current-quarter
-8.2% mix that IS derived reconciles exactly. Flagged as external-provenance, not a computation FAIL.
+**COVERAGE VERDICT: PASS.** No orphan rows; nothing missing from the ledger; A4 counts reproduce A2.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most positive A4 claims, strongest bear counter from the same text)
+## AUDIT 2 — ARITHMETIC (recomputed from raw extract numbers; A4 value vs recomputed vs source)
 
-### Claim 1 (most positive): "Revenue +9.58% YoY, above the 5-9% FY27 guide top; clears the +1.8% bull binary." (review L143, L276)
-Strongest bear counter from the extract: growth is bought with price, not won on value. Billable
-transactions rose +16.5% (39.3->45.8 bn, deck L392) but revenue rose only +9.58% and gross profit
-only +6.83% (240.44 vs 225.07) — realization/txn fell ~6% (Rs 0.267->0.251) and gross margin
-contracted -54 bps YoY / -246 bps QoQ (deck L408). QoQ revenue was only +1.82%.
-SURVIVES? NO — already fully incorporated by A4 (Step 2 diagnostic 1, Step 6D, Section C: "revenue
-grew slower than volume ... pricing/mix-compression tell"). No graft required.
+Raw consol anchors (Rs Cr): Rev 1,151.51/1,130.90/1,050.83/4,408.21 (L304); OI 11.06/27.85/10.97/54.09
+(L305); msg 911.07/866.99/825.76/3,400.90 (L309); emp 77.62/74.86/68.59/288.85 (L310); fin
+1.36/1.20/5.82/10.82 (L311); D&A 23.71/23.61/22.48/91.61 (L312); other exp 57.34/52.82/62.58/181.21
+(L313); PBT-pre-exc 91.47/139.27/76.57/488.91 (L317); PBT 91.47/139.27/76.57/353.04 (L321); tax
+22.92/24.84/17.79/96.10 (L326); PAT 68.55/114.43/58.78/256.94 (L329). Deck (mn x0.1): adj-EBITDA
+1,089.3/1,343.0/1,153.9 (L481); adj-PAT 685.5/1,144.3/587.8 (L492); reported-PAT 685.5/1,144.3/587.8 (L489).
 
-### Claim 2: "Net cash Rs 1,345 Cr — GREEN (>= Rs 800 Cr), balance-sheet strength; no leverage concern." (review L254-255, checklist 10)
-Strongest bear counter from the extract: (a) the figure is DECK-ONLY (L109) and unverifiable from
-the filing — Q1 carries no Reg-33 balance sheet or cash flow; (b) net cash fell ~Rs 44 Cr QoQ with
-no CFO to attribute the draw (cash conversion INDETERMINATE); (c) capital deployment is stalled —
-Rs 65 Cr IPO office-premises object unutilised ~6 years (note C-4, L447) and Rs 867.50 Cr QIP parked
-in FDs (C-5); (d) pending draws (Rs ~25 Cr dividend + undisclosed Heltar consideration).
-SURVIVES? NO — A4 already carries every leg (Step 5 INDETERMINATE + -44 Cr draw, Step 7 "UNVERIFIABLE
-from the filing," C-4 stalled deployment, C-5 parked QIP). No graft required.
+| Metric | A4 value | Recomputed | Source | Status |
+|---|---|---|---|---|
+| Gross profit Q1FY27 | 240.44 | 1,151.51−911.07 = 240.44 | L304/309 | MATCH |
+| Gross margin Q1FY27 / Q1FY26 | 20.88% / 21.42% | 240.44/1,151.51; 225.07/1,050.83 | derived | MATCH |
+| Operating EBITDA Q1FY27 (PBT+D+FC−OI) | 105.48 | 91.47+23.71+1.36−11.06 | L317/312/311/305 | MATCH |
+| Op EBITDA margin Q1FY27 | 9.16% | 105.48/1,151.51 | derived | MATCH |
+| Op EBITDA Q1FY26 | 93.90 | 76.57+22.48+5.82−10.97 | derived | MATCH |
+| Reported EBITDA Q1FY27 (PBT+D+FC) | 116.54 | 91.47+23.71+1.36 | derived | MATCH |
+| Core PBT ex-OI Q1FY27 | 80.41 | 91.47−11.06 | derived | MATCH |
+| OI/PBT Q1FY27 | 12.09% | 11.06/91.47 | derived | MATCH |
+| OI/PBT FY26 | 15.32% | 54.09/353.04 (reported-PBT basis) | L305/321 | MATCH (basis noted) |
+| Effective tax rate Q1FY27 | 25.06% | 22.92/91.47 | L326/317 | MATCH |
+| ETR FY26 | 27.22% | 96.10/353.04 (reported PBT) | L326/321 | MATCH |
+| Current-tax-only rate Q1FY27 | ~30% | 27.66/91.47 = 30.24% | L324/317 | MATCH |
+| PAT margin Q1FY27 | 5.95% | 68.55/1,151.51 | derived | MATCH |
+| Revenue YoY | +9.58% | 100.68/1,050.83 = 9.581% | derived | MATCH |
+| Gross profit YoY | +6.83% | 15.37/225.07 | derived | MATCH |
+| GM YoY / QoQ change | −54 bps / −246 bps | 20.88−21.42; 20.88−23.34 | derived | MATCH |
+| Operating EBITDA YoY | +12.33% | 11.58/93.90 | derived | MATCH |
+| Adj. EBITDA YoY | −5.60% | −6.46/115.39 | deck L481 | MATCH |
+| Adj. EBITDA margin YoY | −150 bps | 9.5−11.0 | deck L483 | MATCH |
+| Depreciation YoY | +5.47% | 1.23/22.48 | L312 | MATCH |
+| Finance costs YoY | −76.63% | −4.46/5.82 | L311 | MATCH |
+| EBIT (segment) YoY | +14.49% | 10.35/71.42 | L393-395 | MATCH |
+| Core operating PBT YoY | +22.58% | 14.81/65.60 | derived | MATCH |
+| Reported PBT YoY | +19.46% | 14.90/76.57 | L317 | MATCH |
+| PAT YoY | +16.62% | 9.77/58.78 | L329 | MATCH |
+| EPS YoY | +17.63% | 1.49/8.45 | L368 | MATCH |
+| Revenue QoQ | +1.82% | 20.61/1,130.90 | derived | MATCH |
+| Gross profit QoQ | −8.89% | −23.47/263.91 | derived | MATCH |
+| Adj. EBITDA QoQ | −18.9% | −253.7/1,343.0 = −18.89% | deck L481 | MATCH |
+| Adj. PAT QoQ (deck actual) | −40.0/−40.1% | −458.8/1,144.3 = −40.09% | deck L492/489 | MATCH |
+| Adj. PAT YoY | +16.6% | 97.7/587.8 = 16.62% | deck L492 | MATCH |
+| PAT QoQ | −40.09% | −45.88/114.43 | L329 | MATCH |
+| Standalone Op EBITDA Q1FY27 | 5.57 | 20.25+3.90+0.39−18.97 | L600/596/595/589 | MATCH |
+| Standalone Op EBITDA margin | 2.81% | 5.57/197.93 | derived | MATCH |
+| Standalone GM Q1FY27 | 23.32% | 46.16/197.93 | L588/593 | MATCH |
+| Standalone core PBT ex-OI | 1.28 | 20.25−18.97 | derived | MATCH |
+| Standalone OI/PBT Q1FY27 | 93.68% | 18.97/20.25 | derived | MATCH |
+| Standalone PAT YoY | −46.86% | −14.25/30.41 | L607 | MATCH |
+| S-vs-C gap Q1FY27 / Q1FY26 / Q4FY26 / FY26 | 324.2/93.3/178.8/90.6% | 52.39/16.16; 28.37/30.41; 73.38/41.05; 122.16/134.78 | derived | MATCH |
+| Standalone share of group PAT Q1FY27 | 23.6% | 16.16/68.55 = 23.57% | derived | MATCH |
+| India segment result Q1FY27 (was +19.58) | −4.00 | L390 raw | L390 | MATCH |
+| Overseas segment YoY | +65.0% | 33.75/51.92 | L391 | MATCH |
+| OPEX growth YoY (7A) | +2.9% | (134.96−131.17)/131.17 = 2.89% | L310/313 | MATCH |
+| Volume YoY / realization per txn | +16.5% / ~−6% | 6.5/39.3 = 16.54%; −5.97% | deck L392 | MATCH |
+| New products YoY / QoQ / mix | 13.9% / 10.5% / 8.2% | 115/830; 90/855; 945/11,515 | deck L273/398 | MATCH |
+| Net cash | Rs 1,345.2 Cr | 13,452 mn × 0.1 | deck L109 | MATCH |
+| Deck EBITDA / GP tie | 105.48 / 240.44 | 1,054.8×0.1; 2,404×0.1 | deck L472/L94-derived | MATCH |
+| Deck Adj-EBITDA recon | 1,089.3 mn | 1,054.8−28.1+49.0+13.6 | deck L472-481 | MATCH |
+| Component-auditor revenue / PAT share | 57.5% / 35.3% | 662.06/1,151.51; 24.21/68.55 | L184/207/304/329 | MATCH |
+| PR PBT margin | 7.94% | 91.47/1,151.51 = 7.944% | PR L78 | MATCH |
+| PAT bridge (Step 4) | +14.90 PBT / +9.77 PAT | +GP15.37 −Emp9.03 +OExp5.24 −D&A1.23 +Fin4.46 +OI0.09 = +14.90; less tax 5.13 = +9.77 | derived | MATCH |
 
-### Claim 3: "Top-10 customer concentration 43% — GREEN." (review L295, checklist 6)
-Strongest bear counter from the extract: the Top-10 cut understates concentration. The deck's own
-footnotes (slide 11, L327/L328) show Top-50 countries = c.86% and Top-150 customers = c.92% of Q1
-revenue, and a SINGLE large account's "transitory traffic reduction" (deck L412) was material enough
-to move group gross margin -246 bps QoQ. A 43% Top-10 that reads GREEN sits on a revenue base that is
-92%-dependent on 150 customers and demonstrably sensitive to one account.
-SURVIVES? NO (substance already incorporated), but with a NON-BLOCKING completeness recommendation.
-A4 already flags the single-account lumpiness (checklist item 7 AMBER) and the 35.3%-PAT /
-57.5%-revenue component-auditor concentration, so the concentration-risk SUBSTANCE is in the review
-and the GREEN on the specifically-defined Top-10 threshold (<=45%) is correct. The 86%/92% footnotes
-(ledger R67/R68) are the specific figures A4 did not cite; recommend A4 add them as corroboration to
-item 6/7. This does not change the verdict, the flag set, or the position decision, so it is a
-recommended addition rather than a surviving counter that blocks save.
+**Basis note (not a mismatch):** For the FY26 column A4 computes Core-PBT-ex-OI / Reported-EBITDA on
+PRE-exceptional PBT (488.91) and OI/PBT / ETR on REPORTED PBT (353.04, post −135.87 exceptional). Each
+ratio is defensible on its stated basis; the quarterly columns are unaffected (nil exceptional). No error.
 
-No bear counter survives as a thesis- or verdict-changing addition: A4's review is already
-symmetrically bearish and pre-incorporates the substance of all three counters.
+**Spoken-vs-filing conflict re-verification (task item 3).** CFO spoken "Adjusted PAT ... lower by
+14.1% sequentially" (ledger mgmt#25, T4 / concall L30). Deck adj-PAT 1,144.3→685.5 = **−40.09% QoQ**;
+reported PAT 114.43→68.55 = **−40.09% QoQ**. Spoken −14.1% ties to NEITHER; no figure anywhere in the
+extract reconciles to −14.1% (it is an ASR garble or a CFO misstatement). A4 flagged it correctly
+(Section 7A + Section C + flag list + QFM #3), ruled the filing/deck (−40%) governs, and logged the
+reconciliation question. Handling complete and correct.
+
+**ARITHMETIC VERDICT: PASS.** Every derived metric recomputes within rounding. Zero mismatches.
+
+---
+
+## AUDIT 3 — ADVERSARIAL READ (A4's three most-positive claims; strongest bear from the same extract)
+
+**Claim 1 — "Revenue +9.58% YoY clears the +1.8% bull binary; reads BULL" (Step 2 / Step 8).**
+Bear from the extract: growth is bought with price, not value. Volume +16.5% (39.3→45.8 bn, deck L392)
+against revenue +9.58% and GP +6.83% means realization/txn fell ~6% (Rs 0.267→0.251) and GM contracted
+−54 bps YoY / −246 bps QoQ. QoQ revenue only +1.82%; volume QoQ near-flat. All growth is Overseas
+(+65.0% segment result, L391); India swung to a −4.00 Cr operating LOSS (L390); standalone PAT −46.9%
+(L607); NRR is 98% (T5) — net contraction. The binary is revenue-only and cannot override the FAILED
+cap-5% GM gate (20.88% < 23%).
+SURVIVES unincorporated? **NO.** A4 already states volume +16.5% / realization −6% (Step 2 verdict),
+routes growth to Overseas with India at operating loss (Step 4b), flags NRR 98% (Step 5A), and rules
+the BULL binary "revenue-only ... does not override the failed GM gate" (Step 8). Fully present.
+
+**Claim 2 — "Management calls margin softness transient / 'restored in the coming quarter'" (Step 1 / PR).**
+Bear from the extract: the "transient" label is unfalsifiable and self-contradicted. The quantified GM
+bridge was REFUSED twice — "in terms of exact breakdown I'll need to just double check internally"
+(T53/L128). Management RECALIBRATED the operating band DOWN to "21.5 to 23% which we've been operating
+over the last five or six quarters" (T76/L174) — the 20.9% print is below even that floor and the 23%
+ceiling is below the 25% thesis destination. FY27 numeric guidance WITHHELD after the miss (T24/L70).
+Forex-neutral adj-EBITDA is −5.6% YoY (deck L481). The "restore next quarter" is a re-promise on a call
+where the one prior hard commitment (CLO go-live) already SLIPPED (T62/L146).
+SURVIVES? **NO.** A4 builds exactly this: exchanges 1-2, Grade C / EVASIVE archetype, GM-band-below-
+thesis flag, "Anchor to the filing, not the narrative" (Step 4C), guidance-withheld / bridge-refused
+flags. Fully present.
+
+**Claim 3 — "Cash-conversion shortfall is timing, not structural; reverts to 75-100%" (Step 5 / mgmt).**
+Bear from the extract: management's own words undercut "non-structural." CFO (T86/L86): the delayed
+collections are "in specific geographies largely India and UAE and it's not a one-off I mean we've had
+it in the past in instances" — a self-described RECURRING Q1 pattern, concentrated in the exact
+geography (India) already in segment operating loss. No DSO figure was given (deflected); there is no
+Reg-33 cash flow at Q1; net cash fell ~44 Cr QoQ; 75-100% is a forward PROMISE, not delivered data.
+SURVIVES? **NO (conclusion already held).** A4 caps the cash axis at INDETERMINATE → PROCEED WITH
+CAVEATS, refuses to credit the 75-100% promise ("a promise, not delivered data," Step 5 / 8D Pillar 2),
+and names the missing evidence (CFO/DSO/WC). The bear conclusion is fully embodied. The specific
+recurrence admission (T86, "not a one-off ... we've had it in the past") is not quoted verbatim in A4;
+since A4's cash conclusion is already maximally conservative, this adds emphasis, not a new finding —
+a NON-BLOCKING recommendation to surface the T86 phrase under the cash flag / QFM #15 at Q2, not a
+surviving counter that blocks save.
+
+No bear counter survives as a thesis- or verdict-changing addition: A4 is already symmetrically bearish
+and pre-incorporates the substance of all three counters.
 
 ---
 
@@ -213,18 +184,19 @@ symmetrically bearish and pre-incorporates the substance of all three counters.
 
 **COMPLETE.**
 
-- Coverage: every A2 ledger count reproduced independently; no material orphan rows; nothing in my
-  fresh pass is missing from the ledger. Two non-blocking specific-datapoint recommendations
-  (60-left/35-joined net attrition; Top-50=86% / Top-150=92% concentration footnotes) — themes
-  already incorporated by A4.
-- Arithmetic: zero mismatches above rounding across all consolidated/standalone/YoY/QoQ metrics, the
-  PAT bridge, the S-vs-C gap, deck non-GAAP reconciliation, and all mixed-unit cross-document ties.
-- Adversarial read: none of the three counters survive as verdict-changing; A4 pre-incorporates their
-  substance. The one completeness recommendation (concentration footnotes) is non-blocking.
+- Coverage: every A2 ledger count reproduced independently (results 22/94/16/4/14/33/8/2; presentation
+  18/121-381/6/10; press release 3/33/9/1/2; concall 9+1/91/37/34/35/20); no orphan rows; nothing in my
+  fresh pass is missing from the ledger. Every concall row (91 turns / 37 questions / 34 mgmt numbers)
+  is cited or reviewed in A4.
+- Arithmetic: zero mismatches above rounding across consolidated/standalone/YoY/QoQ metrics, the PAT
+  bridge, the S-vs-C gap, deck non-GAAP reconciliation, and all mixed-unit cross-document ties. The
+  −14.1% QoQ adj-PAT spoken figure is correctly flagged as conflicting with the −40% filing/deck actual
+  and reconciles to no extract figure.
+- Adversarial read: none of the three most-positive claims yields a surviving, verdict-changing bear
+  counter; A4 pre-incorporates the substance of all three. One optional, non-gating recommendation:
+  surface the T86 collection-recurrence quote under the cash flag.
 
-Proceeds to Notion save. Recommended (optional, non-gating) A4 additions before save: cite the
-60-employees-left net-attrition datapoint (deck slide 17) and the Top-150=92% / Top-50-countries=86%
-concentration footnotes (deck slide 11) as corroboration of flags A4 already raised.
+Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary

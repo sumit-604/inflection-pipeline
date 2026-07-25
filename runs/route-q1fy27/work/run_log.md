@@ -29,3 +29,13 @@ Branch: claude/route-mobile-quarterly-pkqpxv
 - A5: verdict COMPLETE (0 orphan rows, 0 arithmetic mismatches, 0 surviving bear counters).
 - Notion save: full review appended to page body; Key Notes prepended (4 entries, 3 prior preserved); Decision Status UNCHANGED. Saved value recorded in work/_keynotes_new.txt.
 - No thesis-broken trigger formally fired. Cap-5% gate FAILED on GM. Deferred RDE trim re-put to operator.
+
+## Concall addendum (2026-07-24, transcript supplied after initial run)
+- Concall transcript added as 4th document; run through A1-A5.
+- A1 concall: 204 lines verbatim, 100% coverage (text input, no OCR).
+- A2 concall: 9 participants (MD Gupta ABSENT), 91 turns, 37 questions, 34 mgmt numbers, 35 fwd-commitments, 20 hedges; count test reconciled.
+- A3 concall: F6/F7/F17 apply; 20 findings; F17 silence audit + commitment register; GATE A3 pass.
+- A4 v2: Role 5 now FULL. Credibility Grade C (Mixed, 41.7%); archetype EVASIVE (provisional). Prior-12 answer status: 0 answered / 5 partial / 3 dodged / 4 not addressed. Verdict UNCHANGED PROCEED WITH FLAGS; Decision Status UNCHANGED HELD 4%.
+- A5 v2: verdict COMPLETE (0 orphan / 0 arithmetic / 0 surviving bear counters).
+- Notion: concall addendum appended to page body; Key Notes prepended with concall entry (5 entries total, 4 prior preserved); Decision Status UNCHANGED. Written value recorded in work/_keynotes_new_v2.txt.
+- Key concall signals: GM band recalibrated down to 21.5-23% (below 25% thesis destination); FY27 numeric guidance withheld; GM bridge refused; Heltar consideration undisclosed; CLO go-live slipped; MD absent; CFO spoken -14.1% QoQ adj-PAT conflicts with filing -40% (filing wins).

@@ -476,6 +476,32 @@ folder.
 
 ---
 
+## 7A. RESUME FROM DISK AFTER COMPACTION OR RESET
+
+The authoritative state of a run is the files on disk, never this
+conversation. `outputs/blocks/B*.yaml`, `outputs/reports/`, and
+`outputs/final/` (including the deliberation record) hold every completed
+stage's output and every operator ruling. A context compaction or a
+container reset mid-run is therefore recoverable and never corrupts a
+handoff.
+
+On ANY resume — after a compaction, a container reset, or re-invoking the
+command on an in-progress run — re-derive progress from disk before
+launching another stage:
+
+- List `outputs/blocks/` to see which stages already have a block.
+- For each, confirm its report in `outputs/reports/` ends with a closed
+  ```yaml block (tail it). A stage whose block is missing, or whose report
+  has no closed block, is NOT done: re-run it, do not trust memory.
+- Never assume a number, a determination, or an operator ruling from
+  conversation memory; read it back from the block, the report, or the
+  deliberation file. If memory and the file disagree, the file wins.
+
+Only after this disk check do you launch the next stage. This codifies the
+recovery already practiced when a stage's completion notification is missed.
+
+---
+
 ## 8. CACHING LAYOUT AND COST
 
 Every stage prompt is ordered: [framework and rules, stable] then

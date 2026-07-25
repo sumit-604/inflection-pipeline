@@ -280,9 +280,13 @@ operator asks something outside the run's evidence (today's price, current
 sector multiples, macro), say so plainly and name what would be needed; do not
 guess or fabricate an anchor.
 
-Record every override the moment it happens: what the draft said, what the
-operator ruled, and the operator's stated reasoning in the operator's words.
-Keep answering and recording until the operator signs off.
+Record every override the moment it happens, to DISK and not only in this
+conversation: append it to outputs/final/fttcp-deliberation.md as it is made
+(what the draft said, what the operator ruled, and the operator's stated
+reasoning in the operator's words). The deliberation file accretes during
+review and is finalized at sign-off (below). Persisting each override as it
+happens means a mid-deliberation context compaction cannot lose an operator
+ruling. Keep answering and recording until the operator signs off.
 
 ## VALUATION PILLAR APPROVAL (mandatory operator gate — do not skip)
 
@@ -306,8 +310,9 @@ run Role 1; this gate only fixes and approves the base the valuation must use.
 
 ## SIGN-OFF — write the deliberation file
 
-When the operator signs off, write outputs/final/fttcp-deliberation.md. It
-carries:
+When the operator signs off, finalize outputs/final/fttcp-deliberation.md
+(it already exists if any override was recorded during review; complete and
+reconcile it now). It carries:
 - The final rulings as they stand after review (the draft's rulings plus every
   change).
 - Every operator override, each with the draft determination, the operator's

@@ -56,7 +56,8 @@ Read, in this order:
    Pillar authority the FTTCP verdict hands off to, and the source of truth
    for the sector cap table.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
-4. LESSONS.md — operational memory read at every session start.
+4. LESSONS_ACTIVE.md — the lean head of operational memory (patterns, laws,
+   ~10 latest entries) read at session start. The full archive is LESSONS.md.
 5. The run folder's manifest.yaml — company, ticker, cmp, run_type,
    sector_cap_row, concalls_available.
 6. Every file in the run folder's outputs/blocks/ — the YAML handoff blocks
@@ -329,9 +330,9 @@ requires before Phase 3 can run; it does not exist until the operator signs
 off, so do not write it early. The OPERATOR-APPROVED VALUATION PILLARS block is
 mandatory in it — /finalize refuses to run the valuation without it.
 
-Commit the deliberation file and push (same retry policy). Append one dated
-line to LESSONS.md per the MEMORY rule: what broke or dragged this session, or
-"clean run" if nothing.
+Commit the deliberation file and push (same retry policy). Per the MEMORY
+rule: append one dated line to LESSONS.md (what broke or dragged this session,
+or "clean run" if nothing), then regenerate LESSONS_ACTIVE.md from LESSONS.md.
 
 ## NEVER, in this command
 - Never ask the operator anything before the draft is printed.

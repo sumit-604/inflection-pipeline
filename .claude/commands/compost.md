@@ -44,5 +44,9 @@ each applied fix:
 - append a dated entry under PROMOTED TO LAW in LESSONS.md naming the file
   and the change (never delete existing entries).
 
+After applying approved promotions, regenerate LESSONS_ACTIVE.md from
+LESSONS.md (its RECURRING PATTERNS and PROMOTED TO LAW sections change here)
+so the lean head the pipeline commands read stays current.
+
 Do not commit or push unless the operator asks. Report what was applied and
 what was left for a future pass.

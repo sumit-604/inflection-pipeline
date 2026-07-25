@@ -35,13 +35,21 @@ Do not upgrade a stage's model without editing its agent file.
 - "flag" = surfaced prominently in the verdict, decision stays human
 
 ## MEMORY
-/run-pipeline, /fttcp, /finalize, and /compost sessions read LESSONS.md at
-start (it carries operational run history and is ~18k tokens; lighter sessions
-that do not touch pipeline operations skip it to keep context lean). Every
-/run-pipeline, /fttcp, and /finalize session appends one dated entry at close:
-what broke or dragged this run, in one line each; write 'clean run' if nothing.
-Never delete
-entries; promotion to a prompt file gets noted under PROMOTED TO LAW.
+Operational memory is split: LESSONS.md is the full permanent archive;
+LESSONS_ACTIVE.md is a lean regenerated head (RECURRING PATTERNS + PROMOTED
+TO LAW + the ~10 most recent entries, ~5k tokens). /run-pipeline, /fttcp, and
+/finalize sessions read LESSONS_ACTIVE.md at start (not the full archive) to
+keep context lean; /compost reads the full LESSONS.md. Lighter sessions that
+do not touch pipeline operations read neither.
+
+Every /run-pipeline, /fttcp, and /finalize session, at close: (1) appends one
+dated entry to LESSONS.md — what broke or dragged this run, in one line each;
+write 'clean run' if nothing; (2) regenerates LESSONS_ACTIVE.md from LESSONS.md
+(copy RECURRING PATTERNS and PROMOTED TO LAW, plus the ~10 most recent dated
+entries, newest complete runs, never splitting a run). LESSONS_ACTIVE.md is a
+view only, never authored by hand; if it ever drifts, the archive wins and it
+is regenerated. Never delete archive entries; promotion to a prompt file gets
+noted under PROMOTED TO LAW in LESSONS.md.
 
 Per-company memory lives in companies/<TICKER>.md, written or updated at
 /finalize close and read as COMPANY MEMORY by /run-pipeline stage 0 and by
@@ -58,8 +66,11 @@ weigh, never anchored evidence.
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
-- LESSONS.md     operational memory, read by pipeline commands at start,
-                 appended at close
+- LESSONS.md     operational memory, full permanent archive; appended at
+                 close, read in full by /compost
+- LESSONS_ACTIVE.md  lean regenerated head of LESSONS.md (patterns + laws +
+                 ~10 latest entries), read at start by /run-pipeline, /fttcp,
+                 /finalize; a view only, never hand-authored
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
 - /run-quarterly TICKER --docs ...   quarterly review pipeline (Role 4/5):

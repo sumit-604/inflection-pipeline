@@ -1,0 +1,1041 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_tatapower_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 19
+formfeed_count: 19 (one [page N] marker per page; poppler unavailable in env, formfeeds emulated by page markers)
+line_count: 1026
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1  (statement header reads "(~ crore)" where ~ is the mis-rendered Rupee sign)
+ocr_pages: none (text layer healthy on all pages; low-text pages are title/divider slides, listed below)
+low_text_pages(<100 chars): none
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended 30-Jun-2026)
+extraction_date: 2026-07-27
+extraction_tool: PDFium (pypdfium2) with custom layout reconstruction; poppler/pdftotext NOT installable in this environment (apt 404). Spatial layout preserved via char-box clustering, y_tol=8.0. Numbers verified aligned to row labels on financial-statement pages.
+=== END HEADER ===
+    1| [page 1]
+    2|                                                                                                                                                    July 27, 2026
+    3|  BSE Limited                                                                                National Stock Exchange of I ndia Limited
+    4| Corporate Relationship Department                                           Exchange Plaza, 5th Floor
+    5|  1 st Floor, New Trading Ring                                                        Plot No. C/1 , G Block
+    6|  Rotunda Bldg . , P. J . Towers                                                       Bandra-Kurla Complex
+    7|  Dalal Street, Fort                                                                         Bandra (East)
+    8|  Mumbai – 400 00 1 .                                                                     Mumbai – 400 05 1 .
+    9| Scrip Code: 500400                                                                    Symbol : TATAPOWER
+   10| Dear Sir/Madam ,
+   11|                                             Outcome of the Board Meeting – July 27, 2026
+   12| I n terms of  Reg ulations  30,  33 and 52  of the SEBI  (Listing Obligations and  Disclosure  Requirements)
+   13| Regulations, 20 1 5, as amended , we forward  herewith the Audited  Standalone  Financial  Results along
+   14| with the Auditor's Report and U naudited Consolidated Financial Results along with Limited Review Report
+   15| of the Company for the quarter ended June 30, 2026, which were approved and taken on record by the
+   16| Board of Directors of the Company at its meeting held today.
+   17| The Board Meeting commenced at 2 :00 p. m. (IST) and concluded at 4: 1 5 p. m. (IST).
+   18| The Trad ing Window for the  Company’s shares was closed from Wednesday, J une 24, 2026  and will
+   19| open from Thursday, Ju ly 30, 2026.
+   20| The   above   announcements   are   also   being   made   available   on   the   Company's   website   at
+   21| www.tatapower.com.
+   22| This is for your information and record .
+   23|                                                                                                                                               Yours Sincerely,
+   24|                                                                                                        For The Tata Power Company Limited
+   25|                                                                                                                                                    Vispi S. Patel
+   26|                                                                                                                                         Company Secretary
+   27|                                                                                                                                                         FCS 702 1
+   28| Encl : As above
+   29| 
+   30| [page 2]
+   31| SR   B C &   C OL L P                                                                       1 2th Floor, The  Ruby
+   32|                                                                                                                                 29 Senapati Bapat Marg
+   33| Chartered Accountants                                                                                                   Dadar  (West)
+   34|                                                                                                                                    Mumbai -   400 028, India
+   35|                                                                                                                                    Tel:  +9 1 22 681 9 8000
+   36|      I ndependent Aud ito r's Review  Report on the Quarte rly U naudited Consol idated Financial  Results of th e
+   37|      Company   Pu rsuant  to  the  Regu lation  33  and   52  of  the  SEBI   ( Listi ng  Obl igations  and   Disclosu re
+   38|      Req u i rements) Regu lations, 20 1 5 , as  amended
+   39|      Review  Report to
+   40|      The  Board of D i rectors
+   41|      The Tata  Power Company Li m ited
+   42|      1 .    We  have  reviewed the  accompanying  Statement of  Unaudited  Consolidated  Financia l  Results  of The
+   43|             Tata  Power Company  Limited (the " Holding Company") and  its subsidiaries (the Holding Company and
+   44|             its subsidiaries togethe r referred to as  "the G roup") ,  its associates and joi nt ventu res fo r the q uarte r
+   45|             ended J u ne 30 , 2026  (the " Statement") attached herewith ,  being subm itted by the Holding Company
+   46|             pu rsuant to the  requi rements of Regulation 33 and  52 of the SEBI  ( List ing  Obligations and  Disclosure
+   47|             Requi rements)  Regulations,  20 1 5 , as amended  (the " Listi ng  Regulations") .
+   48|      2.    The   Holding   Company's   Management   is   responsible   fo r  the   preparation   of  the   Statement   in
+   49|             accordance with the recogn ition and  measurement principles laid down in  Indian Accounting Standard
+   50|             34,  (Ind  AS  34)  " I nte ri m  Financial  Reporting"  prescribed  under  Section  1 33  of the  Companies  Act,
+   51|             20 1 3 as amended,  read with  relevant rules issued thereu nder, including the relevant provisions of the
+   52|             E lectricity  Act,  2003  and  the  rules  issued  thereu nder  and  othe r  accounting   principles  generally
+   53|             accepted  in   India  and   in  compliance  with  Regulation  33  and  52  of  the  Listing   Regulations.  The
+   54|             Statement  has  been  approved  by the  Holding  Company's  Board  of  D i rectors . Our  responsib i l ity is to
+   55|             express a conclusion on the Statement based  on  ou r review.
+   56|      3.    We  conducted  ou r review of the Statement in accordance with the Standard  on  Review  Engagements
+   57|             (SRE)  24 1 0 ,  " Review  of  I nteri m  Financial  I nformation  Performed  by  the  I ndependent Aud itor of the
+   58|             Ent ity" issued  by the  I nstitute of Chartered  Accountants of India. This standard  requires that we  plan
+   59|             and  perform the review to obtain moderate assurance as to whether the Statement is free of mate rial
+   60|             misstatement.  A  review  of  i nteri m  financial  i nformation  consists  of  making  inquiries,  pri mari ly  of
+   61|             persons  responsible  fo r financial  and  accounting  matters,  and  applying  analytical  and  othe r  review
+   62|             procedures.  A  review  is  substantial ly  less  in  scope  than  an  audit  conducted   in  accordance  with
+   63|             Standards on Auditing and consequently does not enable us to obtain assurance that we would become
+   64|             aware of all sign ificant matte rs that might be  identified in an audit. Accordingly, we do  not express an
+   65|             audit opinion .
+   66|             ·'.· . . .   .  _.:   ,:~;-~;:,;  med  procedure: ;  : ::  ,. ,c(.J :"c ' s   ( ri  with  t :-: 2  Master  Circula, · :ss,JE>·    :. : ·,  '.: ·.  .::  S2cu rit ies  and
+   67|             Exchange  Board  of India  u nder Regulation 33(8) of the Listing  Regulations,  to the extent applicable.
+   68|      4.    The  Statement includes the results of the entities as  mentioned  in An nexu re  1
+   69|      5.    Based  on  ou r review conducted and  procedures performed as stated  in  paragraph 3 above and  based
+   70|             on the consideration  of the  review/ audit  reports of othe r auditors  referred to  in  paragraph  7  and  8
+   71|             below,  nothing has come to ou r attention that causes us to believe that the accompanying Statement,
+   72|             prepared  in accordance with recogn ition and  measu rement principles laid down in the aforesaid  Indian
+   73|             Accounting   Standards  (' I nd   AS ')  specified   under  Section   1 33  of  the  Companies  Act ,  20 1 3 ,   as
+   74|             amended,   read   with   relevant   rules   issued  thereu nder,   including  the   relevant   provisions  of  the
+   75|             E lectricity  Act.  2003  and  the  rules  issued  thereu nder  and  othe r  accounting   principles  general ly
+   76|             accepted  in  India,  has  not disclosed  the  i nformation  requi red  to  be  disclosed  in  terms  of the  Listing
+   77|             Regulations,   including  the  man ner  in  which  it  is  to  be  disclosed,  o r  that  it  contains  any  material
+   78|             misstatement.
+   79|                                                        SR 8 RCe &gd COO LffLicPe, a:  2L2imCiteadm aLciaSbtilrietye tPaBrltoncekrsahip3 wrdithF lLoLoPr IKdoelknatittay N7o0.0 A0A1B6-431 8
+   80|                                                                   .            ,              ,       · ·,           ,         -
+   81| [page 3]
+   82|  SR   B C  &   C O   LLP
+   83| Chartere d Account ants
+   84| 
+   85|   The Tata  Power Company Li m ited
+   86|   Page 2  of 6
+   87|   6 .    We  draw attention to  Note 4 of the  consolidated  financial  results  wherein the  Holding  Company  has
+   88|          received an  unfavorable arbitration award  in J u ly'25 and f   i nal order i n August 2025 seeking  payment
+   89|          of  USO  490 . 32  million  and  related  costs  and  interest.  Based  on  the advise  of the  legal  counsel,  the
+   90|          Holding  Company  has  filed  an  application  with the appropriate forum  in  Singapore fo r setting  aside
+   91|          the award    . Pending final outcome of the l itigation , no adjustments have been  made in the consolidated
+   92|          financial  results fo r the q uarter ended J une 30, 2026 .
+   93|          Our conclusion  is  n ot modified in  respect of this  matter.
+   94|   7.    The  accompanying  Statement  i ncludes  the  audited  /  unaudited  i nteri m  financial  results  and  othe r
+   95|          financial  i nformation , in  respect of :
+   96|              •    6  subsidiaries ,  whose  audited  /  unaudited  i nte ri m  financial   resu lts/statements  include  tota l
+   97|                    revenue of Rs 3 , 0 1 5 .25 crore, total net p rofit afte r ta   x of Rs.  1 27 . 79 crore , total comprehensive
+   98|                    income  of   Rs .  1 27 .87  crore  fo r  the  q uarter  ended  J une  30,   2026 ,  as   considered   in  the
+   99|                   Statement which  have been audited /  rev iewed  by thei r respective i ndependent auditors.
+  100|            •      2  associates  and  5 jo i nt  ventures,  whose  unaudited  interim  f i nancial  results  include  Group's
+  101|                   share of net  p rofit of  Rs.  1 68 . 44 crore and  Group 's share of total comp rehensive income of Rs .
+  102|                    1 73 . 26  crore  fo r the  q uarter  ended  J une  30,  2026 ,  as  considered  in  the  Statement  whose
+  103|                    i nteri m financial  results,  and  other f i nancial  i nformation have been  reviewed  by thei r respective
+  104|                    independent auditors .
+  105|          The  independent aud itor's reports on  i nteri m financial  results of these entities have been fu rnished to
+  106|          us  by the Management and  ou r conclusion on the Statement,  in so far as  it relates to the amounts and
+  107|          disclosures  in  respect  of these  subsidiaries,  joi nt operations , joi nt ventu res and  assoc iates  is  based
+  108|          solely on the report of such auditors and  procedures performed by us as stated  in  paragraph 3 above.
+  109|   8 .    Certain  of these  associates  and  joi nt ventu res  are located  outside  India  whose  financial  results  and
+  110|          other financial  i nformat ion  have  been  prepared  in  accordance  with  accounting  principles  generally
+  111|          accepted  in thei r respect i ve countries and  which  have been audited  by other auditors under generally
+  112|          accepted   auditing   standards   app l icable   in   thei r   respective   countries .  The   Holding   Company's
+  113|          management  has  converted  the financial  results  of  such  subsidiaries /  associates  and joi nt ventu res
+  114|          located  outside  India  from  accounting  principles  generally  accepted  in  thei r  respective  cou ntries  to
+  115|          accounting  principles  genera l ly accepted  in  India.  We  have  reviewed  these  con version  adjustments
+  116|          made  by  the  Holding  Company's  management.  Our  conclusion  in  so  far as  it  relates to the  balances
+  117|          and  affai rs of such  subsidiaries /  associates and joi nt ventu res  located  outside  India  is  based  on  the
+  118|          report of ot   her aud itors an d t he convers ion  adjustm ents pre pared  by the managem ent  of  th e Hol ding    · ·
+  119|          Company and  reviewed  by  us .
+  120|   9.    The  accompanying  Statement  includes  unaudited  i nteri m  financial  results  /  statements  and  other
+  121|          unaudited financial  i nformation in  respect of :
+  122|           •      43  subsidiaries ,  whose  i nteri m  financial   results  and  other  financial  i nformation  reflect  total
+  123|                  revenues  of Rs  1 07 . 55 crore, total  net  p rofit afte r ta x of  Rs .  1 8 . 42 crore,  total  comprehensive
+  124|                  income of Rs   . 1 8 . 42 crore, fo r the q uarter ended J u ne 30, 2026 .
+  125|           •      3 assoc iates and  8 joi nt ventures, whose  i nteri m financial  resu lts includes the Group's share of
+  126|                  net p rofit/ loss of Rs.  Nil crore and  Group 's share of total comprehensive  income of Rs . Nil
+  127|                  crore fo r the q uarter ended J une 30, 2026 .
+  128| '
+  129| 
+  130| [page 4]
+  131|               SR   B C  &   C O   LLP
+  132|               Chartere d Account ants
+  133| 
+  134|                The Tata  Power Company Li m ited
+  135|                 Page 3  of 6
+  136|                The unaudited i nteri m financial  results and othe r unaudited financial i nformation of the these subsidiaries,
+  137|                joi nt  ventu res  and  associates  have  not  been   reviewed  by  any  aud itor  and   have  been  approved  and
+  138|                 fu rnished  to  us  by  the  Management  and  ou r conclusion  on  the  Statement.  in  so  far  as  it  relates  to the
+  139|                 affai rs  of  these  subsidiaries,  joi nt  ventu res  and  associates,  is  based  solely  on  such  unaudited  i nteri m
+  140|                financial  results and othe r unaudited financial i nformation . According to the i nformation and  explanations
+  141|                 given to us  by the Management, these i nteri m financial statements financial  results are  not material to the
+  142|                 Group.
+  143|                 Our conclusion on the Statement in  respect of matters stated in  para 7,  8 and  9 above is not modified with
+  144|                 respect  to ou r  reliance  on  the work  done and  the  reports  of the  othe r auditors and  the financial  results
+  145|                 certified  by the Management.
+  146|                 For S R BC & CO  LLP
+  147|                 Chartered Accountants
+  148|                 ICAI  Firm  registration number: 324982 E /  E300003
+  149| I                 '{}) A
+  150|                                         ~
+  151|                 per Vikram  Mehta
+  152|                 Partner
+  153|                 Membership  No. :  1 05938
+  154|                 UDIN:  26 1 05938YNAD D H5035
+  155|                 Mumbai
+  156|                J u ly 27, 2026
+  157| [page 5]
+  158|              SR  B C&   C O   LLP
+  159|             Chartere d Accountants
+  160| 
+  161|              The Tata  Power Company Limited
+  162|               Page 4 of 6
+  163|              Annexure  -  1 to Auditor's Report:
+  164|                 No     Name of E ntities                                                                         Country of
+  165|                                                                                                                           Incorporation
+  166|                A        Subsidiaries (Direct)
+  167|                1         Tata  Power Trading Company Limited                                             India
+  168|                2         Nelco Limited                                                                              India
+  169|                3         Maithon  Power Limited                                                                 Ind ia
+  170|                4        Tata  Power Renewable  Energy Limited                                            India
+  171|                5        TP  Renewable  Microgrid  Limited                                                     India
+  172|                6         Bhira Investments Limited                                                             Singapore
+  173|                7         Bhivpuri Investments Limited                                                         Mauritius
+  174|                8         Khopoli  Investments Limited                                                          Mauritius
+  175|                9        Tata  Power Delhi Distribution Limited                                              India
+  176|                1 0      Tata  Power Transmission Company Limited                                      India
+  177|                1 1       Tata  Power International Pte.  Limited                                             Singapore
+  178|                1 2      TP Ajmer Distribution Limited                                                        India
+  179|                1 3      TP Central Odisha  Distribution Limited                                             India
+  180|                1 4      TP Western Odisha  Distribution Limited                                           India
+  181|                1 5      TP Southern Odisha  Distribution Limited                                          India
+  182|                1 6      TP  Northern Odisha  Distribution Limited                                          India
+  183|                1 7      TP  Power Plus  Limited                                                                  India
+  184|                1 8      TP  Bikaner Ill  Neem rana  II  Transmission Limited                                India
+  185|                1 9      TP Jalpura Khurja  Power Transmission  Limited                                 India
+  186|                20      TP  Paradeep Transmission  Limited                                                  India
+  187|                21        TP Gopalpur Transmission  Limited                                                  India
+  188|                22      TP Jejuri  Hinjewadi  Power Transmission  Ltd                                     India
+  189|                                                                                                                           India
+  190|                23      TP  Urja  Limited                                                                            India
+  191|                B        Subsidiaries (I ndi rect)
+  192|                1          NDPL  Infra Limited                                                                       India
+  193|                2         Nivade Windfarms Limited                                                             India
+  194|                3         Poo iavadi Windfarrns Limited                                                         India
+  195|                4         Nelco Network Products Limited                                                     India
+  196|                5        Vagarai Windfarm  Limited                                                             India
+  197|                6        Tata  Power EV Charging Solutions Limited                                       India
+  198|                7         TP  Kirnali  Limited                                                                         India
+  199|                8        Trust Energy Resources Pte.  Limited                                               Singapore
+  200|                9        TP Solar Limited                                                                           India
+  201|                1 0      TP  Nanded  Limited                                                                       India
+  202|                1 1        TP Green  Nature Limited                                                               India
+  203|                1 2      TP Adhrit Solar Limited                                                                 India
+  204|                1 3      TP Arya Saurya Limited                                                                 I  di
+  205|                                                                                                                              n  a
+  206|                1 4      TP Saurya  Bandita Limited                                                             India
+  207|                1 5      TP  Ekadash  Limited                                                                      India
+  208| y.               6      TP Solapur Solar Limited                                                               India
+  209|                             P Akk  lk  t R         bl   L i   it  d                                                      I  di
+  210|                                    a   o    enewa  e    m  e                                                         n  a
+  211| [page 6]
+  212|    SR  B C &   C O   LLP
+  213|    Chartere d Account ants
+  214| 
+  215|     The Tata  Power Company Limited
+  216|      Page 5 of 6
+  217|        No     Name of Entities                                                                     Country of
+  218|                                                                                                            Incorporation
+  219|       18      TP  Kirnali Solar Limited                                                             India
+  220|       19      TP Saurya Limited                                                                    I  di
+  221|                                                                                                             n  a
+  222|       20      Supa Windfarms Limited                                                            India
+  223|       21       TP Roofurja Renewables Limited                                                  I  di
+  224|                                                                                                               n  a
+  225|       22      TP Solapur Saurya Limited                                                          India
+  226|       23      Tata Power Green Energy Limited                                                India
+  227|       24      TP G       dh     C    ti      L i   it  d                                                  I  di
+  228|                       ovar   an    rea  ves    m  e                                                     n  a
+  229|       25      TP  Narmada Solar Limited                                                          India
+  230|       26      TP  Bhaskar Renewables Limited                                                   India
+  231|       27      TP Atharva Solar Limited                                                           India
+  232|       28      TP Viva Green  Limited                                                               India
+  233|       29      TP Vardhman Surya Limited                                                        I  di
+  234|                                                                                                              n  a
+  235|       30      TP  Kaunteya Saurya  Limited                                                       India
+  236|       3 1       TP Alpha Limited                                                                      I  di
+  237|                                                                                                             n  a
+  238|       32      TP Varun  Limited                                                                     India
+  239|       33      TP Mercury Limited                                                                   I  di
+  240|                                                                                                             n  a
+  241|       34      TP Saturn Limited                                                                     India
+  242|       35      TP Agastaya Limited                                                                 I  di
+  243|                                                                                                             n  a
+  244|       36      TP Samaksh  Limited                                                                  India
+  245|       37      TP Surya Limited                                                                      I  di
+  246|                                                                                                              n  a
+  247|       38      TP Aboli Limited                                                                       India
+  248|       39      TP Magnolia Limited                                                                  I  di
+  249|                                                                                                             n  a
+  250|      40      TP Gulmohar Limited                                                                 India
+  251|      41      TP Cypress Limited                                                                   I  di
+  252|                                                                                                             n  a
+  253|      42      TP Orchid  Limited                                                                     India
+  254| 
+  255|      43      TP Godavari Solar Limited                                                          India
+  256|      44      TP Hrihaan Limited                                                                   I  di
+  257|                                                                                                             n  a
+  258|      45      TP  Paarthav Limited                                                                  India
+  259|      46      TP Vikas Limited                                                                       I  di
+  260|                                                                                                             n  a
+  261|      47      TP Aakash Limited                                                                    India
+  262|      48      TP Marigold Limited                                                                  I  di
+  263|                                                                                                             n  a
+  264|      49      TP  Parivart Limited                                                                   Ind ia
+  265|      50      TP Adarsh Limited                                                                    I  di
+  266|                                                                                                             n  a
+  267|      C        Joint Ventures (Direct)
+  268|       1        Tubed  Coal  Mines  Limited                                                           India
+  269|      2        Mandakini Coa l Company Limited                                                 I  di
+  270|                                                                                                              n  a
+  271|      3        Industrial Energy Limited                                                            India
+  272|      4        Powerlinks Transmission Limited                                                  I  di
+  273|                                                                                                             n  a
+  274|      5        Dugar Hydro Power Lim ited                                                        India
+  275|      6        Khorlochhu  Hydro Power Limited                                                 Bh  t
+  276|                                                                                                                u an
+  277|      7        Dorjilung Hydro Power Limited                                                    Bhutan
+  278| i
+  279| 
+  280| [page 7]
+  281| S R   B C  &   C O   LLP
+  282| Chartere d Account ants
+  283| 
+  284|   The Tata  Powe r Com pany  Li m ited
+  285|   Page 6 of 6
+  286|       No       Name  of  Entities                                                                                           Country of
+  287|                                                                                                                                         Incorporation
+  288|     D          Joi nt Ventures (I nd i rect)
+  289|      1            PT  Kalti m  Prima Coal                                                                                     I ndonesia
+  290|     2          l ndo  Coal  Resources (Cayman) Li m ited                                                       Cayman  Islands
+  291|     3           PT  lndo coal  Kalti m  Resources                                                                     Indonesia
+  292|     4          Candice  I nvestments Pte.  Li m ited                                                               Singapore
+  293|     5           PT  Nusa Tambang  Pratama                                                                          I ndonesia
+  294|     6           PT  Marvel Capital  I ndonesia                                                                         I ndonesia
+  295|     7           PT  Dwikarya  Prima Abadi                                                                              I ndonesia
+  296|     8           PT  Kal i mantan  Prima  Power                                                                         I ndonesia
+  297|     9           PT  Baram u lti Sukessarana Tbk                                                                     I ndonesia
+  298|      1 0        Resurgent  Power Ventu res Pte  Li m ited                                                      Singapore
+  299|     E          Associates (Di rect)
+  300|      1           Tata  Projects  Li m ited                                                                                    India
+  301|     2          Daga'chhu  Hyd ro  Power Corporation  Limited                                             Bhutan
+  302|     3          Yashmun  E ngineers  Li m ited                                                                         India
+  303|     4           Bri hat Trading  P rivate Li m ited                                                                     India
+  304|     5          The  Associated  Building  Company Li m ited                                                 India
+  305|     F          Associate (I nd i rect)
+  306|      1           Piscis  Networks P rivate Li m ited                                                                   India
+  307| [page 8]
+  308|                                                                                                           TATA   POWER
+  309|                                                                                                        The Tata Powe r Company Limit ed
+  310|                                                                                          Bombay House  , 24  Homi M ody Stree t, Mumb ai 400 001
+  311|                                                                                                        CIN  :  L2 8920M  H1 91 9PLC0 00567
+  312|                                                                     Tel: (91  22) 6665 8282 e-mail: tatapower@tatapower.comWebsite:www.tatapower.com
+  313|                                                       STATEMENT OF CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED 30TH JUNE, 2026
+  314|                                                                                                                                                                              Quarter ended                          Year ended
+  315|                                                                             Particulars                                                                  30-Jun-26        31 -Mar-26        30-Jun-25        31 -Mar-26
+  316|                                                                                                                                                           (Unaudited)        (Audited)        (Unaudited)        (Aud ited)
+  317|                                                                                                                                                                              (Refe r Note 5)
+  318|                                                                                                                                                                                             (~ crore)
+  319|                1 .    Income
+  320|                      Revenue from Operations (Refer Note 3)                                                                                      1 9,051 .26         1 4,900.20         1 8,035.07         62,428 .59
+  321|                      Other Income                                                                                                                            388 .39             555 .28             361 .71           1 ,743.07
+  322|                      Total Income                                                                                                                        1 9,439.65        1 5,455.48        1 8,396.78        64,1 71 .66
+  323|                2.    Expenses
+  324|                      Cost of Power Purchased                                                                                                           6, 1 64.23          4,675 .37          5,260.81         1 9,647.25
+  325|                      Cost of Fuel                                                                                                                            3,868.1 9          1 ,336 .29          3,555 .22          7,498 .39
+  326|                     Transmission Charges                                                                                                                 373.33             360 .03             388.39          1 ,467.98
+  327|                      Raw Material Consumed and Construction cost (I ncluding Project Land and Sub-contracting cost)              1 ,999.26          2,465 .07          1 ,948 .54          8,61 8.40
+  328|                      Purchase of Finished Goods and Spares                                                                                             2.93                8.24                6.42              42 .35
+  329|                      Decrease/(lncrease) in Stock-in-Trade and Work-in-Progress                                                              (285.60)                7.74            (40.41 )             (84 . 1 1 )
+  330|                      Employee Benefits Expense                                                                                                        1 , 1 84.83          1 ,233.77          1 ,1 6 1 .36          4,693.73
+  331|                      Finance Costs                                                                                                                          1 ,406.78          1 ,295.26          1 ,279.22          5 ,256 .79
+  332|                      Depreciation and Amortisation Expenses                                                                                       1 ,259.86          1 ,280 .23          1 ,1 60.91          4,81 1 .09
+  333|                     Other Expenses                                                                                                                       1 ,730.80          2,21 4. 50           1 ,6 1 5.73          7,449 .54
+  334|                     Total Expenses                                                                                                                     1 7,704.61         1 4,876.50         1 6,336.1 9        59,401 .41
+  335|                3.    Profit/(Loss) Before Regulatory Deferral Balances, Share of Profit of Associates and Joint                1 ,735.04            578.98          2,060.59          4,770.25
+  336|                     Ventures, Exceptional Items and Tax (1 -2)
+  337|               4 .    Mov/e( men)t in  Regulatory Deferral Balancefs (Net)                                                                          (1 23 56)             699 80           (573 84)
+  338|                     Add  Less : Net Movement in  Regulatory De erral Balances                                                                     .                      .                     .                 1 53.83
+  339|                     Add/(Less) : Net Movement in  Regulatory Deferral Balances in  respect of earlier years                               (1 2 .30)             31 9.91                                1 ,047.09
+  340|                     Add/(Less): Deferred Tax Recoverable/(Payable)                                                                              (1 7.23)              42 .01                 3.08              51 . 1 2
+  341|                     Total Movement in Regulatory Deferral Balances (Net)                                                                  (1 53.09           1 ,061 .72           (570.76)           1 ,252.04
+  342|               5.    Profit/(Loss) Before Share of Profit of Associates and Joint Ventures, Exceptional Items and          1 ,581   .95          1 ,640.70          1 ,489.83          6,022.29
+  343|                     Tax (3+4)
+  344|               6.    Share of Profit/(Loss) of Associates and Joint Ventures accounted for using the Equity Method                     24 1 .39             250.47             1 29.63            707.87
+  345|               7.    Profit/(Loss) Before Exceptional Items and Tax (5+6)                                                                    1 ,823.34          1 ,891 .1 7          1 ,61 9.46          6,730.1 6
+  346|               8.    Add/(Less):  Exceptional Items
+  347|                      Impairment of Investment                                                                                                                                  (94.1 7)                                  (94.1 7)
+  348|                     Total Exceptional Items                                                                                                                                   (94.1 7)                                  (94.171
+  349|               9.    Profit/(Loss) Before Tax (7+8)                                                                                                   1 ,823.34          1 ,797.00          1 ,61 9.46          6,635.99
+  350|                1 0.  Tax Expense/(Credit)
+  351|                     Current Tax                                                                                                                               225. 1 4            261 .70             1 44.64             963 .39
+  352|                     Current Tax in  respect of earlier period                                                                                                                      1 .34                0.20             (1 8.50)
+  353|                     Deferred Tax                                                                                                                              1 97.34             1 1 8.75             21 2.30             562.69
+  354|                     Deferred Tax In respect of earlier period                                                                                                                  (0 .31 )                                    1 0.85
+  355|                     Total Tax Expense/(Credit)                                                                                                         422.48            381   .48             357.1 4          1 ,51 8.43
+  356|                1  1 .  Net Profit/(Loss) for the Period (9-1 0)                                                                                         1 ,400.86          1 ,41 5.52          1 ,262.32          5,1 1 7.56
+  357|                1 2.  Other Comprehensive lncome/(Expenses) (Net of Tax)
+  358|                     (i)   Items that will not be  reclassified to Profit or Loss
+  359|                          lncome/(Expense)                                                                                                                  21 9.41           (324.04)              67.06           (652.58)
+  360|                          Tax relating to items of lncome/( Expense)                                                                                    (36.20)              47.60            ( 1 6.59)              75.30
+  361|                          Net Movement in Regulatory Deferral Balances                                                                              42.20           ( 1 07.07)              91 .23             1 66.62
+  362|                          Share of Associates and Joint Ventures accounted for using the Equity Method                                       4.73            (48.40)              (4.85)             (53.67)
+  363|                     (ii)  Items th/(at will be) reclassified to Profit or Loss                                                                        (         )                                  (       )
+  364|                          lncome  Expense                                                                                                                  202.79             736.44             39.56            1 ,085 .37
+  365|                          Tax relating to items of lncome/(Expense)                                                                                     43.48            (92.27)               1 4.33           { 1 02.69)
+  366|                          Share of Associates and Joint Ventures accounted for using the Equity Method                                       3.42            (34.55)              47.93              81 .71
+  367|                     Total Other Comprehensive lncome/(Expenses) (Net of Tax)                                                             74.25             1 77.71             1 59.55            600.06
+  368|                1 3.  Total Comprehensive lncome/(Expenses) (1 1 +1 2)                                                                        1 ,475.1 1          1 ,593.23          1 ,421 .87          5,71 7.62
+  369|                     ProfOit/(Loss) fof r theC Period attributable to:                                                                                        1  1 75 93            995 91           1 059 86
+  370|                            wners o  the   ompany                                                                                                          ,     .                     .                ,     .             3,747. 1 9
+  371|                          Non-controlling  Interests                                                                                                          224.93            41 9.61             202.46          1 ,370.37
+  372|                     Others Comprehensive lncome/( Expenses) attributable to:
+  373|                          Owners of the Company                                                                                                            90.44             1 43.49             1 64.71             562.42
+  374|                          Non-controlling  Interests                                                                                                          (1 6 . 1 9)              34.22              (5.1 6)              37.64
+  375|                     Total Comprehensive lncome/(Expenses) attributable to :
+  376|                          Owners of the Company                                                                                                        1 ,266.37          1 , 1 39.40          1 ,224.57          4,309.61
+  377|                          Non-controlling  Interests                                                                                                          208.74            453.83             1 97.30          1 ,408.01
+  378|                1 4.  Paid-up equity share capital
+  379|                     (Faci. Value:~ 1/-   per share)                                                                                                          31 9.56             31 9.56             31 9.56             31 9.56
+  380|                1 5.  Other Equity                                                                                                                                                                                         39,1 47.65
+  381|                1 6.  Earnings  Per Equity Share (of~ 1/-   each)(~) (not annualised)
+  382|                     (i) Before Net Movement in  Regulatory Deferral Balances                                                                        4 1 2
+  383|                          Basic                                                                                                                                        .                   1 .77                4.26              1 0.72
+  384|                          Diluted                                                                                                                                    4 . 1 2                1 .77                4.26               1 0.7 1
+  385|                     (ii) After Net Movement in  Regulatory Deferral Balances
+  386|                          Basic                                                                                                                                      3.68                3. 1 2                3.31               1  1 .72
+  387|                          Diluted                                                                                                                                     3.67                3.1 1                3.31               1 1 .71
+  388|          SIGN\EVD  FOR            1 1 1-lt;AI IUN
+  389|                                       EN
+  390| I       BY
+  391| 
+  392|                                                                  I
+  393|              s   R   B   C  &  c o   L L P     '·
+  394|         '                   M U M  BA   I              j
+  395|           - - - - - - - - - - _   -  ·· __
+  396| [page 9]
+  397|                                                                                   TATA    POWE R
+  398|                                                                                       The Tata Pow er Company Limited
+  399|                                                                         Bombay House, 24 Homi Mody Street, Mumbai 400 001
+  400|                                                                                       CI N : L28920MH1 91 9PLC000567
+  401|                                                    Tel: (91  22) 6665 8282 e-mail: tatapower@tatapower.comWebsite:www.tatapower.com
+  402|                                                                               CONSOLIDATED SEGMENT INFORMATION
+  403|                                                                                                                                                   Quarter ended                                Year ended
+  404|                                                      Particulars                                                           30-Jun-26           31 -Mar-26           30-Jun-25            31 -Mar-26
+  405|                                                                                                                             (Unaudited)           (Audited)           (Unaudited)            (Audited)
+  406|                                                                                                                                                   (Refer Note 5( )        )
+  407|                                                                                                                                                                    ~  crore
+  408|       Segment Revenue and  Net Movement in  Regulatory Deferral Balances
+  409|                       Thermal & Hydro (Refer Note 3)                                                                  5,1 92.83             2,433.84             4,844. 1 9            1 1 ,635.93
+  410|                        Renewables                                                                                            3,771 .46             4,003.43              3,625.85            1 5,027.82
+  411|                       Transmission and Distribution                                                                    1 1 ,440.70            1 0,698.83            1 0,077.83            41 ,338.59
+  412|                       Others                                                                                                      1 06.44                1 1 4.68                1 09 .05                43 1 .79
+  413|                                                                                                                                 20 ,51 1 .43            1 7,250.78            1 8 ,656.92            68,434.1 3
+  414|       Less:           Inter Segment Revenue                                                                                                                                                     (            )
+  415|                       Thermal & Hydro                                                                                     (1 ,26 1 .66)            (1 ,058.68)            (1 ,01 8 .35)             4,047.29
+  416|                        Renewables                                                                                             (351 .80)              (245.62)              (1 61 .34)              (697.65)
+  417|                       Others                                                                                                      (1 6.53)                (1 4.53)                (24.69)                (73.58)
+  418|      Total Segment Revenue and Net Movement in Regulatory Deferral Balances#               18,881.44            15,931   .95            17,452.54            63,615.61
+  419|       Segment Results
+  420|                       Thermal & Hydro (Refer Note 3)                                                                   1 ,098.24                474.83                852.48              1 ,964.61
+  421|                        Renewables                                                                                            1 ,21 0.40                91 5 .05              1 ,1 25.00              4,340.93
+  422|                       Transmission and  Distribution                                                                        774.99              1 ,358.78                721 .29             4,398.59
+  423|                       Others                                                                                                       (76.68)                (36.37)                (29 .68)              (1 04.72)
+  424|      Total Segment Results                                                                                               3,006.95             2,71 2 .29              2,669.09            1 0,599 .41
+  425|       Less :          Finance Costs                                                                                        (1 ,406.78)            (1 ,295.26)            ( 1 ,279.22)            (5 ,256 .79)
+  426|      Add/( Less) :  Exceptional Item -   Unallocable                                                                             -                    (94. 1 7)                                        (94. 1 7)
+  427|      Add/(Less) :  Unallocable Income   / (Expenses) (Net)                                                            223.1 7                474 . 1 4                229.59              1 ,387.54
+  428|      Profit/lLossl Before Tax                                                                                            1,823.34             1,797.00              1,619.46             6,635.99
+  429|                                                                                                                                                                     Asat
+  430|                                                                                                                              30-Jun-26            31 -Mar-26            30-Jun-25            31 -Mar-26
+  431|                                                                                                                             (Unaudited)           (Audited\            Unaudited\           (Audited)
+  432|                                                                                                                                                                   (~  crore)
+  433|      Segment Assets
+  434|                       Thermal & Hydro                                                                                    41 ,355. 1 4            41 ,697.31            38 ,704.95            41 ,697.31
+  435|                       Renewables                                                                                          59,38 1 .69            56,921 .28            53,1 1 8.58            56,92 1 .28
+  436|                       Transmission and Distribution                                                                    55,284.59            53,428 .87            47 ,077.30            53,428 .87
+  437|                       Others                                                                                                    1 ,482.70              1 ,572.91              1 ,679.89              1 ,572 .91
+  438|                       Unallocable •                                                                                         20,475.45            2 1 ,551 .41          1 51 88,066489.8531            21 ,551 .41
+  439|      Total Assets                                                                                                        1,77,979.57         1,75,171.78           ,   ,     .             1,75,171.78
+  440|      Segment Liabilities
+  441|                       Thermal & Hydro                                                                                      4, 1 98.48             4 ,997 .81              8,426.02             4,997.81
+  442|                        Renewables                                                                                            6,972.1 2             7,825.88             6,887.06             7,825 .88
+  443|                       Transmission and Distribution                                                                    31 ,764.72            3 1 ,778 .87            27,825.28            31 ,778.87
+  444|                       Others                                                                                                      209.43                1 70.88                1 29.37                1 70.88
+  445|                        Unallocable •                                                                                          85,809.1 5            82,860.27          1 7114,364153.6314            82,860.27
+  446|      Total Liabilities                                                                                                    1,28,953.90          1,27,633.71           ,    ,     .            1,27,633.71
+  447| Thermal & Hydro: Comprises of generation of power from hydroelectric sources and thermal sources (coal, gas and oil) from plants owned and operated under lease
+  448| arrangement and related ancillary services . It also comprises of hydro pump storage, coal -   mining , trading, shipping and  related infra business .
+  449| Renewables: Comprises of generation of power from  renewable energy sources i.e. wind and solar.  It also comprises rooftop solar projects , electric vehicle charging
+  450| stations , manufacturing of solar cell and module, EPC and maintenance services with  respect to solar.
+  451| Transmission  and  Distribution : Comprises  of transmission  and  distribution  network,  sale  of power to  retail  customers  through  distribution  network  and  related
+  452| ancillary services. It also comprises of power trading business.
+  453| Others : Comprises of project management contracts/infrastructure management services , property under development and satellite communication.
+  454| • Includes assets and related liabilities held for sale
+  455| The Operating Segments have been reported in a manner consistent with the internal reporting provided to the Chief Operating  Decision  Maker.
+  456| # RECONCILIATION OF REVENUE AND TOTAL NET MOVEMENT IN  REGULATORY DEFERRAL BALANCES
+  457|                                                                                                                                                    Quarter ended                                Year ended
+  458|                                                      Particulars                                                           30-Jun-26           31 -Mar-26            30-Jun-25           31 -Mar-26
+  459|                                                                                                                             (Unaudited)        (   (Af udited)           (Unaudited)           (Audited)
+  460|                                                                                                                                                     Re er Note 5(1        )
+  461|       R           f      O      ti      (R  f    N  t   3)                                                                        1 9 051  26            1 4 900~2 0crore       1 8 035 07            62 428 59
+  462|      Adedv/e(nLue )romT  t pleMra  ons    tei e rR   o el  t     D  f     l B  l         (N  t)                                       (1, 53   0. 9)              1 ,061 .72              (5, 70 7. 6)              1 ,252 .04
+  463|      Add/(Less):   Uo al l   ovbel mRen   n    egu a ory   e erra    a ances    e                                           (1 6.73)               ,(29   9. 7)                (1 1 .77)               ,(65 0. 2)
+  464|      T  t  l Sess :     nt aR oca  e   evdenNuet M           t i   R      l  t      D  f      l B  l                           18 881. 44            15 931. 95            17 4  52. 54           63 615. 61
+  465|        o a  t  degmben    evenue an      e    ovemen   n    egu a ory   e erra    a ances as                  ,     .                  ,     .                  ,     .                  ,     .
+  466|       repor e   a  ove
+  467|      SIGNED  FOR  IDENTIFICATION
+  468|              f
+  469|      BY                                                                                                                                                                    Q0B x :co4R11 -t-
+  470|                                                                                                                                                                         !   ,_             -      ,
+  471|                                                  L L P                                                                                                                .  ~   MUMBAI   ~     )
+  472|           S   R   B C   & C O                                                                                                                                Y'                      ~
+  473|                          M U M BAI                                                                                                                                    ~'Y       *       C»....,
+  474|                                                                                                                                                                                    ' t             C>
+  475|                                                                                                                                                                                     .
+  476| [page 10]
+  477|                                                                                                                  TATA    POWE R
+  478|                                                                                                                   The Tata  Pow er Company Limite d
+  479|                                                                                                  Bombay House  , 24  Homi  M ody Street , Mumb ai 400 001
+  480|                                                                         T  l   (91  22)  6665 8282       CilIN     : L28920M@H 1 91 9PLC0005W67 b  i
+  481|                                                                           e :                                e-ma  : tatapower    tatapower.com    e  s te:www.tatapower.com
+  482|    ARdditilontial info2n0m1 5ation pursuadntd to  Retguladtiof n 5th2(4) andt Regduladtio3n0 t5h4J (2) of2 S0e2c6urities and  Exchange Board of India  (Listing  Obligations and  Disclosure Requirements)
+  483|       egu a  ons ,         , as amen  e   as a  an    or    e quar er en  e             une ,         .
+  484|    Sr.  No                                                           Particulars                                                                                                Quarter ended                                               Year ended
+  485|                                                                                                                                                         (U30-Judni-2d6)                  3(A1 -Mdai r-d2)6                 (3U0-Judni-25d )                 3(A1 -Mdai r-d2)6
+  486|    1           D  bt  E    it   R  ti   (i   ti       )  (R  f        t     )                                                                            nau   te   1  63               u   te     1  62              nau   te   1  49                u   te    1  62
+  487|                   e       qu  y    a  o   n   mes      e er no e a                                                                                            .                                 .                                 .                                 .
+  488|    2           Debt Service Coverage  Ratio (in times)  (not annualised)  (Refer Note  b)                                             1 .74                           209                           1 .60                           1 .78
+  489|    3           Interest Service Coverage  Ratio (in times)  (Refer Note c)                                                                  2 .38                           2.52                           2.36                           2.37
+  490|    4           Current Ratio (in times) (Refer Noted)                                                                                               0.87                           0.87                           0.82                           0.87
+  491|    5           Long Tenm  Debt to Working Capital (in times) (Refer Note e)                                                           26.56                         37.86                         23.97                         37.86
+  492|    6           Bad Debts to Accounts  Receivable  Ratio(%) (not annualised)  (Refer Note f)                                  0.93%                        0.08%                        0.80%                        2.48%
+  493|    7           Current Liability  Ratio (in times)  (Refer Note g)                                                                                   0 .31                            0.31                            0.36                           0.31
+  494|    8          Total  Debts to Total Assets  Ratio (in times) (Refer Note h)                                                                0.45                           0.44                           0.41                            0.44
+  495|    9           Debtors Turnover (in  number of days)  (Refer Note i)                                                                             72                              86                              67                              78
+  496|    1 0         Inventory Turnover (in  number of days) (Refer Note j)                                                                           71                             1 1 3                              55                              95
+  497|    1 1         Operating  Margi n (%) (Refer Note k)                                                                                                   1 5%                           1 6%                           1 5%                           1 6%
+  498|    1 2         Net Profit after Tax(< crore)                                                                                                        1 ,400.86                    1 ,41 5.52                    1 ,262.32                    5, 1 1 7.56
+  499|    1 3         Net Profit  Margin  (%) including exceptional item  (Refer Note I)                                                              7%                             9%                             7%                             8%
+  500|    1 4         Net Worth  (<  crore) (Refer Note m)                                                                                           43,555.43                  42, 1 53.39                  39, 1 02.77                  42 , 1 53.39
+  501|    1 5        Capital Redemption  Reserve(< crore)                                                                                            51 4.47                       51 4.47                       51 4.47                       51 4.47
+  502|    1 6         Debenture Redemption  Reserve(< crore)                                                                                      1 45 . 1 4                       1 45. 1 4                       1 98.78                       1 45. 1 4
+  503|    Notes:
+  504|    The following  definitions have  been considered for the  purpose of computation of ratios  and other infom,ation:
+  505|    S)r. No    D  bt  E    it   R  ti                                   Ratios                                                                                                                        Fonmulae
+  506|    a             e       qu  y    a  o                                                                                                                                                                Total  Debt<')
+  507|                                                                                                                                                                                                         Total Equityt'1
+  508|    b)          Debt Service Coverage  Ratio                                                                                            Profit  Before  ExceQtiAonal  itiemis & TCax+ InteTrestE ExQQenses  + De12reciation  &
+  509|                                                                                                                                                       Interest expense+ Schmedourtlesdatpornin c-  ipaul rrreepnta ymaxe ntxofenlosneg  tenm  debt and  lease
+  510|                                                                                                                                                                                              liabil ities durin g the period <3 l        -
+  511|    c)          Interest Service Coverage  Ratio                                                                                                     Profit Before  Excegtiona l  Items and  Tax+  I n terest Exgense
+  512|                                                                                                                                                                                                      Inte rest E xpen se
+  513|    d)          Current Ratio                                                                                                                                                                   Current Assets141
+  514|                                                                                                                                                                                                     Current Liabilities 151
+  515|    e)          Long Term Debt to Working Capital                                                                                                                                Lonq-Tenm  Debt161
+  516|                                                                                                                                                                                                       Working  Capitail71
+  517|   f)           Bad  Debts to Accounts  Receivable Ratio                                                                                                                            Bad  Debts181
+  518|     )          C        t Li  bilit   R  ti                                                                                                                                                 Average Trade Receivable
+  519|    g             urren     a     y    a  o                                                                                                                                                     Current  Liabilities(5>
+  520|     )         T     l  D  b        T     l A          R   i                                                                                                                                      Total  Liabilities 1 ' 1
+  521|    h             ota     e  ts to   ota     ssets    at o                                                                                                                                       Total  Debt(')
+  522|                                                                                                                                                                                                         Total Assets 1' 01
+  523|    i)           Debtors Turnover                                                                                                          ACvertaget TAradet  Rece1i2vabSle  {iincluCding  Regi ulatAo[Y  Balancets   Uhnbilled  ReQvQelni ueb la}nd
+  524|                                                                                                                                                       on rac     sse s as    er    erv ce   nounmcebsesr oonf daryrsangemen s w  erever a      ca   e  x
+  525|                                                                                                                                                        Revenue from  Operations less  Deferred   T ax R ecoverable/(Payable) wherever
+  526|                                                                                                                                                                                                            applicable
+  527|   j)           Inventory Turnover                                                                                                             Average  Inventories exce12t  Pro12ettt under Develo12ment x number of dal'.s
+  528|                                                                                                                                                                                                  Cost of Goods  Sold1111
+  529|    k)          Operating  Margin  (%)                                                                                                  Ogerating  Profit (Profit Before ExcegtioInal  Item)  s and Tax+  Interest  Exgense • Other
+  530|                                                                                                                                                                       Revenue +  Net MovementnicnoRmeeg ulatory  Deferral  Balances
+  531|    I)           Net Profit Margin  including  exceptional  item (%)                                                                                       Net  P rofit  after Tax { inc luding exce Qtional  it em}
+  532|                                                                                                                                                                        Revenue  +  Net  Move  men t in  Regul atory  Deferr al  Bal ances
+  533|    m)         RNet Wl otirth  ha2s0 1b5eei n  cNomt putetdh  on dthefi  badsiis  asb  statetdi   in (5C7l)ausf e  2 toi  f th2e  fStehcuCrities  andi   EAxchta2n0g1e3  Board  of  India  (Listing  Obligations  and  Disclosure  Requirements)
+  534|                  egu a  ons ,           .e.    e  wor    as   e  ne    n  su  -sec  on        o  sec  on    o     e    ompan es    c  ,         .
+  535|    (1 ) dTobtat l  Debt:  Long tenm  borrowings  (including current maturities of long term  borrowings),  lease  liabilities  (current and  non  current) , short tenm  borrowings and  interest accrued
+  536|    o(2n)  Te   sl  E     i      I        d   h            i   l      h          i        d                  lli     i
+  537|          ota     q u ty:   ssue   s  are cap ta ,  ot  er equ ty an   non-contro   ng  nterest
+  538|    (3)l l/Fotr theti  pu) rpose  of  computation,  scheduled  principal  repayment  of  long  tenm  borrowings  does  not  include  refinancing/prepayments  (including  prepayment  by  exercise  of
+  539|    c(4a)  Cpuur roepnt oAnss. ets as per balance sheet  assets classified  as  held for sale and  current portion of regulatory assets
+  540|    (5) Current Liabilitie  s  as p er balanc  e she,e  t   liabil ities classi fied   as  held  for  sale  and  cur rent por tio n of regula tory  liab ilities
+  541|    (6)  Long Te nm  Debt:  Lo ng t erm  borr owings,  (includin g  current  ma turitie  s o f lon g ten m  borro wings)   lea se  liabilitie s  (curren t and  non  current)  and  interest accrued  on these  debts
+  542|                                                                                                                                                          ,
+  543|    (7) Working Capital : Current assets -   Current liabilities (excluding current maturities of long tenm  debt, lease liability and interest accrued on  borrowings)
+  544|    (8)  Bad debts include provision for doubtful debts
+  545|    (9) Total  Liabilities as per balance sheet,  liabilities classified as held for sale and regulatory liabilities
+  546|    (1 0) Total Assets as  per balance sheet, assets classified as held for sale and regulatory assets
+  547|    S(1 1 )  Cost( i of Good)s/ dSold:  Costi oSf tFuekl, i RaTw dMaterdialW ConksiumPed and  Construction cost (Including Project Land and Sub-contracting cost),  Purchase of Finished  Goods and
+  548|      pares,    ncrease     ecrease  n     oc  - n-   ra  e an       or    n    rogress
+  549| l>luN EO   FOR   I DENTI FICATIOtJ
+  550| 
+  551| BY  J                                                                                                                                                                                                                 O  BCSO, i~,¢-1, i￾
+  552|                                                                                                                                                                                                                         I  Q_                               A .
+  553|                                                                                                                                                                                                                            ~    M U M BA I     C
+  554|     s    R    B   C   &   co    L L P                                                                                                                                                        Y'                             ~
+  555|                       M   U M B   A I                         I                                                                                                                                               --»,s,                    <::>~
+  556|                                                                                                                                                                                                                                    '  /       *
+  557|                                                                                                                                                                                                                                   . .
+  558| [page 11]
+  559| NOTES TO THE  CONSOLI DATED  FINANCIAL  RESULTS -  Q1   FY27
+  560| 
+  561|  1 .        The above consolidated financial  results of The Tata  Power Company  Limited ("the  Holding Company") and
+  562|            its  subsidiaries  (together  referred  to  as  "Group") , associates and joint ventures were  reviewed  by  the Audit
+  563|            Committee and approved by the Board of Directors at its meeting  held on 27th July, 2026.
+  564| 2.         The shareholders of the  Holding Company  in  their meeting  held on  7th July,  2026 approved final dividend of
+  565|            ~ 2.50 per fully paid equity share aggregating to~ 798.83 crore for the financial year 2025-26. The said dividend
+  566|            has been  paid to the holders of fully paid equity shares on  1 0th July, 2026.
+  567| 3.         The Holding Company supplied power from the Mundra Power Plant ("Plant") upto 30th June, 2025,  based on
+  568|           the directions of the  Ministry of Power ("MoP")  under Section  1 1  of the  Electricity Act,  2003 since  1 6th April ,
+  569|           2023.  Effective  3rd  July,  2025 ,  the  Holding  Company  temporarily  suspended  operations  of the  Plant  to
+  570|            undertake pending  overhauling activities aimed at resolving  existing technical  issues.  On  23rd  March , 2026,
+  571|           with effect from  1 st April, 2025, the Holding Company executed the supplementary power purchase agreement
+  572|            ("SPPA") with  Gujarat  Urja Vikas  Nigam  Limited  ("GUVNL"), with  revised tariff and  power supply framework,
+  573|           which  superseded  the  earlier  PPA  for  GUVNL's  contracted  capacity.  While  approvals  from  the  remaining
+  574|            procurers are in  progress , the MoP issued directions under Section  1 1  on 22nd March , 2026,  permitting  plant
+  575|           operations from  1 st April , 2026 to 30th June, 2026 with the terms of the SPPA which  have been extended  up
+  576|           to 30th  September, 2026,  during which  period  management expects completion  of the SPPA with the others
+  577|            procurers.
+  578| 4.        On  26th  September,  2023 the  Singapore  International Arbitration  Centre  (SIAC)  published  a  liability  award
+  579|           whereby  the Arbitral  Tribunal  held  that the  Holding  Company was  in  breach  of certain  clauses  of the  Non￾
+  580|           disclosure agreements entered into with  Kleros Capital  Partners Limited ('Kleros') and of its contractual duty of
+  581|           good faith and  confidence . Further,  on  1 st July,  2025 and 27th August, 2025, the SIAC  published a quantum
+  582|           award and final award (together referred to as 'awards'), directing the Holding Company to pay Kleros damages
+  583|           for loss of opportunity of USD 490,320,000 with simple interest of 5.33% from 30th  November, 2020 and cost
+  584|           of SGD  1 1 ,341 ,963.46 with simple interest of 5.33% from  1 st July, 2025. The  Holding Company has obtained
+  585|           a view from  its  legal counsel stating that the  Holding Company has various justifiable grounds to seek setting
+  586|           aside the awards with high probability of a favorable outcome.  Based on the legal advice the Holding Company
+  587|            has  filed  an  appeal  on  23rd  October,  2025,  with  the  Singapore  International  Commercial  Court  (SICC)  for
+  588|           setting  aside  the  awards  and  does  not  foresee  any  affirmative  payment  obligation.  Considering  this,  no
+  589|           provision  has  been  recorded  in the financial  results for the quarter ended  30th June,  2026 . The  hearings on
+  590|           the case are completed and the order is  reserved in this matter.
+  591| 5.        Figures for the quarter ended 31 st March, 2026 are the balancing figures between the audited figures in respect
+  592|           of the  full  financial  year  ended  31 st  March,  2026  and  the  unaudited  figures  of  nine  months  ended  31 st
+  593|            December, 2025 which were subjected to limited review .
+  594| 6.         The   standalone   audited   financial   results   of  the   Holding   Company   are   available   for   Investors   at
+  595|           www .tatapower . com , www .nseind ia.com and www .bse ind ia.com .
+  596|                                                                                                          For and o'n  behalf of the  Board of
+  597|                                                                                                  THE TATA POWER COMPANY LIMITED
+  598|                                                                                                                           ~
+  599|                                                                          G                                     PRAVEER S INHA
+  600|                                                                                                              C~EO & M anagi ng  Di re ctor
+  601|         Date:  27th July  2026                                       TA                                         DIN  01 785 1 64
+  602|                              ,       S IGNED FOR IDENTIFICATIO
+  603|                                           0 1 '
+  604|                                     BY
+  605| 
+  606|                                         S R B C &  CO  LLP
+  607|                                                   MUMBAI
+  608| [page 12]
+  609| SR   B C  &   C O   LLP
+  610| Chartere d Account ants
+  611| 
+  612|   Independent  Auditor's   Report  on   the  Quarterly  Audited  Standalone   Financial   Results  of  the
+  613|  Company  Pursuant  to  the  Regulation  33  and  52  of  the  SEBI  (Listing  Obligations  and  Disclosure
+  614|   Requ irements) Regulations,  20 1 5 as amended
+  615|  To
+  616|  The  Board  of  Directors of
+  617|  The Tata  Power Company  Limited
+  618|   Report on  the audit of the Standalone  Financial  Results
+  619|  Opinion
+  620|  We  have audited  the  accompanying  statement of  q uarte rly standalone financial  results  of The  Tata
+  621|   Power  Company  Li mited  (the  "Com pany") fo r the q uarte r ended J u ne 30 ,  2026 (the " Statement") ,
+  622|  attached  herewith ,  being  su bm itted  by  the Company  pu rsuant to the  req u i rement of  Regulation  33
+  623|  and  52 of the SEBI (Listi ng Obligations and  Disclosu re Requ i rements) Regulations, 20 1 5 , as amended
+  624|  (the " Listi ng  Regu lations") .
+  625|   In  ou r opinion and  to the best of ou r i nfo rmation and  according to the explanat ions  g iven  to us,  the
+  626|  Statement:
+  627|          i.       is  presented  in  accordance with the  req u i rements of the Listing  Regulations  in th is  regard ;
+  628|                  and
+  629|         ii .       gives  a true and  fai r view  in  confo rm ity  with  the  recogn ition  and  measu rement  principles
+  630|                   laid  down  in  the applicable  I ndian Accou nti ng  Standards,  including the  relevant  provisions
+  631|                  of the E lectricity Act 2003 and the rules  issued thereu nder and  othe r accou nti ng  principles
+  632|                   general ly accepted in  India of the total comprehensive income (comprisi ng of net p rofit and
+  633|                  othe r  comprehensive  income)  and  othe r  financial  i nfo rmation  of  the  Company  fo r  the
+  634|                  q uarte r ended J u ne 30 , 2026 .
+  635|   Basis for Opinion
+  636|  We   conducted   ou r  audit   in   accordance  with   the   Standards   on   Auditi ng   (SAs   specified   u nder
+  637|  section  1 43 ( 1 0) of  the  Companies  Act,  20 1 3 ,  as  amended  ( "th e  Act") .  Our  responsibi l ities  u nder
+  638|  those   Standards  are  fu rth e r  described   in   the   "Aud ito r's   Responsibilities   fo r  the  Audit  of  the
+  639|   Standalone   Financial   Results"   section   of  ou r   report.   We   are   independent   of  the  Company   in
+  640|   -:1:: x : ·.-~3nce ·,vith the Codec~ :: (" ' ' : s ' ::;sued    , ·  ;  ' >e '.  nstitute of Chart:  ~ ,,,;  • . : :;1   n : : nts of India toget~   .  .
+  641|   with   the   ethical   req u i rements  that  are   re_levant  to   ou r  aud it  of  _the  _fi_na_ncial   results   under  _th_e_
+  642|   prov ision s of the Act and  the  Ru les th ereu  nder   and   w e  hav e fu lfi l led  ou r othe r eth ical  resp  onsibi l ities
+  643|   in  accorda nce   wi th  th ese  req u i rem ents  and  the, Cod e  o f  Ethic s   We  b eliev e that  the au d it evidence  we
+  644|   ha  ve  obtained  is su fficien  t and  app rop r iate to  p  rovid e  a  basis .f o r o  u r opin ion
+  645|                                                                                                                                    .
+  646|   Emphasis of  Matter
+  647|   We  d raw  attention  to  Note  4  of  the  standalone  audited  financial   results  wherein  the  Company
+  648|   received  an  u nfavou rable  arbitration  award  in  J u ly  2025  and  final  order  in  August  2025  seeking
+  649|   payment  of  USO  490 . 32  mi l l ion  and  related  costs  and  i nte rest.  Based  on  the  advise  of  the  legal
+  650|   counsel ,  the  Company  has  fi led  an  appl ication  with  the  app rop riate foru m  in  Singapore fo r setti ng
+  651|   aside  the  award .  Pending  final  outcome  of  the  l itigation ,  no  adj ustments  have  been  made  in  the
+  652|   standalone fi nancial  results fo r the q uarte r ended J u ne 30 , 2026 .
+  653|   Our opinion  is  not modified  in  respect of th is  matte r.
+  654| [page 13]
+  655| SR   B C  &   C O   LLP
+  656| Chartere d Account ants
+  657| 
+  658|   The Tata  Power Company  Li m ited
+  659|   Page 2 of 3
+  660|   Management's Responsibilities for the Standalone  Financial  Results
+  661|   These   q uarte rly  standalone  financial   results   have   been   prepared   on   the   basis   of  the   i nte ri m
+  662|   condensed   financial   statements .   The   Company's   Board   of   Di rectors   are   responsible   fo r   the
+  663|   preparation of the Statement that gives a tru e and fai r view of the net p rofit and othe r comprehensive
+  664|   income  of  the  Company  and  othe r  financial  i nfo rmation  in  accordance  with  the  recogn ition  and
+  665|   measu rement principles  laid  down  in  I ndian  Accou nti ng  Standard 34 (Ind  AS  -34) ,  ' I nte ri m  Financial
+  666|   Reporti ng'  prescribed  u nde r  Section  1 33  of  the  Act  read  with  relevant  rules  issued  thereu nder,
+  667|   including  the  relevant  provisions  of the  E lectricity  Act  2003  and  the  rules  issued  the reu nde r  and
+  668|   othe r accou nti ng  principles general ly accepted  in  I ndia and  in  compliance with  Regulation 33 and  52
+  669|   of  the  Listing  Regulations.  This  responsibi l ity  also  includes  mai ntenance  of  adequate  accou nti ng
+  670|   records  in  accordance with the provisions of the Act fo r safeguarding of the assets  of the Company
+  671|   and   fo r  preventi ng  and   detecti ng  frauds  and   oth e r  i rreg u larities ;  selection   and   appl ication   of
+  672|   appropriate accounting  policies;  making j udg ments and  estimates that are  reasonable and  prudent;
+  673|   and  the  design,  i m plementation and  mai ntenance of adequate  i nternal  financial  controls,  that were
+  674|   operati ng effectively fo r ensu ring the accu racy and completeness of the accou nti ng records,  relevant
+  675|   to the preparation and  presentation of the Statement that give a tru e and fai r view and are free from
+  676|   material  m isstatement. whethe r due to fraud or e rro r.
+  677|   In  preparing  the  Statement.  the  Board  of  Di rectors  are  responsible  fo r  assessing  the  Company's
+  678|   abi l ity to conti n ue as a going concern , disclosing , as applicable,  matte rs related to going concern and     -
+  679|   using the going concern  basis  of accou nti ng  unless the Board  of Di rectors eithe r intends to l iq u idate
+  680|   the Company or to cease operations,  or has  no  real istic alte rnative but to do so.
+  681|   The  Board of Di rectors are also responsible fo r overseeing the Company's financial  reporti ng process.
+  682|   Auditor's  Responsibilities for the Audit of the Standalone  Financial  Results
+  683|   Our  objectives  are  to  obtai n  reasonable  assu rance about whether the Statement as  a whole  is  free
+  684|   from  material  m isstatement,  whether  due  to  fraud  or  e rror,  and  to  issue  an  aud itor's  report  that
+  685|   includes  ou r opinion .  Reasonable  assurance  is  a high  level  of assu rance  but  is  not a guarantee that
+  686|   an audit conducted in accordance with SAs will always detect a material m isstatement when  it exists .
+  687|   M isstatements  can  arise  from  fraud  or  e rro r and  are  considered  material  if,  i ndividual ly  o r  in  the
+  688|   aggregate, they could  reasonably  be expected to i nfl uence the economic decisions of users taken  on
+  689|   the  basis  of the Statement.
+  690|   As   part  of  an   aud it  in   accordance  with   SAs,   we   exercise   professional  j udg ment  and   mai ntai n
+  691|   professional skepticism th rou g hout the audit. We  also:
+  692|        •       I dentify and assess the risks of material m isstatement of the Statement, whether due to fraud
+  693|                or  e rror,  design  and  pe rfo rm  aud it  procedu res  responsive  to those  risks,  and  obtain  aud it
+  694|                evidence that is  sufficient and  app rop riate to provide a basis fo r ou r opinion . The  risk of  not
+  695|                detecti ng a material  m isstatement resu lti ng from fraud  is  h igher than fo r one  resulting from
+  696|                e rror, as  fraud  may  i nvolve collusion ,  fo rge ry,  i ntentional  omissions,  m isrepresentations,  or
+  697|                the override of i nternal control .
+  698|        •       Obtain  an  u nderstandi ng  of  i nternal  control  relevant  to  the  aud it  in  orde r  to  design  audit
+  699|                 procedu res that are appropriate in  the ci rcu mstances  but  not fo r the pu rpose of expressing
+  700|                an  opinion on  the operati ng effectiveness of the company's  i nternal control .
+  701|        •       Evaluate   the   appropriateness   of   accou nti ng   policies   used   and   the   reasonableness   of
+  702|                                 g esti mates and  related  disclosu res  made by the Board of Di rectors.
+  703| [page 14]
+  704| SR   B C &   C O   LLP
+  705| Chartere d Accountants
+  706| 
+  707|  The Tata  Power Company  Li m ited
+  708|  Page 3 of 3
+  709|       •       Conclude on the appropriateness of the Board of Di rectors' use of the going concern basis of
+  710|               accou nti ng and,  based  on the audit evidence obtai ned , whethe r a material  u nce rtai nty exists
+  711|                related  to  events  or  conditions  that  may  cast  sig n ificant dou bt  on  the  Company's  abi l ity to
+  712|               conti n ue  as  a  going  concern .   If  we  conclude  that  a  material  u nce rtai nty  exists,  we  are
+  713|                requ i red  to d raw attention  in  ou r aud itor's  repo rt to the  related  disclosu res  in  the financial
+  714|                resu lts  or,  if  such  disclosu res  are  inadequate,  to  mod ify  ou r  opinion .  Our  conclusions  are
+  715|                based  on  the aud it ev idence obtained  up to the date of ou r aud ito r's report.  However, futu re
+  716|               events or conditions  may cause the Company to cease to conti n ue as  a going concer n .
+  717|       •       Evaluate  the  overall  presentation ,  structu re  and  content  of  the  Statement,  including  the
+  718|               disclosu res,  and  whether the Statement  represents the  u nderlyi ng transactions  and  events
+  719|                in  a manner that achieves fa i r presentation .
+  720|  We  com m u n icate with those charged with governance regardi ng , among other matte rs   , the planned
+  721|  scope and  ti m i ng  of the aud it and  sig n ificant audit findings,  incl uding  any  sign ificant deficiencies  in
+  722|  i nternal control that we  identify du ring ou r audit.
+  723|  We also provide those charged with governance with a statement that we have complied with relevant
+  724|  ethical  req u i rements  regardi ng  independence,  and  to  com m u n icate  with  them  all  relationsh ips  and
+  725|  othe r matte rs that  may  reasonably  be  thoug ht to  bear on  ou r independence,  and  where applicable,
+  726|  related safeguards .
+  727|  For S R B C & CO  LLP
+  728|  Chartered Accou ntants
+  729|  ICAI  Firm  Reg istration  N umber: 324982 E/E 300003
+  730|    '  ( / ) v {
+  731|                           ~
+  732|         Vi k        M  ht
+  733|  per       ram     e   a
+  734|  Partne r
+  735|  Membership  No.:  1 05938
+  736|  UDIN:  26 1 05938GVKWJ B4440
+  737|  Mumbai
+  738|  J u ly 27 , 2026
+  739| [page 15]
+  740|                                                                              TATA    POWER
+  741|                                                                             The Tata Powe r Company Limited
+  742|                                                                Bombay House, 24 Homi Mody Street, Mumbai 400 001
+  743|                                                                              CIN    : L28920MH1 91 9PLC000567
+  744|                                          Tel:  (91  22) 6665 8282 e-mail : tatapower@tatapower.com  Website : www.tatapower.com
+  745|                      STATEMENT OF AUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER  ENDED 30TH JUNE, 2026
+  746|                                                       Particulars                                                                         Quarter ended                     Year ended
+  747|                                                                                                                              30-Jun-26      31 -Mar-26       30-Jun-25      31 -Mar-26
+  748|                                                                                                                              (Audited)        (Audited)        (Audited)       (Audited)
+  749|                                                                                                                                              (Refer Note 5)
+  750|                                                                                                                                                          (~ in crore)
+  751|  1 .    Income
+  752|       Revenue from Operations (Refer Note 3 )                                                                    5,688.80          2,832 .76       5,285.20       13,225.50
+  753|       Other Income                                                                                                           19 1 .24            292 .37         520.68         1 ,842.1 9
+  754|       Total Income                                                                                                        5,880.04          3,1 25.1 3       5,805.88       1 5,067.69
+  755| 2.    Expenses
+  756|       Cost of Power Purchased                                                                                           458. 17             354.73         381 .48         1 ,388.91
+  757|       Cost of Fuel                                                                                                          3,37 1 . 15             825.76       3,1 47.99         5,703.26
+  758|       Transmission Charges                                                                                                1 1 9.80             1 51 .36         1 41 .78           579.55
+  759|       Raw Material Consumed and Construction cost                                                                   7.84              38.03           23.46           1 27.67
+  760|       Employee Benefits Expense                                                                                        223 .52             229.44          1 96.23           837. 1 9
+  761|       Finance Costs                                                                                                          556.21             486.45         497.35         1 ,975.83
+  762|       Depreciation and Amortisation  Expenses                                                                        31 8.81             331 .96         305.51         1 ,21 4.22
+  763|       Other Expenses                                                                                                        31 3.79             605.75         306.50         1 ,805.93
+  764|       Total Expenses                                                                                                     5,369.29          3,023.48       5,000.30       1 3,632.56
+  765| 3.   Profit/(Loss) Before Regulatory Deferral Balances and Tax (1 -2)                                    51 0.75             1 01 .65         805.58         1 ,435.1 3
+  766| 4.    Movement in Regulatory Deferral Balances (Net)
+  767|      Add / (Less):  Net Movement in  Regulatory Deferral  Balances                                            (1 39 .00)              4 1 .00        ( 1 38.00)         (258.00)
+  768|      Add/ (Less):  Deferred Tax_R  ecoverable/(Payable)                                                               2.48              (1 .46)             1 .23               1 .26
+  769|       Total Movement in  Regulatory Deferral Balances (Net)                                               (1 36.52)              39.54       (1 36.77)         (256.74)
+  770| 5.    Profit/(Loss) Before Tax (3+4)                                                                                    374.23             1 41 .1 9         668 .81         1 ,1 78.39
+  771| 6.   Tax Expense/(Credit)
+  772|       Current Tax                                                                                                                      -                     -                 -                  -
+  773|       Deferred Tax                                                                                                             96.86           (1 92.60)          1 48.72             53 .73
+  774|       Total Tax Expense/(Credit)                                                                                         96.86           (1 92.60)          148.72             53.73
+  775| 7.   Net Profit/(Loss) for the Period (5-6)                                                                           277.37            333.79         520.09         1 ,1 24.66
+  776| 8.   Other Comprehensive lncome/(Expenses) (Net of Tax)
+  777|        (i) Items that will not be reclassified to Profit or Loss
+  778|              lncome/(Expense)                                                                                              262 .63           (440 .25)          1 66.27         (471 .81 )
+  779|              Tax relating to items that will not be reclassified to Profit or Loss                                  (37.56)              6 1 . 1 1          (23.78)             67.49
+  780|        (ii) Items that will be reclassified to Profit or Loss
+  781|              lncome/(Expense)                                                                                               (5.80)                8.86           (5 .66)              4.69
+  782|              Tax relating to  items that will be reclassified to Profit or Loss                                           1 .46              (2 .23)             1 .42            {1 .1 8)
+  783|       Total Other Comprehensive lncome/(Expenses) (Net of Tax)                                         220.73           (372.51 )         138.25         (400.81 )
+  784| 9.   Total Comprehensive lncome/(Expenses) (7+8)                                                           498.1 0            (38.72)         658.34           723.85
+  785|  1 0.  Paid-up Equity Share Capital (Face Value: t  1/-   per share)                                            31 9.56             31 9.56         31 9.56           31 9.56
+  786|  1 1 .  Other Equity                                                                                                                                                                  1 8,096.53
+  787|  1 2.  Earnings Per Equity Share (oft 1/-   each) (t) (not annualised)
+  788|       (i)  Before Net Movement in  Regulatory Deferral Balances
+  789|                Basic                                                                                                                1 .29                0.92             2.05              4.32
+  790|                Diluted                                                                                                               1 .29                0.92             2.05              4 .32
+  791|       (ii) After Net Movement in  Regulatory Deferral  Balances
+  792|                Basic                                                                                                                0.87                1 .04             1 .63              3.52
+  793|                Diluted                                                                                                              0.87                1 .04             1 .63              3.51
+  794|                               SIGNED  FOR  IOEN I !FICATIDN
+  795| 
+  796|                               BY   f
+  797| 
+  798|                                    s   R B   C  & C O   L L P
+  799|                                                 M  U MB ~ ;   1
+  800|                                                               . _   ___
+  801| [page 16]
+  802|                                                                      TATA     POWE R
+  803|                                                                            The Tata Po  e r Compan   Limited
+  804|                                                               B    b    H         24  H   wi  M   d   St   yt   M    b  i 400 001
+  805|                                                                 om  ay   oCuIsNe , L2 89o2m0M  Ho1 9y1 9PrLeCe 0, 005um67 a
+  806|                                         T  l  (       )                      il    :           @                      W  b  i
+  807|                                           e :  91  22  6665 8282 e-ma  : tatapower   tatapower.com     e  s te: www.tatapower.com
+  808|                                                                AUDITED STANDALONE SEGMENT INFORMATION
+  809|                                                     Particulars                                                                         Quarter ended                      Year ended
+  810|                                                                                                                          30-Jun-26        31 -Mar-26         30-Jun-25     31 -Mar-26
+  811|                                                                                                                          (Audited)         (Audited)          {Audited)       (Audited)
+  812|                                                                                                                                            <Refer Note 5)
+  813|                                                                                                                                                       (~ in crore)
+  814| Segment Revenue and Net Movement in  Regulatory Deferral  Balances
+  815|                Thermal and Hydro (Refer Note 3)                                                                 4,363.64              1 ,639.23       4,07 1 .05      8,554.33
+  816|                Transmission and  Distribution                                                                      1 ,772 .58              1 ,654.54        1 ,535.60      6, 1 58.07
+  817|                Others                                                                                                          8.06                  1  1 .35             7.46          36.83
+  818|                                                                                                                             6, 1 44.28             3,305. 1 2        5,61 4.1 1     1 4,749.23
+  819| (Less) :       Inter Segment Revenue -    Thermal and Hydro                                                  (625.34)              (477.52)        (502.1 6)    (1 ,91 9.40'
+  820| Total Segment Revenue and Net Movement in  Regulatory Deferral  Balances (#)               5,51 8.94             2,827.60        5,1 1 1 .95     1 2,829.83
+  821| Segment Results
+  822|                Thermal and Hydro (Refer Note 3)                                                                   606.66                  90.56          482. 1 3        498. 1 0
+  823|                Transmission and  Distribution                                                                         273.87                326.26          256.87      1 ,063.57
+  824|                Others                                                                                                          1 .21                  (0. 1 4)             2.85            7.39
+  825| Total Segment Results                                                                                                 881 .74                41 6.68          741 .85      1 ,569.06
+  826| (Less) :       Finance Costs                                                                                           (556.21 )              (486.45)        (497.35)    { 1 ,975.83)
+  827| Add/(Less)  Unallocable lncome/(Expense) (Net)                                                                  48 .70                21 0.96          424.31       1 ,585. 1 6
+  828| Profit/{Loss) Before Tax                                                                                              374.23                1 41 .1 9          668.81       1 ,1 78.39
+  829|                                                                                                                                                           As at
+  830|                                                                                                                          30-Jun-26        31 -Mar-26        30-Jun-25     31 -Mar-26
+  831|                                                                                                                          (Audited)         (Audited)          (Audited)       {Audited)
+  832|                                                                                                                                                       (~  in crore)
+  833| Segment Assets
+  834|                Thermal and Hydro                                                                                  24,93 1 . 12            25, 1 88.49      23,250. 1 8     25,1 88.49
+  835|                Transmission and  Distribution                                                                     1 1 ,557.70            1 1 ,367.42      1 0,81 8.08     1  1 ,367.42
+  836|                Others                                                                                                       61 9.33                61 8. 1 4          603.66        61 8. 1 4
+  837|                Unallocable   *                                                                                          1 8,078. 14            1 7,793.1 1       1 7,973.90     1 7,793.1 1
+  838| Total Assets                                                                                                         55 1 86.29           54 967.1 6      52 645.82    54 967.1 6
+  839| Segment Liabilities
+  840|                Thermal and Hydro                                                                                    3,767.59             4,603.41        8,270.08      4,603.41
+  841|                Transmission and  Distribution                                                                      2 ,570 .85             3,025 . 1 3        1 ,958.79      3,025 . 1 3
+  842|                Others                                                                                                        22.00                 26.46            25.1 7          26.46
+  843|                Unallocable *                                                                                          29,898.03            28,896.07      23 ,358.46    28,896.07
+  844| Total Liabilities                                                                                                     36,258.47            36,551 .07      33,61 2.50     36,551   .07
+  845| Thermal  and  Hydro:  Comprises of generation of power from  hydroelectric sources and thermal  sources  (coal , gas and  oil) from owned  plants and
+  846| operated under lease arrangement and related ancillary services. It also comprises of hydro pump storage projects.
+  847| Transmission and  Distribution:  Comprises of transmission  and distribution  network, sale of power to  retail  customers through distribution network
+  848| and related ancillary services.
+  849| Others: Comprises of project management contracts/infrastructure management services and property under development.
+  850| * Includes assets and liabilities considered as held for sale.
+  851| The Operating Segments have been reported in a manner consistent with the internal reporting provided to the Chief Operating Decision Maker.
+  852| #  RECONCILIATION OF REVENUE AND NET MOVEMENT IN  REGULATORY DEFERRAL BALANCES
+  853|                                                      Particulars                                                                          Quarter ended                      Year ended
+  854|                                                                                                                          30-Jun-26        31 -Mar-26         30-Jun-25     31 -Mar-26
+  855|                                                                                                                           (Audited)         (Audited)          (Audited)      (Audited)
+  856|                                                                                                                                            (Refer Note 5)
+  857|                                                                                                                                                       (~  in crore)
+  858| Revenue from Operations (Refer Note 3)                                                                        5,688 .80             2,832.76        5,285.20     13,225.50
+  859| Add/(Less): Total Net Movement in  Regulatory Deferral  Balances                                        (1 36 .52)                  39.54        (1 36 .77)       (256.74)
+  860| Add/(Less):  Unallocable Revenue                                                                                   (33.34)                (44.70)          (36.48)       (1 38 .93)
+  861| Total  Segment  Revenue  and  Net  Movement  in  Regulatory  Deferral  Balances  as      5,51 8 .94             2,827.60        5,1 1 1 .95     1 2,829.83
+  862| reported above
+  863|                                                                         I                                                                                             <c R - C04t o      •
+  864|                      SIGMED  FOR  IOHJT!FICAT!Oi~                                                                                              ~   ,          .
+  865|                      BY   1                                      i                                                                                       Q      o a        :
+  866|                                                                          l                                                                                    '  I       M, U, MBAI   ~E)-
+  867|                                                                         '                                                                                       ~
+  868|                                                                      I                                                                                        y                      ~
+  869|                         S R   B C  &  C O   L L P                                                                                               ~'Y ,(     *    (:>~     .
+  870|                                      M   U    tv    l B   A                                                                                                        -                 .
+  871|                    , __     _  _    _    _     _    , ~
+  872| [page 17]
+  873|                                                                                                        TATA    POWE R
+  874|                                                                                                            The Tata  Po wer Company Limite d
+  875|                                                                                              Bombay HCouse, 24 Homi Mody StrCeet, Mumbai 400 001
+  876|                                                                             (        )                       iIlN : L28920M@H 1 91 9PL  00056W7   b  i
+  877|                                                                       Tel:  91  22  6665 8282 e-ma  : tatapower   tatapower.com     e  s te: www.tatapower.com
+  878|                 Additional information  pursuant to  Regulatfion 52(4Q) and  Regulation 54 (2) of Secu rities and  Exchange Board of India (Listi ng  Obligations and  Disclosure Requirements)
+  879|                 Regulations, 201 5, as amended as at and  or the    uarter  ended 30th June 2026.
+  880|                 Sr.  No.                          Particulars                                                                         30 Jun 26          nuart3e1r eMnadre2d6              30 Jun 25            Y3e1aMr eanrd2e6d
+  881|                                                                                                                                            (A-ud ite-d)                   (A-udite-d)              (A-udite-d)               (A-udite-d)
+  882|                 1          Debt Equity Ratio (in times) (Refer Note a)                                                                      1 .45                       1 .43                  1 . 07                         1 .43
+  883| 
+  884|                 2         Debt Service Coverage ratio (in times) (not annualised) (Refer Note b)                                 1 .79                       1 .29                  1 .1 9                        1 . 1 4
+  885|                 3         Interest Service Coverage Ratio (in times) (Refer Note c)                                                   1 .68                        1 .30                  2.36                         1 .61
+  886|                 4         Current Ratio (in times) (Refer Noted)                                                                           0.44                        0.44                  0.47                        0 .44
+  887|                 5         Long term Debt to Working Capital (in times) (Refer Note e)                                              (5.52)                     (5.20)                (4.57)                      (5.20)
+  888|                 6         Bad debts to Accounts  Receivable Ratio (%) (not annualised) (Refer Note f)                      (0.00)%                    0.32 %             (0.1 1 )%                     0.06 %
+  889|                 7         Current Liability Ratio (i n times) (Refer Note g)                                                                0.38                       0.37                  0.42                        0.37
+  890|                 8         Total Debts to Total Assets (in times) (Refer Note h)                                                         0.50                       0.48                  0.39                        0.48
+  891|                 9         Debtors Turnover (in number of days) (Refer Note i)                                                            83                         1 70                    86                         1 43
+  892|                 1 0        Inventory Turnover (i n number of days) (Refer Note j)                                                          48                        21 0                     39                          1 1 1
+  893|                 1 1        Operating Margin (%) (Refer Note k)                                                                               1 3%                       1 2%                  1 3%                        1 0%
+  894|                 1 2        Net Profit after Tax (t in Crore)                                                                                  277.37                    333 .79              520.09                  1 , 1 24.66
+  895|                 1 3        Net Profit Margin (%)  including exceptional item (Refer Note I).                                             5%                       1 2%                  1 0%                          9%
+  896|                 1 4        Net Worth (t in  Crore) (Refer Note m)                                                                     1 7,095.22                1 6,807.73           1 6,882.49                 1 6,807.73
+  897|                 1 5        Capital Redemption Reserve (t in Crore)                                                                         4.51                        4.51                  4 .51                         4.51
+  898|                 1 6        Debenture Redemption  Reserve (t in Crore) (Refer Note n)                                                  -                            -                   52 .53                          -
+  899|                 1 7       A)sset Cover Ratio (in times) (Refer Note o)                 C                            R  f    N  t     b  l          R  f    N  t     b  l                      3 92    R  f    N  t     b  l
+  900|                            ab) 9. 1 5% NNon convertiibblle ddebbentures -   FFace vallue 250 Crore                       Refer Note o below      Refer Note o below                  3.92    Refer Note o below
+  901|                                9. 1 5%   on convert   e   e  entures -     ace va ue 350    rore                         e er   o e o   e ow        e er   o e o   e ow                    .         e er   o e o   e ow
+  902|                 Notes: The following definitions have been considered for the purpose of computation of ratios and other information.
+  903|                 Sr.  No. Ratios                                                                                                                             Formulae
+  904|                 a)         Debt Equity Ratio                                                                                                            Total  Debt 111
+  905|                                                                                                                                                     Total  Shareh olde~ s Equityl21
+  906|                 b)         D  bt S     i     C            R  ti                            P   fit b  f            Qti     l  it          d t       i  t      t    Q            d  Q    i  ti        d        ti   ti             t t       Q
+  907|                              e      erv ce   overage    a  o                            roI      e ore exce    onah   demlsd an  i  axi  + l  n eres  ex  efnses  +   e  drecb a  odn an   amli obrilsi ai   ond-cui rrenh  ax eixd e13n1se
+  908|                                                                                                nterest expense+ sc  e  u e   pr nc pa  repayment o  tong-term   e  t an   tease   a    t es   ur ng t  e per o
+  909|                 c)         Interest Service Coverage Ratio                                                           Profit before exceQtional items and tax + interest exQense
+  910|                                                                                                                                                             Interest expense
+  911|                 d)        Current Ratio                                                                                                               Current assets141
+  912|                                                                                                                                                           Current liabitities151
+  913|                 e)         Long Term Debt to Working Capital                                                                                 Long term debt161
+  914|                                                                                                                                                            Working capital <7>
+  915|                 f)          Bad debts to Accounts Receivable Ratio                                                                              Bad debts 181
+  916|                                                                                                                                                       Average trade receivable
+  917|                          SIGNED  FOR  IDENTIFICATION  I
+  918|                                     1
+  919|                          BY                                                       I
+  920|                                                                                   I
+  921| I
+  922|                              s   R   BMCU M&BcAoI      L. LP     '
+  923|                                                            _
+  924| [page 18]
+  925|                                                                                                                            TATA     POWE R
+  926|                                                                                                                                  The Tata Po wer Company Limite d
+  927|                                                                                                                 Bombay HCouse, 24 Homi  Mody StrCeet, Mumbai 400 001
+  928|                                                                                    T  l   (         )                            IilN  : L28920M@H 1 91 9PL   00056W7   b  i
+  929|                                                                                       e :   91  22  6665 8282 e-ma  : tatapower    tatapower.com      e  s te: www.tatapower.com
+  930|                  ARdditilonial  info2r0m1 5ation  pursudantd to  Reguladtifon 5h2(4Q)  and  Regudladtio3n0 5h4J  (2)  o2f 0S2e6curities and  Exchange  Board of India (Listing Obligations and  Disclosure  Requirements)
+  931|                     egu at ons,          ,  as amen  e   as at an    or t  e    uarter  en  e       t     une         .
+  932|                   g)          Current Liability Ratio                                                                                                                       Current  liabi lities 15>
+  933|                                                                                                                                                                                            Total  l iabilties 1• >
+  934|                   h)          T  t  l  D  bt   t   T  t  l  A      t    R  ti
+  935|                                 o a     e   s  o    o a     sse s    a  o                                                                                                         Total debts 11 >
+  936|                                                                                                                                                                                             Total assets 1 10>
+  937|                   i)           Debtors Turnover                                                                    Average  receivable  (including  Regulato[Y  balances wherever a1 1 1 1 licable)  x number of da~s
+  938|                                                                                                                                    Reven ue from op erations le ss deferred  tax recov erable/(pa yable) whe rev  er appli ca ble
+  939|                  j)           I nventory Turnove r                                                                                                              Average  invento[Y  x number of da~s
+  940|                                                                                                                                                                                        C ost of Go od s  sold 111  >
+  941| 
+  942|                   k)          Operating  Margin (%)                                                              01 1 erating  Profit (Profit before tax and exce1 1 tional  ite m + I nterest ex1 1 ense -   other income)
+  943|                                                                                                                                                           Revenue + Net movement in regulatory deferral balances
+  944|                   I)           Net Profit Margin (%) including exceptional                                                               Net Profit after tax (including exce1 1 tional  item)
+  945|                               item                                                                                                                     Revenue + Net movement in  regulatory deferral balances
+  946|                   m)         NRet  Wi  orth  ha)s Rbeenl   ci ompu2t0e1d5  oi n  tNhe  basish  as dstafitedd  iin   Clbause  i2  o(f5  t7h)e  fSecuiritie2s  afndh   ECxchangei   BAoard 2o0f1 3India  (Listing  Obligations  and   Disclosu re
+  947|                                  equ rements     egu at ons,           .e.    et wort   as   e  ne    n su  -sect on         o  sect on    o  t  e    ompan es    ct,          .
+  948|                  n)          Thde  Comi  panyf wd abs  required Pto  create  DeCbenture i Red(eSmh ptionC  Reiselrve d(ODRRb) out of )thAe  profdits whicRh  al re  a2v0a1il9abdle fodr Apayment1 o6f d2i0v1id9endh  foCr the  purpoise of
+  949|                               re  eimpdt ot n  o   te OeRntRureAs.     udrisual nt ttho  Compan esh        atre     atpdtaO  RanR     be  enturetst   thme nl  ment   i  u eis,t      ff    t ate       ugust      ,          ,  t  e     ompany   s  not
+  950|                               requ re    o crea e         .    ccor   ng y,     e    ompany   as no  crea e            su  sequen   o    e  ru es com ng  n o e  ec .
+  951|                  o)          Asset Cover Ratio                                                                                                                               Secured assets 1">
+  952|                                                                                                                                                                                            Secured loans l 13>
+  953|                               Dudring thde prheivihous year 9. 1 5d% bNon convi  ertible dehbentures -    Faceb lvaflui  e d250 Croreis al ndd i 9. 1 5%  Nobnl  convehritible debenhtiures -    Face valuel 350 dCrores havie beben
+  954|                               re  el edmi e    whi cl    wal s  sehcure    d yb  a  par  fpasist u  c  fai rgt e  on  mdovaffi  e   xe i   asset ts   nc u t ng dmf otva   e  mac   nery ,  mac   nery  spares,  too s  an    accessor es    ut
+  955|                               exc u   ng ve   c es,  aunc  es an      arges,  urn  ure,   x ures an   o   ce equ pmen  ,  presen  an     u ure .
+  956|                  Notes:  T     l  D  b
+  957|                   1 )          i  ota     e  t:  Londg  terhm  bodrrobwings  (including  current  maturities  of long term  borrowings) ,  lease  liabilities  (cu rrent  and  non  current),  short term  borrowings  and
+  958|                                nterest accrue   on t  ese   e  ts .
+  959|                  2)          Total  Shareholder's  Equity : Issued share capital and other equity.
+  960|                  3)          For the pufrpose/ of compu)tation , scheduled  principal repayment of long term  borrowings does not include refinancing/ prepayments (i ncluding  prepayment by
+  961|                               exercise o  call  put option  .
+  962|                  4)          Current Assets as per balance sheet, assets held for sale and current portion of regulatory asset.
+  963|                  5)          Current liabilities as per balance sheet and  liablities classified as held for sale .
+  964|                  6)          Lhong tdermb debt : Long term borrowings (i ncludi ng  current matu rities of long term  borrowings) ,  lease liabilities (current and  non current) , and  interest accrued on
+  965|                               t  ese   e  ts.
+  966|                  7)          Working Capital  : Current assets -   Current liabilities (excluding current maturities of long term debt,  lease liability and  interest accrued  on  long term borrowings) .
+  967|                  8)          Bad debts includes provision for doubtful debts.
+  968|                  9)          Total  liablities as per balance sheet,  liablities classified as held for sale.
+  969|                   1 0)        Total Assets as  per balance sheet,  assets held for sale and  regulatory assets.
+  970|                   1 1 )        Cost of goods sold  : Cost of fuel and  Raw material consumed and construction cost
+  971|                   1 2)        Secured assets : Written down value of secured assets, capital work in  progress and  machinery spares.
+  972|                   1 3)        Secured  loans  : Outstanding value of secured  Non-convertible debentures and  secured borrowings.
+  973|                                   SIGNED   FOR   IDENTIFICATION  I
+  974| 
+  975| I                                                                                                      l '
+  976|                               B  :  J       B    C   &   c o    LL P
+  977|                                                             M U M  BAI
+  978| 
+  979| [page 19]
+  980| NOTES TO THE STANDALONE  FINANCIAL RESULTS -    Q1  FY27
+  981|   1 .      The above results were reviewed by the Audit Committee and approved by the Board of Directors at its meeting
+  982|           held on 27th July, 2026.
+  983|   2.      The shareholders of the Company in their meeting held on 7th July, 2026 approved final dividend of z 2.50 per
+  984|           fully paid equity share aggregating to z 798 .83 crore for the financial year 2025-26. The said dividend has been
+  985|           paid to the holders of fully paid equity shares on  1 0th July, 2026 .
+  986|   3.      The Company supplied  power from  the  Mundra  Power  Plant  ("Plant")  upto  30th  June,  2025,  based  on the
+  987|           directions of the Ministry of Power ("MoP") under Section 1 1  of the Electricity Act, 2003 , since 1 6th April, 2023 .
+  988|           Effective 3rd  July,  2025,  the  Company temporarily suspended  operations of the  Plant to  undertake  pending
+  989|           overhauling activities aimed at resolving  existing technical  issues.  On  23rd  March , 2026 , with  effect from  1 st
+  990|           April , 2025 , the Company executed the supplementary power purchase agreement ("SPPA") with Gujarat Urja
+  991|           Vikas Nigam Limited ("GUVNL") , with revised tariff and power supply framework, which superseded the earlier
+  992|           PPA for GUVNL's contracted capacity . While approvals from the remaining procurers are in progress , the MoP
+  993|           issued  di rections  under Section  1 1  on  22nd  March 2026 , permitting  plant operations from  1 st April,  2026 to
+  994|           30th June, 2026 with the terms of SPPA which has been extended up to 30th September, 2026 , during which
+  995|           period management expects completion of the SPPA with the other procurers .
+  996|   4.      On  26th  September,  2023 the  Singapore  International Arb itration  Centre  (SIAC)  published  a  liability  award
+  997|           whereby the Arbitral Tribunal  held that the Company was  in  breach of certain clauses of the  Non-disclosure
+  998|           agreements entered into with Kleros Capital Partners Limited ('Kleros') and of its contractual duty of good faith
+  999|           and confidence . Further, on  1 st Ju ly 2025 and 27th August, 2025 , the SIAC published a quantum award and
+ 1000|           final  award  (together  referred  to  as  'awards') ,  directing  the  Company  to  pay  Kleros  damages  for  loss  of
+ 1001|           opportunity of USO 490,320,000 with  simple  interest of 5.33%  from  30th  November,  2020 and  cost of SGD
+ 1002|           1 1 ,34 1 ,963.46 with simple interest of 5.33% from  1 st July, 2025. The Company has obtained a view from  its
+ 1003|           legal counsel stating that the Company has various justifiable grounds to seek setting aside the awards with
+ 1004|           high  probability  of a favorable  outcome .  Based  on  the  legal  advice  company  has filed  an  appeal  on  23rd
+ 1005|           October 2025,  with  the  Singapore  International  Commercial  Court  (SICC) for setting  aside the  awards  and
+ 1006|           does not foresee any affirmative payment obligation.  Considering th is,  no  provision  has been  recorded  in the
+ 1007|           financial results for the quarter ended 30th June , 2026.The hearings on the case are completed and the order
+ 1008|           is reserved in th is matter.
+ 1009|     5.    Figures for the quarter ended 31 st March , 2026 are the balancing figures between the audited figures in respect
+ 1010|           of the full financial year ended 31 st March , 2026 and the audited published figures of nine months ended 31 st
+ 1011|           December, 2025 .
+ 1012|                                                                                                          For and on  behalf of the Board of
+ 1013|                                                                                                  THE TATA POWER COMPANY LIMITED
+ 1014|                                                                                                                           P
+ 1015|                                                                                                                       -         ~
+ 1016| 
+ 1017|                                                                                                                     PRAVEER SINHA
+ 1018|                                                                                                              CEO & Managing  Director
+ 1019|         Date : 27th July, 2026                                                                                   DIN 01 7851 64
+ 1020|                                SIGMEO  FOR  IDENTIFICATION-I
+ 1021| 
+ 1022|                                BY  ~
+ 1023| 
+ 1024|                                   S  R  B  C  &  CO  LL P    j
+ 1025|                                             M   U M BAI             J
+ 1026|                                                                    __

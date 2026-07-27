@@ -1,0 +1,20 @@
+stage: B12d
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 16
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06.md Part 1, Q6 peer evidence row (TMB, Jul-25, p.6-7)", description: "TMB Q1 FY26 MSME 'degrowth' claim anchored to Jul-25 call, but that call only describes a growth disruption; the explicit confirming quote ('negative growth in the MSME' for Q1) appears retrospectively in the Feb-26 (Q3 FY26) call. Claim is true, anchor is imprecise."}
+  - {severity: "MINOR", location: "B06.md, all page-pinpoint citations across 16 transcripts", description: "Systemic up-to-1-page offset in .txt extract page numbering (PDF cover page vs printed footer numbering mismatch); poppler unavailable to cross-check against original PDF. Every quote checked was genuinely present in the named file despite this."}
+  - {severity: "MINOR", location: "B06.md Part 3 coverage map, CSBBANK Q3 FY26 row", description: "Stray non-existent date fragment 'Jan-28' in the quarter label; cosmetic typo, underlying Feb-26 content checks out."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100
+coverage_note: "22 of 64 possible peer/quarter data points (all four banks, all four quarters each represented at least once) were directly spot-checked against source transcript text, prioritising the highest-materiality citations: the exact-match NIM claim (Q2), the cost-income contradiction (Q3, all three contradicting peers' figures independently confirmed), the GNPA/TWO proxy figures (Q5), the gold LTV/tonnage figures (Q1), the MSME growth/degrowth/flat claims (Q6) for all three suggested peers, and two Part 2E risk items (ECL transition, West Asia/NRI exposure, leadership succession). No fabricated or unsupported SUBSTANTIVE citation was found; verdict discipline (>=2-anchor rule for VERIFIED claims, no upgrade-from-silence) was honoured throughout; all six injected peer_questions from B05 received a supported verdict. Remaining ~42 coverage-map data points were not individually re-derived from source text given the volume of the 16-transcript set, but no internal inconsistency or implausibility was found among them during the unprompted cross-read of all four transcripts per bank."

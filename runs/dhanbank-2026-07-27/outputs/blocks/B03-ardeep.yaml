@@ -1,0 +1,60 @@
+stage: B03-ardeep
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "19 pages of source AR are image-only (scanned) and absent from the text cache, including the section (PDF p.2-11) that would typically carry a distinct Chairman's photo-letter; Phase 6 used the Directors' Report/MD&A opening as a front-matter proxy per the same workaround Stage 2 used"
+  - "Auditor fee (Rs50 lakh) disclosed as a single bundled figure covering Audit, Certification, Quarterly Review and Tax Audit with no audit-vs-non-audit split; the fee ratio the protocol requests cannot be computed"
+  - "Individual director tenure/appointment-start dates not given in the AR beyond FY25 changes, so a >10-year independent-director tenure check cannot be completed from this document alone"
+  - "Effective tax rate swing (FY25 6.95% vs FY24 17.96%) is not reconciled or explained in the extracted notes"
+  - "Gold loan portfolio share is not disclosed anywhere in the Bank's own FY25 Annual Report; the 31% (Mar-2025) and 38% (Dec-2025) figures used in this analysis come entirely from the external March-2026 ICRA rating note supplied as current-year context"
+  - "FY24 CASA ratio and FY24 digital-transaction-% comparators for the FY25 snapshot figures are NOT FOUND IN DOCUMENT"
+  - "Whistleblower complaint volume/nature not disclosed beyond the existence and non-denial-of-access statement"
+flags:
+  - {type: FLAG-CASH, reason: "FY25 operating cash flow turned negative (Rs(4.79) Cr) despite PAT rising to Rs66.64 Cr, driven by advances (+18.4%) outgrowing deposits (+12.1%) and funded partly by drawing down the Bank's own interbank liquidity balances, in the same year a ~56%-dilutive rights issue was also required; CFO/PAT ratio fails the >0.7 threshold in both FY25 (-0.07) and FY24 (0.30). Reversed sharply positive in FY26 per the audited results filing (CFO Rs631.49 Cr) but was real for the year this AR covers."}
+  - {type: FLAG-ASSET-QUALITY, reason: "Carried forward from B02 and independently re-verified in this stage: headline GNPA/NNPA improvement (4.05%->2.98%/1.25%->0.99%) is denominator-driven, not a genuine slippage deceleration; technical write-off pool Rs692.47 Cr (~1.9x headline GNPA) with recovery rate halved; restructured advances +47% YoY concentrated in MSME sub-standard accounts. NEW in this stage: the March-2026 ICRA rating note shows PCR (incl. write-offs) falling from 76.30% to 53.63% and NNPA rising from 0.86% to 1.11% between Dec-2024 and Dec-2025 -- an early sign the denominator-effect reversal B02 flagged as a risk is materializing in subsequent-period data."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Not applicable in the conventional sense -- Dhanlaxmi Bank has no promoter/promoter group; it is widely held. Noted instead: Director Jineesh Nath C.K. holds a significant 7.49% individual stake (not a promoter position); institutional (mutual fund/insurance) ownership is very low (0.04% insurance, no distinct MF line) which per CLAUDE.md is explicitly NOT to be treated as a risk signal. Full institutional/insider-ownership analysis remains scoped to B08."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Watch", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "Turnaround (Watchlist)"}
+overall_quality: 5            # /10 with the four 25% components
+quality_components: {governance: 6, accounting: 5, balance_sheet: 6, earnings: 4}
+kill_switch_notes:
+  - "Phase 1 (informational): a human reviewer would not have reason to stop -- opinion unmodified, no fraud/going-concern qualification -- but would want the asset-quality headline read alongside Phase 2/3 detail before relying on it."
+  - "Phase 2 (informational): would not stop -- no fabrication, no RPT abuse -- but would seek management clarification on the segment-result cross-document discrepancy (Rs22.58 Cr AR vs Rs26.26 Cr FY26-filing comparative) before relying on either FY25 figure precisely."
+  - "Phase 3 (informational): would not stop -- the negative-CFO dynamic is explainable and reversed in FY26 -- but would want the unexplained tax-rate swing and the segment discrepancy answered by management."
+  - "Phase 4 (informational): would not stop -- but would treat the MD&A asset-quality narrative as materially incomplete on its own and insist on reading Schedule 18 directly."
+  - "Phase 5 (informational): would not stop -- but would want the rationale for two RBI-appointed Additional Directors on the Board explained before treating governance as fully clean."
+triple_pass_verification:
+  verified: 13                 # of 15, independently re-verified against exact source figures in this stage; remaining 2 accepted on B02's extraction with no contradicting evidence found
+  discrepancies:
+    - {finding_rank: 6, triple_pass_value: "Corporate/Wholesale segment result FY25 Rs(22.58) Cr per AR Schedule 18 Note 15c", ar_value: "Rs(26.26) Cr per the same FY25 period as shown as prior-year comparative in the FY26 audited results filing's segment note (labelled 'Net of Provisions', a qualifier the FY25 AR's Note 15c does not carry)", note_ref: "Note 15c (AS17 Segment Reporting), Schedule 18, PDF p.132; cf. FY26 audited results Segment-wise Results table"}
+missing_risks:
+  - {risk: "Technical write-off shadow pool (Rs692.47 Cr, ~1.9x headline GNPA, halving recovery rate) never referenced in MD&A's NPA narrative, which discusses only the headline GNPA/NNPA improvement", evidence_anchor: "Note 4a-i, Schedule 18, PDF p.113-114 vs MD&A NPA Management section, PDF p.18"}
+  - {risk: "MSME restructuring concentration (+47% YoY) never mentioned in MD&A's Credit Sanction/Credit Administration narrative", evidence_anchor: "Note 4d-ii, Schedule 18, PDF p.116 vs MD&A, PDF p.17-18"}
+  - {risk: "Corporate/Wholesale segment's widening structural loss never discussed by figure in MD&A strategy sections, only implicitly via the stated Retail/MSME pivot", evidence_anchor: "Note 15c, Schedule 18, PDF p.132 vs MD&A Strategies/Way Ahead, PDF p.15"}
+  - {risk: "FY24 RBI penalty (Rs1.20 Cr, KYC/loans/deposit-rate violations) acknowledged only in the abstract in MD&A Compliance section, amount and nature never named in the narrative", evidence_anchor: "Note 12, Schedule 18, PDF p.123-124 vs MD&A Compliance section, PDF p.22"}
+  - {risk: "Auditor rotation on one joint-auditor seat (Krishnamoorthy and Krishnamoorthy -> Abraham & Jose between FY24 and FY25) surfaces only in the Auditor's Report Other Matters paragraph, not flagged in the Directors' Report's auditor-appointment narrative", evidence_anchor: "Auditor's Report Other Matters, PDF p.71-72 vs Directors' Report Statutory Central Auditors section, PDF p.6-7"}
+guidance_table:
+  - {claim: "Focus on Retail and MSME to mitigate impact of corporate investment slowdown", number: "NOT FOUND (no numeric target)", timeframe: "Ongoing", credibility: "Directionally evidenced by widening Corporate segment loss and stated pivot -- credible direction, unquantified"}
+  - {claim: "More Corporate relationship for a strong CASA ratio", number: "NOT FOUND", timeframe: "Ongoing", credibility: "Cannot verify trend -- FY24 CASA comparator NOT FOUND IN DOCUMENT"}
+  - {claim: "Strengthening risk management and governance processes", number: "NOT FOUND", timeframe: "Ongoing", credibility: "Partially evidenced (SMA improvement) but sits against FY24 RBI penalty and Audit Committee chair vacancy"}
+  - {claim: "Digital transaction share of total transactions", number: "88%", timeframe: "FY25 snapshot", credibility: "Specific and verifiable in principle; no prior-year comparator given"}
+monitorables:
+  - {metric: "Technical write-off pool size and recovery rate", threshold: "Recovery rate below 3.2% or pool growth outpacing GNPA reduction", where: "Schedule 18 Note 4a-i / quarterly-results equivalent", why: "Tests whether the shadow-NPA thesis continues to widen"}
+  - {metric: "Net NPA ratio", threshold: "Sustained rise above 1.0-1.1% for 2+ quarters", where: "Quarterly results NPA Ratios line", why: "Would confirm the FY25 denominator-driven improvement is reversing structurally, as ICRA's 9M FY26 data already suggests"}
+  - {metric: "PCR including technical write-offs", threshold: "Further decline below ~53.6% (Dec-2025 per ICRA)", where: "Quarterly results PCR note", why: "Falling PCR alongside rising NNPA is the clearest sign the FY25 headline improvement was optical"}
+  - {metric: "Gold loan share of loan book", threshold: "Continued rise materially above 38% without concentration/LTV disclosure", where: "Quarterly investor presentations / rating agency updates (not disclosed in the AR)", why: "Concentration and Gulf-geopolitical exposure per ICRA; a lower-RWA growth lever that can mask underlying book-quality shifts"}
+  - {metric: "Corporate/Wholesale segment result", threshold: "Failure to continue narrowing from the FY26 Rs(8.75) Cr level", where: "Quarterly segment-reporting note", why: "Tests whether the stated Retail/MSME pivot is resolving the structural drag"}
+  - {metric: "Software/fixed-asset capex", threshold: "Continued suppression below FY24's Rs21.45 Cr software-capex level", where: "Schedule 18 Fixed Assets note", why: "Tests the Phase 6E hedged-retreat finding on technology investment"}
+  - {metric: "Effective tax rate", threshold: "Any further large swing without explanation", where: "P&L / DTA note", why: "FY25's 6.95% vs FY24's 17.96% is unexplained in this AR"}
+  - {metric: "CRAR/CET1 trajectory", threshold: "Decline back toward pre-rights-issue levels as RWA growth consumes the cushion", where: "Quarterly Basel III / Pillar III disclosures", why: "Tests whether the FY25 capital raise buys durable runway or is quickly consumed by 18%+ advances growth"}
+strengths_top3:
+  - "Capital position materially and durably strengthened (CRAR 12.71%->16.12%->18.92% FY24->FY25->FY26; CET1 11.36%->15.24%; leverage ratio 5.14%->6.76%) via a fully-subscribed rights issue that directly addressed the legacy-loss CET1 deduction"
+  - "Clean related-party and investment-valuation practices: KMP-only RPT at ~0.05% of total income, conservative RBI-mandated NPI markdown, unmodified audit opinion every year checked"
+  - "Genuine granular operational improvement: SMA and SMA-2 ratios both improved meaningfully, operating profit +37% YoY, cost-to-income improved 88.66%->85.42% (->83.41% per ICRA 9M FY26), fraud incidents and amounts both fell YoY"
+red_flags_top3:
+  - "Headline asset-quality improvement is a denominator effect, not a durable trend, and FY26 data (ICRA) shows early reversal signs: PCR (incl. write-offs) fell 76.30%->53.63% and NNPA rose 0.86%->1.11% between Dec-2024 and Dec-2025"
+  - "FY25 operating cash flow turned negative (Rs(4.79) Cr) despite rising PAT, funded partly by drawing down the Bank's own interbank liquidity buffer in the same year a ~56%-dilutive capital raise was also needed"
+  - "Rapid, geopolitically-exposed concentration into gold loans as the primary growth lever (31%->38% of the book in nine months, per ICRA, not disclosed in the Bank's own FY25 AR at all), against a Gulf-remittance-linked Kerala deposit/borrower base and elevated top-20 depositor (24.5%) and exposure (147% of Tier I) concentration"
+best_fit_strategy: "Turnaround (Watchlist)"
+one_line_verdict: "Capital repaired, headline metrics improving, underlying credit quality still unproven."

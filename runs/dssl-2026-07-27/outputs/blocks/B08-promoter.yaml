@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Primary SEBI settlement order PDFs (Feb 2019, Dynacons Systems & Solutions Ltd / Shirish M. Anjaria HUF / Trigen Infosolutions Ltd, matter of Dynacons Technologies Ltd) returned HTTP 403 on direct fetch; amount (~Rs22.28 lakh) and violation basis (PIT Reg 13(1)/SAST Reg 29(1) disclosure lapse, FY13/FY14) sourced from secondary aggregator summaries only, not the primary order text"
+  - "BSE 'Consolidated Pledge Data' disclosure page for DSSL (bseindia.com) returned HTTP 403; promoter pledge % could not be independently confirmed from a primary exchange source in this run"
+  - "Full text of the Moneylife 'Stock manipulation: Dynacons Technologies' article returned HTTP 403; the 433% price-move claim is carried at MEDIA tier via search-snippet summary only"
+  - "No independently verifiable source for the promoters' claimed academic credentials (Science degree, Law postgraduate, Federation of Insurance Institutes certification, Millennium PC/Intel recognition) beyond company-linked bios"
+  - "AmbitionBox-specific employee review data for DSSL not retrieved (search surfaced AmbitionBox's own Glassdoor employer page instead)"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "2019 SEBI settlement orders naming Dynacons Systems & Solutions Limited (the current listed company), Shirish M. Anjaria HUF, and Trigen/Trigem Infosolutions Limited, in the matter of Dynacons Technologies Ltd; combined settlement reported ~Rs22.28 lakh for shareholding-disclosure lapses re: FY2013/FY2014 holdings; settled without admission of guilt", evidence_tier: "VERIFIED (existence/parties/date, sebi.gov.in order titles) / MEDIA (amount and basis, secondary aggregator)", source: "sebi.gov.in enforcement-orders listing, Feb 2019; secondary aggregator search summary", date: "2019-02-01"}
+  - {finding: "Dynacons Technologies Ltd (a separate listed company in which the Anjaria/Dalal family held a stake sold in full to Arun Govil in Oct 2015) is separately reported to have seen a ~433% stock price rise (May 2014 to Jan 2016) 'despite virtually no profits'; no evidence found in this run of direct promoter-family involvement in that later manipulation episode", evidence_tier: "MEDIA (search-snippet summary of a Moneylife article; primary article fetch blocked)", source: "moneylife.in, 'Stock manipulation: Dynacons Technologies'; MarketScreener corporate-action record of the 2015 stake sale", date: "reported ~2016, stake sale Oct 2015"}
+  - {finding: "Cybercons Infosec Private Limited's legal classification (subsidiary vs 50% associate) is internally contradicted across 6+ anchors in the FY25 Annual Report, including within the Consolidated Auditor's Report itself; all three DSSL promoter-executives (Shirish Anjaria, Dharmesh Anjaria, Parag Dalal) sit on Cybercons' own board alongside one other director, in the same year related-party purchases (Rs254.74 lakh, new) and advances (Rs165.97 lakh, +1006% YoY) with Cybercons grew sharply; Cybercons' own statutory CARO had not been issued by its auditor as of the parent's FY25 sign-off", evidence_tier: "VERIFIED", source: "FY25 AR (Board's Report p.34, AOC-1 p.45-46, Notes 32.4/p.133, CARO cl.xxi p.93, Consolidated Auditor's Report p.147-148); B03-ardeep.md Phase 1F/2B; company-registry aggregators for Cybercons directorship", date: "FY2024-25, sign-off 2025-05-24"}
+  - {finding: "FY25 Audit Committee chaired for 10 of 12 meetings by Jitesh Jain, who resigned 4 March 2025; successor Ashok Rajagiri (CA) appointed Chairperson the next day and attended only 1 meeting before the 24 May 2025 sign-off; Risk Management Committee held zero meetings in FY25, the same year the group recognised a new ~Rs95.5cr undisclosed lease-financing structure", evidence_tier: "VERIFIED", source: "FY25 AR Corporate Governance Report; B03-ardeep.md Phase 5B", date: "FY2024-25"}
+  - {finding: "Promoter share-pledge percentage is NOT FOUND in any source checked: not in the FY25 AR's Corporate Governance Report or Note 15.2 shareholding table, not in the operator-supplied screener.in Shareholding Pattern, and BSE's dedicated Consolidated Pledge Data page for DSSL returned HTTP 403 on direct fetch in this run", evidence_tier: "VERIFIED absence-of-disclosure in the two sources checked directly; NOT FOUND for the blocked third source", source: "FY25 AR Note 15.2/Corp Gov Report; screener SHP; bseindia.com pledge-data page (blocked)", date: "as of 2026-07-27"}
+  - {finding: "Section 180(1)(c) resolution at the FY25 AGM seeking to raise the borrowing limit to Rs1,500 crore, described only as an enabling provision for unnamed 'larger projects,' with no financing plan or project list, against a current debt base of Rs51.89cr and net worth of Rs230.92cr", evidence_tier: "VERIFIED", source: "FY25 AR Notice Item 5, p.24; B03-ardeep.md Phase 2F/4B", date: "FY2024-25 AGM Notice"}
+transition_evidence:
+  - "Institutional (FII+DII) ownership rose from 0.00% (Sep 2023) to approximately 1.36% (Jun 2026), with FII specifically at 1.08% in Jun 2026, after years at effectively zero (screener SHP, ANCHORED-EQUIVALENT)"
+  - "Mr. Ashok Bhumaiah Rajagiri, a Chartered Accountant, appointed Independent Director and Audit Committee Chairperson 5 March 2025, a genuine outside financial-expertise addition, though timing (10 days before FY25 year-end) limits credit for the FY25 cycle itself"
+pledge_pct_latest: 0
+pledge_trend: "NOT FOUND — no pledge percentage disclosed in the FY25 AR (Note 15.2 or Corporate Governance Report), no pledge column in the operator-supplied screener SHP, and a direct attempt to check BSE's Consolidated Pledge Data page for DSSL returned HTTP 403 in this run; do not treat as zero, cross-check directly against BSE/NSE pledge filings before relying on this dimension"
+searches_performed:
+  - "Shirish Anjaria Dynacons Systems Solutions SEBI order"
+  - "Dynacons Systems Solutions DSSL SEBI adjudication penalty"
+  - "Dynacons Systems Solutions Ltd promoter litigation court case"
+  - "\"Dynacons\" Anjaria \"Millennium PC\" Intel"
+  - "\"Dynacons Technologies\" SEBI settlement order 2019 case details"
+  - "SEBI settlement Dynacons Technologies Ltd manipulation insider trading matter"
+  - "\"Dynacons Technologies Ltd\" 2001/2002/2003 stock manipulation case"
+  - "SEBI settlement order Dynacons Technologies Ltd SAST/PIT disclosure regulation 2019"
+  - "\"Trigen Infosolutions\" OR \"Trigem Infosolutions\" Dynacons SEBI settlement 2019"
+  - "\"Dynacons Technologies\" price manipulation SEBI 433% Arun Govil"
+  - "Dynacons Systems Solutions Glassdoor AmbitionBox employee reviews rating"
+  - "\"Dynacons\" IiAS OR SES OR InGovern proxy advisory report"
+  - "Dynacons Systems Solutions IT raid tax income tax department search"
+  - "\"Trigem Infosolutions\" Anjaria Dalal company status active struck off"
+  - "Dynacons Systems Solutions DSSL controversy fraud allegation 2024 2025 2026"
+  - "Shirish Anjaria Dynacons biography education career background founder"
+  - "Dynacons Systems Solutions related party transaction concerns analyst"
+  - "Cybercons Infosec Private Limited directors Anjaria Dalal MCA"
+  - "Dynacons Systems Solutions credit rating Acuite CRISIL rating action 2025 2026"
+  - "Dynacons Systems Solutions promoter pledge shares shareholding pattern BSE"
+  - "WebFetch: sebi.gov.in settlement order pages (x2) — 403"
+  - "WebFetch: sebi.gov.in attachdocs PDF — 403"
+  - "WebFetch: moneylife.in article — 403"
+  - "WebFetch: trendlyne.com insider-trading-sast DSSL page — 403"
+  - "WebFetch: bseindia.com consolidated-pledge-data DSSL page — 403"
+searches_skipped:
+  - "Direct SCORES complaint-history lookup for DSSL — no public search interface available to this run"
+  - "AmbitionBox-specific DSSL review page — search did not surface a direct AmbitionBox DSSL URL to fetch"
+  - "Independent verification of promoter academic credentials against named institutions — no searchable public record found"
+verdict_basis: "No deal-breaker-level finding (no market ban, no criminal conviction, no live SFIO/PMLA, no auditor resignation, no confirmed pledge, no restatement), but a dated (2019) SEBI settlement directly naming the current listed company and the CMD's family HUF, combined with a live, promoter-co-governed related-entity classification/disclosure failure (Cybercons) and FY25 governance-timing gaps (Audit Committee chair transition, inactive Risk Committee), together outweigh the clean criminal/tax/auditor-fee record and the flat, unpledged (as far as disclosed) promoter holding; net CAUTION with early, genuine but modest transition evidence"

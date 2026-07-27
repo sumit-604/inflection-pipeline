@@ -1,0 +1,43 @@
+stage: B09-tam
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "management explicit TAM/growth claim: NOT FOUND (AR guidance-light)"
+  - "B07 capex-embedded-growth figure: not provided/not applicable to a bank; used CRAR/Tier-I as capacity proxy"
+  - "blended RWA density by segment: NOT FOUND disclosed; ~50% estimate used only for 3C capacity cross-check"
+flags:
+  - "recent reported book growth (18-26% YoY) is substantially a gold-price effect (gold-loan share of book 31%->38%, Mar-25 to Dec-25), not durable market-share gain; SOM-implied CAGR (8.3%/9.1%) is the defensible cross-check for stage 11, not the recent reported rate"
+  - "growth beyond current trajectory depends on a further capital raise per ICRA (Mar-2026); none currently committed -- SOM is the mildly optimistic side of the capacity check"
+  - "runway classified MODERATE despite a large nominal headroom ratio (18.1x) because capital constraint, weak RoA, and static branch network cap realistic capture"
+market_definition: "India bank-addressable organised gold-loan lending market, filtered to Dhanlaxmi's South-India branch footprint and capital-constrained execution capacity"
+tam_cr: {conservative: 380000, realistic: 840000}
+sam_cr: 252000
+sam_pct_of_tam: 30.0
+som_3yr_cr: 17690
+som_5yr_cr: 21470
+som_implied_revenue_cagr: {yr3: 8.34, yr5: 9.07}
+current_sam_share_pct: 5.52
+revenue_headroom_x: 18.1
+tam_growth_pct: 26.0
+runway_class: "MODERATE"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "NOT FOUND"
+capacity_check: "tight -- gap of approx Rs0-150 Cr Tier-I capital by yr5 depending on RWA-density/profit-growth assumptions; SOM is the optimistic side absent a further capital raise (ICRA, Mar-2026, notes scale-up depends on future capital raising)"
+methods_used: ["top-down (national bank-gold-loan TAM)", "bottom-up (South-India systemwide credit, branch-weighted)", "peer aggregation + informal-sector overlay"]
+stale_data_flags: []
+searches_performed:
+  - "India gold loan market size 2025 2026 organised NBFC banks crore"
+  - "Kerala banking deposits credit outstanding 2025 SLBC crore"
+  - "old private sector banks India South Indian Bank Federal Bank CSB Bank Karur Vysya Bank total advances FY2025 crore market share"
+  - "RBI aggregate bank credit outstanding India March 2025 lakh crore"
+  - "South Indian Bank CSB Bank net advances FY2025 crore annual report"
+  - "gold loan market size India banks NBFC organised unorganised share 2025 lakh crore ICRA CRISIL"
+  - "gold loan market banks NBFC share 2025 public sector banks gold loan market share rising"
+  - "MSME credit gap India total addressable market crore CRISIL 2025"
+  - "Karur Vysya Bank Federal Bank City Union Bank net advances FY2025 crore"
+  - "Kerala population Tamil Nadu Andhra Pradesh Telangana Karnataka 2025 crore census"
+  - "Dhanlaxmi Bank share price P/E ratio market cap 2026"
+searches_skipped: []

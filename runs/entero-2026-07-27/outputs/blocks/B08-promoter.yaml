@@ -1,0 +1,81 @@
+stage: B08-promoter
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: partial               # web fetch blocked (403) on screener.in/trendlyne.com/scanx.trade for some primary-source verification; DRHP/prospectus not in local cache
+input_gaps:
+  - "No announcements folder collected for this run (HIGH gap per guard)"
+  - "No prospectus/DRHP/RHP in local input cache; Drugs & Cosmetics Act complaint (2B) sourced via web search of SEBI-hosted filing, not run-cached document"
+  - "Exact quarterly shareholding percentages (FII 14.68%->5.14% Sep-Dec 2025 per operator context) not independently verified via primary filing; screener.in and trendlyne.com blocked WebFetch with HTTP 403"
+  - "Identity/rationale of promoter-group link to Uquifa Sciences entities (Mauritius/UK/Spain/Mexico) and Technomax Infosolutions not found in AR or via web search"
+  - "Nature, quantum, and resolution of CARO clause xi(a)/xi(b) fraud findings at Avenues Pharma Distributors, R S M Pharma, and SVMED Solutions not disclosed anywhere in the AR and not located via web search"
+  - "Outcome of the 2022 Drugs & Cosmetics Act writ petition (Bombay HC, filed Aug-2023) not found"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Auditor-confirmed fraud (CARO clause xi(a)) and Section 143(12)/Form ADT-4 fraud reports filed with MCA (clause xi(b)) at 3 subsidiaries (Avenues Pharma Distributors, R S M Pharma, SVMED Solutions) with zero public narrative in the AR"
+      - "11 accounting-software audit-trail gaps group-wide plus a standalone Rule 11(g) proper-books-of-account exception (MSKA & Associates, FY25 auditor's report)"
+      - "Rs ~46.05 crore intercompany loan + interest waived off to wholly owned subsidiary Curever Pharma Pvt Ltd (capital-allocation failure, not self-dealing)"
+      - "83% of subsidiaries (39 of 47) carry at least one CARO qualification, mostly cash-loss (xvii) and procedural (ii(b)) items consistent with an integrating roll-up"
+      - "One unresolved criminal complaint (Drugs & Cosmetics Act, 2022) naming both promoters personally, alongside a vendor, tied to distribution-chain liability; writ petition outcome not found"
+      - "OrbiMed Asia III Mauritius Limited (~38%) is itself classified as Promoter, not merely institutional investor -- unusual structure to note for governance mapping"
+      - "Countervailing: zero promoter pledge, credible founder pedigree, reputable freshly-reappointed auditor, clean employee/media reputation, no self-dealing RPT pattern -- this is a CONCERN with substantial transition evidence, not a static one"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers:
+  - "SEBI market ban: not triggered -- nothing found"
+  - "Economic offence conviction (promoter): not triggered -- nothing found"
+  - "Live SFIO: not triggered -- nothing found"
+  - "PMLA with attached assets: not triggered -- nothing found"
+  - "Auditor resignation within 3 years: not triggered -- MSKA & Associates reappointed for fresh 5-year term (FY25-FY29), no resignation"
+  - "Pledge >40%: not triggered -- pledge ~0% (secondary-source corroborated; not primary-verified this run)"
+  - "Multiple mid-term independent-director exits within 3 years: not triggered -- only a non-independent nominee-director rotation occurred in FY25"
+  - "Restatement cutting past profits >10%: not triggered -- no restatement disclosed"
+  - "Near-miss not covered by the standard six categories: auditor-confirmed fraud + Section 143(12)/ADT-4 filings at 3 subsidiaries with zero public narrative -- recorded as the decisive driver of the CONCERN verdict despite not fitting a standard deal-breaker label"
+adverse_findings:
+  - {finding: "CARO clause xi(a)/xi(b): fraud noticed/reported and Section 143(12) ADT-4 report filed at Avenues Pharma Distributors Pvt Ltd, R S M Pharma Pvt Ltd, and SVMED Solutions Pvt Ltd, with no narrative disclosed anywhere in the AR", evidence_tier: "VERIFIED", source: "Entero FY2024-25 Annual Report, Consolidated Independent Auditor's Report, CARO cross-reference table, p.155-157", date: "27-May-2025 (auditor's report date)"}
+  - {finding: "Standalone Rule 11(g) audit-trail exception: audit trail not enabled throughout the year for 1 of 4 accounting softwares; not enabled at database level for 2 of 4", evidence_tier: "VERIFIED", source: "AR, Standalone Independent Auditor's Report, p.87-88 and Note 57(xii), p.150", date: "27-May-2025"}
+  - {finding: "Group-wide: 11 accounting-software instances with audit-trail gaps across subsidiaries (7 no feature at all, 3 application-only not database-level, 1 not enabled part-year)", evidence_tier: "VERIFIED", source: "AR, Consolidated Independent Auditor's Report, p.155", date: "27-May-2025"}
+  - {finding: "Rs 364.69 million loan + Rs 95.82 million interest (~Rs 46.05 crore) waived off to wholly owned subsidiary Curever Pharma Private Limited", evidence_tier: "VERIFIED", source: "AR, standalone Note 38 (Exceptional Items) and Note 48 (Related Party Disclosures)", date: "FY2024-25"}
+  - {finding: "83% of subsidiaries (39 of 47) carry at least one CARO qualification, predominantly clause xvii (cash losses) and ii(b) (procedural)", evidence_tier: "VERIFIED", source: "AR, Consolidated Independent Auditor's Report CARO cross-reference table, p.155-158", date: "27-May-2025"}
+  - {finding: "Criminal complaint (Drugs & Cosmetics Act 1940, filed 12-Apr-2022, Bhiwandi JMFC) naming Entero, Prabhat Agrawal, and Prem Sethi alongside vendor Nuvo Medsurg Pvt Ltd; writ petition filed 23-Aug-2023 in Bombay HC seeking quashing; outcome not found", evidence_tier: "VERIFIED (company-disclosed in SEBI-filed prospectus)", source: "Entero DRHP/RHP 2023-24 (web-located via SEBI.gov.in filing index; not in local input cache)", date: "12-Apr-2022 (complaint) / 23-Aug-2023 (writ petition)"}
+  - {finding: "Promoter-group related parties include foreign Uquifa Sciences entities (Mauritius/UK/Spain/Mexico) and Technomax Infosolutions with zero disclosed transaction value in FY24 or FY25 and no explained beneficial-ownership nexus", evidence_tier: "VERIFIED (listing) / UNVERIFIED (nexus)", source: "AR Note 48A, p.133", date: "FY2024-25"}
+  - {finding: "BSE/NSE fine of Rs 10,000 each for delayed Related Party Transaction filing (2 days late, half-year ended 31-Mar-2024)", evidence_tier: "VERIFIED", source: "AR, Corporate Governance Report, Other Disclosures (ii), p.55", date: "31-May-2024 (filing date)"}
+  - {finding: "Independent Director and Audit Committee Chairman Rajesh Shashikant Dalal will not seek re-appointment for a second term; tenure concludes 24-Aug-2026 at natural end of first term", evidence_tier: "MEDIA REPORTED", source: "Web search (ScanX, MarketScreener corporate announcement coverage)", date: "13-Jul-2026 (notification) / 24-Aug-2026 (effective)"}
+transition_evidence:
+  - "Founder-CEO Prabhat Agrawal has a verifiable, credible external professional pedigree (ex-CEO Alkem Laboratories; CA, CFA, ISB MBA) predating Entero -- professional management from inception, not a family-inheritor structure"
+  - "Zero promoter pledge, corroborated across multiple periods by independent secondary aggregators; no encumbrance disclosed in the FY25 AR"
+  - "Statutory auditor MSKA & Associates (KPMG-network affiliate) freshly reappointed for a 5-year term (FY25-FY29) with no resignation -- an upgrade-consistent auditor signal"
+  - "OrbiMed Asia III Mauritius Limited (~38%, present since inception) and other credible institutional names (GIC, PremjiInvest per press coverage) constitute the institutional base; OrbiMed nominees are actively engaged across Audit/NRC/RMC/IFC committees"
+  - "Independent directors hold genuine, domain-relevant external board seats (Ajanta Pharma, Laxmi Dental, Eris Lifesciences, ICICI Home Finance, Magma HDI), not favour appointments"
+  - "Domestic institutional ownership rising: ICICI Prudential Mutual Fund bulk-bought 21,82,039 shares on 29-Dec-2025, the same day SMALLCAP World Fund Inc. (US FII) fully exited its 5.24% stake -- ordinary institutional churn explaining the operator-relayed FII-down/DII-up shift, not a promoter or insider sale"
+  - "CFO succession (Apr-2025) executed with no vacancy gap, suggesting a functioning internal succession process"
+  - "Broad-based Employee Stock Option Plan (2023) aligns incentives beyond the promoter circle"
+pledge_pct_latest: 0
+pledge_trend: "stable at ~0% across FY24-FY26 per multiple secondary aggregators (Research 360/Motilal Oswal, Trendlyne); no encumbrance disclosed in the FY25 AR; not independently confirmed against a primary BSE/NSE shareholding-pattern filing this run (fetch tool blocked, HTTP 403, on screener.in and trendlyne.com)"
+searches_performed:
+  - "Prabhat Agrawal Entero Healthcare Solutions co-founder background career"
+  - "Prem Sethi Entero Healthcare co-founder background career"
+  - "Entero Healthcare Solutions Prabhat Agrawal SEBI order fraud investigation"
+  - "Entero Healthcare Solutions Prem Sethi controversy litigation"
+  - "\"Uquifa\" Prabhat Agrawal OR Prem Sethi related party Entero"
+  - "Entero Healthcare Solutions DRHP litigation Drugs and Cosmetics Act complaint Nuvo Medsurg Bhiwandi"
+  - "scanx.trade director resignation fetch (blocked, 403)"
+  - "Prasid Uno Family Trust Entero Healthcare shareholder"
+  - "Entero Healthcare Solutions shareholding pattern FII December 2025 promoter pledge"
+  - "Entero Healthcare Solutions Glassdoor AmbitionBox employee reviews"
+  - "Entero Healthcare bulk deal block deal stake sale December 2025 January 2026"
+  - "Entero Healthcare Solutions FII stake December 2025 block deal OrbiMed sale"
+  - "\"Prasid Uno Family Trust\" Surbhi Singh trustee background"
+  - "Entero Healthcare Solutions promoter pledge shares trendlyne screener"
+  - "Entero Healthcare Solutions shareholding pattern September 2025 FII 14.68"
+  - "trendlyne.com shareholding pattern fetch (blocked, 403)"
+  - "screener.in company page fetch (blocked, 403)"
+  - "tickertape.in shareholding fetch (blocked, 403)"
+  - "Entero Healthcare Solutions director resignation accepts 2025 2026"
+  - "Entero Healthcare Solutions Rajesh Dalal steps down independent director reason 2026"
+  - "OrbiMed Asia III Mauritius Limited SEBI adjudication order India"
+  - "Entero Healthcare Solutions news 2026 stock"
+searches_skipped: []
+verdict_basis: "Auditor-confirmed fraud (CARO xi(a)) with Section 143(12)/ADT-4 filings at 3 subsidiaries and 11 group-wide audit-trail gaps, with zero public narrative, outweigh an otherwise credible, professionally-run, PE-anchored, zero-pledge promoter profile with no adverse SEBI/criminal finding against the individuals themselves."

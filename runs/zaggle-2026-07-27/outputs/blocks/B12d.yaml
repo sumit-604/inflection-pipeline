@@ -1,0 +1,23 @@
+stage: B12d
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+peers_audited: 7
+substantive_confirmed: 6
+substantive_unsupported:
+  - "Tanla Q3 FY26 (Jan-2026 call): the Q6 AI/vibe-coding productivity citation attributed to Tanla ('half of the code that we write is AI generated... vibe coding... what used to take us several months to build and prototype now can be done in weeks') does not appear in any Tanla transcript. It is a RateGain quote (Bhanu Chopra, RATEGAIN Q3 FY26 call, Feb-2026) misattributed. Tanla's other citations in this row (UPI, CPaaS TAM, NIC tender) are genuine and confirmed."
+unused_but_relevant:
+  - {peer: "RateGain (Q2 FY26, Nov-2025 call)", missed_item: "Skift Travel Health Index macro-demand commentary (Global Health Index at 101, sector resilience despite geopolitical headwinds) not folded into the Part 2A demand-environment cross-read", anchor: "RATEGAIN Q2 FY26 call, Nov-2025, Bhanu Chopra opening remarks"}
+  - {peer: "Tanla (Q3 FY26, Jan-2026 call)", missed_item: "OTP-to-passkey structural migration risk raised by an analyst and rebutted by management (no OTP volume decline seen) — an industry risk-disclosure exchange left unused, though not directly Zaggle-relevant", anchor: "TANLA Q3 FY26 call, Jan-2026, Dharwi Sharma/Anubhav Batra exchange"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q6 — comparable AI-driven productivity gains", issue: "PARTIALLY VERIFIED verdict and triangulation summary claim 'three peers' independently corroborate; genuine corroboration is two peers (Capillary, RateGain), with RateGain's Feb-2026 call quoted twice and one instance relabeled as Tanla. Tanla is silent on AI/dev-cycle compression across all three of its transcripts.", severity: "CRITICAL"}
+findings:
+  - {severity: "CRITICAL", location: "B06 Part 1 Q6 / Part 3 coverage map, Tanla Q3 FY26 (Jan-2026) row", claimed: "Quote 'half of the code that we write is AI generated...vibe coding...what used to take us several months to build and prototype now can be done in weeks' cited to TANLA Q3 FY26 call, Jan-2026, Bhanu.../Uday Kumar Reddy", source_truth: "Quote is from RATEGAIN Q3 FY26 call, Feb-2026, Bhanu Chopra (Aditya Jhawar exchange) — a second RateGain quote from a call already cited once elsewhere in the same B06 paragraph. Not present in any Tanla transcript.", note: "Converts Tanla's actual silence on this topic into fabricated corroborating evidence; inflates Q6 triangulation from 2 genuine peers to a claimed 3.", source_fidelity: true}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, Tanla Q1 FY26 (Jul-2025) row", claimed: "Row lists 'CPaaS TAM commentary informing Q1' as a Jul-2025-call contribution", source_truth: "The quantified 8-12% CPaaS TAM growth figure used in Part 1 Q1 is correctly cited there as coming from the Jan-2026 (Q3 FY26) call, Anubhav Batra, not Jul-2025.", note: "Internal inconsistency between Part 1's own correct citation and Part 3's summary table; presentational only."}
+  - {severity: "MINOR", location: "B06 Part 2B pricing cross-read", claimed: "RateGain VIVA-below-OTA-take-rate (15-20%) statement bundled under 'RATEGAIN Q3 FY26 call, Feb-2026, Bhanu Chopra'", source_truth: "The 15-20% OTA take-rate/VIVA quote is from the Nov-2025 (Q2 FY26) call, in the same answer that first discusses VIVA.", note: "Substance is genuinely anchored; quarter attribution for this one clause is off by one call."}
+critical_count: 1
+major_count: 0
+minor_count: 4
+acceptance_rate: 86

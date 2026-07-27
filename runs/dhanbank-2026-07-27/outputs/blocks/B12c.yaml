@@ -1,0 +1,40 @@
+stage: B12c
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (Gate 0 + Emerging Moat only); valuation deferred to phase 3"
+gate0:
+  rules_checked: 14
+  fails: []
+  judgment_calls:
+    - "Literal ROCE bands applied mechanically to RoA in Block A and to deal-breaker #3 10% cutoff (structural low, per NORTHARC precedent, disclosed, non-outcome-changing)"
+    - "B4 WC-days and D4 current-ratio scored 0-by-convention as N/A (bank); flagged; does not move the 40-59 AVERAGE band"
+    - "D2 scored on conservative excl-technical-write-off PCR 73.67% vs headline incl-TW 92.46%; both score 5"
+    - "E1=1 documented partial credit (no promoter, FII+DII 14.26%<50% carve-out) vs strict-literal 0, per CLAUDE.md no-false-zero guidance; core would be 44 not 45, still AVERAGE"
+    - "E3=5 for definitionally-0% pledge (no promoter); favourable but disclosed, no outcome change"
+    - "M5=0 (not PEER DATA NEEDED) on 0.2% share; M8=1 quantified-but-static network over the none-floor; neither changes moats_confirmed"
+  history_downgrade_check: "CORRECT — 10yr data = '10+ yrs full' tier, deal-breaker #9 not triggered, history_downgrade:false verified"
+  reclassification: "none — re-derived AVERAGE == report"
+emoat:
+  rules_checked: 10
+  fails: []
+  judgment_calls:
+    - "combined_assessment TURNAROUND (AVERAGE-backward + MODEST-forward) reasoned per 6D; defensible"
+    - "capex_embedded_growth_pct 49 is a CRAR capital-headroom analogue substituted for capex×FAT, labelled 🔍-on-📄 and caveated"
+  evidence_tier_check: "PASS — no 🎙️/🔍-only category scored as 📄; C1/F1 correctly at 0.7; D1 folded; E1 excluded as existing moat (no double-credit)"
+  completionist_recount_check: "PASS — 6 active categories (within 3-6 base rate), 14-item 📄 recount performed and held"
+  reclassification: "none — re-derived em_score 12.4 / MODEST == report"
+valuation:
+  status: pending-phase-3
+  rules_checked: 0
+  fails: []
+  note: "B10/B11 do not exist yet; four-pillar valuation-adherence audit deferred to phase 3"
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B07 Section 3 summary table vs Section 5/YAML, category C1", note: "C1 evidence Type labelled '📄 (thin)' in the Section 3 summary but scored/labelled 🎙️ (management claim, 0.7x) in Section 5, active_categories and evidence_mix; cosmetic label mismatch, conservative in effect (0.7 not 1.0), no score impact"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100    # 24 rules passed / 24 checked (gate0 14 + emoat 10); valuation deferred, not counted

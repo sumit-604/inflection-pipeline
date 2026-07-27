@@ -1,0 +1,8 @@
+confidence_delta:
+  numerical_acceptance: 97.4      # B12a (0 CRITICAL, 1 MAJOR non-verdict cross-doc, 4 MINOR NOT-FOUND)
+  redflag_coverage: 70          # B12b (0 CRITICAL, 3 MAJOR governance/concentration misses; acceptance 67% > 60 floor)
+  framework_adherence: 100        # B12c Gate0+EM portion (0 CRIT/0 MAJ, AVERAGE+TURNAROUND re-derived identical); valuation pending phase 3
+  peer_utilisation: 100          # B12d (16/16 substantive)
+  overall: 70                 # min of the four; band 60-74 -> PROCEED verdicts downgrade one level; no REWORK (no CRITICAL, min acceptance > 60)
+  binding_component: redflag_coverage
+  valuation_framework_adherence: pending-phase-3

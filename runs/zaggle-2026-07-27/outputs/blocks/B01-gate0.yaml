@@ -1,0 +1,42 @@
+stage: B01-gate0
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus ABSENT (HIGH) - company listed Sep-2023, no restated pre-IPO financials; screener history limited to FY23-FY26 (4 years)"
+  - "announcements ABSENT"
+  - "shareholding ABSENT for periods after Mar-2025 - latest available promoter holding is FY25 year-end (AR FY25 Note 16(vi)), ~16 months stale vs run date"
+  - "research ABSENT - no peer data for M2/M5/M6(higher tiers)/M7/M9 moat tests (PEER DATA NEEDED)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID: Core 58 capped at AVERAGE by deal-breakers #3 (median ROCE 9.78%<10%) and #4 (cumulative CFO/PAT -0.44<0.50), then downgraded one tier for LIMITED 4-year history since Sep-2023 IPO. Depressors are post-IPO/QIP capital-base dilution (FY24-25 ROCE trough) and working-capital/incentive-funding driven cash conversion shortfall (FY24 and FY26 negative CFO despite PAT growth), not core unit economics, which show 51%/82% revenue/PAT 3yr CAGR, 100% positive YoY revenue years, and a net-cash balance sheet (Blocks C and D both 20/20)."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 2, B: 5, C: 20, D: 20, E: 11}
+core_score: 58
+moat_score: 14
+grand_total: 72
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A=2 <8 -> max GOOD (driven by FY25 min ROCE 7.83%, FY24-25 post-IPO/QIP capital dilution)"
+  - "2: Block B=5 <8 -> max GOOD (driven by FY24 CFO -82.75 cr and FY26 CFO -51.47 cr)"
+  - "3: median ROCE 9.78% <10% -> max AVERAGE (driven by FY24 9.41% and FY25 7.83%, post-IPO/QIP capital base expansion)"
+  - "4: cumulative CFO/PAT -0.44 <0.50 -> max AVERAGE (driven by FY24 and FY26 negative CFO despite positive PAT every year)"
+history_downgrade: true
+data_notes:
+  - "EBIT for ROCE (Block A, M3) computed as EBITDA - Depreciation, excluding Other Income (treasury interest on IPO/QIP proceeds); stricter than an alternative PBT+Interest basis, which would give median ROCE ~12.1% instead of 9.78%."
+  - "ROE FY23 uses closing Net Worth only (opening/pre-listing NW not available); resulting 46.97% is an outlier from the pre-IPO low equity base."
+  - "WC Days basis: revenue basis used throughout, no COGS separately disclosed. FY23 Trade Payables NOT FOUND; B4 'earliest year' anchored to FY24 instead of FY23."
+  - "Capex/FCF: FY25-26 capex from Q4 FY26 results consolidated CF statement; FY24 capex from AR FY25 standalone CF statement (no subsidiaries yet); FY23 capex NOT FOUND, FY23 FCF only boundable (at least as negative as -15.62 cr CFO)."
+  - "Promoter shareholding (E1/E2) sourced from AR FY25 Note 16(vi) as at Mar-31-2025; no later disclosure provided, ~16 months stale vs run date."
+  - "Promoter pledge (E3): NOT FOUND in any provided source; scored 0 per no-estimate rule, not confirmed nil."
+  - "Contingent liabilities (E4) sourced from AR FY25 standalone Note 31(a) as at Mar-31-2025; FY26 results filing had no contingent-liability note; one year stale vs FY26 balance sheet used elsewhere in Block D."
+  - "M2, M5, M6(higher tiers), M7, M9: PEER DATA NEEDED, research ABSENT, scored 0."
+  - "M6: R&D not separately disclosed as a distinct P&L line; scored 0."
+  - "M8: scored 0, no physical distribution-outlet network in this digital B2B2C model; test not applicable."
+  - "M11: only 3 years of Selling & Admin breakdown available (FY23-25) vs 6 needed for two-window test; scored conservatively on overall trend as instructed."
+  - "No loss-to-profit PAT swing in FY23-FY26; PAT positive and growing every year."
+block_b_trend: "deteriorating - FY26 CFO reverted to -51.47 cr (screener-data) after the single positive year FY25 (+19.7 cr, screener-data); FY26 FCF of -158.58 cr (computed) is the most negative of the 4-year history despite FY26 PAT of 138.08 cr (screener-data)"

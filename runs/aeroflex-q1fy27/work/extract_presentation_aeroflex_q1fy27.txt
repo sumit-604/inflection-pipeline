@@ -1,0 +1,194 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_aeroflex_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 28
+formfeed_count: 28
+line_count: see file
+unit_convention: Rs Crores (financial tables) unless noted; skid avg price in Rs (absolute)
+conversion_factor_to_cr: Crores -> x1 (already in Cr)
+ocr_pages: [slide 7 and slide 10 charts vision-OCR'd (text layer had positionally-scrambled data labels); all other slides used clean PyMuPDF text layer. Section-divider slides 2,4,11,16,19 are title-only (low char count expected, no data lost).]
+page_coverage: 100% (28 of 28 slides)
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-07-27
+slide_footer_numbering_note: printed slide footers are offset by 1 (PDF page N shows printed footer N-1). Citations use [page N] = PDF page.
+=== END HEADER ===
+
+[page 1]
+Cover: July 27, 2026. Letter to BSE (Scrip 543972) and NSE (AEROFLEX). Sub: Investor Presentation for the Quarter ended June 30, 2026. Enclosed pursuant to Regulation 30. Signed Ruthu Parampogi, Company Secretary.
+
+[page 2]
+Section divider: "Aeroflex Industries Limited" | Q1 FY27 Earnings/Investor Presentation (title slide).
+
+[page 3]
+Safe Harbor. Standard forward-looking-statements disclaimer. Presentation prepared by Aeroflex Industries Limited; does not constitute an offer. Contains forward looking statements subject to risks and uncertainties (fluctuations in earnings, ability to manage growth, competition domestic and international, economic growth in India and abroad, ability to attract/retain skilled professionals, time and cost over-runs on contracts, international operations, government policies, regulations, interest and fiscal costs). Company does not undertake to update forward looking statements.
+
+[page 4]
+Section divider: "Q1 FY27 Performance Highlights".
+
+[page 5]
+Key Financial Highlights - CONSOLIDATED. Header banner: "Highest Ever Quarterly Performance". (Rs. In Crs)
+Particulars | Q1FY27 | Q1FY26 | YoY (%)
+Total Income | 145.97 | 84.67 | 72.41%
+EBITDA | 33.49 | 15.48 | 116.38%
+EBITDA Margin (%) | 23.04% | 18.35% | 468 bps
+Profit After Tax | 18.79 | 7.17 | 162.22%
+PAT Margin (%) | 12.87% | 8.46% | 441 bps
+Cash Profit | 26.64 | 13.09 | 103.42%
+Cash Profit Margin (%) | 18.25% | 15.47% | 278 bps
+[EBITDA is management-defined; NOT reported in the statutory filing. EBITDA# calculated on revenue from operations (excludes other income).]
+
+[page 6]
+MD's Commentary. Managing Director Mr. Asad Daud stated (verbatim key phrases):
+"...yet another highest-ever quarterly performance with revenue of Rs. 145.97 crore, YoY growth of 72.41%, reflecting strong execution, broad-based growth across all product segments, and sustained demand from both domestic and international markets. The quarter marked a significant acceleration in our liquid cooling solutions business, with SFN skid assemblies generating revenue of Rs. 32.4 crore in Q1FY27.
+Our core business also delivered strong results: stainless-steel flexible hoses grew 40.53% YoY, while assemblies and other value-added products grew 36.96% YoY.
+The rapid growth of AI workloads is driving higher rack densities and significantly greater heat generation, accelerating the industry-wide shift from conventional air cooling to advanced liquid cooling systems. Globally, hyperscalers and technology companies continue to announce large-scale data center investments...
+India is emerging as a key data center market... To meet this growing demand pipeline, we have expanded our skid assembly capacity from 6,000 skids to 9,000 skids per annum, and remain on track to scale further to 15,000 skids per annum.
+...the Company is strategically positioned at a critical point in the data center cooling value chain. We remain confident in sustaining our growth momentum and capturing the multi-decade opportunity arising from the global transition to liquid-cooled AI infrastructure."
+[FORWARD GUIDANCE PHRASES: "on track to scale further to 15,000 skids per annum"; "sustaining our growth momentum". Note MD segment growth figures (hoses +40.53%, assemblies/value-added +36.96%) differ slightly from slide 7 chart callouts (hoses +40.52%, assemblies +33.60%).]
+
+[page 7]  [VISION-OCR of charts - text layer labels were positionally scrambled]
+Key Operational Highlights - CONSOLIDATED.
+CHART A "Product Segment" (share of revenue, stacked):
+  Q1FY26: SS Flexible Hoses (with & without braiding) grey = 41% ; Assemblies & Others* green = 34% ; SFN Skid Assemblies orange = (negligible/not labelled, ~0).
+  Q1FY27: SFN Skid Assemblies orange = 23% ; SS Flexible Hoses grey = 37% ; Assemblies & Others* green = 41%.
+  Absolute Revenue Growth callouts: SS Flexible Hoses +40.52% YoY ; Assemblies & Others +33.60% YoY.
+  *Others include fittings, metal bellows.
+CHART B "Domestic : Export Mix" (stacked):
+  Q1FY26: Exports 72% ; Domestic 28%.
+  Q1FY27: Exports 58% ; Domestic 42%.
+  Absolute Growth callouts: Exports +42.52% YoY ; Domestic +162.98% YoY.
+CHART C "Geographical Split : Exports" (stacked):
+  Q1FY26: Americas (North+South) 59% ; Europe 23% ; Asia 12% ; Africa 5% ; Others (~1%).
+  Q1FY27: Americas 57% ; Europe 33% ; Asia 7% ; Africa 2% ; Others 1%.
+  Absolute Growth callouts: Americas +35.91% YoY ; Europe +108.27% YoY ; Asia -10.09% YoY.
+
+[page 8]
+STANDALONE Profit & Loss Statement (Rs. Crs). Columns: Q1FY27 | Q1FY26 | YoY | Q4FY26 | QoQ | FY26
+Revenue from Operations | 139.01 | 79.19 | 75.55% | 118.82 | 17.0% | 412.47
+Other Income | 0.76 | 0.33 | | 0.72 | | 1.55
+Total Income | 139.78 | 79.52 | 75.78% | 119.54 | 16.93% | 414.02
+Cost of Material Consumed | 80.15 | 50.95 | | 70.68 | | 242.55
+Changes in Inventories | (3.24) | (5.21) | | (4.21) | | (12.42)
+Employee Benefit Expenses | 13.30 | 8.32 | | 9.64 | | 38.02
+Other Expenses | 15.76 | 9.60 | | 13.41 | | 46.83
+EBITDA# | 33.03 | 15.53 | 112.60% | 29.30 | 12.72% | 97.49
+EBITDA Margin# | 23.76% | 19.62% | 414 bps | 24.66% | (90 bps) | 23.64%
+Depreciation* | 7.28 | 5.48 | | 7.22 | | 24.13
+Finance Cost | 0.35 | 0.18 | | 0.28 | | 0.94
+Profit before Tax | 26.16 | 10.21 | | 22.52 | | 73.98
+Tax | 7.10 | 2.58 | | 4.84 | | 18.69
+Profit After Tax | 19.06 | 7.62 | 150.02% | 17.69 | 7.76% | 55.28
+PAT Margin | 13.64% | 9.59% | 405 bps | 14.80% | (116 bps) | 13.35%
+Cash Profit | 26.34 | 13.11 | 100.96% | 24.90 | 5.77% | 79.41
+Cash Profit Margin | 18.84% | 16.48% | 236 bps | 20.83% | (199 bps) | 19.18%
+EPS (in Rs.) | 1.44 | 0.59 | | 1.36 | | 4.26
+Footnotes: previous periods re-grouped/re-classified. *Depreciation increased due to higher capital expenditure undertaken compared to the previous year. #EBITDA and EBITDA margin calculated on revenue from operations.
+[RECONCILIATION: deck standalone PAT Q1FY27 19.06 Cr = filing standalone PAT 1,905.89 L. OK. Deck standalone revenue 139.01 Cr = filing 13,901.13 L. OK.]
+
+[page 9]
+CONSOLIDATED Profit & Loss Statement (Rs. Crs). Columns: Q1FY27 | Q1FY26 | YoY | Q4FY26 | QoQ | FY26
+Revenue from Operations | 145.38 | 84.33 | 72.38% | 125.84 | 15.5% | 441.94
+Other Income | 0.60 | 0.33 | | 0.62 | | 1.36
+Total Income | 145.97 | 84.67 | 72.41% | 126.46 | 15.43% | 443.29
+Cost of Material Consumed | 84.23 | 53.38 | | 72.15 | | 259.60
+Changes in Inventories | (3.53) | (3.94) | | (0.26) | | (8.67)
+Employee Benefit Expenses | 13.94 | 9.06 | | 10.11 | | 41.31
+Other Expenses | 17.25 | 10.35 | | 13.81 | | 49.96
+EBITDA# | 33.49 | 15.48 | 116.38% | 30.03 | 11.54% | 99.74
+EBITDA Margin# | 23.04% | 18.35% | 468 bps | 23.86% | (82 bps) | 22.57%
+Depreciation* | 7.84 | 5.93 | | 7.79 | | 26.08
+Finance Cost | 0.35 | 0.18 | | 0.28 | | 0.94
+Profit before Tax | 25.89 | 9.71 | | 22.58 | | 74.08
+Tax | 7.10 | 2.54 | | 4.94 | | 18.56
+Profit After Tax | 18.79 | 7.17 | 162.22% | 17.64 | 6.57% | 55.53
+PAT Margin | 12.87% | 8.46% | 441 bps | 13.95% | (107 bps) | 12.53%
+Cash Profit | 26.64 | 13.09 | 103.42% | 25.42 | 4.77% | 81.60
+Cash Profit Margin | 18.25% | 15.47% | 278 bps | 20.11% | (186 bps) | 18.41%
+EPS (in Rs.) | 1.42 | 0.55 | | 1.36 | | 4.28
+Footnotes: previous periods re-grouped/re-classified. *Depreciation increased due to higher capital expenditure. #EBITDA on revenue from operations.
+[NOTE: deck consolidated FY26 Revenue from operations 441.94 Cr and PAT FY26 55.53 Cr. Deck consolidated Q4FY26 PAT 17.64 Cr vs filing balancing Q4FY26 PAT 1,763.50 L = 17.635 Cr. OK. Deck consolidated FY26 PAT 55.53 Cr vs filing FY26 5,552.70 L = 55.527 Cr. OK.]
+
+[page 10]  [VISION-OCR of six-year bar charts. Financials on Consolidated Basis.]
+Track Record of Consistent and Profitable Growth. Series across FY21|FY22|FY23|FY24|FY25|FY26:
+Total Income (Rs Cr): 144.8 | 241.0 | 269.5 | 321.8 | 378.8 | 443.3  (arrow +25% CAGR)
+EBITDA (Rs Cr): 22.3 | 46.7 | 52.9 | 61.8 | 79.1 | 99.7  (arrow +35%); EBITDA Margins: 15% | 19% | 20% | 19% | 21% | 23%
+PAT (Rs Cr): 5.9 | 27.3 | 30.1 | 41.7 | 52.5 | 55.5  (arrow +56%); PAT Margins: 4% | 11% | 11% | 13% | 14% | 13%
+ROCE (%): FY21 18.8 | FY22 43.1 | FY23 37.0 | FY24 31.3 | FY25 23.6 | FY26* 20.4   [FY26 labelled * "Planned Capacity Expansion"]
+ROE (%): FY21 10.8 | FY22 38.0 | FY23 30.1 | FY24 20.5 | FY25* 16.5 | FY26* 14.1   [FY25 and FY26 labelled * "Planned Capacity Expansion"]
+Cash Profit (Rs Cr): 9.8 | 31.7 | 35.4 | 48.0 | 63.8 | 81.6  (arrow +53%); Cash Profit Margins: 7% | 13% | 13% | 15% | 17% | 18%
+[TREND: ROCE peaked FY22 43.1% and has declined every year to 20.4% (FY26); ROE peaked FY22 38.0% declining to 14.1% (FY26); PAT margin FY26 13% below FY25 14%. Company attributes FY25/FY26 return dip to "Planned Capacity Expansion".]
+
+[page 11]
+Section divider: "Data Centers: Liquid Cooling Segment".
+
+[page 12]
+Hyperscale Data Centers: Multi-Decade Opportunity Globally.
+INDIA - Announced Data Center Pipeline in Next 5 Years: 9+ GW announced development pipeline led by Reliance Jio, Adani, TCS, Capital Land, Nxtra, STT GDC India, CtrlS, Yotta and other major players.
+GLOBAL - Announced AI Data Center Projects (map, values not text-extractable).
+"India is emerging as one of the world's fastest growing data center markets, creating significant long term demand for power, cooling and mission-critical infrastructure."
+
+[page 13]
+Shift to Liquid Cooling Through Critical Fluid Transfer Solutions. Value chain: Megatrend (AI & High-Density Computing) -> Industry Shift (Shift to Liquid Cooling) -> Market Opportunity (High Growth Market) -> Company's Role (Critical Fluid Transfer Solutions) -> Value Creation (Sustainable Growth).
+MARKET: Global Liquid Cooling Market CAGR 33.2% (CY25-CY32e); Direct-to-Chip Cooling Market CAGR 35.0% (CY25-CY32e).
+Strategic Customer Partnership: "Approved supplier to a leading global provider of digital infrastructure and thermal management solutions, enabling participation in global data center projects." [SINGLE ANCHOR CUSTOMER - unnamed]
+
+[page 14]
+Aeroflex's Liquid Cooling Skid Business - Skid Assemblies Sales:
+Period | Volume (Skid) | Average Price per skid* (Rs) | Value (Rs. Crs)
+Q1FY27 | 1,040 | 3,11,459 | 32.4
+Q4FY26 | 571 | 3,31,763 | 18.9
+Q3FY26 | 46 | 4,98,861 | 2.3
+*Selling price of a skid typically ranges between Rs. 1,10,000 and Rs. 5,50,000 per skid, depending on specifications and requirements.
+[TREND: volume 46 -> 571 -> 1,040 (rising); average realised price per skid 4,98,861 -> 3,31,763 -> 3,11,459 (DECLINING each quarter). Product bullets: compact plug-and-play; zero-leakage high reliability; thermal efficiency; space-efficient footprint. Illustrative image disclaimer noted.]
+
+[page 15]
+Participated in World Data Center Exhibition (Data Center World Exhibition), USA - April '26. Presented comprehensive portfolio of advanced flexible flow solutions for liquid cooling systems for global markets.
+
+[page 16]
+Section divider: "Diversified Product Portfolio".
+
+[page 17]
+Diversified Product Portfolio (product families): Stainless-Steel Hoses (seam-welded, hydro-formed/mechanically formed corrugations; annular and helical); Assemblies & Fittings (plug-and-play with welded/soldered end fittings); Liquid Cooling Solutions (end-to-end Secondary Fluid Network (SFN) solutions for high-density AI workloads; combines SS piping, precision metal hoses and metallic expansion joints); Metal Bellows (SS, nickel alloys, Inconel, 10mm to 3,000mm diameter); Composite Hoses & Interlock Hoses; Corrugated Flexible Hoses; Fittings.
+CURRENT CAPACITIES (stated): SS Flexible Hoses 17.5 Mn Meters p.a.; 46 Assembly Stations & 2 Robotic Welding Lines; Liquid Cooling 9,000 skids p.a.; Composite/Interlock 1,20,000 pieces p.a.; Metal Bellows up to 20 inches; 6 operational lines.
+
+[page 18]
+Strategic Capacity Expansion to Support Future Growth.
+ONGOING CAPACITY EXPANSIONS:
+  SS Flexible Hoses: Current (Q1FY27) 17.5 Mn Meters -> Target (Q3FY27) 20.0 Mn Meters (increase 1.1x).
+  Liquid Cooling Skid Assembly: Current (Q1FY27) 9,000 Skids -> Target (Q3FY27) 15,000 Skids (increase 1.7x).
+Capacity Addition for Hoses (Mn Meters) history: FY23 11.0 | FY24 13.5 | FY25 16.5 | FY26 17.5.
+Expansion Timeline (Liquid Cooling Skid Assembly additions): Dec-25 +2,000 Skids | April-26 +4,000 Skids | July-26 +3,000 Skids | Q3FY27 +6,000 Skids.
+Expansion Timeline (SS Flexible Hoses): +2.5 Mn Meters and +2.5 Mn Meters (two tranches to Q3FY27).
+[GUIDANCE: skid capacity target 15,000/annum by Q3FY27; hoses 20.0 Mn Meters by Q3FY27.]
+
+[page 19]
+Section divider: "Company Overview".
+
+[page 20]
+Leading Manufacturer of Flexible Flow Solutions. Established 1998. Acquired by Aeroflex Enterprises Limited (formerly Sat Industries Limited) in 2018. Metrics: 28 years of industry leadership; 3,300+ SKUs; 760+ workforce; Products in 90+ Countries; 58 products at various stages of R&D; 14 R&D Team Members; 16 products in R&D related to data centre (liquid cooling); 17.5 million meters annual hose production capacity; NABL-accredited R&D Lab; Great Place to Work certified. Used for controlled flow of Liquid, Gas and Semi-Solid substances. Key Distinctive Capabilities: engineering-intensive products; high entry barriers; long-standing customer relationships; strong in-house R&D; increasing share of value-added solutions.
+
+[page 21]
+State of Art Infrastructure. 3 manufacturing plants. Capacities restated: Liquid Cooling 9,000 Skid Assemblies; Hoses 17.5 million metres. Locations: Lodha - Palava, Thane; Taloja - Navi Mumbai MIDC; Chakan, Pune. Strategically located near JNPT Port. In-house Design and R&D Laboratory. Certifications: ISO 9001:2015 (Quality), ISO 14001:2015 (Environmental), ISO 45001:2018 (Occupational Health & Safety). Key products: Flexible Hoses; Composite & Interlock Hoses; Assemblies & Fittings; Metal Bellows; Miniature Metal Bellows; Hydraulic Fittings; Fluid Connectors; Liquid Cooling Skid Assembly.
+
+[page 22]
+Wherever There's Critical Flow, Aeroflex Leads the Way. Traditional Sectors: Steel and Metal; Oil & Gas; HVAC; Petrochemicals; Bulk Terminal Handling; Fire Sprinklers & Firefighting Solutions; Chemicals, Food & Pharmaceuticals; Paper & Pulp. New Emerging Sectors: Data Centers; Robotics & Automation; Semi Conductors; Hydrogen; Electric Mobility; Aerospace & Defence; Solar.
+
+[page 23]
+Innovation & Strong R&D led Business. 58+ products at various stages of R&D; 16 products in R&D related to data centre (liquid cooling); 14 qualified R&D professionals; NABL-accredited R&D laboratory. Key products under R&D and applications: Monel Hose; Hastelloy Hose (Marine & Offshore, Chemical Processing, Aerospace & Defence, Hydrogen, Nuclear, Oil & Gas, Automotive, Pharmaceuticals); High pressure Braided hose assembly (Burst @1600 Bar; Aerospace/Space Vehicles/Hydraulic); Bend pipes (Compressor); Hoses with customised profile (Solar applications); Gas Meter Hose Assembly (CGD, LPG & PNG, utility metering). Collaborated with IIT Bombay, IIT Indore, IIT Guwahati, IIT Ropar to develop new products. "Hyd-Air has seen major infrastructure enhancements, including upgrades to its quality lab and R&D centre."
+
+[page 24]
+Digital Transformation Initiatives. Integrated SAP ERP (finance, inventory, production planning across the group; production lines connected via tablets for real-time machine efficiency). Salesforce CRM (full commercial lifecycle, lead-to-fulfillment). One connected value chain: Lead Capture (CRM) -> Order Processing (CRM) -> Production Planning (ERP) -> Fulfillment (ERP) -> Customer Delivery.
+
+[page 25]
+Awards & Certifications. Great Place to Work Certification 2025-26; 16th CII National HR Excellence Award 2025-2026; EEPC India Export Awards (Western Region) - Export Excellence 2022-23 and 2023-24.
+
+[page 26]
+Responsible Corporate (ESG). Zero-emission production technologies; green process with negligible fossil fuels; 100% recycling of water with in-house water treatment plant; packaging 35-40% reprocessed materials (planning 100% recycled in 3 years); electric vehicles for internal goods movement. Governance: independent directors from Tata Group, Ashok Leyland, Senior India. Certifications ISO 9001/45001/14001; NABL lab. Solar: commissioned 750 KW rooftop solar project. CSR via SAT Foundation (formerly Taha Charitable Trust).
+
+[page 27]
+CSR Activities - Reconstruction of Ashadham. CSR through SAT Foundation (dedicated implementation arm). Reconstructed Ashadham, a facility for elderly and mentally affected adults: 21 residential rooms for beneficiaries; 3 rooms for staff; large common halls (kitchen, assembly area, dormitory).
+
+[page 28]
+Company Details / contact / disclaimer (back cover).
+
+=== END OF PRESENTATION EXTRACT ===

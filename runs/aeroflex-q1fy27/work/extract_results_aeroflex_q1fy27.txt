@@ -1,0 +1,200 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_aeroflex_q1fy27.pdf (main filing, 10pp) + reg32_deviation_aeroflex_q1fy27.pdf (Reg 32 statement, 3pp)
+doctype: results
+page_count_pdfinfo: 10 (main) + 3 (reg32) = 13
+formfeed_count: 13
+line_count: see file
+unit_convention: INR in Lakhs (financial results tables) ; Rupees (Reg 32 fund table)
+conversion_factor_to_cr: Lakhs -> x0.01 (1 Cr = 100 Lakhs) ; for Reg 32 absolute-rupee table, /1,00,00,000 to Cr
+ocr_pages: [results p4, p5, p6, p8, p9, p10 -> vision-OCR (embedded text layer was garbled on numeric tables; poppler/tesseract unavailable in env, apt mirror 404; pages rasterised with PyMuPDF at 220dpi and transcribed by vision. Prose pages 1,2,3,7 used clean PyMuPDF text layer. Reg 32 pages used clean PyMuPDF text layer.)]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-07-27
+extraction_engine: PyMuPDF 1.28.0 text layer + PyMuPDF raster + vision-OCR fallback (poppler/tesseract unavailable)
+=== END HEADER ===
+
+########################################################################
+# DOCUMENT 1 of 2 : MAIN RESULTS FILING (Board Outcome + Financial Results + Limited Review Reports + Reg 30 disclosure)
+########################################################################
+
+[page 1]
+July 27, 2026
+To, The General Manager, Department of Corporate Services, BSE Limited, P.J. Towers, Dalal Street, Mumbai - 400001 | Scrip Code: 543972
+To, The Listing Department, National Stock Exchange of India Limited, Exchange Plaza, C-1, Block G, BKC, Bandra (E), Mumbai - 400 051 | Trading Symbol: AEROFLEX
+Subject: Outcome of the Board Meeting held on July 27, 2026
+Pursuant to Regulations 30 and 33(3) of SEBI (LODR) Regulations, 2015, the Board of Directors at its meeting held today, Monday, July 27, 2026, inter-alia, considered and approved the following:
+BOARD OUTCOME ITEM 1. Un-audited Standalone and Consolidated Financial Results of the Company for the quarter ended June 30, 2026, along with Limited Review Reports received from the Statutory Auditors of the Company.
+BOARD OUTCOME ITEM 2. Appointment of M/s. Kailash Chand Jain & Co., Chartered Accountants (Firm Registration No. 112318W), as Tax Auditor of the Company for the Financial Year 2026-27.
+A copy of the Un-audited Standalone and Consolidated Financial Results for the quarter ended June 30, 2026, along with Limited Review Reports, are enclosed as Annexure-A.
+Detailed disclosures required under Regulation 30 read with SEBI Master Circular No. HO/49/14/14(7)2025-CFD-POD2/I/3762/2026 dated January 30, 2026, are enclosed as Annexure-B.
+
+[page 2]
+The meeting of the Board of Directors commenced at 03:30 p.m. and concluded at 04:16 p.m.
+Signed: Ruthu Parampogi, Company Secretary & Compliance Officer, Mem No: A60982. Digitally signed 2026.07.27 18:30:43 +05'30'.
+
+[page 3]
+Annexure-A
+SHWETA JAIN & CO LLP, CHARTERED ACCOUNTANTS (LLPIN- ACQ-2534) (formerly Shweta Jain & Co)
+INDEPENDENT AUDITORS REVIEW REPORT ON REVIEW OF INTERIM CONSOLIDATED FINANCIAL RESULTS Q-1 of FY 2026-27
+To The Board of Directors Of AEROFLEX INDUSTRIES LTD., Navi Mumbai
+Para 1. We have reviewed the accompanying Statement of Consolidated Unaudited Financial Results of AEROFLEX INDUSTRIES LIMITED (the "Parent") and its subsidiaries (together the "Group"), for the quarter ended June 30, 2026 and YTD Apr 1 2026 to June 30 2026, submitted pursuant to Regulation 33 of SEBI (LODR) Regulations, 2015.
+Para 2. Prepared in accordance with Ind AS 34 "Interim Financial Reporting" u/s 133 Companies Act 2013.
+Para 3. Review conducted per SRE 2410. A review is substantially less in scope than an audit; accordingly we do not express an audit opinion.
+Para 4. We also performed procedures per SEBI circular under Regulation 33(8).
+The Statement includes the results of the following entities: Subsidiary: i) Hyd - Air Engineering Pvt Ltd. [ONLY ONE SUBSIDIARY CONSOLIDATED]
+
+[page 4]
+SHWETA JAIN & CO LLP (Consolidated LRR continued)
+Para 5. Based on our review and consideration of the review reports of other auditors referred to in para 6, nothing has come to our attention that causes us to believe that the accompanying Statement... has not disclosed the information required per Regulation 33 or that it contains any material misstatement.
+Para 6. We did not review the interim financial information of the subsidiary Companies included in the consolidated unaudited financial information whose interim financial information reflects:
+  a) of Hyd - Air Engineering Pvt Ltd: total assets Rs. 3825.35 lakhs, total revenues of Rs. 765.66 lakhs, total Profit/(Loss) after tax of Rs. (26.58) lakhs and total comprehensive income of Rs. (26.58) lakhs for the quarter ended June 30, 2026.
+This interim financial information has been reviewed by other auditors whose reports were furnished by Management; our conclusion on the subsidiary is based solely on the reports of the other auditors.
+Our conclusion on the Statement is NOT MODIFIED in respect of these matters. [UNMODIFIED / CLEAN CONCLUSION]
+Signed FOR SHWETA JAIN & CO LLP, F.R.N. 127673W/W101149, CA RAVI JAIN (Partner), Membership No: 125740, Place Mumbai, Dated 27th July 2026, UDIN: 26125740CDLRZN4282 (Consolidated).
+
+[page 5]
+Statement of CONSOLIDATED financial results for the quarter ended on 30th June, 2026 (INR in lakhs)
+AEROFLEX INDUSTRIES LIMITED, CIN L27509MH1993PLC074576
+Columns: | Note | Q1FY27 3m 30.06.2026 (Unaudited) | Q4FY26 preceding 3m 31.03.2026 (# balancing) | Q1FY26 corresponding 3m 30.06.2025 (Unaudited) | FY26 year ended 31.03.2026 (Audited) |
+1 Revenue from operations | 1 | 14,537.63 | 12,583.79 | 8,433.34 | 44,193.51
+2 Other income | 2 | 59.74 | 61.99 | 33.23 | 135.91
+3 Total Income (1+2) | 3 | 14,597.38 | 12,645.77 | 8,466.56 | 44,329.42
+Cost of Materials consumed | | 8,422.70 | 7,214.85 | 5,337.63 | 25,959.80
+Changes in inventories of finished goods, WIP and stock-in-trade | | (353.22) | (25.83) | (393.75) | (867.23)
+Employee benefits expense | | 1,394.23 | 1,011.03 | 906.47 | 4,131.33
+Finance costs | | 35.26 | 28.23 | 17.77 | 93.65
+Depreciation and amortization expense | | 784.41 | 778.94 | 592.79 | 2,607.74
+Other expenses | | 1,724.62 | 1,380.94 | 1,035.08 | 4,995.76
+4 Total expenses | 4 | 12,007.99 | 10,388.15 | 7,495.98 | 36,921.04
+5 Profit before exceptional items and tax (3-4) | 5 | 2,589.39 | 2,257.62 | 970.58 | 7,408.38
+6 Exceptional items | 6 | - | - | - | -
+7 Profit/(loss) before tax (5+6) | 7 | 2,589.39 | 2,257.62 | 970.58 | 7,408.38
+8 Tax expense: Current Tax | 8 | 715.68 | 500.00 | 282.00 | 1,897.00
+8 Tax expense: Deferred Tax | | (5.59) | (5.88) | (28.11) | (66.70)
+8 Taxation of Earlier Year | | - | - | - | 25.38
+9 Profit/(loss) for the period from continuing operation (7-8) | 9 | 1,879.31 | 1,763.50 | 716.69 | 5,552.70
+10 Profit/(loss) from discontinued operations | 10 | - | - | - | -
+13 Profit/(loss) for the period (9+12) | 13 | 1,879.31 | 1,763.50 | 716.69 | 5,552.70
+15 Net profit after tax and share in associates | 15 | 1,879.31 | 1,763.50 | 716.69 | 5,552.70
+  Attributable to (a) Owners of the company | | 1,879.31 | 1,763.50 | 716.69 | 5,552.70
+  Attributable to (b) Non-controlling interest | | - | - | - | -
+16 Other Comprehensive Income | 16 | - | - | - | -
+17 Total Comprehensive Income for the period (15+16) | 17 | 1,879.31 | 1,763.50 | 716.69 | 5,552.70
+Paid up Equity Share Capital (Face value Rs 2/- each) | | 2,646.62 | 2,646.62 | 2,586.41 | 2,646.62
+Other Equity | | - | - | - | 42,080.73
+EPS continuing (not annualised): (1) Basic | | 1.42 | 1.36 | 0.55 | 4.28
+EPS continuing (not annualised): (2) Diluted | | 1.42 | 1.36 | 0.55 | 4.28
+Note #: figures for 3 months ended 31.03.2026 are balancing figures between audited full-year figures and YTD upto Q3.
+
+[page 6]
+CONSOLIDATED NOTES (page 6 of filing):
+Note 1. The above results have been reviewed by the audit committee and approved by the board of directors at its meeting held on 27th July, 2026. Subjected to limited review by the statutory auditors; report has no impact on the above "Results and Notes" for the quarter ended 30th June 2026. Statutory auditors issued report with UNMODIFIED opinion on the above results.
+Note 2. Exceptional items:- There is no exceptional items during this quarter.
+Note 3. The Company has increased the production capacity of its liquid cooling SFN skid assemblies from 6,000 pieces per annum to 9,000 pieces per annum.
+Note 4. The standalone financial results for the quarter ended 30th June, 2026 are summarised below (INR in lakhs):
+  Revenue from operations | 30.06.2026: 13,901.13 | 31.03.2026: 11,881.72 | 30.06.2025: 7,918.63 | FY26 Audited: 41,247.20
+  Profit/(loss) before tax | 2,615.97 | 2,252.21 | 1,020.56 | 7,397.67
+  Profit/(loss) for the period | 1,905.89 | 1,768.66 | 762.28 | 5,528.22
+  Other comprehensive income | - | - | - | -
+  Total comprehensive income for the period | 1,905.89 | 1,768.66 | 762.28 | 5,528.22
+Note 5. Company operates in a single segment (manufacturing of product); segment-wise reporting not applicable.
+Note 6. Figures for previous periods re-grouped / re-classified to conform to current periods.
+Note 7. This statement is as per Regulation 33 of SEBI (LODR) Regulations, 2015.
+Signed For Aeroflex Industries Limited, Asad Daud, Chairman & Managing Director, DIN: 02491539, Place Mumbai, Date 27th July 2026.
+
+[page 7]
+SHWETA JAIN & CO LLP
+INDEPENDENT AUDITORS REVIEW REPORT ON REVIEW OF INTERIM STANDALONE FINANCIAL RESULTS Q-1 of FY 2026-27
+To The Board of Directors Of AEROFLEX INDUSTRIES LTD., Mumbai
+Para 1. We have reviewed the accompanying statement of Standalone unaudited financial results of AEROFLEX INDUSTRIES LIMITED (the "Company") for the quarter ended June 30, 2026 and YTD Apr 1 2026 to June 30 2026, submitted pursuant to Regulation 33 of SEBI (LODR).
+Para 2. Management responsible; prepared per Ind AS 34 u/s 133 Companies Act 2013.
+Para 3. Review conducted per SRE 2410; moderate assurance; substantially less in scope than an audit; we do not express an audit opinion.
+
+[page 8]
+SHWETA JAIN & CO LLP (Standalone LRR continued)
+Para 4. Based on our review conducted as above, nothing has come to our attention that causes us to believe that the accompanying Statement, prepared per Ind AS u/s 133, has not disclosed the information required per Listing Regulations or that it contains any material misstatement.
+[UNMODIFIED / CLEAN CONCLUSION - no emphasis of matter, no qualification]
+Signed FOR SHWETA JAIN & CO LLP, F.R.N. 127673W/W101149, CA RAVI JAIN (Partner), Membership No: 125740, Place Mumbai, Dated 27th July 2026, UDIN: 26125740ZGJEJV5319 (Standalone).
+
+[page 9]
+Statement of STANDALONE financial results for the quarter ended on 30th June, 2026 (INR in lakhs)
+Columns: | Note | Q1FY27 3m 30.06.2026 (Unaudited) | Q4FY26 preceding 3m 31.03.2026 (# balancing) | Q1FY26 corresponding 3m 30.06.2025 (Unaudited) | FY26 year ended 31.03.2026 (Audited) |
+1 Revenue from operations | 1 | 13,901.13 | 11,881.72 | 7,918.63 | 41,247.20
+2 Other income | 2 | 76.45 | 72.07 | 33.23 | 155.14
+3 Total Income (1+2) | 3 | 13,977.58 | 11,953.79 | 7,951.86 | 41,402.34
+Cost of materials consumed | | 8,015.44 | 7,068.39 | 5,095.22 | 24,254.82
+Changes in inventories of FG, WIP and stock-in-trade | | (323.52) | (421.23) | (521.29) | (1,241.78)
+Employee benefits expense | | 1,330.42 | 963.76 | 831.72 | 3,802.27
+Finance costs | | 35.15 | 28.23 | 17.77 | 93.60
+Depreciation and amortization expense | | 727.93 | 721.50 | 548.35 | 2,412.67
+Other expenses | | 1,576.20 | 1,340.93 | 959.54 | 4,683.08
+4 Total expenses | 4 | 11,361.61 | 9,701.58 | 6,931.31 | 34,004.67
+5 Profit before exceptional items and tax (3-4) | 5 | 2,615.97 | 2,252.21 | 1,020.56 | 7,397.67
+6 Exceptional items / Diminution in value of Investment | 6 | - | - | - | -
+7 Profit/(loss) before tax (5+6) | 7 | 2,615.97 | 2,252.21 | 1,020.56 | 7,397.67
+8 Tax expense: Current Tax | 8 | 715.68 | 500.00 | 282.00 | 1,897.00
+8 Tax expense: Deferred Tax | | (5.59) | (16.45) | (23.73) | (63.93)
+8 Taxation of Earlier year | | - | - | - | 36.38
+9 Profit/(loss) for the period from continuing operation (7-8) | 9 | 1,905.89 | 1,768.66 | 762.28 | 5,528.22
+13 Profit/(loss) for the period (9+12) | 13 | 1,905.89 | 1,768.66 | 762.28 | 5,528.22
+14 Other Comprehensive Income | 14 | - | - | - | -
+15 Total Comprehensive Income for the period (13+14) | 15 | 1,905.89 | 1,768.66 | 762.28 | 5,528.22
+Paid up Equity Share Capital (Face value Rs 2/- each) | | 2,646.62 | 2,646.62 | 2,586.41 | 2,646.62
+Other Equity | | - | - | - | 42,006.99
+EPS continuing (not annualised): (1) Basic | | 1.44 | 1.36 | 0.59 | 4.26
+EPS continuing (not annualised): (2) Diluted | | 1.44 | 1.36 | 0.59 | 4.26
+STANDALONE NOTES (same page): 1. Reviewed by audit committee, approved by board 27 July 2026; limited review; statutory auditors issued report with UNMODIFIED opinion. 2. No exceptional items during the quarter. 3. The Company has increased the production capacity of its liquid cooling SFN skid assemblies from 6,000 pieces per annum to 9,000 pieces per annum. 4. Single segment; no segment reporting. 5. Previous periods re-grouped/re-classified. 6. As per Regulation 33.
+Signed Asad Daud, Chairman & Managing Director, DIN 02491539, Place Mumbai, Date 27 July 2026.
+
+[page 10]
+Annexure-B: Disclosures as required under Regulation 30 of the Listing Regulations read with SEBI Circulars (BOARD OUTCOME ITEM 2 detail):
+Name of the Tax Auditor | M/s. Kailash Chand Jain & Co., Chartered Accountants
+FRN | 112318W
+Reason of Change (appointment/re-appointment/resignation/removal/death/otherwise) | Appointment of Tax Auditor
+Date of appointment | July 27, 2026 ; Term of appointment: For financial year 2026-27
+Brief Profile | Partnership firm established 14 August 1990, registered with ICAI. Empaneled with RBI, C&AG, IBA, IRDAI, Income Tax Dept, GST Dept, CBI, SFIO, NIA for specialized audit assignments. Experience in capital markets.
+Relationships between Directors inter-se | None
+[NOTE: This is the TAX auditor appointment; statutory auditor remains Shweta Jain & Co LLP.]
+Signed: Ruthu John Parampogi, Company Secretary. Digitally signed 2026.07.27 18:31:10 +05'30'.
+
+########################################################################
+# DOCUMENT 2 of 2 : REG 32 STATEMENT OF DEVIATION / VARIATION IN UTILISATION OF FUNDS (Q ended June 30, 2026)
+########################################################################
+
+[REG32 page 1]
+July 27, 2026. To BSE (Scrip 543972) and NSE (AEROFLEX).
+Subject: Statement of Deviation or Variation in utilization of funds raised under Regulation 32 of SEBI (LODR) Regulations, 2015 for the Quarter ended June 30, 2026.
+Pursuant to Regulation 32, enclosed Statement of Deviation or Variation in utilization of funds raised through Preferential Issue of Equity Shares for the Quarter ended June 30, 2026, as Annexure A.
+The aforesaid statement has been reviewed by the Audit Committee and noted and taken on record by the Board of Directors.
+Signed: Ruthu Parampogi, Company Secretary & Compliance Officer, M. No. A60982. Digitally signed 2026.07.27 19:11:19.
+
+[REG32 page 2]
+Annexure A - STATEMENT OF DEVIATION / VARIATION IN UTILISATION OF FUNDS RAISED
+Name of listed entity | Aeroflex Industries Limited
+Mode of Fund Raising | Issue And Allotment of Equity shares on Preferential Basis
+Date of Raising Funds | 03rd February, 2026 (Date of allotment)
+Amount Raised | Rs. 54,99,99,714.60  [approx Rs 55.00 Cr]
+Report filed for Quarter ended | June 30, 2026
+Monitoring Agency | Not Applicable
+Monitoring Agency Name, if applicable | Not Applicable
+Is there a Deviation / Variation in use of funds raised | No Deviation/Variation
+Whether pursuant to change in terms of a contract or objects approved by shareholders | Not Applicable
+Date of shareholder Approval | Not Applicable
+Explanation for the Deviation / Variation | Not Applicable
+Comments of the Audit Committee after review | No Comments
+Comments of the auditors, if any | No Comments
+Objects table (Amount in Rs): columns = Original Object | Modified Object | Original Allocation | Modified Allocation | Funds Utilised for the quarter | Amount of Deviation/Variation | Remarks
+  Long-term working capital | NA | 41,52,49,783.60 | Nil | 40,76,86,751.00 | Nil | -
+  General Corporate Purpose | NA | 12,02,49,931.00 | Nil | 1,64,00,806.00 | Nil | -
+Signed: Ruthu Parampogi, Company Secretary. Digitally signed 2026.07.27 19:11:35.
+
+[REG32 page 3]
+Objects table continued (Preferential Issue expenses):
+  a. Advisory Fees | NA | 1,41,60,000.00 | Nil | 1,41,60,000.00 | Nil | -
+  b. Board Meetings, EGMs and Miscellaneous expenses | NA | 3,40,000.00 | Nil | 3,40,000.00 | Nil | -
+  TOTAL | | 54,99,99,714.60 | | 43,85,87,557.00 | |
+[DERIVED (not a stated figure): Total raised 54,99,99,714.60 minus total utilised 43,85,87,557.00 = 11,14,12,157.60 unutilised (~Rs 11.14 Cr), of which General Corporate Purpose is largely unspent: 1,64,00,806 utilised of 12,02,49,931 allocated.]
+Deviation or variation could mean: (a) deviation in objects/purposes; (b) deviation in amount actually utilized vs originally disclosed; (c) change in terms of a contract in the fund-raising document.
+Signed: Ruthu Parampogi, Company Secretary. Digitally signed 2026.07.27 19:11:51.
+
+=== END OF RESULTS EXTRACT ===

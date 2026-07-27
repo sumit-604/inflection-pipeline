@@ -1,0 +1,74 @@
+stage: B00-inputs
+company: ZAGGLE
+run_date: 2026-07-27
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+listed_note: "Zaggle IPO listed ~22 Sep 2023 (within ~3y of run_date); prospectus absence is a HIGH gap."
+sector_cap_row: "Platform / SaaS / IT services"
+cmp: 203.0
+market_cap_cr: 2731.0
+
+inventory:
+  prospectus:      { count: 0, status: ABSENT }
+  annual-report:   { count: 1, status: present, detail: "FY25 AR (Integrated Annual Report FY2024-25), filed 2025-08-27, 158pp" }
+  results:
+    count: 2
+    status: present
+    detail:
+      - "Q3 FY26 results, filed 2026-02-12"
+      - "Q4 & FY26 audited results, filed 2026-05-13"
+  rating:          { count: 1, status: present, detail: "CARE Ratings, CARE A-; Stable Reaffirmed, 2026-03-04, Rs 100 cr LT bank facilities" }
+  concalls:
+    count: 4
+    status: present
+    quarter_map:
+      - { file: "Concall_Nov_2025_Transcript_2.pdf", quarter: "Q2 FY25", call_date: "2024-11-13", note: "oldest, bonus backward transcript" }
+      - { file: "Concall_Nov_2025_Transcript.pdf",   quarter: "Q2 FY26", call_date: "2025-11-11" }
+      - { file: "Concall_Feb_2026_Transcript.pdf",   quarter: "Q3 FY26", call_date: "2026-02-12" }
+      - { file: "Concall_May_2026_Transcript.pdf",   quarter: "Q4 FY26", call_date: "2026-05-13" }
+    stage5_use: "3 most recent oldest-first: Q2 FY26 -> Q3 FY26 -> Q4 FY26; Q2 FY25 available as backward context"
+  peer-concalls:
+    count: 7
+    status: present
+    peers:
+      CAPILLARY: ["Feb 2026", "May 2026"]
+      RATEGAIN:  ["Nov 2025", "Feb 2026"]
+      TANLA:     ["Jul 2025", "Oct 2025", "Jan 2026"]
+  announcements:   { count: 0, status: ABSENT }
+  shareholding:    { count: 0, status: ABSENT }
+  research:        { count: 0, status: ABSENT }
+  screening:
+    count: 24
+    status: present
+    detail: "screener-* (ZAGGLE) + CAPILLARY/RATEGAIN/TANLA * (Balance_Sheet, Cash_Flow, Customization, Data_Sheet, Profit_Loss, Quarters)"
+  presentation:    { count: 1, status: present, detail: "Investor_Presentation_1.pdf, May 2026 Q4/FY26 deck" }
+  other:           { count: 0, status: ABSENT }
+
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    reason: "Company listed ~Sep 2023 (within ~3y). No DRHP/RHP. Backward baseline, promoter/group-company map, and restated pre-IPO financials build on the FY25 AR alone. FTTCP backward baseline runs on post-listing years only. Stage 8 group-map is web-derived not filing-anchored."
+  - type: announcements
+    severity: MEDIUM
+    reason: "No Reg 30 exchange-filing record for last ~12m. Stages 5/7/8 lose the documented-ACTION cross-check; stage 8 reconstructs material events (tax demand, Rivpe/Dice/Effiasoft acquisitions, CFO/CTO changes) via web search; intent-vs-action check runs on concall/AR/presentation only. FTTCP Step 0C announcement input absent -> lower confidence, flagged."
+  - type: shareholding
+    severity: MEDIUM
+    reason: "No quarterly shareholding pattern filing. Stage 10 FII+DII fall back to AR/last-known with staleness noted; stage 11 cannot affirm the UA institutional-absence qualifier, so UA is withheld (all-three-qualifier rule). Promoter holding/pledge trend from AR."
+  - type: research
+    severity: LOW
+    reason: "No broker notes. No effect on anchored evidence; lead-generation/management-intent cross-check source only."
+
+non_anchored_operator_context:
+  note: "Operator provided (in chat) a 6-month operational summary and a screener shareholding screenshot. NON-ANCHORED (research/COMPANY-MEMORY status). Usable as leads/management-intent cross-check only; every number a stage reports still comes from this run's own source PDFs."
+  shareholding_screenshot_jun2026: { promoter: 44.30, fii: 2.31, dii: 5.44, public: 47.96, source: "screener.in screenshot, operator-supplied, NON-ANCHORED" }
+
+degradation_applied:
+  - "Stages 2, 3, 4, 7 run fully on FY25 AR + presentation."
+  - "Gate 0 (stage 1) runs on screener CSVs + results PDFs + AR financials."
+  - "Stage 8 promoter/group background from web + AR governance (prospectus absent); flags group-map web-derived."
+  - "Stage 10 (phase 3) marks shareholding FII+DII unresolved unless AR fills; UA withheld."
+
+prior_run: "none found for ZAGGLE under runs/; companies/ZAGGLE.md absent (no COMPANY MEMORY)."
+flags: []

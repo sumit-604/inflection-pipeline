@@ -1,0 +1,51 @@
+stage: B06-peers
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q3 (cost-income): DHANBANK's claimed 85.42%->73.45% band sits structurally outside the entire peer set's 44%-65% experience; magnitude unverifiable against this peer group, flagged as priority for synthesis"
+  - "Q1/Q6: no DHANBANK-specific gold-loan or MSME-mix figures were available in the handoff to test directly; peer benchmark bands substituted"
+  - "Cross-peer hypothesis: FY26 sector-wide gold-loan growth likely inflated by RBI April-2025 LAS/repledger reclassification, not organic demand -- apply as a discount to any DHANBANK gold-loan growth figure"
+peers_provided: 16
+verified:
+  - {claim: "DHANBANK implied NIM trajectory 2.88% (FY) -> 3.07% (Q4) is credible vs peer funding-cost trends", peers: ["KTKBANK", "SOUTHBANK", "CSBBANK", "TMB"], anchor_count: 8}
+partially_verified:
+  - {claim: "DHANBANK's undisclosed CASA (last 29.02% Mar-25) has likely improved", peers: ["KTKBANK", "TMB", "SOUTHBANK"]}
+  - {claim: "DHANBANK's gap between headline GNPA 1.89% and incl-write-off GNPA 7.45% (Dec-25) is unusually wide vs peers", peers: ["KTKBANK", "TMB", "SOUTHBANK"]}
+  - {claim: "DHANBANK's Retail/MSME mix-shift claim is corroborated by peer SME/MSME trends", peers: ["SOUTHBANK", "KTKBANK", "TMB"]}
+  - {claim: "DHANBANK's cost-income improvement (85.42% -> 73.45%) is directionally consistent with sector-wide FY26 cost discipline", peers: ["KTKBANK", "CSBBANK", "TMB"]}
+contradicted:
+  - {claim: "DHANBANK's cost-income magnitude/absolute level (85.42% start, 73.45% end) is structurally durable and comparable to peer efficiency gains", contradicting_peer: "CSBBANK / KTKBANK / TMB (entire peer set operates 44%-65% band)", quote_anchor: "CSBBANK Q4 FY26 (May-26) p.3 cost-to-income FY26 62.53%; TMB Q4 FY26 (Apr-26) p.6 cost-to-income 44.80%; KTKBANK Q4 FY26 (May-26) p.3 cost-to-income FY26 56.34%"}
+unverifiable:
+  - {claim: "DHANBANK gold-loan LTV/yield discipline (no DHANBANK-specific figure supplied)", peers_checked: ["CSBBANK", "SOUTHBANK", "KTKBANK", "TMB"]}
+peer_coverage_map:
+  - {peer: "CSBBANK", quarter: "Q1 FY26 (Aug-25)", usage: "SUBSTANTIVE", contribution: "NIM/gold-yield/cost-income baseline"}
+  - {peer: "CSBBANK", quarter: "Q2 FY26 (Nov-25)", usage: "SUBSTANTIVE", contribution: "NIM recovery mechanics, gold tonnage-vs-price distinction"}
+  - {peer: "CSBBANK", quarter: "Q3 FY26 (Feb-26)", usage: "SUBSTANTIVE", contribution: "Gold LTV 63%->below 60%, SME/tariff slippage commentary"}
+  - {peer: "CSBBANK", quarter: "Q4 FY26 (May-26)", usage: "SUBSTANTIVE", contribution: "Full-year NIM/cost-income, gold mix reclassification 44%->53%, ECL estimate"}
+  - {peer: "KTKBANK", quarter: "Q1 FY26 (Aug-25)", usage: "SUBSTANTIVE", contribution: "NIM 2.82%, CASA 30.84%, cost-income 58.05% baseline"}
+  - {peer: "KTKBANK", quarter: "Q2 FY26 (Nov-25)", usage: "SUBSTANTIVE", contribution: "CASA/cost-of-funds trend continuation"}
+  - {peer: "KTKBANK", quarter: "Q3 FY26 (Feb-26)", usage: "SUBSTANTIVE", contribution: "CASA 31.53%, NIM 2.92%, MSME GNPA stress admission"}
+  - {peer: "KTKBANK", quarter: "Q4 FY26 (May-26)", usage: "SUBSTANTIVE", contribution: "Exact NIM match 2.88%/3.07% to DHANBANK claim; CASA 33.61%; explicit MSME-flat admission"}
+  - {peer: "SOUTHBANK", quarter: "Q2 FY26 (Oct-25)", usage: "SUBSTANTIVE", contribution: "NIM trough 2.8%, gold mix cap discussion, MSME +127% YoY, CASA +10% YoY"}
+  - {peer: "SOUTHBANK", quarter: "Q3 FY26 (Jan-26)", usage: "SUBSTANTIVE", contribution: "Gold LTV 55%, NIM 2.86%, CASA +15% YoY, MSME +12% ex-write-off"}
+  - {peer: "SOUTHBANK", quarter: "Q4 FY26 (May-26)", usage: "SUBSTANTIVE", contribution: "Full-year NIM 2.91%/Q4 2.95%, gold LTV 57.18%, TWO Rs1163cr for GNPA proxy, CASA +17.5%"}
+  - {peer: "SOUTHBANK", quarter: "Q1 FY27 (Jul-26)", usage: "SUBSTANTIVE", contribution: "NIM 3.23% recovery, gold LTV 65.25% drift, MSME +18% YoY, corporate still 40%"}
+  - {peer: "TMB", quarter: "Q1 FY26 (Jul-25)", usage: "SUBSTANTIVE", contribution: "MSME degrowth admission, NIM 3.84%, CASA recovery from rock bottom"}
+  - {peer: "TMB", quarter: "Q2 FY26 (Nov-25)", usage: "SUBSTANTIVE", contribution: "CASA +92bps, TWO pool ~Rs2000cr for GNPA proxy, cost-income 43.81%"}
+  - {peer: "TMB", quarter: "Q3 FY26 (Feb-26)", usage: "SUBSTANTIVE", contribution: "Gold LTV 54%/origination 73%, NIM 4.04%, MSME turnaround +6.74% QoQ"}
+  - {peer: "TMB", quarter: "Q4 FY26 (Apr-26)", usage: "SUBSTANTIVE", contribution: "Full-year NIM 3.98%/Q4 4.18%, cost-income 44.80%, MSME +14.88%, ECL estimate Rs279cr"}
+industry_cross_read:
+  demand: "Repo-cut NIM compression H1 FY26 across all four peers, reversing H2 as deposits reprice; West Asia crisis from Jan/Feb-26 onward adds NRI-deposit and gold-price volatility uniformly; GST cuts a separate consumption tailwind (auto loans)."
+  pricing_inputs: "Universal EBLR/MCLR-down-immediately vs deposit-reprices-with-lag mechanism compresses then restores NIM at every peer; gold-loan yields the one lever moving opposite via larger-ticket working-capital gold products."
+  capex_cycle: "Industry-wide simultaneous tech/branch reinvestment cycle (CSB core-banking migration, TMB Rs250cr IT budget, KTKBANK RLPC buildout, SOUTHBANK branch restart) -- not a lone expander vs cautious set; every peer guides cost payoff only from FY27/FY28, the correct frame for judging DHANBANK's own near-term cost claims."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "ECL/expected-credit-loss transition effective 1 April 2027 -- actively quantified and provisioned by all four peers, unaddressed in DHANBANK claim set (CSBBANK Q4 FY26 p.10-11; KTKBANK Q4 FY26 p.9; SOUTHBANK Q2 FY26 p.7-8; TMB Q2/Q3 FY26 p.5)"
+  - "West Asia/Gulf geopolitical exposure to NRI deposits and gold prices, live theme at all four peers from Q3 FY26 onward, not referenced in DHANBANK claim set"
+  - "RBI April-2025 gold-loan/LAS reclassification circular mechanically inflating reported gold-loan growth at CSB, TMB, Karnataka Bank -- directly relevant to interpreting any DHANBANK gold-loan figure but unflagged in the claim set"
+  - "Legacy technically-written-off book recovery as a recurring other-income source (KTKBANK, TMB, SOUTHBANK) -- unaddressed in DHANBANK claims despite DHANBANK's own wide incl-write-off GNPA gap implying a comparable legacy book"
+  - "Leadership/succession risk live at Karnataka Bank and South Indian Bank across multiple quarters -- not transferable to DHANBANK directly but a reminder that DHANBANK's NO-CONCALL status leaves this entirely unaddressed either way"
+net_narrative_effect: "complicates"

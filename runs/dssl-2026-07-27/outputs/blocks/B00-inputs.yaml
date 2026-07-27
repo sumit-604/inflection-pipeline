@@ -25,9 +25,17 @@ inventory:
   other:            {count: 0}
 
 input_gaps:
-  - "announcements/ EMPTY: loses documented-ACTION (Reg 30) record; intent-and-action cross-check runs on concall/AR only; stage 8 promoter sources material events from web+AR; FTTCP Step 0C announcements input absent (lowers confidence, flagged)"
-  - "shareholding/ EMPTY: latest quarterly SHP not provided; UA institutional-absence qualifier cannot be affirmed at stage 11 (UA withheld); promoter holding/pledge trend falls back to FY25 AR figure with staleness noted"
+  - "announcements/ was EMPTY: operator supplied a 6-month digest mid-run (inputs/announcements/OPERATOR_6month_digest.md, NON-ANCHORED lead; underlying BSE Reg 30 PDFs still not collected). Order-win rupee values directional-to-corroborate; documented-ACTION cross-check now has a lead layer + concall/results corroboration. Residual gap: primary Reg 30 filings uncollected."
+  - "shareholding/ was EMPTY: operator supplied a screener SHP screenshot mid-run (inputs/shareholding/OPERATOR_screener_shp.md, ANCHORED-EQUIVALENT screener class, Sep2023-Jun2026). FILLS Block E promoter-holding + FII/DII qualifier (promoter flat ~60.9%, FII+DII ~1.36% Jun2026). Residual gap: promoter PLEDGE % not in the screenshot -> NOT FOUND unless FY25 AR discloses."
   - "prospectus/ empty but NOT a gap: DSSL long-listed (incorporated 1995), prospectus not expected"
+
+operator_midrun_fill:
+  received: 2026-07-27
+  items:
+    - "screener SHP screenshot -> inputs/shareholding/OPERATOR_screener_shp.md (anchored-equiv). Routed to stage 1 (Block E, via SendMessage to running agent), stage 8, stage 11 UA."
+    - "6-month operational digest -> inputs/announcements/OPERATOR_6month_digest.md (non-anchored lead). Routed to stages 4/5/7/8/9 + synthesis via task messages."
+  provenance_rules: outputs/_working/OPERATOR_CONTEXT.md
+  note: "This is 'proceed with gaps, here is fill'. Stage-0 pause NOT re-asked."
 
 collector_defects:
   - "concalls_available:false in manifest is WRONG — 2 genuine DSSL earnings transcripts (Feb2026 Q3FY26, Jun2026 Q4FY26) present. Overridden to NORMAL concall mode (recurring KARNIKA/OBSCP class defect)."

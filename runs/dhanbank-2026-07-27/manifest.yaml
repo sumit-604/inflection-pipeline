@@ -1,0 +1,9 @@
+company: Dhanlaxmi Bank Ltd
+ticker: DHANBANK
+cmp: 35.4
+market_cap_cr: 1397.0
+run_date: 2026-07-27
+run_type: full
+concalls_available: false
+sector_cap_row: "Pharma / CDMO"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

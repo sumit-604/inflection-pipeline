@@ -30,3 +30,9 @@ Run date: 2026-07-27. Ticker: AEROFLEX (Aeroflex Industries Limited, Scrip 54397
 - A3 FORENSICS: pending A2 gates.
 - A4 ANALYST: pending.
 - A5 ADVERSARY: pending.
+
+## Notion save (2026-07-27, after A5 COMPLETE, user-authorised)
+- Page: Aeroflex Industries (id 345bb2b9-d3ab-804c-9f04-d7c8117a2f84), COMPANIES MASTER db.
+- update_properties: PREPENDED dated [27-Jul-26] Q1 FY27 Key Notes entry; all 6 prior entries preserved. Decision Status LEFT UNCHANGED (WATCHLIST / HOLD-NOT-ADD) — no trigger fired.
+- insert_content (position end, 3 sequential inserts): full Q1 FY27 review as Notion tables — headline consol/standalone, growth-quality/skid economics, watchlist status, tripwire test, governance, 14 Questions-for-Management, monitorables, verdict, plain-language callout, A3 forensics findings table, A5 COMPLETE verdict.
+- A5 verdict COMPLETE; protocol verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE.

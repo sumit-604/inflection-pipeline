@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus/announcements/shareholding/research ABSENT (carried from Stage 5) — this stage relies solely on the 7 peer transcripts and B05.peer_questions"
+  - "no peer operates a directly comparable spend-management, cashback-funded loyalty, or fleet-card business; 6 of 7 questions are structurally unverifiable against this peer set, not evidentially contradicted"
+flags:
+  - "No peer mentions Zaggle by name or description anywhere across 7 transcripts (Part 2D)"
+  - "No peer describes an industry-wide demand boom matching Zaggle's 40-45% FY26 revenue growth guidance; even the fastest-growing peer (Capillary, organic ~22% 9-month) tracks well below that pace"
+  - "All three peers routinely disclose churn/GRR/client-concentration risk with names and percentages (RateGain 10% GRR churn, Tanla's Dream11 loss, Capillary's Kognitiv indemnity clause) while Zaggle discloses none across 3 tracked quarters — a disclosure-candor gap, not a factual contradiction"
+  - "Draft Income Tax Rules 2026 tailwind cited by Zaggle is unmentioned by all 3 peers; cannot distinguish Zaggle-specific talking point from simple product-line non-overlap"
+peers_provided: 7
+verified: []
+partially_verified:
+  - {claim: "AI-driven productivity gains compressing dev/engineering cycles (Zaggle: 75-80 days cut to under 30)", peers: ["Capillary", "RateGain", "Tanla"]}
+contradicted: []
+unverifiable:
+  - {claim: "Global spend-management market ~10.2% CAGR / India ~15.5% CAGR", peers_checked: ["Capillary", "RateGain", "Tanla"]}
+  - {claim: "Peer incentive/cashback ratios rising as % of program fees, contrary to Zaggle's declining-cashback narrative", peers_checked: ["Capillary", "RateGain", "Tanla"]}
+  - {claim: "UPI take-rates/interchange rising structurally as government subsidy phases out", peers_checked: ["Tanla", "RateGain"]}
+  - {claim: "Draft Income Tax Rules 2026 (meal/gift/fuel allowance changes) cited by peers as a similarly meaningful tailwind", peers_checked: ["Capillary", "RateGain", "Tanla"]}
+  - {claim: "Independent support for 'clear market leadership' in Indian spend management versus FY22-23", peers_checked: ["Capillary", "RateGain", "Tanla"]}
+  - {claim: "INR79,000cr fleet-management TAM and Corpay/WEX/VEX-type competitive entry into India", peers_checked: ["not directly comparable per B05; no peer operates in fleet management"]}
+peer_coverage_map:
+  - {peer: "Capillary", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "AI-productivity cross-read; organic-growth benchmark for demand-environment cross-read"}
+  - {peer: "Capillary", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "SessionM churn-indemnity disclosure feeding missing-risks finding; M&A roll-up discipline for capex-cycle cross-read"}
+  - {peer: "RateGain", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Explicit churn/GRR and OTA client-loss disclosure; Sojern M&A scale for capex-cycle cross-read"}
+  - {peer: "RateGain", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "AI-generated-code commentary for productivity claim; performance-linked pricing model for pricing cross-read"}
+  - {peer: "Tanla", quarter: "Q1 FY26 (Jul-2025 call)", usage: "SUBSTANTIVE", contribution: "Capital-return vs M&A posture for capex-cycle cross-read; CPaaS TAM growth rate"}
+  - {peer: "Tanla", quarter: "Q2 FY26 (Oct-2025 call)", usage: "SUBSTANTIVE", contribution: "Dream11/gaming-regulation concentration-risk disclosure; OTT/WhatsApp pricing volatility"}
+  - {peer: "Tanla", quarter: "Q3 FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "UPI transaction-volume commentary; vibe-coding AI commentary; competitive-landscape and NIC-tender risk disclosure"}
+industry_cross_read:
+  demand: "No peer describes an industry-wide demand boom matching Zaggle's framing; peers show steady-to-recovering, company-specific growth well below Zaggle's stated 40-45% pace"
+  pricing_inputs: "No peer discloses cashback ratios (structural non-overlap); sector-wide drift toward outcome/performance-linked pricing (RateGain) loosely resonates with, but does not confirm, Zaggle's margin narrative"
+  capex_cycle: "Mixed: Capillary and RateGain are aggressive M&A consolidators with disciplined payback math; Tanla is capital-return oriented with no M&A executed in-period — not an industry-wide capacity race, a bifurcation by platform-migratability (see Part 5 hypothesis)"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "RateGain: quantified churn/GRR (~10%) and named client loss (large OTA, MHS customer), disclosed candidly quarter over quarter — Zaggle discloses no churn/attrition figures across 3 tracked quarters"
+  - "Tanla: overnight client-concentration loss from a single regulatory change (Dream11/gaming), disclosed by name — a template for the concentration-risk candor Zaggle's fleet/OMC and international-expansion disclosures lack"
+  - "Capillary: churn-indemnity clause triggered and disclosed on a completed acquisition (Kognitiv) when the seller missed commitments — a materially more specific accountability mechanism than Zaggle's thin 'reassessed the strategic need' explanation for the abandoned EffiaSoft deal"
+net_narrative_effect: "complicates"

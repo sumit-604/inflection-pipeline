@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No warehouse-level utilisation data disclosed; per-warehouse throughput derived only via analyst arithmetic on aggregate revenue and warehouse counts"
+  - "No MAU/GMV/revenue metric disclosed for HealthEdge/Aayu Chemist/Medcords digital platform"
+  - "No placement-count or renewal-rate data disclosed for the MedTech IVD reagent-rental model; lock-in mechanism inferred from management commentary plus the aggregate depreciation line only"
+  - "No segment-level (MedTech vs pharma) margin disclosure; single reportable segment under Ind AS 108 (AR p.177) means the isolated MedTech/agency-model margin contribution cannot be independently verified"
+  - "Combined classification matrix (Section 6D) not injected into this stage's inputs; combined_assessment below is a reasoned application, not a table lookup, and should be checked against the Master framework by the verifier"
+flags:
+  - "MedTech WC-cycle risk: analysts pressed management on whether NWC-days gains (G2) will reverse as MedTech's different receivable/payable cycles scale past 15-20% of revenue; not fully resolved on any of the three calls"
+  - "H1 (industry consolidation) rests on management's own claim of limited buyer competition ('2 or 3' buyers) for a fragmented target universe; untested against a fully-recovered PharmEasy or new entrant"
+  - "B2 (reagent-rental lock-in) is evidenced only through the aggregate depreciation line and management commentary; no contract-count or renewal data exists to confirm genuine switching-cost economics vs an accounting artefact"
+  - "Only one full guided fiscal year (FY26) underpins F2/G1/G2; all three are single-year confirmations, not multi-year track records"
+em_score: 25
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "active/ongoing"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Strong", evidence_type: "DOCUMENTED", time_to_materialise: "active/12m"}
+  - {id: "G1", name: "War chest / financial structural improvement", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "active/12m"}
+  - {id: "F2", name: "Execution moat (guidance delivery)", strength: "Moderate", evidence_type: "DOCUMENTED", time_to_materialise: "active/ongoing"}
+  - {id: "B2", name: "Qualification lock-in (MedTech IVD reagent-rental model)", strength: "Moderate", evidence_type: "MANAGEMENT CLAIM (financial corroboration)", time_to_materialise: "12-24m"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships (commercial-agency model)", strength: "Moderate", evidence_type: "MANAGEMENT CLAIM", time_to_materialise: "12-24m"}
+  - {id: "H2", name: "Strategic partnerships (Servier/Biodis; MedTech aspirational)", strength: "Weak-Moderate", evidence_type: "MIXED (documented + claim)", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 9, claim: 6, inference: 4}
+completionist_recount: "9 documented items across 6 categories (H1, G2, G1, F2, B2 partial, D2 partial); 20 categories scanned plus R1, only 6-7 carry Strong/Moderate evidence, well below the 12-category red-flag threshold"
+catalysts_12m:
+  - {catalyst: "FY27 guidance delivery (23% ex-M&A revenue, 5% EBITDA margin, >=50% OCF/EBITDA conversion)", window: "FY27 (12m)", evidence_type: "DOCUMENTED", anchor: "Q4/FY26 call, 26 May 2026, opening remarks"}
+  - {catalyst: "MedTech revenue scale-up toward ~20% of consolidated revenue aspiration (from >15% now)", window: "12-24m", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4/FY26 call"}
+  - {catalyst: "Net working capital days holding below ~60 as MedTech scales", window: "12m", evidence_type: "DOCUMENTED", anchor: "Q4/FY26 call (59 days); AR MD&A p.23"}
+  - {catalyst: "M&A pause holding through the stated 6-8 month window (no large new deal announced)", window: "6-8 months from Q3 FY26 call", evidence_type: "DOCUMENTED", anchor: "Q3 FY26 call, reiterated Q4/FY26 call"}
+  - {catalyst: "Commercial/agency-model share growth (from 10-15% of sales) with disclosed margin evidence", window: "12-24m", evidence_type: "MANAGEMENT CLAIM", anchor: "Q4/FY26 call"}
+  - {catalyst: "GST-led / organised-distribution-share consolidation tailwind continuing", window: "structural, multi-year", evidence_type: "DOCUMENTED", anchor: "AR MD&A p.22; Q2 FY26 call"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Master data management system as a proprietary, licensable data asset", converting_evidence: "Disclosed analytics/data product, licensing revenue line, or years-accumulated/replicability claim", first_appears: "AR technology section or future investor deck", window: "24-36 months"}
+  - {optionality: "HealthEdge/Aayu Chemist/Medcords digital platform materiality", converting_evidence: "Disclosed MAU, GMV, or platform-attributable revenue/EBITDA figure", first_appears: "AR MD&A or investor presentation, next annual cycle", window: "12-24 months"}
+  - {optionality: "Peerless Biotech manufacturing capability as a repeatable backward-integration strategy", converting_evidence: "Second/third manufacturing-asset acquisition or disclosed manufacturing-capacity capex figure", first_appears: "AR capex note or exchange filing", window: "24-36 months"}
+  - {optionality: "Global MedTech OEM partnerships ('innovators and global players')", converting_evidence: "Named, signed distribution/licensing agreement with a specific global manufacturer", first_appears: "Exchange filing or concall", window: "12-24 months"}
+  - {optionality: "Tier 2/3 geographic depth as a documented first-mover advantage", converting_evidence: "Quantified district-level market-share or first-to-market claim", first_appears: "Investor presentation or AR MD&A", window: "24-36 months"}
+  - {optionality: "Broad-based ESOP programme as a talent-retention moat", converting_evidence: "Disclosed technical/R&D-specific headcount or ESOP allocation split", first_appears: "AR HR/BRSR section", window: "24-36 months"}
+  - {optionality: "Servier/Biodis-style manufacturer partnerships scaling into a repeatable pipeline", converting_evidence: "Disclosed count/revenue contribution of full-commercial-role manufacturer relationships beyond the current 10-15% aggregate", first_appears: "Concall or AR MD&A", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE-core/STRONG-existing-moat paired with a genuine but not-yet-EXPANSION-grade emerging moat (25/80, STRENGTHENING band) corroborates Gate 0's flagged FY26 inflection via two well-evidenced mechanisms (working capital, industry consolidation) but rests on a single confirming fiscal year; a watch-list transition candidate, not yet a confirmed HIGH POTENTIAL upgrade."
+top_moat_risks:
+  - "MedTech's longer receivable/payable cycles could reverse the working-capital gains (G2) as the segment scales past 15-20% of revenue"
+  - "Industry-consolidation thesis (H1) rests on management's untested claim of limited buyer competition for acquisition targets"
+  - "Reagent-rental lock-in (B2) is evidenced only via the aggregate depreciation line, with no contract-count or renewal-rate data to confirm genuine switching costs"
+  - "Execution/credibility track record (F2, G1, G2) spans only one full guided fiscal year as a listed company"

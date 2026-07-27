@@ -1,0 +1,79 @@
+stage: B05-concall
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "GLP-1 market share figure inconsistent across quarters (~10% Q3 FY26 call vs ~5% Q4 FY26 call), unreconciled"
+  - "IPM-outperformance multiplier compressed 1.8x->1.4x over two quarters with same non-structural explanation given both times"
+  - "Debtor-ageing (>6 months) data refused on direct analyst request, Q3 FY26 call"
+  - "Q4 FY26 full-year OCF Rs96.2cr landed marginally short of repeated 'Rs100cr plus' guidance wording"
+  - "Non-controlling interest step-up in Q4 FY26 guided to persist at ~25-27% of pre-minority PAT in FY27"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "MedTech scale-up to >15% (aspirational 20%) of revenue at higher margin", type: "INORGANIC/PRICE-MIX", timeframe: "medium", conviction: "H", confirm_signal: "FY27 quarterly prints show MedTech-driven margin gains sustained without new deals", kill_signal: "MedTech margin contribution stalls or management concedes it cannot be isolated"}
+  - {priority: 2, name: "FY27 guidance delivery: 23% revenue ex-M&A, 5% EBITDA margin, >=50% OCF/EBITDA conversion", type: "REVENUE+MARGIN", timeframe: "near-medium", conviction: "H", confirm_signal: "Q1-Q2 FY27 prints track the guided trajectory as FY26 guidance was tracked and delivered", kill_signal: "any of the three metrics missed by >200bps without a clearly-attributed mechanical cause"}
+  - {priority: 3, name: "M&A pause / integration focus holding through FY27", type: "INORGANIC", timeframe: "near-medium", conviction: "M-H", confirm_signal: "no large (>Rs100cr revenue) new deal announced through at least Q2 FY27", kill_signal: "a large new acquisition announced within the stated pause window"}
+  - {priority: 4, name: "Working capital days continuing below ~60", type: "COST/CASH", timeframe: "near", conviction: "H", confirm_signal: "FY27 quarterly NWC days stay at or below ~59-61 days", kill_signal: "NWC days revert above 65 as MedTech payable/receivable cycles scale"}
+  - {priority: 5, name: "Commercial/agency distribution model expansion (10-15% of sales, ~2x margin)", type: "PRICE-MIX", timeframe: "medium", conviction: "M", confirm_signal: "disclosed % of sales under commercial/agency contracts rises with matching margin uplift", kill_signal: "share stays flat or margin differential not evidenced in reported GM bridge"}
+  - {priority: 6, name: "IPM-outperformance multiplier recovering toward historical ~1.7-1.9x or credibly stabilizing", type: "VOLUME", timeframe: "near", conviction: "M", confirm_signal: "multiplier normalizes upward or management gives a structural explanation that holds across quarters", kill_signal: "multiplier stays compressed near 1.4x with same denominator explanation repeated without deeper analysis"}
+  - {priority: 7, name: "GLP-1 category tailwind", type: "SECTORAL", timeframe: "near", conviction: "L-M", confirm_signal: "single, reconciled share/revenue figure disclosed and growing", kill_signal: "share figure remains internally inconsistent or management confirms it is immaterial to growth"}
+  - {priority: 8, name: "Two-way network moat sustaining pricing/ROCE", type: "SECTORAL", timeframe: "long", conviction: "M", confirm_signal: "ROCE trajectory continues upward without margin give-back to suppliers/customers as scale increases", kill_signal: "gross margin or customer/manufacturer retention deteriorates as competitors contest acquisition targets"}
+guidance:
+  - {item: "Revenue growth (LFL)", number: "30% YoY", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "EBITDA margin", number: "4%+", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Operating cash flow", number: "Rs100 crore+", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Net working capital days", number: "~60 days", timeframe: "FY26 exit", stated_in: "Q2 FY26 call"}
+  - {item: "MedTech revenue target via 7 acquisitions", number: ">Rs1,000 crore", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "H2 FY26 M&A cash outlay", number: "upwards of Rs400 crore", timeframe: "H2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "MedTech proforma margin impact", number: "+70-90bps GM / +50-75bps EBITDA", timeframe: "post-integration", stated_in: "Q2 FY26 call"}
+  - {item: "MedTech revenue share", number: "14-15% of consolidated", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Revenue growth ex new M&A", number: "23% YoY (11% calendarization + ~12% organic)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "EBITDA margin", number: "5%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "OCF/EBITDA conversion", number: ">=50%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Tax rate", number: "22-23%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Non-controlling interest share", number: "~25-27% of PAT before minority", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "MedTech revenue share (aspirational)", number: "up to 20%", timeframe: "2-3 years out", stated_in: "Q4 FY26 call"}
+  - {item: "M&A pace", number: "paused ~2-3 quarters (6-8 months)", timeframe: "from Q3 FY26 call into FY27", stated_in: "Q3 FY26 call, reiterated Q4 FY26 call"}
+promise_delivery:
+  delivered: 5
+  partial: 3
+  missed: 0
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "FY26 revenue growth 30% YoY (LFL)", outcome: "delivered/beat: 31.5% LFL for FY26", explanation: "H1 gap attributed to delayed deal closures; caught up and slightly exceeded"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 EBITDA margin 4%+", outcome: "delivered: 4.0% for FY26", explanation: "met exactly at floor of guidance; Q4 alone 4.5%"}
+    - {promised_in: "Q2 FY26 call, reiterated Q3 FY26 call", promise: "FY26 OCF Rs100 crore plus", outcome: "partial: Rs96.2 crore for FY26", explanation: "marginally short of literal wording; first positive OCF year, Q4 alone Rs104.6cr matched the quarter-level ask"}
+    - {promised_in: "Q2 FY26 call", promise: "NWC days ~60 by FY26 close", outcome: "delivered/beat: 59 days in Q4 FY26", explanation: "steady quarter-on-quarter improvement per stated task-force initiatives"}
+    - {promised_in: "Q2 FY26 call", promise: "MedTech >Rs1,000 crore revenue via 7 acquisitions", outcome: "delivered: >Rs1,000 crore annualised confirmed Q4 FY26 call", explanation: "delivered on both deal count and revenue scale"}
+    - {promised_in: "Q2 FY26 call, repeated Q3 FY26 call", promise: "MedTech proforma margin impact +70-90bps GM / +50-75bps EBITDA", outcome: "partial/directionally consistent: FY26 GM +78bps, EBITDA +67bps YoY", explanation: "within guided ranges in aggregate, but FY26 margin gains attributed to 'many factors' not MedTech alone, so isolated contribution unverifiable"}
+    - {promised_in: "Q3 FY26 call", promise: "slow down M&A for next 2-3 quarters, focus on integration", outcome: "delivered/held: reiterated in Q4 FY26 call, FY27 guidance excludes new M&A", explanation: "consistent, repeated commitment with no reversal seen"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 guidance to be given at Q4 call", outcome: "delivered: full FY27 guidance bundle given in Q4 FY26 call", explanation: "direct cross-quarter promise kept precisely"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Why has organic growth outperformance vs IPM (the multiplier) fallen from ~1.7-1.9x historically to ~1.4x?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Delivered or beat five of six tracked FY26 guidance items with candid mechanical explanations for shortfalls (M&A timing, GST/seasonality on OCF), landed marginally short only on the full-year OCF headline (Rs96.2cr vs 100cr+ wording) while hitting the underlying quarter-level math exactly; offset by a stonewalled debtor-ageing request, an unreconciled GLP-1 share figure, and a repeated non-structural answer to the IPM-multiplier question - net Good (B), not Excellent (A)."
+peer_questions:
+  - {question: "Is Indian pharma IPM growth genuinely running at ~12% in the Oct 2025-Mar 2026 window (vs the ~7-8% Entero itself cited earlier), or is this an Entero-side/base-effect artifact?", why: "Determines whether Entero's organic-outperformance-multiplier compression reflects industry acceleration (benign) or Entero's own deceleration (a growth-thesis risk)", check_peers: ["MedPlus", "Redington", "RPTech"]}
+  - {question: "Do MedTech-focused distributors genuinely run at 10%+ EBITDA margins vs ~4% for pure pharma distribution, as Entero repeatedly claims?", why: "This is the core economic rationale for Entero's MedTech pivot and FY27 margin guidance", check_peers: ["RPTech", "Redington"]}
+  - {question: "What GLP-1 category growth rate and distributor market-share dynamics are peers reporting, and does a ~10% or ~5% Entero share (the two inconsistent figures Entero itself gave) look plausible?", why: "Entero gave two different, unreconciled GLP-1 share figures across two consecutive calls", check_peers: ["MedPlus", "Redington"]}
+  - {question: "Are 5-7x EV/EBITDA (or single-digit EV/EBITDA) acquisition multiples consistent with what peers are paying for similar pharma/MedTech distribution targets?", why: "Validates whether Entero's stated acquisition discipline is genuinely below-market or in line with a market that has re-rated", check_peers: ["MedPlus", "Redington", "RPTech"]}
+  - {question: "Is the claim of limited competition for M&A targets (few buyers, many fragmented distributors, including from a resurgent PharmEasy) borne out by peer commentary on deal pipelines and pricing trends?", why: "If competition for targets is intensifying, Entero's acquisition-multiple discipline and pipeline visibility are at risk once its stated pause ends", check_peers: ["MedPlus", "Redington"]}
+  - {question: "Does the Indian organized pharmacy retail landscape match Entero's characterization (Apollo + MedPlus ~10,000-12,000 stores of 1mn+ total pharmacies, no other chain above 500 stores)?", why: "Tests a specific competitive-landscape claim used to argue retail-consolidation risk to Entero's moat is low", check_peers: ["MedPlus"]}
+  - {question: "How exposed are import-dependent distribution peers (e.g., Redington) to the US/EU trade-deal and Middle East disruption Entero says it is largely insulated from?", why: "Provides a contrast case to sanity-check Entero's insulation claim", check_peers: ["Redington"]}
+  - {question: "Do agency/commercial-role distribution arrangements elsewhere (e.g., RPTech's vendor-authorized relationships) show margin differentials consistent with Entero's claim of at least double normal distribution margin for its commercial/agency model?", why: "Tests the durability of Entero's Priority-5 margin-accretive trigger", check_peers: ["RPTech"]}
+red_flags:
+  - {flag: "Non-controlling interest step-up in Q4 FY26, guided to persist at ~25-27% of pre-minority PAT in FY27", severity: "Medium"}
+  - {flag: "Debtor-ageing (>6 months) data refused on direct analyst request, Q3 FY26 call", severity: "Low-Medium"}
+  - {flag: "GLP-1 market-share figure inconsistent across quarters (~10% vs ~5%), unreconciled", severity: "Low"}
+  - {flag: "IPM-outperformance multiplier compressed 1.8x->1.4x over two quarters with same non-structural explanation both times", severity: "Medium"}
+  - {flag: "Full-year FY26 OCF (Rs96.2cr) landed marginally under the repeated 'Rs100 crore plus' guidance language", severity: "Low"}
+  - {flag: "Net worth flattish YoY despite strong PAT growth due to put-option liability recognition, only surfaced when an analyst asked", severity: "Low"}
+  - {flag: "Internal transcript inconsistency: Q4 FY26 call CEO states ROCE for the quarter was 1.4% against the same call's own 18.4% opening figure", severity: "Low (data-quality flag, not a company conduct flag)"}
+dropped_triggers:
+  - "Private label push (raised Q3 FY26 call as a minor aside, not mentioned Q4 FY26 call)"
+  - "Nutraceutical distribution growth commentary (raised Q3 FY26 call, not mentioned Q4 FY26 call)"
+timeline_slippages:
+  - "H1 FY26 revenue growth ran below the pace implied by the 30% FY26 guidance because 80% of the year's 7 acquisitions closed in H2 rather than a more even split, openly admitted by management on the Q2 FY26 call"
+  - "Full-year FY26 OCF (Rs96.2cr) came in marginally under the repeated 'Rs100 crore plus' framing used on both the Q2 and Q3 FY26 calls, though the underlying quarter-level math (Q4 alone >Rs100cr) was hit almost exactly"

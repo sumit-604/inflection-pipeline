@@ -1,0 +1,31 @@
+stage: B12b
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 15
+caught: 10
+partially_caught: 1
+redflag_coverage: 70        # percent, partial credit; acceptance_rate (caught/found) = 67%
+missed:
+  - {severity: "MAJOR", item: "Top-20 concentration: top-20 depositors 24.50% of deposits AND top-20 exposures 14.40% of total exposure = 147% of Tier I capital (Mar-25); core banking concentration red flag absent from B05/B06", anchor: "ICRA p.2"}
+  - {severity: "MAJOR", item: "RBI monetary penalties levied on the Bank during FY25 (AR: 'corrective steps in the areas of monetary penalties levied by Reserve Bank of India during the financial year'); governance/RBI-penalty item uncaught; boilerplate Strictures section covers only SEBI/exchange capital-market penalties", anchor: "AR compliance section (line 2253-2255); AR Strictures & Penalties (line 835-841)"}
+  - {severity: "MAJOR", item: "Two RBI-appointed directors on the board — enhanced regulatory-oversight governance signal even post-PCA-exit; not mentioned in B05/B06", anchor: "ICRA p.2 (line 46)"}
+  - {severity: "MINOR", item: "Q4 FY26 earnings back-ending / balancing-figure quality: Q4 annualised RoA 0.84% vs 9M ~0.47%, Q4 op profit Rs113.67cr vs Q3 Rs41.14cr; Q4 is an unaudited-derived balancing figure (note 18), not separately audited", anchor: "Results FY26 p.8; note 18 p.14"}
+pipeline_flags_not_supported:
+  - {severity: "MINOR", flag: "'Restructured/vulnerable book up ~47%' (B05 4D, Medium-High, carried stage 2/3)", assessment: "OVERSTATED vs in-scope sources: ICRA p.3 shows vulnerable book Rs124cr = 10% of Tier I capital (Dec-25) and Covid-resolution standard book only Rs15.32cr (Results FY26 p.12); no in-scope corroboration of a +47% trend or an alarming absolute level. B05 does hedge it as unverifiable.", anchor: "ICRA p.3; Results FY26 p.12"}
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur (B), leaning low-B; strong profitability delivery supports off-C, but uncaught governance/concentration red flags cap it and could justify B-/C"
+findings:
+  - {severity: "MAJOR", location: "B05 4D red-flag table / B06 risks_peers_raise", description: "MISSED top-20 depositor (24.50%) and top-20 exposure (147% of Tier I capital) concentration — a core banking concentration red flag on the methodology list, disclosed by ICRA p.2, absent upstream"}
+  - {severity: "MAJOR", location: "B05 Section 2D / 4D (governance)", description: "MISSED RBI monetary penalty levied on the Bank in FY25, admitted in the AR compliance section (line 2253-2255); governance/RBI-penalty red-flag category uncaught"}
+  - {severity: "MAJOR", location: "B05 4C/4D governance; B06", description: "MISSED presence of two RBI-appointed directors on the board (ICRA p.2) — enhanced regulatory-oversight signal not surfaced"}
+  - {severity: "MINOR", location: "B05 2A row2 / 4D asset-quality flag", description: "PARTIALLY CAUGHT: asset-quality optics flag under-weights the specific NNPA-rose-while-GNPA-fell mechanic (NNPA% 0.86%->1.11%, Net NPA Rs117.94cr->Rs154.13cr Dec-25 on lower provisioning) and the Q4 clean-up magnitude (Net NPA halved to Rs75.40cr Mar-26 to reach 0.51% headline)"}
+  - {severity: "MINOR", location: "B05 4D / 2A row6", description: "OVERSTATED pipeline flag: 'restructured/vulnerable book up ~47%' not supported by in-scope sources; ICRA p.3 shows the vulnerable book at only Rs124cr = 10% of Tier I"}
+  - {severity: "MINOR", location: "B05 (Q4 earnings quality)", description: "MISSED Q4 FY26 earnings back-ending / balancing-figure opacity (Q4 RoA 0.84% vs 9M 0.47%; note 18)"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 67           # caught (10) / independent flags found (15), %
+coverage_note: "NO-CONCALL mode: independent red-flag read run against the FY25 AR (MD&A + Directors' Report), audited Q4/FY26 results, Q3/9M FY26 results, and the ICRA note in lieu of transcripts; peer transcripts used only to confirm B06's peer-side flags. 15 banking red flags identified; upstream fully caught 10, partially caught 1, missed 4 -> redflag_coverage 70% (acceptance_rate 67%, above the 60% floor, no REWORK). Strengths well covered: write-off-driven GNPA optics (7.45% incl-w/o vs 53.63% ex-w/o PCR), gold concentration (38% of book / 87.38% of collateral), guidance silence, CASA discontinuity, ECL and West Asia peer risks. Gaps are governance/concentration: RBI monetary penalty in FY25 (AR-admitted), two RBI-appointed directors (ICRA), and top-20 exposure at 147% of Tier I capital — all MAJOR, none surfaced upstream. No CRITICAL possible (no multi-quarter evasion exists without a concall). One pipeline flag ('restructured book +47%') is OVERSTATED versus the in-scope Rs124cr / 10%-of-Tier-I actual."

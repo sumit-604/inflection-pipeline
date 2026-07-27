@@ -16,7 +16,7 @@ input_gaps:
   - "research: ABSENT — no effect on anchored evidence"
   - "rating: IMAGE-ONLY PDF, 0 extractable text, no OCR; readable via Read page-render only; deferred to stage 10 / verifier A"
 inputs_present:
-  annual_report: 1
+  annual_report: 1        # FY2024-25 (7th AR, y/e 31 Mar 2025) — one year STALE vs run; FY26 from results+concalls
   results: 2            # Q3 FY26 (12 Feb 2026) + FY26 audited (25 May 2026)
   rating: 1             # image-only
   concalls_used: 3      # Nov2025=Q2FY26, Feb2026=Q3FY26, Jun2026=Q4/FY26 (oldest-first)
@@ -28,9 +28,12 @@ concall_quarter_map:
   - "Concall_Nov_2025_Transcript.pdf = Q2 FY26 (call 20 Nov 2025)"
   - "Concall_Feb_2026_Transcript.pdf = Q3 FY26 (call 20 Feb 2026)"
   - "Concall_Jun_2026_Transcript.pdf = Q4/FY26 (call 26 May 2026)"
+ar_units: "AR financial statements in Rs MILLIONS (divide by 10 for Rs crore); confirm per results PDF separately"
+ar_fiscal_year: "FY2024-25 (year ended 31 Mar 2025); backward deep dive ends FY25/FY24; FY26 from FY26 audited results (25 May 2026) + concalls"
 collector_defects:
   - "sector_cap_row 'Pharma / CDMO' mis-pick for a pharma+MedTech distributor; correct at phase-3 stage 11"
   - "manifest listed_date blank; derived ~Feb 2024"
+  - "annual-report is FY2024-25 not FY26 (collector seated the prior-year AR); FY26 actuals only in results PDFs + concalls"
 textcache_dir: "inputs/_textcache (page-marked [[PAGE N]] .txt for every input PDF except image-only ratings.pdf)"
 operator_context: "outputs/_working/OPERATOR_CONTEXT.md — NON-ANCHORED lead (6-month digest + screener shareholding screenshot)"
 flags: []

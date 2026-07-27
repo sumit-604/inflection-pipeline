@@ -1,0 +1,52 @@
+stage: B08-promoter
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AmbitionBox employee-review data for Dhanlaxmi Bank specifically: NOT FOUND (Glassdoor obtained instead)"
+  - "Individual-holder confirmation of B. Ravindran Pillai's current (2025-26) stake %: single-source, unconfirmed against itemised AR shareholding detail"
+  - "EOW Mumbai case name/status underlying the Jan-2026 RBI KYC/AML penalty: not surfaced beyond RBI's order language"
+  - "Proxy advisory (IiAS/SES/InGovern) coverage specific to Dhanlaxmi Bank: not found either way (thin small-cap coverage)"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "RBI penalty Rs1,20,47,000 (~Rs1.20cr), FY2023-24, for violation of Loans & Advances Statutory Restrictions, KYC Directions 2016, and Interest Rate on Deposits Directions 2016 (gold-loan LTV breach; wrong senior-citizen deposit rate)", evidence_tier: "VERIFIED", source: "AR (annual-report__Annual_Report.txt lines 7580-7592); corroborated BusinessWorld Jan-2024", date: "FY2023-24 (reported Jan-2024)"}
+  - {finding: "RBI penalty Rs1.00cr (Rs10 million), Jan-2026, for KYC/AML violations tied to a current account under EOW Mumbai investigation", evidence_tier: "MEDIA REPORTED", source: "RBI press release (rbi.org.in Id=1637) via wire/aggregator coverage; not yet reflected in FY25 AR (post-AR event)", date: "Jan-2026"}
+  - {finding: "RBI Prompt Corrective Action (PCA) framework, Nov-2015 to Feb-2019 - only private-sector bank under PCA at the time; GNPA 8.11% at exit", evidence_tier: "VERIFIED (3 corroborating contemporaneous sources)", source: "DD News, Business Standard, Deccan Chronicle, Feb-2019 reporting", date: "Nov-2015 to 26-Feb-2019"}
+  - {finding: "2011-12 governance crisis: employee-union window-dressing allegations (Oct-2011), MD&CEO Amitabh Chaturvedi resignation (Feb-2012) amid board disagreement, Rs252cr FY2013-14 loss, cost-income 98.3%", evidence_tier: "MEDIA REPORTED", source: "Business Standard, Moneylife (2011-2014 contemporaneous coverage)", date: "2011-2014"}
+  - {finding: "Shareholders rejected Board-proposed MD&CEO Sunil Gurbaxani (90.49% against) at 93rd AGM; interim Committee of Directors ran the Bank until Jan-2021 - read as minority-protection mechanism working, not as fraud/misconduct", evidence_tier: "MEDIA REPORTED", source: "BusinessToday, Business Standard, Onmanorama, Sep-Oct-2020", date: "30-Sep-2020"}
+  - {finding: "One independent director (Sreesankar Radhakrishnan) resigned mid-term, 3-Mar-2025, citing personal/professional-preoccupation reasons; confirmation letter filed per SEBI LODR requirement", evidence_tier: "VERIFIED", source: "AR annual-report__Annual_Report.txt lines 2533-2537", date: "3-Mar-2025"}
+transition_evidence:
+  - "New MD&CEO Ajith Kumar K.K. (ex-Federal Bank, 36 yrs, professional banker) since 20-Jun-2024 - AR lines 387-393, 2516-2519"
+  - "New Executive Director P. Suriaraj (career banker) since 20-Jan-2025 - AR lines 2527-2529"
+  - "New CFO Krishnakumar K (FCA, ex-Federal Bank EVP 30yrs, ex-ESAF CFO) since 10-Jul-2026 - Reg.30 filing, corroborated Business Standard 16-Jun-2026 & 10-Jul-2026"
+  - "New Independent Director Ashutosh Khajuria (ex-Federal Bank ED/CFO, 44yrs experience) since 22-Mar-2025 - AR lines 2443-2462"
+  - "FII stake rose 4.97% (Sep-2024) to 15.26% (Mar-2025), sustained ~14-15% through Jun-2026, coincident with Feb-2025 Rs297.5cr rights issue (CRAR 17.19%, Tier I 14.47%, 31-Dec-2025 per ICRA) - operator-supplied screener table + AR/ICRA cross-check"
+  - "Historical PCA exit (Nov-2015 to Feb-2019) restored normal lending capacity - dated structural base for current cycle"
+  - "Minority-shareholder mechanism functioning: 90.49% shareholder vote rejected a management-proposed MD&CEO in 2020 and it stuck"
+pledge_pct_latest: 0
+pledge_trend: "N/A - no promoter/promoter group exists; Dhanlaxmi Bank is a widely-held, board-controlled old-private-sector bank with RBI single-holding caps in place of a promoter block (Public 85.74%, FII 14.21%, DII 0.05%, Jun-2026, operator-supplied screener)"
+searches_performed:
+  - "Dhanlaxmi Bank RBI Prompt Corrective Action PCA 2015 2019 exit"
+  - "Dhanlaxmi Bank 2012 board crisis Amitabh Chaturvedi resignation employees"
+  - "Dhanlaxmi Bank Ajith Kumar KK MD CEO appointment 2024"
+  - "Dhanlaxmi Bank RBI penalty 2024 2025 2026"
+  - "Dhanlaxmi Bank RBI penalty January 2026 Rs 1 crore KYC anti-money laundering"
+  - "Dhanlaxmi Bank RBI PCA framework 2015 imposed restrictions entry"
+  - "Krishnakumar K Dhanlaxmi Bank CFO Federal Bank ESAF appointment 2026"
+  - "Dhanlaxmi Bank rights issue 2025 297.5 crore institutional investors"
+  - "Jineesh Nath Dhanlaxmi Bank shareholder director background"
+  - "Dhanlaxmi Bank Committee of Directors 2020 CEO vacancy Sunil Gurbaxani"
+  - "Dhanlaxmi Bank SEBI action IiAS proxy advisory governance 2024 2025"
+  - "Dhanlaxmi Bank Ltd vs SEBI indiankanoon case fetch/summary"
+  - "Dhanlaxmi Bank SEBI SAT order 2024 appeal case details"
+  - "Dhanlaxmi Bank Ravi Pillai RP Group stake 2024 2025 shareholding"
+  - "Dhanlaxmi Bank history governance conflicts employees union management 2018 2019 2020 crisis"
+  - "K N Madhusoodanan Dhanlaxmi Bank chairman Mavanal Granites background"
+  - "Dhanlaxmi Bank Glassdoor AmbitionBox employee reviews rating"
+  - "Ashutosh Khajuria Federal Bank RBI Dhanlaxmi Bank independent director background"
+searches_skipped: []
+verdict_basis: "No promoter exists (RBI holding caps); dated but real 2011-2020 governance history plus a live, recurring thread of RBI KYC/AML/loan-conduct penalties (FY24 ~Rs1.20cr, FY25 minor, Jan-2026 ~Rs1cr) keep this at CAUTION rather than TRUSTWORTHY, but a materially upgraded professional leadership bench (new MD&CEO, ED, CFO, and independent director all since mid-2024) plus institutional-ownership entry and a clean Rs297.5cr rights issue keep it well clear of CONCERN/AVOID - no SEBI ban, fraud, auditor issue, or restatement found."

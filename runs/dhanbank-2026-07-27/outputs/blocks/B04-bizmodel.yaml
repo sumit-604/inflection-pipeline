@@ -1,0 +1,71 @@
+stage: B04-bizmodel
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation not provided; substituted with FY26 audited results filing and March 2026 ICRA Tier II bond rating note for business-mix detail (gold loan %, deposit concentration, NIM)."
+  - "Specific gold-loan yield, named competitor financials, and quantified size of the Travancore Devaswom Board/Sabarimala banking relationship are NOT FOUND in the documents provided."
+flags:
+  - "Sector-cap-row correction required: manifest lists this name as Pharma/CDMO, which is WRONG. Correct sector classification is Banking/Financials, with Price/Book (P/B) or Price/Adjusted-Book (P/ABV) as the primary valuation method, not EV/EBITDA or an earnings-exit-PE-on-operating-margins."
+  - "NIM methodology discrepancy: bank's own AR discloses NIM 3.25% (FY25), ICRA's independent calculation shows 2.88% (FY25)/3.07% (9M FY26). Reconcile before use."
+  - "PCR reported on three different bases across sources (88.84% AR FY25; 53.63% ICRA ex-write-off Dec-25; 92.46% Results incl. technical write-off FY26) — not comparable without noting basis."
+  - "NNPA rose (0.86%->1.11%, Dec-24 to Dec-25) even as GNPA fell (ICRA p.3) alongside high write-offs — a quality-of-improvement flag, not a clean asset-quality print."
+  - "Rs711.25 Cr legacy accumulated P&L loss (AR p.81, p.149) confirmed directly in the AR Basel III capital-deduction schedule; blocks dividends and is deducted from Tier I capital."
+business_type: "lending"
+revenue_streams:
+  - {name: "Interest/discount on advances (incl. gold loans)", type: "lending spread income", pct_of_revenue: 72.8, predictability: "M-H"}
+  - {name: "Income on investments (Treasury)", type: "spread + trading income", pct_of_revenue: 15.4, predictability: "L-M"}
+  - {name: "Other/fee income (commission, forex, PSLC, insurance/MF distribution)", type: "fee/non-interest income", pct_of_revenue: 10.7, predictability: "M"}
+  - {name: "Interest on RBI/interbank balances and other interest", type: "money-market/liquidity income", pct_of_revenue: 0.9, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "negative"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - "Regional brand/franchise, Kerala/South India, 98-year history (AR p.12) - durability: medium, local only"
+  - "Niche institutional relationship, banker to Travancore Devaswom Board/Sabarimala since 1970s (AR p.27-28) - durability: medium-high but single-relationship concentration risk"
+  - "Scheduled banking licence as an entry barrier - durability: high for the license itself, but does not protect the gold-loan niche where NBFCs compete without one"
+  - "No material cost, scale, network-effect, or IP moat; cost-to-income (85.42%, AR p.12) and sub-scale market share (~0.2%, ICRA p.3) are disadvantages, not moats"
+valuation_methods:
+  primary: {method: "Price/Book (P/B) or Price/Adjusted Book Value (P/ABV) vs sustainable RoE relative to cost of equity", why: "Standard bank valuation framework; book must be adjusted for the Rs711.25 Cr accumulated loss and NNPA drag; sustainable RoE (4.78% FY25, AR p.12) versus cost of equity determines premium/discount to adjusted book"}
+  secondary: {method: "P/E on normalized earnings", why: "Cross-check only; current EPS (Rs2.37 FY25, Rs2.60 FY26) reflects a subscale, high-cost-to-income, gold-price-boosted earnings base that needs normalizing across the credit and gold-price cycles"}
+  tertiary: {method: "Residual income / excess-return model (RoE minus cost of equity, applied to book)", why: "Explicitly prices the value-creation/destruction gap given current RoE (4.78%) is likely below cost of equity, which a flat P/B multiple alone would obscure"}
+  not_applicable:
+    - "EV/EBITDA - no meaningful EBITDA construct for a bank"
+    - "EV/Sales - interest income scales with balance-sheet leverage, not comparable across capital structures"
+    - "DDM - no dividend currently declared, blocked by the accumulated loss (AR p.13, p.81)"
+irrelevant_ratios:
+  - "EV/EBITDA - banks have no distinct EBITDA line; interest expense is core operating activity, not financing"
+  - "EBITDA margin - same reason"
+  - "ROCE (return on capital employed) - no distinct capital-employed concept separate from the whole balance sheet; use RoA/RoE"
+  - "EV/Sales - interest income scales with leverage, not comparable to non-financial revenue multiples"
+  - "Working capital / inventory / receivable / payable days - no inventory or trade receivables/payables; the loan book and deposit base are the entire funding structure"
+  - "Current ratio - bank liquidity is governed by LCR/NSFR, not current-assets-to-current-liabilities"
+  - "Fixed asset turnover - fixed assets are ~1.4% of the balance sheet (Results p.10), irrelevant to earnings drivers"
+must_track_metrics:
+  - {metric: "Net Interest Margin (NIM)", healthy: "above ~3% on a consistent basis (methodology reconciled)", red_flag: "below ~2.5% on ICRA's independently calculated basis"}
+  - {metric: "Cost-to-Income ratio", healthy: "below ~70% for a well-run mid-size bank", red_flag: "sustained above ~85% (current level, AR p.12)"}
+  - {metric: "GNPA% / NNPA%", healthy: "GNPA below 2%, NNPA below 1%, both falling together", red_flag: "NNPA rising while GNPA falls (seen Dec-25, ICRA p.3) - a quality-of-improvement flag"}
+  - {metric: "CRAR / CET1 / Tier I", healthy: "comfortably above regulatory minimum with accruing (not raised) capital", red_flag: "growth outpacing retained-earnings generation, forcing another external capital raise"}
+  - {metric: "Gold loan mix % of advances", healthy: "growth diversified across gold and non-gold segments", red_flag: "concentration continuing to rise past ~40-45% without a stated diversification plan"}
+unit_economics:
+  unit: "Rs100 of average interest-earning assets (loan book + investment book); gold-loan sub-unit = Rs1 lakh of gold loan disbursed"
+  revenue_per_unit: "Interest income as % of working funds: 7.79% (FY25) vs 7.49% (FY24), AR p.126"
+  margin_per_unit: "NIM 3.25%/3.22% (bank's own basis, AR p.126) or 2.88%/3.07% (ICRA's independent basis, ICRA p.2) - reconcile before use"
+  key_lever: "Gold price appreciation raises the rupee amount lendable per gram at a fixed regulatory LTV ceiling, the primary driver of FY25-FY26 loan book growth (gold mix 31%->38%, ICRA p.1), independent of new-customer or new-branch acquisition"
+first_deterioration_signals:
+  - {risk: "Gold-price-dependent revenue growth", first_signal: "Advances growth rate decelerating QoQ and/or gold loan mix % flattening or reversing"}
+  - {risk: "NIM/margin compression", first_signal: "Cost of Deposits rising QoQ faster than yield on advances"}
+  - {risk: "Weak internal capital generation", first_signal: "CRAR/CET1 buffer narrowing quarter on quarter as advances outgrow retained earnings"}
+  - {risk: "Legacy accumulated loss / dividend overhang", first_signal: "No dividend declared despite a profitable year, and/or the accumulated loss balance not shrinking YoY"}
+  - {risk: "Kerala-Gulf remittance/geopolitical concentration", first_signal: "Slippage in NRI-linked/Gulf-remittance-linked accounts, or non-renewal signal from top-20 depositors"}
+mgmt_questions:
+  - "What is the bank's targeted sustainable gold-loan mix, and what is the growth/NIM plan if gold prices plateau or correct?"
+  - "Given modest internal accruals (RoA 0.40-0.53%), what is the timeline and structure of the next capital raise, and will it be dilutive?"
+  - "Why does the bank's own disclosed NIM (3.25% FY25) differ from the rating agency's independently calculated NIM (2.88% FY25)?"
+  - "What is the plan and timeline to fully absorb the Rs711.25 Cr legacy accumulated loss that currently blocks dividends?"
+  - "What loan-to-value and geographic stress-testing has been done on the gold-loan book against a sharp gold-price correction?"
+  - "What structural (not cyclical) initiatives are underway to bring the cost-to-income ratio down from the low-to-mid 80s toward peer levels?"
+  - "How concentrated is the loan and deposit base on the Kerala-Gulf remittance corridor, and what happens to both sides of the balance sheet in a Gulf-region shock?"
+one_line_verdict: "A sub-scale, recovering-from-PCA Kerala bank whose recent growth is substantially a gold-price-cycle effect layered on a structurally high-cost, thin-margin, dividend-blocked franchise."

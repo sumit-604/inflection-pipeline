@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Prospectus/IPO offer document ABSENT (HIGH) - fullest business-model, risk-factor and peer detail typically lives here"
+  - "Stock exchange announcements ABSENT"
+  - "Shareholding pattern ABSENT"
+  - "Independent/sell-side research ABSENT - no named competitor list or market-share benchmark found in AR or investor presentation"
+  - "Investor presentation covers FY26 (May 2026 deck), a period beyond the FY25 AR window; used only as secondary/directional context, not as the anchor for FY25 revenue-mix figures"
+flags:
+  - "Gross revenue (Rs.13,037.57 Mn FY25) is structurally misleading as a growth/scale metric because ~55% is Propel pass-through gift-card revenue with a ~94% cost ratio; Net Revenue (Rs.6,245 Mn) and Net-basis Adjusted EBITDA margin (19.9%) are the metrics that matter"
+  - "No named direct competitors identified in provided documents; competitive-positioning claims ('#1 Spend Management company', '#1 Prepaid Card issuer') are company self-declarations (Inv. Pres. slide 19), not third-party verified"
+  - "Span Across (TaxSpanner) subsidiary posted a loss share of Rs.(12.49) Mn in FY25 (consolidated additional disclosure) - early M&A integration is a live drag, not yet a proven success"
+  - "Program Fees, the largest quality-adjusted revenue stream, carry explicit management-acknowledged concentration risk on Preferred Banking Partners (AR p.150)"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Program fee (interchange revenue share via bank partners)", type: "transaction/usage-based, agency-like", pct_of_revenue: 41.85, predictability: "M"}
+  - {name: "Propel platform revenue / gift cards", type: "principal-basis resale (goods, point-in-time)", pct_of_revenue: 55.37, predictability: "L"}
+  - {name: "Platform fee / SaaS fee / service fee", type: "subscription/SaaS (services, over time)", pct_of_revenue: 2.78, predictability: "H"}
+asset_intensity: "light"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Switching costs (multi-year contracts 3-10yr, <2% churn)", durability: "medium-high"}
+  - {moat: "Bank-partner distribution network (19 partners)", durability: "medium"}
+  - {moat: "Regulatory/integration complexity (RBI PPI, card-network rails)", durability: "medium"}
+valuation_methods:
+  primary: {method: "DCF (Net Revenue-driven, 3-5yr explicit forecast)", why: "Scaling SaaS-fintech platform with rising Adjusted EBITDA margin on Net Revenue basis (19.9% FY25 to 21.7% FY26, Inv. Pres. slide 9) and improving Cash PAT conversion; fits a 3-5yr GARP transition-alpha hold"}
+  secondary: {method: "EV/EBITDA on Net Revenue basis", why: "Cross-check multiple normalised for the gross-vs-net revenue distortion created by Propel principal-basis pass-through accounting"}
+  tertiary: {method: "EV/Sales on Net Revenue basis", why: "Sanity-check only during periods of M&A-driven margin volatility; must use Net, not Gross, revenue"}
+  not_applicable:
+    - "Dividend discount model (no dividend declared FY25, AR p.59)"
+    - "Asset-based/replacement cost (asset-light business, book value not meaningful)"
+    - "Comparable-transactions method (insufficient disclosed detail on acquired-entity standalone financials)"
+irrelevant_ratios:
+  - {ratio: "Gross revenue growth", why: "~55% of gross revenue is Propel pass-through gift-card revenue with a ~94% cost ratio; Net Revenue growth is the real metric"}
+  - {ratio: "Gross profit margin off the P&L", why: "Dominated by cost of point redemption/gift cards; use Adjusted EBITDA margin on Net Revenue basis instead"}
+  - {ratio: "Asset turnover / fixed-asset ratios", why: "Asset-light platform business, PP&E immaterial"}
+  - {ratio: "Inventory turnover", why: "No meaningful inventory; the small Inventories line is immaterial prepaid-card stock"}
+  - {ratio: "Debt-to-equity as a standalone risk signal", why: "Already near zero (0.01x FY25) post QIP-funded deleveraging; not currently discriminating"}
+must_track_metrics:
+  - {metric: "Net Revenue growth (ex-Propel gross pass-through)", healthy: ">=25% YoY", red_flag: "<15% YoY"}
+  - {metric: "Adjusted EBITDA margin on Net Revenue basis", healthy: "18-25%, rising", red_flag: "<18% or declining"}
+  - {metric: "Propel net take-rate (Net/Gross Propel revenue)", healthy: "6-7%, stable/rising", red_flag: "<5%"}
+  - {metric: "Corporate customer count growth", healthy: ">=20% YoY", red_flag: "<10% YoY"}
+  - {metric: "Customer churn rate", healthy: "<2%", red_flag: ">3%"}
+unit_economics:
+  unit: "one corporate customer account"
+  revenue_per_unit: "~Rs.1.81 Mn Net Revenue/customer/year (derived: FY25 Net Revenue Rs.6,245 Mn / 3,455 corporate customers)"
+  margin_per_unit: "~Rs.0.36 Mn Adjusted EBITDA/customer/year (derived: 19.9% Adj EBITDA margin at Net basis)"
+  key_lever: "Cross-sell of additional modules (Save/Zoyer/Propel/Zatix/ZIP) into existing corporate accounts plus GMV/card-spend growth per user, more than new-logo addition alone"
+first_deterioration_signals:
+  - {risk: "Revenue model - Program Fee concentration on banking partners", first_signal: "Program fee YoY growth deceleration or a disclosed loss/renegotiation of a Preferred Banking Partner"}
+  - {risk: "Margin - rising cost of point redemption on Propel", first_signal: "Cost of point redemption/gift cards rising above ~96% of Propel gross revenue"}
+  - {risk: "Balance sheet - receivables/settlement lag from banking partners", first_signal: "Trade receivables turnover falling below ~5x, or rising allowance for credit losses"}
+  - {risk: "Execution - M&A integration (Span Across/Mobileware and newer deals)", first_signal: "Continued losses at consolidated subsidiaries/associates (Span Across already loss-making in FY25)"}
+  - {risk: "Structural - disintermediation by banks/ERP-HRMS platforms", first_signal: "Corporate-client churn rising above the <2% baseline"}
+mgmt_questions:
+  - "What is the underlying Propel take-rate trend, and is it structurally improving or being competed away?"
+  - "How concentrated is Program Fee revenue among the top 2-3 banking partners, and what termination/renewal protections exist?"
+  - "What is the path to breakeven for Span Across (TaxSpanner), which posted a loss share in FY25?"
+  - "How is the Rs.5,948.41 Mn QIP capital being underwritten, and what return hurdle governs recent M&A?"
+  - "How sensitive is Program Fee revenue to regulatory changes in interchange/PPI rules?"
+  - "What is the SaaS-only (Platform/SaaS fee) growth rate and net revenue retention, isolated from Program Fee and Propel?"
+  - "What is the deployment timeline for the idle cash driving the 20.06x current ratio, and how will it affect RoE?"
+one_line_verdict: "Fast-scaling spend platform; net revenue quality, not gross revenue growth, is the number to underwrite."

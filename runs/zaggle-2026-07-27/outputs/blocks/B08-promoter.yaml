@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Prospectus (RHP/DRHP) not supplied as input; used AR governance sections + web search instead"
+  - "Reg 30 announcement archive not supplied as input; last ~12 months of material events reconstructed via web search"
+  - "Exact composition/names of the 4 shareholders comprising the 44.21% 'Promoters & Promoter Group' category are not disclosed by name in the AR governance pages reviewed; identity inferred from web-sourced aggregators (RAN Ventures Pvt Ltd, Quadigo Ventures LLP, Zuzu Software Services LLP/'Sumedha Rao' concert-party mentions) and not independently reconciled against a Reg 31 shareholding-pattern filing"
+  - "Promoter pledge percentage (~0.55%) is web/aggregator-sourced; no pledge table was present in the AR Corporate Governance Report pages reviewed"
+  - "Zaggle-specific AmbitionBox rating NOT FOUND in this run (only Glassdoor data obtained)"
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Income Tax demand notice of approx Rs 6.60-6.61 crore for AY2024-25 under Section 156/143(3), ad-hoc additions; company to appeal before CIT(Appeals)/NFAC", evidence_tier: "MEDIA REPORTED", source: "https://www.tipranks.com/news/company-announcements/zaggle-receives-rs-6-6-crore-tax-demand-plans-appeal-and-sees-no-material-impact ; https://scanx.trade/stock-market-news/companies/zaggle-prepaid-ocean-services-receives-income-tax-demand-notice-of-rs-6-61-crore-for-assessment-year-2024-25/36129355", date: "2026-03-26"}
+  - {finding: "CFO Venkata Aditya Kumar Grandhi resigned effective April 3, 2026 citing personal reasons; interim CFO Rajesh Tummalaganti appointed April 4, 2026; permanent Group CFO Venkatesh Ramachandran appointed effective May 18, 2026", evidence_tier: "MEDIA REPORTED", source: "https://nsearchives.nseindia.com/corporate/ZAGGLE_03042026204500_Zaggle_CFO_Resignation_03042026.pdf ; https://www.tradingview.com/news/reuters.com,2026:newsml_FWN41Q171:0-zaggle-prepaid-ocean-services-appoints-venkatesh-ramachandran-as-group-chief-financial-officer-effective-may-18-2026/", date: "2026-04-03 / 2026-05-18"}
+  - {finding: "CTO Srikanth Gaddam resigned May 22, 2026, effective May 27, 2026, citing personal reasons", evidence_tier: "MEDIA REPORTED", source: "https://www.marketscreener.com/news/zaggle-prepaid-ocean-services-limited-announces-resignation-of-srikanth-gaddam-as-chief-technology-o-ce7f5ad3dd8fff2d", date: "2026-05-22"}
+  - {finding: "Effiasoft Private Limited acquisition (up to 51% stake) discontinued by Board decision after strategic reassessment", evidence_tier: "MEDIA REPORTED", source: "https://www.businessupturn.com/business/zaggle-decides-not-to-proceed-with-effiasoft-acquisition/", date: "2026-04-03"}
+  - {finding: "Secretarial Audit Report notes multiple ROC e-form filings made with delay during FY2024-25 (CHG-1, CHG-4, DIR-12, INC-22 x2, MGT-6 x4, MR-1, PAS-3, MGT-14 x6, AOC-4 XBRL, MGT-7); also an NSE warning letter for mentioning PAN on company letterhead, since remediated", evidence_tier: "VERIFIED", source: "Annual Report FY2024-25, Annexure II (Form MR-3), p.83", date: "2025-08-14"}
+  - {finding: "Non-Executive Non-Independent Director Virat Sunil Diwanji paid consultancy fees of Rs 4.0 million/year in addition to sitting fees, under a consultancy agreement dated November 1, 2024", evidence_tier: "VERIFIED", source: "Annual Report FY2024-25, Corporate Governance Report, p.173-174", date: "2024-11-01"}
+  - {finding: "Chairman's 'Dr.' title is an honorary D.Litt (Chitkara University, August 2024), not an earned academic doctorate", evidence_tier: "MEDIA REPORTED", source: "https://www.tribuneindia.com/news/impact-feature/chitkara-university-confers-raj-p-narayanam-chairman-of-zaggle-with-honorary-doctorate-for-contributions-to-fintech-and-entrepreneurship", date: "2024-08"}
+transition_evidence:
+  - {item: "Promoter-group entity RAN Ventures Pvt Ltd made repeated open-market share purchases (not sales), lifting promoter-group stake from ~44.15% to ~44.30% through May-June 2026", source: "https://www.investywise.com/zaggle-prepaid-ocean-services-promoter-group-increases-stake/ ; https://scanx.trade/stock-market-news/companies/ran-ventures-buys-16-900-shares-raises-zaggle-stake/43823916", date: "2026-05 to 2026-06"}
+  - {item: "Bennett Coleman & Co Ltd (BCCL/Times Group) subscribed to convertible warrants (~Rs 40 crore, cash consideration) on a preferential basis alongside a commercial advertising partnership", source: "https://yourstory.com/2025/10/hyderabad-enterprise-fintech-zaggle-raise-nearly-rs-60-cr-through-warrants ; https://bestmediainfo.com/mediainfo/print/zaggle-signs-advertising-pact-with-bccl-allots-rs-40-crore-warrants-to-media-major-10917014", date: "2025-10"}
+  - {item: "Diversified institutional/smart-money shareholder base already present: Mutual Funds 8.01%, FPI 8.36%, AIF 3.52%, plus named holders Ashish Kacholia, ICICI Prudential Flexicap Fund, Bank of India Flexi Cap Fund, ITI Small Cap Fund, Valuequest SCALE Fund", source: "Annual Report FY2024-25, Corporate Governance Report, p.179", date: "2025-03-31"}
+  - {item: "Credit rating upgraded from ACUITE BBB (Stable) to BBB+ (Positive) during FY2024-25; further CARE A- (Stable) rating obtained post year-end", source: "Annual Report FY2024-25, p.75, 178", date: "2025-07-16"}
+  - {item: "Statutory audit consolidated to a single established auditor (MSKA & Associates) from a joint-auditor structure, unqualified opinions throughout", source: "Annual Report FY2024-25, p.68-69", date: "2025-08-14"}
+  - {item: "Permanent, externally sourced Group CFO (Venkatesh Ramachandran) appointed within ~6 weeks of prior CFO's resignation, bridged by an interim CFO", source: "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN41Q171:0-zaggle-prepaid-ocean-services-appoints-venkatesh-ramachandran-as-group-chief-financial-officer-effective-may-18-2026/", date: "2026-05-18"}
+  - {item: "Promoter pledge very low and not rising (~0.55%, web-sourced, unconfirmed against AR)", source: "aggregator data, screener-style trackers", date: "2026"}
+pledge_pct_latest: 0.55
+pledge_trend: "low and stable-to-falling; promoter group has been net BUYING shares (not selling/pledging) via open-market purchases through 2026; pledge figure is web/aggregator-sourced and NOT corroborated against the AR Corporate Governance Report, which did not include a pledge table in the pages reviewed -- flagged for confirmation against a Reg 31 shareholding-pattern filing at next cycle"
+searches_performed:
+  - "Zaggle Prepaid Ocean Services Raj Narayanam Avinash Godkhindi founder background history"
+  - "Zaggle Prepaid Zuzu Software Services LLP Quadigo Ventures LLP promoter"
+  - "\"RAN Ventures\" Zaggle Raj Narayanam Sumedha Rao promoter group"
+  - "Zaggle Prepaid Ocean Services promoter pledge shares encumbrance 2025 2026"
+  - "Zaggle Prepaid Ocean Services Income Tax demand Rs 6.60 crore AY2024-25 appeal"
+  - "Zaggle Effiasoft acquisition cancelled April 2026"
+  - "Zaggle CFO Venkata Aditya Kumar Grandhi resignation Venkatesh Ramachandran Group CFO 2026"
+  - "Zaggle CTO Srikanth Gaddam resignation May 2026"
+  - "Zaggle Rivpe Zagg.money subsidiary 100% 2026 UPI consumer credit"
+  - "Zaggle Dice Enterprises acquisition Rs 68 crore asset IP purchase May 2026"
+  - "Zaggle Prepaid Ocean Services SEBI order investigation litigation court case"
+  - "Zaggle Prepaid Ocean Services Glassdoor AmbitionBox employee reviews"
+  - "Zaggle AmbitionBox rating reviews"
+  - "Zaggle Prepaid Ocean Services auditor PRSV Co discontinue MSKA Associates reason"
+  - "Zaggle Prepaid Ocean Services short seller report activist IiAS SES proxy advisory concern"
+  - "Zaggle Prepaid Ocean Services institutional investor stake mutual fund FII entry 2025 2026"
+  - "Zaggle warrant issuance October 2025 promoter group Rs 567 preferential allotment"
+  - "\"Sumedha Rao\" Zaggle Raj Narayanam relation"
+  - "Zaggle Prepaid Ocean Services controversy criticism news scam fraud allegations"
+  - "Zaggle Prepaid Ocean Services promoter OFS sale shares offer for sale 2025 2026"
+  - "\"Raj Narayanam\" Zaggle \"Dr.\" PhD doctorate qualification prior career before Zaggle"
+searches_skipped: []
+verdict_basis: "Nil RPT leakage, unqualified audit/secretarial-audit opinions, and a promoter group that has been net-buying (not selling or pledging) shares since IPO while a credible strategic investor (BCCL) entered via cash warrants, outweigh four explainable (not structural) caution items: an appealable ~Rs 6.6 cr AY2024-25 tax demand, recently formed and AR-unnamed promoter holding vehicles, an honorary (not earned) doctorate behind the Chairman's title, and a CFO+CTO departure cluster resolved with orderly external succession."

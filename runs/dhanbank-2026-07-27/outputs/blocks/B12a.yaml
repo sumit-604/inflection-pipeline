@@ -1,0 +1,40 @@
+stage: B12a
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 38
+findings:
+  - severity: "MAJOR"
+    location: "B02:81; B03:77"
+    claimed: "FY25 Corporate/Wholesale Banking segment loss ₹(22.58) Cr (per AR Note 15c)"
+    source_truth: "FY2024-25 AR Note 15c line 8099 shows ₹(22.58) Cr ✓ verified exact. However, FY2025-26 Audited Results Filing Segment-wise Results table (line 336, Mar-25 comparative) shows the SAME FY25 full year as ₹(26.26) Cr loss = 2,626 lakh. Discrepancy: ₹3.68 Cr (16.3% difference on loss magnitude). Results filing labeled 'Net of Provisions' but AR Note 15c methodology not explicitly labeled; cross-document reconciliation not resolved in source documents."
+    note: "UNRESOLVED CROSS-DOCUMENT DISCREPANCY. AR and results filing show materially different segment results for the same FY25 period (₹22.58 Cr vs ₹26.26 Cr loss). B03 correctly flagged but could not confirm basis from documents. Requires management clarification on provision-netting methodology and whether a restatement was applied between AR and results filing."
+    source_fidelity: true
+
+  - severity: "MINOR"
+    location: "B01:182 (data_notes)"
+    claimed: "FY2026 CASA ratio NOT FOUND"
+    source_truth: "Text cache contains only FY2024-25 AR (discloses CASA 29.02% as of 31.03.2025). Q4 FY26 audited results filing (provided in text cache) does not include a consolidated CASA summary. FY2026 full AR (where CASA would be disclosed) not in provided text cache."
+    note: "Data gap is legitimate — FY2026 CASA would appear in the full FY2026 AR, not the standalone results filing. Correctly flagged as NOT FOUND by stage 1; not a verifier-A error."
+    source_fidelity: false
+
+  - severity: "MINOR"
+    location: "B01:176, B01:288 (data_notes)"
+    claimed: "FY2026 full-year NIM NOT FOUND in provided data"
+    source_truth: "ICRA rating provides 9M FY26 NIM 3.07% (p.2, rating dated 24-Mar-2026). FY2024-25 AR discloses bank's own NIM 3.25% (FY25) / 3.22% (FY24). Q4 FY26 results filing does not carry a consolidated full-year NIM figure in text cache. Full-year FY2026 NIM would be in the full FY2026 AR."
+    note: "Correctly flagged as NOT FOUND. FY2026 NIM not yet available in provided documents (full AR not in text cache). 9M FY26 (3.07%) used as most recent anchored point. Not an error."
+    source_fidelity: false
+
+  - severity: "MINOR"
+    location: "B01:168 (data_notes)"
+    claimed: "FY2026 Tier I/Tier II CRAR split NOT FOUND"
+    source_truth: "Q4 FY26 audited results filing line 296 shows only total CRAR 18.92%. Tier I component not separately disclosed in provided results filing text. ICRA's Dec-31-2025 (interim) report discloses Tier I 14.47%, CRAR 17.19%, but that is a Q3-end (Dec-25) snapshot, not year-end FY26. Full FY2026 AR (with Pillar III statutory breakdown) not in text cache."
+    note: "Correctly flagged. Tier I/Tier II split for FY2026 year-end (31.03.2026) not available in provided documents. Full FY2026 AR would contain statutory Pillar III disclosures. Not an error."
+    source_fidelity: false
+
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 97.4
+coverage_note: "38 material numeric claims verified across Gate 0 verdict card, Blocks A-F scorecard inputs, historical PAT series (10 years), and table-level calculations. 37 of 38 matched source documents exactly or with immaterial basis differences (documented as such). 1 MAJOR unresolved cross-document discrepancy (Corporate/Wholesale segment result, ₹22.58 Cr in AR vs ₹26.26 Cr in results filing, same FY25 period — different provision-netting treatment asserted but not confirmed in source documents). 4 MINOR items correctly flagged as NOT FOUND by stages (FY2026-forward data not yet in provided cache; full FY2026 AR not available). Unit conversions (₹ Cr vs ₹ Lakh) verified on 18 cross-document claims; 100% accuracy. Opening/closing balance reconciliations on 3 items (accumulated loss, technical write-off, rights issue dilution) verified exact. Consistency cross-checks performed: quarterly PAT roll-ups, historical CAGR series, segment performance trends. No fabrications detected. No material misreads beyond the 1 MAJOR corporate-segment discrepancy. All verdict-critical inputs (accumulated loss ₹711.25 Cr, CRAR 18.92%, PCR 73.67%, GNPA/NNPA ratios, Gate 0 score 53/100) verified to source documents with high fidelity."

@@ -1,0 +1,29 @@
+stage: B12c
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (gate0 + emoat only); valuation deferred to phase 3"
+gate0:
+  rules_checked: 47
+  fails:
+    - {rule: "ROCE formula definition", severity: MINOR, detail: "Used screener Capital Employed convention (Total - Other Liabilities = Equity+Borrowings) instead of the fixed EBIT/(Total Assets - Current Liabilities); disclosed and data-constrained (per-year current liabilities unavailable FY2020-25, screener ROCE row blank). Non-decision-changing: deal-breaker 3 is median-based and AVERAGE is independently fixed by the core-score band."}
+emoat:
+  rules_checked: 28
+  fails:
+    - {rule: "combined_assessment matrix (6D)", severity: MINOR, detail: "Numeric combined-matrix bands not injected into stage-7 inputs; classification reached by reasoned application. Conclusion (AVERAGE) verified correct against Master v3.3 logic that HIGH POTENTIAL upgrade requires EXPANSION-grade forward, which STRENGTHENING (25) does not meet. Self-flagged by maker."}
+    - {rule: "active_categories = Strong/Moderate only", severity: MINOR, detail: "H2 graded Weak-Moderate included on the moderate side of the boundary; disclosed; no effect on em_score or any band."}
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "PENDING - phase 3 (B11/B10 not yet produced; deferred per task scope)"
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: MINOR, location: "B01 Block A / ROCE formula", note: "screener Capital Employed proxy used vs fixed formula; disclosed, non-decision-changing"}
+  - {severity: MINOR, location: "B07 Section 6D / combined_assessment", note: "matrix bands not injected; reasoned application, conclusion AVERAGE verified correct, maker-flagged"}
+  - {severity: MINOR, location: "B07 active_categories / H2", note: "Weak-Moderate row included at the moderate boundary; disclosed, no band impact"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 96

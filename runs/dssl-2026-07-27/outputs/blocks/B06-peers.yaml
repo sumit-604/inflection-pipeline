@@ -1,0 +1,41 @@
+stage: B06-peers
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["3i Infotech's four transcripts (Jul-2023 to May-2025) all predate DSSL's Q3-Q4 FY26 claim window by 7-24 months, limiting their evidentiary value to baseline/DSO context only", "No peer discloses a specific India IT-spend figure or a bid-to-win conversion ratio comparable to DSSL's cited ~USD176bn/~30% figures", "No peer discloses a 'net working capital cycle' metric analogous to DSSL's 17-day claim, so the specific net-vs-gross reconciliation question could not be tested against peer disclosure practice"]
+flags: ["Aurionpro (closest comparable peer) shows zero margin-band breach in the identical Q4 FY26 quarter and attributes its own miss to war/project-timing, not AI-hardware costs, complicating DSSL's 'purely external, unavoidable' framing of its ~290bp margin dip", "TVS Electronics and Allied Digital both independently confirm a real Q4 FY26 hardware/component-cost and geopolitical disruption existed industry-wide, but neither frames it as AI-hardware/GPU-demand-driven the way DSSL does", "Peer gross DSOs (75-120 days) are the same order of magnitude as Acuite's 126-day figure cited for DSSL, softening (not eliminating) the standalone alarm on DSSL's debtor days, while the specific net-WC framing DSSL uses has no peer precedent to validate", "No peer names DSSL as a competitor won against or lost to; RBI private-cloud/BFSI competitive-share claim remains evidence-free beyond DSSL's own assertion"]
+peers_provided: 16
+verified: []
+partially_verified:
+  - {claim: "Q4 FY26 margin dip reflects a real, industry-wide hardware/component-cost and geopolitical disruption in the same quarter", peers: ["TVS Electronics", "Allied Digital (ADSL)"]}
+  - {claim: "Elevated gross debtor days are sector-typical for IT-infra/SI peers, not a DSSL-specific anomaly", peers: ["Aurionpro"]}
+  - {claim: "Data-centre/cloud revenue-mix deceleration in FY26 reflects project-timing, not demand collapse", peers: ["Aurionpro"]}
+contradicted: []
+unverifiable:
+  - {claim: "India IT spending tracking toward ~USD176bn by 2026 and ~30% bid-to-win conversion ratio typical for BFSI/PSU IT-infra tenders", peers_checked: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro", "TVS Electronics"]}
+  - {claim: "DSSL consistently beats larger competitors on RBI/BFSI private-cloud and core-banking infra bids", peers_checked: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro"]}
+peer_coverage_map:
+  - {peer: "3i Infotech", quarter: "Q1 FY24 (Jul-2023 call)", usage: "UNUSED", contribution: "Predates claim window by ~2.5 years; different business mix (BPO/legacy volume services)"}
+  - {peer: "3i Infotech", quarter: "Q2 FY24 (Nov-2023 call)", usage: "UNUSED", contribution: "Same reason; RailTel/NuRe product pivot content unrelated to the five claims"}
+  - {peer: "3i Infotech", quarter: "Q3 FY25 (Jan-2025 call)", usage: "UNUSED", contribution: "~13 months before claim window; forensic-audit/turnaround narrative, no topical overlap"}
+  - {peer: "3i Infotech", quarter: "Q4 FY25 (May-2025 call)", usage: "CITED-ONLY", contribution: "DSO of 81-98 days used as a lower-bound comparator for Claim 2, from a differently-structured business"}
+  - {peer: "Allied Digital (ADSL)", quarter: "Q1 FY26 (Aug-2025 call)", usage: "SUBSTANTIVE", contribution: "Establishes recurring customer-pricing-pressure narrative distinct from input-cost inflation"}
+  - {peer: "Allied Digital (ADSL)", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Confirms pricing-pressure theme persists; DSO/cost baseline"}
+  - {peer: "Allied Digital (ADSL)", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "DSO of 75 days disclosed; Union Budget data-centre/AI-incentive commentary"}
+  - {peer: "Allied Digital (ADSL)", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "War-driven equipment-cost spike and lost Western Railway tender; key Claim 1 evidence"}
+  - {peer: "Aurionpro", quarter: "Q1 FY26 (Jul-2025 call)", usage: "SUBSTANTIVE", contribution: "Establishes 20-22% margin guidance band and 35-50%/year data-centre growth baseline"}
+  - {peer: "Aurionpro", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "DSO of 100-110 days disclosed; cash-conversion seasonality disclosure feeding Part 2E"}
+  - {peer: "Aurionpro", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Data-centre TAM/demand commentary; DSO reconfirmed at 100-110 days"}
+  - {peer: "Aurionpro", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Most decisive transcript: explicit Q4 FY26 miss explained by war/project-timing, no margin-band breach, no AI-hardware framing; anchors Claims 1, 5 and Part 5 hypothesis"}
+  - {peer: "TVS Electronics", quarter: "Q2 FY25 (Nov-2024 call)", usage: "UNUSED", contribution: "Predates claim window by over a year; EMS/SMT ramp-up narrative unrelated to the five claims"}
+  - {peer: "TVS Electronics", quarter: "Q3 FY25 (Feb/Mar-2025 call)", usage: "UNUSED", contribution: "Same reason; no supply-chain, WC, or data-centre content relevant to claims"}
+  - {peer: "TVS Electronics", quarter: "Q2 FY26 (Nov-2025 call)", usage: "CITED-ONLY", contribution: "Establishes pre-shock 22% YoY growth baseline for the Q4 FY26 deceleration"}
+  - {peer: "TVS Electronics", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Strongest independent confirmation: unprompted memory-price/supply-chain and WC-deterioration disclosure in the identical quarter"}
+industry_cross_read:
+  demand: "Consistent bullish consensus on India digital infrastructure, sovereign/AI data centres, cybersecurity and BFSI digital transformation across ADSL/Aurionpro; complication is that three of four active peers report a Middle East/Iran-Israel geopolitical shock as a material Q4 FY26 driver, a risk DSSL never mentions despite plausible comparable hardware-sourcing exposure"
+  pricing_inputs: "No peer's framing matches DSSL's exactly; ADSL cites customer pricing pressure (not input cost), TVS Electronics cites memory-price inflation (closest match) but still expanded margin by shedding low-margin orders, Aurionpro reports no material input-cost pressure and held its margin band intact"
+  capex_cycle: "Industry-wide capacity/investment race, not a lone expander: Aurionpro, ADSL and TVS Electronics are all simultaneously scaling AI/R&D, sales-geography and manufacturing capacity; DSSL's PPE/net-debt inflection funding its As-a-Service pivot fits this same sector-wide pattern rather than standing out as an anomaly"
+peer_mentions_of_company: []
+risks_peers_raise: ["Geopolitical/war exposure to hardware sourcing and deal-closure timing (ADSL, Aurionpro; DSSL's concalls never raise this)", "Agentic-AI/AI-native disintermediation risk to the core enterprise-software/services stack, requiring defensive reinvestment (Aurionpro; not addressed by DSSL)", "Multi-year audit-qualification/governance remediation cycles on inventory, receivables and ECL provisioning (ADSL, 3i Infotech; no disclosed DSSL equivalent, but flags an untested risk category given DSSL's only-two-call track record)", "Structural cash-conversion seasonality tied to project go-lives, with EBITDA-to-cash conversion well below 100% in H1 of most years (Aurionpro; DSSL has not volunteered a comparable framework)"]
+net_narrative_effect: "complicates"

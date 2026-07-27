@@ -1,0 +1,36 @@
+stage: B00-inputs
+company: ENTERO
+run_date: 2026-07-27
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+cmp: 1273.0
+market_cap_cr: 5537.0
+manifest_sector_cap_row: "Pharma / CDMO"
+listed_date_derived: "2024-02-16 (approx, BSE 544122; within ~3y)"
+input_gaps:
+  - "prospectus: ABSENT — HIGH gap (listed <3y); no DRHP/RHP; backward baseline post-listing years only; promoter/group map web-derived"
+  - "announcements: ABSENT — no Reg 30 documented-ACTION record; intent-vs-action on concall/AR only; stage 8 web-reliant"
+  - "shareholding: ABSENT — no SEBI filing; UA institutional qualifier not filing-affirmed; promoter/pledge from AR; operator screener screenshot carried as non-anchored lead"
+  - "research: ABSENT — no effect on anchored evidence"
+  - "rating: IMAGE-ONLY PDF, 0 extractable text, no OCR; readable via Read page-render only; deferred to stage 10 / verifier A"
+inputs_present:
+  annual_report: 1
+  results: 2            # Q3 FY26 (12 Feb 2026) + FY26 audited (25 May 2026)
+  rating: 1             # image-only
+  concalls_used: 3      # Nov2025=Q2FY26, Feb2026=Q3FY26, Jun2026=Q4/FY26 (oldest-first)
+  concalls_dropped: 1   # Aug2025=Q1FY26
+  peer_concalls: 12     # MEDPLUS x4, REDINGTON x4, RPTECH x4 (distribution peers, not pharma-distribution comps)
+  screening_csvs: 30
+  presentation: 3       # 1 investor deck + 2 non-anchored broker notes
+concall_quarter_map:
+  - "Concall_Nov_2025_Transcript.pdf = Q2 FY26 (call 20 Nov 2025)"
+  - "Concall_Feb_2026_Transcript.pdf = Q3 FY26 (call 20 Feb 2026)"
+  - "Concall_Jun_2026_Transcript.pdf = Q4/FY26 (call 26 May 2026)"
+collector_defects:
+  - "sector_cap_row 'Pharma / CDMO' mis-pick for a pharma+MedTech distributor; correct at phase-3 stage 11"
+  - "manifest listed_date blank; derived ~Feb 2024"
+textcache_dir: "inputs/_textcache (page-marked [[PAGE N]] .txt for every input PDF except image-only ratings.pdf)"
+operator_context: "outputs/_working/OPERATOR_CONTEXT.md — NON-ANCHORED lead (6-month digest + screener shareholding screenshot)"
+flags: []

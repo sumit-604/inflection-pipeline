@@ -1,0 +1,27 @@
+stage: B00-inputs
+company: DHANBANK
+run_date: 2026-07-27
+model: orchestrator
+status: complete
+sector: scheduled_commercial_bank
+no_concall_mode: true
+listed_recently: false
+input_gaps:
+  - announcements_absent_partial_fill_operator_cfo_digest
+  - shareholding_absent_filled_operator_screener_screenshot
+  - presentation_absent
+  - concalls_declared_absent_no_concall_mode
+  - prospectus_absent_long_listed_not_a_gap
+collector_defects:
+  - sector_cap_row_mismatch: "Pharma / CDMO -> Banking/financials (P/B primary); defer to phase 3"
+  - unit_trap: "results in Rs LAKH; AR in Rs Crore; screener in Rs Crore"
+metric_mapping_caveat: "BANK: EBITDA/ROCE-CE/cash-conversion/WC-days N/A; use NIM,RoA,RoE,GNPA,NNPA,PCR,credit-cost,CRAR,CASA,cost-income,LCR/NSFR"
+no_promoter: true
+documents:
+  annual_report: "FY2024-25 (current)"
+  results: ["audited Q4+FY26 (Rs lakh)", "unaudited Q3/9M FY26 (Rs lakh)"]
+  rating: "ICRA BBB- Stable 24-Mar-2026, Tier II Rs 150cr"
+  peer_concalls: 16
+  screening: "screener Data_Sheet FY17-FY26 + KTKBANK/SOUTHBANK peer sheets"
+operator_context: "outputs/_working/OPERATOR_CONTEXT.md"
+flags: []

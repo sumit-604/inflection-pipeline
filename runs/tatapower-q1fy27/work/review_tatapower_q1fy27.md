@@ -474,13 +474,13 @@ No concall this run; channel = **IR email / next scheduled concall**. Every A3 F
 
 ## COMBINED VERDICT
 
-**Filing-derived signals (consolidated is what an equity holder owns):** a genuinely clean core quarter — revenue +5.6% YoY, Operating EBITDA +10.9% with +103 bps margin expansion, **core PBT ex-Other Income +14.1% (faster than +11.0% PAT)**, ~100% of PAT growth recurring, treasury immaterial. Reported EBITDA and Underlying EBITDA reconcile exactly to the deck.
+**Filing-derived signals (consolidated is what an equity holder owns):** a genuinely clean core quarter — revenue +5.6% YoY, Operating EBITDA +10.9% with +103 bps margin expansion, **core PBT ex-Other Income +14.1% (faster than +11.0% PAT)**, ~100% of PAT growth recurring, treasury immaterial. Reported EBITDA and Underlying EBITDA reconcile exactly to the deck. *(A5 caveat: the headline "clean core" sits above a −15.8% YoY decline in consolidated PBT before regulatory deferral, 2,060.59 → 1,735.04 (ln 335); the reported growth is delivered net of a favourable regulatory-deferral and JV-share swing, so the operating-before-regulatory line is the one to watch.)*
 
 **Counter-signals / flags (prominent):**
 1. **SIAC/Kleros USD 490.32m award unprovided**, Emphasis of Matter in BOTH auditor reports, SICC order reserved — an imminent, dateable, ~₹4,100cr+ (potential >₹5,000cr) contingent with zero cushion.
 2. **Mundra Section 11 / SPPA hard date 30-Sep-2026** — dispatch cliff on a 4,150 MW plant if remaining procurer SPPAs are unsigned.
 3. **Rising leverage** — Net External Debt ₹61,238 Cr (+₹5,116 QoQ) on record ₹5,375 Cr quarterly capex; Net Debt/Underlying EBITDA 3.41x, 3rd straight rising year; renewables build equity/holdco-funded → likely future raise.
-4. **Standalone −47% PAT vs consolidated +11%** — driven by a ₹329 Cr (−63%) collapse in parent Other Income (dividends/treasury), NOT parent operations (parent core PBT ex-OI actually +23.5%); S-vs-C gap widened to 405% of standalone PAT with parent leverage rising (D/E 1.07→1.45).
+4. **Standalone −47% PAT vs consolidated +11%** — driven by a ₹329 Cr (−63%) collapse in parent Other Income (dividends/treasury), NOT parent operations (parent core PBT ex-OI actually +23.5%); S-vs-C gap widened to 405% of standalone PAT with parent leverage rising (D/E 1.07→1.45) and standalone interest-service cover falling 2.36→1.68 (ln 885).
 5. **Segment/quality flags:** Odisha AT&C losses worsened at 3/4 discoms and all above vesting targets; "Others (Tata Projects/Nelco)" cluster loss widened to ₹(330)cr with an unnamed loss-making associate; Solar EPC/rooftop PAT −48% with negative large-project EBITDA and a drawn-down ₹639cr order book; regulated-asset accretion (TPDDL +35% YoY) locking working capital.
 6. **Comparability caveats:** Q4FY26 column is a Note-5 balancing plug flattered by a +₹1,061.72cr reg-deferral true-up; prior-period segment comparatives restated for corporate-cost reallocation (quantum undisclosed) — every YoY/CAGR panel is off a re-based comparative.
 7. **Bright spots:** TP Solar manufacturing PAT +287% (63% modules sold external, industry-leading 96.3% yield); RE Gencos PAT +19%; T&D cluster PAT +11% on capitalisation/TBCB; investment-grade credit stable-to-positive.
@@ -490,6 +490,8 @@ No concall this run; channel = **IR email / next scheduled concall**. Every A3 F
 **PROTOCOL VERDICT: PROCEED WITH FLAGS.** The consolidated numbers are clean and reconcile, so the workup proceeds; but the SIAC/Kleros unprovided award, the Mundra 30-Sep-2026 dispatch cliff, the rising leverage on record capex, and the standalone/consolidated divergence are material flags surfaced prominently for the human decision. INDETERMINATE cash conversion independently bars a clean PROCEED. No position action (UNCOVERED, first coverage); this establishes the institutional baseline for Role 1 (valuation) and Role 2 (thesis) downstream.
 
 *Reviewed 27-Jul-2026 | Sources: BSE/NSE Reg-33 results filing (standalone audited + consolidated reviewed, 19 pp) and Analyst Presentation Q1 FY27 (71 slides) | A4 ANALYST, quarterly pipeline.*
+
+*A5 ADVERSARY verdict: COMPLETE (2026-07-27). Independent coverage reconciles (19 pages / 71 slides, no orphan or missing ledger rows); ~80 metrics re-derived from raw extract lines with zero mismatches above rounding, including the standalone/consolidated PAT figures, both PAT bridges, and the SIAC/Kleros award (USD 490,320,000 + 5.33% from 30-Nov-2020 + SGD 11,341,963.46, unprovided, EoM in both auditor reports). Cash-conversion cap and PROCEED WITH FLAGS verdict consistent with the operator rule; every forward/ambiguous finding maps to a management question; no estimated numbers. Two A5 enhancements incorporated above (pre-regulatory operating decline; standalone ISCR 2.36→1.68).*
 
 ```yaml
 stage: A4-analyst

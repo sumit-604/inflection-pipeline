@@ -1,0 +1,43 @@
+stage: B01-gate0
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "screener-Profit_Loss.csv, screener-Balance_Sheet.csv, screener-Cash_Flow.csv, screener-Quarters.csv, screener-Customization.csv are empty export templates; all figures sourced from screener-Data_Sheet.csv instead"
+  - "Trade Payables not in Data_Sheet for FY2020-2023 (sourced FY2024-2026 only, from AR/results notes)"
+  - "Itemised capex (PPE+intangibles) not in Data_Sheet for FY2020-2023 (sourced FY2024-2026 only)"
+  - "Peer financial data not provided for M2, M5, M7 (player count), M9 moat tests"
+  - "E3 promoter pledge: no SEBI SAST/shareholding-pattern filing collected; not disclosed in FY25 AR"
+  - "FY26 contingent liabilities note not in provided FY26 results filing (AR, FY25 vintage, used instead; one year stale)"
+  - "FY26 reach/network metrics (districts, warehouses, SKUs) not in provided FY26 results filing (AR, FY25 vintage, used instead)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (core 53/100) driven by structurally low absolute ROCE for a pharma/MedTech distribution model (7yr median 3.85%, latest FY26 9.41%, still below the 10% deal-breaker threshold) and six consecutive years of negative operating cash flow (FY20-FY25) before turning positive in FY26 (+Rs96.2cr, first positive year). Deal-breakers: median ROCE <10% (rule 3) and cumulative CFO/PAT <0.50 (rule 4), both capping at max-AVERAGE; driven by FY20-FY23 pre-IPO low-ROCE years and FY20-FY25 working-capital-funded cash burn. Growth (Block C 20/20) and a STRONG moat count (5/12: pricing power, customer stickiness, distribution, switching costs, network effects) partially offset but do not lift the cap since Core score (53) is below the 60 threshold required for moat class to elevate classification. FY26 shows a genuine multi-metric inflection (ROCE, EBITDA margin, CFO all improving) that downstream stages should weigh for durability."
+data_years: 7
+fy_range: "FY2020 to FY2026"
+blocks: {A: 5, B: 3, C: 20, D: 13, E: 12}
+core_score: 53
+moat_score: 21
+grand_total: 74
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "rule 3: median ROCE 3.85% <10% -> max AVERAGE (driven by FY2020-FY2023, but FY2026 9.41% still <10%)"
+  - "rule 4: cumulative CFO/PAT -1.05 <0.50 -> max AVERAGE (driven by FY2020-FY2025 negative CFO; FY2026 first positive year)"
+history_downgrade: false
+data_notes:
+  - "PAT CAGR FY2020-FY2026 (~122.8%) computed per fixed formula but not economically meaningful: near-zero FY2020 base (PAT Rs0.94 Cr). Supplementary post-turnaround PAT CAGR FY2024-FY2026 = 71.5%; both bands score identically (>=20%)."
+  - "Loss-to-profit swing, FY2023 to FY2024 (PAT -Rs11.56 Cr to +Rs39.11 Cr); FY2021-FY2023 were loss years."
+  - "Net worth swung from negative (-Rs68.59 Cr FY2023) to positive (+Rs1,638.06 Cr FY2024) on CCPS-to-equity conversion at the Feb-2024 IPO; ROE for FY2020-FY2023 marked N/M (negative-equity denominator) and excluded from the A3 median; FY2024 ROE approximated on closing-equity basis only."
+  - "Management-reported ROCE FY2025 = 10.7%, RONW FY2025 = 6.07% (AR p.23 MD&A) vs stage-formula-computed ROCE FY2025 = 6.68%, FY2026 = 9.41%; methodology difference (likely average capital employed and/or cash-adjusted base) not disclosed in provided documents. The ~14.6% FY2026 ROCE figure referenced in the run brief could not be located in the provided FY2026 results filing (no MD&A section in that filing) -- computed figures used for scoring per pipeline rule, discrepancy flagged for verifier."
+  - "Management-reported Net Operating Working Capital Days: 70 (FY2025) vs 67 (FY2024) (AR p.23 MD&A) vs stage-formula-computed WC Days: 80.25 (FY2025) vs 76.83 (FY2024); methodology/component difference not reconciled."
+  - "Gross margin computed as (Revenue - Raw Material Cost + Change in Inventory) / Revenue, cross-verified against AR-stated gross margin (FY2025 computed 9.54% vs AR-stated 9.5%; FY2024 computed 8.97% vs AR-stated 9.0%)."
+  - "M2, M5, M9 and the M7 player-count threshold scored 0 and marked PEER DATA NEEDED -- no peer company financials were provided this run."
+  - "M6 scored 0: R&D is not a disclosed line item and is structurally inapplicable to a pure distribution business."
+  - "Selling & admin expense line is blank in Data_Sheet for FY2026 (folded into Other Expenses); M11 selling-expense-percent trend uses FY2020-FY2025 only."
+  - "E3 promoter pledge marked NOT FOUND: no SEBI SAST/shareholding-pattern filing collected; FY25 AR discloses only company-asset (PP&E) pledge as loan collateral (AR p.179), not promoter-share pledge."
+  - "E2 promoter holding change based on 1 year only (FY2024 to FY2025) since Entero listed Feb 2024; true 3-year trend NOT FOUND."
+  - "E4 contingent liabilities sourced from AR FY2025 (Note 45, consolidated, p.203) -- one year stale; FY2026 contingent-liability note NOT FOUND in the provided FY2026 results filing (summary financials only, no notes)."
+block_b_trend: "improving -- CFO turned positive for the first time in the 7-year series in FY2026 (+Rs96.20 Cr vs -Rs76.87 Cr in FY2025, screener-data), though the 7-year cumulative CFO/PAT ratio remains negative (-1.05x)"

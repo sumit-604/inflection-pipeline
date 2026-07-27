@@ -1,0 +1,34 @@
+stage: B12c
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (gate0 + emerging-moat only); valuation deferred to phase-3"
+gate0:
+  rules_checked: 39
+  fails:
+    - {severity: "MINOR", rule: "ROCE source-preference (prompt-01 formula: use screener's own ROCE if provided, compute only when absent)", detail: "ROCE computed on a hybrid CE basis for all 10yr (NW+Borrowings proxy FY17-24; TotalAssets-CurrentLiab FY25-26) rather than lifting screener's own ROCE; documented and justified by missing current/non-current liability split pre-FY25, cross-validated vs Acuite. A1 median 20.38% sits 0.38pp inside the 20-24.9 band; classification capped at GOOD regardless — no destination impact."}
+emoat:
+  rules_checked: 29
+  fails: []
+valuation: {status: pending-phase-3}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", stage: "B01", location: "Block A ROCE derivation", note: "Framework prefers source-supplied ROCE; maker computed hybrid CE. Documented, cross-validated, immaterial to GOOD classification. Prefer source series per literal rule."}
+  - {severity: "MINOR", stage: "B01", location: "M4 Customer Stickiness = 3", note: "Borderline PASS. Tier-5 correctly rejected (receivable days 67.9d->154.3d not stable). Tier-3 satisfied on literal 'max 1 decline year' (0 declines). Destination-insensitive: even a downgrade keeps final class GOOD (capped by DB-2). Same facts score M10=0 due to M10's differently-worded tiers — internally faithful, not inconsistent."}
+  - {severity: "MINOR", stage: "B07", location: "capex_embedded_growth_pct = 0 (FLAG-METHOD)", note: "Framework-consistent: 2C arithmetic was shown (~2,006% via 193x artefact FAT), correctly judged non-applicable for asset-light-legacy->capex-heavy transition, order-book cross-check (~+108%) substituted in body. Caveat: field feeds phase-3 Pillar 3; a bare 0 can be mis-read as no embedded growth. Phase-3 must read the FLAG-METHOD note / 108% figure, not the literal 0."}
+  - {severity: "MINOR", stage: "B07", location: "6D combined assessment = GOOD+", note: "GOOD-backward + MODEST-forward lifted a half-tier to GOOD+. HIGH POTENTIAL correctly NOT claimed (reserved for EXPANSION forward). Well-reasoned, on the generous edge of latitude; no enumerated matrix cell violated."}
+gate0_flags_assessed:
+  - {flag: "FLAG-CASH", verdict: "framework-consistent — reflects deal-breaker 2 (Block B 4/20) + FY26 FCF -18.87cr; aligns with INDETERMINATE-cash caveat doctrine"}
+  - {flag: "FLAG-DATA-GAP", verdict: "framework-consistent — E3 pledge NOT FOUND scored 0 per grounded-claims, not read as 0% or >15%"}
+  - {flag: "FLAG-STALE", verdict: "framework-consistent — E4 on FY25 AR (FY26 AR unpublished), disclosed as latest-available"}
+emoat_flags_assessed:
+  - {flag: "FLAG-METHOD", verdict: "framework-consistent judgment — arithmetic shown as required, 2C formula genuinely mismatched for this business model, order-book cross-check substituted; downstream read-through caveat noted (MINOR)"}
+  - {flag: "FLAG-CASH-LINK", verdict: "framework-consistent — correct application of one-improvement-one-mechanism; refuses to double-count the FY26 capex as both backward flag and independent forward moat"}
+history_downgrade_check: "CORRECT — history_downgrade=FALSE; 10yr history, LIMITED-tier rule inapplicable; NOT conflated with the Block B cash deal-breaker (the sole depressor)"
+fttcp_conflation_check: "CLEAN — B07 firewalled from FTTCP, no FTTCP scoring present"
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 99   # 67 of 68 in-scope rules passed clean (1 MINOR soft-fail: ROCE source-preference); no CRITICAL/MAJOR

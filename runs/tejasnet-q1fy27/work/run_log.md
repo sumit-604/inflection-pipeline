@@ -10,3 +10,20 @@ Run date: 2026-07-27
 poppler-utils + tesseract installed this session (apt fetch initially 404'd on stale index; apt-get update fixed).
 
 ## Quarter: Q1 FY27 (quarter ended June 30, 2026)
+
+## Pipeline gates (all pass)
+- A1: results 8p/100% (pages 2-8 OCR'd, scanned filing); press release 3p/100%; reg30 SMP 2p/100%.
+- A2: results ledger — 14 notes, 76 line items, 5 ZERO_STANDING, 4 entities, 11 auditor paras, gate pass (one internal re-sweep for OCR'd note-5 digit). Press-release ledger — 14 categories reconciled, gate pass.
+- A3: results — 6 FINDINGs (F2,F3,F8,F9,F13,F14), all 17 marked, 100% reconciled, gate pass. Press release — 2 FINDINGs (F6,F16), gate pass.
+- A4: PROCEED WITH FLAGS; cash conversion INDETERMINATE; Decision Status verified WATCHLIST; branch 8A; 9 mgmt questions; 14 monitorables. Role 5 N.A. (no concall).
+- A5: COMPLETE — 0 orphan rows, 0 arithmetic mismatches, 0 surviving bear counters. No loop-back.
+
+## Notion save (after A5 COMPLETE)
+- Full review appended to Tejas Networks page (2 inserts: financials/tripwire tables + Questions/forensics/audit).
+- Key Notes property: dated Q1FY27 line PREPENDED, prior FY26-AR and AGM-26 entries preserved.
+- Decision Status UNCHANGED (WATCHLIST) — no pre-committed trigger fired.
+
+## Operational notes (for LESSONS.md at next /finalize; /run-quarterly does not itself append LESSONS.md)
+1. Toolchain: poppler-utils/tesseract absent at session start; apt index stale (poppler .deb 404) — `apt-get update` then install fixed. Consider baking the toolchain into the environment setup script.
+2. Concurrent A1 collision risk: prompts/quarterly-a1-extractor.md step 3 OCR fallback uses a generic `page` prefix (pdftoppm/tesseract) with no ticker/doctype disambiguation. When multiple A1 agents share one work/ dir, temp images can collide. No output text was corrupted this run (agents used unique intermediates after noticing), but the prompt should mandate a `<ticker>_<doctype>_` temp prefix.
+3. Both the results filing AND the press release are scanned PDFs with embedded-OCR text-layer artifacts (Ql/FV27/l00G, teiasnetworks). Financial digits read clean and cross-reconciled; label artifacts only. A5 arithmetic audit found 0 mismatches.

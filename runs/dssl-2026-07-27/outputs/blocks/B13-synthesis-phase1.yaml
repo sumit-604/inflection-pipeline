@@ -1,0 +1,27 @@
+stage: B13-synthesis
+phase: 1-lite
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_basis: "FLAG-CASH active routes to PROCEED WITH FLAGS; INDETERMINATE cash-conversion residual caps one level to PROCEED WITH CAVEATS (INDETERMINATE never resolves silently upward). FLAG-PROMOTER does not fire (CAUTION). Confidence 84 normal band, no downgrade. No CRITICAL / no acceptance <60, REWORK not triggered."
+flags_active: ["FLAG-CASH", "FLAG-DATA-GAP", "FLAG-STALE"]
+flag_promoter: "not fired (B08 CAUTION); 2019 SEBI settlement + Cybercons governance carried as caveats"
+flag_cash_determination: "GROWTH-INDUCED origin, INDETERMINATE cash-conversion residual"
+falsification_metric: "Q1/Q2 FY27 EBITDA margin staying near 9% (below 11%) for two consecutive quarters -> Q4 FY26 compression structural not transient -> converts GROWTH-INDUCED to STRUCTURAL"
+confidence_delta: {numerical: 100, redflag: 84, framework_gate0_em: 99, peer: 87.5, overall: 84, binding: redflag_coverage}
+headline: "Growth is real, cash conversion unproven"
+monitorables_count: 8
+publish_candidate: false
+phase3_handoffs:
+  - "SECTOR CAP: manifest 'Platform / SaaS / IT services' vs B04 hybrid hardware-trading-SI + managed-services, EV/EBITDA primary. Stage 11 to confirm correct Section 1B cap row."
+  - "FLAG-CASH resolves on Q1/Q2 FY27 EBITDA margin + first FY26 AR receivables ageing/ECL print + As-a-Service unit-economics disclosure."
+  - "Verifier C valuation-adherence audit (B10/B11) DEFERRED to phase 3."
+  - "B07 capex_embedded_growth_pct=0 is a FLAG-METHOD placeholder; phase-3 Pillar 3 must read the order-book cross-check (~+108%), not the literal 0."
+  - "UA (stage 11): FII+DII ~1.36% near-absent (institutional qualifier likely met); promoter pledge NOT FOUND -> confirm before relying on any pledge dimension."
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md

@@ -1,0 +1,67 @@
+stage: B05-concall
+company: "DHANBANK"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No earnings-call transcripts exist for DHANBANK; no-concall mode used AR MD&A + results PDFs per orchestrator degraded procedure"
+  - "CASA ratio not disclosed in Q3 FY26 or FY26 audited results filings (last known: 29.02%, 31-Mar-25, AR p.2)"
+  - "Full-year FY26 NIM not disclosed in results filings; only ICRA's 9M FY26 cross-check (3.07% vs 2.88% FY25, ICRA p.2) is available"
+  - "Gold-loan share, LTV, and yield not disclosed in results filings; only available via ICRA cross-check (38% of book, 31-Dec-25, ICRA p.1)"
+  - "Digital-banking/fintech metrics not disclosed in either results filing; Bank confirms it has no separate Digital Banking Unit (Results FY26 p.9)"
+  - "Only one AR cycle in scope; multi-year trigger-evolution (Section 1C) and tone-consistency (Section 2C) not assessable"
+flags:
+  - "GNPA/NNPA/PCR headline improvement materially aided by technical write-offs and gold-loan-driven denominator growth (carried stage 2/3 context); ICRA's ex-write-off PCR (53.63%, Dec-25) and including-write-off GNPA (7.45%, Dec-25) diverge sharply from the printed headline (1.89% GNPA, 92.46% PCR incl. w/o, Mar-26)"
+  - "Zero quantified forward guidance anywhere in the AR MD&A"
+  - "CASA ratio disclosure discontinued after FY25"
+  - "Restructured/vulnerable book reported up ~47% (carried stage 2/3 context) even as headline asset quality improved"
+quarters_analysed:
+  - "FY25 (AR guidance baseline, filed Sep-2025)"
+  - "9M FY26 / Q3 FY26 (results, 31-Dec-2025, board 21-Jan-2026)"
+  - "FY26 (audited full-year results, 31-Mar-2026, board 28-Apr-2026)"
+triggers:
+  - {priority: 1, name: "Cost-to-income improvement (73.45% FY26 vs 85.42% FY25, computed)", type: "COST", timeframe: "near-term, already in motion", conviction: "H", confirm_signal: "FY27 cost-income holds below ~75% in next filing", kill_signal: "Cost-income reverts above 80%"}
+  - {priority: 2, name: "Gold-loan-led loan book growth (38% of book Dec-25 vs 31% Mar-25, ICRA)", type: "VOLUME/SECTORAL", timeframe: "near-term", conviction: "M", confirm_signal: "Advances growth continues with stable gold-loan asset quality/LTV disclosed", kill_signal: "Gold-price correction reverses book growth or triggers gold-loan-specific slippage"}
+  - {priority: 3, name: "Retail/MSME mix shift (Retail segment revenue +27.8% FY26 vs Corporate +6.4%)", type: "VOLUME/PRICE-MIX", timeframe: "medium-term", conviction: "M", confirm_signal: "Future filing disaggregates genuine MSME growth from gold-loan-driven retail growth", kill_signal: "Retail growth shown to be gold-loan-only with MSME/other-retail flat or shrinking"}
+  - {priority: 4, name: "CASA strengthening via corporate relationships", type: "PRICE-MIX/COST", timeframe: "medium-term", conviction: "L", confirm_signal: "CASA ratio re-disclosed and shown improving from 29.02% (Mar-25)", kill_signal: "CASA shown declining or remains undisclosed"}
+  - {priority: 5, name: "Digital channel / fintech growth", type: "VOLUME/COST", timeframe: "medium-term", conviction: "L", confirm_signal: "Digital Banking Unit or disaggregated digital metrics appear in a future filing", kill_signal: "Continued absence of digital-specific disclosure"}
+guidance:
+  - {item: "Profitability focus (AR strategic theme)", number: "NOT FOUND (no quantified target)", timeframe: "NOT FOUND", stated_in: "AR FY25 MD&A p.14"}
+  - {item: "Asset quality focus (AR strategic theme)", number: "NOT FOUND (no quantified target)", timeframe: "NOT FOUND", stated_in: "AR FY25 MD&A p.14"}
+  - {item: "CASA strengthening via corporate relationships", number: "NOT FOUND (no quantified target)", timeframe: "NOT FOUND", stated_in: "AR FY25 MD&A, Way Ahead, p.16"}
+  - {item: "Retail/MSME segment focus", number: "NOT FOUND (no quantified target)", timeframe: "NOT FOUND", stated_in: "AR FY25 MD&A, Way Ahead, p.15-16"}
+  - {item: "Digital channel / fintech growth", number: "NOT FOUND (no quantified target)", timeframe: "NOT FOUND", stated_in: "AR FY25 MD&A, Way Ahead, p.16"}
+  - {item: "Capital raise (rights issue, historical fact not forward guidance)", number: "Rs297.54 crore", timeframe: "Completed Feb-2025", stated_in: "AR FY25 p.2-3"}
+  - {item: "Dividend", number: "Nil recommended", timeframe: "FY2024-25", stated_in: "AR FY25 p.2"}
+promise_delivery:
+  delivered: 1
+  partial: 3
+  missed: 0
+  rows:
+    - {promised_in: "AR FY25 MD&A p.14", promise: "Continue focus on profitability", outcome: "delivered", explanation: "Net profit Rs66.64cr FY25 -> Rs102.75cr FY26 (+54%); operating profit Rs95.10cr -> Rs216.28cr (+127%); RoA 0.41%->0.53%; cost-to-income 85.42%->73.45% (computed). Results FY26 p.8, AR p.1-2."}
+    - {promised_in: "AR FY25 MD&A p.14", promise: "Continue focus on asset quality", outcome: "partial", explanation: "Headline GNPA 2.98%->1.89%, NNPA 0.99%->0.51%, PCR incl write-off 92.46% (Results FY26 p.8/p.14) but carried stage 2/3 context (~Rs692cr technical write-off pool, denominator effect from gold-loan-driven advances growth) plus ICRA's independent PCR ex-write-off falling to 53.63% and GNPA incl write-off at 7.45% (Dec-25, ICRA p.3) materially qualify the improvement."}
+    - {promised_in: "AR FY25 Way Ahead p.16", promise: "More Corporate relationship for a strong CASA ratio", outcome: "not verifiable", explanation: "CASA ratio (29.02% Mar-25, AR p.2) not disclosed in either subsequent results filing; cannot confirm or deny delivery."}
+    - {promised_in: "AR FY25 Way Ahead p.15-16", promise: "Focus Retail and MSME segments to offset corporate slowdown", outcome: "partial", explanation: "Retail segment revenue +27.8% FY26 vs Corporate +6.4% (Results FY26 p.9) is directionally consistent, but growth is substantially gold-loan-led (38% of book, ICRA p.1) rather than demonstrably MSME-driven; MSME component not separately disclosed."}
+    - {promised_in: "AR FY25 Way Ahead p.16", promise: "Business growth through digital channels / fintech leverage", outcome: "not verifiable", explanation: "No digital-banking or fintech metric disclosed in either results filing; Bank confirms no separate Digital Banking Unit exists (Results FY26 p.9)."}
+    - {promised_in: "AR FY25 MD&A p.15", promise: "Strengthen governance / risk-management / compliance culture", outcome: "partial", explanation: "Carried stage 2/3 context shows restructured/vulnerable book up ~47% even as headline GNPA improved, cutting against the narrative; not independently re-derivable from the results PDFs in this stage's scope."}
+excuse_pattern: "management-silence-on-weakness"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "AR-stated profitability focus delivered strongly and verifiably (net profit +54%, operating profit +127%, cost-income 85.42%->73.45%, RoA 0.41%->0.53%), which is documented delivery evidence sufficient to move off the C default; capped at B (not higher) because the AR's asset-quality delivery is qualified by carried stage 2/3 context (technical write-offs, denominator effect, restructured-book rise) and two other themes (CASA, digital) are undisclosed and unverifiable."
+peer_questions:
+  - {question: "Is gold-loan LTV/yield discipline being flagged as a growth engine or a concentration risk in peer concalls, and at what LTV/yield are peers running their gold books?", why: "DHANBANK's ~24% gross-advances growth (computed, FY26) is substantially gold-price-driven; peer commentary shows whether this is sustainable or a one-off tailwind", check_peers: ["South Indian Bank", "Federal Bank", "CSB Bank", "Karnataka Bank"]}
+  - {question: "What NIM and cost-of-funds trajectory are peers guiding to, and is DHANBANK's implied NIM improvement (2.88% FY25 -> 3.07% 9M FY26, ICRA p.2) credible against peer funding-cost trends?", why: "DHANBANK discloses no NIM itself; the only NIM figure is via ICRA cross-check and needs peer sanity-checking", check_peers: ["South Indian Bank", "CSB Bank", "Karnataka Bank"]}
+  - {question: "What cost-income path are peers guiding to, and does DHANBANK's cost-income improvement (85.42%->73.45% FY26, computed) look structurally durable or a one-off?", why: "This is the single largest verifiably-delivered promise in this review; confirming durability is central to the credibility grade", check_peers: ["South Indian Bank", "CSB Bank", "Karnataka Bank", "City Union Bank"]}
+  - {question: "How are peers describing deposit/CASA competition, and does that suggest DHANBANK's undisclosed CASA ratio has likely improved or eroded since 29.02% (Mar-25)?", why: "DHANBANK stopped disclosing CASA after Mar-25; peer commentary is the best available proxy", check_peers: ["South Indian Bank", "Federal Bank", "Karnataka Bank"]}
+  - {question: "What slippage/asset-quality trends (ex-write-off) are peers reporting, and is the gap between DHANBANK's headline GNPA (1.89%, Mar-26) and its including-write-off GNPA (7.45%, Dec-25, ICRA p.3) unusually wide versus peers?", why: "This is the largest credibility caveat in this review; peer benchmarking shows whether DHANBANK's write-off pace is out of line", check_peers: ["South Indian Bank", "CSB Bank", "Karnataka Bank"]}
+  - {question: "Are peers reporting SME/MSME stress or growth, and does it corroborate or contradict DHANBANK's claimed Retail/MSME mix-shift strategy?", why: "DHANBANK's MSME claim could not be disaggregated from gold-loan-driven retail growth in its own disclosures", check_peers: ["South Indian Bank", "Federal Bank", "Karnataka Bank", "City Union Bank"]}
+red_flags:
+  - "Zero quantified forward guidance anywhere in the AR MD&A (no NIM/RoA/cost-income/CASA target)"
+  - "Headline GNPA/NNPA/PCR improvement substantially aided by technical write-offs and gold-loan-driven denominator growth; ICRA's ex-write-off PCR (53.63%, Dec-25) and including-write-off GNPA (7.45%, Dec-25) diverge sharply from the printed headline"
+  - "CASA ratio disclosure discontinued after FY25 (last known 29.02%, Mar-25)"
+  - "Restructured/vulnerable book reported up ~47% (carried stage 2/3 context) even as headline asset quality improved"
+  - "Gold-loan concentration rising to 38% of book (Dec-25) with no discussion of concentration risk in the Bank's own MD&A"
+  - "CFO transition (Kavitha T.A. -> Krishnakumar K, eff. 10-Jul-2026) -- sourced only to non-anchored OPERATOR_CONTEXT.md; monitorable continuity item"
+dropped_triggers: []
+timeline_slippages: []
+no_concall_mode: true

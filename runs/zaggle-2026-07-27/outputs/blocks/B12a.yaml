@@ -1,0 +1,14 @@
+stage: B12a
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 47
+findings:
+  - {severity: "MAJOR", location: "B01 Block B FCF calculation (FY23)", claimed: "FY23 FCF -15.62 Cr (at least as negative)", source_truth: "Capex NOT FOUND in any provided source; FY23 cash-flow detail unavailable", note: "FY23 pre-dates Q4 FY26 results filing and is prior to FY24 Q4 FY26 results comparative; cash-flow statement breakdown not in provided sources (input gap). Impact: FY23 FCF bounded only by CFO (-15.62 Cr), not quantified. Does not affect Gate 0 classification as deal-breaker test (Block B cumulative CFO/PAT -0.44) is driven by FY24 and FY26 negative CFO figures, which are verified", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Block B WC Days (earliest year FY24 not FY23)", claimed: "FY23 Trade Payables NOT FOUND; earliest year for WC change calculation moved to FY24", source_truth: "No Trade Payables disclosure located in AR FY25 or prior filings for FY23 (company not yet listed; no separate FY23 cash-flow statement in provided sources)", note: "B01 data-note #3 acknowledges this: 'FY23 Trade Payables NOT FOUND in any provided source, so B4's earliest year is anchored to FY24 instead of FY23.' Result: WC Days change calculated as FY26 (65.28) vs FY24 (81.42) = -16.14 days, rather than a full 4-year trend. Does not affect Block B4 score (5 points awarded for >5 days decrease, this metric qualifies) but reduces historical depth", source_fidelity: true}
+critical_count: 0
+major_count: 2
+minor_count: 0
+acceptance_rate: 95.7
+coverage_note: "Audit verified 47 material numerical claims. All figures explicitly cross-checked against Q4 FY26 results filing or FY25 AR are marked CLEAN (45 figures). Two figures (FY23 capex, FY23 trade payables) are UNANCHORED/NOT FOUND due to data gaps in provided sources and carry MAJOR severity designation (source_fidelity: true), though impact on Gate 0 classification is minimal as both precede the FY24-26 window that drives deal-breaker verdicts. Revenue, profitability, cash flow, balance sheet, and ratio metrics for FY24-26 are verified across all material Gate 0 scorecard inputs. Segment revenue mix (FY25) verified to AR p.145. No numerical mismatches found in claims anchored to filed sources; all calculations internally consistent."

@@ -1,0 +1,20 @@
+stage: confidence-delta
+company: ZAGGLE
+run_date: 2026-07-27
+phase: 1
+confidence_delta:
+  numerical_acceptance: 95.7      # B12a: 45/47 clean; 0 CRITICAL, 2 MAJOR (FY23 capex + FY23 payables NOT FOUND, upstream already flagged)
+  redflag_coverage: 82            # B12b: 18 of 22 independent flags already caught upstream; 0 CRITICAL
+  framework_adherence: 98         # B12c Gate 0 + Emerging Moat portion only (0 fails Gate 0, 11/12 EM); valuation component PENDING PHASE 3
+  peer_utilisation: 86            # B12d: 6 of 7 peers cleanly handled; 1 CRITICAL misattribution in B06 Q6
+  overall: 82                     # min of the four available components
+  band: "75-89 normal — note specifics; no PROCEED downgrade, no forced REWORK"
+valuation_component: "PENDING PHASE 3 — verifier C valuation-adherence audit (B10/B11) deferred; framework_adherence will be recomputed in phase 3"
+rework_check:
+  verifier_a_critical: 0
+  any_acceptance_below_60: false
+  verdict: "NO REWORK"
+notable_verifier_findings:
+  - "B12d CRITICAL (source_fidelity: true): B06 Q6 attributes a RateGain AI-productivity quote (Bhanu Chopra, RATEGAIN Q3 FY26) to Tanla; Tanla is silent on AI/dev-cycle compression. Genuine peer corroboration of the AI-productivity claim is TWO peers (Capillary, RateGain), not three. CORRECTION carried to synthesis; logged as a verifier disagreement. Does not touch any valuation number or the evidence-gate decision."
+  - "B12b MAJOR x2: Q4 FY26 standalone PAT +18% vs revenue +44% (D&A drag from ~Rs107cr capitalized dev cost) not surfaced by B05; capitalized-devcost earnings-quality question under-weighted. Both reinforce the cash/earnings-quality thesis, not contradict it."
+  - "B12a MAJOR x2: FY23 capex and FY23 trade payables NOT FOUND in provided sources; upstream B01 already flagged and did not fabricate. No mismatch."

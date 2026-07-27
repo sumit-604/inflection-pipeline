@@ -1,0 +1,52 @@
+stage: B09-tam
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No AR MD&A-disclosed TAM figure found; management's $33.2bn TAM claim is sourced only to the Investor Presentation citing the FY24 RHP/Prospectus (not in this run's input set) and a third-party estimate, not an independent AR disclosure."
+  - "Bottom-up (Method 2) hospital/medical-device leg could not be independently derived from a reliable hospital-count x spend basis; borrows Method 1's top-down figure rather than an independent cross-check."
+  - "Distribution-market entries/exits and import-share trend (Section 4C) not found."
+flags:
+  - "Entero books revenue as principal/full distribution value, not a margin fee -- TAM sized on gross-distribution-value basis; a margin-pool framing would understate TAM by roughly an order of magnitude."
+  - "Management's FY23 $33.2bn / Rs2,67,000 Cr TAM claim is 3+ years STALE as of this run date; cross-checked (not solely relied on) against fresher FY25 IPM and medical-device data; holds up reasonably (ratio 1.07-1.24x across two comparison bases)."
+  - "SOM 3yr/5yr implied CAGR (33.8%/30.3%) assumes +3pp/+5pp SAM-share gains (aggressive tier), justified by Entero's M&A-driven consolidation model, but management has guided to slow M&A for 2-3 quarters into FY27 for integration -- if that pause extends, SOM is the optimistic side."
+  - "Capacity constraint for this distributor is working-capital/debt funding, not physical capacity (B07: capex-embedded growth ~zero); gross borrowings grew ~90% YoY in FY26 vs revenue +29%, a funding-pace risk to the SOM trajectory."
+  - "Retail-store consolidation (~1-2% of store count) and wholesale-distribution consolidation (Entero's actual TAM, 8-10% to 20-30% organised share) are two distinct trends per management's own Jun-2026 concall distinction; do not conflate."
+market_definition: "Gross value of pharma + medical-device goods flowing through India's wholesale/distribution channel to retail pharmacies, hospitals and institutions (Entero books this as principal revenue, not a distribution-margin fee)."
+tam_cr: {conservative: 250000, realistic: 290000}
+sam_cr: 175000
+sam_pct_of_tam: 70
+som_3yr_cr: 15800
+som_5yr_cr: 24800
+som_implied_revenue_cagr: {yr3: 33.8, yr5: 30.3}
+current_sam_share_pct: 3.8
+revenue_headroom_x: 26.6
+tam_growth_pct: 10.5
+runway_class: "MASSIVE"
+mgmt_claim_cr: 267000
+mgmt_claim_ratio: 1.07
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient (asset-light distributor, no physical capacity ceiling per B07) but working-capital/debt funding gap of ~Rs1,700-2,500 Cr needed by FY29 to fund SOM_3yr incremental NWC; gross borrowings already growing faster than revenue (FY26) -- SOM is the side at risk, not a physical capacity plan"
+methods_used:
+  - "top-down (IPM + medical devices)"
+  - "bottom-up (pharmacy count x spend)"
+  - "peer-aggregation with explicit unorganised-sector estimate"
+  - "global per-capita benchmark (directional only, not sized)"
+stale_data_flags:
+  - {datapoint: "$33.2bn / 10-11% CAGR TAM claim", source: "Investor Presentation citing Prospectus", year: "FY23"}
+  - {datapoint: "~900,000 retail pharmacies; ~65,000 distributors; 8-10% top-3 share", source: "Investor Presentation citing Prospectus", year: "FY23 / 2020"}
+searches_performed:
+  - "India pharmaceutical distribution market size 2025 2026 crore organized unorganized"
+  - "India IVD in-vitro diagnostics market size 2025 crore CAGR"
+  - "Indian pharmaceutical market IPM size 2025 CRISIL Rs crore retail"
+  - "India medical devices market size 2025 crore billion CAGR"
+  - "organized pharmaceutical distribution India share national distributors consolidation 2025"
+  - "Entero Healthcare TAM addressable market $33 billion prospectus RHP"
+  - "Entero Healthcare first listed pharmaceutical distribution company India IPO unique"
+  - "India hospital consumables surgical distribution market size crore"
+  - "Entero Healthcare competitors national pharmaceutical distributors India peers"
+  - "Keimed Apollo HealthCo pharma distribution revenue crore 2025"
+  - "Ascent Health Wellness Solutions Reliance pharma distribution revenue crore"
+  - "Indian Pharmaceutical Market IPM size 2023 crore value AIOCD Pharmarack"
+searches_skipped: []

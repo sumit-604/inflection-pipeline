@@ -1,0 +1,53 @@
+stage: B09-tam
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Prospectus/DRHP ABSENT - no disclosed total corporate-card/PPI GMV to directly calibrate program-fee take rate; Method 1(b) and 1(d) rest on an assumed 0.4-0.6% take-rate, not a disclosed figure"
+  - "Current market price / P/E multiple NOT injected into Stage 9 - Section 5E valuation-implication sentence left with P/E as NOT FOUND for Stage 11 to complete"
+  - "No independent third-party market-share/competitor-count data found for the India corporate spend-management niche specifically (B04 flags the same gap)"
+  - "Zagg.money and DICE revenue contribution NOT FOUND (too recent/undisclosed) - excluded from TAM/SAM/SOM, treated as unpriced optionality per 5D"
+flags:
+  - "Management's headline TAM claim (₹1,750+ Bn 'Payments in India' 2027, Investor Presentation slide 31, Frost & Sullivan-sourced) is a definitional mismatch, not a genuine market-size estimate for Zaggle's actual niche: ratio to this report's conservative estimate is 21.9x, INFLATED"
+  - "Fleet TAM (~₹79,000 Cr, management concall claim) is directionally corroborated in order of magnitude (~₹73,000 Cr found via web search) but that corroborating figure traces back to commentary on the same management claim, not an independently named primary report - treat as reasonable, not verified"
+  - "SOM-implied revenue CAGR (23.5% yr3 / 24.2% yr5) is LOWER than Zaggle's own recent standalone Net Revenue growth (34.9% FY26); sustaining recent pace requires the 'aggressive' (3-5pp/3yr) share-gain band rather than the 'normal' band used for this report's headline SOM - Stage 11 should reconcile explicitly if using a higher net-revenue-growth assumption"
+  - "Method 1 (top-down, ₹8,000-12,700 Cr) and Method 2 (bottom-up, ₹17,200-27,300 Cr) diverge materially; Method 2 is judged to overstate TAM due to ARPU survivorship bias (using Zaggle's own best-fit-customer ARPU across the full addressable account universe) and is used only to bound the realistic case, not the conservative case"
+market_definition: "Indian B2B2C corporate spend-management, corporate-rewards, procure-to-pay, and fleet-spend platform fee pool (SaaS + program-fee/interchange share + net take-rate on gift-card GMV), India-only, current-year"
+tam_cr: {conservative: 8000, realistic: 16000}
+sam_cr: 11600
+sam_pct_of_tam: 72.5
+som_3yr_cr: 1594
+som_5yr_cr: 2509
+som_implied_revenue_cagr: {yr3: 23.5, yr5: 24.2}
+current_sam_share_pct: 7.3
+revenue_headroom_x: 13.8
+tam_growth_pct: 16
+runway_class: "GOOD"
+mgmt_claim_cr: 175000
+mgmt_claim_ratio: 21.9
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient on capex (asset-light SaaS/fintech model; ₹67-107 Cr/year tech capex not the binding constraint); real capacity gate is bank-partner/program-fee concentration risk (already flagged B04/B07), not physical capex"
+methods_used:
+  - "Method 1: top-down fee-pool build (SaaS/expense-mgmt + program-fee/interchange + Propel net-take + fleet program-fee)"
+  - "Method 2: bottom-up (addressable corporate accounts x ARPU)"
+  - "Method 3: peer revenue aggregation (no disclosed-revenue direct peer found; used for structural color)"
+  - "Method 5: global benchmark (India expense-mgmt/SaaS CAGR vs global spend-mgmt CAGR cross-check)"
+stale_data_flags:
+  - {datapoint: "Global Business Spend Management platform market USD 15.9 Bn base-year figure", source: "GlobeNewswire/KBV Research (web search)", year: 2021}
+  - {datapoint: "India FinTech market CY2024E ~₹9,248.91 Bn valuation (internally inconsistent with the ~US$20Bn-2023/US$180-200Bn-2030E chart on the same AR page)", source: "AR FY25 p.134-135, EY/Frost & Sullivan Analysis", year: 2024}
+searches_performed:
+  - "India corporate spend management software market size 2026 crore"
+  - "India employee expense management software market size CAGR"
+  - "India prepaid payment instruments PPI market size crore 2025"
+  - "India fleet card fuel card market size crore"
+  - "Zaggle fleet management TAM 79000 crore"
+  - "India corporate gifting rewards recognition market size crore 2025"
+  - "global spend management market size CAGR 10.2%"
+  - "India gift card market size crore 2025 RedSeer"
+  - "Happay EnKash Volopay revenue India corporate card expense management FY25"
+  - "PayMate India revenue FY25 corporate card B2B payments"
+  - "India GDP 2026 current USD trillion"
+  - "USD to INR exchange rate July 2026"
+  - "India number of registered companies active MCA 2025 mid large enterprises count"
+searches_skipped: []

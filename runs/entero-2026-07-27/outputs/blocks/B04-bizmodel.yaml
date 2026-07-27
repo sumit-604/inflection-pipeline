@@ -1,0 +1,74 @@
+stage: B04-bizmodel
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR states Entero operates in a single reportable segment (wholesale distribution of pharmaceutical goods); no stream-level revenue % split is disclosed in the AR or the Investor Presentation."
+  - "The commercial/agency revenue-mix figure (~10-15% of sales) and the MedTech run-rate context are sourced only to a third-party broker note (MNCL), not to the AR or company deck; treated as directional, non-anchored context only, per task instructions."
+  - "Investor Presentation used is a Q4FY26 (year ended March 2026) deck, one year ahead of the FY2024-25 AR; all FY26 figures are marked AR-absent and sourced only to the deck."
+flags:
+  - "Working capital days rose FY24->FY25 (67->70) before improving in FY26 (70->68); company attributes the FY25 rise to newly acquired businesses — a metric to watch given the WC-funded M&A model."
+  - "Gross borrowings grew faster than revenue in FY26 (borrowings ~+90% vs revenue +29%), funding rising working capital and M&A; net debt/EBITDA trend needs quarterly tracking."
+  - "Goodwill is ~43% of total equity in FY26 (Rs 749 cr / Rs 1,753 cr) after 51 acquisitions since inception; M&A integration failure is the company's own top-listed risk."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Core pharma/healthcare distribution (demand fulfilment)", type: "trading/principal distribution", pct_of_revenue: 0, predictability: "H"}
+  - {name: "Commercial/agency solutions (demand generation for manufacturers)", type: "agency/fee-like service", pct_of_revenue: 0, predictability: "M"}
+  - {name: "Private label products", type: "trading, own-brand margin", pct_of_revenue: 0, predictability: "M"}
+  - {name: "MedTech (IVD, cardiology, orthopedics)", type: "trading + service/installation", pct_of_revenue: 0, predictability: "M"}
+  - {name: "HealthEdge digital platform (Aayu Chemist/Medcords)", type: "platform/engagement tool", pct_of_revenue: 0, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Scale / route density (136 warehouses, 523 districts)", durability: "moderate"}
+  - {moat: "M&A sourcing and integration playbook (51 acquisitions since inception)", durability: "moderate, capital-dependent"}
+  - {moat: "Working capital / balance sheet access post-IPO", durability: "moderate, erodes if leverage rises"}
+  - {moat: "Proprietary tech platform and secondary sales data for manufacturers", durability: "moderate, emerging"}
+  - {moat: "Two-sided network effect (manufacturers <-> pharmacies)", durability: "low-moderate, nascent"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Neutral to acquisition-debt, minority-interest and staged-buyout capital-structure noise; EBITDA is the cleanest operating-profit line for this business"}
+  secondary: {method: "P/E (growth-adjusted / PEG cross-check)", why: "Strong PAT growth trajectory and existing market convention, but distorted near-term by rising minority interest and swinging effective tax rates"}
+  tertiary: {method: "EV/Sales", why: "Useful only during the current hyper-growth/M&A integration phase before EBITDA is fully representative across newly acquired entities"}
+  not_applicable:
+    - "Price/Book (goodwill ~43% of equity distorts book value)"
+    - "Standalone near-term DCF (FCF path still acquisition-dependent and working-capital-volatile)"
+    - "Dividend yield (no dividend paid to date)"
+    - "Replacement cost / asset-based (asset-light ex-working-capital, doesn't reflect network value)"
+irrelevant_ratios:
+  - {ratio: "Gross margin (%) benchmarked against manufacturers", why: "Structurally ~9-10% for a distributor vs 40-60%+ for a manufacturer; track bps trend instead"}
+  - {ratio: "EBITDA margin (%) in isolation", why: "3-5% is structurally normal for a distributor; track bps expansion vs guidance instead"}
+  - {ratio: "Standalone Return on Equity", why: "Distorted by staged acquisition stakes and rapidly growing minority interest; use ROCE/RONW together"}
+  - {ratio: "Fixed asset turnover / capex intensity", why: "Not a fixed-asset-heavy business; PP&E is a tiny fraction of total assets"}
+  - {ratio: "R&D as % of sales", why: "Not applicable; a distributor does not develop products"}
+  - {ratio: "Price/Book", why: "Distorted by rapidly rising goodwill from M&A"}
+  - {ratio: "DSO or DPO viewed alone", why: "Hides financing behavior; must be read as combined Net Operating Working Capital days"}
+  - {ratio: "Operating cash flow margin (%) in isolation", why: "Rapid growth mechanically consumes working capital; must be read with NWC-days trend and OCF/EBITDA conversion"}
+must_track_metrics:
+  - {metric: "Net Operating Working Capital days", healthy: "declining toward ~60 days", red_flag: "rising WC days"}
+  - {metric: "Organic revenue growth vs IPM growth multiple", healthy: "1.4x-2x IPM", red_flag: "approaching 1.0x IPM"}
+  - {metric: "EBITDA margin vs company guidance", healthy: "on/ahead of guided path (5.0% FY27 target)", red_flag: "missing guidance by >30-50bps for two+ quarters"}
+  - {metric: "Gross + net borrowings growth vs revenue growth", healthy: "borrowings growing slower than revenue", red_flag: "borrowings growing materially faster than revenue"}
+  - {metric: "Goodwill as % of total equity", healthy: "stable ratio, matched by proportionate EBITDA contribution", red_flag: "rising ratio or any impairment charge"}
+unit_economics:
+  unit: "Rs 100 of goods sold (distribution throughput/GMV proxy)"
+  revenue_per_unit: "Rs 100 sale yields Rs 10.3 gross profit (FY26 gross margin)"
+  margin_per_unit: "Rs 4.0 EBITDA per Rs 100 sold (FY26 EBITDA margin)"
+  key_lever: "Operating leverage from spreading a largely fixed warehouse/employee cost base over rising throughput; incremental EBITDA margin on FY22-FY26 revenue growth was ~5.9%, well above any single year's average margin"
+first_deterioration_signals:
+  - {risk: "Manufacturer disintermediation (revenue model)", first_signal: "Manufacturer relationship/SKU count flattening; organic growth multiple vs IPM compressing toward 1.0x"}
+  - {risk: "Trade margin compression (margin)", first_signal: "Gross margin bps YoY change turning negative or flat"}
+  - {risk: "Working capital funded by rising short-term debt (balance sheet)", first_signal: "Borrowings growing faster than revenue; NWC days trending up"}
+  - {risk: "M&A integration failure (execution)", first_signal: "Goodwill impairment charge; acquired-vertical revenue trailing guided milestones"}
+  - {risk: "Regulatory/pricing action on trade margins (structural)", first_signal: "Gross margin or realization-per-SKU declining despite stable/rising volume"}
+mgmt_questions:
+  - "What % of revenue and gross margin comes from the commercial/agency model today, and what is the 3-year target mix?"
+  - "How much of FY26 margin expansion is structural (mix shift/procurement scale) versus one-off (e.g. Wage Code addback)?"
+  - "What is the funded timeline to move staged 51-80% acquisition stakes to full ownership, and how will minority interest trend?"
+  - "With gross borrowings up to ~Rs 567 cr in FY26 against Rs 147 cr cash, how is FY27-28 WC and M&A to be funded without raising leverage or diluting shareholders?"
+  - "What KPIs will confirm MedTech is on track for the guided Rs 1,000 cr FY27 revenue, and what happens to blended margins if it disappoints?"
+  - "How exposed is distribution margin to NPPA/GST regulatory action, and has this been stress-tested?"
+  - "What is the retention/renewal rate among top manufacturer relationships, and has Entero ever lost a large principal to disintermediation?"
+one_line_verdict: "Thin-margin, working-capital-heavy distributor scaling via debt-funded M&A; value on EV/EBITDA and track WC days, borrowings growth and organic-vs-IPM growth, not gross margin in isolation."

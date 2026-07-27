@@ -1,0 +1,38 @@
+stage: B07-emoat
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["B05 promise-delivery block not yet available; F2 execution-moat cross-reference derived directly from the two collected concalls per task instruction, not from a B05 artifact", "Central Bank of India NVIDIA H200/Kubernetes order (Rs125.88cr, 8-Jun-2026 per operator digest) postdates both collected concalls and is not independently corroborated in any collected primary source", "no FY27 Q1 results available as of run date to confirm/deny whether the Q4 FY26 margin miss was transient", "no R&D headcount, patent, or ESOP-scale-beyond-12,200-shares disclosure exists to deepen F1/A2"]
+flags:
+  - {type: FLAG-METHOD, reason: "Section 2C's standard capex-under-execution x historical-fixed-asset-turnover formula produces a non-credible result (~2,006% implied revenue growth) because DSSL's pre-FY25 fixed-asset base was an artefact of a capex-light EPC/reseller model, not a valid base rate for the new capex-backed annuity model; capex_embedded_growth_pct is set to 0 rather than populated with a misleading number. The order-book-implied cross-check (Rs2,964cr order book / Rs1,424cr FY26 revenue = ~108% above current revenue) is reported in the body (Section 2C) as the decision-relevant figure instead."}
+  - {type: FLAG-CASH-LINK, reason: "The FY26 capex/lease build that generates the strongest emerging-moat evidence (C1, F2, G2, H2) is the same capex that trips B01's Gate 0 FLAG-CASH (FY26 FCF -Rs18.87cr). The emerging-moat scan and the backward cash flag describe one transition, not two independent facts; see Section 6C."}
+em_score: 22.7
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "already active, scaling"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "open question resolves Q1 FY27"}
+  - {id: "G2", name: "Working capital improvement trajectory", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "already active"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12 months for Cygeniq to prove out"}
+  - {id: "R1", name: "Regulatory / policy tailwind", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "already active, shared with peers"}
+evidence_mix: {documented: 15, claim: 11, inference: 4}
+completionist_recount: "11 documented items across 5 non-R1 categories (B2, C1, F2, G2, H2) reviewed and confirmed, plus signed government-agency contracts supporting R1; 6 of 21 rows scored Strong/Moderate, within the 3-6 realistic base rate. 14 of 21 rows left at NO EVIDENCE FOUND rather than force-fit."
+catalysts_12m:
+  - {catalyst: "Q1/Q2 FY27 margin normalisation (test of whether Q4 FY26 9.0% EBITDA margin, down from 11.9% in Q3 FY26, was a temporary blip as management claims)", window: "next 1-2 quarters", evidence_type: "claim", anchor: "Jun 2026 concall (Q4/FY26), multiple Q&A incl. Ankush Agrawal, Akash Jain, Aditya, Saurabh Gupta, Dhirendra Patro"}
+  - {catalyst: "RBI private cloud infrastructure (NGDC Bhubaneswar, AI-ready) Rs750.82cr order go-live progress", window: "12-24 months (5-yr contract)", evidence_type: "claim", anchor: "Jun 2026 concall, Ankush Agrawal and Aditya Q&A on the 4-May-2026 RBI filing"}
+  - {catalyst: "Central Bank of India AI-ready private cloud + NVIDIA H200 GPU + Kubernetes order (Rs125.88cr)", window: "12 months", evidence_type: "claim", anchor: "operator digest only (8-Jun-2026, postdates both collected concalls; NOT independently verified in any collected primary source)"}
+  - {catalyst: "NABARD CBaaS cooperative-bank rollout continuing (Haryana ~20 banks, Telangana banks joining)", window: "ongoing, next 12 months", evidence_type: "claim", anchor: "Jun 2026 concall, Parag Dalal remarks"}
+  - {catalyst: "Order book (Rs2,964cr as of 30-May-2026) conversion into FY27/FY28 revenue at ~18-24 month average execution cycle", window: "12-24 months", evidence_type: "claim", anchor: "Jun 2026 concall, Gunit Singh Q&A"}
+  - {catalyst: "Cygeniq AI-cybersecurity partnership converting into a first named, priced contract", window: "12 months", evidence_type: "claim", anchor: "Feb 2026 and Jun 2026 concalls; Inv. Pres. p.7"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Inorganic acquisition in AI-infra/cybersecurity/DC-lifecycle capability (target framework only, no named target)", converting_evidence: "signed LOI or definitive acquisition agreement with disclosed consideration", first_appears: "BSE Reg 30 exchange filing", window: "12-24 months"}
+  - {optionality: "APAC/Middle East/Europe geographic expansion (concept-stage, partner-reliant)", converting_evidence: "first foreign subsidiary/branch with disclosed local revenue crossing materiality, or a signed foreign contract", first_appears: "exchange filing / subsidiary financial statements / future AR geography-disaggregation note", window: "24-36 months"}
+  - {optionality: "NABARD CBaaS platform economics (38 banks live; possible declining marginal onboarding cost)", converting_evidence: "disclosed per-bank onboarding cost trend or segment margin uplift attributed to CBaaS scale", first_appears: "investor presentation segment commentary or concall", window: "12-24 months"}
+  - {optionality: "Cygeniq AI-cybersecurity partnership revenue contribution", converting_evidence: "named contract win under the Cygeniq/Trusted AI banner with disclosed value", first_appears: "exchange filing / concall", window: "12 months"}
+  - {optionality: "ESOP-based technical-talent retention (only 12,200 shares allotted FY25, ~0.1% of shares outstanding)", converting_evidence: "materially larger ESOP pool (>1% of equity) with vesting tied to technical/engineering roles", first_appears: "AR ESOP note / AGM resolution", window: "12-24 months"}
+  - {optionality: "Data Centre & Cloud segment crossing >50% of revenue mix", converting_evidence: "explicit disclosure of segment mix crossing 50% in a future quarterly presentation", first_appears: "quarterly investor presentation", window: "24-36 months"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Gate 0 GOOD (capped by mechanical cash-conversion deal-breaker, not moat quality) plus emerging MODEST MOAT DEVELOPMENT (22.7/80) driven by genuinely documented qualification lock-in and signed annuity contracts is a real but not-yet-confirmed transition setup; Q1/Q2 FY27 margin normalisation is the falsifiable near-term test that could move this toward HIGH POTENTIAL or back toward plain GOOD/AVERAGE."
+top_moat_risks: ["Q4 FY26 margin compression (11.9%->9.0% EBITDA) proving structural rather than the temporary blip management claims, undermining F2", "Net-17-day working capital story unwinding as OEM/distributor credit terms normalise, undermining G2 and worsening the already-negative FY26 FCF", "Qualification lock-in (B2) eroding as better-capitalised or newly listed peers (e.g. Unified Data) match certifications at higher margins", "Cygeniq and OEM partnerships (H2) remaining non-exclusive and revenue-unproven beyond 12-18 months", "Regulatory/policy tailwind (R1) being shared with all qualified competitors rather than DSSL-exclusive"]

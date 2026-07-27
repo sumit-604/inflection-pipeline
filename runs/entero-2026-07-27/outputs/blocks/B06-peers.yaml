@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "MedTech 10%+ EBITDA margin claim (Claim 2) has no true peer analog in this set; available thin-margin distribution comparators (RPTech 2.6-3.5%, Redington single-digit PAT cascade) run below, not above, Entero's own ~4% blended margin, leaving the claim's burden of proof entirely on Entero's own disclosure"
+  - "IPM growth acceleration to ~12% (Claim 1) has zero peer corroboration in any of the three subsequent MedPlus calls that cover the same window; the ~7-8% baseline is loosely corroborated but the step-up is not"
+  - "Five of eight formal peer_questions from B05 are structurally unverifiable against this peer set (MedTech margin, GLP-1 share, acquisition multiples, M&A-target competition, agency-margin magnitude) because no peer is a direct pharma/MedTech-distribution comparator"
+peers_provided: 12
+verified:
+  - {claim: "Entero's 'largely insulated' domestic-only trade/geopolitical claim is consistent with peer pattern (import-exposed Redington/Arena shows real Middle East/currency disruption; domestic-focused RPTech shows minimal impact)", peers: ["Redington", "RPTech"], anchor_count: 4}
+partially_verified:
+  - {claim: "Indian pharma (IPM) growth running at ~7-8% in the period prior to the claimed acceleration to ~12%", peers: ["MedPlus"]}
+  - {claim: "MedPlus organized-retail store count (~5,500, second-largest chain) as cited by Entero on its Q4 FY26 call", peers: ["MedPlus"]}
+contradicted: []
+unverifiable:
+  - {claim: "MedTech-focused distributors run 10%+ EBITDA margins vs ~4% for pure pharma distribution", peers_checked: ["RPTech", "Redington"]}
+  - {claim: "GLP-1 category growth rate and Entero's ~10% vs ~5% share figures", peers_checked: ["MedPlus", "Redington"]}
+  - {claim: "5-7x EV/EBITDA acquisition multiples consistent with peer-paid multiples for distribution targets", peers_checked: ["MedPlus", "Redington", "RPTech"]}
+  - {claim: "Limited competition for M&A targets (few buyers, many fragmented distributors, incl. resurgent PharmEasy)", peers_checked: ["MedPlus", "Redington"]}
+  - {claim: "Commercial/agency distribution margin premium of 'at least double' normal distribution margin", peers_checked: ["RPTech"]}
+  - {claim: "Broader retail-landscape sub-claims: Apollo's store count and the '>1 million total pharmacies, no chain above 500 stores besides Apollo/MedPlus' framing", peers_checked: ["MedPlus"]}
+peer_coverage_map:
+  - {peer: "MedPlus", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "GST 7% input-credit figure corroboration; unchallenged ~8% pharma-market-growth assumption; store-count baseline 4,930"}
+  - {peer: "MedPlus", quarter: "Q3 FY26 (Feb 2026 call)", usage: "substantive", contribution: "Store-count 5,112; quick-commerce competitive pressure; labour-code cost step-up disclosed"}
+  - {peer: "MedPlus", quarter: "Q4 FY26 (May 2026 call)", usage: "substantive", contribution: "Store-count 5,330, closely matching Entero's '~5,500' citation; GLP-1 cold-chain/availability detail, no separate revenue tracking"}
+  - {peer: "MedPlus", quarter: "Q1 FY27 (Jul 2026 call)", usage: "substantive", contribution: "Store-count 5,476 further corroborating Entero figure; no private-label GLP-1 launch confirmed; quick-commerce commentary"}
+  - {peer: "Redington", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "Thin-margin distribution-economics framing; small bolt-on inorganic search described"}
+  - {peer: "Redington", quarter: "Q3 FY26 (Feb 2026 call)", usage: "substantive", contribution: "Quantified local-currency interest-cost drag (6-7% of revenue); goodwill impairment on old acquisition, no multiple disclosed"}
+  - {peer: "Redington", quarter: "Q4 FY26 (May 2026 call)", usage: "substantive", contribution: "Explicit Middle East war/oil-price disruption statement, key contrast evidence for insulation claim"}
+  - {peer: "Redington", quarter: "Q1 FY27 (Jun 2026 call)", usage: "cited-only", contribution: "Repeats prior inorganic/AWS themes without a new decisive data point"}
+  - {peer: "RPTech", quarter: "Q1 FY26 (Aug 2025 call)", usage: "substantive", contribution: "EBITDA-margin baseline 2.5-3.5% for thin-margin distribution comparator"}
+  - {peer: "RPTech", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "Working-capital days 61; explicit 'tariff impact to India is minimal' statement"}
+  - {peer: "RPTech", quarter: "Q3 FY26 (Feb 2026 call)", usage: "substantive", contribution: "Working-capital days 60; debtor-days improvement; margin stability confirmation"}
+  - {peer: "RPTech", quarter: "Q4 FY26 (May 2026 call)", usage: "substantive", contribution: "Middle East shipment-routing question addressed directly (no impact); component-pricing-in-distributors'-favor commentary; project-business margin/WC/ROCE contrast"}
+industry_cross_read:
+  demand: "No cross-segment demand-boom consensus; RPTech/Redington describe an AI-PC/Windows-10-refresh supercycle specific to IT hardware, while MedPlus's own tone is measured (resisting analyst push toward double-digit SSSG); none echoes Entero's claimed IPM acceleration to ~12% for the same window"
+  pricing_inputs: "Strong specific match: MedPlus independently discloses the same ~7% GST input-credit accumulation figure Entero cites; RPTech notes rising component costs (DRAM/NAND/GPU) actually favor distributors, useful context though not a direct test of any Entero claim"
+  capex_cycle: "Broad multi-segment expansion, not a lone-expander situation — RPTech (branch network 52->55), Redington (cloud/data-center investment, bolt-on M&A search) and MedPlus (400-600 net store adds) are all expanding in parallel with Entero's own organic-plus-MedTech build-out, each for a different segment-specific driver"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Slow-moving/obsolete inventory write-downs (RPTech, May 2026 call) — a distribution-model risk Entero's own three calls never addressed despite its NWC/inventory-days emphasis"
+  - "Regulatory/labour-cost step-ups from new Labour Code implementation (MedPlus, Feb 2026 call, one-off Rs70.6mn EBITDA charge) — a cost-side regulatory risk in healthcare retail/distribution Entero's calls never mention"
+  - "Quick-commerce/online channel encroachment on physical pharmacy retail (MedPlus, Feb 2026 and Jul 2026 calls) — a downstream-channel risk to distribution/wholesale that Entero's own calls do not address"
+  - "Currency/interest-rate risk from cross-border operations (Redington's Turkey/Arena exposure) — not transferable to Entero's domestic-only model, but illustrates a risk category Entero structurally avoids rather than a gap in its disclosure"
+net_narrative_effect: "complicates"

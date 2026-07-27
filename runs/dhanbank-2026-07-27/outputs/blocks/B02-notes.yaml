@@ -10,7 +10,7 @@ input_gaps:
   - "Individual Level 3 fair-value instrument quantum and its unrealized gain not separately isolated in the AR (bundled in Pillar III Composition of Capital table, PDF p.138)"
   - "19 pages of source AR are image-only (scanned) and were not present in the text cache; pdftoppm/poppler-utils unavailable in this environment so visual page render could not be used for verification — text-cache digit-level re-parse and exact arithmetic tie-out were used instead (see Pass 2) and are considered sufficient to close the Schedule 2 vs Pillar III DF-11 item"
 flags:
-  - {type: FLAG-ASSET-QUALITY, reason: "Headline GNPA/NNPA improvement (4.05%->2.98%/1.25%->0.99%) is denominator-driven (advances +18.4%), not a genuine slippage deceleration; cumulative technical write-off pool Rs692.47 Cr (~1.9x headline GNPA) with recovery rate halved 6.4%->3.2% YoY; restructured advances +47% YoY concentrated in MSME sub-standard accounts. Downstream valuation/synthesis stages should not treat the improving GNPA ratio at face value."
+  - {type: FLAG-ASSET-QUALITY, reason: "Headline GNPA/NNPA improvement (4.05%->2.98%/1.25%->0.99%) is denominator-driven (advances +18.4%), not a genuine slippage deceleration; cumulative technical write-off pool Rs692.47 Cr (~1.9x headline GNPA) with recovery rate halved 6.4%->3.2% YoY; restructured advances +47% YoY concentrated in MSME sub-standard accounts. Downstream valuation/synthesis stages should not treat the improving GNPA ratio at face value."}
 accounting_quality: 5        # /10, banking-adapted (see dimension table)
 pass_2_empty: false
 pass_3_empty: false

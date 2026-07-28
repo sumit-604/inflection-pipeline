@@ -1,0 +1,71 @@
+stage: B08-promoter
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: partial               # ICRA rating portal returned 403 (tool error); IiAS/SES-specific proxy report and some director CVs (Sharad Kumar, Mulamreddy, Neelaveni) not located
+input_gaps: ["ICRA/CRISIL/CARE direct rating rationale (403 on icra.in)", "IiAS/SES proxy advisory report on Mar-2026 postal ballot", "detailed pre-Sical career history for Seshadri Rajappan, Sharad Kumar, Satishkumarreddy Mulamreddy, Neelaveni", "AmbitionBox-specific reviews"]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Promoter-entity share pledge 56.75% (Jun-2026), rising from 50.34% at creation (Jun-2025) -- deal-breaker (>40%) triggered"
+      - "Erstwhile ultimate parent Coffee Day Enterprises Ltd: SEBI fraud order Rs 26 cr (Jan-2023) for ~Rs 3,535 cr fund diversion by V.G. Siddhartha; extinguished by NCLT resolution plan, not attributable to current Pristine promoters"
+      - "Cross-collateralised related-party guarantee/mortgage web across Sical-SMART-PMIPL-KLPPL, rising related-party debt (Rs 47.3 cr -> Rs 184.3 cr YoY at 12.5%)"
+      - "Transition evidence present: professional non-family sponsor group, fresh FII entry (3.09%, Mar-2026), board refresh (3 new independent directors), promoter-funded rights issue for MPS compliance, parent-level (PLIL) confidential SEBI DRHP for ~Rs 1,200 cr IPO"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers:
+  - "Promoter pledge >40%: TRIGGERED -- 56.75% (Jun-2026), rising from 50.34% (Jun-2025)"
+adverse_findings:
+  - {finding: "Erstwhile ultimate parent CDEL fund diversion (~Rs 3,535 cr) and SEBI fraud order Rs 26 cr against V.G. Siddhartha/CDEL", evidence_tier: "VERIFIED", source: "SEBI order via CaseMine/Moneylife/Deccan Herald; Indian Kanoon 'Coffee Day Enterprises Ltd. vs Sebi'", date: "2023-01-24"}
+  - {finding: "Promoter-entity share pledge created at 50.34% of Sical equity, non-disposal undertaking to 51%", evidence_tier: "MEDIA REPORTED", source: "TradingView/Moneycontrol", date: "2025-06-17"}
+  - {finding: "Promoter pledge risen to ~56.01%-56.75% (Mar-Jun 2026), rising trend, multiple aggregators converge", evidence_tier: "MEDIA REPORTED", source: "Trendlyne, TipRanks", date: "2026-06"}
+  - {finding: "Equipment ROU lease (Rs 67.48 cr) from Pristine Malwa disclosed in AOC-2 as arm's length but not cross-referenced in RPT Note 28 summary table", evidence_tier: "VERIFIED", source: "AR FY24-25, Note 28 & Note 29 & AOC-2 Annexure III", date: "2025-09-02"}
+  - {finding: "Related-party debt (holding co + KLPPL + PLIL) rose ~290% YoY to Rs 184.3 cr at 12.5% p.a., increasing capital-structure dependency on group entities", evidence_tier: "VERIFIED", source: "AR FY24-25 Note 28(v), Note 12.1(j)", date: "2025-09-02"}
+  - {finding: "Cross-collateralised RPT guarantee package: Sical guarantees SMART's CSB Bank facility on SMART's own land; Sical's HDFC facility secured by fellow-subsidiary PMIPL's Bihta land + guarantee", evidence_tier: "VERIFIED / MEDIA REPORTED", source: "Operator digest cross-checked against AR related-party categories; scanx.trade/whalesbook postal ballot coverage", date: "2026-03-09 to 2026-04-10"}
+  - {finding: "CFO K. Rajavel resigned 9-Jul-2026, moved intra-group to CFO of material subsidiary SMART", evidence_tier: "VERIFIED", source: "Operator 6-month digest / exchange filing", date: "2026-07-09"}
+  - {finding: "Non-Big4/regional statutory auditor (SRSV & Associates) for a complex multi-entity RPT structure", evidence_tier: "UNVERIFIED (observational, not a confirmed adverse finding)", source: "Web search on firm footprint", date: "2026-07-28"}
+  - {finding: "Kamarajar Port terminated Sical Iron Ore Terminals concession after lender-declared default, consequence of pre-CIRP (erstwhile promoter era) distress", evidence_tier: "MEDIA REPORTED", source: "Maritime Gateway", date: "2021-06"}
+transition_evidence:
+  - "Professional non-family sponsor group (Amit Kumar/Rajnish Kumar/Sanjay Mawar, ex-CONCOR/IRTS background) replaced the fraud-tainted Chidambaram/Coffee Day family-promoter chain -- Anchor: businessindia.co, Tracxn (2026)"
+  - "Fresh FII entry at 3.09% (Mar-2026), 0.00% every prior quarter -- Anchor: operator shareholding screener (ANCHORED-EQUIVALENT)"
+  - "Board refresh: 3 new independent directors since May-2024 (Mulamreddy as Chairman, Neelaveni, Sharad Kumar with 30 yrs banking experience) vs. 1 mid-term exit for personal reasons -- Anchor: AR FY24-25, Board's Report"
+  - "Promoter forwent rights entitlement in 11:5 rights issue for MPS compliance, cutting own stake 90%->73.5%, proceeds to debt repayment/working capital -- Anchor: operator digest, cross-checked"
+  - "Structural simplification: Pristine Malwa amalgamating into ultimate holdco PLIL, approved 9-Apr-2026 -- Anchor: Whalesbook/TradingView (2026)"
+  - "Parent-level (PLIL) confidential SEBI DRHP filed Jun-2026, targeting ~Rs 1,200 cr, lead managers Axis Capital/CLSA/SBI Capital -- subjects ultimate holdco to SEBI IPO-grade governance -- Anchor: BusinessToday/Groww (2026-06-29)"
+  - "Consolidated debt/equity improved 4.1x (FY25) -> 1.6x (FY26) via rights issue + non-core asset sales -- Anchor: operator digest"
+pledge_pct_latest: 56.75
+pledge_trend: "rising -- 50.34% at pledge creation (Jun-2025) -> ~56.01% (Mar-2026) -> 56.75% (Jun-2026); denominator convention (% of promoter holding vs. % of total equity) varies slightly across sources but the rising direction and >40% breach are consistent across all sources checked"
+searches_performed:
+  - "Sical Logistics erstwhile promoter Karti Chidambaram history"
+  - "Sical Logistics insolvency NCLT Pristine Malwa Logistics Park resolution plan"
+  - "Pristine Logistics Infraprojects Limited BlackRock stake"
+  - "Pristine Malwa Logistics Park promoters owners founder"
+  - "Coffee Day Enterprises V G Siddhartha SEBI ED Sical Logistics fraud"
+  - "Sical Logistics SEBI order adjudication LODR non-compliance"
+  - "Mohammad Athar Shams Pristine Group logistics founder"
+  - "Sical Logistics CIRP 2021 default lenders operational creditor"
+  - "Amit Kumar Rajnish Kumar Pristine Logistics Infraprojects founders background Gateway"
+  - "Sical Logistics promoter pledge shares 2025 2026"
+  - "Sical Logistics SRSV Associates auditor"
+  - "Sical Logistics IiAS SES proxy advisory postal ballot related party"
+  - "Sical Logistics promoter pledge percentage trendlyne screener March 2026"
+  - "\"Sical Logistics\" amalgamation promoter group entity Pristine"
+  - "Sical Logistics Glassdoor AmbitionBox employee reviews"
+  - "Sharad Kumar independent director Sical Logistics background career"
+  - "Sical Logistics promoter pledge 51% encumbrance moneycontrol"
+  - "Kamarajar Port scraps Sical Terminals contract dispute"
+  - "K Rajavel CFO Sical Logistics career background prior company"
+  - "Sical Logistics short seller activist investor concern 2026"
+  - "\"Sical Logistics\" SEBI adjudication order penalty insider trading"
+  - "Global Infrastructure Partners investment Pristine Logistics Infraprojects 2019 2020 stake acquisition"
+  - "Sical Logistics credit rating CRISIL ICRA CARE downgrade"
+  - "Pristine Group Amit Kumar Rajnish Kumar SFIO ED PMLA litigation controversy"
+  - "Pristine Logistics Infraprojects IPO SEBI confidential filing 2026 valuation"
+  - "Seshadri Rajappan Sical Logistics whole-time director background career"
+searches_skipped:
+  - "Direct ICRA.in rating rationale page (403 Forbidden via WebFetch, proxy/tool error)"
+  - "SEBI enforcement portal direct advanced search for Sical Logistics-specific orders (web search only found indirect index pages, not exhaustive of sebi.gov.in's own enforcement database)"
+  - "IiAS/SES/InGovern proxy advisory report specific to the Mar-2026 postal ballot (not indexed/found; micro-cap postal ballots often lack public proxy-advisory coverage)"
+  - "AmbitionBox-specific employee review data (only Glassdoor surfaced)"
+verdict_basis: "Rising promoter-entity share pledge (56.75%, past the 40% deal-breaker) and a real (though extinguished) SEBI fraud order in the erstwhile ownership chain outweigh, on net, a genuinely credible set of transition signals (professional non-family sponsor, fresh FII entry, board refresh, compliance-driven promoter dilution, parent-level SEBI IPO filing) -- hence CONCERN with transition evidence, not a static CONCERN."

@@ -1,6 +1,6 @@
-run: dssl-q1fy27
+run: digitide-q1fy27
 company: Digitide Solutions Limited
-ticker: DSSL
+ticker: DIGITIDE  # NOTE: 'DSSL' used in-run was an erroneous slug; DSSL is a different company (Dynacons Systems & Solutions)
 exchange_codes: {BSE: 544413, NSE: DIGITIDE}
 quarter: Q1 FY27
 period_ended: 2026-06-30
@@ -16,6 +16,6 @@ extraction_toolchain: "PyMuPDF (fitz) — poppler/tesseract uninstallable this e
 gates: {A1: "3x pass (100% coverage)", A2: "3x pass (count-reconciled)", A3: "3x pass (no blank checks)", A5: "COMPLETE after 1 loop"}
 protocol_verdict: PROCEED WITH FLAGS
 verdict_ceiling: PROCEED WITH CAVEATS (INDETERMINATE cash conversion, CFO=ND)
-standing_decision_status: "PROCEED WITH CAVEATS (phase-1 evidence gate, confidence 84) — unchanged; no position"
-tripwire: "FLAG-CASH margin falsifier LEG 1 printed (op EBITDA margin 9.9% < 11%); leg 2 decisive at Q2 FY27; NOT fired"
+standing_decision_status: "NONE — Digitide has no phase-1/phase-2 pipeline run; the earlier PROCEED WITH CAVEATS / tripwire / DEEP WATCH belonged to a DIFFERENT company (Dynacons/DSSL) and was imported in error (see CORRECTION.md)"
+tripwire: "VOID for Digitide — the FLAG-CASH margin falsifier belonged to Dynacons/DSSL (imported in error); Digitide has no pre-committed tripwire. 9.9% is simply a weak margin."
 notion_save: "skipped — no DSSL Notion page exists yet (flag for finalize)"

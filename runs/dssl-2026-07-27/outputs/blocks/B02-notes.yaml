@@ -1,0 +1,44 @@
+stage: B02-notes
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables ageing tail deteriorating (1-2yr bucket +238.6% YoY, >6mo book +84% YoY) while ECL allowance frozen at Rs0.14cr for two straight years; turnover-ratio headline masks the closing-book tail-risk buildup (Note S-9.1/9.2, p.118)"}
+accounting_quality: 4        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "New ~Rs95.50cr lease liability paired with ~Rs82.85cr lease receivable (hardware-finance intermediary structure), no counterparty/discount-rate/credit disclosure", note_ref: "Note S-32.11/C-31.9, p.140/195-196", rating: "RED", why: "Explains ~32% of FY25 standalone balance-sheet growth and the DSCR collapse; margin, credit risk and sustainability unassessable from the Notes"}
+  - {rank: 2, finding: "Auditor's own CARO clause (xxi) and Consolidated Auditor's Report call Cybercons Infosec a subsidiary in one place, an associate two pages later, contradicting Board's Report/AOC-1", note_ref: "CARO Annexure B cl.xxi p.94; Consol. Auditor's Report p.147-148", rating: "RED", why: "Classification of a related entity with real transactions this year is unresolved within the auditor's own paperwork"}
+  - {rank: 3, finding: "Schedule III net-asset roll-forward does not reconcile for either group entity: Rs46.55 lakh unexplained shortfall (Singapore), Rs46.70 lakh unexplained surplus (Cybercons), near-identical and opposite sign", note_ref: "Note C-31.10, p.196-197", rating: "RED", why: "Suggests a value mis-attributed/swapped between entities in the statutory table itself"}
+  - {rank: 4, finding: "AOC-1 vs Schedule III show opposite-sign profit for both Singapore and Cybercons; auditor's combined 'two subsidiaries' profit figure reconciles exactly to Schedule III, confirming AOC-1 as the unreconciled outlier", note_ref: "Note C-31.10 p.196-197 vs AOC-1 Annexure I p.46-47; Auditor's Report 'Other Matters' p.147-148", rating: "RED", why: "A statutory filing materially misstates both group entities' profitability versus the audited consolidation"}
+  - {rank: 5, finding: "Trade receivables 1-2yr bucket +238.6% YoY, >6mo book +84% YoY, ECL frozen at Rs0.14cr for two years, under a stable average-based turnover ratio", note_ref: "Note S-9.1/9.2, p.118", rating: "RED", why: "Clearest under-provisioning signal; closing-book tail risk invisible to standard ratio scan"}
+  - {rank: 6, finding: "Consolidation mechanics (NCI, capital reserve on consolidation, line-by-line additions to CWIP/payables/employee costs/audit fees) confirm full consolidation of a nominal 50% associate", note_ref: "Note C-1.2(iii)/(iv) p.157-158; Note C-14/15 p.175-178", rating: "RED", why: "Independent P&L/balance-sheet evidence corroborating the classification inconsistency"}
+  - {rank: 7, finding: "New, first-ever Rs38.20cr deferred contract cost capitalised, no amortisation period or contract identity disclosed", note_ref: "Note S-7, p.117; Note C-6, p.173", rating: "YELLOW", why: "4.9% of standalone total assets; cannot assess genuine future benefit vs expense deferral"}
+  - {rank: 8, finding: "Interest-rate-risk narrative claims no floating-rate borrowings, directly contradicted by the company's own table showing 95.7% floating-rate debt", note_ref: "Note S-32.9(c)/C-31.8(c), p.139/194", rating: "YELLOW", why: "Unedited boilerplate undermines reliability of qualitative risk disclosure"}
+  - {rank: 9, finding: "Sole Key Audit Matter on both statement sets is revenue-recognition cut-off risk from large period-end transaction volume", note_ref: "Auditor's Report KAM, standalone p.90-91, consolidated p.144-145", rating: "YELLOW", why: "Independent auditor corroboration of the receivables-ageing structural risk"}
+  - {rank: 10, finding: "Bank guarantees up 71.8% YoY to Rs146.46cr, 63.4% of standalone net worth, no counterparty/contract breakdown", note_ref: "Note S-32.7(b), p.134", rating: "YELLOW", why: "Growth outpaces revenue growth 3x; off-balance-sheet exposure not traceable to specific contracts"}
+  - {rank: 11, finding: "DSCR fell 64.8% standalone (3.05x from 8.68x) / 52.1% consolidated, attributed to new lease-interest unwinding", note_ref: "Note S-32.12, p.140-141; Note C-31.11, p.197", rating: "YELLOW", why: "Debt-servicing cushion genuinely narrowed even if explanation is internally consistent"}
+  - {rank: 12, finding: "Derivatives/hedging narrative claims active hedging via Group Treasury Team, contradicted by explicit statement of zero forward contracts outstanding", note_ref: "Note S-32.9/C-31.8 intro p.136-137/192-193; same note p.139/194", rating: "YELLOW", why: "Second instance of templated risk narrative not reconciled to actual disclosed position"}
+  - {rank: 13, finding: "MSME trade payables up 31x YoY (Rs0.063cr to Rs1.97cr), still small and compliant", note_ref: "Note S-23.3, p.127", rating: "YELLOW", why: "Growth rate worth monitoring given sector MSME vendor shift"}
+  - {rank: 14, finding: "No capital-commitment note despite new Rs21.95-24.07cr CWIP; loss-making, negative-net-worth Singapore subsidiary carried at cost with no impairment", note_ref: "Note S-2(d)/C-2(d) p.114/170; AOC-1 Annexure I p.46", rating: "YELLOW", why: "Disclosure gap during a new capex programme; uncharged impairment on accumulated deficit exceeding paid-up capital"}
+  - {rank: 15, finding: "Consolidated EPS note cites standalone PAT as 'Profit after Tax' and appears computed pre-NCI-deduction rather than on profit attributable to parent shareholders", note_ref: "Note C-31.1, p.185; Consolidated P&L, p.152-153", rating: "GREEN/YELLOW", why: "Immaterial (~Rs0.07/share) but a genuine Ind AS 33 drafting inconsistency, a third instance of the consolidated-reporting package not reconciling cleanly"}
+red_flags:
+  - "Auditor's own CARO Annexure and Consolidated Auditor's Report inconsistently call Cybercons Infosec both a subsidiary and an associate, contradicting the Board's Report and AOC-1 (CARO cl.xxi p.94; Consol. Auditor's Report p.147-148)"
+  - "Schedule III net-asset roll-forward fails to reconcile for both group entities, two near-identical opposite-sign gaps of ~Rs46.5-46.7 lakh (Note C-31.10, p.196-197)"
+  - "AOC-1 vs Schedule III opposite-sign profit for both entities; auditor's combined profit figure proves Schedule III is the audited basis and AOC-1 the outlier (Note C-31.10 p.196-197 vs AOC-1 p.46-47)"
+  - "ECL allowance frozen at Rs0.14cr for two years despite 1-2yr receivables bucket +238.6% YoY (Note S-9.1/9.2, p.118)"
+  - "Undisclosed ~Rs95.5cr lease-financing intermediary structure with no counterparty, discount rate, or credit disclosure (Note S-32.11/C-31.9, p.140/195-196)"
+  - "Full-consolidation mechanics (NCI, capital reserve, line-by-line additions) applied to a nominal 50% associate (Note C-1.2(iii)/(iv) p.157-158)"
+questions_for_mgmt:
+  - "Who is the counterparty/financier for the ~Rs95.50cr lease liability, what discount rate was used, and what is the credit/maturity profile of the ~Rs82.85cr Lease Receivable book?"
+  - "Please clarify Cybercons Infosec's correct consolidation status (Ind AS 28 associate per Board's Report/AOC-1, or Ind AS 110 subsidiary per CARO cl.xxi and the Consolidated Auditor's Report), and which treatment FY26 will use"
+  - "What is the amortisation period and business rationale for the new Rs38.20cr deferred contract cost, and which contract(s) does it relate to?"
+  - "Given the 1-2 year receivables bucket grew 238.6% while ECL has been unchanged at Rs0.14cr for two years, what is the basis for concluding no incremental provision is required?"
+  - "Please reconcile the Rs46.55 lakh (Singapore) and Rs46.70 lakh (Cybercons) offsetting gaps in the Schedule III net-asset roll-forward between FY24 and FY25"
+  - "Please correct the interest-rate-risk and derivatives narrative in Note 32.9/31.8, which contradicts the company's own tables showing 95.7% floating-rate debt and zero forward contracts"
+receivables_trend: "deteriorating - closing-balance DSO improved (143.0 to 125.8 days) on a base-effect of revenue growth, but the ageing tail worsened sharply beneath it: 1-2yr bucket Rs3.24cr to Rs10.96cr (+238.6%), >6-month book Rs16.63cr to Rs30.63cr (+84%), against total receivables growth of only +8.7%, with ECL provision frozen at Rs0.14cr both years (Note S-9.1/9.2, p.118)"
+restatements_found: []
+going_concern_language: "NONE"

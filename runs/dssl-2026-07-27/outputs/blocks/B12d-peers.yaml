@@ -1,0 +1,23 @@
+stage: B12d
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 9
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "3i Infotech Q1 FY24 (Jul-2023 call)", missed_item: "Coverage map labels this UNUSED/unrelated to any claim, but B06 Part 1 Claim 4 directly cites this call's Wipro-displacement data point (verified accurate in transcript, lines 170-181) — map misclassification, not a true miss of content", anchor: "peer-concalls__3IINFOLTD-Concall_Jul_2023_Transcript.txt lines 170-181"}
+  - {peer: "3i Infotech Q3 FY25 (Jan-2025 call)", missed_item: "Coverage map labels this UNUSED/no WC overlap, but B06 Part 1 Claim 2 directly cites this call's 98-day DSO figure (verified accurate in transcript, lines 72-73) — map misclassification, not a true miss of content", anchor: "peer-concalls__3IINFOLTD-Concall_Jan_2025_Transcript.txt lines 72-73"}
+  - {peer: "3i Infotech Q2 FY24 (Nov-2023 call)", missed_item: "Legacy-business margin-dilution-from-new-project-costs data point loosely analogous to Part 5's 'scaling pain' hypothesis, not used; low materiality", anchor: "peer-concalls__3IINFOLTD-Concall_Nov_2023_Transcript.txt lines 236-258"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 2E / YAML risks_peers_raise item 4", claimed: "Aurionpro converts an estimated 60-90% of EBITDA to cash by year-end", source_truth: "Transcript states 75-80% or more, '90% plus last year' (Aurionpro Q2 FY26 call, 04-Nov-2025, lines 267-268)", note: "Direction and thesis point correct; specific 60% lower bound not supported by the cited transcript"}
+  - {severity: "MAJOR", location: "B06 Part 3 / YAML peer_coverage_map, 3i Infotech Jul-2023 and Jan-2025 rows", claimed: "Both calls marked UNUSED, 'unrelated to any of the five claims' / 'no overlap with WC topics'", source_truth: "Both calls are directly and accurately cited in B06's own Part 1 (Claim 4 and Claim 2 respectively)", note: "Internal inconsistency between B06 Part 1 narrative and its own Part 3/YAML coverage accounting; peer_utilisation is understated by at least 2 transcripts as a result"}
+  - {severity: "MINOR", location: "B06 Part 3 / YAML peer_coverage_map, 3i Infotech Nov-2023 row", claimed: "UNUSED, unrelated to any claim", source_truth: "Contains a loosely analogous scaling-pain/margin-dilution data point not used", note: "Low-materiality industry-context miss; does not change any claim verdict"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+peer_utilisation: "12/16 (75%) as self-reported by B06; corrected to 14/16 (75%->87.5%) after reclassifying the two misclassified 3i Infotech calls from UNUSED to CITED-ONLY per Finding 2; 4/4 distinct peer companies contributed at least one real, verified citation"
+acceptance_rate: 88   # peers correctly handled (14 of 16, correcting for the 2 miscoded UNUSED entries) ÷ 16, %

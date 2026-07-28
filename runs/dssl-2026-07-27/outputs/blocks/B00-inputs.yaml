@@ -1,0 +1,54 @@
+stage: B00-inputs
+company: DSSL
+company_name: Dynacons Systems & Solutions Ltd
+run_date: 2026-07-27
+run_type: full
+model: orchestrator
+status: complete
+cmp: 1232.0
+market_cap_cr: 1568.0
+sector_cap_row_manifest: "Platform / SaaS / IT services"
+concall_mode: NORMAL   # manifest concalls_available:false OVERRIDDEN — 2 genuine transcripts present
+
+inventory:
+  prospectus:       {count: 0, note: "empty; company listed since 1995 (long-listed) so NOT a gap, prospectus not expected"}
+  annual-report:    {count: 2, files: ["4202212d-...pdf = FY2024-25 AR (30th AGM, filed 06-Sep-2025) PRIMARY", "Annual_Report.pdf = FY2019-20 AR (filed 07-Sep-2020) backward-context only"]}
+  results:          {count: 2, files: ["962a1f02-...pdf = FY26 AUDITED full-year + Q4FY26 (Board 30-May-2026)", "dea341bf-...pdf = Q3/9M FY26 UNAUDITED (Board 14-Feb-2026)"]}
+  rating:           {count: 1, files: ["ratings.pdf = Acuité PR 31-Dec-2025, ACUITE A-/Stable (LT) + A2+ (ST), Rs.377 Cr; IMAGE-ONLY, transcribed to _textcache"]}
+  concalls:         {count: 2, files: ["Concall_Feb_2026 = Q3FY26 call", "Concall_Jun_2026 = Q4/FY26 call"], chronology: "Feb_2026 (Q3FY26) FIRST, then Jun_2026 (Q4FY26)"}
+  peer-concalls:    {count: 16, peers: ["3IINFOLTD x4", "ADSL(Allied Digital) x4", "AURIONPRO x4", "TVSELECT(TVS Electronics) x4"], note: "16 provided vs 0-12 contract cap; all 4 peers legitimate IT-services comparables, all used"}
+  announcements:    {count: 0, note: "EMPTY — gap"}
+  shareholding:     {count: 0, note: "EMPTY — gap"}
+  research:         {count: 0, note: "EMPTY — no effect (never anchored)"}
+  screening:        {count: 30, note: "DSSL: Data_Sheet.csv populated FY17-FY26 (10yr) + Quarters populated; P&L/BS/CF/Customization thinner. 4 peers each have 6 CSVs."}
+  presentation:     {count: 1, files: ["Investor_Presentation_1.pdf (44pp, image-heavy ~1052 ch/pg, Read-tool page-render fallback for charts)"]}
+  other:            {count: 0}
+
+input_gaps:
+  - "announcements/ was EMPTY: operator supplied a 6-month digest mid-run (inputs/announcements/OPERATOR_6month_digest.md, NON-ANCHORED lead; underlying BSE Reg 30 PDFs still not collected). Order-win rupee values directional-to-corroborate; documented-ACTION cross-check now has a lead layer + concall/results corroboration. Residual gap: primary Reg 30 filings uncollected."
+  - "shareholding/ was EMPTY: operator supplied a screener SHP screenshot mid-run (inputs/shareholding/OPERATOR_screener_shp.md, ANCHORED-EQUIVALENT screener class, Sep2023-Jun2026). FILLS Block E promoter-holding + FII/DII qualifier (promoter flat ~60.9%, FII+DII ~1.36% Jun2026). Residual gap: promoter PLEDGE % not in the screenshot -> NOT FOUND unless FY25 AR discloses."
+  - "prospectus/ empty but NOT a gap: DSSL long-listed (incorporated 1995), prospectus not expected"
+
+operator_midrun_fill:
+  received: 2026-07-27
+  items:
+    - "screener SHP screenshot -> inputs/shareholding/OPERATOR_screener_shp.md (anchored-equiv). Routed to stage 1 (Block E, via SendMessage to running agent), stage 8, stage 11 UA."
+    - "6-month operational digest -> inputs/announcements/OPERATOR_6month_digest.md (non-anchored lead). Routed to stages 4/5/7/8/9 + synthesis via task messages."
+  provenance_rules: outputs/_working/OPERATOR_CONTEXT.md
+  note: "This is 'proceed with gaps, here is fill'. Stage-0 pause NOT re-asked."
+
+collector_defects:
+  - "concalls_available:false in manifest is WRONG — 2 genuine DSSL earnings transcripts (Feb2026 Q3FY26, Jun2026 Q4FY26) present. Overridden to NORMAL concall mode (recurring KARNIKA/OBSCP class defect)."
+  - "sector_cap_row 'Platform / SaaS / IT services': PLAUSIBLE this run (DSSL is IT infrastructure/systems-integration/managed-services; peers 3i Infotech/Allied Digital/Aurionpro/TVS Electronics). But DSSL is hardware+SI+FMS heavy, not SaaS — verify at phase-3 stage 11 (B04 primary valuation method decides the correct cap row). Manifest note itself says 'verify'."
+  - "annual-report/ holds TWO ARs (FY25 current + FY20 stale). Collector did not de-dup. FY25 is primary; FY20 used only for deep-backward (stages 2/3) history extension."
+
+operator_ruling:
+  stage0_empty_folder_pause: "DELIVERED this run. Operator answered: PROCEED WITH GAPS (2026-07-27). Not asked again."
+
+pdf_tooling:
+  - "pypdf cffi backend broken at session start (PanicException) — fixed with pip install --force-reinstall cffi (recurring class)."
+  - "poppler-utils absent — installed (apt-get update then install; one PPA mirror 403'd, main archive fine). Read-tool PDF page-render now works."
+  - "Pre-extracted all 24 input PDFs to page-marked .txt at inputs/_textcache/ ([[PAGE N]] markers). Every stage/verifier routed to the .txt (PDF page-render reserved as fallback for image tables)."
+  - "rating/ratings.pdf is IMAGE-ONLY (pypdf 0 chars); rendered via Read tool and transcribed faithfully into _textcache/rating__ratings.txt with a provenance header. Verifiers may re-render pages 1-7 to re-check."
+  - "presentation Investor_Presentation_1.pdf image-heavy (~1052 ch/pg); stages get Read-tool page-render fallback for chart pages."
+flags: []

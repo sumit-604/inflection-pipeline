@@ -1,0 +1,12 @@
+stage: B12a
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 14
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "14 material figures verified (verdict-card inputs, cash-quality metrics, receivables ageing, lease liabilities, FY26 revenue/EBITDA, AOC-1 subsidiary/associate profit figures) across 5 stage reports (B01, B02, B03, B04, B07). All checked against audited FY25 Annual Report, FY26 Audited Results, and official investor presentations. B05/B06 concall figures spot-checked against audited FY26 results (exact match on revenue/PAT/EBITDA). B08/B09 not individually sampled (governance/market-sizing qualitative frameworks, third-party-sourced). Total estimated material-figure universe ~200+; sampling 14 clean verifications represents ~7% of universe with material-first stratification (verdict inputs oversampled). No numerically-driven acceptance-rate threshold breached."

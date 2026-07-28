@@ -1,0 +1,59 @@
+stage: B09-tam
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Top-3 competitor concentration/market-share in the India BFSI/PSU-facing IT-infra-integration niche: NOT FOUND"
+  - "Unorganised-sector % specific to this niche: NOT FOUND (standard 30-60% instruction range applied as a stated assumption in Section 4C, not used for TAM sizing)"
+  - "Order-to-cash timeline / signed-vs-LOI split of the Rs2,964cr order book: NOT FOUND (also flagged in B04 mgmt_questions)"
+  - "SAM-expansion lever dollar sizing (APAC/ME geographic expansion, inorganic M&A targets): NOT FOUND, described qualitatively only"
+  - "Current market P/E for DSSL: NOT FOUND among stage-9 injected inputs (reserved for stage 11 / Section 1B v3.3 exit-PE authority)"
+  - "Entries and exits in the competitive set: NOT FOUND"
+flags:
+  - "Mordor Intelligence's India DC installed-base figures (4.5->15.2 thousand MW, 2025-2031, cited in Inv. Pres. p.13) diverge sharply from independent Vestian (~1.4-1.6GW operational + ~0.7GW under construction, 2025) and Arizton ($21.03bn-by-2031, different metric) capacity estimates; used for directional CAGR only, not as a TAM anchor"
+  - "Management's domestic system-integration-market claim (~US$15bn, AR p.26-27) computes to a 0.31x ratio vs this report's conservative TAM (unusually conservative by the standard read); this is a scope mismatch (services-fee-only market vs DSSL's ~86% hardware-pass-through revenue model per B04), not evidence of management understating opportunity in bad faith, and is independently corroborated almost exactly by IMARC Group's US$14.8bn (2024) India system-integration estimate"
+  - "SOM yr5 (Rs5,420cr, 30.6% implied CAGR) exceeds the order-book/pipeline evidence's demonstrated visibility window (~2-3 years); yr3 SOM (Rs3,414cr, 33.9% CAGR) is materially better anchored to the Rs2,964cr order book and Rs5,100cr bidding pipeline than yr5 is"
+  - "B07 capex-embedded-growth figure (0%) was not usable for the Section 3C capacity cross-check per B07's own note (methodological mismatch for this asset-light-legacy business); the order-book-implied cross-check substituted here cannot itself name a precise capex-vs-SOM gap in Rs Cr because the capex line is unavailable, not because a gap was demonstrated"
+market_definition: "India BFSI/PSU/large-enterprise IT infrastructure integration and managed services (DC & Cloud, Digital Workplace, Managed Services incl. CBaaS/DaaS, Networking & Security), excluding consumer/SMB hardware, hyperscaler self-build colocation capex, and telecom-carrier networking"
+tam_cr: {conservative: 469100, realistic: 519600}
+sam_cr: 70548
+sam_pct_of_tam: 15.0
+som_3yr_cr: 3414
+som_5yr_cr: 5420
+som_implied_revenue_cagr: {yr3: 33.9, yr5: 30.6}
+current_sam_share_pct: 2.02
+revenue_headroom_x: 49.5
+tam_growth_pct: 11.2
+runway_class: "STRONG"
+mgmt_claim_cr: 144000
+mgmt_claim_ratio: 0.31
+mgmt_claim_read: "conservative"
+capacity_check: "sufficient for SOM yr3 (order book 2.08x FY26 revenue + bidding pipeline 3.6x order book at ~30% win-rate); SOM yr5 lacks equivalent order-to-cash visibility (NOT FOUND) so it is a genuine extrapolation, not independently verified"
+methods_used:
+  - "Method 1: top-down segment sum (India DC, IT-hardware/devices, managed-services, networking+cybersecurity spend) - primary, Medium confidence"
+  - "Method 2: bottom-up unit economics (addressable large-account count x per-account spend) - Low confidence, sanity check only"
+  - "Method 3: peer revenue aggregation (Allied Digital Services, Trigyn Technologies + DSSL) - Low confidence, severe undercount, context only"
+  - "Method 4: import substitution - not applicable to DSSL's SI/services model"
+  - "Method 5: global benchmark (DC-capacity-share vs population share; per-capita IT spend vs US) - Low confidence, directional only"
+stale_data_flags:
+  - {datapoint: "Global IT system-integration market 'over USD 430bn'", source: "DSSL AR FY25 Industry Overview, p.26-27", year: "FY25 AR, published ~Sept-2025, undated within text"}
+  - {datapoint: "India DC installed base 4.5->15.2 thousand MW", source: "Mordor Intelligence, cited Inv. Pres. Jun-2026 p.13", year: "2025 base, presentation dated Jun-2026 - not stale but internally inconsistent with independent Vestian/Arizton figures, see flags"}
+searches_performed:
+  - "India IT spending Gartner 2026 forecast US$176 billion"
+  - "India data center market size 2025 2030 installed capacity MW CRISIL ICRA"
+  - "India systems integration market size billion 2025 IDC"
+  - "global data center market size Precedence Research 2025 2035"
+  - "India managed IT services market size 2025 billion forecast"
+  - "India cybersecurity market size 2025 2030 billion"
+  - "India BFSI IT spending market size 2025 billion"
+  - "Dynacons Systems Solutions competitors Netweb Technologies Smartlink Locuz systems integrator BFSI revenue"
+  - "\"India's data centre market size to double to $22 billion by 2030\" report name"
+  - "India IT hardware market size 2025 billion IMARC devices PC laptop enterprise"
+  - "India IT infrastructure managed services systems integration market unorganized players small regional VARs share"
+  - "Allied Digital Services Smartlink Network Trigyn Technologies revenue FY25 crore IT systems integrator BFSI"
+  - "India IT infrastructure services market fragmentation top players market share organised unorganised"
+  - "India networking equipment market size 2025 billion"
+  - "USD INR exchange rate July 2026"
+  - "WebFetch attempts on Gartner and IBEF press-release pages (both returned HTTP 403; substituted via search-snippet triangulation)"
+searches_skipped: []

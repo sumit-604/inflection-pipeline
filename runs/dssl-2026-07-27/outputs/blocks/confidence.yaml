@@ -1,10 +1,12 @@
 confidence_delta:
-  phase: 1
-  numerical_acceptance: 100      # B12a: 14 material figures, 0 CRITICAL/0 MAJOR
-  redflag_coverage: 84          # B12b: 16 independent flags, 12 caught + 3 partial; 1 MAJOR miss (Rs158cr fixed-asset/capital-intensity understatement)
-  framework_adherence: 99        # B12c GATE0+EM ONLY (67/68 in-scope rules; valuation-adherence PENDING phase 3)
-  peer_utilisation: 87.5         # B12d: 14/16 transcripts substantive/cited (corrected up from B06's self-reported 12/16); 4/4 distinct peers contributed
-  overall: 84               # min of the four -> REDFLAG-BOUND
-  band: "75-89 (normal; note specifics). No one-level downgrade (that applies only to 60-74). REWORK NOT triggered: Verifier A 0 CRITICAL and 100%, min acceptance 84 >= 60."
-  binding_component: "redflag_coverage 84% — the one MAJOR uncaught item is the understated capital intensity of the As-a-Service pivot (analyst-read fixed assets ~Rs158cr vs management PPE Rs8->68cr, ~Rs90cr gap management declined to quantify); it deepens FLAG-CASH rather than creating a new risk."
-  framework_valuation_component: "PENDING phase 3 (verifier C valuation-adherence deferred; B10/B11 not yet built)."
+  phase: 3-final
+  numerical_acceptance: 100       # B12a: 0 CRITICAL/0 MAJOR
+  redflag_coverage: 84           # B12b: 1 MAJOR miss (capital-intensity understatement); BINDING component
+  framework_adherence: 95         # combined: phase-1 gate0+EM 99% + phase-3 valuation 91% (1 MAJOR: UA-in-RRM track, decision-neutral on verdict but material to entry zone)
+  framework_adherence_gate0_em: 99
+  framework_adherence_valuation: 91
+  peer_utilisation: 87.5          # B12d
+  overall: 84                # min of four -> REDFLAG-BOUND, unchanged from phase 1
+  band: "75-89 normal; no downgrade; REWORK not triggered (0 Verifier-A CRITICAL, all acceptance >= 60)"
+  binding_component: "redflag_coverage 84%"
+  phase3_major_flag: "Verifier C (valuation) MAJOR: UA x1.25 applied inside the RRM governing track (Master RRM has no UA term; Amendment 3 scopes UA to the additive Row F). Correcting it: RRM ~19.5x (not 24x), entry ~Rs851-1064 (not 1048-1310), RRM-track Hurdle CONDITIONAL 1.69 (not PASS 2.08). Verdict WATCHLIST survives; ACTIONABILITY changes (CMP 1232 sits ABOVE the conservative entry zone). Conservative reading governs the entry zone; both surfaced in synthesis."

@@ -1,0 +1,31 @@
+stage: B12c-valuation
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+scope: "phase-3 valuation-adherence half + Role 2 (B14) decision/sizing; Gate0 + EmergingMoat done in phase 1 (acceptance 99%, not re-run)"
+valuation:
+  rules_checked: 34
+  fails:
+    - {rule: "UA.5 — UA x1.25 applied inside RRM governing track (Master RRM = Fundamental Base x RRM, no UA term)", severity: MAJOR}
+    - {rule: "P1.6 — yaml roce_recovery_route 'pillar1-midpoint' mislabels a route-NONE, current-sole-anchor derivation", severity: MINOR}
+    - {rule: "D.3 — ENTRY CONJUNCTION invoked on 'unconfirmed transition' not a fired thesis-broken trigger", severity: MINOR}
+findings:
+  - {severity: MAJOR, location: "B11 Section 1B RRM track / verdict card; B10 destination-PE table", rule: "Master v3.3 Role 1 RRM derivation (no UA factor); Amendment 3 codifies UA for additive Row F only", issue: "UA x1.25 inserted into RRM (governing) track lifts it from literal ~19.5x to 24.0x — less-conservative direction for the conservative track; changes entry Rs1,310 vs ~Rs1,064, MoS Rs1,048 vs ~Rs851, and flips RRM base Hurdle PASS 2.08 -> CONDITIONAL 1.69", recomputed: "RRM ~19.5x if UA excluded; additive 30.0x unchanged (cap binds)", decision_impact: "none — WATCHLIST survives either reading"}
+  - {severity: MINOR, location: "B11 yaml pillar_detail.roce_recovery_route", rule: "worksheet/label fidelity", issue: "label 'pillar1-midpoint' but no midpoint computed (FY[Y+2] NOT FOUND; route NONE; current 30.17% used as sole anchor)", recomputed: "n/a", decision_impact: none}
+  - {severity: MINOR, location: "B14 Section 7 verdict box / Verdict reasoning point 3", rule: "Master v3.3 Role 2 ENTRY CONJUNCTION (anti-value-trap)", issue: "conjunction invoked citing 'transition unconfirmed / open trigger' although no thesis-broken trigger has fired; WATCHLIST is correct but on DEEP WATCH / inflection-filter grounds, not a withdrawn zone", recomputed: "n/a", decision_impact: none}
+concurrences:
+  pillar1_base: "22.6x concur (0.5x30.17+7.5; cap24 not binding); normalization route NONE correct; single-credit respected (Strategic barred)"
+  pillar2: "1.00x neutral, no growth offset (structural), SOTP carve-out not double-counted — concur"
+  pillar3: "+3x concur (3a +3 order book 2.08x + SOM 33.9% + grade B; 3b/3c +0); under +6x cap"
+  ua_ordering_additive: "min(25.6x1.25=32.0, cap 30.0)=30.0x concur; cap absolute; no quality uplift (durability Medium) correct"
+  rrm_arithmetic: "0.76 at r=15.5% concur; percentage-point reading (Amdt 4.4) correct"
+  hurdle: "formula + trailing/trailing basis consistency (SFL) correct; PASS on reported tracks (RRM 2.08 subject to UA.5)"
+  tier_entry: "Tier A (FII+DII 1.36%<3%) correct; entry = FV/1.953; MoS 20% below entry — concur"
+  role2: "WATCHLIST + Small correct; promoter CAUTION cap binds; BUY NOW gate correctly failed; thesis-broken conditions present"
+recomputed_destination_pe: "Additive 30.0x CONCUR (cap-bound). RRM governing: reported 24.0x; literal Master formula (no UA in RRM) ~19.5x"
+recomputed_decision: ""
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 91

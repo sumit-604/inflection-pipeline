@@ -1,0 +1,215 @@
+stage: B10-valinputs
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "Rating PDF unreadable (image-only); working capital commentary not extractable"
+  - "Segment-level revenue split (Pharma vs MedTech vs Agency) not disclosed; cannot independently verify MedTech margin claim"
+  - "Management's ~14.6% ex-goodwill ROCE FY26 not located in provided results filing"
+  - "H1/H2 FY25 OCF split not disclosed; MD&A turnaround claim unreconciled with full-year negative OCF"
+  - "HealthEdge/Aayu platform metrics (MAU, GMV, revenue) not disclosed"
+
+flags:
+  - "FLAG-CASH: INDETERMINATE, leaning growth-induced; disposition capped PROCEED WITH CAVEATS; FY26 OCF +96.2 Cr first positive year after 6-year negative streak; 7-year cumulative CFO/PAT -1.05x; requires FY27 durability evidence and H1/H2 FY25 reconciliation"
+  - "FLAG-PROMOTER: CONCERN; auditor-confirmed fraud (CARO xi) at 3 subsidiaries + 11 group-wide audit-trail gaps + zero pledge outweigh founder credibility + institutional backing; transition candidate with substantial evidence"
+  - "FLAG-GATE0: AVERAGE classification (core 53/100); structurally low median ROCE 3.85% (FY26 9.41% still <10% threshold) and cumulative CFO/PAT -1.05 both cap at AVERAGE; FY26 inflection genuine but requires durability"
+
+table:
+  company: "Entero Healthcare Solutions Ltd"
+  ticker: "ENTERO"
+  sector: "Pharma / CDMO (manifest); Cybersecurity / VAD 25x (FTTCP corrected, non-binding)"
+  business_model_type: "Hybrid (pharma distribution + commercial/agency + MedTech)"
+  cmp_rs: 1273.0
+  market_cap_cr: 5537.0
+  market_cap_mn: 55375.5
+  shares_outstanding_cr: 4.35
+  shares_note: "43,493,767 equity shares = 4.35 Cr (CRORE, not million; per FTTCP correction)"
+  
+  latest_financials_fy26:
+    revenue_cr: 6591.21
+    ebitda_core_cr: 265.87
+    ebitda_margin_pct: 4.03
+    pat_owners_cr: 115.04
+    pat_owners_eps_diluted: 26.45
+    eps_trailing_pe: 48.1
+    cfo_cr: 96.2
+    fcf_cr: 28.66
+    book_value_per_share: 388.43
+    net_debt_cr: 419.81
+    roe_pct: 7.18
+    roce_statutory_pct: 9.41
+    
+  latest_financials_fy25:
+    revenue_cr: 5095.78
+    ebitda_estimated_cr: 174.75
+    pat_owners_cr: 94.82
+    cfo_cr: -76.87
+    fcf_cr: -88.07
+    roe_pct: 6.07
+    
+  growth_and_margins:
+    revenue_cagr_3yr_pct: 29.6
+    revenue_cagr_4yr_pct: 26.7
+    pat_cagr_2yr_pct: 71.5
+    pat_margin_fy26_pct: 22.1
+    gross_margin_fy26_pct: 10.3
+    
+  guidance_fy27:
+    revenue_growth_ex_ma_pct: 23
+    ebitda_margin_target_pct: 5.0
+    ocf_ebitda_conversion_target_pct: 50
+    tax_rate_pct: 22
+    nci_pct_of_premin_pat: 25
+    nci_range_high_pct: 27
+    
+  working_capital_and_days:
+    inventory_days: 132
+    receivables_days: 67
+    payables_days_implied: 95
+    nwc_days: 104
+    nwc_days_fy25: 129
+    nwc_days_target_fy27: 60
+    
+  valuation_pillars_approved:
+    earnings_basis: "ONE YEAR FORWARD owners' EPS"
+    approved_destination_pe_both_tracks: 15.0
+    roce_pillar_1_blend_pct: 11.05
+    roce_statutory_basis_pct: 9.41
+    roce_forward_verdict: "RECOVERING"
+    cash_multiplier: 0.80
+    cash_determination: "INDETERMINATE, leaning growth-induced"
+    growth_premium: 3.0
+    sector_cap: 25
+    sector_cap_note: "Cybersecurity/VAD (corrected from Pharma/CDMO 38x); non-binding to 15x exit PE"
+    ua_applied: false
+    ua_reason: "FII+DII ~19.8% >> 3% threshold"
+    
+  moats_and_catalysts:
+    confirmed_moats_count: 5
+    moat_class: "STRONG (at Gate 0)"
+    emerging_moat_score: 25
+    em_classification: "STRENGTHENING"
+    combined_assessment: "AVERAGE (watch-list transition candidate pending FY27 durability)"
+    primary_catalyst_12m: "FY27 guidance delivery (23% ex-M&A revenue growth, 5% EBITDA margin, >=50% OCF/EBITDA)"
+    triggers_top_3:
+      - "MedTech scale >15% revenue at higher margin"
+      - "FY27 guidance delivery"
+      - "M&A pause holding through FY27"
+    
+  tam_som_runway:
+    tam_cr_conservative: 250000
+    tam_cr_realistic: 290000
+    sam_cr: 175000
+    som_3yr_cr: 15800
+    som_5yr_cr: 24800
+    som_implied_revenue_cagr_3yr: 33.8
+    som_implied_revenue_cagr_5yr: 30.3
+    current_sam_share_pct: 3.8
+    runway_class: "MASSIVE"
+    capacity_constraint: "working capital/debt funding (not physical capex)"
+    
+  peer_context:
+    peers_analyzed: 12
+    unverifiable_vs_peers_count: 5
+    comments: "RPTech/Redington thin-margin distribution (2.6-3.5% EBITDA) run below Entero 4% blended; MedTech 10%+ margin claim unverifiable; IPM acceleration to 12% not corroborated in MedPlus calls same window"
+    
+  cash_generation:
+    flag_cash_status: "INDETERMINATE, leaning growth-induced"
+    cfo_7yr_cumulative_ratio: -1.05
+    cfo_fy26_first_positive_year: true
+    receivables_trend: "deteriorating (modest): +34.9% YoY vs +30% revenue growth; doubtful receivables +59.9%"
+    rating_wc_commentary: "NOT FOUND (PDF image-only)"
+    
+  promoter_and_governance:
+    verdict: "CONCERN (transition candidate, not static)"
+    pledge_pct: 0
+    fraud_findings: "CARO xi confirmed at 3 subsidiaries (Avenues Pharma, RSM Pharma, SVMED Solutions); Section 143(12) filings; zero AR narrative"
+    audit_trail_gaps: "11 group-wide accounting software instances; standalone Rule 11(g) exception (proper books)"
+    founder_credibility: "Strong (ex-CEO Alkem, CA/CFA/ISB MBA)"
+    institutional_backing: "Credible (OrbiMed Asia III ~38%, GIC, PremjiInvest)"
+    
+  ua_qualifiers:
+    listed_12m: true
+    gate0_or_em: true
+    gate0_value: 53
+    em_value: 25
+    fii_dii_lt3: false
+    fii_dii_actual_pct: 19.8
+    all_met: false
+    
+  credibility_grade: "B"
+  credibility_basis: "Delivered/beat 5 of 6 FY26 guidance items; delivered guidance tracking; offset by stonewalled debtor-ageing request, unreconciled GLP-1 share figures, repeated non-structural answer to IPM multiplier compression (1.8x→1.4x)"
+
+conflicts:
+  - field: "Net Worth (Valuation Anchor) FY25"
+    value_a: "Rs 17,241.45 Mn (screener)"
+    anchor_a: "screener-Data_Sheet (secondary aggregator)"
+    value_b: "Rs 16,503.80 Mn (audited consolidated)"
+    anchor_b: "AR consolidated BS p.166; FTTCP Verifier A correction"
+    used: "Value B"
+    rationale: "Audited AR consolidated net worth authoritative; used for EV calculation per FTTCP instruction"
+    
+  - field: "ROCE FY26"
+    value_a: "9.41% (statutory, formula-computed)"
+    anchor_a: "B01 gate0 pipeline formula"
+    value_b: "~14.6% (management ex-goodwill, referenced in run brief but not located in provided FY26 results MD&A)"
+    anchor_b: "Run brief reference; methodology not disclosed in summary results"
+    used: "Value A"
+    rationale: "Pipeline rule mandates statutory basis; management's ex-goodwill not verifiable in provided documents; used Value A with discrepancy flagged for verifier"
+    
+  - field: "Depreciation FY26"
+    value_a: "43.29 Cr (standalone screener)"
+    anchor_a: "screener-Data_Sheet"
+    value_b: "43.21 Cr (consolidated, 432.093 Mn consolidated P&L)"
+    anchor_b: "Consolidated P&L line 613"
+    used: "Value B"
+    rationale: "Consolidated used for enterprise valuation; <1% variance (subsidiary consolidation timing); no material conflict"
+
+unresolved:
+  - field: "Rating Agency & Working Capital Commentary"
+    why: "PDF is image-only; no text layer or OCR available"
+    where_it_might_be: "inputs/rating/ratings.pdf (visual inspect only)"
+    impact: "Cannot extract rating grade, outlook, or working capital rationale quote; FLAG-CASH relies on B02/B03/CF statements instead"
+    
+  - field: "Management's ~14.6% ROCE ex-Goodwill FY26"
+    why: "Referenced in run brief; not located in provided FY26 summary results filing (no MD&A section)"
+    where_it_might_be: "Full FY26 Annual Report MD&A (post-May 2026, not in this run's input set)"
+    impact: "Creates 500 bps gap vs statutory 9.41%; if verifiable, would suggest stronger capital efficiency; currently unverified per pipeline rule"
+    
+  - field: "Segment-Level Revenue & Margin (Pharma vs MedTech vs Commercial/Agency)"
+    why: "Company operates single reportable segment per Ind AS 108; no stream split in AR; investor deck (B04 source) not in cache"
+    where_it_might_be: "Investor presentation (June 2026 vintage); Q4 concall segment color"
+    impact: "Cannot independently verify MedTech 10%+ EBITDA margin vs 4% blended; moat attribution unconfirmed"
+    
+  - field: "H1 vs H2 FY25 OCF Split"
+    why: "CEO claims H2 FY25 OCF positive; full-year consolidated OCF negative (Rs 768.66 Mn); no H1/H2 split disclosed in AR or concalls"
+    where_it_might_be: "AR cash flow note detail; management investor relations clarification"
+    impact: "CRITICAL: if H2 was positive, signals structural improvement; if claim inaccurate, transparency gap; Phase 3 must resolve before accepting cash assumptions"
+    
+  - field: "HealthEdge / Aayu Chemist / Medcords Platform Metrics (MAU, GMV, Revenue)"
+    why: "Platform disclosed as emerging; no quantitative metrics disclosed in AR, results, or concalls"
+    where_it_might_be: "Future AR MD&A; investor presentation"
+    impact: "Optionality register item; not confirmed moat today; watch-list for future revenue stream contribution"
+    
+  - field: "Q3 FY26 (9-Month) Detailed P&L"
+    why: "Q3 results filing (Feb 2026) PDF pages mostly blank after regulatory header"
+    where_it_might_be: "Original Q3 results on BSE/NSE website"
+    impact: "Supplementary context only; FY26 audited complete available; <1% impact on final valuation inputs"
+
+source_anchors_summary:
+  - "manifest.yaml: CMP, market cap, shares, run date, sector row"
+  - "B01-gate0.yaml: Core/Moat score, ROCE, CFO/PAT ratio, classification"
+  - "B02-notes.yaml: Flag-Cash red flags, receivables trend, accounting quality, audit trail gaps"
+  - "B03-ardeep.yaml: Quality components, phase verdicts, standalone PAT deterioration"
+  - "B04-bizmodel.yaml: Business type, moats present, valuation methods, must-track metrics"
+  - "B05-concall.yaml: Guidance, delivery track record, triggers, credibility grade"
+  - "B06-peers.yaml: Peer verification, unverifiable claims, peer median gaps"
+  - "B07-emoat.yaml: EM score, classification, evidence mix, catalysts, optionality"
+  - "B08-promoter.yaml: Promoter verdict, pledge, adverse findings, transition evidence"
+  - "B09-tam.yaml: TAM/SAM/SOM, revenue runway, capacity constraint"
+  - "fttcp-deliberation.md: Operator-approved pillars, exit PE, earnings basis, ROCE blend, cash multiplier, sector cap, UA check, corrections"
+  - "results__5d6adb02... consolidated P&L, BS, CF (FY26 audited, FY25 audited)"
+  - "results__79a91338... Q3 FY26 filing header (FY26 audited consolidated replicated in first PDF)"
+  - "screener-Data_Sheet.csv: 7-year financials, quarterly data, equity shares, cash flow series"
+  - "rating/ratings.pdf: IMAGE-ONLY (unreadable)"

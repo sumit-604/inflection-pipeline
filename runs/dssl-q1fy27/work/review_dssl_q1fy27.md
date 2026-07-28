@@ -259,17 +259,22 @@ Reported PAT change YoY = 2.93 − 9.69 = **−6.76 Cr (−69.7%)**.
 
 ## STEP 5-SEGMENT — SEGMENT FORENSICS (task item 4; DF8, S1)
 
-| Segment | Metric | Q1 FY26 | Q4 FY26 | Q1 FY27 | Read |
+**Primary basis = FILING segment results (anchored/audited; extract_results page 6, lines 466-502). The deck "Segment EBITDA" is a SEPARATE management cut, broken out below the table — the two bases are never mixed in one cell.**
+
+| Segment | Metric | Q1 FY26 | Q4 FY26 | Q1 FY27 | Read (filing segment-result basis) |
 |---|---|---|---|---|---|
 | BPM | Segment revenue (Rs Cr) | 538.71 | 550.76 | 537.72 | Flat YoY (−0.2%), −2.4% QoQ |
-| BPM | Segment result margin | 16.97% | 16.29% | **14.13%** | −284 bps YoY |
+| BPM | Segment result margin | 16.97% | 16.29% | **14.13%** | **−284 bps YoY, −216 bps QoQ** (914.08/5387.10; 897.13/5507.62; 760.00/5377.17) |
 | T&D | Segment revenue (Rs Cr) | 197.03 | 249.19 | 237.36 | **+20.5% YoY**, −4.7% QoQ |
-| T&D | Segment result margin | 9.80% | 12.06% | **7.98%** | **−408 bps QoQ, −156 bps YoY — below BPM** |
+| T&D | Segment result margin | 9.80% | 12.06% | **7.98%** | **−182 bps YoY, −408 bps QoQ — below BPM** (193.01/1970.27; 300.56/2491.90; 189.32/2373.55) |
+| Total | Segment result margin | 15.05% | 14.97% | **12.25%** | **−280 bps YoY, −272 bps QoQ** (1107.09/7357.37; 1197.69/7999.52; 949.32/7750.72) |
 | — | Segment assets: BPM (Rs Cr) | 1,282.95 | 1,299.12 | 1,378.32 | +6.1% QoQ (asset build) |
 | — | Segment liabilities: BPM | 690.45 | 677.76 | 642.56 | −5.2% QoQ (liab shrank) → equity/internally funded build |
 | — | Segment liabilities: Unallocated | 154.38 | 242.50 | 304.55 | **+97.3% YoY — corporate debt nearly doubled** |
 
-**Task item 4 confirmed:** The **T&D "growth engine" is currently margin-DILUTIVE** — its 8.0% segment margin (deck slide 23; filing segment-result 7.98%) is now **below BPM's 14.1%**, and fell 408 bps QoQ. The mix shift the thesis rests on (scale-to-value, digital/international/AI pivot) is, this quarter, diluting rather than accreting unit economics — the same phenomenon the FLAG-CASH tripwire was built to catch. (Deck's alternative "Segment EBITDA" cut totals 91.7 vs filing segment-results 94.93; both show the identical T&D collapse to ~8%.)
+**Deck "Segment EBITDA" basis (slide 23, excludes unallocated corporate cost; a SEPARATE management cut, NOT the filing segment result):** BPM 16.7% → 16.3% → 13.5% (deck: −316 bps YoY, −276 bps QoQ); T&D 9.5% → 12.1% → 8.0% (deck: **−156 bps YoY**, −408 bps QoQ); Total 14.8% → 15.0% → 11.8% (deck: −294 bps YoY, −314 bps QoQ). The deck YoY figures differ from the filing basis in the table above (e.g. T&D −156 bps deck vs **−182 bps filing**) because the deck's segment-EBITDA numerator differs from the filing's segment-result numerator; the QoQ deltas coincide at ~−408 bps for T&D. **The filing basis is the anchored primary; the −156 bps figure is retained here only as the labelled deck alternative and is never used in the filing-basis row.**
+
+**Task item 4 confirmed:** The **T&D "growth engine" is currently margin-DILUTIVE** — its Q1 FY27 margin (filing segment-result 7.98%; deck segment-EBITDA 8.0%) is now **below BPM's 14.1%**, and fell **−182 bps YoY / −408 bps QoQ on the anchored filing basis** (deck cut: −156 bps YoY / −408 bps QoQ). The mix shift the thesis rests on (scale-to-value, digital/international/AI pivot) is, this quarter, diluting rather than accreting unit economics — the same phenomenon the FLAG-CASH tripwire was built to catch. (Deck's alternative "Segment EBITDA" cut totals 91.7 vs filing segment-results 94.93; both show the identical T&D collapse to ~8%.)
 
 ---
 
@@ -347,7 +352,7 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding (results DF1-DF11 forward/ambiguou
 
 | # | Question (references a number from this filing) | Why it matters | Bull answer | Bear answer | from_finding_id |
 |---|---|---|---|---|---|
-| 1 | Op EBITDA margin fell to **9.9%** (−131 bps YoY) with **T&D segment margin at 8.0%** (−408 bps QoQ), below BPM's 14.1%. How much of the compression is genuinely reversible wage-revision vs structural to the T&D / As-a-Service pivot, and what is the Q2 FY27 margin you commit to? | Directly resolves the FLAG-CASH tripwire (leg 2) | Specific ≥11% Q2 commitment with wage-cost quantum | Vague / "gradual"; declines to commit ≥11% | FN-10, H1, S1 |
+| 1 | Op EBITDA margin fell to **9.9%** (−131 bps YoY) with **T&D segment margin at 7.98%** (filing basis; −408 bps QoQ), below BPM's 14.1%. How much of the compression is genuinely reversible wage-revision vs structural to the T&D / As-a-Service pivot, and what is the Q2 FY27 margin you commit to? | Directly resolves the FLAG-CASH tripwire (leg 2) | Specific ≥11% Q2 commitment with wage-cost quantum | Vague / "gradual"; declines to commit ≥11% | FN-10, H1, S1 |
 | 2 | Group PAT of **Rs 2.9 Cr is 100% NCI**; **owners lost Rs 1.89 Cr** and the **standalone parent lost Rs 10.58 Cr** (EPS −0.71). When do owners' economics turn positive, and why is the profit concentrated in minority-held subsidiaries? | The public shareholder's actual economics | Dated path to positive owners' PAT | No timeline; reframes to "consolidated turned positive" | DF2, FN-01 |
 | 3 | Consolidated **ETR is 73.2%** (Tax 7.99 on PBT 10.92) and standalone booked a **deferred-tax charge of Rs 1.04 Cr on a pre-tax LOSS** (no DTA recognised). Is management signalling doubt over near-term parent taxable profit? What is sustainable group ETR guidance? | Punitive tax drains thin PBT; DTA non-recognition is a red signal | Names one-offs; guides ETR toward statutory | Confirms structural parent-loss non-shield with no fix | DF5, T1 |
 | 4 | Unallocated corporate liabilities **nearly doubled YoY (154 → 305 Cr)** and finance cost rose **+34.8% YoY**, while BPM segment assets grew +6.1% QoQ as BPM liabilities fell −5.2%. What is the corporate net-debt position and the funding plan for the asset build? | Rising leverage + absorption deficit → ROCE compression | Specific net-debt figure and deleveraging path | Declines to quantify net debt / capex | DF8 |
@@ -387,7 +392,7 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding (results DF1-DF11 forward/ambiguou
 
 ## SUMMARY VERDICT
 
-**Filing-derived signal (numbers win):** Revenue +5.3% YoY is real but narrow (BPM flat; T&D + International carry it). Beneath the "returns to profitability / clean base" headline: **core operating PBT −73.9% YoY**, **operating margin 9.9% (tripwire leg 1)**, **owners of the parent in a Rs 1.89 Cr LOSS** and the **standalone parent in a Rs 10.58 Cr loss**, **ETR 73%**, **T&D "growth engine" margin 8.0% (dilutive, below BPM)**, **DSO 75→82**, and **rising corporate debt (unallocated liab +97.3% YoY)**. The QoQ "turn positive" is largely the roll-off of the Q4 labour-code exceptional, not operating recovery. **90.1% of the thin group profit sits in unnamed other-auditor-reviewed subsidiaries.**
+**Filing-derived signal (numbers win):** Revenue +5.3% YoY is real but narrow (BPM flat; T&D + International carry it). Beneath the "returns to profitability / clean base" headline: **core operating PBT −73.9% YoY**, **operating margin 9.9% (tripwire leg 1)**, **owners of the parent in a Rs 1.89 Cr LOSS** and the **standalone parent in a Rs 10.58 Cr loss**, **ETR 73%**, **T&D "growth engine" margin 7.98% filing / 8.0% deck (dilutive, below BPM)**, **DSO 75→82**, and **rising corporate debt (unallocated liab +97.3% YoY)**. The QoQ "turn positive" is largely the roll-off of the Q4 labour-code exceptional, not operating recovery. **90.1% of the thin group profit sits in unnamed other-auditor-reviewed subsidiaries.**
 
 **Cash conversion: INDETERMINATE.** No cash-flow statement in a Q1 Reg 33 filing → **CFO = ND**, named as the binding missing evidence. Per house rule this **caps the verdict at PROCEED WITH CAVEATS** (it may not silently resolve to PROCEED); the DSO deterioration is a directionally adverse proxy.
 
@@ -422,7 +427,7 @@ sc_gap_pat_pct:
   - "Q1FY26: standalone +3.59cr | consol-total +9.69cr | owners +5.73cr | NCI +3.96cr"
   - "FY26: standalone +21.20cr | consol-total +5.55cr | owners -16.35cr | NCI +21.90cr"
 questions_for_management:
-  - {q: "How much of the 9.9% op margin / 8.0% T&D segment margin compression is reversible wage-revision vs structural pivot; commit a Q2 FY27 margin", from_finding_id: ["FN-10","H1","S1"]}
+  - {q: "How much of the 9.9% op margin / 7.98% T&D filing segment-result margin compression is reversible wage-revision vs structural pivot; commit a Q2 FY27 margin", from_finding_id: ["FN-10","H1","S1"]}
   - {q: "Group PAT is 100% NCI; owners lost 1.89cr and standalone parent lost 10.58cr — when do owners' economics turn and why is profit in minority-held subs", from_finding_id: ["DF2","FN-01"]}
   - {q: "Why is consol ETR 73% and why a deferred-tax charge on a standalone loss (no DTA); sustainable ETR guidance", from_finding_id: ["DF5","T1"]}
   - {q: "Corporate net-debt position and funding plan given unallocated liabilities +97.3% YoY and finance cost +34.8% YoY against a BPM equity-funded asset build", from_finding_id: ["DF8"]}
@@ -451,7 +456,7 @@ flags:
   - "Headline PAT +2.9cr is 100% NCI; owners of parent LOSS -1.89cr (EPS -0.13); standalone parent LOSS -10.58cr (EPS -0.71)"
   - "Core operating PBT (ex-OI, ex-exceptional) -73.9% YoY (25.28 -> 6.59cr) despite +5.3% revenue"
   - "Cash conversion INDETERMINATE — CFO = ND (no cash-flow in Q1 Reg 33 filing); DSO worsened 75->82 days QoQ"
-  - "T&D growth-engine segment margin 8.0% (-408bps QoQ), below BPM 14.1% — pivot currently margin-DILUTIVE"
+  - "T&D growth-engine segment-result margin 7.98% (filing basis; -182bps YoY / -408bps QoQ; deck segment-EBITDA cut 8.0%, -156bps YoY), below BPM 14.13% — pivot currently margin-DILUTIVE"
   - "Consolidated ETR 73.2%; standalone deferred-tax CHARGE on a pre-tax loss (no DTA recognised)"
   - "90.1% of group PAT in 6 subsidiaries reviewed only by other (unnamed) auditors; 4 dormant unreviewed subs in perimeter"
   - "Rising corporate leverage: unallocated segment liabilities +97.3% YoY; finance cost +34.8% YoY; D&A +19.7% YoY vs revenue +5.3%"

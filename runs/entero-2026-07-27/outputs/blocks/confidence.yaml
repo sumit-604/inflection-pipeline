@@ -1,0 +1,16 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 94      # B12a (Verifier A): 17 numbers, 0 material CRITICAL, 14 MINOR
+  redflag_coverage: 83          # B12b (Verifier B): 9 caught + 2 partial of 12 independent flags
+  framework_adherence: 96       # B12c (Verifier C): Gate0 + Emerging-Moat scope ONLY; valuation-adherence PENDING phase 3
+  peer_utilisation: 92          # B12d (Verifier D): 11 of 12 peer transcripts used substantively
+  overall: 83                   # min of the four (redflag_coverage binding)
+  band: "75-89 normal, note specifics; no verdict downgrade (downgrade band is 60-74)"
+  valuation_adherence: pending  # deferred to phase 3 (B10/B11 not yet produced)
+  rework_triggered: false
+  notes:
+    - "Verifier A 1 CRITICAL is an immaterial net-worth-anchor imprecision on B01 Block E (E4 contingent-liab ratio ~0.02% either way); GATE HELD, figure corrected to audited consolidated net worth Rs16,503.80 Mn (AR p.166) for phase-3 stage 10. Not a fabricated/material-misread CRITICAL; no REWORK."
+    - "Verifier B MAJOR misses (feed monitorables): (1) acquisition 5-7x EV/EBITDA 'discipline' rests on adjusted/add-back EBITDA (Bioaide ~1.5% reported margin); (2) Q4 FY26 guidance-delivery quarter flattered by a one-off preponed government-project sale."
+    - "Verifier B: B06 overstated an Entero disclosure gap (Entero DID recognise a ~Rs6.1cr labour-code charge on the Q3 FY26 call); correct in verifier summary."
+    - "Verifier D MAJOR: B06 undercalled the Redington Jun-2026 SSG transcript as cited-only; it carries a quantified >20% services gross margin / 60% margin-uplift datapoint directly relevant to Entero's agency-margin claim (Claim 8). Plus several content-accurate but page-off anchors."
+    - "Coverage caveat: resumed Verifier B/D emitted after a stall; B read the 3 Entero calls fully and keyword-searched the 12 peers; D spot-checked all 12 peers broadly but not exhaustively. Confidence bands reflect this."

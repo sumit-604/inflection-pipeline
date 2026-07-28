@@ -1,0 +1,42 @@
+stage: B01-gate0
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Payables/trade payables not broken out in screener-Data_Sheet for FY17-FY24 (only aggregate 'Other Liabilities') — full WC Days and precise ROCE capital-employed not computable for those years"
+  - "Capex not broken out in screener-Data_Sheet for FY17-FY24 — FCF computable only for FY25-FY26 from results filings"
+  - "Promoter pledge % NOT FOUND in either the screener shareholding-pattern file (operator-supplied) or the FY2024-25 AR — E3 scored 0, not assumed clean"
+  - "E4 contingent-liabilities/net-worth still rests on the FY2024-25 AR (no FY26 AR published yet); update once available"
+  - "Peer/sector comparison data not provided — M2, M5, M7, M9 moat tests unassessable (marked PEER DATA NEEDED)"
+  - "FY26 selling-expense figure blank in screener-Data_Sheet — M11 test partially data-limited"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven by FY20-FY25 NCLT insolvency-era losses/impairment write-offs (historical depressors, e.g. FY21 PAT -1,159.58cr, FY23 PAT -833.94cr) and near-zero/negative net worth through the period. FY26 is the first reported profit (Rs45.40cr) post-resolution, but is substantially driven by a one-time Rs55.59cr land-sale gain (pre-exceptional consolidated PBT FY26 was only Rs1.50cr) — this materially qualifies the turnaround narrative and should not be read as sustained operating recovery without further evidence. CFO has grown ~7.9x over 3 years (Rs6.61cr FY23 to Rs52.29cr FY26), an improving-trend signal despite the weak mechanical Block B score. Promoter holding fell from 95.00% (Sep-2023) to 73.50% (Jun-2026) per the operator-supplied screener shareholding pattern, mechanically tracking the 11:5 rights issue (promoter forwent entitlement) for 25% minimum-public-shareholding compliance -- a dilution-to-comply, not a conviction sell-down; still >=60% so no alignment score impact. Fresh FII entry (3.09%, Mar-2026, from 0.00% prior) is a transition-evidence positive, not scored. Promoter pledge % remains NOT FOUND across all sources supplied."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 0, C: 1, D: 3, E: 5}
+core_score: 14
+moat_score: 0
+grand_total: 14
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A<8 (A=5) -> max GOOD"
+  - "2: Block B<8 (B=0) -> max GOOD"
+  - "3: median ROCE<10% (2.77%) -> max AVERAGE"
+  - "4: cumulative CFO/PAT<0.50 (-0.37) -> max AVERAGE"
+  - "8: PAT negative in >=1 of last 3 years (FY24 -28.29cr, FY25 -25.83cr) -> max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "PAT CAGR marked N/M: loss-to-profit swing FY20 to FY26 (profit FY17-19, losses FY20-25, profit FY26); no synthetic CAGR computed, C2 and C4 scored 0 per rule"
+  - "ROE N/M for FY21-FY23 due to negative average net worth (sign-flip artifact of insolvency-era negative equity); excluded from median computation, noted not estimated"
+  - "ROCE FY17-24 computed via proxy Capital Employed = Net Worth + Borrowings (screener-Data_Sheet lacks current/non-current liability split); FY25-26 computed precisely from audited consolidated balance sheets; FY26 cross-check shows proxy overstates ROCE by ~3.5pp vs precise (20.95% vs 17.42%)"
+  - "FCF computable only for FY25-FY26 (capex disclosed only in results filings' cash flow statements); FY17-FY24 marked N/A, not estimated"
+  - "B4 WC Days change scored 0/N/A: trade payables unavailable for FY17 (earliest year) in screener-Data_Sheet; only FY25 (43.4 days) and FY26 (30.0 days) computable"
+  - "FY26 consolidated PBT (57.09cr) includes a one-time Rs55.59cr exceptional gain on land sale; pre-exceptional PBT was Rs1.50cr — flagged as materially qualifying the FY26 turnaround narrative"
+  - "Block E MID-RUN CORRECTION: operator supplied the actual quarterly screener shareholding pattern (Sep-2023 to Jun-2026) mid-task, replacing the originally-planned FY25-AR-only figures. E1 now anchored to Jun-2026 (73.50%, live, not stale); this closely confirms an earlier internally-derived (unscored) estimate of ~73.6% based on AR promoter-share-count against the post-rights share base. E2 recomputed over the Sep-2023-to-Jun-2026 window (95.00% to 73.50%, -21.5pp) instead of the narrower FY24-to-FY25 window used before the correction; mechanical score unchanged at 0 in both cases, but the reason is now correctly identified as rights-issue dilution-to-comply (MPS compliance) rather than a promoter sell-down. E3/E4 unaffected (pledge still NOT FOUND in any source; E4 still FY25-AR-based, no FY26 AR yet)."
+  - "Contingent liabilities/net worth (E4) computed on standalone basis (256.26cr / 28.14cr = 910.8%) as the interpretable positive-denominator figure; consolidated basis has a negative net-worth-attributable-to-owners denominator (-4.77cr) making the ratio undefined on that basis"
+  - "4 of 12 moat tests (M2, M5, M7, M9) marked PEER DATA NEEDED, not scored as evidence of absent moat; distinguished from the 8 tests scored 0 on company-only data"
+block_b_trend: "improving — CFO rose from Rs6.61cr (FY23) to Rs52.29cr (FY26), a ~7.9x increase over 3 years (screener-data), coinciding with the FY26 return to reported profit"

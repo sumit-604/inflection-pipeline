@@ -1,0 +1,18 @@
+stage: B13-synthesis
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+confidence_delta: {numerical: 95, redflag: 61, framework: 95, peer: 100, overall: 61}
+cash_determination: INDETERMINATE
+headline: "Sical logistics turnaround leans on land sale"
+falsification_metric: "Q1 FY27 standalone again pre-exceptional loss and consolidated pre-exceptional PBT ex-other-income negative, no repeat land-sale gain"
+publish_candidate: true
+files_written:
+  - runs/sicallog-2026-07-28/outputs/final/business-narrative.md
+  - runs/sicallog-2026-07-28/outputs/final/gate-recommendation.md
+  - runs/sicallog-2026-07-28/outputs/final/verifier-summary.md

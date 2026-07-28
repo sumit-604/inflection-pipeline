@@ -1,0 +1,21 @@
+run: dssl-q1fy27
+company: Digitide Solutions Limited
+ticker: DSSL
+exchange_codes: {BSE: 544413, NSE: DIGITIDE}
+quarter: Q1 FY27
+period_ended: 2026-06-30
+pipeline: quarterly (Role 4; Role 5 N.A. — no concall filed)
+filed: 2026-07-27
+reviewed: 2026-07-28
+documents:
+  - {doctype: results, file: inputs/results_Q1FY27.pdf, pages: 11, note: "Reg 33 unaudited consol+standalone, limited review, 2 Deloitte reports"}
+  - {doctype: results-pressrelease, file: inputs/press_release_Q1FY27.pdf, pages: 4}
+  - {doctype: presentation, file: inputs/investor_presentation_Q1FY27.pdf, pages: 34}
+  - {dropped: true, reason: "byte-identical md5 duplicate of results_Q1FY27.pdf"}
+extraction_toolchain: "PyMuPDF (fitz) — poppler/tesseract uninstallable this env; page-marked .txt caches + rendered PNGs"
+gates: {A1: "3x pass (100% coverage)", A2: "3x pass (count-reconciled)", A3: "3x pass (no blank checks)", A5: "COMPLETE after 1 loop"}
+protocol_verdict: PROCEED WITH FLAGS
+verdict_ceiling: PROCEED WITH CAVEATS (INDETERMINATE cash conversion, CFO=ND)
+standing_decision_status: "PROCEED WITH CAVEATS (phase-1 evidence gate, confidence 84) — unchanged; no position"
+tripwire: "FLAG-CASH margin falsifier LEG 1 printed (op EBITDA margin 9.9% < 11%); leg 2 decisive at Q2 FY27; NOT fired"
+notion_save: "skipped — no DSSL Notion page exists yet (flag for finalize)"

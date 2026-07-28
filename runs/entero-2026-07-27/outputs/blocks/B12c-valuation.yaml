@@ -1,0 +1,20 @@
+stage: B12c
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+scope: "phase3-valuation-adherence-only (gate0/emoat audited in phase 1, not re-opened)"
+gate0: {rules_checked: 0, fails: []}   # audited in Phase 1; out of scope this pass
+emoat: {rules_checked: 0, fails: []}   # audited in Phase 1; out of scope this pass
+valuation:
+  rules_checked: 31
+  fails: []
+findings:
+  - {severity: "MINOR", location: "B11 §4.2/§4.3 Hurdle Ratio", note: "HR uses FY29 exit-year EPS while forward-EPS valuation applies 15.0x to FY30; HR-implied CAGR -9.7% vs reported base -4.4%; conservative direction, STOP robust, formula per Amendment 2 — internal-consistency note only"}
+  - {severity: "MINOR", location: "B11 §0 / B10 sector-cap row (carried from fttcp-deliberation)", note: "Sector cap labelled Cybersecurity/VAD 25x for a pharma/MedTech distributor is facially wrong but operator-accepted upstream and non-binding (15.0x < 25x < 38x pharma); no valuation effect"}
+recomputed_destination_pe: "CONCUR (15.0x, operator-set, applied consistently both tracks, within 25x cap)"
+recomputed_decision: "CONCUR (AVOID on valuation; HR base 0.74 / bull 0.90 STOP < 1.953)"
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100   # 31/31 valuation rules applied as written; 2 MINOR presentational notes, no rule fail with decision impact

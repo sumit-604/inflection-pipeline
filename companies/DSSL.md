@@ -42,5 +42,11 @@ toward a 24x to 30x destination, which must be earned, not assumed.
 - ESOP-based technical talent retention (only 12,200 shares FY25, ~0.1%) -> converts on a materially larger pool (>1% of equity) vesting to technical roles; first appears in an AR ESOP note / AGM resolution; window 12-24m.
 - Data centre & cloud crossing >50% of revenue mix -> converts on explicit disclosure of the segment crossing 50%; first appears in a quarterly presentation; window 24-36m.
 
+## TECHNICAL / OPERATOR CHART NOTE
+- 2026-07-28: operator read the weekly and daily charts. Weekly: price retesting the breakout of the 2020-2026 rising channel and the red downtrend line. Daily: throwback to "gap 1" (~Rs1,130-1,210) and the rising trendline near Rs1,130, after a May-Jun-2026 spike to ~Rs1,900 on the RBI order that then faded to Rs1,231 (visible confirmation of "re-rating tried and faded, prove it through execution"). Trading-book read: retest entry ~Rs1,130 with a stop below ~Rs1,050-1,080 (breakout failure). Investment-book stance UNCHANGED (WATCHLIST): the conservative fair entry Rs851-1,064 sits below the retest, and the Rs1,050 technical stop and the fundamental falsifier (weak Q1 FY27 print) fire on the same event. Recorded, did not change the intrinsic entry zone or verdict on a chart alone.
+
+## NOTION
+- COMPANIES MASTER page (created 2026-07-28, first workup): https://app.notion.com/p/3abbb2b9d3ab8197a116f1cd3f38f061 — Decision Status WATCHLIST / BUY ON DIPS.
+
 ## RUN FOLDERS
 - runs/dssl-2026-07-27/

@@ -1,0 +1,23 @@
+stage: B01-gate0
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements/ empty", "shareholding/ gap-filled mid-run via operator-supplied screener SHP (promoter holding/trend now current to Jun-2026; pledge % still NOT FOUND, no pledge column in SHP or FY25 AR)", "Trade Payables not disaggregated pre-FY2025 in screener Data_Sheet (limits B4/M12 to FY25-FY26)", "peer/industry comparison data absent (M2, M5, M9 scored 0 as PEER DATA NEEDED)", "FY2026 Annual Report not yet published as of run date (E4 contingent-liabilities uses FY2025 AR)"]
+flags:
+  - {type: FLAG-CASH, reason: "Block B (cash generation) scored 4/20, triggering deal-breaker 2 (cap to max GOOD); cumulative CFO/PAT 0.529x (near the separate 0.50 AVERAGE-cap threshold); CFO fell Rs66.04cr (FY25) to Rs46.13cr (FY26), -30.1% YoY; FCF turned negative in FY26 (-Rs18.87cr) on Rs65.00cr capex for new leased premises (Ind AS 116 ROU addition)"}
+  - {type: FLAG-DATA-GAP, reason: "Promoter pledge % (E3) not disclosed anywhere in provided data, including the operator-supplied screener SHP (Sep2023-Jun2026, no pledge column) and the FY25 AR promoter table; scored 0 as NOT FOUND, not confirmed 0% or >15%"}
+  - {type: FLAG-STALE, reason: "E4 (contingent liabilities / net worth) sourced from FY25 Annual Report (31-Mar-2025), ~16 months stale vs run_date 2026-07-27, since the FY26 AR is not yet published; E1/E2 promoter-holding staleness has been resolved via the operator-supplied screener SHP (current to Jun-2026)"}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 15, B: 4, C: 20, D: 13, E: 8}
+core_score: 60
+moat_score: 18
+grand_total: 78
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "GOOD"
+deal_breakers: ["Block B < 8 (scored 4/20) -> caps classification at max GOOD; driven by FY2018 and FY2022 CFO-negative years, FY2026 FCF-negative on new-office capex (Rs65.00cr), and cumulative CFO/PAT of 0.529x (screener-data FY17-25; results FY26 audited consol p.8)"]
+history_downgrade: false
+data_notes: ["EBITDA formula validated exactly against Acuité's independently stated FY24 (7.63%) and FY25 (8.31%) margins (Acuité PR 31-Dec-2025, p.2)", "screener 'Change in Inventory' sign is opposite to the raw P&L filing's 'Changes in Inventories' line; reconciled and used consistently", "ROCE Capital Employed basis: FY17-24 = Net Worth + Total Borrowings (proxy, screener does not split current/non-current liabilities pre-FY25); FY25-26 = Total Assets - Current Liabilities (precise, from audited BS breakdown)", "screener 'Borrowings' line bundles interest-bearing debt with Ind AS 116 lease liabilities from FY24 onward; validated against Acuité's FY25 gearing of 0.60x (exact match) and used consistently for D1/D3", "Capex = Purchase of PP&E line only; FY17-24 uses aggregate 'Cash from Investing Activity' as the only available proxy (granular PPE-only breakdown not provided for those years)", "Trade Payables not disaggregated pre-FY2025 in screener Data_Sheet; WC Days computable only for FY25 (28.6d) and FY26 (44.1d), a +15.5 day one-year move noted as directional color, not the scored B4 metric", "GM proxy used for M9 per its own instruction: (Revenue-Material Cost)/Revenue, own-trend only (10.63% FY17 to 18.40% FY26), no peer benchmark available", "Receivable Days computed here (125.8d FY25, 143.1d FY24) match Acuité's independently stated debtor days of 126 and 143 exactly, cross-validating the revenue basis used", "E4 contingent liabilities of Rs146.55cr is 99.9% bank guarantees issued in ordinary-course government/enterprise tendering (consistent with Acuité's stated Rs2,700cr order book), not litigation exposure; GST dispute itself is only Rs9.64 lakh -- noted for context, mechanical score of 0 unchanged", "Block E gap-filled mid-run: operator-supplied screener SHP (Sep2023-Jun2026) confirms promoter holding essentially flat (61.10% to 60.89%, -0.21pp) and resolves E1/E2 staleness; pledge % still NOT FOUND in any source; FII+DII rose 0.00% (2023) to ~1.36% (Jun2026), still near-absent institutional ownership (informational, feeds stage-11 UA qualifier, not scored here)"]
+block_b_trend: "deteriorating - CFO fell from Rs66.04cr (FY25) to Rs46.13cr (FY26), -30.1% YoY, and FCF swung from +Rs60.68cr (FY25) to -Rs18.87cr (FY26) on the Rs65.00cr new-premises capex (screener-data FY25; results FY26 audited consol p.8)"

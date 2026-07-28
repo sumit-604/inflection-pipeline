@@ -1,0 +1,65 @@
+stage: B05-concall
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Only two concall transcripts exist (Q3 FY26, Q4 FY26); third quarter map slot NOT PROVIDED", "Q4 FY26 EBITDA figure as stated verbally (Rs36cr) vs computed from filed audited results (~Rs38.4cr) shows a minor unreconciled gap"]
+flags: ["Q4 FY26 margin miss vs Q3 FY26 'no material pressure' assurance, blamed entirely on external AI-hardware supply chain", "17-day net working-capital claim not reconciled against Acuité's 126-day (FY25) gross debtor days", "As-a-Service/opex model unit economics (IRR/ROCE/gross margin) never disclosed despite repeated requests across both calls", "Data centre/cloud revenue mix dipped from 37% (Q3 FY26) to 34% (FY26 full year)", "BHEL order dropped from narrative without explanation"]
+quarters_analysed: ["Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "RBI relationship deepening (EAP ~Rs249cr + Private Cloud ~Rs750cr)", type: "VOLUME/REGULATORY-POLICY", timeframe: "near-medium", conviction: "H", confirm_signal: "Further large PSU/BFSI order announcements referencing RBI/NGDC-class deployments", kill_signal: "RBI/PSU order flow stalls or an existing award is delayed/cancelled"}
+  - {priority: 2, name: "NABARD CBaaS expansion to more cooperative banks", type: "VOLUME/REGULATORY-POLICY", timeframe: "near", conviction: "M-H", confirm_signal: "Continued quarterly disclosure of incremental banks going live and rising CBaaS revenue contribution", kill_signal: "Bank onboarding pace stalls or NABARD initiative loses funding priority"}
+  - {priority: 3, name: "Margin normalization after the Q4 FY26 AI-hardware supply-chain blip", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "Q1 FY27 EBITDA margin recovers toward/above the 11-12% range seen in Q3 FY26", kill_signal: "Margin stays depressed near 9% for two more quarters, confirming a structural shift"}
+  - {priority: 4, name: "Data centre & cloud mix resuming its climb toward/past 37% of revenue", type: "PRICE-MIX/VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "FY27 mix data resumes an upward trajectory past the Q3 FY26-cited 37%", kill_signal: "Mix stagnates or reverses for two consecutive quarters"}
+  - {priority: 5, name: "Managed services/DaaS/As-a-Service annuity mix rising with disclosed unit economics", type: "PRICE-MIX/COST", timeframe: "medium", conviction: "M", confirm_signal: "Management discloses IRR/ROCE/gross margin of the As-a-Service book showing accretion", kill_signal: "Continued non-disclosure alongside rising leverage/PPE without visible margin follow-through"}
+  - {priority: 6, name: "Cybersecurity demand from RBI/government BFSI directive + Cygeniq partnership", type: "REGULATORY-POLICY/SECTORAL", timeframe: "near-medium", conviction: "M", confirm_signal: "Named cybersecurity order wins tied to the directive", kill_signal: "Directive-driven pipeline fails to convert to booked orders within a few quarters"}
+  - {priority: 7, name: "Geographic expansion (APAC, then Middle East/Europe) via Cygeniq/GITA", type: "INORGANIC/SECTORAL", timeframe: "long", conviction: "L", confirm_signal: "First non-India order or disclosed non-India revenue", kill_signal: "No geographic revenue disclosed after several quarters; remains talk only"}
+guidance:
+  - {item: "Q3 FY26 revenue", number: "Rs341cr, +10% YoY", timeframe: "quarter", stated_in: "Q3 FY26 call"}
+  - {item: "Q3 FY26 EBITDA margin", number: "Rs41cr, +49% YoY, 11.9% margin", timeframe: "quarter", stated_in: "Q3 FY26 call"}
+  - {item: "9M FY26 revenue/EBITDA/PAT", number: "Rs1,022cr / Rs110cr (10.7%) / Rs66cr (+21% YoY)", timeframe: "9M", stated_in: "Q3 FY26 call"}
+  - {item: "Order book", number: "~Rs2,389cr (31-Dec-2025) -> ~Rs3,000cr (30-May-2026)", timeframe: "point-in-time", stated_in: "Q3 FY26 call / Q4 FY26 call"}
+  - {item: "Bidding pipeline", number: "~Rs3,083cr (Dec-2025) -> ~Rs5,100cr (May-2026)", timeframe: "point-in-time", stated_in: "Q3 FY26 call / Q4 FY26 call"}
+  - {item: "FY26 full-year revenue", number: "Rs1,424cr, +12% YoY", timeframe: "year", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 EBITDA/margin", number: "Rs146cr, +41% YoY, margin 10.2% vs 8.1% FY25", timeframe: "year", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 PAT", number: "Rs85cr, +17% YoY", timeframe: "year", stated_in: "Q4 FY26 call"}
+  - {item: "Net debt / D-E", number: "Rs68cr net debt (vs Rs17cr FY25); 0.2x", timeframe: "year-end", stated_in: "Q4 FY26 call"}
+  - {item: "Net working capital cycle", number: "14 days (FY25) -> 17 days (FY26)", timeframe: "year", stated_in: "Q4 FY26 call"}
+  - {item: "RBI Private Cloud order", number: "~Rs750cr, 5-year tenor", timeframe: "point-in-time", stated_in: "Q4 FY26 call"}
+  - {item: "Revenue/margin guidance for FY27+", number: "NONE — explicit no-guidance policy", timeframe: "forward", stated_in: "Q3 FY26 call and Q4 FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 4
+  missed: 1
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "NABARD CBaaS rollout continues expanding to more cooperative banks", outcome: "delivered", explanation: "Q4 FY26 call confirms Haryana (~20 banks) and Telangana banks joining"}
+    - {promised_in: "Q3 FY26 call", promise: "No material input-cost pressure on margins", outcome: "missed", explanation: "Q4 FY26 EBITDA margin fell to ~9.0-9.55% from 11.9%, blamed on AI-hardware/GPU-driven global supply-chain cost escalation, called a temporary blip"}
+    - {promised_in: "Q3 FY26 call", promise: "Growing pipeline from public sector / RBI relationship deepening", outcome: "delivered", explanation: "Rs750cr RBI private-cloud order won 4-May-2026, discussed in Q4 FY26 call"}
+    - {promised_in: "Q3 FY26 call", promise: "Margin level not only sustainable but can also grow", outcome: "partial", explanation: "FY26 full-year margin did expand YoY (8.1%->10.2%), but the Q4 quarter-level decline contradicts the growing framing"}
+    - {promised_in: "Q3 FY26 call", promise: "Data centre + cloud contribution steadily growing, cited at 37% today", outcome: "partial", explanation: "Q4 FY26 call: full-year FY26 data-centre share is 34%; management calls it timing, not structural"}
+    - {promised_in: "Q3 FY26 call", promise: "Historical ~20% revenue CAGR momentum will continue", outcome: "partial", explanation: "FY26 revenue grew only ~12% YoY; Q4 FY26 analyst calls it a blip, management does not contest, cites project-timing factors"}
+    - {promised_in: "Q3 FY26 call", promise: "Regular earnings calls going forward", outcome: "delivered", explanation: "Q4 FY26 call held ~3.5 months later as promised"}
+    - {promised_in: "Q3 FY26 call", promise: "Net working capital cycle has been improving", outcome: "partial", explanation: "Q4 FY26 call quantifies net WC days rose from 14 to 17, a mild deterioration not improvement; trade receivables up ~38% YoY"}
+excuse_pattern: "external-blame-heavy on the single material miss (Q4 margin, blamed on AI-hardware supply chain), but proactively disclosed and otherwise balanced/consistent messaging elsewhere"
+repeated_evasions:
+  - {question: "What revenue growth / EBITDA margin guidance can you give for FY27 or the next 2-3 years?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "Can you break down the order book / margin profile by business segment (BFSI/PSU/global) or solution line?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "What is the ROCE/ROA/IRR or gross margin economics of the new opex/DaaS/As-a-Service capex model vs. the legacy EPC model?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+credibility_grade: "B"
+credibility_basis: "Delivered on its two largest concrete promises (RBI order-pipeline conversion into a ~Rs750cr win, NABARD CBaaS bank-count expansion) and on the full-year margin-expansion narrative (8.1% to 10.2%), independently corroborated by filed results and the operator digest; held back from A by persistent two-call non-disclosure of As-a-Service unit economics, a scripted repeated deflection on the Q4 margin miss, and an unreconciled data-centre mix reversal."
+peer_questions:
+  - {question: "Is the Q4 FY26 margin dip (11.9% to ~9.05-9.55%) an industry-wide AI-hardware supply-chain event or DSSL-specific?", why: "DSSL blames 100% of a material margin miss on an unquantified external shock; peer comparison tests whether this is genuine or company-specific", check_peers: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro", "TVS Electronics"]}
+  - {question: "Do peer IT-infra/system-integrator names show elevated gross debtor days alongside a low claimed net working-capital cycle, and how do they reconcile the two?", why: "DSSL's 17-day net-WC claim sits awkwardly against Acuite's 126-day (FY25) gross debtor days and a 38% YoY receivables jump; thesis-critical cash-conversion question", check_peers: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro"]}
+  - {question: "Is India's IT spending tracking toward ~USD176bn by 2026 as DSSL cites, and is a ~30% bid-to-win conversion ratio typical for peers bidding into BFSI/PSU IT infra tenders?", why: "Validates DSSL's sectoral growth narrative and its ~Rs5,100cr bidding pipeline credibility", check_peers: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro", "TVS Electronics"]}
+  - {question: "Are peers reporting similar order momentum in RBI/BFSI private-cloud and core-banking infra work, given DSSL's claim of consistently beating larger competitors?", why: "Tests DSSL's market-share-gain and competitive-positioning claim, asserted but never evidenced with named win/loss data", check_peers: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro"]}
+  - {question: "Do peers show data-centre/cloud revenue mix deceleration in FY26 similar to DSSL's dip from 37% to 34%, despite a strong sector-wide AI/data-centre capex tailwind?", why: "Tests whether DSSL's 'timing, not structural' explanation is company-specific or sector-wide phasing", check_peers: ["3i Infotech", "Allied Digital (ADSL)", "Aurionpro", "TVS Electronics"]}
+red_flags:
+  - {flag: "Cash-conversion/working-capital opacity: 17-day net WC claim not reconciled against Acuite's 126-day (FY25) gross debtor days or the 38% YoY receivables jump", severity: "HIGH"}
+  - {flag: "Non-disclosure of IRR/ROCE/gross-margin economics for the new opex/DaaS/CBaaS capex model across both calls", severity: "MEDIUM"}
+  - {flag: "Scripted/canned 'temporary blip, not structural' response given verbatim to four different analysts within the Q4 FY26 call", severity: "MEDIUM"}
+  - {flag: "Data centre/cloud revenue mix deceleration (37% at Q3 FY26 to 34% for full FY26), framed only as timing", severity: "LOW-MEDIUM"}
+  - {flag: "BHEL order (flagged as a new contributor in Q3 FY26) dropped without explanation in Q4 FY26", severity: "LOW"}
+  - {flag: "Rising leverage funding the As-a-Service pivot: PPE Rs8cr to Rs68cr and net debt Rs17cr to Rs68cr in one year (net D/E still low at 0.2x)", severity: "LOW"}
+dropped_triggers: ["BHEL order/revenue contribution, cited in Q3 FY26 call as a new contributor, absent entirely from Q4 FY26 call"]
+timeline_slippages: ["Data centre & cloud revenue mix cited at 37% 'as we are today' in Q3 FY26 call, reported as only 34% of full FY26 revenue in Q4 FY26 call", "Order-book execution timeline reframed from '~2 years average' (Q3 FY26 call) to '18-24 months average' (Q4 FY26 call) — minor, largely consistent restatement"]
+no_concall_mode: false

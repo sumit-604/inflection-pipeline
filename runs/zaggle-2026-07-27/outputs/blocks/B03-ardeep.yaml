@@ -1,0 +1,50 @@
+stage: B03-ardeep
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus ABSENT (HIGH) - backward baseline runs on FY25 AR post-listing comparatives only not restated pre-IPO history, announcements ABSENT, shareholding ABSENT (only point-in-time FY25 AR disclosure available), research ABSENT, consolidated auditor opinion/KAM page and CEO-to-median remuneration annexure not captured in this stage's page extraction (NOT FOUND IN DOCUMENT for those specific sub-items)]
+flags:
+  - {type: FLAG-CASH, reason: "Standalone CFO/PAT of 22.7% in FY25 (CFO Rs19.85 Cr vs PAT Rs87.48 Cr, AR p.202-203) following a negative CFO of Rs(82.75) Cr in FY24 despite positive PAT both years; driven by an unexplained Rs45+ Cr 'Other current assets' working-capital build (Note 15, AR p.200) on top of receivables growth."}
+  - {type: FLAG-GOODWILL, reason: "Carried and extended from B02: Rs36.35 Cr goodwill (57% of EV) against Span Across, confirmed loss-making in its first stub period (AOC-1, AR p.78: PAT Rs(11.67) Mn); AOC-1 shows positive Rs0.501 Cr standalone net worth vs B02's Note 47 Schedule III figure of -Rs0.502 Cr consolidated attributable net assets - a sign discrepancy requiring management clarification."}
+  - {type: FLAG-DISCLOSURE, reason: "Effiasoft Private Limited acquisition (45.33% stake approved for Rs36.72 Cr, further 5.67% proposed for Rs4.59 Cr, Rs36.14 Cr already advanced in cash) is never named in the Chairman's letter, front matter, or Our Journey highlights despite being comparable in scale to the Span Across deal that IS discussed (Board's Report Annexure II, AR p.82-83); Effiasoft's underlying business is not described anywhere in the 158-page document."}
+  - {type: FLAG-GOVERNANCE, reason: "Non-audit fees (Rs5.96 Mn: other services Rs5.37 Mn + out-of-pocket Rs0.59 Mn) exceed audit fees (Rs4.05 Mn: statutory audit Rs2.80 Mn + limited review Rs1.25 Mn) for FY25 (Corporate Governance Report, AR p.168-187 range); separately, a wide spread of statutory forms (CHG-1, CHG-4, DIR-12, INC-22 x2, MGT-6 x4, MR-1, PAS-3, MGT-14 x6, AOC-4 XBRL, MGT-7) were filed with delay and NSE issued a warning letter re PAN on letterhead (Secretarial Audit Report Form MR-3, AR p.82-83)."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No promoter selling or pledge found within this stage's point-in-time shareholding read (promoter category 44.21%, AR p.168-187 range); however shareholding-stage input is absent so no multi-period trend is available - full promoter verdict deferred to B08 per pipeline design. This is a preliminary, non-adverse flag for completeness, not an adverse finding."}
+phase_verdicts: {p1: "green_clean", p2: "red_flag", p3: "red_flag", p4: "yellow_watch", p5: "yellow_watch", p6: "yellow_watch", p7_best_fit: "GARP_watchlist"}
+overall_quality: 6            # /10: governance 6.5, accounting 6, balance_sheet 7, earnings 3.5
+quality_components: {governance: 6.5, accounting: 6, balance_sheet: 7, earnings: 3.5}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would NOT have reason to stop - unmodified opinion, no CARO qualification, no fraud, no going-concern language."
+  - "Phase 2: a human reviewer WOULD have reason to pause on the goodwill/negative-net-worth-subsidiary question and the still-unnamed Effiasoft acquisition, but this is a company-quality flag not a mechanical failure; continuing per pipeline rules."
+  - "Phase 3: a human reviewer WOULD have real reason to pause - reported PAT growth of ~99% is not converting to cash (CFO/PAT 22.7%), and ROE/ROCE both declined YoY despite the headline growth; company-quality flag, continuing per pipeline rules."
+  - "Phase 4: a human reviewer would note management's own risk factor list omits every material risk this stage's Phases 1-3 surfaced (goodwill, cash conversion, live tax dispute, dilution); not disqualifying, continuing."
+  - "Phase 5: a human reviewer would want the auditor fee-ratio flag and the delayed-filings pattern explained; neither is disqualifying on its own; continuing."
+triple_pass_verification:
+  verified: 5                 # of 15 (ranks 1, 2, 3, 5, 7, 13 directly re-checked against primary source; rank 1 surfaced a new sign discrepancy)
+  discrepancies:
+    - {finding_rank: 1, triple_pass_value: "Note 47 Schedule III consolidated net assets -Rs0.502 Cr (stub period since acquisition)", ar_value: "AOC-1 standalone Span Across net worth +Rs0.501 Cr (full FY25 year, Board's Report Annexure I, AR p.78)", note_ref: "Note 47 consolidated p.305-306 vs Board's Report Annexure I (AOC-1) p.78"}
+missing_risks:
+  - {risk: "Goodwill impairment / M&A integration risk (Span Across)", evidence_anchor: "B02 Note 5 consolidated p.272-273; AOC-1 AR p.78 confirming loss-making status"}
+  - {risk: "Cash conversion / working capital risk", evidence_anchor: "Standalone cash flow statement AR p.202-203, this stage's Phase 3A"}
+  - {risk: "Litigation / tax-characterisation risk re GST 'overriding commission'", evidence_anchor: "CARO clause vii(b) AR p.195; Note 31(a) standalone p.229"}
+  - {risk: "Capital deployment / dilution risk from QIP-funded growth", evidence_anchor: "Note 47/MD&A ratio table AR p.148; QIP utilisation table AR p.182 range"}
+  - {risk: "Second, largely unexplained acquisition (Effiasoft)", evidence_anchor: "Board's Report Annexure II (Form MR-3) AR p.82-83"}
+guidance_table: []            # no numerically specific, time-bound forward guidance found anywhere in the AR (Phase 4C)
+monitorables:
+  - {metric: "CFO/PAT ratio", threshold: ">0.7x sustained", where: "Quarterly cash flow statement", why: "Tests whether FY25's weak 22.7% conversion was a one-off working-capital build or structural"}
+  - {metric: "Span Across standalone PAT / goodwill impairment test outcome", threshold: "Any impairment charge or continued losses", where: "Next AR Note 5 / AOC-1", why: "Tests whether the Rs36.35 Cr goodwill thesis holds"}
+  - {metric: "Effiasoft deal completion and disclosed business rationale", threshold: "Any announcement naming Effiasoft's business", where: "Stock exchange filings, next AR notes", why: "Currently a fully unexplained Rs36+ Cr commitment"}
+  - {metric: "QIP strategic-investment object utilisation", threshold: "Materially above current 15.7%", where: "Next AR fund utilisation table", why: "Tests capital deployment discipline"}
+  - {metric: "Adjusted EBITDA margin trajectory", threshold: "Stabilise or recover, not keep contracting", where: "Quarterly results / FY25 Highlights-equivalent disclosure", why: "Tests whether low-margin Propel/interchange mix shift keeps compressing margins"}
+  - {metric: "Auditor fee ratio (audit vs non-audit)", threshold: "Audit fees should exceed non-audit fees", where: "Next Corporate Governance Report", why: "Tests whether FY25's flag was one-off M&A-advisory-related or a recurring pattern"}
+  - {metric: "Delayed statutory filings count", threshold: "Zero or near-zero", where: "Next Secretarial Audit Report (MR-3)", why: "Tests whether FY25's wide spread of delayed forms was a one-off M&A-driven compliance load or an ongoing process gap"}
+strengths_top3:
+  - "Genuine, well-documented deleveraging: secured debt down 93.1% (Rs73.60 Cr to Rs5.09 Cr), fully QIP-funded, no covenant breaches (standalone Balance Sheet AR p.200; CARO ix AR p.196)"
+  - "Clean audit history: unmodified opinion, no CARO qualification, no fraud, no whistleblower complaints, no going-concern language (Auditor's Report AR p.190-197)"
+  - "Real underlying growth: revenue +68.1%, users +20.1%, customers +14.6%, driven by disclosed checkable business drivers (MD&A AR p.145, 147)"
+red_flags_top3:
+  - "Cash conversion: CFO/PAT 22.7% FY25 following negative CFO FY24, against reported PAT growth of ~99% (standalone cash flow statement AR p.202-203)"
+  - "Goodwill/M&A quality: Rs36.35 Cr goodwill against a subsidiary confirmed loss-making in its first stub period, sign-discrepant net-worth disclosure, plus a second wholly unnamed acquisition (Effiasoft, Rs36.72 Cr approved stake) absent from every narrative section (AR p.78, 82-83)"
+  - "Capital efficiency declining despite headline growth: ROE -7.97% YoY, ROCE -9.49% YoY, Adjusted EBITDA margin -14.24% YoY, all company-disclosed, while QIP proceeds remain ~85% undeployed toward their stated strategic-investment object (AR p.148, 182 range)"
+best_fit_strategy: "GARP (watchlist) - genuine transition-scale growth not yet confirmed by cash conversion or capital-efficiency metrics"
+one_line_verdict: "Genuine growth compounding revenue but not yet cash, GARP watchlist."

@@ -1,0 +1,95 @@
+stage: B05-concall
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "announcements ABSENT — Reg 30 documented-ACTION record unavailable; promise-vs-delivery tracker built on concall-to-concall self-consistency only, not filing-confirmed"
+  - "prospectus ABSENT (HIGH) — no IPO/DRHP baseline to verify management's cited historical figures (16% cross-sell at IPO, INR373cr IPO-year revenue)"
+  - "shareholding ABSENT — cannot verify promoter/warrant-holder claims (Bennett Coleman warrant issue, RAN Ventures subscription) against shareholding-pattern filings"
+  - "research ABSENT — no independent broker/third-party check on management's market-sizing, market-share, or margin-trajectory claims within this stage"
+flags:
+  - "Numerical restatement required mid-quarter (Q3 FY26 consolidated platform-fee figure, INR79cr vs INR12cr, called a 'regrouping'/'numerical error')"
+  - "Self-corrected transcript error on GreenEdge growth figure (verbally '300%', corrected in text to '184%')"
+  - "CFO transition (Aditya Kumar departed) with no reason disclosed; interim CFO in place as of last call read"
+  - "FY27 EBITDA guidance explicitly withheld pending DICE integration, a guidance retreat versus FY26's specificity"
+  - "Propel gross margin fell to 4% in Q4 FY26 versus a 7-9% normalization promised back in Q2 FY25; recovery target itself lowered to ~5.5%"
+  - "Incentive/cashback ratio moved to ~68% (Q4 FY26), the wrong direction versus the stated ~50%-in-5-years glide path"
+  - "EffiaSoft acquisition, presented as near-closing in Q2 FY26, abandoned by Q4 FY26 with a thin explanation"
+  - "Customer churn/attrition never disclosed or discussed across all three quarters"
+  - "MENA and U.S. expansion delays both attributed to the same 'war'/regional-volatility cause within a single call (Q4 FY26)"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Retail co-brand credit card scale-up (Zagg.money + AU Bank)", type: "revenue, volume, inorganic", timeframe: "4-5 years", conviction: "M", confirm_signal: "Card-issuance run-rate sustaining and converting to program-fee revenue over next 2-3 quarters", kill_signal: "Card-issuance pace stalling or bank partner pulling back"}
+  - {priority: 2, name: "Operating cash flow turning genuinely positive on a consolidated basis", type: "margin/cash quality", timeframe: "FY27", conviction: "L-M", confirm_signal: "Consolidated OCF crossing zero in FY27 results", kill_signal: "Consolidated OCF still negative a year from now, or working-capital items inflating faster than revenue"}
+  - {priority: 3, name: "Fleet management breakthrough into an OMC (HPCL/BPCL/IOCL) contract", type: "revenue, volume, sectoral", timeframe: "repeatedly 'soon' across 3 quarters", conviction: "L", confirm_signal: "A named OMC contract with disclosed scale", kill_signal: "Another quarter of 'hopeful... coming quarters' language with no name"}
+  - {priority: 4, name: "DICE integration delivering AI-enabled SaaS revenue without dragging consolidated EBITDA", type: "cost, margin, inorganic", timeframe: "next 1-2 quarters integration; FY27 EBITDA guidance pending", conviction: "M", confirm_signal: "FY27 EBITDA guidance issued on schedule at or above prior 10-11% band", kill_signal: "EBITDA guidance further delayed or DICE losses larger than flagged"}
+  - {priority: 5, name: "Zagg.money retail credit book scaling without Zaggle absorbing credit risk", type: "revenue, price-mix", timeframe: "ongoing", conviction: "M", confirm_signal: "Continued explicit statements that credit/NPA risk sits with partner banks", kill_signal: "Any indication Zaggle begins bearing balance-sheet/credit risk"}
+  - {priority: 6, name: "GreenEdge hyper-growth sustaining into FY27", type: "revenue, margin, inorganic", timeframe: "FY27", conviction: "H", confirm_signal: "FY27 results tracking the guided 40-50% growth band", kill_signal: "Growth decelerating sharply below guided range"}
+  - {priority: 7, name: "Cross-sell rate resuming visible progress toward 50%-in-3-years target", type: "revenue, price-mix", timeframe: "ongoing, target ~2027", conviction: "L", confirm_signal: "Management re-disclosing a cross-sell % above 21%", kill_signal: "Metric continuing to go undisclosed or showing further stagnation"}
+  - {priority: 8, name: "International expansion (U.S., MENA) going live", type: "revenue, sectoral", timeframe: "slipped multiple quarters; U.S. revised to FY26-end", conviction: "L", confirm_signal: "An operating U.S. or UAE entity with a named local contract", kill_signal: "Further slippage citing regional volatility again"}
+  - {priority: 9, name: "Margin expansion toward 14-15% adjusted EBITDA on a stable timeframe", type: "margin", timeframe: "stated variably as 4-5, 5-7, or 'next 5' years", conviction: "L-M", confirm_signal: "Management giving one stable timeframe across two consecutive quarters", kill_signal: "Timeframe moving again or FY27 margin landing below FY26 actual (9.7-9.9%)"}
+  - {priority: 10, name: "Propel margin recovery to the lowered ~5.5% target", type: "margin", timeframe: "coming years", conviction: "M", confirm_signal: "Propel gross margin rising off its 4% (Q4 FY26) low within 2 quarters", kill_signal: "Propel margin falling further below 4%"}
+guidance:
+  - {item: "Revenue growth guidance", number: "40% to 45%", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "EBITDA guidance", number: "10% to 11%", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "Adjusted EBITDA margin target", number: "14% to 15%", timeframe: "next 4-5 years", stated_in: "Q2 FY26"}
+  - {item: "Retail co-brand segment revenue/EBITDA", number: "INR500-600cr revenue, INR50-60cr EBITDA (standalone year)", timeframe: "4-5 years", stated_in: "Q2 FY26"}
+  - {item: "Cross-sell percentage", number: "21% (from 20% Sept-2024, 16% at IPO)", timeframe: "as of Q2 FY26", stated_in: "Q2 FY26"}
+  - {item: "OCF turnaround", number: "breakeven FY26, positive FY27 onwards", timeframe: "FY26/FY27", stated_in: "Q2 FY26, reaffirmed Q3 FY26"}
+  - {item: "$1 billion revenue + 14-15% EBITDA margin", number: "combined milestone", timeframe: "5 to 7 years", stated_in: "Q3 FY26"}
+  - {item: "Zagg.money 5-year goal", number: "INR500cr revenue, INR65cr EBITDA milestone", timeframe: "5 years", stated_in: "Q3 FY26, reaffirmed Q4 FY26"}
+  - {item: "Incentive/cashback as % of program fees", number: "stabilizing at ~50%", timeframe: "~5 years", stated_in: "Q3 FY26"}
+  - {item: "Dice acquisition value", number: "~INR68cr (down from INR123cr), asset purchase", timeframe: "signed Q4 FY26", stated_in: "Q4 FY26"}
+  - {item: "FY27 revenue growth guidance", number: "stand-alone 25-30%, consolidated ~40%", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "U.S. operations kick-start", number: "originally June 2026, now pushed a couple of quarters", timeframe: "FY26-end (revised)", stated_in: "Q4 FY26"}
+  - {item: "GreenEdge FY27 growth", number: "40% to 50% (standalone)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Propel margin recovery target", number: "~5.5%", timeframe: "coming years", stated_in: "Q4 FY26"}
+promise_delivery:
+  delivered: 2
+  partial: 3
+  missed: 5
+  rows:
+    - {promised_in: "Q2 FY26", promise: "Two of three pending acquisitions (Rio.Money, Dice, EffiaSoft) to sign very quickly", outcome: "Delivered (Rio.Money, confirmed closed by Q3 FY26)", explanation: "On schedule, no excuse needed"}
+    - {promised_in: "Q2 FY26", promise: "Dice acquisition to close very soon", outcome: "Partial — signed only in Q4 FY26, restructured to asset purchase, value cut from ~INR123cr to ~INR68cr", explanation: "'We have reassessed... a significant optimization' (Raj Narayanam)"}
+    - {promised_in: "Q2 FY26", promise: "EffiaSoft acquisition to close very soon", outcome: "Missed — abandoned by Q4 FY26", explanation: "'We have reassessed the strategic need... decided not to proceed ahead' — thin, non-specific"}
+    - {promised_in: "Q2 FY26", promise: "MENA office to follow GIFT City office in the next few weeks", outcome: "Missed — still zero on-ground presence as of Q4 FY26", explanation: "External-blame: 'regional volatility... and this war'"}
+    - {promised_in: "undated, referenced retrospectively in Q4 FY26", promise: "U.S. operations to kick-start by June 2026", outcome: "Missed — pushed by a couple of quarters", explanation: "External-blame: 'looking at the war and a lot of uncertainty around'"}
+    - {promised_in: "Q2 FY26", promise: "OCF to break even FY26, turn positive FY27", outcome: "Partial — standalone near breakeven (-INR6cr) in Q4 FY26, consolidated still ~-INR52cr negative", explanation: "No firm date given for consolidated turn"}
+    - {promised_in: "Q2 FY26", promise: "FY26 revenue growth guidance 40-45%", outcome: "Delivered — FY26 standalone ~42%, consolidated ~46%", explanation: "None needed"}
+    - {promised_in: "Q2 FY26", promise: "FY26 EBITDA guidance 10-11%", outcome: "Partial — landed at 9.7% standalone / 9.9% consolidated reported margin, at/below the guided floor", explanation: "None given"}
+    - {promised_in: "Q2 FY26/Q3 FY26", promise: "OMC fleet contracts within a quarter or two, then very soon", outcome: "Missed — still only 'hopeful' by Q4 FY26, no OMC named", explanation: "'Very hard to crack into an IOCL, HPCL or BPCL... sizable would take some time'"}
+    - {promised_in: "Q2 FY25", promise: "Propel gross margin to normalize to 7-9% in H2 FY25", outcome: "Missed, long-dated — fell to 4% by Q4 FY26 (from 10% Q4 FY25); recovery target lowered to ~5.5%", explanation: "'We have had to sacrifice in the interim some margins' — candid, non-deflecting"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "When will operating cash flow (and ROE/ROCE) actually turn sustainably positive, in line with reported PAT growth?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "When will EBITDA margin reach the 14-15% target, and over what horizon?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "C"
+credibility_basis: "Of 10 tracked promise-delivery pairs across Q2/Q3/Q4 FY26, 2 delivered, 3 partial, 5 missed; misses cluster in strategic/international-expansion timelines (MENA, US, EffiaSoft) and in Propel-margin/OMC-fleet fronts, while headline revenue/EBITDA guidance was mostly met."
+peer_questions:
+  - {question: "Is the global spend-management market genuinely growing at ~10.2% CAGR and the Indian market at ~15.5% CAGR, as cited by Zaggle without a named source?", why: "This sizing underlies every growth-trigger narrative in the file", check_peers: ["Capillary", "RateGain", "Tanla"]}
+  - {question: "Are peer payments/loyalty businesses also seeing incentive/cashback ratios rise (not fall) as a share of program/platform fees, contrary to Zaggle's stated declining-cashback narrative?", why: "Zaggle's own ratio moved the wrong way (66-67% to 68%) against its stated 50%-in-5-years glide path", check_peers: ["Capillary", "RateGain", "Tanla"]}
+  - {question: "Do peers corroborate that UPI take-rates/interchange will rise structurally as government subsidy is phased out?", why: "A margin-relevant regulatory/pricing assumption baked into medium-term guidance", check_peers: ["Tanla", "RateGain"]}
+  - {question: "Do other consumer-facing fintech/SaaS peers cite the draft Income Tax Rules 2026 (meal/gift/fuel allowance changes) as a similarly meaningful tailwind?", why: "Tests whether this is a real sector-wide tailwind or a Zaggle-specific talking point used to explain away Save/TaxSpanner softness", check_peers: ["Capillary", "RateGain", "Tanla"]}
+  - {question: "Is there independent support for Zaggle's claim of 'clear market leadership' in Indian spend management versus FY22-23?", why: "An unqualified market-share claim with zero named competitor or independent data point in the transcripts", check_peers: ["Capillary", "RateGain", "Tanla"]}
+  - {question: "Do peer SaaS/fintech companies report comparable AI-driven productivity gains (75-80 day dev cycles cut to under 30 days)?", why: "Tests plausibility of an efficiency claim used to justify continued/rising capitalized R&D spend", check_peers: ["Capillary", "RateGain", "Tanla"]}
+  - {question: "Is there independent confirmation of the INR79,000 crore fleet-management TAM and of competitive intensity from Corpay/WEX/VEX-type players entering India?", why: "Relevant to whether the fleet-management trigger is investable-grade or a market-sizing talking point", check_peers: ["not directly comparable; flag for Stage 6 broader industry cross-check"]}
+red_flags:
+  - "Numerical restatement required mid-quarter (Q3 FY26 platform-fee figure, INR79cr vs INR12cr)"
+  - "Self-corrected transcript error on GreenEdge growth figure (300% corrected to 184%)"
+  - "CFO transition without stated reason; interim CFO in place"
+  - "FY27 EBITDA guidance explicitly withheld pending DICE integration"
+  - "Propel gross margin fell to 4% in Q4 FY26 versus a 7-9% normalization promised in Q2 FY25"
+  - "Incentive/cashback ratio moved to ~68%, wrong direction versus stated glide path"
+  - "EffiaSoft acquisition abandoned after being presented as near-closing"
+  - "Customer churn/attrition never disclosed across all three quarters"
+  - "MENA and U.S. delays both attributed to the same external cause within one call"
+dropped_triggers:
+  - "EffiaSoft acquisition (abandoned Q4 FY26, was 'closing soon' in Q2 FY26)"
+  - "Cross-sell % KPI disclosure (last given Q2 FY26 at 21%, not repeated in Q3/Q4 FY26 despite analyst criticism)"
+timeline_slippages:
+  - "MENA/UAE office (promised 'next few weeks' Q2 FY26; still zero on-ground presence as of Q4 FY26, blamed on regional war)"
+  - "US market entry (originally targeted June 2026 per management's own Q4 FY26 retrospective statement; pushed by a couple of quarters)"
+  - "Dice acquisition close (expected 'very quickly' Q2 FY26; only signed as restructured asset-purchase deal in Q4 FY26, ~6 months late, valuation cut from ~INR123cr to INR68cr)"
+  - "OMC fleet contracts (promised 'a quarter or two' in Q2 FY26; still zero OMC contracts by Q4 FY26 across 3 quarters)"
+  - "Propel margin normalization to 7-9% (promised Q2 FY25 for H2 FY25; instead declined to 4% by Q4 FY26)"

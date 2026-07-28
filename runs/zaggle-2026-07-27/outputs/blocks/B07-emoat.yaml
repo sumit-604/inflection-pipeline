@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "prospectus ABSENT (HIGH) - no IPO/DRHP baseline to verify management's cited historical figures (16% cross-sell at IPO, INR373cr IPO-year revenue)"
+  - "announcements ABSENT - no Reg 30 documented-ACTION record; several claims below (MENA presence, US entry) rest on concall self-report only"
+  - "shareholding ABSENT beyond Mar-2025 - cannot verify any ownership-linked forward claims"
+  - "research ABSENT - no peer benchmark for market-share/TAM/margin-trajectory claims (H1, D1, R1 all carry this caveat)"
+flags:
+  - type: FLAG-EMOAT
+    reason: "F2 (execution moat) and G2 (working capital improvement) both score 0/None on negative evidence, not absence of evidence: B05 promise-delivery credibility grade is C (2 delivered/3 partial/5 missed of 10 tracked promises), and standalone trade receivables grew from INR40cr to INR129cr YoY while consolidated OCF remained negative. These are the same mechanisms that produced Gate 0's AVOID deal-breakers, and they are unresolved in the forward record."
+  - type: FLAG-EMOAT
+    reason: "Internal inconsistency in Zaggle's own FY26 capitalised tech-spend disclosure: Concall May-2026 gave two different figures in the same call (~INR107cr per one answer vs INR30cr H1 + INR56cr H2 = INR86cr per another), unreconciled by management."
+  - type: FLAG-EMOAT
+    reason: "R1 (regulatory tailwind) rests on draft, not enacted, Income Tax Rules 2026, and is sector-wide (benefits all spend-management peers), not a Zaggle-specific moat."
+em_score: 26
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-24 months"}
+  - {id: "D2", name: "Digital platform", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, deepens 12-24 months"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing, target ~2027, disclosure stalling"}
+  - {id: "A3", name: "Process innovation (AI dev-cycle compression)", strength: "Moderate", evidence_type: "claim", time_to_materialise: "6-9 months per management"}
+evidence_mix: {documented: 19, claim: 12, inference: 0}
+completionist_recount: "recount performed: 19 documented items across 6 categories (A4, B2, B3, D2, G1, H2); 9 of 21 rows scored Strong/Moderate, below the 12-category force-fit threshold; F2 and G2 explicitly scored None on negative evidence rather than credited"
+catalysts_12m:
+  - {catalyst: "FY27 EBITDA guidance reissuance once DICE integration completes", window: "next 1-2 quarters per management", evidence_type: "claim", anchor: "Concall May-2026 (Q4 FY26 call)"}
+  - {catalyst: "A named OMC (IOCL/HPCL/BPCL) fleet contract, or its continued absence", window: "repeatedly 'coming quarters' across 3 quarters", evidence_type: "claim", anchor: "B05 trigger #3; Concall May-2026"}
+  - {catalyst: "MENA and U.S. entities going operational, or slipping again", window: "US revised to FY26-end; MENA no date", evidence_type: "claim", anchor: "Concall May-2026"}
+  - {catalyst: "Re-disclosure of cross-sell % KPI (last given 21%, Q2 FY26, not repeated since)", window: "uncertain", evidence_type: "claim", anchor: "B05 dropped_triggers"}
+  - {catalyst: "Consolidated OCF trend toward FY27 positive target", window: "FY27", evidence_type: "claim", anchor: "B05 trigger #2; Concall May-2026"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "OMC (IOCL/HPCL/BPCL) fleet contract", converting_evidence: "A named OMC contract with disclosed scale", first_appears: "Concall or exchange filing", window: "uncertain, 3 quarters of 'hopeful' language with no name"}
+  - {optionality: "US and MENA operating entities", converting_evidence: "An operating local entity plus a named local contract", first_appears: "Exchange filing / concall", window: "US revised to 'a couple of quarters' past June-2026; MENA has no date"}
+  - {optionality: "AI-driven data/reconciliation advantage", converting_evidence: "A disclosed, independently verifiable accuracy/efficiency metric or IP filing", first_appears: "Annual Report IP note or concall with quantified metric", window: "management cites 'next 6-9 months', no metric disclosed yet"}
+  - {optionality: "Independent market-leadership confirmation", converting_evidence: "Broker/industry report or peer-disclosed data corroborating '#1 spend management' claim", first_appears: "Research note or exchange filing citing third-party source", window: "contingent on research gap closing"}
+  - {optionality: "Working capital / OCF turning structurally positive", converting_evidence: "Consolidated OCF crossing zero on a sustained trend", first_appears: "Quarterly results / concall", window: "FY27 per management guidance, credibility graded C"}
+  - {optionality: "Patent or formal IP protection", converting_evidence: "A filed patent application distinct from existing trademark registrations", first_appears: "Annual Report IP/intangibles note", window: "NOT FOUND, no indication planned"}
+  - {optionality: "Supply-chain/platform network effect maturing into a true multi-sided marketplace", converting_evidence: "Disclosed multi-sided transaction volume with structurally rising take rate", first_appears: "Investor presentation or concall", window: "uncertain, no committed timeline"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "Gate 0 AVOID is capped by mechanical deal-breakers (sub-10% median ROCE, negative cumulative CFO/PAT) tied to post-IPO capital dilution and cash-conversion strain, not broken unit economics, while the forward scan finds real documented moat-building (product platform, partnership lock-in, war chest); TURNAROUND rather than a cleaner upgrade because F2 execution and G2 working capital both fail on the same mechanisms that produced the backward AVOID, and those mechanisms are still live and unresolved."
+top_moat_risks:
+  - "Credibility grade C on management promise-delivery (5 of 10 tracked promises missed), concentrated in exactly the areas (international expansion, OMC, M&A, Propel margin) the forward-moat thesis depends on"
+  - "Working capital deteriorating, not improving: trade receivables +223% YoY (INR40cr to INR129cr) while consolidated OCF stays negative"
+  - "Cashback/incentive ratio moving the wrong direction (~68% vs stated 50%-in-5-years glide path), eroding the monetisation quality behind the digital-platform-scale moat"
+  - "Unreconciled internal inconsistency in FY26 capitalised tech-spend disclosure (INR107cr vs INR86cr in the same call), undermining confidence in the product-platform capex figure"
+  - "R1 regulatory tailwind rests on a still-draft tax rule and is sector-wide, not exclusive to Zaggle"

@@ -1,0 +1,26 @@
+stage: B13-synthesis
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+phase: 1
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # FLAG-CASH INDETERMINATE cap invoked
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+flag_promoter_emitted: false    # B08 TRUSTWORTHY; governance items carried as monitorables
+cash_determination: "INDETERMINATE"
+confidence_delta: {numerical: 95.7, redflag: 82, framework: 98, peer: 86, overall: 82}
+valuation_decision: ""          # phase 1 lite: no valuation (stages 10/11 not run)
+entry_range: {low: 0, high: 0}  # not computed in phase 1
+headline: "Growth compounds in revenue not in cash"
+falsification_metric: "FY27 consolidated OCF prints negative while net revenue grows near 40% and trade receivables grow faster than net revenue"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Gross revenue Rs 1,304 cr overstates scale; ~55% is Propel gift card resale at 94% cost, so net revenue near Rs 625 cr and 19.9% adjusted EBITDA on that base are the real numbers. Gross-vs-net Ind AS teaching example, no investment call."
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+verifier_disagreements_logged: 1   # B06 Q6 peer misattribution, GATE HELD corrected
+notion_save: "deferred to phase 3"
+input_gaps: [prospectus ABSENT (HIGH), announcements ABSENT, shareholding ABSENT, research ABSENT]

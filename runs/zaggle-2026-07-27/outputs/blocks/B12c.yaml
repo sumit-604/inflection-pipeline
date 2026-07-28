@@ -1,0 +1,29 @@
+stage: B12c
+company: "ZAGGLE"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete_phase1
+phase: "1 (Gate 0 + Emerging Moat only; valuation deferred to Phase 3)"
+gate0:
+  rules_checked: 40
+  fails: []
+emoat:
+  rules_checked: 12
+  fails:
+    - {severity: "MINOR", rule: "active_categories = Strong/Moderate only", issue: "YAML active_categories lists 7 (A4,D2,B2,G1,H2,C1,A3) but Section-3 prose + completionist_recount say 9 Strong/Moderate (adds borderline Weak-Moderate B3,R1); counts do not reconcile", impact: "none — em_score 26, STRENGTHENING, TURNAROUND all unaffected"}
+valuation:
+  status: "pending phase 3"
+  rules_checked: 0
+  fails: []
+  note: "B11 (valuation) and B10 (assembly) not produced until Phase 3; not read, not scored in this pass"
+recomputed_destination_pe: ""   # N/A in Phase 1 (valuation deferred); concur otherwise
+recomputed_decision: ""         # blank — concur with B01 AVOID and B07 STRENGTHENING/TURNAROUND
+findings:
+  - {severity: "MINOR", location: "B01 Block B / B4", note: "Earliest WC-Days year anchored to FY24 (FY23 payables NOT FOUND); honest no-estimate reading but score-maximising (5 vs a possible 3). Correctly disclosed. No decision impact."}
+  - {severity: "MINOR", location: "B01 Block E / E2", note: "E2 rule specifies a 3-year window; only a 1-year change (FY24->FY25 +0.29pp) available. ±1% band applied on available history per operating rule; disclosed. No decision impact."}
+  - {severity: "MINOR", location: "B07 Section 3 / active_categories", note: "active_categories (7) vs prose/completionist count (9 Strong/Moderate) do not reconcile; two borderline Weak-Moderate rows (B3,R1) counted in prose but excluded from YAML. Presentational only."}
+  - {severity: "MINOR", location: "B07 Section 2C", note: "capex_embedded_growth set to 0/NOT MEANINGFUL after showing the 190% mechanical arithmetic; defensible for asset-light model, flagged in handoff."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 98    # 51 of 52 Phase-1 rules passed (Gate 0 + Emerging Moat only)

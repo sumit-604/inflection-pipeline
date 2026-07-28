@@ -1,0 +1,299 @@
+stage: B10-valinputs
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - "ROCE FY[Y+2] expected: NOT FOUND (would refine recovering blend, but Pillar 1 uses current ~30% as sole anchor per deliberation)"
+  - "Peer ROCE for TVSELECT: NOT FOUND (data stale FY2019; 3-peer median ADSL/AURIONPRO sufficient for cross-check)"
+  - "Forward EBITDA Guidance FY27+: NOT FOUND (management no-guidance policy; Trigger 3 Q1 FY27 margin normalisation is falsifiable forward test)"
+  - "Capex Guidance & CWIP Go-Live Timeline: NOT FOUND (order-book execution ~18-24mo, but RBI/DaaS capex payoff milestones undated)"
+  - "Accounting Quality — Cybercons Final Classification: NOT FOUND (FY26 AR not published as of run date; FY25 AR shows contradiction unresolved)"
+flags:
+  - "Receivables Ageing Tail Risk: 1-2yr bucket +238.6% YoY, ECL allowance frozen at Rs 0.14cr for 2 years → FALSIFIER if bad-debt charge materializes (B02.red_flags; B07.top_moat_risks)"
+  - "Margin Recovery Unproven: Q4 FY26 EBITDA margin dipped to 9.0% from 11.9% Q3 (290bp decline), blamed on AI-hardware supply chain as 'temporary blip' → Q1 FY27 print must confirm normalization to 11-12% range or Pillar 3 premium at risk (B05, B07.catalysts_12m line 22)"
+  - "RBI Order Single-Point-of-Failure: Rs 750.82cr order is 50%+ of growth premium, go-live date not disclosed, management declined to commit timeline → FTTCP devil's advocate flagged (fttcp-deliberation.md line 91)"
+  - "Order-Book Visibility Boundary: SOM yr3 (Rs 3,414cr) well-anchored to order-book + pipeline evidence; SOM yr5 (Rs 5,420cr) lacks order-to-cash verification beyond 3yr gate"
+  - "Cash Conversion Opaque: Net WC 17-day claim unreconciled vs 126-day gross DSO; management deflected on as-a-service unit economics; lease counterparty/terms undisclosed (B05.red_flags; B04.mgmt_questions)"
+
+table:
+  company_identity:
+    company: "Dynacons Systems & Solutions Ltd"
+    ticker: "DSSL"
+    sector: "IT Infrastructure / Systems Integration / Managed Services"
+    business_model_type: "Hybrid: hardware resale + lease-funded annuity transition (B04.business_type)"
+    sector_cap_row_manifest: "Platform / SaaS / IT services (B00-inputs line 10; rejected by deliberation)"
+    sector_cap_row_fttcp_authoritative: "Data centres and cloud infrastructure, capital heavy (fttcp-deliberation Override 3, p.39-44)"
+    cmp_rs: 1232
+    market_cap_cr: 1567.9
+    shares_diluted_cr: 1.2737
+    ev_cr: 1693.3
+    ev_calc_detail: "mcap 1,567.9 + (debt+leases 236.5 - cash 111.2) = 1,693.3cr"
+
+  latest_financials_fy26:
+    revenue_cr: 1424.28
+    revenue_anchor: "audited standalone P&L p.2 line 50; screener-Data_Sheet line 11"
+    revenue_growth_yoy_pct: 12.4
+    ebitda_cr: 146.0
+    ebitda_anchor: "B05-concall line 24; confirmed 1,424.28 × 10.2% = 145.3cr"
+    ebitda_margin_pct: 10.25
+    ebitda_margin_anchor: "fttcp-deliberation R7"
+    pat_cr: 84.78
+    pat_anchor: "audited standalone P&L p.2 line 63: 8,477.56 lakh"
+    pat_margin_pct: 5.95
+    eps_diluted_rs: 66.61
+    eps_anchor: "audited results FY26 p.2 line 82"
+    current_pe_x: 18.5
+    current_pe_calc: "1,232 / 66.61"
+    cfo_cr: 45.63
+    cfo_anchor: "audited standalone cash flow p.6 line 245: 4,563.48 lakh"
+    fcf_cr: -19.37
+    fcf_calc: "CFO 45.63 - Capex 65.00"
+    bvps_rs: 247.3
+    bvps_calc: "Equity 315.06cr / shares 1.2737cr"
+    pb_x: 5.0
+    pb_calc: "1,232 / 247.3"
+    net_debt_cr: 125.4
+    net_debt_calc: "(debt 81.23 + leases 155.32 - cash 111.23)"
+    debt_excl_leases_cr: 81.23
+    debt_excl_anchor: "audited BS FY26 p.4: non-current 1.51 + current 79.72"
+    lease_liabilities_cr: 155.32
+    lease_anchor: "audited BS FY26 p.4: non-current 113.60 + current 41.71"
+    cash_cr: 111.23
+    cash_anchor: "audited p.7: components = 0.71 + 26.17 + 1,233.00 + 9,863.15 lakh"
+    capex_cr: 65.00
+    capex_anchor: "audited cash flow p.6 line 247: Purchase PPE 6,500.43 lakh"
+    depreciation_cr: 14.53
+    depreciation_anchor: "audited P&L p.2 line 58: 1,453.03 lakh"
+    dps_rs: 0.50
+    dps_calc: "Dividend Paid 63.63 lakh / 1.2737cr shares"
+    roce_latest_pct: 30.17
+    roce_anchor: "fttcp-deliberation Pillar 1: EBIT 131.39cr / CE 435.47cr"
+    roce_verdict: "RECOVERING (+1)"
+    roce_verdict_anchor: "fttcp-deliberation Override 2, p.34-38"
+    roe_pct: 26.9
+    roe_calc: "PAT 84.78cr / Equity 315.06cr (year-end basis)"
+    revenue_cagr_3yr_pct: 21.0
+    revenue_cagr_anchor: "B09-tam; screener FY23-26: (1,424.28/804.47)^(1/3)-1"
+    pat_cagr_3yr_pct: 36.4
+    pat_cagr_anchor: "screener FY23-26: (84.74/33.45)^(1/3)-1"
+    cfopat_ratio_pct: 53.8
+    cfopat_calc: "45.63 / 84.78"
+    fcfpat_ratio_pct: -22.8
+    fcfpat_calc: "-19.37 / 84.78"
+
+  guidance_and_credibility:
+    credibility_grade: "B"
+    credibility_basis: "Delivered on RBI order conversion, NABARD CBaaS expansion, full-year margin narrative (8.1→10.2%); partial on data-centre mix (37%→34%), growth deceleration (20%→12%); missed on Q4 margin assurance (blamed AI-hardware). Flagged: non-disclosure of as-a-service unit economics, scripted canned responses, unreconciled net WC claim."
+    credibility_anchor: "B05-concall.yaml line 48-50"
+    guided_revenue_growth_fty27_plus: "NOT FOUND"
+    guided_margin_band_fty27_plus: "NOT FOUND"
+    guidance_policy: "Explicit no-guidance policy (B05.guidance line 29; repeated evasions both concalls)"
+    order_book_cr: 2964
+    order_book_date: "30-May-2026"
+    order_book_anchor: "B05.guidance line 21"
+    order_book_to_revenue_x: 2.08
+    bidding_pipeline_cr: 5100
+    bidding_pipeline_date: "end-May-2026"
+    bidding_pipeline_anchor: "B05.guidance line 22"
+    bidding_pipeline_win_rate_pct: 30
+    rbi_private_cloud_order_cr: 750.82
+    rbi_order_tenor_yr: 5
+    rbi_order_announced: "4-May-2026"
+    rbi_order_anchor: "B05.guidance line 28; fttcp-deliberation p.91 SHARED CATALYST flag"
+
+  emerging_moat_and_tam:
+    em_score: 22.7
+    em_classification: "MODEST"
+    em_anchor: "B07.em_score; 22.7 below 25 threshold for +3x premium"
+    best_fit_strategy: "GARP (WATCHLIST)"
+    best_fit_anchor: "B03.best_fit_strategy; B07.combined_assessment"
+    strategic_asset_or_monopoly: "NO (no pricing power, weak competitive position, replicable moats)"
+    strategic_asset_anchor: "B04.pricing_power; B07 top_moat_risks"
+    tam_conservative_cr: 469100
+    tam_realistic_cr: 519600
+    tam_growth_pct: 11.2
+    sam_cr: 70548
+    sam_pct_of_tam: 15.0
+    som_3yr_cr: 3414
+    som_3yr_cagr_pct: 33.9
+    som_5yr_cr: 5420
+    som_5yr_cagr_pct: 30.6
+    current_sam_share_pct: 2.02
+    tam_anchor: "B09-tam.yaml lines 19-24"
+    som_implied_cagr_3yr_anchor: "fttcp-deliberation Pillar 3 line 80; B09.som_implied_revenue_cagr"
+    order_book_visibility_yr: 2.08
+    order_to_cash_timeline_mo: 18-24
+    order_timeline_anchor: "B05.timeline_slippages; management call commentary (unreconciled precision)"
+
+  cash_conversion_quality:
+    cash_conversion_verdict: "STAGNANT (0)"
+    cash_verdict_anchor: "fttcp-deliberation Override 1, p.27-32"
+    cash_multiplier_pillar2: 1.00
+    growth_offset: 0
+    cash_multiplier_anchor: "fttcp-deliberation Pillar 2, line 79"
+    gross_debtor_days_fy25: 126
+    debtor_days_anchor: "Acuité rating PR p.2; milestone-based receivables collection"
+    trade_receivables_ageing_1_2yr_cr: 10.96
+    ageing_1_2yr_growth_yoy_pct: 238.6
+    ageing_1_2yr_anchor: "B02.receivables_trend"
+    ecl_allowance_cr: 0.14
+    ecl_years_frozen: 2
+    ecl_anchor: "B02.red_flags line 32"
+    inventory_days_fy25: 18
+    inventory_days_anchor: "Acuité rating PR p.2"
+    wc_cycle_days_fy26: 17
+    wc_cycle_days_fy25: 14
+    wc_cycle_anchor: "B05.guidance line 27 (management claim, unreconciled)"
+    rating_wc_quote: "Working capital intensive operations. Gross Current Assets (GCA) 155 days FY2025 vs 175 days FY2024. GCA impacted mainly on account of debtor days where extended credit period is offered to customers on milestone basis. Inventory days 18 days FY2025 vs 28 days FY2024. Debtor days 126 days FY2025 vs 143 days FY2024. Debtors' days improved on improved collection period. Debtors are realised on milestone as per completion of project. Working capital operations expected to remain intensive over the medium term."
+    rating_wc_quote_agency: "Acuité Ratings & Research"
+    rating_wc_quote_date: "31-Dec-2025"
+    rating_wc_quote_page: "p.2 Weaknesses section 1"
+
+  rating_agency_assessment:
+    rating_agency: "Acuité Ratings & Research"
+    rating_lt: "ACUITE A-"
+    rating_st: "ACUITE A2+"
+    rating_outlook: "Stable"
+    rating_date: "31-Dec-2025"
+    rating_anchor: "rating__ratings.txt header and p.1"
+    rating_facilities_total_cr: 377
+    rating_trajectory: "BBB/Positive (pre-Aug2022) → BBB+/Stable (Aug2022, Nov2023) → A-/Stable (Dec2024 upgrade) → A-/Stable reaffirm (Dec2025)"
+    rating_on_facilities_list: "ICICI BG 25cr, HDFC BG 50cr, IDFC First BG 70cr, YES Bank BG/LoG 92cr, ICICI Bills 15cr, YES Bank CC 20cr, HDFC CC 35cr, IDFC First CC 30cr, HDFC Vendor Fin 40cr (all Tier A- LT and A2+ ST)"
+
+  accounting_quality_and_governance:
+    overall_quality_score: 5
+    overall_quality_max: 10
+    quality_components: "Governance 6, Accounting 4, Balance Sheet 6, Earnings 5"
+    quality_anchor: "B03.overall_quality"
+    auditor_opinion: "Unmodified (Clean)"
+    auditor_opinion_anchor: "audited results p.2, p.3"
+    key_audit_matter: "Revenue recognition cut-off risk (large transaction volume near period-end)"
+    kam_anchor: "B03.finding rank 9; B02.findings rank 9"
+    red_flags_top3:
+      - "Cybercons subsidiary/associate contradiction across 6+ anchors (CARO cl.xxi vs Consol Auditor's Report vs Board's Report vs AOC-1)"
+      - "Schedule III net-asset roll-forward fails arithmetic both entities (~Rs 46.5-46.7 lakh gaps, pattern suggests value swap)"
+      - "Trade receivables ageing tail +238% YoY vs ECL frozen 2 years (Rs 0.14cr)"
+    red_flags_anchor: "B02.red_flags; B03 strengths_top3"
+    rpt_pct_revenue: 0.67
+    rpt_status: "Immaterial, clean, arms-length"
+    fraud_whistleblower: "None noted"
+    restatement_history: "None found"
+    going_concern: "No going-concern language"
+    going_concern_status: "Adequate liquidity per Acuité"
+
+  promoter_and_governance:
+    promoter_verdict: "CAUTION"
+    promoter_verdict_basis: "2019 SEBI settlement (disclosure lapse, dated), Cybercons classification unresolved (live governance issue), Audit Committee chair transition (eleventh-hour FY25), Risk Committee inactive FY25. Early institutional transition (FII+DII 0→1.36%), promoter holding flat 60.89%, unpledged."
+    promoter_verdict_anchor: "B08.verdict"
+    deal_breaker_level: "NO (no market ban, conviction, SFIO, auditor resignation, restatement)"
+    sebi_settlement_year: 2019
+    sebi_settlement_amount_lakh: 22.28
+    sebi_settlement_basis: "shareholding-disclosure lapses FY13-14"
+    sebi_settlement_anchor: "B08.adverse_findings row 1"
+    cybercons_issue: "Classification contradiction (subsidiary vs 50% associate) across 6+ anchors; Cybercons CARO not issued as of parent sign-off; all 3 promoter-execs on Cybercons board; large undisclosed RPTs"
+    cybercons_anchor: "B08.adverse_findings row 3; B02.red_flags; B03 kill_switch_notes phase1"
+    promoter_shareholding_pct: 60.89
+    promoter_holding_trend: "Flat (61.10→60.89, -0.21pp Jun2026)"
+    promoter_holding_anchor: "screener SHP (B08 transition_evidence; B01 operator-supplied fill)"
+    promoter_pledge_pct: "NOT FOUND"
+    pledge_anchor: "B08.pledge_pct_latest: 0; pledge_trend: NOT FOUND"
+    fii_dii_ownership_pct: 1.36
+    fii_dii_date: "Jun 2026"
+    fii_dii_anchor: "B08.transition_evidence; screener SHP"
+    fii_dii_status: "Rising from 0% Sep2023, still near-absent"
+
+  ua_qualifiers:
+    listed_12m: true
+    listed_12m_basis: "Incorporated 1995 (B00-inputs, B08)"
+    gate0_or_em: true
+    gate0_or_em_basis: "Gate 0 core score 60 (B01.core_score); EM 22.7 below 25 threshold"
+    fii_dii_lt3: true
+    fii_dii_lt3_pct: 1.36
+    fii_dii_lt3_anchor: "screener SHP Jun2026 (B08.transition_evidence)"
+    all_met: true
+    ua_multiplier_applied: 1.25
+    ua_multiplier_anchor: "fttcp-deliberation line 82"
+
+  peer_financials_fy26_latest:
+    dssl_pe_x: 18.5
+    dssl_pb_x: 5.0
+    dssl_roe_pct: 26.9
+    dssl_revenue_cagr_3yr_pct: 21.0
+    dssl_roce_pct: 30.2
+    adsl_pe_x: 18.5
+    adsl_pb_x: 1.07
+    adsl_revenue_cagr_3yr_pct: 20.0
+    adsl_roce_pct: 9.2
+    aurionpro_pe_x: 21.5
+    aurionpro_pb_x: 2.59
+    aurionpro_revenue_cagr_3yr_pct: 20.3
+    aurionpro_roce_pct: 16.5
+    peer_valuation_anchor: "screener-Data_Sheet.csv (3IINFOLTD-Data_Sheet, ADSL-Data_Sheet, AURIONPRO-Data_Sheet)"
+    peer_pe_median_x: 18.5-21.5
+    peer_pb_median_x: 1.1-2.6
+    peer_growth_median_pct: 20.0-20.3
+    peer_roce_median_pct: 9.2-16.5
+
+  fttcp_phase2_approved_pillars:
+    pillar1_roce_verdict: "RECOVERING (+1)"
+    pillar1_roce_verdict_anchor: "fttcp-deliberation Override 2, p.34-38"
+    pillar1_current_roce_pct: 30.17
+    pillar1_current_roce_anchor: "fttcp-deliberation Pillar 1 line 72-75"
+    pillar1_roce_fy2_expected: "NOT FOUND (second input unresolved)"
+    pillar1_normalization_route: "NONE (Route A idle pool 0.6% CWIP <20% gate; Route B no dated catalyst)"
+    pillar1_base_multiple_x: 22.0-22.6
+    pillar1_base_multiple_anchor: "fttcp-deliberation line 77: 0.5×ROCE+7.5 on ~30%"
+    pillar2_cash_verdict: "STAGNANT (0)"
+    pillar2_cash_multiplier_x: 1.00
+    pillar2_growth_offset_x: 0
+    pillar2_anchor: "fttcp-deliberation Override 1, Pillar 2 line 79"
+    pillar3_total_x: 3.0
+    pillar3_3a_order_book_x: 3.0
+    pillar3_3a_visibility_x: 2.08
+    pillar3_3a_grade: "B"
+    pillar3_3a_som_cagr_pct: 33.9
+    pillar3_3b_em_score: 22.7
+    pillar3_3b_em_premium_x: 0
+    pillar3_3c_visibility_yr: 2.08
+    pillar3_3c_premium_x: 0
+    pillar3_anchor: "fttcp-deliberation Pillar 3 line 80"
+    pillar4_strategic_premium_x: 0
+    pillar4_anchor: "fttcp-deliberation line 81 (no licence/monopoly, ROCE route barred single-credit)"
+    destination_pe_additive_x: 30.0
+    destination_pe_additive_calc: "(pillar1_base 22.3 + pillar3 3.0) × 1.00 cash × 1.25 ua = 31.6, capped at 30x"
+    destination_pe_rrm_x: 24.0
+    destination_pe_rrm_calc: "RRM 0.76 at r 15.5% (quality load) × 1.25 ua ≈ 24x"
+    destination_pe_authoritative: 30.0
+    destination_pe_earnings_basis: "TRAILING"
+    destination_pe_earnings_basis_anchor: "fttcp-deliberation Override 4 line 45-49"
+    destination_pe_sector_cap_row: "Data centres and cloud infrastructure, capital heavy"
+    destination_pe_sector_cap_x: 30.0
+    destination_pe_sector_cap_anchor: "fttcp-deliberation Override 3, p.39-44"
+
+conflicts: []
+
+unresolved:
+  - field: "ROCE FY[Y+2] Expected (for Recovering Blend Refinement)"
+    why: "No FY28E guidance given; forward projections are stage 11 domain"
+    where_it_might_be: "Stage 11 base-case 3-year DCF run; FTTCP Pillar 1 currently uses current 30.17% as sole anchor"
+  - field: "Peer Valuation Data (TVS Electronics)"
+    why: "Last full audited year FY2019; no recent results collected"
+    where_it_might_be: "TVSELECT recent annual reports (not collected this run; 3-peer median ADSL/AURIONPRO sufficient)"
+  - field: "Forward EBITDA Guidance (FY27+)"
+    why: "Management explicit no-guidance policy (both concalls deflected)"
+    where_it_might_be: "FTTCP Trigger 3 (Q1 FY27 margin normalisation) is falsifiable forward test; no forward guidance available"
+  - field: "Capex Guidance & CWIP Go-Live Timeline (RBI/DaaS Build-Out)"
+    why: "Management silent on future capex profile and RBI/DaaS capex ROI milestones"
+    where_it_might_be: "Stage 11 management interaction (verifier may ask for capex/revenue phasing); order-book execution ~18-24mo average but specific RBI go-live undated"
+  - field: "Accounting Quality — Cybercons Final Classification"
+    why: "FY26 Annual Report not published as of run date (B01 notes 16 months stale vs AR publication)"
+    where_it_might_be: "FY26 AR Consolidated Auditor's Report (expected Sep 2026); FY25 AR shows contradiction unresolved; impact: Consolidated PAT uses Cybercons revenue but classification unconfirmed"
+  - field: "Top-3 Peer ROCE for DSSL Direct Comparables"
+    why: "3IINFOLTD distressed (turnaround, past losses); TVSELECT data stale (FY2019); only ADSL + AURIONPRO calculated"
+    where_it_might_be: "ADSL 9.2%, AURIONPRO 16.5% available; DSSL 30.2% appears exceptional; EM score 22.7 (MODEST) flags durability question until Q1 FY27"
+  - field: "Sector Cap Row Final Authority (Platform/SaaS vs Data Centres)"
+    why: "Manifest default 'Platform/SaaS 45x' rejected by FTTCP override; deliberation approves 'Data centres 30x'; stage 11 to read Section 1B v3.3"
+    where_it_might_be: "frameworks/Section_1B_v3.3 (authoritative source read at stage 11 run-time; override decision already operator-approved, very unlikely to change)"
+
+credibility_grade: "B"

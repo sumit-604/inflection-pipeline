@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 506, high: 569}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "Avoid flips to WATCHLIST buy only if CMP enters Rs506-569 AND FY27/FY28 prints confirm EBITDA margin >=5.0% with owners' EPS on the base ladder (FY27 >=Rs41.05) AND NWC days <=60 AND OCF/EBITDA >=50%, with no thesis-broken trigger fired; absent the price move into the zone, the AVOID holds even on good prints"
+monitoring_checklist:
+  - "NWC days: green <=60, red >65 (Q1/Q2 FY27 investor deck and concall)"
+  - "OCF/EBITDA conversion: green >=50% per FY27 guide, red <50% (quarterly and annual cash flow statement)"
+  - "Core EBITDA margin: green >=5.0%, red <4.6% (quarterly P&L)"
+  - "Owners' EPS vs base ladder (FY27 >=Rs41.05) and NCI share: green NCI <=26%, red NCI >27% (consolidated P&L minority line)"
+  - "Receivables ageing beyond six months and doubtful receivables trend: red if continued non-disclosure or doubtful receivables rising faster than revenue (AR trade receivables ageing note / concall)"
+  - "Organic revenue growth as a multiple of the pharma market: green >=1.4x, red approaching 1.0x (concall organic growth disclosure)"
+  - "Goodwill share of equity (43% FY26) and any impairment; CARO xi remediation at the 3 flagged subsidiaries: red on impairment charge, a fourth CARO xi subsidiary, or no remediation (balance sheet, auditor KAM, CARO annexure)"
+  - "Price re-engagement and M&A pause: green CMP into Rs506-569 with ladder intact and pause holding, red a large deal (>Rs100 Cr revenue) before cash durability is proven (market price; deal announcements)"

@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Revenue-mix split (Mining 43% / Terminals 36% / Warehousing 21%) is sourced only from the investor presentation MIS (Inv. Pres. slide 21); both the standalone AR (Note 42a, p.195) and the FY26 audited results segment note report a single Ind AS 108 business segment, so the split is not auditor-assured at the segment level."
+  - "Per-unit tariffs (per-CuM/per-tonne mining rate, per-TEU CFS tariff, per-pallet warehousing fee) NOT FOUND in AR or investor presentation; check concall or tariff card."
+  - "Segment-level ROCE/ROIC NOT FOUND; only qualitative 'capital-efficient' framing for Mining given in investor presentation slide 10."
+  - "MMLP-only revenue (separate from CFS) NOT FOUND; presentation slide 13 explicitly states Terminal Business revenue bundles both CFS and MMLP."
+flags:
+  - "~51% of consolidated equity is Non-Controlling Interest because SIAL (holding entity for CFS/MMLP subsidiary SMART) is only 53.6%-owned; consolidated P&L/EPS materially overstates value attributable to SICALLOG shareholders unless NCI-adjusted (SOTP required)."
+  - "Standalone (listed parent) carries negative-to-thin net worth and 14.86x debt/equity (FY25), while the profitable Terminals subsidiary sits one level down and only 53.6%-owned; capital structure complexity is central to any valuation."
+  - "Sector_cap_row 'EPC / Civil construction' in the manifest is a confirmed collector defect; this is a diversified logistics operator (Mining contract-services + Terminals infrastructure-toll + Warehousing 3PL), not EPC."
+  - "FY26 rights issue (Rs 930.3mn, 11:5 ratio) was raised to meet 25% public float (MPS) compliance, not primarily for growth capex — track future capital raises for whether they are compliance-driven or growth-driven."
+  - "Company still reports single Ind AS 108 segment despite three economically and structurally distinct businesses; formal segment disclosure absence limits segment-level ratio verification."
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Mining Logistics (overburden removal / coal transport)", type: "contract-services (order-book-backed)", pct_of_revenue: 43, predictability: "M"}
+  - {name: "Terminals (CFS + MMLP)", type: "infrastructure/throughput toll", pct_of_revenue: 36, predictability: "M-H"}
+  - {name: "Warehousing & 3PL", type: "recurring service fee", pct_of_revenue: 21, predictability: "H"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Land/location scarcity (owned CFS land + 82-acre Chennai MMLP parcel)", durability: "high"}
+  - {moat: "Regulatory/customs licensing barrier (CFS operations)", durability: "medium-high"}
+  - {moat: "Parent (Pristine Group/BlackRock) capital access and tender credibility", durability: "medium, also a dependency risk"}
+  - {moat: "Scale/cost advantage at Chennai CFS (#1 size and volume, NICDC top performer FY23-FY26)", durability: "medium"}
+valuation_methods:
+  primary: {method: "Sum-of-the-Parts (SOTP), NCI-adjusted", why: "Three structurally distinct segments with different ownership stakes (SIAL/SMART only 53.6%-owned), asset intensity, and economics make a single blended multiple inappropriate."}
+  secondary: {method: "EV/EBITDA (consolidated, cycle-normalized, NCI-adjusted)", why: "Useful cross-check against diversified logistics peers once adjusted for ~51% NCI share of consolidated equity and normalized for the FY24-FY26 turnaround ramp rather than a single-year snapshot."}
+  tertiary: {method: "Replacement cost / land-value floor check (Terminals segment only)", why: "Owned port-adjacent CFS land and the 82-acre Chennai MMLP parcel are scarce, quasi-real-estate assets warranting an asset-value sanity check within the Terminals SOTP component."}
+  not_applicable:
+    - "DCF as sole/primary method (only one profitable audited year post-CIRP, FY26; cash flows not yet stable enough to forecast reliably)"
+    - "P/E on unadjusted consolidated EPS (blends ~51% NCI-owned earnings and a negative-net-worth standalone parent)"
+    - "Book value / P/B (post-CIRP asset write-downs and large accumulated losses make book value a poor proxy for going-concern value)"
+irrelevant_ratios:
+  - {ratio: "Blended consolidated Net Profit Margin trend", why: "Mixes a loss-making, negative-net-worth Mining parent with a profitable, only 53.6%-owned Terminals subsidiary; mix-shift, not operating improvement, can drive the trend."}
+  - {ratio: "Institutional/FII ownership level as a quality signal", why: "Per house rule (CLAUDE.md Amendment 3), low institutional ownership is never treated as a risk signal in this pipeline."}
+  - {ratio: "Uniform order-book coverage ratio across all segments", why: "Order book (Rs 46,000mn) is meaningful only for Mining; Terminals and Warehousing are throughput/recurring-fee models with no order-book equivalent."}
+  - {ratio: "Standalone parent Return on Net Worth", why: "Negative/thin equity base makes RONW mathematically extreme (-87.71% FY25) without reflecting proportional operating deterioration."}
+  - {ratio: "PE multiple on consolidated EPS without SOTP/NCI adjustment", why: "46.4% of the Terminals holding entity (SIAL) belongs to Non-Controlling Interests, overstating earnings power attributable to SICALLOG shareholders."}
+must_track_metrics:
+  - {metric: "Mining order book (Rs mn)", healthy: "stable or growing vs Rs 46,000mn base", red_flag: "shrinking faster than revenue billed against it"}
+  - {metric: "CFS TEU volumes by port (Chennai/Tuticorin/Vizag)", healthy: "flat-to-growing YoY at all three", red_flag: "Tuticorin's existing -10% YoY decline persisting or spreading"}
+  - {metric: "Consolidated EBITDA margin", healthy: "holding at or above ~20%", red_flag: "sustained drop below ~15%"}
+  - {metric: "Consolidated NCI as % of total equity", healthy: "stable or Sical increasing its SIAL/SMART stake", red_flag: "NCI share rising further, currently already ~51%"}
+  - {metric: "Standalone parent Debt/Equity and net worth", healthy: "declining from 14.86x, net worth recovering toward positive", red_flag: "further leverage increase or renewed net-worth erosion"}
+unit_economics:
+  unit: "segment-specific: 1 CuM overburden removed (Mining) / 1 TEU or rake handled (Terminals) / 1 pallet-SKU or outbound dispatch (Warehousing)"
+  revenue_per_unit: "NOT FOUND for any segment in AR or investor presentation; per-unit contract rates not disclosed, check concall/tariff card"
+  margin_per_unit: "NOT FOUND at unit level; qualitative framing only (Mining described as 'capital-efficient' with 'limited incremental capex,' Inv. Pres. slide 10; Terminals framed as high fixed-cost/high operating-leverage infrastructure)"
+  key_lever: "Utilization/volume scaling against largely fixed infrastructure (Terminals) and contract-execution pace against order book (Mining); Warehousing scales via new client wins against leased, variable-cost capacity"
+first_deterioration_signals:
+  - {risk: "Mining contract non-renewal or execution delay on marquee projects", first_signal: "Mining segment revenue growth turning flat/negative quarter-on-quarter"}
+  - {risk: "CFS port-level volume decline", first_signal: "port-level TEU volumes flat/declining, especially Tuticorin (-10% YoY FY26)"}
+  - {risk: "Diesel/fuel cost pass-through failure", first_signal: "Mining segment (or blended) EBITDA margin compression"}
+  - {risk: "Standalone parent negative net worth deepening", first_signal: "standalone Other Equity line reversing back into deeper negative territory"}
+  - {risk: "Warehousing capex not converting to capacity", first_signal: "capital advances/capital WIP balance staying elevated for 2+ years with no matching warehouse area growth"}
+  - {risk: "Chennai MMLP ramp-up stalling", first_signal: "rake volumes flat/declining for 2+ consecutive quarters post-commissioning"}
+  - {risk: "NCI share of consolidated economics rising further", first_signal: "consolidated 'profit attributable to NCI' growing faster than 'profit attributable to owners of the parent'"}
+mgmt_questions:
+  - "What is the per-CuM/per-tonne contract economics on the newest large mining contracts (Nigahi, SECL Porda-Chimtapani) versus legacy contracts?"
+  - "Why does the company still report a single Ind AS 108 segment despite three economically distinct, differently-owned businesses?"
+  - "What is the concrete plan and timeline to restore positive standalone parent net worth, given -87.71% RONW in FY25?"
+  - "Is there a plan to increase Sical's economic ownership in SIAL/SMART, given NCI is already ~51% of consolidated equity?"
+  - "What is the utilization rate and payback trajectory on the Chennai MMLP six months post-commissioning?"
+  - "What specifically is driving the +779% jump in capital advances, and what capacity/date does it fund?"
+  - "What are the arm's-length benchmarking terms of the mining equipment lease from parent Pristine Malwa Logistics Park Pvt Ltd?"
+one_line_verdict: "Three-segment logistics turnaround where the best asset (Terminals) is barely majority-owned, so SOTP with NCI adjustment is the only valuation method that will not overstate what SICALLOG shareholders actually own."

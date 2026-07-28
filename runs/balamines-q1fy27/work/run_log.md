@@ -41,7 +41,32 @@ coverage limitation flagged for A4/A5.
 
 ### Sequence and gates
 - A1 EXTRACTOR (both docs): GATE A1 page-coverage = 100% / 100% -> PASS.
-- A2 ENUMERATOR: in progress.
-- A3 FORENSICS: pending.
-- A4 ANALYST (merged): pending.
-- A5 ADVERSARY: pending.
+  Results: 7 pp, Lakhs (x0.01), 430 lines. Press release: 5 pp, Crores, 232 lines.
+- A2 ENUMERATOR (both docs): GATE A2 count test reconciled -> PASS.
+  Results ledger flagged SIGNATURE_BEFORE_BOARD_CLOSE, 13 ZERO_STANDING, one
+  subsidiary (Balaji Speciality Chemicals), extra consol Other-Matter para.
+  Press-release ledger flagged the narrative-vs-data volume contradiction and a
+  stray [NS1] editorial marker.
+- A3 FORENSICS (both docs): GATE A3 all 17 checked, 100% reconciled -> PASS.
+  Results findings A3-01..A3-07 (F2 forward-signal BSC swing; F12/F14 ambiguous).
+  Press-release findings F6-01/F7-01/F10-01/F11-01/F11-02/F14-01/F16-01/F16-02
+  (revenue +25.6% YoY on volume -21.7% => realization ~+60%/MT; four "during FY27"
+  commissioning commitments; BSC turning accretive).
+- A4 ANALYST (merged): PROCEED WITH FLAGS; cash conversion INDETERMINATE (capped,
+  not silently resolved); all 15 A3 findings incorporated; 9 management questions;
+  11 monitorables. First emit called BSC "the single live growth vector."
+- A5 ADVERSARY: loop 1 INCOMPLETE -> two surviving bear counters (A5-C1 BSC not a
+  proven growth vector on ~64% lower attributable volume proxy; A5-C2 print not
+  broad-based, Hotel Division rev -22.2% / PBIT -59.9%, ~100%+ of PBT growth from
+  one segment). A4 re-emitted with both grafted (new Step 2E + Step 4A attribution;
+  BSC reframed as a monitorable). A5 loop 2 -> VERDICT COMPLETE (coverage clean,
+  arithmetic ties, both counters grafted, no new surviving counter).
+
+### Close
+- A5 COMPLETE. Protocol verdict PROCEED WITH FLAGS. Six flags surfaced; human decides.
+- NOTION SAVE: not executed. New coverage, no existing BALAMINES page; page creation
+  is deferred to a full workup/finalize (per review Step 9), not auto-created here.
+- Work files committed and pushed to branch claude/balaji-mines-quarterly-analysis-ygfira.
+- Recommendation to operator: open a full workup (Gate 0 -> FTTCP -> Role 1/2/3) to set
+  valuation and Decision Status; carry the 9 questions + monitorables into it and the
+  Q2 FY27 review. A concall transcript, when available, unlocks the full Role 5 pass.

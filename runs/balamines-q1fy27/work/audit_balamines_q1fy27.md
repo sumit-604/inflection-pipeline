@@ -1,263 +1,177 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — Balaji Amines Limited (BALAMINES), Q1 FY27
 
-Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Audit date: 2026-07-28
-Fresh context: only the A4 review, the two A1 extracts, and the two A2 ledgers were read.
-All numbers below re-derived from the A1 extracts (results in Lakhs, x0.01 -> Cr; press in Cr).
-A4 cites and ledger cites were checked against the raw extract, not deferred to.
+**Second-pass (loop-2) audit.** The review under audit was re-emitted after a prior A5 loop
+that grafted two counters (A5-C1, A5-C2). Per instruction this pass re-derives independently
+from the A1 extracts and A2 ledgers, does not defer to A4's or A3's cites, and re-checks
+whether the two prior counters are now incorporated with correct line cites. Fresh grep/sweep
+enumeration was diffed against both ledgers; every derived metric was recomputed from raw
+Lakhs (results, x0.01 -> Cr) and Crores (press). Concall/deck absence is disclosed in the
+review's flags and is NOT treated as a failure.
 
-Doc-set limitation acknowledged per task: no concall transcript, no slide deck. A4 is NOT
-faulted for absent concall coverage; that limitation is disclosed in A4's flags. Coverage
-audit is scoped to the results-filing ledger rows and the press-release highlight cells.
+Unit note: results filing values are Lakhs; I converted to Cr for every recompute. Press
+release is already Cr. Review line cites (L###) reference the results extract unless prefixed
+"press".
 
 ---
 
 ## AUDIT 1 — COVERAGE
 
-Fresh grep/sweep pass re-run over each extract, diffed against the A2 ledger counts, then
-every ledger category checked for citation in A4 (or blanket "all reviewed" in A4's preamble
-L11-18).
+Fresh enumeration (independent grep + manual sweep of each extract) vs the A2 ledgers, then
+each ledger row checked for citation-or-reviewed-no-finding in A4.
 
-### Results filing (extract_results, 430 lines)
-
-| Category | A2 count | My fresh count | Orphan rows | Status |
+| Category | A2 count | My fresh count | Orphan rows (in ledger, absent from A4) | Status |
 |---|---|---|---|---|
-| agenda_items | 3 | 3 (L49, L51, L53-55) | none | PASS |
-| line_items (logical) | 102 | 102 (34+40+32 physical rows in ranges 106-139/168-207/232-264 less 4 wrap-lines) | none | PASS |
-| zero_standing | 13 | 13 (SA: L119,129,130,131,132,136 = 6; CON: L181,194,195,196,197,204 = 6; SEG: L247 = 1) | none | PASS |
-| notes | 5 | 5 (L291-304) | none | PASS |
-| auditor_paras | 9 | 9 (SA 4 @ L337-361; CON 5 @ L397-425) | none | PASS |
-| entities | 2 | 2 (BAL parent; BSC subsidiary) | none | PASS |
-| signature_blocks | 3 | 3 (CS L65-70; SA auditor L364-377; CON auditor L427-438) | none | PASS |
+| Results — agenda items (L49/51/53-55) | 3 | 3 | none (results approval + review-report note-taking cited Step 0; board timing L57 used in A3-03 flag) | PASS |
+| Results — numbered notes (L291-304) | 5 | 5 | none (all 5 in Step 0D table) | PASS |
+| Results — line-items (logical) | 102 | 102 (106 physical − 4 wraps: L111-112/134-135/173-174/202-203) | none (all P&L/segment rows in Steps 1A-1E, 2E, 4A, 5) | PASS |
+| Results — zero-standing cells | 13 | 13 (SA: 119,129,130,131,132,136; CO: 181,194,195,196,197,204; SEG: 247) | none (exceptionals-nil cited L54; OCI/other-equity reviewed-no-finding, immaterial/BS-only) | PASS |
+| Results — auditor paras | 9 | 9 (SA 4 + CO 5, incl. Other-Matter L417) | none (unmodified opinion + Other-Matter both in Step 0D / A3-04) | PASS |
+| Results — entities | 2 | 2 (BAL parent; BSC subsidiary L301/L398) | none (Note 3, S-vs-C gap Step 1E) | PASS |
+| Results — signature blocks | 3 | 3 (CS Kothadiya; SA auditor L367-374; CO auditor L430-436) | none (auditor timestamp in A3-03/Step 8.5-Q8) | PASS |
+| Press — pages | 5 | 5 | none | PASS |
+| Press — highlight-table cells | 48 | 48 (8 metrics × 6 cols) | none (Steps 1C/1D cross-checks; Cash PAT at Step 5/F11-02) | PASS |
+| Press — segment volumes | 3 | 3 (L98-100; sum 21,586.60 ≈ 21,587) | none (Step 5A new-disclosure) | PASS |
+| Press — diluted-EPS figures | 2 | 2 (L108-109; 23.13 / 19.99) | none (Q7 / F10-01) | PASS |
+| Press — mgmt/forward statements | 32 | 32 (sentence-level over the 9 spans) | none (Section B Steps 1-2; F6/F7/F16 findings) | PASS |
+| Press — footnotes/disclaimers | 2 | 2 (Cash-PAT def L84; Safe Harbor L208-216) | none (F11-02; safe-harbour Step 0D-B) | PASS |
+| Press — admin identifiers | 14 | 14 | none (IR contact / [NS1] artefact F14-01 cited) | PASS |
 
-### Press release (extract_presentation, 232 lines)
+**Rows my fresh pass found that the ledger lacks:** none.
+**Orphan rows (ledger row not cited and not marked reviewed-no-finding in A4):** none.
 
-| Category | A2 count | My fresh count | Orphan rows | Status |
-|---|---|---|---|---|
-| pages | 5 | 5 | none | PASS |
-| highlight_cells | 48 | 48 (8 metrics x 6 period/book cols, L75-82) | none | PASS |
-| segment_volumes | 3 | 3 (L98-100; sum 21,586.60 ~ 21,587 consol) | none | PASS |
-| diluted_eps | 2 | 2 (L108-109: 23.13 / 19.99) | none | PASS |
-| mgmt_forward_statements | 32 | 32 sentences (A4 consolidated to 16 dedup claims, Sec B Step 1) | none | PASS |
-| footnotes_disclaimers | 2 | 2 (F1 Cash PAT def L84; F2 Safe Harbor L208-216) | none | PASS |
-| admin_identifiers | 14 | 14 | none | PASS |
-| zero_standing | 0 | 0 | none | PASS |
-
-**Fresh counts reconcile to the A2 ledgers in every category.** No row my pass found is absent
-from the ledger (nothing to return to A2). No enumerated ledger row is absent from A4's review
-(nothing to return to A3): A4's preamble (L11-18) marks all rows reviewed, and every material
-category is explicitly engaged — notes in Step 0D, auditor paras / opinion in Step 0D, agenda
-in Step 0/0A, entities (BSC) throughout, the SIGNATURE_BEFORE_BOARD_CLOSE block as Step 8.5 Q8,
-the segment table in Step 5 (assets/liabilities proxy) and Step 7 (ROCE proxy, L243), the
-press highlight cells cross-checked in Steps 1C/1D, the Cash PAT footnote as F11-02, the [NS1]
-DOC_ARTIFACT as F14-01, and all 32 press sentences mapped into the 16-claim inventory.
-
-**COVERAGE VERDICT: PASS.** One interpretive gap is noted below (segment RESULTS-by-division
-rows L233-253 were enumerated and touched only at the aggregate/ROCE level, not analysed per
-division). Because those rows are present in the ledger and A4 did engage the segment table,
-this is not a coverage orphan (no A3/A2 loopback); it surfaces instead as a surviving bear
-counter in Audit 3 (routed to A4).
+COVERAGE VERDICT: **PASS.** No orphan rows; nothing missing from either ledger. The 15 A3
+findings and both A5 grafted counters map cleanly onto enumerated ledger rows.
 
 ---
 
 ## AUDIT 2 — ARITHMETIC
 
-Every derived metric in A4's tables recomputed from raw extract cells at full Lakh precision
-(not from A4's rounded Cr), to avoid false mismatches. A4 value | my recompute | source lines.
+Every derived metric recomputed from raw extracted numbers. All ties within rounding.
 
-### Standalone margins / rates (A4 Table 1C)
-
-| Metric | A4 | Recomputed | Source (extract L) | Status |
+| Metric | A4 value | My recompute | Source line(s) | Status |
 |---|---|---|---|---|
-| Op EBITDA Q1FY27 (PBT+D+FC-OI) | 103.46 | 9781.80+1154.17+26.94-616.79 = 10346.12 -> 103.46 | 118/114/115/107 | PASS |
-| Op EBITDA margin Q1FY27 | 24.47% | 103.46/422.74 = 24.47% | " /106 | PASS |
-| Op EBITDA margin Q1FY26 | 17.68% | 56.47/319.38 = 17.68% | 118/114/115/107/106 | PASS |
-| Reported EBITDA margin Q1FY27 | 25.93% | 109.63/422.74 = 25.93% | 118/114/115/106 | PASS |
-| Effective tax rate Q1FY27 | 26.25% | 2567.56/9781.80 = 26.25% | 125/118 | PASS |
-| Effective tax rate Q1FY26 | 23.96% | 1254.06/5234.02 = 23.96% | 125/118 | PASS |
-| PAT margin Q1FY27 | 17.07% | 72.14/422.74 = 17.07% | 126/106 | PASS |
+| SA Op EBITDA Q1FY27 (PBT+D+FC−OI) | 103.46 | 97.82+11.54+0.27−6.17 = 103.46 | L120/114/115/107 | PASS |
+| SA Op EBITDA margin Q1FY27 | 24.47% | 103.46/422.74 = 24.47% | L106 | PASS |
+| SA Op EBITDA margin YoY | +679 bps | 24.47%−17.68% = 6.79pp | L106 (both yrs) | PASS |
+| SA reported EBITDA Q1FY27 | 109.63 | 97.82+11.54+0.27 = 109.63 | — | PASS |
+| SA ETR Q1FY27 / Q1FY26 | 26.25% / 23.96% | 25.68/97.82 ; 12.54/52.34 | L125/120 | PASS |
+| SA revenue YoY | +32.4% | 422.74/319.38−1 = 32.36% | L106 | PASS |
+| SA PAT YoY | +81.3% | 72.14/39.80−1 = 81.3% | L126 | PASS |
+| SA core PBT ex-OI YoY | +103.3% | 91.65/45.07−1 = 103.3% | L120/107 | PASS |
+| CO Op EBITDA Q1FY27 | 115.87 | 106.20+13.78+1.41−5.52 = 115.87 | L182/176/177/169 | PASS |
+| CO Op EBITDA margin Q1FY27 / YoY | 25.41% / +1,015 bps | 115.87/455.93 ; −15.26% = 10.15pp | L168 | PASS |
+| CO reported EBITDA Q1FY27 | 121.40 | 106.20+13.78+1.41 = 121.39 | — | PASS (rounds 121.40) |
+| CO revenue YoY | +27.2% | 455.93/358.34−1 = 27.23% | L168 | PASS |
+| CO PAT total YoY / owners YoY | +113.9% / +97.2% | 78.12/36.53−1 ; 74.94/38.00−1 | L188/190 | PASS |
+| CO ETR Q1FY27 / Q1FY26 | 26.45% / 25.48% | 28.09/106.20 ; 12.49/49.01 | L187/182 | PASS |
+| CO core PBT ex-OI YoY | +151.7% | 100.68/39.99−1 = 151.7% | L182/169 | PASS |
+| S-vs-C PAT gap Q1FY27 (Cr / %SA) | +5.98 / +8.28% | 78.12−72.14 ; 5.98/72.14 = 8.29% | L188/126 | PASS |
+| S-vs-C PAT gap Q1FY26 | −3.27 / −8.22% | 36.53−39.80 ; /39.80 | L188/126 | PASS |
+| S-vs-C YoY swing | ~16.5pp | −8.22 → +8.28 = 16.50pp | — | PASS |
+| BSC-attributable volume proxy | 2,723 → 968 MT | 27,570−24,847 ; 21,587−20,619 | press L82 | PASS |
+| BSC proxy volume YoY | ~−64% | 968/2,723−1 = −64.4% | press L82 | PASS |
+| CO volume YoY / QoQ | −21.7% / −21.0% | 21,587/27,570−1 ; /27,341−1 | press L82 | PASS |
+| SA volume YoY / QoQ | −17.0% / −18.8% | 20,619/24,847−1 ; /25,394−1 | press L82 | PASS |
+| CO realization Q1FY27 / Q1FY26 (L/MT) | 2.11 / 1.30 | 45,592.56L/21,587 ; 35,834.12L/27,570 | L168 / press L82 | PASS |
+| CO realization YoY | ~+62% | 2.11/1.30−1 = 62.3% | — | PASS |
+| Amines seg revenue YoY | +26.7% | 452.89/357.37−1 | L233 | PASS |
+| Hotel seg revenue YoY | −22.2% | 7.99/10.27−1 | L234 | PASS |
+| Hotel seg PBIT (result b/int&tax) YoY | −59.0% | 1.60/3.90−1 | L241 | PASS |
+| Hotel seg PBT YoY | −59.9% | 1.54/3.84−1 | L251 | PASS |
+| CO PBT change decomposition | +59.32 / −2.30 / +0.17 = +57.19 | Amines 104.09−44.77; Hotel 1.54−3.84; Unalloc 0.57−0.40; sum ties to 106.20−49.01 | L250/251/252/182 | PASS |
+| CO PAT bridge closes | +41.59 | GP+56.62 −emp5.35 +oth9.92 +dep0.19 −fin0.68 −OI3.50 −tax15.60 = +41.59 | L168-188 | PASS |
+| SA PAT bridge closes | +32.34 | GP+46.84 −emp5.08 +oth5.23 −dep0.48 +fin0.07 −OI1.10 −tax13.14 = +32.34 | L106-126 | PASS |
+| CO gross margin Q1FY26 → Q1FY27 | 40.8% → 44.5% (+370bps) | 146.33/358.34 ; 202.95/455.93 | L168/172/173 | PASS |
+| CO other-exp/rev QoY | 19.86% → 13.43% (−640bps) | 71.16/358.34 ; 61.24/455.93 | L178/168 | PASS |
+| Seg liabilities QoQ (total / Amines) | −153.39 / −164.06 Cr | 437.43−590.82 ; 289.59−453.64 | L264/261 | PASS |
+| Seg assets QoQ (total / Amines) | −75.31 / −76.39 Cr | 2,667.23−2,742.54 ; 2,577.31−2,653.71 | L259/256 | PASS |
+| ROCE proxy (indicative) | ~19% | (107.62×4=430.5)/(2,667.23−437.43=2,229.80) = 19.3% | L243/259/264 | PASS |
+| Press "Total Revenue" = Total Income | CO 461 = 461.45 ; SA 429 = 428.91 | L170 ; L108 | — | PASS |
+| Diluted EPS basis (press 23.13 = consol) | 23.13 consol vs 22.27 SA | L206 vs L138 | — | PASS |
+| Reported-EBITDA press cross-check | SA 64/94/110 ; CO 64/102/121 | 63.74/94.49/109.63 ; 63.71/101.99/121.40 | — | PASS |
 
-### Consolidated margins / rates (A4 Table 1D)
-
-| Metric | A4 | Recomputed | Source (extract L) | Status |
-|---|---|---|---|---|
-| Op EBITDA Q1FY27 | 115.87 | 10620.36+1378.24+141.22-552.49 = 11587.33 -> 115.87 | 180/176/177/169 | PASS |
-| Op EBITDA margin Q1FY27 | 25.41% | 115.87/455.93 = 25.41% | " /168 | PASS |
-| Op EBITDA margin Q1FY26 | 15.26% | 54.69/358.34 = 15.26% | 180/176/177/169/168 | PASS |
-| Reported EBITDA margin Q1FY27 | 26.63% | 121.40/455.93 = 26.63% | 180/176/177/168 | PASS |
-| Effective tax rate Q1FY27 | 26.45% | 2808.59/10620.36 = 26.45% | 187/180 | PASS |
-| Effective tax rate Q1FY26 | 25.48% | 1248.62/4901.34 = 25.48% | 187/180 | PASS |
-| PAT margin (owners) Q1FY27 | 16.44% | 74.94/455.93 = 16.44% | 190/168 | PASS |
-
-### YoY walk (A4 Step 2A/2B) — the highest-weight step
-
-| Metric | A4 | Recomputed | Source (extract L) | Status |
-|---|---|---|---|---|
-| SA revenue YoY | +32.4% | (42273.75-31937.88)/31937.88 = +32.36% | 106 | PASS |
-| SA Op EBITDA YoY | +83.2% | (103.46-56.47)/56.47 = +83.2% | 118/114/115/107 | PASS |
-| SA Op EBITDA margin | +679 bps | 24.47-17.68 = 6.79pp | 106/114/115/107/118 | PASS |
-| SA finance cost YoY | -20.4% | (26.94-33.85)/33.85 = -20.4% | 115 | PASS |
-| SA PAT YoY | +81.3% | (7214.24-3979.96)/3979.96 = +81.3% | 126 | PASS |
-| CON revenue YoY | +27.2% | (45592.56-35834.12)/35834.12 = +27.2% | 168 | PASS |
-| CON Op EBITDA YoY | +111.9% | (115.87-54.69)/54.69 = +111.9% | 180/176/177/169 | PASS |
-| CON Op EBITDA margin | +1,015 bps | 25.41-15.26 = 10.15pp | 168/176/177/169/180 | PASS |
-| CON finance cost YoY | +93.8% | (141.22-72.88)/72.88 = +93.8% | 177 | PASS |
-| CON other income YoY | -38.7% | (552.49-902.00)/902.00 = -38.75% -> -38.7% | 169 | PASS |
-| CON core PBT ex-OI YoY | +151.7% | (10067.87-3999.34)/3999.34 = +151.7% | 180/169 | PASS |
-| CON PAT total YoY | +113.9% | (7811.77-3652.72)/3652.72 = +113.9% | 188 | PASS |
-| CON PAT owners YoY | +97.2% | (7493.66-3799.98)/3799.98 = +97.2% | 190 | PASS |
-
-### QoQ walk (A4 Step 3C)
-
-| Metric | A4 | Recomputed | Source (extract L) | Status |
-|---|---|---|---|---|
-| CON revenue QoQ | +15.5% | (45592.56-39478.64)/39478.64 = +15.5% | 168 | PASS |
-| CON Op EBITDA margin QoQ | +154 bps | 25.41-23.87 = 1.54pp | 168/176/177/169/180 | PASS |
-| CON core PBT QoQ | +28.9% | (100.68-78.12)/78.12 = +28.9% | 180/169 | PASS |
-| CON volume QoQ | -21.0% | (21587-27341)/27341 = -21.04% | press L82 | PASS |
-
-### Standalone-vs-consolidated PAT gap (A4 Table 1E) — first-class metric
-
-| Period | A4 gap / % | Recomputed (CON total PAT - SA PAT) | Source (extract L) | Status |
-|---|---|---|---|---|
-| Q1FY26 | -3.27 / -8.22% | 3652.72-3979.96 = -327.24 -> -3.27; /3979.96 = -8.22% | 188/126 | PASS |
-| Q4FY26 | +2.90 / +4.69% | 6477.05-6186.60 = +290.45 -> +2.90; /6186.60 = +4.69% | 188/126 | PASS |
-| Q1FY27 | +5.98 / +8.28% | 7811.77-7214.24 = +597.53 -> +5.98; /7214.24 = +8.28% | 188/126 | PASS |
-| FY26 | +3.63 / +2.19% | 16915.68-16552.83 = +362.85 -> +3.63; /16552.83 = +2.19% | 188/126 | PASS |
-| YoY swing | ~16.5pp | -8.22 -> +8.28 = 16.50pp | — | PASS |
-| NCI swing | -1.47 -> +3.18 | (147.26) -> 318.11 (Lakh) | 191 | PASS |
-
-### PAT bridges (A4 Step 4A/4B)
-
-| Check | A4 | Recomputed | Status |
-|---|---|---|---|
-| CON PAT total change | +41.59 | 78.12-36.53 = +41.59 | PASS |
-| CON gross-profit change | +56.62 | (455.93-246.09-6.89)-(358.34-166.25-45.76) = 202.95-146.33 = +56.62 | PASS |
-| CON Op EBITDA change | +61.18 | 115.87-54.69 = +61.18 | PASS |
-| CON tax drag | -15.60 | 12.49-28.09 = -15.60 | PASS |
-| SA PAT change | +32.34 | 72.14-39.80 = +32.34 | PASS |
-| SA Op EBITDA change | +46.99 | 103.46-56.47 = +46.99 | PASS |
-
-### ~60%/MT realization inference (A4 Step 2D)
-
-| Metric | A4 | Recomputed | Source | Status |
-|---|---|---|---|---|
-| CON realization Q1FY26 (Lakh/MT) | 1.30 | 35834.12/27570 = 1.300 | L168 / press L82 | PASS |
-| CON realization Q1FY27 (Lakh/MT) | 2.11 | 45592.56/21587 = 2.112 | L168 / press L82 | PASS |
-| CON realization YoY | ~+62% | 2.112/1.300 = +62.5% | " | PASS |
-| SA realization YoY | ~+59% | (42273.75/20619)/(31937.88/24847) = 2.050/1.285 = +59.5% | L106 / press L82 | PASS |
-| "~60%" inference | matches A3 ~60% | CON +62.5%, SA +59.5% -> ~60% band | — | PASS |
-| CON volume YoY | -21.7% | (21587-27570)/27570 = -21.70% | press L82 | PASS |
-| Other-expense ratio move (CON) | -640 bps | 71.16/358.34=19.86% -> 61.24/455.93=13.43% = -6.43pp | L178/168 | PASS |
-| ROCE annualised proxy | ~19% | (10761.58x4)/(266722.79-43742.82) = 43046.32/222979.97 = 19.3% | L243/259/264 | PASS |
-| Segment liabilities QoQ | -153.39 | 59081.80-43742.82 = 15338.98 L = -153.39 | L264 | PASS |
-
-Cross-check of press-stated EBITDA/margins to filing (A4 L118/L134): SA reported EBITDA
-109.63/63.74/94.49 -> press 110/64/94 (L76); CON 121.40/63.71/101.99 -> press 121/64/102;
-press margins reconcile on Total Income denominators (SA 109.63/428.91=25.6%->26%; CON
-121.40/461.45=26.3%->26%). **Confirmed — A4's denominator identification (press "Total Revenue"
-= filing Total Income, not revenue from operations) is arithmetically correct at every cell.**
-
-Deferred-tax OCR "&" cell (CON Q1FY26, L185): implied deferred tax = 1248.62-1088.68-159.94 =
-0.00, so the total tax 12.49 A4 uses is unaffected. **No arithmetic exposure.**
-
-**ARITHMETIC VERDICT: PASS.** Every derived metric recomputes to A4's value within rounding.
-Several figures that look off at A4's 2-decimal Cr presentation (SA fin-cost -20.4%, CON
-fin-cost +93.8%, CON OI -38.7%, Q4FY26 SA Op EBITDA 86.08, Q1FY27 gap 8.28%) all resolve
-EXACTLY to A4's stated value when recomputed at raw-Lakh precision. No mismatch above rounding.
+ARITHMETIC VERDICT: **PASS.** No mismatch above rounding. Every table (1C, 1D, 1E, 2A, 2B,
+2D, 2E, 3, 4A, 4B, 5, 7) ties to the raw extract. Both PAT bridges close exactly; the segment
+PBT decomposition sums to the consolidated +57.19 Cr; the S-vs-C gap and BSC volume proxy
+reproduce. (Sole rounding note: CO reported EBITDA 121.39 vs stated 121.40, and S-vs-C
+Q1FY27 8.29% vs stated 8.28% — both within rounding, not a FAIL.)
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims + strongest bear counter)
 
-A4's three most positive claims, each with the strongest bear counter built FROM THE SAME
-EXTRACTED TEXT, and whether the counter survives as something A4 does NOT already contain.
+**Claim 1 (Section C L605): "Strong headline — consol revenue +27.2% YoY, op EBITDA margin
++1,015 bps to 25.41%, PAT owners +97.2%, EPS +97.2%."**
+Strongest bear counter from the same text: the entire top-line and margin lift is
+realization-led on a −21.7% YoY / −21.0% QoQ consolidated volume decline (press L82);
+consolidated realization rose ~+62% (L168 vs press L82). A price/mix spike of unproven
+durability, not volume-led compounding. **Counter is SUPPORTED but already incorporated** —
+Step 2D (central analytical tension), Step 3C, and flag #2 (earnings-durability) carry it with
+the correct L82/L168 cites. Not surviving.
 
-### Claim 1 (A4 L190, L295, L575): "Earnings quality is exceptionally clean — ~100%+ recurring, other income DECLINED (not inflating PAT), zero exceptionals; growth is real operating growth, not treasury-driven."
+**Claim 2 (Step 4C L319 / Section C L606): "Earnings quality clean — ~100%+ recurring, zero
+exceptionals, other income declined (not inflating PAT), ETR near statutory."**
+Strongest bear counter from the same text: a large slice of the "recurring" operating gain is a
+−640 bps drop in the other-expenses/revenue ratio (consol 71.16 → 61.24 Cr, L178) achieved on
+a shrinking tonnage base — variable power/fuel/freight fall mechanically with volume and may
+reverse when volume recovers; and the gain is concentrated in one segment. **Counter is
+SUPPORTED but already incorporated** — Step 2D final bullet ("durability of a −640 bps
+other-expense-ratio move on a shrinking tonnage base is a legitimate question"), Step 2E, and
+the Step 4C caveat explicitly discount the sustainability. Not surviving.
 
-**Bear counter:** The "recurring" label is doing more work than the evidence supports. The
-entire operating gain sits on a ~60% YoY realization step-up (L106/L168 vs press L82) against
-a 21.7% volume fall; a price/spread expansion is not obviously "recurring." A material slice
-of the EBITDA lift is a -640 bps other-expense-ratio drop (L178) on a SHRINKING tonnage base,
-which is as consistent with transient variable-cost relief as with durable efficiency.
+**Claim 3 (Section C L608): "Sole subsidiary BSC turned profit-accretive (S-vs-C PAT gap
+−8.22% → +8.28%, NCI −1.47 → +3.18 Cr)."**
+Strongest bear counter from the same text: BSC's ~+597.53 L PAT swing came on a ~−64%
+attributable-volume proxy (2,723 → 968 MT, press L82); it is a realization/margin recovery, not
+a proven volume-led growth vector. **Counter is SUPPORTED but already incorporated** — this is
+A5-C1, grafted at Step 1E, Step 6D, Step 8, Q3, Section B 7A, Section C, and flag #3, all with
+correct L82/L126/L188/L190/L191 cites.
 
-**Survives? NO — already fully in A4.** Step 4C states verbatim "the recurring line is real
-but its base-rate durability is unproven" and Step 2D flags the -640 bps other-expense move as
-"a legitimate question." The strongest counter is already incorporated. Not grafted.
+**Prior-loop counter re-verification:**
+- **A5-C1 (BSC not a proven growth vector):** incorporated with correct cites — Step 1E derives
+  2,723 → 968 MT from press L82 (consol−standalone), ties the +597.53 L PAT swing to L188−L126,
+  and reframes it as a monitorable. Correct.
+- **A5-C2 (print not broad-based; Hotel decline):** incorporated with correct cites — new Step 2E
+  uses Hotel revenue L234 (10.27→7.99, −22.2%), segment result L241 (−59.0%), segment PBT L251
+  (1.54 vs 3.84, −59.9%), and Amines +59.32 Cr PBT from L250; ~100%+ of the +57.19 Cr group PBT
+  growth attributed to one segment. Correct. Also carried in Step 4A attribution, Q9, Section B
+  5B/7A, Section C, and flag #4.
 
-### Claim 2 (A4 L188, L574): "Consolidated op EBITDA margin expanded +1,015 bps to 25.41%; PAT owners +97.2% — a genuinely strong, clean print."
+**Search for a NEW surviving counter (independent):** I stress-tested four further positive
+threads — (a) "deleveraging" from the −153.4 Cr QoQ segment-liability fall, (b) flat
+depreciation despite DME commissioning read as clean, (c) OI-normalisation carries no downside,
+(d) owners-EPS +97.2%. Each already carries its offsetting bear read in the review: (a) held
+AMBIGUOUS (WC-unwind vs debt paydown, A3-02/Step 5, not asserted as positive); (b) flagged as a
+forward depreciation headwind and an open question (Step 2C-Q5, 3C, 4C-Q3, Q4); (c) stated
+symmetrically (OI already near a low); (d) owners PAT grew SLOWER than total (97.2% vs 113.9%)
+and the review says so, so no hidden NCI inflation. **No new un-incorporated surviving bear
+counter found.**
 
-**Bear counter:** The print is NOT broad-based, and part of the YoY margin optics is a
-depressed comparator. (a) The Hotel Division — the company's own "diversified portfolio"
-plank (MD quote L154-156) — DETERIORATED: segment revenue 1,026.54 -> 798.81 L (-22% YoY,
-extract L234) and segment PBIT 390.02 -> 159.78 L (-59% YoY, L241). 100% of the profit growth
-is one price-led segment (Amines & Speciality), so "strong print" masks a narrowing, not a
-broadening, base. (b) The +1,015 bps is measured off a Q1FY26 consol op-EBITDA margin of
-15.26% that was itself depressed by the loss-making subsidiary (NCI -1.47, L191), flattering
-the YoY delta.
+ADVERSARIAL VERDICT: **PASS.** All three top-positive claims have their strongest text-supported
+bear counter already grafted with correct line cites; no positive claim carries an
+un-incorporated surviving counter.
 
-**Survives? PARTIALLY — the Hotel-Division deterioration is NEW to A4.** A4 never cites the
-per-division segment RESULTS rows (L233-253) and nowhere notes the Hotel Division halving; its
-"strong/clean" framing and its treatment of the "diversified portfolio" claim are silent on the
-one diversification line that shrank. The depressed-base sub-point is partly covered (A4 does
-attribute low Q1FY26 consol margin to BSC). **The Hotel-Division-not-broad-based counter is
-grafted (secondary).**
+---
 
-### Claim 3 (A4 L145, L408, L576): "Sole subsidiary BSC turned profit-accretive — S-vs-C PAT gap -8.22% -> +8.28%, NCI -1.47 -> +3.18 Cr — a REAL NEW GROWTH VECTOR / the single live growth vector."
+## HOUSE-RULE CROSS-CHECK (non-blocking, confirmed consistent)
 
-**Bear counter (strongest of the three):** BSC's swing CANNOT be a "growth" vector in the
-volume sense, because the extract shows volume fell EVERYWHERE — consol -21.7% and standalone
--17.0% (press L82). Worse, the BSC-attributable slice fell hardest: implied external BSC volume
-(consol minus standalone) collapsed from 27,570-24,847 = 2,723 MT (Q1FY26) to 21,587-20,619 =
-968 MT (Q1FY27), roughly -64% (press L82, both books). So a subsidiary whose implied volume
-fell ~64% swung to profit purely on realization/price/cost — it is the MOST extreme instance of
-the same unproven-durability problem, not an independent growth engine. Compounding this: BSC
-is not separately segmented (only "Amines & Speciality Chemicals" + "Hotel", L233-253; Note 3
-L299-301), so the ONLY evidence of a "turnaround" is an accounting allocation (the S-vs-C gap
-and NCI), with no BSC-level volume, price, or capacity number in the document set to support
-"growth vector."
-
-**Survives? YES — and it directly contradicts A4's own characterisation.** A4 poses a generic
-driver question (Step 8.5 Q3: "volume, price, mix, or one-off") but then asserts in the Combined
-Verdict (L576) and Step 1E (L145) that BSC is "a real new growth vector" and "the single live
-growth vector" — a confidence the extract's across-the-board volume decline does not license.
-A4 never computes or notes that group volume fell everywhere (so nothing volume-led can be
-attributed to BSC) and never surfaces the ~64% implied-BSC-volume collapse. This counter is
-extract-grounded, material to the most-emphasised positive claim, and absent from A4.
-**MUST BE GRAFTED into Step 1E and Section C: recharacterise BSC as a realization/margin-recovery
-contributor of unproven durability, not a "growth vector," and state that group volume fell in
-BOTH books so BSC's swing is definitionally not volume-led (implied BSC volume proxy ~-64% YoY).**
+- Cash conversion **INDETERMINATE** (no Q1 cash-flow statement; Reg 33 half-yearly) is not
+  silently resolved to PROCEED; the four missing-evidence items are named (Step 5, flag #5). The
+  verdict is PROCEED WITH FLAGS, which surfaces the cap prominently rather than upgrading past
+  it — consistent with CLAUDE.md.
+- No exit PE / valuation authority invoked (new coverage; deferred to FTTCP/Role 1).
+- No STOP verdict asserted; only flags propagate. New-coverage 8A-W branch applied; no position
+  action taken. Consistent.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
-
-- Coverage audit: PASS (all fresh counts reconcile to both ledgers; no orphan rows; no rows
-  missing from the ledger).
-- Arithmetic audit: PASS (every derived metric recomputes to A4's value within rounding;
-  standalone/consolidated margins, YoY/QoQ walks, S-vs-C PAT gap per period, effective tax
-  rate, PAT bridges, and the ~60%/MT realization inference all verified).
-- Adversarial read: one PRIMARY surviving bear counter (Claim 3, BSC is not a volume/"growth"
-  vector — group volume fell in both books, implied BSC volume ~-64% YoY, BSC not separately
-  segmented) and one SECONDARY surviving counter (Claim 2, Hotel Division revenue -22% / PBIT
-  -59% YoY makes the print not broad-based) are supported by the extract and are NOT present in
-  A4. Per A5 rule, a surviving counter must be added before save.
-
-**Loop back to: A4.**
-
-**Exact gap:** A4's Combined Verdict (L576) and Step 1E (L145) assert BSC as "a real new growth
-vector / the single live growth vector" without incorporating that the extract's own volume
-figures (press L82) show consol -21.7% and standalone -17.0%, i.e. no volume growth anywhere,
-with the implied BSC-attributable volume (consol minus standalone) falling ~64% YoY (2,723 ->
-968 MT) — so BSC's turnaround is realization/margin-driven of unproven durability, not a growth
-vector; and BSC is not separately segmented (L233-253, Note 3 L299-301), so the swing rests
-only on an accounting allocation. Secondary: A4 omits the Hotel Division deterioration
-(revenue 1,026.54 -> 798.81 L, PBIT 390.02 -> 159.78 L; extract L234/L241), which qualifies the
-"strong/clean, diversified-portfolio" framing. A4 must graft both counters (primary into Step 1E
-+ Section C; secondary into Step 2/Section C) and re-emit for A5 re-check.
-
----
+**COMPLETE.** Coverage is clean (no orphan rows, nothing missing from either ledger),
+arithmetic ties throughout (no mismatch above rounding), and all three most-positive claims
+have their strongest bear counter already incorporated with correct line cites — including the
+two prior-loop counters A5-C1 and A5-C2, which are correctly grafted. No new surviving bear
+counter. This review proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -265,18 +179,12 @@ company: "BALAMINES"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - claim: "BSC turned profit-accretive; A4 calls it 'a real new growth vector / the single live growth vector' (A4 L145, L408, L576)"
-    counter: "Group volume fell in both books (consol -21.7%, standalone -17.0%; press L82) so nothing volume-led can be attributed to BSC; implied BSC-attributable volume (consol minus standalone) fell ~64% YoY (2,723 -> 968 MT); BSC is not separately segmented (extract L233-253, Note 3 L299-301). BSC's swing is realization/margin-recovery of unproven durability, not a growth vector."
-    source_line: "press extract L82; results extract L188/L190/L191/L233-253/L299-301"
-  - claim: "Consol op EBITDA margin +1,015 bps to 25.41% and PAT owners +97.2% = a strong, clean, diversified print (A4 L188, L574-575)"
-    counter: "Print is not broad-based: Hotel Division revenue fell -22% (1,026.54 -> 798.81 L) and PBIT fell -59% (390.02 -> 159.78 L) YoY; 100% of profit growth is one price-led segment, undercutting the 'diversified portfolio' framing."
-    source_line: "results extract L234/L241/L251"
-loop_back_to: "A4"
-gap: "A4 asserts BSC as a 'real new growth vector' (L145/L576) without incorporating that consol (-21.7%) and standalone (-17.0%) volume both fell (press L82) and implied BSC volume fell ~64% YoY, so the turnaround is realization/margin-driven of unproven durability, not growth; BSC is not separately segmented (L233-253, Note 3). A4 also omits the Hotel Division deterioration (rev -22%, PBIT -59%; L234/L241). Graft both counters and re-emit."
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

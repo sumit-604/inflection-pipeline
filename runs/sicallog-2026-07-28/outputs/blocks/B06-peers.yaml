@@ -1,0 +1,44 @@
+stage: B06-peers
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No coal-mining / overburden-removal peer transcript in the provided set (KTIL/Kesar Terminals has only a screener CSV, no transcript); Q1, Q2, and Q7 (coal-production trajectory, OB-tender pricing, comparable SECL/Coal India award) have zero peer transcript coverage"
+  - "No Chennai/South Indian CFS operator transcript provided; Q4 (Chennai CFS 10%+ market share/NICDC claim) has zero peer transcript coverage"
+  - "Both GDL transcripts are ~5 years stale (Apr-2021, Oct-2021) relative to the FY25-FY26 period under review; used only for structural/directional reads, never for current-period magnitude"
+flags:
+  - "Sical's largest and newest segment (mining logistics + entire SECL order book, 43% of FY26 revenue) has NO peer transcript coverage at all in this set; the peer questions most central to Sical's investment case cannot be triangulated with the documents on hand"
+  - "GDL's own CFS-segment history (Oct-2021) shows diesel/fuel-cost escalation clauses failing to protect margin in practice, at odds with Sical's implicit assumption of pass-through protection for its 36%-of-revenue terminals/CFS segment"
+  - "Allcargo's own quarter-by-quarter macro citations (e-way bill growth +21% to +23.6% to +13% YoY, Sept-2025 to Mar-2026) show demand deceleration, not an accelerating boom, across the exact period Sical's FY26 narrative claims strong secular tailwinds"
+peers_provided: 6
+verified: []
+partially_verified:
+  - {claim: "National Rail Policy 45% rail-freight-share goal translating into rail-linked terminal volume growth in South India (Sical: 21% FY25E to 33% FY30P)", peers: ["GDL"]}
+  - {claim: "India warehousing (10-13% CAGR) / 3PL (mid-teens CAGR) demand growth and pharma national super-stockist niche genuine", peers: ["ALLCARGO", "GDL"]}
+  - {claim: "Diesel/fuel and power cost trends affecting peers similarly, escalation clauses protecting margins sector-wide", peers: ["ALLCARGO", "GDL"]}
+contradicted: []
+unverifiable:
+  - {claim: "India coal production trajectory to FY2030 1.5 billion tonne target supporting sustained OB-removal demand", peers_checked: ["ALLCARGO", "GDL"]}
+  - {claim: "PSU coal-mining logistics tenders (SECL Porda-Chimtapani) priced competitively vs. aggressive/thin-margin bidding sector-wide", peers_checked: ["ALLCARGO", "GDL"]}
+  - {claim: "Chennai CFS holds 10%+ market share and ranks top-performing Southern-region CFS per NICDC data, FY23-FY26", peers_checked: ["ALLCARGO", "GDL"]}
+  - {claim: "Comparable large (Rs 3,000+ cr) long-duration (10+ year) SECL/Coal India OB-removal award announced by another contractor in same period", peers_checked: ["ALLCARGO", "GDL"]}
+peer_coverage_map:
+  - {peer: "ALLCARGO", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "CL revenue +50% YoY baseline; domestic demand framing for 2A; Express cost-discipline margin pattern for 2B"}
+  - {peer: "ALLCARGO", quarter: "Q2/H1 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "CL segment financials (+25% YoY); explicit top-10 customer concentration disclosure (2E); post-restructuring macro framing"}
+  - {peer: "ALLCARGO", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "CL growth muted on e-commerce customer capex deferral (2A/2E); 10.2% Express price hike (2B); pharma/temp-control white-spot framing (Q5)"}
+  - {peer: "ALLCARGO", quarter: "Q4/FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Diesel pass-through mechanism detail (Q6); asset-light/deleveraging capex posture (2C); full-year CL growth 17% YoY (Q5); decelerating macro citations (2A)"}
+  - {peer: "GDL", quarter: "Q4 FY21 (May-2021)", usage: "SUBSTANTIVE (structural/stale)", contribution: "Rail modal-shift/market-share structural analog (Q3); Snowman pharma/e-commerce 20-25% CAGR citation (Q5 analog) -- 5 years stale, not used for magnitude"}
+  - {peer: "GDL", quarter: "Q2 FY22 (Oct-2021)", usage: "SUBSTANTIVE (structural/stale)", contribution: "CFS diesel-pass-through failure, contradiction-analog for Q6; continued rail modal-shift data (Q3); explicit 'bad business' refusal analog (Q2/2E) -- 5 years stale, not used for magnitude"}
+industry_cross_read:
+  demand: "Allcargo's own macro citations show deceleration across FY26 (e-way bill YoY +21% to +23.6% to +13%, Sept-2025 to Mar-2026) plus one instance of e-commerce customers deferring capex (Q3 FY26); GDL (2021, stale) showed robust DFC-driven rail modal shift and pharma/e-commerce growth. Peers complicate rather than confirm an industry-wide demand boom matching Sical's framing."
+  pricing_inputs: "Both peers show EBITDA/margin expansion driven mainly by cost discipline and selective customer/price management (SG&A rationalization, customer weeding, calibrated price hikes) rather than pure volume-led operating leverage; diesel pass-through works for Allcargo currently but failed for GDL's CFS segment in 2021, so escalation-clause protection is not sector-uniform."
+  capex_cycle: "Allcargo (current) is retrenching to an asset-light, deleveraging capex posture with declining warehouse footprint and capped tech/OU capex; GDL (2021, stale) was in an expansion phase. Read together with Sical's aggressive SECL/MMLP capex-heavy order book, this is a partial lone-expander signal for Sical versus its closest current peer, though the business models are not directly comparable."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer-concentration quantified disclosure (Allcargo discloses top-10 customer % by segment; Sical does not publish a comparable metric)"
+  - "Customer capex-deferral risk on warehousing/3PL demand side (Allcargo experienced this directly in Q3 FY26; not addressed in Sical's materials)"
+  - "Diesel/fuel pass-through failure specifically within the CFS sub-segment (GDL 2021 CFS experience; Sical's CFS segment is 36% of FY26 revenue and this segment-specific mechanic is not disclosed)"
+  - "Working-capital drag from upfront rail-infrastructure payment terms against extended customer credit (GDL; relevant to Sical's rail-linked MMLP ambitions, not addressed in Sical materials)"
+  - "Explicit peer refusal of margin-dilutive 'bad business' volume as an active risk-management practice (GDL), a direct analog to Sical's own AR-stated aggressive-bidding risk"
+net_narrative_effect: "complicates"

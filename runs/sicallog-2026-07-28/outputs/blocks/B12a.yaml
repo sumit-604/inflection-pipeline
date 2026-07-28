@@ -1,0 +1,13 @@
+stage: B12a
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 45
+findings:
+  - {severity: "MAJOR", location: "B05 Section 1B Table, Rights Issue row", claimed: "Rs 93.03 cr (11:5), issue price Rs 64/share", source_truth: "Rs 293.03 cr (29,303 lakh at Rs 64/share)", note: "Results__2ae925ad audited note (e) line 765 shows 'approximately 29303 lakhs'. B05 understates proceeds by ~200 cr (~68% error). Cited to Q3 FY26 outcome letter (incomplete at issue time) and Q4 FY26 audited results; Q4 results are definitive source. Does not affect Gate 0 verdict. source_fidelity: true"}
+critical_count: 0
+major_count: 1
+minor_count: 0
+acceptance_rate: 93
+coverage_note: "Verified 45 material figures across B01-B05 (Gate 0 scorecard, notes analysis, business model, management credibility). Primary sources: FY25 AR (via B02/B03 re-verification), FY26 Q4 audited results (full P&L/BS/CF), Screener 10-year data (csv), operator-supplied shareholding screener (quarterly). Presentation referenced for operating metrics (image-only sections not independently verifiable). Q3 FY26 results summary-only (no line detail). FY26 AR not yet published (E4 contingent-liabilities ratio updatable post-publication). Peer transcripts (B06 domain), framework compliance (B12c domain), valuation (B11 domain) not re-audited in this scope. Segment revenue mix (43/36/21) correctly marked unaudited MIS data. External market-sizing figures (logistics sector size, coal production targets) treated as cited anchors, not independently verified."

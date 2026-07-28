@@ -1,0 +1,33 @@
+stage: B12b
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 18
+caught: 9
+partially_caught: 4
+missed:
+  - {severity: "MAJOR", item: "Headline deleveraging (D/E 4.1x->1.6x) computed on total equity Rs 26,957 lakhs of which NCI Rs 13,828 lakhs exceeds owners' equity Rs 13,129 lakhs; on owners' equity leverage is ~3.3x", anchor: "Q4 FY26 consolidated B/S lines 673-675, 679, 687"}
+  - {severity: "MAJOR", item: "Audited results disclose a single business segment; the 43/36/21 Mining/Terminals/Warehousing revenue mix that the thesis rests on exists only in the unaudited investor deck", anchor: "Q4 FY26 note (b) lines 401-403; Deck p.22"}
+  - {severity: "MAJOR", item: "Promoter forwent its entire rights entitlement and did not subscribe; the full Rs 93 cr was funded by public shareholders, no fresh promoter equity into a levered turnaround", anchor: "Q3 FY26 outcome letter lines 40-42"}
+  - {severity: "MAJOR", item: "Company emerged from insolvency only ~3 years ago (insolvency Mar-2021, write-downs FY21-23, Pristine acquired Jan-2023); the 'return to profit' reads against an unproven turnaround, absent from B05", anchor: "Deck p.7"}
+  - {severity: "MINOR", item: "Consolidated operating cash flow Rs 5,229 lakhs is struck before interest (finance cost paid Rs 4,705 lakhs in financing); deck 'Net operating cash Rs 523 mn' headline is near-zero after interest", anchor: "Q4 FY26 consol cash flow lines 724, 732; Deck p.33"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — grade C appropriate; five additional misses push disclosure quality lower, not higher; would not grade above C"
+redflag_coverage: 50
+findings:
+  - {severity: "MAJOR", location: "B05 4D red-flag table / flags[]", claimed: "D/E 4.1x->1.6x deleveraging presented as headline", source_truth: "Total equity Rs 26,957 lakhs is >50% NCI (Rs 13,828 lakhs vs owners Rs 13,129 lakhs); owners-equity leverage ~3.3x [Q4 FY26 consol B/S 673-675]", note: "MISSED — flattering denominator not qualified"}
+  - {severity: "MAJOR", location: "B05 Section 1/3 (segment mix used throughout)", claimed: "Mining 43% / Terminals 36% / Warehousing 21% revenue mix", source_truth: "Audited results report a single Ind AS 108 segment, no breakdown [Q4 FY26 note (b) 401-403]; mix is deck-only, unaudited [Deck p.22]", note: "MISSED — thesis rests on unaudited segmentation"}
+  - {severity: "MAJOR", location: "B05 Section 2 / rights-issue treatment", claimed: "Rights issue Rs 93 cr for MPS compliance + debt/WC", source_truth: "Promoter forwent entire entitlement; issue funded wholly by public [Q3 letter 40-42]", note: "MISSED — governance/skin-in-game signal not raised"}
+  - {severity: "MAJOR", location: "B05 (whole-report context)", claimed: "FY26 turnaround / return to profit assessed", source_truth: "Company emerged from insolvency Mar-2021, write-downs FY21-23, acquired Jan-2023 [Deck p.7]", note: "MISSED — ~3-yr-old unproven turnaround context absent"}
+  - {severity: "MINOR", location: "B05 (cash-flow not addressed)", claimed: "n/a", source_truth: "Consolidated CFO Rs 5,229 lakhs is pre-interest; finance cost paid Rs 4,705 lakhs in financing [Q4 consol CF 724, 732]", note: "MISSED — pre-interest cash presentation"}
+  - {severity: "MINOR", location: "B05 flag #1/#2", claimed: "profit is exceptional-gain-driven", source_truth: "Consolidated other income Rs 3,689 lakhs exceeds pre-exceptional PBT Rs 150 lakhs [619, 623]", note: "PARTIALLY CAUGHT — other-income dependency not isolated"}
+  - {severity: "MINOR", location: "B05 flag #2", claimed: "Q4 pre-exceptional PBT deteriorated", source_truth: "Q4 was an outright reported net loss: standalone Rs -1,185 lakhs [190], consol owners Rs -950 lakhs [632]; standalone audit opinion text says 'net loss for the year'", note: "PARTIALLY CAUGHT — post-everything Q4 loss/opinion wording sharper"}
+  - {severity: "MINOR", location: "B05 2C over-promotion", claimed: "over-promotion 4/5 generic", source_truth: "Deck p.19 'Strong Capital Backing from BlackRock'; BlackRock owns 57.5% of PLIL, two levels removed from Sical", note: "PARTIALLY CAUGHT — specific BlackRock name-drop not called out"}
+  - {severity: "MINOR", location: "B05 trigger table (deleveraging mechanism)", claimed: "deleveraging via rights issue + non-core asset sales", source_truth: "Rs 13,031 lakhs asset-sale proceeds + Rs 9,022 lakhs rights issue funded Rs 27,436 lakhs LT-debt repayment [727, 730-731]", note: "PARTIALLY CAUGHT — one-time/financing-driven nature not flagged"}
+critical_count: 0
+major_count: 4
+minor_count: 5
+acceptance_rate: 50

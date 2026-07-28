@@ -6,6 +6,8 @@ Reporting currency: filing in Rs Lakhs (x0.01 -> Rs Crore); press release in Rs 
 
 **Revision note (post-A5 audit):** A5 adversary returned INCOMPLETE with coverage and arithmetic passed clean; two surviving bear counters, both text-supported, have been grafted into this version (Step 1E, new Step 2E segment-diversification check, Step 4A attribution, Step 6D, Step 8, Step 8.5-Q9, Section B, Section C, and the flags list). No prior number changed; the grafts sharpen the durability/diversification framing.
 
+**Post-run position-context correction (see note at end of file):** the "new coverage / 8A-W / no position" framing in Steps 6, 8 and Section C below was written before a LIVE Notion thesis for BALAMINES was located (Decision Status AVOID, Small 3% momentum, pre-committed Q1 thresholds). That framing is SUPERSEDED by the reconciled Notion review at `review_balamines_q1fy27_notion.md`. The financial extraction, tables, walks, forensics, questions and monitorables below remain correct and A5-verified.
+
 ---
 
 ## LEDGER-RECONCILIATION PREAMBLE (contractual — stated before Step 1)
@@ -27,7 +29,7 @@ Ambiguous carried as mandatory question-generators: A3-02, A3-03, F7-01, F10-01.
 
 **DOCUMENT-SET LIMITATION (stated explicitly).** Only a Reg 33 unaudited results filing and a Reg 30 press release were supplied. **There is no concall transcript and no investor slide deck.** Role 5 below therefore runs on **press-release management commentary ONLY** (the MD quote at L150-180 and the project-update paragraphs at L113-148). A full concall analysis — participant list, opening-remarks inventory, Q&A decomposition, promise-vs-delivery scoring, silence audit — **is pending the transcript and is not possible from this document set.** Every Role 5 step below that requires a transcript is marked TRANSCRIPT-PENDING.
 
-**NOTION / DECISION STATUS.** This is **first quarterly coverage** for BALAMINES: no `companies/BALAMINES.md`, no prior run folder, no Notion thesis page. **Decision Status = NONE / new coverage.** There is no entry zone, no Bear/Base/Bull projection, no active tripwire, no monitoring checklist, and no thesis-broken trigger set to check against. No HOLD/ADD/TRIM/EXIT framing is asserted anywhere in this review. The position branch is run as **8A-W (non-held), NEW-COVERAGE observation only; the human decides entry.** `decision_status_verified: none (new coverage)`.
+**NOTION / DECISION STATUS.** (SUPERSEDED — see the post-run correction at the end of this file and the reconciled `review_balamines_q1fy27_notion.md`.) At the time this section was written, no Notion thesis had been located and the run proceeded as new coverage on the 8A-W branch. A live thesis was subsequently found: Decision Status = **AVOID (fundamental)**, position **Small 3% MOMENTUM** under Chandelier Exit. The reconciled review applies that status; the "new coverage" text below is retained only for audit continuity.
 
 ---
 
@@ -35,7 +37,7 @@ Ambiguous carried as mandatory question-generators: A3-02, A3-03, F7-01, F10-01.
 
 ## STEP 0 — PRE-FLIGHT
 
-**0A. Notion baseline.** None (new coverage). Per Role 4 Step 0A the protocol says "stop and ask" when Notion has no page; the orchestrator has explicitly authorised proceeding as new coverage with no thesis baseline, so the position-decision step is run on the 8A-W new-coverage branch rather than halting.
+**0A. Notion baseline.** (SUPERSEDED — a live Notion thesis was found post-run; see end-of-file note and the reconciled Notion review.) As originally run: none located; proceeded as new coverage on the 8A-W branch.
 
 **0B. Unit convention.** Filing states "All amounts are in Rs Lakhs" (L100-101, L164). Conversion to Rs Crore = x0.01 (verified at header L7-8). Press release states Rs Crore (x1, header L7-8). Press-release "Total Revenue" equals **Total Income** (revenue from operations + other income), NOT revenue from operations — verified: consol Q1FY27 press "461" (L75) = filing Total Income 461.45 Cr (L170), while filing revenue from operations is 455.93 Cr (L168). This denominator choice is carried through every press-release margin below.
 
@@ -188,7 +190,7 @@ This gap is the sole subsidiary (BSC). It swung from a **−8.22% drag** in Q1FY
 
 ### 2C. Mandatory diagnostic answers
 
-1. **Did revenue grow YoY?** Yes — standalone +32.4%, consolidated +27.2%. No Notion base case exists (new coverage), so no guidance comparison is possible; recorded as ND. But see the **volume/realization split** below — the growth is NOT volume-led.
+1. **Did revenue grow YoY?** Yes — standalone +32.4%, consolidated +27.2%. See the **volume/realization split** below — the growth is NOT volume-led. (Variance vs the live FY27 guide is reconciled in the Notion review: margin ahead of the 22-23% guide, volume behind the +10-15% guide.)
 
 2. **Did op EBITDA margin expand?** Yes, materially. Standalone op EBITDA margin **17.68% (Q1FY26) → 24.47% (Q1FY27) = +679 bps**; consolidated **15.26% → 25.41% = +1,015 bps**. This is genuine YoY expansion, not a sequential artefact.
 
@@ -216,8 +218,8 @@ This gap is the sole subsidiary (BSC). It swung from a **−8.22% drag** in Q1FY
 
 - Consolidated volume fell **−21.7% YoY** (27,570 → 21,587) and **−21.0% QoQ** (27,341 → 21,587). Standalone volume fell **−17.0% YoY** and **−18.8% QoQ**.
 - Yet consolidated revenue rose **+27.2% YoY**. The reconciling variable is realization: consolidated realization rose **~+62% YoY** (Rs 1.30 → 2.11 lakh/MT) and **~+46% QoQ**; standalone **~+59% YoY**. This matches A3's ~60% estimate.
-- **All of the growth this quarter is price/mix-led, not volume-led.** This is the single most important, and least resolved, feature of the quarter. Two readings compete: (i) a deliberate mix shift toward higher-value specialty/derivative products (durable, thesis-positive), or (ii) commodity-amine price inflation that could normalise (not durable). The press-release narrative asserts BOTH "volumes were maintained at similar levels last year" (L89-91, **flatly contradicted by the −21.7% figure the same release discloses at L82/L93** — F16-01) and "supported by stable commodity prices" (L89-91), which sits awkwardly against a 60% realization step-up (F16-02). Management cannot simultaneously have stable prices and stable volumes and +27% revenue. This is a disclosure-candor flag, carried to the Combined Verdict and to Step 8.5 Q2/Q3.
-- Supporting evidence that at least part is mix: Q1FY27 gross margin held/expanded even as materials cost rose. Standalone gross margin (rev − materials − inv change): Q1FY26 43.4% → Q1FY27 43.9% (roughly flat); consolidated 40.8% → 44.5% (+~370 bps). The bigger margin lever was **other expenses**, which FELL in absolute terms while revenue grew — consol other expenses 71.16 → 61.24 Cr (−13.9%), taking the other-expenses/revenue ratio from 19.86% to 13.43% (−640 bps). Lower volume plausibly reduced variable power/fuel/freight cost, and higher realization spread fixed cost over more revenue. The durability of a −640 bps other-expense-ratio move on a shrinking tonnage base is a legitimate question.
+- **All of the growth this quarter is price/mix-led, not volume-led.** This is the single most important, and least resolved, feature of the quarter. The Q4 FY26 concall (reconciled in the Notion review) resolves the driver: RM prices "doubled, even three times" on geopolitics + competitor plant shutdowns — so the realization surge is **geopolitics-driven pricing**, not a durable structural mix step-up. The press-release narrative asserts BOTH "volumes were maintained at similar levels last year" (L89-91, **flatly contradicted by the −21.7% figure the same release discloses at L82/L93** — F16-01) and "supported by stable commodity prices" (L89-91, **contradicted by the company's own Q4 concall admission that RM doubled/tripled** — F16-02). This is a disclosure-candor flag, carried to the Combined Verdict and to Step 8.5 Q2/Q3.
+- Supporting evidence: Q1FY27 gross margin held/expanded even as materials cost rose. Standalone gross margin (rev − materials − inv change): Q1FY26 43.4% → Q1FY27 43.9% (roughly flat); consolidated 40.8% → 44.5% (+~370 bps). The bigger margin lever was **other expenses**, which FELL in absolute terms while revenue grew — consol other expenses 71.16 → 61.24 Cr (−13.9%), taking the other-expenses/revenue ratio from 19.86% to 13.43% (−640 bps). Lower volume plausibly reduced variable power/fuel/freight cost, and higher realization spread fixed cost over more revenue. The durability of a −640 bps other-expense-ratio move on a shrinking tonnage base is a legitimate question.
 
 ### 2E. SEGMENT-DIVERSIFICATION CHECK — the print is NOT broad-based (A5-C2)
 
@@ -268,8 +270,8 @@ The strong consolidated print is concentrated in ONE price-led segment; the comp
 
 - **Run-rate trajectory:** revenue and profit are stepping up sharply QoQ (consol revenue +15.5%, op EBITDA margin +154 bps, core PBT +28.9%, PAT total +20.6%). **But volume is dipping hard** (consol −21.0% QoQ). The step-up is entirely realization-driven, same tension as Step 2D.
 - **One-off distortion:** none. Exceptional items nil in all periods (L119/L181); no note discloses a one-off. No period needs normalising.
-- **H1-vs-Q4 run-rate / capex-commissioning test:** the DME 100,000 TPA plant commissioned in Q1FY27 (press L115-117). The classic test — does a newly commissioned plant lift run-rate above pre-commissioning levels? — is here confounded: revenue run-rate rose but **volume fell**, and depreciation did not step up (Step 2C, Q5). Either DME's tonnage is not yet flowing through the volume line, or it has been offset by declines elsewhere. This is unresolved from the filing and is a priority concall question.
-- **Implied Q2 FY27 base to maintain trajectory:** to hold the consolidated run-rate, Q2FY27 revenue ≥ ~456 Cr and op EBITDA margin ≥ ~25.4% would be required. The cleaner test is whether volume recovers off 21,587 MT while realization holds — if realization mean-reverts without volume recovery, revenue falls.
+- **H1-vs-Q4 run-rate / capex-commissioning test:** the DME 100,000 TPA plant commissioned in Q1FY27 (press L115-117). The classic test — does a newly commissioned plant lift run-rate above pre-commissioning levels? — is here confounded: revenue run-rate rose but **volume fell**, and depreciation did not step up (Step 2C, Q5). Per the Q4 concall, DME's first revenue is guided H2FY27 (explicitly NOT in FY27 guidance), so its tonnage is not expected in Q1 volume yet. Unresolved from the filing; priority concall question.
+- **Implied Q2 FY27 base to maintain trajectory:** to hold the consolidated run-rate, Q2FY27 revenue ≥ ~456 Cr and op EBITDA margin ≥ ~25.4% would be required. The cleaner test is whether volume recovers off 21,587 MT while realization holds — if realization mean-reverts as the geopolitics window closes without volume recovery, revenue falls.
 
 🛑 QoQ table and diagnostics complete.
 
@@ -316,7 +318,7 @@ PAT change: **39.80 → 72.14 = +32.34 Cr.**
 
 ### 4C. Mandatory questions
 
-- **% of PAT growth from recurring core ops vs non-recurring?** Essentially **100%+ recurring.** Operating EBITDA change (+61.18 Cr consol / +46.99 Cr standalone) exceeds the total PAT change; the non-recurring line (other income) was a **drag**, not a boost. Zero exceptional items. On the recurring-vs-one-off axis this is exceptionally clean. **The caveat is not the source (operations) but the sustainability of the operating gain, which rests on the ~60% realization step-up amid a 21% volume decline (Step 2D) and is concentrated in one segment (Step 2E)** — i.e. the recurring line is real but its base-rate durability is unproven and undiversified.
+- **% of PAT growth from recurring core ops vs non-recurring?** Essentially **100%+ recurring.** Operating EBITDA change (+61.18 Cr consol / +46.99 Cr standalone) exceeds the total PAT change; the non-recurring line (other income) was a **drag**, not a boost. Zero exceptional items. On the recurring-vs-one-off axis this is exceptionally clean. **The caveat is not the source (operations) but the sustainability of the operating gain, which rests on the ~60% realization step-up amid a 21% volume decline (Step 2D, geopolitics-priced) and is concentrated in one segment (Step 2E)** — i.e. the recurring line is real but its base-rate durability is unproven, geopolitics-contingent and undiversified.
 - **If Other Income reverts to prior-year level, what does run-rate PAT look like?** OI is already near a low (consol 5.52 Cr, standalone 6.17 Cr); reverting UP to prior year would ADD ~3.5 Cr (consol) / ~1.1 Cr (standalone) pre-tax. PAT is not propped by OI, so no downside from OI normalisation.
 - **D&A steady-state?** Depreciation is flat-to-down YoY despite DME commissioning — steady-state depreciation will likely RISE as DME (and the FY27 project cluster) capitalise, a forward margin headwind not in this quarter's numbers. Quantum ND (no PPE/CWIP disclosure at Q1). Flag for Step 8.5 Q4.
 - **Tax adjustments inflating/deflating PAT?** No inflation. ETR rose YoY in both books (to ~26%), a modest DRAG on reported PAT, and sits just above the ~25.17% statutory rate. "Earlier years' tax" is a small non-zero true-up (0.49 Cr both statements, L124/L186; A3-05) — immaterial, not distorting. Deferred tax is a persistent CHARGE (not a credit), so there is no DTA-shield step-up flattering PAT.
@@ -336,14 +338,14 @@ PAT change: **39.80 → 72.14 = +32.34 Cr.**
 | Capex (PPE + CWIP) | ND | ND | ND | Not disclosed at Q1 |
 | FCF (CFO − Capex) | ND | ND | ND | INDETERMINATE |
 | Working-capital change | ND | ND | ND | Not disclosed (see partial proxy below) |
-| Receivable days | ND | ND | ND | Not disclosed |
+| Receivable days (DSO) | ND | ND | ND | Not disclosed — pre-committed DSO watch (green <=80 / red >95) UNKNOWN at Q1 |
 | Inventory days | ND | ND | ND | Not disclosed |
 | Payable days | ND | ND | ND | Not disclosed |
 | Cash Conversion Cycle | ND | ND | ND | Not disclosed |
 | PPE | ND | ND | ND | Not disclosed at Q1 |
 | CWIP | ND | ND | ND | Not disclosed at Q1 |
 | Net Debt / (Net Cash) | ND (see note) | ND (see note) | ND | Standalone asserted "zero-debt" (press L111), unquantified — NOT a balance-sheet figure |
-| Promoter Pledge | ND | ND | ND | Not in document set |
+| Promoter Pledge | ND | ND | ND | Not in Q1 doc set (thesis records 17.67% pledge as of prior review) |
 
 **Partial balance-sheet proxy from segment disclosure (the only balance-sheet data available; A3-02 / F12).** The consolidated segment table discloses segment assets and liabilities:
 
@@ -358,12 +360,12 @@ Consolidated segment liabilities fell **−153.39 Cr QoQ (−26%)**, Amines segm
 
 ### 5A. Mandatory questions
 
-- **Is CFO/PAT meeting the Pillar 2 cash-multiplier assumption?** **INDETERMINATE** — no CFO disclosed at Q1, and there is no Notion valuation with a stated band (new coverage). Cannot be assessed this cycle.
-- **Is WC drag structural or growth-induced?** Cannot be answered — no receivable/inventory/payable days, no rating-agency commentary in the document set. **INDETERMINATE.**
+- **Is CFO/PAT meeting the Pillar 2 cash-multiplier assumption?** **INDETERMINATE** — no CFO disclosed at Q1. The live thesis holds cash multiplier at 1.00x; a reversal candidate opened by the Q1 margin beat is unconfirmable until Q2 DSO (see Notion review Step 6A/7).
+- **Is WC drag structural or growth-induced?** Cannot be answered — no receivable/inventory/payable days at Q1. **INDETERMINATE.** The thesis's Q4 assessment leaned structural (DSO +17 days).
 - **Did CWIP capitalise as expected?** DME commissioned (press L115-117) but no PPE/CWIP figures disclosed; depreciation did not step up (Step 2C). Cannot confirm the ₹ amount capitalised. **ND.**
-- **Did net debt move within a projected range?** No projection exists (new coverage); net debt itself is ND. Standalone "zero-debt" is an unquantified assertion (press L111, F10-01/ledger note).
+- **Did net debt move within a projected range?** Net debt itself is ND at Q1. Standalone "zero-debt" is an unquantified assertion (press L111, F10-01/ledger note).
 
-**Cash-conversion verdict (house-rule critical).** Cash conversion is **INDETERMINATE** from this document set. Per CLAUDE.md and the A4 discipline, INDETERMINATE cash conversion may NOT resolve silently to PROCEED and **caps the verdict at PROCEED WITH CAVEATS**, with the missing evidence named: **(1) the cash-flow statement (CFO), (2) working-capital movement and receivable/inventory/payable days, (3) the gross/net-debt schedule, and (4) PPE/CWIP capitalisation of the DME plant.** The company-defined "Cash PAT" (PAT + Depreciation + Deferred tax; press L84, F11-02) is a non-GAAP add-back with NO reconciliation to a cash-flow statement and is not evidence of cash conversion. These four items should be extracted at the Q2 FY27 (H1) filing, which under Reg 33 will carry the cash-flow statement and balance sheet.
+**Cash-conversion verdict (house-rule critical).** Cash conversion is **INDETERMINATE** from this document set. Per CLAUDE.md and the A4 discipline, INDETERMINATE cash conversion may NOT resolve silently to PROCEED and **caps the verdict at PROCEED WITH CAVEATS**, with the missing evidence named: **(1) the cash-flow statement (CFO), (2) working-capital movement and receivable/inventory/payable days (DSO), (3) the gross/net-debt schedule, and (4) PPE/CWIP capitalisation of the DME plant.** The company-defined "Cash PAT" (PAT + Depreciation + Deferred tax; press L84, F11-02) is a non-GAAP add-back with NO reconciliation to a cash-flow statement and is not evidence of cash conversion. These four items should be extracted at the Q2 FY27 (H1) filing, which under Reg 33 will carry the cash-flow statement and balance sheet.
 
 🛑 Cash-quality complete.
 
@@ -371,80 +373,40 @@ Consolidated segment liabilities fell **−153.39 Cr QoQ (−26%)**, Amines segm
 
 ## STEP 6 — RECONCILIATION VS THESIS
 
-**New coverage — no Notion thesis exists.** There are no Bear/Base/Bull projections, no watchlist checklist, no thesis-broken triggers, and no growth-trigger register to reconcile against. Every sub-table below is therefore run structurally and populated with the new-coverage state, not skipped.
+**SUPERSEDED BY THE NOTION REVIEW.** This section was originally written as new-coverage (no Notion thesis located). A live thesis was subsequently found (Decision Status AVOID, Small 3% momentum, pre-committed Q1 Op EBITDA margin thresholds and DSO watch, FY27 guidance, four thesis-broken triggers). The full thesis reconciliation — pre-committed Q1 test (consol Op EBITDA margin 25.41% vs bull >=19% => BULL, ahead of the 22-23% guide), the four thesis-broken triggers (all NOT FIRED), the geopolitics-pricing cross-reference resolving the realization tension, and the variance-vs-guidance table — is in `review_balamines_q1fy27_notion.md` Step 6. The original new-coverage sub-tables (6A-6D) are retained below for audit continuity only.
 
-### 6A. Variance vs Notion projections
+### 6A. Variance vs Notion projections (original new-coverage version — superseded)
+Originally recorded as ND (no baseline). The live version is in the Notion review Step 6D.
 
-| Metric | Bear | Base | Bull | Actual (Q1FY27 consol) | Lands in |
-|---|---|---|---|---|---|
-| Revenue | ND | ND | ND | 455.93 (L168) | No baseline (new coverage) |
-| EBITDA margin | ND | ND | ND | 25.41% op / 26.63% rep | No baseline |
-| PAT (owners) | ND | ND | ND | 74.94 (L190) | No baseline |
-| EPS | ND | ND | ND | 23.13 (L206) | No baseline |
-| Net Debt | ND | ND | ND | ND | No baseline |
-| ROCE | ND | ND | ND | ND (annualised proxy ~19%, see Step 7) | No baseline |
+### 6B. Watchlist item status (superseded)
+Originally recorded UNKNOWN (no checklist). The live pre-committed watch (Op EBITDA margin; DSO green <=80 / red >95) is applied in the Notion review.
 
-Probability re-weighting rule: not applicable (no scenario weights exist yet; nothing to re-weight).
-
-### 6B. Watchlist item status
-No Notion monitoring checklist exists (new coverage). Status for all items: **UNKNOWN — no checklist.** A checklist should be seeded at first Role 1/Role 2 workup; the Step 8.5 questions and Step-A monitorables below are the proposed seed.
-
-### 6C. Thesis-broken trigger check
-No thesis-broken conditions defined (new coverage). **None can fire; none checked.** No exit discipline applies to a name with no position and no thesis.
+### 6C. Thesis-broken trigger check (superseded)
+Originally recorded none-defined. The live triggers (ROCE <12% x4Q; EBITDA margin <16% x2Q; DMF full shutdown; further ID resignation) are all **NOT FIRED** this quarter — see the Notion review Step 6B.
 
 ### 6D. Growth trigger status
-No pre-existing growth triggers. The candidate triggers implied by this filing are **NEW** and would be formalised at the first full workup, but each carries a disciplining caveat from the counters above:
-- **BSC subsidiary swing to profit-accretion** — a **monitorable, NOT an established growth vector** (A5-C1): it is realization/margin recovery on a ~64% lower BSC-attributable volume proxy (Step 1E), durability unproven.
-- **DME 100k TPA ramp** — commissioned, but no volume/revenue contribution or incremental depreciation confirmed yet (Step 2C/3C).
-- **FY27 project cluster (NMM / ACN / BSC Unit-I / Unit-II)** — four undated-within-year commissioning promises (F6-01), slip risk.
-- **Realization-driven margin** — the current profit engine, but price/mix durability unproven and concentrated in one segment while the Hotel Division deteriorated (Step 2D/2E, A5-C2).
-Their evidence status is tracked in the monitorables list (Section A, end). None is yet an "on track" trigger; all are "new, unproven."
+Candidate triggers (BSC swing, DME ramp, FY27 cluster, realization margin) are NEW/unproven; each carries the durability, geopolitics-pricing and single-segment caveats above. Tracked in the monitorables list.
 
-🛑 6A-6D complete (new-coverage state).
+🛑 6A-6D superseded; see Notion review.
 
 ---
 
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 
-**New coverage — there is no Section 1B destination PE on record to re-validate.** The pillars cannot be "held/revised" against a prior value because no prior value exists. Per the framework, Pillar 1 ROCE selection is the SOLE authority of the downstream FTTCP verdict (not computable here), and the destination PE is a Role 1 output. This step therefore records **indicative current-reading inputs only** (flagged as not-yet-framework-outputs) and defers the actual pillar assignment to the FTTCP → Role 1 gate.
+**SUPERSEDED BY THE NOTION REVIEW.** Originally run as new coverage (no destination PE on record). The live framework (Destination PE 21x, cash multiplier 1.00x, Base FV FY28 Rs 1,563, entry Rs 640-800, MoS Rs 640-714) is reconciled in the Notion review Step 7: the pre-committed bull margin opens a CANDIDATE cash-multiplier reversal (1.00x -> toward 1.15x) that is NOT applied because the reversal trigger was DSO/CFO-driven (both unobservable at Q1) and the margin beat is geopolitics-priced. Hold 1.00x pending Q2 DSO; no fair-value change; entry/MoS stand.
 
-| Pillar / Input | Original assumption | Current reading (indicative only) | Action |
-|---|---|---|---|
-| ROCE Base (0.5×ROCE+7.5, floor 9x, cap 24x) | None (new coverage) | ROCE not properly computable at Q1 (needs full-year NOPAT and average capital employed). **Crude annualised proxy:** consol segment PBIT Q1FY27 10,761.58 L ×4 ≈ 430.5 Cr over capital employed ≈ segment assets 2,667.23 − liabilities 437.43 = 2,229.80 Cr ⇒ **~19% (indicative, unreliable)** | Defer to FTTCP verdict at full workup |
-| Cash Multiplier | None | **INDETERMINATE** (Step 5; no CFO at Q1) | Cannot set; name missing evidence |
-| Growth Visibility Premium | None | Dense FY27 catalyst cluster (F6-01); BSC swing (A3-01) — but volume-negative and undiversified (A5-C1/A5-C2) | Defer; log catalysts with durability caveat |
-| Strategic Premium | None | "India's first commercial-scale DME"; import-substitution cyanide platform (press L115-138) — narrative only | Defer; single-credit rule to be applied at workup |
-| UA Multiplier | None | Ownership data not in document set | ND; assess at workup |
-| Sector Cap | None | Specialty chemicals | Defer to Section 1B sector table |
-| Hurdle Ratio | None | Needs EPS CAGR + current PE (price not in document set) | ND — cannot compute |
-
-**No destination PE recompute is possible or required this cycle.** No stale fair value exists to correct. The entire valuation chain (FTTCP, Role 1 pillars, Hurdle Ratio, entry/MoS prices) is a NEW build to be run at first full workup, seeded by this review.
-
-🛑 Pillar step complete (deferred, new coverage).
+🛑 See Notion review Step 7.
 
 ---
 
 ## STEP 8 — POSITION DECISION
 
-**Decision Status verified: NONE / new coverage.** No held position exists. The 8A held-name branch does not apply. **Branch used: 8A-W (non-held names).**
-
-### 8A-W application
-
-- No thesis-broken condition exists to fire → no AVOID reclassification path triggered.
-- No Bear/Base/Bull case exists → the "below bear / bear-to-base / at-or-above base" ladder cannot be evaluated; there is nothing to revise down or confirm.
-- **Output of the 8A-W branch for a brand-new name is: establish, not adjust.** The concrete output is: this filing warrants opening a full workup (Gate 0 → FTTCP → Role 1 → Role 2 → Role 3) to set an entry zone and Decision Status. **No entry zone, no BUY/WATCHLIST/AVOID verdict is asserted here** — that is a Role 1/Role 2 output, and the current-price input is not even in the document set. Framing is **NEW-COVERAGE observation only; the human decides entry.**
-
-**What the numbers say, plainly (for the human):** Q1FY27 is a strong-looking print on revenue, margin and PAT, with genuinely clean earnings quality on the recurring-vs-one-off and other-income axes (Step 4). It is materially qualified by four things: (1) growth is entirely realization/mix-led against a ~21% volume decline, and the durability of that ~60% realization step-up is unproven (Step 2D); (2) the print is NOT broad-based — essentially 100%+ of profit growth came from the one price-led chemicals segment while the Hotel Division shrank (revenue −22.2%, PBIT −59%), undercutting the "diversified portfolio" framing (Step 2E, A5-C2); (3) the BSC subsidiary swing to profit-accretion is a realization/margin recovery on ~64% lower BSC-attributable volume — a monitorable, NOT an established growth vector (Step 1E, A5-C1); (4) cash conversion is INDETERMINATE at Q1. The press release's "volumes maintained" / "stable commodity prices" / "diversified" narrative is contradicted by its own disclosed figures — a disclosure-candor flag. None of this is a position action; it is the evidence base for the workup.
-
-### 8B. Add-Back / Trim Trigger Refinement
-Not applicable — no position, no existing triggers. Proposed forward watch-triggers are captured as monitorables.
+**SUPERSEDED BY THE NOTION REVIEW.** Originally written as new coverage on the 8A-W branch (no position). The correct framing, applied in the Notion review Step 8: **Decision Status AVOID (fundamental) UNCHANGED; position HELD, Small 3% MOMENTUM, governed by Chandelier Exit on daily close (Role 4 Step 8A momentum-bucket branch).** No thesis-broken trigger fired; do NOT convert momentum to value on a strong-but-price-led, geopolitics-contingent print; the margin beat and candidate cash-multiplier reversal are FLAGGED for the operator (reversal hinges on Q2 DSO); valuation gap to entry Rs 640-800 unchanged (CMP not in doc set; stale Rs 1,455.50 May-26 not used). Human decides any Decision Status change on the pre-committed trigger.
 
 ### 8C. Single Cleanest Metric for Next Quarter
-**Consolidated realization per MT (revenue from operations ÷ sales volume), read jointly with volume.** This is the one metric that resolves the price/mix-durability bull/bear split that dominates the quarter.
-- **Bull threshold:** Q2FY27 volume recovers toward ~26,000-27,000 MT while realization holds ≥ ~Rs 2.0 lakh/MT (confirms a durable mix shift, not a transient price spike).
-- **Bear threshold:** realization mean-reverts toward ~Rs 1.4-1.5 lakh/MT and/or volume stays depressed near ~21,000 MT (confirms the quarter was a price/timing spike; revenue and margin give back).
+**Consolidated realization per MT read jointly with volume AND the H1 DSO.** Bull: volume recovers toward ~26-27k MT with realization holding and DSO <=80 (would substantiate the cash-multiplier reversal). Bear: realization mean-reverts as the geopolitics window closes and/or DSO >95 (locks 1.00x; confirms Q1 as a geopolitics flash).
 
-🛑 Position decision complete (8A-W, new coverage).
+🛑 See Notion review Step 8.
 
 ---
 
@@ -454,40 +416,40 @@ No concall is confirmed scheduled in the document set. Channel: **IR email to MU
 
 | # | Question | Why it matters | Bull answer | Bear answer | From finding |
 |---|---|---|---|---|---|
-| 1 | Consolidated volume fell 21.7% YoY (27,570 → 21,587 MT, L82/L93) while revenue rose 27.2%, implying realization up ~60% per MT. Quantify the split: how much of the +Rs 0.8 lakh/MT realization gain is deliberate product-mix shift toward higher-value specialty/derivatives vs pure amine price inflation? | Resolves whether the quarter's entire growth engine is durable or transient. | Majority is structural mix shift with named higher-value products; realization sustainable. | Mostly commodity price; expected to normalise; volume decline is lost tonnage. | F16-02 |
-| 2 | The press release states "volumes were maintained at similar levels last year" (L89-91), but the same release discloses a 21.7% YoY consolidated volume fall (L82). Please reconcile. Was tonnage lost, deliberately shed on low-margin lines, or is a plant/product transition depressing volume? | Tests disclosure candor and whether the volume base is structurally smaller. | Deliberate exit of low-margin commodity volume; base is intentionally smaller and higher-quality. | Involuntary demand/share loss glossed as "maintained." | F16-01 |
+| 1 | Consolidated volume fell 21.7% YoY (27,570 → 21,587 MT, L82/L93) while revenue rose 27.2%, implying realization up ~60% per MT. Quantify the split: how much of the +Rs 0.8 lakh/MT realization gain is deliberate product-mix shift vs the geopolitics-driven RM/competitor-outage pricing your Q4 concall described (RM doubled/tripled)? | Resolves whether the quarter's entire growth engine is durable or transient. | Majority is structural mix shift with named higher-value products; realization sustainable. | Mostly geopolitics-driven price; expected to normalise; volume decline is lost tonnage. | F16-02 |
+| 2 | The press release states "volumes were maintained at similar levels last year" (L89-91) and "stable commodity prices," but the same release discloses a 21.7% YoY consolidated volume fall (L82) and the Q4 concall said RM doubled/tripled. Please reconcile. | Tests disclosure candor and whether the volume base is structurally smaller. | Deliberate exit of low-margin commodity volume; base is intentionally smaller and higher-quality. | Involuntary demand/share loss glossed as "maintained." | F16-01 |
 | 3 | The sole subsidiary Balaji Speciality Chemicals swung from a −1.47 Cr NCI loss-share (Q1FY26, L191) to +3.18 Cr profit-share (Q1FY27, L191), yet its implied volume proxy (consol minus standalone) fell ~64% YoY (~2,723 → ~968 MT, L82). Is BSC's swing volume-led or purely realization/margin, and what utilization and volume does it carry into the Unit-I/Unit-II window? | BSC is framed as a growth vector but turned accretive on falling volume; durability is thesis-critical. | Structural ramp with volume recovery ahead on new capacity, recurring. | Price/mix-only recovery on shrinking tonnage, not repeatable. | A3-01 / F11-01 / A5-C1 |
-| 4 | Of the four "during FY27" commissioning commitments — NMM, ACN, BSC Unit-I brownfield, BSC Unit-II greenfield (HCN/NaCN/EDTA) — which lands in which FY27 quarter, and what are the capex-spent-to-date and % completion behind "progressing as planned" (L142)? Also: what incremental depreciation will DME add now that it is commissioned, given Q1 depreciation was flat YoY? | Four undated catalysts clustered in H2FY27 carry slip risk; flat depreciation despite DME commissioning needs explanation. | Staggered dates, high % complete, DME depreciation quantified. | All four bunched at FY27-end with low completion; vague. | F6-01 |
-| 5 | Consolidated segment liabilities fell 153.4 Cr QoQ (590.82 → 437.43 Cr, L264) with finance cost also down QoQ. How much of this is working-capital unwind of a March year-end build versus genuine gross/net-debt reduction? Please give gross debt, cash, and net debt at 30 Jun 2026, and receivable/inventory/payable days. | Separates WC seasonality from real deleveraging; fills the Q1 cash/balance-sheet gap. | Real debt paydown; WC days stable/improving. | Pure year-end WC reversal that will rebuild; days deteriorating. | A3-02 |
-| 6 | The MD refers to "the adverse scenarios of West Asia's crisis" (L156-157). Through which channel does this affect BAL — feedstock (methanol/ammonia) cost, export logistics/freight, or Middle-East end-demand — and what is the quantified exposure? | The only macro-risk acknowledgment in the release; unquantified. | Minor, hedged, immaterial to margin. | Material feedstock/logistics exposure that could reverse the realization gain. | F7-01 |
+| 4 | Of the four "during FY27" commissioning commitments — NMM, ACN, BSC Unit-I brownfield, BSC Unit-II greenfield (HCN/NaCN/EDTA) — which lands in which FY27 quarter (vs the Q4 guide: ACN Q2, Unit-I H1, Unit-II Q4), and what are the capex-spent-to-date (vs the Rs 275-290 Cr envelope) and % completion? Also: DME utilization (guided 30-40% -> 50-60%) and incremental depreciation, given Q1 depreciation was flat YoY. | Four undated catalysts clustered in H2FY27 carry slip risk; flat depreciation despite DME commissioning needs explanation. | Staggered dates, high % complete, DME depreciation quantified. | All four bunched at FY27-end with low completion; vague. | F6-01 |
+| 5 | Consolidated segment liabilities fell 153.4 Cr QoQ (590.82 → 437.43 Cr, L264) with finance cost also down QoQ. How much of this is working-capital unwind of a March year-end build versus genuine gross/net-debt reduction? Please give gross debt, cash, and net debt at 30 Jun 2026, and receivable/inventory/payable days (DSO — pre-committed watch green <=80 / red >95). | Separates WC seasonality from real deleveraging; fills the Q1 cash/balance-sheet gap and gates the cash-multiplier reversal. | Real debt paydown; DSO <=80, stable/improving. | Pure year-end WC reversal that will rebuild; DSO >95. | A3-02 |
+| 6 | The MD refers to "the adverse scenarios of West Asia's crisis" (L156-157). Through which channel does this affect BAL — feedstock (methanol/ammonia) cost, export logistics/freight, or Middle-East end-demand — what is the quantified exposure, and when do you expect the pricing benefit to normalise? | The only macro-risk acknowledgment in the release; unquantified; directly bears on price durability. | Minor, hedged, immaterial to margin. | Material feedstock/logistics exposure that reverses the realization gain. | F7-01 |
 | 7 | Please confirm the basis of the diluted EPS quoted in the press release (Rs 23.13 Q1FY27, L108-109) — standalone or consolidated — and provide the basic-vs-diluted spread and share count. (The filing shows basic = diluted at 23.13 consolidated / 22.27 standalone; the release omits basic EPS and the Q1FY26 comparator.) | Removes an SCOPE_AMBIGUOUS disclosure gap; confirms no hidden dilution. | Standalone-basis, no dilutive instruments, matches filing. | Basis mismatch or undisclosed dilution. | F10-01 |
 | 8 | The standalone limited-review report's embedded digital-signature timestamp (17:25:29, L370-371) predates the Board's stated meeting-conclusion time of 5:35 PM (L57) by ~10 minutes, and the consolidated certificate timestamp is illegible in the filing. Please confirm the signing sequence and provide the H1 cash-flow statement at the next filing. | Governance-hygiene check; also formally requests the missing cash-flow evidence that caps this quarter's verdict. | Clerical timestamp artefact; CF statement provided. | Evasive on sequencing; CF withheld. | A3-03 |
 | 9 | Hotel Division (Balaji Sarovar) revenue fell 22.2% YoY (10.27 → 7.99 Cr, L234) and segment PBT fell ~59.9% (3.84 → 1.54 Cr, L251). What drove the hotel deterioration, and does it signal end-market softness (travel/occupancy) that also touches the chemicals demand narrative? | Tests the "diversified portfolio" framing and whether the sole non-chemicals leg is structurally weakening. | Isolated, one-off (renovation/seasonality); recovery expected. | Demand-driven decline broader than one segment. | A5-C2 |
 
 **Top 3 by likelihood of thesis-changing information:**
-1. **Q1 (realization mix vs price)** — the answer directly sets the durability of the entire growth print; would raise or lower any future bull-case probability more than any other single answer.
-2. **Q3 (BSC turnaround driver, volume vs margin)** — confirms or kills the one candidate structural growth vector; a "volume ramp ahead" answer supports the bull case, a "price/mix-only on falling volume" answer confirms the bear read.
-3. **Q2 (volume reconciliation)** — tests management transparency directly; a candid answer on a disclosure the release misstates is itself a governance read.
+1. **Q1 (realization mix vs geopolitics price)** — the answer directly sets the durability of the entire growth print.
+2. **Q3 (BSC turnaround driver, volume vs margin)** — confirms or kills the one candidate structural growth vector.
+3. **Q5 (DSO)** — the cash-multiplier reversal hinges on it; also tests transparency on the WC/debt movement.
 
-**Channel recommendation:** IR email now (no concall confirmed); reserve Q1-Q3 for live Q&A if a concall is announced within two weeks. Record all nine as pre-committed watchpoints; check answer status at the Q2 FY27 review.
+**Channel recommendation:** IR email now (no concall confirmed); reserve Q1-Q3/Q5 for live Q&A if a concall is announced within two weeks. Record all nine as pre-committed watchpoints; check answer status at the Q2 FY27 review.
 
 ---
 
 ## STEP 9 — NOTION UPDATE
-Not executed by this agent. New coverage — no existing page. A page-creation with the full Section-A tables above should be performed at the first full workup / finalize, not by A4. Recorded here for the operator: `row properties to set at creation — Decision Status: WATCHLIST (new coverage, pre-workup); Business type: Standard; Auditor opinion: Unmodified.`
+The Notion-ready reconciled review is written to `review_balamines_q1fy27_notion.md` (a self-contained "Q1 FY27 Results Review — 28 Jul 2026" section plus a KEY_NOTES_PREPEND line for the page's Key Notes property). Row properties to review at save: Decision Status **AVOID (unchanged)**; Position **Small 3% momentum (unchanged)**; Promoter Verdict unchanged; Key Notes — prepend the dated one-liner. No Decision Status change is triggered mechanically; the pre-committed bull margin result is flagged for the operator.
 
 ---
 
 # SECTION B — CONCALL ANALYSIS (ROLE 5) — PRESS-RELEASE-COMMENTARY VARIANT
 
-**TRANSCRIPT-PENDING NOTICE.** No concall transcript and no slide deck were supplied. Role 5 cannot be run in full. What follows applies the Role 5 discipline to the **press-release management commentary only** — the MD quote (D. Ram Reddy, L150-180) and the project-update paragraphs (L113-148). Every step requiring a transcript (participant list, opening/Q&A split, promise-vs-delivery scoring, tone-vs-prior, peer cross-check, silence audit) is marked TRANSCRIPT-PENDING. **A full concall analysis is pending the transcript; the credibility ratio, management archetype and Role 1 track-record input cannot be computed this cycle.**
+**TRANSCRIPT-PENDING NOTICE.** No Q1 FY27 concall transcript and no slide deck were supplied. Role 5 cannot be run in full on Q1. What follows applies the Role 5 discipline to the **press-release management commentary only** (MD quote L150-180; project updates L113-148). The Q4 FY26 concall disclosures (RM doubled/tripled, competitor shutdowns, March-2026 production impact, FY27 guidance, CFO absent) are used as the cross-reference baseline per the coordinator's authoritative thesis input. A full Q1 concall analysis is pending its transcript.
 
 ## STEP 0 — Pre-flight
-- **0A Notion:** none (new coverage); no prior concall log — promise-vs-delivery tracking **starts from this quarter forward** using the F6 commitment register.
-- **0B Participants:** TRANSCRIPT-PENDING. From the release only: MD **D. Ram Reddy** (quoted, L150); CS **Abhijeet Kothadiya** (signatory, L52); IR advisor **MUFG Intime** (L225). No CFO, no promoter-presence confirmation, no analyst list — a concall participant list does not exist in this document set.
-- **0C Structure:** No call date/duration/Q&A-split available. TRANSCRIPT-PENDING.
-- **0D Safe-harbour caveats:** standard boilerplate present (L208-216). One substantive risk caveat inside the MD quote: "adverse scenarios of West Asia's crisis" (L156-157) — unquantified (F7-01).
-- **0E Business type:** Standard (Step 2 guidance set, not Step 2L).
+- **0A Notion:** live thesis found post-run; promise-vs-delivery tracking against the Q4 FY26 guidance baseline begins now.
+- **0B Participants:** TRANSCRIPT-PENDING for Q1. From the release: MD **D. Ram Reddy** (quoted, L150); CS **Abhijeet Kothadiya** (L52); IR **MUFG Intime** (L225). Q4 concall noted CFO ABSENT (yellow flag) — watch whether the CFO returns for Q1.
+- **0C Structure:** No Q1 call date/duration/Q&A-split available. TRANSCRIPT-PENDING.
+- **0D Safe-harbour caveats:** boilerplate (L208-216) + "West Asia crisis" (L156-157, unquantified, F7-01).
+- **0E Business type:** Standard.
 
 ## STEP 1 — Claims inventory (opening-remarks equivalent = MD quote + project updates)
 
@@ -508,32 +470,31 @@ Not executed by this agent. New coverage — no existing page. A page-creation w
 | 13 | "Healthy order pipeline" | Customer/Order | NO | L177-180 |
 | 14 | Standalone zero-debt company | Financial | Asserted, unquantified | L111 |
 | 15 | Volumes "maintained at similar levels last year" | Backward | NO (and contradicted by L82) | L89-91 |
-| 16 | "Stable commodity prices" | Macro | NO (sits against +60% realization) | L89-91 |
+| 16 | "Stable commodity prices" | Macro | NO (contradicted by own Q4 concall RM doubled/tripled) | L89-91 |
 
-Diagnostics: **quantified share is low** — only 3 of 16 carry a hard number (DME 100k TPA, BSC Rs 750 cr, and standalone zero-debt as an assertion); the four FY27 commissioning items give a year but no quarter. New vs reaffirmation: cannot assess (no prior release/concall — first coverage). Internal contradiction present: claim 15 ("volumes maintained") vs the disclosed −21.7% volume fall, claim 16 ("stable prices") vs the +60% realization, AND claim 3 ("diversified portfolio") vs the Hotel Division deterioration and single-segment profit concentration (Step 2E) — **the three most load-bearing narrative claims are the three that the release's own numbers contradict.**
+Diagnostics: **quantified share is low** — only 3 of 16 carry a hard number. Internal contradiction present: claim 15 ("volumes maintained") vs the disclosed −21.7% volume fall, claim 16 ("stable prices") vs the +60% realization AND the company's own Q4 concall admission that RM doubled/tripled, AND claim 3 ("diversified portfolio") vs the Hotel Division deterioration and single-segment profit concentration (Step 2E) — **three load-bearing narrative claims are contradicted by the release's own numbers and the company's prior concall.**
 
-## STEP 2 — Forward guidance extraction
+## STEP 2 — Forward guidance extraction (Q1 press vs Q4 concall baseline)
 
-| Metric | This quarter's guidance | Last quarter | Two quarters ago | Trajectory | Confidence |
-|---|---|---|---|---|---|
-| Revenue growth (FY27/FY28) | None given | ND | ND | New (none) | — |
-| EBITDA margin band | None given | ND | ND | New (none) | — |
-| Order book / pipeline | "Healthy" (unquantified, L177-180) | ND | ND | New | LOW |
-| Capex envelope | BSC Rs 750 cr programme (L128-130); no group capex figure | ND | ND | New | MEDIUM (BSC only) |
-| Utilization target / timeline | None | ND | ND | New | — |
-| Project commissioning | NMM, ACN, BSC Unit-I, BSC Unit-II all "during FY27" (L122-148) | ND | ND | New | MEDIUM (year only, no quarter) |
-| Working capital / CCC | None | ND | ND | New | — |
-| Net debt trajectory | Standalone "zero-debt" (L111); consol ND | ND | ND | New | LOW (unquantified) |
-| New product milestones | Electronic-grade / EV battery chemicals (undated, L172-175) | ND | ND | New | LOW (aspirational) |
-| Dividend / payout | None | ND | ND | New | — |
+| Metric | Q4 FY26 concall guidance (FY27) | Q1 FY27 press | Trajectory | Confidence |
+|---|---|---|---|---|
+| Volume growth | +10% to +15% | −21.7% YoY actual (no forward number) | Actual behind guide | — |
+| EBITDA margin | 22-23% | 25.41% consol op actual; no forward number | Actual ahead of guide | — |
+| Capex envelope | Rs 275-290 Cr | ND | Maintained (no update) | MEDIUM |
+| DME | commission Q1FY27; first revenue H2FY27; util 30-40%->50-60%; Rs 80-90/kg; 100k TPA | commissioned (L115-117); no util/revenue | Delivered commissioning | HIGH (commissioning) |
+| ACN | Q2FY27 | "during FY27" (L122-124) | Maintained/vaguer | MEDIUM |
+| NMM (5,000 TPA) | FY27 | "during FY27" (L122-124) | Maintained | MEDIUM |
+| BSCL Unit-1 (EDA) | H1FY27 | "during FY27" (L144-145) | Maintained/vaguer | MEDIUM |
+| BSCL Unit-2 (HCN/NaCN/EDTA) | Q4FY27 | "during FY27" (L147-148) | Maintained | MEDIUM |
+| Net debt | standalone zero-debt | standalone zero-debt (L111) | Maintained | LOW (unquantified) |
 
-Diagnostics: no numeric revenue/margin guidance at all; the only firm numbers are DME 100k TPA (delivered) and BSC Rs 750 cr (multi-year). Internal consistency of guidance cannot be arithmetic-checked (no numbers to reconcile). **This is a management team that guides on projects and narrative, not on numbers** — assessed on one release only; confirm against the actual concall when available.
+Diagnostics: the Q1 press release gives NO fresh numeric guidance; it restates project commitments at a vaguer "during FY27" granularity than the Q4 concall's quarter-level dates. The two hard reconciliations against the Q4 guide: **margin ahead (25.41% vs 22-23%), volume well behind (−21.7% vs +10-15%)** — the price-for-volume substitution again.
 
 ## STEP 3 — Promise-vs-delivery audit
-**First coverage — no prior commitments to score.** Historical audit skipped per protocol; the log begins now. The F6 commitment register (below, in monitorables) is the baseline against which Q2FY27 delivery will be scored. **Credibility ratio: not computable this cycle** (needs trailing history). Management archetype (6E): **not computable** — but note that the specificity read is LOW and the testable candor checks this quarter (the volume claim, the "diversified" claim) FAIL against the filing, which pre-positions the eventual archetype away from "Committed & Credible" until a transcript proves otherwise.
+**Baseline starts now against the Q4 FY26 guidance.** DME commissioning DELIVERED (Q1, as guided). The four FY27 commissioning promises and the volume/margin guide will be scored at Q2+. **Credibility ratio: not computable this cycle** (needs trailing scored history under the protocol). Candor pattern already visible: Q4 opening remarks claimed "stable raw material conditions" that the Q4 Q&A contradicted (RM doubled/tripled); Q1 press repeats "stable commodity prices" — a recurring narrative-vs-fact gap. CFO was ABSENT on the Q4 call — governance yellow flag to re-check at Q1 concall.
 
 ## STEP 4 — Q&A decomposition
-**TRANSCRIPT-PENDING.** No Q&A exists in the document set. At least 60% of Role 5 effort belongs here and cannot be performed. This is the single largest gap in the current review — management has not been pushed on the volume/realization contradiction, the BSC driver, the Hotel deterioration, or the project timelines by any analyst on record.
+**TRANSCRIPT-PENDING for Q1.** No Q1 Q&A in the document set. The Q4 Q&A (RM doubled/tripled; production impacted March 2026) is the load-bearing cross-reference and is used in Step 2D/6C. At least 60% of Role 5 effort belongs in the live Q1 Q&A and cannot be performed until the transcript arrives.
 
 ## STEP 5 — New information audit
 
@@ -541,7 +502,7 @@ Diagnostics: no numeric revenue/margin guidance at all; the only firm numbers ar
 
 | Disclosure | Type | Material? | Thesis impact |
 |---|---|---|---|
-| DME 100,000 TPA plant commissioned (India's first) | New capex/capacity live | YES | Positive; new-age chemicals entry; ramp/volume impact still ND |
+| DME 100,000 TPA plant commissioned (India's first) | New capex/capacity live | YES | Positive; first revenue guided H2FY27 (not in FY27 guide) |
 | BSC Rs 750 cr phased expansion, Mega Project Status | New capex programme | YES | Positive optionality; execution/dates the risk |
 | BSC Unit-I / Unit-II product scope (HCN, NaCN, EDTA, EDA derivatives) | New product platform | YES | Import-substitution cyanide platform; multi-year |
 | Electronic-grade products / EV battery chemicals focus | New strategic direction | Uncertain | Aspirational, undated, no capex — low weight |
@@ -551,79 +512,78 @@ Diagnostics: no numeric revenue/margin guidance at all; the only firm numbers ar
 
 | Expected topic | Why it should have been discussed | Significance of silence |
 |---|---|---|
-| The 21.7% YoY volume decline | It is the release's own disclosed number and the dominant feature of the quarter | **RED** — actively reframed as "maintained at similar levels" rather than explained |
-| Realization/pricing bridge | +60% realization is what carries all the growth | **AMBER-RED** — asserted "stable commodity prices," no bridge |
-| Hotel Division deterioration (rev −22%, PBIT −59%) | The only non-chemicals segment; contradicts the "diversified" framing | **AMBER-RED** — segment shrank materially, unmentioned in narrative |
-| Cash flow / net debt (consolidated) | Q1 has no CF statement; investors need the cash read | AMBER — only an unquantified standalone "zero-debt" line |
-| DME utilization / revenue contribution | Just commissioned; the point of the capex | AMBER — commissioning stated, contribution silent |
-| Full concall / analyst engagement | Standard for a company of this size | AMBER — no transcript in set; confirm whether a call was even held |
+| The 21.7% YoY volume decline | It is the release's own disclosed number and the dominant feature of the quarter | **RED** — actively reframed as "maintained at similar levels" |
+| Realization/pricing bridge (geopolitics) | +60% realization is what carries all the growth; Q4 concall admitted RM doubled/tripled | **RED** — asserted "stable commodity prices," contradicting own prior disclosure |
+| Hotel Division deterioration (rev −22%, PBIT −59%) | The only non-chemicals segment; contradicts "diversified" framing | **AMBER-RED** — unmentioned |
+| Cash flow / net debt / DSO (consolidated) | Q1 has no CF statement; the pre-committed DSO watch needs it | AMBER — only an unquantified standalone "zero-debt" line |
+| DME utilization / revenue contribution | Just commissioned; first revenue guided H2FY27 | AMBER — contribution silent |
+| CFO presence / return | CFO was absent on the Q4 call | AMBER — confirm at the Q1 concall |
 
-**Full silence audit is TRANSCRIPT-PENDING**; the above is bounded to what the press release itself omits.
+**Full Q1 silence audit is TRANSCRIPT-PENDING.**
 
 ## STEP 6 — Tone & specificity
-- **6A Tone vs prior:** TRANSCRIPT-PENDING (no prior release/concall to diff — first coverage).
-- **6B Specificity score (press commentary):** quantified forward statements ≈ 2 (DME 100k TPA delivered; BSC Rs 750 cr) vs unquantified forward/soft ≈ 8+ (NMM/ACN/Unit-I/Unit-II undated-within-year, order pipeline, electronic-grade/EV, "progressing as planned"). Specificity ratio **≈ 0.2 — heavy on directional language.** (Bounded to the release, not a full-concall score.)
-- **6C Defensive language:** press release is one-directional (no Q&A), so hedge-phrase counting is not comparable to a concall; boilerplate safe-harbour only. TRANSCRIPT-PENDING for a real count.
-- **6D Confidence indicators:** one delivered milestone (DME) with a hard capacity number is the strongest confidence signal; against it, the misstated volume claim and the unmentioned Hotel decline are negative candor signals.
-- **6E Archetype:** **Not computable** (needs trailing credibility). Provisional read on this single release: LOW specificity + two failed candor checks (volume "maintained"; "diversified" print that was single-segment) → do NOT extend narrative credit; anchor to filing numbers. Re-assess when a transcript exists.
+- **6A Tone vs prior:** vs the Q4 concall — "stable raw material conditions" (Q4 opening, later contradicted) recurs as "stable commodity prices" (Q1 press) despite the intervening admission that RM doubled/tripled. Adjective persistence in the face of contradicting facts is itself a flag.
+- **6B Specificity score (Q1 press commentary):** ≈ 0.2 — heavy on directional language; the Q1 press is VAGUER than the Q4 concall (project dates regressed from quarter-level to "during FY27").
+- **6C Defensive language:** Q1 press one-directional; TRANSCRIPT-PENDING for a real count.
+- **6D Confidence indicators:** DME commissioning delivered on time (positive); against it, the repeated stable-price claim and unmentioned Hotel decline are negative candor signals; CFO absence at Q4 is a standing governance yellow flag.
+- **6E Archetype:** **Not computable** (needs trailing scored credibility). Provisional: LOW specificity + repeated candor gaps → do NOT extend narrative credit; anchor to filing numbers. Note the OVERPROMISER risk is muted here because specificity is low (not the hyper-specific-but-undelivering quadrant); the live risk is EVASIVE-leaning until a transcript proves otherwise.
 
 ## STEP 7 — Cross-reference vs filing and peers
 
 ### 7A. Commentary vs filing numbers
 
-| Commentary claim | Filing evidence | Reconciliation |
+| Commentary claim | Filing / prior-concall evidence | Reconciliation |
 |---|---|---|
 | "Volumes maintained at similar levels last year" (L89-91) | Consol volume 27,570 → 21,587 MT, −21.7% (L82/L93) | **CONTRADICTED** |
-| "Stable commodity prices" (L89-91) | Realization +~60% YoY (revenue +27.2% on volume −21.7%) | **CONTRADICTED / at best unverifiable as "stable"** |
-| "Diversified product portfolio" (L154) | 100%+ of PBT growth from Amines & Speciality; Hotel Division rev −22.2% / PBT −59.9% (L234/L251) | **CONTRADICTED (single-segment concentration; A5-C2)** |
-| "Stable operational performance" (L88) | True on QoQ revenue (461 vs 403 total income) but pinned to the favourable frame; ignores volume | **PARTIALLY CONFIRMED (selective framing)** |
-| DME 100,000 TPA commissioned | Not separately line-itemised in filing; depreciation flat YoY (L114/L176) | **UNVERIFIABLE from filing** (no PPE/CWIP at Q1) |
-| Standalone "zero-debt" | Standalone finance cost 0.27 Cr (L115), near-nil; no balance sheet at Q1 | **PARTIALLY CONFIRMED** (finance cost consistent; no BS proof) |
-| BSC "progressing as planned" | BSC PAT-accretive this quarter (S-vs-C gap +8.28%, L188/L190-191) but on ~64% lower attributable volume proxy | **PARTIALLY CONFIRMED (profit yes; volume-negative, A5-C1)** |
+| "Stable commodity prices" (L89-91) | Realization +~60% YoY; Q4 concall: RM "doubled, even three times" | **CONTRADICTED (by own prior disclosure)** |
+| "Diversified product portfolio" (L154) | 100%+ of PBT growth from Amines & Speciality; Hotel rev −22.2% / PBT −59.9% (L234/L251) | **CONTRADICTED (single-segment concentration; A5-C2)** |
+| "Stable operational performance" (L88) | True on QoQ revenue only; ignores volume | **PARTIALLY CONFIRMED (selective framing)** |
+| DME 100,000 TPA commissioned | Depreciation flat YoY (L114/L176); first revenue guided H2FY27 | **PARTIALLY CONFIRMED (commissioning yes; contribution not yet)** |
+| Standalone "zero-debt" | Standalone finance cost 0.27 Cr (L115), near-nil; no BS at Q1 | **PARTIALLY CONFIRMED** |
+| BSC "progressing as planned" | BSC PAT-accretive (S-vs-C gap +8.28%, L188/L190-191) but on ~64% lower attributable volume proxy | **PARTIALLY CONFIRMED (profit yes; volume-negative, A5-C1)** |
 
-**When commentary and filing conflict, the filing wins** (per protocol). The volume, pricing and diversification claims are the material conflicts; all are logged as credibility issues and drive Step 8.5 Q1/Q2/Q9.
+**When commentary and filing conflict, the filing wins.** The volume, pricing and diversification claims are the material conflicts; all drive Step 8.5 Q1/Q2/Q9.
 
 ### 7B. Peer concall cross-check
-**No peer concall was supplied and no peer-reporting window is confirmed in the document set** — cross-check not performed this cycle. (Specialty-chemical peers reporting within ±4 weeks should be diffed at the full workup, especially on the "stable commodity prices" claim.)
+No peer concall supplied and no peer window confirmed — not performed this cycle. (The "geopolitics drove RM doubling / competitor shutdowns" claim is peer-checkable at the full workup: if peers report the same, it corroborates the transient-pricing read.)
 
 ### 7C. Concall vs channel checks
 No third-party/rating-agency/channel data in the document set. Not performed.
 
 ## STEP 8 — Update thesis & position (concall overlay)
-- **8A Growth-trigger update:** all triggers are NEW (Section A Step 6D). Concall commentary is directionally supportive on BSC profit (confirmed by filing) but volume-negative and unquantified on everything else.
-- **8B Watchlist:** no Notion checklist; seed proposed in monitorables.
-- **8C Thesis-broken:** none defined; none can fire.
-- **8D Four-Pillar concall inputs:** no numeric forward inputs usable; the FY27 project cluster feeds Pillar 3 growth-visibility at the eventual workup, undated.
-- **8E Position decision:** unchanged from Section A — **new coverage, 8A-W, no position action.** The concall overlay adds candor flags (misstated volume, "diversified" claim vs single-segment print) that argue, per protocol ("concall narrative contradicts filing materially → trust the filing, note the credibility issue, tighten next-quarter watchlist"), for anchoring strictly to filing numbers and pre-committing the volume/realization/segment watch.
-- **8F Updated questions for next quarter:** identical to Section A Step 8.5 (now nine questions); carried forward as the pre-committed watchpoint set, to be answer-status-checked at Q2 FY27.
+- **8A Growth-trigger update:** DME commissioning DELIVERED; other triggers UNPROVEN and, on the pricing side, geopolitics-contingent.
+- **8B Watchlist:** the live pre-committed watch (Op EBITDA margin; DSO green <=80 / red >95) is applied in the Notion review.
+- **8C Thesis-broken:** none fired (Notion review 6B).
+- **8D Four-Pillar concall inputs:** cash-multiplier reversal is a candidate only (geopolitics-priced margin; DSO unobservable) — hold 1.00x.
+- **8E Position decision:** AVOID unchanged; HELD 3% momentum under chandelier; concall-candor contradictions reinforce anchoring to filing numbers.
+- **8F Updated questions for next quarter:** the nine questions above; check answer-status at Q2, and specifically whether the CFO returns to the call.
 
 ---
 
 # SECTION C — COMBINED VERDICT
 
+**SUPERSEDED / reconciled in the Notion review.** The verdict and flags stand; the position framing is corrected there.
+
 **Filing-derived signals (high confidence):**
-- Strong headline: consol revenue +27.2% YoY, op EBITDA margin +1,015 bps to 25.41%, PAT (owners) +97.2% to 74.94 Cr, EPS +97.2% to 23.13 (L168/L182/L190/L206).
-- Earnings quality clean on the usual traps: zero exceptional items, other income DECLINED (not inflating PAT), ETR ~26% near statutory, no share-count change, no dilutive instruments, unmodified audit opinion.
-- BUT the print is narrow and price-led: essentially 100%+ of the +57.19 Cr consol PBT growth is the one Amines & Speciality Chemicals segment (+59.32 Cr PBT), while the Hotel Division shrank (revenue −22.2%, PBIT −59.9%, L234/L251); and all growth is realization-driven on ~21% lower volume.
+- Strong headline: consol revenue +27.2% YoY, op EBITDA margin +1,015 bps to 25.41%, PAT (owners) +97.2% to 74.94 Cr, EPS +97.2% to 23.13 (L168/L182/L190/L206). The **pre-committed Q1 Op EBITDA margin test lands BULL** (25.41% vs bull >=19%, ahead of the 22-23% FY27 guide).
+- Earnings quality clean on the usual traps: zero exceptional items, other income DECLINED (not inflating PAT), ETR ~26% near statutory, no share-count change, no dilution, unmodified audit opinion.
+- BUT the print is narrow and price-led: ~100%+ of the +57.19 Cr consol PBT growth is the one Amines & Speciality Chemicals segment (+59.32 Cr PBT), while the Hotel Division shrank (revenue −22.2%, PBIT −59.9%, L234/L251); all growth is realization-driven on ~21% lower volume, and the realization is geopolitics-priced (Q4 concall: RM doubled/tripled).
 - Sole subsidiary BSC turned profit-accretive (S-vs-C PAT gap −8.22% → +8.28% YoY, NCI −1.47 → +3.18 Cr, A3-01) — but on a ~64% lower BSC-attributable volume proxy (Step 1E); a monitorable, not an established growth vector.
 
-**Concall/press-derived signals (low confidence, no transcript):**
-- Management guides on projects, not numbers; specificity low (~0.2).
-- One delivered milestone (DME 100k TPA); four FY27 commissioning promises clustered and undated-within-year (slip risk, F6-01).
-- **Three load-bearing narrative claims are contradicted by the filing's own numbers** — "volumes maintained" (vs −21.7%), "stable commodity prices" (vs +60% realization), and "diversified portfolio" (vs single-segment profit concentration + Hotel decline). Disclosure-candor flag.
+**Concall/press-derived signals (low confidence, no Q1 transcript):**
+- Management guides on projects, not numbers; specificity low (~0.2); Q1 press vaguer than Q4 concall.
+- DME commissioning delivered on time; four FY27 commissioning promises clustered (slip risk, F6-01).
+- **Three load-bearing narrative claims are contradicted by the filing's own numbers and prior concall** — "volumes maintained" (vs −21.7%), "stable commodity prices" (vs +60% realization and own Q4 admission RM doubled/tripled), and "diversified portfolio" (vs single-segment concentration + Hotel decline). Disclosure-candor flag. CFO absent at Q4 — governance yellow flag.
 
-**Reconciliation between the two:** the filing numbers are clean and the headline is strong, but the strength is narrow (one segment), price-led (not volume), and its durability is unproven; the press narrative overstates comfort by hiding the volume decline, the pricing-driven nature of growth, and the Hotel deterioration. Trust the filing; discount the narrative.
+**Reconciliation:** the filing is clean and the headline is strong, and the pre-committed margin test is decisively bull, but the strength is narrow, price-led and geopolitics-contingent; the narrative overstates comfort by hiding the volume decline, mischaracterising the pricing, and omitting the Hotel deterioration. Trust the filing; discount the narrative.
 
-**Cash conversion:** **INDETERMINATE** (Q1, no cash-flow statement). Per house rules this caps the results verdict at PROCEED WITH CAVEATS and cannot resolve to PROCEED; missing evidence named (CFO, WC/days, net-debt schedule, DME PPE/CWIP capitalisation), to be pulled at the Q2 FY27 H1 filing.
+**Cash conversion:** **INDETERMINATE** (Q1, no CF statement/DSO). Caps at PROCEED WITH CAVEATS; the flags make the overall verdict PROCEED WITH FLAGS. Missing evidence named. The pre-committed cash-multiplier reversal the margin beat would imply is only a CANDIDATE, unconfirmable until Q2 DSO.
 
-**Net thesis impact:** N/A (no prior thesis). Establishes a **new-coverage watch** with a strong-but-narrow, realization-dependent print, a subsidiary that is profit-accretive on falling volume, a deteriorating diversifying segment, a dense H2FY27 catalyst cluster, and a management-candor flag.
+**PROTOCOL VERDICT: PROCEED WITH FLAGS.** Seven flags (see Notion review Combined Verdict): price-led growth; geopolitics-contingent pricing; repeat candor issue; narrow/single-segment print with Hotel deterioration; BSC accretive on falling volume; cash conversion INDETERMINATE with the cash-multiplier reversal only a candidate; governance-hygiene (signature timing, [NS1] marker, CFO absence) atop the standing promoter-override AVOID grounds.
 
-**PROTOCOL VERDICT: PROCEED WITH FLAGS.**
-Rationale: the results are clean enough to proceed to a full workup, but six flags must be surfaced prominently and the human decides: (1) **disclosure-candor** — the press release misstates its own volume figure, mischaracterises a price-led quarter as volume-and-price-stable, and calls a single-segment print "diversified" (F16-01/F16-02/A5-C2); (2) **earnings-durability** — growth rests entirely on a ~60% realization step-up amid a ~21% volume decline, durability unproven (Step 2D); (3) **narrow/undiversified growth** — ~100%+ of profit growth from one price-led chemicals segment while the Hotel Division deteriorated (Step 2E, A5-C2); (4) **BSC not a proven growth vector** — profit-accretive on ~64% lower attributable volume, a monitorable only (Step 1E, A5-C1); (5) **cash conversion INDETERMINATE** — capped, missing-evidence named (this alone would hold the verdict no better than PROCEED WITH CAVEATS; the flags make it PROCEED WITH FLAGS, which is more conservative and respects the cap); (6) **governance-hygiene** — auditor signature timestamp predates board close (A3-03) and a stray "[NS1]" editorial marker sits in the signed release (F14-01). These are flags, not thesis-breakers; there is no STOP verdict and no mechanical failure.
+**Position decision (corrected):** **Decision Status AVOID (fundamental) UNCHANGED; position HELD, Small 3% MOMENTUM under Chandelier Exit; no thesis-broken trigger fired.** Do not convert momentum to value on a price-led beat. Margin beat and candidate cash-multiplier reversal FLAGGED for the operator; reversal hinges on Q2 DSO. Human decides any Decision Status change on the pre-committed trigger. Full reconciliation: `review_balamines_q1fy27_notion.md`.
 
-**Position decision:** New coverage, branch 8A-W. No position, no entry zone, no BUY/WATCHLIST/AVOID assertion (price not in document set; that is a Role 1 output). Recommendation to operator: open a full workup (Gate 0 → FTTCP → Role 1 → Role 2 → Role 3) to set valuation and Decision Status; carry the nine management questions and the monitorables below into that workup and the Q2 FY27 review.
-
-**Watchpoints for next quarter (single cleanest metric):** consolidated realization per MT read jointly with volume — bull if volume recovers toward ~26-27k MT with realization ≥ ~Rs 2.0 lakh/MT; bear if realization mean-reverts toward ~Rs 1.4-1.5 lakh/MT or volume stays near ~21k MT. Secondary watch: Hotel Division revenue/PBIT recovery and BSC-attributable volume.
+**Watchpoints for next quarter (single cleanest metric):** consolidated realization per MT read jointly with volume AND H1 DSO — bull if volume recovers toward ~26-27k MT with realization holding and DSO <=80; bear if realization mean-reverts as the geopolitics window closes or DSO >95. Secondary: Hotel recovery, BSC-attributable volume, CFO presence on the call.
 
 ---
 
@@ -631,19 +591,21 @@ Rationale: the results are clean enough to proceed to a full workup, but six fla
 
 | Item | Implied date | Source ref | Status word |
 |---|---|---|---|
-| DME 100,000 TPA plant (India's first commercial-scale) | Achieved Q1 FY27 | press L115-117 / L159-161 | COMPLETED — verify utilization & revenue contribution at Q2 |
-| N-Methyl Morpholine (NMM) commissioning | during FY27 (by 31 Mar 2027) | press L122-124 / L165-167 | UNDERWAY / PLANNED |
-| Acetonitrile (ACN) capacity expansion | during FY27 | press L122-124 | UNDERWAY / PLANNED |
-| BSC Rs 750 cr phased expansion programme | multi-quarter ("coming quarters") | press L128-130 / L166-168 | UNDERWAY |
-| BSC Unit-I brownfield (EDA-based downstream) | during FY27 | press L144-145 | UNDERWAY |
-| BSC Unit-II greenfield MIDC Chincholi (HCN/NaCN/EDTA/EDTA-2Na) | during FY27 | press L147-148 | UNDER EXECUTION |
+| Consol Op EBITDA margin (pre-committed test) | Q2 FY27 | derived L182 | Q1 = 25.41% => BULL; watch mean-reversion |
+| H1 DSO (pre-committed watch green <=80 / red >95) | Q2 FY27 (H1 BS) | Reg 33 half-year | UNKNOWN at Q1; gates cash-multiplier reversal |
+| DME 100,000 TPA plant utilization (30-40%->50-60%) & first revenue | H2 FY27 (Q4 guide) | press L115-117 / Q4 concall | COMMISSIONED — contribution silent |
+| N-Methyl Morpholine (NMM, 5,000 TPA) commissioning | FY27 | press L122-124 / L165-167 | UNDERWAY / PLANNED |
+| Acetonitrile (ACN) capacity expansion | Q2 FY27 (Q4 guide) | press L122-124 | UNDERWAY / PLANNED |
+| BSC Rs 750 cr phased expansion programme | multi-quarter | press L128-130 / L166-168 | UNDERWAY |
+| BSC Unit-I brownfield (EDA-based downstream) | H1 FY27 (Q4 guide) | press L144-145 | UNDERWAY |
+| BSC Unit-II greenfield MIDC Chincholi (HCN/NaCN/EDTA/EDTA-2Na) | Q4 FY27 (Q4 guide) | press L147-148 | UNDER EXECUTION |
 | BSC-attributable volume recovery (proxy = consol − standalone) | Q2 FY27 onward | L82 (proxy) | WATCH — ~968 MT Q1FY27 vs ~2,723 MT Q1FY26 (A5-C1) |
 | Hotel Division revenue/PBIT recovery | Q2 FY27 onward | L234 / L251 | WATCH — rev −22.2% / PBIT −59.9% YoY (A5-C2) |
-| Electronic-grade products / EV battery chemicals expansion | unspecified (no date) | press L172-175 | ASPIRATIONAL (undated) |
-| "Healthy order pipeline" quantification | unspecified | press L177-180 | ASSERTED, UNQUANTIFIED |
+| Capex vs Rs 275-290 Cr FY27 envelope | FY27 | Q4 concall guide | Pending (no Q1 disclosure) |
 | H1 FY27 cash-flow statement + net-debt schedule (fills Step 5 INDETERMINATE) | Q2 FY27 filing (Reg 33 half-yearly) | Step 5 missing-evidence | AWAITED |
+| Any further ID resignation (thesis-broken trigger) | ongoing | Board Outcome (3 agenda items only) | NOT FIRED this quarter |
 
-Note for Role 5 next cycle: the four FY27 commissioning promises (NMM, ACN, Unit-I, Unit-II) share an identical undifferentiated "during FY27" deadline — track each as a separate promise-vs-delivery row; a single missed line reads as a slip, not the whole cluster.
+Note for Role 5 next cycle: the four FY27 commissioning promises share an undifferentiated "during FY27" deadline in the Q1 press (the Q4 concall was more specific: ACN Q2, Unit-I H1, Unit-II Q4) — track each as a separate promise-vs-delivery row; a single missed line reads as a slip. Also confirm whether the CFO returns to the call.
 
 ---
 
@@ -661,47 +623,78 @@ ledger_reconciliation:
   all_reviewed: true
   a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, F6-01, F7-01, F10-01, F11-01, F11-02, F14-01, F16-01, F16-02]
 a5_counters_incorporated:
-  - {id: "A5-C1", graft: "BSC reframed as price/mix earnings recovery on ~64% lower attributable volume proxy (2,723 -> 968 MT, L82); a monitorable, not an established growth vector. Grafted in Step 1E, 6D, 8, 8.5-Q3, Section B 7A, Section C, monitorables."}
-  - {id: "A5-C2", graft: "Print not broad-based: Hotel Division revenue -22.2% (10.27 -> 7.99 Cr, L234) and PBIT -59.9% (3.84 -> 1.54 Cr, L251); ~100%+ of PBT growth from one Amines & Speciality segment (+59.32 Cr, L250). Grafted as new Step 2E, Step 4A attribution, 8.5-Q9, Section B 5B/7A, Section C, monitorables."}
+  - {id: "A5-C1", graft: "BSC reframed as price/mix earnings recovery on ~64% lower attributable volume proxy (2,723 -> 968 MT, L82); a monitorable, not an established growth vector."}
+  - {id: "A5-C2", graft: "Print not broad-based: Hotel Division revenue -22.2% (L234) and PBIT -59.9% (L251); ~100%+ of PBT growth from one Amines & Speciality segment (+59.32 Cr, L250)."}
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"
-decision_status_verified: "none (new coverage)"
-position_branch: "8A-W"
+decision_status_verified: "AVOID (fundamental); position Small 3% MOMENTUM under Chandelier Exit (live Notion thesis, found post-run)"
+position_branch: "8A (momentum bucket; chandelier governs)"
 sc_gap_pat_pct:
   - {period: "Q1FY26", gap_cr: -3.27, pct_of_standalone: -8.22}
   - {period: "Q4FY26", gap_cr: 2.90, pct_of_standalone: 4.69}
   - {period: "Q1FY27", gap_cr: 5.98, pct_of_standalone: 8.28}
   - {period: "FY26", gap_cr: 3.63, pct_of_standalone: 2.19}
+pre_committed_q1_test:
+  metric: "consolidated Op EBITDA margin"
+  bull_threshold: ">=19%"
+  bear_threshold: "<17%"
+  actual: "25.41%"
+  result: "BULL (clears decisively; ahead of 22-23% FY27 guide)"
+  cash_multiplier_reversal: "CANDIDATE only (1.00x -> toward 1.15x); NOT applied - DSO unobservable at Q1 and margin geopolitics-priced; pending Q2 DSO"
+thesis_broken_triggers:
+  - {trigger: "ROCE <12% for 4 consecutive quarters", reading: "not directly computable at Q1; margins/PAT strong", fired: "NOT FIRED (provisional; ROCE pending annual/H1 data)"}
+  - {trigger: "EBITDA margin <16% sustained 2 quarters", reading: "consol op 25.41%, reported 26.63%; standalone op 24.47%", fired: "NOT FIRED"}
+  - {trigger: "DMF capacity fully shut down", reading: "none disclosed", fired: "NOT FIRED"}
+  - {trigger: "any further independent-director resignation", reading: "Board Outcome only 3 agenda items; no ID resignation", fired: "NOT FIRED"}
+thesis_broken_any_fired: false
+realization_reconciliation: "Q1 revenue +27.2% on volume -21.7% (realization ~+60%/MT) reconciles to the Q4 FY26 concall admission that RM doubled/tripled on geopolitics + competitor shutdowns; growth is price-led and geopolitics-contingent; press 'stable commodity prices' contradicts the company's own Q4 disclosure"
 questions_for_management:
-  - {q: "Split the ~60%/MT YoY realization gain into deliberate mix shift vs amine price inflation", from_finding_id: "F16-02"}
-  - {q: "Reconcile 'volumes maintained at similar levels' with the disclosed -21.7% YoY consolidated volume fall", from_finding_id: "F16-01"}
+  - {q: "Split the ~60%/MT YoY realization gain into durable mix shift vs geopolitics-driven RM/competitor-outage pricing (per Q4 concall RM doubled/tripled)", from_finding_id: "F16-02"}
+  - {q: "Reconcile 'volumes maintained'/'stable commodity prices' with -21.7% YoY volume fall and own Q4 admission RM doubled/tripled", from_finding_id: "F16-01"}
   - {q: "Is BSC's swing to profit-accretion volume-led or purely realization/margin, given ~64% lower attributable volume proxy", from_finding_id: "A3-01/A5-C1"}
-  - {q: "Which of NMM/ACN/BSC Unit-I/Unit-II lands in which FY27 quarter; capex-to-date and % complete; DME incremental depreciation", from_finding_id: "F6-01"}
-  - {q: "Is the -153.4 Cr QoQ segment-liability fall WC unwind or debt paydown; give gross/net debt and WC days at 30 Jun 2026", from_finding_id: "A3-02"}
-  - {q: "West Asia crisis exposure channel (feedstock/logistics/export demand) and quantified magnitude", from_finding_id: "F7-01"}
+  - {q: "Which of NMM/ACN/BSC Unit-I/Unit-II lands in which FY27 quarter (vs Q4 guide); capex vs Rs 275-290 Cr; DME utilization & incremental depreciation", from_finding_id: "F6-01"}
+  - {q: "Is the -153.4 Cr QoQ segment-liability fall WC unwind or debt paydown; give gross/net debt and DSO at 30 Jun 2026 (green <=80/red >95)", from_finding_id: "A3-02"}
+  - {q: "West Asia crisis exposure channel and magnitude, and when the pricing benefit normalises", from_finding_id: "F7-01"}
   - {q: "Confirm diluted EPS basis (standalone vs consolidated), basic-vs-diluted spread and share count", from_finding_id: "F10-01"}
   - {q: "Confirm auditor signing sequence (cert timestamp predates board close) and provide the H1 cash-flow statement", from_finding_id: "A3-03"}
   - {q: "What drove Hotel Division revenue -22.2% / PBIT -59.9% YoY, and does it signal broader end-market softness", from_finding_id: "A5-C2"}
 monitorables:
-  - {item: "DME 100,000 TPA plant utilization & revenue contribution", implied_date: "Q2FY27 verify", source_ref: "press L115-117"}
-  - {item: "NMM commissioning", implied_date: "FY27", source_ref: "press L122-124"}
-  - {item: "ACN capacity expansion", implied_date: "FY27", source_ref: "press L122-124"}
+  - {item: "Consol Op EBITDA margin (pre-committed test; Q1=25.41% BULL)", implied_date: "Q2FY27", source_ref: "derived L182"}
+  - {item: "H1 DSO (pre-committed watch green <=80 / red >95; gates cash-multiplier reversal)", implied_date: "Q2FY27 H1 BS", source_ref: "Reg 33 half-year"}
+  - {item: "DME utilization (30-40%->50-60%) & first revenue (H2FY27)", implied_date: "H2FY27", source_ref: "press L115-117 / Q4 concall"}
+  - {item: "NMM (5,000 TPA) commissioning", implied_date: "FY27", source_ref: "press L122-124"}
+  - {item: "ACN capacity expansion", implied_date: "Q2FY27 (Q4 guide)", source_ref: "press L122-124"}
   - {item: "BSC Rs 750 cr phased expansion", implied_date: "multi-quarter", source_ref: "press L128-130"}
-  - {item: "BSC Unit-I brownfield (EDA downstream)", implied_date: "FY27", source_ref: "press L144-145"}
-  - {item: "BSC Unit-II greenfield MIDC Chincholi (HCN/NaCN/EDTA)", implied_date: "FY27", source_ref: "press L147-148"}
-  - {item: "BSC-attributable volume recovery (proxy consol-minus-standalone; ~968 MT vs ~2,723 MT YoY)", implied_date: "Q2FY27 onward", source_ref: "press L82"}
+  - {item: "BSC Unit-I brownfield (EDA downstream)", implied_date: "H1FY27 (Q4 guide)", source_ref: "press L144-145"}
+  - {item: "BSC Unit-II greenfield MIDC Chincholi (HCN/NaCN/EDTA)", implied_date: "Q4FY27 (Q4 guide)", source_ref: "press L147-148"}
+  - {item: "BSC-attributable volume recovery (proxy; ~968 MT vs ~2,723 MT YoY)", implied_date: "Q2FY27 onward", source_ref: "press L82"}
   - {item: "Hotel Division revenue/PBIT recovery (rev -22.2% / PBIT -59.9% YoY)", implied_date: "Q2FY27 onward", source_ref: "results L234/L251"}
-  - {item: "Electronic-grade / EV battery chemicals expansion", implied_date: "unspecified", source_ref: "press L172-175"}
-  - {item: "Order pipeline quantification", implied_date: "unspecified", source_ref: "press L177-180"}
+  - {item: "Capex vs Rs 275-290 Cr FY27 envelope", implied_date: "FY27", source_ref: "Q4 concall guide"}
   - {item: "H1 FY27 cash-flow statement + net-debt schedule (fills INDETERMINATE cash conversion)", implied_date: "Q2FY27 filing", source_ref: "Step 5 missing-evidence"}
+  - {item: "Any further ID resignation (thesis-broken trigger)", implied_date: "ongoing", source_ref: "Board Outcome"}
 flags:
-  - "Disclosure-candor: press release states 'volumes maintained at similar levels' vs disclosed -21.7% YoY consolidated volume decline (F16-01)"
-  - "Earnings-durability: entire growth is price/mix-led (~60% YoY realization step-up) on ~21% lower volume; durability unproven (F16-02, Step 2D)"
-  - "A5-C1 BSC not a proven growth vector: profit-accretive swing (S-vs-C PAT gap -8.22% -> +8.28%) came on ~64% lower BSC-attributable volume proxy (2,723 -> 968 MT, L82); a monitorable, not a volume-led growth engine"
-  - "A5-C2 Print not broad-based: ~100%+ of consol PBT growth from one Amines & Speciality segment (+59.32 Cr PBT, L250) while Hotel Division revenue -22.2% (L234) and PBIT -59.9% (L251); undercuts 'diversified portfolio' framing"
-  - "Cash conversion INDETERMINATE at Q1 (no CF statement); capped at PROCEED WITH CAVEATS, subsumed into PROCEED WITH FLAGS; missing evidence named (CFO, WC/days, net-debt, DME PPE/CWIP)"
-  - "Governance-hygiene: standalone auditor digital-signature timestamp 17:25:29 predates board close 5:35 PM (A3-03); stray '[NS1]' editorial marker in signed release (F14-01)"
-  - "Document-set limitation: no concall transcript and no slide deck; Role 5 run on press-release commentary only; full concall analysis, promise-vs-delivery scoring and credibility ratio pending transcript"
-  - "New coverage: no Notion thesis, no entry zone, no thesis-broken triggers; position branch 8A-W observation only"
+  - "Disclosure-candor: press 'volumes maintained at similar levels' vs disclosed -21.7% YoY consolidated volume decline (F16-01)"
+  - "Earnings-durability: growth price/mix-led (~60% YoY realization step-up) on ~21% lower volume; GEOPOLITICS-CONTINGENT pricing per Q4 concall (RM doubled/tripled); reverses when crisis/competitor-outage window closes (F16-02, Step 2D)"
+  - "Repeat candor: Q1 press 'stable commodity prices' contradicts the company's own Q4 concall admission that RM doubled/tripled"
+  - "A5-C1 BSC not a proven growth vector: profit-accretive swing (S-vs-C PAT gap -8.22% -> +8.28%) on ~64% lower BSC-attributable volume proxy (2,723 -> 968 MT, L82)"
+  - "A5-C2 Print not broad-based: ~100%+ of consol PBT growth from one Amines & Speciality segment (+59.32 Cr, L250) while Hotel Division revenue -22.2% (L234) and PBIT -59.9% (L251)"
+  - "Cash conversion INDETERMINATE at Q1 (no CF/DSO); capped at PROCEED WITH CAVEATS, subsumed into PROCEED WITH FLAGS; pre-committed cash-multiplier reversal only a CANDIDATE pending Q2 DSO; missing evidence named (CFO, DSO, net-debt, DME PPE/CWIP)"
+  - "Governance-hygiene: auditor signature timestamp 17:25:29 predates board close 5:35 PM (A3-03); stray '[NS1]' marker in signed release (F14-01); CFO absent on Q4 call (confirm at Q1)"
+  - "Pre-committed Q1 test lands BULL (consol Op EBITDA margin 25.41% vs bull >=19%, ahead of 22-23% guide) but price-led/geopolitics-contingent; no thesis-broken trigger fired; Decision Status AVOID / 3% momentum UNCHANGED; operator decides on pre-committed trigger"
 review_path: "/home/user/inflection-pipeline/runs/balamines-q1fy27/work/review_balamines_q1fy27.md"
+notion_review_path: "/home/user/inflection-pipeline/runs/balamines-q1fy27/work/review_balamines_q1fy27_notion.md"
 ```
+
+---
+
+## POSITION-CONTEXT CORRECTION (post-run)
+
+A LIVE Notion thesis for BALAMINES was located AFTER this review's initial run (the orchestrator's Step 0 fetch was skipped). BALAMINES is **NOT new coverage** — it is a tracked position: **Decision Status = AVOID (fundamental); position = Small, 3% MOMENTUM ONLY, avg cost Rs 1,341, stop = Chandelier Exit on daily close**; framework as of Q4 FY26 (Destination PE 21x, cash multiplier 1.00x, Base FV FY28 Rs 1,563, entry Rs 640-800, MoS Rs 640-714); four thesis-broken triggers; and a **pre-committed Q1 FY27 test** (consolidated Op EBITDA margin — bull >=19% / bear <17%) plus a DSO watch (green <=80 / red >95).
+
+Consequences for this file:
+1. The **financial extraction, derived metrics, YoY/QoQ walks, S-vs-C gap, volume/realization tension, Step 2E segment concentration, BSC analysis, PAT bridges, cash-INDETERMINATE assessment, the nine Questions-for-Management and the monitorables are all correct and A5-verified — they stand unchanged.**
+2. The **"new coverage / no position / 8A-W observation only" framing** in Steps 6, 7, 8, 9 and Section C is **WRONG and is superseded** by the reconciled Notion review at **`/home/user/inflection-pipeline/runs/balamines-q1fy27/work/review_balamines_q1fy27_notion.md`**, which applies the real Decision Status.
+3. Reconciled results: the **pre-committed Q1 test lands BULL** (consol Op EBITDA margin 25.41% vs bull >=19%, ahead of the 22-23% FY27 guide); **no thesis-broken trigger fired**; the realization surge reconciles to the **geopolitics-driven pricing** disclosed in the Q4 FY26 concall (RM doubled/tripled + competitor shutdowns), sharpening the durability flag; the bull margin opens a **candidate cash-multiplier reversal (1.00x -> toward 1.15x) that is NOT applied**, pending Q2 DSO. **Decision Status AVOID and the 3% momentum position are UNCHANGED**; the position is held under Chandelier Exit; the margin beat is flagged for the operator, who decides any Decision Status change on the pre-committed trigger.
+4. Verdict (PROCEED WITH FLAGS) and cash conversion (INDETERMINATE) are unchanged; the geopolitics-pricing cross-reference and the pre-committed-threshold result are added as flags.
+
+The YAML block above has been updated in place to reflect the corrected `decision_status_verified`, `position_branch`, the pre-committed test result, the thesis-broken trigger table, and the added flags. For the Notion-ready text and the Key Notes prepend line, see `review_balamines_q1fy27_notion.md`.

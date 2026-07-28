@@ -27,3 +27,16 @@ poppler-utils + tesseract installed this session (apt fetch initially 404'd on s
 1. Toolchain: poppler-utils/tesseract absent at session start; apt index stale (poppler .deb 404) — `apt-get update` then install fixed. Consider baking the toolchain into the environment setup script.
 2. Concurrent A1 collision risk: prompts/quarterly-a1-extractor.md step 3 OCR fallback uses a generic `page` prefix (pdftoppm/tesseract) with no ticker/doctype disambiguation. When multiple A1 agents share one work/ dir, temp images can collide. No output text was corrupted this run (agents used unique intermediates after noticing), but the prompt should mandate a `<ticker>_<doctype>_` temp prefix.
 3. Both the results filing AND the press release are scanned PDFs with embedded-OCR text-layer artifacts (Ql/FV27/l00G, teiasnetworks). Financial digits read clean and cross-reconciled; label artifacts only. A5 arithmetic audit found 0 mismatches.
+
+## Role 5 concall addendum (2026-07-28)
+- Concall transcript (ICICI Securities Q1 FY27 call, ASR text) added and run through the full pipeline.
+- A1 concall: 223 lines verbatim, byte-identical, gate pass.
+- A2 concall: 14 participants, 109 turns, 37 questions, 40 mgmt numbers, 27 phrases, gate pass (flags MGMT_ABSENCE, REPEAT_QUESTION, ARITHMETIC_CHECK, ASR_GARBLE, DECLINED_DISCLOSURE).
+- A3 concall: F6/F7/F14/F17 findings (21), all 17 marked, silence audit (6 silences), gate pass.
+- A4 merged Role4+Role5 review -> review_merged_tejasnet_q1fy27.md. Combined verdict PROCEED WITH FLAGS; Decision Status WATCHLIST unchanged.
+- A5 merged audit: COMPLETE (0 orphans, 0 arithmetic mismatches, 0 surviving bear counters). Three non-blocking maker notes logged (A2 question-count off-by-one; A4 finance-cost basis label; DTA figure 365 vs 434 carried-memory not anchored).
+- Notion: concall Role 5 section appended to Tejas page (debt decomposition, promise-vs-delivery, silence audit, critical exchanges, arithmetic reconciliation, residual questions, combined verdict); Key Notes concall line prepended, all prior entries preserved. Decision Status unchanged (no trigger fired).
+- Key call takeaway: CFO decomposed the +Rs 746 Cr net-debt jump (net receivables +~325 + supplier payouts + capex); receivables absorbed ~81% of revenue and non-BSNL collections conceded sticky -> structural-WC risk better evidenced. Profitability target softened (Q4 FY27 -> 12-18 months). BSNL add-on now 26,000 sites, 6th qtr of imminence. Six silences incl QIP amid RED net debt.
+
+## Operational note (Role 5)
+- The DTA figure appears as both Rs 365 Cr (FY26 KAM, Notion) and ~Rs 434 Cr (FY26 DTA + Q1 deferred-tax benefit ~68.57): the ~434 is carried-memory arithmetic, NOT anchored (no Q1 balance sheet). Flagged for the analyst; resolve at Q2 half-year balance sheet.

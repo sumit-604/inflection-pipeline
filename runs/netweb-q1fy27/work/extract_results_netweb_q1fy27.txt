@@ -1,0 +1,370 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: netweb_results_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 6
+formfeed_count: 6
+line_count: 327
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-28
+=== END HEADER ===
+NOTE (mechanical, non-interpretive): task brief described this as a
+"39-page" filing. pdfinfo on the actual input document at the path given
+(/home/user/inflection-pipeline/runs/netweb-q1fy27/inputs/netweb_results_q1fy27.pdf)
+reports Pages: 6. All 6 pages were extracted and are accounted for below
+(6 form-feed breaks, matching pdfinfo page count). The companion file in
+the same inputs/ folder, netweb_pressrelease_q1fy27.pdf, is 3 pages
+(Producer: iLovePDF) and was not in scope for this task (separate input
+path was given). Neither file in inputs/ is 39 pages. This is flagged so
+a downstream agent does not assume pages are missing; page_coverage above
+is computed against the actual document extracted, not the brief's stated
+count.
+
+NOTE (mechanical, non-interpretive): the source PDF's embedded text layer
+(Producer: Adobe PSL 1.4e for Canon; Creator: Canon iR C3120) is itself a
+scanner-generated OCR text layer, not native document text. It contains
+visible character-substitution errors baked into the text layer itself
+(e.g. "lVetweb" for "Netweb", "3Oth june" for "30th June", "8,1 96 86" for
+what is likely "8,196.86", "l"/"1" and "0"/"O" confusions throughout,
+especially in the financial statement table on page 4 and the notes on
+page 5). Each page exceeded the 100-character threshold so no re-OCR
+fallback was triggered per the mechanical rule. This extract is a verbatim
+pass-through of pdftotext -layout output with page markers inserted; the
+character-level noise below is present in the source text layer, not
+introduced by this extraction step. Downstream agents should treat
+numeric values in the financial statement table (page 4) as requiring
+cross-check where digits are ambiguous (e.g. "8,1 96 86", "482", "140" in
+tax lines, "l.l5" for other comprehensive income) and should not silently
+autocorrect without flagging.
+
+[page 1]
+ lVetweb'
+ TECHNOLOGIES
+                                                               ctN               L721 00HRl 999PLC1 0391 1
+
+
+
+
+Date:28.07.2026
+To,                                                 To,
+The Manager                                         The Manager
+Listing Department                                  Listing Department
+BSE Limited                                         National Stock Exchange of India Limited
+Phiroze Jeejeebhoy Towers Dalal Street              Exchange Plaza, Bandra Kurla Complex
+Mumbai- 400001                                      Bandra East, Mumbai- 400051
+Scrip Code: 543945                                  Scrip Code:NETWEB
+
+SUBIECT: OUTCOME OF THE BOARD MEETING HELD TODAY. i.e..IULY 28. 2026
+
+Dear Sir/Madam,
+With reference to the captioned subject, please be informed that pursuant to Regulation 30 and other
+applicable regulations of the SEBI [Listing 0bligations and Disclosure Requirements) Regulations,
+20L5, Board of Directors of the Company at their meeting held today i.e., Tuesday, luly 28, 2026,
+inter-alia, considered and approved the following:
+
+Financial Results
+The quarterly unaudited financial results for the quarter ended 3Oth june, 2026,together with the
+limited review report issued by the Statutory Auditors of the Company is attached as Annexure-1.
+The same is available on the website of the Company at https:l'/nelwebindia.cont/investors.
+
+Dividend
+ In continuation of our previous intimation dated 0205.2026, it is hereby informed that Friday,
+August 07 ,2026, is being fixed as a record date for determining the eligible equity shareholders for
+the purpose of payment of the final Dividend for the Financial Year 2025-26. The dividend, if
+approved by the shareholders at the Annual General Meeting [AGM), will be paid, subject to
+deduction of applicable tax at source, within 30 days from the date of AGM,
+
+Annual General Meeting
+That the 27th Annual General Meeting [AGM) of the Company is scheduled to be held on Saturday,
+September 19,2026 at 03:00 p.m., through Video Conferencing [VC)/Other Audio-Visual Means.
+The Register of Members and the Share Transfer Books will remain closed from Saturday, September
+72th,2026, to Saturday, September 1,9,2026 [both days inclusive). A member whose name appears
+in Lhe t'egister of members or beneflclal owners mairrtained by the depositories as on the cut-off date
+i.e. Friday, September 7t,2026, is entitled to avail of the e-voting facility [both remote and at the
+AGM) provided by the Company. The remote e-voting period will commence at 9:00 A.M. on
+Wednesday, September 16,2026 and end at 5:00 P.M. on Friday, September 78,2026. The Company
+has appointed Mr. P.C Jain Practicing Company Secretary [M.No.: - F4103), as the Scrutinizer to
+scrutinize the voting process at the Annual General Meeting.
+
+Appointment of Cost Auditor
+Based on the recommendation of the Board of Directors of the Company, ?t its Meeting, approved
+the appointment of M/s. Sunny Chhabra & Co., Cost Accountants, as the Cost Auditor of the Company
+(Membership No. 32469) for the financial year 2026-27. Disclosure of information pursuant to
+Regulation 30 read with Schedule III of SEBI (Listing Obligations and Disclosure Requirements)
+Regulations ,2015, and applicable SEBI Circular is attached as ANNEXURE-2,
+
+
+
+
+                                Netweb Technologies lndia Limited
+  Plot No. H-1, Block-H, Pocket No. 9, Faridabad lndustrialTown, Sector-S7, Faridabad, Haryana
+                                               121004
+                                    Tel. No. : +91-129-2310400
+         Website : www netwebind ia.com ; E-mail : complianceofficer@netwebindia.com
+[page 2]
+NetweU
+TECHNOLOGIES
+                                                           clN              L721 00HRl 999PLcl 0391 1
+
+
+
+
+The meeting of the Board of Directors commqnced at 01:00 P.M and concluded at ? t OS p.nA.
+This is for your information and records.
+
+Thankingyou,
+For                         India Limited
+
+
+           NTIL
+
+                      Compliance Officer
+
+
+
+
+                               Netweb Technologies lndia Limited
+  Plot No. H-1, Block-H, Pocket No. 9, Faridabad lndustrial Town, Sector-57, Faridabad, Haryana
+                                               121004
+                                    Tel. No. : +91-129-2310400
+         Website : www.netwebind ia.com ; E-mail : compl ia nceofficer@netwebi nd i a.com
+[page 3]
+                                           S S KOTHARI MEHTA
+                                                 & CO LLP
+                                                     CHARTERED ACCOUNTANTS
+
+
+
+          Independent Auditor's Limited Review Report on Unaudited Financial Results of
+          Netweb Technologies India Limited for the quarter ended June 30, 2026, pursuant to Regulation 33
+          of the SEBI (Listing Obtigation and Disclosure Requirements) Regulations,20lS, as amended
+
+          To
+          The Board of Directors of
+          Netweb Technologies India Limited
+
+           1   We have reviewed the accompanying Statement of Unaudited Financial Results of
+               Netweb Technologies India Limited ('the Company') for the quarter ended June 30,2026 and year to
+               date period from April 01,2026 to June 30,2026 ('the Statement'), affached herewith, being submitted
+               by the Company pursuant to requirements of Regulation 33 of the Securities and Exchange Board of
+               India (Listing Obligations and Disclosures Requirements) Regulations, 2015, as amended (the "Listing
+               Regulations").
+
+          2. This Statement is the responsibility of the Company's management and approved by the Board of
+               Directors, has been prepared in accordance with the recognition and measurement principles laid down
+               in the Indian Accounting Standards 34, "lnterim Financial Reporting", prescribed under Section 133 of
+               the Companies Act, 2013 ("Act"), read with the relevant rules thereunder and other accounting
+               principles generally accepted in India and in compliance with Regulation 33 of the Listing
+               Regulations. Our responsibility is to express a conclusion on the Statement based on our review.
+
+          J    We conducted our review of the Statement in accordance with the Standard on Review Engagement
+               (SRE) 2410, "Review of Interim Financial Information performed by the Independent Auditor of the
+               Entity" issued by the Institute of Chartered Accountants of India. This Standard requires that we plan
+               and perform the review to obtain moderate assurance as to whether the Statements are free of material
+               misstatement. A review is limited primarily to inquiries of the Company personnel and analytical
+               procedures applied to financial data and thus provides less assurance than an audit. We have not
+               performed an audit and, accordingly, we do not express an audit opinion.
+
+          4    Based on our review conducted as above, nothing has come to our attention that causes us to believe
+               that the accompanying statement of unaudited financial results prepared in accordance with the
+               applicable Indian Accounting Standards (lnd AS) prescribed under section 133 of the Companies Act,
+               2013, read with relevant rules issued thereunder, and other recognized accounting practices and
+               policies has not disclosed the information required to be disclosed in terms of Regulation 33 of the
+               Listing Regulations, including the manner in which it is to be disclosed, or that it contains any material
+               misstatement.
+
+          For S S Kothari Mehta & Co. LLP
+          Chartered Accountants
+          ICAI Registration No. 000756Nn{50044 1
+
+
+
+           %*                             *
+          Jalaj Soni
+          Partner
+          Membership No. 528799
+
+          UDIN : 265287 99ZOYT\O625 6
+
+          Place: Faridabad
+          Date:July 28,2026
+
+
+
+
+Plot No. 68, Okhla industrialArea, Phase-lll, New Delhi-110020
+Tel: +91-11-4670 8888 E-mail: contact@sskmin.com                                                                  www.sskmin.com
+[page 4]
+NETWEB TECHNOLOGIES INDIA LIMITED
+Plot No. H-1, Block-H, Pocket No.9, Faridnbad Industrial Town, Sector-57, Faridabad, Harynna 121004
+rel. No. r +91-129-2310400; CIN : L72l00HRl999PLCl039ll
+                                                                                                                                                                             Iletueh
+                                                                                                                                                                             TECHIIOLOGIES
+Website : ww.netwebindia.cont  ; Fmail : contplianceofficer@netwebindia.com
+(All amounas in Indian Rnpes in millions, unlas otheryise stnted)
+STATEMENT OF FINANCIAL RESULTS FOR OUARTER ENDED JUNE 30, 2026
+                                                                                                                                Quarter ended                                    Year ended
+                                                                                                          30-06-2026              3r-03-2026             30-06-2025              3l-03-2026
+S.No.    Par'{iculnn
+                                                                                                          Unaudited                 Audited              Unaudited                Audited
+
+    I    Revenue
+                                                                                                                 8,1 96 86
+                                                                                                                                          't,'137 02           3,012 t2                2t,835.63
+         Revenue from operations
+         Other income                                                                                                  84 72                  t02.35              1r.05                      I 88.42
+
+
+         Total income                                                                                            8,28 1.58               7,839.37              3,023.17                22,O24.O5
+
+    II   Expenses
+         Cost of materials consumed                                                                              7,432.77                6,236.92              2,046.t0                1   7,1 54 80
+
+         Change in inventories of finished goods and work-in-progress                                             (s70 3e)                     (78 72)           194 37                       t28.t I
+         Employa benefi ts expense                                                                                 246.86                     2t4.33             t60 79                     802.85
+         Finilce costs                                                                                             lLs.24                      81.53                  9.78                   t29.s3
+         Depreciation md amortistion expenss                                                                           33.25                   38.34              33.23                      142.1I
+         Other expenses                                                                                            282.4',1                   398.75             162 84                     901 45
+         Totnl expens6                                                                                           7,140.20                6,891.15              2,601.11                19,258.85
+   nt Profit before erceptional items and tax                                                                    I,141.38                     948.22             416.06                    2,765.2O
+   tv Exceptional items (net)
+      Profit before tnx                                                                                          1.141.38                     948,22             416.06                    2,765.20
+   VI Tax expense
+      Current ta\                                                                                                  324.09                     233.41             109.87                     696.03
+         Adjustment oftax relating to ealier period                                                                                                                                           (0.68)
+         Defened tax charge (credit)                                                                               (3s.94)                       482                  140                     1 1.69
+
+
+         Totsl tax expense                                                                                         288.15                     242,29             lll.21                     707.O4
+
+  VII Prcfit for the period / year                                                                                 853,23                     705.93             304.19                    2,058.r6
+  vil1 Other comprehensive income (loss)
+         ltems that will not be reclosified to statement ofprofit and lo$ :
+         -Re-measurement     gains / (losss) on defined benefit plils                                                   l.l5                     0.80                 I t6                     o52
+         -lncome Tax relating to ltems that will not be relassified to statement of profit and loss                    (0.2e)
+         Totnl other comprehensive income (loss), net of tax                                                            0.86                     0.60                 0.87                     0.39
+   tx Totrl comprehensive income for the period / year                                                             854.09                     706.53             305.66                    2,058.55
+         Paid trp eqtrity share capital (face value of{2 per share)                                                l 13.88                    r r3.88            I 13.31                     I 13.88
+         Other equity                                                                                                                                                                      7,1 19. l0
+
+                    per equity share (face value      12 per share)
+               (in INR)'                                                                                               I4.98                    12.43                 5.38
+                 (in INR)^                                                                                             14.98                    12.43                 sl8
+
+
+
+
+                                                                                                                           +
+
+
+                                                                                                      +
+[page 5]
+Oth€r Notes                                                                                                                                                                 Indim Accounttng Standards
+                                                                                               the                    medurement                laid down tn
+                        results                   have been prepared
+                                                                                       Accounting   Stilddds)    Rules,  201 5 (6 amended) md ls       complimce with presntatron and dirlosurc requirement
+                 S@lion      of the Companies Act rad with Compantes         (lndian
+                                                                                                                                                                 have been reviewed by the Audit Committ@
+                     33 of SEBI LODR (Listing Obligation ad Dislosure
+                                                                                  Requirements) regulation 201 (as amended). The above financial results
+                                                                                                 2026.  The  statutory auditor ofthe  company have carried out limited          of the above financial roults.
+                    Ly drc Boord of Dirootoro  qt thoir rspective        ngs held   on July
+                                                                                                                                  tn rspect of the full finacial yed ended    March    l, 2026 and the
+    2          figura of the quarter ended March           2026, being the balancing figure betw€n the audited figures
+                     yqf -to-date figures up to the third quarter of the sid   financial year
+
+                                                                                 a not-for-profit entity incorporated under Section      of the Companies Act, 20 t3 (crN u80902HR2022NPLl 03903). As
+    3          Compmy has one subsidiary, Netweb Foundalion, which                                                                             Therefore, the requirement for conslidation of financial
+                                                                                              for distribution     dividends  to shareholders.
+              provlsrons applicable to Sstion 8 compales, the profits are not aval lable
+         ts not applicable.
+                                                                                    the Company has only one business segment i.e. "Computer wryers"
+         According to India Accounting Standads lnd-AS) t08 on "Operating Segmenf'
+                                                                                                                                                               Social Srcurity, 2020 and
+                                                                                         Code on Wages, 2019, the tndustrial Relations Code, 2020, the Code on
+                          2025, the Govemment of lndra notified the four Labour Codo the
+            November
+                                                                                                 labour laws. The Ministry of Labour     Employment ho published draft Central Ruls
+                             Health and Working Conditions Code, 2020 consolidating 29 existing
+                         Safety,
+                                                                                      in regulations.
+           AQs to enable assessment ofthe financial impact ansrng from changes
+                                                                                                                                                the basis of management eraluation and the
+                                                                           Labour Codes on its employee benefit obligations md related costs on
+               Compmy hm asSessed the potential lmpact of the aforesid
+                                                                                     lnstitute of Chartered Accountants of lndia.
+                    curentlY available, consistent with the guidance provided by the
+                                                                                                                                                                     position, resulls of operatlons
+                                                                         Lobour Codcc hoo nol resulted     any material incremental impact on the Compmy's financial
+         tsaed on such asseSsment, the implerrerrLutiutr ul 1hc
+                                                                          2026. Accordingly, no statutory impact or exceptional item h6
+                                                                                                                                        ben raognised tn lhe statement of prolit and loss for the yeil
+                   benefit obligations for the period ended March
+         period ended March 3 l, 2026
+                                                                                                                                                    the Labour code md would                 provide
+                                                                                    Rules md my clarifiqtions from the Govemment on other aspwts of
+         The company continues to monitor the finalistion of central / state
+                  eff@t on the basis ofsuch developments as needed
+                                                                                                                                                                 from the Nomination
+                                                                                personnel of the Company on January 8, 2025 after taking nsesgry approvals
+     6         Compmy has granted 4,935 ESOPs lo the employes ad Key maagerial
+                                                          period of -2 yws. Accordingly, the Company hc rrcorded  cost of IN R 0.38 million for the qutrter ended June 30, 2026.
+                      commitee. Thae ESOPs will vest over
+
+
+                                                                                                                                                     FOR NETWEB TECHNOLOGIES INDIA
+
+
+
+
+                                                                                                                                                           NTIL
+                                                                                                              *                                                                                6l*'
+                                                                                                                                                                                        6n
+         Faridabad
+                                                                                                                                                                                   t,              Sanjay
+                                                                                                                                                                                            (Managing
+                                                                                                                                                                                                  DIN:0046191
+          28-01-2026
+[page 6]
+NetweU
+TECHNOLOGIES
+                                                           ctN              L721 00HRl 999PLcl 0391 1
+
+
+
+
+                                         ANNEXURE 2
+
+Information as required under SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 and SEBI Circular:
+
+ Sr. No.   Particulars                                 Remark
+ 1.        Reason for change viz. appointment, re-     Re-Appointment of M/s Sunny Chhabra &
+           appointment resignation, removal, death     Co. as the Cost Auditors of the Company
+           or otherwise;
+ 2         Date of appointment                         luly 28,2026
+ 3         Term of appointment                         FY 2026-27
+
+4          Brief Profile                               Sunny Chhabra & Co., Cost Auditors,
+                                                       registered with the Institute of Cost
+                                                       Accountants of India flCMAI), engaged in
+                                                       rendering Cost Audit & Assurance
+                                                       Services and Advisory.
+
+
+
+
+                                                                        NTIL
+
+
+
+
+                               Netweb Technologies lndia Limited
+  Plot No. H-1, Block-H, Pocket No. 9, Faridabad lndustrialTown, Sector-S7, Faridabad, Haryana
+                                               121004
+                                    Tel. No. +91-129-2310400
+                                             =
+         Website : wwwnetwebindia.com ; E-mail : complianceofficer@netwebindia.com

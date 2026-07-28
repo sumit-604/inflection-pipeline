@@ -1,0 +1,187 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: netweb_pressrelease_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 3
+formfeed_count: 3
+line_count: 187
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: [2, 3]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-28
+=== END HEADER ===
+
+NOTE ON METHOD: pdftotext -layout was run first (all 3 pages exceeded the
+100-character threshold, so no page triggered the mechanical OCR-fallback
+gate on its own). However, visual inspection of the -layout output showed
+recurring blank runs of whitespace inside sentences on pages 2 and 3 (a
+rendering artifact: the source PDF places certain highlighted/coloured
+statistic call-outs as separate text objects that pdftotext -layout drops
+or fails to merge in reading order). Per the operating rule that data
+labels carrying guidance stated nowhere else must be captured, pages 2 and
+3 were rasterised at 300dpi (`pdftoppm -jpeg -r 300`) and OCR'd with
+`tesseract --psm 6`. Tesseract mis-rendered the Rupee glyph "₹" as stray
+characters ("3", "%", "=", "¥") in multiple places; these fragments were
+cross-checked against the rasterised page image (direct visual read of the
+same image tesseract processed) and the Rupee glyph is transcribed below
+as "₹" for legibility. No digit, word, or magnitude was altered from what
+is visible on the source image. All OCR-recovered spans are bracketed
+inline as [OCR page N: <recovered text>] at the exact point of the gap in
+the native pdftotext layout output. Page 1 required no OCR (no blank runs
+found; full letter text and footer extracted cleanly).
+
+[page 1]
+                                                            CIN           :   L72100HR1999PLC103911
+
+
+
+
+Date: 28.07.2026
+
+To,                                              To,
+The Manager                                      The Manager
+Listing Department                               Listing Department
+BSE Limited                                      National Stock Exchange of India Limited
+Phiroze Jeejeebhoy Towers Dalal Street           Exchange Plaza, Bandra Kurla Complex
+Mumbai- 400001                                   Bandra East, Mumbai- 400051
+Scrip Code: 543945                               Scrip Code: NETWEB
+
+SUBJECT: INTIMATION OF PRESS RELEASE FOR THE QUARTER ENDED ON 30TH JUNE, 2026
+
+Dear Sir/ Madam,
+
+Please find enclosed herewith the Press Release on the unaudited standalone quarterly financial
+results for the period ended on June 30, 2026.
+
+Kindly take the same on record.
+
+Thanking you,
+
+
+For Netweb Technologies India Limited
+                    Digitally signed by Lohit
+
+Lohit Chhabra Chhabra
+              Date: 2026.07.28 15:35:43
+                    +05'30'
+
+Lohit Chhabra
+Company Secretary & Compliance Officer
+
+
+
+
+                               Netweb Technologies India Limited
+  Plot No. H-1, Block-H, Pocket No. 9, Faridabad Industrial Town, Sector-57, Faridabad, Haryana
+                                               121004
+                                    Tel. No. : +91-129-2310400
+         Website : www.netwebindia.com ; E-mail : complianceofficer@netwebindia.com
+
+[page 2]
+  Netweb Technologies delivers a record-breaking quarter, achieving its highest-ever income and profit,
+                  with [OCR page 2: PAT ₹853.23 Mn] , reflecting a strong YoY growth of 179.94%
+
+
+Delhi - NCR, 28th July 2026:
+owned and controlled OEM in the space of High-end Computing Solutions (HCS), announced its Q1 FY27
+results today. The Board of Directors of Netweb at its meeting held on 28 th July 2026, took on record the
+unaudited Financial Results for the first quarter of Financial Year 2026-27. Netweb offers a full stack of
+products and solutions to various end user industries such as IT, ITES, BFSI, National Data Centres and Govt.
+entities such as Defence, Education and R&D Institutions.
+
+Key Financial Highlights:
+
+Revenue from Operations stood at 8,196.86 Mn for Q1 FY27, with YoY growth of 172.13%
+
+Operating EBITDA stood [OCR page 2: at ₹] 1,205.15 Mn, an increase of 168.99% over Q1 FY26, Operating EBITDA margin
+stood at 14.70%
+
+PAT stood at 853.23 Mn, an increase of 179.94% over Q1 FY26, PAT Margin was at 10.30%
+
+Net Debt was 1,999.00 Mn as of 30th June [OCR page 2: '26 -- i.e. "Net Debt was ₹1,999.00 Mn as of 30th June'26"; the trailing "6" printed by pdftotext-layout is the garbled tail of "'26"]
+
+Key Business Highlights:
+
+Order Book: 25,069.35 Mn as of 30th June [OCR page 2: '26 -- i.e. "Order Book: ₹25,069.35 Mn as of 30th June'26"]
+
+Segmental Growth: Income from AI Systems [OCR page 2: stood at ₹5,105.70 Mn] growing by 484.20% YoY over Q1
+FY26, its contribution to the company's operating revenue increased to 62.29% during the same period
+
+
+Profit & Loss Summary:
+                                                                                                                                              Millions
+
+ Particulars                                            Q1 FY27           Q1 FY26           YoY(%)         Q4 FY26          QoQ(%)            FY26
+
+ Total Income                                            8,281.58          3,023.17         173.94%         7,839.37          5.64%         22,024.05
+
+ Revenue from Operations                                 8,196.86          3,012.12         172.13%         7,737.02          5.94%         21,835.63
+
+ Op EBITDA1,2                                            1,205.15          448.02           168.99%          965.74          24.79%         2,848.42
+
+
+ Op EBITDA Margin (%)                                     14.70%           14.87%           (17) bps         12.48%          222 bps         13.04%
+
+ Profit after Tax2                                        853.23           304.79           179.94%          705.93          20.87%         2,058.16
+
+ PAT Margin (%)2                                          10.30%           10.08%            22 bps          9.00%           130 bps          9.35%
+
+                   *,2                                     14.98             5.38           178.44%           12.43          20.51%           36.30
+[OCR page 2: row label for the line above is "Diluted EPS (₹)*,2" -- the row label "Diluted EPS (₹)" was dropped by pdftotext-layout, only the superscript "*,2" printed]
+
+*Non-annualized;
+1: Operating EBITDA is calculated as Profit before Tax (PBT) plus Depreciation and amortization expenses and Finance cost less Other income ; Operating
+EBITDA Margin is calculated as Operating EBITDA divided by Revenue from operation ;
+2.Profit after Tax (PAT) margin is a percentage of Profit for the period/year divided by Total Income
+                                                                                                                                                 Page | 1
+
+[page 3]
+Commenting on the results, Mr. Sanjay Lodha, Chairman and Managing Director, Netweb Technologies said:
+
+ Netweb Technologies delivered a record quarter, achieving its highest-ever quarterly Revenue from
+Operations and Profits.
+
+[OCR page 3: Revenue from Operations stood at ₹8,196.86 million in Q1 FY27, a year] -on-year growth of 172.13%.
+
+[OCR page 3: Operating EBITDA stood at ₹1,205.15 million, up 168.99% YoY, with a margin of 14.70%, while PAT stood at ₹853.23 million, growing 179.94% YoY with a margin of] 10.30%. This performance reflects sustained demand
+momentum coupled with disciplined execution across our business.
+
+[OCR page 3: Our AI Systems segment continues to be the key growth driver, contributing ₹5,105.70 million,] being 62.29%
+of Revenue from Operations, growing 484.20% YoY, while HPC and Private Cloud maintained robust traction
+[OCR page 3: at ₹1,252.94 million and ₹1,353.46 million respectively] , reinforcing the breadth and resilience of our three
+[OCR page 3: growth pillars. Our order book stood at ₹25,069.35 million as of] 30th June [OCR page 3: '26, with a L1 of ₹8,480.47 million,]
+providing strong revenue visibility for the coming quarters.
+
+The world, and India in particular, is witnessing an unprecedented AI infrastructure build-out, anchored by
+the IndiaAI Mission's GPU compute, indigenous sovereign foundation models, and world-scale demand from
+Neocloud providers and CSPs. Sovereign AI compute is no longer aspirational; it is a strategic national
+imperative, creating a deep, multi-year demand pipeline for high-end computing systems designed and
+manufactured within the country. As NSM 2.0 shifts to a "build and design in India" approach and HPC
+adoption broadens to enterprises, indigenous design and domestic manufacturing are emerging as decisive
+qualification criteria.
+
+As one of India's leading Indian-origin OEMs in High-end Computing Solutions, with fully integrated design,
+manufacturing and deployment capabilities, we bring leadership across our HCS portfolio, reinforced by an
+early-mover position in AI infrastructure that continues to strengthen our growth trajectory and opportunity
+pipeline. With sustained investments in innovation, a chip-agnostic design philosophy, alignment with the
+Make in India vision, and a strong order book, we remain confident in our ability to deliver long-term
+sustainable growth and create enduring value for all our stakeholders.
+
+About Netweb Technologies
+Netweb Technologies is one of India's leading Indian-origin, owned and controlled High-end Computing Solutions (HCS)
+provider, with fully integrated design, manufacturing and deployment capabilities.
+HPC, Private cloud and HCI, AI systems, High performance storage (HPS) and Data Centre Servers. Founded in 1999,
+and headed by Mr. Sanjay Lodha, Chairman and Managing Director, Netweb has helped many companies globally by
+following a customer centric approach. Netweb has manufacturing facility in Delhi - NCR and 22 offices across India.
+Netweb got listed at NSE and BSE in July 2023.
+
+
+ For further information, please contact:
+
+ Swapnil
+ Email: swapnil@netwebindia.com
+
+
+
+                                                                                                           Page | 2

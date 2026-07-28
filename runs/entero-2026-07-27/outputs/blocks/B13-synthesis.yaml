@@ -3,17 +3,32 @@ company: "ENTERO"
 run_date: "2026-07-27"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
 verdict: "PROCEED WITH CAVEATS"
 verdict_rule_applied: 3
-flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
-cash_determination: "INDETERMINATE"
-confidence_delta: {numerical: 94, redflag: 83, framework: 96, peer: 92, overall: 83}
-valuation_decision: ""
-entry_range: {low: 0, high: 0}
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0", "SHARED CATALYST"]
+confidence_delta: {numerical: 94, redflag: 83, framework: 100, peer: 92, overall: 83}
+valuation_decision: "AVOID"
+entry_range: {low: 506, high: 569}
+mos_price: 455
+destination_pe: {track1_rrm: 15.0, track2_additive: 15.0}
+hurdle_verdict: "STOP"
+hurdle_ratio: {base: 0.74, bull: 0.90}
+prob_weighted_cagr_3yr: -4.3
 headline: "Pharma distributor roll up turns cash positive"
-falsification_metric: "Q1/Q2 FY27 net operating working capital days above 65 with OCF/EBITDA below 50%"
+falsification_metric: "NWC days >65 in Q1/Q2 FY27 with OCF/EBITDA <50%"
 monitorables_count: 8
 publish_candidate: false
 publish_candidate_summary: ""
-notion_save: null
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/fttcp-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/final/fttcp-handoff.md"
+  - "outputs/final/verifier-disagreement-log.md"
+  - "outputs/final/notion-payload.md"
+  - "outputs/reports/B13.md"
+notion_save:
+  page_title: "ENTERO — Entero Healthcare Solutions Ltd"
+  summary: "Pharma distributor roll up turns cash positive | PROCEED WITH CAVEATS | AVOID (on valuation) at CMP Rs1,273 | entry Rs506-569"
+  drive_link: "{{DRIVE_FOLDER_LINK}}"
+  mode: append-never-overwrite-status

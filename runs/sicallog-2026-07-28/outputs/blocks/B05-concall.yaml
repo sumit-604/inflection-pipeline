@@ -1,0 +1,72 @@
+stage: B05-concall
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings-call transcripts collected or available; degraded procedure used per NO-CONCALL orchestrator rule"
+  - "Q3 FY26 results PDF (results__187cf630...) is image-only for its financial-statement pages; no machine-readable standalone/consolidated P&L for that filing beyond the board outcome letter and the Dec-2025 comparative column embedded in the Q4 FY26 audited results file"
+  - "No separate Chairman's letter narrative found in the extracted AR text (AR text begins at Board's Report; any glossy Chairman's-message page, if present, was not machine-readable)"
+  - "Post-rights-issue public shareholding percentage (progress toward mandatory 25% MPS) not stated in any collected document"
+  - "Section 2E (repeated question tracker) and Section 3C (toughest analyst questions) have no source in this mode; not fabricated"
+flags:
+  - "FY26 'return to profit' claim is overwhelmingly a one-time Rs 55.59 cr land-sale exceptional gain; standalone pre-exceptional result is a Rs 16.03 cr loss and consolidated pre-exceptional PBT is only Rs 1.50 cr"
+  - "Consolidated pre-exceptional PBT deteriorated YoY in Q4 FY26 despite full-year EBITDA margin expansion"
+  - "QIP (Rs 250 cr, approved Jan-2025) never executed; superseded by smaller Rights Issue (Rs 93 cr) with no explanation"
+  - "MPS 25% public float compliance status unconfirmed post rights-issue"
+  - "CFO resigned 9-Jul-2026 to intra-group subsidiary role with no disclosed parent-level succession plan"
+quarters_analysed: ["FY2024-25 AR (year ended 31-Mar-2025, filed Sept-2025)", "Q3 FY26 results (quarter/9M ended 31-Dec-2025, filed 13-Feb-2026)", "Q4/FY26 audited results + FY26 investor presentation (year ended 31-Mar-2026, filed 29-May-2026)"]
+triggers:
+  - {priority: 1, name: "SECL Porda-Chimtapani overburden-removal contract execution ramp (Rs 3,422 cr, ~140 months)", type: "volume", timeframe: "long", conviction: "M", confirm_signal: "Revenue recognition flowing through FY27+ quarterly segment disclosures at expected run-rate", kill_signal: "Execution delays, contract renegotiation, or PSU tender dispute"}
+  - {priority: 2, name: "Standalone/consolidated pre-exceptional profitability turning genuinely positive (ex land-sale gain)", type: "margin", timeframe: "medium", conviction: "L", confirm_signal: "A quarter with standalone pre-exceptional profit, not just consolidated EBITDA margin expansion", kill_signal: "Continued standalone pre-exceptional losses through FY27"}
+  - {priority: 3, name: "Chennai MMLP ramp-up to stated 50-70 rakes/month utilisation", type: "volume", timeframe: "near", conviction: "M", confirm_signal: "Rake-traffic disclosure reaching stated range in FY27 presentations", kill_signal: "Utilisation stalling well below the 50-70 rakes/month range"}
+  - {priority: 4, name: "Bengaluru MMLP commissioning", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "A specific commissioning date/capex figure disclosed", kill_signal: "Continued 'upcoming' language with no date across further filings"}
+  - {priority: 5, name: "MPS 25% public-shareholding compliance closure", type: "regulatory-policy", timeframe: "near", conviction: "L", confirm_signal: "Explicit confirmation of 25% public float achieved", kill_signal: "Continued incremental disclosures without a stated completion"}
+  - {priority: 6, name: "Parent-company CFO succession post 9-Jul-2026 resignation", type: "governance", timeframe: "near", conviction: "L", confirm_signal: "Named permanent parent-company CFO appointment", kill_signal: "Prolonged vacancy or repeated CFO turnover"}
+guidance:
+  - {item: "SMART Chennai rail-linked terminal commissioning", number: "commercial operations", timeframe: "FY2025-26 (delivered Dec-2025)", stated_in: "AR MD&A, filed Sept-2025"}
+  - {item: "QIP authorisation ceiling", number: "Rs 250 cr", timeframe: "approved Jan-2025; never executed", stated_in: "AR Board's Report, filed Sept-2025"}
+  - {item: "Rights issue (executed, superseded QIP)", number: "Rs 93.03 cr (11:5 ratio)", timeframe: "record date 18-Feb-2026", stated_in: "Q3 FY26 board outcome letter, 13-Feb-2026; completion confirmed in Q4 FY26 audited results"}
+  - {item: "Mining logistics order book", number: "Rs 46,000 mn (~Rs 4,600 cr)", timeframe: "as of 1-Apr-2026", stated_in: "FY26 investor presentation"}
+  - {item: "SECL Porda-Chimtapani contract", number: "Rs 34,222 mn (~Rs 3,422 cr), 140 months", timeframe: "secured Q4 FY26", stated_in: "FY26 investor presentation"}
+  - {item: "Consolidated debt/equity ratio", number: "4.1x -> 1.6x", timeframe: "FY25 -> FY26", stated_in: "FY26 investor presentation, corroborated in Q4 FY26 audited balance sheet"}
+  - {item: "Assets held for sale, to be disposed for debt repayment", number: "Rs 11,130 lakh", timeframe: "within 12 months of Mar-2026", stated_in: "Q4 FY26 audited results, note (d)"}
+  - {item: "Dividend policy", number: "NOT FOUND (no dividend recommended FY25; no forward policy stated)", timeframe: "n/a", stated_in: "AR Board's Report"}
+  - {item: "Forward margin-band guidance", number: "NOT FOUND", timeframe: "n/a", stated_in: "n/a"}
+  - {item: "Forward capex-with-timeline guidance", number: "NOT FOUND (only historical Rs 30 lakh sustainability capex disclosed)", timeframe: "n/a", stated_in: "AR MD&A"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 1
+  rows:
+    - {promised_in: "AR MD&A, Sept-2025", promise: "SMART Chennai rail-linked terminal to commence operations in FY2025-26", outcome: "delivered", explanation: "Commercial ops commenced Dec-2025, within the guided fiscal year"}
+    - {promised_in: "AR Board's Report, Sept-2025", promise: "QIP up to Rs 250 cr to be executed at a suitable time", outcome: "missed", explanation: "Never executed; no explanation found; superseded by a smaller Rights Issue for a narrower stated purpose"}
+    - {promised_in: "AR Board's Report, Sept-2025", promise: "Progress toward mandatory 25% minimum public shareholding", outcome: "partial", explanation: "Rights issue in Feb-2026 stated as directed at MPS compliance, but resulting public-shareholding percentage not confirmed in any collected document"}
+    - {promised_in: "FY26 results/presentation, 29-May-2026", promise: "Company frames FY26 as a 'return to profitability'", outcome: "partial", explanation: "Reported profit is overwhelmingly a one-time Rs 55.59 cr exceptional land-sale gain; pre-exceptional standalone result is a Rs 16.03 cr loss and pre-exceptional consolidated PBT is only Rs 1.50 cr"}
+excuse_pattern: "silence"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "One AR-guided commitment (SMART Chennai terminal) was delivered on stated timeline, but this is offset by an unexplained QIP-to-Rights-Issue pivot, an unconfirmed MPS 25% compliance status, a profit narrative that does not give prominence to the pre-exceptional operating picture (standalone pre-exceptional loss of Rs 16.03 cr against a headline 'return to profit'), and an unexplained recent CFO departure with no disclosed parent-level succession plan; net evidence is mixed, so the grade stays at the mode default."
+peer_questions:
+  - {question: "Is India's coal production genuinely on a trajectory to reach the government's stated 1.5 billion tonne FY2030 target, and is commercial/captive coal output (cited by Sical at 197.5 MT FY25, +28.1% YoY) growing at a pace that supports sustained overburden-removal demand?", why: "Sical's largest segment (mining logistics, 43% of FY26 revenue) and its entire new SECL order book rest on this industry growth assumption.", check_peers: ["Coal India Ltd / SECL disclosures", "MOIL", "other listed overburden-removal/mining-logistics contractors"]}
+  - {question: "Are PSU coal-mining logistics tenders (like the SECL Porda-Chimtapani award) being priced competitively, or is there sector-wide evidence of aggressive/thin-margin bidding, consistent with Sical's own AR-stated risk that aggressive bidding compresses margins?", why: "Determines whether the Rs 3,422 cr order book translates into real margin or is a volume win at compressed pricing.", check_peers: ["Other OB-removal contractors bidding on SECL/Coal India tenders", "sector analyst/industry-association commentary on OB tender pricing"]}
+  - {question: "Is the National Rail Policy's stated goal of rail freight reaching 45% share of total freight actually translating into rail-linked private terminal volume growth in South India specifically, where Sical claims share by volume rising from 21% (FY25E) to 33% (FY30P)?", why: "This is the structural thesis behind the entire MMLP (Chennai/Bengaluru) investment case.", check_peers: ["CONCOR", "Gateway Distriparks", "Continental Warehousing Corp", "other rail/ICD operators in South India"]}
+  - {question: "Does Chennai CFS genuinely hold '10%+ market share' and rank as the top-performing Southern-region CFS per NICDC data across FY23-FY26 as Sical claims, and how do rival Chennai/Tuticorin/Vizag CFS operators' volumes compare?", why: "Direct market-share claim underpinning the terminals segment (36% of FY26 revenue); a checkable, named-source (NICDC) claim.", check_peers: ["Gateway Distriparks", "Continental Warehousing Corp", "Balmer Lawrie", "TCI", "other Chennai/Tuticorin/Vizag CFS operators"]}
+  - {question: "Is India's warehousing and 3PL demand growing at the 10-13% (warehousing) and mid-teens (3PL) CAGR Sical cites, and is the pharma 'national super-stockist' model a genuine emerging growth niche or already crowded?", why: "Warehousing & 3PL is 21% of FY26 revenue and the newest stated growth avenue.", check_peers: ["Existing pharma 3PL/super-stockist players", "listed warehousing peers (Mahindra Logistics, TCI, Allcargo, Delhivery)"]}
+  - {question: "Are diesel/fuel and power cost trends (a stated input risk for Sical's mining logistics and CFS operations) similarly affecting peers, and are contractual escalation clauses actually protecting margins in practice sector-wide?", why: "Sical's own AR names this as a threat, yet FY26 EBITDA margin expanded; peer input-cost trends indicate whether this is company execution or a sector tailwind.", check_peers: ["Other diesel-intensive logistics/mining-services operators"]}
+  - {question: "Has any other Coal India/SECL-linked OB removal contractor announced a comparably large (Rs 3,000+ cr) long-duration (10+ year) award in the same period, and at what implied per-unit economics?", why: "Tests whether the SECL Porda-Chimtapani award terms (Rs 3,422 cr / 140 months) are in line with sector norms or unusually favourable/unfavourable.", check_peers: ["Other SECL/Coal India OB-removal contract counterparties disclosed in Coal India or SECL tender records"]}
+red_flags:
+  - "FY26 'return to profit' narrative is overwhelmingly a Rs 55.59 cr one-time exceptional land-sale gain; standalone pre-exceptional result for the full year is a Rs 16.03 cr LOSS and consolidated pre-exceptional PBT is only Rs 1.50 cr (HIGH)"
+  - "Consolidated pre-exceptional PBT deteriorated YoY in Q4 FY26 (Rs -5.83 cr vs Rs +2.40 cr in Q4 FY25) despite full-year EBITDA margin expansion (MEDIUM-HIGH)"
+  - "QIP (Rs 250 cr, approved Jan-2025) never executed; superseded by a smaller Rights Issue (Rs 93 cr) with no explanation in any collected document (MEDIUM)"
+  - "MPS 25% public-shareholding compliance status post rights-issue is unconfirmed in all collected documents (MEDIUM)"
+  - "CFO resigned 9-Jul-2026 to an intra-group subsidiary role, stated reason 'none other material,' no parent-level succession plan disclosed, during major new contract execution ramp-up (MEDIUM)"
+  - "Bengaluru MMLP repeatedly described as 'upcoming' with no commissioning date or capex figure ever attached across any collected document (LOW-MEDIUM)"
+  - "Mining logistics order book is heavily PSU/SECL-concentrated with no customer diversification evidenced (LOW-MEDIUM)"
+  - "Related-party cross-collateralisation (corporate guarantees, cross-mortgaged land) supporting subsidiary/fellow-subsidiary bank facilities is corroborated only by the non-anchored operator digest, not by a primary filing in the collected document set (LOW, source caveat)"
+dropped_triggers:
+  - "QIP (Rs 250 cr, approved Jan-2025) — never executed, superseded without explanation by a Rights Issue roughly one-third the size for a narrower stated purpose"
+timeline_slippages:
+  - "MPS 25% minimum public shareholding compliance — incremental progress disclosed (10.00% -> 10.13% in AR; rights issue explicitly targeted at this requirement in Feb-2026) but no completion confirmed in any collected document"
+  - "Bengaluru MMLP — 'upcoming' across all disclosures reviewed, with no commissioning date ever attached"

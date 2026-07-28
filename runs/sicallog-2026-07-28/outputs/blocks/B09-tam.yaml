@@ -1,0 +1,60 @@
+stage: B09-tam
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "No per-CuM or per-tonne mining contract rate disclosed by management; per-tonne rate derived from 7 disclosed OCP contracts (Rs 41-109/tonne, avg Rs 74/tonne, conservative-recent Rs 56.2/tonne) used for Method 2 bottom-up — not an audited/confirmed rate."
+  - "MMLP-specific revenue-market-size (Rs Cr) NOT FOUND independently; only capex/project-cost figures found (India-wide MMLP network ~Rs 46,000cr planned investment, Bengaluru MMLP ~Rs 1,770cr project cost) — these are investment, not addressable-revenue, figures and are not added to Terminals TAM."
+  - "No independent (non-management) CFS/ICD India market-size figure found via web search after multiple attempts; Terminals TAM Method 1 rests solely on the company's own investor-presentation-cited, unnamed 'Industry Reports' source."
+  - "3PL vs e-commerce demand split within the India warehousing market not disaggregated in any source found; Warehousing SAM-realistic (Rs 83,400cr) may still include e-commerce-dominated demand Sical cannot access."
+  - "Full FY26 state-list for the 20-warehouse Warehousing & 3PL network NOT FOUND (only FY25 AR's 4-state PVLPL disclosure available)."
+flags:
+  - "SOM-implied 3yr (38.5%) and 5yr (34.0%) revenue CAGRs both exceed the CLAUDE.md 25% CAGR strategy target; this is a mechanical artifact of Sical's extremely low current SAM share (~0.6%), where even a low-end 'normal' 1-2pp share gain compounds to a large relative multiple off a tiny base. Flagged for stage 11 as an upper-bound sanity ceiling, not a base-case forecast."
+  - "B06 found NO peer-transcript corroboration for the mining/coal-logistics segment and observed ALLCARGO's own macro commentary shows FY26 demand DECELERATING; this sits in tension with the runway-boom framing of the coal-production/OB-removal growth charts in the investor presentation and is weighted down (conservative anchors used, not the presentation's own volume-growth framing) throughout this report."
+  - "Management's own CFS/ICD + Warehousing current-year market-size claims (Rs 1,46,500cr combined) run ~3.8x this stage's conservative addressable estimate for the same two segments (Rs 38,300cr) - read: inflated, driven mainly by citing an all-vertical, all-India warehousing figure as if it were Sical's addressable market."
+  - "Mining order book (Rs 4,600cr, 1-Apr-2026) is a contracted backlog, not a TAM claim; held against the conservative Mining SAM (~Rs 30,200cr) it represents only ~15% of SAM already booked - a credible, not-inflated signal, and should not be conflated with the CFS/Warehousing overclaim flagged above."
+  - "Runway classification of MASSIVE is dominated by the Warehousing segment's large TAM relative to Sical's tiny footprint there; Terminals TAM growth is inherently modest (4-6% CAGR, mature ~250-facility national market) - MASSIVE should be read as low current penetration of a large pool, not a near-term capture guarantee."
+market_definition: "Three separate India logistics markets - coal OB-removal/mining-logistics contract services (PSU-outsourced route), CFS + rail-linked MMLP terminal handling (South/East coast only), and vertical-specific mid-market 3PL warehousing (electricals, paints, renewables, pharma, excl. e-commerce/Grade-A institutional) - sized separately and aggregated to one company-relevant SOM."
+tam_cr: {conservative: 94200, realistic: 164000}
+sam_cr: 64000
+sam_pct_of_tam: 67.9
+som_3yr_cr: 1026
+som_5yr_cr: 1666
+som_implied_revenue_cagr: {yr3: 38.5, yr5: 34.0}
+current_sam_share_pct: 0.6
+revenue_headroom_x: 165.9
+tam_growth_pct: 8.1
+runway_class: "MASSIVE"
+mgmt_claim_cr: 146500
+mgmt_claim_ratio: 3.83
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient for Mining (order book Rs 4,600cr exceeds implied SOM revenue need); Terminals/Warehousing capacity adequacy not independently quantifiable - capex figure NOT FOUND per B07"
+methods_used:
+  - "top-down (industry-report market sizing: CFS/ICD, warehousing)"
+  - "bottom-up (unit economics: per-tonne mining contract rate x addressable coal tonnage; organized warehouse space x Sical's own realized yield)"
+  - "peer revenue aggregation (Adani Mining Services, Thriveni Earthmovers, CONCOR EXIM, Gateway Distriparks CFS)"
+  - "production-target analog (India coal production trajectory vs 1.5bn tonne FY30 government target)"
+  - "geographic/channel filtering (54% MDO-outsourced route; South+East region CFS share)"
+stale_data_flags:
+  - {datapoint: "Thriveni Earthmovers consolidated turnover ~Rs 9,250cr", source: "press estimate, web search", year: "FY23 (~3 years old from run date)"}
+  - {datapoint: "OB Removal industry volume 11.0/16.6 Bn CuM FY20-24E/FY25-29P", source: "Investor Presentation p.24/34, unnamed 'Industry Reports'", year: "undated vintage, cited in filing dated 29-May-2026"}
+searches_performed:
+  - "India overburden removal mining services market size crore CRISIL ICRA 2025"
+  - "India mine developer operator MDO market size coal outsourcing contract mining"
+  - "India container freight station CFS market size 2025 ICRA CRISIL Rs crore"
+  - "India warehousing market size 2025 2030 CAGR CRISIL IBEF trillion"
+  - "India 3PL market size 2025 billion USD CAGR third party logistics"
+  - "India coal production target 1.5 billion tonnes FY30 FY2030 Ministry of Coal"
+  - "Gateway Distriparks CFS ICD revenue FY25 crore annual report"
+  - "Allcargo Logistics CFS segment revenue FY25 FY26 crore"
+  - "Adani Enterprises mining services revenue MDO segment FY25 crore"
+  - "India logistics cost GDP percentage 8% 2030 National Logistics Policy market size trillion"
+  - "CONCOR revenue FY25 crore container corporation India annual"
+  - "Continental Warehousing Corporation Nhava Sheva CFS revenue crore"
+  - "Thriveni Earthmovers Sainik Mining coal overburden contractor revenue crore"
+  - "India opencast coal mining percentage total production Coal India"
+  - "India multimodal logistics park MMLP market size rail-linked terminal India crore 2025"
+  - "India pharmaceutical distribution super stockist 3PL market size crore"
+searches_skipped:
+  - "WebFetch of cjdarcl.com/CJ-Darcl_CRISIL-Industry-Report.pdf failed with HTTP 403 Forbidden via proxy; could not extract CRISIL-named CFS/warehousing/3PL figures directly - substituted with other providers' web-search-aggregated estimates"

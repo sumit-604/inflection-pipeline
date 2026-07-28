@@ -1,0 +1,21 @@
+stage: B12d
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6
+substantive_confirmed: 6
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "GDL", missed_item: "17-18% ROCE target for new cold-chain/rail capacity investment and 21%+ blended ROCE including BTS/lease projects (Oct-2021 call) -- relevant capital-intensity/return benchmark for Sical's own capex-heavy SECL/MMLP order book, not cited in B06's 2C capex-cycle discussion", anchor: "GDL Q2 FY22 (Oct-2021 call), Sunil Nair / Ishaan Gupta"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06.md Q6 verdict table + Part 4 'single most consequential contradiction'", claimed: "GDL CFS EBITDA/TEU fallen to Rs 2,500-2,700/TEU vs a desired Rs 2,900-3,000/TEU", source_truth: "Oct-2021 transcript's actual stated recovery target (Ishaan Gupta) is Rs 2,700/2,800; Rs 2,900-3,000 is instead the April/May-2021 call's already-achieved level for an earlier period (Samvid Gupta)", note: "Numeric conflation of two different GDL calls' figures into one inaccurate 'desired' range; underlying pass-through-failure quote and qualitative point are correctly sourced and accurate"}
+  - {severity: "MINOR", location: "B06.md Part 2B", claimed: "'let go a few customers' quote attributed to Aug-2025 AND Feb-2026 calls", source_truth: "Phrase verified verbatim only in Aug-2025 transcript (Ravi Jakhar); Feb-2026 call supports the same general cost-discipline pattern via different wording, not this quote", note: "Citation-span imprecision, not fabrication; broader claim (Express EBITDA improving on cost discipline in both quarters) is independently supported by each quarter's own actual figures"}
+  - {severity: "MINOR", location: "B06.md Part 2C", claimed: "n/a -- omission", source_truth: "GDL Oct-2021 call discloses 17-18% / 21%+ ROCE targets for new capex, directly relevant to assessing Sical's SECL/MMLP capex-return profile", note: "Industry-context miss, not claim-relevant omission; does not change any verdict"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+peer_utilisation: 100   # 6 of 6 peers used substantively (peers used substantively / peers provided = 6)
+acceptance_rate: 83     # peers correctly handled (5 of 6 -- GDL Oct-2021 citation contains a MAJOR figure inaccuracy) / peers, %

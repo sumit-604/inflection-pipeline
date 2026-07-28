@@ -1,0 +1,52 @@
+stage: B11-valuation
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "ROCE FY[Y+2] expected: NOT FOUND — RECOVERING blend not computable; Pillar 1 uses current 30.17% as sole anchor (conservative, no upward normalization)"
+  - "Forward EBITDA/revenue guidance FY27+: NOT FOUND (management no-guidance policy); projections built from history + discounted order-book conversion"
+  - "Capex/CWIP go-live timeline (RBI/DaaS): NOT FOUND — blocks Route B named-catalyst gate; normalization route NONE"
+  - "Cybercons final classification: NOT FOUND (FY26 AR unpublished) — consolidated-earnings restatement risk flagged"
+flags:
+  - "FLAG-CASH: structural WC intensity (Acuité); cash multiplier applied = 1.00x neutral, NO growth offset; Ind AS 116 lease-annuity not cash-penalized (SOTP)"
+  - "SHARED CATALYST: order book (RBI Rs750.82cr, undated go-live) drives Pillar 3 growth premium AND the RECOVERING ROCE logic — single point of failure for Role 3"
+  - "RBI Rs750.82cr order go-live undated = single point of failure"
+  - "Receivables 1-2yr ageing +238% YoY vs ECL frozen Rs0.14cr — falsifier if bad-debt charge materializes"
+  - "Q4 FY26 EBITDA margin 9.02% (from 11.92% Q3) — margin recovery unproven, Q1 FY27 confirmation required"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "trailing"
+exit_pe_base_approved: "30.0x additive (trailing EPS), sector-capped; RRM ~24x cross-check governs entry zone"
+destination_pe:
+  track1_rrm: {low: 22.5, mid: 24.0, high: 26.0, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 28.0, mid: 30.0, high: 30.0}
+  divergence_pct: 23
+  governing_track: "RRM (24x) — conservative track sets entry zone; divergence >15%; prices durability/governance risk in discount rate"
+pillar_detail:
+  roce_used: 30.17
+  roce_base: 30.17
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "structural"
+  growth_offset: 0
+  growth_premium: 3.0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: true
+  sector_cap_used: 30.0
+hurdle_ratio: {base: 2.08, bull_used: false, verdict: "PASS"}
+fair_values:
+  track1: {bear: 1810, base: 2558, bull: 3565}
+  track2: {bear: 2262, base: 3197, bull: 4457}
+expected_cagr_prob_weighted: 27.8
+entry_range: {low: 1048, high: 1310}
+mos_price: 1048
+upside_downside_ratio: 5.7
+decision: "WATCHLIST (BUY-ON-DIPS on Q1 FY27 confirmation; hurdle PASSES, not AVOID-on-valuation)"
+unresolved_inputs_used:
+  - "ROCE FY[Y+2] NOT FOUND — RECOVERING blend skipped; current 30.17% used as sole Pillar 1 anchor (conservative, per B10/deliberation)"
+  - "Forward guidance NOT FOUND — base revenue CAGR 18% from discounted order-book conversion (< SOM 33.9%); bear 12%, bull 25%"
+  - "Yr3 net debt not separately projected — assumed ~Rs150cr (roughly flat, lease-loaded) for EV/EBITDA cross-check only"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "DSSL at Rs1,232: trailing EPS Rs66.61 to ~Rs106.6 over 3yr on order-book conversion, governing RRM destination 24x (ROCE 30.17%, cash 1.00x structural, EM MODEST, cap 30x) = Rs2,558 = ~27.6% CAGR, hurdle PASSES; key risk undated RBI go-live shared catalyst; cash quality structural."

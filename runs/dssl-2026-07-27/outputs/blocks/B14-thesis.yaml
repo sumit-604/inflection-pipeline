@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "DSSL"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 1048, high: 1310}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Q1 FY27 EBITDA margin fails to recover above 9% for two consecutive quarters (from the 9.02% Q4 FY26 low), OR trade receivables debtor days exceed 160 with the 1 to 2 year overdue bucket still widening on a frozen Rs0.14cr ECL, OR the RBI Rs750.82cr private cloud order is cancelled"
+monitoring_checklist:
+  - "EBITDA margin: green at or above 11% in Q1 FY27; red below 9% for two consecutive quarters"
+  - "Trade receivables: green debtor days at or below 154 with the 1-2yr overdue bucket flat or shrinking and ECL topped up; red debtor days above 160 with the overdue tail still widening on frozen Rs0.14cr ECL"
+  - "RBI Rs750.82cr order: green a dated go-live with revenue recognition beginning; red cancelled, materially delayed, or still undated after two quarters"
+  - "Order book / book to bill: green order book above 1.3x trailing revenue sustained; red book to bill below 1.0x for two consecutive quarters"
+  - "Annuity mix and leverage: green managed services plus DaaS/CBaaS mix rising with D/E below 0.3x; red mix stagnating or D/E above 0.4x with lease liabilities outgrowing annuity revenue"
+  - "Cybercons classification: green resolved cleanly with stable related party balances; red consolidated restatement or related party purchases and advances growing sharply again"
+one_line_thesis: "DSSL at Rs1,232: trailing EPS Rs66.61 to about Rs106.6 over 3yr on order book conversion (2.08x book, RBI Rs750.82cr), governing RRM destination 24x (ROCE 30.17%, cash 1.00x structural, EM 22.7 MODEST, cap 30x) = Rs2,558 = about 27.6% CAGR, hurdle PASSES; verdict WATCHLIST because the transition is unconfirmed (DEEP WATCH) and the Q1 FY27 margin and receivables print is the swing; key risk undated RBI go-live shared catalyst; cash quality structural"

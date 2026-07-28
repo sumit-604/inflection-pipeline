@@ -1,0 +1,30 @@
+stage: B12c
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 42
+  fails:
+    - {rule: "A4 ROCE trend basis-mix", severity: "MINOR", detail: "FY26 precise ROCE (17.42%) compared to FY17 proxy ROCE (6.95%); not like-for-like. Score 5 holds under either basis (proxy FY26 20.95% also >= 6.95%). No block-total impact.", recomputed: "5 (unchanged)"}
+    - {rule: "M12 Negative WC/Float band", severity: "MINOR", detail: "Two computable years (WC days 43.4, 30.0) both fall in literal '15-45 -> 1' band; B01 scored 0 on data-insufficiency (2 of 10 years). Defensible, but literal single-band reading gives 1. A score of 1 does not reach the >=3 moat-present bar, so moats_confirmed 0 and moat_class NONE unchanged.", recomputed: "0 or 1; moat_class NONE either way"}
+emoat:
+  rules_checked: 34
+  fails:
+    - {rule: "H3 evidence-type multiplier", severity: "MINOR", detail: "Summary types H3 as documented/claim but scorecard applies 1.0x. Defensible (Rs30 lakh capex is a documented figure, not claim-only). At 0.7x total 17.1 -> still MODEST.", recomputed: "1.0 or 0.7; em_class MODEST either way"}
+    - {rule: "R1 impact weighting", severity: "MINOR", detail: "R1 assigned impact Moderate (raw HxM=3, adj 3.0) while Section 4C concludes the tailwind confers no differential advantage and is fully shared/non-exclusive; a Low-impact read (HxL=2 -> 2.0) is equally defensible. At 2.0 total 16.4 -> still MODEST.", recomputed: "3.0 or 2.0; em_class MODEST either way"}
+valuation:
+  rules_checked: 0
+  fails: []
+  note: "PENDING PHASE 3 - stages 10/11 not yet produced; valuation-adherence audit deferred per task scope."
+recomputed_destination_pe: ""   # not audited this phase (PENDING PHASE 3)
+recomputed_decision: ""          # concur on gate0 AVOID and emoat MODEST; final decision depends on valuation (PENDING PHASE 3)
+findings:
+  - {severity: "MINOR", framework: "gate0", location: "B01 Block A / A4", note: "ROCE trend compares precise FY26 vs proxy FY17; immaterial, score 5 robust"}
+  - {severity: "MINOR", framework: "gate0", location: "B01 Block F / M12", note: "WC-float band literally 15-45->1 vs scored 0 on data-insufficiency; immaterial to moat_class NONE"}
+  - {severity: "MINOR", framework: "emoat", location: "B07 scorecard / H3", note: "H3 multiplier 1.0x on a doc/claim-mixed row; immaterial, MODEST holds"}
+  - {severity: "MINOR", framework: "emoat", location: "B07 scorecard / R1", note: "R1 impact Moderate vs its own 'no differential advantage' conclusion; immaterial, MODEST holds"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 95   # gate0+emoat rules passed (72) / checked (76), rounded; valuation excluded (PENDING PHASE 3)

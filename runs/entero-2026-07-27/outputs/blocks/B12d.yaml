@@ -1,0 +1,26 @@
+stage: B12d
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "Redington (Jun 2026 SSG Investor Day transcript)", missed_item: "Management discloses professional-services/orchestrator gross margin 'in strong double digits, more than 20%' vs core SSG gross margin of 5.5-6%, and a stated '60% margin uplift' from attaching services to any offering -- a quantified, closely analogous margin-premium data point directly relevant to Claim 8 (Entero's 'at least double' agency/commercial-margin claim). B06 marked this transcript CITED-ONLY ('no new decisive data point') and answered Claim 8 as UNVERIFIABLE using only RPTech evidence, without this quote.", anchor: "peer-concalls__REDINGTON-Concall_Jun_2026_Transcript.pdf.txt, transcript pages 4-5 (>20% gross margin quote) and page 14 (60% margin-uplift quote)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3 coverage map, Redington Q1 FY27 (Jun 2026) row", claimed: "CITED-ONLY, no new decisive data point", source_truth: "Contains quantified >20% gross margin / 60% margin-uplift disclosure directly relevant to Claim 8, unused", note: "Genuine coverage miss on a verdict-relevant claim, not a structural peer-mismatch case; also mislabels the transcript as a quarterly earnings call when the source filing identifies it as a standalone Virtual Investors (SSG) Event"}
+  - {severity: "MAJOR", location: "B06 Part 1, Claim 1 sole peer citation", claimed: "MedPlus Nov 2025 call, p.6", source_truth: "Quote located on transcript page 11 (text-cache)/printed page ~10", note: "Content verbatim-accurate; page anchor wrong by ~5 pages on the single peer data point behind Claim 1's partial-verification verdict"}
+  - {severity: "MAJOR", location: "B06 Part 1, Claim 7 peer citation (Redington interest-cost quote)", claimed: "Feb 2026 call, p.6", source_truth: "Located on page 9", note: "Content accurate, anchor off by 3 pages"}
+  - {severity: "MAJOR", location: "B06 Part 1, Claim 7 peer citation (Redington insurance/transportation quote)", claimed: "May 2026 call, p.15", source_truth: "Located on page 10", note: "Content accurate, anchor off by 5 pages"}
+  - {severity: "MINOR", location: "B06 Part 1, Claim 3 peer citation (MedPlus cold-chain quote)", claimed: "May 2026 call, p.4", source_truth: "Located on page 6", note: "Content accurate, anchor off by 2 pages"}
+  - {severity: "MINOR", location: "B06 Part 2B (RPTech component-pricing quote)", claimed: "May 2026 call, p.4", source_truth: "Located on page 3", note: "Content accurate, anchor off by 1 page"}
+  - {severity: "MINOR", location: "B06 Parts 1-2, multiple citations (Redington margin-cascade quote, RPTech tariff quote, RPTech shipment-routing quote, RPTech slow-moving-inventory quote)", claimed: "quarter/call named, no page given", source_truth: "All confirmed present at specific, locatable pages", note: "Anchors incomplete rather than wrong; every peer citation should carry a page per the audit standard"}
+critical_count: 0
+major_count: 4
+minor_count: 3
+acceptance_rate: 92
+peer_utilisation: "11 of 12 peer transcripts substantive per B06's own map; independent spot-check confirms genuine, findable content behind every checked citation (no fabrication, no wrong-quarter misattribution), but page-level anchor accuracy is unreliable in roughly a third of checked cases, and one transcript (Redington Jun 2026) was undercalled as cited-only when it in fact contains the most decisive available peer data point for Claim 8"
+coverage_note: "Audit cut short by coordinator instruction before exhaustive line-by-line verification of Claims 2, 5, 6 and Parts 3-5 could be completed. All 12 transcripts were opened, page-mapped, and spot-checked; findings above reflect that partial-but-broad sample, not a full recheck of every B06 citation."

@@ -1,0 +1,25 @@
+stage: B12b
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 9
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Acquisition 5-7x EV/EBITDA 'discipline' rests on adjusted/add-back EBITDA (Bioaide reported FY24 EBITDA margin ~1.5%, normalized via salary add-backs); not flagged by B05/B06", anchor: "Q2 FY26 call p.9-10 (Avnish Burman / Prabhat add-back exchange)"}
+pipeline_flags_not_supported:
+  - {report: "B06", claim: "New Labour Code cost step-up is a risk Entero's calls never mention", reality: "Entero disclosed a Rs6.1cr new-labour-code exceptional charge on the Q3 FY26 call", anchor: "Feb 2026 call p.2-3 and p.6", assessment: "NOT SUPPORTED / overstated"}
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B (Good) is fair; the added one-off-flattered Q4 delivery and add-back-EBITDA M&A basis argue against grading higher, not lower"
+findings:
+  - {severity: "MAJOR", location: "B05 (missed) — Q2 FY26 call p.9-10", description: "Acquisition multiple 'discipline' (5-7x EV/EBITDA) rests on adjusted/add-back EBITDA; Bioaide reported ~1.5% FY24 EBITDA margin normalized via salary add-backs. B05 accepts the discipline at face value, B06 marks it unverifiable; neither flags the adjusted-EBITDA basis. Thesis-relevant given loss-making (GS Pharma) and reversed (Suprabhat) deals in the same window."}
+  - {severity: "MAJOR", location: "B05 3C/4D (partially caught) — Q4 FY26 call p.4-5, 11-12", description: "The Q4 quarter used to claim full-guidance delivery (4.5% EBITDA margin, 42.6% revenue growth) was flattered by a one-off preponed government-project sale in a partially-owned subsidiary; analyst challenge on whether 4.5% is 'the right number' was deflected. B05 captured the preponement in the NCI context but under-weighted the guidance-delivery-quality implication."}
+  - {severity: "MINOR", location: "B05 2B (partially caught) — Q3 FY26 call p.14 vs Q4 FY26 call p.9-10", description: "Rising capital intensity via IVD reagent-rental model (machines at customer labs, depreciation +~50% QoQ) in tension with earlier 'not capital intensive, only working-capital-intensive' framing. B05 noted the depreciation driver but not the narrative tension."}
+  - {severity: "MINOR", location: "B06 risks_peers_raise — Feb 2026 call p.2-3, 6", description: "B06 states Entero 'never mentions' new Labour Code cost risk; Entero in fact recognized a Rs6.1cr labour-code exceptional charge on the Q3 FY26 call. B06 overstates an Entero disclosure gap (NOT SUPPORTED)."}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 75            # fully caught (9) / independent flags found (12)
+redflag_coverage: 83          # 9 fully caught + 2 partially caught (half credit) of 12; 1 missed (RF8)
+coverage_note: "All 3 Entero main transcripts (Q2/Q3/Q4 FY26) read in full and independently before opening B05/B06. B05 and B06 read in full. 12 peer transcripts covered by targeted keyword search (GLP-1, Amazon, IPM, distributor margin, labour code, Entero) plus full read of MedPlus GLP-1 passages — NOT full line-by-line reads of all 12 peer files; peers are adjacent-industry comps (pharmacy retail + IT distribution) so contradiction potential is structurally low and none was found, consistent with B06's zero-contradiction result. Independent flags found: 12; caught 9, partially caught 2 (RF7 Q4-one-off, RF11 capital intensity), missed 1 (RF8 adjusted-EBITDA M&A basis). All B05 red flags independently confirmed as transcript-supported; one B06 cross-read note (Entero 'never mentions' labour code) is not supported."

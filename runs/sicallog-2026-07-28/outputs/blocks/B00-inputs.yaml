@@ -1,0 +1,33 @@
+stage: B00-inputs
+company: SICALLOG
+run_date: 2026-07-28
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: true
+concalls_available: false
+company_memory: absent
+prior_run: none
+cmp: 107.0
+market_cap_cr: 850.0
+documents_present:
+  annual_report: "FY2024-25 AR (70th AGM, y/e 31-Mar-2025), 219pp; filename Annual_Report_2008.pdf is mislabeled"
+  results: ["Q3/9M FY26 unaudited (Dec-2025), 13-Feb-2026, SRSV & Associates", "Q4/FY26 audited (Mar-2026), 29-May-2026, unmodified opinion"]
+  rating: "ICRA 16-Sep-2025 [ICRA]D ISSUER NOT COOPERATING WITHDRAWN, all instruments Rs1345.04cr, No-Due-Certificate"
+  presentation: "FY26 audited results deck (Mar-2026), 38pp"
+  peer_concalls: ["ALLCARGO Aug/Nov-2025, Feb/May-2026 (current)", "GDL May/Nov-2021 (~5yr stale)"]
+  screening: "SICALLOG Data_Sheet FY17-FY26 + quarters Dec23-Mar26; peers ALLCARGO/GDL/KTIL Data_Sheets populated; P&L/BS/CF/Quarters CSVs empty templates"
+input_gaps:
+  - "prospectus: ABSENT — long-listed 70yr name, not expected, NOT a gap"
+  - "concalls: DECLARED absent (concalls_available:false) — NO-CONCALL MODE"
+  - "announcements: ABSENT — Reg30 documented-action ledger on results/AR only; rights-issue via results filings; stage 8 web search"
+  - "shareholding: ABSENT — UA withheld, pledge/promoter holding from AR, FII+DII unresolved"
+  - "research: ABSENT — no effect on anchored evidence"
+  - "COLLECTOR: AR file mislabeled 2008 = actually FY2024-25 AR"
+  - "COLLECTOR: sector_cap_row 'EPC / Civil construction' WRONG for logistics — phase-3 stage-11 pick Logistics/Transportation cap row"
+  - "COLLECTOR: screener P&L/BS/CF/Quarters CSVs empty templates; only Data_Sheet populated"
+  - "rating WITHDRAWN [ICRA]D — no live WC rationale; FLAG-CASH rests on AR/results + default history"
+context_flags:
+  - "post-insolvency name (Pristine Logistics via NCLT); rights issue in progress (promoter foregoes, 11:5 public, ~Rs93cr, record date 18-Feb-2026)"
+  - "first profit year FY26 (+Rs45cr) after FY20-FY25 losses; turnaround/recovery arc"
+flags: []

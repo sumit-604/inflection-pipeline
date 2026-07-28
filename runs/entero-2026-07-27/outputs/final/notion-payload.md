@@ -47,3 +47,12 @@ notion_save:
     - "outputs/final/verifier-disagreement-log.md"
     - "outputs/final/notion-payload.md"
 ```
+
+## SAVE PERFORMED (2026-07-28)
+- COMPANIES MASTER: NEW page created (no prior ENTERO page existed, so no operator-owned
+  Decision Status to preserve). URL: https://app.notion.com/p/3abbb2b9d3ab81eebf38ef32aab39417
+  Decision Status set to WATCHLIST / AVOID as the pipeline read, flagged in Key Notes for
+  operator confirmation. All Gate 0 / EM / promoter / entry / MoS / CMP fields populated.
+- Verifier Disagreement Log: the single ENTERO row prepended (newest first) to
+  https://app.notion.com/p/3a1bb2b9d3ab816e85c0d8e75bd3be7e
+- Drive folder link was not provided to this run; artifacts referenced via the GitHub branch.

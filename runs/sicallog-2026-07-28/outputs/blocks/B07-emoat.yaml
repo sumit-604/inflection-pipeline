@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcripts collected this run (NO-CONCALL MODE); F2 tested against capex-completion/commissioning evidence instead of a promise-delivery record, per the degradation rule — single-data-point evidence base"
+  - "Bengaluru MMLP: no disclosed capex figure (Rs Cr), funding source, construction start date, or commissioning date; land is held but 2A/2C could not be populated for this project"
+  - "HEMM fleet (backward integration, B1) not quantified separately from aggregate consolidated PP&E; no owned-vs-leased % or fleet value/count disclosed"
+  - "Credit rating NOT FOUND (AR states the Company has not obtained any credit rating of its securities); no cost-of-debt-vs-peers comparison possible"
+  - "Operator 6-month digest is explicitly NON-ANCHORED (underlying Reg 30 PDFs not collected); used only to corroborate figures that also appear in the collected FY26 results/presentation, or to surface events (CFO resignation, Axis Bank facility) not otherwise anchorable this run"
+  - "Presentation slide-15 rakes table (Chennai vs Bengaluru current infrastructure) extracted in a column-garbled OCR form; not reported rather than guessed at"
+flags:
+  - type: FLAG-METHOD
+    reason: "Section 2C's standard capex-under-execution x historical-fixed-asset-turnover formula is not meaningfully computable: the one large quantifiable capex programme (Chennai MMLP, CWIP peaking at Rs52.14cr at Mar-2025) is already substantially commissioned/capitalised into the FY26 revenue base used as the current-revenue denominator, and the next disclosed capacity addition (Bengaluru MMLP) carries no disclosed Rs Cr figure at all. capex_embedded_growth_pct is set to 0 (NOT FOUND) rather than populated with a manufactured number; historical fixed-asset turnover (0.75x, FY26 revenue/avg PP&E) is reported in Section 2C body for reference only."
+  - type: FLAG-HALO
+    reason: "The investor presentation's 'Focused R&D Team pioneered Dwarf containers and Fly Ash containers' claim (slide 19) and the broader Pan-India Pristine Logistics network described on the same slide belong explicitly to the parent, Pristine Logistics & Infraprojects Ltd (BlackRock owns 57.5% of the parent, not of Sical), not to Sical itself. Excluded from Sical's own A2/H2 scoring to avoid conflating a parent-company halo with the subject company's own moat."
+  - type: FLAG-PROFIT-QUALITY-LINK
+    reason: "The genuinely documented emerging-moat evidence (Chennai MMLP commissioning, SECL contract, Chennai CFS scale) sits on the same FY26 balance sheet whose reported profit turnaround is substantially a one-time Rs55.59cr land-sale gain (pre-exceptional consolidated PBT only Rs1.50cr; standalone pre-exceptional loss Rs16.03cr) — see B01 Gate0 flag. The emerging-moat scan and the Gate0 profit-quality caveat describe overlapping, not independent, facts about the same FY26 year; see Section 6C/6D."
+  - type: FLAG-CONCENTRATION
+    reason: "The single SECL Porda-Chimtapani contract (Rs3,422cr) is roughly 74% of the disclosed Rs4,600cr mining-logistics order book (1-Apr-2026), concentrating the strongest-scoring category (C1) in one counterparty/contract; AR's own MD&A names tender/bidding risk to the order book directly (p.34)."
+em_score: 17.4
+em_classification: "MODEST"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, single-project evidence base"}
+  - {id: "R1", name: "Regulatory / policy tailwind", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active, shared with all competitors"}
+evidence_mix: {documented: 11, claim: 4, inference: 2}
+completionist_recount: "recount performed: 11 documented items across 7 categories (C1, C2, E1, F2, G2, H3, R1); only 4 categories clear the Strong/Moderate strength bar (C1, E1, F2, R1) -- within the 3-6 base rate, no inflation detected"
+catalysts_12m:
+  - {catalyst: "SECL Porda-Chimtapani (Rs3,422cr, 140mo) mobilisation and first-year execution", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 11"}
+  - {catalyst: "Parent-level CFO successor appointment following 9-Jul-2026 resignation", window: "12m", evidence_type: "claim (non-anchored digest)", anchor: "Operator digest item 4"}
+  - {catalyst: "Axis Bank Rs115cr facility (CC+BG+term loan refinancing) execution", window: "12m", evidence_type: "claim (non-anchored digest)", anchor: "Operator digest item 1"}
+  - {catalyst: "Bengaluru MMLP capex/construction-date disclosure (currently undated)", window: "12-24m", evidence_type: "claim", anchor: "Inv. Pres. slide 13-14"}
+  - {catalyst: "Q1/Q2 FY27 results test of pre-exceptional profitability without a repeat one-time gain", window: "12m", evidence_type: "documented", anchor: "FY26 Results consolidated P&L; B01 Gate0 flag"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Bengaluru MMLP (~65+ acre) second private rail-linked terminal in South India", converting_evidence: "disclosed capex programme (Rs Cr), construction start date, targeted commissioning date", first_appears: "Reg 30 filing / future investor presentation capex table / AR CWIP note", window: "not committed; by analogy to Chennai's ~2yr CWIP-to-commissioning arc, plausibly 24-36 months from whenever construction starts (undisclosed)"}
+  - {optionality: "HEMM fleet ownership as a genuine, quantified backward-integration moat", converting_evidence: "disclosed fleet asset count/value and owned-vs-leased % in AR PP&E note by asset class", first_appears: "next AR (FY26, due ~mid-2027)", window: "~12 months"}
+  - {optionality: "Terminal automation/real-time cargo tracking as a genuine process-innovation moat", converting_evidence: "disclosed turnaround-time or cost-per-TEU metric tied to the automation investment", first_appears: "AR MD&A or investor-deck KPI slide", window: "NOT FOUND, no disclosure commitment"}
+  - {optionality: "Pristine Group / BlackRock backing converting into a direct Sical-level strategic agreement", converting_evidence: "disclosed JV, technology-transfer, or co-development agreement naming Sical directly", first_appears: "Reg 30 related-party filing / postal ballot notice", window: "NOT FOUND; partially converting via disclosed intercompany-guaranteed credit facilities (Axis Rs115cr, HDFC Rs25cr, non-anchored digest)"}
+  - {optionality: "National Rail Policy / Gati Shakti tailwind converting into an exclusive (not shared) Sical advantage", converting_evidence: "exclusive concession, land allocation, or government MoU naming Sical specifically", first_appears: "government notification or Sical Reg 30 filing", window: "NOT FOUND"}
+combined_assessment: "AVOID"
+combined_reasoning: "AVOID backward (core 14/100; five deal-breakers, moat_class NONE, five years insolvency-era losses) meets only MODEST forward score (17.4/80, driven by genuine but narrow mining-logistics contract depth and Chennai rail-linked first-mover evidence, against a FY26 headline profit that is substantially a one-time land-sale gain) -- forward evidence insufficient to justify TURNAROUND or HIGH POTENTIAL; combined read stays AVOID."
+top_moat_risks:
+  - "Mining logistics order-book concentration: SECL Porda-Chimtapani (Rs3,422cr) is ~74% of the disclosed Rs4,600cr order book; AR's own MD&A names bidding/tender risk to the order book directly"
+  - "Chennai MMLP first-mover edge is contestable: AR MD&A itself names government-backed multimodal logistics parks as large-scale alternatives in the same rail-linked-terminal space"
+  - "F2 execution-moat read rests on a single data point (one project, one on-time commissioning) with no multi-cycle guidance-vs-actual record available in this no-concall run"
+  - "R1 sector tailwinds (National Logistics Policy, Gati Shakti, National Rail Policy) are non-exclusive; every private logistics operator building rail-linked capacity benefits equally"
+  - "FY26 reported profit is substantially a one-time Rs55.59cr land-sale gain (pre-exceptional consolidated PBT only Rs1.50cr, standalone pre-exceptional loss Rs16.03cr); the operating-profitability underpinning of the entire emerging-moat narrative is not yet proven across a full year excluding exceptional items"

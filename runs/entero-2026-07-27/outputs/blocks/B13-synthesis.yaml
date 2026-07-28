@@ -1,0 +1,19 @@
+stage: B13-synthesis
+company: "ENTERO"
+run_date: "2026-07-27"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+cash_determination: "INDETERMINATE"
+confidence_delta: {numerical: 94, redflag: 83, framework: 96, peer: 92, overall: 83}
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Pharma distributor roll up turns cash positive"
+falsification_metric: "Q1/Q2 FY27 net operating working capital days above 65 with OCF/EBITDA below 50%"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save: null

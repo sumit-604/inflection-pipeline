@@ -143,6 +143,12 @@ handoff schemas, flag rules, and error handling. Then:
      - verifier-a-numerical (B12a): numerical audit of the stage reports
        against the source PDFs.
      - verifier-b-redflags (B12b): independent concall red-flag audit.
+       Pass ONLY the 3 main-company transcript paths (full read), the
+       peer-concalls FOLDER path (for cited-passage spot-reads per its
+       rule 6, not a full read), B05 and B06. Do NOT pass the 12 peer
+       transcripts for a full read; peer-coverage completeness is
+       verifier D's mandate. This keeps B's Opus read on the company's own
+       calls and off the 12 peer transcripts.
      - verifier-d-peers (B12d): peer coverage audit of B06.
      - verifier-c-framework (B12c), PHASE 1 SCOPE ONLY: in the task
        message, instruct it to run its Gate 0 (B01) and Emerging Moat

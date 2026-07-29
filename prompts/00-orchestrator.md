@@ -319,7 +319,7 @@ cffi wall).
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
 | 11 | Role 1 valuation (v3.3) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.3 Section 1B + FTTCP v1.2 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
-| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 4.8 | 15 transcripts + B05 + B06 | `B12b` |
+| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 4.8 | 3 main transcripts (full) + peer folder path (cited-passage spot-reads only) + B05 + B06 | `B12b` |
 | 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 4.8 | B01, B07, B11 + framework docs | `B12c` |
 | 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5 | peer transcripts + B06 | `B12d` |
 | 13 | Synthesis | 13-synthesis-pipeline.md | Opus 4.8 | everything | final outputs |

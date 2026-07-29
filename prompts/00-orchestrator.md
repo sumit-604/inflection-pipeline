@@ -366,7 +366,11 @@ Stage-specific payload fields (the fields downstream stages actually read):
   confirm_signal, kill_signal), guidance[], promise_delivery_score,
   credibility_grade (A/B/C/D), repeated_evasions[], peer_questions[]
 - `B06-peers`: verified[], contradicted[], unverifiable[], peer_coverage_map
-  (per peer: substantive | cited-only | unused)
+  (per peer: substantive | cited-only | unused), sector_intelligence
+  {cycle_stage, demand, pricing_inputs, capex_posture, structural_themes[],
+  main_company_standing}, peer_ranking[] (best-to-worst on axes_used),
+  stronger_peers[] (watchlist leads: peer, ticker, why_stronger, anchor,
+  caveat)
 - `B07-emoat`: em_score, em_classification, active_categories[],
   evidence_mix{documented, claim, inference}, catalysts_12m[],
   combined_assessment (with B01)
@@ -495,7 +499,7 @@ forced REWORK.
 
 ## 6. SYNTHESIS OUTPUTS (stage 13)
 
-Four files in `outputs/final/`:
+Five files in `outputs/final/`:
 
 1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
@@ -515,6 +519,17 @@ Four files in `outputs/final/`:
    table, the scorecards and market sizing, valuation pillar detail from
    both tracks if stage 11 ran, and a gaps ledger. Density over brevity;
    every figure carries its source anchor.
+5. `sector-intelligence.md`: the sector picture and competitive standing
+   from B06 Part 6, so the intelligence in the peer read is a deliverable,
+   not a buried YAML field. Sector state (cycle stage, demand, pricing and
+   input costs, capex posture, structural themes, each peer-anchored); the
+   peer ranking best-to-worst on the axes used with the main company's
+   place in the field; and STRONGER PEERS as a watchlist, each with why it
+   looks stronger, its anchor, its caveat, and ticker where known. The
+   watchlist entries are flagged leads for the operator to screen, never
+   buy calls and never anchored verdicts. This file is produced in phase 1
+   (the peer stage runs in phase 1); phase 3 refreshes it only if a later
+   stage changes the competitive read.
 
 Plus one Notion save to COMPANIES MASTER (data_source_id
 345bb2b9-d3ab-8032-9b46-000ba16ab827) per Notion_Save_Instructions.docx:

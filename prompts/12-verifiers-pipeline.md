@@ -235,9 +235,16 @@ RULES:
    PARTIALLY VERIFIED); any verdict upgraded from silence is CRITICAL.
 5. Confirm every claim in the injected peer_questions list received a
    verdict; a skipped claim is MAJOR.
+6. SECTOR/RANKING ANCHOR CHECK (B06 Part 6): for each peer_ranking and
+   stronger_peers entry, confirm its cited anchor exists in that peer's
+   transcript and supports the claim made (e.g. a "faster growth" lead
+   rests on a real growth figure in the cited call). A stronger-peer or
+   ranking claim whose anchor is absent or does not support it is MAJOR;
+   these are operator-facing leads, so a fabricated basis is not
+   cosmetic. You are checking anchor fidelity, not re-forming the ranking.
 
 OUTPUT: coverage audit table per peer; verdict-discipline audit per
-claim; then:
+claim; sector/ranking anchor check; then:
 
 ```yaml
 stage: B12d

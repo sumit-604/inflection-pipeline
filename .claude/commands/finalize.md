@@ -167,8 +167,14 @@ phase 3), then:
    with its date (from outputs/final/fttcp-deliberation.md, appended and
    never deleted), the active tripwires (thesis-broken triggers and
    falsification metrics), the optionality register summary (from
-   B07.optionality_register), and a link to this run folder added to the
-   run-folder list. This is the durable per-company memory layer;
+   B07.optionality_register), a SECTOR SNAPSHOT and PEER WATCHLIST for this
+   run (from outputs/final/sector-intelligence.md / B06 Part 6: the one-line
+   sector cycle read plus the stronger-peers list with tickers and the
+   one-line why, each still a lead not a verdict), and a link to this run
+   folder added to the run-folder list. The watchlist accrues across runs so
+   the operator builds a sector map over time; carry prior entries forward,
+   mark any a later run confirmed or killed, never delete. This is the
+   durable per-company memory layer;
    /run-pipeline stage 0 and /fttcp read it on the next run. It is memory,
    never a source: it records what prior runs concluded, it does not anchor
    new figures.

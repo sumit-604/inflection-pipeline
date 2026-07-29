@@ -47,8 +47,9 @@ Per-company memory lives in companies/<TICKER>.md, written or updated at
 /finalize close and read as COMPANY MEMORY by /run-pipeline stage 0 and by
 /fttcp. It carries the one-line thesis, Decision Status and entry zone,
 operator rulings with dates, active tripwires, the optionality register
-summary, and links to every run folder for the ticker. It is memory to
-weigh, never anchored evidence.
+summary, a sector snapshot and stronger-peer watchlist (B06 Part 6,
+accruing across runs), and links to every run folder for the ticker. It is
+memory to weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth

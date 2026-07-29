@@ -164,7 +164,7 @@ handoff schemas, flag rules, and error handling. Then:
    framework-adherence component is marked pending phase 3.
 
 6. SYNTHESIS-LITE. Invoke stage-13-synthesis, instructing it in the task
-   message to run in PHASE 1 LITE mode: produce exactly three files, no
+   message to run in PHASE 1 LITE mode: produce exactly four files, no
    valuation-dependent content, and write each to outputs/final/ at its
    FILE dividers:
      - business-narrative.md: the narrative per the synthesis prompt's
@@ -186,6 +186,12 @@ handoff schemas, flag rules, and error handling. Then:
      - verifier-summary.md: the phase-1 verifier findings tables (A, B, D,
        and the Gate 0 + EM portion of C), sorted by severity, each finding
        with a location anchor, headed by the phase-1 confidence delta.
+     - sector-intelligence.md: the synthesis prompt's Deliverable 5, built
+       from B06 Part 6 (sector state, peer ranking with the company's place
+       in the field, stronger-peer watchlist leads with anchors and
+       caveats, cross-peer hypothesis). This is fully evidence-derived, so
+       it belongs in phase 1. If stage 6 was skipped, write the one-line
+       gap note per Deliverable 5 and move on.
 
 7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
    and report to the user: the gate recommendation verdict line, flags
@@ -194,8 +200,10 @@ handoff schemas, flag rules, and error handling. Then:
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
-   in this order: business-narrative.md, then gate-recommendation.md. Then
-   tell the operator exactly:
+   in this order: business-narrative.md, then gate-recommendation.md, then
+   sector-intelligence.md (so the operator sees the sector picture and the
+   stronger-peer watchlist without opening the file). Then tell the
+   operator exactly:
 
    "Phase 1 complete. Next: /fttcp runs/<folder> for deliberation."
 

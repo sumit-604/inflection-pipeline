@@ -1,0 +1,106 @@
+=== A1 EXTRACT HEADER ===
+source: doc1 (press release), iValue Q1FY27
+doctype: results (press release variant)
+unit: Rs Crore (x1); percentages as stated
+pages: 3 (page1 cover letter, page2 CMD+CFO commentary, page3 key highlights)
+extractor: orchestrator manual (3pp, poppler pdftotext -layout)
+==============================
+     1	                                                                                  iValue Infosolutions Limited
+     2	                                                                                  (Formerly known iValue Infosolutions Private Limited)
+     3	                                                                                  No. 903/1/1, 19th Main Road, 4th Sector,
+     4	                                                                                  H.S.R. Layout, Bangalore – 560102, Karnataka, India
+     5	                                                                                  CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+     6	                                                                                  www.ivaluegroup.com | info@ivalue.co.in
+     7	                                                                                  Tel: 080-22221143
+     8	July 29, 2026
+     9	 National Stock Exchange of India Limited                                             BSE Limited
+    10	 The Listing Department,                                                              Department of Corporate Services,
+    11	 Exchange Plaza,                                                                      Phiroze Jeejeebhoy Towers,
+    12	 Bandra Kurla Complex,                                                                Dalal Street, Fort,
+    13	 Mumbai – 400051                                                                      Mumbai – 400001
+    14	 Trading Symbol: IVALUE                                                               Scrip Code: 544523
+    15	Subject: Press Release
+    16	Dear Sir/ Madam,
+    17	Please find attached herewith the press release with respect to unaudited Financial Results (Standalone
+    18	and Consolidated) for the quarter ended on June 30, 2026.
+    19	The    above        information                      shall   also   be   made   available   on   the   Company's      website    at
+    20	https://ivaluegroup.com/en-in/investor-relations/.
+    21	You are requested to kindly take the same on record.
+    22	Thanking you,
+    23	Yours Sincerely,
+    24	For iValue Infosolutions Limited
+    25	                 Digitally signed by
+    26	LAKSHMAMMANNI LAKSHMAMMANNI
+    27	                 Date: 2026.07.29 17:36:52 +05'30'
+    28	Lakshmammanni
+    29	Company Secretary and Compliance Officer
+    30	Membership No. A51625
+    31	                                                          iValue Infosolutions Limited
+    32	                                                          (Formerly known iValue Infosolutions Private Limited)
+    33	                                                          No. 903/1/1, 19th Main Road, 4th Sector,
+    34	                                                          H.S.R. Layout, Bangalore – 560102, Karnataka, India
+    35	                                                          CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+    36	                                                          www.ivaluegroup.com | info@ivalue.co.in
+    37	                                                          Tel: 080-22221143
+    38	                          iValue Reports Steady Q1FY27 Results
+    39	    Q1FY27 delivered gross sales of ₹641.2 crore, up 5.7% YoY, and PAT increased 51.7% YoY,
+    40	            indicating resilient operational performance and ongoing demand strength
+    41	Bengaluru, India – 29th July, 2026: iValue Infosolutions Limited (BSE: 544523) (NSE: IVALUE), the
+    42	Strategic Technology Advisor, announced today its financial results for the First Quarter of FY27 ended
+    43	on 30th June 2026.
+    44	Commenting on the results, Sunil Pillai, Chairman and Managing Director, iValue Infosolutions,
+    45	said, “We are pleased to report a stable start to FY27, reflecting the resilience of our business model and
+    46	the growing relevance of our Technology Advisor proposition. We delivered healthy gross sales of ₹641.2
+    47	crore, a growth of 5.7% on YoY basis. Demand for cybersecurity, cloud, data management, AI-led
+    48	infrastructure, and digital resilience solutions continues to strengthen as enterprises accelerate their
+    49	technology transformation journeys.
+    50	During the quarter, we continued to deepen engagement with customers, OEM partners, system integrators,
+    51	and service providers while expanding our solution capabilities across high-growth technology areas. We
+    52	also strengthened our leadership team and organizational capabilities to support the next phase of growth.
+    53	Our differentiated advisory-led approach and well-disciplined execution capabilities position us well to
+    54	capture emerging opportunities and continue creating long-term value for all stakeholders.”
+    55	Commenting on the results, Swaroop Muvvala, Chief Financial Officer, iValue Infosolutions, said,
+    56	“In Q1FY27, we delivered gross profit of ₹52 crore, an increase of 26.5% on YoY basis, with margin of 8.1%.
+    57	Operating EBITDA before exceptional item stood at ₹20.2 crore, a growth of 27.7% YoY and PAT for the
+    58	quarter was at ₹15.7 crore with 51.7% YoY growth. The improvement in profitability was mainly supported
+    59	by growth in gross profit & operational frugality. We remain focused on scaling higher-value solutions and
+    60	services and increasing the contribution from annuity-led revenues. As we move forward, our focus remains
+    61	on improving profitability, enhancing shareholder value, and delivering consistent financial performance.”
+    62	                                                                                              iValue Infosolutions Limited
+    63	                                                                                              (Formerly known iValue Infosolutions Private Limited)
+    64	                                                                                              No. 903/1/1, 19th Main Road, 4th Sector,
+    65	                                                                                              H.S.R. Layout, Bangalore – 560102, Karnataka, India
+    66	                                                                                              CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+    67	                                                                                              www.ivaluegroup.com | info@ivalue.co.in
+    68	                                                                                              Tel: 080-22221143
+    69	Key Highlights – Q1FY27
+    70	•     Gross Sales stood at ₹641.2 crore, registering a growth of 5.7% YoY.
+    71	•     Annuity Business stood at 297.2 crore registering a growth of 13.7% YoY.
+    72	•     Operating EBITDA stood at ₹20.2 crore, an increase of 27.7% YoY with margin of 3.2% on gross sales
+    73	      and 11.3% on net basis.
+    74	•     PAT stood at ₹15.7 crore, a growth of 51.7% with margin of 2.5% on gross sales and 8.7% on net basis.
+    75	Operating Highlights
+    76	•     Continued to maintain momentum in its focused verticals in Q1FY27:
+    77	            o     Cybersecurity contributed 43.9% of gross sales and grew by 8.1% on YoY basis.
+    78	            o     Data Centre Infrastructure contributed 22.1% of gross sales and grew by 182.9% on YoY basis.
+    79	•     Net working capital days stood at 52 days.
+    80	About iValue Infosolutions Limited
+    81	iValue Infosolutions Limited (BSE: 544523) (NSE: IVALUE), the Strategic Technology Advisor, secures and manages
+    82	enterprises' digital assets in hybrid-cloud environments. With 500+ experts, we offer custom solutions and services,
+    83	partnering with top OEMs across India, SAARC and SEA. iValue cloud based CoE showcases 25+ integrated
+    84	solutions stack across OEMs to facilitate risk-free technology adoption in double quick time for our Partners
+    85	business growth. iValue has direct presence across India, SAARC and Southeast Asia, with local teams covering
+    86	business and technical needs of partners to address their customer needs across the regions. For more information
+    87	about iValue Group, please visit www.ivaluegroup.com
+    88	    For Further Information, Please Contact:
+    89	    Asha Gupta - asha.gupta@in.ey.com
+    90	    Pratik Jagtap - pratik.jagtap@in.ey.com
+    91	    iValue – investors@ivalue.co.in
+    92	Safe Harbour
+    93	Some of the statements in this update that are not historical facts are forward-looking statements. These forward-looking statements include our financial and growth
+    94	projections as well as statements concerning our plans, strategies, intentions and beliefs concerning our business and the markets in which we operate. These statements
+    95	are based on information currently available to us, and we assume no obligation to update these statements as circumstances change. There are risks and uncertainties
+    96	that could cause actual events to differ materially from these forward-looking statements. These risks include, but are not limited to, the level of market demand for our
+    97	services, the highly-competitive market for the types of services that we offer, market conditions that could cause our customers to reduce their spending for our services,
+    98	our ability to create, acquire and build new businesses and to grow our existing businesses, our ability to attract and retain qualified personnel, currency fluctuations
+    99	and market conditions in India and elsewhere around the world, and other risks not specifically mentioned herein but those that are common to industry.

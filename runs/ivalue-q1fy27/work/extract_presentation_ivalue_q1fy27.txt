@@ -1,0 +1,1137 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: doc3.pdf (iValue_Infosolutions_Q1FY27_Investor_Presentation Final (002))
+doctype: presentation
+page_count_pdfinfo: 38
+formfeed_count: 38
+line_count: 1114
+unit_convention: Crores (dominant; primary P&L, revenue mix, balance sheet and working-capital tables all stated "in ₹ Crore" — see e.g. pages 6-7, source lines for Gross Sales/PAT/EBITDA, Revenue Mix, and financial statement tables on pages 17-19). EXCEPTION: page 24 (OEM Ecosystem partner revenue table) is stated "₹ Million" — a segment/case-study table, not the primary financials. Downstream agents must convert that one table only.
+conversion_factor_to_cr: Crores -> x1 (primary tables, no conversion needed); Millions -> x0.1 (apply only to the page-24 OEM partner revenue table stated in ₹ Million)
+ocr_pages: none (tesseract unavailable in this environment; thin-text pages below are FLAGGED, not OCR'd — see page_coverage note and inline [FLAG] markers)
+page_coverage: 100% (38 of 38 pages present; formfeed_count 38 matches pdfinfo page_count 38, no gaps)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026), per cover page "Investor Presentation – Q1 FY27" dated 29th July 2026
+extraction_date: 2026-07-29
+
+THIN-TEXT / IMAGE-ONLY PAGES (under 100 extracted characters via pdftotext -layout; tesseract not installed in this environment so these could NOT be OCR'd; flagged inline at their [[PAGE N]] marker below):
+  - PAGE 2  (56 chars)  — cover/title slide: "Investor Presentation – Q1 FY27 / 29th July 2026". Content appears to be a title graphic; no numeric data expected beyond the date already captured.
+  - PAGE 13 (49 chars)  — internal "Agenda" divider slide (section 2, Financial Overview). Text-only divider; low risk of lost numeric data.
+  - PAGE 22 (9 chars)   — "Annexure" section-divider slide. Likely background graphic/logo only; cannot confirm absence of numeric content since it was not OCR'd.
+  - PAGE 23 (14 chars)  — "Our Strengths" section-divider slide. Same caveat as above.
+  - PAGE 28 (13 chars)  — "Case Studies" section-divider slide. Same caveat as above.
+  - PAGE 32 (22 chars)  — "Historical Financials" section-divider slide. Same caveat as above.
+NOTE: Pages 4 (119 chars, Agenda list) and 21 (164 chars, "Thank You" contact page) were just above the 100-character threshold and are NOT flagged, but are noted here as low-content pages for completeness; their extracted text is captured in full below and appears complete (agenda list items, contact names/emails).
+=== END HEADER ===
+
+[[PAGE 1]]
+                                                        iValue Infosolutions Limited
+                                                        (Formerly known iValue Infosolutions Private Limited)
+                                                        No. 903/1/1, 19th Main Road, 4th Sector,
+                                                        H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                        CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                        www.ivaluegroup.com | info@ivalue.co.in
+                                                        Tel: 080-22221143
+
+ July 29, 2026
+
+ National Stock Exchange of India Limited                    BSE Limited
+ The Listing Department,                                     Department of Corporate Services,
+ Exchange Plaza,                                             Phiroze Jeejeebhoy Towers,
+ Bandra Kurla Complex,                                       Dalal Street, Fort,
+ Mumbai – 400051                                             Mumbai – 400001
+
+ Trading Symbol: IVALUE                                      Scrip Code: 544523
+
+
+
+Subject: Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015 - Presentation on the Unaudited Financial
+Results of the Company for the quarter ended June 30, 2026.
+
+Dear Sir/ Madam,
+
+The presentation on the Unaudited Financial Results (Standalone & Consolidated) for the quarter ended
+June 30, 2026, to be made today, i.e. July 29, 2026 at the Analyst/Investors meet, is attached and also
+available on the website of the Company at https://ivaluegroup.com/en-in/investor-analyst-corner/.
+
+You are requested to kindly take the same on record.
+
+Thanking you,
+
+Yours Sincerely,
+
+For iValue Infosolutions Limited
+
+LAKSHMA Digitally signed by
+        LAKSHMAMMANNI
+
+MMANNI Date:  2026.07.29
+        16:55:05 +05'30'
+
+Lakshmammanni
+Company Secretary and Compliance Officer
+Membership No. A51625
+
+[[PAGE 2]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Investor Presentation – Q1 FY27
+         29th July 2026
+
+[[PAGE 3]]
+Disclaimer
+
+This presentation and the accompanying slides (the “Presentation”), which have been prepared by iValue Infosolutions Ltd. (the “Company”),
+have been prepared solely for information purposes and do not constitute any offer, recommendation or invitation to purchase or subscribe for
+any securities, and shall not form the basis or be relied on in connection with any contract or binding commitment whatsoever. No offering of
+securities of the Company will be made except by means of a statutory offering document containing detailed information about the Company.
+
+This Presentation has been prepared by the Company based on information and data which the Company considers reliable, but the Company
+makes no representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the truth, accuracy, completeness,
+fairness and reasonableness of the contents of this Presentation. This Presentation may not be all inclusive and may not contain all of the
+information that you may consider material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly
+excluded.
+
+Certain matters discussed in this Presentation may contain statements regarding the Company’s market opportunity and business prospects that
+are individually and collectively forward-looking statements. Such forward-looking statements are not guarantees of future performance and are
+subject to known and unknown risks, uncertainties and assumptions that are difficult to predict. These risks and uncertainties include, but are
+not limited to, the performance of the Indian economy and of the economies of various international markets, the performance of the industry in
+India and world-wide, competition, the company’s ability to successfully implement its strategy, the Company’s future levels of growth and
+expansion, technological implementation, changes and advancements, changes in revenue, income or cash flows, the Company’s market
+preferences and its exposure to market risks, as well as other risks. The Company’s actual results, levels of activity, performance or achievements
+could differ materially and adversely from results expressed in or implied by this Presentation. The Company assumes no obligation to update any
+forward-looking information contained in this Presentation. Any forward-looking statements and projections made by third parties included in
+this Presentation are not adopted by the Company and the Company is not responsible for such third party statements and projections.
+
+
+
+                                                                                                                                                      2
+
+[[PAGE 4]]
+Agenda
+1 Company Overview
+
+
+2 Financial Overview
+
+
+3 Annexure - Our Strengths, Case Studies & Historical
+   Financials
+
+[[PAGE 5]]
+    iValue – Company Overview & Snapshot of Q1 FY27 performance
+
+                                                             Solves for                                             Started in 2008 – 18 years of continues progress; PE backed since 2019
+
+                Performance               Availability               Scalability                   Security
+                                                                                                                    Forms a vital link between OEMs, SIs & Enterprises in technology solutions ecosystem
+
+          Business of all sizes are dependent of applications for all their external and internal needs.
+          Every enterprise runs over 250 applications which are in different phases of digital transformation      One of the fastest growing technology services and solutions integrator in India
+          Performance, Availability, Scalability and Security of critical application thus becomes essential
+           need from revenue, growth, customer loyalty, brand reputation and compliance needs.                      Operating in 4 key Technology Segments: Cybersecurity, Information Lifecycle
+                                                                                                                    Management (ILM), Data Center Infrastructure, ALM, Hybrid cloud solutions & others
+
+                 Co-sell Partner of the             Co-Marketing Partner                 APJ Distributor of the     Portfolio of highly curated solutions and services
+                 Year 2026 - Confluent              Award 2025 - Confluent               Year 2025 - SentinelOne
+
+                                                                                                                    Strong relationships with OEMs and growing network of system integrators
+                 Certified VAD of micro                                                  Most Admired Brand of
+                                                    VAD of the Year (2023) -
+                 focus products 2024 -                                                   the Year 2023 - VAR
+                                                    VAR India                                                       Differentiated solutioning and GTM approach
+                 Opentext                                                                India
+
+
+                                                             Key Figures Snapshot (Q1 FY27, based on Gross Sales)
+                                                                                    Operating
+                          Gross Sales                                                                                                    PAT                                          Adj. ROCE*
+                                                                                     EBITDA
+                         ₹ 641.2 crore                                                                                               ₹ 15.7 crore                                       17.9%
+                             YoY 5.7%
+                                                                                   ₹ 20.2 crore                                        YoY 51.7%
+                                                                                     YoY 27.7%
+
+
+                                 52                                                                                                                                                   ₹ 121 crore
+                                                                                       46.4%                                              115
+                        Working Capital                                                                                                                                             Cash Position adj
+                                                                                 Annuity Business                                   OEM Partners
+                            Days                                                                                                                                                        for Debt
+
+
+* Adjusted Capital employed is calculated as the sum of Tangible Net Worth plus Total Net Debt, as reduced by Deferred Tax Assets                                                                          4
+
+[[PAGE 6]]
+       Journey to an End-to-End Technology Solutions & Services Aggregator
+
+                                                                                                                                                      Orchestrating next-gen technology
+                               Specialised and focused offerings                              Network facilitator to enabler
+                                                                                                                                                                  solutions
+                           Primary focus on security & data centre solutions       Differentiated end-to-end solutioning approach with value        Enabling enterprises in their hybrid multi-cloud,
+                                     with a curated OEM portfolio                            added services for the whole ecosystem                            IoT and AI/ML journeys
+Gross Sales in ₹ Crore
+
+
+
+
+                                                                              International                                                                               AI Security & AI
+                                                                           expansion with entry                                                                      Infrastructure Offerings
+                                                                                 into SEA                                                      Cloud foray: GCP      through AI enabled CoE
+                                                                                                                 Launch of
+                                                                                                                   ALM        Launch of        onboarded as OEM
+                                                                    Expanding OEM                 Established    solutions      CoE
+                                6 OEM                                                                                                                                      2,914
+                                                                partnerships - 30+ OEM             iAcademy
+                               portfolio                                                                                                                2,439
+                                                                  partners signed up                                                   2,110
+                                                                                                                     1,811
+                                                                                                    939                                                                                         641
+                                                                 218               526
+                              14                81
+
+                             FY09             FY12               FY15              FY18             FY21             FY23              FY24                FY25            FY26             3MFY27
+
+
+
+
+                                                                                  Investment by a     ASPL acquisition to build                                                         Public cloud,
+                         Started in 2008 by       BFSI practice launched for                                                                                Specific solutions for
+                                                                                   global PE firm     hybrid multi-cloud service    Services Partnership                               SaaS offerings &
+                            Sunil, KRS &          vertical specific solutions;                                                                              digital native focused
+                                                                                                        capabilities covering              (ASPL)                                    hyperconverged infra
+                               Sriram               largest practice today                                                                                    channel partners
+                                                                                                     managed security, IT & infra                                                         solutions
+                                                                                                              services
+
+
+
+                                                                               18 Year of Continuous Growth of Gross Sales & PAT
+
+                                                                                                                                                                                                            5
+
+[[PAGE 7]]
+10 Year CAGR
+
+                            3,500                                                                               120
+
+
+
+                            3,000
+                                                  23%                          28%                      2,914
+                                                                                                        102
+                                                                                                                100
+
+
+                            2,500                                                               2,439
+                                                                                                 85             80
+                                                                                        2,110
+     Gross Sales (Crores)
+
+
+
+
+                                                                                                                      PAT (Crores)
+                            2,000
+                                                                                1,811    71
+                                                                                                                60
+                                                                                 60
+                            1,500
+                                                                       1,296
+                                                                                                                40
+                            1,000                               939
+                                                         842            37
+                                                  712            36
+                                                          31
+                                           526     26                                                           20
+                                    457
+                             500
+                                            18
+                                     10
+                               -                                                                                -
+                                    FY17   FY18   FY19   FY20   FY21   FY22     FY23    FY24    FY25    FY26
+
+
+
+
+                                                                                                                                     6
+
+[[PAGE 8]]
+iValue – Adds value to OEM, Partner and Customers
+
+                                                                                1                                         Enterprises
+ Value-Added Distributors (VAD) VAD solves for various challenges faced by           Curated Solution Stacking & Integration:        share at system integrator & OEM level
+ enterprises in selecting vendors like Identifying the Right Vendor, Choosing       • Over 300 Pre-tested and ready to deploy
+                                                                                      compelling and complementing Curated           iValue COE:
+   the Right Solution, Cost Management and Ensuring Vendor Compliance                 Solution stack to address customer needs in a • Showcase multiple Curated Solutions in
+                                                                                      holistic way                                    customer environment to expedite sales cycle
+                                                                                    • Services covering professional and managed      and enhance wallet share,
+                                                                                                                                    • Showcase ready to deploy Curated Solution
+                                                                                      to address every need of our customers
+                                                                                                                                      stack which are relevant for every customer
+                                                                                    • Consultative approach to increase wallet        business and compliance needs
+
+
+
+                                                                                2                                           SI Partner
+                                                                                 Proven tech investments: Deploy a multi-pronged business development approach,
+                                                                                  comprising product life cycle adoption, customer life cycle adoption, focused accounts practice,
+                                                                                  multi-OEM solution stacks and iValue COE
+                                                                                 Consultative Sales Approach: Our approach is to identify and address key business, IT &
+                                                SI                                compliance needs in a consultative way, we have technical expertise for implementation and
+   3     OEM                VAD           2     Partner
+                                                             1    Enterprises
+                                                                                  integration along with managed services capabilities
+
+
+                                                                                3                                              OEM
+                                                                                 Jump-start Framework (Customer Life Cycle Adoption - CLCA): Targeted business
+                                                                                  development for every Curated Solutions with relevant customers thru best partner at the right
+                                                                                  time, drives faster outcomes at better efficiency
+                                                                                 Proactive Request for proposal Management: Tailored Curated Solution stack at optimized
+                                                                                  cost for customers with no risk, Enhance win rates with lower discounts for OEM and partner
+                                                                                 Cross & Up Sales with Renewal Management
+
+
+                                                                                                                                                                                     7
+
+[[PAGE 9]]
+    iValue – Presence across Four large and fast growing Technology Segments
+
+
+                                                                        Information Lifecycle                                  Data Center                            ALM, Cloud &
+         44%            Cybersecurity                        12%                                              22%                                       22%
+                                                                            Management                                       Infrastructure^                            Others
+
+     • Cloud security      • Application                  • Storage system solutions                       • Edge data centers                       • Application lifecycle management
+                             security                                                                      • Hyper converged infrastructure
+     • Network security                                   • Data protection solutions                                                                • Hybrid cloud management
+                           • DSPM, API, data                                                               • Software-defined data centers
+     • IT, OT & IoT                                       • Monitoring and management tools                                                          • Hyperconverged infrastructure offerings
+                             security
+       security                                                                                            • Sustainable data center
+                                                          • Data classification                                                                      • OT and IoT
+                           • Database security
+     • Endpoint security                                                                                   • Storage systems and recovery / backup
+                             & SIEM                                                                                                                  • Database Services
+                                                          • Backup, Recovery & Archival                      functionalities
+     • Authentication
+                                                            solutions                                                                                • DevOps, DevSecOps, API Security, Data
+       and authorization
+                                                                                                                                                       & Security lakes
+
+
+
+
+                                                                               Associated Professional Services
+
+
+Note: The numbers in circles denote % of total Gross sales billed to the customers (Q1 FY27)   ^Includes private, public and hybrid clouds                                                       8
+
+[[PAGE 10]]
+iValue – AI Strategy & Execution Highlights
+
+                                                                iValue’s strategy is centered around curating interoperable AI ecosystems rather than isolated products.
+
+                                    Strategic Direction         We believe enterprises will require a combination of: 1. AI Infrastructure; 2. AI Data Platforms; 3. AI Operations; 4. AI Security; 5. AI Governance
+                                                                iValue is positioning itself to become a key AI transformation enabler across the enterprise ecosystem.
+
+                                                                Delivering AI-powered Security Operations Center (SOC) architectures.
+                                                                Enabling AI-assisted threat detection, threat hunting, and incident response.
+
+                                  AI-Centric Cybersecurity      Working on “Security for AI” use cases including: 1. LLM Security; 2. AI Governance; 3. Prompt Injection Protection; 4. AI Risk Management; 5.AI
+                                                                 Infrastructure Security
+                                         Initiatives
+                                                                Integrating AI into SIEM, SOAR, Observability, and Threat Intelligence platforms.
+
+                                                                Building enterprise AI-ready data architectures combining: 1. Real-time streaming; 2. Event-driven integration 3. Agentic - Data Lakehouse;
+                                 AI Data & Modernization         4. AI analytics pipelines
+                                        Platforms               Supporting customers in creating AI-ready enterprise data foundations.
+
+                                                                Working on next-generation AI datacentre and GPU infrastructure architectures.
+
+                                    AI Infrastructure &         Supporting sovereign AI and air-gapped AI initiatives for Government and regulated sectors.
+                                        Sovereign AI            Designing hybrid AI and private AI deployment models for BFSI, Government, and large enterprises.
+
+                                                                Expanding the iValue Centre of Excellence into an AI validation and interoperability hub.
+
+                                  AI Centre of Excellence       Running AI demos, PoCs, benchmarking, and architecture validations across OEM ecosystems.
+                                          (AI CoE)              Helping customers evaluate multi-OEM AI stacks before production deployment.
+
+                                                                Building AI-focused consulting, implementation, managed services, and support capabilities.
+                                                                Creating reusable AI deployment blueprints and accelerators for enterprise adoption.
+                                  AI Services & Execution
+                                         Capability             Training internal engineering and partner ecosystems on AI technologies and architectures.
+
+
+ “iValue is building an enterprise AI ecosystem spanning AI infrastructure, AI security, AI data platforms, and AI operations through strategic partnerships
+                                                           with global OEMs and hyperscalers.”
+                                                                                                                                                                                                                 9
+
+[[PAGE 11]]
+  Unique Positioning in the Market: True Technology Enabler
+  Solution led mindset creating value for OEMs, partners and end-customers
+
+
+              Pure Play Distributors               Value Added Distributors                                                          =    iValue advantage
+
+
+                                                                                                                                             Differentiated
+                                                                                                                                           approach towards
+                                                                                                                                               technology
+                                                                                                                 4
+                                                                                                                                         aggregation with focus
+                                                                                             1            Centrally managed key            on adding value at
+                                                                                                          end-customer accounts           every step enabling…
+                                                                                                            for direct business
+                                                                   Demo / PoC              Multi-OEM stack    development &
+                                                    Named                                                       intelligence
+                                  Channel Reach     Channel
+                                                                                                                                         1. Enterprise customer
+              Supply
+              Chain                                                                          2                                           focus
+                                                                                                                 5
+                                                                                              Analytics
+                         Credit                                  Lead Generation                                 24x7 SOC, NOC
+                                     RMA
+                                                  Marketing                                  driven GTM
+                         Mgmt.                                                                                    and managed            2. Unique solutions &
+                                                                                                                    services             services
+                Geo
+              Coverage
+                                                                                             3
+                                   Marketing        Renewals                                                    6                        3. High wallet shares
+                                                   Management      Professional            Unique Centre of
+                                                                     Services                                                            with OEM
+                                                                                           Excellence (CoE) In-house professional,
+                                                                                                             next-gen technology
+                                                                                                                  academy
+                                                                                                                                         4. Industry leading
+                                                                                                                                         margins
+For FY26- iValue commands highest GM of 9.1%, EBITDA Margin of 5.1% & PAT Margin of 3.5% as compared to any other pure play
+distributor & VAD
+                                                                                                                                                                  10
+
+[[PAGE 12]]
+What is Unique about iValue *
+
+
+                                                                          Only one with 200+ pre and post sales teams; 1000+Tech
+        We Expertise In Solutioning Vs Sourcing                     `
+                                                                                                                    certifications
+
+        We offer Multi OEM based stacks                             `    474 customers >2 OEM products; 80%+ Partner Repeat rate
+
+        Work with End Customers on their digital transformation                Only one with End customer practice - BFSI / Govt /
+                                                                    `
+        journey                                                                                          Defence and Enterprise
+
+        Revenue Predictability                                      `                                        42%+ Annuity Revenue       ,
+
+        Value to Partner – Joint GTM -> Opportunity crea on →
+                                                                                   Highest Profitability with 9.1% Gross Margin and
+        Design → Deal execu on → Service mone za on →               `
+                                                                                                                 5.1% EBITDA Margin
+        Renewal & expansion
+        Value to Customer - Deep presales + solution architecture          Certified Presales, Solution Architect and One of its kind
+                                                                    `
+        muscle                                                                                                       Multi OEM CoE
+
+                                                                          Presence across 10 Countries; Fast expanding; 18 years of
+        Unwavering Trust of all stakeholders                        `
+                                                                        continuous growth with Industry leading GM, EBITDA & PAT
+
+
+
+ * The numbers depicted above are for FY26                                                                                                  11
+
+[[PAGE 13]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Agenda
+1 Company Overview
+
+
+2 Financial Overview
+
+[[PAGE 14]]
+Key Financial Highlights – Q1 FY27
+
+
+
+                                             • Revenue from Operations (net basis) was
+   • Gross Sales stood at ₹641.2 crore         ₹179.7 crore
+          5.7% YoY Growth
+                                                  Down 21.1% YoY
+
+
+
+
+   • Operating EBITDA stood at ₹20.2 crore   • PAT stood at ₹15.7 crore
+        27.7% YoY Growth                          51.7% YoY Growth
+        3.2% on Gross Sales                       2.5% on Gross Sales
+        11.3% on Net basis                        8.7% on Net basis
+
+
+
+
+                                                                                         13
+
+[[PAGE 15]]
+                      Financial Performance (Gross Sales Basis)
+                       in ₹ Crore
+
+
+
+
+                      Gross Sales Growth   5.7%        Operating EBITDA Growth      27.7%   PAT Growth    51.7%
+                                                             2.6%                 3.2%            1.7%             2.5%
+Q1 FY27 Performance
+
+
+
+
+                                                                                                                   15.7
+                                             641.2                                20.2
+                             606.4
+
+                                                             15.8
+                                                                                                  10.4
+
+
+
+
+                            Q1 FY26         Q1 FY27        Q1 FY26               Q1 FY27        Q1 FY26           Q1 FY27
+
+
+
+
+                                                                                                                            14
+
+[[PAGE 16]]
+Tech Segment Wise Performance & Annuity Business
+
+
+
+
+                                     % of Gross Sales    Growth %   Annuity Business
+Revenue Mix                                                         in ₹ Crore
+                                   Q1 FY26     Q1 FY27     YoY
+                                                                           Growth         13.7%
+Cybersecurity                      43.0%        43.9%      8.1%
+                                                                                              297.2
+                                                                        261.5
+Data Centre Infrastructure          8.2%        22.1%     182.9%
+
+Information Lifecycle Management   33.2%        12.5%    (60.4%)
+
+ALM, Cloud and Others              15.5%        21.5%     46.6%
+                                                                      Q1FY26                 Q1FY27
+
+                                                                       43.1%                 46.4%
+                                                                       (of Gross Sales)      (of Gross Sales)
+
+
+
+                                                                                                                15
+
+[[PAGE 17]]
+                      Working Capital Ratio (Gross Sales Basis)
+                       in ₹ Crore and Net working capital is in days
+
+                                                Trade Receivables       19.0%        Trade Payables         25.7%
+
+                                                                        1,102.0                               747.2
+
+
+                                                                                   594.3
+                                            925.7
+Q1 FY27 Performance
+
+
+
+
+                                           Q1 FY26                      Q1 FY27   Q1FY26                     Q1FY27
+
+                                                            Inventory                    Net Working Capital Days
+
+                                             21.6                                   53                          52
+
+
+
+
+                                                                          7.8
+
+
+
+
+                                           Q1 FY26                      Q1 FY27   Q1 FY26                    Q1 FY27
+                                                                                                                       16
+
+[[PAGE 18]]
+Financial Highlights – Gross Sales Vs Net Sales
+
+
+     Particulars (in ₹ Crore)                                           Q1 FY27   Q4 FY26   Q1 FY26
+     Hardware (Gross Sales)                                              140.2     227.8     194.9
+     Software and Allied support services (Gross Sales)                  501.0     521.9     411.5
+     Gross Sales billed to the Customers (A)                             641.2     749.7     606.4
+
+     Purchase Cost in respect of Software and Allied support services   (461.5)   (477.1)   (378.5)
+
+     Revenue from operations (B)                                         179.7     272.6     227.9
+     Gross COGS (Purchases + Changes in Inventories) (C)                 589.2     655.7     565.3
+     Purchase Cost in respect of Software and Allied support services   (461.5)   (477.1)   (378.5)
+     Net COGS (D)                                                        127.7     178.6     186.8
+     Gross Margin (Gross Basis) (A-C)                                    52.0      94.0      41.1
+
+     Gross Margin (Net Basis) (B-D)                                      52.0      94.0      41.1
+     Gross Margin % (Gross Basis)                                        8.1%     12.5%      6.8%
+     Gross Margin % (Net Basis)                                         28.9%     34.5%     18.0%
+
+
+
+
+                                                                                                      17
+
+[[PAGE 19]]
+Financials Summary (Gross Sales Basis) – Q1 FY27
+
+ Particulars (in ₹ Crore)    Q1 FY27    Q4 FY26    QoQ Growth   Q1 FY26   YoY Growth
+
+ Gross Sales                  641.2      749.7       (14.5%)     606.4      5.7%
+ Gross Profit                 52.0       94.0        (44.7%)     41.1       26.5%
+ Gross Profit %               8.1%       12.5%      (442bps)     6.8%      133bps
+ Operating Expense            34.6       39.6        (12.5%)     31.0       11.6%
+ EBITDA                       17.4       54.5        (68.0%)     10.1       72.5%
+ EBITDA Margin (%)            2.7%       7.3%       (455bps)     1.7%      105bps
+ Operating Other Income        2.8        4.5        (34.5%)      5.7      (51.0%)
+ Operating EBITDA             20.2       58.9        (65.6%)     15.8       27.7%
+ Operating EBITDA (%)         3.2%       7.9%       (468bps)     2.6%       54bps
+ PBT                          20.9       55.7        (62.8%)     13.9       51.2%
+ PBT Margin (%)               3.3%       7.4%       (423bps)     2.3%       98bps
+ PAT                          15.7       42.3        (63.1%)     10.4       51.7%
+ PAT Margin (%)               2.5%       5.6%       (324bps)     1.7%       74bps
+
+
+                                                                                       18
+
+[[PAGE 20]]
+Financials Summary (Net Sales Basis) – Q1 FY27
+
+ Particulars (in ₹ Crore)    Q1 FY27     Q4 FY26   QoQ Growth   Q1 FY26   YoY Growth
+
+ Revenue from Operations      179.7       272.6      (34.1%)     227.9     (21.1%)
+ Gross Profit                 52.0        94.0       (44.7%)     41.1       26.5%
+ Gross Profit %               28.9%      34.5%      (554bps)    18.0%      1091bps
+
+ Operating Expense            34.6        39.6       (12.5%)     31.0       11.6%
+ EBITDA                       17.4        54.5       (68.0%)     10.1       72.5%
+ EBITDA Margin (%)            9.7%       20.0%      (1029bps)    4.4%      526bps
+ Operating Other Income        2.8         4.5       (34.5%)      5.7      (51.0%)
+
+ Operating EBITDA             20.2        58.9       (65.6%)     15.8       27.7%
+
+ Operating EBITDA (%)         11.3%      21.6%      (1030bps)    6.9%      431bps
+ PBT                          20.9        55.7       (62.8%)     13.9       51.2%
+ PBT Margin (%)               11.7%      20.4%      (897bps)     6.1%      557bps
+ PAT                          15.7        42.3       (63.1%)     10.4       51.7%
+ PAT Margin (%)               8.7%       15.5%      (690bps)     4.5%      420bps
+
+
+                                                                                       19
+
+[[PAGE 21]]
+  THANK
+   YOU
+
+
+For Further Information, Please Contact:
+Asha Gupta – asha.gupta@in.ey.com
+Pratik Jagtap – pratik.jagtap@in.ey.com
+iValue – investors@ivalue.co.in
+
+[[PAGE 22]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Annexure
+
+[[PAGE 23]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Our Strengths
+
+[[PAGE 24]]
+Our Strengths
+
+1                                                                                                        4
+       Uniquely positioned in the large and fast-
+                                                          Large, expanding and diversified System
+     growing technology solutions and associated
+                                                       Integrator network, with high retention ratio
+       services in India and other neighbouring
+                                                                    and repeat business
+                       economies
+
+
+
+
+2                                                                                                        5
+      Comprehensive multi-OEM solutions                            Experienced leadership team,
+      and services portfolio, making us the                    supported by certified workforce and
+     preferred strategic technology advisor                      in-house training and recruitment
+    for enterprise technology requirements                                    program
+
+
+
+
+3                                                                                                        6
+    Partner of choice for OEMs in India, with strong
+                                                       Strong and consistent financial track record of
+    and expanding OEM relationships across focus
+                                                                    profitable growth
+                          areas
+
+
+
+
+                                                                                                         23
+
+[[PAGE 25]]
+Strategic technology partner for enterprises with diverse multi-OEM capabilities
+
+              Focused Verticals                                          Services Portfolio
+
+                                                                          Managed Services
+                                                          • Managed Services (24x7, SOC and NOC services,
+                                                            IMS/ESM)                                                        Preferred Strategic
+       BFSI                   Government
+                                                          • Audit, Assessment and compliance services                       Technology Advisor
+                                                          • Monitoring Services with helpdesk support
+
+      IT- ITES                  Telecom                                        Pre - Sales
+                                                          • Understand current IT infra and identify gaps
+                                                          • Determine Technical Specifications and Identify
+  Multi-OEM solutions adopted by Enterprises
+                                                            right OEM                                              % of Gross Sales arising from SaaS and
+                   (FY26)
+                                                          • Sizing and Interoperability with Other Solutions and             Renewal Business
+                                                            existing IT Infra
+    2+                      474
+   OEMs            Enterprise customers                                       Post - Sales
+                                                                                                                                             42.20%
+                                                          • Integration of solution with existing hybrid cloud          34.55%
+                                                            environments
+    5+                      45                            • Project management services and testing
+   OEMs            Enterprise customers
+                                                          • Migration of application and database
+
+
+                    Focus on 100 key accounts across sectors with growing wallet share
+                  30+ ready to deploy pre – integrated Multi OEM stacks across Industries                                FY23                 FY26
+
+                                                                                                                                                            24
+
+[[PAGE 26]]
+OEM Ecosystem – Preferred Partner with Deep and Expanding Relationships
+
+                                                       Partnerships demonstrate ability to help OEMs rapidly scale in India
+
+                                                                                                                           OEM use cases – business growth with iValue
+  Technology team                 Enabling OEMs to strategize           Translating business
+   accounts for more than          and grow with                          needs to solutions
+   50% of the total                                                      sizing and interoperability                  ₹ Million              FY23                        FY26
+   headcount                        Large network of SIs and
+                                     customers                            of solutions
+
+                                    CLCA and PLCA led                   Commercials                              Cybersecurity OEM          96.49        ~1.6x          153.68
+  215 employees hold
+   technical qualifications          approach to target right            Delivery
+   and a total of 1,011 OEM          set of enterprise                   Post sale implementation                 Data Center OEM            41.63        ~8.9x          410.43
+   certifications                    customers                            and sustenance services
+
+
+
+Growing network of OEM partners                                                                                                    Deep Relationships with key OEMs (FY26)
+
+                                                                                                                                       Tenure (Years)              No. of OEMs
+                                                                                      ALM & others
+                                              28                  31                                                                     > 10 Years                      22
+                            27
+        25                                                                            Data center infrastructure
+                                              22                  23
+                            20                                                                                                           6 - 10 Years                    51
+        17                                    9                   9
+        9                   9
+                                                                                      Information lifecycle management
+                                                                                                                                         3 - 5 Years                     20
+        42                  45                50                  52
+                                                                                      Cybersecurity
+                                                                                                                                         0 - 2 Years                     22
+       FY23                 FY24             FY25                FY26
+
+                                                                                                                                                                                   25
+
+[[PAGE 27]]
+Broad, Expanding System Integrator Ecosystem with Strong Retention and
+Recurring Business
+Steady Growth in number SI partners                           Diversified Channel Strategy                      Business development approach
+                                                                                                                            (GTM)
+                                                                  No. of SIs & Gross Revenue share (FY26)
+
+
+                                                                   41       30.60%            Global                     Product life cycle adoption
+
+      567
+      FY23
+                                             866
+                                              FY26                 128      26.20%           National
+                                                                                                                       Customer life cycle adoption
+
+                                                                   708      35.67%             Local
+
+Centrally managed 100 focused accounts                        Improving System Integrator Retention Rates                Focused accounts practice
+                                                                                         80.73%        82.33%
+                                                                             73.06%
+                                                                 64.35%
+
+                                                                                                                         Multi-OEM solution stacks
+      OEM                                              SIs
+
+
+
+             Focus 100 Accounts - ~50% Revenue Contribution
+                                                                                                                             iValue CoE
+                                                                  FY23         FY24          FY25       FY26
+
+                                                                                                                                                       26
+
+[[PAGE 28]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Case Studies
+
+[[PAGE 29]]
+Large-Scale Technology Refresh Program for Mission-Critical Public Platform
+INDUSTRY: GOVERNMENT/PUBLIC SECTOR
+Overview
+• Selected as a solution partner for large scale technology refresh program
+• Mission-critical national digital infrastructure undergoing end-to-end technology modernization
+• Delivered in partnership with a Tier-1 System Integrator with multiple global technology vendors
+
+
+
+        iValue’s Differentiated Execution Model                                              Technology Stack                                                  Revenue Model
+                                                                         Network security, application, database protection, and          Initial enablement and platform build, followed by annual
+ Winning this engagement represents a landmark transaction
+                                                                          identity security layers                                          subscriptions, cloud consumption, maintenance renewals,
+ that validates iValue’s business model and market positioning
+                                                                         Performance monitoring and real-time analytics                    and expansion/refresh cycles over a multi-year lifecycle
+ for future cross-sell public-sector opportunities. This deal
+                                                                         Scalable cloud infrastructure with elastic capacity              Emphasis on predictable annuity streams across security,
+ demonstrates our ability to:
+                                                                                                                                            observability, and cloud, with consumption-led growth as
+                                                                         IT lifecycle and content management platforms                     digital services scale.
+  Win large scale digital infrastructure project for future
+    public sector opportunities                                          Content delivery and edge security services
+
+  Consolidated 11+ OEMs into a single unified solution
+    unlocking value otherwise fragmented across multiple                                  Growth Opportunities                                                Strategic Outcome
+    distributors
+                                                                         Annual renewals, cloud consumption growth, next-gen              Proven ability to win and execute large deal
+  Deepened partnership with Tier-1 SIs, enabling repeatable              upgrades across deployed stack
+                                                                                                                                           Multi-OEM aggregator into single unified solution
+    engagements across their portfolio                                   Reference selling for other public sector digital
+                                                                                                                                           Hybrid cloud positioning
+                                                                          infrastructure projects
+  Build foundation for multi-year maintenance, support,
+                                                                                                                                           Recurring revenue foundation
+                                                                         Deeper access across Tier-1 SIs portfolios & replication with
+    expansion revenues beyond initial capex
+                                                                          other leading SIs on similar engagements
+
+
+                                                                                                                                                                                                        28
+
+[[PAGE 30]]
+Multi-Year Strategic Engagement with India’s Largest Public Sector Bank
+INDUSTRY: GOVERNMENT/PUBLIC SECTOR
+Overview
+• Won multi-year strategic engagement with a large, complex public sector bank
+• Initial entry through focused technology domains, followed by systematic expansion
+• Delivered through deep collaboration with Tier-1 System Integrators
+• Engagement evolved from discrete product transactions into a broad, multi-OEM relationship
+
+        iValue’s Differentiated Execution Model                                            Technology Stack                                              Revenue Model
+                                                                       Network security, SIEM, threat intelligence, identity,      Initial product-led entry, followed by sustained upsell and
+ This engagement represents iValue's most significant customer          compliance platforms                                         cross-sell across multiple OEMs
+ relationship, demonstrating our ability to land, expand, and
+                                                                       Big data, event streaming, in-memory computing, and         Growing mix of subscription-based and recurring revenues
+ build recurring revenue streams through strategic account              real-time analytics
+ management.                                                                                                                        Introduction of managed services created higher-margin,
+                                                                       Cloud security, AIOps, application delivery, and             predictable annuity income
+                                                                        infrastructure modernization
+  Executed a disciplined land, expand & deepen account
+                                                                                                                                    Account value built progressively over a 12-to-24-month
+    strategy                                                           Enterprise content and governance platforms                  horizon
+
+  Used early wins as anchors to systematically cross-sell and
+    upsell complementary technologies
+                                                                                        Growth Opportunities                                           Strategic Outcome
+  Leveraged a dedicated vertical-focused team to drive new            Continuous expansion within customer through new            Ability to land and expand systematically
+    opportunities across multi-OEMs                                     workloads, platforms, regulatory initiatives
+                                                                                                                                    Validated effectiveness of vertical team led go-to-market
+                                                                       Renewal, expansion, and lifecycle upgrades across all
+  Expanded from product distribution to managed services,                                                                           model
+                                                                        deployed technologies
+    adding higher-margin recurring revenue                                                                                          Created lighthouse reference enabling expansion across
+                                                                       Replication of same land-and-expand model across similar
+                                                                        large enterprise and BFSI customers                          BFSI ecosystem
+  Deepened collaboration with Tier-1 System Integrator
+    enabling access to India's largest bank                            Deeper monetization through services and long-term
+                                                                        operational ownership
+
+                                                                                                                                                                                                   29
+
+[[PAGE 31]]
+Large Scale Digital Infrastructure Transformation for one of the Largest Public Sector Bank
+INDUSTRY: BFSI
+Overview
+• Selected as a solution partner by one of the largest public sector bank
+• Mission - critical core banking, security, and digital infrastructure modernization
+• Delivered in collaboration with a Tier-1 global consulting partner
+• High-complexity, multi-technology, regulated environment
+
+         iValue’s Differentiated Execution Model                                                 Technology Stack                                                Revenue Model
+
+  This engagement illustrates how iValue creates value beyond                End to end infrastructure including Core IT, security,       Large initial deal size with multi-year lifecycle
+                                                                              analytics, storage, networks, digital quality
+  traditional distribution, delivering integrated solutions that                                                                           Recurring revenue from annual subscriptions, maintenance
+  meet complex banking infrastructure requirements –                         Delivered through 10+ global technology vendors               renewals & capacity expansion
+
+                                                                             Designed for high availability, scale, and compliance
+   Delivered single window accountability for a complex, multi-
+     technology solution
+
+   Consolidated 10+ OEMs technology stacks into one cohesive
+     architecture                                                                             Growth Opportunities                                             Strategic Outcome
+   Regulatory compliant design aligned with Indian banking                  Replication across public and private sector banks           Proven ability to win and execute large, regulated BFSI deals
+     and cybersecurity mandates
+                                                                             Applicability to NBFCs and insurance firms                   Demonstrated multi-vendor aggregation at national scale
+   Optimized total cost of ownership versus fragmented                      Entry into adjacent regulated enterprises                    Strong annuity and expansion-led revenue model
+     vendor alternatives
+                                                                             Strengthened strategic alignment with consulting partners    Highly replicable and defensible execution playbook
+
+                                                                             Expansion with large system integrators
+
+                                                                             Increased OEM-led joint opportunities
+
+                                                                                                                                                                                                       30
+
+[[PAGE 32]]  [FLAG: THIN TEXT LAYER — under 100 extracted characters; tesseract unavailable, not OCR'd — treat as numbers-lost/image-only for this slide]
+Historical
+Financials
+
+[[PAGE 33]]
+Restated Consolidated Profit & Loss Statement (1/2)
+                                                             (in ₹’m, except for share data and if otherwise stated)
+Particulars                                                   FY24                    FY25                    FY26
+Income
+Revenue from Operations                                     7,802.30              9,226.80               10,555.60
+Other Income                                                 149.50                  196.70                 194.20
+Total Income                                                7,951.80              9,423.50               10,749.80
+Expenses:
+Purchases of Stock-in-trade                                 4,977 39              6,652.76                7,831.54
+Changes in inventories of Stock-in-trade                     630.44                  142.30                   60.43
+Employee benefits expense                                    652.05                  687.97                 738.91
+Finance Costs                                                129.13                  134.59                 112.51
+Depreciation and amortisation expense                         68.99                   71.62                   69.46
+Other expenses                                               548.12                  602.33                 581.80
+Total Expenses                                              7,006.12               8291.57                9,394.65
+Restated profit before tax and exceptional item              945.68               1,131.93                1,355.15
+Exceptional Items                                                    -                       -                51.88
+Restated profit before tax                                   945.68               1,131.93                1,303.27
+Tax Expense / (Benefit)
+(1) Current tax                                              253.40                  282.11                 341.81
+(2) Tax adjustments for earlier years (Net)                    -9.41                   1.99                   -6.63
+(3) Deferred tax                                               -4.01                   -5.17                 -15.68
+Total Tax Expense                                            239.98                  278.93                 319.50
+Restated profit after tax for the year                       705.70                  853.00                 983.77
+Restated Other Comprehensive Income
+Items that will not be reclassified to profit or loss:
+(i) Remeasurements of post employment benefit obligations      -0.03                   -0.69                   5.70
+                                                                                                                   32
+
+[[PAGE 34]]
+Restated Consolidated Profit & Loss Statement (2/2)
+                                                                                                (in ₹’m, except for share data and if otherwise stated)
+
+  Particulars                                                                                    FY24                    FY25                    FY26
+(ii) Income tax relating to these items                                                           0.17                    0.26                    -1.44
+Items that will be reclassified to profit or loss
+(i) Exchange differences on translation of foreign operations                                     0.21                     -.85                   6.80
+(ii) Income tax relating to these items                                                              -
+Restated Other Comprehensive Income/(loss) for the year                                          -0.31                   -1.62                  11.06
+   Restated Total Comprehensive Income for the year                                             705.39                  851.38                 994.83
+   (Comprising Profit and Other Comprehensive Income for the year)
+ Restated profit for the year attributable to:
+ (i) Owners of Ivalue Infosolutions Limited                                                     710.28                  855.79                  982.33
+ (ii) Non-controlling interests                                                                   -4.58                   -2.79                   1.46
+                                                                                                705.70                  853.00                 983.79
+ Restated other comprehensive income/(loss) for the year attributable to:
+ (i) Owners of Ivalue Infosolutions Limited                                                       -0.17                   -1.14                  10.66
+ (ii) Non-controlling interests                                                                   -0.14                   -0.48                   0.42
+                                                                                                  -0.31                   -1.62                  11.08
+ Restated total comprehensive income for the year attributable to:
+ (i) Owners of Ivalue Infosolutions Limited                                                     710.11                  854.65                  992.98
+ (ii) Non-controlling interests                                                                   -4.72                   -3.27                   1.88
+                                                                                                705.39                  851.38                 994.86
+ Restated Earnings per equity share attributable to owners of Ivalue Infosolutions Limited: -
+ Basic EPS (in Rs.)                                                                              13.27                   15.98                   18.06
+ Diluted EPS (in Rs.)                                                                            13.27                   15.98                   17.98
+
+
+
+
+                                                                                                                                                      33
+
+[[PAGE 35]]
+Restated Consolidated Balance Sheet (1/2)
+                                                                  (in ₹’m, except if otherwise stated)
+
+Particulars                                               FY24         FY25                     FY26
+ASSETS
+Non-current assets
+Property, Plant and Equipment                            99.61        95.84                   86.78
+Right-of-use assets                                     300.74       249.98                  193.70
+Goodwill                                                 76.43        76.43                   76.43
+Other Intangible assets                                   4.10         3.03                    1.23
+Financial Assets
+-Loans                                                    60.00       60.00                       -
+- Trade Receivables                                           -      205.24                       -
+-Other financial assets                                   34.16       52.08                   60.86
+Income tax assets (net)                                  689.52      235.76                  768.76
+Deferred tax assets (net)                                 57.15       62.58                   76.89
+Other non-current assets                                  12.44       70.63                   72.69
+Total Non-current assets                               1,333.15    1,112.29                1,337.34
+Current assets
+Inventories                                             270.41       128.11                    67.79
+Financial Assets
+-Investments                                                  -           -                1,528.92
+-Trade receivables                                     6,732.11    8,258.61                9,731.40
+-Cash and cash equivalents                             1,279.78    1,178.59                1,196.04
+-Bank balances other than cash and cash equivalents       66.95      470.18                   89.40
+-Loans                                                     0.01           -                       -
+-Other financial assets                                   52.01      122.58                  119.84
+Other current assets                                     308.09      356.37                  338.61
+Total Current assets                                   8,709.66   10,514.44               13,072.00
+Total Assets                                          10,042.51   11,626.73               14,409.34
+
+
+
+
+                                                                                                     34
+
+[[PAGE 36]]
+Restated Consolidated Balance Sheet (2/2)
+                                                                            (in ₹’m, except if otherwise stated)
+
+Particulars                                                        FY24          FY25                     FY26
+EQUITY AND LIABILITIES
+Equity
+Equity Share capital                                                42.11        84.22                   109.26
+Instruments entirely equity in nature                               12.50        12.50                        -
+Other Equity                                                     3,662.25     4,541.40                 5,569.49
+Equity attributable to owners of Ivalue Infosolutions Limited    3,716.86     4,638.12                 5,678.75
+Non Controlling Interest                                           -14.51       -17.78                    -6.86
+Total Equity                                                     3,702.35     4,620.34                 5,671.89
+LIABILITIES
+Non-current liabilities
+Financial Liabilities
+- Borrowings                                                           -             -                        -
+- Lease Liabilities                                               256.59        213.45                   184.17
+- Trade Payables                                                       -        148.97                        -
+Other Financial Liabilities                                            -         15.41                    35.96
+Provisions                                                         30.24         23.73                    54.28
+Total Non-current liabilities                                     286.83        401.56                   274.41
+Current liabilities
+Financial Liabilities
+- Share buyback obligation                                             -              -                       -
+- Borrowings                                                      451.91         424.51                  464.48
+- Lease Liabilities                                                60.61          64.23                   44.62
+- Trade payables
+(i) Total outstanding dues of micro and small enterprises            0.93         0.26                  119.89
+(ii) Total outstanding dues of creditors other than (i) above    5,016.25     5,552.25                7,255.72
+- Other financial liabilities                                       40.09        79.08                   59.45
+Current tax liabilities (net)                                       12.46        33.47                   35.99
+Contract liabilities                                                19.36        38.72                   50.47
+Other current liabilities                                          399.85       399.22                  394.25
+Provisions                                                          51.77        13.09                   37.91
+Total Current Liabilities                                        6,053.33     6,604.83                8,462.78
+Total Liabilities                                                6,340.16     7,006.39                8,737.19
+Total Equity and Liabilities                                    10,042.51    11,626.73               14,409.34
+                                                                                                               35
+
+[[PAGE 37]]
+Restated Consolidated Cash flow Statement (1/2)
+                                                                              (in ₹’m, except for share data and if otherwise stated)
+
+Particulars                                                                    FY24                    FY25                   FY26
+I. CASH FLOW FROM OPERATING ACTIVITIES
+Restated profit before tax                                                    945.68               1,131.93                1,303.30
+Adjustment for:
+Depreciation and Amortisation expenses                                         68.99                  71.62                   69.46
+Provision for Employee stock appreciation rights                               21.14                  18.25                   28.19
+Interest Income                                                               -33.19                 -80.10                  -79.90
+Net Gain on Investments carried at Fair Value through Profit or Loss           -1.89                  -8.30                  -35.27
+Unwinding of interest on security deposit                                      -1.17                  -1.37                   -1.84
+Gain on Termination of Leases                                                  -1.39                      -                       -
+Net Fair value loss / (gain) on derivatives not designated as hedges           -4.30                  29.35                  -62.73
+Unrealised (gain)/ loss on foreign currency translation                       -12.27                 -33.34                   88.63
+Finance costs                                                                 129.13                 134.59                  112.51
+Bad Debts Written off                                                          60.40                  83.98                   25.89
+Fair value change in share buyback obligation                                      -                      -                       -
+Allowance made / (reversed) for Expected credit loss on trade receivables       0.09                   0.82                   32.64
+Operating Profit before Working Capital Changes                             1,171.22                1347.43                 1480.87
+Adjustments for :
+(Increase) / Decrease in Other financial assets                                 -1.40                 -87.03                  45.96
+(Increase) / Decrease in Inventories                                           630.44                 142.30                  60.43
+(Increase) / Decrease in Trade Receivables                                     215.22              -1,834.22              -1,311.15
+(Increase) / Decrease in Other Current and Non current Assets                  804.30                -106.36                  15.67
+Increase / (Decrease) in Trade Payables                                     -1,427.44                 733.34               1,581.76
+Increase / (Decrease) in Other Financial Liabilities                           -19.66                  25.05                  -2.36
+Increase / (Decrease) in Provisions                                              2.52                   3.17                  53.93
+Increase / (Decrease) in Contract Liabilities                                   -6.58                  19.36                  11.76
+Increase / (Decrease) in Current Liabilities                                    30.85                  -0.63                  -4.97
+Cash Generated from operations                                               1,399.47                 242.41               1,931.90
+Less: Income tax payments (net of refunds received)                           -742.96                 219.73                   -852
+Net Cash flow from/(used in) Operating Activities (A)                          656.51                 462.14               1,079.90
+
+
+                                                                                                                                    36
+
+[[PAGE 38]]
+Restated Consolidated Cash flow Statement (2/2)
+                                                                                                              (in ₹’m, except for share data and if otherwise stated)
+
+Particulars                                                                                                      FY24                   FY25                    FY26
+II. CASH FLOW FROM INVESTING ACTIVITIES
+Investment made in subsidiary                                                                                        -                     -                       -
+Payments for purchase of investments                                                                            -20.00               -350.00               -2,395.00
+Proceeds from sale of investments                                                                               133.43                358.30                  901.45
+Investments in fixed deposits with banks                                                                     -2,029.21             -2,040.64               -3,525.63
+Proceeds from withdrawal of fixed deposits with banks                                                         2,157.71              1,633.66                3,919.86
+Loan given                                                                                                       -0.21                     -                      60
+Interest received                                                                                                33.40                 51.27                   65.99
+Purchase of Property, Plant and Equipment (including capital advance)                                           -38.38                -11.16                   -2.15
+Net Cash flow from/(used in) Investing Activities (B)                                                           236.74               -358.57                 -975.49
+III. CASH FLOW FROM FINANCING ACTIVITIES
+(Repayment) of / Proceeds from working capital                                                                 -47.55                 -27.40                   41.47
+(Repayment) of long term rupee term loan from banks                                                             -5.30                      -                       -
+Proceeds from Issue of Equity Share under employee stock option scheme and conversion of preference shares          -                      -                   31.01
+Repayment of Principal element of Lease Liabilities                                                            -36.83                 -42.77                  -48.92
+Finance cost Paid                                                                                             -129.13                -134.59                 -110.61
+Net Cash Flow from / (Used in) Financing Activities (C)                                                       -218.81                -204.76                  -87.04
+Net (Decrease)/ Increase In Cash And Cash Equivalents (A+B+C)                                                  674.44                -101.19                   17.36
+Cash and Cash Equivalents at the beginning of the year                                                         605.34               1,279.78                1,178.59
+Effects of exchange rate changes on cash and cash equivalents                                                       -                      -                       -
+Cash & Cash Equivalent at the end of the year*                                                               1,279.78               1,178.59                1,195.70
+Non cash transactions from investing and financing activities:
+Acquisition of Right of use Assets                                                                              66.24                    4.86                       -
+Disposal of Right of use Assets                                                                                 -5.81                       -                       -
+Fair value change in share buyback obligation                                                                       -
+*Components of Cash and cash equivalents
+Cash on Hand                                                                                                     0.13                      -                    0.30
+In Current Accounts                                                                                            249.85               1,163.59                  610.40
+Deposit with Banks with less than 3 months original maturity                                                 1,029.80                  15.00                     585
+Total                                                                                                        1,279.78               1,178.59                1,195.70
+
+                                                                                                                                                                    37

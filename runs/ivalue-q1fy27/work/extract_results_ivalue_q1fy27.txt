@@ -1,0 +1,324 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: doc2.pdf
+doctype: results
+page_count_pdfinfo: 15
+formfeed_count: 15
+line_count: 324
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01
+ocr_pages: none (tesseract not installed in this environment; per task override, image-only pages were flagged rather than OCR'd)
+image_only_pages: [3, 4, 5, 6, 7, 8, 9, 10, 11, 15]
+image_only_note: >
+  pdftotext -layout returned 0 extracted characters for pages 3-11 and only 14
+  characters for page 15 (well under the 100-character threshold). pdfimages -list
+  confirms each of these pages is a full-page embedded JPEG/JBIG2 scan with no text
+  layer (pages 3-11: two stacked full-page scan images per page at 1792x1232 and
+  2368x1648 px; page 15: one full-page scan image at 2481x3507 px, 300ppi). Per the
+  task instruction (tesseract unavailable in this environment), these pages are
+  flagged as image-only below rather than OCR'd. A brief structural/subject label is
+  given per page for coverage bookkeeping only; table figures and full paragraph text
+  on these pages are NOT transcribed into this extract -- downstream agents must treat
+  every number on pages 3-11 and page 15 as NOT independently extracted and obtain it
+  via OCR/manual entry before relying on it as anchored evidence.
+unit_convention_detection_method: >
+  Text-layer detection was not possible (financial statement pages are image-only,
+  see above). The unit label "(Rs. in Lakhs)" was read visually off the rendered page
+  images for page 5 (Standalone Statement of Unaudited Financial Results) and page 10
+  (Consolidated Statement of Unaudited Financial Results), both of which print this
+  label at the top-right of the results table header. Both standalone and consolidated
+  statements use the same unit (Lakhs). This is a single global metadata fact read to
+  populate this header field; it is not a substitute for full-page OCR/transcription of
+  the underlying table figures, which remains outstanding per image_only_note above.
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-07-29
+=== END HEADER ===
+
+
+[[PAGE 1]]
+                                                          iValue Infosolutions Limited
+                                                          (Formerly known iValue Infosolutions Private Limited)
+                                                          No. 903/1/1, 19th Main Road, 4th Sector,
+                                                          H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                          CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                          www.ivaluegroup.com | info@ivalue.co.in
+                                                          Tel: 080-22221143
+
+July 29, 2026
+
+
+ National Stock Exchange of India Limited                     BSE Limited
+ The Listing Department,                                      Department of Corporate Services,
+ Exchange Plaza,                                              Phiroze Jeejeebhoy Towers,
+ Bandra Kurla Complex,                                        Dalal Street, Fort,
+ Mumbai – 400051                                              Mumbai – 400001
+
+ Trading Symbol: IVALUE                                       Scrip Code: 544523
+
+
+
+Subject: Outcome of Board Meeting iValue Infosolutions Limited (the “Company”)
+
+Dear Sir/ Madam,
+
+Pursuant to the terms of Regulation 30 and 33 of the Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015, and in continuation of our intimation
+dated July 24, 2026, we wish to inform you that the Board of Directors of the Company at its meeting
+held today, i.e. Wednesday, July 29, 2026, has inter-alia approved the Unaudited Standalone and
+Consolidated Financial Results of the Company for the quarter ended June 30, 2026.
+
+The financial results along with the copy of limited review report duly signed by the Statutory Auditors
+of the Company for the quarter ended June 30, 2026 are enclosed herewith as Annexure-A.
+
+The financial results will also be published in the newspaper as prescribed under the Securities and
+Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015.
+
+Pursuant to Regulation 30 read with Schedule III of Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that the Board of
+Directors of the Company at its Meeting held today i.e., Wednesday July 29, 2026 approved the
+reappointment of M/s. S G S K & Company, Chartered Accountants (FRN: 024539S) as Internal Auditors
+of the Company for the FY 2026-27.
+
+Brief details of the re-appointment as required under SEBI Circular No. HO/49/14/14(7)2025 CFD
+POD2/I/3762/2026 dated January 30, 2026 are enclosed herewith as Annexure-B.
+
+Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+2015 we wish to inform you that the Board of Directors of the Company, at its meeting held today, i.e.
+Wednesday, July 29, 2026, has approved the allotment of 1,23,280 (One Lakh Twenty Three Thousand
+Two Hundred and Eighty) of face value of Rs. 2/- (Rupees Two only) each to the eligible employee of
+the Company who have exercised their stock options under the iValue Employee Stock Option Plan
+2024.
+
+[[PAGE 2]]
+                                                       iValue Infosolutions Limited
+                                                       (Formerly known iValue Infosolutions Private Limited)
+                                                       No. 903/1/1, 19th Main Road, 4th Sector,
+                                                       H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                       CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                       www.ivaluegroup.com | info@ivalue.co.in
+                                                       Tel: 080-22221143
+
+
+Consequent to the aforesaid allotment, the paid-up share capital of the Company has increased
+from ₹10,92,60,760 (Rupees Ten Crore Ninety-Two Lakh Sixty Thousand Seven Hundred and Sixty
+Only), comprising 5,46,30,380 (Five Crore Forty-Six Lakh Thirty Thousand Three Hundred and
+Eighty Only) equity shares of ₹2 (Rupees Two Only) each, to ₹10,95,07,320 (Rupees Ten Crore
+Ninety-Five Lakh Seven Thousand Three Hundred and Twenty Only), comprising 5,47,53,660 (Five
+Crore Forty-Seven Lakh Fifty-Three Thousand Six Hundred and Sixty Only) equity shares of ₹2
+(Rupees Two Only) each.
+
+
+The details as required under the Regulation 10(c) SEBI (Share Based Employee Benefits and
+Sweat Equity) Regulations, 2021 is enclosed as Annexure-C.
+
+
+Pursuant to Regulation 30 read with Schedule III of Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that Mr. Shrikanth
+Manohar Shitole, Chief Executive Officer of the company has tendered his resignation from the
+position of Chief Executive Officer vide resignation letter dated July 15, 2026, and is effective from
+the closing of business hours on July 31, 2026.
+
+Brief details of the resignation as required under SEBI Circular No. HO/49/14/14(7)2025 CFD
+POD2/I/3762/2026 dated January 30, 2026 are enclosed in Annexure-D.
+
+The Board Meeting commenced at 03.00 P.M. (IST) and concluded at 04.00 P.M. (IST)
+
+The above information along with the relevant documents shall also be made available on the
+Company's website at https://ivaluegroup.com/en-in/investor-relations/.
+
+
+You are requested to kindly take the same on record.
+
+Thanking you,
+
+Yours Sincerely,
+
+For iValue Infosolutions Limited
+LAKSHMAM Digitally  signed by
+           LAKSHMAMMANNI
+
+MANNI      Date: 2026.07.29
+           16:27:41 +05'30'
+
+Lakshmammanni
+Company Secretary and Compliance Officer
+Membership No. A51625
+
+[[PAGE 3]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Auditor's Limited Review Report -- STANDALONE, page 1 of 2 (Price Waterhouse & Co Chartered Accountants LLP; paras 1-3: engagement, scope, unmodified conclusion)]
+
+[[PAGE 4]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Auditor's Limited Review Report -- STANDALONE, page 2 of 2 (paras 4-5: foreign branch figures, unreviewed branch figures; signed by Arunkumar Ramdas, Partner, Membership No. 112433, UDIN 26112433XEWHAD2606, Mumbai, July 29, 2026)]
+
+[[PAGE 5]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Statement of Unaudited STANDALONE Financial Results for the quarter ended June 30, 2026 (line-item P&L table: Income, Expenses, PBT, Tax, PAT, OCI, Total Comprehensive Income, Paid-up Equity Capital, Other Equity, EPS; four columns: Q1FY27, Q4FY26, Q1FY26, FY26). Unit label printed on page: '(Rs. in Lakhs)'.]
+
+[[PAGE 6]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: STANDALONE Results -- Notes 1 to 7 (audit committee/board approval, Ind AS basis, single segment, agent/net revenue recognition table, New Labour Codes exceptional item, Q4FY26 balancing-figure note) + signature block: For iValue Infosolutions Limited, Sunilkumar Pillai, Chairman and Managing Director, DIN 02226978, Bangalore, July 29, 2026; auditor Limited Review reference dated July 29, 2026.]
+
+[[PAGE 7]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Auditor's Limited Review Report -- CONSOLIDATED, page 1 of 3 (Price Waterhouse & Co Chartered Accountants LLP; paras 1-3: engagement re Holding Company + subsidiaries/Group, scope, SEBI Reg 33(8) procedures)]
+
+[[PAGE 8]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Auditor's Limited Review Report -- CONSOLIDATED, page 2 of 3 (para 4: list of entities in the Statement -- Holding Company iValue Infosolutions Limited; Branches: Singapore, Kenya, Bangladesh; Subsidiaries: Asia iValue Pte. Ltd, Quantanxt Technologies Private Limited [formerly ASPL Info Services Private Limited], ASPL Info Services (FZE), iValue S L (Private) Limited, iValue Infosolutions Sea Co., Ltd.; para 5: unmodified conclusion; para 6: one subsidiary + one branch outside India, reviewed figures)]
+
+[[PAGE 9]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Auditor's Limited Review Report -- CONSOLIDATED, page 3 of 3 (para 7: three subsidiaries + two branches not reviewed, immaterial to Group; signed by Arunkumar Ramdas, Partner, Membership No. 112433, UDIN 26112433OKCBRR8116, Mumbai, Maharashtra, July 29, 2026)]
+
+[[PAGE 10]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Statement of Unaudited CONSOLIDATED Financial Results for the quarter ended June 30, 2026 (line-item P&L table: Income, Expenses, PBT, Tax, PAT, OCI, Total Comprehensive Income, Profit/OCI/TCI attributable to Owners vs NCI, Paid-up Equity Capital, Other Equity, EPS; four columns: Q1FY27, Q4FY26, Q1FY26, FY26). Unit label printed on page: '(Rs. in Lakhs)'.]
+
+[[PAGE 11]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 0 characters. OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: CONSOLIDATED Results -- Notes 1 to 9 (audit committee/board approval, Ind AS basis, Note 3: standalone-results-of-the-Company summary table [Total Income/PBT/PAT for same 4 periods], single segment, agent/net revenue recognition table, New Labour Codes exceptional item, Q4FY26 balancing-figure note) + signature block: For iValue Infosolutions Limited, Sunilkumar Pillai, Chairman and Managing Director, DIN 02226978, Bangalore, July 29, 2026.]
+
+[[PAGE 12]]
+                                                     iValue Infosolutions Limited
+                                                     (Formerly known iValue Infosolutions Private Limited)
+                                                     No. 903/1/1, 19th Main Road, 4th Sector,
+                                                     H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                     CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                     www.ivaluegroup.com | info@ivalue.co.in
+                                                     Tel: 080-22221143
+
+
+                                        ANNEXURE – B
+
+The Disclosure pursuant to Regulation 30 of Listing Regulations read with SEBI Master circular
+          No. HO/49/14/14(7)2025 CFD-POD2/I/3762/2026 dated January 30, 2026
+
+Sr.     Particulars                      Details
+No.
+1       Reason for change viz.           M/s S G S K & Company, Chartered Accountants (FRN:
+        appointment,                     024539S) as Internal Auditors of the Company for the FY
+        reappointment, resignation,      2026-27
+        removal, death or otherwise
+2       Date of appointment /            Reappointed on July 29, 2026, for the FY 2026-27
+        reappointment / cessation (as
+        applicable)
+3       Term of appointment/ re       Re-appointment of Internal Auditor for a period one (1)
+        appointment                   year, commencing from April 1, 2026 to March 31, 2027
+4       Brief profile                 S G S K & Company, Chartered Accountants (“SG”), (FRN:
+                                      024539S) founded by Ganesh Swaminathan and S.K.
+                                      Subramanian in the year 2022. Subsequently, on account
+                                      of ICAI firm merger, the firm constitution date is October
+                                      2008, with a total firm experience of more than 15 years.
+                                      This firm has presently 2 partners and offices at
+                                      Bangalore and Coimbatore in South India.
+                                      The partners of the firm have experience and exposure in
+                                      National and International Auditing and Accounting and
+                                      completed this internship with Fraser & Ross (F&R), and
+                                      continued associated with F&R, and with one of the Big-
+                                      4 accounting firm prior to starting the professional
+                                      practice in the name of “S G S K & Company” [the firm].
+                                      The firm Leadership comprises of leading professionals
+                                      from Big-4 and MNCs which aggregates to more than 75
+                                      Years of professional service experience.
+                                      The Firm has been peer reviewed by the Institute of
+                                      Chartered Accountants of India and hold a valid peer
+                                      review certification vide number “020082” issued on
+                                      March 19, 2025, which is valid up to January 31, 2028.
+5       Disclosure of relationships Not Applicable
+        between directors (in case of
+        appointment of a director)
+
+[[PAGE 13]]
+                                                       iValue Infosolutions Limited
+                                                       (Formerly known iValue Infosolutions Private Limited)
+                                                       No. 903/1/1, 19th Main Road, 4th Sector,
+                                                       H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                       CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                       www.ivaluegroup.com | info@ivalue.co.in
+                                                       Tel: 080-22221143
+
+
+                                          ANNEXURE-C
+    Disclosures pursuant to Regulation 10(c) of the SEBI (Share Based Employee Benefits and
+                               Sweat Equity) Regulations, 2021:
+
+Sr. No    Particulars                                  Details
+1         Company name and address of Registered iValue Infosolutions Limited (Formerly iValue
+          Office:                                      Infosolutions Private Limited) No. 903/1/1,
+                                                       19th Main Road, 4th Sector, HSR Layout,
+                                                       Bangalore – 560102
+2         Name of the recognized Stock Exchanges on NSE and BSE
+          which the company’s shares are listed: NSE
+          and BSE
+3         Filing date of the statement referred in 11th November 2025
+          regulation 10(b) with the recognized Stock
+          Exchange:
+4         Filing Number, if any:                       BSE – 251069 and NSE – 51845
+5         Title of the Scheme pursuant to which iValue Employee Stock Option Plan 2024
+          shares are issued, if any:                   (“Scheme”)
+6         Kind of security to be listed:               Equity
+7         Par value of the shares:                     Rs. 2.00/-
+8         Date of issue of shares:                     July 29, 2026
+9         Number of shares issued:                     1,23,280
+10        Share Certificate No., if applicable:        Not Applicable
+11        Distinctive number of the share, if 54630381 to 54753660
+          applicable:
+12        ISIN Number of the shares if issued in INE056801025
+          Demat:
+13        Exercise price per share:                    Rs. 70 (Rupees Seventy)
+14        Premium per share:                           Rs. 68 (Rupees Sixty-Eight)
+15        Total issued shares after this issue:        5,46,30,380
+16        Total issued share capital after this issue: 5,47,53,660
+17        Details of any lock-in on the shares:        Not Applicable
+18        Date of expiry of lock-in:                   Not Applicable
+19        Whether shares are identical in all respects All equity shares allotted pursuant to
+          to existing shares? If not, when will they exercise of stock options shall rank pari-
+          become identical?                            passu with the existing equity shares of the
+                                                       Company in all respects.
+20        Details of listing fees, if payable:         Not Applicable
+
+[[PAGE 14]]
+                                                         iValue Infosolutions Limited
+                                                         (Formerly known iValue Infosolutions Private Limited)
+                                                         No. 903/1/1, 19th Main Road, 4th Sector,
+                                                         H.S.R. Layout, Bangalore – 560102, Karnataka, India
+                                                         CIN: L72200KA2008PLC045995|GST: 29AABCI8601B1ZW
+                                                         www.ivaluegroup.com | info@ivalue.co.in
+                                                         Tel: 080-22221143
+
+
+                                           ANNEXURE – D
+
+The Disclosure pursuant to Regulation 30 of Listing Regulations read with SEBI Master circular
+          No. HO/49/14/14(7)2025 CFD-POD2/I/3762/2026 dated January 30, 2026
+
+  Sr.    Particulars                        Details
+  No.
+   1     Reason     for  change     viz. Resignation of Mr. Shrikanth Manohar Shitole from the
+         appointment, reappointment, Position of Chief Executive Officer.
+         resignation, removal, death or
+                                         Mr. Shrikanth Manohar Shitole has tendered his
+         otherwise
+                                         resignation from the position of Chief Executive Officer
+                                         of the Company due to personal reasons, as stated in his
+                                         resignation letter.
+   2     Date     of   appointment   /      Resignation letter dated July 15, 2026, with effect from
+         reappointment / cessation (as      closing of business hours on July 31, 2026
+         applicable)
+   3     Term of appointment /              Not Applicable.
+         reappointment
+   4     Brief profile                      Not Applicable.
+   5     Disclosure of relationships        Not Applicable.
+         between directors (in case of
+         appointment of a director)
+
+Further Mr. Shrikanth Manohar Shitole has confirmed and stated in his resignation letter that there are
+no other reasons other than those which is provided in the resignation letter dated July 15, 2026.
+
+We enclose herewith a copy of the resignation letter submitted by Mr Shrikanth Manohar Shitole.
+
+[[PAGE 15]]
+[IMAGE-ONLY PAGE -- no extractable text layer; pdftotext -layout returned 14 characters (date fragment only). OCR not performed (tesseract not installed in this environment; per task instruction, flagged rather than OCR'd).]
+[PAGE CONTENT LABEL: Scanned resignation letter of Mr. Shrikant Manohar Shitole, Chief Executive Officer, addressed to the Board of Directors, dated 15th July 2026, tendering resignation effective close of business July 31, 2026, due to personal reasons (signed). This is the attachment referenced in Annexure-D on page 14.]

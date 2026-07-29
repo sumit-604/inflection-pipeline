@@ -6,6 +6,8 @@ Unit basis: Rs Lakh as printed (÷100 for Rs Crore). STANDALONE only (no subsidi
 Ledger reconciliation: 100% — every row in A2 Tables 1-9 was read at its cited extract line before judging.
 Lender variant applied (scheduled commercial bank): F4 repurposed to asset-quality/provisioning; F5/F12 emphasised.
 
+LOOP-BACK CORRECTION (A5 pass): A5 adversary found one coverage gap — two enumerated analytical-ratio rows (L281 Debt-Equity, L282 Total-Debts/Total-Assets) were read by A2 but not converted into a forensic finding, and together they disclose the TENOR of the +104% YoY borrowings jump. Closed here as **FN14** (MON-5 funding lane, cross-referenced to FN12). No F1-F17 status changes; the passing checks are untouched. GATE A3 re-satisfied below.
+
 ---
 
 ## FINDINGS TABLE
@@ -23,8 +25,9 @@ Lender variant applied (scheduled commercial bank): F4 repurposed to asset-quali
 | FN9 | MON-1 (cost-to-income) | P&L rows 1,2,4,5 | 241,247,249,250 | "5. Operating expenses (a) + (b) 16,106..." | AMBIGUOUS | LOAD-BEARING TEST. C/I = 16,106/(NII 17,762 + Other income 3,489 = 21,251) = **75.79%**. Lands BETWEEN the 75% (supports recovery) and 80% (Q4 one-off) tripwires. Improved YoY (Q1FY26 81.35%) but deteriorated hard from Q4FY26 55.66%. Q4's 55.66% was flattered by Rs 6,929 lakh other income; normalised run-rate sits ~76%. Neither thesis confirmed nor falsified — escalate to A4. |
 | FN10 | MON-1 (operating profit) | P&L rows 2,5a,7 | 247, 251, 255 | "7. Operating Profit(+)/Loss(-) before provisions...5,145 11,367 3,328 21,628" | FORWARD-SIGNAL | Pre-provision operating profit HALVED QoQ (11,367→5,145, −55%), driven by other income collapse (6,929→3,489, −50%, line 247) and employee cost jump (7,104→9,298, +31%, line 251). Q4 was the outlier, not the trend; other-income normalisation is the swing factor. |
 | FN11 | MON-6 (RoA) | Ratio 17(v) | 279 | "(v) Return on Assets (average) - (Annualized) 0.45% 0.84% 0.27% 0.53%" | FORWARD-SIGNAL | Annualised RoA 0.45% is BELOW the 0.6% tripwire AND below the FY26 0.53% level; down from Q4 0.84%. Tripwire breached. Consistent with provision-light PBT (FN1) plus tax normalisation (FN3) plus other-income drop (FN10). |
-| FN12 | MON-5 (funding) | BS L4/L1 | 357, 354 | "Borrowings 85,871 41,996 73,663" | FORWARD-SIGNAL | Borrowings +104% YoY (41,996→85,871) and +16.6% QoQ (73,663→85,871); Total-Debt/Total-Assets 3.88% vs 2.25% Jun-25 (line 282). Paid-up capital unchanged at 39,470 (line 354) — funded by borrowings, not equity. No QIP/rights (RoE-reset tripwire NOT triggered). Watch cost of funds and NIM. |
+| FN12 | MON-5 (funding) | BS L4/L1 | 357, 354 | "Borrowings 85,871 41,996 73,663" | FORWARD-SIGNAL | Borrowings +104% YoY (41,996→85,871) and +16.6% QoQ (73,663→85,871); Total-Debt/Total-Assets 3.88% vs 2.25% Jun-25 (line 282). Paid-up capital unchanged at 39,470 (line 354) — funded by borrowings, not equity. No QIP/rights (RoE-reset tripwire NOT triggered). Watch cost of funds and NIM. **Tenor of the jump is now resolved — see FN14: the increase is essentially all short-tenor (<1yr residual).** |
 | FN13 | MON-4 (advances) | BS A4 | 364 | "Advances 15,57,166 12,21,820 14,91,806" | AMBIGUOUS | Advances +27.4% YoY (above 20% tripwire — supports thesis) and +4.4% QoQ. But NO gold-loan / LTV / product-mix disclosure anywhere in this filing (NOT_FOUND). Growth composition unverifiable from the print — A4 question for the concall. |
+| FN14 | MON-5 (funding; sharpens FN12) | Ratios 17(vii)&(viii) + footnotes **/***; BS Borrowings | 281, 282, 223, 224, 357 | "(vii) Debt Equity Ratio (in times) ** 0.11 0.12 0.13 0.12" / "(viii) Total Debts to Total Assets*** 3.88% 3.47% 2.25% 3.47%" / "**Debi represents borrowings with residual maturity of more than one year." | FORWARD-SIGNAL | TENOR DECOMPOSITION of the +104% YoY borrowings jump. The two disclosed gauges move in OPPOSITE directions YoY: the >1yr-residual measure (Debt-Equity, footnote ** line 223) FELL 0.13→0.11 (−15%), while total-borrowings-to-assets (footnote *** = total borrowings, line 224) ROSE 2.25%→3.88% (+163 bps) — on Borrowings +104% YoY (41,996→85,871 lakh, i.e. +Rs 438.75 Cr, L357). Reconciling arithmetic: implied >1yr borrowings ≈ 0.11 × Net Worth 1,30,887 = ~Rs 144 Cr (Jun-26) vs 0.13 × 1,18,804 = ~Rs 154 Cr (Jun-25) — flat-to-slightly-DOWN; robust to using book equity as denominator (~Rs 166 Cr vs ~Rs 183 Cr). Therefore essentially the ENTIRE +Rs ~439 Cr YoY borrowings increase is SHORT-TENOR (<1yr residual maturity); short-tenor borrowings roughly ~2.7× YoY (~Rs 266 Cr → ~Rs 715 Cr). This is a DISCLOSED funding-durability / rollover / repricing risk sitting under FN12's funding-mix shift. It REFUTES any "tenor undisclosed" framing — the tenor IS disclosed, via these two ratios plus footnotes L223/L224. A4: cost-of-funds/NIM sensitivity and rollover-concentration question. |
 
 ---
 
@@ -45,12 +48,12 @@ Lender variant applied (scheduled commercial bank): F4 repurposed to asset-quali
 | F11 | FINDING | FN4 — regulatory Net Worth 1,30,887 vs book equity 1,51,321, 13.5% gap (>5%); IFR Rs 3,068 lakh reclassified into distributable reserves. Candidate reconciling items listed; verify at AR. |
 | F12 | FINDING | FN5 (Corporate/Wholesale fragile swing from FY26 loss to thin +175) and FN6 (Other Banking Operations revenue with nil allocated assets/liabilities). All segment liabilities positive and growing — no equity-funded-build or WC-unwind signal. |
 | F13 | PASS | Single agenda item — approval of Q1 FY27 results (cover letter lines 119-124; ledger agenda_items=1). No AR/Board's-Report approval, no AGM notice, no record date, no dividend, no director appointment/term, no capital-raise enabling resolution. Nothing to schedule for Role 6. Board meeting 12:00-12:45 (line 125). |
-| F14 | FINDING | FN7 (audit-status label inversion p4 vs p5 — resolved as a segment-header typo) and FN8 (Rs 1 lakh Segment-vs-BS total difference — confirmed rounding). Minor source typos also noted: interest-earned formula "(a)+(b)+(e)+(d)" (line 241) and segment-assets sub-label "(e) Corporate/Wholesale" (line 316) both mis-letter "(c)"→"(e)". Cumulative governance data point. |
+| F14 | FINDING | FN7 (audit-status label inversion p4 vs p5 — resolved as a segment-header typo) and FN8 (Rs 1 lakh Segment-vs-BS total difference — confirmed rounding). Minor source typos also noted: interest-earned formula "(a)+(b)+(e)+(d)" (line 241) and segment-assets sub-label "(e) Corporate/Wholesale" (line 316) both mis-letter "(c)"→"(e)"; ratio footnotes "Debi" (line 223) and "banic" (line 224) OCR-garbled. Cumulative governance data point. |
 | F15 | N.A. | No prior-quarter ledger supplied (PRIOR_LEDGER_PATH not provided); standalone single reviewed entity + 2 audit firms (ledger line 236). No consolidation list to diff. |
 | F16 | N.A. | Doctype is a results filing, not an investor presentation. |
 | F17 | N.A. | No concall transcript in scope this run. Notion monitoring-checklist tripwires are tested in the section below and fed forward to A4/A5 in lieu of a silence audit. |
 
-GATE A3: PASS — all 17 checks carry an explicit status; every FINDING cites a line number.
+GATE A3: PASS — all 17 checks carry an explicit status; every FINDING (FN1-FN14) cites a line number. The A5 loop-back gap is closed at FN14 (line-cited L281/L282/L223/L224/L357); no check left blank.
 
 ---
 
@@ -75,13 +78,13 @@ No open forward-dated commitment (no "will be", "expected by", "proposes to", "b
 2. **PCR ex technical write-off.** Computed 74.66% (Jun-26) vs 73.67% (Mar-26) — above the 53.63% Dec-25 low. Reported PCR incl. tech w/o = 92.77% (Note 12, line 464). Coverage improving (FN2). PASS the tripwire.
 3. **Net NPA% / GNPA%.** Net NPA 0.47% < 1.11% and GNPA 1.82% < 1.89% (lines 277-278). FLAG-CASH falsifier (PCR ex-w/o <53.63% AND net NPA >1.11%) NOT triggered. PASS.
 4. **Advances growth YoY.** +27.4% (line 364), above 20% (FN13). No gold-loan / LTV disclosure (NOT_FOUND) → AMBIGUOUS, A4 question on mix.
-5. **Capital raise / borrowings.** No QIP/rights — paid-up flat 39,470 (line 354); RoE-reset tripwire NOT triggered. Borrowings +104% YoY (FN12) → FORWARD-SIGNAL on funding mix / cost of funds.
+5. **Capital raise / borrowings.** No QIP/rights — paid-up flat 39,470 (line 354); RoE-reset tripwire NOT triggered. Borrowings +104% YoY (FN12) → FORWARD-SIGNAL on funding mix / cost of funds. **TENOR now decomposed (FN14): the >1yr-residual gauge (D/E, L281) FELL 0.13→0.11 while total-borrowings/assets (L282) ROSE 2.25%→3.88%, so essentially the entire +Rs ~439 Cr YoY increase is short-tenor (<1yr residual) — a disclosed rollover/repricing/funding-durability risk, tenor DISCLOSED via footnotes L223/L224.** → FORWARD-SIGNAL.
 6. **RoA annualised.** 0.45% (line 279) — BELOW the 0.6% tripwire and the FY26 0.53% level (FN11). Tripwire BREACHED → FORWARD-SIGNAL.
 7. **Provisions QoQ/YoY & technical write-off pool.** Provisions 1,591 vs 3,471 QoQ / 2,110 YoY — down on both (FN1) → FORWARD-SIGNAL. Technical write-off pool movement not separately disclosed (only the 92.77% PCR-incl-w/o point estimate, Note 12); absolute pool NOT_FOUND → A4 question.
 
 Standard forensic net (also run): 24 zero-standing lines cleared (F1); Board Outcome has no agenda item beyond results item 1 (F13); no open forward-commitment phrases in notes (F6); auditor limited-review conclusion unmodified with no EoM/qualification (F5, lines 211-219); STANDALONE-only confirmed (lines 37-42); Corporate/Wholesale segment profitability confirmed as a fragile turnaround from FY26 loss (FN5).
 
-A2-raised items — dispositions: (a) audit-label inversion RESOLVED as a page-5 segment-header typo, current quarter is Unaudited (FN7); (b) Note 10 read in full — negative-assurance disclosure: no loan transfers, no loan acquisitions, no co-lending arrangements during the quarter (lines 415-421); (c) Rs 1 lakh Segment-vs-BS total difference CONFIRMED as rounding in Mar-26 and Jun-25 columns (FN8); (d) closing signatory name NOT_FOUND / garbled (lines 474-477), role "Director & CEO" recoverable (line 477 ":ctor & CE0") — not reconstructed, no estimate.
+A2-raised items — dispositions: (a) audit-label inversion RESOLVED as a page-5 segment-header typo, current quarter is Unaudited (FN7); (b) Note 10 read in full — negative-assurance disclosure: no loan transfers, no loan acquisitions, no co-lending arrangements during the quarter (lines 415-421); (c) Rs 1 lakh Segment-vs-BS total difference CONFIRMED as rounding in Mar-26 and Jun-25 columns (FN8); (d) closing signatory name NOT_FOUND / garbled (lines 474-477), role "Director & CEO" recoverable (line 477 ":ctor & CE0") — not reconstructed, no estimate; (e) [A5 loop-back] analytical-ratio rows 17(vii)/(viii) (L281/L282) with footnotes ** and *** (L223/L224) CONVERTED to a forensic finding — FN14, funding-tenor decomposition, sharpening FN12.
 
 ---
 
@@ -124,9 +127,10 @@ findings:
   - {id: "FN9", check: "MON-1", line: "241,247,249,250", classification: "AMBIGUOUS", implication: "Load-bearing C/I 75.79% lands between 75% and 80% tripwires; recovery partial not clean"}
   - {id: "FN10", check: "MON-1", line: "247,251,255", classification: "FORWARD-SIGNAL", implication: "Pre-provision operating profit halved QoQ on other-income collapse and employee-cost jump"}
   - {id: "FN11", check: "MON-6", line: "279", classification: "FORWARD-SIGNAL", implication: "RoA 0.45% breaches the 0.6% tripwire and is below FY26 0.53%"}
-  - {id: "FN12", check: "MON-5", line: "357,354", classification: "FORWARD-SIGNAL", implication: "Borrowings +104% YoY with no equity raise; funding-mix shift, cost-of-funds/NIM watch"}
+  - {id: "FN12", check: "MON-5", line: "357,354", classification: "FORWARD-SIGNAL", implication: "Borrowings +104% YoY with no equity raise; funding-mix shift, cost-of-funds/NIM watch; tenor resolved by FN14"}
   - {id: "FN13", check: "MON-4", line: "364", classification: "AMBIGUOUS", implication: "Advances +27.4% YoY above tripwire but no gold-loan/LTV mix disclosure; composition unverifiable"}
-forward_signals: ["FN1", "FN3", "FN5", "FN10", "FN11", "FN12"]
+  - {id: "FN14", check: "MON-5", line: "281,282,223,224,357", classification: "FORWARD-SIGNAL", implication: "Debt-Equity (>1yr-residual) FELL 0.13->0.11 while Total-Debt/Assets ROSE 2.25%->3.88% YoY; so ~all of the +Rs 439 Cr / +104% YoY borrowings rise is SHORT-TENOR (<1yr) - disclosed rollover/repricing/funding-durability risk; sharpens FN12; refutes 'tenor undisclosed'"}
+forward_signals: ["FN1", "FN3", "FN5", "FN10", "FN11", "FN12", "FN14"]
 ambiguous: ["FN4", "FN9", "FN13"]
 commitments:
   - {commitment: "IFR discontinued; Rs 3,068L transferred to accumulated P&L balance", implied_date: "Q1 FY27", ref: "Note 5 line 385-388", status_word: "completed"}

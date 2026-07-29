@@ -1,0 +1,195 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: pressrelease_trualt_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 3
+formfeed_count: 3
+line_count: 168
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1
+ocr_pages: [1 (partial: letterhead header block and footer registered/corporate office block only - pdftotext text layer omitted these graphic-box elements; body text of page 1 extracted cleanly via pdftotext), 2 (partial: row labels "Profit Before Tax (PBT)" and "Profit After Tax (PAT)" in the financial highlights table - pdftotext extracted the numeric cells but not these two row-label cells; all other page 2 text extracted cleanly via pdftotext)]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-29
+=== END HEADER ===
+
+NOTE ON OCR SUPPLEMENTATION: Page 1 (1262 chars) and Page 2 (3874 chars) both
+exceeded the 100-character page threshold and did not trigger full-page OCR
+per the operating rules. However, targeted visual inspection (page rendered
+at 150-200 DPI) found that pdftotext's text layer silently dropped specific
+text-run objects: the letterhead contact/registration block and footer
+office-address block on page 1 (both rendered inside graphic boxes), and two
+row labels in the page 2 financial highlights table ("Profit Before Tax
+(PBT)" and "Profit After Tax (PAT)" - the numeric data in those rows WAS
+captured by pdftotext, only the leftmost label cell was missing). These
+specific gaps were closed via tesseract OCR on the rendered page images and
+are marked inline as [OCR ...] / [OCR-recovered label ...]. No other content
+gaps were found; all other text matches pdftotext -layout output verbatim.
+
+   1  [page 1]
+   2  [OCR page 1 - letterhead header block, not captured by pdftotext text layer]
+   3  TRUALT BIOENERGY LIMITED (FORMERLY KNOWN AS TRUALT ENERGY LIMITED)
+   4  080 - 23255000 | 23255600
+   5  contact@trualtbioenergy.com
+   6  www.trualtbioenergy.com
+   7  GSTIN - 29AAICT5347A1ZB
+   8  CIN - L15400KA2021PLC145978
+   9  [END OCR letterhead header block]
+  10  
+  11  July 28, 2026
+  12  
+  13  BSE Limited,                                   National Stock Exchange of India Limited,
+  14  Department of Corporate Services,              The Listing Department,
+  15  Phiroze Jeejeebhoy Towers,                     Exchange Plaza,
+  16  Dalal Street, Fort,                            Bandra Kurla Complex,
+  17  Mumbai-400001                                  Mumbai-400051
+  18  Scrip Code: 544545                             Symbol: TRUALT
+  19  
+  20  
+  21  Sub: Press Release pursuant to Regulation 30 of Securities and Exchange Board of India (Listing
+  22  Obligations and Disclosure Requirements) Regulations, 2015
+  23  
+  24  Dear Sir/Madam,
+  25  Please find enclosed the Press Release of the Company titled “TruAlt Bioenergy Delivers
+  26  Strong Q1 FY27 Performance; Total Income Nearly Doubles and PAT Rises Over 12x as
+  27  Dual-Feed Integration Strategy Drives Growth”
+  28  The Press Release will also be available on the Company’s website: www.trualtbioenergy.com
+  29  
+  30  We request you to kindly take the above on record.
+  31  
+  32  
+  33  Thanking you,
+  34  Yours faithfully,
+  35  For TruAlt Bioenergy Limited
+  36  MONU               Digitally signed by MONU
+  37                     KUMAR
+  38  
+  39  KUMAR              Date: 2026.07.28 21:26:57
+  40                     +05'30'
+  41  
+  42  Monu Kumar
+  43  Company Secretary and Compliance Officer
+  44  M. No.: A38853
+  45  
+  46  
+  47  
+  48  
+  49  Encl.: As above
+  50  
+  51  [OCR page 1 - footer block, not captured by pdftotext text layer]
+  52  Registered Office : Survey No. 166, Kulali Cross, Jamkhandi, Mudhol Road, Bagalkot, Karnataka - 587313, India
+  53  Corporate Office : #15th floor Unit No. N-1504, World Trade Center, Brigade Gateway Campus, #26/1, Dr Rajkumar Road, Malleswaram West, Bengaluru - 560 055
+  54  [END OCR footer block]
+  55  
+  56  [page 2]
+  57                                                                                               PRESS RELEASE
+  58  
+  59  
+  60  
+  61      TruAlt Bioenergy Delivers Strong Q1 FY27 Performance; Total Income Nearly Doubles
+  62            and PAT Rises Over 12x as Dual-Feed Integration Strategy Drives Growth
+  63  Bengaluru, July 28, 2026: TruAlt Bioenergy Limited, India's largest ethanol producer by installed capacity and the
+  64  country's only dedicated listed biofuels company, today announced a strong performance for the first quarter
+  65  ended June 30, 2026, marking its first year-on-year first-quarter results as a listed company. The performance
+  66  reflects the successful integration of the Company's dual-feed ethanol platform and the continued execution of its
+  67  integrated bioenergy strategy.
+  68  
+  69  Financial Highlights (Consolidated)
+  70  The ethanol business remained the primary growth driver during the quarter, generating:
+  71  
+  72      Particulars                     Q1 FY27 (₹ Cr.)      Q1 FY26 (₹ Cr.)        QoQ Growth        Growth Multiple
+  73  
+  74      Total Income                         641.41              326.63               96.37%                 2.0x
+  75  
+  76      EBITDA                               132.76               41.54              219.62%                 3.2x
+  77  
+  78      [OCR-recovered label, pdftotext did not extract this cell] Profit Before Tax (PBT)        78.45                 5.80             1,252.63%               13.5x
+  79  
+  80      [OCR-recovered label, pdftotext did not extract this cell] Profit After Tax (PAT)         59.27                 4.73             1,154.37%               12.5x
+  81  
+  82  Q1 FY27 marked the first full operational quarter following the successful completion of TruAlt's grain integration
+  83  programme, representing a significant milestone in the Company's transformation. Installed ethanol capacity
+  84  increased by 43% from 1,400 KLPD in Q1 FY26 to 2,000 KLPD in Q1 FY27, with approximately 1,300 KLPD (65%)
+  85  now operating on dual-feed technology. This strategic integration has expanded the Company's feedstock basket
+  86  from predominantly sugar derivatives to a combination of sugar derivatives and grains (unfit for human
+  87  consumption), enabling near year-round ethanol production while enhancing operational flexibility, feedstock
+  88  security and long-term production resilience
+  89  
+  90  Operational Highlights
+  91  
+  92  The diversified feedstock strategy has enhanced operational flexibility, strengthened feedstock security and
+  93  improved profitability, with grain-based operations delivering approximately 6% higher profitability than
+  94  sugar-based production. Current capacity utilisation of 60.57% provides significant headroom for future growth
+  95  without requiring substantial incremental capital expenditure.
+  96  
+  97  Strategic Progress Across Growth Businesses
+  98  ▪ During the quarter, TruAlt continued advancing its long-term growth initiatives across compressed biogas
+  99      (CBG), sustainable aviation fuel (SAF) and downstream fuel retailing.
+ 100  ▪     Construction continues across four CBG plants under the Company's joint venture with Sumitomo Corporation,
+ 101        while preparatory activities are progressing for six additional CBG plants under its partnership with GAIL
+ 102        (India) Limited.
+ 103  ▪     The Company also progressed its proposed 100 million litres per annum Sustainable Aviation Fuel (SAF)
+ 104        project in Andhra Pradesh, with engineering work, statutory approvals and stakeholder engagement
+ 105        advancing. The project has received a ₹150 crore grant under the PM JI-VAN Yojana, supporting its
+ 106        commercial viability.
+ 107  ▪     TruAlt currently operates seven retail fuel outlets, with further expansion planned under its phased strategy to
+ 108        establish a network of 100 outlets. Given the heightened geopolitical tensions in West Asia and the resulting
+ 109        volatility in crude oil markets, the Company adopted a cautious and calibrated approach to expansion,
+ 110        consciously deferring accelerated rollout while prioritising capital discipline, strategic locations and
+ 111        sustainable unit economics.
+ 112  
+ 113  [page 3]
+ 114                                                                                              PRESS RELEASE
+ 115  
+ 116  
+ 117  
+ 118  Commenting on the results, Mr. Vijay Nirani, Managing Director, TruAlt Bioenergy Limited, said: “Q1 FY27 marks
+ 119  an important milestone for TruAlt Bioenergy as we report our first year-on-year first-quarter performance as a listed
+ 120  company. I am delighted to share that the Company has delivered a strong financial and operational performance
+ 121  and we are now beginning to see the benefits of the strategic investments we have made over the past year,
+ 122  particularly our transition from a mono-feed ethanol manufacturing platform to a dual-feed platform. This
+ 123  transformation has given us the flexibility to produce ethanol from both sugar-based feedstocks and grains (unfit for
+ 124  human consumption), enabling near year-round operations while creating a more resilient, efficient and profitable
+ 125  business. Our current capacity utilisation stands at 60.57%, which gives us significant room to grow using our
+ 126  existing assets. Our immediate focus is on increasing our gross capacity utilisation, improving operational
+ 127  efficiencies and driving higher production from our existing manufacturing platform. We believe this will support
+ 128  sustainable growth, improve profitability and generate stronger returns over the coming years.
+ 129  
+ 130  We also made good progress across our other business verticals during the quarter. Our CBG projects with
+ 131  Sumitomo Corporation and GAIL (India) Limited continue to progress well, while our proposed Sustainable Aviation
+ 132  Fuel (SAF) project is moving forward steadily. In our downstream fuel retail business, we adopted a disciplined
+ 133  approach to expansion in view of the heightened geopolitical tensions in West Asia and the resulting volatility in
+ 134  crude oil markets, prioritising long-term value creation over rapid expansion. With a strong manufacturing base, a
+ 135  diversified portfolio and a supportive policy environment, we are confident about the opportunities ahead and
+ 136  remain committed to creating sustainable long-term value for our shareholders while contributing to India's energy
+ 137  security and clean energy transition."
+ 138  
+ 139  About TruAlt Bioenergy:
+ 140  TruAlt Bioenergy Limited is one of India’s largest biofuels companies and the country’s only dedicated bioenergy
+ 141  enterprise, combining deep agricultural linkages with large-scale industrial capabilities to deliver diversified and
+ 142  sustainable energy solutions. The company has played a pioneering role in India’s bioenergy transition and was
+ 143  among the early producers of Compressed Biogas (CBG) under the Government of India’s SATAT scheme
+ 144  launched in 2018. TruAlt Bioenergy is also the first biofuels company in India to attain Oil Marketing Company
+ 145  (OMC) status, setting a new benchmark for integrated participation across the energy value chain, including its
+ 146  entry into the public B2C space through fuel retailing. Further strengthening its leadership in next-generation and
+ 147  future fuels, the company is among the early movers in Sustainable Aviation Fuel (SAF) and is strategically
+ 148  positioned to establish one of the largest SAF production facilities in India, while actively exploring advanced
+ 149  biofuels and low-carbon energy solutions.
+ 150  
+ 151  Beyond fuels, TruAlt is building a comprehensive circular bioeconomy platform by transforming by-products into
+ 152  high-value outputs. The company produces Fermented Organic Manure (FOM) and Liquid Fermented Organic
+ 153  Manure (LFOM) to support sustainable agriculture and soil regeneration, while also capturing and utilising
+ 154  liquefied CO2 for industrial applications reinforcing its commitment to a zero-waste, future-ready energy
+ 155  ecosystem. For further information, visit: www.trualtbioenergy.com
+ 156  
+ 157  Media Contact:
+ 158  Shivaaneey Rai,
+ 159  TruAlt Bioenergy Limited
+ 160  Ph: +91 9545850823 / Email: avpcomms@trualtbioenergy.com
+ 161  
+ 162  Disclaimer : Certain statements in this document may constitute forward-looking statements. These statements are
+ 163  subject to various risks and uncertainties, including, but not limited to, government actions, political and economic
+ 164  developments, technological changes, market conditions, regulatory changes, and other factors that may cause
+ 165  actual results to differ materially from those expressed or implied by such statements. TruAlt Bioenergy Limited and
+ 166  its subsidiaries undertake no obligation to update or revise any forward-looking statements to reflect events or
+ 167  circumstances arising after the date of this document, except as required by applicable law or applicable regulatory
+ 168  requirements.

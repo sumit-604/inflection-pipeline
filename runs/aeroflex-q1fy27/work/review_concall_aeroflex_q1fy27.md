@@ -10,6 +10,8 @@ Notion Decision Status framed against: **WATCHLIST / HOLD-NOT-ADD** (verified fr
 
 **Headline: Concall confirms operations, guidance softens, silences persist.**
 
+**REVISION NOTE (2026-07-29, post-A5 first pass):** the two new FY27 catalysts (international skid revenue, fire-hose assembly) are re-tagged **concentration-additive, not diversifying**, throughout. Transcript-confirmed basis: the fire-hose assembly routes to "the same customer which probably our largest customer is", MD answered "yeah" [T08, extract l.90-91]; the international-skid customer identity was declined as "slightly proprietary" [T08, extract l.87], so it cannot be assumed to be a different customer. Both new catalysts therefore reinforce the single-customer / India-only-exclusivity risk pillar rather than reduce it. No number, verdict, or grade changes as a result (the concentration overhang was already a live flag); the catalysts remain real revenue upside, now correctly framed.
+
 ---
 
 ## LEDGER-RECONCILIATION PREAMBLE (contractual, stated before Step 1)
@@ -26,7 +28,7 @@ Notion Decision Status framed against: **WATCHLIST / HOLD-NOT-ADD** (verified fr
 
 ## STEP 0 — PRE-FLIGHT
 
-**0A. Notion baseline (from live snapshot).** Decision Status WATCHLIST / HOLD-NOT-ADD. Entry zone Rs 82 to 103 (MoS Rs 82). CMP Rs 279 (investment-level AVOID; the separate 4 percent momentum trade at avg Rs 230 is chandelier-governed and not converted to a value position on this call). Sole thesis-broken trigger: ROCE below 18 percent (FY26 MD&A 20.40 percent, borderline). Prior Management Grade B / B+. Three red silences to watch: GST/IT contingent tax, US M&A pillar, ROCE trajectory. FY27 guidance from the Q4 call: 35 percent revenue growth, 23 percent EBITDA margin, skids 20 to 22 percent of revenue, Rs 325 Cr peak skid revenue cap, 60 percent utilisation on 15,000 skids by roughly Mar-27.
+**0A. Notion baseline (from live snapshot).** Decision Status WATCHLIST / HOLD-NOT-ADD. Entry zone Rs 82 to 103 (MoS Rs 82). CMP Rs 279 (investment-level AVOID; the separate 4 percent momentum trade at avg Rs 230 is chandelier-governed and not converted to a value position on this call). Sole thesis-broken trigger: ROCE below 18 percent (FY26 MD&A 20.40 percent, borderline). Prior Management Grade B / B+. Three red silences to watch: GST/IT contingent tax, US M&A pillar, ROCE trajectory. Core flagged risk pillar: single-customer liquid-cooling exposure, exclusive supplier to one unnamed global US tech corp, exclusivity INDIA ONLY (not global) per the Q4 call; strategic premium already revised down (+1x to +0.5x) for it. FY27 guidance from the Q4 call: 35 percent revenue growth, 23 percent EBITDA margin, skids 20 to 22 percent of revenue, Rs 325 Cr peak skid revenue cap, 60 percent utilisation on 15,000 skids by roughly Mar-27.
 
 **0B. Participants and yellow flags.**
 
@@ -73,8 +75,8 @@ Yellow flag (CC-F17-03): **no finance-officer voice, second consecutive quarter*
 | 20 | Q1 skid volume 1,040 units (spoken "140"); Rs 32.4 Cr value | Backward | YES | T11 |
 | 21 | Skid ASP variance is per-floor design, not discounting; costed individually (Rs 1 to 5 lakh/skid); margin-neutral | Strategic | Partial (examples, no exact skid margin) | T06 |
 | 22 | Skid margin = blended company average; exact figure declined "on public forum" | Financial | NO (declined) | T08 |
-| 23 | International skid revenue "definitely" this financial year; customer withheld; design differs | Forward Guidance | Partial (committed, unquantified) | T08 |
-| 24 | Fire-hose assembly commercialisation end-Q2/start-Q3 FY27, international-only; realisation size declined | Forward Guidance | Partial (dated, unquantified) | T07 |
+| 23 | International skid revenue "definitely" this financial year; **customer identity declined as "slightly proprietary" (l.87), so not confirmed as a new customer**; design differs | Forward Guidance | Partial (committed, unquantified, customer withheld) | T08 |
+| 24 | Fire-hose assembly commercialisation end-Q2/start-Q3 FY27, international-only; realisation size declined; **confirmed for "the same customer which probably our largest customer is" (l.90-91)** | Forward Guidance | Partial (dated, unquantified, same anchor customer) | T07, T08 |
 | 25 | 25% SFN share of revenue by year-end: deferred, "judge us at the end of the year" | Forward Guidance | Softened/deferred | T07 |
 | 26 | Company blended EBITDA margin target 25% "in the next few years", "on track" | Forward Guidance | Partial (aspirational band, no date) | T05, T09 |
 | 27 | International competitors named: Senior plc and Parker Hannifin (also local US/Europe players) | Strategic | Named | T04 |
@@ -82,7 +84,7 @@ Yellow flag (CC-F17-03): **no finance-officer voice, second consecutive quarter*
 | 29 | Dispatch visibility ~2 months tentative + a Q3 project template; end customer is "customer of our customer" | Operational | Partial | T08, T11 |
 | 30 | Hyd-Air internal-use only (not supplying SFN components or external DC makers) | Strategic | Qualitative | T15 |
 
-**Four diagnostics.** (1) Quantified share of forward statements is moderate: roughly half the forward items carry a number or a date (capex 48/54, util 80% FY28, 750/month Q4, hose to 20mm by Q3, fire-hose margin 23 to 26%, peak 650 to 675, ~40 skids/MW), while the thesis-critical forward items (skid margin, international skid quantum and customer, 25% SFN share, fire-hose realisation) were declined or deferred. (2) New vs reaffirmed: reaffirmed = 15k-capacity plan, 25% company EBITDA target, Q4 750/month exit; new this call = capex envelope 48/54, ~40 skids/MW, peak hose+assembly ceiling 650 to 675, product-margin bands, fire-hose margin band, named competitors, international-skid-this-FY commitment. (3) Quietly dropped: none dropped outright, but the 25% SFN-share year-end target was softened (see Step 3 and CC-F16-01). (4) Internal contradiction: the spoken EBITDA 33.12 vs the spoken 23.04 percent margin (CC-F14-01), reconciled to deck 33.49; no other opening contradiction.
+**Four diagnostics.** (1) Quantified share of forward statements is moderate: roughly half the forward items carry a number or a date (capex 48/54, util 80% FY28, 750/month Q4, hose to 20mm by Q3, fire-hose margin 23-26%, peak 650-675, ~40 skids/MW), while the thesis-critical forward items (skid margin, international skid quantum and customer, 25% SFN share, fire-hose realisation) were declined or deferred. (2) New vs reaffirmed: reaffirmed = 15k-capacity plan, 25% company EBITDA target, Q4 750/month exit; new this call = capex envelope 48/54, ~40 skids/MW, peak hose+assembly ceiling 650-675, product-margin bands, fire-hose margin band, named competitors, international-skid-this-FY commitment. Both new revenue catalysts (international skid, fire-hose) attach to the existing anchor customer or an undisclosed customer, so they are new revenue but not new-customer diversification (see Step 5B, Step 8). (3) Quietly dropped: none dropped outright, but the 25% SFN-share year-end target was softened (see Step 3 and CC-F16-01). (4) Internal contradiction: the spoken EBITDA 33.12 vs the spoken 23.04 percent margin (CC-F14-01), reconciled to deck 33.49; no other opening contradiction.
 
 ---
 
@@ -100,12 +102,12 @@ Yellow flag (CC-F17-03): **no finance-officer voice, second consecutive quarter*
 | FY28 optimal skid utilisation | ~80% full-year | not previously specified | NEW | MEDIUM | T09 |
 | Capex envelope | Skid Rs 48 Cr + hose Rs 54 Cr total; remaining completes FY27 | previously ND (Role 4 flag) | NEW (quantified) | HIGH | T09 |
 | 25% SFN share of revenue | Deferred: "talk about this at the end of the year... quarter on quarter things change" | 25% SFN share by year-end FY27 | **SOFTENED / deferred** | LOW | T07 |
-| International skid revenue | "definitely... in this financial year"; customer/quantum withheld | flagged intent on prior call | NEW commitment (unquantified) | MEDIUM | T08 |
-| Fire-hose assembly | Commercialise end-Q2/start-Q3, international-only, 23 to 26% margin; realisation declined | in development | NEW near-dated catalyst (unquantified size) | MEDIUM | T07, T12 |
+| International skid revenue | "definitely... in this financial year"; **customer withheld as "slightly proprietary" (l.87), not confirmed as a new customer**; quantum withheld | NEW commitment, **concentration-additive** (unquantified) | MEDIUM | T08 |
+| Fire-hose assembly | Commercialise end-Q2/start-Q3, international-only, 23 to 26% margin; realisation declined; **confirmed same largest anchor customer (l.90-91)** | NEW near-dated catalyst, **concentration-additive** (unquantified size) | MEDIUM | T07, T08, T12 |
 | Working capital / net debt | Not addressed | Not addressed | WITHDRAWN/absent | n/a (no CFO) | none |
 | Dividend / payout | Not addressed | Not addressed | absent | n/a | none |
 
-**Diagnostics.** Management did not widen or tighten a fresh full-year headline; it let Q1 outperformance (+72.4 percent) speak and reaffirmed the annual frame. Two soft spots dominate: the **15,000-capacity timing slipped to a supplier-dependent Oct to Nov window** [T10] (still nominally Q3 but now caveated by machine-supplier delays), and the **25 percent SFN-share year-end target was softened** [T07] despite Q1 already at 22 to 23 percent without full capacity, which is the single most consequential guidance change in the call. Arithmetic reconciles: 32.4 Cr / 1,040 units = Rs 3,11,538 ASP, matching the deck 3,11,459; ~40 skids/MW against the 9 GW India pipeline frames a large volume TAM but does not translate to a committed order number. Guidance analysts pressed for and did not get: exact skid margin [T08], international skid quantum and customer [T08], Q2 skid units [T11], fire-hose realisation [T07].
+**Diagnostics.** Management did not widen or tighten a fresh full-year headline; it let Q1 outperformance (+72.4 percent) speak and reaffirmed the annual frame. Two soft spots dominate: the **15,000-capacity timing slipped to a supplier-dependent Oct to Nov window** [T10] (still nominally Q3 but now caveated by machine-supplier delays), and the **25 percent SFN-share year-end target was softened** [T07] despite Q1 already at 22 to 23 percent without full capacity, which is the single most consequential guidance change in the call. A third structural point: the two NEW revenue catalysts both attach to the existing single anchor (fire-hose confirmed same largest customer [T08 l.90-91]) or an undisclosed customer (international skid, identity "proprietary" [T08 l.87]), so guidance growth is deepening on the same customer base, not broadening it. Arithmetic reconciles: 32.4 Cr / 1,040 units = Rs 3,11,538 ASP, matching the deck 3,11,459; ~40 skids/MW against the 9 GW India pipeline frames a large volume TAM but does not translate to a committed order number. Guidance analysts pressed for and did not get: exact skid margin [T08], international skid quantum and customer [T08], Q2 skid units [T11], fire-hose realisation [T07].
 
 ---
 
@@ -152,7 +154,7 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 | T05 | Raman, Sequent | Utilisation, peak revenue, margin bands, Hyd-Air/bellows | Financial/Operational | A (65-66% util, 650-675 Cr, 16-20%/22-26% bands, 7/3 Cr) |
 | T06 | Shobi Gupta, Trinetra | Skid ASP decline driver; R&D | Financial | B/C (design rationale credible; exact skid margin not given) |
 | T07 | Prem, Astute | Fire-hose update; 15 products; 25% SFN reiteration | Forward Guidance | C/D on SFN-share (deferred); B on fire-hose timing |
-| T08 | unnamed, "data investments" | Beyond-15k capex; international skid; skid margin | Forward/Financial | C (int'l skid committed but customer/quantum/margin declined) |
+| T08 | unnamed, "data investments" | Beyond-15k capex; international skid; same-customer confirm; skid margin | Forward/Financial | C (int'l skid committed but customer/quantum/margin declined; fire-hose confirmed same anchor) |
 | T09 | Deep, Sapphire | Skid capex, hose capex, FY28 util, margin accretion | Operational/Financial | A on capex (48/54) and util (80% FY28); C on margin accretion |
 | T10 | Nirvana Laha, Badrinath | 15k month, Q4 exit, repurposing, QoQ deleverage | Operational/Financial | B (Oct-Nov hedged; 750/month intact; deleverage explained qualitatively) |
 | T11 | Paresh, Lucky Investments | Order book, Q1 volume, Q2 schedule | Customer/Order | C (visibility structure given; Q2 units declined to one-to-one) |
@@ -176,7 +178,7 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 
 **Exchange 2 — 15,000 capacity timing and Q4 exit run-rate (T10, Nirvana Laha, Badrinath).** Q: which month does the 15k come, and is the Q4 750-skids/month exit intact? A: "an expected Q3... anywhere between October to November... it depends on our machine supplier because from where we are facing certain delays from their end"; on Q4, "as of now the way things are planning up we feel that that is intact." What management said: the capacity milestone is now supplier-dependent and can be Oct or Nov; the Q4 exit run-rate is reaffirmed. What management did NOT say: a firm commissioning date or the supplier's committed delivery schedule. Thesis implication: the 15k milestone that underpins the FY28 80-percent-utilisation and ROCE-recovery path is now caveated (CC-F6-01); a slip from Q3 into H2 compresses the FY28 full-year-utilisation assumption. Follow-up: if the machine supplier slips into December, does the Q4 exit run-rate of 750/month still hold, and what is the fallback?
 
-**Exchange 3 — 25 percent SFN-share year-end target, softened (T07, Prem, Astute).** Q: you guided 25 percent of revenue from SFN by year-end, you are already at 22 percent in Q1 without full capacity, do you reiterate? A: "I would talk about this at the end of the year because it is the plan for the end of the year... quarter on quarter things change... we work on a yearly basis." What management said: deferral, neither reaffirming nor withdrawing a stated target. What management did NOT say: yes, we reiterate 25 percent. Thesis implication: softening a target that Q1 data suggests is comfortably reachable is a mild negative tone shift and a credibility watch item (CC-F16-01); either management is sandbagging (bull read) or sees a second-half mix/timing headwind it will not name (bear read). Follow-up: what specifically would cause SFN share to finish below 25 percent given Q1 is already at 22 to 23 percent on partial capacity?
+**Exchange 3 — 25 percent SFN-share year-end target, softened, and the same-customer catalyst concentration (T07 and T08).** Q (T07, Prem, Astute): you guided 25 percent of revenue from SFN by year-end, you are already at 22 percent in Q1 without full capacity, do you reiterate? A: "I would talk about this at the end of the year because it is the plan for the end of the year... quarter on quarter things change... we work on a yearly basis." Adjacent (T08 l.90-91): the analyst asked whether the fire-hose assembly is "for the same customer which probably our largest customer is" and the MD answered "yeah"; the international-skid customer was declined as "slightly proprietary" (l.87). What management said: deferral of a target it could plausibly beat, plus confirmation that the two new catalysts route through the same largest anchor (or an undisclosed customer). What management did NOT say: yes, we reiterate 25 percent; and who the international-skid customer is. Thesis implication: softening a reachable target is a mild negative tone shift (CC-F16-01), and the two "new" catalysts deepen rather than diversify the single-customer concentration that is the thesis's core flagged risk. Follow-up: what specifically would cause SFN share to finish below 25 percent, and what share of FY27 and FY28 revenue would flow through the single largest customer once fire-hose and international skid ramp?
 
 ---
 
@@ -186,7 +188,7 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 
 | # | Role 4 question (abridged) | Answer status | What was said | Turn |
 |---|---|---|---|---|
-| 1 | Firm customer visibility behind 9k/15k capacity | PARTIAL | Capacity sized on customer projections; ~2-month tentative dispatch + Q3 project template; no named/committed program count, no order cover | T08, T11 |
+| 1 | Firm customer visibility behind 9k/15k capacity | PARTIAL | Capacity sized on customer projections; ~2-month tentative dispatch + Q3 project template; no named/committed program count, no order cover; new catalysts route to the SAME anchor (fire-hose confirmed l.90-91) or an undisclosed customer (l.87) | T08, T11 |
 | 2 | Skid ASP driver: mix vs discounting vs scale; where it settles | PARTIAL (via T06) | Per-floor design, Rs 1 to 5 lakh/skid, margin-neutral by assertion; exact skid margin declined; "where it settles" not given | T06, T08 |
 | 3 | Q2 FY27 skid-unit expectation + FY27 exit utilisation | PARTIAL | Q2 units explicitly declined to one-to-one [T11]; exit 60 to 65% / 750-per-month reaffirmed [T10]; FY28 80% [T09] | T10, T11 |
 | 4 | ROCE definition reconciliation (deck 20.4% vs MD&A 28.43%) | UNANSWERED (red silence) | Not addressed; zero ROCE mentions | none |
@@ -211,11 +213,13 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 | ~40 skids per 1 MW liquid-cooled load | Sizing input | YES | Lets analysts translate the 9 GW India pipeline into a volume TAM proxy | T14 |
 | Peak hose + assembly revenue Rs 650 to 675 Cr | Core-business ceiling | YES | Frames the non-skid base-business cap | T05 |
 | Product-margin bands (hose 16-20%, assy 22-26%, fire-hose 23-26%) | Margin structure | YES | First explicit unit-economics disclosure | T05, T12 |
-| International skid revenue committed this FY | Forward catalyst | YES | New FY27 revenue leg; customer/quantum withheld | T08 |
-| Fire-hose assembly commercialisation end-Q2/start-Q3, intl-only | Forward catalyst | YES | Near-dated FY27 catalyst; size declined | T07 |
+| International skid revenue committed this FY | Forward catalyst (**concentration-additive**) | YES | New FY27 revenue leg, BUT customer withheld as "proprietary" (l.87), so NOT confirmed as a new/diversifying customer; may be the same anchor. Reinforces, does not reduce, single-customer risk | T08 |
+| Fire-hose assembly commercialisation end-Q2/start-Q3, intl-only, 23-26% margin | Forward catalyst (**concentration-additive**) | YES | New FY27 catalyst, BUT confirmed for "the same customer which probably our largest customer is" (MD: "yeah", l.90-91). Deepens the single-customer / India-only-exclusivity risk pillar | T07, T08, T12 |
 | Senior plc and Parker Hannifin named as international skid competitors | Competitive | YES | Competitive frame for the moat question | T04 |
 | West Asia logistics-cost spike as a QoQ margin driver | Cost | YES (transient) | Partial explanation for the QoQ 80 bps margin softening | T13 |
 | Hyd-Air ~Rs 7 Cr, metal bellows ~Rs 3 Cr; Hyd-Air internal-use only | Segment detail | NO (small) | Hyd-Air not supplying SFN; used in hose assemblies | T05, T15 |
+
+**Concentration read on the two new catalysts (explicit).** Both new revenue legs concentrate on the existing anchor rather than broaden the customer base: the fire-hose assembly is confirmed for the same largest customer (T08 l.90-91), and the international-skid customer identity was declined as "slightly proprietary" (T08 l.87), so it cannot be assumed to be a different customer. Net: the catalysts are genuine revenue upside AND they are concentration-additive, reinforcing the thesis's core single-customer / India-only-exclusivity flagged risk. They do not move the Strategic Premium (still +0.5x; see Step 8D) and do not warrant crediting diversification.
 
 ### 5C. What was NOT discussed (silence audit)
 
@@ -225,6 +229,7 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 | Contingent IT Rs 41.76 Cr + GST Rs 8.56 Cr | Two red silences; CIT(A) appeal live | AMBER (red silence) |
 | US M&A / QIP pillar | Prior thesis pillar (dropped ~Rs 400 Cr US QIP) | AMBER (red silence) |
 | Cash flow / working capital / net debt | Capex-heavy name, no CFO on call | AMBER (no finance-officer voice) |
+| Customer diversification / concentration quantum | Core flagged risk; two new catalysts land on the same anchor | AMBER (concentration deepening, unquantified) |
 | Italica Global FZC FY27 RPT cap | Notion's single cleanest governance metric | Neutral (lives in AGM notice, not a call topic) |
 
 ---
@@ -239,7 +244,7 @@ Too few scored calls for a delivery pattern. Two behavioural patterns are alread
 | 15,000 capacity timing | Q3 / Mar-27 | Oct to Nov, supplier-dependent | DOWNGRADED (hedged) |
 | Company 25% EBITDA margin | Aspirational | Reiterated, "on track" | MAINTAINED |
 | Q4 750-skids/month exit | Guided | "that is intact" | MAINTAINED |
-| International skid | Intent | "definitely this financial year" | UPGRADED (firmer commitment) |
+| International skid | Intent | "definitely this financial year", customer withheld | UPGRADED commitment / MAINTAINED concentration |
 | Skid margin | Not quantified | Still declined, "public forum" | MAINTAINED (guarded) |
 
 ### 6B. Specificity score
@@ -278,7 +283,7 @@ All three persist untouched for a second consecutive call. Per Role 5, sustained
 
 Reasons to hold at B (not downgrade to C): headline P&L delivered at or above every disclosed FY27 guide metric; promoter-MD answered all 14 turns; genuinely new hard disclosures (capex 48/54, product-margin bands, ~40 skids/MW, peak 650 to 675); voluntary continuation of the skid volume and ASP disclosure including the ASP decline; no outright DROPPED commitment (no automatic downgrade).
 
-Reasons the "+" is removed (B, not B+): the 25 percent SFN-share year-end target was softened without a stated reason [T07]; the 15k capacity timing slipped to a supplier-dependent window [T10]; the three red silences persist for a second consecutive call [CC-F17-01]; no CFO or second finance voice for a second consecutive quarter on a cash-sensitive, capex-heavy name [CC-F17-03]; and the "public forum" / "judge us annually" deflection clusters precisely on the thesis-critical unknowns (skid margin, customer, Q2 units). Role 1 track record input: **Good** (B mapping). Because the grade is B, the Role 1 Bull row may use management guidance at face value (Master v3.3 permits Bull face-value only at grade A or B), a linkage noted for the next FTTCP/Role 1 cycle.
+Reasons the "+" is removed (B, not B+): the 25 percent SFN-share year-end target was softened without a stated reason [T07]; the 15k capacity timing slipped to a supplier-dependent window [T10]; the two new revenue catalysts are concentration-additive on the same anchor (fire-hose confirmed same largest customer, l.90-91; international-skid customer withheld, l.87), deepening the core single-customer risk rather than diversifying it; the three red silences persist for a second consecutive call [CC-F17-01]; no CFO or second finance voice for a second consecutive quarter on a cash-sensitive, capex-heavy name [CC-F17-03]; and the "public forum" / "judge us annually" deflection clusters precisely on the thesis-critical unknowns (skid margin, customer, Q2 units). Role 1 track record input: **Good** (B mapping). Because the grade is B, the Role 1 Bull row may use management guidance at face value (Master v3.3 permits Bull face-value only at grade A or B), a linkage noted for the next FTTCP/Role 1 cycle.
 
 ---
 
@@ -292,7 +297,7 @@ Reasons the "+" is removed (B, not B+): the 25 percent SFN-share year-end target
 | India DC demand | ON TRACK | Domestic-led growth; ~40 skids/MW sizing; single intermediary customer, ~2-month visibility | ON TRACK (concentration watch) |
 | Core hoses/assemblies | ON TRACK | +41% YoY; peak ceiling 650 to 675 Cr; margin bands disclosed | ON TRACK (strengthened detail) |
 | Margin expansion | ON TRACK | 23.04% at guide; QoQ 80 bps softer on team build-out + West Asia logistics | ON TRACK |
-| International skid + fire-hose | not previously a live trigger | Both committed for FY27 (intl skid this FY; fire-hose end-Q2/start-Q3, 23-26% margin) | NEW (unquantified catalysts) |
+| International skid + fire-hose | not previously live | Both committed for FY27 (intl skid this FY; fire-hose end-Q2/start-Q3, 23-26% margin). **Fire-hose confirmed same largest customer (l.90-91); intl-skid customer withheld (l.87)** | NEW but **concentration-additive** (real upside; deepens single-customer risk, not diversifying) |
 | ROCE recovery post-capex | DELAYED / WEAKENED | No ROCE disclosed; capex 48/54 confirmed; opex deleverage ~300 bps QoQ | DELAYED / WEAKENED (unchanged) |
 
 ### 8B. Thesis-broken trigger re-test
@@ -305,15 +310,17 @@ No pre-committed trigger fired. The concall does not resolve the ROCE definition
 
 ### 8C. Net thesis balance (symmetric)
 
-**Positives from the call:** skid-ASP concern largely explained as design mix and asserted margin-neutral (partially resolves A3-F07); operations candid and headline delivery at or above guide; capex envelope quantified (closes a Role 4 ND); two new FY27 catalysts (international skid, fire-hose at 23 to 26 percent margin); Q4 750-skids/month exit reaffirmed; promoter-MD engaged throughout; peak core-business ceiling and per-MW content give real sizing inputs.
+**Positives from the call:** skid-ASP concern largely explained as design mix and asserted margin-neutral (partially resolves A3-F07); operations candid and headline delivery at or above guide; capex envelope quantified (closes a Role 4 ND); two new FY27 revenue catalysts (international skid, fire-hose at 23 to 26 percent margin) that are real incremental revenue; Q4 750-skids/month exit reaffirmed; promoter-MD engaged throughout; peak core-business ceiling and per-MW content give real sizing inputs.
 
-**Negatives from the call:** 25 percent SFN-share year-end target softened without reason; 15k milestone slipped to a supplier-dependent window; all three red silences persist for a second consecutive call; the order book is a single intermediary customer with only ~2-month visibility; no CFO for a second consecutive quarter; capex-absorption remains a claim ("absorbed in next few quarters") with no cash-flow evidence until H1; skid margin, international quantum, customer identity, and Q2 units all declined; the "strong cash conversion" opening claim is cash-profit, not CFO, and is unverifiable this quarter.
+**Negatives from the call:** 25 percent SFN-share year-end target softened without reason; 15k milestone slipped to a supplier-dependent window; **both new catalysts are concentration-additive, not diversifying** (fire-hose confirmed same largest customer, T08 l.90-91; international-skid customer withheld as "proprietary", T08 l.87), so they deepen the thesis's core single-customer / India-only-exclusivity flagged risk; all three red silences persist for a second consecutive call; the order book is a single intermediary customer with only ~2-month visibility; no CFO for a second consecutive quarter; capex-absorption remains a claim ("absorbed in next few quarters") with no cash-flow evidence until H1; skid margin, international quantum, customer identity, and Q2 units all declined; the "strong cash conversion" opening claim is cash-profit, not CFO, and is unverifiable this quarter.
 
-**Net thesis impact: MAINTAINED.** The operational thesis is intact and on the guided trajectory; the concall adds two forward catalysts but does not clear the cash, ROCE, or governance-silence overhang and softens one prior target. It does not justify raising the entry zone.
+**Single-cleanest-metric caveat (concentration).** The two new catalysts must be tracked as concentration events, not diversification: the cleanest next-quarter metric for the concentration risk is customer-mix disclosure (share of revenue through the single largest customer once fire-hose and international skid ramp), read jointly with the Q2 skid units. Crediting these catalysts to the bull case without this caveat would overstate diversification that the transcript explicitly denies.
+
+**Net thesis impact: MAINTAINED.** The operational thesis is intact and on the guided trajectory; the concall adds two forward catalysts (correctly framed as concentration-additive) but does not clear the cash, ROCE, or governance-silence overhang and softens one prior target. It does not justify raising the entry zone.
 
 ### 8D. Four-pillar inputs (concall adjustments)
 
-No pillar input moves numerically this cycle. ROCE forward verdict (Pillar 1, FTTCP sole authority) cannot be updated: no ROCE was disclosed. Cash multiplier (Pillar 2) stays INDETERMINATE: no CFO on the call, no Q1 cash flow. Growth/EM (Pillar 3) gains qualitative support (international skid, fire-hose, per-MW sizing) but no scored change. Strategic premium stays +0.5x (India-only anchor still front-and-centre, customer still unnamed). No fair-value recompute is warranted; destination PE 22 to 26x (Yr3) stands. FTTCP/Role 1 re-run remains deferred to a call/AR that actually prints a ROCE.
+No pillar input moves numerically this cycle. ROCE forward verdict (Pillar 1, FTTCP sole authority) cannot be updated: no ROCE was disclosed. Cash multiplier (Pillar 2) stays INDETERMINATE: no CFO on the call, no Q1 cash flow. Growth/EM (Pillar 3) gains qualitative support (international skid, fire-hose, per-MW sizing) but no scored change. **Strategic premium stays +0.5x and is NOT increased**: the India-only single-customer anchor is still front-and-centre, the customer is still unnamed, and the two new catalysts concentrate ON that same anchor (fire-hose confirmed, l.90-91) or an undisclosed customer (l.87) rather than broadening the base, so there is no diversification credit to add. No fair-value recompute is warranted; destination PE 22 to 26x (Yr3) stands. FTTCP/Role 1 re-run remains deferred to a call/AR that actually prints a ROCE.
 
 ---
 
@@ -324,33 +331,34 @@ Every unresolved A3 FORWARD-SIGNAL and AMBIGUOUS finding, plus the still-open Ro
 | # | Question | Why it matters | From finding |
 |---|---|---|---|
 | 1 | Exact skid gross/unit margin at the current Rs 3.11 lakh ASP, and the volume-by-design mix, to verify the "margin-neutral" assertion | Confirms or kills the skid-margin bear case; only PARTIALLY resolved on this call | CC-F16-02, CC-F7-01 |
-| 2 (NEW) | International skid revenue this FY: which customer, what quantum, does it need capex beyond the 15,000, and is it the same entity as the India anchor? | New FY27 commitment is un-evidenced; customer and quantum declined | CC-F6-02 |
-| 3 (NEW) | Fire-hose assembly: realisation/revenue expected in FY27 once commercialised, and confirmation of the end-Q2/start-Q3 date | Near-dated catalyst with size declined | CC-F6-03 |
-| 4 | H1 FY27 CFO/PAT, receivable and inventory days, and CWIP-to-PPE: is the ~300 bps QoQ opex deleverage being absorbed as claimed? | Capex-absorption is a claim with no cash-flow evidence; first FY27 CFO read | CC-F6-04 |
-| 5 | ROCE on a single pinned definition (reconcile deck 20.4% vs MD&A 28.43%), and the quarter in which returns inflect back up post-capex | The exact tripwire metric, silent for a second call | CC-F17-01, Role 4 Q4/Q5 |
-| 6 (NEW) | Does the 15,000 capacity slip beyond November, and if the machine supplier slips further, does the Q4 750-skids/month exit still hold? | 15k timing now supplier-dependent; underpins FY28 utilisation and ROCE recovery | CC-F6-01 |
-| 7 | Q2 FY27 skid unit count and ASP (the single cleanest demand-ramp metric, declined to one-to-one this call) | First demand-ramp confirmation/rejection test | CC-F17-02, Role 4 Q3 |
-| 8 (NEW) | Why was the 25% SFN-share year-end target deferred when Q1 is already at 22 to 23% on partial capacity? What second-half headwind is anticipated? | Softening of a stated target without a reason | CC-F16-01 |
-| 9 | Behind the 9,000/15,000 capacity, how many named/committed customer programs and what FY27 order cover, given the ~2-month intermediary-customer visibility? | Concentrated, low-visibility order book into a capacity build | CC-F7-02, Role 4 Q1 |
-| 10 (NEW) | Why is there no CFO or second finance voice for a second consecutive quarter on a capex-heavy name, and will a finance officer present at H1? | Governance/credibility signal on a cash-sensitive name | CC-F17-03 |
-| 11 | Status of contingent IT Rs 41.76 Cr (CIT(A) appeal) and GST Rs 8.56 Cr, and the Italica Global FZC FY27 RPT cap | Two red silences plus the cleanest governance metric | Role 4 Q12/Q13 |
-| 12 (NEW) | Hyd-Air capex plan (deferred "until finalised") and whether Hyd-Air remains internal-use only | Under-discussion capex; Hyd-Air Q1 loss unaddressed | Commitment #10, Role 4 Q6 |
-| 13 | Sustainable FY27 ETR after the step-up to 27.4%, and zero-OCI actuarial treatment | Forward PAT headwind; disclosure quality | Role 4 Q8/Q9 |
-| 14 | Assemblies growth 36.96% (MD) vs 33.60% (chart) and the product-mix chart not footing to 100% | Internal-inconsistency/disclosure quality (still unaddressed) | Role 4 Q10/Q11 |
+| 2 (NEW) | International skid revenue this FY: which customer, what quantum, does it need capex beyond the 15,000, and is it the same entity as the India anchor (identity was declined as "proprietary")? | New FY27 commitment is un-evidenced and may be concentration-additive; customer and quantum declined | CC-F6-02 |
+| 3 (NEW) | Fire-hose assembly (confirmed same largest customer, l.90-91): expected FY27 realisation/revenue once commercialised, and confirmation of the end-Q2/start-Q3 date | Near-dated catalyst with size declined; deepens single-customer concentration | CC-F6-03 |
+| 4 (NEW) | Once fire-hose and international skid ramp, what share of FY27/FY28 revenue flows through the single largest customer, and what is the customer-diversification plan? | The two new catalysts concentrate on the same anchor; core flagged risk | CC-F7-02, CC-F6-02/03 |
+| 5 | H1 FY27 CFO/PAT, receivable and inventory days, and CWIP-to-PPE: is the ~300 bps QoQ opex deleverage being absorbed as claimed? | Capex-absorption is a claim with no cash-flow evidence; first FY27 CFO read | CC-F6-04 |
+| 6 | ROCE on a single pinned definition (reconcile deck 20.4% vs MD&A 28.43%), and the quarter in which returns inflect back up post-capex | The exact tripwire metric, silent for a second call | CC-F17-01, Role 4 Q4/Q5 |
+| 7 (NEW) | Does the 15,000 capacity slip beyond November, and if the machine supplier slips further, does the Q4 750-skids/month exit still hold? | 15k timing now supplier-dependent; underpins FY28 utilisation and ROCE recovery | CC-F6-01 |
+| 8 | Q2 FY27 skid unit count and ASP (the single cleanest demand-ramp metric, declined to one-to-one this call) | First demand-ramp confirmation/rejection test | CC-F17-02, Role 4 Q3 |
+| 9 (NEW) | Why was the 25% SFN-share year-end target deferred when Q1 is already at 22 to 23% on partial capacity? What second-half headwind is anticipated? | Softening of a stated target without a reason | CC-F16-01 |
+| 10 | Behind the 9,000/15,000 capacity, how many named/committed customer programs and what FY27 order cover, given the ~2-month intermediary-customer visibility? | Concentrated, low-visibility order book into a capacity build | CC-F7-02, Role 4 Q1 |
+| 11 (NEW) | Why is there no CFO or second finance voice for a second consecutive quarter on a capex-heavy name, and will a finance officer present at H1? | Governance/credibility signal on a cash-sensitive name | CC-F17-03 |
+| 12 | Status of contingent IT Rs 41.76 Cr (CIT(A) appeal) and GST Rs 8.56 Cr, and the Italica Global FZC FY27 RPT cap | Two red silences plus the cleanest governance metric | Role 4 Q12/Q13 |
+| 13 (NEW) | Hyd-Air capex plan (deferred "until finalised") and whether Hyd-Air remains internal-use only | Under-discussion capex; Hyd-Air Q1 loss unaddressed | Commitment #10, Role 4 Q6 |
+| 14 | Sustainable FY27 ETR after the step-up to 27.4%, and zero-OCI actuarial treatment | Forward PAT headwind; disclosure quality | Role 4 Q8/Q9 |
+| 15 | Assemblies growth 36.96% (MD) vs 33.60% (chart) and the product-mix chart not footing to 100% | Internal-inconsistency/disclosure quality (still unaddressed) | Role 4 Q10/Q11 |
 
 ---
 
 ## STEP 10 — CONCALL VERDICT AND EFFECT ON THE COMBINED QUARTER VERDICT
 
 **Concall verdict block:**
-- Management credibility this quarter: **Grade B (Good).** Prior B / B+ maintained at B; the "+" removed (softened target, slipped milestone, persistent red silences, no CFO 2nd quarter).
+- Management credibility this quarter: **Grade B (Good).** Prior B / B+ maintained at B; the "+" removed (softened target, slipped milestone, concentration-additive catalysts, persistent red silences, no CFO 2nd quarter).
 - Trailing-4-quarter credibility ratio: **not computable** (first Role 5 call under the protocol; six prior commitments are annual/year-end UNCLEAR; running log starts now). Grade assigned on archetype and headline delivery, not on a small-sample ratio.
 - Management archetype (6E): **MEASURED & CREDIBLE, with a guarded-selective overlay** (candid on operations, guarded on thesis-critical specifics). Archetype-shift-to-OVERPROMISER watch is live.
 - Role 1 track record input: **Good** (B mapping); Bull row may use guidance at face value per Master v3.3.
 - Net concall impact on thesis: **MAINTAINED.**
 - Position decision: **HOLD / NOT-ADD; entry zone Rs 82 to 103 unchanged; investment-level AVOID at CMP Rs 279.** 8A-W branch (non-held name; the only live exposure is the separate chandelier-governed momentum trade at avg Rs 230, not converted on this call).
 
-**Effect on the combined Q1 FY27 verdict.** The Role 4 results review returned **PROCEED WITH FLAGS**. The concall does not move the verdict. It resolves one flag partially (skid ASP mechanics), closes one ND (capex envelope 48/54), and adds two forward catalysts; but cash conversion remains **INDETERMINATE** (no CFO on the call, no Q1 cash-flow statement; the cash-profit claim is not CFO), which per house rules caps the verdict below a clean PROCEED with the missing evidence named (H1 FY27 CFO/PAT). It also adds fresh flags: a softened SFN-share target, a supplier-dependent 15k slip, a second-consecutive-quarter CFO absence, and three red silences that persist a second call. **Combined Q1 FY27 verdict: PROCEED WITH FLAGS (unchanged).**
+**Effect on the combined Q1 FY27 verdict.** The Role 4 results review returned **PROCEED WITH FLAGS**. The concall does not move the verdict. It resolves one flag partially (skid ASP mechanics), closes one ND (capex envelope 48/54), and adds two forward catalysts (framed as concentration-additive, not diversifying); but cash conversion remains **INDETERMINATE** (no CFO on the call, no Q1 cash-flow statement; the cash-profit claim is not CFO), which per house rules caps the verdict below a clean PROCEED with the missing evidence named (H1 FY27 CFO/PAT). It also adds or reinforces flags: a softened SFN-share target, a supplier-dependent 15k slip, two new catalysts that deepen the single-customer concentration (fire-hose same largest customer l.90-91; international-skid customer withheld l.87), a second-consecutive-quarter CFO absence, and three red silences that persist a second call. **Combined Q1 FY27 verdict: PROCEED WITH FLAGS (unchanged).**
 
 **Decision Status: WATCHLIST / HOLD-NOT-ADD, unchanged.** No pre-committed trigger fired; the ROCE tripwire stays INDETERMINATE (no ROCE disclosed). Per CLAUDE.md and Notion, Decision Status changes only when a pre-committed trigger formally fires. **Flag, do not decide.**
 
@@ -362,8 +370,9 @@ Every unresolved A3 FORWARD-SIGNAL and AMBIGUOUS finding, plus the still-open Ro
 |---|---|---|
 | Q2 FY27 skid units + ASP (declined to one-to-one this call; first demand-ramp test) | ~Oct-26 | T11; CC-F17-02 |
 | H1 FY27 CFO/PAT, WC days, CWIP-to-PPE (cash-conversion / capex-absorption test) | ~Oct-26 | CC-F6-04; Reg 33 half-yearly |
-| Fire-hose assembly commercialisation (intl-only, 23-26% margin) | end-Q2 / start-Q3 FY27 | CC-F6-03 |
-| International skid first revenue (customer/quantum withheld) | within FY27 | CC-F6-02 |
+| Customer-mix / single-largest-customer revenue share (concentration test as catalysts ramp) | ~Oct-26 onward | CC-F7-02; T08 l.87, l.90-91 |
+| Fire-hose assembly commercialisation (intl-only, 23-26% margin, same largest customer) | end-Q2 / start-Q3 FY27 | CC-F6-03; T08 l.90-91 |
+| International skid first revenue (customer withheld/proprietary) | within FY27 | CC-F6-02; T08 l.87 |
 | Skid capacity 9,000 to 15,000 (supplier-dependent Oct to Nov) | Q3 FY27 | CC-F6-01 |
 | Q4 exit ~750 skids/month at 60-65% util on 15,000 | Q4 FY27 | Commitment #7 |
 | FY28 optimal skid utilisation ~80% | full-year FY28 | Commitment #6 |
@@ -402,11 +411,16 @@ red_silences_status:
   roce_trajectory: "UNANSWERED (silence persists, 2nd call)"
   gst_it_contingent_tax: "UNANSWERED (silence persists)"
   us_ma_pillar: "UNANSWERED (silence persists)"
+new_catalysts_concentration:
+  fire_hose_assembly: "same largest anchor customer CONFIRMED (T08 l.90-91); concentration-additive"
+  international_skid: "customer withheld as proprietary (T08 l.87); not confirmed diversifying; concentration-additive"
+  net_effect: "both new catalysts deepen single-customer / India-only-exclusivity risk; no diversification credit; Strategic Premium held at +0.5x"
 prior_review_answer_status: {answered: 0, partial: 4, unanswered: 10}
 questions_for_management:
   - {q: "Exact skid unit margin at Rs 3.11L ASP + design mix to verify margin-neutral", from_finding_id: "CC-F16-02/CC-F7-01"}
-  - {q: "International skid customer, quantum, capex need, same-as-India-anchor?", from_finding_id: "CC-F6-02"}
-  - {q: "Fire-hose FY27 realisation and confirmed end-Q2/start-Q3 date", from_finding_id: "CC-F6-03"}
+  - {q: "International skid customer, quantum, capex need, same-as-India-anchor? (identity declined proprietary)", from_finding_id: "CC-F6-02"}
+  - {q: "Fire-hose FY27 realisation and confirmed end-Q2/start-Q3 date (same largest customer)", from_finding_id: "CC-F6-03"}
+  - {q: "Single-largest-customer revenue share once fire-hose + intl skid ramp; diversification plan", from_finding_id: "CC-F7-02/CC-F6-02/CC-F6-03"}
   - {q: "H1 FY27 CFO/PAT, WC days, CWIP-to-PPE; is opex deleverage absorbed?", from_finding_id: "CC-F6-04"}
   - {q: "ROCE on one pinned definition and inflection quarter post-capex", from_finding_id: "CC-F17-01"}
   - {q: "Does 15k slip beyond Nov; does Q4 750/month hold if supplier slips?", from_finding_id: "CC-F6-01"}
@@ -421,8 +435,9 @@ questions_for_management:
 monitorables:
   - {item: "Q2 FY27 skid units + ASP (first demand-ramp test)", implied_date: "2026-10-31", source_ref: "T11; CC-F17-02"}
   - {item: "H1 FY27 CFO/PAT, WC days, CWIP-to-PPE (cash-conversion test)", implied_date: "2026-10-31", source_ref: "CC-F6-04"}
-  - {item: "Fire-hose assembly commercialisation (intl-only, 23-26%)", implied_date: "2026-09-30", source_ref: "CC-F6-03"}
-  - {item: "International skid first revenue (customer/quantum withheld)", implied_date: "FY27", source_ref: "CC-F6-02"}
+  - {item: "Single-largest-customer revenue share (concentration test as catalysts ramp)", implied_date: "2026-10-31", source_ref: "CC-F7-02; T08 l.87,l.90-91"}
+  - {item: "Fire-hose assembly commercialisation (intl-only, 23-26%, same largest customer)", implied_date: "2026-09-30", source_ref: "CC-F6-03; T08 l.90-91"}
+  - {item: "International skid first revenue (customer withheld/proprietary)", implied_date: "FY27", source_ref: "CC-F6-02; T08 l.87"}
   - {item: "Skid capacity 9,000 to 15,000 (supplier-dependent Oct-Nov)", implied_date: "2026-11-30", source_ref: "CC-F6-01"}
   - {item: "Q4 exit ~750 skids/month at 60-65% util on 15,000", implied_date: "2027-03-31", source_ref: "commitment #7"}
   - {item: "FY28 optimal skid utilisation ~80%", implied_date: "FY28", source_ref: "commitment #6"}
@@ -436,13 +451,13 @@ flags:
   - "Cash conversion still INDETERMINATE: no CFO on call, no Q1 cash flow; opening cash-profit claim is not CFO"
   - "25% SFN-share year-end target SOFTENED/deferred without a stated reason (CC-F16-01)"
   - "15,000 skid capacity SLIPPED to supplier-dependent Oct-Nov window (CC-F6-01)"
+  - "New FY27 catalysts are CONCENTRATION-ADDITIVE not diversifying: fire-hose = same largest customer (T08 l.90-91); intl-skid customer withheld proprietary (T08 l.87); both deepen single-customer/India-only-exclusivity risk; Strategic Premium held +0.5x"
   - "All three red silences (ROCE, GST/IT tax, US M&A) persist; 2nd consecutive call (CC-F17-01)"
   - "No CFO/second finance voice, 2nd consecutive quarter on a cash-sensitive name (CC-F17-03)"
   - "10 of 14 prior Role 4 questions UNANSWERED; Q2 skid units declined to one-to-one (CC-F17-02)"
   - "Order book is single intermediary customer, ~2-month visibility, names withheld (CC-F7-02)"
   - "Skid margin, international quantum, customer identity all declined 'on public forum' (CC-F7-01)"
   - "Management Grade maintained at B (prior B/B+); '+' removed; archetype MEASURED & CREDIBLE (guarded-selective), OVERPROMISER-shift watch"
-  - "New FY27 catalysts added: international skid this FY, fire-hose assembly (intl-only, 23-26% margin)"
   - "Capex envelope now quantified (skid 48Cr + hose 54Cr), closing a Role 4 ND"
   - "No pre-committed trigger fired; ROCE tripwire INDETERMINATE (no ROCE disclosed); Decision Status unchanged (flag, do not decide)"
 review_path: "runs/aeroflex-q1fy27/work/review_concall_aeroflex_q1fy27.md"

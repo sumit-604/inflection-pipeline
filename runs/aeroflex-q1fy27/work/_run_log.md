@@ -43,3 +43,7 @@ Run date: 2026-07-27. Ticker: AEROFLEX (Aeroflex Industries Limited, Scrip 54397
 - A2 concall enumerator dispatched.
 - A2 concall gate PASS (14 turns, 55 Qs, 120 mgmt numbers). A3 concall gate PASS (red silences persist; 10/14 prior Qs unanswered; no CFO). A4 Role 5 addendum written (review_concall_*.md); verdict PROCEED WITH FLAGS, Grade B (+ removed), ROCE INDETERMINATE.
 - A5 loop 1 INCOMPLETE (catalysts credited without concentration caveat) -> A4 fix (re-tagged concentration-additive; fire-hose same anchor T08 l.90-91, intl-skid customer withheld T08 l.87) -> A5 loop 2 COMPLETE.
+
+## Notion save — Role 5 concall (2026-07-29, user-authorised)
+- update_properties: PREPENDED dated [29-Jul-26] Q1 FY27 CONCALL Key Notes entry (concall verdict, grade B, catalysts concentration-additive, red silences persist, growth-vs-model, entry unchanged). All prior entries preserved (now 8 dated blocks). Decision Status UNCHANGED (WATCHLIST / HOLD-NOT-ADD).
+- insert_content (position end, 2 inserts): Role 5 addendum as Notion tables — forward-guidance trajectory, prior-review answer status (0 answered/4 partial/10 unanswered), three red silences, management read, growth-vs-model + entry note, 15 updated questions, concall verdict, plain-language callout, A3 concall findings, A5 COMPLETE verdict.

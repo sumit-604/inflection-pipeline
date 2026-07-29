@@ -1,0 +1,187 @@
+stage: B10-valinputs
+company: "SICALLOG"
+run_date: "2026-07-28"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "Peer financial medians (P/E, EV/EBITDA, ROCE, growth): incomplete screener extraction; coal-mining peer segment not provided"
+  - "Forward capex with timeline: NOT FOUND (Bengaluru MMLP undated)"
+  - "CFO/PAT cumulative FY24-26: component sum not isolated (already scored as Gate0 deal-breaker -0.37)"
+  - "Standalone net worth reconciliation FY25→FY26: erosion drivers not itemized"
+  - "Per-unit contract rates: estimated from 7 disclosed contracts, not audited rates"
+  - "Rating agency rationale: ICRA D rating withdrawn; no live working capital commentary available"
+flags:
+  - "FLAG-PROMOTER CONCERN: 56.75% share pledge (Jun-2026), triggered >40% threshold; transition evidence (professional sponsors, fresh FII, board refresh) partially mitigates but does not override deal-breaker"
+  - "FLAG-CASH INDETERMINATE: CARO cash losses +45.6% YoY vs P&L improvement; unbilled ECL frozen 2 years; no live rating rationale; disposition capped at PROCEED WITH CAVEATS"
+  - "FLAG-GATE0 AVOID: Five deal-breakers (A<8, B=0, ROCE<10%, CFO/PAT<0.50, PAT negative FY24-25); FY26 recovery overwhelmingly driven by one-time Rs55.59 cr land-sale; clean pre-exceptional operating profitability not yet evidenced"
+  - "FLAG-SHARED CATALYST: SECL contract (74% of order book) + Chennai MMLP utilization drive both ROCE recovery and growth premiums; single point of failure for valuation thesis"
+  - "FLAG-NCI-CONCENTRATION: ~51% of consolidated equity is non-controlling; SOTP NCI-adjusted is only valid primary method; consolidated multiples overstate shareholder value"
+  - "FLAG-SOM-CEILING: SOM-implied 3-yr/5-yr revenue CAGRs (38.5% / 34.0%) exceed 25% strategy hurdle; treat as upper-bound sanity check, not base case"
+
+table:
+  company_identity:
+    company_name: "Sical Logistics Limited"
+    ticker: "SICALLOG"
+    sector: "Logistics (WC-heavy / project cargo)"
+    sector_cap_row: "20x"
+    cmp_rs: 107.0
+    market_cap_cr: 850.0
+    shares_outstanding_cr: 7.978
+    enterprise_value_cr: 1269.98
+
+  latest_financials_fy26_audited_consolidated:
+    revenue_cr: 385.68
+    ebitda_core_ex_other_ex_exceptional_cr: 78.69
+    ebitda_margin_pct: 20.4
+    other_income_ex_exceptional_cr: 36.89
+    exceptional_gain_cr: 55.59
+    pbt_pre_exceptional_cr: 1.50
+    pbt_post_exceptional_cr: 57.09
+    pat_owners_cr: 45.85
+    pat_margin_owners_reported_pct: 11.9
+    pat_margin_owners_clean_pre_exceptional_pct: 0.4
+    diluted_eps_reported: 6.54
+    diluted_eps_clean_pre_exceptional: "NEGATIVE (approx -0.18)"
+    cfo_cr: 52.29
+    capex_cr: 103.39
+    fcf_cr: -51.10
+    fcf_pct_of_pat: -111.2
+    cffo_pct_of_pat: 114.0
+    depreciation_cr: 41.68
+    dps: 0.00
+    book_value_per_share: 16.45
+    net_debt_cr: 419.98
+    cash_equivalents_cr: 65.07
+    borrowings_incl_leases_cr: 485.05
+    assets_held_for_sale_cr: 111.30
+    owners_equity_consolidated_cr: 131.29
+
+  profitability_trends:
+    roce_fy26_pct: 9.9
+    roce_trend: "RECOVERING (55% prob, 40-60% band per FTTCP)"
+    roe_fy26_reported_pct: 34.9
+    roe_fy26_clean_pre_exceptional_pct: 1.1
+
+  growth_3yr:
+    revenue_cagr_3yr_pct: "32.1 (FY24-26, 2yr; loss-to-profit recovery phase)"
+    revenue_single_yr_fy25_to_fy26_pct: 73.8
+    pat_cagr_3yr: "N/M (loss-to-profit transition; FY23 -833.94, FY26 +45.40)"
+    revenue_headroom_multiple: 165.9
+    current_sam_share_pct: 0.6
+    tam_conservative_cr: 94200
+    tam_realistic_cr: 164000
+    sam_cr: 64000
+    som_3yr_implied_cagr_pct: 38.5
+    som_5yr_implied_cagr_pct: 34.0
+
+  working_capital_metrics:
+    receivables_cr: 95.95
+    receivables_days_approx: 91
+    inventory_cr: 0.04
+    nci_pct_of_consolidated_equity: 51
+
+  cash_conversion:
+    determination: "STRUCTURAL (low capital efficiency, related-party dependency)"
+    disposition_cap: "PROCEED WITH CAVEATS (INDETERMINATE evidence: CARO cash-loss reconciliation, unbilled ECL freeze, no live rating rationale)"
+
+  management_metrics:
+    credibility_grade: "C (Mixed)"
+    trigger_1_name: "SECL Porda-Chimtapani (Rs 3422 cr, 140mo) execution ramp"
+    trigger_1_conviction: "MEDIUM"
+    trigger_2_name: "Standalone/consolidated pre-exceptional profitability threshold"
+    trigger_2_conviction: "LOW"
+    trigger_3_name: "Chennai MMLP ramp-up to 50-70 rakes/month"
+    trigger_3_conviction: "MEDIUM"
+
+  emerging_moat:
+    em_score: 17.4
+    em_classification: "MODEST"
+    active_categories: ["C1: Customer ecosystem (Strong)", "E1: Geographic first-mover (Strong)", "F2: Execution (Moderate)", "R1: Regulatory tailwind (Moderate)"]
+    evidence_mix: "Mostly documented (11 documented, 4 claim, 2 inference)"
+    optionality_converting: "Bengaluru MMLP (undated), HEMM fleet quantification, terminal automation, Pristine direct strategic agreement"
+
+  promoter_governance:
+    flag_verdict: "CONCERN with transition evidence"
+    pledge_pct_latest: 56.75
+    pledge_status: "TRIGGERED >40% threshold (rising trend Jun-2025 50.34% → Jun-2026 56.75%)"
+    holding_pct_latest: 73.50
+    transition_evidence: "Professional non-family sponsors (ex-CONCOR), fresh FII 3.09%, board refresh 3 new independents, compliance-driven dilution, parent SEBI IPO filing"
+    related_party_leverage_pct_of_debt: 37.6
+    related_party_debt_cr: 157.47
+
+  rating:
+    agency: "ICRA"
+    rating: "[ICRA]D (Withdrawn)"
+    date: "16-Sep-2025"
+    outlook: "NOT APPLICABLE (withdrawn)"
+    wc_commentary: "NOT FOUND (rating withdrawn; ICRA issuer not cooperating)"
+
+  ua_qualifiers:
+    listed_12m: true
+    gate0_or_em: false
+    fii_dii_lt3: false
+    all_met: false
+
+  peer_data:
+    p_e_median: "NOT FOUND (peer magnitudes incomplete)"
+    ev_ebitda_median: "NOT FOUND"
+    p_b_median: "NOT FOUND"
+    roe_median: "NOT FOUND"
+    roce_median: "NOT FOUND"
+    revenue_growth_median: "NOT FOUND"
+    note: "ALLCARGO/GDL transcripts qualitative only; coal-mining peer absent; macro deceleration observed (Allcargo e-way +21%→13%)"
+
+  approved_operator_valuation_pillars:
+    pillar_1_roce_pct: "10.7 (60/40 blend current 9.9% + FY[Y+2] 12.0%)"
+    pillar_1_normalization_route: "NONE (Route A fails 0.6% cap employed <20%; Route B fails pre-depression ROCE 6.9/6.2/5.3%)"
+    pillar_1_base_pe: "12.9x (0.5 × 10.7 + 7.5)"
+    pillar_2_cash_multiplier: "0.65x STRUCTURAL"
+    pillar_2_quality_adjusted_pe: "8.4x (12.9 × 0.65)"
+    pillar_3a_growth_visibility: "+2x (order book 11.9x revenue; delivery grade C caps at +2x)"
+    pillar_3b_moat_formation: "+0x (EM 17.4 < 25 threshold)"
+    pillar_3c_duration: "+2x (order-book visibility 11.9yr > 4yr bar)"
+    pillar_3_total: "+4x"
+    strategic_premium: "+0x (institutional backing at parent, not Sical)"
+    undiscovered_alpha: "NOT APPLIED (fails Gate0 14 and EM 17.4 thresholds; FII+DII 3.19% > 3%)"
+    sector_cap: "20x (Logistics, not binding)"
+    destination_pe_additive_approved: "12.4x (8.4 + 4 + 0)"
+    destination_pe_rrm_approved_governing: "8.6x (r=16.5%, RRM floored 0.70, 12.4 × 0.70)"
+    earnings_basis_approved: "ONE-YEAR FORWARD P/E (operator rationale: earnings changing shape, coal ramp + full-year Chennai park)"
+    tier_hurdle: "Tier A, 25% CAGR"
+    govt_customer_tier: "SECL Tier 1 (Coal India/Maharatna), neutral"
+    primary_method: "SOTP NCI-adjusted (~51% NCI, SMART 53.6%-owned); approved exit PE is cross-check"
+    shared_catalyst_flag: "YES (Chennai park + SECL drive Pillar 1 ROCE AND Pillar 3a/3c premiums)"
+
+conflicts: []
+
+unresolved:
+  - field: "Peer financial medians (P/E, EV/EBITDA, ROCE, growth)"
+    why: "Screener Data_Sheets provided but not extracted as reliable consolidated sets; coal-mining segment peer transcripts not provided; ALLCARGO/GDL used qualitatively only"
+    where_it_might_be: "runs/sicallog-2026-07-28/inputs/screening/ (ALLCARGO/GDL/KTIL Data_Sheets); peer concalls (not collected)"
+  - field: "CFO/PAT cumulative (FY24-26)"
+    why: "Anchored as deal-breaker in Gate0 (-0.37) but component-year breakdown not isolated in accessible blocks"
+    where_it_might_be: "B01 source audit / annual reports FY24-FY26"
+  - field: "Per-CuM / per-tonne mining contract rates (audited)"
+    why: "Estimated from 7 disclosed OCP contracts (Rs 56.2-74/tonne); no audited rate table in AR"
+    where_it_might_be: "Concall transcript (none available, no-concall mode) / contract filings (not provided)"
+  - field: "Bengaluru MMLP capex (Rs Cr) and construction date"
+    why: "Described as 'upcoming' across all filings; no project cost or start date disclosed"
+    where_it_might_be: "Future AR / Reg 30 capex disclosures / investor presentations"
+  - field: "Standalone CFO/EBITDA FY26"
+    why: "Consolidated CFO/EBITDA used; standalone subsidiary mix-down deferred to SOTP"
+    where_it_might_be: "Standalone financial statements note 2, depreciation detail"
+  - field: "Fixed-vs-floating borrowings split"
+    why: "Narrative mentions floating-rate risk but no composition table in extracted text"
+    where_it_might_be: "AR Note 12/13 financial risk management detail"
+  - field: "Impairment-testing assumptions (discount rate, growth rate)"
+    why: "Rs 8.00 Cr PPE impairment carried; assumptions not disclosed despite note reference"
+    where_it_might_be: "AR auditor-verified notes on impairment assumptions"
+  - field: "Independent valuation for Rs 67.48 Cr Pristine Malwa equipment lease"
+    why: "Lease marked arm's-length in AOC-2 but no fairness opinion or rate benchmarking in collected docs"
+    where_it_might_be: "RPT file / AGM postal ballot expert opinions / separate valuation report"
+  - field: "MPS 25% public shareholding achievement (post-rights issue)"
+    why: "Rights issue targeted MPS compliance (Feb-2026 record date) but resulting public shareholding % not confirmed through 28-Jul-2026"
+    where_it_might_be: "Next quarterly shareholding disclosure / Reg 31 / stock exchange MCA filing"
+  - field: "CFO resigned 9-Jul-2026 successor named"
+    why: "K. Rajavel moved to SMART CFO; parent-level succession not disclosed as of 28-Jul-2026"
+    where_it_might_be: "Reg 30 exchange filing / next board meeting outcome"

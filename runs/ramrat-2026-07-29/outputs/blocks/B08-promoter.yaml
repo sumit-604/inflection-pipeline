@@ -1,0 +1,68 @@
+stage: B08-promoter
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: partial               # several secondary fetches (Screener, Trendlyne, Wikipedia, scanx.trade) returned HTTP 403; some items (director education, auditor tenure, CFO exit reason, employee ratings) NOT FOUND
+input_gaps:
+  - "No shareholding-pattern exchange filing in inputs/; pledge sourced via web + AR cross-check"
+  - "Director educational/professional qualifications not located"
+  - "Auditor Bhagwagar Dalal & Doshi tenure/rotation-compliance history not located"
+  - "Reason for CFO Rajeev Maheshwari's role change (31-Mar-2026) not located (AR: redesignated to Senior VP Accounts & Taxation, not a departure)"
+  - "Glassdoor/AmbitionBox employee ratings not retrievable in usable form"
+  - "Relationship of shareholder Vvidhi Kabra to promoter family not specified in AR"
+  - "No IiAS/SES proxy advisory coverage found"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Section 132 IT search (Nov-2023, group-wide) plus Section 148 reassessment on merged Global Copper Pvt Ltd -> ~Rs103.62 Cr unresolved contingent tax exposure (Note 30.3, auditor Emphasis of Matter, opinion unmodified)"
+      - "CFO changes (family CFO out May-2025; Rajeev Maheshwari redesignated to Senior VP Mar-2026 - per B03 a planned succession, not a departure; new professional CFO Iqbal Singh Saggu in Apr-2026); Independent Director Ankit Kedia at 33% board / 40% audit-committee attendance FY26"
+      - "Cross-board entanglement with sister-listed R R Kabel Ltd (shared Independent Director Ramesh Chandak as Audit Committee Chair, dual-MD Mahendrakumar Kabra, 6.05% cross-holding); large promoter personal guarantees on company debt"
+      - "TRANSITION EVIDENCE present: professional CFO now in place, working-capital personal guarantees released (8-May-2026 agreement), 0% pledge confirmed FY26, two new/renewed Independent Directors"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 3, red: 2}
+deal_breakers: []              # all 8 checks performed, none triggered
+adverse_findings:
+  - {finding: "Section 132 search (Nov 2023) + Sec 148 reassessment on merged Global Copper Pvt Ltd; ~Rs103.62 Cr contingent tax demand, appeals pending, unmodified audit opinion", evidence_tier: "VERIFIED", source: "AR FY25-26 Note 30.3, Auditor's Emphasis of Matter p.165/226", date: "2023-11-29 search; FY2025-26 AR dated 2026-05-26"}
+  - {finding: "CFO changes across FY26; one reason undisclosed (AR clarifies Maheshwari redesignated, not exited)", evidence_tier: "VERIFIED", source: "AR Governance Report p.112, Corporate Info p.5", date: "2025-05-31 to 2026-04-01"}
+  - {finding: "Independent Director Ankit Kedia: 33% board attendance (2/6), 40% audit committee attendance (2/5) FY26", evidence_tier: "VERIFIED", source: "AR p.100, p.103", date: "FY2025-26"}
+  - {finding: "Cross-directorship/cross-holding with sister-listed R R Kabel Ltd via shared Independent Director and dual-MD Mahendrakumar Kabra; R R Kabel holds 6.05% of RAMRAT", evidence_tier: "VERIFIED", source: "AR p.98, p.120, Note 35", date: "as at 2026-03-31"}
+  - {finding: "Large promoter personal guarantees (>Rs200 Cr each, Tribhuvanprasad & Mahendrakumar Kabra) on company borrowings; extensive family-entity RPT trading web; JV loan repayment repeatedly extended", evidence_tier: "VERIFIED", source: "AR Note 13.7, Note 35 p.228-232", date: "FY2025-26"}
+  - {finding: "0.00% promoter pledge confirmed for FY26 per Reg 31(4) disclosure", evidence_tier: "MEDIA REPORTED", source: "scanx.trade summary of exchange filing (original filing not independently accessed)", date: "2026-04-03"}
+  - {finding: "No SEBI/criminal/PMLA/NCLT-oppression action found against RAMRAT or Kabra family; company affirms clean 3-yr capital-markets record", evidence_tier: "VERIFIED", source: "AR Governance Report p.122; web search", date: "FY2025-26"}
+  - {finding: "Hema Foundation value-education CSR programme (est. 2016) reaching 2,55,255 students across 4,106 schools, beyond mandatory CSR", evidence_tier: "VERIFIED", source: "hemafoundation.org; AR Note 34(b)", date: "2016-2026"}
+transition_evidence:
+  - "Professional CFO Iqbal Singh Saggu (35+ yrs) appointed w.e.f. 1-Apr-2026, replacing family CFO chair"
+  - "Promoter personal guarantees on secured working-capital limits released per 8-May-2026 consortium agreement (release letter awaited)"
+  - "Two Independent Directors added/renewed in FY26 (Sanjay Agarwal new; Payal Agarwal second term); board 50% independent"
+  - "0.00% promoter pledge confirmed FY26"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% - single dated FY26 confirmation (Reg 31(4), 2026-04-03); multi-year historical pledge trend not independently verified beyond AR's silence on any pledge line"
+searches_performed:
+  - "Ram Ratna Wires income tax search seizure Section 132 Kabra 2023"
+  - "Ram Ratna Wires Global Copper Private Limited merger NCLT tax demand"
+  - "Ram Ratna Wires promoter pledge shareholding encumbrance BSE"
+  - "R R Kabel SEBI order OR adjudication OR investigation Kabra"
+  - "Shreegopal Kabra RR Global controversy OR fraud OR raid"
+  - "Ram Ratna group income tax raid 2023 Gujarat Global Copper"
+  - "Ram Ratna Wires Ltd Glassdoor AmbitionBox reviews employees"
+  - "Ram Ratna Wires IiAS SES proxy advisory report corporate governance"
+  - "RR Kabel income tax search November 2023 news article"
+  - "Ram Ratna Wires CFO Rajeev Maheshwari resigns OR Hemant Kabra CFO change"
+  - "Ram Ratna Wires Rajeev Maheshwari CFO resignation March 2026 reason"
+  - "Mahendra Kumar Kabra HUF partition family Ram Ratna"
+  - "Ram Ratna Wires mutual fund institutional holding increase 2026"
+  - "Bhagwagar Dalal Doshi auditor Ram Ratna Wires appointed since"
+  - "Ram Ratna Wires AmbitionBox rating salary reviews"
+  - "Hema Foundation Kabra charitable trust CSR"
+  - "Ram Ratna Wires litigation OR FIR OR criminal case OR NCLT dispute"
+  - "TMG Global Fzco Ram Ratna Kabra shareholder"
+  - "Ram Ratna Wires Bhiwadi plant pollution OR labour OR NGT"
+  - "Ram Ratna Wires promoter share sale OR buying 2025 2026 news"
+  - "Ram Ratna Wires brokerage analyst rating target price 2026"
+searches_skipped:
+  - "Wikipedia (Rameshwarlal Kabra) direct fetch - HTTP 403"
+  - "Screener.in RAMRAT direct fetch - HTTP 403"
+  - "Trendlyne RAMRAT shareholding-pattern direct fetch - HTTP 403"
+  - "scanx.trade encumbrance article direct fetch - HTTP 403"
+verdict_basis: "Rs~103.62 Cr unresolved contingent tax exposure from a Section 132 search (Nov-2023) plus Section 148 reassessment on merged Global Copper Pvt Ltd, concurrent with FY26 CFO changes and one Independent Director at 33%/40% attendance, sets this above CAUTION -> CONCERN; but professional CFO now installed, promoter personal guarantees released, zero pledge, and two new/renewed Independent Directors mean this is a CONCERN with real, dated transition evidence, not a static one."

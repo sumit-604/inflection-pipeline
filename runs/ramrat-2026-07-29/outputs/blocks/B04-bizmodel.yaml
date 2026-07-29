@@ -1,0 +1,57 @@
+stage: B04-bizmodel
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: []                # investor presentation provided and used
+flags: ["FLAG-CASH: FY26 negative operating cash flow, receivables/inventory outgrowing revenue"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Enamelled winding wires & strips", type: "manufacturing - unit sale, commodity pass-through", pct_of_revenue: 76, predictability: "M"}
+  - {name: "Copper tubes & pipes", type: "manufacturing - unit sale, commodity pass-through", pct_of_revenue: 22, predictability: "M"}
+  - {name: "Others (Tefabo, consolidated fabrication)", type: "manufacturing - contract fabrication", pct_of_revenue: 2, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Intangible assets / certifications (IATF 16949, ISO 9001/14001/45001)", durability: "moderate"}
+  - {moat: "Switching costs (OEM qualification, long-standing relationships)", durability: "moderate"}
+  - {moat: "Emerging scale (Bhiwadi copper tube capacity)", durability: "emerging, unproven"}
+valuation_methods:
+  primary: {method: "EV/EBITDA (normalized, mid-cycle)", why: "Strips out copper-price pass-through noise in revenue; fits capital-intensive conversion manufacturer mid capacity-build"}
+  secondary: {method: "P/E (on normalized post-ramp earnings)", why: "Useful once Bhiwadi/Silvassa reach steady-state utilization; trailing P/E distorted during ramp"}
+  tertiary: {method: "EV/Sales", why: "Sanity check only given depressed net margins during ramp; revenue itself is copper-price-inflated"}
+  not_applicable: ["DCF (as primary, given FLAG-CASH negative FY26 operating cash flow)", "P/B or replacement-cost asset valuation", "Sum-of-the-parts (Tefabo/Epavo too small at current scale)"]
+irrelevant_ratios:
+  - {ratio: "Headline revenue growth %", why: "Inflated/deflated by copper LME price moves, not just volume"}
+  - {ratio: "Gross/EBITDA margin in isolation", why: "Materials are ~93% of revenue so small absolute spread swings move margin % disproportionately"}
+  - {ratio: "Net profit margin as standalone profitability yardstick", why: "1.8-2.2% looks like commodity trading; ROE/ROCE are more telling for a conversion manufacturer"}
+  - {ratio: "Revenue per employee", why: "Business is capital/machine-driven, not headcount-driven"}
+  - {ratio: "Current ratio as standalone liquidity signal", why: "Masks the FLAG-CASH problem of negative operating cash flow despite a stable current ratio"}
+must_track_metrics:
+  - {metric: "Operating cash flow vs EBITDA", healthy: "CFO tracking EBITDA directionally, positive", red_flag: "Negative CFO in a profit-growth year (as in FY26)"}
+  - {metric: "Copper tubes & pipes segment revenue share", healthy: "Continuing to rise past 22%", red_flag: "Stalling or reversing"}
+  - {metric: "Net Debt/Equity (consolidated)", healthy: "Stabilizing 0.4-0.5x as capex tapers", red_flag: "Climbing past ~0.6-0.7x without clear capex-completion horizon"}
+  - {metric: "Inventory turnover (standalone)", healthy: "Recovering toward 15x+", red_flag: "Falling further below 13x"}
+  - {metric: "ROCE (consolidated)", healthy: "Holding at or above ~25% through the capex cycle", red_flag: "Declining as new capacity comes online without matching returns"}
+unit_economics:
+  unit: "1 kg (or MT) of finished enamelled wire/strip, or finished copper tube"
+  revenue_per_unit: "NOT FOUND (LME copper pass-through + conversion premium; no Rs/kg or tonnage disclosed)"
+  margin_per_unit: "NOT FOUND (implied conversion spread ~10.1% gross profit, ~5.1% EBITDA margin, consolidated FY26; no per-unit figure)"
+  key_lever: "Product mix shift toward higher-value copper tubes and fine/ultra-fine/Litz wire, plus capacity utilisation at Bhiwadi and Silvassa"
+first_deterioration_signals:
+  - {risk: "Copper-tube ramp-up disappoints", first_signal: "Copper tubes & pipes segment revenue growth decelerating below winding-wire growth"}
+  - {risk: "Margin compression from copper price spike", first_signal: "Consolidated gross profit % falling below ~10%"}
+  - {risk: "Working-capital intensity keeps outrunning profit growth (FLAG-CASH)", first_signal: "CFO staying negative for a second consecutive year, or receivable/inventory days rising further"}
+  - {risk: "Execution delay in Bhiwadi/Silvassa ramp", first_signal: "ROCE turning down even as PP&E/CWIP keeps rising"}
+  - {risk: "Rising leverage funding unproven capex payback", first_signal: "Interest coverage falling toward 2.0x as debt outgrows EBIT"}
+mgmt_questions:
+  - "What is the installed and utilized capacity (MTPA) at Bhiwadi today, and the ramp timeline to full utilization?"
+  - "Why did receivables and inventory grow so much faster than revenue in FY26, and when does operating cash flow turn positive?"
+  - "What is the customer/OEM concentration (top-5 or top-10 as % of revenue)?"
+  - "What is the nature and commercial terms of the related-party relationship with R R Kabel Ltd?"
+  - "What is Epavo's path to profitability, and is further capital infusion planned?"
+  - "How much of FY26's revenue and EBITDA growth was price (copper LME) versus volume?"
+  - "What is the medium-term export strategy given exports are a stated Weakness?"
+one_line_verdict: "Improving-spread copper converter mid capacity-build, cash-flow discipline is the swing factor."

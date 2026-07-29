@@ -1,0 +1,56 @@
+stage: B05-concall
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "READ MISS (mechanical, not a real gap): the FY26 Q4/full-year audited results PDF (inputs/results/0a5a99ff-9ec3-47bb-aeb5-49ca3432890d.pdf, 23pp) was not opened by this stage OR by stage 1; both garbled the filename (merged the b91f segment from the Q3 PDF). File confirmed present and readable by the orchestrator. FY26 audited P&L/BS/Q4 numbers were still captured via the Investor Presentation (anchored) and screener. Verifier A MUST read this PDF directly (use the pages parameter; it is >10 pages)."
+  - "No prior-year AR/presentation provided; cannot test whether Bhiwadi's June-2025 commissioning was on-time vs an originally guided date."
+  - "Bhiwadi plant capacity (tonnes/annum) and utilisation target: NOT FOUND in the three documents read."
+  - "Promoter shareholding, pledge, and 3-year holding trend: NOT FOUND in the documents read (consistent with Block E gap)."
+  - "No concall transcripts (declared no-concall mode) — Section 2E, 3C, cross-quarter trigger evolution (1C) not buildable from primary source; stated plainly, not manufactured."
+quarters_analysed: ["Q3 FY26 (9M ended 31-Dec-2025)", "FY26 full year (ended 31-Mar-2026)"]
+triggers:
+  - {priority: 1, name: "Bhiwadi copper-tube ramp-up continuing", type: "VOLUME", timeframe: "near-term", conviction: "H", confirm_signal: "Sequential copper-tubes segment revenue growth / disclosed utilisation rise", kill_signal: "Copper-tubes segment revenue stalls or declines for 2+ consecutive quarters"}
+  - {priority: 2, name: "Silvassa capacity expansion (~Rs86 cr capex)", type: "VOLUME/COST", timeframe: "medium-term", conviction: "M", confirm_signal: "Capex disclosed spent/commissioned with a completion date", kill_signal: "Capex delayed beyond one year with no updated timeline, or shelved"}
+  - {priority: 3, name: "CTC/HVDC entry", type: "PRICE-MIX", timeframe: "medium-term", conviction: "M", confirm_signal: "Commercial production confirmed near stated Q2 2026 date; first CTC revenue disclosed", kill_signal: "Commercial production date slips by more than one quarter with no revised date"}
+  - {priority: 4, name: "Copper-tube import substitution (sectoral tailwind)", type: "SECTORAL", timeframe: "long-term", conviction: "M", confirm_signal: "Continued double-digit segment revenue growth outpacing company growth", kill_signal: "Segment growth falls below overall company growth for 2+ quarters"}
+  - {priority: 5, name: "EV-linked product diversification", type: "VOLUME/PRICE-MIX", timeframe: "medium-term", conviction: "L", confirm_signal: "Specific EV-linked revenue figure disclosed for first time", kill_signal: "No EV-linked revenue ever disclosed separately"}
+  - {priority: 6, name: "Tefabo wind-tower capacity expansion (Vadodara)", type: "INORGANIC", timeframe: "medium-term", conviction: "L-M", confirm_signal: "Phase 1 (20 towers/month) confirmed commissioned", kill_signal: "Phase 1 commissioning slips or capacity target revised down"}
+  - {priority: 7, name: "Export mix expansion", type: "SECTORAL", timeframe: "long-term", conviction: "L", confirm_signal: "Export share rises for 2+ consecutive years", kill_signal: "Export share continues declining as % of revenue"}
+guidance:
+  - {item: "Silvassa capacity expansion & process enhancement capex", number: "~Rs86 crore", timeframe: "board-approved Mar-2026; completion date NOT FOUND", stated_in: "AR Chairman's Message p.7"}
+  - {item: "CTC commercial production start", number: "qualitative only", timeframe: "Q2 calendar 2026 (~Q1 FY27)", stated_in: "AR Chairman's Message p.7"}
+  - {item: "FY26 final dividend", number: "Rs2.50 per share (50% of Rs5 FV)", timeframe: "FY26, payable post-AGM 4-Aug-2026", stated_in: "AR Notice p.59; Chairman's Message p.7"}
+  - {item: "Bhiwadi copper-tube plant commissioning", number: "qualitative (no tonnage)", timeframe: "June 2025 (within FY26)", stated_in: "AR Chairman's Message p.7; MD&A p.53 sec F"}
+  - {item: "Tefabo stake increase", number: "+4pp to 64% total", timeframe: "FY26 (effective 1-Jul-2025)", stated_in: "AR MD&A p.53 sec G; Results PDF notes"}
+  - {item: "FY26 standalone revenue delivered", number: "Rs5,076 cr (+40% YoY)", timeframe: "FY26", stated_in: "AR MD&A p.50 sec D"}
+  - {item: "FY26 consolidated EBITDA delivered", number: "Rs264 cr (+69% YoY)", timeframe: "FY26", stated_in: "Chairman's Message p.7; Inv. Pres. slide 4-5"}
+promise_delivery:
+  delivered: 3
+  partial: 0
+  missed: 0
+  rows:
+    - {promised_in: "2023 land acquisition + 2024 NCLT filing", promise: "Commission the Bhiwadi copper-tube plant", outcome: "delivered", explanation: "Production commenced June 2025; no prior-disclosed target date in these sources to test timeliness"}
+    - {promised_in: "Board approval process 2024", promise: "Complete NCLT-approved merger of Global Copper Pvt Ltd into RRWL", outcome: "delivered", explanation: "NCLT order dated 29-May-2025; recast financials confirmed in Results PDF standalone note vii"}
+    - {promised_in: "60% stake acquired in Tefabo 2024", promise: "Grow footprint in Tefabo (wind-tower fabrication)", outcome: "delivered", explanation: "Additional 4% acquired during FY26 (effective 1-Jul-2025), total 64%"}
+    - {promised_in: "FY26 AR", promise: "~Rs86 cr Silvassa capacity-expansion capex", outcome: "pending / not yet testable", explanation: "Board-approved Mar-2026; no subsequent results document to check delivery"}
+    - {promised_in: "FY26 AR", promise: "CTC commercial production to start Q2 CY2026", outcome: "pending / not yet testable", explanation: "No Q1 FY27 results document in these sources"}
+excuse_pattern: "insufficient evidence to classify robustly (no missed promise found); weak single-document signal leans honest (proactive SWOT risk disclosure, no externalised blame)"
+credibility_grade: "B"
+credibility_basis: "Three specific cross-document-consistent commitments delivered as narrated (Bhiwadi, GCPL merger, Tefabo to 64%) with zero identified misses, clearing the no-concall bar to rise from default C to B; held at B (never A in this mode) due to a single-fiscal-year evidence window, the unexplained FY26 cash-conversion reversal (CFO -Rs92.99cr vs record PAT Rs107.05cr), and a flat dividend despite +51-55% PAT growth."
+repeated_evasions: []
+peer_questions:
+  - {question: "Is India's copper-tube market actually growing at 16-17% CAGR, and is India still ~70% import-dependent in copper tubes?", why: "Underpins RAMRAT's entire Bhiwadi capex and import-substitution growth thesis.", check_peers: ["BHAGYANGR", "VIDYAWIRES"]}
+  - {question: "How do peers describe copper/raw-material pass-through, and do they confirm or contradict RAMRAT's 'dynamic pricing strategies' preserving margin through copper volatility?", why: "RAMRAT OPM held roughly flat/improved despite a volatile copper year; peer language tests whether this is standard or unusual.", check_peers: ["BHAGYANGR", "VIDYAWIRES"]}
+  - {question: "Do peers corroborate strong, accelerating copper-tube/HVAC demand and rising utilisation in their own segments?", why: "Tests whether RAMRAT's implied Q4 FY26 copper-tubes deceleration is temporary or structural.", check_peers: ["BHAGYANGR", "VIDYAWIRES"]}
+  - {question: "Are peers running a similar capex cycle (new capacity, CTC/HVDC-type segments) on a similar timeline?", why: "Tests company-specific execution vs an industry-wide capacity race that could compress returns.", check_peers: ["BHAGYANGR", "VIDYAWIRES"]}
+red_flags:
+  - "HIGH: FY26 CFO -Rs92.99cr against record PAT Rs107.05cr, unexplained in the documents read despite +64% receivables / +108% inventory build visible in the Investor Presentation balance sheet"
+  - "MEDIUM: Standalone Debt-Equity roughly doubled 0.57x to 1.04x; Interest Coverage flat at 2.91x despite higher debt base"
+  - "LOW-MEDIUM: Dividend held flat at Rs2.50/share despite +51-55% PAT growth, no rationale given"
+  - "LOW (data-quality-caveated): Implied Q4 FY26 copper-tubes segment revenue (~Rs339cr, computed) appears flat-to-down vs Q3 FY26's disclosed Rs361.2cr, in tension with the ramp-up narrative"
+  - "MEDIUM (data gap): No promoter shareholding/pledge disclosure in the three documents read"
+dropped_triggers: []
+timeline_slippages: []

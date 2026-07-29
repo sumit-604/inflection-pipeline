@@ -1,0 +1,38 @@
+stage: B06-peers
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["BHAGYANGR-Concall_Jun_2026_Transcript.pdf pages 21-23 not read (closing remarks/moderator sign-off, no substantive content expected)"]
+flags:
+  - "Neither peer operates in copper tubes (HVAC/refrigeration) - RAMRAT's core Bhiwadi/import-substitution claims (1 and 3) are structurally unverifiable with this peer set"
+  - "BHAGYANGR margin gains attributed mainly to value-added mix shift and a one-off customs-duty removal, not pure price pass-through - nuances RAMRAT's 'dynamic pricing' margin claim"
+  - "Industry-wide capex race identified across both peers plus named new entrants (Adani, Hindalco, Jain Resource Recycling) - overcapacity/margin-compression risk flagged by BHAGYANGR's own analyst, not addressed in RAMRAT's claims"
+peers_provided: 2
+verified:
+  - {claim: "Peers running a similar capex cycle (new capacity, CTC/HVDC-type segments) on a similar timeline", peers: ["BHAGYANGR", "VIDYAWIRES"], anchor_count: 4}
+partially_verified:
+  - {claim: "Dynamic pricing strategies preserved margin through copper volatility", peers: ["VIDYAWIRES", "BHAGYANGR"]}
+contradicted: []
+unverifiable:
+  - {claim: "India's copper-tube market growing ~16-17% CAGR, ~70% import-dependent", peers_checked: ["BHAGYANGR", "VIDYAWIRES"]}
+  - {claim: "Strong/accelerating copper-tube/HVAC demand and rising utilisation, testing Q4 FY26 deceleration", peers_checked: ["BHAGYANGR", "VIDYAWIRES"]}
+peer_coverage_map:
+  - {peer: "BHAGYANGR", quarter: "Q2 FY26 (call Nov 2025)", usage: "SUBSTANTIVE", contribution: "Pass-through mechanism and margin-driver nuance; H1 volume growth"}
+  - {peer: "BHAGYANGR", quarter: "Q3 FY26 (call Jan 2026)", usage: "SUBSTANTIVE", contribution: "Capex trajectory; aluminium-substitution and US tariff risks"}
+  - {peer: "BHAGYANGR", quarter: "Q4/FY26 (call May 2026)", usage: "SUBSTANTIVE", contribution: "Margin-attribution nuance; explicit overcapacity-risk Q&A; scrap-logistics risk"}
+  - {peer: "VIDYAWIRES", quarter: "Q2 FY26 (call Dec 2025)", usage: "SUBSTANTIVE", contribution: "Strongest 100% LME pass-through corroboration; ALCU capacity-doubling capex; ~90% utilisation"}
+  - {peer: "VIDYAWIRES", quarter: "Q4/FY26 (call May 2026)", usage: "SUBSTANTIVE", contribution: "Direct named mention of Ram Ratna Wires as peer (50-60% product overlap); CTC capacity/market-size data"}
+industry_cross_read:
+  demand: "Both peers report strong, accelerating revenue/volume through FY26, concentrated in H2 as copper prices rose, driven by AI/EV/green-energy demand; no peer evidence on copper tubes/HVAC specifically."
+  pricing_inputs: "Both confirm the same copper price spike (LME ~$12,000-13,000/tonne) and use LME-linked back-to-back pricing; VIDYAWIRES claims near-full margin insulation, BHAGYANGR's margin gains trace mainly to VA mix shift and a duty removal, not pure pass-through."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: VIDYAWIRES nearly doubling capacity via ALCU (19,680 to 37,680 MT); BHAGYANGR growing 30,000 to 35,000 MT plus further planned capex; BHAGYANGR's own analyst flagged overcapacity risk from Adani, Hindalco, and other new entrants."
+peer_mentions_of_company:
+  - "'few of the peers namely are Precision Wires, Ram Ratna Wires, KSH International... for 50 to 60% commonness of our product is there with them' (VIDYAWIRES, Q4/FY26 call, 14-May-2026, Shailesh Rathi)"
+risks_peers_raise:
+  - "Copper-scrap sourcing disruption from Gulf-region shipping delays (BHAGYANGR, Q4/FY26 call, May 2026)"
+  - "Overcapacity/margin compression from new entrants Adani, Hindalco, Jain Resource Recycling (BHAGYANGR, Q4/FY26 call, May 2026)"
+  - "Long-run aluminium substitution for copper in electrical applications (BHAGYANGR, Q3 FY26 call, Jan 2026)"
+  - "Rising working-capital/interest-cost burden as copper prices inflate, even under full pass-through (VIDYAWIRES Dec 2025 call; BHAGYANGR Jan 2026 call)"
+  - "US tariff exposure on copper exports (BHAGYANGR, Q3 FY26 call, Jan 2026)"
+net_narrative_effect: "complicates"

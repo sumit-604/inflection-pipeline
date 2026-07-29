@@ -1,0 +1,54 @@
+stage: B11-valuation
+company: "SICALLOG"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Chennai-park / terminal land fair value: NOT FOUND (land floor handled qualitatively; base/bear credit only book-value surplus land Rs 111.3cr)"
+  - "Slice-level debt allocation: NOT FOUND (terminals ~Rs 200cr assumed for NCI adjustment, conservative)"
+  - "Segment EBITDA split: derived from B04 revenue mix + illustrative slice margins, not disclosed"
+  - "Forward owners' clean EPS FY27-FY30: ILLUSTRATIVE, not filing-anchored"
+flags:
+  - "FLAG-CASH INDETERMINATE: Pillar 2 multiplier 0.65x STRUCTURAL applied, no growth offset; disposition capped at PROCEED WITH CAVEATS (CARO cash-loss reconciliation, unbilled ECL freeze, no live rating rationale)"
+  - "FLAG-GATE0 AVOID: five deal-breakers carried; FY26 profit driven by one-time Rs 55.59cr land sale; clean pre-exceptional owners' profitability negative"
+  - "FLAG-PROMOTER CONCERN: 56.75% pledge (rising), >40% threshold; caps recommendation at AVOID regardless of valuation"
+  - "FLAG-SHARED CATALYST: SECL (74% of order book) + Chennai MMLP drive Pillar 1 ROCE AND Pillar 3a/3c; single point of failure"
+  - "FLAG-NCI-CONCENTRATION: ~51% consolidated equity is NCI, SMART 53.6%-owned; consolidated multiples overstate owners' value; SOTP NCI-adjusted is primary"
+  - "FLAG-OVERVALUATION: every valuation cell (SOTP, RRM, additive) below CMP Rs 107; expected CAGR -38%"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "RRM 8.6x governing (r=16.5%, RRM floored 0.70) / additive 12.4x; one-year-forward owners'-clean EPS basis"
+destination_pe:
+  track1_rrm: {low: 8.0, mid: 8.6, high: 9.0, r_used: 16.5, rrm: 0.70}
+  track2_additive: {low: 11.5, mid: 12.4, high: 13.5}
+  divergence_pct: 30.6
+  governing_track: "RRM 8.6x — operator-designated governing and the more conservative track; sets the entry zone"
+pillar_detail:
+  roce_used: 10.7
+  roce_base: 12.9
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 0.65
+  structural_or_growth: "structural"
+  growth_offset: 0
+  growth_premium: 4
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20
+hurdle_ratio: {base: 0.27, bull_used: false, verdict: "STOP"}
+fair_values:
+  track1: {bear: 16, base: 29, bull: 47}
+  track2: {bear: 23, base: 42, bull: 68}
+expected_cagr_prob_weighted: -38.3
+entry_range: {low: 12, high: 15}
+mos_price: 11.9
+upside_downside_ratio: 0.0
+decision: "AVOID (on valuation) — Hurdle Ratio STOP; every cell below CMP; promoter CONCERN and Gate0 AVOID independently cap at AVOID"
+unresolved_inputs_used:
+  - "Peer medians resolved from screener Data_Sheets (B10 said NOT FOUND): GDL ~9-11x, Allcargo ~7.5x, KTIL ~12.2x distressed; used to anchor SOTP slice multiples"
+  - "Terminals slice debt ~Rs 200cr assumed (NOT FOUND) for NCI adjustment — conservative loading of Chennai capex debt onto owners"
+  - "Segment EBITDA margins (mining 15% / terminals 30% / 3PL 15%) illustrative, reconcile to core EBITDA 78.69"
+  - "Forward owners' clean EPS ladder ILLUSTRATIVE; HR run on forward construct because clean current PE not computable (negative base)"
+som_cagr_crosscheck: "consistent — base revenue CAGR 20% sits below SOM-implied 38.5% 3-yr ceiling and below 2-yr historical 32.1%"
+one_line_thesis: "Sical at Rs 107 discounts a recovery the owners' economics cannot deliver; on the approved forward destination PE (RRM 8.6x / additive 12.4x) applied to illustrative FY30 owners' EPS ~Rs 3.4, Year-3 fair value is Rs 29-42 and SOTP NAV Rs 22, a -38% expected CAGR, Hurdle STOP, structural cash: AVOID, entry only Rs 12-15"

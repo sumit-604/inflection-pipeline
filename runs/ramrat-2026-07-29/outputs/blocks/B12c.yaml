@@ -1,0 +1,25 @@
+stage: B12c
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+phase1_scope: "gate0 + emerging-moat only; valuation-adherence (B10/B11) deferred to phase 3"
+gate0:
+  rules_checked: 46
+  fails:
+    - {rule: "output-format: closing B01-gate0 YAML block", severity: MINOR, expected: "fenced YAML per stage-1 spec", found: "absent from 01-gate0.md report; all scores present in prose and correctly propagated to B07/blocks", impact: "none (presentational)"}
+emoat:
+  rules_checked: 34
+  fails:
+    - {rule: "H1 evidence multiplier", severity: MINOR, expected: "raw 1 x 0.7 (claim) = 0.7 adjusted; summary classifies H1 as claim", found: "raw 1 x 1.0 (documented) = 1.0 adjusted in scorecard", impact: "em_score 20.9->20.6, both round to 21, MODEST band unchanged"}
+valuation: {rules_checked: 0, fails: []}   # deferred to phase 3 (B10/B11 do not exist yet)
+recomputed_destination_pe: ""   # valuation deferred to phase 3
+recomputed_decision: ""         # concur: Gate0 AVERAGE and EM MODEST both stand
+findings:
+  - {severity: MINOR, location: "07-emoat.md Section 5 row H1", issue: "claim-classified category scored with documented 1.0x multiplier", recomputed: "0.7 adjusted; em_score 20.6; MODEST unchanged"}
+  - {severity: MINOR, location: "01-gate0.md (whole file)", issue: "mandated closing YAML block absent from report artifact", recomputed: "n/a; values correct and propagated to blocks"}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 98    # 78 rules passed / 80 checked
+coverage_note: "Phase-1 scope only: Gate 0 (B01) fully re-derived block-by-block (A-E, 12 moat tests, matrix, confidence, 9 deal-breakers, CAGR edge rules) all rule-compliant, AVERAGE concurred; Emerging Moat (B07) all 21 categories addressed, multipliers/completionist-recount/band re-checked, 1 minor multiplier inconsistency (H1). Valuation (B11/B10) deferred to phase 3 - not audited, artifacts do not exist. No CRITICAL/MAJOR; no recomputed value flips a band or decision. NOTE: Gate 0 SCORING LOGIC is rule-compliant; Verifier A's source-fidelity findings concern the standalone-vs-consolidated BASIS of the FY26 latest-period inputs, a separate axis this verifier does not own."

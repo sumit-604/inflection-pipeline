@@ -1,0 +1,20 @@
+stage: B12d
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+peers_audited: 5
+substantive_confirmed: 5
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 metadata, BHAGYANGR Jun_2026 file note", claimed: "pages 21-23 are closing remarks with no incremental content", source_truth: "pp.19-21 contain substantive Q&A (working-capital detail, ~Rs150cr fundraise disclosure, FY27 20% volume-growth guidance) before sign-off", note: "does not change any claim verdict; metadata characterization should be corrected"}
+  - {severity: "MINOR", location: "B06 Part 2A/2B", claimed: "BHAGYANGR 'Jun 2026' call", source_truth: "transcript cover/title date the call 02-May-2026 (Q4/FY26); B06 correctly says 'May 2026' elsewhere", note: "filename-derived mislabel, same document/quotes; internal inconsistency, not a wrong source"}
+  - {severity: "MINOR", location: "B06 Part 2B", claimed: "copper near $1,300/kg by May 2026", source_truth: "cited exchange (Vedansh Agarwal, May-2026 BHAGYANGR) is in rupees/kg not USD, consistent with other rupee EBITDA/kg figures on the call", note: "currency/unit conflation on supplementary industry-color figure, not a formal claim anchor"}
+  - {severity: "MINOR", location: "B06 Part 2E, WC/copper-price risk item", claimed: "both peers acknowledge rising copper price inflates working capital (VIDYAWIRES Dec-2025; BHAGYANGR Jan-2026)", source_truth: "BHAGYANGR citation on-point; the VIDYAWIRES Dec-2025 Mihir Manohar exchange discusses FY2025 receivables/OCF weakness generically without explicitly tying it to rising copper prices", note: "one clean confirmation plus one loosely-matched secondary anchor; does not change any of the 4 formal claim verdicts"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100

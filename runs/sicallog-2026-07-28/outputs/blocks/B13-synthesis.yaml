@@ -3,16 +3,23 @@ company: "SICALLOG"
 run_date: "2026-07-28"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH FLAGS"
 verdict_rule_applied: 3
 flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
-confidence_delta: {numerical: 95, redflag: 61, framework: 95, peer: 100, overall: 61}
-cash_determination: INDETERMINATE
+confidence_delta: {numerical: 95, redflag: 61, framework: 94, peer: 100, overall: 61}
+valuation_decision: "AVOID"
+entry_range: {low: 12, high: 15}
+mos_price: 11.9
+destination_pe: {rrm_governing: 8.6, additive: 12.4}
+hurdle_verdict: "STOP"
+devil_overall: "SURVIVES"
 headline: "Sical logistics turnaround leans on land sale"
-falsification_metric: "Q1 FY27 standalone again pre-exceptional loss and consolidated pre-exceptional PBT ex-other-income negative, no repeat land-sale gain"
 publish_candidate: true
+source_fidelity_correction: "FY26 rights issue Rs 93.03 cr (Verifier A MAJOR of Rs 293.03 cr overturned as OCR misread; devil B15 propagation corrected; Rs 293 cr kept out of all deliverables)"
 files_written:
   - runs/sicallog-2026-07-28/outputs/final/business-narrative.md
-  - runs/sicallog-2026-07-28/outputs/final/gate-recommendation.md
+  - runs/sicallog-2026-07-28/outputs/final/fttcp-recommendation.md
   - runs/sicallog-2026-07-28/outputs/final/verifier-summary.md
+  - runs/sicallog-2026-07-28/outputs/final/verifier-disagreement-log.md
+  - runs/sicallog-2026-07-28/outputs/final/fttcp-handoff.md

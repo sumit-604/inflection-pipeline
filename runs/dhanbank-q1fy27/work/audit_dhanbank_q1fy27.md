@@ -1,112 +1,121 @@
-# QUARTERLY PIPELINE A5 — ADVERSARY / COMPLETENESS AUDIT — DHANBANK (Dhanlaxmi Bank Ltd) Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — DHANBANK Q1 FY27 (RE-AUDIT, LOOP 1)
 
-Agent: A5 ADVERSARY. Fresh context: I see only the A4 review, the A1 extract, and the A2 ledger. All checks re-derived from the A1 extract; I do not defer to A4's or A3's cites. Unit basis: source prints Rs Lakh; divide by 100 for Rs Crore. Extract line numbers cited as L###.
+Agent: A5 ADVERSARY. Fresh context: A4 review + A1 extract + A2 ledger only. Independent re-derivation; A4/A3 cites checked, not deferred to. Prior verdict: INCOMPLETE (one gap: L281 D/E and L282 Total-Debts/Assets framed as "tenor undisclosed"). This pass re-runs all three audits and re-tests that the gap is closed.
 
-VERDICT: **INCOMPLETE** — loop back to **A3** (missed forward-signal forensic on enumerated ratio rows 17(vii) L281 and 17(viii) L282), with **A4** to graft the surviving bear counter before save. Detail in the ADVERSARIAL section and verdict block. All three audits completed in full below.
-
----
-
-## 1. COVERAGE AUDIT (fresh grep + sweep, diffed against A2 ledger)
-
-| Category | A2 count | My fresh count | Orphan rows (enumerated, absent from A4) | Status |
-|---|---|---|---|---|
-| Numbered notes | 14 | 14 | none — Notes 1-14 all in A4 Step 0D table | PASS |
-| P&L line items | 22 (of 87) | 22 | none material — all P&L rows carried into Step 1L | PASS |
-| Balance-sheet line items | 13 (of 87) | 13 | none — Capital, Reserves, Deposits, Borrowings, Advances, Investments etc. all used | PASS |
-| Segment rows | 36 (of 87) | 36 | Corp/Wholesale cited (FN5); Treasury/Retail/Other feed NII/PPOP, no independent finding | PASS (soft) |
-| Note 11 project rows | 16 (of 87) | 16 | none — closing pool 110.41 Cr and nil resolution-failure rows cited | PASS |
-| Zero-standing rows | 24 | 24 | none — Exceptional/Extraordinary nil, GoI Nil, Note 11 nils all surfaced | PASS |
-| **Analytical ratios** | **14** | **14** | **17(vii) Debt-Equity L281; 17(viii) Total-Debts-to-Assets L282; 17(ix) Operating Margin L283; 17(x) Net Profit Margin L284** | **FAIL** |
-| Segments (reportable) | 4 | 4 | none | PASS |
-| Comparative periods | 4 | 4 | none — Q1FY27/Q4FY26/Q1FY26/FY26 all used | PASS |
-| Agenda items | 1 | 1 | none | PASS |
-| Auditor paras | 5 | 5 | none — paras 1-5 cited (L156-219) | PASS |
-| Entities | 3 | 3 | none — Bank + 2 audit firms | PASS |
-| Signatures | 4 | 4 | none | PASS |
-| Footnotes | 3 | 3 | ** (L223) and *** (L224) uncited — tied to the two uncited ratios below | FAIL (same root) |
-
-**Fresh-pass rows the ledger lacks:** none. A2 enumeration reproduces exactly (14/87/24/14/4/4/1/5/3/4/3). No loop-back to A2.
-
-**Orphan-row finding (loop to A3/A4).** Four disclosed Analytical Ratios are enumerated in ledger Table 3 but appear nowhere in A4's review, and A4 gives no "reviewed, no finding" disposition for them (verified by grep: no hit for "Debt Equity", "Total Debts", "Operating Margin", "Net Profit Margin", "3.88", "0.11" in the review body):
-- 17(ix) Operating Margin (10.62% Q1FY27, L283) and 17(x) Net Profit Margin (5.14%, L284) are immaterial orphans — they are pure re-expressions of PPOP/Total Income and PAT/Total Income, both of which A4 analyses; I reconcile them (5,145/48,425 = 10.62%; 2,491/48,425 = 5.14%) and treat them as covered-by-derivation, not a substantive gap.
-- 17(vii) Debt-Equity 0.11x (L281) and 17(viii) Total-Debts-to-Assets 3.88% (L282) are a **substantive** orphan: together they resolve the tenor of the FN12 borrowings surge, which A4 explicitly treats as undisclosed. This is the load-bearing coverage failure and is developed in the ADVERSARIAL section (surviving bear counter).
+Unit basis: source Rs Lakh; /100 = Rs Cr. All recomputes done from raw extract line numbers.
 
 ---
 
-## 2. ARITHMETIC AUDIT (recomputed from raw extract lines, Lakh /100 = Cr)
+## GATE-A5 CLOSE-OUT OF THE PRIOR (LOOP-0) FAIL
 
-| Metric | A4 value | My recompute | Source lines | Status |
-|---|---|---|---|---|
-| Unit conversion (Lakh /100) | Cr throughout | 44,936 lakh = 449.36 Cr; 15,57,166 = 15,571.66 Cr | L241, L364 | CONFIRMED |
-| NII Q1FY27 | 177.62 | (44,936 − 27,174)/100 = 177.62 | L241, L249 | CONFIRMED |
-| NII Q4FY26 | 187.05 | (44,305 − 25,600)/100 = 187.05 | L241, L249 | CONFIRMED |
-| NII Q1FY26 | 139.10 | (36,776 − 22,866)/100 = 139.10 | L241, L249 | CONFIRMED |
-| NII FY26 | 622.33 | (1,60,148 − 97,915)/100 = 622.33 | L241, L249 | CONFIRMED |
-| **Cost-to-income Q1FY27 (LOAD-BEARING)** | **75.79%** | 16,106 / (17,762 + 3,489) = 16,106/21,251 = **75.789%** | L250, L241, L249, L247 | **CONFIRMED** |
-| Cost-to-income Q4FY26 | 55.66% | 14,267 / (18,705 + 6,929) = 14,267/25,634 = 55.655% | L250,241,249,247 | CONFIRMED |
-| Cost-to-income Q1FY26 | 81.35% | 14,512 / (13,910 + 3,930) = 14,512/17,840 = 81.345% | L250,241,249,247 | CONFIRMED |
-| **PCR ex tech w/o Q1FY27 (LOAD-BEARING)** | **74.66%** | 1 − 7,261/28,657 = 1 − 0.25337 = **74.663%** | L275, L276 | **CONFIRMED** |
-| PCR ex tech w/o Q4FY26 | 73.67% | 1 − 7,540/28,638 = 73.672% | L275, L276 | CONFIRMED |
-| PCR ex tech w/o Q1FY26 | 65.51% | 1 − 13,862/40,195 = 65.513% | L275, L276 | CONFIRMED |
-| **RoA annualised Q1FY27 (LOAD-BEARING)** | **0.45%** (as disclosed) | annPAT 99.64 / avg assets (22,126.24+21,237.66)/2 = 99.64/21,681.95 = **0.460%** | L279 disc.; L262, L359/367 | CONFIRMED (disclosed 0.45%; my ×4/2-pt proxy 0.46%, within method/rounding — daily-average denominator explains the 0.01pp; not a mismatch) |
-| Advances YoY | +27.4% | (15,57,166 − 12,21,820)/12,21,820 = 27.446% | L364 | CONFIRMED |
-| Deposits YoY | +17.1% | (19,40,405 − 16,56,962)/16,56,962 = 17.108% | L356 | CONFIRMED |
-| Borrowings YoY | +104% | (85,871 − 41,996)/41,996 = 104.47% | L357 | CONFIRMED |
-| Borrowings QoQ | +16.6% | (85,871 − 73,663)/73,663 = 16.57% | L357 | CONFIRMED |
-| EPS Q1FY27 (Basic) | 0.63 | 2,491 lakh PAT / 3,947 lakh shares = Rs 0.631 (not annualised) | L262, L265 | CONFIRMED |
-| PAT YoY | +104.5% | (2,491 − 1,218)/1,218 = 104.52% | L262 | CONFIRMED |
-| PBT YoY | +191.8% | (3,554 − 1,218)/1,218 = 191.79% | L260 | CONFIRMED |
-| ETR Q1FY27 | 29.9% | 1,063/3,554 = 29.91% | L261, L260 | CONFIRMED |
-| ETR Q4FY26 | 44.9% | 3,547/7,896 = 44.92% | L261, L260 | CONFIRMED |
-| PPOP YoY | +54.6% | (51.45 − 33.28)/33.28 = 54.60% | L255-256 | CONFIRMED |
-| PPOP QoQ | −54.7% | (51.45 − 113.67)/113.67 = −54.74% | L255-256 | CONFIRMED |
-| Other income YoY | −11.2% | (34.89 − 39.30)/39.30 = −11.22% | L247 | CONFIRMED |
-| Other income QoQ | −49.6% | (34.89 − 69.29)/69.29 = −49.65% | L247 | CONFIRMED |
-| Employee cost QoQ | +30.9% | (9,298 − 7,104)/7,104 = 30.88% | L251 | CONFIRMED |
-| Provisions YoY | −24.6% | (1,591 − 2,110)/2,110 = −24.60% | L257 | CONFIRMED |
-| Credit-cost proxy Q1FY27 | 0.42% | 1,591×4 / ((15,57,166+14,91,806)/2) = 6,364/15,24,486 = 0.417% | L257, L364 | CONFIRMED |
-| RoE proxy Q1FY27 | 7.74% | 2,491×4 / ((1,30,887+1,26,455)/2) = 9,964/1,28,671 = 7.74% | L262, L280 | CONFIRMED |
-| Net worth Q1FY27 | 1,308.87 | 1,30,887/100 | L280 | CONFIRMED |
-| Book equity Q1FY27 | 1,513.21 | (39,470 + 1,11,851)/100 = 1,513.21 (ties to Capital Employed total L334) | L354, L355 | CONFIRMED |
-| Net-worth vs book-equity gap | 204.34 Cr / 13.5% | 1,513.21 − 1,308.87 = 204.34; /1,513.21 = 13.5% | L280, L354-355 | CONFIRMED |
-| IFR release | 30.68 Cr | 3,068/100 | Note 5, L387 | CONFIRMED |
-| Note 11 stressed pool | 110.41 Cr / 0.71% of adv | 11,040.74/100; /15,571.66 = 0.709% | L436, L364 | CONFIRMED |
-| Corp/Wholesale seg result | +1.75 / +10.97 / −8.75 | 175/1,097/(875) /100 | L305 | CONFIRMED |
-| PAT bridge YoY (sum) | +12.73 (2,491−1,218) | 24.91 − 12.18 = 12.73 | Step 4 | CONFIRMED |
-| PAT bridge QoQ (sum) | −18.58 | 24.91 − 43.49 = −18.58 | Step 4 | CONFIRMED |
+Prior FAIL: the +104% YoY borrowings jump was framed as "tenor undisclosed," ignoring the two enumerated ratio rows L281 and L282.
 
-**Arithmetic verdict: zero mismatches.** All three explicitly-flagged load-bearing metrics reproduce from first principles: cost-to-income 75.79% (16,106/21,251), PCR ex-w/o 74.66% (1 − 7,261/28,657), RoA 0.45% (disclosed; my independent ×4/2-point proxy 0.46%, inside method tolerance). No FAIL on arithmetic. No loop-back to A4 on numbers.
+Fresh verification of closure:
+- Footnote L223 (verbatim): "Debt represents borrowings with residual maturity of more than one year." Footnote L224: "Total debts represent total borrowings of the bank." Both confirmed by my own grep (lines 223, 224).
+- L281 Debt-Equity = 0.11 / 0.12 / 0.13 / 0.12 (Q1FY27 / Q4FY26 / Q1FY26 / FY26). L282 Total-Debts/Total-Assets = 3.88% / 3.47% / 2.25% / 3.47%. Confirmed by grep (lines 281, 282).
+- A4 now cites L281 and L282 in Step 1L (review L106-109), Step 2 (L135-136, L146), Step 5L (L217-218, L229), tripwire #5 (L247), growth trigger (L255, L268), monitorables (L344), Step 8.5 Q6 (L301), and the "What Changed" section (L329). No longer "tenor undisclosed."
+
+The short-tenor conclusion is arithmetically re-derived and SOUND (see Arithmetic Audit rows I1-I5 below). GAP CLOSED.
 
 ---
 
-## 3. ADVERSARIAL READ
+## 1. COVERAGE AUDIT (fresh grep + sweep, diffed vs A2 ledger)
 
-### Structural / resolution checks the task named
-- **Audited/unaudited label inversion (page-5 typo) — A4's resolution is CORRECT.** The current quarter (30.06.2026) is labelled Unaudited on the cover letter (L119, L121), the P&L header/status row (L235, L240) and the balance-sheet status row (L352); the auditors issued a *Limited Review*, not an audit (L152-156, L211). Only the page-5 segment status row (L292) prints "Audited" for the Jun-26 column. Three independent places vs one → the page-5 header is the typo; Q1FY27 is Unaudited. FN7 stands.
-- **Standalone-only claim — CORRECT.** No consolidated statement anywhere in the 7 pages; header L37-42 states no subsidiaries/associates. S-vs-C PAT gap is structurally uncomputable (N.A.), not a data gap. A4/F2 faithful.
-- **Segment-vs-BS Rs 1 lakh difference — CORRECTLY called rounding (FN8).** Seg Total 21,23,765 / 18,70,020 (L319) vs BS 21,23,766 / 18,70,019 (L359/367). 1-lakh delta, immaterial.
-- **RoA tripwire adjudication — FAITHFUL.** 0.45% < 0.6% watch level and < FY26 0.53% (L279). "BREACHED, monitoring not exit" is correct for a non-held first-workup name.
-- **FLAG-CASH falsifier — FAITHFUL.** Falsifier needs PCR ex-w/o <53.63% AND NNPA >1.11%; actual 74.66% and 0.47% (L275-276, L278) — both legs fail the falsifier, so NOT triggered. Correct, not overstated.
-- **Cost-to-income AMBIGUOUS (not RED-FLAG) — correct call.** 75.79% sits between the 75% recovery line and 80% one-off line; ambiguous is the honest classification, not a red-flag.
+| Category | A2 count | My fresh count | Method | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Notes | 14 | 14 | Notes 1(L350),2-9(L368-402),10(L403-421),11(L422-463),12(L464),13(L465-467),14(L468-469) | none | PASS |
+| Line items | 87 | 87 | P&L 22 + BS 13 + segment 36 + Note 11 16; wrapped rows collapsed | none | PASS |
+| Zero-standing | 24 | 24 | 2 P&L (L258,L263) + 1 ratio (L269 GoI) + 10 segment nil + 11 Note-11 nil | none | PASS |
+| Ratios 17(i)-(x) | 14 | 14 | GoI,CRAR,EPS-B,EPS-D,GNPA amt,NNPA amt,GNPA%,NNPA%,RoA,NetWorth,D/E,TD/TA,OpMgn,NPM | none | PASS |
+| Segments | 4 | 4 | Treasury/Retail/Corp-Whsl/Other (reportable) | none | PASS |
+| Comparative periods | 4 | 4 | 30.06.2026 / 31.03.2026 / 30.06.2025 / FY26 | none | PASS |
+| Agenda items | 1 | 1 | single Reg 30/33/52 results-approval cover letter | none | PASS |
+| Auditor paras | 5 | 5 | paras 1-5 (L156-219); no EOM/Other/GC | none | PASS |
+| Entities | 3 | 3 | Dhanlaxmi Bank + Sagar & Assoc + Abraham & Jose | none | PASS |
+| Signatures | 4 | 4 | CS + 2 audit partners + Board Order block | none | PASS |
+| Footnotes | 3 | 3 | *(L222) **(L223) ***(L224) | none | PASS |
 
-### Three most positive claims, each with strongest bear counter from the same extract
+Fresh grep spot-checks run this pass: analytical-ratio roman-numeral rows, the two funding-ratio labels + their footnotes (L223/L224/L281/L282), Note-10 sub-items (i/ii/iii at L415-419). All reconcile to the ledger. No row my pass found is absent from the ledger; no ledger row is absent from A4.
 
-**Positive claim 1 — "Asset quality is the strongest leg: GNPA 1.82%, NNPA 0.47%, PCR ex-w/o 74.66% and rising; falsifier not triggered."**
-Bear counter: absolute GNPA is essentially flat QoQ (28,638 → 28,657 lakh, L275) while the provision charge was cut to 1,591 lakh (−54% QoQ, −25% YoY, L257); the coverage improvement is arithmetic (denominator/mix), and Note 6 (L389-391) confirms the charge is composite, not pure credit cost. **Counter does NOT survive as new** — A4 already carries this in full (FN1, Step 5L "provision-light", Bridge notes). No graft required.
+Ledger-row-to-A4 citation check (specifically the two rows the prior FAIL turned on):
+- 17(vii) D/E L281: CITED and correctly interpreted (>1yr-residual borrowings / equity; footnote L223). PASS.
+- 17(viii) TD/TA L282: CITED and correctly interpreted (total borrowings / total assets; footnote L224). PASS.
+- All A2 flags dispositioned by A4: audit-label inversion (page4 vs page5) = page-5 header typo, current quarter Unaudited (FN7); Rs 1-lakh segment-vs-BS total diff = rounding (FN8); Note-10 OCR garble recovered manually. No number impact. PASS.
 
-**Positive claim 2 — "PAT +104.5% YoY; core PPOP +54.6% YoY driven by NII not other income."**
-Bear counter: the entire PBT→PAT wedge is the nil-tax Q1FY26 base (0% ETR, L261) now at 29.9%; other income actually fell YoY (−11.2%, L247) and QoQ (−49.6%); the PPOP step is off a thin base. **Counter does NOT survive as new** — A4 already deflates the optic thoroughly (FN3, Step 2 answer 4, Bridge A). No graft required.
+COVERAGE: no orphan rows, nothing missing from ledger. PASS.
 
-**Positive claim 3 — "Advances +27.4% YoY clears the 20% growth tripwire; CRAR 19.19% comfortable and rising; funding-mix a watch item but NIM/CoF/tenor 'not disclosed'."** (Step 5L, FN12, Q6, Tripwire 5)
-Bear counter — **SURVIVES, and must be grafted into A4:** the tenor of the borrowings surge IS disclosed, in two enumerated ratios A4 never cites. Debt-Equity Ratio (L281, footnote ** = borrowings with residual maturity >1yr / equity) FELL 0.13 → 0.12 → 0.11 across Q1FY26→Q4FY26→Q1FY27, while Total-Debts-to-Total-Assets (L282, footnote *** = total borrowings / total assets) ROSE 2.25% → 3.47% → 3.88%. Back-solving: long-term borrowings ≈ 0.13×1,188.04 = 154.4 Cr (Q1FY26) → 0.11×1,308.87 = 143.9 Cr (Q1FY27), i.e. flat-to-down, against total borrowings 419.96 → 858.71 Cr (+438.75 Cr, L357). **Essentially 100% of the +439 Cr borrowings increase is short-tenor (<1yr residual):** short-term borrowings ~265 Cr → ~715 Cr, roughly +170% YoY. This is a live rollover/repricing risk that SHARPENS FN12 and directly refutes A4's own framing that funding tenor is "undisclosed" (A4 relegates "short-tenor" to a hypothetical *bull* answer in Q6, L288, when the disclosed ratios show the increment is entirely short-tenor — a *bear* fact). Cross-check: 3.88% × 22,126.24 Cr total assets = 858.5 Cr ≈ borrowings 858.71 ✓; 2.25% × 18,700.19 = 420.8 ≈ 419.96 ✓ (ratios tie to the raw lines).
+---
 
-Because this counter is supported by the extract and is absent from A4, per the A5 protocol it must be added to A4 before save. The enumerated rows that carry it (17(vii) L281, 17(viii) L282, plus footnotes ** L223 / *** L224) were correctly captured by A2 but generated no A3 forensic and no A4 citation — a missed forward-signal. Root loop-back: **A3** (produce the tenor/funding-durability forensic from the ratio rows), then **A4** to incorporate it into FN12 / Step 5L / Tripwire 5 and reclassify "short-tenor wholesale funding" from a bull hypothetical to a disclosed bear fact.
+## 2. ARITHMETIC AUDIT (recomputed from raw extract lines)
+
+| # | Metric | A4 value | My recompute | Source lines | Status |
+|---|---|---|---|---|---|
+| A1 | NII Q1FY27 | 177.62 | 44,936-27,174 = 17,762 lakh = 177.62 | L241,L249 | PASS |
+| A2 | C/I Q1FY27 | 75.79% | 16,106 / (17,762+3,489) = 16,106/21,251 = 75.789% | L250,241,249,247 | PASS |
+| A3 | C/I Q1FY26 | 81.35% | 14,512/(13,910+3,930)=14,512/17,840=81.345% | L250,241,249,247 | PASS |
+| A4 | C/I Q4FY26 | 55.66% | 14,267/(18,705+6,929)=14,267/25,634=55.656% | same | PASS |
+| A5 | PCR ex-w/o Q1FY27 | 74.66% | 1-7,261/28,657 = 74.663% | L275-276 | PASS |
+| A6 | PCR ex-w/o Q1FY26 | 65.51% | 1-13,862/40,195 = 65.513% | L275-276 | PASS |
+| A7 | PCR ex-w/o Q4FY26 | 73.67% | 1-7,540/28,638 = 73.673% | L275-276 | PASS |
+| A8 | RoA Q1FY27 | 0.45% | disclosed L279 = 0.45% (not derived) | L279 | PASS |
+| A9 | Advances +YoY | +27.4% | 15,57,166/12,21,820-1 = +27.45% | L364 | PASS |
+| A10 | Deposits +YoY | +17.1% | 19,40,405/16,56,962-1 = +17.11% | L356 | PASS |
+| A11 | Borrowings +YoY | +104.5% | 85,871/41,996-1 = +104.47% | L357 | PASS |
+| A12 | Borrowings abs increment | +438.75 Cr | 85,871-41,996 = 43,875 lakh | L357 | PASS |
+| A13 | NII +YoY | +27.7% | 177.62/139.10-1 = +27.69% | L241,L249 | PASS |
+| A14 | PPOP +YoY | +54.6% | 51.45/33.28-1 = +54.6% | L255-256 | PASS |
+| A15 | PBT +YoY | +191.8% | 3,554/1,218-1 = +191.79% | L259-260 | PASS |
+| A16 | PAT +YoY | +104.5% | 2,491/1,218-1 = +104.52% | L262 | PASS |
+| A17 | ETR Q1FY27 | 29.9% | 1,063/3,554 = 29.91% | L261,L259 | PASS |
+| A18 | ETR Q4FY26 | 44.9% | 3,547/7,896 = 44.92% | L261,L259 | PASS |
+| A19 | EPS Q1FY27 | 0.63 | 2,491 lakh / (39,470/10 lakh sh) = Rs 0.631 | L262,L265 | PASS |
+| A20 | Credit cost Q1FY27 (proxy) | 0.42% | 15.91x4 / avg adv 15,244.86 = 0.417% | L257,L364 | PASS |
+| A21 | RoE Q1FY27 (proxy) | 7.74% | 24.91x4 / avg NW 1,286.71 = 7.74% | L262,L280 | PASS |
+| A22 | Net-worth vs book-equity gap | 204.34 Cr / 13.5% | 1,513.21-1,308.87 = 204.34; /1,513.21 = 13.5% | L354-355,L280 | PASS |
+| A23 | PAT bridge YoY sum | +12.73 | 38.52-4.41-15.94+5.19-10.63 = +12.73 | L241-262 | PASS |
+| A24 | PAT bridge QoQ sum | -18.58 | PBT -43.42 (-9.43-34.40-18.39+18.80) + tax +24.84 = -18.58 | L241-262 | PASS |
+| A25 | Operating margin 17(ix) | 10.62% | 5,145/48,425 = 10.62% | L255,248 | PASS |
+| A26 | Net profit margin 17(x) | 5.14% | 2,491/48,425 = 5.14% | L262,248 | PASS |
+
+### FN14 funding-tenor reconciliation (the revision's new arithmetic)
+
+| # | Derived quantity | A4 value | My recompute | Source lines | Status |
+|---|---|---|---|---|---|
+| I1 | Implied >1yr borrowings (D/E x Net Worth) | ~143.98 / ~151.75 / ~154.44 Cr (Jun26/Mar26/Jun25) | 0.11x1,308.87=143.98; 0.12x1,264.55=151.75; 0.13x1,188.04=154.45 | L281,L280 | PASS |
+| I2 | Implied short-tenor (<1yr) = total less >1yr | ~714.73 / ~584.88 / ~265.52 Cr | 858.71-143.98=714.73; 736.63-151.75=584.88; 419.96-154.44=265.52 | L357,I1 | PASS |
+| I3 | Short-tenor YoY multiple | ~2.7x | 714.73/265.52 = 2.69x | I2 | PASS |
+| I4 | Cross-check TD/TA definition (L224) | 3.88% | 85,871/22,12,624 = 3.881% (=total borrowings/total assets, confirms footnote) | L357,L359,L282 | PASS |
+| I5 | Book-equity robustness (A4 alt base ~166 vs ~183) | ~166 / ~183 Cr | 0.11x1,513.21=166.45; 0.13x1,404.81=182.63 | L281,L354-355 | PASS |
+
+Arithmetic soundness of the short-tenor conclusion: implied >1yr-residual borrowings are flat-to-DOWN YoY (~144 vs ~154 Cr on net worth; ~166 vs ~183 Cr on book equity) while total borrowings rose +438.75 Cr, so essentially the entire increment is <1yr residual. The conclusion holds under both equity bases and is robust to 2-decimal rounding on the D/E ratio (extreme rounding band ~137-160 Cr for >1yr, still far below the +439 Cr increment). L282 reconciles exactly to total-borrowings/total-assets (I4), independently confirming footnote L224. The two implied rows are correctly flagged in A4 as DERIVED (review L108-113), not disclosed line items. NO estimation of a disclosed number occurred. The task's stated ~Rs 144-154 Cr >1yr-reconciliation band is confirmed (I1).
+
+ARITHMETIC: 31 of 31 checks PASS. No mismatch above rounding.
+
+---
+
+## 3. ADVERSARIAL READ (three most positive claims, strongest bear from the same extract)
+
+1. CLAIM: Asset quality is the strongest leg — PCR ex-w/o 74.66% and rising, NNPA 0.47%, GNPA 1.82%, FLAG-CASH falsifier not triggered (review L226).
+   BEAR: PCR ex-w/o rose partly because NNPA fell in absolute terms (7,540->7,261 lakh, L276) on a QoQ-FLAT gross NPA (28,638->28,657, L275) while the provision CHARGE fell to 15.91 Cr (L257) — coverage improved on a provision-LIGHT quarter, so the "rising coverage" optic is not fresh provisioning.
+   SURVIVES? NO — already grafted as FN1 and stated repeatedly (review L227, L256, Q1 management question). No new graft required.
+
+2. CLAIM: Core operating health genuinely positive — PPOP +54.6% YoY, NII-driven (review L141).
+   BEAR: off a thin base (33.28 Cr) and PPOP HALVED QoQ (113.67->51.45, -54.7%, L159); other income FELL YoY (-11.2%) and collapsed QoQ (-49.6%), so the YoY optic flatters and the run-rate is decelerating.
+   SURVIVES? NO — already grafted as FN10 and Step 3; A4 calls Q4 the outlier and the print "dragged by" not "flattered by" other income.
+
+3. CLAIM: Growth transition ON TRACK — advances +27.4% YoY, NII +27.7% (review L255).
+   BEAR: composition undisclosed (no gold/LTV/secured-unsecured split, FN13) AND the marginal funding is short-tenor wholesale, not deposits — deposits grew +17.1% while borrowings grew +104.5% and the increment is essentially all <1yr (FN14). Growth quality and funding durability both unproven.
+   SURVIVES? NO — already grafted as FN13 + the revised FN14; the funding-durability flag is explicitly STRENGTHENED this revision and routed to management Q6/Q7.
+
+Bonus check — headline PAT +104.5% YoY: already de-flattered as a nil-tax-comparator artefact (ETR 0%->29.9%, FN3). Incorporated.
+
+No bear counter survives un-incorporated. No new gap is introduced by the revision. Every forward-signal finding (FN1,3,5,10,11,12,14) and ambiguous finding (FN4,9,13) generates at least one Step 8.5 management question; FN14 specifically is folded into Q6 (rollover ladder, repricing, NIM/CoF sensitivity, deposit-migration plan) and cross-referenced in Q7. FN2 (protective), FN6/7/8 (no-impact dispositions) correctly carry no question.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Coverage and arithmetic both surface the same single gap: two enumerated Analytical Ratios (Debt-Equity 17(vii) L281; Total-Debts-to-Total-Assets 17(viii) L282, with footnotes ** L223 / *** L224) are absent from A4 and carry a surviving bear counter — the entire +104% YoY borrowings increase is short-tenor (<1yr residual), a rollover/repricing risk that sharpens FN12 and corrects A4's "tenor undisclosed" framing. Loop back to **A3** to raise the forward-signal forensic, then **A4** to graft it. Everything else — all 14 notes, both other load-bearing metrics (C/I 75.79%, PCR ex-w/o 74.66%), RoA 0.45%, the page-5 label-inversion resolution, the standalone-only claim, the segment/BS rounding, and the full tripwire adjudication — passes independent re-derivation. Operating Margin (17ix) and Net Profit Margin (17x) are covered-by-derivation and reconcile (10.62%, 5.14%), not a substantive gap.
+COMPLETE. The single prior-loop gap is closed: L281 (17(vii) Debt-Equity, footnote L223) and L282 (17(viii) Total-Debts-to-Total-Assets, footnote L224) are now cited and correctly interpreted; the +104.5% YoY borrowings increment is shown to be essentially all short-tenor (<1yr residual) with an arithmetically sound reconciliation (implied >1yr borrowings ~144 vs ~154 Cr, flat-to-down); and FN14 is routed as management question Q6. Coverage: no orphan rows, nothing missing from the ledger. Arithmetic: 31/31 PASS, no mismatch above rounding. Adversarial: no surviving un-incorporated bear counter, no new gap from the revision. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -114,19 +123,12 @@ company: "DHANBANK"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
-  orphan_rows:
-    - "17(vii) Debt-Equity Ratio 0.11x (L281) — enumerated, absent from A4, carries surviving tenor signal"
-    - "17(viii) Total-Debts-to-Total-Assets 3.88% (L282) — enumerated, absent from A4, carries surviving tenor signal"
-    - "17(ix) Operating Margin 10.62% (L283) — uncited but covered-by-derivation (PPOP/Total Income), immaterial"
-    - "17(x) Net Profit Margin 5.14% (L284) — uncited but covered-by-derivation (PAT/Total Income), immaterial"
+  orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - claim: "Borrowings +104% YoY is a watch item but funding tenor / NIM / cost-of-funds are 'not disclosed' (FN12, Q6, Tripwire 5)"
-    counter: "Tenor IS disclosed: Debt-Equity (>1yr-residual borrowings/equity) fell 0.13->0.11 while Total-Debts-to-Assets rose 2.25%->3.88%, so ~100% of the +439 Cr borrowings increase is short-tenor (<1yr) — a rollover/repricing risk. A4 relegates 'short-tenor' to a hypothetical bull answer; the ratios show it is a bear fact. Must be grafted into FN12/Step 5L/Tripwire 5."
-    source_line: "L281 (Debt-Equity 17vii), L282 (Total-Debts-to-Assets 17viii), L223/L224 (footnotes ** / ***), L357 (Borrowings)"
-loop_back_to: "A3"
-gap: "A3 raised no forward-signal forensic from enumerated ratio rows 17(vii) L281 and 17(viii) L282; together they show the entire +104% YoY borrowings increase is short-tenor (<1yr residual maturity), a disclosed funding-durability/rollover risk that sharpens FN12 and refutes A4's 'tenor undisclosed' framing. A3 to produce the forensic; A4 to incorporate it (cite Debt-Equity 0.11x and Total-Debts-to-Assets 3.88%, reclassify short-tenor wholesale funding as a disclosed bear fact) before Notion save."
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

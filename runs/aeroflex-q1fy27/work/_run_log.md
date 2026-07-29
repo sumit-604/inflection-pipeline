@@ -41,3 +41,5 @@ Run date: 2026-07-27. Ticker: AEROFLEX (Aeroflex Industries Limited, Scrip 54397
 - Q1 FY27 concall transcript supplied as plain text (was N.A. in the 27-Jul results cycle). Saved verbatim to inputs/concall_aeroflex_q1fy27.txt.
 - A1 concall extract built (header + turn-marked verbatim, T00-T17; 14 analyst Q&A turns). MD Asad Daud answered all Qs; no CFO/other exec spoke. GATE A1 PASS.
 - A2 concall enumerator dispatched.
+- A2 concall gate PASS (14 turns, 55 Qs, 120 mgmt numbers). A3 concall gate PASS (red silences persist; 10/14 prior Qs unanswered; no CFO). A4 Role 5 addendum written (review_concall_*.md); verdict PROCEED WITH FLAGS, Grade B (+ removed), ROCE INDETERMINATE.
+- A5 loop 1 INCOMPLETE (catalysts credited without concentration caveat) -> A4 fix (re-tagged concentration-additive; fire-hose same anchor T08 l.90-91, intl-skid customer withheld T08 l.87) -> A5 loop 2 COMPLETE.

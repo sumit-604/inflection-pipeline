@@ -1,38 +1,46 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — AEROFLEX Q1 FY27 (CONCALL ADDENDUM)
+# A5 ADVERSARY / COMPLETENESS AUDIT — AEROFLEX Q1 FY27 CONCALL (LOOP 2)
 
 Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Date: 2026-07-29
-Artifact under audit: `runs/aeroflex-q1fy27/work/review_concall_aeroflex_q1fy27.md`
-(the Role 5 concall addendum; the separate Role 4 results audit lives in
-`audit_aeroflex_q1fy27.md` and is not touched here).
-
-Primary evidence (re-derived independently):
+Artifact under audit (revised): `runs/aeroflex-q1fy27/work/review_concall_aeroflex_q1fy27.md`
+Pass: SECOND (re-audit after loop-1 INCOMPLETE). This overwrites the loop-1 audit.
+Primary evidence, re-derived independently:
 - A1 extract: `runs/aeroflex-q1fy27/work/extract_concall_aeroflex_q1fy27.txt`
 - A2 ledger: `runs/aeroflex-q1fy27/work/ledger_concall_aeroflex_q1fy27.md`
 
-Independence note: I did not read A3's reasoning or any orchestrator commentary. Every count
-and metric below was re-derived from the raw extract lines with my own grep/read passes.
+Independence note: I did not read A3's reasoning or any orchestrator commentary. Every count, metric and citation below was re-derived from the raw extract lines with my own grep/read passes; A4's and A3's cites were checked, not trusted.
 
 ---
 
 ## 1. COVERAGE AUDIT
 
-Fresh grep passes on the extract (my own, not A2's counts):
+Fresh independent grep passes on the extract, diffed against the A2 ledger.
 
 | Category | A2 count | My fresh count | Method | Orphan rows | Status |
 |---|---|---|---|---|---|
-| Analyst Q&A turns | 14 | 14 | `^\[T(0[3-9]\|1[0-6]) ANALYST` = T03..T16 (extract lines 27,33,39,59,69,81,95,111,121,133,137,144,152,162) | none | PASS |
-| Questions | 55 | 55 | `^Q:` = 55 occurrences | none | PASS |
-| mgmt_numbers | 120 | 120 (accepted) | A2 methodology transparent; per-turn sum reconciles (T01:35...T17:1=120); 2 header-artifact tokens flagged not dropped; every content number I spot-checked traces to a turn (Section 2A) | none | PASS |
-| Participants | 15 | 15 | 1 MD + 1 operator + 13 unique analysts (Raman/Sequent counted once across T05,T16) | none | PASS |
+| Analyst Q&A turns | 14 | 14 | `^\[T(0[3-9]\|1[0-6]) ANALYST` = 14 (T03-T16) | none | PASS |
+| Questions | 55 | 55 | `^Q:` = 55; per-turn sweep 2+2+9+4+5+6+7+4+5+1+2+3+4+1 = 55 | none | PASS |
+| Participants | 15 | 15 | 1 MD + 1 operator + 13 unique analyst identities (Raman T05/T16 counted once) | none | PASS |
+| mgmt_numbers | 120 | 120 (reconciled) | Per-turn token sum T01:35 + T03:1 + T05:23 + T06:3 + T07:3 + T08:8 + T09:19 + T10:7 + T11:13 + T12:2 + T13:3 + T14:2 + T17:1 (T04/T15/T16 = 0) = 120; 2 HEADER_ARTIFACT tokens (T03,T17) flagged not dropped | none | PASS |
 
-Ledger-row -> A4 mapping (every A2 row either cited or reviewed-no-finding):
-- All 15 A2 Section-6 flags carried into A4: MGMT_ABSENCE (0B / CC-F17-03); TRANSCRIPTION_AMBIGUOUS 6,000-base and 140/1,040 (integrity note / CC-F14-02); DECK_MISMATCH_CANDIDATE 33.12 vs 33.49 (CC-F14-01); ANALYST_VS_MGMT_MISMATCH 22%/23% (Step 1 claim 3 + 4C/T07); DISAMBIGUATION_NEEDED three 25% targets (Step 1 diagnostics, Step 2, Step 6A — cleanly separated); GUIDANCE_SOFTENED (CC-F16-01, prominent); ANALYST_SOURCED_NUMBER_MGMT_CONFIRMED 750 (Step 1 claim 18 / Step 2); REPEAT_QUESTION (4B); ANALYST_FOLLOWUP T16 (0C / 4A); HEADER_ARTIFACT (non-content); HYPOTHETICAL 5-yr (T10 repurposing); SPEECH_DISFLUENCY / REPEATED_IN_TURN / PERIOD_LABEL (folded into integrity note).
-- All 8 A2 forward commitments and the hedge/deferral cluster appear in Step 2 / Step 3A / Step 6C / Monitorables.
-- 13 A3 findings (CC-F6-01..04, F7-01/02, F14-01/02, F16-01/02, F17-01/02/03) each appear in the review body.
-- Prior-review answer status complete and turn-cited: 14/14 questions graded; tally 0 ANSWERED / 4 PARTIAL (Q1,Q2,Q3,Q14) / 10 UNANSWERED = 14 (Step 5A). Recount confirms 4+10 = 14.
+**Ledger-row -> A4 citation trace (every substantive flag accounted for):**
 
-No orphan rows (ledger row absent from A4). No rows my fresh pass found that the ledger lacks.
-COVERAGE: PASS.
+| Ledger flag / row | Cited in A4? | Where |
+|---|---|---|
+| MGMT_ABSENCE (no CFO) | YES | CC-F17-03; Steps 0B, 7, 8C, Q11 |
+| GUIDANCE_SOFTENED (25% SFN share deferred) | YES | CC-F16-01; Steps 2, 3, 4C, 6A, 7, 10 |
+| DECK_MISMATCH_CANDIDATE (EBITDA 33.12 vs 33.49) | YES | CC-F14-01; two-number note, Step 7A |
+| TRANSCRIPTION_AMBIGUOUS (6,000 base; 140->1,040) | YES | CC-F14-02; two-number note |
+| ANALYST_VS_MGMT_MISMATCH (22% vs 23% SFN share) | YES | Step 2 (22-23% band), Step 5A |
+| DISAMBIGUATION_NEEDED (three 25% targets) | YES | Kept separate: company EBITDA 25% (claim 26), assembly/hose bands (claim 12), SFN-share 25% (claim 25) |
+| ANALYST_SOURCED_NUMBER_MGMT_CONFIRMED (750/month) | YES | Claim 18; Steps 2, 4C-Ex2 |
+| REPEAT_QUESTION (25% target, two analysts) | YES | Step 4B |
+| ANALYST_FOLLOWUP (Raman T16) | YES | Steps 0C, 4B |
+| HYPOTHETICAL (5-yr repurposing) | YES | Step 4A T10 |
+| HEADER_ARTIFACT (T03,T17) | n/a — non-content | Correctly excluded as spoken numbers |
+
+All 8 A2 forward commitments and the hedge/deferral cluster appear in Step 2 / 3A / 6C / Monitorables. All 13 A3 findings (CC-F6-01..04, F7-01/02, F14-01/02, F16-01/02, F17-01/02/03) appear in the review body. No orphan row (ledger row absent from A4). No row my fresh pass found that the ledger lacks. **COVERAGE: PASS.**
+
+**14 prior-review questions — answer-status + turn-cite completeness:** all 14 Role 4 Step 8.5 questions carry a status in Step 5A. Tally 0 ANSWERED / 4 PARTIAL (Q1 T08,T11; Q2 T06,T08; Q3 T10,T11; Q14 T11) / 10 UNANSWERED = 14. The UNANSWERED items that never surfaced carry "none" as the turn cite, which is the correct citation for a silence; the two touched adjacently cite turns (Q6 T05,T15; Q10 T01,T05). 4 + 10 = 14. **PASS.**
 
 ---
 
@@ -42,112 +50,96 @@ COVERAGE: PASS.
 
 | Number in A4 | Extract turn / line | Status |
 |---|---|---|
-| Revenue 145.97 Cr, +72.4% | T01 (line 22) | traced |
-| EBITDA spoken "33 12", +116%, 23.04%, +468 bps | T01 (line 22) | traced (spoken slip; deck 33.49 governs) |
-| PAT "18 79", +162%, ~13%, +440 bps | T01 (line 22) | traced |
-| Cash profit 26.64, 18.25%, +278 bps | T01 (line 22) | traced |
-| Hose util 65-66%; peak 650-675 Cr; 70% assy mix | T05 (line 41) | traced |
-| Margin bands 16-20% / 22-26% | T05 (line 47); fire-hose 23-26% T12 (line 135) | traced |
-| Hyd-Air ~7 Cr; bellows ~3 Cr | T05 (line 53) | traced |
-| Skid capex 48 Cr | T09 (line 97) | traced |
-| Hose capex 54 Cr | T09 (line 99) | traced |
-| FY28 optimal util ~80% | T09 (line 105) | traced |
-| Q4 ~750 skids/month, 60-65% | T10 (analyst-sourced line 112/114; MD "intact" line 113/115) | traced; A4 labels analyst-sourced/MD-confirmed correctly |
-| Skid value 32.4 Cr; volume 1,040 (spoken "140") | T11 (line 129) | traced |
-| ~40 skids/MW | T14 (line 148) | traced |
-| Rs 1-5 lakh/skid | T06 (line 61) | traced |
+| Revenue 145.97 Cr, +72.4% | T01 (l.22) | traced |
+| EBITDA spoken "33 12", +116%, 23.04%, +468 bps | T01 (l.22) | traced (spoken slip; deck 33.49 governs) |
+| PAT "18 79", +162%, ~13%, +440 bps | T01 (l.22) | traced |
+| Cash profit 26.64, 18.25%, +278 bps | T01 (l.22) | traced |
+| Hose util 65-66%; peak 650-675 Cr; 70% assy mix | T05 (l.41) | traced |
+| Margin bands 16-20% / 22-26%; fire-hose 23-26% | T05 (l.47); T12 (l.135) | traced |
+| Hyd-Air ~7 Cr; bellows ~3 Cr | T05 (l.53) | traced |
+| Skid capex 48 Cr; hose capex 54 Cr | T09 (l.97, l.99) | traced |
+| FY28 optimal util ~80% | T09 (l.105) | traced |
+| Q4 ~750 skids/month, 60-65% | T10 (analyst-sourced l.112/114; MD "intact" l.113/115) | traced; correctly labelled analyst-sourced/MD-confirmed |
+| Skid value 32.4 Cr; volume 1,040 (spoken "140") | T11 (l.129) | traced |
+| ~40 skids/MW | T14 (l.148) | traced |
+| Rs 1-5 lakh/skid | T06 (l.61) | traced |
 
-Deck/filing numbers used by A4 (145.38, 33.49, 33.03, 28.43, 20.4, 41.76, 8.56, 3,11,459,
-27.4, 10.38) are ALL absent from the transcript (grep = no match). A4 attributes these to
-deck/filing/Notion, never to a turn. No number in the addendum is mis-traced to a turn. PASS.
+Deck/filing numbers used by A4 (145.38, 33.49, 33.03, 28.43, 20.4, 41.76, 8.56, 3,11,459, 27.4, 10.38) are ALL absent from the transcript. A4 attributes these to deck/filing/Notion, never to a turn. No number in the addendum is mis-traced. PASS.
 
 ### 2B. Recomputed derived metrics
 
 | Metric | A4 value | My recompute | Source | Status |
 |---|---|---|---|---|
-| Skid ASP | 3,11,538 | 32.4e7 / 1,040 = 3,11,538.46 | T11 32.4 Cr / 1,040 | PASS (deck 3,11,459 within rounding of 32.39 vs 32.4 Cr) |
+| Skid ASP | 3,11,538 | 32.4e7 / 1,040 = 311,538.46 | T11 32.4 Cr / 1,040 | PASS (deck 3,11,459 within rounding of 32.39 vs 32.4 Cr) |
 | Skid annualised run-rate | ~130 Cr | 32.4 x 4 = 129.6 | T01/T11 | PASS (under 325 Cr cap) |
-| EBITDA-margin reconciliation | deck 33.49 governs | 145.38 x 23.04% = 33.4956 | deck consol rev x spoken margin | PASS (spoken 33.12/145.97 = 22.69%, internally inconsistent — A4 flags as CC-F14-01) |
+| EBITDA-margin reconciliation | deck 33.49 governs | 145.38 x 23.04% = 33.4956; spoken 33.12/145.38 = 22.78% ≠ 23.04% | deck rev x spoken margin | PASS (spoken slip flagged CC-F14-01) |
 | PAT margin | ~13% | 18.79/145.97 = 12.87% | T01 | PASS |
-| Cash-profit margin | 18.25% | 26.64/145.97 = 18.25% | T01 | PASS |
-| Skids % of revenue | ~22-23% | 32.4/145.97 = 22.2%; 32.4/145.38 = 22.3% | T01 | PASS (MD "~23%"; A4 carries the 22/23 framing) |
-| Prior-review answer tally | 0/4/10 = 14 | 4 PARTIAL + 10 UNANSWERED = 14 | Step 5A | PASS |
-| Naive credibility ratio | 0.25/1 = 25% (not used) | 0.25/1 = 25% | Step 3B | PASS (correctly flagged n=1, not used as grade) |
+| Cash-profit margin | 18.25% | 26.64/145.97 = 18.250% | T01 | PASS (exact) |
+| Skids % of revenue | ~22-23% | 32.4/145.97 = 22.2% | T01 | PASS (MD "~23%"; band carries the mismatch) |
+| Implied D&A | — | 26.64 − 18.79 = 7.85 Cr, internally consistent | T01 | PASS |
+| Prior-review answer tally | 0/4/10 = 14 | 4 + 10 = 14 | Step 5A | PASS |
+| S-vs-C PAT gap (YAML) | -0.27 Cr / 1.41% | 0.27/18.79 = 1.44%; carried from Role 4, not re-derivable from concall | YAML note | PASS (correctly flagged as carried) |
 
-No arithmetic mismatch above rounding. ARITHMETIC: PASS.
+No arithmetic mismatch above rounding. **ARITHMETIC: PASS.**
 
 ### 2C. RED-SILENCE independent verification (did NOT take A4's word)
 
-Screened the extract directly:
-- `roce` = 1 hit, a FALSE POSITIVE inside "p-**roce**-dural" (line 25, operator). Zero substantive ROCE mention.
-- `roe`, `gst`, `qip`, `merger`, `acquisition`, `acquire`, `contingent` = 0 hits.
-- `return` = 0 hits.
-Independently confirmed: the transcript contains NO mention of ROCE/ROE, GST/IT contingent
-tax, or the US M&A/QIP pillar. A4's three-red-silence claim (Step 6F, CC-F17-01) is correct.
+Screened the extract directly with my own grep:
+- `(?i)(roce|roe|return on|return ratio)` = 0 matches. ROCE/ROE silence CONFIRMED (2nd consecutive call).
+- `(?i)(gst|contingent|litigation|income tax|41.76|8.56|tax demand)` = 0 matches. The only `tax` token in the file is "profit after tax" (PAT) in T01. GST/IT contingent-tax silence CONFIRMED.
+- `(?i)(m&a|acquisition|acquire|qip|merger|inorganic|buyout)` = 0 matches. US M&A/QIP-pillar silence CONFIRMED.
+
+All three red silences independently verified untouched. A4's Step 6F and YAML `red_silences_status` are accurate.
 
 ---
 
-## 3. ADVERSARIAL READ (three most positive claims; strongest bear counter from the same text)
+## 3. ADVERSARIAL READ
 
-**Positive claim 1 — "Skid-ASP concern largely explained as design mix, asserted margin-neutral; partially resolves A3-F07" (Step 8C, 4C-Ex1).**
-Bear counter: margin-neutrality is pure assertion; the exact skid margin was declined "on
-public forum" (T08 line 93) and the design-mix breakdown was declined (T14 line 146), so it
-is unfalsifiable and could mask price erosion. **Survives? NO.** A4 already states it "remains
-unverifiable without the skid margin and design mix," marks it only PARTIALLY resolved, and
-carries it as Step 9 Q1. Already incorporated.
+### 3A. LOOP-1 GAP RE-TEST (the reason loop 1 failed): concentration-additive framing
 
-**Positive claim 2 — "Headline P&L delivered at or above every disclosed FY27 guide metric" (Step 7, Step 8C).**
-Bear counter: +72.4% YoY is flattered by a near-nil skid base a year ago; core flexible hose
-grew only +41% (T01 line 22) and the nil-base comparative is unresolved (Q14 PARTIAL).
-**Survives? NO.** The guide metrics (35% growth, 23% margin, 20-22% skid share) are genuinely
-met even allowing for base effect, and A4 surfaces the nil-base issue (Step 5A Q14) and the
-+41% core separately. Already incorporated.
+Loop-1 FAIL: the two new FY27 catalysts were credited as diversifying positives while the transcript makes them concentration-deepening. Re-test of the revised review:
 
-**Positive claim 3 — "Two new FY27 catalysts: international skid and fire-hose (23-26% margin)" (Step 8C positives, Step 7 grade rationale, Step 2, Step 5B).**
-Bear counter: these are not diversifying catalysts — both route through the single anchor
-customer that A4 itself flags as the core concentration risk. The transcript CONFIRMS at T08
-(lines 90-91) that the fire-hose assembly "is for the same customer which... our largest
-customer is" -> MD: "yeah"; and the international-skid customer was declined as "proprietary"
-(line 87) and may be the same anchor. Presenting both as clean new positive catalysts
-OVERSTATES the positive and UNDERSTATES concentration: the "new legs" deepen single-customer
-dependence rather than broaden the book.
-**Survives? YES.** A4 raised same-customer only as an open QUESTION for the international skid
-(Step 9 Q2) and never surfaces the CONFIRMED fire-hose same-customer fact (T08 lines 90-91)
-anywhere, while still crediting the fire-hose as a positive new catalyst in Step 8C, Step 7,
-Step 2 and Step 5B. This extract-supported counter is absent from A4's catalyst framing and
-must be grafted before save: the two catalysts should be flagged as concentrated on the
-existing largest customer (fire-hose confirmed T08; international-skid customer withheld,
-possibly the same), i.e. concentration-deepening, not diversifying.
+**Crux citations re-verified in the raw extract:**
+- Fire-hose = same largest customer: extract l.90 "the firewood [fire hose] assembly ... is for the same customer which probably our largest customer is right" / l.91 "yeah". ACCURATE.
+- International-skid customer withheld: extract l.87 "we will not be able to comment on that. It's uh slightly proprietary on that aspect." ACCURATE.
 
-### 3A. Discipline check ("flag, do not decide"; no unfired-trigger drift)
-A4 keeps the ROCE tripwire NOT FIRED / INDETERMINATE (no ROCE printed), caps the combined
-verdict at PROCEED WITH FLAGS with cash conversion INDETERMINATE and the missing evidence
-named (H1 FY27 CFO/PAT), and leaves Decision Status unchanged. No positive is allowed to
-drive a decision change; no unfired trigger is treated as fired. This discipline is honoured
-and defensible. The Grade B / "+"-removed call is well supported (softened SFN target,
-slipped 15k timing, persistent silences, 2nd-quarter CFO absence). The ONLY defect is the
-surviving catalyst-concentration counter in claim 3.
+**Residual-diversification sweep** — every occurrence of the two catalysts now frames them concentration-additive, never diversifying:
+Revision note (l.13); Step 1 claims 23/24 and diagnostic (2) "new revenue but not new-customer diversification"; Step 2 rows + diagnostics; Step 4C Exchange 3; Step 5B table + explicit concentration read (l.222); Step 5C silence row; Step 6A ("MAINTAINED concentration"); Step 7 (listed as a reason the "+" is removed); Step 8A trigger row ("NEW but concentration-additive"); Step 8C negatives + single-cleanest-metric caveat; Step 8D; Step 10; YAML `new_catalysts_concentration` + flag line. No surviving passage credits diversification.
+
+**Strategic Premium:** held at +0.5x and explicitly NOT upgraded (Step 8D l.323; YAML `net_effect`). No FTTCP/fair-value recompute triggered. Correct.
+
+**Loop-1 gap: CLOSED.**
+
+### 3B. Three most-positive claims, strongest bear counter from the same text
+
+**Claim A — "Headline P&L delivered at or above every disclosed FY27 guide" (Steps 7, 8C).**
+Counter: spoken EBITDA 33.12 is internally inconsistent with the spoken 23.04% margin; the opening "strong ... cash conversions" line [T01, l.22] is a cash-profit (PAT+D&A) construct, not operating cash flow, unverifiable with no Q1 cash-flow statement; and +72.4% is flattered by a near-nil skid base.
+Survives? NO — already grafted: Step 7A labels the cash-profit claim UNVERIFIABLE ("must not be read as CFO strength"); CC-F14-01 reconciles the EBITDA slip; the nil-base issue is surfaced (Step 5A Q14) and core +41% shown separately.
+
+**Claim B — "Capex envelope quantified (48/54), closes a Role 4 ND" (Steps 5B, 8C).**
+Counter: MD said it is "difficult to give an exact number of how much capacity required from 9,000 to 15,000 because some of the machines have already come in" [T09, l.97]; the Rs 48 Cr is the total 6,000->15,000 envelope, so the incremental remaining spend that sizes the forward ROCE denominator is not cleanly isolable.
+Survives? NO — A4 does not overclaim: Step 8B flags capex "worsen[s] the near-term denominator/absorption picture," ROCE stays INDETERMINATE, and Q5 asks for CWIP-to-PPE.
+
+**Claim C — "Two new FY27 catalysts: international skid and fire-hose (23-26% margin)" (Steps 2, 5B, 7, 8C).**
+Counter (the loop-1 survivor): both route through the single largest anchor customer, so they deepen concentration rather than diversify — fire-hose CONFIRMED same largest customer (T08 l.90-91), international-skid customer declined as proprietary (l.87).
+Survives? NO — now fully incorporated throughout the revised review (see 3A) and reflected in the grade, the held Strategic Premium, Step 9 Q2/Q3/Q4 and the monitorables. The counter is no longer un-grafted.
+
+**No surviving bear counter requires grafting into A4.** All three counters are present with correct weighting.
+
+### 3C. Discipline / verdict-integrity check
+
+- **PROCEED WITH FLAGS (combined):** defensible. Cash conversion INDETERMINATE caps the verdict no better than PROCEED WITH CAVEATS with the missing evidence named (H1 FY27 CFO/PAT); PROCEED WITH FLAGS sits at/below that severity ceiling and names the evidence. Consistent with the CLAUDE.md cash-conversion rule.
+- **Management Grade B ("+" removed):** defensible — symmetric reasons (delivery + operational candor vs softened SFN target, slipped 15k timing, concentration-additive catalysts, persistent silences, 2nd-quarter CFO absence). Not a self-serving upgrade.
+- **ROCE tripwire INDETERMINATE / NOT FIRED:** defensible — independently confirmed zero ROCE disclosure; the call neither fires nor clears the 18% tripwire.
+- **Decision Status WATCHLIST / HOLD-NOT-ADD unchanged:** defensible — no pre-committed trigger fired; "flag, do not decide" discipline explicitly held (Steps 8B, 10). No positive is allowed to drive a decision change; no unfired trigger is treated as fired.
 
 ---
 
 ## 4. VERDICT
 
-**INCOMPLETE.** Coverage PASS (14/14 turns, 55/55 questions, 120/120 numbers, 15/15
-participants; no orphan rows; no missing enumeration). Arithmetic PASS (ASP, annualised
-skid, EBITDA-margin reconciliation, PAT/cash-profit margins, answer tally, credibility ratio
-all reconcile within rounding). Red silences independently verified. One surviving bear
-counter must be grafted -> loop back to **A4**.
+**COMPLETE.**
 
-Gap: A4 credits "two new FY27 catalysts (international skid, fire-hose 23-26%)" as positives
-(Step 8C, Step 7, Step 2, Step 5B) without disclosing that the transcript confirms the
-fire-hose is for the same largest customer (T08, extract lines 90-91, MD "yeah") and that the
-international-skid customer was declined as proprietary (line 87). Both catalysts therefore
-concentrate on the existing single anchor rather than diversify the book; the catalyst credit
-overstates the positive and understates the concentration risk A4 itself flags elsewhere. A4
-must add this concentration caveat to the catalyst framing (and note the confirmed T08
-same-customer fact) before save.
-
----
+Coverage reconciles on all four categories (14/14 turns, 55/55 questions, 15/15 participants, 120/120 numbers) with zero orphan rows and zero missing enumeration. All derived metrics recompute within rounding. The three red silences are independently re-verified as untouched. The loop-1 gap is CLOSED: the two new FY27 catalysts (international skid, fire-hose 23-26%) are framed concentration-additive (never diversifying) in every occurrence, the crux extract cites (l.87, l.90-91) are accurate, and the Strategic Premium is held at +0.5x rather than upgraded. No surviving bear counter needs grafting. Verdict (PROCEED WITH FLAGS), Management Grade B, ROCE tripwire INDETERMINATE/not-fired, and unchanged Decision Status are all defensible, and the "flag, do not decide" discipline holds. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -155,15 +147,12 @@ company: "AEROFLEX"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - claim: "Two new FY27 catalysts (international skid, fire-hose 23-26% margin) credited as positives (Step 8C, Step 7, Step 2, Step 5B)"
-    counter: "Both catalysts route through the single largest anchor customer, so they deepen concentration (the thesis's core flagged risk) rather than diversify. Transcript CONFIRMS fire-hose is for the same largest customer; international-skid customer declined as proprietary. A4 surfaces same-customer only as an open question for the international skid and never states the confirmed fire-hose fact, so the catalyst credit overstates the positive."
-    source_line: "extract T08 lines 90-91 (fire-hose = same largest customer, MD 'yeah') and line 87 (international-skid customer 'proprietary')"
-loop_back_to: "A4"
-gap: "A4 credits international-skid and fire-hose as new FY27 catalysts (positives) without disclosing the T08-confirmed fact (extract lines 90-91) that the fire-hose is for the same largest customer and that the international-skid customer was withheld as proprietary (line 87); both catalysts concentrate on the existing single anchor rather than diversify. Graft the concentration caveat into the catalyst framing (Step 8C / Step 7 / Step 5B) before save."
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

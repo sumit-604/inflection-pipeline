@@ -1,0 +1,997 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_pngs_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 33
+formfeed_count: 33
+line_count: 997
+unit_convention: Millions (Rs Mn) — all P&L, Balance Sheet, Cash Flow, and Key-Highlights chart figures stated in Rs Mn; page 8 chart headers explicitly labelled "(Rs Mn)", page 10/29/30 table headers explicitly labelled "Particulars (Rs Mn)" / "Liabilities (Rs Mn)" / "Assets (Rs Mn)". Average Order Value on page 8 stated in plain Rs (not Rs Mn/Lakh) — flagged inline at point of extraction.
+conversion_factor_to_cr: Millions -> x0.1 (1 Rs Mn = Rs 0.1 Cr; i.e. divide Rs Mn figure by 10 to get Rs Cr). Text itself NOT converted below; downstream agents apply this factor.
+ocr_pages: [5, 13, 23, 28]
+page_coverage: 100% (33 of 33 pages accounted for; formfeed_count 33 matches pdfinfo page count 33; pages 1-33 each present with a [page N] marker below, verified programmatically)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026; cover letter page 1 dated July 29 2026; slide 2 subtitle "Investor Presentation – Q1FY27"; all financial tables headed Q1FY27 vs Q1FY26 vs Q4FY26 vs FY26)
+extraction_date: 2026-07-29
+=== END HEADER ===
+
+NOTES ON EXTRACTION METHOD (mechanical, not interpretive):
+- Primary pass: pdftotext -layout on full 33-page PDF. Despite PDF Creator metadata reading "HP Scan" (file-level artifact, likely from a scanned/signed cover letter merged with a natively-authored slide deck), pages 3 and 6-33 carry a genuine native text layer: disclaimer boilerplate, slide titles/bullets, and — critically — all bar-chart data labels, percentages, org-chart names/titles, and the store-location map on page 17 are natively embedded text, not raster images. This was confirmed by inspecting extracted text against the visual page render for pages 8, 9, 10, 17, 26, 29, 30 (financial and chart-heavy pages): every number visible on the rendered chart/table is present in the pdftotext output.
+- Per-page character count run across all 33 pages (see method below). Four pages (5, 13, 23, 28) fell under the 100-character threshold: these are section-divider slides (decorative product photography background + one title line only: "Q1FY27 Highlights" / "Business Strengths" / "Industry Growth Drivers" / "Annexure"). Each was rasterised at 200dpi (pdftoppm) and OCR'd (tesseract); OCR output and a direct visual inspection of the rasterised image both confirm no additional text, numbers, or chart data exist on these slides beyond the already-captured title. Marked inline as [OCR page N] below.
+- Three further pages (12, 31, 32) sit just above the 100-char threshold (183/144/141 chars) and are pure showroom photo galleries (store opening / showroom glimpses) with only a title caption as text; visually inspected at 150dpi to confirm no embedded numeric/caption data in the images. No OCR fallback triggered (threshold rule satisfied) but flagged here for downstream awareness — no data omitted.
+- All 33 form-feed-delimited pages from pdftotext -layout map 1:1 to pdfinfo's reported page count of 33. Zero pages missing.
+=== END NOTES ===
+
+
+[page 1]
+                                                                                       •
+
+
+
+
+               July 29 2026
+
+
+               To,                                               To,
+               BSE Limited                                       National Stock Exchange of India Limited
+               Phiroze Jeejeebhoy Towers,                        Exchange Plaza, Plot no. C/1, G Block
+               Dalal Street,                                     Bandra Kurla Complex, Bandra (E),
+               Mumbai 400 001                                    Mumbai - 400 051
+               Ref: BSE Scrip Code - 544718                      Ref: Symbol - PNGSREVA
+
+
+               Sub: Submission of Investor Presentation
+
+               Dear Sir/ Madam,
+
+               Pursuant to Regulation 30 and other applicable provisions of the SEBI (Listing Obligations and
+    •          Disclosure Requirements) Regulations, 2015, please find enclosed herewith Investor Presentation for
+               the quarter ended June 30, 2026.
+
+               Presentation is also being made available on Company's website - https://www.revabypng.com/
+
+               Kindly take this on your records please.
+
+              Yours sincerely,
+    ■         For PNGS Reva Diamonds Jewellery Limited
+               Kirti    Digitally signed
+                        by Kirti
+               Suryakan Suryakant Vaidya
+                        Date: 2026.07.29
+               t Vaidya 14:45:45 +05'30'
+              Kirti Vaidya
+              Company Secretary & Compliance Officer
+              ICSI M. No. A31430
+
+
+
+
+                                                            'lery L1m1ted
+    (Formerly known as Gadgil Metals & Commoditie:.)
+                                    I
+    CIN - L32111 PN2024PLC236494 GST Number- 27MPCP2937H1ZO
+    Regd Address:- Abhiruchi Mall, 59/1c, Wadgaon Budruk, Sinhagad Road, Pune - 411041
+                              I                            I www.revabypng.com I www.revadiamonds.com
+                            . ,.
+    contact@revabypng.com Toll free: 1800-233-0333
+
+• • •                                      A   A   A   A     A     A   A
+
+[page 2]
+ PNGS Reva Diamond Jewellery Limited
+
+Delivering Clarity in Business and Excellence in Design
+             Investor Presentation – Q1FY27
+
+[page 3]
+Disclaimer
+                                                                                                                                             From the house of
+
+
+
+
+This presentation and the accompanying slides (the “Presentation”), which have been prepared by PNGS Reva Diamond Jewellery Limited (the “Company”)
+solely for information purposes and do not constitute any offer, recommendation or invitation to purchase or subscribe for any securities and shall not form
+the basis or be relied on in connection with any contract or binding commitment whatsoever. No offering of securities of the Company will be made except by
+means of a statutory offering document containing detailed information about the Company.
+
+This Presentation has been prepared by the Company based on information and data which the Company considers reliable, but the Company makes no
+representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the truth, accuracy, completeness, fairness and
+reasonableness of the contents of this Presentation. This Presentation may not be all inclusive and may not contain all of the information that you may
+consider material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly excluded. All product names, logos, and
+brands are property of their respective owners. All company, product and service names used in this presentation are for identification purposes only. Use of
+these names, logos, and brands does not imply endorsement.
+
+Certain matters discussed in this Presentation may contain statements regarding the Company’s market opportunity and business prospects that are
+individually and collectively forward-looking statements. Such forward-looking statements are not guaranteeing of future performance and are subject to
+known and unknown risks, uncertainties and assumptions that are difficult to predict. These risks and uncertainties include, but are not limited to, the
+performance of the Indian economy and of the economies of various international markets, the performance of the industry in India and world-wide,
+competition, the company’s ability to successfully implement its strategy, the Company’s future levels of growth and expansion, technological implementation,
+changes and advancements, changes in revenue, income or cash flows, the Company’s market preferences and its exposure to market risks, as well as other
+risks. The Company’s actual results, levels of activity, performance or achievements could differ materially and adversely from results expressed in or implied
+by this Presentation. The Company assumes no obligation to update any forward-looking information contained in this Presentation. Any forward-looking
+statements and projections made by third parties included in this Presentation are not adopted by the Company and the Company is not responsible for such
+third-party statements and projections.
+
+
+
+
+                                                                                                                                                                  2
+
+[page 4]
+Table of Contents
+                          From the house of
+
+
+
+
+Q1FY27 Highlights
+
+Business Strengths
+
+Industry Growth Drivers
+
+Annexure
+
+
+
+
+                                              3
+
+[page 5]
+Q1FY27 Highlights
+[OCR page 5] Full-page rasterise (200dpi) + tesseract performed (text layer under 100 chars). OCR confirms section-divider slide: title text "Q1FY27 Highlights" only. Remainder of slide is decorative product photography (jewellery on marble/silk background) with no numeric data, no chart, no axis labels, no captions. Visual inspection of rasterised page corroborates OCR (no text missed).
+
+[page 6]
+PNGS Reva Diamond Jewellery: Shaping the Diamond Story
+                                                                                                                                            From the house of
+
+
+
+
+ PNGS Reva Diamond Jewellery is a branded Certified Natural diamond jewellery retailer, backed by the P. N. Gadgil & Sons Group legacy, with a strong retail
+                                              presence in Western India & an expanding retail footprint across key markets.
+
+
+ Operational Highlights (Q1FY27)
+
+           34 SIS Stores &                                  3 States &
+           3* COCO Stores                                    25 Cities
+
+
+             1.29 Times                                         81                                            Outlook
+
+
+                                                                                                              15
+           Inventory Turn**                         Permanent Employee Count
+
+
+ Financial Highlights (Q1FY27)
+                                                                                                      New EBO Stores Planned,
+            Rs 1,180 Mn                                    Rs 339 Mn                                  of which 2 Brand-Exclusive
+                                                                                                      Stores have Already Been
+              119% YoY                                    29% Margin
+                                                                                                          Launched, with the
+             Net Revenue                                     EBITDA
+                                                                                                      Remaining Stores Planned
+                                                                                                      Across India, Focusing on
+             Rs 272 Mn                                   18.3% | 12.6%                                     Tier 1 Cities while
+             23% Margin                                ROCE & ROE as of 31st                          Selectively Expanding into
+                                                           March, 2026                                  Tier 2 and Metro Cities.
+                  PAT
+
+
+
+*One New COCO Store opened on 7th July, 2026, **Inventory Turn is calculated on an annualized basis                                                             5
+
+[page 7]
+From the CEO’s Desk
+                                                                                                                                 From the house of
+
+
+
+
+                             We are pleased to begin FY27 on a strong note, delivering 119.5% year-on-year revenue growth in Q1FY27. This
+                             performance reflects the strength of the Reva brand, healthy consumer demand, disciplined execution, and the
+                             successful implementation of our growth strategy. It also marks our second consecutive quarter of
+                             delivering over 100% revenue growth, reinforcing our confidence in the scalability of our business and the
+                             long-term opportunity in the organized natural diamond jewellery market.
+
+                             The demand environment continues to remain encouraging, with increasing consumer preference for certified
+                             natural diamond jewellery and a sustained shift towards trusted, organized brands. We remain optimistic that the
+                             upcoming festive and wedding season, along with improving consumer sentiment and favourable industry
+                             trends, will support sustained demand and continued growth.
+  Amit Yeshwant Modak
+   Whole Time Director &     Our disciplined expansion strategy remains a key pillar of long-term value creation. We are pleased that our
+   Chief Executive Officer
+                             recently launched COCO stores are performing in line with our expectations, validating our expansion approach. As
+                             we continue to strengthen our retail presence with a sharp focus on quality locations and superior customer
+                             experience, we remain well positioned to deliver sustainable, profitable, and long-term growth.
+
+
+
+
+                                                                                                                                                     6
+
+[page 8]
+Key Highlights – Q1FY27
+                                                                                                                         From the house of
+
+
+
+
+         Revenue From Operations (Rs Mn)        Gross Profit (Rs Mn) & Margin (%)          EBITDA (Rs Mn) & Margin (%)
+
+                       119%                                    147%                                     193%
+
+                                                                       35%
+                              1,180
+                                                        31%                                                     29%
+                                                                                                22%
+               537
+                                                                       418
+                                                                                                                339
+                                                         169
+                                                                                                116
+
+              Q1FY26          Q1FY27                  Q1FY26          Q1FY27                   Q1FY26          Q1FY27
+
+
+
+
+                              PAT (Rs Mn) & Margin (%)                         Average Order Value (Rs)
+
+                                        265%                                              8%
+
+
+                                                                                                 100,232
+
+                                                                               92,624
+                                                23%
+                                14%
+                                                272
+                                 74
+
+                               Q1FY26          Q1FY27                          Q1FY26            Q1FY27
+
+
+
+
+                                                                                                                                             7
+
+[page 9]
+Sales to Polished Profits in Q1FY27
+                                                                                                                    From the house of
+
+
+
+
+                                                                                 Interest
+
+                                                                                 Rs 27 Mn       2%
+
+                                                                    EBITDA       Depreciation             PAT
+                                                                  Rs 339 Mn      Rs 4 Mn               Rs 272 Mn
+                                                                                                0.3%
+                                                                   29% Margin                          23% Margin
+
+                                                                                 Tax
+
+                                                                                 Rs 92 Mn
+                                                                                                8%
+                                                   Gross Profit
+          Revenue              Raw Material Cost
+      Rs 1,180 Mn                                  Rs 418 Mn
+                                Rs 761 Mn          36% Margin
+
+
+                                                                                 Employee Benefits
+
+                                                                                 Rs 23 Mn       2%
+                                                                  Op. Expenses
+                                                                  Rs 79 Mn
+                                                                      7%
+                                                                                 Other Op. Expense
+
+                                                                                 Rs 56 Mn       5%
+  As a Percentage of Revenue
+
+
+
+                                                                                                                                        8
+
+[page 10]
+Profit and Loss
+                                                                               From the house of
+
+
+
+
+Particulars (Rs Mn)             Q1FY27   Q1FY26   YoY (%)   Q4FY26   QoQ (%)                       FY26
+
+Revenue from Operations         1,180     537     119%      1,381     -15%                         4,390
+
+Consumption of materials         761      368                998                                   3,176
+
+Gross Profit                     418      169     147%       383       9%                          1,215
+
+Gross Margin (%)                 35%      31%                28%                                   28%
+
+Employee Expenses                 23       15                 22                                    80
+
+Other Expenses                    56       39                 56                                   185
+
+EBITDA                           339      116     193%       306      11%                          950
+
+EBITDA Margin (%)                29%      22%                22%                                   22%
+
+Other Income                      56       3                  15                                    20
+
+Depreciation and Amortisation     4        0                  2                                     7
+
+Finance Cost                      27       20                 31                                    99
+
+Profit Before Tax                364       98     270%       287      27%                          865
+
+Tax expenses                      92       24                 73                                   218
+
+Profit After Tax                 272       74     265%       214      27%                          647
+
+PAT Margin (%)                   23%      14%                16%                                   15%
+
+
+
+                                                                                                           9
+
+[page 11]
+Won “Best Diamond Jewellery Brand” award at the JewelX Global
+                                                                          From the house of
+
+
+
+
+                                                           Reva Diamonds received
+                                                                the "Best Diamond
+                                                           Jewellery Brand" award
+                                                                at the JewelX Global
+                                                            Business Awards 2026,
+                                                           recognising its excellence
+                                                                   in innovation,
+                                                             craftsmanship, retail
+                                                           execution, and customer
+                                                                    experience.
+
+
+
+
+                                                                                              10
+
+[page 12]
+New COCO store opening at Amanora Mall, Pune
+                                               From the house of
+
+
+
+
+                                                                   11
+
+[page 13]
+Business Strengths
+[OCR page 13] Full-page rasterise (200dpi) + tesseract performed (text layer under 100 chars). OCR confirms section-divider slide: title text "Business Strengths" only. Remainder of slide is decorative product photography (jewellery on marble/silk background) with no numeric data, no chart, no axis labels, no captions. Visual inspection of rasterised page corroborates OCR (no text missed).
+
+[page 14]
+PNGS Reva – Built on a 194+ Year Legacy of Trust
+                                                                                                                                       From the house of
+
+
+
+
+                                                      Strong Parentage provides
+
+
+
+                                          ₹
+
+
+
+
+                                   Deep sourcing                Established            Combines legacy
+                                 relationships and          customer trust in a            trust with
+                                  cost efficiencies          credibility-driven         modern design
+
+ Backed by P N Gadgil & Sons
+                                                                 category              and accessibility
+
+  (194+ year legacy) a highly
+ trusted jewellery institution
+                                 All retail outlets of the parent company, P N Gadgil & Sons, have achieved profitability from their first
+                                 year of operations, with no store closures to date, reflecting a robust and sustainable business model.
+
+
+
+
+                                                                                                                                                           13
+
+[page 15]
+Strong Leadership with Deep Industry Expertise
+                                                                                                                                                   From the house of
+
+
+
+
+                                  Leadership team brings 85+ years of combined experience, spanning sourcing, operations, and retail
+
+
+
+
+           Ajit (Govind) Gadgil                                   Amit Yeshwant Modak                                            Aditya Modak
+                 Promoter | 45+ years                          CEO | 40+ years; 27 years with PNG Group            Non-Executive Director | 12+ years with PNG Group
+
+
+  5th generation promoter with deep industry             B.Com, LLB with a strong foundation in business         CA, CS, MBA (ISB) with strong academic and
+    and sourcing expertise                                  and regulatory frameworks, along with deep               professional credentials
+                                                            domain expertise in finance and commodities.
+  Built   long-standing     vendor     relationships                                                              Experience across operations, strategy, and
+    enabling quality + pricing advantage                  Former CEO of P N Gadgil & Sons ( 13 years),              brand building within the group
+                                                            built operations, supply chain, and compliance
+  Provides strategic direction and institutional                                                                  Brings next-generation execution focus and
+                                                            systems
+    continuity                                                                                                       governance orientation
+                                                          Deep expertise in retail economics and cost
+                                                            structures
+
+
+                                        Leadership combines legacy strength, execution capability, and professional management
+
+
+                                                                                                                                                                       14
+
+[page 16]
+Organizational Structure - Experienced Promoter Group
+                                                                                                                                From the house of
+
+
+
+
+                                             Board of Directors
+
+          Govind Gadgil                           Amit Modak                            Aditya Modak                   Independent Directors
+(Chairman & Non-Executive Director)               (WTD & CEO)                       Non-Executive Director
+
+ 5th generation promoter               B.Com, LLB with strong business        CA, CS, MBA (ISB) with strong
+  with deep industry and sourcing        and regulatory understanding            academic and professional
+  expertise                                                                      credentials                               Ravindra Lale
+                                        Former CEO of P N Gadgil &
+ Built long-standing vendor             Sons (13 years), built operations,     Experience across operations,
+  relationships enabling quality +       supply chain, and compliance            strategy, and brand building within
+  pricing advantage                      systems                                 the group
+                                                                                                                           Ranjeet Natu
+ Provides strategic direction and      Deep expertise in retail               Brings next-generation execution
+  institutional continuity               economics and cost structures           focus and governance orientation
+
+
+             Kirti Vaidya                   Vrujendra Waghchaure                        Kisan Shendkar
+                                                                                                                          Aparna Purohit
+      (CS & Compliance Officer)                        COO                                   CFO
+
+
+ 9+ years of Experience in Industry    24+ years of Experience in Industry    18+ years of Experience in Industry
+
+
+
+
+                                                                                                                                                    15
+
+[page 17]
+Strong Regional Presence Enhancing Operational Efficiency
+                                                                                                                                                                       From the house of
+
+
+
+
+ Regional Strength enhances Efficiency by:
+
+ ✓ Optimizing supply chains
+ ✓ Reducing logistics costs
+ ✓ Aligning with local demand
+                                                                                                                                                 37 Stores across
+                                                                                                                                                  25 cities in the
+                                                                                        Vadodara
+                                                                                                                                                 States of Maharashtra,
+  Vadodara
+                 Nadurbar                                                                                                                         Gujarat & Karnataka
+                          Dhule                                    Amaravati
+                                      Jalgaon
+
+                                                                               Wardha              Kalburgi
+
+
+                                                                                                                                        Plan to expand presence by launching 15
+               Nashik (2)
+                 Shirdi
+
+
+                                                                                                                                      exclusive stores (2 stores already launched)
+     Narayangaon
+                Sangamner
+      Dombivali                                    Parbhani
+
+                                                                                                                                      across India, with a focus on targeting Tier-1
+ Thane Badlapur
+                                            Beed
+               Shirur
+    PCMC (3)
+             Pune (8)                                                                                                                  cities and selectively exploring Tier-2 cities
+                        Phaltan
+
+                                                                                                                                              and other metro cities in India
+                                            Dharashiv
+                                  Solapur
+             Satara
+
+                            Pandharpur                  Kalburgi
+
+
+
+                                                                                                         SIS Stores in Maharashtra
+                                                                                                         SIS Stores in Other States
+                                                                                                         3 COCO Stores
+
+
+
+
+                                                                                                                                                                                           16
+
+[page 18]
+Comprehensive Product Basket Across Price Segments
+                                                                                                                                                        From the house of
+
+
+
+
+                                                                                                                                            Premium & Signature
+                                                                                                                    Occasion
+                                                                                   Everyday
+                                                       Entry                                                       ₹1.5 – ₹5 lakh                  ₹5 lakh – ₹25 lakh+
+           Full-spectrum                                                       ₹35,000 – ₹1.5 lakh                (core segment)
+                                                 ₹15,000 – ₹35,000             (repeat purchases)
+          offering catering                    (customer acquisition)
+              to diverse
+          customer needs
+
+
+
+
+                                                                                                             6%                 Diamond Jewellery Sales Mix (Q1FY27)
+                                                                                                        6%
+                                                                                                      5%            27%
+  Enables customer lifecycle play within a single brand                                                                                Rings                      Mangalsutras
+                                                                                                     6%
+
+  Focus on natural diamonds, supported by strong value retention and buyback policies                                                  Earrings                   Necklaces
+
+
+                                                                                                     21%                                Bangles                     Bracelets
+  Drives higher repeat purchases and customer lifetime value
+                                                                                                                  29%
+                                                                                                                                        Others*
+
+
+
+
+*Other include Chamki, Pendant, and Chain                                                                                                                                         17
+
+[page 19]
+Product Overview - Wide Range of Products Offered
+                                                                                            From the house of
+
+
+
+
+      Diamond Rings           Diamond Earrings          Diamond Bracelets            Diamond Set
+  Made in Hallmarked Gold   Made in Hallmarked Gold   Made in Hallmarked Gold   Made in Hallmarked Gold
+
+
+
+
+    Diamond Necklace         Diamond Mangalsutra         Diamond Bangles        Semi-precious Jewellery
+  Made in Hallmarked Gold   Made in Hallmarked Gold   Made in Hallmarked Gold
+
+
+                                                                                                                18
+
+[page 20]
+Four Cornerstones of Sustainable Growth
+                                                                                                                                                           From the house of
+
+
+
+
+        Disciplined Two-format                        Reva Delivers A Unique                   Strong Customer Proposition                         Positioned For
+           Expansion Model                             Fourfold Advantage                        Driving Trust & Retention                        Scalable Growth
+
+Shop-in-Shop (SIS):                            Wide product range: ₹15,000 to ₹25         100% exchange value on natural             Play on India’s fastest-growing
+ Located within P. N. Gadgil & Sons            lakh+                                       diamonds, ensuring full value retention     diamond jewellery segment
+  stores → immediate access to footfall
+                                               Superior quality: VVS EF/FG diamonds       ~90% cash buyback, among the highest       Direct beneficiary of shift from
+ Low capex with instant revenue                (above industry norms)                      in organised jewellery retail               unorganised to organised retail
+  contribution
+                                               Competitive pricing: driven by sourcing    Natural diamonds benefit from USD-         Differentiated moat across quality,
+ Enables market validation before
+                                                efficiencies                                linked pricing and INR depreciation         pricing, range, and customer policies
+  scaling
+                                                                                            tailwinds
+                                               Customer assurance: 100% exchange &                                                    Strong visibility through store
+Exclusive Brand Outlet (EBO):                   ~90% buyback                               Jewellery positioned not just as            expansion and consistent growth
+✓ Launched in validated markets → full                                                      consumption, but as a store of value        milestones
+                                              Most players compete on select
+  brand experience
+                                              levers; Reva competes on all four            Drives high customer trust, repeat
+Asset-light, low capex “vanilla” model        simultaneously                                purchases, and long-term loyalty
+across both SIS and EBO formats driving
+higher ROCE, with a clear growth visibility   194+ year P. N. Gadgil & Sons legacy,
+through continuous store additions.           reinforced by decades-long sourcing
+Ensures capital efficiency, lower risk, and   relationships and robust infrastructure,
+faster scale-up.
+                                              creating a strong MOAT.
+
+
+
+                                                           The Right Brand, in the Right Market, at the Right Time
+
+
+                                                                                                                                                                                19
+
+[page 21]
+Demonstrated Value Creation Playbook - PNGS Gargi
+                                                                                                                                                                         From the house of
+
+
+
+
+                      PNGS Gargi is the fashion and lifestyle jewellery retailer backed by the P. N. Gadgil & Sons Group's legacy, offering a diversified portfolio comprising 925
+                      sterling silver jewellery, 9KT plain Gold Jewellery, 14KT gold jewellery studded with natural diamonds and other gifting products and Fashion Jewellery.
+
+
+
+
+     Proven Incubation Model                                Scalable Growth                               Repeatable Playbook                                    Strong Execution
+          (PNGS Gargi)                                        Framework                                        Elements                                            Track Record
+
+ Identified white space in affordable            Asset-light expansion: SIS, franchise           Category identification → Build                   Gargi successfully scaled into a
+  fashion jewellery                                 & EBO mix                                       specialized brand                                   pan-India fashion jewellery
+ Carved out a focused brand with                 Pan-India rollout capability with               Clear consumer segmentation →                       platform with ~₹150 Cr revenue
+  distinct positioning (silver &                    calibrated store addition                       Avoid overlap with core business                    (FY26)
+  fashion-led)                                    Faster inventory turns vs traditional           Design & affordability → Drive
+ Built an independent growth                       jewellery                                       volumes and repeat purchases
+  engine separate from legacy gold                Digital + offline integration to drive          Scale through standardized formats
+  business                                          reach and brand recall                           → Ensure consistency & speed
+ Targeted new-age consumers with
+  design-led, high-frequency products
+
+
+
+
+                                                   Focused vertical: Diamond jewellery (premium, high-growth category)
+         PNGS Reva Applying the                    Same strategic approach:
+            Same Playbook                           Dedicated brand with sharp positioning | Scalable retail-led expansion | Premiumization with better margin profile
+                                                   Aimed at replicating Gargi’s success in a higher-value segment
+
+
+                                                                                                                                                                                             20
+
+[page 22]
+REVA - Growth Strategy to Capitalize on the Industry Tailwinds
+                                                                                                                               From the house of
+
+
+
+
+  Strengthen Market Position                                                                           Strengthening Brand Visibility
+   15 new (2 added) exclusive stores to be added in Tier-1 cities, also      15 new (2 added) exclusive stores under the Company Owned
+    selectively exploring Tier-2 cities and other metro cities in India to     Company Operated (COCO) will accelerate network expansion
+    strengthen brand presence.                                                 and enhance brand visibilty.
+
+   Funded By ~Rs 2,866 Mn from net IPO proceeds
+
+
+
+
+  Value Creation & Operational Excellence                                                                 Strengthening Brand Recall
+   Product Diversification into high-value, customized, and bridal           Targeted launch of ~Rs 354 Mn from the IPO proceeds for
+    segments to increase average order value and brand loyalty.                marketing & promotional activities.
+
+   ERP-led inventory tracking and secure logistics to ensure quality         Hyper-local campaigns building strong brand awareness and
+    and transparency across an expanding store network.                        positioning “Reva” as a trusted diamond jewellery destination.
+
+                                                                              Omnichannel outreach across digital, OTT, cinema, and
+                                                                               outdoor media to enhance brand visibility.
+
+
+
+
+                                                                                                                                                   21
+
+[page 23]
+Industry Growth Drivers
+[OCR page 23] Full-page rasterise (200dpi) + tesseract performed (text layer under 100 chars). OCR confirms section-divider slide: title text "Industry Growth Drivers" only. Remainder of slide is decorative product photography (jewellery on marble/silk background) with no numeric data, no chart, no axis labels, no captions. Visual inspection of rasterised page corroborates OCR (no text missed).
+
+[page 24]
+Diamonds: Perfect for Every Occasion
+                                                                                                                                              From the house of
+
+
+
+
+                                           Festival-Led Demand Drives Peak Sales
+                                            Diwali & Dhanteras: Key jewellery-buying period, driving auspicious and high-value purchases
+                                            Akshaya Tritiya: Strong demand for wealth-linked and investment-oriented buying
+                                            Gudhi Padwa: One of the most important jewellery-buying occasions in Maharashtra, associated
+                                             with prosperity and new beginnings
+
+
+                                           Modern Gifting Occasions Expanding the Category
+                                            Valentine’s Day: A key diamond gifting occasion, symbolising love, emotion, and personal
+                                             milestones
+                                            Witnessing strong traction in gifting and self-purchase segments
+
+
+                                           Beyond Occasions: Structural Demand Drivers
+                                            Daily Wear: Rising preference for lightweight, affordable, contemporary diamond jewellery,
+                                             driving repeat purchases
+                                            Bridal Wear: Diamonds gaining share in wedding jewellery, complementing traditional gold
+                                             purchases
+
+
+                       Transition to Diamonds
+                       Consumers are increasingly choosing natural diamonds over alternatives like gold and titanium, as improving affordability, combined with
+                       their rarity and emotional value, enhances their appeal for both everyday wear and milestone purchases.
+
+                       Natural diamonds stand out for their enduring value and deeper significance. Smaller stones make them more accessible without
+                       compromising on long-term worth, supported by a well-established buyback ecosystem. Their authenticity and consistent quality inspire
+                       greater confidence, while their rarity and natural origin make them far more meaningful for milestone and heirloom purchases.
+
+
+                                                                                                                                                                  23
+
+[page 25]
+Consumer Shift Towards Branded & Certified Jewellery
+                                                                                                                                                  From the house of
+
+
+
+
+ India Natural Diamond Jewellery – Structural Shift & Growth Drivers
+
+
+
+      Evolving Consumer Preferences: Growing preference for certified diamonds, transparent pricing and contemporary designs
+
+
+      Unorganised to Organised Shift: Traditional jewellers losing share due to lack of certification, pricing opacity and inconsistent quality
+
+
+      Branded Advantage: Organised players gaining share through assured quality, transparent pricing and reliable exchange & buyback policies
+
+
+      Favourable Macros: Rising affluence and expanding middle class supporting discretionary spend
+
+
+      Demographic Tailwinds: Younger consumers (Gen Z) driving adoption with higher preference for branded, expressive jewellery
+
+
+      Resilient Consumption: Wedding-led demand providing structural stability
+
+
+      Premiumisation Trend: Shift toward branded, certified and higher-value jewellery
+
+
+     Structural shift toward organised, trust-led players with transparent pricing and buyback assurance positions PNGS Reva well for
+     sustained market share gains.
+
+
+                                                                                                                                                                      24
+
+[page 26]
+Industry Outlook - Key Growth Drivers
+                                                                                                                                                               From the house of
+
+
+
+
+              Shifting Consumer Preferences                                                                                                     Rise in Gold Prices
+
+              In CY24, the Indian G&J Industry was valued at ₹8,809 Bn,                                    Rising gold prices are impacting gold jewellery demand
+              growing at a 10.6% CAGR since CY20. It's projected to                                        leading to a shift from Gold Jewellery to Diamond
+              grow at 11.7% CAGR till CY29, driven by rising incomes,                                      Jewellery. This shift has been seen in all our 33 stores
+              better credit access, and changing lifestyles.                                               across Maharashtra, Gujarat & Karnataka.
+              Larger stores are adapting with more variety, supporting
+              the shift towards organised, branded jewellery.
+
+
+
+
+              Global Leadership in Processing                                                                                  Growing Domestic Consumption
+              India is the largest diamond-cutting and polishing hub                                       India’s domestic diamond consumption is steadily rising
+              globally; it produces over 90% of the world’s polished                                       due to increasing disposable incomes and urbanization.                  ₹
+              diamonds.                                                                                    Growth is driven by a structural shift in consumption:
+              Diamond-studded jewellery is expected to witness                                             from unorganised to organised, from heirloom
+              strong growth, driven by rising preference for branded                                       purchases to frequent, design-led buying
+              and certified jewellery
+
+
+
+              Increasing Disposable Income & Consumer Spending                                                                     Increased Household Savings
+
+     ₹        Per capita GNDI grew at a registered CAGR of 9.02%                                                Household savings in India have grown steadily at a                    ₹
+
+              from FY15 to FY25 & consumer spending has also                                                  CAGR of 8.8% since FY18, with a slight dip in FY20 due
+              showcased significant growth from FY15 to FY25 at a                                                                                   to the pandemic.
+                                                                                                                                                                                           ₹
+
+
+
+              CAGR of 9.7%.                                               Increasing Diamond Demand:
+                                                                          A Story Of Enduring Brilliance
+
+
+Source: Care Edge, Industry Report on Gems & Jewellery Industry – Nov’2025                                                                                                                     25
+
+[page 27]
+Industry Outlook - Overview of Indian Gems & Jewellery
+                                                                                                                                   From the house of
+
+
+
+
+                      India Diamond Market Size and Growth                                               Gross margins by Metal/Stone
+                             (CY20-CY29) - Rs in Billion                                                      type (in %), CY24(E)
+
+
+
+
+                                                                                                                10-20%
+                                                                                        666      686
+                                                                       631     647
+                          623                               616
+               590                   586        596
+
+
+    457                                                                                                                              40-50%
+
+
+                                                                                                             30-40%
+
+
+
+
+   CY20       CY21       CY22        CY23     CY24 (E)    CY25 P     CY26 P   CY27 P   CY28 P   CY29 P       Gold        Diamond              Other
+
+
+
+
+Source: Care Edge, Industry Report on Gems & Jewellery Industry – Nov’25                                                                               26
+
+[page 28]
+Annexure
+[OCR page 28] Full-page rasterise (200dpi) + tesseract performed (text layer under 100 chars). OCR confirms section-divider slide: title text "Annexure" only. Remainder of slide is decorative product photography (jewellery on marble/silk background) with no numeric data, no chart, no axis labels, no captions. Visual inspection of rasterised page corroborates OCR (no text missed).
+
+[page 29]
+Balance Sheet
+                                                                                         From the house of
+
+
+
+
+Liabilities (Rs Mn)             Mar-25   Mar-26   Assets (Rs Mn)                Mar-25             Mar-26
+
+Equity Share Capital             49       317     Property, plant & equipment     2                      24
+
+
+Other Equity                     953     4,835    Right to use of assets          3                      36
+
+
+Total Equity                    1,002    5,152    Other Intangible assets         3                          3
+
+
+Long Term Provisions              5        9      Financial assets                0                          4
+
+
+Other Non-Current Liabilities     2       28      Other non-current assets        2                          4
+
+
+Total Non-Current Liabilities     7       37      Total Non-Current Assets        9                      71
+
+
+Short Term Borrowings            907     1,659    Inventories                   1,794                3,356
+
+Trade payables                   325      202     Trade receivables               2                      22
+
+Other financial liabilities       0       11      Cash & cash equivalents        390                 3,242
+
+Other current liabilities        28       90      Other financial assets          4                     369
+
+Short Term Provisions             0        3      Other current assets           69                      93
+
+Total Current Liabilities       1,260    1,965    Total Current Assets          2,259                7,082
+
+Total Liabilities               2,268    7,154    Total Assets                  2,268                7,154
+
+
+
+
+                                                                                                                 28
+
+[page 30]
+Cash Flow
+                                                                                             From the house of
+
+
+
+
+Particulars (Rs Mn)                                                                 Mar-25   Mar-26
+
+Cash from Operating Activity                                                         206     -1,048
+
+Cash from Investing Activity                                                        -1,676   -2,468
+
+Cash from Financing Activity                                                        1,793     4,269
+
+Net (decrease)/ increase in cash and cash equivalents                                323        752
+
+Less: Net cash and cash equivalents generated for diamond business not taken over    34            0
+
+Add: Cash & Cash equivalent at the beginning of the year                             33         390
+
+Cash & cash equivalent at the end of the year                                        390      1,142
+
+
+
+
+                                                                                                                 29
+
+[page 31]
+Glimpse of Our Showrooms - COCO
+                                  From the house of
+
+
+
+
+                                                      30
+
+[page 32]
+Glimpse of Our Showrooms - SIS
+                                 From the house of
+
+
+
+
+                                                     31
+
+[page 33]
+THANK YOU
+EXPLORE REVA DIAMONDS.
+FOR HER. FOR HIM.
+FOR TRADITION, FOR FASHION,
+WITH A TWIST.
+
+                                   Kirti Vaidya
+                                   Company Secretary & Compliance Officer
+
+
+                                   cs@revabypng.com
+
+
+PNGs Reva Diamond Jewellery Ltd
+                                   www.revabypng.com
+
+
+
+
+                                   Suyash Samant | Hrithik Hattiangadi
+
+
+
+                                   suyash@stellar-ir.com | hrithik@stellar-ir.com
+   Stellar IR Advisors Pvt. Ltd.
+
+
+                                   www.stellar-ir.com
+

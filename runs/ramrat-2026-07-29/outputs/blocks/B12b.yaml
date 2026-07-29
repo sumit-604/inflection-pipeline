@@ -1,0 +1,26 @@
+stage: B12b
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+independent_flags_found: 10
+caught: 7
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Income-tax search & seizure demand of Rs67.9 cr (Rs98.4 cr incl. interest), auditor Emphasis of Matter, in both Q3 results Note (vi) and FY26 audited results — absent from B05 (though caught by B02/B03/B08)", anchor: "FY26 audited results Auditor's Report Emphasis of Matter + Note (vi); Q3 results 789d1085 Note (vi)"}
+  - {severity: "MINOR", item: "Year-end CFO officer change: Maheshwari out 31-Mar-2026, Saggu in 01-Apr-2026 (per B03, a planned redesignation not a departure)", anchor: "Q3 results cover letter 06-Feb-2026 items b & c; presentation slide 19"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — B holds; newly-surfaced tax-search red flag and audited negative CFO reinforce the cap at B, do not drop it (no missed promise)"
+findings:
+  - {severity: "MAJOR", location: "B05 sec2D/4C/4D", note: "MISSED income-tax search-and-seizure demand ~Rs98 cr / auditor Emphasis of Matter, present in Q3 and FY26 results (caught elsewhere in pipeline: B02/B03/B08)", source_fidelity: false}
+  - {severity: "MAJOR", location: "B05 header INPUT GAP note", note: "Wrongly declared FY26 audited results PDF non-existent (corrupted path b91f vs aeb5); primary audited filing available and unused by B05 and B01", source_fidelity: false}
+  - {severity: "MINOR", location: "B05 sec2D", note: "MISSED year-end CFO officer change (redesignation)", source_fidelity: false}
+  - {severity: "MINOR", location: "B05 sec1C/3D/4D", note: "Under-weighted copper-tube Q4 decline; audited Q4 347.2<Q3 361.2 cr confirms it, removes rounding hedge", source_fidelity: false}
+  - {severity: "MINOR", location: "B06 sec2E", note: "Attribution imprecision: Gulf scrap point cites 'Manan Shah and Raj Sarraf'; only Manan Shah found", source_fidelity: false}
+critical_count: 0
+major_count: 2
+minor_count: 3
+acceptance_rate: 70
+coverage_note: "NO-CONCALL MODE for main company: B05 audited against AR MD&A/Chairman/Board report, both results PDFs, and investor presentation (no transcripts exist). Independently read both results PDFs (incl. the FY26 audited PDF B05 wrongly deemed absent), presentation slides 1-19, and all five peer transcripts in full. Peer B06 quotes spot-checked exhaustively against raw transcripts — all confirmed, all call-date labels correct, verdict discipline sound. AR Chairman p.7 / MD&A pp.48-57 not re-read here. Acceptance_rate = caught (7) / independent_flags_found (10). TAX-FIGURE RECONCILIATION NEEDED: this verifier reads ~Rs67.9 cr demand (Rs98.4 cr incl interest); B02 cites Rs103.62 cr aggregate; Verifier A cites Rs67.01 cr single line — three figures, corrective pass must reconcile against AR Note 30.3."

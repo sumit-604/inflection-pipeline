@@ -1,0 +1,10 @@
+confidence_delta:
+  numerical_acceptance: 0      # B12a: 0/8 checked numbers verified clean; 3 CRITICAL source-fidelity findings (standalone-vs-consolidated basis on FY26 latest-period figures, undeclared basis)
+  redflag_coverage: 70         # B12b: 7 of 10 independent red flags caught (no-concall variant; the one MAJOR miss was caught elsewhere in the pipeline, not by B05)
+  framework_adherence: 98      # B12c: Gate 0 + Emerging Moat portion only; valuation-adherence deferred to phase 3 (pending)
+  peer_utilisation: 100        # B12d: all 5 peer transcripts used substantively; all claims addressed
+  overall: 0                   # min of the four; band <60 = forced REWORK
+  valuation_framework_adherence: pending-phase3
+interpretation: "Overall 0 (min rule) sits in the <60 forced-REWORK band. Driver is numerical_acceptance 0% plus 3 Verifier-A CRITICAL source-fidelity findings — BOTH independently trip the hard REWORK gate. Root cause is narrow and mechanical: the FY26 latest-period P&L/CFO/BS figures were reported on a consolidated (screener.in) basis without declaring basis, and do not reconcile to the audited STANDALONE results PDF; the consolidated figures do exist at real anchors (Investor Presentation + AR consolidated statements) but the basis was never declared and the FY26 audited results PDF was under-read (filename garbled by B01 and B05). Framework logic (98%) and peer utilisation (100%) are strong and were independently re-derived; the analysis is structurally sound but its number layer cannot be certified until the basis is declared and reconciled. This is an analysis-integrity REWORK, not a company-quality verdict."
+rework_triggered: true
+rework_reason: "Verifier A: 3 CRITICAL source-fidelity findings AND acceptance_rate 0% (<60%). Per orchestrator Section 4 REWORK rule, verdict is REWORK regardless of company quality."

@@ -6,12 +6,12 @@ status: complete
 dimensions:
   growth_triggers: "survives"       # real order book but 74% single-counterparty, NCI-diluted, cannot bridge the price gap
   moat_durability: "survives"       # 0/12 Gate0 moats, EM 17.4, first-mover contestable; land is an asset not a moat
-  management_trust: "survives"      # pledge 56.75% rising past 40% deal-breaker binds; CFO exit; rights actually Rs 293cr
+  management_trust: "survives"      # pledge 56.75% rising past 40% deal-breaker binds; CFO exit; rights Rs 93.03cr (Rs 293cr B12a overturned as OCR misread)
   valuation_safety: "survives"      # AVOID-at-107 holds on every cell; magnitude WEAKENED by un-priced land floor (true floor ~Rs 30-45, not Rs 13)
 overall: "SURVIVES"                 # AVOID over-determined (Gate0 + Promoter + U/D<2x + Hurdle STOP); land lever dents magnitude only
 top_counters:
   - "Un-priced land (Chennai CFS ~55ac, Ponneri 82ac, Tuticorin/Vizag) is a real floor; NOT FOUND market value could lift SOTP floor from Rs 13 to ~Rs 30-45 on a credible mark — strongest challenge, but needs ~Rs 680-1,270cr uplift to reach CMP 107, unsupported and NCI/debt-haircut"
-  - "Genuine operating inflection on the FY26 tape (core EBITDA 9.7%->20.4%, D/E 4.1x->1.6x, Rs 4,600cr order book at 11.9x rev) — but 74% is one SECL contract and deleverage was Rs 293cr rights + asset sales, not operations"
+  - "Genuine operating inflection on the FY26 tape (core EBITDA 9.7%->20.4%, D/E 4.1x->1.6x, Rs 4,600cr order book at 11.9x rev) — but 74% is one SECL contract and deleverage was Rs 93.03cr rights + asset sales, not operations"
   - "Terminals operating leverage + terminals-debt split could nudge owners' NAV to ~Rs 27 and EPS ladder up modestly — but math shows both levers are small and the debt-split is already generous, not conservative"
   - "Market-is-right lens: paying an option premium on land + PLIL parent-IPO optionality, not a multiple on negative EPS — but the parent IPO is at PLIL (GIP/BlackRock reportedly exiting), land is 53.6%-owned and debt-subordinated"
   - "SHARED CATALYST is a single point of failure: SECL failure/delay collapses Pillars 1+3a+3c at once, fair value ~Rs 29 -> ~Rs 11; confirms AVOID and is the linchpin for any future re-entry"

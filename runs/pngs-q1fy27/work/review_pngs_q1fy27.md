@@ -107,7 +107,7 @@ Every cell filled or ND. Anchor: Operating EBITDA is the analysis anchor; Report
 | Finance Costs | 1.985 | 2.748 | +38.44% | Rising far slower than revenue — positive operating leverage |
 | EBIT (operating) = OpEBITDA − D | 11.545 | 33.570 | +190.78% | Strong |
 | Other Income | 0.287 | 5.576 | +1842.86% | FD interest on parked IPO cash (FN2); non-operating, transient |
-| **Core Operating PBT (PBT − OI)** | 9.560 | 30.822 | +222.41% | Core health confirmed — core PBT grew faster than reported PBT ex-OI base |
+| **Core Operating PBT (PBT − OI)** | 9.560 | 30.822 | +222.41% | Core operational health confirmed at +222.41%; it grows SLOWER than reported PBT (+269.64%) only because Other Income lifts the reported line — the reported headline is flattered by treasury, but the operating core is genuinely strong on its own |
 | Reported PBT | 9.847 | 36.398 | +269.64% | — |
 | PAT | 7.448 | 27.210 | +265.33% | — |
 | EPS (share-adjusted) | 3.41 | 8.58 | +151.61% | Lags PAT +265% by ~114pp — the gap is IPO fresh-issue dilution, not weakness |
@@ -118,7 +118,7 @@ Every cell filled or ND. Anchor: Operating EBITDA is the analysis anchor; Report
 
 2. **Did operating EBITDA margin expand, contract, or stay flat YoY?** Expanded materially: Q1 FY27 operating EBITDA margin 28.76% vs Q1 FY26 21.55% = **+721 bps**. Reported EBITDA margin 33.49% vs 22.08% = +1141 bps (Other Income inflates the reported version). This sits far ABOVE the modeled green band of 19–22% (monitoring #6). AMBIGUOUS per FN7 — the driver is a richer diamond-studded mix (Rs115.987 Cr of Rs117.973 Cr revenue, l.318) and gross margin lifting to 35.46% (from 31.48% YoY, and vs 27.73% in Q4 FY26). Whether this is a structural mix shift or a favorable-mix quarter cannot be resolved from the filing; routed to management.
 
-3. **Did core operating PBT (ex-Other Income) grow YoY?** Yes, +222.41% (Rs9.560 Cr → Rs30.822 Cr). This is the cleanest operational-health test and it is unambiguously positive — the headline growth is largely real, NOT a treasury illusion. However reported PAT growth (+265%) is inflated above core by the Other Income spike (see #4).
+3. **Did core operating PBT (ex-Other Income) grow YoY?** Yes, +222.41% (Rs9.560 Cr → Rs30.822 Cr). This is the cleanest operational-health test and it is unambiguously positive — the headline growth is largely real, NOT a treasury illusion. Core operating PBT (+222.41%) grew SLOWER than reported PAT (+265.33%) because the Other Income spike lifts the reported line (see #4); the reported figure is flattered, but the operating core stands on its own.
 
 4. **What drove the gap between core operating PBT growth (+222%) and reported PAT growth (+265%)?** Quantified deltas (pre-tax, Rs Cr, YoY): Gross profit +24.914 (of which volume ≈ +20.218 at prior 31.48% GM, mix/price ≈ +4.695); Employee −0.821; Depreciation −0.319; Finance costs −0.763; Other expenses −1.749; Other Income +5.289. The Other Income delta (+5.289 Cr, FD interest on unutilised IPO cash) is the single largest non-operating contributor and the reason reported growth outruns core. After tax at 25.24%, Other Income contributed ≈ Rs3.95 Cr to PAT, ≈ **20.0% of the Rs19.762 Cr YoY PAT increase**. Tax rose Rs6.789 Cr (2.399→9.188) in line with PBT; ETR essentially flat (24.36%→25.24%).
 
@@ -143,7 +143,7 @@ Only three discrete quarters are extractable from this filing (Q1 FY26 audited s
 **Diagnostics:**
 - **Run-rate trajectory:** Revenue DIPPED QoQ (Rs138.126 → Rs117.973 Cr, −14.59%), but this compares against a Q4 that is itself a derived balancing figure and against seasonally distinct quarters (Q4 = wedding/year-end; Q1 = Akshaya Tritiya). Core PBT ex-OI still rose QoQ (Rs27.220 → Rs30.822 Cr, +13.23%) on the margin lift, and PAT rose QoQ (Rs21.409 → Rs27.210 Cr, +27.10%). Verdict: sequential revenue plateau/slight dip, but profitability stepped up on mix + Other Income.
 - **One-off distortion:** Q1 FY27 carries the Other Income spike (FN2) and the Rs30.478 Cr finished-goods build (FN6). Q4 FY26 is a balancing figure (comparability caveat). Q1 FY26 is special-purpose audited.
-- **Latest quarter vs H1 run-rate:** cannot compute a clean H1 average (Q2/Q3 ND). The only anchor is that Q1 FY27 alone (Rs117.973 Cr) is 26.9% of the entire FY26 revenue (Rs439.028 Cr) — a very strong absolute base.
+- **Latest quarter vs H1 run-rate:** cannot compute a clean H1 average (Q2/Q3 ND). The only anchor is that Q1 FY27 alone (Rs117.973 Cr revenue) is 26.9% of the entire FY26 revenue (Rs439.028 Cr) — a very strong absolute base.
 - **Implied Q2 FY27 base to maintain trajectory:** to stay on the Notion bull FY27 path of ~Rs571 Cr with Q1 at Rs117.973 Cr, the remaining nine months must average ~Rs151 Cr/quarter — i.e. Q2 onward must step UP from the Q1 level, consistent with H2 jewellery seasonality. Q2 FY27 revenue is the near-term read.
 
 ---
@@ -226,12 +226,14 @@ The Notion brief passed to this subagent carries the bull FY27 revenue anchor (R
 
 | Metric | Bear Proj | Base Proj | Bull Proj | Actual (Q1 FY27) | Lands In |
 |---|---|---|---|---|---|
-| Revenue (FY27 trajectory) | ND | ND | Rs571 Cr (brief) | Q1 Rs117.973 Cr; tracking at/above bull path per pre-results note | At/above Bull (directional) |
+| Revenue (FY27 trajectory) | ND | ND | Rs571 Cr (brief) | Q1 Rs117.973 Cr = 26.9% of FY26 revenue (117.973/439.028); tracking at/above bull path per pre-results note | At/above Bull (directional) |
 | EBITDA Margin | <18% (red) | 19–22% (green band) | ND | 28.76% operating | ABOVE Bull / above green band |
-| PAT (FY27) | ND | ND | ND | Q1 Rs27.210 Cr (26.9% of full FY26 PAT in one quarter) | Above base trajectory (directional) |
-| EPS (FY27) | ND | ND | ND | Q1 Rs8.58 (30.2% of FY26 Rs28.41 in one quarter) | Above base trajectory |
+| PAT (FY27) | ND | ND | ND | Q1 Rs27.210 Cr = 42.1% of FY26 PAT (27.210/64.655) in one quarter — PAT pace runs AHEAD of the 26.9% revenue pace, driven by the +721bps margin lift and the Other Income spike | Above base trajectory (directional) |
+| EPS (FY27) | ND | ND | ND | Q1 Rs8.58 = 30.2% of FY26 Rs28.41 (8.58/28.41) in one quarter | Above base trajectory |
 | Net Debt | ND | ND | ND | ND (not in Q1 filing) | Cannot assess |
 | ROCE | <16% (trigger #4) | ND | ND | ND (no capital-employed balance sheet in Q1) | Cannot assess |
+
+Note on the PAT-vs-revenue pace: Q1 delivered 42.1% of full-FY26 PAT on only 26.9% of full-FY26 revenue — profit is running AHEAD of the revenue pace because operating EBITDA margin expanded +721 bps YoY and Other Income spiked (FN2). This is favourable, but both the margin-mix sustainability (FN7) and the transient Other Income must be confirmed before extrapolating this PAT pace to the full year; a mix-quarter or a fading treasury tailwind would pull the FY27 PAT ratio back toward the revenue pace.
 
 For every metric with data, actual lands AT or ABOVE the base/bull path. No metric lands below bear. **Probability re-weighting rule NOT triggered** (it requires below-bear on 2+ metrics for 2 consecutive quarters; the opposite is observed). No downward re-weighting.
 
@@ -372,7 +374,7 @@ Channel: **Q1 FY27 concall (expected Aug 2026) if scheduled within 2 weeks; else
 
 **PROCEED WITH CAVEATS.**
 
-Rationale: The operating result is genuinely strong and clean on the numbers available — revenue +119.49% YoY, core operating PBT +222.41% (≈80% of PAT growth is recurring core, not treasury), operating EBITDA margin 28.76%, unmodified audit opinion, no dilution, no thesis-broken trigger fired, actuals at/above the base-bull path on every metric with data. That would support a stronger verdict. It is capped at PROCEED WITH CAVEATS by the **INDETERMINATE cash conversion** (house rule: INDETERMINATE cash conversion may never resolve to PROCEED). Missing evidence named: (i) no Q1 cash-flow statement → CFO/PAT untestable; (ii) no balance sheet → inventory turn (tripwire #2) and CFO/PAT (tripwire #3) not computable, while the Rs30.48 Cr finished-goods build (FN6) points to near-term cash pressure; (iii) net debt / net cash undisclosed. Flags carried prominently (do not decide, human decides): the customer-concentration reframe vs the 10.77% on file with an unresolved related-party (P.N. Gadgil & Sons SIS) aggregation question (FN3); the transient Other Income (15.3% of PBT, QoQ tripling unexplained, FN2); unverified margin-mix sustainability (FN7); slow store-rollout cadence and 81.5% undeployed IPO proceeds (FN1, FN8); minor governance/drafting data-quality points (FN5). Decision Status remains WATCHLIST; CMP Rs374.8 is above the entry zone; no BUY action available. Next hard read: H1 FY27 cash flow + Q1 FY27 concall.
+Rationale: The operating result is genuinely strong and clean on the numbers available — revenue +119.49% YoY, core operating PBT +222.41% (≈80% of PAT growth is recurring core, not treasury), operating EBITDA margin 28.76%, PAT already 42.1% of full-FY26 PAT in one quarter on 26.9% of FY26 revenue (profit pace ahead of revenue pace), unmodified audit opinion, no dilution, no thesis-broken trigger fired, actuals at/above the base-bull path on every metric with data. That would support a stronger verdict. It is capped at PROCEED WITH CAVEATS by the **INDETERMINATE cash conversion** (house rule: INDETERMINATE cash conversion may never resolve to PROCEED). Missing evidence named: (i) no Q1 cash-flow statement → CFO/PAT untestable; (ii) no balance sheet → inventory turn (tripwire #2) and CFO/PAT (tripwire #3) not computable, while the Rs30.48 Cr finished-goods build (FN6) points to near-term cash pressure; (iii) net debt / net cash undisclosed. Flags carried prominently (do not decide, human decides): the customer-concentration reframe vs the 10.77% on file with an unresolved related-party (P.N. Gadgil & Sons SIS) aggregation question (FN3); the transient Other Income (15.3% of PBT, QoQ tripling unexplained, FN2); unverified margin-mix sustainability (FN7); slow store-rollout cadence and 81.5% undeployed IPO proceeds (FN1, FN8); minor governance/drafting data-quality points (FN5). Decision Status remains WATCHLIST; CMP Rs374.8 is above the entry zone; no BUY action available. Next hard read: H1 FY27 cash flow + Q1 FY27 concall.
 
 Role 5 (Concall) verdict: N.A. — no transcript supplied this run.
 

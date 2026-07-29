@@ -27,6 +27,8 @@ Ledger reconciliation preamble: results filing 15pp / 100% page coverage (10 sca
 | Std 6 / Con 8 | Labour Codes | Incremental liability Rs 4.79 Cr (con Rs 5.19 Cr) booked FY26 + Rs 0.50 Cr reversal in Q4FY26, under exceptional | FY26 only | FY26 | Q1FY27 has NIL exceptional — clean quarter; prior-year Q1 also clean |
 | Std 7 / Con 9 | Balancing figure | Q4 Mar-26 = audited FY less published 9M | — | Q4FY26 | Standard; Q4 not independently reported |
 
+**Board Outcome annexures:** Annexure-B — reappointment of the internal auditor (SGSK & Co) for FY27: routine, reviewed, no finding. Annexure-C — ESOP allotment: de minimis (paid-up capital unchanged vs Q4). Annexure-D — CEO resignation disclosure (see Step 8). No other Board agenda items of substance.
+
 **Auditor opinion:** UNMODIFIED (both standalone and consolidated), Price Waterhouse & Co Chartered Accountants LLP, partner Arunkumar Ramdas, 29-Jul-2026. No EoM, no qualification. Standalone para 4-5 and consolidated para 6-7 note overseas branches/subsidiaries reviewed by other auditors or unreviewed-but-immaterial (net loss Rs 0.64 Cr std / Rs 1.24 Cr con) — routine, conclusion not modified.
 
 **0E. Business type:** STANDARD operating business (IT infrastructure value-added distributor / advisory). Not a lender. Standard Steps 1/5 apply.
@@ -77,7 +79,9 @@ Standalone (Rs Cr): Rev 151.62, PBT 20.12, PAT 14.99, EPS 2.74. **Standalone-vs-
 
 | Metric | Q1 FY26 | Q1 FY27 | YoY | Verdict |
 |---|---|---|---|---|
-| Gross sales billed | 606.4 | 641.2 | **+5.7%** | Growth DECELERATED hard (FY26 was ~+19%) |
+| Gross sales billed (consolidated) | 606.4 | 641.2 | **+5.7%** | Growth DECELERATED hard (FY26 was ~+19%) |
+| — of which standalone (parent + branches) | 576.55 | 578.98 | **+0.4%** | Parent core essentially FLAT |
+| — of which overseas subsidiaries | 29.87 | 62.18 | **+108%** | Doubled; 93% of the consolidated increment |
 | Revenue from Operations (net) | 227.90 | 179.73 | **−21.1%** | Recognition artifact of mix shift (see below) |
 | Gross Profit | 41.11 | 52.03 | +26.5% | Strong — margin/mix driven |
 | Operating EBITDA (mgmt) | 15.8 | 20.2 | +27.7% | Understated by −51% swing in operating other income |
@@ -91,6 +95,7 @@ Standalone (Rs Cr): Rev 151.62, PBT 20.12, PAT 14.99, EPS 2.74. **Standalone-vs-
 **Diagnostics:**
 1. **Did revenue grow?** Depends on basis. Gross sales (true business volume) +5.7% — a sharp deceleration from FY26's ~19%. Reported net revenue −21.1%. The two diverge because of Note 5/6 agency recognition.
 2. **The net-revenue decline is a mix-shift artifact, not demand loss.** Within gross sales, Hardware (principal, recognised gross) fell 194.9→140.2 (−28%), while Software & Allied (agent, recognised NET) grew 411.5→501.0 (+21.7%). More revenue was netted out (Rs 378.5 → Rs 461.4 Cr; agency share of gross sales 62%→72%), collapsing the reported top line even as volume rose and margin expanded. This is the thesis's own "move up the value chain toward cyber/software" playing out — but it breaks the reported "Revenue from Operations" line as a growth signal.
+2b. **Where the +5.7% actually came from — the parent entity was FLAT.** Splitting Note 5 by entity: **standalone (India parent + its foreign branches) gross sales grew only +0.4% YoY** (Rs 578.98 Cr vs Rs 576.55 Cr), while the overseas subsidiaries (Asia iValue, Quantanxt, ASPL FZE, iValue SL, iValue SEA) roughly **doubled** (Rs 29.87 → Rs 62.18 Cr, +108%). The subsidiaries — a small ~10% of the book — contributed **93% of the entire Rs 34.7 Cr consolidated increment.** The core parent business, which is the bulk of the franchise, did not grow this quarter. This materially sharpens the deceleration read and likely ties to the Data Centre +182.9% surge being lumpy/project-based (plausibly overseas), reinforcing the repeatability question. The clean forward test is therefore whether the PARENT re-accelerates, not just the consolidated line.
 3. **Margin expanded materially.** Gross margin on net revenue 18.0%→28.9% (+1,090bps); on gross sales 6.8%→8.1% (+133bps). Driven by the hardware→software mix, not pricing disclosure.
 4. **PAT +51.7% is high quality — genuinely operational.** Other income fell (−7.7%), tax rate flat (~25%), zero exceptional this quarter, finance costs down. The growth traces to gross-profit expansion + operating leverage. Core operating PBT ex-OI +114%. This passes the "is the headline real?" test cleanly.
 5. **D&A / finance costs are NOT scaling faster than revenue** — both fell YoY (asset-light model, lower borrowing). No capex-absorption gap.
@@ -212,10 +217,10 @@ Decision Status verified = WATCHLIST / BUY ON DIPS.
 **Governance overlay (material):** the filing discloses the **CEO's resignation — Shrikant Manohar Shitole, "personal reasons," effective close of business 31-Jul-2026** (Annexure-D / letter dated 15-Jul-2026). This is a THIRD senior change inside a month, following the 14-Jul-2026 rebuild (new CBO, CRO, CTO + two lateral moves). A company simultaneously onboarding three brand-new C-suite hires and losing its CEO has an unusually thin, unsettled senior bench mid-transition. Not itself a thesis-broken trigger, but it sharpens the still-unresolved FY26 "34% attrition" silence and warrants an explicit IR answer on CEO succession. Promoter Verdict stays TRUSTWORTHY with the monitor flag; add a management-bandwidth watch.
 
 ### 8C. Single cleanest metric for Q2 FY27
-**Gross-sales YoY growth.** It is the cleanest resolver of the one open question (is +5.7% a one-quarter air-pocket or a trend?) and it directly governs thesis-broken trigger #2.
-- **Bull threshold:** gross sales YoY > ~12-15% AND ILM stabilises → trigger #2 disarms, growth leg repaired.
-- **Bear threshold:** gross sales YoY < 8% a second time → trigger #2 FIRES → revise projections down, push the size-cap upgrade off the table, recompute entry band.
-Secondary confirm: trade payables hold >= Rs 680 Cr (sustain the green) and receivables growth <= gross-sales growth.
+**STANDALONE (parent) gross-sales YoY growth.** The consolidated line is flattered by small overseas subsidiaries doubling; the clean resolver is whether the parent core (flat at +0.4% this quarter, ~90% of the book) re-accelerates. It directly governs thesis-broken trigger #2.
+- **Bull threshold:** standalone gross sales YoY > ~10-12% AND ILM stabilises → trigger #2 disarms, growth leg repaired.
+- **Bear threshold:** standalone gross sales YoY still ~flat/<8% a second time → trigger #2 effectively FIRES on the core → revise projections down, push the size-cap upgrade off the table, recompute entry band.
+Secondary confirm: trade payables hold >= Rs 680 Cr (sustain the green); receivables growth <= gross-sales growth; DC-Infrastructure growth shown to be repeatable rather than a one-quarter overseas project.
 
 ---
 
@@ -242,6 +247,6 @@ Secondary confirm: trade payables hold >= Rs 680 Cr (sustain the green) and rece
 
 A genuinely two-sided quarter. On quality, this is the confirmation the re-entry thesis was waiting for: **the pre-committed payables gate cleared GREEN (Rs 747.2 Cr) and, crucially, did not reverse from the Mar-26 year-end (Rs 737.6 Cr)** — the FY26 cash-conversion step-up is structural. PAT +51.7% YoY is high quality, ~100% recurring, with margins expanding on a hardware→software/agency mix shift and zero one-offs. Auditor clean, single-segment, standalone-consolidated gap benign.
 
-Against that: gross-sales growth decelerated to +5.7% (from ~19% in FY26), arming thesis-broken trigger #2 at 1-of-2 quarters; ILM revenue collapsed −60.4%; and the CEO resigned three weeks after a three-person C-suite rebuild. None of these breaks the thesis, but together they say the profit story ran ahead of the volume story this quarter, and the next quarter's gross-sales growth is the decisive test. Hold WATCHLIST / BUY ON DIPS, entry band unchanged; complete the size-cap upgrade only when Q2 growth reaccelerates and IR closes the OFS and CEO-succession gaps.
+Against that: gross-sales growth decelerated to +5.7% (from ~19% in FY26) — and, decompose it, the **parent core was flat (+0.4%); 93% of the growth came from small overseas subsidiaries doubling.** That arms thesis-broken trigger #2 at 1-of-2 quarters on the core franchise; ILM revenue collapsed −60.4%; and the CEO resigned three weeks after a three-person C-suite rebuild. None of these breaks the thesis, but together they say the profit story ran well ahead of the (core) volume story this quarter, and next quarter's STANDALONE gross-sales growth is the decisive test. Hold WATCHLIST / BUY ON DIPS, entry band unchanged; complete the size-cap upgrade only when Q2 growth reaccelerates and IR closes the OFS and CEO-succession gaps.
 
 *Reviewed 29-Jul-2026 | Sources: BSE/NSE Reg 30/33 filing 29-Jul-2026, press release 29-Jul-2026, investor presentation 29-Jul-2026 | Business type: Standard | Auditor: Unmodified*

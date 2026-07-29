@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No concall transcripts (no-concall run); F2 tested via AR capex-completion timeline + injected B05 record"
+  - "Silvassa ~Rs86cr capex and Bhiwadi 24,000 MTPA figures are run-context inputs, not independently located in AR/Inv Pres text"
+  - "PLI/RIPS scheme quantum, duration, disbursement status not found"
+  - "Facility-level utilisation percentages not found"
+  - "Top-5/top-10 customer concentration not found"
+  - "FY25 employee headcount not found (no revenue-per-employee trend computable)"
+flags: []
+em_score: 21
+em_classification: "MODEST"
+active_categories:
+  - {id: "F2", name: "Execution moat", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active / 12m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active / 12-24m"}
+  - {id: "H3", name: "ESG moat", strength: "Strong", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already active"}
+  - {id: "R1", name: "Regulatory/policy tailwinds", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 16, claim: 8, inference: 5}
+completionist_recount: "recount performed: approximately 16 documented items support the 5 active categories (3 certifications for B2; 3 capex-completion facts for F2; 3 partnership structures for H2; 3 ESG capacity/metric disclosures for H3; 3 regulatory approvals for R1); 5 active categories out of 21 sits within the realistic 3-6 base rate, no over-crediting re-examination triggered"
+catalysts_12m:
+  - {catalyst: "CTC commercial production target", window: "6-12m", evidence_type: "claim", anchor: "B05 promise-delivery record (Q2 CY2026 target)"}
+  - {catalyst: "Tefabo Vadodara wind-tower Phase 1 capacity (+20 towers/month)", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 23"}
+  - {catalyst: "Silvassa expansion capex execution progress", window: "12m", evidence_type: "documented/claim", anchor: "AR MD&A/Board's Report board-approval language; ~Rs86cr quantum per run context"}
+  - {catalyst: "PLI/RIPS incentive-income line appearing in FY27 disclosures", window: "12-24m", evidence_type: "documented (approval)/inference (monetisation)", anchor: "AR Note 18.1 (Deferred Income/EPCG, distinguishing from PLI); Inv. Pres. slide 12"}
+capex_embedded_growth_pct: 14
+optionality_register:
+  - {optionality: "IGT copper-tube commercialisation", converting_evidence: "first commercial dispatch/segment revenue disclosure", first_appears: "quarterly results segment note / exchange filing", window: "12-24m"}
+  - {optionality: "CTC/HVDC entry reaching commercial production", converting_evidence: "commissioning announcement + first sales", first_appears: "exchange filing / quarterly results", window: "6-12m"}
+  - {optionality: "Tefabo Vadodara wind-tower Phase 2 capacity", converting_evidence: "Phase 1 completion confirmation triggering Phase 2 capex", first_appears: "next AR / exchange filing", window: "24-36m"}
+  - {optionality: "Tefabo European technology-transfer agreement", converting_evidence: "signed licensing/technology agreement", first_appears: "exchange filing / AR", window: "12-24m"}
+  - {optionality: "PLI (White Goods)/RIPS-2024 quantified financial benefit", converting_evidence: "disclosed PLI/RIPS incentive-income line distinct from EPCG grant", first_appears: "AR notes / quarterly results", window: "12-24m"}
+  - {optionality: "Silvassa ~Rs86cr expansion specific product/capacity identification", converting_evidence: "specific product-line or MTPA capacity disclosure", first_appears: "next AR / exchange filing", window: "12m"}
+  - {optionality: "Epavo BLDC path to profitability", converting_evidence: "JV segment turning EBITDA/PAT-positive", first_appears: "AR segment/JV note", window: "24-36m"}
+  - {optionality: "Global Copper (Vadodara) expansion completion", converting_evidence: "commissioning confirmation with capacity addition disclosed", first_appears: "exchange filing / AR", window: "12-24m"}
+  - {optionality: "Tefabo market-share claim (30-40%) independent verification", converting_evidence: "independent industry-report citation or disclosed order book", first_appears: "exchange filing / industry report", window: "12-24m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (40/80 core, 23/60 moat) combines with a MODEST emerging-moat score (21/80, 5 active categories) that falls well short of the EXPANSION threshold needed to lift this into a GOOD+/HIGH POTENTIAL transition setup, while rising leverage and lengthening working capital argue the balance sheet is funding the copper-tube diversification with less margin for error, not more."
+top_moat_risks:
+  - "Simultaneous multi-site capex (Bhiwadi, Silvassa, Global Copper Vadodara, Tefabo Vadodara) against rising net debt/equity (0.20 to 0.46, FY24-FY26) and a credit rating reaffirmed rather than upgraded"
+  - "Epavo BLDC JV loss-making (Rs388.63 Lakhs consolidated JV loss, FY26) with no disclosed path to profitability"
+  - "PLI (White Goods, approved 2024) and RIPS-2024 incentives remain unmonetised in reported financials two years post-approval"
+  - "ESG renewable capacity (5.3MW solar, 2.1MW wind) is facility-specific (Bhiwadi, Vadodara) rather than group-wide across five plants"
+  - "Qualification-lock-in certifications (IATF/ISO/UL/RDSO) are replicable by well-funded new entrants within 12-24 months as India's copper-tube import-substitution opportunity attracts competitors too"

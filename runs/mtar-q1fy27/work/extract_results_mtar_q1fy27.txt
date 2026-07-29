@@ -1,3 +1,78 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_mtar_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 9
+formfeed_count: 9
+line_count: 585
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: none (all 9 pages exceeded 100-char text-layer threshold; pages 5 and 6 additionally rasterised at 300dpi and OCR'd as a SUPPLEMENTARY cross-check only, not for coverage, per source-file integrity note in task brief)
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-29
+=== END HEADER ===
+
+=== A1 TEXT-LAYER VERIFICATION NOTES (mechanical cross-check only; no interpretation) ===
+Source PDF was re-exported via Online2PDF.com. On pages 5 and 6 (the two
+financial-results tables), the pdftotext -layout text layer renders the
+decimal point as a comma or colon, or drops it entirely, in a small number
+of table cells (confirmed present in both the text layer AND a 300dpi
+OCR pass of the same cells, i.e. it is a font/glyph artifact in the source
+PDF itself, not a pdftotext or tesseract parsing error). Each instance
+below was cross-checked two ways: (a) row-sum/column arithmetic against
+the adjacent unaffected cells in the same table, (b) 300dpi rasterised
+OCR (tesseract) of the source page. RAW = the character string as it
+literally appears in the pdftotext -layout output at the cited line (left
+unaltered in the page text below, per "never reflow / never convert the
+text itself"). VERIFIED = the value both cross-checks agree on.
+
+(REF: page 5, standalone table, line "Total tax expense" row, column 30-Jun-26)
+  RAW: "171,36"   VERIFIED: 171.36
+  (= Current tax 151.39 + Deferred tax charge 19.97 + adjustment 0.00;
+  300dpi OCR of page 5 also reads "171.36" at this cell)
+
+(REF: page 6, consolidated table, line "(ii) Other operating revenue" row, column 30-Jun-26)
+  RAW: "48,29"   VERIFIED: 48.29
+  (= Total Revenue from Operations 3,607.21 minus Sale of Products 3,558.92;
+  300dpi OCR of page 6 also renders this cell with a comma glyph -
+  arithmetic is the deciding cross-check here, OCR is inconclusive)
+
+(REF: page 6, consolidated table, line "Deferred tax charge" row, column 31-Mar-26 (quarter))
+  RAW: "3:52"   VERIFIED: 3.52
+  (= Total tax expense 152.59 minus Current tax 157.33 minus adjustment -8.26;
+  300dpi OCR of page 6 reads "3.52" at this cell)
+
+(REF: page 6, consolidated table, line "Deferred tax charge" row, column 31-Mar-26 (year ended))
+  RAW: "26,94"   VERIFIED: 26.94
+  (= Total tax expense 321.16 minus Current tax 302.48 minus adjustment -8.26;
+  300dpi OCR of page 6 also renders this cell with a comma glyph -
+  arithmetic is the deciding cross-check here, OCR is inconclusive)
+
+(REF: page 6, consolidated table, line "Basic earnings per share" row, column 30-Jun-26)
+  RAW: "16,33"   VERIFIED: 16.33
+  (matches the unaffected "Diluted earnings per share" cell in the same
+  column, same row-pair, which reads "16.33" cleanly; 300dpi OCR of page 6
+  also renders this cell with a comma glyph - the paired-cell match is the
+  deciding cross-check here)
+
+(REF: page 6, consolidated table, line "Diluted earnings per share" row, column 30-Jun-25)
+  RAW: "352" (no decimal point rendered)   VERIFIED: 3.52
+  (matches the unaffected "Basic earnings per share" cell in the same
+  column, same row-pair, which reads "3.52" cleanly; 300dpi OCR reads "B52"
+  at this cell, consistent with a dropped/misrendered decimal point)
+
+No other pages (1,2,3,4,7,8,9) contain this artifact; all colon/comma
+matches on those pages are legitimate timestamps ("3:00 p.m.", "16:34:40")
+and were confirmed as such by manual inspection, not financial data.
+
+The raw pdftotext -layout text below is preserved verbatim and UNALTERED
+at every line, including the six cells above. Downstream agents citing
+these six cells should use the VERIFIED value shown here and cite this
+verification note alongside the page/line number.
+=== END VERIFICATION NOTES ===
+
+[page 1]
+
                         ®
    Marie                                                                                 email : info@mtar.in website             www.mtar.in i
 
@@ -49,7 +124,11 @@
 
 MTAR      Technologies              Ltd. (Formerly known as MTAR Technologies Pvt Ltd), 18, Technocrats Industrial Estate, Balanagar,
 Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312       fax : 91-40-44553322/23078316,       GST No.: 36AACCM2021N1ZL
-                    ®
+
+
+[page 2]
+
+                    ®
    Marea                                                                                                                  email    : info@mtar.in website   : www.mtar.in   Ee
 
                                                                                                                          CIN      No : L72200TG1999PLC032836
@@ -103,7 +182,11 @@ Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312       fax 
 
 MTAR Technologies                                                     Ltd. (Formerly known as MTAR Technologies Pvt Ltd), 18, Technocrats Industrial Estate, Balanagar,
 Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312 fax : 91-40-44553322/23078316, GST No.: 36AACCM2021N1ZL
-   MAR                                                                                                          email
+
+
+[page 3]
+
+   MAR                                                                                                          email
 
 
                                                                                                                 CIN     No
@@ -161,7 +244,11 @@ Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312 fax : 91-4
 
 MTAR      Technologies            Ltd. (Formerly known as MTAR Technologies Pvt Ltd), 18, Technocrats Industrial Estate, Balanagar,
 Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312                     fax : 91-40-44553322/23078316, GST No.: 36AACCM2021N1ZL
-   MAR                                                                                                                                              email : info@mtar.in website
+
+
+[page 4]
+
+   MAR                                                                                                                                              email : info@mtar.in website
 
                                                                                                                                                     CIN     No    : L72200TG1999PLC032836
                                                                                                                                                                                                           www.mtar.in i
@@ -216,7 +303,11 @@ Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312           
 
 MTAR      Technologies                Ltd.     (Formerly known as MTAR Technologies Pvt Ltd), 18, Technocrats Industrial Estate, Balanagar,
 Hyderabad - 500 037. Telangana, India. office : 040-44553333/23078312                                                   fax : 91-40-44553322/23078316, GST No.: 36AACCM2021N1ZL
-                                                                         MTAR Technologies Limited
+
+
+[page 5]
+
+                                                                         MTAR Technologies Limited
                                                                                    CIN: L72200TG1999PLC032836
                                                    Registered office: 18, Technocrats Industrial Estate, Balanagar, Hyderabad, Telangana 500037
                                                                   Ph.: 040 4455 3333, E-mail: info@mtar.in; Website: www.mtar.in
@@ -282,7 +373,11 @@ Notes:
 
              Place: Hyderabad                                                                                                                                           Manging     D
              Date: July 29, 2026                                                                                                                                             DIN: 00359139
-                                                                   MTAR           Technologies Limited
+
+
+[page 6]
+
+                                                                   MTAR           Technologies Limited
                                                                            CIN: L72200TG1999PLC032836
                                            Registered office: 18, Technocrats Industrial Estate, Balanagar, Hyderaba
                                                                                                                      d, Telangana 500037
@@ -350,7 +445,11 @@ Notes:
 
              Place: Hyderabad                                                                                                                                         Manging Director
              Date: July 29, 2026                                                                                                                                         DIN: 00359139
-  S.R. BATLIBOI & ASSOCIATES LLP                                                                                             L8th Floor, “NOSTH LOBBY”
+
+
+[page 7]
+
+  S.R. BATLIBOI & ASSOCIATES LLP                                                                                             L8th Floor, “NOSTH LOBBY”
   Chartered Accountants
                                                                                                                              Survey No. 83/1, Raidurgam
                                                                                                                              Hyderabad    - 500 032,   India
@@ -446,7 +545,11 @@ Date: July 29, 2026
                                                                                             with LLP Identity No. AAB-4295
                                         Regd. Office : 22, Camac Street, Block ‘B’, 3rd Floor,
                                                                                                 Kolkata-700 016
-S.R. BATLIBOI & ASSOCIATES LLP                                                                                                {SG Host "NOH LOE
+
+
+[page 8]
+
+S.R. BATLIBOI & ASSOCIATES LLP                                                                                                {SG Host "NOH LOE
 Chartered Accountants
                                                                                                                               Survey No. 83/1, Raidurgam
                                                                                                                               Hyderabad - 500 032, India
@@ -549,7 +652,11 @@ l.    We have reviewed the accompanying Statement
                                                                                  Partnership with LLP Identity No. AAB-4295
                                            Regd. Office : 22, Camac Street, Block ‘B', 3rd
                                                                                            Floor, Kolkata-700 016
-S.R. BATL       & IB
+
+
+[page 9]
+
+S.R. BATL       & IB
                   ASSOCI
                       OI ATES LLP
 Chartered Accou
@@ -583,4 +690,24 @@ Membership No.:        4777
 
 Place: Hyderabad
 Date: July 29, 2026
-
+
+
+```yaml
+stage: A1-extractor
+company: "MTAR"
+quarter: "Q1 FY27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+page_count: 9
+formfeed_count: 9
+line_count: 585
+unit_convention: "Millions"
+conversion_factor_to_cr: "Millions -> x0.1"
+ocr_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/mtar-q1fy27/work/extract_results_mtar_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

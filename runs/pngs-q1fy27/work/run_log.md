@@ -14,3 +14,9 @@
 - A4 verdict PROCEED WITH CAVEATS; cash conversion INDETERMINATE (capped, per house rule).
 - A5 loop 1: INCOMPLETE (Step 6A PAT ratio 26.9% miscopied revenue ratio -> corrected to 42.1%). A5 re-audit: COMPLETE.
 - Notion saved: Key Notes prepended (prior 3 entries preserved); full review + A3 forensics + A5 audit appended to page body. Decision Status WATCHLIST unchanged (no trigger fired).
+
+## SECOND DOCUMENT ADDED (29-Jul-2026, later): Investor Presentation
+- Reg 30 Investor Presentation, quarter ended 30 Jun 2026, 33 pages, A4.
+- Class detection: Reg 30 cover + slide structure -> presentation.
+- Image-heavy: pages 2 (108ch), 4 (92ch), 5 (16ch) below OCR threshold -> A1 OCR fallback expected.
+- Chain: A1/A2/A3 on presentation, then A4 RE-MERGED (results + presentation) -> review_pngs_q1fy27_merged.md, then A5 re-audit, then Notion update.

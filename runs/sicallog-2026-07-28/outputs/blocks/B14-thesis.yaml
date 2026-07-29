@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "SICALLOG"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 12, high: 15}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "AVOID reverses only if ALL four hold: price reaches Rs 12-15 AND standalone parent posts pre-exceptional operating profit with its own cash for 2 consecutive quarters (no asset sale) AND promoter pledge falls below 40% AND FLAG-CASH items resolve (CARO cash-loss reconciliation plus a live credit rating). Absent all four, AVOID stands."
+monitoring_checklist:
+  - "Standalone parent pre-exceptional PAT turns positive and self-funds cash for 2 consecutive quarters, no asset sale (red: continued standalone pre-exceptional loss through FY27)"
+  - "Promoter-entity pledge falls below 40% (red: at/above 56.75% or rising)"
+  - "SECL Porda-Chimtapani (74% of order book) revenue at expected run-rate; order book stable/growing vs Rs 4,600cr (red: mining revenue flat/negative QoQ)"
+  - "Chennai MMLP rake utilization reaches 50-70 rakes/month (red: stalling below the range 2+ quarters)"
+  - "Consolidated core EBITDA margin holds at or above 20% (red: sustained below 15%)"
+  - "NCI share of consolidated equity stable/falling or Sical raises its SMART stake (red: NCI profit growing faster than owners' profit; NCI above ~51%)"
+  - "FLAG-CASH resolves: CARO cash-loss reconciliation given, live credit rating obtained, unbilled ECL recalibrated (red: CARO cash losses keep widening, no rating, ECL still frozen)"

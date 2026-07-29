@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No shareholding pattern data (promoter holding/pledge) in provided sources - Block E1-E3 scored 0/NOT FOUND"
+  - "No contingent liabilities disclosure in provided sources - E4 scored 0/NOT FOUND"
+  - "No trade payables breakdown (only aggregate 'Other Liabilities') - Payable Days, WC Days (B4, M12) not computable, scored 0/N/A"
+  - "No capex breakdown (purchase of PPE/intangibles) in cash flow data - FCF (B2, B3) not computable, scored 0/N/A"
+  - "No R&D expense disclosure - M6 scored 0"
+  - "No distribution/dealer network disclosure - M8 scored 0"
+  - "PRECWIRE peer CSV limited to FY2015-16 only (stale/truncated export) - excluded from FY26 peer comparisons (M2, M5, M9); peer median based on BHAGYANGR + VIDYAWIRES only"
+  - "Gate 0 agent used only the Q3 FY26 results PDF (789d1085); the May-2026 FY26 full-year results PDF (0a5a99ff, confirmed present) was missed via a garbled filename. FY26 full-year figures were still sourced from screener CSV so the scorecard is intact; both results PDFs passed to downstream stages."
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (Core 40/80); driven materially by data gaps (Block E=0 for lack of shareholding/pledge/contingent-liability disclosure; Block B depressed to 5/20 by unavailable capex and trade-payables breakdowns, not by demonstrated cash-quality failure) and by a genuine FY19-FY21 ROCE/ROE trough (8.4-10.9% ROCE, COVID-period) that pulls down Block A medians despite strong FY22-FY26 recovery (ROCE 17-19%, ROE 15-22%). FY26 CFO swung sharply negative (-92.99 Cr) against record PAT (107.05 Cr)."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 13, B: 5, C: 15, D: 7, E: 0}
+core_score: 40
+moat_score: 23
+grand_total: 63
+moats_confirmed: 6
+moat_class: "FORTRESS"
+classification: "AVERAGE"
+deal_breakers: ["Block B <8 (5) -> max GOOD (non-binding, AVERAGE already below cap)"]
+history_downgrade: false
+data_notes:
+  - "ROCE computed (screener export has no populated ROCE series): EBIT=PBT+Interest; Capital Employed=Equity+Reserves+Borrowings (=Total Assets-Other Liabilities), approximating Other Liabilities as Current Liabilities since no current/non-current split is disclosed"
+  - "ROE computed: PAT/avg Net Worth; FY17 uses closing Net Worth only (opening FY16 unavailable)"
+  - "Current Ratio (D4) uses Other Assets/Other Liabilities as Current Assets/Current Liabilities proxy"
+  - "EBITDA excl. other income (screener's Operating Profit convention) = PBT-Other Income+Depreciation+Interest, cross-validated exactly against screener-Data_Sheet.csv quarterly Operating Profit row"
+  - "Gross margin proxy (M9) = (Revenue-Raw Material Cost)/Revenue"
+  - "FCF (B2,B3) and WC Days (B4, M12) marked N/A - no capex breakdown and no trade payables disclosure anywhere in provided data; not estimated"
+  - "No loss-to-profit swing in the 10-year PAT series; no CAGR edge case triggered"
+block_b_trend: "deteriorating - FY26 CFO -92.99 Cr vs FY25 +227.33 Cr despite record PAT of 107.05 Cr (screener-Data_Sheet.csv), driven by receivables/inventory build (Receivables 390.15->640.61 Cr, Inventory 233.68->486.09 Cr); 10-year cumulative CFO/PAT of 1.28x still clears B1 top band"

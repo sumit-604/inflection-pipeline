@@ -1,0 +1,36 @@
+stage: B00-inputs
+company: RAMRAT
+run_date: 2026-07-29
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false
+no_concall_mode: true
+inputs_present:
+  annual-report: 1        # Annual_Report.pdf
+  results: 2              # 0a5a99ff...pdf, 789d1085...pdf
+  rating: 1               # CARE Sep 2025, CARE A-/A2+
+  peer-concalls: 5        # BHAGYANGR x3, VIDYAWIRES x2
+  screening: 4_sets       # screener + BHAGYANGR + PRECWIRE + VIDYAWIRES CSVs
+  presentation: 1         # Investor_Presentation_1.pdf
+input_gaps:
+  - type: prospectus
+    severity: none
+    note: "Long-listed company (public since 1990s); prospectus not expected, not a gap."
+  - type: concalls
+    severity: declared
+    note: "concalls_available=false. NO-CONCALL MODE: stage 5 degraded (AR MD&A/chairman/results commentary; credibility C, max B); stage 7 F2 uses capex-completion evidence; verifier B audits vs AR/results."
+  - type: announcements
+    severity: medium
+    note: "Absent. Stages 5/7/8 lose the documented-ACTION (Reg 30) record; intent-and-action cross-check runs on AR/results only; stage 8 relies on web search."
+  - type: shareholding
+    severity: medium
+    note: "Absent. Stage 10 marks FII+DII unresolved; stage 11 withholds UA institutional qualifier; promoter holding/pledge trend falls back to AR figure with staleness noted."
+  - type: research
+    severity: low
+    note: "Absent. No effect on anchored evidence (research is never anchored)."
+manifest_concerns:
+  - "sector_cap_row='Pharma / CDMO' is WRONG for a copper winding-wire/electrical company. Auto-picked; must be corrected before Phase 3 (stage 11 sector cap / UA)."
+operator_ruling:
+  - "2026-07-29: Operator chose PROCEED WITH GAPS on the empty announcements/shareholding/research folders. Single permitted question asked and answered."
+flags: []

@@ -146,5 +146,8 @@ BUSINESS MODEL BLOCK (B04, for scope definition):
 CAPEX-EMBEDDED GROWTH (B07.capex_embedded_growth_pct, for 3C):
 {{B07_CAPEX_FIGURE}}
 
-AR / INVESTOR PRESENTATION EXTRACTS (management TAM claims, capacity):
+AR / INVESTOR PRESENTATION EXTRACTS (mdna + business_overview slice of the
+page-marked text cache: management TAM claims, capacity, industry outlook):
 {{TAM_RELEVANT_EXTRACTS}}
+FULL-CACHE FALLBACK (read only if the slice is flagged confidence:low or a
+needed TAM/capacity figure is not in it): {{AR_FULL_FALLBACK}}

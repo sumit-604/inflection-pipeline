@@ -98,6 +98,16 @@ handoff schemas, flag rules, and error handling. Then:
    treat its figures as anchored evidence; every number a stage reports
    still comes from this run's own inputs, verified against the source PDFs.
 
+   BUILD THE TEXT CACHE + AR SECTION INDEX (orchestrator, before any
+   stage). Per prompts/00-orchestrator.md "STAGE 0 TEXT CACHE AND AR
+   SECTION INDEX": extract every input PDF to inputs/_textcache/<name>.txt
+   with [[PAGE N]] markers, and for each annual report write
+   inputs/_textcache/<ar>__INDEX.yaml mapping financials_and_notes, mdna,
+   business_overview, and governance to line/page ranges with a
+   confidence flag. Slices generous, full cache is the fallback of record,
+   confidence: low reverts that section to the full cache. Record the
+   summary in B00.ar_section_index.
+
    Create outputs/blocks, outputs/reports, outputs/final inside the run
    folder.
 
@@ -110,6 +120,17 @@ handoff schemas, flag rules, and error handling. Then:
    Stage 2 is THREE sequential invocations of stage-02-notes-pass (pass
    1, then pass 2 with pass 1's report path, then pass 3 with both).
    Stages 10 and 11 do NOT run in this phase.
+
+   AR SECTION SLICES. For the section-scoped stages, resolve the slice
+   from B00.ar_section_index and inject, at the stage's AR marker, the
+   text-cache PATH plus the section's line range, AND the full-cache path
+   as the named fallback. Route: stage 2 -> financials_and_notes; stage 4
+   -> business_overview + mdna; stage 8 -> governance (the
+   {{AR_GOVERNANCE_EXTRACTS}} marker); stage 9 -> mdna + business_overview
+   (the {{TAM_RELEVANT_EXTRACTS}} marker). If that section's confidence is
+   low (or no index exists), inject the FULL cache path instead and say so.
+   Stages 3 and 7 always receive the FULL cache. Never paste slice CONTENTS
+   into the task message; pass paths and line ranges, the subagent reads.
 
 3. COLLECT each stage's YAML block into outputs/blocks/<stage>.yaml.
    Malformed or missing block: re-invoke once with the retry addendum

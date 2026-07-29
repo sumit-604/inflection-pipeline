@@ -236,6 +236,70 @@ Prior operator overrides from the deliberation record
 lists each prior override with the question "does the new evidence still
 support this override?" and leaves the answer to Keerti.
 
+### STAGE 0 TEXT CACHE AND AR SECTION INDEX
+
+Stage 0 builds a text cache before any stage runs. This is law, not an
+ad-hoc fix (promoted from LESSONS after the recurring PDF-size / poppler /
+cffi wall).
+
+1. **Page-marked cache, every input PDF.** Extract every input PDF to
+   `inputs/_textcache/<source-basename>.txt` with `[[PAGE N]]` markers at
+   each page boundary. Every stage and verifier reads the `.txt`, not the
+   PDF; the PDF page-render is the fallback for image-only tables. An
+   image-only PDF (pypdf returns ~0 chars) is rendered and transcribed with
+   a provenance header, and the affected pages are noted.
+
+2. **AR SECTION INDEX, annual-report caches only.** After caching each
+   annual report, write `inputs/_textcache/<ar-basename>__INDEX.yaml`
+   mapping the AR's canonical sections to line and page ranges, so
+   section-scoped stages read only their slice instead of the whole book.
+   Locate each section by its standard heading via the `[[PAGE N]]`
+   markers. Match headings case-insensitively and across punctuation
+   variants ("Management Discussion and Analysis" == "MANAGEMENT DISCUSSION
+   & ANALYSIS"; "Notes forming part of..." == "Notes to the financial
+   statements"); a heading that is only referenced in prose ("refer to the
+   MD&A section") is NOT the section start. When a heading genuinely cannot
+   be found, mark that section `confidence: low` rather than guessing a
+   boundary. Schema:
+
+   ```yaml
+   ar_index:
+     source: annual-report__<file>.txt
+     full:   {lines: "1-21111", pages: "1-275"}
+     sections:
+       financials_and_notes: {lines: "", pages: "", confidence: high|low, note: ""}
+         # auditor's report + primary statements + ALL notes to accounts.
+         # Start anchor: "Independent Auditor's Report" or the first
+         # "Balance Sheet" / "Notes forming part of the financial statements".
+       mdna:                 {lines: "", pages: "", confidence: high|low, note: ""}
+         # Management Discussion and Analysis.
+       business_overview:    {lines: "", pages: "", confidence: high|low, note: ""}
+         # business / company / segment / product descriptions (front matter
+         # or inside MD&A). May overlap mdna; that is fine.
+       governance:           {lines: "", pages: "", confidence: high|low, note: ""}
+         # Directors' Report, Corporate Governance report, board composition,
+         # shareholding pattern, RPT policy.
+   ```
+
+   RULES that keep this quality-neutral:
+   - **Slices are generous.** Round outward to whole pages; when a boundary
+     is uncertain, include the adjacent page. Over-inclusion costs a few
+     tokens; under-inclusion loses evidence, which is not allowed.
+   - **`confidence: low` means fall back to full.** If a section heading
+     cannot be located, or its region is scanned/image-only, mark it
+     `confidence: low`. The orchestrator then routes that stage to the FULL
+     cache for this run. A missing index never degrades what a stage sees;
+     it only forgoes the saving for that document.
+   - **The full cache is always the fallback of record.** Every
+     section-scoped stage is given the full-cache path alongside its slice
+     and is told to read it if the slice looks truncated or it needs to
+     cross-reference another section.
+   - Record the index summary in `B00.ar_section_index`.
+
+   Stages 3 (AR deep dive, 8-phase backward) and 7 (Emerging Moat) traverse
+   the whole document and always receive the FULL cache. Stages 2, 4, 8, 9
+   receive slices per the STAGE SEQUENCE "Consumes" column.
+
 ---
 
 ## 2. STAGE SEQUENCE
@@ -244,14 +308,14 @@ support this override?" and leaves the answer to Keerti.
 |---|-------|-------------|-------|----------|-------------|
 | 0 | Input validation | (inline) | Haiku 4.5 | folder + manifest | `B00-inputs` |
 | 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5 | screener-data / results PDFs | `B01-gate0` |
-| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR | `B02-notes` |
-| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | AR + B02 | `B03-ardeep` |
-| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR + inv. pres. | `B04-bizmodel` |
+| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR `financials_and_notes` slice (+full fallback) | `B02-notes` |
+| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | AR (FULL) + B02 | `B03-ardeep` |
+| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR `business_overview`+`mdna` slice (+full fallback) + inv. pres. | `B04-bizmodel` |
 | 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5 | 3 transcripts (oldest first) | `B05-concall` |
 | 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
-| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR + concalls + pres. + B01 | `B07-emoat` |
-| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
-| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
+| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR (FULL) + concalls + pres. + B01 | `B07-emoat` |
+| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR `governance` slice (+full fallback) | `B08-promoter` |
+| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR `mdna`+`business_overview` slice (+full fallback) + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
 | 11 | Role 1 valuation (v3.3) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.3 Section 1B + FTTCP v1.2 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
@@ -482,6 +546,16 @@ Every stage prompt is ordered: [framework and rules, stable] then
 [company inputs, variable]. Stable prefixes are marked for prompt caching.
 Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
 20-category moat scan, FTTCP v1.2) is paid once and read at 10% thereafter.
+
+SECTION-SCOPED AR READS (STAGE 0 AR SECTION INDEX above). The annual
+report is the largest, most re-read input. Stages 2, 4, 8, 9 read only
+their indexed section slice, not the whole book; only stages 3 and 7
+traverse the full AR. The `financials_and_notes` boundary that stage 2's
+three passes read against is the most reliable anchor in the document, so
+its saving is both the largest (three passes) and the safest. Every slice
+carries the full-cache path as fallback, so nothing a stage needs becomes
+unreachable; a `confidence: low` section simply reverts that stage to the
+full cache for the run.
 
 Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
 $5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,

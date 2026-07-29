@@ -56,6 +56,8 @@ weigh, never anchored evidence.
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits)
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
+                 (inputs/_textcache/ holds stage-0 page-marked .txt per PDF
+                 plus <ar>__INDEX.yaml; section-scoped stages read AR slices)
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
 - LESSONS.md     operational memory, read by pipeline commands at start,

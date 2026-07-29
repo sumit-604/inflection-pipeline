@@ -150,5 +150,8 @@ Company: {{COMPANY}} ({{TICKER}}), BSE/NSE: {{CODES}}
 Promoter / CMD / MD name(s): {{PROMOTER_NAMES}}
 Run date: {{RUN_DATE}}
 
-AR GOVERNANCE EXTRACTS (shareholding, board, RPT sections):
+AR GOVERNANCE EXTRACTS (governance slice of the page-marked text cache:
+Directors' Report, Corporate Governance report, board, shareholding, RPT):
 {{AR_GOVERNANCE_EXTRACTS}}
+FULL-CACHE FALLBACK (read only if the slice is flagged confidence:low or a
+governance detail is not in it): {{AR_FULL_FALLBACK}}

@@ -125,8 +125,11 @@ one_line_verdict: ""
 Company: {{COMPANY}} ({{TICKER}})
 Run date: {{RUN_DATE}}
 
-ANNUAL REPORT (business sections, MD&A, segment data):
+ANNUAL REPORT SLICE (business_overview + mdna range of the page-marked
+text cache; business description, MD&A, segment data):
 {{ANNUAL_REPORT}}
+FULL-CACHE FALLBACK (read only if the slice is flagged confidence:low or a
+needed business/segment detail is not in it): {{ANNUAL_REPORT_FULL_FALLBACK}}
 
 INVESTOR PRESENTATION (if available):
 {{INVESTOR_PRESENTATION_OR_NOT_PROVIDED}}

@@ -36,3 +36,8 @@ Run date: 2026-07-27. Ticker: AEROFLEX (Aeroflex Industries Limited, Scrip 54397
 - update_properties: PREPENDED dated [27-Jul-26] Q1 FY27 Key Notes entry; all 6 prior entries preserved. Decision Status LEFT UNCHANGED (WATCHLIST / HOLD-NOT-ADD) — no trigger fired.
 - insert_content (position end, 3 sequential inserts): full Q1 FY27 review as Notion tables — headline consol/standalone, growth-quality/skid economics, watchlist status, tripwire test, governance, 14 Questions-for-Management, monitorables, verdict, plain-language callout, A3 forensics findings table, A5 COMPLETE verdict.
 - A5 verdict COMPLETE; protocol verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE.
+
+## Role 5 concall cycle (2026-07-29, transcript supplied)
+- Q1 FY27 concall transcript supplied as plain text (was N.A. in the 27-Jul results cycle). Saved verbatim to inputs/concall_aeroflex_q1fy27.txt.
+- A1 concall extract built (header + turn-marked verbatim, T00-T17; 14 analyst Q&A turns). MD Asad Daud answered all Qs; no CFO/other exec spoke. GATE A1 PASS.
+- A2 concall enumerator dispatched.

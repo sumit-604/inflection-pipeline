@@ -1,0 +1,32 @@
+stage: B09-tam
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-sonnet-5
+status: partial               # several source-page fetches (IMARC/GVR/DCMSME/EquityEdge Substack) were 403-blocked; compensated via search snippets, lower confidence
+input_gaps: ["precise consolidated DGCIS customs figure for copper-tube import dependence (mgmt's ~70% claim unverified)", "itemised revenue/capacity for smaller organised winding-wire peers beyond the 3 verified (Precision Wires, Vidya Wires)", "DCMSME winding-wire report publication date (imports cited from FY2019; vintage otherwise unconfirmed)"]
+flags:
+  - "FLAG-TAM-MGMT: India copper-tube 16-17% CAGR claim projects to ~2.9x the independent conservative 2032 estimate (inflated); the separate global USD70bn-by-2032 claim is ~1.45x an independent aggregator (reasonable band) - the two claims diverge in credibility"
+  - "FLAG-TAM-CAPACITY-RACE: industry-wide winding-wire/copper-tube capacity build (Vidya, Bhagyanagar, plus Adani/Hindalco entrants per B06) risks overcapacity before SOM share-gain materialises"
+  - "FLAG-TAM-CAPEX-GAP: B07 capex-embedded growth (14%) exceeds SOM-implied CAGR (10.9-11.4%) by ~3pp / Rs590-1,050cr at 3-5yr horizons - capex plan is the more optimistic side, not physical capacity"
+  - "FLAG-TAM-IMPORT-DEP: RAMRAT's ~70% copper-tube import-dependency claim not independently corroborated with a single customs aggregate; anti-dumping duty on Chinese tubes (to Jan-2027) and Malaysia-alone imports of ~USD128mn (2024) support the direction, not the specific number"
+market_definition: "India-domestic enamelled copper/aluminium winding wire & strips + copper tubes & pipes (98% of RAMRAT revenue); Tefabo/Epavo JV-subsidiary opportunities excluded from core TAM, treated as SAM-expansion levers"
+tam_cr: {conservative: 36698, realistic: 37862}
+sam_cr: 28260
+sam_pct_of_tam: 77.0
+som_3yr_cr: 6924
+som_5yr_cr: 8719
+som_implied_revenue_cagr: {yr3: 10.9, yr5: 11.4}   # FORMAL handoff to stage 11
+current_sam_share_pct: 18.0
+revenue_headroom_x: 5.46
+tam_growth_pct: 7.0
+runway_class: "STRONG"
+mgmt_claim_cr: 34690
+mgmt_claim_ratio: 2.9
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient physical capacity (36,000 MTPA copper tube, 41,400 MTPA winding wire); gap of Rs590-1,050 Cr (3yr-5yr) is on revenue/demand-capture side - capex-embedded growth (14%) is the more optimistic assumption vs SOM's 10.9-11.4% CAGR"
+methods_used: ["top-down (industry reports)", "bottom-up (units x price)", "peer revenue aggregation", "import substitution (copper tubes)", "global benchmark comparison (copper tubes)"]
+stale_data_flags:
+  - {datapoint: "India winding wire industry structure (500 units, 350-400 KMT installed capacity, ~60% utilisation)", source: "DCMSME 'Strengthening Domestic Manufacturing and Import Reduction of Winding Wire'", year: "vintage unconfirmed, imports cited from FY2019"}
+  - {datapoint: "India winding wire consumption/production volumes (245,000/259,000 tonnes)", source: "IndexBox India Winding Wire Market Report 2026", year: "2024 (base year currency uncertain)"}
+searches_performed: ["India enamelled copper winding wire market size 2025 CAGR crore", "India copper tube market size 2025 import dependency HVAC CAGR", "Vidya Wires Bhagyanagar Precision Wires revenue FY25 capacity", "Ram Ratna Wires market share winding wire India percent", "India copper tubes anti-dumping duty imports DGTR 2024 2025", "and ~18 further industry/peer/FX searches (see report)"]
+searches_skipped: ["WebFetch imarcgroup.com/india-copper-pipes-tubes-market (403)", "WebFetch grandviewresearch.com India copper-pipes-tubes (403)", "WebFetch dcmsme.gov.in Winding Wire.pdf (403)", "WebFetch equityedgeresearch.substack.com RAMRAT market-share (403)", "smaller organised winding-wire peers (Sujata, Diamond Power) not individually verified"]

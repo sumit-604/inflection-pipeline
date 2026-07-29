@@ -1,114 +1,115 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — TRUALT Q1 FY27
 
 Auditor: A5 ADVERSARY | Model: claude-opus-4-8 | Date: 2026-07-29
-Fresh context: derived only from A1 extracts (results/presentation/press/chairman), A2 ledgers (results/presentation), and the A4 review. All A4 and A3 cites re-checked, not trusted. Unit conversion: results filing Lakhs x0.01 -> Cr; presentation/press Cr x1.
+Run: **LOOP-1 RE-AUDIT** (prior A5 returned INCOMPLETE→A4; A4 applied 4 corrections). Max 2 loops.
+Scope seen: A4 review (restated), A1 extracts (results/presentation/press release/chairman), A2 ledgers (results, presentation). Re-derived independently; A4/A3 cites checked, not trusted.
+
+Units: results Rs Lakhs ×0.01 → Cr; presentation/press/chairman Rs Cr ×1.
 
 ---
 
-## AUDIT 1 — COVERAGE
+## PART 0 — VERIFICATION OF THE THREE PRIOR-LOOP GAPS (independent re-derivation)
 
-Fresh enumeration re-run independently (grep + manual sweep of each extract) and diffed against the two A2 ledgers; then every ledger category checked for citation in A4.
+| Prior gap (loop 0) | A4 restated value | My independent recompute (raw) | Verdict |
+|---|---|---|---|
+| (a) Standalone QoQ PAT should be −14.9% not −13.9% | −14.9% (change log; Step 3; Q1; Step 7; verdict) | Std PAT Q4FY26 6,462.13L → Q1FY27 5,500.64L: (5,500.64−6,462.13)/6,462.13 = **−14.87% → −14.9%**. Consolidated distinct: (5,927.14−6,883.95)/6,883.95 = **−13.90%** | **RESOLVED** — corrected everywhere; cons/std now separated (change log #1, Step 3, Q1-table, Step 7 cross-check, Combined Verdict). No surviving instance of std −13.9%. |
+| (b) A3 F14b deck-vs-filing segment-PBT reconciliation | Incorporated: Step 1E (L146-163), S-vs-C reading pt.2 (L443-449), Q16, FLAG DECK_VS_FILING_SEGMENT_PBT, monitorable #15 | Reviewed CBG PBT 166.02L→513.52L = **+209.3%**; CBG PAT 137.51L→426.55L = **+209.5%**. Reviewed base split Eth 413.93L=4.14 / CBG 166.02L=1.66 vs deck Eth 0.02 / CBG 5.90 → **opposite base**, ethanol gap 4.14−0.02 = **4.12**. Reviewed Ind AS 108 authoritative. | **RESOLVED** — contradiction correctly stated, reviewed number wins, prior "subsidiary shrinking" conclusion withdrawn, nuance added (CBG Segment Result flat 9.29→9.24, PBT rise from lower allocated charges). |
+| (c1) Margin: 6% edge cannot fully explain +751 bps; residual utilisation-dependent | Downgraded CONFIRMED→PARTIAL (change log #3; Step 2 diag 2; Step 4; Step 7; FLAG MARGIN_ATTRIBUTION_PARTIAL) | +751 bps = 21.18−13.67 ✓. Ceiling 0.06×0.65 = 3.9pp ✓. Residual 7.51−3.9 = **3.61pp**, tied to utilisation 60.57% ✓ | **RESOLVED** — arithmetic shown, labelled reversible. |
+| (c2) Base quarter NOT operationally loss-making; Segment Result Q1FY26 = +84.14 Cr | Corrected (change log #4; 1D note; Step 2 diag 3; Step 2A/2B; FLAG BASE_QTR_NOT_LOSS_MAKING) | Q1FY26 Segment Result = Eth 7,485.04L + CBG 929.19L = 8,414.23L = **+84.14 Cr positive** ✓; the (16.94)/(22.43) "ex-OI" figure correctly re-read as a net-of-everything artefact | **RESOLVED** — no longer read as an operating loss anywhere; "sign flip" tagged "artefact metric." |
 
-| Category | A2 count | My fresh count | Match | Cited in A4 / reviewed-no-finding | Status |
-|---|---|---|---|---|---|
-| results: notes | 12 | 12 (6 cons L308-388 + 6 std L574-587) | yes | Step 0D notes table (all 6 subjects) | PASS |
-| results: line_items | 67 | 67 (37 cons L211-281 + 30 std L518-547) | yes | Step 1A/1B tables reproduce every row | PASS |
-| results: zero_standing | 3 | 3 (Exc L236, Exc L531, Std CurTax L534) | yes | Exceptional nil (Step1); Std current tax zero (F1/F8) | PASS |
-| results: agenda_items | 1 | 1 (L50-53) | yes | Preamble + governance note (F13/inter-alia) | PASS |
-| results: auditor_paras | 11 | 11 (6 cons + 5 std) | yes | Auditor-opinion check (unmodified + EoM, F5) | PASS |
-| results: entities | 3 | 3 (Holding, Leafiniti, TruAlt Gas) | yes | Q11 (F3/F15 Leafiniti trace) | PASS |
-| results: segment_tables | 4 | 4 (4A/4B P&L+BS Q1FY27; 4C/4D Q1FY26) | yes(count) | **assets/liabs only (4B/4D) cited in Step 5; segment P&L PBT rows (4A L331 / 4C L350) NOT cited** | **FAIL — orphan** |
-| results: signature_blocks | 5 | 5 | yes | Preamble (MD DIN 07413777; CS; auditor) | PASS |
-| pres: slides | 32 | 32 (grep ^\[page = 32) | yes | Preamble "ALL 32 reviewed"; body cites each substantive slide | PASS |
-| pres: line_items | 47 | 47 (B1-B6: 6+5+7+8+14+7) | yes | Step 1/5/7 reproduce P&L, ratios, capacity | PASS |
-| pres: mgmt_numbers | 104 | 104 (Table C sum) | yes | KPI boxes, capacity, guidance surfaced across steps | PASS |
-| pres: zero_standing | 1 | 1 (CBG Unit1 partner NA, B3.1) | yes | Leafiniti Unit-1 operational (F3/F15) | PASS |
-
-**Missing-from-ledger (fresh pass found, ledger lacks): NONE.** My independent counts reproduce every A2 count exactly. No under-enumeration by A2.
-
-**ORPHAN ROW (in ledger, absent from A4) — FAIL, return to A3 (missed forensic reconciliation):**
-The reviewed filing's consolidated **segment P&L rows** (ledger Section 4A line 331 and 4C line 350: Segment Result, PBT, Tax, PAT per segment) are enumerated by A2 and asserted "reviewed" in A4's preamble, but are **never cited in A4's body**, and where A4 does discuss segment PBT it uses the UNREVIEWED presentation figure that the reviewed filing contradicts:
-
-- Reviewed filing (Note 4, consolidated basis): **CBG segment PBT Q1FY26 = 166.02L = Rs 1.66 Cr -> Q1FY27 = 513.52L = Rs 5.14 Cr, i.e. +209% YoY.**
-- Deck slide 11 (C7.6, unreviewed): CBG PBT 5.90 -> 5.28, i.e. **-10.51% YoY.**
-- A4's STANDALONE-vs-CONSOLIDATED PAT GAP section (review L408) asserts *"the subsidiary contribution is shrinking YoY at the segment level (CBG PBT -10.51%, presentation C7.6)"* — a bear conclusion built on the deck number and **directly contradicted by the reviewed filing segment P&L (+209%)**, which A4 left uncited and unreconciled.
-- Same conflict on the ethanol side: filing ethanol segment PBT Q1FY26 = 413.93L = 4.14 Cr vs deck ethanol PBT Q1FY26 = 0.02 Cr (a ~4 Cr base-quarter reallocation between segments; deck totals tie to consolidated but the segment split does not match the reviewed Note 4 split).
-
-This is a reviewed row left unreviewed in substance AND a reviewed-vs-unreviewed contradiction resolved in favour of the unreviewed source. Loop to A3 to raise the deck-vs-filing segment-PBT reconciliation as a forensic finding; A4 must then re-state the "CBG/subsidiary shrinking" claim against the reviewed +209% figure or explicitly reconcile the two bases.
+All three prior gaps independently confirmed correctly resolved.
 
 ---
 
-## AUDIT 2 — ARITHMETIC
+## AUDIT 1 — COVERAGE (fresh enumeration diffed against A2 ledgers)
 
-Every derived metric recomputed from raw Lakhs (x0.01). Named targets first, then a sample of the wider recompute. Values in Rs Cr.
-
-| Metric | A4 value | Recomputed (raw) | Source line | Status |
+| Category | A2 count | My fresh count | Orphan / missing | Status |
 |---|---|---|---|---|
-| **QoQ PAT, consolidated** | -13.9% | (59.27-68.84)/68.84 = **-13.90%** | L245 (6,883.95->5,927.14) | PASS |
-| **QoQ PAT, standalone** | **-13.9%** (same tag applied) | (55.01-64.62)/64.62 = **-14.87%** | L536 (6,462.13->5,500.64) | **FAIL (A4)** |
-| SC-vs-Cons PAT gap % Q1FY26 | 99.4% | 4.70/4.73 = 99.37% | L245/L536 | PASS |
-| SC-vs-Cons PAT gap % Q4FY26 | 6.13% | 4.22/68.84 = 6.13% | L245/L536 | PASS |
-| SC-vs-Cons PAT gap % Q1FY27 | 7.19% | 4.26/59.27 = 7.19% | L245/L536 | PASS |
-| SC-vs-Cons PAT gap % FY26 | 16.07% | 16.84/104.76 = 16.07% | L245/L536 | PASS |
-| ETR cons Q1FY27 | 24.44% | 19.17/78.45 = 24.44% | L239/L237 | PASS |
-| ETR cons Q1FY26 | 18.45% | 1.07/5.80 = 18.45% | L239/L237 | PASS |
-| ETR std Q1FY27 | 24.96% | 18.30/73.31 = 24.96% | L533/L532 | PASS |
-| ETR std Q1FY26 | 84.6% (near-zero base) | 0.11/0.13=84.6% (raw 10.62/13.19=80.5%) | L533/L532 | PASS (flagged nonsense base; immaterial) |
-| CBG segment ASSET growth YoY | +278.5% | (227.64-60.14)/60.14 = 278.5% | L339 vs L358 | PASS |
-| CBG segment LIAB growth YoY | +187.6% | (131.69-45.79)/45.79 = 187.6% | L340 vs L359 | PASS |
-| Ethanol segment asset growth | +38.6% | (3,526.84-2,545.32)/2,545.32 = 38.6% | L339 vs L358 | PASS |
-| Op EBITDA cons Q1FY27 | 132.76 | 78.45+24.80+44.03-14.52 = 132.76 | L237/228/226/213 | PASS |
-| Op EBITDA cons Q1FY26 | 41.54 | 5.80+20.69+37.79-22.74 = 41.54 | L237/228/226/213 | PASS |
-| Op EBITDA margin +bps cons | +751 bps | 21.18%-13.67% = 7.51pp | derived | PASS |
-| Op EBITDA margin +bps std | +869 bps | 20.56%-11.87% = 8.69pp | derived | PASS |
-| Core PBT ex-OI cons Q1FY26->27 | (16.94)->63.93 | 5.80-22.74=-16.94; 78.45-14.52=63.93 | L237/213 | PASS |
-| Core PBT ex-OI std Q1FY26->27 | (22.43)->58.86 | 0.13-22.56=-22.43; 73.31-14.45=58.86 | L532/519 | PASS |
-| Revenue YoY cons / std | +106.3% / +109.5% | 322.99/303.89=106.3%; 321.99/293.93=109.5% | L211/L518 | PASS |
-| PBT YoY cons (near-zero base) | +1,252.6% | 72.65/5.80 = 1,252.6% | L237 | PASS (artefact, flagged) |
-| PAT YoY cons (near-zero base) | +1,153.4% | raw 5,454.62/472.52 = 1,154.4% | L245 | PASS (base-rounding, flagged artefact) |
-| PAT bridge cons (sum to +54.54) | +80.87 -8.22 -18.10 +... = +54.54 | 63.93-(-16.94)=80.87; OI -8.22; tax -18.10; net 59.27-4.73=54.54 | Step4 | PASS |
-| Core PBT QoQ cons | +1.7% | (63.93-62.86)/62.86 = 1.70% | L237/213 | PASS |
-| Revenue QoQ cons | +5.3% | (626.88-595.52)/595.52 = 5.27% | L211 | PASS |
+| Results — numbered notes | 12 | 12 (cons L308/312/314/316/386/388; std L574/578/580/583/585/587) | none | PASS |
+| Results — financial line items | 67 | 67 (cons 37 + std 30; incl. OCI subtotal L253 & OCR "(bl" L213) | none | PASS |
+| Results — ZERO_STANDING | 3 | 3 (cons Excep L236; std Excep L531; std Current Tax L534) | none; surfaced (F1/F8, no-exceptional bridge) | PASS |
+| Results — board agenda items | 1 | 1 (L50-53); "inter-alia" = chairman doc, separate filing | none | PASS |
+| Results — auditor paragraphs | 11 | 11 (cons 6 + std 5) | none; EoM + unmodified-review cited (F5, Step 0D) | PASS |
+| Results — consolidation entities | 3 | 3 (TruAlt Bioenergy, Leafiniti, TruAlt Gas) | none; Leafiniti trace → Q11 (F3/F15) | PASS |
+| Results — segment sub-tables | 4 | 4 (4A L326-333, 4B L337-340, 4C L345-352, 4D L356-359) | none; reconciled Step 1E (F14b) | PASS |
+| Results — signature blocks | 5 | 5 | none (OCR-illegible UDIN immaterial to review) | PASS |
+| Presentation — slides | 32 | 32 (`^\[page ` = 32) | none; "ALL 32 reviewed" | PASS |
+| Presentation — structured line items | 47 | 47 (B1-B6: 6+5+7+8+14+7) | none | PASS |
+| Presentation — mgmt numbers | 104 | 104 (Table C: 3+8+11+3+11+12+10+10+7+4+6+3+4+3+5+3+1) | none | PASS |
+| Presentation — ZERO_STANDING | 1 | 1 (CBG Unit-1 Strategic Partner = NA, B3.1) | operational Leafiniti unit needs no JV partner; immaterial | PASS |
 
-**FAIL detail (loop to A4):** review L205 reads *"Reported PAT actually FELL -13.9% QoQ (68.84->59.27 consolidated; 64.62->55.01 standalone)."* The single figure -13.9% is exact for the consolidated pair only. The standalone pair 64.62->55.01 computes to **-14.87%**, which rounds to **-14.9%**, not -13.9% (0.97pp error, above rounding). The narrative direction (sequential PAT declined) and the consolidated headline are correct everywhere else (Q1 mgmt question, verdict, flags); only the standalone parenthetical on L205 carries the wrong percentage. A4 must correct standalone QoQ PAT to -14.9%.
+**Orphan-row sweep (ledger flags absent from A4):** every material flag surfaced — LABEL_INCONSISTENCY→F14; EPS_FORMAT→0C/1A; Note 5 restatement→0D/Step 3; Unit-4 EoM→F5; Unit-4 300>200→Q7/FLAG; QoQ/YoY LABEL_ERROR→F14/Q15/FLAG; DDGS AMBIGUOUS_PERIOD→Q10/mon.14; Phase-I 3-of-4→Q5/FLAG; Bhima Patas undated→Q14/mon.7; PRIOR_LEDGER_UNAVAILABLE→fresh-coverage framing. **No material orphan.**
+**Immaterial non-cited items (do not fail):** consolidated NCI-OCI value present only in Q1FY27 (L267, 0.85L ≈ Rs 85k); CBG Unit-1 NA partner. Both covered by the A4 "ALL reviewed" preamble; non-decision-relevant.
+**Rows my fresh pass found that the ledger lacks:** none.
 
-All other recomputes reconcile within rounding; near-zero-base YoY optics (cons +1,252%/+1,154%, std +55,481%/+213,933%) are internally consistent with the raw figures and already flagged by A4 as artefacts.
+**AUDIT 1 VERDICT: PASS.**
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ
+## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw extract)
 
-A4's three most positive claims, each attacked from the same extracted text.
+| Metric (period) | A4 value | Recomputed | Source | Status |
+|---|---|---|---|---|
+| Op EBITDA cons 26/27/Q4/FY | 41.54/132.76/129.31/300.30 | 5.80+20.69+37.79−22.74; 78.45+24.80+44.03−14.52; 94.25+22.95+43.50−31.39; 140.50+86.23+160.02−86.45 | L237/228/226/213 | MATCH |
+| Op EBITDA margin cons 26/27 | 13.67%/21.18% | 41.54/303.89; 132.76/626.88 (+751 bps) | L211 | MATCH |
+| Op EBITDA std 26/27/Q4/FY | 34.88/126.61/141.52/293.68 | 0.13+20.06+37.25−22.56; 73.31+24.23+43.52−14.45; 89.55+22.43+42.94−13.40; 120.02+84.09+157.85−68.28 | L532/527/526/519 | MATCH |
+| Op EBITDA margin std 26/27 | 11.87%/20.56% | 34.88/293.93; 126.61/615.92 (+869 bps) | L518 | MATCH |
+| Core PBT ex-OI cons 26/27/Q4 | (16.94)/63.93/62.86 | 5.80−22.74; 78.45−14.52; 94.25−31.39 | L237/213 | MATCH |
+| OI/PBT cons 26/Q4/27 | 392.1%/33.31%/18.51% | 22.74/5.80; 31.39/94.25; 14.52/78.45 | L213/237 | MATCH |
+| ETR cons 26/Q4/27/FY | 18.45/26.96/24.44/25.44% | 1.07/5.80; 25.41/94.25; 19.17/78.45; 35.74/140.50 | L239/237 | MATCH |
+| ETR std Q1FY26 | 84.6% | 0.11/0.13 | L533/532 | MATCH |
+| PAT margin cons 26/Q4/27/FY | 1.56/11.56/9.45/6.06% | 4.73/303.89; 68.84/595.52; 59.27/626.88; 104.76/1727.51 | L245/211 | MATCH |
+| YoY rev cons/std | +106.3%/+109.5% | 626.88/303.89−1; 615.92/293.93−1 | L211/518 | MATCH |
+| YoY Segment Result cons | +179.4% (84.14→235.09) | 8,414.23L→23,508.57L | L348/329 | MATCH |
+| YoY EBIT std | +590.8% (14.82→102.38) | 102.38/14.82−1 | derived | MATCH |
+| YoY reported PBT std | +55,481% | (7,331.09−13.19)/13.19 (exact-lakh base) | L532 | MATCH |
+| YoY PAT std | +213,933% | (5,500.64−2.57)/2.57 | L536 | MATCH |
+| **QoQ PAT cons** | **−13.9%** | (5,927.14−6,883.95)/6,883.95 = −13.90% | L245 | MATCH |
+| **QoQ PAT std** | **−14.9%** | (5,500.64−6,462.13)/6,462.13 = −14.87% | L536 | MATCH (prior gap fixed) |
+| QoQ rev / core PBT ex-OI cons | +5.3%/+1.7% | 626.88/595.52−1; 63.93/62.86−1 | L211/derived | MATCH |
+| PAT bridge cons (80.87/−8.22/72.65/18.10/54.54) | as stated | 63.93−(−16.94); 14.52−22.74; 78.45−5.80; 19.17−1.07; 59.27−4.73 | L237/213/239/245 | MATCH |
+| S-vs-C PAT gap 26/Q4/27/FY (& %) | 4.70/99.4; 4.22/6.13; 4.26/7.19; 16.84/16.07 | 4.73−0.03; 68.84−64.62; 59.27−55.01; 104.76−87.92 (÷cons PAT) | L245/536 | MATCH |
+| F14b CBG PBT YoY | +209% (1.66→5.14) | 513.52/166.02−1 = +209.3% | L350/331 | MATCH |
+| Segment foot PBT/PAT | 78.45 / 59.28≈59.27 | 73.31+5.14; 55.01+4.27 (0.01 rounding) | L331/333/237/245 | MATCH |
+| Margin attribution ceiling/residual | ≤3.9pp / ~3.6pp | 0.06×0.65=3.9; 7.51−3.9=3.61 | pres L335/338 | MATCH |
 
-### Positive claim 1 — "Core operating PBT swung negative->positive (cons (16.94)->63.93); the operating business, not treasury, drove the profit — the cleanest possible read." (Combined Verdict; Step 2 diag 3)
-**Bear counter:** The "operationally loss-making before Other Income" framing is an artefact of A4's own PBT-minus-all-Other-Income definition applied to a near-zero base. The reviewed segment note shows **Segment Result** (gross operating result) was already strongly positive in the base quarter: Q1FY26 ethanol 74.85 Cr + CBG 9.29 Cr = **84.14 Cr** (L348), rising to 235.09 Cr (L329). Operations were not "loss-making" at the segment-result line; the negative core-PBT sign in Q1FY26 comes from finance+depreciation on the near-zero-PBT base A4 itself flags. Gross material-cost ratio also improved partly via inventory timing (Q4FY26 built inventory -243.52 / Q1FY27 destocked +47.69, L222), so a single quarter's core PBT is not yet a clean run-rate.
-**Verdict:** SURVIVES PARTIALLY but LARGELY GRAFTED. A4 already flags near-zero base (A3-F16-02), OI decline, and inventory timing (Step 3). The one un-grafted element — that the reviewed **Segment Result was positive in the base quarter (84.14 Cr)**, softening the "operationally loss-making" absolute — should be folded into the Combined-Verdict wording. Minor; does not by itself force INCOMPLETE.
+**Minor prose inaccuracies found (NOT in any metric table; do NOT change a value or conclusion; IMMATERIAL / verdict-neutral):**
+1. Step 2 diag 6 (L218): "OI was ~7× reported PBT" (Q1FY26). Correct = 22.74/5.80 = **3.92×** (already stated correctly as 392% in the same sentence and table 1C). Recommend "~7×" → "~3.9×".
+2. Step 1E cross-tie (L165): "OI was ~55% of reported EBITDA." 55% is OI/**operating** EBITDA (22.74/41.54 = 54.7%); vs **reported** EBITDA 64.28 it is 35.4%. Recommend "of operating EBITDA."
 
-### Positive claim 2 — "Operating margin expanded +751 bps (cons)/+869 bps (std), OI-independent, a real operating margin gain; management's ~6% grain-vs-sugar profitability edge CONFIRMED." (Step 2 diag 2; Step 7 cross-check)
-**Bear counter:** A ~6% relative profitability edge on grain vs sugar, applied to the 65% (1,300 of 2,000 KLPD) of capacity that is dual-feed (L335), cannot arithmetically generate a **7.51pp (751 bps)** total-EBITDA-margin jump — the order of magnitude is off by roughly 10x. The residual (the great majority of the margin gain) must come from fixed-cost absorption at higher volume (operating leverage), which is **utilisation-dependent at only 60.57%** (L341) and would compress if ESY allocations or utilisation slip. A4 stamps management's 6% attribution "CONFIRMED" (review L331) without testing whether it is sufficient to explain the magnitude.
-**Verdict:** SURVIVES — GRAFT INTO A4. The counter is built entirely on extract figures (6% at L338, 751 bps at Step 2, 65%/1,300 KLPD at L335, 60.57% at L341) plus arithmetic. A4 should downgrade the "CONFIRMED" label to "confirmed as a contributor, insufficient to explain the magnitude; the residual is volume-driven fixed-cost absorption that is utilisation-dependent and reverses if the 60.57% run-rate slips."
+Both are cosmetic characterizations sitting beside the correct derived figure; no table cell, YoY/QoQ %, bridge, margin, ETR, or the verdict depends on them. Per the materiality gate these are not a NEW material gap. Surfaced for optional clean-up at save.
 
-### Positive claim 3 — "Revenue doubled YoY (cons +106%, std +110%); operating leverage strongly positive, the pre-existing cost base absorbed by the volume step-up; D&A +19.9% and finance +16.5% scaling below revenue." (Step 2 diag 5; Combined Verdict)
-**Bear counter:** The favourable D&A/finance-below-revenue optic exists only because the growth capex has not yet hit the P&L: Unit-4 componentization is incomplete so its full depreciation is deferred (EoM, L165-168), and CBG segment assets rose +278.5% YoY (227.64 vs 60.14 Cr, L339/358) with those plants still in CWIP pre-commissioning (Aug-Dec 2026). The Rs 340 Cr Phase-I outlay (L631) precedes revenue. Once these capitalise, the D&A/finance-below-revenue relationship inverts.
-**Verdict:** FULLY GRAFTED — does not survive as new. A4 already carries this as F5/F12 in Step 2 diag 5, Step 4, and the Combined Verdict flags. (Note: the ESY 2025-26 disruption, deck L230, falls in the CURRENT periods Q4FY26/Q1FY27, not the Q1FY26 base, so it does not weaken the YoY comparator — no additional bear survival there.)
+**AUDIT 2 VERDICT: PASS** (all derived-metric-table values reconcile to the paisa/rounding; two immaterial prose slips noted).
 
-**Surviving counters requiring graft:** claim 2 (margin-attribution sufficiency) fully survives; claim 1's segment-result nuance partially survives. Both loop to A4.
+---
+
+## AUDIT 3 — ADVERSARIAL READ (3 most positive claims; strongest counter from the SAME extract)
+
+**Positive claim 1 — "Revenue more than doubled YoY (cons +106.3%, std +109.5%); genuine operating scale-up (Segment Result +179%, positive in both periods)."**
+Bear counter (same text): Sequentially the platform has already plateaued — QoQ revenue only +5.3% and core PBT ex-OI +1.7%, while **reported PAT FELL QoQ (cons −13.9%, std −14.9%)**; both compared quarters are distorted by inventory timing (Q4FY26 build −243.52; Q1FY27 draw +47.69, L222) and a restated Q4 Other-Expenses base (Note 5, +10.54). **SURVIVES? NO — fully grafted:** Step 3 states the plateau, the QoQ PAT decline (both bases), and inventory/Note-5 distortions; Step 8C sets sequential core PBT ex-OI as the cleanest next test.
+
+**Positive claim 2 — "Operating EBITDA margin expanded +751 bps (cons)/+869 bps (std), OI-independent."**
+Bear counter (same text): The ~6% grain edge on ~65% capacity explains ≤3.9pp; the ~3.6pp residual is fixed-cost absorption at 60.57% utilisation and reverses if utilisation/ESY allocations slip; utilisation is unverifiable from the reviewed filing. **SURVIVES? NO — this IS incorporated bear counter #1:** Step 2 diag 2, Step 4, Step 7, FLAG MARGIN_ATTRIBUTION_PARTIAL, plus Q9 on the ESY-vs-demand constraint.
+
+**Positive claim 3 — "Reported PAT +1,153% on a clean bridge (~100% recurring; OI fell, no exceptionals, no tax credit); CBG segment PBT actually rose +209% (deck's 'dip' contradicted)."**
+Bear counter (same text): The +1,153%/+213,933%/+334,424% optics are near-zero-*net*-base artefacts collapsing from Q2; 100% of tax is deferred (std current tax zero every period, L534) so cash tax ≈ 0 with a DTL/cash-tax step-up building; and the "+209% CBG" rebuttal is itself soft — CBG **Segment Result was flat** (9.29→9.24 on +12.5% revenue) with EBITDA margin compressing 66.74%→55.64% (deck), so CBG PBT rose only via lower allocated charges, not operating gain; CBG capex leads revenue (segment assets +279% YoY on +12.5% revenue). **SURVIVES? NO — all grafted:** NEAR_ZERO_BASE_OPTICS flag + A3-F16-02; DEFERRED_TAX_100PCT flag + Q2; S-vs-C reading pt.2 (CBG Segment Result flat, margin compression); CBG_CAPEX_BEFORE_REVENUE flag + Q4.
+
+**No new surviving bear counter.** Every strongest counter constructible from the extract is already present in the restated A4.
+
+**AUDIT 3 VERDICT: PASS** (no un-incorporated surviving counter).
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
+**COMPLETE.**
 
-Three defects block save:
+- All three loop-0 gaps independently re-derived and confirmed correctly resolved (standalone QoQ PAT −14.9% distinct from consolidated −13.9%; F14b reviewed CBG PBT +209% contradiction incorporated with the reviewed figure authoritative; margin attribution downgraded to PARTIAL with arithmetic; base quarter reframed as NOT operationally loss-making, Segment Result +84.14 Cr).
+- Coverage: every ledger row cited or blanket-reviewed; no orphan, no missing row.
+- Arithmetic: every derived-metric-table value reconciles to raw lakhs within rounding. Two immaterial prose slips ("OI ~7× reported PBT" → ~3.9×; "~55% of reported EBITDA" → of operating EBITDA) surfaced for optional clean-up — verdict-neutral, no table or conclusion affected.
+- Adversarial read: no new surviving bear counter; the three strongest counters are already grafted.
 
-1. **A3 (missed forensic / orphan reviewed row):** the reviewed filing consolidated segment P&L (ledger 4A L331 / 4C L350) is uncited in A4's body, and its **CBG segment PBT +209% YoY (1.66->5.14 Cr)** directly contradicts the unreviewed deck figure **-10.51%** that A4 used to assert the subsidiary/CBG is "shrinking at the segment level" (review L408). A3 must raise the deck-vs-filing segment-PBT reconciliation; A4 must then restate or reconcile the SC-gap conclusion against the reviewed number.
-
-2. **A4 (arithmetic):** standalone QoQ PAT on review L205 is labelled -13.9% but recomputes to **-14.87% (-14.9%)** from L536 (64.62->55.01). Correct the standalone figure; consolidated -13.9% is exact.
-
-3. **A4 (unincorporated surviving bear counter):** the +751 bps margin expansion cannot be explained by a ~6% grain-vs-sugar edge on 65% of capacity; the residual is utilisation-dependent (60.57%) operating leverage. Downgrade the "CONFIRMED" attribution and surface the durability caveat. (Secondary: fold the reviewed base-quarter Segment Result of 84.14 Cr into the "operationally loss-making" wording.)
-
-Counts fully reconcile (no A2 under-enumeration; missing_from_ledger empty). The block is a forensic/reconciliation orphan plus one arithmetic slip and one surviving counter — all cheap, specific fixes. Re-audit after A3 raises the segment-PBT reconciliation and A4 grafts the three corrections.
+No NEW material gap. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -116,16 +117,12 @@ company: "TRUALT"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
-  orphan_rows:
-    - "results ledger 4A (L331) / 4C (L350) consolidated segment P&L: Segment Result + PBT + Tax + PAT per segment reviewed by A2 but uncited in A4 body; reviewed CBG segment PBT 1.66->5.14 Cr (+209% YoY) contradicts deck CBG PBT -10.51% (C7.6) that A4 relied on at review L408; ethanol segment PBT base-quarter 4.14 Cr vs deck 0.02 Cr also unreconciled"
+  orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "QoQ PAT standalone", a4_value: "-13.9%", recomputed: "-14.87%", source_line: "results L536 (Q4FY26 6,462.13L->Q1FY27 5,500.64L); review L205"}
-surviving_bear_counters:
-  - {claim: "Operating margin +751 bps is a real, OI-independent gain; ~6% grain-vs-sugar edge CONFIRMED", counter: "A ~6% profitability edge on 65% (1,300/2,000 KLPD) of capacity cannot arithmetically produce a 7.51pp EBITDA-margin jump; the residual is volume-driven fixed-cost absorption, utilisation-dependent at 60.57% and reversible if allocations/utilisation slip", source_line: "pres L338 (6%), L335 (65%/1,300 KLPD), L341 (60.57%); review Step2 diag2, Step7 L331"}
-  - {claim: "Core operating PBT swung negative->positive; operations, not treasury, drove profit (operationally loss-making in Q1FY26)", counter: "Reviewed Segment Result was positive in the base quarter (Q1FY26 ethanol 74.85 + CBG 9.29 = 84.14 Cr); the negative sign is an artefact of A4's PBT-minus-all-OI construct on a near-zero base, not a loss at the operating-result line", source_line: "results L348 (Q1FY26 segment result), L329 (Q1FY27); review Step2 diag3, Combined Verdict"}
-loop_back_to: "A3"
-gap: "A3: raise deck-vs-filing segment-PBT reconciliation as a forensic finding (reviewed consolidated CBG segment PBT +209% YoY, L331/L350, contradicts the unreviewed deck -10.51% that A4 used for its 'subsidiary shrinking' claim at review L408; ethanol base-quarter split 4.14 Cr vs deck 0.02 Cr also unreconciled) so A4 can restate the SC-gap conclusion against reviewed data. Then A4: (a) correct standalone QoQ PAT from -13.9% to -14.9% at review L205; (b) graft the surviving margin-attribution counter (6% edge cannot explain 751 bps; residual is utilisation-dependent operating leverage) and downgrade the 'CONFIRMED' label; (c) fold the positive base-quarter Segment Result (84.14 Cr) into the 'operationally loss-making' wording."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

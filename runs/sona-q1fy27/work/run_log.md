@@ -70,3 +70,20 @@ management-narrative inputs feeding Role 4.
 - Clean run apart from one A5 loop (expected adversarial function) and cosmetic
   pdftotext spacing garble in results notes (financial numerals intact; layout
   file used for verbatim cross-checks).
+
+## Concall addendum (close 2026-07-30)
+- Concall transcript supplied 30-Jul-2026 (call held 23-Jul-2026); Role 5 now runnable.
+- GATE A1 concall: PASS (25/25 pages, 1269 lines, Rs Crore x1)
+- GATE A2 concall: PASS (104 turns / 24 questions / 44 mgmt numbers / 14 entities;
+  flags REPEAT_QUESTION, GUIDANCE, HEDGE)
+- GATE A3 concall: PASS (17/17; 19 findings C-A3-F01..F19)
+- A4 merge: Section A (Role 4) preserved verbatim (A5-verified); Section B rebuilt
+  as full Role 5 v1.1; Sections C / Step 8.5 / monitorables augmented. Verdict
+  PROCEED WITH FLAGS; cash INDETERMINATE (call did not lift cap).
+- GATE A5: COMPLETE first pass (coverage 0 orphans, arithmetic within rounding,
+  no surviving bear counter).
+- Notion: Role 5 addendum inserted (participants, forward-guidance table, flag-by-flag
+  confirm/silent table, three key exchanges, silence audit, promise-vs-delivery
+  baseline C1-C9, updated combined verdict, forward questions N1-N14, Q2 watchpoints);
+  Key Notes concall line prepended (prior entries preserved). Decision Status UNCHANGED.
+- Role 5 net: MAINTAINED (AVOID intact). Clean run.

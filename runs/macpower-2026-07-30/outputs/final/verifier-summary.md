@@ -1,4 +1,4 @@
-# Verifier summary — MACPOWER, phase 1
+# Verifier summary, MACPOWER, phase 1
 
 ## Confidence delta and acceptance rates
 

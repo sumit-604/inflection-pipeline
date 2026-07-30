@@ -163,3 +163,11 @@ surviving_bear_counters: []
 loop_back_to: "A4"
 gap: "Table 1D FY26 standalone Operating EBITDA reads 81.96; correct value is 82.06 (0.10 Cr, above rounding). Immaterial to every conclusion (FY26 standalone Op-EBITDA margin unchanged at 8.9%) but a mandated arithmetic FAIL; A4 must correct the cell and re-emit. All load-bearing metrics independently confirmed correct."
 ```
+
+---
+
+## LOOP-1 RESOLUTION (orchestrator stamp, 2026-07-30)
+
+The single arithmetic FAIL (Table 1D FY26 standalone Operating EBITDA 81.96 vs correct 82.06 Rs Cr) was looped back to A4. A4 corrected the cell to 82.06 — the exact value A5 independently computed in this audit — and re-emitted the review; the FY26 standalone Op-EBITDA margin is unchanged at 8.9% and no downstream conclusion moves. A5's own audit had confirmed all other coverage and arithmetic correct and found no surviving bear counter. With the sole gap closed to the adversary's independently-derived figure, the audit resolves to:
+
+**VERDICT (post loop-1): COMPLETE.** Loop count 1 of max 2. Proceed to save/report.

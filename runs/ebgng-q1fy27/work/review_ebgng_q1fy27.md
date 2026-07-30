@@ -134,11 +134,13 @@ STOP-gate cleared: Notion baseline stated (memory), units identified, share-coun
 |---|---|---|---|---|---|
 | Gross Profit | Rev − Direct cost − Δinv | 33.89 | 49.35 | 40.80 | 151.21 |
 | Gross Margin | GP / Rev | 19.7% | 16.5% | **17.8%** | 16.5% |
-| Operating EBITDA | PBT + D + Fin − OI | 19.86 | 25.62 | 29.10 | 81.96 |
+| Operating EBITDA | PBT + D + Fin − OI | 19.86 | 25.62 | 29.10 | 82.06 |
 | Operating EBITDA margin | / Rev | 11.5% | 8.6% | 12.7% | 8.9% |
 | Core PBT (ex-OI) | PBT − OI | 11.14 | 14.45 | 18.47 | 48.25 |
 | Effective Tax Rate | Tax / PBT | 26.3% | 24.2% | 27.5% | 25.0% |
 | PAT Margin | PAT / Rev | 5.9% | 4.1% | 6.9% | 4.4% |
+
+*Note (A5 correction incorporated): standalone FY26 Operating EBITDA = PBT 53.20 + D 7.41 + Finance 26.40 − Other income 4.96 = 82.06 Rs Cr (results FY26 col: PBT 532.04 + D&A 74.14 + Finance 263.96 − OI 49.55 = 820.59 M ×0.1). FY26 standalone Op-EBITDA margin unchanged at 8.9%; no downstream conclusion moves.*
 
 **Two extraction-level reads that matter downstream:** (i) consolidated GM (24.6%) is ~7pp ABOVE standalone GM (17.8%) — the value-add refurb margin sits offshore (UAE/US subs), confirming the S-vs-C structural gap; (ii) **standalone GM DECLINED YoY** (19.7% → 17.8%) even as consolidated GM EXPANDED (21.4% → 24.6%) — the margin story is an offshore story, not a parent story. Standalone ETR (27.5%) sits near statutory ~25%, while consolidated ETR (19.1%) is dragged down by low-taxed foreign earnings (FND-05).
 

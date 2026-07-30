@@ -1,0 +1,54 @@
+stage: B11-valuation
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Diluted share count post 1:1 bonus (29-Dec-2025) ~9.33 Cr unconfirmed; EPS and market cap PROVISIONAL"
+  - "FY27-FY29 EPS are projections (no concall, no guidance); build stated in Section 2"
+  - "Capex/FCF NOT FOUND; DCF excluded"
+  - "FII+DII shareholding unanchored; UA Qualifier 3 cannot be tested; Tier defaults to A"
+  - "FY27 depreciation/interest estimated (dep Rs 45 Cr, interest Rs 95 Cr) under operator full-year-drag mandate"
+flags:
+  - "FLAG-CASH: INDETERMINATE cash conversion; multiplier 0.80x APPLIED, growth offset +0.10x WITHHELD; caps quality at PROCEED WITH CAVEATS per CLAUDE.md"
+  - "SHARED-CATALYST: YES (Bhiwadi) — carried for Role 3 stress-test"
+  - "PROVISIONAL SHARE COUNT: 9.33 Cr post-bonus unconfirmed; all per-share figures provisional"
+  - "GOVERNANCE CONCERN priced into RRM via r=15.5% (Track 1)"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "15.4x (Track 2 additive, operator-approved over conservative Track 1 RRM 11.7x)"
+destination_pe:
+  track1_rrm: {low: 11.0, mid: 11.7, high: 12.5, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 14.5, mid: 15.4, high: 16.5}
+  divergence_pct: 24.0
+  governing_track: "Track 2 additive (operator override of conservative-governs); Track 1 RRM 11.7x is more conservative but decision is AVOID on both, so non-binding"
+pillar_detail:
+  roce_used: 23.55
+  roce_base: 19.3
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 0.80
+  structural_or_growth: "INDETERMINATE (conservative 0.80x, offset withheld)"
+  growth_offset: 0.0
+  growth_premium: 0.0
+  strategic_premium: 0.0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.66, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 142, base: 211, bull: 295}
+  track2: {bear: 187, base: 278, bull: 389}
+expected_cagr_prob_weighted: -15.2
+entry_range: {low: 134, high: 153}
+mos_price: 114
+upside_downside_ratio: 0.0
+decision: "AVOID (on-valuation)"
+unresolved_inputs_used:
+  - "Share count 9.33 Cr (provisional post-bonus) — used as given, flagged provisional"
+  - "FY27 EPS Rs 12.58 base — conservative projection with full-year Bhiwadi dep + higher interest"
+  - "FY27 depreciation Rs 45 Cr / interest Rs 95 Cr — conservative estimates (no schedule sourced)"
+  - "FCF NOT FOUND — DCF excluded (conservative)"
+  - "FII+DII unanchored — UA not applied; Tier A default"
+som_cagr_crosscheck: "consistent (base 11% within SOM-implied 10.9-11.4%; bull 14% = capex-embedded ceiling, flagged bull-only)"
+one_line_thesis: "RAMRAT at Rs 454 trades ~36x forward vs a 15.4x four-pillar destination PE; even bull FY29 EPS at 15.4x gives Rs 389 (negative return from CMP), so AVOID-on-valuation until Rs 134-153 with the FY26 cash reversal explained; cash quality INDETERMINATE."

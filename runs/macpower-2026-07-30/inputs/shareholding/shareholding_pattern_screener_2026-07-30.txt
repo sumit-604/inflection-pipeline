@@ -1,0 +1,31 @@
+SOURCE: Screener.in Shareholding Pattern table (quarterly), captured by operator
+Keerti and supplied 2026-07-30. Provenance: screener aggregation of NSE
+quarterly shareholding-pattern filings. Same provenance class as the screening/
+CSVs (screener-derived, usable as evidence; not the raw NSE filing PDF).
+Company: Macpower CNC Machines Ltd (MACPOWER). Numbers in percentages.
+
+Quarter   | Promoters | FIIs  | DIIs  | Public | No. of Shareholders
+Sep 2023  |  73.16    | 0.00  | 0.00  | 26.84  | 13,020
+Dec 2023  |  73.17    | 0.04  | 0.48  | 26.32  | 11,771
+Mar 2024  |  73.17    | 0.66  | 0.18  | 25.99  | 11,984
+Jun 2024  |  73.17    | 0.81  | 0.00  | 26.01  | 14,597
+Sep 2024  |  73.17    | 1.13  | 0.00  | 25.70  | 16,876
+Dec 2024  |  73.17    | 1.25  | 0.00  | 25.58  | 17,699
+Mar 2025  |  73.17    | 1.32  | 0.27  | 25.24  | 17,769
+Jun 2025  |  73.17    | 1.29  | 0.28  | 25.26  | 16,979
+Sep 2025  |  73.00    | 1.00  | 0.00  | 25.00  | 16,617
+Dec 2025  |  73.17    | 1.03  | 0.35  | 25.44  | 16,346
+Mar 2026  |  73.17    | 1.11  | 0.52  | 25.20  | 15,968
+Jun 2026  |  73.22    | 0.57  | 0.39  | 25.82  | 16,120
+
+NOTES / CAVEATS (for the reading stage):
+- Screener note on the table: "The classifications might have changed from
+  Sep'2022 onwards."
+- The Sep 2025 column appears rounded to whole/coarse values (Promoters 73.00,
+  FII 1.00, Public 25.00; row sums to 99.00, not 100.00). Treat Sep 2025 as a
+  display-rounding artifact; the Jun 2025 (73.17) and Dec 2025 (73.17) rows
+  bracket it. Promoter holding is otherwise flat at 73.17 across the series.
+- Latest print Jun 2026: Promoters 73.22, FII 0.57, DII 0.39, institutional
+  (FII+DII) 0.96, public 25.82, 16,120 shareholders.
+- No pledge column was provided in this capture; pledge status NOT FOUND here
+  (check AR governance / results for pledge disclosure).

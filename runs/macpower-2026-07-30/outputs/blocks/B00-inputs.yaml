@@ -1,0 +1,55 @@
+stage: B00-inputs
+company: MACPOWER
+run_date: 2026-07-30
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+resolved_folder: runs/macpower-2026-07-30
+
+inventory:
+  prospectus:      {count: 0, files: []}
+  annual_report:   {count: 1, files: [Annual_Report_2025.pdf], note: "FY25 (year ended 31-Mar-2025); image-based PDF, no text layer, read via vision"}
+  results:         {count: 2, files: [MACPOWER_27052026132926_OutcomeofBM27052026s.pdf, MACPOWER_29072026131302_Outcome.pdf], note: "27-May-2026 = Q4 & FY26 outcome; 29-Jul-2026 = Q1 FY27 outcome (cover mislabels quarter as ended 30-Jun-2025, typo for 30-Jun-2026)"}
+  rating:          {count: 0, files: []}
+  concalls:        {count: 4, files: [Concall_Aug_2025_Transcript.pdf, Concall_Nov_2025_Transcript.pdf, Concall_Feb_2026_Transcript.pdf, Concall_Jun_2026_Transcript.pdf], used_3_most_recent: [Concall_Nov_2025_Transcript.pdf, Concall_Feb_2026_Transcript.pdf, Concall_Jun_2026_Transcript.pdf]}
+  peer_concalls:   {count: 12, peers: [ADOR (4), JYOTICNC (4), KLBRENG-B (4)]}
+  announcements:   {count: 0, files: []}
+  shareholding:    {count: 1, files: [shareholding_pattern_screener_2026-07-30.txt], note: "operator-supplied screener transcription 2026-07-30; screener provenance not raw NSE filing; closes FII+DII UA qualifier and promoter trend; no pledge column"}
+  research:        {count: 0, files: [], note: "research/ empty; a broker research report sits in presentation/ (Macpower_Research_Report.pdf), non-anchored leads only"}
+  screening:       {count: 24, note: "ALL CSVs (MACPOWER + peers) are empty header-only templates, no financial data. Collection artifact. Treat as NO screening data."}
+  presentation:    {count: 2, files: [Investor_Presentation_1.pdf, Macpower_Research_Report.pdf]}
+  other:           {count: 0, files: []}
+
+concall_chronology:
+  Concall_Aug_2025_Transcript.pdf: "Q1 FY26 (qtr ended 30-Jun-2025), transcript 11-Aug-2025"
+  Concall_Nov_2025_Transcript.pdf: "Q2 FY26 (qtr ended 30-Sep-2025), transcript 18-Nov-2025"
+  Concall_Feb_2026_Transcript.pdf: "Q3 FY26 (qtr ended 31-Dec-2025), transcript 14-Feb-2026"
+  Concall_Jun_2026_Transcript.pdf: "Q4 & FY26 (qtr ended 31-Mar-2026), transcript 02-Jun-2026"
+
+input_gaps:
+  - type: prospectus
+    severity: none
+    note: "Absent but NOT expected. Incorporated 2003 (CIN L30009GJ2003PLC043419), listed ~2018, well beyond ~3y window. No listed_date in manifest. Not a gap; backward baseline not degraded on this account."
+  - type: rating
+    severity: medium
+    note: "No credit rating PDF. Stage 10 marks rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative (phase 3). FLAG-CASH handling per Section 4 if triggered."
+  - type: announcements
+    severity: medium
+    note: "No Reg-30 filing PDFs. Stages 5/7/8 lose the documented-ACTION record; stage 8 uses web search. PARTIALLY covered by OPERATOR CONTEXT (non-anchored leads: 21-Jul-2026 13-acre acquisition, order-book history) which stages cite as leads only, not anchored evidence."
+  - type: screening
+    severity: high
+    note: "Screener CSVs present but EMPTY of financials (collection artifact). Gate 0 (stage 1) extracts from results PDFs + AR financial statements per degradation map. Peer screener CSVs also empty (affects phase-3 stage 10 peer financials, not phase 1)."
+  - type: research
+    severity: low
+    note: "research/ empty; broker report in presentation/ available as non-anchored leads only."
+
+operator_supplied_context:
+  file: operator-context-2026-07-30.md
+  status: "NON-ANCHORED (memory to weigh, same class as COMPANY MEMORY / research). Carried into stage task messages. Numbers anchored independently by each stage to source PDFs. References some docs NOT in inputs (21-Jul announcement, Q1 FY27 presentation, Q3/9M presentation) -> treated as leads, recorded as gaps."
+
+company_memory: "none (companies/MACPOWER.md does not exist; first run)"
+
+manifest_note: "sector_cap_row 'Pharma / CDMO' is auto-picked and WRONG (Macpower is a CNC machine-tool maker). Affects only stage 11 (phase 3); flagged for operator correction before /finalize. Does not affect phase 1."
+
+flags: []

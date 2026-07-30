@@ -1,0 +1,31 @@
+# FIRST-RUN Verifier B result (pre-B05-correction). Retained for the record and the
+# verifier disagreement log. B05 was re-run after this audit; see B12b.yaml for the
+# post-correction re-verification.
+stage: B12b
+run: 1
+company: "544555"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 8
+caught: 0
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Capacity stated two ways in one answer: '1.35 crore pieces a year' vs '1.35 lakhs' (100x self-contradiction)", anchor: "Concall_Nov_2025 p7"}
+  - {severity: "MAJOR", item: "Competitor-count self-contradiction: vestibule players 'Three' then 'about 11 players'", anchor: "Concall_Nov_2025 p11"}
+  - {severity: "MAJOR", item: "Core order-book quantum dodged twice on the call", anchor: "Concall_Nov_2025 p7, p10"}
+  - {severity: "MAJOR", item: "Promoter absent from maiden post-IPO call; vision deferred; MD silent, COO fielded call", anchor: "Concall_Nov_2025 p15, p2-3"}
+  - {severity: "MAJOR", item: "Unpaid share subscription to 90% US subsidiary plus bank problems; not yet compliant", anchor: "Concall_Nov_2025 p5"}
+  - {severity: "MINOR", item: "Unanchored TAM hype: railway-pad market '100s of crores, potential to reach 1,000'", anchor: "Concall_Nov_2025 p10-11"}
+  - {severity: "MINOR", item: "Self-uncertain product specifics", anchor: "Concall_Nov_2025 p4-6"}
+pipeline_flags_not_supported:
+  - "B05 'No confirmed quantified forward guidance' - NOT SUPPORTED; transcript states ~20-25% revenue CAGR and 20-25%/23-24% EBITDA margin 3x (p8, p14). MAJOR."
+  - "B05 competitor 'NOT FOUND', analyst Qs 'could not be reconstructed', no industry figure - NOT SUPPORTED; clean-text Q&A present (p9-14); transcript wrongly treated as scanned/low-confidence. MAJOR."
+  - "B05 2A promise-delivery premise 'CFO present as KMP continuity signal' - NOT SUPPORTED; no CFO on call, only MD Deesawala + COO Lokhandwala (p2-3). MINOR."
+credibility_grade_concur: "would grade lower (C not B)"
+critical_count: 0
+major_count: 7
+minor_count: 4
+redflag_coverage: 6
+acceptance_rate: 6
+disposition: "B05 re-run with corrective addendum; Verifier B re-invoked on corrected B05."

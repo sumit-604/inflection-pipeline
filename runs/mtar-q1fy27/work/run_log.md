@@ -27,3 +27,13 @@
 - A5 adversary: VERDICT COMPLETE (coverage/arithmetic/adversarial all PASS)
 - Notion save: full review appended to MTAR page; Key Notes audit trail prepended (prior entry preserved); Decision Status unchanged (no trigger fired)
 - Count reconciliation: 11 notes reviewed / 0 turns (no concall) / 0 slides (no deck) — all reviewed
+
+## Addendum (2026-07-29): two more documents supplied
+- inputs/pressrel_mtar_q1fy27.pdf: 4 pages, Reg 30(6) Investors Press Release for Q ended 30.06.2026.
+  CLASS: narrative investor communication -> processed via presentation/narrative ruleset
+  (doctype token "pressrel"; enumerate all financials + segment/vertical figures + MD quotes +
+  forward/hedge phrases; reconcile numbers vs results filing).
+- inputs/presentation_mtar_q1fy27.pdf: 32 pages, 960x540 16:9 slides, image-heavy (slides 1/6/10
+  etc under 100 chars -> OCR fallback). CLASS: presentation.
+- Protocol: each new doc gets A1->A2->A3; then A4 RE-RUNS ONCE merging all three docs
+  (results + pressrel + presentation); then A5; then Notion updated with additional-details section.

@@ -1,0 +1,13 @@
+stage: B12a
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 50
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+source_fidelity_verdict: CLEAN
+coverage_note: "Comprehensive audit of 50 material figures across all stage reports (01-gate0 through 09-tam) against primary source PDFs (AR FY25, Q4FY26 results, Q1FY27 outcome, shareholding screener). Materiality threshold: all figures >= Rs 25 lakh material impact on verdict card or scorecard metrics. Coverage: Tier 1 (verdict-card figures) 28/28 verified; Tier 2 (scorecard inputs) 16/16 verified; Tier 3 (supporting detail) 6/6 verified. All figures properly anchored with page/note citations. Unit/basis traps (currency, scope, period, margin definition, EPS classification, cash-flow line items) audited and passed. Cross-checks (ROCE reconciliation, cash-conversion trend, capital-employed rebuild, margin-ratio discrepancy note) completed. Unanchored claims (operator context, broker research, investor presentation secondary data) correctly excluded or flagged. No MISMATCH, ANCHOR NOT FOUND, or material UNANCHORED claims detected."

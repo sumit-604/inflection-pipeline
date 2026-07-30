@@ -1,0 +1,30 @@
+stage: B01-gate0
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["rating: EMPTY","research: EMPTY","recently-listed: restated history FY23-FY25 only"]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 50/100 = AVERAGE base, downgraded one tier by 3-4yr LIMITED data-confidence rule). Driven by Block B collapse (0/20) on working-capital deterioration and DB4 (cumulative CFO/PAT 38.55% < 0.50 threshold)."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 15, B: 0, C: 19, D: 5, E: 11}
+core_score: 50
+moat_score: 13
+grand_total: 63
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["DB2: Block B <8 (cap GOOD, non-binding)", "DB4: Cumulative CFO/PAT 38.55% <0.50 (cap AVERAGE)"]
+history_downgrade: true
+data_notes:
+  - "Screener CSVs (P&L, Balance Sheet, Cash Flow, Quarters) were header-only/empty; screener-Data_Sheet.csv used instead (FY24-FY26 P&L, FY25-FY26 BS/CF)."
+  - "Basis break: FY23-FY25 use RHP SEBI-ICDR restated figures; FY26 uses original audited results-filing figures. FY25 restated PAT 803.38 vs audited-actual 768.39 (~35 lakh gap, RHP Annexure V gratuity/deferred-tax/prior-period adjustments); FY24 restated 430.65 vs audited 455.04. Sensitivity check does not change scoring bands."
+  - "WC-Days on Cost-of-Material-Consumed basis for Inventory/Payable Days; Receivable Days on revenue basis. Reproduces B02 figures (47.9->65.9 AR days, ~166-day FY25 CCC)."
+  - "PEER DATA NEEDED, scored 0: M2, M5, M7, M9 - RHP states no listed peer exists (RHP p.82)."
+  - "FY26 capex NOT FOUND. FY26 promoter latest-quarter holding NOT FOUND (RHP post-issue 67.71% proxy). FY26 contingent liabilities NOT FOUND (FY25 357.82 lakhs used)."
+  - "EBIT/EBITDA reverse-engineered from RHP KPI footnote; validated against RHP FY23 EBITDA 846.20 lakhs."
+  - "FY23 opening Net Worth (634.08 lakhs) reconstructed from RHP Annexure A; validated against RHP ROE (43.27% FY23, 35.90% FY24, 44.23% FY25)."
+data_notes_deal_breaker_9: "Not triggered - 4 years (FY23-FY26). LIMITED 3-4yr data-confidence one-tier downgrade applied instead."
+block_b_trend: "deteriorating - WC days rose 49.4 (FY23) to peak 165.8 (FY25), easing to 161.5 (FY26); ~112-day net increase; receivable days 47.9->65.9, finished-goods inventory +221% vs 12.9% revenue growth"

@@ -1,0 +1,22 @@
+stage: B12d
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 8
+substantive_unsupported:
+  - "KLBRENG Q1 FY26 (Aug 2025 call): 'MIDC/local-body approval process named explicitly' citation is not found anywhere in this transcript; the actual quote is in the Nov 2025 (Q2 FY26) transcript, correctly cited there in B06 Part 1 but misattributed to Aug 2025 in the Part 3 coverage map"
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3 / YAML peer_coverage_map, KLBRENG Q1 FY26 (Aug 2025)", description: "MIDC/local-body approval quote attributed to this quarter does not appear in KLBRENG-B-Concall_Aug_2025_Transcript.pdf; actual source is the Nov 2025 (Q2 FY26) transcript, p.12 (quarter-misattribution, not a company-number/source-fidelity error)"}
+  - {severity: "MAJOR", location: "B06 Part 3 / YAML peer_coverage_map, KLBRENG Q2 FY26 (Nov 2025)", description: "Labeled CITED-ONLY with 'no materially new fact,' but this transcript is the actual source of the MIDC/local-body quote that Part 1 uses substantively; should be marked SUBSTANTIVE"}
+  - {severity: "MAJOR", location: "B06 Part 3 / YAML peer_coverage_map, ADOR Q2 FY25 (Nov 2024)", description: "Labeled CITED-ONLY with 'no decisive new fact,' but this transcript (p.13) is the verbatim source of the '65% of welding equipments are imported' statistic used substantively in Part 2E; undercounted contribution"}
+  - {severity: "MINOR", location: "B06 Part 2E risks_peers_raise, ADOR entry", description: "Parenthetical '(largely Chinese)' attached to the 65% import-equipment statistic is not supported by the cited transcript; management's answer did not specify import origin and was dismissive of the Chinese-competition framing raised by the analyst's question"}
+critical_count: 0
+major_count: 3
+minor_count: 1
+acceptance_rate: 75
+peer_utilisation: 92

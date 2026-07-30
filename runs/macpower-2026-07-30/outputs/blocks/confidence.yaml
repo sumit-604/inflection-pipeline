@@ -1,0 +1,18 @@
+confidence_delta:
+  numerical_acceptance: 100      # B12a - source fidelity CLEAN, 50 figures, 0 findings
+  redflag_coverage: 83           # B12b - 10 of 12 verifier-found concall flags caught upstream (fully/partially)
+  framework_adherence: 100       # B12c - Gate0 + Emerging Moat portion, 77/77 hard rules pass; valuation component PENDING PHASE 3
+  peer_utilisation: 92           # B12d - 8+ peers used substantively of 12 provided
+  overall: 83                    # min of the four available components
+  band: "75-89 normal, note specifics"
+  valuation_framework_adherence: "pending phase 3 (B10/B11 not yet built)"
+rework_check:
+  verifier_a_critical: 0
+  source_fidelity_flags: 0       # B12a verdict CLEAN
+  min_acceptance_rate: 67        # B12b 67, B12d 75, B12a 100, B12c 100 - none below 60
+  rework_triggered: false
+notes:
+  - "Overall 83 sits in the normal band; no confidence-driven downgrade, no forced REWORK."
+  - "B12b MAJOR (weak cash conversion not itemised in B05 concall red-flag table) is substantively caught pipeline-wide via FLAG-CASH in B01/B02/B03; it sharpens the FLAG-CASH determination (management stated cash conversion 'will not improve rapidly')."
+  - "B12d 3x MAJOR are quarter-misattribution/labeling errors in the B06 peer coverage map, not company-number or source-fidelity errors; peer substance stands."
+  - "B09 (TAM) status partial (some vendor searches skipped) - synthesis must note partial status."

@@ -12,9 +12,10 @@ emoat:
   rules_checked: 34
   fails:
     - {rule: "H1 evidence multiplier", severity: MINOR, expected: "raw 1 x 0.7 (claim) = 0.7 adjusted; summary classifies H1 as claim", found: "raw 1 x 1.0 (documented) = 1.0 adjusted in scorecard", impact: "em_score 20.9->20.6, both round to 21, MODEST band unchanged"}
-valuation: {rules_checked: 0, fails: []}   # deferred to phase 3 (B10/B11 do not exist yet)
-recomputed_destination_pe: ""   # valuation deferred to phase 3
-recomputed_decision: ""         # concur: Gate0 AVERAGE and EM MODEST both stand
+valuation: {rules_checked: 30, fails: []}   # PHASE 3: all 30 valuation-adherence rules re-derived and pass
+b14_decision_check: {rules_checked: 6, fails: []}   # PHASE 3: Role 2 decision rules + position sizing pass
+recomputed_destination_pe: ""   # concur: 15.4x additive / 11.7x RRM both re-derived clean
+recomputed_decision: ""         # concur: Gate0 AVERAGE, EM MODEST, and valuation AVOID all stand
 findings:
   - {severity: MINOR, location: "07-emoat.md Section 5 row H1", issue: "claim-classified category scored with documented 1.0x multiplier", recomputed: "0.7 adjusted; em_score 20.6; MODEST unchanged"}
   - {severity: MINOR, location: "01-gate0.md (whole file)", issue: "mandated closing YAML block absent from report artifact", recomputed: "n/a; values correct and propagated to blocks"}

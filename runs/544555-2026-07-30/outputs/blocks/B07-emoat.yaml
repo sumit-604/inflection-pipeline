@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report: no post-listing AR; RHP used", "concalls: single transcript", "rating: EMPTY", "research: EMPTY"]
+flags:
+  - "CFO resignation 28-Jul-2026 (personal reasons) - KMP continuity gap, unaddressed in single concall (operator-supplied provenance)"
+  - "US subsidiary FEMA non-compliance, revenue NIL, net worth Rs 1.84 lakhs (RHP RF17 p.130-131) - unresolved, no turnaround evidence"
+  - "Conveyor belting diversification unproven: no prior experience (RF5), no machinery orders placed (RF9) - Optionality Register only, not active moat"
+  - "89% order book in Railways zones (Aug 2025); Feb-Jul 2026 inflows (~Rs 67.85 cr ex-GST) reinforce not diversify single-sector dependency"
+  - "Operator-supplied Reg 30 announcements: stronger-than-research-lead but not independently BSE-verified this run"
+  - "RDSO/MoRTH approvals renewal-dependent, not permanent - regulatory moat time-boxed not structural"
+  - "Gate 0 Block B collapsed to 0/20; emerging-moat G2 found NO EVIDENCE of improving WC trajectory - compounds rather than offsets the backward flag"
+em_score: 21.9
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "documented", time_to_materialise: "0-12m"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "12-24m"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "24-36m"}
+evidence_mix: {documented: 22, claim: 9, inference: 4}
+completionist_recount: "22 documented items across 5 categories (A1, B2, C2, H2, H3)"
+catalysts_12m:
+  - {catalyst: "Execution of Feb-Jul 2026 Railway order backlog (~Rs 67.85 cr ex-GST across SCR, Southern, SER, ER Kolkata)", window: "0-12m", evidence_type: "documented", anchor: "Operator-supplied Reg 30, Feb-Jul 2026 (operator-supplied provenance)"}
+  - {catalyst: "RDSO/MoRTH vendor approval renewal cycle", window: "0-12m", evidence_type: "documented", anchor: "RHP p.211-218"}
+  - {catalyst: "CFO replacement / KMP continuity resolution", window: "0-12m", evidence_type: "documented", anchor: "Operator-supplied announcement, 28-Jul-2026"}
+capex_embedded_growth_pct: 60.4
+optionality_register:
+  - {optionality: "Conveyor belting diversification (no prior experience)", converting_evidence: "Machinery POs placed; first conveyor-belt sales invoice", window: "24-36m"}
+  - {optionality: "US subsidiary becoming a real export/market-access asset not a dormant non-compliant shell", converting_evidence: "FEMA regularisation filing; first recorded subsidiary revenue", window: "24-36m+"}
+  - {optionality: "RDSO/BIS certification extended to conveyor-belt line", converting_evidence: "Certificate of approval for conveyor belts", window: "24-36m"}
+  - {optionality: "Bridge bearing / POT-PTFE segment sustaining +186% two-year growth", converting_evidence: "Segment revenue disclosure in FY26/FY27 showing continued share gain", window: "12-24m"}
+  - {optionality: "Working capital normalisation (inventory/receivable days decline, positive OCF)", converting_evidence: "Positive OCF and declining WC-days in FY26 accounts", window: "12-24m"}
+  - {optionality: "Solar/renewable power reconciled as a quantified ESG metric", converting_evidence: "Audited renewable-capacity / %-solar disclosure", window: "12-24m"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 backward AVOID (core 50, moat 13, Block B 0/20) paired with a MODEST forward emerging-moat score on narrow, Railways-concentrated evidence does not meet the GOOD/AVERAGE-backward plus EXPANSION-forward transition-alpha pattern."
+top_moat_risks:
+  - "RDSO/MoRTH renewal risk: time-boxed barrier, shared by all qualified vendors"
+  - "89% Railways order-book concentration; 2026 inflows reinforce single-sector dependency"
+  - "Conveyor-belt diversification unproven: no prior experience, no machinery orders placed"
+  - "CFO resignation (28-Jul-2026), no disclosed successor; KMP continuity gap"
+  - "US subsidiary FEMA non-compliant, revenue NIL, no resolution evidence"

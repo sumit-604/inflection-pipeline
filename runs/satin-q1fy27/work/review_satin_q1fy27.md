@@ -38,20 +38,20 @@ A3-F14-01, A3-F16-01, A3-F16-02. Presentation: A3-01, A3-02, A3-03, A3-04, A3-05
 A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12.
 
 **Two extraction-discipline items to foreground (contractual):**
-1. Reg 52(4) OCR-repair. The consolidated Reg 52(4) additional-information table
-   (results p.14, consol Note 14, ln 759-786) is severely OCR-corrupted: the
-   Operating-margin row and the entire sector-specific-ratios block (GNPA / NNPA /
-   PCR / CRAR / LCR) are absent from the extract, and Net worth (ln 771), NPAT and
-   EPS values are garbled or dropped. Standalone Reg 52(4) (ln 385-409) is OCR-clean
-   and fully populated. Where OCR prevented reading a value, the A2 ledger enumerated
-   the row with an OCR flag rather than dropping it; A4 treats every such consol
-   asset-quality cell as `ND` and never substitutes the standalone analogue.
-2. Consolidated sector NPA ratios are genuinely absent from the filing. Beyond the
-   OCR damage, A3 confirms the consolidated Reg 52(4) table terminates at row 18 with
-   no sector-ratio block present (FND-01). Group-level GNPA / NNPA / PCR / CRAR / LCR
-   and, critically, SFL-level GNPA in the statutory filing are therefore `ND`. The
-   SFL GNPA figure used below (3.5%) comes only from the investor deck (s31/L991),
-   not the audited filing, and is flagged accordingly.
+1. Reg 52(4) OCR-repair (resolved). The consolidated Reg 52(4) additional-information
+   table (results p.14, consol Note 14, ln 759-786) scanned poorly on the first pass;
+   A1 re-ran it at 400 DPI. After the repair the consolidated Net worth (Rs 2,943.62
+   Cr), Net-profit-after-tax (Rs 122.65 Cr) and EPS (11.15 / 11.15) rows are LEGIBLE
+   and are used below. Standalone Reg 52(4) (ln 385-409) is OCR-clean and fully
+   populated. The ONLY consolidated Reg 52(4) rows that remain unavailable are the
+   sector-specific ratios (see item 2); those are absent from the source itself, not an
+   OCR artifact. A4 substitutes no standalone analogue for any absent consol cell.
+2. Consolidated sector NPA ratios are genuinely absent from the filing. A3 confirms the
+   consolidated Reg 52(4) table terminates at row 18 with no sector-ratio block present
+   (FND-01). Group-level GNPA / NNPA / PCR / CRAR / LCR and, critically, SFL-level GNPA
+   in the statutory filing are therefore `ND`. The SFL GNPA figure used below (3.5%)
+   comes only from the investor deck (s31/L991), not the audited filing, and is flagged
+   accordingly.
 
 ---
 
@@ -114,7 +114,7 @@ consolidated Notes 1-16 (ln 653-802). Comparability-relevant notes:
 | 10 std (297-343) | Loan transfers (RBI MD) | Assigned 1,91,443 loans, book Rs 818.89 Cr, consideration Rs 818.89 Cr; acquired 368 loans Rs 31.61 Cr; no NPA transferred; CLA Nil | DA activity | Q1FY27 | Direct-assignment activity; off-book (A3-F1-02, A3-12) |
 | 13 std / 13 consol (374-376 / 751-756) | Segment | Single reportable segment (financing), single domestic geography; STL/SGAL/QTrino "no reportable segment" | none | Q1FY27 | Build-stage subs no revenue (FND-08) |
 | 14 std (379-409) | Reg 52(4) standalone | D/E 3.15; Net worth Rs 3,218.93 Cr; NPAT Rs 120.29 Cr; Net-profit-margin 17.91%; GNPA 2.18% / NNPA 0.33% / PCR 84.66% / CRAR 26.74% / LCR 134.89% | disclosure | Q1FY27 | Standalone asset quality (Step 5L) |
-| 14 consol (759-786) | Reg 52(4) consolidated | D/E 3.97; Net-profit-margin 16.04%; **sector ratios (GNPA/NNPA/PCR/CRAR/LCR) ABSENT; net worth, NPAT, EPS OCR-dropped** | ND | Q1FY27 | Consol asset quality = ND (see preamble) |
+| 14 consol (759-786, 400-DPI repaired) | Reg 52(4) consolidated | D/E 3.97; Net worth Rs 2,943.62 Cr; NPAT Rs 122.65 Cr; EPS 11.15; Net-profit-margin 16.04%; **sector ratios (GNPA/NNPA/PCR/CRAR/LCR) ABSENT from source** | ND (sector ratios only) | Q1FY27 | Consol sector asset quality = ND (see preamble) |
 | 15 std / 15 consol (423-425 / 798-800) | Balancing figures | Q4FY26 (Mar-26) figures are balancing figures (FY audited less 9M reviewed) | none | Q4FY26 | Q4 quarterly numbers are derived, not independently reported |
 | 16 std / 16 consol (428 / 802) | Regrouping | Prior-period figures regrouped/rearranged | none | prior | Minor comparability |
 
@@ -185,6 +185,7 @@ and is not forced onto the analysis.
 | PAT (total) | 45.10 | 162.05 | 122.65 | 332.21 | ln 609 |
 | PAT owners of parent | 45.10 | 162.02 | 122.67 | 332.19 | ln 622 |
 | PAT non-controlling interest | ND | 0.02 | (0.02) | 0.02 | ln 623 |
+| Net worth (Reg 52(4), 400-DPI repaired) | ND | ND | 2,943.62 | ND | ln 769 |
 | EPS basic/diluted (Rs, not annualised) | 4.10 | 14.73 | 11.15 | 30.20 | ln 635-636 |
 
 ### 1L.c Company lender-format income statement (deck, Rs Cr; adjusted for MTM/forex)
@@ -225,6 +226,9 @@ the statutory PBT/PAT and uses the deck ratios for NIM/ROA/ROE.
 | Cost-to-income | 51.08% | 46.42% | 47.98% | 48.91% | 45.32% | 44.49% | s17/L491, s19/L556 |
 | AUM | 12,499 | 15,174 | 15,935 | 10,956 | 12,853 | 13,312 | PR 66/97; s16/s18 |
 | Disbursement | 2,242 | 4,420 | 3,495 | 2,065 | 3,820 | 3,008 | PR 68/99 |
+| Active clients (Lakhs) | 33 | 34 | 34 | 32 | 33 | 33 | s16/L467, s18/L534; PR 90 |
+| New clients added (Lakhs) | 1.9 | 1.6 | 1.5 | 1.9 | 1.6 | 1.5 | s22/L642-645 |
+| AUM per loan officer (Rs Cr) | 1.08 | 1.29 | 1.39 | 1.08 | 1.29 | 1.39 | s22/L658-660 |
 | GNPA % | ND (consol) | ND (consol) | ND (consol) | 3.74% | 3.1% (deck) | 2.18% | Std: ln 403; PR 161 |
 | NNPA % | ND | ND | ND | 2.4% (deck) | 2.2% (deck) | 0.33% | Std: ln 403; s24 |
 | PCR % | ND | ND | ND | ND | 72.85% | 84.66% | ln 405; PR 167 |
@@ -253,6 +257,7 @@ trend charts (s23/s24); endpoints corroborated, mid-quarter values not asserted.
 | PBT | 58.08 | 161.20 | +177.6% | Strong, base effect |
 | PAT | 45.10 | 122.65 | +171.9% | Strong, base effect |
 | EPS (Rs) | 4.10 | 11.15 | +171.9% | Strong, base effect |
+| Active clients (Lakhs) | 33 | 34 | +3.0% | Near-static borrower base (growth-quality flag) |
 
 ### 2.b STANDALONE YoY (Q1 FY27 vs Q1 FY26)
 
@@ -267,6 +272,7 @@ trend charts (s23/s24); endpoints corroborated, mid-quarter values not asserted.
 | PBT | 54.63 | 157.96 | +189.1% | Strong, base effect |
 | PAT | 42.60 | 120.29 | +182.4% | Strong, base effect |
 | GNPA % | 3.74% | 2.18% | -156 bps | Favourable (mechanism unverified, FND-01) |
+| Active clients (Lakhs) | 32 | 33 | +3.1% | Near-static borrower base (growth-quality flag) |
 
 **Six diagnostic answers.**
 1. *Revenue grew YoY.* Consol AUM +27.5% and adjusted NII +25.1%; standalone AUM
@@ -279,8 +285,10 @@ trend charts (s23/s24); endpoints corroborated, mid-quarter values not asserted.
    14.36% vs 13.16% (+120 bps). YoY expansion is real but modest; the bigger story is
    the QoQ contraction (Step 3).
 3. *Core operating profit (PPOP) grew YoY.* Consol PPOP +33.0%, standalone PPOP +36.4%.
-   PPOP (pre-provision) growth is genuine operating expansion, not treasury timing, and
-   confirms the headline PAT growth is operationally supported at the pre-provision line.
+   PPOP (pre-provision) growth is genuine operating expansion, not treasury timing. The
+   FX finance-cost credit (Rs 62.43 Cr) does NOT inflate PPOP: it is offset within the
+   same period by the Rs 57.11 Cr fair-value loss above the line, netting the treasury
+   effect on PPOP to roughly Rs 1 Cr YoY. PPOP growth is genuinely operational.
 4. *Gap between PPOP growth and PAT growth.* Consol PPOP +33% but PAT +172%; the
    amplification comes almost entirely from the credit-cost line falling -25.7% YoY
    (impairment 142.88 -> 106.12), off an abnormally high Q1FY26 (loan loss ratio 4.52%
@@ -297,6 +305,21 @@ trend charts (s23/s24); endpoints corroborated, mid-quarter values not asserted.
    178/188). Both are non-operating and volatile; the deck removes them via "adjusted"
    revenue/NIM (A3-05). Stripping both, PBT quality is cleaner than the statutory line
    suggests, but the FX credit is a reversal risk next quarter (FND-04).
+
+**Growth-quality diagnostic (grafted counter, MFI over-indebtedness early warning).**
+AUM grew +21.5% standalone / +27.5% consol YoY, but the active-client base grew only
+~+3% (consol 34 vs 33 lakh, s16/L467, PR 90; standalone 33 vs 32 lakh, s18/L534), and
+new-client additions have fallen every quarter since the Q2 FY26 peak (2.5 -> 2.2 ->
+1.6 -> 1.5 lakh, s22/L642-645) and sit below the year-ago quarter (1.5 vs 1.9 lakh).
+Over the same window AUM per loan officer rose from Rs 1.08 Cr to Rs 1.39 Cr
+(s22/L658-660), AUM per branch from Rs 6.8 Cr to Rs 7.4 Cr (s22/L657), and the SCNL JLG
+average ticket is ~Rs 61,000 (s36/L1147). Read: the book is expanding through larger
+tickets and deeper per-borrower exposure on a near-static borrower base, not through
+customer acquisition. That is a recognised MFI over-indebtedness early-warning pattern.
+It fires no pre-committed trigger this quarter, and the headline GNPA is a clean 2.18%,
+but per-borrower leverage building faster than the borrower count is precisely the
+condition under which a benign GNPA can turn quickly. It is carried into the Bear column,
+the monitorables, and Questions for Management (Q13).
 
 ---
 
@@ -413,8 +436,9 @@ below the 25.17% statutory rate (FND-05).
 | Metric | Q1 FY27 | Source / flag |
 |---|---|---|
 | Consol GNPA / NNPA / PCR / CRAR / LCR | ND | ABSENT from filing consol Reg 52(4) (preamble; FND-01) |
+| Consol net worth | 2,943.62 | ln 769 (400-DPI repaired) |
 | Consol D/E | 3.97x | ln 763 |
-| Consol net-profit-margin | 16.04% | ln 783 (OCR-attributed) |
+| Consol net-profit-margin | 16.04% | ln 783 |
 | SFL GNPA | 3.5% | DECK ONLY s31/L991 (not in filing) |
 | SFL CRAR | 27.1% | s31/L992 |
 | SFL AUM (YoY) | 1,360 (+133.67%) | PR 184-186 / s31 |
@@ -437,6 +461,16 @@ below the 25.17% statutory rate (FND-05).
   outran AUM growth (+21.5%), and collection efficiency (X-bucket) is 99.9% (PR 124).
   No pre-crisis divergence signal this quarter; watch the Kerala/South build-out (new
   geographies) into collection seasoning.
+- *Growth quality / borrower-base divergence (MFI over-indebtedness early warning):*
+  AUM grew +21.5% standalone / +27.5% consol YoY while the active-client base grew only
+  ~+3% (34 vs 33 lakh consol, s16/L467; 33 vs 32 lakh standalone, s18/L534) and
+  new-client additions fell every quarter since Q2 FY26 (2.5 -> 2.2 -> 1.6 -> 1.5 lakh,
+  s22/L642-645). AUM per loan officer rose Rs 1.08 Cr -> Rs 1.39 Cr (s22/L658-660) at a
+  ~Rs 61,000 JLG ticket (s36/L1147). The book is deepening per-borrower exposure on a
+  near-static borrower base rather than acquiring customers, a recognised MFI
+  over-indebtedness precursor. No trigger fires, but it directly conditions the
+  durability of the 2.18% GNPA and is a monitorable (see below) and a management question
+  (Q13).
 - *Off-book gap:* implied on-book book ~Rs 10,040 Cr (219/2.18%) vs standalone AUM
   Rs 13,312 Cr means ~Rs 3,270 Cr (~25%) sits off-book/assigned (A3-F1-02); GNPA is
   quoted on-book only, so headline GNPA quality depends on the unquantified off-book
@@ -554,7 +588,7 @@ is flagged for the human, who decides whether to act on the pre-committed escala
 |---|---|---|---|
 | ROCE/ROE base (lender) | ROE recovery ON TRACK | Reported consol ROE 16.75% (s17); standalone 15.10% | HOLD; Q1 confirms recovery, do not upgrade on adjusted 20.39% |
 | Asset-Quality Multiplier | Sound (1.00x) implied | GNPA 2.18%, PCR 84.66%, CRAR 26.74% support Sound-to-Elite, but mechanism unverified | HOLD at Sound pending FND-01 mechanism read |
-| Growth-visibility premium | +x (EM MOAT EXPANSION) | AUM +27.5%, FY2030 target raised 25,000 -> 32,000 Cr (s5/L127) | HOLD; long-dated target set beside soft near-term print (A3-10) |
+| Growth-visibility premium | +x (EM MOAT EXPANSION) | AUM +27.5%, FY2030 target raised 25,000 -> 32,000 Cr (s5/L127) | HOLD; long-dated target set beside soft near-term print (A3-10), and AUM growth is ticket-led not client-led |
 | Strategic premium (single-credit) | +x | ROE recovery credited via credit-cost normalisation (T2), not double-counted with growth | HOLD; single-credit rule respected |
 | UA multiplier | 1.25x (per Amendment 3) | Not re-tested this run; no reclassification | HOLD |
 | Sector cap | NBFC-MFI | No reclassification | HOLD |
@@ -581,12 +615,12 @@ trim/exit mechanics apply. Walking 8A-W:
   changes only when the human acts on a formally met gate.
 
 **8B. Entry-zone / trigger refinement.** Entry zones unchanged numerically (no pillar
-moved >10%). One refinement: any incremental sizing should be conditioned on the
+moved >10%). Two refinements: (i) any incremental sizing should be conditioned on the
 pending Rs 100.1 Cr warrant allotment terms (issue price Rs 260, ~17% premium to SEBI
 floor) and a pro-forma diluted share count, since 38.5 L warrants (~3.5% of the current
-~11.0 Cr shares) will convert within 18 months. Add-back should also be gated on the
-Q2 disclosure of the GNPA-improvement mechanism (write-offs/ARC) that Q1 left
-unverifiable.
+~11.0 Cr shares) will convert within 18 months; (ii) add-back should be gated on the Q2
+disclosure of the GNPA-improvement mechanism (write-offs/ARC) AND on evidence that AUM
+growth is not purely ticket-led on a static borrower base (the over-indebtedness watch).
 
 **8C. Single cleanest metric for Q2 FY27.** Retain **consolidated ROE annualised
 (reported, overlay-inclusive)** as the focal metric, and pair it with **gross write-offs
@@ -601,23 +635,25 @@ and the laundering question (which Q1 left open).
 ## STEP 8.5 — QUESTIONS FOR MANAGEMENT
 
 Every A3 FORWARD-SIGNAL and AMBIGUOUS finding across all three forensics files generates
-at least one question below. Channel: no concall was held this run; recommend IR email
-now, and prioritise Q1-Q5 for the next scheduled concall Q&A.
+at least one question below, and the A5-grafted client-base counter is added as Q13.
+Channel: no concall was held this run; recommend IR email now, and prioritise Q1-Q5 for
+the next scheduled concall Q&A.
 
 | # | Question | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|
-| 1 | Provide the Q1FY27 GNPA/ECL movement walk (opening, additions, gross write-offs, ARC/DA sales of NPAs, recoveries, closing) and the Stage-1/2/3 book, and confirm the Rs 36 Cr overlay treatment. Standalone GNPA fell 3.74% -> 2.18% but only Rs 8 Cr of recovery-against-write-offs is disclosed. | The GNPA improvement drives the escalation gate; without the walk it is unverifiable as organic vs write-off/ARC-assisted (FY26 write-offs ~Rs 437 Cr). Stage-2 (tripwire #6) is undisclosed. | Gross write-offs small, Stage-2 shrinking <3%, improvement organic | Large write-offs/ARC sales drove the fall; Stage-2 rising | FND-01, A3-F1-01, A3-11 |
+| 1 | Provide the Q1FY27 GNPA/ECL movement walk (opening, additions, gross write-offs, ARC/DA of NPAs, recoveries, closing) and the Stage-1/2/3 book, and confirm the Rs 36 Cr overlay treatment. Standalone GNPA fell 3.74% -> 2.18% but only Rs 8 Cr of recovery-against-write-offs is disclosed. | The GNPA improvement drives the escalation gate; without the walk it is unverifiable as organic vs write-off/ARC-assisted (FY26 write-offs ~Rs 437 Cr). Stage-2 (tripwire #6) is undisclosed. | Gross write-offs small, Stage-2 shrinking <3%, improvement organic | Large write-offs/ARC sales drove the fall; Stage-2 rising | FND-01, A3-F1-01, A3-11 |
 | 2 | What was the Direct-Assignment ASSIGNMENT VOLUME in Q1FY27 (not just DA income of Rs 92 Cr standalone), the recurring DA run-rate, and how much of PBT depends on it? What is the drawdown plan for the new Rs 2,000 Cr PSU DA sanction? | ~Rs 3,270 Cr (~25% of standalone AUM) sits off-book; DA income fell QoQ (130 -> 92) and Q4 DA was lumpy (thesis Rs 1,256 Cr). ROA quality depends on DA recurrence. | DA volume steady, modest P&L dependence, sanction for funding not gain-on-sale | DA lumpy and gain-on-sale dependent; ROA flatters on timing | A3-F1-02, A3-12 |
 | 3 | Is the Rs 36 Cr management overlay a NEW charge booked in Q1FY27 or a standing balance? Confirm the Rs 21 Cr (Q4) -> Rs 36 Cr (Q1) increase = a fresh Rs 15 Cr charge, and provide GAAP ROA/ROE INCLUDING the overlay against the FY27 targets. | The overlay is framed "created"/"maintained"/"increased to" across three lines; the incremental Rs 15 Cr suppresses reported PAT while ROA/ROE headlines add it back (non-GAAP). Material to the escalation-gate ROE of 16.75%. | Overlay is a discretionary buffer; GAAP ROE still >=16% | Overlay masks the true QoQ deterioration; GAAP returns weaker | A3-F14-01, A3-F16-02, A3-05 |
 | 4 | Provide the QoQ delta table for all 12 ratio-slide metrics (blank on slides 17/19), and bridge the QoQ NIM step-down (consol 15.20% -> 13.21%, standalone 15.85% -> 14.36%) and gross-yield fall (23.28% -> 21.27% consol). Show unadjusted (pre-MTM/forex) revenue and NIM. | Every ratio-slide YoY/QoQ cell is blank, masking a 199 bps consol NIM drop and 201 bps yield drop; headline revenue/NIM are always "adjusted for MTM and forex," so the unadjusted figures are never shown. | Step-down is DA/mix timing, core yield intact | Structural yield compression underway | A3-09, A3-05, A3-F16-01 |
 | 5 | Why did the subsidiary contribution to consolidated PAT collapse from +Rs 25.1 Cr (Q4, 18.3% of standalone) to +Rs 2.36 Cr (Q1, 1.96%)? Disclosed SHFL (Rs 1.5 Cr) + SFL (Rs 4.9 Cr) = Rs 6.4 Cr exceed the Rs 2.36 Cr uplift; quantify the STL/SGAL/QTrino drag and any Q4 one-off. | Subsidiary contribution is a T3 growth trigger (now WEAKENED); the collapse is uncaused in any document and implies ~Rs 3.4-4 Cr non-lending burn. | Q4 had a one-off gain; core subs profitable and scaling | Recurring non-lending burn; subs are a drag needing funding | FND-02, A3-F2-01, A3-F2-02, A3-03 |
-| 6 | Confirm the warrant allotment date, issue price (Rs 260), and provide a pro-forma DILUTED share count and EPS assuming full conversion of the 38,50,000 warrants; how will the Rs 100.1 Cr be deployed? | Basic = diluted EPS today because the warrants are excluded pending allotment; 38.5 L warrants (~3.5% of shares) plus the Rs 100 Cr promoter infusion dilute later quarters. | Proceeds fund growth, promoter alignment, minimal near-term dilution | Dilution overhang on EPS; capital needed to plug subsidiary burn | FND-03, FND-06, A3-F10-01, A3-06 |
+| 6 | Confirm the warrant allotment date, issue price (Rs 260), and provide a pro-forma DILUTED share count and EPS assuming full conversion of the 38,50,000 warrants; how will the Rs 100.1 Cr be deployed? | Basic = diluted EPS today because the warrants are excluded pending allotment; 38.5 L warrants (~3.5% of shares) plus the Rs 100 Cr promoter infusion dilute later quarters. | Proceeds fund growth, promoter alignment, minimal near-term dilution | Dilution overhang on EPS; capital needed to plug subsidiary burn | FND-03, FND-06, A3-F6-01, A3-F10-01, A3-06 |
 | 7 | Reconcile the Rs 275 Cr (8.55%) gap between standalone net worth (Rs 3,218.93 Cr) and consolidated net worth (Rs 2,943.62 Cr), and reconcile BVPS Rs 270 x 11.0 Cr shares = Rs 2,970 Cr against the statutory net-worth base. | Consol net worth is BELOW standalone while consol PAT is higher, implying subsidiary accumulated losses / investment-vs-equity eliminations; the BVPS base is ambiguous. | Gap is routine elimination/NCI; subs building equity | Subs carry accumulated losses eroding group equity | FND-07, A3-07 |
-| 8 | Is the Q1FY27 Rs 62.43 Cr FX finance-cost credit (offsetting a Rs 57.11 Cr fair-value loss) fully hedged, and what is the reversal exposure on an adverse INR move? Why is there no hedge/derivative-policy note despite the swing from a Rs 92.63 Cr charge in Q4? | The FX credit is a large, volatile, non-operating swing; "100% hedged" is asserted on a footnote but no note-level policy is disclosed. PBT quality and reversal risk (tripwire #9). | Fully hedged, credit is economic, no reversal | Open position; Q1 credit reverses next quarter | FND-04 |
+| 8 | Is the Q1FY27 Rs 62.43 Cr FX finance-cost credit (offsetting a Rs 57.11 Cr fair-value loss) fully hedged, and what is the reversal exposure on an adverse INR move? Why is there no hedge/derivative-policy note despite the swing from a Rs 92.63 Cr charge in Q4? | The FX credit is a large, volatile, non-operating swing; "100% hedged" is asserted on a footnote but no note-level policy is disclosed. Reversal risk (tripwire #9). | Fully hedged, credit is economic, no reversal | Open position; Q1 credit reverses next quarter | FND-04 |
 | 9 | What is the expected normalised effective tax rate as the deferred-tax credits (Rs 4.72 Cr standalone / Rs 7.45 Cr consol this quarter) unwind, given ETR of ~24% is below the 25.17% statutory rate? | Persistent Q1 deferred-tax credits shield ETR ~132 bps; a step-up compresses future PAT and the ROE gate. | DTA runway multi-year, ETR stable | ETR steps up to 25%+, PAT headwind | FND-05 |
 | 10 | Provide the funding and commissioning plan for STL, SGAL and QTrino (capex, timeline, external vs further parent equity), the SGAL AIF first-close fund size and date, and the strategic/monetisation intent for the QTrino step-down (STL raised its stake 50.84% -> 67.88%). | Three build-stage subs receive continuous parent equity (Rs 10 Cr STL + Rs 50 Cr SFL in-quarter, Rs 12 Cr SGAL subsequent, Rs 6.36 Cr STL->QTrino); SGAL discloses ZERO financials despite a template slot; negative NCI confirms QTrino losses. | Clear commercialisation path, external funding, monetisation optionality | Open-ended parent-funded burn; warrant proceeds feed it | FND-08, FND-10, A3-01, A3-04 |
-| 11 | Why is there NO consolidated-ROE guidance for FY27 (the thesis single cleanest metric), and no GNPA, NIM or consolidated-ROA guidance, when standalone credit cost (3.0-3.5%) and standalone ROA (3.5-4.0%) are guided? What underpins the FY2030 AUM target revision from Rs 25,000 Cr to Rs 32,000 Cr? | FY27 guidance is selective; the consol-ROE guide (the metric the escalation gate turns on) is absent, and the long-dated target was raised +28% in the same quarter QoQ profitability softened. | Consol ROE guided >=16%; FY2030 target underpinned by pipeline | Guidance withheld because consol ROE trajectory is soft | A3-10, A3-04 |
+| 11 | Why is there NO consolidated-ROE guidance for FY27 (the thesis single cleanest metric), and no GNPA, NIM or consolidated-ROA guidance, when standalone credit cost (3.0-3.5%) and standalone ROA (3.5-4.0%) are guided? What underpins the FY2030 AUM target revision from Rs 25,000 Cr to Rs 32,000 Cr? | FY27 guidance is selective; the consol-ROE guide (the metric the escalation gate turns on) is absent, and the long-dated target was raised +28% in the same quarter QoQ profitability softened. | Consol ROE guided >=16%; FY2030 target underpinned by pipeline | Guidance withheld because consol ROE trajectory is soft | A3-10, A3-04, A3-F6-01 |
 | 12 | Two drafting-discipline items: the consolidated LRR title cites "Regulation 53" where all else cites Reg 63; the deck shows SCNL AUM three ways (13,312 / 12,882 / 12,856) and states/UTs as 30 vs 32, and an "xx" template token in the Active-Clients cell. Are these being corrected? | Individually immaterial, cumulatively a disclosure-quality signal for an NBFC seeking a P/B re-rating (T5). | Corrected; isolated typos | Pattern of loose disclosure control | FND-09, A3-08, A3-02 |
+| 13 | AUM grew +21.5% standalone / +27.5% consol YoY but the active-client base grew only ~3% (34 vs 33 lakh) and new-client additions fell every quarter since Q2 FY26 (2.5 -> 1.5 lakh) at a ~Rs 61,000 JLG ticket. What share of AUM growth is new borrowers versus larger tickets and repeat/graduating cycles, and what is the average number of active loans per borrower and the exposure-per-borrower trend? | AUM growth on a near-static borrower base via larger tickets and deeper per-borrower exposure is a recognised MFI over-indebtedness early warning; it conditions the durability of the 2.18% GNPA and the "sustainable ROA" read. | Growth is broad-based acquisition plus graduating borrowers; exposure per borrower stable | Growth is deeper leverage on the same borrowers; over-indebtedness building ahead of GNPA | A5-graft (client-base vs AUM divergence), pairs with A3-11 |
 
 **Top 3 by likelihood of thesis-changing information.**
 1. Q1 (GNPA/ECL walk + write-offs/ARC + Stage-2) — a large write-off/ARC answer would
@@ -627,24 +663,31 @@ now, and prioritise Q1-Q5 for the next scheduled concall Q&A.
    clears the escalation gate is genuine or flattered; tests the +300 bps adjusted uplift.
 3. Q5 (subsidiary PAT collapse) — tests whether T3 is genuinely weakened and quantifies
    the non-lending burn that the warrant proceeds may be funding; also a management
-   transparency test (currently uncaused in every document).
+   transparency test (currently uncaused in every document). Q13 (client-base divergence)
+   is the highest-value forward-looking probe if asset quality later turns.
 
-**Channel recommendation:** IR email now with all 12 questions verbatim; carry Q1-Q5
-into the next concall live Q&A and submit Q6-Q12 in writing. Log each for Q2 answer-status
-tracking (ANSWERED / PARTIAL / EVADED / NOT ADDRESSED).
+**Channel recommendation:** IR email now with all 13 questions verbatim; carry Q1-Q5 and
+Q13 into the next concall live Q&A and submit the rest in writing. Log each for Q2
+answer-status tracking (ANSWERED / PARTIAL / EVADED / NOT ADDRESSED).
 
 ---
 
 ## MONITORABLES / CATALYST TIMELINE (from A3 commitment registers F6/F13)
 
+The full A3 commitment sets are discharged in this register, including A3-F6-01 (six
+dated management commitments: promoter Rs 100.1 Cr infusion, Core Banking go-live, FY27
+credit-cost guidance, SGAL AIF, and the geography build-out), cross-referenced to
+Questions Q6 and Q11. None is silently dropped.
+
 | Item | Implied date | Source | Status word |
 |---|---|---|---|
-| Promoter Rs 100.1 Cr warrant infusion (Trishashna, 38.5 L @ Rs 260) | in-principle 27-Jul-2026; allotment pending; conversion within 18 months | Note 9 ln 275-283 / PR 132 / s3 L104 | underway |
+| Promoter Rs 100.1 Cr warrant infusion (Trishashna, 38.5 L @ Rs 260) | in-principle 27-Jul-2026; allotment pending; conversion within 18 months | Note 9 ln 275-283 / PR 132 / s3 L104 (A3-F6-01, A3-F10-01) | underway |
 | STL Core Banking Solution commercial go-live | 30 September 2026 | PR 196-197 / s32 L1034 | UAT complete, targeted |
 | SGAL Category II AIF Scheme 1 first close + first deployment (target corpus Rs 200 Cr) | next quarter (Q2 FY27) | PR 212 / s5 L147 / s33 L1066 | license received, targeting |
 | FY27 standalone credit-cost guidance 3.0-3.5% | FY27 full year | PR 127-128 / s6 L171 | on track (Q1 3.06%) |
 | FY27 standalone ROA guidance 3.5-4.0% | FY27 full year | s6 L171 | on track (Q1 3.55% reported) |
 | FY27 consol AUM growth 20-25% (Rs 18,200-18,900 Cr) | FY27 | s6 L160-161 | on track (Q1 AUM 15,935) |
+| Client-base growth vs AUM growth divergence; new-client run-rate; average-ticket / exposure-per-borrower trajectory (MFI over-indebtedness watch) | every quarter | s16/L467, s18/L534, s22/L642-645, s22/L658-660, s36/L1147 | AMBER (clients +3% vs AUM +22-27%; new adds 2.5 -> 1.5 lakh) |
 | Kerala market entry / South India build-out (TN, KA, AP, Telangana) | June 2026 (executed) | PR 134 / s20 L586 | initiated |
 | FY2030 AUM target revised to Rs 32,000 Cr (from Rs 25,000 Cr) | FY2030 | s5 L127-129 | revised up |
 | Non-MFI portfolio share to 30% (from ~19%) | 2030 | s5 L140-141 | targeting |
@@ -660,28 +703,36 @@ tracking (ANSWERED / PARTIAL / EVADED / NOT ADDRESSED).
 **Bull.** All three escalation conditions met on reported numbers (PAT Rs 122.65 Cr,
 standalone GNPA 2.18%, consol ROE 16.75% annualised); no stop-loss or exit trigger
 fired. PPOP grew +33% consol / +36% standalone on genuine operating leverage (opex
-ratio fell YoY despite +442 branches); credit cost of 3.06% sits inside the FY27 guide;
-CRAR 26.74% and PCR 84.66% are strong; AUM +27.5% consol beats the 20-25% guide; capital
-strengthened via a promoter Rs 100.1 Cr infusion at a premium; auditor opinion clean.
-The Q4 sustainability question resolved acceptably: run-rate ROA stabilised in the low-
-to-mid 3s reported, above the bear band, not at the Q4 peak.
+ratio fell YoY despite +442 branches; the treasury effect on PPOP nets to ~Rs 1 Cr, so
+the growth is operational, not FX-flattered); credit cost of 3.06% sits inside the FY27
+guide; CRAR 26.74% and PCR 84.66% are strong; AUM +27.5% consol beats the 20-25% guide;
+capital strengthened via a promoter Rs 100.1 Cr infusion at a premium; auditor opinion
+clean. The Q4 sustainability question resolved acceptably: run-rate ROA stabilised in
+the low-to-mid 3s reported, above the bear band, not at the Q4 peak.
 
 **Bear.** The +172% PAT headline is largely a Q1FY26 trough base effect, not underlying
 strength; every return ratio stepped DOWN QoQ (consol ROA 4.71% -> 3.30%, ROE 23.31% ->
 16.75%, NIM 15.20% -> 13.21%). The escalation ROE clears its floor by only 75 bps and is
 flattered by adding back a Rs 36 Cr overlay that itself grew Rs 15 Cr this quarter. The
 GNPA improvement is unverifiable (no write-off/ECL/ARC disclosure; Stage-2 undisclosed;
-~25% of AUM off-book), so the Asset-Quality Multiplier cannot be upgraded. Subsidiary
-PAT contribution collapsed to 1.96%, revealing non-lending burn. A Rs 62.43 Cr FX
-finance-cost credit props PBT with reversal risk and no hedge note. Consol net worth
-sits Rs 275 Cr below standalone. FY27 consol-ROE guidance (the cleanest metric) is
+~25% of AUM off-book), so the Asset-Quality Multiplier cannot be upgraded. Critically,
+AUM grew +22% to +27% YoY while the active-client base grew only ~3% (34 vs 33 lakh) and
+new-client additions fell every quarter since Q2 FY26 (2.5 -> 1.5 lakh); with a ~Rs 61,000
+JLG ticket and AUM per loan officer up Rs 1.08 Cr -> Rs 1.39 Cr, growth is coming from
+larger tickets and deeper per-borrower exposure, not acquisition, a classic MFI
+over-indebtedness early warning that the clean 2.18% GNPA does not yet reflect.
+Subsidiary PAT contribution collapsed to 1.96%, revealing non-lending burn. A Rs 62.43
+Cr FX finance-cost credit props PBT with reversal risk and no hedge note. Consol net
+worth sits Rs 275 Cr below standalone. FY27 consol-ROE guidance (the cleanest metric) is
 withheld. A 38.5 L warrant overhang dilutes later quarters.
 
 ---
 
 ## PROTOCOL VERDICT
 
-**PROCEED WITH CAVEATS.**
+**PROCEED WITH CAVEATS.** (Unchanged after grafting the client-base counter. That counter
+adds a forward-looking growth-quality FLAG but fires no pre-committed trigger and does
+not alter the operative cap, which remains the INDETERMINATE asset-quality mechanism.)
 
 Rationale. The mechanical gates all pass (no A2/A3 gate failed; auditor opinion
 unmodified; all pre-committed stop-loss/exit triggers NOT fired; all three escalation
@@ -694,15 +745,17 @@ movement walk, and ARC/DA-of-NPA volume behind the standalone GNPA fall to 2.18%
 SFL sector-ratio block, genuinely absent from the filing (preamble, FND-01); and (4) the
 GAAP-vs-adjusted overlay treatment behind the 16.75% escalation-gate ROE (A3-F16-02).
 Additional FLAGS surfaced prominently for the human: the QoQ ROA/ROE/NIM step-down and
-Q4-peak non-repeat (resolved toward "not sustained at 4.7%"), the subsidiary-PAT collapse
-(T3 WEAKENED), the FX-credit reversal risk, the consol-below-standalone net-worth gap,
-the warrant dilution overhang, SGAL zero-financials, and the withheld consol-ROE
-guidance. A4 FLAGS; the human decides whether to act on the formally met escalation gate.
-Decision Status is NOT changed by this review.
+Q4-peak non-repeat (resolved toward "not sustained at 4.7%"), the borrower-base-vs-AUM
+divergence (ticket-led growth, MFI over-indebtedness early warning), the subsidiary-PAT
+collapse (T3 WEAKENED), the FX-credit reversal risk, the consol-below-standalone
+net-worth gap, the warrant dilution overhang, SGAL zero-financials, and the withheld
+consol-ROE guidance. A4 FLAGS; the human decides whether to act on the formally met
+escalation gate. Decision Status is NOT changed by this review.
 
 *Reviewed 30-Jul-2026 | Sources: results_satin_q1fy27.pdf (Reg 33 board outcome +
-standalone/consolidated unaudited results + 2 LRRs), press release (6pp), investor
-presentation (42 slides). No concall this run (Role 5 N.A.).*
+standalone/consolidated unaudited results + 2 LRRs; consol Reg 52(4) 400-DPI repaired),
+press release (6pp), investor presentation (42 slides). No concall this run (Role 5
+N.A.).*
 
 ---
 
@@ -730,20 +783,22 @@ questions_for_management:
   - {q: "Is the Rs 36 Cr overlay a new charge or standing balance? Confirm Rs 21->Rs 36 Cr = Rs 15 Cr fresh charge; provide GAAP ROA/ROE incl. overlay vs FY27 targets", from_finding_id: ["A3-F14-01","A3-F16-02","A3-05"]}
   - {q: "Provide QoQ delta table for all 12 ratio-slide metrics; bridge the NIM/gross-yield step-down; show unadjusted (pre-MTM/forex) revenue and NIM", from_finding_id: ["A3-09","A3-05","A3-F16-01"]}
   - {q: "Why did subsidiary contribution to consol PAT collapse +25.1 Cr (Q4) to +2.36 Cr (Q1)? Quantify STL/SGAL/QTrino drag and any Q4 one-off; SHFL/SFL split", from_finding_id: ["FND-02","A3-F2-01","A3-F2-02","A3-03"]}
-  - {q: "Warrant allotment date/price and pro-forma diluted share count/EPS for full conversion of 38,50,000 warrants; deployment of the Rs 100.1 Cr", from_finding_id: ["FND-03","FND-06","A3-F10-01","A3-06"]}
+  - {q: "Warrant allotment date/price and pro-forma diluted share count/EPS for full conversion of 38,50,000 warrants; deployment of the Rs 100.1 Cr", from_finding_id: ["FND-03","FND-06","A3-F6-01","A3-F10-01","A3-06"]}
   - {q: "Reconcile the Rs 275 Cr (8.55%) consol-below-standalone net-worth gap and BVPS Rs 270 x 11.0 Cr vs statutory net worth", from_finding_id: ["FND-07","A3-07"]}
   - {q: "Is the Rs 62.43 Cr FX finance-cost credit fully hedged, and what is the reversal exposure on an adverse INR move? Why no hedge-policy note?", from_finding_id: ["FND-04"]}
   - {q: "Expected normalised ETR as deferred-tax credits unwind, given ETR ~24% below 25.17% statutory", from_finding_id: ["FND-05"]}
   - {q: "Funding/commissioning plan for STL, SGAL, QTrino (external vs parent equity); SGAL AIF first-close size/date; QTrino monetisation intent", from_finding_id: ["FND-08","FND-10","A3-01","A3-04"]}
-  - {q: "Why no consolidated-ROE / GNPA / NIM guidance for FY27 (only standalone credit cost and ROA)? What underpins the FY2030 AUM revision to Rs 32,000 Cr?", from_finding_id: ["A3-10","A3-04"]}
+  - {q: "Why no consolidated-ROE / GNPA / NIM guidance for FY27 (only standalone credit cost and ROA)? What underpins the FY2030 AUM revision to Rs 32,000 Cr?", from_finding_id: ["A3-10","A3-04","A3-F6-01"]}
   - {q: "Drafting-discipline: consol LRR 'Reg 53' vs 63; SCNL AUM shown 13,312/12,882/12,856; states 30 vs 32; 'xx' Active-Clients token - being corrected?", from_finding_id: ["FND-09","A3-08","A3-02"]}
+  - {q: "AUM grew +22-27% YoY but active clients only ~3% (34 vs 33 lakh) and new-client adds fell 2.5->1.5 lakh at ~Rs 61,000 JLG ticket. What share of AUM growth is new borrowers vs larger tickets, and what is the exposure/active-loans per borrower trend?", from_finding_id: ["A5-graft-client-base","A3-11"]}
 monitorables:
-  - {item: "Promoter Rs 100.1 Cr warrant infusion (Trishashna, 38.5L @ Rs 260)", implied_date: "in-principle 2026-07-27; allotment pending; conversion within 18 months", source_ref: "Note 9 ln 275-283 / PR 132 / s3 L104"}
+  - {item: "Promoter Rs 100.1 Cr warrant infusion (Trishashna, 38.5L @ Rs 260)", implied_date: "in-principle 2026-07-27; allotment pending; conversion within 18 months", source_ref: "Note 9 ln 275-283 / PR 132 / s3 L104 (A3-F6-01, A3-F10-01)"}
   - {item: "STL Core Banking commercial go-live", implied_date: "2026-09-30", source_ref: "PR 196-197 / s32 L1034"}
   - {item: "SGAL Cat II AIF first close + first deployment (target corpus Rs 200 Cr)", implied_date: "Q2 FY27", source_ref: "PR 212 / s5 L147 / s33 L1066"}
   - {item: "FY27 standalone credit-cost guidance 3.0-3.5%", implied_date: "FY27", source_ref: "PR 127-128 / s6 L171"}
   - {item: "FY27 standalone ROA guidance 3.5-4.0%", implied_date: "FY27", source_ref: "s6 L171"}
   - {item: "FY27 consol AUM growth 20-25% (Rs 18,200-18,900 Cr)", implied_date: "FY27", source_ref: "s6 L160-161"}
+  - {item: "Client-base growth vs AUM growth divergence; new-client run-rate; average-ticket / exposure-per-borrower trajectory (MFI over-indebtedness watch)", implied_date: "every quarter", source_ref: "s16/L467, s18/L534, s22/L642-645, s22/L658-660, s36/L1147"}
   - {item: "Kerala / South India build-out", implied_date: "2026-06 initiated", source_ref: "PR 134 / s20 L586"}
   - {item: "FY2030 AUM target Rs 32,000 Cr (revised from Rs 25,000 Cr)", implied_date: "FY2030", source_ref: "s5 L127-129"}
   - {item: "Non-MFI portfolio share to 30%", implied_date: "2030", source_ref: "s5 L140-141"}
@@ -753,11 +808,13 @@ monitorables:
 flags:
   - "Escalation gate MET (all 3 conditions) on reported basis; consol ROE 16.75% clears 16% floor by only 75 bps and is overlay-flattered to 20.39%"
   - "Asset-quality mechanism INDETERMINATE: no gross write-offs / ECL walk / ARC-DA-of-NPA / Stage-2 disclosed; standalone GNPA fall to 2.18% unverifiable"
-  - "Consolidated + SFL sector NPA ratios GENUINELY ABSENT from filing (consol Reg 52(4) terminates at row 18; OCR-repair confirmed)"
+  - "Consolidated + SFL sector NPA ratios GENUINELY ABSENT from filing (consol Reg 52(4) terminates at row 18; net worth/PAT/EPS were 400-DPI OCR-repaired and are legible)"
   - "Q4 FY26 ROA 4.71% did NOT repeat; consol ROA/ROE/NIM stepped down QoQ (4.71->3.30 / 23.31->16.75 / 15.20->13.21)"
   - "Rs 36 Cr overlay grew Rs 15 Cr QoQ (fresh charge); ROA/ROE headlines add it back (non-GAAP, ~+300 bps)"
+  - "GROWTH QUALITY: AUM +22-27% YoY but active clients only ~3% (34 vs 33 lakh) and new-client adds fell 2.5->1.5 lakh; ticket-led growth on near-static borrower base = MFI over-indebtedness early warning (grafted A5 counter)"
   - "Subsidiary PAT contribution collapsed 18.33% -> 1.96% of standalone (T3 WEAKENED); ~Rs 3.4 Cr undisclosed non-lending burn"
-  - "Rs 62.43 Cr FX finance-cost credit offsets Rs 57.11 Cr FV loss; no hedge-policy note; reversal risk"
+  - "PPOP growth genuinely operational: FX finance-cost credit offset by MTM/FV loss, net treasury effect on PPOP ~Rs 1 Cr YoY (counter does NOT survive)"
+  - "Rs 62.43 Cr FX finance-cost credit offsets Rs 57.11 Cr FV loss; no hedge-policy note; reversal risk on PBT"
   - "Consol net worth Rs 2,943.62 Cr is Rs 275.31 Cr (8.55%) below standalone Rs 3,218.93 Cr"
   - "38,50,000 warrant dilution overhang (~3.5% of shares); basic = diluted EPS today, dilution lands later"
   - "~Rs 3,270 Cr (~25% of standalone AUM) off-book/assigned, unquantified; DA income lumpy (130 -> 92 QoQ)"

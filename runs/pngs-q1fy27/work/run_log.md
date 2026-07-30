@@ -28,3 +28,11 @@
 - A4 re-merged (results + presentation) -> review_pngs_q1fy27_merged.md canonical. Verdict HOLDS PROCEED WITH CAVEATS; cash STILL INDETERMINATE (deck did NOT provide Q1 cash flow). Deck resolved monitoring #5 (AOV +8% AMBER). 14 mgmt questions.
 - A5 re-audit COMPLETE (first pass).
 - Notion: Key Notes prepended (now 5 entries preserved); presentation merged-update section + A3 deck findings + 14-question table + merged verdict + A5 proof appended. Decision Status WATCHLIST unchanged.
+
+## CONCALL OUTCOME (29-Jul-2026)
+- A1 PASS (text transcript, 100% content coverage, 265 lines, mixed units flagged).
+- A2 PASS (103 turns, 35 questions, 76 mgmt numbers, 3 zero-standing; count-reconciled).
+- A3 PASS (17/17, 26 findings; central F17.1 CONFIRMATORY-NEGATIVE: no Q1 CFO, Rs30 Cr FG build dismissed as routine; F14.1 impossible finance-cost split; F14.2 AOV declining; F17.4 CEO absent from Q&A; R1/R2/R3 confirmations).
+- A4 re-merged all 3 docs (results + presentation + concall) -> review_pngs_q1fy27_merged.md canonical (overwrote 2-doc version, preserved in git). Role 5 LIVE: interim engagement 81%, grade B-, archetype COMMITTED & CREDIBLE candidate w/ OVERPROMISER-risk, net impact MAINTAINED. Verdict HOLDS PROCEED WITH CAVEATS; cash STILL INDETERMINATE. 18 mgmt questions.
+- A5 re-audit COMPLETE (first pass).
+- Notion: Key Notes prepended (now 6 entries preserved); concall Role 5 section + guidance table + silence audit + concall A3 findings + 3-doc verdict + A5 proof appended. Decision Status WATCHLIST unchanged.

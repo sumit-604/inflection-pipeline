@@ -1,8 +1,46 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_mtar_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 32
+formfeed_count: 32
+line_count: 823
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (all tables and chart data labels explicitly stated "Rs. Cr" / "Rs Cr" throughout; no lakhs/millions figures present)
+ocr_pages: [24]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-30
+=== END HEADER ===
+
+NOTES (mechanical, not interpretive):
+- Source is a 32-slide (960x540, 16:9) PowerPoint-derived investor presentation PDF.
+- Primary extraction via `pdftotext -layout`. All 32 pages yielded native embedded
+  text (chart data labels, axis values, percentages are text objects in the source
+  PPTX, not raster images), so pdftotext captured revenue-split figures, order book
+  waterfall values, margin percentages, working-capital days, RoCE/RoE/D-E series,
+  and shareholding-pattern series without needing rasterisation, EXCEPT page 24.
+- Page 24 ("Annexure" divider) extracted at 82 characters (< 100-char threshold),
+  triggering the OCR fallback procedure: rasterised at 200dpi via `pdftoppm -jpeg`
+  and OCR'd via `tesseract`. OCR output is merged inline at [OCR page 24] below,
+  with a flagged discrepancy against the pdftotext value (see inline note) -
+  presented verbatim, not resolved by this agent.
+- [page N] markers are on their own line for every one of the 32 pages; each
+  resolves 1:1 to a form-feed-delimited page in the source pdftotext output.
+- No page content was reflowed; column/spatial structure from -layout is preserved
+  as extracted (chart series ordering as emitted by pdftotext is NOT guaranteed to
+  match x-axis label order for multi-series charts, e.g. page 8, page 30 - this is
+  a pdftotext reading-order artifact of the source graphic, not an extraction gap;
+  flagged here for downstream agents, not resolved).
+
+=== BEGIN EXTRACTED TEXT ===
+[page 1]
 MTAR Technologies Limited
     Investor Presentation – July 2026
 
     Please click here for corporate video
-Safe Harbor
+
+[page 2]
+Safe Harbor
 
 This presentation and the accompanying slides (the “Presentation”), which have been prepared by MTAR Technologies Limited (the “Company’), have been prepared solely
 for information purposes and do not constitute any offer, recommendation or invitation to purchase or subscribe for any securities, and shall not form the basis or be relied
@@ -30,7 +68,9 @@ completeness
 
 
                                                                                                                                                                                2
-A leader in critical and differentiated
+
+[page 3]
+A leader in critical and differentiated
 engineered products
 
   MD’s Statement & Key Initiatives
@@ -41,7 +81,9 @@ engineered products
   Enhancement
 
   Annexure
-Management Commentary
+
+[page 4]
+Management Commentary
 
 
 
@@ -66,7 +108,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
 
                                                                                                                                                          4
-Key Initiatives taken over the past 5 years
+
+[page 5]
+Key Initiatives taken over the past 5 years
 
                                           Addition of New Products in Civil Nuclear, Clean Energy and Aerospace & Defence Verticals
 • Added new products         • In Clean Energy,                • Successfully qualified first articles     • Developed and successfully           • More than 25% of the          • The company has also
@@ -99,7 +143,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
 
                                                                                                                                                                                                                   5
-Quarterly Highlights
+
+[page 6]
+Quarterly Highlights
 & Business Updates
 
 
@@ -107,7 +153,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
                        Celebrating55   Years
                        of Engineering Excellence
-Sector: Clean Energy - Civil Nuclear Power
+
+[page 7]
+Sector: Clean Energy - Civil Nuclear Power
 
            Revenue (in Rs. Cr)              Highlights
 
@@ -138,7 +186,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
                                              potential order inflows from construction of new reactors, refurbishment of reactors and maintenance contracts.
 
                                                                                                                                                                 7
-Sector: Aerospace & Defence
+
+[page 8]
+Sector: Aerospace & Defence
 
           Revenue (in Rs. Cr)               Highlights
 
@@ -171,7 +221,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
 
                                                                                                                                                                  8
-Sector: Clean Energy - Fuel Cells, Hydel & Others
+
+[page 9]
+Sector: Clean Energy - Fuel Cells, Hydel & Others
 
             Revenue (in Rs. Cr)               Highlights
 
@@ -202,7 +254,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
                                                clean product portfolio
 
                                                                                                                                                                     9
-Sector: Products & Others
+
+[page 10]
+Sector: Products & Others
 
            Revenue (in Rs. Cr)               Highlights
 
@@ -234,7 +288,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
 
                                                                                                                                            10
-Q1FY27 Financial Performance
+
+[page 11]
+Q1FY27 Financial Performance
 
                     Revenue (Rs. Cr)                                              Gross Profit (Rs. Cr)                                               EBIDTA (Rs. Cr)
 
@@ -271,7 +327,9 @@ PARVAT SRINIVAS REDDY     term financial performance, our focus remains on build
 
 
  Margins                                                                                                                                                                          11
- Q1FY27 Consolidated Profit & Loss Statement
+
+[page 12]
+ Q1FY27 Consolidated Profit & Loss Statement
 Particulars (Rs. Cr)                                                                           Q1 FY27             Q4 FY25   Y-o-Y    Q4 FY26   Q-o-Q   FY26
 Revenue from Operations                                                                          360.7              156.6    130.4%    306.1    17.9%   876.2
 Cost of Materials Consumed                                                                       204.3              92.8               165.0            503.5
@@ -294,7 +352,9 @@ PAT %                                                                           
 * ₹3.8 crore has been recorded as an Exceptional Item on account of the statutory impact of the new Labour Codes
 
                                                                                                                                                                 12
-Revenue Outlook & Robust Order Book
+
+[page 13]
+Revenue Outlook & Robust Order Book
                           Geographical Revenue Break-up (%)                                                              Order book Build-Up (Rs. Cr)
 
                             19%                                             18%
@@ -325,7 +385,9 @@ PAT %                                                                           
     surpassing the entire FY26 order inflow of Rs 2,453.3 Cr
 
                                                                                                                                                                                      13
-Working Capital Management
+
+[page 14]
+Working Capital Management
 
                                                                        Net Working Capital (in Days)
 
@@ -360,7 +422,9 @@ PAT %                                                                           
 
 
                                                                                                                                        14
-New Product Development &
+
+[page 15]
+New Product Development &
 Strategic Capacity Enhancement
 
 
@@ -368,7 +432,9 @@ Strategic Capacity Enhancement
 
                       Celebrating55   Years
                       of Engineering Excellence
-Product Portfolio – Civil Nuclear Power
+
+[page 16]
+Product Portfolio – Civil Nuclear Power
 
                                                                              Nuclear Sector Products
 
@@ -408,7 +474,9 @@ nuclear reactor
                                                                                                                                                             allow private participation
 
                                                                                                                                                                                               16
-Pivotal Role in India’s PFBR Programme
+
+[page 17]
+Pivotal Role in India’s PFBR Programme
 
 
 
@@ -426,7 +494,9 @@ nuclear reactor
 
 
                                                                                                                       17
-Product Portfolio – Aerospace and Defence
+
+[page 18]
+Product Portfolio – Aerospace and Defence
 
                                                                    Aerospace & Defence Sectors
 
@@ -464,7 +534,9 @@ Assemblies for                                                                  
 
 
                                                                                                                                                                                          18
-New Product Development – Aerospace & Defence
+
+[page 19]
+New Product Development – Aerospace & Defence
 
 Catering to Prestigious Programs in Domestic Defence                                    MNC Aerospace
 
@@ -497,7 +569,9 @@ Catering to Prestigious Programs in Domestic Defence                            
 
 
                                                                                                                                                     19
-Product Portfolio – Clean Energy
+
+[page 20]
+Product Portfolio – Clean Energy
 
                                                                                Clean Energy Sector
 
@@ -520,7 +594,9 @@ Fuel Cells             Cells
 
 
                                                                                                                                                                                          20
-Expansion & Diversification Plans – Clean Energy and Oil & Gas
+
+[page 21]
+Expansion & Diversification Plans – Clean Energy and Oil & Gas
 
     Setting Up of Green Field Facility to Cater to Oil & Gas and                          Setting Up New Facility to support Phase 3 Expansion of Clean
           Phase 2 Expansion of Clean Energy – Fuel Cells                                                        Energy – Fuel Cells
@@ -538,7 +614,9 @@ Fuel Cells             Cells
 
 
                                                                                   21
-New Customers added over the past 2-3 years
+
+[page 22]
+New Customers added over the past 2-3 years
 
   Clean Energy – Data Center                Clean Energy – Hydro Power,
                                                                                                    MNC Aerospace                                Oil & Gas and Others
@@ -557,7 +635,9 @@ Fuel Cells             Cells
 
 
                                                                                                                                                                        22
-Strategic Priorities
+
+[page 23]
+Strategic Priorities
 
 
          Drive Operational Excellence                              Maintain Capital Discipline
@@ -594,14 +674,26 @@ Accelerate Topline Growth                                                       
 
 
                                                                                                                                         23
-Annexure
+
+[page 24]
+Annexure
 
 
 
 
            Celebrating55   Years
            of Engineering Excellence
-Historical Consolidated Profit & Loss Statement
+
+[OCR page 24]
+NOTE: Page under 100 extracted characters via pdftotext; rasterised (200dpi) and OCR'd per GATE A1 procedure.
+OCR raw output (tesseract):
+Celebrating 45 Years
+
+of Engineering Excellence
+DISCREPANCY: pdftotext embedded text object reads 'Celebrating55 Years' (i.e. 55); OCR misread the italicised numeral as '45'. Both renderings preserved verbatim for downstream reconciliation; no numeric/financial data on this slide beyond the anniversary tagline and 'Annexure' section header.
+
+[page 25]
+Historical Consolidated Profit & Loss Statement
 Particulars (Rs. Cr)                                            FY26    FY25    FY24    FY23
 Revenue from Operations                                         876.2   676.0   580.8   573.8
 Cost of Materials Consumed                                      503.5   349.5   318.4   315.6
@@ -623,7 +715,9 @@ Profit for the year                                             94.0    52.9    
 PAT %                                                           10.7%   7.9%    9.7%    18.0%
 
                                                                                                 25
-Historical Balance Sheet – Equity & Liabilities
+
+[page 26]
+Historical Balance Sheet – Equity & Liabilities
 EQUITY & LIABILITIES (Rs. Cr)                     Mar-26    Mar-25   Mar-24    Mar-23
 Equity Share Capital                               30.8      30.8     30.8      30.8
 Other Equity                                      791.8     698.2    645.6     589.4
@@ -647,7 +741,9 @@ Total Current Liabilities                         726.8     290.1    207.8     3
 TOTAL EQUITY & LIABILITIES                        1,743.4   1130.3   1,007.7   1,063.3
 
                                                                                          26
-Historical Balance Sheet - Assets
+
+[page 27]
+Historical Balance Sheet - Assets
 ASSETS (Rs. Cr)                              Mar-26    Mar-25   Mar-24    Mar-23
 Property, Plant and Equipment                497.2     436.1    339.8     290.2
 Capital Work-in-progress                      34.4      53.2     72.9      64.4
@@ -671,7 +767,9 @@ Total Current Assets                         1,128.2   618.1    564.8     696.7
 TOTAL ASSETS                                 1,743.4   1130.3   1,007.7   1,063.3
 
                                                                                     27
-Abridged Consolidated Cash Flow Statement
+
+[page 28]
+Abridged Consolidated Cash Flow Statement
 
 Particulars (Rs in Cr)                            31-Mar-26   31-Mar-25   31-Mar-24   31-Mar-23   Net Cash Flow from Operating Activates
 
@@ -702,7 +800,9 @@ Net Change in cash and cash equivalents             -0.9        -37.2       27.0
 
 
                                                                                                                                              28
-Performance in Charts
+
+[page 29]
+Performance in Charts
 
                Revenues (Rs. Cr)                         EBITDA (Rs. Cr)                         PAT (Rs. Cr)
 
@@ -738,7 +838,9 @@ Net Change in cash and cash equivalents             -0.9        -37.2       27.0
 
 
                                                                                                                             29
-   Capital Disciplined Growth
+
+[page 30]
+   Capital Disciplined Growth
 
                                 RoCE* (%)                                                                 RoE# (%)                         Debt to Equity (x)
 
@@ -768,7 +870,9 @@ Net Change in cash and cash equivalents             -0.9        -37.2       27.0
 
 Capital Employed = Total Assets – Current Liabilities
                                                                                                                                                                          30
-Ownership Structure
+
+[page 31]
+Ownership Structure
 
 Stock Information
 
@@ -803,7 +907,9 @@ Nippon Life India Trustee Ltd-     HSBC Mutual Fund - HSBC       HDFC Mutual Fun
                                                                                              Public      34.58%              27.19%             24.59%   23.51%
 
                                                                                                                                                                   31
-COMPANY :                              INVESTOR RELATIONS ADVISORS :
+
+[page 32]
+COMPANY :                              INVESTOR RELATIONS ADVISORS :
 
 
 
@@ -821,4 +927,24 @@ Website: www.mtar.in                   Mr. Parth Patel
                                        Parth.patel@in.mpms.mufg.com
 
                                        Meeting Request            Link
-
+=== END EXTRACTED TEXT ===
+
+```yaml
+stage: A1-extractor
+company: "MTAR"
+quarter: "Q1 FY27"
+doctype: "presentation"
+model: claude-sonnet-5
+status: complete
+page_count: 32
+formfeed_count: 32
+line_count: 823
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1 (native Rs. Cr throughout; no conversion needed)"
+ocr_pages: [24]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/mtar-q1fy27/work/extract_presentation_mtar_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

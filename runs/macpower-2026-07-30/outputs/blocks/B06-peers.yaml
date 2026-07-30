@@ -1,0 +1,45 @@
+stage: B06-peers
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "JYOTICNC-Concall_Jun_2026_Transcript.pdf and KLBRENG-B-Concall_Jun_2026_Transcript.pdf are labeled Jun 2026 but the transcripts show calls held May 27-29, 2026 (Q4/FY26 results) - filenames mislabeled by one month; content used as Q4 FY26 evidence."
+  - "Q5 (defence tender conversion) shows the most consequential mismatch: JYOTICNC's aerospace/defence order book is far larger and faster-growing than Macpower's described conversion rate, but the two likely bid into different defence sub-segments (private/global aerospace primes vs PSU ordnance tenders) - not a clean like-for-like."
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Indian CNC/machine-tools industry growing 15-30%; IMTMA Rs35,000cr (2026) to Rs54,000cr (2030) trajectory", peers: [JYOTICNC]}
+  - {claim: "Import-component lead-time/cost pressure driving large finished-goods or import inventory builds", peers: [JYOTICNC]}
+  - {claim: "Peers seeing multi-quarter delays in government land/policy approvals for capacity expansion", peers: [KLBRENG]}
+  - {claim: "Multi-year path from high-teens to ~25% EBITDA margin via backward integration and premium-mix shift", peers: [JYOTICNC, KLBRENG, ADOR]}
+contradicted:
+  - {claim: "~10-13% tender-bid conversion and single-digit-of-revenue defence contribution despite Rs300-400cr bid pipelines is consistent with peers", contradicting_peer: "JYOTICNC", quote_anchor: "JYOTICNC Q4 FY26 call (May 2026): 'more than INR800 crores of aerospace and defense' executed in FY26, ~75% from India; JYOTICNC Q2 FY26 call: Rs180cr India ordnance-factory orders in a single quarter, 27-46% of quarterly order intake from aerospace/defence"}
+unverifiable:
+  - {claim: "Macpower's claimed market share (4.5% vs 1-2%) reconciles with peers' own disclosed market-size and share estimates", peers_checked: [ADOR, JYOTICNC, KLBRENG]}
+peer_coverage_map:
+  - {peer: "JYOTICNC", quarter: "Q1 FY26 (Aug 2025 call)", usage: "SUBSTANTIVE"}
+  - {peer: "JYOTICNC", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE"}
+  - {peer: "JYOTICNC", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE"}
+  - {peer: "JYOTICNC", quarter: "Q4 FY26 (call held May 2026, file labeled Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "ADOR", quarter: "Q2 FY25 (Nov 2024 call)", usage: "CITED-ONLY"}
+  - {peer: "ADOR", quarter: "Q4/FY25 (May 2025 call)", usage: "CITED-ONLY"}
+  - {peer: "ADOR", quarter: "Q2/H1 FY26 (Oct 2025 call)", usage: "SUBSTANTIVE"}
+  - {peer: "ADOR", quarter: "Q4/FY26 (May 2026 call)", usage: "SUBSTANTIVE"}
+  - {peer: "KLBRENG", quarter: "Q1 FY26 (Aug 2025 call)", usage: "SUBSTANTIVE"}
+  - {peer: "KLBRENG", quarter: "Q2 FY26 (Nov 2025 call)", usage: "CITED-ONLY"}
+  - {peer: "KLBRENG", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE"}
+  - {peer: "KLBRENG", quarter: "Q4/FY26 (call held May 2026, file labeled Jun 2026)", usage: "SUBSTANTIVE"}
+industry_cross_read:
+  demand: "JYOTICNC and KLBRENG show strong, capacity-constrained demand (JYOTICNC >20% CAGR CNC consumption, order book growing despite turning away business; KLBRENG inquiry pipeline doubled to Rs4,000cr) while ADOR shows muted growth (~3-5%/yr, flattish volumes). Strength concentrated in specialised/high-precision equipment."
+  pricing_inputs: "None of the three peers show genuine pricing power; margin gains driven by mix, scale and cost management. JYOTICNC per-machine realisation and margin falling even as blended EBITDA holds via mix/scale."
+  capex_cycle: "Genuine industry-wide capacity race among JYOTICNC (6,000 to 16,000 machines/yr, ~Rs450cr capex) and KLBRENG (targeting Rs800-1,000cr revenue FY27/28), while ADOR holds capex to ~Rs30-40cr/yr maintenance. Macpower is not a lone expander in a cautious peer set."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "JYOTICNC: ongoing French export-control investigation into Huron subsidiary over potential re-export of CNC machines toward Russia; GM suspended; Rs67cr revenue deferred; resolution could take 2-5 years (Q4 FY26 call)"
+  - "JYOTICNC: risk that faster-growing imports permanently capture share ahead of domestic capacity (Q4 FY26 call)"
+  - "KLBRENG: Middle East conflict disrupted international shipping and industrial-gas availability, delaying export dispatches 2-3 months (Q4 FY26 call)"
+  - "KLBRENG: manpower/talent scarcity named as ongoing execution risk (Q1 FY26 call)"
+  - "ADOR: ~65% of welding-equipment segment is import-served (largely Chinese)"
+net_narrative_effect: "complicates"

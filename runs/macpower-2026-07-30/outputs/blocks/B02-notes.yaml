@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables +57.5% YoY vs revenue +8.6%, turnover down 33% (13.97x to 9.32x), >6mo ageing up to 15.4% of gross from 12.2%; compounded by trade payables/MSME dues +28-81% and inventory days +23% (Note 9, Note 18, Note 7)"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Trade receivables +57.5% YoY (Rs3,432.40 lakh vs Rs2,179.51 lakh) against revenue +8.6%; turnover down 33% (9.32x vs 13.97x); >6-month ageing up to 15.4% from 12.2% of gross", note_ref: "Note 9, p.149/174; Note 38vi, p.185", rating: "Red Flag"}
+  - {rank: 2, finding: "Trade payables +28.0% YoY, MSME dues +81.4% (Rs2,553.13 lakh); payable turnover down 28%, implied days ~70 to ~98", note_ref: "Note 18, pp.155-156/176; Note 38vi, p.185", rating: "Red Flag"}
+  - {rank: 3, finding: "Net margin improvement (12.00% vs 11.71%) is substantially a mechanical effect of raw-material inventory build depressing Cost of Material Consumed (-15.2%), while Employee Benefit Expense (+29.7%) and Other Expenses (+38.1%, Misc Expense +97.0% unexplained) far outpace revenue (+8.6%)", note_ref: "Note 24/25/26/28, p.159-160; Note 7, p.148", rating: "Red Flag"}
+  - {rank: 4, finding: "Fire incident 2-Feb-2025 destroyed Rs439.09 lakh of finished-goods inventory; Rs362.39 lakh insurance claim recognised but survey/settlement pending; net exceptional loss Rs76.70 lakh", note_ref: "Note 29, p.160-161; Note 39, p.182", rating: "Red Flag"}
+  - {rank: 5, finding: "Note 12 certifies Nil loans to related parties/KMPs, yet Note 35 discloses a Loan Given of Rs10.10 lakh to CFO Vishal Mehta at year-end", note_ref: "Note 12, p.151; Note 35, p.169", rating: "Red Flag"}
+  - {rank: 6, finding: "Investment portfolio (Rs516.16 lakh) fully liquidated to zero; Other Income -73.9% (Rs35.55 lakh vs Rs136.36 lakh); Rs23.13 lakh of FY25 PBT from now-extinguished FVTPL gains", note_ref: "Note 8, p.148; Note 23, p.159; Note 37, pp.178-180; Cash Flow p.132/133", rating: "Watch"}
+  - {rank: 7, finding: "Capex +51.5% YoY (Rs1,597.77 lakh vs Rs1,054.70 lakh); active CWIP Rs485.84 lakh with no capital commitment disclosure found", note_ref: "Cash Flow p.132; Note 3, p.158", rating: "Watch"}
+  - {rank: 8, finding: "Raw material inventory +50.9% YoY (Rs10,096.04 lakh) vs revenue +8.6%; inventory turnover down 19%, days up ~181 to ~223", note_ref: "Note 7, p.148; Note 38vi, p.185", rating: "Watch"}
+  - {rank: 9, finding: "Net cash cushion shrank: Net Debt -Rs284.17 lakh (FY25) vs -Rs884.17 lakh (FY24); Gearing Ratio -2.03% vs -8.02%", note_ref: "Note 36(f), p.177", rating: "Watch"}
+  - {rank: 10, finding: "Returns compressing: ROE 17.65% (from 20.15%), ROCE 23.75% (from 26.70%), Return on Investment 45.92% (from 51.34%), Net Capital Turnover 1.83x (from 2.02x)", note_ref: "Note 38(vi), p.185", rating: "Watch"}
+  - {rank: 11, finding: "Three unreconciled boilerplate/template instances: gratuity Parameter-risk narrative (5%/10% vs actual 12.00%); FX Net Exposure table transposed; Market Risk text claims FX receivables that the FX table shows as Nil", note_ref: "Note 34, pp.162-166; Note 36, pp.170-171", rating: "Watch"}
+  - {rank: 12, finding: "WTD/CEO Nikesh J. Mehta holding fell 13.41% to 8.61% (-480,006 shares); released shares absorbed by MD's family branch (Reyna +200,000, new entrant Vincy +280,000), not CEO's own family; total promoter group unchanged 73.18%", note_ref: "Note 13(f), pp.152-153", rating: "Watch"}
+  - {rank: 13, finding: "Lease liability rose Rs47.55 lakh to Rs288.08 lakh; no Ind AS 116 discount rate disclosed; Rs117.95 lakh (41%) due beyond 5 years", note_ref: "Note 16, p.154; Note 33, p.162", rating: "Watch"}
+  - {rank: 14, finding: "Aggregate employee Loans & Advances up 54.3% (Rs72.19 lakh vs Rs46.78 lakh); Notional Interest on interest-free employee loans up 5.4x (Rs5.16 lakh vs Rs0.95 lakh)", note_ref: "Note 12, p.151; Note 23, p.159", rating: "Watch"}
+  - {rank: 15, finding: "Quarterly stock-statement vs bank-return reconciliation gap: Jun-24 Rs53.49 lakh, Sep-24 Rs221.86 lakh (largest), Mar-25 Rs57.06 lakh, explained only as provisional-figures timing", note_ref: "Note 47, p.184", rating: "Watch"}
+red_flags:
+  - "Reported net margin improvement is substantially a mechanical inventory-accounting effect (raw material build depressing Cost of Material Consumed -15.2%) masking Employee Benefit Expense +29.7% and Other Expenses +38.1% (Misc Expense +97.0% unexplained), both far outpacing revenue +8.6% (Note 7, 24, 25, 26, 28)"
+  - "Trade receivables +57.5% YoY vs revenue +8.6%, turnover down 33%, ageing deteriorating (Note 9)"
+  - "Trade payables +28.0% YoY, MSME dues +81.4%, payable turnover down 28% (Note 18)"
+  - "Fire incident: Rs439.09 lakh inventory loss, Rs362.39 lakh insurance claim unresolved at year-end (Note 29, Note 39)"
+  - "Note 12 (Nil loans to KMPs, certified) directly contradicts Note 35 (Rs10.10 lakh Loan Given to CFO Vishal Mehta)"
+questions_for_mgmt:
+  - "Note 12 certifies Nil loans to related parties/KMPs, yet Note 35 discloses a Rs10.10 lakh Loan Given to CFO Vishal Mehta at year-end. Which is correct, and what are the terms of this balance?"
+  - "Receivable days rose ~26 to ~39 while payable days rose ~70 to ~98 and MSME dues grew 81.4% in the year the investment book was fully liquidated. Is this a deliberate financing choice, and what is the normalisation timeline into FY26?"
+  - "Employee Benefit Expense grew 29.7% and Other Expenses grew 38.1% (Misc Expense +97.0%, unexplained) against revenue +8.6%. What drove Miscellaneous Expense, and is the current net-margin improvement sustainable once the raw-material inventory build normalises?"
+  - "What is the settlement status/timeline of the Rs362.39 lakh fire insurance claim, and how much of the 51.5% YoY capex increase relates to rebuilding that capacity versus unrelated expansion?"
+  - "What was the rationale and timing for WTD and CEO Nikesh J. Mehta's individual shareholding reduction from 13.41% to 8.61%, with released shares going to the Managing Director's family branch rather than his own family holding?"
+receivables_trend: "deteriorating - gross receivables >6 months rose to 15.4% of gross (FY25) from 12.2% (FY24); net receivables +57.5% YoY against revenue +8.6%; turnover down 33% (9.32x vs 13.97x), implied days ~26 to ~39 (Note 9, p.149/174; Note 38vi, p.185)"
+restatements_found: []
+going_concern_language: "NONE - explicit affirmative going concern statement in Note 1 (Basis of Preparation, p.135); no adverse or qualifying language found anywhere in the notes across three passes"

@@ -36,5 +36,12 @@ See thesis_brief_notion.md for the inline brief passed to A3/A4.
 - presentation: 42 slides / 240 line items. FLAGS: slide16 Active Clients "xx" placeholder (company artifact), SGAL no metrics disclosed, DELTA_OMITTED on ratio tables + income statements, CHART_LAYOUT_AMBIGUOUS on 8 chart slides.
 
 ### Extraction repair
-- A1 targeted OCR-repair of results pages 13-14 (Reg 52(4)) at 400 DPI invoked before A3/A4 rely on consolidated asset-quality ratios. Recoverable consolidated figures confirmed: Net worth Rs 2,943.62 Cr, PAT Rs 122.65 Cr, EPS 11.45/11.15, D/E 3.97x, debt/assets 0.78, net profit margin 16.04%.
+- A1 targeted OCR-repair of results Reg 52(4) tables at 400 DPI (standalone table is on PDF page 7, consolidated on page 14 — A2's "page 13" was a mislabel). Standalone sector ratios recovered: GNPA 2.18% / NNPA 0.33% / PCR 84.66% / CRAR 26.74% / LCR 134.89%; D/E 3.15x; Net worth Rs 3,218.93 Cr; PAT Rs 120.29 Cr; net profit margin 17.91%. Consolidated: D/E 3.97x; Net worth Rs 2,943.62 Cr; PAT Rs 122.65 Cr; net profit margin 16.04% — consolidated Reg 52(4) genuinely omits sector NPA ratios (confirmed at pixel level; the earlier "ECL" fragment was seal-stamp OCR noise).
+
+### GATE A3 (F1-F17 all marked, every FINDING line-cited) — ALL PASS
+- results: 10 FINDING / 5 PASS / 2 N.A., no blanks. Both LRRs (J C Bhalla & Co.) UNMODIFIED — no EoM / Going Concern / KAM. Key: GNPA fall + Rs 36 Cr overlay not reconcilable from filing; Rs 57.11 Cr FV loss vs Rs 62.43 Cr FX credit no hedge note; consol net worth 8.55% below standalone; ETR 23.85% on deferred-tax credit; Rs 100.1 Cr promoter warrant dilution.
+- press release: 6 FINDING / 1 PASS / 10 N.A., no blanks. +172% YoY off depressed base masks QoQ (PAT -24.3%); ROA/ROE ex-Rs 36 Cr overlay = non-GAAP; NNPA/write-offs/CoF absent.
+- presentation: 8 FINDING / 1 PASS / 8 N.A., no blanks. Q1 consol ROA 3.30% (Q4 4.71%), ROE 16.75% (23.31%), NIM 13.21% — Q4 ROA did NOT repeat; overlay grown Rs 21->36 Cr; SFL GNPA 3.5% (<5.0% trigger); GNPA-improvement mechanism undisclosed; FY27 guidance omits consol ROE; FY2030 AUM target raised 25,000->32,000 Cr.
+
+Escalation-gate inputs printed (A3 flags, A4 decides): consol PAT 123 / standalone 120 (>=110); standalone GNPA 2.18% (<=3.05%); consol ROE annualised 16.75% (>=16%); SFL GNPA 3.5% (<5.0%). Stop-loss: PAT<90 / GNPA>3.2 / SFL>5.5 — none breached on face.
 

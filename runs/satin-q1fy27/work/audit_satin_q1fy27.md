@@ -1,185 +1,218 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — SATIN CREDITCARE (NSE: SATIN) — Q1 FY27
+## RE-AUDIT v2 (dated 2026-07-30) — target: REVISED A4 merged review
 
-Target: `review_satin_q1fy27.md` (A4). Fresh context: audited only against A1
-extracts and A2 ledgers; A3 reasoning not consulted; all cites re-derived, not
-deferred to. Conversion Lakhs x0.01 = Rs Cr applied independently.
+Fresh context. Inputs seen: revised A4 review, the three A1 extracts, the three A2
+ledgers. A3 forensics files are NOT in my context by design; where the task asks me to
+confirm "every A3 finding produces a question", I verify against the finding-IDs A4
+itself carries and their mapping to Step 8.5 rows. Every number below is re-derived from
+the raw extract lines; I do not defer to A4's or A3's cites.
+
+Scope of this re-audit pass (per task): (a) confirm the prior-pass BLOCKING gap — the
+client-base / over-indebtedness counter — is now discharged across diagnostics, Bear
+column, monitorables, and a Questions-for-Management row; (b) confirm the Reg 52(4)
+consolidated sector-ratio absence is handled honestly and NOT substituted with
+standalone; (c) confirm the A3-F6-01 discharge and Reg 52(4) OCR wording are corrected;
+(d) full coverage, arithmetic, and adversarial re-run on the merits.
 
 ---
 
 ## 1. COVERAGE AUDIT
 
-Fresh grep + line-by-line re-enumeration of each extract, diffed against the A2
-ledgers and against A4's citations.
+Fresh grep pass vs A2 ledger counts.
 
-| Category | A2 count | My fresh count | Orphan rows (in ledger, absent from A4) | Status |
-|---|---|---|---|---|
-| Results — agenda items | 1 | 1 (extract ln 37-39) | none | PASS |
-| Results — statement blocks (std+consol P&L) | 2 | 2 | none | PASS |
-| Results — auditor LRRs / substantive paras | 2 / 13 | 2 / 13 (std 5 @ln90-145; consol 8 @ln467-552) | none (0D covers opinion, Other-Matters, balancing, Reg-53 title) | PASS |
-| Results — entities | 6 | 6 (ln 513-520) | none | PASS |
-| Results — notes | 32 | 32 (std 16 @240-428; consol 16 @653-802) | Note 3 (NCD security), Note 11 (project-finance NIL), Note 12-std (recovery ratings Rs 83.87 Cr) not in 0D table | PASS (0D is expressly "comparability-relevant"; these are nil/administrative "reviewed-no-finding" class; see Note A) |
-| Results — line items | 144 | 144 (std 70 + consol 74) reconciled to extract | none material | PASS |
-| Results — zero-standing rows | 29 | 29 | none | PASS |
-| Press release — disclosure units | 112 | 112 (44+19+2+10+6+20+11); 6 pages grep-confirmed | none | PASS |
-| Presentation — slides | 42 | 42 (`[page` grep = 42) | none | PASS |
-| Presentation — OCR dividers | 6 | 6 (pp 2,4,13,28,34,42) | none | PASS |
-| Presentation — KPI line items / footnotes | 240 / 55 | reconciled by sampling | none | PASS |
+| Category | A2 count | My fresh count | Method | Orphan / missing | Status |
+|---|---|---|---|---|---|
+| Results: statement blocks | 2 | 2 | `grep "Notes to the unaudited"` = 2 (std+consol) | none | PASS |
+| Results: notes (16+16) | 32 | 32 | 2 note-sets, 16 each; spot-verified Notes 4,5,6,7,8,9,10,13,14,15,16 both sides | none | PASS |
+| Results: Reg 52(4) std sector ratios | 5 (populated) | 5 | ln 403-407 a)GNPA 2.18 b)NNPA 0.33 c)PCR 84.66 d)CRAR 26.74 e)LCR 134.89 | none | PASS |
+| Results: Reg 52(4) consol sector ratios | flagged ABSENT | ABSENT (confirmed) | ln 782: table terminates row 18; no GNPA/NNPA/PCR/CRAR/LCR rows; 400-DPI repair confirms | none | PASS (see 1.1) |
+| Press release: disclosure units | 112 | reconciled (44+19+2+10+6+20+11) | bullets/table-rows/footnotes/headings/pages/prose/absent-standard | none | PASS |
+| Presentation: slides | 42 | 42 | `grep "^\[page "` = 42 | none | PASS |
+| Presentation: ratio-slide rows (17/19) | 24 | 24 | ln 480-491 / 545-556 all present, YoY/QoQ cells blank (DELTA_OMITTED) | none | PASS |
+| Presentation: client-base series (s22) | present | present | ln 641-660: New-clients 1.9/2.5/2.2/1.6/1.5; AUM/LO 1.08→1.39; AUM/branch 6.8→7.4 | none | PASS |
+| Presentation: ₹61,000 JLG ticket (s36) | present | present | ln 1147 "₹61,000 (JLG)" | none | PASS |
 
-**Reg 52(4) consolidated sector-ratio absence — handled honestly? YES.** A4
-treats consol GNPA/NNPA/PCR/CRAR/LCR as `ND` (preamble item 2; table 5.b; flags;
-verdict) and NEVER substitutes the standalone analogue. Independently confirmed
-against the extract: the OCR-repaired consol Reg 52(4) table (ln 759-783)
-"genuinely terminates at row 18 (Net profit margin) ... No GNPA/NNPA/PCR/CRAR/LCR
-rows exist below row 18" (ln 782). The lone SFL GNPA 3.5% used is correctly
-flagged DECK-ONLY (s31/L991), not filing. Clean pass on the core discipline test.
+**Orphan-row check (ledger rows absent from A4):** none. Every material ledger block is
+either cited or explicitly carried as ND / reviewed-no-finding in A4: full P&L (1L.a/b),
+all comparability notes (0D table), Reg 52(4) both statements, DA loan-transfer note
+(A3-F1-02/Q2), segment note, auditor paras (0D), warrants/ESOP (0C), funding & lender
+mix (5.a/monitorables), geography (5.b), subsidiaries (5.b/Q5/Q10), guidance (6B/6D),
+shareholding & price (6D/8B), the "xx" active-clients artifact + states 30-vs-32 (Q12),
+SGAL zero-financials (Q10/flags), absent-standard PR disclosures (NNPA/PAR buckets →
+ND / monitorables). No orphan.
 
-**Note A — A2 ledger staleness on consol Reg 52(4) (A2 housekeeping, not verdict-driving).**
-The A2 results ledger (rows 7.14.7-7.14.18) flags consol Net worth as garbled
-("2 1.98"), and NPAT / EPS / Operating-margin / Total-debts-to-assets as
-`OCR_DROPPED_LINE` / not-visible. The CURRENT A1 extract carries an OCR-REPAIRED
-consol table (ln 759-783, re-OCR at 400 DPI) with those cells CLEAN: Net worth
-Rs 2,94,361.98 L = 2,943.62 Cr (ln 769), NPAT 12,264.56 L = 122.65 Cr (ln 770),
-EPS 11.15/11.15 (ln 771-772), Net-profit-margin 16.04% (ln 781), Total-debts-to-
-assets 0.78 (ln 777). A4's PREAMBLE follows the stale ledger ("Net worth (ln
-771), NPAT and EPS ... garbled or dropped") yet the BODY correctly USES the
-repaired values (consol NW 2,943.62 in the net-worth-gap table and Q7; NPM 16.04%
-in 5.b). No row is dropped and every number A4 relies on ties to the extract, so
-this is not an orphan/missing-row FAIL — but A2 should refresh those six rows
-against the repaired extract, and A4's preamble line 46-48 mis-describes now-legible
-cells (cosmetic, self-corrected in-body).
+**Missing-from-ledger check (rows my fresh pass found, ledger lacks):** none.
 
-No orphan rows and no rows my fresh pass found that the ledger lacks.
-**COVERAGE: PASS.**
+### 1.1 Consolidated Reg 52(4) sector-ratio absence — handled honestly
+CONFIRMED CLEAN. Three independent checks:
+1. Extract ln 782 states the consolidated Reg 52(4) table genuinely terminates at row 18
+   (Net profit margin 16.04%); no GNPA/NNPA/PCR/CRAR/LCR/Tier/ECL row exists; the earlier
+   garbled "ECL" fragment was seal-stamp OCR noise, not a data row. This is an absence in
+   the SOURCE, not an OCR artifact.
+2. A4 carries consol GNPA/NNPA/PCR/CRAR/LCR as `ND` in every table that touches them
+   (1L.d note ln 239; 2.a has no consol GNPA row; 5.b line "Consol GNPA/NNPA/PCR/CRAR/LCR
+   = ND"). No standalone analogue is substituted for any absent consol cell — verified
+   cell by cell.
+3. The 400-DPI repair is genuine and legible in the extract: Net worth 2,94,361.98 L =
+   Rs 2,943.62 Cr (ln 769), NPAT 12,264.56 L = Rs 122.65 Cr (ln 770), EPS 11.15/11.15
+   (ln 771-772), NP-margin 16.04% (ln 781). A4's preamble item 1 describes exactly this.
+   The OCR wording is CORRECTED from the prior pass (repair scope limited to the legible
+   rows; sector ratios explicitly NOT claimed repaired, flagged genuinely absent). PASS.
+
+### 1.2 One non-blocking observation (not a FAIL, no loop-back)
+The A2 results ledger enumerated consolidated Note 14 as 19 rows (7.14.1–7.14.19),
+including 7.14.19 "sector-specific ratios" as a placeholder for an expected-but-absent
+row (correctly flagged OCR_DROPPED_LINE / re-verify). The 400-DPI repair now confirms
+that row is genuinely absent, so the consolidated table has 18 rows, and the A2
+line-item total of 144 technically includes one confirmed-absent placeholder (true
+present-row count 143). This is OVER-inclusion with a flag, not omission: no evidence is
+lost and A4 treats the row as ND with no substitution. Enumerate-with-flag rather than
+drop is the correct A2 discipline. Recorded for the record; it does not gate the verdict
+and requires no A2 loop-back.
 
 ---
 
 ## 2. ARITHMETIC AUDIT
 
-Every derived figure recomputed from raw Lakhs in the extract. All headline lines
-tie. Representative recomputations:
+All raws re-read from extract_results (Lakhs, x0.01 = Cr) and extract_presentation.
+No figure below is untied to a cited line. No mismatch above rounding.
 
-| Metric | A4 value | Recomputed (source) | Status |
-|---|---|---|---|
-| Std NII Q1FY27 | 363.14 | 632.03 (ln175) - 268.89 (ln187) = 363.14 | TIE |
-| Std PPOP Q1FY27 | 258.11 | 157.96 (ln195) + 100.15 (ln189) = 258.11 | TIE |
-| Std PAT Q1FY27 | 120.29 | 12,028.68 L (ln203) x0.01 | TIE |
-| Consol PPOP Q1FY27 | 267.32 | 161.20 (ln603) + 106.12 (ln598) = 267.32 | TIE |
-| Consol PAT Q1FY27 | 122.65 | 12,264.56 L (ln609) x0.01 | TIE |
-| Consol PAT owners / NCI | 122.67 / (0.02) | 12,267.04 (ln622) / (2.48) (ln623) | TIE |
-| Consol PBT YoY | +177.6% | 58.08 -> 161.20 = +177.5% | TIE |
-| Consol PAT YoY | +171.9% | 45.10 -> 122.65 = +171.95% | TIE |
-| Std PAT YoY | +182.4% | 42.60 -> 120.29 = +182.37% | TIE |
-| Consol total income YoY | +8.0% | 707.84 -> 764.75 = +8.04% | TIE |
-| Consol impairment YoY | -25.7% | 142.88 -> 106.12 = -25.73% | TIE |
-| SC gap Q1FY27 (Rs / %) | +2.36 / +1.96% | 122.65-120.29=2.36; /120.29=1.96% | TIE |
-| SC gap Q4FY26 | +25.10 / +18.33% | 162.05-136.95=25.10; /136.95=18.33% | TIE |
-| SC gap Q1FY26 | +2.50 / +5.86% | 45.10-42.60=2.50; /42.60=5.865% | TIE (rounding; 5.865% -> 5.86/5.87 boundary) |
-| SC gap FY26 | +30.13 / +9.97% | 332.21-302.08=30.13; /302.08=9.97% | TIE |
-| Std ETR Q1FY27 | ~24% | 37.67/157.96 = 23.85% | TIE |
-| Consol ETR Q1FY27 | ~24% | 38.55/161.20 = 23.92% | TIE |
-| Deferred-tax credit std / consol | 4.72 / 7.45 | 472.20 L (ln200) / 744.80 L (ln607) | TIE |
-| Overlay QoQ delta | +15 (21->36) | s17-note2/L495: 36 (Q1) - 21 (Q4) = 15 | TIE |
-| Overlay Rs 36 Cr effect on PAT | Rs 15 Cr fresh drag | 36 - 21 = 15 incremental charge | TIE |
-| Consol ROA/ROE/NIM QoQ step | -141 / -656 / -199 bps | 4.71->3.30 / 23.31->16.75 / 15.20->13.21 (s17 L486-489,482) | TIE |
-| Net-worth gap std vs consol | 275.31 / 8.55% | 3,218.93 (ln389) - 2,943.62 (ln769) = 275.31; /3,218.93 = 8.55% | TIE |
-| Escalation ROE annualised | 16.7% | 122.65 x4 / 2,943.62 = 16.67% | TIE |
-| Off-book implied | ~3,270 (~25%) | 13,312 - 10,035 (on-book, s35/L1102) = 3,277 (24.6%) | TIE |
-| Auditor unreviewed PAT share | 4.95% | 6.07 (606.58 L, ln535) / 122.65 = 4.95% | TIE |
-| Warrant value | Rs 100.1 Cr | 38,50,000 x 260 = 100.10 Cr (ln279) | TIE |
-| ESOP share add | +70,000 (+Rs 7.00 L) | 11,011.32 - 11,004.32 = 7.00 L /10 = 70,000 | TIE |
-| Consol PAT bridge YoY | +78 (45->123) | +103 NII -37 opex +37 credit -26 tax = +77 (~78) | TIE |
-| Consol PAT bridge QoQ | -39 (162->123, -24.3%) | 122.65-162.05 = -39.40; /162.05 = -24.3% | TIE |
+| Metric | A4 value | Recomputed | Source line(s) | Status |
+|---|---|---|---|---|
+| Lakhs→Cr: II std | 632.03 | 63,202.99 L ×0.01 = 632.03 | res ln 175 | OK |
+| Lakhs→Cr: PBT std | 157.96 | 15,795.61 L = 157.96 | res ln 195 | OK |
+| Lakhs→Cr: PAT std | 120.29 | 12,028.68 L = 120.29 | res ln 203 | OK |
+| Lakhs→Cr: PAT consol | 122.65 | 12,264.56 L = 122.65 | res ln 609/770 | OK |
+| Lakhs→Cr: tax std / consol | 37.67 / 38.55 | 3,766.93 / 3,855.11 L | res ln 201 / 608 | OK |
+| Lakhs→Cr: consol net worth | 2,943.62 | 2,94,361.98 L = 2,943.62 | res ln 769 | OK |
+| NII std (II − int cost) | 363.14 | 632.03 − 268.89 = 363.14 | res ln 175/187 | OK |
+| PPOP std (PBT+impair) | 258.11 | 157.96 + 100.15 = 258.11 | res ln 195/189 | OK |
+| PPOP std Q1FY26 | 189.26 | 54.63 + 134.64 = 189.265 → 189.26 (Lakhs-precise) | res ln 195/189 | OK |
+| ETR std / consol | ~24% | 37.67/157.96 = 23.85%; 38.55/161.20 = 23.91% | res ln 201/195, 608/603 | OK |
+| Deferred-tax credit std/consol | 4.72 / 7.45 | (472.20)/(744.80) L | res ln 200 / 607 | OK |
+| YoY consol PAT | +171.9% | (122.65/45.10)−1 = +171.95% | res | OK |
+| YoY consol PBT | +177.6% | (161.20/58.08)−1 = +177.55% | res | OK |
+| YoY consol AUM | +27.5% | (15,935/12,499)−1 = +27.49% | PR 66 | OK |
+| YoY std AUM | +21.5% | (13,312/10,956)−1 = +21.50% | PR 97 | OK |
+| YoY std PAT | +182.4% | (120.29/42.60)−1 = +182.37% | res | OK |
+| YoY consol total income | +8.0% | (764.75/707.84)−1 = +8.04% | res ln 593 | OK |
+| YoY consol impairment | −25.7% | (106.12/142.88)−1 = −25.73% | res ln 598 | OK |
+| Std GNPA YoY | −156 bps | 3.74% − 2.18% = 156 bps | PR 161 / ln 403 | OK |
+| S-vs-C PAT gap Q1FY27 | +2.36 (+1.96%) | 122.65−120.29 = 2.36; /120.29 = 1.96% | res ln 203/609 | OK |
+| S-vs-C PAT gap Q4FY26 | +25.10 (+18.33%) | 162.05−136.95 = 25.10; /136.95 = 18.33% | deck/res | OK |
+| S-vs-C PAT gap Q1FY26 | +2.50 (+5.86%) | 45.10−42.60 = 2.50; /42.60 = 5.87% | res | OK (rounding) |
+| S-vs-C PAT gap FY26 | +30.13 (+9.97%) | 332.21−302.08 = 30.13; /302.08 = 9.97% | res | OK |
+| Sub gap QoQ swing | −16.4 pp | 18.33% − 1.96% = 16.37 pp | deck/res | OK |
+| Sub PATs vs uplift | 6.4 > 2.36 | 1.5+4.9 = 6.4; drag ≈ 6.4−2.36 = 4.04 | PR 179/189 | OK |
+| Consol ROA step-down QoQ | 4.71→3.30 (−141 bps) | −141 bps | s17/L486 | OK |
+| Consol ROE step-down QoQ | 23.31→16.75 (−656 bps) | −656 bps | s17/L488 | OK |
+| Consol NIM step-down QoQ | 15.20→13.21 (−199 bps) | −199 bps | s17/L482 | OK |
+| Std ROA/ROE/NIM step-down | 4.31→3.55 / 17.91→15.10 / 15.85→14.36 | −76 / −281 / −149 bps | s19/L551,553,547 | OK |
+| Overlay QoQ (fresh charge) | 21→36 = +15 | Rs 36 (Q1) − Rs 21 (Q4) = Rs 15 | s17-note2/L495 | OK |
+| Overlay 3-pt trend | 8 / 21 / 36 | L495: ₹36 Q1FY27, ₹21 Q4FY26, ₹8 Q1FY26 | s17/L495 | OK |
+| Treasury effect on PPOP YoY | ≈ +Rs 1 Cr | FV swing −89.54 (57.11 loss vs 32.43 gain) + FX swing +90.61 (62.43 credit vs 28.18 charge) = +1.07 | res ln 178/188 | OK |
+| Escalation ROE annualised | 16.7% | 122.65×4 / 2,943.62 = 16.67% (≈ deck 16.75%) | res ln 609/769 | OK |
+| EPS std / consol basic=diluted | 10.94 / 11.15 | ln 222-223 / 635-636; warrants excluded pending allotment | res | OK |
+| Off-book implied | ~3,270 (~25%) | on-book 219/2.18% = 10,046; 13,312−10,046 = 3,266; deck off-book 3,277 | PR 161 / s35/L1103 | OK |
+| On-book provision % | 2.51% | 252/10,035 = 2.51% | PR 163 | OK |
+| Consol-vs-std net worth gap | Rs 275 Cr / 8.55% | 3,218.93 − 2,943.62 = 275.31; /3,218.93 = 8.55% | res ln 389/769 | OK |
+| Active clients YoY | ~+3% | consol 34/33 = +3.0%; std 33/32 = +3.1% | s16/L467, s18/L534, PR 90 | OK |
+| New-client adds trend | 2.5→2.2→1.6→1.5; 1.5 vs 1.9 YoY | ln 641-645: Q1FY26 1.9 / Q2 2.5 / Q3 2.2 / Q4 1.6 / Q1FY27 1.5 | s22/L642-645 | OK |
+| AUM per loan officer | 1.08 → 1.39 | ln 658-660: Q1FY26 1.08, Q1FY27 1.39 | s22/L658-660 | OK |
+| ~₹61,000 JLG ticket | ~Rs 61,000 | ln 1147 "₹61,000 (JLG)" | s36/L1147 | OK |
 
-No arithmetic mismatch above rounding. The single boundary item (Q1FY26 SC gap
-5.865% shown as 5.86%) is within rounding tolerance, not a FAIL.
-**ARITHMETIC: PASS.**
+**Newly-grafted client-base / over-indebtedness figures — all tie to cited lines:**
+active clients +3% YoY vs AUM +21.5% std / +27.5% consol (verified); new adds 2.5→1.5
+lakh peak-to-current and 1.5 vs 1.9 YoY (ln 641-645, endpoints corroborated, chart
+flagged CHART_LAYOUT_AMBIGUOUS but endpoints high-confidence); AUM/loan-officer 1.08→1.39
+(ln 658-660); ~Rs 61,000 ticket (ln 1147). No arithmetic mismatch. No untied figure.
 
----
-
-## 3. ADVERSARIAL READ — three most-positive claims, strongest bear counter each
-
-### Claim A (most positive): "All three escalation conditions MET on reported numbers -> escalation gate MET, recommend escalate toward BUY" (Step 6C / Step 8).
-**Strongest bear (same text):** the gate hangs on a consol ROE of 16.75% that
-clears its 16% floor by only 75 bps, is a simple x4 annualisation of a single Q1,
-and rests on a PAT flattered by a Rs 62.43 Cr FX finance-cost CREDIT (ln 597) that
-was a CHARGE in Q4 (Rs 92.63 Cr) and in Q1FY26 (Rs 28.18 Cr); and the GNPA leg is
-mechanism-unverified.
-**Survives? NO — already fully incorporated.** A4 states the "thin"/"fragile"
-75-bps clearance (6C caveat i), the FX reversal risk (diagnostic 6, Q8, Bear,
-flag 7), and the unverified GNPA mechanism (INDETERMINATE cap, Q1, flag 2). No
-graft required.
-
-### Claim B: "PPOP grew +33% consol / +36% standalone on genuine operating leverage, NOT treasury timing" (Step 2 diagnostics 3 & 5; Bull).
-**Strongest bear (same text):** PPOP is struck after the finance-cost FX line, so
-the Rs 62.43 Cr Q1FY27 FX credit vs the Rs 28.18 Cr Q1FY26 FX charge is a ~Rs 90 Cr
-favourable swing that mechanically inflates PPOP growth.
-**Survives? NO — counter fails on the extract.** The FX credit is one leg of a
-100%-hedged pair; the offsetting MTM fair-value LOSS sits in revenue, also above
-PPOP. Net treasury effect on PPOP = consol -56.73 (ln588) + 62.43 (ln597) = +5.70
-Cr (Q1FY27) vs +32.68 (ln588 py) - 28.18 (ln597 py) = +4.50 Cr (Q1FY26): a ~Rs 1.2
-Cr YoY delta against +66 Cr of PPOP growth. A4's "not treasury timing" claim is
-CORRECT. No graft required.
-
-### Claim C: "AUM +27.5% consol / +21.5% standalone Strong; T1 branches ON TRACK; growth-visibility premium HOLD; FY2030 AUM target raised to Rs 32,000 Cr" (Step 2, 6B, 6D-T1, 7).
-**Strongest bear (same text):** the company's OWN snapshots show AUM +22-27% YoY
-but ACTIVE CLIENTS only +3% YoY — consol 34 vs 33 lakh (+3%, s14/ln399-401) and
-standalone 33 vs 32 lakh (+3%, s15/ln419-421) — while NEW CLIENTS ADDED are
-DECLINING every quarter (1.9 -> 2.5 -> 2.2 -> 1.6 -> 1.5 lakh; deck 4d). With SCNL
-JLG avg ticket at Rs 61,000 (s36/L1147), ~19 pp of the standalone AUM growth is
-deeper per-borrower exposure on a near-static client base, not client acquisition —
-a recognised MFI over-indebtedness / growth-quality early-warning, in the same
-cycle whose stress A4 elsewhere treats as normalising.
-**Survives? YES.** Extract-supported and NOT surfaced anywhere in A4 (no
-diagnostic, monitorable, Bear line, or QfM addresses client-count vs AUM
-divergence or the declining new-client run-rate). This must be grafted into A4
-before save — minimally into the Bear column and as a Q2 monitorable, ideally as a
-Questions-for-Management row (ticket-size vs client-acquisition mix; per-borrower
-indebtedness trend). **-> loop back to A4.**
-
-### Adversarial discipline checks (all confirmed except where noted)
-- AMBIGUOUS/FORWARD-SIGNAL -> question coverage: every FND-01..10, every
-  presentation A3-01..12, and 8/9 press-release A3-F findings map to a QfM row
-  (Q1-Q12 `from_finding_id`). **A3-F6-01 is the sole finding with no QfM row**; A4
-  routes the F6 commitment register into the Monitorables/Catalyst timeline
-  (and its principal item, the promoter warrant, also appears in Q6). Acceptable
-  as a NEUTRAL/commitment destination, but flagged for A4 to confirm A3-F6-01 is
-  not a FORWARD-SIGNAL owed a discrete question.
-- No AMBIGUOUS finding silently upgraded to fact: SFL GNPA (deck-only), consol
-  sector ratios (ND), Q2-Q4 mid-quarter chart values (CHART_LAYOUT_AMBIGUOUS) all
-  carried with their hedges intact. PASS.
-- Trigger stated as FLAG, not a Decision Status change: "A4 FLAGS; the human
-  decides. Decision Status is NOT changed" (6C, Step 8, verdict). PASS.
-- Verdict within PROCEED set and INDETERMINATE-capped: PROCEED WITH CAVEATS,
-  explicitly capped by the INDETERMINATE asset-quality/cash-conversion read with
-  the four missing-evidence items named. Consistent with the house rule. PASS.
+Zero arithmetic mismatches above rounding.
 
 ---
 
-## VERDICT
+## 3. ADVERSARIAL READ — three most positive claims, strongest bear counters
 
-**INCOMPLETE.** One surviving bear counter (Claim C) is supported by the company's
-own extracted disclosure and is absent from A4's review; per the adversarial-read
-discipline it must be grafted before save.
+**Claim 1 — "All three escalation conditions met (PAT ≥110, std GNPA ≤3.05, consol ROE
+≥16); escalate toward BUY."**
+Strongest bear counter (same text): the ROE clears the 16% floor by only 75 bps on a
+single-quarter-annualised basis that fell from 23.31% (Q4), the +172% PAT is largely a
+Q1FY26 trough base effect (impairment −25.7% off a 4.52% loan-loss quarter), and the
+GNPA that anchors condition 2 is unverifiable (no write-off/ECL/ARC walk; ~25% of AUM
+off-book). SURVIVES — but ALREADY GRAFTED: 6C caveats (i)/(ii), the Bear paragraph, the
+INDETERMINATE cap, and the flag "clears 16% floor by only 75 bps and is overlay-flattered
+to 20.39%." No new graft required.
 
-- **Loop back to: A4.**
-- **Exact gap:** A4 asserts AUM growth as unqualified "Strong" and holds the
-  growth-visibility premium, but never surfaces that Active Clients grew only +3%
-  YoY (consol 34 vs 33 lakh, ln 399-401; standalone 33 vs 32 lakh, ln 419-421)
-  against AUM +22-27%, with new-client additions declining 1.9 -> 1.5 lakh/qtr
-  (deck Table 4d). Add this ticket-size-led / static-client-base growth-quality
-  bear point to the Bear column and monitorables (and ideally a QfM row on the
-  ticket-size vs client-acquisition mix and per-borrower indebtedness trend).
-- **Secondary (non-blocking, for the same loop):** (i) A4 preamble ln 46-48
-  mis-describes consol Reg 52(4) Net worth/NPAT/EPS as garbled/dropped though the
-  repaired extract (ln 759-783) and A4's own body use them cleanly — align the
-  preamble; (ii) confirm A3-F6-01 is adequately discharged by the Monitorables
-  register rather than a QfM row.
-- **For A2 (housekeeping):** refresh consol Reg 52(4) rows 7.14.7/7.14.8/7.14.9/
-  7.14.14/7.14.17/7.14.18 against the OCR-repaired extract (values now legible);
-  no row is missing, so gate_a2 stands, but the flags are stale.
+**Claim 2 — "PPOP grew +33%/+36% on genuine operating leverage; treasury nets ~Rs 1 Cr."**
+Strongest bear counter: PPOP sits above the impairment add-back and includes the volatile
+Rs 62.43 Cr FX finance-cost credit; strip it and PPOP is flattered. Test from the raws:
+FV YoY swing = −89.54 Cr (57.11 loss vs 32.43 gain) inside revenue; FX YoY swing = +90.61
+Cr (62.43 credit vs 28.18 charge) inside finance cost; net effect on PPOP = +1.07 Cr.
+The counter does NOT survive: the two treasury items genuinely offset within PPOP to ~Rs 1
+Cr YoY, so YoY PPOP growth is not FX-flattered. A4 states exactly this and flags "counter
+does NOT survive." The residual FX reversal risk (a next-quarter, not this-quarter, PPOP
+issue) is separately carried (FND-04, tripwire #9, Q8). Correctly handled.
 
-Coverage and arithmetic both PASS independently. The single blocking item is the
-unincorporated surviving bear counter.
+**Claim 3 — "AUM +27.5% consol beats the 20-25% guide."**
+Strongest bear counter: the growth is ticket-led on a near-static borrower base — active
+clients +3% while AUM +21.5%/+27.5%, new-client adds falling every quarter since the Q2
+FY26 peak (2.5→1.5 lakh), AUM/loan-officer up 1.08→1.39 at a ~Rs 61,000 ticket — a
+recognised MFI over-indebtedness precursor that a clean 2.18% GNPA does not yet reflect.
+SURVIVES — and this is the prior pass's BLOCKING gap. It is now DISCHARGED in the revised
+review across all four required surfaces:
+- Diagnostics: Step 2 "Growth-quality diagnostic (grafted counter…)" (ln 309-322) and
+  Step 5L "Growth quality / borrower-base divergence" mandatory-lender answer (ln 464-473).
+- Bear column: Symmetric Bear paragraph (ln 719-723).
+- Monitorables: register row "Client-base growth vs AUM growth divergence…" (ln 690) and
+  the YAML monitorables entry.
+- Questions for Management: Q13 (ln 656), with a bull/bear answer pair and from-finding
+  "A5-graft-client-base / A3-11". Also surfaced as a standalone FLAG in the verdict and
+  YAML flags.
+No un-incorporated surviving counter remains.
+
+**Interpretation-integrity checks (no AMBIGUOUS/FORWARD-SIGNAL silently upgraded to fact):**
+- SFL GNPA 3.5% labelled "deck-only, not in filing" everywhere it appears (5.b, 6B#5, 6C).
+- Q2/Q3 FY26 mid-quarter ratios carry the "~ CHART_LAYOUT_AMBIGUOUS, endpoints
+  corroborated" caveat (Step 3, 5-qtr table).
+- Consol sector ratios held ND, not asserted.
+- GNPA-improvement mechanism held INDETERMINATE, never asserted organic; Asset-Quality
+  Multiplier explicitly NOT upgraded on unverified GNPA (HOLD at Sound).
+- Every A3 finding-ID A4 carries (FND-01..10; A3-F1-01, F1-02, F2-01, F2-02, F6-01,
+  F10-01, F14-01, F16-01, F16-02; A3-01..12) maps to at least one Step 8.5 question
+  (union check across Q1-Q13 from_finding_id lists = complete; A3-F6-01 appears in Q6/Q11
+  and is additionally discharged in the Monitorables register preamble ln 677-680, so it
+  is no longer a silent drop — CORRECTED from prior pass).
+- Escalation/trigger treated as a FLAG, not a Decision Status change: Step 8 (ln 613-615),
+  6C (ln 570), verdict (ln 752-753) all state "A4 FLAGS; the human decides; Decision Status
+  is NOT changed." Consistent.
+- Verdict PROCEED WITH CAVEATS sits inside the PROCEED set and is correctly capped by the
+  INDETERMINATE asset-quality mechanism per house rule (INDETERMINATE cannot silently
+  resolve to PROCEED); the four missing-evidence items are named. Consistent.
+
+---
+
+## 4. VERDICT
+
+**COMPLETE.**
+
+The revised A4 review passes all three audits on the merits:
+- COVERAGE: fresh grep reconciles to every A2 count (slides 42, note-sets 2, std sector
+  ratios 5, consol sector ratios genuinely absent, client-base series present). No orphan
+  row, nothing missing from any ledger. The consolidated Reg 52(4) sector-ratio absence is
+  handled honestly (ND, source-absent, 400-DPI-repair scope correct, no standalone
+  substitution). One non-blocking over-inclusion (consol Note-14 phantom row 19) is
+  transparently flagged and loses no evidence — no loop-back.
+- ARITHMETIC: every headline, YoY/QoQ walk, the S-vs-C PAT gap, ROA/ROE/NIM step-downs,
+  the Rs 15 Cr fresh-overlay effect, ETR, EPS, Lakhs→Cr conversions, and the newly-grafted
+  client-base figures re-derive from cited raws with zero mismatch above rounding. The
+  ~Rs 1 Cr net-treasury-on-PPOP claim independently checks out (+1.07 Cr).
+- ADVERSARIAL: the prior BLOCKING gap (client-base / over-indebtedness counter) is now
+  discharged across diagnostics, Bear column, monitorables, and Q13; the A3-F6-01 discharge
+  and the Reg 52(4) OCR wording are corrected; no AMBIGUOUS/FORWARD-SIGNAL finding is
+  upgraded to fact; the escalation is a FLAG not a status change; the verdict is within the
+  PROCEED set and consistent with the INDETERMINATE asset-quality cap.
+
+No loop-back to A2, A3, or A4. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -187,15 +220,14 @@ company: "SATIN"
 quarter: "Q1FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
 surviving_bear_counters:
-  - claim: "AUM +27.5% consol / +21.5% standalone Strong; growth-visibility premium HOLD; FY2030 AUM target raised"
-    counter: "Active Clients grew only +3% YoY (consol 34 vs 33 lakh; standalone 33 vs 32 lakh) against AUM +22-27%, with new-client additions declining 1.9->1.5 lakh/qtr; growth is ticket-size/per-borrower-exposure led on a near-static client base, an MFI over-indebtedness early-warning A4 does not surface"
-    source_line: "presentation s14 ln399-401 / s15 ln419-421 / deck Table 4d new-clients / s36 L1147 avg ticket Rs 61,000"
-loop_back_to: "A4"
-gap: "Graft the client-growth-vs-AUM divergence bear counter (Active Clients +3% YoY vs AUM +22-27%; new-client adds declining 1.9->1.5 lakh/qtr) into A4's Bear column, monitorables, and ideally a Questions-for-Management row on ticket-size vs client-acquisition mix and per-borrower indebtedness. Also align preamble ln46-48 (consol Reg 52(4) NW/NPAT/EPS are legible in the repaired extract, not dropped) and confirm A3-F6-01 discharge via the Monitorables register."
+  - {claim: "AUM +27.5% consol beats guide", counter: "Ticket-led growth on near-static borrower base: active clients +3% vs AUM +21.5%/+27.5%, new adds 2.5->1.5 lakh, AUM/LO 1.08->1.39 at ~Rs 61,000 ticket = MFI over-indebtedness early warning", source_line: "s16/L467,s18/L534,s22/L642-645,s22/L658-660,s36/L1147", status: "already grafted in revised A4 (Step2 diagnostics, Step5L, Bear, monitorable L690, Q13)"}
+  - {claim: "All 3 escalation conditions met -> escalate", counter: "ROE clears 16% floor by only 75bps off 23.31% Q4; +172% PAT is Q1FY26 trough base effect; GNPA unverifiable, ~25% off-book", source_line: "s17/L488;res ln403,609", status: "already grafted (6C caveats, Bear, INDETERMINATE cap)"}
+loop_back_to: ""
+gap: ""
 ```

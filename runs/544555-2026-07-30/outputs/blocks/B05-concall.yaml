@@ -1,0 +1,50 @@
+stage: B05-concall
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: false
+input_gaps: ["concalls: only 1 transcript (H1 FY26); manifest concalls_available=false overridden by present transcript","rating: EMPTY","research: EMPTY"]
+flags: ["single-transcript evidence base for credibility grade feeding Role 1 weights","FY26 full-year results (board 30-May-2026) not independently re-extracted to decimal confidence; specific full-year figures NOT FOUND","CFO resignation (28-Jul-2026) lands inside tracking window with no subsequent call to test management framing","no confirmed quantified forward revenue/margin guidance found on the single available call"]
+quarters_analysed: ["H1 FY26"]
+triggers:
+  - {priority: 1, name: "Railways order-book diversification across zones", type: "VOLUME", timeframe: "near-medium", conviction: "M", confirm_signal: "Continued multi-zone Reg 30 order disclosures beyond the Jul-2026 cluster, confirmed net-new not replacement", kill_signal: "Order inflow reverts to single-zone/single-customer pattern or Jul-2026 cluster proves one-off"}
+  - {priority: 2, name: "Margin sustenance post-deleveraging (H1 FY26 EBITDA margin 26.63%)", type: "COST/MARGIN", timeframe: "near", conviction: "M", confirm_signal: "FY26/FY27 results confirm EBITDA/net margin at or above H1 FY26 level", kill_signal: "Margin compression from less-favourable order mix or non-recurring finance-cost benefit"}
+  - {priority: 3, name: "RDSO-approval regulatory moat", type: "REGULATORY-POLICY", timeframe: "long", conviction: "M", confirm_signal: "No new entrant wins comparable RDSO-approved business at company's expense", kill_signal: "RDSO approves additional competing vendors at scale"}
+  - {priority: 4, name: "Revenue growth acceleration beyond 8.47% YoY H1 FY26 pace", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "FY27 quarterly revenue growth materially above 8.47% H1 FY26 print", kill_signal: "7-18 month order-to-execution timelines push revenue recognition out further than modelled"}
+  - {priority: 5, name: "Management/finance-leadership continuity post CFO exit", type: "GOVERNANCE", timeframe: "near", conviction: "L", confirm_signal: "Prompt, credible CFO replacement with no reporting-quality lapse", kill_signal: "Delayed replacement or reporting-quality lapse following CFO exit"}
+guidance:
+  - {item: "H1 FY26 revenue from operations", number: "Rs 42.70 cr (+8.47% YoY)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; cross-verified vs H1 FY26 results filing"}
+  - {item: "H1 FY26 EBITDA margin", number: "26.63% (~Rs 11.44 cr)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; recomputed from results filing"}
+  - {item: "H1 FY26 PAT", number: "Rs 4.38 cr (+103.5% YoY)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; cross-verified vs results filing"}
+  - {item: "Order book", number: "Rs 61.75 cr, Railways ~89% of total", timeframe: "as of 31-Aug-2025", stated_in: "H1 FY26 call / RHP, also cited in operator-supplied Reg 30 doc"}
+  - {item: "Forward revenue/EBITDA margin target", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "H1 FY26 call (no specific number found)"}
+  - {item: "Capex quantum/timeline for capacity expansion", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "H1 FY26 call"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 1
+  rows:
+    - {promise: "Diversify order intake across Railway zones", outcome: "Delivered (directional)", explanation: "Four Reg 30 orders across four zones disclosed Jul-2026, ~Rs 67.85 cr ex-GST incremental (operator-supplied); net-new relationship status unconfirmed"}
+    - {promise: "Report H1 FY26 numbers consistent with subsequent filing", outcome: "Delivered", explanation: "Revenue, PAT, EBITDA on call reconcile to the lakh with H1 FY26 results filing"}
+    - {promise: "Sustain margin profile / deleveraging benefit into FY26", outcome: "Partial / unconfirmed", explanation: "FY26 full-year filing not independently re-extracted to decimal confidence; no negative headline surprise noted"}
+    - {promise: "Management/finance leadership continuity", outcome: "Missed", explanation: "CFO Ms. Tejaswini Kandra resigned effective 28-Jul-2026, personal reasons (operator-supplied Reg 30)"}
+excuse_pattern: "not assessable - single transcript, no subsequent call to test explanation of any miss"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "H1 FY26 figures on the call reconcile exactly to the filed results; diversification intent followed ~8 months later by documented (operator-supplied) multi-zone Railways order wins ~Rs 67.85 cr ex-GST. Held at B not A: single-transcript base, no quantified forward guidance, and an unexplained CFO resignation inside the tracking window."
+peer_questions:
+  - {question: "Does GRP Ltd corroborate an Indian Railways track-renewal/capex-driven demand upcycle for rubber fastening-system components?", why: "Ameenji's core sectoral growth trigger; no industry growth rate confirmed from Ameenji's own call", check_peers: ["GRP Ltd"]}
+  - {question: "What does GRP Ltd say about RDSO vendor-approval dynamics - widening or stable/narrowing approved-supplier base?", why: "tests durability of Ameenji's regulatory-approval moat", check_peers: ["GRP Ltd"]}
+  - {question: "What receivable/working-capital days does GRP Ltd disclose for Railways-linked business?", why: "Ameenji did not confirm this despite ~89% Railways concentration", check_peers: ["GRP Ltd"]}
+  - {question: "Has GRP Ltd disclosed multi-zone Railways order wins in the same Feb-Jul 2026 window, at what pace/value?", why: "tests whether Ameenji's ~Rs 67.85 cr Jul-2026 cluster is company-specific or a sector-wide tender cycle", check_peers: ["GRP Ltd"]}
+  - {question: "Does GRP Ltd quantify raw-material (natural/synthetic rubber) cost trends and pass-through mechanics in Railways contracts?", why: "standard margin-risk factor; not confirmed as addressed on Ameenji's call", check_peers: ["GRP Ltd"]}
+  - {question: "Does GRP Ltd give a specific numeric forward revenue/EBITDA margin target and delivery track record?", why: "Ameenji gave no confirmed quantified forward target; peer benchmark calibrates whether silence is sector-normal", check_peers: ["GRP Ltd"]}
+red_flags:
+  - "CFO resignation (28-Jul-2026, personal reasons) inside tracking window shortly after large order wins; no subsequent call to test framing - Medium"
+  - "No confirmed quantified forward revenue/margin guidance on the only call - Medium"
+  - "Single-transcript evidence base feeding Role 1 probability weights - Medium, structural"
+  - "PAT growth +103.5% YoY outpacing revenue +8.47% in H1 FY26, margin/finance-cost driven not volume - Low-Medium"
+  - "Railways concentration ~89% (Aug-2025) unaddressed on the call for receivable/WC mechanics - Low-Medium"
+dropped_triggers: []
+timeline_slippages: []

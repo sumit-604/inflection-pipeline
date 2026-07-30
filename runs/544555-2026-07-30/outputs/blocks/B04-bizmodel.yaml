@@ -1,0 +1,58 @@
+stage: B04-bizmodel
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report: no post-listing AR; RHP used","rating: EMPTY","research: EMPTY"]
+flags:
+  - {type: FLAG-SECTOR-CAP-MISMATCH, reason: "Manifest sector_cap_row 'Pharma / CDMO' is wrong; company is an industrial railway/infrastructure rubber-components manufacturer. Stage 11 must pick exit-PE authority from the correct auto-ancillary/industrial-components row in Section 1B v3.3, never pharma, never a round-number default."}
+  - {type: FLAG-DOCUMENTATION-QUALITY, reason: "Investor Presentation slide 3 disclaimer retains a leftover 'Shree Karni Fabcom Limited' template reference; minor professionalism signal only."}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Railway track components (sole plates, UIC vestibules, level crossing pads)", type: "tender-based B2G product sale", pct_of_revenue: 40.51, predictability: "M"}
+  - {name: "Infrastructure bearings & expansion joints (Elastomeric Bridge Bearings, POT-PTFE/Spherical, expansion joints)", type: "project-based B2B product sale", pct_of_revenue: 59.11, predictability: "L"}
+  - {name: "Commercial/industrial & other rubber goods", type: "distributor/direct trade", pct_of_revenue: 0.39, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "price-taker"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Regulatory qualification (RDSO/MoRTH/CE/NABL)", durability: "medium-high, tempered by governance/compliance gaps"}
+  - {moat: "Switching costs from vendor requalification friction", durability: "medium"}
+  - {moat: "Process power / in-house mould-die know-how (30 years)", durability: "medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA vs industrial rubber-components/auto-ancillary peer set", why: "Standard for capital-intensive project-based manufacturers; captures capital structure given D/E ~2.07x"}
+  secondary: {method: "Normalized P/E vs same peer set", why: "Cross-check; normalize FY24 tax anomaly (37.97%) and FY25 one-off gratuity gain (~Rs21L) first"}
+  tertiary: {method: "DCF as cross-check only", why: "FCF negative all 3 restated years; needs explicit near-term negative-FCF modeling"}
+  not_applicable: ["EV/Sales as lead", "Asset-based/P/B", "DDM", "SOTP", "Replacement cost"]
+irrelevant_ratios:
+  - {ratio: "Current Ratio in isolation", why: "Improvement is inventory build-up with zero write-downs; Quick Ratio is the honest read and is falling"}
+  - {ratio: "Reported RoE/RoNW", why: "Leverage-driven not efficiency-driven per DuPont; asset turnover fell 32%"}
+  - {ratio: "Headline revenue growth alone", why: "Growth funded by 113% two-year rise in borrowings and tripled cash conversion cycle"}
+  - {ratio: "Institutional ownership level", why: "Never a valid risk signal per framework"}
+must_track_metrics:
+  - {metric: "Order book size & Railways/Infra/Other split", healthy: ">=60% of TTM revenue and growing", red_flag: "shrinking or Railways share rising above 89%"}
+  - {metric: "Cash Conversion Cycle", healthy: "<90-100 days", red_flag: "exceeding FY25 ~166 days"}
+  - {metric: "EBITDA margin", healthy: "15-22%", red_flag: "below ~15% without explained one-off"}
+  - {metric: "Free Cash Flow (CFO - Capex)", healthy: "trending positive", red_flag: "materially negative into FY27"}
+  - {metric: "Net Debt/EBITDA", healthy: "<2.5x", red_flag: "above 3.0x"}
+unit_economics:
+  unit: "1 lakh of blended product-mix revenue"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND (cost of material consumed 52.75% of revenue FY25)"
+  key_lever: "Mix shift to higher-value bearings (+186% two-year) lifted blended EBITDA margin 11.42%->19.76% (FY23-FY25), but funded by rising debt and stretched payables not internal cash"
+first_deterioration_signals:
+  - {risk: "Customer concentration, no long-term contracts", first_signal: "Revenue missing prior order-book conversion pace"}
+  - {risk: "Raw-material price volatility, uncertain pass-through", first_signal: "Cost of Material Consumed % rising QoQ"}
+  - {risk: "Working-capital deterioration", first_signal: "Finished-Goods Inventory and Trade Receivables growing faster than revenue"}
+  - {risk: "Conveyor-belt diversification execution", first_signal: "CWIP not converting to Net Block on schedule, or capex diverging from Rs1,668.96L"}
+  - {risk: "Compliance overhang across 4 statutory domains", first_signal: "Contingent Liabilities line and new demand notices"}
+mgmt_questions:
+  - "Status of machinery orders for Rs1,668.96L conveyor capex and any customer LOI"
+  - "Structural plan to cut cash conversion cycle beyond FY25 payable-stretch recovery"
+  - "ABJ Rub Metalico ownership, arm's-length benchmark, Group Company contradiction"
+  - "FEMA Form ODI status and RBI compounding penalty for Ameenji Rubber Inc"
+  - "5.7x contractor cost growth vs falling EPF/ESI headcount; Contract Labour Act risk"
+  - "Inventory ageing / NRV policy given turnover 2.99x->1.29x with zero write-downs"
+  - "Utilisation on existing under-40%-utilised lines before conveyor capex"
+one_line_verdict: "RDSO-approved rubber-components maker riding a genuine Railways/Infrastructure capex tailwind, but growth is debt-funded and working-capital-heavy, not yet free-cash-generative"

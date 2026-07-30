@@ -1,0 +1,35 @@
+stage: B08-promoter
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "announcements/shareholding: operator-supplied provenance"
+  - "rating: EMPTY"
+  - "research: EMPTY"
+  - "ABJ Rub Metalico ownership/promoter identity: NOT FOUND independently"
+  - "MCA disqualified-directors database: not directly queried by DIN"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Group Company/AS-18 disclosure contradiction: ABJ Rub Metalico is a KMP-relative-influenced related party (up to 16.61% of FY23 revenue, no arm's-length benchmark) yet the RHP states no Group Company exists"
+      - "9-year unfiled cash flow statements (FY2014-15 to FY2022-23) regularised via NCLT compounding filed 20-Sep-2025, same date as the RHP"
+      - "Unresolved FEMA/ODI reporting gap on 90%-owned US subsidiary Ameenji Rubber Inc."
+      - "Statutory auditor resigned within 3 years (Sharma & Sastry, Sep-2023, 'paucity of time') - Section 6C deal-breaker triggered"
+      - "CFO Tejaswini Kandra resigned 28-Jul-2026 after ~20 months, no successor named"
+      - "Ongoing MSMED Act interest non-provision on delayed payments"
+verdict: "CONCERN"
+scorecard: {clean: 2, caution: 5, red: 3}
+deal_breakers:
+  - "Auditor resignation within 3 years: TRIGGERED (Sharma & Sastry 12-Sep-2023, 'paucity of time', RHP) - recorded, not enforced"
+transition_evidence:
+  - "Declining ABJ Rub Metalico RPT concentration: 16.61% (FY23) -> 16.04% (FY24) -> 4.45% (FY25) of revenue (RHP Annexure Y, VERIFIED)"
+  - "Post-listing institutional entry: FII 2.37%, Institutions bucket ~12.60% (aggregator, MEDIA REPORTED, not fully reconciled)"
+  - "Independent Director Asfia Moin (qualified CS, 11 years compliance) added Nov-2024 (RHP, VERIFIED)"
+  - "Professional non-family CFO appointed Nov-2024, reversed by Jul-2026 resignation with no successor named - net neutral"
+pledge_pct_latest: 0
+pledge_trend: "stable - 0% pledge at IPO and post-listing; no encumbrance ever disclosed"
+searches_performed: ["promoter Mufaddal Deesawala","IPO listing news 2025","NCLT compounding cash flow","CFO Tejaswini Kandra resigns","SEBI order adjudication","Jayasudha Kapoor ID","ABJ Rub Metalico ownership","Glassdoor/AmbitionBox","proxy advisory IiAS/SES/InGovern","Asfia Moin CS","pledge shareholding Mar 2026","screener institutions FII DII","promoter litigation","director disqualified MCA"]
+searches_skipped: ["MCA disqualified-directors by DIN","SFIO/DRI/ED archive by promoter name","Qutbuddin Family Trust structure","individual promoter-group members beyond RHP","X/stock-forum sentiment on CFO exit"]
+verdict_basis: "Group Company/AS-18 contradiction on a 16%+-of-revenue related party, nine-year unfiled cash-flow history regularised via NCLT compounding filed same date as RHP, unresolved FEMA/ODI gap, and auditor resignation within 3 years outweigh the clean SEBI/criminal record and 0% pledge -> CONCERN; declining RPT concentration and post-listing institutional entry are real numbers-anchored transition evidence distinguishing this from a static CONCERN."

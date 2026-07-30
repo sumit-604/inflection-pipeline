@@ -1,0 +1,304 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: concall_mtar_q1fy27.txt
+doctype: concall
+source_type: text transcript (not PDF) — supplied verbatim by operator, 2026-07-30
+page_count_pdfinfo: N/A text transcript
+formfeed_count: N/A text transcript
+line_count: 247 (line-numbered transcript body, lines 1-247 below; source input file total 253 lines including source note and markers)
+unit_convention: Crores (spoken "crores"/"cr" throughout)
+conversion_factor_to_cr: Crores -> x1
+ocr_pages: none (no PDF, no OCR performed)
+page_coverage: 100% (line coverage — see Coverage Proof below; no PDF pages exist for this document)
+detected_quarter: Q1 FY27
+extraction_date: 2026-07-30
+
+QUALITY FLAGS (verbatim source defects — NOT corrected, per A1 mechanical-only rule):
+- Transcript is auto-generated speech-to-text (STT) and heavily garbled throughout.
+- Company name rendered variously: "NT Technologies", "MTA Technologies", "ENA",
+  "MT technologies limited" — all confirmed = MTAR Technologies Limited (per source
+  note: moderator close + financials matching filing — revenue Rs 360.7 Cr, order
+  book Rs 5,143 Cr).
+- Speaker names STT-garbled: MD rendered "Shinasi" / "Navas" / "Shri Navas" / "Ramdi".
+  CFO rendered "Ganeshwar Rao" / "Bunesh" / "Gesh Ra" / "Gesh". Not corrected below;
+  carried verbatim as spoken/transcribed.
+- Some spoken numbers are garbled in the source (e.g. ambiguous crore figures,
+  truncated digits) — reproduced exactly as transcribed, not corrected or inferred.
+
+COVERAGE PROOF (text transcript — no PDF pages; GATE A1 basis):
+- Source file: /home/user/inflection-pipeline/runs/mtar-q1fy27/inputs/concall_mtar_q1fy27.txt
+  (253 lines total: line 1 = SOURCE NOTE, line 3 = "=== TRANSCRIPT VERBATIM ===" marker,
+  lines 5-251 = transcript body, line 253 = "=== END TRANSCRIPT ===" marker).
+- Full transcript captured end to end with no truncation: opens at line 1 below
+  ("Ladies and gentlemen, good day and welcome to NT Technologies Limited Q1 FY27
+  earnings conference call...") and closes at line 247 below ("Thank you on behalf
+  of MT technologies limited. That concludes this conference... you may now
+  disconnect your lines.").
+- Speaker TURN count (a turn = one contiguous block of speech by one party —
+  operator/moderator, MD, CFO, or a named analyst/participant): 124 turns,
+  corresponding to the 124 non-blank content lines numbered 1-247 below (odd-
+  numbered lines 1,3,5,...,247; even-numbered lines are blank turn separators
+  preserved from the source formatting).
+- Turn breakdown: opening operator intro (1 turn) -> IR intro (1 turn) -> MD opening
+  remarks (1 turn, long) -> CFO financial review (1 turn, long) -> Q&A session with
+  9 named analysts/participants (Mohit Kumar/ICICI Securities, Bala Subramanyan/Aryan
+  Capital, Gorov Naguri/Aendas Park, Sumat Kumar/Oswal Financial Services, Vipra
+  Shivas/Philip Capital [asked twice], viral asset management [unnamed], Janesh
+  Karia/Union Asset Management, Rohit Natraan/Access Max Life, Push Seal Dasani/
+  Sundaram Alternates, Pria/Lucky Investments) interleaved with MD/CFO answers and
+  operator transition lines -> closing MD remarks (1 turn) -> closing operator
+  sign-off (1 turn).
+- No page-based coverage check applies (GATE A1 pdftotext/formfeed/pdfinfo steps are
+  N/A — this document was supplied as plain text, not a PDF, per task instructions).
+  GATE A1 is satisfied by line coverage: all 247 numbered lines below are present
+  and unbroken, matching the full extent of lines 5-251 of the source input file.
+=== END HEADER ===
+
+=== TRANSCRIPT VERBATIM (line-numbered, verbatim, STT-garbled — not corrected) ===
+     1  Ladies and gentlemen, good day and welcome to NT Technologies Limited Q1 FY27 earnings conference call. As a reminder, all participant lines will be in listen only mode and there will be an opportunity for you to ask questions after the presentation concludes. Should you need assistance during the conference call, please ignore an operator by pressing start then zero on your touchstone phone. Please note that this conference is being recorded. I now hand the conference over to Miss V. you as thank you and over to you ma'am.
+     2  
+     3  Thank you Aturva. Good morning everyone. On behalf of MTA Technologies I extend a very warm welcome to all the participants on Q for Q1 FI27 earnings discussion call. Today on our call we have Mr. Shinasi managing director and promoter Mr. Ganeshwar Rao chief financial officer and Miss Sha Jaspi head strategy and IR. I hope everyone had an opportunity to go through our investor deck and press that we have uploaded on the exchange on the and on the company's website. I would like to give a short disclaimer before we begin the call. This call may contain some of the forward-looking statements which are completely based upon our belief, opinion and expectations as of today. These statements are not a guarantee of a future performance and involves unforeseen risk and uncertaintities. Now I hand over the call to Shri Navas sir. Over to you sir.
+     4  
+     5  Hello good and good morning everyone. Thank Thank you for taking the time to join us today. Today on the call I'm joined by Mr. Bunesh, chief financial officer, Mr. Leajeski, head strategy investor relations and Orient Capital, our investor relation partners. We have uploaded our updated investor debt press release and results highlights on the stock exchanges at company website. I hope everybody had an opportunity to go through the same. I'm pleased to share that we have delivered another strong quarter with our quarterly performance remaining in line with our growth guidance provided for the current fiscal year. We continue see to see strong momentum across all our business verticles supported by favor favorable industry tailwinds and a healthy pipeline of opportunities. During the quarter we registered revenue of rupes 360.7 crores with an margin of 23.6% which is in line with our annual guidance while the financial performance performance is very encouraging. What gives me greater confidence is not just the numbers but the direction which the company is heading right now. We strongly believe that the company is at an inflection point with each of our key business verticles positioned for next phase of growth. The sectors in which we operate be civil nuclear power, aerospace and defense and clean energy all are witnessing strong growth across both domestic and international markets with long-term strategic vision and a strong spirit of innovation. We have built differentiated capabilities and niche product portfolio across these strategic sectors consistently investing in technologies and capabilities well ahead of broader market adoption. Today, as these sectors gain significant momentum, the strength and diversity of our key product portfolio are redefining our growth trajectories and creating multiple avenues for sustained long-term growth. In civil nuclear power, the capabilities we have built over the past five decades with lot of for sight are translating into meaningful opportunities moving forward. We received our highest ever order inflow in this segment during the last quarter for Kiga 5 and six reactors and looking forward for more orders from refurbishment of existing reactors during the current quarter as well. I'm also pleased to highlight our notable contribution to the far reactors which recently achieved criticality a strategically significant milestone for India's nuclear energy program the civil the company has played a pivotal role in this prestigious national program having supplied a majority of the critical assemblies for the reactors reflecting the depth of our engineering and manufacturing capabilities built over decades looking ahead the proposed development of four nuclear reactors at Mahib Basada through the entities The NPCL partnership represents another significant opportunity for the company with the government of India targeting 100 gawatt of nuclear power capacity by 2047. We believe the long-term opportunity for the company in this sector is substantial. From an execution perspective of current orders, we expect to see a very meaningful ramp up during the current fiscal year with a significant growth happening moving forward as well. You already have a strong order book in this segment and supported by healthy pipeline of opportunities and regular order inflows expecting growth going forward as well. We believe civil nuclear vertical has transitioned to a more consistent and sustainable grow growth trajectory with substantially reduced cyclicality compared to the past. Clean energy continues to demonstrate a strong momentum. We received record order during the order further strengthening our already robust order book and provide strong visibility for growth going forward. Our capacity augmentation plan for fuel cells being implemented in three phases remains on track with phase one already commissioned. The phase two to be commissioned by uh September October of this year while phase three which is a multiffold capacity expansion uh will be completed in March of Server being developed for fuel cells is designed to support multiple products under one roof providing us with greater scale and operational efficiency. An important point to highlight here is that our expansion is not limited to adding physical capacity. We have initiated manpower training and are working on automation initiatives well ahead of capacity coming on stream ensuring that we are operationally prepared to support the expected ramp in volumes moving forward in the coming years. While we continue to cater to multiple areas recently, we're also focused on further depths that can become meaningful growth drivers over the long term. In line with this strategy, we have entered the data center infrastructure solution segment where we see significant growth potential. Initial set of data center infrastructure products are currently in is upon successful completion of the qualifications process. We expect a meaningful ramp up over the next uh year. We are currently working on the uh first batch of products against the potential requirement of eight times this requirement for the order what we have received at this time providing opportunity for substantial scale up of this vertical. To support this opportunity, we're also setting up a dedicated facility for data center. infrastructure solutions. We are witnessing a good traction in hydropower and wind energy segments as well and we continue to pursue select products in this segment. Clean energy will remain a major driver of revenues by end of this fiscal fiscal year. In aerospace and defense, the growth remains encouraging and we expect significant order inflows as multiple programs and customer engagement are in progress. In the domestic defense segment, we are anticipating volume orders for actuator assemblys for LCA bases Mark 1A as well as orders for wing kits and electromechanical actuators for various defense programs with overall opportunity potential exceeding more than 250 the execution from domestic space vertical is expected to witness a steady growth MNC aerospace business continues to demonstrate phenomenal growth potential with significant demand from existing customers for products that have already been qualified to support the anticipated volume rampers. Let's say setting up multiple sub units within our existing dedicated aerosates facility. One of our key differentiators has been the pace at which we have established customer specific manufacturing capabilities including our new dedicated aerospace facility and ncap approved special processes facility. Our ability to establish these capabilities within a short time frame has been used very positively by our customers. and reinforces their confidence in our ability to support their growing requirements. With qualified products moving towards higher volumes, increasing demand from existing customers, and multi-year visibility across key programs, we believe aerospace and defense is well positioned to emerge as significant growth driver for the company. While we continue to pursue multiple new inquiries to capture the next leg of growth, our immediate focus remains on completing the first critical port. application of existing products and ramping up volumes. As these slow funds progress, we will also look to onboard new customers. We expect to double our revenues in aerospace and defense segment in the current fiscal year with a significant ramp up from this base anticipated over the next 34 years. Importantly, this growth outlook is largely driven by our existing programs and product portfolio with further upside potential as a new enquir is currently under in metal life and additional products were added to our portfolio. The offline and gas facility will be operational by this October. We have already delivered the first articles to our customers while the first articles for class components for another customer are currently under progress. As discussed in the last call, we expect a robust closing order book of 5,000 by end of this fiscal year providing a strong revenue visibility. Our closing order book by end of this quarter already stands at 5,143 crores and we have received additional 800 crores of orders uh today with further order inflows expected across all key sectors over the coming quarters. We remain confident in sustaining the growth movement and going forward. While we have a robust 5-year road map to pursue growth across all sectors, execute execution remains our key focus in the near term. Our ongoing expansions across all verticals remain a priority as we continue to build the capacity required to support the next phase of growth. At the same time, as we pursue the long-term strategic opportunities ahead of us, prioritization of projects and prudent allocation of capital will remain equally important for us. We continue to focus on maintaining healthy working capital, strengthening operating cash flows, and maintaining a healthy balance sheet while ensuring that capital is deployed towards opportunities that can deliver sustainable growth and improve our items. Packingly execution as per customer requirements is another important area of focus. We continue to strengthen our management and technical teams, enhance operational efficiencies and build the manufacturing capabilities required to deliver on our growing order and meet our execution targets. Improving AITA margins also remains a key priority as we scale our elements. With the progress we are seeing across all key verticals and the initiatives underway, it's enter our capacity and execution. I would like to reiterate our confidence in achieving the guidance given earlier at 80% revenue load for the current fiscal year with an AITA margin of 24 plus minus 100 basis points and we are pretty confident to better than to do better than the guidance given earlier to to everyone. We remain focused on building a world-class institution with a diversified and sustainable business for the long term. I would like to thank all our shareholders for their continued trust and confidence in the company. Now our CFO Mr. Gesh Ra will discuss in detail on the financial performance for Q1 FI27. Thank you.
+     6  
+     7  Thank you sir and uh good morning everyone and thank you for joining us on the earning call. Uh we have recorded I highest revenue of 360 crores in Q1 FI27. registering a strong growth compared to the corresponding period last year and also last quarter. Overall, the company witnessed a healthy growth on both YI and Qoq basis driven by the strong execution of various products. I would now like to provide an update on our consolidated financial performance for this quarter compared to the previous year first quarter. So revenue from the operation is at 360.7 cr in Q1 FI 27 as against 156.6 cr in Q1 FI26 which resulted 130.4% increase in revenue. EITA reported at 85.1 cr in Q1 FI27 as compared to 28.4 cr in Q1 FI26 and this has translated to 199.7% increase compared to the last year first quarter. Profit before tax stands at 67.4 cr in Q1. FI27 as against 14.8 cr in Q1 FI26 which is 355% increase profit after tax was at 50.2 cr in Q1 FI27 as against 10.8 cr in Q1 FI26 which is 3 364.5% increase compared to the last year first quarter. Uh so while we expect strong growth across all sectors in in which the company operates So the company also focusing on the customer diversification strategy increasing valid share from the existing customers as informed by Ramdi. Along with this growth the company will continue to focus maintain healthy cash flows from operations making careful capital investment decisions managing working capital efficiently to support sustainable long-term growth. Uh when it comes to the working capital days we were we have achieved 59 days compared to to the 172 72 days during the FI26 for entire year supported by various initiatives undertaken by the company including better commercial terms with the customers and also monitoring the each element of the working capital on daily weekly basis. So we were able to reach to 59 days uh whereas our guidance given in this year is 172 days we have given a guidance whereas we achieved 60 days by end of The year we were expecting to maintain 100 days as compared to the previous year previous guidance of 170 or 150 days in that range. Uh the gross margins we achieved as 45.61% in this quarter and as compared to the last year 47.65% this is due to revenue mix which is happened in this year and we are continuously monitoring the improvement of the gross margins wherever possible. Then AITA margin is at 85.1 cr in this quarter. Uh not 85.1 1 cr in this quarter which is actually 23.54% we achieved as against yearly guidance of 24% we have given and last quarter AITA margins was at 20.11%. And this is due to operating leverage we achieved through the higher revenues and also uh more ing of the cost. ROC is at 17.2% versus 11.4% and we expected to uh you know reach 23% next year. Our is at 50.22 cr for this quarter which is 13.92% as against 6.9% in Q1 FI26 and last quarter also we achieved a good set of the bad numbers because our revenues are growing multiffold from now onwards. Because of the strong harder book what we have and also whatever sectors we were doing first articles last 2 3 years it is now in the production ramp up stage and the customers were increasing the uh you know the orders in this sector first articles whatever we completed uh we are getting at least 10 to 15 times of the volumes in the aerospace sector and cash flow from operations is at 247.69 crores in this quarter. as against 191.66 crores. So in the last year this is mainly due to the various initiatives undertaken by the company including working capital and other other areas better commercial terms with customers and other important fact important metric we are seeing our debt is at 423.6 crores as of 30th June 2026. Uh so we have an investment of 379 crores as of uh uh this month and like June July end we have 379 crores of the investments are there. So literally there is no debt in the company except some 20 30 crores after adjusting the cash balances whatever we have and uh as expanded by our MD we are in in a phase of the expansion of the various verticals in the company and uh this requires almost 500 crores of capex per this year and also next year put together these capex required for the existing expansion plans whatever we have undertaken. So thank you everyone for joining this call and we appreciate your time and uh uh for your trust and confidence repost on the company. Thank you very much. So you can take up the question and answers now. Thank you very much. We'll now begin with the question and answer session. Anyone who wishes to ask a question may press star and one on their touchstone telephone. If you wish to remove yourself from the queue, you may press star and two. Participants are requested to use handsets while asking a question. Ladies and gentlemen, we'll wait for a moment while the question Q assembles. The first question comes from the line of Mohit Kumar from ICICI securities. Please go ahead.
+     8  
+     9  Yeah. Uh good morning sir and congratulations on a very good quarter. Uh my first question is that can you help us with the tentative execution timelines for the order which you announced today which is 31 billion. Is it everything of this will get executed in FY28 and FY29 and nothing will be executed in F27. Is that a fair expectation? Yeah, I mean uh the orders what we received today, the education timeline is for next year. Uh I mean the demand is lot more and uh it's all depends on how soon we can implement our expansion uh plan and then take it forward. So uh the sooner we do and uh the requirement is obviously for next financial year but we have to see how soon we can uh implement our expansion plan and uh ramp up plan for next year. Uh which we are targeting that and let's see how it goes.
+    10  
+    11  Understood. So my second question is sir do you expect separate package for nuclear power plant or mahi bhanswara for fuel machining system where we can participate directly or are you expecting to participate through the EPC vendors?
+    12  
+    13  No that is through EPC vendors. So we are qualified for number of projects as you have seen in tiger five and six. So we expect a good opportunity from this uh kaig is two reactors and these are four reactors and uh MDR's participation in this project will be much higher than what we can expect from ka 5 and 6 as well. Oh understood my last question can you help me with execution timelines for the existing nuclear order for ka 51 and 6 and how big is the refurbish refurbishment order which expecting in this quarter? So the refurbishment orders uh overall would be about around 200 200 plus crores that we need to do for various reactors. Uh we're expecting another 130 140 crores of orders coming in this quarter. And then uh obviously we have a lot on our plate in terms of the maximum orders which will be around close to 800 crores in nuclear division itself which never happened in the history of this company in the past and plus the kind of order pipeline that we can see moving forward. as well with the new projects coming in and the government's plan uh to move into much higher gawatt uh range. Uh we expect this to the momentum to continue uh over the years and there will not be any cyclical uh issues as compared in the past in earlier I'm talking about 5 10 years back but you would see the momentum going forward as well and
+    14  
+    15  the execution timelines for the existing orders So for the refurbishment reactors it is within 2 years and for Kaga 56 uh the execution timelines range from 1 year to 3 years three periods.
+    16  
+    17  Understood sir. Thank you and all the best sir. Thank you.
+    18  
+    19  Thank you. Before we take the next question, a request to all the participants to restrict their questions to two part two questions per participant. Thank you. We take the next question from the line of Bala Subramanyan from Aryan Capital. Please go ahead.
+    20  
+    21  Good morning sir. Uh thank you so much for the opportunity. Congratulations for good set of numbers. Sir on the working capital side we have seen uh significant improvement in terms of inventory also reduced from 78 to 145. Receivity is also reduced to 140 to 82 on a like uh just want to understand this dramatic reduction in days is very much impressive. So how do you understand uh in this financial year as well as next year and given it's a a diverse uh project portfolio some of them are long cycle some of them are short cycle so what are the specific initiatives uh uh uh drive this improvement and how do you understand in the coming years you want
+    22  
+    23  yeah I'll take yeah I'll take up this call so we have negotiated better terms with some of of our customers as far as commercial terms is consideration and also our receivable days are good compared to the last quarter. Uh we were able to negotiate some better terms. One is commercial terms also the credit period we negotiate some of the credit terms or after reaching the customer premises. So we were able to uh you know uh deliver at a faster pace so that we can able to deliver we can able to receive the money and having said that our target is for this year is around 100 days. We are targeting to reach that including keeping consideration of all long time long cycle projects into consideration. Uh apart from this we also is monitoring every element of the working capital like current assets. We were able to generate GST refund of almost 70 crores per year we are targeting. So so that cash flows will be better cash from operations better and all. We wanted to you know sustain these levels uh uh you know constantly negotiating better terms with the both existing customers and also from the new customers. So that's how we can able to do uh everything is done it organically and uh there is a possibility of doing inorganically also but we don't want to do at the cost of you know margins. So the inorganically also we can reduce but it will be the costlier we don't want to you know affect the margins in the company as long as it is margins are better and everything is good then only we can take any of the actions but whatever we have done is organically we are able to reduce now I hope I clarified your question
+    24  
+    25  yes sir so my last question so I think uh we have order book of nearly 5,000 plus cr and uh today morning around 3,00 cr So I think if you are having if you want to execute more order book obviously we need to uh have uh uh kind of facilities and equipment earlier you guided uh that kax is there any reiteration that kax especially for uh uh uh clean energy side and uh if you could uh uh like uh give the update of island gas uh and clean energy phase two for the cex perspective and how much kex we have incurred in Q1 sir
+    26  
+    27  uh See uh like to total 80 crores capex is capitalized but it is not spent in this quarter. It is actually in the form of capital work in progress and it become capitalized now for quarter 1 we might have spent around 30 35 crores only capex but overall 80 crores which is capitalized but earlier it was in capital WIP line item it's a part of fixed assets only when it comes to 5,000 crores order book what you mentioned today We have given an incremental. We received the 3,200. It is not a full order already communicated earlier. The incremental order is 800 crores. So it is 5,100 plus 800 plus crores is a total order book as of today. Uh when it comes to the capex plans, so we as we come as we said earlier in our call in my call is actually around 500 crores we have to incur to take the company into the next level. Next year guidance We are not giving officially as of today. Uh but uh you know uh we are seeing at least four five times of asset turnover whatever we uh we do minimum four to 5% four to five times of asset turnover we are targeting and if you look at our debt is today around 20 25 crores only the after adjusting the investments what we have in the company. So we are very strong in the as far as a balance sheet is concerned and working capital. also into consideration. Uh total across all sectors we are going to spend around 500 crores but everything will not spent in this year. It will be spill over to next uh one two quarters of the next financial year. Uh as communicated by our MD there are phase one phase two target phase 2 phase three targets are there uh for which we need to you know spend money to increase the you know asset turnover ratio at least six times whatever we spend in the form of graphics.
+    28  
+    29  Got it sir. Thank you.
+    30  
+    31  Thank you. The next question comes from the line of Gorov Naguri from Aendas Park. Please go ahead.
+    32  
+    33  Uh thank thanks for the opportunity. Uh considering the last participant's question uh given that you are seeing a very strong demand uh for the for in the fuel se fuel cell segment are you uh planning the capacity expansion beyond the 20,000 hot boxes capacity that's already added. That's question number one. And secondly, uh if you can elaborate a little bit more on this uh new product revenue which has gone to almost 100 kores almost 50% of the clean uh clean energy segment uh revenue run rate. Yeah. So basically as mentioned earlier we are going into phase two is an expansion the should be ready by September for fuel cells and phase three is going to be a multiffold expansion plan. I can't specify the numbers because of the India being signed but it's going to be a multiffold expansion plant uh which will become which will be uh ready by March of 2027 in all probability. So there will be a ramp up uh which is being organized a training program is being done uh right away to gear up to these one is the capacity and one is a ramp up plan. So both are being employed right. So it's going to be a massive multi-lo expansion plan which is in place because of a very strong demand as you have seen that even today orders on a consistent basis and uh moving forward as well uh we see a very strong uh road map uh in all these sectors moving forward and what was your second question? Yeah, on this first question only. So when you say uh March 27 timeline, is it the commissioning by March 27 or you would be starting from March 27? If if you can just clarify on that one,
+    34  
+    35  we will be commissioned by March 27 the multiffold expansion plan and then we move on to the ramp up plan after that from April onwards.
+    36  
+    37  Understood. Uh the operational phase phase two will be operational by October of this year.
+    38  
+    39  Okay. Okay. And and we already completed our we've already completed our phase one expansion plan in all aspects. So it's done already.
+    40  
+    41  All right. All right. So the capex for this year uh would be would be upgraded because of this uh new phase expansion from October to March 27.
+    42  
+    43  Yeah. Sure.
+    44  
+    45  All right. Uh the second question was on the new product uh which has seen a sharp growth in this this quarter. In fact, uh the run rate now is almost 50% of your uh the fuel cell segment. So is it just oneoff deliveries or this would be the run rate continuing from here on as well?
+    46  
+    47  No, it's going to continue. It's going to grow. Actually, we are going into a we've got a major demand in this product division and it's going to continue to grow more than what it has grown in Q1. Uh second half would be even stronger than the first half in all these segments. that we're talking about including the product
+    48  
+    49  and this new product segment I'm assuming is are the are the product which goes into this fuel cell assembly only other than the hot box
+    50  
+    51  no not necessarily we have the other we have the other products we are doing pretty well in balls we have a lot of export orders as well and we're a major uh contract with one of the MNC's for a huge supply of ball shoes for them for the stages so a lot of work has been done over the past couple of years to get qualified for all this and now you are seeing those moving uh results moving forward.
+    52  
+    53  All right.
+    54  
+    55  It's a combination of everything.
+    56  
+    57  Understood. Understood. Just last question again on the working capital where we have seen receivables kind of coming down from 140 to 80. Uh our understanding is that that most of this high receable days is because of the transit time that you have and then the the recovery from the client is is is having about 40 45 days of working capital days. So if I understood it correctly, this entire decline is because of uh of a better credit terms once the product is delivered at the client site or uh any other reason.
+    58  
+    59  No, it's all about better payment terms, credit terms and various other aspects, right? So that's what it is.
+    60  
+    61  Yeah. Not only
+    62  
+    63  I think that so not only the customer % we also actually got negotiated better terms with other customers also and the weekly monitoring is in place and uh uh so various actions not only that culminated into this reduction.
+    64  
+    65  Okay. So the end of the day the idea is to break up the working capital days would be like we will be sustaining it. We are at 59 60 days right now but we'll be below 100 days for the year. So that's what uh the CFO has mentioned earlier.
+    66  
+    67  Okay. And I mean the the way to look at is the receable inventory days which used to be about 340 uh days which is now down to about 220. So you're saying that both the receable plan inventory days would sustain around 200 220 days and and the working capital at 100 days.
+    68  
+    69  Yeah, that's what let us see.
+    70  
+    71  All right. Thank you. That's it from my side.
+    72  
+    73  Thank you. The next question comes from the line of Sumat Kumar from Oswal Financial Services. Please go ahead.
+    74  
+    75  Yeah. Hi. My question is uh our key client has increased uh their earning uh revenue guidance by 10 to 15%. So assuming that can we say whatever the guidance we have given 80% plus minus 5 5%. Uh there is a higher possibility to upgrade. this uh in the coming quarters.
+    76  
+    77  Uh Sumant, it's like this uh I've already said that in my uh speech that definitely we have given a certain guidance which we're very confident of and we'll definitely do better than that. So probably that's what I would say right now. Probably we'll see by end of next quarter how it goes and then we'll come back to you on that.
+    78  
+    79  Okay. And uh for this uh civil nuclear power segment uh our order uh the order book execution is uh current is still uh is not picking. So when can we expect this uh the execution is going to happen? Uh which year
+    80  
+    81  in this year uh Suman second half of this year the execution will commence and it will continue to grow from there on that's why I clearly said that uh we are doing certain long cycle projects right now and executions will start from second half of this year and it will continue to grow from there on.
+    82  
+    83  Okay. So this order book is for how many years of the the current order book of nuclear power?
+    84  
+    85  Overall it's for three three and a half years. Some of the orders are within 2 years. Uh overall we have to execute everything. We have roughly around 800 crores plus I think including the one which we supposed to get where we dictated L1. We supposed to execute all this within the next 3 years.
+    86  
+    87  Okay. Okay. Thank you so much. Thank you.
+    88  
+    89  So as of today We have 684 crores of orders and what we are expecting is 130. So as with that it is around 815 crores that was mentioned by our around 800 crores in the last question also. So that is we are going to I think we are very confident we'll get in this quarter.
+    90  
+    91  Okay. Okay. Thank you so much.
+    92  
+    93  Thank you. We have the next question from the line of Vipra Shivas from Philip Capital. Please go ahead. Uh hi frog good morning. Uh just quickly on the capeex time. So uh you have uh guided for 500 kes of capeex for next couple of years. Uh out of this s how much will be for nonp energy segments out of the 500 crores.
+    94  
+    95  So it will be around 7030 ratio but it will be in the 70 30%. So 30% is for non- free energy segment right?
+    96  
+    97  Uh yes yes
+    98  
+    99  okay so around
+   100  
+   101  I mean even in the within the clean energy also some parts can be funible in other sectors also so which we will use for other sectors also
+   102  
+   103  right sir and out of this 500 how much you have already incurred in quarter one
+   104  
+   105  we incurred around 35 crores of capex in the quarter one
+   106  
+   107  oh 35 crores right
+   108  
+   109  yes
+   110  
+   111  sure yeah and so uh okay that straight science. So secondly on the data center side where we are obviously you know working on first approvals and then we'll be ramping up. So exactly what we'll be doing and firstly and secondly sir what's the current size of the order we are working on as far as data centers are concerned see data centers the order is about 45 which we have execute which we have to do it before March of this year. Right now the way this is the first article right Now that's the initial first article with a couple of to threememes and then we go into the major first set of order which is about 45 rows which we have to execute by March of this year or February March of this year that last quarter of this financial year and the way we are setting up the whole plan is that they have to do eight such major uh infrastructure requirements eight sets uh yearon-year basis. So that's where we stand. So the focus is basically to ensure that we have a dedicated facility for that uh moving forward uh to execute that uh eight uh sets requirement each year almost for export right it's not for domestic consumption
+   112  
+   113  no all this is for export
+   114  
+   115  all this for export thank you thanks a lot thank you
+   116  
+   117  thank you we have the next question from the line of viral asset management please go ahead Thank you so much for the opportunity sir. Uh my question firstly is on the nuclear segment of ours. Uh you mentioned in the earlier questions that you know uh and also on your PPT that you know there are four projects at uh my bans and where you know we'll be bidding. Is it possible for you to address the TAM and you know the kind of opportunity we can get in terms of revenue from these four projects which we'll be bidding for over the next 3 four five years as and when they open. See basically the the today's situation is the tenders have already been floated for these four projects for uh 10 megawatt reactors and uh once they are allotted to the contractor who is getting it uh then has an opportunity of much more than what we received from TA 5C because Tiger 5 is only two reactors there are four reactors and uh the timeline I cannot really say probably uh It's a process by itself, right? They're finally the vendors and then it's a one year process I guess. Uh so they're already having successfully in terms of orders. So probably in the next part actually
+   118  
+   119  okay and for the uh other question is you have a specific slide on you know role in India's PSPR program and uh the company also contributed uh for this program. So can you just help us understand that? uh what can be the opportunity size here for us?
+   120  
+   121  See the PBR program was a very long program for us which we have actually contributed uh massively for that in terms of the pore of the reactors in various majorities which we have done exclusively for public that's so now since it's achieved the criticality now they're looking at uh setting up I think what we have heard is they're going to set up another couple of more reactors which is they started sending the details to us. So the opportunity is very big in that. So let's see as and when we have more information on that we'll update all of you on that but there is a great opportunity coming forward for that since they have achieved the criticality right now. So in nuclear how we work with EPC contractors here we are directly working with EPCs or with the government. No, this is directly with the government. So the pace of PFB the so if you have to like understand the pace of the nuclear or the PFPR program either of them scaling up faster we would not in terms of revenue but in terms of you know uh the timelines of things happening faster PSVR would come ahead of nuclear
+   122  
+   123  I I'm not too sure about that. See PSVR will definitely come forward because uh the they have achieved criticality and it's a a great achievement by uh the government of India to do that. We have contributed a lot for that. It's kind of part of our nuclear cycle to use the thorium resources that we have. All this is for civil generation power requirements right so uh obviously the step is taken right now in terms of move forward with the next so let's see how soon they come up with that. Understood. And this is the last question. I think the previous participant touched upon it. U the the products and other sectors where we are supplying certain components which are import substitutes and we also have certain export orders. Here is it possible to elaborate uh certain end usage and the products but we are making which are critical and also the end usage of these industries. It mainly comes from the point of view of understanding the sustainability of this vertical for our business given that it's scaled up so significantly in Q1. Yeah. So the sustainability it's going to sustain and do better moving forward. So it's a combination of aerospace, defense, clean energy. It's a combination of all those products that we have developed over the years and it's going to sustain and do better actually uh quarteronquarter basis. So that's what we looking at here. So like in aerospace once we get our first articles approved is that the similar nature of this business that we are getting certain first articles approved and then uh you know uh winning long-term orders.
+   124  
+   125  That's exactly what I've said. See, as the CFO also mentioned earlier, see basically what you have seen, we have done a lot of work in the last couple of years in order to establish the first articles, the infrastructure, getting qualified for aerospace and getting the right customers uh and our quality getting approved very well by all these customers. So we already moved into the volume production for majority of the first articles and some are in the process. So it's an ongoing process. So what you're seeing the numbers right now is an effort of which was done over the last one and a half years.
+   126  
+   127  Understood. Thank you so much for all the very best.
+   128  
+   129  Thank you. Thank you. We have the next question from the line of Janesh Karia from Union Asset Management. Please go ahead.
+   130  
+   131  Yes. Thank you for the opportunity and congratulations. has done a very good set of numbers. Uh so considering
+   132  
+   133  I can't hear you. Can you come closer to the
+   134  
+   135  Is this better sir?
+   136  
+   137  Hello. Is this better?
+   138  
+   139  Hello.
+   140  
+   141  Uh no it's not.
+   142  
+   143  Hello. Is this better now?
+   144  
+   145  Hello.
+   146  
+   147  Yeah, it's better right now.
+   148  
+   149  Uh yeah. Uh so thanks for the opportunity and congratulations on a very good set of number. So Considering the 5,500 KES of output that have currently and a very strong outlook on all our segments uh incrementally our revenue will also multiffold grow in the coming years. The 500 crores of capeex and the incremental working capital requirement how do we plan to fund it? Will it be debt funded internal acruals funded or will we require some external capital to fund it?
+   150  
+   151  No, it will be a combination of internal funding and uh present that uh that's what it is.
+   152  
+   153  Understood sir. So the second question is um on the US data center sides. So considering we have a large customer there uh any on ground uh uh news that you are hearing from uh interaction with your customers with regards to delay in the incremental capacity or capex which is being sent uh spent on the US data centers. Any delays or slippages you expect uh in the near term? for the medium term.
+   154  
+   155  See all this is unwanted noise. Uh I really wanted to express this very clearly. You you have seen how we have progressed uh as far as MTAR is concerned and how we are moving forward and the kind of orders we are receiving even recently as well. So things are going in the right direction. Absolutely. There is no issue at all.
+   156  
+   157  Perfect. Uh that's good to you. Uh Uh thank you for addressing the questions and all the best for the future.
+   158  
+   159  Thank you. We have the next question from the line of Rohit Natraan from Access Max Life. Please go ahead.
+   160  
+   161  Yeah, thank you for this opportunity. Uh my first question is more to do at a very uh you know longerterm picture perspective. Uh we are given to understand Bloom Fremont capacity. They're looking to expand all the way to 5 GW. This would technically mean something like 77,000 odd boxes of such even if you exclude the Taiwanese player the uh capacity for you it will probably be they will be asking you to do more than 50,000 hot boxes per year as such will you be in a position to do that or and even some picture beyond that probably they may have to increase their capacity as well uh given the kind of requirement you have for behind the B solutions uh globally for all these data centers and such. Uh what is the outlook over there? I understand there is some NDR and maybe you don't want to uh uh disclose many things but you could probably give some you know qualitative uh indicators as such a uh my absolute of the customer I they can't get into the numbers because of the NDA side but that's the whole plan right to take care of the customer requirements that's all I can say right now so they are on track with everything that what the customer needs
+   162  
+   163  got it got it uh my second question will be more about the uh content per platform in defense what exactly uh uh are you offering in pages uh what will be that value uh per platform for say let's assume for one aircraft uh similarly on the content per platform in content per reactor for say nuclear if you could give us some numbers to understand how big is the opportunity here and how much you can incrementally make an improve as I mentioned earlier in the pages into the actuator program about 142 It's going to go even further than that. That's not the only area. We are working on very niche areas in defense which we don't kind of projects. So they're working on various projects including various uh projects in Africa as well. So we are working on number of projects which are we find there's a lot of value add and criticalities involved in those projects. So these numbers are going to grow for sure and our basket Our uh uh water share is pretty high in terms of the reactors are given by the end because of uh reactors essentially right so we're looking at four reactors coming in so there is a massive uh plan for by the government of India also moving forward to really program and we keep talking about clean energy but we are really It's pushing ourselves to expand our capabilities beyond the the requirements uh that we are seeing seeing in a huge way in the nuclear program and I'm really working towards that in terms of and uh this commitments uh which to come in a big way over the next two three years. Uh
+   164  
+   165  surely sir appreciate it. Uh we'll get back in. Thank you. Thank you. Thank you. The next question comes from the line of Push Seal Dasani from Sundaram Alternates. Please go ahead.
+   166  
+   167  Hi to thank you for the opportunity and congrats for a great set of results. So my first question is on the interest cost of 16 crores. If you could help us with the deplication of how much of that is non-fund based limit and given the free up in the working capital how should we see the interest cost going forward so the interest cost basically uh I think I don't have the exact breakup of that but probably uh CFO select can give it little later to you but uh it's a combination of everything and probably it would uh we're trying to reduce our interest cost also moving forward further so it it would come down moving forward you know a quarter on quarter basis I guess I can start. Uh so just last question on this products and other provision. I think we were trying to increase our times with our largest client. Uh we were trying to get into the enclosures and cable harness. Uh any other new products which we are trying to expand our opportunity with them?
+   168  
+   169  Yeah, we are definitely doing very qualified additional uh assemblies as Well uh so as and when it is done we'll inate uh accordingly. So we are doing that.
+   170  
+   171  Okay. Sure.
+   172  
+   173  What I want to say is the entire entire is the implementation. We keep working on developing new product or consistent and we'll see the result 6 months one year down the line in terms of volumes and all that. That's our focus right now. So that continues process. Okay, sure. Uh, thank you sir. That's it from my side.
+   174  
+   175  Thank you. The next question comes from the line of Vibra Shasta from Philip Capital. Please go ahead.
+   176  
+   177  Uh, uh, sure sir. Uh, thanks for allowing me to ask one more question. Uh, so quickly on the product side where we have obviously seen a very rapid runup in the context of this sport this revenue. So specifically sir going ahead uh what kind of programs you're working on I mean what kind of ramp up you see as far as products is concerned over next couple of years.
+   178  
+   179  See the product engine is going to grow rapidly because we have done lot of work in terms of aeros and various other sectors and you are seeing the result now in this industry moving forward as well. Uh and as I said earlier that basically It's a continuous process to develop the products to cater to the existing customers and new customers as well in a sentence. So it's a it's a combination of different segments that we're working on in the products division which we have done over the last couple of days and you're seeing results right now and moving forward the segment is going to do more and more.
+   180  
+   181  Uh sure s that makes a lot of sense. Uh that's all from mine. Thank you.
+   182  
+   183  Thank you. The next question comes from the line of Pria from Lucky Investments. Please go ahead.
+   184  
+   185  So from your backlog, if you could tell us what is the execution cycle of the products backlog and the clean fuel uh clean energy fuel cell backlog.
+   186  
+   187  See that's a very good question. We have the demand is so high. See when people actually asking about Sorry, your s your sound is not audible. Sorry.
+   188  
+   189  No, I think I'm audible. I don't know. Can you hear me?
+   190  
+   191  I think
+   192  
+   193  we can hear we can hear you.
+   194  
+   195  Sorry to interrupt, sir. There's a quite disturbance in your voice.
+   196  
+   197  Yeah. Can Can you hear me? Huh?
+   198  
+   199  Yes.
+   200  
+   201  Yeah, it's better.
+   202  
+   203  Okay. We are really focusing upon the more we execute the better it is for the customers. So that's what we are doing right now. The expansion plans and also improving on the operation efficiencies of their existing capacities. So the the best part of it's Not like an order book which has to be exuded over 5 years or 10 years. It's all short cycle. Some are within one year, some are within 6 months, some are within 2 months, some are within one and a half, two years. So it is something that book is not an order book which is overall there and uh Sorry sound operator I cannot listen anything I think.
+   204  
+   205  Sorry sir
+   206  
+   207  sir actually we are losing your voice.
+   208  
+   209  So we are
+   210  
+   211  I request you to do the adjustments.
+   212  
+   213  I've done that for Sir, we are still using losing your voice. Uh,
+   214  
+   215  my voice is clear. My voice is clear.
+   216  
+   217  Yeah, your voice is clear, sir.
+   218  
+   219  Okay. So, can you ask question again?
+   220  
+   221  I was asking on the
+   222  
+   223  Oh, can you hear me now?
+   224  
+   225  I was just asking on the execution cycle of the clean fuel cells order. backlog if if that's possible to share
+   226  
+   227  sir.
+   228  
+   229  Can you hear me now?
+   230  
+   231  Yes.
+   232  
+   233  Okay. So, basically the exe see the what the what orders you are seeing right now is that we need to execute them over this year and the next year. Uh and the sooner we do the we are all looking at the execution cycle and implementation of the capacities and these are all short cycle orders. It's not that we're trying to execute this over the next 3 years, four years, it's all very short cycle orders which we need to execute as soon as possible.
+   234  
+   235  Okay. And uh uh uh sir in the total gawatt uh issuance of your key customers uh what will be the indicative market share? No, it uh there's nothing like market share. We right now uh see the demand is so high right now in terms of uh the requirements by the customer. So we we hold a majority of the share in that but we can't spell out the exact percentage right now.
+   236  
+   237  Okay. And my last question is on the products business uh and there's a substantial number this quarter. And on the aerospace and defense business, if I had to ask you 3 4 years down the line, what should be the size of these businesses? So these businesses have been around 100 cr size uh 130 cr annual size. If I had to ask you in FI30 based on whatever work efforts that you have put in and the the platforms or the or the projects that you're working on, what kind of business sizes they should be 3 four years down the line? I can't say the exact number but the kind of road map we have it might cross thousand floors very comfortably
+   238  
+   239  both these combined
+   240  
+   241  no I'm talking of person we lose you individually 1,000 crores no probably looking at 600 700 crores and products should cost more than 1,000 cr products will be 1,000 and aerospace 600 700 course. That's okay. Okay, sir. Thank you.
+   242  
+   243  Thank you. In the interest of time, that was our last question and I would now like to hand the conference over to the management for closing remarks. Thank you and over to you.
+   244  
+   245  Uh thank you everyone for joining us today uh and sparing your time to join our for the vaccine. I would like to thank uh all every all the uh employees of ENA for their contribution they have done and even moving forward as well and I would like to also thank the shareholders for their trust and faith in ENA uh and continue to support uh the company moving forward as well. Thank you so much.
+   246  
+   247  Thank you on behalf of MT technologies limited. That concludes this conference. Thank you for joining us and you may now disconnect your lines.
+=== END TRANSCRIPT ===

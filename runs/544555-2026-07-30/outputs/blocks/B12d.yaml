@@ -1,0 +1,24 @@
+stage: B12d
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 1
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "GRP Ltd", missed_item: "India-EU FTA discussed as medium-term reclaim-rubber demand driver, not incorporated into B06 industry_cross_read", anchor: "GRP Ltd Q3 FY26 call, 13-Feb-2026, p.2"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {severity: "MAJOR", claim: "Q6 - GRP Ltd numeric forward guidance target and delivery track record", issue: "VERIFIED rests on single peer (GRP Ltd, 5 anchors across 4 quarters), not >=2 independent peers per Rule 4; should be PARTIALLY VERIFIED under literal rule. Mitigated by peer-set scarcity (1 of 3 named peers has any transcript) and GRP-self-referential nature."}
+findings:
+  - {severity: "MAJOR", location: "B06 Part 2B, plastics RM paragraph", claimed: "~30-45% YoY decline in virgin polypropylene prices, cited GRP Q3 p.4 and Q4 p.14-15", source_truth: "Q3 p.4 supports only 30-35%; Q4 p.14-15 gives no %; the 45% is at GRP Q2 (14-Nov-2025) p.3, never cited for this claim", note: "Anchor mismatch on the upper bound; underlying fact real but mis-cited across quarters"}
+  - {severity: "MINOR", location: "B06 industry_cross_read.demand", claimed: "omission", source_truth: "GRP Q3 p.2 India-EU FTA as demand driver not incorporated", note: "Context item, does not affect any of the six B05 verdicts"}
+  - {severity: "MAJOR", location: "B06 verified block Q6", claimed: "VERIFIED", source_truth: "single-peer basis (GRP only, 4 quarters)", note: "Rule 4 requires >=2 independent peers; flagged with structural mitigation, not resolved here"}
+critical_count: 0
+major_count: 2
+minor_count: 1
+acceptance_rate: 100
+peer_utilisation: 100
+peer_set_completeness_pct: 33
+peer_set_note: "peer_utilisation 100% = peers used substantively (1) / peers with transcripts provided (1). Peer-set completeness 1/3 (33%) named peers had any transcript - an input-availability gap, flows to synthesis as a coverage limitation, not a B06 execution failure."

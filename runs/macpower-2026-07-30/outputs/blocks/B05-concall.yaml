@@ -1,0 +1,83 @@
+stage: B05-concall
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "60-acre govt land repeatedly slipped (Dec-2025 -> Mar-2026 -> undated as of Jun-2026 call); JV and 25% EBITDA margin story both gated on it"
+  - "Market share stated as 4.5% (Q2/Q3 FY26 calls) vs 1%/2% (Q4 FY26 call) not explicitly reconciled"
+  - "Machine unit volumes withheld every quarter"
+  - "First-time finished-goods inventory (~80 machines) booked as cost without matching revenue, tied to customer subsidy/loan documentation lags"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Capacity utilisation ramp to ~90% on 2,500-machine base", type: "VOLUME", timeframe: "near (FY27)", conviction: "H", confirm_signal: "utilisation data trending toward 90%", kill_signal: "utilisation stalls below 85% or new bottleneck emerges"}
+  - {priority: 2, name: "NEXA/high-end mix rising past ~40% of order book", type: "PRICE-MIX", timeframe: "near-medium", conviction: "H", confirm_signal: "NEXA share of executed order book keeps rising", kill_signal: "NEXA share plateaus or reverses"}
+  - {priority: 3, name: "13-acre Metoda land execution (de-bottleneck + backward integration)", type: "COST/VOLUME", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "lease signed, construction milestones hit within ~12 months", kill_signal: "further slippage beyond FY27"}
+  - {priority: 4, name: "60-acre govt greenfield land / 10,000-machine plan", type: "VOLUME/REGULATORY-POLICY", timeframe: "long", conviction: "L-M", confirm_signal: "binding signed land agreement", kill_signal: "continued delay beyond FY27 or policy denial"}
+  - {priority: 5, name: "Defence/aerospace vertical scale-up", type: "SECTORAL/REGULATORY-POLICY", timeframe: "medium", conviction: "M", confirm_signal: "defence/aero moves from single-digit to double-digit % of revenue", kill_signal: "bid conversion stuck at ~10-12% with flat revenue share"}
+  - {priority: 6, name: "Backward integration toward 25% EBITDA margin", type: "COST", timeframe: "long, multi-year", conviction: "M", confirm_signal: "margin structurally clears 18-19% without one-off tailwinds", kill_signal: "margin range-bound 16-18% for multiple years"}
+  - {priority: 7, name: "JV/technology-transfer with foreign partner", type: "INORGANIC", timeframe: "long, gated on land", conviction: "L", confirm_signal: "signed agreement/named counterparty", kill_signal: "land delay persists beyond FY27 or partner exits"}
+  - {priority: 8, name: "Export market development (Europe/Gulf)", type: "SECTORAL", timeframe: "deprioritised", conviction: "L", confirm_signal: "management re-elevates export as stated priority", kill_signal: "remains 'not a focus' for further quarters"}
+guidance:
+  - {item: "Revenue/EBITDA/PAT growth guidance", number: "25-30%", timeframe: "FY26 and FY27", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 EBITDA target", number: "Rs 50 cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Order book target at FY26 close", number: "Rs 300-330 cr", timeframe: "FY26 year-end", stated_in: "Q2 FY26 call"}
+  - {item: "Capacity expansion", number: "2,500 machines p.a.", timeframe: "effective 10-Nov-2025", stated_in: "Q2 FY26 call"}
+  - {item: "Phase-1 new-plant capex incl. land", number: "Rs 125 cr", timeframe: "~15-16 months post land receipt", stated_in: "Q2 FY26 call"}
+  - {item: "Total planned capacity (3 phases)", number: "10,000 machines", timeframe: "5 years", stated_in: "Q2 FY26 call"}
+  - {item: "60-acre land, first promised date", number: "n/a", timeframe: "end of December 2025", stated_in: "Q2 FY26 call"}
+  - {item: "25% EBITDA margin aspiration", number: "25% EBITDA", timeframe: "2-3 years, tied to new plant", stated_in: "Q3 FY26 call"}
+  - {item: "60-acre land, revised date", number: "n/a", timeframe: "Feb end / March first-second week 2026", stated_in: "Q3 FY26 call"}
+  - {item: "Average realisation uplift", number: "10-20% increase", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "R&D budget policy", number: "1-2% of revenue", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actual capex", number: "Rs 15.36 cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "13-acre Metoda land capex", number: "Rs 30-35 cr", timeframe: "immediate/FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue growth guidance", number: "28-30%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 capacity utilisation target", number: "~90%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 total capex", number: "Rs 30-40 cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "AMC/service/spares revenue", number: "Rs 5-6 cr/year", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "60-acre land, latest date", number: "n/a", timeframe: "3-4 months from May-2026 board (~Aug-Oct 2026)", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "FY26 revenue/EBITDA/PAT growth of 25-30%", outcome: "delivered", explanation: "n/a - met"}
+    - {promised_in: "Q2 FY26 call", promise: "FY26 EBITDA target Rs 50 cr", outcome: "delivered", explanation: "n/a - exceeded (Rs 53.90 cr actual)"}
+    - {promised_in: "Q2 FY26 call", promise: "Order book Rs 300-330 cr by FY26 close", outcome: "delivered", explanation: "n/a - exceeded (Rs 406 cr actual)"}
+    - {promised_in: "Q2 FY26 call", promise: "Margin improves QoQ into Q3 FY26", outcome: "delivered", explanation: "n/a - EBITDA margin rose to 18.08% in Q3 FY26"}
+    - {promised_in: "Q2 FY26 call", promise: "No equity dilution/QIP for phase-1 capex", outcome: "delivered", explanation: "n/a - reaffirmed each subsequent call"}
+    - {promised_in: "Q2 FY26 call (restating a Q1 FY26 promise)", promise: "60-acre land acquired by end of December 2025", outcome: "missed", explanation: "external-blame: government approval/policy timing"}
+    - {promised_in: "Q3 FY26 call", promise: "Land signing expected Feb end / March first-second week 2026", outcome: "missed", explanation: "external-blame: Gujarat local elections delaying defence-and-aeronautics land policy"}
+    - {promised_in: "Q2/Q3 FY26 calls", promise: "JV/technology-transfer finalized once land received", outcome: "partial", explanation: "still gated on land as of Q4 FY26 call; consistently explained, not deflected, but no movement in 3 quarters"}
+    - {promised_in: "Q3 FY26 call", promise: "25% EBITDA margin achievable in 2-3 years via new plant", outcome: "partial", explanation: "reframed in Q4 FY26 call as specifically requiring the undated 60-acre land, not the nearer 13-acre facility; goalpost narrowed under analyst pressure"}
+promise_delivery_score: "5 delivered / 2 partial / 2 missed (9 tracked)"
+excuse_pattern: "external-blame-heavy on the one recurring miss (land), delivered with unusually detailed and proactive disclosure; one unresolved data-consistency deflection (market share); one goalpost-narrowing surfaced only under analyst pressure"
+repeated_evasions:
+  - {question: "How many machines did you sell/manufacture this quarter?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time"}
+  - {question: "When will the 60-acre government land be signed / when does the JV finalize?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "FY26 revenue/EBITDA/PAT growth guidance and order-book targets all met or exceeded, and Q1 FY27 results ran well ahead of guidance, but the flagship 60-acre land/JV/margin-expansion promise slipped three-plus quarters running and an unreconciled market-share figure surfaced under direct questioning"
+peer_questions:
+  - {question: "Is the Indian CNC/machine-tools industry actually growing at the 15-30% range Macpower cites, and does IMTMA's Rs35,000 cr (2026) to Rs54,000 cr (2030) consumption trajectory match peer disclosures?", why: "Underpins every revenue-growth guidance number in the valuation model", check_peers: ["ADOR", "JYOTICNC", "KLBRENG"]}
+  - {question: "Do peers report similar import-component lead-time/cost pressure driving large finished-goods or import inventory builds?", why: "Tests whether Macpower's ~1-year import inventory and first-time 80-machine finished-goods build is industry-wide or company-specific", check_peers: ["ADOR", "JYOTICNC", "KLBRENG"]}
+  - {question: "Does Macpower's claimed market share (4.5% in Q2/Q3 FY26 vs 1%/2% in Q4 FY26) reconcile with peers' own disclosed market-size and share estimates?", why: "Direct, unresolved credibility/consistency flag on a core competitive metric", check_peers: ["ADOR", "JYOTICNC", "KLBRENG"]}
+  - {question: "Are peers, especially Gujarat-based JYOTICNC, also experiencing multi-quarter delays in government land/policy approvals for capacity expansion?", why: "Tests whether the land slippage is systemic policy risk or company-specific execution risk", check_peers: ["JYOTICNC", "ADOR", "KLBRENG"]}
+  - {question: "Is the ~10-13% tender-bid conversion ratio and single-digit-of-revenue defence contribution, despite Rs300-400 cr bid pipelines, consistent with peers for the same government tender pool?", why: "Verifies whether the defence narrative is running ahead of revenue conversion industry-wide or specifically at Macpower", check_peers: ["ADOR", "JYOTICNC", "KLBRENG"]}
+  - {question: "Do peers describe a comparable multi-year path from high-teens to ~25% EBITDA margin via backward integration and premium-mix shift?", why: "The margin-expansion thesis is central to the growth story and is now gated on the delayed 60-acre land", check_peers: ["ADOR", "JYOTICNC", "KLBRENG"]}
+red_flags:
+  - "60-acre government land slipped Dec-2025 -> Mar-2026 -> undated as of Jun-2026 call; JV and 25% margin story both gated on it (Medium-High)"
+  - "Market-share figure changed (4.5% vs 1-2%) without explicit reconciliation when directly questioned (Medium)"
+  - "Machine unit volumes withheld in all three calls, limiting independent verification (Low-Medium)"
+  - "First-time finished-goods inventory (~80 machines, ~Rs100 cr dispatched value) booked as cost without matching revenue recognition (Medium)"
+  - "25% EBITDA margin target re-anchored under analyst pressure to the undated 60-acre land (Medium)"
+  - "Car-case business with 2 large OEM prospects mentioned once in Q2 FY26 call, never referenced again (Low-Medium)"
+  - "Export ambition (EMO Germany push) explicitly deprioritised in Q4 FY26 call after two quarters of building momentum (Low)"
+dropped_triggers:
+  - "Car-case business (2 large OEM clients, Q4 FY26 sampling promised in Q2 FY26 call) - never mentioned again in Q3 or Q4 FY26 calls"
+  - "Export market push (EMO Germany, active dealer expansion in Q2/Q3 FY26 calls) - explicitly deprioritised in Q4 FY26 call"
+timeline_slippages:
+  - "60-acre govt land: promised end-Dec-2025 (Q2 FY26 call) -> Feb end/March 2026 (Q3 FY26 call) -> still undated, '3-4 months' (Q4 FY26 call); original plan traced by an analyst to March 2024"
+  - "JV/technology-transfer with foreign partner: gated on the above land, frozen for three consecutive quarters"
+  - "25% EBITDA margin timeline: 'new plant, 2-3 years' (Q3 FY26 call) narrowed to specifically the undated 60-acre land (Q4 FY26 call)"

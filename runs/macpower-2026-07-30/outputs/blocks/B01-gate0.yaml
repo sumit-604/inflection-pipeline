@@ -1,0 +1,22 @@
+stage: B01-gate0
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus (not expected, long-listed), rating (absent), announcements (absent), screening (CSVs empty -- using results+AR), research (absent), promoter pledge % (not disclosed in any supplied document), R&D spend quantification (not disclosed), distribution network reach (not disclosed in anchored documents), peer/industry comparable data (absent, affects M2/M5/M9)]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID despite strong A/C/D blocks (18/16/20 of 20) and STRONG moat class (4 of 12 present); driven by Block B deal-breaker (cumulative CFO/PAT 0.4538 <0.50, caps at max AVERAGE) plus 3-year LIMITED-history one-tier downgrade. Historical depressors: FY25 capex ramp (FCF -899.87) and FY26 inventory build (WC days +27.19 vs FY24, incl. operator-cited ~80-machine finished-goods stockpile). Growth-capex pattern, not demand/margin/leverage weakness -- weigh accordingly downstream."}
+  - {type: FLAG-CASH, reason: "Block B trend deteriorating: CFO/PAT 0.70x (FY24) -> 0.27x (FY25) -> 0.41x (FY26); cumulative FCF/PAT only 0.0043x across the 3-year window."}
+data_years: 3
+fy_range: "FY24 to FY26"
+blocks: {A: 18, B: 2, C: 16, D: 20, E: 11}
+core_score: 67
+moat_score: 14
+grand_total: 81
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVOID"
+deal_breakers: ["Block B <8 (=2) -> max GOOD", "Cumulative CFO/PAT <0.50 (=0.4538) -> max AVERAGE, driven by FY25 capex spike (FCF -899.87) and FY26 inventory build (WC days +27.19 vs FY24)"]
+history_downgrade: true
+data_notes: ["FY25 balance-sheet totals show an immaterial ~Rs3.43 lakh discrepancy between AR p.128 (audited FY25) and results Q4 FY26 p.7-12 (FY25 comparative), likely a Note-5 style regrouping; AR figures used as primary for FY24/FY25 BS, Q4 FY26 outcome used for FY26 BS.", "Receivable/Inventory/Payable days computed on revenue basis, not COGS basis, since a clean COGS figure (materials + manufacturing overhead) is not separately isolated in the P&L notes; stated explicitly.", "ROE computed on average-Net-Worth basis per formula definition; differs from company's own MDAR closing-NW-basis ROE (20.15% FY24, 17.65% FY25 at AR p.85) -- methodology difference, not a data conflict.", "A4 (ROCE trend) and M4/M10 (receivable-days stability) each hit an edge case where the observed value falls between defined scoring bands; nearest band applied and flagged for verifier review.", "M6 R&D moat test scored 0: R&D spend mentioned only qualitatively in AR SWOT (p.82), never quantified as Rs or % of revenue in any supplied document.", "M2/M5/M9 scored 0 solely for absent peer/industry comparable data (PEER DATA NEEDED), not company-specific weakness."]
+block_b_trend: "deteriorating -- CFO/PAT fell from 0.70x (FY24) to 0.41x (FY26), cumulative 0.4538x across the window"

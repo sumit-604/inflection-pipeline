@@ -1,0 +1,56 @@
+stage: B04-bizmodel
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["capacity utilisation % not disclosed in AR or provided Investor Presentation", "named competitors/market share not disclosed", "NEXA revenue/order-book share not in FY25 AR (only in Q1FY27/Q4FY26 Investor Presentation)", "broker research report present in inputs/ but explicitly non-anchored per task instructions, not used for figures"]
+flags: ["AR discloses two mutually inconsistent margin-ratio pairs (EBITDA margin 15.87% p.4 vs Operating Profit Margin 13.44% p.85; PAT margin 9.72% p.4 vs Net Profit Margin 12.00% p.85) that could not be reconciled from disclosed methodology"]
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Sale of CNC/VMC/turning/HMC-DCM machines (products)", type: "one-time capital-equipment sale", pct_of_revenue: 99.35, predictability: "M"}
+  - {name: "Sale of services (installation/AMC/spares)", type: "recurring service fee", pct_of_revenue: 0.54, predictability: "M"}
+  - {name: "Other operating revenue (FX gain on import payables)", type: "non-operating accounting item", pct_of_revenue: 0.11, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "Cost advantage via backward integration (sheet metal, spindle assembly, powder coating, in-house Macrotrol controller) - moderate durability"
+  - "Regulatory/qualification barrier - defence & aerospace vendor pre-qualification (DRDO/HAL/ISRO/ordnance factories) - moderate-high durability"
+  - "Nascent brand/switching cost via NEXA premium range and 39-city service network - low-moderate durability"
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "standard comparable for capital-goods/machine-tool manufacturers mid-way through multi-year capacity expansion; normalises capex-driven depreciation swings and captures debt-free/net-cash balance sheet"}
+  secondary: {method: "P/E", why: "cross-check given consistent multi-year profitability and dividend payment, useful for GARP-style entry discipline"}
+  tertiary: {method: "DCF / capex-optionality overlay", why: "needed to capture 13-acre secured and prospective 60-acre greenfield land-bank optionality that trailing EV/EBITDA would understate"}
+  not_applicable: ["Dividend discount model (payout ~6% of PAT, growth-reinvestment story)", "Sum-of-the-parts (single reporting segment per AR note 40)", "Replacement-cost/asset-based (understates qualification/R&D-driven earnings power)"]
+irrelevant_ratios:
+  - "Quarter-on-quarter revenue growth - misleading since revenue is recognised on dispatch/customer acceptance, so order-book timing drives quarterly swings, not underlying demand"
+  - "Trailing P/E in isolation - misleading given capex-cycle earnings volatility and unreflected land-bank optionality"
+  - "DSO/receivable days as primary red flag - misleading; real working-capital risk sits in inventory (~223 days) not receivables (~39 days)"
+  - "Generic manufacturing asset-turnover comparisons - misleading given strategic ~1-year stocking of imported critical components inflating inventory versus typical peers"
+must_track_metrics:
+  - {metric: "Unexecuted order book (Rs cr)", healthy: "growing YoY (Rs 330.95 cr FY25-end vs Rs 262.38 cr FY25-start)", red_flag: "two consecutive quarters of sequential decline"}
+  - {metric: "EBITDA margin", healthy: ">=15% and stable/rising (15.87% FY25 vs 14.70% FY24)", red_flag: "sustained fall below ~13%"}
+  - {metric: "Inventory turnover", healthy: "stable near 1.6-2.0x as capacity ramps", red_flag: "turnover falling further below 1.64x while order book flat/declining"}
+  - {metric: "Realisation per machine / mix upgrade", healthy: "rising ASP as high-end/NEXA/defence mix grows", red_flag: "flat or declining average selling price"}
+  - {metric: "Net debt / net cash position", healthy: "remains net cash (Rs -2.84 cr FY25)", red_flag: "borrowings rise materially beyond capex-linked need"}
+unit_economics:
+  unit: "one CNC/VMC/HMC-DCM/VTL machine sold"
+  revenue_per_unit: "~Rs 18.8 lakh (Rs 26,011.78 lakh product sales / 1,382 machines, derived)"
+  margin_per_unit: "~Rs 8.2 lakh gross contribution before employee/overhead costs (derived)"
+  key_lever: "product-mix shift toward higher-ASP NEXA/defence machines plus operating leverage on largely fixed R&D/branch-network costs"
+first_deterioration_signals:
+  - {risk: "revenue model - order-book/dispatch timing", first_signal: "sequential decline in unexecuted order-book value"}
+  - {risk: "margin - raw material/import cost inflation", first_signal: "cost of materials consumed rising above ~56-58% of revenue"}
+  - {risk: "balance sheet - inventory/obsolescence", first_signal: "inventory turnover falling further below 1.64x while raw material stays >90% of inventory"}
+  - {risk: "execution - capex/greenfield delays", first_signal: "capital work-in-progress not converting to gross block on stated 12-month timeline"}
+  - {risk: "structural - customer capex-cycle/financing dependence", first_signal: "slowing customer bank-financed machine purchases per MD&A SWOT threat"}
+mgmt_questions:
+  - "Current capacity utilisation on the 2,500-machine base and realistic timeline to 90%+?"
+  - "Status and revised timeline of the 60-acre greenfield land signing delayed for Gujarat policy benefit?"
+  - "How is the large imported-component inventory being risk-managed against demand slowdown/obsolescence?"
+  - "Realistic conversion timeline and margin contribution from defence/aerospace bids under evaluation?"
+  - "Capital-allocation plan across 13-acre plant, prospective 60-acre greenfield, and shareholder returns?"
+  - "Concentration among top 5-10 customers and government/defence vs private capex-cycle exposure?"
+  - "Plan and timeline for export/global-JV strategy given exports are under 1% of FY25 revenue?"
+one_line_verdict: "Debt-free CNC machine maker premiumising into defence, but working-capital heavy and export-light."

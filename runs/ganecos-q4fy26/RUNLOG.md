@@ -20,3 +20,12 @@
 - Active tripwires: NONE formally committed (blank WATCHLIST stub; Steps 6/7/8 not executable at last review).
 - Monitoring checklist (from Step 8.5, prior review): (1) Q4 run-rate sustainability / Q1FY27 volume guidance; (2) feedstock rPET-scrap pass-through & FY27 margin; (3) subsidiary Ecopet/Ecotech breakeven utilisation & quarter; (4) FY27-28 capex envelope & dilution after Odisha greenfield dropped; (5) steady-state ROCE target & value-added mix to 65%; (6) rFilament global-brand commercial offtake; (7) dividend payout policy (cut ₹4.50→₹3.50).
 - NOTE: uploaded doc is a CORRIGENDUM (30 Jul 2026) to the 21 May 2026 audited results, correcting Trade Payables MSME-vs-others split (total unchanged ₹8731.49 Lakh). This is a re-filing of the same Q4/FY26 audited results.
+
+## Pipeline result (close 2026-07-30)
+- A1 extractor: GATE PASS (9/9 pages, 100%, Lakhs->Cr x0.01, no OCR).
+- A2 enumerator: GATE PASS (24 notes / 240 line items / 6 corrigendum items / 2 auditor paras / 25 zero-standing; count test reconciled). [A5 advisory: zero-standing summary tally corrected 24->25, coverage was intact.]
+- A3 forensics: GATE PASS (17/17 statused; 10 FINDING / 3 PASS / 4 N.A.; 6 forward-signal + 4 ambiguous).
+- A4 analyst: Role 4 verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE; Role 5 N.A. (no concall); 13 management questions.
+- A5 adversary: verdict COMPLETE (0 arithmetic mismatches, full coverage, no NOT FOUND estimated, no unfired Decision-Status change).
+- Notion: saved to Ganesha Ecosphere page (3 content inserts + properties). Key Notes audit trail PREPENDED, prior entry preserved. Analysis Date -> Jul-26. Decision Status UNCHANGED (WATCHLIST).
+- Working files: work/extract_*, work/ledger_*, work/forensics_*, work/review_*, work/audit_* all present and committed.

@@ -67,9 +67,12 @@ category: line_items (financial statement rows, all 7 tables)   grep_count: 235*
        noise between the letter's narrative paragraph and the table, not a table row)
        -> reconciled 3
   Sum of reconciled per-table counts: 28+42+51+26+41+49+3 = 240.
-category: zero_standing          grep_count: n/a (manual-sweep-only)   sweep_count: 24   match: yes
+category: zero_standing          grep_count: 25 (fresh grep)           sweep_count: 25   match: yes
   Every line item with at least one period-column showing "-" (nil/dash) is flagged
   ZERO_STANDING per operating rule 3; see the flags column in each table below.
+  [A5-advisory correction 2026-07-30: summary tally amended 24 -> 25 to match the
+   25 ZERO_STANDING rows enumerated in the tables below; fresh grep confirms 25.
+   Non-blocking; coverage was already intact (all 25 rows enumerated and reviewed).]
 gate_a2: pass
 === END COUNT TEST ===
 ```

@@ -263,3 +263,23 @@ Thank you ladies and gentlemen. That was the last question of the day and I now 
 [CLOSING REMARKS -- OPERATOR SIGN-OFF]
 Thank you members of the management. On behalf of PNGs Ray Diamonds Dwell Limited, that concludes this conference. Thank you for joining us and you may now disconnect your lines.
 
+
+```yaml
+stage: A1-extractor
+company: "PNGSREVA"
+quarter: "Q1FY27"
+doctype: "concall"
+model: claude-sonnet-5
+status: complete
+page_count: 0
+formfeed_count: 0
+line_count: 265
+unit_convention: "MIXED (Crore-shorthand 'K'/'cr' for P&L figures; Million for finance-cost bifurcation; Lakh for AOV; ratios for inventory turn -- see header for full breakdown)"
+conversion_factor_to_cr: "Crore-shorthand -> x1 (no conversion); Million -> x0.1; Lakh -> x0.01; ratios/percentages -> not applicable"
+ocr_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27 (quarter ended 30 June 2026)"
+extract_path: "/home/user/inflection-pipeline/runs/pngs-q1fy27/work/extract_concall_pngs_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

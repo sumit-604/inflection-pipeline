@@ -1,0 +1,28 @@
+stage: B00-inputs
+company: "544555"
+run_date: 2026-07-30
+model: orchestrator
+status: complete
+manifest_ok: true
+recently_listed: true
+listed_evidence: "RHP dated 2025-09-20 (inputs/annual-report/)"
+no_concall_mode: false
+concall_mode_note: "manifest concalls_available=false but a real Nov-2025 transcript is present; stage 5 runs NORMAL mode"
+ar_substitute: "inputs/annual-report/Ameenji-RHP_20092025-combined-1.pdf (RHP; restated FY23-FY25)"
+results_map:
+  - "inputs/results/e888f3ab-4723-4105-b45a-ec2efd12201d.pdf : H1 FY26 (board 2025-11-14, HY ended 2025-09-30)"
+  - "inputs/results/7f4132e2-9e88-4b7f-9d93-9d1846ce9995.pdf : FY26 full year (board 2026-05-30, FYE 2026-03-31)"
+concall_map:
+  - "inputs/concalls/Concall_Nov_2025_Transcript.pdf : H1 FY26 investor call (2025-11)"
+peer_concall_map:
+  - "GRPLTD Aug-2025 / Nov-2025 / Feb-2026 / May-2026"
+peers: [GRPLTD, RUBFILA, ELGIRUBCO]
+input_gaps:
+  - "annual-report: no post-listing AR; RHP used as AR-substitute (restated FY23-FY25 only)"
+  - "prospectus: folder empty but RHP present in annual-report/ fills the role; not a HIGH gap"
+  - "rating: EMPTY — stage10 rating_wc_quote unresolved; stage11 Pillar2 defaults conservative"
+  - "research: EMPTY — non-anchored, no evidence impact"
+  - "announcements: operator-supplied (order inflows Feb-Jul 2026 + CFO resignation), not filing-PDF-anchored this run"
+  - "shareholding: operator-supplied (Sep-2025 vs Mar-2026), not filing-PDF-anchored this run"
+  - "sector_cap_row MISMATCH: manifest 'Pharma / CDMO' wrong; company is industrial/railway rubber — flag for phase-3 stage-11"
+flags: []

@@ -1,0 +1,45 @@
+stage: B03-ardeep
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["annual-report: no post-listing AR; RHP restated FY23-FY25 used","rating: EMPTY","research: EMPTY"]
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT below 0.7 in FY23 (0.62) and negative in FY24; FCF negative all 3 restated years; FY25 CFO recovery driven by payables stretch (+Rs805.28L) not inventory/receivable normalization (Annexure III, AC)"}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Red Flag", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "GARP - Watchlist"}
+overall_quality: 4
+quality_components: {governance: 5, accounting: 4, balance_sheet: 4, earnings: 4}
+kill_switch_notes:
+  - "P1: full statutory audit reports/CARO annexures for FY23-25 not reproduced in RHP - document-availability gap not a company trigger"
+  - "P2: working-capital and Group Company/RPT disclosure-integrity findings, per B02"
+  - "P3: FCF-negative, payables-driven cash flow pattern across all 3 years"
+  - "P4: MD&A-vs-notes contradiction on cost drivers"
+  - "P5: family board/committee concentration and freshly-appointed independent directors"
+  - "P6: three quiet-abandonment patterns (exports, US subsidiary, conveyor-belt diversification)"
+triple_pass_verification: {verified: 15, discrepancies: []}
+missing_risks:
+  - {risk: "Inventory turnover collapse / cash-conversion-cycle deterioration never framed as a standalone risk factor", evidence: "Annexure AC p.190 vs generic Risk Factor #32 p.36"}
+  - {risk: "Group Company disclosure contradiction for ABJ Rub Metalico has no risk factor", evidence: "p.219 vs Annexure Y p.187-188"}
+  - {risk: "Contract-labour vs EPF/ESI headcount divergence (5.7x contractor cost growth) not risk-factored", evidence: "Annexure T p.184, EPF/ESI p.192 vs generic Risk Factor #21 p.32"}
+  - {risk: "Deferred tax volatility / FY24 effective tax rate spike (37.97%) not risk-factored", evidence: "Annexure C p.175, Annexure II"}
+guidance_table:
+  - {claim: "Capex - modernisation + conveyor belting unit", number: "Rs1668.96 Lakhs", timeframe: "FY2025-26", credibility: "Low - no prior experience (Risk Factor #5), machinery orders not placed (#9), no customer commitments"}
+  - {claim: "Debt repayment", number: "Rs595.00 Lakhs", timeframe: "FY2025-26", credibility: "Moderate-High - specific lenders/facilities named"}
+  - {claim: "General corporate purpose", number: "capped at lower of 15% of fresh issue or Rs10 Cr", timeframe: "Ongoing", credibility: "Standard"}
+monitorables:
+  - {metric: "Combined cash conversion cycle", threshold: "Rise beyond ~166 days (FY25) without matching revenue growth", where: "Quarterly receivables/inventory/payables notes", why: "Tests whether FY25 CFO recovery is genuine or payables-driven"}
+  - {metric: "MSME payable ageing >1yr and any interest demand", threshold: "Any increase in >1yr MSME payables or vendor interest claim", where: "Trade payables note, litigation/subsequent-events", why: "Self-admitted MSMED interest non-provision is a live contingent liability"}
+  - {metric: "NCLT compounding (9-yr cash flow non-filing) and RBI FEMA/ODI order", threshold: "Any adverse order, penalty, or timeline extension", where: "Exchange filings, subsequent-events", why: "Two open regulatory matters with quantifiable penalty exposure"}
+  - {metric: "Conveyor-belt unit order book / machinery placement", threshold: "Capex overrun beyond Rs1668.96L or delay beyond FY2025-26", where: "Objects-of-Issue utilisation, presentations/concalls", why: "Largest, least-substantiated capital allocation"}
+  - {metric: "Group Company/ABJ Rub Metalico classification", threshold: "Any post-listing SEBI/exchange query or restated Group Company disclosure", where: "Exchange filings, first post-listing AR", why: "RHP Group Company conclusion appears to contradict its AS-18 criterion"}
+  - {metric: "Effective tax rate", threshold: "Outside 22-26% band without explained one-off", where: "Quarterly/annual tax note", why: "FY24 37.97% driven by unexplained deferred-tax swing"}
+strengths_top3:
+  - "Genuine RDSO/MORTH approvals; diversified portfolio with fast-growing higher-value segment (+186% two-year in Elastomeric Bridge Bearings/POT-PTFE)"
+  - "Zero promoter selling in IPO (100% fresh issue, Nil OFS), minimum contribution locked 3 years, no pledge"
+  - "Broad, largely voluntary self-disclosure of compliance gaps rather than concealment"
+red_flags_top3:
+  - "Cash conversion cycle ~tripled to ~166 days; inventory turnover 2.99x to 1.29x with zero write-downs; FCF negative all 3 years, funded by 113% two-year rise in borrowings incl 10.75-14.51% NBFC debt"
+  - "Compliance gaps across 4 statutory domains unresolved at RHP date plus Group Company disclosure contradiction"
+  - "Largest IPO use (Rs1668.96L) funds unproven new product line, no prior experience, no machinery orders placed, while core working-capital efficiency deteriorates"
+best_fit_strategy: "GARP"
+one_line_verdict: "GARP Watchlist: real margin growth, but debt-funded working capital and unresolved four-domain compliance gaps caution against PROCEED"

@@ -1,0 +1,23 @@
+stage: B12b
+company: "544555"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+run: 2   # re-audit of the corrected B05 (v2); supersedes B12b-run1 which audited the under-read B05 v1
+supersedes_note: "A stale B12b (run1, coverage ~6%) audited the earlier under-read B05. B05 was re-run and corrected (guidance captured, participants fixed, contradictions logged); this re-audit verifies the corrected artifact."
+independent_flags_found: 14
+caught: 12
+partially_caught: 2
+missed: []
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C is well-supported against the GRP disclosure base rate; the strong-but-unexplained margin print argues for holding, not raising, it"
+redflag_coverage: 100
+findings:
+  - {severity: "MINOR", location: "B05 red flag #9 (rated LOW-MEDIUM)", item: "Margin quality-of-earnings under-weighted: EBITDA +61.3% / margin 17.99%->26.63% / PAT +103.53% on only +8.47% revenue (p3), no mechanical driver and no one-off-vs-new-normal statement; the verdict card's largest number, warrants HIGH/MAJOR QoE flag not a guidance-consistency footnote", anchor: "Concall_Nov_2025 p3 (guidance p8, p14)"}
+  - {severity: "MINOR", location: "B05 3A/3B/3D", item: "Core-segment pricing/quality erosion captured only as competitive intel, not double-booked as a direct margin risk to the 55%-of-revenue railway-pad core; thesis partly relies on the opposite (shortening replacement cycle)", anchor: "Concall_Nov_2025 p13-14 (and p9)"}
+  - {severity: "MINOR", location: "B05 (not noted)", item: "Maiden-call analyst roster entirely retail / small-broker / individual investors, no institutional participation - a modest disclosure-scrutiny signal absent upstream", anchor: "Concall_Nov_2025 p3-p15 (participant names)"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 86

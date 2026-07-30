@@ -1,0 +1,14 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 85      # B12a: 88 figures checked, 0 CRITICAL, gaps are image-only FY26 PDF + operator-supplied provenance
+  redflag_coverage: 100         # B12b (v2, re-audit of corrected B05): 14/14 independent flags captured upstream
+  framework_adherence: 93       # B12c: Gate 0 + Emerging Moat scope only; both re-derive correctly; valuation-adherence PENDING phase 3
+  peer_utilisation: 100         # B12d: peers used substantively (1) / peers with transcripts provided (1)
+  overall: 85                   # min of the four available phase-1 components
+  band: "normal (75-89) - note specifics"
+  framework_adherence_valuation: "PENDING phase 3 (B10/B11 not produced in phase 1)"
+notes:
+  - "REWORK gate check: Verifier A 0 CRITICAL and no source-fidelity MISMATCH; all four verifier acceptance_rates >= 60% after the B05 correction. REWORK NOT triggered."
+  - "Process event: Verifier B (run1) caught a systematic under-read in B05 v1 (missed stated 20-25% guidance, false CFO-present premise, transcript wrongly treated as scanned). Stage 5 was re-run; Verifier B re-audit of B05 v2 returned redflag_coverage 100%, acceptance 86%, credibility C. GATE HELD - analysis corrected at source and re-verified."
+  - "peer_utilisation is 100% of transcript-provided peers, but peer-set COMPLETENESS is only 1/3 named peers (GRP Ltd has transcripts; Rubfila and Elgi Rubber are screening-only) AND GRP Ltd has zero Railways/RDSO exposure, so peer corroboration of the rail thesis is structurally thin. This flows to synthesis as a coverage limitation, not a verification miss."
+  - "Verifier-A / source-fidelity disagreement log for this run: none (no Verifier A source-fidelity flag was cleared or overridden downstream)."

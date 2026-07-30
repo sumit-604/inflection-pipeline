@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Q1 FY27 investor presentation printed slide numbers not independently verified (cited by PDF page range)"
+  - "Broker report (Macpower_Research_Report.pdf) excluded as explicitly non-anchored"
+  - "21-Jul-2026 NSE announcement re: 13-acre lease registration not in inputs/ (operator context only)"
+  - "Viksit Gujarat Industrial Policy 2026 subsidy percentages (25% capital / 7% interest) not found in any anchored document"
+  - "R&D headcount absolute numbers not disclosed anywhere (only 'doubled' claim vs Nil R&D expenditure in AR)"
+  - "No capital-commitments note found in FY25 AR (Note 32 covers only contingent liabilities/guarantees)"
+flags:
+  - "A2/F1 contradiction: concalls claim R&D team doubled and ~Rs1.8cr design/pattern intangibles, but FY25 AR Annexure IV discloses R&D expenditure Nil and total intangible net block of only ~Rs0.44cr"
+  - "B1/A1 tension: 34% backward-integration claim sits against FY25 import outgo of Rs16.60cr vs export earnings of Rs1.51cr, and management's own statement that ~99% of CNC controllers are sourced from FANUC/Siemens/Mitsubishi"
+  - "Land-policy dependency: 60-acre greenfield signing has slipped 3 consecutive times (Dec-2025 -> Mar-2026 -> undated -> Jun-2026); treat all capacity/margin narrative tied to it with elevated skepticism"
+  - "G2 working-capital deterioration (finished-goods inventory build ~80-82 machines / ~Rs 100cr pending customer financing paperwork) is already a Gate 0 deal-breaker driver, not merely a forward risk"
+em_score: 15.0
+em_classification: "MODEST"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-36m"}
+  - {id: "G1", name: "War chest / low leverage self-funded capex", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing"}
+  - {id: "R1", name: "Regulatory / policy tailwind", strength: "Moderate", evidence_type: "claim", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 6, claim: 15, inference: 4}
+completionist_recount: "recount performed: 4 documented items across 3 categories (E2 export revenue growth; G1 minimal-debt/self-funded capex; F2 Q1 FY27 revenue +56.1% YoY and FY25 net block PP&E +11.3% YoY); all other scored categories (A1, A4, B1, C1, F1, H2, R1) rest on management claims only"
+catalysts_12m:
+  - {catalyst: "13-acre plant construction/utilisation ramp toward ~90% FY27", window: "12m", evidence_type: "claim", anchor: "Q4 FY26 concall (Jun-2026 transcript)"}
+  - {catalyst: "Defence/aero bid book (Rs 304-376cr under evaluation) converting to firm orders", window: "6-12m", evidence_type: "claim", anchor: "Q3/Q4 FY26 concalls; Q1 FY27 Inv. Pres."}
+  - {catalyst: "60-acre land signing decision (or a 4th slip)", window: "12m, high uncertainty", evidence_type: "claim", anchor: "B05 promise-delivery record; Q3/Q4 FY26 concalls"}
+  - {catalyst: "NEXA/high-end mix progression in order book (~39-40%)", window: "ongoing/12m", evidence_type: "claim", anchor: "Q3 FY26, Q4 FY26 concalls; Q1 FY27 Inv. Pres."}
+  - {catalyst: "JV/technology-transfer NDA-to-agreement conversion", window: "12m, unconfirmed", evidence_type: "claim", anchor: "Q2 FY26 concall (Nov-2025 transcript)"}
+capex_embedded_growth_pct: 70
+capex_figures: "FY26 capex Rs 15.36cr (actual); FY27 guided Rs 30-40cr existing unit + Rs 30-40cr 13-acre new plant; 13-acre acquisition ~Rs 50cr over 12 months (operator context, 21-Jul-2026 announcement, non-anchored); phase-1 new plant Rs 125cr incl land over 15-16 months per Q2 FY26 concall"
+optionality_register:
+  - {optionality: "60-acre govt greenfield land (10,000-machine target)", first_appears: "Exchange filing / next AR capital-commitments note", window: "undated, already slipped 3x"}
+  - {optionality: "JV/technology-transfer with shortlisted global OEM (NDA stage)", first_appears: "Exchange filing / concall", window: "12-24m, unconfirmed"}
+  - {optionality: "Defence/aero bid book converting to firm orders", first_appears: "Exchange filing / concall order-book update", window: "6-12m, unconfirmed"}
+  - {optionality: "25% EBITDA margin aspiration (from 16.2%)", first_appears: "Quarterly results + concall", window: "management-stated 5-6yr journey"}
+  - {optionality: "Backward integration to ~34% of COGS", first_appears: "AR notes", window: "FY27-28 AR"}
+  - {optionality: "R&D team doubling / engineering capacity build-out", first_appears: "AR Technology Absorption annexure", window: "FY26 or FY27 AR"}
+  - {optionality: "13-acre plant Phase 1+2 full capacity (+1,000-1,500 machines)", first_appears: "Concall / AR", window: "24-36m"}
+combined_assessment: "AVOID"
+combined_reasoning: "STRONG backward moat (B01) already gated to AVOID by mechanical deal-breakers, and a MODEST, claims-heavy emerging scan (15.0, 4 Moderate categories, 0 Strong) is not strong enough to argue against that override."
+top_moat_risks:
+  - "Land-policy dependency (60-acre signing already slipped 3x) governs the entire multi-year capacity/margin narrative"
+  - "Working-capital/revenue-recognition risk from finished-goods inventory build (~Rs 100cr pending customer financing) already a Gate 0 deal-breaker"
+  - "R&D/IP credibility gap: 'doubled R&D team' and defence/aero engineering claims contradicted by Nil R&D expenditure disclosure"
+  - "Import/controller dependency (99% FANUC/Siemens/Mitsubishi) undercuts backward-integration and rare-capability narratives"
+  - "JV/technology-transfer stuck at NDA stage across multiple quarters with no signed terms"

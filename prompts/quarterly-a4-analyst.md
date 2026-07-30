@@ -48,6 +48,16 @@ feeding both. Produce, per the protocol step sequence:
   that produces no question and no monitoring item has not been processed.
 - A MONITORABLES / CATALYST list seeded by the A3 commitment register (F6) and
   the Board Outcome forward items (F13), each with its implied date.
+- A PLAIN-LANGUAGE SUMMARY and a SECTOR KNOWLEDGE block, per CLAUDE.md
+  "NARRATIVE + SECTOR". These are required, not optional:
+  - PLAIN-LANGUAGE SUMMARY: 10 to 12 lines, simple words, no jargon, numbers
+    rounded for reading. What happened this quarter, what is genuinely good,
+    what is doubtful, and the verdict in one line. Every figure still traces to
+    a table above; this narrates, it does not introduce new numbers.
+  - SECTOR KNOWLEDGE: the sector/industry lessons this quarter surfaced (cycle
+    position, unit economics, seasonality, structural risks, regulation,
+    competitive frame). Write it so it can be appended verbatim to
+    sectors/<SECTOR>.md by the orchestrator.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.
@@ -60,8 +70,9 @@ feeding both. Produce, per the protocol step sequence:
 
 ## OUTPUT
 Write the full merged review to `review_<ticker>_<quarter>.md` (complete
-tables, never summaries — this becomes institutional memory). End with exactly
-this fenced YAML block:
+tables, never summaries — this becomes institutional memory). The PLAIN-LANGUAGE
+SUMMARY and SECTOR KNOWLEDGE blocks are the last two prose sections of the file,
+before the fenced YAML. End with exactly this fenced YAML block:
 
 ```yaml
 stage: A4-analyst
@@ -85,6 +96,9 @@ sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period
 questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
 flags: []
+plain_summary: ""              # the 10-12 line simple-language narrative, verbatim
+sector: ""                     # sector label, matches sectors/<SECTOR>.md
+sector_knowledge: []           # durable sector/industry points from this quarter
 review_path: ""
 ```
 

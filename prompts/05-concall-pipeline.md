@@ -93,7 +93,17 @@ red flags with severity, if any.
 
 ## OUTPUT
 
-Full four-section report, then end with exactly this fenced YAML block:
+Full four-section report. Then, per CLAUDE.md "NARRATIVE + SECTOR", add two
+required prose blocks before the YAML:
+- PLAIN-LANGUAGE SUMMARY: 10 to 12 lines, simple words, no jargon, numbers
+  rounded for reading. What management said and did across these calls, what is
+  genuinely credible, what is doubtful, and the credibility grade in one line.
+  Narrates the report above; introduces no new figures.
+- SECTOR KNOWLEDGE: the sector/industry lessons these calls surfaced (demand
+  cycle, pricing, competitive dynamics, regulation, supply chain), written so
+  it can be appended verbatim to sectors/<SECTOR>.md.
+
+Then end with exactly this fenced YAML block:
 
 ```yaml
 stage: B05-concall
@@ -126,6 +136,9 @@ peer_questions:                # from 4B, consumed by stage 6
 red_flags: []
 dropped_triggers: []           # from 1C
 timeline_slippages: []         # from 1C
+plain_summary: ""              # the 10-12 line simple-language narrative, verbatim
+sector: ""                     # sector label, matches sectors/<SECTOR>.md
+sector_knowledge: []           # durable sector/industry points from these calls
 ```
 
 ---

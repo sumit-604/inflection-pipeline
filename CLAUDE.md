@@ -34,6 +34,21 @@ Do not upgrade a stage's model without editing its agent file.
 - "anchored" = every number followed by (source, page/note)
 - "flag" = surfaced prominently in the verdict, decision stays human
 
+## NARRATIVE + SECTOR (every concall, quarterly result, or annual report)
+Every analysis of a concall, a quarterly result, or an annual report ends
+with two plain-language blocks, in addition to the anchored report. They are
+required output; the stage is not done without them, and they are surfaced in
+the chat report and saved to Notion alongside the review.
+- PLAIN-LANGUAGE SUMMARY: 10 to 12 lines, simple words, no jargon, numbers
+  rounded for reading. What happened, what is genuinely good, what is doubtful,
+  and the verdict in one line. An intelligent non-analyst must follow it. The
+  anchored tables still govern; this never replaces them.
+- SECTOR KNOWLEDGE: what this analysis taught about the company's sector and
+  industry (cycle position, unit economics, seasonality, structural risks,
+  regulation, competitive frame). Append the durable points to
+  sectors/<SECTOR>.md (create from sectors/_template.md if absent), dated and
+  sourced to the run. It is sector memory to weigh, never anchored evidence.
+
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read LESSONS.md at
 start (it carries operational run history and is ~18k tokens; lighter sessions
@@ -50,6 +65,12 @@ operator rulings with dates, active tripwires, the optionality register
 summary, and links to every run folder for the ticker. It is memory to
 weigh, never anchored evidence.
 
+Per-sector memory lives in sectors/<SECTOR>.md, appended (never overwritten)
+by every concall, quarterly, and annual-report analysis via the SECTOR
+KNOWLEDGE block. It is read as SECTOR MEMORY at the start of any run in that
+sector so cross-company sector learning compounds. Same standing as company
+memory: weigh it, never cite it as anchored evidence.
+
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
 - frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
@@ -58,6 +79,9 @@ weigh, never anchored evidence.
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
+- sectors/<SECTOR>.md     durable per-sector memory, appended by every concall,
+                 quarterly, and annual-report analysis; read as SECTOR MEMORY at
+                 the start of any run in that sector; weigh, never anchor
 - LESSONS.md     operational memory, read by pipeline commands at start,
                  appended at close
 - .claude/agents/         subagent definitions with model routing

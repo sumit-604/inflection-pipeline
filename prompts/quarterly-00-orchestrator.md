@@ -162,7 +162,11 @@ After all documents pass A1-A3:
 7. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+   reviewed), the top forensic findings, and the working-file paths. Print in
+   chat, verbatim from A4, the PLAIN-LANGUAGE SUMMARY (10-12 lines) and the
+   SECTOR KNOWLEDGE block (per CLAUDE.md "NARRATIVE + SECTOR"), and append the
+   sector points to `sectors/<SECTOR>.md` (create from `sectors/_template.md`
+   if absent), dated and sourced to this run.
 
 ---
 
@@ -179,6 +183,9 @@ Per Role 4 Step 9 and existing save mechanics:
 - Decision Status changes ONLY when a pre-committed trigger formally fires.
 - Save the A3 forensics table and the A5 audit verdict alongside the review;
   the completeness proof is part of the record.
+- Save the PLAIN-LANGUAGE SUMMARY and SECTOR KNOWLEDGE blocks alongside the
+  review (they are institutional memory too, per CLAUDE.md "NARRATIVE +
+  SECTOR").
 
 ---
 

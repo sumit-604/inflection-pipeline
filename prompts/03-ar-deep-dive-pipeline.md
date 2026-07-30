@@ -170,8 +170,18 @@ strategy.
 
 ## OUTPUT
 
-Full eight-phase report as above, then end with exactly this fenced
-YAML block:
+Full eight-phase report as above. Then, per CLAUDE.md "NARRATIVE + SECTOR",
+add two required prose blocks before the YAML:
+- PLAIN-LANGUAGE SUMMARY: 10 to 12 lines, simple words, no jargon, numbers
+  rounded for reading. What the year showed about the business, what is
+  genuinely strong, what is doubtful (governance, accounting, quiet
+  abandonment), and the one-line verdict. Narrates the report above; introduces
+  no new figures.
+- SECTOR KNOWLEDGE: the sector/industry lessons this annual report surfaced
+  (structural economics, moat sources, cycle, regulation, competitive frame),
+  written so it can be appended verbatim to sectors/<SECTOR>.md.
+
+Then end with exactly this fenced YAML block:
 
 ```yaml
 stage: B03-ardeep
@@ -198,6 +208,9 @@ strengths_top3: []
 red_flags_top3: []
 best_fit_strategy: ""
 one_line_verdict: ""
+plain_summary: ""             # the 10-12 line simple-language narrative, verbatim
+sector: ""                    # sector label, matches sectors/<SECTOR>.md
+sector_knowledge: []          # durable sector/industry points from this annual report
 ```
 
 ---

@@ -45,6 +45,17 @@ changes the meaning. Every number must still trace to a block in the
 underlying record; no fresh figures. Every paragraph must pass the
 test: would the operator say this sentence aloud to another investor?
 
+Close business-narrative.md with two labelled blocks, per CLAUDE.md
+"NARRATIVE + SECTOR":
+- PLAIN-LANGUAGE SUMMARY: 10 to 12 lines, simple words, no jargon, the whole
+  thesis a non-analyst could follow, ending with the decision in one line.
+- SECTOR KNOWLEDGE: consolidate the sector_knowledge blocks emitted by the
+  annual-report (B03) and concall (B05) stages into the durable
+  sector/industry lessons from this run, and APPEND them (never overwrite),
+  dated and sourced to the run folder, to sectors/<SECTOR>.md — creating it
+  from sectors/_template.md if absent. This is sector memory to weigh, never
+  anchored evidence.
+
 ## DELIVERABLE 2: fttcp-recommendation.md
 
 Block references like (B04) are BANNED in the prose of this file, same

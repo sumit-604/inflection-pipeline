@@ -1,3 +1,59 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 50
+formfeed_count: 50
+line_count: 1307
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (all figures stated as "INR Cr." / "INR crores" throughout; CSR expenditure on page 45 stated in Rs. lakh -> x0.01 to Cr for that single figure only, noted inline)
+ocr_pages: [2, 5, 8, 17, 20, 28, 32, 36, 39, 42, 45, 47]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026)
+extraction_date: 2026-07-30
+=== END HEADER ===
+
+NOTES ON THIS EXTRACTION (mechanical, not interpretive):
+- Primary extraction via `pdftotext -layout` on all 50 pages; 50 form-feed
+  page breaks confirmed against pdfinfo page count of 50.
+- 12 pages yielded under 100 characters of native text (all are section-
+  divider title cards or a stats-callout slide) and were rasterised at
+  200dpi with pdftoppm and OCR'd with tesseract; OCR text merged inline
+  under "[OCR page N]" markers immediately after the native "[page N]"
+  content block for that page.
+- Of the 12 OCR pages, 10 are ADF Foods logo/tagline section dividers with
+  no data beyond the title text already captured natively (page 39's OCR
+  returned 0 characters; verified by direct image review as a divider
+  slide with logo + stock photo, no text content). Page 32 (Truly Indian
+  "Online Platform Growth") carries genuine stat-card data not present in
+  native text: 2.58M+ Total Reach, 1.02M Instagram Impressions, 28K+
+  Social Interactions, +68% New Followers.
+- Six additional pages carry chart-embedded data labels that ARE captured
+  by native pdftotext extraction (chart data labels are text objects in
+  the source PDF, not raster images): pages 13, 14, 19, 22, 49. These are
+  flagged inline as "[CHART, page N, ...]" directly below their native
+  text for downstream visibility, quoting the native figures verbatim
+  (no OCR was required or performed for these five).
+- Page 35 ("ADF Soul's Presence in Modern Trade") is over the 100-char
+  threshold (149 chars) so was not OCR'd under the mechanical rule, but on
+  direct image review its retailer-partner logos (D-Mart, Dorabjee's,
+  freshpik, Food Square, MK Retail, Reliance Fresh Signature, simpli
+  namdhari's, Nature's Basket) are not present anywhere in native text.
+  These were transcribed by direct image review and flagged inline as
+  "[CHART/IMAGE, page 35, OCR text: ...]" since they are material business
+  facts (named modern-trade distribution partners) absent from native text.
+- Several marketing-initiative pages (29, 30, 31, 34) are photo montages
+  of in-store activations, social posts, and award graphics under the
+  100-char threshold or just above it; these were visually spot-checked
+  and contain no additional quantitative/guidance data beyond what native
+  text already captured (award names, campaign names) -- no OCR flag
+  added for these to avoid non-mechanical over-annotation.
+- Page markers "[page N]" are on their own line for every one of the 50
+  pages. Line numbers are NOT pre-printed in this file; downstream agents
+  reading this file with a line-numbered tool (e.g. cat -n / Read tool)
+  will get stable, addressable line numbers, since this file is written
+  once and not renumbered after this point.
+
+[page 1]
 29th July, 2026
 
  National Stock Exchange of India Limited,                        BSE Limited,
@@ -41,7 +97,9 @@ Encl: As Above
              Email: nadiadfactory@adf-foods.com CIN: L15400GJ1990PLC014265
              Corp. Off: Marathon Innova, B2, G01, Ground Floor, G. K. Road, Lower Parel, Mumbai 400 013. INDIA.
              Tel.: +91 22 6141 5555, Fax: +91 22 6141 5577, Email: info@adf-foods.com, Web: www.adf-foods.com
-    ADF Foods Limited
+
+[page 2]
+    ADF Foods Limited
       Investor Presentation Q1FY27
 
                July 2026
@@ -50,7 +108,19 @@ Encl: As Above
 
 
 1
-Safe Harbor
+
+[OCR page 2]
+FO:0' D'S: LTD.
+Jeeding the warld.,
+
+ADF Foods Limited
+
+Investor Presentation QIFY27
+
+July 2026
+[Section title slide: ADF Foods logo + tagline 'Feeding the world.' background; no additional data beyond native text.]
+[page 3]
+Safe Harbor
 
               This presentation and the accompanying slides (the “Presentation”), which have been prepared by ADF FOODS LTD
               (the “Company”), have been prepared solely for information purposes and do not constitute any offer,
@@ -79,7 +149,9 @@ Encl: As Above
 
 
 2
-Contents
+
+[page 4]
+Contents
 01   Company Overview
 
 
@@ -97,8 +169,16 @@ Encl: As Above
 
 
 05   Annual Performance Highlights
-Company Overview
-ADF Snapshot
+
+[page 5]
+Company Overview
+
+[OCR page 5]
+| ADF [logo]
+Company Overview
+[Section divider slide: ADF Foods logo mark on plain background; no additional data beyond native text.]
+[page 6]
+ADF Snapshot
 
 
             Leading Manufacturer of                           Cutting-edge Manufacturing                     A Culinary Powerhouse
@@ -134,7 +214,9 @@ knowledge & multi-generational understanding
 along with seasoned food industry professionals                                                    • Domestic Consumers (India)
 
  5
-       Our Legacy
+
+[page 7]
+       Our Legacy
 
                                                                                           2016                     2023
                                                                                           Truly Indian brand       Expanded
@@ -187,8 +269,18 @@ fruits                                                                          
                                                                                      presence
                         food products
         6
-Business Overview
- What’s our Right to Win?
+
+[page 8]
+Business Overview
+
+[OCR page 8]
+FOODS LTD.
+Feeding the warld.
+
+Business Overview
+[Section divider slide: ADF Foods logo + tagline; no additional data beyond native text.]
+[page 9]
+ What’s our Right to Win?
  Building Scale, Profitability & Value
 
 
@@ -220,7 +312,9 @@ fruits                                                                          
 
 
    8
-Q1 FY27 Executive Summary
+
+[page 10]
+Q1 FY27 Executive Summary
 
    Macro       • Robust performance despite geopolitical uncertainties, including the ongoing West Asia conflict
 Environment    • Navigating supply-chain challenges and trade-route disruptions , including vessel shortage, elevated fuel & ocean freight rates
@@ -251,7 +345,9 @@ Performance     • Revenue from Operations at INR 167.3 Crores, up 25.9% YoY
 
 
 9
-Q1 FY27 Key Financial Update (Consolidated)
+
+[page 11]
+Q1 FY27 Key Financial Update (Consolidated)
 
 
                                       Strong Performance Driven by Expansion and Category-Led Growth
@@ -279,7 +375,9 @@ Performance     • Revenue from Operations at INR 167.3 Crores, up 25.9% YoY
 
 
  10
-Q1 FY27 Key Financial Update (Standalone)
+
+[page 12]
+Q1 FY27 Key Financial Update (Standalone)
 
 
                                      Strong Revenue Momentum Backed by Execution and Cost Discipline
@@ -308,7 +406,9 @@ Performance     • Revenue from Operations at INR 167.3 Crores, up 25.9% YoY
 
 
  11
-Q1 FY27 Financial Performance
+
+[page 13]
+Q1 FY27 Financial Performance
 
 
       Consolidated Performance
@@ -350,7 +450,10 @@ Performance     • Revenue from Operations at INR 167.3 Crores, up 25.9% YoY
 
 
 12
-Segment Performance
+
+[CHART, page 13, native-text data labels (not OCR -- extracted directly via pdftotext as embedded text objects): Consolidated Revenue from Operations (INR Cr.) Q1FY26 132.9 / Q4FY26 196.7 / Q1FY27 167.3 (25.9% YoY); Consolidated EBITDA (INR Cr.) & Margin Q1FY26 23.5 (17.7%) / Q4FY26 34.3 (17.4%) / Q1FY27 29.7 (17.7%) (26.0% YoY); Consolidated PAT (INR Cr.) & Margin Q1FY26 15.2 (11.5%) / Q4FY26 25.9 (13.2%) / Q1FY27 17.3 (10.3%) (13.4% YoY); Standalone Revenue Q1FY26 100.3 / Q4FY26 150.3 / Q1FY27 120.9 (20.5% YoY); Standalone EBITDA & Margin Q1FY26 22.5 (22.4%) / Q4FY26 36.5 (24.3%) / Q1FY27 27.5 (22.8%) (22.6% YoY); Standalone PAT & Margin Q1FY26 17.0 (16.9%) / Q4FY26 30.1 (20.0%) / Q1FY27 18.3 (15.1%) (7.6% YoY).]
+[page 14]
+Segment Performance
 
 
      Processed Foods                                      Distribution
@@ -385,7 +488,10 @@ Performance     • Revenue from Operations at INR 167.3 Crores, up 25.9% YoY
 
 
 13
-  Business Segments
+
+[CHART, page 14, native-text data labels: Processed Foods Revenue (INR Cr.) Q1FY26 112.2 / Q4FY26 144.0 / Q1FY27 165.0; Distribution Revenue (INR Cr.) Q1FY26 20.7 / Q4FY26 30.0(bar)/40.0(axis) / Q1FY27 31.7 -- axis gridlines 0/10.0/20.0/30.0/40.0, bar value 23.3 for Q1FY27; Processed Foods EBITDA & Margin Q1FY26 24.1 (21.5%) / Q4FY26 42.6 (25.8%) / Q1FY27 31.2 (21.6%); Distribution EBITDA & Margin Q1FY26 3.6 (17.4%) / Q4FY26 3.7 (11.7%) / Q1FY27 2.7 (11.5%).]
+[page 15]
+  Business Segments
 
             Business comprises core manufacturing i.e., processed foods business and agency distribution business
 
@@ -416,7 +522,9 @@ One of the largest Indian exporters of processed foods                          
 
 
    14
-Product Portfolio
+
+[page 16]
+Product Portfolio
 
                                                  Key Products
 
@@ -441,9 +549,18 @@ One of the largest Indian exporters of processed foods                          
                                                                                         SKUs
 
  15
-Growth Strategy and
+
+[page 17]
+Growth Strategy and
 Drivers
-Strategic Growth Pillars
+
+[OCR page 17]
+AD [logo]
+Growth Strategy and
+Drivers
+[Section divider slide: ADF Foods logo mark; no additional data beyond native text.]
+[page 18]
+Strategic Growth Pillars
 
 
                                Pillar 1
@@ -465,7 +582,9 @@ Scalable Execution
 
 
 17
-    Key Growth Drivers
+
+[page 19]
+    Key Growth Drivers
 
 
 Strong Momentum upwards of INR 900 crores revenue in FY27                       Continuous & Strategic Brand Investments
@@ -506,8 +625,19 @@ Strong Momentum upwards of INR 900 crores revenue in FY27                       
         outsourcing opportunities                                     Direct distribution in USA
 
         18
-5 Brands, 5 Stories
-  5 Brands, 5 Stories
+
+[CHART, page 19, native-text data labels: 'Strong Momentum upwards of INR 900 crores revenue in FY27' bar chart (INR crores) -- FY25 590 / FY26 683 / FY27E 900+.]
+[page 20]
+5 Brands, 5 Stories
+
+[OCR page 20]
+FOO D'S: LTD.
+Feeding the warld.
+
+5 Brands, 5 Stories
+[Section divider slide: ADF Foods logo + tagline; no additional data beyond native text.]
+[page 21]
+  5 Brands, 5 Stories
 
                                                  Bold Flavours Made with Traditional Recipes,
                                                          using Authentic Ingredients
@@ -537,7 +667,9 @@ Target: Budget conscious South Asian Diaspora                                   
 
 
    20
-Ashoka: ADF Foods' Flagship Brand
+
+[page 22]
+Ashoka: ADF Foods' Flagship Brand
 
 
            Target Audience                                                              Sales & Distribution Channels
@@ -575,7 +707,10 @@ Ashoka products are enjoyed in 60+ countries worldwide
 Primary markets: USA, Canada, UK, APAC, Middle East and EU                    teams
 
  21
-    Truly Indian: Unlocking Global Markets With Authentic Indian Flavours
+
+[CHART, page 22, native-text data labels: Ashoka Brand Sales (INR Cr.) FY21 119 / FY22 157 / FY23 211 / FY24 254 / FY25 267 / FY26 308.]
+[page 23]
+    Truly Indian: Unlocking Global Markets With Authentic Indian Flavours
 
                                                           Bridging Cultures with Authentic Indian Taste
 
@@ -610,7 +745,9 @@ RTE Curries & Rice          Chutneys                                            
 
 
      22
-Truly Indian… Award-Winning, Industry-Recognized
+
+[page 24]
+Truly Indian… Award-Winning, Industry-Recognized
 
      Say Hello to a                      Industry-Endorsed Recognition in USA
 
@@ -640,7 +777,9 @@ New 2026 launch Tikka Masala Naan
  Third-party endorsements reinforce Truly Indian’s premium positioning & innovation credibility with modern consumers & retailers
 
 23
-  Truly Indian… Award-Winning, Industry-Recognized
+
+[page 25]
+  Truly Indian… Award-Winning, Industry-Recognized
 
                                        Staple Award-Winning Heroes!
                                               National availability frozen and pantry must-haves!
@@ -670,7 +809,9 @@ apart from every other frozen naan on the market.                               
                                                                                                       everyday American kitchens!
 
    24
-ADF Soul: Delicious, “better-for-you” packaged food products
+
+[page 26]
+ADF Soul: Delicious, “better-for-you” packaged food products
 
                                                                  For modern Indian urban consumers
 
@@ -706,7 +847,9 @@ frozen range
 
 
  25
-Camel & Aeroplane: Our Other Esteemed Brands
+
+[page 27]
+Camel & Aeroplane: Our Other Esteemed Brands
 
 
             Delighting Arabic                                           Offering Affordable Solutions to
@@ -740,9 +883,18 @@ Supermarkets
 
 
 26
-Strong Marketing &
+
+[page 28]
+Strong Marketing &
 Strengthened Distribution
-Ashoka: Marketing Initiatives
+
+[OCR page 28]
+La) ae
+Strong Marketing &
+Strengthened Distribution
+[Section divider slide: ADF Foods logo mark; no additional data beyond native text.]
+[page 29]
+Ashoka: Marketing Initiatives
 
      Branding and on-ground activation of our flagship brand Ashoka
 
@@ -750,7 +902,9 @@ Strengthened Distribution
 
 
 28
-Ashoka: Marketing Initiatives
+
+[page 30]
+Ashoka: Marketing Initiatives
 
                                              Increased Presence on Social Media
                  Presence on Digital Media
@@ -759,7 +913,9 @@ Strengthened Distribution
 
 
 29
-Truly Indian: Marketing Initiatives
+
+[page 31]
+Truly Indian: Marketing Initiatives
 
      Branding and on-ground activation for Truly Indian
 
@@ -770,7 +926,9 @@ Strengthened Distribution
 
 
 30
-Truly Indian: Marketing Initiatives
+
+[page 32]
+Truly Indian: Marketing Initiatives
 
      Online Platform Growth
 
@@ -778,7 +936,13 @@ Strengthened Distribution
 
 
 31
-Truly Indian: Marketing Initiatives
+
+[OCR page 32]
+Truly Indian: Marketing Initiatives
+Online Platform Growth
+[CHART, page 32, OCR text: stat cards -- "2.58M+ Total Reach" | "1.02M Instagram Impressions" | "28K+ Social Interactions" | "+68% New Followers". Supporting collage of Instagram posts/screenshots for @trulyindianfood (2,879 followers, 263 posts shown in screenshot).]
+[page 33]
+Truly Indian: Marketing Initiatives
 
 
                                                      Digital Marketing Development
@@ -794,7 +958,9 @@ Strengthened Distribution
                                                                                  Consumer sampling program driving verified reviews
              5,700+                 1,500+                    825                   and brand awareness through targeted trial.
              Activations            Product Trials            Verified Reviews
-ADF Soul: Marketing Initiatives
+
+[page 34]
+ADF Soul: Marketing Initiatives
 
 Continued presence on Social Media   WhatsApp / Email and Referral Marketing   E-Commerce and Quick Commerce Marketing
 
@@ -802,7 +968,9 @@ Continued presence on Social Media   WhatsApp / Email and Referral Marketing   E
 
 
 33
-ADF Soul’s Presence in Modern Trade
+
+[page 35]
+ADF Soul’s Presence in Modern Trade
 
 
 
@@ -814,9 +982,21 @@ Continued presence on Social Media   WhatsApp / Email and Referral Marketing   E
 
 
 34
-Manufacturing
+
+[CHART/IMAGE, page 35, OCR text (verified by direct image review, logos of modern trade retail partners): Nature's Basket, D-Mart, Dorabjee's (Since 1911), freshpik (@JioWorldDrive), Food Square (World Food Market), MK Retail (Since 1927), Reliance Fresh Signature, simpli namdhari's (www.simplinamdharis.com). Caption box: 'Instore presence and Sampling activities'. These retailer names are not present in the native pdftotext extraction of this page.]
+[page 36]
+Manufacturing
 Excellence
-   Manufacturing Facilities
+
+[OCR page 36]
+ADI FOODS LTD.
+Feeding the warld..
+
+Manufacturing
+Excellence
+[Section divider slide: ADF Foods logo + tagline; no additional data beyond native text.]
+[page 37]
+   Manufacturing Facilities
 
          Plant 1 Surat, Gujarat                     Plant 2 Nadiad, Gujarat                         Plant 3 Nashik, Maharashtra        Surat
 
@@ -857,7 +1037,9 @@ Excellence
 
 
     36
-Warehousing Facilities
+
+[page 38]
+Warehousing Facilities
 
           Cold storage facility in New Jersey, USA                                       Warehousing and Distribution Facilities
 
@@ -879,8 +1061,14 @@ Excellence
 New Jersey                                             New Jersey
 
 37
-Strategic Innovation
-Shaping Products and Processes for a Changing Market
+
+[page 39]
+Strategic Innovation
+
+[OCR page 39]
+[OCR yielded 0 characters -- verified by direct image review: section divider slide 'Strategic Innovation' with ADF Foods logo (top-left) and a stock photo of paneer curry in a kadai (right); no text content in image beyond the logo wordmark and the title already captured natively. No additional data.]
+[page 40]
+Shaping Products and Processes for a Changing Market
 
 Driving innovation through practical solutions that balance consumer needs with scalability and quality.
 
@@ -907,7 +1095,9 @@ Driving innovation through practical solutions that balance consumer needs with 
 
 
 39
-Built on Quality, Compliance & Trade Excellence
+
+[page 41]
+Built on Quality, Compliance & Trade Excellence
 
 Quality control certifications and processes ensure high standards and excellence in our industry
 
@@ -931,8 +1121,16 @@ Quality control certifications and processes ensure high standards and excellenc
 
 
 40
-People & Capabilities
-Governed by experienced Board Of Directors
+
+[page 42]
+People & Capabilities
+
+[OCR page 42]
+AD [logo]
+People & Capabilities
+[Section divider slide: ADF Foods logo mark; no additional data beyond native text.]
+[page 43]
+Governed by experienced Board Of Directors
 
 
              Bimal Thakkar                            Pheroze Mistry                         M. M. Srivastava                             Ameet Hariani
@@ -978,7 +1176,9 @@ Quality control certifications and processes ensure high standards and excellenc
 
 
  42
-Organisation Chart
+
+[page 44]
+Organisation Chart
 
 
                                                              CMD
@@ -1018,8 +1218,15 @@ USA Business    Country / Sales
 
 
 43
-ESG & CSR
-    ESG Metrics & Key Initiatives – FY26
+
+[page 45]
+ESG & CSR
+
+[OCR page 45]
+ESG & CSR
+[Section divider slide: ADF Foods logo mark; no additional data beyond native text.]
+[page 46]
+    ESG Metrics & Key Initiatives – FY26
 
                           Improving resource efficiency, strengthening compliance, and scaling community impact through focused CSR programs
 
@@ -1059,9 +1266,20 @@ USA Business    Country / Sales
 
 
      45
-Annual Performance
+
+[page 47]
+Annual Performance
 Highlights
-Consolidated 5-year Financial Highlights
+
+[OCR page 47]
+FOODS LTD.
+Jeede ld.
+
+Annual Performance
+Highlights
+[Section divider slide: ADF Foods logo + tagline; no additional data beyond native text.]
+[page 48]
+Consolidated 5-year Financial Highlights
 
 Particulars (INR crores unless stated)                              FY22                FY23        FY24      FY25      FY26
 
@@ -1101,7 +1319,9 @@ Working Capital                                                     115.6       
 
 
 47
-Consistent Shareholder Returns
+
+[page 49]
+Consistent Shareholder Returns
 
 
                                        Value creation for shareholders
@@ -1129,7 +1349,10 @@ Working Capital                                                     115.6       
                                                                 * Includes Interim Dividend (Rs. 6.6 Cr), Proposed Final Dividend (Rs. 6.6 Cr).
 
 48
-                             Thank You!
+
+[CHART, page 49, native-text data labels: 'INR 100+ Cr. returned to our shareholders since FY22' -- Regular + Special Dividend (INR Cr.) by year: FY22 8.8 / FY23 11.0 / FY24 13.2 / FY24 43.9(shown as separate bar, likely buyback-inclusive year label duplicated in source) / FY25 13.2 / FY26 13.2*. Footnote: *Includes Interim Dividend (Rs. 6.6 Cr), Proposed Final Dividend (Rs. 6.6 Cr).]
+[page 50]
+                             Thank You!
                                                       Ernst & Young LLP
 ADF Foods Limited
                                                 Investor Relations Advisory
@@ -1137,4 +1360,3 @@ CIN: L15400GJ1990PLC014265
 
 Srinivas Ayyagari, CFO       Sumedh Desai             Sukhin Naphade               Vikash Verma
 srinivas@adf-foods.com       sumedh.desai@in.ey.com   sukhin.s.naphade@in.ey.com   vikash.verma1@in.ey.com
-

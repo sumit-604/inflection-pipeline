@@ -1,0 +1,21 @@
+stage: B12c
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+scope: "phase 1 - gate0 + emerging moat only; valuation deferred to phase 3"
+gate0: {rules_checked: 47, fails: []}
+emoat: {rules_checked: 30, fails: []}
+valuation: {status: "pending phase 3", rules_checked: 0, fails: []}
+framework_adherence: 100   # Gate0+EM portion: 77/77 hard rules applied as written
+recomputed_destination_pe: ""   # n/a in phase 1; valuation deferred
+recomputed_decision: ""         # concur - Gate 0 AVOID and EM MODEST re-derive cleanly
+findings:
+  - {severity: MINOR, framework: gate0, location: "Block A / A4", note: "ROCE trend -0.46pp falls in an undefined sub-1pp-decline gap; maker took conservative band 3 (vs strict-read 5) and flagged. Block A 18 vs 20 immaterial; classification locked by DB4+history."}
+  - {severity: MINOR, framework: gate0, location: "Block F / M4 & M10", note: "Both top bands need growth AND receivable-days stability; growth met, stability fails (+17.72d), and the intermediate band is decline-year-keyed. Maker applied nearest band 3 and flagged. As-scored moat count (4=STRONG) holds."}
+  - {severity: MINOR, framework: gate0, location: "Block F / M11", note: "Strict band 'growth >15% but selling% rising = 1' yields 1, not 0 (rev CAGR 17.54%). Maker scored 0 under the framework's explicit <6yr conservative-scoring latitude - authorised. Immaterial: still <3, moat count and grand-total band unchanged."}
+  - {severity: MINOR, framework: emoat, location: "YAML evidence_mix vs completionist recount", note: "evidence_mix.documented:6 vs recount '4 documented items across 3 categories' count different bases (all documented threads vs documented items backing scored categories). Not a scoring error; presentational."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100            # 77/77 Gate0+EM rules passed as written

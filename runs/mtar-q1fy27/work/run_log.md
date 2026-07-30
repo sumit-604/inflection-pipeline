@@ -46,3 +46,13 @@
 - Notion: additional-detail section appended (segment split, order book, guidance, promoter stake,
   13 management questions, completeness proof); Key Notes audit trail prepended (both prior entries preserved)
 - Count reconciliation: results 11 notes / pressrel 26 numbers / presentation 32 slides - all reviewed
+
+## Valuation refresh + final Notion save (2026-07-30)
+- Role 1 valuation refresh (stage 11) run on operator question (raise entry with raised guidance?).
+  Result: entry zone Rs 1,542-1,789 (~+3% vs prior), decision AVOID-on-valuation, HR 1.22/1.53 STOP
+  at CMP ~5,200. Destination PE held 40x; evidenced ROCE 17.2% -> 16.1x independent (pressures down).
+- Notion: full 3-doc merged review + valuation refresh saved (segment split, order book, guidance,
+  promoter stake, monitorable resolution, questions, Section 1B re-derivation, FY31 projections,
+  delta table, hurdle, direct answer). Key Notes audit trail carries 4 entries (refresh + 3-doc +
+  results + original May thesis), all prior preserved. Decision Status UNCHANGED WATCHLIST/AVOID.
+- All work files committed to branch claude/mtar-annual-reports-qo0c39.

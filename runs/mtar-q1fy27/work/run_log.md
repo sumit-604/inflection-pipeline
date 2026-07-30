@@ -68,3 +68,14 @@
   Q1 CFO Rs 247.69 Cr spoken (resolves INDETERMINATE? but advance-driven caveat); +Rs 800 Cr
   order today -> book ~5,943 Cr; guidance reaffirmed 80% + 24% margin, "will do better".
   Silences: promoter stake (not asked), Bloom concentration deflected as "unwanted noise".
+
+## Concall (Role 5) completion + Notion save (2026-07-30)
+- Concall chain: A1 pass (247 lines/124 turns, verbatim) / A2 pass (15/124/32/53/22) / A3 pass
+  (F6/F7/F14/F17; gross-margin comparator, net-debt framing, verbal-CFO, silence audit).
+- A4 4-doc merged (Role 4 + Role 5): verdict PROCEED WITH CAVEATS, Decision held WATCHLIST/AVOID;
+  concall grade B- OVERPROMISER-WATCH; net debt updated Jun-26 ex-MF ~404 Cr; 16 questions, 19 monitorables.
+- A5 4-doc re-audit: coverage/arithmetic/adversarial all PASS -> VERDICT COMPLETE.
+- Notion: concall/Role 5 section saved (narrative-vs-filing candor flags, silence audit, promise-vs-
+  delivery register, Q&A texture, top questions, verdict); Key Notes prepended (now 5 entries, all prior
+  preserved). Decision Status UNCHANGED. Count reconciliation: 11 notes / 124 turns / 32 slides+PR / all reviewed.
+- Full 4-doc quarterly review complete across results + press release + presentation + concall.

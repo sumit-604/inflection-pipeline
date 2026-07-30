@@ -1,0 +1,28 @@
+stage: B13-synthesis
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+phase: 3-finalize
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # rule 3 with INDETERMINATE cash cap (one level below PROCEED WITH FLAGS)
+flags_active: ["FLAG-CASH", "FLAG-PROMOTER", "FLAG-GATE0", "FLAG-GOVERNANCE"]
+confidence_delta: {numerical: 0, redflag: 70, framework: 98, peer: 100, overall: 70}
+source_fidelity_gate: "CLEARED in Phase 3 (3 basis-labeling CRITICALs re-checked at audited source, logged in disagreement log); no unresolved B12a CRITICAL"
+valuation_decision: "AVOID"
+entry_range: {low: 134, high: 153}
+mos_price: 114
+destination_pe: {track2_additive: 15.4, track1_rrm: 11.7}
+hurdle_verdict: "STOP"
+prob_weighted_3yr_cagr: -15.2
+devil_overall: "SURVIVES"
+headline: "Record profit, broken cash, deeply overvalued stock"
+falsification_metric: "FY27 operating cash flow (Q1 or half year) prints negative a second consecutive year, standalone and consolidated, with inventory and receivable days not normalising toward FY25"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "FY26 record PAT Rs 108 Cr against operating cash flow of negative Rs 96 Cr, and even that negative CFO was flattered by factoring doubled to Rs 187 Cr plus supplier finance of Rs 647 Cr; a clean earnings quality case study, no buy or sell call attached"
+notion_save:
+  page_title: "RAMRAT — Ram Ratna Wires Ltd — Run 2026-07-29"
+  summary: "Record profit, broken cash, deeply overvalued stock | Verdict PROCEED WITH CAVEATS | Decision AVOID (on valuation) | Entry Rs 134 to Rs 153, MoS Rs 114 | ~36x forward vs 15.4x additive / 11.7x RRM destination PE, Hurdle STOP, prob weighted 3yr CAGR -15.2% | cash INDETERMINATE"
+  drive_link: "NOT FOUND (no Drive folder link in run inputs)"
+  mode: append-never-overwrite-status

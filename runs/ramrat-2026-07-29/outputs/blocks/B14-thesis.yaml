@@ -1,0 +1,20 @@
+stage: B14-thesis
+company: "RAMRAT"
+run_date: "2026-07-29"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 134, high: 153}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "FY27 CFO stays negative a second consecutive year with inventory and receivable days not normalizing toward FY25 levels, OR copper tubes segment revenue falls for 2+ consecutive quarters (below the Q4 FY26 Rs 347.20 Cr level)."
+monitoring_checklist:
+  - "Q1 FY27 and FY27 full-year CFO turns positive (SA and CN); pre-tax CFO positive"
+  - "Copper tubes segment revenue resumes sequential growth above the Q4 FY26 Rs 347.20 Cr level"
+  - "Inventory and receivable days normalize toward FY25; inventory below ~Rs 486 Cr CN with no fresh unexplained build"
+  - "Net debt/equity stabilizes at or below ~0.6-0.7x CN; interest coverage above 2.87x"
+  - "ROCE holds at or above ~20% CN as new capacity comes online (from 23.3% CN FY26)"
+  - "CTC/HVDC commercial production confirmed near Q2 CY2026 with first CTC revenue disclosed"
+  - "Silvassa ~Rs 86 Cr capex commissioned with a stated completion date"
+  - "Contingent tax Rs 103.62 Cr: favourable/neutral appellate progress, no material crystallisation"
+  - "Entry conjunction: price at Rs 134 to 153 AND no thesis-broken trigger fired in the latest quarter"

@@ -3,7 +3,7 @@
 **Agent:** A4 ANALYST | **Protocol:** Role 4 (Quarterly Results Review v1.2), full step sequence. Role 5 (Concall) N.A. — no transcript supplied.
 **Documents merged (3):** (1) Reg 33 results filing [standalone + consolidated], (2) Reg 30(6) investor press release [consolidated only], (3) 32-slide investor presentation, July 2026 [consolidated only].
 **This review SUPERSEDES the earlier results-only review.** Presentation and press-release findings FEED the Role 4 review.
-**Reviewed:** 2026-07-30 | **Filing date:** 2026-07-29 (board meeting 3:00–3:35 p.m.; CS DSC 16:34, post-conclusion — no signature-timing flag).
+**Reviewed:** 2026-07-30 (rev. 1, A5 loop 1) | **Filing date:** 2026-07-29 (board meeting 3:00–3:35 p.m.; CS DSC 16:34, post-conclusion — no signature-timing flag).
 
 ---
 
@@ -115,8 +115,9 @@ Deck's Q1 FY27 EBITDA 85.1 / 23.6% (S11-12/S11-15) and PAT 50.2 / 13.9% (S11-24/
 | Metric | Q1 FY26 | Q1 FY27 | YoY % | Verdict |
 |---|---|---|---|---|
 | Revenue from Operations | 156.58 | 360.72 | **+130.4%** | Strong — but soft base (Q1 FY26 weakest qtr) |
-| Operating EBITDA | 28.39 | 85.05 | **+199.6%** | Strong; margin-led |
-| Op EBITDA Margin | 18.1% | 23.6% | **+550 bps** | Q1 FY27 23.6% vs Q1 FY26 18.1% = +5.5pp — genuine expansion |
+| Gross Profit / GP margin | 84.9 / 54.2% (S11-4/S11-7) | 164.2 / 45.5% (S11-6/S11-9) | GP +93.4%; margin **−8.7 pp** | GP grows but gross MARGIN CONTRACTS (mix, F-05) |
+| Operating EBITDA | 28.39 | 85.05 | **+199.6%** | Strong; scale/operating-leverage led, NOT gross-margin led |
+| Op EBITDA Margin | 18.1% | 23.6% | **+550 bps** | Q1 FY27 23.6% vs Q1 FY26 18.1% = +5.5pp — expansion, but see operating-leverage fragility clause below |
 | Depreciation | 8.37 | 9.69 | +15.8% | Well below revenue growth — no absorption gap |
 | Finance Costs | 5.82 | 15.85 | +172.3% | Scaling FAST — WC/order-build debt-funded (see Step 5) |
 | EBIT (operating, OpEBITDA−D) | 20.02 | 75.36 | +276.4% | Strong |
@@ -128,7 +129,7 @@ Deck's Q1 FY27 EBITDA 85.1 / 23.6% (S11-12/S11-15) and PAT 50.2 / 13.9% (S11-24/
 
 **Six mandatory diagnostics:**
 1. **Revenue grew YoY?** Yes, +130.4% (₹156.58 → ₹360.72 Cr). Vastly outpaces the *old* 50% and *new* 80% FY27 guidance — because Q1 FY26 was the softest quarter of FY26 (17.9% of FY26 revenue). Base-inflated; see Section (b).
-2. **Op EBITDA margin?** EXPANDED. Q1 FY27 23.6% vs Q1 FY26 18.1% = **+550 bps YoY**. Also sequential recovery from Q4 FY26 20.2%. This clears the Notion monitorable ("sustain Q3 FY26 ~23%").
+2. **Op EBITDA margin?** EXPANDED. Q1 FY27 23.6% vs Q1 FY26 18.1% = **+550 bps YoY** (also sequential recovery from Q4 FY26 20.2%); clears the Notion monitorable ("sustain Q3 FY26 ~23%"). **OPERATING-LEVERAGE FRAGILITY CLAUSE (surviving bear counter):** this EBITDA-margin expansion is **operating-leverage / scale-driven, NOT gross-margin-driven** — gross margin actually FELL ~8.7 pp YoY (54.2% Q1 FY26, S11-7 → 45.5% Q1 FY27, S11-9), with the Products & Others mix spiking to 28% (S10-10, F-05, a lower-gross-margin bucket). The +550 bps therefore came entirely from spreading fixed employee/other-expense over a 2.3x-larger revenue base; it is **vulnerable if volume growth slows or the Products mix persists/deepens** — the margin gain is scale-contingent, not structurally locked in.
 3. **Core operating PBT (ex-OI) grew YoY?** Yes, **+319.1%** (₹14.20 → ₹59.51 Cr). Reported PBT +355% and PAT +364.5% are only modestly above core — the headline growth **is real**, not a treasury artefact.
 4. **Gap between core PBT (+319%) and reported PAT (+364.5%)?** Two small tailwinds: (i) Other Income +₹7.28 Cr YoY (0.61→7.89) lifts reported PBT ~36pp above core; (ii) ETR fell 27.0%→25.5% (~+₹0.9 Cr). Both quantified; neither reverses the core signal.
 5. **D&A / finance costs vs revenue?** D&A +15.8% << revenue +130.4% → no capex-absorption deficit; the greenfield facilities (O&G/Phase-2/3) are NOT yet capitalised into D&A (ROU nil→₹15.0 Cr at Mar-26 only, F-01). Finance costs +172.3% >> revenue → leverage is rising to fund WC/order build (Step 5, F-03/F-13).
@@ -178,7 +179,7 @@ Reported PAT YoY change = ₹50.23 − ₹10.81 = **+₹39.42 Cr**.
 | **Reported PAT YoY change** | **+₹39.42** | **+364.5%** | — |
 
 **Mandatory answers:**
-- **% of PAT change from recurring core vs non-recurring?** Overwhelmingly recurring. Core operating PBT rose +₹45.31 Cr (14.20→59.51); Other Income contributed only +₹7.28 Cr of the +₹52.59 Cr PBT rise (~14%). Even zeroing OI, PAT would be ~₹44.3 Cr (+310%). **The quarter is operationally, not treasury, driven.**
+- **% of PAT change from recurring core vs non-recurring?** Overwhelmingly recurring. Core operating PBT rose +₹45.31 Cr (14.20→59.51); Other Income contributed only +₹7.28 Cr of the +₹52.59 Cr PBT rise (~14%). Even zeroing OI, PAT would be ~₹44.3 Cr (+310%). **The quarter is operationally, not treasury, driven** — though the operating gain itself is scale/operating-leverage driven, not gross-margin driven (see Step 2 diagnostic 2).
 - **If OI reverts to prior-year (₹0.61 Cr):** run-rate PAT ≈ ₹44.4 Cr (PBT ex-OI ₹59.51 × 0.745). Still ~4x Q1 FY26.
 - **D&A / finance costs at steady state?** D&A NOT yet — greenfield O&G/Phase-2 (Q3 FY27) and Phase-3 (Mar-27) not yet capitalised (ROU/lease live only from Mar-26, F-01). Finance costs are ramping with WC/order-build debt (current borrowings ₹96.2→₹221.6 Cr, F-13); expect further drag as facilities draw down.
 - **Tax adjustments inflating/deflating PAT?** No. Q1 FY27 ETR 25.5% ≈ statutory 25.17%; deferred tax is a persistent CHARGE (₹2.04 Cr, L414), not a DTA credit. The one prior-period tax credit (F8-a, ₹0.83 Cr) sits in FY26/Q4 only — it does NOT touch Q1 FY27.
@@ -205,7 +206,8 @@ Reported PAT YoY change = ₹50.23 − ₹10.81 = **+₹39.42 Cr**.
 | **Total NWC days** | Sep-25 274 (S14-3); Mar-26 172 (S14-9) | **Jun-26 59** (S14-12) | −215 vs Sep-25; −113 vs Mar-26 | **MET (<200) but advance-funded — AMBER (F-13), see below** |
 | PPE | Mar-25 436.1 (S27) | Mar-26 497.2 (S27) | +₹61.1 Cr | S27 |
 | CWIP | Mar-25 53.2 (S27) | Mar-26 34.4 (S27) | −₹18.8 Cr | S27 (capitalised) |
-| Net Debt (Mar-26) | Mar-25 net ~₹160 Cr | **Mar-26 ≈ ₹389 Cr** | rising | Gross debt 147.7+221.6=369.3 (S26); + leases 7.3; − cash 1.0 − bank 20.2 − MF 215.3 → **net ≈ ₹140 Cr if MF counted as cash; ₹355 Cr if not** — DEFINITION_WATCH |
+| Gross debt (Mar-26) | Mar-25 177.3 (81.1+96.2) | Mar-26 **369.3** (147.7 NC S26-4 + 221.6 Current S26-10) | +₹192.0 Cr | + lease liabilities 7.3 (6.7 NC S26-5 + 0.6 Current S26-11) → total borrowed 376.6 |
+| **Net Debt (Mar-26)** | — | **≈ ₹355 Cr** (MF excluded) / **≈ ₹140 Cr** (MF as cash) | rising | Basis: gross incl. leases 376.6 − cash & equiv 1.0 (S27-13) − bank balances 20.2 (S27-14) = **355.4 ≈ ₹355 Cr**; further less MF investment 215.3 (S27-11) = **140.1 ≈ ₹140 Cr**. DEFINITION_WATCH: turns on whether the ₹215.3 Cr MF is treated as cash. (Prior "≈₹389 Cr" figure withdrawn — did not reconcile to either basis.) |
 | D/E (Mar-26) | Mar-25 0.24 (S30-11) | **Mar-26 0.45** (S30-12) | +0.21 | Leverage nearly doubled YoY |
 | Promoter Pledge | — | **ND** | ND | Not disclosed in any of the three docs |
 
@@ -213,9 +215,9 @@ Reported PAT YoY change = ₹50.23 − ₹10.81 = **+₹39.42 Cr**.
 - **CFO/PAT vs Pillar 2 band?** Q1 FY27 CFO is ND → **cannot confirm the band this quarter (INDETERMINATE).** FY26 annual CFO/PAT 2.09x sits at the top of the 0.65–1.30x band, BUT Notion's 8-year cumulative 0.65x and FCF/PAT −0.51x say the *structural* cash multiplier is LOW. One strong year (advance-driven WC release, +₹41.9 Cr, S28) does not re-rate the multiplier. **Cash multiplier stays limited pending the H1 FY27 CFO (Q2 filing).**
 - **Is the WC drag structural or growth-induced?** The 274→59-day collapse is **partly advance-funded, NOT proven structural (F-13, critical).** Other Current Liabilities jumped **+₹210.4 Cr to ₹254.9 Cr** at Mar-26 (from ₹44.5 Cr Mar-25, S26-16) — consistent with **customer advances** on the record ₹2,895.1 Cr Q1 order inflow. "Other-than-WIP" days crashed 84→**3** (S14-7→S14-10), the tell-tale of advances netting receivables. The improvement is **timing/advance-driven**; as advances are consumed against future revenue, days should normalise upward. Rating-agency structural-WC view (CARE precedence per protocol) not in scope here → **treat as AMBER, not a structural win.**
 - **Did CWIP capitalise as expected?** Yes — CWIP ₹53.2→₹34.4 Cr while PPE ₹436.1→₹497.2 Cr at Mar-26 (~₹61 Cr capitalised). ROU asset appeared ₹15.0 Cr (F-01) = a lease first capitalised FY26 (confirm if the greenfield facility — A4 question).
-- **Net debt vs projection?** Notion projected net debt ~₹370 Cr, D/E 0.46x. Mar-26 actual: gross debt ₹369.3 Cr, D/E **0.45x** — in line. But leverage nearly doubled YoY (0.24→0.45) and current borrowings 2.3x (₹96.2→₹221.6 Cr) — the WC/order build is **debt-funded**, corroborating finance-cost +172% YoY (Step 2). MF investment ₹215.3 Cr (0→215.3, F-01) is cash parked; net-debt reading is DEFINITION_WATCH depending on whether MF is treated as cash.
+- **Net debt vs projection?** Notion projected net debt ~₹370 Cr, D/E 0.46x. Mar-26 actual net debt is **≈₹355 Cr excluding MF from cash / ≈₹140 Cr treating the ₹215.3 Cr MF as cash** (basis in table above); gross debt ₹369.3 Cr and D/E **0.45x** are in line with the Notion figures. Leverage nearly doubled YoY (0.24→0.45) and current borrowings 2.3x (₹96.2→₹221.6 Cr) — the WC/order build is **debt-funded**, corroborating finance-cost +172% YoY (Step 2). The ₹215.3 Cr parked in MFs alongside doubled current borrowings is the capital-allocation puzzle (A4 question, F-01).
 
-**CASH-CONVERSION CLASSIFICATION: INDETERMINATE (Q1 FY27 CFO/PAT).** Per CLAUDE.md and protocol house rule, INDETERMINATE cannot resolve silently to PROCEED → **verdict capped at PROCEED WITH CAVEATS, missing evidence named: the H1 FY27 cash-flow statement (due at Q2 filing under Reg 33) and a Jun-26 balance sheet.** The deck's WC-days/D-E/net-debt upgrade the *FY26* picture and the *Jun-26 WC-days* reading, but do **NOT** supply a Q1 FY27 CFO — so the classification does NOT improve out of INDETERMINATE for CFO/PAT specifically. It is **NOT** re-rated on one advance-funded WC print.
+**CASH-CONVERSION CLASSIFICATION: INDETERMINATE (Q1 FY27 CFO/PAT).** Per CLAUDE.md and protocol house rule, INDETERMINATE cannot resolve silently to PROCEED → **verdict capped at PROCEED WITH CAVEATS, missing evidence named: the H1 FY27 cash-flow statement (due at Q2 filing under Reg 33) and a Jun-26 balance sheet.** The deck's WC-days/D-E/net-debt upgrade the *FY26* picture and the *Jun-26-WC* reading, but do **NOT** supply a Q1 FY27 CFO — so the classification does NOT improve out of INDETERMINATE for CFO/PAT specifically. It is **NOT** re-rated on one advance-funded WC print.
 
 🛑 Cash quality shown. Proceed.
 
@@ -232,7 +234,7 @@ Notion projections are **FY31-terminal** (base PAT ₹420–485 Cr) with no per-
 | Op EBITDA margin | sustain ~23% (Q3 FY26); guide 24% ±100bps | 23.6% | AT / slightly below 24% guide midpoint — GREEN vs sustain-target |
 | PAT | FY31 base ₹420–485 Cr (terminal) | ₹50.23 Cr Q1 (annualises ~₹201 Cr flat) | On glide path; not comparable to terminal |
 | EPS | — | ₹16.33 Q1 | — |
-| Net Debt | ~₹370 Cr / D/E 0.46x | Mar-26 ₹369.3 Cr / 0.45x | In line |
+| Net Debt | ~₹370 Cr / D/E 0.46x | Mar-26 ≈₹355 Cr (MF excl.) / ₹140 Cr (MF incl.); D/E 0.45x | In line (net-debt basis-dependent) |
 | ROCE | tripwire <15% (post-FY28) | Mar-26 **17.2%** (S30-4) | Above threshold |
 
 **Probability re-weighting rule:** Actuals do NOT land below bear on any metric — they are strong. Rule NOT triggered (it fires only on 2+ below-bear metrics for 2 consecutive quarters). No downward re-weighting.
@@ -244,7 +246,7 @@ Notion projections are **FY31-terminal** (base PAT ₹420–485 Cr) with no per-
 | 1 | Bloom/Clean-Energy revenue + hot-box ramp | rising CE rev; 12k→20k hot-box | CE rev flat/declining | CE Fuel-Cell rev ₹220.8 Cr, 61% (S9-5/S9-10); annualises ~₹883 Cr vs FY26 615.4; OB ₹3,431 Cr (S9-11). **Hot-box unit counts SILENT** | GREEN on revenue proxy; UNKNOWN on units |
 | 2 | Civil-nuclear order inflows (Kaiga ~₹500 Cr) | PO received | no order | **Kaiga 5&6 ₹504 Cr received** (S7-11) + ₹150 Cr refurb expected FY27 (S7-12) | GREEN (order); but nuclear REVENUE only ₹3.2 Cr / 1% (S7-5/S7-10) — backlog not converting (F-04) |
 | 3 | Weatherford O&G commissioning + FY27 contribution | on time (Jun–Sep 26) | slip | Deck: "commissioned by **Q3 FY27**" (S21-1) vs Notion Q2 FY27 = **~1-qtr SLIP** (F-11); contribution unquantified | AMBER |
-| 4 | EBITDA margin sustains Q3 FY26 ~23% | ≥23% | <23% | **23.6%** (S11-15) | GREEN |
+| 4 | EBITDA margin sustains Q3 FY26 ~23% | ≥23% | <23% | **23.6%** (S11-15) — but scale-driven, gross margin −8.7pp (Step 2 diag 2) | GREEN (fragility-flagged) |
 | 5 | WC days <200 in FY27 | <200 | >200 | **59** (S14-12) — but advance-funded (F-13) | GREEN on number, AMBER on quality |
 
 ### 6C. Thesis-Broken Trigger Check
@@ -266,7 +268,7 @@ Notion projections are **FY31-terminal** (base PAT ₹420–485 Cr) with no per-
 | Bloom/Clean-Energy fuel-cell ramp | High | CE rev ₹220.8 Cr / 61% (S9-5); OB ₹3,431 Cr (S9-11); Bloom PO ₹2,279 Cr (Notion) | hot-box units undisclosed | **ON TRACK** |
 | Civil-nuclear inflows (Kaiga/PFBR) | Medium | Kaiga ₹504 Cr received (S7-11); Mahi Banswara 4 reactors (S7-13); ₹150 Cr refurb (S7-12) | nuclear rev collapsed to 1% (F-04) — timing | **FIRED (order) / DELAYED (revenue conversion)** |
 | Weatherford O&G facility | Medium | whipstock first articles delivered (S5); facility "commissioned Q3 FY27" (S21-1) | ~1-qtr slip; contribution unquantified | **DELAYED** |
-| Margin recovery to ~24% | Medium | 23.6% Q1 FY27 (S11-15); 24% ±100bps guide (S4-2) | one clean quarter only | **ON TRACK** |
+| Margin recovery to ~24% | Medium | 23.6% Q1 FY27 (S11-15); 24% ±100bps guide (S4-2) | one clean quarter; scale-driven not gross-margin (gross −8.7pp) | **ON TRACK (fragility-flagged)** |
 | Order-book / revenue inflection | Medium | OB ₹5,143.3 Cr (S13-8), ~2x baseline; inflow ₹2,895.1 Cr "highest ever" (S13-6) | restated-basis DEFINITION_WATCH (F-10) | **FIRED (with definition caveat)** |
 
 🛑 6A–6D shown. Proceed.
@@ -331,9 +333,9 @@ The deck makes several pillar INPUTS visible for the first time. Per discipline,
 | Kaiga 5&6 order (~₹500 Cr) | ND | **₹504 Cr received** (S7-11) | Matches Notion catalyst | **GREEN** |
 | Weatherford O&G timing | ND | "commissioned by **Q3 FY27**" (S21-1) vs Notion Q2 FY27 | ~1-quarter slip | **AMBER** (F-11) |
 | WC days | ND (no balance sheet) | **59** Jun-26 (S14-12); 274 Sep-25 → 172 Mar-26 → 59 | <200 target met; but advance-funded | **GREEN number / AMBER quality** (F-13) |
-| D/E & net debt | ND | **D/E 0.45x** Mar-26 (S30-12); gross debt ₹369.3 Cr (S26) | In line with Notion ~0.46x / ~₹370 Cr; leverage nearly doubled YoY | **AMBER** (rising leverage) |
+| D/E & net debt | ND | **D/E 0.45x** Mar-26 (S30-12); gross debt ₹369.3 Cr (S26); net debt ≈₹355 Cr (MF excl.) / ≈₹140 Cr (MF as cash) | In line with Notion ~0.46x / ~₹370 Cr gross; leverage nearly doubled YoY | **AMBER** (rising leverage) |
 | ROCE / ROE | ND | **ROCE 17.2%**, **ROE 12.1%** Mar-26 (S30-4/S30-8) | Above 15% tripwire; recovered from FY25 11.4%/7.5% | **GREEN** |
-| Promoter shareholding | ND | **29.35%** Jun-26 (S31-20) | Below Mar-26 baseline 30.44%; declining ~1pp/qtr | **AMBER** (F-03, see Section d) |
+| Promoter shareholding | ND | **29.35%** Jun-26 (S31-20) | Below Mar-26 baseline 30.44%; declining (see Section d) | **AMBER** (F-03) |
 | Guidance | ND (filing carries none) | **80% rev growth + 24% EBITDA margin** FY27 (S4-1/S4-2) | Raised from 50% / (24% by FY28) | **GREEN raise / caveat (Section b)** |
 | Q1 CFO / CFO-PAT | ND | **STILL ND** — no Q1 cash flow; deck gives FY26 annual only | Cash conversion INDETERMINATE for the quarter | **RED-for-visibility** (comes at Q2/H1) |
 
@@ -350,7 +352,7 @@ The deck makes several pillar INPUTS visible for the first time. Per discipline,
 - Flat Q1 run-rate annualised = ₹1,442.8 Cr = **+64.7%** on FY26 — i.e. the current run-rate alone delivers well above the *old* 50% guide but ~9pp **below** the new 80% guide.
 - **H2 run-rate the 80% guide implies:** remaining Q2–Q4 must total ₹1,216.5 Cr, **avg ₹405.5 Cr/qtr (~+12% above the ₹360.7 Cr Q1 run-rate)** — a back-half-loaded acceleration.
 
-**Genuine raise or base-effect optics?** **A genuine raise, but back-half-dependent — not validated by Q1 alone.** The raise is measured off the *non-soft* FY26 full-year base (₹876 Cr), and the ₹5,143 Cr order book (5.9x FY26 revenue) provides coverage. But Q1's optical +130% overstates it; the run-rate math says Q1 alone underwrites ~65%, not 80%. The 80% requires the H2 step-up (Kaiga conversion + Weatherford + Products). **Track as ON TRACK-with-acceleration-required, not yet delivered.** Margin: 23.6% Q1 already sits inside the 24% ±100 bps band — margin guide is the more credible half of the raise on one quarter.
+**Genuine raise or base-effect optics?** **A genuine raise, but back-half-dependent — not validated by Q1 alone.** The raise is measured off the *non-soft* FY26 full-year base (₹876 Cr), and the ₹5,143 Cr order book (5.9x FY26 revenue) provides coverage. But Q1's optical +130% overstates it; the run-rate math says Q1 alone underwrites ~65%, not 80%. The 80% requires the H2 step-up (Kaiga conversion + Weatherford + Products). **Track as ON TRACK-with-acceleration-required, not yet delivered.** Margin: 23.6% Q1 already sits inside the 24% ±100 bps band — but note the margin is scale-driven, not gross-margin driven (gross margin −8.7pp YoY, Step 2 diag 2), so the margin guide's credibility is itself volume-contingent.
 
 ---
 
@@ -378,8 +380,8 @@ The deck makes several pillar INPUTS visible for the first time. Per discipline,
 | Mar-26 (Notion baseline) | 30.44% | 17.31% | 27.66% | 24.59% | S31-16/17/18/19 |
 | **Jun-26** | **29.35%** | **24.80%** | 22.35% | 23.51% | S31-20/21/22/23 |
 
-- **Trend:** monotonic decline ~**−1.02pp/quarter** (31.41 → 30.59 → 30.44 → 29.35). Jun-26 is **1.09pp below** the Mar-26 Notion baseline.
-- **Distance to trigger:** 29.35% − 25% = **4.35pp**. At the observed ~1pp/quarter pace, ~**4 quarters** (≈ Q1 FY28) to breach if the pace holds. **Not fired; flagged as an active, closing-in tripwire.**
+- **Trend:** monotonic decline over four quarters, but at an UNEVEN pace. Quarterly steps are **−0.82pp (Sep-25→Dec-25), −0.15pp (Dec-25→Mar-26) and −1.09pp (Mar-26→Jun-26)** → a **series-average pace of ~0.69pp/quarter**. The **−1.09pp is only the LATEST quarter** (an acceleration off the near-flat −0.15pp middle step), NOT the steady rate. Jun-26 is 1.09pp below the Mar-26 Notion baseline.
+- **Distance to trigger:** 29.35% − 25% = **4.35pp.** Stated as TWO scenarios, not one estimate: **~4.0 quarters** at the accelerated latest-quarter pace (1.09pp/qtr → ≈ Q1 FY28), but **~6.3 quarters** at the series-average pace (0.69pp/qtr → ≈ Q3 FY28). Which prevails depends on whether the latest quarter's step-up is a one-off placement or a resumed selling cadence — the thing to watch. **Not fired; flagged as an active, closing-in tripwire.**
 - **Offsetting flow:** FII stake nearly **tripled** (9.21% → 24.80%) — institutional absorption of promoter selling; no share dilution (paid-up flat, basic=diluted EPS). Governance read: promoter monetisation continuing (Notion: 50% → 30.44% since IPO), now below 30% for the first time in the series.
 - **Decision-status impact:** none this quarter (trigger not fired), but this is the **single most likely tripwire to fire next** and is the primary governance watch-item. **A4 question raised.**
 
@@ -405,12 +407,12 @@ The deck makes several pillar INPUTS visible for the first time. Per discipline,
 | CE/Bloom revenue | rising | ₹220.8 Cr, 61% (S9-5) | GREEN |
 | Nuclear conversion | backlog→revenue | ₹3.2 Cr / 1% (S7-5); ₹504 Cr order in book (S7-11) | AMBER (F-04) |
 | Weatherford commissioning | Jun–Sep 26 | Q3 FY27 (S21-1) | AMBER slip (F-11) |
-| EBITDA margin | ≥23% | 23.6% (S11-15) | GREEN |
+| EBITDA margin | ≥23% | 23.6% (S11-15), scale-driven | GREEN (fragility-flagged) |
 | WC days | <200 | 59 (S14-12), advance-funded | GREEN/AMBER (F-13) |
 | Order book | ≥₹2,582 Cr | ₹5,143.3 Cr (S13-8) | GREEN (def-watch, F-10) |
 | ROCE | ≥15% | 17.2% (S30-4) | GREEN |
-| Leverage | ≤0.46x D/E | 0.45x (S30-12), rising | AMBER |
-| Promoter stake | ≥25% | 29.35% (S31-20), declining | AMBER (F-03) |
+| Leverage | ≤0.46x D/E | 0.45x (S30-12), rising; net debt ≈₹355/₹140 Cr | AMBER |
+| Promoter stake | ≥25% | 29.35% (S31-20), declining ~0.69pp/qtr avg | AMBER (F-03) |
 | Products mix durability | stable | 28% (S10-10), spiked | AMBER (F-05) |
 | NCLT merger of 2 WOS | effective | filed, undated (F6-a, L437) | pending |
 | Q1/H1 CFO | ≥1.0x PAT | ND (no Q1 CF) | UNKNOWN — cap at PROCEED WITH CAVEATS |
@@ -427,15 +429,15 @@ Channel: **AGM Q&A (28-Sep-2026) / IR email.** No concall transcript in scope. O
 | 2 | Total NWC days fell 274→59, with Other Current Liabilities up +₹210 Cr to ₹254.9 Cr. How much of that ₹254.9 Cr is customer advances, and what NWC-days level is structurally sustainable once advances are consumed? | F-13 | Cash-conversion structural-vs-timing — Pillar 2 | Advances quantified + steady-state ~120–150 days named | evasive; "improving" without the advance split |
 | 3 | Q1 FY27 has no cash-flow statement. What was Q1 FY27 CFO and CFO/PAT, and what H1 FY27 CFO/PAT should we expect? | Step 5 INDETERMINATE | The one gap capping the verdict at PROCEED WITH CAVEATS | H1 CFO/PAT ≥1.0x with the number | refuses a number |
 | 4 | Civil-nuclear revenue was ₹3.2 Cr (1%) in Q1 despite the ₹504 Cr Kaiga 5&6 order. When does Kaiga begin converting to revenue, and what FY27/FY28 nuclear revenue do you expect? | F-04 | Backlog-to-revenue conversion; nuclear trigger | Conversion schedule + FY28 ₹ target | "long-gestation, no timeline" |
-| 5 | Promoter stake fell to 29.35% (from 31.41% four quarters ago, ~1pp/qtr). Is further promoter selling planned, and will it stay above 25%? | F-03 | Tripwire #5 nearest to firing; governance | Commitment to hold ≥25%; no planned sale | non-committal on further sales |
+| 5 | Promoter stake fell to 29.35% (−1.09pp this quarter after a near-flat −0.15pp middle quarter; ~0.69pp/qtr on average). Is the latest step a one-off placement or resumed selling, is further selling planned, and will it stay above 25%? | F-03 | Tripwire #5 nearest to firing; governance; pace uncertainty | Commitment to hold ≥25%; latest step a one-off; no planned sale | non-committal; resumed cadence |
 | 6 | Weatherford/O&G is now guided "commissioned by Q3 FY27" vs the earlier Jun–Sep 26. Please confirm the commissioning month and the FY27 O&G revenue contribution. | F-11, A3-F6-02 | Catalyst-3 slip; forward revenue | Firm month + ₹ contribution | further slip / no number |
 | 7 | The ₹5,143.3 Cr order book is "restated (net of forex, price escalation, scrap)". Is it gross or net of GST, and executed-vs-pending? What is the gross book on a like-for-like basis with the ₹2,582 Cr Q3 FY26 figure? | F-10 | Order-book definition integrity | Clear basis + like-for-like bridge | "restated basis only," no bridge |
-| 8 | Products & Others jumped to 28% of revenue (₹100.4 Cr) from 15%. What drove it (data-centre / import-substitution), and is this mix and its margin durable? | F-05 | Mix/margin durability | Named durable programs + margin | one-off / opaque |
+| 8 | Products & Others jumped to 28% of revenue (₹100.4 Cr) from 15%, while gross margin fell 8.7pp YoY (54.2%→45.5%). What drove the mix shift (data-centre / import-substitution), and what is the gross margin of the Products bucket — is the mix and its margin durable? | F-05 | Mix/margin durability; gross-margin fragility | Named durable programs + Products gross margin | one-off / opaque |
 | 9 | What is the NCLT-merger timeline for folding Gee Pee Aerospace and Magnatar into the holding company, and the accounting/tax impact on consolidation? | F6-a | Consolidation-scope change | Effective date + neutral tax impact | undated |
 | 10 | The consolidated review report carries no UDIN and shows Membership No. "4777" vs "504777" on the standalone. Can you confirm the UDIN and membership number on the filed PDF? | F14-a, F14-b | Audit-compliance governance data-point | Clean confirmation (likely extraction artefact) | discrepancy real |
 | 11 | The FY26 exceptional item was a ₹3.77 Cr Labour-Codes provision and a ₹0.83 Cr prior-period tax credit sits in FY26. Any residual Labour-Codes impact expected in FY27? | F8-a, F14-c | Normalising FY26 base | one-off, none recurring | recurring provision |
 | 12 | You state you are "at an inflection point" but the deck is silent on US tariff exposure (79% export historically; 19% export in Q1) and Bloom customer concentration. How are you hedging both? | A3-F7-01, A3-F16-01 | Live named risks unaddressed | concrete hedge / diversification | boilerplate only |
-| 13 | The Mar-26 balance sheet shows a new ₹15.0 Cr right-of-use asset and ₹215.3 Cr parked in mutual funds. What is the ROU lease (is it the greenfield facility), and why hold ₹215 Cr in MFs while current borrowings doubled to ₹221.6 Cr? | F-01 | Capital-allocation / leverage logic | clear facility + treasury rationale | opaque |
+| 13 | The Mar-26 balance sheet shows a new ₹15.0 Cr right-of-use asset and ₹215.3 Cr parked in mutual funds while current borrowings doubled to ₹221.6 Cr (net debt ≈₹355 Cr ex-MF). What is the ROU lease (is it the greenfield facility), and why hold ₹215 Cr in MFs against doubled short-term debt? | F-01 | Capital-allocation / leverage logic | clear facility + treasury rationale | opaque |
 
 **Top 3 by likelihood of thesis-changing information:**
 1. **Q3 (H1 FY27 CFO/PAT)** — resolves the INDETERMINATE cash-conversion cap; a ≥1.0x reading would lift the Pillar 2 multiplier constraint (bull), <0.65x confirms the WC print was timing (bear).
@@ -448,7 +450,7 @@ Channel: **AGM Q&A (28-Sep-2026) / IR email.** No concall transcript in scope. O
 
 ## STEP 9 — NOTION UPDATE (staged, not executed by A4)
 
-No Notion write performed by this agent. **Recommended row-property changes for the human/finalize step:** Decision Status UNCHANGED (WATCHLIST — AVOID); prepend Key-Notes one-liner: *"2026-07-30 Q1FY27 (3-doc merged): strong quarter — rev +130.4% YoY (soft base), Op EBITDA 23.6%, core PBT +319%; OB ₹5,143 Cr (~2x, def-watch); ROCE 17.2%; guide raised 50→80%; WC 59d advance-funded; promoter 29.35% (−1.09pp, tripwire watch); Q1 CFO ND → cash conversion INDETERMINATE, verdict capped PROCEED WITH CAVEATS; no thesis-broken trigger fired; AVOID stance is valuation not quality."* Save the complete tables above (institutional memory).
+No Notion write performed by this agent. **Recommended row-property changes for the human/finalize step:** Decision Status UNCHANGED (WATCHLIST — AVOID); prepend Key-Notes one-liner: *"2026-07-30 Q1FY27 (3-doc merged): strong quarter — rev +130.4% YoY (soft base), Op EBITDA 23.6% (scale-driven; gross margin −8.7pp), core PBT +319%; OB ₹5,143 Cr (~2x, def-watch); ROCE 17.2%; guide raised 50→80%; WC 59d advance-funded; net debt ≈₹355 Cr ex-MF; promoter 29.35% (−0.69pp/qtr avg, tripwire watch); Q1 CFO ND → cash conversion INDETERMINATE, verdict capped PROCEED WITH CAVEATS; no thesis-broken trigger fired; AVOID stance is valuation not quality."* Save the complete tables above (institutional memory).
 
 ---
 
@@ -456,7 +458,7 @@ No Notion write performed by this agent. **Recommended row-property changes for 
 
 **PROCEED WITH CAVEATS.**
 
-Rationale: Operating results are genuinely strong across every clean test (core operating PBT +319.1% YoY, Op EBITDA margin +550 bps to 23.6%, order book ~2x, ROCE 17.2%) and no thesis-broken trigger fired. The verdict is capped at **PROCEED WITH CAVEATS — not PROCEED —** by the house rule: **Q1 FY27 cash conversion (CFO/PAT) is INDETERMINATE** (no Q1 cash-flow statement under Reg 33 half-yearly; the deck upgrades the FY26 and Jun-26-WC picture but supplies no Q1 CFO). Named missing evidence: the **H1 FY27 cash-flow statement (Q2 filing)** and a **Jun-26 balance sheet**. Live caveats attached: WC 274→59-day collapse is **advance-funded, not proven structural** (F-13); order book is on a **"restated" DEFINITION_WATCH basis** (F-10); nuclear backlog **not converting** to revenue (F-04); Weatherford **~1-quarter slip** (F-11); promoter stake **declining toward the <25% tripwire** (F-03, 4.35pp away). **Decision Status UNCHANGED: WATCHLIST — AVOID at CMP ₹7,210** (valuation call; CMP ~3.5x entry-zone top). Branch 8A-W.
+Rationale: Operating results are genuinely strong across every clean test (core operating PBT +319.1% YoY, Op EBITDA margin +550 bps to 23.6%, order book ~2x, ROCE 17.2%) and no thesis-broken trigger fired. The verdict is capped at **PROCEED WITH CAVEATS — not PROCEED —** by the house rule: **Q1 FY27 cash conversion (CFO/PAT) is INDETERMINATE** (no Q1 cash-flow statement under Reg 33 half-yearly; the deck upgrades the FY26 and Jun-26-WC picture but supplies no Q1 CFO). Named missing evidence: the **H1 FY27 cash-flow statement (Q2 filing)** and a **Jun-26 balance sheet**. Live caveats attached: the +550 bps margin gain is **scale/operating-leverage driven, not gross-margin driven** (gross margin −8.7pp YoY, 54.2%→45.5%, S11-7→S11-9) and is volume-contingent; WC 274→59-day collapse is **advance-funded, not proven structural** (F-13); net debt Mar-26 is basis-dependent (**≈₹355 Cr ex-MF / ≈₹140 Cr MF-as-cash**); order book is on a **"restated" DEFINITION_WATCH basis** (F-10); nuclear backlog **not converting** to revenue (F-04); Weatherford **~1-quarter slip** (F-11); promoter stake **declining toward the <25% tripwire** (F-03, 4.35pp away; **~4.0 qtrs at the 1.09pp latest pace / ~6.3 qtrs at the 0.69pp series-average pace**). **Decision Status UNCHANGED: WATCHLIST — AVOID at CMP ₹7,210** (valuation call; CMP ~3.5x entry-zone top). Branch 8A-W.
 
 ---
 
@@ -467,6 +469,7 @@ quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
 docs_merged: [results, presentation, press_release]
+revision: 1  # A5 loop 1: net-debt basis, promoter pace, quarters-to-trigger, margin-graft corrected
 ledger_reconciliation:
   notes: 11
   turns: 0
@@ -503,29 +506,49 @@ protocol_verdict: "PROCEED WITH CAVEATS"
 cash_conversion: "INDETERMINATE"
 decision_status_verified: "WATCHLIST — AVOID at CMP Rs 7,210"
 position_branch: "8A-W"
+net_debt_mar26:
+  gross_debt_cr: 369.3            # borrowings: 147.7 NC (S26-4) + 221.6 Current (S26-10)
+  gross_incl_leases_cr: 376.6     # + lease liab 6.7 NC (S26-5) + 0.6 Current (S26-11)
+  net_debt_ex_mf_cr: 355          # 376.6 - cash 1.0 (S27-13) - bank 20.2 (S27-14) = 355.4
+  net_debt_incl_mf_cr: 140        # further - MF investment 215.3 (S27-11) = 140.1
+  basis_note: "net debt basis-dependent on whether Rs 215.3 Cr mutual fund is treated as cash; unanchored ~389 figure dropped"
 sc_gap_pat_pct:
   - {period: "Q1FY27", standalone_cr: 50.50, consol_cr: 50.23, gap_pct: 0.53}
   - {period: "Q1FY26", standalone_cr: 11.23, consol_cr: 10.81, gap_pct: 3.74}
   - {period: "Q4FY26", standalone_cr: 44.34, consol_cr: 44.28, gap_pct: 0.14}
   - {period: "FY26", standalone_cr: 95.32, consol_cr: 94.03, gap_pct: 1.35}
+gross_margin_yoy:
+  q1fy26_pct: 54.2                # S11-7
+  q1fy27_pct: 45.5                # S11-9
+  change_pp: -8.7
+  note: "EBITDA margin +550bps is scale/operating-leverage driven, NOT gross-margin driven; mix shift to Products 28% (S10-10); volume-contingent"
+promoter_stake:
+  series: [31.41, 30.59, 30.44, 29.35]   # Sep25 / Dec25 / Mar26 / Jun26 (S31-8/12/16/20)
+  quarterly_steps_pp: [-0.82, -0.15, -1.09]
+  avg_pace_pp_per_qtr: 0.69
+  latest_qtr_pace_pp: 1.09
+  distance_to_trigger_pp: 4.35
+  quarters_to_25pct_at_avg_pace: 6.3
+  quarters_to_25pct_at_latest_pace: 4.0
+  tripwire_fired: false
 questions_for_management:
   - {q: "80% FY27 guide implies Q2-Q4 avg Rs 405.5 Cr/qtr vs Q1 360.7 - which quarter crosses Rs 400 Cr and H2 mix?", from_finding_id: "F-09/A3-F6-01"}
   - {q: "NWC days 274->59 with Other Current Liab +210 Cr to 254.9 - how much is customer advances and structural steady-state?", from_finding_id: "F-13"}
   - {q: "Q1 FY27 CFO and CFO/PAT, and expected H1 FY27 CFO/PAT?", from_finding_id: "Step5-INDETERMINATE"}
   - {q: "Nuclear revenue only Rs 3.2 Cr/1% despite Rs 504 Cr Kaiga order - when does it convert and FY27/FY28 target?", from_finding_id: "F-04"}
-  - {q: "Promoter stake 29.35% (-1pp/qtr) - further selling planned, will it stay above 25%?", from_finding_id: "F-03"}
+  - {q: "Promoter stake 29.35% (-1.09pp latest vs -0.69pp avg) - one-off placement or resumed selling, will it stay above 25%?", from_finding_id: "F-03"}
   - {q: "Weatherford commissioning Q3 FY27 vs earlier Jun-Sep 26 - confirm month and FY27 O&G contribution?", from_finding_id: "F-11/A3-F6-02"}
   - {q: "Rs 5,143.3 Cr order book restated basis - gross/net of GST, executed vs pending, like-for-like vs Rs 2,582 Cr?", from_finding_id: "F-10"}
-  - {q: "Products & Others jumped to 28% (Rs 100.4 Cr) from 15% - driver and margin durability?", from_finding_id: "F-05"}
+  - {q: "Products & Others jumped to 28% (Rs 100.4 Cr) from 15% while gross margin fell 8.7pp - driver and Products gross margin durability?", from_finding_id: "F-05"}
   - {q: "NCLT merger timeline for Gee Pee + Magnatar into holdco and accounting/tax impact?", from_finding_id: "F6-a"}
   - {q: "Consolidated review report has no UDIN and Membership No 4777 vs 504777 standalone - confirm on filed PDF?", from_finding_id: "F14-a/F14-b"}
   - {q: "FY26 Labour-Codes exceptional Rs 3.77 Cr and prior-period tax credit Rs 0.83 Cr - any FY27 residual?", from_finding_id: "F8-a/F14-c"}
   - {q: "Inflection-point framing but silent on US tariff (79% export) and Bloom concentration - how hedged?", from_finding_id: "A3-F7-01/A3-F16-01"}
-  - {q: "New Rs 15.0 Cr ROU asset and Rs 215.3 Cr in mutual funds while current borrowings doubled to 221.6 - rationale?", from_finding_id: "F-01"}
+  - {q: "New Rs 15.0 Cr ROU asset and Rs 215.3 Cr in mutual funds while current borrowings doubled to 221.6 (net debt ~355 ex-MF) - rationale?", from_finding_id: "F-01"}
 monitorables:
   - {item: "H1 FY27 CFO / CFO-PAT (resolves INDETERMINATE cash conversion)", implied_date: "2026-11 (Q2 FY27 filing)", source_ref: "Step5"}
   - {item: "NWC days sustained near 59 with advance split disclosed", implied_date: "2026-11 (Q2 FY27)", source_ref: "F-13/S14-12"}
-  - {item: "Promoter stake vs <25% tripwire (29.35%, -1pp/qtr, ~4Q to breach)", implied_date: "quarterly shareholding pattern", source_ref: "F-03/S31-20"}
+  - {item: "Promoter stake vs <25% tripwire (29.35%, ~0.69pp/qtr avg pace, 4.35pp away)", implied_date: "quarterly shareholding pattern", source_ref: "F-03/S31-20"}
   - {item: "Kaiga Rs 504 Cr nuclear backlog conversion to revenue", implied_date: "FY27-FY28", source_ref: "F-04/S7-11"}
   - {item: "Weatherford/O&G + Phase-2 CE facility commissioning", implied_date: "Q3 FY27 (Oct-Dec 2026)", source_ref: "F-11/S21-1"}
   - {item: "Phase-3 Clean Energy fuel-cell capacity completion", implied_date: "2027-03", source_ref: "F-02/S21-2"}
@@ -535,15 +558,16 @@ monitorables:
   - {item: "NCLT merger of Gee Pee + Magnatar into holdco (scope change)", implied_date: "pending sanction (undated)", source_ref: "F6-a/L437"}
 flags:
   - "Cash conversion INDETERMINATE for Q1 FY27 (no Q1 CFO) - verdict capped at PROCEED WITH CAVEATS"
+  - "+550bps Op EBITDA margin is scale/operating-leverage driven NOT gross-margin driven; gross margin -8.7pp YoY (54.2->45.5, S11-7/S11-9); volume-contingent (F-05)"
   - "WC 274->59 days partly advance-funded (Other Curr Liab +210 Cr to 254.9); structural vs timing unresolved (F-13)"
+  - "Net debt Mar-26 ~Rs 355 Cr (MF excluded) / ~Rs 140 Cr (MF as cash); D/E 0.45x rising; basis-dependent DEFINITION_WATCH; unanchored ~389 dropped"
   - "Order book Rs 5,143.3 Cr on 'restated' DEFINITION_WATCH basis; hold quantum pending definition (F-10)"
-  - "Promoter stake 29.35% declining ~1pp/qtr toward <25% tripwire; nearest trigger to fire (F-03)"
+  - "Promoter stake 29.35% declining ~0.69pp/qtr avg (1.09pp latest); 4.35pp from <25% tripwire; ~4.0 qtrs at latest pace / ~6.3 qtrs at avg pace (F-03)"
   - "Nuclear revenue collapsed to 1% despite Rs 504 Cr Kaiga order - backlog not converting (F-04)"
   - "Weatherford commissioning slipped ~1 quarter to Q3 FY27 (F-11)"
   - "Guidance RAISED 50->80% revenue + 24% margin pulled into FY27 - genuine but back-half dependent (F-09)"
   - "ROCE 17.2% and margin 23.6% now visible - positive pillar inputs, flagged not re-rated (no trigger fired)"
   - "Consolidated review report UDIN absent + Membership No mismatch - verify at source PDF (F14-a/F14-b)"
-  - "Products & Others mix spike to 28% - driver/margin durability unknown (F-05)"
   - "Decision Status UNCHANGED WATCHLIST-AVOID: valuation call, CMP Rs 7,210 ~3.5x entry-zone top"
 review_path: "/home/user/inflection-pipeline/runs/mtar-q1fy27/work/review_merged_mtar_q1fy27.md"
 ```

@@ -1,0 +1,23 @@
+stage: B13-synthesis
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-CASH active; INDETERMINATE caps at PROCEED WITH CAVEATS
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: "INDETERMINATE"
+confidence_delta: {numerical: 100, redflag: 83, framework: 100, peer: 92, overall: 83}
+valuation_decision: ""         # deferred to phase 3
+entry_range: {low: 0, high: 0} # deferred to phase 3
+headline: "CNC maker premiumising into defence, cash unproven"
+falsification_metric: "FY27 CFO/PAT below 0.5x with receivable and inventory days still rising, confirming STRUCTURAL not growth-induced cash drag"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "MACPOWER - Macpower CNC Machines (phase 1 gate, 2026-07-30)"
+  summary: "CNC maker premiumising into defence, cash unproven | PROCEED WITH CAVEATS | valuation deferred to phase 3 | FLAG-CASH INDETERMINATE, FLAG-GATE0 AVOID 81/160"
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

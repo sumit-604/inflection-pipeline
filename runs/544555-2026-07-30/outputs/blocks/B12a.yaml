@@ -1,0 +1,20 @@
+stage: B12a
+company: "544555"
+run_date: "2026-07-30"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 88
+findings:
+  - {severity: "MAJOR", location: "B01 Block B / Block A ROCE FY26", claimed: "FY26 Capex NOT FOUND; FY26 ROCE computed without cash-flow capex", source_truth: "FY26 results filing image-only, not text-extractable in verifier env; capex unavailable", note: "Environmental limitation; B01 marked NOT FOUND; Block B reduced to FY23-FY25. Does not change AVOID.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Block E E4, p.52", claimed: "FY26 Contingent Liabilities NOT FOUND; last = FY25 Rs 357.82 lakhs (RHP Annexure AB p.189)", source_truth: "FY26 results PDF not text-extractable; FY25 figure correctly anchored; ratio scored on FY25 (16.13%)", note: "Staleness on a volatile KPI (CL +325% two years). Appropriately handled; no verdict change.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B03 Phase 3 p.145; B04 3D", claimed: "FY24 effective tax rate 37.97% driven by unexplained Rs 79.88L deferred-tax swing", source_truth: "B02 F14/B03 note the swing; Annexure C cited but narrative cause not in RHP extracts; B03 labels 'unexplained'", note: "Numeric cause documented, strategic reason not; earnings-normalisation adjustment.", source_fidelity: false}
+  - {severity: "MAJOR", location: "B05 p.101/p.128", claimed: "H1 FY26 revenue Rs 42.70 cr delivered; FY26 full-year margin sustenance 'unconfirmed' (FY26 filing image-only)", source_truth: "H1 FY26 figures verified to the lakh; FY26 full-year not independently re-extractable; B05 states delivered cannot be certified to the number", note: "H1 FY26 verified exactly; FY26 full-year unverified due to image-only PDF. Conservative handling.", source_fidelity: false}
+  - {severity: "MAJOR", location: "B05 1C/2A; B07 1A; B08 5C", claimed: "Jul-2026 Reg 30 order wins ~Rs 67.85 cr ex-GST across four zones; CFO resigned 28-Jul-2026", source_truth: "Operator-supplied provenance, not checked vs original BSE Reg 30 PDFs; B08 upgrades CFO exit via media corroboration; order values unverified", note: "Material order wins cited as validation; provenance operator-supplied. Downstream verification vs BSE portal recommended.", source_fidelity: false}
+  - {severity: "MINOR", location: "B03 Phase 3 p.125", claimed: "Two RHP FY25 RoNW figures: Annexure X 36.22% (closing) vs Summary/MD&A 44.23% (average)", source_truth: "Both arithmetically correct per methodology; RHP does not reconcile them", note: "Disclosure inconsistency, not numeric error.", source_fidelity: true}
+  - {severity: "MINOR", location: "B01 Block C p.193; B04 3B p.249", claimed: "EBITDA margin fell 20.17% (FY25) to 16.21% (FY26)", source_truth: "FY25 verified to RHP Annexure X; FY26 16.21% from image-only FY26 PDF, not text-extractable", note: "Used to argue 'quality window closing'; FY26 half unverified. Related to Finding 4.", source_fidelity: false}
+  - {severity: "MINOR", location: "B02 F15 p.137; B03 p.145", claimed: "Gratuity actuarial gain Rs 19.46L flipped gratuity to net credit, inflating FY25 PAT ~Rs 21L", source_truth: "Rs 19.46L exact and anchored to Annexure AD p.191; ~Rs 21L marked 'estimated'", note: "Underlying gain exact; normalisation estimate appropriately marked. Correctly handled.", source_fidelity: true}
+critical_count: 0
+major_count: 5
+minor_count: 4
+acceptance_rate: 85
+coverage_note: "88 material figures checked; 75 verified clean or appropriately marked NOT FOUND; 0 CRITICAL. Primary gaps are environmental (image-only FY26 filing PDF) or disclosure-transparency (operator-supplied provenance), not numeric errors. No fabricated or materially misread figure; no MISMATCH. Verdict unaffected."

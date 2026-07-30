@@ -4,47 +4,61 @@ run_date: "2026-07-30"
 model: claude-sonnet-5
 status: complete
 no_concall_mode: false
-input_gaps: ["concalls: only 1 transcript (H1 FY26); manifest concalls_available=false overridden by present transcript","rating: EMPTY","research: EMPTY"]
-flags: ["single-transcript evidence base for credibility grade feeding Role 1 weights","FY26 full-year results (board 30-May-2026) not independently re-extracted to decimal confidence; specific full-year figures NOT FOUND","CFO resignation (28-Jul-2026) lands inside tracking window with no subsequent call to test management framing","no confirmed quantified forward revenue/margin guidance found on the single available call"]
+run: 2   # corrected after Verifier B caught a systematic under-read in run 1
+input_gaps: ["concalls: only 1 transcript (H1 FY26); manifest concalls_available=false overridden by present transcript", "rating: EMPTY", "research: EMPTY"]
+flags: ["single-transcript run: cross-quarter promise-delivery tracker not buildable", "no CFO present on this maiden post-IPO call", "promoter absent from maiden call, vision question deferred"]
 quarters_analysed: ["H1 FY26"]
 triggers:
-  - {priority: 1, name: "Railways order-book diversification across zones", type: "VOLUME", timeframe: "near-medium", conviction: "M", confirm_signal: "Continued multi-zone Reg 30 order disclosures beyond the Jul-2026 cluster, confirmed net-new not replacement", kill_signal: "Order inflow reverts to single-zone/single-customer pattern or Jul-2026 cluster proves one-off"}
-  - {priority: 2, name: "Margin sustenance post-deleveraging (H1 FY26 EBITDA margin 26.63%)", type: "COST/MARGIN", timeframe: "near", conviction: "M", confirm_signal: "FY26/FY27 results confirm EBITDA/net margin at or above H1 FY26 level", kill_signal: "Margin compression from less-favourable order mix or non-recurring finance-cost benefit"}
-  - {priority: 3, name: "RDSO-approval regulatory moat", type: "REGULATORY-POLICY", timeframe: "long", conviction: "M", confirm_signal: "No new entrant wins comparable RDSO-approved business at company's expense", kill_signal: "RDSO approves additional competing vendors at scale"}
-  - {priority: 4, name: "Revenue growth acceleration beyond 8.47% YoY H1 FY26 pace", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "FY27 quarterly revenue growth materially above 8.47% H1 FY26 print", kill_signal: "7-18 month order-to-execution timelines push revenue recognition out further than modelled"}
-  - {priority: 5, name: "Management/finance-leadership continuity post CFO exit", type: "GOVERNANCE", timeframe: "near", conviction: "L", confirm_signal: "Prompt, credible CFO replacement with no reporting-quality lapse", kill_signal: "Delayed replacement or reporting-quality lapse following CFO exit"}
+  - {priority: 1, name: "Railway 10mm new-spec first-mover, trial to commercial conversion", type: "REGULATORY-POLICY/VOLUME", timeframe: "near-medium (H2 FY26-FY27)", conviction: "M", confirm_signal: "Commercial-scale orders under new spec; margin benefit materialises", kill_signal: "Old-spec orders persist, no new-spec conversion"}
+  - {priority: 2, name: "Defense Arjun tank tyre PO (~180 units cited)", type: "INORGANIC/VOLUME", timeframe: "near (~Jan-Feb 2026)", conviction: "L-M", confirm_signal: "Ordnance factory clears field trial, issues ~180-unit PO", kill_signal: "Field trial fails or delayed past next call"}
+  - {priority: 3, name: "Conveyor belt new product line commissioning", type: "VOLUME/COST", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "First press installed, revenue booked from FY27", kill_signal: "Capex/installation delayed past FY27, no revenue"}
+  - {priority: 4, name: "IPO-funded capacity/automation upgrade", type: "COST", timeframe: "medium", conviction: "M", confirm_signal: "Efficiency gains beyond already-elevated H1 FY26 margin base", kill_signal: "Capex deployed with no visible cost benefit"}
+  - {priority: 5, name: "Export expansion (Iraq post-election, Middle East, US subsidiary)", type: "VOLUME/SECTORAL", timeframe: "near-medium", conviction: "L", confirm_signal: "Export revenue grows beyond ~INR10cr FY base; US subsidiary compliance resolved", kill_signal: "Iraq stays paused, US subsidiary gap persists, exports flat"}
+  - {priority: 6, name: "Railway replacement-cycle acceleration (quality-driven)", type: "SECTORAL", timeframe: "medium-long", conviction: "L", confirm_signal: "Industry-wide order volumes visibly rise", kill_signal: "No visible volume pickup, claim stays anecdotal"}
 guidance:
-  - {item: "H1 FY26 revenue from operations", number: "Rs 42.70 cr (+8.47% YoY)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; cross-verified vs H1 FY26 results filing"}
-  - {item: "H1 FY26 EBITDA margin", number: "26.63% (~Rs 11.44 cr)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; recomputed from results filing"}
-  - {item: "H1 FY26 PAT", number: "Rs 4.38 cr (+103.5% YoY)", timeframe: "reported, H1 FY26", stated_in: "H1 FY26 call; cross-verified vs results filing"}
-  - {item: "Order book", number: "Rs 61.75 cr, Railways ~89% of total", timeframe: "as of 31-Aug-2025", stated_in: "H1 FY26 call / RHP, also cited in operator-supplied Reg 30 doc"}
-  - {item: "Forward revenue/EBITDA margin target", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "H1 FY26 call (no specific number found)"}
-  - {item: "Capex quantum/timeline for capacity expansion", number: "NOT FOUND", timeframe: "NOT FOUND", stated_in: "H1 FY26 call"}
+  - {item: "Revenue growth CAGR", number: "20-25%", timeframe: "foreseeable future", stated_in: "H1 FY26 call, p8"}
+  - {item: "EBITDA margin band", number: "20-25%", timeframe: "foreseeable future", stated_in: "H1 FY26 call, p8"}
+  - {item: "EBITDA margin band (restated, inconsistent)", number: "23-24%", timeframe: "foreseeable future", stated_in: "H1 FY26 call, p8"}
+  - {item: "EBITDA margin band (restated again)", number: "20-25%", timeframe: "foreseeable future", stated_in: "H1 FY26 call, p14"}
+  - {item: "H1 FY26 actual revenue growth YoY", number: "+8.47%", timeframe: "H1 FY26", stated_in: "call p3; cross-checked H1 FY26 results filing"}
+  - {item: "H1 FY26 actual EBITDA growth / margin", number: "+61.3% / 26.63%", timeframe: "H1 FY26", stated_in: "call p3; cross-checked results filing"}
+  - {item: "H1 FY26 actual PAT growth / net margin", number: "+103.53% / 10.19%", timeframe: "H1 FY26", stated_in: "call p3; cross-checked results filing"}
+  - {item: "Railway pad capacity (self-contradictory)", number: "1.35 crore pieces/year, also stated 1.35 lakh pieces/year", timeframe: "current", stated_in: "call p7"}
+  - {item: "Capacity utilisation", number: "40-50% (60-70% in one or two products)", timeframe: "current", stated_in: "call p7"}
+  - {item: "Defense trial-to-PO quantum", number: "18 units for trial; ~180-unit PO if trial passes", timeframe: "near-term", stated_in: "call p6"}
+  - {item: "Vestibule market size and growth", number: "~INR100 cr, +10-15%/year", timeframe: "current", stated_in: "call p11"}
+  - {item: "Railway pad national demand", number: "8 crore pieces/year, 4-5 year replacement cycle", timeframe: "current", stated_in: "call p9"}
+  - {item: "Railway pad market value (unanchored)", number: "100s of crores, potential to reach 1,000 crore", timeframe: "not specified", stated_in: "call p10-11"}
+  - {item: "Raw material cost share", number: "30-40% of cost", timeframe: "current", stated_in: "call p14"}
+  - {item: "Exports last fiscal year", number: "~INR10 crore", timeframe: "FY25", stated_in: "call p8"}
+  - {item: "Revenue mix (call-stated)", number: "railways ~55%, infra ~40%, rubber sheets residual", timeframe: "current", stated_in: "call p6, p12 (note: RHP restated split was 40.5% rail / 59.1% infra - basis/period differs)"}
+  - {item: "Order book quantum", number: "NOT DISCLOSED (asked twice, refused twice)", timeframe: "current", stated_in: "call p7, p10"}
 promise_delivery:
-  delivered: 1
-  partial: 2
+  delivered: 0
+  partial: 0
   missed: 1
   rows:
-    - {promise: "Diversify order intake across Railway zones", outcome: "Delivered (directional)", explanation: "Four Reg 30 orders across four zones disclosed Jul-2026, ~Rs 67.85 cr ex-GST incremental (operator-supplied); net-new relationship status unconfirmed"}
-    - {promise: "Report H1 FY26 numbers consistent with subsequent filing", outcome: "Delivered", explanation: "Revenue, PAT, EBITDA on call reconcile to the lakh with H1 FY26 results filing"}
-    - {promise: "Sustain margin profile / deleveraging benefit into FY26", outcome: "Partial / unconfirmed", explanation: "FY26 full-year filing not independently re-extracted to decimal confidence; no negative headline surprise noted"}
-    - {promise: "Management/finance leadership continuity", outcome: "Missed", explanation: "CFO Ms. Tejaswini Kandra resigned effective 28-Jul-2026, personal reasons (operator-supplied Reg 30)"}
-excuse_pattern: "not assessable - single transcript, no subsequent call to test explanation of any miss"
-repeated_evasions: []
-credibility_grade: "B"
-credibility_basis: "H1 FY26 figures on the call reconcile exactly to the filed results; diversification intent followed ~8 months later by documented (operator-supplied) multi-zone Railways order wins ~Rs 67.85 cr ex-GST. Held at B not A: single-transcript base, no quantified forward guidance, and an unexplained CFO resignation inside the tracking window."
+    - {promised_in: "RHP (pre-IPO, as of 31-Aug-2025)", promise: "Order book ~INR61.75 cr disclosed", outcome: "missed / regressed", explanation: "Not restated on the maiden post-listing call despite being asked twice; 'connect later' (p7), 'I'll check and come' (p10)"}
+excuse_pattern: "deflection-heavy on quantitative specifics; no externalised blame for the good results; two uncorrected self-contradictions and repeated order-book evasion outweigh the one voluntary compliance disclosure"
+repeated_evasions:
+  - {question: "What is your current order book (quantity/value)?", quarters_asked: ["H1 FY26 call (asked twice intra-call by two analysts)"], classification: "deflected every time; intra-call repetition, not cross-quarter (single transcript)"}
+credibility_grade: "C"
+credibility_basis: "Maiden call, no promise-delivery track record to test; two uncorrected in-call self-contradictions on basic operating facts (capacity 100x error; vestibule competitor count 3 vs 11), order-book quantum dodged twice, internally inconsistent margin guidance (20-25% vs 23-24% same call) unreconciled against a 26.63% actual, promoter absent with vision question deferred, no CFO present, and a live US-subsidiary compliance gap outstanding since Jun-2024 surfaced only under analyst questioning."
 peer_questions:
-  - {question: "Does GRP Ltd corroborate an Indian Railways track-renewal/capex-driven demand upcycle for rubber fastening-system components?", why: "Ameenji's core sectoral growth trigger; no industry growth rate confirmed from Ameenji's own call", check_peers: ["GRP Ltd"]}
-  - {question: "What does GRP Ltd say about RDSO vendor-approval dynamics - widening or stable/narrowing approved-supplier base?", why: "tests durability of Ameenji's regulatory-approval moat", check_peers: ["GRP Ltd"]}
-  - {question: "What receivable/working-capital days does GRP Ltd disclose for Railways-linked business?", why: "Ameenji did not confirm this despite ~89% Railways concentration", check_peers: ["GRP Ltd"]}
-  - {question: "Has GRP Ltd disclosed multi-zone Railways order wins in the same Feb-Jul 2026 window, at what pace/value?", why: "tests whether Ameenji's ~Rs 67.85 cr Jul-2026 cluster is company-specific or a sector-wide tender cycle", check_peers: ["GRP Ltd"]}
-  - {question: "Does GRP Ltd quantify raw-material (natural/synthetic rubber) cost trends and pass-through mechanics in Railways contracts?", why: "standard margin-risk factor; not confirmed as addressed on Ameenji's call", check_peers: ["GRP Ltd"]}
-  - {question: "Does GRP Ltd give a specific numeric forward revenue/EBITDA margin target and delivery track record?", why: "Ameenji gave no confirmed quantified forward target; peer benchmark calibrates whether silence is sector-normal", check_peers: ["GRP Ltd"]}
+  - {question: "Does GRP Ltd or other listed industrial-rubber peers corroborate a shortening railway rubber-pad replacement cycle?", why: "Ameenji's demand-acceleration thesis rests on an unquantified single-source claim (p9)", check_peers: ["GRP Ltd"]}
+  - {question: "What revenue-growth CAGR and EBITDA margin band does GRP Ltd guide to, and how internally consistent across calls?", why: "Benchmarks whether Ameenji's 20-25%/23-24% guidance is sector-standard and whether internal inconsistency recurs at peers", check_peers: ["GRP Ltd"]}
+  - {question: "Does GRP Ltd disclose RM cost trends and any government price-variation-clause protection comparable to Ameenji's claimed mechanism?", why: "Tests whether Ameenji's claimed RM insulation (p13) is genuine or standard", check_peers: ["GRP Ltd"]}
+  - {question: "What does GRP Ltd say about typical time-to-revenue for new capacity/product lines funded by fresh capital?", why: "Cross-checks Ameenji's FY27 conveyor-belt revenue-start claim (p6)", check_peers: ["GRP Ltd"]}
+  - {question: "How many active approved vendors for railway rubber pads, and is vendor-base expansion compressing pricing?", why: "Ameenji's own vendor/competitor counts are internally inconsistent (3 vs 11, p11)", check_peers: ["GRP Ltd"]}
 red_flags:
-  - "CFO resignation (28-Jul-2026, personal reasons) inside tracking window shortly after large order wins; no subsequent call to test framing - Medium"
-  - "No confirmed quantified forward revenue/margin guidance on the only call - Medium"
-  - "Single-transcript evidence base feeding Role 1 probability weights - Medium, structural"
-  - "PAT growth +103.5% YoY outpacing revenue +8.47% in H1 FY26, margin/finance-cost driven not volume - Low-Medium"
-  - "Railways concentration ~89% (Aug-2025) unaddressed on the call for receivable/WC mechanics - Low-Medium"
+  - "HIGH: Capacity self-contradiction, 1.35 crore vs 1.35 lakh pieces/year, same answer, uncorrected (p7)"
+  - "HIGH: Vestibule competitor count self-contradiction, 'Three' then 'about 11 players', uncorrected (p11)"
+  - "HIGH: Order book quantum dodged twice by two different analysts, no figure given (p7, p10)"
+  - "MEDIUM-HIGH: Promoter absent from maiden post-IPO call, vision question deferred (p2-3, p15)"
+  - "MEDIUM: US subsidiary unpaid share-subscription consideration outstanding since 21-Jun-2024 ('problems with our bank'), not compliant at call date (p5; results filing note 7/8)"
+  - "MEDIUM: Unanchored TAM hype, '100s of crores... potential to reach 1,000' crore, no basis (p10-11)"
+  - "MEDIUM: Self-uncertain product specifics offered as fact then hedged (tank tyre count p5; 'I'll check and come back' p4-6, p10-11)"
+  - "MEDIUM: No CFO present on the maiden post-IPO earnings call"
+  - "LOW-MEDIUM: H1 FY26 actual EBITDA margin 26.63% exceeds both guided bands; revenue growth +8.47% well short of guided 20-25% CAGR; neither gap reconciled"
 dropped_triggers: []
 timeline_slippages: []

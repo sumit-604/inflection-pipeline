@@ -1,0 +1,34 @@
+stage: B12c
+company: "544555"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1: gate0 + emerging-moat only; valuation pending phase 3"
+gate0:
+  rules_checked: 46
+  fails:
+    - {severity: "MAJOR", rule: "OUTPUT: mandated fenced YAML block (stage: B01-gate0)", detail: "absent from stored B01.md artifact; block was returned separately and captured in outputs/blocks/B01-gate0.yaml; storage-convention artifact, no score affected"}
+    - {severity: "MINOR", rule: "M10 Switching Costs banding", detail: "scored 1; strict ladder yields 0; 1pt too generous, no effect on moat count/class/total"}
+emoat:
+  rules_checked: 14
+  fails:
+    - {severity: "MAJOR", rule: "OUTPUT: mandated fenced YAML block (stage: B07-emoat)", detail: "absent from stored B07.md artifact; block captured in outputs/blocks/B07-emoat.yaml; storage-convention artifact, no score affected"}
+    - {severity: "MINOR", rule: "Completionist recount line", detail: "stated 22 documented items but itemisation sums to 16; guard conclusion (5 active categories) unaffected"}
+valuation:
+  rules_checked: 0
+  fails: []
+  status: "pending phase 3 (B11/B10 not yet produced)"
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MAJOR", location: "B01.md end-of-file", note: "mandated stage: B01-gate0 YAML block not present in report artifact (captured separately in outputs/blocks/)"}
+  - {severity: "MAJOR", location: "B07.md end-of-file", note: "mandated stage: B07-emoat YAML block not present in report artifact (captured separately in outputs/blocks/)"}
+  - {severity: "MINOR", location: "B01 Block F, M10", note: "switching-costs scored 1 vs strict-ladder 0; immaterial to classification"}
+  - {severity: "MINOR", location: "B07 Section 3, recount line", note: "recount stated 22 items, itemisation sums to 16"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 93
+framework_adherence_pct: 93
+valuation_status: pending
+verifier_note: "Both MAJORs are storage-convention artifacts (YAML blocks returned separately by subagents and stored in outputs/blocks/, not appended to the report .md); scored Gate 0 (AVOID) and Emerging Moat (21.9 MODEST) both re-derive correctly."

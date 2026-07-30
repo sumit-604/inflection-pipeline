@@ -37,3 +37,12 @@
   etc under 100 chars -> OCR fallback). CLASS: presentation.
 - Protocol: each new doc gets A1->A2->A3; then A4 RE-RUNS ONCE merging all three docs
   (results + pressrel + presentation); then A5; then Notion updated with additional-details section.
+
+## 3-document merge completion (2026-07-30)
+- Press release: A1 pass (4pp, Crores x1) / A2 pass (54 rows) / A3 pass (all PR numbers tie to consolidated)
+- Presentation: A1 pass (32 slides, 1 OCR page) / A2 pass (535 numbers) / A3 pass (monitorables resolved)
+- A4 merged: PROCEED WITH CAVEATS, Decision Status held WATCHLIST/AVOID; 24 A3 findings incorporated
+- A5 merged: INCOMPLETE (loop 1) on 3 numbers + 1 graft -> A4 corrected -> A5 re-audit COMPLETE
+- Notion: additional-detail section appended (segment split, order book, guidance, promoter stake,
+  13 management questions, completeness proof); Key Notes audit trail prepended (both prior entries preserved)
+- Count reconciliation: results 11 notes / pressrel 26 numbers / presentation 32 slides - all reviewed

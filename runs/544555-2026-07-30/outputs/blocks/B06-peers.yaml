@@ -1,0 +1,34 @@
+stage: B06-peers
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["peer-concalls: only GRP Ltd provided; Rubfila/Elgi Rubber screening-only","rating: EMPTY","research: EMPTY"]
+flags:
+  - "Business-model mismatch: sole transcript-covered peer (GRP Ltd) has zero Indian Railways / RDSO / rail-fastening exposure; four of six B05 peer_questions (Q1-Q4) are structurally unanswerable from this peer set, not merely undiscussed"
+  - "Sector base-rate risk: GRP Ltd issued specific numeric capex/margin targets that slipped in three of four consecutive quarters (Aug-2025 to May-2026) - small-cap Indian rubber-sector guidance-reliability caution, not evidence about Ameenji specifically"
+  - "Only 1 of 3 named peers had any transcript; Rubfila and Elgi Rubber contributed zero evidence"
+peers_provided: 1
+verified:
+  - {claim: "Does GRP Ltd give a specific numeric forward revenue/EBITDA margin target and its delivery track record?", peers: ["GRP Ltd"], anchor_count: 5}
+partially_verified:
+  - {claim: "Does GRP Ltd quantify raw-material cost trends and pass-through mechanics?", peers: ["GRP Ltd"]}
+contradicted: []
+unverifiable:
+  - {claim: "Does GRP Ltd corroborate an Indian Railways track-renewal/capex demand upcycle for rubber fastening components?", peers_checked: ["GRP Ltd"]}
+  - {claim: "What does GRP Ltd say about RDSO vendor-approval dynamics?", peers_checked: ["GRP Ltd"]}
+  - {claim: "What receivable/working-capital days does GRP Ltd disclose for Railways-linked business?", peers_checked: ["GRP Ltd"]}
+  - {claim: "Has GRP Ltd disclosed multi-zone Railways order wins in Feb-Jul 2026?", peers_checked: ["GRP Ltd"]}
+peer_coverage_map:
+  - {peer: "GRP Ltd", quarter: "Q1 FY26 (28-Jul-2025), H1 FY26 (14-Nov-2025), 9M FY26 (13-Feb-2026), FY26 (18-May-2026)", usage: "SUBSTANTIVE", contribution: "Sole source for RM cost/pass-through and GRP's own guidance-delivery track record; establishes negative finding of zero Railways/RDSO commentary across ten months"}
+  - {peer: "Rubfila International", quarter: "N/A", usage: "UNUSED", contribution: "No transcript; screening CSV only"}
+  - {peer: "Elgi Rubber Company", quarter: "N/A", usage: "UNUSED", contribution: "No transcript; screening CSV only"}
+industry_cross_read:
+  demand: "GRP: U.S./Europe tyre-export weakness through FY26 easing post Feb-2026 U.S. tariff cut (50% to ~18%); domestic reclaim-rubber demand and GRP share grew all year, but tyre-sector demand with zero Railways linkage"
+  pricing_inputs: "GRP: butyl-reclaim input cost rose 37-45% YoY for 3+ quarters, pass-through lagging 2-3 quarters via annual/half-yearly OEM contracts; other virgin grades flat-to-down, so inflation is grade-specific not sector-wide"
+  capex_cycle: "GRP aggressive multi-year expander (INR250cr+, FY24-27) with three consecutive milestone push-outs (rCB: FY26-end -> Aug-2026 -> Feb-2027); cannot classify lone-expander vs capacity-race (Rubfila/Elgi capex not visible)"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Execution/guidance-delay risk: GRP's numeric capex/margin targets slipped in 3 of 4 consecutive quarters - a small-cap rubber-sector base-rate caution to test against Ameenji's forward guidance if present"
+  - "Raw-material sourcing concentration: GRP's worst squeeze traced to new reclaim capacity in Pakistan/Egypt diverting butyl-tube supply; reminder to check Ameenji sourcing geography, though corridor differs"
+net_narrative_effect: "complicates"

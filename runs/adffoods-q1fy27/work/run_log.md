@@ -28,3 +28,22 @@ Page-count note: the Read-tool renderer earlier reported 39/94 pages for D1/D2; 
 ## Company memory / Notion
 - companies/ADFFOODS.md: ABSENT (new company to the pipeline).
 - Notion page: checked (see below).
+
+## Notion (fetched + saved live, 2026-07-30)
+- Company page found: "🍛 ADF Foods Limited" (COMPANIES MASTER db). Live thesis extracted to notion_thesis_inline.md.
+- Decision Status verified BEFORE analysis and AFTER save: WATCHLIST / AVOID (unchanged; no pre-committed trigger fired -> flag, not decide). Entry 204/205, MoS 181/182, Promoter CAUTION all unchanged.
+- Full merged review + Questions-for-Management + A3 forensic scorecard + A5 audit verdict appended to page body (position end, 5 sequential inserts). Page grew 170k -> 226k chars.
+- Key Notes property: new dated Q1 FY27 entry PREPENDED; all prior entries (18-Jul AR, 28-Jun PM, 28-Jun AM) preserved verbatim; verified no escaping corruption. Backup of prior value in _keynotes_current.txt.
+
+## Gate log (all mechanical gates)
+- Gate A1: PASS x4 (results 8pp, presentation 50pp/12 OCR, press release 4pp, Ireland letter 2pp; 100% page coverage each).
+- Gate A2: PASS x3 (results 8 notes/76 items; presentation 50 slides/285 metrics; press release 57 units). Count tests reconciled.
+- Gate A3: PASS x3 (all F1-F17 statused, every FINDING line-cited).
+- Gate A5: COMPLETE after 2 loop-backs (loop 0 flat-EBITDA read; loop 1 standalone-clean-read error; loop 2 COMPLETE). Max-2-loop rule respected; no human escalation.
+
+## Count-reconciliation line
+8 notes / 0 concall turns / 50 slides / 57 press-release units + 8-row Ireland Annexure — all reviewed.
+
+## Protocol verdict: PROCEED WITH FLAGS | cash conversion INDETERMINATE | Decision Status WATCHLIST / AVOID (unchanged).
+
+RUN CLOSE 2026-07-30: A5 caught a material read error twice (reported +26% EBITDA growth is entirely a Rs 7.29 Cr Note-6 tariff credit; underlying operating EBITDA declined YoY on both bases). Two A4<->A5 loops resolved it. No concall or prior-quarter ledger supplied (documented). Toolchain absent at start (installed poppler-utils + tesseract after removing broken PPAs). Otherwise clean run.

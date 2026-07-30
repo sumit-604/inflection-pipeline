@@ -56,3 +56,15 @@
   delta table, hurdle, direct answer). Key Notes audit trail carries 4 entries (refresh + 3-doc +
   results + original May thesis), all prior preserved. Decision Status UNCHANGED WATCHLIST/AVOID.
 - All work files committed to branch claude/mtar-annual-reports-qo0c39.
+
+## Addendum 2 (2026-07-30): concall transcript supplied
+- inputs/concall_mtar_q1fy27.txt: Q1 FY27 earnings call, supplied as TEXT (auto-STT, heavily
+  garbled: company "NT/MTA/ENA Technologies" = MTAR; names garbled). Doctype: concall -> Role 5
+  now ACTIVE (was N.A. in prior runs). Chain A1->A2->A3 (F6/F7/F17 silence audit + reconcile
+  spoken numbers vs filing/deck), then A4 RE-RUNS ONCE merging all FOUR docs, A5, Notion.
+- High-value items to reconcile: spoken gross margin 45.61% vs 47.65% YoY (deck showed 45.5 vs
+  54.2 = -8.7pp; concall implies only -2pp -> DEFINITION/reconciliation flag); Jun-26 debt
+  Rs 423.6 Cr + investments Rs 379 Cr -> net ~20-30 Cr (resolves net-debt-basis question);
+  Q1 CFO Rs 247.69 Cr spoken (resolves INDETERMINATE? but advance-driven caveat); +Rs 800 Cr
+  order today -> book ~5,943 Cr; guidance reaffirmed 80% + 24% margin, "will do better".
+  Silences: promoter stake (not asked), Bloom concentration deflected as "unwanted noise".

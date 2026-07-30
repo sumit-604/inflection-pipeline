@@ -1,0 +1,51 @@
+stage: B09-tam
+company: "544555"
+run_date: "2026-07-30"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "annual-report: no post-listing AR; RHP used"
+  - "rating: EMPTY"
+  - "research: EMPTY"
+  - "India-specific product-category market-size report for RDSO rail-rubber-components or bridge-bearings/expansion-joints: NOT FOUND"
+  - "peer product-line revenue for named RDSO-approved competitors (Rahee Infratech, Holdwell, Deesawala, FutureLayers): NOT FOUND"
+  - "organised vs unorganised sector split specific to rail/bridge rubber components: NOT FOUND"
+  - "Ameenji export revenue % of total by geography: NOT FOUND"
+  - "annual new-track-km construction rate: NOT FOUND"
+flags:
+  - "No management TAM claim found in RHP or investor presentation; only generic sector macro tailwinds cited"
+  - "No listed Indian peer exists (RHP Basis for Issue Price); GRP Ltd excluded per instruction (reclaim-rubber/tyre, not comparable)"
+  - "Core-segment installed capacity shows 'No Change' post-IPO-capex per RHP; the 60.4% capex-embedded-growth is driven almost entirely by the new, unproven conveyor-belting line, not core TAM expansion"
+  - "SOM 5yr (Rs 176cr) nearly exhausts existing core installed-capacity ceiling (Rs 180cr); further expansion beyond FY31 undisclosed"
+  - "Customer concentration: ~89% of order book from Indian Railways as of 31-Aug-2025"
+  - "Method 2 (bottom-up Rs 174cr) and Method 5 (global benchmark Rs 625-940cr) diverge materially; reconciled toward better-anchored bottom-up"
+market_definition: "RDSO/MoRTH-certified elastomeric rail-track components (sole plates, pads, UIC vestibules, level-crossing pads) and infrastructure bridge bearings/expansion joints supplied to Indian Railways and highway/bridge agencies in India"
+tam_cr: {conservative: 175, realistic: 475}
+sam_cr: 428
+sam_pct_of_tam: 90
+som_3yr_cr: 140
+som_5yr_cr: 176
+som_implied_revenue_cagr: {yr3: 14.2, yr5: 13.4}
+current_sam_share_pct: 22.0
+revenue_headroom_x: 4.55
+tam_growth_pct: 8
+runway_class: "GOOD"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "no specific claim - management cites macro sector tailwinds only"
+capacity_check: "sufficient for SOM 3yr (Rs 40cr headroom on Rs 180cr core ceiling); tight for SOM 5yr (Rs 4cr / ~2% headroom); committed capex targets the new conveyor line, not core capacity"
+methods_used:
+  - "top-down (outer-bound sanity check only)"
+  - "bottom-up (primary, anchored to RDSO sleeper-density standard and IR renewal target)"
+  - "peer revenue aggregation (qualitative only - no disclosed peer revenue)"
+  - "import substitution (not applicable - India net exporter in this niche)"
+  - "global benchmark (cross-check only, stale caveats)"
+stale_data_flags:
+  - {datapoint: "NR/SR consumption stats", source: "RHP Industry Overview / National Rubber Policy", year: 2019}
+  - {datapoint: "Global elastomeric bridge bearings $1.37bn 2024 to $2.29bn 2033 (5.8% CAGR)", source: "web aggregator", year: 2024}
+  - {datapoint: "Global PTFE/POT bearings $1.2bn 2023 to $2.4bn 2032 (7.5%)", source: "web aggregator", year: 2023}
+  - {datapoint: "Global rail fastening $4.12-4.5bn 2024; APAC $2.5bn", source: "web aggregator", year: 2024}
+  - {datapoint: "India industrial rubber $915.88mn 2024", source: "IMARC", year: 2024}
+  - {datapoint: "India conveyor belt $557mn 2024", source: "IMARC", year: 2024}
+searches_performed: ["India railway track components rubber pads market size","India bridge bearings elastomeric POT PTFE market","IR track renewal permanent way budget","RDSO approved elastomeric rail pad manufacturers","NHAI bridge bearing expansion joint market","India rubber unorganised sector share","IMARC india-industrial-rubber (403)","IR broad gauge track km sleeper density RDSO","India rail fastening market","global rail fastening market","IR bridges count","IMARC India Industrial Rubber size","Ameenji RHP TAM","India conveyor belt market","RHP export grep (no matches)"]
+searches_skipped: ["exhaustive RDSO vendor-list retrieval","NHAI/MoRTH new-bridge/bearing-replacement data second round","Ameenji export revenue by geography","organised/unorganised rail/bridge rubber split second round"]

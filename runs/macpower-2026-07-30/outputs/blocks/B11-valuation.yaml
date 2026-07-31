@@ -1,0 +1,51 @@
+stage: B11-valuation
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Forward FY27 EPS not published; derived from revenue guidance x margin (Base Rs 43.0, band Rs 40.5-44.0)"
+  - "FY26 ROCE reconciliation (AR Note 38 23.75% vs screener 29.1%); cap-bound at 25x either way, stated as NOTE"
+  - "Credit rating PDF NOT PROVIDED; cash conversion stays INDETERMINATE"
+  - "BVPS FY26 NOT FOUND; FY25 Rs 142.77 used for P/B floor"
+  - "Peer multiples (JYOTICNC/ADOR/KLBRENG) NOT PROVIDED; EV/EBITDA cross-check done on own metrics"
+flags:
+  - "FLAG-CASH: cash conversion INDETERMINATE; Pillar 2 multiplier APPLIED = 1.00x provisional, 0.80x downside (-> destination 21.9x, base FV Rs 942)"
+  - "SHARED CATALYST: 13-acre capex + 60-acre land gates both revenue and margin/ROCE narratives; slipped 3x"
+  - "Track divergence 34%: additive 25.0x governs by operator approval; RRM 16.5x flagged as more conservative reality, deepens AVOID"
+  - "Sector cap corrected to 25x (Cables/Industrial products); manifest 38x rejected"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: 25.0
+destination_pe:
+  track1_rrm: {low: 15.0, mid: 16.5, high: 17.5, r_used: 14.75, rrm: 0.85}
+  track2_additive: {low: 23.0, mid: 25.0, high: 25.0}
+  divergence_pct: 34
+  governing_track: "Track 2 additive (25.0x) per operator approval at FTTCP gate; RRM 16.5x flagged more conservative, deepens AVOID"
+pillar_detail:
+  roce_used: 23.75
+  roce_base: 19.375
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "INDETERMINATE"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: true
+  sector_cap_used: 25.0
+hurdle_ratio: {base: 1.19, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 668, base: 710, bull: 726}
+  track2: {bear: 1013, base: 1075, bull: 1100}
+expected_cagr_prob_weighted: -10.4
+entry_range: {low: 440, high: 550}
+mos_price: 440
+upside_downside_ratio: 0.0
+decision: "AVOID (on valuation); FTTCP PROCEED WITH CAVEATS on quality, price ~2.7x entry zone, Hurdle STOP on base and bull"
+unresolved_inputs_used:
+  - "Forward FY27 EPS: conservative assumption Base Rs 43.0 (revenue +29% x 10.0% margin), because full-year EPS not published; band Rs 40.5-44.0 shown"
+  - "BVPS FY26: conservative assumption Rs 142.77 (FY25), because FY26 audited BVPS NOT FOUND; P/B is tertiary floor only"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "MACPOWER four-pillar destination cap-bound at 25.0x forward gives base fair value ~Rs 1,075 vs CMP Rs 1,481; AVOID-on-valuation, 25% hurdle STOPS on base and bull, entry only at Rs 440-550."

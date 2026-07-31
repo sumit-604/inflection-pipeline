@@ -1,0 +1,79 @@
+stage: B10-valinputs
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "Forward FY27 EPS (full-year committed figure not published; Q1 FY27 +110% YoY not sustainable run-rate) -> stage 11 derives it from revenue guidance x margin per the approved forward basis"
+  - "FY26 ROCE reconciliation (AR Note 38 23.75% vs screener 29.1% on different capital-employed bases)"
+  - "Credit rating PDF (NOT PROVIDED in inputs)"
+  - "Book Value per Share FY26 (FY25 available Rs 142.77; FY26 audited balance-sheet detail less granular)"
+  - "Peer financial data complete (detailed P/E, EV/EBITDA, P/B multiples from JYOTICNC, ADOR, KLBRENG NOT PROVIDED)"
+flags:
+  - "Deliberation record supersedes manifest: sector_cap_row Pharma/CDMO 38x CORRECTED to Cables/Industrial products 25x"
+  - "Cash conversion INDETERMINATE: provisional 1.00x on FY26 CFO/PAT 0.41x, downside 0.80x; cumulative 0.4538x <0.50x threshold"
+  - "ROCE forward STAGNANT: use current 23.75% (AR Note 38), normalization route NONE, recovery NOT credited"
+  - "60-acre land shared catalyst slipped 3x: gates both revenue-fulfillment AND margin/ROCE narratives"
+  - "FTTCP disposition PROCEED WITH CAVEATS; valuation verdict AVOID at CMP Rs 1,481 (fair value ~Rs 1,100 per deliberation)"
+  - "PAT margin conflict FY25: AR Note 38 12.00% vs direct P&L 9.72% - used conservative 9.72% per B03 triple-pass"
+  - "Receivables deteriorating: >6mo ageing 15.4% from 12.2%, net +57.5% YoY vs revenue +8.6% (FLAG-CASH, B02 Finding #1)"
+  - "ORCHESTRATOR CORRECTION: shares_million restated to 10.007 (1.0007 crore) from the agent's 100.042; the agent's own eps_fy26_rs 33.86 on pat_fy26_cr 33.87 and market_cap 1482/CMP 1481 both anchor ~1.0007 crore shares. A 10x transcription slip; EPS and PAT are the anchored truth and the per-share PE math is unaffected."
+table:
+  company: Macpower CNC Machines Limited
+  ticker: MACPOWER
+  cmp_rs: 1481.0
+  market_cap_cr: 1482.0
+  shares_crore: 1.0007          # corrected from agent's shares_million:100.042 (10x slip); = market_cap 1482cr / CMP 1481
+  shares_million: 10.007        # corrected
+  sector: "Capital goods / CNC machine tools"
+  sector_cap_corrected: "Cables/Industrial products 25x"
+  business_type: Manufacturing
+  revenue_fy26_cr: 333.18
+  ebitda_fy26_cr: 53.90
+  pat_fy26_cr: 33.87
+  eps_fy26_rs: 33.86
+  cfo_fy26_cr: 14.03
+  fcf_fy26_cr: 3.06
+  capex_fy26_cr: 10.97
+  ebitda_margin_pct: 16.2
+  pat_margin_pct: 9.72
+  cfo_pat_ratio: 0.41
+  cash_conversion: "INDETERMINATE (1.00x provisional, 0.80x downside)"
+  bvps_fy25_rs: 142.77
+  net_cash_cr: -0.28
+  roce_fy25_pct: 23.75
+  roe_fy25_pct: 17.65
+  pe_trailing: 38.1
+  pb_ratio: 10.4
+  ev_ebitda: 27.5
+  revenue_cagr_3yr_pct: 17.5
+  pat_cagr_3yr_pct: 18.1
+  guidance_revenue_growth_fy27_pct: "28-30"
+  credibility_grade: "B"
+  capex_embedded_growth_pct: 70
+  em_score: 15.0
+  em_classification: MODEST
+  gate0_core_score: 67
+  ua_applies: true
+  exit_pe_approved_x: 25.0
+  earnings_basis_approved: "ONE-YEAR-FORWARD"
+  pillar_1_roce_current_pct: 23.75
+  pillar_2_cash_multiplier: "1.00x (INDETERMINATE)"
+  pillar_3_growth_x: 2.0
+  strategic_premium_x: 0.0
+  ua_multiplier: 1.25
+  fttcp_verdict: "PROCEED WITH CAVEATS"
+  valuation_verdict_cmp: AVOID
+conflicts:
+  - {field: "ROCE FY25", value_a: "23.75%", anchor_a: "AR Note 38(vi) audited capital-employed", value_b: "29.1%", anchor_b: "Screener card (basis unspecified)", used: "23.75%"}
+  - {field: "PAT Margin FY25", value_a: "12.00%", anchor_a: "AR Note 38(vi) and MD&A", value_b: "9.72%", anchor_b: "Direct P&L calculation + AR KPI p.4", used: "9.72%"}
+  - {field: "shares", value_a: "100.042 million (agent)", anchor_a: "agent transcription (10x slip)", value_b: "10.007 million / 1.0007 crore", anchor_b: "market_cap 1482cr / CMP 1481; eps 33.86 on pat 33.87cr", used: "10.007 million"}
+unresolved:
+  - {field: "Forward FY27 EPS", why: "Management guides revenue 28-30% but NOT full-year EPS; stage 11 derives from revenue x margin per approved forward basis (fttcp used ~Rs 44)"}
+  - {field: "FY26 ROCE basis reconciliation (23.75% vs 29.1%)", why: "AR basis clear; screener basis undefined; capital-employed definition difference unresolved"}
+  - {field: "Credit rating and working capital commentary", why: "Rating PDF NOT PROVIDED in inputs"}
+  - {field: "Book Value per Share FY26", why: "FY25 available; FY26 audited balance-sheet detail less granular"}
+  - {field: "Peer financial multiples complete", why: "B06 narrative peer discussions only; detailed P/E, EV/EBITDA, P/B for JYOTICNC, ADOR, KLBRENG NOT PROVIDED"}
+rating_wc_quote: "NOT PROVIDED (no rating PDF in inputs)"
+ua_qualifiers: {listed_12m: true, gate0_or_em: true, fii_dii_lt3: true, all_met: true}
+credibility_grade: "B"

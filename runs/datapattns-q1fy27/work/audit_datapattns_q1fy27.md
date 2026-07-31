@@ -1,133 +1,131 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — Data Patterns (India) Ltd (DATAPATTNS), Q1 FY27
-
 **Agent:** A5 ADVERSARY | **Model:** claude-opus-4-8 | **Date:** 2026-07-31
-**Under audit:** `review_datapattns_q1fy27.md` (Role 4 full + Role 5 completed against the 84-turn transcript)
-**Method:** fresh context. Re-derived every number from the A1 extracts at their own line/turn numbers; re-ran the A2 enumeration with an independent grep + manual sweep and diffed against each A2 ledger. Did not defer to A4's or A3's cites.
-
-**VERDICT: INCOMPLETE.** One reproducible coverage gap: the A2 presentation ledger under-enumerates the page-24 working-capital slide by four values that my fresh pass found in the extract. Loop back to **A2**. All three audits were run in full; the arithmetic and adversarial audits PASS and every one of the four parent-flagged focus areas is substantively satisfied (details below). The failing item is mechanical and cheap to fix; the analytical substance of A4 is sound.
+**Loop:** 2 (final) | **Fresh context:** A4 review + A1 extracts + A2 ledgers only; re-derived independently, did not defer to A4's or A3's cites.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh enumeration vs A2 ledger)
+## PART 0 — VERIFICATION OF THE THREE LOOP-1 FIXES
 
-### 1A. Per-document / per-category count diff
-
-| Doc | Category | A2 count | My fresh count | Diff | Status |
-|---|---|---|---|---|---|
-| results | numbered notes | 8 | 8 | 0 | PASS — all 8 in A4 Step 0D |
-| results | line items | 27 | 27 (20 P&L rows @ l.132-169 + 7 QIP @ l.199-207) | 0 | PASS — P&L in Step 1, QIP in Step 0D/Note 4 |
-| results | auditor paras | 4 | 4 (l.76,82,89,98) | 0 | PASS — unmodified conclusion + 16:34 timestamp (DP-F14a) in Step 0D |
-| results | agenda items | 1 | 1 (l.34) | 0 | PASS |
-| results | signature blocks | 3 | 3 | 0 | PASS |
-| results | entities / annexures | 0 / 0 | 0 / 0 | 0 | PASS — Note 5 zero-subsidiary cited (Step 1/Section C) |
-| acquisition | disclosure fields | 10 | 10 (S.No.1-10) | 0 | PASS — STAC covered in Step 8.5 Q7-11, flags, monitorables |
-| acquisition | granular sub-items | 24 | 24 | 0 | PASS — incl. incorporation/country DISCLOSURE_GAP (Q8/Q10), turnover 157.66/442.19/416.85 L |
-| acquisition | letter/header fields | 18 | 18 | 0 | PASS — approval "if any" contradiction (F1/F14) cited |
-| acquisition | signature-block lines | 8 | 8 | 0 | PASS |
-| concall | turns | 84 | 84 (39 Q + 28 A + 1 Moderator + 1 Closing + 15 unbracketed) | 0 | PASS — see 1B |
-| concall | questions | 39 | 39 | 0 | PASS |
-| concall | mgmt numbers | 66 | 66 (structure reconciled; key figures spot-verified) | 0 | PASS |
-| concall | forward-commitment / hedge | 29 / 14 | 29 / 14 | 0 | PASS |
-| presentation | slides | 32 | 32 (32 formfeeds) | 0 | PASS |
-| presentation | P&L/margin (p14,18,28) | 340 | 340 | 0 | PASS |
-| presentation | orderbook/inflow (p15-17) | 98 | 98 | 0 | PASS |
-| presentation | segment/customer (p7,12,13) | 63 | 63 | 0 | PASS |
-| presentation | balance/cashflow (p29,30) | 296 | 296 | 0 | PASS |
-| presentation | **headline stats (13 slides, incl. p24)** | **121** | **125** | **+4** | **FAIL — see 1C** |
-| presentation | zero-standing / footnotes | 43 / 9 | 43 / 9 | 0 | PASS |
-
-### 1B. Concall turn/question reconciliation (independent grep)
-Fresh grep: `[Q —` = 40 hits, `[A — Mgmt]` = 29 hits. Each count includes exactly one literal inside the A1 extraction header (line 17: "`[Q — <firm>] ... : 39`"; line 21: "`[A — Mgmt] ... : 28`"). Body-only: **39 question-turns, 28 answer-turns** → +1 Moderator (l.125) +1 Closing (l.171) +15 unbracketed operator/mgmt = **84 turns**, matching the ledger exactly. No orphan turn; no turn my pass found that the ledger lacks.
-
-### 1C. FAIL — presentation ledger under-enumerates slide 24 (working capital)
-My fresh read of the raw extract (page 24, "Working Capital", lines 820-840) finds **20** disclosed working-capital data values — five each for Debtor Days, Creditor Days, Inventory Days, and Cash Conversion Cycle:
-- Debtor Days: 308, 307, 280, 287, **233** (l.823)
-- Creditor Days: 45, 43, 36, 35, **30** (l.824)
-- Inventory Days: **187** (l.836), 164, 155, 141, **108** (l.840)
-- CCC: 427, 432, 428, 365, 329
-
-The A2 presentation ledger (Table 6, rows at l.820/821/822/837/838/839) enumerates only **16** of these, omitting four cells: **Debtor FY22 = 233, Creditor FY22 = 30, Inventory FY25 = 187, Inventory FY26 = 108.** The ledger's stated methodology explicitly guarantees "each grouped row spells out every value it contains … No number is dropped." That guarantee is breached, and the category's "121 grep = 121 sweep" reconciliation is therefore not reproducible (true count = 125).
-
-This is a **missing-from-ledger** condition → **loop back to A2** to re-enumerate slide 24 and re-run the count test. (Note this is peripheral to the thesis: the parent line items — Inventory Days, Debtor Days, CCC — ARE enumerated and cited; only these four historical cells are dropped, and A4 independently captured the FY26 inventory value 108 by reading the raw extract.)
-
-### 1D. Orphan-row check (ledger rows absent from A4)
-No orphan rows. Spot-verified that every thesis-relevant deck value A4 cites ties to the A2 ledger and the raw extract: revenue FY25 7,084 Mn=708.4 (l.454); other income 463 (l.912); EBITDA 314/321/1,928 (l.462); cash 4,659 Mn=465.9 (l.326); order book 9,277 Mn=927.7 (l.330); ROCE 20.8% (l.323); debtor days 307 / creditor 43 / CCC 428 (l.820/837); CFO FY26 801 Mn=80.1 (l.998); WC movement -2,114 (l.994); trade receivables 5,964→7,278 Mn=596.4→727.8 (l.964); PPE 1,606 / CWIP 132 (l.943/945); intl OB 39 Cr (l.566); Q1 inflow 1,172 Mn=117.2 Cr (l.548); planned capex 150 Cr (l.182). All present and correctly used.
-
-**Minor A4 cite imprecision (not a coverage fail):** A4 Step 5 cites "Inventory days 108 (deck l.837, FY26)". The value 108 sits at l.840; l.837 holds 164 + the CCC values. The number is correct and real; only the line pointer is off by three.
-
----
-
-## AUDIT 2 — ARITHMETIC (recomputed from raw extract; ₹ Cr)
-
-Every derived metric in A4's tables recomputes to A4's stated value within rounding. No mismatch found.
-
-| Metric | A4 value | My recompute (source) | Status |
+| Loop-1 gap | Required fix | Verified state | Status |
 |---|---|---|---|
-| Operating EBITDA Q1FY27 (PBT+D+FC−OI) | 31.37 | 29.48+5.92+3.28−7.31 = 31.37 (l.149/142/141/133) | PASS |
-| Operating EBITDA Q1FY26 | 32.08 | 33.95+5.49+3.19−10.55 = 32.08 | PASS |
-| Operating EBITDA Q4FY26 | 192.84 | 187.96+5.89+4.65−5.66 = 192.84 | PASS |
-| Op EBITDA margin Q1FY27 | 27.04% | 31.37/116.03 = 27.036% | PASS |
-| Op EBITDA margin Q1FY26 | 32.30% | 32.08/99.33 = 32.30% | PASS |
-| Op EBITDA margin YoY | −526 bps | 27.04−32.30 = −5.26pp | PASS |
-| Reported EBITDA Q1FY27 (PBT+D+FC) | 38.68 | 29.48+5.92+3.28 = 38.68 | PASS |
-| Core PBT ex-OI Q1FY27 / Q1FY26 | 22.17 / 23.40 | 29.48−7.31 / 33.95−10.55 | PASS |
-| Core PBT ex-OI YoY | −5.26% | (22.17−23.40)/23.40 = −5.26% | PASS |
-| Effective tax rate Q1FY27 | 25.17% | 7.42/29.48 = 25.17% | PASS |
-| ETR FY26 (post-exceptional) | 25.35% | 92.17/363.54 = 25.35% | PASS |
-| PAT margin Q1FY27 | 19.01% | 22.06/116.03 = 19.01% | PASS |
-| Revenue YoY | +16.81% | (116.03−99.33)/99.33 = 16.81% | PASS |
-| Other Income YoY | −30.71% | (7.31−10.55)/10.55 = −30.71% | PASS |
-| Reported PBT YoY | −13.17% | (29.48−33.95)/33.95 | PASS |
-| PAT YoY | −13.49% | (22.06−25.50)/25.50 | PASS |
-| Gross profit Q1FY27 (Rev−net matl) | 91.51 | 116.03−(30.73−6.21) = 91.51 (ties spoken GP l.61) | PASS |
-| Gross profit Q1FY26 | 79.23 | 99.33−(57.16−37.06) = 79.23 | PASS |
-| PAT bridge sum | −3.44 | +12.28−6.15−6.84−0.43−0.09−3.24+1.03 = −3.44 | PASS |
-| FY26 op EBITDA vs deck 371 recon | Δ = exceptional | 373.99−371.0 = 2.99 ≈ 3.01 (Labour Code) | PASS |
-| **Cash reconciliation gap** | **Rs 64 Cr** | 530.0 (concall l.61) − 465.9 (deck l.326) = 64.1 | PASS — named, not silently resolved |
-| Order-book stack (deck) | 2,654.0 | 927.7 + 1,726.3 = 2,654.0 | PASS |
-| Order-book stack (spoken) | Rs 8 Cr gap | 920 + 1,726 = 2,646 vs 2,654 | PASS |
-| STAC total outlay | Rs 10 Cr | 1.50 (equity) + 8.50 (loan) (l.112-114) | PASS |
-| STAC turnover dip FY25→FY26 | ~5.7% | (416.85−442.19)/442.19 = −5.73% | PASS |
+| (a) Presentation ledger under-enumerated slide-24 WC table by 4 values (count 121 not reproducible) | Add 4 values, count → 125 | Ledger Table 6 now carries Debtor FY22=233 (l.823), Creditor FY22=30 (l.824), Inventory FY25=187 (l.836), Inventory FY26=108 (l.840); COUNT TEST `other_headline_stats` grep=125/sweep=125; grand gated total 922; A4 preamble line 18 reads "125 headline stats, incl. 20 values on slide 24" and 922 total | **FIXED** |
+| (b) Step-5 inventory-days 108 mis-cited to l.837 | Re-cite to l.840 | A4 Step 5 line 201 now reads "Inventory days \| 108 (deck l.840, FY26)"; extract line 840 = 108 (line 837 = 164 + CCC 427/432/428, correctly the Inv-FY24/CCC row); CCC 428 still cited l.837, which is correct | **FIXED** |
+| (c) Dangling concall-A3-07 `from_finding_id` | Resolve into the capex row in Step-8F and YAML | Step 8F row 4 (capex) `from_finding_id` = "A3-07, A3-15, DP-F6a"; YAML capex question `from_finding_id: "concall-A3-07, concall-A3-15, DP-F6a"`; A3-07 no longer orphaned; classified FORWARD-SIGNAL in preamble line 29 | **FIXED** |
 
-**Role 4 numbers unchanged from the prior audited version: CONFIRMED.** Every Section A figure recomputes identically; A4's own statement that "Role 4 numbers are unchanged" holds under independent recomputation.
+All three loop-1 corrections are present and correct. No regression introduced: Table 7 dash-cell count unchanged at 43; the 4 added slide-24 values are plain disclosed figures, so no new ZERO_STANDING/NOT_FOUND flag applies.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most positive claims; strongest bear from the same text)
+## PART 1 — COVERAGE AUDIT (independent fresh enumeration vs A2 ledgers)
 
-A4 is already a comprehensively bearish document. I took its three most favourable claims and built the strongest bear counter for each from the identical extracted text; in every case the counter is already surfaced inside A4, so **no surviving counter needs grafting**.
+Fresh grep/sweep re-run over each A1 extract; diffed against the ledger COUNT TESTs; then every ledger row checked for an A4 citation or "reviewed, no finding".
 
-**Positive claim 1 — "Net cash intact, Rs 465.9-530 Cr, far above the Rs 100 Cr tripwire; watchlist item 6 GREEN; net-debt-free maintained."**
-Bear from same text: the two same-date cash figures do not tie (Rs 64 Cr gap, l.61 vs l.326); FY26 CFO/PAT is only 0.295x (80.1/271.37, l.998); FY26 working capital absorbed −Rs 211.4 Cr (l.994); Rs 26.25 Cr of QIP is still undeployed 3.3 yrs on (Note 4); a fresh ~Rs 2 Cr receivables provision was booked (turn 17). The "strong balance sheet" rests on a number that does not reconcile plus undeployed raised capital.
-→ **Already incorporated** (A4 Step 5, Section C flags 1-4, watchlist item 6 "GREEN but Rs 64 Cr gap flagged"). Does not survive as new.
+| Category (doc) | A2 count | My fresh count | Orphan rows | Status |
+|---|---|---|---|---|
+| results — notes | 8 | 8 (notes 2-7 + unnum. Note 1 l.174 + EPS footnote l.170) | none — A4 Step 0D | PASS |
+| results — line_items | 27 | 27 (20 statement l.132-169 + 7 QIP l.199-207) | none — Step 1 + Note 4/DP-F6a | PASS |
+| results — auditor_paras | 4 | 4 (l.76,82,89,98) | none — Step 0D | PASS |
+| results — agenda_items | 1 | 1 (l.34 approval) | none — Step 0 | PASS |
+| results — signature_blocks | 3 | 3 (CS l.47; auditor l.106; CMD l.219) | none — auditor timestamp → DP-F14a | PASS |
+| results — entities | 0 | 0 (Note 5 zero-entity) | none — Step 0/Note 5 | PASS |
+| acquisition — disclosure_fields | 10 | 10 (S.No 1-10) | none — Step 8.5 Q7-11 + Section C | PASS |
+| acquisition — line_items (granular) | 24 | 24 (incl. gaps 10d incorporation, 10e country) | none — Q8 covers both | PASS |
+| acquisition — quantitative_figures | 13 | 13 (Rs 10 Cr = 1.5 promoter + 8.5 loan; turnover 157.66/442.19/416.85 L; 1.3-2.0x; 3mo; 100%) | none | PASS |
+| acquisition — signature_block | 8 | 8 | none | PASS |
+| presentation — slides | 32 | 32 | none — preamble "all 32 reviewed" | PASS |
+| presentation — pl_margin_values | 340 | 340 | none | PASS |
+| presentation — orderbook_inflow | 98 | 98 | none | PASS |
+| presentation — segment_customer | 63 | 63 | none | PASS |
+| presentation — balance_cashflow | 296 | 296 | none | PASS |
+| presentation — other_headline_stats | 125 | **125** (slide-24 re-swept = 20) | none | PASS |
+| presentation — zero_standing | 43 | 43 | none | PASS |
+| presentation — footnotes | 9 | 9 | none | PASS |
+| concall — turns | 84 | 84 (39 Q + 28 A + 1 Mod + 1 Closing + 15 unbracketed) | none — preamble "all 84 reviewed" | PASS |
+| concall — questions | 39 | 39 (28 substantive + 11 NO_NEW_QUESTION) | none — Step 4A inventory | PASS |
+| concall — mgmt_numbers | 66 | 66 | none — Step 1 / Step 7A | PASS |
 
-**Positive claim 2 — "Spoken P&L ties to the filing at every line (CONFIRMED); revenue +16.8% YoY growth."**
-Bear from same text: +16.8% is below management's own 20-25% guide; operating EBITDA −2.2%, core operating PBT −5.3%, margin −526 bps — "confirmed" only means the soft print is real, and the growth headline masks operating deterioration.
-→ **Already incorporated** (A4 Step 2 diagnostics 1-3, the stated "core signal"). Does not survive as new.
+**Independent slide-24 re-derivation (the loop-1 locus):** Debtor Days 233/280/287/308/307 (FY22-26, l.820-823); Creditor Days 30/36/35/45/43 (FY22-26, l.820-824); Inventory Days 141/155/164/187/108 (FY22-26, l.836-840); CCC 329/365/427/432/428 (FY22-26, l.837-839). = 20 values, matching the corrected ledger exactly. No orphan, no missing-from-ledger row.
 
-**Positive claim 3 — "Order book Rs 2,654 Cr provides healthy multi-year revenue visibility; no thesis-broken trigger fired; auditor unmodified."**
-Bear from same text: only Rs 927.7 Cr is confirmed (~65% negotiated/soft); production-vs-development split REFUSED twice (turns 85/89); confirmed book flat QoQ (9,265→9,277, l.180); the Rs 1,726 Cr negotiated conversion is DELAYED (+6mo/+2mo, turn 25); the "unmodified" report was signed 16:34 vs board concluded 18:30 (DP-F14a).
-→ **Already incorporated** (A4 checklist items 2/3/12, Step 6C, Section C flags 4/13/1). Does not survive as new.
+**A3-finding coverage:** all non-N.A. findings across four docs cited in A4 (results DP-F1a/F6a/F14a; acq F1/F6/F7/F11/F13/F14/F15/F17; presentation A3-F1-01…A3-F16-04; concall A3-01…A3-18). Formerly-dangling concall-A3-07 now anchored in the capex question row. No unreviewed row.
 
-**Result: no bear counter survives un-incorporated.** Adversarial completeness PASS.
+**COVERAGE RESULT: PASS** — no orphan rows (→A3), no rows my fresh pass found that the ledger lacks (→A2).
 
 ---
 
-## PARENT FOCUS-AREA CONFIRMATIONS
+## PART 2 — ARITHMETIC AUDIT (recomputed from raw extracted numbers; ₹ Cr)
 
-1. **All 18 pre-committed questions graded, each with a concall cite — SATISFIED.** The Step 8.5 Addendum grades all 18 (tally 0 ANSWERED-SPECIFICALLY / 7 PARTIAL / 2 EVADED / 9 NOT-ADDRESSED; counts verified: PARTIAL #2,3,11,12,13,14,18; EVADED #4,15; NOT-ADDRESSED #1,5,6,7,8,9,10,16,17 = 18). Each carries a turn cite; the four NOT-ADDRESSED items with no near-miss turn correctly carry "(no utterance)" as the silence cite (Q5, Q9, Q10, Q17), which is the honest anchor for a question management never spoke to.
-2. **Rs 530 vs Rs 465.9 Cr cash — NAMED, not silently resolved — SATISFIED.** Carried as a Rs 64 Cr UNRECONCILED gap in Step 1, Step 5, Step 7A, Section C, a Section-8F forward question, a monitorable, and a top-level flag; deck figure anchored, spoken figure not credited. Recomputed 530−465.9 = 64.1.
-3. **Every concall FORWARD-SIGNAL/AMBIGUOUS finding → a management question — SUBSTANTIALLY SATISFIED, one traceability defect.** Concall A3-02..06, 08-13, 15-17 each map to a Section-8F question or monitorable with an explicit `from_finding_id`; A3-01 (cost-drag) and A3-14 (order-book rounding) are carried as resolved signals. **Exception:** A4's line-29 contract asserts FORWARD-SIGNAL **A3-07** is "carried to 8F with an explicit from_finding_id," yet **concall-A3-07 appears nowhere in the review except lines 27/29** — no 8F row, monitorable, flag, or YAML entry references it. Its probable substance (export / counter-drone forward traction) IS covered elsewhere (monitorables, checklist item 10, Step 5A), so this is a traceability/labelling defect rather than a missed forensic; I cannot fully adjudicate it because the A3 ledger is (by design) outside my inputs. Routed to **A4** to either add the A3-07 question with its `from_finding_id` or correct the line-29 assertion. This is a secondary finding; it is **not** the basis for the INCOMPLETE verdict.
-4. **Role 4 numbers unchanged — CONFIRMED** by full independent recomputation (Audit 2).
+| Metric | A4 value | My recompute | Source line | Status |
+|---|---|---|---|---|
+| Op EBITDA Q1FY27 (PBT+D+FC−OI) | 31.37 | 29.48+5.92+3.28−7.31 = 31.37 | l.149/142/141/133 | MATCH |
+| Op EBITDA Q1FY26 | 32.08 | 33.95+5.49+3.19−10.55 = 32.08 | l.149/142/141/133 | MATCH |
+| Op EBITDA Q4FY26 | 192.84 | 187.96+5.89+4.65−5.66 = 192.84 | l.149/142/141/133 | MATCH |
+| Op EBITDA FY26 (pre-excep base) | 373.99 | 366.55+22.95+12.45−27.96 = 373.99 | l.149/142/141/133 | MATCH |
+| Op EBITDA margin Q1FY27 | 27.04% | 31.37/116.03 = 27.04% | l.132 | MATCH |
+| Op EBITDA margin Q1FY26 | 32.30% | 32.08/99.33 = 32.30% | l.132 | MATCH |
+| Op EBITDA margin FY26 | 40.44% | 373.99/924.77 = 40.44% | l.132 | MATCH |
+| Core PBT ex-OI Q1FY27 | 22.17 | 29.48−7.31 = 22.17 | l.154/133 | MATCH |
+| Core PBT ex-OI Q1FY26 | 23.40 | 33.95−10.55 = 23.40 | l.154/133 | MATCH |
+| Effective tax rate Q1FY27 | 25.17% | 7.42/29.48 = 25.17% | l.155/154 | MATCH |
+| Effective tax rate Q1FY26 | 24.89% | 8.45/33.95 = 24.89% | l.155/154 | MATCH |
+| Effective tax rate FY26 | 25.35% | 92.17/363.54 = 25.35% | l.155/154 | MATCH |
+| PAT margin Q1FY27 | 19.01% | 22.06/116.03 = 19.01% | l.156/132 | MATCH |
+| PAT margin Q4FY26 | 40.13% | 138.38/344.85 = 40.13% | l.156/132 | MATCH |
+| YoY Revenue | +16.81% | 16.70/99.33 = +16.81% | l.132 | MATCH |
+| YoY Op EBITDA | −2.21% | −0.71/32.08 = −2.21% | — | MATCH |
+| YoY Op EBITDA margin | −526 bps | 27.04−32.30 = −5.26pp | — | MATCH |
+| YoY Core operating PBT | −5.26% | −1.23/23.40 = −5.26% | — | MATCH |
+| YoY Reported PBT | −13.17% | −4.47/33.95 = −13.17% | l.154 | MATCH |
+| YoY PAT | −13.49% | −3.44/25.50 = −13.49% | l.156 | MATCH |
+| YoY Other Income | −30.71% | −3.24/10.55 = −30.71% | l.133 | MATCH |
+| Gross profit Q1FY27 (Rev−RM) | 91.51 | 116.03−(30.73−6.21) = 91.51 | l.132/137/139 | MATCH |
+| Gross profit Q1FY26 | 79.23 | 99.33−(57.16−37.06) = 79.23 | l.132/137/139 | MATCH |
+| PAT bridge (sum of components) | −3.44 | +12.28−6.15−6.84−0.43−0.09−3.24+1.03 = −3.44 | Step 4 | MATCH |
+| OI-revert scenario PAT | ~24.5 | 32.72×(1−0.2517) = 24.49 | — | MATCH |
+| FY26 CFO/PAT | 0.295x | 80.1/271.37 = 0.295x | deck l.998/l.156 | MATCH |
+| Guidance Q2-Q4 avg needed (20% floor) | ~Rs 331/qtr | (1,109.7−116.03)/3 = 331.2 | — | MATCH |
+| Order-book stack (deck) | 2,654.0 | 927.7+1,726.3 = 2,654.0 | deck l.330 | MATCH |
+| Cash gap (call vs deck) | Rs 64 Cr | 530−465.9 = 64.1 | turn 11 / deck l.326 | MATCH |
+| STAC turnover fall | ~5.7% | (442.19−416.85)/442.19 = 5.73% | acq l.127-128 | MATCH |
+| Trade receivables Mar25→Mar26 | 596.4→727.8 | 5,964/7,278 Mn ×0.1 | deck l.964 | MATCH |
+
+**Minor non-blocking observations (below FAIL threshold — no derived-metric error, no conclusion changes):**
+1. **OI/PBT FY26 stated 7.63%** uses pre-exceptional PBT (27.96/366.55 = 7.63%); on reported PBT it would be 7.69%. The footnote-¹ cluster explicitly bases FY26 operating ratios on 366.55, so the basis is disclosed; 6 bps immaterial.
+2. **Step-5 prose "CCC ~427-432 for FY23-FY25"** — the anchored cell (CCC FY26 = 428, l.837) is correct; the bars are FY24=427/FY25=432/FY26=428 (FY23=365), so the range better maps to FY24-FY25. Descriptive year-label only; every anchored figure and the structural-~430-day conclusion are sound. Not a derived-metric mismatch.
+
+**ARITHMETIC RESULT: PASS** — no mismatch above rounding; PAT bridge closes; the concall spoken P&L (turn 11) reconciles to the filing at every line.
+
+---
+
+## PART 3 — ADVERSARIAL READ (strongest bear counter to the three most positive claims)
+
+Testing whether the strongest bear counter to each top positive claim SURVIVES (supported by the extract AND absent from A4).
+
+**Positive 1 — "Net cash intact, net-debt-free; Rs 465.9-530 Cr, far above the Rs 100 Cr tripwire (checklist #6 GREEN)."**
+Bear (same text): the strength figure itself does not tie — Rs 530 Cr (call) vs Rs 465.9 Cr (deck) same-date, Rs 64 Cr unreconciled; capex RAISED to Rs 200 Cr+ against 0.30x CFO; Rs 26.25 Cr QIP undeployed 3.3 yrs; "ample flexibility" with Q1 CFO withheld.
+**SURVIVES? NO** — already in A4 (Step 5 net-debt row, checklist #6 "GREEN but Rs 64 Cr gap flagged", A3-13/A3-15, Section C).
+
+**Positive 2 — "Spoken P&L ties to the filing at every line — CONFIRMED."**
+Bear (same text): the tie holds only for the P&L; the two spoken balance-sheet figures (cash Rs 530 Cr, order book Rs 920 Cr) do NOT tie to the deck — divergence exactly where no Reg-33 statement exists to check.
+**SURVIVES? NO** — already in A4 Step 1 tie-out (line 104) and Step 7A.
+
+**Positive 3 — "Order book Rs 2,654 Cr provides healthy revenue visibility; confirmed book stable."**
+Bear (same text): ~65% negotiated/pending (only Rs 927.7 Cr confirmed), production-vs-development split REFUSED twice (turns 85/89), confirmed book flat (9,265→9,277), export OB Rs 39 Cr near the Rs 30 Cr tripwire, Rs 1,726 Cr conversion DELAYED from AGM.
+**SURVIVES? NO** — already in A4 checklist #2/#3/#10, Step 7A, A3-F16-01/A3-08/A3-14, Section C flag 4.
+
+**Cross-check on secondary positives** (revenue +16.8%; auditor unmodified; promoter-CMD candour; STAC accretion 1.3-2.0x): each already carries its bear counter — core-PBT −5.3% masking (Step 2), auditor 16:34-vs-board-18:30 governance flag (DP-F14a), OVERPROMISER-RISK / 0-of-18 specific answers (Step 6E/8.5), STAC turnover −5.7% + Rs 8.5 Cr liability-settlement loan + Rs 1.5 Cr not-RPT promoter payment (Q7/Q8, Section C flags 1-3). No new surviving counter.
+
+**ADVERSARIAL RESULT: PASS** — no bear counter survives ungrafted; the review is symmetric bull-bear; nothing must be added to A4 before save.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
-- **Loop back to A2 (primary):** the presentation ledger's slide-24 working-capital enumeration is provably incomplete — Debtor FY22 = 233 (extract l.823), Creditor FY22 = 30 (l.824), Inventory FY25 = 187 (l.836), Inventory FY26 = 108 (l.840) are present in the extract but absent from the ledger, so the "121 headline-stats grep = sweep" reconciliation is not reproducible (true = 125) and the ledger's "no number dropped" guarantee is breached. Re-enumerate slide 24 and re-run the count test.
-- **Secondary, route to A4:** reconcile the A3-07 traceability defect (line-29 claim vs no visible `from_finding_id`), and correct the Step-5 cite pointer for inventory-days 108 (l.840, not l.837).
-- Arithmetic audit and adversarial audit both PASS; all four parent focus areas are substantively satisfied. Once A2 re-enumerates slide 24 (and A4 reconciles the A3-07 label), the review is clear to proceed.
+- Loop-1 fixes (a), (b), (c): all verified present and correct; no regression.
+- Coverage: PASS (no orphan rows, no missing-from-ledger rows; slide-24 independently re-swept to 20 values / gated total 922).
+- Arithmetic: PASS (all derived metrics reproduce; PAT bridge closes; two immaterial basis/label observations, neither a FAIL).
+- Adversarial: PASS (all strongest bear counters already incorporated).
+
+**VERDICT: COMPLETE.** Only COMPLETE proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -135,16 +133,12 @@ company: "DATAPATTNS"
 quarter: "q1fy27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
-  missing_from_ledger:
-    - {doc: presentation, category: headline_stats_slide24, value: "Debtor Days FY22 = 233", extract_line: 823, note: "absent from A2 presentation ledger Table 6"}
-    - {doc: presentation, category: headline_stats_slide24, value: "Creditor Days FY22 = 30", extract_line: 824, note: "absent from A2 presentation ledger Table 6"}
-    - {doc: presentation, category: headline_stats_slide24, value: "Inventory Days FY25 = 187", extract_line: 836, note: "absent from A2 presentation ledger Table 6"}
-    - {doc: presentation, category: headline_stats_slide24, value: "Inventory Days FY26 = 108", extract_line: 840, note: "absent from A2 ledger; A4 cited it as l.837 (actual l.840)"}
+  missing_from_ledger: []
 arithmetic_mismatches: []
 surviving_bear_counters: []
-loop_back_to: "A2"
-gap: "A2 presentation ledger under-enumerates page-24 working-capital slide by 4 values (Debtor FY22=233 l.823, Creditor FY22=30 l.824, Inventory FY25=187 l.836, Inventory FY26=108 l.840); headline-stats count is 125 not the ledger's 121, so the count test is not reproducible and the 'no number dropped' guarantee is breached. Secondary (A4): concall-A3-07 asserted at line 29 as carried to Step 8F with a from_finding_id but appears in no 8F row/monitorable/flag/YAML; and Step-5 inventory-days 108 is cited to l.837 but sits at l.840."
+loop_back_to: ""
+gap: ""
 ```

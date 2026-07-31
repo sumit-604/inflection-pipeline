@@ -51,6 +51,34 @@ of any run in this sector. Memory to weigh, never anchored evidence.
 
 ## RUN LOG (dated, newest first; one block per analysis)
 
+### 2026-07-31 SATIN Q1 FY27 earnings concall (run: runs/satin-q1fy27; Role 5, credibility Grade B)
+- Buffer/overlay cycle-proofing is now an explicit MFI management philosophy AND a
+  discretionary earnings lever: Satin runs on-book provision Rs 250 Cr vs RBI-required
+  Rs 152 Cr, plus an overlay built "through good quarters" with NO committed ceiling.
+  Reported credit cost/ROA are therefore partly discretionary (1.97% ex-overlay vs 3.06%
+  reported). Always demand reported AND ex-overlay, plus a buffer policy tied to Stage-2.
+- Guardrails 2.0 sector share shift: bank share of micro-loans fell to 26.4% from 32.6%
+  YoY while NBFC-MFI rose to 43.7% from 38.9%; industry GLP stabilised ~Rs 3.31 lakh Cr
+  after 8 quarters of decline; 95% of exposure now with borrowers having <=3 lenders.
+  Specialist lenders now set sector quality; cycle position repair -> early expansion.
+- NatCat (natural-catastrophe) insurance is a live MFI risk-mitigation tool: Satin's
+  Assam flood exposure (~44,000 borrowers, Rs 149 Cr) was ~Rs 97 Cr NatCat-covered, net
+  residual ~1%. NatCat + overlay can contain a state-level weather shock to a low
+  single-digit net hit; check peers for equivalent coverage before pricing weather risk.
+- DA (direct assignment) run-rate norm ~20-22% of AUM; DA income is quarterly-lumpy (Q4
+  seasonally heavy) but the assigned book is steady. Use the band to judge whether
+  gain-on-sale income is structural or timing-pulled-forward.
+- Management-named stable-state bands (weigh as guidance, not fact): steady-state NIM
+  ~14.35-14.50%; stable-state credit-cost aspiration 2.5-3.0% for unsecured MFI; reported
+  credit-cost guide 3.0-3.5% incl. buffer; standalone ROA 3.5-4% reported; new-branch
+  breakeven ~1,000 customers (~9 months). Write-offs can pull GNPA down even as reported
+  credit cost rises when the buffer is being built (Satin: write-off Rs 127 Cr > slippage
+  Rs 49 Cr drove the 90 bps GNPA fall while credit cost rose on overlay).
+- Over-indebtedness watch is the MFI risk most likely to go UNASKED on a congratulatory
+  boutique-analyst call: whether AUM growth is new borrowers vs larger tickets on a
+  near-static borrower base. Build it into the question list every quarter regardless of
+  whether the Street raises it (all 7 analysts on this call missed it).
+
 ### 2026-07-30 SATIN quarterly results Q1 FY27 (run: runs/satin-q1fy27)
 - 20th consecutive profitable quarter. Consolidated PAT Rs 123 Cr (+172% YoY)
   but that is largely a Q1 FY26 trough base; PAT fell 24% QoQ and return ratios

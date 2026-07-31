@@ -142,12 +142,14 @@ Operating EBITDA = PBT(before exceptional) + Depreciation + Finance Costs − Ot
 | Other Income / PBT (std) | 34.40% | 59.37% | 33.51% | 32.56% (of PBT-before-exceptional) |
 | Effective Tax Rate (std, /reported PBT) | 26.95% | 15.50% | 28.27% | 23.89% |
 | PAT margin (std, /Rev) | 22.40% | 27.17% | 17.98% | 37.34% (exceptional-inflated) |
-| Operating EBITDA (cons) | 169.90 | 130.44 | 191.04 | 477.20 |
-| Core PBT ex-OI (cons, before JV share) | 147.40 | 76.31 | 151.10 | 355.35 |
+| Operating EBITDA (cons) | 169.24 | 104.20 | 191.04 | 443.77 |
+| Core PBT ex-OI (cons, before JV share) | 146.73 | 50.07 | 151.10 | 321.92 |
 | ETR (cons, /PBT incl JV share) | 26.96% | 17.26% | 28.22% | 24.53% |
 | PAT margin (cons, /Rev) | 22.35% | 23.84% | 18.03% | 36.05% |
 
-Cross-check: Core PBT ex-OI (std, Q1FY27) 151.10 ties to segment "Total Operating Results" 151.13 (L238), and 147.40 (Q1FY26) ties to 147.41 (L238); rounding only. Operating decomposition is internally consistent.
+Cross-check (standalone): Core PBT ex-OI (std, Q1FY27) 151.10 ties to segment "Total Operating Results" 151.13 (L238), and 147.40 (Q1FY26) ties to 147.41 (L238); rounding only.
+
+Cross-check (consolidated): Core PBT ex-OI (cons) ties to the consolidated segment "Total Results" line (L361) in every period: Q1FY27 151.10 vs 151.13, Q4FY26 50.07 vs 50.07, Q1FY26 146.73 vs 146.74, FY26 321.92 vs 321.93 (rounding only). The consolidated operating figures equal standalone ONLY in Q1FY27. In Q4FY26 and FY26 the consolidated Operating EBITDA and Core PBT ex-OI run materially BELOW standalone: 104.20 vs 130.44 in Q4FY26 (a 26.24 cr gap) and 443.77 vs 477.20 for FY26 (a 33.43 cr gap), because consolidated Other Expenses exceed standalone by 30.34 cr in Q4FY26 and by 33.43 cr for FY26 (L309 vs L189). That line-level operating divergence is the numerical core of A3-02 and cannot be produced by pure equity-method consolidation (the only consolidation basis disclosed, Con N2). Operating decomposition is internally consistent and reconciled to both the standalone (L238) and consolidated (L361) segment Total Results blocks.
 
 ---
 
@@ -174,14 +176,14 @@ Cross-check: Core PBT ex-OI (std, Q1FY27) 151.10 ties to segment "Total Operatin
 | Metric | Q1 FY26 | Q1 FY27 | YoY change | Verdict |
 |---|---|---|---|---|
 | Revenue from Operations | 732.60 | 906.64 | +23.76% | Same as standalone |
-| Operating EBITDA | 169.90 | 191.04 | +12.44% | Same |
-| Core Operating PBT (before JV share) | 147.40 | 151.10 | +2.51% | Same |
+| Operating EBITDA | 169.24 | 191.04 | +12.88% | Cons base differs from std 169.90 (see A3-02) |
+| Core Operating PBT (before JV share) | 146.73 | 151.10 | +2.98% | Cons base differs from std 147.40 (see A3-02) |
 | Reported PBT (before JV share) | 224.43 | 227.25 | +1.26% | Flat |
 | Share of JV/associates | (0.10) | 0.42 | +0.52 cr | Swung positive, immaterial |
 | PAT | 163.77 | 163.43 | −0.21% | Down |
 | EPS (share-adjusted) | 5.15 | 5.14 | −0.19% | Down |
 
-### The six mandatory diagnostics (standalone anchor; consolidated identical on operating lines)
+### The six mandatory diagnostics (standalone anchor; consolidated operating lines equal standalone ONLY in Q1FY27, and diverge in the Q1FY26 base and prior periods, per the S-vs-C gap section and A3-02)
 
 1. Did revenue grow YoY? Yes, +23.76% (732.60 -> 906.64). No prior guidance on file to benchmark against (first-look).
 2. Did operating EBITDA margin expand/contract? Contracted. Q1 FY27 21.07% vs Q1 FY26 23.19% = −212 bps, despite the Rs 79.03 cr GST Compensatory Cess expense disappearing YoY. The cess removal was more than offset by cost inflation elsewhere (see diagnostic 4).
@@ -261,7 +263,9 @@ Cash-conversion assessment: INDETERMINATE for this quarter. No CFO reading exist
 
 ---
 
-## SEGMENT ANALYSIS (standalone page 5 / consolidated page 7 — identical operating figures)
+## SEGMENT ANALYSIS (standalone page 5 / consolidated page 7)
+
+Operating-figures note (corrects the earlier "identical operating figures" claim): the consolidated operating figures equal standalone ONLY in Q1FY27, where Mining result 208.07, Power result (6.00), and Total Operating Results 151.13 tie on both pages. This equality does NOT hold in the prior periods. In Q4FY26 and FY26 the consolidated operating cost base runs ABOVE standalone: consolidated Other Expenses exceed standalone by 30.34 cr in Q4FY26 (212.81 vs 182.47, L309 vs L189) and by 33.43 cr for FY26 (564.18 vs 530.75), and consolidated Un-allocable Corporate Results are heavier than standalone in Q4FY26 ((80.46) cons L360 vs (54.22) std L237). Consequently the consolidated segment Total Results (L361: Q4FY26 50.07, FY26 321.93) sit well below the standalone Total Operating Results (L238: Q4FY26 76.30, FY26 355.35), and the 1C consolidated Operating EBITDA/Core PBT rows above now reflect this (Q4FY26 104.20 cons vs 130.44 std; FY26 443.77 cons vs 477.20 std). Pure equity-method consolidation, which is the ONLY consolidation basis disclosed (Con N2, five equity-method JVs/associates), cannot move a line-level operating expense. This prior-period operating-line divergence is exactly the A3-02 open item and it REINFORCES that finding rather than resolving it: an operating-cost difference of this size implies something was line-consolidated, eliminated, or trued-up in FY26/Q4FY26 that is absent in Q1FY27. It is named as an open item and routed to management Q1, not asserted either way.
 
 | Segment | Metric | Q1 FY26 | Q4 FY26 | Q1 FY27 | YoY | Anchor (Q1FY27) |
 |---|---|---|---|---|---|---|
@@ -291,7 +295,7 @@ The five consolidated entities are all equity-method JVs/associates (Con N2, L38
 | FY26 | 990.81 | 956.67 | −34.14 | −3.44% | (0.71) — leaves −33.43 residual UNEXPLAINED | L198/L322/L316 |
 | Q1 FY27 | 163.01 | 163.43 | +0.42 | +0.26% | +0.42 — fully explained, zero residual | L198/L322/L316 |
 
-The Q4 FY26 and FY26 residuals sit almost entirely in one line: consolidated Other Expenses exceeded standalone by +30.34 cr in Q4 (212.81 vs 182.47, L309 vs L189) and by +33.43 cr for FY26 (564.18 vs 530.75). Pure equity-method consolidation cannot move an operating expense line. Something was line-consolidated, eliminated, or trued-up in FY26 and Q4 FY26 that is absent in Q1 FY27. The S-vs-C PAT gap therefore swung >12 pp between Q4 FY26 and Q1 FY27. This is the strongest ambiguous finding and the lead management question (Q1 below). It cannot be resolved from this filing (no prior-quarter ledger, no concall); it is named as an open item, not asserted either way.
+The Q4 FY26 and FY26 residuals sit almost entirely in one line: consolidated Other Expenses exceeded standalone by +30.34 cr in Q4 (212.81 vs 182.47, L309 vs L189) and by +33.43 cr for FY26 (564.18 vs 530.75). Pure equity-method consolidation cannot move an operating expense line. Something was line-consolidated, eliminated, or trued-up in FY26 and Q4 FY26 that is absent in Q1 FY27. The S-vs-C PAT gap therefore swung >12 pp between Q4 FY26 and Q1 FY27. This is the strongest ambiguous finding and the lead management question (Q1 below). It cannot be resolved from this filing (no prior-quarter ledger, no concall); it is named as an open item, not asserted either way. The corrected 1C consolidated operating rows above make this divergence visible on the operating lines themselves (Op EBITDA cons Q4FY26 104.20 vs std 130.44; FY26 443.77 vs 477.20), not only at PAT.
 
 ---
 
@@ -376,7 +380,7 @@ Channel: no concall was scheduled or supplied. Recommended channel is a formal I
 
 | # | Question | From finding | Why it matters | Bull answer | Bear answer |
 |---|---|---|---|---|---|
-| 1 | Consolidated PAT was Rs 27.09 cr below standalone in Q4 FY26 (194.09 vs 221.18) and Rs 34.14 cr below for FY26 (956.67 vs 990.81), driven almost entirely by consolidated Other Expenses exceeding standalone (+30.34 cr Q4 L309 vs L189; +33.43 cr FY26). In Q1 FY27 the two are identical and the gap is only +0.42 cr (the JV/associate equity share). Since the only consolidated entities are equity-method JVs/associates, what was line-consolidated, eliminated, or trued-up in FY26 that produced that operating-expense divergence, and why is it absent this quarter? | A3-02 (AMBIGUOUS) | An unexplained 12 pp swing in the S-vs-C gap on operating lines that equity-method consolidation cannot produce; goes to reliability of the consolidated series | A specific, one-time Q4 consolidation adjustment or a now-deconsolidated entity, fully documented | Vague "reclassification/rounding" answer, implying an undisclosed consolidated entity or recurring elimination |
+| 1 | Consolidated PAT was Rs 27.09 cr below standalone in Q4 FY26 (194.09 vs 221.18) and Rs 34.14 cr below for FY26 (956.67 vs 990.81), driven almost entirely by consolidated Other Expenses exceeding standalone (+30.34 cr Q4 L309 vs L189; +33.43 cr FY26), which also pushes consolidated Operating EBITDA below standalone (104.20 vs 130.44 in Q4FY26; 443.77 vs 477.20 FY26). In Q1 FY27 the two are identical and the gap is only +0.42 cr (the JV/associate equity share). Since the only consolidated entities are equity-method JVs/associates, what was line-consolidated, eliminated, or trued-up in FY26 that produced that operating-expense divergence, and why is it absent this quarter? | A3-02 (AMBIGUOUS) | An unexplained 12 pp swing in the S-vs-C gap on operating lines that equity-method consolidation cannot produce; goes to reliability of the consolidated series | A specific, one-time Q4 consolidation adjustment or a now-deconsolidated entity, fully documented | Vague "reclassification/rounding" answer, implying an undisclosed consolidated entity or recurring elimination |
 | 2 | GST Compensatory Cess expense was Rs 79.03 cr in Q1 FY26 and nil in Q1 FY27 (L184/L304). Is this removal permanent, and does the benefit accrue fully to margin or is it offset by a matching price/revenue adjustment? | A3-01 (FORWARD-SIGNAL) | An ~79 cr/quarter cost line to nil is a structural margin change if permanent; margin still fell YoY, so its fate matters | Permanent removal of the coal/lignite compensatory cess that structurally lifts EBITDA | Temporary/timing, or fully price-offset so no net margin benefit |
 | 3 | Loading of lignite and overburden removal rose +50.2% YoY (290.90 -> 436.78, L188) against +22.7% mining revenue, and Mining segment assets grew +39.8% YoY (2,930.20 -> 4,095.65, L244). What is driving the per-tonne cost inflation, what capex underlies the asset build, and when do the added assets lift volume enough to hold segment ROCE? | A3-07 (FORWARD-SIGNAL) | Explains why +24% revenue produced flat PAT; the capex-absorption gap (D&A +51.5%, finance +1,222%) | Front-loaded overburden ahead of a step-up in saleable lignite, with a dated commissioning path | Structurally higher strip ratios / cost base that permanently compresses mining margin |
 | 4 | Standalone ETR was 28.27% in Q1 FY27 (L195-197) versus statutory 25.17%, while Q4 FY26 was 15.50% due to a Rs 47.02 cr earlier-year credit (L197). What is the guided normalized effective tax rate for FY27? | A3-05 (AMBIGUOUS) | Q4 low is non-recurring; a persistently above-statutory rate compresses forward PAT | ETR guided to ~25-26% (statutory), Q1 elevation is a timing item | ETR structurally above statutory (disallowances), permanently reducing PAT |
@@ -386,7 +390,7 @@ Channel: no concall was scheduled or supplied. Recommended channel is a formal I
 | 8 | Both MoUs are framed as "evaluate"/"explore" with details "in due course" (L53, L72). Are they binding, and what is the indicative capex envelope, ownership/JV structure, and go/no-go decision date for each? | A3-04 (AMBIGUOUS) | Determines whether these are real capital commitments or non-binding optionality, and the balance-sheet exposure | Defined capex envelope, ownership structure, and a decision gate | No capex sizing or structure — pure optionality, un-modellable |
 
 Top 3 by likelihood of thesis-changing information:
-1. Q1 (A3-02) — the consolidation-gap answer tests the integrity of the entire consolidated series; a weak answer would materially lower confidence in reported group numbers (bear-confirming if evasive).
+1. Q1 (A3-02) — the consolidation-gap answer tests the integrity of the entire consolidated series; a weak answer would materially lower confidence in reported group numbers (bear-confirming if evasive). The corrected 1C rows show the divergence lives on the operating lines, not only at PAT, which sharpens the question.
 2. Q3 (A3-07) — resolves the core operational question of whether the mining ramp converts to profit; the single cleanest bull/bear pivot.
 3. Q2 (A3-01) — GST cess permanence is the largest single structural swing to forward margin; a clean "permanent to margin" answer is the strongest bull input available.
 
@@ -408,7 +412,7 @@ The two BENIGN A3 findings (A3-09 drafting/name inconsistencies; A3-10 GSPC->GEL
 | 8 | GST Compensatory Cess — confirm permanence and margin treatment | Next IR interaction / AR | L184 | Structural margin item |
 | 9 | Normalized FY27 effective tax rate | Q2 FY27 | L195-197 | Forward earnings input |
 | 10 | OCI FVTOCI deferred-tax assumption (GSPC->GEL swap) | FY27 Annual Report | L204 | Non-cash / disclosure |
-| 11 | Consolidation-gap explanation (Q4 FY26/FY26 operating-line divergence) | Next filing with prior-quarter comparatives / IR | L309 vs L189 | Reliability watchpoint |
+| 11 | Consolidation-gap explanation (Q4 FY26/FY26 operating-line divergence, now visible on Op EBITDA and Core PBT, not only PAT) | Next filing with prior-quarter comparatives / IR | L309 vs L189; L361 vs L238 | Reliability watchpoint |
 
 ---
 
@@ -416,11 +420,11 @@ The two BENIGN A3 findings (A3-09 drafting/name inconsistencies; A3-10 GSPC->GEL
 
 VERDICT: PROCEED WITH CAVEATS.
 
-Basis. The numbers are internally consistent and fully reconciled (100% ledger, arithmetic ties on segments and PAT bridge), the auditor conclusion is unmodified on both statements, and there is no red flag or thesis-broken condition (none could exist — first-look). Company quality never halts a run and no mechanical failure occurred. The verdict is capped at PROCEED WITH CAVEATS, not PROCEED, for two named-evidence reasons:
+Basis. The numbers are internally consistent and fully reconciled (100% ledger, arithmetic ties on segments and PAT bridge, and the consolidated operating rows now tie to the consolidated segment Total Results L361), the auditor conclusion is unmodified on both statements, and there is no red flag or thesis-broken condition (none could exist — first-look). Company quality never halts a run and no mechanical failure occurred. The verdict is capped at PROCEED WITH CAVEATS, not PROCEED, for two named-evidence reasons:
 1. Cash conversion is INDETERMINATE. No cash-flow statement exists at Q1 (Reg 33 half-yearly rule), so CFO/PAT is uncomputable. House rule forbids INDETERMINATE cash conversion resolving silently to PROCEED. Missing evidence: the H1 FY27 cash-flow statement and balance sheet, due with the Q2 FY27 filing.
 2. No concall / no presentation was supplied. Every forward interpretation in this review (GST cess permanence, mining-capex conversion, Power path, normalized ETR, OCI-tax assumption, and above all the Q4 FY26/FY26 standalone-vs-consolidated operating-line divergence) is left open and routed to the eight management questions. These cannot be confirmed from a results filing alone.
 
-Flags propagated within the verdict (none halting): operating margin compressed −212 bps YoY as +24% revenue converted to flat PAT (loading/overburden cost inflation); Power segment operating loss with revenue doubling; D&A +51.5% and finance +1,222% signalling an unfinished capex-absorption phase; and the strongest open item — the >12 pp swing in the standalone-vs-consolidated PAT gap on operating expense lines that equity-method consolidation cannot explain (A3-02). This review establishes the GMDC baseline; it frames no position.
+Flags propagated within the verdict (none halting): operating margin compressed −212 bps YoY as +24% revenue converted to flat PAT (loading/overburden cost inflation); Power segment operating loss with revenue doubling; D&A +51.5% and finance +1,222% signalling an unfinished capex-absorption phase; and the strongest open item — the >12 pp swing in the standalone-vs-consolidated PAT gap on operating expense lines that equity-method consolidation cannot explain (A3-02), now shown on the consolidated Operating EBITDA and Core PBT lines (Q4FY26 104.20 vs std 130.44; FY26 443.77 vs 477.20), not only at PAT. This review establishes the GMDC baseline; it frames no position.
 
 ```yaml
 stage: A4-analyst
@@ -445,7 +449,7 @@ sc_gap_pat_pct:
   - {period: "Q1FY26", gap_pct: -0.22}
   - {period: "FY26", gap_pct: -3.44}
 questions_for_management:
-  - {q: "What was line-consolidated/eliminated/trued-up in FY26 producing the Rs 27-34 cr consolidated operating-expense divergence, absent in Q1FY27?", from_finding_id: "A3-02"}
+  - {q: "What was line-consolidated/eliminated/trued-up in FY26 producing the Rs 27-34 cr consolidated operating-expense divergence (also visible on cons Op EBITDA 104.20 vs std 130.44 Q4FY26; 443.77 vs 477.20 FY26), absent in Q1FY27?", from_finding_id: "A3-02"}
   - {q: "Is the Rs 79.03 cr GST Compensatory Cess removal permanent, and does it accrue to margin or is it price-offset?", from_finding_id: "A3-01"}
   - {q: "What drives loading/overburden cost +50% YoY and Mining asset +40% YoY, and when do added assets lift volume enough to hold ROCE?", from_finding_id: "A3-07"}
   - {q: "What is the guided normalized FY27 ETR, given Q1FY27 28.27% above statutory and Q4FY26 flattered by the 47.02 cr earlier-year credit?", from_finding_id: "A3-05"}
@@ -463,12 +467,12 @@ monitorables:
   - {item: "GST cess permanence and margin treatment", implied_date: "next IR / AR", source_ref: "L184"}
   - {item: "Normalized FY27 effective tax rate", implied_date: "Q2FY27", source_ref: "L195-197"}
   - {item: "OCI FVTOCI deferred-tax assumption (GSPC->GEL swap)", implied_date: "FY27 Annual Report", source_ref: "L204"}
-  - {item: "Consolidation-gap explanation (Q4FY26/FY26 operating-line divergence)", implied_date: "next comparatives / IR", source_ref: "L309 vs L189"}
+  - {item: "Consolidation-gap explanation (Q4FY26/FY26 operating-line divergence, on Op EBITDA/Core PBT and PAT)", implied_date: "next comparatives / IR", source_ref: "L361 vs L238; L309 vs L189"}
 flags:
   - "Operating EBITDA margin -212 bps YoY: +23.76% revenue converted to -0.68% PAT (loading/overburden cost inflation)"
   - "Power segment operating loss (6.00) with revenue +134.9% YoY; FY26 segment loss (79.61)"
   - "D&A +51.5% and finance cost +1,222% YoY: unfinished capex-absorption phase; Mining assets +39.8% YoY"
-  - "S-vs-C PAT gap swung >12pp (Q4FY26 -12.25% to Q1FY27 +0.26%) on operating-expense lines equity-method consolidation cannot explain (A3-02, strongest open item)"
+  - "S-vs-C PAT gap swung >12pp (Q4FY26 -12.25% to Q1FY27 +0.26%) on operating-expense lines equity-method consolidation cannot explain; corrected cons Op EBITDA 104.20 vs std 130.44 Q4FY26, 443.77 vs 477.20 FY26 (A3-02, strongest open item)"
   - "Cash conversion INDETERMINATE (no CFO at Q1); no concall/presentation supplied — forward interpretations unconfirmed"
 review_path: "/home/user/inflection-pipeline/runs/gmdc-q1fy27/work/review_gmdc_q1fy27.md"
 ```

@@ -27,3 +27,15 @@ Quarter detected: Q1 FY27 (quarter ended June 30, 2026)
 
 ## COMPANY MEMORY / NOTION
 - No companies/URBANCO.md. Notion page fetch attempted at orchestrator step 0F.
+
+## PIPELINE OUTCOME (2026-07-31)
+- A1 results: PASS (11/11 pages, 582 lines, no OCR). A1 presentation: PASS (5/5 pages).
+- A2 results: PASS (16 notes / 88 line items / 9 ZERO_STANDING / 10 entities / 14 auditor paras).
+  A2 presentation: PASS (5 slides / 158 numeric tokens / 14 footnotes).
+- A3 results: GATE PASS (17/17 checks; 10 FINDINGs). A3 presentation: GATE PASS (17/17; 4 FINDINGs).
+- A4: merged review written. Protocol verdict PROCEED WITH CAVEATS (capped by INDETERMINATE cash
+  conversion). Decision Status UNCHANGED WATCHLIST/AVOID; no thesis-broken trigger fired. 12 mgmt Qs.
+- A5: VERDICT COMPLETE (0 orphan rows / 0 arithmetic mismatches / 0 surviving bear counters). No loop-back.
+- NOTION SAVE: done. Full review + A3 forensics tables + A5 verdict inserted at page end; Key Notes
+  audit trail prepended (prior entries preserved); Decision Status not changed (no trigger fired).
+- Count reconciliation: 16 notes / 0 turns / 5 slides, all reviewed.

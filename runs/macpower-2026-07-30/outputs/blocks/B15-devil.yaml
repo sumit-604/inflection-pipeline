@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Cash drag is likely STRUCTURAL not growth-induced (PSU/subsidy-financed customer payment lags; management said conversion will not improve rapidly; receivables +57.5% vs revenue +8.6%, MSME payables +81.4%, investment book liquidated to fund WC). At the framework's 0.65x band, destination falls to 18.2x, fair value ~Rs 784, honest entry ~Rs 320-400 additive / ~Rs 236 RRM, so the Rs 440-550 zone is too kind (B02 #1/#2/#6/#9, B10, B11)."
+  - "SHARED CATALYST correlation: the 13-acre/60-acre land (slipped 4x since March 2024) gates BOTH the 28-30% revenue extrapolation AND the 25% margin/ROCE/JV story; if it fails, base EPS Rs 43 and the margin fall together. The thesis prices these as separate risk rows; they are one single point of failure (B05 1C/3C, deliberation Sec 5)."
+  - "Forward EPS Rs 43 rests on a ~10% PAT margin that FY25 notes show was mechanically inventory-built: a 50.9% raw-material build depressed COGS while Employee +29.7% and Other +38.1% (Misc +97.0%) outran revenue +8.6%. Normalisation drops EPS below the bear Rs 40.5 (B02 #3/#8)."
+  - "ROCE is DECLINING in direction (ROE 20.15->17.65, ROCE 26.70->23.75, capital turnover 2.02->1.83), not merely STAGNANT; the audited Note 38 23.75% is the conservative truth and the screener 29.1% should be distrusted, not used to lift Pillar 1 (B02 #10, B10 conflicts)."
+  - "Defence-conversion leg is CONTRADICTED by JYOTICNC (>Rs 800 cr defence executed FY26, Rs 180 cr ordnance in one quarter, 27-46% of intake) versus MACPOWER single-digit-of-revenue at 10-13% bid conversion; a headline growth optionality is far weaker than framed (B06 Q5)."
+  - "The AVOID cannot be flipped to a buy from the bull side: destination is cap-bound at 25x (Cables/Industrial) and the Hurdle STOPS on bull EPS (1.38 < 1.953). No earnings beat rescues a cap-bound multiple; the market at 34.4x under-prices cash, not over-prices growth (B11 Sec 4E)."

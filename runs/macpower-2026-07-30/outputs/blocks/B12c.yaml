@@ -3,19 +3,33 @@ company: "MACPOWER"
 run_date: "2026-07-30"
 model: claude-opus-4-8
 status: complete
-scope: "phase 1 - gate0 + emerging moat only; valuation deferred to phase 3"
+scope: "full: phase-1 gate0+emerging-moat + phase-3 valuation-adherence (extended to Role 2 decision/sizing)"
+
+# ---- PHASE 1 HALF (Gate 0 + Emerging Moat) ----
 gate0: {rules_checked: 47, fails: []}
 emoat: {rules_checked: 30, fails: []}
-valuation: {status: "pending phase 3", rules_checked: 0, fails: []}
-framework_adherence: 100   # Gate0+EM portion: 77/77 hard rules applied as written
-recomputed_destination_pe: ""   # n/a in phase 1; valuation deferred
-recomputed_decision: ""         # concur - Gate 0 AVOID and EM MODEST re-derive cleanly
-findings:
-  - {severity: MINOR, framework: gate0, location: "Block A / A4", note: "ROCE trend -0.46pp falls in an undefined sub-1pp-decline gap; maker took conservative band 3 (vs strict-read 5) and flagged. Block A 18 vs 20 immaterial; classification locked by DB4+history."}
-  - {severity: MINOR, framework: gate0, location: "Block F / M4 & M10", note: "Both top bands need growth AND receivable-days stability; growth met, stability fails (+17.72d), and the intermediate band is decline-year-keyed. Maker applied nearest band 3 and flagged. As-scored moat count (4=STRONG) holds."}
-  - {severity: MINOR, framework: gate0, location: "Block F / M11", note: "Strict band 'growth >15% but selling% rising = 1' yields 1, not 0 (rev CAGR 17.54%). Maker scored 0 under the framework's explicit <6yr conservative-scoring latitude - authorised. Immaterial: still <3, moat count and grand-total band unchanged."}
-  - {severity: MINOR, framework: emoat, location: "YAML evidence_mix vs completionist recount", note: "evidence_mix.documented:6 vs recount '4 documented items across 3 categories' count different bases (all documented threads vs documented items backing scored categories). Not a scoring error; presentational."}
+gate0_emoat_findings:
+  - {severity: MINOR, framework: gate0, location: "Block A / A4", note: "ROCE trend -0.46pp in an undefined sub-1pp-decline gap; maker took conservative band 3, flagged. Classification locked by DB4+history; immaterial."}
+  - {severity: MINOR, framework: gate0, location: "Block F / M4 & M10", note: "Top bands need growth AND receivable-days stability; stability fails (+17.72d); maker applied nearest band 3, flagged. Moat count 4=STRONG holds."}
+  - {severity: MINOR, framework: gate0, location: "Block F / M11", note: "Strict band yields 1 not 0; maker scored 0 under <6yr conservative latitude. Immaterial."}
+  - {severity: MINOR, framework: emoat, location: "evidence_mix vs recount", note: "Different counting bases; presentational, not a scoring error."}
+
+# ---- PHASE 3 HALF (Valuation adherence + Role 2) ----
+valuation:
+  rules_checked: 27
+  fails: []          # zero hard fails; 3 minor, all decision-neutral
+  recomputed_destination_pe: "25.0x cap-bound (CONCUR)"
+  recomputed_decision: "AVOID (Hurdle STOP) (CONCUR)"
+  concur: true
+valuation_findings:
+  - {severity: MINOR, location: "B11 Pillar 3 / Section 1B 3a", note: "Award +2x correct, but rationale 'grade B not A so no +3x' misreads Amdt 4.1 (+3x unlocks at A OR B). Correct reason: only two of three growth qualifiers pass (SOM-implied fails its capex/land-gated capacity cross-check). Even at +3x destination stays cap-bound at 25.0x. No impact."}
+  - {severity: MINOR, location: "B11 RRM dual-track / governing choice", note: "Master 4A default on 34% divergence would put RRM 16.5x in charge (entry ~Rs 291-364). Maker governs on additive 25.0x (entry Rs 550) per operator approval of the 25.0x base. Legitimate override, decision-neutral (AVOID both tracks); reported entry Rs 440-550 is less conservative than RRM-default, revisit if price approaches the zone."}
+  - {severity: MINOR, location: "B11 Pillar 2 cash multiplier", note: "INDETERMINATE handled 1.00x provisional / 0.80x downside, no clean pass; disposition correctly capped PROCEED WITH CAVEATS with missing rating PDF named. Sub-0.50 cumulative CFO/PAT could argue sub-1.0x directly, but destination cap-bound at 25x. Decision-neutral."}
+
+# ---- COMBINED ----
+findings: []   # see gate0_emoat_findings and valuation_findings; no CRITICAL/MAJOR in either half
 critical_count: 0
 major_count: 0
-minor_count: 4
-acceptance_rate: 100            # 77/77 Gate0+EM rules passed as written
+minor_count: 7
+framework_adherence: 99        # combined: gate0+EM 100% (77/77) and valuation 96% (27 rules), weighted ~99%; no hard fails either half
+concur: true

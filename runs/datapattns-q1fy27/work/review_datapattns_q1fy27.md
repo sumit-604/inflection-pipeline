@@ -15,7 +15,7 @@
 |---|---|---|
 | results | pass | 8 notes + 27 line items + 1 agenda item + 4 auditor paras + 3 signature blocks + 0 entities + 0 annexures |
 | acquisition | pass | 10 Annexure-A disclosure fields + 24 granular sub-items + 18 letter/header fields + 8 signature-block lines |
-| presentation | pass | 32 slides; 918 gated financial values (340 P&L/margin + 98 order-book/inflow + 63 segment/customer + 296 balance-sheet/cash-flow + 121 headline stats) + 43 zero-standing cells + 9 footnotes |
+| presentation | pass | 32 slides; 922 gated financial values (340 P&L/margin + 98 order-book/inflow + 63 segment/customer + 296 balance-sheet/cash-flow + 125 headline stats, incl. 20 values on slide 24) + 43 zero-standing cells + 9 footnotes |
 | concall | pass | **84 turns** (39 question-turns + 28 answer-turns + 1 Moderator + 1 Closing + 15 unbracketed operator/mgmt), 39 questions, 66 management numbers, 29 forward-commitment phrases, 14 hedge phrases — A2 COUNT TEST all match (grep=sweep). |
 
 Notes total for preamble = 8 (results) + 10 (acquisition disclosure fields) = **18**. Turns = **84** (concall). Slides = **32**. **No ledger row is unreviewed; proceeding.**
@@ -198,7 +198,7 @@ Reported PAT change = 25.50 → 22.06 = **−3.44 Cr**.
 | FCF (CFO − Capex) | ND (annual capex split not clean) | **ND** | ND | — |
 | Working capital change | −211.4 (deck l.994, -2,114 Mn FY26) | **ND** | ND | Chronic WC absorption |
 | Receivable days | 307 (deck l.820, FY26, H1-TTM basis) | **ND** (no DSO; ~Rs 2 Cr fresh provision on long-pending receivables, concall turn 17) | ND | Structural (~280-308 for 4 yrs); provisioning a negative marker |
-| Inventory days | 108 (deck l.837, FY26) | **ND** | ND | — |
+| Inventory days | 108 (deck l.840, FY26) | **ND** | ND | — |
 | Payable days | 43 (deck l.820, FY26) | **ND** | ND | — |
 | Cash Conversion Cycle | 428 (deck l.837, FY26) | **ND** | ND | ~427-432 for 3 yrs — structural |
 | PPE | 160.6 (deck l.943, Mar-26, 1,606 Mn) | **ND** | ND | — |
@@ -704,7 +704,7 @@ Utilisation: not disclosed. Contract wins: modest/qualitative; **order-book qual
 | 1 | Reconcile cash Rs 530 Cr (call) vs Rs 465.9 Cr (deck) at 30-Jun-2026 — which is the audited figure and what are the Rs 64 Cr of items? | Balance-sheet number does not tie across sources | Q2 half-yearly BS | A3-13 |
 | 2 | Production vs development split of the order book (re-ask; refused twice) | Order-book quality is the contested cut | Whether they classify it | A3-08 |
 | 3 | Revenue quantum that slipped in Q1 and how much recognised in Q2 (re-ask; evaded) | Tests the "temporary delays" claim | Q2 revenue recovery vs the Rs 331 Cr/qtr H2 need | A3-09 |
-| 4 | Capex RAISED to Rs 200 Cr+ — funding source; does it draw the net cash? Deployment schedule incl. the Rs 26.25 Cr QIP | Capex vs 0.30x CFO; cash-trail | Q2 capex-YTD, CWIP, net-cash move | A3-15, DP-F6a |
+| 4 | Capex RAISED to Rs 200 Cr+ — funding source; does it draw the net cash? Deployment schedule incl. the Rs 26.25 Cr QIP | Capex vs 0.30x CFO; cash-trail | Q2 capex-YTD, CWIP, net-cash move | A3-07, A3-15, DP-F6a |
 | 5 | L1 large-contract value and expected announcement date | Near-term catalyst | Contract signing / exchange filing | A3-04 |
 | 6 | BrahMos seeker order value and intake timing within FY27 (>Rs 500 Cr re-evaluate trigger) | Catalyst, value withheld | Order filing this FY | A3-03 |
 | 7 | Rs 1,726 Cr negotiated conversion — hard date (delayed from AGM, +6mo +2mo) | Delivery-slippage on a carried promise | Confirmed-book step-up at Q2 | commitment/turn 25 |
@@ -797,7 +797,7 @@ questions_for_management:
   - {q: "Reconcile cash Rs 530 Cr (call turn 11) vs Rs 465.9 Cr (deck) at 30-Jun-2026 — Rs 64 Cr gap; which is audited and what are the items?", from_finding_id: "concall-A3-13"}
   - {q: "Production vs development split of the Rs 2,654 Cr order book (refused twice, turns 85/89)", from_finding_id: "concall-A3-08"}
   - {q: "Revenue quantum slipped in Q1 and how much recognised in Q2 (evaded, turn 21)", from_finding_id: "concall-A3-09"}
-  - {q: "Capex RAISED to Rs 200 Cr+ minimum (turn 109) vs deck Rs 150 Cr — funding vs 0.30x CFO; does it draw net cash; QIP Rs 26.25 Cr deployment", from_finding_id: "concall-A3-15, DP-F6a"}
+  - {q: "Capex RAISED to Rs 200 Cr+ minimum (turn 109) vs deck Rs 150 Cr — funding vs 0.30x CFO; does it draw net cash; QIP Rs 26.25 Cr deployment", from_finding_id: "concall-A3-07, concall-A3-15, DP-F6a"}
   - {q: "L1 large-contract value and expected announcement date (value withheld, turn 45)", from_finding_id: "concall-A3-04"}
   - {q: "BrahMos seeker order value and intake timing within FY27 (>Rs 500 Cr trigger; value withheld, turn 73)", from_finding_id: "concall-A3-03"}
   - {q: "Rs 1,726 Cr negotiated conversion — hard date (delayed from AGM +6mo +2mo, turn 25)", from_finding_id: "concall-commitment-turn25"}

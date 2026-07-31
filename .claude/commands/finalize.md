@@ -121,8 +121,14 @@ phase 3), then:
 6. FINAL SYNTHESIS. Invoke stage-13-synthesis with everything (all blocks
    B01..B15, both halves of B12c, the full confidence delta, the
    deliberation record, and the stage reports), instructing it in the
-   task message to run in PHASE 3 FINALIZE mode and produce all four
+   task message to run in PHASE 3 FINALIZE mode and produce all
    deliverables, each written to outputs/final/ at its FILE dividers:
+     - operator-brief.md: the mandatory three-part plain-language brief per
+       the synthesis prompt's Deliverable 0 rules (SUMMARY 10-12 lines,
+       SECTOR AND COMPETITIVE INTELLIGENCE 6-7 lines, BUSINESS MODEL WHAT IS
+       UNIQUE 5-6 lines). In FINALIZE mode the SUMMARY carries the full
+       valuation conclusion (entry zone, decision) and closes on the
+       falsification metric. The run is NOT complete without this file.
      - business-narrative.md: the final narrative, now including the
        valuation conclusion (both destination PE tracks, entry zone,
        decision) and the thesis/devil's-advocate outcome.
@@ -146,8 +152,10 @@ phase 3), then:
 
 7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
    full save content structured per Notion_Save_Instructions conventions:
-   page title, run summary, verdict, entry zones, thesis-broken triggers,
-   monitoring checklist, and links (Drive folder, run folder). Mark the
+   page title, run summary, the full operator-brief.md text (to be saved as
+   three callouts at the top of the appended run section), verdict, entry
+   zones, thesis-broken triggers, monitoring checklist, and links (Drive
+   folder, run folder). Mark the
    file explicitly at the top:
 
    "Execute via the claude.ai project; never overwrite Decision Status."
@@ -187,13 +195,14 @@ phase 3), then:
    "phase 3 (finalize): <ticker> <date>" and report to the user: the
    recommendation verdict line, the valuation decision, entry range, flags
    active, the full confidence delta overall, the devil's-advocate overall
-   verdict, and the paths to the four final deliverables plus
+   verdict, and the paths to the final deliverables plus
    outputs/final/notion-payload.md.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
-   in this order: the thesis verdict card (from B14), then the devil's
-   advocate final table (from B15). The verdict card must carry a ZONE
+   the Operator Brief FIRST (operator-brief.md, all three parts), then the
+   thesis verdict card (from B14), then the devil's advocate final table
+   (from B15). The verdict card must carry a ZONE
    REACHABILITY line: the entry zone top versus the 52-week low and versus
    the lowest tested price since listing, both as percentages, computed
    from the screening CSVs where price history exists (state "price history

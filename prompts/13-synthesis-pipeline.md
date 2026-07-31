@@ -26,6 +26,36 @@ deliverables in the operator's voice.
   evidence is genuinely that lopsided, and then say so.
 - Plain verbs. Short sentences where the content allows.
 
+## DELIVERABLE 0: operator-brief.md (MANDATORY — write this first)
+
+The operator's plain-language wrap. The run has not delivered without it,
+however complete the other four files are. Same WRITING RULES as above, plain
+words a non-specialist reads once and understands. Three parts, in this order
+and these line counts (firm, not approximate). No block references, no tables,
+no line citations. Numbers rounded for reading.
+
+1. SUMMARY (10 to 12 lines). The whole thesis as a narrative: what the business
+   does and for whom, what is changing (the transition, if there is one), what
+   the numbers say (Gate 0 posture, cash reality, growth), what management says
+   versus what it does, where the market opportunity sits, what the valuation
+   concluded (both tracks, entry zone, decision), and the single thing that
+   would break the thesis (the falsification metric) in plain words.
+
+2. SECTOR AND COMPETITIVE INTELLIGENCE (6 to 7 lines). Where the industry is
+   heading and how this company sits against its competitors, in plain
+   language. Draw on the concall and peer blocks (B05, B06), the TAM block
+   (B09), and any company memory. Name the tailwinds and the threats
+   symmetrically.
+
+3. BUSINESS MODEL, WHAT IS UNIQUE (5 to 6 lines). A simple explanation of how
+   the company actually makes money and what is genuinely unusual or hard to
+   replicate about it. Draw on the business-model and moat blocks (B04, B07)
+   and the concall.
+
+Write this inline from the blocks and reports already in context; it needs no
+fresh analysis and no separate agent. If an input is genuinely thin, say so in
+one honest clause rather than padding to the line count.
+
 ## DELIVERABLE 1: business-narrative.md
 
 Line 1: the ultra-short headline, 6 to 7 words, no punctuation tricks.
@@ -239,19 +269,19 @@ worklist the deliberation session uses to close its own gaps.
 
 ## NOTION SAVE PAYLOAD
 
-After the three files, emit a notion_save block the orchestrator uses
-per Notion_Save_Instructions: page title, the run summary (headline +
-verdict line + decision + entry range), the Drive folder link, and the
-explicit instruction set: fetch the live company page first if it
-exists; NEVER overwrite Decision Status from a pipeline run; append,
-do not replace.
+After the files, emit a notion_save block the orchestrator uses per
+Notion_Save_Instructions: page title, the run summary (headline + verdict line
++ decision + entry range), the full operator-brief.md text (saved as three
+callouts at the top of the appended run section), the Drive folder link, and
+the explicit instruction set: fetch the live company page first if it exists;
+NEVER overwrite Decision Status from a pipeline run; append, do not replace.
 
 ## OUTPUT ORDER
 
-business-narrative.md content, then fttcp-recommendation.md content,
-then verifier-summary.md content, then fttcp-handoff.md content, each
-preceded by a `=== FILE: <name> ===` divider line, then exactly this
-fenced YAML block:
+operator-brief.md content first, then business-narrative.md content, then
+fttcp-recommendation.md content, then verifier-summary.md content, then
+fttcp-handoff.md content, each preceded by a `=== FILE: <name> ===` divider
+line, then exactly this fenced YAML block:
 
 ```yaml
 stage: B13-synthesis

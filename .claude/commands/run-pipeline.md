@@ -137,9 +137,16 @@ handoff schemas, flag rules, and error handling. Then:
    framework-adherence component is marked pending phase 3.
 
 6. SYNTHESIS-LITE. Invoke stage-13-synthesis, instructing it in the task
-   message to run in PHASE 1 LITE mode: produce exactly three files, no
+   message to run in PHASE 1 LITE mode: produce exactly four files, no
    valuation-dependent content, and write each to outputs/final/ at its
    FILE dividers:
+     - operator-brief.md: the mandatory three-part plain-language brief per
+       the synthesis prompt's Deliverable 0 rules (SUMMARY 10-12 lines,
+       SECTOR AND COMPETITIVE INTELLIGENCE 6-7 lines, BUSINESS MODEL WHAT IS
+       UNIQUE 5-6 lines). In LITE mode the SUMMARY omits the valuation
+       conclusion and closes on the falsification metric instead, ending with
+       one line that the investment decision and entry zone come in phase 3.
+       The run is NOT complete without this file.
      - business-narrative.md: the narrative per the synthesis prompt's
        Deliverable 1 rules, covering everything the evidence stages found
        (business, transition, Gate 0 posture, cash reality, credibility,
@@ -162,13 +169,13 @@ handoff schemas, flag rules, and error handling. Then:
 
 7. COMMIT all outputs with message "phase 1 (evidence): <ticker> <date>"
    and report to the user: the gate recommendation verdict line, flags
-   active, phase-1 confidence delta overall, and the three final file
+   active, phase-1 confidence delta overall, and the four final file
    paths.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,
-   in this order: business-narrative.md, then gate-recommendation.md. Then
-   tell the operator exactly:
+   the Operator Brief FIRST (operator-brief.md), then business-narrative.md,
+   then gate-recommendation.md. Then tell the operator exactly:
 
    "Phase 1 complete. Next: /fttcp runs/<folder> for deliberation."
 

@@ -162,7 +162,11 @@ After all documents pass A1-A3:
 7. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+   reviewed), the top forensic findings, and the working-file paths. Then
+   print A4's SECTION D CLOSING BRIEF in full: the 10 to 12 line plain-language
+   narrative plus the sectoral, competitive, and business-model intelligence
+   (CLAUDE.md "CLOSING BRIEF"). A report without the closing brief is
+   incomplete; if A4 omitted it, loop back to A4 before reporting.
 
 ---
 

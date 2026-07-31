@@ -48,6 +48,16 @@ feeding both. Produce, per the protocol step sequence:
   that produces no question and no monitoring item has not been processed.
 - A MONITORABLES / CATALYST list seeded by the A3 commitment register (F6) and
   the Board Outcome forward items (F13), each with its implied date.
+- A CLOSING BRIEF (mandatory, per CLAUDE.md "CLOSING BRIEF"), as the final
+  section of the review, titled "SECTION D - CLOSING BRIEF". Four parts in
+  order: (1) NARRATIVE, 10 to 12 lines of plain-language prose covering every
+  important point of the quarter (what happened, the verdict, the one decisive
+  number, the main risk, the position call); (2) SECTORAL INTELLIGENCE;
+  (3) COMPETITIVE INTELLIGENCE (if no peer concall was supplied this run, say
+  so and give the standing structural read, never fabricate peer specifics);
+  (4) BUSINESS MODEL. Anchor to the filing and the passed thesis; label
+  standing-thesis or general-knowledge items as such; estimate nothing. This
+  section is required for the review to be complete.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.
@@ -84,6 +94,8 @@ position_branch: ""            # 8A | 8A-W | n/a
 sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period
 questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
+closing_brief_included: true   # Section D present with all 4 parts (narrative,
+                               # sectoral, competitive, business model); false = incomplete
 flags: []
 review_path: ""
 ```

@@ -45,6 +45,16 @@ changes the meaning. Every number must still trace to a block in the
 underlying record; no fresh figures. Every paragraph must pass the
 test: would the operator say this sentence aloud to another investor?
 
+Then a CLOSING BRIEF (mandatory, per CLAUDE.md "CLOSING BRIEF"), as four
+labelled sections closing the file: (1) NARRATIVE, a tight 10 to 12 line
+plain-language summary of the whole analysis (this is the reader's one-screen
+takeaway, distinct from the paragraphs above); (2) SECTORAL INTELLIGENCE, the
+sector's position and its live tailwinds and headwinds; (3) COMPETITIVE
+INTELLIGENCE, position versus named peers and the moat basis (draw on the peer
+stage; if the peer set was thin, say so); (4) BUSINESS MODEL, how the company
+makes money and the model's quality markers. The brief is required; its
+absence makes the deliverable incomplete.
+
 ## DELIVERABLE 2: fttcp-recommendation.md
 
 Block references like (B04) are BANNED in the prose of this file, same

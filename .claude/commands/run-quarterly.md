@@ -104,6 +104,10 @@ to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 / N slides, all reviewed), the top forensic findings with their line cites,
 the protocol verdict, and the working-file paths. Print the merged review's
 headline tables and the Questions-for-Management table in full in chat.
+Finally, print A4's SECTION D CLOSING BRIEF in full (the 10 to 12 line
+narrative plus the sectoral, competitive, and business-model intelligence).
+The CLOSING BRIEF is a required part of every report (CLAUDE.md "CLOSING
+BRIEF"); if A4 did not emit it, that is an incomplete review, loop back to A4.
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

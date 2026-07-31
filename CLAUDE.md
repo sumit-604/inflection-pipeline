@@ -68,6 +68,26 @@ weigh, never anchored evidence.
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
 
+## CLOSING BRIEF (every analysis, mandatory, non-negotiable)
+Every analysis (/run-pipeline via stage 13, and /run-quarterly via A4)
+closes with a CLOSING BRIEF. It is a required deliverable, written into the
+final synthesis/review file AND printed in full in the chat report. Its
+absence means the analysis is incomplete, the same way a missing YAML block
+halts a stage. Four parts, in this order:
+1. NARRATIVE: 10 to 12 lines, plain language, covering every important point
+   of the analysis in prose (what happened, the verdict, the one decisive
+   number, the main risk, the position call). Follows STYLE below.
+2. SECTORAL INTELLIGENCE: where the sector sits, its live tailwinds and
+   headwinds, the regulatory/demand forces acting on the whole sector.
+3. COMPETITIVE INTELLIGENCE: the company's position versus named peers and
+   the moat basis. If no fresh peer cross-check was possible this run, say so
+   and give the standing structural read; never fabricate peer specifics.
+4. BUSINESS MODEL: how the company makes money, the unit of monetisation,
+   and the model's quality markers (and what obscures the true picture).
+Anchor to evidence; label standing-thesis or general-knowledge items as
+such; estimate nothing (NOT FOUND is the only fill). This never substitutes
+for the numbers; it sits after them.
+
 ## STYLE (synthesis outputs only)
 No em-dashes or en-dashes as punctuation. No hyphens in compound
 modifiers except tickers/proper nouns. No AI vocabulary. Numbers first.

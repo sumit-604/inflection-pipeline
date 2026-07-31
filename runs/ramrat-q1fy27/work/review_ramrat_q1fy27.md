@@ -19,7 +19,9 @@ extract).
 **Ledger contains, across the three documents:**
 - **results:** 19 notes / 121 line items (plus 25 SA + 30 CN segment rows, 15 auditor
   paragraphs, 3 consolidation entities, 5 signature blocks, 1 agenda item). **All reviewed.**
-- **presentation:** 31 slides / 530 numeric data points / 8 footnotes. **All reviewed.**
+- **presentation:** 31 slides / 530 numeric data points / 8 footnotes. **All reviewed** —
+  including the Slide-27 dividend row (A2 `LABEL_AMBIGUITY`), now explicitly reviewed via the
+  post-A5 finding FND-12.
 - **pressrelease:** 50 units (5 summary-table line items, 11 quantified claims, 18 MD-quote
   forward phrases, 16 structural/narrative units). **All reviewed.**
 - **turns:** 0 (no concall).
@@ -27,10 +29,13 @@ extract).
 **All ledger rows reviewed. No unreviewed rows. Both A2 gates and all three A3 gates passed
 at 100% reconciliation.**
 
-**A3 findings incorporated (30 total):**
+**A3 findings incorporated (31 total):**
 - results: A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11
 - presentation: FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-07, FND-08, FND-09,
-  FND-10, FND-11
+  FND-10, FND-11, **FND-12** (Slide-27 dividend hash-vs-footnote contradiction; F14,
+  AMBIGUOUS — added in the post-A5 A3 revision, resolving the orphan A2 Slide-27 dividend
+  `LABEL_AMBIGUITY` ledger flag that the first A3 pass had folded into FND-05). The Slide-27
+  dividend row is now explicitly reviewed via FND-12.
 - pressrelease: A3-F2-01, A3-F6-01, A3-F16-01, A3-F16-02, A3-F16-03, A3-F17-01, A3-F17-02,
   A3-F17-03
 
@@ -59,7 +64,7 @@ L520/523). EPS reported in the filing is therefore already bonus-adjusted → re
 share-adjusted EPS. **BUT** paid-up capital moved 2,202.10 → 4,667.45 lakh (L195-196); a
 pure 1:1 bonus on 2,202.10 yields 4,404.20, not 4,667.45 — a **residual ~263 lakh of share
 capital (~52.6 lakh shares) is unexplained in this filing** (A3-07 / FND-04). Flagged; see
-QFM Q6.
+QFM Q8.
 
 ### 0D. Notes extraction (structured, mandatory)
 
@@ -401,7 +406,7 @@ not applied this quarter (documented, not silently skipped).
 | M5 | Leverage | falling | rising | Deck headline 0.46x understates true ~1.1x (FND-07); Q1 net debt ND | **AMBER** |
 | M6 | JV/subsidiary contribution | accretive | dilutive | JV share flipped +0.22 → (1.42) Cr; consolidation now dilutive (A3-01) | **RED (deterioration)** |
 | M7 | Tax rate quality | ~statutory 25.17% | unexplained deviation | ETR 23.72% CN, unexplained (A3-06) | **AMBER** |
-| M8 | Governance / disclosure quality | clean | inconsistencies | Label/entity inconsistencies (A3-10, FND-05); EEPL omitted from Other Matters (A3-02) | **AMBER** |
+| M8 | Governance / disclosure quality | clean | inconsistencies | Label/entity inconsistencies (A3-10, FND-05); EEPL omitted from Other Matters (A3-02); Slide-27 dividend "5.0#" on FY26 bar contradicts footnote assigning it to FY23-24 (FND-12) | **AMBER** |
 
 ### 6C. Thesis-broken trigger check
 
@@ -473,7 +478,8 @@ input formally changed, so **no pillar is re-set and destination PE is held unch
   clear T1/T3. Push the substantive cash-verdict gate to the Q2 review (~Oct-Nov 2026).
 - **Governance/quality flags propagate** (JV now dilutive, deck leverage understatement,
   unexplained ETR drop, unexplained share issuance, silence on contingent tax, disclosure
-  inconsistencies) — these keep the name at AVOID irrespective of the strong headline.
+  inconsistencies including the Slide-27 dividend contradiction) — these keep the name at
+  AVOID irrespective of the strong headline.
 
 ### 8B. Add-back / trim trigger refinement
 Not held → no trim ladder. **Re-entry (add-back) precondition refinement:** original
@@ -516,6 +522,7 @@ question below. Ordered by materiality.
 | Q13 | The Q1 press release and deck report only consolidated figures. Can you provide the standalone (core RRWL) vs JV/subsidiary split of the +88.6% revenue and +120.8% PAT growth? | Core-vs-diversification unobservable | Core-led, clean | Growth is diversification-vehicle noise | A3-F2-01 |
 | Q14 | Deck Slide 5's second panel is labelled "H1"/"H1FY25" but prints full-year FY26/FY25 values. Is this a labelling error, or is an H1 comparison intended and omitted? | Reader could take FY figure for 6-month run-rate | Simple label fix | Sloppy/misleading disclosure | FND-08 |
 | Q15 | On the dated commitments — Silvassa +3,600 MTPA (Mar-2027), GCPL merger effectiveness, Vadodara wind towers 40→80/month, CTC/HVDC commercial start (~Q2 CY2026) — what is the status and next milestone date for each? | Catalyst tracking; feeds promise-vs-delivery | Firm dates | Slippage | FND-02, A3-04 |
+| Q16 | Confirm the actual FY26 declared DPS and the year to which the ₹5.00 (₹2.50 special interim + ₹2.50 final) pertains: Slide 27 plots "5.0#" on the FY26 dividend bar (L778) while the hash footnote (L789) attributes that ₹5.00 to FY23-24, and the FY24/FY25 bars each show 2.5 (L781/785). Is the ₹5.0 misplotted against FY26 or is the footnote year mistyped? | Deck's implied FY26 DPS/payout/yield step-up may be overstated or misattributed; actual FY26 DPS must be confirmed vs board/AGM records before any payout ratio enters the thesis | Clean confirmation vs board/AGM records; genuine FY26 step-up | ₹5.0 belongs to FY23-24, FY26 DPS lower; deck overstates payout/yield | FND-12 |
 
 ### Top 3 questions by likelihood of producing thesis-changing information
 1. **Q1 (H1 FY27 CFO / WC days)** — a negative-again CFO would move the bear case toward
@@ -526,7 +533,7 @@ question below. Ordered by materiality.
    items the filing goes silent on; evasion here is itself a governance signal.
 
 **Channel recommendation:** **IR email** (no concall was hosted; this is an SME-style
-promoter group that does not appear to host quarterly calls). Send Q1-Q15 verbatim to
+promoter group that does not appear to host quarterly calls). Send Q1-Q16 verbatim to
 investorrelations.rrwl@rrglobal.com (PR-L121). Log all answer statuses in Notion to test
 across quarters. Prioritise Q1, Q3, Q7, Q9 for a written response before the Q2 filing.
 
@@ -568,6 +575,7 @@ Consequences for the framework chain:
 | CTC / HVDC commercial start | ~Q2 CY2026 (Notion T4) | Notion monitoring | silent this quarter — probe via IR |
 | Bhiwadi copper-tube ramp / utilisation | ongoing (~45% util, Slide 9) | Slide 9 L256; segment L223 | on track (volume) — track margin |
 | Section 132/148 contingent tax (~₹67-104 Cr) crystallisation | unknown; next EoM at FY27 audit | A3-03; Notion T4 | pending, silent this quarter |
+| FY26 declared DPS confirmation (Slide-27 dividend hash-vs-footnote contradiction) | next board/AGM record cross-check | Slide 27 L778/789; FND-12 | pending — confirm before any payout ratio enters thesis |
 | European technology transfer / Chikmagalur demo turbine | undated | Slide 21 L621 | underway |
 | Results extract + QR code in newspapers/website | post 31-Jul-2026 | Board letter L38-40 | routine |
 
@@ -584,7 +592,8 @@ Consequences for the framework chain:
   and worsening (structural, A3-01/M6-RED); unexplained ~5-7pp ETR drop supplying ~7% of PAT
   (A3-06); unexplained residual share issuance (A3-07); deck leverage understated ~2.4x via a
   current-borrowings-excluding metric (FND-07); silence on contingent tax with no EoM
-  (A3-03); cumulative disclosure/label inconsistencies (governance).
+  (A3-03); cumulative disclosure/label inconsistencies including the Slide-27 dividend
+  hash-vs-footnote contradiction (FND-12) (governance).
 - **Unobservable (the crux):** Q1 has no balance sheet or cash-flow statement, so T1 (second
   consecutive negative CFO) and T3 (off-BS-financed CFO) — the two decisive cash triggers —
   cannot be tested. Cash conversion is **INDETERMINATE.**
@@ -594,9 +603,10 @@ Consequences for the framework chain:
 **Reconciliation:** The management narrative (press release + deck) is arithmetically
 accurate but **selectively framed** — YoY headlines, QoQ compression omitted, leverage metric
 defined to exclude the fastest-growing liability, WC "improvement" asserted without a single
-supporting metric, and the whole set is consolidated-only. The filing numbers win: the
-quarter is a strong-growth / thin-margin / unobservable-cash quarter with several
-lower-quality wedges and unresolved governance flags.
+supporting metric, a dividend bar that contradicts its own footnote (FND-12), and the whole
+set is consolidated-only. The filing numbers win: the quarter is a strong-growth /
+thin-margin / unobservable-cash quarter with several lower-quality wedges and unresolved
+governance flags.
 
 **Net thesis impact: MAINTAINED (no trigger fired), with the cash question explicitly
 unresolved and multiple flags propagating.**
@@ -610,11 +620,12 @@ gates passed. Cash conversion **INDETERMINATE → per house rule this caps the c
 at PROCEED WITH CAVEATS and may not resolve to PROCEED; missing evidence named** (Q1/H1 CFO
 statement, WC days, off-BS factoring/supplier-finance balances). The additional propagating
 quality/governance flags (JV drag now dilutive, unexplained ETR drop, unexplained share
-issuance, deck leverage understatement, silent contingent tax, disclosure inconsistencies)
-elevate the overall verdict to **PROCEED WITH FLAGS.**
+issuance, deck leverage understatement, silent contingent tax, disclosure inconsistencies
+including FND-12) elevate the overall verdict to **PROCEED WITH FLAGS.**
 
 *Reviewed 2026-07-31 | Sources: results filing (BSE, 31-Jul-2026), investor presentation
-Q1 FY27, press release 31-Jul-2026 | No concall filed.*
+Q1 FY27, press release 31-Jul-2026 | No concall filed. | Post-A5 revision: FND-12
+incorporated (Slide-27 dividend hash-vs-footnote contradiction).*
 
 ```yaml
 stage: A4-analyst
@@ -628,7 +639,7 @@ ledger_reconciliation:
   turns: 0
   slides: 31
   all_reviewed: true
-  a3_findings_incorporated: ["A3-01","A3-02","A3-03","A3-04","A3-05","A3-06","A3-07","A3-08","A3-09","A3-10","A3-11","FND-01","FND-02","FND-03","FND-04","FND-05","FND-06","FND-07","FND-08","FND-09","FND-10","FND-11","A3-F2-01","A3-F6-01","A3-F16-01","A3-F16-02","A3-F16-03","A3-F17-01","A3-F17-02","A3-F17-03"]
+  a3_findings_incorporated: ["A3-01","A3-02","A3-03","A3-04","A3-05","A3-06","A3-07","A3-08","A3-09","A3-10","A3-11","FND-01","FND-02","FND-03","FND-04","FND-05","FND-06","FND-07","FND-08","FND-09","FND-10","FND-11","FND-12","A3-F2-01","A3-F6-01","A3-F16-01","A3-F16-02","A3-F16-03","A3-F17-01","A3-F17-02","A3-F17-03"]
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"
 decision_status_verified: "WATCHLIST / AVOID (deeply overvalued; NOT held)"
@@ -654,6 +665,7 @@ questions_for_management:
   - {q: "Standalone vs JV/subsidiary split of the +88.6% revenue / +120.8% PAT growth", from_finding_id: ["A3-F2-01"]}
   - {q: "Deck Slide 5 second panel labelled H1 but prints full-year values — error or omitted H1 comparison?", from_finding_id: ["FND-08"]}
   - {q: "Status/next milestone dates for Silvassa (Mar-2027), GCPL merger, Vadodara 40->80 towers, CTC/HVDC (~Q2 CY2026)", from_finding_id: ["FND-02","A3-04"]}
+  - {q: "Confirm actual FY26 declared DPS and the year the Rs 5.00 (Rs 2.50 interim + Rs 2.50 final) pertains to; Slide 27 plots 5.0# on the FY26 bar (L778) but the footnote (L789) attributes it to FY23-24, FY24/FY25 bars show 2.5", from_finding_id: ["FND-12"]}
 monitorables:
   - {item: "H1 FY27 cash-flow statement + balance sheet (resolves T1/T3)", implied_date: "Q2 FY27 filing ~Oct-Nov 2026 (Reg 33 mandatory)", source_ref: "Role 4 Step 5"}
   - {item: "EPR non-ferrous scrap compliance cost quantification", implied_date: "live 2026-04-01; gated on CPCB portal (not yet operational)", source_ref: "SA Note v L281-289 / CN Note vi L609-617"}
@@ -663,6 +675,7 @@ monitorables:
   - {item: "CTC/HVDC commercial start", implied_date: "~Q2 CY2026", source_ref: "Notion T4"}
   - {item: "Bhiwadi copper-tube ramp / utilisation (~45%)", implied_date: "ongoing", source_ref: "Slide 9 L256; segment L223"}
   - {item: "Section 132/148 contingent tax (~67-104 Cr) crystallisation", implied_date: "unknown; next EoM at FY27 audit", source_ref: "A3-03; Notion T4"}
+  - {item: "FY26 declared DPS confirmation (Slide-27 dividend hash-vs-footnote contradiction)", implied_date: "next board/AGM record cross-check", source_ref: "Slide 27 L778/789; FND-12"}
   - {item: "European technology transfer / Chikmagalur demo turbine", implied_date: "undated", source_ref: "Slide 21 L621"}
 flags:
   - "FLAG-CASH INDETERMINATE: Q1FY27 CFO/WC-days unobservable (no BS/CFO in Q1 filing); T1/T3 untestable; FY26 CFO -96/-93 Cr flag neither confirmed nor cleared"
@@ -672,7 +685,7 @@ flags:
   - "FLAG-SHARE-CAPITAL: ~263 lakh residual capital beyond 1:1 bonus unexplained (A3-07/FND-04)"
   - "FLAG-DECK-LEVERAGE: Net Debt/Equity 0.46x excludes current borrowings quadrupled to 388.8 Cr; true ~1.1x (FND-07)"
   - "FLAG-CONTINGENT-TAX-SILENT: FY26 EoM on Sec 132/148 not narrated; no contingent-liability note this quarter (A3-03)"
-  - "FLAG-GOVERNANCE: label/entity inconsistencies + EEPL omitted from Other Matters (A3-02/A3-10/FND-05)"
+  - "FLAG-GOVERNANCE: label/entity inconsistencies + EEPL omitted from Other Matters + Slide-27 dividend hash-vs-footnote contradiction (5.0# on FY26 bar vs footnote FY23-24), which may overstate FY26 DPS/payout/yield until confirmed vs board/AGM records (A3-02/A3-10/FND-05/FND-12)"
   - "FLAG-EPR: new non-ferrous-scrap obligation live 1-Apr-2026, unquantified future cost (A3-04/A3-05)"
   - "NO-CONCALL: Role 5 N.A.; no transcript filed"
   - "T2 RESOLVED-POSITIVE: copper-tube revenue 489.98 Cr > 347.20 threshold, trigger not fired"

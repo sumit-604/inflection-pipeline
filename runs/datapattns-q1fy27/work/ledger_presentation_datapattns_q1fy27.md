@@ -4,6 +4,17 @@ Source: `extract_presentation_datapattns_q1fy27.txt` (32 PDF pages / 32 formfeed
 to pages 2, 19, 27 per header). Prior-quarter ledger: NONE on file — `DROPPED_SLIDE` diff not
 performable this run; flagged `NO_PRIOR_LEDGER`.
 
+**REVISION NOTE (this version supersedes the prior ledger):** A5 adversary review named a
+completeness gap in the Slide 24 ("Working Capital") working-capital table: 4 values present
+in the A1 extract were missing from the manual sweep — Debtor Days FY22=233 (line 823),
+Creditor Days FY22=30 (line 824), Inventory Days FY25=187 (line 836), Inventory Days FY26=108
+(line 840; the prior ledger draft had this value mis-cited to line 837, which is actually the
+Inventory-Days-FY24 / CCC-FY24-FY26 row). Slide 24 (lines 813-848) was re-swept row by row
+below. The `other_headline_stats` category count is corrected from 121 to **125** (16 to 20
+values on slide 24 alone), and the grand gated-value total is corrected from 918 to **922**.
+All other categories (Tables 2-5, 7-9) were re-checked against this re-sweep and are unchanged
+from the prior version.
+
 Methodology note: "numbers" in this ledger are counted at token level (every discrete digit
 sequence, with optional `%`/comma/decimal, appearing in slide body content — matching a
 reproducible regex swept line-by-line, excluding only the `[page N]` / `[OCR page N]` marker
@@ -22,7 +33,7 @@ category: pl_margin_values (p14,18,28)     grep_count: 340   sweep_count: 340   
 category: orderbook_inflow_values (p15-17) grep_count: 98    sweep_count: 98    match: yes
 category: segment_customer_mix (p7,12,13)  grep_count: 63    sweep_count: 63    match: yes
 category: balance_cashflow_values (p29,30) grep_count: 296   sweep_count: 296   match: yes
-category: other_headline_stats (13 slides) grep_count: 121   sweep_count: 121   match: yes
+category: other_headline_stats (13 slides) grep_count: 125   sweep_count: 125   match: yes
 category: zero_standing (dash cells)       grep_count: 43    sweep_count: 43    match: yes
 category: footnotes                        grep_count: 9     sweep_count: 9     match: yes
 category: dropped_slides                   grep_count: n/a   sweep_count: n/a   match: n/a (no prior ledger)
@@ -30,7 +41,7 @@ gate_a2: pass
 === END COUNT TEST ===
 ```
 Gated financial-claim total (categories 2–6, the numbers a downstream analyst must reconcile
-against the results filing): 340+98+63+296+121 = **918 individual values**, plus 43 zero-standing
+against the results filing): 340+98+63+296+125 = **922 individual values**, plus 43 zero-standing
 dash cells and 9 footnotes. Administrative/structural numbers (cover-letter reference numbers,
 TOC ordinals, OCR-divider artifacts, IR phone numbers) are enumerated separately in Table 9 and
 are explicitly NOT part of the reconciliation gate (out of scope per task: revenue / EBITDA /
@@ -313,7 +324,7 @@ Slide 30 total = 6+6+6+5+5+1+4+6+3+6+6+6+6+6+6+6+6+6+6 = **102**
 
 ---
 
-## TABLE 6 — OTHER HEADLINE STATS & CALLOUTS (Slides 4, 5, 6, 8, 9, 10, 11, 20, 22, 23, 24, 25, 26) — 121 values
+## TABLE 6 — OTHER HEADLINE STATS & CALLOUTS (Slides 4, 5, 6, 8, 9, 10, 11, 20, 22, 23, 24, 25, 26) — 125 values
 
 | Slide | Line | Item | Value(s) | #vals |
 |---|---|---|---|---|
@@ -372,16 +383,30 @@ Slide 30 total = 6+6+6+5+5+1+4+6+3+6+6+6+6+6+6+6+6+6+6 = **102**
 | 24 | 820 | Debtor Days FY25/FY26 + Creditor Days FY25/FY26 | 308/307 (Debtor) + 45/43 (Creditor) | 4 |
 | 24 | 821 | Debtor Days FY23/FY24 | 280/287 | 2 |
 | 24 | 822 | Creditor Days FY23/FY24 | 36/35 | 2 |
+| 24 | 823 | Debtor Days FY22 | 233 | 1 | ADDED on re-sweep (A5-named gap) |
+| 24 | 824 | Creditor Days FY22 | 30 | 1 | ADDED on re-sweep (A5-named gap) |
+| 24 | 836 | Inventory Days FY25 | 187 | 1 | ADDED on re-sweep (A5-named gap) |
 | 24 | 837 | Inventory Days FY24 + Cash Conversion Cycle FY24/FY25/FY26 | 164 + 427/432/428 | 4 |
 | 24 | 838 | Inventory Days FY22 + CCC FY22 | 155 / 365 | 2 |
 | 24 | 839 | Inventory Days FY23 + CCC FY23 | 141 / 329 | 2 |
+| 24 | 840 | Inventory Days FY26 | 108 | 1 | ADDED on re-sweep (A5-named gap); correct line is 840, not 837 as mis-cited in the prior ledger draft |
 | 25 | 858 | Land area / mech. assembly stations / test workstations / clean room class | 10.28 (acres) / 20 / 70 / 100,000 | 4 | NON-FINANCIAL infrastructure specs |
 | 25 | 859 | EMS assembly capacity | 600 (boards/day) | 1 | NON-FINANCIAL |
 | 25 | 860 | Built-up area / board layer count / solder points (thousands) | 200,000 (sq ft) / 22 (layer) / 6 (thousand components, "6k") | 3 | NON-FINANCIAL |
 | 25 | 861 | Solder points (thousands) | 21 ("21k") | 1 | NON-FINANCIAL |
 | 26 | — | Management team slide | no numeric data (names/titles only) | 0 | — |
 
-Table 6 total: reconciles to grep_count 121 exactly by construction (every value token on these 13 slides accounted for above; several rows explicitly flagged LAYOUT_AMBIGUOUS or NON-FINANCIAL where the source layout text does not allow unambiguous single-value attribution — downstream A3/A4 should cross-check the flagged cells against the source PDF image / investor deck visually if precision on those specific data labels matters to the analysis).
+Slide 24 subtotal (re-swept): 4+2+2+1+1+1+4+2+2+1 = **20** (lines 820-824, 836-840; footnote at line 848
+is enumerated separately in Table 8, not counted here as a data value). This replaces the prior
+draft's slide-24 subtotal of 16.
+
+Table 6 total: reconciles to grep_count 125 exactly by construction (every value token on these 13
+slides accounted for above, including the 4 values named by A5 on re-sweep: Debtor Days FY22=233
+[line 823], Creditor Days FY22=30 [line 824], Inventory Days FY25=187 [line 836], Inventory Days
+FY26=108 [line 840]). Several rows remain explicitly flagged LAYOUT_AMBIGUOUS or NON-FINANCIAL
+where the source layout text does not allow unambiguous single-value attribution — downstream
+A3/A4 should cross-check the flagged cells against the source PDF image / investor deck visually
+if precision on those specific data labels matters to the analysis.
 
 ---
 
@@ -418,7 +443,9 @@ line whose left-hand label is a different item than the dash's true row header �
 right-side label. Total p29 = 1(CWIP)+3(non-current borrowings)+2(deferred tax)+2(investment)+
 3(current borrowings)+2(other bank balances)+3(current tax)=16. Total p30 = 1(LD)+1(forex)+5(profit
 on sale of assets)+2(MF profit/loss)=9. Total p14=8+8+2=18. **Grand total 18+16+9=43. Matches
-grep_count 43.**
+grep_count 43.** (Table 7 is unaffected by the Table 6 slide-24 correction: the working-capital
+chart's Note-line footnote and dash cells were already fully captured; the 4 added values on
+slide 24 are all disclosed, non-dash figures.)
 
 ---
 
@@ -427,7 +454,7 @@ grep_count 43.**
 | # | Slide | Line | Footnote text | Qualifies |
 |---|---|---|---|---|
 | 1 | 23 | 810 | "*RoE and RoCE are calculated on TTM basis" | ROE/ROCE % series on Slide 23 (line 789-795) |
-| 2 | 24 | 848 | "Note: H1 Calculations are on TTM Revenue basis" | Debtor/Creditor/Inventory Days and Cash Conversion Cycle on Slide 24 |
+| 2 | 24 | 848 | "Note: H1 Calculations are on TTM Revenue basis" | Debtor/Creditor/Inventory Days and Cash Conversion Cycle on Slide 24 (now covering all 20 re-swept values, including the 4 added on this revision) |
 | 3 | 9 | 286-287 | "(including the orders negotiated and pending receipt)" qualifying order book figure | Order book ₹2,654 Cr headline (CMD quote, Slide 9) |
 | 4 | 15 | 492 | "Order book as on date: Rs 2,654 Cr including orders received and negotiated" (same qualifier restated) | Order book Rs 2,654 Cr headline (Slide 15) |
 | 5 | 31 | 1011-1016 | Disclaimer para (a): presentation prepared solely for information, not an offer/recommendation/invitation, not to be relied on for any contract | Qualifies all forward guidance and stat callouts across the deck |
@@ -483,4 +510,6 @@ totals tie on Slide 29 — not a Role-5 arithmetic verification, noted only), an
 numeric discrepancies between slides requiring A3/A4 attention: (i) Slide 22 FY23 revenue shown
 as 4,534 vs Slide 28 historical P&L showing 4,535 (Rs 1 Mn), and FY22 revenue shown as 3,108 vs
 3,109 (Rs 1 Mn); (ii) Slide 30 cash-flow-statement FY25 closing cash of 376 vs Slide 29 balance
-sheet / Slide 30's own FY26-opening cash figure of 377.
+sheet / Slide 30's own FY26-opening cash figure of 377. **This revision adds no new flags beyond
+the corrected slide-24 subtotal; the 4 re-swept values (233, 30, 187, 108) are plain disclosed
+figures, not zero/dash/blank, so no new `ZERO_STANDING` or `NOT_FOUND` flag applies to them.**

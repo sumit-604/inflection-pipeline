@@ -48,3 +48,25 @@ Consolidated Q1FY27: Revenue 1,853.3 Cr (+88.6% YoY), EBITDA 89.6 Cr (+109%), PA
 - pressrelease: PASS (3pp, 100%, units=Crores x1, 133 lines)
 - presentation: PASS (31pp, 100%, units=Crores x1, 919 lines, OCR pages 4,8,19,22,26)
 No prior-quarter ledger exists (prior run ramrat-2026-07-29 was the annual/first workup, NO quarterly ledger). PRIOR_LEDGER_PATH = none for all docs.
+
+## GATE outcomes (final)
+- A1 x3: PASS (results 12pp / presentation 31pp / pressrelease 3pp; 100% coverage each)
+- A2 x3: PASS (results 19 notes/121 items; presentation 31 slides/530 nums; pressrelease 50 units)
+- A3 x3: PASS (all F1-F17 marked, 100% ledger reconciliation each)
+- A4: PROCEED WITH FLAGS; cash INDETERMINATE; Decision Status verified WATCHLIST/AVOID
+- A5: loop 1 INCOMPLETE (Slide-27 dividend orphan) -> A3 added FND-12 -> A4 incorporated -> A5 re-audit COMPLETE
+- A5 noted 2 cosmetic non-verdict slips for tidy-up (CN Q1FY26 ETR base 28.88 vs 28.91 rounding; FND-07 net-debt components sum 661.3 vs stated ~660.5; ratio ~1.1x either way). Non-blocking.
+
+## Thesis-broken triggers this quarter: NONE FIRED
+- T1 (2nd-consec negative CFO): UNOBSERVABLE (no Q1 BS/CFO)
+- T2 (copper tubes <347.20 x2): NOT fired (Q1 489.98 Cr)
+- T3 (off-BS-financed CFO): UNOBSERVABLE
+- T4 (contingent tax crystallises): NOT fired (silent/pending)
+Decision Status UNCHANGED: WATCHLIST / AVOID.
+
+## Notion save: DONE (page 3adbb2b9-d3ab-8134-a6cf-c70458fde4fe)
+- Full review appended (verdict, YoY/QoQ/S-vs-C/segment/cash/monitoring/triggers/growth/QFM x16/monitorables/flags/A3-summary/A5-verdict/combined verdict).
+- Key Notes audit trail prepended (2026-07-31 entry; prior 2026-07-29 entry preserved).
+- Decision Status property unchanged (no pre-committed trigger fired).
+
+## Run complete.

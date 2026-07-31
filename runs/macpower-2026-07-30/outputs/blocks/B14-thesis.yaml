@@ -1,0 +1,25 @@
+stage: B14-thesis
+company: "MACPOWER"
+run_date: "2026-07-30"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 440, high: 550}
+mos_price: 440
+position_size: "Small"
+position_size_override: ""
+one_line_thesis: "NOT buying MACPOWER at Rs 1,481 (34.4x fwd) because ~Rs 43 forward EPS still earns only a cap-bound 25x destination PE = Rs 1,075 base fair value below CMP; 25% hurdle STOPS on base (1.19) and bull (1.38), expected 3yr CAGR -10.4%; key risk INDETERMINATE cash (CFO/PAT 0.41x); buyable only in Rs 440-550."
+thesis_broken_if: "FY27 CFO/PAT prints below 0.5x with receivable AND inventory days still rising (structural cash leak), OR the 60-acre land slips a 4th time / is denied, killing the margin-ROCE narrative"
+thesis_broken:
+  - "FY27 CFO/PAT below 0.5x with receivable AND inventory days still rising (structural cash leak confirmed)"
+  - "60-acre govt land slips a 4th time or is denied (kills margin/ROCE aspiration; SHARED CATALYST)"
+  - "EBITDA margin range-bound 16-18% for multiple quarters with no move above 17.5%"
+  - "Unexecuted order book declines sequentially for two consecutive quarters"
+monitoring_checklist:
+  - "Operating cash conversion CFO/PAT >=0.5x with receivable and inventory days flat or falling (baseline 0.41x)"
+  - "EBITDA margin >17.5% sustained two consecutive quarters (baseline 16.2%)"
+  - "Receivables >6-month ageing falling below 12.2% (baseline 15.4%)"
+  - "Unexecuted order book growing YoY above Rs 456 cr; red on two consecutive sequential declines"
+  - "60-acre govt land: binding signed agreement; red on a 4th slip or policy denial"
+  - "Capacity utilisation trending toward 90% on the 2,500-machine base; red if stalls below 85%"
+  - "Price enters Rs 440-550 entry zone with no thesis-broken trigger fired (entry conjunction)"

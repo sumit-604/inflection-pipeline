@@ -195,12 +195,20 @@ After all documents pass A1-A3:
    with the specific gap stated. Maximum two loops; a third failure escalates
    to the human with the unresolved gap stated plainly.
 
-6. NOTION SAVE (only after A5 COMPLETE). See below.
+6. OPERATOR BRIEF (mandatory — the run is NOT complete without it). Produce the
+   three-part plain-language brief per the OPERATOR BRIEF spec below. Write it as
+   the executive header of `work/review_<ticker>_<quarter>.md` and show it in
+   full in chat. This is the operator's primary deliverable: a run that ends
+   without it has failed to deliver, however complete the analysis underneath.
 
-7. COMMIT the run folder (`work/` files) with message
-   "quarterly review: <ticker> <quarter>" and report to the user the A5
-   verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+7. NOTION SAVE (only after A5 COMPLETE). See below. Save the Operator Brief as a
+   callout at the top of the appended review section.
+
+8. COMMIT the run folder (`work/` files) with message
+   "quarterly review: <ticker> <quarter>" and report to the user. The report
+   LEADS with the full Operator Brief, then gives the A5 verdict, the
+   count-reconciliation line (N notes / N turns / N slides, all reviewed), the
+   top forensic findings, and the working-file paths.
 
 ---
 
@@ -219,6 +227,40 @@ Per Role 4 Step 9 and existing save mechanics:
   the completeness proof is part of the record.
 
 ---
+
+## OPERATOR BRIEF (mandatory closing deliverable — every run, both paths)
+
+Every quarterly run ends with a plain-language brief written for the operator,
+not the analyst. Without it the run has not delivered, no matter how complete
+the tables are. It follows the house STYLE: no em-dashes or en-dashes as
+punctuation, no hyphenated compound modifiers except tickers and proper nouns,
+no AI vocabulary, numbers first, symmetric bull and bear, no landing lines.
+Plain words a non-specialist reads once and understands. Three parts, in this
+order and these lengths (line counts are firm, not approximate):
+
+1. SUMMARY (10 to 12 lines). The whole analysis as a narrative: what the
+   company reported this quarter, the verdict and why, the strongest positive
+   and the strongest caveat, the cash and valuation stance, and the single
+   thing to watch next quarter. No tables, no jargon, no line citations.
+
+2. SECTOR AND COMPETITIVE INTELLIGENCE (6 to 7 lines). Where the industry is
+   heading and how this company sits against its competitors, in plain
+   language. Draw on the concall's industry commentary, the peer / TAM evidence
+   in the run folder or companies/<TICKER>.md, and the Notion business context.
+   Name the tailwinds and the threats symmetrically.
+
+3. BUSINESS MODEL, WHAT IS UNIQUE (5 to 6 lines). A simple explanation of how
+   the company actually makes money and what is genuinely unusual or hard to
+   replicate about it. Draw on the business-model and moat evidence (stage-4 /
+   stage-7 blocks or companies/<TICKER>.md if present) and the concall.
+
+The orchestrator writes this INLINE. It already holds the merged review, every
+extract, the Notion page (the "One line" and business sections), and any
+company memory, so the brief needs no fresh document reads and costs almost
+nothing. Do NOT spawn a separate agent for it unless the operator asks: a
+separate agent would re-read everything to produce 25 lines. If an input is
+genuinely thin this quarter (for example no peer data), say so in one honest
+clause rather than padding to hit the line count.
 
 ## NON-NEGOTIABLE RULES
 

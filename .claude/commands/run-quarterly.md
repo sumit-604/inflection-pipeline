@@ -104,13 +104,24 @@ as `\|`. Save the A3 forensics table and the A5 audit verdict alongside the
 review. Decision Status changes only when a pre-committed trigger fires — flag,
 do not decide.
 
+## 4.5 OPERATOR BRIEF (mandatory — the run is not complete without it)
+
+Produce the three-part plain-language Operator Brief per the orchestrator's
+"OPERATOR BRIEF" spec: (1) SUMMARY 10-12 lines, (2) SECTOR AND COMPETITIVE
+INTELLIGENCE 6-7 lines, (3) BUSINESS MODEL WHAT IS UNIQUE 5-6 lines. House
+STYLE, plain language, firm line counts. Write it as the executive header of
+`work/review_<ticker>_<quarter>.md`, save it as a callout at the top of the
+Notion review section, and lead the chat report with it. Produce it inline; do
+not spawn a separate agent unless the operator asks.
+
 ## 5. COMMIT AND REPORT
 
-Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
-to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
-/ N slides, all reviewed), the top forensic findings with their line cites,
-the protocol verdict, and the working-file paths. Print the merged review's
-headline tables and the Questions-for-Management table in full in chat.
+Commit the run folder with "quarterly review: <ticker> <quarter>". The chat
+report LEADS with the full Operator Brief (above), then gives: the A5 verdict,
+the count-reconciliation line (N notes / N turns / N slides, all reviewed), the
+top forensic findings with their line cites, the protocol verdict, and the
+working-file paths. Print the merged review's headline tables and the
+Questions-for-Management table in full in chat.
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

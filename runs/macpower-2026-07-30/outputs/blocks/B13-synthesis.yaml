@@ -3,21 +3,28 @@ company: "MACPOWER"
 run_date: "2026-07-30"
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
+phase: 3-finalize
 verdict: "PROCEED WITH CAVEATS"
-verdict_rule_applied: 3        # FLAG-CASH active; INDETERMINATE caps at PROCEED WITH CAVEATS
+verdict_rule_applied: 3
 flags_active: [FLAG-CASH, FLAG-GATE0]
 flag_cash_determination: "INDETERMINATE"
-confidence_delta: {numerical: 100, redflag: 83, framework: 100, peer: 92, overall: 83}
-valuation_decision: ""         # deferred to phase 3
-entry_range: {low: 0, high: 0} # deferred to phase 3
-headline: "CNC maker premiumising into defence, cash unproven"
-falsification_metric: "FY27 CFO/PAT below 0.5x with receivable and inventory days still rising, confirming STRUCTURAL not growth-induced cash drag"
+confidence_delta: {numerical: 100, redflag: 83, framework: 99, peer: 92, overall: 83}
+valuation_decision: "AVOID"
+destination_pe: {track2_additive_governing: 25.0, track1_rrm: 16.5}
+fair_value: {additive_base: 1075, rrm_base: 710}
+hurdle: {base: 1.19, bull: 1.38, verdict: "STOP"}
+expected_cagr_prob_weighted: -10.4
+entry_range: {low: 440, high: 550}
+mos_price: 440
+zone_reachability: "entry top Rs 550 is 27.7% below the 52-week low Rs 761 (since-listing history unavailable, screener CSVs empty); MARKET-UNLIKELY ZONE; DEEP WATCH not actionable; Tier B barred"
+devil_overall: "SURVIVES"
+headline: "Fast CNC grower, unproven cash, overpriced"
+falsification_metric: "FY27 CFO/PAT below 0.5x with receivable AND inventory days still rising, confirming STRUCTURAL not growth-induced cash drag"
 monitorables_count: 8
 publish_candidate: false
 publish_candidate_summary: ""
 notion_save:
-  page_title: "MACPOWER - Macpower CNC Machines (phase 1 gate, 2026-07-30)"
-  summary: "CNC maker premiumising into defence, cash unproven | PROCEED WITH CAVEATS | valuation deferred to phase 3 | FLAG-CASH INDETERMINATE, FLAG-GATE0 AVOID 81/160"
+  page_title: "MACPOWER - Macpower CNC Machines (phase 3 finalize, 2026-07-30)"
+  summary: "Fast CNC grower, unproven cash, overpriced | PROCEED WITH CAVEATS | AVOID on valuation, entry Rs 440-550, MoS Rs 440 | destination 25.0x additive / 16.5x RRM, Hurdle STOP base 1.19 bull 1.38, prob-weighted 3yr CAGR -10.4% | FLAG-CASH INDETERMINATE, FLAG-GATE0 AVOID 81/160"
   drive_link: "NOT PROVIDED"
   mode: append-never-overwrite-status

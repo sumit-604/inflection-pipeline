@@ -51,6 +51,13 @@ f. COMPANY MEMORY + NOTION: if `companies/<TICKER>.md` exists, read it. Fetch
 
 ## 1. PER-DOCUMENT: A1 -> A2 -> A3 (foreground subagents, gated)
 
+FAST PATH (default for a lone concall): if `--docs` is a SINGLE `concall`
+transcript and nothing else, do NOT spawn five agents. Per the orchestrator's
+"FAST PATH" section, the orchestrator does A1-A4 inline (writing the same
+`work/` artifacts and self-enforcing every gate) and spawns ONLY the A5
+adversary for the independent audit. Revert to the full chain below the moment
+a results filing, a presentation, or a second document is in the run.
+
 For each document, invoke as a foreground subagent that blocks until it
 returns. Pass file PATHS and the {{...}} inputs each prompt expects; never
 paste PDFs into a task message.

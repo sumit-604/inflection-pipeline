@@ -56,6 +56,40 @@ A1, A2, A3 run PER DOCUMENT. A4 runs ONCE, merging every document's extract,
 ledger, and forensics into a single protocol-ordered review (Role 4 first,
 Role 5 second, presentation findings feeding both). A5 audits A4 once.
 
+---
+
+## FAST PATH — STANDALONE CONCALL TRANSCRIPT (default for a lone concall)
+
+When the run is a SINGLE conference-call transcript and nothing else — `--docs`
+resolves to exactly one document, it classifies as `concall`, and no Reg 33
+`results` filing or other new document is part of the same run — do NOT spawn
+five separate agents. The A1-A2-A3-A4 separation buys little on one short
+born-digital transcript, and five sequential Opus contexts (each re-reading the
+protocol files, none able to parallelise across the gates) is the wrong cost for
+the value. Use this collapsed path instead:
+
+- The ORCHESTRATOR performs A1 + A2 + A3 + A4 itself, inline, and writes the
+  SAME named `work/` artifacts (`extract_concall_...txt`, `ledger_concall_...md`,
+  `forensics_concall_...md`, `review_..._q<n>fy<yy>.md`) so the audit trail is
+  byte-for-byte what the full pipeline would produce. Every gate is still
+  self-enforced and recorded: A1 100% coverage (verbatim save for a pasted/text
+  transcript; `pdftotext` if it is a PDF), A2 the two-way count test on
+  turns / questions / management-numbers, A3 every applicable forensic check
+  (F6 forward-commitment mining, F7 hedge mining, F17 silence audit, plus
+  F1/F8/F14 as applicable) with a line cite per FINDING, A4 the Role 5 review
+  with the promise-vs-delivery register and the Questions-for-Management table.
+- Then spawn EXACTLY ONE agent: A5 (quarterly-a5-adversary), fresh context,
+  task message carrying ONLY the A4 review, the A1 extract, and the A2 ledger.
+  This preserves the one separation that actually matters — a maker cannot grade
+  its own work — and keeps the COMPLETE/INCOMPLETE gate (max two loops).
+- Notion save, commit, and report are unchanged.
+
+This fast path is ONLY for a lone concall. The moment a run includes a Reg 33
+results filing, an investor presentation, OR more than one document, revert to
+the full five-agent per-document chain below — the enumeration-before-
+interpretation separation earns its cost on filings and multi-document merges.
+A5's independence is never collapsed, on either path.
+
 ## DISPATCH (model per agent, set in .claude/agents frontmatter)
 - sonnet: A1 extractor, A2 enumerator (mechanical, completeness-critical)
 - opus:   A3 forensic notes, A4 analyst, A5 adversary
@@ -118,6 +152,10 @@ points at.
 ---
 
 ## SEQUENCE
+
+If the run is a lone concall transcript, take the FAST PATH above instead of
+this five-agent chain (orchestrator does A1-A4 inline, one A5 adversary). The
+sequence below is the full pipeline for results filings and multi-document runs.
 
 For EACH document (results, then concall, then presentation, in whatever
 subset was supplied):

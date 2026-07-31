@@ -1,187 +1,186 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — SATIN CREDITCARE (NSE: SATIN) — Q1 FY27 CONCALL (Role 5 layer)
-
-Model: claude-opus-4-8. Fresh context: judged only against the A1 concall extract,
-the A2 concall ledger, and the A4 Role-5 review under audit. A3 reasoning re-derived
-independently, not deferred to. Verdict at foot.
+# A5 ADVERSARY / COMPLETENESS AUDIT — SATIN Q1 FY27 CONCALL (ROLE 5)
+# RE-AUDIT v2 — dated 2026-07-31
+# Auditor: A5 (Opus 4.8), fresh context. Independence: re-derived from A1 extract +
+# A2 ledger + A3 forensics only. Target: review_concall_satin_q1fy27.md (corrected).
+# Prior audit returned INCOMPLETE for exactly two gaps; both re-verified below, then a
+# full three-audit re-sweep to confirm no new error was introduced.
 
 Target: `runs/satin-q1fy27/work/review_concall_satin_q1fy27.md`
 Spine: `extract_concall_satin_q1fy27.txt` (333 ln) · `ledger_concall_satin_q1fy27.md`
+       · `forensics_concall_satin_q1fy27.md`
 
 ---
 
-## 1. COVERAGE AUDIT (fresh grep re-enumeration vs A2, then A2→A4 incorporation)
+## PART 0 — VERIFICATION OF THE TWO PRIOR-INCOMPLETE GAPS
 
-| Category | A2 count | My fresh count | Method / evidence | Orphan / missing | Status |
+### GAP 1 — Assam 44,000 vs 40,000 surfaced as flagged-unreconciled alongside A3-03 and A3-04
+
+Independent grep confirms the raw fact: "44,000 borrowers" at A1 ln 133 (opening, Turn 2)
+vs "40,000 odd customers" at A1 ln 248 (Q&A, Turn 6). Same Assam fact, same call, two counts
+= A3-07 (NEUTRAL-FACT, forensics §2).
+
+The corrected review now surfaces it in THREE places and — critically — *alongside* the two
+ratio inconsistencies, as required:
+
+- **Step 1, "Internal contradictions in the opening" (review ln 152-159):** lists all three
+  as one flagged-not-resolved cluster — adjusted ROA **4.34% (ln135) vs 4.28% (ln193)** = A3-03;
+  NIM **14.66% (ln122) vs 14.36% (ln282)** = A3-04; Assam **44,000 (ln133) vs 40,000 (ln248)**
+  = A3-07. Verbatim: "All three are flagged-not-resolved (same treatment)."
+- **Step 6D (review ln 480):** "note the 44,000 vs 40,000 count inconsistency, A3-07, immaterial
+  to the ~1% net read but logged."
+- **Step 7A table (review ln 517):** row "Assam borrowers '44,000' (opening) vs '40,000' (Q&A)
+  ... UNRECONCILED, immaterial (net ~1% either way; A3-07)."
+- **YAML flags (review ln 885):** explicit flag carrying both counts, both line cites,
+  "unreconciled", and the immaterial-but-logged treatment.
+
+Cross-check against my independent line cites: 4.34%→ln135, 4.28%→ln193, 14.66%→ln122,
+14.36%→ln282, 44,000→ln133, 40,000→ln248 — every cite exact. All three treated identically as
+flagged-unreconciled (not silently resolved). **GAP 1 = FIXED.**
+
+### GAP 2 — Answered-vs-open tally reconciles to 13 with Q11 counted once
+
+Step 3E-detail table (review ln 269-289) assigns one status per Role-4 question Q1-Q13.
+Independent re-tally of the table rows:
+
+| Status | Questions | Count |
+|---|---|---|
+| ANSWERED | Q2, Q8 | 2 |
+| PARTIAL | Q1, Q3, Q4, Q6, Q10 | 5 |
+| EVADED | Q5 | 1 |
+| NOT ADDRESSED | Q7, Q9, Q11, Q12, Q13 | 5 |
+| **Total** | | **13** |
+
+2 + 5 + 1 + 5 = 13, matching the 13 Role-4 questions. Q11 (consol ROE) appears exactly once —
+NOT ADDRESSED — with rationale stated (ln 286-289): "consol ROE was neither asked nor
+volunteered." No double-count (the prior fault was Q11 tallied twice). Prose summary (ln 285-289),
+YAML `answered_vs_open_summary`, and `tally_check: "answered 2 + partial 5 + evaded 1 +
+not_addressed 5 = 13"` (review ln 847-852) all match the table and each other. **GAP 2 = FIXED.**
+
+---
+
+## PART 1 — COVERAGE AUDIT (fresh grep vs A2, then A2/A3 → A4)
+
+| Category | A2 count | My fresh count | Method / evidence | Orphan | Status |
 |---|---|---|---|---|---|
-| Speaker turns | 12 | 12 | Segment index Turn 1-12; Operator (1,3), CMD monologue (2), 7 analyst turns (4-10), Aditi closing (11), end marker (12) | none | PASS |
-| Participants | 11 | 11 | Dr HP Singh, Aditi Singh, Pratik Mudkar, Operator + 7 analysts. A2 re-swept 10→11 (operator); A4 carried 11 not silently corrected | none | PASS |
-| Analyst turns / analysts | 7 | 7 | grep `question from the line of` → exactly 7 hits (ln 177, 220, 244, 256, 275, 291, 298) | none | PASS |
-| Analyst questions (incl. sub-q) | 20 | 20 | T4=5, T5=5, T6=1, T7=3, T8=2, T9=1, T10=3 = 20; all 20 appear in A4 Step 4A (C.1–C.20) | none | PASS |
-| Spoken numbers | 194 (177 mgmt + 17 analyst-quoted) | 194 accepted | 120 Turn-2 + 74 Q&A; wrap-split (ln153/154, 190/191, 315/316) and 5 word-form adds reconciled; key figures spot-tied below | none | PASS |
-| Guidance / fwd rows | 15 | 15 | Section E G.1–G.15 all mapped into Step 2L / Step 5 / monitorables | none | PASS |
-| NOT-FOUND items | 2 | 2 | NNPA yr-ago "9%" (ln126) + breakeven unit "91" (ln289) — both carried in A4 preamble, uncorrected | none | PASS |
-| Peer cross-check (v1.1 non-negotiable) | n/a | disclosed | A4 Step 7B: "No peer NBFC-MFI concall supplied… deferred and stated explicitly" — NOT silently skipped | n/a | PASS |
+| Speaker turns | 12 | 12 | T1 op(95), T2 CMD(102), T3 op(175), T4-10 = 7 analyst turns, T11 close(321), T12 end(332) | none | PASS |
+| Analyst turns | 7 | 7 | grep "question from the line of" = ln 177,220,244,256,275,291,298 (exactly 7) | none | PASS |
+| Participants | 11 | 11 | 2 mgmt (HP Singh, Aditi Singh) + Pratik Mudkar + Operator + 7 analysts; A2 re-sweep 10→11 documented, carried | none | PASS |
+| Analyst questions | 20 | 20 (accepted) | A2 C.1-C.20 dual-method; my read finds no 21st, no dropped sub-question | none | PASS |
+| Spoken numbers | 194 | 194 (accepted) | 120 Turn-2 + 74 Q&A; A2 re-sweep 186→194 (3 wrap-split + word-form) documented | none | PASS |
+| Guidance-fwd | 15 | 15 | Section E G.1-G.15 → Step 2L / A3 register | none | PASS |
+| A3 findings | 19 | 19 | A3-01…A3-19 all incorporated (review ln 39-41) | none | PASS |
 
-**Coverage finding — one flagged ledger row not incorporated as a finding.**
-The A2 ledger carries the Assam affected-borrower count as an explicit **DISCREPANCY**:
-row **D.1 ln133** ("44,000 borrowers … discrepant vs Turn 6's '40,000 odd customers'")
-and row **D.2 ln248** ("40,000 odd customers … discrepant vs Turn 2's '44,000 borrowers',
-same fact, same call"). A4 **uses both figures but never reconciles or flags the
-conflict**: `~44,000` at Step 1 claim 11 (ln 132 of review) and again in Sector Knowledge,
-`~40,000` at Step 4A C.11 — each presented as simply the number for its context.
-Unlike the other two A2 discrepancies of the same class, the ROA 4.34% vs 4.28% (tied to
-A3-03) and NIM 14.66% vs 14.36% (tied to A3-04), which A4 **does** flag as unreconciled,
-the Assam count discrepancy was **not elevated to an A3 forensic finding and is not
-surfaced in A4**. Per house rule (flags propagate; enumeration governs), a same-fact
-discrepancy the ledger flagged cannot be silently smoothed. **This is the single failing
-item — see Verdict.** (Immaterial to the thesis — net Assam exposure ~1% either way — but
-a dropped flag is exactly what this gate exists to catch, and the task named it.)
+**Ledger-row → A4 traceability.** Every A2/A3 row is cited in the review or carried as reviewed.
+High-load rows spot-verified against A1 lines (all exact): consol PAT 123/+172% (ln121), std PAT
+120/+182% (ln121-122), consol AUM 15,935/+27% (ln118), GNPA 2.2%/2.18% (ln125-126), credit cost
+3.06% + overlay 36 + ex-overlay 1.97% (ln128-129), ROA 3.55%/ROE 15.10% (ln125,135), slippage
+49/write-off 127 (ln228), Q4 slippage 90 (ln315), ECB 1,573/100% hedged/net -3 (ln301-306), DA
+94/20-22% (ln221-223), CRAR 26.74%←25.39% (ln155), promoter 100 Cr @17% (ln157), on-book prov
+250 vs 152 (ln138), 2030 AUM 32,000 (ln163), consol ROA 3.3% (ln229), steady NIM 14.35-14.50%
+(ln283), stable credit cost 2.5-3.0% (ln204), guidance 20-25%/18,200-18,900 (ln159), CGFMU
+pre-tied GNPA 3.5-4% (ln293-294).
 
-All other ledger rows are cited in A4 or reviewed-no-finding. All 19 A3 findings
-(A3-01…A3-19) are listed as incorporated and each maps to at least one A4 row / question.
+Both A2 NOT-FOUND items carried unresolved in the preamble (review ln 43-46): yr-ago NNPA "9%"
+(ln126, A3-06) and new-branch breakeven unit "91" (ln289) — not asserted as fact.
+
+**Peer cross-check omission disclosed?** YES — Step 7B (review ln 526-534): "No peer NBFC-MFI
+concall was supplied ... within the +/-4-week window ... deferred and stated explicitly," flagged
+to the orchestrator; mirrored in YAML flags (ln 887). Complies with the protocol rule.
+
+**COVERAGE: PASS. orphan_rows: none. missing_from_ledger: none.**
 
 ---
 
-## 2. ARITHMETIC / FIDELITY AUDIT (every cited concall number → A1 line, via garble ledger)
+## PART 2 — ARITHMETIC / FIDELITY AUDIT (recompute every derived figure)
 
-| Figure (A4) | A4 value | My re-tie to A1 | Source line | Status |
+Concall layer; Role-4 filing metrics (EBITDA, ETR, PAT bridge) correctly not re-litigated
+(cross-referenced to the A5-COMPLETE Role 4). Derived quantities inside Role 5, recomputed raw:
+
+| Metric | A4 value | My recompute | Source | Status |
 |---|---|---|---|---|
-| Write-off Q1 | Rs 127 Cr | "Right off was 127 K" → garble #9 anchors Rs 127 Cr | ln 228 | TIES |
-| Slippage Q1 | Rs 49 Cr | "slippages were 49 K"; "49 crores" | ln 228, 315-316 | TIES |
-| Slippage Q4 | Rs 90 Cr | "slippage… last quarter were 90 crores" | ln 315 | TIES |
-| Overlay Q4→Q1 | Rs 21→36 Cr | "little over 20 K … this quarter 36 K"; deck anchors 21 (Q4), 36 matches deck ln495 | ln 316-317 | TIES (see note) |
-| Adjusted ROA | 4.34% | "ROA for the quarter was 4.34%" | ln 135 | TIES |
-| Adjusted ROE | 18.46% | "ROE 18.46%" (anchors deck ROE* 18.5%) | ln 135 | TIES |
-| Adjusted ROA (Q&A) | 4.28% | "ROF of about 4.28%" | ln 193 | TIES |
-| ECB outstanding | Rs 1,573 Cr, 100% hedged | "1573 cr of ECB outstanding … 100% … fully h" | ln 301 | TIES |
-| Net Q1 forex | −Rs 3 Cr | "total impact … a negative of 3 cr" | ln 305-306 | TIES |
-| DA book band | 20-22% of AUM | "range is between 20 to 22%" | ln 223 | TIES (base note) |
-| DA income Q1 / Q4 | Rs 94 / ~140 Cr | "140 crores … this quarter it is at 94 crores" | ln 221 | TIES |
-| Reported credit cost / ex-overlay | 3.06% / 1.97% | "3.06% … excluding the overlay … 1.97%" | ln 128-129 | TIES |
-| Consol AUM guide | 20-25% → Rs 18,200-18,900 | verbatim; implied absolute reconciles off Mar-26 base (~15,176×1.20-1.25) not Jun-26 base | ln 159 | TIES |
-| Prior consol AUM guide | 25-30% | analyst restatement "25 30%" | ln 257 | TIES |
-| Stable-state credit cost | 2.5-3.0% | "2 and a half to 3%" | ln 204 | TIES |
-| Steady-state NIM | 14.35-14.50% | "14.35% to about 14.50%" | ln 282-283 | TIES |
+| 3E status tally | 2+5+1+5 = 13 | 2+5+1+5 = 13 | Step 3E table | PASS |
+| Response-quality tally | A9/B8/C2/D1/E0 = 20 | A9 (C.20 A/B→A), B8, C2 (C.10,C.15), D1 (C.1), E0 = 20 | Step 4A | PASS |
+| Specificity ratio | ~10/16 ≈ 0.63 | 10/16 = 0.625 ≈ 0.63 | Step 6B | PASS |
+| Defensive-language count | ~7 (>5 hedge-heavy) | 7 distinct (conservative-refrain = 1) | Step 6C | PASS |
+| Consol PAT over standalone | Rs 3 Cr | 123 − 120 = 3 | ln121-122 | PASS |
+| Consol−standalone income gap | Rs 93 Cr | 827 − 734 = 93 | ln121 | PASS |
+| Write-off vs slippage | 127 > 49 | 127 > 49 | ln228 | PASS |
+| Single-quarter delivery | 5.0/5 = 100% | 5 in-band, consol-ROE excluded (no commitment) | Step 3A/3B | PASS |
+| Reported vs ex-overlay credit cost | 3.06% vs 1.97% | both spoken, overlay 36 Cr | ln128-129 | PASS |
 
-**Garble-integrity check (task-specified): did A4 quietly "correct" ASR garbles into
-asserted facts?** No. "49 K"/"127 K"/"20 K"/"36 K" are used as the garble-ledger-anchored
-Rs values with the anchoring disclosed in the preamble; the deck-anchored overlay Rs 21 Cr
-is labelled "(deck)" at Step 2L (not asserted as spoken); the NOT-FOUND "9%" NNPA and "91"
-breakeven unit are carried uncorrected. This is compliant with the extraction-discipline
-rule (anchor to filing/deck where garbled, else NOT FOUND).
+**Fidelity.** (i) Every cited concall number ties to an A1 line via the garble ledger — verified
+by independent grep for 4.34/4.28/14.66/14.36/127K/49K/1573cr (all at cited lines). (ii) No garble
+asserted as fact: "38 cr"→Rs 3,008 Cr, "127 K"→Rs 127 Cr, yr-ago NNPA "9%" and breakeven-unit
+"91" carried as garble/NOT-FOUND, not truth (review ln 47-51, 43-46). (iii) Internal
+inconsistencies (A3-03 ROA, A3-04 NIM, A3-05 overlay 20 vs 21, A3-07 Assam count) flagged-not-
+resolved, never silently reconciled.
 
-**Three internal inconsistencies — are they flagged, not resolved?**
-- Adjusted ROA **4.34% vs 4.28%** — FLAGGED, unresolved (A4 Step 1, Step 7A "UNVERIFIABLE
-  which is canonical", Question 8; tied A3-03). PASS.
-- NIM **14.66% vs 14.36%** — FLAGGED, unresolved (A4 Step 1, Step 7A "two conventions,
-  neither named", Question 8; tied A3-04). PASS.
-- Assam **44,000 vs 40,000** — **NOT FLAGGED.** A4 uses each figure in its own context and
-  never notes the conflict; no tie to any A3 finding. **FAIL** (see Coverage finding).
+One observation (NOT a fail): management's spoken "20-25% implying 18,200-18,900 Cr" (ln159) does
+not arithmetically close off the Rs 15,935 Cr consol base (20% → ~19,122). The review faithfully
+quotes it as management's *own* implied band ("implies", Step 2L), does not adopt it as an
+A4-derived figure, and does not assert the math is correct. Correct conservative handling — a
+management inconsistency appropriately transcribed, not an A4 arithmetic error.
 
-**Minor arithmetic slip (non-verdict-driving).** Step 3E summary tally reads "NOT ADDRESSED
-4 (Q7, Q9, Q11, Q12, Q13…)" — the parenthetical lists **5** items, and Q11 is double-counted
-(also called "evasive" under EVADED). Cosmetic self-count error in A4's own summary; the
-Step 3E table itself is complete (all 13 R4 questions mapped). Recommend A4 relabel to 5
-(or 4 with Q11 assigned once). Does not change any status or the verdict.
-
-**DA-book base ambiguity (minor fidelity note).** A4 states DA at "20-22% of **consolidated**
-AUM" throughout, but the transcript self-corrects mid-sentence: ln 223 "on the total
-consolidated AUM" → ln 226 "on… the consolidated on on the **sorry standalone**"; the A1
-segment index (Turn 5) reads "of standalone AUM." The band (20-22%) is identical either
-way, so it is immaterial, but the consol-vs-standalone base is genuinely unresolved in the
-source and A4 asserts consolidated without noting it. Log; not a FAIL.
-
-No derived metric in A4's tables mis-computes above rounding.
+**ARITHMETIC: PASS. arithmetic_mismatches: none above rounding.**
 
 ---
 
-## 3. ADVERSARIAL READ — three most-positive claims vs strongest same-text bear counter
+## PART 3 — ADVERSARIAL READ (three most positive claims, strongest bear from same text)
 
-**Claim A — "Slippages halved 90→49 Cr = genuine, newly-disclosed asset-quality
-improvement."**
-Bear counter (from the extract): the Rs 127 Cr write-off (ln 228) **exceeds** the Rs 49 Cr
-slippage and is, by management's own words (ln 228 "the write off … looks higher … because
-the GMPPA got down by 90"; ln 317 "the GNPA got reduced by 90 [bps]… buffer got increased
-while my slippages were… reduced to half"), the mechanical driver of the 90 bps GNPA fall;
-with the ARC-vs-organic split of the Rs 127 Cr and the Stage-2 book both undisclosed, the
-"improvement" cannot be shown organic. **Survives — but already grafted** (A4 Step 8.5,
-Exchange 1, Step 7A make exactly this point; the INDETERMINATE cap is HELD on it). No new
-graft required.
+**Claim 1 — "100% within-band delivery; credibility Grade B; COMMITTED & CREDIBLE archetype."**
+Bear (same text): 100% only on the metrics management *chose* to guide; consol ROE, overlay
+ceiling, Stage-2, GNPA trajectory withheld — "guide-what-you-can-beat." *Already incorporated:*
+Step 3 caveat (ln 235-240), 3C (ln 242-246), 6E boundary watch-items, YAML flags. **Does not
+survive as new — already grafted.**
 
-**Claim B — "100% (5/5) in-band delivery on guided metrics = credible guider (Grade B)."**
-Bear counter: the 100% is on a **self-selected** set — reported credit cost, std ROA, DA %,
-NIM — while the uncomfortable metrics (consol ROE, overlay ceiling, GNPA trajectory,
-Stage-2) were withheld; and reported credit cost/ROA sit on an overlay lever management
-explicitly **declined to bound** (ln 183), so "in-band" is partly discretionary.
-**Survives — but already grafted** (A4 3A/3B caveat, 3C "guide-what-you-can-beat", Step 2L
-"selective forward disclosure", 6E boundary watch-items). No new graft required.
+**Claim 2 — "Slippages halved 90→49; genuine asset-quality improvement; strongest Q1 in 8 years."**
+Bear (same text): the Rs 127 Cr write-off (> Rs 49 Cr slippage) mechanically drove the 90 bps
+GNPA fall by management's own words (ln 317); part of the "improvement" is loans removed, not
+recovered; reported credit cost/ROA stay overlay-discretionary (number declined, ln 183).
+*Already incorporated:* Step 8.5 cap re-test ("PARTIALLY LIFTS but HOLDS"), 7A narrative-vs-
+mechanism tension (ln 519-524), plain-language "the catch," YAML flags. **Does not survive as
+new — already grafted.**
 
-**Claim C — "Strongest Q1 in 8 years; best asset quality in its history; repair→expansion."**
-Bear counter: +172% PAT is a trough-base effect (Q1FY26 sector-tested trough — R4); every
-return ratio stepped down QoQ (R4); "best asset quality in its history" (closing, ln 323)
-sits directly against a Rs 127 Cr write-off that produced the GNPA fall; subsidiary PAT
-contribution ~2%; and the sector macro (GLP 3.31 lakh Cr, PAR 2.6%, bank/NBFC share) is
-**management-asserted, not peer-corroborated** (7B peer check deferred). **Survives — but
-already grafted** (A4 Step 7A narrative-vs-mechanism tension, Step 7B peer deferral, merged
-verdict base-effect caveat). No new graft required.
+**Claim 3 — "ECB Rs 1,573 Cr 100% hedged, net −Rs 3 Cr — FX risk resolved GREEN."**
+Bear (same text): "100% hedged" is a single-management-voice assertion (no CFO; flag
+SINGLE_MGMT_VOICE) with no hedge-documentation note; the MTM-in-income vs forex-in-finance-cost
+period mismatch keeps the P&L line volatile quarter to quarter even if the net is small; R4 FND-04
+flagged the hedge claim as footnote-asserted with no note. *Already incorporated:* review logs it
+as concall-only (ln 513), notes the period mismatch (Step 3E Q8, ln 278), carries SINGLE_MGMT_VOICE
+(Step 0B) and the deferred external cross-check (7C). **Does not survive as new — already grafted.**
 
-A fourth angle considered — that the ~Rs 2,000 Cr new DA sanction / 20-22% DA book moves
-loans off-book and could understate on-book slippage — is **not supported** by the extract
-(no evidence the assigned pool was stressed); speculative, not grafted.
-
-**Net adversarial result: no surviving bear counter is missing from A4.** The review is
-symmetric on all three headline positives.
+No surviving bear counter requires grafting into A4. **ADVERSARIAL: PASS.**
 
 ---
 
-## 4. SPECIFIC HOUSE-RULE CHECKS (task-directed)
+## PART 4 — ADVERSARIAL CHECKS ON THE VERDICT ITSELF (not manufacturing a gap)
 
-- **Credibility Grade B** — defensible, neither over- nor under-stated: substantive,
-  low-evasion call (17/20 at A/B), promoter fielding all Q&A (candour), open on Assam/FX/
-  adjusted returns, held out of Grade A by the consol-ROE + overlay-ceiling withholding and
-  the reactive AUM lower, held out of Grade C by the delivered in-band numbers. A4 correctly
-  brands it provisional (first tracked call, no trailing-4 ratio). PASS.
-- **No AMBIGUOUS/FORWARD-SIGNAL finding silently upgraded to fact.** The write-off-assisted
-  GNPA read is management-stated (ln 228, 317), not an A4 upgrade; the ARC-vs-organic split
-  correctly stays UNKNOWN. "Rs 127 Cr write-off > Rs 49 Cr slippage CONFIRMS partly
-  write-off-assisted" is supported by management's own words. PASS.
-- **Answered-vs-open mapping holds.** Q11 consol-ROE = NOT ADDRESSED/EVADED (consol ROA
-  given ln 229-230, ROE never stated) ✓; Q13 over-indebtedness = NOT ADDRESSED (unasked by
-  all 7 analysts, nearest is Giri Raj's growth-vs-collection question) ✓. PASS.
-- **INDETERMINATE cap "partially lifts but HOLDS"** — consistent with the house rule: does
-  NOT resolve to PROCEED, names residual missing evidence (ARC split, Stage-2, consol/SFL
-  ratios); YAML keeps `cash_conversion: INDETERMINATE`. PASS.
-- **Verdict within the PROCEED set** — "PROCEED WITH CAVEATS — HELD"; no STOP. PASS.
-- **Decision Status flag-not-decide** — "UNCHANGED (WATCHLIST/BUY); A4 flags, human
-  decides"; no pre-committed trigger fired. PASS.
-- **Required narrative blocks** — PLAIN-LANGUAGE SUMMARY (~12 lines, plain) and SECTOR
-  KNOWLEDGE (appends to sectors/NBFC-MFI.md) both present, in body and YAML. PASS.
+- Credibility Grade **B** — defensible: 17/20 Q&A at A/B, promoter fields all Q&A, one hard
+  evasion (overlay number), provisional (first tracked call). Supported by the extract.
+- INDETERMINATE cap **HOLDS** — correct per CLAUDE.md ("never let INDETERMINATE cash conversion
+  silently resolve to PROCEED"); the two decisive items (ARC-vs-organic split of Rs 127 Cr,
+  Stage-2 book) stay undisclosed, so the cap cannot clear. Properly conservative.
+- Verdict **PROCEED WITH CAVEATS** — in the permitted set; no STOP invented; HELD, unchanged.
+- Decision Status **flagged-not-decided** — WATCHLIST/BUY unchanged, "A4 flags, human decides,"
+  no pre-committed trigger fired. Correct.
+- Plain-language summary (10-12 lines, rounded numbers, one-line verdict) and SECTOR KNOWLEDGE
+  (append to sectors/NBFC-MFI.md) — both present and compliant.
+
+Nothing here forces a re-open. Both prior gaps are genuinely closed and the re-sweep introduced
+no new coverage, arithmetic, or fidelity error; I am not manufacturing a gap to avoid closing.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** The review is exceptionally thorough on coverage, arithmetic fidelity, and
-bear-symmetry — every guidance number and every task-specified figure ties to its A1 line
-via the garble ledger, no garble is quietly "corrected" into fact, the peer cross-check
-omission is disclosed, and all three headline positives already carry their surviving bear
-counters. It fails on **one** narrow, task-named item:
-
-**GAP:** The A2 ledger flags the Assam affected-borrower count as a same-fact **DISCREPANCY**
-(D.1 ln133 "44,000" vs D.2 ln248 "40,000 odd", same call). A4 uses `~44,000` (Step 1,
-Sector Knowledge) and `~40,000` (Step 4A C.11) in different places **without reconciling or
-flagging the conflict**, whereas it correctly flags the parallel ROA 4.34/4.28 (A3-03) and
-NIM 14.66/14.36 (A3-04) discrepancies. The Assam count discrepancy was not elevated to an
-A3 forensic finding and is therefore not surfaced in A4.
-
-**LOOP BACK TO A3:** add a forensic finding for the A2-flagged Assam borrower-count
-discrepancy (ledger rows D.1 ln133 / D.2 ln248), then A4 surfaces it as **flagged-not-
-resolved** (as it already does for the ROA and NIM pairs). One-line fix; immaterial to the
-thesis (net Assam exposure ~1% either way) but required for flag-propagation completeness.
-
-Secondary (non-blocking, route to A4): relabel the Step 3E "NOT ADDRESSED 4" tally (5 items
-listed / Q11 double-counted); optionally note the DA-book consolidated-vs-standalone base
-ambiguity (ln 223 vs 226).
+**COMPLETE.** Both prior-INCOMPLETE gaps are fixed (Assam 44,000/40,000 now flagged-unreconciled
+alongside A3-03 and A3-04; answered-vs-open tally reconciles to 13 with Q11 counted once). The
+full re-audit passes on all three axes — coverage (12 turns / 20 questions / 194 numbers / 7
+analysts all accounted, peer omission disclosed), arithmetic/fidelity (every cited number ties to
+an A1 line, no garble asserted as fact, inconsistencies flagged not resolved), and adversarial
+(all three bear counters already incorporated; Grade B, cap-HOLDS, PROCEED-set verdict, Decision
+Status flagged, plain-language + sector blocks present). No orphan rows, no arithmetic mismatch,
+no surviving un-grafted bear counter. Cleared to proceed to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -189,17 +188,12 @@ company: "SATIN"
 quarter: "Q1FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
-  orphan_rows:
-    - "A2 ledger D.1 ln133 / D.2 ln248 — Assam affected-borrower count DISCREPANCY (44,000 opening vs 40,000 Q&A) flagged in A2, not elevated to an A3 finding and not surfaced/reconciled in A4 (contrast ROA 4.34/4.28=A3-03 and NIM 14.66/14.36=A3-04, which A4 does flag)"
+  orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Step 3E summary tally 'NOT ADDRESSED'"
-    a4_value: "4"
-    recomputed: "5 (Q7, Q9, Q11, Q12, Q13; Q11 also double-counted as EVADED)"
-    source_line: "review Step 3E-summary (ln ~281-283)"
-surviving_bear_counters: []   # all three headline-positive bear counters survive but are already incorporated in A4; none require new grafting
-loop_back_to: "A3"
-gap: "Assam affected-borrower count discrepancy (44,000 opening ln133 vs 40,000 Q&A ln248) is A2-flagged DISCREPANCY (ledger D.1 ln133 / D.2 ln248) but was not elevated to an A3 forensic finding and is not flagged-not-resolved in A4, unlike the parallel ROA 4.34/4.28 (A3-03) and NIM 14.66/14.36 (A3-04) discrepancies. A3 to add the forensic; A4 to surface it as flagged-unreconciled. Immaterial to thesis (net Assam ~1% either way) but a dropped ledger flag."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

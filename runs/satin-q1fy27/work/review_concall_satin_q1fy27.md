@@ -152,7 +152,11 @@ enumerated in ledger Section D.1; this is the claims-level distillation).
 - *Internal contradictions in the opening:* adjusted standalone ROA stated **4.34%**
   (ln 135) vs **4.28%** in Q&A minutes later (ln 193) — unreconciled (A3-03); NIM
   **14.66%** opening (ln 122) vs **14.36%** in Q&A "different convention" never named
-  (ln 282; A3-04).
+  (ln 282; A3-04); and the **Assam affected-borrower count 44,000** (opening, ln 133)
+  vs **40,000** (Q&A Turn 6, ln 248) — same call, unreconciled (A3-07). All three are
+  flagged-not-resolved (same treatment). A3-07 is **immaterial to the thesis** (net
+  Assam exposure is ~1% either way) but is a real disclosure-consistency data point,
+  logged for the trailing tracker alongside the two ratio inconsistencies.
 
 ---
 
@@ -268,23 +272,25 @@ and what management said.
 | Q2 | DA volume / run-rate / PBT dependence | ln 221-226 | DA income Rs 94 Cr (Q4 ~Rs 140 Cr, "very heavy quarter"); DA book maintained **20-22% of consolidated AUM**; Q2/Q3 similar, Q4 seasonally heavy. Rupee assignment-volume and explicit %-of-PBT not quantified, but the run-rate norm is now named. | **ANSWERED** (largely; run-rate norm given) |
 | Q3 | Overlay GAAP vs adjusted; confirm Rs 15 Cr fresh charge; GAAP returns vs targets | ln 135, 193, 316-317 | Reported ROA **3.55%** / ROE **15.10%** are AFTER the Rs 36 Cr buffer; ex-overlay ROA **4.34%** (also stated 4.28%, ln 193) / ROE **18.46%**; overlay Rs 20 -> 36 Cr confirmed. **Buffer BUILD-PATH / ceiling DECLINED** ("not actually committing a number," ln 183). Reported earnings remain management-discretionary via overlay. | **PARTIAL** (numbers answered; build-path evaded — A3-08/A3-19) |
 | Q4 | QoQ delta for all 12 ratio metrics; NIM/yield bridge; unadjusted revenue/NIM | ln 280-283 | NIM history recited 13.16 -> 14.48 -> 14.50 -> 15.85 -> **14.36%**; steady-state **14.35-14.50%**; Q4 15.85% flattered by DA lifted to 21% of AUM. **Full 12-metric QoQ table NOT given; unadjusted (pre-MTM/forex) revenue/NIM NOT shown**; convention behind 14.66% vs 14.36% not named (A3-04). | **PARTIAL** |
-| Q5 | Subsidiary PAT collapse cause; STL/SGAL/QTrino drag; Q4 one-off | ln 149-152, 236-240 | Qualitative only: subs are "babies... in the investment phase," "will start contributing... quarter by quarter now"; SFL/SHFL sub-efficient scale (~Rs 1,200-1,360 Cr). **No per-sub PAT number; no Q4 one-off explanation; no drag quantification.** | **EVADED** (qualitative non-answer; A3-02/A3-17) |
+| Q5 | Subsidiary PAT collapse cause; STL/SGAL/QTrino drag; Q4 one-off | ln 149-152, 236-240 | Qualitative only: subs are "babies... in the investment phase," "will start contributing... quarter by quarter"; SFL/SHFL sub-efficient scale (~Rs 1,200-1,360 Cr). **No per-sub PAT number; no Q4 one-off explanation; no drag quantification.** | **EVADED** (qualitative non-answer; A3-02/A3-17) |
 | Q6 | Warrant allotment date/price; pro-forma diluted EPS; Rs 100 Cr deployment | ln 157, 194-198 | Rs 100 Cr at ~17% premium under PB regulation; **deployment = fund fast-growing subsidiaries** (SFL +134%); premium cited "deliberately... our confidence." **Allotment date and pro-forma diluted share count/EPS NOT given.** | **PARTIAL** (deployment answered; dilution mechanics open) |
 | Q7 | Reconcile consol-below-standalone net-worth gap (Rs 275 Cr); BVPS | — | Not raised by any analyst; management cited standalone net worth Rs 3,243 Cr (ln 157) but did not address the consol < standalone gap. | **NOT ADDRESSED** |
 | Q8 | FX finance-cost credit fully hedged? reversal exposure? hedge note? | ln 300-306 | ECB **Rs 1,573 Cr outstanding, 100% hedged**; MTM on derivatives booked in income, exchange fluctuation in finance cost, hence period mismatch; **net Q1 impact -Rs 3 Cr, "no exchange rate risk in the balance sheet."** | **ANSWERED** (clear; concall-only disclosure) |
 | Q9 | Normalised ETR as deferred-tax credits unwind | — | Not raised; no ETR/deferred-tax discussion on the call. | **NOT ADDRESSED** |
 | Q10 | Funding/commissioning plan STL/SGAL/QTrino; AIF corpus/date; QTrino intent | ln 145-147 | Core-banking UAT complete, go-live Q2 FY27, then LMS/LOS for NBFCs; Satin Tech first paying HRMS customers; QTrino first revenue milestone; SGAL AIF first close + first deployment "coming quarter," institutional LPs onboarding. **Funding amounts (external vs parent), AIF corpus size NOT given.** | **PARTIAL** (milestone status given; funding quanta open) |
-| Q11 | Why no consol-ROE/GNPA/NIM guidance? FY2030 Rs 32,000 Cr basis? | ln 229-232, 163, 327 | Consol **ROA** addressed qualitatively ("will increase QoQ" from 3.3%, conservative); **consol ROE NEVER given**; FY2030 Rs 32,000 Cr restated but not quantitatively underpinned. The one metric the escalation gate turns on stays withheld. | **NOT ADDRESSED / EVADED** (consol ROE; A3-01) |
+| Q11 | Why no consol-ROE/GNPA/NIM guidance? FY2030 Rs 32,000 Cr basis? | ln 229-232, 163, 327 | Consol **ROA** addressed qualitatively ("will increase QoQ" from 3.3%, conservative); **consol ROE NEVER given** — no analyst asked, management volunteered nothing; FY2030 Rs 32,000 Cr restated but not quantitatively underpinned. The one metric the escalation gate turns on stays withheld. | **NOT ADDRESSED** (consol ROE unasked and unvolunteered; A3-01) |
 | Q12 | Drafting-discipline items (Reg 53 vs 63; AUM shown 3 ways; "xx" token) | — | Not raised; not a concall topic. | **NOT ADDRESSED** |
 | Q13 | Client-base vs AUM; per-borrower exposure / over-indebtedness | ln 264-273 | **Went UNASKED by every analyst** (A3-10). Nearest: Giri Raj Dhaka's growth-vs-collection-efficiency question, which management answered with "growth with calibrated portfolio quality," "guardrails before the SRO" — but the specific client-base-vs-AUM divergence and per-borrower exposure were NOT addressed. | **NOT ADDRESSED** (sector-central risk unprobed) |
 
 **3E summary counts:** ANSWERED 2 (Q2, Q8) · PARTIAL 5 (Q1, Q3, Q4, Q6, Q10) ·
-EVADED 1 (Q5; Q11-consol-ROE also evasive) · NOT ADDRESSED 4 (Q7, Q9, Q11, Q12, Q13 —
-Q11 and Q13 are the load-bearing ones). Net: the concall **cleared the two "known-
-answerable" technical questions (DA norm, FX hedge)** and gave the write-off/slippage
-numbers, but **left every discretionary/forward-quality question (consol ROE, overlay
-path, organic-vs-ARC split, Stage-2, subsidiary quantification, over-indebtedness)
-open**. That distribution is itself the signal.
+EVADED 1 (Q5) · NOT ADDRESSED 5 (Q7, Q9, Q11, Q12, Q13 — Q11 and Q13 are the
+load-bearing ones). **Total = 2 + 5 + 1 + 5 = 13 (reconciles to the 13 Role 4
+questions; Q11 is counted once, as NOT ADDRESSED, since consol ROE was neither asked
+nor volunteered).** Net: the concall **cleared the two "known-answerable" technical
+questions (DA norm, FX hedge)** and gave the write-off/slippage numbers, but **left
+every discretionary/forward-quality question (consol ROE, overlay path, organic-vs-ARC
+split, Stage-2, subsidiary quantification, over-indebtedness) open**. That distribution
+is itself the signal.
 
 ---
 
@@ -470,7 +476,8 @@ comment" instances (0). Compare-to-prior: `ND` (first tracked call).
 
 ### 6D. Confidence indicators (positive specificity)
 - Named, quantified Assam exposure with NatCat mechanics and net ~1% residual (ln 133,
-  247-253) — candid on a live risk.
+  247-253) — candid on a live risk (note the 44,000 vs 40,000 count inconsistency, A3-07,
+  immaterial to the ~1% net read but logged).
 - Acknowledged the reported-vs-adjusted gap openly: "We could have reported those numbers
   but we chose not to" (ln 136) — genuine disclosure.
 - ECB hedge fully explained with accounting mechanism (ln 301-306).
@@ -507,6 +514,7 @@ comment" instances (0). Compare-to-prior: `ND` (first tracked call).
 | DA income Rs 94 Cr | Std DA income 92 / consol 94 (R4 s37/L1167) | CONFIRMED |
 | Adjusted ROA "4.34%" (ln 135) vs "4.28%" (ln 193) | Deck std adjusted ROA 4.34% (R4 s19/L552); PR ROA* 4.3% | UNVERIFIABLE which spoken figure is canonical (A3-03) |
 | NIM "14.66%" opening vs "14.36%" Q&A | Deck std NIM 14.36% (R4 s19/L547); 14.66% is the statutory-basis NIM | PARTIALLY CONFIRMED (two conventions, neither named; A3-04) |
+| Assam borrowers "44,000" (opening) vs "40,000" (Q&A) | Same call, both figures; no filing anchor for the count | UNRECONCILED, immaterial (net ~1% either way; A3-07) |
 
 No concall claim CONTRADICTS the filing. The one material narrative-vs-number tension —
 "asset quality is the best in its history" (closing, ln 323) alongside a Rs 127 Cr
@@ -839,8 +847,9 @@ sc_gap_pat_pct: ["Q1FY27: +1.96%","Q4FY26: +18.33%"]   # carried from Role 4; co
 answered_vs_open_summary:
   answered: ["R4-Q2 DA norm 20-22% of AUM","R4-Q8 FX hedge Rs 1,573 Cr 100% hedged net -Rs 3 Cr"]
   partial: ["R4-Q1 GNPA walk (write-off Rs 127 Cr, slippage 90->49, ARC split missing)","R4-Q3 overlay reported vs adjusted (numbers yes, build-path declined)","R4-Q4 NIM steady-state given, full ratio/unadjusted table not","R4-Q6 Rs 100 Cr deployment yes, dilution mechanics open","R4-Q10 subsidiary milestones yes, funding quanta open"]
-  evaded: ["R4-Q5 subsidiary PAT quantification (qualitative only)","R4-Q11 consol ROE guidance (withheld again)"]
-  not_addressed: ["R4-Q7 net-worth gap","R4-Q9 ETR","R4-Q12 drafting","R4-Q13 client-base/over-indebtedness (unasked by all analysts)"]
+  evaded: ["R4-Q5 subsidiary PAT quantification (qualitative only)"]
+  not_addressed: ["R4-Q7 net-worth gap","R4-Q9 ETR","R4-Q11 consol ROE guidance (unasked and unvolunteered)","R4-Q12 drafting","R4-Q13 client-base/over-indebtedness (unasked by all analysts)"]
+  tally_check: "answered 2 + partial 5 + evaded 1 + not_addressed 5 = 13"
 questions_for_management:
   - {q: "Of the Rs 127 Cr write-off, ARC/DA-sale vs pure charge-off split; full GNPA/ECL walk; Stage-1/2/3 book", from_finding_id: ["A3-13","A3-11"]}
   - {q: "Publish an overlay/buffer policy and FY27 build path (declined a number, ln 183); reported credit cost/ROA move with it", from_finding_id: ["A3-08","A3-19"]}
@@ -873,6 +882,7 @@ flags:
   - "R4 Q2 (DA norm 20-22% of AUM) and R4 Q8 (ECB Rs 1,573 Cr 100% hedged, net -Rs 3 Cr) ANSWERED and dropped"
   - "Over-indebtedness / client-base-vs-AUM (R4 Q13, sector-central risk) went UNASKED by all 7 analysts (A3-10) — low-friction boutique call, no buy-side voice"
   - "Consol AUM guidance LOWERED 25-30% -> 20-25%, surfaced only reactively (A3-09/A3-16); FY28 self-disclaimed 'not a guidance'"
+  - "Assam affected-borrower count inconsistent: 44,000 (opening, ln 133) vs 40,000 (Q&A, ln 248), same call, unreconciled (A3-07); immaterial to thesis (net ~1% either way), logged as disclosure-consistency data point"
   - "Single management voice (CMD fields all Q&A incl. accounting; no CFO named)"
   - "Peer NBFC-MFI concall cross-check DEFERRED (none supplied in +/-4-week window) — orchestrator to pull a same-window peer"
   - "No pre-committed trigger fired on the concall; Decision Status UNCHANGED (A4 flags, human decides); escalation gate remains MET on filing basis"

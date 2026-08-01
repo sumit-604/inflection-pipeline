@@ -148,7 +148,7 @@ Only three quarterly columns are disclosed in the filing (Q1 FY26, Q4 FY26, Q1 F
 | Q4 FY26 | 29.59 (res L124) | 23.47% | 6.12 | Prev-period tax Rs 0.08 Cr (res L148) | — |
 | Q1 FY27 | 30.22 (res L124) | 19.76% | 4.91 | none in-quarter | +2.13% QoQ rev; margin dipped |
 
-**Diagnostics:** (a) Revenue run-rate is roughly plateauing (+2.13% QoQ Q4->Q1, +10.64% YoY) — not stepping up despite **+9 net store additions** in the quarter (126 -> 135; pres U86/U102/U113). (b) The one clear one-off is the FY26 Rs 26 Cr related-party inventory sale to PNGS SIS, routed through FY25 revenue (FN17, pres s12 L327) — it inflates the FY25 base but does not touch these three quarters. (c) Op EBITDA margin stepped DOWN sequentially (23.47% -> 19.76%, −371 bps QoQ) and gross margin fell −389 bps QoQ (46.11% -> 42.20%) — the reverse of a commissioning-lift; the new store base is diluting margin, not lifting run-rate. (d) Implied Q2 FY27 base to hold the +10.6% YoY pace: ~Rs 30-31 Cr, but management's own note flags demand softening (A3-04).
+**Diagnostics:** (a) Revenue run-rate is roughly plateauing (+2.13% QoQ Q4->Q1, +10.64% YoY) — not stepping up despite **+9 net store additions** in the quarter (126 -> 135; pres U85/U86/U53). (b) The one clear one-off is the FY26 Rs 26 Cr related-party inventory sale to PNGS SIS, routed through FY25 revenue (FN17, pres s12 L327) — it inflates the FY25 base but does not touch these three quarters. (c) Op EBITDA margin stepped DOWN sequentially (23.47% -> 19.76%, −371 bps QoQ) and gross margin fell −389 bps QoQ (46.11% -> 42.20%) — the reverse of a commissioning-lift; the new store base is diluting margin, not lifting run-rate. (d) Implied Q2 FY27 base to hold the +10.6% YoY pace: ~Rs 30-31 Cr, but management's own note flags demand softening (A3-04).
 
 ---
 
@@ -239,7 +239,7 @@ Binary test = CFO/PAT >=0.50x **AND** comparable growth >=30% **AND** PAT margin
 | 2 | EBITDA margin | G >=25% / R <22% (2 consec q) | 19.76% operating (res-derived); 25.98% reported | **RED** (operating <22%) |
 | 3 | PAT margin | G >=20% / R <18% (2 consec q) | 16.71% (res L152); OI-normalised ~15.05% | **RED** (<18%; clears 15% floor only OI-dependent) |
 | 4 | CFO/PAT | G >=0.70x TTM / R <0.50x FY27 FY | Q1 TTM not disclosed; last FY26 = 0.352x (pres s28) | **RED** (last reading <0.50x; TTM evidence gap) |
-| 5 | Store adds | G >=5/q / R 0-1/q | **+9 net adds** in Q1 (126 -> 135; pres U86/U102/U113); gross = net = 9 on primary text | **GREEN** (>=5/q) |
+| 5 | Store adds | G >=5/q / R 0-1/q | **+9 net adds** in Q1 (126 -> 135; pres U85/U86/U53); gross = net = 9 on primary text | **GREEN** (>=5/q) |
 | 6 | PNGS channel mix | G falling 65-70% / R >78% | Not disclosed; EBO up to 22.8% implies PNGS-SIS mix falling (FN20) | **UNKNOWN** (directionally green, undisclosed) |
 | 7 | Online revenue % | G rising 7%+ / R stagnant 4-5% | Not disclosed (FN20) | **UNKNOWN** |
 | 8 | Receivable days | G 40-50d / R >60d | No Q1 BS; FY26 annual ~33d (pres U191) | **UNKNOWN** (quarterly); FY26 ~green |

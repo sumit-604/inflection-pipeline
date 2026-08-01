@@ -39,3 +39,14 @@ Quarter detected: Q1 FY27 (quarter ended June 30, 2026)
 - NOTION SAVE: done. Full review + A3 forensics tables + A5 verdict inserted at page end; Key Notes
   audit trail prepended (prior entries preserved); Decision Status not changed (no trigger fired).
 - Count reconciliation: 16 notes / 0 turns / 5 slides, all reviewed.
+
+## CONCALL ADDENDUM (2026-08-01)
+- Concall transcript (pasted text) added. A1 concall PASS (102 lines verbatim). A2 concall PASS
+  (51 turns / 16 questions / 103 mgmt numbers). A3 concall PASS (17/17; F6/F7/F14/F16/F17 findings;
+  26 findings incl 7-of-12 prior questions NOT ADDRESSED, CFO silent, ATU 9.3m vs 8.2m).
+- A4 Role 5 addendum written (review_addendum_concall_URBANCO_q1fy27.md); verdict UNCHANGED
+  PROCEED WITH CAVEATS; Decision Status UNCHANGED WATCHLIST/AVOID; 0 thesis-broken triggers fired;
+  spine ties EXACT on statutory; Closing Brief included.
+- A5 addendum audit: VERDICT COMPLETE (0 orphan / 0 arithmetic mismatch / 0 surviving bear counters).
+- NOTION SAVE: full concall addendum inserted at page end; Key Notes prepended with dated concall entry.
+- Count reconciliation (cumulative): 16 notes / 51 turns / 5 slides, all reviewed.

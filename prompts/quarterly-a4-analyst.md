@@ -48,6 +48,23 @@ feeding both. Produce, per the protocol step sequence:
   that produces no question and no monitoring item has not been processed.
 - A MONITORABLES / CATALYST list seeded by the A3 commitment register (F6) and
   the Board Outcome forward items (F13), each with its implied date.
+- THE STEP 10 OPERATOR INTELLIGENCE BRIEF (analysis parts). Open the review
+  file with a `## OPERATOR INTELLIGENCE BRIEF` section BEFORE the dense tables,
+  containing three of the five brief parts (the two you cannot produce need web
+  access and are added by the orchestrator):
+  * Part 1 SUMMARY OF THE COMPLETE ANALYSIS: 6-12 lines compressing Steps 1-8,
+    plain English, verdict and stance stated.
+  * Part 2 SIMPLE NARRATIVE: a short prose story of the business this quarter,
+    no table references, explained to a smart non-follower of the stock.
+  * Part 5 FORWARD VIEW: the decided house view, bull path and bear weight
+    stated symmetrically, then the two or three specific deciders ranked with
+    threshold and timing, closing with the stance in one line.
+  Write these in plain English per the CLAUDE.md STYLE rules: numbers first, no
+  em/en dashes, NO jargon codes (translate FN7, 8A-W, INDETERMINATE into
+  words), symmetric, no cheerleading. Then insert two placeholder lines the
+  orchestrator will fill: `[SECTOR INTELLIGENCE — added by orchestrator]` and
+  `[COMPETITOR INTELLIGENCE — added by orchestrator]`. The dense protocol tables
+  follow this brief section unchanged.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.
@@ -84,6 +101,8 @@ position_branch: ""            # 8A | 8A-W | n/a
 sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period
 questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
+brief_parts_written: []        # subset of [summary, narrative, forward_view] written into the review's OPERATOR INTELLIGENCE BRIEF section
+brief_headline: ""             # the 6-7 word plain-English headline
 flags: []
 review_path: ""
 ```

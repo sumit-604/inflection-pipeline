@@ -86,7 +86,19 @@ GATE A5: verdict COMPLETE. INCOMPLETE loops back to the named agent (A2 / A3 /
 A4) with the exact gap. Maximum two loops; a third failure escalates to the
 human with the unresolved gap stated plainly.
 
-## 4. NOTION SAVE (only after A5 COMPLETE)
+## 4. STEP 10 OPERATOR INTELLIGENCE BRIEF (only after A5 COMPLETE)
+
+Per Role 4 Step 10, ALWAYS produce the five-part operator brief. A4 has already
+written Parts 1/2/5 (summary, simple narrative, forward view) into the review's
+opening `## OPERATOR INTELLIGENCE BRIEF` section. You now add the two web-fetched
+parts: Part 3 SECTOR INTELLIGENCE (industry size/growth this quarter and the
+company's actual verticals) and Part 4 COMPETITOR INTELLIGENCE (a same-quarter
+peer comparison table for the closest listed comparables, plus scale/margin/
+organic-vs-inorganic read). Source every external figure. Assemble all five into
+`work/intelligence_<ticker>_<quarter>.md`. Plain English per CLAUDE.md STYLE
+(numbers first, no em/en dashes, no jargon codes, symmetric bull-bear).
+
+## 5. NOTION SAVE (only after A5 COMPLETE)
 
 Per Role 4 Step 9 and existing save mechanics: fetch the company page first;
 `insert_content` with `position: end` for the full review (complete tables,
@@ -94,16 +106,20 @@ never summaries), splitting large content across sequential inserts;
 `update_properties` to PREPEND the date-stamped Key Notes line to the
 pipe-delimited audit trail, preserving all prior entries; escape `|` in cells
 as `\|`. Save the A3 forensics table and the A5 audit verdict alongside the
-review. Decision Status changes only when a pre-committed trigger fires — flag,
-do not decide.
+review, and PREPEND the Step 10 brief so it leads the review section. Decision
+Status changes only when a pre-committed trigger fires — flag, do not decide.
 
-## 5. COMMIT AND REPORT
+## 6. COMMIT AND REPORT
 
 Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
 to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 / N slides, all reviewed), the top forensic findings with their line cites,
 the protocol verdict, and the working-file paths. Print the merged review's
-headline tables and the Questions-for-Management table in full in chat.
+headline tables and the Questions-for-Management table in full in chat, AND
+print the full five-part Step 10 Operator Intelligence Brief (summary, simple
+narrative, sector intelligence, competitor intelligence, forward view). The
+brief is the operator-facing deliverable; a report without all five parts is
+incomplete.
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

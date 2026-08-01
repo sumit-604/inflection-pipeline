@@ -157,12 +157,32 @@ After all documents pass A1-A3:
    with the specific gap stated. Maximum two loops; a third failure escalates
    to the human with the unresolved gap stated plainly.
 
-6. NOTION SAVE (only after A5 COMPLETE). See below.
+6. STEP 10 OPERATOR INTELLIGENCE BRIEF (only after A5 COMPLETE). The A4 review
+   already carries Parts 1/2/5 (summary, simple narrative, forward view) in its
+   opening `## OPERATOR INTELLIGENCE BRIEF` section. You now produce the two
+   parts the subagents could not (they have no web access):
+   - Part 3 SECTOR INTELLIGENCE: live web research on the company's industry
+     this quarter (market size/growth, the verticals it actually operates in,
+     whether sector weather helped or hurt). Every external figure sourced.
+   - Part 4 COMPETITOR INTELLIGENCE: live web research for a same-quarter peer
+     comparison table (revenue, growth, margin, PAT trend, one-line read) for
+     the closest listed comparables, plus 2-3 sentences on scale, margin level,
+     and organic-vs-inorganic growth quality. Sourced.
+   Assemble all five parts into `work/intelligence_<ticker>_<quarter>.md`. Keep
+   it plain English per CLAUDE.md STYLE (numbers first, no em/en dashes, no
+   jargon codes, symmetric bull-bear). This is a synthesis of subagent outputs
+   plus external market data, not a new independent reading of the filing.
 
-7. COMMIT the run folder (`work/` files) with message
+7. NOTION SAVE (only after A5 COMPLETE). See below. PREPEND the Step 10 brief
+   to the review section (the operator reads the brief before the tables).
+
+8. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+   reviewed), the top forensic findings, the working-file paths, AND the full
+   five-part Step 10 Operator Intelligence Brief printed in chat. The brief is
+   the operator-facing deliverable; a report without all five parts is
+   incomplete.
 
 ---
 
@@ -179,6 +199,9 @@ Per Role 4 Step 9 and existing save mechanics:
 - Decision Status changes ONLY when a pre-committed trigger formally fires.
 - Save the A3 forensics table and the A5 audit verdict alongside the review;
   the completeness proof is part of the record.
+- PREPEND the Step 10 Operator Intelligence Brief (all five parts) to the
+  review section so it leads the dense tables; the operator reads the brief
+  first. The brief supplements the tables and never replaces them.
 
 ---
 

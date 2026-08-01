@@ -553,6 +553,24 @@ If Notion times out (frequent for large pages), split the save into smaller chun
 
 🛑 **STOP. Confirm save before ending the session.**
 
+## STEP 10 — OPERATOR INTELLIGENCE BRIEF (always produced; the operator-facing deliverable)
+
+Steps 1-9 produce the dense, line-anchored institutional record. Step 10 produces the human-readable brief the operator actually reads first. It is MANDATORY on every quarterly review and is never skipped or replaced by "see the tables above". It is written in plain English per the CLAUDE.md STYLE rules (numbers first, no em/en dashes, no jargon codes such as FN7 / 8A-W / INDETERMINATE — translate them), symmetric bull vs bear, no cheerleading.
+
+It has exactly these five parts, in this order:
+
+1. **Summary of the complete analysis.** 6-12 lines. What the quarter showed, the one or two things that actually matter, the protocol verdict and the position stance, in words a non-specialist reads once and understands. This is a compression of Steps 1-8, not a new analysis.
+2. **Simple narrative.** A short plain-English story of the business this quarter: what the company does, what changed, why the numbers moved the way they did. No table references; prose only. Explain it as if to a smart reader who does not follow the stock.
+3. **Sector intelligence.** The industry backdrop this quarter: market size and growth trajectory, the relevant vertical trends (name the verticals the company actually operates in), and whether sector-wide weather (demand, pricing, margin) helped or hurt. Gathered from live sources, not memory; every external figure carries its source.
+4. **Competitor intelligence.** A same-quarter peer comparison table (revenue, revenue growth, margin, PAT trend, one-line read per peer) for the closest listed comparables, then two or three sentences on where the company sits: scale, margin level, growth quality (organic vs inorganic). Gathered live; sourced.
+5. **Forward view (house view).** A decided forward-looking assessment: the bull path and the bear weight stated symmetrically, then the two or three specific things that decide the thesis next, ranked, each with its threshold and timing. Close with the stance in one line. This is the pipeline's own view, synthesised from Steps 6-8 monitorables/catalysts plus the sector and competitor reads. Flag any live development that would change a load-bearing thesis input.
+
+**Producer split (architectural).** The A4 analyst subagent writes Parts 1, 2 and 5 as the opening `## OPERATOR INTELLIGENCE BRIEF` section of `review_<ticker>_<quarter>.md` (it has the full analysis; it has no web access). Parts 3 and 4 require live market data the subagents cannot fetch, so the ORCHESTRATOR gathers them by web research after A5 returns COMPLETE, then assembles all five parts into `work/intelligence_<ticker>_<quarter>.md`, PREPENDS the brief to the Notion review section (operator reads it before the tables), and prints it in full in chat. Sector and competitor figures are sourced; conflicting sources are noted, not silently picked.
+
+The brief NEVER changes Decision Status (Step 8 owns that) and NEVER substitutes for the complete tables in Notion (Step 9 rule stands). It sits on top of them.
+
+🛑 **STOP. The Step 10 brief is part of the deliverable. A quarterly review reported without all five parts is incomplete.**
+
 ## NON-NEGOTIABLE RULES
 
 These rules apply to every quarterly review without exception:
@@ -570,6 +588,7 @@ These rules apply to every quarterly review without exception:
 - **When in doubt about a metric, decompose further.** If you cannot explain WHY a number changed, you have not finished the analysis.
 - **Do not deliver a position verdict without completing all 9 steps.** Even if step 8 looks obvious from earlier steps, complete each step to surface anything missed.
 - **Verify Decision Status before any HOLD/ADD/TRIM/EXIT framing.** The 8A branch is for held names; the 8A-W branch for everything else.
+- **Always deliver the Step 10 Operator Intelligence Brief.** Every quarterly review ends with the five-part brief (summary, simple narrative, sector intelligence, competitor intelligence, forward view). A review reported as tables-only, without the plain-English brief, is incomplete regardless of how complete the tables are.
 - **Track answer status across quarters.** When reviewing quarterly results, the FIRST thing to do after the data extraction is check the previous quarter's "Questions for Management" table from Notion. For each question, mark: ANSWERED (specifically) / PARTIALLY ANSWERED / EVADED / NOT ADDRESSED. Repeated evasion or non-addressing of the same question across multiple quarters is itself a governance signal — log it in the Promoter Verdict update.
 ## STYLE & DELIVERY RULES
 

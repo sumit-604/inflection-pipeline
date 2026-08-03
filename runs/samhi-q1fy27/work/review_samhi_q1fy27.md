@@ -138,7 +138,7 @@ Column order per protocol: **Q1 FY26 (Q[N] FY[YY-1]) | Q4 FY26 (Q[N-1] FY[YY]) |
 | Reported EBITDA margin (co basis) | Rep EBITDA / Total income | 36.8% | 34.0% | **32.9%** | 36.2% |
 | Core operating PBT (ex-OI) | PBT-before-exc − OI | 108.19 | ND | **296.56** | 1,337.81 |
 | Other Income / PBT-before-exc | OI / PBT | 58.2% | 12.4% | 9.4% | 18.9% |
-| Effective tax rate | Tax / PBT reported | 16.9% (39/231) | n.m. (credit) | **23.9% (78/327)** | n.m. (credit) |
+| Effective tax rate | Tax / PBT reported | ~16.7% (38.67/230.83) | n.m. (credit) | **23.9% (78/327)** | n.m. (credit) |
 | PAT margin (owners, on rev) | Owners PAT / Rev from ops | 6.35% | ND | **5.98%** | 40.3% [DTA-inflated] |
 
 ---
@@ -160,7 +160,7 @@ Column order per protocol: **Q1 FY26 (Q[N] FY[YY-1]) | Q4 FY26 (Q[N-1] FY[YY]) |
 | PBT before exceptional | 259.05 | 327.33 | +26.4% | On track |
 | Reported PBT | 231 | 327 | +41.6% | Aided by absence of discontinued-ops loss |
 | PAT (total) | 192.16 | 249.27 | **+29.7%** | Headline; but see attribution |
-| PAT attributable to owners (SAMHI) | 172.80 | 182.50 | **+5.8%** | **The number that matters for per-share value — LAGS badly (P-03)** |
+| PAT attributable to owners (SAMHI) | 172.80 | 182.50 | **+5.6%** | **The number that matters for per-share value — LAGS badly (P-03)** |
 | PAT attributable to NCI | 19.36 | 66.77 | **+244.9%** | Growth accruing to minority/JV (GIC) holders |
 | EPS basic continuing | 1.00 | 1.12 | +12.0% | Modest |
 
@@ -172,7 +172,7 @@ Column order per protocol: **Q1 FY26 (Q[N] FY[YY-1]) | Q4 FY26 (Q[N-1] FY[YY]) |
 
 3. **Did core operating PBT (ex-Other Income) grow YoY?** **Yes, sharply: +174.1% (Rs 10.8 cr → Rs 29.7 cr).** Because reported PAT (+29.7% total) grew AND core operating PBT grew, the headline is not treasury-manufactured — but the growth engine is the **finance-cost reduction (−25.5%, +Rs 12.9 cr)**, not operating leverage. Operating EBITDA alone was +8.5%.
 
-4. **What drove the gap between core operating PBT growth (+174%) and reported PAT growth (+29.7%)?** Walk (Rs mn): finance cost **+129** (favourable), other income **−120** (unfavourable), operating EBITDA **+77**, D&A **−18**, discontinued-ops loss **+28** (absent this year), higher tax **−39**. The −120 OI reversion and +39 tax step-up are what compress the reported PAT growth relative to the +174% core-PBT number. **Owners' PAT grew only +5.8% because Rs 48 mn of the incremental profit went to minority interest** (NCI 19→67).
+4. **What drove the gap between core operating PBT growth (+174%) and reported PAT growth (+29.7%)?** Walk (Rs mn): finance cost **+129** (favourable), other income **−120** (unfavourable), operating EBITDA **+77**, D&A **−18**, discontinued-ops loss **+28** (absent this year), higher tax **−39**. The −120 OI reversion and +39 tax step-up are what compress the reported PAT growth relative to the +174% core-PBT number. **Owners' PAT grew only +5.6% because Rs 48 mn of the incremental profit went to minority interest** (NCI 19→67).
 
 5. **Are D&A and finance costs scaling faster than revenue?** No absorption deficit yet: **D&A +6.3% vs revenue +12.1%** (D&A growing slower). **Finance costs −25.5%** (falling). This is the profile of a business past peak-capex-absorption on the current asset base — but the Rs 750 cr raise and 1,669-room pipeline mean D&A and finance costs will re-ramp as new hotels commission (FY28-FY31).
 
@@ -213,13 +213,13 @@ Reported PAT: Rs 192.16 mn → Rs 249.27 mn = **+Rs 57.11 mn (+29.7%)**.
 | Tax change (higher expense) | −39.39 | — | Mixed (ETR rising to statutory) |
 | **= Reported PAT change** | **+57.11** | **+29.7%** | — |
 | Memo: of which to NCI (minority) | +47.41 | +244.9% | — |
-| Memo: of which to owners (SAMHI) | +9.70 | +5.8% | — |
+| Memo: of which to owners (SAMHI) | +9.70 | +5.6% | — |
 
 **Mandatory questions:**
 - **% of PAT change from recurring core vs non-recurring:** Recurring core (op EBITDA +77, finance −18/−… net) is real; but the two largest single swings are **finance cost (+129, recurring)** and **OI reversion (−120, non-recurring)** which roughly cancel, leaving discontinued-ops normalisation (+28) and tax (−39) to net out. The clean recurring driver is finance-cost reduction; operating leverage contributed only +Rs 77 mn.
 - **If OI reverts to prior-year level:** it already did the reverse — Q1FY26 was the elevated year. Normalised OI (~Rs 30 mn) is the run-rate; no downside reversion risk here.
 - **D&A / finance at steady state?** Finance cost is still falling (deleveraging + ~300 bps rate cut since IPO, effective rate 7.8%). Both will **re-ramp** as the 1,669-room pipeline commissions (FY28-FY31) and the Rs 750 cr raise deploys.
-- **Tax adjustments inflating/deflating PAT?** **Yes — critical (A3-F8/P-08/A3-02):** FY26 PAT Rs 5,665 mn EXCEEDS FY26 PBT Rs 2,671 mn by ~Rs 2,994 mn because of a **~Rs 3,000 mn deferred-tax-asset credit recognised in FY26** ("based on improved financial performance and greater visibility of future profits", slide 15 fn6). **FY26 PAT is structurally inflated and is NOT a valuation anchor.** Quarterly ETR is climbing toward statutory: Q1FY26 16.9% → **Q1FY27 23.9%** → statutory ~25.17%. A future book-tax step-up is baked in once the shield exhausts. Standalone tax is nil across ALL four periods (exceptional gains treated as exempt/capital).
+- **Tax adjustments inflating/deflating PAT?** **Yes — critical (A3-F8/P-08/A3-02):** FY26 PAT Rs 5,665 mn EXCEEDS FY26 PBT Rs 2,671 mn by ~Rs 2,994 mn because of a **~Rs 3,000 mn deferred-tax-asset credit recognised in FY26** ("based on improved financial performance and greater visibility of future profits", slide 15 fn6). **FY26 PAT is structurally inflated and is NOT a valuation anchor.** Quarterly ETR is climbing toward statutory: Q1FY26 ~16.7% → **Q1FY27 23.9%** → statutory ~25.17%. A future book-tax step-up is baked in once the shield exhausts. Standalone tax is nil across ALL four periods (exceptional gains treated as exempt/capital).
 
 ---
 
@@ -259,7 +259,7 @@ Reported PAT: Rs 192.16 mn → Rs 249.27 mn = **+Rs 57.11 mn (+29.7%)**.
 
 **Initiation-context anchor (built here for the operator, NOT a committed thesis):**
 - One-line frame: *India multi-branded hotel owner/operator (Marriott/Hyatt/IHG), 31 hotels / 4,899 rooms, deleveraged to 3.2x, entering an upscale-mix + leisure (RARE) growth cycle funded by a pending Rs 750 cr raise.*
-- **FY26 reported PAT (Rs 5,665 mn / owners Rs 5,030 mn) is DTA-inflated and must NOT be used as an earnings base** for any valuation. Use PBT-before-exceptional (Rs 1,650 mn FY26) taxed at ~25% as the clean earnings proxy, i.e. **~Rs 1,238 mn normalised PAT FY26** — roughly 4.9x below the reported headline.
+- **FY26 reported PAT (Rs 5,665 mn / owners Rs 5,030 mn) is DTA-inflated and must NOT be used as an earnings base** for any valuation. Use PBT-before-exceptional (Rs 1,650 mn FY26) taxed at ~25% as the clean earnings proxy, i.e. **~Rs 1,238 mn normalised PAT FY26** — roughly 4.6x below the reported headline.
 - Operating EBITDA run-rate: ~Rs 982 mn/quarter (~Rs 3,930 mn annualised, post-GST structural basis).
 
 ---
@@ -311,8 +311,8 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 
 | # | Question | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|
-| 1 | FY26 PAT of Rs 5,665 mn exceeds FY26 PBT of Rs 2,671 mn because of a ~Rs 3,000 mn deferred-tax-asset credit. What steady-state effective tax rate should we model from FY27, and in which year does the recognised DTA/carry-forward shield exhaust? | FY26 PAT is not a valuation anchor; the ETR is already climbing 16.9%→23.9%→~25%. | Explicit ETR path to ~25% named; DTA quantified and dated. | Vague, or continued reliance on DTA to flatter PAT. | A3-F8, P-08, A3-02 |
-| 2 | Consolidated PAT grew +29.7% YoY but SAMHI-attributable PAT only +5.8%, while minority interest jumped Rs 19 mn → Rs 67 mn (+245%). Which specific subsidiaries drive the rising NCI take, and what is its expected trajectory as the GIC/JV assets ramp? | Per-share economics are lagging the headline; the growth is accruing to minority holders. | Names the JV structures; NCI share plateaus/declines. | Cannot explain; NCI keeps rising with growth. | P-03 |
+| 1 | FY26 PAT of Rs 5,665 mn exceeds FY26 PBT of Rs 2,671 mn because of a ~Rs 3,000 mn deferred-tax-asset credit. What steady-state effective tax rate should we model from FY27, and in which year does the recognised DTA/carry-forward shield exhaust? | FY26 PAT is not a valuation anchor; the ETR is already climbing ~16.7%→23.9%→~25%. | Explicit ETR path to ~25% named; DTA quantified and dated. | Vague, or continued reliance on DTA to flatter PAT. | A3-F8, P-08, A3-02 |
+| 2 | Consolidated PAT grew +29.7% YoY but SAMHI-attributable PAT only +5.6%, while minority interest jumped Rs 19 mn → Rs 67 mn (+245%). Which specific subsidiaries drive the rising NCI take, and what is its expected trajectory as the GIC/JV assets ramp? | Per-share economics are lagging the headline; the growth is accruing to minority holders. | Names the JV structures; NCI share plateaus/declines. | Cannot explain; NCI keeps rising with growth. | P-03 |
 | 3 | The reported EBITDA margin fell 36.8%→32.9% and slide 49 confirms the ~Rs 92 mn GST-ITC loss is now the structural post-implementation basis. Does the ~Rs 92 mn drag recur every quarter, and precisely how does the upscale-mix bridge to ~40% margin absorb a recurring GST hit? | Distinguishes a genuine margin path from comparable-basis optics. | Quantified quarterly GST drag + a dated margin bridge. | "One-time/optical" framing that the footnote contradicts. | P-12, A3-07 |
 | 4 | Confirm standalone Q1 FY27 PAT (we read ~Rs 1.1 cr from basic EPS 0.05) and that the current-quarter standalone AND consolidated exceptional-items lines are genuinely nil. Separately, what is the nature and recurrence of the FY26 Rs 966 mn impairment reversal in exceptional items? | The extract's OCR garbles the current-quarter cells; the S-vs-C gap and asset-value volatility hinge on this. | Clean confirmation; reversal explained as non-recurring. | Undisclosed exceptional in the current quarter; recurring impairment churn. | A3-F2a, A3-F2b, P-01, A3-01 |
 | 5 | The Rs 750 cr enabling resolution and the authorized-capital increase (25→29 cr shares) are "dependent on prevailing market conditions." Is a raise imminent or opportunistic? What instrument mix (equity/warrant/CCD/CCPS), quantum, timing, and use-of-proceeds split (capex vs M&A) should we expect, and what is the resulting dilution? | Directly sizes shareholder dilution against the growth it funds. | Specific instrument, quantum, timeline, ring-fenced use. | Open-ended optionality; dilution unquantified. | A3-F10, A3-F13b, A3-F7 |
@@ -329,7 +329,7 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 | 16 | The Board's Report FY2025-26 is approved and the 16th AGM is set for 31 August 2026. When will the full FY26 Annual Report (with balance sheet, cash flow, ROCE, related-party schedule) be published? | Unlocks the balance-sheet/ROCE/cash-conversion data this Q1 filing lacks. | Firm AR publication date. | Delay. | A3-F13a |
 
 **Top 3 by likelihood of producing thesis-changing information:**
-1. **Q1 (DTA / true earnings base)** — the answer resets the entire valuation base (reported FY26 PAT is ~4.9x the normalised figure). Changes Bull/Bear at the root.
+1. **Q1 (DTA / true earnings base)** — the answer resets the entire valuation base (reported FY26 PAT is ~4.6x the normalised figure). Changes Bull/Bear at the root.
 2. **Q2 (minority-interest leakage)** — if NCI structurally captures the growth, per-share compounding is far below the headline; confirms/kills the Bull case.
 3. **Q5 (Rs 750 cr raise / dilution)** — tests management transparency on capital allocation; a vague answer is itself a governance signal.
 
@@ -374,7 +374,7 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 | "Operating margins ~36% (ex-GST)" / "→~40%" | Reported EBITDA margin 32.9% (L729/722); operating ex-OI 32.19% | **CONTRADICTED at face value** — the ~36-40% figures are ex-GST/comparable; reported margin is 32.9% and fell 390 bps |
 | "Strong revenue growth" (+10.8% comparable) | Revenue from operations +12.1% (L720); total income +7.3% (L722) | **CONFIRMED** — genuine operating revenue growth |
 | "Net Debt to EBITDA ~3.0x, comfortable" (CEO) | 3.2x (14,928/4,664, deck slide 16 / PR L146) | **CONTRADICTED** — disclosed tables say 3.2x; deck itself never states 3.0x (P-15 resolves in favour of 3.2x) |
-| "PAT up 29.7%" | Consolidated PAT +29.7% (L743) TRUE, but owners' PAT +5.8% and FY26 base DTA-inflated | **TECHNICALLY TRUE, MATERIALLY INCOMPLETE** — leads with consolidated PAT while owners' share grew +5.8% and the FY26 comparator is DTA-distorted |
+| "PAT up 29.7%" | Consolidated PAT +29.7% (L743) TRUE, but owners' PAT +5.6% and FY26 base DTA-inflated | **TECHNICALLY TRUE, MATERIALLY INCOMPLETE** — leads with consolidated PAT while owners' share grew +5.6% and the FY26 comparator is DTA-distorted |
 | "Balance sheet strong / deleveraging" | Net debt +Rs 42 cr QoQ; A+ rating; effective rate 7.8% | **CONFIRMED (trajectory), with a QoQ uptick** — deleveraged from 5.3x (Sep-23) to 3.2x, but net debt ticked up this quarter on acquisitions |
 
 **Net investor-communication read:** the deck/press release lead consistently with the most favourable framing (comparable, ex-GST, consolidated, IPO-era leverage baseline) while the reported numbers are softer. The filing wins on every conflict. This is a **presentation-optics pattern to track**; on a first-observation basis it is a flag, not yet a credibility verdict (no prior deck, no concall, no promise-vs-delivery history to grade against).
@@ -385,7 +385,7 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 
 **Filing-derived signals:**
 - Genuine operating momentum: revenue from operations **+12.1%**, occupancy 74.2%→79.3%, RevPAR +9.6%, core operating PBT ex-OI **+174%** (finance-cost led), deleveraged to 3.2x with an A+ rating.
-- Quality caveats, all named: **reported EBITDA −4.1% and margin 32.9% (−390 bps) with the GST-ITC drag now STRUCTURAL**; **FY26 PAT DTA-inflated ~2x (Rs 5,665 vs normalised ~Rs 1,238 mn)**; **owners' PAT only +5.8% as minority took 83% of the profit increment**; standalone PAT ~Rs 1.1 cr (A2's Rs 247 cr was an OCR mis-read — corrected); newly consolidated **loss-making, unreviewed RARE partnership + 3 subs**; **pre-revenue leisure segment**; **Rs 750 cr dilution + authorized-capital increase pending**; cash conversion **INDETERMINATE** (Q1, no CFO).
+- Quality caveats, all named: **reported EBITDA −4.1% and margin 32.9% (−390 bps) with the GST-ITC drag now STRUCTURAL**; **FY26 PAT DTA-inflated ~2x (Rs 5,665 vs normalised ~Rs 1,238 mn)**; **owners' PAT only +5.6% as minority took 83% of the profit increment**; standalone PAT ~Rs 1.1 cr (A2's Rs 247 cr was an OCR mis-read — corrected); newly consolidated **loss-making, unreviewed RARE partnership + 3 subs**; **pre-revenue leisure segment**; **Rs 750 cr dilution + authorized-capital increase pending**; cash conversion **INDETERMINATE** (Q1, no CFO).
 - Audit clean (unmodified both statements); two immaterial Other-Matter paragraphs.
 
 **Investor-communication-derived signals:** favourable-framing pattern (comparable/ex-GST/consolidated/IPO-baseline); a same-document 3.0x-vs-3.2x inconsistency; opening-year and reported-vs-comparable labelling ambiguities; rich but back-ended (FY28-FY31) pipeline and undated RARE monetisation.
@@ -461,13 +461,13 @@ cash_conversion: "INDETERMINATE"       # Q1 filing carries no cash-flow statemen
 decision_status_verified: "NONE (new company, no Notion page, initiation-context review)"
 position_branch: "8A-W"
 sc_gap_pat_pct:
-  - {period: "Q1 FY27", standalone_rs_cr: 1.1, consolidated_rs_cr: 24.93, consolidated_owners_rs_cr: 18.25, standalone_pct_of_consol: 4.4, note: "A2 Rs 247 cr standalone was a Q4FY26 OCR column mis-read; corrected"}
+  - {period: "Q1 FY27", standalone_rs_cr: 1.1, consolidated_rs_cr: 24.93, consolidated_owners_rs_cr: 18.25, standalone_pct_of_consol: 4.4, note: "A2 Rs 247 cr standalone was a Q4FY26 OCR column mis-read; corrected; owners' PAT 182.50 vs 172.80 = +5.6% YoY"}
   - {period: "Q1 FY26", standalone_rs_cr: 45.89, consolidated_rs_cr: 19.22, consolidated_owners_rs_cr: 17.28, standalone_pct_of_consol: 238.8, note: "standalone > consolidated on one-time profit-on-sale-of-investment exceptional"}
   - {period: "Q4 FY26", standalone_rs_cr: 246.79, consolidated_rs_cr: 399.40, consolidated_owners_rs_cr: 353.67, standalone_pct_of_consol: 61.8, note: "Q4 balancing figure; consol DTA credit + exceptional"}
   - {period: "FY26", standalone_rs_cr: 384.34, consolidated_rs_cr: 566.55, consolidated_owners_rs_cr: 502.99, standalone_pct_of_consol: 67.8, note: "FY26 consol PAT DTA-inflated ~2x"}
 questions_for_management:
   - {q: "Steady-state ETR from FY27 and DTA-shield exhaustion year (FY26 PAT 5,665 > PBT 2,671 on ~3,000mn DTA credit)", from_finding_id: "A3-F8,P-08,A3-02"}
-  - {q: "Which subsidiaries drive NCI 19->67 (+245%) while owners' PAT only +5.8%; NCI trajectory", from_finding_id: "P-03"}
+  - {q: "Which subsidiaries drive NCI 19->67 (+245%) while owners' PAT only +5.6%; NCI trajectory", from_finding_id: "P-03"}
   - {q: "Does the ~92mn GST-ITC drag recur quarterly (now structural per slide 49); how does 41->60% mix bridge to ~40% margin", from_finding_id: "P-12,A3-07"}
   - {q: "Confirm standalone Q1FY27 PAT ~Rs1.1cr and nil current-qtr exceptional; nature/recurrence of FY26 966mn impairment reversal", from_finding_id: "A3-F2a,A3-F2b,P-01,A3-01"}
   - {q: "Rs750cr raise + 25->29cr authorized capital: imminent or opportunistic; instrument/quantum/timing/use-of-proceeds; dilution", from_finding_id: "A3-F10,A3-F13b,A3-F7"}
@@ -501,9 +501,9 @@ monitorables:
   - {item: "Proposed Marriott distribution partnership execution", implied_date: "undated", source_ref: "A3-05 / PR L178"}
   - {item: "H1 FY27 cash-flow statement (resolves cash-conversion cap; enables ROCE)", implied_date: "Q2 FY27 filing (Oct-Nov 2026)", source_ref: "Step 5 this review"}
 flags:
-  - "FY26 consolidated PAT DTA-inflated (~Rs 3,000mn credit): reported Rs 5,665mn vs normalised ~Rs 1,238mn — NOT a valuation anchor (A3-F8/P-08/A3-02)"
+  - "FY26 consolidated PAT DTA-inflated (~Rs 3,000mn credit): reported Rs 5,665mn vs normalised ~Rs 1,238mn (~4.6x distortion) — NOT a valuation anchor (A3-F8/P-08/A3-02)"
   - "Reported EBITDA -4.1% and margin 36.8%->32.9% with GST-ITC drag now STRUCTURAL/recurring, not one-time (P-12/A3-07)"
-  - "Consolidated PAT +29.7% but owners'/SAMHI-attributable only +5.8%; minority took 83% of the YoY profit increment (P-03)"
+  - "Consolidated PAT +29.7% but owners'/SAMHI-attributable only +5.6% (182.50 vs 172.80, L758); minority took 83% of the YoY profit increment (P-03)"
   - "A2 standalone Q1FY27 PAT of Rs 247cr was an OCR column mis-read (=Q4FY26); true standalone PAT ~Rs 1.1cr << consolidated Rs 24.9cr (A3-F2a) — correct downstream memory"
   - "Rs 750cr fundraise + authorized capital 25->29cr shares pending: material forward dilution (A3-F10/F13b/F7)"
   - "Newly consolidated RARE India partnership (unreviewed, loss-making -7.38mn) + 3 unreviewed loss-making subs (-17.14mn); PPA provisional (A3-F4/F6/F15)"

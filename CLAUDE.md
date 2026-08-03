@@ -52,6 +52,8 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
+- tools/         helper scripts run by the orchestrator (e.g.
+                 ar_section.py: byte-exact AR slicer, stage-0 token economy)
 - frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
                  maintains; stage 11 reads at run time; amendments here
                  propagate with zero pipeline edits)

@@ -200,8 +200,16 @@ GATE 0 BLOCK (B01):
 CONCALL PROMISE-DELIVERY RECORD (from B05, for F2):
 {{B05_PROMISE_DELIVERY}}
 
-ANNUAL REPORT:
+ANNUAL REPORT, BUSINESS FRONT MATTER (business, MD&A, strategy, capex
+narrative, chairman, governance; the AR_front slice, or the full AR if
+sectioning fell back):
 {{ANNUAL_REPORT}}
+
+ANNUAL REPORT, FINANCIAL SECTION (path; auditor's report, face statements,
+and all notes including the capex/CWIP and segment schedules. Read this ONLY
+if a moat signal needs a specific financial note; the front matter plus the
+concalls and presentation carry the moat evidence):
+{{ANNUAL_REPORT_FINANCIAL}}
 
 CONCALL TRANSCRIPTS (3, oldest first):
 {{TRANSCRIPTS}}

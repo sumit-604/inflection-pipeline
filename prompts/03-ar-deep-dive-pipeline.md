@@ -206,6 +206,9 @@ one_line_verdict: ""
 Company: {{COMPANY}} ({{TICKER}})
 Run date: {{RUN_DATE}}
 
+# This stage reads the FULL annual report by design: the backward deep dive
+# spans the whole document, so it receives the complete AR, never a slice.
+
 CONSOLIDATED NOTES ANALYSIS (from stage 2, all three passes):
 {{B02_FULL_OUTPUT}}
 

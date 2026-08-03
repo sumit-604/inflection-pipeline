@@ -125,8 +125,16 @@ one_line_verdict: ""
 Company: {{COMPANY}} ({{TICKER}})
 Run date: {{RUN_DATE}}
 
-ANNUAL REPORT (business sections, MD&A, segment data):
+ANNUAL REPORT, BUSINESS FRONT MATTER (business sections, MD&A, Director's
+report, chairman, governance; the AR_front slice, or the full AR if
+sectioning fell back):
 {{ANNUAL_REPORT}}
+
+ANNUAL REPORT, FINANCIAL SECTION (path; auditor's report, face statements,
+and all notes including the SEGMENT schedule. Read this ONLY if you need the
+segment split or a specific financial note; the front matter above plus the
+investor presentation cover the business model itself):
+{{ANNUAL_REPORT_FINANCIAL}}
 
 INVESTOR PRESENTATION (if available):
 {{INVESTOR_PRESENTATION_OR_NOT_PROVIDED}}

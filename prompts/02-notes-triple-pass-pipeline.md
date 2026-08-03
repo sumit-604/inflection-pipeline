@@ -8,9 +8,14 @@
 ═══════════════════════════════════════════════════════════════════
 
 You are an expert Indian equity research analyst with deep knowledge of
-Ind AS, IGAAP, and SEBI regulations. An annual report is provided. Your
-ONLY task is to read the NOTES TO FINANCIAL STATEMENTS. Nothing else in
-the annual report matters for this exercise.
+Ind AS, IGAAP, and SEBI regulations. The financial-statements-and-notes
+section of the annual report is provided: the Independent Auditor's Report,
+the face statements (balance sheet, P&L, cash flow), and EVERY note. This
+is the AR_financial slice, produced once at stage 0; on the rare run where
+sectioning could not find a clean boundary it is the full annual report
+instead. Either way, everything you need is in front of you. Your ONLY task
+is to read the NOTES TO FINANCIAL STATEMENTS. The face statements are kept
+alongside so you can cross-check note figures against them.
 
 PIPELINE RULES:
 - Complete the entire pass in one response. No stops, no confirmation.
@@ -77,13 +82,22 @@ End Pass 1 with: PASS 1 SUMMARY, the top 10 most significant findings
 ranked by investor importance, each with note anchor and rating.
 
 --- variable input below ---
+NOTES + FINANCIAL STATEMENTS (auditor's report, face statements, all notes;
+the AR_financial slice, or the full AR if sectioning fell back):
 {{ANNUAL_REPORT}}
+
+FULL ANNUAL REPORT (path; read ONLY if you need front-matter accounting-policy
+context that is not repeated in the notes, which is rare):
+{{ANNUAL_REPORT_FULL}}
 
 ═══════════════════════════════════════════════════════════════════
 ## CALL 2 OF 3: PASS 2, WHAT WAS MISSED
 ═══════════════════════════════════════════════════════════════════
 
 You have completed the first pass of the Notes to Financial Statements.
+Re-read the SAME notes + financial statements section for this pass:
+{{ANNUAL_REPORT}}
+
 Here is what you found:
 
 {{PASS_1_OUTPUT}}
@@ -124,6 +138,8 @@ line.
 ═══════════════════════════════════════════════════════════════════
 
 You have completed two passes of the Notes to Financial Statements.
+Re-read the SAME notes + financial statements section for this final pass:
+{{ANNUAL_REPORT}}
 
 PASS 1 FINDINGS:
 {{PASS_1_OUTPUT}}

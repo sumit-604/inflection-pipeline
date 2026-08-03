@@ -101,14 +101,46 @@ handoff schemas, flag rules, and error handling. Then:
    Create outputs/blocks, outputs/reports, outputs/final inside the run
    folder.
 
+   TEXT EXTRACTION (stage-0 setup, do this yourself before any stage runs):
+   pre-extract every input PDF to page-marked plain text under
+   outputs/_working/ (AR, presentation, all concalls and peer-concalls) so no
+   stage discovers the Read-tool size cap mid-run. Digitally-generated filings
+   extract cleanly; image-only scans (some results filings) stay on
+   one-file-at-a-time page-render Read and are noted in B00.
+
+   ANNUAL REPORT SECTIONING (stage-0 setup, the token-saving step): after the
+   AR text exists, run
+     python3 tools/ar_section.py outputs/_working/<AR>.txt
+   It splits the AR at the Independent Auditor's Report into
+   outputs/_working/AR_sections/AR_front.txt (business, MD&A, Director's
+   report, chairman, governance) and AR_financial.txt (auditor's report, face
+   statements, and EVERY note), byte-exact, and writes AR_sections/index.txt.
+   Read index.txt and set the AR routing for this run:
+     - it printed "OK ..."  -> SLICES AVAILABLE. Route:
+         stage 2 (notes, all 3 passes): {{ANNUAL_REPORT}} = AR_financial.txt,
+             {{ANNUAL_REPORT_FULL}} = the full AR path
+         stage 4 (business):  {{ANNUAL_REPORT}} = AR_front.txt,
+             {{ANNUAL_REPORT_FINANCIAL}} = AR_financial.txt
+         stage 7 (moat):      {{ANNUAL_REPORT}} = AR_front.txt,
+             {{ANNUAL_REPORT_FINANCIAL}} = AR_financial.txt
+         stage 3 (deep dive): the FULL AR (unchanged, whole-document read)
+     - it printed "FALLBACK ..."  -> NO slices written. Route every AR marker
+         above (including the _FULL and _FINANCIAL on-demand paths) to the FULL
+         AR path, exactly today's behavior, and note the fallback in B00. A
+         slice is never allowed to starve a stage of content.
+   Verifier A always reads the full source PDFs, never a slice; its
+   source-fidelity gate is unchanged.
+
 2. EXECUTE stages 0 through 9 by invoking the matching subagent for each,
    in dependency order (1 and 2 can interleave; 4, 5, 8, 9 after 3; 6
    after 5; 7 after 1). For each invocation, pass in the task message:
    the exact input file paths the stage needs, the injected content the
    prompt's {{...}} markers expect (prior YAML blocks inline, since
-   blocks are small), and the output path outputs/reports/<stage>.md.
+   blocks are small), and the output path outputs/reports/<stage>.md. Apply
+   the ANNUAL REPORT SECTIONING routing above when filling the AR markers.
    Stage 2 is THREE sequential invocations of stage-02-notes-pass (pass
-   1, then pass 2 with pass 1's report path, then pass 3 with both).
+   1, then pass 2 with pass 1's report path, then pass 3 with both); each of
+   the three receives the same AR_financial.txt path in {{ANNUAL_REPORT}}.
    Stages 10 and 11 do NOT run in this phase.
 
 3. COLLECT each stage's YAML block into outputs/blocks/<stage>.yaml.

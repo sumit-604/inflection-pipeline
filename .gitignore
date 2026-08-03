@@ -4,3 +4,7 @@ _download/
 canary/state.json
 canary/DRIFT.flag
 canary/canary.log
+
+# Python bytecode
+__pycache__/
+*.pyc

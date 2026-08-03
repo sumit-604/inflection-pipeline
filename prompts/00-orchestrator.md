@@ -244,12 +244,12 @@ support this override?" and leaves the answer to Keerti.
 |---|-------|-------------|-------|----------|-------------|
 | 0 | Input validation | (inline) | Haiku 4.5 | folder + manifest | `B00-inputs` |
 | 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5 | screener-data / results PDFs | `B01-gate0` |
-| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR | `B02-notes` |
-| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | AR + B02 | `B03-ardeep` |
-| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR + inv. pres. | `B04-bizmodel` |
+| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR_financial slice (full AR on demand) | `B02-notes` |
+| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | full AR + B02 | `B03-ardeep` |
+| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR_front slice + inv. pres. (AR_financial on demand) | `B04-bizmodel` |
 | 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5 | 3 transcripts (oldest first) | `B05-concall` |
 | 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
-| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR + concalls + pres. + B01 | `B07-emoat` |
+| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR_front slice + concalls + pres. + B01 (AR_financial on demand) | `B07-emoat` |
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
@@ -486,6 +486,25 @@ Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
 Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
 $5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,
 roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
+
+**Annual report sectioning (stage-0 setup, token economy).** The AR is the
+largest input (~250-270k tokens) and several stages read it in full though
+each needs only part of it. Stage 0 runs `tools/ar_section.py` once, splitting
+the extracted AR text at the Independent Auditor's Report into two byte-exact
+slices: `AR_front.txt` (business, MD&A, Director's report, chairman,
+governance) and `AR_financial.txt` (auditor's report, face statements, and
+every note). The notes triple-pass reads AR_financial (all three passes); the
+business and moat stages read AR_front, with AR_financial available on demand
+for a segment or financial note. Stage 3's backward deep dive and Verifier A's
+source-fidelity re-read always use the FULL AR, never a slice. Boundary
+detection is heading-anchored and fail-safe: if the auditor's report cannot be
+located inside the middle 10-90% of the document, no slices are written and
+every AR marker routes to the full AR (today's behavior). A slice is never
+allowed to starve a stage of content. The split preserves page anchors exactly
+(the slices are literal substrings), so source fidelity is untouched. Typical
+saving: the notes stage drops ~100k tokens per pass and the two business stages
+~150k each, roughly 0.6M tokens per company off the AR line, with no change to
+what any stage can see.
 
 ---
 

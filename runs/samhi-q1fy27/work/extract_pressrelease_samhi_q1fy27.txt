@@ -1,3 +1,30 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: pressrelease_samhi_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 4
+formfeed_count: 4
+line_count: 234
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (1 INR million = 0.1 Rs Crore)
+ocr_pages: [none]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-03
+=== END HEADER ===
+
+NOTE (mechanical, non-interpretive): The pipeline doctype tag for this input is
+'presentation', but the document's sub-class is a press release (Regulation 30
+covering letter to BSE/NSE plus a 4-page press release with narrative
+highlights, a consolidated financial highlights table, a debt profile table,
+management commentary/quotes, and boilerplate). It is not a slide deck. All 4
+pages cleared the pdftotext -layout 100-character threshold with clean,
+non-garbled text (page char counts: 2153, 4244, 4526, 2719), so no OCR
+fallback was required for any page. Text below is reproduced verbatim from
+pdftotext -layout output; page markers [page N] are inserted on their own
+line at each form-feed boundary. No values have been converted or
+interpreted.
+
+[page 1]
 IMART HOTEL INVESTMENTS—
 
 
@@ -45,7 +72,9 @@ India                      Mumbai - 400 001, Maharashtra, India             Comp
 
 Correspondence:
 SAMHI       Hotels Lid
-                                                                SAMHI
+
+[page 2]
+                                                                SAMHI
                                                                —SNART HOTEL INVESTMENTS——
                                                        SAMHI Hotels Limited
 
@@ -103,7 +132,9 @@ CONSOLIDATED FINANCIAL HIGHLIGHTS
 
                                                                                                                                                         1
                                                                                                                                           www.samhi.co.in
-                                                                SAMHI
+
+[page 3]
+                                                                SAMHI
                                                                —SNART HOTEL INVESTMENTS——
                                                        SAMHI Hotels Limited
 DEBT PROFILE
@@ -163,7 +194,9 @@ flexibility to support our long-term growth initiatives.
 
                                                                                                                                                         2
                                                                                                                                           www.samhi.co.in
-                                                                 SAMHI
+
+[page 4]
+                                                                 SAMHI
                                                                 —SNART HOTEL INVESTMENTS——
                                                        SAMHI Hotels Limited
 ABOUT SAMHI HOTELS LTD.
@@ -199,4 +232,3 @@ FOR FURTHER INFORMATION, PLEASE CONTACT
 
                                                                                                                                                          3
                                                                                                                                            www.samhi.co.in
-

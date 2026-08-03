@@ -1,0 +1,20 @@
+# Phase-1 confidence delta — INDGN 2026-08-03
+# Section 5 of the orchestrator. Valuation framework-adherence component is
+# deferred to phase 3 (B10/B11 do not exist yet).
+confidence_delta:
+  numerical_acceptance: 100      # B12a (re-run, source-grounded). First pass ran degraded (58%, false CRITICAL); re-invoked per LESSONS with the severity-semantics + coverage addendum; re-run read all six source categories, 37 exact + 1 immaterial basis difference, 0 CRITICAL. Re-run is authoritative.
+  redflag_coverage: 79           # B12b. Partial-credit weighting: 11 flags fully caught upstream + 5 partially caught (under-weighted) + 1 fully missed, of 17 independently found = (11 + 0.5*5)/17 = 79%. Verifier's own any-form figure 94; full-catch 65; verifier acceptance_rate 65 (>60, no REWORK). The one FULL miss (BioPharm consolidated at GROSS revenue, inflating INR headline growth / diluting blended margin) is carried as a contradicted-claim and monitorable.
+  framework_adherence: 90        # B12c, Gate 0 + Emerging Moat portion ONLY (valuation half pending phase 3). 0 CRITICAL; 1 MAJOR (B01 M4 Customer Stickiness=3 vs M10=1 on identical evidence; a consistent read would move moat_class MODERATE->THIN and the label GOOD+ -> GOOD; operator-resolvable, evidence-gate-invariant). em_score recomputed 30 vs 31 (class STRENGTHENING unchanged). E1 no-promoter score confirmed compliant.
+  peer_utilisation: 100          # B12d. 15/15 peer transcripts used substantively; 0 CRITICAL; 3 MAJOR are citation quarter-swaps in B06's coverage-map table (substance holds, no wrong-peer/fabrication).
+  overall: 79                    # min of the four available components. Band 75-89 "normal, note specifics": no verdict downgrade, no forced REWORK. Softest component is redflag_coverage.
+  valuation_framework_adherence: pending_phase_3
+rework_gate:
+  any_verifier_A_critical: false          # re-run 0 CRITICAL; source-fidelity PASS
+  any_acceptance_rate_below_60: false     # A 100, B 65, C 90, D 80 (all >= 60)
+  forced_rework: false
+disagreement_log_phase1:
+  - number: "FY26 Other Income"
+    verifier_a_first_pass: "CRITICAL MISMATCH — B01 Rs 51.7cr vs AR 'Other income (net)' Rs 72.0cr (720mn); source_fidelity flagged"
+    orchestrator_check_and_rerun: "screener-vs-AR BASIS DIFFERENCE. B01 explicitly cited the screener Data_Sheet (Rs 51.7cr FY26); the AR consolidated 'Other income (net)' is 720mn = Rs 72.0cr. Both correct at their own anchors. The FLAG-GATE0 'fall in other income' narrative holds on either basis (drag ~Rs35-42cr FY25->FY26). Decision-neutral."
+    disposition: "FLAG CLEARED — source re-check confirmed the number exists at a correct anchor (screener basis, correctly transcribed); AR basis differs by reclassification. Re-run acceptance 100%."
+    rechecked_by: "orchestrator (direct AR grep) + Verifier A re-run"

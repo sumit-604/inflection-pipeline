@@ -38,4 +38,5 @@ Doctype tokens `release` and `monitoring` are descriptive labels to avoid extrac
 - ALL FOUR GATE A1 PASS. Launching A2 x4 (parallel).
 - GATE A2 results: PASS. notes22/lineitems63/zerostanding3/agenda3/auditorparas12/entities23/annexure10/sig5. Flags: ENTITY_CHANGE x4 (Devina Derma exit 5-Jun-26; Healplus step-down missing from Annexure-I; V3/Rudrapur; Mehar LLP pending), DISCLOSURE_INCONSISTENCY (consol IPO table drops Total row), ZERO_STANDING x3, OCR_GAP x12 (UDIN/seals). Going concern NOT FOUND (absent, recorded).
 - GATE A2 presentation: PASS. slides26/numbers341/footnotes14. Flags: ZERO_STANDING (Rudrapur nil Q1 contribution), PARTIAL_OWNERSHIP (Rudrapur 80%), REPEAT_FOOTNOTE (p15=p8). DROPPED_SLIDE not computable (no prior deck).
+- GATE A2 monitoring: PASS. notes15/lineitems21/zerostanding12/agenda9/auditorparas19/entities13. Flags: DELAY_DEVIATION, MISSING_UDIN, NO_TIMESTAMP, IMPORTANT_SCOPE_CARVEOUT, ZERO_STANDING x12, LINE_WRAP_SPLIT.
 (to be appended as each gate clears)

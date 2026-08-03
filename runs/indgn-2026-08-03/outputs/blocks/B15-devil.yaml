@@ -1,0 +1,20 @@
+stage: B15-devil
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "destroyed"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "No-margin-recovery Hurdle: on the model's own bear FY27 EPS 17.51 the current forward PE is 31.14x and HR falls to 1.56, BELOW the Tier B 1.728 threshold. The Hurdle PASS exists only because the disputed margin recovery is assumed into both the denominator and the destination multiple."
+  - "No margin of safety: CMP Rs 545 already equals the combined-sensitivity floor Rs 534 (-2% over 3yr), so the framework's required 20-30% discount to fair value is absent. Priced at the floor is a downside admission, not an entry signal."
+  - "SHARED CATALYST single point of failure: revenue-on-fixed-capital drives BOTH Pillar 1 ROCE recovery AND Pillar 3 +5x. A single stall trips both together (destination 17-19x, real capital loss), a combined case neither B11 4E-a nor 4E-b models because each moves only one lever."
+  - "Treasury deployability unproven: destination rests on stripping 41.8% of capital employed (Rs 1,100-1,337 cr) with no announced buyback/M&A/dividend. On statutory ROCE 15.4%, Pillar 1 is 15.2x and destination ~19.8x, base FV Rs 725 (+10% CAGR, below hurdle), verdict caps WATCHLIST. Operator elected the HIGHER additive 31.5x over RRM 28.1x, compounding it."
+  - "Peer premium assumed not earned: destination 31.5x is 32% above peer trailing PE median 23.9x and destination 20.5x EV/EBITDA is 53% above peer median 13.4x, while the one comparable recovery (IKS/AQuity) beat its timeline 3-4 quarters, arguing Indegene is slow not proven."
+  - "Growth partly optical: organic constant-currency halved 18.3%->12% and decelerating; +23.6% headline inflated by BioPharm GROSS consolidation; FY26 PAT fell 1.4% on +23.6% revenue."
+  - "Governance ambers on a 51.5%-of-net-worth goodwill base: impairment assumptions eased (12.5% discount, 5.0% terminal) in the booking year; unresolved Board's-Report-vs-Note-33 Section 144B contradiction; Rs 153 cr contingent exposure = 38.2% of FY26 PAT; PE holders exited; no-guidance policy makes the load-bearing margin call unverifiable."
+sharpest_flip: "Rebuild the Hurdle on the no-margin-recovery forward EPS (bear 17.51): current forward PE 31.14x, EPS CAGR 15.5%, HR 1.56 < 1.728 = FAILS. The BUY exists only on the assumed recovery FTTCP scored STAGNANT with no documented action. Correct verdict at CMP is WATCHLIST until the Q2-Q3 FY27 margin print; that print IS the thesis."

@@ -1,0 +1,39 @@
+stage: B12c
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+scope: "phase 1 — gate0 + emoat only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 42
+  fails:
+    - {id: "M4", rule: "Block F M4 Customer Stickiness band", severity: MAJOR, issue: "scored 3 on 0-decline-years/recv +42.5d; identical evidence scored M10=1; consistent conservative read = 1", effect: "M4=1 -> only M1 present -> moat_class THIN not MODERATE -> classification GOOD not GOOD+"}
+    - {id: "M10", rule: "Block F M10 Switching Costs band", severity: MINOR, issue: "scored 1; strict band read gives 0 (no band fits 0-decline + unstable receivables); immaterial, <3 either way"}
+    - {id: "A1-src", rule: "prompt-01 FORMULA DEF: use screener's own ROCE if provided", severity: MINOR, issue: "ROCE computed (proxy CE for FY19-24) instead of using source ROCE; band A1=4 not obviously changed; number check owned by Verifier A"}
+  confirmed_compliant:
+    - {id: "E1", note: "no-promoter score of 3 vs literal >50% FII+DII threshold: CLAUDE.md 'never treat low institutional ownership as a risk' OVERRIDES the literal prompt band; classification invariant (E1=0 -> Core 87 -> still GOOD+)"}
+    - {id: "history_downgrade", note: "false with data_years 8 is correct: downgrade mechanism is data-LENGTH only (7-9 = moderate, no downgrade); RHP back-fill provenance correctly routed to HIGH input_gap flag, not a fabricated downgrade"}
+emoat:
+  rules_checked: 10
+  fails:
+    - {id: "A4-matrix", rule: "Section 5 raw L×I matrix (ML=1)", severity: MINOR, issue: "labelled ML but raw=2; per key raw=1, adjusted 0.7 not 1.4"}
+    - {id: "G1-matrix", rule: "Section 5 raw L×I matrix (ML=1)", severity: MINOR, issue: "labelled ML but raw=2; per key raw=1, adjusted 1.0 not 2.0"}
+  confirmed_compliant:
+    - {id: "bmf-exclusions", note: "A1/B1/B2/B3/E2 marked N/A business-model mismatch and 0-scored, not force-fit — correct for asset-light services"}
+    - {id: "evidence-tier", note: "no 🎙️-only category credited at 📄 1.0x; mixed rows (D2,H1) scored at weaker tier"}
+    - {id: "completionist-guard", note: "9 active < 12 threshold; 📄 recount line present and consistent"}
+    - {id: "gate0-coherence", note: "6C/6D faithfully consume injected B01 values; EXCELLENT+ within 6D matrix; but see dependency on M4"}
+  recomputed_em_score: "30 (vs 31 as reported; classification STRENGTHENING unchanged)"
+valuation: {rules_checked: 0, fails: [], status: "pending — deferred to phase 3 (B11/B10 not yet produced)"}
+recomputed_destination_pe: "n/a — valuation deferred to phase 3"
+recomputed_decision: "GOOD+ stands as scored; drops to GOOD (moat_class MODERATE->THIN) IF M4 is rescored to 1 for consistency with M10 — operator resolution required. em_score 30 vs 31 does not change any classification."
+findings:
+  - {severity: MAJOR, location: "B01 Block F, M4 Customer Stickiness", claim: "M4 = 3 (moat present)", assessment: "inconsistent with M10=1 on identical evidence (0 decline yrs, receivable days +42.5); band-3 credit tips moat_class to MODERATE and classification to GOOD+; conservative consistent read = 1 -> THIN -> GOOD", rule_ref: "prompt-01 Block F M4 bands + internal-consistency vs M10"}
+  - {severity: MINOR, location: "B01 Block F, M10 Switching Costs", claim: "M10 = 1", assessment: "strict band read gives 0; immaterial (<3 either way)", rule_ref: "prompt-01 Block F M10 bands"}
+  - {severity: MINOR, location: "B01 Block A, ROCE derivation", claim: "computed ROCE with proxy CE FY19-24", assessment: "prompt prefers screener's own ROCE where provided; band outcome not obviously changed; number match owned by Verifier A", rule_ref: "prompt-01 FORMULA DEFINITIONS"}
+  - {severity: MINOR, location: "B07 Section 5, rows A4 & G1", claim: "raw = 2 on ML-labelled rows", assessment: "per stated matrix ML=1; recomputed em_score 30 vs 31; classification unchanged", rule_ref: "prompt-07 Section 5 raw L×I matrix"}
+  - {severity: MINOR, location: "B07 Section 3 prose count", claim: "'C1,C2,D1 Strong ... G2,A3'", assessment: "G2 is Strong per summary table; count of 9 correct, prose grouping loose; cosmetic", rule_ref: "prompt-07 Section 3 summary discipline"}
+critical_count: 0
+major_count: 1
+minor_count: 4
+acceptance_rate: 90    # 47 of 52 gate0+emoat rule-checks passed

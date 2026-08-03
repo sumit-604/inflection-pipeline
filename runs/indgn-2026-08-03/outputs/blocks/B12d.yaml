@@ -1,0 +1,21 @@
+stage: B12d
+company: "Indegene Limited (INDGN)"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+peers_audited: 15
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "none identified", missed_item: "No claim-relevant peer statement found unused across the 15 transcripts on independent spot-read (targeted checks: pharma/HLS mentions in Tata Elxsi Jul 2026, M&A-multiple language in Sagility/eClerx, full-text search for 'Indegene')", anchor: "n/a"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3, IKS Health row 'Q2 FY26 (Nov 2025 call)'", description: "Credits the Nov 2025 transcript with the '24% rev vs 1.5% headcount growth' data point, which is actually in the Feb 2026 transcript (IKS-Concall_Feb_2026_Transcript.txt l.116-172); Nov 2025's actual analog is 17% revenue vs ~3% headcount growth (l.8334-8425). Part 1 body text has the correct attribution (Feb 2026); only the Part 3 table row is wrong."}
+  - {severity: "MAJOR", location: "B06 Part 3, IKS Health row 'Q3 FY26 (Feb 2026 call)'", description: "Credits the Feb 2026 transcript with the RPE/EBITDA-per-employee non-disclosure exchange ('I don't find it very easy to model the business out,' Nilabja Dey Q&A), which is actually in the Nov 2025 transcript (l.6276-6833). Part 1 body text has the correct attribution (Nov 2025); only the Part 3 table row is wrong. Findings 1 and 2 are a matched swap between the two IKS rows."}
+  - {severity: "MAJOR", location: "B06 Part 3, Sagility row 'Q1 FY27 (Jul 2026 call)'", description: "Credits this transcript with 'long-sales-cycle confirmation for Q7'; no supporting content located in SAGILITY-Concall_Jul_2026_Transcript.txt (searched cycle/sales cycle/deal timeline/longer/complex deal, no matches — only an unrelated open-enrolment seasonal-cycle reference at l.247-251). The real Q7 sales-cycle evidence from Sagility is correctly anchored elsewhere in Part 1 to the Feb 2026 call. The row's other claimed contribution (payer-cost-pressure framing for 2A) is genuinely supported."}
+  - {severity: "MINOR", location: "B06 Part 2A", description: "'ECLERX Jul 2025 call, Aashray Vasa Q&A' quote ('the only thing we have experienced is a delayed decision-making') is actually spoken by Kapil Jain answering Vasa's question, not by Vasa. Consistent with the report's own Q&A-labeling convention elsewhere, so low-materiality ambiguity rather than a location error."}
+critical_count: 0
+major_count: 3
+minor_count: 1
+acceptance_rate: 80

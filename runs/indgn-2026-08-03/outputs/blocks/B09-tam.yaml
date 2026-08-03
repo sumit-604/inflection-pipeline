@@ -1,0 +1,47 @@
+stage: B09-tam
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No third-party research source cited on the Investor Presentation's own $135B market-opportunity slide (AR's macro figures are likewise uncited within the AR itself); credibility read for management's claim relies on independent triangulation (Section 2), not a disclosed methodology from the company."
+  - "SAM capability-filter percentages (CSO exclusion of $9.67bn; 80% exclusion of the $36B Drug Discovery/Clinical bucket) are analyst-derived estimates with stated methodology, not sourced to a named market report for the specific split; flagged per stage rules as an expected market-sizing estimate, not treated as NOT FOUND."
+  - "Method 3 (peer aggregation) fragmentation multiplier (3-5x) is an unsourced, directional analyst assumption used only for a low-confidence cross-check, not used in the headline TAM figures."
+flags:
+  - "Management's $135B TAM claim reads CONSERVATIVE, not inflated, when checked against the independently-sourced Frost & Sullivan top-down estimate (ratio 0.98x vs the conservative independent bound) — an unusual, favorable finding worth surfacing given this stage exists mainly to catch the opposite pattern."
+  - "GenAI-in-life-sciences market-size estimates found via web search vary by roughly 60x across providers (USD 1.6bn to USD 98bn by 2034/35) depending on scope definition — too immature and methodologically divergent to anchor any TAM component; retained only as a qualitative growth driver in Section 4A, not sized."
+  - "B07's capex_embedded_growth_pct = 0 (asset-light business, no meaningful capex-capacity construct) — Section 3C capacity check is reframed around delivery headcount/RPE math instead of a capex gap, consistent with B07's own framing."
+market_definition: "Global life-sciences commercialization, medical/regulatory affairs, pharmacovigilance and a defined slice of clinical-operations services spend addressable to specialized outsourced service/technology providers, excluding pharma manufacturing/CDMO, full-service CRO trial execution, and CSO field-force deployment."
+tam_cr: {conservative: 1219920, realistic: 1511640}
+sam_cr: 853325
+sam_pct_of_tam: 56.4
+som_3yr_cr: 6064
+som_5yr_cr: 8301
+som_implied_revenue_cagr: {yr3: 20.0, yr5: 18.8}
+current_sam_share_pct: 0.41
+revenue_headroom_x: 243.1
+tam_growth_pct: 7.4
+runway_class: "MASSIVE"
+mgmt_claim_cr: 1193400
+mgmt_claim_ratio: 0.98
+mgmt_claim_read: "conservative"
+capacity_check: "sufficient — asset-light people-scaling model, not capex-constrained (B07 capex_embedded_growth_pct=0); required delivery headcount CAGR of 13-21% to deliver SOM_3yr is within recently observed hiring pace (delivery headcount +13.4% YoY, Q1 FY26 to Q1 FY27); binding constraint is domain-trained-talent availability/attrition (15.7% TTM voluntary attrition), not capital"
+methods_used:
+  - "Method 1: top-down (Frost & Sullivan, via IDBI Capital IC note + independent web-search corroboration)"
+  - "Method 2: bottom-up, narrow (4 named outsourcing sub-markets, Mordor Intelligence + independent cross-checks)"
+  - "Method 3: peer revenue aggregation (named players + unsourced fragmentation multiplier, low confidence)"
+  - "Method 4: import substitution — not applicable (services market)"
+  - "Method 5: global benchmark / macro-ratio cross-check (AR macro figures, low confidence, not independent of Method 1's underlying base)"
+stale_data_flags:
+  - {datapoint: "Frost & Sullivan global pharma commercialization solutions & services market, 2023 base year (USD 138.13bn)", source: "Frost & Sullivan, cited in IDBI Capital IC note, 29-Jul-2026", year: 2023}
+  - {datapoint: "MNCL life sciences operational spend, CY22 base (USD 156bn)", source: "MNCL Initiating Coverage note, 10-Jul-2024", year: 2022}
+searches_performed:
+  - "pharmaceutical commercialization solutions and services market size 2029 Frost Sullivan"
+  - "life sciences commercial outsourcing CSO market size 2025 2030 billion"
+  - "generative AI in life sciences market size 2030 forecast billion"
+  - "pharma medical affairs outsourcing market size 2030 billion CAGR"
+  - "pharmacovigilance outsourcing market size 2025 2030 billion CAGR"
+  - "Real Chemistry Publicis Health Omnicom Health revenue pharma marketing agency 2025"
+  - "EVERSANA revenue 2025 annual pharma commercialization company"
+  - "IQVIA technology and analytics solutions segment revenue 2025"
+searches_skipped: []

@@ -31,4 +31,7 @@ Doctype tokens `release` and `monitoring` are descriptive labels to avoid extrac
 
 ## GATES LOG
 - 2026-08-03: Setup complete. A1 x4 launched in parallel (results, presentation, release, monitoring).
+- GATE A1 release: PASS. 4pp/4ff, 100% coverage, unit=Millions (x0.1 to Cr), no OCR needed.
+- GATE A1 monitoring: PASS. 13pp/13ff, 100% coverage, unit=Millions. A1 already flags IPO medical-equipment object deviation (~Rs 229.59mn planned vs 36.08mn actual) for A3.
+- GATE A1 presentation: PASS. 26pp/26ff, 100% coverage, unit=Millions, OCR pages [7,16,20,23] all section-divider photos (no hidden data), 10 charts flagged inline. CAVEAT: this agent deleted shared work/ocr_tmp belonging to the concurrent results A1 — verify results gate carefully; re-run results A1 if any gap.
 (to be appended as each gate clears)

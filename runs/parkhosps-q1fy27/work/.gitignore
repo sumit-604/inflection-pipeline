@@ -1,0 +1,6 @@
+*_layout.txt
+*_raw.txt
+*.bak
+ocrpage_*.jpg
+ocrpage_*.txt
+ocr_tmp/

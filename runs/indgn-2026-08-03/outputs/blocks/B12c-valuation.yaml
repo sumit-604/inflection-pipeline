@@ -1,0 +1,45 @@
+stage: B12c-valuation
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+phase: "3-valuation-half"
+scope: "B10 assembly + B11 Role 1 valuation + B14 Role 2 thesis vs Section 1B v3.3/v3.5.1 + FTTCP v1.2"
+valuation:
+  rules_checked: 36
+  fails: []          # no mechanical/decision fails; one decision-neutral MINOR recorded in findings
+pillar_checks:
+  pillar1_formula: "PASS — 0.5x25.8+7.5=20.4x, within [9,24]"
+  pillar1_route: "PASS — A-governs-B-suppressed (v3.5.1); 41.8% non-op capital >20% trigger; blend skipped"
+  pillar1_single_credit: "PASS — recovery via Pillar 1, Strategic barred (Amendment 4)"
+  pillar1_authority: "PASS — FTTCP RECOVERING is sole ROCE authority"
+  pillar2_multiplier: "PASS — 1.30x consistent with GROWTH INDUCED; no offset in band"
+  pillar3_3a: "PASS — +2x, two qualifiers (SOM 20% + grade B); +3x correctly barred"
+  pillar3_3b: "PASS — +3x EM 31 STRENGTHENING, carried verbatim"
+  pillar3_3c: "PASS — +0x, no >=2.5yr documented order book"
+  pillar3_cap: "PASS — +5x <= +6x combined cap"
+  strategic_premium: "PASS — +0x, re-rating barred"
+  ua: "PASS — NOT applied, institutions 18.66% fails <3%; min(Rawx1.25,cap) moot"
+  sector_cap: "PASS — 45x Platform/SaaS/IT absolute; 31.5x<45x non-binding"
+  rrm_formula: "PASS — 1+(13.5-13.0)x0.12=1.06 percentage-point reading (Amdt 4.4); 28.1x"
+  divergence: "PASS — 12.1% < 15%, conservative-override not triggered; both tracks carried"
+  range_pm75: "PASS — 29.0-34.0x additive / 26.0-30.0x RRM, rounded to 0.5x (Amdt 6)"
+  hurdle_ratio: "PASS — 2.12 >= Tier B 1.728 (also clears Tier A 1.953)"
+  sfl_eps_basis: "PASS — numerator FY27->FY30 CAGR and denominator FY27 forward PE both on one FORWARD reported basis; no cash-vs-reported mixing"
+  forward_pe_at_exit: "PASS — FY29 exit, destination PE on FY30 EPS, ladder to year-after"
+role2_checks:
+  tier_b_assignment: "PASS — all four gates hold"
+  entry_divisor: "PASS — base FV / 1.728 = 668 additive / 596 RRM"
+  mos: "PASS — 20% below entry = 534 additive / 477 RRM"
+  decision_mapping: "PASS — BUY-on-dips (CMP 545.25 in zone, above MoS 534); HR PASS not CONDITIONAL; entry conjunction enforced"
+  position_size: "PASS — Tier B Medium 4-6% ceiling; Large barred; staged entry inside ceiling, no undocumented override"
+  carry_discipline: "PASS — B14 carries B11 fair values verbatim, exit PE not re-derived"
+findings:
+  - {severity: "MINOR", location: "B10 line 224 / line 222; B11 YAML line 399", claimed: "combined contingent liability 'Rs 1,531 cr' (TP 'Rs 1,114 cr')", rule_ref: "units/accuracy — carried FLAG-CONTINGENT-LIABILITY, not a valuation input", note: "Correct figure Rs 1,531 mn = Rs 153 cr (TP 1,114 mn + TCPA 417 mn); 38.2% of PAT and 21.2% of PBT confirm the mn/cr magnitude. Decision-neutral: never enters pillars/destination PE/Hurdle/entry. B14 caught and corrected it (Section 6, Input Discipline Notes)."}
+recomputed_destination_pe: ""   # concur: 31.5x additive / 28.1x RRM reproduced exactly
+recomputed_decision: ""         # concur: BUY (on-dips), Medium 4-6%, staged
+framework_adherence_valuation: 97
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 97             # rules passed (35 clean + 1 decision-neutral minor) / 36 checked

@@ -119,7 +119,7 @@ Note: consol Q1 FY27 **diluted EPS 10.86 > basic EPS 10.85** — arithmetically 
 |---|---|---|---|---|
 | Operating EBITDA (V+D+Fin−OI) | 36.31 | 52.35 | 59.78 | 141.71 |
 | Operating EBITDA Margin | 10.77% | 12.35% | 14.11% | 9.56% |
-| Reported EBITDA (PBT+D+Fin) | 39.66 | 62.84 | 63.31 | 159.09 |
+| Reported EBITDA (PBT+D+Fin) | 39.66 | 56.84 | 63.31 | 159.09 |
 | Core PBT (PBT−OI) | 10.94 | 26.34 | 33.47 | 36.53 |
 | Other Income / PBT | 23.6% | 14.7% | 9.8% | 32.3% |
 | Effective Tax Rate | 24.9% | 24.8% | **21.7%** | 29.2% |

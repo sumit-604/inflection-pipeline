@@ -1,3 +1,40 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_samhi_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 52
+formfeed_count: 52
+line_count: 1917
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (1 INR million = 0.1 Rs Crore)
+ocr_pages: [27, 39]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (deck cover/title label it "Q1 FY2027"; quarter ended 30th June, FY2027 per slide 10 header, i.e. Q1 FY27 per calendar convention used elsewhere in this review)
+extraction_date: 2026-08-03
+=== END HEADER ===
+
+NOTE (mechanical, non-interpretive): pdftotext -layout was run first for all
+52 pages. All 52 pages independently cleared the 100-character threshold except
+two: page 27 and page 39. Both are section-divider slides (title text "Growth
+Projects" and "About Us" respectively) set against a full-bleed decorative
+photograph with no chart, table, or data label present. Per task instruction,
+both pages were rasterised at 200dpi with pdftoppm and re-extracted with
+tesseract; the tesseract pass surfaced no text beyond (page 39) or less text
+than (page 27) the pdftotext -layout pass, confirming no chart/data content was
+lost to image-only rendering on either page. These two pages are marked below
+as [OCR page N]; all other pages use the pdftotext -layout output unmodified
+and are marked [page N].
+
+Chart-flagging note: this deck's data charts (bar/line/waterfall/donut, e.g.
+pages 6, 15-16, 18-22, 24, 47-49) are native vector graphics with
+real embedded text data-labels and axis labels, not raster images. All such
+labels were captured cleanly by pdftotext -layout in the same pass as the
+surrounding slide text (verified by visual comparison of every page's
+rendered image against its extracted text). No page in this deck required an
+[OCR page N, chart data recovery] tag because no chart in this deck is
+raster-only. Page 27 and 39 (marked [OCR page N] above) are plain divider
+slides, not charts.
+
+[page 1]
 SAMHI Hotels Ltd.
 CIN: L55101DL2010PLC211816           03rd August 2026
 Regd. & Corp. Office: 5th Floor,
@@ -54,7 +91,9 @@ International Airport, New Delhi -
 Tel: +91-11- 49077700 | Email:
 compliance@samhi.co.in
 www.samhi.co.in
-                                                              www.samhi.co.in
+
+[page 2]
+                                                              www.samhi.co.in
 
 
 
@@ -66,7 +105,9 @@ www.samhi.co.in
 
             W, HITEC City, Hyderabad
 Architectural renders, actual may vary
-                                                                  www.samhi.co.in
+
+[page 3]
+                                                                  www.samhi.co.in
 
 
 
@@ -84,7 +125,9 @@ Important notes on the presentation format
     and statutory approvals
 •   Free Cash Flow = EBITDA (before ESOP) – Lease MG – Cash Interest
                                                                                 2
-                                                                                                                                              www.samhi.co.in
+
+[page 4]
+                                                                                                                                              www.samhi.co.in
 
 
 
@@ -101,7 +144,9 @@ Important notes on the presentation format
 
 
 1: Includes 22 apartments of Hyatt Regency, Pune which are currently under pre-opening                                                                      3
-                                                                                                                                                            www.samhi.co.in
+
+[page 5]
+                                                                                                                                                            www.samhi.co.in
 
 
 
@@ -130,7 +175,9 @@ Healthy                                  ▪      Our balance sheet is healthy; 
 Balance Sheet
 
   1: Includes 22 apartments of Hyatt Regency, Pune which are currently under pre-opening                                                                                  4
-                                                                                                                                                                                            www.samhi.co.in
+
+[page 6]
+                                                                                                                                                                                            www.samhi.co.in
 
 
 
@@ -173,7 +220,9 @@ FY12        FY13          FY14          FY15         FY16          FY17         
      1: FY25 financials were restated on account of sale of Caspia Delhi as the asset was recognized under “discontinued operation”
                                                                                                                                                                                                           5
      2: Restate CAGR has been calculated from FY16 to FY’26 i.e. for 10 years
-                                                                                                                                                                                              www.samhi.co.in
+
+[page 7]
+                                                                                                                                                                                              www.samhi.co.in
 
 
 We are adding
@@ -194,7 +243,9 @@ portfolio                                                                 W, HIT
 
 
   Note: Above images are architectural renders and may undergo change in the future                                                                                                                           6
-                                                                                                  www.samhi.co.in
+
+[page 8]
+                                                                                                  www.samhi.co.in
 
 
 
@@ -219,7 +270,9 @@ Hotels                   Rooms
 
 
                                                                                                                 7
-                                                                                                                                                                                            www.samhi.co.in
+
+[page 9]
+                                                                                                                                                                                            www.samhi.co.in
 
 
 
@@ -257,7 +310,9 @@ Leisure                                       -                       -         
    1: Renovation and re-branding from existing Upper Mid-scale segment to the Upper Upscale & Upscale segment
                                                                                                                                                                                                           8
    * Only for Owned new hotels excluding RARE India inventory which is on asset-light model
-                                                                            www.samhi.co.in
+
+[page 10]
+                                                                            www.samhi.co.in
 
 
 
@@ -269,7 +324,9 @@ Leisure                                       -                       -         
 
         Westin, Whitefield, Bangalore
 Architectural renders, actual may vary
-                                                                                                                                                                                                                      www.samhi.co.in
+
+[page 11]
+                                                                                                                                                                                                                      www.samhi.co.in
 
 
 
@@ -290,7 +347,9 @@ Highlights for the quarter
 
     1: Comparable excludes one-time GIC-transaction related items in Q1FY26 and the GST input tax credit (ITC) impact in Q1FY27. Refer to slide 12 for full reconciliation of reported to comparable financials.
     2: Based on same-store, i.e., excludes the Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25), Caspia Delhi (discontinued operation) and Sheraton Commercial.                10
-                                                                                                                                                                                                                                www.samhi.co.in
+
+[page 12]
+                                                                                                                                                                                                                                www.samhi.co.in
 
 
 
@@ -317,7 +376,9 @@ Financial summary – Q1 FY2027
 
   1: Based on same-store, i.e., excludes the Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25), Caspia Delhi (discontinued operation) and Sheraton Commercial
   2: Comparable excludes one-time GIC-transaction related items in Q1FY26 and the GST input tax credit (ITC) impact in Q1FY27. Refer to slide 12 for full reconciliation of reported to comparable financials.                               11
-                                                                                                                               www.samhi.co.in
+
+[page 13]
+                                                                                                                               www.samhi.co.in
 
 
 
@@ -353,7 +414,9 @@ PAT                     122           341   +179.2%                             
 
 
                                                                                                                                             12
-                                                                                                                                                                                                                   www.samhi.co.in
+
+[page 14]
+                                                                                                                                                                                                                   www.samhi.co.in
 
 
 
@@ -385,7 +448,9 @@ Hits                                                                            
 
   1: Comparable excludes one-time GIC-transaction related items in Q1FY26 and the GST input tax credit (ITC) impact in Q1FY27. Refer to slide 12 for full reconciliation of reported to comparable financials.
   2: Based on same-store, i.e., excludes the Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25), Caspia Delhi (discontinued operation) and Sheraton Commercial                13
-                                                                                                                                                       www.samhi.co.in
+
+[page 15]
+                                                                                                                                                       www.samhi.co.in
 
 
 
@@ -441,7 +506,9 @@ sale of Caspia Delhi: +₹145mn
 improved financial performance and greater visibility of future profits.
 
                                                                                                                                                                     14
-                                                                                                Sep 30,                Mar 31,                    Mar 31,                    Jun 30,
+
+[page 16]
+                                                                                                Sep 30,                Mar 31,                    Mar 31,                    Jun 30,
                                                                                                                                                                               www.samhi.co.in
 
 
@@ -532,7 +599,9 @@ improved financial performance and greater visibility of future profits.
    lease, EIR, etc. which are charged to P&L
 5: Excludes Caspia Delhi EBITDA on TTM basis
                                                                                                                                                                                              15
-                                                          www.samhi.co.in
+
+[page 17]
+                                                          www.samhi.co.in
 
 
 
@@ -542,7 +611,9 @@ improved financial performance and greater visibility of future profits.
 
        Westin & fairfield, Navi Mumbai
 Architectural renders, actual may vary
-                                                                                                                                                 www.samhi.co.in
+
+[page 18]
+                                                                                                                                                 www.samhi.co.in
 
 
 
@@ -576,7 +647,9 @@ Kolkata             30 6                                                        
 
    1: Source: JLL FY26
    2: Source: Cushman and Wakefield Office Report                                                                                                             17
-                                                                                                                                                                                                                                               www.samhi.co.in
+
+[page 19]
+                                                                                                                                                                                                                                               www.samhi.co.in
 
 
 
@@ -678,7 +751,9 @@ Q1FY23
 
            1: Source: Airports Authority of India (AAI). Includes the 10 key metro cities inc. Delhi, Mumbai (inc. Navi Mumbai), Bangalore, Hyderabad, Chennai, Kolkata, Ahmedabad, Pune, Goa and Kochi                                                           18
            2: Mumbai includes Navi Mumbai
-                                                             www.samhi.co.in
+
+[page 20]
+                                                             www.samhi.co.in
 
 
 
@@ -688,7 +763,9 @@ Q1FY23
 
             W, HITEC City, Hyderabad
 Architectural renders, actual may vary
-                                                                                                                                                                                                                                              www.samhi.co.in
+
+[page 21]
+                                                                                                                                                                                                                                              www.samhi.co.in
 
 
 
@@ -737,7 +814,9 @@ Q1FY24 Q2FY24 Q3FY24 Q4FY24 Q1FY25 Q2FY25 Q3FY25 Q4FY25 Q1FY26 Q2FY26 Q3FY26 Q4F
      3. Based on same-store, i.e., excludes the Four Points by Sheraton, Chennai OMR sold in Feb’25, Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25), Caspia Delhi (discontinued operation) and Sheraton Commercial
                                                                                                                                                                                                                                                                  20
      4. Based on same-store, i.e., excludes the Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25) and Caspia Delhi (discontinued operation)
-                                                                                                                                                                                               www.samhi.co.in
+
+[page 22]
+                                                                                                                                                                                               www.samhi.co.in
 
 
 
@@ -772,7 +851,9 @@ Q1FY27 - Total Income bridge
        2. Includes Trinity, HIEX Greater Noida, HIEX Kolkata and RARE India
                                                                                                                                                                                                             21
        3. Includes Sheraton Commercial
-                                                                                                                                                                                                              www.samhi.co.in
+
+[page 23]
+                                                                                                                                                                                                              www.samhi.co.in
 
 
 
@@ -811,7 +892,9 @@ Q1FY27 – Consol. EBITDA bridge
        2. Includes Trinity, HIEX Greater Noida, HIEX Kolkata and RARE India
                                                                                                                                                                                                                            22
        3. Includes Sheraton Commercial
-                                                                                                                                                                          www.samhi.co.in
+
+[page 24]
+                                                                                                                                                                          www.samhi.co.in
 
 
 
@@ -853,7 +936,9 @@ Q1FY27 Bridge from Total Asset Income to Consol. EBITDA
 
 
    Note: All values in ₹mn, unless specified otherwise                                                                                                                                 23
-                                                                                                www.samhi.co.in
+
+[page 25]
+                                                                                                www.samhi.co.in
 
 
 
@@ -881,7 +966,9 @@ increase upscale share from ~41% to
 ~60% by FY2030, giving boost to our   Upper Upscale & Upscale   Upper Mid-scale     Mid-scale
 overall revenue per key
                                                                                                              24
-                                                                                                                                                                                                                       www.samhi.co.in
+
+[page 26]
+                                                                                                                                                                                                                       www.samhi.co.in
 
 
 
@@ -915,13 +1002,17 @@ RevPAR1 (₹)                                                   8,229           
 
    1. Based on same-store, i.e., excludes the Trinity acquired in Oct’24, HIEX Greater Noida (reopened in Dec’24), HIEX Kolkata (opened in May’25) and Sheraton Commercial
                                                                                                                                                                                                                                        25
-                  www.samhi.co.in
+
+[OCR page 27]
+                  www.samhi.co.in
 
 
 
 
 Growth Projects
-                                                                                                                                                                                    www.samhi.co.in
+
+[page 28]
+                                                                                                                                                                                    www.samhi.co.in
 
 
 Secured projects to
@@ -951,7 +1042,9 @@ accelerate future growth                                                        
       1. Includes 22 apartments of Hyatt Regency, Pune which are currently under pre-opening
       2. Part renovation in progress, full renovation in due-course                                                                                                                              27
       3. Earlier proposed to be an expansion to existing Fairfield by Marriott with 86 rooms
-                                                                                                                   www.samhi.co.in
+
+[page 29]
+                                                                                                                   www.samhi.co.in
 
 
  W
@@ -984,7 +1077,9 @@ accelerate future growth                                                        
                                                                Architectural renders, actual may vary
                                                                                                                                   28
 1. Based on final segment brand and plan room count may vary
-Strong product in a resilient market
+
+[page 30]
+Strong product in a resilient market
                                                                                 www.samhi.co.in
 
 
@@ -999,7 +1094,9 @@ W
 HITEC City, Hyderabad (170 rooms)
 New Development                        Architectural renders, actual may vary
                                                                                              29
-                                                                          www.samhi.co.in
+
+[page 31]
+                                                                          www.samhi.co.in
 
 
 
@@ -1008,7 +1105,9 @@ Westin & Tribute Portfolio
 Whitefield, Bangalore (142 rooms renovation & 220 new rooms)
 Under Renovation & Development                                 Architectural renders, actual may vary
                                                                    Artist impression, actual may vary
-                                                                                                    www.samhi.co.in
+
+[page 32]
+                                                                                                    www.samhi.co.in
 Westin & Tribute Portfolio                                     Project Progress
 Whitefield, Bangalore (142 rooms renovation & 220 new rooms)
 Under Renovation & Development                                 Design             Interior Design
@@ -1030,7 +1129,9 @@ Under Renovation & Development                                 Design           
 
 
                                                                                                                  31
-                                                                                                                                                          www.samhi.co.in
+
+[page 33]
+                                                                                                                                                          www.samhi.co.in
 
 
 
@@ -1073,7 +1174,9 @@ Retail) for ~162-room Upscale hotel                                 urban market
 
 
                                                                                                                                                                        32
-                                                                                                              www.samhi.co.in
+
+[page 34]
+                                                                                                              www.samhi.co.in
 
 
 
@@ -1103,7 +1206,9 @@ and brand finalization                                                          
 
 
   1. Based on final segment, brand and plan room count may vary                                                                      33
-                                                                                                             www.samhi.co.in
+
+[page 35]
+                                                                                                             www.samhi.co.in
 
 
 
@@ -1139,7 +1244,9 @@ proximity to the new airport
 
 
   1 - Based on final segment, brand and plan room count may vary                                                                 34
-                                                                                                                                                                                              www.samhi.co.in
+
+[page 36]
+                                                                                                                                                                                              www.samhi.co.in
 
 
 
@@ -1168,7 +1275,9 @@ New Hotel Expansion at Sriperumbudur
 
 
  *Note: The development was earlier proposed to be 86 room extension of Fairfield by Marriott under the same brand and room count may vary based on final plans                                                  35
-                                                                                                                        www.samhi.co.in
+
+[page 37]
+                                                                                                                        www.samhi.co.in
 
 
 
@@ -1199,7 +1308,9 @@ across pilot resorts for integration, targeted to go live in H2 FY27 on the Outd
 Marriott Bonvoy
 
                                                                                                                                      36
-                                                                                                                    www.samhi.co.in
+
+[page 38]
+                                                                                                                    www.samhi.co.in
 
 
 
@@ -1232,7 +1343,9 @@ Purchase price ~₹120mn
 
 
                                                                                                                                         37
-                                    www.samhi.co.in
+
+[OCR page 39]
+                                    www.samhi.co.in
 
 
 
@@ -1241,7 +1354,9 @@ Purchase price ~₹120mn
 
 
 Renaissance, Ahmedabad
-                                                                                                                                              www.samhi.co.in
+
+[page 40]
+                                                                                                                                              www.samhi.co.in
 
 
 
@@ -1267,7 +1382,9 @@ business stays to curated leisure experiences
                                                                                                            experiential travel segment
 
                                                                                                                                                            39
-                                                                                                                                                                                                    www.samhi.co.in
+
+[page 41]
+                                                                                                                                                                                                    www.samhi.co.in
 
 
 
@@ -1309,7 +1426,9 @@ Upscale
                                                                                                                        Pune                      Jaipur                                                Bangalore
  1. Include 5 hotels under development and 3 under rebrandingg from upper Mid-scale
  2. Based on final segment, brand and plan room count of under development/ rebranding rooms may vary                                               New openings are based on architectural renders, actual may vary   40
-                                                                                                                                                                                                                                      www.samhi.co.in
+
+[page 42]
+                                                                                                                                                                                                                                      www.samhi.co.in
 
 
 
@@ -1332,7 +1451,9 @@ rebranding2)
 
 1. Previously reported 473 under-development rooms included 86 rooms of Fairfield, Srip. Chennai. These have been moved to the Upscale under-development section, as the property is now being built as a Marriott with ~135 rooms.
 2. Brand and plan room count of under development/ rebranding rooms may vary                                                                                                                                                                       41
-                                                                                                       www.samhi.co.in
+
+[page 43]
+                                                                                                       www.samhi.co.in
 
 
 
@@ -1354,7 +1475,9 @@ Mid-scale
 
 1. Based on final segment, brand and plan room count of under development/ rebranding rooms may vary
                                                                                                                     42
-                    www.samhi.co.in
+
+[page 44]
+                    www.samhi.co.in
 
 
 
@@ -1369,7 +1492,9 @@ Asset Light Model
 
 
                                  43
-                                                                                                                                                   www.samhi.co.in
+
+[page 45]
+                                                                                                                                                   www.samhi.co.in
 
 
 
@@ -1401,7 +1526,9 @@ affinity                                                                        
 
                      Chart represents share of Q1FY27 Asset Income (in ₹mn)
                                                                                                                                                                 44
-                                                                                                                                                                                                                          www.samhi.co.in
+
+[page 46]
+                                                                                                                                                                                                                          www.samhi.co.in
 
 
 
@@ -1435,7 +1562,9 @@ Team that built the business
 
                                     Manish Bhagat                                 Ayush Singhal                                      Sangeeta Mohan                                          Nakul Manaktala
                                       VP - Finance                                 SVP - Finance                                  VP – Asset Management                                       SVP – Investment
-                                                                                                                                             www.samhi.co.in
+
+[page 47]
+                                                                                                                                             www.samhi.co.in
 
 
 
@@ -1464,7 +1593,9 @@ Strong governance with highly experienced board members
 
 
                                                                                                                                                           46
-                                                                                                                                                                                                                    www.samhi.co.in
+
+[page 48]
+                                                                                                                                                                                                                    www.samhi.co.in
 
 
 
@@ -1514,7 +1645,9 @@ Total Income (₹mn)                                                            
 
 
       1. FY25 financials were restated on account of sale of Caspia Delhi as the asset was recognized under “discontinued operation”                                                                                              47
-                                                                                                                                                                                                                                                                                                                     www.samhi.co.in
+
+[page 49]
+                                                                                                                                                                                                                                                                                                                     www.samhi.co.in
 
 
 
@@ -1655,7 +1788,9 @@ Total Income (₹mn)                                                            
                                                                                                                                                                                                                             Q1'27
            Note: EBITDA reported for Q3’26, Q4’26 and Q1’27 is post GST implementation
            FY25 financials were restated on account of sale of Caspia Delhi as the asset was recognized under “discontinued operation”                                                                                                                                                                                                        48
-                                                                                                                                                 www.samhi.co.in
+
+[page 50]
+                                                                                                                                                 www.samhi.co.in
 
 
 
@@ -1713,7 +1848,9 @@ Glossary
 
 
                                                                                                                                                               49
-                                                                                                                                                                                                  www.samhi.co.in
+
+[page 51]
+                                                                                                                                                                                                  www.samhi.co.in
 
 
 
@@ -1742,7 +1879,9 @@ projections made by third parties included in this Presentation are not adopted 
 
 The equity shares of SAMHI Hotels Ltd. were listed on National Stock Exchange of India Ltd. (NSE) and BSE Ltd. (BSE) on 22 September 2023. Accordingly, the unaudited standalone and consolidated financial
 results for the quarter ended 30th June, 2026 has been drawn up in accordance with the requirement of Regulation 33 of the Listing Regulations.
-                                                     www.samhi.co.in
+
+[page 52]
+                                                     www.samhi.co.in
 
 
 
@@ -1776,4 +1915,3 @@ ami.parekh@sgapl.net /rahul.agarwal@sgapl.net
 www.sgapl.net
                                                    You
                                                             Page 51
-

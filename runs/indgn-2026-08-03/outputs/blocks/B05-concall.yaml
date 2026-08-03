@@ -1,0 +1,86 @@
+stage: B05-concall
+company: "Indegene Limited (INDGN)"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Cake Kommunikations acquisition: deal value, EBITDA multiple, and integration timeline not disclosed in any of the three earnings calls; only a single passing mention in the Q4/Annual FY26 call, and further colour only in the non-anchored operator digest."
+  - "Standalone (India entity) vs consolidated PAT bridge, and quantified international/acquired-subsidiary drag behind the FY26 -1.4% consolidated PAT despite +23.6% revenue, never discussed in any concall (task watch item b) — NOT FOUND in transcripts."
+  - "Explicit Q4 FY26 reported/adjusted EBITDA margin in percentage terms not verbally stated; only absolute Rs figures given, so a % margin is computable only approximately against an approximate stated revenue figure."
+  - "Q3 FY26 call gives no updated DSO figure (only OCF/PAT and OCF/EBITDA ratios); the 72-to-63-day DSO improvement cited in the Q4/Annual call is a full-year YoY figure, not quarter-specific."
+  - "Tectonic customer count/revenue not updated with specific figures in the Q3 FY26 call prepared remarks, despite being tracked precisely in Q1 and Q2 FY26 calls."
+flags:
+  - "Organic (constant-currency, ex-M&A) growth decelerated from 18.3% YoY (Q3 FY26) to 12% YoY (Q4 FY26) while headline growth accelerated on acquisition consolidation."
+  - "Large recently-won deals have revenue recognition concentrated in FY27, meaning FY26 headline growth is partly a bookings story not yet delivered as revenue."
+  - "Margin-recovery guidance specificity softened between Q3 and Q4 FY26 (explicit ~20% target replaced by vaguer 'revert to earlier levels', horizon pushed to H2 FY27)."
+  - "$10mn+ revenue client cohort stagnant at 10 accounts for the full year, not proactively disclosed."
+  - "TCPA litigation tail risk (Rs203mn provision, settlement/court approval pending)."
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Large outcome-based deal revenue realization (top-10 pharma $10mn+ ACV, biotech $20mn TCV, Q3-won $10mn ACV omnichannel deal)", type: "VOLUME", timeframe: "near-medium (FY27, from Q2 FY27)", conviction: "H", confirm_signal: "FY27 quarterly calls show revenue recognized on the stated go-live/lag schedule for these named deals", kill_signal: "Further deferral, rescoping, or non-mention of these named deals in FY27 calls"}
+  - {priority: 2, name: "EBITDA margin recovery toward ~20%", type: "COST", timeframe: "medium (H2 FY27)", conviction: "M", confirm_signal: "Sequential adjusted EBITDA margin improvement confirmed in Q1 FY27 with a restated explicit percentage target", kill_signal: "Q1 FY27 margin flat or down again, or management drops the specific target language entirely"}
+  - {priority: 3, name: "Tectonic scale-up via largest-customer Germany beachhead", type: "VOLUME/PRICE-MIX", timeframe: "medium (FY27)", conviction: "M", confirm_signal: "Additional Tectonic markets/customers named with revenue in FY27 calls", kill_signal: "Germany engagement stalls or no new markets signed by mid-FY27"}
+  - {priority: 4, name: "Organic (ex-M&A, constant currency) growth reacceleration", type: "VOLUME", timeframe: "near (Q1 FY27)", conviction: "M", confirm_signal: "Organic growth returns above the Q3 FY26 ex-BioPharm 18.3% YoY pace", kill_signal: "Organic growth stays near/below the Q4 FY26 12% YoY print for two consecutive quarters"}
+  - {priority: 5, name: "Beyond-top-20 client base compounding", type: "VOLUME", timeframe: "medium-long", conviction: "M", confirm_signal: "$1mn+ net adds reaccelerate from the Q4 FY26 +1 pace", kill_signal: "Net adds stay near zero for two more quarters"}
+  - {priority: 6, name: "$10mn+ client cohort re-acceleration", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "Cohort count moves above 10 in an upcoming call", kill_signal: "Cohort stays flat through FY27"}
+  - {priority: 7, name: "AI-as-TAM-expander thesis (share gains from agencies/CROs)", type: "SECTORAL", timeframe: "long", conviction: "M", confirm_signal: "Named competitive wins vs agencies/CROs with evidence, or peer-concall corroboration", kill_signal: "Peer concalls or industry data show AI compressing effort-based billing sector-wide including for Indegene"}
+  - {priority: 8, name: "Cake Kommunikations / European delivery build-out", type: "INORGANIC", timeframe: "medium", conviction: "L", confirm_signal: "Deal economics and integration milestones disclosed and met in an upcoming call", kill_signal: "Continued non-disclosure alongside weak Europe/Tectonic traction"}
+guidance:
+  - {item: "EBITDA margin headwind", number: "~150bps compression", timeframe: "near term, beginning Q3 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Margin recovery target", number: "~20% and a little north", timeframe: "6-8 quarters from Q2 FY26", stated_in: "Q2 FY26 call"}
+  - {item: "BioPharm support-function integration", number: "complete", timeframe: "2 quarters from Oct 2025", stated_in: "Q2 FY26 call"}
+  - {item: "BioPharm business ops/GTM integration", number: "complete", timeframe: "~6 quarters from Oct 2025", stated_in: "Q2 FY26 call"}
+  - {item: "BioPharm EPS accretion", number: "accretive", timeframe: "beyond 5-6 quarters from close", stated_in: "Oct 2025 investor meet"}
+  - {item: "BioPharm cost synergies", number: "~$1mn p.a.", timeframe: "progressively from FY27", stated_in: "Oct 2025 investor meet; reiterated Q3 FY26 call"}
+  - {item: "BioPharm margin normalization", number: "27-28% EBITDA on net revenue", timeframe: "~6 quarters", stated_in: "Oct 2025 investor meet"}
+  - {item: "Amortization step-down", number: "-Rs50mn/quarter from Q3 FY27, further -Rs25mn/quarter from Q3 FY28", timeframe: "FY27-FY28", stated_in: "Q3 FY26 call"}
+  - {item: "BioPharm IT/HR/finance transition completion", number: "complete", timeframe: "by 31 Mar 2026", stated_in: "Q3 FY26 call"}
+  - {item: "EBITDA sequential improvement begins", number: "N/A (qualitative)", timeframe: "Q1 FY27", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 final dividend", number: "Rs2.25/share (vs Rs2/share FY25, +12.5%)", timeframe: "declared, AGM approval pending", stated_in: "Q4/Annual FY26 call"}
+  - {item: "Debtor days steady state", number: "mid-60s to 70 days", timeframe: "ongoing", stated_in: "Q4/Annual FY26 call"}
+  - {item: "Margin full reversion", number: "N/A (no restated % target)", timeframe: "H2 FY27", stated_in: "Q4/Annual FY26 call"}
+  - {item: "Largest customer becomes first $50mn+ account", number: "N/A (aspirational, 'hoping')", timeframe: "FY27", stated_in: "Q4/Annual FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 5
+  missed: 0
+  rows:
+    - {promised_in: "Q2 FY26 call", promise: "150bps EBITDA margin headwind, recovery to ~20%+ over 6-8 quarters", outcome: "Partial", explanation: "Margin rose 30bps QoQ in Q3 FY26 (no further decline); Q4/Annual call reframes recovery to H2 FY27 without restating the ~20% target"}
+    - {promised_in: "Q2 FY26 call / Oct 2025 investor meet", promise: "BioPharm support-function integration complete in 2 quarters (~Mar 2026)", outcome: "Delivered (ahead of schedule)", explanation: "Completed end-February 2026 per Q4/Annual call"}
+    - {promised_in: "Q2 FY26 call", promise: "Largest customer pain behind us, bullish near-to-midterm growth", outcome: "Partial", explanation: "Still pipeline-stage in Q3 FY26; breakthrough (Tectonic Germany) landed at Q4 FY26 year-end but revenue pushed to FY27"}
+    - {promised_in: "Q3 FY26 call", promise: "$10mn+ ACV omnichannel deal revenue starts Q2 FY27 (2.5-quarter go-live lag)", outcome: "Partial (on track, not yet realized)", explanation: "Q4/Annual call confirms deal live, revenue entirely recognized in FY27, consistent with original framing"}
+    - {promised_in: "Q2 FY26 call", promise: "Tectonic — 4 customers, $2mn H1 revenue, conversions expected by end-December", outcome: "Partial", explanation: "No updated figure in Q3 FY26 call; Q4/Annual call shows 5 customers, 2 scaled to long-term, headlined by Germany win — slower net-add pace, higher deal quality"}
+    - {promised_in: "Q2 FY26 call", promise: "Warn & Co — not likely to have material impact on financial results", outcome: "Delivered", explanation: "Remained immaterial and unspecified in later calls, consistent with original claim"}
+    - {promised_in: "Oct 2025 investor meet", promise: "BioPharm cost synergies ~$1mn p.a.", outcome: "Partial", explanation: "Reiterated in Q3 and Q4/Annual calls as progressively accruing in FY27; not yet independently verifiable in reported numbers"}
+    - {promised_in: "All three calls", promise: "No formal revenue guidance (stated policy)", outcome: "Delivered", explanation: "Policy honored consistently despite repeated analyst requests each quarter"}
+excuse_pattern: "balanced, tilting honest-admission on hard/quantifiable misses (margin, PAT drivers, TCPA), with mild deflection on softer/optics-sensitive numbers (margin base-year math, organic growth deceleration, standalone-vs-consolidated bridge)"
+repeated_evasions:
+  - {question: "What growth/revenue guidance can you give?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "deflected every time, but as an explicitly declared, consistently-applied company policy rather than concealment"}
+  - {question: "When/how much will EBITDA margins recover?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q4 FY26"], classification: "answer changed between quarters — target/timeline specificity softened by Q4 FY26"}
+credibility_grade: "B"
+credibility_basis: "Delivery record is genuinely evidenced (BioPharm integration completed ahead of schedule, DSO/cash conversion improving every quarter, no-guidance policy honored without exception) but capped below A by softening margin-recovery specificity between Q3 and Q4 FY26, a never-addressed standalone-vs-consolidated PAT bridge despite FY26 PAT declining 1.4% on 23.6% revenue growth, and an organic-growth deceleration (18.3%->12% YoY) not proactively flagged."
+peer_questions:
+  - {question: "Is the 5%-8% CAGR (2026-2028) pharma industry growth and CY2025's 9% vs CY2024's 6.4% consistent with peer commentary?", why: "Underpins Indegene's entire demand thesis", check_peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {question: "Do peers corroborate GenAI as a net TAM-expander (absorbing agency/CRO spend) rather than a per-unit price/volume compressor for effort-based billing?", why: "Largest medium-term risk to the margin-recovery and growth thesis", check_peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {question: "Does Indegene's claimed revenue-per-employee leadership (~$75,000 FY26) hold up against peer RPE trends?", why: "Central self-described competitive differentiator", check_peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {question: "Have peers shown comparable 6-8 quarter margin recovery after investment cycles, or is Indegene's precedent an outlier?", why: "Tests credibility of softening margin-recovery guidance", check_peers: ["eClerx", "Sagility"]}
+  - {question: "Did peers also see organic constant-currency growth decelerate in the Jan-Mar 2026 quarter?", why: "Distinguishes sector seasonality/macro softness from Indegene-specific execution issues", check_peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {question: "What EBITDA multiples have peers paid for recent bolt-on M&A in adjacent healthcare/BPM services?", why: "Tests the sub-10x EBITDA multiple discipline claim for BioPharm", check_peers: ["Sagility", "eClerx"]}
+  - {question: "Do peers report similar large-account ($10mn+ tier) conversion-cycle lengthening?", why: "Tests whether the flat $10mn+ cohort (10 accounts) is industry-wide or Indegene-specific", check_peers: ["IKS Health", "Sagility"]}
+  - {question: "Raw material trend claim", why: "Mandatory checklist item — not applicable, Indegene is a services business with no raw-material input; no such claim exists in the transcripts", check_peers: []}
+  - {question: "Capex-cycle claim", why: "Mandatory checklist item — not applicable/NOT FOUND, no traditional capex-with-timeline commitments appear in any transcript", check_peers: []}
+red_flags:
+  - "Organic (constant-currency, ex-M&A) growth decelerated from 18.3% YoY (Q3 FY26) to 12% YoY (Q4 FY26) while headline growth accelerated to 32.8% YoY on acquisition consolidation (Medium-High)"
+  - "Large recently-won deals have revenue recognition concentrated in FY27, so FY26 headline growth partly reflects bookings not yet delivered revenue (Medium-High)"
+  - "Standalone-vs-consolidated PAT bridge and quantified acquired-subsidiary drag never discussed despite FY26 PAT declining 1.4% on +23.6% revenue (Medium)"
+  - "Margin-recovery guidance specificity softened from an explicit ~20% target (Q2/Q3 FY26) to a vaguer 'revert to earlier levels' pushed to H2 FY27 (Q4/Annual call) (Medium)"
+  - "$10mn+ revenue client cohort flat at 10 accounts for the full year, surfaced only under direct analyst questioning (Low-Medium)"
+  - "TCPA class-action litigation — Rs203mn provision, settlement/court approval still pending as of the Q4/Annual call (Low-Medium)"
+  - "Cake Kommunikations acquisition disclosed with materially less detail than BioPharm or Warn & Co (no deal value, multiple, or integration timeline) (Low-Medium)"
+  - "Tectonic customer-count/revenue disclosure lapsed for one full quarter (Q3 FY26) after being precisely tracked in Q1/Q2 FY26 (Low)"
+dropped_triggers:
+  - "Warn & Co as a standalone-tracked growth driver — introduced with specifics in Q2 FY26 call, folded into a generic '3 acquisitions' reference by Q4/Annual call without further quantification (consistent with its own 'immaterial' framing, not concealment)"
+timeline_slippages:
+  - "Margin recovery to ~20%: originally 6-8 quarters from Q2 FY26 with sequential improvement flagged from Q1 FY27; by Q4/Annual call, full reversion pushed to H2 FY27 without a restated explicit percentage target"
+  - "Largest customer growth: framed as 'near-to-midterm' bullish in Q2 FY26, still pipeline-stage in Q3 FY26, breakthrough only landed at Q4 FY26 year-end with revenue conversion pushed into FY27 — roughly a 2-3 quarter slippage from the original framing"
+no_concall_mode: false

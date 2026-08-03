@@ -1,0 +1,1401 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_sambhv_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 43
+formfeed_count: 43
+line_count: 1341
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: [2, 6, 10, 16, 19, 23, 40]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-03
+=== END HEADER ===
+
+NOTES ON EXTRACTION METHOD:
+- Primary extraction via `pdftotext -layout` on the 43-page deck; all financial,
+  operational, and capacity data throughout this deck is native/vector text
+  (not raster images) and was captured in full by pdftotext -layout, including
+  bar-chart data labels (e.g. Revenue, Gross Profit, Op. EBITDA, PAT trend
+  charts on pages 13-14, 33-36), map-overlay figures (pages 27, 29), capacity
+  tables (page 26), and execution-schedule tables (pages 11-12).
+- 7 pages fell under the 100-character mechanical threshold: pages 2, 6, 16,
+  19, 23, 40 are section-divider slides (title text + decorative fan/pie
+  graphic + product photo collage, no data) confirmed via 200dpi rasterisation
+  and tesseract OCR to carry no additional numeric or textual content beyond
+  the title already captured. Page 10 ("Master Plan for Phased Capacity
+  Build-Up") is a genuine site-layout technical drawing; tesseract OCR
+  degraded on the low-contrast rotated labels, so the plot-zone labels were
+  transcribed directly from the 200dpi rendered image (mechanical
+  transcription of visible pixels, not interpretation) and are marked
+  [OCR page 10] / [CHART, page 10, ...] below.
+- Page 18 ("Detailed Manufacturing Process Flow") passed the 100-character
+  threshold (198 chars: title + banner only) but the process-flow diagram
+  itself is image-based; tesseract OCR was attempted and garbled on the small
+  icon labels, so node labels were transcribed directly from the rendered
+  image and are marked [CHART/DIAGRAM, page 18, ...] below, per the
+  instruction that charts/diagrams frequently carry content stated nowhere
+  else in extracted text.
+- All other pages (>=100 extracted characters) were visually spot-checked
+  against their rendered images to confirm no chart-embedded numeric data was
+  missed by pdftotext; none was found.
+[page 1]
+August 03, 2026
+
+
+To                                             To
+
+Listing Compliance Department                  Listing Compliance Department
+
+National Stock Exchange of India Limited       BSE Limited
+
+Exchange Plaza, Bandra Kurla Complex,          P J Towers, Dalal Street,
+
+Bandra (East), Mumbai– 400051                  Mumbai - 400 001
+
+Symbol: SAMBHV                                 Scrip Code: 544430
+
+
+Dear Sir/Madam,
+
+Sub.: Investor Presentation on Unaudited Standalone Financial Results for the quarter
+ended June 30, 2026
+
+
+Pursuant to the provisions of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015, please find enclosed an Investors’ Presentation, specifying on the
+standalone financial performance for the quarter ended June 30, 2026.
+
+This disclosure along with the enclosures shall be made available on the website of the
+Company at: https://www.sambhv.com/financial-performance.php
+
+
+This is for your information and records.
+
+
+Thanking you,
+For, Sambhv Steel Tubes Limited
+                Digitally signed by
+NIRAJ       NIRAJ SHRIVASTAVA
+SHRIVASTAVA Date: 2026.08.03
+            21:23:00 +05'30'
+
+Niraj Shrivastava
+(Company Secretary and Compliance Officer)
+Membership No. F8459
+
+[page 2]
+SAMBHV STEEL TUBES LIMITED
+      Q1FY27 Investor Presentation, August 2026
+[OCR page 2]
+STEEL PIPES & TUBES
+Q1FY27 Investor Presentation,
+[OCR confirms cover slide: SAMBHV STEEL TUBES LIMITED / Q1FY27 Investor Presentation, August 2026. Background: photo collage of steel-making, HR coil, pipes, and finished pipe stacking images. No numeric data.]
+
+[page 3]
+Disclaimer
+
+
+   This presentation and the accompanying slides (the “Presentation”), which have been prepared by Sambhv Steel Tubes
+   Limited (the “Company”) solely for the information purposes and do not constitute any offer, recommendation or
+   invitation to purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any
+   contract or binding commitment what so ever. No offering of securities of the Company will be made except by means of a
+   statutory offering document containing detailed information about the Company.
+   Certain statements in this presentation concerning our future growth prospects are forward looking statements which
+   involve a number of risks and uncertainties that could cause actual results to differ materially from those in such forward-
+   looking statements. The risks and uncertainties relating to the statements include, but are not limited to, risks and
+   uncertainties regarding fiscal policy, competition, inflationary pressures and general economic conditions affecting
+   demand / supply and price conditions in domestic and international markets. The company does not undertake to update
+   any forward-looking statement that may be made from time to time by or on behalf of the company.
+   This Presentation has been prepared by the Company based on information and data which the Company considers
+   reliable. This Presentation may not be all inclusive and may not contain all of the information that you may consider
+   material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly excluded. The
+   Company does not make any promise to update/provide such presentation along with results to be declared in the coming
+   years.
+
+
+
+                                                                                                                                  2
+
+[page 4]
+Table Of Content
+
+  Q1FY27 Performance Highlights
+
+
+
+  Business Overview
+
+
+  Diversified Product Portfolio
+
+
+  Key Investment Thesis
+
+
+  Future Outlook
+
+[page 5]
+Management Commentary
+
+
+
+ “Sambhv has commenced FY27 on a strong note, delivering its highest-
+ ever quarterly financial performance. The company recorded its highest-
+ ever sales volume of value-added products, supported by better
+ realizations and a richer product mix. During Q1FY27 the revenue, Op.
+ EBITDA, and PAT grew by 31%, 31%, and 70% YoY, respectively,
+ reflecting strong execution and improved profitability.
+
+ Sambhv remains focused on strengthening its integrated manufacturing
+ capabilities across structural tubes, stainless steel, and galvanized
+ products. The Company's long-term expansion roadmap is progressing as
+ planned, with finished products capacity targeted to increase from 0.68
+ Million MTPA to more than 2 Million MTPA over the next 4–5 years.
+ Backed by ongoing capacity additions, improving operating efficiencies,
+ and a growing share of value-added products, Sambhv remains well
+ positioned to drive long-term growth and strengthen its market
+ position.”                                                                Mr. Suresh Kumar Goyal
+                                                                           Chairman & Managing Director
+
+
+                                                                                                          4
+
+[page 6]
+Q1FY27
+Performance
+Highlights
+[OCR page 6]
+Q1FY27
+Performance
+Highlights
+[OCR confirms section-divider slide: decorative fan/pie graphic (design element, not a data chart) + product photo collage. No numeric data.]
+
+[page 7]
+  Q1FY27 - Key Strategic Updates
+
+
+                           Received product approval from
+                                                                            Consent to Establish (CTE) granted
+                          leading government organizations                  for Stainless-steel CR coil facility of
+                          including, Engineers India Limited,                1,18,000 MTPA at Kuthrel Unit II
+                              Chennai Metro Rail Limited
+
+
+
+
+  Achieved its highest-ever sales                 Consent to Operate (CTO) granted for               Executed 18 new MoU with Stainless-
+volume for Value Added Products,                   doubling the Stainless-steel CR coil               steel pipe partners under “Sambhv”
+with strong contribution across all              Capacity from 58,000 MTPA to 1,16,000                 co-branding initiatives, taking total
+            segments                                         MTPA at Kuthrel                               MoU count to 28 partners
+
+
+                                                                                                                                               6
+
+[page 8]
+           Q1FY27 at a Glance
+                                                                                                           Key Financial Highlights
+
+
+
+                   INR 7,322 Mn                                     INR 1,001 Mn                                    INR 952 Mn                                    INR 566 Mn                      INR 10,002
+                      Revenue                                        Total EBITDA                                 Operating EBITDA                                    PAT                Op. EBITDA / T (Ex. Sponge Iron)
+
+
+
+
+                  INR 9,355                                     INR 922 Mn                                            1.00x                                         21.92%                        21 Days
+                Op. EBITDA / T                          Cash Flow from Operations**                           Net Debt / Op. EBITDA*                                ROCE*                   Working Capital Cycle*
+
+                                                                                                          Key Operational Metrics
+
+           Intermediate Products                           Structural Pipes & Tubes                                  Stainless Steel                      Pre-Galvanized Coils & Pipes           Total Volume
+            (Sponge Iron, Slabs, HR/CR Coils)                  (ERW Black Pipes, CRFH Pipes)                       (Slabs, HR Coils, CR Coils)                     (Coils, Pipes)
+
+
+             Production Volume #                               Production Volume #                              Production Volume #                           Production Volume #             Production Volume#
+                 183,866 MT                                        55,724 MT                                        42,424 MT                                     52,425 MT                      334,439 MT
+
+              (Sponge Iron, Slabs, HR Coils)                   (ERW Black Pipes, CRFH Pipes)                               (CR Coils)                              (Coils, Pipes)                  Total Sales
+
+                  Sales Volume^                                    Sales Volume^                                     Sales Volume^                              Sales Volume^                    Sales Volume^
+                    6,580 MT                                         56,617 MT                                         14,760 MT                                  29,814 MT                       107,771 MT
+
+
+Note - All figures show Standalone Financial Performance; *as on 30th June’26, annualized basis **as on 30th June’26;
+                                                                                                                                                                                                                            7
+#Production Volume includes the quantity used for captive consumption; ^Sales Volume figures include certain sales that are not reorganised as Revenue.
+
+[page 9]
+   Future Roadmap – Vision 2030
+                                        Building Scale, Driving Integration and Creating Long Term Value
+       Finished Product Capacity Addition (Metric Ton Per Annum)                                             Strategic Growth Drivers
+
+                                                                          2,032,000         Undertaking Greenfield expansion at Kesda & Kuthrel Unit-II to
+                                                                                            add 1.2 MMTPA finished product capacity in phased manner;
+                                                                                            Phase-I includes 0.36 MMTPA Stainless-steel Coils production
+                                                                                            capacity with estimated CAPEX of INR 8,100 Million, targeted for
+                                                                                            commissioning by Q4FY27
+
+                                                                                            Setting up round-the-clock 25 MW Power Plant at Kesda in Phase-I
+                                                                                            to enhance cost efficiency with estimated CAPEX of INR 1,250
+                                                      1,200,000                             Million, targeted for commissioning by Q4FY27
+
+                                                                                            Adding round-the-clock 30 MW Power Plant at Sarora Unit-III,
+                                                                                            Raipur to improve cost efficiency and reduce dependency on
+                              150,000                                                       external power sources with estimated CAPEX of INR 1,500 Million
+    682,000
+                                                                                            Setting up 8 MW Captive Behind-the-meter Rooftop Solar Power
+                                                                                            Plant at Kuthrel to reduce dependency on external power sources
+                                                                                            and increase the use of renewable energy with an estimated
+Existing Capacity     ERW Pipes and Tubes           SS & MS VAP   Post Expansion Capacity   CAPEX of INR 250 Million
+
+              Finished Products          Brownfield Expansion     Greenfield Expansion
+                                                                                            Undertaking brownfield expansion of ERW Pipes & Tubes through
+                                                                                            DFT route, adding 1,50,000 MTPA capacity with an estimated
+                                                                                            CAPEX of INR 500 Million
+
+
+                                                                                                                                                               8
+
+[page 10]
+Master Plan for Phased Capacity Build-Up
+
+
+
+
+                                           9
+[OCR page 10]
+[Tesseract OCR degraded on this technical line-drawing (low-contrast orange-on-cream); labels below are transcribed directly from the rendered image (200dpi), not interpreted:]
+Title: Master Plan for Phased Capacity Build-Up
+Site plan / factory layout diagram labels: RAW MATERIAL SHED (FOR ALL PHASES) | HRM UNIT (FOR ALL PHASES) | HRAP UNIT | SMS & AOD UNIT | SPACE FOR PHASE-2 & 3 (appears at two locations on the plot) | SPACE FOR FUTURE POWER PLANT | POWER PLANT - 20MW | ADMIN BLOCK | RESERVOIR | compass rose (N/S/E/W) | page number 9 (bottom right)
+[CHART, page 10, OCR text: site layout map with labelled plot zones as above; no financial/production numeric data on this slide beyond the plot labels]
+
+[page 11]
+         From Ground to Structure: On-Site Execution Progress
+                                 Captive Power Plant – 25MW                                                  SMS, Hot Rolling Mill and HRAP Line
+
+                                                               Stack                                    HRM & HRAP shed
+    Air-Cooled Condenser Building                            (Total Height
+              (Total Height – 26.75mtr.)                      – 120 mtr.)
+
+                                                                             Boiler Building
+                                                                                 & ESP
+
+                                                                                                  Internal Road
+
+                                                                             Turbine Building
+                                                                                (Total Height –
+                                                                                   26mtr.)
+
+
+
+
+         A-Frame installed                              Turbine installed
+                                                                                                                  Roughing & Finishing Stand Foundation
+
+                                                                                                                                                          10
+Note – The above images were clicked on July 26, 2026
+
+[page 12]
+        From Plan to Progress: Execution Schedule and Status
+                                                                        Target                                                                             Target
+          Division                  Work Description                              Current Status   Division             Work Description                             Current Status
+                                                                       Timeline                                                                           Timeline
+                        Project Office & Labour Quarter Construction                Completed                  Key Machineries Ordering                    Q4FY26      Completed
+                                                                        Q3FY26                                 Civil Work for Technological Structure                ~80% Completed
+                        11KV Line for Construction Work                             Completed       Hot                                                    Q2FY27
+                                                                                                               Civil Work for Static Building Structure              ~90% Completed
+                        Weigh Bridge-1                                              Completed      Rolling
+                                                                                                               Equipment Erection                                    ~20% Completed
+                        Main Gate and Security Office                               Completed       Mill                                                   Q3FY27
+                                                                        Q2FY27                                 Electrical and Instrumentation                           Ongoing
+         Common         External Boundary Wall & Fencing                            Completed
+                                                                                                               Testing and Commissioning                   Q4FY27         TBC
+          Work          132KV Line and 132/33KV Sub-station                          Ongoing
+                        Surface Water Line                                        ~70% Completed               Key Machineries Ordering                    Q4FY26      Completed
+                        Internal Approach Road                                    ~90% Completed               Civil Work for Static Building Structure              ~90% Completed
+                                                                        Q4FY27
+                        Rain Water Harvesting                                        Ongoing        HRAP       Equipment Erection                                         TBC
+                        Green Belt Development                                    ~60% Completed                                                           Q3FY27
+                                                                                                               Electrical and Instrumentation                           Ongoing
+                        Admin Building, Weigh Bridge-2, Stores                       Ongoing
+                                                                                                               Testing and Commissioning                   Q4FY27         TBC
+                        Key Machineries Ordering                        Q4FY26      Completed
+                                                                                                     Cold      Key Machineries Ordering                    Q4FY26      Completed
+                        Civil Work for Technological Structure                    ~90% Completed
+                                                                        Q2FY27                      Rolling    Civil Work for Technological Structure                ~40% Completed
+           Power        Civil Work (Coal Shed)                                    ~50% Completed                                                           Q2FY27
+                                                                                                     Mill      Civil Work for Static Building Structure              ~80% Completed
+           Plant        Equipment Erection                                        ~30% Completed
+                        Electrical and Instrumentation
+                                                                        Q3FY27
+                                                                                     Ongoing
+                                                                                                   (Kuthrel    Equipment Erection
+                                                                                                                                                           Q3FY27
+                                                                                                                                                                          TBC
+
+                        Testing and Commissioning                       Q4FY27         TBC
+                                                                                                    Unit-II)   Electrical and Instrumentation                           Ongoing
+                                                                                                               Testing and Commissioning                   Q4FY27         TBC
+                        Key Machineries Ordering                        Q4FY26      Completed
+                        Civil Work for Technological Structure                    ~30% Completed
+           Steel                                                        Q2FY27
+                        Civil Work for Static Building Structure                  ~40% Completed
+          Melting
+                        Equipment Erection                                             TBC
+           Shop                                                         Q3FY27
+                        Electrical and Instrumentation                               Ongoing
+                        Testing and Commissioning                       Q4FY27         TBC
+
+                                                                                                                                                                                      11
+TBC – To Be Commenced
+
+[page 13]
+         Q1FY27 Financial Highlights
+                                                 Revenue (INR Million)                                         Gross Profit (INR Million) & Margin (%)
+
+                                                           31%                                                         Gross Profit      Margin
+                                                                                                    29.92%                                     29.85%     28.96%
+                                                                                                                27.87%
+                                                                                                                                26.80%
+
+
+                                                                            6,853       7,322
+                        5,586            5,802              5,891                                                                               2,046      2,120
+                                                                                                      1,672     1,617            1,579
+
+
+                      Q1FY26            Q2FY26             Q3FY26          Q4FY26      Q1FY27        Q1FY26    Q2FY26           Q3FY26         Q4FY26     Q1FY27
+
+
+                                   Operating EBITDA (INR Million) & Margin (%)                                   PAT (INR Million) & Margin (%)
+
+                                        Op. EBITDA               Op. EBITDA Margin                                    PAT        PAT Margin
+                   13.02%                                                     13.46%       13.00%
+                                         10.39%                                                                                               8.14%      7.73%
+                                                             8.68%
+
+                                                                                                    5.98%
+                                                                                           952                5.16%
+                                                                              922                                              4.10%                      566
+                      727                                                                                                                      558
+                                         603                 511                                     334       300              241
+
+                    Q1FY26             Q2FY26               Q3FY26          Q4FY26       Q1FY27     Q1FY26    Q2FY26          Q3FY26          Q4FY26     Q1FY27
+
+
+                                                                                                                                                                   12
+Note - All figures show Standalone Financial Performance
+
+[page 14]
+           Financial Highlights
+
+                             Revenue                                    Gross Profit & Margin (%)            Operating EBITDA & Margin (%)      PAT & Margin (%)
+
+                                60%
+                                                                                                    28.65%                         11.45%
+                                                                       29.57%                                                                                  5.94%
+  FY26
+
+
+
+
+                                                                                                                10.23%
+                                                                                                                                             3.84%
+                   15,114                  24,132                        4,469
+                                                                                                   6,913       1,546
+                                                                                                                                 2,763        580            1,433
+
+                    FY25                    FY26                         FY25                      FY26        FY25              FY26         FY25           FY26
+                                                                           Gross Profit             Margin       Op. EBITDA         Margin           PAT   Margin
+
+
+                              Revenue                                   Gross Profit & Margin (%)            Operating EBITDA & Margin (%)      PAT & Margin (%)
+                               31%
+                                                                                                   28.96%                       13.00%
+                                                                                                                                                               7.73%
+  Q1FY27
+
+
+
+
+                                                                                                             13.02%
+                                                                       29.92%
+                  5,586                   7,322                                                    2,120                         952         5.98%
+                                                                                                               727
+                                                                         1,672                                                                                566
+                                                                                                                                              334
+
+                Q1FY26                   Q1FY27                        Q1FY26                  Q1FY27        Q1FY26            Q1FY27        Q1FY26         Q1FY27
+                                                                          Gross Profit           Margin         Gross Profit     Margin              PAT   Margin
+
+                                                                                                                                                                       13
+Note - All figures show Standalone Financial Performance, INR Million unless otherwise mentioned
+
+[page 15]
+         Detailed Income Statement
+
+       Particulars (INR Million)                           Q1FY27   Q1FY26   Q4FY26   Y-o-Y   Q-o-Q   FY2026    FY2025   Y-o-Y
+
+       Net Revenue from Operations                          7,322    5,586    6,853   31%      7%     24,132    15,114   60%
+
+
+       Total Expenditure                                    6,370    4,859    5,931   31%      7%     21,369    13,567   58%
+
+       Operating EBITDA                                      952     727       922    31%      3%      2,763     1,546   79%
+
+
+       Operating EBITDA Margin (%)                         13.00%   13.02%   13.46%                   11.45%    10.23%
+
+       EBIT ( Incl. Other Income)                            876     615       841    42%      4%      2,351     1,267   85%
+
+
+       PBT (Excl. exceptional)                               769     450       742    71%      4%      1,918     790     143%
+
+       PBT Margin (%)                                      10.50%    8.06%   10.83%                   7.95%     5.22%
+
+       PAT (Excl. exceptional)                               566     334       558    69%      1%       1,433    580     147%
+
+
+       PAT Margin (%)                                       7.73%    5.98%    8.14%                   5.94%     3.84%
+
+       Reported EPS (INR)                                   1.92     1.39     1.89    38%      2%      5.09      2.41    111%
+
+
+                                                                                                                                 14
+Note - All figures show Standalone Financial Performance
+
+[page 16]
+Business
+Overview
+[OCR page 16]
+Business
+Overview
+[OCR confirms section-divider slide: decorative fan/pie graphic (design element) + product photo collage. No numeric data.]
+
+[page 17]
+        Key Milestones
+                               FY19                      FY20                    FY22                     FY23                    FY24                     FY25                      FY26                        FY27
+      FY18
+
+
+
+
+                                                                                                                                             Expanded the capacity of sponge                              Stainless-steel
+                                                                                                                                            iron to 280,000 MTPA, HR coils to                             CR coil capacity
+                                                                                                                                            390,000 MTPA, ERW & GI Pipes to                                 doubled to
+    Commenced                                                                                                                                 350,000 MTPA, and the power                                 116,000 MTPA
+ operation with the                                                                                                                         plant to 25 MW (16 MW WHRB + 9                                 from 58,000
+                                                     Commissioned                                Increased the capacity of
+  manufacturing of                                                                                                                                      MW AFBC)                                              MTPA
+                                                   15MW power plant                               Sponge iron to 105,000
+  sponge iron with                                                                                                                          Achieved the capability to produce
+                                                 (6 MW WHRB + 9 MW                                MTPA, blooms/slabs to
+installed capacity of                                                                                                                       Stainless-steel blooms/slabs & HR
+                                                 AFBC) and commenced                           231,000 MTPA and HR coils
+   60,000 MTPA                                                                                                                                coils with installed capacity of
+                                                    manufacturing of                                 to 350,000 MTPA.
+                                                   blooms / slabs with                         Commenced manufacturing                       60,000 MTPA each. Commenced
+                                                  installed capacity of                        of ERW Pipes with installed                   Manufacturing of GP Coil and GP
+                                                     120,000 MTPA                               capacity of 150,000 MTPA                       Pipes with installed Capacity
+                                                                                                      & increased it to                     58,000 MTPA and 100,000 MTPA,
+                                                                                                       250,000 MTPA                          respectively and SS CR Coils with
+                                                                                                                                              an installed capacity of 58,000
+                                                                                                                                                           MTPA
+                                                                                                                                                                               Successfully raised INR
+                                                                                                                                                                               440 Cr & listed on stock
+                                                                                                                                                                                     exchanges
+                            Expanded the                                                                                                                                          GP Coil Capacity
+                        production capacity of                      Expanded the capacity of blooms /                                                                           doubled from 58,000
+                                                                                                                      Increased the installed capacity
+                        Sponge iron to 90,000                          slabs to 150,000 MTPA and                                                                                 MTPA to 116,000
+                                                                                                                    for blooms/slabs to 317,000 MTPA
+                               MTPA                                 commenced manufacturing of HR                                                                                     MTPA
+                                                                                                                    and commenced manufacturing of
+                                                                      coils with installed capacity of
+                                                                                                                     GI pipe. Commissioned a 132 kVA
+                                                                              150,000 MTPA
+                                                                                                                                power line
+
+
+                                                                                                                                                                                                                     16
+     WHRB: Waste Heat Recovery Boiler, AFBC: Atmospheric Fluidized Bed Combustion
+
+[page 18]
+Detailed Manufacturing Process Flow
+                    Backward Integrated Steel & Pipes Manufacturing facility
+
+
+
+
+                                                                               17
+[CHART/DIAGRAM, page 18, OCR text attempted (tesseract garbled on small icon labels); labels transcribed directly from rendered image (200dpi):]
+Title: Detailed Manufacturing Process Flow / Backward Integrated Steel & Pipes Manufacturing facility
+Flow diagram nodes (Raw Material column): IRON ORE PELLET, IRON ORE, COAL, DOLOMITE -> SPONGE IRON -> CRUDE STEEL (Bloom/Slab - MS* + SS#) [also fed by SCRAP] -> WHRB POWER + AFBC POWER (byproduct loop)
+Continuing: CRUDE STEEL -> HR COIL (SS#) -> HRAP COIL (SS#) -> CR COIL (SS#); CRUDE STEEL -> HR COIL (MS*) -> CR COIL (MS*) -> GP COIL -> [PIPES & TUBES ROLLING / SLITTING]
+Product Offering (bottom row, hollow section pipes): ERW PIPES & STRUCTURAL TUBES (INCLUDING CRFH PIPE) + PRE GALVANISED (GP) PIPES & TUBES + STEEL DOOR FRAMES & PIPES + GI PIPES + CR COIL (SS#)
+Footnote: *Mild Steel, #Stainless Steel
+Page number: 17 (bottom right)
+
+[page 19]
+Diversified
+Product
+Portfolio
+[OCR page 19]
+Diversified
+Product
+Portfolio
+[OCR confirms section-divider slide: decorative fan/pie graphic (design element) + product photo collage. No numeric data.]
+
+[page 20]
+ Diversified product portfolio across the ERW black pipe value chain (1/3)
+                                                                         ERW Black Pipes & Tubes
+Capability to produce ERW pipes & tubes with thickness of 1.20mm to 5.00mm from in-house HR Coils available in following configuration: (i) square section from 15mm x 15mm to
+113mm x 113 mm (ii) rectangular section from 40mm x 20mm to 145mm x 82mm and (iii) round pipes from 15NB to 125NB; Can also produce large diameter pipes from wider coils up
+of to 6.00mm thickness available in following configuration: (i) square section up to 150mm x 150 mm (ii) rectangular section up to 200mm x 100mm and (iii) round pipes up to 150NB
+
+
+
+
+                                    Blooms/Slabs              Narrow Width HR Coil              ERW Black Pipes                                                 Steel Door
+       Sponge Iron                                                                                                                GI Pipes
+                                     (Mild Steel)                  (Mild Steel)                    & Tubes                                                        Frame
+
+   Refined form of iron           Semi-finished steel           Deforming blooms/               Manufactured by           Coating a protective layer     Manufactured by rolling
+  ore produced through           product produced by                slabs at high              rolling HR coils and          of zinc on ERW black         HR coils and further
+     direct reduction              melting & casting            temperature. HAGC                    welding it           pipes through hot dipping      welding it longitudinally
+         process                                                technology controls               longitudinally          process which protects it
+                                      Used for                                                                                                               Used in affordable
+                                                               thickness and surface            across its length              from corrosion &
+       Used for                    manufacturing                                                                                                              housing projects,
+                                                                  quality with high                                       increases life expectancy
+    manufacturing of            narrow-width HR coils                                        Primarily sold through                                      villages and forest areas
+                                                                      precision
+      crude steel                                                                               distributors who           Essential for hot & cold         due to their termite
+                                                                   Used for                 further sell it to various      water supply systems,                proof and
+                                                              manufacturing of ERW            end user industries            irrigation systems,         eco-friendly properties
+                                                                  black pipes                                                 plumbing systems
+                                                                    & tubes
+
+     Installed Capacity            Installed Capacity             Installed Capacity                                          Installed Capacity
+     280,000 MTPA                   280,000 MTPA                  370,000 MTPA                                                 350,000 MTPA
+
+                                                                                                                                                                                      19
+
+[page 21]
+ Diversified product portfolio across pre-galvanised pipe value chain (2/3)
+                                                                GP Coils and Pre-Galvanized (GP) Pipes & Tubes
+
+
+
+
+      Sponge Iron                    Bloom/Slabs                   Narrow Width HR                               Pre-Galvanized (GP)    Pre-Galvanized (GP)
+                                                                                        Cold Rolled (CR) Coils
+                                     (Mild Steel)                  Coils (Mild Steel)                                   Coils                  Pipes
+
+   Refined form                   Semi-finished                      Deforming                                                          Manufactured by
+                                                                                         Manufactured by         Manufactured using
+    of iron ore                   steel product                   blooms/ slabs at                                                     rolling GP coils and
+                                                                                         rolling HR coils at         Continuous
+    produced                       produced by                    high temperature                                                      further welding it
+                                                                                        room temperature          Galvanizing Lines
+  through direct                    melting &                                                                                             longitudinally
+                                                                  HAGC technology                                  (CGL), based on
+    reduction                        casting                                              Majorly used for
+                                                                  controls thickness                                Non-Oxidation        Generally used in
+     process                                                                             manufacturing of
+                                   Used for                          and surface                                       (Non-Ox)        telecommunication,
+     Used for                    manufacturing                     quality with high           CRFH                  technology           infrastructure,
+  manufacturing                  narrow-width                         precision          pipes and GP coils       In-house GP coils     construction, solar
+  of crude steel                    HR coils                                                                       are used for the        structures etc
+                                                                     Used for
+                                                                  manufacturing of                               manufacture of pre-
+                                                                                                                                          Used widely in
+                                                                     CR coils                                      galvanized (GP)
+                                                                                                                                       coastal region due to
+                                                                                                                  pipes and are also
+                                                                                                                                           its corrosion
+                                                                                                                  supplied to other
+                                                                                                                                        resistant property
+                                                                                                                      industries
+
+Installed Capacity               Installed Capacity               Installed Capacity    Installed Capacity        Installed Capacity     Installed Capacity
+ 280,000 MTPA                     280,000 MTPA                    370,000 MTPA          100,000 MTPA              116,000 MTPA            100,000 MTPA
+
+                                                                                                                                                               20
+Galvanized Plain (“GP”) coils, Cold rolled full hard (“CRFH”)
+
+[page 22]
+  Diversified product portfolio across the stainless-steel value chain (3/3)
+                                                                                       Stainless Steel
+
+
+
+
+                                     Blooms/Slabs                    Narrow Width HR Coils               Stainless-Steel                        Stainless-Steel
+                                    (Stainless-Steel)                   (Stainless Steel)                  HRAP Coils                              CR Coils
+
+                                  Semi-finished steel              Deforming blooms/ slabs           Manufactured by                      Manufactured by cold
+                                 product produced by                 at high temperature          annealing and pickling                   rolling and bright
+                                   melting & casting                   HAGC technology             HR coils in continuous                annealing of HRAP coils
+                                                                    controls thickness and        annealing-pickling lines
+                                For Stainless-steel, the                                                                                Majorly sold to stainless
+                               melting process has an              surface quality with high     Has cleaner surface and                steel pipe manufacturers
+                                 additional step called                    precision              improved mechanical                    and utensil makers etc
+                                     argon oxygen                  Used for manufacturing             properties for
+                               decarburization, or AOD             of Stainless-steel HRAP       downstream processing
+                                        process                              coils                Used for manufacturing
+                               Used for manufacturing                                            of Stainless-Steel CR coils
+                               of narrow-width HR coils
+
+
+
+
+                                   Installed Capacity                  Installed Capacity                                  Installed Capacity
+                                     80,000 MTPA                        80,000 MTPA                                        116,000 MTPA
+
+                                                                                                                                                                    21
+HR annealed and pickled (“HRAP”) coils, Cold rolled (“CR”) coils
+
+[page 23]
+Key
+Investment
+Thesis
+[OCR page 23]
+Key
+Investment
+Thesis
+[OCR confirms section-divider slide: decorative fan/pie graphic (design element) + product photo collage. No numeric data.]
+
+[page 24]
+ Key Strengths
+
+                                                      Single Location Backward Integrated Facility For
+                                                          Manufacturing ERW Steel Pipes & Tubes
+
+
+
+
+                  Track Record Of Healthy Financial                                                      Strategically Located Manufacturing Plants
+                                      Performance                                                        Resulting In Operational Efficiencies
+                                                                             1
+
+                                                                   7                    2
+
+
+
+
+                                                               6                            3              Strong Process Innovation And Execution
+Experienced Promoters and Management Team
+                                                                                                           Capabilities Allowing Us To Produce
+         With Vast Experience In Steel Industry
+                                                                                                           Value-added Products
+                                                                       5           4
+
+
+
+
+Well-positioned To Take Advantage Of The Growing Demand
+                                                                                            Wide-spread Well Connected Distribution Network Across India
+                     For Quality ERW Steel Pipes And Tubes
+
+
+
+                                                                                                                                                           23
+
+[page 25]
+   1A      Single location backward integrated facility for ERW steel pipes
+
+                                                            Integrated manufacturing facility located at Sarora, Raipur
+
+                                                                                Presence across the value chain
+
+
+   Forward
+ Integration     Sponge                                      Blooms /                  HR Coils                                  Pre-                   ERW/GI                         Pre-
+                                      Power                                                                   CR                                         Pipes                      Galvanized
+   over the       Iron                                         Slabs                   (MS* & SS #)
+                                                                                                             Coils            Galvanized
+                                                              (MS* & SS #)                                                    (GP) Coils                & Tubes                     (GP) Pipes
+    years
+
+
+
+
+                                      16 MW - WHRB        280,000 MTPA - MS*    370,000 MTPA - MS*
+   Installed     280,000 MTPA                                                                           100,000 MTPA            116,000 MTPA            350,000 MTPA           100,000 MTPA
+   Capacity                            9 MW - AFBC         80,000 MTPA - SS #    80,000 MTPA - SS #
+
+
+               Intermediate products (Sponge iron, mild steel blooms/slabs, mild steel HR/CR coils, Stainless-steel blooms/slabs, Stainless-steel HR coils) are largely used captively
+                                         for the production of ERW/GI Pipes and tubes, Steel door frame, GP Coil, GP pipes and Stainless-steel CR coils
+
+           Narrow-width HR coils for ERW Pipes of thickness as per customer                                   Equipped with advanced hot rolling mill with hydraulic automatic gauge
+           requirements, at par with primary manufacturers, reducing dependency on                            control, for high precision and efficiency
+           external suppliers
+           Utilizing scrap generated across the plant to manufacture blooms/slabs, aimed                      ERW steel pipes and tubes manufacturer that refines steel directly from iron ore
+           at recycling & reducing wastage                                                                    instead of making products from aftermarket coils
+
+
+           Integrated setup reduces delivery timelines allowing to service customers                          Forward integration initiatives have enabled production of value-added finished
+           faster, leading to lower working capital requirement                                               products resulting in cost advantages
+
+                                                                                                                                                                                                 24
+WHRB: Waste Heat Recovery Boiler, AFBC: Atmospheric Fluidized Bed Combustion, *MS-Mild Steel, #SS-Stainless Steel (Manufacturing has been started in FY2025)
+
+[page 26]
+     1B      Increased capacity of value-added finished products over years
+                                                                       Installed Capacity (MTPA)                                                      Capacity Utilization
+   Particulars
+                                30th June’26   FY 2026            FY 2025        FY 2024      FY 2023            FY 2022          FY 2026   FY 2025        FY 2024         FY 2023       FY 2022
+   Sponge Iron                    280,000      280,000            280,000           105,000     105,000           90,000           81.46%   89.03%         114.67%        111.32%        120.16%
+   Bloom/Slabs (Mild Steel)       280,000      300,000            300,000           317,400     231,000          150,000           78.71%   85.08%          82.57%         94.52%        110.40%
+   Bloom/Slabs with AOD
+                                  80,000        60,000             60,000               -           -                 -           100.89%   47.08%             -              -              -
+   (Stainless-Steel)
+   HR Coil (Mild Steel)           370,000       390,000           390,000           350,000     350,000          150,000           55.18%   57.87%          58.71%        54.63%         102.66%
+   HR Coil (Stainless-Steel)       80,000        60,000            60,000              -           -                -              97.77%   42.15%             -             -              -
+   ERW & GI Pipes                 350,000       350,000           350,000           250,000     250,000             -              65.39%   70.55%          74.04%        41.78%            -
+   CR Coils (Mild Steel)          100,000       100,000           100,000           100,000     100,000             -              86.73%   17.96%             -             -              -
+   CR Coils (Stainless-Steel)     116,000        58,000            58,000              -           -                -              87.02%   47.97%             -             -              -
+   Pre-Galvanized (GP) Coils      116,000       116,000            58,000                                                          74.49%
+   Pre-Galvanized (GP) Pipes      100,000       100,000           100,000               -           -               -              56.67%   36.99%             -             -               -
+   Total                         1,872,000     1,814,000         1,756,000          1,122,400   1,036,000        390,000                       -               -             -               -
+   Power                           25MW          25MW              25MW               15MW        15MW            15MW             87.58%   89.03%          90.11%        92.71%          91.44%
+
+
+           Sustainable Captive                              Reducing dependency on external power sources
+            Power Generation
+                                                                                                                                                             Waste heat recovery from sponge iron
+o Owned 25 MW captive renewable                                                                                                                              kilns and boiler steam utilized for
+  power capacity comprising 16 MW                                                                                                                    01      power generation (WHRB), enabling
+                                                                                                                                                             energy conservation and reduction in
+  WHRB^ and 9 MW AFBC^ based                                 31st March                                 46.5%      30th June
+                                                    50.4%                   49.6%                                                                            greenhouse gas emissions
+  systems, strengthening in-house                                2025                                                2026       53.5%
+  energy integration and efficiency
+                                                                                                                                                             Utilization of sponge iron by-products
+                                                                                                                                                             (e.g. Dolochar) for AFBC-based power
+o Adding 30 MW Power Plant at Sarora                                                                                                                 02      generation, enabling waste reduction
+  to enhance cost efficiency and reduce                                                                                                                      and improved cost efficiency
+  dependency on external power                 Internal Power Consumption
+                                               External Sources
+                                                                                                   Internal Power Consumption
+                                                                                                   External Sources
+  sources
+                                                                                                                                                                                                      25
+  WHRB: Waste Heat Recovery Boiler, AFBC: Atmospheric Fluidized Bed Combustion;
+
+[page 27]
+    2        Strategically located manufacturing plants resulting in operational efficiencies
+                                                                                        In the State of Chhattisgarh
+
+
+                                                    Maharatna (PSU)
+       250 km from Sarora,                            Coal Mines
+   subsidiary of largest coal
+producer in India. Long term
+ supply agreements in place                      Kesda
+                                                                         Land Area = 4,21,600 SQM
+                                                Sarora                Land Area = 379,410 SQM
+                                Kuthrel     (Tilda) Facility
+  Land Area = 107,640 SQM
+
+
+                                          Navratna PSU
+   Producing India’s highest              Iron ore Mines
+ grade of iron ore, access to
+DRCLO grade as raw material
+                                                     All three facilities are in close proximity to key suppliers
+
+
+
+
+           Optimizing logistics ensuring a steady and                                                                           Second manufacturing facility at Kuthrel
+           efficient supply chain as well as minimizing                                                                         (107,640 SQM) operationalized in FY2025,
+           logistics complexities for distribution                                                                              expanding production of value-added products
+                                                                                                                                including GP coils, GP pipes, SS HRAP coils, and
+                                                                                                                                SS CR coils
+           By harnessing natural resources of Chhattisgarh,
+           able to produce sponge iron which is integral to
+                                                                                                                                Greenfield expansion at Kesda underway with
+           its steel products and a key input in production
+                                                                                                                                421,600 SQM land acquired, Environmental
+           value chain
+                                                                                                                                Clearance received, and project execution in
+          Well connected by roads and railways, locational                                                                      progress
+          advantage ensures easy availability of heavy
+          vehicles for the distribution of products across
+          India
+                                                                                                                                                                                   26
+DRCLO: Directly reduced calibrated lump ore; MoEFCC : Ministry of Environment, Forest and Climate Change, Government of India
+
+[page 28]
+   3A    Strong process innovation & execution allowing to produce value-added products
+
+
+
+           Secondary route for manufacturing HR Coil                                Manufacture of Stainless-Steel through AOD process
+
+      • Producing HR coils through a secondary manufacturing route,             • Scrap/virgin raw materials melted, decarburized & refined in a
+        using induction furnaces and sponge iron                                  special AOD vessel. Degassing, homogenization, and inclusion
+                                                                                  flotation to produce a clean and uniform product
+      • Using sponge iron as a feed for induction furnaces and as a
+        substitute of steel scrap because high-quality scrap is costly and      • Among limited number of manufacturers in India manufacturing
+        scarcely available                                                        SS blooms/slabs through the AOD process, which is a cost-effective
+                                                                                  process
+
+
+
+
+            Manufacturing alloy steel products through ladle                         Cost-effective method for power generation
+                           refining furnace
+
+      • Ladle refining furnace is used to raise the temperature and adjust   • WHRB based power plant with a capacity of 16 MW generating power
+        the chemical composition of molten steel                               using flue gases generated from DRI kilns resulting in energy conservation
+
+      • Involves process such as de-oxidation, desulphurization,             • AFBC boiler-based power plant with a capacity of 9 MW suitable for
+        dephosphorization, controlled additions of alloying elements and       combustion of relatively low-quality fuel which is generated as a by-
+        inclusion modification on molten steel                                 product during the sponge iron manufacturing process; resulted into the
+                                                                               reduction of waste
+
+
+
+
+                                                                                                                                                            27
+AOD: Argon oxygen decarburization
+
+[page 29]
+4   Wide-spread well connected distribution network across India
+
+
+                              FY2024                                                   FY2025                                                        FY2026
+
+
+          2                                                                    2                                                             2
+
+              1                                                                1                                                             1
+                          1                                                                 1                                                             1
+                  1                                                                1                                                             1
+          1           1       8                                            1           1        9                                        1           1       10
+
+      4               2                                                5               2                                             6               3
+
+                                  1   1                                                         1   1                                                         1   1
+              8                                                                10                                                            11
+                          2                                                                2                                                             2
+              2           3                                                        2    3                                                        2    3
+
+                      1                                                                 1                                                             1
+                                          39 Distributors                                               43 Distributors                                               47 Distributors
+                                            600+ Dealers                                                  700+ Dealers                                                 1000+ Dealers
+
+
+    The company has built a strong foothold in Chhattisgarh, Maharashtra, Gujarat, Haryana, Rajasthan, Uttar Pradesh, Madhya Pradesh, and Telangana, with its geographic
+    presence expanding from 10 states in FY23 to 15 states and 1 UT in FY26
+
+    Regular sales meet with distributors & dealers, personalized visit to retailers & fabricators, training & feedback sessions for continuous product & quality improvement
+
+    Supplying to OEMs, through distributors, engaged in a diverse range of industries, including crane manufacturers, tractor part producers, cultivator manufacturers, and
+    telecommunication tower manufacturers
+
+    Products also sold to end-user customers such as construction & infrastructure companies and government organizations & projects
+
+                                                                                                                                                                                        28
+
+[page 30]
+    5       Well-positioned to take advantage of growing demand for ERW steel pipes & tubes
+
+        Global steel demand is primarily led by China & India, further room to increase per capita consumption in India at par with global economies
+
+            Global Steel Demand (MMTPA)                       Global per capita steel consumption (CY23) - Kg                        India Steel Demand (MMTPA)
+                                                                                                                                          Flat Steel    Long Steel
+                                               2,000-2,050   World                      219
+
+                                                             Russia                           309                                                                      113-118
+                                                                                                                                                          81.1
+                           1,763                               USA                        266                                              74.4
+        1,714                                                                                                                 49.3
+                                                             Japan                                     432
+                                                                                                                                                          70.9          100-105
+                                                                                                                              49.4         61.9
+                                                              India         98
+                                                                                                                             FY19          FY24           FY25E          FY29P
+                                                             China                                                 635
+        CY18               CY23                  CY28P
+
+                               India steel demand set to grow at a faster rate driven by rapid infrastructure boost by the government
+
+   India Steel Pipe & Tubes Demand (MMTPA)                             India ERW Pipes & Tubes (MMTPA)                   Demand Segmentation- By Type & End User Industry
+                                                                                                                                            (FY24)
+                                                                              Capacity              Utilisation
+                  ERW      Others      Total                                                                      13.0
+                                                                                                    12.0                                               12-14%
+                                                   18.5
+                                                                 9.3             10.0                                                                                  Oil & Gas
+                                                                                                                                25-30%
+                    12.3            13.1            5.5                                                                                                                WSS
+     8.8                                                                         66%                69%           72%
+                    3.3             3.9                          64%                                                                                          12-14%   Irrigation
+     2.9                                           13.0                                                                                                                Power
+     5.9            9.0             9.2
+                                                                                                                                                                       Structurals
+     FY19          FY24             FY25E          FY29P         FY19            FY22               FY23          FY24          30-35%                    12-13%       Others
+
+                                                                                                                                                       1-2%
+                                                                                                                                                                                     29
+Source: CRISIL Report; E – Estimated; P - Projected
+
+[page 31]
+  6A      Experienced promoters and management team with vast experience
+                                                                                                                Suresh Kumar Goyal, Chairman & Managing Director
+                    Brijlal Goyal, Promoter & Chairman Emeritus                                                 • 25+ years of experience in steel manufacturing, a veteran in
+                    • 35+ years of experience in steel and plastics manufacturing                                 industry
+                    • Played a pivotal role in the growth of business                                           • Received Times Most Powerful Leader award in 2022
+                                                                                                                • Has been instrumental in diversifying product portfolio,
+                                                                                                                  adopting new technology & seamless execution of new projects
+                    Vikas Kumar Goyal, Managing Director & CEO
+                    • Over two decades of experience in the steel manufacturing
+                      industry. His role includes oversight of key functions including                          Bhavesh Khetan, Executive Director & COO
+                      finance, strategy, sales and business development, marketing,                             • 10+ years of experience in iron and steel industry
+                      procurement etc                                                                           • Relevant sector experience and oversees our overall plant
+                    • Received Young Leader award 40 under 40 by Brand Story in                                   operations and administration
+                      2024
+
+                   Saurabh Patil, Executive Director
+                                                                                                                Bikash Agrawal, Executive Director & CSO
+                   • Has over two decades of experience in project management,
+                                                                                                                • 18+ years of experience in the field of finance
+                     operations, and leadership, primarily in the steel and manufacturing
+                     sectors                                                                                    • Holds a Master’s degree in business administration and passed
+                                                                                                                  Chartered Financial Analyst from CFA Institute, USA
+                   • Holds a BCA from Pt. Makhanlal University and an MBA from Pt.
+                     Ravishankar Shukla University, Raipur
+
+
+
+                                                                         Anu Garg, CFO
+                                                                         • A CA by profession, she has 6+ years of experience
+                                                                         • Associate member of the Institute of Chartered Accountants of India
+                                                                         • Holds a bachelor’s degree in commerce from MATS University
+
+                                                                                                                                                                                  30
+Also, on Board of Directors
+
+[page 32]
+6B   Experienced promoters and management team with vast experience
+                                              Backed by an Experienced set of Independent Directors
+
+         Manoj Khetan, Independent Director                                                        Nidhi Thakkar, Independent Director
+         •   Holds a bachelor's degree in commerce from the University of                          • Holds a bachelor's degree in chemical engineering from Pt.
+             Bombay and is a fellow member of the Institute of Chartered                             Ravishankar Shukla University, Raipur, and a postgraduate diploma in
+             Accountants of India                                                                    business administration from Symbiosis Centre for Distance
+         •   He has over 38 years of experience in manufacturing                                     Learning, Pune
+             organization (such as cement, steel). Previously worked at                            • Has over 17 years of experience in process and administration
+             National Steel & Agro Industries Limited as Whole-Time                                • Previously worked at Sarda Energy and Minerals Limited as Manager
+             Director and CFO, and at Shreeyam Power and Steel Industries                            (CMD Office) and at Lafarge India Private Limited in the Process and
+             Limited as Whole-Time Director                                                          Administration Department
+
+
+         Sarbesh Kumar Das, Independent Director                                                   Kishore Kumar Singh, Independent Director
+         •   Has over 35 years of experience in the mining and steel
+                                                                                                   • Holds a bachelor's degree in engineering from Ranchi University, a
+             industries, managing medium to large business units, and
+                                                                                                     bachelor's degree in law from Ravishankar University, Raipur, and a
+             leading business, sales, procurement, and pricing strategies
+                                                                                                     master's degree in business administration from Indira Gandhi
+         •   Holds a BSc and MSc in Physics, and an MA in Public
+                                                                                                     National Open University, New Delhi
+             Administration
+                                                                                                   • Has over 36 years of experience in the field of administration as a
+         •   Previously associated as Executive Director in SAIL and Whole
+                                                                                                     retired “IAS officer” of Madhya Pradesh cadre
+             Time Director in NMDC Limited
+                                                                                                   • Served in various positions including Agricultural Production
+                                                                                                     Commissioner and President of the Professional Examination Board,
+                                                                                                     Madhya Pradesh
+                                          Sharad Chandak, Independent Director
+                                          •   Gold medalist in M. Com from Amravati University
+                                          •   Has over 36 years of leadership experience at SBI, including international exposure in the UK
+                                          •   Retired in Jan’25 as Chief General Manager, Lucknow Circle, one of SBI’s largest circles
+                                          •   Currently serves as a Non-Executive Independent Director at SMS Limited and RKTC Infratech
+                                              Limited, bringing expertise in banking, risk management, corporate governance, and strategic
+                                              oversight
+                                                                                                                                                                      31
+
+[page 33]
+         FY2026 at a Glance
+                                                                                          Key Financial Highlights
+
+
+
+                INR 24,132 Mn                             INR 2,836 Mn                            INR 2,763 Mn                           INR 1,433 Mn                     INR 7,517
+                   Revenue                                 Total EBITDA                          Operating EBITDA                             PAT                Op. EBITDA /T (Ex. Sponge Iron)
+
+
+
+
+               INR 6,964                               INR 2,158 Mn                                  0.78x                                  15.97%                        17 Days
+             Op. EBITDA / T                      Cash Flow from Operations                    Net Debt / Op. EBITDA                         ROCE                    Working Capital Cycle
+
+                                                                                         Key Operational Metrics
+
+         Intermediate Products                    Structural Pipes & Tubes                         Stainless Steel                Pre-Galvanized Coils & Pipes           Total Volume
+          (Sponge Iron, Slabs, HR/CR Coils)         (ERW Black/GI Pipes, CRFH Pipes)             (Slabs, HR Coils, CR Coils)               (Coils, Pipes)
+
+
+           Production Volume #                       Production Volume #                       Production Volume #                    Production Volume #            Production Volume#
+               766,152 MT                                228,927 MT                                169,667 MT                             143,080 MT                    13,07,826 MT
+
+
+            (Sponge Iron, Slabs, HR Coils)          (ERW Black/GI Pipes, CRFH Pipes)                     (CR Coils)                        (Coils, Pipes)                  Total Sale
+
+                Sales Volume                              Sales Volume                             Sales Volume                          Sales Volume                    Sales Volume
+                 41,043 MT                                 224,099 MT                               48,562 MT                             83,027 MT                       396,731 MT
+
+                                                                                                                                                                                                   32
+Note - All figures show Standalone Financial Performance; #Production Volume includes the quantity used for captive consumption
+
+[page 34]
+  7A     Track record of healthy financial performance
+                                Revenue (INR Million)                                                     Gross Profit (INR Million)
+
+                               CAGR: 37%                                                                      CAGR: 42%
+                                                                    24,132
+                                                                                                        Gross profit      Gross Profit Margin   6,913
+                                                                                     7,000                                                               100.00%
+                                                15,114                               6,000
+                                                                                                                                                         80.00%
+                           12,858                                                    5,000                                     4,469
+                                                                                                           3,656                                         60.00%
+        9,372                                                                        4,000
+                                                                                     3,000   2,405                                                       40.00%
+                                                                                     2,000
+                                                                                                                                                28.65%   20.00%
+                                                                                     1,000   25.66%      28.43%                29.57%
+                                                                                        -                                                                0.00%
+        FY23                FY24                 FY25                FY26                     FY23         FY24                FY25             FY26
+
+
+
+                           Operating EBITDA* (INR Million)                                                     PAT (INR Million)
+
+                               CAGR: 33%                                                                           CAGR: 33%
+                       Op. EBITDA        Op. EBITDA Margin
+                                                                                                               PAT      PAT Margin
+                                                                   2,763
+                                                                                                                                                 1,433
+                                                                                                                                                          10.00%
+
+                             1,599              1,546                                                         825                                5.94%    8.00%
+          1,172                                                   11.45%                                                                                  6.00%
+                                                                                                 603                                580
+                                                                                                                                                          4.00%
+         12.51%             12.44%             10.23%                                           6.43%        6.42%
+                                                                                                                                   3.84%                  2.00%
+                                                                                                                                                          0.00%
+          FY23               FY24                FY25               FY26                        FY23          FY24                 FY25           FY26
+
+
+                                                                                                                                                            33
+Note - All figures show Standalone Financial Performance; * Excluding other income
+
+[page 35]
+          7B      Track record of healthy financial performance
+                                              Sales Volume (MTPA)*                                                                          Finished Goods Sales Segmentation FY26 (By Value)
+
+                      Pre Galvanised (GP) Coils and Pipes             Stainless Steel Coils                                                          2.10%
+                                                                                                                                                                     5.40%
+                      Intermediate Products                           Structural Pipes & Tubes
+                                                                                                                                                                                        Intermediate Products
+                                                                                                         83,027                   25.58%                                                Structural Pipes & Tubes
+
+                                                          12,648                                                                                                                        Pre Galvanized (GP) Coils & Pipes
+                                                                                                         48,562
+                                                          9,745      55,565                   41,043                                                                                    SS CR Coils
+                                             38,199                                                                                                                                     Others
+
+                     92,366                                                                  224,099                                                                          45.38%
+                                            185,063                  212,436
+                     65,687
+                                                                                                                                     21.54%
+                     FY23                     FY24                    FY25                     FY26
+
+                                          Operating EBITDA/Ton (INR)                                                                              Cash Flow from Operations (INR Million)
+
+                    7,422                  7,161                                                                                                                                                                 2,158
+                                                                                         6,964
+
+                                                                   5,321                                                                                     1,424
+                                                                                                                                                                                       1,274
+
+                                                                                                                                    656
+
+
+
+
+                    FY23                   FY24                    FY25                   FY26                                     FY23                      FY24                      FY25                      FY26
+
+
+                                                                                                                                                                                                                            34
+*The captive consumption of intermediate products for production of our finished products increased in FY24 and hence our sales volumes of intermediate products has declined. Figures are on Standalone Basis
+
+[page 36]
+   7C     Track record of healthy financial performance
+                               Working Capital Cycle^ (Days)                                                               Return Ratios (%)
+
+              57                                                                                                                     ROCE   ROE
+
+
+                                    41
+
+                                                                                                       34
+                                                                                                                                25
+                                                         18                    17          20                       18                                                   18
+                                                                                                                                                             16
+                                                                                                                                            12          12
+
+
+
+              FY23                 FY24                FY25                   FY26              FY23                     FY24                    FY25             FY26
+
+
+                                          Debt Metrics                                                      Cash Flow from Operations to Op. EBITDA Ratio
+
+                     Debt/Equity     Debt/Op. EBITDA           Interest Coverage Ratio
+                                                                                     5.3                                 0.89                 0.82           0.78
+                     4.7                  4.5
+                                                         3.5                                     0.56
+
+              2.4                                               2.5
+                                   2.2
+        1.4                                                                   1.3
+                                                 1.1
+                            0.8
+                                                                        0.4
+
+              FY23                 FY24                FY25                   FY26               FY23                    FY24                 FY25           FY26
+
+                                                                                                                                                                              35
+Note - All figures show Standalone Financial Performance; ^Days calculated on Revenue
+
+[page 37]
+  7D      Annual Income Statement
+ Particulars (INR Million)                    FY2026       FY2025   FY2024   FY2023
+
+ Net Revenue from Operations                  24,132       15,114   12,858   9,372
+                                                                                       Revenue CAGR
+ Total Expenditure                            21,369       13,567   11,259   8,200         37%
+                                                                                         FY23-FY26
+ EBITDA                                        2,763       1,546    1,599    1,172
+
+ EBITDA Margin (%)                            11.45%       10.23%   12.43%   12.52%
+
+ Other Income                                    73         65       36       18
+
+                                                                                      Gross Profit CAGR
+ Depreciation                                   485         344      209      162
+                                                                                           42%
+ EBIT                                          2,351       1,267    1,426    1,029     FY2023-FY2026
+
+ Finance Cost                                   433         478      318      218
+
+ PBT                                           1,918        790     1,108     811
+
+ Tax Expense                                    485         209      283      207       EBITDA CAGR
+                                                                                           33%
+ PAT                                           1,433        581      825      604      FY2023-FY2026
+
+ PAT Margin (%)                                5.94%       3.84%    6.41%    6.44%
+ Reported EPS                                   5.09        2.41     3.79     3.01
+
+                                                                                                          36
+Note - All figures show Standalone Financial Performance
+
+[page 38]
+    7E    Annual Balance Sheet
+Asset (INR Million)                  FY2026       FY2025    FY2024   FY2023   Equity & Liability (INR Million)   FY2026   FY2025   FY2024   FY2023
+Fixed Assets                          6,991        7,150    3,367    2,940    Share Capital                       2,947   2,410    2,410     201
+Work-In-Progress                      1,872         857     2,156     215     Other Equity                        7,608   2,550    1,973    1,903
+Intangible Assets                        -           -        1        1      Total Equity                       10,554   4,960    4,383    2,104
+Investments                            652          652       -        -      Financial Liabilities
+Financial Assets
+                                                                              i) Borrowings                       2,259   3,576    1,814    1,690
+i) Loans                                12           3        1        -
+ii) Other Financial Assets             253          309      153      87      ii) Lease Liabilities                64      36       35       22
+Other Non-Current Assets              1,304         134      571      214     Provisions                           40      22       14        8
+Non - Current Assets                 11,083        9,106    6,248    3,458    Deferred Tax Liabilities             386     302      188      142
+Inventories                           4,425        2,539    1,491    1,414    Non - Current Liabilities           2,749   3,936    2,051    1,863
+Financial Assets                                                              Financial Liabilities
+i) Investments                        1,001          -        -        -      i) Borrowings                       1,454   1,741    1,654    1,138
+ii) Trade Receivables                 2,226        1,472     941      346     ii) Lease Liabilities                 4       3        1        -
+iii) Cash & Cash Equivalents           616          51       76        2      iii) Trade Payables                 5,542   3,247     978      283
+iv)Bank Balances                       223          110      354      75      iv) Other Financial Liabilities      165     264      128      69
+iv)Other Financial Assets              96           31       21        5      Other Current Liabilities            185     183      135      57
+Othe Current Assets                   1,045         996      270      221     Provisions                           13      11        2        1
+Current Tax Assets                      -           40        -        -      Current Tax Liabilities              48       -       69        7
+Current Assets                        9,632        5,239    3,153    2,064    Current Liabilities                 7,412   5,448    2,967    1,555
+Total Assets                         20,715       14,345    9,401    5,521    Total Equity & Liabilities         20,715   14,345   9,401    5,521
+                                                                                                                                                    37
+ Note - All figures show Standalone Financial Performance
+
+[page 39]
+      7E        Annual Cash Flow Statement
+For The Year Ended (INR Million)                     FY2026    FY2025    FY2024   FY2023   For the year ended (INR Million)                             FY2026    FY2025    FY2024    FY2023
+
+A. Cash flow from operating activities                                                     B. Cash flow from investing activities
+Profit before tax                                    1,918      790      1,108     811     Payments for purchase of property, plant, and equipment
+Adjustments for:                                                                           including capital work-in-progress, intangible assets, and   (2,615)   (2,227)   (2,849)    (871)
+                                                                                           capital advances
+Depreciation and amortisation expenses                485       344       209      162
+                                                                                           Proceeds from sale of property, plant, and equipment and
+                                                                                                                                                          5         4         2         19
+Loss on sale of property, plant & equipment (net)      0         (1)       3        2      intangible assets
+Balance written off for receivables & advances         0         1         1        0      Investment/(matured) in fixed deposit (net)                   (115)      209      (283)      (4)
+Allowance for doubtful debts, loans, advances, and                                         Investment in subsidiary                                         -      (652)        0        -
+                                                       8         1         0        0
+others                                                                                     Loan given to subsidiary                                       (8)         -         0        -
+Fair value amortization on loan to employees           1         0          0       0      Purchase of current investments                              (1,400)       -      (500)       -
+Gain on sale of current investments                   (1 )       -         (3)      -      Proceeds from sale of current investments                      400         -       503        -
+                                                                                           Interest received                                               24        50        11        7
+Gain on account of remeasurement in lease term          -         -        0        0
+                                                                                           Net cash (used in)/ from investing activities (B)            (3,709)   (2,615)   (3,116)    (849)
+Gain on MTM of derivative financial instruments       (10)
+                                                                                           C. Cash flow from financing activities (refer note 45)
+Finance cost                                          433       478       304      214
+Interest income                                       (37)      (49)      (23)      (9)    Proceeds from non-current borrowings                          1,982    2,314      1,241      979
+                                                                                           Repayment of non-current borrowings                          (3,479)   (401)     (1,081)    (577)
+Operating profit before working capital changes      2,797     1,565     1,599    1,180
+                                                                                           Repayment of Loan from Subsidiary                             (273)       -         -         -
+Adjustments for:
+(Increase)/decrease in loans                           (9)       (7)       (3)      0      Proceeds / (repayment) of current borrowings (net)
+                                                                                                                                                         166       (65)      482        13
+                                                                                           (excluding current maturities of non-current borrowings)
+(Increase)/decrease in other financial assets          26       (130)     (64)     (17)
+                                                                                           Repayment towards principal portion of lease liabilities      (2)       (2)         -        (2)
+(Increase)/decrease in other assets                   (50)      (727)     (49)     209
+                                                                                           Payment of interest on lease liabilities                      (5)       (4)        (2)       (1)
+(Increase)/decrease in inventories                   (1,886)   (1,048)    (76)     (199)
+                                                                                           Proceeds from issue of equity shares (Refer Note 17)         4,400       -       1,504        -
+(Increase)/decrease in trade receivables              (763)     (532)     (596)    (190)
+                                                                                           Share issue expenses                                         (237)       -        (50)        -
+Increase/(decrease) in provisions                     22        12         8        10     Finance cost paid                                            (436)     (526)     (326)      (217)
+Increase/(decrease) in trade payables                2,293     2,269      695      (27)    Net cash (used in)/ from financing activities (C)            2,116     1,317     1,766       195
+Increase/(decrease) in other financial liabilities     39        25        13       3      Net increase/ (decrease) in cash and cash equivalents
+                                                                                                                                                         564       (24)       74        1
+Increase/(decrease) in other current liabilities       2        49        78       (23)    (A+B+C)
+Cash flow from operations                            2,471     1,476     1,605     947     Cash and cash equivalents at the beginning of the year         51        76        2         1
+Less: Income tax paid (net)                           (313)     (202)     (181)    (291)   Add: Cash and cash equivalents pursuant to business
+                                                                                                                                                           -         -         -         -
+                                                                                           combinations
+Net cash generated from operating activities (A)     2,158     1,274     1,424     656     Cash and cash equivalents at the end of the year              615        51        76        2
+
+                                                                                                                                                                                               38
+   Note - All figures show Standalone Financial Performance
+
+[page 40]
+Future
+Outlook
+[OCR page 40]
+Future
+Outlook
+[OCR attempted, returned no text (tesseract found no recognizable characters against decorative background); slide visually confirmed via rendered image to be a section-divider: decorative fan/pie graphic (design element) + product photo collage. No numeric data.]
+
+[page 41]
+  Key strategies (1/2)
+
+
+
+
+               Capacity Expansion                                Increase Distribution Network                        Value Added Products and Customization
+
+
+ Commissioned Kuthrel facility in FY25 with focus on      Expand reach to other States while increasing the         Continue to develop new value-added products and
+   GP Coils, GP Pipes, Stainless-steel HRAP coils &     supply to existing States as well to improve product           focus on customization to further increase the
+               Stainless-steel CR coils                 availability by increasing no. of distributors to ensure     customer base and satisfy evolving market trends
+                                                         outreach to a much larger pool of dealers, retailers          Executed 18 new MoU with Stainless-steel pipe
+ Brownfield Expansion of Stainless-steel CR coil & GP                       and fabricators                        partners under “Sambhv” co-branding initiatives, taking
+ Coil capacity has been doubled from 58,000 MTPA to                                                                          the total MoU count to 28 partners
+                  116,000 MTPA each
+
+
+  Greenfield expansion at Kesda & Kuthrel Unit-II,        Commenced supply of GP pipes to meet growing
+adding 1.2 MMTPA finished product capacity in phased         demand, especially targeting coastal belt.            Successfully ramp up the production of SS HRAP coils,
+ manner; Phase-I includes 0.36 MMTPA Stainless-steel    Accordingly, plan to increase distributors in states/UTs         SS CR coils, GP coils and GP pipes in FY26
+      Coils and to be commissioned by Q4FY27              such as Kerala, Tamil Nadu, Andhra Pradesh, Goa,
+                                                                           Maharashtra etc                               These products will help in increasing end-use
+                                                                                                                    industry exposure towards sectors including hot and
+ Undertaking Brownfield expansion of ERW Pipes &
+                                                                Also planning to expand international                   cold-water supply systems, telecommunications,
+Tubes through DFT route, adding capacity of 150,000                                                                    infrastructure, construction, fire fighting systems,
+                                                                footprint by leveraging our expertise
+                      MTPA
+                                                                                                                     irrigation systems, plumbing systems, poles, signage
+                                                                                                                                supports, fencing, and handrails
+
+
+
+                                                                                                                                                                              40
+
+[page 42]
+Key strategies (2/2)
+
+
+
+
+                       Cost Optimisation                                           Brand Building
+
+
+                                                                 Continue to implement branding initiatives including
+         Machining capabilities, automation of processes,         impactful advertisements across electronic media,
+       adherence to high-quality standards help in achieving     outdoor branding, digital platforms, & print media, to
+                      operational efficiency                                      increase visibility
+
+         For GP Coils & Pipes, company adopted advanced
+      technology which will use significantly less quantity of   Entered IPL Branding through cricket bat sponsoring of
+           zinc thereby further improving cost efficiency         multiple players, including Prabhsimran Singh & Mukul
+                                                                    Choudhary, enhancing brand visibility and sports
+                                                                                         association
+
+      Adding 30 MW Power Plant at Sarora Unit-III, Raipur to
+        improve cost efficiency and reduce dependency on            Proactively meeting industry experts (architects,
+                     external power sources                            builders, contractors and traders) to discuss
+                                                                            trends and explore opportunities
+       Setting up 25 MW Power Plant at Kesda in Phase-I to
+                     enhance cost efficiency
+
+       Setting up 8 MW Captive Behind-the-Meter Rooftop            Continued participation in trade fairs & exhibitions
+        Solar Power Plant at Kuthrel to increase the use of      (domestic and international) to connect with potential
+                       renewable energy                                customers and gather market intelligence
+
+
+                                                                                                                          41
+
+[page 43]
+      Company Contact - cs@sambhv.com; caprachal@sambhv.com
+
+
+                     Sana Kapoor                Sakshi Narvekar
+                     Go India Advisors          Go India Advisors
+Investor Relations   sana@GoIndiaAdvisors.com   sakshiN@GoIndiaAdvisors.com
+                     M:+91 81465 50469          M:+91 87792 63625
+```yaml
+stage: A1-extractor
+company: "SAMBHV"
+quarter: "Q1 FY27"
+doctype: "presentation"
+model: claude-sonnet-5
+status: complete
+page_count: 43
+formfeed_count: 43
+line_count: 1341
+unit_convention: "Millions"
+conversion_factor_to_cr: "Millions -> x0.1"
+ocr_pages: [2, 6, 10, 16, 19, 23, 40]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/sambhv-q1fy27/work/extract_presentation_sambhv_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

@@ -34,4 +34,6 @@ Doctype tokens `release` and `monitoring` are descriptive labels to avoid extrac
 - GATE A1 release: PASS. 4pp/4ff, 100% coverage, unit=Millions (x0.1 to Cr), no OCR needed.
 - GATE A1 monitoring: PASS. 13pp/13ff, 100% coverage, unit=Millions. A1 already flags IPO medical-equipment object deviation (~Rs 229.59mn planned vs 36.08mn actual) for A3.
 - GATE A1 presentation: PASS. 26pp/26ff, 100% coverage, unit=Millions, OCR pages [7,16,20,23] all section-divider photos (no hidden data), 10 charts flagged inline. CAVEAT: this agent deleted shared work/ocr_tmp belonging to the concurrent results A1 — verify results gate carefully; re-run results A1 if any gap.
+- GATE A1 results: PASS. 15pp/15ff, 100% coverage, unit=Millions. Pages 3-11 image-based, OCR 300-400dpi. Orchestrator cross-check vs clean release table: consol Q1FY27 PAT 885.93mn=release 886; Revenue 4,757.09=release 4,757; EPS 2.05=2.05; FY26 consol rev 16,793.56mn=Rs 1,679 Cr (matches Notion baseline). OCR VALIDATED. Column order = Q1FY27 | Q4FY26 | Q1FY26 | FY26. Early signals: occupancy 55.6% (vs 67.8% YoY), deferred-tax benefit (93.40)mn Q1FY27 flatters PAT.
+- ALL FOUR GATE A1 PASS. Launching A2 x4 (parallel).
 (to be appended as each gate clears)

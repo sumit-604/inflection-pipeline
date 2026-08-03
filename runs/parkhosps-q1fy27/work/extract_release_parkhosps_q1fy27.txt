@@ -1,0 +1,203 @@
+1	=== A1 EXTRACTION HEADER ===
+2	source_filename: earnings_release.pdf (Reg 30 Media/Earnings Release; page-based narrative + financial-highlights table; canonical doctype mapped to presentation)
+3	doctype: presentation
+4	page_count_pdfinfo: 4
+5	formfeed_count: 4
+6	line_count: 158
+7	unit_convention: Millions
+8	conversion_factor_to_cr: Millions -> x0.1 (Financial Performance section stated as "INR mn"; multiply table figures by 0.1 to reach Rs Crores)
+9	ocr_pages: none
+10	page_coverage: 100%
+11	detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+12	extraction_date: 2026-08-03
+13	=== END HEADER ===
+14	
+15	[page 1]
+16	August 03, 2026
+17	
+18	BSE Limited                                            National Stock Exchange of India Limited
+19	P.J. Tower,                                            Exchange Plaza,
+20	Dalal Street, Fort,                                    Bandra-Kurla Complex, Bandra (E),
+21	Mumbai - 400 001                                       Mumbai - 400 051
+22	Scrip Code: 544645                                     SYMBOL: PARKHOSPS
+23	
+24	
+25	Subject: Disclosure under Regulation 30 of Securities and Exchange Board of India (Listing
+26	         Obligations and Disclosure Requirements) Regulations, 2015 (“Listing Regulations”)-
+27	         Media Release
+28	
+29	Dear Sir/Madam,
+30	
+31	Pursuant to the provisions of Regulation 30 of the Listing Regulations, please find enclosed herewith
+32	the Earnings Release for the Financial Results for the quarter ended June 30, 2026.
+33	
+34	The disclosure will also be available on the Company's website at https://www.parkhospital.in/.
+35	
+36	This is for your information and records.
+37	
+38	Thanking you,
+39	
+40	For and on behalf of Park Medi World Limited
+41	
+42	ABHISHEK Digitally signed by
+43	         ABHISHEK KAPOOR
+44	
+45	KAPOOR Date:   2026.08.03
+46	         09:39:47 +05'30'
+47	Name: Abhishek Kapoor
+48	Designation: Company Secretary & Compliance Officer
+49	
+50	Encl: A/a
+51	
+52	
+53	[page 2]
+54	    Park Group of Hospitals declares Q1 FY’27 Unaudited Results
+55	
+56	
+57	 Q1 FY’27 marks a strong start to the year, with year-on-year growth of 19% in Revenue, 20%
+58	                               in EBITDA and 35% in Net Profit.
+59	
+60	 The Company expects to add 1,490 beds in calendar year 2026, c.46% growth in bed capacity
+61	   over 2025 capacity of 3,250 beds, single largest addition of beds in any 12-month period.
+62	
+63	
+64	Gurugram, 3rd August 2026: Park Medi World Limited, North India’s 2nd largest hospital chain (“the Company”)
+65	(NSE: PARKHOSPS, BSE: 544645) today announced its unaudited financial results for the quarter ended 30th June
+66	2026.
+67	
+68	Q1 FY’27 HIGHLIGHTS
+69	
+70	
+71	➢ Quarterly Revenue of INR 4,757 mn, growth of 19% YoY
+72	➢ Quarterly EBITDA of INR 1,261 mn, growth of 20% YoY, with EBITDA margin of 26.5%, expansion of 20 bps YoY
+73	➢ Quarterly Net Profit of INR 886 mn, growth of 35% YoY, with Net Profit margin of 18.6%, expansion of 220 bps
+74	     YoY
+75	➢ Negligible term bank debt of INR 256 mn as of 30th June 2026
+76	➢    Strong liquidity with INR 2,998 mn in Fixed Deposits.
+77	
+78	
+79	Growth Highlights
+80	
+81	➢ Commissioned our largest-ever greenfield hospital in Panchkula (350 beds) on 10th April 2026.
+82	➢ On 25th May 2026, the Company signed a definitive agreement to acquire ‘The Medicity Hospital’ in Rudrapur
+83	     at a valuation of INR 177 crs. It is the Kumaon region’s largest NABH-accredited hospital. The hospital was
+84	     commissioned on 2nd August 2026.
+85	➢ On 30th June 2026, our wholly owned subsidiary, Umkal Health Care Private Limited, approved a significant
+86	     expansion of its existing 225-bed Park Hospital in Palam Vihar, Gurugram, with the addition of 100 new beds
+87	     under the name ‘Park Platinum’. The Palam Vihar facility is one of the flagship hospitals of the group; in FY’26, it
+88	     had an occupancy of ~86% and delivered a revenue of ~INR 245 crs. The incremental capacity is expected to be
+89	     commissioned in November 2026. It will take our consolidated Gurugram capacity to 750 beds.
+90	➢ Today, on 3rd August 2026, the Company signed a definitive agreement to acquire ‘Mehar Hospital’ in Zirakpur
+91	     at a valuation of INR 107 crs. ‘Mehar Hospital’ is a well-established multi-super speciality institution, with a
+92	     capacity of 150+ beds, serving Zirakpur and the wider Tricity catchment. This acquisition will further strengthen
+93	     our roadmap as the largest healthcare network in the Tricity region. The facility is expected to be commissioned
+94	     in November 2026.
+95	
+96	                                                               1
+97	
+98	
+99	[page 3]
+100	➢ Together with the already commissioned Agra facility with a capacity of 360 beds in February 2026 and the
+101	     upcoming commissioning of our Febris multi-super-speciality hospital in Narela, Delhi with a capacity of 200 beds,
+102	     the company expects to commission 1,490 beds in calendar year 2026, marking a capacity addition of c.46% in
+103	     2026 over the closing capacity of 3,250 beds in 2025. This is the single largest capacity addition by the company
+104	     in any 12 month period.
+105	
+106	
+107	KEY CONSOLIDATED OPERATING & FINANCIAL SUMMARY:
+108	
+109	        Particulars                             Q1 FY’27     Q1 FY’26         YoY%           Q4 FY’26       QoQ%
+110	       Operating Figures
+111	        Total Bed Capacity                       3,960         3,000          32%              3,610         10%
+112	        Occupancy (%)                            55.6%         67.8%       -1,224 bps          62.5%       -692 bps
+113	        Total Patients ('000s)                   249.8         213.9          17%              213.5         17%
+114	          IPD patients ('000s)                     26.3         22.8           16%              25.3         4%
+115	          OPD patients ('000s)                    223.4        191.2           17%             188.2         19%
+116	       Financial Performance (INR mn)
+117	        Revenue from Operations                  4,757         3,988         19%               4,604          3%
+118	        EBITDA (ex-Other Income)                 1,261         1,049         20%               1,274         -1%
+119	        EBITDA Margin (%)                        26.5%         26.3%        20 bps             27.7%       -116 bps
+120	        Net Profit                                886           655          35%                768          15%
+121	        Net Profit Margin (%)                    18.6%         16.4%        220 bps            16.7%       195 bps
+122	        EPS (INR)                                 2.05          1.70         20%                1.78         15%
+123	
+124	
+125	Commenting on the overall performance of the Company, Dr. Ajit Gupta, Chairman, and Dr. Ankit Gupta,
+126	Managing Director, Park Medi World, said, “Q1 FY’27 has been a strong start to the year, with Revenue up 19%,
+127	EBITDA up 20% and Net Profit up 35% year-on-year, and Net Profit margin expanding 220 basis points to 18.6%.
+128	We have delivered this while executing the largest capacity expansion in our history, with newly commissioned
+129	beds still ramping up.
+130	
+131	With Panchkula, Rudrapur and today’s agreement to acquire Mehar Hospital in Zirakpur, we expect to commission
+132	1,490 beds in calendar year 2026 — a c.46% addition to capacity, funded from a balance sheet carrying negligible
+133	term debt. Our near-term focus remains the integration of acquired assets, improving utilisation at newer facilities,
+134	and sustaining profitability while delivering affordable, high-quality healthcare and long-term value for all our
+135	stakeholders.”
+136	
+137	About Park Medi World Limited:
+138	
+139	Park Group of Hospitals is North India's 2nd largest hospital chain, currently operating 17 hospitals with a combined
+140	capacity of 4,290 beds as on date. The Group is in the process of integrating 5 additional hospitals and expanding capacity
+141	at 2 existing units. These are in various stages of execution and will add 1,450 beds to our network. With these, Park
+142	
+143	
+144	                                                                2
+145	
+146	
+147	[page 4]
+148	Group's total capacity is expected to reach 4,740 beds by March 2027 and 5,740 beds by March 2028, underscoring its
+149	commitment to leadership and growth in healthcare delivery.
+150	The Group has established a strong presence across 15 key cities including Delhi, Gurugram, Faridabad, Panipat, Karnal,
+151	Sonipat, Ambala, Mohali, Patiala, Bathinda, Behror, Jaipur, Agra, Panchkula and Rudrapur, and is expanding into Zirakpur
+152	(Punjab), Gorakhpur (Uttar Pradesh) and Rohtak (Haryana).
+153	
+154	
+155	Built on a founding commitment to accessible, high-quality healthcare, Park Group offers a comprehensive range of
+156	clinical services—spanning super-specialities such as cardiology, neurology, oncology, orthopaedics, gastroenterology,
+157	critical care, nephrology, organ transplants, gene therapy, stem-cell therapy, and women & child health. Each facility is
+158	equipped with modern medical infrastructure, advanced diagnostics, 24×7 emergency support, and multi-disciplinary
+159	teams delivering evidence-based care. Through continuous expansion and strategic investments, Park Group is
+160	strengthening its mission to build a dependable, technology-enabled healthcare ecosystem that serves both
+161	metropolitan and regional communities across North India.
+162	
+163	
+164	
+165	      For more information visit www.parkhospital.in or contact:
+166	                                                            Adfactors Investor Relations
+167	      Park Medi World Limited
+168	                                                            saloni.nagvekar@adfactorspr.com
+169	      investor.relations@parkhospital.in
+170	                                                            mansi.pasari@adfactorspr.com
+171	
+172	Cautionary statement concerning forward-looking statements
+173	Certain statements in this document may be forward-looking statements. Such forward-looking statements are subject to certain risks and uncertainties like regulatory changes, local political or
+174	economic developments, and many other factors that could cause our actual results to differ materially from those contemplated by the relevant forward-looking statements. Further, past
+175	performance is not necessarily indicative of future results. Given these risks, uncertainties and other risk factors, readers are cautioned not to place undue reliance on these forward-looking
+176	statements. The Company will not be in any way responsible for any action taken based on such statements and undertakes no obligation to publicly update these forward-looking statements to
+177	reflect subsequent events or circumstances.
+178	
+179	
+180	
+181	
+182	                                                                                                     3
+183	
+
+```yaml
+stage: A1-extractor
+company: "PARKHOSPS"
+quarter: "Q1 FY27"
+doctype: "presentation"
+model: claude-sonnet-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 158
+unit_convention: "Millions"
+conversion_factor_to_cr: "Millions -> x0.1"
+ocr_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27 (quarter ended June 30, 2026)"
+extract_path: "/home/user/inflection-pipeline/runs/parkhosps-q1fy27/work/extract_release_parkhosps_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

@@ -1,0 +1,712 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results.pdf
+doctype: results
+page_count_pdfinfo: 15
+formfeed_count: 15
+line_count: 655
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1
+ocr_pages: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-03
+=== END HEADER ===
+
+NOTE ON THIS EXTRACTION (mechanical, non-interpretive):
+- Pages 1, 2, 12, 13, 14, 15 extracted natively via pdftotext -layout (selectable text).
+- Pages 3-11 (9 pages) contained under 100 characters of native text each (image-based/
+  scanned content, including watermark/seal graphics over live text) and were rasterised
+  at 300-400 dpi and OCR'd with tesseract. These are labeled [OCR page N] below.
+- Pages 3 and 9 (Standalone and Consolidated Statement of Unaudited Financial Results,
+  the two P&L tables) were cross-checked against zoomed crops of the source page image
+  because the raw OCR pass produced internally inconsistent totals (e.g. raw OCR misread
+  "Total Income" row on page 3 as 392.00, which does not foot to Revenue 335.32 + Other
+  income 46.68; visual crop confirmed the printed figure is 382.00). All figures in the
+  page 3 and page 9 tables below were verified this way against the source image and are
+  high-confidence. Page 8 (Annexure-I entity list) was likewise reconstructed from a
+  zoomed crop after the flat OCR pass dropped several row labels.
+- Pages 4, 5, 6, 7, 10, 11 (notes, IPO utilisation tables, auditor's consolidated review
+  report) are OCR'd prose/tables; numeric IPO utilisation tables were cross-checked
+  against the twin table appearing in both standalone (page 5) and consolidated (page 11)
+  notes, which agree. Signature/seal graphics overlapping printed text are marked
+  [signature/seal graphic, illegible] rather than guessed.
+- Two spots of residual uncertainty are flagged inline where present: the UDIN digit
+  string on page 7 (partially obscured by a signature stroke) and a few words in
+  consolidated note 7 on page 10 (segment reporting note, partially obscured by a scan
+  artifact/watermark) -- meaning is unambiguous from context in both cases.
+
+[page 1]
+August 03, 2026
+
+BSE Limited                                                     National Stock Exchange of India Limited
+P.J. Tower,                                                     Exchange Plaza,
+Dalal Street, Fort,                                             Bandra-Kurla Complex, Bandra (E),
+Mumbai - 400 001                                                Mumbai - 400 051
+Scrip Code: 544645                                              SYMBOL: PARKHOSPS
+
+Subject: Disclosure under Regulation 30 and Regulation 33 of SEBI (Listing Obligations and Disclosure
+          Requirements) Regulations, 2015 (“Listing Regulations”) – Outcome of Board Meeting held on
+          August 03, 2026
+
+Dear Sir/Madam,
+
+In continuation of our intimation dated July 29, 2026, and pursuant to the provisions of Regulations 30 and 33
+of the Listing Regulations, we wish to inform you that the Board of Directors of Park Medi World Limited
+(“Company”) in its meeting held today i.e. Monday, August 03, 2026, has inter alia, considered and approved
+the following items:
+
+ 1.   Unaudited Standalone and Consolidated Financial Results of the Company for the quarter ended on June
+      30, 2026. The Financial Results along with the Limited Review Report are enclosed herewith as
+      Annexure-I.
+
+ 2.   Acquisition of “Mehar Hospital-Zirakpur”, owned and operated by Mehar Mediserve LLP.
+
+      The details as required under the Listing Regulations read with SEBI circular HO/49/14/14(7)2025-CFD-
+      POD2/I/3762/2026 dated January 30, 2026, along with the press release towards the aforesaid acquisition
+      are enclosed as Annexure -II.
+
+ 3.   Variation in the objects of the Initial Public Offer Proceeds as stated in the Prospectus dated December
+      12, 2025, subject to approval of the Shareholders by way of Postal Ballot and the notice for obtaining
+      shareholders’ approval for the proposed Variation will be sent to the Shareholders of the Company and the
+      Stock Exchanges in due course. Further details of the Proposed Variation will be set out in the explanatory
+      statement forming part of the notice.
+
+The meeting of the Board of Directors of the Company commenced at 08:00 A.M. (IST) and concluded at 09:20
+A.M. (IST).
+The financial results will also be available on the Company's website at https://www.parkhospital.in/.
+
+This is for your information and records.
+
+Thanking you,
+
+For and on behalf of Park Medi World Limited
+ABHISHEK                        Digitally signed by ABHISHEK
+                                KAPOOR
+KAPOOR                          Date: 2026.08.03 09:24:02 +05'30'
+Name: Abhishek Kapoor
+Designation: Company Secretary & Compliance Officer
+Encl: A/a
+
+[page 2]
+                                                                                                         Annexure - I
+
+
+
+         CA �ff�
+          1 N o�                     CHARTERED ACCOUNTANTS
+                Head Office: 0-6/9, Upper Ground Floor, Rana Pratap Bagh, Delhi-110007 (INDIA)
+           Phone: 011-41011281, 43512990 E-mail: caagiwal68@gmail.com, office@agiwalassociates.in
+
+
+ Independent Auditor's Review Report on the "Statement of Unaudited Standalone Financial Results for
+ the Quarter ended June 30, 2026" of Park Medi World Limited pursuant to the Regulation 33 of the SEBI
+ (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended.
+ To The Board of Directors of
+ Park Medi World Limited
+I.   We have reviewed the accompanying Statement of Unaudited Standalone Financial Results of Park Medi
+     World Limited (the "Company"), for the quarter ended on June 30, 2026 ("the statement") attached herewith,
+     being submitted by the Company pursuant to the requirements of Regulation 33 of SEBI (Listing Obligations
+     and Disclosure Requirements) Regulations, 2015, as amended {the "Listing Regulations, 2015").
+
+2.   The Company's management is responsible for preparation of the Statement in accordance with the recognition
+     and measurement principles laid down in the Indian Accounting Standard 34 ("Ind AS 34") "Interim Financial
+     Reporting", prescribed under Section 133 of the Companies Act, 2013 read with relevant rules issued
+     thereunder and other accounting principles generally accepted in India and in compliance with Regulation 33
+     of the Listing Regulations. The Statement has been approved by the Company's Board of Directors. Our
+     responsibility is to express a conclusion on the Statement based on our review.
+3.   We conducted our review of the Statement in accordance with the Standard on Review Engagements ("SRE")
+     2410 'Review of Interim Financial Infonnation performed by the Independent Auditor of the Entity', issued
+     by the Institute of Chartered Accountants of India ("ICAI"). A review of interim financial infom1ation consists
+     of making inquiries, primarily of the Company's personnel responsible for fmancial and accounting matters
+     and applying analytical and other review procedures. A review is substantially less in scope than an audit
+     conducted in accordance with Standards on Auditing specified under section 143( l 0) of the Companies Act,
+     2013 and consequently does not enable us to obtain assurance that we would become aware of all significant
+     matters that might be identified in an audit. Accordingly, we do not express an audit opinion.
+
+4. Based on our review conducted as stated in paragraph 3 above, nothing has come to our attention that causes
+   us to believe that the accompanying Statement, prepared in accordance with the recognition and measurement
+   principles laid down in the aforesaid Indian Accounting Standard and other accounting principles generally
+   accepted in India, has not disclosed the information required to be disclosed in terms of Regulation 33 of the
+   SEBI {Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, including the
+   manner in which it is to be disclosed, or that it contains any material misstatement.
+
+5.   (a) Attention is drawn to the fact that the figures for the three months ended 31 March 2026 as reported in the
+     Statement are the balancing figures between audited figures in respect of the full previous financial year and
+     the published year to date figures up to the third quarter of the previous fmancial year. The figures up to the
+     end of the third quarter of previous financial year had only been reviewed and not subjected to audit.
+     (b) The Statement includes the results for the corresponding quarter ended June 30, 2025 as reported in the
+     previously issued Statement, which were not subject to limited review.
+     For Agiwal & Associates
+     Chartered Accountants
+     FRNNo: 000181N                           \
+
+
+     �v4
+     P.C. Agiwal                              I
+     Partner
+     Membership Number:
+     Place: Gurugram
+     Date: August 03, 2026
+     UDIN: 26080475SIBZRX3355
+
+[OCR page 3]
+PARK MEDI WORLD LIMITED
+(Formerly known as Park Medi World Private Limited)
+(CIN: L85110DL2011PLC212901)
+Registered Office: 12, Meera Enclave, Near Keshopur Bus Depot., Outer Ring Road, New Delhi-110018
+Website: www.parkhospital.in; Email: company.secretary@parkhospital.in Phone No. 91-124-6960000
+
+STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED JUNE 30, 2026
+(₹ in millions, except per share data)
+
+                                                                       Quarter Ended                              Year Ended
+Particulars                                              June 30, 2026   March 31, 2026   June 30, 2025    March 31, 2026
+I    Income
+     Revenue from operations                                   335.32          274.34          229.69         1,289.65
+     Other income                                                46.68           82.69            2.01           103.35
+     Total Income                                               382.00          357.03          231.70         1,393.00
+II   Expenses
+     Cost of material/Service consumed                           54.19           34.58           31.27           157.62
+     Changes in inventories of stock                              (0.71)              -           (0.02)           (3.97)
+     Employee benefit expenses                                    87.54           43.17           36.04           187.46
+     Professional and consultancy fees                            51.77           15.72           16.23           101.57
+     Finance costs                                                 8.60           24.20           32.98           127.55
+     Depreciation and amortisation expense                        33.81           10.10           11.61            45.09
+     Other expenses                                              129.69          133.13           42.66           323.27
+     Total Expenses                                               364.89          260.90          170.77           938.59
+III  Profit/(Loss) before exceptional items and tax (I-II)          17.11           96.13           60.93           454.41
+IV   Exceptional items                                                 -               -                -                -
+V    Profit/(Loss) before tax (III-IV)                              17.11           96.13           60.93           454.41
+VI   Tax expenses
+     Current tax                                                    3.44           22.96           12.09           112.75
+     Deferred tax charge/(benefit)                                   2.83          (12.89)          (0.13)          (24.50)
+     Income tax relating to previous years                              -               -                -                -
+     Total tax expenses                                              6.27           10.07           11.96            88.25
+VII  Profit/(Loss) after tax (V-VI)                                 10.84           86.06           48.97           366.16
+VIII Other comprehensive income/(loss)
+     Items that will not be reclassified to profit or loss
+     - Remeasurement of employee defined benefit plans              (0.98)           1.34            0.50             2.00
+     - Income tax relating to above                                   0.25          (0.34)          (0.13)           (0.50)
+     Total other comprehensive income/(loss)                         (0.73)           1.00            0.37             1.50
+IX   Total comprehensive income/(loss) (VII+VIII)                    10.11           87.06           49.34           367.66
+Paid up Equity Share Capital (Face Value: ₹ 2 each per share)  863.86          863.86          768.80           863.86
+Other Equity excluding Revaluation Reserve                                                                            7,736.41
+Earnings per Share (EPS) (not annualised)
+(i) Basic (₹)                                                     0.03            0.20            0.13             0.92
+(ii) Diluted (₹)                                                  0.03            0.20            0.13             0.92
+See accompanying notes to the financial results
+
+[signature block, illegible seal/stamp graphics -- text below is legible portion]
+                                                       For and on behalf of the Board of Directors
+                                                       Park Medi World Limited
+                                                       Dr. Sanjay Sharma
+                                                       Chief Executive Officer & Whole Time Director
+                                                       DIN: 01813328
+Place: Gurugram
+Date: August 03, 2026
+
+[OCR page 4]
+Notes to the unaudited standalone financial results for the quarter ended June 30, 2026
+
+1. The unaudited standalone financial results have been prepared in accordance with the recognition and measurement principles
+laid down in Indian Accounting Standards (Ind AS) - 34 “Interim Financial Reporting” notified under Section 133 of the Companies
+Act, 2013 (“the Act”) read with the Companies (Indian Accounting Standard Rules), 2015 (as amended from time to time) and
+other accounting principles generally accepted in India and in terms of Regulation 33 of the SEBI (Listing Obligation and
+Disclosure Requirements) Regulations, 2015, as amended ("Listing Regulations").
+
+2. The unaudited standalone financial results (‘the Statement) of Park Medi World Limited (‘the company’) for the quarter ended
+June 30, 2026 were reviewed by the Audit committee on August 03, 2026 and approved by the Board of Directors at its meeting
+held on August 03, 2026 in terms of Regulation 33 of the SEBI (Listing Obligation and Disclosure Requirements) Regulations,
+2015, and have been subjected to limited review by the statutory auditors of the company who have issued an unmodified
+opinion on the same.
+
+3. The Company has launched a 350 bedded advanced multi-super specialty hospital at Panchkula on April 10, 2026. The Panchkula
+hospital is equipped with advanced diagnostics, modular operation theatres, critical care infrastructure, and will deliver
+comprehensive care across key specialties including oncology, neurosciences, orthopaedics, cardiology, and critical care including
+robotic-assisted procedures.
+
+4. Umkal Healthcare Private Limited, the wholly owned subsidiary of the Company, has proposed the expansion of its existing 225-
+bedded Park Hospital in Palam Vihar, Gurugram, with addition of 100 new beds. The newly expanded facility will be branded as
+"Park Hospital Platinum" and the proposed capacity addition is to be completed by November 2026. Overall cost of additional
+beds will be approx. ₹ 250 millions which is proposed to be funded from internal accruals.
+
+5. Park Medicenters and Institutions Private Limited, a subsidiary of the Company, has incorporated a wholly owned subsidiary in
+the name of “Healplus Medical Services Private Limited” having CIN: U47721DC2026PTC471594, on May 20, 2026. The new
+subsidiary has not commenced business operations as of June 30, 2026, and hence has no financial impact on the consolidated
+results.
+
+6. During the quarter ended June 30, 2026, the Company did not receive any investor complaint. No complaints were pending
+resolution as on June 30, 2026. The Company has adequate systems and processes in place to address investor grievances in a
+timely manner in compliance with Regulation 13 of SEBI (Listing Obligations and Disclosure Requirements) Regulation 2015.
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[OCR page 5]
+7. The utilisation of the IPO proceeds is summarised below:
+                                                                                                  (₹ in millions)
+                                                              Utilisation planned    Utilised upto      Amount pending for
+Object of the issue as per prospectus                         as per prospectus     June 30, 2026    utilisation as on June 30, 2026
+Repayment/ prepayment, in full or in part, of outstanding
+ borrowings availed by our Company and our Subsidiaries              3,800.00           3,800.00                    -
+Funding capital expenditure for development of new hospital
+ by our Subsidiary Park Medicity (NCR) Private Limited                  605.00             195.19                409.81
+Funding capital expenditure for purchase of medical equipment
+ by our Company and our Subsidiaries, Blue Heavens Healthcare
+ Private Limited and Ratangiri Innovations Private Limited              274.59              36.08                238.51
+Unidentified inorganic acquisitions and general corporate purposes    2,453.18           2,453.18                    -
+Total                                                                 7,132.77           6,484.45                648.32
+Issue expenses towards IPO                                              567.23             567.23                    -
+Grand Total                                                           7,700.00           7,051.68                648.32
+
+There is no deviation in the utilization of proceeds from the objects stated in the offer document and there is no
+variation in the terms of contract referred to in the prospectus.
+
+8. Subsequent event: The Company has successfully acquired 80% shareholding of V3 Healthcare Private Limited on July 31, 2026
+which operates a multi-super speciality Hospital in the name of “The Medicity Hospital - Rudrapur”, Uttaranchal having capacity
+of 330 beds. Remaining 20% will be acquired by April 30, 2030. Overall cost of acquisition is approx. ₹ 1,770 millions. Consequent
+to this acquisition, V3 Healthcare Private Limited has become a subsidiary of the Company. Further, the Hospital has been
+launched on August 2, 2026.
+
+9. Previous period figures have been regrouped / reclassified wherever necessary to conform to current period classification and
+rounding off errors have been ignored.
+
+10. The unaudited standalone financial results for the quarter ended June 30, 2026 are available on the Company's website at
+www.parkhospital.in and also on the website of BSE Limited at www.bseindia.com and National Stock Exchange of India Limited
+at www.nseindia.com, where the shares of the Company are listed.
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[OCR page 6]
+CHARTERED ACCOUNTANTS
+Head Office : D-6/9, Upper Ground Floor, Rana Pratap Bagh, Delhi-110007 (INDIA)
+Phone : 011-41011281, 43512990 E-mail : caagiwal68@gmail.com, office@agiwalassociates.in
+
+Independent Auditor's review report on the Statement of Unaudited Consolidated Financial Results for
+the Quarter ended June 30, 2026 of Park Medi World Limited pursuant to the Regulation 33 of the
+SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended
+
+To The Board of Directors,
+Park Medi World Limited,
+
+1. We have reviewed the accompanying Statement of Unaudited Consolidated Financial Results of Park
+Medi World Limited (the “Parent”) and its subsidiaries (the Parent and its subsidiaries together referred
+to as the “Group”), for the quarter ended June 30, 2026 (the “Statement”), being submitted by the Parent
+pursuant to the requirement of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015, as amended (the “Listing Regulations”).
+
+2. The Parent's management is responsible for preparation of the Statement in accordance with the
+recognition and measurement principles laid down in the Indian Accounting Standard 34 (“Ind AS 34”)
+“Interim Financial Reporting”, prescribed under Section 133 of the Companies Act, 2013 read with
+relevant rules issued thereunder and other accounting principles generally accepted in India and in
+compliance with Regulation 33 of the Listing Regulations. The Statement has been approved by the
+Parent's Board of Directors. Our responsibility is to express a conclusion on the Statement based on our
+review.
+
+3. We conducted our review of the Statement in accordance with the Standard on Review Engagements
+(SRE) 2410 “Review of Interim Financial Information Performed by the Independent Auditor of the
+Entity”, issued by the Institute of Chartered Accountants of India (“ICAI”). A review of interim financial
+information consists of making inquiries, primarily of Parent's personnel responsible for financial and
+accounting matters and applying analytical and other review procedures. A review is substantially less in
+scope than an audit conducted in accordance with Standards on Auditing specified under Section 143(10)
+of the Companies Act, 2013 and consequently does not enable us to obtain assurance that we would
+become aware of all significant matters that might be identified in an audit. Accordingly, we do not express
+an audit opinion.
+We also performed procedures in accordance with the circular issued by the SEBI under Regulation 33(8)
+of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, to the
+extent applicable.
+
+4. The Statement includes the results of the subsidiaries and associates listed in Annexure-I.
+
+5. (a) Attention is drawn to the fact that the figures for the three months ended 31 March 2026 as reported
+in the Statement are the balancing figures between audited figures in respect of the full previous financial
+year and the published year to date figures up to the third quarter of the previous financial year. The figures
+up to the end of the third quarter of previous financial year had only been reviewed and not subjected to
+audit.
+(b) The Statement includes the results for the corresponding quarter ended June 30, 2025 as reported in
+the previously issued Statement, which were not subject to limited review.
+
+6. Based on our review conducted and procedures performed as stated in paragraph 3 above and based on
+the consideration of the review reports of the other auditors referred to in paragraph 7 below, nothing has
+come to our attention that causes us to believe that the accompanying Statement, prepared in accordance
+with the recognition and measurement principles laid down in the aforesaid Indian Accounting Standards
+and other accounting principles generally accepted in India, has not disclosed the information required to
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[OCR page 7]
+CHARTERED ACCOUNTANTS
+be disclosed in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015, as amended, including the manner in which it is to be disclosed, or that it contains any
+material misstatement.
+
+7. The accompanying Statement includes the interim financial results of 19 subsidiaries which has been
+reviewed by other auditors whose unaudited interim financial results include total revenue of Rs.3749.42
+million (before consolidation adjustments), total net profit after tax of Rs.717.68 million (before
+consolidation adjustments), total comprehensive income of Rs.714.11 million (before consolidation
+adjustments), for the quarter ended June 30, 2026, and whose reports have been furnished to us by the
+parent's Management, and our conclusion in so far as it relates to the amounts and disclosures included
+in respect of these subsidiaries, is based solely on the report of such other auditors and the procedures
+performed by us as stated in paragraph 3 above.
+
+The interim financial results of 2 subsidiaries have been reviewed by the Management of the Company,
+whose financial results include total revenue of Rs.163.15 million, total net profit after tax of Rs.26.00
+million, total comprehensive income of Rs.26.00 million, for the quarter ended June 30, 2026.
+
+Our Conclusion is not modified in respect of this matter with respect to our reliance on the work done by
+and the reports of the other auditor.
+
+For Agiwal & Associates
+Chartered Accountants
+FRN No: 000181N
+
+[signature/seal graphic, illegible]
+P.C. Agiwal
+Partner
+Membership Number: 080475
+Place: Gurugram
+Date: August 03, 2026
+UDIN: 26080475JKIYOL3362
+
+[OCR NOTE: UDIN digit string partially obscured by signature overlay; digits after "2608047" and before "JKIYOL3362" uncertain -- transcribed as best legible reading]
+
+[OCR page 8]
+Annexure-I
+List of entities included in unaudited consolidated financial results.
+
+S.No.  Name of component                                              Country   Relationship
+1      Park Medi World Limited                                        India     Parent
+2      Park Medicentres & Institutions Private Limited                India     Subsidiary
+3      Aggarwal Hospital & Research Services Private Limited          India     Subsidiary
+4      Park Medicity India Private Limited                            India     Subsidiary
+5      Park Medical Centre Private Limited                            India     Subsidiary
+6      Park Medicity (North) Private Limited                          India     Subsidiary
+7      Park Medicity (World) Private Limited                          India     Subsidiary
+8      Park Medicity (NCR) Private Limited                            India     Subsidiary
+9      Park Imperial Medi World Private Limited                       India     Subsidiary
+10     Park Elite Medi World Private Limited                          India     Subsidiary
+11     Blue Heavens Healthcare Private Limited                        India     Subsidiary
+12     Kailash Super Speciality Hospital Private Limited               India     Subsidiary
+13     Umkal Heathcare Private Limited                                India     Subsidiary
+14     SVPD Heathcare Private Limited                                 India     Subsidiary
+15     K P S Wellness Private Limited                                 India     Subsidiary
+16     Mahip Hospitals Private Limited                                India     Step-down subsidiary
+17     DMR Hospitals Private Limited                                  India     Step-down subsidiary
+18     Park Medicity (Haryana) Private Limited                        India     Step-down subsidiary
+19     RGS Helathcare Limited                                         India     Step-down subsidiary
+20     Devina Derma Private Limited*                                  India     Step-down subsidiary
+21     Ratangiri Innovations Private Limited                          India     Step-down subsidiary
+22     Narsingh Hospital & Heart Institute Private Limited            India     Step-down subsidiary
+23     Durha Vitrak Private Limited                                   India     Step-down subsidiary
+
+*The company ceases to be subsidiary with effect from June 5th, 2026 due to divestment.
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[OCR page 9]
+PARK MEDI WORLD LIMITED
+(Formerly known as Park Medi World Private Limited)
+(CIN: L85110DL2011PLC212901)
+Registered Office: 12, Meera Enclave, Near Keshopur Bus Depot., Outer Ring Road, New Delhi-110018
+Website: www.parkhospital.in; Email: company.secretary@parkhospital.in Phone No. 91-124-6960000
+
+STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED JUNE 30, 2026
+(₹ in millions, except per share data)
+
+                                                                       Quarter Ended                              Year Ended
+Particulars                                              June 30, 2026   March 31, 2026   June 30, 2025    March 31, 2026
+I    Income
+     Revenue from operations                                4,757.09        4,604.13        3,988.45        16,793.56
+     Other income                                               76.46           75.03           68.72           316.09
+     Total Income                                             4,833.55        4,679.16        4,057.17        17,109.65
+II   Expenses
+     Cost of material/Service consumed                         771.24          784.34          699.39         2,950.61
+     Changes in inventories of stock                             (8.67)          11.91            0.80             7.45
+     Employee benefit expenses                                  924.07          861.64          767.79         3,233.97
+     Professional and consultancy fees                           756.05          716.20          603.22         2,570.74
+     Finance costs                                                98.10          139.75          151.33           588.85
+     Depreciation and amortisation expense                       188.40          175.06          147.71           624.62
+     Other expenses                                            1,053.52          956.35          867.94         3,587.57
+     Total Expenses                                            3,782.71        3,645.26        3,238.18        13,563.81
+III  Profit/(Loss) before exceptional items and tax (I-II)      1,050.84        1,033.90          818.99         3,545.84
+IV   Exceptional items                                                 -               -                -                -
+V    Profit/(Loss) before tax (III-IV)                          1,050.84        1,033.90          818.99         3,545.84
+VI   Tax expenses
+     Current tax                                                  260.98          197.42          167.48           822.45
+     Deferred tax charge/(benefit)                                (93.40)          68.25           (3.55)          (14.51)
+     Income tax relating to previous years                          (2.67)           0.45                -              2.33
+     Total tax expenses                                            164.91          266.12          163.93           810.27
+VII  Profit/(Loss) after tax (V-VI)                                885.93          767.78          655.06         2,735.57
+VIII Other comprehensive income/(loss)
+     Items that will not be reclassified to profit or loss
+     - Remeasurement of employee defined benefit plans              (7.76)           4.15           (1.04)           12.88
+     - Income tax relating to above                                   1.95          (0.30)            0.26            (3.24)
+     Total other comprehensive income/(loss)                         (5.81)           3.85           (0.78)            9.64
+IX   Total comprehensive income/(loss) (VII+VIII)                    880.12          771.63          654.28         2,745.21
+X    Profit/(Loss) for the period attributable to:
+     Owners of the parent                                            825.07          708.64          579.83         2,581.20
+     Non-controlling Interest                                          60.86           59.14           75.23           154.37
+     Total                                                            885.93          767.78          655.06         2,735.57
+XI   Other Comprehensive Income/(Loss) for the period attributable to:
+     Owners of the parent                                              (5.69)           3.61           (0.80)            9.17
+     Non-controlling Interest                                          (0.12)           0.24            0.02             0.47
+     Total                                                              (5.81)           3.85           (0.78)            9.64
+XII  Total Comprehensive Income/(Loss) for the period attributable to:
+     Owners of the parent                                             819.38          712.25          579.04         2,590.37
+     Non-controlling Interest                                          60.74           59.38           75.24           154.84
+     Total                                                            880.12          771.63          654.28         2,745.21
+Paid up Equity Share Capital (Face Value: ₹ 2 each per share)  863.86          863.86          768.80           863.86
+Other Equity excluding Revaluation Reserve                                                                             19,236.51
+Earnings per Share (EPS) (not annualised)
+(i) Basic (₹)                                                     2.05            1.78            1.70             6.87
+(ii) Diluted (₹)                                                  2.05            1.78            1.70             6.87
+See accompanying notes to the financial results
+
+[signature block, illegible seal/stamp graphics -- text below is legible portion]
+                                                       For and on behalf of the Board of Directors
+                                                       Park Medi World Limited
+                                                       Dr. Sanjay Sharma
+                                                       Chief Executive Officer & Whole Time Director
+                                                       DIN: 01813328
+Place: Gurugram
+Date: August 03, 2026
+
+[OCR page 10]
+Notes to the unaudited Consolidated financial results for the quarter ended June 30, 2026
+
+1. The unaudited Consolidated financial results have been prepared in accordance with the recognition and measurement principles laid down in Indian
+Accounting Standards (Ind AS) - 34 “Interim Financial Reporting” notified under Section 133 of the Companies Act, 2013 (“the Act”) read with the Companies
+(Indian Accounting Standard Rules), 2015 (as amended from time to time) and other accounting principles generally accepted in India and in terms of
+Regulation 33 of the SEBI (Listing Obligation and Disclosure Requirements) Regulations, 2015, as amended ("Listing Regulations").
+
+2. The unaudited Consolidated financial results (‘the Statement) of Park Medi World Limited (‘the company’) for the quarter ended June 30, 2026 were
+reviewed by the Audit committee on August 03, 2026 and approved by the Board of Directors at its meeting held on August 03, 2026 in terms of Regulation
+33 of the SEBI (Listing Obligation and Disclosure Requirements) Regulations, 2015, and have been subjected to limited review by the statutory auditors of
+the company who have issued an unmodified opinion on the same.
+
+3. The Company has launched a 350 bedded advanced multi-super specialty hospital at Panchkula on April 10, 2026. The Panchkula hospital is equipped with
+advanced diagnostics, modular operation theatres, critical care infrastructure, and will deliver comprehensive care across key specialties including
+oncology, neurosciences, orthopaedics, cardiology, and critical care including robotic-assisted procedures.
+
+4. RGS Healthcare Limited, the step down subsidiary of the Company, has proposed the expansion of its Mohali unit from 350 beds to 500 beds. The overall
+cost of expansion will be approx. ₹ 400 millions which is proposed to be funded through internal accruals.
+Umkal Healthcare Private Limited, the wholly owned subsidiary of the Company, has proposed the expansion of its existing 225-bedded Park Hospital in
+Palam Vihar, Gurugram, with addition of 100 new beds. The newly expanded facility will be branded as "Park Hospital Platinum" and the proposed capacity
+addition is to be completed by November 2026. Overall cost of additional beds will be approx. ₹ 250 millions which is proposed to be funded from internal
+accruals.
+
+5. Park Medicenters and Institutions Private Limited, a subsidiary of the Company, has incorporated a wholly owned subsidiary in the name of “Heal Plus
+Medical Services Private Limited” having CIN: U47721DC2026PTC471594, on May 20, 2026. The new subsidiary has not commenced business operations as
+of June 30, 2026, and hence has no financial impact on the consolidated results.
+
+6. Aggarwal Hospital and Research Services Private Limited, a wholly owned subsidiary of the Company, has divested its entire 55% shareholding in Devina
+Derma Private Limited, a subsidiary of Aggarwal Hospital and Research Services Private Limited, for a consideration of ₹ 0.60 million. The transaction was
+completed on June 05, 2026 and since then Devina Derma Private Limited ceased to be a subsidiary of Aggarwal Hospital and Research Services Private
+Limited, and consequently, of the Company. This divestment has been undertaken by the company as a strategic management decision.
+
+7. The Group's business activity primarily falls within a single reportable business segment namely "Healthcare Service" and operates primarily in India and
+accordingly does not have any additional disclosure to be made under Ind AS 108- "Segment Reporting". The Group does not distinguish revenues, costs
+and expenses between segments in its internal reporting, and reports costs and expenses by nature as a whole. The Board of Directors (Chief Operating
+Decision Maker ("CODM")) reviews the Consolidated Financial information when making decisions about allocating resources and assessing performance of
+the Group as a whole and hence, the Group has only one reportable segment. The Group operates and manages its business as a single segment mainly
+through the sale of healthcare services. The Group operates in one geographic segment namely "within India" and hence no separate information or
+geographic segment wise disclosure is required.
+
+[OCR NOTE: several words in this note were reconstructed from a partially obscured scan overlay -- "distinguish", "reports", "Directors", "assessing", "manages", "as a", "and hence no separate" -- meaning is unambiguous from context but transcription of exact obscured characters could not be fully confirmed]
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[OCR page 11]
+8. The utilisation of the IPO proceeds is summarised below:
+                                                                                                  (₹ in millions)
+                                                              Utilisation planned    Utilised up to      Amount pending for
+Object of the issue as per prospectus                         as per prospectus     June 30, 2026    utilisation as on June 30, 2026
+Repayment/ prepayment, in full or in part, of outstanding
+ borrowings availed by our Company and our Subsidiaries              3,800.00           3,800.00                    -
+Funding capital expenditure for development of new hospital
+ by our Subsidiary Park Medicity (NCR) Private Limited                  605.00             195.19                409.81
+Funding capital expenditure for purchase of medical equipment
+ by our Company and our Subsidiaries, Blue Heavens Healthcare
+ Private Limited and Ratnagiri Innovations Private Limited              274.59              36.08                238.51
+Unidentified inorganic acquisitions and general corporate purposes    2,453.18           2,453.18                    -
+Issue expenses towards IPO                                              567.23             567.23                    -
+Grand Total                                                           7,700.00           7,051.68                648.32
+
+There is no deviation in the utilization of proceeds from the objects stated in the offer document and there is no variation in the terms of contract referred
+to in the prospectus.
+
+9. Subsequent event: The Company has successfully acquired 80% shareholding of V3 Healthcare Private Limited on July 31, 2026 which operates a multi-
+super speciality Hospital in the name of “The Medicity Hospital - Rudrapur”, Uttaranchal having capacity of 330 beds. Remaining 20% will be acquired by
+April 30, 2030. Overall cost of acquisition is approx. ₹ 1,770 millions. Consequent to this acquisition, V3 Healthcare Private Limited has become a subsidiary
+of the Company. Further, the Hospital has been launched on August 2, 2026.
+
+10. During the quarter ended June 30, 2026 the Company did not receive any investor complaint. No complaints were pending resolution as on June 30, 2026.
+The Company has adequate systems and processes in place to address investor grievances in a timely manner in compliance with Regulation 13 of SEBI
+(Listing Obligations and Disclosure Requirements) Regulation 2015.
+
+11. Previous period figures have been regrouped / reclassified wherever necessary to conform to current period classification and rounding off errors have
+been ignored.
+
+12. The unaudited Consolidated financial results for the quarter ended June 30, 2026 are available on the Company's website at www.parkhospital.in and also
+on the website of BSE Limited at www.bseindia.com and National Stock Exchange of India Limited at www.nseindia.com, where the shares of the Company
+are listed.
+
+[signature/seal graphic, illegible -- auditor's stamp: Agiwal & Associates, New Delhi, FRN 000181N]
+
+[page 12]
+                                                                                                         Annexure-II
+
+Details required under the Securities and Exchange Board of India (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 read with SEBI Master Circular No. HO/49/14/14(7)2025-CFD-
+POD2/I/3762/2026 dated January 30, 2026
+
+
+
+ Sr. no.                       Particulars                                                 Details
+   1       Name of the target entity, details in brief such as     Mehar Mediserve LLP (“Target Entity”) having
+           size, turnover etc                                      LLPIN: AAH-6659.
+                                                                   The turnover for the financial year 2025-26 is Rs.
+                                                                   19.10 Crore (Unaudited)
+   2       Whether the acquisition would fall within related       The said transaction does not fall under related party
+           party transaction(s) and whether the promoter/          transaction.
+           promoter group/ group companies have any interest
+           in the entity being acquired? If yes, nature of
+           interest and details thereof and whether the same is
+           done at “arm’s length”
+   3       Industry to which the entity being acquired             Healthcare / Hospital
+           belongs;
+   4       Objects and impact of acquisition (including but        This proposed acquisition is consistent with the
+           not limited to, disclosure of reasons for acquisition   Company's growth strategy of maximizing
+           of target entity, if its business is outside the main   operational synergies and achieve economies of scale
+           line of business of the listed entity                   through the strategic deployment of assets in high-
+                                                                   potential markets.
+   5       Brief details of any governmental or regulatory         Not Applicable
+           approvals required for the acquisition
+   6       Indicative time period for completion of the            December 03, 2026
+           acquisition
+   7       Consideration - whether cash consideration or share     In cash by acquiring 100% stake of the Target Entity
+           swap or any other form and details of the same
+   8       Cost of acquisition and/or the price at which the       INR 107 Crores approx.
+           shares are acquired
+   9       Percentage of shareholding / control acquired and /     100% stake will be acquired on the date of signing the
+           or number of shares acquired                            revised Partnership deed.
+   10      Brief background about the entity acquired in terms     The target Entity was incorporated on October 10,
+           of products/line of business acquired, date of          2016 and having its operations in Zirakpur, Punjab.
+           incorporation, history of last 3 years turnover,        The target Entity owns Mehar Hospital located at
+           country in which the acquired entity has presence       Singhpura, Road, opp. Grandeur Marriage Place,
+           and any other significant information (in brief)        Zirakpur-140603, Punjab.
+
+                                                                    'Mehar Hospital' is a well-established multi-super
+                                                                   speciality institution, with a capacity of 150+ beds,
+                                                                   serving Zirakpur and the wider Tricity catchment. Its
+                                                                   proximity to one of North India's densest and fastest-
+
+[page 13]
+growing urban clusters positions it as a strategically
+valuable addition to Park Group's network.
+
+Turnover of last three years are as follows:
+
+                             Amount in INR Crores
+  FY 2025-26        FY 2024-25   FY 2023-24
+    19.10             18.87          17.52
+
+[page 14]
+            Deepening Our Presence in Punjab - Strengthening the Tricity Cluster
+Park Medi World Limited (NSE: PARKHOSPS; BSE: 544645): Park Medi World Limited has today
+announced the execution of a definitive agreement to acquire 'Mehar Hospital – Zirakpur’, a multi-super
+speciality facility, in an all-cash transaction valued at INR 107 Crores. The acquisition deepens Park Group's
+presence in Punjab and is expected to be commissioned under the Park brand in November 2026. This
+acquisition will further strengthen its roadmap for largest healthcare network in the Tricity.
+
+The Asset
+'Mehar Hospital' is a well-established multi-super speciality institution, with a capacity of 150+ beds,
+serving Zirakpur and the wider Tricity catchment. Its proximity to one of North India's densest and fastest-
+growing urban clusters positions it as a strategically valuable addition to Park Group's network.
+The transaction is consistent with the Group's growth strategy of maximising operational synergies and
+achieving economies of scale through the strategic deployment of assets in high-potential markets. Value
+creation post-acquisition will be driven by the enhancement of clinical service offerings, the introduction of
+Park Group's tertiary and quaternary care capabilities, optimisation of operational workflows, and a
+structured drive to improve bed utilisation - all of which are expected to deliver meaningful improvements
+to revenue and profits over medium to long term. The transaction is structured to be earnings-accretive.
+
+
+
+
+Why Punjab
+This acquisition further strengthens Park Group's presence in the Tricity area of Mohali, Chandigarh and
+Panchkula. Zirakpur is a fast-growing satellite town in the Mohali district of Punjab, India, serving as the
+main gateway to Chandigarh, and located within 10–15 kilometres from each of the three cities.
+
+This central position within the Tricity makes 'Mehar Hospital' a natural node in Park Group's cluster-based
+strategy, complementing the Group's established facilities at Mohali, Panchkula, Patiala, and Bathinda. This
+acquisition is a deliberate densification of an established and high-performing cluster — extending
+catchment, deepening super-speciality depth and reinforcing the Group's leadership across the region.
+
+[page 15]
+A Year of Step-Change Growth
+
+The Zirakpur acquisition adds to a transformational twelve months for Park Group. In calendar year 2026,
+the Group has acquired Bathinda (250 beds), which it had operated under an O&M arrangement since July
+2025, and Agra (360 beds) - its largest acquisition to date; commissioned Panchkula (350 beds), its largest
+greenfield facility to date, and Rudrapur, Uttarakhand (330 beds), marking the Group's entry into the state
+of Uttarakhand; and will, over the balance of the year, commission Zirakpur (150 beds), Narela, Delhi (200
+beds) and the extension at Palam Vihar, Gurugram (Park Platinum with 100 beds). Together, these will add
+~1,500 beds in a twelve-month period - a 46% capacity addition over the Group's closing bed count of ~3,250
+beds in December 2025.
+
+Dr. Ankit Gupta, Managing Director, Park Medi World Limited, said:
+
+“Our continued investment in Punjab is deliberate. Tricity is one of North India's most dynamic healthcare markets,
+and 'Mehar Hospital' gives us a platform at its very centre — complementing our established presence at Panchkula,
+Mohali, Patiala and Bathinda and reinforcing our leadership across the region.
+
+This transaction also caps an extraordinary twelve months. Between Agra, Panchkula, Rudrapur, Narela, Park
+Platinum and now Zirakpur, we will have added ~1,500 beds — a 46% expansion of our network during the year —
+while remaining disciplined on capital allocation. That combination of pace and prudence is what we intend to carry
+forward.”
+
+About Park Group
+
+Park Group is North India's 2nd largest hospital chain, currently operating 17 hospitals with a combined
+capacity of ~4,300 beds as on date. The Group is in the process of integrating 3 additional hospitals and
+expanding capacity at 3 existing units. These are in various stages of execution and will add ~1,500 beds to
+our network. With these, Park Group's total capacity is expected to reach ~5,800 beds by March 2028,
+underscoring its commitment to leadership and growth in healthcare delivery.
+
+The Group has established a strong presence across 15 key cities including Delhi, Gurgaon, Faridabad,
+Panipat, Karnal, Sonipat, Ambala, Mohali, Patiala, Bathinda, Behror, Jaipur, Agra, Panchkula and Rudrapur,
+and is expanding into Zirakpur (Punjab), Gorakhpur (Uttar Pradesh) and Rohtak (Haryana). Built on a
+commitment to accessible, high-quality healthcare, Park Group offers a comprehensive range of clinical
+services—spanning super-specialities such as cardiology, neurology, oncology, orthopaedics,
+gastroenterology, critical care, nephrology, organ transplants, gene therapy, stem-cell therapy, and women
+& child health. Each facility is equipped with modern medical infrastructure, advanced diagnostics, 24×7
+emergency support, and multi-disciplinary teams delivering evidence-based care. Through continuous
+expansion and strategic investments, Park Group is strengthening its mission to build a dependable,
+technology-enabled healthcare ecosystem that serves both metropolitan and regional communities across
+North India.
+
+
+For investors or media queries please write to: investor.relations@parkhospital.in
+
+
+                                              ********************
+
+```yaml
+stage: A1-extractor
+company: "PARKHOSPS"
+quarter: "Q1 FY27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 655
+unit_convention: "Millions"
+conversion_factor_to_cr: "Millions -> x0.1"
+ocr_pages: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27 (quarter ended June 30, 2026)"
+extract_path: "/home/user/inflection-pipeline/runs/parkhosps-q1fy27/work/extract_results_parkhosps_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

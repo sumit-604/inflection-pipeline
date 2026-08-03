@@ -1,160 +1,122 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — Ganesha Ecosphere Limited (GANECOS) — Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — Ganesha Ecosphere (GANECOS) — Q1 FY27
 
-Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Re-audit loop 1 of max 2.
-Inputs seen: A4 revised review, A1 results extract, A1 boardoutcome extract, A2 results ledger, A2 boardoutcome ledger. Nothing else. All figures independently re-derived from the raw Lakh cells (x0.01 to Rs Cr); A4/A3 cites checked, not trusted.
-
-Trigger for this loop: prior A5 returned INCOMPLETE on one cell — consolidated Reported EBITDA Q4 FY26 stated 62.84, should be 56.84 (PBT 30.88 + Dep 17.16 + Fin 8.79). This re-audit (a) confirms that specific cell and (b) re-runs the entire coverage + arithmetic + adversarial audit from scratch.
+Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Fresh context (A4 review + A1 extracts + A2 ledgers only; A3 reasoning not seen, cites re-derived).
+Re-audit scope: THREE documents (Reg 33 results filing + Reg 30 board outcome + Q1 FY27 investor deck, 34 slides). Filing in Rs Lakh (x0.01 to Cr); deck already Rs Cr.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh enumeration vs A2 ledgers)
+## AUDIT 1 — COVERAGE (independent re-enumeration vs the three A2 ledgers)
 
-Fresh grep/sweep over both extracts, diffed against both A2 ledgers.
+I re-swept each extract and diffed my fresh counts against each ledger's COUNT TEST, then checked every ledger category is cited in A4 or blanket-marked reviewed.
 
-| Category | Doc | A2 count | My fresh count | Orphan / missing | Status |
-|---|---|---|---|---|---|
-| Notes | results | 14 | 14 (std 7: L101-113; consol 6 numbered L249-260 + 1 unnumbered ESOP bullet L261-264) | none | PASS |
-| Line items | results | 64 | 64 (std 31 + consol 33; consol carries 2 extra rows — assoc-loss L217 + split PBT V/VII) | none | PASS |
-| Zero-standing | results | 4 | 4 (std B(i) L83, B(ii) L86; consol B(i) L231, B(ii) L234) | none — retained | PASS |
-| Auditor paras | results | 15 | 15 (std 4 unnumbered prose L144-174; consol 11 numbered L293-377, para1 OCR "I.", para11 "11.Our") | none | PASS |
-| Entities | results | 6 | 6 (parent, Ecopet, Ecotech, Nepal Overseas, Welfare Trust, Recycling Chain assoc; L321-335) | none | PASS |
-| Agenda items | results | 4 | 4 (Section-1 rows: results approval, encl 1, encl 2, meeting-time) | none | PASS |
-| Turns / slides | results | 0 / 0 | 0 / 0 (no transcript, no deck) | none | PASS |
-| Agenda items | boardoutcome | 1 | 1 (SVP re-appointment) | none | PASS |
-| Annexure particulars | boardoutcome | 4 | 4 (reason, date/term, profile, relationship) | none | PASS |
-| Related-party facts | boardoutcome | 2 | 2 (son of Exec VC; MD of Ganesha Ecoverse) | none | PASS |
-| Regulatory refs | boardoutcome | 2 | 2 (Reg 30; SEBI Master Circular) | none | PASS |
-| Signatory block | boardoutcome | 1 | 1 (Bharat Kumar Sajnani, CS) | none | PASS |
-| Meeting-time facts | boardoutcome | 2 | 2 (commenced 5:15; concluded illegible) | none | PASS |
-| Entities | boardoutcome | 1 | 1 (Ganesha Ecoverse group co) | none | PASS |
-
-**Row-citation check (every ledger row cited in A4 OR marked reviewed-no-finding):**
-- A4 preamble (L12-13) recites the Doc-1 inventory (14 notes / 64 line items / 15 auditor paras / 6 entities / 4 agenda / 4 zero-standing) verbatim to the A2 counts and states "All reviewed." That is a valid blanket reviewed-no-finding statement covering rows not individually cited (e.g. the OCI section and the 4 zero-standing B(i)/B(ii) rows, which A4's Step-1 P&L tables legitimately stop short of — they carry no forward signal and are nil / non-reclassified in all periods). **No orphan.**
-- Doc-2: A4 preamble tallies only 5 of the 7 board-outcome categories (omits meeting_time_facts=2 and entities=1 from the count line). Both are nonetheless cited in the review body — meeting-time / signature-timestamp sequencing at L359; Ganesha Ecoverse entity at L336/L357/L382 and question Q6. **No orphan; presentational note only** (A4 could tighten the preamble tally, but every row is substantively addressed).
-- All 14 findings (F-01…F-08; A3-F6-01, F13-01, F13-02, F14-01, F14-02, F14-03) map to Step tables, the governance section, or the 11 management questions.
-
-**COVERAGE VERDICT: PASS. Zero orphan rows, zero rows my fresh pass found that the ledger lacks. Standalone and consolidated both first-class. Zero-standing rows retained.**
-
----
-
-## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw Lakh cells)
-
-Raw-cell tie-out of Step-1 extraction tables (standalone L54-99, consolidated L199-247): every one of the 64 line-item cells in A4's two Step-1 tables matches the extract at x0.01. No transcription error.
-
-### The corrected cell (prior-loop failure) — re-verified independently
-| Metric | A4 value | My recompute (raw) | Source | Status |
+| Category | Ledger count | My fresh count | Orphan rows | Status |
 |---|---|---|---|---|
-| Consol Reported EBITDA Q4 FY26 (PBT+D+Fin) | **56.84** | (3088.13+1716.04+879.41)/100 = 5683.58/100 = **56.84** | L218, L210-211, L209 | **FIXED — PASS** |
+| **Results** notes (std 7 + consol 6 + 1 unnumbered ESOP footnote) | 14 | 14 (std notes L101-113 = 7; consol L249-260 = 6; ESOP footnote L261-264 = 1) | none | PASS — in review 0D notes table + auditor check |
+| Results line items (std 31 + consol 33) | 64 | 64 (every substantive P&L row present in review Step 1 std/consol tables) | none | PASS |
+| Results zero-standing (B(i)/B(ii) OCI, both statements) | 4 | 4 (std rows 24-25 L83/L86; consol rows 26-27 L231/L234; nil all periods) | none | PASS — retained, acknowledged in preamble ("4 zero-standing rows… all reviewed") |
+| Results auditor paras (std 4 + consol 11) | 15 | 15 (std unnumbered prose 4; consol 1-11, incl. Other-Matter 7-10) | none | PASS — 0D auditor check + Step 4A cite paras 7-10 |
+| Results consolidation entities | 6 | 6 (parent, Ecopet, Ecotech, Nepal, Trust, Recycling Chain assoc; L319-335) | none | PASS |
+| Results agenda items (cover letter) | 4 | 4 (results approval + 2 enclosures + meeting-time) | none | PASS |
+| **Board outcome** agenda item | 1 | 1 (SVP re-appointment L19-23) | none | PASS — governance section |
+| Board outcome annexure particulars | 4 | 4 (reason, date/term, profile, relationship — L53-75) | none | PASS |
+| Board outcome related-party facts | 2 | 2 (son of EVC; MD of Ganesha Ecoverse) | none | PASS — Q6/Q7, A3-F13-01/02 |
+| Board outcome meeting-time / signatory / regulatory refs | 2 / 1 / 2 | 2 / 1 / 2 | none | PASS — A3-F14-03 covers signature timestamp 20:02:11 |
+| **Presentation** slides | 34 | 34 ([page N] markers L15…L713; 5 OCR tags add no slides) | none | PASS — "all 34 slides reviewed" (aggregate no-finding) |
+| Presentation P&L line items (14 consol + 14 std) | 28 | 28 (slide 32 L673-688; slide 33 L694-710) | none | PASS — deck-vs-filing reconciliation table |
+| Presentation subsidiaries named | 3 | 3 (Ecopet, Ecotech, Overseas; slide 15) | none | PASS |
+| Presentation chart clusters / footnotes / guidance | 45 / 6 / 7 | consistent with Table B/D/E | none | PASS — volume, utilisation, 5-qtr, non-GAAP, guidance all surfaced |
 
-Row consistency re-check across all four periods: 39.66 / 56.84 / 63.31 / 159.09 = (14.32+15.50+9.84) / (30.88+17.16+8.79) / (37.09+17.34+8.87) / (53.95+64.81+40.32). All four tie. No sibling cell disturbed by the correction.
+**Fresh-pass rows the ledgers lack:** none. My independent sweep produced no disclosure unit absent from a ledger.
+**Orphan rows (ledger present, A4 absent):** none at the ledger-row level. Every enumerated category is either cited or covered by the blanket "all reviewed" for no-finding slides (safe-harbour, vision, awards, industry/EPR, growth drivers, GoRewise, ESG, dividers).
 
-### Standalone derived metrics
-| Metric | A4 | Recomputed | Status |
-|---|---|---|---|
-| Op EBITDA (PBT+D+Fin−OI) Q1/Q4/Q1'/FY | 9.30 / 20.93 / 23.79 / 56.95 | 9.30 / 20.93 / 23.79 / 56.95 | PASS |
-| Op EBITDA margin | 4.20 / 8.04 / 9.07 / 5.62% | 4.20 / 8.04 / 9.07 / 5.62% | PASS |
-| Reported EBITDA (PBT+D+Fin) | 17.47 / 30.79 / 27.31 / 96.75 | 17.47 / 30.79 / 27.31 / 96.75 | PASS |
-| Core PBT (PBT−OI) | 2.11 / 12.33 / 14.94 / 24.67 | 2.11 / 12.33 / 14.94 / 24.67 | PASS |
-| Other Income / PBT | 79.5 / 44.4 / 19.1 / 61.7% | 79.5 / 44.4 / 19.1 / 61.7% | PASS |
-| Effective tax rate | 25.5 / 26.1 / 25.5 / 25.8% | 25.5 / 26.1 / 25.5 / 25.8% | PASS |
-| PAT margin (on rev) | 3.46 / 6.30 / 5.24 / 4.72% | 3.46 / 6.30 / 5.24 / 4.72% | PASS |
+**Coverage observations (not orphans, flagged for polish — do NOT block save):**
+- **OBS-1 (to A4):** Finding ID **A3-F16-04** appears in A4's "findings incorporated" list (review L21) and YAML but has no corresponding discussion anywhere in the body. I cannot adjudicate it as a true orphan because A3's forensic notes are not among my inputs (I see only extracts + ledgers). A4 should either surface A3-F16-04 explicitly or drop it from the incorporation list.
+- **OBS-2 (to A4):** Deck finding **A3-F2-02** (standalone OI structural reset, CCPS conversion) is used in Step 2/4 narrative but is not in any management question's "from finding" column. It is EXPLANATORY (management already explained the driver), so a question is defensible-optional, not required. Deck tidiness **A3-F14-01(deck)** (3.53-vs-3.52; un-parenthesised tax) is folded into the disclosure-control cluster and Q14 framing rather than its own question — acceptable as an immaterial NEUTRAL/AMBIGUOUS item.
 
-### Consolidated derived metrics
-| Metric | A4 | Recomputed | Status |
-|---|---|---|---|
-| Op EBITDA (V+D+Fin−OI) | 36.31 / 52.35 / 59.78 / 141.71 | 36.31 / 52.35 / 59.78 (raw 59.7755) / 141.71 | PASS |
-| Op EBITDA margin | 10.77 / 12.35 / 14.11 / 9.56% | 10.77 / 12.35 / 14.11 / 9.56% | PASS |
-| Reported EBITDA (PBT+D+Fin) | 39.66 / 56.84 / 63.31 / 159.09 | 39.66 / 56.84 / 63.31 / 159.09 | PASS |
-| Core PBT (PBT−OI) | 10.94 / 26.34 / 33.47 / 36.53 | 10.94 / 26.34 / 33.47 / 36.53 | PASS |
-| Other Income / PBT | 23.6 / 14.7 / 9.8 / 32.3% | 23.6 / 14.7 / 9.8 / 32.3% | PASS |
-| Effective tax rate | 24.9 / 24.8 / 21.7 / 29.2% | 24.9 / 24.8 / 21.7 / 29.2% | PASS |
-| PAT margin (on rev) | 3.19 / 5.48 / 6.85 / 2.58% | 3.19 / 5.48 / 6.85 / 2.58% | PASS |
-
-### Step-2 YoY (Q1 FY27 vs Q1 FY26)
-| Metric | A4 | Recomputed (raw) | Status |
-|---|---|---|---|
-| Std revenue | +18.4% | 262.30/221.47−1 = +18.4% | PASS |
-| Std Op EBITDA | +155.8% | +155.8% | PASS |
-| Std margin | +487 bps | 9.07−4.20 = 487 bps | PASS |
-| Std finance cost | +51.8% | 199.90/131.65−1 = +51.8% | PASS |
-| Std EBIT (op) | +394.6% | 16.9375/3.4254−1 = +394.5% | PASS (0.1pp intermediate-rounding, within tolerance) |
-| Std Other Income | −57.0% | 351.68/817.01−1 = −57.0% | PASS |
-| Std Core PBT | +608.4% | 1493.85/210.89−1 = +608.4% | PASS |
-| Std reported PBT | +79.5% | +79.5% | PASS |
-| Std PAT | +79.4% | +79.4% | PASS |
-| Std EPS basic | +70.4% | 5.13/3.01−1 = +70.4% | PASS |
-| Consol revenue | +25.7% | 423.67/337.12−1 = +25.7% | PASS |
-| Consol Op EBITDA | +64.6% | +64.6% | PASS |
-| Consol margin | +334 bps | 14.11−10.77 = 334 bps | PASS |
-| Consol finance cost | −9.8% | 887.26/984.13−1 = −9.8% | PASS |
-| Consol EBIT (op) | +103.9% | 4243.30/2081.05−1 = +103.9% | PASS |
-| Consol Other Income | +7.2% | 361.98/337.81−1 = +7.2% | PASS |
-| Consol Core PBT | +206.0% | 3347.49/1094.03−1 = +206.0% | PASS |
-| Consol reported PBT | +159.1% | +159.1% | PASS |
-| Consol PAT | +170.0% | 2903.48/1075.36−1 = +170.0% | PASS |
-| Consol EPS basic | +156.5% | 10.85/4.23−1 = +156.5% | PASS |
-
-### Step-3 QoQ, Step-4 PAT bridge, Step-4A S-to-C gap
-| Metric | A4 | Recomputed | Status |
-|---|---|---|---|
-| Consol rev QoQ | −0.06% | 423.67/423.94−1 = −0.06% | PASS |
-| Consol margin QoQ | +176 bps | 14.11−12.35 = 176 bps | PASS |
-| Consol core PBT QoQ | +27.1% | 33.47/26.34−1 = +27.1% | PASS |
-| Std rev QoQ | +0.76% | 262.30/260.33−1 = +0.76% | PASS |
-| Std PAT QoQ | −16.2% | 13.75/16.41−1 = −16.2% | PASS |
-| Consol PAT YoY Δ | +18.28 | 29.03−10.75 = +18.28 | PASS |
-| Bridge: rev contrib | +9.32 | 86.55 × 10.77% = +9.32 | PASS |
-| Bridge: margin contrib | +14.15 | 3.34% × 423.67 = +14.15 | PASS |
-| Bridge: Op EBITDA Δ | +23.46 | 59.7755−36.3145 = +23.46 | PASS |
-| Bridge: D&A Δ | (1.84) | 17.34−15.50 = 1.84 | PASS |
-| Bridge: finance Δ | +0.97 | 9.84−8.87 = 0.97 | PASS |
-| Bridge: OI Δ | +0.24 | 3.62−3.38 = 0.24 | PASS |
-| Bridge: assoc Δ | (0.06) | (8.55−2.89)/100 = 0.0566 → 0.06 | PASS |
-| Bridge: PBT Δ | +22.77 (ties 22.78) | 3709.47−1431.84 = 22.78 | PASS |
-| Bridge: tax Δ | (4.50) | 8.06−3.56 = 4.50 | PASS |
-| Bridge: PAT Δ | +18.27 (ties 18.28) | 18.28 | PASS |
-| Std PAT bridge close | +6.09 | 12.83−4.65−2.09 = +6.09 | PASS |
-| S-to-C gap FY26 / Q1'26 / Q4'26 / Q1'27 | −9.62 / +3.09 / +6.80 / +15.29 | −9.62 / +3.09 / +6.80 / (2903.48−1374.95)/100=+15.29 | PASS |
-| S-to-C gap % of std PAT Q1'27 | +111% | 15.29/13.75 = +111.2% | PASS |
-| Gap decomposition residual | +0.61 | 15.29 − 15.04 + 0.27 + 0.09 = +0.61 | PASS |
-| Share issuance | +1.339 Cr FV / +5.3% | 26.7960−25.4570 = 1.3390; /25.457 = 5.26% | PASS |
-| EPS-behind-PAT (std) | ~9 pp | 79.4−70.4 = 9.0 pp | PASS |
-
-### One approximate prose figure — recomputed and dispositioned (not a FAIL)
-"~50.6% of consolidated PAT rests on component-auditor-reviewed subsidiaries" (L44, L396, flags). Component-auditor-reviewed net profit = para-7 domestic subs +15.04 and para-8 Nepal −0.27 = 14.77; 14.77/29.03 = **50.9%**. Domestic-subs-only = 15.04/29.03 = 51.8%. A4's "~50.6%" sits within the band of defensible denominator definitions (0.3pp from my primary recompute), is explicitly approximate ("~"), and is an audit-scope AMBER characterization, not a headline derived-valuation metric. The qualitative claim — roughly half of consolidated PAT rests on component-auditor-reviewed subs — is true and correctly flagged. **Recorded as a note, PASS within tolerance.** (Recommend A4 restate as "~51%" for precision, non-blocking.)
-
-**ARITHMETIC VERDICT: PASS. The prior-loop cell (56.84) is corrected and internally consistent across the Reported-EBITDA row. Every other derived metric, margin, YoY/QoQ, PAT bridge, and ratio ties from the raw cells within rounding. No NOT-FOUND value estimated (FY26 basic EPS OCR-garble carried as flagged 18.12; missing Q2/Q3 FY26 and all balance-sheet/CFO rows held ND, not estimated).**
+Coverage verdict: **PASS.**
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most-positive claims, strongest same-text bear counter)
+## AUDIT 2 — ARITHMETIC (recomputed from raw Lakh cells; x0.01 to Cr)
 
-**Claim 1 — "~100% of the +Rs 18.28 Cr YoY PAT rise is recurring core operations; genuinely high quality" (L217).**
-Strongest bear (same extract): the +170% consolidated PAT leans on Rs 15.04 Cr from two subsidiaries reviewed only by component auditors (para 7, L347-348), off a recent loss base (within-FY26 Q2+Q3 S-to-C gaps sum to ~−19.5 Cr per A4's own FY26 reconciliation), and the group runs a sub-normal 21.7% ETR because the profitable subs pay ~nil current tax (tax shield, F-04). So "high quality / recurring" overstates durability and rests on a temporary tax level and lower-tier assurance.
-**Survives? NO — already incorporated.** A4 flags component-auditor reliance (L44, L396), the ETR step-up risk (Step 4, L220; Q3), and the three durability caveats (Step 4A, L244). Nothing to graft.
+I recomputed every derived metric, margin, YoY, QoQ, the PAT bridge, the S-to-C gap ladder, and every deck-vs-filing reconciliation line from the source cells. Representative checks (all remaining metrics reconciled identically):
 
-**Claim 2 — "S-to-C PAT gap swung to +Rs 15.29 Cr (+111% of standalone PAT); decision-gate pre-condition (i) met" (Step 4A).**
-Strongest bear (same extract): it is one quarter; the Rs 15.04 Cr is component-auditor-reviewed, not principal-audited; no utilisation/tonnage/product-mix disclosed to attribute the swing to structural volume vs one-off (grant / inventory revaluation / DTA drawdown); Warangal commissioning is silent and consol revenue is flat QoQ (no visible volume step-up).
-**Survives? NO — already incorporated.** A4 states pre-condition (i) is "met on the reported number but not yet durable" with exactly these three caveats (L244), routes to Q1, and pushes the entry gate to the FY26 AR + one confirming quarter. Nothing to graft.
+| Metric | A4 value | My recompute (from raw) | Source line | Status |
+|---|---|---|---|---|
+| Std Op EBITDA Q1FY27 (PBT+D+Fin−OI) | 23.79 | 18.4553+6.8533+1.9990−3.5168 = 23.79 | L70/65/64/55 | ✓ |
+| Std Op EBITDA margin Q1FY27 | 9.07% | 23.79/262.30 = 9.07% | — | ✓ |
+| Std ETR Q1FY26 | 25.5% | 2.6161/10.2790 = 25.45% → 25.5% | L72-73/70 | ✓ (rounds up) |
+| Consol Op EBITDA Q1FY27 (V+D+Fin−OI) | 59.78 | 37.1802+17.3425+8.8726−3.6198 = 59.78 | L216/210-211/209/201 | ✓ |
+| Consol Op EBITDA margin Q1FY27 | 14.11% | 59.78/423.67 = 14.11% | — | ✓ ties deck 14.1% |
+| Consol ETR Q1FY27 | 21.7% | (5.0773+2.9826)/37.0947 = 21.73% | L220-221/218 | ✓ below statutory 25.17% |
+| Consol PAT margin FY26 | 2.58% | 38.2135/1481.6629 = 2.58% | — | ✓ |
+| Std revenue YoY | +18.4% | 262.30/221.47−1 = 18.44% | L54 | ✓ |
+| Consol revenue YoY | +25.7% | 423.67/337.12−1 = 25.67% | L199 | ✓ |
+| Consol PAT YoY | +170.0% | 29.0348/10.7536−1 = 170.0% | L222 | ✓ |
+| Std core PBT (ex-OI) YoY | +608.4% | 14.9385/2.1089−1 = 608.4% | L70,55 | ✓ |
+| Std finance cost YoY | +51.8% | 1.9990/1.3165−1 = 51.84% | L64 | ✓ |
+| Std PAT QoQ | −16.2% | 13.75/16.41−1 = −16.2% | L74-75 | ✓ |
+| Consol PAT QoQ | +25% (deck bullet) | 29.03/23.21−1 = 25.1% | L222 / s12 L304 | ✓ |
+| **Consol PAT bridge** total | +18.27 (ties +18.28) | +22.77 PBT change then −4.50 tax = +18.27 | Step 4 | ✓ ties |
+| — Op EBITDA change term | +23.46 | precise 59.7755−36.3145 = 23.461 | — | ✓ (rounded endpoints give 23.47; within tolerance) |
+| — Tax change term | −4.50 | (5.08+2.98)−(2.59+0.97)=8.06−3.56 = 4.50 | L220-221 | ✓ |
+| **Std PAT bridge** total | +6.09 | 14.49−0.98−0.68−4.65−2.09 = +6.09 | Step 4 | ✓ |
+| — Std tax change term | −2.09 | 4.7058−2.6161 = 2.0897 | L72-73 | ✓ |
+| **S-to-C gap Q1FY27** | +15.29 (+111%) | 29.0348−13.7495 = 15.285; 15.29/13.75 = 111.2% | Step 4A | ✓ |
+| S-to-C gap Q3FY26 (deck) | −16.4 (−103%) | −0.5−15.9 = −16.4; /15.9 = −103% | s10 L245,264 | ✓ |
+| Four FY26 quarterly gaps sum | −9.6 (ties FY26 −9.62) | +3.09−3.1−16.4+6.80 = −9.61 | Step 4A | ✓ |
+| **Deck non-GAAP Cash Profits** consol Q1FY27 | 46.4 = PAT+dep | 29.03+17.34 = 46.37 → 46.4 | s6 | ✓ reconciles, correctly flagged non-GAAP |
+| **Component-auditor PAT share** | ~50.6% | (15.04−0.27−0.09)/29.03 = 50.6% | paras 7/8/10 | ✓ (subs+Nepal+assoc) |
 
-**Claim 3 — "Consolidated Op EBITDA margin +334 bps YoY / core PBT +206% YoY — genuine operating expansion" (Step 2, verdict).**
-Strongest bear (same extract): Q4 FY26 is a Note-5 balancing figure so the sequential step is partly artefact; the +487/+334 bps could be feedstock/input-cost timing rather than structural pricing power with no tonnage or per-tonne data to confirm pass-through (tripwire 7); and a large Q1 inventory build (consol change-in-inventories −Rs 35.56 Cr vs −Rs 8.80 Cr PY) could be absorbing fixed cost and flattering the current-quarter margin — un-testable from a P&L-only filing.
-**Survives? NO — already incorporated / non-determinable.** A4 carries the Note-5 balancing-figure caveat (L39, L178), the per-tonne mechanism gap (tripwire 7, Q11), and the inventory build under cash quality (L270) with cash conversion held INDETERMINATE and the missing evidence named. The over-production/absorption angle is not determinable from the extract (no cost breakout, no balance sheet), so per conservative bias it is a named-missing-evidence flag, which A4 already carries — not a proven surviving counter. Nothing to graft.
+**Deck-vs-filing reconciliation re-derived from cells (verified A4 did NOT let a deck non-GAAP or different-basis figure override a filed number):**
+- Deck consol "Cost of materials/traded" 303.52 = filing COGS 297.57 + purchases 5.95 = 303.52 ✓
+- Deck consol "Other exp (incl assoc loss)" 71.55 = P&F 34.44 + Other 37.02 + assoc 0.09 = 71.55 ✓
+- Deck consol Tax 8.06 = 5.08+2.98 ✓; Std Tax 4.71 = 5.08−0.37 ✓
+- Deck consol OCI 1.00 = 0.0153+1.157−0.177 = 0.995 ✓; TCI 30.03 = 29.03+1.00 ✓
+- Deck EBITDA 59.8 is the **operating** figure (excl OI), matches derived 59.78 — not a dressed-up number ✓
+- Non-GAAP **EBITDA/Ton** (11.6→14.9) and **Cash Profits** (46.4) are explicitly quarantined as non-GAAP, not in the filing, read "with the falling-volume denominator." They do **not** override any GAAP line. ✓
 
-**ADVERSARIAL VERDICT: PASS. All three strongest bear counters are already present in A4's review; none survives as an unincorporated counter requiring graft.**
+Arithmetic verdict: **PASS.** Every derived metric ties within rounding (<=0.01 Cr / <=0.1 pp). No mismatch above rounding.
+
+Minor methodology note (not a mismatch): A4's "Reported EBITDA" uses PBT-after-associate while "Operating EBITDA" uses PBT-before-associate (line V). The associate term is 0.03-0.09 Cr; immaterial and each series is internally consistent.
 
 ---
 
-## DECISION-STATUS INTEGRITY CHECK
-Decision Status = WATCHLIST, unchanged. No committed thesis-broken / growth trigger exists (pre-thesis name), so none fired; the change is correctly withheld absent a committed trigger. Cash conversion INDETERMINATE correctly caps off a clean PROCEED; verdict PROCEED WITH FLAGS is consistent with the flag load. Compliant.
+## AUDIT 3 — ADVERSARIAL READ (strongest bear counter to the three most positive claims, from the same text)
+
+**Claim 1 — "Consol PAT +170% YoY; ~100% of the rise is recurring core ops; high P&L quality."**
+Bear counter from the same extract: the deck states consolidated **sales volume fell 11.2%** and standalone **13.4%** (s12 L298-299) while production rose 3.8% — the whole top-line gain is realisation/price/mix on a shrinking base; 50.6% of consol PAT rests on component-auditor-reviewed / management-certified entities (paras 7/8/10); the base is volatile (Q3 FY26 consol PAT −0.5 Cr, s10 L245); consol current tax equals standalone current tax, so subs paid ~nil current tax on a loss-carryforward shield (ETR 21.7% < statutory 25.17%) that will step up.
+**Survives?** NO. A4 already incorporates every strand — the volume decline (Step 2 diag 1, flag), selective framing (A3-F16-02), Q3 volatility (Step 3/4A), the 50.6% component-auditor share (0D AMBER), the ETR step-up (Step 4, Q3). Nothing to graft.
+
+**Claim 2 — "Pre-registered S-to-C PAT gap swung to +15.29 Cr (+111%); pre-condition (i) met."**
+Bear counter: the subsidiary block swung from a −16.4 Cr gap (Q3 FY26) to +15.3 Cr in two quarters — a recently-turned, volatile base; the +15.04 Cr is component-auditor-reviewed, not principal; it coincides with falling volume (price/mix, not utilisation — Warangal still 72%); durability unproven.
+**Survives?** NO. A4 states exactly this in Step 4A ("durability the central open question — needs one more clean quarter + FY26 AR") and caps pre-condition (i) as met-on-number-not-durable.
+
+**Claim 3 — "Op EBITDA margin +334 bps YoY (consol) / +487 bps (std) — margin expansion."**
+Bear counter: EBITDA/Ton (non-GAAP) is flattered by the falling-volume denominator; the margin gain may be a transient polymer-price/mix effect that reverses if volume recovers only at lower realisation; standalone OI structural reset (9.86→3.52, CCPS conversion) permanently lowers standalone PAT.
+**Survives?** NO. A4 flags the denominator effect (A3-F16-02, Step 2 diag 2), makes sustainability the central management question (Q12/Q14), and treats the OI reset as structural (Step 2 diag 3, Step 4).
+
+**Surviving bear counters requiring graft into A4: none.** The review is already symmetric — each positive is paired with its filing-supported bear.
+
+---
+
+## SPECIFIC RE-AUDIT CHECKLIST (task items a–g)
+
+- **(a) Ties to all three ledgers, no orphan/unreviewed unit, zero-standing retained** — PASS. 14 notes / 64+28 line items / 15 auditor paras / 6 entities / 5 board-outcome categories / 34 slides all reconcile; 4 zero-standing OCI rows retained and acknowledged.
+- **(b) Deck reconciliation arithmetically correct; no deck non-GAAP or different-basis figure silently overrode the filed number** — PASS. Every combined deck line re-derived to the filed cells; EBITDA/Ton and Cash Profits explicitly quarantined as non-GAAP.
+- **(c) Volume −11.2% consol / −13.4% std YoY and Q3 FY26 consol PAT −0.5 Cr are supported by deck line cites (not invented)** — PASS. Volume figures are management's own bullet text s12 L298-299; Q3 −0.5 is the printed PAT bar s10 L245. Both are direct extract cites, not chart-order inferences.
+- **(d) Every deck AMBIGUOUS/FORWARD-SIGNAL finding maps to >=1 management question** — PASS with two benign notes (OBS-2): A3-F7-01→Q12, A3-F15-01→Q13, A3-F16-02→Q14, A3-F16-03/A3-F6-01deck→Q15, A3-F6-01deck→Q16, A3-F16-01→Q2, A3-F8-01→Q3, A3-F10-01→Q5. A3-F2-02 (explanatory) and A3-F14-01deck (immaterial tidiness) reasonably folded into narrative/cluster.
+- **(e) Net debt not computable; cash conversion INDETERMINATE (deck did not close)** — PASS. No balance sheet in any of the three docs; Step 5 leaves net debt ND and cash conversion INDETERMINATE, caps off a clean PROCEED, names the missing evidence (H1 cash flow + AR balance sheet). Tripwire 3 RED.
+- **(f) No NOT FOUND value estimated** — PASS with one traceability flag (OBS-3, below). ND used consistently for EPS share-adjusted, CFO, capex, net debt, ROCE.
+- **(g) Decision Status unchanged; no committed trigger** — PASS. WATCHLIST retained (Step 0A/8/verdict/YAML); no committed thesis-broken or growth trigger exists, so none fired; A4 flags, human decides.
+
+**OBS-3 (to A4, pre-save polish, NOT a completeness failure):** the "FY26 combined loss ~Rs 11.20 Cr" for Ecopet+Ecotech (Q1 management question + Step 4A) is **not derivable from any of the three extracts** and carries no source label, unlike A4's other carried-in figures which are tagged "(Notion)". Its direction is corroborated by the filed FY26 S-to-C gap of −9.62 Cr (subs were net-negative contributors), so it is not a fabricated current-period value and does not touch any derived metric, gate, or the verdict. A4 should append the source tag (Notion / prior AR / prior component-auditor figure) or restate as "prior-year loss (per baseline)." Because it is a prior-period directional comparison and not a filled current-statement number, it does not rise to a never-estimate violation that blocks save — it is a labelling fix.
 
 ---
 
 ## VERDICT
 
-**COMPLETE.**
-
-The one prior-loop arithmetic failure (consol Reported EBITDA Q4 FY26) is corrected to 56.84 and is internally consistent across all four periods of the Reported-EBITDA row, with no sibling cell disturbed. Independent re-run finds: coverage total (zero orphans, zero ledger gaps; standalone and consolidated both first-class; four zero-standing rows retained); every derived metric, margin, YoY/QoQ, PAT bridge and ratio ties from the raw Lakh cells within rounding; no NOT-FOUND value estimated; all three strongest bear counters already incorporated; Decision Status unchanged without a committed trigger. Proceeds to Notion save.
+**COMPLETE.** All three audits pass. Coverage reconciles to all three ledgers with no orphan or missing-from-ledger rows; every derived metric, margin, YoY/QoQ, PAT bridge, S-to-C ladder, and deck-vs-filing reconciliation recomputes from the raw Lakh cells within rounding; no bear counter survives unincorporated (A4 is already symmetric); net debt correctly ND and cash conversion INDETERMINATE; no NOT FOUND estimated in the current statements; Decision Status unchanged at WATCHLIST with no committed trigger. Three non-blocking polish notes (OBS-1 A3-F16-04 label, OBS-2 optional question mapping, OBS-3 source-tag the ~Rs 11.20 Cr prior-year figure) are recommended for A4 before save but do not affect completeness or the verdict. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -170,4 +132,8 @@ arithmetic_mismatches: []
 surviving_bear_counters: []
 loop_back_to: ""
 gap: ""
+notes_non_blocking:
+  - "OBS-1 (A4): finding A3-F16-04 listed as incorporated but not surfaced in body; label or drop (A3 notes not in A5 inputs, cannot adjudicate as true orphan)."
+  - "OBS-2 (A4): A3-F2-02 (explanatory) and A3-F14-01-deck (immaterial tidiness) folded into narrative/cluster rather than own question; acceptable."
+  - "OBS-3 (A4): 'FY26 combined loss ~Rs 11.20 Cr' (Ecopet+Ecotech) not in any of the three extracts and unlabelled; direction corroborated by filed FY26 S-to-C gap -9.62 Cr; append source tag before save. Non-blocking (prior-period comparison, not a filled current value; no metric/gate/verdict impact)."
 ```

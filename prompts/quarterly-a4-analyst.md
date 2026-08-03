@@ -48,6 +48,24 @@ feeding both. Produce, per the protocol step sequence:
   that produces no question and no monitoring item has not been processed.
 - A MONITORABLES / CATALYST list seeded by the A3 commitment register (F6) and
   the Board Outcome forward items (F13), each with its implied date.
+- A PLAIN-LANGUAGE BRIEF (MANDATORY on EVERY run, whether or not anyone asks;
+  the FINAL narrative section of the review, immediately before the closing
+  YAML). Four labelled parts, in this order:
+  1. SUMMARY NARRATIVE — 10 to 20 lines, plain sentences, numbers first, no
+     jargon and no AI vocabulary; what happened this quarter and what it means
+     for the thesis and the decision.
+  2. SECTOR INTELLIGENCE — the industry read (demand cycle, regulation, payer
+     mix, structural tailwinds/headwinds) as it bears on this company.
+  3. BUSINESS-MODEL INTELLIGENCE — how the company actually makes money, its
+     unit economics, and what this quarter says about model drift.
+  4. COMPETITION INTELLIGENCE — where the company wins and is structurally
+     weaker vs named peers, and the competitive risk to watch.
+  The three intelligence parts draw on the Notion thesis (peer / sector /
+  business-model context passed inline) reconciled with this quarter's
+  findings. PROVENANCE-LABEL every figure: mark whether it comes from prior
+  Notion / peer work or from this quarter's filings, and name any metric the
+  filings did not disclose. This brief is a standing deliverable, not an
+  on-request extra.
 
 ## DISCIPLINE
 1. Complete the entire review in one run. Never stop to ask.
@@ -60,8 +78,10 @@ feeding both. Produce, per the protocol step sequence:
 
 ## OUTPUT
 Write the full merged review to `review_<ticker>_<quarter>.md` (complete
-tables, never summaries — this becomes institutional memory). End with exactly
-this fenced YAML block:
+tables, never summaries — this becomes institutional memory). The PLAIN-LANGUAGE
+BRIEF (four labelled parts above) is the last narrative section, placed
+immediately before the closing YAML block and produced on every run. End with
+exactly this fenced YAML block:
 
 ```yaml
 stage: A4-analyst
@@ -85,6 +105,7 @@ sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period
 questions_for_management: []   # {q, from_finding_id}
 monitorables: []               # {item, implied_date, source_ref}
 flags: []
+plain_language_brief_included: true   # MUST be true — narrative + sector + business-model + competition brief is a standing deliverable
 review_path: ""
 ```
 

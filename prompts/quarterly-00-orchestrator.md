@@ -162,17 +162,29 @@ After all documents pass A1-A3:
 7. COMMIT the run folder (`work/` files) with message
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
-   reviewed), the top forensic findings, and the working-file paths.
+   reviewed), the top forensic findings, and the working-file paths. ALSO
+   surface the A4 PLAIN-LANGUAGE BRIEF in the chat report every run (the
+   summary narrative plus the sector, business-model, and competition
+   intelligence) — it is a standing part of the deliverable, not something the
+   user has to ask for.
 
 ---
 
 ## NOTION SAVE (after A5 COMPLETE only)
 
+Perform the Notion save INLINE in this orchestrator session. Do NOT delegate it
+to a subagent (Sonnet or otherwise): the save is a mechanical
+`insert_content` / `update_properties` sequence, and a subagent only adds
+latency and hand-off risk with no benefit. Call the Notion tools directly.
+
 Per Role 4 Step 9 and existing save mechanics:
 - Fetch the company page first.
 - `insert_content` with `position: end` for the full review (complete tables,
-  never summaries; the page is institutional memory). Split large content
-  across sequential insert calls.
+  never summaries; the page is institutional memory). The full review now ends
+  with the A4 PLAIN-LANGUAGE BRIEF (summary narrative + sector +
+  business-model + competition intelligence); it is part of the review and is
+  saved with it, every run — never drop it and never treat it as optional.
+  Split large content across sequential insert calls.
 - `update_properties` to PREPEND the date-stamped Key Notes line to the
   pipe-delimited audit trail, preserving all prior entries.
 - Escape pipe characters inside table cells as `\|`.

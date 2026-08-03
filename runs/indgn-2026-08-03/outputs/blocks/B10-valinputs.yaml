@@ -1,0 +1,175 @@
+stage: B10-valinputs
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - {field: "credit_rating", severity: "MEDIUM", note: "No credit rating PDF extracted; no agency working-capital/cash-flow commentary available to anchor FLAG-CASH and FLAG-CONTINGENT-LIABILITY downstream"}
+  - {field: "tata_elxsi_peer_fy26_data", severity: "MEDIUM", note: "Screener CSV data stale (FY2015); peer median calculation degraded to three peers (eClerx, IKS, Sagility) instead of four"}
+  - {field: "standalone_consolidated_pbt_bridge", severity: "MEDIUM", note: "Never quantified across FY24-26 in concalls or AR MD&A; standalone PAT +16.9% vs consolidated -1.4% YoY suggests international/acquired subsidiary drag but exact breakdown NOT FOUND"}
+  - {field: "ike_fye26_balance_sheet", severity: "LOW", note: "IKS balance-sheet rows blank for FY26; EV calculation used FY25 (latest complete data)"}
+  - {field: "peer_roce_benchmarks", severity: "LOW-MEDIUM", note: "None of four peer CSVs disclose ROCE; Pillar 1 ROCE already approved operationally, so not material to stage 11 but limits peer relative-quality check"}
+flags:
+  - {type: "FLAG-GATE0", reason: "FY26 PAT -1.4% YoY despite +23.6% revenue, driven by Rs 20.3 cr TCPA provision, ~Rs 42 cr other-income fall, elevated M&A D&A. Not a deal-breaker (GOOD+ classification) but signals input-phase execution drag."}
+  - {type: "FLAG-CASH", reason: "Consolidated trade receivables +30.7% YoY, unbilled +77.5%, outpace 23.6% revenue growth. Partially offset by OCF/PAT 1.62x (improved). Mixed signal; growth-induced determination per FTTCP but WC growth rate itself warrants flag per stage rules."}
+  - {type: "FLAG-CONTINGENT-LIABILITY", reason: "Combined contingent liabilities (TP dispute Rs 1,114 cr + TCPA max Rs 417 cr) = Rs 1,531 cr = 38.2% of FY26 PAT, exceeding 25% threshold. Unresolved contradiction on TP status (Board's Report final Section 144B order vs Note 33 draft language)."}
+  - {type: "FLAG-GOODWILL", reason: "Goodwill+intangibles 51.5% of net worth (Rs 16,176 mn / Rs 31,387 mn); impairment assumptions eased (discount rate 17.2%→12.5%, terminal growth→5.0%) in same year new goodwill added. Concentration and assumption-timing risk."}
+  - {type: "FLAG-GOVERNANCE", reason: "Independent director K.V. Tenneti ~18 years tenure (>10-year flag); board/committee attendance gaps; CARO xi(a) employee fraud Rs 2.43 mn recovered. Not integrity-breakers but adds friction in M&A-heavy, audit-transition year. Verdict TRUSTWORTHY (6 clean + 4 caution, 0 red)."}
+  - {type: "SHARED-CATALYST", reason: "Revenue growth on fixed capital base drives BOTH Pillar 1 forward ROCE recovery AND Pillar 3 +5x growth premium (3b moat +3x). Single point of failure; Role 3 must stress-test."}
+table:
+  company_identity:
+    company_name: {value: "Indegene Limited", source: "Manifest"}
+    ticker: {value: "INDGN", source: "Manifest"}
+    cmp: {value: "Rs 545.25 per share", source: "Manifest"}
+    market_cap_cr: {value: 13142, source: "Manifest"}
+    sector: {value: "Life-Sciences Commercialization & Medical/Regulatory Services", source: "B04"}
+    business_model_type: {value: "Asset-light professional services (outsourced managed services + platform)", source: "B04"}
+    sector_cap_row: {value: "Platform / SaaS / IT services, 45x", source: "FTTCP Deliberation p.23 (operator confirmed; manifest Pharma/CDMO 38x is collector defect)"}
+    shares_outstanding_crore: {value: 24.09, source: "Screener Data_Sheet row 52; FY26 audited consolidated basis"}
+    book_value_per_share: {value: "Rs 130.38", source: "Total equity Rs 3,138.7 cr / 24.09 cr shares (Consolidated Balance Sheet p.11)"}
+    net_cash_cr: {value: 1337, source: "Cash/investments 1,481 cr minus lease liabilities 144 cr (B01, task instruction)"}
+    enterprise_value_cr: {value: 11805, source: "Market cap 13,142 MINUS net cash 1,337"}
+    gearing_ratio: {value: "Nil", source: "AR Note 28 'Nil gearing' both years"}
+  latest_financials_fy26:
+    revenue_cr: {value: 3510.5, source: "Consolidated Statement P&L p.10 row 548, FY26 audited"}
+    ebitda_cr: {value: 670.7, source: "PAT 401.1 + Tax 123.9 + Interest 19.3 + D&A 126.4"}
+    ebitda_margin_pct: {value: 19.1, source: "670.7 / 3,510.5"}
+    pat_cr: {value: 401.1, source: "Consolidated Statement P&L p.10, FY26 audited (4,011 mn)"}
+    pat_margin_pct: {value: 11.4, source: "401.1 / 3,510.5; B02 notes margin compressed from 14.3% FY25"}
+    diluted_eps: {value: 16.62, source: "Consolidated Statement P&L p.10, line 585(b), FY26"}
+    cfo_cr: {value: 650.8, source: "Consolidated Cash Flow p.12, FY26 audited"}
+    fcf_cr: {value: 606.5, source: "B01 notes; results FY26 p.12"}
+    capex_cr: {value: 44.3, source: "Consolidated Cash Flow p.12, 'Purchase of PPE'"}
+    depreciation_cr: {value: 126.4, source: "Consolidated Statement P&L p.10, FY26 audited (1,264 mn)"}
+    finance_costs_cr: {value: 19.3, source: "Consolidated Statement P&L p.10, FY26 audited (193 mn)"}
+    cfo_pat_ratio: {value: 1.62, source: "B02 'consolidated OCF/PAT improved to 1.62x (from 1.09x FY25)'; B01 block_b_trend"}
+    fcf_pat_ratio: {value: 1.51, source: "606.5 / 401.1"}
+    wc_days: {value: 83.3, source: "B01 'WC days near-flat 84.6->83.3 (the only two comparable years FY25-26)'"}
+    cash_conversion_determination: {value: "GROWTH INDUCED, not structural", source: "FTTCP Deliberation p.2, Pillar 2 input; Pillar 2 multiplier 1.30x"}
+  q1_fy27_interim:
+    revenue_cr: {value: 1063.1, source: "Q1 FY27 Consolidated Statement P&L p.4, row 193 (10,631 mn)"}
+    pat_cr: {value: 116.2, source: "Q1 FY27 Consolidated Statement P&L p.4, line 209 (1,162 mn)"}
+    diluted_eps: {value: 4.81, source: "Q1 FY27 Consolidated Statement P&L p.4, line 230(b)"}
+  three_year_trend:
+    revenue_cagr_fy24_26_pct: {value: 16.9, source: "Screener Data_Sheet row 11: (3,510.5 / 2,589.6)^(1/2) - 1 = 16.9% FY24-26 CAGR"}
+    pat_cagr_fy24_26_pct: {value: 9.1, source: "Screener row 24: (401.1 / 336.7)^(1/2) - 1 = 9.1% FY24-26 CAGR"}
+    roce_latest_caveat: {value: "NOT COMPUTED (depressed by Rs 11.3 bn goodwill FY26 M&A; underlying model intact)", source: "B01 M3 capital efficiency score 1 FY26 vs score 5 FY25 pre-BioPharm"}
+  dividend:
+    declared_per_share: {value: "Rs 2.25", source: "FY26 Results announcement p.1, confirmed Q1 FY27 note 7"}
+    paid_during_year: {value: "Rs 2.00 per share (~Rs 480 mn)", source: "B02 finding rank 13; Cash Flow p.12"}
+    payout_track_record: {value: "Second consecutive annual payout post-IPO", source: "B02 finding rank 13"}
+  credit_rating:
+    agency: {value: "NOT FOUND", source: "Input gap HIGH per B01"}
+    wc_commentary_quote: {value: "NOT FOUND", source: "No rating PDF extracted"}
+  management_guidance:
+    credibility_grade: {value: "B (Good)", source: "B05: 3 delivered / 5 partial / 0 missed; capped below A by softening margin-recovery specificity and unaddressed consolidated-PAT-bridge"}
+    revenue_guidance: {value: "No formal guidance (company policy)", source: "B05 'policy honored consistently across Q2/Q3/Q4 FY26 concalls'"}
+    margin_guidance: {value: "~20% EBITDA (vague H2 FY27; previously ~20-21% Q2 FY26)", source: "B05 guidance rows 29 and 41: target specificity softened Q4 vs Q2"}
+    top_triggers_3: {value: "(1) Large outcome-based deal revenue realization H2 FY27; (2) EBITDA margin recovery ~20% H2 FY27; (3) Tectonic Germany expansion", source: "B05 triggers rows 1-3; B07 catalysts_12m"}
+  emerging_moat:
+    em_score: {value: 31, source: "B07 line 13"}
+    em_classification: {value: "STRENGTHENING", source: "B07 line 14"}
+    evidence_quality_mix: {value: "Mostly-📄 documented (14 anchored documented items)", source: "B07 completionist_recount"}
+    strategic_asset_yes_no: {value: "Yes: embedded regulated workflows (switching-cost moat), regulatory/compliance expertise, proprietary AI platform stack (Cortex, Invisage, Tandem, NEXT), top-20 client roster", source: "B04 moats_present rows 1-5; B07 active_categories C1-D1"}
+    moat_risks_top3: {value: "(1) F2 execution gap: margin recovery 6-8Q promise not delivered by Q1 FY27; (2) Data-asset durability vs foundation-model commoditization; (3) War-chest drawdown (50.0%→32.0% cash/assets FY26) on acquisitions with moderate-evidence synergies", source: "B07 top_moat_risks"}
+  capital_structure:
+    roce_fye26_caveat: {value: "Depressed by Rs 11.3 bn goodwill from FY26 acquisitions (M&A/accounting effect, not structural); underlying asset-light model intact", source: "B01 M3 capital efficiency; flagged as temporary depreciation"}
+    roe_fye26_pct: {value: 12.8, source: "PAT 401.1 / Equity 3,138.7"}
+    pillar_1_roce_forward_verdict: {value: "RECOVERING (probability 50-55%, catalyst Moderate)", source: "FTTCP Deliberation p.2, Operator-Approved Valuation Pillars table line 114"}
+    pillar_1_normalisation_route: {value: "Route A (Operational ROCE 25.8%, statutory alt 15.4%)", source: "FTTCP table p.114-115; non-operating capital 41.8% stripped; blend skipped"}
+    pillar_1_base_multiple: {value: 20.4, source: "FTTCP table p.115: 0.5 × 25.8% + 7.5 = 20.4x"}
+  peer_multiples_fy26_fy25:
+    peer_set: {value: "eClerx (FY26), IKS (FY25 balance sheet), Sagility (FY26); Tata Elxsi stale (FY2015)", source: "Screener CSVs; Tata Elxsi data not current"}
+    pe_eclerx: {value: 25.5, source: "Market cap 18,032 / PAT 706.2"}
+    pe_iks: {value: 54.0, source: "Estimated mcap 26,257 / PAT 486.1 (FY25 data; FY26 balance sheet incomplete)"}
+    pe_sagility: {value: 22.2, source: "Market cap 20,527 / PAT 924.8"}
+    pe_indgn: {value: 32.8, source: "13,142 / 401.1"}
+    pe_peer_median: {value: 23.9, source: "Median of eClerx 25.5, Sagility 22.2 (IKS 54.0 outlier; excluding Tata Elxsi stale)"}
+    ev_ebitda_eclerx: {value: 15.3, source: "EV (mcap - net cash) / EBITDA"}
+    ev_ebitda_iks: {value: 33.2, source: "FY25 basis; debt/integration noise"}
+    ev_ebitda_sagility: {value: 11.5, source: "Sagility FY26 EV/EBITDA"}
+    ev_ebitda_indgn: {value: 17.6, source: "11,805 / 670.7"}
+    ev_ebitda_peer_median: {value: 13.4, source: "Median of eClerx 15.3, Sagility 11.5 (IKS 33.2 outlier; excluding Tata Elxsi)"}
+    ev_revenue_indgn: {value: 3.36, source: "11,805 / 3,510.5"}
+    revenue_growth_cluster: {value: "23-30% YoY", source: "eClerx +22.4%, Sagility +29.1%, INDGN +23.6%, IKS FY25 +37.9% (elevated post-Palomar)"}
+    peer_set_limitations: {value: "Tata Elxsi CSV stale (FY2015); IKS FY26 balance sheet incomplete; ROCE not disclosed comparably", source: "Screener CSVs and B06 peer analysis"}
+  tam_som:
+    tam_conservative_usd_bn: {value: 153, source: "B09 tam_cr: Frost & Sullivan conservative bound"}
+    tam_realistic_usd_bn: {value: 189, source: "B09 tam_cr realistic"}
+    mgmt_tam_claim_usd_bn: {value: 135, source: "B09 mgmt_claim_cr"}
+    mgmt_tam_assessment: {value: "CONSERVATIVE (0.98x vs Frost & Sullivan bound), not inflated", source: "B09 mgmt_claim_read"}
+    sam_usd_bn: {value: 107, source: "B09 sam_cr (narrow definition, excluding CSO, full-CRO, pharma manufacturing)"}
+    som_3yr_revenue_cr: {value: 606.4, source: "B09 som_3yr_cr FY27-29"}
+    som_implied_cagr_3yr_pct: {value: 20.0, source: "B09 som_implied_revenue_cagr yr3 row 20"}
+    som_implied_cagr_5yr_pct: {value: 18.8, source: "B09 som_implied_revenue_cagr yr5"}
+    current_sam_share_pct: {value: 0.41, source: "B09 current_sam_share_pct (INDGN FY26 3,510.5 cr / SAM USD 107 bn)"}
+    runway_classification: {value: "MASSIVE", source: "B09 runway_class; revenue headroom 243x"}
+  governance_ownership:
+    promoter_status: {value: "No formal promoter; professionally managed", source: "B08 verdict TRUSTWORTHY; CA Dawn Investments exited 10.2% FY26 via orderly block sales; Nadathur family office (Infosys-lineage) since 2005"}
+    family_director_ownership_pct: {value: 21.04, source: "B08 'Directors and relatives (excl. independent/nominee) hold 21.04%'"}
+    fii_dii_pct: {value: 18.66, source: "B08 transition_evidence: Jun 2026 holding; rose from 7.63% Jun 2024"}
+    pledge_pct: {value: 0, source: "B08 pledge_pct_latest; no promoter pledge structure"}
+    board_quality: {value: "TRUSTWORTHY (6 clean, 4 caution, 0 red); caution items: TP dispute, MCA defects in remediation, TCPA litigation provisioned, K.V. Tenneti tenure ~18 years (postal ballot approved)", source: "B08 scorecard; B03 FLAG-GOVERNANCE"}
+    independent_director_tenure_risk: {value: "K.V. Tenneti ~18 years (>10-year flag); approved via postal ballot LODR 17(1A)", source: "B03 FLAG-GOVERNANCE; B08 finding rank 6"}
+    committee_attendance_gaps: {value: "Dzialga 60% board, Parikh 40% Audit (role ceased 15-Jul-2026), Bharadwaj 0% during tenure", source: "B03 FLAG-GOVERNANCE"}
+  contingent_liabilities:
+    tp_dispute_cr: {value: 1114, source: "AR Note 33 p.204; Standalone Notes pp.162-165; contested via MAP, unprovided"}
+    tp_dispute_pct_of_pbt: {value: 21.2, source: "1,114 / 5,250 (FY26 PBT)"}
+    tcpa_litigation_provision_cr: {value: 203, source: "Exceptional Item Note p.206"}
+    tcpa_max_exposure_cr: {value: 417, source: "Q1 FY27 note 6 'maximum settlement amount'; court approval pending; term sheet signed 25-May-2026"}
+    tcpa_status: {value: "Settlement agreed in principle; court approval pending as of Q1 FY27", source: "Q1 FY27 note 6"}
+    combined_contingent_liability_pct_of_pat: {value: 38.2, source: "(1,114 + 417) / 4,011 = 38.2%"}
+    combined_contingent_liability_threshold: {value: "Exceeds 25%-of-PAT flag", source: "B03 FLAG-CONTINGENT-LIABILITY"}
+  accounting_quality:
+    overall_rating: {value: 6.5, source: "B03 overall_quality (scale /10); components: governance 6.5, accounting 7.0, balance_sheet 6.0, earnings 7.0"}
+    auditor_status: {value: "First-year auditor (Deloitte Haskins & Sells, new FY26) in acquisition- and litigation-heavy year", source: "B02 finding rank 7; Auditor's Report p.169"}
+    restatements: {value: "Segment reorganization (BA merged into ECS Oct-2025); Goodwill CGU relabelling (Omnichannel->EMS)", source: "B02 restatements_found rows 1-2"}
+    going_concern_language: {value: "NONE found", source: "B02 'consistent with net-cash, unlevered balance sheet'"}
+  quality_flags:
+    flag_gate0: {value: "FY26 PAT -1.4% YoY despite +23.6% revenue, driven by TCPA provision, other-income fall, M&A D&A. Not deal-breaker (GOOD+ classification) but signals execution drag.", source: "B01 FLAG-GATE0, p.14"}
+    flag_cash: {value: "Trade receivables +30.7% YoY, unbilled +77.5%, outpace +23.6% revenue; offset by OCF/PAT 1.62x (improved). Mixed signal, growth-induced per FTTCP.", source: "B01/B02/B03 reaffirmed"}
+    flag_contingent_liability: {value: "Combined contingent liabilities Rs 1,531 cr = 38.2% of FY26 PAT, exceeds 25% threshold. Unresolved TP status contradiction (Board's Report vs Note 33).", source: "B03 FLAG-CONTINGENT-LIABILITY"}
+    flag_goodwill: {value: "Goodwill+intangibles 51.5% of net worth; impairment assumptions eased (discount rate 17.2%→12.5%, terminal growth→5.0%) in same year new goodwill added (Rs 6.4 bn BioPharm).", source: "B03 FLAG-GOODWILL"}
+    flag_governance: {value: "K.V. Tenneti tenure ~18 years (>10-year flag); board/committee attendance gaps; CARO xi(a) employee fraud Rs 2.43 mn recovered. Verdict TRUSTWORTHY (6 clean + 4 caution, 0 red).", source: "B03 FLAG-GOVERNANCE"}
+    shared_catalyst_flag: {value: "Yes: revenue growth on fixed capital base drives BOTH Pillar 1 forward ROCE recovery AND Pillar 3 +5x growth premium (3b moat +3x). Single point of failure; Role 3 must stress-test.", source: "FTTCP Deliberation p.130, Operator-Approved Valuation Pillars table line 130"}
+  ua_qualifiers:
+    listed_12m: {value: true, source: "IPO 13-May-2024; run date 2026-08-03 = 14 months"}
+    gate0_or_em: {value: true, source: "Gate 0 score 90 (>60), EM score 31 (>25); both gates meet"}
+    fii_dii_lt3: {value: false, source: "FII+DII 18.66% (fails <3% threshold)"}
+    all_met: {value: false, source: "Only 2 of 3 gates met; UA qualifier not applied (18.66% FII+DII exceeds <3% requirement)"}
+  authoritative_pillars_carried:
+    pillar_1_return: {value: "25.8% operational", source: "FTTCP Operator-Approved table p.114, line 115"}
+    pillar_1_normalization: {value: "Route A (Operational); non-operating capital 41.8% stripped; blend skipped", source: "FTTCP table p.115"}
+    pillar_1_base: {value: 20.4, source: "0.5 × 25.8% + 7.5"}
+    pillar_2_cash_multiplier: {value: 1.30, source: "FTTCP table p.115, growth-induced, elite conversion CFO/PAT 1.62x"}
+    pillar_3_premium: {value: 5, source: "FTTCP table p.116: 3a +2x (growth visibility), 3b +3x (moat EM 31), 3c +0x"}
+    strategic_premium: {value: 0, source: "FTTCP table p.116, no licence monopoly"}
+    ua_premium: {value: 0, source: "FTTCP table p.122, institutions 18.66% vs <3% requirement"}
+    sector_cap_row_authoritative: {value: "Platform / SaaS / IT services, 45x", source: "FTTCP Deliberation Decision 2 p.22-23, confirmed by operator's 31.5x ruling"}
+    destination_pe_authoritative: {value: 31.5, source: "FTTCP Deliberation Decision 2 p.21, Operator-Approved table p.127, additive track (RRM 28.1x rejected by operator)"}
+    earnings_basis_authoritative: {value: "FORWARD (one year forward P/E)", source: "FTTCP Deliberation Decision 1 p.19-20, Operator-Approved table p.127; FY26 earnings depressed by non-recurring items"}
+    hurdle_tier: {value: "Tier B, 20%; hurdle ratio threshold 1.728, entry divisor 1.728", source: "FTTCP Operator-Approved table p.128"}
+    position_ceiling: {value: "Medium 4-6%", source: "FTTCP Operator-Approved table p.129"}
+  forward_eps_assembly:
+    fy26_actual_eps: {value: 16.62, source: "Consolidated Statement P&L p.10, diluted EPS, FY26 audited"}
+    fy26_revenue_cr: {value: 3510.5, source: "Consolidated Statement P&L p.10, FY26 audited"}
+    q1_fy27_revenue_cr: {value: 1063.1, source: "Q1 FY27 Consolidated Statement P&L p.4 (1 quarter only)"}
+    share_count_cr: {value: 24.09, source: "Screener Data_Sheet row 52; use 24.09 cr per operator input (240.53 mn shares)"}
+    fy26_ebitda_margin_pct: {value: 19.1, source: "670.7 / 3,510.5; depressed by M&A/litigation noise"}
+    fy26_tax_rate_pct: {value: 23.6, source: "123.9 / 525.0 PBT"}
+    cfo_pat_ratio_fy26: {value: 1.62, source: "Elite conversion; growth-induced per FTTCP Pillar 2"}
+    amortization_step_downs: {value: "Rs 50 mn/qtr from Q3 FY27, Rs 25 mn/qtr from Q3 FY28", source: "B05 guidance rows 36-37, B07 catalysts_12m"}
+    som_implied_fy27_target_cr: {value: 4212, source: "SOM-implied 20% CAGR FY26-29 ⇒ 3,510.5 × 1.20 = 4,212 cr (base case before M&A)"}
+    margin_recovery_assumption: {value: "~20% EBITDA H2 FY27 (mgmt target, B credibility; Q1 FY27 at 16.9%, compressed by amortization/integration)", source: "B05 guidance softened; load-bearing assumption per FTTCP p.22"}
+    forward_eps_build_tbd: {value: "Stage 11 to construct FY27/FY28 EPS ladder using revenue/margin/tax/share-count components above; apply 31.5x FORWARD to forward EPS; stage 11 builds to year-after-exit per forward-PE convention", source: "B10 mandate; stage 11 execution"}
+
+conflicts: []
+
+unresolved:
+  - {field: "credit_rating_agency_rating_outlook", why: "No rating PDF extracted for this run; severity MEDIUM", where_might_be: "ICRA/CRISIL/India Ratings press release or rating note if one exists; not provided in input set"}
+  - {field: "rating_wc_cash_flow_commentary_verbatim", why: "No rating PDF extracted; this verbatim quote is needed to anchor FLAG-CASH/FLAG-CONTINGENT-LIABILITY downstream to Stage 11; severity MEDIUM", where_might_be: "Credit rating agency working-capital or cash-flow section of rating note"}
+  - {field: "tata_elxsi_fy26_financial_data", why: "Screener CSV contains only FY2008-FY2015 data (9-year stale); peer median calculation uses only 3 peers (eClerx, IKS, Sagility) instead of 4; severity MEDIUM", where_might_be: "MSEI/BSEINDIA latest quarterly results; Tata Elxsi investor relations website"}
+  - {field: "standalone_vs_consolidated_pat_bridge_fy24_26", why: "Consolidated PAT declined -1.4% YoY despite +23.6% revenue; standalone PAT grew +16.9%; bridge never quantified in any concall or AR MD&A; severity MEDIUM", where_might_be: "Next quarterly call detailed discussion or AR note reconciliation of standalone-subsidiary results"}
+  - {field: "ike_fye26_balance_sheet_data", why: "IKS screener balance-sheet rows blank for FY26; EV and book-value calculations used FY25 (latest complete); severity LOW", where_might_be: "IKS investor relations FY26 annual results announcement"}
+  - {field: "peer_roce_benchmarks", why: "None of four peer screener CSVs disclose ROCE or provide sufficient balance-sheet data to compute it comparably; severity LOW-MEDIUM", where_might_be: "Peer annual reports or investor presentations (would require manual ROCE buildout)"}
+

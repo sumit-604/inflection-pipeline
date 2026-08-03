@@ -1,0 +1,39 @@
+stage: B08-promoter
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags: []
+verdict: "TRUSTWORTHY"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Draft transfer pricing order AY2023-24, proposed adjustment Rs 1,114mn, unresolved, contested via MAP", evidence_tier: "VERIFIED", source: "AR FY25-26 contingent liabilities note (standalone and consolidated)", date: "18 March 2026"}
+  - {finding: "Income tax demand notice u/s 156 for AY2023-24, Rs 43.69 crore including interest", evidence_tier: "VERIFIED", source: "AR FY25-26 Board's Report, Significant and Material Orders section", date: "FY2025-26"}
+  - {finding: "ADT-1 filing chain defect: incumbent auditor Deloitte Haskins & Sells' ADT-1 cannot be filed due to an incorrect date in the erstwhile auditor's 2022 ADT-1; MCA cancellation/GNL-1 application pending", evidence_tier: "VERIFIED", source: "AR FY25-26 Secretarial Audit Report / Board's Report qualifications", date: "self-reported; remediation filed 7 January 2026"}
+  - {finding: "RSU allotment timing deviation: exercise funds credited after date of allotment (USD 43.42), unintended deviation from Companies Act s.39 / FEMA / SEBI allotment norms; voluntarily referred for adjudication/compounding", evidence_tier: "VERIFIED", source: "AR FY25-26 Board's Report qualifications", date: "funds credited 11 March 2026; Board resolution 29 April 2026"}
+  - {finding: "TCPA class action (US, District of New Jersey) against Indegene Inc. and affiliates, class certified 17 July 2025, Rs 203mn one-time litigation provision in Q4 FY26, tied to a discontinued FY19-20 fax-outreach practice", evidence_tier: "VERIFIED", source: "AR FY25-26 contingent liabilities/litigation-expenses note; corroborating media on class certification", date: "provision FY26; certification 17 Jul 2025"}
+  - {finding: "Independent Director K.V. Tenneti has an approximately 18-year board tenure (since 22 July 2008), continuation approved by shareholders via postal ballot under SEBI LODR Reg 17(1A)", evidence_tier: "VERIFIED", source: "AR FY25-26 Secretarial Audit director table; postal ballot resolution list", date: "ongoing as of FY26 AR"}
+  - {finding: "Board/committee attendance gaps: Dzialga 60% Board attendance; Parikh (Executive Director) 40% Audit Committee attendance (role ceased 15 Jul 2026); Bharadwaj 0% attendance during his brief FY26 nominee-director tenure prior to CA Dawn's exit", evidence_tier: "VERIFIED", source: "AR FY25-26 Corporate Governance attendance tables", date: "FY2025-26"}
+  - {finding: "Employee fraud (asset misappropriation) of Rs 2.43mn identified and reported under CARO/s.143(12); fully recovered during the year", evidence_tier: "VERIFIED", source: "AR FY25-26 Board's Report and CARO clause xi(a)", date: "FY2025-26"}
+transition_evidence:
+  - "Institutional (FII+DII) shareholding rose from 7.63% (Jun 2024) to a peak of 19.54% (Dec 2025), settling 18.66% (Jun 2026) -- source: operator-supplied screener shareholding table (ANCHORED-EQUIVALENT), Jun2024-Jun2026"
+  - "CA Dawn Investments (Carlyle/Brighton Park vehicle) fully exited its 10.20% stake via three disclosed, rising-price block trades (Rs 452 IPO May-2024, Rs 618 Dec-2024, ~Rs 591-592 Jun-2025), absorbed by Premji Invest affiliate, Capital Group, Societe Generale, Eastbridge Group, Abakkus -- source: AR shareholding table (exit confirmed by nil current-year balance) + Business Standard/Bajaj Broking media coverage, June 2025"
+  - "Two new independent directors with credentialed outside backgrounds appointed effective January 2026: Jill Mary De Simone (US oncology/commercialization) and Neeraj Bharadwaj (PE/capital allocation, ex-CA Dawn nominee converted to independent) -- source: AR FY25-26 director appointment resolutions"
+  - "Audit Committee de-risked: Executive Director Sanjay Parikh ceased Audit Committee membership effective 15 July 2026, removing the sole executive seat on that committee -- source: AR FY25-26 Corporate Governance section"
+pledge_pct_latest: 0
+pledge_trend: "not applicable -- no promoter/pledge structure exists; company has no identified promoter"
+searches_performed:
+  - "Indegene CA Dawn Investments exit stake sale 2025 2026"
+  - "Indegene Ltd SEBI order OR adjudication OR show cause"
+  - "Indegene Manish Gupta Rajesh Nair founders background"
+  - "Indegene IiAS OR SES OR InGovern proxy advisory report"
+  - "Indegene TCPA lawsuit fax class action New Jersey settlement"
+  - "Indegene Glassdoor AmbitionBox employee reviews rating"
+  - "Indegene Limited controversy criticism governance news 2025 2026"
+  - "Indegene CFO resignation OR company secretary resignation OR independent director resigned"
+  - "Nadathur Fareast Pte Ltd Indegene NS Raghavan family office"
+  - "Indegene NCLT OR SFIO OR PMLA OR ED raid OR income tax raid"
+searches_skipped: []
+verdict_basis: "No SEBI/criminal/SFIO/PMLA record found; a high-quality anchor shareholder base (Infosys-lineage Nadathur family office since 2005) absorbed an orderly Carlyle/CA Dawn PE exit via credible long-only institutions (FII+DII 7.6%->18.7%); governance is actively strengthening (two credentialed new independent directors, Audit Committee executive seat removed); the four caution items (unresolved but contested tax/TP dispute, two self-reported MCA procedural defects in remediation, a provisioned legacy US class action, and one long-tenured independent director) are disclosed, bounded, and non-integrity in nature, holding the verdict at TRUSTWORTHY rather than EXEMPLARY."

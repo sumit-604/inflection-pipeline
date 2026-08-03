@@ -1,0 +1,25 @@
+stage: B12b
+company: "Indegene Limited (INDGN)"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 17
+caught: 11
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "BioPharm consolidated at GROSS revenue (gross $38.1mn vs net $29.2mn, pass-through media) inflates accelerating INR headline growth and dilutes blended margin; never framed as a revenue-quality red flag", anchor: "Oct meet p.6 (Suhas); Q2 p.12 (Sameer Dosani Q&A); Q3 p.7; Q4 p.10"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — grade B stands, at the low end; reported-to-adjusted PAT reliance and gross-revenue optics argue against any upgrade"
+redflag_coverage: 94   # 16 of 17 surfaced in some form; fully caught 11/17 = 65%
+findings:
+  - {severity: "MAJOR", location: "B05 4D / 1C vs Oct meet p.6, Q2 p.12, Q3 p.7", description: "MISSED: BioPharm gross-revenue consolidation inflates headline growth and dilutes margin optics; not flagged as revenue-quality issue"}
+  - {severity: "MAJOR", location: "B05 guidance log / 1C vs Oct meet p.8", description: "UNDER-WEIGHTED: BioPharm 3-year revenue stagnation ('stagnating around $40 million gross') vs 15-20% earn-out growth assumption; integration/turnaround execution risk"}
+  - {severity: "MAJOR", location: "B05 2C transparency / 2B vs Q4 p.8", description: "UNDER-WEIGHTED: reported -1.4% to adjusted +12.7% FY26 PAT bridge relies on retroactively-applied Ind AS 109 cash-flow-hedge reclassification plus TCPA add-back; B05 logged hedge change only as a positive"}
+  - {severity: "MINOR", location: "B05 3C vs Q3 p.8, Q4 p.8", description: "UNDER-WEIGHTED: OCF/PAT 154%/162% headline mechanically inflated by rising non-cash amortization; verdict called it genuine strength without caveat (DSO 72->63 is real)"}
+  - {severity: "MINOR", location: "B05 3D vs Q3 p.5/p.9", description: "UNDER-WEIGHTED: renewal price concessions as first AI-driven price give-back inside Indegene's own book, framed only as net-positive"}
+  - {severity: "MINOR", location: "B05 2B vs Q3 p.15, Q4 p.10", description: "UNDER-WEIGHTED: Q3 '150bps already behind us, will not enhance' assurance vs continued non-recovery pushed to H2 FY27 and fresh go-live costs"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 65   # caught (11) / independent flags found (17)

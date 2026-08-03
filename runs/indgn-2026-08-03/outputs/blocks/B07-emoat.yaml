@@ -1,0 +1,50 @@
+stage: B07-emoat
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "B05 concall promise-delivery record not available in this run folder at time of scan; F2 (execution moat) assessed from this stage's own reading of the three main concalls only"
+  - "New Spain legal entity (digest lead) not independently confirmed 📄 in AR text search performed; treated as directional lead only"
+  - "No formal patent/IP filing disclosure found in AR; R&D expenditure not separately disclosed per company's own BRSR statement"
+flags:
+  - "F2 execution-moat gap: EBITDA margin recovery promised 'in 6-8 quarters' from Q2 FY26 not yet delivered as of Q1 FY27 (16.9% vs ~20% historical range); corroborates Gate 0 FLAG-GATE0 on FY26 PAT decline"
+  - "GenAI platform revenue (Tectonic, NAEM, etc.) still small in absolute terms relative to ~₹35,105M FY26 revenue base; do not over-credit narrative over disclosed scale"
+em_score: 31
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem/embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "D2", name: "Digital platform", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24m to scale"}
+  - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "G2", name: "WC improvement trajectory", strength: "Strong", evidence_type: "documented", time_to_materialise: "active now"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-36m"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 14, claim: 12, inference: 2}
+completionist_recount: "📄 recount performed: approximately 14 individually-anchored documented (📄) evidence items across 7 categories (C1, C2, D1, D2-partial, F1, F2-partial, G1, G2, H1-partial, H3); above the 3-6 base-rate midpoint but below the 12-category alarm threshold, judged consistent with Indegene's unusually detailed quarterly KPI fact sheet disclosure; categories without a hard dated quantified anchor (A4, E1, H2, H3, F2) were downgraded to Weak rather than credited on narrative alone."
+catalysts_12m:
+  - {catalyst: "Tectonic expansion beyond Germany beachhead with largest customer", window: "FY27", evidence_type: "documented", anchor: "Q4 FY26 call (30-Apr-2026)"}
+  - {catalyst: "EBITDA margin recovery toward ~20% historical range", window: "H2 FY27", evidence_type: "claim", anchor: "Q2/Q3/Q4 FY26 calls"}
+  - {catalyst: "BioPharm synergy capture (G&A, data subscriptions, GTM)", window: "through FY27", evidence_type: "documented+claim", anchor: "AR p.61; Q3 FY26 call"}
+  - {catalyst: "TCPA litigation settlement court approval", window: "near-term, unspecified", evidence_type: "documented", anchor: "Q4 FY26 call; AR exceptional item note"}
+  - {catalyst: "$10M+ ACV outcome-based omnichannel deal revenue recognition begins", window: "H2 FY27", evidence_type: "documented", anchor: "Q4 FY26 call"}
+  - {catalyst: "Amortization step-down from FY26 acquisitions begins", window: "Q3 FY27 (~₹50M/qtr reduction)", evidence_type: "documented", anchor: "Q3 FY26 call"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "Tectonic Germany beachhead expands to additional markets with largest customer", converting_evidence: "Signed multi-region Tectonic order/ACV disclosure", first_appears: "Concall deal-win disclosure / Inv. Pres. deal table", window: "12-24m (FY27 per mgmt)"}
+  - {optionality: "First $50M+ single customer (largest client)", converting_evidence: "Quarterly top-client revenue crossing $50M", first_appears: "Inv. Pres. quarterly fact sheet", window: "FY27 (mgmt-targeted)"}
+  - {optionality: "EBITDA margin recovery to ~20% delivered as promised", converting_evidence: "Reported EBITDA margin at/above ~20% for 2 consecutive quarters", first_appears: "Quarterly results release / Inv. Pres.", window: "H2 FY27 (mgmt-guided)"}
+  - {optionality: "GEO commercialized as a paid offering", converting_evidence: "Named client contract or disclosed revenue line for GEO", first_appears: "Concall deal-win disclosure or next AR", window: "FY27, uncertain"}
+  - {optionality: "One-Click Submissions/Human-less MLR/Safety-in-a-Box move from pilot to disclosed revenue", converting_evidence: "Named client go-live with TCV", first_appears: "Concall", window: "12-24m"}
+  - {optionality: "BioPharm cost synergies (~$1M p.a.) fully realized", converting_evidence: "Segment margin showing synergy capture", first_appears: "Quarterly results / MD&A", window: "FY27"}
+  - {optionality: "Datavant/Komodo partnerships convert to disclosed revenue-linked or exclusive terms", converting_evidence: "Named contract terms/revenue linkage", first_appears: "AR or exchange filing", window: "NOT FOUND"}
+  - {optionality: "'3 months to 3 days' Agentic AOR pilot becomes a repeatable, revenue-disclosed product", converting_evidence: "Named client contract(s) beyond the single pilot, with ACV", first_appears: "Concall", window: "12-24m"}
+combined_assessment: "EXCELLENT+"
+combined_reasoning: "GOOD+ backward (core 90, 2 confirmed moats) combines with genuinely evidenced MOAT STRENGTHENING forward (em_score 31/80, driven by 📄-anchored customer/data rows) to yield EXCELLENT+; not a transition-alpha setup since backward is already strong, and tempered from EXCEPTIONAL by unproven margin-recovery execution (F2) that directly corroborates the Gate 0 FY26 PAT-decline flag."
+top_moat_risks:
+  - "F2 execution gap: margin-recovery promise (6-8 quarters from Q2 FY26) not yet delivered by Q1 FY27; if it continues, calls into question whether well-evidenced C1/C2/D1 moats convert to bottom-line value"
+  - "D1 data-asset durability against foundation-model/data-aggregator commoditization is management's own open question, not yet resolved"
+  - "War chest (G1) being spent down (cash/total assets 50.0%→32.0% in FY26) on acquisitions whose synergy capture (H1) is still moderate-evidence only"
+  - "Largest-customer dependency remains material (C2 top-client still 9.0% of revenue, top-20 still 66.6%) despite the clear de-concentration trend"

@@ -1,0 +1,41 @@
+stage: B00-inputs
+company: INDGN
+run_date: 2026-08-03
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+listed_window: recently-listed  # ~May 2024, within ~3y => prospectus is a HIGH gap
+no_promoter_company: true       # Indegene declared no identified promoter at IPO
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    note: "Recently-listed (~May 2024); DRHP restated pre-IPO financials + group map absent. Backward baseline runs post-listing years + AR comparatives + screener history. Promoter/group-history loss lighter (no-promoter company)."
+  - type: rating
+    severity: MEDIUM
+    note: "No credit-rating PDF. Stage 10 rating_wc_quote unresolved; FLAG-CASH determination has no rating rationale quote."
+  - type: announcements
+    severity: LOW
+    note: "Absent from collection; partially filled NON-ANCHORED by operator 6-month digest. Reg-30 primary filings not collected."
+  - type: shareholding
+    severity: RESOLVED
+    note: "Filled by operator screener screenshot (anchored-equivalent). Closes Block E FII/DII + UA FII+DII qualifier. No promoter row."
+  - type: research
+    severity: NONE
+    note: "Operator digest + 6 broker notes (in presentation/) available as NON-ANCHORED leads only; no effect on anchored evidence."
+collector_defects:
+  - "sector_cap_row 'Pharma / CDMO' MISMATCH; Indegene is life-sciences commercialization / healthcare IT-BPM services (peers eClerx/IKS/Sagility/Tata Elxsi). Correct row chosen in phase-3 stage-11."
+  - "presentation/ folder holds 6 broker research notes + 1 company deck; broker notes routed as non-anchored research."
+  - "concalls/ Oct-08-2025 file is an analyst/investor meet transcript, not a quarterly earnings call."
+document_identities:
+  annual_report: "FY2025-26 (y/e 31 Mar 2026), fresh"
+  results:
+    - "708edf80: Q4 FY26 + full-year FY26 audited (29 Apr 2026)"
+    - "085904ac: Q1 FY27 unaudited (quarter ended 30 Jun 2026, 30 Jul 2026)"
+  earnings_concalls_oldest_first:
+    - "Concall_Nov_2025 = Q2 FY26"
+    - "Concall_Feb_2026 = Q3 FY26"
+    - "Concall_May_2026 = Q4 FY26 + full year"
+  investor_meet_color: "Concall_Oct_2025 = Analysts/Investors meet (6 Oct 2025)"
+  company_investor_deck: "Investor_Presentation_1.pdf (only anchored deck)"
+flags: []

@@ -8,7 +8,16 @@ extracts, and the A2 ledgers — never the orchestrator's commentary and never
 A3's reasoning (you re-derive independently). Your verdict is COMPLETE or
 INCOMPLETE, and only COMPLETE proceeds to save.
 
-## THE THREE AUDITS
+## THE FOUR AUDITS
+
+0. DELIVERABLE-COMPLETENESS AUDIT (run FIRST; a hard gate). The A4 review MUST
+   contain a PLAIN-LANGUAGE BRIEF with all four labelled parts present and
+   non-empty: (1) a summary narrative (10-20 lines), (2) SECTOR intelligence,
+   (3) BUSINESS-MODEL intelligence, (4) COMPETITION intelligence. Confirm each
+   heading exists in the review and carries real content (not a placeholder).
+   If any of the four is missing or empty, verdict = INCOMPLETE, loop_back_to
+   = A4, gap = the missing part(s). This is a standing deliverable; its absence
+   fails the gate exactly like a missing page or an arithmetic error.
 
 1. COVERAGE AUDIT. Re-run the A2 enumeration INDEPENDENTLY: a fresh grep pass
    over each A1 extract (notes, line items, agenda items, entities, turns,
@@ -43,6 +52,7 @@ INCOMPLETE, and only COMPLETE proceeds to save.
 
 ## OUTPUT
 Write `audit_<ticker>_<quarter>.md`:
+- DELIVERABLE-COMPLETENESS AUDIT line: the four brief parts, each present/empty.
 - COVERAGE AUDIT table: category | A2 count | your fresh count | orphan rows |
   status.
 - ARITHMETIC AUDIT table: metric | A4 value | recomputed | source line |
@@ -61,6 +71,11 @@ quarter: "{{QUARTER}}"
 model: claude-opus-4-8
 status: complete
 verdict: COMPLETE               # COMPLETE | INCOMPLETE
+plain_language_brief:           # hard gate — all four must be present
+  narrative: present            # present | MISSING
+  sector: present
+  business_model: present
+  competition: present
 coverage:
   orphan_rows: []               # ledger rows not cited in A4
   missing_from_ledger: []       # rows your fresh pass found, ledger lacks

@@ -1,0 +1,60 @@
+stage: B03-ardeep
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Pre-IPO (pre-May-2024) restated multi-year financials not collected; FY24 balance sheet and full FY24 P&L not in this document -- 3-year trend items (exceptional items pattern, FY25 DuPont) could not be fully built, marked NOT FOUND where applicable"
+  - "Manner and price of CA Dawn Investments' full exit (10.2% to 0%) NOT FOUND -- only the mechanism (nominee director resignation) is disclosed in this document"
+  - "Whistleblower complaint count for FY26 NOT FOUND (only POSH complaint count is separately quantified)"
+  - "Consolidated/Group-wide auditor remuneration NOT FOUND -- only standalone-parent auditor fees disclosed"
+flags:
+  - {type: FLAG-CASH, reason: "Carried and reaffirmed from B02: consolidated trade receivables +30.7% YoY and unbilled +77.5% outpace 23.6% revenue growth, partially offset by CFO/PAT improving to 1.62x consolidated / 1.63x standalone -- independently recomputed and confirmed exact in Phase 3A of this stage."}
+  - {type: FLAG-CONTINGENT-LIABILITY, reason: "Combined disclosed contingent liabilities (TP dispute Rs1,114mn + TCPA max Rs417mn) = Rs1,531mn = 38.2% of FY26 consolidated PAT, exceeding the 25%-of-PAT threshold; separately, Board's Report Item 10 discloses a final Section 144B tax demand of Rs436.88mn for the identical AY2023-24 that is not cross-referenced to Note 33's 'draft order, final order not received' language -- unresolved contradiction on the true status of the largest contingent item."}
+  - {type: FLAG-GOODWILL, reason: "Goodwill+intangibles reached 51.5% of consolidated net worth (Rs16,176mn / Rs31,387mn) in the same year the ECS CGU impairment-test discount rate fell from 17.2% to 12.5% and terminal growth rose to 5.0%, concurrent with Rs6,429mn of new BioPharm goodwill landing in that CGU."}
+  - {type: FLAG-GOVERNANCE, reason: "Independent director K.V. Tenneti's disclosed board tenure is ~18 years (appointed 22-Jul-2008), exceeding the 10-year flag threshold; Board Committee member attendance gaps (nominee director Dzialga 60% board attendance, Audit Committee member Parikh 40% AC attendance, independent director Bharadwaj 0% attendance during his FY26 tenure); CARO clause xi(a) discloses a Rs2.43mn employee fraud (misappropriation of assets), recovered during the year."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No formal promoter exists; the closest analogue -- 'Directors and their relatives (excl. independent/nominee directors)' -- hold 21.04% of shares, disclosed transparently. CA Dawn Investments' full exit (10.2% to 0%) during FY26 is the year's largest ownership change; manner/price NOT FOUND. Full promoter/ownership verdict is B08's mandate; this is preliminary."}
+phase_verdicts: {p1: "yellow-watch", p2: "yellow-watch", p3: "yellow-watch", p4: "yellow-watch", p5: "yellow-watch", p6: "yellow-watch", p7_best_fit: "GARP (watchlist); Cash Flow Compounder (pass)"}
+overall_quality: 6.5            # /10 with the four 25% components
+quality_components: {governance: 6.5, accounting: 7.0, balance_sheet: 6.0, earnings: 7.0}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would have reason to pause on the disclosed CARO xi(a) employee fraud and the unresolved Board's-Report-vs-Note-33 contradiction on the AY2023-24 tax matter -- informational, pipeline continued."
+  - "Phase 2: a human reviewer would have reason to pause on the >25%-of-PAT aggregate contingent liability exposure and the goodwill assumption easing -- informational, pipeline continued."
+  - "Phase 3: a human reviewer would have reason to pause on the goodwill/net-worth ratio (51.5%) and the near-halved current ratio -- informational, pipeline continued."
+  - "Phase 4: a human reviewer would have reason to pause on the missing-risk pattern in the MD&A (client/geographic concentration, litigation, integration risk all absent from the risk narrative) -- informational, pipeline continued."
+  - "Phase 5: a human reviewer would have reason to pause on Tenneti's 18-year independent tenure and the 40% Audit Committee attendance record -- informational, pipeline continued."
+triple_pass_verification:
+  verified: 15                 # of 15
+  discrepancies:
+    - {finding_rank: 6, triple_pass_value: "FX derivative MTM loss Rs552mn (~10.5% of PBT)", ar_value: "Rs552mn is the cumulative fair-value (balance-sheet) position of non-designated derivatives; the actual FY26 P&L-recognized exchange loss on such instruments is Rs79mn (~1.5% of PBT), per Note 27a (PDF p.198)", note_ref: "Consol Note 27a, PDF p.198"}
+missing_risks:
+  - {risk: "Single-customer concentration -- one customer = 10.4% of FY26 group revenue", evidence: "Consol Note 26, PDF p.196"}
+  - {risk: "Geographic concentration -- North America = 71.5% of consolidated revenue", evidence: "Consol Note 20, PDF p.194"}
+  - {risk: "Litigation/regulatory exposure (TCPA + TP dispute) = 38.2% of FY26 PAT combined", evidence: "Consol Notes 33 and 37, PDF p.204-206"}
+  - {risk: "Goodwill impairment risk from FY26 acquisition wave, assumptions eased same year", evidence: "Consol Note 6, PDF p.184-185"}
+  - {risk: "M&A integration risk / negative operating leverage this year", evidence: "Consol P&L, Notes 24-25, PDF p.195"}
+  - {risk: "First-year auditor transition in an acquisition- and litigation-heavy year", evidence: "Auditor's Report predecessor-auditor paragraph, PDF p.133/169"}
+  - {risk: "'Others' segment two-year loss streak with no disclosed turnaround plan", evidence: "Consol Note 26, PDF p.195"}
+guidance_table:
+  - {claim: "Translating investments made over the last year into margin expansion", number: "not quantified", timeframe: "FY27", credibility: "cannot be checked yet -- no quantified target"}
+  - {claim: "Deploy capital towards high-return opportunities in AI, innovation, strategic growth", number: "not quantified", timeframe: "ongoing", credibility: "vague, no ROIC hurdle disclosed"}
+  - {claim: "Four strategic priorities (client depth, AI investment, market expansion/M&A, AI-embedded operating models)", number: "not quantified", timeframe: "FY27 and beyond", credibility: "directionally consistent with FY26 execution but no measurable targets"}
+monitorables:
+  - {metric: "TP dispute / Section 144B resolution", threshold: "any provision recognised or MAP outcome disclosed", where: "next AR Note 33/28 or quarterly footnotes", why: "resolves true status of the largest contingent liability"}
+  - {metric: "TCPA settlement court approval and final payout", threshold: "actual payout vs Rs203mn provisioned / Rs417mn max", where: "next AR Note 37", why: "tests adequacy of the provision"}
+  - {metric: "FY27 goodwill impairment test outcome", threshold: "any impairment charge or disclosed headroom", where: "next AR Note 6", why: "tests whether the FY26 assumption easing was justified"}
+  - {metric: "Consolidated PAT/EPS YoY trajectory", threshold: "return to positive growth vs continued decline", where: "quarterly results", why: "distinguishes one-off acquisition/litigation noise from structural deceleration"}
+  - {metric: "ECS segment margin", threshold: "recovery toward 20.4% (FY25) vs further compression", where: "next AR/quarterly segment note", why: "tests integration noise vs structural mix shift from BioPharm"}
+  - {metric: "'Others' segment", threshold: "turnaround plan/divestment announced vs continued -25%+ margin", where: "next AR Note 26, Board's Report", why: "tests management response to a two-year loss streak"}
+  - {metric: "Contingent consideration cash outflows", threshold: "actual payments vs Rs2,914mn carrying value", where: "next AR Note 16/27a", why: "tests real cash cost of the FY26 acquisitions as earnouts lapse FY27-28"}
+  - {metric: "Independent director attendance (Dzialga, Bharadwaj)", threshold: "return to >=75% vs continued gaps", where: "next Corporate Governance Report", why: "tests whether FY26 gaps were transition-related or a pattern"}
+strengths_top3:
+  - "Cash generation quality independently verified: consolidated CFO/PAT improved to 1.62x (from 1.09x), standalone to 1.63x (from 0.71x), Nil borrowings/Nil gearing both years"
+  - "Standalone core profitability obscured by consolidated headline: standalone PAT +16.9%, revenue +11.6%, EPS +15.6%"
+  - "Clean, disciplined executive compensation in the Company's largest acquisition year: CEO and both EDs' remuneration flat-to-down YoY"
+red_flags_top3:
+  - "Unresolved contradiction on the largest contingent liability: Board's Report discloses a final Rs436.88mn Section 144B tax demand for AY2023-24 while Note 33 (same AY) still describes the TP matter as pending with no final order received"
+  - "Goodwill/net-worth concentration (51.5%) with simultaneously eased impairment assumptions (discount rate 17.2%->12.5%, terminal growth to 5.0%) in the CGU receiving the largest new goodwill"
+  - "Missing-risk pattern in the MD&A: client concentration (10.4%), geographic concentration (71.5% North America), litigation exposure (38.2% of PAT), and the Others segment's two-year loss streak are all absent from the risk narrative"
+best_fit_strategy: "GARP (watchlist), with Cash Flow Compounder as a supporting pass"
+one_line_verdict: "Standalone core grows profitably while an acquisition year, an unresolved tax contingency, and eased goodwill assumptions cloud the consolidated headline."

@@ -1,0 +1,66 @@
+stage: B04-bizmodel
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "COLLECTOR DEFECT: manifest sector_cap_row is populated as 'Pharma / CDMO'. Indegene is an asset-light life-sciences commercialization + medical/digital operations services company, not a pharma manufacturer or CDMO (AR p.62, explicit management denial of CRO/CDMO/generic-IT categorization). Stage 11 must source the exit multiple from the IT/BPM/healthcare-tech services cap row in Section 1B v3.3, never from a pharma-manufacturing or CDMO row."
+  - "Named comparator set (eClerx, IKS, Sagility, Tata Elxsi) is qualitative color from non-anchored broker notes only, used to identify the correct cap-row category; no comparator financial figures are anchored in this report."
+  - "PAT margin declined to 11.4% (FY26) from 14.3% (FY25) even as revenue grew 23.6% (AR MD&A p.63) — investment-phase margin compression flagged for quarterly monitoring, not yet a demonstrated operating-leverage payoff."
+  - "'Others' (Consulting + Clinical) segment is loss-making: -Rs 327mn segment result on Rs 1,202mn revenue, FY26 (AR Note 26, p.354)."
+  - "Two different 'output/outcome' metrics exist across sources and should not be conflated: ~60% 'outcome-aligned' revenue (Inv. Pres. slide 9, qualitative) vs. ~86.7% 'fixed-price and volume-based' contract-type revenue (AR Note 20, p.350, audited contract classification)."
+business_type: "services"
+revenue_streams:
+  - {name: "Enterprise Commercial Solutions (ECS)", type: "outsourced managed services, hybrid output-based + T&M", pct_of_revenue: 70.1, predictability: "M"}
+  - {name: "Enterprise Medical Solutions (EMS)", type: "outsourced managed services, hybrid output-based + T&M", pct_of_revenue: 26.5, predictability: "H"}
+  - {name: "Others (Consulting + Clinical)", type: "project/advisory + emerging platform investment", pct_of_revenue: 3.4, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "low"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "switching costs (embedded regulated workflows)", durability: "medium-high"}
+  - {moat: "regulatory/compliance expertise moat", durability: "medium-high"}
+  - {moat: "cost advantage (asset-light offshore delivery, high RPE)", durability: "medium"}
+  - {moat: "proprietary AI platform / data assets (Cortex, Invisage, Tandem, NEXT suite)", durability: "medium"}
+  - {moat: "brand / top-20 client roster", durability: "medium"}
+valuation_methods:
+  primary: {method: "EV/EBITDA, benchmarked to IT/BPM/healthcare-tech services peers", why: "Asset-light services business with Nil debt and disclosed segment economics; multiple must be sourced from the correct services cap row in Section 1B v3.3, not a pharma-manufacturing or CDMO row"}
+  secondary: {method: "EV/Revenue, benchmarked to IT/BPM/healthcare-tech services peers", why: "Useful cross-check given FY26 EBITDA/PAT margins are temporarily depressed by investment spend ahead of a stated margin-recovery phase"}
+  tertiary: {method: "DCF", why: "Nil-debt balance sheet and multi-year embedded top-20 client relationships support a cash-flow-based cross-check, though business is still mid-transition on margins"}
+  not_applicable:
+    - "Replacement cost / asset-based valuation (PPE is 1.3% of total assets)"
+    - "Dividend discount model (growth/reinvestment phase, modest payout)"
+    - "Pharma-manufacturing or CDMO exit multiple, round-number or otherwise (sector mismatch — see flags)"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover", why: "No inventory; AR states explicitly not applicable to the company (AR Note 32a, p.293)"}
+  - {ratio: "Debt Service Coverage Ratio", why: "Nil borrowings, Nil net debt; AR states explicitly not applicable (AR Note 32a, p.293)"}
+  - {ratio: "Gross block / fixed-asset turnover", why: "PPE is only 1.3% of total assets; tells you almost nothing about capacity or earnings power in this people-cost business"}
+  - {ratio: "Current ratio read in isolation", why: "FY26 decline (6.43x to 4.66x) is driven by a derivative-liability increase, not working-capital stress (AR Note 32a footnote, p.293)"}
+must_track_metrics:
+  - {metric: "Revenue growth (INR and USD)", healthy: "high-teens to twenties % YoY, per FY26/Q1 FY27 trend", red_flag: "sustained deceleration below high-single-digit USD growth"}
+  - {metric: "EBITDA margin", healthy: "high-teens %, trending back toward historical levels", red_flag: "sustained fall below ~15% without stated cause"}
+  - {metric: "Revenue per employee (RPE, $K)", healthy: "continued YoY growth (currently $77.1K, +14.2% YoY)", red_flag: "flat or declining RPE with rising headcount"}
+  - {metric: "Top-5/top-10/top-20 client concentration", healthy: "stable or declining share with continued absolute growth", red_flag: "concentration rising without new-logo growth offsetting"}
+  - {metric: "Net DSO / gearing", healthy: "DSO in low-60s days range; gearing at or near Nil", red_flag: "DSO sustained above ~75-80 days, or debt-funded acquisitions ending the Nil-gearing profile"}
+unit_economics:
+  unit: "one delivery employee"
+  revenue_per_unit: "$77.1K annualized RPE, Q1 FY27 (Inv. Pres. fact sheet)"
+  margin_per_unit: "NOT FOUND — company discloses aggregate employee cost (62.6% of FY26 revenue, AR Note 22/20) and headcount separately, not a per-employee margin figure"
+  key_lever: "mix shift toward outcome/output-based pricing plus GenAI-driven productivity, letting efficiency gains accrue to margin rather than being competed away per head (Inv. Pres. slide 9)"
+first_deterioration_signals:
+  - {risk: "Loss or downgrade of a top-5/top-20 client", first_signal: "segment or geography revenue growth deceleration in quarterly Inv. Pres. disclosure; top-20 TTM revenue line"}
+  - {risk: "Wage inflation outpacing productivity/outcome-pricing gains", first_signal: "employee benefit expense as % of revenue rising (AR Note 22/20); EBITDA margin compression"}
+  - {risk: "Debt-funded acquisition ending Nil-gearing profile", first_signal: "Debt-Equity ratio (AR Note 32a) rising beyond lease-liability-only levels; Gearing ratio (AR Note 28) turning non-Nil"}
+  - {risk: "'Others' segment stays structurally loss-making", first_signal: "Others segment result (AR Note 26) not narrowing toward breakeven year over year"}
+  - {risk: "GenAI price deflation outpacing upstream migration of Indegene's own work-mix", first_signal: "RPE growth flattening or reversing (Inv. Pres. fact sheet)"}
+mgmt_questions:
+  - "What is the current profitability of the Others (Consulting + Clinical) segment and the timeline to breakeven, given its FY26 segment loss of Rs 327mn on Rs 1,202mn revenue?"
+  - "How does the '~60% outcome-aligned revenue' disclosure reconcile with the AR's ~86.7% fixed-price/volume-based contract-type split?"
+  - "How much of the FY26 PAT margin decline (14.3% to 11.4%) is one-off investment spend versus structural, and what is the timeline to margin restoration?"
+  - "Is top-20 account growth broad-based or concentrated in a small number of mega-mandates that could reverse sharply?"
+  - "Will future acquisitions continue to be equity/cash-funded, preserving the Nil-gearing profile, or is debt capacity being considered?"
+  - "How defensible is the proprietary GenAI platform stack against both large horizontal AI vendors and pharma-specific point-solution startups?"
+  - "What share of revenue is currently judgment-intensive/regulated (deflation-resistant) versus commoditizable, and how is that mix expected to shift over 3 years?"
+one_line_verdict: "Asset-light, Nil-debt life-sciences commercialization services partner with genuine embedded-workflow and regulatory moats, mispriced if benchmarked to the manifest's incorrect pharma/CDMO sector cap row rather than IT/BPM/healthcare-tech services peers."

@@ -1,0 +1,37 @@
+stage: B01-gate0
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - {source: prospectus, severity: HIGH, note: "not collected; FY19-24 history in Data_Sheet is screener.in's own RHP-derived back-fill, used as-is per rule, not independently verified against the prospectus"}
+  - {source: rating, severity: MEDIUM}
+  - {source: announcements, severity: LOW}
+  - {source: shareholding, severity: RESOLVED, note: "via operator-supplied screener screenshot file, Jun2024-Jun2026"}
+  - {source: research, severity: NONE}
+  - {source: "screener Balance_Sheet.csv / Cash_Flow.csv (unpopulated for FY19-24 detail)", severity: MEDIUM, note: "trade payables and PPE capex breakout available only FY25-FY26 from results/AR; B2/B3/B4/M12 computed on that 2-year subset, not the full 8-year window; NOT FOUND stated for earlier years, not estimated"}
+flags:
+  - {type: FLAG-GATE0, reason: "FY26 PAT declined -1.4% YoY (Rs406.7cr to Rs401.1cr) despite +23.6% revenue and +11.1% EBITDA growth, continuing into Q1 FY27 (PAT essentially flat YoY, -0.2%, vs +39.7% revenue growth); driven by Rs20.3cr exceptional litigation provision, ~Rs42cr fall in other income, and rising acquisition-related D&A (BioPharm/MJL/Warn/Cake deals). Mechanical C2/C4 CAGR scores (61.36% PAT CAGR, +31.14pp vs revenue) are computed over the full FY19-26 window and do not reflect this single most-recent-year deceleration. Classification GOOD+ (not <=AVERAGE) so this is a carry-forward context flag, not a deal-breaker."}
+  - {type: FLAG-GATE0, reason: "Block E1 scored 3 (professionally-managed baseline) on a documented no-promoter interpretation rather than the literal '>50% FII+DII = 3' threshold (actual latest FII+DII = 18.66%); verifier should confirm this interpretation is consistent with CLAUDE.md's prohibition on penalizing low institutional ownership as a risk for a no-promoter company."}
+data_years: 8
+fy_range: "FY2019 to FY2026"
+blocks: {A: 14, B: 18, C: 20, D: 20, E: 18}
+core_score: 90
+moat_score: 11
+grand_total: 101
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "FY19-FY26 history sourced from screener.in Data_Sheet (RHP-restated pre-IPO back-fill for FY19-24 + audited/reviewed post-IPO FY25-26); prospectus itself not separately collected (input gap HIGH)."
+  - "ROCE Capital Employed: FY25/FY26 use exact Total Assets - Current Liabilities from the audited/reviewed consolidated balance sheet; FY19-FY24 use a proxy (Equity + Borrowings) since Data_Sheet does not split current vs non-current liabilities for those years. Flagged as computed/proxy basis."
+  - "FY20 ROE marked N/M and excluded from the median: average net worth was negative (-15.49cr, accumulated pre-IPO losses) concurrent with a PAT loss."
+  - "Loss-to-profit swing noted: PAT was negative in FY20 (-6.30cr) and positive from FY21 onward; both CAGR window endpoints (FY19, FY26) are positive so the CAGR-edge N/M rule does not trigger, but the intra-window swing is flagged per rule."
+  - "M3 (Capital Efficiency) scored 1 on FY26 (FAT 1.94x) vs would-be 5 on FY25 (FAT 4.19x, pre-BioPharm); the FY26 Net Block is inflated by ~Rs11,343mn goodwill + Rs4,833mn intangibles from the BioPharm/Warn/Cake acquisitions completed in FY26, an accounting/M&A effect, not a decline in the underlying capital-light services model."
+  - "Contingent liability used for E4 (Rs111.4cr) is the only quantified item disclosed (transfer pricing matter, AY2023-24, MAP filed); other tax demand orders are mentioned in the AR but not quantified (NOT FOUND, not estimated, would only add to the numerator if disclosed)."
+  - "Pledge (E3) scored 5 as Not Applicable/pledge-clean per operator instruction (no promoter exists to pledge shares); not treated as a data gap or a negative."
+  - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale/dominance), M9 (brand) could not be scored above 0 for lack of any peer benchmark data in the provided sources."
+data_years_pre_ipo_caveat: "FY2019-FY2022 equity share count is ~15-17 lakh shares (pre-restructuring), jumping to ~22 crore shares in FY2023 - confirms this is the pre-IPO entity's restated history, not a post-listing comparable series; used per rule (whatever history is available) but flagged for interpretation."
+block_b_trend: "improving — cumulative CFO/PAT 1.32x over FY19-26; FY26 FCF Rs606.5cr vs FY25 Rs411.9cr (+47% YoY, results FY26 filing p.12); WC days near-flat 84.6->83.3 (the only two comparable years)"

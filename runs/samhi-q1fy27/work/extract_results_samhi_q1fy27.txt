@@ -1,0 +1,850 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_samhi_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 14
+formfeed_count: 14
+line_count: 850
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (1 INR million = 0.1 Rs Crore)
+ocr_pages: [8, 9, 13, 14]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-03
+=== END HEADER ===
+
+NOTE (mechanical, non-interpretive): Source PDF is a scanned/photocopied Reg 33
+filing (Producer: iLovePDF) whose baked-in text layer is OCR-derived and noisy.
+pdftotext -layout was run first for all 14 pages; all 14 pages independently
+cleared the 100-character threshold. However, on visual inspection the four
+pages carrying tabular financial figures (pages 8, 9, 13, 14 - the standalone
+P&L, standalone exceptional-items note, consolidated P&L, and consolidated
+exceptional-items note) showed column misalignment and digit-run garbling in
+the pdftotext -layout output (e.g. decimal points and thousand-separators
+dropped, values shifted between columns). Per task instruction to OCR any page
+yielding garbled text (in addition to the <100-char gate), these 4 pages were
+rasterised at 300dpi with pdftoppm and re-extracted with tesseract (--psm 6).
+The tesseract output for these 4 pages is substituted below and marked
+[OCR page N]; all other pages (1-7, 10-12) use the pdftotext -layout output
+unmodified and are marked [page N]. No numeric values were converted or
+recalculated; text is reproduced as extracted from each respective method.
+[page 1]
+IMART HOTEL INVESTMENTS —
+
+SAMHI Hotels Ltd.
+       101DL2010P:                   03 August 2026
+
+                                     BSE Limited                                            National Stock Exchange of India
+                                     Corporate Relationship Department                      Limited
+                                     Phiroze Jeejeebhoy Towers, Dalal Street,               Exchange Plaza, C-1, Block G, Bandra Kurla
+                                     Mumbai - 400 001, Maharashtra, India                   Complex, Bandra (East), Mumbai - 400 051,
+                                                                                            Maharashtra, India
+
+                                     Scrip Code: 543984                                     Scrip Code: SAMHI
+
+                                     Sub: Outcome of the Board Meeting held on Monday, 03" August 2026
+
+                                     Dear Sir/ Madam,
+
+                                     This is to inform you that the Board of Directors of SAMHI Hotels Limited (“the Company™) at
+                                     its meeting held today, i.e. Monday, 03¢ August 2026 (which commenced at 04:30 p.m. (IST) and
+                                     concluded at 06:58 p.m. (IST)) has transacted the following business(es):
+
+                                     (1) Approved the Unaudited Financial Results (Standalone and Consolidated) of the Company for
+                                         the quarter ended 30™ June 2026 (“UFRs/ Results™), pursuant to Regulation 33 of the SEBI
+                                         (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended from time
+                                         to time (“SEBI LODR Regulations™). A copy of the said Results along with the Limited
+                                         Review Report issued by M/s. Walker Chandiok & Co. LLP, Chartered Accountants (Firm
+                                         Registration No.: 001076N/ N500013) (“Statutory Auditors™), on the above UFRs of the
+                                         Company for the quarter ended 30® June 2026 are enclosed herewith.
+
+                                     (2) Approved the increase in Authorized Share Capital of the Company from INR 25,00,00,000/-
+                                         (Indian Rupees Twenty Five Crores Only) divided into 25,00,00,000 (Twenty-Five Crore)
+                                         equity shares of INR 1/- (Indian Rupee One) each to INR 29,00,00,000/- (Indian Rupees
+                                         Twenty Nine Crores Only) divided into 29,00,00,000 (Twenty-Nine Crore) equity shares of
+                                         INR /- (Indian Rupee One) each and consequent amendment in the Capital Clause (Clause V)
+                                         of the Memorandum of Association of the Company, subject to approval of the shareholders of
+                                         the Company.
+
+                                     (3) Approved the enabling resolution for raising of funds for an aggregate amount not exceeding
+                                         INR 750,00,00,000/- (Indian Rupees Seven Hundred Fifty Crores) by way of issuance of equity
+                                         shares   (including   warrants,   or otherwise),   fully   convertible      debentures,   with   or without
+                                         warrants and/ or convertible preference shares or any security convertible into Equity Shares
+                                         or any combination thereof, in one or more tranches through permissible modes, including but
+                                         not limited to a private placement, a qualified institutions placement, preferential issue, or any
+                                         other method or combination of methods as maybe permitted under the applicable laws, subject
+                                         to such regulatory/ statutory approvals as may be required and the approval of shareholders of
+                                         the Company at the forthcoming Annual General Meeting of the Company.
+
+                                         The Company has planned a strong capital expenditure cycle to add significant room inventory
+                                         in the next few years, continues to see attractive acquisition/ growth opportunities and is
+Correspondence:                          prepared to operate in an increasingly volatile geo-political environment. While the Company
+SAMHI Hotels Lic                         has a visibility of strong internal accruals, a stronger balance sheet would help to strengthen its
+                                         position and continue to grow rapidly. The proposed enabling resolution will provide the
+                                         Company with the necessary flexibility to access capital markets in a timely manner and
+                                         efficiently capitalize on emerging opportunities to preserve and build on the shareholder value.
+
+                        00| Email:       The timing and terms for such infusion is dependent on prevailing market conditions and will
+                   nhi co.in
+wiww.samhi co.in                         be in consultation with the committee of the Board of Directors of the Company.
+
+                                                                            SANJAY             Digitally signed by
+                                                                                               SANJAY JAIN
+
+                                                                            JAIN               Date: 2026.08.03
+                                                                                               19:23:01 +05'30'
+
+[page 2]
+SAART HOTEL INVESTMENTS=
+SANHT Hotels L                 The details as required under Regulation 30 of the SEBI LODR Regulations read along with
+C          DL2010PLC2118       SEBI circular SEBI/HO/49/14/14(7)2025-CFD-POD2//3762/2026 dated 30™ January 2026,
+                               are given as Annexure - A.
+
+                           (4) Approved to hold the 16 (Sixteenth) Annual General Meeting (“AGM”) of the shareholders
+                               of the Company on Monday, 31°* day of August 2026 & Notice convening the said AGM and
+India                          the Board’s Report for the financial year 2025-26.
+
+                           (5) Approved the acquisition of 29,582 (Twenty Nine Thousand Five Hundred and Eighty
+                               Two) fully paid-up equity shares of face value of INR 10/- (Indian Rupees Ten only) each,
+                               constituting 100% (one hundred per cent) of the issued, subscribed and paid-up equity share
+                               capital of Itmenaan Lodges Private Limited, a company incorporated under the laws of India,
+                               bearing CIN: U74999DL2011PTC212592 and having its registered office at 26/13, Third
+                               Floor, Old Rajinder Nagar, New Delhi — 110060 (“Target™), from existing shareholders of the
+                               Target, for an aggregate cash consideration of INR 12,00,00,000/- (Indian Rupees Twelve
+                               Crores only) (“Proposed Transaction”), pursuant to a share purchase agreement to be
+                               executed between the Company, existing shareholders and the Target (“SPA™) with a total
+                               approved investment (including any further capital expenditure for expansion and/or
+                               renovation) not exceeding INR 25,00,00,000/- (Indian Rupees Twenty Five Crores Only).
+
+                               The Target is engaged in the business of promoting, operating and managing the hotel,
+                               restaurants and the provisioning of hospitality services in respect of the hotel premises known
+                               as ‘Itmenaan Estate’ situated at Village:                Naugaon,   Tehsil:   Bhanoli,    District   Almora,
+                               Uttarakhand, which is a part of RARE India.
+
+                               ‘We are enclosing herewith the relevant details of the transaction as prescribed under SEBI
+                               LODR     Regulations   read  with   SEBI     circular  SEBIVHO/49/14/14(7)2025-CFD-
+                               POD2/1/3762/2026 dated 30 January 2026, in Annexure - B.
+
+                           This information is also                  being   uploaded   on   the   website    of   the   Company       ie.
+                           https://www.samhi.co.in/.
+
+                           This is for your information and records.
+
+                           Thanking You.
+
+                           Yours faithfully,
+
+                           For SAMHI Hotels Limited
+
+                            SANJAY             Digitally signed by
+                                               SANJAY JAIN
+
+                            JAIN               Date: 2026.08.03
+                                               19:23:22 +05'30'
+
+                           Sanjay Jain
+                           Senior Director - Corporate Affairs,
+                           Company Secretary and Compliance Officer
+
+Correspondence:
+SAMHI        Hotels Lid
+
+[page 3]
+IMART HOTEL INVESTMENTS —
+                                                                                                                               Annexure - A
+SAMHI Hotels Ltd.
+C          DL2010P!                                                      Details of Raising of Funds
+
+                            S. No.     Particulars                                         Remarks
+
+                                     Type of securities proposed to be                    [Equity shares (including warrants, or otherwise),
+India                                lissued (viz. equity shares, convertibles            fully convertible debentures, with or withouf
+                                     etc.)                                                   arrants and/ or convertible preference shares or|
+                                                                                          lany security convertible into Equity Shares or an;
+                                                                                          combination thereof or any other eligible
+                                                                                          security(ies), in accordance with applicable laws,
+                                                                                          fin one or more tranches.
+
+                                     Type     of issuance    (further public              By way of any permissible modes, including but
+                                     offering,    rights  issue,    depository             ot limited to a private placement, a qualified
+                                     receipts       (ADR/GDR),        qualified           institutions placement, preferential issue, or an
+                                     finstitutions placement, preferential                other method or combination of methods as ma
+                                     allotment etc.)                                      Ibe permitted under the applicable laws, subject t
+                                                                                          such regulatory/ statutory approvals as may be
+                                                                                          required and the approval of shareholders of the|
+                                                                                          ICompany at the forthcoming Annual General
+                                                                                          IMeeting of the Company.
+
+                                     Total number         of securities proposed          [Upto  an aggregate    amount        not  exceeding
+                                     to be issued or the total amount for                 750,00,00,000/- (Indian Rupees       Seven Hundred
+                                       hich the securities will be issued                 land Fifty Crores) or an equivalent amount thereof|
+                                     (approximately)                                      (inclusive of such premium as may be fixed o
+                                                                                          such Securities) in one or more tranches at suc!
+                                                                                          pprice or prices      as may   be permissible   under
+                                                                                          lapplicable law.
+
+                                     lIn case of preferential issue the listed            INot Applicable
+                                     entity shall disclose the following
+                                     additional        details      to      the   stock
+                                     lexchange(s)
+
+                                     [In case of bonus issue the listed entity            INot Applicable
+                                     shall disclose the following additional
+                                     details to the stock exchange(s)
+
+                                     In case of issuance of depository                    INot Applicable
+                                     receipts (ADR/GDR) or FCCB the
+                                     listed entity shall disclose following
+                                     additional        details      to      the   stock
+                                     lexchange(s)
+
+                                     [In case of issuance of debt securities or           INot Applicable
+Correspondence:
+SAMHI        Hotels Lid              other non-convertible securities the
+                                     listed   entity   shall     disclose     following
+                                     additional        details      to      the   stock
+                                     lexchange(s)
+
+                                     |Any cancellation or termination of INot Applicable
+                                     proposal for issuance of securities
+                                     including reasons thereof
+
+                                                                          SANJAY          Digitally signed by
+                                                                                          SANJAY JAIN
+
+                                                                          JAIN            Date: 2026.08.03
+                                                                                          19:23:36 +05'30'
+
+[page 4]
+IMART HOTEL INVESTMENTS —
+                                                                                                                                      Annexure - B
+SAMHI Hotels Ltd.
+C          DL2010P!
+                            S. No.    Particulars                                            Remarks
+
+                                     [Name of the target entity, details in                 ltmenaan Lodges Private Limited, a compam
+                                      rief such as size, turnover etc.                      incorporated under the laws of India, bearing CIN
+India                                                                                       [U74999DL2011PTC212592              and   having            its|
+                                                                                            registered office at 26/13,         Third Floor,          Old
+                                                                                            [Rajinder Nagar, New Delhi — 110060 (“Target”),
+                                                                                            The Target is engaged in the business of
+                                                                                            jpromoting, operating and managing the hotel,
+                                                                                            rrestaurants, and provisioning of hospitality]
+                                                                                            services in respect of the hotel premises known as|
+                                                                                            ‘Itmenaan Estate’ situated at Village: Naugaon,|
+                                                                                            Tehsil: Bhanoli, District Almora, Uttarakhand|
+                                                                                            (“Hotel™), which operates as part of RARE India
+
+                            2.       [Whether      the acquisition would            fall [The Proposed Transaction is not a related party]
+                                     within related party transaction(s)                    [transaction.
+                                     iand whether the promoter/ promoter
+                                     igroup/ group companies have any
+                                     finterest in the entity being acquired?
+                                     [If yes, nature of interest and details
+                                     thereof and whether the same is done
+                                     at “arm’s length”
+
+                            3.       [Industry to which            the entity being         [Hospitality Services
+                                     acquired belongs
+
+                            4.       Objects      and    impact       of   acquisition
+
+
+                                     larahan
+                                         o USO8 8 '                                                          o sl p RAREo ntng
+                                     gindludmlg      fl.’“t       m;t | lmnte(tl        m;. The Proposed Transaction is line with our earlier|
+
+                                     the main liin: of business of the listed | > of tactical property level investments.
+                                     entity)
+
+                            5.       [Brief details of any governmental or                  [NA
+                                     regulatory approvals required for the
+                                     acquisition
+
+                            6.       [Indicative time period for completion                 By 30* August,2026
+                                     of the acquisition;
+
+
+                            7.        |Consideration          -     whether        cash     [Cash consideration.
+                                     :‘:::::.df‘:::::‘:l: ‘;) :iest:;::)fs :mpsa‘::l];my    Total     cash    consideration:   INR       12,00,00,000
+Correspondence:                                                                     4       (Indian Rupees Twelve Crore only) (“Purchase
+SAMHI        Hotels Lid                                                                     (Consideration™), subject to TDS and certain
+                                                                                            adjustments in the manner set out in the SPA.
+
+                            8.       (Cost of acquisition and/or the price at               [INR 12,00,00,000/- (Indian Rupees Twelve Crore|
+                                       hich the shares are acquired                         only), being the aggregate consideration payable
+                                                                                            to the existing shareholders of the Target for the|
+                                                                                            acquisition      of 29,582   (Twenty      Nine     Thousand
+                                                                                            [Five Hundred       and Eighty     Two)     fully paid-up|
+                                                                                            lequity shares of face value of INR              10/- (Indi
+
+                                                                  SANJAY           Digitally signed
+                                                                                   by SANJAY JAIN
+
+                                                                  JAIN             Date: 2026.08.03
+                                                                                   19:25:01 +05'30'
+
+[page 5]
+IMART HOTEL INVESTMENTS —
+
+SAMHI Hotels Ltd.
+                                                                             [Rupees Ten Only) each of the Target, constituting]
+C          DL                                                                100%      (one   hundred   per   cent)   of the   issued.
+                                                                             subscribed and paid-up equity share capital of the
+                                                                             Target.
+
+                            9.     [Percentage of shareholding / control     (100% (one hundred percent) of the issued,
+India                             acquired and / or number of shares         jsubscribed and paid-up equity share capital of the|
+                                  acquired                                   Target,     comprising    29,582     (Twenty-Nine
+                                                                             Thousand Five Hundred and Eighty-Two) full:
+                                                                             ppaid-up equity shares of face value of INR 10/
+                                                                             (Indian Rupees Ten) each.
+
+                            10.   [Brief background about the entity         [Date of incorporation: 14® December 2011.
+                                  acquired in terms of products/line of
+                                                                             [Product/line of business:      Ownership    and|
+                                    usiness       acquired,     date    of
+                                                                             operation of the boutique luxury hotel property|
+                                  incorporation, history of last 3 years
+                                                                             lknown as ‘Itmenaan Estate’, situated at Village:|
+                                  turnover,      country    in which  the
+                                                                             Naugaon,   Tehsil: Bhanoli,    District Almora,
+                                  acquired entity has presence and any
+                                                                             [Uttarakhand, including provisioning of allied|
+                                  other     significant   information (in
+                                                                              ospitality and food & beverage services.
+                                    rief)
+                                                                             [Last 3 (three) years total income:
+                                                                             [Financial Year 2025-26: INR 69,76,266
+                                                                             [Financial Year 2024-25: INR 85,75,908
+                                                                             [Financial Year 2023-24: INR 88,99,955
+                                                                             [Presence of entity: India
+
+
+                                                           SANJAY            Digitally signed by
+                                                                             SANJAY JAIN
+
+                                                           JAIN              Date: 2026.08.03
+                                                                             19:25:15 +05'30'
+
+
+
+
+Correspondence:
+SAMHI        Hotels Lid
+
+[page 6]
+     Walker Chandiok &                                               CoLLP
+
+
+
+                                                                                                                   Walker Chandiok & Co LLP
+                                                                                                                   21=Floor, DLF Square
+                                                                                                                   Jacaranda Marg, DLF Phase II
+                                                                                                                   Gurugram - 122 002
+                                                                                                                   India
+                                                                                                                   T +91 124 4628099
+                                                                                                                   F+91 124 4628001
+
+
+
+
+Independent Auditor’s Review Report on Standalone Unaudited Quarterly Financial Results of SAMHI
+Hotels Limited pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 (as amended)
+
+To the Board of Directors of SAMHI Hotels Limited
+
+1.    We have reviewed the accompanying statement of standalone unaudited quarterly financial results (‘the
+      Statement’) of SAMHI Hotels Limited (‘the Company’) for the quarter ended 30 June 2026 being submitted by
+      the Company pursuant to the requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+      Requirements) Regulations, 2015 (as amended) ('Listing Regulations’).
+
+      The Statement, which is the responsibility of the Company’s management and approved by the Company’s
+      Board of Directors, has been prepared in accordance with the recognition and measurement principles laid
+      down in Indian Accounting Standard 34, Interim Financial Reporting (‘Ind AS 34’), prescribed under section 133
+      of the Companies Act, 2013 (‘the Act’), and other accounting principles generally accepted in India and is in
+      compliance with the presentation and disclosure requirements of Regulation 33 of the Listing Regulations. Our
+      responsibility is to express a conclusion on the Statement based on our review.
+
+      We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE)
+      2410, Review of Interim Financial Information Performed by the Independent Auditor of the Entity, issued by
+      the Institute of Chartered Accountants of India. A review of interim financial information consists of making
+      inquiries, primarily of persons responsible for financial and accounting matters, and applying analytical and
+      other review procedures. A review is substantially less in scope than an audit conducted in accordance with the
+      Standards on Auditing specified under section 143(10) of the Act, and consequently, does not enable us to
+      obtain assurance that we would become aware of all significant matters that might be identified in an audit.
+      Accordingly, we do not express an audit opinion.
+
+       Based on our review conducted as above, nothing has come to our attention that causes us to believe that the
+       accompanying Statement, prepared in accordance with the recognition and measurement principles laid down
+       in Ind AS 34, prescribed under section 133 of the Act, and other accounting principles generally accepted in
+       India, has not disclosed the information required to be disclosed in accordance with the requirements of
+       Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 (as amended),
+       including the manner in which it is to be disclosed, or that it contains any material misstatement.
+
+
+
+
+Chartered Accountarts                                                                                               ‘Walker Chandiok & Co LLP is registered with
+                                                                                                                    limited liability with identification number
+Offces in Bengaluru, Chandigarh, Chennai, Gurugram, Hyderabad, Kochi, Kolkata, Mumbai, New Delhi, Noida and Pune    AAC-2085 and its registered office at L-41
+                                                                                                                    Connaught Circus, New Delhi, 110001, India
+
+[page 7]
+Walker Chandiok & Co LLP
+Independent Auditor’s Review Report on Standalone Unaudited Quarterly Financial Results of SAMHI
+Hotels Limited pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 (as amended) (cont’d)
+
+5.   The Statement also includes the Company’s share in the net loss of Rs. 7.38 million for the quarter ended
+     30 June 2026, in respect of a partnership firm, whose interim financial information has not been reviewed by
+     their auditors and has been furnished to us by the Company’s management. Our conclusion on the Statement,
+     in so far as it relates to the amounts and disclosures included in respect of the partnership firm, is based solely
+     on such unreviewed interim financial information. According to the information and explanations given to us by
+     the management, these interim financial information are not material to the Company.
+
+     Our conclusion is not modified in respect of this matter with respect to our reliance on the financial information
+     certified by the Board of Directors.
+
+
+For Walker Chandiok & Co LLP
+Chartered Accountants
+Firm Registration No: 001076N/N500013
+
+
+wwﬁf),
+Neeraj Goel
+Partner
+Membership       No. 099514
+
+UDIN: 26099514QZSUUM5820
+
+Place: Gurugram
+Date: 03 August 2026
+
+
+
+
+Chartered Accountants
+
+[OCR page 8]
+SAMHI Hotels Limited ie
+CIN : L55101DL2010PLC211816
+Registered Office :Sth Floor, Unit No. Office - I, Worldmark 4, Asset Area No. LP-1B-04 S A M |
+Gateway District, Delhi Aerocity, Near Indira Gandhi International Airport, New Delhi - 110037, India — SMART HOTEL INVESTMENTS —
+Website : www.samhi.co.in Email ; compliance@samhi.co.in Telephone : +91 (11) 49077700
+STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED 30 JUNE 2026
+(INR in million, except per equity share data
+T SS™~™CCQurtercendded Seared
+S. No Particulars 30 June 2026 31 March 2026 30 June 2025 31 March 2026
+— : (Unaudited) (Audited) (Unaudited) (Audited)
+Refer note 7
+Continuing operations
+1 |Income
+Revenue from operations (Refer note 6) 335.20 303.65 337.54 1,350.18
+Other income 9.40 34.21 2.24 40.46
+Total income 344.60 337.86 339.78 [1,390.64 |
+2 |Expenses
+Cost of materials consumed 12.20 11.75 13.24 53.14
+Employee benefits expense 124.10 136,48 116.49 505.69
+Other expenses 117.73 116,53 601.60 933.61
+p84. 03 | 264.76 133 | 1492.44 |
+I PS aaa
+3 Earnings before finance costs, depreciation and amortisation, exceptional 73.10 (391.55) (101.80)
+items and tax (1-2)
+4 |Finance costs 44.19 52.82 72.03 228.96
+§  |Depreciation and amortisation expenses 34.20 43,20 24.25 118.41
+73.39] SiG 9G28 | 347.37
+SN: Manne pT MRIS
+6 |Profit/(loss) before exceptional items and tax (3-4-5) Pa 2 2) 487.83 (449.1
+7 {Exceptional items (net) (Refer note 5) P| 2,490.77 974.93 4,347.05
+8 |Profit from continuing operations before tax (6+7) P28 2,467.85 487.10 3,897.88
+9 |Tax expense
+Current tax
+Deferred tax
+ee a ae ee
+Li
+10 |Profit from continuing operations for the period/year (8-9) PSB | 2,467.85 487.10 3,897.88
+Discontinued operations
+Loss from discontinued operations before tax (28.22) (54.51)
+Tax expense of discontinued operations 2 =
+| 11 |Loss from discontinued operations for the period/year [ - ] 2822) 54.51
+| cece ae eee eenee sec eatetol seeeeneeselee
+| 12 |Profit for the period/year (10+11) PA 2,467.85 458,88 3,843.37
+| EE (2.18 | __ 8 | 3.37 |
+| 13° |Other comprehensive income
+| Items that will not be reclassified to profit or loss
+- Re-measurement gain/ (loss) on defined benefit obligations 0.25 (0.11)
+. - Income tax relating to items mentioned above : -
+| Other comprehensive income, net of tax om! Om
+| DE Rn A)
+14 |Total comprehensive income for the period/year (12+13) 12.43 2,467.74 |__ 458.88 3,844.38
+15 |Paid up equity share capital (face value of INR 1 each, fully paid) 222,13 222.13 221.21 222.13
+16 |Other equity as shown in the audited balance sheet 32,275.07
+17 |Earnings per equity share from continuing operations
+(Face value of INR I each):
+(not annualised for quarters)
+Basic (INR) 0,05 11.15 2.20 17.62
+Diluted (INR) 0.05 11.09 2.18 17.53
+18 |Earnings per equity share from discontinued operations
+(Face value of INR f each):
+(not annualised for quarters)
+Basic (INR) - - (0.13) (0.25)
+Diluted (INR), )) 9) - - (0.13) (0.25)
+FAS Sl ot
+ao ~ _
+19 |Ear ngs per equity shiare from continuing and discontinued operations ~ Ee ¢
+(Face yalue of INR 1 each): ‘be Sy
+(not anwalised for quarters) | Y 2
+Basie (INR) de Z\ 005 11s 2.07 17.37
+Diluted:(INR) fS/ ar 0.05 11,09 2.05 17.28
+| a> ~~ < /
+See accompanying notes to the unaudited standalone financial results A.
+| a
+
+[OCR page 9]
+ees
+SAMHI Hotels Limited
+CIN : LS$101DL2010PLC211816 S A M H |
+Registered Office “Sth Floor, Unit No. Office - 11, Worldmark 4, Asset Area No. LP-1B-04 io ae
+Gateway District, Delhi Acrocity, Near Indira Gandhi International Airport, New Delhi - 110037, India
+Website : www.samhi.co.in Email : compliance @samhi.co.in Telephone : +91 (11) 49077700
+STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED 30 JUNE 2026
+Notes to the Statement of unaudited standalone financial results for the quarter and year ended 31 March 2026;
+| The above unaudited standalone financial results of SAMHI Hotels Limited ("the Company") have been prepared in accordance with the recognition and measurement principles laid down in Indian Accounting Standard
+34 “Interim Financial Reporting” (“Ind AS 34”), prescribed under Section 133 of the Companies Act, 2013 read with Companies (Indian Accounting Standards) Rules, 2015, as amended from time to time, and other|
+accounting principles generally accepted in India and in compliance with Regulation 33 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended
+("Listing Regulations"),
+2 The above unaudited standalone financial results for the quarter ended 30 June 2026 were reviewed and recommended by the Audit Committee and approved by the Board of Directors at their respective meetings held
+on 31 July 2026 and 03 August 2026. The Statutory Auditors of the Company have conducted "Limited Review" of these financial results in terms of Regulation 33 of the Listing Regulations,
+3 The results for the quarter ended 30 June 2026 are available on the Bombay Stock Exchange website (URL: www.bseindia.com), the National Stock Exchange website (URL; www.nseindia.com) and on the Company's
+website (URL: wwwv.samhi.co.in).
+4 The Chief Operating Decision Maker ("CODM") evaluates the Company's performance at an overall company level as one segment i.e. "developing and running of hotels". Hence, no further disclosures are required to
+be furnished in accordance with Ind AS 108 — Operating Segments.
+5 Exceptional items includes:
+TNR in million
+| 30 June 2026 | _31March2026 | 30June2025 | 31 March 2026 _|
+(Unaudited) (Audited) (Unaudited) (Audited)
+Refer note 7
+Profit on sale of investment rr ee 974.93 979.07
+Reversal of impairment of investment in subsidiary, net rT - | 2soeot CSC C*d 3,250.87
+Gain on sale of business undertaking ee ee 144.90
+Impact of New Labour Codes a <r €27))
+Trott OOOTTCCCCTTCdYY 890.77 | 974.93 | 4,347.05 |
+6 Revenue from operations include service income from subsidiaries of INR 123.16 million for the quarter ended 30 June 2026 (Quarter ended 31 March 2026: INR 114.62 million, Quarter ended 30 June 2025: INR
+132.49 million, Year ended 31 March 2026: INR 514.50 million).
+7 The figures for the quarter ended 31 March 2026 are the balancing figures between the audited figures in respect of full financial year and the unaudited published year to date figures upto the third quarter of the year
+ended 31 March 2026.
+8 The Board of directors of the Company, in its meeting held on 05 March 2026, approved the acquisition of 70% interest in RARE India for an aggregate consideration of INR 473.90 million, to be executed in one or
+more tranches, Consequently, during the current quarter, the Company has acquired a 553% partnership interest in RARE India on 22 April 2026 and obtained control over the partnership. The remaining 15% interest is|
+| proposed to be acquired subsequently in accordance with the terms of the definitive transaction agreements.
+9 During the quarter, on 22 May 2026, the Company acquired a 49% equity interest in Clean Max Nile Private Limited for a consideration of INR 15.05 million for sourcing renewable energy through group captive solar
+arrangements for certain hotels of its subsidiaries. Based on the terms of the agreement and related assessment, the Company does not have any significant influence over Clean Max Nile Private Limited and hence the
+same has not been considered as an associate entity as defined under Ind AS 28.
+10 The Company acquired 24,487,096 Compulsorily Convertible Preference Shares (CCPS) in Duet India Hotels Hyderabad Private Limited from Duet India Hotels (Pune) Private Limited on 20 April 2026 at their carrying
+amount of INR 440.18 million. EN ANDIO“N
+2. eel ¢ .
+Coy ~
+hy a) O\ ELs For and on behalf of Board of Directors of
+RY is y < 2 SAMUI Hotels Limited
+7 Be ~ Sm 7
+Q a o ae —
+3. & —
+¥ > %;
+<e - AS = i)
+Place: New Delhi ~€D ACCO” 4 Oo Ashish Jakhanwala
+Date; 03 August 2026 —_ Ky He Chairman, Managing Direcior and CEO
+DIN; 03304345
+|
+|
+|
+|
+|
+
+[page 10]
+ Walker Chandiok                                          & Co LLP
+
+
+
+                                                                                                                             Walker Chandiok & Co LLP
+                                                                                                                             21% Floor, DLF Square
+                                                                                                                             Jacaranda Marg, DLF Phase |1
+                                                                                                                             Gurugram — 122 002
+                                                                                                                             India
+                                                                                                                             T +91 124 4628099
+                                                                                                                             F +91 124 4628001
+
+
+
+
+Independent Auditor’'s Review Report on Consolidated Unaudited Quarterly Financial Results of
+SAMHI Hotels Limited pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 (as amended)
+
+To the Board of Directors of SAMHI Hotels Limited
+
+1.    We have reviewed the accompanying statement of unaudited consolidated quarterly financial results (‘the
+      Statement’) of SAMHI Hotels Limited (‘the Holding Company’) and its subsidiaries (the Holding Company and
+      its subsidiaries together referred to as ‘the Group’), (refer Annexure 1 for the list of subsidiaries included in the
+      Statement) for the quarter ended 30 June 2026, being submitted by the Holding Company pursuant to the
+      requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+      2015 (as amended) (‘Listing Regulations’).
+
+2.    This Statement, which is the responsibility of the Holding Company’s management and approved by the Holding
+      Company's Board of Directors, has been prepared in accordance with the recognition and measurement
+      principles laid down in Indian Accounting Standard 34, Interim Financial Reporting (‘Ind AS 34’), prescribed
+      under section 133 of the Companies Act, 2013 (‘the Act’), and other accounting principles generally accepted
+      in India and is in compliance with the presentation and disclosure requirements of Regulation 33 of the Listing
+      Regulations. Our responsibility is to express a conclusion on the Statement based on our review.
+
+3.    We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE)
+      2410, Review of Interim Financial Information Performed by the Independent Auditor of the Entity, issued by
+      the Institute of Chartered Accountants of India. A review of interim financial information consists of making
+      inquiries, primarily of persons responsible for financial and accounting matters, and applying analytical and
+      other review procedures. A review is substantially less in scope than an audit conducted in accordance with the
+      Standards on Auditing specified under section 143(10) of the Act, and consequently, does not enable us to
+      obtain assurance that we would become aware of all significant matters that might be identified in an audit.
+      Accordingly, we do not express an audit opinion.
+
+      We also performed procedures in accordance with the SEBI Circular CIR/CFD/CMD1/44/2019 dated
+      29 March 2019 issued by the SEBI under Regulation 33 (8) of the Listing Regulation, to the extent applicable.
+
+
+
+
+Chartered Accountarts                                                                                              Walker Chandiok &Co LLP isregistered with imited iabiityvith
+                                                                                                                    identiication number AAC-2085 andifs registered offce at L41
+Offces in Bengaluru, Chandigarh, Chennai, Gurugram, Hyderabad, Kochi, Kolkata, Mumbai, New Delhi, Noida and Pune    Connaught Circus, New Dehi, 110001, India
+
+[page 11]
+Walker Chandiok & Co LLP
+Independent Auditor’'s Review Report on Consolidated Unaudited Quarterly Financial Results of
+SAMHI Hotels Limited pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 (as amended) (cont’d)
+
+4.   Based on our review conducted and procedures performed as stated in paragraph 3 above, nothing has come
+     to our attention that causes us to believe that the accompanying Statement, prepared in accordance with the
+     recognition and measurement principles laid down in Ind AS 34, prescribed under section 133 of the Act, and
+     other accounting principles generally accepted in India, has not disclosed the information required to be
+     disclosed in accordance with the requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+     Requirements) Regulations, 2015 (as amended), including the manner in which it is to be disclosed, or that it
+     contains any material misstatement.
+
+     The Statement includes the interim financial information of three subsidiaries, which have not been reviewed
+     by their auditors, whose interim financial information reflect total revenues of Rs. 1.91 million, net loss after tax
+     of Rs. 17.14 million and total comprehensive loss of Rs. 17.14 million for the quarter ended 30 June 2026
+     respectively, as considered in the Statement and has been furnished to us by the Holding Company’s
+     management. Our conclusion on the Statement, in so far as it relates to the amounts and disclosures included
+     in respect of these subsidiaries, are based solely on such unreviewed interim financial information. According
+     to the information and explanations given to us by the management, these interim financial information are not
+     material to the Group.
+
+     Our conclusion is not modified in respect of this matter with respect to our reliance on the financial information
+     certified by the Board of Directors.
+
+
+
+
+For Walker Chandiok & Co LLP
+Chartered Accountants
+Firm Registration No: 001076N/N500013
+
+
+ NW'IALO_
+Neeraj Goel
+Partner
+Membership       No. 099514
+
+UDIN: 26099514JEQMHK9210
+
+Place: Gurugram
+Date: 03 August 2026
+
+
+
+
+Chartered Accountants
+
+[page 12]
+Walker Chandiok & Co LLP
+Independent Auditor’'s Review Report on Consolidated Unaudited Quarterly Financial Results of
+SAMHI Hotels Limited pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 (as amended) (cont’d)
+
+Annexure 1
+
+List of entities included in the Statement
+
+                  Argon Hotels Private Limited
+    COENOORWN =
+
+
+
+
+                  Ascent Hotels Private Limited
+                  Barque Hotels Private Limited
+                  Caspia Hotels Private Limited
+                  Paulmech Hospitality Private Limited
+                  SAMHI JV Business Hotels Private Limited
+                  SAMHI Hotels (Ahmedabad) Private Limited
+                  SAMHI Hotels (Gurgaon) Private Limited
+                  Duet India Hotels (Pune) Private Limited
+        10.       Duet India Hotels (Hyderabad) Private Limited
+        11.       Duet India Hotels (Ahmedabad) Private Limited
+        12.       Duet India Hotels (Chennai) Private Limited
+        13.       Duet India Hotels (Jaipur) Private Limited
+        14.       Duet India Hotels (Navi Mumbai) Private Limited
+        15. Innmar Tourism and Hotels Private Limited
+        16. SAMHI Hospitality Ventures Private Limited (formerly known as ACIC Advisory Private Limited)
+        17. SAMHI Skyline Private Limited (from 16 January 2026)
+        18. RARE India (from 22 April 2026)
+
+
+
+
+Chartered Accountants
+
+[OCR page 13]
+SAMHI Hotels Limited _ ewe
+CIN : L55101DL2010PLC21 1816 SA M H ]
+Registered Office :Sth Floor, Unit No. Office - 11, Worldmark 4, Asset Area No, LP-1B-04 tw har HOTEL INVESTMENTS —
+Gateway District, Delhi Aerocity, Near Indira Gandhi International Airport, New Delhi - 110037, India
+Website : www samhi.co in Email: compliance@samhi.co.in Telephone : +91 (11) 49077700
+STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED 30 JUNE 2026
+INR in million, except per equity share data)
+30 June 2026 | 31. March 2026 __| 30 June 2025 | 31 March 2026 __|
+(Audited) (Unaudited) (Audited)
+Refer note 6
+Continuing operations
+1 [Income
+Revenue from operations 3,052.06 3,448.60 2,722.11 12,477.96
+Other income 30.77 86.09 150.86 312.02
+Total income 3,082.83 3,534.69 2,872.97 12,789.98
+2 |Expenses
+Cost of materials consumed 211.75 295.29 216.78 1,000.11
+Employee benefits expense 502.07 499,94 466,59 1,954.09
+Other expenses 1,355.96 1,537.40 1,133.73 5,210.16
+2,069.78 | 2,332.63 | 1,817.10 | 8,164.36
+a
+3 | Earnings before finance costs, depreciation and amortisation, exceptional items 1,013.08) 1,202.06 1,055.87 | 628.02 |
+and tax (1-2)
+4 [Finance costs 376.89 506.16 1,709.14
+5 |Depreciation and amortisation expenses 308.83 381.55 290.66 1,266.65
+685,72 754.81 2,975.79
+a
+6 |Profit before exceptional items and tax (3-4-5) > ee Fee 259.05] «1,649.83 |
+; — in nie a = " Pf me | oo
+8 |Profit from continuing operations before tax (6+7) 327.33 692.15 [S—59005| «2,725,009 |
+9 | Tax expense
+Current tax - 0.58 - 0.58
+Deferred tax 78.06 3,302.39 38.67 2,995.45
+73.06 [ (3,300,81)) 38.67 | 2,994.87
+ey Ses |
+10 |Profit from continuing operations for the period/year (8-9) 249.27 | «3,993.96 | 220.38 §,719.96
+Discontinued operations
+Loss from discontinued operations before tax (28.22) (54.51)
+Tax expense of discontinued operations - -
+11 |Loss from discontinued operations for the period/year TO TT 2822 54.51)
+a | ain Sea newer |
+12 |Profit for the period/year (10+11) 249.27 3,993.96 ee
+13° | Other comprehensive income
+Hiems that will not be reclassified to profit or loss
+~ Re-measurement loss on defined benefit obligations (0.47) (0.29) (0,06) (3.22)
+- Income tax relating to items mentioned above - 0.11 - Ot
+Other comprehensive income, net of tax (11) eT)
+a QO
+14 | Total comprehensive income for the period/year (12+13) = 248.80| 3,993.78] 92] «662.34 |
+15 | Profit attributable to:
+Owners of the Company 182.50 3,536.71 172.80 5,029.90
+Non-controlling interests 66.77 457.25 19.36 635.55
+Profit for the period/year po 249,27 | 3,993.96 | 192.16 | 5,665.45 |
+16 |Other comprehensive income attributable to;
+Owners of the Company (0,39) (0,10) (2.78)
+Non-controlling interests 0.08) ‘0.08 0.33
+Other comprehensive income for the period/year 7) 1) (107) 8)
+17 | Total comprehensive income attributable to:
+Owners of the Company 182.11 3,536.61 172.74 5,027.12
+Non-controlling interests 66.69 457.17 19.36 635.22
+Total comprehensive income for the period/year (15+16) PO] 98.78 | 1920 5.06.34 |
+18 |Paid up equity share capital (face value of INR f each, fully paid) 222.13 222.13 221,21 222.13
+19 |Other equity as shown in the audited balance sheet 21,599.67
+20 |Earnings per equity share from continuing operations
+(Face value of INR f ench):
+(not annualised for quarters)
+Basic (INR) 1.12 18,04 1,00 25.85
+Diluted (INR) L.42 17.94 0.99 25.72 2
+21 [Earnings per equily share from discontinued operations
+(Face value of INR 1 each):
+(not annualised for quarters)
+Basic (INR) - - (0.13) (0.25)|
+Diluted (INR) - - (0.13) (0.25)|
+22_ JE equity share from continuing and discontinued operations em ‘
+“4 that vat R 1 each); oO! Lg
+“© |(not annualised forquarters) eS <
+|) [Basie (INR) \ “, 1.12 18.04 0.87 25.61
+vf Diluted (INR) | r S 1,12 17.94 0.86 25.47)
+I IN —s
+2 See accompanying notes to the unaudited consolidated financial results i PA an
+% &
+ON WES, i
+RED TON
+SD ACCOW
+|
+|
+
+[OCR page 14]
+: SAMHI Hotels Limited a
+CIN : LSS101DL2010PLC211816 SAMHI
+Registered Office :Sth Floor, Unit No. Office - 11, Worldmark 4, Asset Area No. LP-1B-04 SSE eyes ate
+Gateway District, Delhi Aerocity, Near Indira Gandhi International Airport, New Delhi - 110037, India
+Website : www.samhi.co.in Email : compliance@samhi.co.in Telephone : +91 (11) 49077700
+STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED 30 JUNE 2026
+Notes to the Statement of unaudited consolidated financial results for the quarter ended 30 June 2026:
+1 The above unaudited consolidated financial results of SAMHI Hotels Limited (hereinafter referred to as “the Parent”, "the Holding Company" or “the Company") and its subsidiaries (the Parent and)
+its subsidiaries together referred to as “the Group”) have been prepared in accordance with the recognition and measurement principles laid down in Indian Accounting Standard 34 “Interim|
+Financial Reporting” (“Ind AS 34”), prescribed under Section 133 of the Companies Act, 2013 read with Companies (Indian Accounting Standards) Rules, 2015, as amended from time to time, and
+other accounting principles generally accepted in India and in compliance with Regulation 33 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements)
+Regulations, 2015, as amended ("Listing Regulations").
+2 The above unaudited consolidated financial results for the quarter ended 30 June 2026 were reviewed and recommended by the Audit Committee and approved by the Board of Directors of the
+Parent at their respective meetings held on 31 July 2026 and 03 August 2026. The Statutory Auditors of the Company have conducted "Limited Review" of these financial results in terms o
+Regulation 33 of the Listing Regulations,
+3. The results for the quarter ended 30 June 2026 are available on the Bombay Stock Exchange website (URL: www.bseindia.com), the National Stock Exchange website (URL: www.nseindia.com)
+and on the Parent's website (URL: www.samhi.co.in).
+4 The Chief Operating Decision Maker ("CODM") evaluates the Group’s performance at an overall group level as one segment i.c. "developing and running of hotels". Hence, no further disclosures
+are required to be furnished in accordance with Ind AS 108 ~ Operating Segments.
+| 5 Exceptional items includes:
+INR in million
+— [sone ae — TH a a8 —[ aT aS | 3 Meh 2005 —
+(Unaudited) (Audited) (Audited)
+Refer note 6
+Reversal of impairment in value of property, plant and equipment 268.93 268.93
+and other intangible assets
+Gain onsale of business underaking ee Ses MeN ia
+Reversal of impairment in value of right-of-use assets, net -| it 696.58 |
+Impact of New Labour Codes Pe ee @403yf (35.15)
+| Tot OOOOTTCCOCOCSCSCSCSCid gg 1,078.26 |
+6 The figures for the quarter ended 31 March 2026 are the balancing figures between the audited figures in respect of full financial year and the unaudited published year to date figures upto the third
+quarter of the year ended 31 March 2026.
+.
+7 The Board of directors of the Parent, in its meeting held on 05 March 2026, approved the acquisition of 70% interest in RARE India for an aggregate consideration of INR 473.90 million, to be
+executed in one or more tranches.Consequently, during the current quarter, the Parent has acquired a 55% partnership interest in RARE India and obtained control over the partnership, Accordingly,
+RARE India has been consolidated with effect from the acquisition date i.e., 22 April 2026. The remaining 15% interest is proposed to be acquired subsequently in accordance with the terms of the|
+definitive transaction agreements.The aforesaid acquisition has been accounted for under the acquisition method w.e.f, 22 April 2026 in accordance with Ind AS 103 - Business Combinations, The
+determination of the fair values of the identifiable assets acquired and liabilities assumed, including the purchase price allocation ("PPA"), is currently in progress, Accordingly, the amounts’
+recognised in these unaudited consolidated financial results are provisional and have been determined in accordance with Ind AS 103.
+8 During the quarter, on 22 May 2026, the Parent acquired a 49% equity interest in Clean Max Nile Private Limited for a consideration of INR 15.05 million for sourcing renewable energy through
+group captive solar arrangements for certain hotels of the Group. Based on the terms of the agreement and related assessment, the Group does not have any significant influence over Clean Max Nile
+Private Limited and hence the same has not been considered as an associate entity as defined under Ind AS 28.
+AAKNDIO
+KOS TELS >
+“ Xe (@) Z For and on behalf of Board of Directors of
+[S oO" me 2 SAMUI Hotels Limited
+= \E ~ cs
+“ } * mm = » Sh. _.
+| 2 “” =
+py He S 4) Mm
+Place: New Delhi Sey oh y KY) © Ashish Jakhanwala
+| Date: 03 August 2026 = ACU * Chairman, Managing Director and CEO
+DIN: 03304345
+|
+|

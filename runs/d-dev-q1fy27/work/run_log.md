@@ -57,3 +57,15 @@ in inputs/ for audit; neither run separately to avoid redundant chains.
 - **A2 DOC4 (presentation):** PASS. 4 pages / 6 headline metrics / 6 straplines / 6 op bullets /
   19 quote claims / 9 forward-looking. Flags: FORMAT_ANOMALY (diluted EPS YoY "22.1" missing %),
   REPEATED_CLAIM, NO_PRIOR_LEDGER.
+- **A3 DOC1 (results):** PASS. 4 PASS / 10 FINDING / 3 N.A., all cited. Key: audit qualification
+  RETAINED + Note 5 WIDENED (going-concern language); Heavy Fab +3.7% YoY; ₹300 Cr preferential
+  not in subsequent-events note (EPS pre-issue); Sec 62(3) loan-conversion-on-default; 34.6% of
+  consol PAT from component-auditor subs; SIG_BEFORE_CONCLUSION. NB: "Amount of Loan Rs. 2,000"
+  in Annexure E is unit-ambiguous in source (lacs vs Cr) — A4/A5 to scrutinise.
+- **A3 DOC4 (presentation):** PASS. 1 PASS / 7 FINDING / 9 N.A., all cited. Key: headline summary
+  does not internally reconcile (EBITDA/PAT YoY); selective framing while PAT margin fell 5.8→5.5%;
+  order book ₹2,428 Cr +92.5% YoY with base absent; no standalone/consol label; EPS base pre-dilution.
+
+## ANALYSIS PHASE
+- Role 4 (Quarterly Results Review Protocol v1.2): APPLICABLE (results filing present).
+- Role 5 (Concall Protocol v1.1): N.A. — no concall document in the set.

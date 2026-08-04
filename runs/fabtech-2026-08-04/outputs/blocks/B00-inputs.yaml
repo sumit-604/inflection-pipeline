@@ -12,12 +12,15 @@ sector_cap_note: "Manifest auto-picked and flagged 'verify'. FABTECH manufacture
 listed_recently: true
 listed_evidence: "FY26 AR is the 8th AGM (incorporated 2018, CIN U74999MH2018PLC316357); presentation cites 'post-IPO utilisation of funds' and 'Listed Main Board FABTECH'; only post-listing years available. Listed within ~3 years of run_date."
 inventory:
-  prospectus: {count: 0, status: ABSENT}
-  annual-report:
-    count: 2
+  prospectus:
+    count: 1
+    status: PRESENT_MISFILED
     files:
-      - {path: "inputs/annual-report/e04aec7e-957d-4e45-9c8c-2b79504cc5be.pdf", note: "FY26 AR, 8th AGM, dated 2026-07-31, 224pp — PRIMARY / most recent"}
-      - {path: "inputs/annual-report/FP_INE0HF201011_03OCT2025.pdf", note: "FY25 AR, 7th AGM, dated 2025-10-03, 518pp — prior year, backward baseline"}
+      - {path: "inputs/annual-report/FP_INE0HF201011_03OCT2025.pdf", note: "RED HERRING PROSPECTUS (RHP), dated 2025-10-03, 518pp, text-readable. Misfiled in annual-report/ folder. Carries promoter/group history, group-company map, restated pre-IPO financials. Promoters: Aasif Ahsan Khan, Hemant Mohan Anavkar, Aarif Ahsan Khan, Manisha Hemant Anavkar. CEO: Ashwani Kumar Singh. HIGH prospectus gap RESOLVED by this document."}
+  annual-report:
+    count: 1
+    files:
+      - {path: "inputs/annual-report/e04aec7e-957d-4e45-9c8c-2b79504cc5be.pdf", note: "ACTUAL FY26 annual report (FY2025-26), 8th AGM, dated 2026-07-31, 224pp. SCANNED/image-based: 0 pages text-extractable via pypdf; READABLE ONLY via Read-tool vision rendering (poppler installed this session). Subagents must use Read, not text grep, for this file."}
   results:
     count: 2
     files:
@@ -53,15 +56,16 @@ inventory:
     files: [{path: "inputs/presentation/Investor_Presentation_1.pdf", note: "Q1 FY27 investor presentation, dated 2026-07-28, 20pp"}]
   announcements: {count: 0, status: ABSENT}
   other: {count: 0, status: ABSENT}
+listed_date_estimate: "~November 2025 (RHP dated 2025-10-03; IPO immediately after). ~9-10 months before run_date. Very recently listed."
 input_gaps:
-  - {type: prospectus, severity: HIGH, effect: "Recently listed (~3y): backward baseline built on post-listing years only (FY25+FY26 ARs); stages 2/3 fewer years; stage 8 sources promoter/group map from web + AR governance, flagged web-derived not filing-anchored; FTTCP backward baseline runs post-listing only."}
-  - {type: announcements, severity: MEDIUM, effect: "No Reg 30 documented-ACTION record. Intent-and-action cross-check (stages 5/7/8) runs on concall/AR evidence only; cannot grade recent documented actions; stage 8 relies on web search. FTTCP Step 0C input absent; lowers confidence, flagged."}
-  - {type: shareholding, severity: MEDIUM, effect: "No latest quarterly SHP. Stage 10 marks FII+DII unresolved; UA institutional-absence qualifier cannot be affirmed at stage 11, UA withheld. Promoter holding/pledge falls back to AR figure with staleness noted."}
+  - {type: prospectus, severity: RESOLVED, effect: "RHP is present (misfiled in annual-report/). NO gap. Promoter/group history and restated pre-IPO financials are filing-anchored, not web-derived. Stage 8 group-company map is prospectus-anchored."}
+  - {type: announcements, severity: MEDIUM, effect: "No Reg 30 documented-ACTION record. Intent-and-action cross-check (stages 5/7/8) runs on concall/AR/prospectus + web only; cannot grade recent documented actions from filings. FTTCP Step 0C input absent; lowers confidence, flagged."}
+  - {type: shareholding, severity: MEDIUM, effect: "No latest quarterly SHP. Stage 10 marks FII+DII unresolved; UA institutional-absence qualifier cannot be affirmed at stage 11, UA withheld. Promoter holding/pledge falls back to RHP post-issue + AR figure with staleness noted."}
   - {type: research, severity: LOW, effect: "No broker notes. No effect on anchored evidence; loses a lead-generation and management-intent cross-check source only."}
 degradation_active:
-  - "Stage 8 promoter/group map: web + AR governance, flagged web-derived (no prospectus)."
-  - "Stage 5/7/8 intent-and-action: concall/AR only (no announcements)."
+  - "Stage 5/7/8 intent-and-action: concall/AR/prospectus + web only (no announcements)."
   - "Stage 10 FII+DII unresolved; UA withheld phase 3 (no shareholding)."
+  - "FY26 AR is scanned (vision-read only); FY26 full-year financials cross-checked against Q4 FY26 results PDF (text-readable)."
 prior_run: none
 company_memory: "companies/FABTECH.md absent — first run for this ticker."
 data_notes:

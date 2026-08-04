@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "R&D expenditure as % of revenue not disclosed anywhere in the AR, results filings or presentation (carried from B01/Moat M6)."
+  - "Capacity addition (MT or %) for the ~Rs85cr CARE-disclosed capex programme not disclosed in any provided document; only the Rs cost, funding split, spend-to-date and Pithampur completion date (Dec-2026) are known."
+  - "FY26 Annual Report (Board's Report/MD&A narrative) not yet published/available; only the FY26 audited results filing (balance sheet, P&L, cash flow) and Q1 FY27 unaudited results were available, so the capex programme's own narrative, the 30% FY26 revenue growth driver, and Q1 FY27 margin recovery driver could not be corroborated in management's own words."
+  - "Scheme name, %, and duration/sunset terms of the State Government Industry Promotion Incentive (R1) not disclosed beyond the accounting line items and receivable balance."
+  - "No prior-year top-5/top-10 customer concentration figure exists to establish an improving-or-worsening trend against the CARE-disclosed FY25 92% figure (C2)."
+  - "NO-CONCALL mode: no company-specific promise-delivery record exists for the F2 execution-moat test; capex-completion evidence (CARE Report + balance sheet CWIP trend) was substituted per the injected degradation rule, but this is a single in-progress project with no completed prior cycle to verify against."
+flags:
+  - type: FLAG-LEVERAGE-CAPEX
+    reason: "The ~Rs85cr capacity-expansion programme (CARE Report, Dec-2025) is ~Rs60cr debt-funded at the same time CARE downgraded both long-term bank facilities (A- to BBB+) and long-term instruments (BBB+ to BBB) in Dec-2025, citing sustained margin compression and debt/PBILDT deterioration (1.60x FY24 to 3.18x FY25, 2.80x H1FY26). G1 (war chest) scores 0; this is the single largest risk to every positive emerging-moat finding in this scan."
+  - type: FLAG-CONCENTRATION
+    reason: "Top-5 customers were ~92% of FY25 revenue (CARE Report), with no disclosed trend data. C2 scores 0 and this concentration directly underlies the B2/C1 Moderate scores as well -- the same relationships are both the scan's best evidence and its biggest single-point-of-failure risk."
+  - type: FLAG-NO-CONCALL
+    reason: "F2 (execution moat) could not be scored on a genuine promise-delivery record; capex-completion evidence was substituted per the injected NO-CONCALL degradation rule and is flagged Weak, not verified."
+  - type: FLAG-NONANCHORED-LEAD
+    reason: "Pollution Control Committee Show-Cause Notice (15-Jun-2026) and NCRPS redemption notice (13-Jul-2026) are carried from the operator digest as non-anchored leads only (no Reg 30 PDFs collected this run); included in Section 6 risk/catalyst discussion but not scored as evidence anywhere in Sections 3-5."
+em_score: 14.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "active now"}
+  - {id: "C1", name: "Customer ecosystem/embedded relationships", strength: "Moderate", evidence_type: "claim/documented", time_to_materialise: "active now"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active now (recurring subsidy)"}
+evidence_mix: {documented: 19, claim: 10, inference: 4}
+completionist_recount: "📄 recount performed: 19 documented items across 9 scored categories (A3, B2, C1, E2, F1, F2, G2, H3, R1), plus 2 risk-flagged rows (C2, G1) evidenced by documented figures scored as 0. 3 categories reached Moderate (B2, C1, R1); none reached Strong. This sits at or below the realistic 3-6 Strong/Moderate base rate, confirming no over-crediting of claims as documented evidence."
+catalysts_12m:
+  - {catalyst: "Pithampur capacity-expansion leg commissioning", window: "by Dec-2026", evidence_type: "claim (CARE-sourced timeline) / documented (spend trajectory)", anchor: "CARE Rating Report, Dec-2025, p.3"}
+  - {catalyst: "NCRPS redemption (~Rs18.50cr)", window: "19-Aug-2026", evidence_type: "documented", anchor: "CARE Rating Report, Dec-2025, p.4; FY26 Results footnote, p.9"}
+  - {catalyst: "FY26 Annual Report publication (first narrative account of the capex programme and FY26 30% revenue growth)", window: "expected ~Q3 CY2026 (typical AGM cycle)", evidence_type: "inference", anchor: "AR FY24-25 published Aug-Sep 2025 per prior-year AGM cycle (AR PDF p.1)"}
+  - {catalyst: "Q2/Q3 FY27 margin trend versus Q1 FY27 uptick (7.49% operating margin)", window: "next 1-2 quarterly results", evidence_type: "documented (baseline)", anchor: "Q1 FY27 Results, p.9"}
+  - {catalyst: "Pollution Control Committee Show-Cause Notice resolution", window: "unclear, monitor", evidence_type: "claim (non-anchored operator digest)", anchor: "OPERATOR_digest_Feb-Aug2026.md, item 2"}
+capex_embedded_growth_pct: 42.7
+optionality_register:
+  - {optionality: "Skin Care category expansion beyond current Home/Personal Care mix", converting_evidence: "Named skin-care product with a customer/contract/capex line, or disclosed sub-segment revenue split", first_appears: "Future AR product-portfolio section or Reg 30 filing", window: "2-3 years"}
+  - {optionality: "REACH certification for EU market access", converting_evidence: "Certificate obtained and disclosed (grant date, scope)", first_appears: "Future AR certifications page or Reg 30 filing", window: "12-24 months"}
+  - {optionality: "Asia-Pacific / Middle East expansion (development centres, warehouses, sales offices)", converting_evidence: "Committed capex/lease for a specific facility or a signed distributor agreement", first_appears: "Board's Report capex note or Reg 30 filing", window: "2-3 years"}
+  - {optionality: "Strategic collaborations, R&D alliances, programmatic M&A", converting_evidence: "Signed JV, licensing deal, or acquisition with terms", first_appears: "Reg 30 exchange filing", window: "2-5 years"}
+  - {optionality: "Backward integration / raw material security", converting_evidence: "Captive RM source, or disclosed 5+ year supply agreement, or declining RM-cost-% vs peers", first_appears: "Future AR Board's Report/MD&A or Reg 30 filing", window: "2-3 years"}
+  - {optionality: "Carbon neutrality by 2030 / rising renewables share", converting_evidence: "Disclosed renewables % of energy mix, SBTi-validated target, or future BRSR", first_appears: "Future sustainability disclosure or BRSR", window: "3-5 years (2030 target)"}
+  - {optionality: "Aarti HPC Limited (dormant subsidiary, Pithampur land parcel, inactive since 2019)", converting_evidence: "Commencement of operations or a capex announcement tied to the land", first_appears: "Future AR Board's Report subsidiary section or Reg 30 filing", window: "indeterminate"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Backward AVERAGE (Gate 0, Core 55/100, moat MODERATE) pairs with forward MODEST MOAT DEVELOPMENT (14.5, short of the 25-point STRENGTHENING threshold), so the combination does not clear the bar for HIGH POTENTIAL or TURNAROUND; the credit-rated capex programme is real but single-project, debt-funded into a just-downgraded credit profile, and concentrated in the same customer base that also drives the scan's best scores."
+top_moat_risks:
+  - "Rs85cr capex programme is ~Rs60cr debt-funded while CARE downgraded ratings twice in FY26 (A-/BBB+ to BBB+/BBB) on margin compression and rising leverage (debt/PBILDT 1.60x FY24 to 3.18x FY25); term-loan and NCRPS repayments (~Rs21cr FY26, ~Rs28cr incl. preference-share redemption FY27) land as the capex bill peaks."
+  - "Top-5 customer concentration ~92% of FY25 revenue (HUL, P&G, Colgate-Palmolive, Dabur among named accounts); no disclosed trend proves this is improving, and it is simultaneously the scan's best evidence (B2, C1) and its largest single point of failure."
+  - "No-concall mode plus no FY26 Annual Report yet means the capex programme's promise-delivery record cannot be verified against management's own prior public commitments; the CARE Report is the only third-party corroboration of scope, cost and timeline."
+  - "Pollution Control Committee Show-Cause Notice (15-Jun-2026, non-anchored operator digest) is an unresolved environmental-compliance risk arising at the same time the company is expanding physical capacity."

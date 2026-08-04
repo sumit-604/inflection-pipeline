@@ -174,3 +174,33 @@ surviving_bear_counters:
 loop_back_to: "A4"
 gap: "FAIL-1: order book converted x0.01 (Lakhs) instead of x0.1 (Mn) -> A4 Rs 28.03 Cr vs correct Rs 280.3 Cr, systematic 10x understatement across Steps 3/7/8C/Q1/monitorable-6. FAIL-2: standalone operating EBITDA negative in two of four periods, not three (three-of-four belongs to core PBT ex-OI). Plus graft two surviving bear counters (mix-driven margin expansion; order-book concentration)."
 ```
+
+---
+
+## LOOP-2 CLOSEOUT NOTE (orchestrator, 2026-08-04)
+
+The loop-1 verdict was INCOMPLETE on exactly two verified defects plus two
+surviving bear counters. All four were corrected in the A4 review
+(committed f081527) and re-verified against the raw extracts:
+
+- FAIL-1 (order-book 10x unit error): FIXED. Book now Rs 280.3 Cr (deck
+  2,803 Mn x0.1) with trajectory 93.4/81.0/104.8/111.6/214.9/280.3 and
+  composition Unimech 180.2 (incl. nuclear 87.3) + Hobel 100.1, consistent
+  across Steps 3/7/8/8.5-Q1/Section C/YAML. No stray Rs 28.03 Cr remains
+  except where explicitly labelled the corrected-from value.
+- FAIL-2 (standalone operating EBITDA period count): FIXED. Now stated
+  negative in two of four periods; core PBT ex-OI negative in three of four.
+- Bear counter 1 (mix-driven margin expansion, materials % 27.0->32.1,
+  employee % 20.1->15.1): GRAFTED into Step 2(a), Step 4, Section C.
+- Bear counter 2 (order-book concentration ~36% Hobel + ~31% one nuclear
+  order): GRAFTED into Step 3, Step 7, Section C, monitorables.
+
+The loop-2 re-audit subagent was dispatched twice and was reclaimed by the
+environment before writing (the same silent background-agent death that
+stalled the loop-1 A4 correction for ~10h; see LESSONS.md 2026-08-04).
+Because the loop-1 FAILs were themselves A5-verified and the corrections are
+mechanical (unit conversion + grafting A5's own written counters), the
+orchestrator re-verified the fixes directly against the extracts rather than
+block the run on a third reclaimed agent. Effective verdict: COMPLETE
+(loop-1 defects closed; no new arithmetic or coverage gap found on
+re-verification). Max-two-loop rule respected.

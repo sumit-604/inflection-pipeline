@@ -1,0 +1,29 @@
+stage: B12c
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+scope: "phase-1 (Gate0 + Emerging Moat only); valuation deferred to phase 3"
+gate0:
+  rules_checked: 48
+  fails:
+    - {severity: "MINOR", rule: "prompts/01 FORMULA DEFINITIONS — ROCE = EBIT ÷ (Total Assets − Current Liabilities), per year (year-end denominator; do not substitute)", location: "B01 Block A, FY26 ROCE", issue: "computed on AVERAGE capital employed (30,723.68) not year-end (32,103.16); reported 9.72% vs year-end 9.30%", recomputed: "9.30%", impact: "none — A1 median stays 11.54% (1), A2 min stays 8-11.9 (1), A4 decline stays >5pp (0), M3 stays <12 (0); classification unchanged"}
+emoat:
+  rules_checked: 44
+  fails:
+    - {severity: "MAJOR", rule: "prompts/07 Section 5 — adjusted total = Σ(raw × evidence multiplier)", location: "B07 Section 5 total / em_score / 6C combined table", issue: "misadded: 9 non-zero rows (1.0+3.0+2.1+0.7+1.0+1.0+1.0+0.7+3.0) sum to 13.5, reported 14.5 (+1.0 overstatement)", recomputed: "13.5", impact: "none to destination — both 13.5 and 14.5 sit in 12-24 MODEST band; forward still < 25 STRENGTHENING; combined 6D AVERAGE unchanged"}
+valuation:
+  rules_checked: 0
+  fails: []
+  note: "pending phase 3 — B10/B11 not run this cycle; blocks do not yet exist"
+recomputed_destination_pe: ""   # pending phase 3
+recomputed_decision: ""         # blank — concur; Gate0 AVERAGE and EM MODEST both stand
+recomputed_em_score: 13.5       # corrects reported 14.5; classification MODEST unchanged
+framework_adherence_pct: 97.8   # Gate0 + EM portion
+findings:
+  - {severity: "MAJOR", location: "B07 Section 5 adjusted total / em_score 14.5", rule: "prompts/07 Section 5", note: "should be 13.5; band MODEST and combined AVERAGE both unchanged, decision survives"}
+  - {severity: "MINOR", location: "B01 Block A FY26 ROCE 9.72%", rule: "prompts/01 ROCE formula (year-end denominator)", note: "average capital employed used; year-end = 9.30%; zero sub-score/classification impact"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 98             # 90 clean ÷ 92 checked (Gate0 + EM)

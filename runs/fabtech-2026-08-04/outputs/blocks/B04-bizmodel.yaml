@@ -1,0 +1,63 @@
+stage: B04-bizmodel
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["announcements not provided", "shareholding pattern not provided", "broker/independent research not provided", "precise DSO/DPO/inventory-days not disclosed in sources read", "industry TAM/CAGR figures not read from Industry Overview section", "FY26 headcount/engineer-count not disclosed in sources read"]
+flags:
+  - "sector tag corrected from Pharma/CDMO to turnkey EPC/process-equipment engineering; use Anup Engineering, HLE Glascoat, Praj Industries, Ion Exchange as proxy comp set, not CDMO peers"
+  - "related-party equipment procurement dependency without definitive-term agreements (RHP p.375-376) is a disclosed conflict-of-interest risk"
+  - "customer and project concentration: top-5 customers/projects were 56-62% of FY25 revenue/order book"
+  - "working capital intensity: operating cash flow was negative in FY25 and FY23 despite reported profit"
+  - "investor presentation contains an internal inconsistency between its geographic revenue mix chart (~90% international) and its own caption (~55% international)"
+  - "FY25 PAT included a Rs 1,784.86 lakh non-recurring exceptional gain from the TSA/Thermax stake sale; must be normalised out before using FY25 as an earnings base"
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Turnkey (start-to-finish) services", type: "EPC/project contract revenue, milestone-billed", pct_of_revenue: 75.51, predictability: "M"}
+  - {name: "Standalone equipment-supply services", type: "Transactional project/order revenue", pct_of_revenue: 24.49, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Brand (Fabtech Group regional reputation)", durability: "moderate"}
+  - {moat: "Efficient scale / local niche in under-served GCC/Africa markets", durability: "moderate, erodable"}
+  - {moat: "Distribution/relationship moat (referral-driven, 289 customers/57 countries since inception)", durability: "moderate"}
+  - {moat: "Switching costs (mid-project only, resets each new tender)", durability: "weak"}
+valuation_methods:
+  primary: {method: "P/E on normalized/sustainable earnings", why: "Order-book-driven EPC business with near-term earnings visibility from Rs 900+ Cr backlog; standard basis for the recommended listed comp set (Anup Engineering, HLE Glascoat, Praj Industries, Ion Exchange); requires normalising out FY25's one-off TSA/Thermax stake-sale gain"}
+  secondary: {method: "EV/EBITDA", why: "Better captures balance-sheet/leverage effects than equity-only P/E, given negative operating cash flow in 2 of the last 3 fiscal years despite reported profit"}
+  tertiary: {method: "EV/Order book (book-to-bill cross-check)", why: "Order book is the central physics metric for this business model (1.48x book-to-bill FY25); useful sanity check on growth durability, not a standalone valuation tool"}
+  not_applicable: ["DCF (lumpy milestone billing and volatile working capital distort near-term FCF)", "EV/Sales (masks margin volatility and large equipment pass-through component)", "Dividend discount model (first dividend only in FY26, too early-stage)", "Asset-based/book value (asset-light model, value is in relationships/order book not physical assets)", "PEG (growth trajectory too new/volatile post-IPO)", "SOTP (single integrated business, not multi-segment)"]
+irrelevant_ratios:
+  - {ratio: "Blended gross margin vs pharma/CDMO peers", why: "63% of income is pass-through equipment purchase cost; not comparable to a drug manufacturer's product gross margin"}
+  - {ratio: "Traditional manufacturing-style inventory turnover", why: "Inventory is project-specific stock-in-trade tied to milestone billing, not shelf/retail inventory"}
+  - {ratio: "Fixed-asset turnover / capex intensity", why: "Deliberately asset-light model; capacity sourced via Related Entities/contractors, not owned plant"}
+  - {ratio: "R&D spend as % of revenue", why: "Not a drug developer; engineering/design capability is not comparable to pharma clinical R&D spend"}
+  - {ratio: "Single-quarter YoY revenue growth read alone", why: "Revenue recognition is shipment/milestone-based and structurally H2-weighted; a quiet quarter can coexist with a healthy pipeline"}
+must_track_metrics:
+  - {metric: "Order book (Rs Cr) and book-to-bill ratio", healthy: "Growing YoY, book-to-bill above 1.2x", red_flag: "Order book flat/declining or book-to-bill below 1.0x"}
+  - {metric: "Proposal-to-order conversion ratio", healthy: "Stable-to-improving from ~10% FY25 base", red_flag: "Declining conversion trend"}
+  - {metric: "Operating cash flow vs PAT (cash conversion)", healthy: "OCF broadly tracking PAT over a rolling 2-3 year window", red_flag: "Persistent negative OCF despite reported profit"}
+  - {metric: "Contribution/EBITDA margin trend", healthy: "Contribution margin high-30s to high-40s%, EBITDA margin mid-teens or better", red_flag: "Sharp sequential compression"}
+  - {metric: "Top-5 customer/project revenue concentration", healthy: "Gradually declining from FY25's ~56-62%", red_flag: "Rising above ~60-65%"}
+unit_economics:
+  unit: "One executed project/order (blended average)"
+  revenue_per_unit: "~Rs 2.4 Cr average per order (FY25: Rs 32,666.85 lakh revenue from operations across 136 executed orders, RHP p.219/380); wide dispersion, top-20 projects were 87.69% of FY25 revenue"
+  margin_per_unit: "Contribution margin 37.6% to 46.7% across recent quarters (Inv. Pres.); EBITDA margin 14.07% FY25 company-wide (RHP p.372)"
+  key_lever: "Design/engineering content in project scope (higher-engineering-content scope carries structurally higher margin than pure equipment supply); procurement discipline; reduction in variation orders/rework"
+first_deterioration_signals:
+  - {risk: "Continuous need to re-win low-conversion (~10%) competitive bids", first_signal: "Proposal-to-order conversion ratio and quarterly new-order-booking value declining"}
+  - {risk: "Fixed-price contract cost overruns", first_signal: "Contribution margin compression / rising project erection & commissioning cost as % of revenue"}
+  - {risk: "Working-capital intensity of milestone billing", first_signal: "Operating cash flow falling below PAT, or turning negative, in a reported-profit period"}
+  - {risk: "Related-party equipment procurement dependency", first_signal: "Purchase of stock-in-trade rising as % of revenue without margin improvement, or unformalised related-party sourcing share staying above ~70-75%"}
+  - {risk: "GCC/MENA/ECO geopolitical and forex concentration", first_signal: "Single-country revenue share swings and recurring net FX losses in the P&L"}
+mgmt_questions:
+  - "What is the actual receivable/unbilled-revenue ageing on the Rs 900+ Cr order book, and how much of recent revenue growth is funded by stretched working capital versus collected cash?"
+  - "What is the plan to reduce dependence on Related-Entity equipment suppliers absent definitive-term agreements, and what arm's-length pricing benchmarking exists?"
+  - "What is driving the ~10% proposal-to-order conversion ratio, and is it structurally improving?"
+  - "How much of the order book sits in politically or economically fragile geographies, and what payment security backs those contracts?"
+  - "Is the 46.7% Q1 FY27 contribution margin structural or a one-quarter mix effect likely to revert toward the 37-39% range seen through FY26?"
+  - "What is the specific plan and ROIC discipline behind the announced ~Rs 30 Cr inorganic acquisitions across India/UAE/Saudi Arabia/Egypt, and how does this square with the asset-light thesis?"
+  - "Which specific projects/milestones are scheduled to bill in H2 FY27, and what is the risk of further geopolitically-driven slippage?"
+one_line_verdict: "Asset-light turnkey EPC contractor for pharma-facility infrastructure with real but narrow, erodable relationship-based moats, high working-capital intensity, and no wide structural advantage; valuation should route through EPC/process-equipment comps, not CDMO peers."

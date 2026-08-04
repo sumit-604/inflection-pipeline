@@ -1,0 +1,47 @@
+stage: B06-peers
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "AARTISURF not mentioned by name in any of 12 peer transcripts, even where a comparably-scoped peer (Fineotex) was raised unprompted (ROSSARI May 2026 call)"
+  - "Q5 capex-cycle claim CONTRADICTED: AARTISURF's CWIP ramp (7.64->14.65->41.03cr FY24-26) accelerates while GALAXYSURF and ROSSARI both retreat from capex in the same window"
+  - "Q2 demand-growth claim CONTRADICTED: peers cite 2-4% current India underlying volume growth vs AARTISURF's stale 8-9.6% CAGR figure"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Raw-material cost inflation / margin compression FY2025 (RM ratio 75.6%->82.3%, EBITDA 10.70%->7.56%)", peers: ["GALAXYSURF", "ROSSARI"], note: "direction corroborated, magnitude much smaller at peers"}
+  - {claim: "Export-share decline / Chinese pricing pressure FY2024-25 (export 28.2%->20%)", peers: ["FCL", "GALAXYSURF", "ROSSARI"]}
+  - {claim: "New-entrant/capacity-driven margin compression (intensifying competition)", peers: ["GALAXYSURF"]}
+  - {claim: "Receivable/payable stretch / cash-conversion deterioration FY2024-25 (CFO 51.96->11.14cr)", peers: ["ROSSARI"]}
+contradicted:
+  - {claim: "AARTISURF's stale 2020-vintage India demand growth (8-9.6% CAGR) remains representative", contradicting_peer: "GALAXYSURF", quote_anchor: "GALAXYSURF Feb 2026 (Q3 FY26): 'India market... all of them are reporting 2% to 4% volume growth, underlying volume growth.'"}
+  - {claim: "AARTISURF's CWIP ramp reflects an industry-wide capacity race", contradicting_peer: "ROSSARI", quote_anchor: "ROSSARI May 2026 (Q4/FY26) CFO Ketan Sablok: 'we internally have decided to rephase our earlier CAPEX spend... Rs.192 crore across Rossari, Unitop and Tristar... in light of the evolving business requirements and market conditions.'"}
+unverifiable: []
+peer_coverage_map:
+  - {peer: "FCL", quarter: "Q2 FY26 (Dec 2025)", usage: "UNUSED", contribution: "Entire call is CrudeChem (US oilfield) acquisition Q&A; no India surfactants demand/margin/competition content"}
+  - {peer: "FCL", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "FCL", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "FCL", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "GALAXYSURF", quarter: "Q1 FY26 (Aug 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "GALAXYSURF", quarter: "Q2 FY26 (Nov 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "GALAXYSURF", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "GALAXYSURF", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "ROSSARI", quarter: "Q2 FY26 (Oct 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "ROSSARI", quarter: "Q3 FY26 (Jan 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "ROSSARI", quarter: "Q4/FY26 (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "ROSSARI", quarter: "Q1 FY27 (Jul 2026)", usage: "SUBSTANTIVE"}
+peers_substantive: 11
+peers_unused: 1
+industry_cross_read:
+  demand: "Consensus soft-to-modest India domestic demand across all three peers FY25-26 (Galaxy 2-4% underlying volume growth; Rossari repeatedly softer/muted; FCL's textile export sector called worst year of the decade) - undercuts a demand-boom framing and AARTISURF's stale 8-9.6% CAGR claim"
+  pricing_inputs: "RM/feedstock cost inflation confirmed real and sector-wide by Galaxy and Rossari across multiple quarters, corroborating AARTISURF's margin narrative in direction but at much smaller magnitude; FCL's picture reverses to margin improvement by Q1 FY27"
+  capex_cycle: "Lone-expander situation, not an industry-wide race: Rossari explicitly rephased a Rs192cr plan down to Rs50-75cr the same year AARTISURF's CWIP accelerates; Galaxy wound its capex to maintenance-only; FCL's large capex is entirely outside the comparable segment (US oilfield)"
+risks_peers_raise:
+  - "Geopolitical/Middle East conflict disrupting RM logistics and freight (ROSSARI Jan/May/Jul 2026)"
+  - "US reciprocal tariff exposure, ~3-5% of FY25 EBITDA cumulative (GALAXYSURF Nov 2025/Feb 2026); FY26 'worst year of the decade' for Indian textile exports (FCL May 2026)"
+  - "Backward-integration by end-market competitors as structural risk (GALAXYSURF AMET/Egypt, all four calls)"
+  - "China-sourcing supply risk causing one-off cost spikes (ROSSARI phenol-shipment-delay anecdote)"
+  - "Institutional/B2C segment drag requiring portfolio rationalization (ROSSARI, all four calls)"
+net_narrative_effect: "complicates"

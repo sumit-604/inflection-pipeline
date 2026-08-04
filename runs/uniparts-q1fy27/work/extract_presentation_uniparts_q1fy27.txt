@@ -1,0 +1,821 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_uniparts_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 25
+formfeed_count: 25
+line_count: 820
+unit_convention: Millions (INR Mn - used in all financial tables: Key Takeaways page 8, Q1FY27 Results Consolidated page 9, Historical P&L page 19, Historical Balance Sheet page 20, Revenue Distribution page 10, CFO chart page 17. Exception: Management's Message narrative on page 5 states cash position, special dividend and order book figures natively in INR crore, not converted from Mn.)
+conversion_factor_to_cr: Millions -> x0.1 (1 Rs Mn = 0.1 Rs Cr). Figures already stated in crore on page 5 (INR 190 crore net cash, INR 101cr special dividend, INR 225 crore order book) require no conversion - flagged here so downstream agents do not double-convert them. Do not convert the extracted text below; apply the factor downstream.
+ocr_pages: none
+page_coverage: 100% (pages 1-25 of 25 accounted for; formfeed_count 25 matches pdfinfo page count 25; every page yielded well above 100 extracted characters, so no page met the OCR-fallback trigger. As an extra integrity check on the two most chart-dense pages -- page 8 Key Takeaways bar charts and page 17 Key Financial Metrics trend charts -- both were independently rasterised and OCR'd; OCR output matched the native pdftotext -layout numbers exactly with no additional data recovered, confirming the deck's charts are native vector/text objects, not flattened images, so the native text layer is complete.)
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026, per Reg 30 cover letter page 1 and title slide page 2; management commentary on page 5 refers to it as "Q1 FY27" throughout)
+extraction_date: 2026-08-04
+=== END HEADER ===
+
+[page 1]
+                                                                                                    UNIPARTS INDIA LTD.
+                                                                                                                 August 04, 2026
+
+         BSE Limited                                                             National Stock Exchange of India Limited
+         Phiroze Jeejeebhoy Towers                                               Exchange Plaza, C-1, Block G
+         Dalal Street, Mumbai – 400 001                                          Bandra Kurla Complex
+                                                                                 Bandra (E), Mumbai – 400 051
+
+         Scrip Code: 543689                                                      Symbol: UNIPARTS
+
+
+         Subject: Regulation 30: Presentation on Standalone and Consolidated Unaudited
+                  Financial Results of the Company for the quarter ended June 30, 2026
+
+         Dear Sir/Madam,
+
+         Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements)
+         Regulations, 2015, please find attached herewith a copy of the Presentation on Standalone
+         and Consolidated Unaudited Financial Results of the Company for the quarter ended June 30,
+         2026.
+
+         The same is also being uploaded on website of                                                     the    Company     at
+         https://www.unipartsgroup.com/home/quarterly_financial_results.
+
+         You are requested to take the above on record.
+
+         Thanking You,
+
+         Yours faithfully,
+
+         For Uniparts India Limited
+         Jatin               Digitally signed by Jatin Mahajan
+                             DN: c=IN, o=Personal,
+                             pseudonym=pyobr5mf0ns3ljcq68xt91ik2z47dvgw,
+                             2.5.4.20=e3fc705527aaf20c69e82fd8ef3a9a41d8839d36
+                             101b61ecac0711594d6b71ad, postalCode=110055,
+
+
+
+         Mahajan
+                             st=Delhi,
+                             serialNumber=d5b1db751344dcaea44f0c205f807da679
+                             a55e6357945c94be95083c41ac9235, cn=Jatin Mahajan
+                             Date: 2026.08.04 17:48:09 +05'30'
+
+
+
+
+         Jatin Mahajan
+         Head Legal, Company Secretary and Compliance Officer
+
+         Encl: As above
+
+
+
+
+Regd. Office: Gripwel House, Block-5, LSC, C 6 & 7, Vasant Kunj, New Delhi-110 070, India
+Tel: +91 11 26137979 |Fax: +91 11 26133195
+Corporate Office: 1st Floor, B 208, A1 & A2, Phase-II, Noida-201305, (U.P.), India
+Tel: +91 120 4581400 | Fax: +91 120 4581499
+E-mail: info@unipartsgroup.com; website: www.unipartsgroup.com
+An ISO 9001:2008 & 14001:2004 Company
+CIN : L74899DL1994PLC061753
+[page 2]
+     Uniparts India
+              Limited
+ Addressing the core needs of the WORLD.
+Precision DELIVERED, Performance ASSURED
+     Leveraging engineering competencies and
+              a global delivery model
+            Earnings Presentation – Q1FY27
+[page 3]
+               This presentation and the accompanying slides (the “Presentation”), which have been prepared by
+               Uniparts India Ltd (the “Company”) solely for information purposes and do not constitute any offer,
+                  recommendation, or invitation to purchase or subscribe for any securities and shall not form the
+                   basis or be relied on in connection with any contract or binding commitment whatsoever. This
+                   presentation does not constitute a prospectus, a statement in lieu of a prospectus, an offering
+                circular, an information memorandum, an invitation or advertisement, or an offer document under
+              the Companies Act, 2013, together with the rules thereunder, the Securities and Exchange Board of
+                 India (Issue of Capital and Disclosure Requirements) Regulations, 2018 each as amended, or any
+                   other applicable law in India. No offering of securities of the Company will be made except by
+                    means of a statutory offering document containing detailed information about the Company.
+                    Certain statements in this presentation concerning our future growth prospects are forward -
+                looking statements that involve a number of risks and uncertainties that could cause actual results
+Safe Harbor
+
+
+
+                   to differ materially from those in such forward - looking statements. The Risk and uncertainties
+                  relating to the statements include, but are not limited to, risks and uncertainties regarding fiscal
+                        policy, competition, inflationary pressures, and general economic conditions affecting
+              demand/supply and price conditions in domestic and international markets. The company does not
+               undertake to update any forward - looking statement that may be made from time to time by or on
+                   behalf of the company. There is no obligation on the Company or any of its directors, officers,
+                 employees, agents or advisers, or any of their respective affiliates, advisers, or representatives to
+                  update or revise any forward-looking statements, whether as a result of new information, future
+                 events or otherwise and none of them shall have any liability (in negligence or otherwise) for any
+                   loss howsoever arising from any use of this presentation or its contents or otherwise arising in
+               connection with this presentation. Certain figures (including amounts, percentages, and numbers),
+              as applicable, have been rounded off to the nearest number and may not depict the exact number.
+                                Further, past performance is not necessarily indicative of future results.
+                   This Presentation has been prepared by the Company based on information and data that the
+                 Company considers reliable. This Presentation may not be all-inclusive and may not contain all of
+                  the information that you may consider material. Any liability in respect of the contents of, or any
+                omission from, this Presentation is expressly excluded. The Company does not make any promise
+                to update/provide such a presentation along with results to be declared in the coming years. The
+               information in this presentation has not been independently verified and has not been and will not
+                 be reviewed or approved by any statutory or regulatory authority or stock exchange in India. No
+                representation, warranty, express or implied, is made as to, and no reliance should be placed on,
+                     the fairness, accuracy, completeness, or correctness of the information and opinions in this
+              presentation. Further, nothing in this document should be construed as constituting legal, business,
+                                                         tax, or financial advice.
+
+
+
+
+                                                                                                                         2
+[page 4]
+Content
+
+
+
+               Q 1 F Y 2 7 Pe r f o r m a n c e
+
+
+
+
+       Business Overview
+
+
+
+
+ Annexures
+
+
+     Passion    Innovation      Integrity         Excellence   Team Work   3
+[page 5]
+Management’s Message
+
+
+             Mr. Gurdeep Soni
+             Promoter, Chairman & Managing Director
+             The first quarter of FY27 reflects the divergent dynamics currently shaping our end markets and, importantly, how we are
+             navigating them. Central to this is the operational rigour our teams have demonstrated in ensuring we continue to meet customer
+             expectations without exception.
+
+             On that note, the restoration of the finishing shop at our Ludhiana facility is progressing well and on schedule, and I am pleased to
+             report that customer supply has remained uninterrupted throughout. Equally, our Mexico operations are on track, with first
+             customer deliveries from the warehouse expected in Q3. This is a meaningful milestone in our journey as a global supply partner.
+
+             Turning to Q1 FY27 performance we are pleased to report revenue growth of 27% year-on-year, EBITDA growth of 55% year-on-
+             year and a PAT growth of 64% year-on-year. This performance is in line with the quarter on quarter guidance we had shared but
+             better than the annual guidance we had given, and reflects the quality of execution by the team across a quarter that was not
+             without its challenges. The ongoing West Asia situation has continued to exert pressure on input costs and supply chains. Our
+             teams have navigated this with discipline, working closely with vendors and ensuring that our delivery commitments were met
+             without disruption.
+
+             On a trailing twelve-month basis, our EPS stands at INR 39.97, and our ROCE is north of 27%, with ROE at 20%. Our net cash
+             position at the end of Q1 stands at INR 190 crore, reflecting the continued strength of our cash generation. To put this in context:
+             when we declared the special dividend of INR 101cr in October 2025, our cash balance was approximately INR 210 crore. In ten
+             months, through focussed operations and business growth, we have rebuilt to that level. Our balance sheet is in excellent health,
+             and we continue to actively evaluate acquisition opportunities that can accelerate our strategic agenda.
+
+             On the business development front, our trailing twelve-month new business order book remains robust at over INR 225 crore,
+             with a healthy pipeline. These wins span segments and geographies and reflect continued customer confidence in our capabilities
+             across our three product platforms 3PL, PMP, and fabrications. We are continuing to invest in growing our construction and large
+             agricultural equipment businesses, given that small ag is already a segment where we hold significant global market share. The
+             new business momentum is structural, and we intend to build on it.
+                                                                                                   Mr. Paramjit Singh Soni
+                                                                       Promoter, Vice Chairman and Executive Director
+
+           Passion                  Innovation                      Integrity                      Excellence                       Team Work        4
+[page 6]
+Operating Environment Update
+
+
+
+
+   Construction Equipment
+
+   The momentum that started in the second half of CY2025 has continued into Q1 FY27. Infrastructure-led spending, particularly under the technology
+   investments in the US and government led spending in Europe, is sustaining healthy customer schedules and order visibility. This segment is
+   performing well, and we are growing with it, supported by both market recovery and new business additions.
+
+   Small Agriculture
+
+   India continues to perform well, supported by government subsidy programmes and rising adoption across the mid-to-higher horsepower categories.
+   New business wins in India in the small ag segment have been particularly strong. In Western markets, small ag growth remains more measured.
+   Consumer appetite for big-ticket equipment purchases has been tempered by economic uncertainty and volatility, leading to continued deferral of
+   buying decisions. That said, the bottom appears to be behind us; after three consecutive years of volume declines, we are beginning to see some
+   recovery in unit volumes, and the direction of growth is encouraging. Driven by our share position and continued new business additions, our
+   business growth remains strong in this segment.
+
+                        Passion            Innovation            Integrity            Excellence              Team Work                                5
+[page 7]
+Operating Environment Update
+
+
+
+
+  Large Agriculture
+
+  Conditions remain subdued, as has been widely acknowledged across the industry. Leading OEMs have indicated that CY2026 represents the cyclical
+  bottom, with a more meaningful recovery expected through CY2027. Our growth in this segment is therefore not market-driven. It is entirely the
+  result of new business wins, with particular momentum in Europe. This is a natural extension of our core competency and a segment we are investing
+  in with a long-term view.
+
+  Aftermarket
+  Aftermarket represents approximately 12% of revenues in Q1 FY27 and was flat year-on-year in absolute terms. Tariff-driven price volatility has led to
+  some demand skewing, as higher prices caused customers and channel partners to moderate their purchasing. With tariffs having since come down,
+  we expect this to normalise and the segment to return to growth. In the meantime, our OEM business has grown strongly, which has naturally
+  reduced aftermarket as a proportion of overall revenues. Aftermarket remains a strong and strategically important pillar of our business and a
+  continued area of focus.
+
+
+                        Passion              Innovation             Integrity             Excellence              Team Work                                6
+[page 8]
+Key Takeaways from Q1 FY27
+
+
+
+                           Total Income                                              EBITDA                                  PBT                            PAT
+Q1FY27
+                            INR 3,552 Mn                                         INR 898 Mn                           INR 746 Mn                       INR 566 Mn
+                                  27.2% (YoY)                                        55.3% (YoY)                           67.0% (YoY)                  64.3% (YoY)
+
+
+                  Total Income (INR Mn)                                       EBITDA (INR Mn) & Margins (%)                           PAT (INR Mn) & Margins (%)
+
+                                                                             20.7%         24.0%           25.3%                  12.3%        15.1%            15.9%
+                              xx%
+                             27.2%
+                                                                                           55.3%                                               64.3%
+
+                                              3,552                                                         898                                                    566
+                             3,394                                                          813                                                  511
+            2,792
+                                                                               578                                                 345
+                                      4.6%                                                         10.4%                                                10.7%
+
+
+
+
+          Q1FY26           Q4FY26            Q1FY27                          Q1FY26       Q4FY26           Q1FY27                 Q1FY26       Q4FY26           Q1FY27
+
+Note: Total Revenue, EBITDA, PBT and PAT include other income
+
+
+
+
+                                      Passion                   Innovation             Integrity              Excellence           Team Work                             7
+[page 9]
+Q1FY27 Results (Consolidated)
+                                                                                                                 QoQ      YoY
+   Figures in INR Mn                                                        Q1FY27        Q4FY26   Q1FY26
+                                                                                                                Change   Change
+   Revenue from Operations                                                   3,474         3,389    2,737        2.5%    27.0%
+   Other Income                                                               78             5       55
+   Cost of materials consumed (including change in inventory)                1,161         1,195    941
+   Gross Profit Margin (As % of Revenue from Ops)                            66.6%         64.7%    65.6%
+
+   EBITDA                                                                    898            813     578         10.5%    55.4%
+   EBITDA Margin(%)                                                          25.3%         24.0%    20.7%
+
+   Operating EBITDA (EBITDA - Other Income)                                  820            808     523          1.5%    56.8%
+   Operating EBITDA Margin(%) (As % of Revenue from Ops)                     23.6%         23.9%    19.1%
+
+   Depreciation & Amortization Expense                                       118            118      111
+
+   EBIT                                                                      780            695     467         12.2%    67.0%
+   EBIT Margin(%)                                                            22.0%         20.5%    16.7%
+
+   Finance Cost                                                               34            33       20
+
+   PBT                                                                       746            663     447         12.5%    66.9%
+   Exceptional Item – Impact of Labour Code                                   0              0        0
+
+   Tax Expense                                                               180            151      102
+
+   PAT                                                                       566            511     345         10.8%    64.1%
+   PAT Margin(%)                                                             15.9%         15.1%    12.3%
+
+   Basic EPS (INR)                                                           12.54         11.33     7.6
+
+                          Passion               Innovation      Integrity            Excellence     Team Work                     8
+[page 10]
+Revenue Distribution
+                                                                 Leading Presence in the Manufacture of 3PL and PMP Products Globally
+                                                                                                   Healthy Revenue Mix
+                                                                             INR Mn, Segment revenue as % of finished goods sales
+
+                                     Product Vertical                                                                                                Geographical Presence
+            1.5%                               0.8%                                                                                 2.4%                            2.6%                                       1.8%
+                                                                                          1.1%
+  1.1%                                1.1%
+                                                                                   0.7%
+                                                                                                                            14.9%                           14.3%                                      12.3%
+                                                                                                                                                                                                    4.2%
+                                                                                                                          4.5%                            5.2%
+            FY25       48.8%                                  46.6%                                 42.5%                           FY25                            FY26                                   Q1FY27
+ 48.6%                                         FY26                                       Q1FY27                                             54.6%                              53.2%
+                                     51.5%                                                                                                                                                        21.1%               60.6%
+                                                                                  55.7%                                   23.6%                           24.7%
+
+
+
+
+                               3PL   PMP       PTO        Fabrication    Others                                                   Americas     Europe      Japan           India           Rest of the World
+
+
+
+
+                                      Market Presence                                                                                                 Segmental Presence
+
+
+    19.3%                                  15.0%                                          12.3%
+
+                                                                                                                            36.9%                           38.7%
+            FY25                                                                                                                      FY25                               FY26                         46.2%    Q1FY27
+                                               FY26                                        Q1FY27
+                                                                                                                                                                                                                          53.8%
+                                                                                                                                              63.1%                                61.3%
+
+                   80.7%
+                                                      85.0%                                       87.7%
+
+
+
+                                             OEM         AFM                                                                                               Agriculture          CFM
+
+
+
+                                      Passion                           Innovation                          Integrity    Excellence                       Team Work                                                               9
+[page 11]
+Content
+
+
+
+                Q 1 F Y 2 7 Pe r f o r m a n c e
+
+
+
+
+          Business Overview
+
+
+
+
+ Annexures
+
+
+     Passion     Innovation      Integrity         Excellence   Team Work   10
+[page 12]
+Product Categories
+
+
+
+
+ Three Point Linkage                 Precision Machine Parts                          Power Take Off            Fabrication           Hydraulic Cylinders
+
+
+
+
+    Note: We do small and medium scale Fabrication, PTO ( Power Take-off) and Hydraulic components
+
+                               Passion                   Innovation                     Integrity      Excellence         Team Work                         11
+[page 13]
+Additional Synergistic Offerings to Extend System Boundaries
+
+                              Power Take Off (PTO)                                  Hydraulic Cylinders                                          Fabrication
+
+
+
+
+                         Device used to drive implements such as              Used as actuators to move mechanized                  Large structural parts and chassis such as
+   Description          rotary tillers, mowers and other equipment           components, by generating linear motion                hitch frames, A-frames, front-end loader
+                        requiring a mechanical drive by the tractor.                      along an axis.                              parts, grain lifters and engine frames.
+
+                                                                             Synergies with existing activities in the 3PL
+                       Focused on producing PTO for the agriculture                                                                   Synergetic to products and vehicles
+                                                                              application and hydraulic lift of tractors.
+  Key Highlights         sector which allows the transfer of power                                                                            currently serviced.
+                                                                            Significant demand in international markets,
+                            from the tractor to the implement.
+                                                                                   due to increased mechanization.
+
+                           International safety norm compliance                  High cleanness norm specifications.                        • Provides superior finish
+    Features
+                                                                                                                                              • Varied size designs
+
+
+      Deepen wallet share                         Large Addressable Market                        More Value Per Vehicle                          Healthy Margin Profile
+
+
+  Extended offerings in adjacent                 Estimated Market Size of ~$10                   Leveraging manufacturing                       Long term margin guidance
+   areas on the same OHVs for                         billion; Establish new                  expertise to diversify the product                      remains at 20%
+  existing customers by offering                 customer base by addressing                  portfolio and move up the value
+   integrated system solutions                   growing markets of UTVs etc.                               chain
+
+
+
+
+                             Passion                 Innovation              Integrity                 Excellence                  Team Work                                     12
+[page 14]
+Leading Global Supplier of Critical Components Solutions
+
+   3 Point Linkage – Revenue Contribution*: 47%                          Precision Machined Parts – Revenue Contribution*: 51%
+   • Tractor specific designed and
+     validated system.                                                   • High-quality and reliable components
+   • Allows for quick and easy                                             for use in construction machinery,
+     attachment and detachment of                                          equipment, and structures.
+     implements.                                                         • These parts are made to tight tolerances
+   • Allows for the balanced operation of                                  and durability to withstand the tough
+     the implement, improves efficiency,                                   operating environment of OHVs.
+     and reduces operator fatigue.
+
+
+Market leaders in small tractor (<70 HP) linkage system globally.        Leading global supplier in fragmented market with manufacturing base in India and US
+                                                                         and servicing all major geographies (Americas, Europe, Japan, India, ROW).
+
+
+    Precision Manufacturing                      Higher Complexities                    High No. of SKUs                             Healthy Margins
+
+
+
+                                  $1                                   Customers
+                                                                                                                           25+
+                               billion+                                 serviced
+                                                                                                                         Countries
+                                                                         Customers
+                               Market Size                                                                            covered in sales
+                                                                          serviced
+
+
+                                                                                                              *Revenue contribution is based on FY26 finished goods sales
+
+                              Passion              Innovation          Integrity            Excellence                 Team Work                                        13
+[page 15]
+Warehouse and Manufacturing Facilities
+
+                                                      Dual Shore Manufacturing & Warehousing Solutions
+                                                                                                               Manufacturing Location   Warehouse Location      Distribution Centre
+
+
+
+
+                                                                                 UIG
+                                                             UOI
+                                                                   UUL
+
+
+                                                     UOI,
+                                                    Mexico
+
+
+
+
+7 Manufacturing Facilities              4 Warehouses                 67,320                   400 kilonewton                 Delivery options                1 Distribution
+                                                                                                                                                             Facility in
+ 6 in India; 3 in Ludhiana;             2 in US; 1 in Europe;        Metric tonne per annum   Test rig capability            Tailored to customer            India
+ 2 in Noida                             1 in Mexico                  Aggregate installed                                     specifications
+ 1 in Visakhapatnam;1 in US                                          capacity*
+
+
+
+                                                       Facilities in Close Proximity to Customers Ensuring
+
+                    Cost effectiveness                                     Quicker delivery                                  Faster turnaround time
+
+
+
+                              Passion               Innovation                Integrity        Excellence                    Team Work                                            14
+[page 16]
+Global Delivery Model De-Risks Clients’ Supply Chain
+                                                                                                                Four of the Top Five Customers have been Associated with Uniparts for
+                              Dual Shore Delivery Model
+                                                                                                                                            over 10 years
+                            Local                       Direct                         Warehouse                                Trend of Customers Contribution to Sales
+                           Delivery                     Export                           Sales
+
+
+                    • Manufactured and           • Manufactured in India
+   Model                                                                          • Products stocked in
+                      delivered in same            for export around the
+specification                                                                       warehouse for offtake                      Top customer   Top 5 customers         Top 10 customers
+                      geography                    world
+
+
+
+                                                                                  • Just in Time delivery                                                                                  84%
+                                                                                                                                     76%                        78%
+                                                                                    from local warehouse                                                                           71%
+                                                 • Competitive pricing                                                                               64%
+   Model            • Shorter lead times                                          • Customized packing                        61%
+                                                 • Longer lead times
+  features          • Flexible batch sizes0                                         and lot sizes
+                                                 • Longer inventory cycle
+                                                                                  • Lower inventory cycle
+                                                                                    for customers                       28%                   27%                           31%
+
+
+                Servicing all 10 leading Global OHV OEMs in Agriculture and half of the leading 10
+                players in the CFM Segment*.
+                                                                                                                              FY25                   FY26                         Q1FY27
+
+                UIL has market leadership in supplying key systems and components like
+                3PL and PMP for OHVs globally : Complex, critical, and low volume high SKUs
+                products.
+
+
+                Preferred component supplier for manufacturer of <70 HP Tractors.
+
+
+
+                Involved from the design stage for new products and launches providing
+                end-to-end solutions.
+
+
+                                                                            *CFM global players outside China
+
+                                       Passion                  Innovation                          Integrity          Excellence              Team Work                                         15
+[page 17]
+Key Financial Metrics – Historical
+                          RoCE (%)                                                                                   Reported EPS (INR)                                                                  Debt / Equity
+
+
+        35.9
+                                                                                                         46.32                                                                                                           0.11x
+                                                                                                                                                                                                                 0.09x
+                                                         24.9                                                                                                35.07
+                                                                                                                          28.13                                                                          0.07x
+                        19.5
+                                         13.7                                                                                              19.50
+
+                                                                                                                                                                                                0.02x
+
+
+       FY23            FY24             FY25            FY26                                                                                                                                    FY23     FY24    FY25    FY26
+                                                                                                         FY23             FY24              FY25             FY26
+
+
+               *Working Capital Days                                                                               **Fixed Assets Turnover                                                    Cash Flow from Operations (INR Mn)
+
+
+                                                                                                          2.3x
+                                                                                                                                                                                                2,527
+                                        154                                                                                1.9x
+                       152                                                                                                                                    1.7x                                       1,997
+                                                                                                                                             1.5x                                                                1,820    1,736
+      144
+
+                                                         136
+
+
+
+
+     FY23             FY24             FY25             FY26                                              FY23             FY24             FY25             FY26                                FY23    FY24    FY25     FY26
+
+
+    *Working Capital Days = (Inventory + Receivables – Payables )/ Revenue from Ops *365. ; **Fixed Assets Turnover = Revenue from operation/Gross block (Including right to use assets) ;
+
+                                       Passion                            Innovation                              Integrity                            Excellence                            Team Work                             16
+[page 18]
+Organisational Strengths
+
+                                                Senior Leadership Team with vast experience and expertise
+                                                in OHV Industry.
+
+
+
+
+                                                Senior Leadership Team located across key geographies
+                                                and time zones (US, Europe, India).
+
+
+
+
+                                                250+ Engineers / Technical Diploma holders.
+
+
+
+
+                                                50+ strong Business Development and Sales / Customer
+                                                Service organization.
+
+
+
+
+                                                ~45% staff members working with Uniparts Group for
+                                                10+ years.
+
+
+
+
+             Passion   Innovation   Integrity      Excellence          Team Work                        17
+[page 19]
+Historical Profit and Loss
+Figures in INR Mn                                                                                         FY24            FY25   FY26
+Revenue from operations                                                                                   11,395      9,637      11,704
+Other income                                                                                                 93        212         176
+Total income                                                                                              11,489      9,849      11,880
+Cost of materials consumed                                                                                 3,966      3,118       4,246
+Changes in inventories of finished goods, work-in-progress, stock-in-trade and scrap                        264        431        (350)
+Gross Profit                                                                                              7,260       6,300       7984
+Gross Profit Margin (%)                                                                                     63%        64%         67%
+Employee benefits expense                                                                                  2,457      2,296       2,559
+Other expenses                                                                                             2,694      2,336       2,777
+Total expenses                                                                                            5,151       4,632      5,336
+EBITDA                                                                                                    2,107       1,668      2,648
+EBITDA Margin (%)                                                                                           18%        17%         22%
+Depreciation and amortization expenses                                                                      417        442         453
+EBIT                                                                                                      1,690       1,226      2,195
+EBIT Margin (%)                                                                                             15%        12%         18%
+Finance costs                                                                                                57         83         104
+PBT                                                                                                       1,633       1,143      2,091
+PBT Margin (%)                                                                                              14%        12%         18%
+Exceptional Item – Impact of Labour Code                                                                      0          0          34
+Total tax expenses                                                                                          387        263         474
+PAT                                                                                                       1,247        880       1,583
+PAT Margin (%)                                                                                              11%         9%         13%
+Other comprehensive income / (loss) for the period / year, net of tax                                        (5)       (52)        (67)
+Total Comprehensive Income                                                                                1,241        828       1,516
+EPS attributable to owners of parent
+Basic EPS (in INR)                                                                                         28.1           19.5   35.07
+Diluted EPS (in INR)                                                                                       27.6           19.5   35.04
+
+
+
+                                Passion                Innovation                Integrity   Excellence       Team Work                   18
+[page 20]
+Historical Balance Sheet
+  Figures in INR Mn                         FY24         FY25    FY26          Figures in INR Mn                               FY24     FY25     FY26
+  Assets                                                                       Equity and Liabilities
+  Non - Current Assets                                                         Equity
+  Property, plant and equipment             2,001        2,010   1,994         Equity share capital                             451      451      451
+                                                                               Other equity                                     8,227   8,421    8,253
+  Right of use assets                        616          561     815
+                                                                               Total equity                                    8,678    8,872    8,704
+  Capital work-in-progress                   128          96      33
+                                                                               Liabilities
+  Goodwill                                   664          669     694
+                                                                               Non - Current Liabilities
+  Other intangible assets                    18           11      28                                                             22       12       85
+                                                                               Borrowings
+  Intangible assets under development         -           24      56           Lease liabilities                                318      252      500
+  Other financial assets                     64           89      92           Provisions                                       159      162      200
+  Current tax assets (Net)                   75           92      85           Deferred tax liabilities (Net)                   226      225      231
+                                                                               Other non-current liabilities                     10       10       11
+  Other non-current assets                   21            4      71
+                                                                               Total non - current liabilities                  735      661     1,027
+  Total non - current assets                3,587        3,556   3,868
+                                                                               Current Liabilities
+  Current Assets
+                                                                               Borrowings                                       597      826      837
+  Inventories                               4,244        3,858   4,301                                                           89      109      125
+                                                                               Lease liabilities
+  Investments                               1,563        2,431   2,030         Trade payables due to:
+  Trade receivables                         1,335        1,126   1,412         Micro and small enterprises                      134      169      262
+  Cash and cash equivalents                  189          329     470          Other than micro and small enterprises           708      742     1,092
+                                                                               Other liabilities                                268      267      411
+  Other balances with banks                   2            2       3
+                                                                               Provisions                                        67       50       65
+  Other financial assets                     48            6       4
+                                                                               Current tax payable                               10       0        26
+  Other current assets                       320          388     461
+                                                                               Total current liabilities                        1,873   2,163    2,818
+  Total current assets                      7,700        8,140   8681                                                          2,609    2,824    3,845
+                                                                               Total liabilities
+  Total Assets                              11,287      11,696   12,549        Total Equity and Liabilities                    11,287   11,696   12,549
+
+
+
+                                  Passion         Innovation       Integrity                  Excellence                Team Work                         19
+[page 21]
+Content
+
+
+
+                Q 1 F Y 2 7 Pe r f o r m a n c e
+
+
+
+
+          Business Overview
+
+
+
+
+ Annexures
+
+
+     Passion     Innovation      Integrity         Excellence   Team Work   20
+[page 22]
+   Key Milestones
+                                                                                                                              2018
+                                                                                                                           Addition to
+                                                                                                                       warehousing spaces
+   1994                    2001-2003                              2006                          2010                    in Augusta, USA
+                                                                                                                                                           2022                        2024
+Incorporation              Commenced                          Commenced                         Set up a                  Relocation of                   Got listed              Two factories
+      of                   sales to John                     manufacturing                warehousing and              warehousing facility                on BSE                  SER certified
+   Uniparts               Deere in India,                    PMP products                    distribution                  in Georgia                     and NSE                 by Caterpiller
+                          Spain and the                        in India.                  facility in Hennef,                                                                      second year
+                               USA.                                                           Germany.                                                                               in a row.
+
+
+
+
+            Commenced                  Commenced sales to                  Commenced                          Entered                     Awarded                      Commenced               Extending
+               sales to                   OEMs in Japan                    operations at                     European                   ‘Most Versatile                 fabrication           near-shoring
+              domestic                        Acquired                    manufacturing                     construction               Supplier 2020’ by                 facility in          with Mexico
+                OEMs                    manufacturing and                facility located at                OEM market.                 Kubota India.                   Ludhiana.             warehouse.
+             Developed                 distribution facility in          Visakhapatnam,
+                                                                                                                                           Won two                                             3 units SER
+              3PL OEM                       Iowa, USA.                   Andhra Pradesh.                        2012                                                      2023
+               product
+                                                                                                                                        silver trophies                                        certified by
+                                       Incorporated UUL as                   GFPL became a                                                 at the 11th                                         Caterpillar
+               vertical
+                                       a WOS and acquired                     wholly owned                                              National Kaizen
+             Established
+                                       a majority stake UOI.                  subsidiary of                                              Competition.
+           the first facility
+                                                                               Company.                                                                                                            2025
+              at Noida.                Commenced sales to
+                                       OEMs in construction                                                                                   2020
+                                         sector in the US.                       2008
+                2000
+                                                2004-2005
+
+                                        Passion                   Innovation                   Integrity                   Excellence                Team Work                                                21
+[page 23]
+Group Structure
+
+
+
+
+                                                Uniparts India Ltd. (UIL)
+                                                            100%
+
+
+
+
+   Gripwel Fasteners Pvt. Ltd.    Gripwel Conag Pvt. Ltd.           Uniparts India GmbH           Uniparts USA Ltd.
+            (GFPL)                        (GCPL)                           (UIG)                       (UUL)
+
+
+                                                                                                      100%
+
+
+                                                                                                Uniparts Olsen Inc
+                                                                                                      (UOI)
+
+                        Passion    Innovation           Integrity       Excellence        Team Work                   22
+[page 24]
+Leadership Team and Board
+
+
+
+                                                                                       Independent
+                                                                                         Director
+   Mr. Gurdeep Soni         Mr. Paramjit Singh Soni       Mr. Herbert Coenen                               Ms. Tanushree Bagrodia      Mr. Sandeep Taneja
+ Promoter, Chairman &     Promoter, Executive Director       Non-Executive                                  Wholetime Director &       Group Chief Financial
+   Managing Director          and Vice Chairman                 Director                                         Group CEO                   Officer
+
+
+    Location: India              Location: USA             Location: Germany                                   Location: India            Location: India
+
+                                                                                       Mr. Ajaya Chand
+
+  Masters' degree in         Bachelor’s degree in               Diploma in                                   Bachelors' degree in      Chartered Accountant
+ Management Studies             Commerce from                   Mechanical                                   Computer Engg and         (India) and CPA (USA)
+   from BITS Pilani.          University of Delhi.          Engineering from                                  MBA from INSEAD.         with an MBA from the
+     4 decades of              Over 4 decades of             the University of        Ms. Celine George        Over 2 decades of       U.S. Seasoned finance
+   experience in the           experience in the             Applied Science,                                extensive experience      professional with 25+
+ Industry. In charge of      industry. In charge of          Cologne. Over 3                                     across diverse        years of global experience
+    the aftermarket              OEM business,             decades experience                                  geographies and         across India and the U.S.,
+       business.              business growth and         in global OHV market.       Mr. Parmeet Singh        sectors, spanning       including leadership of
+                             diversification plans of      In charge of business             Kalra             financial services,     large P&Ls ranging from
+                                 the Company.                  development,                                     automotive, and        $100M to $3B, bringing
+                                                               expansion and                                 start-ups. In charge of   deep expertise across
+                                                                technology.                                    Company’s group         accounting, audit, tax,
+                                                                                      Mr. Sanjeev Kumar       wide operations and      treasury, and business
+                                                                                           Chanana             customer service.       partnering.
+
+
+
+                           Passion                 Innovation             Integrity           Excellence            Team Work                                  23
+[page 25]
+                                                                 Thank You
+
+For further information,
+please get in touch with:
+Himanshu Sharma
+himanshu.sharma@unipartsgroup.com
+
+
+
+              Kanav Khanna
+              kanav.khanna@in.ey.com
+
+              Mahalakshmi.Venkatachalam
+              mahalakshmi.venkatachalam@in.ey.com
+
+
+                  Passion           Innovation   Integrity   Excellence   Team Work

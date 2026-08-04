@@ -1,0 +1,52 @@
+stage: B11-valuation
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Capacity utilization % (Pithampur/Silvassa) NOT FOUND (B10) - base revenue ramp uses SOM-implied CAGR as proxy"
+  - "Capex-added nameplate tonnage NOT FOUND (B10) - Pillar 3a capex-embedded growth uncomputable"
+  - "Peer valuation multiples not extracted (B10) - EV/EBITDA cross-check uses framework rule-of-thumb, not peer median"
+flags:
+  - "FLAG-CASH: cash multiplier 1.00x APPLIED; FY26 CFO/PAT 6.05x is a one-time working-capital release, not structural (fttcp-deliberation, B02/B03)"
+  - "FLAG-LEVERAGE-CAPEX: Rs 60 cr debt-funded capex into CARE downgrade (BBB+/BBB); bear EPS shows the denominator/interest drag (B07)"
+  - "FLAG-CONCENTRATION: top-2 customers 71% of sales, rising from 64% (B02)"
+  - "FLAG-MARGIN-RECOVERY: Q1FY27 7.49% peer-contradicted (B06); bear models no-recovery 5.5% flat"
+  - "FLAG-CREDIBILITY: management grade C; bull EPS CAGR capped at base+5% in Hurdle Ratio (Amendment 2)"
+  - "SHARED-CATALYST: Pithampur Dec-2026 - single point of failure behind revenue, margin leverage and ROCE; CARE-sourced, not company-confirmed"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: 12.2
+destination_pe:
+  track1_rrm: {low: 7.9, mid: 8.5, high: 9.2, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 11.5, mid: 12.2, high: 13.0}
+  divergence_pct: 43.5
+  governing_track: "Track 2 additive 12.2x sets decision and entry (operator override, phase-3 authority); RRM 8.5x carried as conservative alternative"
+pillar_detail:
+  roce_used: 9.30
+  roce_base: 9.30
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "one-time WC release (not structural, not growth-induced)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 35
+hurdle_ratio: {base: 0.94, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 131, base: 343, bull: 619}
+  track2: {bear: 189, base: 493, bull: 889}
+expected_cagr_prob_weighted: -7.1
+entry_range: {low: 202, high: 252}
+mos_price: 202
+upside_downside_ratio: 0.09
+decision: "AVOID (on valuation)"
+unresolved_inputs_used:
+  - "Capacity utilization NOT FOUND -> base revenue CAGR pinned to SOM-implied 10.6-11.2% (conservative-assumption rule)"
+  - "Capex tonnage NOT FOUND -> Pillar 3a capex-embedded growth scored +0x (cannot evidence >=15%)"
+  - "Peer multiples not extracted -> EV/EBITDA destination via framework 0.6x-of-PE rule, biased down for capex intensity"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Avoiding AARTISURF at Rs 523: base EPS to ~Rs 40 by FY30 gives a Rs 493 three-year value at a 12.2x forward destination PE (ROCE 9.3%, cash 1.00x, EM 13.5), a -2% CAGR from CMP; stock at ~24x TTM vs earned 12.2x. Hurdle Ratio STOP. Key risk to AVOID: durable margin recovery >=7.5%. Cash: one-time WC release."

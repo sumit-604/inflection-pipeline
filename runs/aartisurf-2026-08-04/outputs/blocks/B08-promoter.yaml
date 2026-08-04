@@ -1,0 +1,31 @@
+stage: B08-promoter
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: partial
+status_reason: "Several WebFetch calls to primary-source PDFs (NSE/BSE SAST filings, CARE full press releases, trendlyne/screener/choiceindia, open-offer DPS) returned HTTP 403; substituted WebSearch snippets. Sufficient for most sections; exact ICD counterparty, current pledge %, Pithampur land title, and director education left NOT FOUND."
+input_gaps:
+  - "No AR newer than FY2020-21 (~5.3y stale); current shareholding/pledge/board facts are web-reconstructed, not filing-anchored"
+  - "Director brief-profile annexure (AR FY21 p.16) not present in AR pages reviewed"
+  - "Rs820 lakh ICD (Note 11) counterparty not disclosed in AR and not resolved by web search"
+  - "Pledge % for Aarti Surfactants specifically not confirmable (only distinct group co. Aarti Pharmalabs had pledge data)"
+  - "Pithampur land-title status could not be confirmed or refuted from any source retrieved"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 5, caution: 4, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "0% Redeemable Preference Shares (10,82,387 shares, ~Rs18.5cr) remained unlisted ~7 years (issued Aug 2019) because CARE rating (BBB-/BBB/BBB+) never approached the SEBI-required AA- minimum; resolved only via a July 2026 redemption notice/trading suspension ahead of Aug 19 2026 maturity, not by achieving compliance", evidence_tier: "VERIFIED (AR FY21 p.17-18, Note 9.4/9.5) + MEDIA REPORTED (2026 redemption timeline)", date: "2019-2026"}
+  - {finding: "Rs820 lakh Inter-Corporate Deposit in FY21 non-current borrowings (Note 11 p.72) with no counterparty named and absent from the Ind AS 24 related-party note (Note 31)", evidence_tier: "UNVERIFIED (undisclosed counterparty)", date: "FY2020-21"}
+  - {finding: "Oct 2025: two additional Gogri/Desai-family-pattern directors added (Parimal Hasmukhlal Desai, who exited Aarti Industries executive role around the same time; Nisha B. Shah); MD Nikhil Desai also designated CEO since Oct 2023 - board/executive trend toward more family concentration, not professionalization", evidence_tier: "MEDIA REPORTED", date: "2023, 2025"}
+transition_evidence: []
+promoter_prelim_resolution: "The stage-3 FLAG-PROMOTER-PRELIM (Jaya C. Gogri 5.27%->21.17%, HDFC Trustee exit, new >5% holder Nikhil Holdings Pvt Ltd) is substantially explained: the 2020 stake consolidation was a properly disclosed, price-reasonable SEBI SAST open offer (Jaya Gogri / Nikhil Holdings as acquirers), not a stealth grab. Not a deal-breaker."
+pledge_pct_latest: 0
+pledge_trend: "NOT FOUND - no pledge disclosed in AR FY21 (director shareholding table p.32 has no encumbrance column) and none found in web search for Aarti Surfactants specifically"
+verdict_basis: "No SEBI enforcement, criminal, or auditor-integrity finding against Aarti Surfactants or its current promoters; the 2020 stake consolidation was a properly disclosed SEBI SAST open offer. CAUTION rather than TRUSTWORTHY is driven by ~7-year unremedied SEBI RPS-listing non-compliance resolved only via 2026 redemption, an undisclosed-counterparty Rs820 lakh ICD unreconciled against the related-party note, and an Oct 2025 board/executive trend toward greater family concentration."
+searches_skipped:
+  - "WebFetch NSE SAST filing PDF - HTTP 403"
+  - "WebFetch marketscreener open-offer article - HTTP 403"
+  - "WebFetch aarti-surfactants.com Detailed Public Statement PDF - HTTP 403"
+  - "WebFetch CARE Ratings Dec 2025 / June 2025 full press-release PDFs - HTTP 403 (used WebSearch snippets)"
+  - "WebFetch trendlyne / screener.in / choiceindia shareholding pages - HTTP 403"

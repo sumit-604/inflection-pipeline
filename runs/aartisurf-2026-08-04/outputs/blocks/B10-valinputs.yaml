@@ -1,0 +1,205 @@
+stage: B10-valinputs
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-haiku-4-5
+status: complete
+input_gaps: [
+  "Screener quarterly breakdown Q2 FY26 EPS",
+  "Capacity utilization % at Pithampur/Silvassa",
+  "Capex-added nameplate tonnage from Rs 85 Cr programme",
+  "Promoter pledge % (Reg 31(4) filing 24-Jun-2026 content)",
+  "R&D spend as % of revenue",
+  "Product-category revenue split (HPC vs industrial)",
+  "Customer names for 71% concentration pair",
+  "Peer valuation multiples (P/E, EV/EBITDA, P/B, ROCE medians)",
+  "CY2024 TAM base year vs 2035 target precision (MRF source)",
+  "Pithampur commissioning date company-confirmed (CARE sourced only)"
+]
+flags: [
+  "FLAG-CASH: Working capital deterioration; one-time FY26 release not structural (B02, B03, fttcp-deliberation)",
+  "FLAG-LEVERAGE-CAPEX: Rs 60 Cr debt-funded capex into CARE downgrade (BBB+/BBB Dec-2025); ROCE denominator drag near-term (B07)",
+  "FLAG-CONCENTRATION: Top-5 customers 92% of FY25 sales; top-2 customers 71%; undisclosed in company AR (CARE rating, B02 red flag)",
+  "FLAG-MARGIN-RECOVERY: Q1 FY27 margin recovery contradicted by peer evidence; West Asia war RM spike in same quarter suggests company-specific timing risk (B06 cross-read, FTTCP tripwire #1)",
+  "FLAG-CREDIBILITY: Management promised margin protection and missed (CARE downgrade); AR headline EBITDA overstated 9.2%; four different EBITDA definitions in same AR (B05, B03)",
+  "SHARED-CATALYST: Pithampur Dec-2026 commissioning is single point of failure for revenue path, operating leverage, and ROCE recovery; not company-confirmed, only CARE-sourced (fttcp-deliberation)"
+]
+table: {
+  "company": "Aarti Surfactants Ltd",
+  "ticker": "AARTISURF",
+  "sector_cap_row_corrected": "Specialty chemicals 35x (non-binding; corrected from manifest Pharma/CDMO 38x per operator)",
+  "cmp_rs": 523.0,
+  "market_cap_cr": 443.0,
+  "shares_outstanding_diluted_millions": 8.46,
+  "net_debt_cr": 90.74,
+  "enterprise_value_cr": 533.7,
+  "fy26_revenue_cr": 859.13,
+  "fy26_ebitda_cr": 47.15,
+  "fy26_ebitda_margin_pct": 5.49,
+  "fy26_pat_cr": 12.68,
+  "fy26_pat_margin_pct": 1.48,
+  "fy26_basic_eps_rs": 14.99,
+  "fy26_diluted_eps_rs": 14.96,
+  "fy26_cfo_cr": 76.79,
+  "fy26_fcf_cr": 31.69,
+  "fy26_capex_cr": 45.10,
+  "fy26_depreciation_cr": 17.46,
+  "fy26_dps_rs": 1.0,
+  "fy26_book_value_per_share_rs": 29.16,
+  "q1fy27_revenue_cr": 272.87,
+  "q1fy27_basic_eps_rs": 10.72,
+  "q1fy27_operating_margin_pct": 7.49,
+  "ttm_eps_rs": 14.10,
+  "ttm_calculation": "FY26 EPS 14.99 - Q4FY25 EPS 11.63 + Q1FY27 EPS 10.72 = 14.10",
+  "roce_fy26_statutory_pct": 9.30,
+  "roce_fy26_average_pct": 9.72,
+  "roce_forward_verdict_fttcp": "STAGNANT (operator override from DECLINING)",
+  "roce_trend": "DECLINING (11.50% FY24 → 9.72% FY26)",
+  "roce_normalization_route": "NONE (Route A fails CWIP <20%, Route B barred on STAGNANT)",
+  "cfo_pat_fy26_ratio": 6.05,
+  "cfo_pat_fy25_ratio": 0.90,
+  "cash_nature": "ONE-TIME working-capital release (inventory liquidation + payables stretched); NOT structural",
+  "cash_conversion_catalyst": "NONE (per fttcp-deliberation)",
+  "pillar_1_roce_base_pe": 12.2,
+  "pillar_2_cash_multiplier": 1.00,
+  "pillar_3_growth_premium": 0.0,
+  "strategic_premium": 0.0,
+  "destination_pe_approved": 12.2,
+  "destination_pe_range": "11.5x to 13.0x",
+  "earnings_basis_approved": "ONE-YEAR-FORWARD",
+  "ua_applied": false,
+  "ua_gate0_core_score": 55,
+  "ua_em_score": 14.5,
+  "ua_qualifiers_met": 2,
+  "ua_qualifiers_required": 3,
+  "management_credibility_grade": "C",
+  "care_rating_longterm": "BBB+",
+  "care_rating_instruments": "BBB",
+  "care_outlook": "Stable",
+  "care_downgrade_date": "19-Dec-2025 (from A-/BBB+)",
+  "care_debt_pbildt_fy25": 3.18,
+  "care_debt_pbildt_h1fy26": 2.80,
+  "care_pbildt_margin_fy25_pct": 5.32,
+  "care_pbildt_margin_h1fy26_pct": 5.33,
+  "capex_programme_rs_cr": 85.0,
+  "capex_programme_debt_funded_rs_cr": 60.0,
+  "capex_completion_date": "Dec-2026 (CARE-sourced, not company-confirmed)",
+  "ncrps_redemption_due_date": "19-Aug-2026",
+  "ncrps_amount_cr": 23.05,
+  "revenue_growth_3yr_cagr_pct": 12.6,
+  "pat_cagr_3yr_pct": 34.4,
+  "roe_fy26_pct": 5.27,
+  "roe_trend": "DECLINING (11.50% FY24 → 5.27% FY26)",
+  "top_5_customer_concentration_pct": 92.0,
+  "top_2_customer_concentration_pct": 71.0,
+  "top_2_customer_concentration_trend": "RISING (from 64.0% prior year)",
+  "moat_class": "MODERATE (10/12)",
+  "em_score": 14.5,
+  "em_classification": "MODEST (below 25-point STRENGTHENING threshold)",
+  "emerging_moat_catalysts_12m": 4,
+  "optionality_register_items": 7,
+  "evidence_mix_documented_items": 19,
+  "evidence_mix_claim_items": 10,
+  "evidence_mix_inference_items": 4,
+  "som_implied_revenue_cagr_3yr_pct": 10.6,
+  "som_implied_revenue_cagr_5yr_pct": 11.2,
+  "tam_conservative_cr": 19350,
+  "tam_realistic_cr": 21000,
+  "sam_cr": 5280,
+  "sam_pct_of_tam": 27.3,
+  "current_market_share_pct_of_tam": 4.4,
+  "revenue_headroom_multiple": 6.14
+}
+conflicts: [
+  {
+    "field": "sector_cap_row",
+    "value_a": "Pharma / CDMO 38x",
+    "anchor_a": "manifest.yaml defect",
+    "value_b": "Specialty chemicals 35x",
+    "anchor_b": "fttcp-deliberation operator-approved",
+    "used": "Specialty chemicals 35x (corrected)"
+  },
+  {
+    "field": "roce_forward_verdict",
+    "value_a": "DECLINING (-1)",
+    "anchor_a": "phase-1 draft determination",
+    "value_b": "STAGNANT (0)",
+    "anchor_b": "fttcp-deliberation operator override",
+    "used": "STAGNANT (carried forward to valuation)"
+  },
+  {
+    "field": "destination_pe_base",
+    "value_a": "8.5x (RRM track)",
+    "anchor_a": "v3.5.1 framework governing default",
+    "value_b": "12.2x (additive track)",
+    "anchor_b": "fttcp-deliberation operator-approved",
+    "used": "12.2x additive (operator override)"
+  },
+  {
+    "field": "capex_programme_authority",
+    "value_a": "Not quantified in FY26 AR MD&A",
+    "anchor_a": "company own guidance",
+    "value_b": "Rs 85 Cr (Rs 60 Cr debt-funded, Dec-2026 Pithampur completion)",
+    "anchor_b": "CARE rating Dec-2025 p.3",
+    "used": "CARE 85 Cr / 60 Cr debt (only independent authority; not company-confirmed)"
+  }
+]
+unresolved: [
+  {
+    "field": "Q2_FY26_quarterly_EPS",
+    "why": "Screener quarterly breakdown referenced in task but not provided",
+    "where_it_might_be": "inputs/screening/screener-Data_Sheet.csv"
+  },
+  {
+    "field": "capacity_utilization_pct_pithampur_silvassa",
+    "why": "Not disclosed in AR or results filings; CARE cites capacity 113,000 MT but not actual utilization",
+    "where_it_might_be": "CARE full rating report (detailed) or company capacity status Reg 30 filing"
+  },
+  {
+    "field": "capex_added_nameplate_tonnage",
+    "why": "Rs 85 Cr programme cost known, but MT expansion not quantified in any document",
+    "where_it_might_be": "CARE detailed capex note or company investor presentation"
+  },
+  {
+    "field": "promoter_pledge_percentage",
+    "why": "Reg 31(4) filing dated 24-Jun-2026 content not retrieved; screener silent",
+    "where_it_might_be": "NSE SCORES filing or B08 complement pledge disclosure"
+  },
+  {
+    "field": "rd_spend_pct_revenue",
+    "why": "Not disclosed anywhere in provided documents; B01 moat M6 scored 0",
+    "where_it_might_be": "FY26 AR Board's Report or future Reg 30 R&D disclosure"
+  },
+  {
+    "field": "product_category_revenue_split",
+    "why": "Single reportable segment; HPC subsegments (Home Care vs Personal Care vs Industrial) not broken out",
+    "where_it_might_be": "Future AR product portfolio section or investor presentation"
+  },
+  {
+    "field": "customer_names_71pct_concentration",
+    "why": "AR Note 36 does not name customers; CARE rating identifies HUL/P&G/Colgate/Dabur as broad base but not the specific 71% pair",
+    "where_it_might_be": "Company investor relations disclosure or CARE detailed report"
+  },
+  {
+    "field": "peer_valuation_multiples",
+    "why": "B06 cross-checked peer transcripts for narrative only; formal multiples (P/E, EV/EBITDA, P/B, ROCE) not extracted",
+    "where_it_might_be": "Role 1 to source from latest peer financial statements"
+  },
+  {
+    "field": "tam_cy2024_base_vs_2035_target_precision",
+    "why": "MRF market estimate base year 2024 vs year-end ambiguity; B09 flagged as inflated 5.38x ratio",
+    "where_it_might_be": "Market Research Future direct source (403 blocked in search; equivalent data recovered via synthesis)"
+  },
+  {
+    "field": "pithampur_commissioning_company_confirmed",
+    "why": "Dec-2026 completion date sourced only from CARE rating (p.3), not company FY26 AR or Q1 FY27 filing",
+    "where_it_might_be": "FY26 Annual Report MD&A capex note (expected Q3 CY2026 publication) or Reg 30 capex update"
+  }
+]
+rating_wc_quote: "ASL's raw materials include lauryl alcohol (LA), fatty acids (HCFA), and alpha olefin (AO) that form a major portion of its costs. These raw material prices are linked to palm prices and are volatile in nature. Any raw material price volatility in the absence of increase in the product prices can have an impact on ASL's profitability. Such raw material price volatility have severely impacted the profitability of the company as witnessed in FY25 and H1FY26, as profitability contracted on the back of sharp increase in raw material prices, coupled with limited ability to pass on the price changes. | CARE Ratings Ltd. Press Release, 19-Dec-2025, p.2-3 | Liquidity: Adequate (term debt repayments Rs 21 Cr FY26, Rs 28 Cr FY27 incl. preference-share redemption; cash accruals tightly matched to obligations; fund-based utilization ~56%)"
+ua_qualifiers: {
+  "listed_12m": true,
+  "gate0_or_em": false,
+  "fii_dii_lt3": true,
+  "all_met": false
+}
+credibility_grade: "C"

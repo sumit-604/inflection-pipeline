@@ -1,0 +1,63 @@
+stage: B09-tam
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Aarti's capacity utilization % at Pithampur/Silvassa: NOT FOUND (inherited from B04/B07); blocks a confirmed 3C capacity verdict"
+  - "Capex-added nameplate tonnage from the ~Rs85cr FY26-27 expansion: NOT FOUND (inherited from B07)"
+  - "India surfactants market organized vs unorganised split: NOT FOUND despite dedicated search; pipeline standard 30-60% assumption band used instead in the SAM channel filter"
+  - "Product-category (HPC vs industrial) revenue split within Aarti's own sales: NOT FOUND (inherited from B04); estimated 65% product-fit filter used instead"
+  - "Current P/E multiple and formal management margin-trajectory guidance for the 5E valuation-implication line: not injected into this stage, both marked NOT FOUND"
+  - "Precise top-3 India surfactants market-share concentration: NOT FOUND in searches performed"
+flags:
+  - "Management's AR Industry Overview cites Market Research Future's India-surfactants 2035 target (USD10.92bn) without disclosing MRF's own 2024 base (USD3.99bn, found independently) -- that base is ~2x IMARC's independent 2024 estimate (USD2.03bn); mgmt_claim_ratio 5.38x signals horizon/source selection bias, credibility read BROAD"
+  - "Same AR section lists large finished-goods market stats (beauty & personal care USD48.3bn by 2033, home/laundry care, hair care, oral care, baby care) that are NOT Aarti's addressable market -- Aarti sells upstream ingredients, not finished FMCG products; risk of conflating adjacent finished-goods TAM with the company's actual surfactant-ingredient TAM"
+  - "Methods diverge materially: top-down/bottom-up cluster ~Rs19,350-22,000cr vs listed-peer-revenue floor ~Rs5,398cr (~3.6-4x gap) -- explained by Godrej Industries chemicals division and MNC-competitor India volume sitting outside the four listed pure-play peers, not grossed up into a Method-3 TAM estimate this run"
+  - "3C capacity cross-check is data-gap-limited (utilization % and capex tonnage both NOT FOUND); verdict recorded as indeterminate, not sufficient, and neither the SOM trajectory nor the capex plan can be confidently called the optimistic side"
+  - "Galaxy Surfactants India/RoW revenue split (36%/64%) sourced from an undated third-party profile page, not verified against Galaxy's own filings this run -- Medium confidence input to Method 3"
+  - "Near-term reality check: Galaxy Surfactants' own Nov-2025 concall describes India customer volume growth as flat to ~1-2% over the trailing 6 months, materially below the 6.8-9.6% headline India TAM CAGRs used in Section 2 -- carried into Section 4B as the primary growth-driver counterweight"
+  - "5E valuation-implication line left with explicit NOT FOUND markers for margin trajectory and P/E; not estimated, per pipeline rule; Stage 11 to complete using the SOM-implied CAGR handoff"
+market_definition: "India-focused B2B supply of ionic/non-ionic surfactants and specialty HPC ingredients to large qualified FMCG/industrial accounts, excluding finished consumer products"
+tam_cr: {conservative: 19350, realistic: 21000}
+sam_cr: 5280
+sam_pct_of_tam: 27.3
+som_3yr_cr: 1163
+som_5yr_cr: 1462
+som_implied_revenue_cagr: {yr3: 10.6, yr5: 11.2}
+current_sam_share_pct: 13.1
+revenue_headroom_x: 6.14
+tam_growth_pct: 6.80
+runway_class: "STRONG"
+mgmt_claim_cr: 104048
+mgmt_claim_ratio: 5.38
+mgmt_claim_read: "inflated"
+capacity_check: "indeterminate -- utilization % and capex-added tonnage both NOT FOUND; no confirmed Rs Cr gap computable either direction"
+methods_used:
+  - "top-down (industry reports: IMARC, MarkNtel, Grand View Research, Market Research Future)"
+  - "bottom-up (finished HPC goods market x estimated ingredient-value share)"
+  - "peer revenue aggregation (sanity-check floor, not averaged into TAM)"
+  - "global per-capita benchmark (India vs China vs global)"
+stale_data_flags:
+  - {datapoint: "India surfactants market size 2024 (IMARC, conservative TAM anchor, USD2.03bn)", source: "IMARC Group india-surfactants-market report", year: "2024"}
+  - {datapoint: "Global surfactants market size CY2024 (USD39.5bn)", source: "Grand View Research, via Aarti AR FY25 footnote 3", year: "2024"}
+  - {datapoint: "MRF India surfactants base year (USD3.99bn) and 2035 target (mgmt-cited)", source: "Market Research Future, via Aarti AR FY25 footnote 4", year: "2024 base / 2035 target"}
+  - {datapoint: "Galaxy Surfactants India/RoW revenue split (36%/64%)", source: "third-party company profile page, undated", year: "undated, presumed 2025/2026"}
+searches_performed:
+  - "India surfactants market size 2025 USD billion CAGR"
+  - "India specialty surfactants market size Mordor Intelligence CRISIL"
+  - "India home and personal care ingredients market size 2025 CAGR"
+  - "USD INR exchange rate August 2026"
+  - "India surfactants industry organized unorganized players Galaxy Surfactants market share"
+  - "India surfactants imports exports linear alkylbenzene sulphonate trade data"
+  - "\"India Surfactants Market\" marketresearchfuture 2024 valued CAGR 2035"
+  - "India home care detergent market size 2025 billion USD retail"
+  - "surfactant cost as percentage of detergent shampoo formulation cost raw material share"
+  - "India beauty and personal care market size 2025 billion USD"
+  - "China surfactants market size 2024 billion USD"
+  - "Ultramarine Pigments surfactants segment revenue vs pigments segment FY25 FY26"
+  - "Rossari Biotech export revenue percentage domestic India FY25"
+  - "Fineotex Chemical export revenue percentage domestic FY25 India"
+searches_skipped:
+  - {query: "WebFetch https://www.marketresearchfuture.com/reports/india-surfactants-market-47225 for base-year figure and full CAGR detail", reason: "403 Forbidden from source site; equivalent data (2024 base USD3.99bn, 2035 target USD10.92bn, CAGR 9.58%) recovered via a follow-up WebSearch query instead, so no net data loss, but the direct-fetch attempt did fail and is logged per the 403 rule (status set to partial)"}
+  - {query: "India surfactants industry organized vs unorganised sector split (dedicated search)", reason: "no source found giving a sourced numeric split; pipeline standard 30-60% assumption band used instead in Section 3A, flagged as an input gap rather than a search-engine failure"}

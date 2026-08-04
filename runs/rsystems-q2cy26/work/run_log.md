@@ -26,3 +26,9 @@
 - presentation: 189 gated rows across 18 categories (1 ZERO_STANDING). Count reconciled.
 
 ## A3 — forensics launched (results F1-F17 + presentation F1-F17), Notion Step-5 checklist passed inline
+
+## GATE A3 — PASS (both documents)
+- results forensics: 17/17 statuses, 13 findings (7 forward-signal, 6 ambiguous), all line-cited. Key: S-vs-C PAT gap +51pp Q1->Q2; finance cost 4.4x (int cover 25.4x->9.35x); static NCI 1923.88m (Novigo CCPS); 21 subs unreviewed = 20.6% Q PAT; IT-services segment margin 16.16%->12.65% QoQ; OCRPS 5.16m allotted; hedge loss 89.63m to reclassify; governance refresh via postal ballot.
+- presentation forensics: 17/17 statuses, 12 findings. Key: reported PAT -26.7% YoY masked by +35.4% adjusted (NOIDA gain stripped); INR 30.2% vs US$ 17.7% gap (FX+Novigo); Novigo rev unquantified; ETR 30.98%; silent on organic CC / ACV / fixed-price mix / ROCE.
+
+## A4 — analyst launched (merged Role 4 + Role 5 review)

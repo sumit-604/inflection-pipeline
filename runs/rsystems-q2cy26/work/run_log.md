@@ -40,3 +40,9 @@
 - 13 Questions-for-Management (every A3 ambiguous/forward-signal mapped). Notion OCRPS unit error caught: 5.16 million shares NOT 5.16 Cr.
 
 ## A5 — adversary launched
+
+## A5 — loop 1: INCOMPLETE -> loop back to A4
+- Coverage PASS (all A2 counts reproduced). OCRPS 5.16 million correction confirmed correct.
+- FAIL-1: Reported EBITDA H1 CY25 stated 174.99 (19.35%) vs recomputed 189.99 (21.00%) [PBT 1559.11 + D&A 304.44 + FC 36.31 = 1899.86 mn]. 15 Cr / 165 bps error, H1 CY25 column only.
+- FAIL-2: H1 CY26 working-capital change stated "+23.61 Cr released / no drag" vs recomputed -18.30 Cr net USE (2065.14 - 2248.17). Wrong sign; 51.19 Cr receivables release offset by 47.58 Cr other-assets build.
+- Audit 3: cash-conversion "no WC drag" bear counter survives, must be grafted.

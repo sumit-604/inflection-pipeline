@@ -1,0 +1,49 @@
+stage: B06-peers
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "PEER_TRANSCRIPTS task brief labeled the FCL peer as 'Fine Organics'; source documents are actually Fineotex Chemical Limited (NSE/BSE: FCL) calls, a textile-chemicals/US-oilfield-chemicals maker, not Fine Organic Industries (FINEORG), an oleochemical-additive maker. Report uses the actual document content (Fineotex Chemical Limited) and weights it as the most distant of the three peers."
+  - "GALAXYSURF's actual Q1 FY27 (Apr-Jun 2026) results transcript was not among the 12 files provided; only its Q4/FY26 guidance for Q1 FY27 could be checked against ASL's Q1 FY27 margin recovery claim"
+  - "FCL's Dec-2025 call is a special acquisition call (CrudeChem), not a quarterly results call; contains no margin/RM/tariff/capex data comparable to the other 11 transcripts"
+flags:
+  - "B05's #1 priority trigger (margin recovery sustaining above ~7.5-8%) is contradicted by peer evidence for the same Apr-Jun 2026 quarter: ROSSARI's own margin was flat-to-down YoY and GALAXYSURF/ROSSARI both describe a fresh West Asia-war-driven raw-material and freight cost spike into Q4 FY26/Q1 FY27, the opposite of a sector tailwind"
+  - "ASL's debt-funded Pithampur/Silvassa capex (~Rs 85cr, ~Rs 60cr debt) runs directly against the peer-set capital-allocation trend: ROSSARI is rephasing/cutting its own capex programme and targeting debt-free status in 18 months, and GALAXYSURF has paused growth capex since Aug-2025, in the identical FY26-27 window"
+  - "ASL's ~92% top-5 customer concentration (per CARE, undisclosed in ASL's own AR) is the opposite of disclosed peer practice: ROSSARI reports no customer above 2% of sales and top-10 customers at 12-13% of revenue"
+peers_provided: 12
+verified:
+  - {claim: "US tariff impact on export demand/pricing (mid-2025 to early 2026, easing from Feb-2026 tariff cut 50%->18%)", peers: ["GALAXYSURF", "ROSSARI", "FCL"], anchor_count: 6}
+partially_verified:
+  - {claim: "Elevated raw-material-price narrative (lauryl alcohol/fatty acid, palm-linked) into H1 FY26", peers: ["GALAXYSURF"]}
+contradicted:
+  - {claim: "ASL's Q1 FY27 margin recovery (5.22%->7.49% QoQ) reflects a sector-wide raw-material tailwind", contradicting_peer: "ROSSARI, GALAXYSURF", quote_anchor: "ROSSARI Jul-2026 Q1FY27 call PDF page 6 (11.6% vs 12.5% YoY, flat QoQ vs Q4FY26 11.3%); GALAXYSURF May-2026 Q4FY26 call PDF page 3 (feedstock prices increased significantly due to West Asia war)"}
+  - {claim: "Debt-funded capacity expansions on a similar 2026-27 timeline reflect an industry-wide capacity race", contradicting_peer: "ROSSARI, GALAXYSURF", quote_anchor: "ROSSARI May-2026 call PDF page 6 (rephasing Rs192cr capex, targeting debt-free in 18 months, PDF page 10); GALAXYSURF Aug-2025 call PDF page 16 (no significant growth capex planned) and May-2026 call (growth capex still paused)"}
+  - {claim: "~92% top-5 customer concentration is standard/comparable peer practice", contradicting_peer: "ROSSARI", quote_anchor: "ROSSARI Jul-2026 Q1FY27 call PDF page 17 (no customer above 2% of sales; top-10 customers at 12%-13% of revenue)"}
+unverifiable:
+  - {claim: "Indian surfactants market CAGR-to-2035 (USD 10.92bn) and ~6.2% home/laundry-care CAGR", peers_checked: ["GALAXYSURF", "ROSSARI", "FCL"]}
+peer_coverage_map:
+  - {peer: "FCL (Fineotex Chemical Ltd)", quarter: "Special call, Dec-2025 (CrudeChem acquisition)", usage: "CITED-ONLY", contribution: "Establishes FCL business mix and cash-funded capital discipline; informs adjacent-segment weighting caveat only"}
+  - {peer: "FCL (Fineotex Chemical Ltd)", quarter: "Q3/9M FY26, Feb-2026", usage: "SUBSTANTIVE", contribution: "Gross margin compression and US-tariff-driven textile-customer weakness feed Q1 and Q3 verdicts"}
+  - {peer: "FCL (Fineotex Chemical Ltd)", quarter: "Q4/FY26, May-2026", usage: "SUBSTANTIVE", contribution: "Debt-free/equity-funded capex discipline used as contrast case in Q5"}
+  - {peer: "FCL (Fineotex Chemical Ltd)", quarter: "Q1 FY27, Jul-2026", usage: "SUBSTANTIVE", contribution: "Sharp margin jump used in Q1 analysis but weighted down (M&A-integration driven); West Asia RM pass-through corroborates 2B"}
+  - {peer: "GALAXYSURF", quarter: "Q1 FY26, Aug-2025", usage: "SUBSTANTIVE", contribution: "First corroboration of elevated fatty-alcohol pricing and initial US-tariff impact on Premium Specialty/Tri-K"}
+  - {peer: "GALAXYSURF", quarter: "Q2/H1 FY26, Nov-2025", usage: "SUBSTANTIVE", contribution: "Strongest anchor for RM-pricing claim (30-year-wide fatty alcohol/crude spread); quantified tariff EBITDA impact"}
+  - {peer: "GALAXYSURF", quarter: "Q3/9M FY26, Feb-2026", usage: "SUBSTANTIVE", contribution: "Tariff reduction timeline (50%->18%); AMET structural decline for 2A/2E"}
+  - {peer: "GALAXYSURF", quarter: "Q4/FY26, May-2026", usage: "SUBSTANTIVE", contribution: "West Asia war feedstock-inflation disclosure contradicts Q1 margin-tailwind reading; confirms capex pause"}
+  - {peer: "ROSSARI", quarter: "Q2 FY26, Oct-2025", usage: "SUBSTANTIVE", contribution: "Direct US-tariff/export commentary; Rs192cr debt-funded capex baseline later reversed"}
+  - {peer: "ROSSARI", quarter: "Q3 FY26, Jan-2026", usage: "SUBSTANTIVE", contribution: "Tariff-relief timing comment; overseas expansion/capex funding detail"}
+  - {peer: "ROSSARI", quarter: "Q4/FY26, May-2026", usage: "SUBSTANTIVE", contribution: "Capex rephasing/deleveraging disclosure; March RM price spike 25-30%; flat/declining YoY margin"}
+  - {peer: "ROSSARI", quarter: "Q1 FY27, Jul-2026", usage: "SUBSTANTIVE", contribution: "Decisive anchor for Q1 (flat/declining margin) and Q6 (explicit <2%-per-customer concentration)"}
+industry_cross_read:
+  demand: "No peer describes a demand boom matching ASL's FY26 (+30.3%) or Q1 FY27 (~26%+) growth; peer volume growth is low-single to high-single digit in India, with growth elsewhere attributed to company-specific capacity/geography/product actions, not a rising market"
+  pricing_inputs: "Elevated oleochemical/fatty-alcohol pricing through H2 FY25-H1 FY26 is corroborated (Galaxy strongly); a fresh West Asia-war-driven RM and freight cost spike hit the sector in Q4 FY26/Q1 FY27, contradicting a raw-material-relief reading of ASL's Q1 FY27 margin recovery"
+  capex_cycle: "Lone-expander situation for ASL on debt-funded surfactants capacity: ROSSARI is rephasing/cutting capex and targeting debt-free in 18 months, GALAXYSURF has paused growth capex since Aug-2025; only FCL is expanding meaningfully in this window, and it is cash/equity-funded in an unrelated US oilfield-chemicals business, not an industry-wide debt-funded capacity race"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Explicit, quantified customer-concentration risk management as a stated strategic priority (Rossari <2%-per-customer; Galaxy Tier2/3/D2C diversification) that ASL's AR never addresses"
+  - "Reformulation/demand-destruction risk when oleochemical feedstock prices spike relative to petrochemical substitutes (Galaxy, recurring theme) - structurally relevant to any oleochemical-based surfactants maker, not raised in ASL's disclosures"
+  - "Explicit investor-facing debt-reduction targets and timelines (Rossari's 18-month debt-free target) as a governance norm ASL has not articulated despite CARE's own flagged Debt/PBILDT concern"
+  - "Live, named geopolitical raw-material/freight risk (West Asia war, Strait of Hormuz) disclosed as an active Q4 FY26/Q1 FY27 issue by two peers, not mentioned in ASL's Q1 FY27 filing per the B05 handoff"
+  - "Backward-integrated local competition as a named, multi-year structural risk (Galaxy/Egypt) - a competitive-disintermediation risk category absent from ASL's own disclosures"
+net_narrative_effect: "complicates"

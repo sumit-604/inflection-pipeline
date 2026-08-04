@@ -34,7 +34,7 @@ No ledger row is unreviewed. Proceeding.
 **A3 findings incorporated (both documents):**
 Results (R-): R-A3-01, R-A3-02, R-A3-03, R-A3-04, R-A3-05, R-A3-06, R-A3-07, R-A3-08, R-A3-09, R-A3-10, R-A3-11.
 Presentation (P-): P-A3-01, P-A3-02, P-A3-03, P-A3-04, P-A3-05, P-A3-06, P-A3-07, P-A3-08, P-A3-09, P-A3-10, P-A3-11, P-A3-12.
-Every FORWARD-SIGNAL and AMBIGUOUS finding from both is carried into the Questions-for-Management table (Step 8.5) and/or the monitorables list; the mapping is shown there.
+Every FORWARD-SIGNAL and AMBIGUOUS finding from both is carried into the Questions-for-Management table (Step 8.5) and/or the monitorables list; the mapping is shown there. **Exception — P-A3-12** (four newly-added/reframed slides: "1ST TIME EVER", STAQO break-out, Venti launch, AI-led ads) is classified **NEUTRAL-FACT** by A3, not FORWARD-SIGNAL or AMBIGUOUS: it is **reviewed, no finding — no prior-quarter deck was supplied to diff against, so no reframe/drop can be confirmed and no management question is required.** It is therefore intentionally absent from the QfM table and monitorables (logged only as a downstream prior-deck-diff item), so the mapping claim above holds without inconsistency.
 
 **Auditor opinion:** Unmodified review conclusion, BOTH standalone (`R L101-105`) and consolidated (`R L412-418`). No Emphasis-of-Matter, no Going-Concern paragraph. Consolidated report carries an Other-Matters-style component-reliance disclosure: 9 of 11 subsidiaries were NOT reviewed by the principal auditor MSKA (`R L420-422`) — carried into Step 6 / questions. Review, not audit (SRE 2410) — conclusion strength capped accordingly.
 
@@ -216,7 +216,7 @@ Cross-check: computed Core EBITDA 108.90 / 10.55% ties to deck consol "109" / "1
 
 ### Six mandatory diagnostics
 
-1. **Did revenue grow YoY?** Yes — standalone +19.9% (`R L145`), consolidated +25.6% (`R L490`). Domestic (Within-India) +20.8%; international +42.1% (`R L648-649`). Growth is real and broad, led by mattress value +15% / foam value +26% (`R L235-236`, `PR L78-79`) and e-com value +30% (`P L238`).
+1. **Did revenue grow YoY?** Yes — standalone +19.9% (`R L145`), consolidated +25.6% (`R L490`). Domestic (Within-India) +20.8%; international +42.1% (`R L648-649`). Growth is real and broad, led by mattress value +15% / foam value +26% (`P L235-236`, `PR L78-79`) and e-com value +30% (`P L238`).
 2. **Did operating EBITDA margin expand/contract YoY?** **Split verdict, and this is the crux.** Standalone core margin 9.49% → **8.99% = −50 bps** (contracted, below 10%). Consolidated core margin 9.16% → **10.55% = +139 bps** (expanded). The divergence is 100% international.
 3. **Did core operating PBT (ex-OI) grow YoY?** Standalone: +415% but off a depressed ₹7.54 cr base, and ₹23.19 cr of the ₹31.32 cr improvement is depreciation (−12.67) + finance (−10.52), not operations. Consolidated: genuine swing from ~breakeven to +57.20. **The reported PAT growth on both is materially larger than the core-operating story warrants — headline growth is not fully real, especially standalone.**
 4. **What drove the gap between core PBT growth and reported PAT growth?** See PAT bridge (Step 4). Standalone: depreciation reduction (+12.67), finance reduction (+10.52), other income (+5.28), exceptional land-sale gain (+6.26), partly offset by tax (−9.62). Non-recurring items (OI + exceptional) = +11.54, i.e. **35% of the ₹33.24 cr PAT rise is non-recurring.**
@@ -478,7 +478,7 @@ Sheela Foam had a loud quarter and a quiet problem. On the group (consolidated) 
 
 ## 2. Sector intelligence
 
-- Indian mattress and PU-foam demand is consumption-led and premiumising: this quarter mattress value grew 15% on 6% volume, and foam value grew 26% on 4% volume (`R L235-236`, `PR L78-79`) — value far ahead of volume means price/mix, not units, is carrying growth (business-model risk if volumes stall). *(Provenance: this quarter's filing/PR.)*
+- Indian mattress and PU-foam demand is consumption-led and premiumising: this quarter mattress value grew 15% on 6% volume, and foam value grew 26% on 4% volume (`P L235-236`, `PR L78-79`) — value far ahead of volume means price/mix, not units, is carrying growth (business-model risk if volumes stall). *(Provenance: this quarter's filing/PR.)*
 - E-commerce is now a structural channel, not a fringe: brand.com sales up 69% and marketplace up 19% YoY (`PR L77`), e-com value +30% (`P L238`). *(This quarter's filing.)*
 - Input-cost pressure is the sector headwind that showed up as the 688bps standalone gross-margin drop (`P L224`); PU foam is petrochemical-linked (TDI/polyol), so margin is hostage to crude/feedstock and FX. *(This quarter's filing; sector linkage is analyst/prior context.)*
 - The branded-mattress industry is consolidating around two national brands (Sleepwell, Kurlon) plus regional/unorganised players; ~30% branded-mattress share and 11,000+ retail touchpoints are the stated structural position (`P L139`, `PR L140`). *(Prior-Notion/peer framing, reconciled with this quarter's deck.)*

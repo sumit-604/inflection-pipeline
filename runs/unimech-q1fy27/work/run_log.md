@@ -53,3 +53,21 @@ runs/unimech-q1fy27/ with inputs/ (4 source PDFs) and work/ (agent artifacts).
 ## Sequence log
 - [setup] complete: toolchain installed, protocols verified, folder built.
 - A1 extraction: launched for all 4 documents (parallel).
+
+## Role 5 concall run (2026-08-04)
+- Concall transcript (Aug-04-2026 call) analysed A1->A5. A1/A2/A3 gates passed
+  (94 turns / 19 questions / 8 analysts / 48 mgmt numbers). A5 verdict INCOMPLETE
+  on one surviving bear counter (FY27 34-35% guide < Q1 36.5% print = sequential
+  H2 margin compression); grafted -> effective COMPLETE.
+- TWO Role 5 A4 outputs exist (both consistent on all decision-relevant
+  conclusions): (1) the FIRST A4 in-place merge into review_unimech_q1fy27.md
+  (Section A + Section B merged, thesis-reconciled) — this is the AUTHORITATIVE
+  single merged review; (2) review_role5_concall_unimech_q1fy27.md — the
+  standalone Role 5 the re-dispatch wrote, which went through the A5 audit and
+  carries the loop-1 graft. The A5 margin-compression graft has been applied to
+  BOTH so they do not diverge. Reason two exist: the first A4 agent was wrongly
+  judged dead by the staleness watchdog (idle >512s) and re-dispatched; it was
+  merely slow (completed in ~22 min).
+- Net concall impact: MAINTAINED. Decision Status UNCHANGED: WATCHLIST / BUY ON
+  DIPS. No thesis-broken trigger fired; CRISIL persistence leg (d) confirmed
+  (5th silence). Organic ex-Hobel ~+36% YoY (SUPPORTED).

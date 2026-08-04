@@ -1,0 +1,21 @@
+stage: B12d
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+note: "Re-invocation. The prior D run reported a CRITICAL 'transcripts missing' finding that was a mechanical look-up error (the verifier tried to list/grep binary PDFs); the 12 transcripts exist and are readable, as confirmed by directory listing and by Stage 6 / Verifier A / Verifier B reading them. This corrected run read all 12 in full."
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Q5 net read / coverage map, GALAXYSURF Nov 2025 row", claimed: "cumulative ~INR480cr capex over prior 3 years attributed to the Nov 2025 call", source_truth: "figure is from the GALAXYSURF May 2026 call ('capex in last 3 years of roughly INR480 crores'), not Nov 2025; Nov 2025 supports the adjacent ~INR260cr CWIP figure", note: "correct number/peer, wrong call anchor; does not change the Q5 finding"}
+  - {severity: "MINOR", location: "B06 Q1, FCL Jul 2026 row", claimed: "EBITDA margin improved to 15.70% vs 13.93%, framed alongside a Q1 FY26 YoY gross-margin comparison", source_truth: "13.93% is 'the last quarter' (QoQ vs Q4 FY26), not a Q1 FY26 YoY figure", note: "number correct; period basis is QoQ not YoY; does not change the Q1 net read"}
+  - {severity: "MINOR", location: "B06 Q5, ROSSARI Jan 2026 row", claimed: "active Rs192cr capex plan still in force, attributed to the Jan 2026 call", source_truth: "Rs192cr is explicitly stated in Oct 2025 and referenced in May 2026; the Jan 2026 call describes phased capex generically without restating the figure", note: "inference 'still in force' is correct; specific rupee anchor not in the Jan 2026 call itself; does not change the Q5 finding"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 92
+peer_utilisation_pct: 91.7    # 11 substantive / 12 provided (B06), independently confirmed by this audit

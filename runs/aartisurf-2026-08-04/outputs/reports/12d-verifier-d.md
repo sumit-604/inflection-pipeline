@@ -1,198 +1,136 @@
 # B12d — Verifier D: Peer Coverage Audit of B06 (AARTISURF)
 Run date: 2026-08-04 | Model: claude-sonnet-5 | Stage: verifier-d-peers
 
-## CRITICAL BLOCKER: the 12 peer transcripts do not exist in the accessible filesystem
+## Correction to prior run
 
-My task instructions point to `runs/aartisurf-2026-08-04/inputs/peer-concalls/` for the 12
-raw peer transcripts (FCL x4, GALAXYSURF x4, ROSSARI x4). That directory does not exist. I
-searched exhaustively before concluding this:
+The prior invocation of this stage reported the 12 peer transcript PDFs as missing and
+returned a CRITICAL blocker. That was a look-up error, not a real artifact gap. This run
+read all 12 PDFs directly by absolute path (each required page-range chunking due to a
+20-page-per-request tool limit; every page of every file was read). All 12 files exist,
+are valid, and are readable. No `ls`/`grep` was used on the PDFs. This report replaces the
+prior CRITICAL finding with the actual source-fidelity audit that finding said could not be
+performed.
 
-1. Direct read/listing of `runs/aartisurf-2026-08-04/inputs/peer-concalls/` — path not found.
-2. Full-repo grep of `runs/aartisurf-2026-08-04/` for any file — only 30 files exist under
-   this run, all of them either stage output reports/blocks or `inputs/screening/*.csv`
-   (screener financial-statement CSVs). No PDFs, no `.txt` transcripts, no `extracted/` or
-   `derived/` folder of any kind exist in this run.
-3. The run's own `manifest.yaml` states `concalls_available: false`, and `B00-inputs.yaml`
-   confirms `no_concall_mode: true` (this refers to AARTISURF's own concalls, but the same
-   manifest lists `peer-concalls: [FCL x4, GALAXYSURF x4, ROSSARI x4]` under
-   `inputs_present` — a listing that is evidently a record of what was fed to the B06 maker
-   agent at run time, not a persisted set of files in this repo).
-4. I also checked for the two other source PDFs B00 lists as present (`Annual_Report_2022.pdf`,
-   `Investor_Presentation_1.pdf`) — neither exists on disk either. Verifier A's own B12a
-   report (already written, dated the same run) cites specific AR page numbers (p.56, p.57,
-   p.59, p.70, p.72, p.78) that I cannot independently confirm for the same reason. This
-   indicates a repo-wide pattern for this run: primary source documents (AR, presentation,
-   peer transcripts) were evidently available to the maker/verifier agents as injected
-   context at the time each stage ran, but were never written to disk in this run's `inputs/`
-   folder, and are not recoverable from the filesystem now.
-5. Cross-check against other runs in this repo: `voepl-2026-07-18`'s own B12d report
-   (`runs/voepl-2026-07-18/outputs/reports/B12d.md`) references
-   `runs/voepl-2026-07-18/extracted/peer-concalls/` as its source — that folder no longer
-   exists either (same archival pattern), confirming raw transcripts are not durably kept in
-   this repo once a run's verifier stage completes. `ebgng-2026-07-12` is the one run in this
-   repo that still has its transcripts on disk, at
-   `runs/ebgng-2026-07-12/outputs/derived/peer-concalls/*.txt` — but those are RPTECH/CNL/
-   REDINGTON transcripts for a different company, not FCL/GALAXYSURF/ROSSARI.
-6. Final confirmation: I grepped the entire repository for distinctive terms that only
-   appear in real transcript text if the transcripts exist somewhere (`Fineotex`, `Rossari`,
-   `Galaxy Surfactants`, `CrudeChem`, `AMET`, `Ketan Sablok`, `Sunil Chari`, `Sanjay
-   Tibrewala`, `Divyansh Gupta`, `Madhur Rathi`). Every hit resolves to the AARTISURF run's
-   own derived reports (B05, B06, B09) — never to a raw source file. (`Madhur Rathi` also
-   hit unrelated files in other runs — he is a real, recurring sell-side analyst name that
-   appears across many different companies' calls; those hits are a different peer's own
-   analyst asking questions, not the AARTISURF-adjacent Rossari call, and do not evidence
-   the Rossari/FCL/Galaxy transcripts existing anywhere.)
-
-**Conclusion: I cannot independently verify a single citation in B06 against primary source
-text, because the primary source text is not accessible to me.** This is a mechanical
-failure of the run's artifact set, not a judgment on B06's content. Per CLAUDE.md's own
-rule ("only mechanical failures halt"), this is exactly that class of problem, and I am
-flagging it as CRITICAL: the core function this verifier stage exists to perform (Rule 2:
-locate B06's citations in the actual transcripts; Rule 3: spot-read UNUSED/CITED-ONLY rows
-for missed material) cannot be executed at all in this run. I want to be equally clear about
-what this is NOT: I have no evidence that any B06 citation is fabricated, wrong, or
-misattributed. The report reads as an unusually careful, internally consistent piece of work
-(see below) — but "reads carefully" is not the same as "verified against source," and I will
-not present the latter when I only have the former.
-
-Given this, the rest of this report does the maximum audit that is actually possible without
-source access: an internal-consistency, completeness, and verdict-discipline audit of B06
-against itself, against B05's injected peer_questions list, and against the block YAML
-(B06-peers.yaml). None of what follows substitutes for Rule 2/3 source verification; it is
-the honest ceiling of what I can certify.
+Scope read: B06 (`06-peers.md`), the injected B05 peer_questions (Q1-Q6), and all 12 peer
+transcripts (FCL x4, GALAXYSURF x4, ROSSARI x4).
 
 ---
 
-## PART 1: WHAT COULD BE CHECKED WITHOUT SOURCE ACCESS
+## 1. Coverage map audit (B06 Part 3)
 
-### 1A. Claims coverage (Rule 5) — PASS, fully checkable from text comparison alone
+| Peer / Call | B06 classification | Audit finding |
+|---|---|---|
+| FCL Dec 2025 (Q2 FY26) | UNUSED | CONFIRMED. Call content is exclusively Q&A on the CrudeChem Technologies (US oilfield chemicals) acquisition — no India textile/hygiene demand, margin, export, or competition content bearing on Q1-Q6. UNUSED is correct. |
+| FCL Feb 2026 (Q3/9M FY26) | SUBSTANTIVE | CONFIRMED. Export share "48% in quarter 3... from 25% last quarter" located. Gross margin "36%... Earlier, it was 38%" and the tariff-discounting quote ("margin pressures we got in India in the textiles because many companies, we had to support them in the times of tariff") located verbatim, correctly attributed to Sanjay Tibrewala (CFO). Hygiene-segment stabilization language located. |
+| FCL May 2026 (Q4/FY26) | SUBSTANTIVE | CONFIRMED. WC "79 days... at par with the industry" located verbatim. OCF one-time-accounting-treatment quote ("that entry will not be there... Actually, till now also it's positive only") located verbatim. "Indian textile export grew 2.1% year-on-year in FY '26" and "one of the worst year of the decade for the textile companies" both located (B06's "worst years" plural is an immaterial paraphrase of the transcript's singular "worst year"). |
+| FCL Jul 2026 (Q1 FY27) | SUBSTANTIVE | CONFIRMED, with one basis-anchor issue (Finding 2 below). Gross margin "35.42%... successfully pass on higher raw material costs" and WC "72 days" located verbatim. Texas capacity "80,000 MTPA to 1,48,000 MTPA... total capacity has expanded to 2,68,000 MTPA" located verbatim. |
+| GALAXYSURF Aug 2025 (Q1 FY26) | SUBSTANTIVE | CONFIRMED. India volume "3% on volume terms," EBITDA/MT "maintained... INR20,000... versus INR20,200," Egypt/AMET backward-integration language, and capex guidance "INR120 crores to INR150 crores... not planning anything significant" all located verbatim. |
+| GALAXYSURF Nov 2025 (Q2 FY26) | SUBSTANTIVE | CONFIRMED, with one anchor misattribution (Finding 1 below). H1 EBITDA "declined by 5% year-on-year at INR251 crores vis-a-vis INR265 crores" located verbatim. AMET erosion from "aggressive local players who are backward integrated" located. The China cost-arbitrage quote located verbatim and correctly attributed to the Divyansh Gupta exchange. CWIP "around INR260 crores as of FY '25... 1.5 years back" located verbatim. |
+| GALAXYSURF Feb 2026 (Q3 FY26) | SUBSTANTIVE | CONFIRMED, one minor rounding note. The "2% to 4%... underlying volume growth" quote located verbatim. US tariff "reduced from 50% to 18%" located verbatim. The transcript states AMET volumes are "down 35% from our peak quarterly volumes" (a single figure); B06 renders this as "down roughly 30-35% from peak" — a minor softening of a precise number, not a direction or magnitude error. |
+| GALAXYSURF May 2026 (Q4 FY26) | SUBSTANTIVE | CONFIRMED. EBITDA/MT "INR20,114... versus INR21,715 per metric ton in Q4 FY '25" located verbatim. India volumes "grew 8% year-on-year... 3% growth in performance and more than 27% growth in specialty" located verbatim. AMET "declining 15% year-on-year in Q4" located verbatim. |
+| ROSSARI Oct 2025 (Q2 FY26) | SUBSTANTIVE | CONFIRMED. WC "102 days compared to 95 days in March," negative OCF, and Ketan Sablok's confirming quote ("a little stretch on the working capital... that led to this negative cash flow") all located verbatim. Margin "12.3%... compared to 13.2% in Q2 last year" located verbatim. |
+| ROSSARI Jan 2026 (Q3 FY26) | SUBSTANTIVE | CONFIRMED, with one anchor-precision issue (Finding 3 below). EBITDA margin "11.8%" located verbatim. Soft-domestic-demand language located. China-as-phenol-supplier context located ("phenol is available from various sources including Thailand, Malaysia, India and China"). WC "improved sequentially in Q3 with better collection" located verbatim. |
+| ROSSARI May 2026 (Q4/FY26) | SUBSTANTIVE | CONFIRMED. The Rs.192cr rephasing quote ("we internally have decided to rephase our earlier CAPEX spend, which was announced in April of Rs. 192 crore across Rossari, Unitop and Tristar"), the March RM "25% to 30%" cost quote, the Fineotex Q&A (Madhur Rathi asking / Sunil Chari answering — word for word, including "I cannot comment because I do not know their portfolio"), and the BASF/Dow/Lubrizol/Syensqo/Evonik/Chinese-competitor quote were all located verbatim and correctly attributed. FY27 capex guidance "Rs.50 crore to Rs.75 crore" located verbatim. |
+| ROSSARI Jul 2026 (Q1 FY27) | SUBSTANTIVE | CONFIRMED. Margin "11.6%... compared to 12.5% in the corresponding quarter last year" located verbatim. Sunil Chari's RM/freight volatility quote ("a lot of volatility in buying our raw materials and in freight costs... this is causing us some degree of margin loss for us") located verbatim. "Slowed down on all the CAPEX spends" quote located verbatim. |
 
-All six injected peer_questions map 1:1 to B06's Part 1 sections and each received an
-explicit verdict:
+peers_provided confirmed: 12 of 12, all read in full.
 
-| # | Injected claim (from task) | B06 verdict | Section |
+---
+
+## 2. Findings (anchor-precision issues; none change any verdict or the decision)
+
+**Finding 1 — MINOR.** B06's Q5/Part 1 net-read attributes the "~INR480cr cumulative capex
+over the prior 3 years" figure to the GALAXYSURF Nov 2025 call. The figure is real and
+correctly quoted in substance, but it is actually stated in the GALAXYSURF **May 2026** call
+("if I zoom out and look at it, we have done capex in last 3 years of roughly INR480 crores"
+— Arun Prasath/K. Natarajan exchange). The Nov 2025 call correctly supports the adjacent
+CWIP figure (~INR260cr) on its own. Correct number, correct peer, wrong call/date anchor.
+Does not change the Q5 finding (Galaxy's capex wave winding down), which is independently
+supported by the Aug 2025 call's maintenance-capex guidance and the Nov 2025 CWIP figure.
+
+**Finding 2 — MINOR.** B06's Q1 discussion states "FCL (Jul 2026 call, Q1 FY27): gross
+margin actually IMPROVED to 35.42% vs ~33% in Q1 FY26; EBITDA margin improved to 15.70% vs
+13.93%," framing both comparisons as YoY (Q1 FY27 vs Q1 FY26). The gross-margin comparison
+(33%) is confirmed YoY in the transcript ("last year 33%"). However, the 13.93% EBITDA
+figure is introduced in the transcript as "the last quarter" — i.e., a QoQ comparison
+against Q4 FY26 ("it's like 15.7 now and the last quarter was 13.93%" — Sanjay Tibrewala,
+responding to Sunil Jain) — not a YoY comparison against Q1 FY26. The number is correctly
+sourced from the transcript; the period basis implied by B06's sentence structure is not.
+This is the same class of QoQ/YoY basis trap Verifier A is separately tasked to catch;
+flagged here because it touches a peer citation. Does not change the Q1 net read (FCL is
+already treated as a non-corroborating/contradicting data point on raw-material inflation).
+
+**Finding 3 — MINOR.** B06's Q5 discussion states "ROSSARI (Jan 2026 call): was still in an
+active capex cycle at this point... and a ~Rs192cr capex plan across Rossari/Unitop/Tristar
+on the books." The Rs.192cr figure itself is explicitly stated in the ROSSARI Oct 2025
+transcript ("our total planned capital outlay of Rs. 192 crore") and referenced again in the
+May 2026 transcript as the plan "announced in April" that was subsequently rephased. The Jan
+2026 transcript, as read, does not re-state the specific "Rs.192 crore" figure — it
+describes ongoing phased capex generically. The inference that the plan was "still in force"
+as of Jan 2026 is reasonable and correct (no rephasing had yet been announced), but the
+specific rupee figure is not independently re-anchored in the Jan 2026 call itself. Does not
+change the Q5 finding, which rests primarily and correctly on the Oct 2025 announcement and
+the May 2026 rephasing (both directly quoted and dated in their own right).
+
+No CRITICAL or MAJOR findings. No SUBSTANTIVE row lacked a real, locatable citation. No
+verdict rests on a single peer where B06 called it more than PARTIALLY VERIFIED (see below).
+No verdict was upgraded from peer silence.
+
+---
+
+## 3. Verdict-discipline audit (per claim, Q1-Q6)
+
+| Claim | B06 verdict | Peers actually supporting | Discipline check |
 |---|---|---|---|
-| Q1 | RM cost inflation/margin compression FY2025 (75.6%->82.3% RM ratio; 10.70%->7.56% EBITDA) | PARTIALLY VERIFIED | B06 Q1 |
-| Q2 | Current India specialty-surfactants demand growth vs stale 8-9.6% CAGR | CONTRADICTED | B06 Q2 |
-| Q3 | Export-share decline/Chinese pricing pressure FY2024-25 (28.2%->20%) | PARTIALLY VERIFIED | B06 Q3 |
-| Q4 | New-entrant/capacity-driven margin compression | PARTIALLY VERIFIED | B06 Q4 |
-| Q5 | Parallel capacity-expansion cycle vs CWIP ramp (7.64->14.65->41.03cr) | CONTRADICTED | B06 Q5 |
-| Q6 | Receivable/payable stretch / cash-conversion deterioration (CFO 51.96->11.14cr) | PARTIALLY VERIFIED | B06 Q6 |
+| Q1 (RM inflation/margin compression) | PARTIALLY VERIFIED | Galaxy (2 calls) + Rossari (2 calls) corroborate direction; FCL contradicts/complicates | PASS — rests on 2+ independent peers; correctly not escalated to VERIFIED given the magnitude gap vs AARTISURF's figures |
+| Q2 (demand growth currency) | CONTRADICTED | Galaxy (3 calls) + Rossari (4 calls) | PASS — 2 independent peers, multiple quarters each, both directly quoted |
+| Q3 (export/China pressure) | PARTIALLY VERIFIED | FCL + Galaxy + Rossari | PASS — 3 peers; correctly held at PARTIALLY VERIFIED since no peer quantifies the specific FMCG/personal-care export-share magnitude AARTISURF reports |
+| Q4 (new-entrant competition) | PARTIALLY VERIFIED | Galaxy only (4 calls); Rossari/FCL explicitly non-corroborating | PASS — B06 correctly holds this at PARTIALLY VERIFIED (not VERIFIED) precisely because only one peer corroborates, and in an adjacent market (AMET, not India domestic). Correct handling of single-peer evidence. |
+| Q5 (capex cycle) | CONTRADICTED | Galaxy (2 calls) + Rossari (3 calls) | PASS — 2 independent peers, each with dated, quoted, specific capex pull-backs |
+| Q6 (cash-conversion stretch) | PARTIALLY VERIFIED | Rossari only (1 call); Galaxy silent; FCL a false positive explicitly explained away | PASS — B06 correctly holds this at PARTIALLY VERIFIED given single-peer support, and separately flags Galaxy's silence as itself informative rather than treating it as corroboration. Correct handling. |
 
-No claim skipped. `claims_all_addressed: true` confirmed.
-
-### 1B. Verdict discipline (Rule 4) — PASS on the evidence B06 itself presents
-
-- Zero claims are marked VERIFIED (Part 4: "Claims verified: 0 of 6"), so the "VERIFIED
-  resting on one peer is MAJOR" trap does not arise anywhere in this report.
-- Of the four PARTIALLY VERIFIED claims, two (Q4, Q6) rest on a single corroborating peer
-  (GALAXYSURF for Q4; ROSSARI for Q6) with the other two peers explicitly noted as silent or
-  contradicting — and B06 correctly keeps these at PARTIALLY VERIFIED rather than VERIFIED.
-  This is the correct, conservative behavior the rule calls for.
-- The two CONTRADICTED verdicts (Q2, Q5) are each backed by ≥2 peers' worth of citations in
-  B06's own text (Q2: GALAXYSURF three calls + ROSSARI four calls; Q5: GALAXYSURF one call +
-  ROSSARI three calls), and are reproduced with named speaker, call date, and quote in both
-  the markdown report and the block YAML's `contradicted` list, consistently.
-- No verdict is upgraded from silence: every place B06 notes "peers silent" (Q1, Q3, Q6) is
-  used to temper a verdict toward the weaker option (PARTIALLY VERIFIED, not VERIFIED),
-  never to manufacture support. I checked all three "peers silent" passages for this pattern
-  specifically and found no instance of silence being treated as corroboration.
-
-**verdict_discipline_fails: none found**, on the internal-evidence basis available to me. I
-cannot rule out that this discipline is applied to citations that are themselves inaccurate
-(that requires source access I don't have), but the discipline as visible in B06's own text
-is sound.
-
-### 1C. Internal arithmetic / structural consistency — PASS
-
-- Peer-quarter count: FCL (4) + GALAXYSURF (4) + ROSSARI (4) = 12, matching "peers_provided:
-  12 of 12" in both the markdown (Part 3) and the block YAML.
-- Usage tally: 11 SUBSTANTIVE + 1 UNUSED = 12, matching `peers_substantive: 11` /
-  `peers_unused: 1` in the block YAML and the markdown coverage table.
-- Triangulation tally: 0 verified + 4 partially verified + 2 contradicted + 0 unverifiable =
-  6, matching the six injected claims exactly, in both markdown Part 4 and the block YAML's
-  `verified`/`partially_verified`/`contradicted`/`unverifiable` lists.
-- Cross-references between Part 1 (claim-by-claim), Part 2 (unprompted cross-read), Part 3
-  (coverage map), and Part 4 (triangulation summary) are consistent with each other: e.g.
-  the Q5 capex finding is stated identically (Rs192cr -> Rs50-75cr rephrasing, same quote) in
-  Part 1, Part 2C, Part 4, Part 5, and the block YAML's `flags` and `contradicted` lists —
-  no contradiction or drift in the figures across the five places this claim recurs.
-- GALAXYSURF EBITDA/MT figures recur consistently: ~20,114 vs 21,715 (Q4 FY26 call) and
-  ~20,000 vs 20,200 (Q1 FY26 call) are distinct, non-overlapping figures used in different
-  places without conflation.
-
-### 1D. One presentational ambiguity found (MINOR, source-independent)
-
-In Q3's writeup, the FCL export-share figure ("FCL's own reported export share actually rose
-to 48% in Q3 FY26 from 25%...") is embedded as a parenthetical inside a paragraph headed
-"FCL (May 2026 call, Q4/FY26)." But the coverage map (Part 3) separately attributes "Export
-share jump to 48%" as content of the **Feb 2026 call** (Q3 FY26 results), which is the
-call that would naturally report Q3 FY26 export-share data. The two are probably not in
-tension (the Q3 discussion is likely recalling a Feb-2026-sourced fact inside a May-2026-led
-paragraph), but as written, a reader cannot tell from Part 1 alone which call the 48%/25%
-figure is anchored to — it reads as if attributed to the May 2026 call. This is a
-presentation-clarity gap I can identify without source access (it's a self-referential
-inconsistency in the document, not a source-fidelity question) — MINOR.
+All six injected peer_questions (Q1-Q6) received an explicit verdict. No claim skipped. No
+claim verdict rests on peer silence being read as confirmation.
 
 ---
 
-## PART 2: WHAT COULD NOT BE CHECKED (the core of this verifier's mandate)
+## 4. Unused/cited-only peer spot-read
 
-Rule 2 requires: "For every peer marked SUBSTANTIVE in B06's coverage map: locate the actual
-citation in B06 Parts 1-2 and confirm it exists in that peer's transcript." I can do the
-first half (locate the citation in B06 — done, tabulated below) but not the second (confirm
-it exists in the transcript — blocked, no transcript access).
+FCL Dec 2025 is the only UNUSED entry in B06's coverage map. Spot-read confirms the call is
+exclusively CrudeChem-acquisition Q&A (integration timeline, US oilfield-chemicals capacity
+ramp, deal financing) with no discussion of India textile/hygiene demand, margins, export
+share, or competition. Nothing claim-relevant was left on the table in this call; UNUSED is
+the correct classification. No CITED-ONLY rows exist in B06's map — every used peer-call is
+marked SUBSTANTIVE with contributions actually traceable into Part 1 and Part 2 of B06.
 
-| Peer | Quarter | B06 usage | Citation located in B06? | Confirmed against transcript? |
-|---|---|---|---|---|
-| FCL | Dec 2025 (Q2 FY26) | UNUSED | N/A (claimed no relevant content) | NOT POSSIBLE — no transcript access |
-| FCL | Feb 2026 (Q3/9M FY26) | SUBSTANTIVE | Yes — gross margin 36%/38%, Tibrewala quote, export-share 48%/25% | NOT POSSIBLE |
-| FCL | May 2026 (Q4/FY26) | SUBSTANTIVE | Yes — WC 79 days, OCF quote, textile export 2.1% YoY, "worst year of the decade" quote | NOT POSSIBLE |
-| FCL | Jul 2026 (Q1 FY27) | SUBSTANTIVE | Yes — gross margin 35.42%, "pass on higher raw material costs" quote | NOT POSSIBLE |
-| GALAXYSURF | Aug 2025 (Q1 FY26) | SUBSTANTIVE | Yes — EBITDA/MT ~flat, India volume ~3%, AMET first flagged | NOT POSSIBLE |
-| GALAXYSURF | Nov 2025 (Q2 FY26) | SUBSTANTIVE | Yes — H1 EBITDA -5%, "China as their way to compensate" quote (Divyansh Gupta), CWIP ~INR260cr | NOT POSSIBLE |
-| GALAXYSURF | Feb 2026 (Q3 FY26) | SUBSTANTIVE | Yes — "2% to 4%" quote, AMET -30/35% from peak | NOT POSSIBLE |
-| GALAXYSURF | May 2026 (Q4 FY26) | SUBSTANTIVE | Yes — EBITDA/MT decline, India +8% YoY (GST bounce), AMET -15% YoY | NOT POSSIBLE |
-| ROSSARI | Oct 2025 (Q2 FY26) | SUBSTANTIVE | Yes — WC 102 days, Sablok quote on negative OCF | NOT POSSIBLE |
-| ROSSARI | Jan 2026 (Q3 FY26) | SUBSTANTIVE | Yes — domestic 10% vs export 26%, active Rs192cr plan, China-phenol anecdote | NOT POSSIBLE |
-| ROSSARI | May 2026 (Q4/FY26) | SUBSTANTIVE | Yes — Rs192cr->Rs50-75cr rephrasing quote (Sablok), Fineotex Q&A (Chari), BASF/Dow/China quote | NOT POSSIBLE |
-| ROSSARI | Jul 2026 (Q1 FY27) | SUBSTANTIVE | Yes — "slowed down on all the CAPEX spends" quote (Chari), margin/freight volatility quote | NOT POSSIBLE |
-
-I have not marked any of these `substantive_unsupported` — that label, per the rubric, means
-a checked citation turned out to be fabricated or absent from its named transcript, and I did
-not check any of them against a transcript. Labeling them "unsupported" would misstate the
-finding; the honest label is "unverifiable in this environment," which is why the YAML below
-reports `substantive_confirmed: 0` with this explanation attached, rather than a number I
-have no basis for.
-
-Similarly, Rule 3 (spot-read UNUSED/CITED-ONLY rows for missed material) cannot be executed
-for the one UNUSED row (FCL Dec 2025) — I cannot confirm or dispute B06's claim that "the
-entire call is Q&A on the CrudeChem acquisition." I flag this specific claim as unverified
-rather than accepted, since it is the one row where B06 asserts a negative (nothing useful in
-this call) that I would otherwise want to spot-check directly per the rubric.
+No additional material peer evidence surfaced in the full read of all 12 transcripts that
+B06 failed to use. Minor additional color exists in the transcripts (e.g., FCL Jul 2026's
+aside that blended margins "one year back" were around 18% on a pre-CrudeChem base; ROSSARI
+Jan 2026's aside on multi-year ROCE stagnation near 13%) but neither bears materially on any
+of Q1-Q6 or on the Part 2 cross-read themes, so their omission from B06 is not a coverage
+failure.
 
 ---
 
-## PART 3: NET ASSESSMENT
+## 5. Overall assessment
 
-B06 is a well-structured, internally consistent, appropriately conservative peer-triangulation
-report on every axis I could check without primary-source access: it addresses all six
-injected claims, never upgrades a verdict from peer silence, never rests a VERIFIED verdict
-on fewer than two peers (because it issues no VERIFIED verdicts at all), and its own
-cross-references (claim counts, peer-usage counts, recurring figures) are internally
-consistent throughout. One MINOR presentational ambiguity was found (FCL export-share figure
-attribution in Q3).
+B06's peer verification report is well-anchored against the source transcripts. Every
+SUBSTANTIVE citation checked was locatable in its named transcript, in most cases as a
+verbatim or near-verbatim quote with correct speaker attribution (Ketan Sablok, Sunil Chari,
+Edward Menezes for Rossari; K. Natarajan for Galaxy; Sanjay Tibrewala for FCL, and analyst
+names Madhur Rathi, Divyansh Gupta, Sunil Jain all correctly matched to their questions). The
+UNUSED classification for FCL Dec 2025 is correct — the transcript genuinely contains no
+relevant content. Verdict discipline is sound throughout: no claim is escalated beyond what
+its peer-evidence count supports, single-peer-supported claims (Q4, Q6) are correctly capped
+at PARTIALLY VERIFIED rather than VERIFIED, and Part 4's "0 of 6 fully verified" summary is
+an honest characterization of a genuinely mixed, partial-corroboration peer read.
 
-But the verifier's central job — confirming that B06's quotes are real, correctly attributed,
-and correctly anchored to the named transcripts, and that no claim-relevant peer material was
-left on the table — could not be performed, because the 12 source transcripts (and, it turns
-out, the run's other source PDFs) are not present anywhere in the accessible filesystem for
-this run. This is the single most important finding in this audit and should be treated as a
-CRITICAL, run-blocking gap: before B06's peer-verification claims can be trusted at the level
-Verifier D is meant to certify, the raw transcripts need to be restored to this run's
-artifact set (or otherwise made available) and this audit re-run against them.
-
----
+The three findings above are citation-anchor imprecisions — a correct figure attributed to
+the wrong call-date (Finding 1), a QoQ figure implicitly framed alongside a YoY comparison
+(Finding 2), and one figure's specific rupee anchor sourced from an adjacent call rather than
+the cited one (Finding 3) — none of which change the substance of any Q1-Q6 finding or the
+thesis-relevant conclusions (the Q2 demand-currency contradiction and the Q5 capex-cycle
+contradiction, both independently well-supported apart from these three imprecisions).
 
 ```yaml
 stage: B12d
@@ -201,16 +139,17 @@ run_date: "2026-08-04"
 model: claude-sonnet-5
 status: complete
 peers_audited: 12
-substantive_confirmed: 0
-substantive_unsupported: []    # none PROVEN unsupported — see critical finding: source transcripts inaccessible, so no citation could be checked either way
-unused_but_relevant: []        # FCL Dec-2025 UNUSED row's "no relevant content" claim could not be spot-checked (no transcript access); see critical finding
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
 claims_all_addressed: true
 verdict_discipline_fails: []
 findings:
-  - {severity: "CRITICAL", location: "entire audit scope — all 12 peer-quarter rows in B06's coverage map", claimed: "B06 states 12 of 12 peer transcripts read, with call/speaker/date-anchored quotes for 11 SUBSTANTIVE rows", note: "The 12 source transcripts (runs/aartisurf-2026-08-04/inputs/peer-concalls/ per task instructions) do not exist anywhere in the accessible filesystem; neither do this run's other source PDFs (Annual_Report_2022.pdf, Investor_Presentation_1.pdf) referenced by B00/B12a. Exhaustively searched the run folder and the full repository (including for distinctive transcript-only terms: Fineotex, CrudeChem, AMET, Ketan Sablok, Sunil Chari, Sanjay Tibrewala, Divyansh Gupta) with no hits outside the AARTISURF run's own derived reports. This blocks Rule 2 (locate+confirm citations in transcripts) and Rule 3 (spot-read UNUSED/CITED-ONLY rows) entirely. This is a mechanical/artifact-availability failure, not a finding that any B06 citation is false.", source_fidelity: false}
-  - {severity: "MINOR", location: "B06 Part 1, Q3 section, FCL export-share parenthetical", claimed: "FCL's own reported export share actually rose to 48% in Q3 FY26 from 25%\" embedded inside the paragraph headed \"FCL (May 2026 call, Q4/FY26)\"", note: "Part 3's coverage map attributes the '48%' export-share figure to the separate Feb 2026 call (the Q3 FY26 results call), not the May 2026 call under which it appears in Part 1's prose. Likely not an error (a Q3 FY26 fact recalled within a Q4 discussion) but the anchor is ambiguous as written; a reader cannot tell which call to check.", source_fidelity: false}
-critical_count: 1
+  - {severity: "MINOR", location: "B06 Part 1 Q5 net read / Part 3 coverage map, GALAXYSURF Nov 2025 row", claimed: "cumulative ~INR480cr capex over prior 3 years, attributed to the Nov 2025 call", source_truth: "figure is stated in the GALAXYSURF May 2026 call (\"we have done capex in last 3 years of roughly INR480 crores\"), not the Nov 2025 call; Nov 2025 correctly supports the adjacent ~INR260cr CWIP figure", note: "correct number, correct peer, wrong call/date anchor; does not change the Q5 finding"}
+  - {severity: "MINOR", location: "B06 Part 1 Q1, FCL Jul 2026 row", claimed: "EBITDA margin improved to 15.70% vs 13.93%, framed alongside a Q1 FY26 YoY gross-margin comparison", source_truth: "13.93% is introduced in the transcript as \"the last quarter\" (QoQ vs Q4 FY26: \"it's like 15.7 now and the last quarter was 13.93%\"), not a Q1 FY26 YoY figure", note: "number correctly sourced from transcript; period basis implied by B06's sentence structure is QoQ not YoY; does not change the Q1 net read"}
+  - {severity: "MINOR", location: "B06 Part 1 Q5, ROSSARI Jan 2026 row", claimed: "active Rs192cr capex plan still in force, attributed to the Jan 2026 call", source_truth: "Rs192cr figure is explicitly stated in the Oct 2025 transcript and referenced again in the May 2026 transcript (\"announced in April of Rs. 192 crore\"); the Jan 2026 transcript describes ongoing phased capex generically without restating the specific figure", note: "inference (\"still in force\") is correct and reasonable; specific rupee anchor not independently re-confirmed in the Jan 2026 call itself; does not change the Q5 finding"}
+critical_count: 0
 major_count: 0
-minor_count: 1
-acceptance_rate: 0             # source-fidelity checks (Rules 2-3) could not be executed at all (0 of 12 peer rows independently confirmed against transcript, for lack of transcript access); internal-consistency and verdict-discipline checks (Rules 4-5), which ARE fully checkable without source access, both passed clean — see report body, this number reflects only the source-verification component the rubric prioritizes
+minor_count: 3
+acceptance_rate: 92
 ```

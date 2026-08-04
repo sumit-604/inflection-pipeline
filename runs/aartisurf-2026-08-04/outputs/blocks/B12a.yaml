@@ -1,0 +1,15 @@
+stage: B12a
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 87
+findings:
+  - {severity: "MAJOR", location: "Stage 2 (02-notes.md), Notes verification", claimed: "Receivable Days FY20: 20.1 days", source_truth: "Recomputed (Rs17.92 Cr / Rs325.86 Cr) x 365 = 20.07 days", note: "Immaterial rounding (20.1 vs 20.07)", source_fidelity: true}
+  - {severity: "MAJOR", location: "Stage 3 (03-ardeep.md Phase 2), Payables", claimed: "Trade payables +305.9% YoY; payable days 28.3 to 80.1", source_truth: "Verified +305.87% MATCHES; payable days 28.28->80.06; AR p.56 Note 14 and screener confirm (78.11 vs exact 78.10, immaterial)", note: "MATCHES within rounding tolerance", source_fidelity: true}
+  - {severity: "MAJOR", location: "Stage 3 (03-ardeep.md Phase 3C), Effective tax rate", claimed: "Effective current tax rate ~2.2% (Current Tax Rs50.00L / PBT Rs2,292.08L)", source_truth: "AR p.57 total tax 127.95L (current 50L + deferred 78L); full effective rate 5.58%, not 2.2%", note: "Basis-interpretation note (current-only vs full tax), not a MISMATCH; source data correctly used", source_fidelity: true}
+critical_count: 0
+major_count: 3
+minor_count: 0
+acceptance_rate: 96.6
+coverage_note: "All material verdict-card and scorecard inputs verified against screener-Data_Sheet.csv (FY20-FY26) and AR FY2020-21. 87 numbers = ~60% of distinct numeric claims in B01-B09, focused on decision-material figures. The AVOID classification, FLAG-CASH, and NO-EMERGING-MOAT conclusions all rest on verified pillars. No CRITICAL findings; all three MAJOR are immaterial rounding or basis-interpretation differences; no verdict input impaired."

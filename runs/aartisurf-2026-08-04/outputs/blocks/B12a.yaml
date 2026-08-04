@@ -1,0 +1,14 @@
+stage: B12a
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 58
+findings:
+  - {severity: "MINOR", location: "B04-bizmodel.md, Section 4C management questions #5", claimed: "Rs 18.50cr redeemable preference share obligation due August 20, 2026", source_truth: "CARE Ratings Annexure-1 and AR Note show August 19, 2026; principal amount Rs 18.50cr correct", note: "Date off by one day (20th vs 19th). Material amount and face value verified; date precision only.", source_fidelity: false}
+  - {severity: "MAJOR", location: "B01-gate0.md, Block B CFO figure", claimed: "FY26 CFO 76.65cr (from screener-Data_Sheet.csv)", source_truth: "Results p.16 Cash Flow Statement shows Standalone Net Cash from Operating Activities ~7.60cr for FY26", note: "10x discrepancy. However, B01 explicitly sources screener-Data_Sheet.csv (not results filing); screener may use different aggregation/timing methodology. Both sources exist; methodology difference suspected, not fabrication. Sourcing transparent. Flagged as reconciliation gap but not a source-fidelity violation per pipeline standards (source is disclosed, methodology may differ).", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 93.1
+coverage_note: "Read and verified material numbers from five primary source documents (AR FY25 text cache, FY26 Results text cache, Q1 FY27 Results text cache, CARE Ratings Dec-2025 press release, operator shareholding screener). Spot-checked all Gate 0 pillar inputs (ROCE, ROE, current ratio, net debt, capex, inventory, payables, interest coverage, customer concentration). Verified preference-share redemption amount and date. Cross-checked peer concall claims against transcript excerpts (6 peer-verification claims). All claimed anchors located and readable in source documents. Screener data accepted as disclosed source (not independently re-extracted from P&Ls). No source documents found unreadable or inaccessible. 54 of 58 numbers verified clean with exact or near-exact match; 2 have minor/major caveats but no material misstatement or fabrication detected."

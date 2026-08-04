@@ -1,4 +1,4 @@
-# FTTCP DELIBERATION RECORD — AARTI SURFACTANTS LTD (AARTISURF)
+# FTTCP DELIBERATION RECORD: AARTI SURFACTANTS LTD (AARTISURF)
 
 Run: runs/aartisurf-2026-08-04 | CMP Rs 523.0 | Market cap Rs 443 Cr | Run date 2026-08-04
 Phase 2 (operator deliberation). First workup. NO-CONCALL MODE. Operator: Keerti Kaushik.
@@ -42,19 +42,19 @@ The whole call turns on one print: Q2 FY27 operating margin. At or above 7.5% mo
 
 ## OPERATOR OVERRIDES
 
-**Override 1 — ROCE forward verdict: DECLINING to STAGNANT.**
+**Override 1. ROCE forward verdict: DECLINING to STAGNANT.**
 - Draft determination: ROCE forward DECLINING (-1), composite 0, AVOID band. Basis: ROCE at 9.3% far below any premium threshold, fresh debt-funded capex dilutes the denominator near term, and the framework biases to DECLINING when torn.
 - Operator ruling: "please keep ROCE stagnant, not declined." (The operator first ruled "keep ROCE at decline," then on reflection reversed to STAGNANT.)
 - Operator reasoning, as developed in the exchange: the ROCE decline decomposes entirely into the margin. EBIT margin fell 7.81% FY24 to 3.40% FY26 while capital turnover ROSE from 1.86x to 2.46x (revenue up 45.6% on capital employed up 10%). ROCE is the margin's arithmetic shadow, not an independent capital-efficiency failure, so it should not be scored more negatively than margin, which is STAGNANT.
 - Effect: composite 0 to +1; band AVOID to DEEP WATCH leaning AVOID; and Pillar 1 now draws current ROCE (the STAGNANT mapping), which is consistent with the approved 12.2x base computed off current ROCE.
 - Analyst note carried to Role 3: the near-term capex denominator drag is real and unaddressed by this override; the devil's advocate should test whether ROCE prints flat or down over the next 12 months as the Rs 60 Cr debt-funded capex lands before it earns.
 
-**Override 2 — Destination PE base: additive track over the RRM governing default.**
+**Override 2. Destination PE base: additive track over the RRM governing default.**
 - Draft determination: RRM track 8.5x is the more conservative track and, on the framework's own rule, governs the entry zone; additive track 12.2x presented alongside.
 - Operator ruling: "so let's take a price-to-earnings of 12.2." The operator approved the additive-track 12.2x as the destination base, overriding the RRM-governs default.
 - Effect: destination PE 12.2x (range 11.5x to 13.0x), about 44% above the RRM floor of 8.5x. Phase 3 fair values land higher than the conservative track would give, but still a de-rating from the current ~24x trailing-four-quarter / ~35x FY26-basic multiple.
 
-**Override 3 — Earnings basis: one-year-forward.**
+**Override 3. Earnings basis: one-year-forward.**
 - Operator ruling: "we will use the one-year forward multiples method."
 - Reason (operator, implied by the selection): forward basis fits a mid-capex business whose current earnings sit in a margin trough.
 - Analyst caution carried to Role 3 (not a change to the ruling): forward basis credits the same margin recovery the transition score marks STAGNANT and genuinely uncertain, so the devil's advocate MUST rebuild the return hurdle on a no-margin-recovery bear EPS. If the call clears only when the unproven recovery is fed into both the earnings and the multiple, it is a bet on the Q2 and Q3 FY27 margin prints and must be labelled that way (the INDGN 2026-08-03 double-credit lesson).

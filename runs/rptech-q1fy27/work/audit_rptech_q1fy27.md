@@ -1,193 +1,179 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — RPTECH Q1 FY27
+# A5 ADVERSARY / COMPLETENESS RE-AUDIT — RPTECH Q1 FY27 (loop-2 re-audit)
 
 **Agent:** A5 ADVERSARY | **Model:** claude-opus-4-8 | **Date:** 2026-08-04
-**Target:** `review_rptech_q1fy27.md` (A4) | **Verdict:** INCOMPLETE (loop back to A4)
+**Target:** `review_rptech_q1fy27.md` (A4, loop-2 revision) | **Verdict:** COMPLETE
 
-Fresh-context re-derivation. Every extract number below was re-read from the A1
-files and every metric recomputed independently of A4's and A3's cites. Unit
-conversion applied throughout: source INR Mn x0.1 = Rs Cr.
+Fresh-context re-derivation from A1 extracts + A2 ledgers only. Prior A5 pass
+returned INCOMPLETE with two required fixes; both are re-checked below against
+the source, plus a full independent re-run of all four audits.
 
 ---
 
 ## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
 
-The MANDATORY PLAIN-LANGUAGE BRIEF (review line 392) is present with all four
-labelled, non-empty parts carrying real content:
+The MANDATORY PLAIN-LANGUAGE BRIEF (review lines 402-415) carries all four
+labelled parts, each with real content:
 
-| Part | Heading | Line | Present / Empty |
-|---|---|---|---|
-| 1 | SUMMARY NARRATIVE | 395-396 | PRESENT (one dense paragraph, numbers-first, symmetric bull/bear, provenance-tagged) |
-| 2 | SECTOR INTELLIGENCE | 398-399 | PRESENT (ICT-distribution economics, margin structure, WC-as-risk) |
-| 3 | BUSINESS-MODEL INTELLIGENCE | 401-402 | PRESENT (spread/velocity, ROCE, model drift into services + semis, tax-tailwind end) |
-| 4 | COMPETITION INTELLIGENCE | 404-405 | PRESENT (scale/reach edge, top-3 brands, Redington/Ingram peers, Restar optionality) |
+| Part | Heading present | Line | Non-empty | Status |
+|---|---|---|---|---|
+| 1 Summary narrative | "## 1. SUMMARY NARRATIVE" | 405-406 | Yes, ~16 lines, provenance-tagged | PRESENT |
+| 2 Sector intelligence | "## 2. SECTOR INTELLIGENCE" | 408-409 | Yes, ICT-distribution structural read | PRESENT |
+| 3 Business-model intelligence | "## 3. BUSINESS-MODEL INTELLIGENCE" | 411-412 | Yes, spread/velocity + WC drift | PRESENT |
+| 4 Competition intelligence | "## 4. COMPETITION INTELLIGENCE" | 414-415 | Yes, peers/brands/moat | PRESENT |
 
-**Gate result: PASS.** Deliverable is complete; no hard INCOMPLETE on this axis.
-
----
-
-## AUDIT 1 — COVERAGE (fresh enumeration vs A2 ledgers)
-
-Independent recount. Slide/page markers re-grepped; results notes, entities, and
-line items re-read directly from the extract; press-release and JV categories
-re-read against their full extracts (JV anchors independently grepped, lines
-93-164).
-
-| Category (doc) | A2 count | My fresh count | Method | Orphan rows | Status |
-|---|---|---|---|---|---|
-| Presentation — slides/pages | 23 | 23 | `grep -c "^\[page N\]"` = 23 | none | MATCH |
-| Presentation — gated rows total | 265 | 265 (41+86+86+11+11+1+5+23-… reconciled to summary) | ledger cross-foot | none material | MATCH |
-| Results — pages | 30 | 30 | `grep -c "^\[page N\]"` = 30 | — | MATCH |
-| Results — numbered notes | 13 | 13 | direct read: Standalone 1-6 (L393-437) + Consolidated 1-7 (L722-788) | none | MATCH |
-| Results — line items | 72 | 72 | re-read standalone 24 + consol 31 + note-tables 17 | none | MATCH |
-| Results — consolidation entities | 5 | 5 | direct read L504-511 | none | MATCH |
-| Results — auditor paras | 15 | 15 | 5 standalone (L223-325) + 10 consol (L461-626) | none | MATCH |
-| Results — board-agenda items | 12 | 12 | direct read L42-157 | none | MATCH |
-| Results — annexure rows | 57 | 57 | Annexure II 10 + III 16 + IV 31 | none | MATCH |
-| Results — signatures / footnotes / zero-standing | 10 / 20 / 40 | 10 / 20 / 40 | ledger sweep, spot-verified | none | MATCH |
-| PR (results) — KPI/quotes/hedges/segment/actions | 25/2/13/12/5 | same | full re-read of 185-line extract | none | MATCH |
-| JV — entities/commitments/dates/gov/segments/quotes | 13/12/10/6/8/3 | same | ledger + anchor grep (26%, Oct-2026, 74%, 50+, US$4bn, $150bn all confirmed) | none | MATCH |
-| JV — consideration / conditions-precedent | 0 / 0 (NOT FOUND) | 0 / 0 | grep "consideration|Fair Market|SPA" in JV extract = no match | none | MATCH (correctly logged NOT FOUND) |
-
-**Fresh pass found no row the ledgers lack. No missing_from_ledger (A2) failures.**
-
-**Orphan check (ledger row present, absent from A4).** Every substantive flagged
-row is addressed in A4:
-- ENTITY_CHANGE (3 new subs) -> Step 0D Notes S6/C7, Step 6D, Q15. Cited.
-- UNAUDITED_BY_PRINCIPAL + MANAGEMENT_FURNISHED (Singapore branch, 1 foreign sub,
-  3 shells) -> Step 0D auditor opinion, Step 5 S-vs-C gap, Q10. Cited.
-- ZERO_STANDING exceptional-item line -> Step 0D, Q6. Cited.
-- CASH_CONVERSION_THESIS_METRIC / CFO AMBIGUOUS_LAYOUT -> Step 5 CFO discrepancy,
-  Q2. Cited.
-- DTA exhausted (P20-9) -> Step 4, Q8. Cited.
-- Inventory write-off provision doubled (P18-11/12, 0.043%->0.088%) -> Q19. Cited.
-- WC/debtor/creditor days -> Step 5. Cited.
-
-One minor, non-failing observation (reviewed, no finding): balance-sheet row
-P20-33/34 (Trade Payables MSME grew 3 -> 568 Mn FY23-FY26, ~189x) is not
-explicitly named in A4. It is a historical annual BS row the ledger itself left
-to interpretation; it is subsumed in A4's WC/net-debt narrative (supplier-credit
-financing) and is directionally consistent, so it is treated as reviewed-no-finding,
-not an orphan.
-
-**Coverage result: PASS.** Counts reconcile; no orphans; no missing-from-ledger.
+**Gate 0: PASS.** No placeholder text.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recomputed from raw extracted Mn, x0.1 to Cr)
+## AUDIT 1 — COVERAGE (fresh enumeration vs ledgers)
 
-Every extraction tie-out (all four periods, standalone and consolidated) matches
-A4's Step 1 tables exactly — Revenue, OI, purchases, changes-in-inventory,
-expenses, PBT, tax, PAT, owners/NCI split, and EPS all confirmed at their cited
-lines. Derived metrics recomputed:
+Fresh independent counts against each A1 extract, diffed against the A2 ledgers.
+
+| Category | A2 count | My fresh count | Orphan rows (in ledger, absent from A4) | Status |
+|---|---|---|---|---|
+| Results — numbered notes | 13 (S 1-6 @ L393-433; C 1-7 @ L722-783) | 13 | none (all in Step 0D table) | PASS |
+| Results — consolidation entities | 5 (L504-511) | 5 | none (Steps 0C/0D/5, Q5) | PASS |
+| Results — board-agenda items | 12 (L42-157) | 12 (1,2a,2b,2c,3,4a,4b,4c,5a,5b,6,7) | none (monitorables + Step 0C) | PASS |
+| Results — auditor paragraphs | 15 (5 S + 10 C) | 15 | none (auditor-opinion para, Step 0D) | PASS |
+| Results — line items | 72 | 72 (Std 24 @ L341-381; Con 31 @ L643-708; note-tables 17) | none (Step 1A/1B) | PASS |
+| Results — signatures / UDIN | 10 (4 UDIN_ILLEGIBLE) | 10 | none (UDIN flag carried, F14-1) | PASS |
+| PR (results) — KPI figures | 25 (+1 qual) | 25 | none | PASS |
+| PR (results) — mgmt quotes | 2 (Pansari, Goenka) | 2 | none | PASS |
+| PR (results) — corporate actions | 5 | 5 (concall 5-Aug, dial-ins, deck) | none | PASS |
+| JV — entities | 13 | 13 | none | PASS |
+| JV — capital consideration | 0 disclosed (NOT FOUND) | 0 confirmed (Annx-II L826-829 "per FMV, TBD in SPA"; JV release silent) | none (Q4) | PASS |
+| JV — conditions precedent | 0 disclosed (NOT FOUND) | 0 confirmed | none (Q4/Q21) | PASS |
+| Presentation — slides | 23 | 23 (`[page 1..23]`) | none | PASS |
+| Presentation — gated rows | 265 | reconciled (41 KPI / 86 chart / 86 table / 11 splits / 11 fwd / 1 zero / 5 fn) | none | PASS |
+
+A4's LEDGER-RECONCILIATION PREAMBLE (lines 13-22) marks every document set
+"All reviewed" and lists all A3 finding IDs incorporated. My fresh pass found
+**no row absent from A4** and **no row present in my sweep that the ledger
+lacks**. Spot re-derivations that tie to source: consol overseas geography
+Rs269.7->Rs117.5 Cr (L757/L758, 2,697.37/1,174.56 Mn); Singapore branch
+rev 76.67 Mn / PAT 1.17 Mn (L537-538); 1 foreign sub rev 2,698.59 / PAT 73.99
+Mn (L563-565); 3 shells rev Nil / loss 1.93 Mn (L599-601); VDA 67% Rs368.5 Cr
+(L438, 3,685 Mn). All match the ledgers and the review.
+
+**Audit 1: PASS — no orphans, no missing-from-ledger.**
+
+---
+
+## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw INR Mn x0.1)
+
+Raw source: consolidated L643-708, standalone L341-381. All recomputes below
+from raw millions; Rs Cr = Mn x 0.1.
+
+### Step 1C derived metrics (Consolidated unless (S))
 
 | Metric | A4 value | My recompute | Source lines | Status |
 |---|---|---|---|---|
-| Op EBITDA consol Q1FY27 (PBT+D+Fin-OI) | 155.28 | 138.96+6.29+27.42-17.39 = 155.28 | 655/656/661/644 | OK |
-| Op EBITDA standalone Q1FY27 | 146.23 | 130.15+6.19+27.22-17.33 = 146.23 | 349/350/354/342 | OK (ties deck 1,462 Mn) |
-| Op EBITDA margin consol Q1FY27 | 3.04% | 155.28/5101.85 = 3.043% | — | OK |
-| Op EBITDA margin YoY chg | -24 bps | 3.043% - 3.283% = -24 bps | — | OK |
-| **Reported EBITDA consol Q4FY26 (PBT+D+Fin)** | **138.69** | **113.63+6.13+28.93 = 148.69** | **661/656/655 (Mn 1,136.32/61.27/289.26)** | **MISMATCH (-10.00 Cr)** |
-| Reported EBITDA consol Q1FY27 | 172.67 | 138.96+6.29+27.42 = 172.67 | — | OK |
-| Reported EBITDA consol Q1FY26 | 111.41 | 80.27+4.21+26.93 = 111.41 | — | OK |
-| Reported EBITDA consol FY26 | 499.28 | 371.27+21.52+106.49 = 499.28 | — | OK |
-| Core PBT ex-OI consol Q1FY27 | 121.57 | 138.96-17.39 = 121.57 | — | OK |
-| Effective tax rate consol Q1FY27 | 24.76% | 34.40/138.96 = 24.76% | 670/661 | OK |
-| ETR YoY step-up | +163 bps | 24.76% - 23.13% = 163 bps | — | OK |
-| Revenue YoY consol | +61.9% | 5101.85/3152.14-1 = 61.85% | 643 | OK |
-| Op EBITDA YoY consol | +50.0% | 155.28/103.50-1 = 50.03% | — | OK |
-| Core PBT ex-OI YoY consol | +68.0% | 121.57/72.36-1 = 68.0% | — | OK |
-| PAT YoY consol | +69.5% | 104.57/61.70-1 = 69.5% | 672 | OK |
-| Diluted EPS YoY consol | +64.0% | 15.25/9.30-1 = 63.98% | 708 | OK |
-| Standalone Rev / PAT / EPS YoY | +58.3 / +65.1 / +61.4% | 58.3% / 65.14% / 61.4% | 341/362/381 | OK |
-| PAT bridge sum | +42.86/87 | 64.0-12.2-2.08-0.49+9.48-13.57-2.26 = +42.88 | — | OK (ties within rounding) |
-| S-vs-C PAT gap Q1FY26 | +4.9% | (61.70-58.83)/58.83 = 4.88% | 362/672 | OK |
-| S-vs-C PAT gap Q4FY26 | +14.2% | (86.84-76.02)/76.02 = 14.23% | — | OK |
-| S-vs-C PAT gap Q1FY27 | +7.6% | (104.57-97.15)/97.15 = 7.64% | — | OK |
-| Inventory build ~5x (standalone) | ~5x | 651.45/124.88 = 5.22x | 347 | OK |
-| Singapore sub PAT / uplift | ~99% | 7.40 of 7.42 Cr | 564-565 | OK |
-| Non-principal-reviewed PAT | Rs7.32 Cr / 7.0% | 0.117+7.399-0.193 = 7.32; /104.57 = 7.0% | 282/564/600 | OK |
-| FY26 CFO deck | Rs113.7 Cr | 1,137 Mn x0.1 = 113.7 | PPT L733 | OK (Rs514 Notion is memory, correctly LOGGED unreconciled) |
+| Op EBITDA Q1FY26 C | 103.50 | 80.27+4.21+26.93-7.91 = 103.50 | L661/656/655/644 | OK |
+| Op EBITDA Q4FY26 C | 132.64 | 113.63+6.13+28.93-16.05 = 132.64 | L661/656/655/644 | OK |
+| Op EBITDA Q1FY27 C | 155.28 | 138.96+6.29+27.42-17.39 = 155.28 | L661/656/655/644 | OK (ties deck 1,553 Mn) |
+| Op EBITDA Q1FY27 S | 146.23 | 130.15+6.19+27.22-17.33 = 146.23 | L354/350/349/342 | OK (ties deck 1,462 Mn) |
+| Op EBITDA FY26 C | 458.73 | 371.27+21.52+106.49-40.55 = 458.73 | L661/656/655/644 | OK |
+| **Reported EBITDA Q4FY26 C (corrected cell)** | **148.69** | **113.63+6.13+28.93 = 148.69** (also 132.64+16.05) | **L661/656/655** | **OK — FIX 1 CONFIRMED (was 138.69)** |
+| Reported EBITDA Q1FY26 / Q1FY27 C / Q1FY27 S / FY26 | 111.41 / 172.67 / 163.56 / 499.28 | 111.41 / 172.67 / 163.56 / 499.28 | as above | OK |
+| Core PBT ex-OI (5 cells) | 72.36/97.58/121.57/112.82/330.72 | identical | PBT-OI | OK |
+| OI/PBT (5 cells) | 9.9/14.1/12.5/13.3/10.9% | 9.85/14.12/12.51/13.31/10.92% | — | OK |
+| ETR (5 cells) | 23.13/23.59/24.76/25.36/23.95% | 23.13/23.59/24.76/25.36/23.95% | Tax/PBT | OK |
+| PAT margin (5 cells) | 1.96/1.93/2.05/2.01/1.78% | 1.96/1.93/2.05/2.01/1.78% | PAT/Rev | OK |
+| Op EBITDA margin (5 cells) | 3.28/2.95/3.04/3.03/2.90% | 3.28/2.95/3.04/3.03/2.90% | — | OK |
 
-### FAIL — one arithmetic mismatch (loop back to A4)
+### Step 2 YoY (Consolidated + Standalone)
 
-**Step 1C, Reported EBITDA row, Q4 FY26 (Consolidated) cell = 138.69.**
-Correct value = **148.69 Cr**. Recompute: PBT 113.63 + D&A 6.13 + Finance 28.93 =
-148.69 (source Mn 1,136.32 / 61.27 / 289.26 at L661/656/655). A4's own Operating
-EBITDA for the same cell (132.64) plus Other Income (16.05) also equals 148.69,
-confirming the printed 138.69 is a transposition error of exactly 10.00 Cr. Above
-rounding -> FAIL. Non-load-bearing (the cell is not used downstream), but the
-mechanical rule admits no discretion: the cell must be corrected by A4 before save.
+| Metric | A4 | Recompute | Status |
+|---|---|---|---|
+| Revenue YoY C | +61.9% | 5101.85/3152.14-1 = 61.85% | OK |
+| Op EBITDA YoY C | +50.0% | 155.28/103.50-1 = 50.03% | OK |
+| Op EBITDA margin YoY C | -24 bps | 3.04-3.28 = -0.24pp | OK |
+| Depreciation YoY | +49.4% | 6.29/4.21-1 = 49.4% | OK |
+| Finance YoY | +1.9% | 27.42/26.93-1 = 1.82% | OK |
+| EBIT YoY | +50.1% | 148.99/99.29-1 = 50.05% | OK |
+| Other Income YoY | +119.8% | 17.39/7.91-1 = 119.8% | OK |
+| Core PBT ex-OI YoY | +68.0% | 121.57/72.36-1 = 67.98% | OK |
+| Reported PBT YoY | +73.1% | 138.96/80.27-1 = 73.12% | OK |
+| PAT YoY | +69.5% | 104.57/61.70-1 = 69.48% | OK |
+| Diluted EPS YoY | +64.0% | 15.25/9.30-1 = 63.98% | OK |
+| Std Rev/OpEBITDA/margin/CorePBT/PAT/EPS | +58.3/+43.4/-31bps/+57.7/+65.1/+61.4% | 58.29 / 43.36 (146.23/102.00) / 3.34->3.03 / 57.75 (112.82/71.52) / 65.14 / 61.36% | OK |
 
-Minor characterization note (not a mismatch, no fix required): Step 2 attributes
-the full 5.5pp diluted-EPS-vs-PAT gap to "YoY dilution"; ~1.9pp of it is actually
-the NCI wedge (owners' PAT grew 67.6% vs total PAT 69.5%), the rest dilution.
-Numbers are all disclosed and correct; only the attribution is loose.
+### Step 3 QoQ / Step 4 PAT bridge / S-vs-C gap
+
+| Metric | A4 | Recompute | Status |
+|---|---|---|---|
+| Revenue QoQ C | +13.6% | 5101.85/4489.38-1 = 13.64% | OK |
+| PAT YoY change abs | +Rs42.87 Cr | 104.57-61.70 = 42.87 | OK |
+| Bridge sum | 42.86 (rounding) | 64.0-12.2-2.08-0.49+9.48-13.57-2.26 = 42.88 | OK |
+| Tax rate effect | -2.26 | 1.63% x 138.96 = 2.27 | OK |
+| OI after-tax (~17%) | ~Rs7.1 Cr | 9.48 x (1-0.2476) = 7.13 | OK |
+| S-vs-C gap 4.9/14.2/7.6% | 4.9/14.2/7.6% | 2.87/58.83, 10.82/76.02, 7.42/97.15 = 4.88/14.23/7.64% | OK |
+| Singapore sub PAT vs uplift | Rs7.40 vs Rs7.42 Cr | 73.99 Mn = 7.40; gap 7.42 | OK |
+| Non-principal-reviewed PAT 7.0% | Rs7.32 Cr = 7.0% | 0.117+7.399-0.193 = 7.323; /104.57 = 7.0% | OK |
+| NCI 4.7x | 0.38->1.80 | 3.82->17.95 Mn = 0.38->1.80 Cr | OK |
+
+**Audit 2: PASS.** Every derived cell ties within rounding. The loop-2
+corrected cell (Reported EBITDA Q4FY26 C = 148.69) is present and correct; no
+downstream margin/QoQ/bps figure consumes Reported EBITDA (walks use Operating
+EBITDA), so no other cell required change — verified. No new arithmetic error
+introduced by the revision.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (strongest bear counter per top-3 positive claim)
+## AUDIT 3 — ADVERSARIAL READ (three positive claims + NEW-counter scan)
 
-### Claim 1 (Step 2 / brief): "Growth is REAL, not a treasury trick — core operating PBT ex-OI grew +68% YoY."
-**Bear counter (same extract):** The +68% core PBT sits on top of a Rs651 Cr
-standalone / Rs759 Cr consolidated inventory build in which **purchases (consol
-5,603.61 Cr) exceed revenue (5,101.85 Cr) by ~Rs500 Cr** (L650 vs L643). The
-changes-in-inventory credit of Rs758.97 Cr (L651) is the very line holding
-reported gross profit up while stock is pre-loaded. The profit is real on accrual,
-but "real" is not "cash" and not "durable": the deck's own **Provision for
-Inventory Write-off % has DOUBLED, 0.043% -> 0.088%** (PPT P18-11/12), signalling
-rising impairment risk on exactly the stock that manufactured the accrual profit.
-**Survives.** A4 discusses the inventory build and weak-CFO signal but never links
-the doubled write-off provision to the "growth is REAL" claim as a quality caveat.
-**Graft required.**
+### Verification that the three prior counters are genuinely grafted
 
-### Claim 2 (Step 5 / brief): "Working-capital days improved — WC days 73->56, debtor 41, cash cycle better by 17 days — GREEN."
-**Bear counter (same extract):** The 17-day improvement compares Q1 FY26 (73, a
-seasonal peak) to Q1 FY27 (56). The **same deck carries a second, conflicting
-WC-days series (page 21: FY24/FY25/FY26/Q1 = 54/54/58/56, PPT P21-24..27)** on
-which WC days actually **ROSE FY25->FY26 (54 -> 58)** and Q1 sits at 56, i.e. near
-the top of the multi-year band, not a clean structural improvement. Worse, the
-page-18 Inventory/Debtor/Creditor cluster is flagged **AMBIGUOUS_LAYOUT** by A2
-(metric-to-value pairing uncertain: inventory 55-or-53, debtor 53-or-55), so the
-"41 debtor days" and "55 inventory days" A4 quotes as GREEN are not confidently
-assignable from the source. **Survives.** A4 uses 73->56 uncritically and does not
-surface the conflicting annual series or the AMBIGUOUS_LAYOUT caveat.
-**Graft required.**
+| Prior required counter | Where in revised review | Source tie | Grafted? |
+|---|---|---|---|
+| (a) +68% core PBT is ACCRUAL, not cash | Step 2 bear counter L151; Sec-C L378; flag L476; brief L406 | inv build 651.45(S,L347)/758.97(C,L651) Cr; purchases 5,603.61(L650) > rev 5,101.85(L643); write-off prov 0.043%->0.088% (P18-11/12) | YES |
+| (b) WC-days GREEN not robust | Step 5 bear counter L205; checklist item2 L248; flag L477; brief L406 | slide-21 series 54/54/58/56 (P21-24..27) FY25->FY26 rose 54->58; page-18 pairings AMBIGUOUS (inv 55-or-53, debtor 53-or-55, P18-1..6) | YES |
+| (c) share-count 6.64 Cr TWO-SIDED | Step 0C L39; Step 7 hurdle L296; flag L478; brief L406 | EPS disclosed direct (C dil 15.25 L708); basic/diluted spread nil->~2.3% (14.74/14.41 = 2.29%); DTA nil (P20-9); ETR +163bps | YES |
+| New mgmt question on write-off provision | Q20 L355; YAML from_finding PPT-P18-11/12 L459 | write-off provision doubling | YES |
 
-### Claim 3 (Steps 6A/8 / brief): "On every disclosed metric the quarter lands at/above base; share-count correction (6.64 Cr vs 9 Cr) raises intrinsic per-share value and the Hurdle Ratio — likely favourable."
-**Bear counter (same extract):** "At/above base" is true only on the disclosed
-growth cherries; the single BINDING metric (CFO) is undisclosed, six of twelve
-checklist items are UNKNOWN, ROCE (a green/red gate) is AMBER with no Q1 number,
-and the entire consolidated PAT premium is one Singapore subsidiary reviewed by an
-"other auditor" whose report was "furnished by Management" (L561-593) — the least
-independently verified rupee in the file. On the share-count point specifically,
-A4 presents only the favourable side: EPS is disclosed directly so nothing changes
-in reported terms; the diluted/basic spread has just OPENED (in-the-money ESOPs,
-5,06,081 allotted 4-Aug plus an undisclosed residual option pool, Q12), so the
-correction also flags **forward dilution**, and with the net DTA exhausted and ETR
-+163 bps the lower share count must carry EPS growth against a rising tax drag.
-**Partially survives.** Most of the cash/ROCE/subsidiary caveats are already in
-A4 (it caps at PROCEED WITH CAVEATS); the only un-incorporated fragment is that
-the share-count correction cuts both ways (forward dilution + tax drag), which A4
-frames one-directionally as "likely favourable." **Graft the two-sided framing.**
+All three surviving counters and the write-off question are present, correctly
+sourced, and internally consistent with the raw extract.
+
+### Independent re-derivation: three most positive claims and strongest bear counter
+
+| # | Most positive claim (A4) | Strongest bear counter from same extract | Survives? / disposition |
+|---|---|---|---|
+| 1 | Revenue +61.9% YoY, highest-ever quarter (L129, L144) | Ex-project split ND (durable channel vs lumpy project wins unseparable); AND consol purchases 5,603.61 > revenue 5,101.85 = top line pre-loaded, not converted | SUPPORTED but already present: purchases>revenue is core of grafted counter (a); ex-project ND flagged L144/item5/brief part 2. Not a new orphan. |
+| 2 | Core PBT ex-OI +68%, "PAT not a treasury illusion" (L146) | Same-period inventory-change credit + doubled write-off provision props accrual above cash | Grafted counter (a). Covered. |
+| 3 | WC cycle improved 73->56, debtor 41, Net D/E 0.43x (Step 5, L200) | Conflicting slide-21 series shows WC days rose FY25->FY26; page-18 pairings AMBIGUOUS; Q1 CFO undisclosed | Grafted counter (b). Covered. |
+
+### NEW-counter scan (checked, none require a fresh graft)
+
+- Finance costs flat +1.9% framed as "operating leverage — positive" (L133,
+  diag 5). Bear: flatness reflects one-time IPO deleveraging now exhausted
+  (current borrowings ROSE FY25->FY26 8,983->9,586 Mn, P20-31); with the Q1 WC
+  build + VDA Rs368.5 Cr + WOS Rs150 Cr against exhausted IPO proceeds, forward
+  finance cost rises. **Supported, but already incorporated** — Step 4
+  ("exhausted IPO-repayment leverage"), Step 5 net-debt forward watch, Step 6D,
+  flag L485, monitorable #9. Not an orphan.
+- TCI +77.2% > PAT +69.5% (deck P17-15). Bear: entirely an unhedged FX
+  translation swing (OCI +41.96 vs -1.30 Mn, L683). **Supported, but A4 does not
+  tout TCI as positive** and already raises the OCI split as Q11. Not an orphan.
+- ROCE "highest post-listing" (deck/PR). A4 does NOT credit it — flags
+  NUMBER_OMITTED, marks checklist item 4 AMBER, raises Q9. Neutralised.
+
+**Audit 3: PASS.** The three required counters and the write-off question are
+genuinely grafted and correct; no additional surviving bear counter is left
+un-incorporated.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Loop back to **A4**. Two gaps, both A4-owned:
-
-1. **Arithmetic FAIL** — Step 1C Reported EBITDA, Q4 FY26 consolidated cell reads
-   138.69; correct is 148.69 (PBT 113.63 + D 6.13 + FinCost 28.93). Fix the cell.
-2. **Surviving bear counters not incorporated** — (a) doubled inventory
-   write-off provision (0.043%->0.088%) as a quality caveat on the "+68% core PBT
-   is REAL" claim; (b) the conflicting page-21 WC-days series (54/54/58/56, WC days
-   rose FY25->FY26) plus AMBIGUOUS_LAYOUT on debtor/inventory pairing, qualifying
-   the "days improved / GREEN" claim; (c) the share-count correction is two-sided
-   (forward ESOP dilution + exhausted DTA / rising ETR), not one-directionally
-   favourable. Graft these into A4 before Notion save.
-
-Deliverable gate PASS. Coverage PASS. Arithmetic and adversarial audits FAIL as
-above. Only COMPLETE proceeds to save; this run does not.
+**COMPLETE.** All four audits pass. Deliverable brief complete (4/4 parts).
+Coverage clean (no orphan rows, nothing missing from ledgers). Arithmetic
+clean, including the loop-2 corrected Reported-EBITDA Q4FY26 consolidated cell
+recomputed independently to 148.69 and every margin/YoY/QoQ/ETR/S-vs-C-gap
+figure re-derived to tie within rounding. The three A5-survived bear counters
+(accrual-not-cash, WC-days-not-robust, share-count two-sided) and the new
+inventory-write-off management question (Q20) are all genuinely present,
+correctly sourced, and internally consistent. No residual gap. Cleared to
+proceed to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -195,7 +181,7 @@ company: "RPTECH"
 quarter: "Q1FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -204,21 +190,8 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Reported EBITDA (PBT+D+FinCost), Consolidated Q4 FY26"
-    a4_value: 138.69
-    recomputed: 148.69
-    source_line: "results L661 PBT 1,136.32 + L656 D&A 61.27 + L655 Finance 289.26 (Mn x0.1); ties to A4 Op EBITDA 132.64 + OI 16.05"
-surviving_bear_counters:
-  - claim: "Growth is REAL — core operating PBT ex-OI +68% YoY (Step 2 diagnostic 3)"
-    counter: "Same-period inventory build Rs651 Cr(S)/Rs759 Cr(C) with purchases (5,603.61) exceeding revenue (5,101.85) means the changes-in-inventory credit props the accrual profit; deck's own inventory write-off provision DOUBLED 0.043%->0.088%, flagging impairment risk on the pre-loaded stock. 'Real' is accrual, not cash or durable."
-    source_line: "results L650/L643/L651; presentation P18-11/P18-12"
-  - claim: "Working-capital days improved 73->56, GREEN (Step 5 / checklist #2)"
-    counter: "Deck carries a second conflicting WC-days series (page 21: FY24/FY25/FY26/Q1 = 54/54/58/56) on which WC days ROSE FY25->FY26; the 73->56 story leans on a seasonal-peak comparator, and the page-18 inventory/debtor/creditor pairings are A2-flagged AMBIGUOUS_LAYOUT (inventory 55-or-53, debtor 53-or-55)."
-    source_line: "presentation P21-24..27 (L734-735); P18-1..6 AMBIGUOUS_LAYOUT (L595-598)"
-  - claim: "Share-count correction 6.64 Cr vs Notion 9 Cr raises intrinsic per-share value / Hurdle Ratio, 'likely favourable' (Step 7 / 0C)"
-    counter: "Two-sided: EPS is disclosed directly so nothing changes in reported terms; the diluted/basic spread just opened (in-the-money ESOPs, 5,06,081 allotted plus undisclosed residual pool) flagging forward dilution, and with net DTA exhausted and ETR +163bps the lower count must carry EPS growth against a rising tax drag. A4 frames it one-directionally."
-    source_line: "results L142-147, L380-381 vs L707-708; presentation P20-9 (DTA nil FY26)"
-loop_back_to: "A4"
-gap: "(1) Fix Step 1C Reported EBITDA Q4 FY26 cell 138.69 -> 148.69. (2) Graft three surviving bear counters (doubled inventory write-off provision vs the 'growth is REAL' claim; conflicting page-21 WC-days series 54/54/58/56 plus AMBIGUOUS_LAYOUT vs the 'days improved/GREEN' claim; two-sided read of the share-count correction) before Notion save."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

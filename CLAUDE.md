@@ -60,6 +60,9 @@ weigh, never anchored evidence.
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
 - LESSONS.md     operational memory, read by pipeline commands at start,
                  appended at close
+- anti-ai-writing-style.md   house style for all reader facing prose
+                 (synthesis narratives, recommendations, X posts); the
+                 STYLE authority the orchestrator and stage 13 cite
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
 - /run-quarterly TICKER --docs ...   quarterly review pipeline (Role 4/5):

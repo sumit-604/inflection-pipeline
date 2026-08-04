@@ -1,0 +1,29 @@
+# Confidence delta — INDGN 2026-08-03 (FULL four-component, phase 3 finalize)
+# Section 5 of the orchestrator. Both halves of B12c now available.
+confidence_delta:
+  numerical_acceptance: 100      # B12a (re-run, source-grounded). 0 CRITICAL, source-fidelity PASS.
+  redflag_coverage: 79           # B12b. Partial-credit (11 full + 0.5*5 partial)/17. Verifier any-form 94 / full-catch 65 / acceptance 65 (>60, no REWORK). One MAJOR fully missed (BioPharm gross-revenue consolidation), carried as a contradicted claim + monitorable.
+  framework_adherence: 93        # combined B12c: phase-1 Gate0+EM 90 (47/52, 1 MAJOR M4/M10) + phase-3 valuation 97 (35/36, 0 CRIT/0 MAJ, 1 MINOR units-label). Rule-weighted (47+35)/(52+36) = 82/88 = 93%.
+  peer_utilisation: 100          # B12d. 15/15 substantive, 0 CRITICAL; 3 MAJOR citation quarter-swaps (substance holds).
+  overall: 79                    # min of the four. Band 75-89 "normal, note specifics": no downgrade, no forced REWORK. Binding component is redflag_coverage.
+components_detail:
+  framework_gate0_em_phase1: 90
+  framework_valuation_phase3: 97
+rework_gate:
+  any_verifier_A_critical: false
+  any_acceptance_rate_below_60: false   # A 100, B 65, C(gate0+EM) 90, C(val) 97, D 80
+  forced_rework: false
+devils_advocate:
+  overall: "WEAKENED BUT ALIVE"
+  valuation_safety: "destroyed"
+  note: "DA is a thesis-quality signal, not a verifier/confidence-delta input. It qualifies the BUY (no margin of safety at CMP; Hurdle passes only on the assumed margin recovery) and is carried in the recommendation narrative, not the confidence math."
+disagreement_log_phase1:
+  - number: "FY26 Other Income"
+    verifier_a_first_pass: "CRITICAL MISMATCH — B01 Rs 51.7cr (screener) vs AR 'Other income (net)' Rs 72.0cr"
+    disposition: "FLAG CLEARED — screener-vs-AR basis difference; screener figure correctly transcribed; decision-neutral. Re-run acceptance 100%."
+    rechecked_by: "orchestrator (AR grep) + Verifier A re-run"
+disagreement_log_phase3:
+  - number: "Combined contingent liabilities units label"
+    finding: "B10/B11 wrote 'Rs 1,531 cr'; correct is Rs 1,531 mn = Rs 153 cr (38.2% of FY26 PAT)."
+    disposition: "GATE HELD — figure corrected at source; B14 caught and used Rs 153 cr; B15 and B12c-valuation both confirmed. Decision-neutral (the 38.2%/21.2% percentages are right; never enters valuation)."
+    rechecked_by: "stage 14, verifier C (val), stage 15"

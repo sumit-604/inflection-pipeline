@@ -1,0 +1,52 @@
+stage: B11-valuation
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - {field: "credit_rating_wc_commentary", severity: "MEDIUM", note: "NOT FOUND in B10; not required for valuation mechanics; FLAG-CASH carried growth-induced per FTTCP"}
+flags:
+  - {type: "FLAG-CASH", detail: "growth-induced; Pillar 2 multiplier 1.30x applied; receivables +30.7% / unbilled +77.5% monitored, offset by CFO/PAT 1.62x"}
+  - {type: "SHARED-CATALYST", detail: "revenue-on-fixed-capital drives BOTH Pillar 1 forward ROCE and Pillar 3 growth premium; single point of failure; Role 3 stress-test"}
+  - {type: "FLAG-CONTINGENT-LIABILITY", detail: "Rs 1,531 cr = 38.2% of PAT (TP Rs 1,114 cr + TCPA max Rs 417 cr); carried, not valued"}
+  - {type: "FLAG-GOODWILL", detail: "goodwill+intangibles 51.5% of net worth; FY27 impairment-test outcome to monitor"}
+  - {type: "FLAG-GOVERNANCE", detail: "ID Tenneti ~18y tenure; committee attendance gaps; verdict TRUSTWORTHY"}
+  - {type: "SENSITIVITY-A-treasury", detail: "if treasury undeployable, Pillar1 20.4x->15.2x, destination ~19.8x, base FV ~Rs 725, combined-bear ~Rs 534 (CMP); caps verdict at WATCHLIST/BUY-ON-DIPS"}
+  - {type: "SENSITIVITY-B-organic", detail: "if organic <=12% again, revenue FIRING->STARTING, composite +5->+4, base drifts to bear ~Rs 850"}
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "31.5x additive (RRM alternative 28.1x); operator-elected at FTTCP Decision 2"
+destination_pe:
+  track1_rrm: {low: 26.0, mid: 28.1, high: 30.0, r_used: 13.0, rrm: 1.06}
+  track2_additive: {low: 29.0, mid: 31.5, high: 34.0}
+  divergence_pct: 12.1
+  governing_track: "additive (operator-elected 31.5x); CMP inside BUY-on-dips band on both tracks so choice does not flip verdict"
+pillar_detail:
+  roce_used: 25.8
+  roce_base: 15.4
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "A-governs-B-suppressed"
+  cash_multiplier: 1.30
+  structural_or_growth: "growth-induced"
+  growth_offset: 0
+  growth_premium: 5
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 45
+hurdle_ratio: {base: 2.12, bull_used: true, verdict: "PASS"}
+fair_values:
+  track1: {bear: 758, base: 1029, bull: 1243}
+  track2: {bear: 850, base: 1154, bull: 1393}
+expected_cagr_prob_weighted: 27.4
+entry_range: {low: 534, high: 668}
+mos_price: 534
+upside_downside_ratio: 10.0
+decision: "BUY (on-dips) -- CMP Rs 545 inside entry zone both tracks, ~2% above ideal MoS Rs 534; HR PASS; Tier B Medium 4-6% ceiling; ideal adds below Rs 534; entry conjunction enforced"
+unresolved_inputs_used:
+  - {field: "forward_revenue_path", assumption: "base FY26->FY29 CAGR 17.1% held below SOM-implied 20.0%", rule: "conservative, SOM cross-check"}
+  - {field: "forward_ebitda_margin_path", assumption: "base capped at FY25-era 20% (mgmt ~20% target discounted for grade-B credibility)", rule: "Base = 3yr-normal margin, not guidance at face"}
+  - {field: "tax_rate", assumption: "held at FY26 23.6% across all years", rule: "operator: hold tax rate consistent"}
+  - {field: "forward_dna", assumption: "only the disclosed contractual amortization step-downs applied (Rs 50mn/qtr Q3 FY27, Rs 25mn/qtr Q3 FY28)", rule: "documented-only"}
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Net-cash life-sciences commercialization platform priced at its bear-sensitivity floor; 31.5x forward destination on a recovering ROCE and forming moat clears the Tier B hurdle with 27% expected CAGR, the whole call resting on margin printing up two consecutive quarters from Q2 FY27."

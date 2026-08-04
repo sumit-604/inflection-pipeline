@@ -1,0 +1,53 @@
+stage: B14-thesis
+company: "INDGN"
+run_date: "2026-08-03"
+model: claude-opus-4-8
+status: complete
+verdict: "BUY (on-dips)"
+entry_range: {low: 534, high: 668}
+position_size: "Medium"
+position_size_override: ""
+thesis_broken_if: "Organic constant-currency ex-M&A growth prints at or below 12% YoY for two consecutive quarters, OR EBITDA margin fails to expand sequentially for two consecutive quarters from Q2 FY27 toward the near-20% range by H2 FY27"
+thesis_broken_conditions:
+  - "Organic constant-currency ex-M&A growth at or below 12% YoY for two consecutive quarters (revenue FIRING to STARTING; FTTCP falsification line)"
+  - "EBITDA margin fails to expand sequentially for two consecutive quarters from Q2 FY27, or does not reach near-20% by H2 FY27 (load-bearing margin recovery)"
+  - "Consolidated OCF/PAT prints below 1.0x while receivables ex-BioPharm grow faster than revenue ex-acquisition (FLAG-CASH reclassifies to structural)"
+  - "Treasury judged undeployable and statutory ROCE fails to recover above 15% (Pillar 1 collapses 20.4x to 15.2x, destination ~19.8x; SENSITIVITY-A caps verdict at WATCHLIST)"
+  - "Goodwill impairment charge taken against the 51.5%-of-net-worth goodwill (FLAG-GOODWILL)"
+monitoring_checklist:
+  - "EBITDA margin: sequential expansion each quarter from Q2 FY27 toward near-20% by H2 FY27; red if flat/down two consecutive quarters or target dropped"
+  - "Organic constant-currency ex-M&A growth: green above 18.3% YoY, red at/below 12% YoY for two consecutive quarters"
+  - "Consolidated OCF/PAT: green at/above 1.0x, red below 1.0x with receivables ex-BioPharm outgrowing revenue ex-acquisition"
+  - "Large $10mn+ ACV omnichannel deal revenue recognized on the stated go-live schedule from Q2 FY27; red on deferral or non-mention"
+  - "Treasury deployment: non-operating cash (~Rs 1,100-1,337 cr) deployed into buyback/M&A/dividend or statutory ROCE recovering above 15%"
+  - "Goodwill impairment: next AR Note 6 shows no charge and disclosed headroom; red on any charge"
+  - "Contingent liability: next AR Note 33/37 resolves Section 144B final-vs-draft contradiction and TCPA payout at/below Rs 203 mn provision"
+  - "Governance: director attendance back above 75% and Tenneti long-tenure resolution in next Corporate Governance Report"
+verdict_gates:
+  hurdle_ratio: "PASS (2.12 base, 2.37 bull; Tier B threshold 1.728)"
+  gate0: "GOOD+ (90 core / 101 grand)"
+  promoter: "TRUSTWORTHY"
+  cmp_vs_mos: "Rs 545.25 vs MoS Rs 534 (~2% above floor) -> BUY-on-dips not BUY-now"
+  entry_conjunction: "enforced; sub-12% organic print or missed margin quarter withdraws the zone"
+position_size_basis: "Tier B ceiling Medium 4-6%; Large barred (Gate 0 not EXCELLENT, EM not EXPANSION, CMP above MoS); staged entry Small starter scaling to Medium as margin catalyst confirms; no operator override recorded"
+flags_carried:
+  - "FLAG-CASH (growth-induced)"
+  - "FLAG-CONTINGENT-LIABILITY (Rs 1,531 mn = 38.2% of FY26 PAT; final-vs-draft Section 144B contradiction open)"
+  - "FLAG-GOODWILL (goodwill+intangibles 51.5% of net worth)"
+  - "FLAG-GOVERNANCE (Tenneti ~18y tenure; attendance gaps; verdict TRUSTWORTHY)"
+  - "FLAG-GATE0 (FY26 PAT -1.4% despite +23.6% revenue)"
+  - "SHARED-CATALYST (revenue-on-fixed-capital drives both Pillar 1 forward ROCE and Pillar 3 premium; single point of failure)"
+live_sensitivities:
+  - "SENSITIVITY-A treasury: if undeployable, Pillar 1 20.4x to 15.2x, destination ~19.8x, base FV ~Rs 725, combined-bear ~Rs 534 (CMP); caps verdict at WATCHLIST/BUY-ON-DIPS"
+  - "SENSITIVITY-B organic: if organic at/below 12% again, revenue FIRING to STARTING, composite +5 to +4, base drifts to bear ~Rs 850"
+  - "Revenue window reading: 8-quarter window FIRING; 3-year window backward 15% CAGR and not positive would cap forward at STARTING and move composite to +4"
+transition_status: {revenue: "FIRING", margin: "STAGNANT", cash: "FIRING", roce: "RECOVERING (50-55%)"}
+load_bearing_call: "Margin recovery is the single load-bearing forward call and has no documented action behind it"
+valuation_carried:
+  destination_pe: {additive_mid: 31.5, rrm_mid: 28.1, basis: "forward", governing: "additive (operator-elected)"}
+  fair_value_3yr_additive: {bear: 850, base: 1154, bull: 1393}
+  expected_cagr_prob_weighted: 27.4
+  fair_value_5yr: "NOT COMPUTED (B11 ran a 3-year horizon)"
+  mos_price: 534
+  upside_downside_ratio: 10.0
+one_line_thesis: "Buying Indegene at Rs 545 because large outcome-based pharma deals plus a contractual amortization step-down carry EPS from Rs 20.22 (FY27) to Rs 36.62 (FY30), giving a Rs 1,154 base target at a 31.5x forward destination PE = 28.4% base CAGR (27.4% probability-weighted); key risk is that the margin recovery is the single load-bearing forward call with no documented action; thesis breaks if organic growth prints at/below 12% for two consecutive quarters or margin fails to expand sequentially from Q2 FY27."

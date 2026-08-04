@@ -1,0 +1,54 @@
+stage: B06-peers
+company: "Indegene Limited (INDGN)"
+run_date: "2026-08-03"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Peer set contains no direct pharma/life-sciences commercialization peer; eClerx (generalist BPM), IKS Health and Sagility (US healthcare payer/provider ops), and Tata Elxsi (design/engineering with a small HLS vertical) are adjacent at best. This structurally limits verification of the pharma-demand and RPE-leadership claims (Q1, Q3) to UNVERIFIABLE regardless of research effort."
+  - "Neither named peer (Sagility, eClerx) discloses EBITDA multiples for its own recent bolt-on M&A, leaving Q6 unverifiable against the specific peers requested; only an adjacent, non-requested data point (IKS/TruBridge, ~8.1x EV/EBITDA) was available."
+flags:
+  - "Q4 (6-8 quarter margin-recovery precedent) is CONTRADICTED by the peer set: the one comparable multi-quarter margin-recovery cycle among peers (IKS/AQuity) beat its own timeline by 3-4 quarters, while eClerx and Sagility show no comparable multi-quarter margin event at all. This undercuts rather than supports Indegene's own 'we've done this before' framing and should be weighted alongside B05's own flag on softening margin-recovery specificity."
+  - "Q5 (organic growth deceleration in Jan-Mar 2026) is only partially verified: 3 of 4 peers (eClerx mild, IKS meaningful ~550bps, Tata Elxsi HLS outright -13.1% QoQ contraction) show softness in the identical quarter Indegene decelerated, but Sagility is a clean contradiction (accelerating organic growth in the same quarter). This complicates rather than resolves whether Indegene's deceleration is company-specific or sector-linked."
+  - "GenAI margin-pressure risk is real, not hypothetical, per the peer set: eClerx explicitly concedes possible AI-driven deflationary pressure on FY27 bookings, which is a sharper admission than anything self-reported in Indegene's own three transcripts per B05."
+peers_provided: 4
+verified:
+  - {claim: "Raw-material trend claim not applicable (mandatory checklist item)", peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"], anchor_count: 15}
+  - {claim: "Capex-cycle claim not applicable/NOT FOUND (mandatory checklist item)", peers: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"], anchor_count: 15}
+partially_verified:
+  - {claim: "GenAI as net TAM-expander vs price/volume compressor", peers: ["IKS Health", "eClerx", "Sagility", "Tata Elxsi"]}
+  - {claim: "Organic constant-currency growth decelerated sector-wide in Jan-Mar 2026 quarter", peers: ["eClerx", "IKS Health", "Tata Elxsi", "Sagility (contradicts)"]}
+  - {claim: "$10mn+ large-account conversion-cycle lengthening is industry-wide, not Indegene-specific", peers: ["IKS Health", "Sagility"]}
+contradicted:
+  - {claim: "Indegene's 6-8 quarter margin-recovery precedent ('we've done this before') matches peer margin-recovery cycles after GTM/investment or M&A-integration cycles", contradicting_peer: "IKS Health (AQuity margin transformation beat its own timeline by 3-4 quarters); Sagility (BroadPath margin drag absorbed within same fiscal year, beat FY26 guidance)", quote_anchor: "IKS Nov 2025 call, Sachin Gupta: 'we've probably arrived there perhaps three or four quarters ahead of when we had thought we would get there'; SAGILITY May 2026 call, Srinivas Mattapalli: 'performance came in ahead of the guidance we had shared during our last earnings call'"}
+unverifiable:
+  - {claim: "5%-8% pharma/life-sciences industry CAGR (2026-2028); CY2025 9% vs CY2024 6.4%", peers_checked: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {claim: "Revenue-per-employee ~$75,000 FY26 leadership vs peer RPE trends", peers_checked: ["eClerx", "IKS Health", "Sagility", "Tata Elxsi"]}
+  - {claim: "EBITDA multiples paid by Sagility/eClerx for recent bolt-on M&A", peers_checked: ["Sagility", "eClerx"]}
+peer_coverage_map:
+  - {peer: "eClerx", quarter: "Q1 FY26 (Jul 2025 call)", usage: "SUBSTANTIVE", contribution: "Baseline demand/margin framing; delayed-decision-making quote"}
+  - {peer: "eClerx", quarter: "Q2 FY26 (Oct 2025 call)", usage: "SUBSTANTIVE", contribution: "FX-driven margin swing quantification; capital allocation context"}
+  - {peer: "eClerx", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "GenAI productivity-gating criteria; AI/roll-off commentary"}
+  - {peer: "eClerx", quarter: "Q4 FY26 (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Organic growth deceleration data point; explicit AI-deflation concession; NPRM offshore risk"}
+  - {peer: "IKS Health", quarter: "Q2 FY26 (Nov 2025 call)", usage: "SUBSTANTIVE", contribution: "12%-TAM-growth framework; headcount/revenue decoupling data"}
+  - {peer: "IKS Health", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Palomar outcome-based deal economics; RPE non-disclosure; deal-conversion-cycle lengthening; system-of-record competitive risk"}
+  - {peer: "IKS Health", quarter: "TruBridge M&A update (Apr 2026 call)", usage: "SUBSTANTIVE", contribution: "TruBridge ~8.1x EV/EBITDA supplementary data point"}
+  - {peer: "IKS Health", quarter: "Q4/Annual FY26 (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Organic growth deceleration data point (24%->18.5% YoY)"}
+  - {peer: "Sagility", quarter: "Q3 FY26 (Feb 2026 call)", usage: "SUBSTANTIVE", contribution: "Growth guidance raise; GenAI-as-client-demanded-cost-takeout framing"}
+  - {peer: "Sagility", quarter: "Investor & Analyst Day (Apr 2026)", usage: "SUBSTANTIVE", contribution: "Revenue-per-FTE directional commentary; client capex-constraint context"}
+  - {peer: "Sagility", quarter: "Q4/Annual FY26 (May 2026 call)", usage: "SUBSTANTIVE", contribution: "Organic growth acceleration contradiction data point; BroadPath margin-drag-absorbed-within-year evidence"}
+  - {peer: "Sagility", quarter: "Q1 FY27 (Jul 2026 call)", usage: "SUBSTANTIVE", contribution: "Ongoing payer-cost-pressure demand framing; long-sales-cycle confirmation"}
+  - {peer: "Tata Elxsi", quarter: "Q3 FY26 (Jan 2026 call)", usage: "SUBSTANTIVE", contribution: "HLS vertical bottomed-out claim, sets up Q5 contradiction"}
+  - {peer: "Tata Elxsi", quarter: "Q4 FY26 (Apr 2026 call)", usage: "SUBSTANTIVE", contribution: "HLS vertical -13.1% QoQ contraction, key Q5 evidence"}
+  - {peer: "Tata Elxsi", quarter: "Q1 FY27 (Jul 2026 call)", usage: "SUBSTANTIVE", contribution: "HLS still a moving target, repeated-slippage pattern"}
+industry_cross_read:
+  demand: "Resilient but uneven across the peer set (17-24% YoY range, decelerating into Jan-Mar 2026 for 3 of 4 peers); no peer discusses pharma-specific demand since none operate there, so no direct read on Indegene's own demand claims."
+  pricing_inputs: "No raw-material commentary anywhere (services-only peer set, confirms Indegene's not-applicable classification); margin pressure in peers is wage/FX/bonus/client-cost-takeout driven, not GenAI-licensing-cost driven as Indegene frames it -- only IKS's rising R&D-as-%-of-revenue is a partial analog."
+  capex_cycle: "No capacity race and no lone expander in the aggressive sense -- eClerx is adding routine, demand-linked delivery seats (Cairo, Lima, Peru, Mohali) while Tata Elxsi is explicitly holding on spare installed capacity; IKS/Sagility show essentially no organic capex commentary. Consistent with Indegene's own no-capex-cycle, asset-light framing."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "US offshore call-center/contact-center restriction risk (proposed NPRM) -- eClerx, not discussed in Indegene's own transcripts"
+  - "CMS/payer regulatory risk register (Medicare Advantage rate resets, ACA subsidy extension, Medicaid rollback) -- Sagility/IKS Health, different regulatory axis than Indegene's own tariff/MFN/H-1B risk framing"
+  - "System-of-record (Epic/Cerner) vendor encroachment into AI-agentic task elimination -- IKS Health, no analog surfaced in Indegene's transcripts"
+  - "Frontier AI lab (Anthropic/Claude) disintermediation risk fielded directly by analysts -- eClerx, IKS Health; Indegene's own transcripts per B05 do not record an analyst pressing management on this specific risk, even though management itself named LLM commoditization as its single largest medium-term risk"
+  - "FX hedge-book asymmetry quantified as an explicit quarterly margin swing factor -- eClerx; not broken out with comparable granularity in Indegene's own transcripts per B05"
+net_narrative_effect: "complicates"

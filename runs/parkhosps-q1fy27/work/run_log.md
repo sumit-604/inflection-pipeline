@@ -51,3 +51,7 @@ Doctype tokens `release` and `monitoring` are descriptive labels to avoid extrac
 - GATE A5: COMPLETE. Coverage: every gated count reproduced on fresh pass, no orphan rows, no A2/A3 loop-back. Arithmetic: every derived metric recomputed from raw, zero mismatches. Adversarial: 3 most-positive claims each met their strongest same-text bear counter, all already grafted, none survives. loop_back_to="". One non-blocking recommendation only.
 - NOTION SAVE: DONE. Full review + Questions-for-Management + monitorables + A3 scorecard + A5 verdict appended to page "Park Medi World Ltd" (364bb2b9...). Key Notes property PREPENDED with dated [03-Aug-26] line; all prior entries (31-Jul, 25-May, 30-Jun) preserved verbatim. Decision Status UNCHANGED = WATCHLIST (no trigger fired; flag-not-decide honoured).
 - RUN COMPLETE. Verdict PROCEED WITH CAVEATS. Clean run, all 12 gates first-pass, A5 COMPLETE, zero loop-backs.
+
+## ADDENDUM 2026-08-04: CONCALL ADDED (Role 5 now runs)
+- Operator supplied the Q1 FY27 earnings-call transcript as plain text (previously N.A.). Saved verbatim to inputs/concall_q1fy27.txt (garbles preserved as source of record). doctype=concall. Runs A1->A2->A3->A4(Role 5 merged into existing review)->A5, then Notion save + report incl. plain-language brief (per new law).
+- A1 concall launched (text: save verbatim, line-number; no pdftotext).

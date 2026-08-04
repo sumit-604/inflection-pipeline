@@ -1,0 +1,51 @@
+# RUN LOG — D-DEV (DEE Development Engineers Ltd) Q1 FY27 Quarterly Review
+
+- **Ticker:** D-DEV (NSE: DEEDEV, BSE: 544198)
+- **Company:** DEE Development Engineers Limited
+- **Quarter:** Q1 FY27 (quarter ended 30 June 2026)
+- **Filing date:** 04 August 2026
+- **Orchestrator run date:** 2026-08-04
+- **Pipeline:** /run-quarterly (five-agent extraction-first)
+
+## SETUP / PRECHECKS
+- Toolchain: pdftotext, pdfinfo, pdftoppm, tesseract — MISSING at start; installed
+  via apt-get (poppler-utils 24.02.0, tesseract 5.3.4). PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_2.md,
+  Quarterly_Concall_Analysis_Protocol_v1_1.md, Master_Project_Prompt_v3.3.md. PASS.
+- Company memory: companies/D-DEV.md — ABSENT (first quarterly run for this name).
+- Notion: fetched live (see below).
+
+## UNITS
+- Financial results reported in **Rs. Lakhs**. Cross-check: consolidated revenue
+  29,446.22 (results) = ₹294.46 Cr; press release states ₹294.5 Cr. Confirmed.
+  Conversion at extraction: Lakhs / 100 = Crores.
+
+## DOCUMENT-CLASS DETECTION AND DEDUP DECISION
+Four PDFs supplied, all filed 04 Aug 2026. Mechanical inspection (pdftotext -layout
++ normalized diff) established:
+
+| Doc | Pages | Content | Class | Action |
+|-----|-------|---------|-------|--------|
+| DOC1 d82c8206 | 17 | Board Outcome (agenda 1-4+) + full Unaudited Financial Results (SA+Consol, both Limited Review Reports) + Annexures B-I (governance) | **results** | **RUN A1/A2/A3** (canonical superset) |
+| DOC2 9c88a19b | 11 | Results-only cover + same SA+Consol financial results | results (SUBSET) | Dedup: strict subset of DOC1 |
+| DOC3 f9d4094c | 7 | Board Outcome governance letter (capital reclass, remuneration, RPT) | results (SUBSET) | Dedup: subset of DOC1 board outcome |
+| DOC4 16e884ee | 4 | Q1 FY27 Earnings Press Release | **presentation** | **RUN A1/A2/A3** |
+
+**Dedup evidence:** `diff` of DOC1 results-section (from first "Independent Auditor")
+vs DOC2 full body — DOC2's 395 lines are byte-identical to DOC1's first 395 lines;
+DOC1 carries 193 additional lines (Annexures B-I: capital increase, RPT rent, CSR
+head appointment, Annexure E equity issuance on conversion of defaulted loan
+facility u/s 62(3) Bank of India consortium, director continuations/re-appointments,
+committee reconstitution). DOC3's governance items are a subset of those annexures.
+Therefore DOC1 fully contains DOC2 and DOC3. Running DOC1 captures all unique
+financial AND governance content; DOC2/DOC3 add zero unique content. Both retained
+in inputs/ for audit; neither run separately to avoid redundant chains.
+
+- **No concall** document in this set. Role 5 (Concall Protocol) not triggered.
+- Documents run through pipeline: DOC1 (results), DOC4 (presentation).
+
+## GATES
+- **A1 DOC1 (results):** PASS. 17/17 pages, 947 lines, units=Lakhs (x0.01→Cr), no OCR.
+  extract_results_d-dev_q1fy27.txt. Cross-check consol rev 29,446.22 Lakhs = ₹294.46 Cr ✓.
+- **A1 DOC4 (presentation):** PASS. 4/4 pages, 175 lines, units=Crores, no OCR.
+  extract_presentation_d-dev_q1fy27.txt.

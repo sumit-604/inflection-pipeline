@@ -1,0 +1,34 @@
+stage: B07-emoat
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR supplied is FY2020-21 (year ended 31 Mar 2021), 5.3 years stale; no FY2021-22 through FY2024-25 AR available"
+  - "No concall transcripts (no-concall mode); F2 degraded rule applied using capex-completion evidence"
+  - "Investor presentation is a 9-page financial-summary deck (7th AGM, Sep 2025), no product/capex/segment detail beyond FY2025 vs FY2024 headline numbers"
+flags:
+  - "R&D expenditure explicitly Nil for FY2020-21 (AR Annexure C, p.24); 2025 presentation's 'fully functioning R&D Centre' milestone claim is evidence-free and unreconciled given the data blackout"
+  - "Export revenue share fell from 28.2% (FY20-21) to 20% (FY2025) - opposite of a China+1/international-expansion moat forming"
+  - "Customer concentration: 2 customers = ~35% of FY2020-21 revenue; no improving trend evidenced"
+  - "FY2025 profitability declined sharply YoY (EBITDA margin 10.70%->7.56%, PAT margin 3.77%->2.27%, ROCE 17.43%->11.54%) per investor presentation, undercutting the one weak positive category (G1 credit rating trajectory)"
+em_score: 4
+em_classification: "NONE"
+active_categories:
+  - {id: "A3", name: "Process innovation", strength: "Weak", evidence_type: "management_claim", time_to_materialise: "ongoing, unquantified"}
+  - {id: "G1", name: "War chest / credit rating trajectory", strength: "Weak", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H3", name: "ESG moat", strength: "Weak", evidence_type: "management_claim", time_to_materialise: "3-5yr if pursued"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Weak", evidence_type: "documented", time_to_materialise: "shrinking"}
+evidence_mix: {documented: 4, claim: 3, inference: 0}
+completionist_recount: "4 documented items underpin the 4 Weak rows; A3 and aspirational half of H3 rest on management language only. 0 categories scored Strong or Moderate."
+catalysts_12m:
+  - {catalyst: "Next CARE Ratings annual review", window: "12m", evidence_type: "documented", anchor: "Inv. Pres. slide 7, Care Edge Ratings June 2025"}
+  - {catalyst: "Filing of any FY2021-22 through FY2025-26 annual report to close the 5-year data blackout", window: "12m", evidence_type: "not_found", anchor: "NOT FOUND"}
+capex_embedded_growth_pct: 11
+combined_assessment: "AVOID"
+combined_reasoning: "Weak core (Gate 0 AVOID, median ROCE 8.36%/ROE 6.45%) meets an independently weak forward scan (em_score ~4/80, zero Strong/Moderate categories, the one positive thread offset by worsening leverage and FY2025 margin compression) - a genuine AVOID-plus-no-emerging-moat combination, not a disguised transition setup."
+top_moat_risks:
+  - "Data blackout: no FY2021-22 through FY2024-25 annual report; every capex/R&D/capacity signal from FY2020-21 unverifiable as still-forming or already resolved"
+  - "FY2025 margin compression (EBITDA 10.70%->7.56%, PAT 3.77%->2.27%) undermines the sole documented positive and raises risk of a ratings outlook downgrade"
+  - "Export revenue share declined 28.2% (FY20-21) to 20% (FY2025), contradicting any China+1 narrative"
+  - "Top-2 customer concentration ~35% of FY2020-21 revenue with no evidence of diversification since"

@@ -1,0 +1,34 @@
+stage: B09-tam
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No India-specific application split for surfactants found; global application-share proxy used"
+  - "Current-year (FY2026) top-2 customer concentration NOT FOUND (carried from B04)"
+  - "Manufacturing capacity/tonnage NOT FOUND (carried from B07)"
+  - "Full competitor list / top-3 concentration for India specialty surfactants NOT FOUND"
+flags:
+  - "Management makes no explicit scoped TAM/SAM claim; only a stale (2020), scope-mismatched global industry citation exists"
+  - "Current SAM share (~18.4%) is high only because SAM is narrowly filtered to home+personal-care niche; total-market share under 1%"
+  - "Customer concentration (35.0% FY2020-21) caps SOM share-gain assumption at 'aggressive' band"
+  - "Direct WebFetch to imarcgroup/grandviewresearch/fortunebusinessinsights returned HTTP 403; figures via search-snippet synthesis"
+market_definition: "India B2B specialty surfactant ingredient supply (anionic/non-ionic) to FMCG home-care and personal-care manufacturers, excluding industrial/oilfield/agro/textile/construction applications"
+tam_cr: {conservative: 9270, realistic: 15800}
+sam_cr: 4672
+sam_pct_of_tam: 50.4
+som_3yr_cr: 1197
+som_5yr_cr: 1476
+som_implied_revenue_cagr: {yr3: 11.7, yr5: 11.4}
+current_sam_share_pct: 18.4
+revenue_headroom_x: 5.4
+tam_growth_pct: 6.2
+runway_class: "GOOD"
+mgmt_claim_cr: 499372
+mgmt_claim_ratio: 53.9
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient - gap of ~Rs22-28 Cr (under 2% of SOM) at 3yr/5yr horizons vs B07 capex-embedded growth (~11%)"
+stale_data_flags:
+  - {datapoint: "Global surfactants USD42.1bn(2020)->USD52.4bn(2025), CAGR 4.5%", source: "AR FY2020-21 MD&A citing Markets and Markets", year: 2020}
+  - {datapoint: "India surfactants CAGR by application (SLP 9.6%, paints 8.8%, construction 8%, forecast to 2022)", source: "AR FY2020-21 MD&A", year: 2020}
+  - {datapoint: "India surfactants market USD2.03bn (2024 base, IMARC)", source: "imarcgroup search-snippet accessed 2026-08-04", year: 2024}

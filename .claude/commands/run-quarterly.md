@@ -75,7 +75,11 @@ ledger path, every A3 forensics path, the protocol file paths, and the live
 Notion thesis inline. A4 states the ledger-reconciliation preamble, runs
 Role 4 first then Role 5, and writes the single merged review with the
 Questions-for-Management table (every A3 FORWARD-SIGNAL / AMBIGUOUS finding ->
-at least one question) and the monitorables/catalyst list.
+at least one question), the monitorables/catalyst list, and — MANDATORY on
+every run — the PLAIN-LANGUAGE BRIEF as the final section: a 10-20 line plain
+summary narrative plus SECTOR intelligence, BUSINESS-MODEL intelligence, and
+COMPETITION intelligence (provenance-labelled: Notion/peer work vs this
+quarter's filings). This brief is a standing deliverable, never on-request.
 
 ## 3. A5 ADVERSARY (once)
 
@@ -88,9 +92,12 @@ human with the unresolved gap stated plainly.
 
 ## 4. NOTION SAVE (only after A5 COMPLETE)
 
-Per Role 4 Step 9 and existing save mechanics: fetch the company page first;
-`insert_content` with `position: end` for the full review (complete tables,
-never summaries), splitting large content across sequential inserts;
+Do the Notion save INLINE yourself — do NOT delegate it to a subagent (it is a
+mechanical insert/update; a subagent only adds latency). Per Role 4 Step 9 and
+existing save mechanics: fetch the company page first; `insert_content` with
+`position: end` for the full review (complete tables, never summaries — this
+INCLUDES the A4 PLAIN-LANGUAGE BRIEF, which is saved as part of the review
+every run), splitting large content across sequential inserts;
 `update_properties` to PREPEND the date-stamped Key Notes line to the
 pipe-delimited audit trail, preserving all prior entries; escape `|` in cells
 as `\|`. Save the A3 forensics table and the A5 audit verdict alongside the
@@ -103,7 +110,10 @@ Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
 to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 / N slides, all reviewed), the top forensic findings with their line cites,
 the protocol verdict, and the working-file paths. Print the merged review's
-headline tables and the Questions-for-Management table in full in chat.
+headline tables and the Questions-for-Management table in full in chat. ALSO
+print the A4 PLAIN-LANGUAGE BRIEF every run — the plain summary narrative plus
+the sector, business-model, and competition intelligence. The user gets this
+automatically; they never have to ask for it.
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.

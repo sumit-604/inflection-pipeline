@@ -4,6 +4,10 @@ Audit target: `review_concall_sasken_q1fy27.md` (A4). Primary evidence:
 `extract_concall_sasken_q1fy27.txt` (51 turns, 8 analysts). Fresh context;
 cites re-derived independently, not deferred to A4/A3.
 
+> RE-VERIFICATION (second pass): A4 applied the two corrections this audit
+> required. Both re-checked and confirmed below (Section 2, Section 3 note f,
+> Section 6). Verdict upgraded INCOMPLETE -> **COMPLETE**.
+
 ---
 
 ## 1. COVERAGE AUDIT (independent re-enumeration vs the ledger)
@@ -48,26 +52,21 @@ Section 9 (Q2 items #3, #2, #6, #8, #7 respectively). PASS.
 | Blended EBIT | 9.5% (Rs31 Cr) | as spoken; 31/339 = 9.1% is a **transcript** internal gap, not A4's (t6 l.13) | PASS (A4 anchored to spoken 9.5%) |
 | ACV $40.5M | $40.5M / $24M new | t6 garbles "about 4 million"; t17 l.35 states 40.5 — A4 reconciled correctly | PASS |
 | Answer-status tally | 0/7/2/3 = 12 | 0+7+2+3 = 12; lists consistent | PASS |
-| **Response-quality distribution (6A)** | **1A / 10B / 9C / 1D** | **1A / 11B / 8C / 1D** (see count below) | **FAIL** |
+| **Response-quality distribution (6A)** | **1A / 11B / 8C / 1D** (corrected) | **1A / 11B / 8C / 1D** (re-tally below) | **PASS (RESOLVED)** |
 | Specificity ratio | "~0.3 to 0.35" | 4/(4+6..7) = 0.36-0.40 | soft-low; qualitative bucket LOW unchanged (immaterial) |
 | Hedge count | "more than seven" | exactly 7 instances listed | immaterial |
 
-**Response-quality miscount (the one hard arithmetic FAIL).** Re-tallying
-A4's own 21 grade cells in Section 6A (review l.201-221):
+**Response-quality tally — re-verified (was the one blocking FAIL, now RESOLVED).**
+I re-tallied A4's 21 grade cells in Section 6A (review l.201-221) independently:
 - A (1): Q1c t12-13.
 - B (11): Q1b t10-11, Q2b t16-17, Q3 t18-19, Q3b t20-21, Q4c t26-27, Q5 t28-29, Q5b t30-31, Q6 t32-33, Q7b t38-39, Q7c t40-41, Q8 t44-45.
 - C (8): Q1 t8-9, Q4 t22-23, Q4b t24-25, Q6b t34-35, Q7 t36-37, Q7d t42-43, Q8b t46-47, Q8c t48-49.
 - D (1): Q2 t14-15.
 
-Total 1+11+8+1 = 21 (correct block count). A4's stated distribution
-"1 grade A, 10 grade B, 9 grade C, 1 grade D" (review l.223) is wrong:
-**one B is mis-bucketed into C.** Correct is **11B / 8C**. This is an exact
-count, not a rounding artifact, so it clears the "above rounding = FAIL" bar.
-
-Materiality: the miscount does NOT change any verdict, grade, or gate — the
-distribution still "clusters at B/C." But per the arithmetic-audit discipline
-(recompute every derived metric; any mismatch = FAIL, loop back to A4), this
-is a blocking defect. The fix is a one-line correction, not an analytic rework.
+Total 1+11+8+1 = 21. The corrected summary line (review l.223) now reads
+"1 grade A, 11 grade B, 8 grade C, 1 grade D, 0 grade E (reconciles to 21
+cells)." This matches my independent recompute exactly. The prior mismatch
+(A4 had stated 1A/10B/9C/1D) is corrected. ARITHMETIC AUDIT now clean.
 
 ---
 
@@ -102,17 +101,21 @@ Three precision nuances (non-blocking):
   denomination, not a 4x-higher bar. A4 correctly rolls confirmation to Q2 (#4).
   Defensible.
 
-- **Claim (f) "corroborated on the record."** Section 8A calls the six-quarter
-  software-services margin recovery "corroborated on the record." It is
-  management's own unverified recollection (t27), volunteered while deflecting
-  the growth-vs-margin question, and refers to *software services only* — while
-  the same-quarter blended EBIT is 9.5% and Product-Solutions margin collapsed
-  to 5.9% (t6 l.13). "Corroborated" over-credits an assertion; "management
-  asserted (unverified)" is the accurate frame. See Adversarial claim #2.
+- **Claim (f) "corroborated on the record" — RE-VERIFIED, now corrected.**
+  Section 8A previously called the six-quarter software-services margin recovery
+  "corroborated on the record." It is management's own unverified recollection
+  (t27), volunteered while deflecting the growth-vs-margin question, and refers
+  to *software services only* — while the same-quarter blended EBIT is 9.5% and
+  Product-Solutions margin collapsed to 5.9% (t6 l.13). A4 has now revised
+  Section 8A (review l.300) to "**asserted by management, unverified** (its own
+  recollection, software-services only)... **consistent with** the Role 4
+  trough-to-recovery read" (was "confirming"). Both edits applied and accurate.
+  Resolved.
 
-Minor uncaught forensic (non-blocking): CFO states "93 active customers" (t6
-l.13) while Modi says "total active customers of 96" (t9 l.19). 93 vs 96 is an
-unreconciled internal count A4 did not flag; immaterial to the verdict.
+Minor uncaught forensic (non-blocking, not required to fix): CFO states "93
+active customers" (t6 l.13) while Modi says "total active customers of 96" (t9
+l.19). 93 vs 96 is an unreconciled internal count A4 did not flag; immaterial to
+the verdict.
 
 ---
 
@@ -128,21 +131,19 @@ the EVASIVE-to-MEASURED archetype, and flag #3 (0/12) all carry this counter.
 The cap-lift is scoped narrowly to removing an *artificial ceiling*, not to
 awarding credit. Already present.
 
-**Positive claim 2 — "software-services margin recovery corroborated on the
-record: 2-3% to 11-12% EBIT in six quarters" (t27 l.55).**
+**Positive claim 2 — software-services margin recovery (2-3% to 11-12% EBIT in
+six quarters, t27 l.55).**
 Bear counter (same text): this is management's own uncorroborated recollection,
 software-services-only, stated while deflecting the margin question — and it
 coincides with a *falling* consolidated picture (blended EBIT 9.5%, PS margin
 5.9% at t6 l.13). It is an assertion, not independent corroboration.
-**Survives? PARTIALLY — as a wording tighten, not a missing bear point.** A4
-already flags PS 5.9%, blended 9.5%, and "anchor the thesis to filing numbers"
-(3E) and the growth-vs-margin tension (6C Exchange 3). The substantive bear
-content is present; only the single word "corroborated" in Section 8A
-over-credits. Recommend A4 soften to "management asserted (unverified,
-software-services only)." Non-verdict-bearing; a caveat graft, not a FAIL.
+**Survives? RESOLVED — A4 grafted the counter.** Section 8A now labels it
+"asserted by management, unverified (its own recollection, software-services
+only)... consistent with" (was "corroborated on the record... confirming").
+The over-credit is removed. No longer outstanding.
 
-**Positive claim 3 — CFO "frank cash-consumption admission rather than spinning
-it, and explicitly denied a collection problem" (t37 l.75).**
+**Positive claim 3 — CFO "frank cash-consumption admission... explicitly denied
+a collection problem" (t37 l.75).**
 Bear counter (same text): candour on *direction* co-exists with total opacity
 on *magnitude* — no CFO figure, no H1 commitment, no quantum/timing — plus an
 admitted reliance on "external funds" to finance growth (t37 l.75), a
@@ -152,9 +153,9 @@ Section 6C Exchange 1 explicitly asks the follow-up "what net-debt figure funds
 the external-funds portion"; Section 8B holds trigger (c) NOT FIRED and the
 cash read INDETERMINATE-leaning-NEGATIVE, refusing to resolve positive. Present.
 
-**Net:** two of three bear counters are already grafted into A4; the third is a
-one-word over-credit ("corroborated" -> "asserted"), recommended but not
-verdict-changing.
+**Net:** all three bear counters are now incorporated into A4 (two were already
+present at first pass; the third was grafted via the Section 8A correction). No
+surviving bear counter remains ungrafted.
 
 ---
 
@@ -202,29 +203,22 @@ PASS.
 - COVERAGE: PASS. 51/51 turns, 8 analysts, 21 Q&A blocks, 12 standing questions
   all addressed. No orphan row, no ledger gap, no dropped material turn.
 - QUOTE-CHECK: PASS. All seven task-named load-bearing claims supported by
-  their cited turns; no misquote; no number fails to reconcile. Three minor
-  precision nuances noted (first-call attribution, garbled Borqs figure,
-  "corroborated" over-credit) — none blocking.
-- ARITHMETIC: **ONE FAIL.** Response-quality distribution stated 1A/10B/9C/1D;
-  correct recompute from A4's own 21 grade cells is **1A/11B/8C/1D** (review
-  l.223). Exact-count mismatch, above rounding. Loop back to A4.
-- ADVERSARIAL: two of three bear counters already incorporated; the third is a
-  recommended wording tighten ("corroborated" -> "management asserted,
-  unverified, software-services only") — not verdict-bearing.
+  their cited turns; no misquote; no number fails to reconcile. Precision
+  nuances on claims (a) and (d) noted, non-blocking; claim (f) over-credit
+  corrected by A4 (Section 8A).
+- ARITHMETIC: PASS. The lone blocking FAIL (response-quality distribution
+  1A/10B/9C/1D) has been corrected to 1A/11B/8C/1D and re-verified against my
+  independent 21-cell re-tally (review l.223 now reconciles to 21).
+- ADVERSARIAL: no surviving ungrafted bear counter. Two counters were already
+  present; the third ("asserted not corroborated") was grafted into Section 8A.
 - VERDICT LOGIC: all five stress tests (grade, cash read, Decision Status,
   net-impact framing, roll-forward) defensible from the transcript.
 
-The analysis is substantively sound and the verdict is defensible. The single
-blocking defect is a mechanical tally miscount that the arithmetic-audit
-discipline requires be corrected before save. Because a recomputation mismatch
-above rounding exists, the run cannot be certified COMPLETE as-is.
+Both required corrections are correctly applied and the arithmetic tally
+reconciles. The review is coverage-complete, accurately quoted, and its verdict
+is defensible from the transcript. No blocking defect remains.
 
-**VERDICT: INCOMPLETE — loop back to A4.**
-Gap: Section 6A response-quality distribution (review l.223) miscounts the
-21 Q&A grades as 1A/10B/9C/1D; the correct tally is 1A/11B/8C/1D (one B
-mis-bucketed as C). Correct the line and re-emit; no analytic rework required.
-Recommended (non-blocking) at the same pass: soften "corroborated on the record"
-(Section 8A) to "management asserted (unverified, software-services only)."
+**VERDICT: COMPLETE.** Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -232,19 +226,12 @@ company: "SASKEN"
 quarter: "q1fy27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Q&A response-quality distribution (Section 6A)"
-    a4_value: "1A / 10B / 9C / 1D"
-    recomputed: "1A / 11B / 8C / 1D"
-    source_line: "review l.223 (re-tallied from grade cells l.201-221)"
-surviving_bear_counters:
-  - claim: "software-services margin recovery 'corroborated on the record' (2-3% to 11-12% EBIT in six quarters)"
-    counter: "management's own unverified recollection, software-services only, coincident with blended EBIT 9.5% and PS margin 5.9%; assert not corroborate"
-    source_line: "t27 l.55; t6 l.13 (review Section 8A)"
-loop_back_to: "A4"
-gap: "Section 6A response-quality distribution miscounted as 1A/10B/9C/1D; correct tally is 1A/11B/8C/1D (one B mis-bucketed as C, review l.223). Verdict logic and all quotes pass; fix is a one-line correction, no analytic rework."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

@@ -55,3 +55,10 @@ Doctype tokens `release` and `monitoring` are descriptive labels to avoid extrac
 ## ADDENDUM 2026-08-04: CONCALL ADDED (Role 5 now runs)
 - Operator supplied the Q1 FY27 earnings-call transcript as plain text (previously N.A.). Saved verbatim to inputs/concall_q1fy27.txt (garbles preserved as source of record). doctype=concall. Runs A1->A2->A3->A4(Role 5 merged into existing review)->A5, then Notion save + report incl. plain-language brief (per new law).
 - A1 concall launched (text: save verbatim, line-number; no pdftotext).
+- GATE A1 concall PASS (87/87 lines verbatim, nothing truncated).
+- GATE A2 concall PASS (16 participants / 87 turns / 29 questions / 199 mgmt numbers / 34 forward / 6 hedges). Flags: MGMT_ABSENCE (Chairman absent), NUMBER_GARBLE, INTERNAL_INCONSISTENCY (5,740 vs 6,740 beds; 34/36/37 lakh capex/bed; Rudrapur 2 vs 22 Aug), REPEAT_QUESTION.
+- GATE A3 concall PASS (17/17; 24 findings FN-01..24). Load-bearing: FN-16/20 deferred-tax benefit re-attributed to interest (CONFIRMATORY-NEGATIVE); FN-22 'fully funded' masks idle IPO; FY27 guidance registered; Chairman absence.
+- A4 MERGE COMPLETE. Role 5 folded into review; verdict holds PROCEED WITH CAVEATS; WATCHLIST. Guidance-vs-filing: PAT guide Rs 360 Cr consistent only on ~18-19% ETR; ETR-normalised ~Rs 315 Cr. Archetype provisional HIGH-SPECIFICITY/DELIVERY-UNPROVEN. Brief regenerated (plain_language_brief_included: true).
+- GATE A5 COMPLETE. Deliverable-brief gate PASSED (first live test of the new gate: all four brief parts present) + coverage no orphans + arithmetic zero mismatches + no surviving bear counters.
+- NOTION SAVE DONE (INLINE, no subagent, per the new law): Role 5 concall addendum appended (guidance table, arithmetic bridge, disclosure-quality finding, Q16-22, new monitorables, regenerated brief, A5 verdict); Key Notes PREPENDED with [04-Aug-26] concall line, all prior entries preserved. Decision Status UNCHANGED WATCHLIST.
+- CONCALL PHASE COMPLETE. Clean run, all 5 concall gates first-pass, A5 COMPLETE, zero loop-backs.

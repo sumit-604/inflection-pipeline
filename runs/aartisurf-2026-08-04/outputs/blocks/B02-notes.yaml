@@ -1,0 +1,53 @@
+stage: B02-notes
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Annual report supplied is FY2020-21 (year ended 31 March 2021), not FY2022; ~5.3 years stale vs 2026-08-04 run date; no FY2022-FY2025 annual report in this run's input folder"
+  - "No effective-vs-statutory tax rate reconciliation disclosed (Note 12)"
+  - "No quantitative ECL matrix/default-rate table disclosed for trade receivables (Note 5)"
+  - "No Ind AS 116 ROU asset, lease liability, or discount rate disclosed despite full lessee/lessor policy language"
+  - "No covenant terms/breaches/waivers disclosed for term loan/WC facility (Note 11)"
+  - "No lender name/relationship disclosed for new Rs820 Lakh Inter Corporate Deposit (Note 11); absent from Related Party Note 31"
+  - "No relationship disclosed for new >5% shareholder Nikhil Holdings Private Limited (Note 9.4)"
+  - "No quantified FX exposure/hedge/sensitivity analysis (Note 33.B)"
+  - "Nature of 'Other Provisions' (Note 15.1) never described"
+  - "No product-line revenue disaggregation despite single-segment reporting (Note 30)"
+flags:
+  - {type: FLAG-CASH, reason: "Trade receivables +203.7% YoY vs revenue +43.0% (receivable days ~doubled, 20.1 to 42.6) and trade payables +305.9% YoY vs COGS +43.4% (payable days nearly tripled, 28.3 to 80.1); Notes 5 and Balance Sheet/Note 14 area, pp.70/56"}
+  - {type: FLAG-GOVERNANCE, reason: "0% Redeemable Preference Shares (Rs1,941.88 Lakhs, Note 11.1(b)) unlisted ~2 years post-issuance; actual credit rating CARE BBB- (RPS) four notches below the AA- SEBI minimum for listing; Secretarial Audit Annexure B p.21, CG Report p.36"}
+  - {type: FLAG-GOVERNANCE, reason: "Promoter-family shareholder Jaya Chandrakant Gogri raised holding 5.27% to 21.17% (+12.06 lakh shares) intra-year while HDFC Trustee exited the >5% table, concurrent with ~3-4x share price rise; Note 9.4 p.71"}
+accounting_quality: 4
+top_findings:
+  - {rank: 1, finding: "Annual report is FY2020-21, ~5.3 years stale vs run date; no later AR supplied", note_ref: "Cover/Directors' Report p.13; all FS headers", rating: "Red Flag"}
+  - {rank: 2, finding: "Trade receivables +203.7% YoY vs revenue +43.0%; receivable days doubled 20.1 to 42.6; ECL provision static despite tripling of base", note_ref: "Note 5, p.70/106", rating: "Red Flag"}
+  - {rank: 3, finding: "Trade payables +305.9% YoY vs COGS +43.4%; payable days nearly tripled 28.3 to 80.1", note_ref: "Balance Sheet/Note 14 area, p.56/92", rating: "Red Flag"}
+  - {rank: 4, finding: "0% Redeemable Preference Shares unlisted because CARE BBB- rating is four notches below AA- SEBI listing minimum", note_ref: "Secretarial Audit Annexure B p.21; CG Report p.36; Note 11.1(b) p.72", rating: "Red Flag"}
+  - {rank: 5, finding: "Promoter-family stake (Jaya C. Gogri) rose 5.27% to 21.17% intra-year while HDFC Trustee exited the >5% table, alongside a ~3-4x price move", note_ref: "Note 9.4 p.71; CG Report p.34, p.26", rating: "Red Flag"}
+  - {rank: 6, finding: "First-year borrowing-cost capitalisation (Rs101.84 Lakhs, PY Nil), flagged as Key Audit Matter", note_ref: "Note 22 p.78/114; Note 1(c) p.67/103", rating: "Watch"}
+  - {rank: 7, finding: "Fire loss at Silvassa plant netted against Gross Block rather than expensed through P&L; unreconciled insurance receivable larger than the loss", note_ref: "Note 1(b) p.67/103; Note 7 p.71/106", rating: "Watch"}
+  - {rank: 8, finding: "New Rs820 Lakh Inter Corporate Deposit with no lender name/relationship disclosed, absent from Related Party note", note_ref: "Note 11 p.72/108; Note 31 p.81/117", rating: "Watch"}
+  - {rank: 9, finding: "Secretarial Audit catalogues four compliance lapses in listing year (delayed listing, unfiled IEPF Form 4, late share certificates, resubmitted quarterly results)", note_ref: "Secretarial Audit Annexure B p.21", rating: "Watch"}
+  - {rank: 10, finding: "Special resolution seeks Rs225 Cr borrowing ceiling, ~48% above FY21 Gross Debt", note_ref: "Notice Item 7 p.122/131; Note 32.1 p.82/117", rating: "Watch"}
+  - {rank: 11, finding: "CFO appointed June 2020, same quarter as listing and the >10x profit jump", note_ref: "Directors' Report p.14", rating: "Watch"}
+  - {rank: 12, finding: "Title deeds for PPE (Rs267.80 Lakhs, Pithampur plots) still in demerged parent's name ~2 years post-demerger", note_ref: "CARO Annexure A p.52", rating: "Watch"}
+  - {rank: 13, finding: "No effective-vs-statutory tax rate reconciliation; ~2.2% effective current tax rate unverifiable", note_ref: "Note 12 p.73/109", rating: "Watch"}
+  - {rank: 14, finding: "Nil R&D spend against marketing claims of R&D competence", note_ref: "Annexure C p.24; Corporate Overview p.4", rating: "Watch"}
+  - {rank: 15, finding: "First-ever dividend proposed same year Net Gearing rose 0.98x to 1.09x and working capital deteriorated sharply", note_ref: "Note 32.1/32.2 p.82-83/117", rating: "Watch"}
+red_flags:
+  - "Trade receivables +203.7% YoY vs revenue +43.0%, ECL provision static (Note 5, p.70/106)"
+  - "Trade payables +305.9% YoY vs COGS +43.4% (Balance Sheet/Note 14 area, p.56/92)"
+  - "Redeemable Preference Shares unlisted due to CARE BBB- vs AA- SEBI minimum (Secretarial Audit Annexure B p.21)"
+  - "Promoter-family shareholding quintupled (5.27% to 21.17%) concurrent with institutional exit and 3-4x price rise (Note 9.4, p.71)"
+  - "Fire loss netted against Gross Block rather than expensed, unreconciled insurance receivable (Note 1(b) p.67; Note 7 p.71)"
+  - "First-year borrowing cost capitalisation flagged as Key Audit Matter (Note 22, p.78/114)"
+questions_for_mgmt:
+  - "What drove receivable days doubling and payable days nearly tripling in FY2020-21, and has the static ECL provision been re-assessed against the tripled receivables base?"
+  - "Who is the counterparty for the new Rs820 Lakh Inter Corporate Deposit, its relationship to the Company/promoter group, and on what terms?"
+  - "Current status of the Redeemable Preference Shares' listing given the four-notch rating shortfall; is there a plan to resolve or redeem?"
+  - "What drove Jaya C. Gogri's increase to 21.17%, what is Nikhil Holdings Private Limited's relationship to the Company, and why did HDFC Trustee exit?"
+  - "Why was the Silvassa fire loss netted against Gross Block rather than recognised in P&L, and status of reconciling the insurance receivable?"
+receivables_trend: "deteriorating - net trade receivables +203.7% YoY (Rs54.43 Cr vs Rs17.92 Cr, Note 5 p.70/106) vs revenue +43.0%; receivable days ~doubled 20.1 (FY20) to 42.6 (FY21); ECL provision static at Rs0.70 Cr both years despite tripled gross base"
+restatements_found: []
+going_concern_language: "NONE - no going-concern qualification found in Directors' Report, either Auditors' Report, CARO Annexures, or Note 1; both audit opinions unmodified"

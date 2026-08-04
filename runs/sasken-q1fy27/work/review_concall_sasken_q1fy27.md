@@ -220,7 +220,7 @@ The single most important signal for this name is consolidated CFO. The call did
 | 8b | Sanjay Kumar | When does revenue from these niche techs start? | Forward Guidance | C — "already reflected," can't be specific | t46-47 l.93-95 |
 | 8c | Sanjay Kumar | Any commercial Borqs auto-module orders (instrument cluster)? | Customer/Order | C — reference design only; module cost-sensitive; "we'll have to see" | t48-49 l.97-99 |
 
-Response-quality distribution: **1 grade A, 10 grade B, 9 grade C, 1 grade D, 0 grade E.** The call clusters at B/C — substantive-but-hedged to partial-adjacent. The only outright decline (D) was the vertical/offering split.
+Response-quality distribution: **1 grade A, 11 grade B, 8 grade C, 1 grade D, 0 grade E** (reconciles to 21 cells). The call clusters at B/C — substantive-but-hedged to partial-adjacent. The only outright decline (D) was the vertical/offering split.
 
 ### 6B. Q&A pattern analysis (Step 4B)
 
@@ -297,7 +297,7 @@ This is the first entry in the trailing-4-quarter tracker. No historical audit i
 **Positive (transparency and corroboration):**
 - The Management-Grade structural cap is lifted; the credibility mechanism now exists and recurs (t3 l.7; t50 l.101).
 - The promoter was present and candid; the CFO admitted the cash burn plainly rather than spinning it (t37 l.75).
-- The software-services margin recovery was corroborated on the record: EBIT from ~2-3% to 11-12% in six quarters (t27 l.55), confirming the Role 4 trough-to-recovery read.
+- The software-services margin recovery was asserted by management, unverified (its own recollection, software-services only): EBIT from ~2-3% to 11-12% in six quarters (t27 l.55), consistent with the Role 4 trough-to-recovery read.
 - Borqs integration and headcount described as organic and complementary (t29 l.59; t31 l.63).
 
 **Negative (substance and direction):**

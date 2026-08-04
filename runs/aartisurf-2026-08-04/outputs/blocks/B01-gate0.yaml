@@ -1,0 +1,34 @@
+stage: B01-gate0
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Promoter pledge % (Block E3) not in operator-supplied shareholding sheet or AR text; Reg 31(4) filing dated 24-Jun-2026 exists per operator digest but pledge figure not relayed. Scored 0 (N/A), not confirmed >15%."
+  - "FY2026 Contingent Liabilities (Block E4) not available (FY26 AR not yet published); FY2025 figure used as latest available proxy, one-year lag."
+  - "R&D as % of revenue (Moat M6) not disclosed anywhere in provided data; only qualitative R&D-centre mentions available."
+  - "Current-liabilities/Trade-Payables/itemized-capex breakdown for FY2020-FY2023 not in provided data (screener Data_Sheet aggregates 'Other Liabilities' without current/non-current split for those years); Block A (ROCE/ROE) and Block B legs B2-B4 computed on the narrower FY2024-FY2026 window only."
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (Core 55/100, moat MODERATE 3/12). Historical depressors: ROCE fell 17.43%(FY24)->9.72%(FY26, computed), ROE fell 11.50%->5.27% over same window; EBITDA margin compressed 10.56%(FY24)->5.50%(FY26); CARE downgraded long-term bank facilities A- to BBB+ and long-term instruments BBB+ to BBB in Dec-2025 citing the same margin compression; FY26 EBIT/Interest coverage only 2.43x; all three peer-relative moat tests (M2 cost advantage, M9 brand/gross margin, M5 scale) scored 0, AARTISURF being smallest-mcap and lowest-margin name among the 4 supplied surfactants/specialty-chemical peers. Block A deal-breaker (<8) triggered, capping at max GOOD, though already superseded by the AVERAGE Core band."
+data_years: 7
+fy_range: "FY2020 to FY2026"
+blocks: {A: 2, B: 17, C: 17, D: 10, E: 9}
+core_score: 55
+moat_score: 10
+grand_total: 65
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block A <8 (=2/20) -> caps classification at max GOOD; superseded by Core 40-59 AVERAGE band, no net effect on final classification"
+history_downgrade: false
+data_notes:
+  - "PAT CAGR (34.44%, C2) partly reflects an unusually low FY2020 base (Rs 2.09cr PAT, first full year post 2018/19 demerger from Aarti Industries); read with caution, both endpoints positive so no N/M carve-out applies."
+  - "Block A (ROCE/ROE) computed on 3-year window FY2024-FY2026 only; FY24/FY25 use company-reported AR Note 43 ratios (source figures), FY26 is pipeline-computed ('computed')."
+  - "Block B2/B3 (FCF-based) and B4 (WC days) computed on 3-year window FY2024-FY2026 only, due to capex-breakdown and Trade-Payables data gaps for FY2020-FY2023."
+  - "block_b_trend strength (cumulative CFO/PAT 2.68x) is concentrated in FY26 (CFO/PAT 6.21x vs FY25 0.77x), driven substantially by a one-off working-capital release (inventory -Rs15.69cr, payables +Rs32.88cr); not steady-state cash conversion."
+  - "M9 gross-margin proxy uses Revenue minus Raw Material Cost only (not full COGS); stated as proxy per formula rule."
+  - "M8 Distribution scored on unquantified-growth basis: reach is numerically stated (30+ countries, 100+ customers) but no time series confirms growth."
+  - "MANIFEST DEFECT carried forward per orchestrator instruction: sector_cap_row 'Pharma / CDMO' is wrong for this surfactants/specialty-chemicals maker; correct peer set (Galaxy Surfactants, Fine Organics/FCL, Rossari, Ultramarine) was used for all Block F peer-relative tests in this report; the sector-cap defect itself is a phase-3 valuation item only and does not affect Gate 0 scoring."
+block_b_trend: "improving (FY26 CFO/PAT 6.21x vs FY25 0.77x), but substantially one-off working-capital release (inventory -Rs15.69cr, payables +Rs32.88cr in FY26) rather than structural margin improvement -- feeds FLAG-CASH downstream"

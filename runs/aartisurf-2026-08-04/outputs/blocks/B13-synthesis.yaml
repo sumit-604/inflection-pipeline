@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+phase: 1
+status: complete
+mode: "PHASE 1 LITE - three files, no valuation-dependent content"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_basis: "FLAG-CASH resolves INDETERMINATE (no current filing, rating rationale, or receivables ageing to classify the FY26 CFO rebound vs an unwinding payable stretch), which caps the gate at PROCEED WITH CAVEATS with the missing evidence named. Heavy data staleness (only AR is FY2020-21) is the central limiter."
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVOID)", "FLAG-GOVERNANCE (RPS non-listing)", "FLAG-GOVERNANCE (intra-year stake concentration)"]
+flag_promoter_fires: false   # B08 CAUTION, not CONCERN/AVOID; no deal-breakers
+confidence_delta: {numerical: 96.6, redflag: 79, framework: 100, peer: 91.7, overall: 79}
+headline: "Surfactants maker judged on stale numbers"
+falsification_line: "First current annual report showing CFO back near the FY25 low (~Rs11 Cr) with receivable days at or above 42.6 would confirm the FY26 cash rebound was a one-off payable stretch, not real cash generation."
+contradicted_claims:
+  - "Stale 2020 India demand growth 8-9.6% CAGR contradicted by GALAXYSURF (2-4% current volume growth)"
+  - "AARTISURF CWIP ramp as industry-wide capacity race contradicted by ROSSARI (rephasing Rs192cr capex down) and GALAXYSURF (maintenance-only)"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+valuation_deferred: "All valuation-dependent elements (investment call, entry range, MoS, destination PE, Hurdle) deferred to phase 3. fttcp-handoff.md and notion-payload.md not produced this phase."

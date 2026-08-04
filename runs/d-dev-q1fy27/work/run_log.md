@@ -49,3 +49,11 @@ in inputs/ for audit; neither run separately to avoid redundant chains.
   extract_results_d-dev_q1fy27.txt. Cross-check consol rev 29,446.22 Lakhs = ₹294.46 Cr ✓.
 - **A1 DOC4 (presentation):** PASS. 4/4 pages, 175 lines, units=Crores, no OCR.
   extract_presentation_d-dev_q1fy27.txt.
+- **A2 DOC1 (results):** PASS. 7 SA notes / 7 consol notes / 11 board agenda items / 8 annexures,
+  reconciled (one raw-regex over-count on a date-header row resolved). Segments: 4 consol (Piping,
+  Power, Heavy Fab, Unallocated) vs 2 standalone. Flags: consolidated auditor report QUALIFIED
+  (Malwa Power ₹5,082.67 lacs impairment not assessed) + EoM (PSPCL/PSERC/APTEL tariff dispute);
+  standalone unmodified. 7 ZERO_STANDING rows. SIG_BEFORE_CONCLUSION (CMD sig pre-dates board close).
+- **A2 DOC4 (presentation):** PASS. 4 pages / 6 headline metrics / 6 straplines / 6 op bullets /
+  19 quote claims / 9 forward-looking. Flags: FORMAT_ANOMALY (diluted EPS YoY "22.1" missing %),
+  REPEATED_CLAIM, NO_PRIOR_LEDGER.

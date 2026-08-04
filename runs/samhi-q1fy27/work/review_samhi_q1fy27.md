@@ -22,7 +22,25 @@ Press release — A3-01 through A3-07.
 There is **NO concall transcript in this batch.** Role 5 (Quarterly Concall Analysis Protocol v1.1) therefore has no primary source to run: no participant list, no claims inventory, no promise-vs-delivery scoring, no credibility ratio, no management archetype. Per the task instruction, the **investor presentation and press release are treated as investor-communication inputs that FEED Role 4's interpretation, catalyst list, and Questions-for-Management** — not as a concall. Their forward-looking statements seed the monitorables/catalyst baseline (the future Role 5 promise-vs-delivery tracker starts from this quarter). Where the deck/press-release narrative diverges from the filing numbers, the filing wins (Role 4/5 house rule), and the divergence is logged.
 
 ### Notion / thesis status (verified BEFORE any framing)
-**LIVE NOTION THESIS: NONE.** SAMHI is a NEW company: no `companies/SAMHI.md`, no prior run folder, no live Notion page, therefore **no Decision Status, no entry zone, no tripwires, no monitoring checklist, no Bear/Base/Bull projections, no thesis-broken conditions, no growth triggers exist.** This is an **initiation-context quarterly review.** No pre-committed trigger can fire; no probability re-weighting applies; no HOLD/ADD/TRIM/EXIT framing is available. All findings below are surfaced as **flags for the operator**, not decisions. The position branch is **8A-W** (non-held names).
+**PROVENANCE NOTE (added 04 Aug 2026):** A4 originally ran this review in initiation
+context because the local `companies/SAMHI.md` was absent. A live Notion search
+subsequently located the existing **SAMHI Hotels** page (COMPANIES MASTER
+data source). Steps 6, 7, 8 and Section C below were reconciled against that live
+thesis on 04 Aug 2026; the extraction, forensics, numbers, and Questions-for-
+Management (Steps 0–5, 8.5) are unchanged from the A5-audited version.
+
+**LIVE NOTION THESIS: PRESENT.** Decision Status **WATCHLIST** (effectively AVOID
+at CMP ~₹164 per the 21-May-2026 FY26 rescore; rescore trigger = FY26 Annual
+Report). **Entry zone ₹105–130.** Base fair value **₹206**; destination
+**EV/EBITDA 10.5x base** (both revised down at the 21-May-2026 rescore from ₹314 /
+12.5x). **Promoter Verdict CONCERN.** Pre-committed thesis-broken triggers:
+(1) Net Debt/EBITDA does not fall below **2.5x by FY28**; (2) **ROCE below 14% at
+FY27 annual**; (3) **IFC audit qualification repeats** in FY26. Master unresolved
+issue: **consolidated ROCE ~8%** (the 18% in the original thesis was single-asset
+level) — resolves only at the FY26 Annual Report with subsidiary-wise ROCE
+disclosure (expected August 2026). This is a **held-thesis (8A) review**, not
+initiation; findings are reconciled against the checklist and tripwires below and
+surfaced as flags — the decision stays human.
 
 ### Units (Step 0B)
 Filing and deck report in **INR millions.** Conversion: **Rs Crore = INR million x 0.1** (1 Rs Cr = 10 INR mn). Extraction tables below are anchored in INR mn as filed (line numbers cited); Rs Cr conversions appear in the analytical walks. Sector: **hospitality (India hotel asset owner/operator)** — NOT a lender. Standard-business variants (Steps 1, 5) apply; lender variants (1L, 5L) are skipped.
@@ -255,47 +273,62 @@ Reported PAT: Rs 192.16 mn → Rs 249.27 mn = **+Rs 57.11 mn (+29.7%)**.
 
 ## STEP 6 — RECONCILIATION VS THESIS
 
-**6A / 6B / 6C / 6D — NOT APPLICABLE.** There is **no Notion thesis, no Bear/Base/Bull projections, no monitoring checklist, no thesis-broken conditions, and no growth triggers** for SAMHI (new company, initiation context). Nothing can be reconciled against, no watchlist item read, no trigger checked, no probability re-weighting applied. **No thesis-broken condition can fire; therefore no EXIT/TRIM discipline is invoked.**
+**Reconciled against the live WATCHLIST thesis (04 Aug 2026).**
 
-**Initiation-context anchor (built here for the operator, NOT a committed thesis):**
-- One-line frame: *India multi-branded hotel owner/operator (Marriott/Hyatt/IHG), 31 hotels / 4,899 rooms, deleveraged to 3.2x, entering an upscale-mix + leisure (RARE) growth cycle funded by a pending Rs 750 cr raise.*
-- **FY26 reported PAT (Rs 5,665 mn / owners Rs 5,030 mn) is DTA-inflated and must NOT be used as an earnings base** for any valuation. Use PBT-before-exceptional (Rs 1,650 mn FY26) taxed at ~25% as the clean earnings proxy, i.e. **~Rs 1,238 mn normalised PAT FY26** — roughly 4.6x below the reported headline.
-- Operating EBITDA run-rate: ~Rs 982 mn/quarter (~Rs 3,930 mn annualised, post-GST structural basis).
+**6A — Monitoring checklist, Q1 FY27 readings (8-point checklist from the Notion page):**
+
+| # | Monitor | Green / Red band | Q1 FY27 reading (line cite) | Signal |
+|---|---|---|---|---|
+| 1 | Net Debt/EBITDA | Green <3.0x declining / Red >3.5x or flat | **3.2x** (14,928/4,664, deck slide 16 / PR L146), up from 3.1x Mar-26 | 🟡 not improving |
+| 2 | RevPAR growth YoY | Green >8% / Red <4% for 2Q | **+9.6%** same-store (deck L807; moving-base caveat P-13) | 🟢 |
+| 3 | Occupancy | Green >70% / Red <65% | **79.3%** (deck; L720 revenue corroborates) | 🟢 |
+| 4 | Cash interest coverage | Green >3.0x / Red <2.5x | Finance costs −25.5% (L735), effective rate 7.8% (deck slide 16) | 🟢 (directional; exact ratio ND in Q1) |
+| 5 | **ROCE (annualised)** | Green >16% improving / Red <14% | **NOT COMPUTABLE** — no balance sheet in a Q1 filing | ⚪ unresolved (the deal-breaker) |
+| 6 | W Hotel Hyderabad | Green on track Dec-26 / Red beyond FY27 | Deck: "under fit-out, construction complete," now **Q4 FY27** (slide 7 L234, slide 29) | 🟡 slipped ~1 quarter, still within FY27 |
+| 7 | IFC audit qualification | Green removed FY26 / Red repeats | Q1 limited review CLEAN both statements (L378/L625); FY26 AR audit pending | ⚪ pending FY26 AR |
+| 8 | RARE / promoter activity | Green scaling / Red stagnant | RARE consolidated (55%, 22 Apr), Leisure segment **zero booked revenue**, pilot H2 FY27 (P-02); no promoter (0% holding, structural) | 🟡 pre-revenue |
+
+**6B — Thesis-broken trigger status:** none of the three pre-committed triggers formally fired this quarter. (1) Net Debt/EBITDA 2.5x-by-FY28 — not yet testable, but 3.1x→3.2x this quarter is the wrong direction; (2) ROCE <14% at FY27 annual — not testable in a Q1 filing (no balance sheet); (3) IFC qualification — the Q1 limited review is clean, the FY26 statutory audit is the real test. **Decision Status therefore UNCHANGED: WATCHLIST, entry zone ₹105–130.** Decision Status changes only when a pre-committed trigger formally fires (house rule); none did.
+
+**6C — New signal not in the thesis (flag, do not decide):** the **Rs 750 cr fundraise + authorized-capital increase (25→29 cr shares, L60–88)** is a first-appearance development that cuts against a stated bull pillar — the thesis explicitly credited *"no equity dilution post-IPO, disciplined capital allocation."* Material forward dilution is now on the table (A3-F10/F13b). Add to the monitoring register; resolve instrument/quantum/timing at the 31-Aug-2026 AGM.
+
+**6D — Findings that CORROBORATE the existing thesis:** the 21-May-2026 rescore note on the page already states *"Headline PAT +562% is non-cash: Rs 300 Cr DTA + Rs 107 Cr impairment reversals… Op EBITDA only +8.8% with GST structural margin hit."* This quarter's independent extraction reproduces all three: **FY26 PAT DTA-inflated ~Rs 3,000 mn** (A3-F8/P-08), **GST margin hit now structural** (P-12), and **RARE confirmed as a leisure hotel/resort portfolio, not a tech platform** (P-02) — matching the page's own base-error correction. No contradiction with prior work; the pipeline reinforces it.
+
+**Earnings-base discipline (carried into Roles 1–3):** **FY26 reported PAT (Rs 5,665 mn / owners Rs 5,030 mn) is DTA-inflated and must NOT be used as an earnings base.** Use PBT-before-exceptional (Rs 1,650 mn FY26) taxed at ~25% ≈ **Rs 1,238 mn normalised PAT FY26** (~4.6x below the reported headline). Operating EBITDA run-rate ~Rs 982 mn/quarter (~Rs 3,930 mn annualised, post-GST structural basis).
 
 ---
 
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 
-**No prior Section 1B v3.3 pillar set exists** (new company). Nothing to re-validate; this quarter **establishes baseline data needs**, it does not revise a destination PE.
+**A prior Section 1B pillar set EXISTS** (Notion thesis; last revised at the 21-May-2026 FY26 rescore to **destination EV/EBITDA 10.5x base**, base fair value **₹206**, down from 12.5x / ₹314). This quarter is checked against those pillars; nothing in a Q1 filing revises them (no balance sheet), but two pillars are stress-tested by this quarter's data.
 
-| Pillar / Input | Status | This period's reading | Action |
+| Pillar / Input | Thesis value (post 21-May rescore) | Q1 FY27 read | Action |
 |---|---|---|---|
-| ROCE base (0.5×ROCE+7.5) | NOT ESTABLISHED | Company-level ROCE **ND** — no balance sheet / capital-employed in Q1 filing. Asset-level RoCE >30% disclosed for Fairfield Sriperumbudur (slide 36) is a single-asset data point, not company ROCE. | Compute at Q2/annual; FTTCP ROCE verdict pending |
-| Cash multiplier | NOT ESTABLISHED | CFO/PAT **INDETERMINATE** (Q1) | Set band at Q2 with H1 cash flow |
-| Growth Visibility Premium | NOT ESTABLISHED | Rich pipeline (1,669 rooms + RARE 1,046) but pre-revenue leisure, FY28-FY31 openings | Assess post-FTTCP |
-| Strategic Premium | NOT ESTABLISHED | Marriott/Hyatt/IHG tie-ups; RARE-Marriott Outdoor Collection optionality | Assess post-FTTCP |
-| UA Multiplier | N/A | No ownership/qualifier data in this set | — |
-| Sector Cap | Hospitality | — | Standard variant |
-| Hurdle Ratio | NOT COMPUTABLE | No current PE / EPS CAGR / destination PE | Compute after Roles 1-3 |
+| ROCE base | ROCE deal-breaker **NOT cleared**; consol ROCE ~8% (not the 18% single-asset figure) | **Not computable in Q1** (no balance sheet). Fairfield Sriperumbudur asset RoCE >30% (slide 36) is single-asset, NOT consolidated — the exact conflation the rescore corrected | Resolves at FY26 AR (subsidiary-wise ROCE, expected Aug 2026) — the master trigger |
+| Cash multiplier | 0.90x (growth-induced drag) | CFO/PAT **INDETERMINATE** (Q1, no cash-flow statement) — caps this review at PROCEED WITH CAVEATS | Recompute at Q2 (H1 cash flow) |
+| Growth Visibility Premium | +4x (EM 35, catalyst 0–6m) | Pipeline intact (1,669 rooms + RARE 1,046) but leisure **pre-revenue**, openings back-ended FY28–FY31; W Hyderabad slipped to Q4 FY27 | Hold; re-time catalysts |
+| Strategic Premium | +3x (brand franchise + W Hotel) | Marriott/Hyatt/IHG intact; RARE-Marriott Outdoor Collection pilot H2 FY27 | Hold |
+| Balance-sheet deal-breaker | **CLEARED** at FY26 (Net Debt/EBITDA 3.1x, A+, cash cover 3.6x) | 3.1x→**3.2x** this quarter (mild reversal on acquisition funding); still cleared, but **Rs 750 cr raise re-opens the leverage/dilution question** | Monitor raise structure at AGM |
+| Sector Cap | Hotels (30x PE) | — | Standard |
+| Destination EV/EBITDA / FV | 10.5x base / **₹206** base FV | Unchanged — a Q1 filing does not revise the destination multiple | Master rescore = FY26 AR |
 
-**Destination PE: not computed — no pillars to re-run.** Flag: full FTTCP + Role 1 workup required before any position framing.
+**Destination EV/EBITDA held at 10.5x base (FV ₹206).** No re-derivation this quarter; the ROCE pillar — the one that keeps SAMHI on WATCHLIST rather than investable — is resolvable only at the imminent FY26 Annual Report.
 
 ---
 
-## STEP 8 — POSITION DECISION (branch 8A-W: non-held / initiation)
+## STEP 8 — POSITION DECISION (branch 8A: held thesis / WATCHLIST)
 
-**Decision Status verified: NONE (no Notion page).** The 8A (held-position) branch does NOT apply; the **8A-W (non-held) branch** governs.
+**Decision Status verified (live Notion, 04 Aug 2026): WATCHLIST** (effectively AVOID at CMP ~₹164; entry zone ₹105–130). The **8A held-thesis branch** governs, not initiation.
 
-- No thesis-broken condition exists → none can fire → no AVOID reclassification.
-- No Bear/Base/Bull case exists → the "below bear / between bear-and-base / at-or-above base" ladder cannot be applied.
-- **Output of the 8A-W branch = the initiation gate**, stated explicitly:
+- **Thesis-broken ladder:** the three pre-committed triggers (Net Debt/EBITDA not <2.5x by FY28; ROCE <14% at FY27 annual; IFC qualification repeats) were checked in Step 6B — **none formally fired** in a Q1 filing (ROCE and the statutory audit are not testable without a balance sheet / annual audit). No AVOID reclassification is triggered by this quarter.
+- **Entry-zone ladder:** CMP not supplied in this run; against the standing entry zone **₹105–130**, WATCHLIST holds. The operator should place current CMP against ₹105–130 to confirm.
 
-**DECISION: NO POSITION. This is an initiation-context review. Recommended action for the operator:** run the full pipeline (FTTCP Quadruple Transition → Role 1 Valuation → Role 2 Thesis → Role 3 Devil's Advocate) to establish a Section 1B v3.3 destination PE, an entry zone, and thesis-broken triggers, using **PBT-before-exceptional taxed at ~25% (NOT the DTA-inflated FY26 PAT)** as the earnings base. Until then, all items below are **flags for the operator, not decisions.**
+**DECISION: HOLD WATCHLIST — UNCHANGED.** This quarter does not fire a tripwire and does not resolve the deal-breaker; it is a good operating quarter (RevPAR +9.6%, occupancy 79.3%, finance costs −25.5%) sitting on top of an unresolved consolidated-ROCE question, a leverage tick-up (3.1x→3.2x), and a **new Rs 750 cr dilution overhang** that cuts against a bull pillar. Net read: **NEUTRAL for the thesis** — it confirms WATCHLIST rather than changing it.
 
-**Master decision gate:** set at the **Q2 FY27 (H1) filing** — the first point at which (a) the H1 cash-flow statement resolves the cash-conversion INDETERMINATE cap, (b) a balance sheet enables company-level ROCE, and (c) the Rs 750 cr raise / AGM (31 Aug 2026) outcome and RARE PPA are visible.
+**Master rescore trigger (from the thesis): the FY26 Annual Report with subsidiary-wise ROCE disclosure, expected August 2026** — the only disclosure that resolves the consolidated-ROCE deal-breaker. Secondary gates: the 31-Aug-2026 AGM (Rs 750 cr raise structure + dilution) and the Q2 FY27 (H1) filing (cash-flow statement resolves the cash-conversion INDETERMINATE cap; enables company-level ROCE). Earnings base for any Role 1 re-run: **PBT-before-exceptional taxed at ~25%, NOT the DTA-inflated FY26 PAT.**
 
 ### 8B. Add-back / trim triggers
-Not applicable (no position, no Notion ladder to refine).
+No position held (WATCHLIST). The actionable ladder is the **entry zone ₹105–130** (buy discipline) and the standing thesis-broken triggers above — not add/trim. New pre-commitment to record: resolve the Rs 750 cr raise structure at the AGM before any conviction upgrade.
 
 ### 8C. Single cleanest metric for next quarter (Q2 FY27)
 **SAMHI-attributable (owners') PAT growth, ex-DTA and ex-exceptional, YoY — read jointly with the post-GST operating EBITDA margin.**
@@ -392,9 +425,9 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 
 **Reconciliation:** filing numbers win on every conflict. The operating business is genuinely growing; the *reported* profit picture is heavily distorted by tax (DTA), OI base effects, exceptional reversals, and minority attribution — all of which management's communications smooth over with comparable-basis presentation.
 
-**Net thesis impact:** **N/A — no thesis exists.** This is initiation context.
+**Net thesis impact:** **NEUTRAL — WATCHLIST unchanged.** No pre-committed tripwire fired; the deal-breaker (consolidated ROCE) is not testable in a Q1 filing. Operating momentum corroborates the bull operating leg; the DTA-inflated base, the leverage tick-up (3.1x→3.2x), and the new Rs 750 cr dilution overhang keep the caution intact. This quarter confirms the stance rather than moving it.
 
-**Position decision:** **NO POSITION (8A-W initiation gate).** Run FTTCP → Roles 1-3 using PBT-before-exceptional taxed at ~25% as the earnings base. Master gate at the Q2 FY27 (H1) filing.
+**Position decision:** **HOLD WATCHLIST (8A held-thesis branch), entry zone ₹105–130, unchanged.** Master rescore = FY26 Annual Report (subsidiary-wise ROCE, expected August 2026); secondary gates = 31-Aug-2026 AGM (Rs 750 cr raise structure) and Q2 FY27 (H1) filing (cash flow → resolves the cash-conversion cap). Any Role 1 re-run uses PBT-before-exceptional taxed at ~25%, NOT the DTA-inflated FY26 PAT.
 
 **Protocol verdict: PROCEED WITH FLAGS.** The filing is fully extracted and reviewed and nothing mechanical halts; but the volume and materiality of forward flags (DTA-inflated base, structural GST margin hit, minority leakage, pending dilution, unreviewed loss-making consolidations, pre-revenue leisure) require prominent surfacing to the operator. Independently, the **INDETERMINATE cash conversion caps the ceiling at PROCEED WITH CAVEATS** (missing evidence: H1 FY27 cash-flow statement) — recorded per house rule; PROCEED WITH FLAGS sits at or below that ceiling.
 
@@ -458,8 +491,8 @@ ledger_reconciliation:
     - A3-07
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"       # Q1 filing carries no cash-flow statement; caps ceiling at PROCEED WITH CAVEATS; missing evidence = H1 FY27 cash-flow statement
-decision_status_verified: "NONE (new company, no Notion page, initiation-context review)"
-position_branch: "8A-W"
+decision_status_verified: "WATCHLIST (live Notion page located 04 Aug 2026; effectively AVOID at CMP ~164; entry zone 105-130; unchanged this quarter, no tripwire fired)"
+position_branch: "8A"   # held-thesis / WATCHLIST branch (corrected 04 Aug 2026; A4 originally ran 8A-W initiation before the Notion page was located)
 sc_gap_pat_pct:
   - {period: "Q1 FY27", standalone_rs_cr: 1.1, consolidated_rs_cr: 24.93, consolidated_owners_rs_cr: 18.25, standalone_pct_of_consol: 4.4, note: "A2 Rs 247 cr standalone was a Q4FY26 OCR column mis-read; corrected; owners' PAT 182.50 vs 172.80 = +5.6% YoY"}
   - {period: "Q1 FY26", standalone_rs_cr: 45.89, consolidated_rs_cr: 19.22, consolidated_owners_rs_cr: 17.28, standalone_pct_of_consol: 238.8, note: "standalone > consolidated on one-time profit-on-sale-of-investment exceptional"}
@@ -511,7 +544,8 @@ flags:
   - "Cash conversion INDETERMINATE (Q1, no cash-flow statement) — caps ceiling at PROCEED WITH CAVEATS; missing evidence H1 FY27 cash flow"
   - "Investor-communication favourable-framing pattern (comparable/ex-GST/consolidated/IPO-baseline); 3.0x vs 3.2x same-document inconsistency (A3-03)"
   - "Hyatt Regency Pune 22 apartments complete but revenue-blocked pending approval (P-07); Westin Whitefield opening-year conflict FY28 vs FY30 (P-05)"
-  - "No Notion thesis / Decision Status: initiation context; run FTTCP + Roles 1-3 before any position; master gate at Q2 FY27 (H1) filing"
+  - "Decision Status WATCHLIST (live Notion, unchanged): no tripwire fired; consolidated ROCE deal-breaker (~8%) unresolved and not testable in a Q1 filing; master rescore = FY26 Annual Report (subsidiary-wise ROCE, expected Aug 2026); entry zone 105-130"
+  - "NEW vs thesis: Rs 750cr raise + authorized-capital increase cuts against the 'no equity dilution' bull pillar — resolve structure at 31-Aug-2026 AGM before any conviction upgrade"
   - "Auditor: unmodified/clean both statements; two immaterial Other-Matter paragraphs (unreviewed entities)"
 review_path: "/home/user/inflection-pipeline/runs/samhi-q1fy27/work/review_samhi_q1fy27.md"
 ```

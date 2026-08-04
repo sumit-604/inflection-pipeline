@@ -1,0 +1,23 @@
+stage: B12c-valuation
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+gate0: {rules_checked: 0, fails: []}   # ran in phase 1; not re-audited here
+emoat: {rules_checked: 0, fails: []}   # ran in phase 1; not re-audited here
+valuation:
+  rules_checked: 40
+  fails:
+    - {id: "VAL-1", severity: "MAJOR", rule: "TTM EPS construction (Sec1B v3.5.1 HR consistency)", location: "B10 L79 / B10 YAML ttm_eps_rs", claimed: "14.10 (14.99 - Q4FY25 11.63 + Q1FY27 10.72)", correct: "22.09 (14.99 - Q1FY26 3.62 + Q1FY27 10.72)", note: "wrong quarter removed; B11 caught and corrected to 22.09; decision-invariant (HR=FV/CMP)"}
+recomputed_destination_pe: ""   # concur 12.2x
+recomputed_decision: ""         # concur AVOID (Hurdle STOP)
+findings:
+  - {severity: "MAJOR", location: "B10 assembly (L79, YAML)", claimed: "TTM EPS 14.10 -> current PE 37.1x", recomputed: "TTM EPS 22.09 -> current PE 23.68x", note: "VAL-1; corrected in B11; decision-invariant"}
+  - {severity: "MINOR", location: "B10/B11 vs fttcp-deliberation", claimed: "CFO/PAT 0.90x/6.05x vs 0.77x/6.21x", recomputed: "volatile band either way", note: "VAL-2; Verifier-A domain; multiplier 1.00x invariant"}
+  - {severity: "MINOR", location: "B11 4F", claimed: "Upside/Downside 0.09x", recomputed: "base upside -5.8% is itself negative; already fails 2x", note: "VAL-3; cosmetic sign context"}
+  - {severity: "MINOR", location: "B14 decision-trace", claimed: "Gate0 AVERAGE default WATCHLIST superseded by STOP", recomputed: "Gate0 AVERAGE is a direct AVOID trigger (Master L809)", note: "VAL-4; net AVOID over-determined; presentational"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 97.5   # 39 of 40 valuation rules passed
+coverage_note: "Valuation-adherence half only: B10 assembly, B11 four-pillar valuation + Hurdle + entry, B14 Role 2 decision/sizing. Gate 0 and Emerging Moat audited in phase 1. Raw number existence deferred to Verifier A. Destination PE 12.2x and decision AVOID(STOP) both concur; single MAJOR is an upstream B10 TTM error corrected in B11 before the decision."

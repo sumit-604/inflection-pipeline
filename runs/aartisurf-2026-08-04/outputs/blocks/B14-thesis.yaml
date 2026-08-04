@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 202, high: 252}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "Q2 AND Q3 FY27 operating margin both print >=7.5% on a Reg 52(4) basis, moving the Margin transition to STARTING and lifting base EPS (would re-open the case, at a lower entry)"
+monitoring_checklist:
+  - "Operating margin (Reg 52(4)): Q2 AND Q3 FY27 both >=7.5% green; any quarter <6% red (decisive tripwire)"
+  - "H1 FY27 CFO >0 with payables not falling; CFO <0 or falling-with-payables-falling engages Kernex cap"
+  - "Rs 18.50 cr preference-share redemption completed by 19-Aug-2026 with no new short-term borrowing"
+  - "Pithampur commissioning (SHARED CATALYST) announced complete by 31-Dec-2026; CWIP not stalled, no cost-overrun"
+  - "Total debt / PBILDT trending toward <2.5x; above 3.5x triggers CARE negative sensitivity"
+  - "Top-2 customer concentration <=71% and no disclosed customer loss"
+  - "Revenue YoY growth double-digit maintained; a flat/declining quarter is a red signal"

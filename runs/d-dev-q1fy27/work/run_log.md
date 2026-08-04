@@ -69,3 +69,22 @@ in inputs/ for audit; neither run separately to avoid redundant chains.
 ## ANALYSIS PHASE
 - Role 4 (Quarterly Results Review Protocol v1.2): APPLICABLE (results filing present).
 - Role 5 (Concall Protocol v1.1): N.A. — no concall document in the set.
+- **A4 merged review:** verdict PROCEED WITH FLAGS. 19 management questions. Cash conversion
+  INDETERMINATE (no Q1 CF statement under Reg 33). Plain-language brief present.
+- **A5 audit:** loop 0 INCOMPLETE (A3-17/A3-F06 undispositioned) → A4 fix loop 1 → **A5 re-audit COMPLETE.**
+  ~40 arithmetic recomputations zero mismatches; coverage full; Annexure E ₹2,000 Cr upheld;
+  no thesis-broken trigger FIRED. One loop used (max 2). Run proceeds to Notion save.
+
+## NOTION SAVE (inline, after A5 COMPLETE)
+- Page: DEE Development Engineers Limited (DEEDEV), id 382bb2b9-d3ab-81a4-95e6-d60d6cc5eda9.
+- Full merged review appended (7 sequential inserts, complete tables + 19-question table + press-release
+  cross-check + monitorables + PLAIN-LANGUAGE BRIEF + A3 forensics summary + A5 audit verdict).
+- Key Notes property PREPENDED with the 04 Aug 2026 Q1 FY27 entry; all four prior entries preserved
+  (verified: 2901 → 4751 chars). Decision Status UNCHANGED at HELD (no pre-committed trigger fired).
+- Post-save verification: page body + Key Notes integrity confirmed via re-fetch grep.
+
+## CLOSE
+- LESSONS.md dated entry appended (2026-08-04 D-DEV).
+- Run committed and pushed to claude/d-dev-quarterly-analysis-jnyqb1.
+- RESULT: A5 COMPLETE | PROCEED WITH FLAGS | Decision Status HELD (flagged, not decided).
+- Count reconciliation: 14 notes (7 SA + 7 consol) / 0 concall turns / 4 press-release pages, all reviewed.

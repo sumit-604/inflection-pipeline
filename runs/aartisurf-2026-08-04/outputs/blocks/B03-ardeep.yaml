@@ -1,0 +1,43 @@
+stage: B03-ardeep
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR supplied is FY2020-21 (year ended 31 March 2021), ~5.3 years stale; no FY2021-22 through FY2024-25 AR in input folder"
+  - "No effective-vs-statutory tax rate reconciliation (Note 12); ~2.2% effective current tax rate cannot be explained"
+  - "No quantitative ECL matrix disclosed for trade receivables (Note 5)"
+  - "No Ind AS 116 ROU asset/lease liability/discount rate disclosed despite full policy language"
+  - "No covenant terms/breaches/waivers for term loan/WC facility (Note 11)"
+  - "No lender name/relationship for new Rs820 Lakh Inter Corporate Deposit (Note 11); absent from Related Party Note 31"
+  - "No relationship disclosed for new >5% shareholder Nikhil Holdings Pvt Ltd (Note 9.4); name similarity to MD Nikhil Parimal Desai is an observation only"
+  - "No quantified FX exposure/hedge/sensitivity (Note 33.B)"
+  - "Company's disclosed 'Return on Net Worth 25.14%' (Directors' Report p.11) not reproducible from disclosed figures (16.31% closing / 17.77% average equity); methodology undisclosed"
+  - "No pre-FY2020-21 AR available for narrative-drift assessment (Phase 6D)"
+flags:
+  - {type: FLAG-CASH, reason: "Receivables +203.7% YoY vs revenue +43.0% (days 20.1->42.6) and payables +305.9% vs COGS +43.4% (days 28.3->80.1), re-verified exact; CFO/PAT 1.66x is substantially payable-stretch funded not organic; FCF deeply negative (Rs-2,565.54 Lakhs) both years shown"}
+  - {type: FLAG-GOVERNANCE, reason: "0% RPS (Rs1,941.88 Lakhs) unlisted ~2y post-issuance; CARE BBB- (RPS) four notches below AA- SEBI minimum (Directors' Report p.17-18; CG Report p.36; Note 11.1(b))"}
+  - {type: FLAG-GOVERNANCE, reason: "Jaya C. Gogri 5.27%->21.17% intra-year while HDFC Trustee fully exited (9.41%->0%), ~3-4x price rise; new unexplained >5% holder Nikhil Holdings Pvt Ltd (5.62%) appeared; Risk Management Committee constituted only 21 May 2021, so no formal risk-oversight body operated during FY2020-21 (Note 9.4; CG Report)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter-family stake concentration (5.27%->21.17%) with full institutional exit and an unexplained new >5% holder whose name suggests a connection to the MD; full analysis deferred to B08"}
+phase_verdicts: {p1: "Watch", p2: "Red Flag", p3: "Watch", p4: "Watch", p5: "Red Flag", p6: "Watch", p7_best_fit: "Turnaround (post-COVID), unconfirmed pending current-year data; GARP also Watch"}
+overall_quality: 4
+quality_components: {governance: 4, accounting: 4, balance_sheet: 4, earnings: 5}
+triple_pass_verification: {verified: 15, discrepancies: []}
+kill_switch_notes:
+  - "INFORMATIONAL ONLY (never halts). P2: reviewer would pause on cash-conversion quality before treating profit growth at face value. P5: reviewer would flag governance for direct management questions before any capital decision. No fraud, no going-concern, no SEBI action, no promoter pledge disclosed."
+missing_risks:
+  - {risk: "Cash conversion / WC deterioration", evidence: "Receivables +203.7%, payables +305.9% vs +43%; absent from MD&A Risk section p.11"}
+  - {risk: "RPS non-listing / rating shortfall", evidence: "CARE BBB- vs AA- SEBI minimum; never framed as a risk in MD&A"}
+  - {risk: "Customer concentration", evidence: "Two customers = 35.04% of revenue (Note 30); contradicts 'diversified customer base' claim (MD&A p.10)"}
+  - {risk: "Two-plant/single-segment concentration post-fire", evidence: "Silvassa fire same year (Note 1(b)); only 2 plants; not discussed as continuity risk"}
+  - {risk: "Pithampur land title", evidence: "Rs267.80 Lakhs in demerged parent's name (CARO Annexure A p.52)"}
+  - {risk: "Undisclosed ICD counterparty", evidence: "Rs820 Lakh ICD, no lender named (Note 11)"}
+monitorables:
+  - {metric: "Trade receivable days", threshold: "sustained above / worse than 42.6 days", where: "Trade Receivables note", why: "tests whether FY21 cash-conversion deterioration reversed or became structural"}
+  - {metric: "Trade payable days", threshold: "sustained above / worse than 80.1 days", where: "Trade Payables note", why: "tests whether FY21 CFO strength was one-off payable stretch now unwinding"}
+  - {metric: "RPS listing status / CARE rating on RPS", threshold: "any movement toward AA-, or listing/redemption announcement", where: "Credit rating disclosures", why: "resolves the structural listing impediment"}
+  - {metric: "Net Gearing / Net Debt-to-EBITDA", threshold: "sustained above 1.09x / 3.2x", where: "Capital Management note", why: "tests whether the Rs225 Cr ceiling was drawn and leverage kept rising"}
+  - {metric: "Promoter-group holding %, Nikhil Holdings Pvt Ltd relationship", threshold: "further concentration, or disclosed related-party status", where: ">5% shareholders note", why: "clarifies FY21 ownership-concentration / institutional-exit pattern"}
+  - {metric: "Most recent AR (FY2021-22 through FY2024-25)", threshold: "must be sourced before any valuation/decision", where: "Company website / BSE-NSE filings", why: "entire stage built on 5-year-old financials"}
+best_fit_strategy: "Turnaround (post-COVID recovery), unconfirmed pending current-year data; GARP a live but unconfirmed candidate"
+one_line_verdict: "FY2020-21 recovery is real and partly capex-backed, but payable-stretch-funded cash flow, an unresolved RPS/credit-rating issue, a promoter-family shareholding shift alongside an institutional exit, and five years of data staleness cap this stage at PROCEED WITH CAVEATS at best, pending current financials and direct management answers."

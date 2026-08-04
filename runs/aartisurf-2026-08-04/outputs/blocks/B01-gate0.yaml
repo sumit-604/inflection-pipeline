@@ -1,0 +1,40 @@
+stage: B01-gate0
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results_pdfs: NOT FOUND - no quarterly or annual results PDFs provided for this run"
+  - "shareholding_pattern_latest: NOT FOUND - screener CSVs carry no shareholding data; only a single AR FY2020-21 snapshot (Mar 31 2021, Promoter+Promoter Group 48.68%) exists, 5 years stale, used for context only, not scored"
+  - "credit_rating_latest: NOT FOUND - only a historical CARE rating action dated Oct 2020 appears in AR FY2020-21 (p.36), no current rating available"
+  - "announcements: NOT FOUND - no corporate announcements data provided"
+  - "screener_balance_sheet_cash_flow_quarters_customization_csvs: empty Screener.in export templates, header rows only, zero populated data rows"
+  - "trade_payables: NOT FOUND - not itemized anywhere in screener-Data_Sheet.csv; blocks WC Days, Current Ratio, and M12 computation"
+  - "capex_breakdown: NOT FOUND - screener-Data_Sheet.csv gives only aggregate Cash from Investing Activity, not itemized purchase of PPE/intangibles; blocks FCF computation (B2, B3)"
+  - "annual_report_vintage_mismatch: AR provided is Annual Report 2020-21 (FY ended 31-Mar-2021), not FY2022 as briefed; ~5 years stale relative to this FY26 run"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification is AVOID (Core 35/100, below the <40 AVOID threshold), driven by median ROCE 8.36% and median ROE 6.45% across the full 7-year history (FY20-FY26), neither of which ever clears 12% median. Historical depressor identified: FY20 was a post-listing/demerger startup year (net margin 0.64%, the weakest of all 7 years), and ROCE has not exceeded 15% in any single year on record (peak 14.53%, FY24). Block E (Shareholder Alignment, 0/20) is a data-availability gap, not a scored governance failure - no current shareholding, pledge, or contingent-liability data exists in the provided inputs."
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 5, B: 5, C: 17, D: 8, E: 0}
+core_score: 35
+moat_score: 8
+grand_total: 43
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A <8 (A=5/20) -> would cap max GOOD; moot, Core<40 rule already yields AVOID"
+  - "2: Block B <8 (B=5/20) -> would cap max GOOD; moot, Core<40 rule already yields AVOID"
+  - "3: median ROCE <10% (8.36%) -> would cap max AVERAGE; moot, Core<40 rule already yields AVOID"
+history_downgrade: false
+data_notes:
+  - "No loss-to-profit swings across FY20-FY26; PAT positive in all 7 years"
+  - "FY20 is an anomalously depressed base year (0.64% net margin, weakest in series) which inflates the FY20->FY26 PAT CAGR (34.44%) computed off that base; treat as base-effect-driven, not steady-state compounding"
+  - "Inventory Days and Receivable Days computed on Sales basis, not COGS basis, since COGS is not explicitly a separate line in screener-Data_Sheet.csv; basis stated per rule"
+  - "ROCE Capital Employed computed as Net Worth + Total Borrowings (screener-standard proxy), not strict Total Assets - Current Liabilities, because screener-Balance_Sheet.csv is an empty template"
+  - "PEER DATA NEEDED for M2 (Cost Advantage), M5 (Scale & Dominance), M9 (Brand) - no peer/industry comparison data provided in any input"
+  - "FY26 P&L: Power & Fuel, Other Mfr. Exp, and Selling & Admin are blank in screener-Data_Sheet.csv and appear folded into 'Other Expenses' (65.57 Cr); verified by exact reconciliation (812.24 Cr matches to the cent); blocks isolating FY26 selling-expense ratio for M11"
+  - "Annual report provided is Annual Report 2020-21 (FY ended 31-Mar-2021), not FY2022 as briefed; ~5 years stale relative to this FY26 run"
+block_b_trend: "improving - CFO recovered from Rs11.14cr in FY25 (0.77x that year's PAT of Rs14.54cr, weakest CFO/PAT conversion in the 7-year series) to Rs76.65cr in FY26 (6.21x FY26 PAT of Rs12.34cr), against a 7-year cumulative CFO/Cumulative PAT ratio of 2.68x"

@@ -1,0 +1,53 @@
+stage: B08-promoter
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Lead promoter Aasif Ahsan Khan (41.52% post-issue) is named accused in a pending, currently-stayed criminal fraud complaint (false/bogus invoices), summons issued Dec 2021, revision stayed Mar 2025"
+      - "~16.7% of FY25 revenue purchased from promoter-group entities incl. sister LISTED company Fabtech Technologies Cleanrooms Ltd (BSE 544332), no non-compete agreement exists"
+      - "Related-party loan to promoter-linked Buildmighty Techno (Rs 596.30L, 2012) went unpaid; recovery pursued via NCLT/NCLAT, still pending"
+      - "46-entity promoter group incl. 2 RoC strike-offs (Podtech Lifesciences, Nangfa Leisure LLP) and offshore UAE/Saudi vehicles"
+      - "Transition evidence present: 0% pledge (confirmed FY26), value-accretive TSA stake sale to Thermax Ltd, independent directors expanded 3->5 post-listing"
+verdict: "CONCERN"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoter Aasif Ahsan Khan named accused, pending criminal complaint alleging false/bogus invoices (Pawan Kumar Ramakrishna complaint)", evidence_tier: "VERIFIED", source: "IPO prospectus p.412-413", date: "2021-12-30 (ongoing, stayed 2025-03-28)"}
+  - {finding: "Civil suit by Akums Drugs and Pharmaceuticals vs FTIPL, promoters Aasif Khan & Hemant Anavkar, Rs 792.43 lakh claim", evidence_tier: "VERIFIED", source: "IPO prospectus p.413-414", date: "pending, listed 2025-11-19"}
+  - {finding: "Related-party loan to Buildmighty Techno (promoter Aarif Khan is director) unpaid since 2012, CIRP/NCLAT recovery still pending", evidence_tier: "VERIFIED", source: "IPO prospectus p.414", date: "2025-05-14 NCLAT order"}
+  - {finding: "Sister listed company Fabtech Technologies Cleanrooms Ltd (BSE 544332) is largest RPT supplier (~Rs 28.04cr FY25), no non-compete", evidence_tier: "VERIFIED", source: "IPO prospectus Note 45 p.350-351; Risk Factor 14", date: "FY25"}
+  - {finding: "Two promoter-group entities struck off/dissolved by RoC (Podtech Lifesciences Aug 2025, Nangfa Leisure LLP Jul 2024)", evidence_tier: "VERIFIED", source: "IPO prospectus p.293-294", date: "2024-07-03; 2025-08-20"}
+  - {finding: "Rising sales commission to offshore promoter entity G7 Universal LLC (Sharjah)", evidence_tier: "VERIFIED", source: "IPO prospectus Note 45 p.351", date: "FY23-FY25"}
+  - {finding: "CFO Guman Mal Jain resigned after <9 months during IPO-readiness period, cited health concerns", evidence_tier: "VERIFIED", source: "IPO prospectus p.273", date: "2024-10-17"}
+transition_evidence:
+  - {item: "TSA Process Equipments 51% stake sold to Thermax Ltd for Rs 71cr, value-accretive divestment to non-group strategic", source: "IPO prospectus Note 36 p.341; MarketScreener/CRISIL", date: "2024-02-06"}
+  - {item: "Independent directors expanded 3->5 via postal ballot (~99.99% approval)", source: "TipRanks/scanx.trade exchange filings", date: "2026-06-30"}
+  - {item: "Non-family, professionally credentialed CEO (Ashwani Kumar Singh, ex-Grasim/Piramal/Watson Pharma) heads operations", source: "IPO prospectus p.283", date: "2024-03-14"}
+  - {item: "0% pledge formally confirmed via NSE/BSE declaration", source: "scanx.trade exchange filing", date: "FY26"}
+  - {item: "Lead promoter Aasif Khan stepped down from Executive Director to non-executive/NRI role ahead of IPO", source: "IPO prospectus p.273", date: "2022-12-29"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% (FY26 only data point, formally confirmed by exchange filing; no pre-listing pledge history exists - company listed Oct 2025)"
+scrip_code_resolution: "FABTECH (the analysed company) = BSE 544558 / NSE FABTECH. BSE 544332 = Fabtech Technologies Cleanrooms Ltd, a SEPARATE sister LISTED company in the promoter group and FABTECH's largest RPT supplier. Therefore the inputs/screening/544332-*.csv and inputs/peer-concalls/544332-Concall*.pdf files are the SISTER RELATED PARTY, not an arm's-length peer -- flag to stage 6."
+searches_performed:
+  - "Fabtech Technologies Limited FABTECH SEBI order"
+  - "Fabtech Technologies Aasif Ahsan Khan Hemant Anavkar promoter"
+  - "Fabtech Technologies IPO listing October 2025 shares pledge"
+  - "Fabtech Technologies Limited BSE scrip code 544558 OR 544332"
+  - "Fabtech Technologies Cleanrooms Limited promoter Aasif Khan Hemant Anavkar related party"
+  - "Fabtech Technologies Glassdoor OR AmbitionBox employee reviews"
+  - "TSA Process Equipments Thermax acquisition Fabtech"
+  - "Fabtech Technologies IiAS proxy advisory governance"
+  - "Fabtech Technologies Limited stock listing performance analyst research report 2026"
+  - "Fabtech Technologies fraud OR scam OR investigation OR complaint"
+  - "Fabtech Technologies Limited Q3 FY26 results institutional investor stake"
+  - "Fabtech Technologies Rupal Haria Bharti Khanna independent director appointment"
+  - "Fabtech Technologies Cleanrooms Limited related party transactions dependency risk two listed companies"
+  - "Podtech Lifesciences struck off Fabtech promoter"
+  - "Fabtech Technologies Limited G7 Universal LLC Sharjah commission related party concern"
+searches_skipped: []
+verdict_basis: "16.7%-of-revenue RPT dependency on a promoter group that includes a sister LISTED company with no non-compete, an unresolved defaulted related-party loan (Buildmighty), and the lead promoter's pending criminal fraud complaint outweigh a clean SEBI/0%-pledge record and genuine post-listing governance transition evidence"

@@ -1,0 +1,29 @@
+stage: B12b
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 19
+caught: 13
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Non-operating other income (~Rs 21 Cr: ~12 Cr forex + ~7 Cr IPO-FD interest) is ~55% of FY26 reported net profit (Rs 38.36 Cr); earnings-quality dependence never flagged by B05/B06", anchor: "Apr-2026 call, Karan Doshi, p17; Ashwani p3"}
+  - {severity: "MAJOR", item: "Hot-lead/pipeline headline unstable and re-labelled: ~$455M (Feb) -> ~$200M (Apr) -> ~Rs 3,800 Cr (Aug) within a new Rs 9,300 Cr funnel, while order book stays flat ~Rs 900-926 Cr", anchor: "Feb-2026 p6; Apr-2026 p10; Aug-2026 p3"}
+  - {severity: "MINOR", item: "'Asset-light/not capital-intensive' narrative contradicts Rs 24 Cr+ subsidiary deployment, IPO-funded M&A and admitted persistent negative operating cash flow; contradiction never drawn (facts present in B05/B06)", anchor: "Nov-2025 p12; Apr-2026 p5; Aug-2026 p3; OCF Apr-2026 p7"}
+  - {severity: "MINOR", item: "Nov-2025/Q2 FY26 call structurally excluded by B05: strongest guidance-refusal baseline, in-call 22-vs-62-countries contradiction, and factual sloppiness (wrong investor name; 20-projects-answered-as-12) uncaught; corroborates existing HIGH guidance flag", anchor: "Nov-2025 p3, p4, p11, p14-15"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C is appropriate; added other-income earnings-quality, pipeline-volatility and revenue-timing-discretion findings reinforce C, do not move it"
+findings:
+  - {severity: "MAJOR", location: "B05 red_flags / Section 2D — omission", description: "Other income ~Rs 21 Cr (~12 Cr forex + ~7 Cr IPO-FD interest) is ~55% of FY26 reported PAT Rs 38.36 Cr; quality-of-earnings dependence on volatile/one-off income not flagged (Apr call, Karan p17)"}
+  - {severity: "MAJOR", location: "B05 triggers #1 / red_flags — omission", description: "Hot-lead pipeline figure volatile and definitionally unstable ($455M Feb -> $200M Apr -> Rs 3,800 Cr Aug; new Rs 9,300 Cr funnel) against flat ~Rs 900-926 Cr order book; not flagged (Feb p6, Apr p10, Aug p3)"}
+  - {severity: "MAJOR", location: "B05 red_flag #3 / repeated_evasions — under-weighted", description: "Revenue-timing discretion: management states it holds/releases shipments to time revenue ('we have the flexibility... if the LC is getting expired, we'll ship it'), an earnings-smoothing lever, framed by B05 only as quarter-lumpiness/predictability (Feb p11, p18)"}
+  - {severity: "MINOR", location: "B05 / B11 handoff — interpretation gap", description: "'Asset-light/not capital-intensive' claim contradicts Rs 24 Cr+ subsidiary deployment, IPO-funded M&A and admitted persistent negative operating cash flow; contradiction not surfaced despite Pillar 1 (ROCE) relevance (Nov p12, Apr p5/p7, Aug p3)"}
+  - {severity: "MINOR", location: "B05 scope — Nov-2025 excluded", description: "Q2 FY26 call excluded by the 3-quarter contract; strongest guidance-refusal baseline, 22-vs-62-countries in-call contradiction, and factual sloppiness uncaught; corroborates existing HIGH guidance-discipline flag (Nov p3, p4, p11, p14-15)"}
+  - {severity: "MINOR", location: "B05 triggers #4 / Section 3D — interpretation gap", description: "Project-cycle (18-24 vs 9-18 vs 23-27 vs 12-36 mo) and ticket-size ($1.5-3M vs $7-10M vs $30-40M/$70M) figures wobble across calls; B05 treats ticket-size as a validated positive trigger without flagging the inconsistency"}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 68
+redflag_coverage_pct: 68
+redflag_coverage: "strong — 13/19 fully caught, 2 partially; B05 independently surfaced every repeated 2+-quarter evasion and the material guidance/receivables/RPT/governance flags. Gaps are (a) earnings quality: >50% of PAT is non-operating other income; (b) pipeline-figure volatility; (c) an under-weighted earnings-timing-discretion dimension; (d) the structurally-excluded Nov-2025 baseline. None overturn the C grade or the decision; no CRITICAL, no invented pipeline flag."

@@ -1,0 +1,22 @@
+stage: confidence-delta
+company: "FABTECH"
+run_date: "2026-08-04"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 93        # B12a strict numerical accuracy (14/15; one immaterial rounding variance). Headline B12a acceptance_rate 53 counts interpretation/disclosure findings that are legitimate analytical catches, not numerical errors; 0 source-fidelity MISMATCHes; REWORK gate not triggered.
+  redflag_coverage: 68            # B12b: 13/19 independent red flags fully caught upstream (+2 partial); coverage graded "strong"; no CRITICAL
+  framework_adherence: 97         # B12c PHASE-1 SCOPE: Gate 0 (46/46 rules pass) + Emerging Moat (2 MINOR observations, no CRITICAL/MAJOR). Valuation adherence PENDING PHASE 3.
+  peer_utilisation: 83            # B12d: 10 of 12 provided peers used substantively
+  overall: 68                     # min of the four available phase-1 components
+  valuation_framework_adherence: PENDING_PHASE_3
+interpretation_band: "60-74: PROCEED-family verdicts downgrade one level. Driven by redflag_coverage 68 (the binding component): stages caught the material guidance/receivables/RPT/governance flags but missed the earnings-quality dependence on ~55%-of-PAT non-operating other income, the definitionally-unstable pipeline figure, and an under-weighted revenue-timing-discretion lever. Numbers themselves are 93% clean with zero source-fidelity mismatches; framework adherence is high (97)."
+verifier_severity_rollup:
+  critical: 2                     # both B12a; both SOURCE-INTERNAL / concall-silence items correctly surfaced by the stages, NOT fabricated/misread stage figures -> no REWORK
+  major: 10                       # B12a 5, B12b 3, B12c 0, B12d 1 (+ B12a MAJOR count includes disclosure/interpretation, not numerical mismatch), B09/B06 handoffs
+  minor: 8
+rework_triggered: false
+rework_note: "No CRITICAL is a fabricated or materially misread stage figure; no verifier acceptance_rate on a numerical/coverage basis falls below the 60% hard floor when read on its correct denominator (numerical 93, redflag 68, framework 97, peer 92/util 83). Confidence overall 68 places phase-1 in the one-level-downgrade band, not the forced-REWORK band (<60)."
+carry_forward_corrections:
+  - "B12d MAJOR: the B06 Part-5 claim that 'Anup shifted away from 100% fixed-price terms' is FABRICATED (contradicted by Anup's own Feb-2026 and May-2026 transcripts). Must NOT be used in synthesis. The six formal peer claim verdicts (Q1-Q6) are unaffected and remain valid."
+  - "B12b MAJOR (earnings quality): ~Rs 21 Cr non-operating other income (~12 Cr forex + ~7 Cr IPO-FD interest) is ~55% of FY26 reported PAT Rs 38.36 Cr; synthesis must surface this earnings-quality dependence."
+  - "B12a CRITICAL: the Rs 37.18 Cr (18.2%) unreconciled trade-receivables gap between the consolidated balance sheet and Note 13 sits inside the auditor's KAM; it is a source-internal inconsistency, not a stage error, and is a live monitorable."

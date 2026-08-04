@@ -1,0 +1,19 @@
+stage: B12d
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+peer_utilisation_pct: 83
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "06-peers.md, Part 5 (Cross-Peer Hypothesis)", description: "B06 claims 'Anup's shift away from 100% fixed-price terms' as evidence of contract-term flexibility. Directly contradicted by Anup's own MD in transcripts B06 itself read: Feb 2026 call ('our projects are 100% fixed term contracts. There are no variable contracts') and May 2026 call ('No price variability clause in our contracts. Historically, it has never been.'). Does not affect the six formal claim verdicts (Q1-Q6), which remain well-anchored, but is a fabricated detail in the Part 5 synthesis that MUST NOT carry forward to Stage 13."}
+  - {severity: "MINOR", location: "06-peers.md, Part 2 (2A Demand environment)", description: "Ion Exchange ~Rs 9,011cr bid pipeline figure is cited in prose as '(IONEXCHANG, Feb 2026/Q3 FY26 call)' but the actual quote is in the Nov 2025/Q2 FY26 call. B06-peers.yaml's own peer_coverage_map correctly attributes this to the Nov 2025 call, so the underlying research is sound; only the prose citation is quarter-mislabeled."}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 92

@@ -321,7 +321,7 @@ Reported PAT: Rs 192.16 mn → Rs 249.27 mn = **+Rs 57.11 mn (+29.7%)**.
 **Decision Status verified (live Notion, 04 Aug 2026): WATCHLIST** (effectively AVOID at CMP ~₹164; entry zone ₹105–130). The **8A held-thesis branch** governs, not initiation.
 
 - **Thesis-broken ladder:** the three pre-committed triggers (Net Debt/EBITDA not <2.5x by FY28; ROCE <14% at FY27 annual; IFC qualification repeats) were checked in Step 6B — **none formally fired** in a Q1 filing (ROCE and the statutory audit are not testable without a balance sheet / annual audit). No AVOID reclassification is triggered by this quarter.
-- **Entry-zone ladder:** CMP not supplied in this run; against the standing entry zone **₹105–130**, WATCHLIST holds. The operator should place current CMP against ₹105–130 to confirm.
+- **Entry-zone ladder (CMP ₹182, operator-supplied 04 Aug 2026):** ₹182 is **~40% above the top of the entry zone (₹130)** and **~12% below base fair value ₹206** (FY28E) — an implied ~4% annualised return to base case, far below the 25% hurdle (the ₹105 zone floor is exactly the 25%-CAGR entry vs ₹206). On the thesis price ladder (₹190 = WATCHLIST, ₹220 = AVOID; rescore flagged "AVOID at CMP ₹164"), **₹182 is effectively no-buy / AVOID-at-CMP**. Standing label stays WATCHLIST; **no action here** — wait for the FY26 AR rescore and/or a pullback into ₹105–130.
 
 **DECISION: HOLD WATCHLIST — UNCHANGED.** This quarter does not fire a tripwire and does not resolve the deal-breaker; it is a good operating quarter (RevPAR +9.6%, occupancy 79.3%, finance costs −25.5%) sitting on top of an unresolved consolidated-ROCE question, a leverage tick-up (3.1x→3.2x), and a **new Rs 750 cr dilution overhang** that cuts against a bull pillar. Net read: **NEUTRAL for the thesis** — it confirms WATCHLIST rather than changing it.
 
@@ -329,6 +329,16 @@ Reported PAT: Rs 192.16 mn → Rs 249.27 mn = **+Rs 57.11 mn (+29.7%)**.
 
 ### 8B. Add-back / trim triggers
 No position held (WATCHLIST). The actionable ladder is the **entry zone ₹105–130** (buy discipline) and the standing thesis-broken triggers above — not add/trim. New pre-commitment to record: resolve the Rs 750 cr raise structure at the AGM before any conviction upgrade.
+
+### 8D. NEW FORMAL MONITORING LINE (added 04 Aug 2026) — Rs 750 cr fundraise / dilution
+| Item | Metric to track | Green (thesis-supportive) | Red (thesis-negative) | First read |
+|---|---|---|---|---|
+| Rs 750 cr raise — instrument & quantum | Equity vs warrant vs CCD vs CCPS; final rupee amount vs Rs 750 cr headroom | Debt/hybrid-led or small equity slice; ring-fenced to accretive capex/M&A | Large straight-equity at/below CMP; open-ended optionality | Enabling resolution only (Board 03-Aug-26); AGM 31-Aug-26 |
+| Dilution magnitude | New shares as % of 222.1 mn base; authorized capital 25→29 cr shares headroom | <10% dilution, EPS-accretive use | >15% dilution without matched earnings | Authorized headroom created; quantum undisclosed |
+| Timing | Imminent vs opportunistic; date of first tranche | Opportunistic, tied to a named project | Imminent raise into a soft price | "Dependent on market conditions" (L80-88) |
+| Use of proceeds | Capex vs M&A vs refinancing split | Named growth projects with return math | Balance-sheet repair / undisclosed | Not disclosed |
+
+**Tripwire (pre-commit):** if the raise closes as large straight-equity (>15% dilution) without a matched, return-accretive use of proceeds, treat as a governance/capital-allocation negative and rescore the Strategic Premium down. Resolve at the 31-Aug-2026 AGM.
 
 ### 8C. Single cleanest metric for next quarter (Q2 FY27)
 **SAMHI-attributable (owners') PAT growth, ex-DTA and ex-exceptional, YoY — read jointly with the post-GST operating EBITDA margin.**
@@ -427,7 +437,7 @@ Rationale: the headline consolidated PAT is triply distorted (FY26 DTA credit, e
 
 **Net thesis impact:** **NEUTRAL — WATCHLIST unchanged.** No pre-committed tripwire fired; the deal-breaker (consolidated ROCE) is not testable in a Q1 filing. Operating momentum corroborates the bull operating leg; the DTA-inflated base, the leverage tick-up (3.1x→3.2x), and the new Rs 750 cr dilution overhang keep the caution intact. This quarter confirms the stance rather than moving it.
 
-**Position decision:** **HOLD WATCHLIST (8A held-thesis branch), entry zone ₹105–130, unchanged.** Master rescore = FY26 Annual Report (subsidiary-wise ROCE, expected August 2026); secondary gates = 31-Aug-2026 AGM (Rs 750 cr raise structure) and Q2 FY27 (H1) filing (cash flow → resolves the cash-conversion cap). Any Role 1 re-run uses PBT-before-exceptional taxed at ~25%, NOT the DTA-inflated FY26 PAT.
+**Position decision:** **HOLD WATCHLIST (8A held-thesis branch), entry zone ₹105–130, unchanged.** At **CMP ₹182** (04 Aug 2026) the stock is ~40% above the buy zone and ~12% below base FV ₹206 (implied ~4% CAGR to base) — **effectively no-buy / AVOID-at-CMP; no action here.** Master rescore = FY26 Annual Report (subsidiary-wise ROCE, expected August 2026); secondary gates = 31-Aug-2026 AGM (Rs 750 cr raise structure — now a formal monitoring line, Step 8D) and Q2 FY27 (H1) filing (cash flow → resolves the cash-conversion cap). Any Role 1 re-run uses PBT-before-exceptional taxed at ~25%, NOT the DTA-inflated FY26 PAT.
 
 **Protocol verdict: PROCEED WITH FLAGS.** The filing is fully extracted and reviewed and nothing mechanical halts; but the volume and materiality of forward flags (DTA-inflated base, structural GST margin hit, minority leakage, pending dilution, unreviewed loss-making consolidations, pre-revenue leisure) require prominent surfacing to the operator. Independently, the **INDETERMINATE cash conversion caps the ceiling at PROCEED WITH CAVEATS** (missing evidence: H1 FY27 cash-flow statement) — recorded per house rule; PROCEED WITH FLAGS sits at or below that ceiling.
 

@@ -1,0 +1,52 @@
+stage: B03-ardeep
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research, "board attendance/tenure percentages", "AOC-2 verbatim wording re-confirmation", "auditor tenure/appointment year", "ESOP scheme existence", "FII/DII shareholding trend", "consolidated CARO vii(a) quantum for FT Institutions and Mark Maker Engineering"]
+flags:
+  - {type: FLAG-CASH, reason: "Standalone CFO/PAT collapsed from +137.4% (FY25) to -5.6% (FY26); consolidated CFO/PAT only 1.24% (FY26) after -77.8% (FY25) -- receivables outrunning revenue on all three independent lenses (auditor KAM, notes ageing, primary cash flow statement)"}
+  - {type: FLAG-RPT, reason: "Board's Report AOC-2 assertion of no material related-party transactions under Section 134(3)(h) is irreconcilable with Note 47's own disclosed related-party purchases (21% of standalone purchases), loans (99.37% to related parties), and current borrowings (55.71% from a related party)"}
+  - {type: FLAG-RPT, reason: "New finding: multi-entity shared/cross-collateralised security structure spanning FABTECH, sister listed company Fabtech Technologies Cleanrooms Limited (BSE 544332), and other related entities, with title to pledged property held by related-party LLP Fabtech Turnkey Projects LLP; reciprocal corporate guarantees (Rs 1,000L and Rs 600L) given by FABTECH for two related entities' working-capital facilities (Note 25/26 standalone/consol; Note 41/43 contingent liability)"}
+  - {type: FLAG-CASH, reason: "New finding: unreconciled Rs 37.18 Cr (18.2%) gap between Consolidated Balance Sheet trade receivables (Rs 24,151.90 Lakh) and Note 13's supporting schedule total (Rs 20,433.51 Lakh) for FY26, on the auditor's sole Key Audit Matter line; FY25 ties out exactly"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter holding flat at 68.94%, zero change during FY26, no selling identified -- but IPO was a pure fresh issue with no Offer for Sale component, limiting the signal value of 'no selling'; pledge status NOT FOUND IN DOCUMENT in sections read, recommend explicit confirmation"}
+phase_verdicts: {p1: "watch", p2: "red_flag", p3: "red_flag", p4: "red_flag", p5: "red_flag", p6: "red_flag", p7_best_fit: "GARP-watchlist"}
+overall_quality: 4
+quality_components: {governance: 3, accounting: 4, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would not stop on the opinion itself (unmodified, no fraud reported), but would flag the Section 164(2) group-level director disqualification and the RPT-completeness audit-scope gap for immediate follow-up"
+  - "Phase 2: would pause before further capital allocation given the unreconciled Rs 37.18 Cr receivables gap on the auditor's own KAM line, compounding an already-thin RPT-fairness picture"
+  - "Phase 3: would pause on cash-conversion grounds before treating FY26 reported PAT growth as a clean continuation of the FY23-25 trajectory -- cash and profit have diverged sharply"
+  - "Phase 4: would flag the RHP-to-AR RPT disclosure-posture shift as a credibility concern warranting a direct management/IR query"
+  - "Phase 5: would stop and seek direct clarification from the company secretary/board on the AOC-2 no-material-RPT assertion before proceeding -- a Companies Act compliance-framing question"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Related-party land purchase / lease-liability provenance not named as a risk despite Note 5/49 disclosure", evidence_anchor: "Note 5 AR p.115, Note 49 AR p.136"}
+  - {risk: "ECL curve-shape shift with no disclosed rationale, standalone and consolidated", evidence_anchor: "Note 13(b) standalone AR p.117-118, Note 13(b) consol AR consol p.174"}
+  - {risk: "Consolidated trade-receivables balance-sheet-to-Note-13 reconciliation gap (Rs 37.18 Cr)", evidence_anchor: "AR consol p.149 (Balance Sheet) vs AR consol p.174 (Note 13)"}
+  - {risk: "Customer-concentration instability/churn (not just steady-state concentration)", evidence_anchor: "Note 44c AR consol p.185"}
+  - {risk: "Multi-entity shared collateral / cross-guarantee structure with sister listed company", evidence_anchor: "Note 25 standalone AR p.121, Note 26 consol AR consol p.178, Note 41/43 contingent liability"}
+  - {risk: "Section 164(2) director disqualification at group level", evidence_anchor: "Consolidated Auditor's Report, item 2(e), AR consol p.143"}
+guidance_table:
+  - {claim: "Order-to-proposal conversion", number: "<11% of proposal value converted to orders", timeframe: "preceding 3 FY", credibility: "disclosed as a risk, not guidance -- no forward number to test yet"}
+  - {claim: "IPO proceeds deployment", number: "Rs 230.30 Cr net proceeds, implied 3-year deployment plan", timeframe: "through FY27-28", credibility: "weak so far -- 22.2% deployed at FY26 year end, inorganic-growth tranche 0%, no revised timeline disclosed"}
+  - {claim: "Dividend", number: "Rs 0.60/share, Rs 266.70 Lakh total", timeframe: "FY26", credibility: "concrete, low materiality, ~7% of standalone PAT -- not a stretch claim"}
+monitorables:
+  - {metric: "Trade receivables Balance-Sheet-vs-Note-13 reconciliation", threshold: "should tie to zero variance", where: "next quarterly/annual filing, receivables note vs BS face", why: "currently Rs 37.18 Cr unreconciled on the auditor's sole KAM line"}
+  - {metric: "CFO/PAT ratio, both consolidation bases", threshold: ">70% (this protocol's flag threshold)", where: "cash flow statement, quarterly results", why: "currently badly broken both bases; sustained sub-threshold readings would be a strong avoid signal"}
+  - {metric: "IPO-proceeds deployment, inorganic-growth tranche", threshold: "non-zero deployment", where: "Note 53-equivalent in next filing / exchange utilisation disclosure", why: "0% deployment a year post-IPO is a capital-discipline red flag if it persists"}
+  - {metric: "AOC-2 / RPT disclosure resolution", threshold: "amendment or clarification of the no-material-RPT assertion", where: "next Board's Report, AGM notice, exchange filings", why: "tests whether management corrects a governance-disclosure gap once flagged"}
+  - {metric: "Al-Afiya revenue share and customer concentration", threshold: "watch for further single-customer share jumps >10pp YoY", where: "Note 44c-equivalent, next annual report", why: "tests whether FY26's customer reshuffle was a one-off or a durable shift"}
+  - {metric: "Section 164(2) disqualification resolution", threshold: "specifics disclosed (individual, root cause, remediation)", where: "next auditor's report, MCA filings", why: "currently opaque"}
+strengths_top3:
+  - "Genuinely strong multi-year revenue growth (~28% consolidated CAGR FY23-FY26), real geographic diversification, 89% export revenue"
+  - "Light, de-levered balance sheet post-IPO (D/E 0.05x standalone), no covenant breaches, no willful-defaulter status"
+  - "Candid disclosure where management chooses to be candid (FY25 exceptional-item explanation, CSR compliance closure, clean audit-trail confirmation)"
+red_flags_top3:
+  - "Cash conversion broke in the IPO year -- CFO/PAT -5.6% standalone (from +137.4%), 1.24% consolidated (from -77.8%)"
+  - "AOC-2 'no material RPT' assertion irreconcilable with Note 47's disclosed RPT footprint (21% of purchases, 99.37% of loans, 55.71% of current borrowings, undisclosed land purchase, new shared-collateral/cross-guarantee web with sister listed company)"
+  - "Unreconciled Rs 37.18 Cr (18.2%) gap between Consolidated Balance Sheet trade receivables and Note 13, on the auditor's sole KAM line, new to this pass and unresolved"
+best_fit_strategy: "GARP (watchlist, not yet pass)"
+one_line_verdict: "Strong growth undercut by a cash-conversion break, an RPT-disclosure contradiction, and an unreconciled receivables gap"

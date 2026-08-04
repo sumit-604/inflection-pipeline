@@ -1,0 +1,16 @@
+stage: B13-synthesis
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+phase: phase-1-lite
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+cash_determination: "INDETERMINATE"
+confidence_delta: {numerical: 93.1, redflag: 86, framework: 97.8, peer: 92, overall: 86}
+headline: "Contract surfactant maker with unresolved cash question"
+falsification_metric: "Q2FY27 operating margin printing back below ~6% (reverting toward Q4FY26 5.22%), confirming the Q1FY27 7.49% recovery as noise; resolving-metric (cash): Q2+Q3 FY27 operating margin sustaining >=7.5% with reported CFO/PAT not reliant on further payables stretch"
+monitorables_count: 8
+publish_candidate: true
+notion_save: not-run-phase-1-lite

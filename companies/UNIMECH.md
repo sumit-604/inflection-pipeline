@@ -184,3 +184,10 @@ basket: highest optionality, highest execution/capital risk.
 - runs/unimech-q1fy27/  (Q1 FY27 quarterly review: 4 docs; A1-A5 work/ files;
   review_unimech_q1fy27.md, four forensics files, audit with loop-1
   correction + loop-2 closeout)
+
+## FY30 SCENARIO PROJECTION (illustrative, operator-requested 2026-08-04; NOT FTTCP/valuation)
+Extrapolation of Q1 FY27 concall data; does NOT change Decision Status or anchored entry Rs 237 / MoS Rs 190 / destination PE 18x. Base to grow from: FY26A rev Rs 240 Cr / PAT Rs 63 Cr (~58% treasury). FY27E rev ~Rs 480-500 Cr (full-year Hobel + organic +36%), PAT ~Rs 95-105 Cr.
+- Bear (~18% CAGR): FY30 rev ~Rs 800 Cr, net ~15-16%, PAT ~Rs 125 Cr.
+- Base (~28% CAGR): FY30 rev ~Rs 1,000-1,050 Cr, net ~19%, PAT ~Rs 190-200 Cr (~4x FY26 rev, ~3x PAT).
+- Bull (~35% CAGR): FY30 rev ~Rs 1,150-1,200 Cr, net ~21%, PAT ~Rs 250 Cr.
+Tempers: (1) FY27 guide 34-35% < Q1 36.5% = mild H2 compression; PAT quality improves only as treasury income is replaced by operations; (2) Rs 750 Cr MPS-driven QIP adds ~13-15% shares -> EPS ~15% below PAT-implied; (3) at 18x, base FY30 PAT Rs 200 Cr = ~Rs 3,600 Cr mcap, bull Rs 250 Cr = ~Rs 4,500 Cr, vs last-known mcap ~Rs 5,000 Cr (CMP Rs 990 May-26) -> 3-yr hold from there ~flat-to-negative even in base case; 25% hurdle needs entry ~Rs 237. Quantifies "great business, wrong price." Live CMP not fetched; refresh before acting.

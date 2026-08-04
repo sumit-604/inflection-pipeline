@@ -266,7 +266,7 @@ Saudi JV (underway→operational), #2 Saudi USD 10M (should show as infused in Q
 | Trigger | Threshold | Concall-relevant evidence | Verdict |
 |---|---|---|---|
 | (a) FY27 consol revenue | < Rs 400 Cr | Q1 = Rs 107.62 Cr (annualising ~Rs 430 Cr before Hobel full-quarter uplift + Q2 "stronger" guidance + H2 PCA/nuclear weighting, l.29, l.40); mgmt guides "meaningful growth" | **NOT FIRED** — Q1 run-rate + full-quarter Hobel from Q2 puts FY27 comfortably above Rs 400 Cr on any non-collapse path |
-| (b) Blended EBITDA margin | < 22% sustained | Q1 actual 36.5% (l.7, l.44); FY27 guided "34 35%" with "30 32% plus" floor (l.40) | **NOT FIRED** — actual and guidance both far above 22%; no margin-compression signal |
+| (b) Blended EBITDA margin | < 22% sustained | Q1 actual 36.5% (l.7, l.44); FY27 guided "34 35%" with "30 32% plus" floor (l.40) | **NOT FIRED — but note (grafted per A5):** the full-year 34-35% guide sits BELOW the Q1 36.5% print, so the guide itself embeds sequential H2 margin compression (H2 PCA-heavy mix l.29; Hobel dilutive full-quarter consolidation from Q2, blended GM 65% < analyst 68% l.28/31; qualification/NPI cost drag + gross-block-doubling depreciation l.7/l.31). Still far above the 22% floor, so NOT FIRED — but this is a compression signal, not "no signal." |
 | (c) Hobel EBITDA | < 40% | Segment margin twice REFUSED (l.40, l.44); untestable from call. Hobel disclosed only as Rs 22 Cr revenue / 21% of mix | **NOT TESTABLE from call → NOT FIRED.** External read on metallic-bellows niche is ~50%+; non-disclosure is itself the forward signal, converted to a written Q |
 | (d) CRISIL non-cooperation persists + NEW governance event | Both legs | Leg 1 CONFIRMED — CRISIL silence, 5th consecutive call (A3-F17-01). Leg 2 (new governance event) NOT formally tripped: Rs 750 Cr QIP is an enabling resolution (MPS-driven, "not an immediate fund raise," l.82/84); DEA "modest dilution" (l.17) is minor | **PARTIAL / WATCH — DO NOT FIRE.** Persistence leg satisfied; the enabling resolution is a candidate second leg but has no structure/dilution/date and is regulatory-compliance-framed, not yet a discrete governance event |
 
@@ -287,7 +287,15 @@ CONSTRUCTIVE (operating):
 - **QIP de-risked** from an immediate raise to an MPS-driven ENABLING resolution
   ("not... an immediate fund raise," l.82/84) — near-term dilution timing softened.
 - **FY27 EBITDA guided 34-35%** with a 30-32% floor (l.40) — comfortably above the
-  22% tripwire; Q1 delivered 36.5%.
+  22% tripwire; Q1 delivered 36.5%. **Caveat (grafted per A5, symmetric bull-bear):**
+  the full-year 34-35% guide sits BELOW the Q1 36.5% print, so it embeds sequential
+  H2 margin compression, corroborated by (a) management's "H2 will be a much heavier
+  PCA" mix (l.29 — PCA is the young, qualification-heavy, initially-lower-margin
+  line), (b) Hobel moving to full-quarter consolidation from Q2 at an apparently
+  dilutive gross margin (blended 65% vs analyst-cited 68%, l.28/31), and (c)
+  qualification/NPI cost drag (l.7/l.31) plus gross-block-doubling depreciation.
+  It does not fire tripwire (b), but the guide is a mild-compression signal, not an
+  unambiguous positive.
 - **Catalyst stack advancing:** FACC USD 7.5M / 5-yr LTA signed (l.7); engine
   tier-1 LTA "at an advanced stage" (l.7); Saudi JV USD 10M infusion "this month"
   (l.7/17); nuclear ~50% of Rs 87 Cr order executing in H2 (l.40); AS9100 Weissac
@@ -357,6 +365,7 @@ company: "UNIMECH"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
+correction_loop: "loop-1-corrected per A5 concall audit (grafted guided-margin-compression counter into Step 6b + Step 7)"
 docs_merged: [concall]
 ledger_reconciliation:
   notes: 0
@@ -414,6 +423,7 @@ flags:
   - "Hobel/segment EBITDA refused twice -> tripwire (c) untestable"
   - "Rs 750 Cr QIP enabling resolution = candidate trigger-(d) second leg; no structure/dilution/dates"
   - "Gross margin 65% (mgmt) vs 68% (analyst) un-reconciled and un-corrected"
+  - "FY27 EBITDA guide 34-35% sits BELOW Q1 36.5% print -> embeds sequential H2 margin compression (H2 PCA-heavy, Hobel full-quarter dilution, qual/NPI + depreciation drag); does not fire tripwire (b) but is a mild-compression signal (grafted per A5)"
   - "Transcription garbles (108/198 rev, 87/887 nuclear, 22cr finance) not asserted; flagged for filing verify"
 review_role5_path: "/home/user/inflection-pipeline/runs/unimech-q1fy27/work/review_role5_concall_unimech_q1fy27.md"
 review_path: "/home/user/inflection-pipeline/runs/unimech-q1fy27/work/review_role5_concall_unimech_q1fy27.md"

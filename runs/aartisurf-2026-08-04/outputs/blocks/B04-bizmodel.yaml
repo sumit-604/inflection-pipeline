@@ -1,0 +1,69 @@
+stage: B04-bizmodel
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Actual tonnes produced/sold and realized price per tonne: NOT FOUND (only installed capacity, 113,000 MT, disclosed via CARE Report p.2)"
+  - "Capacity utilization % at Pithampur/Silvassa: NOT FOUND in any document provided"
+  - "R&D spend as % of revenue: NOT FOUND anywhere in provided documents"
+  - "Product-category revenue split (Home Care vs Personal Care, or by surfactant type): NOT FOUND -- only geographic (Local/Export/Deemed Export) split disclosed, single reportable segment per Ind AS 108 (AR Note 36, p.144)"
+  - "Named counterparties for the two customers representing 71.0% of standalone sales: NOT FOUND (AR Note 36, p.144 discloses only 'two large customers... long standing Relationship'; CARE Report names HUL/P&G/Colgate/Dabur among the broader base but does not confirm which two are the 71% pair)"
+flags:
+  - "Multiple, materially different in-document EBITDA-margin definitions for the same fiscal years (6.85% vs 7.53% vs 6.92% vs 5.32% for FY25 alone, across AR Financial Performance table p.41, AR Note 43 p.151, Results Reg 52(4) disclosure, and CARE Report p.1) -- any downstream stage using EBITDA margin trend must pin down and disclose a single consistent formula"
+  - "Extreme, rising customer concentration (71.0% two-customer, ~92% top-5, CARE Report p.2 / AR Note 36 p.144) is simultaneously this stage's best evidence of a switching-cost moat and its largest structural risk -- same underlying relationships, not independent findings"
+  - "FY26 revenue grew 30.4% YoY yet EBITDA/PBILDT margin fell further (7.53%->5.49%, Results p.14) -- evidence of currently negative-to-flat operating leverage, unresolved whether the Dec-2026 capacity completion changes this"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic (Local) sales", type: "product sales - B2B specialty/commodity-adjacent chemicals, single reportable segment", pct_of_revenue: 80.8, predictability: "M"}
+  - {name: "Export sales", type: "product sales - B2B, cross-border", pct_of_revenue: 18.5, predictability: "L"}
+  - {name: "Deemed export sales", type: "product sales - B2B, trade-classification variant of domestic", pct_of_revenue: 0.7, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "defensive"
+moats_present:
+  - {moat: "Switching costs / FMCG-supplier qualification barriers", durability: "moderate, but inseparable from customer-concentration risk"}
+valuation_methods:
+  primary: {method: "EV/EBITDA, peer cross-sectional (Galaxy Surfactants, Rossari Biotech, Fineotex/FCL, Ultramarine & Pigments)", why: "Single homogeneous segment with four directly comparable listed peers already in this run's inputs; avoids P/E distortions from one-off items and volatile PAT"}
+  secondary: {method: "DCF/FCFF", why: "Mid-execution capex-transition story (Pithampur/Silvassa expansion, Dec-2026 completion); investment case turns on post-capex FCF normalization; any exit multiple sourced solely from Section 1B v3.3"}
+  tertiary: {method: "EV / installed capacity (Rs per tonne vs 113,000 MT nameplate)", why: "Capital-intensity cross-check specific to commodity-adjacent chemical manufacturing, useful precisely because per-tonne revenue/margin data is NOT FOUND elsewhere"}
+  not_applicable:
+    - "P/E as primary -- recent PAT distorted by one-off items (FY25 insurance/govt-grant items) and swings sharply"
+    - "Dividend Discount Model -- dividend history one year old (first-ever payout FY25)"
+    - "SOTP -- single reportable segment, no divisional structure"
+    - "NAV / liquidation / asset-based -- going-concern manufacturer mid-capex, not a strip/distress candidate"
+irrelevant_ratios:
+  - "Trailing P/E -- distorted by one-off FY25 items (Rs 420.25L insurance exceptional item, Rs 634L one-time govt grant)"
+  - "Net profit margin alone -- swings dominated by RM cost pass-through timing lag and one-off items, not core efficiency"
+  - "EBITDA margin without pinning the formula -- at least four different in-document FY25 figures exist (6.85%/7.53%/6.92%/5.32%)"
+  - "Dividend yield / payout ratio -- one-year dividend history only, too short to trend"
+  - "Debt/Equity in isolation -- ignores Rs 23cr redeemable preference shares and mid-execution debt-funded capex; use Total Debt/PBILDT instead"
+  - "Single-period CFO/PAT ratio -- lumpy WC swings (FY25 0.77x vs FY26 6.21x); use multi-year cumulative"
+  - "Inventory turnover as pure efficiency signal -- partly reflects deliberate stocking ahead of palm-oil-linked price moves"
+must_track_metrics:
+  - {metric: "Cost of Materials Consumed % of Revenue", healthy: "well under 75-80%", red_flag: "82-84%+ sustained (current level)"}
+  - {metric: "EBITDA/PBILDT margin (single consistent formula)", healthy: ">8% sustained (CARE's own positive threshold)", red_flag: "<7% sustained (CARE's own negative threshold, already breached)"}
+  - {metric: "Top-2 / top-5 customer revenue concentration", healthy: "stable or declining", red_flag: "any further rise above 71.0%/92%, or any disclosed customer loss"}
+  - {metric: "Total Debt / PBILDT", healthy: "<2.5x sustained", red_flag: ">3.5x sustained (currently 3.18x FY25, 2.80x H1FY26)"}
+  - {metric: "Capacity utilization at Pithampur/Silvassa post expansion", healthy: "rising toward full 113,000 MT nameplate", red_flag: "stagnant utilization despite new capacity online (currently NOT FOUND/undisclosed)"}
+unit_economics:
+  unit: "1 metric tonne (MT) of surfactant / specialty HPC ingredient produced and sold"
+  revenue_per_unit: "NOT FOUND -- actual tonnes produced/sold and realized price/tonne undisclosed; capacity-based ceiling only (FY26 revenue / 113,000 MT nameplate) is calculable but not a realized figure"
+  margin_per_unit: "NOT FOUND -- no per-tonne cost breakdown disclosed"
+  key_lever: "Raw-material (palm-oil-linked lauryl alcohol, HCFA, alpha olefin) pass-through speed and completeness; FY26 revenue grew 30.4% yet EBITDA margin still compressed, evidencing currently negative-to-flat operating leverage"
+first_deterioration_signals:
+  - {risk: "Extreme customer concentration (top-5 ~92%, top-2 71.0% and rising)", first_signal: "Local Sales revenue turning negative YoY, or Note 36 concentration % rising further"}
+  - {risk: "Raw-material cost volatility with limited pass-through", first_signal: "Cost of Materials Consumed % of Revenue rising further above 82-84%; EBITDA/PBILDT margin falling further below 7%"}
+  - {risk: "Debt-funded capex layered on Rs 18.50cr preference share redemption due Aug-2026", first_signal: "Total Debt/PBILDT rising above 3.5x; current-borrowings mix rising further"}
+  - {risk: "Pithampur capacity expansion delay/cost overrun", first_signal: "CWIP growing without matching PP&E-in-use or revenue increase"}
+  - {risk: "Intensifying competition from global majors and Galaxy Surfactants", first_signal: "EBITDA margin gap to peer median widening further (currently -9.93pp)"}
+mgmt_questions:
+  - "What is the current capacity utilization rate at Pithampur and Silvassa, and what utilization is assumed to justify the ~Rs 85cr expansion?"
+  - "Can the two customers representing 71.0% of standalone product sales be named, and are there long-term supply agreements or minimum-volume commitments?"
+  - "What raw-material hedging or price-pass-through mechanisms exist for lauryl alcohol, HCFA and alpha olefin, given their palm-oil linkage?"
+  - "Given Total Debt/PBILDT rose from 1.60x (FY24) to 3.18x (FY25) and remains 2.80x (H1FY26), what is the specific plan to bring this back under 2.5x?"
+  - "How will the Rs 18.50cr redeemable preference share obligation due August 20, 2026 be funded?"
+  - "What is the strategy on export mix and US-tariff exposure, given the -17.3% YoY export decline in FY25?"
+  - "Is there a concrete plan to reduce customer concentration below ~92% top-5, and has any new anchor customer been signed in the past 12 months?"
+one_line_verdict: "Contract ingredient maker for FMCG giants: weak pricing power, extreme customer concentration, margin recovery unproven pending capex payoff."

@@ -1,0 +1,65 @@
+stage: B05-concall
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings call transcripts exist for AARTISURF; degraded mode substituted AR MD&A/Chairman's Letter/CEO Conversation/Board's Report as guidance source"
+  - "Section 2E repeated-question tracker: no transcript source, not applicable"
+  - "Section 2C defensiveness rating: not assessable without live Q&A"
+  - "Section 3A/3C competitor commentary and toughest-questions: no company self-disclosure, only CARE's third-party characterisation available"
+  - "Pithampur/Silvassa capex quantum (~85cr), funding split (~60cr debt) and Dec-2026 completion date sourced only from CARE rating note, not from company's own AR disclosure"
+flags:
+  - "Chairman's Letter FY24-25 EBITDA figure (Rs 4,981.53 lakhs) overstated 9.2% vs Board's Report's own EBITDA calc (Rs 4,561.29 lakhs) via an unflagged one-time insurance gain of Rs 420.25 lakhs"
+  - "Four different EBITDA/operating-margin figures for FY24-25 appear across different sections of the same AR (6.92%, 6.85%, 7.53%, implied 7.56%), none reconciled"
+  - "CARE Ratings downgraded AARTISURF Dec-2025 (A-/BBB+ to BBB+/BBB) citing continued margin subdual into H1FY26, directly evidencing the AR's stated margin-protection priority was missed for the following year"
+  - "No quantified FY26 forward guidance (margin band, revenue target, capex quantum, debt target) found anywhere in the AR"
+  - "~92% customer concentration in top five customers (per CARE) undisclosed in AR narrative sections"
+  - "Rs 23.23cr preference share redemption due 19-Aug-2026, imminent relative to run date, funding plan not yet evidenced in filings"
+quarters_analysed: ["FY25 AR (guidance source, Aug-2025)", "FY26 Audited (delivery check, filed May-2026)", "Q1 FY27 Unaudited (delivery check, filed Aug-2026)"]
+triggers:
+  - {priority: 1, name: "Margin recovery sustaining above ~7.5-8%", type: "Cost/Price-mix", timeframe: "Near (FY27)", conviction: "L", confirm_signal: "Two or more consecutive quarters at/above Q1 FY27's 7.49% operating margin", kill_signal: "Raw material prices spike again or GST/tariff disruption resumes, margin back below 6%"}
+  - {priority: 2, name: "Pithampur/Silvassa capacity expansion commissioning on schedule", type: "Volume", timeframe: "Medium (Dec-2026 target, per CARE)", conviction: "L", confirm_signal: "Company discloses commissioning in a stock exchange filing; capex-to-revenue conversion visible in FY28", kill_signal: "Capital WIP balance stalls or a cost-overrun/delay disclosure appears"}
+  - {priority: 3, name: "Revenue growth momentum (30%+ FY26, 26%+ Q1FY27) continuing", type: "Volume", timeframe: "Near", conviction: "M", confirm_signal: "Q2/Q3 FY27 results maintain double-digit YoY growth", kill_signal: "A quarter of flat/declining revenue given ~92% top-5 customer concentration"}
+  - {priority: 4, name: "Debt/PBILDT deleveraging toward CARE's <2.5x threshold", type: "Financial", timeframe: "Near-medium", conviction: "L", confirm_signal: "Debt/PBILDT prints below 2.5x on a sustained basis in a future rating update", kill_signal: "Debt/PBILDT stays above 3.5x, triggering CARE's own negative sensitivity"}
+  - {priority: 5, name: "Preference share redemption (Rs 23.23cr, due 19-Aug-2026) executed without liquidity strain", type: "Financial", timeframe: "Immediate", conviction: "M", confirm_signal: "Redemption completed on schedule per company filing", kill_signal: "Delay or a further ratings action tied to redemption funding"}
+guidance:
+  - {item: "Final dividend", number: "Rs 1/share (10%)", timeframe: "FY2024-25, maintained FY2025-26", stated_in: "Chairman's Letter p.8; Board's Report p.46"}
+  - {item: "FY24-25 revenue growth (reported)", number: "+11.7% YoY to Rs 65,908.54 lakhs", timeframe: "FY24-25 actual", stated_in: "Chairman's Letter p.9"}
+  - {item: "FY24-25 EBITDA (Chairman's headline figure, contains 9.2% one-time-item overstatement)", number: "Rs 4,981.53 lakhs", timeframe: "FY24-25 actual", stated_in: "Chairman's Letter p.9"}
+  - {item: "FY24-25 EBITDA margin (Board's Report calc)", number: "6.92%, down from 10.70% FY23-24", timeframe: "FY24-25 vs FY23-24 actual", stated_in: "Board's Report p.46"}
+  - {item: "FY24-25 capex outlay (historical)", number: "Rs 1,993.31 lakhs standalone / Rs 2,023.58 lakhs consolidated", timeframe: "FY24-25 actual", stated_in: "Board's Report p.47"}
+  - {item: "FY26 forward guidance", number: "NOT FOUND - no quantified target in AR", timeframe: "FY26", stated_in: "MD&A Business Outlook p.41 (qualitative only)"}
+promise_delivery:
+  delivered: 2
+  partial: 2
+  missed: 1
+  rows:
+    - {promised_in: "AR Aug-2025 (Chairman's Letter p.8, CEO Conversation p.6)", promise: "Protect/enhance EBITDA margin via cost control, mix, backward integration", outcome: "missed", explanation: "FY26 Audited Operating Margin 5.49% vs FY25 7.53% (SEBI formula); CARE attributes to raw material prices, GST disruption, US tariff, all externally attributed"}
+    - {promised_in: "AR Aug-2025 (MD&A Business Outlook p.41)", promise: "Renewed growth momentum in FY26", outcome: "delivered", explanation: "FY26 standalone revenue +30.3% YoY (Rs 85,912.92 lakhs vs Rs 65,908.54 lakhs)"}
+    - {promised_in: "AR Aug-2025 (Board's Report p.46)", promise: "Maintain dividend policy Rs 1/share (10%)", outcome: "delivered", explanation: "May-2026 Board outcome filing recommended same Rs 1/share (10%) for FY25-26"}
+    - {promised_in: "AR Aug-2025 (MD&A p.39, generic); quantum/date only from CARE Dec-2025", promise: "Capacity expansion at Pithampur/Silvassa (~Rs 85cr, ~Rs 60cr debt-funded, Dec-2026 completion)", outcome: "partial", explanation: "FY26 capex spend stepped up to Rs 4,510.08 lakhs from Rs 1,997.85 lakhs, on pace with plan, but no company confirmation of on-schedule Pithampur commissioning"}
+    - {promised_in: "Implicit via CARE's stated expectation (Dec-2025)", promise: "Debt/PBILDT improving toward <2.5x", outcome: "missed", explanation: "CARE: 1.60x FY24 to 3.18x FY25 to 2.80x H1FY26, still against expectations of below 2.50x"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Default-C retained rather than raised to B: revenue growth and dividend delivered, and Q1 FY27 shows a first genuine margin-recovery data point, but the AR's own stated margin-protection priority was missed for the full FY26 year per CARE's independent downgrade, the Chairman's headline EBITDA figure is measurably inflated 9.2% by an undisclosed one-time item, and the AR carries internally inconsistent margin figures across its own sections - too thin a record to support B in a mode requiring documented, clean AR-guidance-vs-delivery evidence."
+peer_questions:
+  - {question: "Do peer surfactant makers show a sharp margin recovery in the Apr-Jun 2026 quarter, or is ASL's Q1 FY27 recovery (5.22% to 7.49% QoQ) company-specific?", why: "Determines whether the recovery is a genuine company-level improvement or a sector-wide raw-material tailwind", check_peers: ["ROSSARI", "GALAXYSURF", "FCL"]}
+  - {question: "Is the elevated raw-material-price narrative (lauryl alcohol/fatty acid/alpha olefin, palm-linked) into H1FY26 corroborated by peer concall commentary for the same period?", why: "Cross-checks whether the externally-attributed excuse for ASL's margin miss is industry-wide or ASL-specific", check_peers: ["GALAXYSURF", "ROSSARI"]}
+  - {question: "Do peers cite similar US tariff impact on export demand/pricing over the same window?", why: "Tests whether the tariff explanation for margin pressure is sector-wide or ASL-specific", check_peers: ["ROSSARI", "GALAXYSURF", "FCL"]}
+  - {question: "Is the Indian surfactants market CAGR-to-2035 (USD 10.92bn) and ~6.2% home/laundry-care CAGR cited elsewhere by peers?", why: "Confirms whether the growth narrative underpinning the capex programme is broad industry consensus or an outlier estimate", check_peers: ["GALAXYSURF", "ROSSARI", "FCL"]}
+  - {question: "Are peers running debt-funded capacity expansions on a similar 2026-27 completion timeline, implying industry-wide capacity addition that could pressure future pricing/utilization?", why: "Capex-cycle claim check against ASL's own expansion economics", check_peers: ["ROSSARI", "GALAXYSURF", "FCL"]}
+  - {question: "Do peers disclose customer concentration comparable to ASL's ~92% top-5, and how do they describe renewal risk?", why: "ASL's own AR never states this concentration figure; peer practice calibrates whether the omission is standard or specific", check_peers: ["GALAXYSURF", "ROSSARI"]}
+red_flags:
+  - "Chairman's Letter FY24-25 EBITDA overstated 9.2% vs Board's Report's own calc via unflagged one-time insurance gain (High)"
+  - "Four different EBITDA/operating-margin figures for the same FY24-25 year across the same AR, none reconciled (Medium-High)"
+  - "No quantified FY26 guidance issued despite entering a period of continued margin subdual and a subsequent rating downgrade (Medium)"
+  - "Capex programme quantum, funding structure and completion date disclosed only by the rating agency, not the company (Medium)"
+  - "~92% revenue concentration in top five customers, undisclosed in AR narrative (Medium)"
+  - "Debt/PBILDT still above CARE's <2.5x expectation alongside an imminent Rs 23.23cr preference share redemption with funding plan not yet evidenced (Medium)"
+  - "Structurally thin promise-delivery record: single AR cycle checked against two results filings, zero live analyst-tested Q&A (Structural)"
+dropped_triggers: []
+timeline_slippages:
+  - "Pithampur capacity expansion completion date (Dec-2026, per CARE) not independently confirmed by any company disclosure as of the run date; capex spend is on pace but commissioning timing remains unverified"

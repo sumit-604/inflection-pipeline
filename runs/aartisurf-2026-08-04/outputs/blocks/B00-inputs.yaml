@@ -1,0 +1,74 @@
+stage: B00-inputs
+company: AARTISURF
+run_date: 2026-08-04
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false          # NO-CONCALL MODE
+no_concall_mode: true
+
+manifest:
+  company: Aarti Surfactants Ltd
+  cmp: 481.0
+  market_cap_cr: 407.0
+  sector_cap_row: "Pharma / CDMO"   # AUTO-PICKED by collect_to_repo.py; FLAGGED
+                                    # to verify. Business is surfactants /
+                                    # specialty oleochemicals, not pharma/CDMO.
+                                    # Stage 11 (phase 3) must re-pick the row.
+
+inputs_present:
+  annual-report:   [Annual_Report_2022.pdf]     # FY2022; ~4y stale vs run_date
+  presentation:    [Investor_Presentation_1.pdf]
+  peer-concalls:   [FCL x4, GALAXYSURF x4, ROSSARI x4]   # 12 transcripts
+  screening:       [screener-*.csv (company, 6 files, Data_Sheet populated FY20-FY26),
+                    FCL-*.csv, GALAXYSURF-*.csv, ROSSARI-*.csv, ULTRAMAR-*.csv]
+
+input_gaps:
+  - type: results
+    severity: HIGH
+    note: "No results PDFs. Latest-period figures sourced from screener Data_Sheet.csv
+           (FY20-FY26 populated, FY26 Sales 859.13cr). Stage 10 latest-period fields
+           from screener, not a filing; mark provenance."
+  - type: rating
+    severity: MEDIUM
+    note: "No credit rating PDF. Stage 11 Pillar 2 (cash) proceeds conservative per
+           framework; FLAG-CASH handling applies. Deferred to phase 3."
+  - type: shareholding
+    severity: MEDIUM
+    note: "No shareholding pattern. Stage 10 FII+DII unresolved; UA institutional-absence
+           qualifier cannot be affirmed, UA withheld (all-three-qualifier rule).
+           Promoter holding/pledge falls back to AR/last-known with staleness noted."
+  - type: announcements
+    severity: MEDIUM
+    note: "No Reg 30 announcements. Stages 5/7/8 lose documented-ACTION record; FTTCP
+           Step 0C input absent; intent-and-action cross-check runs on AR/presentation
+           only. Stage 8 relies on web search for material events."
+  - type: prospectus
+    severity: LOW
+    note: "Absent. Aarti Surfactants listed ~2019 via demerger from Aarti Industries
+           (>3y before run_date), so prospectus is NOT expected and its absence is not
+           a HIGH gap. Backward baseline built from AR + screener."
+  - type: research
+    severity: LOW
+    note: "No broker notes. No effect on anchored evidence (research is never anchored)."
+  - type: annual-report-staleness
+    severity: HIGH
+    note: "Only annual report is FY2022, ~4 years stale vs 2026-08-04 run_date. Stages
+           2/3/4/7 read a FY2022 AR; qualitative/governance/notes evidence is dated.
+           Quantitative recency comes from screener Data_Sheet.csv (FY26). Every stage
+           must flag AR staleness where it affects a conclusion."
+
+no_concall_mode_effects:
+  stage_5: "Degraded: reads AR MD&A + chairman letter + investor presentation (no results
+            commentary available). credibility_grade defaults to C, may rise to B only on
+            AR-guidance-vs-delivery evidence, never A. B05 carries no_concall_mode: true."
+  stage_6: "Runs: peer-concalls present (FCL, GALAXYSURF, ROSSARI). Triangulates B05 claims."
+  stage_7: "F2 test uses capex-completion evidence across AR timeline in place of the
+            promise-delivery record."
+  verifier_b: "Audits communication analysis against AR + presentation, not transcripts."
+
+peer_set:
+  with_concalls: [FCL, GALAXYSURF, ROSSARI]
+  screener_only: [ULTRAMAR]
+
+flags: []

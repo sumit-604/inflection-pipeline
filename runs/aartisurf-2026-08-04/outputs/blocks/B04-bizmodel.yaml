@@ -1,0 +1,48 @@
+stage: B04-bizmodel
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation is a 9-slide 7th-AGM headline deck (Sep 2025), FY2025-vs-FY2024 P&L numbers only, no product/segment/customer/capacity detail"
+  - "Annual Report is FY2020-21, ~5.3 years stale"
+  - "Product-wise revenue split NOT FOUND"
+  - "Customer concentration for FY2022-FY2025 NOT FOUND"
+  - "Manufacturing capacity/utilisation NOT FOUND"
+  - "FY2022-FY2025 working capital and leverage detail NOT FOUND"
+  - "Named competitors NOT FOUND"
+flags:
+  - "Two customers were 35.0% of FY2020-21 revenue (AR p.80, Note 30); current concentration unknown"
+  - "Export revenue share fell from 28.2% (FY2020-21) to 20% (FY2025) (AR p.75; Inv. Pres. slide 5)"
+  - "FY2025 EBITDA margin compressed to 7.53-7.56% from FY2024's 10.56-10.70% despite 12% revenue growth (Inv. Pres. slide 6-7) - negative operating leverage"
+  - "Net gearing rose to 1.09x (FY2020-21) from 0.98x (FY2019-20); current level unknown (AR p.82)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic sale of surfactants/specialty ingredients (B2B to FMCG manufacturers)", type: "manufacturing - sale of goods", pct_of_revenue: 71.3, predictability: "M"}
+  - {name: "Export sale of surfactants/specialty ingredients (30+ countries)", type: "manufacturing - sale of goods", pct_of_revenue: 28.2, predictability: "L"}
+  - {name: "Other operating revenue (export incentives, scrap, state govt grant)", type: "ancillary/non-core", pct_of_revenue: 0.5, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "weak"
+cyclicality: "cyclical"
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Capital-intensive raw-material-pass-through manufacturer; normalises for leverage (net gearing 1.09x) and depreciation across chemical peers; use normalised mid-cycle margin given FY2025 compression"}
+  secondary: {method: "P/E", why: "Cross-check given finance costs and leverage materially affect earnings after EBITDA"}
+  tertiary: {method: "P/B", why: "Asset-backing check given PP&E-heavy balance sheet (~40% of FY21 revenue); cautious due to preference-share structure"}
+  not_applicable:
+    - "DDM - thin/inconsistent dividend history"
+    - "SOTP - single reportable segment (Note 30)"
+    - "EV/tonne or replacement-cost - capacity/tonnage not disclosed"
+irrelevant_ratios:
+  - "Same-store-sales growth"
+  - "Subscriber count/ARPU"
+  - "NPA/provisioning ratios"
+  - "Order book/book-to-bill (short-cycle repeat-PO sales, no disclosed backlog)"
+  - "Net Promoter Score/brand-tracking (B2B ingredient supplier, no consumer brand)"
+must_track_metrics:
+  - {metric: "EBITDA margin", healthy: "~10-11% (FY2024 standalone level)", red_flag: "Sub-7% or declining 2+ consecutive periods"}
+  - {metric: "Export revenue % of total", healthy: "Stabilising near current level", red_flag: "Continued decline below ~15%"}
+  - {metric: "Top-2 customer concentration %", healthy: "Below FY2020-21's 35.0% and diversifying", red_flag: "Rising above ~40% or loss of a top customer"}
+  - {metric: "Net gearing ratio (Net Debt/Equity)", healthy: "Flat or declining from 1.09x", red_flag: "Above ~1.5x"}
+  - {metric: "Cash conversion cycle (days)", healthy: "Stable near ~40 days (FY2020-21)", red_flag: "Rising 15+ days YoY"}
+one_line_verdict: "Commodity-input surfactant manufacturer with two-customer concentration and weak pricing power, best judged on EV/EBITDA through the raw-material cost cycle."

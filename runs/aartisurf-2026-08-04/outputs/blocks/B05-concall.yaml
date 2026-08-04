@@ -1,0 +1,56 @@
+stage: B05-concall
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings call transcripts (concalls_available: false)"
+  - "AR used is actually FY2020-21 (year ended 31 Mar 2021), ~5.3 years stale"
+  - "No interim AR/results commentary FY2022-FY2024; only two narrative snapshots (FY2020-21 AR, FY2025 Inv. Pres.) with a ~4-year documentary gap"
+  - "No forward numeric guidance (revenue/margin/capex/capacity/order book/debt/returns) found in either source"
+  - "No raw-material price-trend, customer-concentration, competitor-name, or order-book commentary found"
+flags:
+  - "no_concall_mode"
+  - "AR-source 5.3y stale; degraded credibility evidence base"
+  - "FLAG-CASH corroborated: CFO fell Rs51.96cr (FY2024) to Rs11.14cr (FY2025) while payables grew 27.8% vs 12% revenue growth"
+triggers:
+  - {priority: 1, name: "Margin recovery toward FY2024 EBITDA-margin levels", type: "margin", timeframe: "near-medium", conviction: "L", confirm_signal: "raw-material cost ratio falls back toward 75-76% of sales in next annual print", kill_signal: "raw-material cost ratio holds at/above 82% or rises further"}
+  - {priority: 2, name: "Export-share recovery from 20% toward historical 28.2%", type: "price-mix", timeframe: "medium", conviction: "L", confirm_signal: "international sales % rises in next disclosed geographical split", kill_signal: "export share continues compressing"}
+  - {priority: 3, name: "Working-capital/cash-conversion normalisation", type: "cost", timeframe: "near", conviction: "M", confirm_signal: "CFO sustains the FY2026 rebound (Rs76.65cr per screener)", kill_signal: "payables/inventory stretch resumes without matching revenue growth"}
+  - {priority: 4, name: "Capacity build-out (CWIP ramp) delivering disclosed capacity", type: "inorganic", timeframe: "medium-long", conviction: "L", confirm_signal: "company discloses the capex project, timeline, capacity target", kill_signal: "capex continues with no disclosed rationale/utilisation"}
+  - {priority: 5, name: "Structural hygiene/personal-care demand supporting top-line", type: "sectoral", timeframe: "long", conviction: "M", confirm_signal: "continued revenue growth as FY2021-FY2026", kill_signal: "renewed revenue stagnation as FY2023-FY2024"}
+guidance:
+  - {item: "Final dividend FY2020-21", number: "Rs3.00/share (Rs2.28cr outflow)", timeframe: "FY2020-21", stated_in: "AR FY2020-21 Directors' Report p.13"}
+  - {item: "Sales CAGR track-record claim (retrospective)", number: "14% CAGR over six years", timeframe: "as of 2024 milestone", stated_in: "Inv. Pres. Milestone slide 4"}
+  - {item: "Credit rating reaffirmation", number: "CARE A- (Stable) bank facilities; CARE BBB+ (Stable) instruments", timeframe: "June 2025", stated_in: "Inv. Pres. slide 7"}
+promise_delivery_score: "1 delivered / 1 partial / 2 missed"
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 2
+  rows:
+    - {promise: "Rs3.00/share final dividend FY2020-21", outcome: "delivered", note: "screener dividend outflow Rs2.27cr FY2021 matches"}
+    - {promise: "cost-controlling / leaner and more agile (FY22 outlook, MD's Message p.7)", outcome: "missed", note: "EBITDA margin fell 10.70% to 7.56%, raw-material ratio rose 75.6% to 82.3% FY24->FY25"}
+    - {promise: "positive long-term outlook, structural growth sustains revenue (MD&A p.11)", outcome: "partial", note: "revenue grew FY21->FY26 but dipped FY23->FY24 (601.29->589.86cr), unexplained"}
+    - {promise: "sustained global/export footprint across 30+ countries (Inv. Pres. slides 2,6)", outcome: "missed", note: "export share fell 28.2%->20% while footprint claim repeated unchanged"}
+excuse_pattern: "silence"
+credibility_grade: "C"
+credibility_basis: "Default C retained: the one delivered promise (dividend) is trivial; the two substantive qualitative commitments checkable (cost/margin discipline, export diversification) were both missed with material unexplained deterioration by FY2025; thin evidence base (one 5.3y-stale AR, one numbers-only FY2025 deck, ~4y gap)."
+repeated_evasions: []
+peer_questions:
+  - {question: "Did FCL, GALAXYSURF, ROSSARI report similar raw-material cost inflation/margin compression in FY2025, matching AARTISURF's raw-material ratio 75.6%->82.3% and EBITDA margin 10.70%->7.56%?", why: "Industry-wide feedstock shock vs company-specific pricing-power problem", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+  - {question: "What Indian specialty-surfactants/personal-care demand growth rates do peers cite now, and do they corroborate AARTISURF's stale 2020-vintage figures (global surfactants 4.5% CAGR; India 8-9.6% CAGR through 2022)?", why: "AARTISURF's only industry figures are 5y+ old and lapsed", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+  - {question: "Have peers discussed export-share decline, Chinese pricing pressure, or export demand weakness FY2024-FY2025, matching AARTISURF's export share 28.2%->20%?", why: "Industry export reversal vs AARTISURF-specific loss of export customers", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+  - {question: "Do peer concalls corroborate new-entrant/capacity-driven margin compression, consistent with AARTISURF's AR claim of intensifying competition?", why: "AARTISURF's competitive-intensity claim carries no name/figure", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+  - {question: "Are peers in a parallel capacity-expansion cycle, i.e. is AARTISURF's CWIP ramp (7.64->14.65->41.03cr FY24-FY26) industry-wide or out-of-cycle?", why: "AARTISURF discloses no project/timeline/capacity target", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+  - {question: "Have peers flagged receivable/payable stretch or cash-conversion deterioration with FMCG customers FY2024-FY2025, matching AARTISURF's CFO 51.96->11.14cr while payables grew 27.8% vs 12% revenue?", why: "Corroborates or isolates FLAG-CASH as industry-wide FMCG payment-cycle stretch", check_peers: ["FCL","GALAXYSURF","ROSSARI"]}
+red_flags:
+  - "Zero narrative explanation in FY2025 Inv. Pres. for ~29% EBITDA-margin decline and ~43% ROE decline vs FY2024 (High)"
+  - "Raw-material cost ratio rose 75.6%->82.3% of sales FY24->FY25 with no company commentary (High)"
+  - "Export share reversal 28.2%->20% unaccompanied by any acknowledgement while 30+ countries messaging persists (Medium)"
+  - "Accelerating unexplained capex/CWIP ramp 7.64->41.03cr FY24-FY26 with no disclosed project/timeline/capacity (Medium)"
+  - "Cash-conversion deterioration (CFO 51.96->11.14cr FY24->FY25) coincident with payables outgrowing revenue; corroborates FLAG-CASH (High, carried forward)"
+  - "Structural: credibility rests on one 5.3y-stale AR and one numbers-only deck, ~4y gap between them"
+dropped_triggers:
+  - "'Efficient raw material sourcing' named as advantage in AR FY2020-21 p.10 absent from FY2025 Inv. Pres., despite raw-material cost ratio spiking"

@@ -1,0 +1,49 @@
+stage: B07-emoat
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "IPO RHP (518 pages) consulted for cross-checks only, not exhaustively read; core facts cross-verified across concalls, investor presentation, and FY25-26 AR instead"
+  - "Announcements, shareholding pattern, and research reports not provided to this stage (carried from B01/B05)"
+  - "No independent verification of management's repeated 'first/only' claims (first Oncology facility GCC, first biosimilar Algeria, only turnkey life-sciences platform, no listed peers) - self-reported, flagged in B05 peer_questions"
+flags:
+  - type: FLAG-CREDIBILITY
+    reason: "F2 execution-moat category scores Weak with a negative net signal: management's framing ('execution capability is not a challenge, it's a co-differentiator') is directly contradicted by B05's promise-delivery record (3 delivered/2 partial/5 missed, credibility grade C, FY27 guidance walked down twice within two quarters)."
+  - type: FLAG-NONEXCLUSIVE
+    reason: "E1/R1 Saudi Vision 2030 localisation advantage (SACE) is not exclusive to Fabtech - any competitor willing to incorporate locally can replicate it, so durability depends entirely on Fabtech's own execution speed."
+  - type: FLAG-CASHCONVERSION
+    reason: "G1 war chest (Rs 208+ Cr) is IPO-proceeds-driven, not operating-cash-generated, and mostly undeployed (Rs 51.08 Cr of Rs 207.52 Cr net proceeds used by FY26-end); G2 working capital is deteriorating, not improving (receivables Rs 152.66 Cr to Rs 204.34 Cr to Rs 211-215 Cr across FY25 to Q1 FY27), consistent with B01's Block B cash-conversion deal-breaker."
+em_score: 19
+em_classification: "MODEST"
+active_categories:
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "G1", name: "War chest", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already present, deployment pending"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory/policy tailwind", strength: "Moderate", evidence_type: "documented/claim mixed", time_to_materialise: "near-term"}
+evidence_mix: {documented: 20, claim: 12, inference: 5}
+completionist_recount: "20 documented items identified across 5 scored categories (C2, E1, G1, H2, R1): SACE incorporation/capital approval/first order (3), KP Group collaboration (1), cash & debt metrics (4), geographic revenue segment table (1), Djibouti project (1), Botswana/Saudi/West Africa/North Africa order wins (4), IPO fund utilisation table (1), employee headcount (1), contribution margin prints (1), related-party procurement % (1), order book progression (1), trade receivables trend (1). No category scored Strong or Moderate on unsupported claim/inference alone."
+catalysts_12m:
+  - {catalyst: "SACE incremental order wins beyond the first civil order", window: "next 2-3 quarters", evidence_type: "claim", anchor: "Q1 FY27 call p.13, p.18"}
+  - {catalyst: "Africa vaccine pipeline - three additional projects in discussion", window: "next 1-2 quarters", evidence_type: "claim", anchor: "Q1 FY27 call p.12"}
+  - {catalyst: "Europe/Italy (JBN) acquisition close", window: "next 2-3 quarters per management, already slipped once", evidence_type: "claim", anchor: "Q1 FY27 call p.4; B05 dropped/slipped commitment"}
+  - {catalyst: "H2 FY27 revenue acceleration testing 20-25% growth guidance", window: "Oct 2026-Mar 2027", evidence_type: "claim", anchor: "Q1 FY27 call p.2"}
+capex_embedded_growth_pct: 83
+optionality_register:
+  - {optionality: "Europe/Italy acquisition closes, adding a local European platform", converting_evidence: "Signed definitive agreement + closing announcement", first_appears: "Exchange filing (Reg. 30)", window: "next 2-3 quarters, already slipped once"}
+  - {optionality: "Percentage-of-completion revenue recognition adopted", converting_evidence: "Contract-level % completion disclosed with reduced quarterly volatility shown in results", first_appears: "Quarterly results/notes to accounts", window: "next few years per management"}
+  - {optionality: "Data centre/semiconductor infrastructure diversification", converting_evidence: "Formal order win or JV announcement", first_appears: "Exchange filing/order announcement", window: "no committed timeline"}
+  - {optionality: "KP Group renewable-energy JV converts to revenue-linked contracts", converting_evidence: "First KP-Group-linked order/contract value disclosed", first_appears: "Concall/exchange filing", window: "FY27-FY28"}
+  - {optionality: "PEB/civil infrastructure bid pipeline (~Rs 400 Cr) converts beyond the single SACE order", converting_evidence: "Additional signed civil contract(s)", first_appears: "Concall order-win disclosure", window: "next 2-3 quarters"}
+  - {optionality: "Three additional Africa vaccine projects close", converting_evidence: "Signed LC-backed order(s)", first_appears: "Concall/exchange filing", window: "next 1-2 quarters"}
+  - {optionality: "Vision 2030/2035 internal strategy document published with quantified targets", converting_evidence: "Publication with disclosed metrics", first_appears: "Investor presentation/exchange filing", window: "unspecified"}
+  - {optionality: "Institutional/DII ownership broadens beyond current base", converting_evidence: "Disclosed shareholding pattern showing DII/MF increase", first_appears: "Quarterly shareholding filing", window: "contingent on ~Rs 1,000 Cr market cap threshold"}
+combined_assessment: "AVOID"
+combined_reasoning: "AVOID backward (cash-conversion deal-breaker, history downgrade) paired with only MODEST forward moat development concentrated in non-exclusive, largely undeployed catalysts does not clear the bar for HIGH POTENTIAL or TURNAROUND."
+top_moat_risks:
+  - "Execution credibility: FY27 guidance already walked down twice (30-40% to 25% to 20-25%) within two quarters of being set; any further miss undermines the SACE/Africa emerging-moat narrative's believability"
+  - "Working capital deterioration: receivables rising across every period disclosed with the 120-day cycle flat, not improving, precisely when SACE/Vision 2030 positioning demands capital-intensive local-entity buildup"
+  - "Non-exclusivity of the localisation moat: Saudi local-content qualification is available to any competitor willing to incorporate locally; Fabtech's first-mover window can close if rivals localise similarly"
+  - "Europe/JBN acquisition slippage: promised repeatedly, still not closed after 2+ quarters, raising doubt about whether other emerging catalysts (data centre, percentage-completion accounting) will convert on stated timelines"
+  - "Auditor KAM silence: Rs 58.9 Cr receivables overdue >365 days never addressed across three straight concalls despite rising receivables, suggesting an information gap between the disclosed emerging-moat narrative and underlying credit quality"

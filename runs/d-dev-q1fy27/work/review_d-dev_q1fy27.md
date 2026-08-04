@@ -21,6 +21,12 @@ Press release: A3-F01, A3-F02, A3-F03, A3-F04, A3-F05, A3-F06, A3-F07, A3-F08, A
 
 No ledger row is unreviewed. Both A2 gates read PASS; both A3 gates read PASS. Proceeding.
 
+**Coverage of non-actionable findings (explicit disposition, A5 loop-1 fix).** All 26 A3 findings (17 results + 9 presentation) are accounted for. Twenty-four drive at least one management question, watchlist/trigger row, Section B cross-check row, or monitorable. The remaining two are classified **NEUTRAL-FACT** in their source forensics files (neither FORWARD-SIGNAL nor AMBIGUOUS), so no mandatory management question is required. Disposition (c) applied to each, with reason:
+- **A3-17 (results forensics, NEUTRAL-FACT, lines 360/630/452-459) — reviewed, no question required.** It is drafting inconsistencies: header typos ("Uudited"/"udited"), the consolidation-entity "Relationship" column populated only for rows 1 and 4 of the 6-entity table (rows at lines 455/456/458/459 blank), and finance/depreciation line-item reordering standalone vs consolidated. Reason: individually immaterial artifacts with no financial-statement or thesis impact. The source file flags them only as "cumulatively a controls data point alongside A3-16," and that controls concern is already carried actively as management question Q15 (the SIG_BEFORE_CONCLUSION signature-sequencing question) and in the governance-cluster flag. A separate question adds no signal.
+- **A3-F06 (press-release forensics, NEUTRAL-FACT, lines 23/59/68/157) — reviewed, no question required.** The entity name is rendered four ways in the press release, including an undefined "DDEL" (line 157) alongside "Dee Development Engineers" (59), "DEE Development Engineers Limited" (68) and ticker "DEEDEV" (23). Reason: a cosmetic drafting/branding inconsistency in a non-audited presentation document with no numeric or thesis bearing. The substantive press-release disclosure-quality concerns (unlabelled standalone/consolidated basis, rounding non-tie, missing EPS glyph) are already carried as questions Q17 and Q18. A separate question adds no signal.
+
+Management-questions count: 19 (unchanged; A3-17 and A3-F06 are NEUTRAL-FACT and generate no question).
+
 **Pre-flight facts (Step 0):**
 - **Units (0B):** results filing "Amount in INR Lacs" (both statements, lines 284, 537); conversion Lakhs x0.01 = Cr. Press release "₹ Crore" (line 70); x1. Cross-check confirmed: consol Revenue 29,446.22 lacs (line 541) = ₹294.46 Cr = press-release ₹294.5 Cr (line 74).
 - **Share-count changes (0C):** paid-up capital 6,926.34 lacs at 30-06-2026 (line 584), unchanged vs 31-03-2026. The Jun-26 ₹300 Cr preferential (59,76,096 sh; post-issue 7,52,39,438 sh per Notion) is NOT reflected in this quarter's paid-up capital and NOT disclosed in any subsequent-events note (A3-09). EPS in this filing is on the pre-issue base. ~8.6% dilution pending.
@@ -350,7 +356,7 @@ No pillar changed by >10%; **destination PE and fair values are unchanged this q
 
 ## STEP 8.5 — QUESTIONS FOR MANAGEMENT
 
-Every A3 FORWARD-SIGNAL and AMBIGUOUS finding from BOTH forensics files generates at least one question. Source finding ids and line cites carried on every row. Channel: no concall scheduled; route via IR email and the 37th AGM Q&A.
+Every A3 FORWARD-SIGNAL and AMBIGUOUS finding from BOTH forensics files generates at least one question. Source finding ids and line cites carried on every row. Channel: no concall scheduled; route via IR email and the 37th AGM Q&A. (The two NEUTRAL-FACT findings A3-17 and A3-F06 generate no question by design; disposition is stated in the Section 0 coverage note.)
 
 | # | Question | Why it matters | Bull answer | Bear answer | Source finding(s) |
 |---|---|---|---|---|---|
@@ -486,6 +492,8 @@ ledger_reconciliation:
   slides: 4            # press release pages (6 headline metrics)
   all_reviewed: true
   a3_findings_incorporated: ["A3-01","A3-02","A3-03","A3-04","A3-05","A3-06","A3-07","A3-08","A3-09","A3-10","A3-11","A3-12","A3-13","A3-14","A3-15","A3-16","A3-17","A3-F01","A3-F02","A3-F03","A3-F04","A3-F05","A3-F06","A3-F07","A3-F08","A3-F09"]
+  findings_disposition:                     # A5 loop-1: every finding accounted for; NEUTRAL-FACT items generate no question
+    non_actionable_neutral_fact: ["A3-17","A3-F06"]   # reviewed, no question required (see Section 0 coverage note)
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"   # no Q1 cash-flow statement/balance sheet under Reg 33; caps at PROCEED WITH CAVEATS, subsumed into FLAGS
 decision_status_verified: "HELD"   # WATCHLIST/AVOID at CMP; entry zone Rs.210-262

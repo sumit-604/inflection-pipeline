@@ -1,0 +1,34 @@
+stage: B09-tam
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["SE Asia pharma facility/equipment capex not independently sourced (CRISIL RHP covers Global/MEA/India only)", "no independent broker/equity research available to cross-check TAM", "8 of 9 named CRISIL competitive-landscape peers have no disclosed revenue, limiting Method 3 precision", "no independent facility-count dataset found for a full Method 2 bottom-up build", "current share price / P/E not provided as an input to this stage"]
+flags:
+  - "management's $30bn/$70bn 10-year TAM claim (Aug-2026 concall only) is unattributed, undated-methodology, unit-ambiguous (stock vs flow), and untriangulated by all 4 comparable peers per stage 6 - read as INFLATED / TAM-presented-as-SAM conflation"
+  - "SOM-implied revenue CAGR (~13-14%) is materially below management's 20-25% guidance and its Rs 1,000 Cr-by-2030 target (~23.4% CAGR) - formal handoff for stage 11"
+  - "management's own 20-25% growth guidance would exceed the B07 capex-embedded capacity ceiling (83%) by Rs 284-526 Cr over 5 years; SOM aligns with capacity, guidance does not"
+  - "investor presentation's geography chart (90% international) contradicts its own caption (55% international) - used the chart, consistent with task-given 89% figure"
+  - "SAM/SOM chain rests on several LOW-MEDIUM confidence chained assumptions (R&D/regulatory capex split, turnkey-channel penetration rate, unorganised multiplier) - directional not precise"
+market_definition: "Turnkey EPC facility infrastructure (cleanroom/HVAC/MEP/process utilities) + process-equipment supply for pharma/biotech/healthcare facility capex, MEA + India + nascent SE Asia, excluding drug/product markets and India cleanroom (separate FTCL entity)"
+tam_cr: {conservative: 2000, realistic: 4400}
+sam_cr: 2150
+sam_pct_of_tam: 49
+som_3yr_cr: 635
+som_5yr_cr: 787
+som_implied_revenue_cagr: {yr3: 13.8, yr5: 12.8}
+current_sam_share_pct: 20.1
+revenue_headroom_x: 5.0
+tam_growth_pct: 7
+runway_class: "STRONG"
+mgmt_claim_cr: 28500
+mgmt_claim_ratio: 14.3
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient for SOM (5yr +82.5% vs 83% capex-embedded ceiling, near-zero margin); gap of Rs 284-526 Cr against management's own 20-25% guidance, which is the optimistic side"
+methods_used: ["top-down (CRISIL capex)", "bottom-up (Fabtech funnel, partial/constrained)", "peer revenue aggregation (CRISIL competitive landscape)", "import substitution (qualitative)", "global benchmark (directional, stale)"]
+stale_data_flags:
+  - {datapoint: "current healthcare expenditure (CHE) per capita PPP", source: "RHP p.161-162, WHO/Crisil Intelligence", year: 2022}
+  - {datapoint: "DALY disease-burden tables", source: "RHP p.166-167, Global Health Estimates/WHO", year: 2021}
+  - {datapoint: "global healthcare expenditure % of GDP", source: "RHP p.161", year: 2022}
+searches_performed: ["pharmaceutical cleanroom market size 2026 Middle East Africa forecast", "pharmaceutical engineering EPC turnkey construction market size global 2026 CAGR", "'pharmaceutical cleanroom' market size billion 2025 2030 CAGR report", "USD INR exchange rate August 2026", "Southeast Asia pharmaceutical manufacturing capex investment market size billion 2025 2029", "WebFetch fortunebusinessinsights.com cleanroom-HVAC (failed 403, worked around via search snippet)"]
+searches_skipped: []

@@ -1,0 +1,16 @@
+stage: confidence-delta
+company: "AARTISURF"
+run_date: "2026-08-04"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 96.6      # B12a: 87 numbers checked, 0 critical, 3 immaterial major
+  redflag_coverage: 79            # B12b: 11 of 14 verifier-found flags caught upstream (+2 partial)
+  framework_adherence: 100        # B12c: gate0 (46 rules) + emoat (27 rules), 0 fails; VALUATION HALF PENDING PHASE 3
+  peer_utilisation: 91.7          # B12d: 11 of 12 peer transcripts used substantively, independently confirmed
+  overall: 79                     # min of the four
+band: "normal (75-89) - note specifics; no verdict downgrade, no forced REWORK"
+valuation_component: "PENDING PHASE 3 - verifier C valuation-adherence audit (B10/B11) deferred; overall may move when phase 3 completes"
+rework_check: "NOT TRIGGERED - Verifier A found 0 CRITICAL source-fidelity findings; no verifier acceptance_rate below 60% (A 96.6, B 79, C 100, D 92)"
+notes:
+  - "Verifier D required one re-invocation: its first run reported a mechanical 'transcripts missing' error (it grepped binary PDFs); on re-run with explicit Read paths it read all 12 and confirmed 11/12 substantive at 92% acceptance. Logged as a mechanical retry, not a quality miss."
+  - "Confidence is capped by redflag_coverage (79), reflecting the no-concall degraded evidence base and the one missed MINOR over-promotion flag (deck 'Rating Upgrade' vs 'Reaffirmed'), not by any numerical or framework failure."

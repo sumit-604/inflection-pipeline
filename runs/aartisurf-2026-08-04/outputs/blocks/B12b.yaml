@@ -1,0 +1,26 @@
+stage: B12b
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+mode: "no-concall - audited B05 communication analysis against AR FY2020-21 + investor presentation; independently audited 12 peer transcripts against B06"
+independent_flags_found: 14
+caught: 11
+partially_caught: 2
+missed:
+  - {severity: "MINOR", item: "Deck slide 7 headlined 'Financial Performance and Rating Upgrade' while both CARE ratings (A- / BBB+ Stable) are shown as 'Reaffirmed', not upgraded - over-promotion B05 did not flag", anchor: "Investor_Presentation_1.pdf slide 7"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C; peer cross-read (lone counter-cyclical undiversified expander) arguably worse, but thin evidence base and no-concall floor keep it at C"
+findings:
+  - {severity: "MINOR", location: "B05 2B", claim: "'complete absence of any acknowledgement that a decline occurred'", assessment: "OVERSTATED - deck discloses declines numerically (slide 6 negative YoY columns; slide 7 bars); absent is causal narrative, not acknowledgement", anchor: "Inv. Pres. slides 6-7"}
+  - {severity: "MINOR", location: "B05 2C/4D", claim: "deck offers no acknowledgement / over-promotion set", assessment: "MISSED - 'Rating Upgrade' slide title vs 'Reaffirmed' ratings", anchor: "Inv. Pres. slide 7"}
+  - {severity: "MINOR", location: "B05 4C credibility_basis", claim: "delivery benchmarked to FY24", assessment: "PARTIALLY CAUGHT - FY21 AR baseline (RoNW 25.14%) implies a larger multi-year return collapse to ~6.6% ROE", anchor: "AR p.11; deck slide 7"}
+  - {severity: "MINOR", location: "B06 Q3/2E", claim: "'May 2026 call... Rs5cr hit from delayed Chinese phenol shipments'", assessment: "MISATTRIBUTED - Rs5cr phenol figure is in ROSSARI Jul 2026 call (re Q4), not the Apr/May call; substance correct", anchor: "ROSSARI-Concall_Jul_2026 p.13"}
+  - {severity: "MINOR", location: "B06 Q5", claim: "Galaxy 'cumulative ~INR480cr over prior 3 years (Nov 2025)' and Rossari 'May 2026' call", assessment: "INR480cr not independently locatable in Nov 2025 (CWIP ~INR260cr confirmed); Rossari Q4 call actually dated 28 Apr 2026", anchor: "GALAXYSURF-Concall_Nov_2025; ROSSARI-Concall_May_2026"}
+  - {severity: "MINOR", location: "B06 Q1/2B", claim: "reformulation away from oleochemical surfactants", assessment: "PARTIALLY CAUGHT - surfaced as Galaxy margin story, not connected as an AARTISURF-specific volume/demand risk given its fatty-alcohol chemistry", anchor: "GALAXYSURF-Concall_Nov_2025 pp.3-9"}
+critical_count: 0
+major_count: 0
+minor_count: 6
+acceptance_rate: 79
+redflag_coverage_pct: 79    # 11 of 14 verifier-found flags already caught upstream (2 more partial)

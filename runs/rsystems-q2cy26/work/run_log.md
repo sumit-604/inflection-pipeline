@@ -20,3 +20,9 @@
 - presentation: 11/11 pages, formfeed 11, 579 lines, unit=Millions (x0.1→Cr, parallel US$mn), no OCR. extract_presentation_rsystems_q2cy26.txt
 
 ## A2 — enumerators launched (results ledger + presentation ledger)
+
+## GATE A2 — PASS (both documents)
+- results: 8 agenda items, 31 notes, 281 line items (6 zero-standing), 27 auditor paras, 31 entities (5 ENTITY_CHANGE Novigo + Velotio/Scaleworx amalgamation). Count reconciled.
+- presentation: 189 gated rows across 18 categories (1 ZERO_STANDING). Count reconciled.
+
+## A3 — forensics launched (results F1-F17 + presentation F1-F17), Notion Step-5 checklist passed inline

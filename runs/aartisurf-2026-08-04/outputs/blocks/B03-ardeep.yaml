@@ -1,0 +1,56 @@
+stage: B03-ardeep
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FII/DII granular shareholding split not disclosed in the AR's Corporate Governance Report (only Promoter/Public split given)"
+  - "YoY promoter shareholding % change not given in this single AR (point-in-time snapshot only)"
+  - "Promoter share pledge not explicitly disclosed as a distinct line item (best read as nil, not stated affirmatively)"
+  - "ECL matrix, capitalisation threshold, and non-deductible-expense composition not disclosed in the notes"
+  - "FY23 comparative balance sheet totals not shown (only 2 years of primary statements in this AR), limiting a full 2-year DuPont/exceptional-items-pattern trend"
+flags:
+  - {type: FLAG-CASH, reason: "Cash Flow Statement (primary statement, not notes-level) confirms CFO fell 78.3% YoY (Rs.52.00 Cr to Rs.11.30 Cr), CFO/EBITDA fell from 82.4% to 24.8%, FCF turned negative (Rs.-8.63 Cr vs Rs.+35.91 Cr), and net working-capital cash consumption rose 5.5x (Rs.20.38 Cr vs Rs.3.70 Cr), driven by receivables +Rs.21.50 Cr and inventory +Rs.35.12 Cr only partly offset by payables +Rs.36.24 Cr; on an interest-inclusive comparable basis CFO is effectively break-even (~Rs.0.64 Cr) (Standalone Cash Flow Statement p.97-98)."}
+  - {type: FLAG-NARRATIVE, reason: "Chairman's Letter states EBITDA of Rs.4,981.53 lakh, which reconciles almost exactly to the correct audited EBITDA (Rs.4,561.29 lakh, matching the Board's Report table) plus the one-time exceptional insurance gain (Rs.420.25 lakh) -- an apparent 9.2% overstatement of the headline profitability metric in the most-read section of the AR (Chairman's Letter p.7 vs P&L p.95 and Board's Report p.32)."}
+  - {type: FLAG-DISCLOSURE-CONTRADICTION, reason: "MD&A's own 'Return on Net Worth' table (p.28) states 12.28% FY25 vs 11.50% FY24 (a claimed increase) while the audited Note 43 Ratio Analysis (p.138) states Return on Equity of 6.61% FY25 vs 11.50% FY24 (a 42.5% decline) -- both share the same FY24 base and are irreconcilable with each other within the same document."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No adverse promoter pattern found in this AR alone (no pledge disclosed, no YoY selling data available from this single-snapshot document); full promoter verdict deferred to B08 as instructed. Independent Chairman (Mulesh Savla) holds directorships/chairmanships at two other Aarti-group-adjacent listed entities (Valiant Organics, Valiant Laboratories), a cross-board pattern worth carrying into B08's promoter-network review even though it is via the independent Chairman rather than the promoter director himself."}
+phase_verdicts: {p1: "Watch", p2: "Watch", p3: "Red Flag", p4: "Red Flag", p5: "Watch", p6: "Red Flag", p7_best_fit: "GARP/Turnaround, both Watchlist"}
+overall_quality: 5            # /10 with the four 25% components
+quality_components: {governance: 6, accounting: 5, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would not halt -- clean opinions, no fraud/default/wilful-defaulter finding; audit-trail gap is a genuine but narrow disclosure-integrity item, not disqualifying."
+  - "Phase 2: would not halt -- no fabricated numbers or undisclosed related-party self-dealing; thin disclosure combined with weak underlying earnings quality is a 'read carefully' signal, not a stop signal."
+  - "Phase 3: would pause before underwriting a growth thesis at face value -- FY25 operating cash generation was effectively zero on an interest-inclusive comparable basis; this is a flag/monitorable per pipeline rules, not a halt."
+  - "Phase 4: would not halt -- the MD&A/Note-43 numerical contradiction is a disclosure-quality and credibility issue (the correct, worse figure IS disclosed elsewhere in the same document), not a fraud or misstatement finding, but materially lowers confidence in the MD&A's forward-looking claims."
+  - "Phase 5: would not halt -- attendance (40%, one director) and cross-board (independent Chairman) items are named-and-monitor items with no evidence of consequence in this AR."
+  - "Phase 6: would flag prominently for the human reviewer -- the Chairman's Letter's headline EBITDA figure and 'improved margins'/'financial recovery' framing are directly, numerically contradicted by the audited primary statements and by Note 43's own admission elsewhere in the same document; not a halt under pipeline rules, but the single strongest 'read the primary statements yourself, do not rely on the narrative' signal in this stage."
+triple_pass_verification:     # Phase 2 reconciliation result
+  verified: 14                 # of 15
+  discrepancies:
+    - {finding_rank: 15, triple_pass_value: "non-deductible expenses Rs.5.09 Cr, 24.1% of PBT", ar_value: "the Rs.509.37 lakh (Rs.5.09 Cr) figure in Note 16.3 is the TAX EFFECT of non-deductible expenses at the 25.168% statutory rate, not the underlying non-deductible expense amount itself (underlying expense base is approx. Rs.20.24 Cr); the 24.1%-of-PBT proportion and the Rs.5.09 Cr number are both numerically correct as the tax-effect line, but the triple-pass label described it as if it were the expense amount rather than the tax effect on that expense", note_ref: "Note 16.3, p.119-120"}
+missing_risks:
+  - {risk: "Customer concentration (71% of sales, two unnamed customers, up from 64% PY)", evidence_anchor: "Note 36 standalone p.144/AR-internal, verified against Note 36 text at PDF p.130; absent from MD&A Risks and Concerns table p.30 and Opportunities/Threats section p.25-26"}
+  - {risk: "Working capital / cash conversion deterioration (CFO -78.3%, FCF negative)", evidence_anchor: "Standalone Cash Flow Statement p.97-98; not mentioned anywhere in MD&A Business Outlook p.28-29"}
+  - {risk: "Rising short-term borrowing mix / rollover risk (current borrowings +64.6%, non-current -42.4%)", evidence_anchor: "Balance Sheet p.94, Note 40 maturity profile p.136; Board's Report Capital & Finance section p.33 discloses the raw figures without discussing the mix shift"}
+  - {risk: "True margin compression magnitude (EBITDA margin 10.70% to 6.92%) omitted from the reader-facing Chairman's Letter/CEO Conversation narrative even though present in the MD&A's own numeric table and Note 43", evidence_anchor: "P&L p.95, MD&A Financial Performance table p.28, Note 43 p.138, vs Chairman's Letter p.7 and CEO Conversation p.6"}
+guidance_table:
+  - {claim: "FY26 to be a year of renewed growth momentum", number: "none given", timeframe: "FY26", credibility: "Directionally plausible on revenue; not yet borne out on margins per OUT-OF-VINTAGE CARE data (H1FY26 PBILDT margin 5.33%, essentially flat vs FY25's 5.32%)"}
+  - {claim: "Domestic demand tailwind from higher-than-average monsoon", number: "none given", timeframe: "FY26", credibility: "Not independently verifiable from this document"}
+  - {claim: "Continued capacity expansion / debottlenecking capex", number: "Rs.19.93 Cr FY25 capex disclosed; no explicit FY26 capex guidance number in the MD&A", timeframe: "FY26 onward", credibility: "OUT-OF-VINTAGE CARE data shows a larger, debt-funded ~Rs.60 Cr capex program now underway than the FY25 MD&A's qualitative language implied"}
+  - {claim: "Credit ratings CARE A-/BBB+ Stable as at FY25 year-end", number: "CARE A- (bank facilities), CARE BBB+ (preference shares)", timeframe: "As at 31-Mar-2025", credibility: "Materially stale as of pipeline run date -- OUT-OF-VINTAGE CARE Dec-2025 action downgraded both to BBB+/BBB, explicitly citing continued margin subdual into H1FY26"}
+monitorables:
+  - {metric: "CFO/EBITDA and Free Cash Flow", threshold: "Return to >50% CFO/EBITDA and positive FCF", where: "Quarterly/half-yearly Cash Flow Statement in results filings", why: "FY25's collapse (CFO/EBITDA 82.4% to 24.8%, FCF negative) must reverse, not merely stabilise, to resolve the FLAG-CASH concern"}
+  - {metric: "PBILDT/EBITDA margin", threshold: "Sustained recovery above ~8% (CARE's stated positive-rating threshold) vs FY25/H1FY26's 5.3-6.9% band", where: "Quarterly results, CARE rating surveillance updates", why: "CARE's Dec-2025 downgrade ties further rating action to this threshold; H1FY26 had not yet recovered"}
+  - {metric: "Two-customer revenue concentration %", threshold: "Any increase above 71%, or any disclosed customer loss/renegotiation", where: "Next AR's Note 36/35, or customer-related exchange filings", why: "Largest unresolved structural risk identified in this stage, absent from the Company's own risk disclosure"}
+  - {metric: "DSCR and short-term borrowing growth rate", threshold: "DSCR staying materially below 1.5x, or working-capital borrowing continuing to outgrow revenue", where: "Quarterly results, next AR's borrowings/ratio notes, CARE surveillance", why: "FY25 DSCR fell to 1.32x with a shift toward short-term funding; CARE flags large term-debt repayments due FY26-FY27"}
+  - {metric: "~Rs.60 Cr debt-funded capex program conversion to productive capacity", threshold: "Capitalisation into revenue-generating assets and margin improvement within 2-3 years, without a further leverage spike", where: "Next AR's PPE/CWIP notes, quarterly capex disclosures", why: "Tests the capex-led-growth/turnaround thesis directly; an already-stressed FY25 cash position raises execution stakes"}
+strengths_top3:
+  - "Clean audit record across the board: unmodified opinions (standalone and consolidated), zero fraud/default/wilful-defaulter findings, zero SEBI/exchange actions in three years, zero non-audit fees to the statutory auditor"
+  - "Revenue growth is real and structurally broad-based (+11.7%, with a genuine domestic/export mix shift under tariff pressure), and receivables ageing/turnover actually improved this year even as other working-capital lines deteriorated"
+  - "No debt maturity cliff, well-laddered borrowings, immaterial and arm's-length related-party transaction quantum (0.56% of revenue), sole subsidiary loan fully repaid"
+red_flags_top3:
+  - "Chairman's Letter's headline EBITDA figure (Rs.4,981.53 lakh) appears to embed the one-time exceptional insurance gain (Rs.420.25 lakh), overstating true audited EBITDA (Rs.4,561.29 lakh) by 9.2% in the most-read section of the Annual Report"
+  - "Operating cash generation effectively collapsed: CFO -78.3% YoY, CFO/EBITDA from 82.4% to 24.8%, FCF turned negative, driven by a 5.5x increase in net working-capital cash consumption traceable directly in the Cash Flow Statement"
+  - "MD&A's own Return on Net Worth table directly contradicts the audited Note 43 Ratio Analysis within the same document (claimed +0.78pp increase to 12.28% vs audited -42.5% decline to 6.61%), alongside the 71% two-customer concentration being entirely absent from the Company's own risk disclosure"
+best_fit_strategy: "GARP/Turnaround, both Watchlist pending confirmed margin-trough reversal"
+one_line_verdict: "Real revenue growth masking a margin and cash-flow collapse the Chairman's Letter's own EBITDA figure appears to overstate."

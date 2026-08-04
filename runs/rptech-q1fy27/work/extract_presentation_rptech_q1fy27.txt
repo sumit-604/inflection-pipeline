@@ -1,0 +1,797 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_rptech_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 23
+formfeed_count: 23
+line_count: 797
+unit_convention: Millions (INR Mn, stated on slide headers e.g. "Revenue (INR Mn)", "Particulars (INR Mn)")
+conversion_factor_to_cr: Millions -> x0.1 (1 INR Mn = 0.1 Rs Cr)
+ocr_pages: [2, 7 (chart/logo grid supplement), 13, 23]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-04
+notes: PDF has native (non-rasterised) text layer throughout, including all
+  chart data labels on pages 10, 15, 18, 21 (verified against rendered images
+  at 150 dpi -- all numeric labels matched extracted text exactly, no OCR
+  fallback required for those chart pages). Pages 2, 13, and 23 (section
+  divider slides) and page 7 (brand logo grid) fell under the mechanical
+  <100-character / low-fidelity-OCR triggers and were rasterised at 200 dpi
+  and OCR'd with tesseract; results merged inline under each page marker.
+  Page 1 is the BSE/NSE covering letter (Regulation 30(6) disclosure)
+  bundled ahead of the investor presentation deck; it is page 1 of this PDF
+  and is included in full for completeness even though it precedes the
+  deck's own title slide (page 2 of the PDF = slide 1 of the deck).
+=== END HEADER ===
+
+[page 1]
+August 4, 2026
+
+
+To,
+Listing Operation Department                                       Listing Compliance Department
+BSE Limited (BSE)                                                  The National Stock Exchange of India Limited (NSE)
+Phiroze Jeejecbhoy Towers                                          05th Floor, Exchange Plaza, C-1, Block G, Bandra Kurla
+Dalal Street, Mumbai- 400001                                       Complex, Bandra (E) Mumbai - 400051
+
+Scrip Code: 544119                                                 Symbol: RPTECH
+
+
+
+                                                        Sub.: Investor Presentation
+
+
+
+Dear Sir/Madam,
+Pursuant to Regulation 30(6) of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 as amended from time to time, enclosed herewith a copy of Investor
+Presentation on financial results for the quarter ended June 30, 2026.
+
+The same is available on the website of the Company at www.rptechindia.com/investor.
+You are requested to kindly take the same on record.
+
+
+FOR RASHI PERIPHERALS LIMITED
+          Digitally signed by ARVIND BAJORIA
+          DN: c=IN, postalCode=421301,
+
+
+
+ARVIND
+          st=MAHARASHTRA, street=503 C VRINDAVAN
+          PARADISE ,VASANT VALLEY
+          ROAD ,THANE,421301, l=THANE, o=Personal,
+          serialNumber=bf1aef14619ab2a27b3c7481964e
+          4b890cbeb0ff167b993054e7a8581eb90d68,
+
+
+
+
+BAJORIA
+          pseudonym=a208d62ed137456589ae643f9880
+          38a9,
+          2.5.4.20=5abfeef6e06d488064e8f123fec6ae749f
+          edf0f91840ce0f4c97bd339aba2fbc,
+          email=ARVIND.BAJORIA@RPTECHINDIA.COM,
+          cn=ARVIND BAJORIA
+          Date: 2026.08.04 20:03:04 +05'30'
+
+
+
+
+Arvind Bajoria
+Company Secretary and Compliance Of�icer
+
+Encl.: As above
+
+
+
+
+                                                              Rashi Peripherals Limited
+                      Regd. Oﬃce: Ariisto House, 5th Floor, N S Phadke Road, Andheri East, Mumbai, Maharashtra – 400069, India
+                      • Tel: +91-22-6177 1771 | Fax +91-22-61771999 • www.rptechindia.com | CIN: L30007MH1989PLC051039
+
+
+[page 2]
+    EARNINGS
+PRESENTATION
+        Q1-FY27
+
+
+[OCR page 2] (confirms rasterised text matches native text layer; no additional content)
+EARNINGS
+PRESENTATION
+Q1-FY27
+
+[page 3]
+RP tech at a Glance
+
+
+
+              37+                  80         10,250+          661
+         Years of
+                                 Global       Partners /                    18,874
+                                                           Million Units
+                               Technology        B2B                          SKU’s
+        experience                                         Distributed
+                                 Brands       Customers
+
+
+
+
+                                               31.8%                          AA-
+           1,641                 18.7%                        0.43
+                                  3 year      3 year PAT   Net Debt to
+                                                                            /Stable
+        Employees                                                          CRISIL Long
+                              Revenue CAGR*     CAGR*       Equity*
+                                                                           Term rating
+
+
+
+  All figures as on Q1-FY27
+  * Figures as on FY26
+                                                                                         2
+
+
+[page 4]
+Enabling Adoption & Deployment of Technology in India
+              Vision                                                                           Mission
+              To establish a multi-channel, pan-India distribution
+              footprint and to pursue a high-engagement strategy                               To make IT products available in each of the 800+
+              across General Trade, Modern Trade, and E-Commerce                               districts in India
+              channels.
+
+
+RP tech plays a foundational role in India’s technology ecosystem, connecting global innovation with nationwide access, adoption and trust. We do not merely
+                                    distribute IT products; we are enabling India’s digital and technology adoption at scale.
+
+
+                                             How the Company Enables Technology Adoption at Scale
+
+
+          Bridge Between Global OEMs and India                                                  Multi-Channel Distribution Backbone
+          Trusted national distributor of 80 global technology brands, enabling faster          Integrated presence across General Trade, Modern Trade and E-
+          market entry, deeper penetration and long-term brand scaling in India                 Commerce, ensuring technology availability for consumers,
+                                                                                                enterprises, MSMEs, institutions and government
+
+
+
+          Driving Adoption, Not Just Availability                                               Trust Through Service & Support
+          Channel training programs, roadshows, solution demonstrations and pre-sales,          End-to-end services including warranty management, RMA, diagnostics
+          techno-commercial support enable adoption of complex and high-value IT products       and after-sales support strengthen confidence, repeat purchases and
+                                                                                                upgrade cycles
+
+
+          Nationwide Access
+          One of India’s largest ICT distribution networks with 700+ locations, 57 branches,
+          73 warehouses and 50 service centres, extending technology reach beyond
+          metros into Tier-2, Tier-3 and emerging markets
+                                                                                                                                                                      3
+
+
+[page 5]
+Value Proposition
+
+                     After sales support                            Wide reach
+              and warranty management                               and deep channel penetration
+
+
+     Comprehensive portfolio                                                 Sales technology support
+                of products                                                  with Go to marketing
+                                                                             strategies
+
+
+                                                                              Value added support
+        Techno-commercial                                                     to brands and channel
+                  support                                                     partners
+
+
+
+                                                                          Business excellence
+           Customised solutions
+                                                                          Better understanding of market,
+                 for customers
+                                                                          products & solutions
+
+                                           Consistency
+                                           and speed of execution
+    Customer Value Proposition                                                         Vendor Value Proposition
+                                                                                                                  4
+
+
+[page 6]
+Key Strengths
+
+          Experienced Industry Player with Legacy                           Extensive Pan-India Distribution Network
+          Over 37+ years in the ICT distribution                            A wide and deep presence with 20 regions, 73 warehouses
+          business, giving it deep market knowledge                         and reach into 700+ locations across India, enabling strong
+          and positioning in a competitive industry                         market access and logistical coverage
+
+
+
+Demand-Creation Advantage                                                            Strong Channel Partner Relationships
+Consistent investment in brand-building and                                          Serves thousands of channel partners, with a
+channel marketing translates into better demand                                      high degree of repeat business and long-
+visibility, faster inventory churn, and stronger                                     standing customer ties, which supports stable
+partner loyalty                                                                      revenue streams
+
+
+
+Leading Partner for Global Technology Brands                                         Comprehensive Product & Service Portfolio
+                                                                                     Offers a broad range of ICT products (PCs,
+National distribution partner to 80+ global
+                                                                                     components, peripherals, power, networking) plus
+tech brands across IT and lifestyle categories,
+                                                                                     value-added services like pre-sales, solution design,
+strengthening credibility and product access
+                                                                                     credit support and warranty support
+
+                       Wallet Share Expansion                          Multi-Channel Go-to-Market Strategy
+                       A broad, multi-OEM portfolio enables bundling
+                                                                       Presence across general trade, modern trade and
+                       of endpoints, infrastructure, and peripherals
+                                                                       e-commerce channels increases distribution
+                       within the same account, increasing share of
+                                                                       flexibility and customer reach
+                       spend     without    incremental    customer
+                       acquisition cost.
+
+                                                                                                                                             5
+
+
+[page 7]
+                                         Brand Relationships & Positioning
+Trusted by 80 Global Technology Brands
+
+
+
+
+                                                                             Over 5 year relationship with
+                                                                                more than 20 brands
+
+
+
+
+                                                                                                             6
+
+
+[CHART/LOGO GRID, page 7, OCR text was low-confidence on stylised logo wordmarks; brand names transcribed from rasterised image (pdftoppm -r 200) for accuracy]
+Brand logo grid (8 rows x 6 columns, 48 logos shown) under heading "Trusted by 80 Global Technology Brands":
+Row 1: Alcatel-Lucent Enterprise | AMD | American Megatrends | Antec | AnyDesk | AOC
+Row 2: APC | ASUS | ATEN | Belden | belkin | Cambium Networks
+Row 3: COLORFUL | CORNELIS NETWORKS | DELL | EATON | ECS ELITEGROUP | elmos
+Row 4: fitbit | Google | hp | intel | j5create | JBL
+Row 5: Lenovo | LG | logitech | neoway | ninjaOne | NORDEN
+Row 6: NVIDIA | NUMERIC (A Group brand - Legrand) | Optoma | OURA | PHILIPS | Qualcomm
+Row 7: Quantum | SAMSUNG | SANDISK | Supermicro | Teachmint | TOSHIBA
+Row 8: tp-link | UBIQUITI | ViewSonic | VVDN Technologies | WEKA | WD
+Callout box (right side): "Over 5 year relationship with more than 20 brands"
+
+[page 8]
+  Distribution Model
+      OEM/ Brands      National Distributor Partner             Distribution Channels   End Users
+
+
+
+                                                                                        •   Offers logistics support, billing services,
+                                                                                            and last-mile service even in remote
+                                                                                            locations
+                                                                                        •   Industry leader in breadth billing
+                                                                                        •   Wide spread reach to retail stores,
+                                                                 General                    MBOs, exclusive outlets, gifting partners,
+                                                                  Trade                     etc
+
+
+                                                                                        • Supplies products to Large Format
+                                                                                          Retailers (LFRs), multi-format retail (“MFR”)
+                    Distributor   Warehousing /                                           and small format retail (“SFR”) chains,
+                     Partner      Service Centres                                         through a robust, branch-driven local
+                                                    Own / 3rd    Modern                   billing network
+Global Technology                                    Party
+                                                                  Trade                 • Only distributor catering to 15+ LFRs
+     Brands                                         Logistics
+
+
+                                                                                        • Collaborating with India’s leading online
+                                                                                          marketplaces       to    extend     product
+                                                                                          availability and offer nationwide delivery
+                                                                                        • Team includes developers, tech support,
+                                                                                          customer care, dedicated operations and
+                                                                E-Commerce                product managers
+
+
+
+                                                                                                                                          7
+
+
+[page 9]
+     Pan-India Branch Network
+                                                                                           20
+                                                     Andhra Pradesh:                     Regions                     Odisha:
+                                                     • Amravati                                                      • Bhubaneshwar
+                                                     • Vijayawada
+                                                                                       57 Branches                   Puducherry (UT):
+                                                     • Visakhapatnam
+                                                                                                                     • Puducherry
+                                                     Assam:                                                          Punjab:
+                                                     • Guwahati                       706 Locations                  • Ludhiana
+
+                                                     Bihar:                                                          Rajasthan:
+                                                     • Patna                                                         • Jaipur
+                                                                              10,250+ Distribution Partners          • Udaipur
+                                                     Chandigarh (UT):                                                Tamil Nadu:
+                                                     • Chandigarh       Jammu & Kashmir (UT):      Madhya Pradesh:   • Coimbatore
+                                                                        • Jammu                    • Bhopal          • Chennai
+                                                     Chhattisgarh:      • Srinagar                 • Indore          • Madurai
+                                                     • Raipur                                      • Jabalpur
+                                                                        Jharkhand:                 Maharashtra:      Telangana:
+                                                     Delhi (UT):        • Ranchi                   • Ahilyanagar     • Secunderabad
+                                                     • Delhi                                       • Baramati        • Warangal
+                                                                        Karnataka:                 • Chatrapati
+                                                     Gujarat:           • Bengaluru                                  Tripura:
+                                                                                                     Sambhaji
+                                                     • Ahmedabad        • Hubbali                                    • Agartala
+                                                                                                     Nagar
+                                                     • Baroda           • Mangaluru                • Dhule
+                                                     • Rajkot           • Mysuru                                     Uttarakhand:
+                                                                                                   • Kolhapur
+                                                     • Surat                                                         • Dehradun
+                                                                                                   • Mumbai
+                                                                        Kerala:                    • Nagpur
+                                                     Goa:               • Kochi                                      Uttar Pradesh:
+                                                                                                   • Nanded
+                                                     • Goa              • Kottayam                                   • Noida
+                                                                                                   • Nashik
+                                                                        • Kozhikode                                  • Lucknow
+                                                                                                   • Pune
+                                                     Haryana:           • Thiruvananthapuram       • Sangli
+                                                                                                                     West Bengal:
+                                                     • Gurugram                                    • Solapur
+                                                                                                                     • Kolkata
+                                                                                                                     • Siliguri
+
+
+                   Comprehensive “One-Stop Shop” for India’s evolving technology needs
+* As on Q1-FY27                                                                                                                         8
+
+
+[page 10]
+ Business Overview
+
+                                                Personal Computing &                                PES Revenue (INR Mn)
+                                                Enterprise Solutions (PES)                                            91,266
+                                                                                                             83,606
+                                                Delivering    complete,   bundled    enterprise
+                                                technology solutions with pre and post sales      60,600
+                                                support to government, data centers, and
+                                                institutional customers across BFSI, education,                                33,847
+                                                and IT services.
+
+
+
+                                                                                                  FY24        FY25    FY26     Q1-FY27
+
+
+
+
+Lifestyle and IT Essentials                                                                                LIT Revenue (INR Mn)
+(LIT)
+                                                                                                                      67,008
+Delivering standalone consumer technology                                                                    54,121
+                                                                                                  50,347
+products, including peripherals, accessories,
+gaming, wearables, and everyday IT items,
+through a fast-moving model with quicker
+                                                                                                                               17,172
+inventory turnover.
+
+
+                                                                                                  FY24        FY25    FY26     Q1-FY27
+
+                                                                                                                                         9
+
+
+[page 11]
+Growth Drivers
+
+
+                      Expand into                                  Adjacent
+                      High-Growth                                  Segments
+                        Verticals
+                                                                 Introduce new
+                     Enter emerging,                            adjacent product
+                      high-potential                               segments to
+                    sectors to diversify                        leverage existing
+                     revenue streams                                 channel
+                                                                  infrastructure
+ Forge Strategic                           Accelerate Market                        Solution-Based
+OEM Partnerships                              Penetration                               Selling
+
+  Build alliances                           Expand presence                         Upsell and cross-
+   with leading                                 across new                             sell through
+technology brands                           geographies while                        solution-based
+    to enhance                                strengthening                         selling to improve
+   offerings and                             existing markets                        wallet-share per
+ competitiveness                                                                          partner
+
+
+
+
+                                                                                                         10
+
+
+[page 12]
+    Q1-FY27 Operational Highlights
+•    Delivered record quarterly operational performance, driven by continued expansion across enterprise solutions,
+     distribution, and strategic technology partnerships.
+
+•    Continued to strengthen the enterprise technology portfolio through a strategic investment in VDA Infosolutions,
+     marking a significant step towards forward integration and expanding capabilities in managed IT services, solution
+     implementation, and lifecycle support.
+
+•    Entered a strategic partnership with WEKA.io to expand capabilities in AI infrastructure and high-performance
+     workload management, further strengthening the enterprise solutions portfolio.
+
+•    Expanded presence in Tier-2 markets with the addition of two new branches in Udaipur (Rajasthan) and Dhule
+     (Maharashtra), reinforcing the distribution network and strengthening customer reach in high-growth emerging
+     markets.
+
+•    Received industry recognition through the VAR India and Digital Terminal Media Awards, along with the Western
+     Digital Excellence in National Distribution Award 2026, reaffirming leadership in technology distribution and
+     execution excellence.
+
+
+                                                                                                                          11
+
+
+[page 13]
+FINANCIAL
+OVERVIEW
+
+
+[OCR page 13] (confirms rasterised text matches native text layer; no additional content)
+FINANCIAL
+OVERVIEW
+
+[page 14]
+Key Financial Highlights
+
+                Standalone                                        Consolidated
+
+
+        Q1-FY27 Financial Performance                    Q1-FY27 Financial Performance
+
+
+ Revenue from       EBITDA      EBITDA Margins    Revenue from        EBITDA      EBITDA Margins
+  Operations     INR 1,462 Mn       3.03%          Operations      INR 1,553 Mn       3.04%
+INR 48,322 Mn      43.3% YoY     (31) Bps YoY     INR 51,019 Mn      50.0% YoY     (24) Bps YoY
+  58.3% YoY                                         61.9% YoY
+
+     PAT         PAT Margins      Diluted EPS          PAT          PAT Margins     Diluted EPS
+  INR 972 Mn        2.01%       INR 14.41/Share    INR 1,046 Mn       2.05%       INR 15.25/Share
+   65.3% YoY      8 Bps YoY        61.4% YoY        69.5% YoY        9 Bps YoY       64.0% YoY
+
+
+
+
+                                                                                                    13
+
+
+[page 15]
+               Financial Performance
+                  Operational Revenue (INR Mn)    EBITDA (INR Mn) & EBITDA Margins (%)    PAT (INR Mn) & PAT Margins (%)
+
+
+                                         48,322                               1,462
+                             42,068                              1,198
+Standalone
+
+
+
+
+                                                    1,020        2.85%        3.03%                               972
+                  30,527
+                                                     3.34%                                            760
+                                                                                           588                   2.01%
+
+                                                                                          1.93%       1.81%
+
+
+
+                 Q1-FY26    Q4-FY26     Q1-FY27    Q1-FY26      Q4-FY26      Q1-FY27     Q1-FY26    Q4-FY26     Q1-FY27
+
+
+                  Operational Revenue (INR Mn)    EBITDA (INR Mn) & EBITDA Margins (%)    PAT (INR Mn) & PAT Margins (%)
+
+
+                                         51,019
+                             44,894                                           1,553
+Consolidated
+
+
+
+
+                                                                 1,326
+                                                     1,035                    3.04%                               1,046
+                  31,521                                                                               868
+                                                     3.28%       2.95%                     617
+
+                                                                                          1.96%       1.93%       2.05%
+
+
+
+
+                 Q1-FY26    Q4-FY26     Q1-FY27    Q1-FY26      Q4-FY26      Q1-FY27     Q1-FY26    Q4-FY26     Q1-FY27
+
+
+                                                                                                                           14
+
+
+[page 16]
+Quarterly Standalone Income Statement
+Particulars (INR Mn)          Q1-FY27   Q1-FY26    Y-O-Y     Q4-FY26   Q-O-Q
+
+Revenue from Operations       48,322    30,527    58.3%      42,068    14.9%
+
+Operational Expenses          46,860    29,507     58.8%     40,870    14.7%
+
+EBITDA                         1,462     1,020    43.3%       1,198    22.0%
+
+EBITDA Margins                 3.03%     3.34%    (31) Bps    2.85%    18 Bps
+
+Other Income                    173       72        NA         161     7.5%
+
+Finance costs                   272      264       3.0%        286     (4.9)%
+
+Depreciation & Amortization     62        41       51.2%       60      3.3%
+
+PBT                            1,301     787      65.3%       1,013    28.4%
+
+Tax Expense                     329      199       65.3%       253     30.0%
+
+PAT                             972      588      65.3%        760     27.9%
+
+PAT Margins (%)                2.01%     1.93%     8 Bps      1.81%    20 Bps
+
+Other Comprehensive Income      (2)       (3)     (33.3)%      (1)      NA
+
+Total Comprehensive Income      970      585       65.8%       759     27.8%
+
+Diluted EPS                    14.41     8.93     61.4%       11.28    27.7%
+
+
+                                                                                15
+
+
+[page 17]
+Quarterly Consolidated Income Statement
+Particulars (INR Mn)          Q1-FY27   Q1-FY26    Y-O-Y     Q4-FY26   Q-O-Q
+
+Revenue from Operations       51,019    31,521    61.9%      44,894    13.6%
+Operational Expenses          49,466    30,486    62.3%      43,568    13.5%
+EBITDA                         1,553     1,035    50.0%       1,326    17.1%
+EBITDA Margins                 3.04%     3.28%    (24) Bps    2.95%    9 Bps
+Other Income                   174        79        NA        160      8.7%
+Finance costs                  274        269      1.9%       289      (5.2)%
+Depreciation & Amortization     63        42      50.0%        61      3.3%
+PBT Before Exceptional Item    1,390      803     73.1%       1,136    22.4%
+Exceptional Item                 -         -        NA          -       NA
+PBT                            1,390      803     73.1%       1,136    22.4%
+Tax Expense                    344        186     84.9%       268      28.4%
+PAT                            1,046      617     69.5%       868      20.5%
+PAT Margins (%)                2.05%     1.96%     9 Bps      1.93%    12 Bps
+Other Comprehensive Income      41        (4)       NA        (11)      NA
+Total Comprehensive Income     1,086      613     77.2%       857      26.7%
+Diluted EPS                    15.25     9.30     64.0%       12.49    22.1%
+
+
+                                                                                16
+
+
+[page 18]
+Working Capital Efficiency
+          Inventory Days                   Debtor Days                         Creditor Days
+
+     64
+                           55       53
+                                                                          44
+                                                           41                                  40
+
+
+
+
+   Q1-FY26            Q1-FY27    Q1-FY26                 Q1-FY27       Q1-FY26           Q1-FY27
+
+
+     Working Capital Days        Provision for Doubtful Debt %     Provision for Inventory Write-off %
+
+    73
+
+                           56
+                                                                                          0.088%
+                                  0.018%
+                                                     0.016%
+                                                                       0.043%
+
+
+
+
+  Q1-FY26              Q1-FY27    Q1-FY26            Q1-FY27           Q1-FY26           Q1-FY27
+
+
+                                                                                                         17
+
+
+[page 19]
+Historical Consolidated Income Statement
+Particulars (INR Mn)           FY24      FY25      FY26     Q1-FY27
+
+Revenue from Operations       110,947   137,727   158,273   51,019
+
+Operational Expenses          108,018   134,725   153,686   49,466
+
+EBITDA                         2,929     3,002     4,587     1,553
+
+EBITDA Margins                2.64%     2.18%     2.90%      3.04%
+
+Other Income                   144       606       406       174
+
+Finance costs                  1,071     775       1,065     274
+
+Depreciation & Amortization    189       172       215        63
+
+Exceptional item               104        26         -         -
+
+PBT                            1,917     2,687     3,713     1,390
+
+Tax Expense                    478       590       890       344
+
+PAT                            1,439     2,097     2,823     1,046
+
+PAT Margins (%)               1.30%     1.52%     1.78%      2.05%
+
+Other Comprehensive Income     (40)      (13)      (30)       41
+
+Total Comprehensive Income     1,399     2,084     2,793     1,086
+
+Diluted EPS                    31.14     31.57     41.18     15.25
+
+
+                                                                      18
+
+
+[page 20]
+  Historical Consolidated Balance Sheet
+Particulars (INR Mn)               FY23     FY24     FY25     FY26     Particulars (INR Mn)                 FY23     FY24     FY25     FY26
+I. ASSETS                                                              II. EQUITY AND LIABILITIES
+Non-Current Assets                                                     Equity
+(a) Property, Plant & Equipment     540      525      492      453     (a) Equity Share Capital              209      330      330      330
+                                    159      130       94      308     (b) Other Equity                     6,793    15,176   17,092   19,921
+(b) Right of Use Assets
+                                                                       Non-Controlling Interest              (19)      1        18      112
+(c) Capital Work-in-Progress         40        -        -       3
+                                                                       Total Equity                         6,983    15,507   17,440   20,363
+(d) Other Intangible Assets          27       18       13       6
+(e) Goodwill                         41       34       34      29
+                                                                       Non-Current Liabilities
+(f) Financial Assets                                                   (a) Financial Liabilities
+(i) Investments                      56        -        -       -      (i) Borrowings                        324       5        9        -
+(ii) Other Financial Assets          97      133      135      149     (ii) Lease Liabilities                116      89       46       219
+(g) Non-Current Tax Assets (Net)    104      146       28      27      (b) Provisions                        11       11        8        -
+(h) Deferred Tax Assets (Net)        59       68       19       -      (c) Contract Liabilities              10        6       48        -
+(i) Other Non-Current Assets        132       86       61      99      (d) Deferred Tax Liabilities (Net)    68        -       25       18
+Total Non-Current Assets           1,255    1,140     876     1,074    Total Non-Current Liabilities         529      111      136      237
+
+
+Current Assets                                                         Current Liabilities
+(a) Inventories                    14,934   18,248   19,995   25,537   (a) Financial Liabilities
+                                                                       (i) Borrowings                       10,333    6,853    8,983    9,586
+(b) Financial Assets
+                                                                       (ii) Lease Liabilities                 48       50       59       101
+(i) Trade Receivables               8,716   13,843   17,951   21,842
+                                                                       (iii) Trade Payables (MSME)             3       52       346      568
+(ii) Cash & Cash Equivalents         346     1,450     216      812
+                                                                       (iii) Trade Payables (Others)         9,558   14,977   15,060   21,142
+(iii) Bank Balances (Other)            -       -        4        -
+                                                                       (iv) Other Financial Liabilities       220      239      250      535
+(iv) Loans                             -       -         -      11
+                                                                       (b) Other Current Liabilities          175      320      207      402
+(v) Other Financial Assets            52      55        56      142    (c) Provisions                         20       10       24       66
+(c) Other Current Assets            2,683    3,452    3,538    3,853   (d) Current Tax Liabilities (Net)       7        9       129      271
+Total Current Assets               26,731   37,048   41,760   52,197   (e) Contract Liabilities               110      60        2        -
+                                                                       Total Current Liabilities            20,474   22,570   25,060   32,671
+TOTAL ASSETS                       27,986   38,188   42,636   53,271   TOTAL EQUITY AND LIABILITIES         27,986   38,188   42,636   53,271
+                                                                                                                                                19
+
+
+[page 21]
+Financial Performance
+Operational Revenue (INR Mn)                          EBITDA (INR Mn)                       PAT (INR Mn)                     EBITDA Margin & PAT Margin (%)
+
+
+                                                                                                                                                        2.90%       3.04%
+                       1,58,273                                                                                              2.64%
+           1,37,727                                              4,587
+                                                                                                                                         2.18%
+1,10,947                                                                                                   2,823
+                                              2,929     3,002
+                                                                                            2,097                                                                   2.05%
+                                                                                                                                                        1.78%
+                                                                                   1,439                                                 1.52%
+                                   51,019                                 1,553                                              1.30%
+                                                                                                                     1,046
+
+
+                                                                                                                             FY24        FY25           FY26       Q1-FY27
+FY24        FY25          FY26    Q1-FY27     FY24      FY25     FY26    Q1-FY27   FY24     FY25           FY26    Q1-FY27          EBITDA Margins              PAT Margins
+
+
+
+ Cash Flow from Operation (INR Mn)                 Working Capital Days                Net Debt to Equity (x)                          ROCE & ROE (%)
+
+
+                                  1,137
+                                                                 58                                0.50x
+                                             54         54                 56
+                                                                                                                   0.43x
+                                                                                    0.35x                                                                             16.02%
+
+                                                                                                                              12.79%         12.74%
+                                                                                                                                                                      14.74%
+  -1,020
+                                                                                                                              12.93%         13.02%
+
+
+                   -2,992
+
+                                            FY24       FY25     FY26     Q1-FY27    FY24            FY25           FY26        FY24              FY25             FY26
+  FY24             FY25           FY26                                                                                                   ROCE                    ROE
+
+                                                                                                                                                                               20
+
+
+[page 22]
+  Disclaimer
+Rashi Peripherals Limited Disclaimer:
+This presentation has been prepared by Rashi Peripherals Limited (the “Company” “RP Tech”), solely for information purposes and does not constitute any offer, recommendation or invitation to
+purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any contract or binding commitment what so ever. No offering of securities of the Company
+will be made except by means of a statutory offering document containing detailed information about the Company.
+This Presentation has been prepared by the Company based on information and data which the Company considers reliable, but the Company makes no representation or warranty, express or
+implied, whatsoever, and no reliance shall be placed on, the truth, accuracy, completeness, fairness and reasonableness of the contents of this Presentation. This Presentation may not be all
+inclusive and may not contain all of the information that you may consider material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly excluded.
+Certain matters discussed in this Presentation may contain statements regarding the Company’s market opportunity and business prospects that are individually and collectively forward-looking
+statements. Such forward-looking statements are not guarantees of future performance and are subject to known and unknown risks, uncertainties and assumptions that are difficult to predict.
+These risks and uncertainties include, but are not limited to, the performance of the Indian economy and of the economies of various international markets, the performance of the industry in
+India and world-wide, competition, the company’s ability to successfully implement its strategy, the Company’s future levels of growth and expansion, technological implementation, changes and
+advancements, changes in revenue, income or cash flows, the Company’s market preferences and its exposure to market risks, as well as other risks.
+The Company’s actual results, levels of activity, performance or achievements could differ materially and adversely from results expressed in or implied by this Presentation. The Company assumes
+no obligation to update any forward-looking information contained in this Presentation. Any forward-looking statements and projections made by third parties included in this Presentation are not
+adopted by the Company and the Company is not responsible for such third party statements and projections.
+Valorem Advisors Disclaimer:
+Valorem Advisors is an Independent Investor Relations Management Service company. This Presentation has been prepared by Valorem Advisors based on information and data which the
+Company considers reliable, but Valorem Advisors and the Company makes no representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the truth, accuracy,
+completeness, fairness and reasonableness of the contents of this Presentation. This Presentation may not be all-inclusive and may not contain all of the information that you may consider
+material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly excluded. Valorem Advisors also hereby certifies that the directors or employees of Valorem
+Advisors do not own any stock in the personal or company capacity of the Company under review.
+
+
+
+For further information please contact our Investor Relations Representatives:
+
+                           Valorem Advisors
+                           Mr. Anuj Sonpal, CEO
+                           Tel: +91-22-35075100
+                           Email: rptech@valoremadvisors.com
+                           Kitlink: https://www.valoremadvisors.com/rashi
+                                                                                                                                                                                                          21
+
+
+[page 23]
+THANK
+  YOU
+
+
+[OCR page 23] (rasterised text; native layer captured slide text; OCR additionally picked up faint corner logo)
+THANK
+YOU
+[OCR-detected logo watermark, low confidence]: RP tech - Rashi Peripherals Limited

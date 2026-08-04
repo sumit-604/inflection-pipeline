@@ -1,0 +1,17 @@
+stage: B12c
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+scope: "PHASE 1 - Gate 0 (B01) and Emerging Moat (B07) compliance only; valuation adherence deferred to phase 3"
+status: complete
+gate0: {rules_checked: 46, fails: []}
+emoat: {rules_checked: 27, fails: []}
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3 - stage 11 valuation not yet run; B10/B11 do not exist"}
+recomputed_decision: "concur: Gate 0 AVOID + Emerging Moat NONE, combined AVOID"
+findings:
+  - {severity: "MINOR", location: "B01 Block A / ROCE formula", note: "ROCE Capital Employed computed as Net Worth + Total Borrowings proxy, not Total Assets - Current Liabilities (screener-Balance_Sheet.csv empty). Disclosed, marked 'computed'. Non-decision-changing: median 8.36% and min 5.92% sit far below A1/A2 thresholds."}
+  - {severity: "MINOR", location: "B07 Section 2C / capex_embedded_growth_pct", note: "11.1% computed on FY2020-21 revenue base (contemporaneous with the 5yr-old capex), not current FY26 revenue where it would be ~6%. Disclosed and caveated as likely-already-realised. Phase-3 valuation audit must confirm the base before any live-catalyst credit."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100

@@ -1,0 +1,47 @@
+stage: B02-notes
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research]
+flags:
+  - {type: FLAG-RPT, reason: "Rs 19.71 Cr freehold land purchased from related party Fabtech Technologies International Pvt Ltd (Nov-2024), absent from the related-party transactions note entirely (Note 5 standalone, AR p.115; cf. Note 47)"}
+  - {type: FLAG-RPT, reason: "Rs 26-29 Cr lease liability build-up in FY25 (~11x jump) with no lessor disclosed; circumstantial evidence points to related party Fabtech Turnkey Projects LLP based on collapsing rent (Rs 96L to Rs 8.5L) and security deposit (Rs 91L to Rs 0.25L) paid to that entity (Note 49 standalone / Note 47 consolidated)"}
+  - {type: FLAG-CASH, reason: "Trade receivables: auditor's sole Key Audit Matter is recoverability of Rs 58.9 Cr overdue >365 days; consolidated gross receivables grew 38.5% vs revenue growth of 25.7%; ECL rate curve shape changed materially YoY with no disclosed rationale, leaving the KAM-flagged >3yr bucket essentially unchanged (Note 13, AR consol p.174; KAM p.139-140)"}
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Rs 19.71 Cr freehold land acquired from related party Fabtech Technologies International Pvt Ltd, not disclosed in the RPT note", note_ref: "Note 5 standalone, AR p.115; cf. Note 47", rating: "red", why: "Material related-party capital transaction invisible to an investor reading only the RPT note"}
+  - {rank: 2, finding: "Trade receivables: auditor's sole KAM is recoverability of Rs 58.9 Cr overdue >365 days; gross receivables grew 38.5% vs revenue growth of 25.7%", note_ref: "Note 13, AR consol p.174; KAM p.139-140", rating: "red", why: "Working-capital/cash-conversion deterioration in the IPO year, auditor-corroborated"}
+  - {rank: 3, finding: "Lease liability grew ~11x in one year (Rs 262 Lakh to Rs 2,903 Lakh) with no lessor identified; circumstantial evidence points to related party Fabtech Turnkey Projects LLP", note_ref: "Note 49 standalone / Note 47 consolidated (RHP)", rating: "red", why: "Single largest unexplained balance-sheet movement reviewed; possible undisclosed related-party lease"}
+  - {rank: 4, finding: "ECL provision-matrix rate curve shape changed materially YoY (1-2yr and 2-3yr buckets converged to ~10%) while the KAM-flagged >3yr bucket barely moved, no rationale disclosed", note_ref: "Note 13(b) standalone, AR p.118", rating: "red", why: "Sharpens the flat-ECL concern into a specific, unexplained change in estimate on the highest-risk bucket"}
+  - {rank: 5, finding: "Provision for Doubtful Debts jumped to Rs 544.54 Lakh (consol) / Rs 530.21 Lakh (standalone) FY26 from Rs 7.74 Lakh / nil FY25", note_ref: "Note 39/37 Other Expenses", rating: "red", why: "Confirms receivables-quality deterioration is real, landing in the IPO year itself"}
+  - {rank: 6, finding: "Related-party entanglement: purchases ~11.7% of revenue (~22% of total purchases); loans to related parties 99.37% of all loans given; 55.7% of consolidated current borrowings owed to a related party", note_ref: "Notes 8, 26, 49, AR consol pp.170,178,193-195", rating: "red", why: "Listed entity substantially finances and transacts with its own promoter-group ecosystem across multiple channels simultaneously"}
+  - {rank: 7, finding: "Finance costs rose 122.8% YoY on lease interest (+753%) despite falling bank borrowings", note_ref: "Note 35 standalone, AR p.124", rating: "yellow", why: "Offsets the deleveraging narrative implied by the borrowings note alone"}
+  - {rank: 8, finding: "Customer concentration reshuffled sharply: Al-Afiya rose from 1.58% to 12.55% of revenue while three prior top customers roughly halved their share", note_ref: "Note 44c, AR consol p.185", rating: "red", why: "High customer churn and concentration risk in a newly listed, export-heavy revenue base"}
+  - {rank: 9, finding: "Shipment-based revenue recognition for turnkey contracts, in tension with a completion/acceptance policy sentence; no contract asset/unbilled revenue ever disclosed", note_ref: "Note 3(D) policy; Note 13a ageing, AR consol pp.158-159, 174", rating: "red", why: "Judgment-heavy revenue policy with a disclosure gap on the natural balance-sheet corollary"}
+  - {rank: 10, finding: "FX hedge cover (single USD 20 Lakh forward) thin against ~Rs 221 Cr foreign-currency monetary assets; 10% FX-swing PBT sensitivity nearly tripled YoY", note_ref: "Note 46/48 consolidated, AR pp.191-192", rating: "red", why: "Growing unhedged currency risk as exports scale to 89% of revenue"}
+  - {rank: 11, finding: "TSA Process Equipment stake, reportedly sold to Thermax Limited, still shown unchanged as held-for-sale two years after the reported sale", note_ref: "Note 19/20; Note 52/59", rating: "red", why: "Possible incomplete/unresolved transaction or stale disclosure"}
+  - {rank: 12, finding: "RHP disclosed a hypothetical ~Rs 4.54 Cr loss scenario for the FABL divestment; FY26 actuals booked a ~Rs 1.77 Cr gain on the same transaction", note_ref: "RHP Note 56; AR consol Note 40", rating: "yellow", why: "Material swing between disclosed scenario and actual outcome on a related-party divestment"}
+  - {rank: 13, finding: "Only 22.2% of Rs 230.3 Cr net IPO proceeds utilized by FY26 year-end; inorganic-growth tranche 0% deployed", note_ref: "Note 53/60, AR standalone/consol", rating: "yellow", why: "Capital-deployment lag dilutes near-term ROE/ROCE optics"}
+  - {rank: 14, finding: "CARO clause (vii)(a) statutory-dues qualification across three group entities; Holding Co quantum immaterial (Rs 22,371, largely paid); other two entities' amounts unresolved", note_ref: "CARO Annexure A, AR p.92 and pp.142-143", rating: "yellow", why: "Holding Co signal downgraded to trivial; two group entities' quantum remains an open question"}
+  - {rank: 15, finding: "Trademark fee to related party ceased in FY26 after three years with no explanation; new reverse-direction related-party guarantee-expense fee first appeared same year", note_ref: "Note 47 standalone, AR p.133; RHP Note 45", rating: "yellow", why: "Unexplained change in a recurring related-party fee stream alongside a new one, same year as the land purchase and lease build-up"}
+red_flags:
+  - "Rs 19.71 Cr freehold land purchase from related party Fabtech Technologies International Pvt Ltd omitted from the RPT note (Note 5, AR p.115; cf. Note 47)"
+  - "~11x lease-liability build-up (Rs 262L to Rs 2,903L) with no lessor disclosed; circumstantial evidence points to related party Fabtech Turnkey Projects LLP (Note 49 standalone / Note 47 consolidated)"
+  - "ECL provision-matrix rate curve shape changed materially YoY, concentrated away from the auditor's KAM bucket, no rationale disclosed (Note 13(b), AR p.118)"
+  - "Loans to related parties are 99.37% of all loans given; 55.7% of consolidated current borrowings owed to a related party (Notes 8, 26)"
+  - "Provision for Doubtful Debts jumped from Rs 7.74 Lakh/nil to Rs 544.54 Lakh/Rs 530.21 Lakh in the IPO year (Note 39/37)"
+  - "Shipment-based revenue recognition with no contract asset/unbilled revenue ever disclosed (Note 3(D); Note 13a)"
+  - "Customer concentration reshuffle: single customer jumped from 1.58% to 12.55% of revenue in one year (Note 44c)"
+questions_for_mgmt:
+  - "Why was the Rs 19.71 Cr freehold land purchase from Fabtech Technologies International Pvt Ltd not disclosed in the RPT note (Note 47)? Was it independently valued, and on what terms?"
+  - "Who is the lessor behind the Rs 2,902.59 Lakh lease liability that arose in FY25? Is it Fabtech Turnkey Projects LLP?"
+  - "What methodology change drove the ECL rate curve-shape shift in FY26, where the 1-2yr/2-3yr buckets converged toward ~10% while the KAM-flagged >3yr bucket stayed essentially flat?"
+  - "What is the current completion status of the reported Thermax Limited sale of the TSA Process Equipment stake, given the held-for-sale balance is unchanged for two consecutive year-ends?"
+  - "What explains the divergence between the RHP's disclosed ~Rs 4.54 Cr potential loss scenario for the FABL divestment and the ~Rs 1.77 Cr gain actually booked in FY26?"
+  - "Why did the trademark licence fee to Fabtech Technologies International Pvt Ltd cease entirely in FY26, and what is the nature of the new reverse-direction corporate-guarantee-expense fee paid to related parties for the first time this year?"
+receivables_trend: "deteriorating: consolidated gross trade receivables grew 38.5% (Rs 152.66 Cr to Rs 211.46 Cr) and net receivables 35.6% vs revenue growth of only 25.7%; Rs 58.9 Cr overdue >365 days is the auditor's sole KAM; receivables turnover fell from 2.61x to 2.31x (Note 13, AR consol p.174; Note 50 p.196)"
+restatements_found: []
+going_concern_language: "NONE"

@@ -1,0 +1,30 @@
+stage: B01-gate0
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: [announcements, shareholding, research]
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID driven by two named depressors, not broad quality failure: (1) LIMITED history - only 4 usable fiscal years (FY23-FY26) exist because RHP restates just FY23-FY25 and company IPO'd 2025-10-07, triggering a mandatory one-tier classification downgrade; (2) cumulative CFO/PAT of 8.1% (FY23-FY26) trips the deal-breaker cap at max AVERAGE, concentrated in FY23 (CFO -Rs13.89 Cr) and FY25 (CFO -Rs36.14 Cr) receivables build typical of milestone-billed turnkey EPC contracts, against a strong FY24 (CFO +Rs60.43 Cr, 222% of PAT). FY26 ROCE (11.25%, down from 29.32% FY23) and ROE (12.94%, down from 24.43% FY23) are also depressed by Rs207.5 Cr IPO proceeds (Oct 2025) sitting largely undeployed as cash/FDs, inflating capital employed and net worth denominators without matching EBIT/profit growth yet. Downstream position sizing should weigh whether these are transient post-IPO effects."
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 10, B: 5, C: 16, D: 19, E: 1}
+core_score: 51
+moat_score: 12
+grand_total: 63
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["Block B <8 -> max GOOD", "Cumulative CFO/PAT <0.50 -> max AVERAGE"]
+history_downgrade: true
+data_notes:
+  - "FY20-FY22 in screener-Data_Sheet.csv excluded from scoring: pre-restructuring shell entity (Globeroute Ventures Pvt Ltd) prior to Nov 2020 NCLT demerger and Jan 2021 rename; not comparable to RHP-restated FY23-FY25 basis."
+  - "Data_Sheet.csv FY23-FY26 Sales/PAT/CFO cross-checked and reconcile within rounding to RHP-restated (FY23-25) and results-filed (FY26) consolidated figures, confirming consolidated basis throughout."
+  - "M2, M5, M7, M9: PEER DATA NEEDED - no peer/competitor financial or market-cap data provided in this stage's task inputs (note: peer screener CSVs exist in inputs/screening/ but were not routed to this stage); scored 0 rather than estimated."
+  - "M9 gross-margin proxy used: (Revenue - Material Cost) / Revenue = 40.95% FY26 (no peer benchmark available to score against)."
+  - "M11 network-effects test needs 6+ years; only 4 available. FY26 selling/admin expense not separately disclosed in audited consolidated results (bundled in Other expenses), so the FY23-25 declining selling-expense-% trend (19.2% -> 14.9% -> 14.4%) could not be confirmed through the latest year; scored conservatively at 1."
+  - "E1-E3 (promoter holding level, 3yr change, pledge) marked N/A (not in provided data) - shareholding pattern is an input gap for this run, not evidenced misalignment."
+  - "E4 uses FY25 contingent liabilities (latest RHP-restated figure available); FY26 contingent-liability note was not present in the results PDF extracts provided - data gap, not zero exposure."
+  - "M3 capital efficiency scored on FY26 (latest year, consistent with Block D convention): FAT 14.2x but ROCE 11.25% fails the >=12% floor; FY25 pre-IPO figures (FAT 5.78x, ROCE 22.06%) would have scored 5, flagged as post-IPO-rebase distortion not used for scoring."
+block_b_trend: "deteriorating (in cash-conversion terms) - FY26 CFO of Rs 47.74 lakh against PAT of Rs 3,835.80 lakh implies ~1% cash conversion, down from FY24's Rs 6,042.90 lakh CFO against Rs 2,721.74 lakh PAT (222% conversion); FY23 and FY25 were both CFO-negative despite PAT-positive."

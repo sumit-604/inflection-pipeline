@@ -52,3 +52,6 @@
 - Verdict PROCEED WITH FLAGS unchanged; Decision Status WATCHLIST/BUY unchanged; INDETERMINATE-cash cap still not triggered.
 
 ## A5 — loop 2 launched (fresh context)
+
+## A5 — loop 2: COMPLETE. Gate A5 passes. Proceed to Notion save.
+- All 3 fixes verified correct, no new errors, coverage + standalone/consolidated completeness hold, all bear counters grafted. Novigo appears once in press release (DSO footnote), corroborating silence flag.

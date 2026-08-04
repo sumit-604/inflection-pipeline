@@ -19,7 +19,7 @@ partially_verified:
 contradicted:
   - {claim: "ASL's Q1 FY27 margin recovery (5.22%->7.49% QoQ) reflects a sector-wide raw-material tailwind", contradicting_peer: "ROSSARI, GALAXYSURF", quote_anchor: "ROSSARI Jul-2026 Q1FY27 call PDF page 6 (11.6% vs 12.5% YoY, flat QoQ vs Q4FY26 11.3%); GALAXYSURF May-2026 Q4FY26 call PDF page 3 (feedstock prices increased significantly due to West Asia war)"}
   - {claim: "Debt-funded capacity expansions on a similar 2026-27 timeline reflect an industry-wide capacity race", contradicting_peer: "ROSSARI, GALAXYSURF", quote_anchor: "ROSSARI May-2026 call PDF page 6 (rephasing Rs192cr capex, targeting debt-free in 18 months, PDF page 10); GALAXYSURF Aug-2025 call PDF page 16 (no significant growth capex planned) and May-2026 call (growth capex still paused)"}
-  - {claim: "~92% top-5 customer concentration is standard/comparable peer practice", contradicting_peer: "ROSSARI", quote_anchor: "ROSSARI Jul-2026 Q1FY27 call PDF page 17 (no customer above 2% of sales; top-10 customers at 12%-13% of revenue)"}
+  - {claim: "~92% top-5 customer concentration is standard/comparable peer practice", contradicting_peer: "ROSSARI", quote_anchor: "ROSSARI May-2026 Q4FY26 call PDF page 16 [anchor corrected per Verifier D/B: quote verified at this anchor; B06's original Jul-2026 p17 cite was wrong] (no customer above 2% of sales; top-10 customers at 12%-13% of revenue)"}
 unverifiable:
   - {claim: "Indian surfactants market CAGR-to-2035 (USD 10.92bn) and ~6.2% home/laundry-care CAGR", peers_checked: ["GALAXYSURF", "ROSSARI", "FCL"]}
 peer_coverage_map:

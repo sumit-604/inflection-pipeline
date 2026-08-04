@@ -1,0 +1,27 @@
+stage: B12d
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q6 - ~92% top-5 customer concentration is standard/comparable peer practice (CONTRADICTED)", issue: "Sole decisive anchor (no customer >2% of sales; top-10 at 12-13%) is misattributed to ROSSARI Jul-2026 Q1FY27 call PDF page 17; actual source is ROSSARI May-2026 Q4/FY26 call, extraction PDF page 16. That transcript content does not exist at the cited location, leaving the claim resting on a single peer via a wrong-call citation rather than a verifiable two-source or correctly-anchored single-source basis."}
+findings:
+  - {severity: "CRITICAL", location: "B06.md Part 1 Q6 table; B06-peers.yaml contradicted[2].quote_anchor; peer_coverage_map 'ROSSARI, Q1 FY27, Jul-2026' entry", claimed: "Decisive customer-concentration quote ('no customer >2% of sales'; 'top-10 customers 12-13%') sourced to ROSSARI Jul-2026 Q1FY27 call, PDF page 17", source_truth: "Quote does not appear anywhere in the Jul-2026 transcript (verified by full-text search); it is in the ROSSARI May-2026 Q4/FY26 call, extraction PDF page 16, lines 571-574", note: "Genuine quote, correctly transcribed, but pinned to the wrong of the two adjacent ROSSARI calls; this is the sole anchor for a CONTRADICTED verdict flagged as a synthesis priority item"}
+  - {severity: "MAJOR", location: "B06.md Part 1 Q4 net read", claimed: "K. Natarajan '4% growth' quote sourced to GALAXYSURF Aug-2025 call, PDF page 16-17", source_truth: "Quote is on extraction PDF page 12 (document footer 'Page 11 of 16')", note: "4-5 page mislocation, not a simple off-by-one; supports an UNVERIFIABLE finding so does not itself change a verdict"}
+  - {severity: "MAJOR", location: "B06.md Part 1 Q1 net read", claimed: "FCL supplier-renegotiation/resources quote sourced to FCL May-2026 call, PDF page 9", source_truth: "Quote is on extraction PDF page 6; page 9 of that call discusses UAE/Middle East expansion, unrelated content", note: "Used to support the mechanism behind FCL's one-off margin jump; verdict (weighted down as M&A-driven, no read-through to ASL) is unaffected"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q3 net read", claimed: "GALAXYSURF 'Premium Specialty... wait-and-watch' quote at PDF page 4", source_truth: "Extraction PDF page 3", note: "Off-by-one; content genuine"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q1 net read", claimed: "GALAXYSURF 'fatty oil prices are increasing... 6 months' at PDF page 5", source_truth: "Extraction PDF page 4", note: "Off-by-one; content genuine"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q2 peer evidence", claimed: "GALAXYSURF 'elevated fatty alcohol prices... never been so high' at PDF page 3", source_truth: "Extraction PDF page 4", note: "Off-by-one; content genuine"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q3 peer evidence", claimed: "GALAXYSURF Feb-2026 tariff-cut 'major structural positive' at PDF page 3", source_truth: "Extraction PDF page 4", note: "Off-by-one; content genuine"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q3 peer evidence", claimed: "ROSSARI 'terry towel companies are under pressure' at PDF page 9", source_truth: "Extraction PDF page 8", note: "Off-by-one; content genuine"}
+  - {severity: "MINOR", location: "B06.md Part 1 Q1 net read", claimed: "FCL Jul-2026 QoQ comparator figures (13.93% prior EBITDA margin, 29-30% prior gross margin) grouped under PDF page 5 citation", source_truth: "Comparator figures are on extraction PDF page 9; only the current-quarter figures (35.42%, 15.70%) are genuinely on page 5", note: "Composite citation half-correct"}
+  - {severity: "MINOR", location: "B06-peers.yaml peer_coverage_map, FCL Dec-2025 entry", claimed: "CITED-ONLY", source_truth: "Content (cash-funded, debt-free capex discipline) is used as direct supporting evidence in the Q5 CONTRADICTED narrative discussion", note: "Defensible label given the call's overall content, but the SUBSTANTIVE/CITED-ONLY boundary is drawn slightly inconsistently against how the quote is actually used in prose"}
+critical_count: 1
+major_count: 2
+minor_count: 7
+acceptance_rate: 92

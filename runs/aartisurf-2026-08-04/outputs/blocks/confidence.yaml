@@ -1,0 +1,11 @@
+# Phase-1 confidence delta — AARTISURF 2026-08-04
+# Computed by orchestrator from B12a-d. Valuation framework-adherence component pending phase 3.
+confidence_delta:
+  numerical_acceptance: 93.1     # B12a (haiku): 58 checked, 0 CRITICAL. Sole MAJOR (FY26 CFO "10x") was a FALSE haiku lakhs->crore misread; source re-check confirms B01's Rs 76.65cr correct (audited 7,678.84 lakhs = Rs 76.79cr). True cleanliness ~98%; reported figure kept as measured, not binding.
+  redflag_coverage: 86           # B12b (opus, no-concall): 8/11 fully caught + 3/11 partially caught, 0 FULLY MISSED. Partial-credit (8 + 3*0.5)/11 = 86%. Strict fully-caught floor = 73%. Three under-weighted items (CARE 7% negative floor breached; FY26 growth is RM-passthrough not volume; optical PAT/EPS mask) carried as monitorables.
+  framework_adherence: 97.8      # B12c (opus): Gate0+EM scope only. 0 CRITICAL, 1 MAJOR (em_score 14.5->13.5, class unchanged), 1 MINOR (ROCE avg vs year-end). Valuation half PENDING PHASE 3.
+  peer_utilisation: 92           # B12d (sonnet): 11/12 peers substantive, acceptance 92%. 1 "CRITICAL" was a wrong-anchor for a TRUE claim (GATE HELD, corrected to Rossari May-2026 p16), 2 MAJOR + 7 MINOR citation mislocations, verdicts unaffected.
+  overall: 86                    # min of the four (redflag_coverage binding). Band 75-89 = NORMAL confidence; no one-level downgrade, no REWORK.
+  valuation_framework_adherence: pending_phase_3
+bands_note: "overall 86 -> normal-confidence band (75-89); note specifics. No REWORK (0 Verifier-A numerical CRITICAL; all acceptance rates >60%). Sensitivity: at the strict fully-caught redflag floor of 73 the overall would fall to the 60-74 one-level-downgrade band; since 0 red flags were fully missed and the 3 partials are MINOR, the partial-credit 86 is the honest figure."
+rework_triggered: false

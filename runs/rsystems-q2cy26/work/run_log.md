@@ -55,3 +55,13 @@
 
 ## A5 — loop 2: COMPLETE. Gate A5 passes. Proceed to Notion save.
 - All 3 fixes verified correct, no new errors, coverage + standalone/consolidated completeness hold, all bear counters grafted. Novigo appears once in press release (DSO footnote), corroborating silence flag.
+
+## NOTION SAVE — COMPLETE (inline, page 397bb2b9-d3ab-8171-8a32-fee70a62fddd)
+- Key Notes property: prepended 04-Aug-26 Q2CY26 audit-trail entry; all prior entries preserved (UTF-8 intact).
+- Content appended (position:end), 6 sequential inserts: full merged review Sections A-F (complete tables + mandatory plain-language brief), A4 machine block, Appendix A (results forensics F1-F17), Appendix B (presentation forensics), Appendix C (A5 audit verdict COMPLETE).
+- Decision Status: UNCHANGED (WATCHLIST/BUY) — no pre-committed trigger fired; flagged not decided.
+- Tables converted GitHub-pipe -> Notion <table> via to_notion.py; escaping per enhanced-markdown-spec.
+
+## CLOSE
+- Count reconciliation: results 31 notes / 8 agenda items / 281 line items / 27 auditor paras / 31 entities; presentation 189 rows; concall 0 (not held). All reviewed.
+- Pipeline clean run end to end; one A5 correction loop (2 arithmetic + 1 graft), resolved; A5 loop-2 COMPLETE.

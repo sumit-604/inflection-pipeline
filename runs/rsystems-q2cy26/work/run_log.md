@@ -32,3 +32,11 @@
 - presentation forensics: 17/17 statuses, 12 findings. Key: reported PAT -26.7% YoY masked by +35.4% adjusted (NOIDA gain stripped); INR 30.2% vs US$ 17.7% gap (FX+Novigo); Novigo rev unquantified; ETR 30.98%; silent on organic CC / ACV / fixed-price mix / ROCE.
 
 ## A4 — analyst launched (merged Role 4 + Role 5 review)
+
+## A4 — COMPLETE. Verdict: PROCEED WITH FLAGS. Decision Status UNCHANGED (WATCHLIST/BUY, flag not decide).
+- Consol Q2 YoY: Rev 462.02->601.70 (+30.2%); core operating PBT ex-OI +51.6%; reported PAT 75.85->55.57 (-26.7%) = base effect of vanished Q2CY25 NOIDA gain Rs 43.60 Cr; adj PAT +35.4%, adj EBITDA margin 20.1% (from 17.3%).
+- S-vs-C PAT gap: 11.1% (Q2CY25) -> 4.0% (Q1CY26) -> 55.2% (Q2CY26); FY25 -6.6%. 51pp QoQ swing.
+- CFO/PAT 1.35x H1 -> FIRING (not INDETERMINATE). Net cash ex-lease +63.12 Cr.
+- 13 Questions-for-Management (every A3 ambiguous/forward-signal mapped). Notion OCRPS unit error caught: 5.16 million shares NOT 5.16 Cr.
+
+## A5 — adversary launched

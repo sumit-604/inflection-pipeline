@@ -1,0 +1,24 @@
+stage: B12b
+company: "AARTISURF"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+redflag_coverage: "73% fully caught (8/11); 100% at least partially caught (11/11); 0 fully missed"
+independent_flags_found: 11
+caught: 8
+partially_caught: 3
+missed: []
+missed_note: "No red flag fully missed upstream. Three items were under-weighted (partially caught), logged as MINOR findings: CARE 7% PBILDT negative-sensitivity floor already breached on sustained basis (rating p.1); FY26 revenue-growth quality, COGS +33% > revenue +30% RM-passthrough (results 9ac5e08e p.11); optical PAT/EPS decline masked by 'no explanation needed' framing (results 9ac5e08e p.11)."
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur — C is appropriate; margin miss vs stated priority, 9.2% inflated headline EBITDA, inconsistent AR margin figures, tightly-matched redemption liquidity, and a thin single-cycle record all support it"
+findings:
+  - {severity: "MINOR", location: "B05 §2A row2 promise-delivery", claim: "Revenue growth marked delivered with 'no explanation needed as this beat expectations', not surfacing that headline PAT fell 1,499.00->1,267.83 lakhs and diluted EPS 17.71->14.96", anchor: "results 9ac5e08e p.11", note: "Optical decline driven by FY25 one-times B05 itself flagged; on a clean basis FY26 earnings rose. Presentational gap, not a hidden red flag."}
+  - {severity: "MINOR", location: "B05 §4D red_flags", claim: "CARE 7% PBILDT negative-sensitivity threshold already breached on a sustained basis (FY25 5.32%, H1FY26 5.33%) not surfaced as a live further-downgrade trigger", anchor: "rating p.1", note: "B05 cited the 8% positive and 2.5x debt thresholds but not the tripped 7% negative floor."}
+  - {severity: "MINOR", location: "B05 §2A row2 / §4A", claim: "FY26 revenue-growth quality overstated: Cost of Materials Consumed +33% (54,184.43->72,093.50 lakhs) outpaced revenue +30%, i.e. growth partly RM-price passthrough at compressed margin, not evidenced as volume-led", anchor: "results 9ac5e08e p.11", note: "B06 §2A partially catches via 'no peer describes a demand boom'; B05 credited a clean beat."}
+  - {severity: "MINOR", location: "B06 Q6 contradicted anchor", claim: "Decisive ROSSARI concentration quote ('no customer more than 2% of our sales... Top 10 ~12%') cited as 'Jul-2026 Q1FY27 call PDF page 17'", anchor: "actual: ROSSARI May-2026 transcript l.572-574; Jul-2026 transcript is 16 pages", note: "Citation error only; CONTRADICTED verdict stands on real May-2026 evidence. Verifier-D beat, surfaced from cross-read."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 73

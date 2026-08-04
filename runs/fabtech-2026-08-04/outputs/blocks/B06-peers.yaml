@@ -1,0 +1,47 @@
+stage: B06-peers
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q2 (RMC +33%/execution cost +43%) direction confirmed by all 4 peers via West Asia crisis linkage, but no peer's disclosed magnitude (Praj: +3% RM YoY) comes close to matching FABTECH's claimed scale"
+  - "Q5 revenue recognition: two peers (Ion Exchange, Praj) describe milestone/percentage-of-completion billing as standard, already-implemented EPC industry norm, in contrast to FABTECH's 3-quarters-unresolved status framed by management as requiring extended multi-year evaluation"
+  - "Q1 ($30bn/$70bn opportunity) and Q3 (no listed Indian peer) claims remain entirely unattributed and untriangulated by any of the 4 checked peers"
+peers_provided: 12
+peers_substantive: 10
+peer_utilisation_pct: 83
+verified: []
+partially_verified:
+  - {claim: "FY26 RMC +33%/execution cost +43%, Middle East war/freight-attributed, sector-wide", peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {claim: "Rising average order ticket sizes ($1.5-3M to $7-10M, orders up to $70M)", peers: ["Anup Engineering", "Ion Exchange", "Praj Industries"]}
+  - {claim: "Shipment vs percentage-completion revenue recognition unresolved; ~120-day working capital cycle unusual", peers: ["Anup Engineering", "Ion Exchange", "Praj Industries"]}
+  - {claim: "GCC/Saudi local-content rules shifting from preference to hard qualification mandate", peers: ["Ion Exchange", "HLE Glascoat"]}
+contradicted: []
+unverifiable:
+  - {claim: "$30bn (MENA/Africa/SE Asia) and $70bn+ (West) 10-year pharma opportunity figure", peers_checked: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {claim: "No listed Indian peers, only European competitors for MENA/Africa turnkey pharma tenders", peers_checked: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+peer_coverage_map:
+  - {peer: "Anup Engineering", quarter: "Q4 FY26 (May 2026 call)", usage: "substantive", contribution: "Strait of Hormuz freight/RM cost disruption; large single-ticket orders up to ~Rs 200cr"}
+  - {peer: "Anup Engineering", quarter: "Q3 FY26 (Feb 2026 call)", usage: "substantive", contribution: "Working capital ~120 days/3 turns target, matching FABTECH's own claim"}
+  - {peer: "Anup Engineering", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "Confirms working-capital cycle target; Dubai/Middle East presence"}
+  - {peer: "HLE Glascoat", quarter: "Q4 FY26 (Jun 2026 call)", usage: "substantive", contribution: "Middle East 'next opportunity'; Iran-conflict gas price pass-through"}
+  - {peer: "HLE Glascoat", quarter: "Q2 FY26 (Nov 2025 call)", usage: "cited-only", contribution: "Reviewed in full; no content materially distinguishable from Jun 2026 call"}
+  - {peer: "HLE Glascoat", quarter: "Special call, Aug 2025 (Omeras acquisition)", usage: "substantive", contribution: "$100bn/yr global water-infra market-sizing analogue; Saudi track record ('350 tanks')"}
+  - {peer: "Ion Exchange", quarter: "Q4 FY26 (Jun 2026 call)", usage: "substantive", contribution: "Explicit West Asia crisis RM/logistics headwind, Rs 60cr shipment deferral; Dammam Saudi plant; Oman DBOOT JV 51% stake"}
+  - {peer: "Ion Exchange", quarter: "Q3 FY26 (Feb 2026 call)", usage: "cited-only", contribution: "General engineering margin/RM commentary predating sharpest West Asia crisis language"}
+  - {peer: "Ion Exchange", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "Standard EPC percentage-of-completion accounting norm stated explicitly; legacy project transparency; Rs 9,011cr bid pipeline"}
+  - {peer: "Praj Industries", quarter: "Q4 FY26 (Jun 2026 call)", usage: "substantive", contribution: "RM +3% YoY magnitude check; ~Rs 300cr deferred inquiry basket due to West Asia crisis/RM uncertainty"}
+  - {peer: "Praj Industries", quarter: "Q3 FY26 (Feb 2026 call)", usage: "substantive", contribution: "Rs 10,000cr Biopharma Shakti Program reference; Africa project margin commentary; labor-code one-time impact"}
+  - {peer: "Praj Industries", quarter: "Q2 FY26 (Nov 2025 call)", usage: "substantive", contribution: "Africa margins vs India/Europe/America; US tariff impact; GenX fixed-cost pivot strategy"}
+industry_cross_read:
+  demand: "Mixed to positive in MENA/Africa-adjacent segments (Ion Exchange, Anup, HLE Glascoat); Praj's domestic ethanol demand is explicitly slowing. No peer confirms a demand boom of the scale FABTECH implies specifically for pharma infrastructure."
+  pricing_inputs: "All 4 peers cite West Asia conflict-linked RM/freight cost pressure in FY26, supporting direction of FABTECH's margin narrative; magnitude (Praj +3% RM) far below FABTECH's claimed 33%/43%."
+  capex_cycle: "Split, not a uniform race: Ion Exchange and HLE Glascoat are capital-committed regional expanders (Dammam plant, Oman JV, Omeras acquisition); Anup and Praj are capital-light, managing volatility via contract terms and selective/deferred bidding. FABTECH's SACE JV places it in the capital-committed camp alongside 2 of 4 peers."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Ion Exchange quantifies a ~Rs 60cr shipment deferral tied to West Asia crisis; FABTECH discloses no equivalent quantified shipment/logistics impact despite citing the same driver (IONEXCHANG, Jun 2026/Q4 FY26 call)"
+  - "Praj discloses a ~Rs 300cr deferred/lost inquiry basket explicitly due to RM price uncertainty; FABTECH shows no comparable deferred-order disclosure from the same macro conditions (PRAJIND, Jun 2026/Q4 FY26 call)"
+  - "Praj discloses a one-time Rs 3,344 million labor-code-driven gratuity/leave liability impact, a cost-base risk category not raised on any FABTECH call (PRAJIND, Feb 2026/Q3 FY26 call)"
+  - "Ion Exchange provides granular, repeated project-level transparency on legacy contract losses (UP, Sri Lanka); contrasts with FABTECH's total silence on its Rs 58.9 Cr >365-day overdue-receivables KAM (IONEXCHANG, Nov 2025/Q2 FY26 call)"
+net_narrative_effect: "complicates"

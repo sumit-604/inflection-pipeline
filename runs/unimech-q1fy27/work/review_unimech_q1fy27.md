@@ -1,6 +1,7 @@
 # Q1 FY27 — Complete Quarterly Review (Role 4 Results; Role 5 DEFERRED)
 # Unimech Aerospace and Manufacturing Limited (UNIMECH | NSE: UNIMECH / BSE: 544322)
 # Quarter ended June 30, 2026 | First-pass review (no prior Notion thesis)
+# LOOP-1 CORRECTED per A5 audit (order-book 10x unit fix; standalone EBITDA period count; two grafted bear counters)
 
 ---
 
@@ -23,6 +24,8 @@ No ledger row is unreviewed. GATE clears — proceeding to Step 0.
 
 **Documents merged:** results, presentation. **Concall: NONE this quarter** — the earnings call is scheduled **Aug 04, 2026** and had not been held at filing. **Role 5 is DEFERRED**; the presentation forward signals and the Questions-for-Management table below are carried forward as the pre-call question bank.
 
+**Correction-loop note:** This file is the A4 output after A5 audit loop 1. The A5 audit (INCOMPLETE) verified two arithmetic/characterisation defects and two surviving bear counters against the raw extracts; all are corrected below. The material fix is the consolidated order book, which was wrongly converted at the Lakhs factor (x0.01) instead of the deck's Mn factor (x0.1): the correct book is **Rs 280.3 Cr**, not Rs 28.03 Cr — a systematic 10x understatement now fixed in Steps 3, 7, 8.5-Q1, and Section C. The order-book magnitude fix is favourable, but the two grafted counters (mix-driven margin expansion; order-book concentration) offset it; verdict is unchanged at **PROCEED WITH FLAGS** (reasoning in Section C).
+
 ---
 
 # SECTION A — RESULTS REVIEW (ROLE 4, FULL STEP SEQUENCE)
@@ -31,7 +34,7 @@ No ledger row is unreviewed. GATE clears — proceeding to Step 0.
 
 **0A. Notion page.** NONE. This is a fresh company for the pipeline: no `companies/UNIMECH.md`, no Notion page, no prior Decision Status, no entry zone, no bear/base/bull projections, no thesis-broken conditions, no monitoring checklist, no Devil's Advocate split. Per the task mandate this is a **FIRST-PASS** review. No HOLD/ADD/TRIM/EXIT can be framed against a prior decision; Steps 6-8 use the 8A-W (non-held) branch and establish a first baseline. **Decision Status verified against Notion: NONE (fresh name).**
 
-**0B. Unit convention.** Results filing is in **INR Lakhs** (header l.199; convert x0.01 to Rs Cr). Presentation is in **INR Mn** (header; x0.1 to Rs Cr). PR-QIP and PR-Monitoring are in **Rs Crore** (x1). Every figure below is stated in **Rs Cr**, anchored to its source line. Cross-check: deck consolidated EBITDA 392.5 Mn = Rs 39.25 Cr ties exactly to filing-derived operating EBITDA Rs 39.25 Cr (see Step 1); all deck P&L rows reconcile to the filing.
+**0B. Unit convention.** Results filing is in **INR Lakhs** (header l.199; convert x0.01 to Rs Cr). Presentation is in **INR Mn** (header; x0.1 to Rs Cr). PR-QIP and PR-Monitoring are in **Rs Crore** (x1). Every figure below is stated in **Rs Cr**, anchored to its source line. Cross-check: deck consolidated EBITDA 392.5 Mn = Rs 39.25 Cr ties exactly to filing-derived operating EBITDA Rs 39.25 Cr (see Step 1); all deck P&L rows reconcile to the filing. **Unit discipline note (post-A5):** the deck's Mn factor (x0.1) applies to the order-book chart too — 2,803 Mn = **Rs 280.3 Cr**, NOT Rs 28.03 Cr; the Lakhs factor (x0.01) is only for the Reg 33 filing.
 
 **0C. Share-count changes.** Paid-up equity capital **flat at Rs 2,542.84 lakh (Rs 25.43 Cr)** across all four periods (std l.248; consol l.538), i.e. 508.57 lakh shares of FV Rs 5 = 5.0857 Cr shares. No split/bonus/rights/buyback this quarter. BUT three **forward** dilution vectors exist and are flagged (FND-06): (i) basic-vs-diluted spread already present (consol basic 5.48 vs diluted 5.47, l.546-547) implying ESOP-type instruments; (ii) **CCDs issued as part of the Hobel consideration** (std note 7, l.290) which are compulsorily convertible to equity; (iii) a **board-approved Rs 750 Cr QIP** (agenda item 2, l.50; std note 9, l.296). EPS comparisons this quarter are share-count-clean; per-share targets downstream must model dilution.
 
@@ -52,7 +55,7 @@ No ledger row is unreviewed. GATE clears — proceeding to Step 0.
 | Consol Other-Matter (auditor para 6) | Associate loss reliance | Group share of associate net loss Rs 13.80 lakh (Rs 0.14 Cr) relies on OTHER auditor (l.416-424) | -0.14 | Q1 FY27 | 0.5% of consol PAT — below 10% trigger (F4 PASS) |
 | Consol Other-Matter (auditor para 7) | Unreviewed subsidiary | A subsidiary with revenue/PAT/TCI all **Rs Nil**, management-furnished, not reviewed (l.439-445) | 0.00 | Q1 FY27 | Pre-revenue entity (Uniflux implicated), FND-01 |
 
-**Auditor opinion check.** Both the standalone (l.165-169) and consolidated (l.408-413) limited-review reports are **UNMODIFIED (clean)** — "nothing has come to our attention." **No going-concern flag, no Emphasis-of-Matter.** The consolidated report carries **two Other Matters** paragraphs (associate reliance on another auditor l.416; one management-furnished Nil subsidiary l.439) — neither is an EoM; both immaterial (F4 PASS, F5 N.A.). Statutory auditor: **MSKA & Associates LLP** (FRN 105047W/W101187), partner Pankaj S Bhauwala. No auditor change flagged.
+**Auditor opinion check.** Both the standalone (l.165-169) and consolidated (l.408-413) limited-review reports are **UNMODIFIED (clean)** — "nothing has come to our attention." **No going-concern flag, no Emphasis-of-Matter.** These are **limited reviews, not audits** ("we do not express an audit opinion," l.162/359). The consolidated report carries **two Other Matters** paragraphs (associate reliance on another auditor l.416; one management-furnished Nil subsidiary l.439) — neither is an EoM; both immaterial (F4 PASS, F5 N.A.). Statutory auditor: **MSKA & Associates LLP** (FRN 105047W/W101187), partner Pankaj S Bhauwala. No auditor change flagged.
 
 **0E. Business type.** **STANDARD OPERATING BUSINESS** (precision aerospace/defence manufacturing, single segment). NOT a lender. Steps 1 and 5 (standard), not 1L/5L.
 
@@ -96,7 +99,7 @@ STOP cleared: Notion NONE (fresh), units identified (Lakhs x0.01 / Mn x0.1 / Cr 
 | Effective Tax Rate | Tax/PBT | 24.9% | 6.8% | 26.6% | 26.7% |
 | PAT margin (on Rev) | PAT/Rev | 75.7% | 25.1% | 48.0% | 50.6% |
 
-**Standalone read (first-class, per FND-02):** the parent's *operating* EBITDA is **negative in three of the four periods** and core PBT ex-Other-Income is **negative Rs 6.78 Cr this quarter**. Standalone reported profit is **entirely propped by Other Income** (Rs 9.78 Cr vs Rs 4.59 Cr revenue). Standalone Other Income (Rs 9.78 Cr) **exceeds consolidated Other Income (Rs 7.33 Cr)** — implying ~Rs 2.45 Cr of the standalone figure is intra-group income (dividend/interest from subsidiaries) that eliminates on consolidation. The parent is migrating toward a holding-company / treasury profile with operations concentrated in Innomech and Hobel. **The −61% YoY collapse in standalone operating revenue is unexplained by the filing → management question.**
+**Standalone read (first-class, per FND-02; corrected per A5 FAIL-2):** the parent's *operating* EBITDA is **negative in two of the four periods** (Q4 FY26 (4.23), Q1 FY27 (4.00); positive in Q1 FY26 2.90 and FY26 0.15). It is **core PBT ex-Other-Income that is negative in three of the four periods** (0.64 / (7.21) / (6.78) / (10.58) — positive only in Q1 FY26), **negative Rs 6.78 Cr this quarter**. Either way the substance is unchanged: standalone reported profit is **entirely propped by Other Income** (Rs 9.78 Cr vs Rs 4.59 Cr revenue). Standalone Other Income (Rs 9.78 Cr) **exceeds consolidated Other Income (Rs 7.33 Cr)** — implying ~Rs 2.45 Cr of the standalone figure is intra-group income (dividend/interest from subsidiaries) that eliminates on consolidation. The parent is migrating toward a holding-company / treasury profile with operations concentrated in Innomech and Hobel. **The −61% YoY collapse in standalone operating revenue is unexplained by the filing → management question.**
 
 ### 1(b) CONSOLIDATED (Rs Cr; source lines in results extract)
 
@@ -135,8 +138,10 @@ STOP cleared: Notion NONE (fresh), units identified (Lakhs x0.01 / Mn x0.1 / Cr 
 | Other Income / PBT | OI/PBT | 47.3% | 46.7% | 20.0% | 58.4% |
 | Effective Tax Rate | Tax/PBT | 20.8% | 16.8% | 23.7% | 20.8% |
 | PAT margin (on Rev) | PAT/Rev | 30.4% | 31.9% | 25.9% | 26.3% |
+| Materials % of revenue (deck l.266) | Mat/Rev | 27.0% | 22.0% | 32.1% | ND |
+| Employee % of revenue (deck l.268) | Emp/Rev | 20.1% | 19.0% | 15.1% | ND |
 
-Consolidated operating EBITDA (Rs 39.25 / 35.24 / 19.79 / 75.12 Cr) reconciles **exactly** to the deck's EBITDA line (392.5 / 352.4 / 197.9 / 751.2 Mn) and margins (36.5% / 43.1% / 31.4% / 31.2%). The deck's "EBT" line equals core operating EBIT ex-Other-Income. **Cross-document tie confirmed on every P&L row.**
+Consolidated operating EBITDA (Rs 39.25 / 35.24 / 19.79 / 75.12 Cr) reconciles **exactly** to the deck's EBITDA line (392.5 / 352.4 / 197.9 / 751.2 Mn) and margins (36.5% / 43.1% / 31.4% / 31.2%). The deck's "EBT" line equals core operating EBIT ex-Other-Income. **Cross-document tie confirmed on every P&L row.** Note the mix rows added above (deck l.266-268): materials % of revenue ROSE 27.0%→32.1% YoY while employee % FELL 20.1%→15.1% — the driver of the margin story is analysed in Step 2(a).
 
 STOP cleared — both extraction tables complete; every cell filled or ND (FY25 individual expense lines are ND in the Reg 33 filing and were not restated by the deck).
 
@@ -150,20 +155,22 @@ STOP cleared — both extraction tables complete; every cell filled or ND (FY25 
 |---|---|---|---|---|
 | Revenue from Operations | 62.99 | 107.62 | **+70.9%** | Strong — BUT part-inorganic (Hobel 2 months, FND/A3-F15-01) |
 | Operating EBITDA | 19.79 | 39.25 | **+98.3%** | Strong |
-| Operating EBITDA margin (pp) | 31.4% | 36.5% | **+506 bps** | Expansion |
+| Operating EBITDA margin (pp) | 31.4% | 36.5% | **+506 bps** | Expansion — but partly a consolidation-mix artifact (see diagnostic 2) |
 | Depreciation | 5.89 | 7.96 | +35.2% | Scaling with acquired asset base |
 | Finance Costs | 1.15 | 1.94 | +69.1% | Rising with Hobel debt/CCD |
 | EBIT (operating, EBITDA−D) | 13.91 | 31.30 | +125.1% | Strong |
 | Other Income | 11.44 | 7.33 | **−36.0%** | Treasury fading as IPO cash deployed |
-| **Core Operating PBT (PBT−OI)** | 12.76 | 29.36 | **+130.1%** | **Cleanest test: PASSES — core grew FASTER than headline** |
+| **Core Operating PBT (PBT−OI)** | 12.76 | 29.36 | **+130.1%** | **Cleanest headline test PASSES at consolidated level — but organic (ex-Hobel) split undisclosed** |
 | Reported PBT | 24.20 | 36.69 | +51.6% | Grew, but slower than core (OI drag) |
 | PAT | 19.12 | 27.86 | +45.7% | Grew |
 | EPS (share-adjusted) | 3.76 | 5.48 | +45.7% | Grew (share count flat) |
+| Materials % of revenue | 27.0% | 32.1% | +510 bps | **Gross margin DETERIORATED YoY (deck l.266)** |
+| Employee % of revenue | 20.1% | 15.1% | −500 bps | Fixed-cost dilution on 2 months of Hobel (deck l.268) |
 
 **Six mandatory diagnostics (consolidated):**
 1. **Did revenue grow YoY?** Yes, +70.9% (Rs 62.99 → 107.62 Cr). No Notion base case exists (first-pass). Material caveat: a portion is Hobel's ~2-month inorganic contribution (consolidated w.e.f. 01-May-2026, deck footnote l.208/274); the filing does **not** disclose the organic split → question Q1.
-2. **Did operating EBITDA margin expand?** Expanded: Q1 FY27 36.5% vs Q1 FY26 31.4% = **+506 bps YoY**. (Sequential note: it *contracted* −660 bps vs Q4 FY26's 43.1% — see Step 3; Q4 is a balancing quarter.)
-3. **Did core operating PBT ex-OI grow?** Yes, +130.1% (Rs 12.76 → 29.36 Cr) — **faster than reported PBT (+51.6%) and PAT (+45.7%)**. This is the honest positive: unlike the classic treasury-masking pattern, here reported growth *understates* operating growth because Other Income fell. Consolidated growth quality is genuinely operating-led (subject to the inorganic caveat).
+2. **Did operating EBITDA margin expand?** Expanded on the headline: Q1 FY27 36.5% vs Q1 FY26 31.4% = **+506 bps YoY**. **But the expansion is substantially a consolidation-mix artifact, not organic operating leverage.** On the deck's own P&L (l.266-268), **materials % of revenue ROSE 27.0% → 32.1% YoY — i.e. gross margin DETERIORATED** — while the headline EBITDA margin only expanded because **employee % FELL 20.1% → 15.1%** and other-expense % fell 14.6% → 13.1%: exactly the fixed-cost dilution expected when folding in two months of Hobel's differently structured (~85%-export) revenue (deck l.208/274; l.582). (Sequential note: the margin also *contracted* −660 bps vs Q4 FY26's 43.1% — see Step 3; Q4 is a balancing quarter.) The margin lift is therefore mix, not gross-margin gain → question Q1 asks for the organic gross-margin bridge.
+3. **Did core operating PBT ex-OI grow?** Yes, +130.1% (Rs 12.76 → 29.36 Cr) — **faster than reported PBT (+51.6%) and PAT (+45.7%)** at the consolidated level. That is the honest positive *as reported*: unlike a classic treasury-masking quarter, reported growth *understates* consolidated operating growth because Other Income fell. **However, this consolidated figure is part-inorganic:** given gross margin deteriorated (materials 27.0%→32.1%) and the margin lift came from Hobel-driven employee-cost dilution, the **organic (ex-Hobel) core PBT growth is undisclosed and is likely far below +130%.** Growth quality is operating-led at the *consolidated* level only; the organic read is the open question (Q1).
 4. **What drove the gap between core operating PBT (+130%) and reported PAT (+46%)?** Other Income −Rs 4.11 Cr (drag), tax +Rs 3.65 Cr higher (drag; ETR up 20.8% → 23.7%), depreciation +Rs 2.07 Cr, finance +Rs 0.79 Cr, associate loss +Rs 0.10 Cr worse. Fully quantified in the Step 4 bridge.
 5. **Are D&A and finance costs scaling faster than revenue?** D&A +35.2% and finance +69.1% vs revenue +70.9% — D&A is scaling *below* revenue (positive absorption this quarter); finance is scaling with acquisition leverage. No absorption deficit at consolidated level this quarter, but the acquired-asset D&A and Hobel debt cost will build.
 6. **Is Other Income concentration changing?** Yes, sharply DOWN: OI/PBT fell from 47.3% (Q1 FY26) to 20.0% (Q1 FY27), and from 58.4% at FY26 full-year. Treasury tailwind is unwinding as IPO cash is deployed into Hobel/Kanoo (A3-F16-03) — a structural headwind to future *reported* PBT growth even as operations improve.
@@ -188,19 +195,22 @@ STOP cleared — YoY tables and diagnostics shown for both statements.
 
 ## STEP 3 — SEQUENTIAL QoQ TRAJECTORY (consolidated)
 
-Only Q1 FY26, Q4 FY26 and Q1 FY27 consolidated quarters are contained in this filing; Q2 FY26 and Q3 FY26 standalone quarters are **ND** (this filing carries only the balancing Q4 and comparative Q1 columns — the 9M-Dec-25 quarters were in prior filings not injected). Order-book quarterly cadence is available from the deck (slide 8).
+Only Q1 FY26, Q4 FY26 and Q1 FY27 consolidated quarters are contained in this filing; Q2 FY26 and Q3 FY26 standalone quarters are **ND** (this filing carries only the balancing Q4 and comparative Q1 columns — the 9M-Dec-25 quarters were in prior filings not injected). Order-book quarterly cadence is available from the deck (slide 8). **Order-book values corrected per A5 FAIL-1: the deck is INR Mn (x0.1 to Rs Cr); prior draft wrongly applied the Lakhs factor (x0.01), understating the book 10x.**
 
-| Quarter | Revenue (Rs Cr) | Op EBITDA margin | Core PBT ex-OI (Rs Cr) | Order book (Rs Cr, deck l.211) | One-offs flagged | QoQ run-rate |
+| Quarter | Revenue (Rs Cr) | Op EBITDA margin | Core PBT ex-OI (Rs Cr) | Order book (Rs Cr; deck l.211, INR Mn x0.1) | One-offs flagged | QoQ run-rate |
 |---|---|---|---|---|---|---|
-| Q1 FY26 (Jun-25) | 62.99 | 31.4% | 12.76 | 8.10 (Jun'25) | — | base |
-| Q2 FY26 (Sep-25) | ND | ND | ND | 10.48 (Sep'25) | — | ND |
-| Q3 FY26 (Dec-25) | ND | ND | ND | 11.16 (Dec'25) | — | ND |
-| Q4 FY26 (Mar-26) | 81.80 | 43.1% | 16.83 | 21.49 (Mar'26) | **Balancing quarter (note 5); finance cost spike Rs 11.25 Cr = 73% of FY26 (A3-F16-07)** | step-up |
-| Q1 FY27 (Jun-26) | 107.62 | 36.5% | 29.36 | 28.03 (Jun'26; Unimech 18.02 + Hobel 10.01) | **Hobel 2-month inorganic; order book +Hobel 10.01 (A3-F16-04)** | step-up |
+| Q1 FY26 (Jun-25) | 62.99 | 31.4% | 12.76 | 81.0 (Jun'25) | — | base |
+| Q2 FY26 (Sep-25) | ND | ND | ND | 104.8 (Sep'25) | — | ND |
+| Q3 FY26 (Dec-25) | ND | ND | ND | 111.6 (Dec'25) | — | ND |
+| Q4 FY26 (Mar-26) | 81.80 | 43.1% | 16.83 | 214.9 (Mar'26) | **Balancing quarter (note 5); finance cost spike Rs 11.25 Cr = 73% of FY26 (A3-F16-07)** | step-up |
+| Q1 FY27 (Jun-26) | 107.62 | 36.5% | 29.36 | 280.3 (Jun'26; Unimech 180.2 + Hobel 100.1; incl. nuclear 87.3 within Unimech) | **Hobel 2-month inorganic; order book +Hobel 100.1 inorganic (A3-F16-04)** | step-up |
+
+(Prior period Mar'25 = 93.4, deck l.211, shown for chart completeness; outside the reported P&L window.)
 
 **Diagnostics:**
-- **Trajectory:** revenue stepping up (62.99 → 81.80 → 107.62), but the Q4→Q1 step is materially inorganic (Hobel). Organic run-rate is **not separable** from the filing.
-- **One-off distortions:** (i) Q4 FY26 is a *derived* balancing quarter (note 5), so QoQ comparisons rest on a soft base; (ii) Q4 FY26 finance cost of Rs 11.25 Cr (vs Rs 1.94 Cr in Q1 FY27, −82.8% QoQ) is a one-quarter spike, likely Hobel bridge financing ahead of the 27-Apr close (A3-F16-07); (iii) operating EBITDA margin *contracted* QoQ from 43.1% to 36.5% (−660 bps) — but Q4's 43.1% is itself a balancing-quarter artefact, so read the +506 bps YoY expansion as the cleaner signal.
+- **Trajectory:** revenue stepping up (62.99 → 81.80 → 107.62), but the Q4→Q1 step is materially inorganic (Hobel). Organic run-rate is **not separable** from the filing. The order book trajectory (81.0 → 104.8 → 111.6 → 214.9 → 280.3 Rs Cr) is genuinely rising, but the two most recent step-ups are heavily inorganic/lumpy (see concentration bullet).
+- **Order-book magnitude and concentration (corrected):** the Jun'26 consolidated book is **Rs 280.3 Cr = ~2.6x a single quarter's revenue (280.3 / 107.62)** and **~1.17x FY26 full-year revenue (280.3 / 240.49)** — materially larger visibility than the prior draft's erroneous Rs 28.03 Cr (which had wrongly implied a book smaller than one quarter's sales). **BUT the corrected book is concentrated:** ~36% is inorganic just-acquired Hobel (Rs 100.1 Cr / 280.3), and Rs 87.3 Cr (~31%) is a **single lumpy nuclear order** within the Unimech book (deck l.242); the organic ex-Hobel book is Rs 180.2 Cr, of which ~48% is that one nuclear order. Visibility is real in magnitude but leans on one order plus the acquisition → Q1.
+- **One-off distortions:** (i) Q4 FY26 is a *derived* balancing quarter (note 5), so QoQ comparisons rest on a soft base; (ii) Q4 FY26 finance cost of Rs 11.25 Cr (vs Rs 1.94 Cr in Q1 FY27, −82.8% QoQ) is a one-quarter spike, likely Hobel bridge financing ahead of the 27-Apr close (A3-F16-07); (iii) operating EBITDA margin *contracted* QoQ from 43.1% to 36.5% (−660 bps) — but Q4's 43.1% is itself a balancing-quarter artefact, so read the +506 bps YoY expansion (mix-caveated per Step 2) as the cleaner signal.
 - **H1-vs-Q4 run-rate / capex-commissioning test:** cannot be run cleanly — the plants are already commissioned (fixed-asset turnover fell to 1.4x FY26, capacity utilisation ~60% per deck l.384-386); the incremental Q1 FY27 revenue is partly acquired, not organic commissioning. Utilisation lift is the forward test (A3-F6-01).
 - **Implied Q2 FY27 base to hold trajectory:** consolidated revenue must exceed ~Rs 107.62 Cr *with a full three months of Hobel* to demonstrate organic sequential momentum rather than acquisition-arithmetic; core PBT ex-OI must hold above ~Rs 29 Cr as Other Income continues to fade.
 
@@ -214,7 +224,7 @@ Bridge from Q1 FY26 PAT (Rs 19.12 Cr) to Q1 FY27 PAT (Rs 27.86 Cr): total change
 
 | Component | YoY change (Rs Cr) | YoY change (%) | Recurring? |
 |---|---|---|---|
-| Operating EBITDA growth (rev + margin + mix, incl. inorganic Hobel) | **+19.46** | +98.3% of Op EBITDA | Recurring (part inorganic) |
+| Operating EBITDA growth (rev + margin + mix, incl. inorganic Hobel) | **+19.46** | +98.3% of Op EBITDA | Recurring (part inorganic; margin lift is mix, not gross-margin gain) |
 | Other Income change | **−4.11** | −36.0% of OI | NON-RECURRING (treasury, fading) |
 | Depreciation change | **−2.07** | +35.2% of D | Recurring (post-acquisition) |
 | Finance cost change | **−0.79** | +69.1% of Fin | Recurring (post-debt) |
@@ -223,7 +233,7 @@ Bridge from Q1 FY26 PAT (Rs 19.12 Cr) to Q1 FY27 PAT (Rs 27.86 Cr): total change
 | **Reported PAT YoY change** | **+8.74** | **+45.7%** | — |
 
 **Mandatory questions:**
-- **% of PAT change from recurring core vs non-recurring:** operating EBITDA growth (+19.46) more than fully explains the +8.74 PAT rise; Other Income was a −4.11 drag, not a prop. So **>100% of the PAT increase is operationally sourced** — but an undisclosed slice of the +19.46 is inorganic (Hobel). This is the reverse of a treasury-masking quarter; the honest caveat is *inorganic*, not *non-operating*.
+- **% of PAT change from recurring core vs non-recurring:** operating EBITDA growth (+19.46) more than fully explains the +8.74 PAT rise; Other Income was a −4.11 drag, not a prop. So **>100% of the PAT increase is operationally sourced** — but an undisclosed slice of the +19.46 is inorganic (Hobel), and the margin component of that growth is a consolidation-mix artifact (materials % up 27.0→32.1, employee % down 20.1→15.1, deck l.266-268), **not** organic gross-margin gain. This is the reverse of a treasury-masking quarter; the honest caveats are *inorganic* and *mix-driven*, not *non-operating*. Organic ex-Hobel core PBT growth is undisclosed (Q1).
 - **If Other Income reverts to prior-year level (Rs 11.44 Cr):** PAT would be ~Rs 4.11 Cr higher pre-tax, i.e. reported PAT understates the run-rate that a stable treasury book would have shown; but the structural direction is treasury *falling further* as cash deploys — model Other Income trending down toward interest on residual balances only.
 - **Are D&A / finance at steady state?** No. Depreciation on the acquired Hobel asset base and the full-quarter effect of Hobel debt/CCD financing are not yet fully in the run-rate (only 2 months of Hobel). Both step up in Q2 FY27.
 - **Tax adjustments inflating/deflating PAT?** Yes — a **deferred-tax credit of Rs 3.00 Cr (consol)** partly shields the ETR; standalone current tax (Rs 3.73 Cr) *exceeds* standalone PBT (Rs 3.00 Cr, 124%), fully offset by a Rs 2.94 Cr deferred credit. Persistent deferred credits (3 of 4 periods) imply a DTA/timing reversal and a **forward ETR step-up** (FND-05, A3-F8-01) → question Q7.
@@ -268,7 +278,7 @@ STOP cleared.
 
 **Thesis-reconciliation statement (mandatory).** There is **NO Notion page, NO prior Decision Status, NO entry zone, NO bear/base/bull projections, NO thesis-broken conditions, NO monitoring checklist, and NO Devil's Advocate split** for UNIMECH. This is a **FIRST-PASS** review. There is no pre-committed position to reconcile against; consequently:
 
-- **6A. Variance vs Notion projections:** N/A — no projections exist. This review *establishes* the first baseline (FY26 consolidated: revenue Rs 240.49 Cr, operating EBITDA Rs 75.12 Cr / 31.2%, PAT Rs 63.28 Cr, EPS Rs 12.44, ROCE 9.6%, ROE 16.0%; Q1 FY27 consolidated: revenue Rs 107.62 Cr, op EBITDA Rs 39.25 Cr / 36.5%, PAT Rs 27.86 Cr, EPS Rs 5.48). Probability re-weighting rule: not applicable (no prior scenario weights).
+- **6A. Variance vs Notion projections:** N/A — no projections exist. This review *establishes* the first baseline (FY26 consolidated: revenue Rs 240.49 Cr, operating EBITDA Rs 75.12 Cr / 31.2%, PAT Rs 63.28 Cr, EPS Rs 12.44, ROCE 9.6%, ROE 16.0%; Q1 FY27 consolidated: revenue Rs 107.62 Cr, op EBITDA Rs 39.25 Cr / 36.5%, PAT Rs 27.86 Cr, EPS Rs 5.48; order book Rs 280.3 Cr). Probability re-weighting rule: not applicable (no prior scenario weights).
 - **6B. Watchlist item status:** N/A — no checklist exists. The Monitorables list (Section C) seeds the first checklist.
 - **6C. Thesis-broken trigger check:** N/A — no conditions defined. None can have "FIRED." (Candidate first-pass tripwires proposed in Section C for the Notion build.)
 - **6D. Growth-trigger status:** N/A as reconciliation; the deck's forward signals (utilisation lift, qualification ramp, FACC LTA, semiconductor RFQ, Hobel/Kanoo/Dheya) are logged as *candidate* triggers in Section C, not yet confidence-rated (no baseline to update from).
@@ -285,7 +295,7 @@ No destination PE was ever set in Notion, so there is nothing to re-validate. Pe
 |---|---|---|
 | ROCE base (continuous: 0.5×ROCE+7.5, floor 9x cap 24x) | FY26 consol ROCE **9.6%** (deck l.719); FY25 25.2%; FY24 54.4% | At 9.6% the formula yields 0.5×9.6+7.5 = **12.3x** vs ~20.1x at FY25's 25.2% — a large compression. BUT 9.6% is a trough year (IPO-inflated denominator + capacity built ahead of utilisation). FTTCP ROCE forward verdict must resolve this; do NOT set Pillar 1 here. |
 | Cash multiplier (Pillar 2) | CFO/PAT **ND** this quarter (Q1) | INDETERMINATE — hold for Q2 half-yearly cash flow. |
-| Growth Visibility Premium | Order book Rs 28.03 Cr (deck l.217); FACC LTA signed; semiconductor RFQ | Candidate positive, but part of order book is acquired (Hobel Rs 10.01 Cr). Size organic before crediting. |
+| Growth Visibility Premium | Order book **Rs 280.3 Cr** (deck l.211/217/240-242, INR Mn x0.1); FACC LTA signed; semiconductor RFQ | Book = ~2.6x a single quarter's revenue / ~1.17x FY26 revenue — **materially larger visibility** than the prior erroneous Rs 28.03 Cr. **BUT concentrated:** ~36% is acquired Hobel (Rs 100.1 Cr) and ~31% (Rs 87.3 Cr) is a single lumpy nuclear order; organic ex-Hobel book is Rs 180.2 Cr with heavy single-order concentration. **Size organic and de-concentrated before crediting any Growth Visibility Premium.** |
 | Strategic Premium | AS9100/NADCAP; sole/qualified-supplier positioning; Hobel/Kanoo/Dheya optionality | Single-credit rule state: **NOT YET CREDITED anywhere** (no prior model). ROCE recovery, if it comes, may be credited in Pillar 1 OR Strategic Premium, never both. |
 | UA Multiplier | Not assessed (first-pass) | Defer; requires the three Amendment-3 qualifiers evidenced. |
 | Sector Cap | Aerospace/Defence precision manufacturing | Sector classification noted; cap to be applied at Role 1. |
@@ -305,13 +315,13 @@ STOP cleared.
 - No prior entry zone / MoS to recompute.
 - No trim/exit mechanics apply (nothing held).
 
-**8A-W output — first-pass posture:** **WATCHLIST / MONITOR (initiate coverage).** The company clears mechanical gates (clean unmodified audit opinion; no going-concern; deck reconciles to filing) and shows genuine consolidated operating momentum (core PBT ex-OI +130% YoY). It is **not** clean enough for a BUY gate on this filing alone because of: (i) INDETERMINATE cash conversion (no Q1 cash flow), (ii) an unquantified organic/inorganic growth split, (iii) a FY26 de-growth year buried in the back table, (iv) a ROCE/ROE collapse (25.2%→9.6% / 33.1%→16.0%), and (v) a dense cluster of capital-deployment governance flags (below). **First-pass verdict: PROCEED WITH FLAGS** — analysis proceeds to FTTCP/Role 1, carrying the caveats and flags; no position action is taken.
+**8A-W output — first-pass posture:** **WATCHLIST / MONITOR (initiate coverage).** The company clears mechanical gates (clean unmodified limited-review opinion; no going-concern; deck reconciles to filing) and shows genuine consolidated operating momentum (core PBT ex-OI +130% YoY at the consolidated, part-inorganic level). It is **not** clean enough for a BUY gate on this filing alone because of: (i) INDETERMINATE cash conversion (no Q1 cash flow), (ii) an unquantified organic/inorganic growth split with the YoY margin lift shown to be a consolidation-mix artifact (materials % up, employee % down), (iii) a FY26 de-growth year buried in the back table, (iv) a ROCE/ROE collapse (25.2%→9.6% / 33.1%→16.0%), (v) an order book that is real in magnitude (Rs 280.3 Cr) but ~36% acquired Hobel + ~31% one nuclear order, and (vi) a dense cluster of capital-deployment governance flags (below). **First-pass verdict: PROCEED WITH FLAGS** — analysis proceeds to FTTCP/Role 1, carrying the caveats and flags; no position action is taken.
 
-**8B. Add-back / trim triggers:** none exist to refine (first-pass). Proposed first entry-gate pre-conditions for the Notion build: (a) Q2 FY27 half-yearly CFO/PAT ≥ 0.65x evidenced; (b) organic (ex-Hobel) consolidated revenue growth disclosed and > 20% YoY; (c) QIP priced with dilution and use-of-proceeds disclosed; (d) ROCE trajectory turning up as utilisation lifts from ~60%.
+**8B. Add-back / trim triggers:** none exist to refine (first-pass). Proposed first entry-gate pre-conditions for the Notion build: (a) Q2 FY27 half-yearly CFO/PAT ≥ 0.65x evidenced; (b) organic (ex-Hobel) consolidated revenue growth AND organic gross-margin bridge disclosed, with organic growth > 20% YoY; (c) QIP priced with dilution and use-of-proceeds disclosed; (d) ROCE trajectory turning up as utilisation lifts from ~60%.
 
-**8C. Single cleanest metric for Q2 FY27:** **Consolidated core operating PBT ex-Other-Income, on an organic (ex-Hobel) basis.** This is the one number that separates genuine operating momentum from acquisition arithmetic *and* from the fading treasury book simultaneously.
-- **Bull threshold:** organic core operating PBT ex-OI grows > ~30% YoY (i.e. the +130% consolidated figure survives stripping Hobel), with operating EBITDA margin holding ≥ 34%.
-- **Bear threshold:** organic core operating PBT ex-OI flat or down once Hobel is removed, confirming the headline is acquisition + treasury arithmetic; or margin slipping below ~31% (FY26 level) as utilisation fails to lift.
+**8C. Single cleanest metric for Q2 FY27:** **Consolidated core operating PBT ex-Other-Income, on an organic (ex-Hobel) basis, with the organic gross-margin bridge.** This is the one number that separates genuine operating momentum from acquisition arithmetic *and* from the fading treasury book *and* from the Hobel-driven cost-mix optics simultaneously.
+- **Bull threshold:** organic core operating PBT ex-OI grows > ~30% YoY (i.e. the +130% consolidated figure survives stripping Hobel), with organic gross margin stable-to-up and operating EBITDA margin holding ≥ 34%.
+- **Bear threshold:** organic core operating PBT ex-OI flat or down once Hobel is removed, confirming the headline is acquisition + treasury + mix arithmetic; or organic gross margin continuing to deteriorate; or margin slipping below ~31% (FY26 level) as utilisation fails to lift.
 
 STOP cleared.
 
@@ -323,8 +333,8 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding across all four forensics files ge
 
 | # | Question (specific, number-anchored) | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|
-| 1 | Consolidated revenue rose 71% YoY to Rs 107.62 Cr with Hobel consolidated for only 2 months (w.e.f. 01-May-2026). What is Hobel's exact 2-month revenue and EBITDA contribution, and the **organic (ex-Hobel) YoY growth**? | Headline growth is part-inorganic and not disclosed | Organic growth > 25%, Hobel additive | Organic flat/negative; growth is acquisition arithmetic | pres A3-F15-01, A3-F16-04, A3-F16-08 |
-| 2 | Standalone operating revenue **fell 61% YoY** (Rs 11.71 → 4.59 Cr) and standalone operating EBITDA is **negative Rs 4.00 Cr**, with reported profit propped entirely by Other Income of Rs 9.78 Cr (which exceeds consolidated Other Income of Rs 7.33 Cr). What migrated out of the parent, and is the parent now a holding/treasury entity? | The parent-level collapse is the largest unexplained item in the filing | Deliberate re-org into operating subs; parent is a clean holdco | Genuine loss of parent business / demand loss | results FND-02 |
+| 1 | Consolidated revenue rose 71% YoY to Rs 107.62 Cr with Hobel consolidated for only 2 months (w.e.f. 01-May-2026). Please provide (i) Hobel's exact 2-month revenue and EBITDA contribution and the **organic (ex-Hobel) YoY growth**; (ii) the **organic gross-margin bridge** — materials % of revenue ROSE 27.0%→32.1% while employee % FELL 20.1%→15.1% (deck l.266-268), so how much of the +506 bps EBITDA-margin lift is organic vs Hobel mix; and (iii) the composition of the **Rs 280.3 Cr order book** (Unimech Rs 180.2 Cr incl. the Rs 87.3 Cr single nuclear order + Hobel Rs 100.1 Cr) — what is the organic, ex-single-order book? | Headline growth, the margin lift and the order-book visibility are each part-inorganic / concentrated and not disclosed | Organic growth > 25%, organic gross margin stable/up, order book broad-based ex-nuclear | Organic flat/negative; margin lift is pure Hobel mix; book leans on one order + acquisition | pres A3-F15-01, A3-F16-04, A3-F16-08 |
+| 2 | Standalone operating revenue **fell 61% YoY** (Rs 11.71 → 4.59 Cr) and standalone operating EBITDA is **negative Rs 4.00 Cr** (negative in two of the last four quarters; core PBT ex-OI negative in three of four), with reported profit propped entirely by Other Income of Rs 9.78 Cr (which exceeds consolidated Other Income of Rs 7.33 Cr). What migrated out of the parent, and is the parent now a holding/treasury entity? | The parent-level collapse is the largest unexplained item in the filing | Deliberate re-org into operating subs; parent is a clean holdco | Genuine loss of parent business / demand loss | results FND-02 |
 | 3 | FY26 consolidated Other Income was Rs 46.97 Cr = **58% of PBT**; it fell to Rs 7.33 Cr = 20% of PBT in Q1 FY27 as IPO cash deploys. What is the sustainable Other Income run-rate for FY27, and what reported-PBT growth remains once treasury income normalises? | A majority of FY26 profit was non-operating; the tailwind is unwinding | Core operations more than replace treasury income | Reported PBT growth stalls as OI fades | pres A3-F16-03 |
 | 4 | Consolidated ROCE fell **42.9% → 54.4% → 25.2% → 9.6%** and ROE **46.7% → 16.0%** over FY23-FY26, never addressed in the narrative slides. What is the FY27 ROCE trajectory and the mechanism (utilisation lift vs mix) that restores it? | The return collapse is the central bear point | Denominator inflated by IPO cash + pre-utilisation capex; returns recover as utilisation lifts | Structural return erosion | pres A3-F16-02, A3-F6-01 |
 | 5 | The deck states capacity utilisation is ~60% and that you "expect utilisation to improve as qualification programs transition into serial production." What is the **targeted utilisation exit rate for Q2 and end-FY27**? | Utilisation lift is the operating-leverage thesis and the ROCE fix | Specific rising target with dates | Vague / no number | pres A3-F6-01 |
@@ -351,7 +361,7 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding across all four forensics files ge
 | 26 | Zero numeric FY27 guidance appears anywhere in the deck (no revenue, margin, capex, or capacity target). Will you provide a numeric FY27 revenue and margin band on the Aug 04 call? | Cannot test forward claims without numbers | Specific bands given | Qualitative-only; guidance effectively withdrawn | pres A3-F16-05 |
 
 **Top 3 questions ranked by likelihood of producing thesis-changing information:**
-1. **Q1 (organic ex-Hobel growth)** — the answer sets whether the 71% headline is real operating momentum (bull) or acquisition arithmetic (bear); it is the single largest swing factor for the whole thesis.
+1. **Q1 (organic ex-Hobel growth + organic gross-margin bridge + order-book composition)** — the answer sets whether the 71% headline and the +506 bps margin are real operating momentum (bull) or acquisition + mix arithmetic (bear), and whether the Rs 280.3 Cr book is broad-based or leans on one nuclear order plus Hobel; it is the single largest swing factor for the whole thesis.
 2. **Q8/Q9 (Rs 750 Cr QIP purpose + structure/dilution)** — confirms or breaks the capital-allocation discipline read and quantifies per-share dilution before any valuation is built.
 3. **Q11/Q12 (Hobel Rs 450 Cr vs Rs 148 Cr reconciliation + residual funding/leverage)** — tests management transparency directly; a clean reconciliation reassures, an evasive one is a governance red flag given the parallel CARE commingling/breach findings.
 
@@ -376,21 +386,21 @@ When the Aug 04 transcript is available, run Role 5 in full (Steps 0-9), append 
 # SECTION C — COMBINED VERDICT, MONITORABLES / CATALYSTS
 
 ## Filing-derived signals (Role 4)
-- **Positive:** consolidated core operating PBT ex-OI +130% YoY (grew faster than headline PBT); operating EBITDA margin +506 bps YoY to 36.5%; clean unmodified audit opinion; order book Rs 28.03 Cr; FACC aerostructures LTA signed; deck reconciles exactly to the filing.
-- **Negative / flags:** standalone hollowed (operating EBITDA −Rs 4.00 Cr, revenue −61% YoY); FY26 was a **de-growth year** (revenue −1.0%, EBITDA −18.4%, PAT −24.2% vs FY25) buried in a back table; **ROCE 25.2%→9.6%, ROE 33.1%→16.0%**; Other Income was 58% of FY26 PBT and is fading; deferred-tax shield masks a forward ETR step-up; **cash conversion INDETERMINATE** (no Q1 cash flow); growth part-inorganic and unquantified.
+- **Positive:** consolidated core operating PBT ex-OI +130% YoY at the consolidated (part-inorganic) level, growing faster than headline PBT; operating EBITDA margin +506 bps YoY to 36.5% (mix-caveated, see below); clean unmodified limited-review opinion; **order book Rs 280.3 Cr = ~2.6x a single quarter's revenue / ~1.17x FY26 revenue** (corrected from the erroneous Rs 28.03 Cr per A5 — materially larger visibility); FACC aerostructures LTA signed; deck reconciles exactly to the filing.
+- **Negative / flags:** standalone hollowed (operating EBITDA −Rs 4.00 Cr, revenue −61% YoY); FY26 was a **de-growth year** (revenue −1.0%, EBITDA −18.4%, PAT −24.2% vs FY25) buried in a back table; **ROCE 25.2%→9.6%, ROE 33.1%→16.0%**; Other Income was 58% of FY26 PBT and is fading; deferred-tax shield masks a forward ETR step-up; **cash conversion INDETERMINATE** (no Q1 cash flow); growth part-inorganic and unquantified. **Two grafted counters (per A5):** (i) the +506 bps margin expansion is substantially a **consolidation-mix artifact** — materials % of revenue ROSE 27.0%→32.1% (gross margin DETERIORATED) while employee % FELL 20.1%→15.1% on 2 months of Hobel (deck l.266-268); organic ex-Hobel core PBT growth is undisclosed and likely far below +130%; (ii) the corrected Rs 280.3 Cr order book is **~36% inorganic Hobel (Rs 100.1 Cr) and ~31% a single nuclear order (Rs 87.3 Cr)** — the organic ex-Hobel book is Rs 180.2 Cr with heavy single-order concentration.
 - **Governance flags (capital deployment):** ICDR Reg 7(3) 35%-cap breach cured by special resolution; commingling of funds flagged twice; CARE header "Deviation: None" contradicting its body; 27-day deployment delay; a Rs 750 Cr QIP announced before the Rs 230.91 Cr IPO was fully absorbed; three-way forward dilution (diluted spread + CCDs + QIP); Hobel consideration inconsistent across three documents (Rs 450 Cr vs Rs 148 Cr; "all-cash" vs "equity/debt/CCDs").
 
 ## Concall-derived signals
 None yet (Role 5 deferred to Aug 04, 2026).
 
 ## Reconciliation between the two
-Not applicable this cycle (no concall). The deck's *narrative* ("highest-ever quarterly revenue," "strong growth and value creation") is materially more upbeat than the *filing numbers* support once one strips the inorganic Hobel contribution, the fading treasury income, and the buried FY26 de-growth / ROCE collapse. Where the deck narrative and the filing conflict, **the filing wins**; the discrepancy itself is logged as the first management-credibility data point.
+Not applicable this cycle (no concall). The deck's *narrative* ("highest-ever quarterly revenue," "strong growth and value creation") is materially more upbeat than the *filing numbers* support once one strips the inorganic Hobel contribution, the mix-driven (not gross-margin-led) margin optics, the fading treasury income, the order-book concentration, and the buried FY26 de-growth / ROCE collapse. Where the deck narrative and the filing conflict, **the filing wins**; the discrepancy itself is logged as the first management-credibility data point.
 
 ## Net thesis impact
-First-pass baseline established. Genuine operating momentum exists at the consolidated level, but it is entangled with acquisition arithmetic, a fading treasury tailwind, a return-on-capital trough, and an unusually dense set of capital-deployment governance flags. Insufficient clean evidence for a BUY gate on this filing alone.
+First-pass baseline established. Genuine operating momentum exists at the consolidated level, but it is entangled with acquisition arithmetic, a mix-driven margin optic, a fading treasury tailwind, a return-on-capital trough, a concentrated order book, and an unusually dense set of capital-deployment governance flags. Insufficient clean evidence for a BUY gate on this filing alone.
 
 ## Position decision
-**First-pass verdict: PROCEED WITH FLAGS** (8A-W branch; nothing held; Decision Status NONE). Cash conversion is **INDETERMINATE**, which independently caps the verdict at no better than PROCEED WITH CAVEATS with missing evidence named (no Q1 cash-flow statement, no balance sheet, no WC days, no post-Hobel net debt); the governance-flag density moves it one notch more severe to **PROCEED WITH FLAGS**. Route to FTTCP → Role 1 with the flags and caveats attached. No trim/exit/add mechanics apply.
+**First-pass verdict: PROCEED WITH FLAGS** (8A-W branch; nothing held; Decision Status NONE). **Verdict-reasoning after the A5 correction loop:** the order-book fix (Rs 28.03 Cr → Rs 280.3 Cr, a 10x favourable magnitude correction) is genuinely positive for the growth-visibility read; but it is offset by the two grafted bear counters — the +506 bps margin expansion is a consolidation-mix artifact (gross margin actually deteriorated) rather than organic leverage, and the larger book is ~36% acquired Hobel + ~31% one nuclear order. The net of a favourable magnitude fix against a concentration + mix caveat is directionally neutral for the verdict. Independently, cash conversion is **INDETERMINATE**, which caps the verdict at no better than PROCEED WITH CAVEATS with missing evidence named (no Q1 cash-flow statement, no balance sheet, no WC days, no post-Hobel net debt); the governance-flag density moves it one notch more severe to **PROCEED WITH FLAGS**. Route to FTTCP → Role 1 with the flags and caveats attached. No trim/exit/add mechanics apply.
 
 ## MONITORABLES / CATALYST LIST (seeded by A3 commitment registers F6 + Board-outcome F13; each with implied date)
 
@@ -401,7 +411,7 @@ First-pass baseline established. Genuine operating momentum exists at the consol
 | 3 | **FY2025-26 Annual Report to exchanges** — schedule Role 6 AR Deep Dive | Within weeks (around AGM) | results FND-07, l.87-89 |
 | 4 | **Rs 750 Cr QIP launch / pricing** (one or more tranches) — dilution + use of proceeds | Post-AGM (Sep 2026+) | results FND-06/FND-07, l.296; qip FND-01/FND-04 |
 | 5 | **Dheya further investment Rs 5 Cr** completion + Reg 30 details | Post-completion (open) | results FND-04, l.64-78, l.300 |
-| 6 | **Hobel integration + first full-quarter (3-month) contribution** | Q2 FY27 | results FND-09 / pres A3-F15-01, l.590 |
+| 6 | **Hobel integration + first full-quarter (3-month) contribution; organic ex-Hobel split + order-book concentration (Hobel Rs 100.1 Cr / nuclear Rs 87.3 Cr of Rs 280.3 Cr)** | Q2 FY27 | results FND-09 / pres A3-F15-01, A3-F16-04, l.590, deck l.211/240-242 |
 | 7 | **Rs 0.58 Cr Axis FD maturity → transfer to GCP** | 04-Jul-2026 (confirm in Q2) | monitoring A3-03, l.456 |
 | 8 | **Rs 1.62 Cr issue-expense vendor payment** (confirm settled) | July 2026 | monitoring commitment reg, l.436-441 |
 | 9 | **Capacity utilisation lift from ~60%** as qualification → serial production | Quarterly through FY27 | pres A3-F6-01, l.131-132, l.384-386 |
@@ -415,11 +425,11 @@ First-pass baseline established. Genuine operating momentum exists at the consol
 | 17 | **Next CARE quarterly monitoring report** (proceeds fully utilised; watch commingling controls) | Q2 FY27 | monitoring, l.196 |
 | 18 | **Q2 FY27 results (half-yearly)** — FIRST mandatory CFO / balance sheet / net-debt reading → resolves cash-conversion INDETERMINATE | Nov 2026 | Reg 33 half-yearly rule; Step 5 |
 
-**Proposed first-pass tripwires for the Notion build (candidate thesis-broken conditions):** (a) organic ex-Hobel consolidated revenue declines YoY for two consecutive quarters; (b) Q2 FY27 CFO/PAT < 0.65x; (c) a further ICDR breach or a modified audit opinion; (d) ROCE fails to inflect upward through FY27 despite utilisation rising; (e) QIP priced at a dilution materially above the eventual accretion of its use-of-proceeds.
+**Proposed first-pass tripwires for the Notion build (candidate thesis-broken conditions):** (a) organic ex-Hobel consolidated revenue declines YoY for two consecutive quarters; (b) Q2 FY27 CFO/PAT < 0.65x; (c) a further ICDR breach or a modified audit opinion; (d) ROCE fails to inflect upward through FY27 despite utilisation rising; (e) QIP priced at a dilution materially above the eventual accretion of its use-of-proceeds; (f) organic gross margin continues to deteriorate once Hobel mix is stripped, or the order book fails to broaden beyond the single nuclear order + Hobel.
 
 ---
 
-*Reviewed August 03, 2026 (filing date) | Sources: results_unimech_q1fy27.pdf (Reg 33), presentation_unimech_q1fy27.pdf, pr_qip_unimech_q1fy27.pdf (Reg 30), pr_monitoring_unimech_q1fy27.pdf (Reg 32(6) CARE Ratings) | First-pass (no prior Notion thesis) | Role 5 DEFERRED to Aug 04, 2026 concall.*
+*Reviewed August 03, 2026 (filing date); LOOP-1 CORRECTED per A5 audit August 04, 2026 | Sources: results_unimech_q1fy27.pdf (Reg 33), presentation_unimech_q1fy27.pdf, pr_qip_unimech_q1fy27.pdf (Reg 30), pr_monitoring_unimech_q1fy27.pdf (Reg 32(6) CARE Ratings) | First-pass (no prior Notion thesis) | Role 5 DEFERRED to Aug 04, 2026 concall.*
 
 ```yaml
 stage: A4-analyst
@@ -427,6 +437,7 @@ company: "UNIMECH"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
+correction_loop: "loop-1-corrected per A5"
 docs_merged: [results, presentation]
 ledger_reconciliation:
   notes: 21
@@ -438,14 +449,22 @@ protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"
 decision_status_verified: "NONE (fresh name; no Notion page, no prior Decision Status)"
 position_branch: "8A-W"
+order_book:
+  jun26_total_cr: 280.3            # deck 2,803 Mn x0.1 (loop-1-corrected from erroneous 28.03)
+  trajectory_cr: [93.4, 81.0, 104.8, 111.6, 214.9, 280.3]  # Mar'25/Jun'25/Sep'25/Dec'25/Mar'26/Jun'26 (deck l.211)
+  jun26_unimech_cr: 180.2         # deck 1,802 Mn x0.1 (incl. nuclear 87.3)
+  jun26_hobel_cr: 100.1           # deck 1,001 Mn x0.1 (inorganic, ~36% of book)
+  jun26_nuclear_single_order_cr: 87.3   # deck 873 Mn x0.1 (~31% of book)
+  x_single_quarter_revenue: 2.6   # 280.3 / 107.62
+  x_fy26_revenue: 1.17            # 280.3 / 240.49
 sc_gap_pat_pct:
   - {period: "Q1 FY27", standalone_pat_cr: 2.20, consolidated_pat_cr: 27.86, standalone_pct_of_consol: 7.9, gap_pct_of_standalone: 1166}
   - {period: "Q4 FY26", standalone_pat_cr: 1.90, consolidated_pat_cr: 26.10, standalone_pct_of_consol: 7.3, gap_pct_of_standalone: 1274}
   - {period: "Q1 FY26", standalone_pat_cr: 8.86, consolidated_pat_cr: 19.12, standalone_pct_of_consol: 46.3, gap_pct_of_standalone: 116}
   - {period: "FY26", standalone_pat_cr: 22.22, consolidated_pat_cr: 63.28, standalone_pct_of_consol: 35.1, gap_pct_of_standalone: 185}
 questions_for_management:
-  - {q: "Hobel 2-month revenue/EBITDA contribution and organic ex-Hobel YoY growth", from_finding_id: ["pres:A3-F15-01","pres:A3-F16-04","pres:A3-F16-08"]}
-  - {q: "Standalone revenue -61% YoY and negative operating EBITDA; is the parent now a holdco?", from_finding_id: ["results:FND-02"]}
+  - {q: "Hobel 2-month revenue/EBITDA + organic ex-Hobel YoY growth + organic gross-margin bridge (materials 27.0->32.1%, employee 20.1->15.1%) + Rs 280.3 Cr order-book composition (Unimech 180.2 incl. nuclear 87.3; Hobel 100.1)", from_finding_id: ["pres:A3-F15-01","pres:A3-F16-04","pres:A3-F16-08"]}
+  - {q: "Standalone revenue -61% YoY and negative operating EBITDA (2 of 4 periods; core PBT ex-OI negative 3 of 4); is the parent now a holdco?", from_finding_id: ["results:FND-02"]}
   - {q: "Sustainable FY27 Other Income run-rate as treasury (58% of FY26 PBT) fades", from_finding_id: ["pres:A3-F16-03"]}
   - {q: "ROCE 9.6% / ROE 16.0% collapse; FY27 trajectory and recovery mechanism", from_finding_id: ["pres:A3-F16-02","pres:A3-F6-01"]}
   - {q: "Targeted capacity utilisation exit rate Q2/end-FY27 (from ~60%)", from_finding_id: ["pres:A3-F6-01"]}
@@ -476,7 +495,7 @@ monitorables:
   - {item: "FY2025-26 Annual Report to exchanges (Role 6 AR Deep Dive)", implied_date: "2026-08 (weeks)", source_ref: "results FND-07 l.87-89"}
   - {item: "Rs 750 Cr QIP launch/pricing (dilution + use of proceeds)", implied_date: "2026-09+ (post-AGM)", source_ref: "results FND-06 l.296; qip FND-01"}
   - {item: "Dheya Rs 5 Cr completion + Reg 30 details", implied_date: "post-completion (open)", source_ref: "results FND-04 l.64-78"}
-  - {item: "Hobel first full-quarter (3-month) contribution + integration", implied_date: "Q2 FY27", source_ref: "results FND-09 l.590; pres A3-F15-01"}
+  - {item: "Hobel first full-quarter (3-month) contribution + integration; organic ex-Hobel split + order-book concentration (Hobel 100.1 / nuclear 87.3 of 280.3)", implied_date: "Q2 FY27", source_ref: "results FND-09 l.590; pres A3-F15-01/A3-F16-04 deck l.211,240-242"}
   - {item: "Rs 0.58 Cr Axis FD maturity -> transfer to GCP", implied_date: "2026-07-04", source_ref: "monitoring A3-03 l.456"}
   - {item: "Rs 1.62 Cr issue-expense vendor payment confirm", implied_date: "2026-07", source_ref: "monitoring l.436-441"}
   - {item: "Capacity utilisation lift from ~60%", implied_date: "quarterly FY27", source_ref: "pres A3-F6-01 l.131-132,384-386"}
@@ -492,11 +511,13 @@ monitorables:
 flags:
   - "Cash conversion INDETERMINATE (no Q1 cash flow/balance sheet/WC days/net debt) — caps verdict at no better than PROCEED WITH CAVEATS; missing evidence named"
   - "Growth part-inorganic (Hobel 2 months); organic ex-Hobel split not disclosed"
+  - "Margin expansion is a consolidation-mix artifact: materials % of revenue ROSE 27.0->32.1% (gross margin deteriorated) while employee % FELL 20.1->15.1% on 2 months of Hobel; organic ex-Hobel core PBT growth undisclosed, likely far below +130% (grafted per A5)"
+  - "Order-book concentration: corrected Rs 280.3 Cr book is ~36% inorganic Hobel (Rs 100.1 Cr) + ~31% one nuclear order (Rs 87.3 Cr); organic ex-Hobel book Rs 180.2 Cr with heavy single-order concentration (grafted per A5)"
   - "FY26 was a de-growth year (rev -1.0%, EBITDA -18.4%, PAT -24.2% vs FY25) buried in back table"
   - "ROCE 25.2%->9.6%, ROE 33.1%->16.0% (FY25->FY26); never addressed in narrative"
   - "Other Income 58% of FY26 PBT, fading as IPO cash deployed -> reported-PBT headwind"
   - "Deferred-tax credit shields ETR (std current tax 124% of std PBT); forward ETR step-up risk"
-  - "Standalone hollowed: operating EBITDA -Rs 4.00 Cr, revenue -61% YoY; parent -> holdco/treasury profile"
+  - "Standalone hollowed: operating EBITDA -Rs 4.00 Cr (negative 2 of 4 periods; core PBT ex-OI negative 3 of 4), revenue -61% YoY; parent -> holdco/treasury profile"
   - "ICDR Reg 7(3) 35%-cap breach cured by special resolution; appetite for further unidentified M&A"
   - "Commingling of funds flagged twice by CARE (FD-lockup reimbursement routing)"
   - "CARE cover 'Deviation: None' contradicts body 'No' + Rs 61.287 Cr reallocation"

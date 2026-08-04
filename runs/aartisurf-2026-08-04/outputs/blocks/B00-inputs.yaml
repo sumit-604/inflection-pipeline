@@ -1,0 +1,36 @@
+stage: B00-inputs
+company: AARTISURF
+run_date: 2026-08-04
+model: orchestrator
+status: complete
+manifest_parses: true
+run_type: full
+concalls_available: false
+no_concall_mode: true
+listed_status: long-listed (~2019 demerger from Aarti Industries)
+sector_cap_row_manifest: "Pharma / CDMO"
+sector_cap_row_defect: true
+sector_cap_row_recommended: "Specialty chemicals (~35x) - confirm phase 3"
+inputs_present:
+  annual_report: 1        # FY2024-25 (y/e 31-Mar-2025)
+  results: 2              # FY26 audited (9ac5e08e) + Q1FY27 unaudited (81847a21)
+  rating: 1              # CARE 19-Dec-2025, DOWNGRADE A-/BBB+ -> BBB+/BBB
+  concalls: 0            # declared absent (concalls_available false)
+  peer_concalls: 12      # FCL x4, GALAXYSURF x4, ROSSARI x4
+  presentation: 1        # image-heavy
+  screening: 30          # AARTISURF + FCL/GALAXYSURF/ROSSARI/ULTRAMAR
+  shareholding_operator: 1   # anchored-equivalent screener screenshot
+  announcements_operator: 1  # non-anchored lead digest
+input_gaps:
+  - "prospectus: absent - NOT a gap (long-listed ~2019, prospectus not expected)"
+  - "concalls: absent - DECLARED (concalls_available false), NO-CONCALL MODE"
+  - "announcements: Reg30 PDFs absent - PARTIALLY FILLED by operator digest (non-anchored lead); stage 8 web-search for material events"
+  - "shareholding: filings absent - FILLED by operator screener screenshot (anchored-equivalent); pledge % still not anchored"
+  - "research: absent - no effect on anchored evidence"
+  - "sector_cap_row manifest defect: 'Pharma/CDMO' wrong for surfactants; recommend Specialty chemicals ~35x, confirm phase 3"
+  - "AR is FY2024-25 (one FY behind FY26 audited results); backward deep dive ends FY25, FY26 from results PDF"
+material_events_to_route:
+  - "Pollution Control Committee Show-Cause Notice 15-Jun-2026 (environmental/operational risk) -> stage 8 + synthesis monitorable"
+  - "NCRPS Redemption Notice 13-Jul-2026 (capital structure) -> stage 8 + phase-3 leverage/EPS"
+  - "CARE rating DOWNGRADE 19-Dec-2025 (margin/leverage) -> FLAG-CASH source"
+flags: []

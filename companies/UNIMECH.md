@@ -49,6 +49,44 @@ the thesis-reconciliation framing is wrong in the run artifact and is
 corrected here and in the Notion Key Notes. LESSON logged: quarterly runs must
 fetch the COMPANIES MASTER page before A4.
 
+## Q1 FY27 CONCALL (Aug-04-2026, Role 5) — net impact MAINTAINED
+Full A1-A5 run on the transcript (94 turns / 19 questions / 8 analysts / 48
+mgmt numbers). Net: CONSTRUCTIVE on operating thesis, NET-NEGATIVE on
+governance transparency. Decision Status UNCHANGED (WATCHLIST / BUY ON DIPS);
+no trigger formally fired; no FTTCP re-run.
+- DECISION-CRITICAL: organic ex-Hobel Q1 revenue ~Rs 86 Cr (Hobel ~Rs 22 Cr /
+  ~21% of ~Rs 108 Cr) vs Q1 FY26 Rs 62.99 Cr = ~+36% YoY. "Organic core still
+  growing" tripwire SUPPORTED (computed, not disclosed; no organic GM bridge).
+- QIP: ANSWERED — enabling resolution, PRIMARY driver = minimum-public-
+  shareholding compliance "due next 18 months" (~Feb-2028), "not an immediate
+  fund raise." Timing DEFERRED not removed (MPS forces a raise regardless;
+  Hobel CCDs + Dheya round stack on top); structure/dilution % still undisclosed.
+- Answer-status of the 26-question bank: 2 ANSWERED (Q3 other-income fade; Q8
+  QIP purpose), 8 PARTIAL, 1 EVADED (Q6 FAI target), 15 NOT ADDRESSED. The
+  entire governance/capital-deployment block (Hobel Rs450/Rs148 reconciliation,
+  ICDR breach, commingling, standalone parent) went dark.
+- MASTER VARIABLE: CRISIL "Issuer Not Cooperating" NOT raised by mgmt or any of
+  8 analysts = 5th consecutive call of silence. Sustains promoter MONITOR-to-
+  CONCERN; confirms the persistence leg of trigger (d) (second leg — a discrete
+  new governance event — not yet formally tripped; QIP enabling resolution is a
+  candidate).
+- Thesis-broken triggers vs concall: (a) rev<Rs400 NOT fired; (b) EBITDA<22%
+  NOT fired (Q1 36.5%, FY27 guided 34-35%) — but note the 34-35% guide sits
+  BELOW the 36.5% Q1 print, i.e. embeds sequential H2 margin compression (H2
+  PCA-heavy, Hobel full-quarter dilution, qual/NPI + depreciation drag); (c)
+  Hobel EBITDA<40% NOT TESTABLE (segment margin refused twice) -> external
+  ~50%+, not fired; (d) PARTIAL/WATCH.
+- Guidance/commitments logged for promise-vs-delivery (baseline; first
+  in-pipeline call): FY27 blended EBITDA 34-35% (floor 30-32%); Q2 stronger +
+  other income to ~half again; WC to 160+ days; utilisation ~58%; ROCE
+  annualised ~14.3% -> 20-21% as utilisation lifts; gross block ~2x by FY27-end;
+  Saudi JV USD 10M infusion Aug-2026; Hobel Weissac AS9100 by Q4 FY27; two new
+  Hobel customers by FY27-end; engine Tier-1 LTA "advanced stage"; FACC USD
+  7.5M/5yr; nuclear ~Rs 87 Cr, ~50% executed H2; Dheya USD 10M raise (UNIMECH to
+  participate, modest dilution).
+- A5 audit: COVERAGE + ARITHMETIC PASS; one surviving bear counter (the
+  guided-margin-compression point) grafted; effective COMPLETE.
+
 ## OPERATOR RULING (2026-08-04, on the acquisition/bullish framing)
 Operator pushed back on the cautious framing: Hobel is acquired and
 permanently consolidated, so the earnings are real and recurring and the

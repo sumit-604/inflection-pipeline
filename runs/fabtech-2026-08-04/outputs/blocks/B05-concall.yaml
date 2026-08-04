@@ -1,0 +1,96 @@
+stage: B05-concall
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Announcements, shareholding data, and research reports not provided as inputs to this stage"
+  - "Q4 FY26 and Q1 FY27 results PDFs referenced in the task briefing could not be located with the tools available to this stage; promise-vs-delivery cross-check relies on financial figures management disclosed live within the concalls themselves (verifier A to confirm against results PDFs)"
+  - "Nov 2025 / Q2 FY26 concall transcript exists but was excluded per the 3-most-recent-quarters contract"
+  - "Auditor KAM detail (Rs 58.9 Cr overdue >365 days, FY26 provisioning jump) supplied as task context could not be independently verified against a results/annual-report source in this stage; used only to test concall silence"
+flags:
+  - "FY27 growth guidance walked down from 30-40% to ~25% to 20-25% within two quarters of being set"
+  - "Total concall silence across 3 quarters on auditor KAM: Rs 58.9 Cr receivables overdue >365 days, despite receivables rising quarter over quarter"
+  - "Revenue recognition method (shipment-based vs percentage-completion) unresolved across 3 consecutive quarters despite repeated analyst pressure"
+  - "Europe/JBN acquisition promised repeatedly since Q3 FY26 call, still not closed after 2+ quarters"
+  - "Related-party procurement dependence ~26% (FTCL cleanroom panels ~11% + Advantek air-handling ~15%); Advantek figure not reconfirmed in most recent call"
+quarters_analysed: ["Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Order book execution (>Rs 900 Cr, H2-weighted, 18-24mo conversion)", type: "Volume", timeframe: "near-term", conviction: "M", confirm_signal: "H2 FY27 revenue acceleration consistent with 20-25% YoY guidance", kill_signal: "Another guidance cut below 20%, or repeated seasonality shortfalls without H2 catch-up"}
+  - {priority: 2, name: "Saudi Arabia localization via SACE (Vision 2030 qualification access)", type: "Volume/Regulatory-Policy", timeframe: "near-term", conviction: "H", confirm_signal: "Continued Saudi revenue growth and new civil/MEP wins via SACE", kill_signal: "SACE fails to win incremental orders beyond the one civil order already announced"}
+  - {priority: 3, name: "Africa diversification (Kenya, Morocco, Botswana, animal health)", type: "Volume/Sectoral", timeframe: "near-term", conviction: "H", confirm_signal: "Continued new-geography order wins, reduced UAE/single-region dependence", kill_signal: "Africa growth stalls or margin pressure erodes profitability"}
+  - {priority: 4, name: "Rising average ticket size ($30-40M orders growing to $70M+)", type: "Price-mix", timeframe: "medium-term", conviction: "M", confirm_signal: "Further large (>$50M) order wins reported", kill_signal: "Reversion to smaller sub-$5M average tickets"}
+  - {priority: 5, name: "Europe/JBN acquisition (inorganic local-platform expansion)", type: "Inorganic", timeframe: "medium-term", conviction: "L", confirm_signal: "Deal closes within the 'next two to three quarters' most recently guided", kill_signal: "Acquisition abandoned or slips beyond FY27"}
+  - {priority: 6, name: "Milestone/percentage-completion revenue recognition transition", type: "Cost/structural", timeframe: "long-term", conviction: "L", confirm_signal: "Concrete contract-level breakdown showing new orders on percentage-completion basis with reduced quarterly volatility", kill_signal: "No resolution / repeated deferral into FY28"}
+  - {priority: 7, name: "Data centre / semiconductor infrastructure diversification", type: "Sectoral/Inorganic", timeframe: "long-term, aspirational", conviction: "L", confirm_signal: "A formal data-centre order win or JV announcement", kill_signal: "Topic continues to be raised only in response to analyst questions"}
+guidance:
+  - {item: "FY26 revenue guidance", number: "Rs 380-400 Cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 PAT guidance", number: "Rs 39-41 Cr", timeframe: "FY26", stated_in: "Q3 FY26 call"}
+  - {item: "Q4 FY26 PAT target", number: "Rs 20-24 Cr", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 growth target (initial)", number: "30-40% YoY", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "PAT margin band", number: "9-11%", timeframe: "ongoing", stated_in: "Q3 FY26 call, reaffirmed Q1 FY27 call"}
+  - {item: "FY26 actual total income", number: "Rs 431.33 Cr, +28.4% YoY", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual EBITDA", number: "Rs 55.56 Cr, +18.29% YoY", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual net profit / operational PAT", number: "Rs 38.36 Cr reported / Rs 36.6 Cr operational", timeframe: "FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "Q4 FY26 actual net profit", number: "Rs 22.06 Cr", timeframe: "Q4 FY26 actual", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 growth guidance (revised down)", number: "~25% growth", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 PAT margin guidance", number: "9.9%-10.5%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 revenue target cited at investor conferences", number: "Rs 530-600 Cr", timeframe: "FY27", stated_in: "referenced in Q4 FY26 call"}
+  - {item: "FY28 PAT guidance", number: "12-14%", timeframe: "FY28", stated_in: "referenced in Q4 FY26 call"}
+  - {item: "Order book", number: "Rs 926 Cr (31-Jan-2026)", timeframe: "point-in-time", stated_in: "Q3 FY26 call"}
+  - {item: "Order book", number: ">Rs 900 Cr (31-Mar-2026)", timeframe: "point-in-time", stated_in: "Q4 FY26 call"}
+  - {item: "Order book", number: ">Rs 900 Cr / ~Rs 920 Cr+ FX-adjusted (30-Jun-2026)", timeframe: "point-in-time", stated_in: "Q1 FY27 call"}
+  - {item: "Project execution timeline reduction", number: "24-27 months down to ~18-24 months (~20% reduction)", timeframe: "ongoing", stated_in: "Q4 FY26 call"}
+  - {item: "Contribution margin target", number: "~45%", timeframe: "ongoing", stated_in: "Q4 FY26 and Q1 FY27 calls"}
+  - {item: "EBITDA margin target", number: "13-14%", timeframe: "ongoing", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 organic growth guidance (reaffirmed)", number: "20-25% YoY", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Long-term revenue target", number: "Rs 1,000+ Cr", timeframe: "by 2030", stated_in: "Q1 FY27 call"}
+  - {item: "Working capital cycle", number: "~120 days", timeframe: "ongoing", stated_in: "Q3 FY26 and Q1 FY27 calls"}
+promise_delivery:
+  delivered: 3
+  partial: 2
+  missed: 5
+  score: "3/10 delivered clean"
+  rows:
+    - {promised_in: "Q3 FY26 call", promise: "FY26 revenue Rs 380-400 Cr, PAT Rs 39-41 Cr", outcome: "partial", explanation: "Revenue Rs 431.33 Cr beat upper end; reported PAT Rs 38.36 Cr within band but operational PAT Rs 36.6 Cr narrowly below the guided floor"}
+    - {promised_in: "Q3 FY26 call", promise: "Q4 FY26 quarterly PAT of Rs 20-24 Cr", outcome: "delivered", explanation: "Q4 FY26 net profit Rs 22.06 Cr, inside band"}
+    - {promised_in: "Q3 FY26 call", promise: "~Rs 20.3 Cr of stock deferred to Q4 would ship", outcome: "delivered", explanation: "Q4 FY26 total income Rs 168.24 Cr (+22% YoY), highest March sales month, consistent with deferred shipment"}
+    - {promised_in: "Q3 FY26 call", promise: "Saudi/UAE localization and acquisitions closing in", outcome: "delivered", explanation: "SACE (51% stake) acquired and disclosed by Q1 FY27 call, one civil order already won through it"}
+    - {promised_in: "Q3 FY26 call", promise: "Europe acquisition to close by 'first quarter', possibly before 31-Mar-2026", outcome: "missed", explanation: "Still in due diligence as of Q4 FY26 call; still not closed, 'next two to three quarters' as of Q1 FY27 call"}
+    - {promised_in: "Q3 FY26 call", promise: "FY27 growth of 30-40%", outcome: "missed", explanation: "Revised down to ~25% in Q4 FY26 call, reaffirmed 20-25% in Q1 FY27 call, before FY27 delivered a single quarter"}
+    - {promised_in: "Q3 FY26 call", promise: "Percentage-of-completion revenue recognition decision within six months to a year", outcome: "missed", explanation: "Still 'under evaluation' as of Q1 FY27 call, resolution horizon extended to 'next few years'"}
+    - {promised_in: "Q3 FY26 call", promise: "Regular exchange communication of order wins", outcome: "partial", explanation: "Order wins disclosed on subsequent calls and via X/Twitter, but no confirmed structural change to formal exchange-announcement practice"}
+    - {promised_in: "Q4 FY26 call", promise: "Exact order-book geography/segment split 'in a minute'", outcome: "missed", explanation: "No numbers given; repeated in Q1 FY27 call where management stated they do not have that split"}
+    - {promised_in: "Q3 FY26 call", promise: "Win-rate/conversion improving to 20-25%, from 10-12%", outcome: "missed", explanation: "Q4 FY26 call cites '11%... reaching 16-17%' without reconciling; not repeated in Q1 FY27 call"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Concrete, time-bound steps to improve institutional participation / stock performance?", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "Exact geography/segment breakdown of the order book?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "When/how will you transition to percentage-of-completion revenue recognition?", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "C"
+credibility_basis: "Genuine operational delivery (FY26 revenue beat guidance, Q4 FY26 PAT met, Saudi localization executed) offset by a material FY27 guidance walkdown (30-40% to 20-25% within two quarters), an unresolved revenue-recognition promise across three straight quarters, twice-deflected stock-price/investor-confidence questions, and total silence on the auditor's Rs 58.9 Cr >365-day overdue-receivables KAM despite receivables rising every quarter discussed."
+peer_questions:
+  - {question: "Is the $30bn (MENA/Africa/SE Asia) and $70bn+ (West) 10-year pharma-emerging-market opportunity figure plausible, and do peers cite comparable estimates?", why: "Sole source is management's own unattributed claim; underpins the Rs 1,000 Cr+ by 2030 target", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {question: "RMC cost +33% YoY and execution cost +43% YoY in FY26 attributed to Middle East war/freight — do peers report similar cost inflation?", why: "Tests whether margin-compression explanation is sector-wide or company-specific", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {question: "Fabtech claims no direct/indirect listed Indian peers, competing only with European players — do any of these compete for the same MENA/Africa turnkey pharma tenders?", why: "Tests a potentially self-serving differentiation/moat claim", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {question: "Average order ticket sizes grew from $1.5-3M to $7-10M with orders up to $70M — are peers seeing similarly rising deal sizes in MENA/Africa pharma capex?", why: "Tests whether ticket-size growth reflects a sector-wide demand shift or company-specific execution", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {question: "Fabtech has not resolved shipment vs percentage-of-completion revenue recognition across 3 quarters — what method and working-capital cycle do peers use, and is Fabtech's ~120-day cycle and rising receivables unusual?", why: "Directly tests the cash-conversion credibility question raised by the KAM (Rs 58.9 Cr overdue >365 days)", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+  - {question: "GCC/Saudi local-content rules shifting from preference to hard qualification under Vision 2030 — do peers report similar mandates and how are they responding?", why: "Tests whether Fabtech's capital-intensive local-entity strategy (Rs 24 Cr+ approved) is a necessary sector adaptation or discretionary", check_peers: ["Anup Engineering", "HLE Glascoat", "Ion Exchange", "Praj Industries"]}
+red_flags:
+  - {severity: "HIGH", flag: "FY27 growth guidance walked down from 30-40% to ~25% to 20-25% within two quarters"}
+  - {severity: "HIGH", flag: "Total concall silence on auditor KAM: Rs 58.9 Cr receivables overdue >365 days, despite receivables rising every quarter"}
+  - {severity: "MEDIUM", flag: "Revenue recognition method unresolved across 3 consecutive quarters despite repeated analyst pressure"}
+  - {severity: "MEDIUM", flag: "Europe/JBN acquisition promised repeatedly since Q3 FY26, still not closed after 2+ quarters"}
+  - {severity: "MEDIUM", flag: "Related-party procurement dependence ~26% (FTCL ~11% + Advantek ~15%); Advantek not reconfirmed in most recent call"}
+  - {severity: "MEDIUM", flag: "Single-customer concentration in Saudi receivables: Rs 72.57 Cr tied almost entirely to one Rs 120 Cr contract"}
+  - {severity: "LOW-MEDIUM", flag: "Founder/Promoter Aasif Khan absent from both Q4 FY26 and Q1 FY27 calls; 'transition to executive chairman' never clearly explained"}
+  - {severity: "LOW-MEDIUM", flag: "Stock-price/investor-confidence concern deflected identically in two consecutive calls without a time-bound action plan"}
+  - {severity: "LOW", flag: "Order-book geography/segment breakdown requested in all 3 calls, never delivered with hard numbers"}
+  - {severity: "LOW", flag: "Win-rate/conversion-rate figures reported inconsistently across calls without reconciliation"}
+dropped_triggers:
+  - "TSA Process Equipments exit, promised for 'this financial year' (FY26) in Q3 FY26 call, never mentioned again in later calls"
+timeline_slippages:
+  - "FY27 growth guidance: 30-40% (Q3 FY26) -> ~25% (Q4 FY26) -> 20-25% (Q1 FY27), walked down twice before FY27 had a full quarter"
+  - "Europe/JBN acquisition: implied pre-31-Mar-2026 close -> still in diligence -> 'next two to three quarters', still not closed"
+  - "Revenue recognition transition: 'decide in six months to a year' -> still 'evaluating', 'next few years'"
+no_concall_mode: false

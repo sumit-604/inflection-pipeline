@@ -4,6 +4,7 @@
 **Company:** R Systems International Limited | **Ticker:** RSYSTEMS (NSE) / 532735 & 977286 (BSE)
 **Period:** Quarter and six months ended June 30, 2026 (calendar-year reporter; Q2 CY2026 / H1 CY2026)
 **Reviewed:** 2026-08-04 | **Analyst agent:** A4 | **Model:** claude-opus-4-8
+**Revision:** A5-audit loop 1 corrections applied (FIX 1 Reported-EBITDA H1 CY25 arithmetic; FIX 2 working-capital sign; FIX 3 cash-quality bear graft). Coverage PASSED; OCRPS 5.16-million correction CONFIRMED by A5.
 **Sources:** Board Outcome + audited standalone / unaudited consolidated Reg 33/52 results filing; earnings press release (Reg 30). **No concall transcript supplied** — the Q2 CY2026 concall (~12 Aug 2026) is the binding master gate and has NOT yet occurred. Role 5 is run only over the press-release commentary; every unanswerable concall-gate item is routed into the Questions-for-Management table.
 **Unit convention:** filing reports in Rs. Millions ("Rs. in million, except per share data"). Conversion to Rs Crore = Millions x 0.1. All Rs Cr figures below carry the source line (mn value at that line).
 **Business type:** STANDARD operating business (IT / digital product engineering services). Not a lender — Steps 1 and 5 (not 1L/5L) apply.
@@ -46,7 +47,7 @@ Filing states "Rs. in million, except per share data" (L109, L755). **Conversion
 ### 0C. Share-count changes
 - Par value **Re 1** each. **No split, bonus, rights, QIP, FPO or buyback.** EPS is directly YoY-comparable.
 - RSU exercise: **89,106 equity shares** allotted in H1 (10,627 in Q2), MIP 2023 (Note 7/8, L235, L890). Paid-up capital drifted 118.40 → **118.49 mn shares** (L169, L806) — fully traced to RSU exercise (F10-a: clean).
-- **OCRPS: 5,160,833 (= 5.16 MILLION, not Crore) Optionally Convertible Redeemable Preference Shares** of Re 1 each, valued Rs 2,407.00 mn (Rs 240.70 Cr), allotted this quarter to erstwhile Velotio (Amalgamating Company 1) shareholders; Rs 5.16 mn moved to "Instruments entirely equity in nature" (Note 3, L205-210, BS L375/L1059). **UNIT DISCREPANCY RESOLVED:** the Notion thesis line "OCRPS 5.16 Cr shares" is **incorrect / a units error** — the filing is unambiguous that it is **5.16 million shares** (5,160,833), a ~100x overstatement in the Notion note. Dilution overhang to size for Nov-2027 is **5.16 million** OCRPS (~4.4% of the 118.49 mn equity base if fully converted 1:1), not 5.16 Cr. Notion must be corrected. Novigo CCPS 2028 overhang separate (see F1-a).
+- **OCRPS: 5,160,833 (= 5.16 MILLION, not Crore) Optionally Convertible Redeemable Preference Shares** of Re 1 each, valued Rs 2,407.00 mn (Rs 240.70 Cr), allotted this quarter to erstwhile Velotio (Amalgamating Company 1) shareholders; Rs 5.16 mn moved to "Instruments entirely equity in nature" (Note 3, L205-210, BS L375/L1059). **UNIT DISCREPANCY RESOLVED (A5-confirmed):** the Notion thesis line "OCRPS 5.16 Cr shares" is **incorrect / a units error** — the filing is unambiguous that it is **5.16 million shares** (5,160,833), a ~100x overstatement in the Notion note. Dilution overhang to size for Nov-2027 is **5.16 million** OCRPS (~4.4% of the 118.49 mn equity base if fully converted 1:1), not 5.16 Cr. Notion must be corrected. Novigo CCPS 2028 overhang separate (see F1-a).
 
 ### 0D. Numbered-notes structured extraction (all read before any growth metric)
 
@@ -120,14 +121,14 @@ Filing states "Rs. in million, except per share data" (L109, L755). **Conversion
 |---|---|---|---|---|---|---|
 | Operating EBITDA (Rs Cr) | PBT + D + FC − OI | 70.20 | 103.66 | 110.66 | 140.74 | 214.31 |
 | Operating EBITDA Margin | Op EBITDA / Rev | 15.19% | 18.03% | **18.39%** | 15.56% | 18.22% |
-| Reported EBITDA (Rs Cr) | PBT + D + FC | 117.17 | 120.73 | 112.02 | 174.99 | 232.76 |
-| Reported EBITDA Margin | / Rev | 25.36%* | 21.01% | 18.62% | 19.35%* | 19.79% |
+| Reported EBITDA (Rs Cr) | PBT + D + FC | 117.17 | 120.73 | 112.02 | **189.99** | 232.76 |
+| Reported EBITDA Margin | / Rev | 25.36%* | 21.01% | 18.62% | **21.00%\*** | 19.79% |
 | Core PBT ex-OI (Rs Cr) | PBT − OI | 52.22 | 72.56 | **79.14** | 106.67 | 151.70 |
 | Other Income / PBT | OI / PBT | 47.35% | 19.05% | 1.70% | 31.59% | 10.84% |
 | Effective Tax Rate | Tax / PBT | 23.52% | 27.02% | **30.98%** | 26.60% | 28.89% |
 | PAT Margin | PAT / Rev | 16.42% | 11.38% | 9.24% | 12.65% | 10.28% |
 
-\* Q2/H1 CY25 reported-EBITDA margin is inflated by the Rs 43.60 Cr NOIDA gain sitting in Other Income (which flows to PBT). This is why **operating EBITDA (which strips Other Income) is the honest margin anchor** — and it shows genuine YoY expansion (15.19% → 18.39%). **Management's own "Adj. EBITDA" (strips RSU cost + non-recurring): 17.26% Q2 CY25 → 20.07% Q2 CY26 (presentation L280); H1 17.31% → 20.10% (L324).** All three measures agree the margin genuinely expanded ~290-320 bps YoY.
+\* Q2/H1 CY25 reported-EBITDA margin is inflated by the Rs 43.60 Cr NOIDA gain sitting in Other Income (which flows to PBT). **[FIX 1 applied: H1 CY25 Reported EBITDA corrected to Rs 189.99 Cr / 21.00% — was 174.99 / 19.35%; PBT 1,559.11 + D&A 304.44 + FC 36.31 = 1,899.86 mn = Rs 189.99 Cr, /9,044.80 = 21.00%. Only the H1 CY25 column was wrong; the other five columns reproduced correctly. No YoY EBITDA-margin delta in this review uses the reported-EBITDA H1 base — the Step 2 YoY walk is on Q2, and operating-EBITDA H1 margins (15.56% / 18.22%) are unaffected.]** This is precisely why **operating EBITDA (which strips Other Income) is the honest margin anchor** — it shows genuine YoY expansion (15.19% → 18.39%). **Management's own "Adj. EBITDA" (strips RSU cost + non-recurring): 17.26% Q2 CY25 → 20.07% Q2 CY26 (presentation L280); H1 17.31% → 20.10% (L324).** All three measures agree the margin genuinely expanded ~290-320 bps YoY.
 
 ### 1D. DERIVED METRICS — STANDALONE
 
@@ -231,7 +232,7 @@ Consolidated cash flow is the six-month statement (Annexure C, L415-471). Prior 
 | **CFO / PAT** | **0.52x** | **1.35x** | +0.83x | **FIRING** — above the 1.15/1.30x top band |
 | Capex (PPE + intangibles, Rs Cr) | 21.03 (189.94+20.36, L450-451) | 15.07 (130.31+20.39) | −28.4% | Asset-light |
 | FCF (CFO − Capex, Rs Cr) | 38.19 | 148.19 | +288% | Strong FCF |
-| Working-capital change (Rs Cr) | −Rs 66.31 (net use; receivables −572.18) | +Rs 23.61 net… (see below) | swing | Receivables RELEASED Rs 51.19 Cr (L442) |
+| **Working-capital change (Rs Cr)** | **−66.35 (net USE; cash gen 820.17 − op profit-pre-WC 1,483.69)** | **−18.30 (net USE; cash gen 2,065.14 − op profit-pre-WC 2,248.17)** | swing | **[FIX 2] Net WC USE both halves. H1 CY26: receivables release +Rs 51.19 Cr (L442) MORE THAN OFFSET by Rs 47.58 Cr other-assets build (L443), plus provisions −Rs 17.53 Cr (L444) and payables −Rs 4.38 Cr (L445)** |
 | Receivable days (DSO billed, TTM) | ND | **55** (presentation L516) | vs 56 at Dec-25 | Improving; ex-Novigo |
 | DSO billed + unbilled | ND | **75** (L517) | vs 73 at Dec-25 | Slight rise |
 | Debtor turnover (consol, Q2) | 1.46x (L313) | **1.47x** (L313) | vs 1.35x Q1 | Meets ≥1.45x floor; Q1 had breached |
@@ -246,12 +247,12 @@ Consolidated cash flow is the six-month statement (Annexure C, L415-471). Prior 
 | Promoter Pledge | ND (not in filing) | ND | — | Blackstone 51.85%; pledge not disclosed here |
 
 **Mandatory answers:**
-- **CFO/PAT vs Pillar 2 band:** 1.35x (H1) is **above the top 1.30x band** and above the Notion baseline 1.16-1.18x. Cash Conversion **FIRING** confirmed. Caveat: ~Rs 51.19 Cr of the CFO came from a **trade-receivables release** (L442); stripping it, CFO/PAT ≈ 0.93x — still healthy. **Classification: STRUCTURAL** (asset-light services, low capex, recurring high conversion). **Not INDETERMINATE — the PROCEED-WITH-CAVEATS cash cap is NOT triggered.**
-- **WC drag structural or growth-induced?** No drag — WC *released* cash this half. DSO improved (56 → 55 billed). No CARE/rating-agency structural-WC concern applicable to an asset-light services company. Note the receivables release is partly a timing item; watch for reversal next half.
+- **CFO/PAT vs Pillar 2 band:** 1.35x (H1) is **above the top 1.30x band** and above the Notion baseline 1.16-1.18x. Cash Conversion **FIRING** confirmed (A5-confirmed value). **[FIX 3 — surviving bear counter grafted]:** the 1.35x was achieved *despite* a **net working-capital USE of Rs 18.30 Cr** this half, not because of a WC release. The Rs 51.19 Cr trade-receivables release (L442) was **more than offset** by a **Rs 47.58 Cr build in other assets** (L443), plus provisions (−Rs 17.53 Cr, L444) and payables (−Rs 4.38 Cr, L445) outflows. A WC-neutral half would have lifted CFO/PAT to ~1.50x — so conversion is genuinely strong on operating merit, **but it is NOT working-capital-drag-free**, and the Rs 47.58 Cr other-assets build is unexplained and consumed the receivables improvement (nature/recurrence undisclosed — see Q14). **Classification: STRUCTURAL** (asset-light services, low capex, recurring high conversion). **Not INDETERMINATE — the PROCEED-WITH-CAVEATS cash cap is NOT triggered.**
+- **Is the WC movement structural or growth-induced?** H1 carried a **modest net WC USE of Rs 18.30 Cr, not a release.** Receivables collection improved (DSO 56 → 55 billed) freeing Rs 51.19 Cr, but an Rs 47.58 Cr other-assets build absorbed more than all of it. Not a structural drag for an asset-light services company, but not drag-free either — the other-assets build (candidate: unbilled revenue / contract assets / advances / Novigo-related) must be explained (Q14) and watched for reversal or continuation next half.
 - **CWIP capitalisation:** Negligible CWIP (Rs 0.67 Cr); no plant-commissioning thesis applies (services company). H1-vs-Q4 run-rate test not applicable.
 - **Net debt within range?** Company is essentially **net cash excluding leases** (Rs +63.12 Cr) despite Novigo acquisition debt (non-current borrowings Rs 269.78 Cr, L384). Current borrowings collapsed 454.39 → 10.73 mn (L392) — a Rs 44.37 Cr short-term repayment this half. Leverage is modest and declining; the finance-cost surge is the *carry* on the Novigo debt, not a solvency issue.
 
-🛑 Step 5 complete. Cash quality: **STRUCTURAL / FIRING.**
+🛑 Step 5 complete. Cash quality: **STRUCTURAL / FIRING at CFO/PAT 1.35x — but NOT drag-free (net WC USE Rs 18.30 Cr; Rs 47.58 Cr other-assets build to explain).**
 
 ---
 
@@ -333,7 +334,7 @@ Score: 3 GREEN, 1 AMBER, 1 RED (silence), 4 UNKNOWN. **The four UNKNOWNs and the
 |---|---|---|---|---|
 | Revenue re-acceleration (organic >5%) | STAGNANT baseline | Reported +30.2%; QoQ +4.7% | Organic undisclosed; US$ 17.7% is Novigo+FX-aided | **DELAYED / UNVERIFIED** |
 | Margin sustained/expanding | SUSTAINED | Adj EBITDA 20.1% (from 17.3%); +281 bps YoY | — | **ON TRACK** |
-| Cash conversion firing | FIRING | CFO/PAT 1.35x H1 | ~Rs 51 Cr WC release aids it | **ON TRACK (FIRING)** |
+| Cash conversion firing | FIRING | CFO/PAT 1.35x H1 | net WC USE Rs 18.30 Cr; Rs 47.58 Cr other-assets build offsets receivables release | **ON TRACK (FIRING, not drag-free)** |
 | ROCE sustained post-Novigo | SUSTAINED 19-20% | Op EBITDA margin up; net cash | ROCE not derivable; D&A/finance drag from Novigo | **UNVERIFIED** |
 | Novigo cross-sell / inorganic engine | thesis core | 5 entities consolidated; deal wins narrated | Novigo revenue/margin unquantified | **UNVERIFIED (silence)** |
 
@@ -348,7 +349,7 @@ No pillar input can be *recomputed* this quarter because the two forward drivers
 | Pillar / Input | Original Assumption | Current Reading | Action |
 |---|---|---|---|
 | ROCE Base (0.5×ROCE+7.5) | ROCE 23% (CY28) → ~19x | This period's ROCE **not derivable** | **HOLD** — await concall organic ROCE; no ad hoc revision |
-| Cash Multiplier | ~1.15-1.30x band | CFO/PAT 1.35x (structural) | **HOLD** (supports top band) |
+| Cash Multiplier | ~1.15-1.30x band | CFO/PAT 1.35x (structural, but net WC USE Rs 18.30 Cr) | **HOLD** (supports top band; watch other-assets build) |
 | Growth Visibility Premium | + (EM 42/100) | Deal wins present but unquantified | **HOLD** — no confirmation to adjust |
 | Strategic Premium | + (Moat expansion) | Blackstone A+; board refresh spanning dilution window | **HOLD** (single-credit rule respected; ROCE credited in Pillar 1 only) |
 | UA Multiplier | N/A (Blackstone 51.85%; not a UA case) | Institutional/PE-controlled | **N/A** |
@@ -371,7 +372,7 @@ No pillar input can be *recomputed* this quarter because the two forward drivers
 - **Actual at or above base?** **Yes on all disclosed metrics.** → **Confirm the entry zone; state the pre-committed gate explicitly.**
 
 **8A-W output:**
-- **Decision Status: UNCHANGED — WATCHLIST / BUY.** (Flag, do not decide.) Entry zone Rs 237-268, MoS Rs 213 held.
+- **Decision Status: UNCHANGED — WATCHLIST / BUY.** (Flag, do not decide.) Entry zone Rs 237-268, MoS Rs 213 held. *(No arithmetic fix in the A5 loop forces a status change: the Reported-EBITDA H1 correction is a base-column presentation fix, and the working-capital sign correction leaves CFO/PAT 1.35x FIRING intact — cash conversion remains STRUCTURAL, so the PROCEED-WITH-CAVEATS cap is still not triggered.)*
 - **Master gate NOT yet cleared:** the pre-committed BUY gate is the **~12 Aug 2026 concall**, which must answer (i) organic CC revenue growth, (ii) deal wins / ACV bookings, (iii) Novigo margin uplift, (iv) organic growth trajectory. **The gate is explicitly pushed to the concall; no BUY confirmation on the filing alone.** The filing *supports* the thesis (margin sustained, cash firing, clean audit) but does *not* clear the gate.
 - **Correct the Notion OCRPS unit error** (5.16 million, not 5.16 Cr) before any dilution-based FV adjustment.
 
@@ -470,7 +471,7 @@ No pillar input can be *recomputed* this quarter because the two forward drivers
 | "EBITDA growth of 51%" | Adj EBITDA 797.43 → 1,207.50 = +51.4% (L279) | **CONFIRMED** (adjusted basis) |
 | "Adj. Net profit … YoY growth of 35.4%" | Adj PAT 464.38 → 628.74 (L296) | **CONFIRMED (adjusted)** — but **reported PAT −26.7%** omitted (A8) |
 | "margin … sustained by improved utilisation" | Blended utilisation 82.64% → **81.13%** (L483) — DECLINED YoY | **CONTRADICTED / overstated** — utilisation actually fell YoY; margin gain came from mix/leverage, not utilisation |
-| "cash generation remains robust" | CFO/PAT 1.35x H1 (L448) | **CONFIRMED** (genuinely strong) |
+| "cash generation remains robust" | CFO/PAT 1.35x H1 (L448); but net WC USE Rs 18.30 Cr (L440-446) | **CONFIRMED (genuinely strong) — with the caveat that it absorbed a Rs 18.30 Cr WC use; not drag-free** |
 | Five deal wins driving "growth" | No revenue/TCV in filing | **UNVERIFIABLE** (A10) |
 
 **Flag (7A):** the CFO's attribution of margin to "**improved utilisation**" is **contradicted by the filing's own utilisation table** (blended 82.64% Q2 CY25 → 81.13% Q2 CY26, a 151 bps *decline*; L483). Margin expansion is real but came from **mix / operating leverage / cost discipline**, not utilisation. Minor but a credibility data-point to test on the call.
@@ -485,7 +486,7 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 
 # SECTION C — QUESTIONS FOR MANAGEMENT (for the ~12 Aug 2026 concall / IR)
 
-**Every A3 finding classified AMBIGUOUS or FORWARD-SIGNAL (both files) generates ≥1 row.** Coverage column maps each finding; the "Step-5 trigger" column ties to the Notion monitoring checklist / thesis-broken triggers.
+**Every A3 finding classified AMBIGUOUS or FORWARD-SIGNAL (both files) generates ≥1 row.** Coverage column maps each finding; the "Step-5 trigger" column ties to the Notion monitoring checklist / thesis-broken triggers. Q14 added per A5 loop-1 (FIX 3 graft — the other-assets build).
 
 | # | Question | Findings covered | Step-5 trigger | Why it matters | Bull answer | Bear answer |
 |---|---|---|---|---|---|---|
@@ -502,13 +503,14 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 | 11 | **21 subsidiaries were unreviewed** (PAT Rs 114.58 mn = 20.6% of Q2 consol; revenue 26.7%). Which entities, and do the **Novigo entities sit in this unreviewed bucket**? When will they be brought under principal-auditor review? | F4-a | — (earnings reliance) | >20% of PAT rests on component/other auditors | Immaterial overseas subs; audited annually | Novigo (the swing factor) is unreviewed |
 | 12 | The board added **3 Independent Directors + Pranav Damani (Non-Executive Non-Independent)** via postal ballot. What is **Damani's affiliation** (Blackstone nominee?) and the trigger for a simultaneous 4-seat refresh spanning the OCRPS/CCPS window? | F13-a | Thesis-broken (Blackstone exit signalling) | A governance event that may presage the 2028-30 promoter-exit process | Routine board strengthening | Positioning for Blackstone exit / control change |
 | 13 | For the **five deal wins**, provide **TCV, revenue ramp start, and duration**; and quantify the **"consistent shareholder returns"** commitment (dividend/buyback quantum and policy). | A2, A3, A10 | Item 2 (ACV bookings) | Converts narrative wins into a testable ACV number and capital-allocation clarity | Sized wins feeding ACV >$88m; clear payout | Unsized wins; vague payout = PR only |
+| **14** | The H1 cash flow shows a **Rs 47.58 Cr build in "other assets" (L443)** that more than offset the Rs 51.19 Cr receivables release (L442), leaving a **net working-capital USE of Rs 18.30 Cr**. What comprises the other-assets build (unbilled revenue / contract assets / advances / Novigo-related), and is it **recurring or reversing** next half? | A4-derived (cash quality; FIX 3 graft) | Item 7 (debtor turnover / cash quality) | The strong CFO/PAT 1.35x is not drag-free; if the build is structural it ties up future cash | Unbilled revenue that converts to cash next quarter | Structural advances/contract-asset build that persists |
 
 **Top 3 (by likelihood of thesis-changing information):**
 1. **Q1 (organic growth + Novigo revenue)** — resolves the STAGNANT-vs-STARTING split and would change bull-case probability directly.
 2. **Q2 (Novigo margin uplift)** — a direct thesis-broken trigger; a miss >40 bps would confirm bear risk.
 3. **Q6/Q7 (OCRPS + NCI/CCPS dilution)** — tests transparency and correctly sizes the dilution overhang (and fixes a Notion error).
 
-**Channel:** Concall is scheduled ~12 Aug 2026 (within 2 weeks) → **submit Top 3 for live Q&A; submit Q4-Q13 in writing to IR.** Track answer status next cycle; **Novigo-revenue silence would be the 3rd successive non-answer → log as governance/evasion signal.**
+**Channel:** Concall is scheduled ~12 Aug 2026 (within 2 weeks) → **submit Top 3 for live Q&A; submit Q4-Q14 in writing to IR.** Track answer status next cycle; **Novigo-revenue silence would be the 3rd successive non-answer → log as governance/evasion signal.**
 
 ---
 
@@ -520,6 +522,7 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 | Postal ballot: 3 IDs + Pranav Damani (NE-NID) + NEID commission — shareholder vote | Weeks post-04-Aug-2026 | Agenda 3a-3e, L42-61 | Governance |
 | Postal Ballot Notice circulated to shareholders + filed with exchanges | Near-term (pre/around concall) | Agenda 3, L63-65 | Governance |
 | Rs 8.96 Cr cash-flow-hedge loss reclassifying to P&L | Coming quarters as FX transactions land | Note 6/7, L231-232/L887-888 | Earnings drag |
+| **Rs 47.58 Cr other-assets build reversal / recurrence (net WC use Rs 18.30 Cr this half)** | Q4 CY26 full-year cash flow | L443 (FIX 3 graft) | Cash-quality watch |
 | OCRPS 5.16 mn conversion/redemption overhang | Nov 2027 | Note 3, L205-210 | Dilution |
 | Novigo CCPS overhang (candidate NCI Rs 192.39 Cr) | 2028 | F1-a; NCI L378 | Dilution |
 | Blackstone (BCP Asia II 51.85%) exit window | 2028-2030 | Notion; F13-a | Ownership event |
@@ -535,6 +538,8 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 
 **Rationale.** The filing is clean and fully analysable (unmodified audit on both statements; ledger reconciled 100%; all cells anchored) — so this is **not** REWORK or INSUFFICIENT EVIDENCE. The operational read is genuinely **positive**: core operating PBT +51.6% YoY, operating EBITDA margin +320 bps (adjusted 20.1%, sustained/expanding), cash conversion structural/FIRING at 1.35x, net cash ex-lease. The optical reported-PAT decline (−26.7%) is a **base effect** (the vanished Q2 CY25 NOIDA gain), not operational deterioration. **However**, the thesis-critical answers — organic constant-currency growth, Novigo revenue and margin uplift, ACV bookings, ROCE — are **all undisclosed**, and the **binding master gate (the ~12 Aug concall) has not yet occurred.** Multiple material items must be surfaced prominently for the human decision-maker. That is precisely a **PROCEED WITH FLAGS**.
 
+**A5 loop-1 corrections do NOT change the verdict:** FIX 1 (Reported EBITDA H1 CY25 → Rs 189.99 Cr / 21.00%) is a base-column presentation correction that does not touch the operating-margin narrative; FIX 2/FIX 3 (working-capital sign: net USE Rs 18.30 Cr, not a release) leave CFO/PAT 1.35x FIRING intact — the conversion is strong on operating merit but not drag-free, and now carries an explicit bear counter (Rs 47.58 Cr other-assets build). Verdict stays **PROCEED WITH FLAGS**; Decision Status stays **UNCHANGED**.
+
 **Cash-conversion rule check (CLAUDE.md NEVER):** cash conversion is **STRUCTURAL** (1.35x H1, asset-light, recurring), **not INDETERMINATE** — the PROCEED-WITH-CAVEATS cap does **not** apply and is not the binding constraint here. The FLAGS verdict is driven by the deferred master gate and the disclosure silences, not by cash quality.
 
 **Decision Status: UNCHANGED — WATCHLIST / BUY (flag, do not decide).** No thesis-broken trigger fired. The pre-committed BUY gate is explicitly pushed to the ~12 Aug concall.
@@ -548,8 +553,9 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 6. **LEVERAGE / COVERAGE COMPRESSION** — finance cost +342.7% YoY (Novigo debt); ISCR halved; SA DSCR 5.43x is the softest reading (still above floors).
 7. **ELEVATED ETR** — 30.98% vs 25.17% statutory; structural PAT-conversion drag to size.
 8. **STANDING AUDIT QUALIFICATION ABSENT** — the historically-noted software qualification is not observable; status change to confirm (resolved vs AR-only).
-9. **NOTION OCRPS UNIT ERROR** — "5.16 Cr" should be **5.16 million** (5,160,833); correct before any dilution-based FV work.
+9. **NOTION OCRPS UNIT ERROR** — "5.16 Cr" should be **5.16 million** (5,160,833); correct before any dilution-based FV work. (A5-confirmed.)
 10. **S-vs-C PAT GAP VOLATILITY** — swung +4.0%→+55.2% QoQ on intercompany-dividend timing + an unexplained standalone cost spike; not clean ramp evidence.
+11. **CASH CONVERSION FIRING BUT NOT DRAG-FREE** — CFO/PAT 1.35x holds, but H1 carried a **net working-capital USE of Rs 18.30 Cr**: the Rs 51.19 Cr receivables release was more than offset by a **Rs 47.58 Cr other-assets build** (unexplained; L443). A WC-neutral half would have been ~1.50x. (FIX 3 graft — explain via Q14.)
 
 ---
 ---
@@ -557,7 +563,7 @@ No credibility ratio yet; no undisclosed material risk or positive *verified*; n
 ## SECTION F — PLAIN-LANGUAGE BRIEF (mandatory final section)
 
 ### 1. SUMMARY NARRATIVE
-R Systems' Q2 CY2026 numbers look bad on the headline and good underneath. Reported consolidated net profit fell 26.7% to Rs 55.57 Cr, but that drop is an illusion: a year ago the June-2025 quarter contained a one-time Rs 43.60 Cr gain from selling the Noida property, and that gain is simply gone this year. Strip it out, and the real engine ran faster: core operating profit before other income rose 51.6% to Rs 79.14 Cr, revenue grew 30.2% to Rs 601.70 Cr, and the operating margin expanded about 320 basis points to 18.4% (management's adjusted EBITDA margin held at 20.1%). Cash generation was strong, with operating cash flow at 1.35 times profit for the half, and the company is net cash excluding leases. The audit is clean on both the standalone and consolidated statements. So the quality of this quarter is genuinely better than a year ago, when nearly half of pre-tax profit was a property sale. The problem is what the filing does not say. The headline 30.2% growth mixes real growth with the newly-acquired Novigo business and a weaker rupee; the company does not disclose organic constant-currency growth, does not break out Novigo's revenue or margin, and gives no bookings number. Those four things — organic growth, deal wins, Novigo margin uplift, and the growth trajectory — are exactly what the thesis says the ~12 August concall must answer, and that call had not happened when these results came out. Below the operating line, the Novigo acquisition added debt: finance costs quadrupled and interest coverage halved (though still comfortable), and the effective tax rate jumped to 31%. The board also refreshed four seats, including a new non-independent director, which may relate to Blackstone's planned 2028-30 exit. For a watchlist name at BUY, nothing here breaks the thesis and the operating signals support it, but the decision to add cannot be made on this filing alone — it waits on the concall. Verdict: PROCEED WITH FLAGS; Decision Status unchanged at WATCHLIST / BUY.
+R Systems' Q2 CY2026 numbers look bad on the headline and good underneath. Reported consolidated net profit fell 26.7% to Rs 55.57 Cr, but that drop is an illusion: a year ago the June-2025 quarter contained a one-time Rs 43.60 Cr gain from selling the Noida property, and that gain is simply gone this year. Strip it out, and the real engine ran faster: core operating profit before other income rose 51.6% to Rs 79.14 Cr, revenue grew 30.2% to Rs 601.70 Cr, and the operating margin expanded about 320 basis points to 18.4% (management's adjusted EBITDA margin held at 20.1%). Cash generation was strong, with operating cash flow at 1.35 times profit for the half — though that came despite a net working-capital use of about Rs 18 Cr, where a Rs 51 Cr receivables release was more than offset by a Rs 48 Cr build in other assets that management has not explained. The company is net cash excluding leases, and the audit is clean on both the standalone and consolidated statements. So the quality of this quarter is genuinely better than a year ago, when nearly half of pre-tax profit was a property sale. The problem is what the filing does not say. The headline 30.2% growth mixes real growth with the newly-acquired Novigo business and a weaker rupee; the company does not disclose organic constant-currency growth, does not break out Novigo's revenue or margin, and gives no bookings number. Those four things — organic growth, deal wins, Novigo margin uplift, and the growth trajectory — are exactly what the thesis says the ~12 August concall must answer, and that call had not happened when these results came out. Below the operating line, the Novigo acquisition added debt: finance costs quadrupled and interest coverage halved (though still comfortable), and the effective tax rate jumped to 31%. The board also refreshed four seats, including a new non-independent director, which may relate to Blackstone's planned 2028-30 exit. For a watchlist name at BUY, nothing here breaks the thesis and the operating signals support it, but the decision to add cannot be made on this filing alone — it waits on the concall. Verdict: PROCEED WITH FLAGS; Decision Status unchanged at WATCHLIST / BUY.
 
 ### 2. SECTOR INTELLIGENCE
 - **Industry:** mid-cap Indian IT / digital product engineering services, tilted to AI-native / GCC (Global Capability Center) build-out for mid-market enterprises. Demand narrative (management, this quarter's release, L91-98): mid-market clients moving "from experimentation to production-grade AI adoption"; GCCs being reframed as innovation hubs rather than cost-arbitrage centres. *[Provenance: this quarter's press release — qualitative, unquantified.]*
@@ -568,7 +574,7 @@ R Systems' Q2 CY2026 numbers look bad on the headline and good underneath. Repor
 
 ### 3. BUSINESS-MODEL INTELLIGENCE
 - **How it makes money:** two segments — Information Technology Services (Q2 revenue Rs 543.70 Cr, 90% of the mix) and Knowledge Services (Rs 59.67 Cr). *[This quarter's filing, L503-504.]* IT-services is the engine; Knowledge Services is the higher-margin tail (segment margin ~43% vs IT-services ~12.7%, L510-511). *[Derived from this quarter's filing.]*
-- **Unit economics:** asset-light. Half-year capex only Rs 15.07 Cr against Rs 163.26 Cr operating cash flow — cash conversion structural at 1.35x. Gross margin 39.2% (up from 36.0% YoY), SG&A 19.2% of revenue, adjusted EBITDA 20.1%. Blended employee utilisation 81.1% (down 151 bps YoY — so the margin gain came from mix and operating leverage, *not* utilisation, despite the CFO's claim). Headcount 5,270 (up from 4,561 YoY). *[All this quarter's filing/presentation, L279-483.]*
+- **Unit economics:** asset-light. Half-year capex only Rs 15.07 Cr against Rs 163.26 Cr operating cash flow — cash conversion structural at 1.35x, though this half it absorbed a net Rs 18.30 Cr working-capital use (a receivables release offset by an unexplained other-assets build, so conversion is strong but not drag-free). Gross margin 39.2% (up from 36.0% YoY), SG&A 19.2% of revenue, adjusted EBITDA 20.1%. Blended employee utilisation 81.1% (down 151 bps YoY — so the margin gain came from mix and operating leverage, *not* utilisation, despite the CFO's claim). Headcount 5,270 (up from 4,561 YoY). *[All this quarter's filing/presentation, L279-483.]*
 - **Model drift this quarter:** the Novigo acquisition (consolidated 13-Nov-2025) plus the Velotio/Scaleworx amalgamation (into the parent, effective 01-May-2026) shifted the model toward **inorganic growth with acquisition debt and intangible amortisation** — hence finance costs +342.7% and D&A +39.1%. The standalone-vs-consolidated profit gap is now large and volatile (+4.0%→+55.2% QoQ), meaning subsidiary earnings are becoming the swing factor but are not transparently disclosed. *[This quarter's filing; A3 F2-a/F15-a.]* Notion's model view: Novigo is the "inorganic growth + cross-sell transition engine" and margin is peer-leading. *[Provenance: Notion prior — this quarter neither confirms nor refutes the Novigo-specific economics because they are not broken out.]*
 - **Balance-sheet model:** net cash ex-lease (Rs +63.12 Cr); goodwill Rs 695.91 Cr (acquisitions); two dilution overhangs — OCRPS 5.16 million shares (Nov-2027) and Novigo CCPS (2028), the latter a candidate for the static Rs 192.39 Cr NCI. *[This quarter's filing; Notion for dilution calendar, with the unit correction.]*
 
@@ -588,6 +594,7 @@ company: "RSYSTEMS"
 quarter: "Q2CY2026"
 model: claude-opus-4-8
 status: complete
+revision: "A5-audit loop 1 corrections applied (FIX1 Reported-EBITDA H1CY25; FIX2 WC sign; FIX3 cash bear graft)"
 docs_merged: [results, presentation]   # concall NOT held (~12 Aug 2026); Role 5 run over press-release commentary only
 ledger_reconciliation:
   notes: 31                # results filing numbered + unnumbered notes (presentation adds 189 gated rows; concall 0)
@@ -596,7 +603,7 @@ ledger_reconciliation:
   all_reviewed: true
   a3_findings_incorporated: ["F1-a","F2-a","F2-b","F2-c","F4-a","F5-a","F6-a","F6-b","F8-a","F9-a","F10-a","F12-a","F13-a","F15-a","A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12"]
 protocol_verdict: "PROCEED WITH FLAGS"
-cash_conversion: "structural"
+cash_conversion: "structural"          # FIRING 1.35x, but not drag-free: net WC USE Rs 18.30 Cr this half
 decision_status_verified: "WATCHLIST / BUY (no change 29-Jul-26)"
 position_branch: "8A-W"
 sc_gap_pat_pct:
@@ -619,10 +626,12 @@ questions_for_management:
   - {q: "21 unreviewed subsidiaries (20.6% of PAT): which entities; is Novigo in the unreviewed bucket?", from_finding_id: ["F4-a"]}
   - {q: "Pranav Damani affiliation (Blackstone nominee?) and trigger for 4-seat board refresh", from_finding_id: ["F13-a"]}
   - {q: "Five deal wins TCV/ramp/duration; quantum & policy of 'consistent shareholder returns'", from_finding_id: ["A2","A3","A10"]}
+  - {q: "Composition of Rs 47.58 Cr other-assets build (L443) that offset receivables release, net WC use Rs 18.30 Cr; recurring or reversing?", from_finding_id: ["A4-derived-cash-quality (FIX3 graft)"]}
 monitorables:
   - {item: "Q2 CY2026 concall — BINDING MASTER GATE (organic growth, deal wins, margin uplift, Novigo)", implied_date: "~2026-08-12", source_ref: "Notion gate / F17"}
   - {item: "Postal ballot: 3 IDs + Pranav Damani (NE-NID) + NEID commission — shareholder vote", implied_date: "2026-08 (weeks)", source_ref: "L42-61"}
   - {item: "Rs 8.96 Cr cash-flow-hedge loss reclassifying to P&L", implied_date: "coming quarters", source_ref: "Note 6/7 L231-232"}
+  - {item: "Rs 47.58 Cr other-assets build reversal/recurrence (net WC use Rs 18.30 Cr H1)", implied_date: "Q4 CY26 full-year cash flow", source_ref: "L443"}
   - {item: "OCRPS 5.16 million conversion/redemption overhang", implied_date: "2027-11", source_ref: "Note 3 L205-210"}
   - {item: "Novigo CCPS overhang (candidate NCI Rs 192.39 Cr)", implied_date: "2028", source_ref: "F1-a / L378"}
   - {item: "Blackstone (51.85%) exit window", implied_date: "2028-2030", source_ref: "Notion / F13-a"}
@@ -637,8 +646,9 @@ flags:
   - "LEVERAGE/COVERAGE COMPRESSION — finance cost +342.7% YoY (Novigo debt); ISCR halved; SA DSCR 5.43x"
   - "ELEVATED ETR — 30.98% vs 25.17% statutory; PAT-conversion drag"
   - "STANDING AUDIT QUALIFICATION ABSENT — status change to confirm (resolved vs AR-only)"
-  - "NOTION OCRPS UNIT ERROR — '5.16 Cr' should be 5.16 million (5,160,833); correct before dilution FV work"
+  - "NOTION OCRPS UNIT ERROR — '5.16 Cr' should be 5.16 million (5,160,833); correct before dilution FV work (A5-confirmed)"
   - "S-vs-C PAT GAP VOLATILITY — +4.0%->+55.2% QoQ on dividend timing + unexplained SA cost spike"
+  - "CASH CONVERSION FIRING BUT NOT DRAG-FREE — H1 net WC USE Rs 18.30 Cr; Rs 51.19 Cr receivables release offset by Rs 47.58 Cr other-assets build (unexplained, L443)"
 plain_language_brief_included: true
 review_path: "/home/user/inflection-pipeline/runs/rsystems-q2cy26/work/review_rsystems_q2cy26.md"
 ```

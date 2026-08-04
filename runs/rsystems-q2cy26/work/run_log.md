@@ -46,3 +46,9 @@
 - FAIL-1: Reported EBITDA H1 CY25 stated 174.99 (19.35%) vs recomputed 189.99 (21.00%) [PBT 1559.11 + D&A 304.44 + FC 36.31 = 1899.86 mn]. 15 Cr / 165 bps error, H1 CY25 column only.
 - FAIL-2: H1 CY26 working-capital change stated "+23.61 Cr released / no drag" vs recomputed -18.30 Cr net USE (2065.14 - 2248.17). Wrong sign; 51.19 Cr receivables release offset by 47.58 Cr other-assets build.
 - Audit 3: cash-conversion "no WC drag" bear counter survives, must be grafted.
+
+## A4 — loop-1 fixes landed (all 3)
+- FIX1: Reported EBITDA H1 CY25 -> 189.99 (21.00%). FIX2: H1 CY26 WC -> net USE 18.30 Cr. FIX3: cash-quality bear counter grafted (1.35x despite WC use; WC-neutral ~1.50x); new Q14 on 47.58 Cr other-assets build.
+- Verdict PROCEED WITH FLAGS unchanged; Decision Status WATCHLIST/BUY unchanged; INDETERMINATE-cash cap still not triggered.
+
+## A5 — loop 2 launched (fresh context)

@@ -1,0 +1,106 @@
+stage: B00-inputs
+company: "544332"
+company_name: Fabtech Technologies Cleanrooms Ltd
+run_date: 2026-08-04
+run_type: full
+model: orchestrator
+status: complete
+cmp: 392.0
+market_cap_cr: 482.0
+sector_cap_row: "Pharma / CDMO"
+sector_cap_note: "manifest auto-picked, flagged verify; stage 11 to confirm"
+listed_date: 2025-10-07
+listed_source: "CRISIL rating rationale (IPO effective Oct 7 2025, raised Rs 230 cr)"
+recently_listed: true
+concalls_available: true
+
+inventory:
+  prospectus: 0
+  annual_report: 1
+  results: 2
+  rating: 1
+  concalls: 3
+  peer_concalls: 16
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 30
+  presentation: 4
+  other: 0
+
+input_gaps:
+  - type: prospectus
+    severity: HIGH
+    reason: "Listed Oct 2025 (<3y). DRHP absent; backward baseline post-listing years only; promoter/group map web-derived at stage 8."
+  - type: announcements
+    severity: MEDIUM
+    reason: "No Reg 30 filing PDFs. Operator supplied a non-anchored action summary (Feb-Aug 2026); anchorable items point to held FY26 PDFs, Q1 FY27 items stay non-anchored. FTTCP Step 0C filing still missing."
+  - type: shareholding
+    severity: MEDIUM
+    reason: "No SHP filing PDF. Operator supplied a screener screenshot (Dec25/Mar26/Jun26): promoter flat 68.94%, FII 0.02-0.08%, DII 1.99-2.45%. Screener-derived not filing-anchored; pledge % NOT FOUND; UA read informed but flagged non-filing."
+  - type: research
+    severity: LOW
+    reason: "No broker notes; lead-generation / intent cross-check source only, never anchored."
+
+degradation_active:
+  - "stages 2/3 build from AR alone (no prospectus)"
+  - "FTTCP backward baseline = post-listing years only"
+  - "stage 8 promoter/group map web-derived + AR governance"
+  - "stage 10 FII+DII unresolved; UA withheld at stage 11"
+  - "intent-vs-action cross-check on concall/AR only"
+
+concall_chronology:
+  - file: inputs/concalls/Concall_Jun_2025_Transcript.pdf
+    order: 1
+    period: "FY25 full year / H2 FY25 (call Jun 13 2025)"
+  - file: inputs/concalls/Concall_Nov_2025_Transcript.pdf
+    order: 2
+    period: "H1 FY26, half year ended Sep 30 2025 (call Nov 20 2025)"
+  - file: inputs/concalls/Concall_May_2026_Transcript.pdf
+    order: 3
+    period: "H2 FY26 / FY26 full year (call May 12 2026)"
+
+results_map:
+  - file: inputs/results/53ec1f35-7c9c-4d5e-ad41-85aaf61b6d75.pdf
+    period: "FY26 audited results, year ended Mar 31 2026 (filed Apr 27 2026)"
+  - file: inputs/results/ba8f3e8d-5899-4466-bbe4-4592af5584ff.pdf
+    period: "FY26 final/AGM accounts, year ended Mar 31 2026 (filed Jul 24 2026)"
+
+peers:
+  - ticker: ANUP
+    name: Anup Engineering
+    concalls: 4
+    screening: 6
+  - ticker: GMMPFAUDLR
+    name: GMM Pfaudler
+    concalls: 4
+    screening: 6
+  - ticker: HLEGLAS
+    name: HLE Glascoat
+    concalls: 4
+    screening: 6
+  - ticker: PRAJIND
+    name: Praj Industries
+    concalls: 4
+    screening: 6
+
+pdf_resilience:
+  text_pdfs: "extract cleanly (pypdf PYPDF_NO_CRYPTO=1, pdftotext)"
+  rating_pdf: "image-only scan, 0 text chars; renders via pdftoppm (poppler installed); read as images, do not skip"
+
+operator_confirmation: "Empty folders presented; operator answered PROCEED WITH GAPS. No further gap questions this run."
+
+operator_context:
+  status: NON-ANCHORED
+  file: outputs/reports/operator-context.md
+  provided: "mid-run 2026-08-04, after proceed-with-gaps"
+  contents: "Feb-Aug 2026 announcements/action summary (partially anchorable to held FY26 PDFs; Q1 FY27 items NOT FOUND in filings held) + screener shareholding screenshot (Dec25/Mar26/Jun26)."
+  usage: "leads / cross-check / management-intent only; stages anchor every number to held input PDFs; Q1 FY27 color must not enter Gate 0, anchored figures, or valuation inputs."
+  shareholding_screener:
+    promoter: {dec2025: 68.94, mar2026: 68.94, jun2026: 68.94}
+    fii: {dec2025: 0.03, mar2026: 0.08, jun2026: 0.02}
+    dii: {dec2025: 1.99, mar2026: 2.15, jun2026: 2.45}
+    public: {dec2025: 29.04, mar2026: 28.83, jun2026: 28.57}
+    note: "screener-derived not filing-anchored; pledge % NOT FOUND"
+
+flags: []

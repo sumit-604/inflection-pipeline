@@ -1,4 +1,4 @@
-# FTTCP v1.2 DRAFT — AARTI SURFACTANTS LTD
+# FTTCP v1.2 DRAFT: AARTI SURFACTANTS LTD
 
 Company: Aarti Surfactants Ltd | Ticker: AARTISURF | CMP Rs 523.0 | Market cap Rs 443 Cr | Run date 2026-08-04
 
@@ -54,7 +54,7 @@ Every call below is made. Nothing here is a question.
 
 ---
 
-## TRANSITION 1 — REVENUE GROWTH
+## TRANSITION 1: REVENUE GROWTH
 
 | Year | Revenue Rs Cr | YoY % | Basis |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Quarterly, the growth is consistent: Q2 FY26 up 18.8%, Q3 up 27.7%, Q4 up 26.8%,
 
 ---
 
-## TRANSITION 2 — MARGIN EXPANSION
+## TRANSITION 2: MARGIN EXPANSION
 
 | Year | Operating margin % | Basis |
 |---|---|---|
@@ -100,7 +100,7 @@ What it means: margin is the whole problem. It halved from the FY24 peak, the fa
 
 ---
 
-## TRANSITION 3 — CASH CONVERSION
+## TRANSITION 3: CASH CONVERSION
 
 | Year | PAT Rs Cr | CFO Rs Cr | CFO/PAT | Debtor days | Net debt Rs Cr | Basis |
 |---|---|---|---|---|---|---|
@@ -123,7 +123,7 @@ What it means: the headline looks excellent and the mechanism does not. FY26 CFO
 
 ---
 
-## TRANSITION 4 — ROCE / CAPITAL EFFICIENCY
+## TRANSITION 4: ROCE / CAPITAL EFFICIENCY
 
 | Year | ROCE % | EBIT Rs Cr | Basis |
 |---|---|---|---|
@@ -172,7 +172,7 @@ Confidence on all of this is reduced by no concall mode. There is no transcript,
 
 ---
 
-## STEP 3 — FORWARD SCORECARD
+## STEP 3: FORWARD SCORECARD
 
 | Transition | Backward verdict | Catalyst strength | Forward probability | Forward verdict | Score |
 |---|---|---|---|---|---|
@@ -186,7 +186,7 @@ Backward composite: 1 positive of 4 (cash FIRING only), which is BACKWARD FAIL o
 
 ---
 
-## STEP 5 — MONITORING TRIGGERS
+## STEP 5: MONITORING TRIGGERS
 
 | # | Trigger | Threshold | Horizon | What it changes |
 |---|---|---|---|---|
@@ -242,7 +242,7 @@ The two tracks diverge by about 30%, which is above the 15% threshold, so a gove
 
 For context only, not a valuation: at CMP Rs 523 the trailing PE on FY26 basic EPS of Rs 14.99 is about 34.9x, and on the last four reported quarters it is about 23.8x. Both sit well above the destination on either track, so phase 3 is being handed a de-rating setup rather than a re-rating one.
 
-### THE EARNINGS BASIS QUESTION — your call
+### THE EARNINGS BASIS QUESTION, your call
 
 The valuation needs one basis and the answer changes the picture materially here.
 

@@ -1,0 +1,101 @@
+stage: B10-valinputs
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-haiku-4-5
+status: complete
+input_gaps: [announcements, shareholding-detail-filled-by-operator, research, "rating level/outlook code not extracted (WC quote captured)"]
+flags:
+  - "FLAG-GATE0 (AVOID 63/160)"
+  - "FLAG-PROMOTER (CONCERN)"
+  - "FLAG-CASH (STRUCTURAL, 0.65x)"
+  - "SHARED-CATALYST (IPO proceeds deployment drives both Route A ROCE and Pillar 3a)"
+company_identity:
+  ticker: "BSE 544558 / NSE FABTECH"
+  sector_corrected: "EPC / Civil construction (from Pharma/CDMO)"
+  business_model: "Hybrid turnkey EPC 75.51% + equipment supply 24.49% (B04)"
+  cmp_rs: 152
+  market_cap_cr: 675
+  shares_diluted_cr: 4.445
+  net_cash_cr: 138.93        # cash 208.57 - borrowings 69.64, consolidated FY26 (net CASH)
+  enterprise_value_cr: 536.07
+latest_financials_fy26_consolidated:
+  revenue_cr: 410.77
+  ebitda_headline_cr: 55.56           # includes other income
+  operating_ebitda_excl_oi_cr: 35.00
+  operating_ebitda_margin_pct: 8.52
+  other_income_cr: 20.56              # 42.6% of PBT-before-exceptional; quality caveat
+  pat_cr: 38.36                       # owners; Rs 3,835.80 lakh, filed FY26
+  pat_margin_pct: 9.34
+  diluted_eps_fy26_rs: 5.75           # filed, on pre-IPO weighted avg share count (understates true multiple)
+returns_and_cash_fy26:
+  cfo_cr: 0.48
+  cfo_pat_latest_pct: 1.25
+  cfo_pat_cumulative_fy23_fy26_pct: 8.1
+  fcf_cr: -4.23
+  capex_cr: 4.71
+  depreciation_cr: 5.30
+  dps_rs: 0.60
+  roce_statutory_fy26_pct: 11.25
+  roce_operational_fy26_pct: 16.2     # AUTHORITATIVE for Pillar 1 (deliberation, Route A)
+  roce_operational_fuller_strip_pct: 17.9
+  book_value_per_share_rs: 94.43
+  total_equity_cr: 419.77
+  ipo_proceeds_undeployed_note: "Undeployed IPO cash ~Rs 156-179 Cr at FY26 end (Note 53 net-proceeds basis Rs 156.22; B02/B07 gross basis Rs 179.22). Operational ROCE 16.2% anchored to the Rs 179.22 strip per deliberation; decision uses operator-approved exit PE regardless."
+operator_approved_valuation_pillars:   # AUTHORITATIVE, from fttcp-deliberation.md, supersedes pipeline
+  pillar1_roce_pct: 16.2
+  pillar1_route: "A-Operational (Route B suppressed per single-credit; blend skipped)"
+  pillar1_base_pe: 15.6
+  roce_recovery_credited_via: "Pillar 1 (Strategic Premium ROCE route barred)"
+  pillar2_cash_multiplier: 0.65
+  pillar2_basis: "STRUCTURAL, no growth offset (CRISIL 15 Oct 2025)"
+  pillar3_growth_premium: 2.0          # 3a +2 (capped by SOM CAGR 13.8% + grade C), 3b 0 (EM 19<25), 3c 0 (2.19y<2.5y)
+  strategic_premium: 0.0
+  ua_applied: false                    # fails listed-12m and Gate0/EM; FII+DII 2.47% passes
+  sector_cap_row: "EPC / Civil construction"
+  sector_cap_x: 20
+  raw_destination_pe_additive: 12.1
+  raw_destination_pe_rrm: 8.5
+  approved_destination_exit_pe: 13.0   # OPERATOR OVERRIDE; top of Section 1B additive range, under 20x cap
+  earnings_basis: "ONE-YEAR FORWARD"   # OPERATOR OVERRIDE; apply 13x to forward FY27 EPS
+  tier: "A"
+  hurdle_pct: 25
+  shared_catalyst_flag: true
+forward_fy27_eps_one_year_forward:
+  fy26_base_revenue_cr: 410.77
+  fy27_revenue_growth_guidance_pct: "20-25"
+  fy27_pat_margin_guidance_pct: "9.9-10.5"
+  implied_fy27_revenue_range_cr: "492.92-512.46"
+  implied_fy27_pat_range_cr: "48.79-53.81"
+  forward_fy27_eps_range_rs: "10.98-12.11"
+  forward_fy27_eps_base_midpoint_rs: 11.55
+  q1_fy27_actual_revenue_cr: 74.98
+  q1_fy27_actual_pat_cr: 4.21
+  quality_caveats:
+    - "Other income Rs 20.56 Cr = 42.6% of PBT; forward profit quality dependent on forex + IPO-deposit interest"
+    - "FY27 guidance walked down twice (30-40% -> 20-25%) before a full quarter reported"
+    - "Q1 FY27 annualised runs below the guidance base; year depends on H2 acceleration"
+    - "B09 SOM-implied CAGR 13.8% sits below the 20-25% guidance; conservative EPS nearer the low end"
+    - "Structural cash weakness unaddressed; CFO/PAT 1.25% FY26"
+quality_governance:
+  gate0: "AVOID 63/160"
+  promoter_verdict: "CONCERN"
+  rpt_dependency_pct: 16.7
+  auditor_kam_overdue_365d_cr: 58.9
+  receivables_bs_to_note13_gap_cr: 37.18
+  credibility_grade: "C"
+tam:
+  som_5yr_cr: 787
+  som_implied_revenue_cagr_5yr_pct: 12.8
+  mgmt_claim_read: "inflated (untriangulated $30bn/$70bn)"
+rating_wc_quote: "CRISIL 15 Oct 2025: operations 'continue to remain working capital intensive'; high debtor days 'primary on account of major billing being done in Q4 and retention money held with the customer which is released within 2 years'; 'WC operation is expected continue on similar lines over medium term'. (Read directly from inputs/rating/ratings.pdf this session.)"
+key_conflicts:
+  - "Other income FY26: Rs 20.56 Cr consolidated (filed) vs Rs 22.74 Cr screener -> used consolidated Rs 20.56 Cr"
+  - "ROE FY26: 9.14% (calc, PAT/closing equity) vs 12.94% (B01, avg-equity basis) -> both bases noted"
+  - "Undeployed IPO cash: Rs 156.22 Cr (Note 53 net) vs Rs 179.22 Cr (B02/B07 gross) -> operational ROCE anchored to 179.22 strip; immaterial to the operator-approved 13x decision"
+unresolved:
+  - "Rating level/outlook code (WC quote captured; PDF read this session shows CRISIL BBB+/Stable, A2)"
+  - "Peer multiples PE/EV-EBITDA/PB not tabulated in B06"
+  - "Revenue recognition method timeline (deferred 3+ quarters)"
+  - "Order-book geography/segment split (never disclosed)"
+  - "Receivables BS-to-Note-13 reconciliation (Rs 37.18 Cr gap)"
+  - "IPO inorganic-tranche deployment timeline"

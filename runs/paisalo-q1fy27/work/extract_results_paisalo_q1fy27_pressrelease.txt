@@ -1,0 +1,299 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: press_release.pdf
+doctype: results
+page_count_pdfinfo: 6
+formfeed_count: 6
+line_count: 299
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (Rs Mn / 10 = Rs Cr)
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-05
+=== END HEADER ===
+
+NOTE: All 6 pages yielded well over 100 characters of native text-layer
+content via pdftotext -layout (page char counts ranged 1337-3385); no page
+fell under the OCR trigger threshold. The "Performance Summary" bar-chart
+page (page 4) and the "AI Powered Scale" infographic block (page 2) embed
+real (non-rasterised) text layers -- their data labels were cross-checked
+against the Key Performance Indicators table on page 2 and matched exactly
+(AUM, Disbursement, PAT, NIM, GNPA, NNPA all reconcile), plus page 4 supplies
+additional chart-only series (RoA %, Net Worth Rs Mn, Cost of Borrowing %)
+not present in the KPI table. OCR fallback was therefore not required for
+any page. Layout preserved verbatim, including pdftotext's column-overlap
+duplication artifacts on the page-2 infographic block (noted inline below
+with [LAYOUT ARTIFACT] where text appears doubled due to overlapping
+infographic text boxes in the source PDF).
+
+[page 1]
+                                                                                            Date: August 05, 2026
+
+The Manager                                                          The Listing Department
+Department of Corporate Relationship                                 National Stock Exchange of India Limited
+BSE Limited                                                          Exchange Plaza, Bandra Kurla Complex
+25th Floor P. J. Towers, Dalal Street                                Bandra (East)
+Mumbai -400 001                                                      Mumbai -400 051
+
+SCRIP CODE : Equity-532900                                           SCRIP SYMBOL : PAISALO
+NCDs-975107, 975202, 975251, 975329, 975437, 975640, 975865,
+976752, 977004, 977097, 977278, 977279, 977358, 977371, 977643 and
+CPs- 731429, 731434, 731455, 731624, 732088
+
+
+
+
+Sub.:   Submission under Regulation 30 of SEBI (LODR) Regulations, 2015- Press Release
+
+Dear Sir/ Madam,
+
+Pursuant to Regulation 30 of SEBI (LODR) Regulations, 2015, please find herewith the press release titled
+“Paisalo Digital delivers AI-driven momentum with 128% YoY surge in disbursements; AUM up 28% YoY at Rs
+67,074 Mn”.
+
+This is for your information and record.
+
+Thanking you
+
+Yours Faithfully,
+
+For Paisalo Digital Limited
+MANENDRA             Digitally signed by
+                     MANENDRA SINGH
+
+SINGH                Date: 2026.08.05 14:43:18
+                     +05'30'
+(Manendra Singh)
+Company Secretary
+
+Enclosure: Press Release
+
+[page 2]
+   Press Release
+
+      Paisalo Digital delivers AI-driven momentum with 128% YoY
+       surge in disbursements; AUM up 28% YoY at Rs 67,074 Mn
+         Strengthened liability franchise drives 64 bps YoY reduction in borrowing costs
+
+   New Delhi, August 5, 2026: Paisalo Digital, a leading NBFC focused on expanding credit
+   access to SME, MSME, and micro-enterprises across India, announced its financial results
+   today for the quarter ended June 30, 2026.
+
+                                  Key Highlights – Q1FY27
+
+AUM                       Disbursement                    Total Income             Profit After Tax
+
+                                                          GNPA (%)
+
+  Rs 67,074 Mn              Rs 17,309 Mn                    Rs 2,603 Mn                  Rs 613 Mn
+      +28% YoY                +128% YoY                       +19% YoY                   +30% YoY
+
+
+                                AI Powered Scale – Q1FY27
+[LAYOUT ARTIFACT: overlapping infographic text boxes below produce doubled/interleaved words in pdftotext -layout output; underlying numeric values (180k, 500k, 18, 200k, 160k, 350k, 7, 150K) are intact and unambiguous]
+
+Customer Onboarding       Data Processing                 Customer Engagement      AI Calling
+Appli
+                          AI Calling                      GNPA (%)
+  180k applications          500k Voice Data                18 Live AI
+                                                                    AI Bots
+                                                                       Bots           200k AI-driven
+     processed in Q1        Conversion handled
+                                                                                      200k AI-driven
+                                                                                   Promotional Calls
+                                                                                     outbound calls daily
+                                                                                       outbound calls vs
+                                                              vs
+                                                              vs 7
+                                                                 7 in
+                                                                   in Q4FY26
+                                                                      Q4FY26
+    vs 160k in Q4FY26        vs 350k in Q4FY26                                        vs150K
+                                                                                         150kininQ4FY26
+                                                                                                 Q4FY26
+
+
+
+                             Key Performance Indicators – Q1FY27
+
+Particulars                   Q1FY27             Q1FY26           YoY (%)       Q4FY26           QoQ (%)
+AUM (Rs Mn)                   67,074             52,302            +28%         61,009            +10%
+Disbursement (Rs Mn)          17,309             7,581             +128%        13,440             +29%
+Total Income (Rs Mn)           2,603             2,187              +19%         2,609                -
+PAT (Rs Mn)                     613               472               +30%          722              (15%)
+Net Interest Margin (%)        6.6%              6.5%              +4 Bps        6.8%            (26 Bps)
+GNPA (%)                      0.70%              0.84%            (14 Bps)      0.76%             (6 Bps)
+NNPA (%)                      0.49%              0.68%            (19 Bps)      0.61%            (12 Bps)
+
+[page 3]
+Key Highlights
+
+Assets Under Management (AUM) and Disbursement:
+
+•   AUM grew 28% YoY to Rs 67,074 Mn, reflecting continued business momentum
+•   Disbursements stood at Rs 17,309 Mn in Q1FY27, surging 128% YoY on the back of steady
+    credit demand across key segments
+
+Distribution:
+
+•   Strengthened last-mile presence with a network of 5,995 touchpoints, including 696 new
+    touchpoints added during Q1
+•   Network of 424 branches to support wider reach and stronger on-ground presence
+•   Customer franchise strengthened to ~18 mn, with ~1.8 Mn new additions during Q1FY27
+
+Asset Quality:
+
+•   GNPA and NNPA improved by 14bps and 19bps YoY at 0.70% and 0.49% respectively
+
+Borrowings:
+
+•   Total borrowings stood at Rs 48,467 Mn as of June’26
+•   Cost of borrowing improved by 64 bps YoY to 10.1%, with prudent liability management
+
+Profitability:
+
+•   Total income increased by 19% YoY to Rs 2,603 Mn
+•   Net interest income increased by 16% YoY to Rs 1,447 Mn
+•   NIM remained stable at 6.6% in Q1FY27
+•   AI-led efficiencies helped reduce headcount by 2% YoY to 3,018
+•   PAT stood at Rs 613 Mn, up by 30% YoY
+•   Profitability remained healthy, with RoA at 3.6% and RoE at 13.4%
+
+Capital Adequacy:
+
+•   Capital Adequacy Ratio remained strong at 33.1%, with Tier 1 capital at 26.8%
+•   Net Worth grew by 15% YoY to Rs 18,298 Mn
+
+[page 4]
+Performance Summary
+
+ Asset Under Management (Rs Mn)                    Disbursement (Rs Mn)
+
+                                     67,074                                  17,309
+                    61,009
+     52,302                                                   13,440
+                                               7,581
+
+
+
+    Q1FY26          Q4FY26          Q1FY27    Q1FY26         Q4FY26         Q1FY27
+
+                  AUM (Rs. Mn)                          Disbursement (Rs. Mn)
+
+
+
+      Profit After Tax (Rs Mn)                    Net Interest Margin (%)
+
+                                                              6.8%
+                    722
+                                     613
+     472                                       6.5%                             6.6%
+
+
+
+
+   Q1FY26         Q4FY26            Q1FY27    Q1FY26         Q4FY26         Q1FY27
+
+                  PAT (Rs. Mn)                                NIM (%)
+
+
+
+       Return on Assets (%)                              Asset Quality (%)
+     3.6%           3.8%             3.6%     0.84%
+                                                              0.76%          0.70%
+                                                   0.68%
+                                                                   0.61%
+                                                                                 0.49%
+
+
+
+
+    Q1FY26         Q4FY26           Q1FY27     Q1FY26          Q4FY26           Q1FY27
+
+                    ROA (%)                              GNPA (%)       NNPA (%)
+
+
+            Net Worth (Rs Mn)                          Cost of Borrowing (%)
+
+
+                   17,930           18,298     10.7%
+
+    15,746                                                    10.2%
+                                                                                10.1%
+
+
+
+   Q1FY26         Q4FY26            Q1FY27    Q1FY26          Q4FY26         Q1FY27
+
+               Net Worth (Rs. Mn)                              CoB (%)
+
+[page 5]
+Commenting on the performance, Mr. Santanu Agarwal, Deputy Managing Director of
+Paisalo Digital Ltd, said:
+
+“The quarter underscores Paisalo’s ability to deliver growth with discipline. As we continue
+to deepen our reach across underserved markets, we are seeing the benefits of our
+distribution strength, technology investments, and customer-centric approach reflected in
+business momentum.
+
+A key part of this journey is our increasing use of AI-led capabilities to improve productivity,
+sharpen execution, and enhance decision-making across the franchise. From enabling
+operational efficiencies to supporting better customer engagement and scale, technology
+continues to play a central role in how we build for the future.
+
+Alongside growth, we have remained focused on strengthening the foundation of the
+franchise through a diversified funding profile, broader liability access, and prudent risk
+management. With a strong capital position, stable asset quality, and improving cost of
+funds, we believe Paisalo is well positioned to scale sustainably while furthering our mission
+of financial inclusion. As we continue to scale our portfolio through existing and new lending
+verticals while deepening strategic partnerships, our focus remains on delivering profitable
+growth, maintaining portfolio resilience, and creating long-term value for all stakeholders.”
+"
+
+
+
+
+    Earnings Conference Call
+
+                               Thursday, August 6, 2026 at 4:00 PM IST
+Following the announcement of Q1FY27 results on August 5, 2026, the management of Paisalo
+Digital will host a conference call on August 6, 2026 at 4:00 PM IST during which the management will
+discuss the performance and answer questions from the participants. Details of the call are given
+below:
+
+                               Conference Call Registration Link
+                          Paisalo Digital Q1FY27 Conference Call - LINK
+
+[page 6]
+About Paisalo Digital Ltd
+
+Paisalo Digital Limited is engaged in the business of providing convenient and accessible
+credit to SME, MSME and micro-enterprises across India. The company has a wide
+geographic reach with a network of 5,995 touch points across 22 states & UTs in India. The
+Company’s mission is to simplify MSME and micro-enterprise loans by establishing itself as
+a trusted, technology-enabled and customer-centric financial companion for the people of
+India. Its combination of deep distribution, digital capabilities, customer-centric approach
+and data analytics empowers Paisalo to deliver tailored, scalable solutions while minimizing
+risks and maintaining the highest standards of governance and regulatory adherence.
+
+Disclaimer
+
+No representation or warranty, express or implied is made as to, and no reliance should be
+placed on, the fairness, accuracy, completeness or correctness of such information or
+opinions contained herein. The information contained is only current as of its date. Certain
+statements made may not be based on historical information or facts and may be “forward
+looking statements”, including those relating to the company’s general business plans and
+strategy, its future financial condition and growth prospects, and future developments in its
+industry and its competitive and regulatory environment. Actual results may differ materially
+from these forward-looking statements due to number of factors, including future changes
+or developments in the company’s business, its competitive environment, and political,
+economic, legal, and social conditions in India.
+
+               P a i s a l o D i g i t a l L i m i t e d ( B S E : 5 3 2 9 0 0 , N S E : PA I S A L O )
+               F o r f u r t h e r i n f o r m a t i o n o n t h e c o m p a n y, p l e a s e v i s i t
+                                               h ttps ://pa isa l o.in /
+
+ Contact Information                                                                            Corporate Office
+ Paisalo Digital Limited                                                                  CSC, Pocket 52, CR Park,
+ ir@paisalo.in                                                                                 Near Police Station,
+                                                                                               New Delhi – 110019

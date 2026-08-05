@@ -1,0 +1,33 @@
+stage: B01-gate0
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (Core 21/100, deal-breakers #1/#3/#4/#6/#8 triggered) is driven by Ind AS 116 lease accounting (screener 'Borrowings' bundles ~Rs751cr of lease liabilities into FY26's Rs885cr total, per results filing/ICRA cross-check) plus the FY21 COVID trough and FY25/H1-FY26 SSSG contraction (ICRA: -3.8% FY25, -3.4% Q1 FY26), not a cash-generation failure: cumulative CFO FY17-26 is +Rs1,477cr against cumulative PAT of -Rs267cr. Q1 FY27 (un-audited, 04-Aug-2026) turned consolidated PAT positive (+Rs3.09cr owners' share) after the FY26 full-year loss of -Rs59.13cr. Deal-breaker #6 (ND/EBITDA 4.13x AND IC 0.21x -> AVOID) is the binding constraint and is itself substantially lease-accounting driven; ICRA separately rates liquidity 'adequate' with no debt-funded capex planned."
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 1, B: 10, C: 6, D: 0, E: 4}
+core_score: 21
+moat_score: 6
+grand_total: 27
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers: ["1: Block A <8 (FY25-26 ROCE 4.85%/1.64%)", "3: median ROCE 3.25% <10%", "4: cumulative CFO/PAT negative (CFO +Rs1,477cr vs PAT -Rs267cr, FY17-26)", "6: ND/EBITDA 4.13x AND IC 0.21x -> AVOID (FY26, lease-inclusive debt)", "8: PAT negative FY24/FY25/FY26"]
+history_downgrade: false
+data_notes:
+  - "Screener export lacks Current Liabilities/Trade Payables/clean-Capex splits; exact ROCE, WC Days, FCF computable only FY25-FY26 (results filing balance sheets); FY17-FY24 marked N/A."
+  - "Pre-FY20 vs FY20+ EBITDA margins not like-for-like (Ind AS 116 adoption reclassifies lease rentals below EBITDA); M1 scored on FY20-FY26 window only."
+  - "Screener 'Borrowings' bundles Ind AS 116 lease liabilities with financial debt (FY26: Rs885.27cr = Rs134.43cr financial + Rs750.84cr lease); Block D deal-breakers are substantially lease-accounting driven, not conventional distress (ICRA: FY25 external borrowings only Rs69.5cr of Rs757.5cr total debt, liquidity 'adequate')."
+  - "PAT swings: profit-to-loss FY17-FY18; loss-to-profit FY22-FY23; profit-to-loss FY23-FY24 (screener-data). C2 PAT CAGR N/M, negative endpoint FY26."
+  - "Q1 FY27 (un-audited, 04-Aug-2026): consolidated PAT owners' share turned positive +Rs3.09cr; standalone +Rs6.13cr; first positive quarter in the screener quarterly series."
+  - "E2/E3 (promoter 3yr change, pledge) N/A: no anchored shareholding-pattern filing collected (input_gap); AR gives only Mar-2025 (33.72%), ICRA only Jun-2025 (32.7%)."
+  - "E4 uses latest anchored contingent-liability figure, Mar-31-2025 (AR extract); no FY26 figure in provided filings."
+  - "M2/M5/M9 marked PEER DATA NEEDED, no peer financials provided."
+  - "M11 prior-3yr window COVID-recovery-distorted (FY21 base); FY26 selling-expense % blank in screener, that leg unverifiable."
+  - "M12 only 2 of 10 years computable (FY25 +2.06 days, FY26 -25.19 days); scored conservatively at 3."
+  - "Minor non-material PAT discrepancy: ICRA's own table shows FY24 -11.2cr/FY25 -27.1cr vs screener-data -13.41cr/-27.79cr; screener-data used as primary throughout."
+block_b_trend: "improving — CFO rose FY25 Rs193.35cr to FY26 Rs222.96cr (screener-data), and consolidated PAT (owners' share) turned positive in Q1 FY27 at +Rs3.09cr (results 04-Aug-2026) after the FY26 full-year consolidated loss of -Rs59.13cr."

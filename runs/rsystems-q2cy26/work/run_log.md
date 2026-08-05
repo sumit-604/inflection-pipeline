@@ -94,3 +94,11 @@
 - A1 PASS 73/73 turns verbatim. A2 PASS 73 turns / 8 threads / 21 questions / 73 mgmt-numbers / 7 non-disclosures / 9 guidance-refusals. A3 PASS 17/17.
 - A3 master-gate reads: Novigo rev/margin DODGED 3rd straight qtr (evasion flag); organic CC growth no number (analyst '3-4% return' framing implies below); margin CONCEDED FX-propped + guided DOWN to ~18% sustainable (below reported 20.1%); ACV deceleration no forward number. New: data+cloud >50%, ETR normalized 28-29%, fwd cover $43.32m@93.27, Middle East Novigo drag (unsized).
 - A4 master-gate-resolution overlay launched.
+
+## CONCALL A4/A5 + NOTION SAVE — COMPLETE (2026-08-05)
+- A4 master-gate-resolution overlay: gate DID NOT CLEAR (Q&A 11/6/4; both thesis-critical asks dodged). Novigo 3rd-evasion FORMALLY TRIPPED. Margin conceded FX-propped + guided DOWN to ~18%. FTTCP re-engagement rule NOT MET -> no upgrade. Verdict PROCEED WITH FLAGS; Decision Status HELD WATCHLIST/BUY (no trigger fired); add-back condition explicitly UNMET (add off the table).
+- A5 audit: COMPLETE (coverage/arithmetic/adversarial all PASS; Decision-Status HELD call verified correct; no grafts).
+- Notion: appended concall overlay (7 sections + full Q&A decomposition + A5 proof); prepended 05-Aug concall Key Notes entry (all prior entries preserved; fixed display-escape backslash accumulation, kept \| separators).
+- OPERATOR ACTIONS FLAGGED: (1) master-gate now RESOLVED (was pending) — gate failed to confirm; add off the table; (2) 3rd Novigo evasion -> downstream Promoter-Verdict review (Role 1); (3) sustainable margin ~18% vs 20.1% reported -> margin assumption to revisit in model; (4) OCRPS 5.16 million (not Cr) still to fix; (5) 4th Novigo silence at Q3 = hard escalation.
+
+## RUN CLOSE — all four documents (results + press release + deck + concall) processed A1-A5, 100% reconciled. Clean run.

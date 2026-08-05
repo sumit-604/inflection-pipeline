@@ -6,3 +6,5 @@
 page_*.txt
 allpage-*.txt
 resultsocr_*.txt
+build_extract.py
+extract_body*.txt

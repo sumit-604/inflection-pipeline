@@ -1,3 +1,17 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_vaibhavgbl_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 39
+formfeed_count: 39 (raw `grep -c $'\f'` reports 38 because two form feeds sit adjacent around the zero-text page 2 cover slide, both landing on the same grep-counted line; true form-feed count is 39, confirmed by splitting on the raw \f byte in Python and cross-checking against pdfinfo's 39-page count)
+line_count: 1168
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (deck states all figures natively in INR Crores / Rs. Cr / ₹ Cr; no conversion needed)
+ocr_pages: [2, 5, 10, 19, 23, 30]
+page_coverage: 100% (39/39 pages accounted for; all page markers [page 1] through [page 39] present and sequential)
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-05
+=== END HEADER ===
+
 [page 1]
                                 VAIBHAV GLOBAL LIMITED
   Ref: VGL/CS/2026/69                                                                     Date: 04th August, 2026
@@ -461,6 +475,7 @@ AI-Enabled Commerce powered by First-Party Data
                                                                                                                                                       15
 
 [page 17]
+[CHART, page 17, data labels: Q1FY26/Q4FY26/Q1FY27 Revenue 814/935/917, EBITDA 75/96/102 (9%/10%/11% margin), PAT 38/44/56 (5%/5%/6% margin)]
 A High-Engagement Customer Ecosystem
 
 
@@ -525,6 +540,7 @@ A High-Engagement Customer Ecosystem
 Note: Q4FY26 PAT is excluding MAT credit of INR 47.2 cr : Numbers are rounded off to nearest figure
 
 [page 19]
+[CHART, page 19, data labels: TV Revenue 444/485/484; Digital Revenue 329/400/398; TV volume 1343/1373/1291(k), ASP $38.8/$40.5/$37.1; Digital volume 1139/1131/1123(k), ASP $33.8/$38.5/$37.0]
 03
 Financial &
 Operational
@@ -541,6 +557,7 @@ Update
 LP
 
 [page 20]
+[CHART, page 20, data labels: EBITDA margin walk Q1FY26 4.2 -> Gross Margin(brand mix) +9.2 -> Employee Cost(tech leverage) +1.6 -> Digital Marketing -1.2 -> SG&A -1.7 -> Other Income -1.0 -> Q1FY27 11.1]
 Q1 FY27 Segmental Highlights
 
                                                                        Revenue split (Rs. Cr)
@@ -578,6 +595,7 @@ Q1 FY27 Segmental Highlights
                                                                                                                                                                    19
 
 [page 21]
+[CHART, page 21, data labels: B2C by product Jewellery/Lifestyle 36/64,33/67,40/60 (Q1FY26/Q4FY26/Q1FY27); by geography US/UK/Europe 59/29/12,59/29/12,60/28/12; by format TV/Digital 57/43,55/45,55/45; Budget Pay 38/39/36]
 EBITDA Margin Walk
 
 
@@ -710,6 +728,7 @@ A Portfolio of Scalable Consumer Brands
                                                                                                                                24
 
 [page 26]
+[CHART, page 26, data labels: FCF & Net Cash (Rs Cr) by year FY21-FY26: FCF -214/103/268/178/230/272; Net Cash 90/127/167/170/296/387]
  Strong Cash Generation, Disciplined Deployment
 
 
@@ -779,6 +798,7 @@ Higher customer ownership and margin                             Strong customer
 Note : Data as of FY26
 
 [page 28]
+[CHART, page 28, data labels: ROE FY23-Q1FY27: 9/10/12/15/18; ROCE FY23-Q1FY27: 19/19/14/24/24]
 Voice of Customer as a Strategic Asset
                                                                                                                                                             Voice of Customer Portal
             B2C Revenues by Format                      Budget Pay (% to B2C Revenues)                                B2C Revenues by Product
@@ -850,6 +870,7 @@ Consistent Shareholder Returns
                                                                                                                                                     28
 
 [page 30]
+[CHART, page 30, data labels: USA Video/Live Commerce TAM $50bn(2023)->$68bn(2026F); UK Online Retail GBP123bn(2023)/127bn(2024)/132bn(2025); Germany E-commerce EUR89bn(2024)/92bn(2025)/96bn(2026F)]
 04
 Growth Strategy
 
@@ -861,6 +882,7 @@ Growth Strategy
 Growth Strategy
 
 [page 31]
+[CHART, page 31, data labels: Ideal World Net Revenue(GBPmn)/Unique Customers('000) FY24/25/26: 7/20/30 revenue, 69/138/142 customers approx per layout; Germany revenue EUR mn FY22-26: 4/14/21/26/27]
   Expanding Addressable Markets Supporting Long-Term Growth
 
                             USA · Video/Live Commerce ($bn)                                                                  UK · Online Retail Sales (£bn)                                                               Germany · E-Commerce Sales (€bn)
@@ -902,6 +924,7 @@ Sources: USA: Statista-sourced US livestreaming/video commerce sales. UK: ONS on
 referenced by bevh using Destatis data; 2025/2026 are HDE's own forecasts.
 
 [page 32]
+[CHART, page 32, data labels: Global lab-grown diamond market USD bn: 34.0 (2026) -> 92.0 (2034); VGL Q1FY27 lab-grown diamond revenue contribution 13% of jewellery/gemstone mix]
 Emerging Growth Engines
 
                          Ideal World                                            Mindful Souls                                    Germany

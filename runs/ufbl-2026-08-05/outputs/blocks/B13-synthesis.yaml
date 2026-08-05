@@ -1,0 +1,15 @@
+stage: B13-synthesis
+company: UFBL
+run_date: 2026-08-05
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: PROCEED WITH FLAGS
+verdict_rule_applied: 3
+flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER-CAUTION]
+flag_cash_determination: GROWTH-INDUCED
+flag_cash_falsifier: "Consolidated interest-bearing net debt printing above Rs 102 Cr in any quarterly balance sheet"
+confidence_delta: {numerical: 100, redflag: 62, framework: 91, peer: 93, overall: 62}
+headline: "Lease optics mask a recovering restaurant chain"
+publish_candidate: false
+files: [outputs/final/business-narrative.md, outputs/final/gate-recommendation.md, outputs/final/verifier-summary.md]

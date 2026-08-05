@@ -70,3 +70,10 @@
 - inputs/deck_rsystems_q2cy26.pdf (16pp, Reg 30 investor presentation for Aug-05 analyst call, quarter ended 30-Jun-2026) → doctype = presentation (slide deck; distinct from the earlier earnings press release).
 - Image-heavy slides flagged for OCR fallback: pages 2/4/11/13/16 (<100-550 chars).
 - Chain: A1 → A2 → A3 (deck) → A4 re-merge overlay → A5 audit → Notion update.
+
+## DECK CHAIN — GATES
+- Deck A1: PASS 16/16 pages, 6 OCR (2,4,9,11,13,16), unit Millions.
+- Deck A2: PASS 16 slides / 238 units (20 KPI, 91 chart pts [32 not-extractable], 58 table lines, 17 footnotes). Headcount/BS/cash/guidance NOT FOUND in deck.
+- Deck A3: PASS 17/17, 12 findings. Key NEW: TTM ACV $82.9m decelerating (+0.6 QoQ); Adj-EBITDA FX bridge QoQ +98 rupee-depreciation vs -47 operations; geography/concentration splits; reported PAT only in appendix.
+- Deck A4 overlay: PROCEED WITH FLAGS unchanged; Decision Status UNCHANGED; deck reconciles clean vs filing (23 figures); master-gate date CORRECTED to 05-Aug-2026; new Q15-Q18; monitoring item 2 UNKNOWN->AMBER, item 4 GREEN-with-FX-caveat, item 3 RED deepened.
+- Deck A5 audit: COMPLETE. One immaterial non-gating discrepancy (deck footnote 180.47M vs filing 180.42M) -> 3 minor grafts routed to A4.

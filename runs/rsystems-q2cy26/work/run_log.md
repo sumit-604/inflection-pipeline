@@ -77,3 +77,11 @@
 - Deck A3: PASS 17/17, 12 findings. Key NEW: TTM ACV $82.9m decelerating (+0.6 QoQ); Adj-EBITDA FX bridge QoQ +98 rupee-depreciation vs -47 operations; geography/concentration splits; reported PAT only in appendix.
 - Deck A4 overlay: PROCEED WITH FLAGS unchanged; Decision Status UNCHANGED; deck reconciles clean vs filing (23 figures); master-gate date CORRECTED to 05-Aug-2026; new Q15-Q18; monitoring item 2 UNKNOWN->AMBER, item 4 GREEN-with-FX-caveat, item 3 RED deepened.
 - Deck A5 audit: COMPLETE. One immaterial non-gating discrepancy (deck footnote 180.47M vs filing 180.42M) -> 3 minor grafts routed to A4.
+
+## DECK NOTION SAVE — COMPLETE (2026-08-05)
+- Appended deck-integration overlay (8 sections: preamble, deck-vs-filing reconciliation R1-R24, new disclosures N1-N12, updated monitoring checklist, updated questions Q1-Q18, monitorables w/ corrected call date, verdict, plain-language delta) + A5 completeness proof.
+- Key Notes property: prepended 05-Aug-26 deck entry; all prior entries (04-Aug, 29-Jul, 08-Jul) preserved, UTF-8 intact.
+- Verdict PROCEED WITH FLAGS unchanged; Decision Status UNCHANGED WATCHLIST/BUY; no trigger fired.
+- OPERATOR ACTIONS FLAGGED (not auto-applied): (1) master-gate date correct to 05-Aug-2026 in thesis header; (2) OCRPS unit 5.16 million not 5.16 Cr.
+
+## DECK ADDENDUM — CLOSE (clean run; one A5-loop equivalent = 3 minor non-gating grafts)

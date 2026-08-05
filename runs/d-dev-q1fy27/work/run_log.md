@@ -88,3 +88,21 @@ in inputs/ for audit; neither run separately to avoid redundant chains.
 - Run committed and pushed to claude/d-dev-quarterly-analysis-jnyqb1.
 - RESULT: A5 COMPLETE | PROCEED WITH FLAGS | Decision Status HELD (flagged, not decided).
 - Count reconciliation: 14 notes (7 SA + 7 consol) / 0 concall turns / 4 press-release pages, all reviewed.
+
+## SUPPLEMENTARY DOCUMENT — INVESTOR PRESENTATION (DOC5), added post-close
+- DOC5 investor deck (36pp, filed 05 Aug 2026) supplied after the results run closed. Run through the
+  full A1-A5 chain as doctype=presentation (`_deck` artifact set).
+- A1 deck: PASS 36/36, 13 pages OCR'd (pdftoppm 300dpi + tesseract, vision-verified), units Crores.
+- A2 deck: PASS 36 slides / 132 financial metrics / 34 forward-looking / 26 order-book / 34 capacity.
+- A3 deck: PASS 0 PASS / 10 FINDING / 7 N.A. RED-FLAGS: selective omission of the audit qualification
+  (absent from all 36 slides, reframed as tariff win); no balance sheet/net debt/WC anywhere, leverage
+  charts stop at FY26. Deck P&L ties to the audited filing within rounding.
+- A4 deck addendum: verdict UNCHANGED (PROCEED WITH FLAGS / HELD). Margin guidance WALK-BACK adjudicated
+  (>19% FY27 -> 19-20% by FY30; Q26 mandatory). 10 new questions Q20-Q29 (running total 29). New positive:
+  YTD order intake Rs 780.87 Cr = 2.65x book-to-bill. Vision-2030 off-path this quarter (Q1 annualised
+  Rs 1,178 Cr vs FY27E Rs 1,500 Cr).
+- A5 deck addendum: COMPLETE (no loop). Reconciliation, book-to-bill 2.65x, Vision-2030 24.8% CAGR, and
+  the margin walk-back call all independently re-derived and upheld.
+- NOTION: addendum appended (3 inserts); Key Notes prepended with the 05 Aug deck entry (4751 -> 6745
+  chars, all 5 prior entries preserved). Decision Status UNCHANGED at HELD.
+- Deck artifacts: extract_deck / ledger_deck / forensics_deck / review_deck_addendum / audit_deck_addendum.

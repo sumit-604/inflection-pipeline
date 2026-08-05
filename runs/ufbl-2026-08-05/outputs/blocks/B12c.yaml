@@ -1,0 +1,37 @@
+stage: B12c
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-opus-4-8
+status: complete
+gate0:
+  rules_checked: 36
+  fails:
+    - {rule: "Block E / E4 contingent-liab-to-net-worth band", severity: "MAJOR", location: "B01 Block E, report line 131", stated: "26.17% -> Score 3", correct: "15-30 band -> Score 1", effect: "Block E 4->2, Core 21->19; classification AVOID unchanged"}
+    - {rule: "Block F / M12 negative-WC band on 2-year sample", severity: "MINOR", location: "B01 Block F M12, report line 179", stated: "Score 3", correct: "1 or 3 (rule silent on 2-yr straddle); borderline", effect: "if 1, moat_class NONE not THIN; AVOID unchanged"}
+    - {rule: "Block B / B2 sample sufficiency", severity: "MINOR", location: "B01 Block B B2, report line 77", stated: "100% of 2 computable yrs -> 5", correct: "applied as written; 2-of-10-yr sample, disclosed", effect: "none; note only"}
+recomputed_core_score: 19          # was 21; classification AVOID unchanged
+recomputed_gate0_classification: "AVOID"   # unchanged; robust to F-G1
+history_downgrade_check: "PASS - history_downgrade=false correct; data-length rule honoured, not conflated with trough/recovery/Ind-AS-116 depressors"
+emoat:
+  rules_checked: 10
+  fails:
+    - {rule: "Section 5 scoring method (raw x evidence-multiplier only)", severity: "CRITICAL", location: "B07 Section 5, report lines 391-396", stated: "adjusted 9.1 + non-framework +1.5/category = 15 -> MODEST", correct: "9.1 (<12) -> NO MEANINGFUL EMERGING MOAT (NONE); no corroboration bump exists in framework; strict-max reading 11.0 still <12", effect: "em_score 15->9.1; em_classification MODEST->NONE"}
+    - {rule: "6D combined-assessment taxonomy", severity: "MAJOR", location: "B07 Section 6D, report lines 472-479", stated: "TURNAROUND", correct: "AVOID/not-a-transition-setup; AVOID backward + NONE(corrected) forward fails TURNAROUND bar, and B07's own 6D text says MODEST also fails it", effect: "combined_assessment TURNAROUND->AVOID"}
+    - {rule: "Evidence multiplier set {1.0,0.7,0.5}", severity: "MINOR", location: "B07 Section 5 scorecard, rows A4/D2/E1/H1", stated: "0.85 and 0.6 used", correct: "not in defined discrete set; mixed-evidence interpolation undefined by framework", effect: "none; outcome <12 under any strict reading"}
+recomputed_em_score: 9.1           # was 15
+recomputed_em_classification: "NONE"        # NO MEANINGFUL EMERGING MOAT (<12); was MODEST
+recomputed_combined_assessment: "AVOID"     # was TURNAROUND
+valuation: {rules_checked: 0, fails: [], status: "pending_phase_3"}   # B10/B11 do not exist yet; deferred
+recomputed_destination_pe: ""      # pending Phase 3; note: EM<25 either way -> Pillar 3 +0x, so no destination-PE impact from emoat findings
+recomputed_decision: "Gate 0 AVOID unchanged; emerging-moat classification recomputes NONE (not MODEST) and combined assessment AVOID (not TURNAROUND)"
+findings:
+  - {severity: "CRITICAL", location: "B07 Section 5", note: "Non-framework +1.5/category corroboration adjustment inflates em_score 9.1->15, flipping classification NONE->MODEST. Fabricated scoring step. Destination-PE impact nil (EM<25 -> +0x Pillar 3); flip affects classification band and 6D routing."}
+  - {severity: "MAJOR", location: "B01 Block E / E4", note: "Contingent-liab/net-worth 26.17% is in the 15-30 band (score 1); B01 assigned 3. Block E 2/20 not 4/20; Core 19 not 21. AVOID unchanged."}
+  - {severity: "MAJOR", location: "B07 Section 6D", note: "combined_assessment TURNAROUND contradicts the 6D taxonomy and B07's own stated logic; with corrected NONE forward score the label should be AVOID."}
+  - {severity: "MINOR", location: "B07 Section 5 scorecard", note: "Evidence multipliers 0.85/0.6 lie outside the framework's discrete {1.0,0.7,0.5} set; does not change the <12 outcome."}
+  - {severity: "MINOR", location: "B01 Block F / M12", note: "Negative-WC band on a 2-year straddling sample scored 3; a stricter reading gives 1 (which would flip moat_class THIN->NONE). AVOID unchanged."}
+  - {severity: "MINOR", location: "B01 Block B / B2", note: "FCF-positive proportion scored 100%->5 on a 2-of-10-year computable sample; applied as written and disclosed. Note only."}
+critical_count: 1
+major_count: 2
+minor_count: 3
+acceptance_rate: 91   # 42 of 46 checked rules passed (gate0 35/36 + emoat 7/10)

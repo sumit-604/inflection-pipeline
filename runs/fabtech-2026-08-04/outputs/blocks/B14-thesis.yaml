@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 62.9, high: 80.6}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "AVOID stance turns to a look only if ALL hold: price enters Rs 62.9-80.6 AND CFO/PAT rises above 30% on documented IPO-cash deployment AND promoter CONCERN resolves; conversely AVOID is confirmed while price stays above Rs 80.6 or CFO/PAT stays below 30%"
+monitoring_checklist:
+  - "CFO/PAT above 30% on a rolling basis (red: below 30% or CFO negative while PAT positive)"
+  - "IPO-cash deployment: undeployed cash falling and statutory ROCE converging toward 16% (red: fund-utilisation table static, statutory ROCE stuck near 11.25%)"
+  - "H1 FY27 revenue above Rs 210 Cr (red: below Rs 180 Cr)"
+  - "Order book above Rs 900 Cr and book-to-bill above 1.2x (red: below Rs 800 Cr or book-to-bill below 1.0x)"
+  - "Operating EBITDA margin ex other income above 10% and other income below 30% of PBT (red: operating margin below 8.5% or other income above 30% of PBT)"
+  - "Overdue >365-day receivables (Rs 58.9 Cr KAM) falling and total receivables below Rs 220 Cr (red: overdue balance rising or receivables above Rs 220 Cr)"
+  - "No new adverse promoter/RPT event; RPT share below 15% and pledge 0% (red: adverse court movement, RPT share above 26%, or any pledge)"
+  - "Price falls into Rs 62.9-80.6 with no thesis-broken trigger fired (entry-conjunction; red: price above Rs 80.6, AVOID intact)"

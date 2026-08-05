@@ -3,21 +3,28 @@ company: "FABTECH"
 run_date: "2026-08-04"
 model: claude-opus-4-8
 status: complete
-phase: 1
-scope_note: "Phase-1 scope: Gate 0 (B01) and Emerging Moat (B07) framework audits only. Valuation (B10/B11) deferred to Phase 3 - stages do not exist yet."
+scope: "Both halves merged: Phase 1 Gate 0 + Emerging Moat, and Phase 3 valuation-adherence (B10/B11 + extended B14 Role 2 decision/sizing)"
 gate0: {rules_checked: 46, fails: []}
 emoat:
   rules_checked: 26
   fails:
-    - {severity: "MINOR", rule: "Evidence concentration (E1/R1)", note: "E1 (4.0) and R1 (3.0) both scored off the same SACE/Vision 2030 development, ~36% of the 19.2 total; permitted by the 20-category scan and transparently disclosed, not a rule violation, MODEST unchanged."}
-    - {severity: "MINOR", rule: "Negative-signal floor score (B1/F2)", note: "B1 (+1.0) and F2 (+0.7) are narrated as risk/negative signals yet carry the LL=1 floor rather than 0; multipliers correct, conservative-direction only, MODEST unchanged if removed."}
-valuation: {status: "PENDING PHASE 3", rules_checked: 0, fails: []}
-recomputed_destination_pe: ""
-recomputed_decision: ""
+    - {severity: "MINOR", rule: "Evidence concentration (E1/R1)", note: "E1 (4.0) and R1 (3.0) both scored off the same SACE/Vision 2030 development, ~36% of the 19.2 total; permitted and disclosed, MODEST unchanged."}
+    - {severity: "MINOR", rule: "Negative-signal floor score (B1/F2)", note: "B1 (+1.0) and F2 (+0.7) carry the LL=1 floor rather than 0; conservative-direction only, MODEST unchanged."}
+valuation:
+  rules_checked: 45
+  fails:
+    - {severity: "MINOR", location: "B11 Section 4A/4E", rule: "divergence conservative-track-governs-entry", note: "entry computed off operative 13x rather than conservative RRM track; superseded by documented operator override (Overrides 4/5), RRM floor Rs 50.3 retained; no decision impact"}
+    - {severity: "MINOR", location: "B14 YAML position_size", rule: "position-size field vs None-at-CMP action", note: "position_size 'Small' is the hypothetical in-zone ceiling while action is None at CMP; prose explicit; no decision impact"}
+recomputed_destination_pe: "concur: operative 13.0x forward (operator-approved, top of additive 11.0-13.0x, under 20x cap); audit additive 12.1x / RRM 8.5x reconcile"
+recomputed_decision: "concur: AVOID on valuation"
 findings:
-  - {severity: "MINOR", location: "B07 Section 5 scorecard + Section 4C", note: "E1 and R1 share one underlying development (SACE / Vision 2030 localisation), together 7.0 of 19.2 (~36%); allowed and disclosed, forward score more concentrated than 5 Moderate categories suggests."}
-  - {severity: "MINOR", location: "B07 Section 5 scorecard", note: "B1 and F2 are negative-signal categories carrying LL=1 floor scores (+1.7 combined); conservative-direction, classification stays MODEST if zeroed."}
+  - {severity: "MINOR", location: "B07 Section 5 scorecard + Section 4C", note: "E1 and R1 share one underlying development (SACE/Vision 2030), ~36% of 19.2; allowed and disclosed."}
+  - {severity: "MINOR", location: "B07 Section 5 scorecard", note: "B1 and F2 negative-signal categories carry LL=1 floor scores; conservative-direction, MODEST holds."}
+  - {severity: "MINOR", location: "B11 Section 4A/4E", note: "entry off operative 13x rather than conservative RRM track; operator override supersedes and is documented; decision-safe (RRM entry even lower)."}
+  - {severity: "MINOR", location: "B14 position_size", note: "position_size Small is hypothetical in-zone ceiling; action is None at CMP; prose explicit."}
 critical_count: 0
 major_count: 0
-minor_count: 2
-acceptance_rate: 97
+minor_count: 4
+acceptance_rate_gate0_em: 97
+acceptance_rate_valuation: 96
+acceptance_rate: 96

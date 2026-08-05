@@ -1,0 +1,19 @@
+stage: B15-devil
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "destroyed"
+  management_trust: "destroyed"
+  valuation_safety: "destroyed"
+overall: "SURVIVES"
+top_counters:
+  - "AVOID is too generous: base fair value Rs 150.2 capitalises Rs 20.56 Cr (42.6% of PBT) of forex + parked-cash interest at 13x (~Rs 48/share); on operating-only EPS (Rs 7.86 fwd) honest fair value is ~Rs 105-133, not Rs 150.2 - so downside from CMP 152 is understated"
+  - "SHARED CATALYST is a short straddle: deploy the IPO cash and the interest income (42.6% of PBT) that props forward EPS disappears; leave it parked and statutory ROCE stays 11.25% (Pillar 1 base falls 15.6x->13.1x) and Pillar 3a weakens - no branch rewards the buyer"
+  - "Net cash Rs 31.25/share is mostly not shareholders': ~Rs 110 Cr is customer advances (liability) and ~Rs 16 Cr encumbered by related-party corporate guarantees; distributable net cash ~Rs 3/share"
+  - "Accounting/governance cluster points one way: Rs 37.18 Cr (18.2%) unreconciled receivables gap on the auditor's SOLE KAM + promoter named accused on bogus-invoice complaint + revenue-recognition method evaded 3 straight quarters + AOC-2 contra Note 47 (99.37% loans, 55.71% borrowings related-party)"
+  - "Structural cash determination is robust, not growth-induced: CRISIL 15 Oct 2025 attributes high debtor days to Q4-loaded billing and 2-year retention money (contractual) and expects it 'over medium term'; framework gives rating-agency structural read precedence - 0.65x floor and Kernex cap hold; the ~Rs 110 Cr customer-advance offset worsens net-cash quality rather than fixing the cycle"
+  - "Entry zone Rs 62.9-80.6 is too high given honest fair value ~Rs 105-133; the 25% entry recomputes to ~Rs 54-68, closer to the RRM floor Rs 50.3"
+  - "Growth triggers real but insufficient: order book 2.19x revenue vs backward VOLATILE (-39.8% Q3 FY26), SOM CAGR 13.8% below 20-25% guidance, guidance cut twice, Saudi receivables Rs 72.57 Cr on one Rs 120 Cr contract"

@@ -3,12 +3,12 @@ company: "FABTECH"
 run_date: "2026-08-04"
 phase: 1
 confidence_delta:
-  numerical_acceptance: 93        # B12a strict numerical accuracy (14/15; one immaterial rounding variance). Headline B12a acceptance_rate 53 counts interpretation/disclosure findings that are legitimate analytical catches, not numerical errors; 0 source-fidelity MISMATCHes; REWORK gate not triggered.
+  numerical_acceptance: 93        # B12a strict numerical accuracy (14/15; one immaterial rounding variance). 0 source-fidelity MISMATCHes; REWORK gate not triggered.
   redflag_coverage: 68            # B12b: 13/19 independent red flags fully caught upstream (+2 partial); coverage graded "strong"; no CRITICAL
-  framework_adherence: 97         # B12c PHASE-1 SCOPE: Gate 0 (46/46 rules pass) + Emerging Moat (2 MINOR observations, no CRITICAL/MAJOR). Valuation adherence PENDING PHASE 3.
+  framework_adherence: 96         # B12c FULL: Gate0+EM 97 (phase 1) + valuation-adherence 96 (phase 3, 43/45 clean, 0 CRITICAL/MAJOR, 2 decision-invariant MINOR)
   peer_utilisation: 83            # B12d: 10 of 12 provided peers used substantively
-  overall: 68                     # min of the four available phase-1 components
-  valuation_framework_adherence: PENDING_PHASE_3
+  overall: 68                     # min of the four components (redflag-bound)
+  valuation_framework_adherence: 96   # phase 3 complete: verifier C valuation half, acceptance 96
 interpretation_band: "60-74: PROCEED-family verdicts downgrade one level. Driven by redflag_coverage 68 (the binding component): stages caught the material guidance/receivables/RPT/governance flags but missed the earnings-quality dependence on ~55%-of-PAT non-operating other income, the definitionally-unstable pipeline figure, and an under-weighted revenue-timing-discretion lever. Numbers themselves are 93% clean with zero source-fidelity mismatches; framework adherence is high (97)."
 verifier_severity_rollup:
   critical: 2                     # both B12a; both SOURCE-INTERNAL / concall-silence items correctly surfaced by the stages, NOT fabricated/misread stage figures -> no REWORK

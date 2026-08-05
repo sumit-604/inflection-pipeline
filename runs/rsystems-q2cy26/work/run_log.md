@@ -85,3 +85,7 @@
 - OPERATOR ACTIONS FLAGGED (not auto-applied): (1) master-gate date correct to 05-Aug-2026 in thesis header; (2) OCRPS unit 5.16 million not 5.16 Cr.
 
 ## DECK ADDENDUM — CLOSE (clean run; one A5-loop equivalent = 3 minor non-gating grafts)
+
+## CONCALL CHAIN — MASTER GATE (transcript supplied 2026-08-05, call held 05-Aug-2026)
+- inputs/concall_rsystems_q2cy26.txt saved verbatim (raw ASR transcript, garbles noted for downstream). doctype=concall.
+- Chain: A1 (line-number) -> A2 (turns/questions/mgmt-numbers) -> A3 (concall forensics) -> A4 (Role 5 master-gate overlay) -> A5 -> Notion.

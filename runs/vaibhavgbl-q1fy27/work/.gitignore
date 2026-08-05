@@ -1,0 +1,8 @@
+# Scratch OCR / intermediate extraction artifacts (not deliverables)
+*.jpg
+*.jpeg
+*.png
+*_layout.txt
+page_*.txt
+allpage-*.txt
+resultsocr_*.txt

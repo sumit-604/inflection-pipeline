@@ -39,6 +39,7 @@ collector_defects:
   - "annual-report file 'Annual_Report_2023.pdf' is actually the FY2024-25 (FY2025) AR (19th AGM, notice 13-Aug-2025). Collector filename mislabel (AURUM/MAPMYINDIA/OBSCP class). AR is CURRENT, not stale."
   - "screener P&L/BS/CF/Quarters CSVs are empty templates; only screener-Data_Sheet.csv populated (FY17-FY26). Gate 0 sources Data_Sheet + results extracts + AR statements."
   - "MOSL broker note misfiled under presentation/ instead of research/; provenance-labeled NON-ANCHORED."
+  - "SECOND collector mislabel found at stage 4: presentation/f31101fc...31012026.pdf is ALSO a Motilal Oswal sell-side broker note (not a company presentation). BOTH MOSL files in presentation/ are NON-ANCHORED research. The ONLY genuine company investor presentation is Investor_Presentation_1.pdf (Q1 FY27). Downstream (stages 9/10/13) must not anchor to either MOSL note."
 
 pdf_notes:
   - "All 25 born-digital PDFs pre-extracted to page-marked .txt at outputs/_working/extracts/ (reliable-default per LESSONS; avoids flaky Read rendering + 32MB wall). Stages/verifiers point at the .txt."

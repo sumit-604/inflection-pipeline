@@ -1,0 +1,73 @@
+stage: B04-bizmodel
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Two of three files supplied as 'investor presentation' inputs are Motilal Oswal sell-side broker notes (MOFSL disclosures, ratings, target price), not company documents — including the file labelled in the task brief as the Q3 FY26 (31-Jan-2026) presentation. Treated as NON-ANCHORED broker cross-check throughout this report, on par with OPERATOR_CONTEXT.md. Only the Q1 FY27 (04-Aug-2026) file is a genuine company presentation and was cited as 'Q1FY27 Pres.' where used."
+  - "No genuine company investor presentation exists in inputs for Q3 FY26 (31-Jan-2026) or earlier quarters; quarter-by-quarter operating KPIs before Q1 FY26 rely on the AR's annual/MD&A narrative only."
+  - "No numeric average-bill/average-per-cover value found anywhere in the AR despite the AR stating it is tracked internally (AR p.11) — NOT FOUND, check concall or company presentation."
+flags:
+  - "Ind AS 116 lease capitalisation materially inflates reported EBITDA/margin (18.4% FY25) versus the company's own disclosed pre-Ind AS adjusted EBITDA margin (~7.4% FY25) — any valuation or margin-trend read using reported EBITDA without this adjustment will overstate quality."
+  - "Employee attrition (112% total, FY25, rising from 88.2% FY23) is an anchored but underweighted operational risk for a people-intensive live-service format scaling toward 300-325 stores by FY27."
+  - "Lease liabilities (Rs.6,880.04mn) are ~10x reported interest-bearing borrowings (Rs.695.10mn) — reported Net Debt/EBITDA materially understates true fixed-obligation load."
+business_type: "services"
+revenue_streams:
+  - {name: "Dine-in (all brands, all geographies)", type: "transactional, per-cover", pct_of_revenue: 84.6, predictability: "M"}
+  - {name: "Online/delivery (own app + aggregators)", type: "transactional, per-order", pct_of_revenue: 14.0, predictability: "M"}
+  - {name: "Catering", type: "transactional/contracted, event-based", pct_of_revenue: 1.3, predictability: "L"}
+  - {name: "Ancillary (royalty, sponsorship, scrap, professional fees)", type: "non-core ancillary", pct_of_revenue: 0.3, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "negative"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Intangible assets / brand (live-grill pioneer, celebration-dining recall)", durability: "moderate"}
+  - {moat: "Cost advantages (scale procurement, centralised SOPs)", durability: "moderate"}
+  - {moat: "Distribution/access advantage (established landlord/mall relationships, 80+ cities)", durability: "moderate"}
+  - {moat: "Switching costs (app/loyalty habit)", durability: "weak"}
+  - {moat: "Data/scale advantage (store-level MIS, digital channel data)", durability: "weak, unproven"}
+valuation_methods:
+  primary: {method: "Pre-Ind AS 116 (adjusted operating) EV/EBITDA", why: "Strips out the lease-capitalisation distortion that inflates reported EBITDA/margin; is the metric the company itself discloses and manages to (AR p.14; genuine Q1FY27 Pres.)"}
+  secondary: {method: "EV/Sales or Price/Sales", why: "Cleanest, least-distorted signal given historically volatile/loss-making earnings; cross-checks the primary method"}
+  tertiary: {method: "Restaurant-level Sum-of-the-Parts by segment on pre-Ind AS EV/EBITDA", why: "Segment ROM dispersion is wide (India ~12-15% vs International >25% vs Premium CDR ~18-20%), so a single blended multiple understates International/Premium CDR value contribution"}
+  not_applicable:
+    - "P/E (trailing or forward) — no stable positive-earnings base"
+    - "Dividend discount model — zero dividends declared"
+    - "Reported (post-Ind AS 116) EV/EBITDA as primary — mechanically inflated by lease capitalisation"
+    - "Asset-based/replacement value — balance sheet dominated by ROU assets and goodwill, no liquidation-relevant floor"
+    - "DCF at primary/secondary tier for this run — no AR-anchored multi-year cash flow guidance robust enough without importing non-anchored broker forecasts"
+irrelevant_ratios:
+  - {ratio: "P/E", why: "No stable positive-earnings base; losses in most years shown"}
+  - {ratio: "ROE", why: "Negative-on-negative (shrinking equity, negative income) conveys no operating signal"}
+  - {ratio: "Reported (post-Ind AS 116) EV/EBITDA as sole anchor", why: "Lease capitalisation inflates EBITDA/margin versus real store economics"}
+  - {ratio: "Net Debt/EBITDA using only interest-bearing borrowings", why: "Excludes Rs.6,880mn of lease liabilities, understating true fixed-obligation load"}
+  - {ratio: "Book value / P/B", why: "Dominated by ROU assets and goodwill, not a liquidation-relevant floor"}
+  - {ratio: "Dividend yield / payout ratio", why: "Zero dividends declared every year shown"}
+  - {ratio: "Debtor days", why: "Structurally near-zero (cash/card at table), tells you nothing about operating health"}
+must_track_metrics:
+  - {metric: "Consolidated and segment SSSG", healthy: "high single-digit to low double-digit positive", red_flag: "negative for 2+ consecutive quarters"}
+  - {metric: "Pre-Ind AS restaurant operating margin (ROM), by segment", healthy: "India ~12-15%, International >25%, Premium CDR ~18-20% at maturity", red_flag: "India ROM sustained below low-teens for 2+ quarters"}
+  - {metric: "Gross margin (cost of food & beverages as % of revenue)", healthy: "~66-68%", red_flag: "sustained sub-65% without stated recovery plan"}
+  - {metric: "Operating cash flow vs capex + lease repayment", healthy: "OCF comfortably covering both", red_flag: "OCF falling below combined outflow, forcing external funding"}
+  - {metric: "Employee attrition/turnover rate", healthy: "trending down from FY25's 112%", red_flag: "flat or rising as store count scales toward 300-325"}
+unit_economics:
+  unit: "one operating restaurant"
+  revenue_per_unit: "~Rs.53.6mn annualised consolidated average (implied: FY25 revenue Rs.12,330.49mn / 230 restaurants); wide dispersion by segment, International >Rs.11cr/store, Premium CDR ~Rs.5.3cr/store"
+  margin_per_unit: "pre-Ind AS ROM varies by segment: India ~12-15%, International >25%, Premium CDR ~18-20% at maturity (AR p.19-20)"
+  key_lever: "SSSG (volume/throughput-led, not price) and new-restaurant ramp toward mature-cohort economics, against a largely fixed occupancy/staffing base per open restaurant"
+first_deterioration_signals:
+  - {risk: "Revenue model — discretionary spend pullback", first_signal: "SSSG turning negative again"}
+  - {risk: "Margin — input cost inflation without price pass-through", first_signal: "Gross margin slipping below the ~67-68% guided band"}
+  - {risk: "Balance sheet — lease burden vs cash generation", first_signal: "OCF falling below capex + lease repayment cash outflow"}
+  - {risk: "Execution — extreme staff attrition at scale", first_signal: "Employee benefits expense as % of revenue rising faster than headcount-adjusted revenue growth"}
+  - {risk: "Structural — CDR format growing slower than QSR/cloud kitchen", first_signal: "New-cohort annualised revenue run-rate failing to approach mature-cohort run-rate"}
+mgmt_questions:
+  - "What is the trigger point (SSSG or margin level) at which you would consider price increases rather than continuing pure volume-led growth?"
+  - "What is driving the 112% FY25 permanent-employee attrition rate, and what is the trend into FY26/27?"
+  - "How does the new-restaurant cohort's annualised revenue run-rate compare with the mature cohort's, segment by segment, and how long does ramp-up typically take?"
+  - "Given lease liabilities of ~Rs.6.9bn versus interest-bearing borrowings of under Rs.0.7bn, how do you think about total fixed-obligation coverage when planning further store rollout?"
+  - "What proportion of FY27 planned store additions are in trade areas/cities where UFBL already has density, versus genuinely new markets?"
+  - "Why is the long-term growth plan concentrated in the CDR format when it is the industry's slowest-growing organised sub-segment?"
+  - "What is the delivery-channel contribution margin after aggregator commissions, versus dine-in, and is the growing delivery mix margin-accretive or margin-dilutive at the consolidated level?"
+one_line_verdict: "Recognisable-brand, negative-WC, lease-heavy restaurant chain recovering off a demand trough, where reported EBITDA flatters the real store economics."

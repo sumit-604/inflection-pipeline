@@ -1,0 +1,82 @@
+stage: B05-concall
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Gross margin guidance (67-68%) reiterated in all three calls but not achieved by FY26 close (65.5% actual); bottomed Feb 2026 per management, recovery in progress but unproven over a full quarter"
+  - "Restaurant-count guidance slipped across the three calls (~270-275 implied -> ~265 revised -> 262 actual)"
+  - "Internal inconsistency in FY27 gross-margin recovery guidance within the same Q4 FY26 call (100-150bps vs 100-200bps)"
+  - "Unreconciled analyst attribution of a '25% revenue growth every quarter FY27' guidance to Q3 FY26, not found verbatim in that transcript"
+  - "Renewed aggressive store-expansion pace (40/year toward 400-425 by FY30) echoes a pattern that led to FY23 store closures; management assurance is self-assessed"
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "Volume-led SSSG momentum sustaining into FY27 (no price hikes)", type: "revenue", timeframe: "near-term", conviction: "H", confirm_signal: "Q1/Q2 FY27 SSSG holding at or above Q4 FY26's 14.4% without incremental discounting", kill_signal: "SSSG reverting toward flat/negative as H2 FY26 base effects bite from Q3 FY27"}
+  - {priority: 2, name: "Gross margin recovery to 67-68% band", type: "margin", timeframe: "FY27", conviction: "M", confirm_signal: "Sequential gross margin prints above 66% through FY27", kill_signal: "Continued Middle East input-cost inflation or daypart mix dilution keeps margin below 66%"}
+  - {priority: 3, name: "Operating leverage flow-through to 9-10% pre-Ind AS EBITDA margin", type: "margin", timeframe: "FY27", conviction: "M", confirm_signal: "Quarterly EBITDA margin tracking toward 9-10% band", kill_signal: "Back-end cost fails to compress from 7.1% toward 6.5%, or new-store drag does not narrow"}
+  - {priority: 4, name: "Store network expansion (40 new FY27, 300+ by FY27, 400-425 by FY30) funded internally", type: "revenue", timeframe: "medium/long", conviction: "M", confirm_signal: "Net debt holds flat near INR100-102cr through FY27 while store count grows", kill_signal: "Net debt breaches ~INR100cr ceiling, or FY23-style non-performing store closures repeat"}
+  - {priority: 5, name: "International segment scaling (Southeast Asia growth, Middle East caution)", type: "both", timeframe: "medium", conviction: "M", confirm_signal: "International ROM holds >20% while store count grows to 23-25 by FY27 end", kill_signal: "Bahrain/Dubai margin drag spreads to more of the 8-restaurant Middle East base"}
+  - {priority: 6, name: "Premium CDR (Toscano & Salt) new-market maturation", type: "margin", timeframe: "medium", conviction: "M", confirm_signal: "New-store ROM converges toward 18-20%+ mature level within 12-24 months", kill_signal: "New-store margin drag persists beyond 24 months in new metro markets"}
+  - {priority: 7, name: "Digital/captive-channel moat deepening (~90% of dine-in volume)", type: "margin", timeframe: "ongoing", conviction: "H", confirm_signal: "Continued MAU and captive-channel share gains each quarter", kill_signal: "Captive-channel share or app engagement plateaus"}
+guidance:
+  - {item: "Gross margin band", number: "67%-68%", timeframe: "ongoing/medium-term", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26"}
+  - {item: "FY26 new restaurants", number: "35", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "FY26 total restaurant count (revised)", number: "~265", timeframe: "FY26 end", stated_in: "Q3 FY26"}
+  - {item: "FY26 capex", number: "~INR125 crore", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "Net debt ceiling", number: "~INR100 crore", timeframe: "near-term", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26"}
+  - {item: "H2 FY26 pre-Ind AS EBITDA margin", number: "~8%", timeframe: "H2 FY26", stated_in: "Q2 FY26"}
+  - {item: "International new restaurants FY26", number: "4-5", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "Premium CDR network growth FY26", number: "30%", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "BBQ India mature ROM staged target", number: "first 18% (from 16%)", timeframe: "medium-term", stated_in: "Q3 FY26"}
+  - {item: "FY27 new restaurants", number: "40", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 capex", number: "~INR140 crore (INR120cr new stores + INR20cr maintenance)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Total restaurant network target", number: "300+", timeframe: "by FY27 end", stated_in: "Q3 FY26, Q4 FY26"}
+  - {item: "Total restaurant network target", number: "400-425", timeframe: "by FY30", stated_in: "Q4 FY26"}
+  - {item: "FY27 SSSG target", number: "double-digit (explicit); mid-single to double-digit (hedge)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 pre-Ind AS adjusted operating EBITDA margin", number: "9%-10%", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 mature portfolio ROM target", number: "17%-18%", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 back-end cost target", number: "~6.5% (longer term ~6%)", timeframe: "FY27/longer term", stated_in: "Q4 FY26"}
+  - {item: "FY27 gross margin recovery", number: "100-150bps (opening) vs 100-200bps (Q&A, same call)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 net debt", number: "to remain ~same (~INR100-102 crore)", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Premium CDR FY27 new stores", number: "~5", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "International FY27 new stores", number: "5", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "International restaurant count", number: "15 by FY26 end, 23-25 by FY27 end", timeframe: "FY26/FY27", stated_in: "Q3 FY26"}
+promise_delivery:
+  delivered: 5
+  partial: 2
+  missed: 2
+  rows:
+    - {promised_in: "Q2 FY26", promise: "35 new restaurants in FY26", outcome: "delivered", explanation: "35 gross added (32 net), network closed FY26 at 262"}
+    - {promised_in: "Q2 FY26", promise: "Gross margin stabilizing between 67%-68%", outcome: "missed", explanation: "FY26 exit gross margin 65.5% vs 68.5% Q4 FY25; deliberate mix shift plus Middle East input-cost inflation"}
+    - {promised_in: "Q2 FY26", promise: "Net debt not beyond ~INR100 crore near term", outcome: "delivered", explanation: "Fell to ~INR80cr in Q3 FY26, closed FY26 at ~INR100-102cr"}
+    - {promised_in: "Q2 FY26", promise: "H2 FY26 pre-Ind AS EBITDA margin ~8% (corporate level)", outcome: "delivered", explanation: "H1 ~3%, H2 ~8% confirmed in Q4 FY26 Q&A"}
+    - {promised_in: "Q2 FY26", promise: "International: 4-5 new restaurants FY26", outcome: "delivered", explanation: "4 new restaurants added, most in any year"}
+    - {promised_in: "Q2 FY26", promise: "Premium CDR: 30% network growth FY26", outcome: "delivered", explanation: "Network grew from 30 to 42, a 40% expansion, exceeding guidance"}
+    - {promised_in: "Q2/Q3 FY26 (implied)", promise: "~270-275 total restaurants by FY26 end", outcome: "missed", explanation: "Revised to ~265 in Q3 FY26, actual close 262; attributed to commissioning/construction timing"}
+    - {promised_in: "Q3 FY26", promise: "SSSG improvement sustainable, momentum continuing into Q4", outcome: "delivered", explanation: "Q4 FY26 SSSG accelerated to 14.4% from 8.2% in Q3"}
+    - {promised_in: "Q3 FY26", promise: "BBQ India mature ROM staged target: first 18% (from 16%)", outcome: "partial", explanation: "H2 FY26 mature portfolio ROM ~16%, consolidated mature ROM 14.4% at Q4 FY26 exit; target restated as 17-18% for FY27"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "B"
+credibility_basis: "5 of 9 tracked promises delivered (including debt ceiling, H2 EBITDA margin, International and Premium CDR store targets, and the SSSG recovery itself, which was exceeded), with credible bps-level explanations; but gross margin guidance was reiterated across all three calls without being met by FY26 close, and store-count guidance slipped modestly with a thin explanation."
+peer_questions:
+  - {question: "Did listed peers turn SSSG positive roughly two quarters before UFBL (around Q4 FY25/Q1 FY26), as an analyst asserted on the Q2 FY26 call?", why: "Tests whether UFBL's recovery is company-specific execution catching up to the industry, or part of a broader category-wide recovery", check_peers: ["Restaurant Brands Asia", "Sapphire Foods", "Westlife Foodworld"]}
+  - {question: "Did peers cite the GST rate reduction as a demand tailwind in H2 CY2025?", why: "Tests whether UFBL's SSSG recovery is company-specific execution or a shared regulatory tailwind", check_peers: ["Restaurant Brands Asia", "Sapphire Foods", "Speciality Restaurants", "Westlife Foodworld"]}
+  - {question: "Have peers with Middle East/GCC exposure reported comparable input-cost inflation or currency pressure in FY26?", why: "Cross-checks whether UFBL's Bahrain/Dubai margin drag is a genuine regional macro shock or an execution issue", check_peers: ["Restaurant Brands Asia", "Sapphire Foods"]}
+  - {question: "Do peer concalls describe competitive intensity in casual dining/buffet-adjacent formats as flat, or rising?", why: "UFBL asserts unchanged competitive intensity in three consecutive calls; this underlies the margin-recovery narrative and cannot be verified from UFBL's own transcripts", check_peers: ["Restaurant Brands Asia", "Sapphire Foods", "Speciality Restaurants", "Westlife Foodworld"]}
+  - {question: "Are peers pursuing volume-led, no-price-hike growth in FY26, or taking price increases?", why: "Tests whether UFBL's volume-led framing is a genuine differentiator or reflects sector-wide weak pricing power", check_peers: ["Restaurant Brands Asia", "Sapphire Foods", "Speciality Restaurants", "Westlife Foodworld"]}
+  - {question: "What store-level capex and payback assumptions are peers disclosing for their own expansion?", why: "Benchmarks whether UFBL's unit economics and FY27-FY30 expansion pace are conservative or aggressive relative to sector capacity additions", check_peers: ["Westlife Foodworld", "Sapphire Foods", "Restaurant Brands Asia"]}
+  - {question: "Are peers also reporting rising back-end/corporate overhead costs as a percentage of revenue?", why: "Tests whether UFBL's cost step-up (6.1% to 7.1% of revenue) is company-specific catch-up investment or sector-wide SG&A inflation", check_peers: ["Restaurant Brands Asia", "Sapphire Foods", "Speciality Restaurants", "Westlife Foodworld"]}
+red_flags:
+  - {flag: "Gross margin guidance (67-68%) reiterated in all three calls but not met by FY26 close (65.5% actual)", severity: "moderate"}
+  - {flag: "Restaurant-count guidance slipped from implied ~270-275 to ~265 (Q3 FY26 revision) to actual 262", severity: "low-moderate"}
+  - {flag: "Internal inconsistency in FY27 gross-margin recovery guidance within the same Q4 FY26 call (100-150bps vs 100-200bps)", severity: "low"}
+  - {flag: "Unreconciled analyst attribution of a '25% revenue growth every quarter FY27' guidance to Q3 FY26, not found verbatim in that transcript", severity: "low"}
+  - {flag: "Middle East input-cost inflation actively affecting 2 of 8 international restaurants, described by management as difficult to predict", severity: "moderate"}
+  - {flag: "Renewed aggressive store-expansion pace (40/year toward 400-425 by FY30) echoes a pattern that led to FY23 store closures; management assurance is self-assessed", severity: "moderate"}
+  - {flag: "FY26 actual capex against the original INR125 crore FY26 guidance is never explicitly reconciled in the Q4 FY26 call", severity: "low"}
+dropped_triggers: []
+timeline_slippages:
+  - "FY26 total restaurant count: implied ~270-275 guidance (referenced retrospectively in Q3 FY26) revised to ~265 in Q3 FY26, actual close 262 in Q4 FY26"
+  - "BBQ India / mature portfolio ROM: historical 20%+ aspiration revised to a staged 18% target in Q3 FY26, not yet achieved by Q4 FY26 exit (consolidated mature ROM 14.4%, H2 FY26 mature ROM ~16%)"

@@ -552,3 +552,37 @@ outside strict note-to-note scope but material enough to record now.
     receivables developed a new 1-2 year credit-impaired bucket (₹12.68mn, with a matching new
     ₹10.26mn ECL charge, from nil the prior year) — modest in absolute quantum but a working
     capital discipline signal worth monitoring. (Standalone Note 21, p.147; Note 14, p.139-140)
+
+---
+
+```yaml
+stage: B02-notes
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+pass: 1
+status: complete
+notes_read: "Standalone Notes 1-47 (p.116-186) and Consolidated Notes 1-48 (p.196-262), full read"
+unit_flag: "Source document is in INR Millions, not Crores; all figures in this report carry Cr equivalents in parentheses"
+input_gaps:
+  - "MAT credit entitlement/utilisation timeline not separately disclosed"
+  - "Composition of large 'Others' deferred-tax reconciliation line (Rs 77.17mn FY25) not broken down"
+  - "Case-by-case breakdown of Rs 744.41mn direct tax contingent liability not given"
+  - "No FX/hedging sensitivity note despite multi-country overseas subsidiary footprint"
+  - "No Events After the Reporting Period note found in either standalone or consolidated notes"
+  - "Quantum cap on open-ended financial support commitment to Barbeque Nation MENA not disclosed"
+top_findings:
+  - {rank: 1, finding: "Barbeque Nation MENA investment/impairment narrative vs table do not reconcile ('fully impaired' text vs Rs249.65mn net carrying value)", note_ref: "Standalone Note 9(c), p.135; Note 10A, p.136-137", rating: "red_flag", why: "Impairment disclosure internally inconsistent for an entity the parent keeps recapitalising and has committed open-ended support to"}
+  - {rank: 2, finding: "Consolidated revenue reconciliation (Note 25b) FY24 comparative does not tie to headline/disaggregation tables in the same note (Rs254.78mn gap)", note_ref: "Consolidated Note 25, p.222-223", rating: "red_flag", why: "Internal note inconsistency in the primary revenue reconciliation of the consolidated financials"}
+  - {rank: 3, finding: "Standalone and consolidated net losses both widened materially YoY (standalone +33.8%, consolidated owners' share +107.2%)", note_ref: "Standalone Note 18/33, p.143-144/153; Consolidated Note 33, p.227-228", rating: "red_flag", why: "Core profitability trajectory deteriorating faster at group level than standalone"}
+  - {rank: 4, finding: "Goodwill/CGU discount rates fell across every CGU/subsidiary and a new 12x EBITDA terminal-value floor was introduced this year, coinciding with Red Apple's swing from Rs77.22mn profit to Rs22.90mn loss", note_ref: "Standalone/Consolidated Note 7, Note 10A, p.132-137, p.220-221", rating: "watch", why: "Impairment-test assumption changes raise recoverable amount headroom in the same year underlying performance of the largest subsidiary deteriorated"}
+  - {rank: 5, finding: "Direct tax contingent liability equals 18.98% of standalone net worth, total contingent liabilities 24.73%, no case-level breakdown given", note_ref: "Standalone Note 36 / Consolidated Note 35, p.156-157/232-233", rating: "watch", why: "Single-item contingent liability exceeds 10% of net worth threshold"}
+  - {rank: 6, finding: "Standalone liquidity tightening: first working-capital loan draw, cash down to Rs22.54mn from Rs150.36mn, near-term maturity share rising while group's is roughly flat", note_ref: "Standalone Note 15/19/41, p.141/144-145/164-166", rating: "watch", why: "Parent-level liquidity diverging negatively from group, feeds cash conversion assessment"}
+  - {rank: 7, finding: "Inventory grew +21.6% while revenue fell -6.2%; inventory turnover fell from 11.20x to 9.14x with no obsolescence disclosure", note_ref: "Standalone Note 13, p.139; Note 44, p.170", rating: "watch", why: "Working capital efficiency mismatch unexplained in the notes"}
+  - {rank: 8, finding: "Net DTA of Rs557.56mn (14.2% of net worth) rests materially on unabsorbed depreciation recoverability in a year losses widened", note_ref: "Standalone Note 32, p.151-152", rating: "watch", why: "DTA realisability judgment under increasing pressure, no sensitivity disclosed"}
+  - {rank: 9, finding: "Recurring related-party rent and purchases with promoter-controlled entities, self-declared arm's length, no independent benchmarking or per-counterparty breakdown", note_ref: "Standalone Note 43, p.167-169", rating: "watch", why: "Standard RPT fairness scrutiny item for GARP transition analysis"}
+  - {rank: 10, finding: "MSME overdue interest up 62.3% YoY and a new 1-2 year credit-impaired trade receivable bucket (Rs12.68mn) appeared with a fresh Rs10.26mn ECL charge from nil", note_ref: "Standalone Note 21, p.147; Note 14, p.139-140", rating: "watch", why: "Working capital discipline signal, small in absolute quantum"}
+receivables_trend: "mixed: absolute standalone trade receivables fell (Rs57.93mn to Rs53.20mn, considered good) and >6mo bucket share improved (40.9% to 22.0% of gross), but a new 1-2yr credit-impaired bucket of Rs12.68mn appeared in FY25 (nil in FY24) with a matching new Rs10.26mn ECL charge (from nil); dollar amounts are small (<1% of revenue) so materiality is low despite the directional deterioration signal (Standalone Note 14, p.139-140)"
+restatements_found: []
+going_concern_language: "Management has performed an assessment of the Company's ability to continue as a going concern... believes that there is no material uncertainty... hence the standalone financial statements have been prepared on a going concern basis (Standalone Note 3(e), p.129; equivalent language in Consolidated notes)"
+```

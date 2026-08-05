@@ -1,0 +1,9 @@
+company: Kirloskar Electric Company Ltd
+ticker: KECL
+cmp: 150.0
+market_cap_cr: 998.0
+run_date: 2026-08-05
+run_type: full
+concalls_available: false
+sector_cap_row: "Pharma / CDMO"
+notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."

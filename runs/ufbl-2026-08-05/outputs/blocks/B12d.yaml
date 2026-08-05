@@ -1,0 +1,22 @@
+stage: B12d
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+peers_audited: 15
+substantive_confirmed: 14
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "Claim 6 (capex/payback), Speciality breakeven figures", claimed: "breakeven windows of 3-6 months stated in both Aug-2025 and Nov-2025 Speciality calls", source_truth: "Aug-2025 call says 3-6 months; Nov-2025 call actually says 6-9 months ('we had seen the break-even happening between 6 to 9 months period time')", note: "Nov-2025 figure misattributed; understates the variability in Speciality's own disclosed breakeven window"}
+  - {severity: "MAJOR", location: "Part 2E, Middle East/geopolitical cost-pressure cross-read", claimed: "quote 'there is of course lot of pressure which is there on the suppliers too with the geopolitical situation' cited to WESTLIFE Q1 FY27 call (Jul-2026)", source_truth: "quote is not present in the Jul-2026 transcript; it is from the WESTLIFE Q4 FY26 call (May-2026), CFO Shardul Doshi on gross margin guidance", note: "real quote, wrong quarter/transcript attribution; matters for a timeline-sensitive claim about when the cost shock began"}
+  - {severity: "MINOR", location: "RBA Q3 FY26 wage-code citation (p.6)", claimed: "INR2.3cr wage-code one-off cited at p.6", source_truth: "content located at approximately transcript p.8", note: "quote is real; page number imprecise"}
+  - {severity: "MINOR", location: "Sapphire Q1 FY27 aggregator-benign citation (p.7)", claimed: "'we haven't heard about any heightened competition on these two aggregators' cited at p.7", source_truth: "content located at approximately transcript p.9", note: "quote is real; page number imprecise"}
+  - {severity: "MINOR", location: "Westlife Q2 FY26 GST citation (p.3) and Q1 FY27 'first positive SSSG' citation (p.7)", claimed: "GST 80-100bps pass-through cited p.3; 'Oct-Nov-Dec first positive SSSG' cited p.7", source_truth: "GST quote at approximately p.6-7; 'first positive SSSG' quote at approximately p.3 (calls appear swapped in page reference)", note: "both quotes real and in correctly identified transcripts; page numbers imprecise/possibly transposed"}
+  - {severity: "MINOR", location: "Part 2E, wage-code/minimum-wage risk item for Westlife", claimed: "Westlife's labour line was also affected by minimum-wage changes", source_truth: "confirmed present (Q1 FY27, Jul-2026 call, 'minimum wages' cited among inflation drivers) but B06 gives no anchor at all for this specific sentence", note: "unanchored but independently verifiable"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 87

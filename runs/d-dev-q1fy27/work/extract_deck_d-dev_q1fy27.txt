@@ -1,0 +1,1243 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: DOC5_investor_presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 36
+formfeed_count: 36
+line_count: 1243
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (deck reports natively in INR Cr / Rs Cr throughout; cross-anchored to results filing consolidated Q1 FY27 revenue of Rs294.46 Cr against deck's Rs294.5 Cr Revenue from Operations, p16/p32, and Rs295 rounded bar-chart label, p33 -- confirms unit basis, no conversion applied)
+ocr_pages: [2, 3, 4, 10, 11, 14, 17, 25, 26, 29, 31, 33, 35]
+page_coverage: 100% (36/36 pages accounted for)
+detected_quarter: Q1 FY27 (quarter ended 30th June 2026, per cover letter p1 and slide headers throughout)
+extraction_date: 2026-08-05
+=== END HEADER ===
+
+EXTRACTION METHOD NOTES:
+- Primary pass: `pdftotext -layout DOC5_investor_presentation.pdf deck_layout.txt` (36 form-feed-delimited pages, matches pdfinfo page count exactly).
+- Coverage test used by the orchestrator to flag candidate image-heavy pages was non-whitespace character count from plain `pdftotext` (no -layout) per page; this undercounts because -layout mode recovers most positioned text-run labels that the non-layout pass drops/merges on these dense multi-column slides. Both counts are reported per OCR'd page above for transparency.
+- All 13 pages named in the task brief (2,3,4,10,11,14,17,25,26,29,31,33,35) were rasterised at 300 DPI with `pdftoppm -jpeg -r 300` and OCR'd with `tesseract`, per the mandatory instruction, regardless of whether the -layout text-layer already cleared the 100-char threshold.
+- Raw tesseract output was thin/noisy on several of these slides (photo-heavy leadership pages, logo walls, gradient-background section dividers) and in one case (p35) misread the Rupee glyph as a leading digit. Each OCR'd page was therefore additionally cross-checked against the rasterised image directly (vision inspection) and the transcription below reflects the corrected reading; the raw-OCR discrepancy is noted inline on p35.
+- Chart-bearing OCR'd pages (17, 29, 33, 35) carry an explicit [CHART, page N, OCR text: ...] line capturing axis/data-label values per the doctype instruction for investor presentations.
+- No page's content could not be extracted; no gaps.
+
+[page 1]
+[method: text-layer (pdftotext -layout) | chars=1947]
+        Date: 05th August, 2026
+
+                                             Listing Compliance Department
+
+          BSE Limited                                             The National Stock Exchange of India Ltd.
+          Phiroze Jeejeebhoy Tower,                               Exchange Plaza, Plot No. C/1, G Block,
+          Dalal Street,                                           Bandra Kurla Complex, Bandra (E),
+          Mumbai – 400001                                         Mumbai – 400051
+
+          Scrip Code: 544198                                      Symbol: DEEDEV
+
+        Sub: Investor Presentation for the Quarter Ended on 30th June 2026
+
+        Dear Sir/ Madam,
+
+        Pursuant to Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements)
+        Regulations, 2015, please find enclosed herewith Investor Presentation for the Quarter Ended
+        on 30th June, 2026.
+
+        The above information is also available on the website of the Company at www.deepiping.com.
+
+        This is for your information and record please.
+
+        Yours faithfully,
+
+        For DEE Development Engineers Limited
+         RANJAN        Digitally signed by
+                       RANJAN KUMAR SARANGI
+         KUMAR         Date: 2026.08.05 14:24:37
+         SARANGI       +05'30'
+        ________________________________________
+        Ranjan Kumar Sarangi
+        Company Secretary and Compliance Officer
+        Membership No.: F8604
+        Address: Unit 1, Prithla - Tatarpur Road, Village Tatarpur
+        Dist. Palwal, Faridabad, Haryana – 121 102
+
+
+
+
+DEE DEVELOPMENT ENGINEERS LIMITED
+Regd. Office: Unit 1, Prithla-Tatarpur Road, Village Tatarpur, Dist. Palwal, Haryana- 121102, India
+Works: Unit 1, 2 & 3, Village Tatarpur, Dist. Palwal, Haryana- 121102, India
+T: +91 1275 248200, F: +91 1275 248314, E: info@deepiping.com, W: www.deepiping.com
+CIN: L74140HR1988PLC030225 GST Registration No. 06AACCD0207H1ZA
+
+[page 2]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=57 | text-layer chars (no-layout, non-whitespace)=49]
+[TEXT-LAYER, page 2]
+DEE Development
+Engineers
+
+INVESTOR PRESENTATION
+Q1 FY27
+
+[OCR page 2]
+DEE Development Engineers
+piping systems (logo tagline)
+INVESTOR PRESENTATION
+Q1 FY27
+
+[page 3]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=174 | text-layer chars (no-layout, non-whitespace)=55]
+[TEXT-LAYER, page 3]
+Contents
+
+
+           01                          03
+       About DEE                       Financial Overview
+
+
+
+
+                   02
+                   Business Overview
+
+[OCR page 3]
+Contents
+01  About DEE
+02  Business Overview
+03  Financial Overview
+
+[page 4]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=21 | text-layer chars (no-layout, non-whitespace)=10]
+[TEXT-LAYER, page 4]
+01
+
+
+
+     About DEE
+
+[OCR page 4]
+01
+About DEE
+[section divider slide, factory/piping imagery, no additional data]
+
+[page 5]
+[method: text-layer (pdftotext -layout) | chars=2106]
+About DEE: A Scaled, Integrated Process Piping Leader
+A design-led manufacturing partner delivering end-to-end solutions for complex industrial applications
+
+  WHO WE ARE
+  •   Founded in 1988 by Mr. K. L. Bansal, DEE has built a proven track
+
+
+                                                                                  1988                          38
+      record of 38 years in specialized process piping solutions for Power ,
+      Oil & Gas and other sectors.
+  •   Market leader in India by installed capacity, with growing global
+      recognition
+  •   Known for engineering, manufacturing excellence, and customized                   Year of             Years of operational
+      solutions for complex projects.                                                incorporation              experience
+  WHAT WE DO
+  •   Integrated solutions across specialized process piping systems,
+      engineered products, and allied services
+  •   Strong exposure to Power, Oil & Gas, Petrochemicals, Power,
+      Fertilizers, Chemicals, and Infrastructure
+  •   Preferred partner to marquee domestic and global customers,
+      supported by long-standing relationships and living up to the company
+      tag line of Make every customer a repeat customer.                                  7
+                                                                                     manufacturing
+                                                                                                            Amongst Top    5
+  MANUFACTURING & SCALE                                                                                     players in the world
+  •   7 manufacturing facilities across India and Thailand                        facilities across India   by installed process
+  •   Strategically located footprint enables scale, faster execution, and cost        and Thailand
+      optimization
+                                                                                                              piping capacity
+  •   New Anjar facility commissioned, enhancing capacity and growth
+      visibility
+
+[page 6]
+[method: text-layer (pdftotext -layout) | chars=2466]
+FY26: Milestones That Shaped Our Growth
+                                             INR Cr
+
+       Revenue                   Op. EBITDA
+  FY25      FY26               FY25      FY26                         Corporate Actions
+  827       1,142              124       189                          • New CFO appointed — Mr. Brham Prakash Yadav
+      38% YoY                     53% YoY
+                                                                      Strategic Move
+                                                                      • Green Hydrogen clean-tech partnership signed entry into new energy segment
+           PAT                    Order Book
+                                                                      Capacity Milestones
+  FY25       FY26             FY25       FY26                         • Anjar facility scaled to 30,000 MTPA — commissioned ahead of schedule
+   44         77              1,228      1,940                        • India's first Seamless Pipe Plant(backward integration) commenced
+      77% YoY                     58% YoY                                commercial production
+
+
+Key Orders Won
+Order book grew 58% in a single year — from ₹1,228 Cr to ₹1,940 Cr.                   ₹58 Cr first seamless pipe order validates immediate
+                                                                                      demand for new Anjar capacity.
+         ₹170 Cr domestic power orders reinforce core
+                                                                                      ₹20 Cr international LOI (Taiwan) signals sustained global
+         fabrication strength and client confidence.
+                                                                                      deal momentum.
+         USD 40 Mn+ LOI marks breakthrough into global OEM
+                                                                                      ~₹90 Cr windmill tower order establishes entry into
+         supply chains (conversion underway).
+                                                                                      renewable energy fabrication.
+         ₹173 Cr multi-geography orders diversify revenue across
+                                                                                      ₹70 Cr Thailand inflows (March) highlight strong
+         domestic and international markets.
+                                                                                      Southeast Asia traction.
+
+[page 7]
+[method: text-layer (pdftotext -layout) | chars=2116]
+Translating Engineering Leadership into Long-Term Value Creation
+      Capacity Expansion & Scalability                                                           Financial Resilience
+      Port-led growth platform                                                                  Deleveraging
+      Scalable global footprint                                                                 Hedged commodity exposure
+      Capex cycle nearing completion                                                            Stable input costs
+
+
+                                                           Unveiling the
+       Margin Improvement                                                                        Growth Visibility & Profitability Outlook
+      Supply-chain efficiency–led margins
+                                                           Dimensions of                        Clear multi-year growth visibility
+      Backward integration benefits
+      Core segment–led margin profile
+                                                         Investment                             Operating leverage–driven upside margin
+                                                                                                Well-diversified revenue streams
+
+                                                          Rationale
+       New Revenue Drivers                                                                       High-Barrier Market Leadership
+      Power & Nuclear Sector Expansion                                                          Critical process piping focus
+      Hydrogen Ecosystem Optionality                                                            Leadership position in India
+      Modular Skids & Ancillary Revenues                                                        Strong entry and qualification barriers
+
+
+
+                                  ₹ 2,428.20 Cr                          ₹ 294.37 Cr
+                               Closing Order Book                    Order Executed (YTD)
+                               Multi-year revenue visibility           Proven Execution Capability
+
+[page 8]
+[method: text-layer (pdftotext -layout) | chars=2234]
+A Multi-Decade Journey of Consistent Execution
+
+
+            Foundation & Capability                                                                       Scale-Up, Visibility & Capacity
+             Build-Up (1988-2012)                                                                            Expansion (2023–2025)
+                                                  Bangkok Ops &
+                                                     Supply to                           Anjar                       Numaligarh
+                  Palwal                            Petroleum                        Commenced Ops                     Facility
+                 Units I & II                   refinery in Nigeria
+                 2006-10                             2017                              2022                            2024
+
+
+   1988                          2012-14                                 2020                        2023            BSE/NSE Listing    2025-26
+ Incorporation                  Power Project                         Anjar Heavy                 Multinational                        Anjar Capacity
+                                Wins (Meja,)                           Fabrication               Oil Co. Strategic                       ramped &
+                                                                      Commenced                       Collab                           Seamless Plant
+                                                                                                                                       Commissioned
+
+                                                          Geographic Expansion & Project
+                                                              Execution (2017-2022)
+
+
+
+                                                                                                              Installed Capacity:
+        Operating History:                                 Manufacturing Footprint:
+                                                                                                              93,500 MTPA (Piping)
+            38 Years                  Multiple locations in India + overseas execution                        32,400 MTPA (Heavy Fabrication)
+
+[page 9]
+[method: text-layer (pdftotext -layout) | chars=3186]
+Board Of Directors
+
+                         Krishan Lalit Bansal
+                         Promoter, Chairman & Managing Director
+                         •    Founded the company in 1988
+                         •    Extensive experience across prefabricated piping systems and the biomass power sector
+                         •    Recipient of Business Leader of the Year (2011) and Lifetime Achievement Award (2016) from the Faridabad Industrial Association
+                         •    Also honoured with the Business Excellence Award by the International Study Circle and the Rashtriya Rattan Award by the All-India
+                              National Unity Council for contributions to the industry
+
+
+
+           Shikha Bansal                                                                          Shruti Aggarwal
+           Whole-time Director                                                                    Whole-time Director
+            • Leads strategy, finance, HR, operations, and marketing of the group                 • Holds CFA (ICFAI, Tripura) degree
+            • Oversee budgeting, forecasting, costing, profitability analysis, and                • Post Graduate Diploma in Management with a specialization
+            management reporting for the Company                                                    in Finance
+            • Director since December 1, 2020                                                     • Leads Operation, project execution and strategic purchase of
+            • Holds a Bachelor’s and Master’s degree in Commerce                                    DEE Piping, India
+            • Executive Certification in Business Finance from IIM, Raipur                        • Oversee functions of Heavy Fabrication and
+            • Postgraduate Program in Human Resource Management & Analytics from                  • Oversee functions of Biomass Power generation division
+            Amity Future Academy
+
+
+       Shilpi Barar                                          Bhisham Kumar Gupta                                        Ashwani Kumar Prabhakar
+       Independent Director                                  Independent Director                                       Independent Director
+       Holds a Bachelor’s degree in                           Holds a Bachelor’s degree in                              Bachelor’s degree in Engineering; registered
+       Commerce and previously served                         Engineering     and    previously                         with the Institute of Cost Accountants of
+       as Head of Operations at Sita                          served as Executive Director at                           India; formerly Director General of
+       Singh & Sons Private Limited                           Engineers India Limited                                   Ordnance Factories and Chairman,
+                                                                                                                        Ordnance Factory Board, Ministry of
+                                                                                                                        Defense, Government of India
+
+[page 10]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=340 | text-layer chars (no-layout, non-whitespace)=183]
+[TEXT-LAYER, page 10]
+Experienced Leadership
+
+
+
+
+                   Krishan Lalit Bansal
+                   Promoter, Chairman &      Brham Prakash Yadav
+                   Managing Director         Chief Financial Officer
+
+
+
+
+                   Pankaj Agarwal            Ranjan Kumar Sarangi
+                   Chief Operating Officer   CS & Compliance Officer
+
+[OCR page 10]
+Experienced Leadership
+Krishan Lalit Bansal - Promoter, Chairman & Managing Director
+Brham Prakash Yadav - Chief Financial Officer
+Pankaj Agarwal - Chief Operating Officer
+Ranjan Kumar Sarangi - CS & Compliance Officer
+
+[page 11]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=433 | text-layer chars (no-layout, non-whitespace)=130]
+[TEXT-LAYER, page 11]
+Experienced Leadership
+
+
+
+
+                         Mr. B S Jangra,
+                         CEO - Malwa Power                              Mr. Gaurav Narang
+                         Private Limited                                Sr. Vice President
+
+
+
+
+                                             K . Kris
+                                             CEO – DEE Piping Systems
+                                             (Thailand)
+
+[OCR page 11]
+Experienced Leadership
+Mr. B S Jangra - CEO - Malwa Power Private Limited
+Mr. Gaurav Narang - Sr. Vice President
+K . Kris - CEO - DEE Piping Systems (Thailand)
+
+[page 12]
+[method: text-layer (pdftotext -layout) | chars=1697]
+Design-to-Delivery Execution Model
+
+
+              Companies require specialized high-pressure                     DEE qualifies through audits and wins
+              piping for large industrial projects                            orders via technical-commercial bidding
+
+
+
+     Client                                                        DEE wins                                     In-house engineers design and obtain
+                                                                    order                                       approval for customized piping layouts
+
+
+
+      Pipes are precision-bent, welded, and                                          Project-specific carbon, alloy, or stainless
+      assembled using advanced manufacturing                                         steel is procured globally
+
+
+
+                                              Piping Engineering Solutions                                                      Pipe Sourcing Raw
+                                                                                                                               Material Procurement
+
+     Each component undergoes                                                               Payments are received with
+     stringent quality inspections                                                          ongoing warranty and
+                                                                                            performance responsibility
+
+
+
+                   Finished pipe spools are exported efficiently     Final Product
+                   through port-adjacent facilities                                                                                  Delivered
+
+[page 13]
+[method: text-layer (pdftotext -layout) | chars=4569]
+Management Commentary
+
+                         “During Q1 FY27, we delivered a healthy operating and financial performance, with growth in revenue, Operating EBITDA, and PAT, driven by strong execution
+                         across our core business, particularly from power sector. During the quarter, revenue recognition of approximately ₹25 crore from certain orders was deferred
+                         due to temporary disruptions arising from the geopolitical situation in the Middle East, along with customerrelated issues, despite the materials being fully
+                         manufactured, packed, and ready for dispatch. Dispatches have since normalized, and the deferred revenue is expected to be recognized in the coming quarter.
+                         Our performance during the quarter reflects the resilience of our diversified business model, disciplined project execution, and continued focus on operational
+                         efficiency and sustainable profitability.
+
+                         The long-term outlook for our core business remains encouraging, supported by sustained investments across the power, oil & gas, chemical, and process
+                         industries. India's ongoing capital expenditure cycle continues to create significant opportunities for specialized engineering and piping solutions, reinforcing our
+                         confidence in the sector's growth prospects. During the quarter, we continued to strengthen our manufacturing platform. Our seamless pipe manufacturing
+                         facility, commissioned in March 2026 as part of our backward integration strategy, is progressing through its ramp-up phase and is expected to contribute
+                         meaningfully as utilization improves, enhancing product integration, operating leverage, and margins over time. The Anjar pipe fabrication facility, where we
+                         added 30,000 MT of fabrication capacity during FY26, also continues to scale up steadily, further strengthening our manufacturing capabilities, execution
+                         capacity, and ability to service larger and more complex projects.
+
+                         With the majority of our planned expansion capex now behind us, our focus has shifted towards improving capacity utilization, driving higher asset turns,
+                         expanding margins, and generating stronger operating cash flows. The successful completion of our ₹300 crore preferential issue during the quarter has further
+                         strengthened our balance sheet. The proceeds earmarked towards debt repayment are expected to materially reduce leverage and finance costs, improve return
+                         ratios, and provide us with greater financial flexibility to pursue future growth opportunities while maintaining a disciplined capital structure.
+
+                         Our non-core power generation business also witnessed meaningful improvement during the quarter. Following the tariff revision for our 6 MW Muktsar biomass
+ Krishan Lalit Bansal    power plant, the applicable tariff increased from ₹3.50 per kWh to ₹5.224 per kWh in FY26, with an annual 5% escalation on the variable component,
+  Promoter, Chairman &   strengthening the earnings profile of the business. Further, our 72,000 MTPA biomass pellet facility with an estimated revenue generation of ₹80 crore in FY27
+   Managing Director     commenced commercial operations approximately halfway through the quarter, resulting in only a partial financial contribution in Q1. As utilization ramps up, we
+                         expect the pellet business to provide a meaningful contribution to revenue, profitability, and cash flows over the coming quarters, while complementing our
+                         renewable energy operations.
+
+                         We continue to maintain a robust order book of ₹2,428 crore, providing strong revenue visibility across our key end markets. Supported by a healthy project
+                         pipeline, improving operating performance, enhanced manufacturing capabilities, and a significantly stronger balance sheet following the preferential issue, we
+                         remain confident in our long-term growth trajectory. As utilization across our expanded manufacturing footprint improves, we expect operating leverage,
+                         profitability, and cash flows to strengthen further, supporting a gradual reduction in debt and continued value creation for our stakeholders.”
+
+[page 14]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=34 | text-layer chars (no-layout, non-whitespace)=18]
+[TEXT-LAYER, page 14]
+02
+
+
+
+     Business
+     Overview
+
+[OCR page 14]
+02
+Business Overview
+[section divider slide, robotic welding imagery, no additional data]
+
+[page 15]
+[method: text-layer (pdftotext -layout) | chars=1545]
+Diversified Business Portfolio
+
+                 Piping Spools                               Heavy Fabrication
+                 Pre-assembled pipe sections delivered       Large steel structures for emissions
+                 ready-to-install, reducing on-site work     control and wind energy,
+                 and speeding up project execution.          manufactured to customer
+                                                             specifications.
+
+
+
+                 Industrial pipe fittings
+                                                             Others
+                 Critical connectors that join, resize, or   We manufactures PSA nitrogen,
+                 redirect pipes, including custom bends      oxygen, and hydrogen gas plants,
+                 for power and oil & gas projects.           along with air dryers and
+                                                             industrial gas piping solutions.
+
+
+
+                                                             Power Generation
+                 Modular Piping (Skids and Modules)
+                 Plug-and-play piping systems fully          We operates two biomass power
+                 assembled offsite, enabling faster          plants (Abohar & Muktsar) fueled
+                 installation and lower project costs.       by agricultural residues, primarily
+                                                             paddy straw and rice husk.
+
+
+                                                                                                    14
+
+[page 16]
+[method: text-layer (pdftotext -layout) | chars=2708]
+  Q1FY27 - Quarterly Snapshot Consolidated
+                                         3M
+                                                                                               Q1 FY27 Highlights
+                                                                           INR Cr
+                                                                                                 Preferential Issue
+                               31.6% YoY                                                         ₹300 Cr preferential issue at ₹502/share, anchored by
+      Revenue                                                  ROCE                              WhiteOak, Kotak, 360 ONE & ValueQuest.
+       ₹294.5                  (18.6)% QoQ                      NA
+                                                                                                 Deleveraging
+                                                                                                 ₹225 Cr earmarked for debt repayment, strengthening
+                                                                                                 balance sheet and lowering finance cost outgo.
+
+                               38.7 % YoY                 Op.EBIDTA
+    Op.EBIDTA
+                                                           Margin                                Marquee Win
+      ₹49.7                    (21.8)% QoQ                  16.9%                                Secured ₹387 Cr piping order from BPCL, the largest
+                                                                                                 domestic Oil & Gas mandate.
+
+
+
+                                                                                                 Biomass Pellet Facility Commences Operation
+                               22.4% YoY                   Net Profit                            The biomass pellet facility became operational midway
+     Net Profit                                                                                  through Q1 FY27, partially offsetting non-core business
+                                                            Margin
+      ₹16.1                    (41.9) % QoQ
+                                                                                                 losses, with the full benefit expected from Q2 FY27.
+                                                             5.5%
+
+Note - During the quarter, revenue recognition of approximately ₹25 crore from certain orders was deferred due to temporary geopolitical disruptions in the Middle East and
+customer-related issues. With dispatches having since normalized, the deferred revenue is expected to be recognized in the coming quarter
+
+[page 17]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=914 | text-layer chars (no-layout, non-whitespace)=233]
+[TEXT-LAYER, page 17]
+Q1 FY27 Order Inflow and Closing Orderbook
+
+                     Order Inflow (in %)                                             Closing Order book ( ₹in Cr)
+                                2%
+                                                                                       7%
+               9%
+
+
+
+
+                           ₹ 780.87 cr.                                                     ₹ 2,428.20 cr.
+                        YTD Order Intake                                                      as on Jun’26
+
+
+
+
+                                                                                                                            93%
+                                                         89%
+
+                                                                       Process Piping Solutions   Heavy Fabrication   Gas     Power
+    Process Piping Solutions   Heavy Fabrication   Gas         Power
+
+[OCR page 17]
+Q1 FY27 Order Inflow and Closing Orderbook
+Order Inflow (in %) donut chart: Process Piping Solutions 89%, Heavy Fabrication 9%, Power 2% (Gas in legend, share not separately visible/negligible)
+  Center label: Rs 780.87 cr. YTD Order Intake
+Closing Order book (in Cr) donut chart: Process Piping Solutions 93%, Heavy Fabrication 7% (Gas, Power in legend, share not separately visible/negligible)
+  Center label: Rs 2,428.20 cr. as on Jun'26
+Legend (both charts): Process Piping Solutions / Heavy Fabrication / Gas / Power
+[CHART, page 17, OCR text: Order Inflow donut - 89% Process Piping Solutions / 9% Heavy Fabrication / 2% Power, center value Rs 780.87 cr YTD Order Intake. Closing Order book donut - 93% Process Piping Solutions / 7% Heavy Fabrication, center value Rs 2,428.20 cr as on Jun'26.]
+
+[page 18]
+[method: text-layer (pdftotext -layout) | chars=2292]
+Segmental Highlights – Q1 FY27
+                                                                                                INR Cr
+
+       Business           Q1 FY27      Q4 FY26       Q-o-Q       Q1 FY26        Y-o-Y        FY26        % Q1 FY27 Revenue from Operations
+                                                                                                                       Split
+    Core-Business          278.4        342.4       (18.7%)       209.3        33.0%        1,086.5
+
+  Non Core-Business         16.1        19.2        (16.0%)        14.5        11.2%          55.5                     95%           Core
+    Total Revenue          294.5        361.6       (18.6%)       223.8        31.6%        1,142.0
+                                                                                                                                     Non Core
+                                                                                                            5%
+Key Highlights
+
+Core Business-:
+
+Process Piping Solutions: Recorded revenue of ₹263 crore in Q1 FY27, in comparison to ₹194.5 crore in      % Q1 FY27 Core Revenue Split
+Q1 FY26, reflecting a YoY growth of 35.2% driven by higher execution in oil & gas sector.
+
+Heavy Fabrications: Q1 FY27 revenue stood at ₹15.3 crore in comparison to ₹14.8 crore in Q1 FY26 , up
+3.6% YoY, led by ramp-up in windmill tower execution and structural fabrication.                                      94%         Process Piping
+                                                                                                                                  Solutions
+                                                                                                                                  Heavy
+Non-Core Business :-                                                                                                              Fabrication
+                                                                                                          6%
+Power generation: Q1 FY27 revenue stood at ₹16.1 crore, in comparison to ₹14.5 crore in Q1 FY26 ,
+with 11.2% YoY growth. The business is expected to benefit further from a full-quarter pellet plant
+contribution from Q2 FY27 and the revised Malwa tariff of ₹5.44/kWh.
+
+[page 19]
+[method: text-layer (pdftotext -layout) | chars=2280]
+Core Business Performance
+                                                                                                                     INR Cr
+Robust Core Business Performance Driving Value Creation
+                                                                                      Revenue
+
+                                                                                                1087
+                                                                        707    745
+         Core Business             3M                     521
+                                                                                                          209      278
+              (₹ in Cr)
+                                                          FY23          FY24   FY25             FY26     Q1FY26   Q1FY27
+
+
+            Revenue               278.4                                         Operating EBITDA
+
+                                  33.0% YoY                                                     195
+
+                                                                        85     107
+                                                          56                                               36       50
+           Op. EBIDTA              49.6
+                                                          FY23          FY24   FY25             FY26     Q1FY26   Q1FY27
+                                  36.4% YoY
+                                                                                    Operating PBT
+                                                                                                    93
+           Op. EBIDTA
+                                  17.8%                                        24
+            Margin                                                       5                                 14       19
+
+                                  40 bps YoY
+                                                          -6.8
+                                                          FY23          FY24   FY25             FY26     Q1FY26   Q1FY27
+
+
+
+                          Steady Revenue                     Solid                         Sustained
+                          Growth                             Profitability                 High Margin
+
+[page 20]
+[method: text-layer (pdftotext -layout) | chars=1334]
+Core Business Highlights
+
+                                            Positioned for global capex         Largest process piping capacity in India:
+                                            upcycle, enabling sustained         Piping:- 93,500 MTPA,
+                                          volume and order inflow growth        Heavy Fabrication:- 32,400MTPA,
+                                                                                supporting scale-led execution and market
+                                                                                leadership
+
+
+
+
+         Diversification into heavy                                                  Strong engineering depth (730+
+      fabrication and sunrise sectors                                                 specialists) creates high entry
+     expands addressable market and                                                    barriers, pricing power, and
+         long-term growth runway                                                           customer retention
+
+
+
+
+    Backward integration via seamless   Healthy order book of ₹2,428 crore
+      pipe plant (Ongoing) reduces      ensures strong revenue visibility and
+    import dependence and enhances      execution stability through FY26 and
+              gross margins                           beyond
+
+[page 21]
+[method: text-layer (pdftotext -layout) | chars=1457]
+Core Business – Specialized Process Piping Solutions
+DEE is India’s largest player in process piping solutions in terms of installed capacity, providing end-to-end
+design-led-manufacturing.
+
+
+              Diverse Product          Manufactures high-pressure piping systems, piping spools, industrial pipe fittings,
+              Portfolio                induction pipe bends, and pressure vessels.
+
+
+              Material                 Specialises in handling complex metals including carbon steel, stainless steel, super duplex
+              Expertise                stainless steel, alloy steel, and high-performance materials like Inconel and Hastelloy
+
+
+              Sector Focus &           Primarily serves the Oil & Gas, Power (including Nuclear), and Chemical sectors across 27+
+              Global Reach             countries, including Canada, the USA, Italy, and Japan.
+
+
+              Operational              Utilises automated systems like robotic welding and high-frequency induction bending to
+              Excellence               ensure high-quality standards and cost-efficiency.
+
+
+              Comprehensive            Offers a full suite of services including pre-bid, basic, and detailed engineering;
+              Services                 pre-fabrication services (cutting, CNC bevelling, and robotic welding); and advanced non-
+                                       destructive examination (NDE) such as digital radiography.
+
+[page 22]
+[method: text-layer (pdftotext -layout) | chars=1237]
+Core Business – Heavy Fabrication & Infrastructure
+This segment supports the renewable energy sector-wind and critical industrial infrastructure through large-scale
+engineering and assembly.
+
+
+
+            Wind Turbine               Manufactures custom tubular steel windmill towers delivered in sections (12 to 33
+            Towers                     metres) with integrated working platforms and fall protection systems.
+
+
+            Industrial                 Produces chimney stacks ranging from 30 to 140 metres for exhausting flue gases in oil,
+                                       gas, and process industries.
+            Stacks
+
+            Manufacturing              Core operations are handled by the wholly-owned subsidiary DEE Fabricom India Private
+            Base                       Limited (DFIPL) at its dedicated facility in Anjar, Gujarat.
+
+
+
+
+     Strategic Expansion & Integration:
+    Capacity Growth: Total process piping capacity is increasing to 30,000 MTPA at the Anjar facility to meet growing domestic and
+    export demand.
+
+    Backward Integration: Establishing a Seamless Pipe Manufacturing Plant at Anjar to produce high-wall thickness pipes, currently
+    a 100% import-dependent item in India.
+
+[page 23]
+[method: text-layer (pdftotext -layout) | chars=2841]
+ Strategically Positioned Global Manufacturing & Service Footprint
+                                           INDIA                                   1. Palwal, Haryana                                                               THAILAND
+                                                                                   Operates three units with a combined capacity of 36,000 MT
+                                                                                   Unit I focuses on high-pressure piping and induction bends –
+                                                                                   9,000 MT
+                                                                                   Unit II handles industrial fittings – 3,000 MT
+                                                                                   Unit III is dedicated to piping spools and systems. - 24,000 MT
+
+
+                                                                                   2. Anjar, Gujarat
+                                                                                   Anjar Support & Structure Fabrication Unit – 3,000 MT
+                                                                                   Anjar Heavy Fabrication – 32,400 MT
+                                                                                   Anjar Pipe Fabrication Unit – 30,000 MT
+                                                                                   Anjar Seamless Plant – 7,000 MT
+
+
+
+                                                                                   3. Numaligarh (Assam)
+                                                                                   Numaligarh Pipe Fabrication Unit - 6,000 MT
+                                                                                                                                                                              5. Bangkok, Thailand
+
+                                                                                   4. Chennai                                                                                 Fabrication – 14,500 MTPA
+                                                                                  Engineering Service
+
+
+
+
+                                                                                   5. Punjab
+                                                                                  Power Generation
+                                                                                  Abohar Biomass – 8 MW
+                                                                                  Muktsar Biomass – 6 MW
+
+The company operates India’s largest process piping capacity across seven facilities in India and Thailand, with installed capacity of 93,500 MTPA in Piping division & 32,400 MTPA in Heavy Fabrication division
+
+[page 24]
+[method: text-layer (pdftotext -layout) | chars=3336]
+Scaling Up Through New Facilities
+
+                                                                                                           The U-shaped plant design enables efficient
+Anjar - Seamless Pipe Plant                              Anjar - Pipe Fabrication Unit                     material handling, reducing time and costs.
+                                                                                                           Advanced automation and technology
+                              Strategic backward                                                           minimize manual labour dependency,
+                              integration to                                                               enhancing productivity and optimizing
+                              strengthen core                                                              expenses
+                              manufacturing
+                                                                                                    Strategically located near Kandla and
+                              Cost optimization                                                     Mundra Ports, the facility enables quick
+                              through in-house                                                      import/export turnaround, cutting inland
+                              production                                                            transport costs & transit time optimizing
+       7,000 MTPA                                                 30,000 MTPA                       logistics and boosting profitability.
+       Capacity               Supply security and                 Capacity
+                              reduced dependency
+       Seamless Pipe          on external vendors                 Pipe Fabrication                            Anjar’s production capacity (excluding
+                                                                                                              heavy fabrication) grew from 6,000 to
+                              Lead time reduction                                                             30,000 MTPA by September’25, which will
+                              enabling faster project                                                         enhance output and strengthening market
+                              execution
+
+                              Improved control with
+                                                                                                    Dedicated to the Oil & Gas sector, it frees
+                              tighter quality process
+                                                                                                    up the Palwal facility for the Power sector
+                              monitoring                                                            and improving its operational efficiency
+                                                                                                    and resource allocation
+
+
+                                                        Anjar Facility is a modern U-shaped manufacturing unit strategically located near Kandla & Mundra Port,
+                                                        enhancing export-import efficiency and reducing operational overheads.
+
+[page 25]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=185 | text-layer chars (no-layout, non-whitespace)=122]
+[TEXT-LAYER, page 25]
+DEE has strong diversified customer base across geographies
+
+
+
+
+      Focus on Domestic
+      and Developed Markets
+
+
+      Served 27+
+      countries
+
+      Served 4+
+      continents
+
+[OCR page 25]
+DEE has strong diversified customer base across geographies
+Focus on Domestic and Developed Markets
+Served 27+ countries
+Served 4+ continents
+[world map graphic with location pin markers across North America, Europe, Middle East/Gulf, Africa, South/Southeast/East Asia; no additional numeric labels beyond the three data points above]
+
+[page 26]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=718 | text-layer chars (no-layout, non-whitespace)=273]
+[TEXT-LAYER, page 26]
+Diverse Clientele Across Critical                                          Some of the Marquee Clientele
+
+Industries
+
+ Industries Served – Q1 FY27
+
+     Refinery &               Chillers & Cooling
+                                                                LNG
+     Petrochemical            System
+
+
+     Pulp & Paper           Pharmaceuticals                   Hydrogen
+
+
+    Chemicals &                                             Pipeline for
+                             Sugar                          Gas & Water
+    Fertilizers
+
+
+            Thermal Power                      Carbon Capture
+
+
+                                              Oil & Gas
+          Semiconductors                      Exploration
+
+[OCR page 26]
+Diverse Clientele Across Critical Industries
+Industries Served - Q1 FY27 (icon grid, no figures): Refinery & Petrochemical; Chillers & Cooling System; LNG; Pulp & Paper; Pharmaceuticals; Hydrogen; Chemicals & Fertilizers; Sugar; Pipeline for Gas & Water; Thermal Power; Carbon Capture; Semiconductors; Oil & Gas Exploration
+Some of the Marquee Clientele (logo wall, 15 logos, no figures): Reliance Industries Limited; ANDRITZ; HMEL; MHPS; Honeywell UOP; TOSHIBA / JSW; DOOSAN; NUMALIGARH REFINERY LIMITED (NRL); JGC; MAN Energy Solutions; John Cockerill; THERMAX Babcock & Wilcox Energy Solutions; AE (logo, name partially legible in raster)
+
+[page 27]
+[method: text-layer (pdftotext -layout) | chars=2390]
+Non Core Business – Power Generation
+                                                                                             Revenue – Q1 FY27
+                     Abohar Biomass Power Plant                                                                    16
+                     • Plant spans 205,681.48 sqm area with 8
+                       MW aggregate capacity, fully contracted                       14
+                       under 30-year PPA signed March 4, 2011
+                       with Punjab State Power Corporation
+                       Limited (PSPCL).
+                     • PPA commenced February 5, 2009; PSPCL
+                       authorizes grid interconnection and parallel
+                       operation     with    PSPCL/Punjab    State
+                       Transmission Corporation Limited (PSTCL)
+                       systems.
+                                                                                   Q1 FY26                       Q1 FY27
+
+
+                                                                      Highlights
+                                                                      •   Total 14 MW operational capacity across Abohar (8 MW)
+                                                                          and Muktsar (6 MW) plants, fully contracted under long-
+                                                                          term PPAs with PSPCL
+                     Muktsar Biomass Power Plant
+                     • Plant Spans 141,829.67 sqm area with 6         •   Malwa Power (Muktsar) tariff revised to ₹5.22/kWh from
+                       MW aggregate capacity, fully contracted            ₹3.50/kWh, with retrospective recovery of ~₹5.14 crore in
+                       under 20-year PPA signed February 19, 2004         FY26 and including annual escalation to ₹5.437/kWh in
+                       by DEE's wholly-owned subsidiary MPPL              FY27; APTEL appeal ongoing for further optimization.
+                       with Punjab State Electricity Board.
+                                                                      •   FY27 revenue from power and biomass pellets estimated
+                                                                          at ~₹80 crore, supported by ongoing restructuring
+                                                                          initiatives.
+
+[page 28]
+[method: text-layer (pdftotext -layout) | chars=1628]
+Non Core – Highlights
+
+                                             Management agility demonstrated
+     Proactive turnaround of non-core
+                                            by pivoting from power-only biomass
+    assets, where near-term losses from
+                                             operations to high-margin biomass
+     tariff revisions are being addressed
+                                             pellet manufacturing with minimal
+        through swift business model
+                                                      incremental capex
+                  recalibration
+
+
+
+    Pellet plant initiative expected to                                            Biomass pellet capacity recently
+    offset current cash burn, stabilize                                            became operational, enhancing
+    segment profitability, and restore                                            integration and long-term growth
+          historical margin levels                                                             visibility.
+
+
+
+
+                                                                                      Sustainability-led biomass
+                                              The additional pellet capacity is   platform continues to deliver ESG
+                                             proposed to be housed under the       value, with over 191,067 tons of
+                                              InVIT, enabling efficient capital        CO₂ emissions reduced,
+                                                        deployment                strengthening long-term relevance
+
+[page 29]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=1197 | text-layer chars (no-layout, non-whitespace)=369]
+[TEXT-LAYER, page 29]
+Vision 2030 & Strategic Roadmap
+Unlocking ₹2,500 Cr Revenue with 20% Margins by FY30
+
+ Revenue Trajectory                           2,500 Cr
+                                                           Order Book & Pipeline:
+
+                                                            2,428 Cr Executable Order Book
+                                                            2,000 Cr FY27 Order Visibility
+                                   1,800 Cr
+                                                            40% Bid Success Rate
+                        1,500 Cr
+               1,142                                               Op.EBITDA Guidance:
+    827                                                            19-20% margin by FY30
+                                                                   Op.EBITDA CAGR FY26-30:~26%
+
+   FY25A        FY26A     FY27E      FY28E         FY30E
+                                                                   PAT Drivers
+                                                                   9-10% of revenue in FY30
+                                                                   PAT CAGR FY26-30: ~30%
+           Revenue CAGR from FY26-30E ~22%
+
+[OCR page 29]
+Vision 2030 & Strategic Roadmap
+Unlocking Rs 2,500 Cr Revenue with 20% Margins by FY30
+Revenue Trajectory (rising arrow-line chart, values in Cr): FY25A 827 | FY26A 1,142 | FY27E 1,500 Cr | FY28E 1,800 Cr | FY30E 2,500 Cr
+Revenue CAGR from FY26-30E ~22%
+Order Book & Pipeline (red panel): 2,428 Cr Executable Order Book | 2,000 Cr FY27 Order Visibility | 40% Bid Success Rate
+Op.EBITDA Guidance: 19-20% margin by FY30 | Op.EBITDA CAGR FY26-30: ~26%
+PAT Drivers: 9-10% of revenue in FY30 | PAT CAGR FY26-30: ~30%
+[CHART, page 29, OCR text: Revenue Trajectory arrow chart - FY25A 827, FY26A 1,142, FY27E 1,500 Cr, FY28E 1,800 Cr, FY30E 2,500 Cr; Revenue CAGR FY26-30E ~22%.]
+
+[page 30]
+[method: text-layer (pdftotext -layout) | chars=3024]
+Vision 2030 & Strategic Roadmap
+          1. KEY INDUSTRY DRIVERS       2. MARGIN EXPANSION LEVERS                3. THE INVESTOR FLYWHEEL
+          Prioritized for Investors     Clear Value Creation                      Sustainable Value Creation
+
+      CORE ORDER BOOK VISIBILITY        STRUCTURAL MARGIN DRIVERS
+                                                                                        Order Visibility
+                                                                                        Strong pipeline across core
+          Domestic Thermal Expansion    Power sector mix shift driving margins          sectors
+          220 GW → 300 GW
+          (80 GW Addition by FY32)      Operating Leverage & Backward
+                                        integration (pipe mill)                         Capacity Utilization
+          Domestic Refining Expansion
+                                                                                        Higher utilization of
+          258 → 310 MMTPA by 2030
+                                        Plant proximity to ports                        integrated facilities
+          Export Opportunities
+          Strong export visibility       Automation – Productivity led
+                                                                                        Operating Leverage
+                                         efficiency
+                                                                                        Better absorption of fixed
+                                                                                        costs
+    Medium-Term STRATEGIC OPTIONALITY
+                                         Biomass Pellets
+
+                                                                                        Margin Expansion
+          Nuclear                          OPERATING EFFICIENCY                         Structural levers+ operating
+          Up~8 GW → 100 GW by FY47                                                      efficiency
+                                        Asset turns                <2x → ~3.5x
+                                                                   by FY30
+                                                                                        ROCE Improvement
+    EMERGING HIGH-GROWTH SEGMENTS
+                                                                                        Efficient capital deployment
+                                        Planned Minimal            INR 15-20 Cr
+          Data Centers                                             maintenance
+          $0.5T+ → $1T capex by 2026    capex
+                                                                   only                 Cash Flow Generation
+          (~ ₹ 25 Cr piping per 25MW)
+                                                                                        Supports growth &
+          Semiconductors                Debt reduction                                  shareholder value
+          Multi-$bn fabs pipeline
+
+[page 31]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=34 | text-layer chars (no-layout, non-whitespace)=19]
+[TEXT-LAYER, page 31]
+03
+
+
+     Financial
+     Overview
+
+[OCR page 31]
+03
+Financial Overview
+[section divider slide, factory imagery, no additional data]
+
+[page 32]
+[method: text-layer (pdftotext -layout) | chars=2034]
+Q1 FY27 – Consolidated P&L
+                                                                                                                      INR Cr
+
+                                                                                   % Change             % Change
+                   Particulars (₹ Cr.)              Q1 FY27         Q4 FY26                   Q1 FY26              FY26
+                                                                                     QoQ                   YoY
+
+Revenue from Operations                               294.5           361.6        (18.6%)     223.8     31.6%     1,142
+Op. EBITDA                                            49.7            65.9         (24.5%)     35.9      38.7%     189.3
+Op. EBITDA margin (%)                                16.9%           18.2%         (134bps)   16.0%      86bps     16.6%
+Add: Other Income                                      2.5            1.7           41.7%       4.1      -39.4%    16.6
+Less: Interest Expenses                               17.2            15.9           7.9%      11.5      49.8%     56.2
+Less: Depreciation & Amortisation                     15.0            13.9           8.1%      12.7      17.9%     53.5
+PBT                                                   20.1            37.9         (47.1%)     15.8      27.1%     96.2
+Taxes                                                  4.0            10.2         (61.1%)      2.6      50.6%     19.1
+Profit After Tax                                      16.1            27.7         (41.9%)     13.1      22.4%     77.2
+Profit After Tax margin (%)                           5.5%            7.7%         (219bps)    5.9%     (41bps)    6.8%
+EPS (Diluted)                                         2.32            3.99         (41.8%)      1.9      22.2%     11.14
+
+Note -Q4FY26 Op. EBITDA includes a net positive impact on account of Labour Code
+                                                                                                                               31
+
+[page 33]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=4834 | text-layer chars (no-layout, non-whitespace)=395]
+[TEXT-LAYER, page 33]
+Q1 FY27 Key Performance Indicators
+                                                                                                                                                            INR Cr
+
+              REVENUE from Operations                  Op.EBITDA & Op.EBITDA Margins (%)                                  PAT & PAT Margins (%)
+
+          ▲ 31.6% YoY            (18.6)% QoQ           ▲ 38.7% YoY             (24.5%) QoQ                        ▲ 22.4% YoY                (41.9%) QoQ
+                                                 200                                             30. 0%
+
+
+
+
+                                                 180
+Quarter
+
+
+
+
+                                                                                                          200                                                  15%
+
+
+
+
+                                                                                                 25. 0%
+
+
+
+
+                                                 160
+                                                                                                          180
+
+
+
+
+                                                                                                                                                               13%
+
+
+
+
+                                                                                                          160
+                                                 140
+
+
+
+
+                                                                                                 20. 0%
+                                                                                                                                                               11%
+
+
+
+
+                                                                          18.2%
+                                                                                                          140
+
+
+
+
+                                                 120
+
+
+
+
+                                                                                         16.9%                                                                 9%
+
+
+
+
+                                                 100
+                                                            16.0%                                15. 0%
+                                                                                                          120
+
+
+
+
+                                                                                                                                      7.7%
+                                                                                                          100                                                  7%
+
+
+
+
+                                                  80
+
+
+
+
+                                                                      65.9                                 80
+                                                                                                                     5.9%                              5.5%
+                                                                                                 10. 0%
+                                                                                                                                                               5%
+
+
+
+
+                                                                                     49.7
+                                                  60
+
+
+
+
+                                                                                                           60
+
+
+
+
+                                                  40
+                                                        35.9                                                                                                   3%
+
+
+
+
+                                                                                                           40
+
+
+                                                                                                 5.0 %
+
+
+
+
+                                                                                                                                  27.7
+                                                  20
+
+
+                                                                                                           20
+                                                                                                                 13.1                              16.1        1%
+
+
+
+
+            224          362             295
+                                                   0                                             0.0 %      0                                                  -1%
+
+
+
+
+           Q1FY26       Q4FY26          Q1FY27         Q1 FY26       Q4 FY26        Q1 FY27                     Q1 FY26          Q4 FY26          Q1 FY27
+
+[OCR page 33]
+Q1 FY27 Key Performance Indicators (INR Cr)
+REVENUE from Operations bar chart: Q1FY26 224 | Q4FY26 362 | Q1FY27 295. Callouts: 31.6% YoY (up-arrow), (18.6)% QoQ (down-arrow)
+Op.EBITDA & Op.EBITDA Margins (%) chart: Q1FY26 35.9 bar / 16.0% margin dot | Q4FY26 65.9 bar / 18.2% margin dot | Q1FY27 49.7 bar / 16.9% margin dot. Callouts: 38.7% YoY (up-arrow), (24.5%) QoQ (down-arrow)
+PAT & PAT Margins (%) chart: Q1FY26 13.1 bar / 5.9% margin dot | Q4FY26 27.7 bar / 7.7% margin dot | Q1FY27 16.1 bar / 5.5% margin dot. Callouts: 22.4% YoY (up-arrow), (41.9%) QoQ (down-arrow)
+[secondary Y-axis gridline scale marks visible in text-layer for the two right-hand charts (0-30.0% and 0-200 ranges) are chart-rendering artifacts, not additional data points]
+[CHART, page 33, OCR text: Three quarterly bar charts (Q1FY26 / Q4FY26 / Q1FY27): Revenue 224 / 362 / 295 (INR Cr); Op.EBITDA 35.9 / 65.9 / 49.7 (INR Cr) with margins 16.0% / 18.2% / 16.9%; PAT 13.1 / 27.7 / 16.1 (INR Cr) with margins 5.9% / 7.7% / 5.5%.]
+
+[page 34]
+[method: text-layer (pdftotext -layout) | chars=2317]
+FY26 Key Performance Indicators
+
+                      Debt to Equity (x)                            Net Debt to EBITDA(inc. other income) (x)
+
+                                                                                                                              5.00
+                                                           3.88          4.09                               4.02     3.81
+                                                                                          3.76
+                                                                                                                              4.00
+                             1.02
+              0.85                                 0.89                                                                       3.00
+     0.70                                  0.73
+                                                                                                                              2.00
+                                                                                                                              1.00
+                                                                                                                              0.00
+                                                           FY22          FY23            FY24               FY25     FY26
+     FY22     FY23           FY24          FY25    FY26
+                                                                                       Net Debt to EBITDA
+
+
+
+            Return on Capital Employed (%)                                        Return on Equity (%)
+
+
+
+                                                                                                                      9.10%
+                                                   9.80%
+                            8.80%          8.20%                                                             7.00%
+                                                                                           6.00%
+              6.60%
+    5.30%
+                                                                          3.20%
+                                                            1.90%
+
+
+     FY22     FY23           FY24          FY25    FY26     FY22          FY23             FY24               FY25     FY26
+
+[page 35]
+[method: text-layer + OCR (300dpi/tesseract, vision-verified) | text-layer chars (layout)=1211 | text-layer chars (no-layout, non-whitespace)=269]
+[TEXT-LAYER, page 35]
+  Capital Market Overview
+                                                                                       Marquee Investors
+                              Shareholding Pattern
+                     Public
+                      16%
+
+                                                               Current Market Price*                   INR ₹658
+                                                               52 Week High / Low                      INR 760 / 183
+         FII + DII
+           19%                                                 Market Capitalization                   ₹4,952 Cr.
+                                                Promoters
+                                                   65%
+                                                               No. Shares Outstanding                  7.52 Cr.
+
+                                                               NSE                                     DEEDEV
+                          Promoters      FII + DII   Public
+                                                               BSE                                     544198
+                                                              *CMP is as on 04.08.26
+
+
+
+As of August 2026
+
+[OCR page 35]
+Capital Market Overview
+Shareholding Pattern donut chart: Promoters 65%, FII + DII 19%, Public 16%
+Marquee Investors (logos): kotak Mutual Fund, LIC MUTUAL FUND, TATA MUTUAL FUND
+Current Market Price*: INR Rs 658
+52 Week High / Low: INR 760 / 183
+Market Capitalization: Rs 4,952 Cr.
+No. Shares Outstanding: 7.52 Cr.
+NSE: DEEDEV
+BSE: 544198
+*CMP is as on 04.08.26
+As of August 2026
+[CORRECTION NOTE: raw tesseract pass misread the Rupee glyph as a leading digit -- "INR 3658" and "24,952 Cr." in the automated OCR pass. Direct visual inspection of the 300 DPI page image and the independently-extracted text-layer both confirm the correct values are INR Rs 658 (CMP) and Rs 4,952 Cr. (Market Cap). The corrected values above are what is reported in the deck.]
+[CHART, page 35, OCR text: Shareholding Pattern donut - Promoters 65%, FII+DII 19%, Public 16%.]
+
+[page 36]
+[method: text-layer (pdftotext -layout) | chars=1968]
+SAFE HARBOR
+This presentation may contain certain “forward-looking statements”
+within the meaning of applicable securities laws and regulations, which
+may include those describing the Company’s strategies, strategic
+direction, objectives, future projects and/or prospects, estimates etc.
+Investors are cautioned that “forward looking statements” are based on
+certain assumptions of future events over which the Company exercises
+no control. Therefore, there can be no guarantee as to their accuracy and
+readers are advised not to place any undue reliance on these forward-
+                                                                                Thank You
+looking statements. The Company undertakes no obligation to publicly
+update or revise any forward-looking statements, whether as a result of
+new information, future events, or otherwise. These statements involve a
+number of risks, uncertainties and other factors that could cause actual
+results or positions to differ materially from those that may be projected
+or implied by these forward-looking statements. Such risks and
+uncertainties include, but are not limited to; growth, competition,
+acquisitions, domestic and international economic conditions affecting
+demand, supply and price conditions in the various business's verticals in
+the Company’s portfolio, changes in Government regulations, laws,                   For further queries, Please contact:
+statutes, judicial pronouncement, tax regimes, and the ability to attract    DEE Development Engineers     Investor Relations Advisors:
+and retain high quality human resource.                                      Brham Yadav -                 Anand Venugopal - 70218 52071
+                                                                             brhamp.yadav@deepiping.com    Ajinkya Salunke - 91360 39920
+                                                                                                           Email - dee@adfactorspr.com
+
+```yaml
+stage: A1-extractor
+company: "D-DEV"
+quarter: "Q1 FY27"
+doctype: "presentation"
+model: claude-sonnet-5
+status: complete
+page_count: 36
+formfeed_count: 36
+line_count: 1243
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1"
+ocr_pages: [2, 3, 4, 10, 11, 14, 17, 25, 26, 29, 31, 33, 35]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/d-dev-q1fy27/work/extract_deck_d-dev_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

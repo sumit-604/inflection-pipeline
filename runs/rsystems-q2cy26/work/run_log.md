@@ -65,3 +65,8 @@
 ## CLOSE
 - Count reconciliation: results 31 notes / 8 agenda items / 281 line items / 27 auditor paras / 31 entities; presentation 189 rows; concall 0 (not held). All reviewed.
 - Pipeline clean run end to end; one A5 correction loop (2 arithmetic + 1 graft), resolved; A5 loop-2 COMPLETE.
+
+## ADDENDUM RUN — Investor Presentation (deck) added 2026-08-05
+- inputs/deck_rsystems_q2cy26.pdf (16pp, Reg 30 investor presentation for Aug-05 analyst call, quarter ended 30-Jun-2026) → doctype = presentation (slide deck; distinct from the earlier earnings press release).
+- Image-heavy slides flagged for OCR fallback: pages 2/4/11/13/16 (<100-550 chars).
+- Chain: A1 → A2 → A3 (deck) → A4 re-merge overlay → A5 audit → Notion update.

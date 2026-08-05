@@ -89,3 +89,8 @@
 ## CONCALL CHAIN — MASTER GATE (transcript supplied 2026-08-05, call held 05-Aug-2026)
 - inputs/concall_rsystems_q2cy26.txt saved verbatim (raw ASR transcript, garbles noted for downstream). doctype=concall.
 - Chain: A1 (line-number) -> A2 (turns/questions/mgmt-numbers) -> A3 (concall forensics) -> A4 (Role 5 master-gate overlay) -> A5 -> Notion.
+
+## CONCALL GATES
+- A1 PASS 73/73 turns verbatim. A2 PASS 73 turns / 8 threads / 21 questions / 73 mgmt-numbers / 7 non-disclosures / 9 guidance-refusals. A3 PASS 17/17.
+- A3 master-gate reads: Novigo rev/margin DODGED 3rd straight qtr (evasion flag); organic CC growth no number (analyst '3-4% return' framing implies below); margin CONCEDED FX-propped + guided DOWN to ~18% sustainable (below reported 20.1%); ACV deceleration no forward number. New: data+cloud >50%, ETR normalized 28-29%, fwd cover $43.32m@93.27, Middle East Novigo drag (unsized).
+- A4 master-gate-resolution overlay launched.

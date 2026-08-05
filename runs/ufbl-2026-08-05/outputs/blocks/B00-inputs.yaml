@@ -1,0 +1,59 @@
+stage: B00-inputs
+company: UFBL
+run_date: 2026-08-05
+model: orchestrator
+status: complete
+company_identity: "United Foodbrands Ltd (UFBL), erstwhile Barbeque Nation Hospitality Ltd (per ICRA rating 28-Oct-2025). Casual-dining/restaurant chain: Barbeque Nation India + International + Premium CDR (Toscano & Salt)."
+run_type: full
+concalls_available: true
+
+inventory:
+  prospectus: 0            # empty
+  annual_report: 1         # Annual_Report_2023.pdf == FY2025 AR (mislabeled), current
+  results: 2               # Q4 FY26 (audited, 19-May-2026) + Q1 FY27 (un-audited, 04-Aug-2026)
+  rating: 1                # ICRA 28-Oct-2025, IMAGE-ONLY scan (vision Read required)
+  concalls: 4              # Q1 FY26 (31-Jul-25), Q2 FY26 (11-Nov-25), Q3 FY26 (30-Jan-26), Q4 FY26 (20-May-26)
+  peer_concalls: 15        # RBA(4), Sapphire(3), Speciality(4), Westlife(4)
+  announcements: 0         # empty
+  shareholding: 0          # empty (operator supplied non-anchored screener screenshot)
+  research: 0              # empty (plus 1 MOSL broker note misfiled in presentation/)
+  screening: 30            # only screener-Data_Sheet.csv populated (FY17-FY26); other screener CSVs empty templates
+  presentation: 3          # Q3 FY26 (31-Jan-26) + Q1 FY27 (04-Aug-26) + 1 MOSL broker note (non-anchored)
+
+input_gaps:
+  - type: prospectus
+    severity: LOW
+    note: "Empty. UFBL long-listed (erstwhile BBQ Nation, listed ~2021, >3y). Not a HIGH gap; prospectus not expected. Backward baseline runs on the 10-yr screener history + FY2025 AR."
+  - type: announcements
+    severity: MEDIUM
+    note: "Empty. Loses the documented-ACTION (Reg 30) record; intent-and-action cross-check for stages 5/7/8 runs on concall/AR/results evidence only. Stage 8 uses web search for material events."
+  - type: shareholding
+    severity: MEDIUM
+    note: "Anchored SHP filing not collected. Stage 10 marks FII+DII unresolved (anchored). Operator supplied a screener SHP screenshot (NON-ANCHORED, in OPERATOR_CONTEXT.md): FII+DII ~27.8% Jun-2026, so UA is moot (far above 3% threshold) regardless. Institutions DECLINING through the trough; promoter ~34.6% creeping up; pledge NOT FOUND."
+  - type: research
+    severity: LOW
+    note: "research/ empty (no anchored impact). One Motilal Oswal broker note is misfiled in presentation/ (20260805083504_United-Foodbrands...Motilal-Oswal.pdf); treated as NON-ANCHORED research, leads only."
+
+collector_defects:
+  - "sector_cap_row auto-picked 'Hospitals / dialysis / healthcare services' (wrong for a restaurant chain). Operator ruling 2026-08-05: corrected to 'Branded apparel / FMCG' (35x). No exact QSR/restaurant row exists in Section 1B. Applies phase-3 only. Manifest updated."
+  - "annual-report file 'Annual_Report_2023.pdf' is actually the FY2024-25 (FY2025) AR (19th AGM, notice 13-Aug-2025). Collector filename mislabel (AURUM/MAPMYINDIA/OBSCP class). AR is CURRENT, not stale."
+  - "screener P&L/BS/CF/Quarters CSVs are empty templates; only screener-Data_Sheet.csv populated (FY17-FY26). Gate 0 sources Data_Sheet + results extracts + AR statements."
+  - "MOSL broker note misfiled under presentation/ instead of research/; provenance-labeled NON-ANCHORED."
+
+pdf_notes:
+  - "All 25 born-digital PDFs pre-extracted to page-marked .txt at outputs/_working/extracts/ (reliable-default per LESSONS; avoids flaky Read rendering + 32MB wall). Stages/verifiers point at the .txt."
+  - "rating/ratings.pdf is IMAGE-ONLY (0 extractable chars, 7pp). Readable via vision Read (poppler installed). Verifier A must read it via Read tool page-render, NOT text-grep, and must NOT flag its figures as unanchored merely because extraction is empty. Key content already confirmed: ICRA [ICRA]A(Negative)/A2+, outlook revised to Negative from Stable, SSSG -3.8% FY25 / -3.4% Q1 FY26, 236 outlets at 30-Jun-2025, rated amount enhanced to Rs95.5cr."
+  - "Investor_Presentation_1 (Q1 FY27) is image-heavy (15k chars/23pp); numeric tables may be under-read from text - use vision Read for specific slides where needed."
+
+operator_context:
+  file: outputs/_working/OPERATOR_CONTEXT.md
+  provenance: "NON-ANCHORED operator-supplied memory (explicit stage-0 ruling: 'also pass as non-anchored memory'). Same status as research/COMPANY MEMORY: leads and cross-checks only, never anchored. Every figure re-extracted and verified against a source PDF; source wins on any disagreement. Contains SHP screenshot (Sep23-Jun26) + Feb-Aug 2026 operational digest."
+
+operator_rulings_stage0:
+  - "Proceed with the four empty folders as documented gaps (no push)."
+  - "Pass operator digest + SHP screenshot as NON-ANCHORED memory."
+  - "sector_cap_row -> Branded apparel / FMCG (35x)."
+
+concall_selection: "4 concalls present; per contract used the 3 MOST RECENT for stage 5: Q2 FY26 (Nov-2025) -> Q3 FY26 (Feb-2026) -> Q4 FY26 (May-2026), oldest first. Q1 FY26 (Aug-2025, trough) not passed to stage 5 but is read by Verifier B (all transcripts)."
+
+flags: []

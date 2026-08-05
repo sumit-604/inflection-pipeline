@@ -1,0 +1,45 @@
+stage: B11-valuation
+company: "FABTECH"
+run_date: "2026-08-04"
+model: claude-opus-4-8
+status: complete
+input_gaps: ["peer multiples PE/EV-EBITDA/PB not tabulated (B06)", "IPO inorganic-tranche deployment timeline", "revenue-recognition method timeline"]
+flags:
+  - "FLAG-CASH (STRUCTURAL, 0.65x applied, no growth offset)"
+  - "FLAG-PROMOTER (CONCERN)"
+  - "FLAG-GATE0 (AVOID 63/160)"
+  - "SHARED-CATALYST (IPO deployment drives both Route A ROCE and Pillar 3a - single point of failure, carry to Role 3)"
+  - "EPS-QUALITY (42.6% of PBT is non-operating other income - forex + IPO-deposit interest)"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "13.0x on one-year-forward FY27 EPS (operator override; top of additive 11.0-13.0x range, under 20x cap)"
+destination_pe:
+  track1_rrm: {low: 8.0, mid: 8.5, high: 9.0, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 11.0, mid: 12.1, high: 13.0}
+  divergence_pct: 30.0
+  governing_track: "Operator-approved 13x forward supersedes both derived tracks; RRM 8.5x retained as conservative floor"
+pillar_detail:
+  roce_used: 16.2
+  roce_base: 15.6
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "A-governs-B-suppressed"
+  cash_multiplier: 0.65
+  structural_or_growth: "structural"
+  growth_offset: 0
+  growth_premium: 2.0
+  strategic_premium: 0.0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 20
+hurdle_ratio: {base: 1.46, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 80.3, base: 98.2, bull: 102.9}
+  track2: {bear: 122.9, base: 150.2, bull: 157.4}
+expected_cagr_prob_weighted: 12.5
+entry_range: {low: 62.9, high: 80.6}
+mos_price: 61.5
+upside_downside_ratio: -0.06
+decision: "AVOID (on valuation; HR STOP, CMP Rs 152 vs entry Rs 76.9 / MoS Rs 61.5; already at 13x-forward destination)"
+unresolved_inputs_used: []
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "Priced at its own 13x-forward destination with no re-rating headroom and 42.6% non-operating profit; fails the 25% hurdle even on capped bull earnings, so AVOID until the Rs 77 zone with documented IPO-cash deployment."

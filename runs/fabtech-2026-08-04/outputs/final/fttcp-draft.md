@@ -36,7 +36,11 @@ Every call below is made. Each carries a confidence tag and the single fact that
 
 **12. Step 2E finds documented action on revenue and none on cash.** The Q1 FY27 results notes carry board approvals for up to Rs 2,400 lakh into the UAE subsidiary, Rs 249 lakh into FT Institutions completed 3 July 2026, and a shareholders agreement for a Saudi step down subsidiary. That is real action and it is already credited inside the revenue catalyst table. On cash there is vision and no action across three calls. The ledger therefore confirms the conservative cash read rather than loosening it. `sure`. Overturned by: an exchange filing showing a working capital facility with a debtor day target.
 
-**13. Undiscovered Alpha does not apply.** Two of the three qualifiers fail outright: listed about 10 months, short of the 12 month test, and Gate 0 core is 51 against a 60 threshold with EM at 19 against 25. The third qualifier, FII plus DII below 3%, is NOT FOUND because no shareholding pattern was collected. The missing file does not change the answer. `sure`. Overturned by: nothing before October 2026, when the listing test first becomes passable.
+**13. Undiscovered Alpha does not apply, but the institutional test now passes.** Updated in review: the operator supplied the June 2026 shareholding pattern. FII plus DII is 0.02 plus 2.45, which is 2.47%, below the 3% qualifier, so that leg PASSES on anchored data. UA still fails on the other two: listed about 10 months against the 12 month test, and Gate 0 core 51 against 60 with EM 19 against 25. So UA does not apply and the destination PE is unchanged. This matters forward: from October 2026 the listing test passes, and UA then turns on a single Gate 0 or EM improvement. `sure`. Overturned by: Gate 0 or EM crossing their thresholds after October 2026.
+
+**15. Promoter holding is stable and the register is clean of selling.** Added in review from the June 2026 shareholding pattern: promoters 68.94%, flat across December 2025, March 2026 and June 2026, no dilution. DII rising 1.99% to 2.15% to 2.45%, FII negligible. This closes the B03 preliminary promoter staleness flag and confirms the zero pledge, no sell picture from B08. `sure`. Overturned by: a later filing showing promoter selling or a pledge.
+
+**16. Operational ROCE anchored at 16.2%, per the operator's instruction to strip idle spare cash.** Confirmed in review. Statutory FY26 ROCE 11.25%; strip the Rs 179.22 Cr of undeployed IPO proceeds from capital employed and about Rs 7 Cr of deposit interest from EBIT to get 16.2%. A fuller strip that also removes Rs 25.69 Cr of non operating mutual fund investments gives 17.9%. The conservative 16.2% feeds Pillar 1. `fairly sure`. Overturned by: evidence that a large part of the Rs 208.57 Cr cash is genuinely operating working capital, not idle.
 
 **14. Genuinely uncertain, reported as unresolved: whether the FY27 revenue guidance of 20% to 25% is reachable.** Two readings. Reading one: the order book at 2.19 times revenue plus H2 loading makes it reachable, and Q1 is seasonally the weakest quarter, so the 10.3% Q1 growth is not the run rate. Reading two: guidance has already been cut twice from 30% to 40% down to 20% to 25%, Q1 delivered 10.3%, and B09's own market sizing supports only 13% to 14% over five years. **The draft numbers use reading two**, since the market sizing and the delivery record agree with each other and management's record does not support the higher path. `genuinely uncertain`. Overturned by: H1 FY27 revenue above Rs 210 Cr, which would put the year on track for 20% plus.
 
@@ -49,12 +53,12 @@ Every call below is made. Each carries a confidence tag and the single fact that
 | Latest concall transcript | Yes | Q1 FY27, 3 August 2026, actual transcript |
 | Last 3 results filings | Partial | Q4 FY26 and Q1 FY27 filed results read directly; Q3 FY26 not collected |
 | Latest investor presentation | Yes | Q1 FY27 deck, 28 July 2026 |
-| Recent exchange announcements | **No** | inputs/announcements/ absent. Step 2E runs on concall, AR, prospectus and results notes only. Confidence lowered. |
+| Recent exchange announcements | Partial | inputs/announcements/ absent, but the operator supplied a six month operational digest in review that fills the order win and board action record as documented leads. |
 | Latest credit rating report | Yes | CRISIL BBB+/Stable, A2, reaffirmed 15 October 2025. Decisive for the cash call. |
 | Peer comparable data | Yes | Four arm's length peers, 12 transcripts |
-| Shareholding pattern | **No** | FII plus DII NOT FOUND. Blocks the third UA qualifier, which fails anyway on the other two. |
+| Shareholding pattern | Yes, in review | Operator supplied the June 2026 pattern. FII plus DII 2.47%, promoters 68.94%. |
 
-Two required inputs are missing, below the three that would force an inconclusive verdict. Confidence is reduced one notch and flagged.
+Both inputs flagged missing in the first draft were supplied by the operator in review, one as a screener shareholding screenshot (anchored equivalent), one as an operational digest (documented leads). Confidence is restored toward the Phase 1 level, held one notch down only for the skipped cross family grader.
 
 ---
 
@@ -195,6 +199,8 @@ CRISIL is explicit that this is how the model works, not a phase it is passing t
 
 Ion Exchange and Praj, running the same kind of project business, both treat percentage of completion billing as settled practice, and Ion Exchange discloses project level detail on stuck contracts that Fabtech does not offer on its own overdue book.
 
+One mitigant, added in review from the operator's operational digest: customer advances of about Rs 110 Cr partially offset receivables, and receivables are mostly LC or CAD backed. That is a genuine negative working capital feature and it is why the position is not worse. It does not create a catalyst. Advances are a standing feature of the model, not a new initiative, and CRISIL rates the working capital intensive net of them. The percentage of completion recognition change is still deferred, and the board just raised borrowing limits, which is more debt to fund working capital, not less.
+
 **Catalyst: NONE FOUND. The absence is the finding.**
 
 **Forward: DECLINING, probability below 20%, catalyst strength None. Score -1.**
@@ -324,4 +330,14 @@ Whichever basis is chosen, the same caution applies to both: a large slice of re
 
 ## CONFIDENCE
 
-Reduced from the Phase 1 overall of 68, on two counts. Two required inputs are missing, exchange announcements and the shareholding pattern. And the cross family grader did not run this session, because no non Claude provider key is configured, so this draft carries no independent third family read on rubric adherence. Against that, the rating rationale was read directly this session and it closed the single largest open question left by Phase 1.
+Restored toward the Phase 1 overall of 68 after review. The two inputs missing in the first draft, exchange announcements and the shareholding pattern, were both supplied by the operator. The rating rationale was read directly this session and closed the single largest open question left by Phase 1. Held one notch down only because the cross family grader did not run, since no non Claude provider key is configured, so this draft carries no independent third family read on rubric adherence.
+
+---
+
+## REVIEW LOG (operator inputs, 2026-08-04)
+
+- Operator supplied the June 2026 shareholding pattern (screener screenshot, anchored equivalent). Recorded: promoters 68.94% flat three quarters, FII 0.02%, DII 2.45% rising, public 28.57%, 29,408 shareholders. Closed the FII plus DII UA qualifier (2.47%, passes) and the promoter staleness flag. UA still does not apply on the listing and Gate 0 or EM legs.
+- Operator supplied a six month operational digest (Feb to Aug 2026), treated as documented leads corroborating the concall record: order wins (Botswana Rs 31.23 Cr, West Africa OSD Rs 63.6 Cr, Saudi animal vaccine Rs 65.5 Cr, North Africa EU-GMP Rs 49-52 Cr, Q1 FY27 inflows Rs 96.5 Cr), SACE Saudi entity with first civil order, board approvals (ODI up to Rs 24 Cr, FT Institutions Rs 2.49 Cr, one independent director ceased, borrowing limits raised), and the customer advances of about Rs 110 Cr offsetting receivables. Net effect: strengthened the revenue leg, softened cash severity without lifting the cash catalyst off NONE.
+- Operator directed operational ROCE only, stripping idle spare cash. Confirmed the draft's Route A treatment and anchored Pillar 1 at operational ROCE 16.2%.
+- Composite unchanged at +1, DEEP WATCH leaning AVOID, Kernex cap holds.
+- PENDING operator sign off: approval of the destination PE base, and the earnings basis choice (forward or trailing).

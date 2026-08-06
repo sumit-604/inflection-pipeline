@@ -140,3 +140,89 @@ commitments:
 gate_a3: pass
 blank_checks: []
 ```
+
+---
+
+## TARGETED SUPPLEMENT — A5 GAP CLOSURE (added 2026-08-06)
+
+Scope: ONE additional forensic cluster to close the A5-adversary gap on the
+YoY ROE decline and its disclosed driver. Cross-document evidence (results
+filing + investor presentation). Not a re-run of the 17-check pass; the
+scorecard and YAML above are unchanged. This supplement adds F-13 and maps it
+to F16 (presentation reframing) primary, corroborated by F11 (net-worth /
+equity-base composition) and F9 (OCI / FVOCI). Because the primary evidence is
+the deck (a presentation doctype), F16 — marked N.A. on the results doctype
+above — is the correct home for the framing contradiction; the filing FVOCI
+line supplies the corroborating results-side anchor.
+
+### Evidence read verbatim (anchored to the extracts, not to approximate cites)
+
+Presentation `extract_presentation_iks_q1fy27.txt` (slide footer 12 / p13):
+- L415 (slide TITLE): "Q1 FY 27 - Improving EPS and maintaining high ROE"
+- L420 / L421 / L423 (ROE % series, left-to-right): "32.3%" (Q1 FY26) -> "31.3%"
+  (Q4 FY26) -> "26.4%" (Q1 FY27); x-axis period labels at L435.
+  A2 ledger flags this series `AMBIGUOUS_CHART_MAPPING` (ledger units 6-8,
+  L323-325): the period-to-value binding is inferred sequentially, not directly
+  labelled, but is corroborated by the footnote "*ROE declined..." and the
+  x-axis order — mapping treated as robust for this finding.
+- L438-439 (ROE definition): "Return on Equity is calculated as profit for the
+  period divided by average equity balance during the period." (annualised basis:
+  quarterly PAT 1,937.41 x4 / average equity ~= 26.4% reconciles.)
+- L443 (footnote, the disclosed DRIVER): "*ROE declined due to increased equity
+  base from revaluation of Abridge, alongside lower earnings from reduced
+  currency gains and one-time acquisition costs."
+
+Filing `extract_results_iks_q1fy27.txt` (Statement of OCI, Sr.No 8):
+- L377 (FVOCI corroboration): "Changes in the fair value of equity investments
+  at FVOCI  226.42" — consolidated Q1FY27 = 226.42 (FY26 = 931.52; standalone =
+  dash all periods; A2 ledger L179, ZERO_STANDING). Income tax on the item
+  L378 (56.86); net-of-tax addition to the FVOCI reserve L379 = 178.47
+  (consolidated). This is the non-cash Abridge (equity investment) mark flowing
+  through OCI into net worth — the exact equity-base inflator the deck footnote
+  names.
+
+### FINDINGS TABLE (supplement)
+
+| id | check | ledger row ref | line/turn/slide | verbatim quote | classification | forward implication |
+|----|-------|----------------|-----------------|----------------|----------------|---------------------|
+| F-13 | F16 (primary); corrob. F11, F9 | Deck slide 12 title + ROE series + footnote (ledger units 6-8, footnote #10); filing S8 FVOCI L377 (ledger L179) | Deck L415, L420-423, L438-439, L443; filing L377-379 | Title: "Improving EPS and maintaining high ROE" (L415) vs footnote: "*ROE declined due to increased equity base from revaluation of Abridge, alongside lower earnings from reduced currency gains and one-time acquisition costs" (L443) | AMBIGUOUS | Title-vs-data contradiction: the deck headlines "maintaining high ROE" while its own chart shows ROE 32.3% -> 26.4%, a ~590bps YoY fall (~490bps QoQ from 31.3%). The footnote leads with a benign non-cash denominator artefact (the Abridge FVOCI mark, filing L377 Rs226.42mn gross / Rs178.47mn net) but concedes, "alongside," an EARNINGS-side driver (reduced currency gains + acquisition costs). Illustrative normalisation ex the Abridge revaluation reserve (annualised PAT 7,749.6 / average equity ~29,354 less the cumulative net FVOCI reserve ~872mn = ~28,482) lifts ROE only ~26.4% -> ~27.2%, i.e. the named Abridge artefact explains at most ~80bps of the ~590bps decline; the residual ~500bps is earnings/denominator effects the footnote sub-orders (FX-gain normalisation, acquisition drag, and IPO/acquisition equity growth that dwarfs the Abridge mark). So the reported ROE decline does NOT understate operating deterioration by hiding a non-cash mark — ex-artefact ROE is marginally HIGHER — but the deck's FRAMING (headline "maintaining" + footnote leading on the benign equity-base line) understates that the fall is mostly earnings-driven, and IKS as a serial acquirer makes "one-time acquisition costs" a likely recurring item. Direction of true forward operating ROE unresolved -> lean bear -> A4 management question. |
+
+### Normalised-ROE working (illustrative; balance-sheet detail not in the quarterly)
+- Reported ROE Q1FY27 (consolidated, annualised) = 26.4% (deck L423).
+- Annualised consolidated PAT = 1,937.41 x4 = 7,749.64 (filing L345).
+- Implied average equity = 7,749.64 / 0.264 ~= 29,354mn.
+- Cumulative net FVOCI (Abridge) reserve = FY26 net 693.44 + Q1FY27 net 178.47
+  ~= 871.9mn (gross 931.52 + 226.42 = 1,157.9mn) (filing L377-379).
+- Average equity ex Abridge reserve ~= 29,354 - 872 = 28,482mn.
+- Normalised ROE ~= 7,749.64 / 28,482 ~= 27.2% -> Abridge mark explains ~80bps
+  of the ~590bps YoY decline; ~500bps is earnings/other-equity growth.
+
+### A4 HANDOFF — SUPPLEMENT
+AMBIGUOUS (lean-bear, resolve via question): F-13. Questions to generate:
+(1) Provide ROE decomposition — how much of the 590bps YoY fall is denominator
+(equity-base growth from IPO proceeds, acquisition equity, and the Rs226.42mn
+Abridge FVOCI mark) vs numerator (earnings, incl. the reduced currency gains
+and the "one-time" acquisition costs quantified)? (2) Are the "one-time
+acquisition costs" genuinely non-recurring given the ongoing acquisition
+cadence (ARAI, WWMG, TruBridge)? (3) Normalised/underlying ROE excluding the
+non-cash Abridge revaluation and one-off costs, and the reconciliation to the
+"maintaining high ROE" headline claim.
+
+```yaml
+# SUPPLEMENT YAML — A5 gap closure (F-13 only; does not supersede the primary block above)
+stage: A3-forensics-supplement
+company: "IKS"
+quarter: "q1fy27"
+doctype: "presentation+results (cross-doc)"
+model: claude-opus-4-8
+status: complete
+forensics_path: "/home/user/inflection-pipeline/runs/iks-q1fy27/work/forensics_results_iks_q1fy27.md"
+new_findings:
+  - {id: "F-13", check: "F16", corroborating_checks: ["F11", "F9"], line: "deck L415,L420-423,L438-439,L443; filing L377-379", ledger_ref: "pres ledger units 6-8 + footnote #10 (L134-135); results ledger L179", verbatim_title: "Improving EPS and maintaining high ROE", verbatim_footnote: "*ROE declined due to increased equity base from revaluation of Abridge, alongside lower earnings from reduced currency gains and one-time acquisition costs", classification: "AMBIGUOUS", implication: "Title-vs-data contradiction: deck says 'maintaining high ROE' while chart shows 32.3%->26.4% (~590bps YoY). Abridge FVOCI mark (Rs226.42mn gross/178.47mn net, filing L377-379) explains only ~80bps; residual ~500bps is earnings/denominator. Framing understates that the decline is mostly earnings-driven; 'one-time' acquisition costs likely recur -> A4 question."}
+ambiguous: ["F-13"]
+forward_signals: []
+gate_a3: pass          # F-13 carries a status (FINDING) and a cite; no blank check introduced
+new_finding_status:
+  F-13: FINDING
+new_finding_line: "deck L415, L420-423, L443; filing L377-379"
+```

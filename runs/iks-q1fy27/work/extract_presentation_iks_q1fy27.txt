@@ -1,0 +1,595 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 18
+formfeed_count: 18
+line_count: 595
+unit_convention: Millions (INR Mn, stated explicitly throughout deck; USD mn on one line item)
+conversion_factor_to_cr: Millions -> x0.1 (Rs Mn / 10 = Rs Crores)
+ocr_pages: [2, 11 (chart), 16 (chart), 18]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+NOTE: PDF page 1 is a SEBI Regulation 30 covering letter (not a numbered presentation
+slide). Presentation slides are printed with their own footer numbers 1-17 on PDF pages 2-18
+(PDF page N = slide footer number N-1, for N=2..18). Both PDF page number and slide footer
+number are marked below at each page boundary.
+
+[page 1]
+[slide footer number: none - covering letter]
+    August 5, 2026
+
+    BSE Limited                                                              National Stock Exchange of India Limited
+    The Listing Department                                                   The Listing Department
+    Phiroze Jeejeebhoy Towers                                                Exchange Plaza, Plot No. C/1, G Block,
+    25th Floor, Dalal Street                                                 Bandra Kurla Complex
+    Fort, Mumbai 400 001                                                     Bandra (East), Mumbai 400051
+    Maharashtra, India                                                       Maharashtra, India
+
+    BSE Scrip Code: 544309                                                   NSE Symbol: IKS
+
+    Dear Sir/Ma’am,
+
+    Sub: Investor Presentation
+
+    Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+    2015, please find attached herewith investor presentation on the financial results of the Company for
+    the quarter ended June 30, 2026.
+
+    The said presentation is also being uploaded on the website of the Company at the
+    https://ikshealth.com/investor-relations/
+
+    Request you to take it on record and disseminate the same on your website.
+
+    Thanking you.
+
+    Yours sincerely,
+    For Inventurus Knowledge Solutions Limited
+     Sameer S Digitally signed by
+              Sameer S Chavan
+
+     Chavan Date:   2026.08.05
+              22:05:01 +05'30'
+    Sameer Chavan
+    Company Secretary and Compliance Officer
+    Membership No. F7211
+
+    Encl: As above
+
+
+
+
+Inventurus Knowledge Solutions Limited
+
+
+Registered Address: 801, Building No. 5, 8th Floor, Mindspace Business Park (SEZ),
+Thane-Belapur Road, Airoli, Navi Mumbai – 400708, Thane, Maharashtra, India
+Ph.: +91 22 3071 1100 | W: www.ikshealth.com | CIN: L72200MH2006PLC337651
+
+[page 2]
+[slide footer number: 1]
+IKS Health
+Q1 FY 27 Investor Presentation
+
+
+
+
+                                 1
+
+[OCR page 2]
+IK
+HEALTH
+IKS Health
+Q1 FY 27 Investor Presentation
+[END OCR page 2 - confirms text layer, no additional data]
+
+[page 3]
+[slide footer number: 2]
+Disclaimer
+ This presentation may include opinions and assumptions about future
+ performance which could be considered as forward-looking statements.
+ Forward-looking statements intrinsically cover several risks and uncertainties,
+ which may lead to a material difference between actual results and the
+ statements themselves. Such statements comprise the company’s current
+ visibility on market movements, client discussions, and related factors.
+ Inventurus Knowledge Solutions Limited does not assume an obligation to
+ update or revise any forward-looking statements.
+
+
+
+
+                                                                                   2
+
+[page 4]
+[slide footer number: 3]
+IKS Health - a comprehensive healthcare enablement platform
+empowering provider organizations
+
+                                                                                US$260bn /
+                                    US$5tn                                       US$34bn                                              8% / 12%
+       Total                    US Healthcare                              TAM / Outsourced Market                           TAM / Outsourced Market
+ Addressable                 Expenditure (CY2024)                                 (CY2023)                                     CAGR (2023-2028E)
+    Market1,2                                                                                                                                                                         The only
+                                                                                                                                                                                   Comprehensive
+                                                                                                                                                                                    platform that
+                                                                                                                                                                                 delegates all chores
+                                600+/650+                                             85%+                                           5+ Years                                     across the patient
+                                                                                                                                Top 10 / Top 5 Clients                                 journey
+                          Healthcare Organizations                          Revenues from Repeat                                  Average Vintage
+  Established                    Q1 27/Q1 26                                     Customers
+                                                                                                                                 (As of Mar 31, 2026)                                   Adding a
+        Client
+                                                                                                                                                                                  technology-enabled
+Relationships
+                                                                                                                                                                                 layer to ‘care delivery
+                                                                                                                                                                                    pyramid’ to help
+                                                                                                                                                                                 Physician Enterprises
+                             12,889 / 1,902                                             565                                                 57                                     achieve optimized
+                           Employees / Clinically                             Technology Focused                                  Sales & Marketing
+                                                                                                                                                                                      revenue and
+                               trained staff                                      Employees                                          Employees                                     reduced expenses
+  Specialised
+                            (As of June 30, 2026)                             (As of June 30, 2026)                             (As of June 30, 2026)
+   workforce
+
+
+
+
+                 Note: Numbers Rounded off to nearest Integer / percent; 1. Source: Zinnov Report; 2. TAM- Total Addressable Market for RCM, VBC, Patient, Coding and Client Services. 3. Repeat clients refers to   3
+                 clients who availed our platform or solutions during the previous period, and revenue generated from such clients are calculated for the relevant period
+
+[page 5]
+[slide footer number: 4]
+IKS Health: 5 strategic pillars of execution
+
+
+
+    Integrated System of Action                Proprietary models driven               Drive growth momentum                     Get back to optimized                 Culture and leadership
+     (SOA) & System of Record                  comprehensive System of                 through re-stratified key               margins through operating
+    (SOR) for rural/ community                 Action with API integration                   growth levers                     model transformation and
+       health system market                     for large medical group                                                                synergies
+                                                         market
+   ● Create the structured uniﬁed data       ● Translate the trained agentic        ● Pick up land and expand (cross sell)   ● Evolve from Tech led, HITL to       ● Continue to institutionalize an
+     moat for AI training (5MM+                workﬂows from Rural/ Community         momentum in installed base of            Autonomy through explainable AI       outcome driven culture and
+     longitudinal records) that enable our     settings to the large group and        Large Health Systems                     for non-deterministic outcomes        operating model to enable outcome
+     SLM’s                                     ambulatory settings and vice versa   ● Cross sell System of Action (SOA) in   ● Execute Operating model               based deals
+   ● Train our proprietary SLM’s that        ● Build API-powered integration with     the Rural/ Community (TruBridge)         Transformation in TruBridge RCM &   ● Consolidated Leadership team
+     power the interconnected                  relevant EHRs                          installed base                           Coding Businesses                     leveraging complementary
+     workﬂows leveraging the above AI        ● Embody Explainability for            ● Platform sales in mid-size Health      ● Realize Operating and SG&A            strengths and capabilities
+     Training moat                             Generative AI and HITL where           Systems / Medical Groups                 Synergies                           ● One Uniﬁed Culture based on
+   ● Build explainability in each of the       applicable                                                                                                            intentional manifest of value
+     Generative AI driven workﬂows; and      ● Continue to pursue feature-based                                                                                      behaviors
+     empower with human-in-the-loop            KLAS leadership while
+     (HITL) and/or Rules-based AI for          demonstrating interconnected end
+     deterministic outcomes                    to end agentic workﬂows (platform
+   ● Embed the SOA agentic workﬂows in         capabilities)
+     the native SOR (Electronic Health
+     Record - EHR) workﬂows
+
+
+
+
+                                                                                                                                                                                                         4
+
+[page 6]
+[slide footer number: 5]
+Awards and Recognition
+
+               US Patent US 12,619,923 В2 for Engagement Learning Engine
+               AI-driven “Awareness-Ability-Willingness” (AAW) behavioral modeling powers IKS Health’s
+               patient access solutions including MyCareHub which enhance patient engagement and
+               optimize patient scheduling.
+
+
+
+
+                2026 Dallas-Fort Worth Titan 100
+                Titan CEO - Sachin K. Gupta, Founder & Global CEO
+
+
+
+
+               Best CFO & Finance Strategy Excellence Awards 2026
+                1. Excellence in Investor Relations (Organisational category)
+                2. Best CFO in Healthcare – Nithya Balasubramanian, Whole-time Director & Group CFO
+                   (Individual category)
+
+
+
+                                                                                                         5
+
+[page 7]
+[slide footer number: 6]
+Awards and Recognition
+
+               FE HR Awards 2026
+               Excellence in Onboarding & Role Enablement
+
+
+
+
+               American Medical Group Association (AMGA)
+               Distinguished Corporate Partner Award 2026
+
+
+
+
+               Axia Women’s Health
+               IKS Health partnership for medical coding delivered $12 Million in annual cash impact with 96%+
+               coding accuracy and 37% lower coding related denials
+
+
+
+                                                                                                                 6
+
+[page 8]
+[slide footer number: 7]
+IKS Health enables care transformation across the patient journey
+
+
+       Pre-visit
+                           Optimized Scheduling                  Patient Financial                  Patient Engagement                    Prospective Clinical
+                                                                    Clearance                                Hub                             Chart Reviews
+
+
+
+
+                                                                                                                                                          Peri-visit
+                    Autonomous
+                      Coding
+                                                     Referral Order
+                                                     Management
+                                                                                       IKS ScribbleTM                          Pre-Visit
+                                                                                                                               Summary
+                                                                                                                                                                                                  Legend
+                                                                                                                                                                                            Automation Level
+
+       Post-visit                                                                                                                                                                       1         2   3   4       5
+                          Billing and Denial            Payment Posting and Denial             Concurrent and                     Patient AR Management
+                              Prevention                     Management                       Denovo Risk Coding
+
+                                                                                                                                                                                                                 Fully
+                                                                                                                                                                                   Fully Manual
+                                                                                                                                                                                                              Autonomous
+
+
+
+
+                                                                                                                                                             In
+                                                                                                                                                          between
+              Care Management                         Inbox                          IKS AssuRxTM                          IKS StacksTM                    visits
+                   and UM                          Management
+
+
+
+
+       In-acute
+       settings
+                          Clinical Documentation                  Clinical Coding                   Revenue Optimization              Medico-legal                     Discharge
+                                 Solutions                            And CDI                            Solutions                Documentation Solutions              Summary
+
+
+
+
+                                                                                                                                                                                                                           7
+
+[page 9]
+[slide footer number: 8]
+Q1 - Strong growth while delivering
+continuous margin expansion
+
+
+
+                             Deep Client            Strong Margin              Globally Diversified
+    Growth At Scale
+                            Relationships               Profile                    Workforce
+
+                               450+                        33%                       12,889
+    INR 8,936 mn           Enterprise level         EBITDA (in spite of          Total Employees
+     Revenue from            customers
+                                                 one-time acquisition costs)
+      Operations
+
+          21%             INR mn 3,759                     22%                     1,902 / 565
+    YoY growth in INR   Revenue from Top 10            PAT Margin                 Clinical /tech
+                            customers                                          focussed employees
+
+          12%           5.76 / 7.41 years              24%/28%
+                                                                                      43%
+   YoY growth in USD    Top 10 / Top 5 Clients       YoY growth in
+                                                                                Women employees
+                          Average Vintage             EBITDA/PAT
+
+
+                                                                                                      8
+
+[page 10]
+[slide footer number: 9]
+Q1 FY 27: Growing faster than market with strong margins
+    Revenue                                                                                                                     EBITDA
+    INR Mn                                                                                                                      INR Mn
+
+                                                                                                                                                3,002     2,949       24.0% YoY (even higher
+                              8,577            8,936                                                                                                                  if not for one-time
+                                                                             20.7% YoY                                              2,378                             acquisition costs)
+           7,401
+
+                                                                                                                                                           33.0%
+                                                                                                                                                35.0%
+                                                                                                                                                                      1.8% QoQ (due to
+                                                                                                                                    32.1%                             one-time acquisition
+                                                                            4.2% QoQ
+                                                                                                                                                                      costs and reduction in
+                                                                                                                                                                      currency gains)
+          Q1 FY26          Q4 FY26            Q1 FY27                                                                              Q1 FY26      Q4 FY26   Q1 FY27
+
+
+    PAT                                                                                                                         Adjusted PAT*
+    INR Mn                                                                                                                      INR Mn
+
+                                                                                                                                                 2,269      2,153
+                            2,060
+                                                 1,937
+        1,515
+                                                                           27.8% YoY                                               1,682                             28.0% YoY
+
+                                                 21.7%
+                                                                                                                                                            24.1%
+                            24.0%
+                                                                                                                                                 26.5%
+       20.5%                                                               5.9% QoQ                                                                                  5.1% QoQ
+                                                                                                                                    22.7%
+
+
+      Q1 FY26              Q4 FY26             Q1 FY27
+                                                                                                                                   Q1 FY26      Q4 FY26    Q1 FY27
+
+       *Adjusted PAT is adjusted for amortization of intangible assets recognised on acquisition which is a non-cash expense.                                                                  9
+
+[page 11]
+[slide footer number: 10]
+Q1 FY 27 - Continued strong cash generation supporting
+growth aspirations
+     OCF & FCF                                                                           Net Debt
+     INR Mn                                                                              INR Mn
+
+
+
+
+                                                         20.5% OCF YoY
+
+
+
+                                                         26.9% FCF YoY
+
+
+
+
+   OCF and FCF are adjusted for upfront guarantee payment of economic value add made to a customer, for Rs 1,430 mn in Q1 FY 27.   10
+
+[CHART, page 11, OCR text - OCF & FCF chart, INR Mn]
+Legend: OCF | FCF
+Q1 FY26: OCF 1,658 | FCF 1,374
+Q1 FY27: OCF 1,999 | FCF 1,742
+(20.5% OCF YoY; 26.9% FCF YoY - matches annotations in text layer: 1999/1658=+20.6%, 1742/1374=+26.8%)
+[CHART, page 11, OCR text - Net Debt chart, INR Mn]
+30 Jun 25: 4,486
+31 Mar 26: 2,510
+30 Jun 26: 2,654
+[END CHART OCR page 11]
+
+[page 12]
+[slide footer number: 11]
+Key deal wins
+    Premier           Strategic partnership with premier integrated health system in California for a
+                      comprehensive clinical data migration for an acquired hospital, seamlessly unifying
+    California        legacy records into their enterprise EHR. Establishes a framework that positions IKS as a
+    Health System     preferred partner for additional facility migrations across the growing group footprint.
+
+
+
+    National          Reuniting with one of the leaders in musculoskeletal space. The collaboration focuses
+    Musculoskeletal   on modernizing end-to-end RCM functions. By optimizing back-office functions, the
+                      clinical provider can better focus on delivering highly customized, life-enhancing
+    Leader            physical interventions to patients nationwide.
+
+
+                      One of country’s top health systems Advocate Health, an existing client, is significantly
+                      expanding its partnership across RCM including coding in volume and value efforts
+                      across its entire network in the acute and ambulatory space.
+
+
+
+
+                      Existing customer StrideCare is a large Texas multi-specialty physician group that
+                      acquired a vein, vascular, and podiatry specialty group and extended RCM services,
+                      indicating organic growth and practice expansion.
+
+
+                                                                                                                  11
+
+[page 13]
+[slide footer number: 12]
+Q1 FY 27 - Improving EPS and maintaining high ROE
+
+     EPS ₹                                                                                                                 ROE %*
+
+
+                                                                                                                                     32.3%
+                                                                                                                                                     31.3%
+                             12.3
+                                                   11.6                                                                                                               26.4%
+                                                                          27.5% YoY
+         9.1
+
+
+
+                                                                         6.1% QoQ
+
+
+
+
+     Q1 FY26             Q4 FY26               Q1 FY27
+                                                                                                                                    Q1 FY26        Q4 FY26        Q1 FY27
+
+
+   EPS is calculated as profit for the period divided by weighted                                                Return on Equity is calculated as profit for the period divided
+     average number of equity shares as defined in IND AS 33.                                                           by average equity balance during the period.
+
+
+                                                                                                                                                                                   12
+       *ROE declined due to increased equity base from revaluation of Abridge, alongside lower earnings from reduced currency gains and one-time acquisition costs.
+
+[page 14]
+[slide footer number: 13]
+  Financials - Summary INR millions                                                                                                                                     INR Mn
+Particulars                                                                                     Q1 FY 27            Q1 FY 26         YoY%           Q4 FY 26         QoQ%
+Revenue USD mn                                                                                                97               87           12.0%              95         2.5%
+Revenue                                                                                                    8,936          7,401             20.7%         8,577           4.2%
+Forex Gain/ (Loss)                                                                                             12               12           3.2%              352      -96.6%
+Employee benefit expense excluding ESOP                                                                    4,332          3,871             11.9%          4,011          8.0%
+Other Expenses*                                                                                             1,449         1,075         34.8%              1,743        -16.9%
+EBITDA excluding ESOP                                                                                       3,167         2,467         28.4%              3,175         -0.2%
+EBITDA excluding ESOP %                                                                                    35.4%         33.3%               2.1%         37.0%          -1.6%
+ESOP Cost                                                                                                    218               89       145.4%                 173       26.2%
+EBITDA                                                                                                     2,949         2,378          24.0%             3,002          -1.8%
+EBITDA %                                                                                                   33.0%         32.1%              0.9%          35.0%         -2.0%
+Finance cost                                                                                                  101              181      -44.1%                 127      -20.2%
+Depreciation and amortisation                                                                                343           279              22.9%              341        0.7%
+Interest income                                                                                               57                31      85.3%                  49        17.2%
+Profit before exceptional items and tax                                                                    2,563          1,949             31.5%         2,584         -0.8%
+Profit before exceptional items and tax %                                                                  28.7%         26.3%              2.3%          30.1%          -1.4%
+Tax expense                                                                                                  572           433              32.0%              470       21.7%
+Profit for the period before Share of Associates                                                           1,990          1,515         31.4%              2,114        -5.8%
+Profit for the period before Share of Associates %                                                         22.3%         20.5%               1.8%         24.6%         -2.4%
+Share of Profit/(Loss) from Associates (net of tax)                                                         (53)                             0.0%          (54)          -1.9%
+Profit for the period                                                                                       1,937         1,515         27.8%             2,060         -5.9%
+Profit for the period %                                                                                    21.7%         20.5%               1.2%         24.0%         -2.3%
+Amortisation of Intangible assets                                                                            216               167          29.2%              210        2.8%
+Adjusted Profit for the period                                                                             2,153          1,682         28.0%             2,269          -5.1%
+Adjusted Profit for the period %                                                                           24.1%         22.7%               1.4%         26.5%         -2.4%
+
+
+                  *Includes acquisition expenses incurred in current quarter and last quarter                                                                                    13
+
+[page 15]
+[slide footer number: 14]
+Other KPI Metrics
+
+        Particulars                                  Q1 FY 27          Q1 FY 26      Q4 FY 26
+
+        Annualised Adjusted EBITDA per employee
+        in INR mn                                               0.99          0.81         0.98
+
+        Revenue from Top 10 customers INR mn                4,808            3,213        4,525
+
+        Contribution from Top 10 customers                  53.8%           43.4%         52.8%
+
+        Revenue from Top 5 customers INR mn                 3,759            2,349        3,564
+
+        Contribution from Top 5 customers                   42.1%            31.7%         41.5%
+
+        Ageing of Top 10 clients (number of years)              5.76          5.54          5.42
+
+        Ageing of Top 5 clients (number of years)               7.41          5.52         5.56
+
+
+        FCF Yield (%)                                       89.9%           84.5%          62.1%
+
+
+
+
+                                                                                                   14
+
+[page 16]
+[slide footer number: 15]
+A decade of consistent profitable growth
+
+
+
+
+          28.7%        46.4%
+      Revenue CAGR   PAT CAGR
+
+
+
+
+                                           15
+
+[CHART, page 16, OCR text - "A decade of consistent profitable growth", INR Mn, Revenue and PAT by fiscal year, LOW CONFIDENCE / bars and labels overlapped in source image]
+Legend: Revenue | PAT
+Years shown on x-axis: 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026
+Revenue CAGR: 28.7%  |  PAT CAGR: 46.4%  (as also stated in text layer)
+OCR raw fragments (left half, years 2017-2021, pairing NOT verified - flagged for downstream review):
+28.7% 46.4% Revenue CAGR PAT CAGR 5,034 5,290 5,526 3,294 3,967 233 932 375 654
+OCR raw fragments (right half, years 2022-2026, pairing NOT verified - flagged for downstream review):
+31,938 26,640 18,179 10,313 7,636 1,216 705 861 330 1,052
+[END CHART OCR page 16 - values above are unaligned OCR fragments, not a verified per-year table; downstream agent should treat individual year/revenue/PAT pairings as NOT FOUND unless independently confirmed]
+
+[page 17]
+[slide footer number: 16]
+Medium-Term Financial Outlook
+                                                                          INR Mn
+                             EBITDA
+
+
+
+
+                                                                GR
+                                                             CA
+                                                         %
+                                                       30
+
+
+                                                                                   30,000
+
+
+
+
+                                 GR
+                                CA
+                                                                     30,000
+
+
+                                %
+                              19
+
+
+                                     GR
+                                    CA
+                                    %
+                                39
+
+
+
+
+                                           11,485
+
+     EBITDA                    6,472
+
+
+     Revenue
+                             LTM Sep 24   LTM Jun 26                                FY 30
+                               Pre-IPO
+                              Baseline
+
+                 Net Debt      5,534        2,654                                   3,000
+
+
+
+              Strategic Outlook: Sustained EBITDA expansion without significant dilution of Equity.   16
+
+[page 18]
+[slide footer number: 17]
+Thank You
+
+
+
+            17
+
+[OCR page 18]
+Thank You
+HEALTH
+[END OCR page 18 - confirms text layer, no additional data]

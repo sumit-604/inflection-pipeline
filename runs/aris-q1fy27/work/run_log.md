@@ -62,3 +62,13 @@ the ESOP grant (1,633 options) against monitoring item #7 (dilution) and F10.
   verify at source in the H1/AR. Not a blocker; verdict COMPLETE.
 - Verdict summary: PROCEED WITH CAVEATS. Master monitorable (debtor days) UNCOMPUTABLE this
   quarter (P&L-only filing, no Q1 balance sheet). No thesis-broken trigger fired. HELD, no add.
+
+## Role 5 Concall Analysis — 06-Aug-2026 (appended post-call)
+- Concall held 06-Aug (~1 day after 05-Aug filing; canned window). Transcript operator-pasted.
+- First concall under Role 5 protocol → Promise-vs-Delivery tracker initialised (no prior to score); credibility ratio N/A this quarter.
+- Promoter (CMD Ronak Morpia) present = GREEN. Audience retail/small-broker heavy, no institutional buy-side, softball-dominated = orchestration yellow flag.
+- Net thesis impact: MAINTAINED. Verdict unchanged: PROCEED WITH CAVEATS, cash INDETERMINATE, HELD, HOLD/NO ADD.
+- Resolved/updated: seasonality explained (H1 40%/H2 60%, Q1-Q2 lean) softens QoQ-deceleration concern; CM utilization now point 65-70% (#3 AMBER->GREEN-ish); Wadhwa 650cr confirmed = GDV not revenue.
+- Still open: debtor days + >6-mo aging NOT disclosed (NWC days 56 given instead); zero-ECL-this-Q vs 4.46cr Q4 not reconciled (lifetime 0.5% offered).
+- NEW flags: (a) NWC days internal contradiction 66 (opening) vs 97 (Q&A) for Mar-26; (b) ~80cr swing from net cash (~65cr Mar) to net debt (14.5cr Jun) in one quarter, unexplained by hard numbers, no CFS; (c) part of margin gain from SCF early-payment discounts, not pure mix; (d) dash GDV take-rate REFUSED ("take offline").
+- Artifacts: work/extract_concall_aris_q1fy27.txt, work/review_concall_aris_q1fy27.md.

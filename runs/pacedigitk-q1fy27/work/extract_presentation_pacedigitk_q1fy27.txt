@@ -1,0 +1,740 @@
+1	=== A1 EXTRACTION HEADER ===
+2	source_filename: presentation_pacedigitk_q1fy27.pdf
+3	doctype: presentation
+4	page_count_pdfinfo: 26
+5	formfeed_count: 26
+6	line_count: 740
+7	unit_convention: Millions
+8	conversion_factor_to_cr: Millions -> x0.1
+9	ocr_pages: [3, 9, 13, 17, 22]
+10	page_coverage: 100%
+11	detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+12	extraction_date: 2026-08-06
+13	=== END HEADER ===
+14	
+15	NOTE ON OCR: Pages 3, 9, 13, 17, 22 extracted under 100 characters via
+16	pdftotext -layout (section divider slides consisting of a title in large
+17	font over a photographic background collage: telecom tower + BESS
+18	container yard). Each was rasterised at 200dpi (pdftoppm) and run through
+19	tesseract OCR to confirm no numeric or textual content was missed; OCR
+20	returned no additional text beyond the title already captured by
+21	pdftotext (tesseract failed to read the stylised orange/red gradient
+22	title font on 4 of 5 pages; the title text below is taken from the
+23	pdftotext layer, verified against the rendered image by direct visual
+24	inspection). No data loss on these pages -- confirmed pure divider
+25	slides with photographic backgrounds only, zero charts/tables/numbers.
+26	
+27	Charts on data pages (e.g. pages 5, 6, 15, 16, 24) are native vector
+28	PDF chart objects with text-layer data labels, not raster images; all
+29	axis labels, bar values, percentages and callouts were captured
+30	directly by pdftotext -layout and cross-checked by rendering the page
+31	to image and visually comparing -- confirmed a 1:1 match for pages 5
+32	and 6 (spot-checked). No separate [CHART, page N, OCR text: ...] block
+33	is therefore required for those pages; their pdftotext output already
+34	contains the chart data labels, reproduced below in the scrambled
+35	column order pdftotext -layout assigns to overlapping text objects
+36	(values are reproduced verbatim; the reading order noted where non-
+37	obvious).
+38	
+39	[page 1]
+40	                                                                Pace Digitek Limited
+41	                                                                (Formerly Known as Pace Digitek Private Limited
+42	                                                                and Pace Digitek Infra Private Limited)
+43	                                                                Regd. Office: Plot No. V-12, Industrial Estate,
+44	                                                                Kumbalgodu, Mysore Highway, Bangalore - 560 074.
+45	                                                                T : +91 80 29547792 / 94 / 95 / 96.
+46	                                                                E : info@pacedigitek.com
+47	                                                                w : www.pacedigitek.com
+48	                                                                CIN-L31909KA2007PLC041949
+49	
+50	Ref No: PDL/2026-27/Q02_23
+51	
+52	Date: August 05, 2026
+53	
+54	 BSE Limited                                           National Stock Exchange of India Ltd
+55	 Phiroze Jeejeebhoy Towers                             Exchange Plaza, C-1, Block G
+56	 Dalal Street, Fort                                    Bandra Kurla Complex, Bandra (E)
+57	 Mumbai – 400001                                       Mumbai – 400051
+58	
+59	 Scrip Code – 544550                                   Symbol – PACEDIGITK
+60	
+61	
+62	Dear Sir/Madam,
+63	Sub: Investors’ Presentation on the Financial Results for the Quarter ended June 30, 2026 pursuant
+64	to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015
+65	
+66	Further to our intimation regarding the Unaudited Consolidated and Standalone Financial Results for
+67	the Quarter ended June 30, 2026 and pursuant to Regulation 30 of the of the Securities and Exchange
+68	Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, we enclose herewith
+69	a copy of the Investor Presentation in connection with the aforesaid Financial Results.
+70	
+71	The same has also been uploaded on the Company’s website which may be viewed at
+72	https://www.pacedigitek.com
+73	
+74	You are requested to take the above information on records.
+75	
+76	Thanking You,
+77	
+78	For PACE DIGITEK LIMITED
+79	[Formerly known as Pace Digitek Private Limited
+80	and Pace Digitek Infra Private Limited]
+81	Meghana     Digitally signed by
+82	            Meghana Manchaiah
+83	Manchaiah Purushotham
+84	            Date: 2026.08.05
+85	Purushotham 19:09:29 +05'30'
+86	Meghana M P
+87	Company Secretary and Compliance Officer
+88	Membership No: A42534
+89	
+90	Add: Plot No. V-12, Industrial Estate, Kumbalgodu,
+91	Mysore Highway, Bangalore - 560 074.
+92	
+93	
+94	[page 2]
+95	Pace Digitek Ltd.
+96	Earnings Presentation | Q1 FY2027
+97	
+98	                                    Telecom & ICT       BESS           Energy      Long Term O&M
+99	                                    Infrastructure   Manufacturing   Integration       Services
+100	
+101	
+102	[page 3]
+103	[OCR page 3: rasterised + tesseract-verified, divider slide, no additional text/data beyond title below]
+104	Q1 FY2027 Performance Update
+105	
+106	
+107	[page 4]
+108	Performance At Glance (Q1 FY27 and YTD)
+109	
+110	 01 Q1 FY27 Financial Performance       02 Q1 FY27 Operational Performance              03 Corporate Development
+111	
+112	
+113	         Rs. 5,554 Mn               •   New Orders: 3 New orders; Rs. 16,766 mn     •   Capacity Expansion: Additional 2.5
+114	                                        across Energy and ICT                           GWh BESS production line operational
+115	           ↑ 51.3% YoY                                                                  and container fabrication facility
+116	   Revenue from operations          •   BESS Commissioning: 375 MWh BESS
+117	                                        Capacity Commissioned at MSEDCL                 nearing completion
+118	                                        Standalone BESS BOO Project; well ahead     •   Innovation: Established R&D facility in
+119	                                        of completion targets
+120	                                                                                        Pune focused on ACC research
+121	                                    •   New Project Execution:
+122	          Rs. 861 Mn                                                                •   Cell Supply: 3 GWh li-on cell supply
+123	    ↑ 7.5% YoY | Margin: 15.5%           •   Energy - SECI (Solar + BESS BOO) and       agreement with RJE Tech
+124	                                             KPTCL (Standalone BESS BOO) on
+125	            EBITDA                           ground work started                    •   AI Data Center: Partnered with
+126	                                                                                        Megmeet to enter the AI data center
+127	                                         •   Telecom & ICT - BSNL- BharatNet            power infrastructure segment
+128	                                             and Railways Kavach projects under
+129	                                             survey phase                           •   Global Expansion: Signed OEM
+130	           Rs. 625 Mn                                                                   partnership with NEC XON to market
+131	                                    •   Manufacturing: 90 BESS containers
+132	    ↑ 14.3% YoY | Margin: 11.3%         delivered                                       grid-scale BESS solutions across five
+133	        Profit After Tax                                                                African countries
+134	                                                                                    •   Market Development: Signed three
+135	                                                                                        MoUs for supply of BESS
+136	
+137	                                                                                                                                  3
+138	
+139	
+140	[page 5]
+141	Revenue Mix and Order Book Movement
+142	
+143	                      Revenue Breakdown                                                             Order Book Movement (Rs. Million)
+144	Energy contributed 79.5% of Q1 FY27 revenue, reflecting continued
+145	                                                                                                                        16,766
+146	        execution of BESS and renewable energy projects.                                                                                                               108,033
+147	                                                                                                                                                 -5,346
+148	                                                                                               96,613
+149	                                          12.1%
+150	                                                       20.5%
+151	
+152	
+153	
+154	
+155	                78.5%
+156	                              85.8%
+157	   93.2%
+158	                                          87.9%
+159	                                                       79.5%
+160	
+161	
+162	
+163	
+164	                21.5%
+165	                              14.2%
+166	    6.8%
+167	                                                                                            31-March-2026            Incoming orders Sales Q1 FY27                   30-June-2026
+168	  Q1 FY26      Q2 FY26        Q3 FY26    Q4 FY26      Q1 FY27
+169	                                                                                                                     for Q1 FY27
+170	                     Energy      Telecom & ICT                      Note: Data as of 30 June 2026. Q1 FY27 revenue execution excludes aggregating sales of Rs. 208 million, which were not
+171	                                                                    included in the opening order book as of 31 March 2026.
+172	                                                                                                                                                                                             4
+173	
+174	
+175	[page 6]
+176	Quarterly Financial Trend (Consolidated)
+177	                  Revenue from Operations (Rs. Mn)                                   Gross Profit (Rs. Mn) and Margin
+178	
+179	                                  51.3% YoY
+180	                                                                         31.9%      26.5%             26.3%            22.7%    28.0%
+181	
+182	
+183	
+184	
+185	                                                 10,968
+186	
+187	
+188	                                   6,440                                                                               2,491
+189	                  5,334                                      5,554
+190	                                                                                                       1,692                     1,555
+191	      3,671                                                              1,171       1,412
+192	
+193	
+194	    Q1 FY2026   Q2 FY2026        Q3 FY2026     Q4 FY2026   Q1 FY2027   Q1 FY2026   Q2 FY2026         Q3 FY2026     Q4 FY2026   Q1 FY2027
+195	
+196	
+197	
+198	                        EBITDA (Rs. Mn) and Margin                                           PAT (Rs. Mn) and Margin
+199	
+200	
+201	        21.8%      17.6%           18.3%         14.9%      15.5%       14.9%       12.7%             12.2%            9.7%     11.3%
+202	
+203	
+204	
+205	
+206	                                                 1,632                                                                 1,059
+207	                                   1,179                                                               788
+208	                  941                                                                679                                         625
+209	      801                                                    861         547
+210	
+211	
+212	    Q1 FY2026   Q2 FY2026        Q3 FY2026     Q4 FY2026   Q1 FY2027   Q1 FY2026   Q2 FY2026         Q3 FY2026     Q4 FY2026   Q1 FY2027
+213	
+214	
+215	
+216	                                                                                                                                           5
+217	
+218	
+219	[page 7]
+220	Q1 FY27 Financial Performance (Consolidated)
+221	Particulars (Rs. Million)     Q1 FY2027   Q1 FY2026     YoY     Q4 FY2026    QoQ
+222	Revenue from operations         5,554          3,671   51.3%     10,968     (49.4)%
+223	Gross profit                    1,555          1,171   32.8%      2,491     (37.6)%
+224	Gross profit margin            28.0%           31.9%             22.7%
+225	Employee expenses               333            198     68.4%      272       22.4%
+226	Other expenses                  362            173     109.5%     587       (38.4)%
+227	EBITDA                          861            801     7.5%       1,632     (47.3)%
+228	EBITDA margin                  15.5%           21.8%             14.9%
+229	Depreciation & amortisation      44             21     112.6%      32       37.5%
+230	EBIT                            816            780     4.7%       1,599     (49.0)%
+231	EBIT margin                    14.7%           21.2%             14.6%
+232	Finance costs                   283             97     191.5%     343       (17.3)%
+233	Other income                    283             56     402.9%     202       40.6%
+234	Profit before tax (PBT)         816            739     10.5%      1,458     (44.0)%
+235	PBT margin                     14.0%           19.8%             13.1%
+236	Taxes                           191            192     (0.3)%     399       (52.1)%
+237	Profit After Tax                625            547     14.3%      1,059     (41.0)%
+238	Profit After Tax Margin        11.3%           14.9%              9.7%
+239	
+240	                                                                                      6
+241	
+242	
+243	[page 8]
+244	Q1 FY27 Financial Performance (Standalone)
+245	
+246	Particulars (Rs. Million)     Q1 FY2027   Q1 FY2026    YoY      Q4 FY2026    QoQ      • At the standalone level, the
+247	                                                                                        financials represent EPC revenue
+248	Revenue from operations*        2,642       3,397     (22.2)%     4,870     (45.7)%     from projects executed for both
+249	                                                                                        subsidiaries and external
+250	Gross profit                    865         1,007     (14.1)%     1,117     (22.6)%     customers.
+251	
+252	Employee expenses               250         156       60.7%       213       17.4%     • Gross standalone revenue stood
+253	                                                                                        at Rs. 5,151 million. After
+254	Other expenses                  120         121       (0.9)%      201       (40.2)%     eliminating inter-company sales
+255	                                                                                        of Rs. 2,509 million, standalone
+256	EBITDA                          494         730       (32.2)%     703       (29.6)%     revenue from operations was Rs.
+257	                                                                                        2,642 million.
+258	Depreciation & amortisation      32          11       193.7%       25       27.5%
+259	                                                                                      • *Adjusted standalone revenue
+260	EBIT                            462         719       (35.7)%     678       (31.8)%     from operations (before inter-
+261	                                                                                        company eliminations) increased
+262	Finance costs                    79          89       (11.0)%     152       (48.1)%     by 52% YoY in Q1 FY27.
+263	
+264	Other income                    189          59         nm        168       12.4%
+265	
+266	Profit before tax (PBT)         572         689       (16.9)%     694       (17.5)%
+267	
+268	Taxes                           147         179       (17.6)%     287       (48.8)%
+269	
+270	Profit After Tax (PAT)          425         510       (16.7)%     406        4.7%
+271	                                                                                                                           7
+272	
+273	
+274	[page 9]
+275	[OCR page 9: rasterised + tesseract-verified, divider slide, no additional text/data beyond title below]
+276	Company Overview
+277	
+278	
+279	[page 10]
+280	Pace Digitek : End-to-End Integrated Infrastructure Platform
+281	
+282	                                             Presence across telecom and energy infrastructure through
+283	                                                Manufacturing | EPC execution | O&M capabilities
+284	
+285	
+286	
+287	                Telecom                                                        Energy                                          18+
+288	                                                                                                                     Years industry experience
+289	
+290	
+291	
+292	                                                                                                                                 3
+293	                                                                                                                      Manufacturing facilities
+294	
+295	                                                                                               Electrical
+296	  Telecom Tower              Fiber                    Solar                    BESS         Transmission &
+297	                                                                                              Distribution                   8,000+
+298	                                                                                                                Green field telecom towers installed
+299	 • Products Supply     • Products Supply       • EPC – Solar Plants,   • EPC                • EPC projects in
+300	                                                 Solar Water                                  substations,
+301	                                                 Pumps                                        transmission &
+302	 • Project Execution   • Project Execution                             • Developer            distribution           2.5 → 5 → 10 GWh
+303	                                                                                              systems                  BESS manufacturing
+304	                                               • Developer                                                         capacity expansion under way
+305	 • Services            • Services                                      • Manufacturing of
+306	                                                                         BESS & PCS
+307	                                                                                                                     Rs. 108,033 million
+308	                                                                                                                            Order book
+309	
+310	
+311	
+312	                                                                                                                                                       9
+313	
+314	
+315	[page 11]
+316	Integrated Energy Platform
+317	
+318	                       Comprehensive value chain coverage from manufacturing to asset ownership
+319	                                    Manufacturing → EPC → BOO (Annuity Model)
+320	
+321	
+322	
+323	                                            BESS Manufacturing Platform
+324	                                            •   2.5 → 5 → 10 GWh scale-up
+325	
+326	                                            •   Cost leadership, supply chain control and margin expansion
+327	
+328	
+329	
+330	                                            EPC: Integrated Execution Platform
+331	
+332	                                            •   Faster deployment using in-house systems
+333	
+334	                                            •   Margin enhancement through product integration
+335	
+336	
+337	
+338	                                            Asset Ownership: Leveraging Backward Integration to EPC & Products
+339	
+340	                                            •   Long-term contracted revenue
+341	
+342	                                            •   Lifecycle value capture (O&M + performance)
+343	
+344	
+345	                                                                                                                 10
+346	
+347	
+348	[page 12]
+349	Comprehensive End-to-End Telecom Infrastructure Solutions
+350	
+351	                                                                 Telecom & ICT
+352	
+353	
+354	                     Products                                         Projects                                         Services
+355	
+356	    Designs and manufactures power and energy   End-to-end infra projects (design, supply, installation,
+357	                                                                                                              Post-deployment services
+358	    management solutions for telecom networks            commissioning & lifecycle support)
+359	
+360	                   Power Systems                                    Telecom Towers                                 Warranty Services
+361	
+362	
+363	                   Li-Ion Batteries                               Power Infrastructure                               AMC Services
+364	
+365	
+366	                  Power Electronics                      Optical Fiber Cable (OFC) Deployment              O&M (Network, Fiber, and Utilities)
+367	
+368	
+369	                   Solar Solutions
+370	
+371	
+372	            Remote Management Systems
+373	
+374	
+375	
+376	        Integrated, one-stop telecom infrastructure partner across operators, tower companies, OEMs, and enterprise customers
+377	End-to-end telecom tower and OFC                                                                                      Recurring revenue stream from
+378	                                                           In-house Lineage product suite
+379	 platform, covering manufacturing,                                                                                   warranty, AMC, O&M and upgrade
+380	                                                             supports cost efficiency and
+381	 EPC execution, O&M, and lifecycle                                                                                    contracts with 1–5 year tenures
+382	                                                                 execution control
+383	              services
+384	
+385	
+386	
+387	                                                                                                                                                        11
+388	
+389	
+390	[page 13]
+391	[OCR page 13: rasterised + tesseract-verified, divider slide, no additional text/data beyond title below]
+392	Order Book Update
+393	
+394	
+395	[page 14]
+396	Order Wins During Q1 FY2027
+397	
+398	                   Secured Rs. 16,766 million of order wins during Q1 FY2027 across Energy and Telecom Infrastructure
+399	
+400	    NLC India | BESS EPC                               Rs. 7,099 million
+401	1
+402	     • 250 MW / 500 MWh Standalone BESS Supply, EPC & Long-term
+403	       O&M project
+404	     • Execution: 1 Yr for EPC followed by 12 Yrs of O&M services
+405	     • Project locations: Ottapidaram, Anuppankulam and Kayathar,
+406	       Tamil Nadu                                                                                  15.8%
+407	
+408	    DVC | BESS EPC                                     Rs. 7,020 million
+409	2
+410	     • 250 MW / 500 MWh Standalone BESS Supply, EPC & Long-term                                        Rs. 16,766
+411	       O&M project
+412	                                                                                                        million
+413	     • Execution: 1 Yr for EPC followed by 12 Yrs of O&M services
+414	     • Project locations: Maithon, Jharkhand
+415	
+416	                                                                                                               84.2%         78.1%
+417	    BSNL | BharatNet OCF EPC                           Rs. 2,647 million
+418	3
+419	     • Design, supply, construction, installation, upgradation and O&M                           Telecom & ICT      Energy
+420	       of BharatNet middle-mile & last-mile network infra
+421	     • Execution : 3 Yrs
+422	     • Project Location: Sikkim Telecom Circle
+423	
+424	
+425	
+426	                                                                                                                                13
+427	
+428	
+429	[page 15]
+430	Order Book (Energy)
+431	
+432	                                                     Diversified Order Book of Rs. 84,530 Mn
+433	
+434	                                                                Total Executable
+435	      Client                 Project Type   Scope    GWh
+436	                                                                 Value (Rs. Mn)
+437	     MESDCL             Standalone BESS     BOO      0.80            8,990
+438	       SECI                  Solar + BESS   BOO      0.10            7,000                           Supply
+439	      KPTCL             Standalone BESS     BOO      0.50            7,000                 EPC        0.1%
+440	      KREDL                  Solar + BESS   BOO      1.10           17,750
+441	                                                                                          51.7%
+442	                              BOO                    2.50           40,740
+443	
+444	
+445	        SECI            Standalone BESS      EPC       1.20         11,593
+446	   MAHAGENCO                  Solar EPC      EPC        -            9,200
+447	     NLC India          Standalone BESS      EPC       0.50          7,099
+448	        DVC             Standalone BESS      EPC       0.50          7,020
+449	       NTPC             Standalone BESS      EPC       0.40          5,836
+450	     Bondada                  Solar BOS      EPC        -            2,920
+451	                               EPC                     2.60         43,667                         BOO
+452	                                                                                                  48.2%
+453	    Yaqin Chem          Standalone BESS     Supply    0.0037          123
+454	                               Total                   5.10         84,530
+455	
+456	Note:
+457	• Data as of June 30, 2026
+458	                                                                                                              14
+459	
+460	
+461	[page 16]
+462	Order Book (Telecom & ICT)
+463	
+464	                                                          Diversified Order Book of Rs. 23,503 Mn
+465	
+466	                                                               Total Executable Value
+467	        Client                  Project Type      Scope
+468	                                                                      (Rs. Mn)
+469	         BSNL                  Telecom Infra    EPC + O&M              14,110
+470	                                                                                                    Supply   O&M
+471	         RNS                   Telecom Infra    EPC + O&M              1,149
+472	                                                                                                    10.2%    8.2%
+473	      TANFINET                 OFC Network      EPC + O&M               444
+474	                                                                                                                    Others
+475	                                EPC + O&M                             15,703                 EPC
+476	                                                                                                                     0.4%
+477	                                                                                            14.4%
+478	         BSNL                  OFC Network         EPC                 2,647
+479	        Railtel                     ICT            EPC                  515
+480	   Indian Railways             Railway Kavach      EPC                  226
+481	                                   EPC                                 3,388
+482	
+483	
+484	         BSNL                Power Management    Supply                 389
+485	       Reliance              Power Management    Supply                1,200
+486	         BSNL                Power Management    Supply                 800
+487	                                  Supply                               2,389
+488	
+489	
+490	  Tata Teleservices            Telecom O&M        O&M                  1,923                                 EPC + O&M
+491	                                   O&M                                 1,923                                   66.8%
+492	
+493	                                                 Others                101
+494	                                   Total                              23,503
+495	Note:
+496	• Data as of June 30, 2026
+497	                                                                                                                             15
+498	
+499	
+500	[page 17]
+501	[OCR page 17: rasterised + tesseract-verified, divider slide, no additional text/data beyond title below]
+502	Update on Execution and
+503	Manufacturing Expansion
+504	
+505	
+506	[page 18]
+507	Execution Update - MSEDCL Standalone BESS BOO
+508	Cumulative and Q1 FY27 execution on the ground
+509	
+510	                 Operational Highlights                                       O&M Supports
+511	   •   Cumulative 975 MWh BESS capacity added            •   Centralized C-NOC monitoring
+512	   •   375 MWh BESS Capacity added in Q1 FY27            •   Specialized mobile service vehicles with on-board critical spare
+513	                                                             parts
+514	   •   Execution progressing ahead of planned schedule
+515	                                                         •   24×7 field service support
+516	                                                         •   Rapid response deployment
+517	                                                         •   Scheduled preventive maintenance
+518	
+519	
+520	
+521	
+522	                                                                                                                                17
+523	
+524	
+525	[page 19]
+526	Execution Update – Other Energy Projects
+527	Cumulative and Q1 FY27 execution on the ground
+528	
+529	    SECI (Solar + BESS BOO) | 100 MW Solar + 50 MW/ 100 MWh BESS         KPTCL (Standalone BESS BOO) | 250 MW / 500 MWh
+530	•   PPA executed                                                   •   BESPA executed
+531	
+532	•   Engineering and major project layouts                          •   Land allotted and layouts approved for
+533	    completed                                                          all project sites
+534	
+535	•   Site development and civil works                               •   Civil works commenced, including
+536	    progressing across the project                                     container and PCS foundations
+537	
+538	
+539	
+540	
+541	                  Bondada (Solar EPC) | 300 MW                                   MAHAGENCO (Solar EPC) | 200 MW
+542	•   Site mobilization and major                                    •   Identified land for project sites
+543	    equipment procurement completed
+544	                                                                   •   Technical feasibility report completed; awaiting grid
+545	•   Civil works, grading & piling                                      connectivity
+546	    progressing as planned
+547	                                                                   •   Preliminary engineering work completed
+548	                                                                   •   Sourcing of solar panels
+549	
+550	
+551	
+552	                                                                                                                               18
+553	
+554	
+555	[page 20]
+556	Pace-Lineage Research Center, Pune
+557	Strengthening R&D and product-development capabilities with IISER Pune
+558	
+559	
+560	    Research                  Partnered with IISER Pune to accelerate research in advanced battery technologies and
+561	1   Collaboration             materials, combining scientific expertise with industry-led product development
+562	
+563	
+564	                              Research focused on Advanced Chemistry Cells including Lithium-ion and Sodium-ion battery
+565	2   Research Focus
+566	                              materials, coatings, electrolytes, microstructure optimization and electrochemical evaluation
+567	
+568	
+569	    Indigenous
+570	                              Evaluating domestic battery materials, optimizing cell parameters and developing
+571	3   Technology
+572	                              indigenous technologies to strengthen localization and India's battery supply chain
+573	    Development
+574	
+575	
+576	                              Building in-house expertise in advanced battery technologies to strengthen the Company's
+577	4 Strategic Importance        integrated energy storage value chain across manufacturing, EPC and O&M
+578	
+579	
+580	
+581	5 Long-term Vision            Creating a technology platform for next-generation energy storage solutions
+582	
+583	
+584	                                                                                                                              19
+585	
+586	
+587	[page 21]
+588	Update on BESS Manufacturing Capacity Expansion
+589	Expanding capabilities to meet growing demand and strengthening integration across value chain
+590	
+591	
+592	
+593	
+594	            Existing                             Expansion of                              New Facility                Phased scale-up to 10 GWh
+595	            2.5 GWh                              Existing Line                     (In-house container fabrication +               +
+596	                                                                                           New 5 GWh Line)
+597	                                                (Additional 2.5 GWh)                                                     Backward Integrated
+598	                                                                                                                              Operations
+599	
+600	
+601	 o 2.5 GWh operational at               o Additional 2.5 GWh                    o In-house container                   o On track to achieve 10
+602	   Lineage Power, our                     manufacturing line                      fabrication facility ready             GWh manufacturing
+603	   manufacturing platform                 operational in August                   for commissioning in                   capacity by the end of
+604	                                          2026                                    August 2026                            FY2027
+605	 o Manufacturing utility-
+606	   scale BESS solutions for                                                     o New 5 GWh facility                   o Supporting future growth
+607	   domestic projects                                                                                                     in utility-scale and C&I
+608	                                                                                   ▪ Construction                        BESS demand
+609	                                                                                     completed
+610	                                                                                   ▪ Machines expected to
+611	                                                                                     receive by October
+612	                                                                                     2026
+613	                                                                                   ▪ Expected to be
+614	                                                                                     operational by Q3 FY27
+615	                                                                                                                                                    20
+616	
+617	
+618	[page 22]
+619	[OCR page 22: rasterised + tesseract-verified, divider slide, no additional text/data beyond title below]
+620	Strategy Going Forward
+621	
+622	
+623	[page 23]
+624	Strategy Going Forward
+625	
+626	
+627	
+628	
+629	                 01                                         02                                       03                                  04
+630	
+631	 Manufacturing Scale & Integration           Renewable Energy Platform                 Telecom Business Expansion          International Market Presence
+632	• Expanding BESS manufacturing            • Create a platform to act as asset-
+633	                                            holding and project development        • Enhance execution scale across      • Expanding presence in Saudi
+634	  capacity from 5 GWh to 10 GWh
+635	                                            company for renewable projects           ongoing and repeat telecom            Arabia, Kenya and other African
+636	• Backward integration for container                                                 deployments                           markets for telecom infrastructure
+637	  fabrication                             • Scaling integrated and hybrid energy
+638	                                                                                   • Increase participation in telecom     and BESS solutions
+639	                                            solutions through a dedicated
+640	• Enhance utility-scale and C&I energy      renewable energy                         EPC project opportunities
+641	  storage capabilities
+642	                                          • Portfolio level financing for the
+643	• Developing indigenous cell                developer projects
+644	  manufacturing capabilities
+645	                                          • Strengthen AI data center power
+646	• Integrated delivery including PCS and     infrastructure capabilities by
+647	  EMS                                       integrating advanced power systems
+648	• Strengthening in-house capabilities       with the company's energy platform.
+649	  for end-to-end BESS execution
+650	                                                                                                                                                                22
+651	
+652	
+653	[page 24]
+654	FY27–FY28 Growth Visibility
+655	
+656	
+657	   Integrated                                     Strategic Growth Priorities                 FY27–FY28 Revenue
+658	 Manufacturing &                                                                                  Guidance
+659	   Execution                                         Scale utility-scale and C&I BESS
+660	  2.5 GWh BESS capacity                                   execution capabilities
+661	  with phased scale-up to
+662	         10 GWh
+663	                                                                                                    FY27E
+664	                        Structural                Improve operating leverage through          ₹32,000 – 34,000 mn
+665	
+666	
+667	                                              +
+668	                         Industry                     localization and integration
+669	                         Demand
+670	                     Renewable integration
+671	                          Grid stability
+672	                     Railways modernization        Increase share of product-led and
+673	                           Digital infra
+674	                                                    manufacturing-driven revenues                   FY28E
+675	  Order Book of                                                                               ₹40,000 – 42,000 mn
+676	  ₹113,379 Mn
+677	                                                  Expand telecom, OFC, railways and digital
+678	   Diversified across BESS,                             infrastructure participation
+679	  telecom, OFC and digital
+680	        infra projects
+681	
+682	
+683	
+684	
+685	                                                                                                                    23
+686	
+687	
+688	[page 25]
+689	 Disclaimer
+690	
+691	This presentation and the accompanying slides (the “Presentation”), which have been prepared by Pace Digitek (the “Company”), have been prepared solely for information purposes only and does not constitute any offer or
+692	invitation, directly or indirectly, in any manner, or inducement to sell or issue, or any solicitation of any offer to purchase or subscribe for any securities of the Company in any jurisdiction and no part of it shall form the basis of
+693	or be relied upon in connection with any contract or commitment whatsoever. No offering of securities of the Company will be made except by means of a statutory offering document containing detailed information about
+694	the Company. This Presentation is not a prospectus, disclosure document, a statement in lieu of a prospectus, an offering circular, an advertisement or an offer document under the Companies Act, 2013, and the rules made
+695	thereunder, as amended, the Securities and Exchange Board of India (Issue of Capital and Disclosure Requirements) Regulations, 2018, as amended, or any other applicable law in India. This Presentation should not be
+696	considered as a recommendation that any investor should subscribe for or purchase any securities of the Company or its subsidiary (collectively, the “Group”) and should not be used as a basis for any investment decision.
+697	The information contained in this Presentation is only current as of its date and has not been independently verified. The Group will not update you in the event the information in the Presentation becomes stale. Moreover,
+698	both express or implied representation or warranty is made as to, and no reliance should be placed on, the truth, accuracy, fairness, reasonableness or completeness of the information presented or contained in this
+699	Presentation and nothing in this Presentation shall be relied upon as a promise or representation in this respect, whether as to the past or the future. None of the Group or any of its affiliates, advisers or representatives accept
+700	any liability whatsoever for any loss howsoever arising from any information presented or contained in this Presentation. Furthermore, no person is authorized to give any information or make any representation which is not
+701	contained in, or is inconsistent with, this Presentation. Any such extraneous or inconsistent information or representation, if given or made, should not be relied upon as having been authorized by or on behalf of the Group.
+702	This Presentation is being given solely for your information and for your use, and may not be copied, reproduced or redistributed to any other person in any manner. The distribution of this Presentation in certain jurisdictions
+703	may be restricted by law. Accordingly, any persons in possession of this Presentation should inform themselves about and observe any such restrictions.
+704	This Presentation is not a complete description of the Company. Certain statements in the Presentation may contain statements regarding the Company’s market opportunity and business prospects that are individually and
+705	collectively forward-looking statements. All forward-looking statements are based on judgments derived from the information available to the Company at this time. Such forward-looking statements are subject to risks,
+706	uncertainties and assumptions that could cause actual results to differ materially from those contemplated by the relevant forward-looking statement. Any opinion, estimate or projection herein constitutes a judgment as of
+707	the date of this Presentation, and there can be no assurance that future results or events will be consistent with any such opinion, estimate or projection. The Company assumes no obligation to update any forward-looking
+708	information contained in this Presentation. Any forward-looking statements and projections made by third parties included in this Presentation are not adopted by the Company and the Company is not responsible for such
+709	third-party statements and projections. Given these uncertainties and other factors, viewers of this Presentation are cautioned not to place undue reliance on these forward-looking statements. All information contained in
+710	this Presentation has been prepared solely by the Company based on information and data which the Company considers reliable. This Presentation may not be all inclusive and may not contain all of the information that you
+711	may consider material.
+712	
+713	
+714	
+715	
+716	                                                                                                                                                                                                                                               24
+717	
+718	
+719	[page 26]
+720	        Pace Digitek Limited
+721	        Registered Office and Corporate Office:                 For further information, please contact:
+722	
+723	Thank   Plot # V 12, Industrial Estate, Kumbalgodu, Bengaluru
+724	        Mysore Highway, Bengaluru, Karnataka –560074 CIN:
+725	                                                                Ajay Tambhale
+726	                                                                Head - Investor Relations & Corporate Communication
+727	
+728	You     U31909KA2007PLC041949
+729	
+730	        www.pacedigitek.com
+731	                                                                Investor.relations@pacedigitek.com
+732	                                                                +91 74839 41773
+733	
+734	
+735	        080-29547792                                            Go India Advisors
+736	                                                                Khushbu Singhania | Tanishka Tanvi
+737	                                                                khushbu@goindiaadvisors.com | tanishka@goindiaadvisors.com
+738	                                                                +91 85911 90410 | +91 9297761958
+739	
+740	

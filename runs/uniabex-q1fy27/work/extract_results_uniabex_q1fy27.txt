@@ -1,0 +1,378 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: uniabex_q1fy27_results.pdf
+doctype: results
+page_count_pdfinfo: 7
+formfeed_count: 7 (last formfeed is a trailing end-of-file marker with no content after it; 7 real pages confirmed by pdfinfo and by page-by-page rasterisation)
+line_count: 378
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01 (Rs. in lakhs stated explicitly in table header, "Rs. in lakhs, except per share data")
+ocr_pages: [4 (full table, rasterised 300dpi, text layer had merged/garbled columns), 5 (partial - note 5 dividend text only, reading-order scrambled in text layer; also recovered Chairman signature block missing from text layer)]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026, Financial Year 2026-27)
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+NOTE ON SOURCE: PDF producer is iLovePDF (OCR-derived text layer). Pages 1, 2, 3, 6, 7
+contain minor character-level OCR noise (e.g. "prepaed", "Commitiee", "Dicctors",
+"H.hex" for a logo, "06"" for "06th") but are otherwise faithfully column/row-preserved
+and legible; these are reproduced as extracted, uncorrected, below. Page 4 (the
+financial results table) had merged/garbled numeric columns in the text layer and was
+re-extracted via pdftoppm -r 300 rasterisation + visual read of the table image; the
+clean re-extraction replaces the garbled text layer for that page and is labelled
+[OCR page 4]. Page 5 (notes) was legible except for note 5, whose text layer reading
+order was scrambled (fragment "the financil year 2025-26." floated before the note
+began, and the sentence "for(600%" ran on mid-figure); note 5 was re-extracted via
+pdftoppm -r 300 rasterisation and is labelled [OCR page 5]; the Chairman's signature
+block (name and DIN), present in the source image but entirely absent from the text
+layer, is likewise recovered and labelled [OCR page 5].
+
+[page 1]
+                       H.hex
+     Uni Abex Alloy Products Limited
+
+
+              06" August, 2026
+
+              BSE Limited,
+              Phiroze Jeejeebhoy Towers,
+              Dalal Street, Fort, Mumbai - 400 001
+
+              Dear Sir/ Madam,
+
+              Sub: Outcome of the Board Meeting held on 06" August, 2026
+
+              Ref: Disclosure under Regulation 30 and other applicable provisions of the SEBI
+                   (LODR) Regulations, 2015 (“Listing Regulations™)
+
+              In continuation to our letter dated 28th July, 2026, the Board of Directors at their Meeting held
+              today, i.e. 06" August, 2026, at 03:15 p.m. (IST) and concluded at 5:50 p.m. (IST) has:
+
+                  a)    approved, the Unaudited Financial Results of the Company for the first quarter ended
+                       30th June, 2026 of the Financial Year 2026-27 pursuant to Regulation 33 of SEBI
+                       (Listing Obligations & Disclosure Requirements) Regulations, 2015. The copy of the
+                       Financial Results along with the Limited Review Report by Statutory Auditors of the
+                       Company is attached as “Annexure 1”.
+
+                  b) accepted and taken on record resignation letter (enclosed) of Mr. Bhautesh Shah as
+                     the Company Secretary and Compliance Officer (Key Managerial Personnel) of the
+                     Company. The Board of Directors placed on record their appreciation for the valuable
+                     contribution made by Mr. Bhautesh Shah as Company Secretary & Compliance Officer
+                     during his tenure. He will be relieved from his responsibilities with effect from closing
+                     hours of 15th September, 2026. Disclosure under Regulation 30 read with Schedule
+                     11l of the Listing Regulations read with SEBI Master Circular is enclosed as Annexure
+                     [II - text truncated at source page break; see Annexure II on page 6 below]
+
+
+
+              The outcome of the meeting and the results are also available at the website of the Company
+              at www.uniabex.com
+
+              This is for your information and records.
+
+              Thanking you.
+
+              Yours faithfully,
+              For Uni Abex Alloy Products Limited
+              Bhautesh                 Digitally signed by Bhautesh
+                                       Ashwin Shah
+
+              Ashwin Shah              Date: 2026.08.06 18:11:53
+                                       +05'30'
+              Bhautesh Shah
+              Company Secretary & Compliance Officer
+
+              Encl: as above
+    Regd. Office: Liberty Building, Sir Vithaldas Thackersey Marg, Mumbai-400020, Tel.: +91-22-22084436
+    Factory: Plot No: 583 & 584-A Belur Industrial Area, Dharward, Karnataka-5800T], India.
+
+©® +910836-2971320/0836-2971321                5K Forgeneral query:info@uniabex.com                       A Neterwala Group Company
+                                                       Investor query: companysecretary@uniabex.com
+[%] +91-22-22082113                            @ www.uniabex.com                                           CIN:L27100MH1972PLCO015950
+
+[page 2]
+                                                                                                                                                     Ann exuvt (Annexure I)
+
+Walker Chandiok & Co LLP
+
+
+
+
+                                                                                                                               Walker Chandiok & Co LLP
+                                                                                                                              42nd Floor,
+                                                                                                                               Building Commerz l, International
+                                                                                                                               Business Park, Oberol Garden City,
+                                                                                                                              Off Western Express Highway, Goregaon
+                                                                                                                               (East),
+                                                                                                                               Mumbai-400063
+                                                                                                                               T49122 6626 2699 (T +91 22 6626 2699)
+
+
+Independent Auditor's Review Report on Unaudited Quarterly Financial Results of the Company
+pursuant to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 (as amended)
+
+To the Board of Directors of Uni-Abex Alloy Products Limited
+
+1.    We have reviewed the accompanying statement of unaudited financial results (the 'Statement') of Uni-
+      Abex Alloy Products Limited (the 'Company') for the quarter ended 30 June 2026, being submitted
+      by the Company pursuant to the requirements of Regulation 33 of the SEBI (Listing Obligations and
+      Disclosure Requirements) Regulations, 2015 (as amended) ('Listing Regulations').
+
+2.    The Statement, which is the responsibility of the Company's management and approved by the
+      Company's Board of Directors, has been prepared in accordance with the recognition and
+      measurement principles laid down in Indian Accounting Standard 34, Interim Financial Reporting ('Ind
+      AS 34), prescribed under section 133 of the Companies Act, 2013 (the 'Act'), and other accounting
+      principles generally accepted in India and is in compliance with the presentation and disclosure
+      requirements of Regulation 33 of the Listing Regulations. Our responsibility is to express a conclusion
+      on the Statement based on our review.
+
+3.    We conducted our review of the Statement in accordance with the Standard on Review Engagements
+      (SRE) 2410, Review of Interim Financial Information Performed by the Independent Auditor of the
+      Entity, issued by the Institute of Chartered Accountants of India. A review of interim financial
+      information consists of making inquiries, primarily of persons responsible for financial and accounting
+      matters, and applying analytical and other review procedures. A review is substantially less in scope
+      than an audit conducted in accordance with the Standards on Auditing specified under section 143(10)
+      of the Act, and consequently, does not enable us to obtain assurance that we would become aware
+      of all significant matters that might be identified in an audit. Accordingly, we do not express an audit
+       opinion.
+
+
+
+
+Chartered Accountan's                                                                                                Walker Chandiok & Co LLP s registered   with
+                                                                                                                     imited iabilty with identification number AAC-
+ (Oficesin Atmedabad, Bengatru, Bhubanesiar, Chandiath, Chénna,Delvadun, Goa, Gurugram, Guweha, Hydersbsd, Indore,   2085 and has it registered office at 141,
+ Jaiur, Kochi, Kokata, Mumbsi,New Det, Noda and Pune                                                                 Connaught Circus, Outer Circle, New Delh,
+                                                                                                                     110001, India
+
+[page 3]
+Uni-Abex Alloy Products Limited
+Independent Auditor's Review Report on Unaudited Quarterly Financial Results of the Company
+pursuant to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+2015 (as amended)
+
+4.    Based on our review conducted as above, nothing has come to our attention that causes us to believe
+      that the accompanying Statement, prepared in accordance with the recognition and measurement
+      principles laid down in Ind AS 34, prescribed under section 133 of the Act, and other accounting
+      principles generally accepted in India, has not disclosed the information required to be disclosed in
+      accordance with the requirements of Regulation 33 of the Listing Regulations, including the manner
+      in which it is to be disclosed, or that it contains any material misstatement.
+
+
+For Walker Chandiok & Co LLP
+Chartered Accountants
+Firm Registration No: 001076N/N500013
+
+
+
+
+ N2
+Murad D. Daruwalla
+                                                  s
+Partner
+Membership No: 043334
+
+UDIN: 26043334EKKUPA4264
+
+Place: Mumbai
+Date: 06 August 2026
+
+
+
+
+'Chartred Accountants                                                                                                     Walker Chandiok & CoLLP is registered with
+                                                                                                                          limited labilty with identification number AAC-
+ (Ofices in Ahmedabad, Bengahru, Bhubanesiar, Chandigaih, Chennai, Detradun, Goa, Gurugram, Guwahat, Hyderabad, Indore,   2085 and has it registered office at 41,
+ Jipur, Kooh, Kolkata, Mumbs, New e, Noda and Pune                                                                        Connaught   Circus, Outer Gircle, New Delh,
+                                                                                                                          110001, India
+
+[page 4]
+[OCR page 4] -- text-layer table was merged/garbled (e.g. raw layer showed "Total income 78145 513296 4,130,038 28814" as unreadable merged digits); re-extracted below from 300dpi rasterisation of page 4, columns verified against table gridlines and company/auditor seals visible on the source image.
+
+                                          UNI-ABEX ALLOY PRODUCTS LIMITED (CIN No. L27100MH1972PLC015950)
+                                         Registered Office: Liberty Building, Sir Vithaldas Thackersey Marg, Mumbai-400 020
+
+A. Statement of unaudited financial results for the quarter ended 30 June 2026
+                                                                                                            (Rs. in lakhs, except per share data)
+
+                                                                                        Quarter ended                                          Year ended
+Sr. No. | Particulars                                          30 June 2026        | 31 March 2026            | 30 June 2025        | 31 March 2026
+                                                                 (Unaudited)         | (Unaudited)              | (Unaudited)         | (Audited)
+                                                                                     | (Refer note 4)           |                     |
+
+1   Income
+    (a) Revenue from operations                                4,103.25            | 7,829.03                 | 3,918.27            | 21,878.41
+    (b) Other income                                              681.20           |   303.93                 |   211.76            |    949.73
+    Total income                                                4,784.45           | 8,132.96                 | 4,130.03            | 22,828.14
+
+2   Expenses
+    (a) Cost of materials consumed                              2,933.41           | 3,151.26                 | 2,052.49            |  9,732.36
+    (b) Changes in inventories of finished goods and            (1,417.69)         |   (23.13)                |  (464.58)           |   (632.69)
+        work-in-progress
+    (c) Employee benefits expense                                 540.16           |   530.43                 |   450.96            |  2,051.18
+    (d) Finance costs                                               16.47          |    19.01                 |    18.59            |     70.25
+    (e) Depreciation and amortisation expense                     120.30           |   131.74                 |   125.49            |    503.46
+    (f) Other expenses
+        (i) Manufacturing and operating expense                   913.95           |   929.73                 |   597.44            |  2,825.07
+            (Consumption of stores and spares, power and
+            fuel, job work charges, etc.)
+        (ii) Others                                                704.05          |   816.95                 |   600.62            |  2,747.67
+    Total expenses                                               3,810.65          | 5,555.99                 | 3,381.01            | 17,297.30
+
+3   Profit before exceptional item and tax (1-2)                   973.80          | 2,576.97                 |   749.02            |  5,530.84
+4   Exceptional item - gain (refer note no 6)                          -           | 27,353.05                |       -             | 27,353.05
+5   Profit before tax (3+4)                                        973.80          | 29,930.02                |   749.02            | 32,883.89
+
+6   Tax expense
+    (a) Current tax                                                197.41          | 4,152.31                 |   211.49            |  4,928.14
+    (b) Deferred tax charge/(credit)                                50.94          |    14.76                 |   (18.31)           |     (8.84)
+    (c) Prior period tax adjustments                                    -          |        -                 |       -             |    (21.62)
+    Total tax expense                                               248.35         | 4,167.07                 |   193.18            |  4,897.68
+
+7   Net profit for the period/year (5-6)                          725.45           | 25,762.95                |   555.84            | 27,986.21
+
+8   Other comprehensive income (net of taxes)
+    Items that will not be reclassified to profit or loss:
+    (a) Remeasurement of the defined employee benefit                   -          |     3.63                 |       -             |      3.63
+        plan - gain
+    (b) Income tax charge relating to the above                         -          |    (0.91)                |       -             |     (0.91)
+    Total other comprehensive income                                    -          |     2.72                 |       -             |      2.72
+
+9   Total comprehensive income for the period/year (7+8)          725.45           | 25,765.67                |   555.84            | 27,988.93
+
+10  Paid up equity share capital                                  197.50           |   197.50                 |   197.50            |    197.50
+    (Face value of Rs. 10 each)
+
+11  Other equity                                                        (blank)    | (blank)                  | (blank)             | 41,262.09
+
+12  Earnings per equity share (Face value of Rs. 10 each)
+    Basic and diluted (Rs.)                                        36.73*          | 1,304.45*                |    28.14*           |  1,417.02
+    *Not annualised
+
+[company seal: Uni Abex Alloy Products Limited, Mumbai]  [auditor seal: Walker Chandiok & Co LLP, Chartered Accountants, Mumbai]
+
+[end OCR page 4]
+
+[page 5]
+Uni-Abex Alloy Products Limited
+B. Notes to the unaudited financial results for the quarter ended 30 June 2026
+
+     1       The unaudited financial results (Statement) has been prepaed in accordance with the recognition and measurement principles laid down i Indian
+             Accounting Standacds 34, Tntesim Financial Reporting (Ind AS 34), prescribed under scction 133 of the Companies Act, 2013 (the 'Act), and other
+             accounting principles generally accepted in India and is in compliance with the presentation and disclosure equirements of Regulation 33 of the SEBI
+             (Listing Obligations and Disclosure Requirements) Regulations, 2015 (as amended).
+     2       The above Statement is reviewed and recommended to the Board of Directors by the Audit Commitiee and subscquently approved by the Board of
+             Dicctors at their respective meetings held on 6 August 2026. The statutory auditors have carried out a limited review of the statement for the quartee
+             ended 30 June 2026,
+     3       Consideding the nature of operations and the manner in which the chief operating decision maker of the Company reviews the opecating resulis, the
+             Company has concluded that there is only one operating segment "Alloy and Steel Castings" as per Ind-AS 108 "Operating Segments". Accordingly, no
+             sepaate disclosures of segment information have been made.
+     4       The figures for the quarter cnded 31 March 2026 are the balancing figures between the audited figures for the year then ended and the year to date figures
+             up to the end of thied quacter of said financial year which were subjected to a limited review.
+     5       [text-layer reading order was scrambled here; raw fragments were: "the financil year 2025-26." / "The Boaed of Directors had recommended
+             final cquity dividend of Rs. 40 pee share (400% of the face valuc of Rs.10 cach) for(600%" / "Fucther, the Board of Directors have also
+             recommended a special dividend on account of Thane land sale of Rs. 60 pee share of the face value of" / "Rs. 10 cach). Accordingly, the
+             total dividend recommended by the Board for the financial year 2025-26 aggregates to Rs. 100 pe shace (1000% of the face" / "value of Rs.
+             10 cach). The payment of dividend is subject to shareholders approval in the upcoming Annual General Meeting."]
+
+             [OCR page 5] -- clean re-extraction of note 5 from 300dpi rasterisation:
+             The Board of Directors had recommended final equity dividend of Rs. 40 per share (400% of the face value of Rs.10 each) for the
+             financial year 2025-26. Further, the Board of Directors have also recommended a special dividend on account of Thane land sale of
+             Rs. 60 per share (600% of the face value of Rs. 10 each). Accordingly, the total dividend recommended by the Board for the financial
+             year 2025-26 aggregates to Rs. 100 per share (1000% of the face value of Rs. 10 each). The payment of dividend is subject to
+             shareholders approval in the upcoming Annual General Meeting.
+             [end OCR page 5 - note 5]
+
+     6       During the previous quacter and year ended 31 March 2026, the Company had disposed of its investment propecty situated at Thane, Mahacashtca for a
+             total consideration of Rs. 28,019.42 lakhs, An exceptional gain of Rs. 27,353.05 lakhs has been recogaised after deducting sclling expenses of Rs. 653.65
+             Iakhs and the carrying value of the investment property amounting to Rs.12.72 khs. The Company has presented this gain on sale as 'exceptional items' as
+             peeTnd AS 1, Prescatation of Financil Statements read with Schedule I11 to the Companis, Act 2013.
+         7   The Company does not have any subsidiary/associate /joint venture, hence consolidated financial results is not applicsble to the Company.
+
+
+
+
+                                                                                                                                 For Uni-Abex Alloy Products Limited
+
+             [OCR page 5] -- signature block below "For Uni-Abex Alloy Products Limited" was entirely absent from the text layer (image-only
+             signature); recovered from 300dpi rasterisation:
+             [signature]
+             F.D. Neterwala
+             Chairman
+             DIN: 00008332
+             [end OCR page 5 - signature block]
+
+              Place: Mumbai
+              Date: 6 August 2026
+
+[page 6]
+                      H.hex
+     Uni Abex Alloy Products Limited
+
+
+
+                                                                                                             Annexure Il (Annexure II)
+              Details as required under Regulation 30 read with Schedule lll of the Listing Regulations
+
+               1      Reason       for    change      viz.   Resignation of Mr. Bhautesh Shah from the post of
+                     appeintment;           resignation,     Company Secretary and Compliance Officer (Key
+                                                             Managerial Personnel) w.e.f. the closing hours of 15
+                                                             September, 2026 to pursue growth opportunities
+                                                             outside the organization.
+               2 | Date of appointment                       Mr. Bhautesh Shah will be relieved from his
+                   /cessation (as applicable) &              responsibilities w.ef. the closing           hours of 15"
+                   term of appointment                       September, 2026
+               3 | Brief Profile (in case of                 Not applicable
+                   appointment)
+               4 | Disclosure of Relationship                Not applicable
+                   between Directors (in case of
+                   appointment of Director)
+
+
+
+
+    Regd. Office: Liberty Building, Sir Vithaldas Thackersey Marg, Mumbai-400020, Tel.: +91-22-22084436
+    Factory: Plot No: 583 & 584-A Belur Industrial Area, Dharward, Karnataka-5800T], India.
+
+©®) +910836-2971320/0836-2971321                   For general query: info@uniabex.com
+                                             D=4 Investor query: companysecretary@uniabex.com             A Neterwala Group Company
+
+@ +91-22-22082113                             @ www.uniabex.com                                            CIN:L27100MH1972PLCO015950
+
+[page 7]
+7" July, 2026
+
+To,
+Mr. A. F. Neterwala, Vice Chairman
+Uni Abex Alloy Products Limited
+Liberty Building, Sir Vithaldas Thackersey Marg,
+New Marine Lines, Mumbai 400020
+
+Dear Sir,
+
+      H             s the Company Secretary and Compliance Officer of the Company
+
+I hereby tender my resignation from the post of Company Secretary and Compliance Officer (Key
+Managetial Personnel) of the Company to pursue growth opportunities outside the organization.
+
+It was a privilege being long associated with the Company and strengthening it's governance and
+compliance framework. | am sincerely grateful to you and our Chairman, Mr. F. D. Neterwala for
+the trust, confidence, guidance and opportunities you have extended to me throughout my
+tenure.
+
+
+| remain committed to ensuring a smooth and seamless transition of my responsibilities. With
+this, | request to be relieved with the closing hours of 15™ September, 2026.
+
+Further, | take this opportunity to express my heartfelt gratitude to our Board members for their
+guidance, support and making myjourney both professionally enriching and personally fulfilling.
+
+ I wish Uni Abex continued success in the years ahead.
+
+Thanking you.
+
+ Yours sincerely,
+
+
+
+ B%h Shah

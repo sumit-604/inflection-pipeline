@@ -273,8 +273,8 @@ own book is shrinking even as the group prints growth.
 ## STEP 3 — SEQUENTIAL QoQ TRAJECTORY (consolidated)
 
 Only Q1FY26, Q4FY26, Q1FY27 are disclosed in the supplied documents. Q2FY26 and Q3FY26
-quarterly figures are **ND** (not in the filing or deck; deck slide 36 segment quarters are
-unreliable, F16-1/F16-2).
+quarterly figures are **ND** (not in the filing or deck; the deck's slide-36 segment bars
+carry a **period-label ambiguity**, F16-1/F16-2 — see the segment reconciliation note below).
 
 | Quarter | Revenue | Op EBITDA Margin | Core PBT (ex-OI) | ECL charge | One-offs | QoQ run-rate |
 |---|---|---|---|---|---|---|
@@ -295,6 +295,21 @@ unreliable, F16-1/F16-2).
   revenue shrank. **Critically, Q4FY26 EBITDA was struck AFTER a 4.46 Cr ECL charge and
   Q1FY27 after ZERO ECL** (l.482). Ex-ECL, underlying operating EBITDA DETERIORATED ~4.5 Cr
   QoQ. The flat headline is flattered by the disappearance of the provision line (A3-05).
+
+**Q1FY27 SEGMENT SPLIT — RECONCILIATION (F16-1, recharacterized).** The true Q1FY27 segment
+split is **B2B Rs 1,092 Mn** (deck sl.26 L767) + **Contract Manufacturing Rs 1,540 Mn**
+(deck sl.27 L786; press release l.75-76, "growing 83% YoY to Rs 1,540 million from Rs 839
+million") + **Services/DaaS Rs 277 Mn** (deck sl.29 L847; press release l.78, "grew 48% YoY to
+Rs 277 million from Rs 187 million") = **Rs 2,909 Mn**, which **RECONCILES** to reported Q1FY27
+consolidated revenue **Rs 2,908.09 Mn** (results l.475) and to the slide-10 mix 37.6% / 53% /
+9.5% (L281-287). **There is NO top-line overstatement.** The slide-36 bars A4 initially read
+as Q1FY27 (B2B 1,302 / CM 1,774 / Services 361, sum Rs 3,437 Mn) are in fact the **Q4FY26
+column** — the sum ~3,437 Mn matches Q4FY26 reported revenue **Rs 3,433.57 Mn** (results
+l.475). The slide-36 defect is therefore **period-label ambiguity** (which bar maps to which
+quarter, compounded by the Services x-axis mislabel Q3-FY26 vs Q4-FY26, F16-2), NOT a
+reconciliation gap. Read correctly, the Rs 3,434 Mn (Q4FY26) -> Rs 2,908 Mn (Q1FY27) step
+**corroborates the -15.3% QoQ revenue decline** (F16-6). A reader who summed the wrong
+(Q4FY26) bars as Q1FY27 would misread the quarter.
 
 **Diagnostics:** Run-rate is **dipping** off the Q4 peak (a balancing-figure column, note 5, so
 itself soft). Q1FY27 revenue (290.81) is below the Q4 exit (343.36) but above Q1FY26 (212.08).
@@ -553,8 +568,8 @@ Ordered by materiality. **Every A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to 
 | 5 | Consolidated revenue fell **-15.3% QoQ** and diluted EPS **-20.5% QoQ** (sl.37), absent from the press release. What drove the sequential decline and is Q1 seasonally soft? | QoQ reversal buried under YoY framing | "Q4 seasonal peak; pipeline intact for H2" | No clear driver / order slippage | F16-6 |
 | 6 | Diluted EPS fell 20.5% QoQ while PAT fell only 7.8%, implying **~16% more shares**. What is the exact **basic EPS and weighted share count** each period, and what explains paid-up +0.07 Mn (l.216)? | Share-count comparability post-IPO; unexplained allotment | Reconciled share count; +0.07 Mn explained | Inconsistent / no answer | F10-1, A3-08 |
 | 7 | The **Wadhwa mandate is Rs 6,500 Mn GDV** (press release confirms Rs 650 Cr GDV, l.70). At 10-14% fees, ARIS earns ~Rs 65-91 Cr over 18-24 months. Please confirm it is **GDV not ARIS revenue**, and the fee-recognition schedule. | Gross-vs-net revenue-visibility conflation | "Yes GDV; fee ~X Cr recognised over Y quarters" | Conflates GDV with revenue | F16-5, F6-1 |
-| 8 | Slide 36 shows Q1-FY27 segment revenue of **1,302 / 1,774 / 361 Mn (sum 3,437)** but slides 10/26/27/29 imply **1,092 / 1,540 / 277 (sum 2,909)** = reported consolidated revenue 2,908 Mn (l.475). Slide 36 over-states the top line by **528 Mn** and does not reconcile to the reported P&L. Which is the true B2B/CM/Services split? | Segment-revenue non-reconciliation across the same deck (528 Mn gap) | Confirms 1,092/1,540/277; slide 36 erratum | Cannot reconcile | F16-1 |
-| 9 | On slide 36 the **Services chart mid-period axis reads "Q3-FY26"** where B2B and CM read "Q4-FY26". Is the Rs 361 Mn Services bar Q4-FY26 or Q3-FY26, and did Services fall QoQ? | Mislabel may hide a Services QoQ decline | "Typo; Services Q4 was X, grew" | Confirms hidden decline | F16-2 |
+| 8 | On **slide 36**, which quarter do the B2B **1,302** / CM **1,774** / Services **361 Mn** bars (sum **3,437 Mn**) map to? That sum matches **Q4FY26** reported revenue (3,433.57 Mn, l.475), NOT Q1FY27; the true Q1FY27 split (1,092 / 1,540 / 277 = 2,909 Mn) reconciles to reported Q1FY27 revenue 2,908 Mn (l.475). Please **confirm the period mapping** of the slide-36 bars. | Period-label ambiguity — a reader summing the wrong (Q4FY26) bars misreads Q1FY27; NOT a top-line gap | "Confirms 1,302/1,774/361 are Q4FY26; Q1FY27 = 1,092/1,540/277" | Cannot say which bar is which period | F16-1 |
+| 9 | On slide 36 the **Services chart mid-period axis reads "Q3-FY26"** where B2B and CM read "Q4-FY26". Is the Rs 361 Mn Services bar Q4-FY26 or Q3-FY26, and did Services fall QoQ? | Mislabel compounds the period ambiguity in Q8 | "Typo; the 361 Mn bar is Q4-FY26" | Confirms hidden decline / cannot clarify | F16-2 |
 | 10 | What is the **current point-value CM capacity utilisation** across your 10+ plants (Notion red line <55%)? | Utilisation is a thesis pillar; deck gives only a range | ">70%, above red line" | Stays in the "~20% to 70%+" range | F16-7 |
 | 11 | Are the slide-9 KPIs (**ROE 10.6%, ROCE 17.2%, ND/E 0.02**) single-quarter annualized or trailing-twelve-month, and as of what date? | Annualizing one strong quarter as a headline return | "Clearly labels basis" | Refuses to clarify basis | F16-4 |
 | 12 | Consolidated deferred tax is a **persistent credit** ((2.55) Mn this Q, l.507), a ~96bps ETR shield. When do the DTA/carry-forwards exhaust and normalise the ETR upward? | Future ETR step-up risk to PAT | "Minimal; normalised ETR already ~25%" | Large unrecognised shield masking ETR | A3-06 |
@@ -568,8 +583,8 @@ Ordered by materiality. **Every A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to 
    firing and change Bull probability directly.
 2. **Nil-ECL explanation (Q2)** — a "we'll revisit next quarter" answer confirms
    receivable-recoverability stress (Bear case revealing itself).
-3. **Wadhwa GDV-vs-fee + segment reconciliation (Q7/Q8)** — tests management transparency; a
-   conflated or non-reconciling answer downgrades disclosure credibility.
+3. **Wadhwa GDV-vs-fee (Q7)** — tests management transparency; a conflated answer downgrades
+   disclosure credibility.
 
 **Channel:** **Concall (06-Aug-2026, scheduled within 24h).** Prioritise Q1-Q3 in live Q&A;
 submit Q4-Q16 in writing to IR (Valorem Advisors) if unaddressed. These questions seed the
@@ -581,7 +596,7 @@ Role 5 promise-vs-delivery tracker for Q2FY27.
 
 | Item | Implied date | Source ref | Status |
 |---|---|---|---|
-| **06-Aug-2026 concall** — debtor days, nil-ECL, segment reconciliation | 06-Aug-2026 (today) | deck cover L34 | pending (this run's Q&A) |
+| **06-Aug-2026 concall** — debtor days, nil-ECL, slide-36 segment period-mapping | 06-Aug-2026 (today) | deck cover L34 | pending (this run's Q&A) |
 | **AUSPL amalgamation NCLT filing** | context deadline 20-Jan-2027; effective ~Q1-Q2 FY28 | results note 6 l.251-252 (A3-04) | underway |
 | Scheme effective on RoC filing of NCLT order | post-NCLT | note 6 l.250-251 | pending |
 | BSE/NSE NOCs for the Scheme | achieved 17-Jul / 20-Jul-2026 | note 6 l.249-250 | completed |
@@ -720,7 +735,7 @@ questions_for_management:
   - {q: "What drove the -15.3% QoQ revenue and -20.5% QoQ EPS omitted from the press release?", from_finding_id: "F16-6"}
   - {q: "Exact basic EPS and weighted share count per period; explain paid-up +0.07 Mn and 16% implied share rise?", from_finding_id: "F10-1"}
   - {q: "Confirm Wadhwa Rs 6,500 Mn is GDV not ARIS revenue; fee % and recognition schedule?", from_finding_id: "F16-5"}
-  - {q: "Reconcile Q1FY27 segment revenue: slide 36 sum 3,437 Mn (overstates by 528 Mn) vs slides 10/26/27/29 sum 2,909 Mn = reported 2,908 Mn?", from_finding_id: "F16-1"}
+  - {q: "Slide-36: do the B2B 1,302 / CM 1,774 / Services 361 Mn bars (sum 3,437 ~ Q4FY26 reported 3,433.57) map to Q4FY26, not Q1FY27? The true Q1FY27 split 1,092/1,540/277 = 2,909 reconciles to reported 2,908. Confirm the period mapping (period-label ambiguity, NOT a top-line gap).", from_finding_id: "F16-1"}
   - {q: "Is the slide-36 Services bar Q3-FY26 or Q4-FY26; did Services fall QoQ?", from_finding_id: "F16-2"}
   - {q: "Current point-value CM capacity utilisation vs the 55% red line?", from_finding_id: "F16-7"}
   - {q: "Are slide-9 ROE 10.6%/ROCE 17.2%/ND-E 0.02 single-quarter annualized or TTM, and as of what date?", from_finding_id: "F16-4"}
@@ -732,7 +747,7 @@ questions_for_management:
   - {q: "Confirm Wadhwa DaaS fee conversion schedule over 18-24 months (promise-vs-delivery seed)?", from_finding_id: "F6-1"}
   - {q: "Entity-list changes (Lionheart rename, AUSPL absorption) baseline confirmation for next quarter?", from_finding_id: "A3-11"}
 monitorables:
-  - {item: "06-Aug-2026 concall (debtor days / nil-ECL / segment reconciliation)", implied_date: "2026-08-06", source_ref: "deck cover L34"}
+  - {item: "06-Aug-2026 concall (debtor days / nil-ECL / slide-36 segment period-mapping)", implied_date: "2026-08-06", source_ref: "deck cover L34"}
   - {item: "AUSPL amalgamation NCLT filing", implied_date: "2027-01-20 (context deadline); effective ~Q1-Q2 FY28", source_ref: "results note 6 l.251-252 (A3-04)"}
   - {item: "Wadhwa DaaS Rs 6,500 Mn GDV conversion to ARIS fee", implied_date: "18-24 months from Q1FY27 (~Q1FY29)", source_ref: "deck sl.35 L1000; press release l.70 (F6-1)"}
   - {item: "H1 FY27 balance sheet + cash-flow (Reg 33): debtor days / >6-mo bucket / CFO", implied_date: "~Nov-2026 (Q2 results)", source_ref: "Role4 Step 5 data rule; F16-3"}
@@ -751,7 +766,7 @@ flags:
   - "Headline ~4x PAT growth roughly half one-time: ~40% of the +20.36 Cr PBT uplift is finance-cost reset (+5.38, IPO debt repayment) + absence of Q1FY26 exceptional (+2.88); recurring core is EBITDA +68% (Step 4)."
   - "Annualised-EPS read INVALID (A5 bear counter grafted, Step 6A): ~8.2 annualised EPS is not 'ahead of run-rate' because ~40% of the beat is one-time AND the sequential run-rate is decelerating (-15.3% rev / -20.5% EPS QoQ)."
   - "Cash conversion INDETERMINATE (no cash-flow statement); Pillar 2 (0.80x) held on stale evidence; AR context: lifetime CFO -Rs 159 Cr, FCF negative 0/5."
-  - "Deck segment revenue non-reconciliation: slide 36 sum 3,437 Mn overstates reported top line 2,908 Mn by 528 Mn (F16-1); Services axis mislabel (F16-2)."
+  - "Q1FY27 segment split RECONCILES: B2B 1,092 + CM 1,540 + Services 277 = 2,909 Mn vs reported 2,908 Mn (F16-1). No top-line overstatement. Slide-36 defect is period-label ambiguity — the 1,302/1,774/361 (sum 3,437) bars are the Q4FY26 column (~reported 3,433.57), and the Q4->Q1 step corroborates the -15.3% QoQ decline (F16-6). Services axis mislabel (F16-2)."
   - "Paid-up +0.07 Mn unexplained by any corporate action; diluted-basic EPS spread collapsed to nil; implied share count inconsistent (A3-08/F10-1)."
   - "No thesis-broken trigger formally fired; Decision Status stays HELD; recommendation HOLD, NO ADD pending concall + H1 balance sheet."
 plain_language_brief_included: true

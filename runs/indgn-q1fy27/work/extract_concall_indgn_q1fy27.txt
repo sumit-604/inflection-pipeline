@@ -1,0 +1,1016 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: INDGN_Q1FY27_concall_transcript.pdf
+doctype: concall
+page_count_pdfinfo: 17
+formfeed_count: 17
+line_count: 1001
+unit_convention: Millions
+conversion_factor_to_cr: Millions -> x0.1 (INR X million = X/10 Rs Crores)
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-06
+speaker_turn_count: 53
+notes: Line numbers below are assigned fresh in this output file (1..1001) and do not match pdftotext's internal numbering. [page N] markers denote PDF physical page boundaries (N = 1..17, pdfinfo page count). [TURN n: Speaker] markers tag each new speaker turn at the line where that turn begins; text continues unmarked until the next turn marker. Page 1 is a SEBI Regulation 30 cover/transmittal letter; the transcript body carries its own internal pagination "Page X of 16" (X=1..16) printed within the extracted text, distinct from the PDF page markers below. Document states it "has been edited for readability and is not a verbatim record" (line ~989, page 16).
+=== END HEADER ===
+1	[page 1]
+2	INDGN/SE/2026-27/41
+3	
+4	
+5	06 August 2026
+6	
+7	
+8	 BSE Limited,                                             National Stock Exchange of India Limited
+9	 Phiroze Jeejeebhoy Towers,                               Exchange Plaza, C-1, Block G,
+10	 Dalal Street,                                            Bandra Kurla Complex, Bandra (E),
+11	 Mumbai- 400001, India.                                   Mumbai – 400 051, India.
+12	 Scrip Code: 544172                                       Trading symbol: INDGN
+13	
+14	
+15	Dear Sir / Madam,
+16	
+17	
+18	Subject: Transcript of the conference call on financial results for the quarter ended June 30, 2026
+19	
+20	
+21	Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015,
+22	please find enclosed the transcript of the conference call for the quarter ended June 30, 2026, held on July 31,
+23	2026.
+24	
+25	
+26	The above information will be made available on the website of the Company: https://www.indegene.com/
+27	
+28	
+29	We request you to kindly take the same on record.
+30	
+31	
+32	Thanking You
+33	
+34	
+35	Yours Sincerely,
+36	For Indegene Limited
+37	
+38	SRISHTI Digitally
+39	        by SRISHTI
+40	                  signed
+41	
+42	
+43	RAMESH RAMESH
+44	        KAUSHIK
+45	
+46	KAUSHIK Date: 2026.08.06
+47	        10:37:59 +05'30'
+48	
+49	Srishti Ramesh Kaushik
+50	Company Secretary and Compliance Officer
+51	
+52	
+53	Encl: A/a
+54	
+55	
+56	
+57	
+58	                                                                         Indegene Limited
+59	
+60	                                                                         Third Floor, Aspen G-4 Block, Manyata Embassy
+61	                                                                         Business Park (SEZ), Outer Ring Road, Nagawara, Bengaluru-
+62	                                                                         560 045, Karnataka, India
+63	
+64	                                                                          Phone: +91 80 4674 4567, +91 80 4644 7777
+65	                                                                          compliance.officer@indegene.com
+66	                                                                          www.indegene.com
+67	
+68	                                                                          CIN: L73100KA1998PLC102040
+69	
+70	[page 2]
+71	                      “Indegene Limited
+72	           Q1 FY27 Earnings Conference Call”
+73	                         July 31, 2026
+74	
+75	
+76	
+77	
+78	MANAGEMENT:
+79	MR. MANISH GUPTA – CHAIRMAN AND CHIEF EXECUTIVE OFFICER
+80	MR. SUHAS PRABHU – CHIEF FINANCIAL OFFICER
+81	MR. ABHISHEK AGARWAL – HEAD, INVESTOR RELATIONS
+82	
+83	
+84	
+85	
+86	                             Page 1 of 16
+87	
+88	[page 3]
+89	                                                                                                  Indegene Limited
+90	                                                                                                     July 31, 2026
+91	
+92	[TURN 1: Moderator] Moderator:          Ladies and gentlemen, good day, and welcome to the Indegene Limited Q1 FY27 Earnings
+93	                    Conference Call. As a reminder, all participant lines will be in the listen-only mode, and there
+94	                    will be an opportunity for you to ask questions after the presentation concludes. Should you need
+95	                    assistance during this conference call, please signal an operator by pressing star then zero on
+96	                    your touchtone phone. Please note that this conference is being recorded.
+97	
+98	
+99	                    I now hand the conference over to Mr. Abhishek Agarwal, Head of Investor Relations, Indegene
+100	                    Limited. Thank you, and over to you, sir.
+101	
+102	
+103	[TURN 2: Abhishek Agarwal] Abhishek Agarwal:   Thank you, moderator. A very good morning to all of you and thank you for joining us today for
+104	                    Indegene's earnings conference call for the first quarter of financial year 2027. Today, we have
+105	                    with us Mr. Manish Gupta, Indegene's Chairman and CEO; and Mr. Suhas Prabhu, CFO, to share
+106	                    the highlights of the business and financials of the quarter.
+107	
+108	
+109	                    I hope you have gone through our results release and the investor presentation, which have been
+110	                    uploaded on the website as well as the stock exchange website. The transcript of this call will be
+111	                    available in a week's time on the company's website.
+112	
+113	
+114	                    Please note that today's discussion will be forward-looking in nature and must be viewed in
+115	                    relation to the risks pertaining to our business. After the end of this call, in case you have any
+116	                    further questions, please feel free to reach out with the Investor Relations team. Over to Manish.
+117	
+118	
+119	[TURN 3: Manish Gupta] Manish Gupta:       Thank you, Abhishek. Good morning, everyone, and thank you for joining our Q1 FY27
+120	                    earnings call.
+121	
+122	
+123	                    Given that we are already midway through 2026, it is a good moment to take stock both of how
+124	                    our industry is doing and the start we have made to the year. Let me begin with the industry,
+125	                    then turn to our performance, our deal momentum, and I also want to continue to talk about what
+126	                    makes Indegene structurally different, as well as our outlook for the year.
+127	
+128	
+129	                    Let's start with the industry. The global pharma industry continues to show resilient growth in
+130	                    2026, expanding in the mid to high single digits year-on-year through the first half of the year.
+131	                    Notably, the top 20 global pharma companies who are the core of our customer base are
+132	                    outpacing that average with cumulative revenue growth of roughly 10% to 12% year-on-year in
+133	                    the first calendar quarter. These companies are expected to stay ahead of the broader industry.
+134	                    While anti-obesity remains the primary growth driver, what stands out is the breadth of
+135	                    momentum. High-value therapeutic categories such as immunology, oncology and mental health
+136	                    are all growing in double digits.
+137	
+138	
+139	                    Most large pharma companies delivered strong first half results. The outcome varied by portfolio
+140	                    mix. 8 of the top 25 biopharma posted double-digit revenue growth in the first quarter. Only a
+141	                    handful of those with heavy loss of exclusivity (LoE) exposure or waning COVID-19 sales saw
+142	                    a decline. Smaller biotechs had a more mixed first half. Funding in biotech and IPO conditions
+143	                    remain selective. But an uptick in partnerships and M&A provided relief with big pharma
+144	                    spending over $100 billion on biopharma acquisitions in the first half – on pace for the largest
+145	                    deal value since 2019 – as companies buy pipeline to address patent cliffs. The outlook for the
+146	
+147	
+148	
+149	                                             Page 2 of 16
+150	
+151	[page 4]
+152	                                                                             Indegene Limited
+153	                                                                                July 31, 2026
+154	
+155	second half and beyond remains constructive with analysts projecting sustained mid-single-digit
+156	global pharma growth through 2027.
+157	
+158	
+159	Now let's look at the regulatory front. There are no major items of note this quarter. The industry
+160	continues to navigate pricing pressure, loss of exclusivity through a two-pronged response. First,
+161	several mega brands facing material loss of exclusivity risk are reimagining their marketing
+162	spends to maximize portfolio economics, a trend that benefits us directly. The $10 million-plus
+163	omnichannel marketing deal, which we had won and spoken about in Q3 is a clear example of
+164	that. Second, the drug pipeline remains near historic highs, as the industry shifts towards
+165	advancing multiple candidates rather than betting on a single blockbuster. This is a multiyear
+166	trend, and its effect is that pharma will need far more efficient ways to run commercial operations
+167	across wider portfolios with lower peak sales per asset. A key enabler for this, we believe, is
+168	going to be AI, which is already compressing timelines and lowering the cost of advancing
+169	candidates. Each of these forces plays to Indegene's strength.
+170	
+171	
+172	With this broad background, now let me turn to our own performance. And let me be direct, we
+173	have started the year well. Q1 revenues came in at INR10,631 million, growing 39.7% year-on-
+174	year and 6% quarter-on-quarter. This is the strongest quarter-on-quarter growth we have
+175	delivered in a first quarter in four years, and we see this as a base on which we will continue to
+176	build momentum. This growth is broad-based, not a one-off. Importantly, it was led by accounts
+177	beyond our top 20, which now contribute more than a third of our total revenues.
+178	
+179	
+180	Our active client base crossed the milestone of 100, reaching 105, and we have added 2
+181	customers to the $10 million to $25 million bucket, taking that cohort to 9. Our revenue per
+182	employee, something which we've been alluding to in all our calls now is approximately
+183	$77,000. On a trailing 12-month basis. This remains industry-leading, a direct reflection of the
+184	quality of our engagements and the productivity of our model.
+185	
+186	
+187	A word on demand environment. Across our conversations, customers are genuinely excited
+188	about the potential of AI. And when they are ready to move, that excitement is translating to real
+189	expanding work. What we are also seeing is that while the enthusiasm is real, enterprise adoption
+190	remains measured and the pace of change on the ground is slower. Now we at Indegene view
+191	this as an opportunity rather than a concern.
+192	
+193	
+194	And let me tell you why. Our large Tectonic engagement in Germany, which we announced in
+195	Q4, illustrates the dynamic well. While offtake on the existing scope has been measured, the
+196	customer confidence was strong enough that they expanded into a further region during the
+197	quarter, and I want to speak about this in the deal wins.
+198	
+199	
+200	This, we believe, is typical in new technology adoption cycles and it is precisely the environment
+201	in which a partner that can understand the domain, engineer trust and can operationalize AI at
+202	scale wins.
+203	
+204	
+205	With that, let me come to deal wins and the FY27 momentum. We had a robust quarter on deal
+206	wins. In Enterprise Commercial segment, we signed 1 deal in the $3 million to $5 million range,
+207	where a top 5 customer selected us to migrate their content platform. We also signed 4 deals
+208	
+209	
+210	                         Page 3 of 16
+211	
+212	[page 5]
+213	                                                                             Indegene Limited
+214	                                                                                July 31, 2026
+215	
+216	with annual contracts in the $1 million to $3 million range, three in commercial and one in
+217	medical. The first one is the extension of the Tectonic engagement with our largest customer. I
+218	just spoke about this. The Germany engagement has now expanded to Spain.
+219	
+220	
+221	A top 20 pharma company chose us to support its brands across the U.S. for creative and digital
+222	production using omnichannel assets. Another biotech company engaged us to enable its content
+223	platform end-to-end from assessment and maturity through build and migration. And in medical,
+224	a biotech company brought us in for medical writing. This is going to be for submissions.
+225	Beyond these, we won a couple of deals in the sub-million-dollar bracket. The reason we bring
+226	these, that while these are modest today, these are the first phase of larger engagements with the
+227	potential to grow into multimillion dollar relationships. One with a midsized European company
+228	supporting launch readiness with scope to extend into data analytics and another where a top 20
+229	pharma company selected us for a change management consulting assignment with the potential
+230	to set up a global content factory for their international business unit. We are very excited about
+231	this one.
+232	
+233	
+234	I also wanted to highlight two offerings that are gaining strong traction. The first is Agentic
+235	AOR. Building on the proof of concept we completed with a multinational pharmaceutical
+236	company, and we spoke about this earlier in our Q4 earnings call, we are now in advanced
+237	discussions to close the next phase of that engagement.
+238	
+239	
+240	Now if you step back and see, together Agentic AOR and Tectonic, which we spoke about
+241	earlier, demonstrates the direction we are taking as a company, moving upstream and capturing
+242	a larger share of the value chain. We are winning high-value work in how customers conceive,
+243	plan and build their commercial and medical activities. From a strong base in running content
+244	operations, which we had for a very long period of time and omnichannel campaigns at scale,
+245	we are bringing upstream capabilities, brand strategies, creatives as the same accountable
+246	partner.
+247	
+248	
+249	Our organic and inorganic capability investments over the past 4 years, combined with our
+250	technology investments in Content Super App agents and our proven ability to run global
+251	commercial operations at scale, create a truly differentiated proposition. The second offering,
+252	which we're seeing traction on, is our regulatory One-Click Submission. We spoke about the
+253	engagement with a midsized pharma company, which continues to expand in scope, taking on
+254	new reports and is becoming a blueprint for the industry. We continue scaling our homegrown
+255	platforms, Medico-Legal Review and Medical Writing, where our domain expertise is embedded
+256	in technology, and these are central to delivering an output rather than headcount.
+257	
+258	
+259	Taken together, none of this is a one-off. The deals we signed this quarter and the offerings I've
+260	just described are repeatable capabilities, ones we can take to every one of our customers. It is
+261	this capability on top of a strong and consistent pipeline that gives us the confidence to say that
+262	FY27 will be a stronger year than FY26.
+263	
+264	
+265	With this, let me step back and reiterate something more fundamental. Why we stay confident
+266	quarter-on-quarter, whatever the environment, it is because Indegene is structurally different. I
+267	spoke about this in Q4. I want to speak about it again a bit today. We are a new category of a
+268	
+269	
+270	                         Page 4 of 16
+271	
+272	[page 6]
+273	                                                                              Indegene Limited
+274	                                                                                 July 31, 2026
+275	
+276	company, not a better version of any old one. Many of you have asked how to benchmark us, as
+277	IT services, agency or a CRO, none of these molds fit. 4 things set us apart and together we call
+278	them the Indegene EDGE. E for Embedded revenue partner, D for Deep domain expertise, G is
+279	Gen AI disruptor, and E is the Engagement model. Let me talk about each one of them.
+280	
+281	
+282	Let's talk about Embedded revenue partner. We work inside our clients' revenue engine, the
+283	commercial and medical functions behind launches, growth and brands. Our buyers are focused
+284	on growth, ROI and compliance. This is where we differ from any IT company. Any IT vendor
+285	sits on the cost side of the budget, bought by the technology organization and measured on
+286	efficiency and arbitrage and is therefore exposed to cost cutting. We sit on the other side.
+287	Commercial budgets tied to the products clients most want to grow. And this, we believe, still
+288	is an underappreciated point. Even the savings we deliver through productivity and AI do not
+289	vanish as our clients' margins. They are redeployed as more volume, more personalized content
+290	and more channels, which return to us as more work. We win either way. And we are far more
+291	resilient to cost cutting than a typical services model.
+292	
+293	
+294	Now let's come to the second one, Deep domain expertise. Built over 27 years in life sciences
+295	with more than 29% of our people from a health care background. But the real asset is not
+296	headcount. There's domain knowledge beneath it, embedded in our clients' workflows over
+297	decades. Our work is critical, judgment-intensive and heavily regulated. It needs human
+298	judgment and AI together. And it is far less susceptible to automation than coding on any
+299	infrastructure. Every new technology, Gen AI included, compounds on that hard-won
+300	knowledge. AI is an accelerant for us. We don't believe it's a threat.
+301	
+302	
+303	Third, we ourselves have been a Gen AI disruptor. Gen AI reshapes our economics on 2 fronts.
+304	On demand side, clients face exploding complexity, rising content volumes, heavier compliance
+305	burdens fragmented across brand-by-brand, market-by-market models, which pushes them to
+306	centralize. We meet that at the enterprise level, reengineering entire end-to-end processes rather
+307	than selling point solutions and taking wallet share from incumbents, which are typically
+308	agencies and CROs I spoke about earlier. On economics, Gen AI is driving price deflation.
+309	Incumbents at very large scale lack the growth headroom to offset falling prices. We are the
+310	opposite. Large enough to serve global clients end-to-end, nimble enough to convert deflation
+311	into new volumes and share gains. So, Gen AI is a tailwind, as I spoke about earlier. The very
+312	technology that erodes incumbents' economics, expands ours and opens client budgets that were
+313	closed to us even a few quarters back.
+314	
+315	
+316	The last and very important one, Engagement model. Our engagement model for years, and I
+317	would have spoken about this even when we were doing IPO, were built around outputs and
+318	outcomes, not headcount. Most of our revenue is outcome-aligned. Paid for work delivered and
+319	value created, not bodies deployed. Priced on outputs, every efficiency gain flows straight to our
+320	bottom line, giving us a structural incentive to adopt new technology faster than peers and to
+321	keep the upside rather than pass it through. Reinforcing this is a single integrated global delivery
+322	model, unlike much of the agency world, which is scattered and local. This gives us scale and
+323	consistency that brand-level players simply cannot match.
+324	
+325	
+326	
+327	
+328	                         Page 5 of 16
+329	
+330	[page 7]
+331	                                                                                               Indegene Limited
+332	                                                                                                  July 31, 2026
+333	
+334	                Now none of this is new. You've heard it before. I've returned to it today because in a journey
+335	                of a company in a changing environment, these are exactly the things that do not change:
+336	                embedded revenue, deep domain expertise, a Gen AI disruptor and outcome-aligned engagement
+337	                model. That is the Indegene EDGE. And it is why our confidence rests not on any single quarter,
+338	                but on the durability of this business over a long horizon. Now over that long horizon, the impact
+339	                of Indegene EDGE shows up in numbers.
+340	
+341	
+342	                I just want to take a step back. It's been 2 years since we listed. Now in this period, we prioritized
+343	                gaining market share and continue to build on our competitive differentiators by building
+344	                proprietary Gen AI platforms, investing in GTM and making strategic acquisitions. We set out
+345	                to grow on 2 fronts at once, widening our client base and deepening our large client relationships
+346	                with growth being our priority. And we delivered.
+347	
+348	
+349	                Our total revenue is up 57% from Q1 FY25. That's the time when we had listed. On the widening,
+350	                our active client base has grown from 65 to 105, million dollar-plus clients from 36 to 54 and
+351	                revenue from accounts beyond the top 20 has become more than 2.5x. This is not a top-heavy
+352	                business riding on a few names. It's broadening, and it's broadening fast.
+353	
+354	
+355	                As we move upstream in our clients' value chain into higher-value work, this growth has come
+356	                with rising quality and not rising headcount. The revenue per employee grew 25% in the last 2
+357	                years to over USD 77,000. And the share of delivery talent with healthcare expertise has risen
+358	                to 29% from 22%. Our cash position has strengthened by over 30% in the same period. Growth
+359	                breadth, depth of expertise and financial strength all at once and all compounding. This is what
+360	                this business delivers when you give it time.
+361	
+362	
+363	                The deepening of top accounts is still ahead of us as our largest clients have not yet shown up in
+364	                these numbers. The intent, opportunity and momentum are there. The evidence of the depth is
+365	                sitting in our pipelines today, and we are confident we will convert it into revenue soon. This
+366	                confidence is grounded into the Indegene EDGE, the same embedded, outcome-aligned,
+367	                domain-led model that widened our base is what will deepen these relationships and continue to
+368	                disrupt the incumbents. When it does, it lands on top of everything I just described.
+369	
+370	
+371	                With that, let me hand over to Suhas, who will take you through the financials for the quarter
+372	                and how we see the margin trajectory also playing out. Suhas, on to you.
+373	
+374	
+375	[TURN 4: Suhas Prabhu] Suhas Prabhu:   Thank you, Manish. Once again, a very good morning to all, and we appreciate your participation
+376	                on the call today.
+377	
+378	
+379	                Let me take you through the financial performance for the quarter in more detail. Revenues for
+380	                the quarter came in at INR10,631 million or USD 112.5 million, representing growth of 26.5%
+381	                year-on-year and 2.5% quarter-on-quarter in U.S. dollar terms.
+382	
+383	
+384	                Let me turn to margins. Our EBITDA for the quarter was INR1,795 million at a margin of 16.9%.
+385	                On a reported basis, that is 50 basis points higher quarter-on-quarter. As you will recall, the prior
+386	                quarter carried an adverse impact of roughly 240 basis points from the mark-to-market of
+387	                undesignated forward contracts, ahead of us adopting hedge accounting, due to forex volatility.
+388	                And adjusting for that impact in the past quarter, our margins declined sequentially.
+389	
+390	                                          Page 6 of 16
+391	
+392	[page 8]
+393	                                                                              Indegene Limited
+394	                                                                                 July 31, 2026
+395	
+396	Two factors caused this. First, we have invested in workforce transformation that had a onetime
+397	impact on margins this quarter but will have a long-term impact in reducing our employee cost
+398	as well as tempering the impact of wage hikes going forward. Second, we carried the cost of
+399	contracted Tectonic in certain Gen AI engagements where the revenue contribution is still
+400	building slowly. Manish mentioned this earlier.
+401	
+402	
+403	As this reverses with revenues from these engagements coming through and the favorable impact
+404	of workforce transformation is realized, both these factors will largely offset the impact from
+405	the annual wage hike cycle in our second quarter, thereby keeping our margins stable unlike the
+406	declining Q2 EBITDA margin that we have historically trended.
+407	
+408	
+409	Moving down the P&L. PBT came in at INR1,527 million, up 45.3% sequentially. And the
+410	effective tax rate for the quarter was at 23.9%. PAT grew 45.9% sequentially to INR1,162
+411	million at 10.9% of revenue, up approximately 300 basis points sequentially.
+412	
+413	
+414	On the segments and geography, the mix was stable. Enterprise Commercial, our largest
+415	segment, contributed 70.6% of revenue. And revenue and North America, our largest geography,
+416	75.1%. On the customer side, revenues from accounts beyond our top 20 has almost doubled
+417	year-on-year in rupee terms and now contributes 33.4% of total revenue. As a result, the share
+418	from our largest cohorts declined even as those cohorts continue to grow in absolute terms,
+419	indicating a healthy diversification.
+420	
+421	
+422	Our active customer count rose sharply, up 14 sequentially to 105, a direct result of the sales and
+423	go-to-market investments we made last year. We continue to engage these customers through
+424	our land-and-expand strategy. Finally, the DSOs, net of unearned and unbilled revenue, was 67
+425	days, up 4 days quarter-on-quarter. And our cash and cash equivalents combined with
+426	investments remain strong at INR14,602 million.
+427	
+428	
+429	Before I close, let me spend a moment on margins going forward and the expected trajectory for
+430	the rest of FY27. First, I will refer to our August 2025 earnings call in which we highlighted
+431	investments in go-to-market and technology, impacting margins by 150 basis points starting Q3
+432	of FY26 with a 6 to 8 quarter period for normalization. With the current and anticipated
+433	momentum in FY27, we are on track. And the margin normalization is expected in 6 quarters,
+434	that is by Q4 of FY27.
+435	
+436	
+437	Second, the ramp-up of signed deals through the year, and most notably, the outcome-based
+438	omnichannel engagement we won in the third quarter of FY26 with one of our top customers.
+439	We have been carrying that cost of engagement since it went live in Q4 FY26. And with revenue
+440	expected to be recognized starting Q3 FY27, it adds to our H2 revenues with costs already being
+441	incurred in the P&L. And hence, most of that revenue will flow straight to the bottom line.
+442	
+443	
+444	And finally, productivity benefits from workforce transformation and other Gen AI-led
+445	initiatives across operations and support functions, the impact of which will keep widening
+446	progressively. We reiterate the trajectory that we set out in October last year, which is a recovery
+447	to the margin band we have historically operated in.
+448	
+449	
+450	
+451	
+452	                         Page 7 of 16
+453	
+454	[page 9]
+455	                                                                                             Indegene Limited
+456	                                                                                                July 31, 2026
+457	
+458	                Through the inflection point in Q3 FY27, the EBITDA in H2 FY27 will be back in the range
+459	                that we have operated in the past, that is 19% to 20%. Nothing we have seen in this quarter
+460	                changes that expectation. And if anything, our conviction that we are on track for this has
+461	                increased.
+462	
+463	
+464	                With that, let me pass it back to Manish for the outlook.
+465	
+466	
+467	[TURN 5: Manish Gupta] Manish Gupta:   Thank you, Suhas. Let me close with a few words on how we see the year ahead. We have started
+468	                FY27 on a strong note. As I said earlier, our best first quarter sequential growth in 4 years, with
+469	                a broadening client base and a well-qualified pipeline. On that basis, we expect our organic
+470	                growth in FY27 to be better than FY26, and we anticipate an acceleration in the second half.
+471	
+472	
+473	                As discussed over recent quarters, we have made deliberate ahead-of-the-curve investments in
+474	                our go-to-market engine and capabilities that compressed margins near term. A conscious choice
+475	                to capture the opportunities now showing up in the numbers I just walked through.
+476	
+477	
+478	                Our priority now is twofold. First, deepen existing relationships and convert the pipeline,
+479	                including in our largest clients into signed deals and revenue. And the second priority is bringing
+480	                margins back to the levels we historically operated. H2 of this fiscal year is when we believe
+481	                both these priorities will start coming together.
+482	
+483	
+484	                The outcome-based omnichannel engagement begins contributing from Q3, aiding both growth
+485	                and profitability, alongside our other deal wins scaling more meaningfully. And if you add the
+486	                productivity initiatives we have, we expect the margin recovery to become clearly visible to you.
+487	
+488	
+489	                Stepping back, the industry is growing. The large enterprises at the heart of it are growing faster
+490	                still. AI is a structural tailwind to our model. And we are the partner best positioned to help the
+491	                industry move from promise of AI to performance at scale. That is the Indegene EDGE, and it
+492	                is why we enter the rest of FY27, not merely optimistic, but genuinely confident.
+493	
+494	
+495	                With that, we can open the floor for questions. Back to you, moderator.
+496	
+497	
+498	[TURN 6: Moderator] Moderator:      The first question comes from the line of Sucrit Patil with Eyesight Fintrade.
+499	
+500	
+501	[TURN 7: Sucrit Patil] Sucrit Patil:   I have 2 questions. The first question to Mr. Gupta is, just want to understand beyond the regular
+502	                outlook what are the top 2 to 3 execution priorities you are focusing on in the coming quarters?
+503	                And alongside that, what do you see as the biggest risk in client adoption, regulatory shift or
+504	                compliance or competitive pressure? And how are you preparing to manage them while
+505	                strengthening Indegene's position in the healthcare solutions and digital transformation? That's
+506	                my first question. I'll ask my second question after this.
+507	
+508	
+509	[TURN 8: Manish Gupta] Manish Gupta:   Let me take a step back. At a broader level, we continue to execute on our GTM engine,
+510	                deepening our client relationships. Our priority is to move the whole customer pyramid, get into
+511	                our first $50 million accounts, move more accounts to $25 million. That is the priority which we
+512	                have been speaking about continues to be there.
+513	
+514	
+515	
+516	
+517	                                         Page 8 of 16
+518	
+519	[page 10]
+520	                                                                                             Indegene Limited
+521	                                                                                                July 31, 2026
+522	
+523	                The second is to continue to expand our customer base, which is on track. If I take a slightly
+524	                long-term view, we continue to invest in our capabilities and tech stack, building end-to-end
+525	                solutions for our clients to adopt AI much more meaningfully. And when I say meaningfully,
+526	                drive outcomes rather than just provide some point solutions. That's what we continue to focus
+527	                on.
+528	
+529	
+530	                I would say this is probably the more long-term trend. If I step back and look at the current
+531	                quarter priorities, it is essentially focused on making sure that the pipeline we have gets
+532	                converted into revenues, and we have a decent pipeline, including with the largest customers,
+533	                we get that converted. And the other one is getting our margin profile back keeping the tight
+534	                control on that.
+535	
+536	
+537	                The reason we are confident about that this is not resting on some revenue which we'll win in
+538	                the future. This is resting on revenue which we will, in all probability, be recognizing, contracts
+539	                which we already have. That's what gives us confidence. Suhas, you want to add on to this piece?
+540	
+541	
+542	[TURN 9: Suhas Prabhu] Suhas Prabhu:   And Sucrit, you also spoke about the risks. What we keep a look out for is the regulatory
+543	                environment and the policy decisions, especially in the U.S., which impacts this industry the
+544	                most. But having said that, currently, the policy outlook is stable. The drug pricing and the MFN-
+545	                related decisions are largely behind this industry, and the new launch pipeline is very healthy
+546	                and robust. But having said that, that's one thing that we are constantly on the lookout for.
+547	
+548	
+549	[TURN 10: Sucrit Patil] Sucrit Patil:   My second question to Mr. Suhas is, from a financial point of view, I want to understand what
+550	                key risks or challenges do you anticipate in the coming quarters? And what specific measures
+551	                are being taken to manage margins, cash flow and strengthen the balance sheet, especially in
+552	                areas like client receivables compliance or currency volatility.
+553	
+554	
+555	[TURN 11: Suhas Prabhu] Suhas Prabhu:   Coming to the currency volatility, we have in the last quarter moved our accounting to the
+556	                designated hedge accounting as per the accounting standards. And therefore, volatility due to
+557	                mark-to-market, if there are sudden movements in the dollar-rupee or other currencies that we
+558	                use, will no longer be impacting us going forward.
+559	
+560	
+561	                Of course, the current undesignated hedges, which will still be material till December of this
+562	                year is the only thing that we have to look out for from an accounting perspective. We continue
+563	                to hedge, as we have in the past. And therefore, we believe that the currency volatility will not
+564	                impact us at an operating margin level going forward.
+565	
+566	
+567	                Coming back to the risks on receivables and cash flow management. Most of our business, more
+568	                than 90% comes from not just the top 20 pharma, which are probably Fortune 500, Fortune 1000
+569	                kind of company, but also mid-tier pharma companies, which are multibillion-dollar companies
+570	                with very strong balance sheets.
+571	
+572	
+573	                And credit risk has not been a significant part of our risk profile in the past. We rarely see
+574	                receivable risks, and we have very minimal provisions or bad debt write-offs even if I go back
+575	                27 years in our history.
+576	
+577	
+578	
+579	
+580	                                           Page 9 of 16
+581	
+582	[page 11]
+583	                                                                                             Indegene Limited
+584	                                                                                                July 31, 2026
+585	
+586	                Having said that, we have a strong governance process and innovative deal structures in our
+587	                commercial terms when we engage with biotech and emerging pharma where the risk profile
+588	                could be slightly different from the traditional ones. And one other thing that we are looking out
+589	                for is the performance on our outcome-based model contracts, which we have been operating
+590	                for a very long time. But in the current age of evolving Gen AI needs, it is also getting the
+591	                customer involved, getting the signoffs and interim markers being ticked off as we move deeper
+592	                on those engagements. I would say that the cash flow and receivable risk is not a significant one.
+593	
+594	
+595	[TURN 12: Moderator] Moderator:      The next question comes from the line of Prolin Nandu with Edelweiss Public Alternatives.
+596	
+597	
+598	[TURN 13: Prolin Nandu] Prolin Nandu:   I have just one question, and I want to start with the clarification on the margins, right? While
+599	                you mentioned H2 should normalize, but in the same opening statement you mentioned Q4
+600	                should see some normalization of the margin back to our pre-investment level.
+601	
+602	
+603	                Is there any delay there? So just clarification on that. But more importantly, Manish, could you
+604	                just help us understand the nature of these expenses? While you talk about the investment, but
+605	                what gives us confidence that this is in true sense investment and not something that we need to
+606	                continue in an ever-changing world?
+607	
+608	
+609	                And given an option, some of the expenses, would you want to capitalize because they are going
+610	                to add long-term value to us bearing how the accounting works, that's a different story. But just
+611	                to understand the nature of these expenses, could you give us some instances where these
+612	                expenses are leading to long-term relationship or strengthening of relationship with our customer
+613	                or adding more to our business. And hence, the nature of the expenses is more like an investment
+614	                rather than a P&L expenses?
+615	
+616	
+617	[TURN 14: Manish Gupta] Manish Gupta:   Let me break this up. And I'll give you a bit of a trajectory. I think the first time when we came
+618	                and communicated that we're going to take a hit in margin was in October 2025, which was our
+619	                Q2 earnings call for the financial year FY25-26. And before we took the hit, we came out and
+620	                said we want to take this hit.
+621	
+622	
+623	                And at that time, what we have seen is the nature of our conversations with our clients were
+624	                changing. They were much more strategic in nature. Our tech stacks and capabilities were
+625	                coming together, and we needed capabilities in the front at a very different scale.
+626	
+627	
+628	                So, we had a bunch of people in various areas, our commercial business, our medical business,
+629	                consulting, technology. And a lot of them were on site in U.S. and Europe. And that's a hit we
+630	                were taking.
+631	
+632	
+633	                That is what we had called out as the first hit. That time, what we said is that we are taking this
+634	                hit. However, we believe in 6 to 8 quarters, which is the end of this financial year to mid of next
+635	                financial year. That's the broad range we had given.
+636	
+637	
+638	                Your first question, is there any delay? What Suhas alluded to, no, there is no delay. In fact,
+639	                what we said is 6 to 8. We had got a range over there. We are saying we don't need this range.
+640	                It's not going to be 6 to 8, it's going to be 6. By March end, we get back to that 19% to 20%
+641	                range. That was one piece.
+642	
+643	
+644	                                        Page 10 of 16
+645	
+646	[page 12]
+647	                                                                                              Indegene Limited
+648	                                                                                                 July 31, 2026
+649	
+650	                Now the second thing is, outside of these investments, we won some very strategic deals. And
+651	                those deals are where we have invested heavily on. And the revenues still have to flow in for
+652	                those deals. And they will flow in, that's what we are talking about, the second half on this year.
+653	                These are with some of our largest customers, super strategic deals which we believe have the
+654	                potential to kind of define the industry. And I spoke about Tectonic in the past. That's a place
+655	                where we're moving upstream. The second one, where we are investing heavily on, is this deal
+656	                where we are managing the entire portfolio of brands for a pharma company in the United States.
+657	                More than $1 billion worth of products have been given to us. And we are the partner which is
+658	                managing physician outreach and hence the prescription uptake.
+659	
+660	
+661	                So those are the kind of deals which we have done, which we invested in. And the revenue
+662	                visibility to us in the second half is pretty decent on these deals. Suhas, you want to add anything
+663	                to this?
+664	
+665	
+666	[TURN 15: Suhas Prabhu] Suhas Prabhu:   Yes. Maybe just to reiterate, if I was not clear, what we had indicated was that these investments
+667	                would be absorbed and therefore get normalized in 6 to 8 quarters. What we are calling now is
+668	                that we have strong confidence that we would be able to get there in 6 quarters, which means by
+669	                the Q4 of this year – 6 quarters from when we made those investments.
+670	
+671	
+672	[TURN 16: Manish Gupta] Manish Gupta:   The last one, let me come back, is the capitalization piece you spoke about. We continue to
+673	                invest heavily in our tech stack. This is our proprietary tech stack. We continue to invest in that.
+674	                I would say we have ratcheted up the investments a bit over there because we're investing in a
+675	                data layer where we have our own data integrating with various data sources. Cortex, something
+676	                which I've spoken about, which is the context layer, which we are building on top of that apps.
+677	                And then on top of that still workflows for our clients. As a practice, we've been expensing these
+678	                out. Technically, there is a case to be built over there in capitalization. But we continue to
+679	                expense these out to keep our P&L and balance sheet clean.
+680	
+681	
+682	[TURN 17: Prolin Nandu] Prolin Nandu:   Just so what I understand, and just to correct me if I'm wrong, what you're saying is that you will
+683	                reach that target of margin in 6 quarters. And this is despite the fact that you have won large
+684	                deals, and you have invested in it? Is that a fair summary?
+685	
+686	
+687	[TURN 18: Manish Gupta] Manish Gupta:   Six quarters was from October 2025. So, it's no longer 6 quarters from here, 3 quarters.
+688	
+689	
+690	[TURN 19: Prolin Nandu] Prolin Nandu:   But this is despite the fact that you have invested in some of large the deals which maybe you
+691	                did not factor it in when you gave this guidance. Is that fair?
+692	
+693	
+694	[TURN 20: Manish Gupta] Manish Gupta:   Yes, absolutely.
+695	
+696	
+697	[TURN 21: Moderator] Moderator:      The next question comes from the line of Vinay Menon with Monarch Capital.
+698	
+699	
+700	[TURN 22: Vinay Menon] Vinay Menon:    A couple of things, what was the organic growth this quarter? And how much was from
+701	                BioPharm. If you can give that breakup, that will be good.
+702	
+703	
+704	[TURN 23: Manish Gupta] Manish Gupta:   We're not breaking up organic and inorganic growth from a BioPharm perspective, anymore.
+705	                We gave it for two quarters because now given the kind of deals that is coming in, I would say
+706	
+707	
+708	
+709	
+710	                                        Page 11 of 16
+711	
+712	[page 13]
+713	                                                                                                 Indegene Limited
+714	                                                                                                    July 31, 2026
+715	
+716	                   BioPharm is reasonably well integrated into our business. It's very difficult to peel out what was
+717	                   BioPharm, what was anything else. Suhas, you want to?
+718	
+719	
+720	[TURN 24: Suhas Prabhu] Suhas Prabhu:      And sequentially, both are in the base...
+721	
+722	
+723	[TURN 25: Manish Gupta] Manish Gupta:      Yes. Both are in the base from a sequence perspective.
+724	
+725	
+726	[TURN 26: Vinay Menon] Vinay Menon:       Okay. And what was the constant currency growth for this quarter? I don't find that number in
+727	                   the presentation.
+728	
+729	
+730	[TURN 27: Suhas Prabhu] Suhas Prabhu:      Vinay, we disclosed U.S. dollar growth, given that about 84%-85% of our revenues are in U.S.
+731	                   dollar. But if I do a quick approximation, given that we also have euro and GBP, which are the
+732	                   next two significant currencies, it will be a tad north of our U.S. dollar growth of 2.5%, will be
+733	                   more in the 2.6% to 2.7% range.
+734	
+735	
+736	[TURN 28: Moderator] Moderator:         The next question comes from the line of Prakash Kapadia with Kapadia Financial Services.
+737	
+738	
+739	[TURN 29: Prakash Kapadia] Prakash Kapadia:   Two questions from my end. You talked about some outcome-based things getting executed. As
+740	                   we plan to data mine our customers and scale the business, what is the percentage we are looking
+741	                   at these outcome-based deals? Is that going to be the norm for the industry and us as we plan to
+742	                   scale because everybody wants the proof of the pudding and then people want to scale? Is that
+743	                   trend happening for us and industry?
+744	
+745	
+746	                   And secondly, you mentioned about second half being better in terms of margin recovery and
+747	                   some of the costs have already been incurred. Typically, on a historic basis, there is an order
+748	                   book and execution cycle. If you could delve deeper for us to understand how revenue and order
+749	                   book and visibility flows in so that some of the initiatives which you talk can flow to the P&L.
+750	                   So those are my 2 questions.
+751	
+752	
+753	[TURN 30: Manish Gupta] Manish Gupta:      Let me talk about the outcome and output things and pass it on to Suhas. As a company, we
+754	                   already being operating in a 60-ish percent approximately output plus outcome-based contracts.
+755	                   And this is not new for those of you we met during the IPO process, you would have actually
+756	                   spoken about this. A very significant portion of the dedicated FTEs outside of the 60%, is
+757	                   standing in FTE contracts who supporting this output outcome-based contracts. These are not
+758	                   sitting as pure FTE contracts outside. These are resources in countries like U.S., multiple
+759	                   European countries, Japan, China which are very specialized role like omnichannel
+760	                   orchestrators, digital specialists, brand liaisons, regulatory experts in these markets.
+761	
+762	
+763	                   Now these are required to make sure that you have the right skill sets, infra, to run these complex
+764	                   global commercial engagements, which are outcome-output based. We see that trend continuing.
+765	                   Although we are already at a level which the other service companies will be aspiring for.
+766	
+767	
+768	                   What we are also seeing, and that's the deal we are speaking about, is not just output but
+769	                   outcome-based, where our incentives are linked with clients' true revenue incentives, which is
+770	                   revenue uptick. And we have experience in doing those deals. We are seeing those conversations
+771	                   also expand. Those conversations also are expanding because of the breadth of capabilities and
+772	                   the trust we are able to bring with clients of our understanding of the domain, and the capability
+773	
+774	
+775	                                           Page 12 of 16
+776	
+777	[page 14]
+778	                                                                                               Indegene Limited
+779	                                                                                                  July 31, 2026
+780	
+781	                sets we have to deliver that outcome, which is as critical as it gets revenue. Suhas, I'll pass it on
+782	                to you for the order book.
+783	
+784	
+785	[TURN 31: Suhas Prabhu] Suhas Prabhu:   Sure. And Prakash, as Manish mentioned, most of our engagements are hybrid contracts. They
+786	                have a certain FTE component, which kicks in pretty early as the engagement goes live, pretty
+787	                much within a month of us signing these contracts. And then as the volume builds up is when
+788	                the output-based revenues start flowing in. And these typically take 3 to 4 quarters to ramp up
+789	                to its full potential for a typical $1 million to $3 million, maybe even $4 million kind of a deal.
+790	
+791	
+792	                Having said that, the large omnichannel engagement deal, this was one of our largest that we
+793	                announced in our quarter 3 earnings call last year, north of $10 million in ACV is a pure
+794	                outcome-based contract wherein while the engagement has gone live, the revenue recognition is
+795	                deferred by about 3 quarters because there is no FTE component in the same, and is based on
+796	                client acceptance of certain outcomes which are measured on a quarterly basis and trued up on
+797	                a full year basis. And therefore, the revenue recognition would start from Q3. This is not
+798	                something that we have signed at a full outcome basis in the past and is therefore being called
+799	                out specifically and impacting the margins in the near term. But with revenue recognition starting
+800	                in Q3, as we anticipate, the revenue will start flowing directly to the bottom line because the
+801	                costs are already being incurred last quarter, current quarter and going forward.
+802	
+803	
+804	[TURN 32: Manish Gupta] Manish Gupta:   If I just can add in on this part, the client has been sharing the revenue upticks with us for now
+805	                5 months. And those numbers are very encouraging.
+806	
+807	
+808	[TURN 33: Moderator] Moderator:      The next question comes from the line of Varun Bahl with Plutus Investment.
+809	
+810	
+811	[TURN 34: Varun Bahl] Varun Bahl:     My question is regarding your Gen AI strategy. If you could explain your proprietary Gen AI
+812	                model in terms of developing vertical oncology and the integration with frontier models or open-
+813	                source Chinese AI models, especially with the twin challenges of the IP protection narrative,
+814	                which is very strong these days and cost pressure of frontier models.
+815	
+816	
+817	[TURN 35: Manish Gupta] Manish Gupta:   That's a great question, and I'm glad you asked that. Our Gen AI strategy for a while has been
+818	                very nuanced. First of all, we are very clear, we will not get into the trap of saying that we train
+819	                5,000 people, 10,000 people, whatever it is on Gen AI. We said we're going to be solving
+820	                problems for our customers.
+821	
+822	
+823	                How do I bring down the cost of an asset development? What kind of IP can I build so that, for
+824	                example, the contract Suhas was talking about where you're doing omnichannel outreach to
+825	                physicians, automatically based on the physician profile, I am able to say that you know what,
+826	                here is the method to reach out to this physician, here is the first touch point based on the
+827	                interaction you see, automatically, there's a second touch point required. Those are medical
+828	                writing. How do I automate clinical study reports, various protocol offering. I can go on and on,
+829	                200 reports.
+830	
+831	
+832	                Now that was a broad approach we were taking in solving for these problems at the highest level.
+833	                From a technology stack perspective, what we have been doing is at the bottom infra layer from
+834	                our perspective is that we said, let's make sure that we have all our data assets in place. We used
+835	                to have our own data assets called Invisage and physician profiling.
+836	
+837	                                        Page 13 of 16
+838	
+839	[page 15]
+840	                                                                                               Indegene Limited
+841	                                                                                                  July 31, 2026
+842	
+843	                When we acquired BioPharm, they had a data asset, which we've now integrated. We are buying
+844	                a bunch of data. We are partnering with other people. We are making sure that we have access
+845	                to all the public data sources and of course continue to mine our own data. There's a data
+846	                infrastructure, we're calling it Indegene data universe at the bottom of the stack.
+847	
+848	
+849	                The second one is, I think it's been a while now, we announced Cortex as our platform, which
+850	                we're going to be using internally for knowledge engineering. That's where all these medical
+851	                experts, the creative, digital specialists, how they do things, that context gets built in. Cortex was
+852	                designed for 2 things. One is that we wanted to make sure that we are separating the SME layer
+853	                from the technical layer. The SMEs can build these workflows and do the knowledge
+854	                engineering and what model to use, whether it's open weight, some frontier model, we removed
+855	                that from this layer. So, right at the beginning, the architecture was such that we are not wedded
+856	                to one model. Depending on the use case and what is the right model to be used from an accuracy
+857	                and cost perspective, we continue to iterate. And we had this effort for a long period of time to
+858	                be working on all models and seeing what model fits a particular case. We continue to earn that.
+859	
+860	
+861	                On top of that is the agent layer. I spoke about Content Super App, Medical Writing platform.
+862	                Now these are very broad catch-all phrases. Within each of these, there are multiple agents which
+863	                are doing different things. When we are saying Agentic AOR, that itself will have a few agents
+864	                delivering certain different outcomes. The same thing is true on the medical writing side.
+865	
+866	
+867	                On top of the agent layer is the Transform AI, where you have the workflows, the skill sets,
+868	                which are going to be required to deliver those differentiated outcomes. So that's a broad and a
+869	                very high-level strategy which we are deploying at Indegene, and I could speak about this for a
+870	                few hours.
+871	
+872	
+873	[TURN 36: Varun Bahl] Varun Bahl:     Yes, it's on a slightly broader market question, especially since you are dealing with such
+874	                intellectual data, can you see any kind of a direction in terms of having more ownership of the
+875	                data for the enterprises that you are dealing with? Are they slightly concerned about data
+876	                protection while integrating the frontier models with your data and your Agentic models?
+877	
+878	
+879	[TURN 37: Manish Gupta] Manish Gupta:   Not really. The companies, especially the larger companies, will be very clear in terms of how
+880	                they protect their own data. Those contracts we will have. And that's a bit of a give and take
+881	                which happens in every contract. We would say that our systems can learn from this data, but it
+882	                stays your data and that every contract gets negotiated that way. Our legal team has been
+883	                completely trained on making sure that they know how to do this stuff.
+884	
+885	
+886	                I think what we are seeing more as a broader trend, and we believe the direction the market will
+887	                go into is that larger pharma companies will want to have their own open weight models
+888	                deployed on their own infra. The bigger concern is not with us, what they don't want is the
+889	                frontier models to be competing with them tomorrow by having access to all their data. So more
+890	                and more, we would see that on-prem, open weight models being deployed by our larger
+891	                customers will become a norm.
+892	
+893	
+894	[TURN 38: Moderator] Moderator:      The next question comes from the line of Chandan Kumar with Narnolia Financial Services.
+895	
+896	
+897	
+898	
+899	                                         Page 14 of 16
+900	
+901	[page 16]
+902	                                                                                                   Indegene Limited
+903	                                                                                                      July 31, 2026
+904	
+905	[TURN 39: Chandan Kumar] Chandan Kumar:       I just have a question. You have recently highlighted your Gen AI platform as the next phase of
+906	                     growth. Could you quantify what percentage of revenue is currently generated through AI-led
+907	                     platform engagements and how you expect that mix to evolve over the next 2 to 3 years?
+908	
+909	
+910	[TURN 40: Manish Gupta] Manish Gupta:        Chandan, unfortunately, we can't break this out because unlike other companies, for us, AI is
+911	                     getting embedded in everything we do. And I think I've spoken about this earlier. We have been
+912	                     on the AI journey not after OpenAI announced their Gen AI model GPT-3 or whatever it was.
+913	                     We embarked on this journey more than a decade back. And we have been on the AI journey
+914	                     since then.
+915	
+916	
+917	                     Everything which we are doing, every of our asset we are building at a global level for a pharma
+918	                     company, whether it's commercial or medical, we are deploying NLP, machine learning,
+919	                     computer vision at the back of it, automating processes. Content volumes went up 5-7x and we
+920	                     continue to bring down the cost per unit using those methods. All Gen AI has done has given us
+921	                     better tools to address the same problem, that how do we enable pharma companies to get more
+922	                     efficient and effective in sales and marketing and managing compliance and reducing the time
+923	                     it takes to do clinical trials. So, to that extent, it is embedded in everything we do, unlike other
+924	                     companies for which they are creating a new category or a new line of business. Here, it's
+925	                     embedded into everything we do.
+926	
+927	
+928	[TURN 41: Chandan Kumar] Chandan Kumar:       I have one more question. You have given the EBITDA outlook that it will be back in the
+929	                     historical trend by this year end. Could you just tell me the key margin driver other than the cost
+930	                     you already incurred?
+931	
+932	
+933	[TURN 42: Suhas Prabhu] Suhas Prabhu:        Other than the costs that are already incurred, given our growth trajectory, the investments that
+934	                     we have made in the go-to market, the business leadership in the front and the revenue uptick
+935	                     from contracted business in Tectonic are the other drivers that would get the margins back into
+936	                     this range because those are costs that are not going to increase in line with the increased
+937	                     revenue.
+938	
+939	
+940	[TURN 43: Moderator] Moderator:           The next question comes from the line of Chirag Kachhadiya with Motilal Oswal Financial
+941	                     Services.
+942	
+943	
+944	[TURN 44: Chirag Kachhadiya] Chirag Kachhadiya:   Just on margin part. So, from 4Q FY27 should we expect it will be in the range of around 19%,
+945	                     20%.
+946	
+947	
+948	[TURN 45: Suhas Prabhu] Suhas Prabhu:        Yes, Chirag.
+949	
+950	
+951	[TURN 46: Chirag Kachhadiya] Chirag Kachhadiya:   Okay. And Manish, few broader questions. The deals which we target, depending in for past 1
+952	                     year is out listing. Those are incremental ones in context to the overall existing pie of the
+953	                     business?
+954	
+955	
+956	[TURN 47: Manish Gupta] Manish Gupta:        Yes, yes. What we call out over here is net new business. We don't talk about renewals in our
+957	                     earnings calls.
+958	
+959	
+960	[TURN 48: Chirag Kachhadiya] Chirag Kachhadiya:   And what is generally the renewal deals in the organic part of the business annually?
+961	
+962	
+963	
+964	
+965	                                             Page 15 of 16
+966	
+967	[page 17]
+968	                                                                                             Indegene Limited
+969	                                                                                                July 31, 2026
+970	
+971	[TURN 49: Manish Gupta] Manish Gupta:   Our net retention has been more than 100% for our customers.
+972	
+973	
+974	[TURN 50: Suhas Prabhu] Suhas Prabhu:   Yes. And typically, renewal cycles are Jan to December. And while there will be some volume
+975	                fluctuations and periodically also some rate renegotiations but those are cycles of 3 to 4 and even
+976	                5 years in some customers. Therefore, the renewal in absolute terms would be either 2%, 3%
+977	                plus or minus that 100%. We have never lost any major enterprise deal in the renewals.
+978	
+979	
+980	[TURN 51: Moderator] Moderator:      Ladies and gentlemen, we will take that as the last question for today. I would now like to hand
+981	                the conference over to the management for the closing remarks.
+982	
+983	
+984	[TURN 52: Manish Gupta] Manish Gupta:   Thank you once again for your active participation and continued interest in Indegene. We look
+985	                forward to your participation in the earnings call and such opportunities going forward. I
+986	                appreciate all your questions once again. Thank you all and have a good day.
+987	
+988	
+989	[TURN 53: Moderator] Moderator:      Thank you, sir. Ladies and gentlemen, on behalf of Indegene Limited, that concludes this
+990	                conference call. Thank you for joining us, and you may now disconnect your lines.
+991	
+992	
+993	
+994	
+995	                (This document has been edited for readability and is not a verbatim record)
+996	
+997	
+998	
+999	
+1000	                                        Page 16 of 16
+1001	

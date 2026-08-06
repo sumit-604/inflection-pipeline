@@ -40,10 +40,25 @@ is dropped: A4 cross-checks the press release's headline claims (37% revenue,
 the ESOP grant (1,633 options) against monitoring item #7 (dilution) and F10.
 
 ## SEQUENCE STATUS
-- [ ] A1 results, A1 presentation (parallel)
-- [ ] A2 results, A2 presentation
-- [ ] A3 results, A3 presentation
-- [ ] A4 merged
-- [ ] A5 audit -> COMPLETE
-- [ ] Notion save
-- [ ] commit
+- [x] A1 results (610 lines, 10pp), A1 presentation (1251 lines, 42pp, OCR 6 slides) — GATE A1 pass
+- [x] A2 results (16 notes/77 items/8 entities/13 auditor paras), A2 presentation (42 slides/211 numbers) — GATE A2 pass
+- [x] A3 results (11 findings), A3 presentation (9 findings) — GATE A3 pass
+- [x] A4 merged review — PROCEED WITH CAVEATS; cash INDETERMINATE; HELD (no add)
+- [x] A5 audit — loop 1 INCOMPLETE (segment arithmetic + EPS caveat) -> A4 fixed;
+      loop 2 INCOMPLETE (slide-36 period-mapping: 3,437=Q4FY26 not Q1FY27) -> A4 fixed;
+      loop 3 (final) COMPLETE. Two loops used (max two); verdict COMPLETE.
+- [ ] Notion save — PENDING operator go-ahead (outward-facing append to live thesis page)
+- [x] commit (incremental, each stage) + push
+
+## OPERATIONAL NOTES (for the record)
+- Toolchain (poppler-utils, tesseract) was missing at session start; installed via apt.
+- The A1 results extractor ran a broad `rm -f page-*.jpg page-*.txt` in the SHARED work/
+  directory and deleted the concurrently-running presentation extractor's temp OCR files.
+  No damage resulted (presentation A1 completed with its extract intact), but concurrent A1
+  invocations share work/ — temp OCR files should be namespaced per doctype, not globbed.
+- A5 final audit noted ONE non-propagating raw discrepancy: consolidated Other Expenses
+  Q1FY26 comparative on OCR-suspect line l.486 (5.94 vs 7.94 Cr in the A2 ledger). It does
+  not feed any derived Q1FY27 metric (Total Expenses l.487 is independently anchored);
+  verify at source in the H1/AR. Not a blocker; verdict COMPLETE.
+- Verdict summary: PROCEED WITH CAVEATS. Master monitorable (debtor days) UNCOMPUTABLE this
+  quarter (P&L-only filing, no Q1 balance sheet). No thesis-broken trigger fired. HELD, no add.

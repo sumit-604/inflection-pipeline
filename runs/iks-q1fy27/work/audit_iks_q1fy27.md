@@ -1,123 +1,195 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — IKS (Inventurus Knowledge Solutions Ltd) — Q1 FY27
+# A5 ADVERSARY — COMPLETENESS AUDIT (RE-AUDIT, loop 2) — IKS Q1 FY27
 
-**Agent:** A5 ADVERSARY | **Model:** claude-opus-4-8 | **Independence:** fresh context — re-derived from A1 extracts and A2 ledgers only; A4/A3 cites checked, not trusted.
-**Under audit:** `review_iks_q1fy27.md` (A4). **Verdict:** **INCOMPLETE** (see foot).
+Fresh-context adversarial audit of A4's corrected review. Inputs: corrected A4 review,
+A1 extracts (results, press release, directors, presentation), A2 ledgers (results,
+presentation). Independence: every figure below re-derived from the raw INR-Million
+extract (÷10 to Rs Cr), not taken from A4's or A3's cites.
 
-Units: filing/deck report INR Million; review converts to Rs Crore at ÷10. I re-derived from the raw Mn figures throughout.
+Two prior-loop gaps under specific re-verification:
+- GAP-1: missed YoY ROE-decline cluster (deck slide 12 title "maintaining high ROE" vs
+  32.3%→26.4% chart; Abridge FVOCI revaluation driver; filing L377).
+- GAP-2: Step 4A arithmetic error (operating-cost-growth intermediate +82.85
+  contradicting −96.51 impact).
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
 
-Plain-Language Brief is Section E of the A4 review. All four labelled parts present and carry real, non-placeholder content:
+Plain-Language Brief, Section E (review L409–439). All four labelled parts present and
+carry real, non-placeholder content:
 
 | Part | Location | Present | Content check |
 |---|---|---|---|
-| 1. Summary narrative | Sec E.1, L407–413 | PRESENT | 2 substantive paragraphs, ~14 lines, numbers anchored to L319/L345/deck L305 etc. |
-| 2. Sector intelligence | Sec E.2, L415–419 | PRESENT | US healthcare RCM/coding TAM, policy exposure, AI double-edge; GENERAL KNOWLEDGE labelled |
-| 3. Business-model intelligence | Sec E.3, L421–427 | PRESENT | unit economics, parent-vs-sub margin, acquisition-led drift, ND list |
-| 4. Competition intelligence | Sec E.4, L429–435 | PRESENT | named peer field (R1/WNS/Firstsource/Sagility/EXL), win/loss vectors, "no anchored peer numbers" caveat |
+| (1) Summary narrative | L411–417 | present | Two substantive paragraphs; numbers anchored; now carries the ROE sentences (L415) |
+| (2) SECTOR intelligence | L419–423 | present | TAM, USD/INR exposure, agentic-AI thesis, provenance-labelled |
+| (3) BUSINESS-MODEL intelligence | L425–431 | present | Segment, margin structure, model-drift (acquisition-led, concentration, ROE tie-in) |
+| (4) COMPETITION intelligence | L433–439 | present | Named peers (GENERAL KNOWLEDGE-labelled), concentration/AI-threat bear points |
 
-Gate 0 = **PASS**. All four present and non-empty.
+Gate: PASS.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh grep pass vs A2 ledger; then ledger row → A4 disposition)
+## GAP-1 RE-VERIFICATION — ROE / Abridge cluster (was: return to A3, then graft by A4)
 
-Independent enumeration (my grep/manual sweep vs the A2 counts):
+A3 produced forensic F-13; A4 grafted it. I independently confirm the primary text and
+that every required surface now carries it:
 
-| Category | A2 count | My fresh count | Orphan (in ledger, absent from A4) | Status |
+- Deck slide 12 title verbatim: "Q1 FY 27 - Improving EPS and maintaining high ROE"
+  (extract_presentation L415). Confirmed.
+- ROE chart values: 32.3% (L420), 31.3% (L421), 26.4% (L423). Decline = 590bps YoY /
+  490bps QoQ. Matches A4's "~590bps YoY / ~490bps QoQ" (review L345, L373, L415). Confirmed.
+- Footnote driver verbatim: "*ROE declined due to increased equity base from revaluation
+  of Abridge, alongside lower earnings from reduced currency gains and one-time acquisition
+  costs." (L443). Confirmed.
+- Abridge FVOCI quantum: filing L377 consolidated Q1 FY27 = 226.42 Mn gross; L378 tax
+  (56.86); L379 net = 178.47 Mn. A4 states "Rs 226.42 Mn gross / 178.47 Mn net,
+  L377–379". Confirmed exact.
+
+Graft completeness across the review:
+- Question Q16 (Step 8.5, review L345) — present, with denominator-vs-numerator split and
+  bull/bear.
+- Caution flag in Combined Verdict (Section C, L373) — present.
+- Monitorable #13 (Section D, L405) — present.
+- Brief sentences (Section E narrative, L415) — present.
+- YAML: flag (L506), monitorable (L497), question row (L483), F-13 in
+  a3_findings_incorporated (L457) — all present.
+
+The "~80bps from the Abridge mark, ~500bps earnings-driven" claim is an estimate framed as
+a management question (Q16) and directionally internally consistent (590 − 80 ≈ 510 ≈
+~500). It is not a hard arithmetic assertion and does not fail. GAP-1: CLOSED.
+
+---
+
+## GAP-2 RE-VERIFICATION — Step 4A PAT bridge arithmetic (was: return to A4)
+
+Erroneous prior figures (+82.85 / −96.51) fully purged (grep of review returns zero hits;
+only +96.35 remains, review L215 and L225). Re-derived from raw extract (Rs Cr, ÷10):
+
+- Operating-cost growth components: employee 455.01 − 395.96 = +59.05; other-exp
+  143.84 − 106.38 = +37.46; inventory-change (−0.16) − 0 = −0.16.
+  Sum = 59.05 + 37.46 − 0.16 = **+96.35** (expense increase). Matches A4.
+- Cross-check via totals: Total expenses 643.09 − 548.33 = +94.76; remove D&A (+6.39) and
+  finance (−7.97): 94.76 − 6.39 + 7.97 = 96.34 ≈ +96.35 (rounding). Consistent.
+- Net Operating EBITDA change: revenue +153.53 − 96.35 = +57.18 ≈ **+57.19**.
+  Independent direct check: OpEBITDA Q1FY27 = 256.25+34.29+10.11−5.71 = 294.94;
+  Q1FY26 = 194.88+27.90+18.08−3.11 = 237.75; Δ = +57.19. Matches.
+- Full bridge to PAT: +57.19 − 6.39 (D&A) + 7.97 (finance) + 2.60 (OI) − 5.31 (assoc)
+  − 13.86 (tax) = +42.20 = reported PAT change (193.74 − 151.54). Reconciles exactly.
+
+GAP-2: CLOSED. The intermediate no longer contradicts the impact; both are +96.35 and the
+bridge closes to the reported PAT delta.
+
+---
+
+## AUDIT 1 — COVERAGE (fresh enumeration vs A2 ledgers)
+
+Fresh pass over the extracts; counts diffed against both ledgers; every ledger row checked
+for citation-or-"reviewed,no-finding" in A4.
+
+| Category | A2 count | My fresh count | Orphan rows | Status |
 |---|---|---|---|---|
-| **RESULTS ledger** | | | | |
-| agenda_items | 3 | 3 (grep `^\s+[0-9]\.\s` L37/45/77) | none | OK |
-| annexures | 4 | 4 (A/B/C-garbled/D) | none | OK |
-| annexure_disclosure_rows | 10 | 10 (5 Annexure B + 5 Annexure D) | none | OK |
-| auditor_paras | 11 | 11 (4 standalone + 7 consolidated) | none | OK |
-| entities | 11 | 11 (3 WOS + 7 SDS + 1 assoc, L228–239) | none | OK |
-| notes | 10 | 10 (grep `^\s{0,2}[0-9]{1,2}\s+[A-Z(]` L406–446) | none | OK |
-| line_items | 37 | 37 | **line item #28 — FVOCI "Changes in fair value of equity investments" (L377, Rs 226.42 Mn, the Abridge revaluation)** | **ORPHAN** |
-| zero_standing | 4 | 4 | none | OK |
-| signature_blocks | 5 | 5 | none | OK (administrative, reviewed-no-finding via preamble) |
-| **PRESENTATION ledger** | | | | |
-| pages/slides | 18 | 18 | none | OK |
-| financials_summary rows | 24 | 24 | none | OK (all tie — see Audit 2) |
-| other_kpi rows | 8 | 8 | none (FCF-yield substance covered via F16c) | OK |
-| footnotes | 11 | 11 | **footnote #10 — "*ROE declined due to increased equity base from revaluation of Abridge…" (L443)** | **ORPHAN** |
-| per-slide units | 161 | reconciled (spot-verified slides 3/8/9/10/13/14/15/16) | **Slide 12 ROE units 32.3% / 31.3% / 26.4% (L420–423) — the YoY ROE decline** | **ORPHAN** |
+| Results: notes | 10 | 10 (L406,410,413,415,418,422,424,427,438,446) | 0 | PASS |
+| Results: line items | 37 | 37 (statement L318–393, incl. OCI block) | 0 | PASS |
+| Results: zero-standing | 4 | 4 (#6 inventory, #13 assoc, #23 FX-translation, #28 FVOCI) | 0 | PASS |
+| Results: agenda items | 3 | 3 (results approval; Desai retire; King succeed) | 0 | PASS |
+| Results: auditor paras | 11 | 11 (4 s/a + 7 consol) | 0 | PASS |
+| Results: entities | 11 | 11 (10 subs + WWMG associate) | 0 | PASS |
+| Results: annexures / rows | 4 / 10 | 4 / 10 | 0 | PASS |
+| Results: signature blocks | 5 | 5 | 0 | PASS |
+| Pres: slides | 18 | 18 | 0 | PASS |
+| Pres: financials-summary rows | 24 | 24 (deck L449–472) | 0 | PASS |
+| Pres: other-KPI rows | 8 | 8 (deck slide 14) | 0 | PASS |
+| Pres: footnotes | 11 | 11 | 0 | PASS |
+| Pres: per-slide units | 161 | reconciled (no residual) | 0 | PASS |
 
-**Rows my fresh pass found that the ledger lacks:** NONE. A2 enumeration is complete on both files; the counts reconcile. A2 does **not** fail.
+Material-row citation trace: FVOCI/Abridge → F-13/Q16 (the previously-orphaned row, now
+cited); associate reclass → F-05/F-07/Q11; inventory → bridge; TruBridge license → F-02/Q2;
+Adjusted-PAT footnote → Q13; OCF/FCF add-back footnote → F16c/Q1; ROE/EPS footnotes →
+F-13/F10/Q16/Q14; acquisition-expense footnote → F16f/Q3; Top-10/Top-5 inconsistency →
+F14/Q10; CAGR framing → F16d/Q15; concentration → F16a/F16b/Q9. Non-material rows (awards
+slides, thank-you, cover letter, OCI cash-flow-hedge/remeasurement lines that do not touch
+PAT, administrative signature blocks) are covered by the blanket "All reviewed" preamble
+(review L15–21) — acceptable as "reviewed, no finding".
 
-**Orphan analysis (the failing thread).** Three enumerated units all point at one uncovered disclosure: **return-on-equity fell 590 bps YoY (32.3% Q1 FY26 → 26.4% Q1 FY27)** while the deck slide-12 title claims "**maintaining high ROE**" (L415). The deck's own footnote (L443) concedes "ROE declined," attributing it to an **increased equity base from the revaluation of Abridge** (the FVOCI equity investment, filing line item #28, L377, +Rs 22.6 Cr through OCI), alongside the forex/acquisition-cost drivers A4 already covers.
-
-A4 touches ROE only once (Step 7 pillar table: "deck ROE 26.4%… not ROCE") and **does not**: (a) state that ROE fell YoY, (b) challenge the "maintaining high ROE" framing — even though A4 catches the exactly-parallel "unsigned QoQ EPS decline" framing at Q14, or (c) mention the Abridge FVOCI revaluation anywhere. No A3 forensic in A4's incorporation list (F1/F6/F7/F8/F10/F13/F14/F15/F16a–f) covers it. This is a material disclosure unit with no finding and no management question → **coverage FAIL, return to A3** (missed forensic), which A4 must then graft.
-
-Note: the A2 presentation ledger row-19 note mislabels the P&L associate (WWMG) as "Abridge." A4 correctly used WWMG for the associate and did not inherit that slip — but then left the *actual* Abridge FVOCI item untouched. Not scored against A2 (its counts are complete); it reinforces that the Abridge revaluation fell through the net.
-
-**Concall "NOT SUPPLIED" — verified a true absence, not a dropped document.** The four A1 headers are results_board_outcome.pdf, results_press_release.pdf, results_change_directors.pdf, presentation.pdf. None is a call transcript; the deck is an "Investor Presentation," not Q&A; no document references a concall being part of the package. A4's Role 5 NOT SUPPLIED handling is correct.
+No orphan rows. No row found by my fresh pass that the ledger lacks.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recomputed from raw INR Mn; ÷10 to Rs Cr)
+## AUDIT 2 — ARITHMETIC (recomputed from raw INR Mn, ÷10)
 
-Every headline and derived metric in A4's tables was recomputed from the raw statement lines (L319–393) and deck Table 2/3. **All Step 1 data cells, all Step 1C/1D derived metrics, all Step 2 YoY, Step 3 QoQ, Step 4C standalone-vs-consol gap, and the Step 4A/4B PAT-bridge reconciled totals tie to the source within rounding.** Representative confirmations:
-
-| Metric | A4 value | My recompute (source) | Status |
-|---|---|---|---|
-| Consol revenue YoY | +20.7% | (8,936.29−7,400.95)/7,400.95 = 20.74% | OK |
-| Consol Op EBITDA Q1FY27 | 294.94 | 256.25+34.29+10.11−5.71 (L331/327/326/320) | OK |
-| Consol Op EBITDA margin Q1FY27 | 33.0% | 294.94/893.63 = 33.005% | OK |
-| Consol ETR Q1FY27 | 22.8% | 57.203/250.944 = 22.79% (L343/338) | OK |
-| Consol ETR Q4FY26 | 18.6% | 46.987/252.955 = 18.58% | OK |
-| Core PBT ex-OI YoY | +27.9% | (245.23−191.77)/191.77 = 27.88% | OK |
-| PAT YoY | +27.8% | (1,937.41−1,515.39)/1,515.39 = 27.85% | OK |
-| QoQ PAT | −5.9% | (1,937.41−2,059.68)/2,059.68 = −5.94% | OK |
-| Standalone revenue YoY | +48.8% | (4,752.68−3,194.69)/3,194.69 = 48.77% | OK |
-| Standalone other-exp QoQ | +117.0% | (573.57−264.30)/264.30 = 117.02% | OK |
-| Std/consol PAT gap Q1FY27 (consol premium) | 19.2% | 31.19/162.55 = 19.19%; collapse 34.3→19.2 = 15.1pp | OK |
-| PAT bridge reconciled total | +42.20 | 57.19−6.39+7.97+2.60−5.31−13.86 = +42.20 (=1,937.41−1,515.39) | OK |
-| Unadjusted CFO/PAT (INDETERMINATE cap) | ≈0.29x | (1,999−1,430)/10 = 56.9 ÷ 193.74 = 0.294x | OK |
-| Unadjusted FCF | ≈31.2 Cr | (1,742−1,430)/10 = 31.2 | OK |
-| Net debt YoY | −40.8% | (2,654−4,486)/4,486 = −40.8% | OK |
-
-**One arithmetic defect found:**
-
-| Metric | A4 value | My recompute | Source line | Status |
+| Metric | A4 value | Recomputed | Source line | Status |
 |---|---|---|---|---|
-| Step 4A "Total Expenses ex-D&A/finance" operating-cost-growth intermediate | **+82.85** | **+96.35** (employee +59.05 [L325] + other-exp +37.46 [L328] − inventory 0.16 [L324]); ex-inventory = +96.51 | review L215 | **FAIL** |
+| Consol revenue YoY | +20.7% | 8936.29/7400.95−1 = 20.7% | L319 | PASS |
+| Consol OpEBITDA Q1FY27 | 294.94 | 256.25+34.29+10.11−5.71 = 294.94 | L331/327/326/320 | PASS |
+| Consol OpEBITDA margin Q1FY27 | 33.0% | 294.94/893.63 = 33.0% | derived | PASS |
+| Consol OpEBITDA margin Q1FY26 | 32.1% | 237.75/740.10 = 32.1% | derived | PASS |
+| Consol core PBT ex-OI YoY | +27.9% | 245.23/191.77−1 = 27.9% | derived | PASS |
+| Consol PAT | 193.74 | 1937.41/10 | L345 | PASS |
+| Consol PAT YoY | +27.8% | 193.74/151.54−1 = 27.8% | L345 | PASS |
+| ETR Q1FY27 | 22.8% | 57.20/250.94 = 22.8% | L343/338 | PASS |
+| ETR Q4FY26 | 18.6% | 46.99/252.96 = 18.6% | L343/338 | PASS |
+| QoQ PAT | −5.9% | 193.74/205.97−1 = −5.9% | L345 | PASS |
+| QoQ OpEBITDA margin | −2.0pp | 35.0%→33.0% | derived | PASS |
+| Step 4A operating-cost growth | +96.35 | 59.05+37.46−0.16 = 96.35 | L325/328/324 | PASS |
+| Step 4A net OpEBITDA change | +57.19 | 153.53−96.35 = 57.18 ≈ 57.19 | derived | PASS |
+| Full PAT bridge | +42.20 | 57.19−6.39+7.97+2.60−5.31−13.86 = 42.20 | derived | PASS |
+| Standalone revenue YoY | +48.8% | 475.27/319.47−1 = 48.8% | L319 | PASS |
+| Standalone other-exp QoQ | +117.0% | 57.36/26.43−1 = 117.0% | L328 | PASS |
+| Standalone PAT YoY | +44.0% | 162.55/112.88−1 = 44.0% | L345 | PASS |
+| Consol premium over s/a Q1FY26 | 34.3% | 38.66/112.88 = 34.3% | L345 | PASS |
+| Consol premium over s/a Q1FY27 | 19.2% | 31.19/162.55 = 19.2% | L345 | PASS |
+| Deck EBITDA tie | 294.94 = deck 2,949 | L457 | PASS |
+| ROE decline YoY | ~590bps | 32.3%−26.4% = 5.9pp | deck L420/423 | PASS |
+| Abridge FVOCI net | 178.47 Mn | L379 net of L377 gross 226.42 / L378 tax | L377–379 | PASS |
 
-The "+82.85" is a genuine table mismatch above rounding: it **contradicts its own row**, whose impact column already carries **−96.51**, and its own listed components (59.05 + 37.46 + 0.16) sum to 96.67, not 82.85. Severity is **low / non-propagating** — the reconciled bridge total (+42.20) and every headline/derived metric are exact, so no conclusion is corrupted — but per the arithmetic rule it is a mismatch in a derived table and must be corrected before save. Loop-back: **A4** (also flag the inventory sign: the −0.16 is a benefit to EBITDA, so the correct operating-cost growth is +96.35).
-
-**INDETERMINATE cash-conversion cap — justified.** The Rs 1,430 Mn "upfront guarantee payment of economic value add made to a customer" (deck L370) is real and its nature/recurrence genuinely undisclosed; it swings CFO/PAT from 1.03x (adjusted, 199.9/193.74) to 0.29x (unadjusted) and FCF from 174.2 to ~31.2 Cr. Per house rule this may not resolve silently and caps at PROCEED WITH CAVEATS with the missing evidence named — A4 does exactly this. Correct.
+No mismatch above rounding. Corrected Step 4A bridge reconciles cleanly.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most-positive claims, strongest bear counter from the same extract)
+## AUDIT 3 — ADVERSARIAL READ (three most-positive claims, strongest bear from same text)
 
-**Positive claim 1 — "Growth is core-operating, not treasury… the single cleanest positive" (Step 2 diag 3; core PBT ex-OI +27.9%, OI only 2.3% of PBT).**
-Bear counter from the extract: consolidated core growth is partly borrowed from a **non-repeatable TruBridge software-license sale** inflating the group (Note 9, L442) and from a **−44.1% finance-cost drop** (L326); and it reverses sequentially — QoQ PAT −5.9%, margin −2.0pp (deck L457/L468).
-Survives? **NO — already incorporated** (F-02 at Step 4B/2B; F-03 QoQ correction is A4's own "single most important framing correction," Step 3). No graft needed.
+1. Claim: "Growth is core-operating, not treasury" (core PBT ex-OI +27.9%; OI only 2.3% of
+   PBT; review L169). Strongest bear from the extract: consolidated +20.7% INR is only +12%
+   USD (deck L449) — ~8–9pp is rupee depreciation, not organic; and standalone +48.8% is
+   inflated by the non-repeatable TruBridge license sale that eliminates from Q2 (Note 9,
+   L442). Survives? Yes — but ALREADY grafted: review Step 2A (L159, L167), F-02, Q2 and the
+   Combined-Verdict caution block already carry both points. No new graft required.
 
-**Positive claim 2 — Revenue +20.7% YoY, Op EBITDA +24.1% with +0.9pp YoY margin expansion; "genuinely high margins," "maintaining high ROE."**
-Bear counter from the extract: (a) ~8–9pp of the 20.7% is rupee depreciation (USD +12%) — A4 states this; (b) the "expansion" is YoY only, −2.0pp QoQ — A4 states this; **(c) reported ROE FELL 590 bps YoY (32.3%→26.4%, deck L420–423) while the deck titles the slide "maintaining high ROE" (L415), the decline driven partly by the Abridge FVOCI revaluation inflating the equity base (footnote L443; filing FVOCI line #28, L377).**
-Survives? **YES for part (c).** The ROE decline, the "maintaining high ROE" framing contradiction, and the Abridge revaluation are absent from every A4 finding, monitorable and management question. This is the same class of selective-framing catch A4 already makes for QoQ EPS. **Must be grafted into A4** (caution flag + a management question on the Abridge revaluation quantum and normalised ROE). This is the surviving counter and the coverage orphan, same root.
+2. Claim: "De-levering — net debt −40.8% YoY to Rs 265.4 Cr, finance costs −44%" (review
+   L148, L270). Strongest bear: figure is pre-TruBridge; the US$557 Mn EV (Note 9, L438)
+   closed 9-Jul-2026 with undisclosed funding (F-10) and will step up net debt / finance
+   cost from Q2. Survives? Yes — ALREADY grafted: Step 2 diagnostic 5 (L171), Step 5 (L278),
+   Q7, Monitorable 9. No new graft required.
 
-**Positive claim 3 — De-levering: net debt −40.8% YoY to Rs 265.4 Cr; finance costs −44.1%.**
-Bear counter from the extract: this is **pre-TruBridge**; the US$557 Mn EV acquisition (Note 9) closed 9-Jul-2026 with undisclosed funding and net debt already ticked up +5.7% QoQ (2,510→2,654, deck L304–305).
-Survives? **NO — already incorporated** (F-10; Step 4A/Q7; monitorable #9). No graft needed.
+3. Claim: "Clean audit, high margins" (UNMODIFIED, no GC/EoM; 33% consol / ~46% s/a).
+   Strongest bear: 5 subsidiaries + 1 associate are UNREVIEWED (~5.8% of PAT, L275–286), and
+   headline "Adjusted PAT 2,153" is a non-GAAP figure not reconciled on the filing face
+   (deck L471). Survives? Yes — ALREADY grafted: F-04 (Step 0D), Q13, and the Combined-Verdict
+   caution block. No new graft required.
+
+All three strongest bear counters are already present in the corrected review. No surviving
+counter is absent and requiring a return to A4.
+
+---
+
+## NEW-INCONSISTENCY CHECK (edits introduced this loop)
+
+The F-13 graft is internally consistent across every surface (narrative L415, verdict L373,
+monitorable L405, Q16 L345, YAML L483/L497/L506). No figure introduced by the edit
+contradicts another (590bps decline, ~80bps Abridge, ~500bps earnings — all reconcile).
+The Step 4A correction is consistent in both the bridge table and the reconciliation prose
+(+96.35 in both; closes to +42.20 reported PAT delta). No new inconsistency introduced.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
-
-Two threads fail the gate:
-
-1. **Coverage / adversarial (primary) — loop back to A3.** An enumerated disclosure cluster — Slide-12 ROE units (32.3%→26.4%, deck L420–423), footnote #10 "revaluation of Abridge" (L443), and filing FVOCI line item #28 (L377, Rs 226.42 Mn) — carries **no A3 forensic and no A4 finding or management question**. The deck claims "maintaining high ROE" while ROE fell 590 bps YoY; the disclosed Abridge equity-base driver is untouched. A3 must generate the forensic (ROE YoY decline + "maintaining high ROE" framing + Abridge FVOCI revaluation as the equity-base driver); A4 must then graft a caution flag and a management question, and add ROE to the monitorables.
-
-2. **Arithmetic (secondary) — loop back to A4.** Step 4A operating-cost-growth intermediate "+82.85" (review L215) is wrong and self-contradictory (correct value +96.35; the row's own impact already reads −96.51); inventory −0.16 should carry a benefit sign. Non-propagating (reconciled bridge +42.20 and all headline metrics are exact) but must be corrected before save.
-
-A2 enumeration is complete and passes (no rows missing from either ledger). All other arithmetic ties. All four Plain-Language-Brief parts present. INDETERMINATE cash-conversion cap justified. Concall NOT-SUPPLIED confirmed a true absence.
+COMPLETE. Both prior-loop gaps are genuinely closed (GAP-1 ROE/Abridge cluster fully
+grafted and correctly sourced; GAP-2 Step 4A bridge corrected to +96.35 and reconciling).
+Coverage: no orphan rows, no rows missing from ledger. Arithmetic: every recomputed metric
+matches within rounding. Adversarial: the three strongest bear counters are already
+incorporated; none survives absent. Deliverable gate: all four brief parts present.
+Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -125,22 +197,17 @@ company: "IKS"
 quarter: "q1fy27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
   business_model: present
   competition: present
 coverage:
-  orphan_rows:
-    - "Presentation Slide 12 ROE units (32.3%/31.3%/26.4%, deck L420-423) — YoY ROE decline not surfaced in A4"
-    - "Presentation footnote #10 (deck L443) — 'ROE declined due to increased equity base from revaluation of Abridge' not carried into any A4 finding/question"
-    - "Results line item #28 — FVOCI 'Changes in fair value of equity investments' (L377, Rs 226.42 Mn, the Abridge revaluation) untouched by A4"
+  orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "Step 4A operating-cost-growth intermediate (Total Expenses ex-D&A/finance)", a4_value: "+82.85", recomputed: "+96.35 (or +96.51 ex-inventory)", source_line: "review L215; raw L324/L325/L328"}
-surviving_bear_counters:
-  - {claim: "genuinely high margins / deck 'maintaining high ROE' (slide 12 title, L415)", counter: "reported ROE fell 590 bps YoY 32.3%->26.4% (deck L420-423); deck's own footnote L443 concedes the decline, driven partly by the Abridge FVOCI revaluation inflating the equity base (filing line #28, L377); absent from all A4 findings, monitorables and management questions", source_line: "deck L415/L420-423/L443; filing L377"}
-loop_back_to: "A3"
-gap: "A3 generated no forensic on the YoY ROE decline (32.3%->26.4%, deck slide 12 L415/L420-423), the deck's 'maintaining high ROE' framing contradiction, or the disclosed Abridge FVOCI revaluation driver (footnote L443; filing FVOCI line item #28, L377, Rs 226.42 Mn) — an enumerated ledger cluster absent from A4. A3 must produce the forensic and A4 must graft a caution flag + a management question (Abridge revaluation quantum, normalised ROE) and add ROE to monitorables. Separately, A4 must correct the Step 4A operating-cost-growth intermediate '+82.85' (review L215) to +96.35 (it contradicts its own -96.51 impact; inventory -0.16 is an EBITDA benefit) before save."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

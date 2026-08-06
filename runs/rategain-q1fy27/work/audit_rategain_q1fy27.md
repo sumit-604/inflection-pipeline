@@ -1,131 +1,139 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — RateGain Travel Technologies (RATEGAIN), Q1 FY27
-
-Fresh context. Re-derived independently from A1 extracts (results / presentation / press-release / loan-prepay) and A2 ledgers (results / presentation). A4's cites were checked, not trusted. Units: results filing printed Rs million, x0.1 to Rs Cr; deck/PR native Rs Cr; loan intimation USD.
-
----
-
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
-
-Plain-Language Brief = Section F of the review. All four labelled parts present and carrying real, non-placeholder content:
-
-| Part | Heading | Present | Content check |
-|---|---|---|---|
-| 1 | F1. SUMMARY NARRATIVE (review L381-382) | present | ~20-sentence dense paragraph; covers inorganic growth, PAT-margin decline, parent 4.4% of PAT, 64% goodwill/intangibles, deleveraging, INDETERMINATE cash, verdict PROCEED WITH FLAGS / WATCHLIST |
-| 2 | F2. SECTOR INTELLIGENCE (L384-385) | present | Travel-tech SaaS, three units, demand read, TAM 1.1/1.9/5.8 Bn (Phocuswright/1Lattice), tailwind/headwind, gaps named |
-| 3 | F3. BUSINESS-MODEL INTELLIGENCE (L387-388) | present | Subscription 79.1%, retention/LTV:CAC, gross-margin erosion, acquisition-stacked economics, adjusted-vs-reported |
-| 4 | F4. COMPETITION INTELLIGENCE (L390-391) | present | Breadth/incumbency, named partnerships, organic-Distribution weakness, concentration 17.6%, no peer benchmarks |
-
-GATE 0: PASS — all four parts present and non-empty.
+# A5 ADVERSARY / COMPLETENESS AUDIT — RateGain Travel Technologies Ltd (RATEGAIN)
+# Quarter: Q1 FY27 | Model: claude-opus-4-8 | RE-AUDIT (prior verdict INCOMPLETE)
+# Inputs seen: A4 review, A1 extracts (results/presentation/press release/loan-prepay), A2 ledgers (results/presentation). No A3 reasoning, no orchestrator commentary. All figures re-derived independently.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh grep/sweep vs A2 ledger; A2 ledger vs A4)
+## RE-AUDIT OF THE THREE PRIOR-FLAGGED A4 ERRORS (verify first)
 
-### 1a. Fresh enumeration vs A2 ledger
-
-| Category | A2 count | My fresh count | Missing-from-ledger | Status |
+| # | Prior error | Source check (re-derived) | A4 review now says | Status |
 |---|---|---|---|---|
-| Standalone notes (res) | 10 | 10 (L234,240,250,256,267,271,280,289,302,311; Note 5 "s"-OCR at L267) | none | MATCH |
-| Consolidated notes (res) | 12 | 12 (L561,567,577,582,588,625,629,636,640,651,658,660) | none | MATCH |
-| Standalone P&L line items | 24 | 24 (L189-224) | none | MATCH |
-| Consolidated P&L line items | 33 | 33 (L493-551) | none | MATCH |
-| PPA table rows | 7 | 7 (L598-609) | none | MATCH |
-| Annexure A entities | 18 | 18 (L432-468) | none | MATCH |
-| Auditor paras standalone | 5 | 5 (L94-151) | none | MATCH |
-| Auditor paras consolidated | 6 | 6 (L342-403) | none | MATCH |
-| Board agenda items | 2 | 2 (L31 results, L40 guarantee) | none | MATCH |
-| Annexure B rows | 4 | 4 (L683-703) | none | MATCH |
-| Signature/date blocks | 5 | 5 | none | MATCH |
-| ZERO_STANDING (res) | 7 | 7 | none | MATCH |
-| Deck slides | 30 | 30 ([page 1]-[page 30]) | none | MATCH |
-| Deck P&L+BS line items | 58 | 58 (20 P&L + 38 BS) | none | MATCH |
-| Deck footnotes | 6 | 6 (L270,322,679,734,769,871) | none | MATCH |
-| Deck forward/commitment | 7 | 7 (Table F) | none | MATCH |
-| ZERO_STANDING (deck) | 5 | 5 | none | MATCH |
+| 1 | Sojern PPA goodwill | results L609 `Goodwill 13,020.01` mn x0.1 = **1,302.0 Cr** (USD 147.02M, L609) | "Goodwill (PPA) Rs 13,020.01 mn = Rs 1,302.0 Cr / USD 147.02M" (C2 L313; Step 2 diag 5 L133; note L324) | **CORRECTED — PASS** |
+| 2 | Sojern PPA intangibles | results L602-604: 3,827.18 + 887.37 + 1,875.88 = **6,590.43** mn x0.1 = **659.0 Cr** | "Customer rel. 3,827.18 + Trademarks 887.37 + Software 1,875.88 = Rs 6,590.43 mn (Rs 659.0 Cr)" (C2 L314; note L324) | **CORRECTED — PASS** |
+| 3 | NRR series / sub-100 count | presentation ledger Table B L110: `120.9 / 100.5 / 99.6 / 106.8`; only FY26 = 99.6 < 100 | Stated consistently in C1-5 (L305), F3 (L390), Step 8C (L237), Q6 (L343), flags (L458): "120.9 -> 100.5 -> 99.6 -> 106.8, only FY26 (99.6) below 100, rebound to 106.8" | **CORRECTED — PASS** |
 
-No row found by my fresh pass that the A2 ledgers lack. A2 enumeration is complete; no loop-back to A2.
+All three prior errors are fixed and correctly sourced. Proceeding to the full independent audit (not assuming the rest is clean).
 
-### 1b. A2 ledger rows vs A4 coverage (orphan check)
+---
 
-Every material ledger row is cited or resolved in A4: all 22 notes (acquisition, segment, ESOP, Labour Code, EPS, HK-liquidation), all 18 entities incl. the 4 ENTITY_CHANGEs and Nrejos SARL (Section C2), both agenda items + Annexure B (guarantee, Sections C2/E), both auditor Other-Matter carve-outs plus the missing Sojern component-auditor point (Q11), all 7 ZERO_STANDING flags (Steps 1A/1B), the full consol/standalone P&L, PPA, balance sheet, segment growth, retention/LTV:CAC, FCF, shareholding baseline. Low-materiality slide rows (slide 29 shareholding detail beyond promoter 48.78%; slide 11 pipeline 664 Cr / new-wins 141 Cr) are covered by the review's blanket "all reviewed" as reviewed-no-finding; acceptable, no red flag suppressed. No orphan row. No loop-back to A3.
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
 
-COVERAGE: PASS.
+Section F PLAIN-LANGUAGE BRIEF present with all four labelled parts, each carrying real content:
+
+| Part | Heading | Present? | Content check |
+|---|---|---|---|
+| (1) Summary narrative | F1 (L383-384) | present | ~18-line narrative; verdict PROCEED WITH FLAGS, stance WATCHLIST/DILIGENCE, numbers-anchored |
+| (2) Sector intelligence | F2 (L386-387) | present | TAM split, demand read, structural tailwind/headwind, "not disclosed" named |
+| (3) Business-model intelligence | F3 (L389-390) | present | revenue-by-engagement, NRR/LTV:CAC drift, adjusted-vs-reported caveat |
+| (4) Competition intelligence | F4 (L392-393) | present | breadth/incumbency, near-flat Distribution, concentration, inorganic-vs-organic risk |
+
+**Gate: PASS** — all four parts present and non-empty.
+
+---
+
+## AUDIT 1 — COVERAGE (independent grep re-enumeration vs A2 ledgers)
+
+Independent grep + sweep over the extracts:
+
+| Category | A2 count | My fresh count | Method | Orphan / missing rows | Status |
+|---|---|---|---|---|---|
+| Standalone notes | 10 | 10 | Notes 1-10 present; Note 5 OCR "s" confirmed real (results L267) | none | PASS |
+| Consolidated notes | 12 | 12 | Notes 1-12 present (results L561-661) | none | PASS |
+| Total numbered notes | 22 | 22 | 10 + 12 | none | PASS |
+| Annexure A entities | 18 | 18 | grep `^\s*[0-9]{1,2}\.\s+(RateGain\|Sojern\|Nrejos)` = rows 1-18 (results L432-468) | none | PASS |
+| PPA table rows | 7 | 7 | results L598-609 | none | PASS |
+| Standalone P&L line items | 24 | 24 | results L189-224 | none | PASS |
+| Consolidated P&L line items | 33 | 33 | results L493-551 | none | PASS |
+| Auditor paras standalone | 5 | 5 | results L88-171 | none | PASS |
+| Auditor paras consolidated | 6 | 6 | results L336-475 | none | PASS |
+| Agenda/disclosure items | 6 | 6 | 2 Board (L31/L40) + 4 Annexure B (L683-703) | none | PASS |
+| ZERO_STANDING (results) | 7 | 7 | 2 standalone P&L + 5 consol P&L | none | PASS |
+| Slides | 30 | 30 | page markers 1-30 | none | PASS |
+| Deck P&L+BS line items | 58 | 58 | 20 P&L + 38 BS | none | PASS |
+| Deck footnotes | 6 | 6 | E1-E6 | none | PASS |
+| Turns / questions | 0 | 0 | no concall transcript in inputs | none | PASS |
+
+**Ledger-row-to-review traceability (every flagged row cited in A4 or reviewed/no-finding):**
+- 4 ENTITY_CHANGE rows (Annexure A 4/7/15/16): all cited — C2 entity-structure para (L326) + monitorables + Q15.
+- 7 PPA rows: cited in Section C2 (L309-322).
+- USD 65M corporate guarantee (agenda item 2 / Annexure B): cited — Q7, FN5, flags, monitorables.
+- QIP Rs 11,151.20 mn (Note 4/5): cited — 0C, Q14 (A3-F10).
+- Labour Code (Note 8/9): cited — Q17.
+- Sojern HK liquidation (Note 12): cited — Q15, monitorables.
+- Standalone-vs-consol deal-cost split (25.92 vs 324.16 mn; ledger §12): the ledger itself resolves this as a scope difference "not an inconsistency to chase"; A4 carries both the 4.79 Cr standalone and 34.6 Cr consol exceptional (Step 1A / Step 3). Reviewed, no finding — acceptable.
+- ZERO_STANDING exceptional-item rows: A4 records nil both Q1s (bridge L161); reviewed, no finding.
+- OCR_ANOMALY rows (UDIN garbles, CMD signature, Note-5 "s"): extraction artifacts flagged for re-sourcing, not disclosures; 0D covers the auditor opinion. No finding required.
+- All FN1-FN16 and A3-F1..F15: mapped to questions in the Section D coverage-check line (L358); F3/F4/F5/F11/F12 = PASS, F16/F17 = N.A. (declared, L17).
+
+**No orphan rows. No rows my fresh pass found that the ledger lacks. COVERAGE: PASS.**
 
 ---
 
 ## AUDIT 2 — ARITHMETIC (recomputed from raw extracted numbers)
 
-Spot-verified the full standalone and consolidated tables tie to source (x0.1 conversion). Representative confirmations (all PASS unless flagged):
+Raw source = results extract (Rs mn x0.1) and deck (Rs Cr). Spot of every A4-derived metric:
 
-| Metric | A4 value | My recompute | Source | Status |
+| Metric | A4 value | Recomputed | Source line | Status |
 |---|---|---|---|---|
-| Standalone PAT Q1FY27 | 4.21 Cr | 42.09 mn x0.1 = 4.21 | res L209 | PASS |
-| Standalone PAT YoY | -76.7% | 4.21/18.06-1 = -76.7% | res L209 | PASS |
-| Standalone Op EBITDA Q1FY27 | 5.01 | 5.68+1.27+0.23-2.16 = 5.01 | res L200/196/195/190 | PASS |
-| Standalone Op EBITDA margin Q1FY27 | 7.4% | 5.01/68.19 = 7.35% | derived | PASS |
-| Consol revenue Q1FY27 | 785.0 | 7,850.12 mn x0.1 = 785.01 | res L493 / deck L740 | PASS |
-| Consol revenue YoY | +187.6% | 785.0/272.9-1 = 187.6% | res L493 | PASS |
-| Consol Op EBITDA Q1FY27 | 171.5 | 785.0-294.8-318.7 = 171.5 | deck L748 | PASS |
-| Consol Op EBITDA margin Q1FY27 | 21.9% | 171.5/785.0 = 21.85% | deck L749 | PASS |
-| Adj EBITDA Q1FY27 | 193.4 | 171.5+21.9 = 193.4 | deck L751 | PASS |
-| Adj EBITDA margin Q1FY27 | 24.6% | 193.4/785.0 = 24.64% | deck L752 | PASS |
-| Consol PAT Q1FY27 | 94.9 | 949.10 mn x0.1 = 94.91 | res L515 | PASS |
-| Consol PAT YoY | +102.2% | 94.9/46.9-1 = 102.2% | res L515 | PASS |
-| Reported PAT margin Q1FY27 vs Q1FY26 | 12.1% vs 17.2% | 94.9/785=12.1%; 46.9/272.9=17.2% | deck L765 | PASS |
-| Consol ETR Q1FY27 | 21.3% | 256.45/1,205.55 = 21.27% | res L513/508 | PASS |
+| Standalone Op EBITDA Q1FY27 (PBT+D+FC−OI) | 5.01 | 5.677+1.269+0.227−2.160 = 5.01 | res L200/196/195/190 | PASS |
+| Standalone Op EBITDA margin Q1FY27 | 7.4% | 5.01/68.19 = 7.35% | res L189 | PASS |
+| Standalone Op EBITDA Q1FY26 | 6.74 | 24.149+1.133+0.261−18.808 = 6.74 | res L200/196/195/190 | PASS |
+| Standalone ETR Q1FY27 | 25.9% | 1.468/5.677 = 25.86% | res L207/203 | PASS |
+| Standalone PAT margin Q1FY27 | 6.2% | 4.209/68.19 = 6.17% | res L209/189 | PASS |
+| Standalone PAT collapse YoY | −76.7% | 4.209/18.055−1 = −76.68% | res L209 | PASS |
+| Standalone Core PBT ex-OI FY26 | 23.76 | 68.154−44.391 = 23.76 | res L203/190 | PASS |
+| Standalone Op EBITDA FY26 | 34.24 | uses pre-exceptional PBT 72.948: 72.948+4.690+0.994−44.391 = 34.24 | res L200/196/195/190 | PASS (definitional — see note below) |
+| Consol Core PBT ex-OI Q1FY27 | 117.5 | 120.6−3.1 = 117.5 (precise 117.47) | res L508/494 | PASS |
+| Consol Core PBT ex-OI Q1FY26 | 40.7 | 61.327−20.658 = 40.67 | res L508/494 | PASS |
+| Consol ETR Q1FY27 | 21.3% | 256.45/1205.55 = 21.27% | res L513/508 | PASS |
 | Consol ETR Q1FY26 | 23.5% | 143.95/613.27 = 23.47% | res L513/508 | PASS |
-| PAT bridge sum | +48.0 | +121.8-1.8-27.0-16.2-17.6-11.3 = +48.0 | Step 4 | PASS |
-| S/C PAT gap Q1FY27 | 90.70; 95.6%; 2,154.7% | 94.91-4.21=90.70; /94.91=95.6%; /4.21=2154 | res L209/L515 | PASS |
-| Standalone % of consol Q1FY27 | 4.4% | 4.21/94.91 = 4.44% | derived | PASS |
-| Adj-vs-reported EBITDA growth gap | +43.9 pp | 289.3-245.4 = 43.9 | Section C1 | PASS |
-| Goodwill+intangibles / assets | 64% | (1,591.5+756.3)/3,659.1 = 64.2% | deck L778/779/785 | PASS |
-| Net debt Jun-26 | 615.4 | 871.0-255.6 = 615.4 | deck L336 | PASS |
-| Borrowings Jun-26 | 871.0 | 533.5+337.5 = 871.0 | BS L784/796 | PASS |
-| Loan outstanding | USD 77.50M of 125M | 9.75+6.25 prepaid Aug-05; = 77.50M | loan L40-44 | PASS |
-| Loan % repaid | 38% | (125-77.5)/125 = 38.0% | pr L100-102 | PASS |
-| Further prepayment | USD 16.0M | 9.75+6.25 = 16.0 | loan L40-41 / pr L101 | PASS |
-| Deferred consideration run-rate | ~80-90 Cr/yr | 21.9 x4 = 87.6 | deck L750 | PASS |
-| Acquisition amort run-rate | ~135 Cr/yr | 33.8 x4 = 135.2 | deck L756 | PASS |
-| PPA DTL | Rs 130.8 Cr | 1,307.89 mn x0.1 = 130.79 | res L607 | PASS |
-| **Sojern PPA goodwill (Step 2 diag 5, L133)** | **Rs 130.2 Cr** | **13,020.01 mn x0.1 = Rs 1,302.0 Cr** | res L609 | **FAIL (10x understated)** |
-| **Sojern PPA intangibles (Step 2 diag 5, L133)** | **Rs 65.9 Cr** | **(3,827.18+887.37+1,875.88) mn x0.1 = Rs 659.0 Cr** | res L602-604 | **FAIL (10x understated)** |
-| **NRR FY25 characterization (C1-5/F3/Q6/8C/flags)** | **"below 100 in FY25 (100.5)"; "two sub-100 years"; "net contraction"** | **100.5 is ABOVE 100; only FY26 (99.6) is below 100** | deck slide 10 (ledger Table B) | **FAIL (categorical error, repeated 5x)** |
+| Consol PAT YoY | +102.2% | 949.10/469.32−1 = +102.23% | res L515 | PASS |
+| Consol Reported EBITDA incl OI Q1FY27 | 174.6 | 171.5+3.1 = 174.6 | deck L748/L759 | PASS |
+| EBIT (Op EBITDA−D&A) Q1FY27 | 134.0 | 171.5−(3.7+33.8) = 134.0 | deck L748/755/756 | PASS |
+| EBIT YoY | +226.8% | 134.0/41.0−1 = +226.8% | derived | PASS |
+| PAT bridge: Op EBITDA / D / amort / FC / OI | +121.8/−1.8/−27.0/−16.2/−17.6 | 171.5−49.7 / 3.7−1.9 / 33.8−6.8 / 16.5−0.3 / 3.1−20.7 | deck L748/755/756/757/759 | PASS |
+| PAT bridge -> reported PAT change | +48.0 | 949.10−469.32 = 479.78 mn = +48.0 | res L515 | PASS |
+| S-vs-C gap Q1FY27 (std % of consol) | 4.4% | 4.209/94.910 = 4.44% | res L209/L515 | PASS |
+| S-vs-C gap Q1FY27 (gap % of consol) | 95.6% | 90.701/94.910 = 95.56% | res L209/L515 | PASS |
+| Sojern goodwill / consideration | 58.6% | 1302.0/2222.08 = 58.6% | res L609/598 | PASS |
+| Goodwill+intangibles / assets | 64% | (1591.5+756.3)/3659.1 = 64.2% | deck L778/779/784 | PASS |
+| Net debt | 615.4 | 871.0−255.6 = 615.4 | deck L784/796/333/336 | PASS |
+| Borrowings change | −50.3 | 921.3−871.0 = 50.3 | deck L784/796 | PASS |
+| Adjusted-vs-reported PAT margin gap Q1FY27 | +2.8pp | 14.9−12.1 = 2.8 | deck L765/767 | PASS |
+| Reported PAT margin deterioration YoY | −5.1pp | 12.1−17.2 = −5.1 | deck L765 | PASS |
+| Loan outstanding / % repaid | USD 77.50M / 38% | loan L44 (77,500,000); pr L102 (38%); 9.75+6.25 = 16.0M | loan L40-44 / pr L100-102 | PASS |
+| Gross margin drop | ~680 bps to 69.2% | 76.0−69.2 = 6.8pp | deck L626-627 | PASS |
+| LTV:CAC | 21.3x -> 10.7x | ledger slide 10 series endpoints | deck L275/277 | PASS |
 
-### Arithmetic FAILs — detail (all loop back to A4)
+Deck-reported percentages that A4 quotes rather than derives (245.4%, 289.3%, 393.9%, 5451.3%, 100.2%, 187.6%) were re-checked against the precise mn figures and reconcile to within the deck's own rounding of the displayed Cr values; A4 correctly attributes each to its deck line, so these are cited-source figures, not A4 derivations.
 
-**FAIL-1 (conversion, 10x): Sojern PPA goodwill.** Step 2 diagnostic 5 (review L133) states "Sojern PPA intangibles Rs 130.2 Cr goodwill." Raw PPA goodwill = Rs 13,020.01 mn (res L609) = **Rs 1,302.0 Cr**, not 130.2 Cr. The review applied x0.01 instead of x0.1. Note the review itself carries the CORRECT figure in Section C2 (goodwill Rs 13,020.01 mn; BS goodwill Rs 1,591.5 Cr), so this is an internal inconsistency, not a data problem — but the stated Cr number is wrong by an order of magnitude.
+**One definitional note (not a FAIL).** Standalone FY26 "Operating EBITDA (PBT+D+FC−OI) = 34.24" uses *Profit before exceptional items and tax* (72.948 Cr), whereas the same table's "Core PBT ex-OI = 23.76" uses *Profit before tax* (68.154 Cr, i.e. after the 4.79 Cr exceptional). Taking the formula label literally (PBT = 68.15) would give 29.45, a 4.79 Cr gap. The 34.24 figure is the *correct operating* treatment (an operating EBITDA should exclude the FY26-only exceptional one-off), so the value is right and the shorthand label "PBT" is imprecise. This touches only a standalone (secondary), prior-year cell; it drives no headline, no consolidated metric, and no verdict. Flagged for transparency; below the FAIL threshold because the number is not wrong under the correct definition.
 
-**FAIL-2 (conversion, 10x): Sojern PPA intangibles.** Same sentence states "Rs 65.9 Cr intangibles." Raw recognised intangibles = customer relationships 3,827.18 + trademarks 887.37 + software 1,875.88 = 6,590.43 mn (res L602-604) = **Rs 659.0 Cr**, not 65.9 Cr. Same x0.01 slip.
-
-**FAIL-3 (categorical / interpretive overreach): NRR "below 100 in FY25."** The NRR series (deck slide 10, ledger Table B) is FY24 120.9 / FY25 100.5 / FY26 99.6 / Q1FY27 106.8. The review asserts in five places — C1 finding 5 (L305), F3 (L388), Question 6 (L341/review Section D), Step 8C (L237), and flag (review L456) — that NRR was "below 100 in FY25 (100.5)," describing "two sub-100 years" and "net contraction from existing clients." **100.5 is above 100** (marginal net expansion). Only FY26 (99.6) is genuinely below 100. The multi-year downtrend (120.9 -> 100.5 -> 99.6) is real and survives, but the "two consecutive sub-100 / two years of net contraction" framing overstates the evidence, and Management Question 6 as written ("NRR was below 100 in FY25 (100.5)") is self-contradictory and would be rejected on its face. The review also relied on the ledger's CHART_LABEL_AMBIGUOUS NRR pairing without noting that caveat while making a strong bear claim.
-
-ARITHMETIC: FAIL (3 items, all A4).
+**ARITHMETIC: PASS** — no mismatch above rounding.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most positive claims + strongest bear from same text)
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims, strongest bear counter from the same extracted text)
 
-**Positive claim 1 — "Revenue nearly triples +187.6%; highest-ever EBITDA; record Adj EBITDA margin 24.6%."**
-Bear from same extract: growth is ~100% inorganic (Sojern consolidated from 6 Nov 2025; management's own non-comparability disclaimer, res L616-618); organic Distribution only +3.1% (deck slide 12); reported PAT margin FELL 17.2% -> 12.1% (deck L765); the record margin is adjusted, stripping a real dated cash cost (deferred consideration to Q3FY29).
-Survives as NEW? NO — already grafted: Step 2 diagnostics 1-3, Section C1, Section B3 AMBER rows, flags, Questions 1/2/3.
+**Positive claim 1 — "Revenue nearly triples +187.6% YoY; highest-ever EBITDA; Adj. EBITDA margin 24.6%" (pr L43-48; deck slide 9).**
+Bear counter from same text: essentially 100% inorganic (Sojern consolidated from 6 Nov 2025; management's own non-comparability note, res L616-618); organic Distribution grew only +3.1% (deck slide 12); reported PAT margin actually *fell* 17.2% -> 12.1%; the 24.6% is *adjusted*, stripping a real dated cash cost (Sojern deferred consideration ~21.9 Cr/qtr to Q3FY29).
+Survives? Yes — but **already fully grafted** into A4 (Step 2 diag 1/2, Step 4, FN7/FN10, Section C1, flags). No new graft required.
 
-**Positive claim 2 — "Deleveraging is real and ahead of schedule (loan down to USD 77.5M of 125M); lowers future finance costs."**
-Bear from same extract: the Board approved a NEW USD 65M corporate guarantee the same day (res L42-44) for RateGain UK + Sojern; the existing guarantee only reduces "to the extent" of prepayment (loan L44-45); consolidated net debt is still Rs 615.4 Cr and finance cost Rs 16.5 Cr/qtr persists; the fresh guarantee envelope offsets the deleveraging narrative.
-Survives as NEW? NO — already grafted: Section C2 leverage picture, flag (L453), Question 7, monitorable.
+**Positive claim 2 — "Deleveraging is real: acquisition loan down to USD 77.5M of USD 125M, 38% repaid; will lower future finance costs" (loan L44; pr L100-102; Step 5).**
+Bear counter from same text: the same Board meeting approved a *new* USD 65M corporate guarantee to HSBC/JPM/Citi for RateGain UK + Sojern (res L40-44 / Annexure B L693-703), which is *absent from the investor deck* — so contingent off-balance-sheet exposure is being re-loaded even as the facility amortises; the deleveraging narrative and a fresh guarantee envelope must be read together.
+Survives? Yes — but **already grafted** (Section C2 leverage para L328, Q7, FN5, flags, monitorables). No new graft required.
 
-**Positive claim 3 — "NRR rebounded to 106.8; platform breadth (33 of top 40 chains); FCF conversion 78.8%."**
-Bear from same extract: NRR multi-year downtrend 120.9 -> 100.5 -> 99.6 with LTV:CAC halved 21.3x -> 10.7x (deck slide 10); breadth coexists with high concentration (top 1-10 = 17.6%, deck slide 10) and near-flat organic Distribution (+3.1%); the 78.8% FCF conversion is non-GAAP and unbridged with NO cash-flow statement this quarter (INDETERMINATE).
-Survives as NEW? NO — already grafted: Section C1 finding 5, Step 5, flags, Questions 5/6. (NB: the bear side here is where the FAIL-3 overstatement lives — the counter is present but mis-stated, which is why FAIL-3 loops to A4 rather than being a missing counter.)
+**Positive claim 3 — "Operating EBITDA margin expanded +3.7pp to 21.9% (24.6% adjusted)" (deck L749/752; Step 2 diag 2).**
+Bear counter from same text: the lift is a *mix effect* from higher-margin acquired revenue, not proven organic operating leverage; concurrently gross margin *compressed* to 69.2% from 76.0% (deck L626-627) on ad-spend (L621); and the adjusted margin removes a genuine cash cost, so the reported operating economics are weaker than headlined.
+Survives? Yes — but **already grafted** (Step 2 diag 2, Section C1-4, F3, flags). No new graft required.
 
-ADVERSARIAL READ: no un-incorporated surviving bear counter. The review is symmetric and already carries the bear case for each headline positive. No graft required.
+**No surviving bear counter is missing from A4.** The review is symmetric bull-bear throughout; every strong-form counter I could construct from the extracts is already present. Nothing to loop back to A4.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Coverage is complete (A2 clean, no orphan rows) and the adversarial read finds no missing bear counter, but the ARITHMETIC audit fails on three A4-owned errors: two 10x rupee-conversion mistakes in Step 2 diagnostic 5 (Sojern PPA goodwill stated Rs 130.2 Cr vs correct Rs 1,302.0 Cr; PPA intangibles stated Rs 65.9 Cr vs correct Rs 659.0 Cr), and a repeated categorical error mischaracterising FY25 NRR of 100.5 as "below 100 / net contraction / two sub-100 years" (only FY26 at 99.6 is below 100), which also propagates into the reader-facing brief (F3) and outbound Management Question 6. Loop back to A4 to correct all three before Notion save. No fault found with A2 (enumeration complete) or A3 (all forensic findings mapped to questions per A4's coverage check).
-
----
+**COMPLETE.** The three prior-flagged A4 errors are corrected and correctly sourced. Independent re-enumeration matches both A2 ledgers with zero orphan rows and zero rows the ledger lacks. Every A4-derived metric recomputes from the raw extracts within rounding (one standalone FY26 definitional imprecision noted, below the FAIL threshold, no verdict impact). All four plain-language-brief parts are present and non-empty. All three strongest bear counters are already incorporated. Nothing to loop back to A2, A3, or A4.
 
 ```yaml
 stage: A5-adversary
@@ -133,7 +141,7 @@ company: "RATEGAIN"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -142,11 +150,8 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "Sojern PPA goodwill (Step 2 diag 5, review L133)", a4_value: "Rs 130.2 Cr", recomputed: "Rs 1,302.0 Cr", source_line: "res L609 (13,020.01 mn x0.1)"}
-  - {metric: "Sojern PPA intangibles (Step 2 diag 5, review L133)", a4_value: "Rs 65.9 Cr", recomputed: "Rs 659.0 Cr", source_line: "res L602-604 (3,827.18+887.37+1,875.88=6,590.43 mn x0.1)"}
-  - {metric: "NRR FY25 characterization (review L305/L388/L237/L456 + Q6)", a4_value: "below 100 in FY25 (100.5); two sub-100 years; net contraction", recomputed: "100.5 is ABOVE 100; only FY26 (99.6) is below 100 — one year of net contraction, not two", source_line: "deck slide 10 (ledger presentation Table B, NRR 120.9/100.5/99.6/106.8)"}
+arithmetic_mismatches: []
 surviving_bear_counters: []
-loop_back_to: "A4"
-gap: "Three A4 arithmetic/accuracy errors to fix before save: (1) Step 2 diagnostic 5 states Sojern PPA goodwill Rs 130.2 Cr — correct is Rs 1,302.0 Cr (10x conversion slip; res L609); (2) same line states PPA intangibles Rs 65.9 Cr — correct is Rs 659.0 Cr (10x slip; res L602-604); (3) NRR of 100.5 in FY25 is repeatedly called 'below 100 / net contraction / two sub-100 years' (C1-5, F3, Step 8C, flags, Management Q6) — 100.5 is above 100, only FY26 (99.6) is below 100, so recast as a single sub-100 year within a declining multi-year trend and repair Question 6."
+loop_back_to: ""
+gap: ""
 ```

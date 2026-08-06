@@ -1,141 +1,180 @@
-# QUARTERLY PIPELINE A5 — ADVERSARY / COMPLETENESS AUDIT — ANUP — Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — The Anup Engineering Limited (ANUP) — Q1 FY27 (RE-AUDIT)
 
-Auditor: A5 ADVERSARY | Model: claude-opus-4-8
-Inputs seen: A4 review, A1 extracts (results/PR/deck), A2 ledgers (results/PR/deck). Fresh context; A3 reasoning NOT seen (re-derived independently).
-Unit re-run: results filing in Lakhs, x0.01 -> Rs Cr. I re-performed every conversion from raw Lakhs.
-
-**VERDICT: INCOMPLETE.** Two FAILs, both loop back to A4 (one arithmetic, one finding-coverage orphan). Details below.
+Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Fresh context: A4 review + A1 extracts + A2 ledgers only.
+Re-audit after A4 applied two surgical fixes flagged by the prior A5 pass. Every number below re-derived
+independently from the raw Lakhs extracts (×0.01 → Rs Cr). I do not defer to A4's or A3's cites.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run FIRST)
+## PRIOR-GAP RE-VERIFICATION (the two fixes under test)
 
-Plain-Language Brief present at L465-485. All four labelled parts present and carrying real, non-placeholder content:
+**Prior gap 1 — standalone Q4 FY26 gross margin must read 47.85%.** RE-DERIVED FROM RAW:
+(19,480.07 − 9,277.15 − 881.69) / 19,480.07 = 9,321.23 / 19,480.07 = **0.47850 = 47.85%**
+(results L158 / L164 / L165, 31.03.2026 column). A4 now prints 47.85% in BOTH the derived-metrics
+table (review L95) and the explanatory note (review L97). **RESOLVED.** (Prior value had been the
+erroneous carry from the Q1 column; the Q4-column re-derivation is now correct and internally consistent.)
 
-| Part | Heading present | Lines | Content check | Status |
+**Prior gap 2 — finding A3-16 (drafting inconsistencies, NEUTRAL-FACT) must be cited/accounted in the
+review body.** A3-16 now appears in three places: the incorporation roster (review L24), an explicit
+paragraph in Section C — Combined Verdict that names each sub-item ("Air-Cooled" vs "Air-Cool",
+"Desai Lay"/"Lay Desai" signatory flip, the "Comparison on a YoY basis" header with no comparative
+column) and pairs it with F14-01 as a single cumulative NEUTRAL-FACT drafting/governance data point
+(review L439), and the flags block (review L549). **RESOLVED.**
+
+---
+
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
+
+PLAIN-LANGUAGE BRIEF present at review L466-486, all four labelled parts present and carrying real content:
+
+| Part | Heading | Location | Content check | Status |
 |---|---|---|---|---|
-| 1. Summary narrative | yes | L467-473 | 3 substantive paras (~14 lines); numbers anchored | PRESENT |
-| 2. Sector intelligence | yes | L475-477 | end-market/air-pocket/capex read, provenance tagged | PRESENT |
-| 3. Business-model intelligence | yes | L479-481 | ETO fabrication, utilisation + WC economics | PRESENT |
-| 4. Competition intelligence | yes | L483-485 | moat, KRN peer, pricing-pressure risk | PRESENT |
+| 1 | Summary narrative | L468-474 | 3 substantive paragraphs; revenue/margin/PAT collapse, trigger logic, wait-for-Q2 | PRESENT |
+| 2 | Sector intelligence | L476-478 | static process equipment; demand air-pocket; capex-cycle framing; steel-input risk | PRESENT |
+| 3 | Business-model intelligence | L480-482 | engineer-to-order; utilisation + WC economics; capacity/debt-ahead-of-volume | PRESENT |
+| 4 | Competition intelligence | L484-486 | code/metallurgy/single-piece moat; KRN peer deferred; WC-discipline weakness | PRESENT |
 
-Gate 0: **PASS.** (Does not by itself carry the run; the two FAILs below govern.)
+**Gate: PASS.** No placeholder, no empty section.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh grep/sweep vs A2 ledgers)
+## AUDIT 1 — COVERAGE (fresh independent enumeration vs A2 ledgers)
 
-### 1a. A2 ledger-row re-count (independent)
+Fresh grep/sweep pass over each A1 extract, diffed against the A2 count-tests:
 
-| Category | A2 count | My fresh count | Orphan rows | Status |
+| Category | A2 count | My fresh count | Method | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Results — numbered notes | 13 | 13 (6 std L227-256 + 7 consol L436-471) | structural read | none | OK |
+| Results — line items | 71 | 71 (33 std + 33 consol + 5 Note-6 subtable) | table read L157-200/L365-408/L457-465 | none | OK |
+| Results — auditor paras | 11 | 11 (5 std L88-138 + 6 consol L295-350) | numbered-para read | none | OK |
+| Results — entities | 2 | 2 (Anup parent L323 + Mabel L324) | para-4 read | none | OK |
+| Results — signatures | 5 | 5 | signatory read | none | OK |
+| Results — agenda items | 1 | 1 (sole board resolution) | cover-letter read | none | OK |
+| PR — bulleted claims | 20 | 20 (`grep -c "•"` = 20) | fresh grep | none | OK |
+| PR — section headers | 5 | 5 (fresh keyword grep, L49/67/84/121/135) | fresh grep | none | OK |
+| PR — forward-looking | 13 | 13 (8 Outlook bullets ∪ 5 keyword-flagged) | union read | none | OK |
+| PR — business numbers | 14 | 14 | table read | none | OK |
+| Deck — slides | 26 | 26 (`^\[page N\]` grep = 26, pages 1-26) | fresh grep | none | OK |
+| Deck — numbers | 217 | 217 (reconciliation trail accepted; OCR 8/8 no new tokens) | ledger method verified | none | OK |
+| Deck — footnotes | 6 | 6 | table read | none | OK |
+
+A4's LEDGER-RECONCILIATION PREAMBLE (review L13-27) reconciles against every ledger row 100% and
+incorporates every A3 finding ID (Results F2-1/F6-1/F7-1/F8-1/F9-1/F11-1; PR A3-01…A3-19;
+deck F16-01…F16-08/F6-01/F7-01/F14-01). Administrative/identifier numbers (BSE/NSE PINs, CIN, phone/fax,
+UDIN) are non-material and reviewed-no-finding by construction. **No orphan ledger row (in ledger, absent
+from A4). No row my fresh pass found that the ledger lacks.** Coverage: PASS.
+
+---
+
+## AUDIT 2 — ARITHMETIC (recomputed from raw Lakhs ×0.01 → Rs Cr)
+
+| Metric | A4 value | My recompute | Source lines (raw Lakhs) | Status |
 |---|---|---|---|---|
-| Results: notes (6 std + 7 consol) | 13 | 13 (std L229-253=6; consol L438-470=7) | none | PASS |
-| Results: line-items (33+33+5) | 71 | 71 (std tbl 33; consol tbl 33; Note-6 subtable L461-465=5) | none | PASS |
-| Results: agenda items | 1 | 1 (board approves results, L37-41) | none | PASS |
-| Results: auditor paras (5 std + 6 consol) | 11 | 11 (std L93-122=5; consol L300-335=6) | none | PASS |
-| Results: consolidation entities | 2 | 2 (Parent + Mabel, L323-324) | none | PASS |
-| Results: signature blocks | 5 | 5 | none | PASS |
-| PR: bulleted claims | 20 | 20 (4+8+8 across L50-113) | none | PASS |
-| PR: forward-looking stmts | 13 | 13 | none | PASS |
-| PR: section headers | 5 | 5 (L49,67,84,121,135) | none | PASS |
-| PR: business/financial numbers | 14 | 14 | none | PASS |
-| Deck: slides | 26 | 26 (PDF pages 1-26) | none | PASS |
-| Deck: footnotes | 6 | 6 | none | PASS |
-| Deck: numbers | 217 | 217 (spot-checked slides 5/10/12/14; sum-check reconciles) | none | PASS |
-| Deck: zero-standing | 0 | 0 | none | PASS |
+| Std gross margin Q4 FY26 | 47.85% | 47.85% (=9,321.23/19,480.07) | L158/L164/L165 | **OK (prior gap 1 fixed)** |
+| Std gross margin Q1 FY27 | 48.82% | 48.82% (=5,755.25/11,789.29) | L158/L164/L165 | OK |
+| Std gross margin Q1 FY26 | 51.64% | 51.64% (=8,748.57/16,942.21) | L158/L164/L165 | OK |
+| Std gross margin FY26 | 51.47% | 51.49% (=40,649.55/78,943.70) | L158/L164/L165 | OK (0.02pp, rounding) |
+| Std Op EBITDA Q1 FY27 | 9.42 | 9.42 (1.2093+7.2714+1.4335−0.4974) | L173/L168/L167/L159 | OK |
+| Std Op EBITDA margin Q1 FY27 | 7.99% | 7.99% (9.4168/117.8929) | derived | OK |
+| Std Op EBITDA margin Q1 FY26 | 23.24% | 23.24% | derived | OK |
+| Std Op EBITDA margin Q4 FY26 | 18.51% | 18.51% | derived | OK |
+| Std Reported EBITDA margin Q1 FY27 | 8.41% | 8.41% (9.9142/117.8929) | derived | OK |
+| Std ETR Q1 FY27 | 8.4% | 8.37% (10.12/120.93) | L180/L175 | OK |
+| Consol ETR Q1 FY27 | 39.0% | 38.98% (36.42/93.44) | L388/L383 | OK |
+| Std ETR Q1 FY26 / Q4 FY26 / FY26 | 25.9%/5.7%/20.6% | 25.9%/5.7%/20.6% | L180/L175 | OK |
+| Std revenue YoY | −30.4% | −30.42% (117.89/169.42) | L158 | OK |
+| Std Op EBITDA YoY | −76.1% | −76.1% | derived | OK |
+| Std Op EBITDA margin YoY | −1,525 bps | −1,525 bps (7.99−23.24) | derived | OK |
+| Std finance-cost YoY | +69.1% | +69.1% (143.35/84.78) | L167 | OK |
+| Std depreciation YoY | +14.3% | +14.3% (727.14/636.15) | L168 | OK |
+| Std other-income YoY | −78.2% | −78.2% (49.74/228.34) | L159 | OK |
+| Std core PBT ex-OI Q1 FY27 | 0.71 | 0.71 (120.93−49.74) | L175/L159 | OK |
+| Std core PBT ex-OI YoY | −97.8% | −97.8% | derived | OK |
+| Consol revenue YoY | −28.5% | −28.52% (125.25/175.23) | L366 | OK |
+| Consol Op EBITDA margin YoY | −1,547 bps | −1,547 bps | derived | OK |
+| Consol PAT YoY | −97.8% | −97.83% (0.57/26.26) | L390 | OK |
+| Std QoQ revenue off Q4 | −39.5% | −39.48% (117.89/194.80) | L158 | OK |
+| PAT bridge closes to | −24.42 | −24.42 (110.81−2,553.14 lk) | L182 | OK (all bridge legs tie, see below) |
+| Std-vs-consol PAT gap Q1 FY27 | −48.5% | −48.5% (57.02/110.81) | L390/L182 | OK |
+| Mabel Q1 FY27 (consol−std) PAT / revenue | ~−0.54 loss / ~7.4 | −0.54 (0.57−1.11) / 7.36 (125.25−117.89) | L390/L182, L366/L158 | OK |
+| Net worth tie (consol) | 691.01 | 691.01 (670.98 + 20.03) | L405/L404 | OK |
+| Share base | 2.003 Cr | 2.003 Cr (2,003.15 lk / ₹10) | L196/L404 | OK |
+| Consol core PBT ex-OI FY26 | 137.62 (bex) | 137.62 (140.75−3.13, bex) | L381/L367 | OK |
 
-No row my fresh pass found is missing from a ledger (nothing to return to A2). Every A2 disclosure CATEGORY is addressed in A4 (notes -> Step 0D; line items -> Step 1; auditor paras -> opinion check; entities -> Mabel treatment; PR claims -> R5 Step 1 corpus + Step 5B silence audit; deck slides/numbers -> Step 1 cross-check, order-book, segment). **A2-row coverage: PASS.**
+**PAT bridge leg-by-leg (std YoY, review Step 4):** gross profit −29.94 (A4 −29.93); employee drag −0.79;
+other-expense credit +0.76; → Op EBITDA −29.96; depreciation drag −0.91; finance drag −0.59; other-income
+drag −1.79 (A4 −1.78); → PBT −33.24; tax credit +8.82; exceptional 0.00; → PAT −24.42. All legs tie within
+rounding; the bridge sums exactly to the reported −24.42.
 
-### 1b. A3 finding-incorporation coverage (task-required check)
+**Two documented non-gating observations (shown for transparency; neither reaches the FAIL threshold):**
 
-A4 asserts (L22-25, YAML L501) that it incorporated 36 A3 finding IDs and that "every A3 finding classified FORWARD-SIGNAL or AMBIGUOUS is carried into the Questions-for-Management table." I traced each claimed ID to a citation in the review body (Questions table / monitorables / flags / silence audit):
+1. **Std FY26 core PBT ex-OI carries a stray "(bex)" tag but is computed on the reported base.** A4 prints
+   132.40 (review L91), which equals reported PBT 135.70 − OI 3.30 (i.e. matches the row's literal formula
+   "PBT − OI"). A before-exceptional read would be 137.00 − 3.30 = 133.70. The consolidated table uses the
+   before-exceptional base (137.62). So the two tables tag "(bex)" but use different bases. The standalone
+   number is correct against its own stated formula; the discrepancy is a 1.30 Cr labelling inconsistency on a
+   FY26 comparative context figure that feeds no trigger, no verdict, no YoY-collapse line and no brief.
+   Non-material; does NOT gate. A4 may optionally relabel or align the two bases for hygiene.
 
-- Results F2-1(Q6), F6-1(Q9+mon), F7-1(Q9), F8-1(Q7), F9-1(Q8+mon), F11-1(0C/Step7/flags/mon): all placed.
-- PR A3-01(Q3),02(Q2),03(Q2),04(Q4),05(Q12),06(Q5),07(Q13),08(Q13),09(Q10),10(monitorable L453),11(Q10),12(Q10),13(Q10/mon),14(Q11),15(Q4/mon),17(Q15),18(Q13),19(Q13): all placed.
-- Deck F16-01..08 (Q1/Q3/Q5/Q2/Q4/Q14/Q14/Q15), F6-01(Q10/mon), F7-01(Q13), F14-01(Step1 consol cross-check): all placed.
+2. **PR-vs-deck EBITDA figure inconsistency (₹9.2 Cr vs ₹9.5 Cr).** Press release L68 states consolidated
+   EBITDA "₹9.2 Cr"; the deck states "9.5" (slide 8 L195; slide 10 L242, misspelled "EBIDTA"). My recomputed
+   consolidated operating EBITDA is 9.47 Cr, i.e. the deck's 9.5 is right and the PR's 9.2 is the ~₹0.3 Cr
+   outlier. A4 surfaced BOTH figures side-by-side (R5 Step 1 claim #1, review L363) and uses the correct 9.47/9.5
+   throughout its own tables, so the analysis is not corrupted and neither ledger row is orphaned. A4 did not,
+   however, explicitly flag the PR-vs-deck delta as an inconsistency. It is materially trivial on a collapsed
+   quarter and is of the same genus as the already-flagged drafting-inconsistency cluster (A3-16 / F14-01).
+   Recommendation (optional, non-gating): fold the 9.2-vs-9.5 delta into the existing A3-16/F14-01 note.
 
-**ORPHAN FOUND — A3-16.** It appears ONLY in the incorporation list (L24) and the YAML (L501). It is cited NOWHERE in the review body — not in the 15-row Questions table, not in monitorables, not in flags, not in the Step 5B silence audit. A4 claims it incorporated but provides no home for it. I cannot see A3's file, so I cannot confirm whether A3-16 is FORWARD-SIGNAL/AMBIGUOUS (owed a Questions row) or NEUTRAL (owed a monitorable/flag) — that unresolvable placement is, per conservative-bias rule, a **FAIL**. **Loop back to A4:** either cite A3-16 in a Questions/monitorable/flag row cross-checked to A3's classification, or mark it explicitly "reviewed, no finding." Coverage rule: an incorporated-but-uncited finding is an orphan.
-
----
-
-## AUDIT 2 — ARITHMETIC (recomputed from raw Lakhs; x0.01 -> Rs Cr)
-
-All Step-1 extraction cells (standalone + consolidated, 4 periods) reconcile to the raw Lakhs after x0.01. All headline derived metrics reconcile within rounding EXCEPT one. Key recomputations:
-
-| Metric (source line) | A4 value | My recompute | Source | Status |
-|---|---|---|---|---|
-| Std Op EBITDA Q1FY27 = PBTbex+D+Fin-OI | 9.42 | 1.2093+7.2714+1.4335-0.4974 = 9.42 | L173/168/167/159 | OK |
-| Std Op EBITDA margin Q1FY27 | 7.99% | 9.417/117.893 = 7.99% | L158 | OK |
-| Std reported EBITDA margin Q1FY27 | 8.41% | 9.914/117.893 = 8.41% | L173/168/167 | OK |
-| Std gross margin Q1FY27 | 48.82% | (117.893-50.502-9.838)/117.893 = 48.82% | L158/164/165 | OK |
-| **Std gross margin Q4FY26** | **47.55%** | **(194.801-92.772-8.817)/194.801 = 47.85%** | **L158/164/165 (31.03.26 col)** | **MISMATCH (0.30pp)** |
-| Std gross margin Q1FY26 | 51.64% | (169.422-71.359-10.578)/169.422 = 51.64% | L158/164/165 | OK |
-| Std gross margin FY26 | 51.47% | (789.437-353.351-29.591)/789.437 = 51.49% | L158/164/165 | OK (rounding) |
-| Std ETR Q1FY27 | 8.4% | 0.1012/1.2093 = 8.37% | L180/175 | OK |
-| Std ETR Q1FY26 | 25.9% | 8.9166/34.448 = 25.9% | L180/175 | OK |
-| Std OI/PBT Q1FY27 | 41.1% | 0.4974/1.2093 = 41.1% | L159/175 | OK |
-| Std Rev YoY | -30.4% | 117.893/169.422-1 = -30.4% | L158 | OK |
-| Std Op EBITDA YoY | -76.1% | 9.417/39.374-1 = -76.1% | derived | OK |
-| Std margin YoY (bps) | -1,525 | 7.99-23.24 = -15.25pp | derived | OK |
-| Std finance cost YoY | +69.1% | 143.35/84.78-1 = +69.1% | L167 | OK |
-| Std depreciation YoY | +14.3% | 727.14/636.15-1 = +14.3% | L168 | OK |
-| Std core PBT (ex-OI) YoY | -97.8% | 0.7119/32.16-1 = -97.8% | derived | OK |
-| Std PAT YoY | -95.7% | 1.1081/25.5314-1 = -95.7% | L182 | OK |
-| Consol Op EBITDA Q1FY27 | 9.47 | 0.9344+7.4345+1.6176-0.5209 = 9.47 | L381/376/375/367 | OK |
-| Consol Op EBITDA margin Q1FY27 | 7.56% | 9.466/125.249 = 7.56% | L366 | OK |
-| Consol margin YoY (bps) | -1,547 | 7.56-23.03 = -15.47pp | derived | OK |
-| Consol PAT YoY | -97.8% | 0.5702/26.261-1 = -97.8% | L390 | OK |
-| Consol ETR Q1FY27 | 39.0% | 0.3642/0.9344 = 39.0% | L388/383 | OK |
-| PAT bridge total (std YoY) | -24.42 | 1.1081-25.5314 = -24.42 | L182 | OK |
-| — Op EBITDA change | -29.96 | 9.417-39.374 = -29.96 | derived | OK |
-| — PBT change | -33.24 | 1.2093-34.448 = -33.24 | L175 | OK |
-| — tax offset | +8.82 | 8.9166-0.1012 = +8.82 | L180 | OK |
-| SC-vs-consol PAT gap Q1FY27 | -48.5% | (0.5702-1.1081)/1.1081 = -48.5% | L182/390 | OK |
-| Mabel implied loss | ~-0.54 | 0.5702-1.1081 = -0.54 | L182/390 | OK |
-| Mabel implied revenue | ~7.4 | 125.249-117.893 = 7.36 | L158/366 | OK |
-| Net worth tie (consol) | 691.01 | 670.98 (67,097.50L) + 20.03 (2,003.15L) = 691.01 | L405/404 | OK |
-| Share base | 2.003 Cr | 20.0315 Cr / Rs10 = 2.003 Cr | L196/404 | OK |
-| Annualised Q1x4 revenue proxy | ~472 | 117.893 x4 = 471.6 | L158 | OK |
-
-**ARITHMETIC FAIL — one:** Standalone Q4 FY26 gross margin. A4 prints **47.55%**; recompute from raw Lakhs = **47.85%** (materials+WIP as % of revenue = (9,277.15+881.69)/19,480.07 = 52.15%, so gross margin = 47.85%). Discrepancy 0.30pp, ~30x the 2-dp quoting precision, so above rounding. It is an isolated slip on the Q4 FY26 balancing-figure column (Step-1 derived table only) and does NOT propagate to any YoY conclusion or the thesis verdict (the thesis uses the Q1FY27-vs-Q1FY26 -282bps gross-margin move, which is correct). Still a reproducible arithmetic error in an A4 table. **Loop back to A4:** correct 47.55% -> 47.85%.
-
-### Trigger arithmetic + UNTESTABLE claims (task-required)
-- Margin leg (<19%): 7.99% operating / 8.41% reported, both < 19%. FIRED — arithmetically correct.
-- CFO leg / Debtor-days leg marked UNTESTABLE: I confirmed against ALL THREE extracts that no cash-flow statement and no balance sheet appear (results extract carries P&L only: std L157-200, consol L365-408, plus notes/auditor reports; Other Equity is blank in all interim columns L197/L405; PR and deck carry none either). The "no cash-flow / no balance sheet at Q1" basis for UNTESTABLE is **TRUE**. Trigger assessment (PARTIALLY FIRED; margin decisively, cash-legs untestable) is sound.
-- "Below Bear on 2 metrics": revenue proxy 472 < bear 871; margin 7.99% < bear 17%. Correct.
+No arithmetic mismatch above rounding on any decision-relevant metric. Audit 2: PASS.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (strongest bear counter to A4's most positive claims, from the same extracts)
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims, strongest bear counter from the same extract)
 
-A4 is already a bearish review, so its "positive" load-bearing claims are the few constructive ones. I stress-tested the three strongest:
+The review is overwhelmingly bearish; the "positive" claims are the residual reassurances. For each I built the
+strongest bear counter from the extracted text and checked whether it already lives in A4.
 
-1. **Positive: "Highest-ever quarterly order booking ~Rs315 Cr; Rs985 Cr book; pipeline intact" (PR L74/L89, deck L203).**
-   Bear counter from extract: the Rs985 Cr is "including LOI" (undisclosed split), ~Rs240 Cr is FY28 (PR L89), so FY27-executable ~Rs745 Cr < the Rs800 Cr green line; the inquiry pipeline is Rs1,100 Cr (PR L102/deck L334) vs Rs1,200 Cr prior (Notion); record bookings coincide with revenue -30%. **Counter SURVIVES — but already incorporated** in A4 (checklist item 5 AMBER L248, Q4 L329, flag L545). No graft needed.
+**Claim 1 — "Highest ever order booking … pending order book (incl. LOI) ₹985 Cr" (PR L74/L89; deck slide 14).**
+Bear counter (from same text): the ₹985 Cr is LOI-blended, ~₹240 Cr is booked for FY28 (PR L89 / deck L332), so
+FY27-executable is ~₹745 Cr — below the ₹800 Cr green line — and the discrete LOI value is not broken out, so the
+"LOI<20%, OB>₹800 Cr" gate is uncomputable; the inquiry pipeline also fell ₹1,200→₹1,100 Cr (deck L334).
+Counter SURVIVES — and is already grafted into A4 (checklist item 5 AMBER L248; QFM #4 L329; flags L546).
+**No new graft required.**
 
-2. **Positive: "Auditor UNMODIFIED / clean on both statements" (results Note 2, paras 4/5).**
-   Bear counter from extract: it is a limited REVIEW, not an audit — SRE 2410 "moderate assurance... less than an audit... we do not express an audit opinion" (L108-111 std / L317-319 consol); and neither report states whether Mabel's figures were independently reviewed or management-furnished (ledger results Section 7). **Counter SURVIVES — already incorporated** (A4 L53 interpretive gap; scope caveat implicit). No graft needed.
+**Claim 2 — Auditor conclusion UNMODIFIED (clean) on both standalone and consolidated (Notes 2; auditor paras 4/5).**
+Bear counter (from same text): it is a review under SRE 2410 (moderate assurance, "not an audit", explicitly no
+audit opinion — L111/L319), and neither report states whether Mabel's figures were independently reviewed vs
+management-certified (consol report paras 1-6 silent; results ledger §7). Counter SURVIVES — already carried in A4
+as the interpretive-gap flag (review L53) and QFM #6 (Mabel). **No new graft required.**
 
-3. **Positive: "Strategic premium intact — licences/niche products, thermal-HX elite entry, two proprietary-licence products, German ACHE" (A4 Step 7 "Hold", deck L574-578, PR L75-80).**
-   Bear counter from extract: every one is binary/unquantified with no revenue-recognition timeline; management itself warns the rising complex-project mix "may lead to periodic revenue volatility due to longer execution cycles" (PR L117-118); services only "good traction," no number (PR L106-108). The strategic wins are back-ended and lumpy, not near-term margin support. **Counter SURVIVES — already incorporated** (Q10 L335, Q15 L340, growth-trigger DELAYED L282). No graft needed.
+**Claim 3 — "Gross margin remains intact" / "net debt free" / capacity in place (PR L50, L116; deck L365).**
+Bear counter (from same text): fuller standalone gross margin is 48.82% vs 51.64% = −282 bps (L158-165), so
+"intact" holds only materials-only; "net debt free" (deck, no figure) sits against finance cost +69% YoY (L167);
+Kheda is "fully operational" yet drove under-absorption, not run-rate lift. Counter SURVIVES — already grafted
+(review L417-419 narrative-vs-numbers table; QFM #2/#14; flags L547). **No new graft required.**
 
-**No NEW surviving bear counter requires grafting into A4.** The review already carries the bear side of each positive claim. (This is the completeness device only; Role 3 Devil's Advocate still runs separately.)
+**Adversarial result: every surviving bear counter is already incorporated in A4.** No new surviving counter must
+be added before save.
 
 ---
 
-## FAIL SUMMARY
+## VERDICT
 
-| # | Audit | Gap | Loop back to |
-|---|---|---|---|
-| 1 | Arithmetic | Std Q4 FY26 gross margin printed 47.55%; recomputes to 47.85% (0.30pp, above rounding) — Step-1 derived table | A4 |
-| 2 | Coverage (A3 finding mapping) | A3-16 listed as incorporated (L24, YAML L501) but cited nowhere in the review body — orphan; place it (with A3 classification) or mark "reviewed, no finding" | A4 |
+**COMPLETE.**
 
-Both are surgical, single-point fixes. No arithmetic error touches a thesis conclusion; the A3-16 orphan is a completeness gap in the incorporation trail. Deliverable brief, trigger arithmetic, headline YoY math, PAT bridge, unit conversions, and A2-row coverage all pass.
+- Deliverable-completeness gate: PASS (all four brief parts present, real content).
+- Coverage: PASS (fresh enumeration matches A2 on every category; zero orphan rows; nothing my pass found is
+  missing from the ledgers).
+- Arithmetic: PASS (every decision-relevant metric re-derived from raw Lakhs ×0.01 ties within rounding; PAT
+  bridge closes exactly to −24.42).
+- Adversarial: PASS (three strongest positive claims each carry a surviving bear counter, and all three are
+  already incorporated in A4).
+- Prior gap 1 (Q4 FY26 gross margin 47.85%): RESOLVED and independently re-derived.
+- Prior gap 2 (A3-16 cited/accounted in review body): RESOLVED.
 
----
-
-## VERDICT: **INCOMPLETE** — loop back to **A4**.
-Gap: (1) correct standalone Q4 FY26 gross margin 47.55% -> 47.85%; (2) place or explicitly clear A3-16 (currently claimed-incorporated but uncited in the body). Re-submit for A5 re-check before Notion save.
+Two minor, non-gating observations are logged for optional A4 hygiene (stray "(bex)" tag on the standalone FY26
+core-PBT-ex-OI figure; the PR ₹9.2 Cr vs deck ₹9.5 Cr EBITDA drafting delta). Neither corrupts any decision
+metric, verdict, trigger, or brief, and neither meets the FAIL threshold. This review proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -143,19 +182,17 @@ company: "ANUP"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
   business_model: present
   competition: present
 coverage:
-  orphan_rows:
-    - "A3-16: listed as incorporated (review L24, YAML L501) but cited nowhere in review body (no Questions/monitorable/flag/silence-audit row)"
+  orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "Standalone Q4 FY26 gross margin", a4_value: "47.55%", recomputed: "47.85%", source_line: "results L158/L164/L165 (31.03.2026 column): (19480.07-9277.15-881.69)/19480.07"}
+arithmetic_mismatches: []
 surviving_bear_counters: []
-loop_back_to: "A4"
-gap: "A4 must (1) correct standalone Q4 FY26 gross margin 47.55% -> 47.85% in the Step-1 derived table, and (2) cite A3-16 in a Questions/monitorable/flag row (cross-checked to A3's FORWARD-SIGNAL/AMBIGUOUS/NEUTRAL classification) or explicitly mark it 'reviewed, no finding'. Only COMPLETE proceeds to Notion save."
+loop_back_to: ""
+gap: ""
 ```

@@ -1,0 +1,1251 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: aris-q1fy27-investor-presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 42
+formfeed_count: 42
+line_count: 1251
+unit_convention: Millions (INR Mn) for all financial statement figures (revenue, EBITDA, PAT, balance sheet). Note: separate market-sizing infographic on page 3 uses INR Lakh Crore for macro industry figures (Infra Capex Budget, PMAY Capex Budget, REIT AUM) -- these are NOT company financials and are left unconverted/flagged inline.
+conversion_factor_to_cr: Millions -> x0.1 (Rs Mn / 10 = Rs Cr); Lakh Cr figures (page 3 only, macro market sizing, not company financials) -> x100000 to Rs Cr, i.e. INR 1 Lakh Cr = Rs 100,000 Cr
+ocr_pages: [2, 8, 17, 31, 33, 42]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+[page 1]
+ August 05, 2026
+
+To                                                 To
+The Compliance Manager                             The Manager, Listing Department
+BSE Limited                                        National Stock Exchange of India Ltd
+Corporate Relationship Dept.,                      Exchange Plaza, Plot No. C/1, G Block,
+Phiroze Jeejeebhoy Towers,                         Bandra-Kurla Complex, Bandra (East),
+Dalal Street, Mumbai 400001.                       Mumbai 400 051.
+
+Scrip Code: 544419                                 Symbol: ARIS
+
+
+Sub: Investor Presentation
+
+Dear Sir/ Madam,
+
+Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations 2015, we hereby enclose the Investor Presentation, that will be presented during
+Earnings Conference Call of Arisinfra Solutions Limited which is scheduled on August 06, 2026
+with Analysts and Investors in connection with the Unaudited Financial Results (Standalone and
+Consolidated) of the Company for the Quarter ended June 30, 2026.
+
+The same is also available on the Company’s website at https://aris.in/pages/investor-relations-
+financial-results
+
+You are requested to take the above information on record.
+
+
+Thanking you,
+
+Yours sincerely,
+For Arisinfra Solutions Limited
+KHARA       Digitally signed by
+            KHARA BHAVIK
+BHAVIK      JAYESH
+            Date: 2026.08.05
+JAYESH      19:36:29 +05'30'
+Bhavik Jayesh Khara
+Whole-time director and CFO
+DIN: 09095925
+
+Place: Mumbai
+Encl.: As mentioned above
+
+[page 2]
+    Earnings
+Presentation
+        AUGUST 2026
+[OCR page 2, tesseract on rasterised page (200dpi), text found: ARIS / AUGUST 2026 (title slide graphic; background photo, no additional chart/data text beyond title already captured by pdftotext)]
+
+[page 3]
+India’s Construction Material Market Landscape
+                                                                       Dynamics of Indian Construction Materials Market
+
+
+          ~50%                                                                                   INR 11.11 Lakh Cr                        INR 1.59 Lakh Cr
+ Urban Share by 2047
+                                                        ~13%                                       Infra Capex Budget                    PMAY (Urban) Capex Budget
+                                          Real Estate Sector Contribution to GDP
+
+
+
+
+                    ~13,100+                                               ~29 Km/Day                                   ~INR 1.5 Lakh Cr                             ~50-60%
+                  Projects under                                        Road Construction 2024                               REIT AUM                       Share of Construction Materials
+               National Infra Pipeline                                                                                                                               in Project Cost
+
+
+   Growth Drivers:
+                                                                                                                             Indian Construction Material Market (USD Bn)
+   • RERA mandating project disclosures and completion timelines.
+   •      GST simplifying taxation and formalizing the business ecosystem.                                                                                               335
+                                                                                                                             255
+   •      Government-Led Infrastructure Expansion under National Infra Pipeline                                                                                          134
+                                                                                                                             102
+                                                                                                                                                                         69
+   •      ‘Housing for All’ under PMAY driving residential construction demand.                                              45
+                                                                                                                             108                                         132
+   •      Urban Infrastructure Fund accelerating Tier 2 & Tier 3 city growth.
+                                                                                                                             2024                                      2029P
+   •      Digital adoption in construction materials market is still in early stages.
+                                                                                                                              Steel     Cement & Concrete      Other Materials
+  Source: Redseer research and analysis
+
+Investor Presentation
+                                                                                                                                                                                         2
+
+[page 4]
+Fragmented Structure of India’s Construction Materials Industry
+                                                                                                                             Organised             Unorganised
+
+                        Aggregates (Sand, Gravel, Crushed Stone)                                           <20%                                    >80%
+                        ~12,000+ quarry operators
+
+
+
+                        Walling Solutions (Bricks, AAC blocks)                                                   ~13%                                ~87%
+                        ~250 bn bricks produced annually
+
+
+
+                        Ready Mix Concrete                                                                                ~40-45%                            ~55-60%
+                        ~4,350+ RMC plants across India
+
+
+                        Steel                                                                                                 ~60-65%                            ~35-40%
+                        ~150+ MTPA steel production
+
+
+
+                        Cement                                                                                                           ~85-90%                           ~10-15%
+                        ~700 MTPA installed capacity
+
+
+              A fragmented supply ecosystem creates a large platform opportunity for ArisInfra to digitize and organize construction procurement.
+       Source: Indian cement review, beeindia, rentechdigital, IBEF, cmaindia, marketreportanalytics, company estimates
+
+Investor Presentation
+                                                                                                                                                                                     3
+
+[page 5]
+INR 50 lakh Crore Industry. Nobody has solved it!
+
+                                         No technology. No organisation. No operating layer. The opportunity is entirely open.
+
+
+          01                                                                                    02
+          1 Mn+ fragmented vendors                                                              Broken working capital
+          No single source. No price transparency. Every project renegotiates                   Contractors pay upfront, developers pay late. The gap between cash
+          from scratch. Margins vanish at every handoff.                                        out and cash in destroys otherwise healthy businesses.
+
+
+
+
+          03                                                                                    04
+          Zero technology layer                                                                 Real estate execution gap
+          Paper trails. Manual reconciliation. No real-time visibility. Every                   Landowners, developers, and funds lack capable operating partners.
+          delivery a manual event. Every invoice a potential dispute.                           Projects stall, capital gets trapped, timelines slip. The execution layer
+                                                                                                is missing.
+
+
+
+
+                                       Every one of these is a network problem. ARIS built the network and the intelligence that runs it.
+
+
+
+Investor Presentation
+                                                                                                                                                                            4
+
+[page 6]
+ARIS Value Proposition
+                                                                 Recurring Business
+
+                                                                                            Wider
+                                Sourcing From                                               Reach
+                               Multiple Vendors
+
+
+
+
+                                                                                                            Higher
+                        Quality Assurance                                                                   Capacity
+                                                                                                            Utilization
+
+
+
+
+                               Assured Supply &
+                                Timely Delivery
+                                                                                      Faster Turnarounds &
+                                                                                      Process Digitization
+
+
+                                                             End-to-End Execution
+                                                                   Control
+
+
+
+                                    Customer Value Proposition                   Vendor Value Proposition
+Investor Presentation
+                                                                                                                          5
+
+[page 7]
+Key Differentiators
+
+
+
+
+                        Network Effects Compound: More vendors, better prices. More clients, stronger terms.
+                        More data, smarter decisions.
+
+                        Self Funding Network: High-margin service segment with near-zero working capital
+                        enables the business to fund its own growth without external capital.
+
+                        Difficult to Replicate: Built on 4+ years of transaction data, exclusive plant partnerships,
+                        and 5,000+ counterparties where every new node increases network value.
+
+                        Digital Procurement Platform: End-to-end digitized sourcing, pricing & documentation.
+
+
+                        Asset-Light Expansion Model: No heavy capex or inventory ownership.
+
+
+                        Execution-Led Operating Model: Controls sourcing, quality & delivery.
+
+
+Investor Presentation
+                                                                                                                       6
+
+[page 8]
+COMPANY OVERVIEW
+[OCR page 8, tesseract on rasterised page (200dpi), text found: COMPANY OVERVIEW (section divider slide; background photo of highway/construction, no additional extractable text)]
+
+[page 9]
+ARIS in a Snapshot
+
+
+
+                        23          1,192+                3,412+              2,229+                    10+
+                                                                                                      Contract
+                  States & UTs     Pin codes Served     Customers Catered     Sourcing Vendors
+                                                                                                 Manufacturing Plants
+
+
+
+
+            9 Mn+ MTPA             24+ MMT                  800+                 82%             2.5 Mn Sq. Ft.
+                                                                                                   Services Portfolio
+              Reserved Capacity   Materials Delivered     Daily Deliveries     Repeat Orders       Under Execution
+
+
+
+
+                  56 Days            0.02x                                                          17.2%
+            Net Working Capital                              13%                10.6%
+                  Days            Net Debt to Equity*   3 Year Revenue CAGR         ROE                   ROCE
+
+                                                                                                     All Figures as of Q1-FY27
+
+
+Investor Presentation
+                                                                                                                                 8
+
+[page 10]
+About ARIS
+      •      Arisinfra Solutions Limited is a tech-enabled B2B company focused on simplifying                Revenue (INR Mn) & EBITDA Margin (%)
+             procurement of construction materials across India.
+                                                                                                                                      10,675
+      •      The company operates an asset-light, aggregator-led model with no inventory risk and
+                                                                                                                           7,677                    10.49%
+             minimal fixed assets.                                                                          6,968                     9.43%
+
+      •      It integrates sourcing, quality control, logistics, and documentation into a unified digital                  6.53%                     2908
+             supply-chain network.
+                                                                                                            1.84%
+      •      Serving leading infrastructure and real estate developers, backed by a 3,400+ strong           FY24           FY25        FY26         Q1-FY27
+             client base and ~82% repeat order rate, reflecting high customer stickiness and execution
+             trust.                                                                                                    Revenue        EBITDA Margin
+
+
+      •      Offering a diversified portfolio including aggregates, RMC, steel, cement, construction
+             chemicals, asphalt, and value-added services.                                                          Q1-FY27 Segmental Revenue Mix (%)
+
+      •      Operating a 2,200+ vendor network with pan-India reach, enabling seamless delivery                Services,
+             across thousands of project locations.                                                              10%                B2B Supply,
+                                                                                                                                       37%
+      •      Its scalable, capacity-reservation model enables efficient growth without heavy capital
+             deployment.
+                                                                                                                                     Contract
+      •      The company combines on-ground execution with backend intelligence to improve                                         Manufacturing,
+             transparency and reduce procurement inefficiencies.                                                                       53%
+
+
+
+Investor Presentation
+                                                                                                                                                              9
+
+[page 11]
+Journey
+
+                                                            The company had scaled its operations to serve customers across
+                                                            more than 18 states in India, utilizing an asset-light model that
+                                                            avoided the need for heavy capital expenditure on manufacturing
+                                                            plants. By the end of FY24, the company reached a revenue of INR
+                                                            702 crores and delivered over 10 million metric tonnes of material.
+
+
+                                                                                            2024
+                                                                                                                    The company filed its Prospectus in June 2025 for an IPO of
+   The company was originally incorporated as a private                                                             approximately INR 500 crores. The issue was a 100% book-
+   limited company under the name Arisinfra Solutions                                                               built process, and the company was listed on both the BSE
+   Private Limited on February 10, 2021, in Mumbai,                                                                 and the NSE. The company introduced several industry-first
+   Maharashtra. The founders aimed to create a "digital                                                             digital features, including a Live RFQ (Request for Quote)
+   orchestration layer" for the construction sector,                                                                facility and an AI-driven credit assessment tool known as
+   replacing traditional offline procurement with a tech-                                                           "Cara AI". In late 2025, the company announced its entry into
+   enabled B2B platform.                                                                                            the large-scale asphalt market.
+
+
+                                                                        2023
+                        2021                                                                                                                   2025
+
+
+                                                                                    Expanded      our    footprint    into     major    cities   across
+                                                                                    North and South India, including Bangalore, Nashik, Noida, and
+                                                                                    Ranchi, broadening our offering of construction materials.
+                                                                                    Launched AAC Blocks distributed to regular transacting customers.
+ Delivered 2 million+ metric tonnes of                                              Introduced 'ArisDelivery' to optimize delivery operations Launched
+ construction materials in a period of 12 months     2022
+                                                                                    a data assisted AI agent in March for real-time data access and
+ ended March 31, 2022 Introduced 'ArisFlow' on                                      comprehensive business analysis from a messaging app integrated
+ a pilot basis, to automate and simplify deal                                       with our technology.
+ closure.
+
+Investor Presentation
+                                                                                                                                                                                    10
+
+[page 12]
+Board of Directors
+
+                         Ronak                                                        Bhavik                                                      Siddharth
+                         Morbia                                                       Khara                                                       Shah
+                          (Chairman and Managing                                      (Whole-Time Director and                                    (Vice Chairman and
+                          Director)                                                   Chief Financial Officer)                                    Non-Executive Director)
+
+    Co-founder with 20 year’s experience scaling              Co-founder and Rutgers Business School graduate; leads      Promoter, an engineer from DJ Sanghvi and IIM
+    construction and infrastructure supply networks; led      financial strategy, governance, and capital allocation at   Ahmedabad PGDM, he was MD & CEO of API Holdings,
+    growth into a tech-enabled execution platform.            Arisinfra, driving discipline and scalable growth.          FICCI E-Commerce Chair (2024), with 8+ years in
+                                                                                                                          healthcare leadership.
+
+
+
+
+                         Ramakant                                                     Gitanjali                                                   Renganathan
+                         Sharma                                                       Mirchandani                                                 Bashyam
+                         (Independent Director)                                       (Independent Director)                                      (Independent Director)
+
+    Founder & CEO of Livspace, he is an IIT Kanpur and ISB    A seasoned real estate investment professional, she was     A seasoned corporate law professional with over 33 years
+    alumnus with strong startup and operational experience,   Managing Director & Head of Origination at JM Financial,    of experience, he brings deep expertise in investment
+    including engineering leadership at Myntra and founding   with deep expertise in strategic investments and            banking, corporate governance, NBFCs, M&A, issue
+    Violetbag.com.                                            corporate governance.                                       management, and regulatory compliance.
+
+
+
+
+Investor Presentation
+                                                                                                                                                                                     11
+
+[page 13]
+Key Managerial Personnel & Senior Management Personnel
+
+                          Srinivasan                                                 Latesh                                                  Jitender
+                          Gopalan                                                    Shah                                                    Sharan
+                          (Chief Executive Officer)                                  (Company Secretary and                                  (CTO and Head of Product)
+                                                                                     Compliance Officer)
+
+    Srinivasan leads business development, customer            Latesh leads governance, compliance, and regulatory      Jitender heads the company’s technology platform and,
+    relationships, and credit strategy, leveraging 20+ years   matters, supporting the Board in maintaining strong      with prior experience at Walmart, drives digital
+    in real estate and finance to drive disciplined growth.    corporate governance standards.                          efficiency, scalability, and competitive advantage.
+
+
+
+
+                                                                                   Divya                                                   Suvesh
+                        Onkar
+                                                                                   Iyer                                                    Sinha
+                        Chattoraj
+                                                                                                                                          (Vice President - Strategy
+                        (Senior Vice President - Business                         (Vice President - Business
+                                                                                                                                          & Credit Risk)
+                        Growth & Partnerships)                                    Operations)
+
+
+    Onkar leads business expansion and strategic               Divya leads operations, customer engagement, and         Suvesh drives strategy and oversees credit risk,
+    partnerships, working with developers, contractors,        collections, ensuring seamless execution while driving   balancing capital efficiency with growth to enable
+    and vendors to strengthen relationships and drive          financial discipline and customer trust.                 sustainable expansion.
+    market growth.
+
+
+
+
+Investor Presentation
+                                                                                                                                                                                12
+
+[page 14]
+Geographical Presence
+
+                                                  Extensive Operational Footprint
+
+
+
+
+                                                                                           10+
+                                      23                   1,192+                          Contract
+                                   States & UTs                Pincodes                  Manufacturing
+                                                                                            Plants
+
+                                                  Q1-FY27 Geographical Revenue Mix (%)
+
+
+
+                                             Others, 6%
+
+                                             Karnataka,
+                        Presence                7%
+                                                                                Maharashtra, 65%
+
+
+
+                                           Tamil Nadu,
+                                              22%
+
+
+
+
+Investor Presentation
+                                                                                                         13
+
+[page 15]
+Marquee Customers
+                                                    Infrastructure Players
+
+
+
+
+                                                    Real Estate Developers
+
+
+
+
+                                    Clients Served Through Advisory & Consultancy Services
+
+                                                                                               Q1-FY27 Industry Wise Revenue Mix (%)
+
+
+
+                                                                                             Manufacturer,
+                                                                                                17%                     Large Infra
+                                                                                                                         and EPC
+                                                                                                    Others,            Players, 58%
+                        3,412+                         82%                                            7%
+                                                                                                       Real Estate
+                        Customers              Repeat Customers Count
+                                                                                                       Developers,
+                                                                                                          18%
+Investor Presentation
+                                                                                                                                       14
+
+[page 16]
+Key Projects
+
+
+
+
+     Chennai Peripheral Ring Road   Ganga Six Lane Bridge, Bihar         Listed Developer Project, Whitefield   Mumbai Ahmedabad Bullet Train
+     [Aggregate supply]             [Aggregate supply]                   Bangalore [Aggregate Supply]           [Chemicals & Aggregate Supply]
+
+
+
+
+    Navi Mumbai Airport             Branded Developer Project, Chennai   Chennai Metro                          Warehousing in Chennai
+    [Chemicals supply]              [RMC supply]                         [RMC supply]                           [RMC supply]
+Investor Presentation
+                                                                                                                                                 15
+
+[page 17]
+BUSINESS OVERVIEW
+[OCR page 17, tesseract on rasterised page (200dpi), text found: BUSINESS OVERVIEW (section divider slide; background photo, no additional extractable text)]
+
+[page 18]
+One Network - Three Revenue Streams
+
+       STREAM 01                                                             STREAM 02                                                                  STREAM 03
+
+
+       B2B Supply                                                            Contract Manufacturing                                                     Developer-as-a-Service
+       The network's entry point                                             The network's supply engine                                                The network's highest-yield output
+
+              EBITDA 2–2.5%                  Revenue 37%                           EBITDA 9–9.5%                     Revenue 53%                              EBITDA 55–60%                  Revenue 10%
+
+
+       WHAT IT IS                                                            WHAT IT IS                                                                 WHAT IT IS
+                                                                             ARIS secures 100% of output from partner                                   ARIS takes full ownership of real estate
+       Direct supply of construction materials to                                                                                                       projects — development management,
+                                                                             plants under exclusive long-term agreements.
+       contractors, developers, and project sites.                                                                                                      construction, sales execution, and client
+                                                                             Full plant economics. Zero fixed assets.
+       WHY IT MATTERS
+                                                                                                                                                        handover.
+                                                                             WHY IT MATTERS                                                             WHY IT MATTERS
+       High-volume, relationship-intensive. Every                                                                                                       Zero incremental capital. Works across new
+       trade client deepens network density — more                           9 mn+ MT locked. Exclusive. Competitors
+                                                                             cannot access this capacity. Every rupee of                                developments, landowner JVs, and capital-
+       transactions, more data, more pricing                                                                                                            unlock situations. Every DaaS client is an
+       intelligence.                                                         growth compounds ROCE — capital is never
+                                                                             tied to equipment.                                                         exclusive materials client — one relationship,
+                                                                                                                                                        two revenue streams.
+
+      → Feeds into — Trade clients convert to higher-margin exclusive        → Feeds into — Manufacturers anchor exclusive DaaS materials              → Feeds into — Each project adds contractors and vendors to
+      supply.                                                                supply.                                                                   the network.
+
+
+                                                    Price Intelligence                    Delivery Automation                       Credit & Risk Engine                         WC Engine
+         THE NETWORK — ARIS OS
+                                                    Real-time, 1,000+ SKUs                1L+ records · AI-enabled                  Live limits, all counterparties              56-day NWC · self-funded
+
+
+                                                                                                                                                                                 Revenue Mix as of Q1-FY27
+Investor Presentation
+                                                                                                                                                                                                                     17
+
+[page 19]
+Cross Selling Solutions
+
+                                                Services
+
+                                                           Engineering &
+                                    Financing
+                                                            Architecture
+                 3,400+
+                                Sales & Marketing          Procurement
+                    Customers
+
+
+
+                                                                                Tech Enabled
+                                                B2B Supply                      Aggregation          2,200+
+                                                                              through Arisflow        Vendors
+
+
+
+                                                                              First Right of Order
+
+
+
+
+                                                                           Contract Manufacturing
+
+Investor Presentation
+                                                                                                                18
+
+[page 20]
+Transforming Construction Procurement through Technology
+                                W I T HOUT A N O P ERATI NG L A Y ER                                        W I T H A RI S A S T HE O P ERATI NG L A Y ER
+                          Vendor 01                            Customer 01                              Vendor 01                                     Customer 01
+
+                          Vendor 02                            Customer 02                              Vendor 02                                     Customer 02
+
+                          Vendor 03                            Customer 03                              Vendor 03                                     Customer 03
+
+                          Vendor 04                            Customer 04                              Vendor 04                                     Customer 04
+
+                          Vendor 05                            Customer 05                              Vendor 05
+                                                                                                                              ARIS                    Customer 05
+
+                          Vendor 06                            Customer 06                              Vendor 06            Operating Layer          Customer 06
+
+                          Vendor 07                            Customer 07                              Vendor 07                                     Customer 07
+
+                        2,000+ vendors                        3,000+ customers
+                                                                                        vs             2,000+ vendors                                3,000+ customers
+
+
+
+                                                                                                   •   100+ vetted vendors evaluated instantly via algorithm
+                  •       Reach physically limited to 2-4 local vendors
+                                                                                                   •   Optimal Multi-vendor orders finalized
+                  •       Single Vendor for all items
+                                                                                                   •   Price intelligence across every transaction
+                  •       No pricing visibility across the network
+                                                                                                   •   Offers are finalized in 15 mins
+                  •       Verbal offers resulting in days wasted on T&C confusion
+                                                                                                   •   Every dispute has a complete audit trail
+                  •       Inaccuracy in deliveries, paperwork and billing
+                                                                                                   •   Credit monitored in real time across all counterparties
+                  •       Credit risk invisible until it becomes a crisis
+
+
+
+
+                                   ARIS is rewiring a fragmented ecosystem into a scalable, transparent, accurate and digital network.
+Investor Presentation
+                                                                                                                                                                        19
+
+[page 21]
+Real-Time Vendor Engagement via WhatsApp
+                                          Without             Aris
+                                           Aris           Difference
+
+                  RFQs                    15 Days         Live
+
+                  Vendor Onboarding       5 Days          10 Mins
+
+                  Order to PO             3+ Hours        7 Mins
+
+                                                           <30 Sec
+                  Record Keeping           Manual
+                                                          per Record
+
+
+                  End-to-End Accuracy     < 60%           100%
+
+                                   What once took days now happens in minutes through seamless WhatsApp-driven automation
+
+Investor Presentation
+                                                                                                                            20
+
+[page 22]
+ArisCloud: End-to-End Intelligent Procurement Workflow
+                Technology-Led Deal
+                    Finalization
+                                                                     Data-Backed Decision
+            Rapid Request for quotations                                 Intelligence
+               (RFQs) dissemination to
+               multiple vendors within                               Advanced analytics across
+            minutes enables competitive                            RFQs, vendor pricing history,
+           price discovery. Automated bid                         credit behavior, logistics data,
+                 comparison reduces                               and margin thresholds enable
+              procurement complexity,                                  informed pricing, risk
+            shortens decision cycles, and                         assessment, and deal approval
+               lowers reliance on large                             decisions. Enhances margin
+                   sourcing teams.                                 control, credit discipline, and
+                                                                        execution efficiency.
+
+
+                 Integrated Delivery
+                    Management
+                    (ArisDelivery)
+
+            System-driven execution from                         AI-Driven Document
+             purchase order to last-mile
+              delivery ensures real-time                             Digitisation
+           tracking, coordinated dispatch,                   End-to-end digitization of critical
+              and operational efficiency.                 documents (quotations, POs, delivery
+            Reduces manual intervention,                 challans, goods receipt notes) improves
+           communication overhead, and                   accuracy, reconciliation speed, and audit
+                   staffing intensity.                    readiness. Cloud storage and AI-based
+                                                          handwritten recognition reduce risk of
+                                                               loss and transaction delays.
+
+
+Investor Presentation
+                                                                                                     21
+
+[page 23]
+From Manual Chaos to AI-Driven Control
+                    Automated Document Intelligence                           Real-Time Data & Reporting (CARA AI)
+                    AI-powered verification extracts and validates key data   Aggregates multi-source data into instant operational
+                    from documents                                            & financial insights
+                    Stamp detection ensures compliance with ~95% accuracy     On-demand reports delivered via WhatsApp for
+                                                                              faster decision-making
+                    Invoice processing reduced from 20+ days to under 24
+                    hours                                                     Enables real-time visibility across margins, credit, and
+                                                                              performance
+                    Invoice and quantity disputes drop to an unprecedented
+                    < 1%, virtually eliminating revenue leakage
+
+
+
+
+Investor Presentation
+                                                                                                                                         22
+
+[page 24]
+ArisGPT - Conversational AI for Operational Intelligence
+
+
+                        Conversational Business Queries: Users can ask simple
+                        questions like delivery status, receivables, or invoices and
+                        receive instant answers.
+
+
+                        Real-Time Operational Intelligence: Tracks deliveries, deal
+                        status, margins, receivables, and operational KPIs in real
+                        time.
+
+                        AI-Generated Reports: Automatically compiles data into
+                        dashboards, summaries, and actionable reports.
+
+                        Anomaly Detection & Alerts: Highlights unusual trends in
+                        receivables, payments, margins, or operational activity.
+
+
+
+
+                                           ArisGPT transforms operational data into instant intelligence, enabling faster decisions,
+                                                           greater transparency, and proactive risk management.
+
+Investor Presentation
+                                                                                                                                       23
+
+[page 25]
+Portfolio Realignment towards High-Value Categories
+                                                                        Revenue Distribution (%)
+
+
+                              Services                                                                                      Aggregates &
+                        Others, , 5%                                                                                        Asphalt, 43%
+                          9%                                                                                                                Others , 14%
+             Chemicals &
+             Wallings, 3%           Aggregates,
+                                       24%
+                                                                                                                                                 Services, 9%
+                          Steel &
+                          Cement,     RMC, 20%
+                            39%
+                                                                                                                                           Steel & Cement,
+                                                                                                                                                 13%
+                                                                                                                             RMC, 18%
+                                                                                                                                             Chemicals &
+                                                                                                                                             Walling, 2%
+                                FY23                                                                                                   FY26
+                        Revenue: INR 7,461 Mn                                                                                 Revenue: INR 10,675 Mn
+                           EBITDA: INR (7) Mn                                                                                  EBITDA: INR 1,007 Mn
+                        EBITDA MARGIN: (0.09)%                                                                                EBITDA MARGIN: 9.43%
+
+
+
+
+               Focused Categories                             Operationally Align Mix                                  Scalable Profitability
+        Reduced focus on lower value categories like Cement   Focus on categories where execution strength directly   Categories that support better unit economics and
+                                    & Steel                                    impacts outcomes                                         cash flow cycles
+
+
+Investor Presentation
+                                                                                                                                                                          24
+
+[page 26]
+B2B Supply
+     •      The company provides developers and contractors efficient procurement solutions for
+            construction projects through its network of manufacturers and suppliers of
+            construction materials.
+     •      The product portfolio includes aggregates, RMC, walling solutions, chemicals, steel,
+            cement, tiles, electricals, plumbing, and other allied construction materials.
+     •      It is building a diversified network of trusted SME/MSME suppliers and manufacturers
+            across multiple regions.
+     •      The company provides full-stack execution across the supply chain, covering sourcing,
+            quality checks, logistics, delivery tracking, and documentation via its in-house
+            technology platform.
+     •      It is a high volume, relationship driven model where each client adds more
+            transactions, better data, and stronger pricing insights.
+
+                                    Revenue (INR Mn)                                                      Quantity Delivered (in MT)
+
+                           5,447                                                              3,155,369     3,105,146
+                                               4,706                                                                    2,942,678
+                                     4,645
+
+
+
+
+                                                        1,092                                                                          784,570
+
+
+
+                            FY24     FY25      FY26    Q1-FY27                                  FY24          FY25        FY26      Q1-FY27
+
+Investor Presentation
+                                                                                                                                                 25
+
+[page 27]
+Contract Manufacturing
+
+   •      Arisinfra Solutions secures 100% of output production capacity by partnering with factories                 Revenue (INR Mn)
+          that have underutilized production capacity under exclusive long-term agreements.
+                                                                                                                                   4,989
+   •      It follows an asset-light model, keeping fixed costs low and eliminating depreciation,
+          enabling higher returns while keeping capital liquid and redeployable.
+                                                                                                                       2,562
+   •      The company has no minimum offtake commitment, enabling flexible demand-led
+                                                                                                                                               1,540
+          procurement with protected downside.                                                             1,224
+
+   •      Instead of buying products from the open market at fluctuating prices, the company books
+          production capacity in advance with partner factories. This gives better price visibility and    FY24        FY25        FY26       Q1-FY27
+          helps keep profit margins more stable.
+   •      Partner factories also benefit because their plants run at higher utilization, creating a win-           Quantity Delivered (in MT)
+          win situation as both sides grow volumes together.
+                                                                                                                                  3,896,119
+   •      Contracts with these factories include safeguards like fair pricing commitments, damage
+          protection and audit rights, which help manage risks and maintain financial discipline.
+                                                                                                                      2,341,892
+
+
+                                                                                                           860,822                            865,332
+
+
+
+                                                                                                            FY24        FY25        FY26      Q1-FY27
+
+Investor Presentation
+                                                                                                                                                        26
+
+[page 28]
+Contract Manufacturing Facilities
+
+  Reserved Capacity of               Reserved Capacity of          Reserved Capacity of
+      Aggregates                            RMC                          Asphalt
+
+               6 Plants                     3 Plants                       1 Plant
+
+         6.1 Million Tons               2.7 Million Tons              0.3 Million Tons
+
+
+
+                            Benefits for Contract Manufacturing Partners
+
+   Higher Utilization: ARIS network drives steady demand, increasing plant
+   utilisation from ~20% to 70%+.
+
+   Stronger Cash Flows: The network provides working capital support, improving
+   liquidity and reducing financial stress.
+
+   Focus only on Manufacturing: Partners focus purely on manufacturing, while
+   ARIS manages demand, sales, pricing, logistics, receivables and other
+   operations.
+
+
+
+Investor Presentation
+                                                                                          27
+
+[page 29]
+Services
+ •      Through ArisUnitern RE Solutions, the company is operating a first-of-its-kind Developer-                              Revenue (INR Mn)
+        as-a-Service model for real estate developers.
+ •      The company manages the entire real estate project lifecycle from arranging funds,
+                                                                                                                                               980
+        material procurement, sales, marketing, and collections.
+ •      It acts as a single point of contact for developers by coordinating with lenders, contractors,
+        vendors and channel partners.                                                                                             469
+                                                                                                                   297                                   277
+ •      The company leverages its network where every materials client becomes a potential DaaS
+        mandate across new developments, JVs, and stressed projects eliminating the need for
+        cold sales motion.                                                                                        FY24           FY25         FY26     Q1-FY27
+ •      It accelerates project completion by integrating project management with procurement,
+        where each DaaS client becomes an exclusive materials client.
+                                                                                                             Q1-FY27 Mix based on GDV under execution
+                          Current Portfolio*                            Strong Unit Economics
+
+                   10                   INR 18,391 Mn                                                         Villas, 12%
+         Active Services                                         10-14%                 55-60%                                        Plotted, 29%
+                                        Estimated Gross
+            Projects                                           Fees on GDV           EBITDA Margins
+                                       Development Value
+
+
+                           2.53 Mn Sq. Ft.                        NIL               18-24 Months
+                        Services portfolio under                                    Execution Time                                           Apartments, 59%
+                                                           Incremental Capital
+                               execution
+
+                                                                                                         *All Figures as of Q1-FY27
+Investor Presentation
+                                                                                                                                                                 28
+
+[page 30]
+ArisUnitern RE Solutions: Turning Execution Risk into Investor Returns
+                                                                                Developer 1
+
+                                                                                  Solutions given by Unitern:
+                  Problems faced by the developer:
+                                                                                  • Replaced the existing lender with set of Investors
+                  Construction was slow for the following reasons:
+                                                                                  • Infused enough working capital by way of fresh funding
+                  • Lack of enough working capital
+                                                                                  • Secured the project by obtaining full CC (Commencement Certificate)
+                  • Complete reliance on sales and collections for
+                                                                                  • Provided uninterrupted material supply with flexible credit
+                     construction
+                                                                                  • Infused a high-power sales team and increased sales by 3X
+                  • Dispute with existing lenders
+                                                                                  • Increased the pricing by 7.5% with better terms of payment
+                  • Terms with contractor not well defined
+                                                                                  • Infused experienced project management team to speed up construction and
+                  • Slow sales
+                                                                                      renegotiated with the contractor
+
+                                                                                Developer 2
+
+                                                                                  Solutions given by Unitern:
+                  Problems faced by the developer:                                • Identified an investor for the land and the lender sold to the investor
+                  • The original developer had gone                               • Unitern became a DM partner to the investor to provide end to end solutions
+                     bankrupt                                                     • Infused working capital of INR 250 Mn
+                  • The lender was stuck with land                                • Got approvals for the land
+                                                                                  • Supplied all construction materials with an average saving of 2%
+                                                                                  • Launched the project and sold 1/3rd inventory in the first month
+                                                                                  • Managed day to day cash flows and all day-to-day operations on behalf of the investor
+
+
+
+                Unlocking value in stressed or stalled real estate projects by aligning capital, execution, and sales to deliver disciplined turnarounds and full-cycle exits
+
+Investor Presentation
+                                                                                                                                                                                29
+
+[page 31]
+STRATEGIC OVERVIEW
+[OCR page 31, tesseract on rasterised page (200dpi), text found: STRATEGIC OVERVIEW (section divider slide; background photo, no additional extractable text)]
+
+[page 32]
+Future Growth Strategies
+
+
+                                          Working Capital Optimization: System and mix          Scalable at Near-Zero Cost: The network can
+                                          improvements steadily reduce net working              handle 10× higher volumes on the same
+                                          capital days, unlocking cash on an ongoing            infrastructure, with each new node and order
+                                          basis.                                                adding minimal incremental cost.
+
+               Deepen Category Expansion: Increase
+                                                                                                                  Onboarding new Vendors: Add new
+               share in high-margin, execution-driven
+                                                                                                                  vendors to expand network capacity and
+               categories such as RMC, aggregates,
+                                                                                                                  secure exclusive supply partnerships.
+               asphalt and value-added materials.
+
+
+
+
+                New Category Expansion: Expanding
+                                                                                                                 Grow Services Vertical: Increase
+                into tiles, CP fittings, sanitaryware,
+                                                                                                                 recurring, high-margin revenue
+                electricals, and plumbing to deepen
+                                                                                                                 streams alongside core supply.
+                wallet share and strengthen
+                platform breadth.
+                                                    Geographic Scale-Up: Expand          Scale Contract Manufacturing: Increase secured
+                                                    presence across high-growth          capacity through additional third-party plant
+                                                    infrastructure corridors and Tier    tie-ups, enhancing operating leverage and
+                                                    1/Tier 2 real estate markets.        expanding higher-margin segments.
+
+Investor Presentation
+                                                                                                                                                           31
+
+[page 33]
+FINANCIAL OVERVIEW
+
+
+
+
+  FINANCIAL OVERVIEW
+[OCR page 33, tesseract on rasterised page (200dpi), text found: FINANCIAL OVERVIEW (section divider slide; background photo with decorative bar-chart graphic containing no real data labels, no additional extractable text)]
+
+[page 34]
+Q1-FY27 Financial Highlights
+
+
+                                 Q1-FY27 Financial Performance
+
+
+
+
+                        Revenue from
+                                             EBITDA       EBITDA Margins
+                         Operations
+                                           INR 305 Mn        10.49%
+                        INR 2,908 Mn
+                                            67.6% YoY      191 Bps YoY
+                         37.1% YoY
+
+
+
+
+                           PAT            PAT Margins       Diluted EPS
+                        INR 200 Mn          6.88%         INR 2.05 /Share
+                        292.2% YoY        448 Bps YoY       279.6% YoY
+
+
+
+
+Investor Presentation
+                                                                            33
+
+[page 35]
+Q1-FY27 Operational Highlights
+    Asphalt Scaleup:
+    • Asphalt business continued to witness strong traction, with revenue increasing to INR 529 Mn in Q1-FY27 from INR
+       299 Mn in Q4-FY26.
+    • Number of customers transacted increased to 38 in Q1-FY27 from 28 in Q4-FY26, reflecting continued customer
+       adoption.
+
+    Daas Scaleup
+    • ArisUnitern secured a INR 6,500 Mn Daas contract from Wadhwa Group in Mumbai, strengthening its order pipeline
+      and market presence.
+    • DaaS execution pipeline remained robust, with GDV under execution increasing to INR 18,391 Mn in Q1-FY27 from INR
+      12,674 Mn in Q4-FY26, providing strong revenue visibility.
+
+    Contract manufacturing
+    • Contribution from Contract Manufacturing increased to 53% of the overall business in Q1-FY27.
+
+    Customer Retention
+    • Repeat orders from customers improved to 82% in Q1-FY27 from 78% in Q4-FY26, reflecting strong customer
+       retention.
+
+
+
+Investor Presentation
+                                                                                                                          34
+
+[page 36]
+Segmental Performance
+
+
+
+
+                 B2B Supply Revenue (INR Mn)       Contract Manufacturing Revenue           Services Revenue (INR Mn)
+                                                              (INR Mn)
+                             1,302                             1,774                                 361
+                                                                           1,540
+                                                                                                                  277
+
+                                                    839                               187
+                 1,095                    1,092
+
+
+
+
+              Q1-FY26       Q4-FY26     Q1-FY27   Q1-FY26    Q4-FY26      Q1-FY27   Q1-FY26        Q3-FY26      Q1-FY27
+
+
+
+
+Investor Presentation
+                                                                                                                          35
+
+[page 37]
+Quarterly Consolidated Income Statement
+
+    Particulars (INR Mn)                     Q1-FY27   Q1-FY26    Y-o-Y    Q4-FY26   Q-o-Q
+
+    Revenue from Operations                   2,908     2,121    37.1%      3,434    (15.3)%
+
+    Total Expenses                            2603      1,939    34.2%      3,129    (16.8)%
+
+    EBITDA                                    305       182      67.6%      305        NA
+
+    EBITDA Margins (%)                       10.49%    8.58%     191 Bps   8.88%     161 Bps
+
+    Depreciation and amortisation expenses     19        8         NA        17      11.8%
+
+    Finance costs                              63       117      (46.2)%     61       3.3%
+
+    Other Income                               44        35      25.7%       60      (26.7)%
+
+    PBT before exceptional items              267        92        NA       287      (7.0)%
+
+    Exceptional Items                           -        29        NA         -        NA
+
+    PBT                                       267        63        NA       287      (7.0)%
+
+    Tax                                        67        12        NA        70      (4.3)%
+
+    PAT                                       200        51        NA       217      (7.8)%
+
+    PAT Margins (%)                          6.88%     2.40%     448 Bps   6.32%     56 Bps
+
+    Other Comprehensive Income                 (2)        -        NA         -        NA
+
+    Total Comprehensive Income                198        51        NA       217      (8.8)%
+
+    Diluted EPS (INR)                         2.05      0.54       NA       2.58     (20.5)%
+
+
+Investor Presentation
+                                                                                               36
+
+[page 38]
+Historical Consolidated Income Statement
+
+    Particulars (INR Mn)                      FY24     FY25    FY26     Q1-FY27
+
+    Revenue from Operations                  6,968     7,677   10,675    2,908
+
+    Total Expenses                           6,840     7,176   9,668     2603
+
+    EBITDA                                    128      501     1,007     305
+
+    EBITDA Margins (%)                       1.84%     6.53%   9.43%    10.49%
+
+    Depreciation and amortisation expenses     29       33      41        19
+
+    Finance costs                             323      415      279       63
+
+    Other Income                               56      143      124       44
+
+    PBT before exceptional items             (168)     196      811      267
+
+    Exceptional Items                          -        73      25         -
+
+    PBT                                      (168)     123      786      267
+
+    Tax                                        5        63      183       67
+
+    PAT                                      (173)      60      603      200
+
+    PAT Margins (%)                          (2.48)%   0.78%   5.65%    6.88%
+
+    Other Comprehensive Income                 -        5       (1)       (2)
+
+    Total Comprehensive Income               (173)      65      602      198
+
+    Diluted EPS (INR)                        (5.30)    0.36     6.84     2.05
+
+
+Investor Presentation
+                                                                                  37
+
+[page 39]
+Historical Consolidated Balance Sheet
+   PARTICULARS (INR MN)                                      FY24    FY25    FY26     PARTICULARS (INR MN)                           FY24    FY25    FY26
+   Non-Current Assets                                                                 Equity
+   Property, plant and equipment                              24      18       67     Equity Share Capital                            18     117      164
+   Capital work in progress                                    -       -       11     Other Equity                                   1,398   2,195   7,227
+   Right use of assets                                        14      36      154     Non-Controlling Interest                        5       46      119
+   Other intangible assets                                     -      1        1      Total Equity                                   1,421   2,358   7,510
+   Intangible assets under development                       246     414      569     Non-Current Liabilities
+   Financial Assets                                                                   Financial Liabilities
+   i) Other non current financial assets                      84      69       80     i) Long Term Borrowings                        678      30       -
+   ii) Loans and advances                                      -      5      1,685
+                                                                                      ii) Lease Liabilities                           4       15      108
+   Deferred tax assets (net)                                  60      87       90
+                                                                                      iii) Other non current financial liabilities   116      62      77
+   Non current tax assets (net)                               34      18       11
+                                                                                      Long Term Provisions                            12      18      25
+   Other non current assets                                   39       -      633
+                                                                                      Total Non-Current Liabilities                  810     125      210
+   Total Non-Current Assets                                  501     648     3,301
+                                                                                      Current Liabilities
+   Current Assets
+                                                                                      i) Short Term Borrowings                       2,062   3,363    548
+   Inventories                                                13      16      39
+                                                                                      ii) Lease Liabilities                           11      23      46
+   Financial Assets
+   i) Trade receivables                                                               iii) Trade Payables                            449     701     1,733
+                                                             3,204   3,270   4,100
+   ii) Cash and cash equivalents                               6       3     1,014    iv) Other financial liabilities                 76     153      160
+                                                                                      Short Term Provisions                           10      6        6
+   iii) Bank balances other than cash and cash equivalents    1      452      178     Current Tax Liabilities                          -      51      93
+   iv) Other financial assets                                 762     847     299     Other Current Liabilities                       89     187      109
+   Other Current Assets                                       441    1,731   1,484    Total Current Liabilities                      2,697   4,484   2,695
+   Total Current Assets                                      4,427   6,319   7,114    Total Liabilities                              3,507   4,609   2,905
+   GRAND TOTAL - ASSETS                                      4,928   6,967   10,415   GRAND TOTAL - EQUITIES & LIABILITIES           4,928   6,967   10,415
+Investor Presentation
+                                                                                                                                                              38
+
+[page 40]
+Consolidated Financial Highlights
+                        Revenue from Operations (INR Mn)      EBITDA (INR Mn) & EBITDA Margin (%)              PAT (INR Mn) & PAT Margins (%)
+
+                                                                                                                                  603
+                                        10,675                                     1,007
+                                                                                                                                              6.88%
+                              7,677
+                6,968                                                                           10.49%                                         200
+                                                                                   9.43%                                60       5.65%
+                                                                        501                                           0.78%
+                                                   2,908               6.53%                     305      (2.48)%
+                                                            1.84%
+                                                                                                           (173)
+                                                            128
+                                                                                                           FY24       FY25       FY26        Q1-FY27
+                 FY24         FY25       FY26     Q1-FY27   FY24       FY25        FY26        Q1-FY27
+                                                                                                                      PAT       PAT Margin
+                                                                      EBITDA          EBITDA Margin
+
+
+
+
+                            Net Working Capital Days                  Net Debt/Equity (x)                           ROE (%) & ROCE (%)
+
+
+                  120                                          1.92
+                               110
+                                                                         1.25
+                                          66                                                                         25.91%     21.37%
+                                                       56                                                                                    17.16%
+                                                                                                          7.26%
+                                                                                                 0.02
+                                                                                                                                12.22%       10.61%
+                                                                                                                     3.18%
+                                                                                   (0.09)                (14.08)%
+                 FY24         FY25       FY26     Q1-FY27     FY24       FY25       FY26       Q1-FY27     FY24       FY25       FY26        Q1-FY27
+                                                                                                                        ROE       ROCE
+Investor Presentation
+                                                                                                                                                       39
+
+[page 41]
+Disclaimer
+   No representation or warranty, express or implied, is made as to, and no reliance should be placed on, the fairness, accuracy, completeness or correctness of the information or opinions
+   contained in this presentation. Such information and opinions are in all events not current after the date of this presentation. Certain statements made in this presentation may not be based
+   on historical information or facts and may be "forward looking statements" based on the currently held beliefs and assumptions of the management Arisinfra Solutions Limited (“Company” or
+   “Arisinfra Solutions Ltd.”), which are expressed in good faith and in their opinion reasonable, including those relating to the Company’s general business plans and strategy, its future financial
+   condition and growth prospects and future developments in its industry and its competitive and regulatory environment.
+
+   Forward-looking statements involve known and unknown risks, uncertainties and other factors, which may cause the actual results, financial condition, performance or achievements of the
+   Company or industry results to differ materially from the results, financial condition, performance or achievements expressed or implied by such forward-looking statements, including future
+   changes or developments in the Company’s business, its competitive environment and political, economic, legal and social conditions. Further, past performance is not necessarily indicative of
+   future results. Given these risks, uncertainties and other factors, viewers of this presentation are cautioned not to place undue reliance on these forward-looking statements. The Company
+   disclaims any obligation to update these forward-looking statements to reflect future events or developments.
+
+   This presentation is for general information purposes only, without regard to any specific objectives, financial situations or informational needs of any particular person. This presentation does
+   not constitute an offer or invitation to purchase or subscribe for any securities in any jurisdiction, including the United States. No part of it should form the basis of or be relied upon in
+   connection with any investment decision or any contract or commitment to purchase or subscribe for any securities. None of our securities may be offered or sold in the United States, without
+   registration under the U.S. Securities Act of 1933, as amended, or pursuant to an exemption from registration there from.
+   This presentation is confidential and may not be copied or disseminated, in whole or in part, and in any manner.
+
+   Valorem Advisors Disclaimer:
+   Valorem Advisors is an Independent Investor Relations Management Service company. This Presentation has been prepared by Valorem Advisors based on information and data which the
+   Company considers reliable, but Valorem Advisors and the Company makes no representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the truth,
+   accuracy, completeness, fairness and reasonableness of the contents of this Presentation. This Presentation may not be all inclusive and may not contain all of the information that you may
+   consider material. Any liability in respect of the contents of, or any omission from, this Presentation is expressly excluded. Valorem Advisors also hereby certifies that the directors or
+   employees of Valorem Advisors do not own any stock in personal or company capacity of the Company under review.
+
+
+   For further details, please feel free to contact our Investor Relations Representatives:
+
+                                   Mr. Anuj Sonpal
+                                   Valorem Advisors
+                                   Tel: +91-22-3507 5100
+                                   Email: aris@valoremadvisors.com
+                                   Investor Kit Link: https://www.valoremadvisors.com/arisinfra
+
+Investor Presentation
+                                                                                                                                                                                                         40
+
+[page 42]
+THANK
+ YOU
+
+
+
+
+        41
+[OCR page 42, tesseract on rasterised page (200dpi), text found: THANK YOU (closing slide; background photo, no additional extractable text)]

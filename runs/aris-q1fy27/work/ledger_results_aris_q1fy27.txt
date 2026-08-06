@@ -1,0 +1,234 @@
+=== A2 COUNT TEST ===
+category: notes          grep_count: 16   sweep_count: 16   match: yes
+category: line_items     grep_count: 77   sweep_count: 77   match: yes
+category: zero_standing  grep_count: 1    sweep_count: 1    match: yes
+category: agenda_items   grep_count: 1    sweep_count: 1    match: yes
+category: auditor_paras  grep_count: 13   sweep_count: 13   match: yes
+category: entities       grep_count: 8    sweep_count: 8    match: yes
+category: signatures     grep_count: 5    sweep_count: 5    match: yes
+category: annexures      grep_count: 4    sweep_count: 4    match: yes
+gate_a2: pass
+=== END COUNT TEST ===
+
+NOTE ON RECONCILIATION METHOD (per category, grep pass then manual sweep):
+- notes: raw regex `^\s*[0-9]+\s` over the whole file returns 17 hits, of
+  which 2 are false positives from OCR/extraction garbling (line 289, a
+  digit "0" fragment glued to the Chairman's name in a signature block; line
+  595, a digit "0" fragment glued to a garbled IPO-utilisation Total row) and
+  1 true note is MISSED by the same regex because the note number line-wraps
+  onto its own line with no trailing text (consolidated note 8: the numeral
+  "8" sits alone on line 603, body text "current periods classification."
+  continues on line 604). Manual sweep: 8 standalone notes (lines 225-278,
+  numbered 1-8) + 8 consolidated notes (lines 552-604, numbered 1-8, note 8
+  split across 602/603/604) = 16. Re-sweep resolves the raw-regex mismatch;
+  reconciled grep_count above already excludes the 2 false positives and
+  includes the 1 line-wrapped catch, so it matches the sweep at 16.
+- line_items: grep pass = `sed -n '<table range>p' | grep -n -E "[0-9]"` run
+  separately over each of the 4 tables (standalone P&L 180-222, standalone
+  IPO-utilisation sub-table 259-271, consolidated P&L 475-542, consolidated
+  IPO-utilisation sub-table 580-595) returns 27 + 6 + 38 + 6 = 77 numeric
+  rows, matching the manual line-by-line sweep of the same 4 tables.
+- signatures: raw grep on `Place:` returns 3 hits (board outcome letter line
+  66, standalone auditor report line 152, consolidated auditor report line
+  447); manual sweep adds 2 more full signature blocks that omit the literal
+  word "Place:" (the Chairman's authorisation block on each financial
+  statement, lines 287-291 standalone and 608-610 consolidated, which give
+  Mumbai / date / name / designation / DIN without the "Place:" label) = 5
+  total, reconciled.
+
+=== CATEGORY 1: NUMBERED NOTES (financial statement notes, both statements)
+=== 1A. Standalone unaudited results — notes (page 5)
+| # | Line(s)   | First 15 words                                                                                  | Flags |
+|---|-----------|--------------------------------------------------------------------------------------------------|-------|
+| 1 | 225-226   | "The unaudited standalone results of the quarter ended June 30, 2026 were reviewed by the Audit Committee..." | |
+| 2 | 228-230   | "The unaudited standalone financial results have been prepared in accordance with the recognition and measurement..." | |
+| 3 | 232-233   | "The Company operates only in one business segment i.e. Trading of Construction Materials which constitutes..." | SEGMENT_NOTE |
+| 4 | 235-239   | "During the year ended March 31, 2026; the Company incurred certain share issue related expenses such as legal fees..." | |
+| 5 | 241-242   | "The figures for the quarter ended March 31, 2026 are the balancing figures between the audited figures for the full..." | |
+| 6 | 244-252   | "During the previous year ended March 31, 2026, the Board of Directors of the Company ('Transferee Company') has made its resolution..." | AMALGAMATION_PENDING (NCLT filing in process, NOC received from BSE 17-Jul-2026 and NSE 20-Jul-2026) |
+| 7 | 254-275   | "During the year ended March 31, 2026, the Company had completed its initial public offering (IPO) of 2,25,04,324 equity shares..." — contains IPO-utilisation sub-table, see Category 2A-table-2 below and footnote at 273-275 | HAS_SUBTABLE |
+| 8 | 277-278   | "The figures for the corresponding previous year/periods have been regrouped/reclassified, wherever considered necessary..." | |
+
+=== 1B. Consolidated unaudited results — notes (page 10)
+| # | Line(s)   | First 15 words                                                                                  | Flags |
+|---|-----------|--------------------------------------------------------------------------------------------------|-------|
+| 1 | 552-553   | "The unaudited consolidated financial results of the quarter ended June 30, 2026 were reviewed by the Audit Committee..." | |
+| 2 | 555-556   | "The unaudited consolidated financial results have been prepared in accordance with the recognition and measurement..." | |
+| 3 | 558-559   | "The Group operates only in one business segment i.e. Trading of Construction Materials which constitutes..." | SEGMENT_NOTE |
+| 4 | 561-565   | "During the year ended March 31, 2026; the Holding Company incurred certain share issue related expenses such as legal fees..." | |
+| 5 | 567-568   | "The figures for quarter ended March 31, 2026 are balancing figures between audited figures in respect of full financial year..." | |
+| 6 | 570-572   | "The unaudited consolidated financial results include the financial results of seven subsidiaries — Lionheart Trading Private Limited..." — names the same 7 subsidiaries + 1 associate as auditor-report para 4, see Category 6 | CROSS_REF_ENTITIES |
+| 7 | 574-576   | "During the year ended March 31, 2026, the Holding Company had completed its initial public offering (IPO) of 2,25,04,324 equity shares..." — contains IPO-utilisation sub-table, see Category 2B-table-2 | HAS_SUBTABLE |
+| 8 | 602-604   | "The figures for the corresponding previous year/periods have been regrouped/reclassified, wherever considered necessary, to make them comparable with current periods classification." — numeral "8" line-wraps alone onto line 603 (OCR artifact) | OCR_LINEWRAP |
+
+notes total: 16
+
+=== CATEGORY 2: FINANCIAL TABLE LINE ITEMS (standalone + consolidated, incl. sub-tables)
+=== 2A. Standalone P&L (table 1, page 4, lines 180-222) — 27 rows
+| # | Line | Line item | Q1FY27 | Q4FY26 | Q1FY26 | FY26 | Flags |
+|---|------|-----------|--------|--------|--------|------|-------|
+| 1 | 180 | Revenue from operations | 1,287.26 | 2,073.57 | 1,260.94 | 6,557.96 | |
+| 2 | 181 | Other income | 82.95 | 217.32 | 60.12 | 396.16 | |
+| 3 | 182 | Total income (subtotal) | 1,370.21 | 2,290.89 | 1,321.06 | 6,954.12 | |
+| 4 | 185 | Purchases of stock-in-trade | 1,154.85 | 1,930.51 | 1,160.17 | 5,994.89 | |
+| 5 | 186 | Changes in inventories of stock-in-trade | 0.19 | (22.89) | (4.05) | (36.06) | |
+| 6 | 187 | Loss allowance on trade receivables | - | 23.95 | - | 27.59 | dash 2 of 4 periods, not ZERO_STANDING |
+| 7 | 188 | Employee benefits expense | 41.98 | 64.22 | 68.55 | 251.13 | |
+| 8 | 189 | Depreciation and amortisation expense | 13.62 | 12.68 | 5.65 | 30.50 | |
+| 9 | 190 | Finance costs | 48.10 | 42.69 | 92.11 | 199.48 | |
+| 10 | 191 | Other expenses | 13.97 | 44.44 | 39.98 | 154.89 | |
+| 11 | 192 | Total expenses (subtotal) | 1,272.71 | 2,095.60 | 1,362.41 | 6,622.42 | |
+| 12 | 194 | Profit/(loss) before exceptional item and tax (subtotal) | 97.50 | 195.29 | (70.16)* | 251.70* | *OCR-garbled figures, cross-check vs A1 |
+| 13 | 196 | Exceptional item (Refer note 4) | - | - | 28.81 | 25.79 | dash 2 of 4 periods, not ZERO_STANDING |
+| 14 | 198 | Profit/(loss) before tax (subtotal) | 97.50 | 195.29 | (70.16) | 305.91 | |
+| 15 | 201 | Current tax | 18.39 | 52.29 | - | 52.29 | |
+| 16 | 202 | Short/(excess) provision of tax in earlier years | - | 17.12 | - | - | dash 3 of 4 periods, not fully ZERO_STANDING |
+| 17 | 203 | Deferred tax charge/(credit) | 4.51 | (23.27) | (22.34) | 4.55 | |
+| 18 | 204 | Tax expense/(credit) (subtotal) | 22.90 | 46.14 | (22.34) | 56.84 | |
+| 19 | 206 | Profit/(loss) after tax (subtotal) | 74.60 | 149.15 | (47.82) | 249.07 | |
+| 20 | 210 | Remeasurements of defined benefit plans | (2.07) | 0.15 | (0.93) | (0.95) | |
+| 21 | 211 | Income tax relating to above item | 0.52 | (0.04) | 0.23 | 0.24 | |
+| 22 | 212 | Other comprehensive income/(loss), net of tax (subtotal) | (1.55) | 0.11 | (0.70) | (0.71) | |
+| 23 | 214 | Total comprehensive income/(loss) (subtotal) | 73.05 | 149.26 | (48.52) | 248.36 | |
+| 24 | 216 | Paid up equity share capital (face value ₹2 each) | 163.59 | 163.52 | 162.10 | 163.52 | |
+| 25 | 218 | Other equity | blank | blank | blank | 7,000.95 | annual-only disclosure line; blank in all 3 quarter columns |
+| 26 | 221 | Basic earnings per share (₹) | 0.91# | 1.95# | (0.78)# | 3.26 | |
+| 27 | 222 | Diluted earnings per share (₹) | 0.91# | 1.94# | (0.78)# | 3.23 | |
+
+=== 2A-table-2. Standalone note 7 — IPO utilisation sub-table (lines 259-271) — 6 rows
+| # | Line(s) | Line item | Gross proceeds to be utilised | Utilisation upto 30-Jun-26 | Un-utilised at 30-Jun-26 | Flags |
+|---|---------|-----------|-------------------------------|----------------------------|--------------------------|-------|
+| 1 | 263-264 | Repayment/prepayment of outstanding borrowings | 2,046.00 | 2,031.85 | 14.15 | |
+| 2 | 265 | Funding the working capital requirement of the Company | 1,770.00 | 1,769.71 | 0.29 | |
+| 3 | 266-268 | Investment in subsidiary, Buildmex-Infra Private Limited, for working capital | 480.00 | 479.99 | 0.01 | |
+| 4 | 269 | General corporate purposes | 318.42 | 476.74 | (158.32) | |
+| 5 | 270 | Share issue expenses* | 381.54 | 217.36 | 164.18 | footnote * at line 274-275 |
+| 6 | 271 | Total | 4,995.96 | 4,975.65 | 20.31 | |
+
+=== 2B. Consolidated P&L (table 1, page 9, lines 475-542) — 38 rows
+| # | Line(s) | Line item | Q1FY27 | Q4FY26 | Q1FY26 | FY26 | Flags |
+|---|---------|-----------|--------|--------|--------|------|-------|
+| 1 | 475 | Revenue from operations | 2,908.09 | 3,433.57 | 2,120.82 | 10,674.63 | |
+| 2 | 476 | Other income | 43.83 | 60.63 | 35.26 | 124.93 | |
+| 3 | 477 | Total income (subtotal) | 2,951.92 | 3,494.20 | 2,156.08 | 10,799.56 | |
+| 4 | 480 | Purchases of stock-in-trade | 2,403.91 | 2,839.92 | 1,790.21 | 8,926.41 | |
+| 5 | 481 | Changes in inventories of stock-in-trade | 0.18 | (2.88) | (4.05) | (22.40) | |
+| 6 | 482 | Loss allowance on trade receivables | - | 44.62 | - | 50.04 | dash 2 of 4 periods, not ZERO_STANDING |
+| 7 | 483 | Employee benefits expense | 120.21 | 106.34 | 93.63 | 394.56 | |
+| 8 | 484 | Depreciation and amortisation expense | 19.02 | 16.60 | 7.57 | 41.45 | |
+| 9 | 485 | Finance costs | 63.62 | 61.28 | 117.38 | 278.90 | |
+| 10 | 486 | Other expenses | 78.51* | 180.80* | 79.44* | 119.10* | *OCR-garbled, cross-check vs A1 |
+| 11 | 487 | Total expenses (subtotal) | 2,685.25 | 3,206.77 | 2,064.18 | 9,988.26 | |
+| 12 | 489-491 | Profit before exceptional item, share of net profits of investments accounted for using equity method and tax (subtotal) | 266.67 | 287.43 | 91.90 | 811.30 | |
+| 13 | 493-495 | Share of net loss of investments accounted for using the equity method | (0.00) | (0.01) | blank | (0.01) | ZERO_STANDING — near-nil/blank all 4 periods; template line exists because one associate (Vishwa Hitay Foundation) is equity-accounted, contribution immaterial per auditor para 7 ("not material to the Group") |
+| 14 | 497 | Profit before exceptional item and tax (subtotal) | 266.67 | 287.42* | 91.90* | 811.20* | *OCR-garbled |
+| 15 | 500 | Exceptional item (refer note 4) | blank | - | 28.81 | 25.79 | dash/blank 2 of 4 periods, not ZERO_STANDING |
+| 16 | 502 | Profit before tax (subtotal) | 266.67 | 287.42 | 63.09 | 785.50 | |
+| 17 | 505 | Current tax | 68.90 | 83.70 | 34.31 | 185.50 | |
+| 18 | 506 | Short/(excess) provision of tax in earlier years | - | 17.29 | - | 0.18 | dash 2 of 4 periods, not ZERO_STANDING |
+| 19 | 507 | Deferred tax charge/(credit) | (2.55) | (30.07) | (22.34) | (3.03) | |
+| 20 | 508 | Tax expense (subtotal) | 66.36 | 70.92 | 11.97 | 182.65 | |
+| 21 | 510 | Profit after tax (subtotal) | 200.31 | 216.50 | 51.12 | 602.85 | |
+| 22 | 514 | Remeasurements of defined benefit plans | (2.56) | 0.35 | (0.65) | (0.84) | |
+| 23 | 515 | Income tax relating to above item | 0.64 | (0.09) | 0.16 | 0.21 | |
+| 24 | 516 | Other comprehensive income/(loss), net of tax (subtotal) | (1.92)* | 0.26 | (0.49)* | (0.63) | *OCR-garbled |
+| 25 | 518 | Total comprehensive income (subtotal) | 198.39* | 216.76 | 50.63* | 602.22 | *OCR-garbled |
+| 26 | 521 | Profit attributable to: Owners of the holding company | 168.85 | 198.35 | 33.06 | 527.04 | |
+| 27 | 522 | Profit attributable to: Non-controlling interests | 11.46 | 18.15 | 18.06 | 75.81 | |
+| 28 | 523 | Profit attributable to: Total (subtotal, restates row 21) | 200.31* | 216.50* | 51.12* | 602.85* | *OCR-garbled line, values restate line 21 |
+| 29 | 526 | OCI attributable to: Owners of the holding company | (1.89) | 0.23 | (0.53) | (0.65) | |
+| 30 | 527 | OCI attributable to: Non-controlling interests | (0.03)* | 0.03 | 0.04 | 0.02 | *OCR-garbled |
+| 31 | 528 | OCI attributable to: Total (subtotal, restates row 24) | (1.92)* | 0.26* | (0.49)* | (0.63)* | *OCR-garbled |
+| 32 | 531 | TCI attributable to: Owners of the holding company | 166.96 | 198.58 | 32.53 | 526.39 | |
+| 33 | 532 | TCI attributable to: Non-controlling interests | 11.41 | 18.18 | 18.10 | 75.81 | |
+| 34 | 533 | TCI attributable to: Total (subtotal, restates row 25) | 198.39* | 216.76* | 50.63* | 602.22* | *OCR-garbled |
+| 35 | 536 | Paid up equity share capital (face value ₹2 each) | 163.59 | 163.52 | 162.10 | 163.52 | |
+| 36 | 538 | Other equity | blank | blank | blank | 7,227.96 | annual-only disclosure line; blank in all 3 quarter columns |
+| 37 | 541 | Basic earnings per share (₹) | 2.05# | 2.59# | 0.54# | 6.89 | |
+| 38 | 542 | Diluted earnings per share (₹) | 2.05# | 2.58# | 0.54# | 6.84 | |
+
+=== 2B-table-2. Consolidated note 7 — IPO utilisation sub-table (lines 585-595) — 6 rows
+| # | Line(s) | Line item | Gross proceeds as per prospectus | Utilisation upto 30-Jun-26 | Un-utilised at 30-Jun-26 | Flags |
+|---|---------|-----------|-----------------------------------|----------------------------|--------------------------|-------|
+| 1 | 585-587 | Repayment/prepayment of outstanding borrowings by the Holding Company | 2,046.00 | 2,031.85 | 14.15 | |
+| 2 | 588 | Funding the working capital requirement of the Holding Company | 1,770.00 | 1,769.71 | 0.29 | |
+| 3 | 589-591 | Investment in subsidiary, Buildmex-Infra Private Limited, for working capital | 480.00 | 479.99 | 0.01 | |
+| 4 | 592 | General corporate purposes | 318.42 | 476.74 | (158.32) | |
+| 5 | 593 | Share issue expenses* | 381.54 (OCR shows 181.54) | 217.36 (OCR shows 217.16) | 164.18 | OCR-garbled digits; footnote at 599-600 gives correct 381.54/217.36 |
+| 6 | 594-595 | Total | 4,995.96 (OCR-garbled) | 4,975.65 (OCR-garbled) | 20.31 (OCR-garbled) | severe OCR garbling on this row |
+
+line_items total: 27 + 6 + 38 + 6 = 77
+zero_standing total: 1 (row 13 of table 2B, "Share of net loss of investments accounted for using the equity method")
+
+=== CATEGORY 3: BOARD OUTCOME AGENDA ITEMS (page 1, lines 28-66)
+Board meeting: Wednesday, August 05, 2026. Commenced 04:00 P.M. (IST), concluded 04:37 P.M. (IST). Duration: 37 minutes.
+| # | Line(s) | Agenda item | Flags |
+|---|---------|-------------|-------|
+| 1 | 37-44 | Approval of Unaudited Standalone and Consolidated Financial Results for quarter ended June 30, 2026, along with Limited Review Report of the Statutory Auditors (reviewed by Audit Committee, recommended to and approved by Board) | |
+
+agenda_items total: 1. No agenda items found beyond item 1 (no AR approval, AGM notice, record date, dividend, director appointment/resignation, auditor change, scrutinizer appointment, ESOP grant, or capital-raising enabling resolution in this Board Outcome letter) — confirmed by targeted grep (AGM|record date|dividend|ESOP|scrutinizer|director appoint|auditor change|capital.rais|preferential|rights issue|resignation) returning zero hits.
+
+=== CATEGORY 4: ANNEXURES / TABLES INSIDE ANNEXURES
+| # | Annexure | Line range | Tables inside | Flags |
+|---|----------|------------|----------------|-------|
+| 1 | Independent Auditor's Limited Review Report — Standalone | 68-162 (pages 2-3) | none (narrative only) | |
+| 2 | Unaudited Standalone Financial Results | 163-291 (pages 4-5) | Table 1: P&L (Category 2A, 27 rows); Table 2: IPO-utilisation sub-table under note 7 (Category 2A-table-2, 6 rows) | |
+| 3 | Independent Auditor's Limited Review Report — Consolidated | 293-457 (pages 6-8) | Table: entity list under para 4 (Category 6, 8 rows) | |
+| 4 | Unaudited Consolidated Financial Results | 458-610 (pages 9-10) | Table 1: P&L (Category 2B, 38 rows); Table 2: IPO-utilisation sub-table under note 7 (Category 2B-table-2, 6 rows) | |
+
+annexures total: 4. No director-profile annexure present (no director appointment/resignation this quarter, so 0 director-profile rows).
+
+=== CATEGORY 5: AUDITOR REPORT PARAGRAPHS (Limited Review Reports, MSKC & Associates LLP)
+=== 5A. Standalone Limited Review Report (pages 2-3, lines 68-162) — 5 paragraphs
+| # | Line(s) | Content | Opinion/type | Flags |
+|---|---------|---------|--------------|-------|
+| 1 | 84-89 | Scope: reviewed accompanying Statement of standalone unaudited financial results for quarter ended June 30, 2026 per Reg. 33 | intro | |
+| 2 | 91-96 | Statement is Management's responsibility, approved by Board, prepared per Ind AS 34; auditor's responsibility is to express a conclusion | intro | |
+| 3 | 100-107 | Review conducted per SRE 2410; review is substantially less in scope than an audit; "we do not express an audit opinion" | scope basis | |
+| 4 | 111-115 | CONCLUSION: "nothing has come to our attention that causes us to believe... has not disclosed the information required... or that it contains any material misstatement" | UNMODIFIED CONCLUSION | opinion paragraph |
+| 5 | 130-136 | Other Matter: standalone Q1FY26 comparatives reviewed by predecessor auditor (report dated 07-Aug-2025, unmodified); standalone audited FY26 full-year figures audited by predecessor auditor (report dated 08-May-2026, unmodified opinion); "our conclusion is not modified in respect of the above matter" | OTHER MATTER (predecessor-auditor reliance) | no EoM paragraph; no Going Concern paragraph present |
+| — | 140-153 | Signature block: For MSKC & Associates LLP, Bhavik L. Shah, Partner, Membership No. 122071, UDIN: 26122071 PFRXMJ6697, Place: Mumbai, Date: August 05, 2026 | — | see Category 7 |
+
+=== 5B. Consolidated Limited Review Report (pages 6-8, lines 293-457) — 8 paragraphs
+| # | Line(s) | Content | Opinion/type | Flags |
+|---|---------|---------|--------------|-------|
+| 1 | 308-314 | Scope: reviewed accompanying statement of consolidated unaudited financial results (Holding Company, subsidiaries = "the Group", plus share of net loss/TCI of one associate) for quarter ended June 30, 2026 per Reg. 33 | intro | |
+| 2 | 317-323 | Statement is Holding Company Management's responsibility, approved by Board, prepared per Ind AS 34; auditor's responsibility is to express a conclusion | intro | |
+| 3 | 326-336 | Review per SRE 2410; substantially less in scope than an audit; "we do not express an audit opinion"; also performed procedures per SEBI circular under Reg. 33(8) | scope basis | |
+| 4 | 352-374 | Entity list: Statement includes Holding Company + 8 entities (7 subsidiaries + 1 associate) — see Category 6 for full list | entity list | |
+| 5 | 378-384 | CONCLUSION (qualified by reliance in paras 6-7): "nothing has come to our attention that causes us to believe... has not disclosed the information required... or that it contains any material misstatement" | UNMODIFIED CONCLUSION (based in part on other auditors' work) | opinion paragraph |
+| 6 | 387-396 | Other Matter: did NOT review interim financials of 7 subsidiaries (combined revenue Rs.1,620.83mn, PAT Rs.127.28mn, TCI Rs.126.92mn for the quarter); reviewed by other auditors, reports furnished to MSKC by Management; MSKC's conclusion for these subsidiaries rests solely on other auditors' reports; "conclusion is not modified" | OTHER MATTER (component-auditor reliance) — 7 SUBSIDIARIES UNAUDITED-BY-MSKC (reviewed by others) | |
+| 7 | 412-421 | Other Matter: Group's share of net loss (Rs.0.00mn) and TCI (Rs.0.00mn) for 1 associate not subject to review; unaudited interim financial information furnished by Management; "not material to the Group"; "conclusion is not modified" | OTHER MATTER (management-certified, unreviewed) — 1 ASSOCIATE UNAUDITED / MANAGEMENT-FURNISHED (Vishwa Hitay Foundation) | |
+| 8 | 424-430 | Other Matter: consolidated Q1FY26 comparatives reviewed by predecessor auditor (report dated 07-Aug-2025, unmodified); consolidated audited FY26 full-year figures audited by predecessor auditor (report dated 08-May-2026, unmodified opinion); "conclusion is not modified" | OTHER MATTER (predecessor-auditor reliance) | no EoM paragraph; no Going Concern paragraph present |
+| — | 435-448 | Signature block: For MSKC & Associates LLP, Bhavik L. Shah, Partner, Membership No. 122071, UDIN: 26122071EIAEMR810, Place: Mumbai, Date: August 05, 2026 | — | see Category 7 |
+
+auditor_paras total: 5 + 8 = 13
+Unaudited-by-principal-auditor entity summary: 7 subsidiaries reviewed by other (component) auditors, reports furnished to MSKC; 1 associate (Vishwa Hitay Foundation) wholly unaudited/unreviewed, management-furnished and stated immaterial to the Group.
+
+=== CATEGORY 6: CONSOLIDATION LIST ENTITIES (consolidated auditor report para 4, lines 352-374; cross-checked against note 6, lines 570-572)
+No prior-quarter ledger available (first quarterly run for this ticker) — ENTITY_CHANGE cannot be evaluated this cycle; treat this list as the baseline for future diffs.
+| # | Line | Entity name | Relationship | Flags |
+|---|------|-------------|---------------|-------|
+| 1 | 359 | Buildmex-Infra Private Limited | Subsidiary | reviewed by other auditor (per para 6); also named in note 7 IPO-utilisation table as recipient of ₹480mn IPO investment |
+| 2 | 361 | J S Infra Core Private Limited | Subsidiary | reviewed by other auditor (per para 6) |
+| 3 | 363 | ArisUnitern RE Solutions Private Limited | Subsidiary | reviewed by other auditor (per para 6); named in standalone note 6 as "Transferor Company" (AUSPL) in pending Scheme of Amalgamation with ASL, appointed date 01-Apr-2026, NCLT application in process |
+| 4 | 365-366 | Lionheart Trading Private Limited (Formerly known as 'Arisinfra Trading Private Limited') | Wholly owned Subsidiary | reviewed by other auditor (per para 6); RENAMED entity — no prior ledger to formally flag ENTITY_CHANGE against, noted for next-quarter diff |
+| 5 | 368 | White Roots Infra Private Limited | Subsidiary | reviewed by other auditor (per para 6) |
+| 6 | 370 | Arisinfra Construction Materials Private Limited | Subsidiary | reviewed by other auditor (per para 6) |
+| 7 | 372 | Arsinfra Reality Private Limited [sic — likely "Arisinfra Realty Private Limited" per note 6, line 571] | Subsidiary | reviewed by other auditor (per para 6); NAME SPELLING INCONSISTENT between auditor report (line 372, "Arsinfra Reality") and note 6 (line 571, "Arisinfra Realty") |
+| 8 | 374 | Vishwa Hitay Foundation | Associate | UNAUDITED / management-furnished, not subject to review (per para 7); stated immaterial to the Group |
+
+entities total: 8 (7 subsidiaries, 1 associate)
+
+=== CATEGORY 7: DIGITAL SIGNATURE / SIGNATORY BLOCKS
+| # | Line(s) | Document | Signatory | Designation | Timestamp | Flags |
+|---|---------|----------|-----------|-------------|-----------|-------|
+| 1 | 56-64 | Board Outcome letter | Bhavik Jayesh Khara | Whole-time director and CFO, DIN 09095925 | "Digitally signed by KHARA BHAVIK JAYESH, Date: 2026.08.05 18:25:46 +05'30'" | Timestamp 18:25:46 IST is AFTER board meeting concluded (16:37 IST) — normal sequence, NOT a before-conclusion flag |
+| 2 | 140-153 | Standalone Limited Review Report | Bhavik L. Shah | Partner, MSKC & Associates LLP, Membership No. 122071, UDIN 26122071 PFRXMJ6697 | Place: Mumbai, Date: August 05, 2026 (no digital-certificate timestamp extracted) | |
+| 3 | 281-291 | Standalone Financial Results (signing block) | Ronak K. Morbia | Chairman and Managing Director, DIN 09062500 | Mumbai, August 05, 2026 (no digital-certificate timestamp extracted) | |
+| 4 | 435-448 | Consolidated Limited Review Report | Bhavik L. Shah | Partner, MSKC & Associates LLP, Membership No. 122071, UDIN 26122071EIAEMR810 | Place: Mumbai, Date: August 05, 2026 (no digital-certificate timestamp extracted) | |
+| 5 | 608-610 | Consolidated Financial Results (signing block) | Ronak K. Morbia | Chairman and Managing Director, DIN 09062500 | Mumbai, August 05, 2026 (no digital-certificate timestamp extracted) | |
+
+signatures total: 5. Only block #1 carries an explicit digital-certificate timestamp; blocks #2-5 are typed/printed signature blocks without extractable e-sign timestamps — a normal pattern for this filing type, not treated as a flag.
+
+=== END LEDGER ===

@@ -26,3 +26,8 @@
 
 ## Sequence
 A1 x3 (parallel) -> gate -> A2 x3 -> gate -> A3 x3 -> gate -> A4 (merged) -> A5 audit -> Notion -> commit.
+
+## Notion save (2026-08-06, after A5 COMPLETE)
+- Company page 3b2bb2b9-d3ab-81bc-bd4f-db6ceb25d1a5 (COMPANIES MASTER): appended the full Q1 FY27 quarterly review (two inserts: financials/tripwire scorecard, then promise-delivery/QfM/forensics/A5 verdict) at page end; prepended the date-stamped Key Notes audit line preserving the 2026-08-03 entry. Decision Status UNCHANGED (primary margin tripwire fired underlying but 1 of 2 quarters; flag only).
+- companies/INDGN.md updated with a QUARTERLY REVIEWS pointer.
+- A5 verdict COMPLETE; count reconciliation results 13 notes/78 lines/2 agenda/10 auditor paras/29 entities, concall 53 turns/15 questions, presentation 22 slides/4 OCR'd — all reviewed.

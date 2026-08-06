@@ -86,5 +86,9 @@ both the forward EPS and the destination multiple, and fails (1.56) without it.
   forward destination multiple. A Hurdle stops being an independent check when the
   forward multiple and forward earnings both embed the same catalyst.
 
+## QUARTERLY REVIEWS
+- 2026-08-06 Q1 FY27 (runs/indgn-q1fy27/, extraction-first A1-A5, A5 COMPLETE): PROCEED WITH FLAGS, cash INDETERMINATE (no Q1 cash-flow stmt). Tripwire scorecard 1 FIRED / 2 BLINDED / 4 NOT FIRED. The load-bearing margin tripwire FIRED on the underlying basis: reported EBITDA +50bps QoQ to 16.9% masks a ~190bps ex-MTM sequential decline the CFO conceded (Q4 FY26 carried a ~240bps adverse MTM drag), and margin is -402bps YoY; but this is only 1 of the 2 consecutive quarters the trigger needs. Core operating PBT -4.8% YoY while PAT held flat (-0.2%) on +Rs 6.9cr other income; the Indian parent contracted (-7.5% QoQ revenue), all growth subsidiary/offshore. Management HARDENED the margin promise to 19-20% by Q4 FY27 in the same quarter the underlying weakened (OVERPROMISER-watch) AND discontinued the organic/BioPharm growth split (blinding tripwire 2). DSO +4 QoQ to 67; cash -15.5% YoY to Rs 1,460cr; FY26 Rs 52.4cr deferred-tax shield reversing; TCPA up to Rs 21.4cr residual. Decision Status UNCHANGED. Next mandatory read Q2 FY27 (first OCF/PAT + the two-quarter margin tripwire; bull op-margin ex-OI >=16.4% held, bear <16.0%). 22 management questions logged in the run folder.
+
 ## RUN FOLDERS
-- runs/indgn-2026-08-03/
+- runs/indgn-2026-08-03/ (full workup)
+- runs/indgn-q1fy27/ (Q1 FY27 quarterly review)

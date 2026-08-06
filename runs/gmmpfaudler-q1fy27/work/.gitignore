@@ -1,0 +1,9 @@
+# A1 OCR / extraction scratch — not part of the audit trail
+*.jpg
+*.jpeg
+*.png
+page-*.txt
+page_*_only.txt
+extract_layout.txt
+body.txt
+pgtest/

@@ -1,0 +1,847 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: investor_presentation_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 29
+formfeed_count: 29
+line_count: 847
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (native unit is Rs Crores; stated verbatim as "Figures in Rs crores" on pages 6, 7, 17, 18, 25, 26, 28)
+ocr_pages: [4, 5, 6, 7, 8, 10, 16, 17, 18, 19, 21, 23, 24, 27, 28]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+NOTE ON OCR SCOPE: Pages 4, 10, 19, 21, 23, 24, 27 extracted under 100 characters
+via pdftotext (section-divider slides with mostly graphic backgrounds); these were
+rasterised and OCR'd in full, merged inline as [OCR page N]. Pages 5, 6, 7, 8, 16,
+17, 18, 28 extracted well over 100 characters natively (chart data is embedded as
+selectable text in this native PDF) but contain bar/donut charts whose axis and
+data labels are the primary carriers of quarter-over-quarter and division-level
+numbers; these pages were also rasterised and OCR'd as a cross-check, flagged
+inline as [CHART, page N, OCR text: ...] immediately after the native
+layout-preserved text for that page. The native pdftotext -layout text is the
+higher-fidelity source for all numbers (OCR introduces character-level noise,
+e.g. Rs misread as ~ or <, arrows misread as digits); the OCR block is
+supplementary confirmation only, not a replacement.
+
+[page 1]
+GMM/SEC/2026-27/30                                                             August 5, 2026
+
+To,
+BSE Limited                                                                  NSE Limited
+Scrip Code: 505255                                                           Symbol: GMMPFAUDLR
+
+Sub.: Investor Presentation on the Unaudited Standalone and Consolidated Financial Results of GMM
+      Pfaudler Limited (“Company”) for the quarter ended June 30, 2026
+
+Dear Sir/ Ma’am,
+
+Pursuant to the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, please find
+enclosed the Investor presentation on the Unaudited Standalone and Consolidated Financial Results of the
+Company for the quarter ended June 30, 2026.
+
+Kindly take the same on record.
+
+Thanking you.
+
+Yours faithfully,
+
+For GMM Pfaudler Limited
+MITTAL              Digitally signed by
+                    MITTAL KARTIK
+KARTIK              MEHTA
+                    Date: 2026.08.05
+MEHTA               18:10:36 +05'30'
+
+Mittal Mehta
+Company Secretary & Compliance Officer
+FCS. No. 7848
+
+Encl.: As above
+
+[page 2]
+               Earnings Presentation
+               Q1 FY27
+
+ INTEGRATED.
+ ALIGNED.
+ GLOBAL.
+
+                                                                            Youtube logo png, Youtube logo transparent png, Youtube icon transparent free png 23986704 PNG
+
+
+
+
+Linkedin logo vector, Linkedin symbol, Linkedin icon free vector 18910721
+ Vector Art at Vecteezy
+
+
+
+
+                                                                                                                                                                             www.gmmpfaudler.com
+
+[page 3]
+      Disclaimer
+
+    This presentation has been prepared by GMM Pfaudler Limited (the “Company”) and forms a part of its intellectual property which is solely for the purposes of your general information and shall not be taken
+    away, distributed, reproduced, or redistributed or passed on, directly or indirectly, to any other person or entity (whether within or outside your organization or firm) or published or disseminated in whole or in
+    part, for any purpose by recipients directly or indirectly to any other person or entity . By accessing    this presentation, you are agreeing to be bound by the trailing restrictions and to maintain absolute
+    confidentiality  regarding the information disclosed in these materials . The Company may alter, modify, or otherwise change in any manner the contents of this presentation, without obligation to notify any
+    persons of such change or changes .
+
+    You agree and understand that certain contents of this presentation are only indicative and not absolute, and the Company is not bound by them . For example, this presentation may contain certain forward -
+    looking statements within the meaning of applicable securities law and regulations . These statements include descriptions regarding the intent, belief or current expectations    of the Company or its directors
+    and officers with respect to the results of operations and financial condition of the Company . Such forward - looking statements are not guarantees of future performance      and involve risks and uncertainties,
+    and actual results may differ from those in such forward - looking statements as a result of various factors and assumptions which the Company believes to be reasonable in light of its operating experience in
+    recent years . Many factors could cause the actual results, performances,   or achievements  of the Company to be materially different from any future results, performances, or achievements . Significant factors
+    that could make a difference to the Company’s operations include domestic and international economic conditions, changes in government regulations, tax regime and other statutes . The Company does not
+    undertake to revise any forward - looking statement that may be made from time to time by or on behalf of the Company .
+
+    This presentation may contain certain supplemental measures of performance     and liquidity that are not required by or presented in accordance   with Indian GAAP, and should not be considered                an alternative
+    to profit, operating revenue or any other performance measures derived in accordance    with Indian GAAP or an alternative to cash flow from operations as a measure of our liquidity .
+
+    In no event shall GMM Pfaudler Limited or its directors or management, be responsible to any person or entity for any loss or damage,       whether   direct, indirect, incidental,   consequential   or otherwise,   arising out
+    of access or use or dissemination of information contained in this presentation, including, but not limited to, loss of profits .
+
+    No representation,   warranty, guarantee or undertaking (express or implied) is made as to, and no reliance should be placed on, the accuracy, completeness     or correctness  of any information, including any
+    projections, estimates, targets and opinions, contained herein, and no liability whatsoever is accepted as to any errors, omissions or misstatements contained herein and, accordingly, none of the Company, its
+    advisors and representative    and any of its or their affiliates, officers, directors, employees or agents, and anyone acting on behalf of such persons accepts any responsibility or liability (in negligence or
+    otherwise) whatsoever arising directly or indirectly from this presentation or its contents or otherwise arising in connection therewith .
+
+    This presentation    is for general information purposes only, without regard to any specific objectives, financial situations or informational needs of any particular person . Readers must make their own
+    assessment of the relevance, accuracy and adequacy of the information contained in this presentation and must make such independent investigation as they may consider necessary or appropriate for such
+    purpose . Any opinions expressed in this presentation are subject to change without notice and past performance    is not indicative of future results . By attending this presentation, you acknowledge that you will
+    be solely responsible for your own assessment     of the market and the market position of the Company and that you will conduct your own analysis and be solely responsible for forming your own view of the
+    potential future performance of the Company’s business .
+
+    No person is authorized to give any information or to make any representation       not contained in or inconsistent with this presentation . If given or made, such information or presentation must not be relied upon
+    as having been authorized by any person . This presentation is not for publication or distribution or release in any country where such distribution may lead to a breach of any law or regulatory requirement . The
+    information contained herein does not constitute or form part of an offer or solicitation of an offer to purchase or subscribe for securities for sale . No part of this presentation should form the basis of or be
+    relied upon in connection with any investment decision or any contract or commitment to purchase or subscribe for any securities . The distribution of this presentation in certain jurisdictions may be restricted
+    by law and persons into whose possession this presentation comes should inform themselves about and observe any such restrictions . By accessing this presentation, you represent you are permissible under
+    the laws of your jurisdiction to receive this presentation . This presentation is not intended to be a prospectus, under applicable laws in India (including the Companies Act, 2013 ) or an offer document under the
+    Securities and Exchange Board of India (Issue of Capital and Disclosure Requirements) Regulations, 2009 as amended .
+
+    This disclaimer clause and any claims arising out of the use of the information from this presentation      shall be governed   by the laws of India and only the courts       in Mumbai, and no other courts, shall have
+    jurisdiction over the same . By accessing this presentation, the reader accepts this .
+
+
+
+2
+
+[page 4]
+    Q1 Financial
+    Update
+
+
+
+
+3
+[OCR page 4]
+Q1 Financial
+Update
+
+[page 5]
+    Consolidated Financial Snapshot         – Q1 FY27
+
+
+             Revenue                      EBITDA             PAT        EPS
+
+                                                                       ₹2,289
+          ₹925 Cr                      ₹94 Cr           ₹22.1 Cr         Cr
+                                                                        ₹5.32
+                                       10.1% Margin      2.4% Margin
+
+             16%                          7%              118%          114%
+               YoY                          YoY              YoY         YoY
+
+                                       Order Intake        Backlog
+
+
+                                      ₹1,007 Cr         ₹2,289 Cr
+                                         16%                4%
+                                          QoQ                QoQ
+4
+[CHART, page 5, OCR text: GMM | Consolidated Financial Snapshot - Q1 FY27 Cpfaudier ~ |  | Revenue EBITDA PAT EPS |  | ~925 Cr <94 Cr ~22.1 Cr 5.52 |  | T 16% | ™% 1 118% 1) 14% |  | YoY YoY Yow YoY |  | Order Intake Backlog |  | <1,007 Cr %2,289Cr |  | a ae]
+
+[page 6]
+ Consolidated Financial Performance                                 – Quarterly Trend
+                                                                                                                     Figures in ₹ crores        YoY%
+
+
+     Revenue                                                       16%          EBITDA                                                 - 7%
+
+                           902            883              944      925                       122
+          795
+                                                                                   101                    105
+                                                                                                                                           94
+                                                                                                                      75
+                                                                                   12.7%      13.5%       11.9%      8.0%              10.1%
+
+       Q1 FY26           Q2 FY26        Q3 FY26        Q4 FY26    Q1 FY27        Q1 FY26   Q2 FY26      Q3 FY26    Q4 FY26           Q1 FY27
+
+
+
+     Profit After Tax                                             118%          EPS                                                    114%
+                                                                                             8.86
+                            38
+                                                                     22                                                                5.32
+                                           - 11             15                                                       3.82
+            10 3.6%                                                                2.48
+                           4.2%                            1.6%    2.4%                                  - 2.30
+          1.3%
+                                          -1.3%
+       Q1 FY26          Q2 FY26 ¹       Q3 FY26 ¹      Q4 FY26    Q1 FY27        Q1 FY26   Q2 FY26 ¹   Q3 FY26 ¹   Q4 FY26           Q1 FY27
+
+
+
+
+5 ¹ FY 26 restated   for Semco and GMM Inox Poland PPA .
+[CHART, page 6, OCR text: . ° . ¢S6MM—— | Consolidated Financial Performance - Quarterly Trend Pfaudler |  | Figures in = crores | YoY% |  | 902 883 944 925 122 | 795 101 105 | 75 | 13.5% 719% |  | QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 |  | 38 8.86 | 5.32 | 7 5 22 3.82 | 10 2.48 | | _ = 1.5°/eml) |__| | QIFY26 Q2 FY26! Q3FY26! Q4 FY26 QIFY27 QIFY26 Q2 FY26! Q3FY26! Q4 FY26 QIFY27 |  | 5 'FY26 restated for Semco and GMM Inox Poland PPA.]
+
+[page 7]
+          Order Intake & Backlog Trends
+
+                                                                                                                                                               4%
+                   Backlog               Order Intake       QoQ%        Figures in ₹ crores
+1,400
+
+
+
+
+                                                                                                                                                               2,289
+                                                                                                                                               2,205   2,194
+                                                                                                                               2,146
+1,200
+             2,013
+                                                                                                                      1,906
+                                                                        1,777       1,773                                                                      16%
+                              1,705                                                                   1,740
+1,000                                                     1,689
+                                               1,625                                                          1,636
+
+
+ 800
+
+
+
+
+ 600
+
+
+
+
+                                                                                                                      1004 *                   961             1007
+                                                           861          882                                                    878                     871
+ 400
+
+
+              770                               756                                 762               798
+                               626                                                                            660
+    200
+
+
+
+
+     -
+
+
+
+
+              Q1               Q2               Q3         Q4           Q1           Q2               Q3      Q4       Q1      Q2              Q3      Q4      Q1
+                                       FY24                                                   FY25                                     FY26
+                                       3,014                                                  3,102                                    3,714
+
+6         *Q1 FY26 order intake includes a large order   of NR 355 Cr
+[CHART, page 7, OCR text: Order Intake & Backlog Trends CR faudier 4 |  | | | [] Order Intak Qo0Q% Figures in 2 crores 1] 4% |1 | = Backlog raer Intake fo |  | 1S | I 2,289 | | 2,146 BeOS 2194 | I | 2,013 I I | 1,906 | ! |  | I 16% |  | 1,777 1,773 1740 ho | 1,705 i 1 1 | 1,625 Wee? 1,636 i | | | | | | | | | | | | | | I I | | 004" ; | 96] | | | J | 878 871 | | I I | | | | | | | | | | | | | " I | Q3 Ql Q2 Q3 Q4 Ql I I | | |  | FY24 . | 3,014 e |  | 6 *Q1FY26 order intake includes a large order of NR 355 Cr]
+
+[page 8]
+    Diversification Strategy Gaining Momentum
+
+
+                                                                                                                                     Q1
+    FY24      Total OI: INR 3,014 Cr                FY25     Total OI: INR 3,102 Cr         FY26     Total OI: INR 3,714 Cr                    Total OI: INR 1,007 Cr
+                                                                                                                                     FY27
+
+
+                    31%                                              33%                                   42%                                       43%
+                                               >>                                      >>                                       >>
+             23%
+                                                                                                                 35%                                           36%
+                                                               27%         40%
+                       46%                                                                              23%                                       21%
+
+
+
+
+    Traditional Industries       -           Chemicals       Pharmaceuticals     Non - Traditional Industries    -     Oil & Gas, Petrochemical, Defense, Nuclear etc.
+
+
+
+    •   Share of non         - traditional     industries continue to increase thereby strengthening our diversification
+
+    •   Q1FY27 saw major orders being won in mining and petrochemical                               industries
+
+    •   Pipeline for non        - traditional       industries remains strong and growing
+
+
+
+7
+[CHART, page 8, OCR text: GMM—— | Diversification Strategy Gaining Momentum ~Pfaudler |  | Ql |  | FY24 Total Ol: INR 3,014 Cr FY25 =Total Ol: INR 3,102 Cr FY26 =Total OI: INR 3,714 Cr FY27 |  | Total Ol: INR 1,007 Cr |  | * Share of non-traditional industries continue to increase thereby strengthening our diversification |  | * QIFY27 saw major orders being won in mining and petrochemical industries |  | ¢ Pipeline for non-traditional industries remains strong and growing]
+
+[page 9]
+    Key Highlights
+
+
+       ConsolidatedHighlights
+       Performance      Highlights
+
+       •   Revenue up 16% YoY and down 2% QoQ
+       •   EBITDA down 7% YoY and up 25% QoQ
+       •   PAT up 118% YoY and 44% QoQ
+       •   Order Intake of ₹ 1,007 Crores up 16% QoQ
+       •   Backlog of ₹ 2,289 Crores up 20% YoY and 4% QoQ
+
+
+
+       Corporate Highlights
+
+       •   Reorganization    of our businesses   into four distinct   global divisions   to drive growth , diversification   and
+           cost efficiencies
+       •   Repayment    of approx . EUR 7 million of debt by the end of Q 2 FY 27, funded through internal accruals .
+       •   Revision of its dividend payout frequency     from semi - annual to annual , with no change        in the Company’s
+           Dividend Distribution Policy .
+
+
+
+
+8
+
+[page 10]
+    Evolving into an
+    Integrated, Aligned &
+    Global Organization
+
+
+
+
+9
+[OCR page 10]
+Evolving into an
+Integrated, Aligned &
+Global Organization
+
+[page 11]
+     Who we Are
+
+
+          GMM Pfaudler is a          diversified global engineering company               with a heritage of more than
+                                                              140 years
+
+     Our Strengths
+
+
+      Strong                              Deep                        Global                           Prompt
+      Engineering                         Process                     Manufacturing                    Local
+      Capabilities                        Know - how                  Footprint                        Service
+
+      •    Decades of global              •   Extensive expertise     •   Optimized global             •   Fast, reliable support
+           engineering expertise              across industries and       manufacturing for                wherever customers
+      •    Certified to                       applications                quality and cost                 operate
+           international standards        •   Proven solutions with   •   Faster delivery with         •   Complete lifecycle
+           for quality, safety and            guaranteed process          localized production             support —from
+           compliance                         performance                                                  installation to
+                                                                                                           refurbishment
+
+
+
+
+10
+
+[page 12]
+     We are Evolving
+
+
+
+                GMM Pfaudler is taking a decisive step in its growth journey by evolving into a single,
+                globally integrated organization .
+
+
+
+
+                Our customers    operate worldwide and increasingly     expect the same advanced
+                technology , consistent  quality , and prompt, reliable support wherever they are
+                located .
+
+
+
+
+                To meet this expectation      and accelerate   our ambitions, we are organizing our
+                businesses into four distinct global divisions , each with clear accountability and a
+                sharp focus on the industries it serves .
+
+
+11
+
+[page 13]
+     Our Four Global Divisions
+
+
+                              Unites our glass - lined and fluoropolyme r businesses —the leaders in
+       Corrosion Resistant
+                              their respective      fields —serving the chemical,    pharmaceutical ,
+       Technologies (CRT)
+                              semiconductor    industries , among others .
+
+
+
+                              Brings together our sealing, mixing, filtration , and drying businesses
+       Process                onto a single global      platform,   delivering   measurable   process
+       Performance            performance    improvements    across the chemical,     pharmaceutical,
+       Technologies   (PPT)   food and beverage , metals and minerals and other industries .
+
+
+
+                              An India - based business with a growing export footprint, supplies
+       Heavy Engineering
+                              engineered - to - order critical equipment to global EPCs and customers
+       Technologies (HET)
+                              in the nuclear, power , and oil and gas industries .
+
+
+
+                              Delivers integrated, one - stop process systems and modular solutions
+       Process System         for the chemical and pharmaceutical     industries , along with specialized
+       Technologies (PST)     applications such as acid recovery that also serve industries including
+                              defense .
+
+
+12
+
+[page 14]
+     Unlocking Meaningful Value
+
+
+                  Accelerated Growth                      Diversification
+
+
+         •   Bring the     full strength of each   •   Expand beyond        traditional   chemical
+             technology    to every market             & pharmaceutical       markets
+                                                                                                     “The new global
+         •   Deepen relationships with existing    •   Enter broader range of                        structure allows each
+             customers and winning new ones            high - growth end markets
+                                                                                                     division to focus on
+                                                                                                     its strategic priorities,
+                   Competitive Cost Base                   Faster Service                            while unlocking
+                                                                                                     meaningful value
+     •       Each vertical rationalizes its cost   •   Decisions made once, globally, so             across the group”
+             structure & global footprint              we respond more quickly
+
+     •       Driving lasting efficiency            •   Same    high   standard   delivery
+                                                       wherever customers operate
+
+
+
+
+13
+
+[page 15]
+     Business Performance              – Revenue & Order Intake
+
+
+     From         Segments and Regions                            To   Global Divisions
+
+
+               Revenue & Order Intake by                                        Revenue & Order Intake by
+                 segments and regions                                                 global divisions
+
+
+
+            Technologies    Systems        Services
+
+                                                            >>
+                India         India          India
+                                                                             CRT          PP T    HE T      PS T
+
+                 Intl.         Intl.          Intl.
+
+
+
+
+14
+
+[page 16]
+     Business Performance by Divisions
+
+
+          CRT                                              PPT                          HET                           PST
+
+        Corrosion Resistant                               Process Performance          Heavy Engineering             Process System
+        Technologies                                      Technologies                 Technologies                  Technologies
+
+
+        Revenue – Q1 FY27                                 Revenue – Q1 FY27            Revenue – Q1 FY27             Revenue – Q1 FY27
+
+          ₹ 466 Cr                                         ₹ 255 Cr                     ₹ 74 Cr                       ₹ 131 Cr
+              ▲ +10% YoY                                       ▲ +23% YoY                     Flat YoY                  ▲ +46% YoY
+
+
+        Order Intake             – Q1 FY27                Order Intake     – Q1 FY27   Order Intake      – Q1 FY27   Order Intake     – Q1 FY27
+
+          ₹ 502 Cr                                         ₹ 367 Cr                     ₹ 58 Cr                       ₹ 80 Cr
+              ▲ +23% YoY                                      ▲ +64% YoY                 ▲ +719% YoY                   ▼ - 78% YoY*
+
+
+
+
+15    PST: *Q1 FY26 order intake includes a large order   of I NR 355 Cr
+[CHART, page 16, OCR text: Business Performance by Divisions |  | GMM —J | c= Pfaudler |  | CRT |  | Corrosion Resistant | Technologies |  | Revenue - Q] FY27 |  | = 466 Cr |  | Order Intake - Q] FY27 |  | = 502 Cr |  | PPT |  | Process Performance | Technologies |  | Revenue - Q1FY27 |  | = 255 Cr |  | Order Intake - Q]1 FY27 |  | = 367 Cr |  | HET |  | Heavy Engineering | Technologies |  | Revenue - QI FY27 | =74Cr |  | Flat YoY |  | Order Intake - Q] FY27 |  | = 58 Cr |  | PST |  | Process System | Technologies |  | Revenue - Q] FY27 |  | = 131Cr |  | Order Intake - Q] FY27 |  | = 80 Cr |  | PST: *Q1 FY26 order intake includes a large order of INR 355 Cr]
+
+[page 17]
+ Quarterly Revenue Trend
+
+                                                                                        Figures in ₹ crores         YoY%
+
+
+     CRT - Revenue                             10%      PPT - Revenue                                     23%
+                 498        477       478                                      262
+                                                466                  247                 259              255
+       423
+                                                          208
+
+
+
+
+      Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26   Q1 FY27    Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26          Q1 FY27
+
+
+
+     HET - Revenue                             Flat     PST - Revenue                                     46%
+                                       108
+                                                                                                              131
+         74                                      74
+                   67                                                                    99
+                             58                            90        91        86
+
+
+
+
+      Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26   Q1 FY27    Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26          Q1 FY27
+
+
+16
+[CHART, page 17, OCR text: Quarterly Revenue Trend CoP faudier 2 |  | Figures in crores | YoY% |  | CRT - Revenue 10% PPT - Revenue 23% |  | 498 477 A78 A66 2A7 262 259 255 | : - - : [ r |  | QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 |  | 99 |  | HET - Revenue Flat PST - Revenue A6% | 90 91 86 |  | 108 131 | 74 | r r : |  | QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QUFY27 QIFY26 Q2 FY26 Q3 FY26 Q4 FY26 QUFY27 |  | 16]
+
+[page 18]
+ Quarterly Order Intake Trend
+
+                                                                                                                    Figures in ₹ crores        QoQ%
+
+
+       CRT – Order Intake                                                  17%      PPT – Order Intake                                74%
+
+                               482                                          502                                                           367
+            410                                    442            431
+                                                                                      224                  214
+                                                                                                 196                 211
+
+
+
+         Q1 FY26             Q2 FY26            Q3 FY26        Q4 FY26    Q1 FY27    Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26          Q1 FY27
+
+
+
+      HET - Order Intake                                                   58 %     PST - Order Intake                                - 58%
+                                                    189                                363 *
+
+                                                                                                                     193
+                   3.6%           57                                37       58                  143       115
+               7                                                                                                                          80
+
+          Q1 FY26            Q2 FY26             Q3 FY26       Q4 FY26    Q1 FY27    Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26          Q1 FY27
+
+
+
+17   PST: *Q1 FY26 Order intake includes a large order     of NR 355 Cr
+[CHART, page 18, OCR text: Quarterly Order Intake Trend |  | 7 |  | Figures in @ crores | QOQ% |  | CRT - Order Intake 17% PPT - Order Intake 74% | 482 502 367 | 410 a 431 | r e a - : | Q1FY26 Q2 FY26 Q3 FY26 Q4 FY26 Q1FY27 Q1FY26 Q2 FY26 Q3 FY26 Q4 FY26 Q1FY27 | HET - Order Intake 58% PST - Order Intake -58% | 189 363" | 193 | 57 37 58 143 15 rr 30 | ; ll | ll re ft ll Vv— | Q1FY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 Q1FY26 Q2 FY26 Q3 FY26 Q4 FY26 QIFY27 |  | PST: *Q1FY26 Order intake includes a large order of NR 355 Cr]
+
+[page 19]
+     EBIT to PAT: Improving
+     Flow - through
+
+
+
+
+18
+[OCR page 19]
+18
+
+EBIT to PAT: Improving
+Flow-through
+
+[page 20]
+     EBIT to PAT: Improving Flow               - through
+
+
+          EBI T       –         Finance Cost               Effective Tax Rate              FX & Structural Leakage           =            PAT
+
+
+
+
+      Initiative                                                                Timeline                  Impact on flow - through
+                                                                                                          Lower interest         cost   and     finance
+      Refinancing      and Debt Reduction                                                                 charges .
+      Group - wide refinancing to restructure and reduce debt levels            Within next 12 - 18
+      and remove the need to Inter – Company loans which creates FX             months                    Debt reduction already started and
+      fluctuations .                                                                                      debt repayment of approx . EUR 7Mn
+                                                                                                          planned for Q 2FY 27
+
+      Group Tax Strategy                                                        Within next 18 - 24
+                                                                                                          Efficient   tax structure
+      Reviewing and simplifying current legal entity structure                  months
+
+      Intercompany        Loan Termination                                      Within next 12 - 18       Reduces FX and tax exposure            sitting
+      Execute the plan to unwind the inter company      loan between    the     months                    below EBIT
+      subsidiaries in different currency .
+
+
+
+
+19
+
+[page 21]
+     Key Messages
+
+
+
+
+20
+[OCR page 21]
+20
+
+Key Messages
+
+[page 22]
+     Key Messages
+
+
+
+
+         Financial Performance          Order Intake & Backlog                Organization Structure
+        Strong execution across         Highest quarterly order intake in     Four focused divisions with
+        geographies , margin recovery   the company's history                 dedicated teams, driving
+        over previous quarter with                                            sharper accountability, faster
+        significant improvement in      Strong backlog provides good          decisions and stronger growth
+        earnings                        revenue visibility across divisions
+                                                                              Creating synergies across
+        Positive momentum expected to                                         technologies, manufacturing
+        continue with a healthy order                                         and go - to - market teams
+        pipeline
+
+
+
+
+21
+
+[page 23]
+     Thank You
+
+
+
+
+                 www.gmmpfaudler.com
+22
+[OCR page 23]
+www.gmmpfaudler.com
+
+22
+
+[page 24]
+     Annexures
+
+
+
+
+23
+[OCR page 24]
+23
+
+Annexures
+
+[page 25]
+     Consolidated Financial Summary
+                                                                                                                                                  Figures in ₹ crores
+
+      Particulars                                                        Q1 FY27            Q4 FY26               Q- O- Q               Q1 FY26          Y - O- Y
+      Operational Income                                                   925                 944                  -2%                   795              16%
+      Material Cost                                                        366                 420                 -13%                   291              26%
+      Other Costs                                                          465                 448                  4%                    403              15%
+      Total Operating Expenses                                             831                 868                  -4%                   694              20%
+      EBITDA                                                               94                   75                  25%                   101              -7%
+      EBITDA Margin (%)                                                   10.1%               8.0%                217 bps                12.7%          -258 bps
+      Other Income                                                         10                   18                 -46%                    9               6%
+      Depreciation                                                         41                   42                  -4%                   36               14%
+      Finance Cost                                                         23                   16                 38%                    43              -47%
+      Profit before exceptional items and tax                              40                   35                  15%                   32               27%
+      Exceptional Items                                                     -                    9                -100%                    -                NA
+      Profit before tax after exceptional items                            40                   26                  56%                   32              27%
+      Tax                                                                  18                   11                  65%                   21              -16%
+      Profit after tax                                                     22                   15                  47%                   10              118%
+      PAT Margin (%)                                                      2.4%                1.6%                80 bps                 1.3%             111 bps
+      Other Comprehensive Income                                            5                   9                 -47%                     55              -91%
+      Total Comprehensive Income                                           27                   25                  11%                   65              -59%
+      Basic EPS ( ₹)                                                      5.32                 3.82                 39%                   2.48            114%
+      Margin and growth percentages are calculated on absolute figures    . Amounts are rounded off to crores and subject to casting.
+24
+
+[page 26]
+     Standalone Financial Summary
+
+                                                                                                                                                  Figures in ₹ crores
+
+      Particulars                                                        Q1 FY27            Q4 FY26               Q- O- Q               Q1 FY26          Y - O- Y
+      Operational Income                                                   235                 289                 -18%                   231              2%
+      Material Cost                                                        119                 160                 -26%                   108              10%
+      Other Costs                                                          91                  103                 -12%                   87               4%
+      Total Operating Expenses                                             209                 263                 -20%                   195              7%
+      EBITDA                                                               26                   26                   0%                   36              -28%
+      EBITDA Margin (%)                                                   11.0%               9.0%                207 bps                15.7%          -466 bps
+      Other Income                                                          1                    8                 -84%                    1              113%
+      Depreciation                                                          7                    7                  -1%                    8              -11%
+      Finance Cost                                                          6                    7                 -25%                    7              -15%
+      Profit Before Tax                                                    15                   20                 -26%                   22              -35%
+      Tax                                                                   3                    3                   5%                    6              -38%
+      Profit After Tax                                                      11                  16                 -32%                    17             -33%
+      PAT Margin (%)                                                      4.7%                 5.7%               -95 bps                7.2%           -249 bps
+      Other Comprehensive Income                                            0                    2                -100%                    0                 -
+      Total Comprehensive Income                                            11                  18                 -38%                    17             -33%
+      Basic EPS ( ₹)                                                      2.48                 3.66                -32%                   3.71            -33%
+
+      Margin and growth percentages are calculated on absolute figures    . Amounts are rounded off to crores and subject to casting.
+25
+
+[page 27]
+     Acquisitions –
+     Financial Performance
+
+
+
+
+26
+[OCR page 27]
+26
+
+Acq uisitions -
+Financial Performance
+
+[page 28]
+     Acquisition Performance over the Years
+                                                    Organic Acquisition                                                      Transformational Acquisition                                                           Bolt - on Acquisition
+
+                                                 Acquisitions drive immediate revenue growth, with margin accretion to follow through integration and synergies.
+ EBITDA
+ Margins                12.6%                      15.1%                    15.3%                        18.8%                       13.9%                           11.2%              13.5%                     13.8%                  11.3%                   11.4%
+
+
+
+                  • The De Dietrich Hyderabad facility was closed in FY25, with manufacturing                              • ~4x Revenue Increase                               • Expanded Product Portfolio and added complementary technologies
+                    operations consolidated at       Karamsad , Gujarat.                                                   • Expanded Global Footprint to 20+ Sites             • Strengthened Global Presence expansion Across Europe, North & South America
+                                                                                                                           • Global Leader in Corrosion    - Resistant
+                                                                                                                             Equipment                                                                            +9%
+Revenue                                                                                                                                                                                                          CAGR
+(in crores)                                                                                                                                          +154%
+                                                                                                                                                                                       3177.6                   3446.5                   3198.7                 3523.9
+                                                                                                                                                                2540.6
+
+                                                                                                          591.1                       1001.1
+                              378.1                411.0                    502.6
+                              FY17                  FY18                     FY19                          FY20                        FY21                          FY22                FY23                      FY24                   FY25                    FY26
+
+                                                                                                                           • Global Pfaudler                                    • Mixel France SAS
+                • Interseal                                                                                                                              • Hydro Air Research                                                                            • GMM Inox
+ Acquisition                                 -                          -                            De Dietrich             Business                                           • GMM Pfaudler JDS            MixPro Professional    -
+                • Normag                                                                                                                                   Italia S.r.l.                                                                                 • SEMCO
+                                                                                                                           • HDO Technologies                                     LLC
+
+
+                                                                                                                                                                                • France (with WOS in
+                                                                                                                           • Global                                               China)                                                                 • Poland
+ Geography          Germany                  -                          -                            Hyderabad
+                                                                                                                           • Ahmedabad
+                                                                                                                                                             Italy
+                                                                                                                                                                                • United States
+                                                                                                                                                                                                              Canada                 -
+                                                                                                                                                                                                                                                         • Brazil
+                                                                                                                                                                                  (Americus, Georgia)
+
+
+
+                                                                                                                                                                                                          • Mineral processor                            • Stainless steal
+                • Dry shaft seals                                                                                          • Alloy systems               • Thermal systems      • Glass lined equipment
+                                                                                                                                                                                                          • Pulp & paper                                   equipment
+                • Sealing systems                                                               • Glass - lined            • Vacuum filters              • Pressure vessels     • Heat exchangers
+     Products                                -                          -                                                                                                                                 • Flue gas                 -                   • Mixer
+                • Agitators                                                                       equipment                • Solid - liquid separation   • Water treatment      • Thermal systems
+                                                                                                                                                                                                            desulphurization                             • Agitators
+                • Laboratory system                                                                                          (SLS) systems                 systems              • Pressure vessels
+                                                                                                                                                                                                            (FGD)                                        • Reactors
+
+
+
+ Traditional    • Chemicals                                                                     • Chemicals                • Chemicals                                          • Chemicals                                                              • Chemicals
+                                             -                          -                                                                                • Chemicals                                      • Chemicals                -
+   Sectors      • Pharmaceuticals                                                               • Pharmaceuticals          • Pharmaceuticals                                    • Pharmaceuticals                                                        • Pharmaceuticals
+
+
+    Non -                                                                                                                                                                       • Mining                  • Mining
+                • Food Processing                                                               • Oil & Gas                                              • Food & Beverage                                                                               • Mining
+                                                                                                                           • Water Treatment                                    • Minerals                • Pulp & Paper
+ Traditional    • Petrochemical              -                          -                       • Minerals                                               • Textile                                                                   -                   • Pulp & Paper
+                                                                                                                           • Industrial Process                                 • Water Treatment         • Flue Gad
+   Sectors      • Research Lab                                                                  • Refinery & Fertilisers                                 • Energy                                                                                        • Biogas
+27                                                                                                                                                                              • Power (FGD)               Desulphurization
+[CHART, page 28, OCR text: Acquisition Performance over the Years |  | Transformational Acquisition |  | Organic Acquisition |  | : EBITDA | Margins |  | + ~4x Revenue Increase | * Expanded Global Footprint to 20+ Sites |  | * The De Dietrich Hyderabad facility was closed in FY25, with manufacturing | operations consolidated at Karamsad, Gujarat. |  | GMM — | c= Pfaud |  | ler |  | Bolt-on Acquisition |  | * Expanded Product Portfolio and added complementary technologies | + Strengthened Global Presence expansion Across Europe, North & South America |  | * Global Leader in Corrosion-Resistant a a | ai Equipment _ (19%) Le | Revenue \GAGH | (in crores) G154%) |  | 31776 3446.5 31987 3523.9 | 2540.6 | 1001.1 | 378.1 AN10 502.6 591.1 | — SSS oS | FY17 Fy18 FY19 FY20 FY21 FY22 FY23 FY24 FY25 FY26 | ® ® @ 2 @ @ 1) 1) @ 6. | * Global Pfaudler ' * Mixel France SAS | Acquisition appease 2 : De Dietrich Business eet eseoren «GMM Pfaudler JDS MixPro Professional ee | Sg + HDO Technologies ihe LLC | * France (with WOS in | + Global China) * Poland | Geography Germany S a Hyderabad 6 Naas SIS'sI Italy Unite stores Canada © Broa | (Americus, Georgia) | * Dry shaft seals + Alloy systems * Thermal systems * Glass lined equipment : ee peat aes | PEE © sealing systems 7 7 * Glass-lined + Vacuum filters + Pressure vessels + Heat exchangers See o ite | + Agitators equipment + Solid-iquid separation + Water treatment + Thermal systems Becinirecten 0 (Nees | * Laboratory system (SLS) systems, systems * Pressure vessels (FGD) + Reactors | Bicelelidielatell§ - Chemicals * Chemicals * Chemicals ; * Chemicals + Chemicals | Sectors * Pharmaceuticals ~ ~ * Pharmaceuticals * Pharmaceuticals © RSnnletels + Pharmaceuticals % ChSaal sels + Pharmaceuticals | Non- + Food Processing * Oil & Gas + Food & Beverage olin les) © lpia * Mining | Wigelelidelaelll - Petrochemical «= 2 * Minerals ee + Textile eee cement ere ca + Pulp & Paper | 2 ete © Research Lab + Refinery & Fertilisers + Energy « Power (EGD) Besuscuineilon + Biogas]
+
+[page 29]
+     Acquisition’s Outcome
+
+
+          Parameter              Earlier State                                     Current Position                                      Remarks
+                                                                                   Diversified portfolio across glass      - lined
+             Product
+                                 Primarily glass   - lined equipment               equipment, filtration & drying, mixing,               Completed
+             Diversification
+                                                                                   sealing technology etc
+
+             Industry                                                              Traditional industries ~55%;
+                                 ~80% traditional industries                                                                             Completed
+             Diversification                                                       non - traditional industries ~45%
+
+                                 Global operations supported with 20               Presence across 35+ countries with 20
+             Global Presence                                                                                                             Completed
+                                 manufacturing facilities                          manufacturing facilities
+
+                                                                                   Expanded product portfolio with Industry
+             Innovation &        Focus on technology, innovation and
+                                                                                   4.0 - enabled solutions, advanced                     Completed
+             Technology          sustainability
+                                                                                   automation and digital capabilities
+                                                                                   Organisation being realigned into a                   Streamlining to be
+             Organisation        Complex global organisational structure
+                                                                                   simplified, product - focused global                  largely completed by
+             Structure           following multiple acquisitions
+                                                                                   structure                                             FY27
+                                                                                                                                         Gradual improvement
+             Capital Structure   Higher leverage following acquisition     - led   Debt optimization and financing
+                                                                                                                                         expected over the
+             (Debt)              expansion                                         restructuring underway
+                                                                                                                                         medium term
+                                                                                                                                         Benefits expected to
+             EBIT to PAT         Lower earnings conversion due to                  Initiatives underway to improve EBIT         - to -   materialize progressively
+             Conversion          financing, tax and Fx inefficiencies              PAT conversion                                        as restructuring is
+                                                                                                                                         completed
+
+
+
+28

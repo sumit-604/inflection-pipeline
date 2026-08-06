@@ -1,0 +1,48 @@
+stage: B09-tam
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No CDR-specific GCC/SE Asia market-size figure found in web search (only broad, non-format-split GCC foodservice market data, Mordor Intelligence 2025) — International segment (~8% of revenue) TAM/SAM not independently sized; treated as an unquantified SAM-expansion lever only."
+  - "NRAI's 'Unorganized Total' bucket (AR p.16 table) is not format-split by NRAI itself; the informal-CDR-equivalent overlay used to build realistic TAM (₹1,55,876cr) is a proxy-ratio estimate (45.6% organized-format mix applied to the unorganized bucket), not a directly reported figure."
+  - "No independent count of total organized CDR outlets in India found in any injected source or web search; top-3 competitor concentration (Section 4C) is NOT FOUND."
+  - "UFBL's own average bill/per-cover value remains NOT FOUND across all stages to date (carried from B04 input_gaps), forcing Method 2's bottom-up bill-value input to rely on an unanchored industry-wide estimate."
+flags:
+  - "Management's broad AR framing (total food-services industry ₹6,60,921cr, FY26) is 4.55x the conservative CDR-specific TAM (₹1,45,248cr) — read as inflated per the >2x threshold; the same AR's own CDR-specific line item is, by contrast, reasonable/specific and was used directly as this report's Method 1 conservative anchor."
+  - "Revenue headroom of 87.8x and MASSIVE runway classification are nominal/theoretical (SAM includes a large private-chain and independent-restaurant layer UFBL cannot mechanically absorb); the realizable SOM CAGR (18.4-20.6%) is the decision-useful figure and is an order of magnitude below the theoretical headroom because execution pace (store rollout, 112% FY25 attrition per B04), not market size, is the binding constraint."
+  - "3C capacity cross-check is circular by construction: the SOM store-count trajectory was built directly off management's own FY27/FY30 guidance, so 'sufficient' capacity reflects internal consistency with guidance, not an independent validation of execution risk."
+market_definition: "Organized, mid-to-premium casual dining restaurants (buffet-grill + a-la-carte) in India's top 50-100 cities, dine-in plus delivery plus catering, with a smaller GCC/SE Asia international footprint."
+tam_cr: {conservative: 145248, realistic: 301124}
+sam_cr: 108066
+sam_pct_of_tam: 35.9
+som_3yr_cr: 2349
+som_5yr_cr: 3120
+som_implied_revenue_cagr: {yr3: 20.6, yr5: 18.4}
+current_sam_share_pct: 1.14
+revenue_headroom_x: 87.8
+tam_growth_pct: 9.3
+runway_class: "MASSIVE"
+mgmt_claim_cr: 660921
+mgmt_claim_ratio: 4.55
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient — SOM store-count trajectory (306 FY27, 412 FY30) was built directly off management's own 300+ FY27 / 400-425 FY30 guidance and the ~₹140cr FY27 capex plan (~₹3cr/store); no ₹Cr gap identified, but this is a circular check by construction, not an independent validation — see flags."
+methods_used:
+  - "top_down_industry_report_subtraction"
+  - "bottom_up_unit_economics"
+  - "peer_revenue_aggregation"
+  - "global_benchmark_gdp_share"
+stale_data_flags:
+  - {datapoint: "India Food Services Industry format-wise projections FY25-FY28", source: "NRAI IFSR 2024, reproduced AR FY24-25 p.16", year: "2024/2025"}
+  - {datapoint: "India online food delivery market CAGR/size 2023-2030", source: "Bain & Company - Swiggy Report 2024, reproduced AR FY24-25 p.16", year: "2024"}
+searches_performed:
+  - "India casual dining restaurant market size 2025 2026 CDR segment crore"
+  - "India organised food services market size NRAI 2025 report crore CAGR"
+  - "GCC Middle East foodservice market size 2025 UAE casual dining restaurant market"
+  - "Speciality Restaurants Limited revenue FY2025 FY26 crore Mainland China Oh Calcutta"
+  - "organized casual dining restaurant chains India top players market share Barbeque Nation Speciality Restaurants competitors"
+  - "number of operational malls India 2025 2026 grade A shopping malls count JLL Knight Frank"
+  - "India top 50 cities population disposable income mid to premium dining consumers casual dining addressable"
+  - "India per capita restaurant spend food services vs China United States global comparison eating out"
+  - "India nominal GDP FY2025-26 lakh crore RBI estimate"
+searches_skipped: []

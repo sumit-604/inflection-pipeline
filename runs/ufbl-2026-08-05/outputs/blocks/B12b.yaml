@@ -1,0 +1,24 @@
+stage: B12b
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 13
+caught: 8
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Management's own Q1 FY26 admission of competitor price drops and South/Bangalore pricing pressure contradicts the 'unchanged competitive intensity' claim carried across Q1-Q3; B05 excluded the Q1 call and treated the claim as a credibility positive", anchor: "Concall Aug-2025 p.8, p.10 vs Nov-2025 p.17, Feb-2026 p.15"}
+  - {severity: "MINOR", item: "Network ceiling target drifted from '300-325 by FY27' (Q1) to '300+ by FY27' in later calls; the 325 upper bound quietly dropped", anchor: "Concall Aug-2025 p.3 vs Feb-2026 p.11"}
+  - {severity: "MINOR", item: "Marketing +110bps step-up (1.9%->3%) uses a different denominator than Q1's '~3% of core dine-in', making the step magnitude fuzzier than B05 presents", anchor: "Concall Aug-2025 p.14 vs May-2026 p.7"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur (B); defensible lean to B- for the missed repeated peer-lag deflection (Q1+Q2) and the Q1 self-contradiction on competitor price drops vs the 'unchanged intensity' claim"
+findings:
+  - {severity: "MAJOR", location: "B05 2E / repeated_evasions", claim: "No repeated unanswered questions across quarters; repeated_evasions: []", source_truth: "The peer-lag / is-the-model-broken question was deflected in Q1 (Viraj Mehta) and Q2 (Mathur Rathi) via a can't-compare-to-QSRs / can't-discuss-listed-peers reframe", note: "Traceable to B05 excluding the Aug-2025 Q1 call; mitigated by the later SSSG inflection", anchor: "Aug-2025 p.6-7; Nov-2025 p.11-12"}
+  - {severity: "MAJOR", location: "B05 3A / competitive intelligence", claim: "'Unchanged competitive intensity' repeated consistently is a positive credibility signal (no shifting story)", source_truth: "In the same Q1 call management volunteered competitor price drops and Bangalore/South pricing pressure taking away business", note: "Internal contradiction inside UFBL's own transcripts, independent of B06's peer contradiction", anchor: "Aug-2025 p.8, p.10"}
+  - {severity: "MINOR", location: "B05 1B / 4D", claim: "Gross margin 67-68% band reiterated in all three calls", source_truth: "Also guided in Q1 FY26 (~68% annual); span is four calls, not three", note: "Strengthens the reiterated-but-missed flag", anchor: "Aug-2025 p.4"}
+  - {severity: "MINOR", location: "B05 2B / 2C accountability", claim: "Back-end cost 6.1%->7.1% framed as honest structural investment", source_truth: "Q1 stated corporate cost 'should not go beyond 5-6% ... historically 5-6%'; the 7.1% resets the baseline above management's own historical normal and the FY27 6.5% target is a partial return, not pure leverage upside", note: "Relevant to the FY27 9-10% EBITDA bridge; B06 shows peer overhead falling", anchor: "Aug-2025 p.14 vs May-2026 p.7"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 62

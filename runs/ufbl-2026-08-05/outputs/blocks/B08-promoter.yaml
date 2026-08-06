@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "inputs/announcements/ empty — no Reg 30 filings available locally; pledge/SAST facts sourced from web only"
+  - "primary BSE/NSE pledge intimation PDF (ems.co.in, 31-Dec-2025) blocked (HTTP 403) — pledge % not independently confirmed from source document"
+  - "trendlyne.com SAST/shareholding history blocked (HTTP 403) — full promoter-transaction timeline not independently verified"
+  - "icra.in rating rationale PDFs (28-Oct-2025, 29-May-2026) blocked (HTTP 403) — relied on secondary re-reports of content"
+  - "AR FY2024-25 itself discloses no pledge/encumbrance figure for promoters — pledge finding rests entirely on external web corroboration"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["2017 SEBI IPO abeyance basis never publicly disclosed or resolved", "Independent Chairman holds 3 concurrent board seats inside the promoter's separate Sayaji Hotels group (RPT counterparty)", "new Independent Director is a partner at the company's pre-IPO PE investor's advisory firm", "institutional ownership declining, not entering, even as promoter stake creeps up and pledge is released"]}
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 3, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "2017 SEBI kept IPO in abeyance 'pending regulatory action for past violations'; nature/entity never publicly disclosed; IPO cleared Jan-2018", evidence_tier: "UNVERIFIED", source: "Business Standard, 04-Oct-2017 headline/snippet (full article blocked)", date: "2017-10-04"}
+  - {finding: "Independent Chairman Abhay Chintaman Chaudhari sits on 3 boards within the promoter's Sayaji Hotels group, which is also an RPT counterparty (rent) to UFBL", evidence_tier: "VERIFIED", source: "AR FY2024-25 Corporate Governance Report, lines 3576-3579", date: "2025 (FY2024-25 AR)"}
+  - {finding: "New Independent Director Tarun Khanna (appointed 22-May-2025) is a Partner at CX Advisors LLP, advisor to CX Partners, a pre-IPO PE investor in Barbeque Nation and a serial board-appointee across its portfolio companies", evidence_tier: "MEDIA REPORTED", source: "StockInsights/MarketScreener corporate announcement re-reports", date: "2025-05-22"}
+  - {finding: "Independent Director Ajay Nanavati Vipin resigned mid-term (~12 months into a 5-year term) citing strategy misalignment", evidence_tier: "VERIFIED", source: "AR FY2024-25, lines 2088-2093 / 3864-3870", date: "2025-05-22"}
+  - {finding: "One-outlet FSSAI hygiene Improvement Notice (Hyderabad, cockroach presence, unlabelled desserts, missing records)", evidence_tier: "MEDIA REPORTED", source: "NTV Telugu / Siasat / Newsmeter", date: "NOT FOUND (recent, exact date not pinned)"}
+  - {finding: "Institutional (FII+DII) ownership declined from ~43% (Sep-2023) to ~28% (Jun-2026) even as promoter stake rose", evidence_tier: "UNVERIFIED", source: "operator non-anchored screener cross-check (OPERATOR_CONTEXT.md); not independently re-derived from anchored SHP filing", date: "2023-09 to 2026-06"}
+transition_evidence:
+  - {item: "Sayaji Housekeeping Services released 5,41,516 shares (1.39% of total equity) from an Axis Bank pledge tied to a Sayaji Hotels group loan (not UFBL's own borrowing)", evidence_tier: "MEDIA REPORTED", source: "Trendlyne re-report of SAST filing", date: "2025-07-23"}
+  - {item: "FY2025-26 Reg 31(4) declaration: no new encumbrance created on Kayum Razak Dhanani's shares / persons acting in concert", evidence_tier: "MEDIA REPORTED", source: "ScanX re-report of exchange filing", date: "FY2025-26"}
+  - {item: "Next-gen family members (Azhar Yusuf Dhanani, Zuber Yusuf Dhanani, Anisha Raoof Dhanani) bought 0.83% on market, raising promoter-group stake 33.73% -> 34.56% (insider buying, not selling)", evidence_tier: "MEDIA REPORTED", source: "ScanX re-report of exchange filing; directionally corroborated by operator screener series", date: "~2025-12"}
+  - {item: "Statutory auditor S.R. Batliboi & Associates LLP (EY network) reappointed for 5 years from Sep-2023 AGM, no resignation, no qualification found", evidence_tier: "VERIFIED", source: "AR FY2024-25, lines 2578-2588", date: "2023-09-25"}
+  - {item: "MD Kayum Razak Dhanani continues to draw zero personal remuneration from the Company", evidence_tier: "VERIFIED", source: "AR FY2024-25, lines 2845, 4228", date: "FY2024-25"}
+pledge_pct_latest: 0
+pledge_trend: "falling — historical pledge of ~1.39% of total equity (~4.7% of Sayaji Housekeeping Services' own 29.69% stake), securing a loan to group company Sayaji Hotels Ltd (not UFBL), released per a SAST filing dated 2025-07-23; FY2025-26 Reg 31(4) declaration shows no new encumbrance. AR FY2024-25 itself discloses no pledge figure in its promoter-shareholding table — this trend rests on external web/exchange-filing corroboration (MEDIA REPORTED tier), not on independently opened primary BSE documents (blocked, HTTP 403)."
+searches_performed:
+  - "company/promoter identity + NSE/BSE code confirmation (rename)"
+  - "Barbeque Nation -> United Foodbrands rename mechanics/rationale"
+  - "change of control / new promoter check post-rename"
+  - "Kayum Dhanani SEBI order search"
+  - "promoter pledge / encumbrance (general + Axis Bank/Sayaji Housekeeping specific + Reg 31 specific)"
+  - "SEBI 2017 IPO abeyance detail"
+  - "ICRA Oct-2025 rating rationale"
+  - "IiAS / proxy advisory coverage check"
+  - "short-seller / activist campaign check"
+  - "Glassdoor / AmbitionBox employee reviews"
+  - "FSSAI / food-safety record"
+  - "CFO change / continuity check"
+  - "litigation / NCLT / consumer-complaint check"
+  - "founder Sajid Dhanani death and succession"
+  - "Jubilant FoodWorks stake rationale"
+  - "Sayaji Hotels Limited ownership/relationship confirmation"
+  - "auditor history / rotation check"
+  - "new Independent Director (Tarun Khanna) background check"
+  - "creeping acquisition / promoter stake-increase filing check"
+searches_skipped:
+  - "trendlyne.com shareholding-pattern / SAST disclosure pages — WebFetch HTTP 403"
+  - "icra.in rating rationale PDFs (28-Oct-2025, 29-May-2026) — WebFetch HTTP 403"
+  - "ems.co.in BSE pledge intimation PDF (31-Dec-2025) — WebFetch HTTP 403"
+  - "business-standard.com 2017 SEBI abeyance full article — WebFetch HTTP 403, snippet only"
+  - "local Reg 30 announcements/ folder — empty per task brief, no local cross-check available"
+verdict_basis: "No deal-breakers and a genuinely improving pledge/insider-buying picture, offset by an unresolved 2017 SEBI abeyance whose basis was never disclosed, a board-independence quality question (Chairman's 3 seats inside the promoter's Sayaji Hotels group; new ID tied to the pre-IPO PE investor), and one mid-term independent-director exit — net CAUTION, not clean, not red."

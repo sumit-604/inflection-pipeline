@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Q3 FY26 file supplied as 'investor presentation' is the Motilal Oswal 31-Jan-2026 broker note, not a company document; excluded from anchored evidence per task instruction (confirmed by MOFSL letterhead/disclosures/rating legend content)"
+  - "No peer financial/operational data provided; D2 digital-channel moat and H1 industry-consolidation-beneficiary claims cannot be benchmarked against Sapphire Foods, Westlife, Restaurant Brands Asia, or Speciality Restaurants"
+flags:
+  - type: FLAG-EMOAT-SPARSE
+    reason: "Only 3 of 20 categories (plus R1) clear the Strong/Moderate bar (A4 multi-brand platform, D2 digital/captive-channel shift, E1 geographic/international first-mover); consistent with completionist guard base rate, not an inflated read"
+  - type: FLAG-EMOAT-DIGITAL-MOAT-UNPROVEN
+    reason: "Management's '90% captive channel' framing conflates walk-ins/call-centre with genuine digital booking (65.1% own-channel dine-in share is the real digital figure); no peer benchmark exists to confirm this is a switching-cost moat vs an efficiency metric"
+  - type: FLAG-EMOAT-EXPANSION-RISK
+    reason: "FY27 40-store/year expansion pace toward 400-425 by FY30 echoes the pre-FY23 pattern that led to store closures (B05 red flag); this is the single biggest risk to all three active emerging-moat categories, which all depend on continued well-funded network growth"
+em_score: 15
+em_classification: "MODEST"
+active_categories:
+  - {id: "A4", name: "Product platform / multi-brand architecture", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing through FY30"}
+  - {id: "D2", name: "Digital platform / captive-channel demand engine", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing"}
+  - {id: "E1", name: "Geographic first-mover (Sri Lanka, international scaling)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 10, claim: 9, inference: 3}
+completionist_recount: "📄 recount performed: 10 documented items across 3 active categories (A4 segment revenue/ROM + brand-launch disclosures, D2 app-download/MAU/digital-channel-share series, E1 Sri Lanka launch + international segment financials + FY27 capex guidance); 3 active categories is within the realistic 3-6 base rate, no re-inflation applied"
+catalysts_12m:
+  - {catalyst: "Own-digital-channel dine-in share sustaining or extending past 65% without plateau", window: "next 2-4 quarters", evidence_type: "documented", anchor: "Q1 FY27 presentation p.14; Q4 FY26 call"}
+  - {catalyst: "Gross margin clearing 66% for two consecutive quarters (guidance missed 3 calls running)", window: "FY27, 2-4 quarters", evidence_type: "claim", anchor: "Q4 FY26 call; B05 promise-delivery record"}
+  - {catalyst: "Premium CDR new-store ROM narrowing toward 18-20% mature level in non-home markets", window: "12-24 months", evidence_type: "documented", anchor: "Q4 FY26 call; Q1 FY27 presentation p.19"}
+  - {catalyst: "Net debt holding at guided ~INR100-102cr ceiling through FY27 store-expansion cycle", window: "FY27, 4 quarters", evidence_type: "claim", anchor: "Q4 FY26 call"}
+  - {catalyst: "International segment recovery from Middle East (Bahrain/Dubai) input-cost drag", window: "2-3 quarters", evidence_type: "claim", anchor: "Q4 FY26 call"}
+capex_embedded_growth_pct: 33
+optionality_register:
+  - {optionality: "FY27 gross margin recovery to 67-68% band (guided, missed at FY26 close)", converting_evidence: "Two consecutive quarters of gross margin >=66% in a results filing", first_appears: "Quarterly results filing / concall", window: "FY27 (2-4 quarters)"}
+  - {optionality: "FY27 pre-Ind AS EBITDA margin of 9-10%", converting_evidence: "Full-year FY27 results filing confirming the margin", first_appears: "FY27 annual results (May 2027)", window: "12 months"}
+  - {optionality: "Procurement/sourcing scale benefits driving gross margin recovery", converting_evidence: "Disclosed RM-cost-% improvement tied to a named initiative, or a multi-year supplier contract", first_appears: "AR note or concall", window: "FY27-28"}
+  - {optionality: "Southeast Asia international scaling beyond Malaysia", converting_evidence: "New country/restaurant openings confirmed with segment ROM data", first_appears: "Concall / exchange filing", window: "12-24 months"}
+  - {optionality: "Premium CDR new-store margin convergence to 18-20%+ mature level", converting_evidence: "Two consecutive quarters where new-store ROM gap to mature narrows below 5pp", first_appears: "Quarterly investor presentation ROM table", window: "12-24 months"}
+  - {optionality: "Digital/loyalty data monetisation beyond channel-mix shift", converting_evidence: "Disclosed loyalty membership count, redemption economics, or CAC reduction vs paid channels", first_appears: "AR digital section or investor presentation", window: "24-36 months"}
+  - {optionality: "Willow Gourmet (Omm Nom Nomm) delivery/dessert brand scaling", converting_evidence: "Disclosed standalone revenue contribution or store-count/GMV metric", first_appears: "AR or concall", window: "12-24 months"}
+  - {optionality: "400-425 restaurant network by FY30 funded without leverage breach", converting_evidence: "Multi-year net debt holding flat while store count compounds, confirmed FY27-FY29", first_appears: "Quarterly results filings", window: "24-48 months"}
+combined_assessment: "TURNAROUND"
+combined_reasoning: "AVOID backward (B01, lease-accounting-driven leverage deal-breaker) paired with a real but early-stage MODEST forward score (3 corroborated categories, not yet STRENGTHENING); watch-list turnaround, not yet confirmed."
+top_moat_risks:
+  - "FY27 40-store/year expansion pace toward 400-425 by FY30 echoes the pre-FY23 pattern that led to store closures, threading through all three active categories (A4, D2, E1) simultaneously"
+  - "Digital-channel-share metric (65.1%) is unbenchmarked against peers; the 90% 'captive channel' framing conflates walk-ins and call-centre with genuinely digital booking, so the true moat strength is unproven"
+  - "Gross margin guidance (67-68%) has been reiterated but missed across all three concalls in the evidence window; FY27 margin-expansion arithmetic for A3/A4 depends on this recovering"
+  - "Middle East input-cost inflation already affecting 2 of 8 international restaurants (E1), management itself calls trajectory 'difficult to predict'"
+  - "F2 execution moat nets negative on B05's own anchored promise-delivery record (grade B, 2 of 9 promises missed), so management credibility does not reinforce the emerging-moat thesis"

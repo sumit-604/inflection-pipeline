@@ -1,0 +1,55 @@
+stage: B06-peers
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Peer evidence contradicts UFBL's 'unchanged competitive intensity' claim (RBA, Westlife, Speciality all describe rising competitive intensity/value-price wars in the same window)"
+  - "Peer evidence shows back-end/corporate overhead ratios falling, not rising, at RBA, Speciality, and Westlife -- undercuts a sector-wide SG&A inflation explanation for UFBL's 6.1%-to-7.1% cost step-up"
+  - "Peer evidence contradicts the analyst assertion (made on UFBL's own Q2 FY26 call) that peers turned SSSG positive two quarters before UFBL; Sapphire and Westlife both turned positive concurrent with or after UFBL's recovery"
+  - "No peer carries comparable Middle East/GCC company-operated restaurant cost exposure, so UFBL's Bahrain/Dubai input-cost claim remains unverifiable by direct peer comparison, though adjacent evidence (domestic LPG/gas crisis, Mar-Jun 2026) confirms Middle East-linked macro cost pressure was real and sector-wide in India over the same period"
+  - "Peer gross margins broadly expanded through FY26 while UFBL's compressed (65.5% vs 68.5% prior year per B05), a divergence from the peer set worth flagging in synthesis"
+peers_provided: 15
+verified:
+  - {claim: "Peers cited the GST rate reduction as a demand tailwind in H2 CY2025", peers: ["RBA", "Westlife", "Speciality"], anchor_count: 3}
+partially_verified:
+  - {claim: "Peers pursuing volume-led, no-price-hike growth in FY26", peers: ["RBA", "Westlife"]}
+  - {claim: "Peers pursuing volume-led, no-price-hike growth in FY26 -- contra evidence: price increases taken", peers: ["Sapphire", "Speciality"]}
+  - {claim: "Store-level capex and payback assumptions disclosed", peers: ["Speciality"]}
+contradicted:
+  - {claim: "Listed peers turned SSSG positive roughly two quarters before UFBL", contradicting_peer: "Westlife", quote_anchor: "WESTLIFE Q3 FY26 call (Feb-2026) p.2-3: SSSG -3% for Oct-Dec 2025, turning positive only in Jan-2026"}
+  - {claim: "Listed peers turned SSSG positive roughly two quarters before UFBL", contradicting_peer: "Sapphire", quote_anchor: "SAPPHIRE Q3 FY26 call (Feb-2026) p.3: KFC SSSG only +1% and Pizza Hut -12% for Oct-Dec 2025"}
+  - {claim: "Competitive intensity in casual dining/buffet-adjacent formats is flat", contradicting_peer: "RBA", quote_anchor: "RBA Q3 FY26 call (Feb-2026) p.12: analyst-cited 'increase in aggression by the competition...value launches...faster deliveries'"}
+  - {claim: "Competitive intensity in casual dining/buffet-adjacent formats is flat", contradicting_peer: "Westlife", quote_anchor: "WESTLIFE Q3 FY26 call (Feb-2026) p.18-19: Domino's/Chinese QSR INR99 combos, Third Wave/Blue Tokai McCafe competition"}
+  - {claim: "Peers reporting rising back-end/corporate overhead costs as a percentage of revenue", contradicting_peer: "Speciality", quote_anchor: "SPECIALITY Q4 FY26 call (May-2026) p.14-15: corporate costs fell from 6-7% to 4% of revenue"}
+  - {claim: "Peers reporting rising back-end/corporate overhead costs as a percentage of revenue", contradicting_peer: "RBA", quote_anchor: "RBA Q1 FY26 call (Aug-2025) p.4-5: corporate overhead reduced 25%, targeting 35% total reduction"}
+unverifiable:
+  - {claim: "Peers with Middle East/GCC exposure report comparable input-cost inflation or currency pressure", peers_checked: ["RBA", "Sapphire", "Speciality"]}
+peer_coverage_map:
+  - {peer: "RBA", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Baseline demand/competitive framing pre-GST"}
+  - {peer: "RBA", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "GST pass-through confirmed; volume-led framing; Indonesia G&A cuts"}
+  - {peer: "RBA", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Industry-level negative SSSG claim; rising competitive intensity; McDonald's price cut"}
+  - {peer: "RBA", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "LNG/gas crisis and electric broiler pivot"}
+  - {peer: "Sapphire", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "SSSG-turn timing vs UFBL"}
+  - {peer: "Sapphire", quarter: "Merger call (Jan-2026)", usage: "CITED-ONLY", contribution: "Deal mechanics; minimal operational content"}
+  - {peer: "Sapphire", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Explicit price hikes; Sri Lanka Middle East fuel-cost linkage"}
+  - {peer: "Speciality", quarter: "Q1 FY26 (Aug-2025)", usage: "SUBSTANTIVE", contribution: "Store capex/breakeven baseline"}
+  - {peer: "Speciality", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Explicit GST euphoria tailwind; competitive intensity question; capex/turnover detail"}
+  - {peer: "Speciality", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Dubai asset-light franchise model informs Middle East claim"}
+  - {peer: "Speciality", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Direct named UFBL SSSG citation; 4% price hike; LPG crisis; falling corporate overhead"}
+  - {peer: "Westlife", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "GST 80-100bps pass-through; industry capacity growth cited as demand drag"}
+  - {peer: "Westlife", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Precise SSSG-turn timing; flat IEO market statement; value-war competitor mentions"}
+  - {peer: "Westlife", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "First positive quarterly SSSG confirmed; LPG crisis impact"}
+  - {peer: "Westlife", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Explicit geopolitical/Middle East cost inflation statement; no price hike confirmed"}
+industry_cross_read:
+  demand: "Peer set shows a broadly weak-to-negative H2 CY2025 demand environment with staggered, execution-driven recoveries from Dec-2025/Jan-2026 onward; Westlife's own brand-track data describes the broader market as flat through Dec-2025, complicating a pure category-wide-recovery reading of UFBL's SSSG acceleration"
+  pricing_inputs: "Peer gross margins broadly expanded through most of FY26 (RBA to ~70%, Westlife near record highs, Speciality steadily up) while UFBL's compressed over the same period; pricing approach split evenly between volume-led/no-hike (RBA, Westlife) and explicit price increases (Sapphire, Speciality)"
+  capex_cycle: "Industry-wide capacity race, not a lone UFBL expander -- RBA, Sapphire's KFC, Westlife and Speciality are all simultaneously accelerating store additions toward multi-year network targets"
+peer_mentions_of_company:
+  - "SPECIALITY Q4 FY26 call (May-2026), analyst Madhur Rathi: 'if we see our other peers, they might not be like-to-like now, for example, this Barbeque Nation, they did 14% SSG in fourth quarter. So any reason why we are lagging on this parameter?' -- independently corroborates UFBL's reported ~14.4% Q4 FY26 SSSG"
+risks_peers_raise:
+  - "Domestic India LPG/PNG/gas supply crisis (Mar-Jun 2026) causing operational disruption and cost inflation across food/packaging/utilities at RBA, Speciality and Westlife -- not flagged in UFBL's own B05 risk list for its India operations"
+  - "India wage code implementation one-off cost impact (RBA: INR2.3cr one-time hit; Westlife: labour line impact) -- not flagged in UFBL's B05 risk list"
+  - "Third-party aggregator relationship volatility/unpredictability as an actively managed risk (RBA, Westlife) -- less relevant given UFBL's captive-channel-heavy model but not discussed in UFBL's own concalls"
+net_narrative_effect: "complicates"

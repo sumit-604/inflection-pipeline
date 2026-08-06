@@ -1,0 +1,53 @@
+stage: B03-ardeep
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Board meeting individual-director attendance percentages not located within this pass's extract"
+  - "Promoter pledge status not disclosed anywhere located in this AR (screener-based operator context also lacks this)"
+  - "Prior-year (FY24) Chairman's letter not available in this document set, so 6D tone-drift and forward-guidance-delivery credibility checks could not be scored against a prior baseline"
+  - "Consolidated Note 25(b) FY24 revenue tie-out failure (B02 Rank 3) accepted on B02's documented cross-check rather than independently re-derived line-by-line in this pass"
+  - "MENA CGU discount rate (10.00%->7.91%) not independently re-pulled from source in this pass; accepted from B02"
+  - "Standalone lease incremental borrowing rate not located as a single disclosed percentage in the extract reviewed"
+flags:
+  - {type: FLAG-CASH, reason: "Independently reconfirmed on recomputation of the standalone Cash Flow Statement (Note-level roll-forward: CFO 1,470.65 + investing (690.04) + financing (908.43) = net decrease (127.82), opening 150.36 minus 127.82 = closing 22.54): standalone cash fell 85% YoY, first-ever working capital loan drawn (Rs80.00mn), current ratio fell to 0.46, CFO/EBITDA deteriorated at both standalone (93.80%->85.85%) and consolidated (96.00%->85.11%) levels"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Structural board/RPT interlock with the Sayaji Hotels group: UFBL's nominally independent Chairman and two promoter-director family members simultaneously hold board seats at Sayaji Hotels Ltd/Sayaji Hotels (Indore)/Sayaji Hotels (Pune), the same corporate family whose entities receive UFBL's RPT rent (Rs42.52mn FY25) and supply purchases (Rs184.16mn FY25), and whose entity Sayaji Housekeeping Services Ltd is UFBL's largest single shareholder at 29.69%; self-declared arm's length with no independent benchmarking disclosed; no pledge data found to assess further. Full promoter verdict deferred to B08 per protocol."}
+phase_verdicts: {p1: "red_flag", p2: "red_flag", p3: "watch", p4: "watch", p5: "watch", p6: "watch", p7_best_fit: "turnaround_watchlist"}
+overall_quality: 4            # /10 with the four 25% components
+quality_components: {governance: 5, accounting: 3, balance_sheet: 4, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: a human reviewer would have reason to pause on the auditor-confirmed inability to verify audit-trail integrity on third-party-hosted books (Rule 11(g)), and on the MENA KAM 'fully impaired' language not reconciling with the CGU disclosure that follows; informational, pipeline continued."
+  - "Phase 2: a human reviewer would have reason to pause on the breadth of the notes-tie-out-failure pattern (now five items across this stage and B02 combined, spanning revenue, impairment, and post-balance-sheet disclosure); informational, pipeline continued."
+  - "Phase 3: no kill-switch-level concern; standalone liquidity trend is the one item warranting escalated monitoring; informational, pipeline continued."
+  - "Phase 4: a human reviewer would flag the absence of a dedicated risk-factors section as unusual and would want the 'subsidiaries performing well' MD&A framing reconciled against the Note 7/10A CGU assumption changes; informational, pipeline continued."
+triple_pass_verification:
+  verified: 13                # of 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Books-of-account audit-trail integrity cannot be independently verified by the statutory auditor", evidence: "Auditor's Report p.104 (standalone), p.178-179 (consolidated)"}
+  - {risk: "Subsidiary impairment-methodology assumption changes coinciding with a major CGU's swing to loss", evidence: "Note 7/10A p.132-137, p.220-221"}
+  - {risk: "Standalone liquidity tightening (cash down 85%, first-ever working capital loan)", evidence: "Balance Sheet p.111, Cash Flow Statement p.114-115"}
+  - {risk: "Barbeque Nation Restaurant LLC (Dubai) persistent deeply negative net assets despite being the top subsidiary profit contributor", evidence: "AOC-1 Annexure-4 to Board's Report p.34; Consolidated Note 45"}
+  - {risk: "Direct-tax contingent liability concentration (Rs744.41mn, 18.98% of standalone net worth) with no case-by-case likelihood disclosed", evidence: "CARO clause (vii)(b) p.106-107; Standalone Note 36"}
+guidance_table:
+  - {claim: "Restaurant network expansion", number: "300-325 restaurants", timeframe: "By FY27", credibility: "not scorable within this single AR; no prior-year guidance baseline available in this document set"}
+  - {claim: "India business network growth", number: "10-12%", timeframe: "Medium term", credibility: "directional only, not independently checkable"}
+  - {claim: "International and Premium CDR growth", number: "25-30%", timeframe: "Medium term", credibility: "directional only, not independently checkable"}
+  - {claim: "Sri Lanka expansion", number: "4-6 new restaurants", timeframe: "Coming year (post-FY25)", credibility: "not independently checkable within this single-year AR"}
+monitorables:
+  - {metric: "Standalone/consolidated cash balance and WC facility utilisation", threshold: "Further decline below Rs22.54mn standalone, or utilisation approaching sanctioned limit", where: "Quarterly results balance sheet and cash flow statement", why: "Tests whether FY25 liquidity tightening continues or reverses"}
+  - {metric: "Red Apple / domestic-subsidiary CGU performance and any FY26 impairment charge", threshold: "Any impairment against Rs897.34mn consolidated goodwill or standalone investment carrying value", where: "FY26 AR Note 7/10A equivalent or interim disclosures", why: "Tests whether FY25 discount-rate cuts and new terminal-value floor were justified"}
+  - {metric: "SOC report status for third-party accounting software provider", threshold: "Rule 11(g) limitation cleared or persists in FY26 Auditor's Report", where: "FY26 AR Auditor's Report and Notes 47/48 equivalent", why: "Tests resolution of the single most consequential Phase 1 finding"}
+  - {metric: "Permanent employee attrition rate", threshold: "Further rise above 112%, or stabilisation below ~100%", where: "FY26 BRSR turnover-rate table", why: "Attrition accelerated three consecutive years; further rise would undercut margin-recovery labour-cost assumptions"}
+  - {metric: "MENA equity investment allowance/narrative true-up", threshold: "Allowance revised to match 'fully impaired' narrative, or narrative corrected", where: "FY26 AR Note 9(c)/10A equivalent", why: "Tests whether this year's disclosure inconsistency was a one-off or recurs"}
+strengths_top3:
+  - "EBITDA margin resilience amid revenue softness: consolidated +12bps, standalone +81bps YoY despite revenue declines, independently confirmed at P&L level"
+  - "Clean CARO with no fraud, default, or wilful-defaulter findings; full resolution of all POSH complaints during the year"
+  - "Segment diversification (International ROM >25%, Premium CDR ROM 18-20%+) progressing at healthier margins than the core India business, supporting the stated network-expansion target"
+red_flags_top3:
+  - "Auditor-confirmed inability to verify audit-trail integrity on third-party-hosted books (Rule 11(g)), standalone and consolidated"
+  - "MENA 'fully impaired' narrative does not reconcile with disclosed allowance/carrying-value arithmetic (independently re-verified: Rs562.74mn cost vs static Rs313.09mn allowance = positive Rs249.65mn net carrying value), compounded by CGU discount-rate cuts and a new 12x EBITDA terminal floor introduced the same year Red Apple swung to loss"
+  - "Standalone liquidity deterioration: cash down 85%, first-ever working capital loan drawn, current ratio down to 0.46, independently reconfirmed on cash-flow-statement recomputation"
+best_fit_strategy: "turnaround_watchlist"
+one_line_verdict: "Operating margins hold while lease-driven depreciation widens the loss and disclosure gaps cloud the recovery case."

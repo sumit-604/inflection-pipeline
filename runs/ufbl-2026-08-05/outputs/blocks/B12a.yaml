@@ -1,0 +1,12 @@
+stage: B12a
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 35
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "Verdict-card and Section 1B inputs (Core Score derivation, deal-breaker ND/EBITDA and IC ratios, leverage metrics, ROE/ROCE) = 100% verified (12 numbers). Scorecard detail inputs (P&L, balance sheet, notes figures) = 100% (18 numbers). Secondary table cells and derived calcs = 100% (5 numbers). Total: 35/35 checked numbers verified as MATCHES. Remaining ~10–15 material numbers across reports are narrative judgments or explicitly non-anchored operator leads (outside scope). No MISMATCH, ANCHOR NOT FOUND, or material UNANCHORED findings. Gate 0 classification mechanically sound."

@@ -5,5 +5,5 @@ market_cap_cr: 3017.0
 run_date: 2026-08-05
 run_type: full
 concalls_available: true
-sector_cap_row: "Hospitals / dialysis / healthcare services"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+sector_cap_row: "Branded apparel / FMCG"   # 35x. Operator ruling 2026-08-05; collector auto-picked "Hospitals/dialysis/healthcare" (wrong) for a casual-dining chain. No exact QSR/restaurant row in Section 1B.
+notes: "Collected from screener.in by collect_to_repo.py v3. UFBL = erstwhile Barbeque Nation Hospitality Ltd (per ICRA rating). AR file 'Annual_Report_2023.pdf' is actually the FY2025 AR (19th AGM, 13-Aug-2025) - collector mislabel. sector_cap_row corrected to Branded apparel/FMCG 35x by operator. Operator supplied non-anchored operational digest + SHP screenshot at stage 0 (outputs/_working/OPERATOR_CONTEXT.md)."

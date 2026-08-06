@@ -324,10 +324,11 @@ Reported PAT change = 20.03 - 5.11 = **+14.92 Cr (+291.9%)**. Bridge via PBT (al
 **Mandatory answers:**
 - **Recurring vs non-recurring split of the +14.92 Cr PAT growth:** recurring operating
   (EBITDA net of D&A) ~+11.25 Cr; **one-time (finance-cost reset +5.38 + exceptional absence
-  +2.88 = +8.26 Cr pre-tax)**; other income +0.85; tax drag -5.44. The **operating core is
-  genuine but the finance-cost collapse and the missing prior-year one-off together explain a
-  large slice of the "4x"**. This will NOT repeat next year at this magnitude (finance costs
-  are already near a floor: 6.36 Cr on a near-net-cash balance sheet).
+  +2.88 = +8.26 Cr pre-tax, ~40% of the +20.36 Cr PBT uplift)**; other income +0.85; tax drag
+  -5.44. The **operating core is genuine but the finance-cost collapse and the missing
+  prior-year one-off together explain a large slice of the "4x"**. This will NOT repeat next
+  year at this magnitude (finance costs are already near a floor: 6.36 Cr on a near-net-cash
+  balance sheet).
 - **If Other Income reverts to prior level:** immaterial at consolidated level (OI is only
   4.38 Cr; 16.4% of PBT). Not a swing factor here (unlike standalone, where OI is 85% of PBT).
 - **D&A / finance at steady state?** Finance costs are near-floor post-IPO repayment; any new
@@ -413,13 +414,31 @@ properly, pull the full Notion projection block. What can be anchored:
 | Revenue (Q) | ND | ND | ND | 290.81 (l.475) | ND (grid not in digest) |
 | Op EBITDA Margin | ND | ND | ND | 10.51% (Step 1C) | Above monitoring-#4 green 9.5% |
 | PAT (Q) | ND | ND | ND | 20.03 (l.510) | ND |
-| EPS (Q, diluted) | ND | ND | ND | 2.05 (l.542) | Annualised ~8.2 vs FY26 6.84 = ahead of run-rate |
+| EPS (Q, diluted) | ND | ND | ND | 2.05 (l.542) | ~8.2 if annualised, BUT annualisation INVALID — see caveat |
 | Net Debt | ND | ND | ND | ND/E 0.02 (sl.9) | Near net-cash |
 | ROCE | 15.4% (thesis input) | — | — | 17.2% (sl.9, annualized/unlabeled) | Ahead but single-quarter, not reliable |
 
-On the disclosed metrics, Q1FY27 is **at or above** the trajectory the thesis needs (margin,
-implied EPS run-rate). The blocker is not the headline level; it is **data quality and the
-undisclosed master monitorable**.
+**CAVEAT — the annualised-EPS read is INVALID (bear counter grafted per A5), exactly as the
+ROCE annualisation is discounted above.** Multiplying Q1FY27 diluted EPS 2.05 by four (~8.2)
+to claim ARIS is "ahead of run-rate" does not survive this review's own evidence, for two
+reasons:
+1. **~40% of the quarter's PBT uplift is one-time.** Per the Step 4 bridge, of the +20.36 Cr
+   YoY PBT increase, +5.38 Cr is the finance-cost reset from IPO-proceeds debt repayment and
+   +2.88 Cr is the absence of the Q1FY26 exceptional = +8.26 Cr (~40%) that does not recur.
+   Annualising a quarter inflated by non-repeating items overstates the sustainable base.
+2. **The run-rate is DECELERATING, not ahead.** Revenue is **-15.3% QoQ** and diluted EPS is
+   **-20.5% QoQ** off the Q4FY26 peak, on a **rising share count** (F10-1 implies ~16% more
+   shares QoQ; A3-08 paid-up change unexplained). A decelerating sequential trend annualised
+   from the higher YoY base is doubly misleading.
+Therefore Q1FY27 is read as **directionally consistent with the thesis on margin (10.51% >
+green 9.5%) but NOT as evidence the EPS trajectory is running ahead**. The EPS run-rate claim
+is set aside pending a clean (ex-one-off, post-QoQ-normalisation) quarter and disclosure of a
+comparable share count.
+
+On the disclosed metrics, Q1FY27 is **at the level the thesis needs on operating margin**, but
+the headline EPS/PAT level is quality-impaired (one-offs + QoQ deceleration) and the master
+monitorable is undisclosed. **The blocker is not only the headline level; it is data quality,
+the non-recurring composition of the beat, and the undisclosed master monitorable.**
 
 ### 6B. Watchlist item status (all 8, Notion Section 8)
 
@@ -485,17 +504,18 @@ stale fair values introduced.
 - **Any thesis-broken trigger FIRED?** No (Step 6C). -> Not an exit.
 - **Momentum bucket?** No — this is a value/transition position. Fundamental analysis governs.
 - **Actual below BEAR on 2+ metrics?** Cannot be established (6A grid ND); on disclosed
-  metrics Q1FY27 is at/above trajectory. -> Not a trim.
-- **Actual between bear and base / at-or-above base?** On disclosed metrics, **at or above the
-  implied base** (revenue +37% YoY, margin 10.5% > green 9.5%, EPS run-rate ahead).
+  metrics Q1FY27 is at/above trajectory on margin. -> Not a trim.
+- **Actual between bear and base / at-or-above base?** On operating margin, at or above the
+  implied base; the EPS/PAT beat is quality-impaired (one-offs + QoQ deceleration, 6A caveat).
 
 **DECISION: HOLD. No add. No trim. No exit.** Rationale:
 1. No pre-committed trigger fired; discipline says HELD stands.
 2. **DO NOT ADD**, because (a) the **MASTER receivables test could not be run** this quarter
    (item #1/#2 ND); (b) **nil ECL** on a 140-day book raises provision-catch-up risk (A3-05);
-   (c) **QoQ momentum reversed** (-15.3% revenue, -20.5% EPS); (d) **63.5% of group PAT was not
-   reviewed by MSKC** in its first engagement (A3-03); (e) last-analysis CMP Rs 124 sits ABOVE
-   the entry-zone top (Rs 110) and near the Avoid line (Rs 130).
+   (c) **QoQ momentum reversed** (-15.3% revenue, -20.5% EPS) and ~40% of the PBT beat is
+   one-time (Step 4 / 6A caveat), so the headline is not add-worthy evidence; (d) **63.5% of
+   group PAT was not reviewed by MSKC** in its first engagement (A3-03); (e) last-analysis CMP
+   Rs 124 sits ABOVE the entry-zone top (Rs 110) and near the Avoid line (Rs 130).
 3. Position framing is provisional on the **06-Aug concall** resolving debtor days and the
    nil-ECL question. If the concall discloses debtor days >160 (with a second confirming
    quarter later) or a specific-customer provision, the added triggers move toward firing.
@@ -533,7 +553,7 @@ Ordered by materiality. **Every A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to 
 | 5 | Consolidated revenue fell **-15.3% QoQ** and diluted EPS **-20.5% QoQ** (sl.37), absent from the press release. What drove the sequential decline and is Q1 seasonally soft? | QoQ reversal buried under YoY framing | "Q4 seasonal peak; pipeline intact for H2" | No clear driver / order slippage | F16-6 |
 | 6 | Diluted EPS fell 20.5% QoQ while PAT fell only 7.8%, implying **~16% more shares**. What is the exact **basic EPS and weighted share count** each period, and what explains paid-up +0.07 Mn (l.216)? | Share-count comparability post-IPO; unexplained allotment | Reconciled share count; +0.07 Mn explained | Inconsistent / no answer | F10-1, A3-08 |
 | 7 | The **Wadhwa mandate is Rs 6,500 Mn GDV** (press release confirms Rs 650 Cr GDV, l.70). At 10-14% fees, ARIS earns ~Rs 65-91 Cr over 18-24 months. Please confirm it is **GDV not ARIS revenue**, and the fee-recognition schedule. | Gross-vs-net revenue-visibility conflation | "Yes GDV; fee ~X Cr recognised over Y quarters" | Conflates GDV with revenue | F16-5, F6-1 |
-| 8 | Slide 36 shows Q1-FY27 segment revenue of **1,302 / 1,774 / 361 Mn (sum 3,353)** but slides 10/26/27/29 imply **1,092 / 1,540 / 277 (sum 2,909)**. Which is the true B2B/CM/Services split? | Segment-revenue non-reconciliation across the same deck | Confirms 1,092/1,540/277; slide 36 erratum | Cannot reconcile | F16-1 |
+| 8 | Slide 36 shows Q1-FY27 segment revenue of **1,302 / 1,774 / 361 Mn (sum 3,437)** but slides 10/26/27/29 imply **1,092 / 1,540 / 277 (sum 2,909)** = reported consolidated revenue 2,908 Mn (l.475). Slide 36 over-states the top line by **528 Mn** and does not reconcile to the reported P&L. Which is the true B2B/CM/Services split? | Segment-revenue non-reconciliation across the same deck (528 Mn gap) | Confirms 1,092/1,540/277; slide 36 erratum | Cannot reconcile | F16-1 |
 | 9 | On slide 36 the **Services chart mid-period axis reads "Q3-FY26"** where B2B and CM read "Q4-FY26". Is the Rs 361 Mn Services bar Q4-FY26 or Q3-FY26, and did Services fall QoQ? | Mislabel may hide a Services QoQ decline | "Typo; Services Q4 was X, grew" | Confirms hidden decline | F16-2 |
 | 10 | What is the **current point-value CM capacity utilisation** across your 10+ plants (Notion red line <55%)? | Utilisation is a thesis pillar; deck gives only a range | ">70%, above red line" | Stays in the "~20% to 70%+" range | F16-7 |
 | 11 | Are the slide-9 KPIs (**ROE 10.6%, ROCE 17.2%, ND/E 0.02**) single-quarter annualized or trailing-twelve-month, and as of what date? | Annualizing one strong quarter as a headline return | "Clearly labels basis" | Refuses to clarify basis | F16-4 |
@@ -591,19 +611,22 @@ deck lead with exactly that [press release l.59-64; deck sl.34]. Underneath, thr
 temper it. First, the four-times profit jump is roughly half real operating improvement and
 half a one-time balance-sheet reset: finance costs fell 46% because IPO money repaid debt,
 and last year's quarter carried a Rs 2.9 Cr one-off IPO-listing charge that is simply absent
-this year [filing, PAT bridge]. Neither repeats at that size. Second, the company told a
-year-on-year story and left out that revenue actually fell 15.3% and earnings per share fell
-20.5% versus the prior quarter [deck sl.37]. Third, and most important for our thesis, the
-results filing is a profit-and-loss statement only, with no balance sheet, so the one number
-we most need, debtor days, is not disclosed this quarter, even though this quarter was our
-pre-committed test of it [this-quarter filing; deck sl.39, F16-3]. On top of that, the company
-booked zero bad-debt provision this quarter against a roughly 140-day receivable book, after
-charging Rs 4.5 Cr last quarter [filing l.482]. That combination, an undisclosed master
-metric plus a suspicious zero provision, is why the cash-quality read is INDETERMINATE and
-why the verdict is capped. No pre-committed thesis-broken trigger has actually fired, so the
-position stays HELD and unchanged [Notion Decision Status]. But we should not add: the stock
-was last near Rs 124, above our Rs 110 entry ceiling, and the receivables question is open.
-The 06-Aug concall is where debtor days and the zero-provision question must be answered.
+this year [filing, PAT bridge]. Together those account for about 40% of the pre-tax profit
+increase and do not repeat at that size, so annualising this quarter's earnings per share
+overstates the sustainable base. Second, the company told a year-on-year story and left out
+that revenue actually fell 15.3% and earnings per share fell 20.5% versus the prior quarter,
+on a rising share count [deck sl.37]. The run-rate is decelerating sequentially, not running
+ahead. Third, and most important for our thesis, the results filing is a profit-and-loss
+statement only, with no balance sheet, so the one number we most need, debtor days, is not
+disclosed this quarter, even though this quarter was our pre-committed test of it
+[this-quarter filing; deck sl.39, F16-3]. On top of that, the company booked zero bad-debt
+provision this quarter against a roughly 140-day receivable book, after charging Rs 4.5 Cr
+last quarter [filing l.482]. That combination, an undisclosed master metric plus a suspicious
+zero provision, is why the cash-quality read is INDETERMINATE and why the verdict is capped.
+No pre-committed thesis-broken trigger has actually fired, so the position stays HELD and
+unchanged [Notion Decision Status]. But we should not add: the stock was last near Rs 124,
+above our Rs 110 entry ceiling, and the receivables question is open. The 06-Aug concall is
+where debtor days and the zero-provision question must be answered.
 
 ### Part 2 — SECTOR INTELLIGENCE
 
@@ -697,7 +720,7 @@ questions_for_management:
   - {q: "What drove the -15.3% QoQ revenue and -20.5% QoQ EPS omitted from the press release?", from_finding_id: "F16-6"}
   - {q: "Exact basic EPS and weighted share count per period; explain paid-up +0.07 Mn and 16% implied share rise?", from_finding_id: "F10-1"}
   - {q: "Confirm Wadhwa Rs 6,500 Mn is GDV not ARIS revenue; fee % and recognition schedule?", from_finding_id: "F16-5"}
-  - {q: "Reconcile Q1FY27 segment revenue: slide 36 (3,353 Mn) vs slides 10/26/27/29 (2,909 Mn)?", from_finding_id: "F16-1"}
+  - {q: "Reconcile Q1FY27 segment revenue: slide 36 sum 3,437 Mn (overstates by 528 Mn) vs slides 10/26/27/29 sum 2,909 Mn = reported 2,908 Mn?", from_finding_id: "F16-1"}
   - {q: "Is the slide-36 Services bar Q3-FY26 or Q4-FY26; did Services fall QoQ?", from_finding_id: "F16-2"}
   - {q: "Current point-value CM capacity utilisation vs the 55% red line?", from_finding_id: "F16-7"}
   - {q: "Are slide-9 ROE 10.6%/ROCE 17.2%/ND-E 0.02 single-quarter annualized or TTM, and as of what date?", from_finding_id: "F16-4"}
@@ -724,10 +747,11 @@ flags:
   - "Nil ECL charge on ~140-day receivable book after Rs 4.46 Cr in Q4FY26; provision-catch-up risk; touches added thesis trigger (A3-05)."
   - "63.5% of consolidated PAT and 55.7% of revenue not reviewed by MSKC in its first engagement (A3-03); governance verdict CONCERN."
   - "Standalone-vs-consolidated PAT gap: parent core PBT ex-OI negative 3 of 4 periods; profit sits in unreviewed subsidiaries (A3-02)."
-  - "QoQ momentum reversal (revenue -15.3%, EPS -20.5%) omitted from press release and deck headline (F16-6)."
-  - "Headline ~4x PAT growth roughly half one-time (finance-cost -46% from IPO debt repayment + absence of Q1FY26 exceptional); recurring core is EBITDA +68% (Step 4)."
+  - "QoQ momentum reversal (revenue -15.3%, EPS -20.5% on rising share count) omitted from press release and deck headline (F16-6/F10-1)."
+  - "Headline ~4x PAT growth roughly half one-time: ~40% of the +20.36 Cr PBT uplift is finance-cost reset (+5.38, IPO debt repayment) + absence of Q1FY26 exceptional (+2.88); recurring core is EBITDA +68% (Step 4)."
+  - "Annualised-EPS read INVALID (A5 bear counter grafted, Step 6A): ~8.2 annualised EPS is not 'ahead of run-rate' because ~40% of the beat is one-time AND the sequential run-rate is decelerating (-15.3% rev / -20.5% EPS QoQ)."
   - "Cash conversion INDETERMINATE (no cash-flow statement); Pillar 2 (0.80x) held on stale evidence; AR context: lifetime CFO -Rs 159 Cr, FCF negative 0/5."
-  - "Deck segment revenue non-reconciliation (slide 36 vs slides 10/26/27/29) and Services axis mislabel (F16-1/F16-2)."
+  - "Deck segment revenue non-reconciliation: slide 36 sum 3,437 Mn overstates reported top line 2,908 Mn by 528 Mn (F16-1); Services axis mislabel (F16-2)."
   - "Paid-up +0.07 Mn unexplained by any corporate action; diluted-basic EPS spread collapsed to nil; implied share count inconsistent (A3-08/F10-1)."
   - "No thesis-broken trigger formally fired; Decision Status stays HELD; recommendation HOLD, NO ADD pending concall + H1 balance sheet."
 plain_language_brief_included: true

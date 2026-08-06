@@ -24,7 +24,7 @@ Results: F2-1, F6-1, F7-1, F8-1, F9-1, F11-1.
 Press release: A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19.
 Presentation: F16-01, F16-02, F16-03, F16-04, F16-05, F16-06, F16-07, F16-08, F6-01, F7-01, F14-01.
 
-Every A3 finding classified FORWARD-SIGNAL or AMBIGUOUS is carried into the Questions-for-Management table (Step 8.5 / Role 5 8F) with its from_finding_id. NEUTRAL-FACT / CONFIRMATORY-NEGATIVE findings are carried into monitorables or flags.
+Every A3 finding classified FORWARD-SIGNAL or AMBIGUOUS is carried into the Questions-for-Management table (Step 8.5 / Role 5 8F) with its from_finding_id. NEUTRAL-FACT / CONFIRMATORY-NEGATIVE findings are carried into monitorables or flags (the drafting-inconsistency NEUTRAL-FACT pair A3-16 / F14-01 is accounted for explicitly in Section C).
 
 ---
 
@@ -92,9 +92,9 @@ Every A3 finding classified FORWARD-SIGNAL or AMBIGUOUS is carried into the Ques
 | Other Income / PBT | OI / PBT | 6.6% | 1.9% | 41.1% | 2.4% |
 | Effective Tax Rate | Tax / PBT | 25.9% | 5.7% | **8.4%** | 20.6% |
 | PAT Margin | PAT / Rev | 15.07% | 13.07% | 0.94% | 13.65% |
-| Gross Margin | (Rev−Mat−ΔWIP)/Rev | 51.64% | 47.55% | **48.82%** | 51.47% |
+| Gross Margin | (Rev−Mat−ΔWIP)/Rev | 51.64% | 47.85% | **48.82%** | 51.47% |
 
-Note: Q4 FY26 derived figures inherit balancing-figure status (Note 6). Reported-EBITDA margin uses PBT-before-exceptional for clean trajectory.
+Note: Q4 FY26 derived figures inherit balancing-figure status (Note 6). Reported-EBITDA margin uses PBT-before-exceptional for clean trajectory. (Q4 FY26 gross margin = (19480.07 − 9277.15 − 881.69)/19480.07 = 47.85%, re-derived from the standalone 31.03.2026 column, results L158/L164/L165.)
 
 ## STEP 1 (CONSOLIDATED, ₹ Cr) — standalone AND consolidated always both
 
@@ -436,6 +436,7 @@ The 15 Step 8.5 questions carry forward as the next-cycle promise-vs-delivery an
 - **Filing-derived signals (win for valuation/trajectory):** revenue −30.4% YoY std; operating EBITDA margin 7.99% (−1,525 bps); core operating PBT −97.8%; PAT −95.7%; the collapse is ~100% operational (no one-off masks it), driven by volume under-absorption on newly commissioned Kheda capacity; consolidated PAT (₹0.57 Cr) below standalone (₹1.11 Cr) as Mabel swung to a ~₹0.54 Cr loss. Auditor UNMODIFIED. Cash conversion INDETERMINATE (no BS/CF at Q1).
 - **Concall/written-commentary-derived signals:** numeric margin/revenue guidance withdrawn; FY27 reframed to "stabilization/consolidation/risk mitigation" (repeated 3x); no attributed leadership quote; order-book LOI blended; pipeline down ₹1,200→₹1,100 Cr; monitored WC/cash items silent for a fourth straight period. No transcript → no credibility grade.
 - **Reconciliation:** filing and written commentary agree on the direction (weak). The narrative's two soft claims — "gross margin intact" and "net debt free" — are contradicted or unverifiable against the numbers; trust the filing.
+- **Drafting-inconsistency findings accounted (NEUTRAL-FACT, no management question warranted):** press-release **A3-16** — "Air-Cooled" (PR L53) vs "Air-Cool" (PR L80); signatory name-order flip "Desai Lay" (L36) vs "Lay Desai" (L39); a "Comparison on a YoY basis" header (L49) with no comparative column printed — and presentation **F14-01** — "EBITDA" misspelled "EBIDTA" and a "Change QoQ%" header sitting over Q1FY27-vs-Q1FY26 (YoY) columns (deck slide 10, L238/L242-243). Both are reviewed as a single cumulative drafting/governance data point: individually immaterial, no thesis impact, no Questions-for-Management row warranted; F14-01 additionally drives the read-as-YoY correction already applied in Step 1 and Step 3. Logged here so the pair is visibly accounted for, consistent with their NEUTRAL-FACT classification.
 - **Net thesis impact:** **WEAKENED to the point the pre-committed thesis-broken action is triggered** via the margin leg under the operator's aggregated logic. Two of three primary trigger legs (CFO, DD) remain UNTESTABLE until Q2.
 - **Position decision (8A-W, flagged not decided):** operator's pre-commitment implies **WATCHLIST → HARD AVOID, entry zone ₹350-500**; master decision gate **pushed to Q2 FY27 (Nov 2026)** for the half-yearly cash-flow/balance-sheet test of triggers 1 and 2. Probability re-weighting: first below-bear-on-2-metrics quarter logged; second consecutive next quarter mechanically compresses CAGR at Role 1.
 - **Protocol verdict: PROCEED WITH FLAGS** (review complete on available data; cash conversion INDETERMINATE caps optimism and is named; multiple thesis-relevant flags surfaced).
@@ -545,6 +546,7 @@ flags:
   - "Order-book LOI blended into ₹985 Cr; ₹240 Cr is FY28 so FY27-executable ~₹745 Cr < ₹800 Cr green line; LOI<20% test not computable."
   - "'Net debt free' (deck, no figure) vs finance cost +69% YoY and Notion ₹94 Cr net debt — unverifiable/likely contradicted; balance sheet withheld."
   - "Share-count base 2.003 Cr vs Notion ~1.89 Cr (~6%) — correct at Role 1; do NOT re-run valuation here."
+  - "Drafting-inconsistency pair A3-16 (PR 'Air-Cooled'/'Air-Cool', signatory name-order, 'YoY' header no comparative) and F14-01 (deck 'EBIDTA' misspelling, 'Change QoQ%' over YoY columns) — NEUTRAL-FACT, reviewed, no QFM warranted; F14-01 drives read-as-YoY."
   - "No concall transcript — Role 5 credibility ratio / archetype / Q&A analysis PENDING; peer cross-check not runnable this cycle."
   - "Auditor opinion UNMODIFIED (clean) both standalone and consolidated; no EoM."
   - "Master decision gate pushed to Q2 FY27 (Nov 2026)."

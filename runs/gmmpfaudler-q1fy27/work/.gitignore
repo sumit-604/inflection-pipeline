@@ -1,4 +1,4 @@
-# Whitelist: track only the audit-trail deliverables; ignore all A1/A2 scratch.
+# Whitelist: track only audit-trail deliverables; ignore all A1/A2 scratch.
 *
 !.gitignore
 !run_log.md
@@ -8,3 +8,5 @@
 !forensics_*.md
 !review_*.md
 !audit_*.md
+# Re-ignore known extraction scratch that matches the patterns above
+extract_layout.txt

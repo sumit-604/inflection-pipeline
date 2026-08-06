@@ -132,24 +132,26 @@ The company's own "EBITDA" (PR/deck 86.1 Cr Q1FY27, 15.5%) equals **operating** 
 | Revenue from operations | 367.08 | 555.36 | +51.3% | Strong top-line |
 | Operating EBITDA | 80.05 | 86.07 | +7.5% | Lagging revenue badly |
 | Op EBITDA margin | 21.81% | 15.50% | -631 bps | Material contraction |
-| Depreciation | 2.09 | 4.44 | +112.4% | Capex absorption ramp |
-| Finance costs | 9.72 | 28.34 | +191.6% | Debt/leverage ramp |
+| Depreciation | 2.09 | 4.44 | +112.6% | Capex absorption ramp |
+| Finance costs | 9.72 | 28.34 | +191.5% | Debt/leverage ramp |
 | EBIT (operating) | 77.96 | 81.63 | +4.7% | Near-flat |
-| Other income | 5.64 | 28.34 | +402.5% | Non-recurring (IPO proceeds parked) |
+| Other income | 5.64 | 28.34 | +402.9% | Non-recurring (IPO proceeds parked) |
 | **Core operating PBT (PBT−OI)** | 68.24 | 53.29 | **-21.9%** | **Core operations shrank** |
 | Reported PBT | 73.88 | 81.63 | +10.5% | Flattered by Other Income |
 | PAT | 54.70 | 62.51 | +14.3% | Flattered by Other Income |
 | PAT to owners | 54.15 | 61.32 | +13.2% | — |
 | EPS (share-adjusted) | 3.03 | 2.84 | -6.3% | Fell on IPO dilution |
 
+Raw-Millions derivation of the YoY% cells (per A5 arithmetic-precision correction): Depreciation 44.37/20.87 − 1 = +112.6% (RL448); Finance costs 283.41/97.23 − 1 = +191.5% (RL447); Other income 283.41/56.36 − 1 = +402.9% (RL439). Each ties to the company's own deck (S7:L229 112.6%, S7:L232 191.5%, S7:L233 402.9%).
+
 ### 2B. STANDALONE YoY (Q1FY27 vs Q1FY26)
 
 | Metric | Q1FY26 | Q1FY27 | YoY % | Verdict |
 |---|---|---|---|---|
 | Revenue from operations | 339.67 | 264.24 | -22.2% | Contraction |
-| Operating EBITDA | 72.96 | 49.43 | -32.3% | Sharp fall |
+| Operating EBITDA | 72.96 | 49.43 | -32.2% | Sharp fall |
 | Op EBITDA margin | 21.48% | 18.71% | -277 bps | Contraction (employee cost +60.7%) |
-| Depreciation | 1.09 | 3.19 | +192.7% | — |
+| Depreciation | 1.09 | 3.19 | +193.8% | — |
 | Finance costs | 8.87 | 7.89 | -11.0% | Lower |
 | Other income | 5.92 | 18.89 | +219.1% | Non-recurring |
 | **Core operating PBT (PBT−OI)** | 63.00 | 38.35 | **-39.1%** | **Steep core decline** |
@@ -157,13 +159,15 @@ The company's own "EBITDA" (PR/deck 86.1 Cr Q1FY27, 15.5%) equals **operating** 
 | PAT | 51.04 | 42.51 | -16.7% | — |
 | EPS (share-adjusted) | 2.86 | 1.97 | -31.1% | Fell on dilution + lower PAT |
 
+Raw-Millions derivation of the corrected YoY% cells (per A5): Depreciation 31.94/10.87 − 1 = +193.8% (RL167; deck S8:L258 prints 193.7%); Operating EBITDA (494.39/729.61) − 1 = -32.2% where Q1FY27 Op EBITDA = PBT 572.43 + D 31.94 + Fin 78.93 − OI 188.91 = 494.39 and Q1FY26 = 689.21 + 10.87 + 88.72 − 59.19 = 729.61 (deck S8:L256 prints (32.2)%).
+
 ### 2C. Six mandatory diagnostics
 
 1. **Did revenue grow YoY?** Consolidated yes, +51.3% (367.08 to 555.36). Standalone no, -22.2% (339.67 to 264.24). The group growth is entirely subsidiary/Energy-driven; the parent (telecom/ICT EPC) base contracted. Management's new FY27E guidance is Rs3,200-3,400 Cr (S24:L664); Q1 consolidated of Rs555.36 Cr is 16.8% of the Rs3,300 Cr midpoint, so the guidance requires heavy H2 back-loading (Q4FY26 alone was Rs1,096.78 Cr).
 2. **Op EBITDA margin YoY?** Consolidated contracted: Q1FY27 15.50% vs Q1FY26 21.81% = **-631 bps**. Standalone 18.71% vs 21.48% = -277 bps. The consolidated contraction is driven by mix shift into lower-margin BESS manufacturing: consolidated cost of materials jumped from Rs39.66 Cr to Rs375.32 Cr (RL442, +846%) while EPC project expense fell from Rs224.87 Cr to Rs97.45 Cr (RL443).
 3. **Core operating PBT (ex-OI) YoY?** **Fell on both bases** — consolidated -21.9% (68.24 to 53.29), standalone -39.1% (63.00 to 38.35). Reported PAT rose +14.3% consolidated. **The headline PAT growth is not core-operational; it is Other Income.** Named gap: core PBT -21.9% vs reported PAT +14.3% = a ~36-point wedge, entirely Other Income and a lower tax rate.
 4. **What drove the gap between core PBT and reported PAT (consolidated)?** Other Income +Rs22.70 Cr (5.64 to 28.34); Finance costs -Rs18.62 Cr (a drag, 9.72 to 28.34); D&A -Rs2.35 Cr; tax +Rs0.06 Cr (near-flat). Other Income alone (+22.70) exceeds the entire reported PBT increase (+7.75). Strip Other Income back to the prior-year level and PAT would be roughly Rs45.1 Cr, ~17% below the prior-year Rs54.70 Cr.
-5. **Are D&A and finance costs scaling faster than revenue?** Yes, far faster. Consolidated D&A +112.4% and finance costs +191.6% vs revenue +51.3%. This is the classic capex/leverage absorption gap: the BOO/manufacturing build (PREPL capex Rs486.0 Cr to date, RL236-238) is inflating the fixed-cost and interest base ahead of the revenue it will produce. ROCE compresses until volume catches up.
+5. **Are D&A and finance costs scaling faster than revenue?** Yes, far faster. Consolidated D&A +112.6% (RL448) and finance costs +191.5% (RL447) vs revenue +51.3%. This is the classic capex/leverage absorption gap: the BOO/manufacturing build (PREPL capex Rs486.0 Cr to date, RL236-238) is inflating the fixed-cost and interest base ahead of the revenue it will produce. ROCE compresses until volume catches up.
 6. **Is Other Income concentration changing?** Sharply. Consolidated Other Income/PBT rose from 7.6% to 34.7%; standalone from 8.6% to 33.0%. The IPO net proceeds still parked (Rs146.90 Cr unutilised, RL228) are the likely treasury source. This is timing, not recurring operational income; strip it and the quarter is a core decline.
 
 **Filing oddity flagged:** consolidated Other Income (RL439) and Finance costs (RL447) are BOTH exactly Rs28.34 Cr in Q1FY27. A3 flags this as a coincidence to confirm (no netting/reclassification asserted) — carried to Questions.
@@ -205,7 +209,7 @@ Source: deck slide 6 (S6) trend charts + filing.
 **Answers.**
 - **% of PAT change from recurring core vs non-recurring:** the core operating engine (EBIT) contributed +Rs3.67 Cr; the single largest positive driver was Other Income at +Rs22.70 Cr (non-recurring), partly offset by finance costs -Rs18.62 Cr. On a core basis, operating PBT ex-Other-Income FELL Rs14.95 Cr. The reported +Rs7.81 Cr PAT gain is not core-driven.
 - **If Other Income reverts to prior-year level (Rs5.64 Cr):** PBT ~Rs58.93 Cr, PAT ~Rs45.1 Cr, i.e. ~-17.5% YoY. The genuine run-rate is a decline.
-- **D&A / finance costs at steady state?** No, still ramping hard (+112% / +192%) as the BOO/manufacturing capex commissions. Steady-state interest and depreciation will be higher again as the Rs146.90 Cr unutilised IPO proceeds and further debt fund the 5-to-10 GWh build.
+- **D&A / finance costs at steady state?** No, still ramping hard (D&A +112.6% RL448 / finance costs +191.5% RL447) as the BOO/manufacturing capex commissions. Steady-state interest and depreciation will be higher again as the Rs146.90 Cr unutilised IPO proceeds and further debt fund the 5-to-10 GWh build.
 - **Tax adjustments?** Consolidated ETR fell to 23.4% (from 26.0%), ~174 bps below the 25.17% statutory rate; standalone booked a deferred-tax credit of Rs1.44 Cr (RL175). Sustainability unclear — flagged (FN6).
 
 ---
@@ -225,14 +229,14 @@ Source: deck slide 6 (S6) trend charts + filing.
 | Inventory level | ND | ND | ND (trigger #7 unscorable) |
 | Inventory build (flow) | (20.58) Q1FY26 | **(73.22) Q1FY27** | **+255.8% larger build — cash absorption (RL445)** |
 | Payable days / CCC | ND | ND | ND |
-| Net Debt / (Net Cash) | ND | ND | ND (trigger #14 unscorable; finance costs +191.6% signal rising leverage) |
+| Net Debt / (Net Cash) | ND | ND | ND (trigger #14 unscorable; finance costs +191.5% signal rising leverage) |
 | Promoter pledge | ND | ND | ND |
 
 **Mandatory questions.**
 - **CFO/PAT vs Pillar 2 band?** Cannot be tested — no CFO. The one working-capital tell in the filing is a Rs73.22 Cr consolidated inventory **build** this quarter, 3.6x the year-ago build, directly consistent with the historical bear thesis (cumulative CFO/PAT = -1.07x at analysis). Per CLAUDE.md, INDETERMINATE cash conversion does not resolve to PROCEED; it caps the verdict at PROCEED WITH CAVEATS with the missing evidence named. Named missing evidence: Q1 FY27 CFO, receivables, inventory level, net debt.
 - **WC drag structural or growth-induced?** Undeterminable from this filing. The inventory build is consistent with a BESS-manufacturing build cycle (growth-induced) but the historical CARO debtor-mismatch record and the -1.07x cumulative CFO/PAT argue for a structural component. Defer to H1 CFO.
-- **CWIP capitalisation?** ND — no balance sheet. D&A +112% suggests assets are commissioning.
-- **Net debt within projection?** ND — no balance sheet. Finance costs +191.6% YoY is the forward warning.
+- **CWIP capitalisation?** ND — no balance sheet. D&A +112.6% suggests assets are commissioning.
+- **Net debt within projection?** ND — no balance sheet. Finance costs +191.5% YoY is the forward warning.
 
 ---
 
@@ -272,7 +276,7 @@ Instruction: assess each of the 20 pre-committed triggers (17H #1-15, 19G #16-20
 | 11 | Rs740 Cr RPT classification | Arm's length disclosed | Material RPT not voted | Not an item in a Q1 limited-review filing (AR/AGM matter) | **UNSCORABLE-this-quarter** |
 | 12 | Subsidiary purposes disclosure | Disclosed in FY26 AR | Zero disclosure | FY26 AR matter, not this filing | **UNSCORABLE-this-quarter** |
 | 13 | New CARO observation | None | Any new red flag -> EXIT | Limited review, unmodified opinion, no CARO in scope (RL48-50); no new observation | **GREEN** (none this quarter; CARO is annual, next test at FY27 AR) |
-| 14 | FY27 Net D/E quarterly | < 0.25x | > 0.40x by Q3 FY27 | No balance sheet; finance costs +191.6% signal rising leverage | **UNSCORABLE-this-quarter** |
+| 14 | FY27 Net D/E quarterly | < 0.25x | > 0.40x by Q3 FY27 | No balance sheet; finance costs +191.5% signal rising leverage | **UNSCORABLE-this-quarter** |
 | 15 | MSEDCL VGF disbursement | >= Rs100 Cr of Rs364.5 Cr | Stalled / returned | Not disclosed; Note 6 states PREPL capex Rs486.0 Cr incurred but no VGF receipt figure (RL236-239) | **UNSCORABLE-this-quarter** |
 | 16 | Q1 FY27 ROCE >= 17% (recovery directional) | >= 17% | — | No BS | **UNSCORABLE-this-quarter** |
 | 17 | Q2 FY27 ROCE >= 18% (recovery binary) | >= 18% | — | Future quarter | **UNSCORABLE-this-quarter** |
@@ -333,7 +337,7 @@ Decision Status verified **HELD**. No thesis-broken condition FIRED (6C). The qu
 **Recommendation: HOLD the existing SMALL starter; take no add, no trim on this print.** The decision is deferred to the H1 FY27 (Q2) filing, which resolves the binding CFO gate and unlocks 14 of the 20 triggers. This is a flag-and-wait quarter, not an action quarter. The human decides; A4 flags.
 
 ### 8B. Trigger refinement
-- Original ADD: dip to Rs180-195 OR Q2 positive CFO + Tier 1 share rising >30%. **Tighten:** given the Rs73.22 Cr inventory build and finance costs +191.6%, require Q2 CFO to be positive AND H1 receivables <= Rs2,200 Cr before any add on fundamentals (not price alone).
+- Original ADD: dip to Rs180-195 OR Q2 positive CFO + Tier 1 share rising >30%. **Tighten:** given the Rs73.22 Cr inventory build and finance costs +191.5%, require Q2 CFO to be positive AND H1 receivables <= Rs2,200 Cr before any add on fundamentals (not price alone).
 - Original EXIT: Q1+Q2 both negative CFO OR Tier 3 >65% OR new CARO. **Unchanged**; note Q1 CFO is unresolved, so the two-quarter test now effectively runs on H1 CFO plus the Q2 stand-alone read when disclosed.
 
 ### 8C. Single cleanest metric for next quarter
@@ -354,7 +358,7 @@ Every FORWARD-SIGNAL and AMBIGUOUS A3 finding across all three documents is disc
 | 5 | What BOO revenue (Rs Cr) was booked in Q1 FY27 from MSEDCL (375 MWh commissioned), and how much MSEDCL VGF (of Rs364.5 Cr) was disbursed? | BOO revenue trigger #5 and VGF trigger #15 both unscorable | BOO >= Rs150 Cr, VGF >= Rs100 Cr received | BOO < Rs100 Cr / one-off, VGF stalled | R-FN5 |
 | 6 | Is the 15.5% consolidated Op EBITDA margin the new structural level for a manufacturing-weighted mix, or a transient inventory-timing effect? | Margin -631 bps YoY on a multi-quarter downtrend | Transient; mix normalises, margin recovers to 18%+ | 15.5% is the new manufacturing-mix floor | PR-FND07 |
 | 7 | Reconcile the two order-book totals (deck Rs11,337.9 Cr vs Rs10,803.3 Cr); define "executable" vs gross; and give the order book as of June 30, 2026. Also clarify the 78.1% chart label on the order-wins slide. | Two totals in one deck; order book stated as of Aug 5 not June 30 | Clean reconciliation, June-30 book >= Rs10,800 Cr | Definitions shift, book overstated | PP-FND03, PR-FND11, PP-FND09 |
-| 8 | What is the total capex envelope for the 5-to-10 GWh build, the funding split (debt vs IPO proceeds vs internal accrual), and the expected net D/E by Q3 FY27? | D&A +112% and finance costs +192% YoY; leverage ramp, trigger #14 | Funded from IPO proceeds + accruals, D/E stays < 0.25x | Debt-funded, D/E toward 0.40x | PP-FND11, PR-FND03 |
+| 8 | What is the total capex envelope for the 5-to-10 GWh build, the funding split (debt vs IPO proceeds vs internal accrual), and the expected net D/E by Q3 FY27? | D&A +112.6% and finance costs +191.5% YoY; leverage ramp, trigger #14 | Funded from IPO proceeds + accruals, D/E stays < 0.25x | Debt-funded, D/E toward 0.40x | PP-FND11, PR-FND03 |
 | 9 | Have NEC XON, MEGMEET or the three MoUs converted to any signed order with a value and shipment date, and when is the first non-government revenue expected? | Non-govt pathway (Sec 22 c) unproven; trigger #10 needs a signed contract | First signed order with value disclosed | Still MoUs only, zero orders | R-FN4, PR-FND04 |
 | 10 | FY27E guidance is Rs3,200-3,400 Cr but Q1 was Rs555 Cr. What is the quarterly phasing and which execution milestones underpin H2 delivery? | Q1 is 16.8% of midpoint; heavy back-loading required | Named milestone-backed H2 ramp | Vague, back-end loaded on hope | PP-FND10 |
 | 11 | Confirm the exact 5 GWh commissioning date and current utilisation, and the first-container date for the fabrication facility. | 5 GWh trigger #3 and container fab trigger #4 | 5 GWh live and utilised; containers in Q2 | Slippage, low utilisation | PR-FND01, PR-FND02, PP-FND07 |
@@ -417,7 +421,7 @@ Specificity is revenue/capacity heavy and cash/margin light. Defensive-language 
 |---|---|---|
 | "Strong start... robust revenue growth" | Revenue +51.3% consolidated (RL438) | CONFIRMED on revenue |
 | "PAT up 14.3%" | PAT +14.3% (RL458) but EPS -6.3% (RL485), core PBT -21.9% | PARTIALLY CONFIRMED / materially incomplete |
-| "Continued BESS expansion" | 5 GWh reached, D&A +112%, finance costs +192% | CONFIRMED (with the capex/leverage cost) |
+| "Continued BESS expansion" | 5 GWh reached, D&A +112.6%, finance costs +191.5% | CONFIRMED (with the capex/leverage cost) |
 | Margin health (implied by "strong") | Op EBITDA margin -631 bps YoY | CONTRADICTED by the numbers |
 | Order book Rs10,803 Cr | not a filing line (KPI); internally 8,453 + 2,350.3 = 10,803.3 | UNVERIFIABLE vs filing; internally consistent |
 
@@ -463,7 +467,7 @@ Basis: unmodified audit opinion, headline numbers tie across all three documents
 - **Flag:** Op EBITDA margin -631 bps YoY; multi-quarter downtrend.
 - **Flag:** EPS fell 3.03 to 2.84 on IPO dilution despite +51% revenue.
 - **Flag:** consolidated earnings now ~52% subsidiary-revenue-sourced, including two unreviewed foreign subsidiaries.
-- **Flag:** Rs73.22 Cr inventory build (+256% YoY) alongside finance costs +192% — leverage/WC absorption.
+- **Flag:** Rs73.22 Cr inventory build (+256% YoY) alongside finance costs +191.5% — leverage/WC absorption.
 - **Flag:** only new order is a PSU (BSNL Rs264 Cr); non-government pathway still unproven.
 
 Position: **HOLD** the SMALL starter (branch 8A). No add, no trim. Decision deferred to the H1 FY27 (Q2) filing, which resolves the CFO gate. Human decides; A4 flags.
@@ -517,7 +521,7 @@ The company makes money three ways: it manufactures BESS and telecom power gear 
 
 This quarter showed the model drifting toward manufacturing and subsidiaries. Group revenue is now about 52 percent subsidiary-sourced, up from 7.5 percent a year ago (this quarter's filing, RL438 vs RL158). The parent now runs large captive EPC work for its own subsidiaries: inter-company sales that get cancelled out were Rs251 crore, about half of the parent's gross revenue (this quarter's deck, S8). That raises a fair question about whether that captive work is priced at arm's length.
 
-The unit economics are under strain in the build phase. Depreciation rose 112 percent and interest cost rose 192 percent year on year, far ahead of revenue at 51 percent (this quarter's filing). That is the cost of building factories and BOO assets before they earn. It is normal for a capex cycle, but it compresses returns until the volume shows up, and it makes the missing cash flow number even more important. [Provenance: all figures this quarter's filing.]
+The unit economics are under strain in the build phase. Depreciation rose about 113 percent and interest cost rose about 192 percent year on year, far ahead of revenue at 51 percent (this quarter's filing: D&A +112.6% RL448, finance costs +191.5% RL447). That is the cost of building factories and BOO assets before they earn. It is normal for a capex cycle, but it compresses returns until the volume shows up, and it makes the missing cash flow number even more important. [Provenance: all figures this quarter's filing.]
 
 ## 4. Competition intelligence
 
@@ -586,11 +590,12 @@ flags:
   - "EPS fell 3.03 to 2.84 on IPO dilution despite +51% revenue"
   - "Standalone revenue -22.2% while consolidated +51.3%; ~52% of group revenue now subsidiary-sourced"
   - "Inter-company eliminations Rs250.9 Cr = 49% of gross standalone revenue (captive EPC / RPT quality)"
-  - "Inventory build Rs73.22 Cr (+256% YoY) with finance costs +191.6% and D&A +112.4% (WC/leverage absorption)"
+  - "Inventory build Rs73.22 Cr (+256% YoY) with finance costs +191.5% and D&A +112.6% (WC/leverage absorption)"
   - "Consolidated segment note blank in filing; Energy segment (implied ~Rs442 Cr) unverifiable; triggers 5,6 unscorable"
   - "18 of 20 monitoring triggers UNSCORABLE this quarter; only new order is PSU (BSNL Rs264 Cr); non-govt pathway unproven"
   - "Two unreviewed foreign subsidiaries; standalone Note 4 share-count transposition; CIN L/U prefix mismatch (drafting control)"
   - "No thesis-broken condition FIRED; Decision Status stays HELD; no peer concall in window this run"
 plain_language_brief_included: true
 review_path: "/home/user/inflection-pipeline/runs/pacedigitk-q1fy27/work/review_pacedigitk_q1fy27.md"
+# arithmetic-precision fix (A5 loop-back): re-derived from raw Mn — Consolidated D&A YoY 112.4->112.6% (RL448), Consolidated finance-cost YoY 191.6->191.5% (RL447), Consolidated Other Income YoY 402.5->402.9% (RL439), Standalone D&A YoY 192.7->193.8% (RL167), Standalone Op EBITDA YoY -32.3->-32.2% (494.39/729.61); echoes updated in Step 2C/2B derivation notes, Step 4, Step 5, Step 6B, Step 8B, Q8, Step 7A, verdict flags, and plain-language brief. No change to verdict, cash-conversion, Decision Status, triggers, questions, or brief content.
 ```

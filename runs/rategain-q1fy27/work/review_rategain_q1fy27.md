@@ -20,7 +20,7 @@
 **No ledger row is unreviewed.** Proceeding to Step 1.
 
 **Pre-flight (Step 0) settled:**
-- **0A Notion/thesis:** NONE. No `companies/RATEGAIN.md`, no prior Notion page. This is **first-time coverage**; there is **no Decision Status, entry zone, tripwire, or projection set on file**. Per injected instruction, findings are framed as a **fresh baseline**, not against a held position. Where a prior-quarter comparison is required but unavailable in-repo, it is named and pushed to monitorables. No fabricated Decision Status.
+- **0A Notion/thesis:** NONE. No `companies/RATEGAIN.md`, no prior Notion page. This is **first-time coverage**; there is **no Decision Status, entry zone, tripwire, or projection set on file**. Per injected instruction, findings are framed as a **fresh baseline**, not against a held position. Where a prior-quarter comparison is required but unavailable in-repo, it is named and pushed to monitorables. No fabricated Decision Status. **[UPDATED at concall merge — see Section I.7: a LIVE Notion thesis was verified this session (Decision Status WATCHLIST; entry Rs390-490; destination PE 19x/24x) and now governs the concall reconciliation.]**
 - **0B Units:** results filing printed in **Rs million**; conversion **x0.1 to Rs Crore** (header line 8). Deck and press release printed natively in **Rs Cr** (x1). Loan-prepayment intimation is in **USD** (no INR rate in source; not converted).
 - **0C Share-count changes:** 493,689 ESOPs exercised in the quarter; 260,133 shares issued 18 Jun 2026, and 37,453 shares issued 28 Jul 2026 (post quarter-end) — res notes 6/7 (res L271-277, L629-634). Paid-up capital moved only +Rs 0.26 mn (res L218/L545). No split/bonus/buyback. QIP referenced in Note 4/5 (Rs 11,151.20 mn) has **no visible paid-up footprint** in the periods shown (A3-F10) — flagged, question raised.
 - **0D Auditor opinion:** **UNMODIFIED** limited-review conclusion, both standalone (res L121-128) and consolidated (res L372-379). No Emphasis of Matter. One Other Matter each — the RateGain Employees Benefit Trust carve-out (revenue NIL, net loss Rs 0.004 mn; res L142-151, L393-403). No going-concern paragraph. **AMBER note (A3-F14):** the consolidated report gives **no component-auditor Other Matter for the 9 newly-acquired foreign Sojern entities** — question raised.
@@ -126,7 +126,7 @@ Note: the "Add: Sojern deferred consideration" and "Adj." rows are **company-def
 | EPS basic (Rs) | 3.98 | 8.03 | +101.8% (res L549) | Up |
 
 **Six mandatory diagnostics:**
-1. **Did revenue grow YoY?** Yes, +187.6% (272.9 -> 785.0). But this is a full-quarter Sojern consolidation vs a Sojern-free base. Deck segment growth exposes the split: **Distribution +3.1%** (organic core, near-flat) vs **MarTech +341.2%** (Sojern-driven), with MarTech now **81.1% of revenue mix** (deck L380/L394/L851, FN7). Organic growth is not separately disclosed — flagged, question raised.
+1. **Did revenue grow YoY?** Yes, +187.6% (272.9 -> 785.0). But this is a full-quarter Sojern consolidation vs a Sojern-free base. Deck segment growth exposes the split: **Distribution +3.1%** (organic core, near-flat) vs **MarTech +341.2%** (Sojern-driven), with MarTech now **81.1% of revenue mix** (deck L380/L394/L851, FN7). Organic growth is not separately disclosed — flagged, question raised. **[UPDATED at concall merge: management subsequently disclosed combined-entity organic growth of 17.5% YoY on the call — call L8/L34/L56 — see Section I.]**
 2. **Op EBITDA margin YoY?** Expanded: **21.9% (Q1FY27) vs 18.2% (Q1FY26) = +3.7 pp** (deck L749). Adjusted basis 24.6% vs 18.2%. The lift is partly a mix effect (higher-margin acquired revenue), not proven organic operating leverage.
 3. **Core operating PBT ex-OI YoY?** Grew 40.7 -> 117.5 (+188.9%). So headline growth is not an Other-Income mirage at the consolidated level (Other Income is only 2.6% of PBT this quarter, L759). **The quality caveat is different: it is real profit but inorganic and acquisition-financed.**
 4. **Gap between core PBT and reported PAT growth?** Core PBT +188.9% vs reported PAT +102.2%. The compression is explained by three structural step-ups: amortisation of acquisition intangibles (+27.0 Cr YoY), finance costs (+16.2 Cr YoY), and the loss of prior-year Other Income (-17.6 Cr YoY). Each is quantified in the Step-4 bridge.
@@ -202,7 +202,7 @@ Reported PAT change: 46.9 -> 94.9 = **+48.0 Cr**. PBT change: 61.3 -> 120.6 = +5
 ## STEP 6 — RECONCILIATION vs THESIS
 
 ### 6A. Variance vs Notion Projections
-**No Notion projections exist (first-time coverage).** Bear/Base/Bull, thesis-broken conditions, watchlist checklist, and growth triggers are all **ABSENT**. Per instruction, this review **establishes the baseline**; it does not reconcile against a prior thesis. The probability re-weighting rule (2 consecutive sub-bear quarters) cannot fire without a projection set.
+**No Notion projections exist (first-time coverage).** Bear/Base/Bull, thesis-broken conditions, watchlist checklist, and growth triggers are all **ABSENT**. Per instruction, this review **establishes the baseline**; it does not reconcile against a prior thesis. The probability re-weighting rule (2 consecutive sub-bear quarters) cannot fire without a projection set. **[UPDATED at concall merge: a live Notion thesis was verified this session and the full thesis-broken/pre-condition reconciliation is executed in Section I.7.]**
 
 | Metric | Bear | Base | Bull | Actual Q1FY27 | Lands In |
 |---|---|---|---|---|---|
@@ -212,7 +212,7 @@ Reported PAT change: 46.9 -> 94.9 = **+48.0 Cr**. PBT change: 61.3 -> 120.6 = +5
 | Net Debt | ND | ND | ND | 615.4 (L336) | No baseline |
 
 ### 6B / 6C / 6D — Watchlist / Thesis-Broken / Growth Triggers
-All **N.A. this run** — no Notion checklist, no thesis-broken conditions, no growth triggers on file. **Baseline monitorables and catalysts are constructed fresh in Section E below** from the A3 commitment registers, to seed the first Notion entry.
+All **N.A. this run** — no Notion checklist, no thesis-broken conditions, no growth triggers on file. **Baseline monitorables and catalysts are constructed fresh in Section E below** from the A3 commitment registers, to seed the first Notion entry. **[UPDATED at concall merge: thesis-broken triggers and buy pre-conditions from the live Notion thesis are now re-evaluated against the call in Section I.7.]**
 
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 **No destination-PE model exists on file (first coverage).** No pillar can be "re-validated" against a prior value. What this quarter contributes as **baseline inputs** for a future Section 1B v3.3 build (flagged, not computed here):
@@ -224,7 +224,7 @@ All **N.A. this run** — no Notion checklist, no thesis-broken conditions, no g
 
 ## STEP 8 — POSITION DECISION (branch 8A-W: non-held / no prior position)
 
-**Decision Status verified (Step 0A):** NONE on file. There is **no held position** and **no prior Decision Status**; therefore the held-name branch (8A) does not apply. Per protocol, the **8A-W (watchlist / non-held)** branch governs, and its output is an **updated entry zone / gate / Decision Status if warranted** — with no trim/exit mechanics.
+**Decision Status verified (Step 0A):** NONE on file. There is **no held position** and **no prior Decision Status**; therefore the held-name branch (8A) does not apply. Per protocol, the **8A-W (watchlist / non-held)** branch governs, and its output is an **updated entry zone / gate / Decision Status if warranted** — with no trim/exit mechanics. **[UPDATED at concall merge: the live Notion thesis confirms Decision Status WATCHLIST with entry zone Rs390-490 — Section I.7 reconciles the call to it. The 8A-W baseline below is consistent with, and now superseded by, that live status.]**
 
 - **No thesis-broken condition can have FIRED** (none defined). 
 - **Actual vs bear/base:** unmeasurable (no projections). 
@@ -240,7 +240,7 @@ Secondary: **NRR back above 106 sustained** (rebounded to 106.8 in Q1FY27 after 
 
 # SECTION B — DECK / PRESS-RELEASE NARRATIVE REVIEW (ROLE 5, no concall)
 
-No concall transcript this run, so the full 9-step Role 5 protocol (participants, Q&A decomposition, promise-vs-delivery scoring, credibility ratio) is **not executable**. Role 5 is applied to the **investor-presentation and press-release narrative** for claims inventory, forward statements, tone/specificity, cross-reference to filing, and "what was NOT discussed."
+No concall transcript this run, so the full 9-step Role 5 protocol (participants, Q&A decomposition, promise-vs-delivery scoring, credibility ratio) is **not executable**. Role 5 is applied to the **investor-presentation and press-release narrative** for claims inventory, forward statements, tone/specificity, cross-reference to filing, and "what was NOT discussed." **[UPDATED at concall merge: the Q1 FY27 earnings-call transcript later became available; the full 9-step Role 5 protocol IS executed over it in the newly appended Section I. This Section B remains the deck/PR narrative pass and is not rewritten.]**
 
 ### B1. Claims inventory (management commentary + press release)
 | # | Claim | Type | Quantified? | Source |
@@ -331,7 +331,7 @@ Note on PPA vs balance-sheet carrying values: the PPA goodwill (Rs 1,302.0 Cr) a
 
 # SECTION D — QUESTIONS FOR MANAGEMENT (every A3 FORWARD-SIGNAL/AMBIGUOUS finding -> >=1 question)
 
-Channel: **IR email / next concall** (no concall scheduled in inputs). Ordered by thesis materiality.
+Channel: **IR email / next concall** (no concall scheduled in inputs). Ordered by thesis materiality. **[UPDATED at concall merge: the Q1 FY27 concall has since answered/partially-answered several of these; per-question ANSWERED/PARTIAL/DODGED status with call-line cites is in Section I.4, and the forward question list for NEXT quarter is refreshed in Section I. This table is retained unchanged as the pre-call record.]**
 
 | # | Question | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|
@@ -394,73 +394,321 @@ Provenance: **this quarter's filings**; **no named-peer/Notion competitive work 
 
 ---
 
+# SECTION I — ROLE 5 CONCALL ANALYSIS (Q1 FY27 earnings call)
+
+*Appended after the Role 4 results review and Section B deck-narrative pass. This section executes the full Role 5 (Quarterly Concall Analysis Protocol v1.1) 9-step sequence over the Q1 FY27 earnings-call transcript (A1 extract `extract_concall_rategain_q1fy27.txt`, A2 ledger `ledger_concall_rategain_q1fy27.md`, A3 forensics `forensics_concall_rategain_q1fy27.md`). Existing Role 4 sections A-F are NOT rewritten; where the call changes a prior conclusion the change is tagged and localised here. Call-line citations ("call L..") are the transcript's own embedded line numbers.*
+
+## I.0 — CONCALL LEDGER-RECONCILIATION PREAMBLE + PARTICIPANTS (contractual, before Step 1)
+
+**Concall ledger** (`ledger_concall_rategain_q1fy27.md`) contains: **8 participants**, **31 speaker turns**, **14 questions**, **59 management-stated numbers**, **14 forward/hedge phrases** (8 forward-commitment FC1-FC8 + 6 hedge H1-H6). **A2 GATE = pass** (grep vs sweep match on every category). **All 31 turns / 14 questions / 59 numbers / 14 forward-hedge rows reviewed.** No ledger row is unreviewed.
+
+**A3 concall findings incorporated (all of them):** **FN1, FN2, FN3, FN4, FN5, FN6, FN7, FN8, FN9, FN10, FN11, FN12, FN13, FN14** (A3 checklist: F6, F7, F17 = FINDING; F1-F5, F8-F16 = N.A. by concall doctype, each with a one-line basis; GATE A3 = pass, 17/17 statused).
+
+**Attribution caveat (mandatory):** the auto-generated transcript's speaker attributions are **garbled** — the founder-CEO is transcribed variously as "Bhan Chopra / Anu / Monu / Manu / Mahal" (= Bhanu Chopra) and the same "Bhan Chopra" string also labels the BKN moderator (call L2/L6, A1 header note). This caps **name-level** attribution confidence but **not content-level** confidence: every quoted number ties to a management turn at a cited line, and all headline figures reconcile to the filing/deck (Section I.2). Content is reliable; who-said-which-word is not always resolvable.
+
+**Participants (Step 0B):**
+
+| Role | Name (as transcribed) | Side | First line | Note |
+|---|---|---|---|---|
+| Moderator / IR | "Mr. Bhan Chopra from BKN" | Call admin | call L6 | Hosting/IR firm BKN; ATTRIBUTION_GARBLED (name collides with CEO variant) |
+| Founder & CEO | Bhanu Chopra ("Anu/Monu/Manu/Mahal") | Management | call L8 | Promoter/founder PRESENT and answering throughout — positive candour signal |
+| CFO | "Ankit" | Management | call L34 | Answered the financial block (margins, debt, FCF, net worth) — appropriate domain |
+| Analyst | Nitin, Invest | Buy/sell-side | call L40 | Q1 pricing power / deal velocity |
+| Analyst | Prayer, Bourbon Capital | Buy-side | call L52 | Sharpest questioner — organic growth, guidance, Sojern standalone margin |
+| Analyst | Deepak, Sundaram Mutual Fund | Buy-side | call L82 | New-contract reporting, distribution run-rate, ex-Sojern MarTech |
+| Analyst | Ash Par, "Leal" (?) | Analyst | call L100 | Product/pricing, gross margin, M&A — FIRM_UNCERTAIN in source |
+| Individual investor | Unnamed | Retail | call L112 | Airbnb-as-threat, "others" 6.5% bucket |
+
+**Participant-list flags:** promoter/founder-CEO present (no promoter-absence yellow flag). CFO answered only financial-domain questions (no CFO-answering-operational yellow flag). Buy-side participation present (Bourbon, Sundaram) — not an orchestrated-softball call; the hosting broker (BKN) did not lead with softballs. Q&A spans call L40-L122 (28 of 31 turns) vs opening/CFO/closing L4-L36 + L124-L126 — comfortably clears the >=60%-effort-on-Q&A rule.
+
+**Structure (Step 0C):** same-day-with-filing earnings call (filing + deck + call all dated on/around 6 Aug 2026). Single text transcript, 126 source lines, 14 analyst questions across 5 named/So questioners plus one retail investor. **Business type (Step 0E):** STANDARD operating business (SaaS) — Step 2 (not lender Step 2L) guidance set applies.
+
+**Promise-vs-delivery status (Step 3):** this is the **FIRST concall under the Role 5 protocol** for RATEGAIN — there is **no prior concall log**, so the historical delivery audit (3A) and the trailing-4-quarter credibility ratio (3B) **cannot be computed** and are NOT fabricated. The Promise Register (Section I.5) begins the cumulative log from this quarter forward. Consequently the 6E archetype is stated provisionally (specificity known; credibility history absent).
+
+## I.1 — OPENING-REMARKS CLAIMS INVENTORY (Step 1)
+
+Every quantified claim in the CEO opening (call L8-L30) and CFO remarks (call L34-L36). Ledger # in brackets.
+
+| # | Claim | Type | Quantified? | Call line |
+|---|---|---|---|---|
+| #1/#25 | Revenue Rs 785 Cr, "highest ever quarterly", up 188%/187.6% YoY | Backward | Yes | L8 / L34 |
+| #2 | Annualised revenue run-rate Rs 3,140 Cr (all-time high) | Backward (derived) | Yes | L8 |
+| #3/#27 | **Organic revenue growth, combined entity, 17.5% YoY** | Backward | Yes | L8 / L34 |
+| #4/#31 | Adjusted EBITDA margin 24.6% / Rs 193.4 Cr (record) | Backward (adj) | Yes | L8 / L34 |
+| #5 | Adjusted EBITDA up 289% YoY | Backward (adj) | Yes | L8 |
+| #32 | Reported EBITDA Rs 171.5 Cr, margin 21.9% | Backward | Yes | L34 |
+| #34 | Adjusted PAT Rs 116.8 Cr, margin 14.9%, up 148.8% | Backward (adj) | Yes | L34 |
+| #35 | Reported PAT Rs 94.9 Cr, margin 12.1% | Backward | Yes | L34 |
+| #26 | Sequential revenue +9.7% QoQ over Q4FY26 | Backward | Yes | L34 |
+| #28 | DaaS segment +22.7% YoY | Backward | Yes | L34 |
+| #29 | Distribution segment +3.1% YoY | Backward | Yes | L34 |
+| #30 | MarTech segment +341% YoY (Sojern consolidation) | Backward | Yes | L34 |
+| #6/#33 | Sojern deferred consideration ~Rs 80-90 Cr/yr, Rs 21.9 Cr this qtr, to Q3FY29 | Operational/cost | Yes | L8 / L34 |
+| #7/#8/#41 | FCF conversion 78.8% this qtr; target 75%+ full year; FCF Rs 135.2 Cr | Financial (non-GAAP) | Yes | L8 / L36 |
+| #9/#38/#39 | Repaid USD 47.5M / 38% of loan; +USD 16M "yesterday"; outstanding ~USD 77.5M | Capital allocation | Yes | L8 / L36 |
+| #11 | Net-debt-free by FY28 | Forward soft | Milestone | L8 |
+| #36/#37/#40 | Amortisation acq cost 33.8 Cr (vs 6.8); finance costs 16.5 Cr; other income 3.1 (vs 20.7) | Backward | Yes | L36 |
+| #42/#43/#44 | Net worth 2,114.2 Cr; cash 255.6 Cr; net debt 615.4 Cr | Balance sheet | Yes | L36 |
+| #12/#13 | 320+ data partners; addressable audience +14.5% YoY | Operational | Yes | L10 |
+| #16/#17 | 14,000+ combined customers; MK now >81% of revenue | Operational | Yes | L14 |
+| #14/#15 | FIFA uplift +$2.5M; Middle East $970k -> $425k/month | Operational/macro | Yes | L12 |
+| #18 | Apnea (APAC) new customer wins +200% YoY | Customer | Yes | L18 |
+| #20 | Agentic ARI: up to 30-40% ARI-traffic optimisation | Operational | Yes | L20 |
+| #21/#22 | **FY27 revenue guidance raised to ~Rs 3,100 Cr (upper end), implies ~70% YoY** | Forward Guidance | Yes | L28 |
+| #23 | **FY27 adjusted margin guidance raised to 22-23% (~+100bps vs prior 21.5-22.5%)** | Forward Guidance | Yes | L28 |
+| #24 | Medium-term growth aspiration 15-20% ("higher end") | Forward Guidance | Yes | L28 |
+
+**Four diagnostics:** (a) **Quantification:** unusually high for an opening — backward metrics and the two raised guidance lines are all numeric; only the vision framing ("AI operating system for travel revenue") is unquantified. (b) **New vs reaffirmation:** the **17.5% combined-entity organic growth** (#3/#27), the **18.2% MK-organic** later in Q&A (#58), the **guidance RAISE** on both revenue and margin (#21-#23), and the explicit **80-90 Cr/yr / to-Q3FY29** deferred-consideration schedule are NEW disclosures not in the deck/PR/filing. (c) **Quietly dropped:** nothing prior to drop (first call under protocol); but every governance/balance-sheet risk item the results filing flagged is ABSENT from the opening (Section I.6). (d) **Internal contradictions in the opening:** "net debt free by FY28" (#11) coexists with a same-day board-approved USD 65M guarantee that is never mentioned (FN2/FN9), and "definitely beat 3,100" optimism coexists with a self-flagged Q2 FIFA/Middle-East reversal (FN5).
+
+## I.2 — CLAIMS-AND-GUIDANCE: CONFIRM / CONTRADICT / UNVERIFIABLE vs FILING (Step 7A)
+
+Every material quantified claim reconciled to the filing/deck. Sources: A3 Section A cross-tie + Section A/B/C of this review.
+
+| Call claim (ledger #) | Call line | Filing / deck anchor | Verdict |
+|---|---|---|---|
+| Revenue Rs 785 Cr (#1/#25) | L8/L34 | deck p23 785.0 (L740); res consol 7,850.12 mn x0.1 | **CONFIRMS** |
+| Revenue +187.6% YoY (#25) | L34 | deck L740 +187.6% (CEO "188%" L8 = rounding) | **CONFIRMS** |
+| Sequential +9.7% QoQ (#26) | L34 | deck 715.5 -> 785.0 (L740) = +9.7% | **CONFIRMS** |
+| Adj EBITDA 24.6% / Rs 193.4 Cr (#4/#31) | L8/L34 | deck L751/L752 193.4 / 24.6% | **CONFIRMS** |
+| Reported EBITDA 21.9% / Rs 171.5 Cr (#32) | L34 | deck L748/L749 171.5 / 21.9% | **CONFIRMS** |
+| Adj PAT 14.9% / Rs 116.8 Cr / +148.8% (#34) | L34 | deck L766/L767 116.8 / 14.9% / +148.8% | **CONFIRMS** |
+| Reported PAT 12.1% / Rs 94.9 Cr (#35) | L34 | deck L764/L765 94.9 / 12.1% | **CONFIRMS** (reported margin FELL 17.2%->12.1%, FN10; true but under-narrated on call) |
+| Adj EBITDA growth: CEO "289%" (#5) vs CFO "89.3%" (#31) | L8/L34 | deck L751 +289.3% | **CONFIRMS 289.3%** — the CFO "89.3%" is a dropped-digit transcription garble, NOT a contradiction |
+| Distribution +3.1% YoY (#29/#53) | L34/L92 | deck p12 3.1% (L380/L394 area) | **CONFIRMS** |
+| MarTech +341% YoY (#30) | L34 | deck +341.2% | **CONFIRMS** |
+| DaaS +22.7% YoY (#28/#52) | L34/L92 | deck segment slide (p12) | **CONFIRMS** (segment slide; not separately re-extracted in Section A table) |
+| MK now >81% of revenue (#17) | L14 | deck L394/L851 81.1% | **CONFIRMS** |
+| Amortisation 33.8 Cr (vs 6.8) (#36) | L36 | deck L756 33.8 / 6.8 | **CONFIRMS** |
+| Finance costs 16.5 Cr (#37) | L36 | deck L757 16.5 | **CONFIRMS** |
+| Other income 3.1 Cr (vs 20.7) (#40) | L36 | deck L759 3.1 / 20.7 | **CONFIRMS** |
+| Deferred consideration 21.9 Cr/qtr, 80-90 Cr/yr, to Q3FY29 (#6/#33) | L8/L34 | deck L750/L270 21.9/qtr | **CONFIRMS** (the per-year and end-date colour is NEW but consistent) |
+| Debt: 38% / USD 47.5M repaid; USD 77.5M outstanding; +USD 16M "yesterday" (#9/#38/#39) | L8/L36 | loan L44 (USD 77.50M of 125M); pr L100-102 (38%) | **CONFIRMS** (Reg 30 corroborates independently) |
+| Net worth 2,114.2 Cr (#42) | L36 | deck p24 equity 2,114.2 | **CONFIRMS** (A3-F11 exact tie) |
+| Cash & equiv 255.6 Cr (#43) | L36 | deck L333 255.6 | **CONFIRMS** |
+| Net debt 615.4 Cr (#44) | L36 | deck L336 615.4 | **CONFIRMS** |
+| Gross margin "70%" (#48) | L74/L110 | deck p21 69.2% | **CONFIRMS** (rounding; deck 69.2%) |
+| 14,000+ customers (#16) | L14 | deck L127 14,158 | **CONFIRMS** |
+| **Organic combined-entity growth 17.5% (INR)** (#3/#27) | L8/L34/L56 | NOT in deck/PR/filing | **UNVERIFIABLE — NEW DISCLOSURE** (management-only; confirmed "in INR terms" call L56; cannot be tied to audited statements) |
+| **MK/MarTech organic growth 18.2%** (#58) | L98 | NOT in deck/PR/filing | **UNVERIFIABLE — NEW DISCLOSURE** (management-only; volunteered after refusing formal ex-Sojern attribution, FN7) |
+| FCF 135.2 Cr / 78.8% conversion "highest ever" (#41) | L8/L36 | deck L335/L664 (figure); NO cash-flow statement in filing | **UNVERIFIABLE** as to cash quality — figure ties to deck but ratio is non-GAAP unbridged (FN10/FN12); caps cash conversion INDETERMINATE |
+| Annualised run-rate 3,140 Cr (#2) | L8 | derived (785 x 4); not in filing | **UNVERIFIABLE** (arithmetic annualisation, not a disclosed figure) |
+| FIFA +$2.5M; Middle East $970k->$425k/mo (#14/#15) | L12 | NOT in filing/deck | **UNVERIFIABLE — NEW** (management-only operational colour) |
+| Net incremental ~$1M; margin benefit $600-700k (#47/#49) | L74 | NOT in filing | **UNVERIFIABLE** (management ballpark) |
+| Apnea +200%; audience +14.5%; ARI 30-40%; 320+ partners; ~12 customers (#18/#13/#20/#12/#56) | L18/L10/L20/L91 | operational KPIs, not in filing | **UNVERIFIABLE** (operational; taken at face value, not thesis-load-bearing) |
+
+**Bottom line:** every financial headline stated on the call **CONFIRMS** the filing/deck — **no number CONTRADICTS the filing** (A3 Section A). The single internal discrepancy (289% vs 89.3% adj-EBITDA growth) resolves to the deck's 289.3% as a transcription garble. The two thesis-load-bearing figures that are **NEW and UNVERIFIABLE** are the **17.5% combined-entity organic growth** and the **18.2% MK-organic growth** — both management-only, neither tie-able to audited statements. They are the most valuable new information on the call AND the least verifiable; treat as directional, not evidenced.
+
+## I.3 — FORWARD GUIDANCE CHANGE TABLE (Step 2) — and what each does to the thesis
+
+Guidance is the centrepiece. "Last quarter" values are from the live Notion thesis (FY27 revenue guide ~Rs 3,000-3,100 Cr; adj EBITDA margin 21.5-22.5%).
+
+| Metric | Last quarter's guidance | This quarter (call cite) | Trajectory | Effect on thesis |
+|---|---|---|---|---|
+| FY27 revenue | ~Rs 3,000-3,100 Cr | **~Rs 3,100 Cr, upper end; "+70% YoY"; "the number we should definitely beat"** (#21/#22/#46, call L28/L67; FC3/FC6) | **RAISED to top of range + hard "beat" floor** | Growth pre-conditions comfortably intact; run-rate already Rs 3,140 Cr (#2, L8). Sets a HARD promise-vs-delivery bar for Q2-Q4 (Section I.5). Net POSITIVE. |
+| FY27 adjusted EBITDA margin | 21.5-22.5% | **22-23% (~+100 bps)** (#23, call L28; FC4) | **RAISED ~100 bps** | **Resets thesis-broken trigger 3 base upward** — the "miss by 200+bps" test is now measured off 22-23%, i.e. management moved the goalposts UP, a confidence signal. Trigger not fired. Net POSITIVE. |
+| Near-to-medium-term growth aspiration | 15-20% | **15-20%, "higher end"** (#24/#45, call L28/L61; FC5) | **MAINTAINED, biased up** | Supports the transition-alpha thesis; the organic 17.5% this quarter already sits at the top of the band. Net POSITIVE, but aspiration (not a hard commitment). |
+| Net debt | (deleveraging underway) | **Net-debt-free by FY28** (#11, call L8; FC1) | **NEW explicit target** | Favourable for finance-cost trajectory; BUT asserted without acknowledging the same-day USD 65M guarantee (FN2/FN9) and in tension with the "M&A event in 2027" comment (FN4). Net POSITIVE-with-asterisk. |
+| FCF conversion | (none formal) | **75%+ for full year** (#8, call L8; FC2), 78.8% in Q1 | **NEW explicit target** | Directionally supports the cash story, but the metric is non-GAAP and unbridged (no cash-flow statement); does NOT lift the INDETERMINATE cap. Net NEUTRAL until the H1 cash-flow statement. |
+| Distribution segment | (return to positive YoY) | **"double digit growth by end of fiscal year"** (#53, call L91; FC7) | **NEW forward commitment** off +3.1% now | Directly favourable to thesis-broken trigger 4 (Distribution positive by Q1FY28); converts a monitor into a dateable management promise. Net POSITIVE, high execution risk. |
+
+**Guidance diagnostics:** management **TIGHTENED-and-RAISED** rather than widened — a confidence posture. Guidance is internally consistent (Rs 3,100 Cr at +70% reconciles to the Rs 3,140 Cr run-rate; 22-23% adj margin sits above the 24.6% Q1 adj print because Q1 carried a FIFA one-off management expects to normalise). The one guidance analysts pressed for and did NOT get: **standalone Sojern economics / clean ex-Sojern attribution** (refused, FN7) and any **reported (not adjusted) margin target** (not given, Q3 DODGED).
+
+## I.4 — ANSWER-TO-QUESTION SCORECARD (Role 4 Step 8.5 cross-update)
+
+Each of the 17 Section-D Questions-for-Management, marked ANSWERED / PARTIAL / DODGED with the call-line cite (A3 Section F).
+
+| # | Section-D question (short) | Status | Call-line evidence |
+|---|---|---|---|
+| Q1 | Organic ex-Sojern revenue growth + organic gross margin | **PARTIAL** | Combined-entity organic growth ANSWERED = **17.5% YoY, confirmed "in INR terms"** (call L34/L56); MK-organic **18.2%** volunteered (call L98). BUT clean ex-Sojern attribution REFUSED (call L80/L97) and **organic gross margin NOT given**. |
+| Q2 | Sojern deferred consideration retention/earnout-linked; report reported alongside adjusted | **ANSWERED** | CFO: adjustment "is contingent on revenue growth and [EBI]TA targets over 3 years and will end in Q3 FI29" (call L34) — i.e. **earnout-linked / contingent**, confirming it is a performance-contingent cash cost, not a fixed schedule. Reported figures given alongside adjusted this call. |
+| Q3 | Reported PAT-margin path / FY27 reported (not adjusted) target | **DODGED** | No reported-margin target offered; all guidance framed on the adjusted 22-23% basis (call L28). |
+| Q4 | Gross-margin floor; structural vs cyclical | **PARTIAL** | "our gross margins are 70% ... I would not commit to a higher gross margin at this point ... come back to you in a couple of quarters" (call L74/L110) — near-term 70% held, no floor/recovery commitment. |
+| Q5 | H1FY27 cash-flow statement + FCF/78.8% reconciliation | **DODGED** | FCF 135.2 Cr / 78.8% asserted as a headline (call L36), no cash-flow statement, no reconciliation base (FN10). |
+| Q6 | NRR / LTV:CAC sustainability | **DODGED** | Not addressed on the call; deck shows LTV:CAC fell to 10.7x from 14.5x (FN13). |
+| Q7 | USD 65M corporate guarantee (refinancing vs incremental; why omitted) | **DODGED / SILENT** | Never mentioned on the call despite same-day board approval in the filing (FN9). |
+| Q8 | Parent dividend / debt-service capacity (cash in foreign subs) | **DODGED** | Not raised or addressed. |
+| Q9 | Goodwill impairment triggers / Sojern actual-vs-plan | **DODGED / SILENT** | No impairment-trigger or Sojern-vs-plan discussion (FN11). |
+| Q10 | Permanent-CFO timeline | **DODGED / SILENT** | Call silent; deck confirms "Interim + Deputy CFO" (FN8). Pre-condition 3 remains FAILING. |
+| Q11 | Component-auditor coverage of Sojern subs | **DODGED / SILENT** | Not addressed (FN12). |
+| Q12 | Steady-state ETR | **DODGED / SILENT** | Not addressed; deck-implied ETR 21.3% (FN12). |
+| Q13 | FX hedging policy | **DODGED / SILENT** | Not addressed (FN12). |
+| Q14 | Rs 1,115 Cr QIP footprint | **DODGED / SILENT** | Not addressed (FN12). |
+| Q15 | Sojern HK liquidation gain/loss; Nrejos SARL | **DODGED / SILENT** | Not addressed; liquidation is a filing subsequent-event only (FN11). |
+| Q16 | Integration full-completion date + residual costs | **PARTIAL** | "people integration ... substantially complete"; phase-1 (cost synergies) "complete", phase-2 (revenue synergies) ongoing (call L10/L26); **no dated full-completion, no residual-cost quantum**. |
+| Q17 | Further Labour Code provisioning | **DODGED / SILENT** | Not addressed (FN12). |
+
+**Scorecard tally: ANSWERED 1 (Q2) / PARTIAL 3 (Q1, Q4, Q16) / DODGED 13.** Two genuinely NEW information items were surfaced (combined-entity organic 17.5%; deferred-consideration earnout structure). *(The A3 Section-F summary line reads "1 / 4 / 12"; its own itemised list resolves to 1 / 3 / 13 — the itemised count governs and is used here.)* **Every governance and balance-sheet verification item (Q5, Q7, Q9-Q15, Q17) was DODGED or SILENT** — the call resolved growth questions and left every verification/governance question untouched.
+
+## I.5 — PROMISE REGISTER (new commitments to score next quarter; each mapped to its trigger)
+
+First entry in the cumulative Promise-vs-Delivery log (no prior log exists). Score at Q2FY27 per Role 5 Step 3 (DELIVERED 1.0 / PARTIAL 0.5 / DELAYED 0.25 / MISSED 0 / DROPPED 0+flag).
+
+| # | Commitment (verbatim anchor) | Implied date | Call cite | Maps to |
+|---|---|---|---|---|
+| P1 | FY27 revenue ~Rs 3,100 Cr, upper end, +70% YoY (guidance RAISE) | FY27 | L28 (FC3) | Notion FY27 revenue guide; buy pre-conditions (organic growth) |
+| P2 | FY27 adjusted EBITDA margin 22-23% (guidance RAISE, +~100bps) | FY27 | L28 (FC4) | **Thesis-broken trigger 3** (margin-guide miss by 200+bps — base now 22-23%) |
+| P3 | "the number we should definitely beat" (Rs 3,100 Cr) | FY27 | L67 (FC6) | Hard promise-vs-delivery bar; OVERPROMISER watch |
+| P4 | Distribution to "start to show double digit growth" by end-FY27 (from +3.1% now) | End-FY27 | L91 (FC7) | **Thesis-broken trigger 4** (Distribution positive YoY by Q1FY28) |
+| P5 | Net-debt-free by FY28 (retire balance of acquisition debt) | FY28 | L8 (FC1) | Leverage / net-debt trajectory (vs new USD 65M guarantee, FN2/FN9) |
+| P6 | FCF conversion 75%+ for the full year | FY27 | L8 (FC2) | Cash-conversion cap (INDETERMINATE until H1 cash-flow statement) |
+| P7 | Growth 15-20% near-to-medium term, "higher end" | Ongoing | L28/L61 (FC5) | Transition-alpha thesis / buy pre-condition (organic growth) |
+| P8 | M&A "will be an event in 2027" | CY2027 | L109 (FC8) | Re-levering risk vs P5 net-debt-free; capital-allocation catalyst |
+
+## I.6 — WHAT WAS NOT DISCUSSED (Step 5B, silence-is-signal) + CREDIBILITY READ
+
+**Silence table (F17 audit; consecutive-quarter count from the live thesis where known):**
+
+| Item (open question / risk) | On call? | Significance |
+|---|---|---|
+| Permanent CFO / transition (Q10; pre-condition 3) | No (deck: "Interim + Deputy CFO") | **AMBER->RED** — Rohan Mittal resigned May 2026; interim persists; a known deteriorating governance item met with total silence (FN8) |
+| USD 65M corporate guarantee (Q7) | No (filing Annexure B, board same day) | **AMBER** — new contingent liability; refinancing-vs-incremental unstated; undercuts net-debt-free narrative (FN9) |
+| H1 cash-flow statement / FCF reconciliation (Q5) | No | **AMBER** — first post-Sojern quarter; 78.8% conversion asserted without a bridge (FN10) |
+| Goodwill impairment triggers / Sojern actual-vs-plan (Q9) | No | **AMBER** — 64%-of-assets intangible base; no impairment-trigger colour (FN11) |
+| Sojern HK liquidation gain/loss (Q15) | No (filing note 12) | **AMBER** — subsequent event; no quantum (FN11) |
+| Component auditor / ETR / FX / Labour Code / QIP footprint (Q11-Q14, Q17) | No | **AMBER** — five verification items, zero air-time (FN12) |
+| NRR / LTV:CAC sustainability (Q6) | No (deck: LTV:CAC 14.5x->10.7x) | **AMBER** — two disclosed metrics deteriorated YoY, neither volunteered (FN13) |
+| Reported (unadjusted) PAT-margin path (Q3) | No | **AMBER** — reported margin fell 17.2%->12.1%; only the adjusted 14.9% narrated |
+
+**Credibility read (net):** the two genuine positives are real and specific — a **guidance RAISE on both revenue and margin** (P1/P2), and the **first-ever disclosure of combined-entity (17.5%) and MK (18.2%) organic growth**, which directly answer the single most important thesis question. Set against that: (1) on the highest-leverage forward claims management substituted **unquantified superlatives for figures** — "tens of millions of dollars" (call L92, #55), "very large deal in India / Middle East" (call L44/L20), "highest level of experimentation in 20 years" (call L104, #59) — i.e. FN14 pipeline optionality asserted without a number; and (2) **total silence on every governance and balance-sheet risk item** (the table above). **Archetype (6E, provisional):** high backward/guidance specificity but no credibility history yet, so a firm Committed-&-Credible vs Overpromiser call cannot be made this quarter. The **"definitely beat 3,100"** hard bar (P3) plus superlative-for-figures substitution places RATEGAIN on **Overpromiser WATCH** until the Q2 delivery print establishes the ratio. Net: **the call is thesis-POSITIVE on growth and guidance and thesis-NEUTRAL-to-negative on governance/verification, resolving none of the latter.**
+
+## I.7 — UPDATED THESIS RECONCILIATION (Step 8A/8C — against the LIVE Notion thesis)
+
+**Decision Status verified (this session):** **WATCHLIST**. Entry zone **Rs390-490**. Destination PE **19x/24x (Base/Upside)**. This supersedes the Step-0A "first-time coverage / NONE" assumption for the concall reconciliation (the earlier results pass predated the live-thesis fetch). Per house rule, Decision Status changes only when a pre-committed trigger formally fires; A4 flags, the human decides.
+
+**Thesis-broken triggers (all five re-evaluated with call evidence):**
+
+| # | Thesis-broken condition | Threshold | Call evidence | Fired? / Status |
+|---|---|---|---|---|
+| T1 | Organic growth <6% for 2+ consecutive quarters post-Q4FY26 | <6% x2 | **Combined-entity organic +17.5% YoY** (call L34/L56); MK-organic +18.2% (L98) | **NOT FIRED — and not at risk.** Comfortably clear of 6% this quarter; direction resolved favourably (A3 records this as a confirmatory positive). |
+| T2 | Sojern cumulative synergies <$15m by FY27 end | <$15m | Call SILENT on any synergy dollar figure; management refused clean Sojern attribution (FN7) and framed synergies as "combined" and unquantified | **NOT FIRED — but UNRESOLVED.** No dollar-synergy disclosure; monitorable stays open (Section I.5 has no dollar milestone to score). |
+| T3 | FY27 adj EBITDA margin guide (was 21.5-22.5%) missed by 200+bps | miss >=200bps | Guidance **RAISED to 22-23%** (call L28, #23) | **NOT FIRED; base RESET UPWARD.** The 200bps-miss test is now measured off 22-23% — management moved the bar up, a confidence signal (P2). |
+| T4 | Distribution fails to return to positive YoY by Q1FY28 | not positive by Q1FY28 | Distribution **already +3.1% YoY** (call L34/L92); management commits to **double-digit by end-FY27** (call L91, FC7) | **NOT FIRED — favourable, now carries a management promise (P4).** Positive already; watch the double-digit commitment. |
+| T5 | Goodwill impairment >Rs200 Cr | >Rs200 Cr | Call SILENT on impairment; goodwill Rs1,591.5 Cr (deck p24); no impairment indicator disclosed | **NOT FIRED.** No impairment this quarter; silence on triggers keeps Q9 open (monitor). |
+
+**Buy pre-conditions (all three re-evaluated):**
+
+| # | Pre-condition | Prior status | Call evidence | Status now |
+|---|---|---|---|---|
+| PC1 | Q4 organic >8% | PASS | Q1FY27 combined organic +17.5% (call L34) reinforces the trend | **PASS (reinforced).** |
+| PC2 | Sojern Q4 EBITDA margin >17% | PASS | Analyst hypothesised ~30% Sojern standalone margin; management REFUSED to confirm attribution (call L80, FN7) — does not disturb the prior PASS | **PASS (undisturbed; not re-evidenced).** |
+| PC3 | Permanent CFO / no new CFO transition | **FAILING** (Rohan Mittal resigned May 2026; interim only) | Call SILENT on CFO; deck confirms "Interim + Deputy CFO" (FN8) | **STILL FAILING.** The call did nothing to cure the one failing pre-condition. |
+
+**Conclusion (flag, do not decide):** **Decision Status UNCHANGED — WATCHLIST.** No thesis-broken trigger fired; two of the three growth-side triggers (T3, T4) moved **favourably** and T1 is comfortably clear. **The call is net thesis-POSITIVE on growth and guidance** (organic disclosure + dual guidance raise). **But it resolves NONE of the governance/verification gaps:** PC3 (permanent CFO) still FAILING, and the cash-conversion cap stays **INDETERMINATE** until the H1FY27 cash-flow statement (Reg 33 mandatory at Q2) reconciles the 78.8% FCF-conversion claim. A first buy remains gated on PC3 curing and on the H1 cash-flow bridge; entry-zone Rs390-490 and destination PE 19x/24x are unchanged by the call. **8C cleanest next-quarter metric is now sharpened:** the H1 cash-flow statement (resolves the cap) and a clean organic gross-margin disclosure (the one organic number still withheld).
+
+**Updated Questions-for-Management (forward, into Q2FY27 review):** carry forward the 13 DODGED/PARTIAL items (esp. reported-margin target Q3, cash-flow bridge Q5, USD 65M guarantee Q7, permanent-CFO Q10, impairment triggers Q9), and ADD: (a) quantify the Sojern-only synergy dollars vs the <$15m trigger (T2); (b) put a number on the "tens of millions" ARI/RateIQ pipeline and name the "very large" India and Middle East deals (FN14); (c) confirm whether the "definitely beat 3,100" bar includes or excludes further FIFA-type one-offs (FN5).
+
+## I.8 — PLAIN-LANGUAGE ADDENDUM (what the call changes for a non-expert reader)
+
+The earnings call is, on balance, good news on growth and a non-answer on everything else. For the first time management put a number on how fast the business is growing WITHOUT the Sojern acquisition boosting it: about 17.5 percent for the combined company and 18.2 percent for the marketing business, both stated in rupee terms (call lines 34, 56, 98). That matters because the whole worry with this stock was that the 188 percent headline growth was just the acquisition, and underneath it the real business might be crawling. 17.5 percent is healthy and clears the "thesis breaks if organic growth falls below 6 percent" line comfortably.
+
+Management also RAISED its full-year targets: revenue to the top of the range (about Rs 3,100 crore, roughly 70 percent growth) and adjusted profit margin to 22-23 percent, about one percentage point higher than before. The CEO even called Rs 3,100 crore "a number we should definitely beat" (call lines 28, 67). Raising guidance is a confidence signal, and it nudges the profit-margin "thesis-break" test up to a higher bar. They also promised the slow Distribution unit (only 3 percent growth now) will reach double-digit growth by year-end, and repeated that they will be debt-free by FY28.
+
+What they did NOT do is answer any of the hard questions. There is still no permanent CFO (the one on the call is "interim"), and that was the single condition already failing before the call; the call left it failing. They gave no cash-flow statement, so the impressive-sounding "78.8 percent cash conversion" still cannot be checked. They said nothing about the new USD 65 million guarantee the board approved the same day, nothing about goodwill-impairment risk, and they refused to break out exactly how much of the growth is the acquired business versus the old one. On the biggest opportunities they used phrases like "tens of millions of dollars" and "a very large deal" instead of real figures.
+
+Net: the growth story got stronger and more credible; the trust-and-verify story did not move at all. The stock stays on WATCHLIST (entry zone Rs390-490), not a buy yet, until there is a permanent CFO and a real cash-flow statement to confirm the cash the company says it is generating.
+
+---
+
 ```yaml
 stage: A4-analyst
 company: "RATEGAIN"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-docs_merged: [results, presentation]   # plus supplementary press release + loan-prepay Reg 30; no concall
+docs_merged: [results, presentation, concall]   # + supplementary press release + loan-prepay Reg 30
+concall_merged: true
 ledger_reconciliation:
   notes: 22
-  turns: 0
+  turns: 31          # concall: 31 turns / 14 questions / 59 mgmt numbers / 14 fwd-hedge; results turns were 0
   slides: 30
+  questions: 14
+  mgmt_numbers: 59
   all_reviewed: true
   a3_findings_incorporated: ["A3-F1","A3-F2","A3-F6","A3-F7","A3-F8","A3-F9","A3-F10","A3-F13","A3-F14","A3-F15","FN1","FN2","FN3","FN4","FN5","FN6","FN7","FN8","FN9","FN10","FN11","FN12","FN13","FN14","FN15","FN16"]
-protocol_verdict: "PROCEED WITH FLAGS"
-cash_conversion: "INDETERMINATE"   # no Q1 cash-flow statement; FCF & 78.8% conversion are management-defined non-GAAP with no auditor bridge; caps upside at PROCEED WITH CAVEATS
-decision_status_verified: "NONE — first-time coverage; no prior Notion thesis, Decision Status, or entry zone on file. Baseline set to WATCHLIST / DILIGENCE."
+  concall_a3_findings: ["FN1","FN2","FN3","FN4","FN5","FN6","FN7","FN8","FN9","FN10","FN11","FN12","FN13","FN14"]
+protocol_verdict: "PROCEED WITH FLAGS"   # unchanged by the call; growth/guidance positive, governance/verification unresolved
+cash_conversion: "INDETERMINATE"   # 78.8% FCF-conversion reasserted on call (L36) with no cash-flow statement/bridge; cap holds until H1FY27
+decision_status_verified: "WATCHLIST"   # live Notion thesis this session: entry Rs390-490; destination PE 19x/24x (Base/Upside)
+decision_status: "WATCHLIST"            # UNCHANGED by concall — flag, do not decide
 position_branch: "8A-W"
-sc_gap_pat_pct:   # standalone-vs-consolidated PAT gap, gap as % of consolidated PAT
+organic_growth_disclosed:
+  combined_entity_yoy_pct: 17.5     # NEW disclosure, INR terms, call L34/L56; not in filing/deck (UNVERIFIABLE)
+  martech_mk_organic_yoy_pct: 18.2  # NEW disclosure, call L98; not in filing/deck (UNVERIFIABLE)
+  distribution_yoy_pct: 3.1
+  daas_yoy_pct: 22.7
+guidance_change:
+  fy27_revenue: {from: "~Rs 3,000-3,100 Cr", to: "~Rs 3,100 Cr upper-end / +70% YoY / 'definitely beat'", trajectory: "RAISED", cite: "call L28/L67"}
+  fy27_adj_ebitda_margin: {from: "21.5-22.5%", to: "22-23% (+~100bps)", trajectory: "RAISED", cite: "call L28", note: "resets thesis-broken trigger 3 base upward"}
+  medium_term_growth: {from: "15-20%", to: "15-20% higher end", trajectory: "MAINTAINED", cite: "call L28/L61"}
+  net_debt: {to: "net-debt-free by FY28", trajectory: "NEW", cite: "call L8", caveat: "omits same-day USD 65M guarantee (FN2/FN9)"}
+  fcf_conversion: {to: "75%+ full year", trajectory: "NEW", cite: "call L8", note: "non-GAAP; does not lift INDETERMINATE cap"}
+  distribution: {to: "double-digit by end-FY27", trajectory: "NEW", cite: "call L91", note: "favourable to thesis-broken trigger 4"}
+questions_answered: 1     # Q2 (deferred consideration earnout structure)
+questions_partial: 3      # Q1 (organic growth given, ex-Sojern attribution + organic GM withheld), Q4 (gross margin), Q16 (integration)
+questions_dodged: 13      # Q3,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,Q17 — all governance/verification items
+thesis_broken_triggers:
+  - {id: "T1", condition: "organic <6% for 2+ quarters", status: "NOT FIRED / not at risk", evidence: "organic +17.5% call L34"}
+  - {id: "T2", condition: "Sojern cumulative synergies <$15m by FY27 end", status: "NOT FIRED / UNRESOLVED", evidence: "call silent on synergy $; attribution refused FN7"}
+  - {id: "T3", condition: "FY27 adj EBITDA margin guide missed by 200+bps", status: "NOT FIRED / base reset up to 22-23%", evidence: "call L28"}
+  - {id: "T4", condition: "Distribution fails to return positive YoY by Q1FY28", status: "NOT FIRED / favourable + double-digit promise", evidence: "call L34/L91"}
+  - {id: "T5", condition: "goodwill impairment >Rs200 Cr", status: "NOT FIRED", evidence: "call silent; goodwill Rs1,591.5 Cr deck p24"}
+buy_preconditions:
+  - {id: "PC1", condition: "Q4 organic >8%", status: "PASS (reinforced by +17.5% Q1)"}
+  - {id: "PC2", condition: "Sojern Q4 EBITDA margin >17%", status: "PASS (undisturbed; ~30% attribution refused FN7)"}
+  - {id: "PC3", condition: "permanent CFO / no new transition", status: "STILL FAILING — call silent, deck confirms Interim+Deputy CFO (FN8)"}
+promise_register:
+  - {id: "P1", commitment: "FY27 revenue ~Rs 3,100 Cr upper end / +70%", date: "FY27", cite: "call L28 (FC3)"}
+  - {id: "P2", commitment: "FY27 adj EBITDA margin 22-23%", date: "FY27", cite: "call L28 (FC4)", maps_to: "thesis-broken T3"}
+  - {id: "P3", commitment: "'definitely beat' Rs 3,100 Cr", date: "FY27", cite: "call L67 (FC6)"}
+  - {id: "P4", commitment: "Distribution double-digit growth", date: "end-FY27", cite: "call L91 (FC7)", maps_to: "thesis-broken T4"}
+  - {id: "P5", commitment: "net-debt-free", date: "FY28", cite: "call L8 (FC1)"}
+  - {id: "P6", commitment: "FCF conversion 75%+ full year", date: "FY27", cite: "call L8 (FC2)"}
+  - {id: "P7", commitment: "grow 15-20% higher end", date: "ongoing", cite: "call L28/L61 (FC5)"}
+  - {id: "P8", commitment: "M&A 'event in 2027'", date: "CY2027", cite: "call L109 (FC8)"}
+management_archetype: "Overpromiser-WATCH (provisional — no credibility history; first concall under protocol; high specificity + 'definitely beat' bar + superlative-for-figures substitution FN14)"
+credibility_ratio: "N/A — first concall under Role 5; cumulative log starts this quarter"
+sc_gap_pat_pct:
   - {period: "Q1FY26", standalone_pct_of_consol: 38.5, gap_pct_of_consol: 61.5}
   - {period: "Q4FY26", standalone_pct_of_consol: 16.8, gap_pct_of_consol: 83.2}
   - {period: "Q1FY27", standalone_pct_of_consol: 4.4, gap_pct_of_consol: 95.6}
   - {period: "FY26",   standalone_pct_of_consol: 25.9, gap_pct_of_consol: 74.1}
-questions_for_management:
-  - {q: "Organic ex-Sojern revenue growth and organic gross margin vs +187.6% reported?", from_finding_id: "FN7,FN10,A3-F2,A3-F7"}
-  - {q: "Is Sojern deferred deal consideration (21.9 Cr/qtr to Q3FY29) retention/earnout-linked; will you report reported alongside adjusted?", from_finding_id: "FN2,FN10,FN11"}
-  - {q: "Reported PAT margin fell 17.2%->12.1%; path back and FY27 reported-margin target?", from_finding_id: "FN10,FN13,FN6"}
-  - {q: "Gross margin at 69.2% from ~76%; where does it floor, structural vs cyclical?", from_finding_id: "FN6,FN13"}
-  - {q: "Provide H1FY27 cash-flow statement; reconcile 135.2 Cr FCF / 78.8% conversion to audited CFO.", from_finding_id: "FN12,FN14"}
-  - {q: "NRR was 99.6 (below 100) in FY26 within a declining trend 120.9->100.5->99.6->106.8, and LTV:CAC 21.3x->10.7x; is 106.8 sustainable and what drove the decline?", from_finding_id: "FN16"}
-  - {q: "USD 65M new corporate guarantee: total group debt+guarantees; refinancing or incremental; why omitted from deck?", from_finding_id: "A3-F6,A3-F13,FN5,FN3"}
-  - {q: "Parent earns 4.4% of group PAT; dividend/debt-service capacity given cash sits in foreign subs?", from_finding_id: "A3-F2"}
-  - {q: "Goodwill+intangibles 64% of assets; impairment triggers and Sojern actual vs acquisition plan?", from_finding_id: "FN15,A3-F1"}
-  - {q: "Timeline to appoint a permanent CFO (currently Interim + Deputy)?", from_finding_id: "FN8"}
-  - {q: "Did Deloitte review all 9 foreign Sojern subs directly or is there undisclosed component-auditor reliance?", from_finding_id: "A3-F14"}
-  - {q: "ETR 21.3% (~390 bps below statutory): sustainable foreign mix vs Rs 130.8 Cr DTL reversal; steady-state ETR?", from_finding_id: "A3-F8"}
-  - {q: "Post-Sojern FX-translation OCI swings materially; USD/INR hedging policy on equity and intra-group loans?", from_finding_id: "A3-F9"}
-  - {q: "Rs 1,115 Cr QIP/internal funds has no paid-up footprint; equity at parent (when) or internal funds?", from_finding_id: "A3-F10"}
-  - {q: "Gain/loss from Sojern HK liquidation (10 Jul 2026); rationale/function of Nrejos SARL?", from_finding_id: "A3-F15,A3-F1"}
-  - {q: "Integration 'substantially behind us' vs 'healthy progress'; full-completion date and residual one-off costs?", from_finding_id: "FN4,A3-F1"}
-  - {q: "Further Labour Code provisioning beyond Rs 2.2 Cr; quantum and timing?", from_finding_id: "A3-F6"}
+questions_for_management:   # forward, into Q2FY27 — carried-forward DODGED/PARTIAL + new
+  - {q: "Provide the H1FY27 cash-flow statement and reconcile 135.2 Cr FCF / 78.8% conversion to audited CFO", from_finding_id: "FN10,FN12"}
+  - {q: "Timeline to a permanent CFO (still Interim + Deputy)?", from_finding_id: "FN8"}
+  - {q: "USD 65M corporate guarantee: refinancing vs incremental; total group debt+guarantees; why omitted from call/deck?", from_finding_id: "FN9,A3-F13"}
+  - {q: "FY27 reported (not adjusted) PAT-margin target and path back from 12.1%?", from_finding_id: "FN10,FN13"}
+  - {q: "Goodwill impairment triggers and Sojern actual revenue/EBITDA vs acquisition plan?", from_finding_id: "FN11,A3-F1"}
+  - {q: "Quantify Sojern-only synergy dollars vs the <$15m thesis-broken trigger (T2)", from_finding_id: "FN7"}
+  - {q: "Organic gross margin (still withheld) and where gross margin floors from 69.2%?", from_finding_id: "FN6,FN13"}
+  - {q: "Put a figure on the 'tens of millions' ARI/RateIQ pipeline; name the 'very large' India and Middle East deals", from_finding_id: "FN14"}
+  - {q: "Does the 'definitely beat 3,100' bar include or exclude further FIFA-type one-offs?", from_finding_id: "FN5"}
+  - {q: "Component-auditor coverage of 9 foreign Sojern subs; steady-state ETR; FX hedging; Labour Code provisioning; Rs 1,115 Cr QIP footprint (carried forward)", from_finding_id: "FN12,A3-F8,A3-F9,A3-F10,A3-F14"}
 monitorables:
-  - {item: "Sojern deferred deal consideration cash (~80-90 Cr/yr)", implied_date: "Q3FY29", source_ref: "deck L270/L750"}
-  - {item: "USD 65M corporate guarantee issuance (RateGain UK + Sojern)", implied_date: "post 2026-08-06", source_ref: "res L42-44/L693-696"}
-  - {item: "Acquisition-loan paydown outstanding USD 77.50M of USD 125M", implied_date: "as of 2026-08-05, ongoing", source_ref: "loan L44; pr L100-102"}
-  - {item: "Permanent CFO appointment", implied_date: "undated - request", source_ref: "deck L248-249"}
-  - {item: "Sojern Hong Kong liquidation accounting", implied_date: "post 2026-07-10", source_ref: "res L660-661"}
-  - {item: "Further Labour Code provisioning", implied_date: "open", source_ref: "res L298/L649"}
-  - {item: "Full Sojern integration completion", implied_date: "next quarter", source_ref: "deck L439/L622"}
-  - {item: "Organic ex-Sojern revenue & gross margin disclosure (cleanest metric)", implied_date: "Q2FY27", source_ref: "deck L380/L394/L621"}
-  - {item: "NRR>106 sustainability / LTV:CAC stabilisation", implied_date: "Q2FY27", source_ref: "deck L275/L277/L347"}
-  - {item: "H1FY27 cash-flow statement (Reg 33 mandatory at Q2)", implied_date: "Q2FY27 filing", source_ref: "Step 5"}
-  - {item: "Prior-quarter/annual-report baseline (entity structure, component auditor)", implied_date: "request now", source_ref: "A3-F14/F15"}
+  - {item: "H1FY27 cash-flow statement (Reg 33 mandatory at Q2) — resolves INDETERMINATE cap", implied_date: "Q2FY27 filing", source_ref: "call L36 / Step 5"}
+  - {item: "Permanent CFO appointment (pre-condition 3 FAILING)", implied_date: "undated - request", source_ref: "deck L248-249 / FN8"}
+  - {item: "FY27 revenue vs 'definitely beat' Rs 3,100 Cr (P1/P3)", implied_date: "FY27", source_ref: "call L28/L67"}
+  - {item: "FY27 adj EBITDA margin vs raised 22-23% (P2 / trigger T3)", implied_date: "FY27", source_ref: "call L28"}
+  - {item: "Distribution double-digit growth (P4 / trigger T4)", implied_date: "end-FY27", source_ref: "call L91"}
+  - {item: "Sojern cumulative synergies vs <$15m (trigger T2)", implied_date: "FY27 end", source_ref: "FN7"}
+  - {item: "Net-debt-free by FY28 vs new USD 65M guarantee (P5 vs FN9)", implied_date: "FY28", source_ref: "call L8 / res L42-44"}
+  - {item: "M&A 'event in 2027' (P8) — re-levering catalyst", implied_date: "CY2027", source_ref: "call L109"}
+  - {item: "Organic ex-Sojern gross margin (still withheld)", implied_date: "Q2FY27", source_ref: "call L74/L110"}
+  - {item: "Goodwill impairment triggers / Sojern actual-vs-plan (trigger T5)", implied_date: "ongoing", source_ref: "FN11"}
 flags:
-  - "Reported PAT margin DETERIORATED YoY 17.2%->12.1% while deck headlines Adj. PAT margin 14.9% (FN10)"
-  - "Headline +187.6% revenue growth is overwhelmingly INORGANIC (Sojern); organic Distribution only +3.1% (FN7)"
-  - "Cash conversion INDETERMINATE — no Q1 cash-flow statement; FCF/78.8% conversion are non-GAAP unbridged (FN12)"
-  - "Goodwill + intangibles = 64% of total assets; ~135 Cr/yr acquisition amortisation for 6-7 yrs; impairment exposure (FN15)"
-  - "Standalone parent PAT = 4.4% of group, down from 38.5%; standalone PAT -76.7% YoY (A3-F2)"
-  - "USD 65M new corporate guarantee board-approved same day; absent from investor deck (FN5/A3-F13)"
-  - "No permanent CFO — signing officer is 'Interim + Deputy' (FN8)"
-  - "No component-auditor Other Matter for 9 foreign Sojern subs; only Trust carved out (A3-F14)"
-  - "Unit economics deteriorating: NRR declined 120.9->100.5->99.6 (only FY26 sub-100) then recovered to 106.8; LTV:CAC 21.3x->10.7x (FN16)"
-  - "Gross margin compressed ~680 bps to 69.2%; ad-spend-driven (FN13)"
-  - "Adjusted metrics remove a real dated cash cost (Sojern deferred consideration to Q3FY29) (FN2)"
-  - "Post-Sojern book equity now materially USD/INR-driven via FX-translation OCI (A3-F9)"
-  - "Rs 1,115 Cr QIP/internal funds has no visible paid-up-capital footprint (A3-F10)"
-  - "First-time coverage: no Notion thesis, projections, or thesis-broken triggers to reconcile against"
+  - "CONCALL NET POSITIVE ON GROWTH/GUIDANCE: first organic-growth disclosure (combined 17.5% / MK 18.2%, call L34/L56/L98) + dual guidance RAISE (rev ~3,100 Cr; adj margin 22-23%)"
+  - "Organic 17.5% and MK 18.2% are NEW, management-only, UNVERIFIABLE against audited statements (call L56/L98)"
+  - "Thesis-broken trigger 3 base RESET UPWARD to 22-23% adj EBITDA margin (management moved the bar up)"
+  - "Pre-condition 3 (permanent CFO) STILL FAILING — call silent, deck confirms Interim + Deputy CFO (FN8)"
+  - "Cash conversion INDETERMINATE — 78.8% FCF-conversion reasserted on call with no cash-flow statement/bridge (FN10/FN12); cap holds to H1FY27"
+  - "USD 65M same-day board-approved corporate guarantee NEVER mentioned on the call; net-debt-free-by-FY28 asserted around it (FN2/FN9)"
+  - "13 of 17 open questions DODGED/SILENT — every governance and balance-sheet verification item unaddressed"
+  - "Sojern synergy $ withheld; ex-Sojern attribution refused (FN7) — thesis-broken trigger 2 (<$15m) UNRESOLVED"
+  - "Superlatives substituted for figures on the highest-leverage pipeline claims: 'tens of millions', 'very large deal', 'highest in 20 years' (FN14)"
+  - "'Definitely beat 3,100' sets a hard promise-vs-delivery bar; Overpromiser-WATCH pending Q2 delivery (no credibility history yet)"
+  - "Q2FY27 mechanical headwind pre-flagged: FIFA +$2.5M one-off reverses, Middle East run-rate ~halved (FN5)"
+  - "Distribution +3.1% now with a management double-digit-by-end-FY27 promise (favourable to thesis-broken trigger 4) (FN3)"
+  - "Reported PAT margin fell 17.2%->12.1% YoY; call narrated only the adjusted 14.9% (carried from Section C, FN10)"
+  - "M&A 'event in 2027' (FN4) in tension with net-debt-free-by-FY28 (FN2) — re-levering risk"
 plain_language_brief_included: true
 review_path: "/home/user/inflection-pipeline/runs/rategain-q1fy27/work/review_rategain_q1fy27.md"
 ```

@@ -1,9 +1,10 @@
-# A1 OCR / extraction scratch — not part of the audit trail
-*.jpg
-*.jpeg
-*.png
-page-*.txt
-page_*_only.txt
-extract_layout.txt
-body.txt
-pgtest/
+# Whitelist: track only the audit-trail deliverables; ignore all A1/A2 scratch.
+*
+!.gitignore
+!run_log.md
+!notion_thesis_digest.md
+!extract_*.txt
+!ledger_*.md
+!forensics_*.md
+!review_*.md
+!audit_*.md

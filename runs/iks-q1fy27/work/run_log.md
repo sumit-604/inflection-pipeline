@@ -28,3 +28,13 @@
 - results_press_release:   4pp, Millions->x0.1, 139 lines. GATE A1 pass.
 - results_change_directors:6pp, N.A. units, 278 lines. GATE A1 pass.
 - presentation:           18pp, Millions->x0.1, 595 lines, OCR on slides 2/11/16/18. GATE A1 pass.
+
+## FINAL STATUS (2026-08-06)
+- A1 (x4): all GATE A1 pass, 100% coverage.
+- A2 (results + presentation): both GATE A2 pass (count test reconciled).
+- A3 (results + presentation): both GATE A3 pass; +1 supplement (F-13 ROE/Abridge) for A5 gap.
+- A4: merged review, PROCEED WITH CAVEATS, cash INDETERMINATE cap, 16 mgmt questions, brief present.
+- A5: loop-1 INCOMPLETE (ROE forensic gap + Step-4A arithmetic) -> A3 supplement + A4 remediation -> re-audit COMPLETE.
+- Notion: NEW COMPANIES MASTER page created (fresh coverage, no prior page); full review + forensics register + audit verdict saved; Decision Status WATCHLIST placeholder.
+- Memory: companies/IKS.md seeded; LESSONS.md entry appended.
+- Count reconciliation line: 10 notes / 0 concall turns / 18 slides, all reviewed.

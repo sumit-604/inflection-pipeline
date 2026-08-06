@@ -1,0 +1,60 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: rategain_q1fy27_loanprepay.pdf
+doctype: results
+page_count_pdfinfo: 1
+formfeed_count: 1
+line_count: 45
+unit_convention: USD (not Lakhs/Crores/Millions; document is a foreign-currency Reg 30 loan-prepayment intimation, not an INR financial statement)
+conversion_factor_to_cr: N/A - no INR figures present in source; exchange rate not stated in document. Downstream agents must apply the prevailing USD/INR rate if INR conversion is required, and must not infer a rate here.
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Not stated in document (injected task quarter: Q1 FY27; document dated August 05, 2026 and references prior events of October 29, 2025 and February 05, 2026)
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+[page 1]
+August 05, 2026
+
+To,
+National Stock Exchange of India Limited               BSE Limited
+(NSE: RATEGAIN)                                        (BSE: 543417)
+
+Sub:    Disclosure under Regulation 30 read with Schedule III of the SEBI (Listing Obligations and
+        Disclosure Requirements) Regulations, 2015
+Ref:    Intimation regarding prepayment of loan
+
+Dear Sir / Ma’am,
+
+This is with reference to the disclosure filed by the Company on October 29, 2025, pursuant to Regulation 30 read
+with Schedule III of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 (“LODR
+Regulation”), that RateGain Travel Technologies Limited, (hereinafter referred to as the “Company”) had signed
+a Facility Agreement on October 29, 2025 (“Facility Agreement”), and issued corporate guarantee (“Guarantee”)
+in favor of The Hongkong and Shanghai Banking Corporation Limited (“HSBC”) and CitiGroup Global Markets Asia
+Limited (“Citibank”) in respect of loan facilities being availed by RateGain Technologies Limited, UK (“RateGain
+UK”), a wholly owned subsidiary of the Company.
+
+Further the Company on February 05, 2026 has intimated the exchange about prepayment of an amount of USD
+19,000,000 (USD 19 Millions) along with the applicable loan instalment of USD 6,250,000 (USD 6.25 Million) by
+RateGain UK to the bankers, out of the total credit facilities of USD 125,000,000 (USD 125 Million).
+
+Now, we wish to inform you that the RateGain UK has further prepaid an amount of USD 9,750,000(USD 9.75
+Millions) along with the applicable loan instalment of USD 6,250,000 (USD 6.25 Million) on August 05, 2026, to
+the bankers, out of the total credit facilities of USD 125,000,000 (USD 125 Million).
+
+Consequent to the above prepayment, the outstanding loan/debt stands reduced to USD 77,500,000 (USD 77.50
+Million). You may also be informed that the Guarantee provided by the Company shall also stand reduced to the
+above extent in accordance with the terms of Facility Agreement.
+
+This is for your information and records.
+
+Yours faithfully,
+For RateGain Travel Technologies Limited
+Mukesh Digitally signed
+       by Mukesh Kumar
+
+Kumar Date:  2026.08.05
+       16:57:42 +05'30'
+Mukesh Kumar
+General Counsel,
+Company Secretary & Compliance Officer
+Membership No.: A17925

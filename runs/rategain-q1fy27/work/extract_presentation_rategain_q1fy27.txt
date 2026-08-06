@@ -1,0 +1,962 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: rategain_q1fy27_presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 30
+formfeed_count: 30
+line_count: 929
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (all figures already stated as "INR Cr" / "INR (Cr)" throughout, e.g. P&L on page 23, Balance Sheet on page 24, chart data pages 9-12, 21-22)
+ocr_pages: [2, 7, 13, 15, 20, 25, 28]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+NOTES ON OCR:
+- Pages 2, 7, 15, 20, 25, 28 fell under the 100-character threshold (section
+  divider / title slides). Rasterised at 200dpi and OCR'd with tesseract; the
+  OCR output for each is merged inline immediately after the native pdftotext
+  content, tagged [OCR page N]. In all six cases the OCR confirms the slide
+  carries only a title, section label, page number, and the RateGain logo
+  (no numeric or chart data was present on these slides).
+- Page 13 (441 native characters, above threshold) is dominated by award
+  badge/logo graphics with sparse native text. OCR'd as a supplemental check;
+  it surfaced one label not present in the native text layer ("BEST IN SAAS"
+  logo text), merged inline as [OCR page 13].
+- Pages 9, 10, 11, 12, 21, 22, 26 carry native-PowerPoint chart objects
+  (Operating Revenue, Adj. EBITDA, Adj. PAT, GRR/NRR, LTV:CAC, EBITDA/PAT
+  bridge charts, segment mix, revenue mix). All axis labels and data-point
+  values on these charts are present as extractable text in the pdftotext
+  -layout output (confirmed by cross-check OCR at 200dpi against the same
+  pages; no numeric values were found in the images that were absent from
+  the text layer). No supplemental OCR merge was needed for these pages;
+  chart data is embedded in the page text below at its native position.
+[page 1]
+     August 06, 2026
+
+     To,
+     National Stock Exchange of India Limited        BSE Limited
+     (NSE: RATEGAIN)                                 (BSE: 543417)
+
+     Subject: Investor Presentation on the Un-Audited (Standalone and Consolidated) Financial
+               Results of the Company for the Quarter ended June 30, 2026
+
+     Dear Sir/Ma’am,
+
+     Pursuant to Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements)
+     Regulations, 2015, please find enclosed herewith Investor Presentation on Un-Audited
+     (Standalone and Consolidated) Financial Results of the Company for the Quarter ended June 30,
+     2026.
+
+     Please take the above information on record.
+
+     Yours faithfully,
+
+     For RATEGAIN TRAVEL TECHNOLOGIES LIMITED
+     Mukesh     Digitally signed by
+                Mukesh Kumar
+
+     Kumar      Date: 2026.08.06
+                13:34:15 +05'30'
+
+     Mukesh Kumar
+     General Counsel,
+     Company Secretary & Compliance Officer
+     Membership No.: A17925
+
+     Encl.: As above
+
+
+
+
+Corporate Office Address: Plot No. 3,4,5, Club 125, Tower A, 4th Floor        CIN: L72900DL2012PLC244966
+Sector – 125 Noida – 201301, Uttar Pradesh India                              Website: www.rategain.com
+Registered Office Address: M-140, Greater Kailash, Part-II, Delhi-110048      E-mail: help@rategain.com
+Tel: +91 120 5057000
+
+[page 2]
+Investor
+Presentation
+Q1 FY2027
+[OCR page 2]
+(OCR yielded no additional text beyond native text layer)
+
+[page 3]
+Safe Harbor
+This presentation and the accompanying slides (the “Presentation”), which have been prepared by                      Rate Gain Travel Technologies
+Limited (the “Company”), have been prepared solely for information purposes and do not constitute any offer, recommendation o                              r
+invitation to purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any c                   ont ract or
+binding commitment whatsoever. No offering of securities of the Company will be made except by means of a statutory offering
+document containing detailed information about the Company.
+
+
+This Presentation has been prepared by the Company based on information and data which the Company considers reliable, but th                                  e
+Company makes no representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the truth,
+accuracy, completeness, fairness and reasonableness of the contents of this Presentation. This Presentation may not be all
+inclusive and may not contain      all of the information that you may consider material. Any liability in respect of the contents of, or any
+omission from, this Presentation is expressly excluded.
+
+
+Certain matters discussed in this Presentation may contain statements regarding the Company’s market opportunity and business
+prospects that are individually and collectively forward        - looking statements. Such forward       - looking statements are not guarantees               of
+future performance and are subject to known and unknown risks, uncertainties and assumptions that are difficult to predict. T                           hes e
+risks and uncertainties include, but are not limited to, the performance of the Indian economy and of the economies of variou                       s
+international markets, the performance of the industry in India and world            - wide, competition, the company’s ability to successful             ly
+implement its strategy, the Company’s future levels of growth and expansion, technological implementation, changes and
+advancements, changes in revenue, income or cash flows, the Company’s market preferences and its exposure to market risks, as
+well as other risks.
+
+
+The Company’s actual results, levels of activity, performance or achievements could differ materially and adversely from resu                       lts
+expressed in or implied by this Presentation. The Company assumes no obligation to update any forward                      - looking information
+contained in this Presentation. Any forward        - looking statements and projections made by third parties included in this Presentati                 on
+are not adopted by the Company and the Company is not responsible for such third                  - party statements and projections.
+
+
+
+
+                                                                                                                                                                    2
+
+[page 4]
+                        OUR VISION
+To offer an integrated technology platform to our customers in the
+  travel and hospitality sector, powered by artificial intelligence,
+          enabling them to increase their revenue through
+     guest acquisition, retention, and wallet share expansion.
+
+
+
+
+                                                                       3
+
+[page 5]
+                                                                                                  Who we
+                                                                                                   serve
+                                                     • Guest Marketing
+                                                   • Paid Digital Marketing
+                                                                                                        25 Global Fortune
+                                                  • Reputation Management                                500 Companies
+                                                 • Social Media Management
+                                                         MarTech
+What we do                                                                                     33 of Top 40           All Leading
+                                                                                               Hotel Chains          OTAs & Metas
+
+
+
+Aligned to our vision of                      DaaS                      Distribution
+Guest Acquisition,                • Rate Intelligence                  • OTA Connectivity
+                                                                                              7 of Top 10 Car           4 of Top 5
+Retention, and Expansion               • Rate Parity                   • GDS Connectivity         Rentals                Airlines
+                           • Price Recommendation                      • Direct bookings
+                                 • Travel Intent Data                  • Voice Connectivity
+
+
+                                                                                                   Large                Largest
+                                                                                               Cruise Lines              DMOs
+
+
+
+                                                                                                                               4
+
+[page 6]
+RateGain offers an                    Integrated RevMax Platform to Engage with Guests across the Entire Journey
+
+Gets inspired by looking at              Dreaming            Martech
+images on social media
+                                                             ▪   AI- powered Content Creation & Social     - Media Management to help Hotels gain visibility
+                                                             ▪   Help DMOs & Travel Brands target AI filtered high     - intent traveler & achieve higher RoAS
+                                                             ▪   Multi - channel campaigns to drive incremental direct bookings for Hotels
+Searches for hotels, flights, &
+                                         Planning
+packages on Google, Bing, Brand.com
+                                                             DaaS & Distribution
+
+                                                             ▪   Real - time competitive pricing & demand insights to optimize revenue
+Visits OTAs, Brand.com                                       ▪   Help Hotels acquire Guests (distribute inventory) across different demand channels         –
+                                         Booking                 Direct, OTAs, and GDS
+to book flights, hotels, packages
+                                                             ▪   AI- powered Voice Agent VIVA to address guest queries and take reservations
+
+
+
+Looks for activity
+recommendations
+                                         Pre - trip
+
+
+                                                             Martech
+
+Seeks great experience as                                    ▪   AI Concierge to address guest needs 24/7 and drive ancillary revenue for Hotels
+promised during planning
+                                         Trip                ▪   Reputation Manager to generate feedback from Guests and build up brand presence
+                                                             ▪   Fully Managed CRM & Email solution to increase Guest Loyalty
+
+
+
+Provides feedback , &
+                                         Post - trip
+recommendations on online portals
+
+
+
+
+                                                                                                                                                                 5
+
+[page 7]
+Key Business
+Updates
+
+Q1 FY2027
+
+
+
+
+               6
+[OCR page 7]
+Key Business
+Updates
+
+Q1 FY2027
+
+fateGain
+
+[page 8]
+                                      What stands out to me this quarter is not just our performance, but the confidence
+                                      our customers continue to place in us as travel demand becomes harder to predict .
+                                      We built RateGain on a simple belief that AI should not just make existing work
+                                      faster ; it should become the backbone of every commercial decision our customers
+                                      make, from pricing to distribution to marketing . That belief is now showing up in
+                                      every product we ship and every interaction our customers have with us .
+                                      Together with Sojern, we are focused on one outcome, helping travel and hospitality
+                                      businesses grow faster, with sharper data and better decisions at every step . This
+             BHANU CHOPRA             quarter gives us real momentum, but the future of AI- powered travel is still ours to
+                Chairman and          redefine, and that's what excites me the most .
+               Managing Director
+
+
+Management
+Commentary
+
+
+
+                                      This was a quarter where growth and discipline moved together . Our EBITDA converted
+                                      into cash at a strong rate, and that is the clearest signal of how healthy this business
+                                      really is . It gives us the room to keep investing in growth while staying firm on our
+                                      financial commitments, and we head into the rest of FY 27 with real confidence .
+
+             ANKIT AGGARWAL
+             Interim + Deputy Chief
+                 Financial Officer
+
+
+                                                                                                                                 7
+
+[page 9]
+RateGain posts Robust Growth with                                                   Strong Operating Margins
+
+
+                                    Operating Revenue                                                             Adj. EBITDA* (%)                                                      Adj. PAT* (%)
+                                       Growth Y- O- Y                                                              Growth Y- O- Y                                                       Growth Y- O- Y
+
+
+
+
+   Q1 FY2027                       187.6%                                                                    289.3 %                                                                  148.8%
+                                            INR 785.0 Cr                                                         INR 193.4 Cr (24.6%)                                                 INR 116.8 Cr (14.9%)
+
+
+
+
+               Note : EBITDA and PAT are Adjusted for Deferred Deal Consideration   related to the Sojern Acquisition . This expense is to be incurred for 3 years ending Q3FY 29 .                          8
+
+[page 10]
+    Diversified Revenue                                                                                                                                  2
+                                                                                                                      Gross Revenue Retention                                                     Client Count & LTV to CAC
+    Streams                                                                                          NRR 2          120.9      100.5     99.6                106.8
+                                                                                                                                                                                     LTV to
+                                                                                                                                                                                                  21.3      14.1        13.6          12.8        10.7
+                                                                                                                                                                                      CAC 3
+
+                                                                                                    100             94.2        95.1     94.9                95.6
+•   Diversified revenues across offerings,                                                                                                                                           15,000                                        13,410
+                                                                                                                                                                                                                                                 14,158
+    geographies & customers                                                                          80                                                                              13,000
+                                                                                                                                                                                     11,000
+                                                                                                     60
+•   Healthy revenue mix with subscription &                                                                                                                                          9,000
+                                                                                                     40                                                                                  7,000
+    hybrid business along with recurring nature
+                                                                                                                                                                                     5,000                3,279        3,224
+    of revenues given strong value proposition                                                       20                                                                                          2,942
+                                                                                                                                                                                     3,000
+                                                                                                         0                                                                               1,000
+                                                                                                                FY2024         FY2025   FY2026           Q1FY2027                                FY2023   FY2024      FY2025       FY2026       Q1FY2027
+                                                                                                                                                                                                                   No. of Customers
+
+
+
+
+    Revenue by Engagement                   1                         Revenue by Industry Type                             1               Revenue by Geography                      1                            Revenue by Customers                     1
+
+                                                                                            6.3%                                                               2.5%
+                                                                                    2.1%
+                                                                             4.1%
+                   13.9% 7.3%                                                                                       46.7%                                                                                                               17.6%
+                                                                                                                                                     20.5%
+                                                                                   7.3%
+
+
+                                                                                                                                                   10.8%
+                                                                                                                                                                       66.2%
+                                                                                   33.5%
+                                                                                                                                                                                                                           82.4%
+                        79.1%
+
+
+                                                                        Hospitality        DMOs              OTAs                               North America         Asia Pacific
+    Subscription       Transaction      Hybrid                          Airlines           Car Rentals       Others                             Europe                Others                                               Top 1-10      Others
+
+
+
+
+                                     Note : Numbers have been rounded to nearest whole percentages or one decimal place .. 1. Q1FY27 Revenue from contracts with customers . 2. GRR – Gross Revenue Retention - denotes
+                                     percentage of renewed revenue in DaaS and Distribution as compared to previous Fiscal & NRR - Net Revenue Retention – Denotes percentage of incremental revenue in DaaS and Distribution                                  9
+                                     from same clients compared to previous fiscal 3. LTV :CAC is computed by i) Multiplying Gross Margin from New Sales with expected lifetime of the contracts to arrive at LTV ii) CAC is calculated
+                                     by dividing sales and marketing costs by no of customers added .
+
+[page 11]
+ Steady Growth Metrics Combined with                         Operational Efficiency
+
+                                                                                                                          INR 664 Cr
+                                                                                                                            TOTAL PIPELINE
+                                                                                                                     Pipeline with traction across
+                                                                                  INR 255.6 Cr                                 segments
+
+                                                   78.8%                           NET CASH & EQUIV.
+                                                                                  Net Debt – INR 615.4 Cr
+                                               FREE CASH FLOW
+              14,158                             CONVERSION
+           CUSTOMERS
+    Customers added with Sojern
+             Acquisition
+
+                                                                                                            INR 141.0 Cr
+                                                                                                         NEW CONTRACT WINS
+                                                                              10.7x                    Healthy growth compared to
+                                       INR 2.5 Cr                          LTV TO CAC                             last year
+                                                                    Compared to 14.5x in Q1FY26
+       1,261                        REVENUE PER EMPLOYEE
+     EMPLOYEES                    Increase of 95.3% on a Y - o- Y
+47.3% increase Y - o- Y in        basis as we integrate Sojern
+ Employee Headcount
+
+
+
+
+                                                                                                                                                     10
+
+[page 12]
+Steady Revenue Streams Driven by         Constant Product Innovation
+
+                               Segment wise Growth
+                                                                      Key Highlights                                             Key Partnerships
+                                  (Y - o- Y)(Q1FY27)
+
+                                                       ▪   Philippine Airlines partners with RateGain         to
+                                       DAAS                strengthen competitive pricing intelligence across
+                                                           its global network
+
+                                     22.7%             ▪   RateGain & Duetto partner       to power autonomous,
+                                                           real - time revenue optimization for hotels worldwide
+
+
+
+
+                                                       ▪   RateGain signs Cinko      to help hotels capture last      - minute
+                                                           booking demand
+                                   DISTRIBUTION
+                                                       ▪   RateGain & ZentrumHub announce strategic
+
+                                      3.1%             ▪
+                                                           connectivity partnership to simplify hotel distribution
+
+                                                           RateGain & BoxPay partner to simplify travel and
+                                                           hospitality payments and reconciliation through RG Pay
+
+
+
+
+                                                       ▪   Citrus Leisure partners with RateGain’s UNO Direct
+                                     MARTECH
+                                                           Stack to power end - to - end direct booking journey across
+                                                           Sri Lanka
+
+                                    341.2%             ▪   RateGain wins 2026 Best in SaaS Award           for Best
+                                                           Company in AI - Powered Travel Marketing
+
+
+
+
+                                                                                                                                                    11
+
+[page 13]
+Award - winning Team Driving Performance
+
+
+
+
+                                                         Best Company in
+                                                         AI - Powered
+                                                         Travel Marketing
+
+
+
+               3 Years in a Row
+
+
+
+           PARTNER EXCELLENCE              PRODUCT EXCELLENCE
+
+                                                                            12
+[OCR page 13] (supplemental; native text layer already >100 chars, OCR run to check for image-embedded badge/logo text)
+» Award-winning Team Driving Perfc
+
+3 Years in a Row
+
+PARTNER EXCELLENCE
+fZateGain
+
+BEST IN SAAS
+
+Best Company in
+Al-Powered
+Travel Marketing
+
+12
+
+[page 14]
+Reimagining People & Culture:   Scaling One RateGain Through Integration, AI & Leadership Depth
+                                         Q1 FY'27 was a quarter of consolidation and scale. With the RateGain and Sojern integration substantially behind us,
+                                         the focus moved to strengthening how we hire, how we grow people, how we recognize them, and how AI is
+                                         embedded into all of it.
+
+                                         Attrition Rate for Q1FY27 stood at 14.0%
+
+                                         Culture and employer brand strengthened further.
+                                         RateGain was named Emerging Company of the Year at The Economic Times Awards for Corporate Excellence, and
+                                         our external employer reputation continued to improve across markets. A global Culture Discovery Survey was
+                                         rolled out organization - wide to shape the next phase of our combined culture.
+
+                                         Hiring momentum held, with a sharper focus on quality.
+                                         We welcomed 85 new colleagues across sales, engineering and customer success, with a meaningful share of roles
+                                         filled internally. Hiring now runs on a single global system of record with a daily executive view, and we began rolling
+                                         out competency - based interview practices to improve consistency and hiring quality across regions.
+
+                                         AI in HR moved from build to deployment.
+                                         Several people platforms built in - house went live: Dex, an AI - powered talent pipeline builder, and Orbit, an executive
+                                         people intelligence dashboard. Alongside these, we published a Responsible AI use and governance policy and
+                                         scaled AI learning journeys across the organization, so capability and guardrails advance together.
+
+                                         Capability building scaled across the organization.
+                                         Over 3,000 learning hours were delivered in the quarter at a consistently high learner satisfaction score. NorthStar
+                                         2.0 launched for first - time managers, and structured GTM enablement brought the merged commercial teams onto
+                                         shared product, contracting and partnership practices.
+
+                                         Belonging was given permanent structure.
+                                         Five Employee Resource Groups were institutionalized for the first time under one global framework spanning the
+                                         US, Europe and APMEA, with flagship campaigns on wellbeing, identity and sustainability, and therapist          - led
+                                         Belonging Circles launched during Mental Health Awareness Month.
+
+                                         Together, these reflect a People & Culture function building for scale: unified systems, AI embedded into everyday
+                                         work, stronger managers, and a culture where performance and belonging grow together.
+
+
+
+                                                                                                                                                                    13
+
+[page 15]
+Innovations
+at RateGain
+
+
+
+
+              14
+[OCR page 15]
+fateGain
+
+Innovations
+at RateGain
+
+14
+
+[page 16]
+   Today, we are Reimagining Hospitality with AI
+
+                Making Guest Acquisition             Maximizing Revenue
+                   Effortless With AI                Instantly With AI
+
+                               Target High - Value   AI Voice Agent For
+                                Travelers With AI    Instant Reservations
+
+
+
+
+                       Optimize Ad Spend              AI- Powered Channel Manager
+                  With AI - Powered Bidding           For Real - Time ARI Updates
+
+
+
+
+       Deliver Personalized Guest                             AI That Addresses Guests’ Needs, Upsells,
+Promotions on Email / Text With AI                            and Expedites Essential Services
+
+
+
+
+                                                                                                          15
+
+[page 17]
+Introducing Agentic ARI:                    A next - generation ARI engine for faster, smarter hotel distribution
+An AI - enabled ARI engine that autonomously prioritizes, sequences, and executes ARI updates based on                      days to check - in,
+booking urgency, and commercial impact
+
+
+
+
+                 How Supply Partner         Benefits                                      How D emand Partner Benefits
+
+
+
+
+      Ensure rate consistency and win more bookings with:                           Delivers cleaner, faster, and more reliable data
+
+
+     •   Faster rate increases during peak demand.                              •   30 - 40% optimization in ARI Traffic.
+
+
+     •   Quicker price drops to stay competitive in low                         •   Prioritized processing of the most relevant
+         demand.                                                                    updates.
+
+
+     •   Immediate inventory recovery after cancellations.                      •   Fewer mismatches and failed bookings.
+
+
+
+
+                                                                                                                                                  16
+
+[page 18]
+Introducing RateIQ : Identify & Recover Hidden Revenue Across Distribution
+Hotels are not losing revenue (millions) due to pricing                —they’re losing it due to distribution inefficiencies they can’t see.
+
+
+          Invisible revenue leaks across channels                                              RateIQ = Revenue Recovery Intelligence Layer
+
+
+
+
+     •   Invisible Properties      – Not listed across key OTAs                              • Continuously scans distribution performance across
+     •   Missing ARI – Rates/availability not live despite                                      channels
+         listings                                                                            • Detects revenue leakages at property + channel
+     •   Looks No Books      – High visibility but zero conversions                             level
+     •   Performance Drift       – Gradual decline in                                        • Prioritizes issues based on commercial impact
+         bookings/revenue                                                                    • Fixing rate violations transforms booking dead zones
+     •   Parity Violations      – Inconsistent pricing across                                   into revenue wins
+         channels
+
+
+
+
+                                           Gain full visibility into                                                      Improve discoverability
+     Save Revenue Loss                                                           P roactive optimization
+                                           distribution gaps                                                              & conversion
+
+                                                                                                                                                      17
+
+[page 19]
+Introducing RG Pay:                  A unified, intelligent payment infrastructure                                     for seamless payments
+Real - time intelligence empowering demand partners to optimize supply performance and maximize conversions.
+
+
+
+
+Optimized check out                      BNPL, EMI, and                            VCC settlement layer                         Cross - border and FX
+experience                               affordability solutions                                                                optimization
+Dynamic OTA - grade checkout             Integration with major players,           Issue and accept VCCs in 25+                 Real - time FX rate intelligence
+experience with flexible                 such as Klarna, Affirm, PayPal            currencies with automated                    and rule - based currency
+payment options: cards, wallets,         Pay Later, RazorPay EMI, and              reconciliation, split settlements            optimization
+UPI, iDEAL , SEPA, and other local       card - based instalments                  and payouts
+APIs
+
+
+
+
+         15%                                                     2- 4%                                                     ~20%
+         Revenue Uplift                                          Reduction in Revenue Leakage                              Lift in stay conversion
+
+
+
+
+                                                                                                                                                                   18
+
+[page 20]
+Detailed
+Financials
+
+
+
+
+             19
+[OCR page 20]
+fateGain
+
+Detailed
+miatclaledtsi ts
+
+19
+
+[page 21]
+Sustained Financials and Profitability Metrics
+•   Increased AdSpend leading to higher renewals and continued revenue traction,   has an impact on Gross Margins
+•   Delivering Strong Operating Margins  with GTM Investments and healthy progress on Sojern integration    , as company maintains focus on Operational Excellence
+
+
+                                                                                                                                                       100
+                         Operating Revenue (INR Cr)                                                                                                             76.0           75.1            75.3               75.0
+                                                                                                                                                        80                                                                     70.6         69.2
+
+                                                                                                                   Gross                               60
+                                DaaS    Distribution       Martech
+                                                                                                                   Margins (%)                          40
+
+                                                                                                                                                        20
+
+                                                                                                                                                         0
+    2,000                                                                                                                                                       FY2022        FY2023          FY2024            FY2025        FY2026      Q1FY2027
+                                                                     1,823.6
+                                                                                                                                                                                                EBITDA (INR Cr)
+
+    1,600                                                                                                                                                         30.6         84.7           189.7               232.1        358.3 *      193.4 *
+
+                                                                                                                                                                                                                                            24.6 *
+                                                                                                                                                        25                                     19.8               21.6
+                      49.3% CAGR                                                                                   EBITDA Margins (%)                   20                     15.0
+                                                                                                                                                                                                                               19.6
+
+                                                                                                                                                        15
+    1,200                                                                                                                                                        8.3
+                                                                                                                                                        10
+                                                       1,076.7
+                                                                                                                                                         5
+                                       957.0
+                                                                                                                                                         0
+                                                                                                                                                                FY2022        FY2023          FY2024            FY2025        FY2026      Q1FY2027
+                                                                                     785.0
+     800
+
+
+                        565.1
+                                                                                                                                                      300
+                                                                                      636.6
+     400    366.6                                                                                                                                     250                                                                 230.0
+
+                                                                                                                   Free Cash Flow                     200
+                                                                                                                                                                                      148.1                                               135.2
+                                                                                                                   (INR Cr)                            150                                             113.4
+                                                                                      49.7
+                                                                                                                                                       100
+                                                                                      98.7                                                                        47.5
+        0
+                                                                                                                                                        50
+            FY2022     FY2023          FY2024          FY2025        FY2026         Q1FY2027
+                                                                                                                                                         0
+                                                                                                                                                                 FY2023           FY2024               FY2025             FY2026         Q1FY2027
+
+
+
+
+                     Note : *- Adjusted EBITDA - EBITDA is Adjusted for Deferred Deal Consideration   related to the Sojern Acquisition . This expense is to be incurred for 3 years ending Q3FY 29                                                   20
+
+[page 22]
+    Key Financial
+                                                                                                                      EBITDA                                                                                  PAT
+    Highlights for
+                                                                                                                      INR (Cr)                  193.4 *                                                     INR (Cr)        116.8 *
+    Q1FY2027                                                                            200
+
+                                                                                        170
+                                                                                                                            167.9 *
+                                                                                                                                                                                120
+
+
+•   Strong growth registered      YoY in Operating                                                                                                                              100                             90.9 *
+    Revenue with healthy growth across                                                  140
+                                                                                                                                                                                 80
+    verticals and the integration of Sojern                                              110
+•   Focus on operational excellence and                                                  80
+                                                                                                                                                                                 60
+                                                                                                                                                                                              46.9
+    integration contributing to healthy                                                                 49.7
+                                                                                                                                                                                 40
+                                                                                         50
+    Operating Margins
+•   EBITDA and PAT are adjusted on account of                                            20                                                                                      20
+                                                                                                   Q1FY2026              Q4FY2026             Q1FY2027                                     Q1FY2026           Q4FY2026    Q1FY2027
+    deferred deal consideration related to
+    Sojern acquisition, to be paid over 3 years up
+    to Q3FY29
+
+
+
+                     Operating Revenue                                                                        EBITDA Margin (%)                                                                         PAT Margin (%)
+                             INR (Cr)                   785.0
+       800                                                                             26                                                      24.6 *                           20
+                                    715.5                                                                                                                                                    17.2
+                                                                                                                          23.5 *
+       700                                                                             24                                                                                                                                  14.9 *
+                                                                                       22                                                                                       15
+                                                                                                                                                                                                               12.7
+       600
+                                                                                       20
+       500                                                                                             18.2                                                                     10
+                                                                                        18
+       400
+                                                                                       16                                                                                        5
+       300       272.9
+                                                                                        14
+       200                                                                              12                                                                                       0
+               Q1FY2026           Q4FY2026            Q1FY2027                                   Q1FY2026              Q4FY2026             Q1FY2027                                      Q1FY2026           Q4FY2026    Q1FY2027
+
+
+
+
+                          Note : *- Adjusted EBITDA & PAT – Adjusted for Deferred Deal Consideration    related to the Sojern Acquisition . This expense is to be incurred for 3 years ending Q3FY 29                                 21
+
+[page 23]
+Consolidated Profit & Loss
+ Particulars (INR Cr)                                         Q1 FY27                 Q1 FY26                    YoY                  Q4 FY26                    QoQ                     FY26                    FY25       YoY
+
+ Revenue                                                        785.0                   272.9                  187.6%                    715.5                   9.7%                   1,823.6                 1,076.7   69.4%
+
+
+ Employee Expenses                                              294.8                    109.1                  170.1%                  269.5                    9.4%                    711.7                   398.8     78.5%
+ Other Expenses                                                 318.7                    114.1                 179.3%                   299.0                    6.6%                    774.4                   445.9     73.7%
+ Total Operating Expense                                        613.5                   223.2                  174.8%                   568.5                    7.9%                   1,486.1                  844.6     76.0%
+
+
+ EBITDA                                                         171.5                    49.7                  245.4%                   147.0                   16.7%                    337.5                   232.1     45.4%
+ EBITDA %                                                      21.9%                    18.2%                                           20.5%                                           18.5%                    21.6%
+ Add: Sojern – Deferred Consideration                            21.9                                                                    20.9                                            20.9
+ Adj. EBITDA                                                    193.4                    49.7                  289.3%                   167.9                   15.2%                    358.3                   232.1     54.4%
+ Adj. EBITDA %                                                 24.6%                    18.2%                                           23.5%                                           19.6%                    21.6%
+
+
+ Depreciation                                                     3.7                     1.9                  100.2%                     2.6                    41.7%                    11.4                     6.7     69.1%
+ Amortization of Acquisition cost                                33.8                    6.8                   393.9%                    32.4                    4.4%                    69.3                     28.2    145.9%
+ Finance Costs                                                   16.5                     0.3                 5451.3%                    18.4                   - 10.3%                   31.5                     1.3    2380.2%
+ Exceptional Expenses                                              -                       -                       -                       -                       -                     34.6                       -       NA
+ Other Income                                                     3.1                    20.7                   - 85.1%                   2.6                   19.9%                     61.3                    76.4    - 19.7%
+
+
+ Profit/(Loss) Before Tax                                       120.6                    61.3                  96.6%                     96.2                   25.3%                    252.0                   272.2     - 7.4%
+ Tax                                                             25.7                    14.4                   78.2%                    26.2                    - 2.1%                   57.6                    63.3     - 9.1%
+ Profit/(Loss) After Tax                                        94.9                     46.9                  102.2%                    70.0                   35.6%                    194.4                   208.9     - 7.0%
+ PAT %                                                          12.1%                   17.2%                                            9.8%                                           10.7%                   19.4%
+ Adj. Profit/(Loss) After Tax                                   116.8                    46.9                  148.8%                    90.9                   28.5%                    249.9                   208.9     19.6%
+ Adj. PAT %                                                    14.9%                    17.2%                                           12.7%                                           13.7%                   19.4%
+
+                        Note: Numbers have been rounded to nearest whole percentages or one decimal place.                                                                                                                          22
+                        Adjusted EBITDA & PAT – Adjusted for Deferred Deal Consideration related to the Sojern Acquisition . This expense is to be incurred for 3 years ending Q3FY 29 . For FY 26 , Adj . PAT accounts
+                        for Deferred Deal Consideration and One - time exceptional expense incurred in Q3FY 26 .
+
+[page 24]
+Consolidated Balance Sheet
+ Assets (INR Cr)                             Jun - 26   Mar - 26   Equity & Liabilities        (INR Cr)           Jun - 26   Mar - 26
+ Non - Current Assets                        2,573.8    2,605.2    Equity and Liabilities                         2,114.2    2,005.8
+ Property, plant and equipment                 14.3       12.3     Equity share capital                             11.8       11.8
+ Goodwill                                    1,591.5    1,581.0    Equity attributable to owners of the Company   2,102.4    1,994.0
+ Other intangible assets                      756.3      784.9
+                                                                   Non - current liabilities                       731.4      878.1
+ Other intangible assets under development      -          -
+                                                                   Financial liabilities
+ Right to use assets                          22.2        24.5
+                                                                   Borrowings                                      533.5      682.6
+ Financial Assets
+                                                                   Lease Liabilities                                17.0       18.4
+ i. Investments                                 -          -
+                                                                   Other Financial Liabilities                      32.7       25.2
+ ii. Other financial assets incl. Loans        2.3        2.3
+                                                                   Deferred tax liabilities (net)                  132.6      136.9
+ Deferred tax assets (net)                    158.3      167.8     Provisions                                                  15.0
+                                                                                                                    15.2
+ Non - Current Tax Assets                      27.9       31.3     Other non - current liabilities                  0.4         -
+ Other non - current assets                    1.0         1.1     Current liabilities                             813.5      675.9
+ Current assets                              1,085.3     954.6     Financial liabilities
+ Financial assets                                                  i. Borrowings                                   337.5      238.7
+ i. Investments                                19.7       24.5     ii. Trade payables                              257.5      238.3
+ ii. Trade receivables                        535.7      471.5     iii. Other financial liabilities                84.8       83.0
+ iii. Cash and cash equivalents               226.8       173.1    Lease liabilities                                8.3        9.0
+ iv. Bank balances other than (iii) above      9.1         -       Current tax liabilities (net)                   26.0        19.9
+ Other financial assets incl. Loans            9.4        13.7     Provisions                                       0.9        0.9
+ Other current assets                         284.6      271.8     Other current liabilities                       98.5        86.1
+ Total assets                                3,659.1    3,559.8    Total equity and liabilities                   3,659.1    3,559.8
+
+
+                                                                                                                                        23
+
+[page 25]
+Company
+Overview
+
+
+
+
+           24
+[OCR page 25]
+fateGain
+
+Company
+Overview
+
+24
+
+[page 26]
+RateGain’s Offering to enable Global Clients to Unlock New Revenue with the Power of AI
+Focused on the Travel and Hospitality Industry with business units aligned to our vision of acquiring guest, retaining them,                                                      and wallet share expansion
+                                                       2005                                                                    2008                                                                     2019
+
+
+                                                    DaaS                                                                Distribution                                                             MarTech
+                                          Sell at the right price                                              Sell on the right channels                                              Sell to the right travellers
+
+                              ▪   Provide data and information to players                             ▪    Seamless connectivity between Hotels                               ▪     End to End Digital Marketing Suite to
+                                  across the travel & hospitality industry                                 and their demand partners including OTAs,                                manage Brand presence for Hotels across
+                              ▪   Deliver insights including competitive and                               GDS and others                                                           Social Media and Metasearch platforms
+Overview                          rate parity intelligence                                            ▪    Communicate availability, rates, inventory                         ▪     To Optimize Direct Bookings
+                              ▪   AI led Products to gauge Demand and                                      and content                                                        ▪     Monitor Guest Engagement 24x7
+                                  optimise pricing                                                    ▪    AI led product to standardise content                              ▪     Performance marketing operation
+                              ▪   Custom audiences based on travel intent                                  distribution                                                             leveraging the travel - intent data
+
+
+
+                                              Subscription model                                                RezGain - Subscription model        2                                          Subscription model
+Revenue Model
+                                                 Hybrid model 1                                                  DHISCO - Transaction model        3                                           Transaction model    4
+
+
+
+
+Revenue Mix –
+                                                       12.6%                                                                   6.3%                                                                    81.1%
+(Q1 FY2027)
+
+
+Total SAM                                           USD 1.1 Bn                                                              USD 1.9 Bn                                                              USD 5.8 Bn
+
+
+                                                                                                                                                                                               BCV Social (2019)
+                                                  Adara (2023)                                                                                                                                MyHotelShop (2021)
+Acquisitions*                                                                                                            DHISCO (2018)
+                                                  Sojern (2025)                                                                                                                                  Adara (2023)
+                                                                                                                                                                                                 Sojern (2025)
+
+                                                                                                                          Content - AI
+New AI based Products                                 Rev - AI
+                                                                                                                Voice Connectivity (UNO VIVA)
+developed                                           Demand - AI
+                                                                                                                     Booking Engine MCP
+
+
+                         Note : Source : Company information, Phocuswright and 1Lattice report . Note : Numbers have been rounded to nearest one decimal place . 1. Hybrid Model - charges a minimum subscription
+                         fee and a pay - per - use model for accessing additional data 2. Subscription model - where customers pay a subscription fee to access the product . 3. Transaction Model – company                  25
+                         generates revenues from bookings . 4. Transaction Model – Revenue from campaigns managed for clients
+
+[page 27]
+                                          Increases focus on SMB Segment backed by expansive AI            - powered
+                   Customer Growth        Product offering & Strong Value proposition
+
+
+
+
+                   Land & Expand          Large customer base to drive cross     - sell and up - sell
+
+
+
+
+Multiple Growth    AI- powered Product    Leverage our large data assets to launch AI solutions & features to
+                   Innovation             offer incremental value to customers
+Engines to Drive
+Growth
+                   Geographic Expansion   Invest in GTM teams to build up presence in high       - growth geos
+
+
+
+
+                                          Streamlining Martech offering under a unified platform to deliver
+                   Martech Expansion      predictive traveler insight and drive incremental unique value for
+                                          customers
+
+
+
+                                          Dedicated Strategic Investments Arm to identify Complementary
+                   Inorganic Growth       Opportunities and drive synergies
+
+[page 28]
+Annexures
+
+
+
+
+            27
+[OCR page 28]
+fateGain
+
+Annexures
+
+2u7,
+
+[page 29]
+Key Shareholders                                                           Shareholder Types
+                                                                            (as of June 30, 2026)
+
+
+Promoters
+▪ Bhanu Chopra & Family currently hold   48.78%                   17.63%                     Others
+▪ Promoter Group has increased holding     up from 48.16% as of
+  Sept. 30, 2025
+                                                                  9.41%                      Corporate Bodies
+Key Shareholders
+                                                                  5.75%                      FIIs
+Sundaram Mutual Fund                              5.46%
+
+Nippon Life India Mutual Fund                     4.49%           17.56%                     Mutual Funds
+
+Paisabuddy Finance                                3.80%           0.87%                      Insurance Companies
+
+Axis Mutual Fund                                  2.93%
+
+ICICI Prudential Mutual Fund                      1.85%
+
+Plutus Wealth Management                          1.69%           48.78%
+                                                                                             Promoters &
+                                                                                             Promoter Group
+CIF III Scheme I                                  1.23%
+
+
+
+
+                                                                                                                   28
+
+[page 30]
+            Mr. Divik Anand
+
+Thank You   Email: investor.relations@rategain.com
+            CIN: L72900DL2012PLC244966
+
+            www.rategain.com
+
+
+
+
+                                                     29

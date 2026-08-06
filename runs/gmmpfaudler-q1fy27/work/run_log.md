@@ -29,3 +29,16 @@ companies/GMMPFAUDLER.md ABSENT — first pipeline run for this ticker.
 
 ## Quarter
 q1fy27 (quarter ended June 30, 2026).
+
+## RUN CLOSE (2026-08-06)
+Pipeline complete, all gates cleared on first pass (no A5 loop-backs).
+- A1: results 3pp 100% / presentation 29pp 100% (15 slides OCR'd). Malformed-PDF
+  contamination on the press release isolated by A1 (verified true 3 pages via 3 methods).
+- A2: results 14 categories / 48 rows reconciled; presentation 29 slides / 414 numbers / 6 footnotes.
+- A3: results Gate A3 pass (F6/F8/F13/F14 findings); presentation Gate A3 pass (14 findings).
+- A4: PROCEED WITH FLAGS; cash INDETERMINATE; branch 8A-W; 13 mgmt questions; brief included.
+- A5: verdict COMPLETE (coverage/arithmetic/deliverable all pass; no surviving bear counters).
+- Notion: full review + A3 forensics + A5 verdict appended; Key Notes prepended; Decision
+  Status unchanged (WATCHLIST Deep) — no pre-committed trigger formally fired.
+Role 5 (concall) deferred: call held today 06-Aug-2026, transcript not yet available.
+Third upload was a byte-duplicate of the press release; excluded.

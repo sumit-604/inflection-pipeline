@@ -1,0 +1,210 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: press_release_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 3
+formfeed_count: 3
+line_count: 210
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-06
+=== END HEADER ===
+
+EXTRACTION METHOD NOTE (mechanical, factual, not interpretive):
+pdfinfo reports a structural syntax error on this PDF ("Suspects object is
+wrong type (boolean)") and Producer "Microsoft Word for Microsoft 365".
+Running `pdftotext -layout` on the whole file in a single pass (the default
+per-document command) returned 50,014 characters with 29 form-feed markers,
+containing an entirely different covering letter (doc ref GMM/SEC/2026-27/30,
+"Sub.: Investor Presentation...") and ~28 slides of Investor Presentation
+content (title "Earnings Presentation Q1 FY27", ending in an "Acquisition's
+Outcome" table) -- content that does not match this input file's actual
+covering letter or the task's stated 3-page press release. This is judged to
+be contamination from an orphaned/unreferenced object in the malformed PDF
+body, surfaced only by -layout's whole-document recovery pass.
+Cross-checked via three independent methods that all agree with each other
+and with pdfinfo/pdftoppm's page count of 3:
+  (a) `pdftotext` (no -layout) whole document: 6,276 chars, 3 form-feeds,
+      exactly equal to the sum of its own per-page (-f/-l) extractions.
+  (b) `pdftotext -layout -f N -l N` run separately for N=1,2,3: 1,038 + 3,358
+      + 3,198 = 7,594 chars, each file ending in exactly one trailing
+      form-feed (the normal poppler per-page marker), content matching (a).
+  (c) `pdftoppm` default rasterization: exactly 3 page images (pg-1.jpg,
+      pg-2.jpg, pg-3.jpg), consistent with pdfinfo Pages: 3.
+Covering letter doc ref on this file's page 1 is GMM/SEC/2026-27/29,
+"Sub.: Press Release on the ... Financial Results ... for the quarter ended
+June 30, 2026" -- matching the task's stated document and the input
+filename "press_release_q1fy27.pdf". The per-page -layout extractions (b)
+are therefore used below as the authoritative, complete, uncontaminated
+extraction of this 3-page press release. No OCR was required; each real
+page yielded well over 100 characters of native text.
+
+[page 1]
+GMM/SEC/2026-27/29                                                              August 5, 2026
+
+To,
+BSE Limited                                                                    NSE Limited
+Scrip Code: 505255                                                             Symbol: GMMPFAUDLR
+
+Sub.: Press Release on the Unaudited Standalone and Consolidated Financial Results of GMM Pfaudler
+      Limited (“Company”) for the quarter ended June 30, 2026
+
+Dear Sir/ Ma’am,
+
+Pursuant to SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, please find enclosed
+the press release on the Unaudited Standalone and Consolidated Financial Results of the Company for the
+quarter ended June 30, 2026.
+
+Kindly take the same on record.
+
+Thanking you.
+
+Yours faithfully,
+
+For GMM Pfaudler Limited
+MITTAL        Digitally signed by
+              MITTAL KARTIK
+KARTIK        MEHTA
+              Date: 2026.08.05
+MEHTA         18:02:37 +05'30'
+
+Mittal Mehta
+Company Secretary & Compliance Officer
+FCS. No. 7848
+
+Encl.: As above
+
+[page 2]
+    BSE: 505255 | NSE: GMMPFAUDLR | CIN: L29199GJ1962PLC001171 | ISIN: INE541A01023 | SECTOR: ENGINEERING - HEAVY
+
+
+
+                                                           Quarterly Earnings Release | Q1 FY27
+Mumbai, August 05, 2026: GMM Pfaudler Limited, a diversified global engineering company serving the
+process industries, announces its financial results for the first quarter (Q1 FY27) ended June 30, 2026.
+
+Financial Performance
+
+Consolidated
+                                                                                       Figures in ₹ crores except EPS
+
+                                       EBITDA                        PAT                           Order
+         Revenue        EBITDA                          PAT                          EPS                            Backlog
+ Q1                                    Margin                       Margin                         Intake
+FY27
+           ₹925            ₹94          10.1%            22           2.4%           ₹5.32          ₹1,007          ₹2,289
+
+
+Key Highlights
+
+Performance Highlights:
+ Revenue up 16% YoY and down 2% QoQ
+ EBITDA down 7% YoY and up 25% QoQ
+ PAT up 118% YoY and 44% QoQ
+ Order Intake of ₹ 1,007 Crores up 16% QoQ
+ Backlog of ₹ 2,289 Crores up 20% YoY and 4% QoQ
+Corporate Highlights:
+ Reorganization of our businesses into four distinct global divisions to drive growth, diversification and
+   cost efficiencies.
+ Repayment of approx. EUR 7 million of debt by the end of Q2 FY27, funded through internal accruals.
+ Revision of the dividend payout frequency from semi-annual to annual, with no change in the
+   Company’s Dividend Distribution Policy.
+
+Management Comments
+
+Commenting on the Company’s Q1 FY27 results, Mr. Tarak Patel, Managing Director, said;
+"Revenue for Q1 FY27 grew 16% year-on-year, reflecting the strength of our diversified business portfolio
+and execution capabilities. While EBITDA was lower compared to the corresponding quarter last year, the
+initiatives undertaken over the past year have improved our earnings flow-through, resulting in profit after tax
+more than doubling year-on-year. Our order intake momentum continues to remain strong, with our backlog
+increasing 20% YoY.”
+He further commented, “As part of our ongoing Global Transformation Programme, we have now reorganized
+our businesses into four distinct divisions. This new global structure allows each division to focus on its
+strategic priorities, while unlocking meaningful value across the group. We believe this strategic realignment
+will enable us to leverage our global scale more effectively, unlock operational synergies, improve profitability,
+and support our long-term vision of building a diversified, technology-driven global engineering company."
+
+Commenting on the Company’s Q1 FY27 results, Mr. Gregory Gelhaus, Group CEO, said;
+“Q1 marks a positive start to the year and reflects the benefits of the strategic decisions and operational
+initiatives undertaken over the past year. With our new global operating structure now in place, our focus is
+on driving execution, strengthening accountability, and accelerating growth. This multi-quarter transformation
+programme is designed to build a simpler, more efficient organization with higher-quality earnings and a
+stronger cash generation."
+
+[page 3]
+       BSE: 505255 | NSE: GMMPFAUDLR | CIN: L29199GJ1962PLC001171 | ISIN: INE541A01023 | SECTOR: ENGINEERING - HEAVY
+
+
+
+                                                              Quarterly Earnings Release | Q1 FY27
+   Unaudited results for the quarter ended June 30, 2026, prepared under Ind AS, are available in the
+   Investor Relations section of our website www.gmmpfaudler.com
+
+   Quarterly Conference Call
+
+   The company will hold an earnings conference call on Thursday, August 06, 2026, at 12:00 PM (Indian
+   Standard Time) to discuss the unaudited financial results and performance of the Company for the quarter
+   ended June 30, 2026.
+   The audio conference call will be accessible from all networks and countries through universal access dial-
+   ins: +91 22 6280 1341 / +91 22 7115 8242 or at weblink
+   The Q1 FY27 Earnings presentation will be submitted to Stock Exchanges and shall also be hosted on the
+   Company's website at www.gmmpfaudler.com
+
+
+   About GMM Pfaudler Limited
+
+   GMM Pfaudler is a diversified global engineering company with a heritage of more than 140 years. The
+   Company brings together strong engineering capabilities, a cost-efficient global manufacturing footprint, and
+   deep process know-how to help customers improve performance, reliability, and efficiency in process
+   industries worldwide.
+   With 20 manufacturing facilities across four continents and a strong local presence, the Company operates
+   through four distinct global divisions: Corrosion-Resistant Technologies, Process Performance
+   Technologies, Heavy Engineering Technologies, and Process System Technologies, to serve
+   customers worldwide.
+   More information is available at www.gmmpfaudler.com
+
+
+   Contact details
+
+              Company                                    Investor                                   Media
+
+                                            Ms. Neha Shroff                           Abhishek Savant
+  Raveen Kanabar                                                                      Veritas Reputation PR Private Ltd.
+                                            Strategic Growth Advisors
+  Senior Manager Finance & Accounts,                                                  Tel: +91 8108848822
+                                            Tel: +91 77380 73466                      Email: abhishek@veritasreputation.com
+  GMM Pfaudler Limited
+                                            Email: neha.shroff@sgapl.net
+  Tel: +91 22 6650 3900
+  Email:
+  investorrelations@gmmpfaudler.com
+
+Disclaimer:
+Certain statements in this document that are not historical facts are forward looking statements. Such forward-
+looking statements are subject to certain risks and uncertainties like government actions, local, political or economic
+developments, technological risks, and many other factors that could cause actual results to differ materially from
+those contemplated by the relevant forward-looking statements. GMM Pfaudler Limited will not be in any way
+responsible for any action taken based on such statements and undertakes no obligation to publicly update these
+forward-looking statements to reflect subsequent events or circumstances.
+
+```yaml
+stage: A1-extractor
+company: "GMMPFAUDLR"
+quarter: "Q1 FY27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 210
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1"
+ocr_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/gmmpfaudler-q1fy27/work/extract_results_gmmpfaudler_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

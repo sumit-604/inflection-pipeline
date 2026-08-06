@@ -6,6 +6,8 @@ Role 4 (Quarterly Results Review Protocol v1.2) executed in full step sequence o
 Source extract: `runs/gee-q1fy27/work/extract_results_gee_q1fy27.txt` (line anchors below are that file's `cat -n` numbers).
 Unit convention: filing is in **Rs Lakhs** (line 69). Reported in **Rs Crores** = Lakhs x 0.01, per pipeline convention. Line-number anchors preserved to the Lakhs extract.
 
+> **REV NOTE (A5 arithmetic loop-back):** Step-4 reported-PAT-YoY total corrected from +₹6.87 Cr to **+₹5.87 Cr** (line 99: 684.55 − 97.59 = 586.96 L = ₹5.87 Cr — a Crore-conversion slip; the Lakhs figure and all bridge components were already correct). Step-4 recurring/non-recurring split recomputed against the correct ₹5.87 Cr denominator. "Half one-off" framing corrected to **~63% one-off** (exceptional 369.55/586.96 = 63.0%). Cash-conversion INDETERMINATE cap and PROCEED WITH CAVEATS verdict unchanged — arithmetic correction, not a thesis change.
+
 ---
 
 ## LEDGER RECONCILIATION PREAMBLE (contractual, stated before Step 1)
@@ -82,6 +84,8 @@ Columns: Q1 FY26 (30-Jun-25, Unaudited) | Q4 FY26 (31-Mar-26, Audited) | Q1 FY27
 
 Notes on cells: Q4 FY26 and FY26 exceptional item of ₹3.34 Cr is a **CHARGE** (Less), not explained in this filing — its nature is **ND** (Note 4 covers only the Q1 FY27 property-sale gain). Flagged. Q1 FY26 exceptional is nil (dash, A2 ZERO_STANDING row 14). Other Equity is annual-only balance-sheet disclosure (blank at all interim columns; A2 ZERO_STANDING row 25) → ND for the three non-annual columns, not estimated.
 
+Check (self-consistency of the PAT-YoY base used downstream): Step 1 PAT Q1 FY27 − Q1 FY26 = 6.85 − 0.98 = **+₹5.87 Cr**. This is the denominator Step 4 must use.
+
 **Derived metrics (Operating EBITDA computed off PBT-before-exceptional to strip the non-operating exceptional; formula PBT + D + Finance Costs − Other Income):**
 
 | Derived Metric | Formula | Q1 FY26 | Q4 FY26 | Q1 FY27 | FY25 | FY26 |
@@ -113,7 +117,7 @@ Every cell above is a line-anchored number or the literal ND. No estimation.
 | Other Income (₹ Cr) | 0.02 | 0.31 | +1260.8% | Off a near-nil base; immaterial ₹0.31 Cr |
 | **Core Operating PBT ex-OI (₹ Cr, pre-exc)** | 1.28 | 5.14 | **+301.4%** | **Core operations genuinely improved (4.0x)** |
 | Reported PBT after exceptional (₹ Cr) | 1.30 | 9.15 | +601.5% | Inflated by ₹3.70 Cr property-sale gain |
-| PAT (₹ Cr) | 0.98 | 6.85 | +601.5% | 40.4% of PBT is non-recurring |
+| PAT (₹ Cr) | 0.98 | 6.85 | +601.5% | 40.4% of PBT-after-exc is non-recurring |
 | EPS share-adjusted (₹) | 0.19 | 1.32 | +594.7% | Same distortion as PAT |
 
 **Six mandatory diagnostics:**
@@ -124,7 +128,7 @@ Every cell above is a line-anchored number or the literal ND. No estimation.
 
 3. **Did core operating PBT ex-OI grow YoY?** Yes, and cleanly: **+301.4% (₹1.28 Cr → ₹5.14 Cr, 4.0x)**. Critically, core operating PBT rose independent of both Other Income (₹0.31 Cr, immaterial) and the exceptional gain. So unlike a treasury-driven print, the operational core is genuinely up. This is the single most important honest signal in the filing and is what makes F1.1 AMBIGUOUS rather than a clean "one-off" dismissal.
 
-4. **What drove the gap between core operating PBT growth (+301%) and reported PAT growth (+601%)?** The gap is almost entirely the **₹3.70 Cr exceptional property-sale gain** (Note 4). Walk: core operating PBT ex-OI +₹3.86 L… (in Cr: +3.86); +Other Income change +₹0.29 Cr; +finance-cost saving +₹0.40 Cr; −depreciation change +₹0.01 Cr → PBT-before-exceptional +₹4.15 Cr; + exceptional gain +₹3.70 Cr; − higher tax −₹1.97 Cr = +₹6.87 Cr PAT. The exceptional gain is 63.0% of the pre-tax PAT increase and 40.4% of reported PBT-after-exceptional. Headline growth is HALF real, HALF one-off asset sale.
+4. **What drove the gap between core operating PBT growth (+301%) and reported PAT growth (+601%)?** The gap is almost entirely the **₹3.70 Cr exceptional property-sale gain** (Note 4). Walk (₹ Cr): core operating PBT ex-OI +₹3.86 Cr; +Other Income change +₹0.29 Cr; +finance-cost saving +₹0.40 Cr; +depreciation change +₹0.01 Cr → PBT-before-exceptional +₹4.15 Cr; + exceptional gain +₹3.70 Cr; − higher tax −₹1.97 Cr = **+₹5.87 Cr PAT**. The exceptional gain is **63.0% of the reported PAT increase** (369.55/586.96 L) and 40.4% of reported PBT-after-exceptional. Nearly two-thirds of the headline PAT jump is a one-off asset sale; the operating core supplies the rest.
 
 5. **Are D&A and finance costs scaling faster than revenue?** No — the opposite. Depreciation flat (−0.8%) and finance costs DOWN 17.7% against revenue +29.9%. No capex-absorption deficit signalled this quarter; the operating leverage is clean of a D&A ramp. (Caveat: no balance sheet, so PPE/CWIP movement is ND — a commissioning capex could still be pending and simply not yet capitalised.)
 
@@ -153,7 +157,7 @@ Only three quarters are present in this filing (Q1 FY26, Q4 FY26, Q1 FY27). **Q2
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION (PAT bridge, Q1 FY26 → Q1 FY27)
 
-Reported PAT change: ₹0.98 Cr → ₹6.85 Cr = **+₹6.87 Cr** (+₹586.96 L). Decomposed (Lakhs shown for precision; Op EBITDA change split into volume-at-prior-margin and margin effect):
+Reported PAT change: ₹0.98 Cr → ₹6.85 Cr = **+₹5.87 Cr** (line 99: 684.55 − 97.59 = +586.96 L). Decomposed (Lakhs shown for precision; Op EBITDA change split into volume-at-prior-margin and margin effect):
 
 | Component | YoY Change (₹ Cr) | YoY Change (₹ L) | Recurring? |
 |---|---|---|---|
@@ -164,10 +168,20 @@ Reported PAT change: ₹0.98 Cr → ₹6.85 Cr = **+₹6.87 Cr** (+₹586.96 L).
 | Other Income change | +0.29 | +28.62 | NON-RECURRING typically (immaterial ₹0.31 Cr level) |
 | Exceptional items (property sale, Note 4) | +3.70 | +369.55 | **NON-RECURRING** |
 | Effective tax rate / tax change | (1.97) | (197.42) | Mixed (flat 25.17% ETR; higher absolute tax on higher PBT) |
-| **Reported PAT YoY change** | **+6.87** | **+586.96** | — |
+| **Reported PAT YoY change** | **+5.87** | **+586.96** | — |
+
+**Recurring / non-recurring split of the +₹5.87 Cr (+586.96 L) reported PAT increase (denominator = 586.96 L; components sum to ~100%):**
+
+| Bucket | ₹ L | % of PAT increase |
+|---|---|---|
+| Core operating (volume +135.83 + margin +209.91 + D&A +0.81 + finance +39.67) | +386.22 | **65.8%** |
+| Other Income | +28.62 | **4.9%** |
+| Exceptional property-sale gain (NON-RECURRING) | +369.55 | **63.0%** |
+| Tax drag | −197.42 | **−33.6%** |
+| **Total** | **+586.96** | **≈100%** |
 
 **Mandatory questions:**
-- **% of YoY PAT change from recurring core vs non-recurring:** On a pre-tax basis, core operating improvement (volume + margin + D&A + finance) = +₹3.87 Cr (56.3% of the +₹6.87 Cr, before tax); Other Income +₹0.29 Cr (4.2%); the exceptional property-sale gain +₹3.70 Cr (53.9% pre-tax); tax drag −₹1.97 Cr. Net: **roughly half the reported PAT jump is a one-time asset sale**, but the other half is a genuine operating improvement — this is why F1.1 is AMBIGUOUS, not a clean strip-out.
+- **% of YoY PAT change from recurring core vs non-recurring:** Against the correct ₹5.87 Cr (586.96 L) base, the exceptional property-sale gain is **63.0% of the reported PAT increase** — nearly two-thirds is a one-time asset sale. The recurring operating core contributes +65.8% (pre-tax), Other Income +4.9%, offset by a −33.6% tax drag. Read plainly: **~63% of the headline PAT jump is non-recurring property gain**, and the operating improvement, though genuine, is largely consumed by higher tax at the reported-PAT line.
 - **If Other Income reverts to prior level:** negligible effect (−₹0.29 Cr). Other Income is not the distortion here.
 - **If the exceptional gain is stripped:** normalised PAT ≈ ₹6.85 Cr − (₹3.70 Cr gain net of tax). The gain appears taxed within current tax (no separate LTCG line, F8.1); a conservative post-tax gain of ~₹2.8-3.7 Cr strips to a normalised PAT of roughly **₹3.1-4.1 Cr** (₹ range, because the tax split is undisclosed → the exact split is ND). Even at the low end, normalised PAT is ~3x Q1 FY26 — operationally real, just not ₹6.85 Cr of recurring earnings.
 - **D&A / finance at steady state?** D&A flat and finance costs falling; no ramp evident. But no balance sheet → whether a commissioning-stage asset (the Notion FCAW line) is about to lift depreciation is ND.
@@ -250,7 +264,7 @@ Probability re-weighting rule (v1.2): it requires actuals BELOW BEAR on 2+ metri
 | #5 Q1 FY27 revenue below ₹70 Cr | <₹70 Cr | ₹102.86 Cr (line 73) | **NOT FIRED (clears comfortably)** |
 | #6 FY27 H1 operational CFO (ex-asset-sales) still negative | Negative at H1 | UNTESTABLE at Q1; H1 cash-flow available only at Q2 | PENDING (Q2 FY27 decides) |
 
-**No file-closure trigger has fired.** Two remain unresolved and PENDING (pledge/AR #1; H1 CFO #6), one is UNTESTABLE-untestable this quarter (#1 monitoring CFO). Since the decisive Trigger #1 (operational CFO positive ex-asset-sales) is UNDISCLOSED, the re-engagement condition ("3+ triggers AND specifically #1 fires") **cannot be satisfied on this filing → AVOID extends.**
+**No file-closure trigger has fired.** Two remain unresolved and PENDING (pledge/AR #1; H1 CFO #6), one is untestable this quarter (#1 monitoring CFO). Since the decisive Trigger #1 (operational CFO positive ex-asset-sales) is UNDISCLOSED, the re-engagement condition ("3+ triggers AND specifically #1 fires") **cannot be satisfied on this filing → AVOID extends.**
 
 ### 6D. Growth Trigger Status
 
@@ -315,7 +329,7 @@ Channel: GEE hosts no concall this cycle (none supplied; SME-style disclosure). 
 | # | Question | From finding | Why It Matters | Bull Answer | Bear Answer |
 |---|---|---|---|---|---|
 | 1 | For Q1 FY27, what was cash flow from operations EXCLUDING the ₹3.70 Cr proceeds from the two property sales — a specific rupee figure? | **F1.1 (AMBIGUOUS)** | The decisive Notion Trigger #1; the filing carries no cash-flow statement, so operational cash quality is entirely undisclosed. | A positive operational CFO figure with debtor-days evidence | Refusal, "we'll share at half-year", or a negative number |
-| 2 | Which two immovable properties were sold in Q1 FY27, to whom, and is either connected to the Thane JDA with Fen-Kin Infinity LLP or to any related party? | **F1.1 (AMBIGUOUS)** | ₹3.70 Cr = 40.4% of PBT; RPT history (Sec 185/186 flagged) makes counterparty identity material. | Arm's-length third-party sale, unrelated to JDA | Related-party buyer or JDA-linked → governance red flag |
+| 2 | Which two immovable properties were sold in Q1 FY27, to whom, and is either connected to the Thane JDA with Fen-Kin Infinity LLP or to any related party? | **F1.1 (AMBIGUOUS)** | ₹3.70 Cr = 40.4% of PBT and 63.0% of the YoY PAT increase; RPT history (Sec 185/186 flagged) makes counterparty identity material. | Arm's-length third-party sale, unrelated to JDA | Related-party buyer or JDA-linked → governance red flag |
 | 3 | The typed director-signature date on the results reads 06-Jul-2026, but the digital certificate and board meeting are 06-Aug-2026 — which is correct, and what is the sign-off control that let a July date onto an August filing? | **F14.1 (AMBIGUOUS)** | Backdating cannot be excluded on face; drafting-control quality is a governance tell for a CONCERN-rated promoter. | Clear copy-paste explanation + tightened control | Evasion or inability to explain → control weakness |
 | 4 | The 51 lakh promoter warrants at ₹80 remain unconverted at 30-Jun-26. What is the exact conversion schedule, and will the ₹40.80 Cr proceeds go to debt reduction or working capital? | **F10.1 (FORWARD-SIGNAL)** | ~9.8% dilution overhang is live; use of proceeds bears on the cash thesis and on promoter alignment. | Committed date + debt-reduction use | Vague timeline, or WC top-up (masks operational cash gap) |
 | 5 | When will the FY26 Annual Report and Corporate Governance Report (approved at this board meeting) be published, and will they carry a specific explanation and reduction timeline for the 43.36% promoter pledge? | **F13.1 (FORWARD-SIGNAL)** | The AR is where closure triggers #1 (pledge) and #2 (FY26 audit opinion) resolve; AR approval was booked at this meeting. | Firm publication date + pledge-reduction plan | Delay or "no change to disclose" → closure trigger #1 risk |
@@ -352,11 +366,11 @@ Provenance key: **[FILING]** = this Q1 FY27 filing at a line anchor; **[NOTION]*
 
 ### 1. SUMMARY NARRATIVE
 
-GEE Limited reported Q1 FY27 revenue of ₹102.86 Cr **[FILING line 73]**, up 29.9% from ₹79.18 Cr a year earlier. Reported profit after tax jumped to ₹6.85 Cr **[FILING line 99]** from ₹0.98 Cr, and headline EPS rose to ₹1.32 **[FILING line 109]** from ₹0.19. That headline is half real and half one-off. The company sold two properties and booked a ₹3.70 Cr exceptional gain **[FILING Note 4, lines 122-123]**, which is 40.4% of pre-tax profit. Strip it out and profit before tax is still about ₹5.45 Cr **[FILING line 88]**, roughly four times last year, so the underlying operations did genuinely improve: operating margin widened 204 basis points to 7.78% and finance costs fell 18%. But sequentially the quarter is softer than it looks, with revenue down 8.3% from the December-quarter peak of ₹112.16 Cr **[FILING line 73]** and operating margin down 214 basis points.
+GEE Limited reported Q1 FY27 revenue of ₹102.86 Cr **[FILING line 73]**, up 29.9% from ₹79.18 Cr a year earlier. Reported profit after tax jumped to ₹6.85 Cr **[FILING line 99]** from ₹0.98 Cr, and headline EPS rose to ₹1.32 **[FILING line 109]** from ₹0.19. That headline is mostly a one-off. The company sold two properties and booked a ₹3.70 Cr exceptional gain **[FILING Note 4, lines 122-123]**, and that gain alone is about 63% of the ₹5.87 Cr rise in profit and 40% of pre-tax profit. Strip it out and profit before tax is still about ₹5.45 Cr **[FILING line 88]**, roughly four times last year, so the underlying operations did genuinely improve: operating margin widened 204 basis points to 7.78% and finance costs fell 18%. But sequentially the quarter is softer than it looks, with revenue down 8.3% from the December-quarter peak of ₹112.16 Cr **[FILING line 73]** and operating margin down 214 basis points.
 
 The one number that would have settled the investment question is missing. GEE's thesis is on AVOID because its cash generation has been deteriorating (FY26 operating cash flow was negative ₹10.52 Cr **[NOTION]**), and the single agreed test for this filing was Q1 operating cash flow excluding asset sales. A first-quarter Indian filing carries no cash-flow statement, and this one does not either **[FILING — only annual Other Equity at line 106]**. So the decisive test cannot be answered here. Governance items also stay open: the 43.36% promoter pledge **[NOTION]** is not addressed in a results filing and resolves only in the annual report, which the board just approved and which is due within weeks **[FILING agenda 2, lines 36-37]**. The 51 lakh promoter warrants at ₹80 remain unconverted **[FILING line 103 — paid-up flat QoQ]**, leaving a roughly 10% dilution overhang. One drafting oddity is worth an answer: the director's typed sign-off date reads 06-Jul-2026 while the certificate and board meeting are 06-Aug-2026 **[FILING line 140]**.
 
-For the decision: the auditor's opinion is clean and unmodified **[FILING line 188]**, the auditor is unchanged, and revenue cleared the ₹95 Cr monitoring mark and is nowhere near the ₹70 Cr close-the-file mark. No file-closure trigger fired. But only one of the required triggers fired, and the decisive cash trigger could not be tested, so the re-entry gate is not met. Decision Status stays **WATCHLIST / AVOID**, position stays **ZERO**, and the real test moves to the Q2 FY27 results in November, when the half-yearly cash-flow statement is legally required.
+For the decision: the auditor's opinion is clean and unmodified **[FILING line 188]**, the auditor is unchanged, and revenue cleared the ₹95 Cr monitoring mark and is nowhere near the ₹70 Cr close-the-file mark. No file-closure trigger fired. But only one of the required triggers fired, the profit jump is nearly two-thirds a one-time property sale, and the decisive cash trigger could not be tested, so the re-entry gate is not met. Decision Status stays **WATCHLIST / AVOID**, position stays **ZERO**, and the real test moves to the Q2 FY27 results in November, when the half-yearly cash-flow statement is legally required.
 
 ### 2. SECTOR INTELLIGENCE
 
@@ -364,7 +378,7 @@ GEE is a welding-consumables manufacturer operating in a **single reportable seg
 
 ### 3. BUSINESS-MODEL INTELLIGENCE
 
-The model is a straightforward make-and-sell manufacturer with a growing trading overlay. Two structural signals stand out this quarter. First, **purchase of stock-in-trade jumped to ₹13.61 Cr from ₹0.06 Cr a year earlier** **[FILING line 79]** — GEE is now buying finished goods to resell alongside what it manufactures, a mix shift toward trading that typically carries thinner margins and can flatter revenue without adding much profit. That partly explains why revenue grew 30% while operating margin, though up YoY, remains modest at 7.78% and below the FY26 full-year 9.05% **[FILING derived]**. Second, and more important for the thesis, **the reported profit leans on a property sale, not on operations** **[FILING Note 4]**. This matters because the whole GEE question is whether the business converts profit into cash: FY26 converted profit into *negative* cash (CFO/PAT −0.81x) **[NOTION]**, and a company that plugs cash by selling real estate is exhibiting exactly the model weakness the thesis flags. Unit economics that would confirm or deny model drift — debtor days, inventory days, working-capital intensity — are **[ND]** this quarter (no balance sheet). Depreciation is flat and finance costs fell **[FILING lines 84, 83]**, so there is no sign yet of a heavy new-capex absorption drag, but no capacity or utilisation figure is disclosed **[ND]**. Net read: operations improved, but the model has drifted toward trading and continues to rely on asset sales for cash — unresolved until the H1 cash-flow statement.
+The model is a straightforward make-and-sell manufacturer with a growing trading overlay. Two structural signals stand out this quarter. First, **purchase of stock-in-trade jumped to ₹13.61 Cr from ₹0.06 Cr a year earlier** **[FILING line 79]** — GEE is now buying finished goods to resell alongside what it manufactures, a mix shift toward trading that typically carries thinner margins and can flatter revenue without adding much profit. That partly explains why revenue grew 30% while operating margin, though up YoY, remains modest at 7.78% and below the FY26 full-year 9.05% **[FILING derived]**. Second, and more important for the thesis, **the reported profit leans on a property sale, not on operations** **[FILING Note 4]** — roughly 63% of the profit increase is that one-time gain. This matters because the whole GEE question is whether the business converts profit into cash: FY26 converted profit into *negative* cash (CFO/PAT −0.81x) **[NOTION]**, and a company that plugs cash by selling real estate is exhibiting exactly the model weakness the thesis flags. Unit economics that would confirm or deny model drift — debtor days, inventory days, working-capital intensity — are **[ND]** this quarter (no balance sheet). Depreciation is flat and finance costs fell **[FILING lines 84, 83]**, so there is no sign yet of a heavy new-capex absorption drag, but no capacity or utilisation figure is disclosed **[ND]**. Net read: operations improved, but the model has drifted toward trading and continues to rely on asset sales for cash — unresolved until the H1 cash-flow statement.
 
 ### 4. COMPETITION INTELLIGENCE
 
@@ -390,6 +404,12 @@ cash_conversion: "INDETERMINATE"
 decision_status_verified: "WATCHLIST / AVOID"
 position_branch: "8A-W"
 sc_gap_pat_pct: ["N.A. — standalone-only filing, no consolidated statement exists this cycle (all periods)"]
+pat_bridge_yoy_total_cr: 5.87            # 684.55 − 97.59 = 586.96 L = ₹5.87 Cr (corrected from 6.87; A5 arithmetic loop-back)
+pat_bridge_split_pct:                    # against 586.96 L denominator, sums ≈100%
+  core_operating: 65.8
+  other_income: 4.9
+  exceptional_property_sale: 63.0
+  tax_drag: -33.6
 questions_for_management:
   - {q: "Q1 FY27 operational CFO EXCLUDING the ₹3.70 Cr property-sale proceeds — specific figure?", from_finding_id: "F1.1"}
   - {q: "Which two immovable properties were sold, to whom, and any Thane-JDA / related-party connection?", from_finding_id: "F1.1"}
@@ -411,7 +431,7 @@ monitorables:
   - {item: "NPCIL first material order >=₹5 Cr", implied_date: "Q2-Q3 FY27", source_ref: "Notion checklist #9"}
 flags:
   - "Cash conversion INDETERMINATE — no cash-flow statement in Q1 filing; the decisive Trigger #1 (operational CFO ex-asset-sales) CANNOT be settled from this document."
-  - "40.4% of PBT-after-exceptional is a non-recurring ₹3.70 Cr property-sale gain (Note 4, lines 122-123)."
+  - "~63% of the +₹5.87 Cr YoY PAT increase is a non-recurring ₹3.70 Cr property-sale gain (Note 4, lines 122-123); = 40.4% of PBT-after-exceptional."
   - "Unexplained ₹3.34 Cr FY26/Q4 exceptional CHARGE (opposite sign to Q1 gain) not described in this filing."
   - "51 lakh promoter warrants at ₹80 unconverted at 30-Jun-26 -> ~9.8% dilution overhang live (F10.1)."
   - "43.36% promoter pledge NOT addressed in results filing; resolves only in imminent FY26 AR (F13.1) — closure trigger #1 unresolved."

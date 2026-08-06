@@ -455,7 +455,7 @@ Every quantified claim in the CEO opening (call L8-L30) and CFO remarks (call L3
 | #18 | Apnea (APAC) new customer wins +200% YoY | Customer | Yes | L18 |
 | #20 | Agentic ARI: up to 30-40% ARI-traffic optimisation | Operational | Yes | L20 |
 | #21/#22 | **FY27 revenue guidance raised to ~Rs 3,100 Cr (upper end), implies ~70% YoY** | Forward Guidance | Yes | L28 |
-| #23 | **FY27 adjusted margin guidance raised to 22-23% (~+100bps vs prior 21.5-22.5%)** | Forward Guidance | Yes | L28 |
+| #23 | **FY27 adjusted margin guidance raised to 22-23% (+50 bps per bound vs prior 21.5-22.5%)** | Forward Guidance | Yes | L28 |
 | #24 | Medium-term growth aspiration 15-20% ("higher end") | Forward Guidance | Yes | L28 |
 
 **Four diagnostics:** (a) **Quantification:** unusually high for an opening — backward metrics and the two raised guidance lines are all numeric; only the vision framing ("AI operating system for travel revenue") is unquantified. (b) **New vs reaffirmation:** the **17.5% combined-entity organic growth** (#3/#27), the **18.2% MK-organic** later in Q&A (#58), the **guidance RAISE** on both revenue and margin (#21-#23), and the explicit **80-90 Cr/yr / to-Q3FY29** deferred-consideration schedule are NEW disclosures not in the deck/PR/filing. (c) **Quietly dropped:** nothing prior to drop (first call under protocol); but every governance/balance-sheet risk item the results filing flagged is ABSENT from the opening (Section I.6). (d) **Internal contradictions in the opening:** "net debt free by FY28" (#11) coexists with a same-day board-approved USD 65M guarantee that is never mentioned (FN2/FN9), and "definitely beat 3,100" optimism coexists with a self-flagged Q2 FIFA/Middle-East reversal (FN5).
@@ -505,13 +505,15 @@ Guidance is the centrepiece. "Last quarter" values are from the live Notion thes
 | Metric | Last quarter's guidance | This quarter (call cite) | Trajectory | Effect on thesis |
 |---|---|---|---|---|
 | FY27 revenue | ~Rs 3,000-3,100 Cr | **~Rs 3,100 Cr, upper end; "+70% YoY"; "the number we should definitely beat"** (#21/#22/#46, call L28/L67; FC3/FC6) | **RAISED to top of range + hard "beat" floor** | Growth pre-conditions comfortably intact; run-rate already Rs 3,140 Cr (#2, L8). Sets a HARD promise-vs-delivery bar for Q2-Q4 (Section I.5). Net POSITIVE. |
-| FY27 adjusted EBITDA margin | 21.5-22.5% | **22-23% (~+100 bps)** (#23, call L28; FC4) | **RAISED ~100 bps** | **Resets thesis-broken trigger 3 base upward** — the "miss by 200+bps" test is now measured off 22-23%, i.e. management moved the goalposts UP, a confidence signal. Trigger not fired. Net POSITIVE. |
+| FY27 adjusted EBITDA margin | 21.5-22.5% | **22-23%** (#23, call L28; FC4; +50 bps per bound / +50 bps at midpoint — see note †) | **RAISED +50 bps/bound** | **Resets thesis-broken trigger 3 base upward** — the "miss by 200+bps" test is now measured off 22-23%, i.e. management moved the goalposts UP, a confidence signal. Trigger not fired. Net POSITIVE. |
 | Near-to-medium-term growth aspiration | 15-20% | **15-20%, "higher end"** (#24/#45, call L28/L61; FC5) | **MAINTAINED, biased up** | Supports the transition-alpha thesis; the organic 17.5% this quarter already sits at the top of the band. Net POSITIVE, but aspiration (not a hard commitment). |
 | Net debt | (deleveraging underway) | **Net-debt-free by FY28** (#11, call L8; FC1) | **NEW explicit target** | Favourable for finance-cost trajectory; BUT asserted without acknowledging the same-day USD 65M guarantee (FN2/FN9) and in tension with the "M&A event in 2027" comment (FN4). Net POSITIVE-with-asterisk. |
 | FCF conversion | (none formal) | **75%+ for full year** (#8, call L8; FC2), 78.8% in Q1 | **NEW explicit target** | Directionally supports the cash story, but the metric is non-GAAP and unbridged (no cash-flow statement); does NOT lift the INDETERMINATE cap. Net NEUTRAL until the H1 cash-flow statement. |
 | Distribution segment | (return to positive YoY) | **"double digit growth by end of fiscal year"** (#53, call L91; FC7) | **NEW forward commitment** off +3.1% now | Directly favourable to thesis-broken trigger 4 (Distribution positive by Q1FY28); converts a monitor into a dateable management promise. Net POSITIVE, high execution risk. |
 
-**Guidance diagnostics:** management **TIGHTENED-and-RAISED** rather than widened — a confidence posture. Guidance is internally consistent (Rs 3,100 Cr at +70% reconciles to the Rs 3,140 Cr run-rate; 22-23% adj margin sits above the 24.6% Q1 adj print because Q1 carried a FIFA one-off management expects to normalise). The one guidance analysts pressed for and did NOT get: **standalone Sojern economics / clean ex-Sojern attribution** (refused, FN7) and any **reported (not adjusted) margin target** (not given, Q3 DODGED).
+**Guidance diagnostics:** management **TIGHTENED-and-RAISED** rather than widened — a confidence posture. The revenue guide reconciles internally (Rs 3,100 Cr at +70% ties to the Rs 3,140 Cr run-rate, #2 call L8; the Rs 3,100 Cr ceiling is unchanged from last quarter — raised-to-upper-end, not lifted). **The margin guide, however, carries a surviving bear counter: the raised full-year 22-23% adj-EBITDA-margin guide (call L28) sits BELOW the 24.6% Q1 adjusted print (call L8/L34), not above it.** A full year at 22-23%, with Q1 already at 24.6% on ~25% of full-year revenue, EMBEDS sequential margin deceleration in the back half: **implied Q2-Q4 adjusted margin ~21.1-22.5%, roughly 200-350 bps below the Q1 24.6% peak.** That is consistent with the FIFA World Cup one-off (+USD 2.5M) that management themselves flagged reverses in Q2 (call L12/L28, FN5), plus the halved Middle-East run-rate. Both statements are true and the flag must read both ways: the headline "margin guidance raised" (vs the prior full-year 21.5-22.5% band) **coexists with an implied H2 step-down from the Q1 peak**. The one guidance analysts pressed for and did NOT get: **standalone Sojern economics / clean ex-Sojern attribution** (refused, FN7) and any **reported (not adjusted) margin target** (not given, Q3 DODGED).
+
+† **Margin-guide magnitude:** the raise is **+50 bps per bound** (21.5-22.5% -> 22-23%) and **+50 bps at the midpoint** (22.0% -> 22.5%), NOT the "~100 bps / 1 percentage point" management asserted on the call (call L28, #23). That figure is a garbled/overstated management claim — ledger_concall #23 is flagged GARBLED_FIGURE, the source rendering "22 to 23 12%" / "21 12 to 22 1/2%". The correct magnitude is +50 bps.
 
 ## I.4 — ANSWER-TO-QUESTION SCORECARD (Role 4 Step 8.5 cross-update)
 
@@ -546,7 +548,7 @@ First entry in the cumulative Promise-vs-Delivery log (no prior log exists). Sco
 | # | Commitment (verbatim anchor) | Implied date | Call cite | Maps to |
 |---|---|---|---|---|
 | P1 | FY27 revenue ~Rs 3,100 Cr, upper end, +70% YoY (guidance RAISE) | FY27 | L28 (FC3) | Notion FY27 revenue guide; buy pre-conditions (organic growth) |
-| P2 | FY27 adjusted EBITDA margin 22-23% (guidance RAISE, +~100bps) | FY27 | L28 (FC4) | **Thesis-broken trigger 3** (margin-guide miss by 200+bps — base now 22-23%) |
+| P2 | FY27 adjusted EBITDA margin 22-23% (guidance RAISE, +50 bps/bound) | FY27 | L28 (FC4) | **Thesis-broken trigger 3** (margin-guide miss by 200+bps — base now 22-23%) |
 | P3 | "the number we should definitely beat" (Rs 3,100 Cr) | FY27 | L67 (FC6) | Hard promise-vs-delivery bar; OVERPROMISER watch |
 | P4 | Distribution to "start to show double digit growth" by end-FY27 (from +3.1% now) | End-FY27 | L91 (FC7) | **Thesis-broken trigger 4** (Distribution positive YoY by Q1FY28) |
 | P5 | Net-debt-free by FY28 (retire balance of acquisition debt) | FY28 | L8 (FC1) | Leverage / net-debt trajectory (vs new USD 65M guarantee, FN2/FN9) |
@@ -601,7 +603,7 @@ First entry in the cumulative Promise-vs-Delivery log (no prior log exists). Sco
 
 The earnings call is, on balance, good news on growth and a non-answer on everything else. For the first time management put a number on how fast the business is growing WITHOUT the Sojern acquisition boosting it: about 17.5 percent for the combined company and 18.2 percent for the marketing business, both stated in rupee terms (call lines 34, 56, 98). That matters because the whole worry with this stock was that the 188 percent headline growth was just the acquisition, and underneath it the real business might be crawling. 17.5 percent is healthy and clears the "thesis breaks if organic growth falls below 6 percent" line comfortably.
 
-Management also RAISED its full-year targets: revenue to the top of the range (about Rs 3,100 crore, roughly 70 percent growth) and adjusted profit margin to 22-23 percent, about one percentage point higher than before. The CEO even called Rs 3,100 crore "a number we should definitely beat" (call lines 28, 67). Raising guidance is a confidence signal, and it nudges the profit-margin "thesis-break" test up to a higher bar. They also promised the slow Distribution unit (only 3 percent growth now) will reach double-digit growth by year-end, and repeated that they will be debt-free by FY28.
+Management also RAISED its full-year targets: revenue to the top of the range (about Rs 3,100 crore, roughly 70 percent growth) and adjusted profit margin to 22-23 percent, about half a percentage point higher than before. The CEO even called Rs 3,100 crore "a number we should definitely beat" (call lines 28, 67). Raising guidance is a confidence signal, and it nudges the profit-margin "thesis-break" test up to a higher bar. One caveat a careful reader should hold: that full-year 22-23 percent margin target is actually BELOW the 24.6 percent the company just printed in Q1, so it quietly assumes margins step DOWN in the rest of the year (to roughly 21-22.5 percent), which fits management's own warning that the one-off FIFA World Cup revenue reverses next quarter. They also promised the slow Distribution unit (only 3 percent growth now) will reach double-digit growth by year-end, and repeated that they will be debt-free by FY28.
 
 What they did NOT do is answer any of the hard questions. There is still no permanent CFO (the one on the call is "interim"), and that was the single condition already failing before the call; the call left it failing. They gave no cash-flow statement, so the impressive-sounding "78.8 percent cash conversion" still cannot be checked. They said nothing about the new USD 65 million guarantee the board approved the same day, nothing about goodwill-impairment risk, and they refused to break out exactly how much of the growth is the acquired business versus the old one. On the biggest opportunities they used phrases like "tens of millions of dollars" and "a very large deal" instead of real figures.
 
@@ -638,7 +640,7 @@ organic_growth_disclosed:
   daas_yoy_pct: 22.7
 guidance_change:
   fy27_revenue: {from: "~Rs 3,000-3,100 Cr", to: "~Rs 3,100 Cr upper-end / +70% YoY / 'definitely beat'", trajectory: "RAISED", cite: "call L28/L67"}
-  fy27_adj_ebitda_margin: {from: "21.5-22.5%", to: "22-23% (+~100bps)", trajectory: "RAISED", cite: "call L28", note: "resets thesis-broken trigger 3 base upward"}
+  fy27_adj_ebitda_margin: {from: "21.5-22.5%", to: "22-23% (+50 bps per bound; +50 bps midpoint)", trajectory: "RAISED", cite: "call L28", note: "resets thesis-broken trigger 3 base upward; 22-23% FY guide sits BELOW the 24.6% Q1 adj print, embedding an implied Q2-Q4 ~21.1-22.5% step-down (FIFA one-off reverses, FN5); management's on-call '~100bps' claim is GARBLED — actual +50bps"}
   medium_term_growth: {from: "15-20%", to: "15-20% higher end", trajectory: "MAINTAINED", cite: "call L28/L61"}
   net_debt: {to: "net-debt-free by FY28", trajectory: "NEW", cite: "call L8", caveat: "omits same-day USD 65M guarantee (FN2/FN9)"}
   fcf_conversion: {to: "75%+ full year", trajectory: "NEW", cite: "call L8", note: "non-GAAP; does not lift INDETERMINATE cap"}
@@ -658,7 +660,7 @@ buy_preconditions:
   - {id: "PC3", condition: "permanent CFO / no new transition", status: "STILL FAILING — call silent, deck confirms Interim+Deputy CFO (FN8)"}
 promise_register:
   - {id: "P1", commitment: "FY27 revenue ~Rs 3,100 Cr upper end / +70%", date: "FY27", cite: "call L28 (FC3)"}
-  - {id: "P2", commitment: "FY27 adj EBITDA margin 22-23%", date: "FY27", cite: "call L28 (FC4)", maps_to: "thesis-broken T3"}
+  - {id: "P2", commitment: "FY27 adj EBITDA margin 22-23% (+50bps/bound)", date: "FY27", cite: "call L28 (FC4)", maps_to: "thesis-broken T3"}
   - {id: "P3", commitment: "'definitely beat' Rs 3,100 Cr", date: "FY27", cite: "call L67 (FC6)"}
   - {id: "P4", commitment: "Distribution double-digit growth", date: "end-FY27", cite: "call L91 (FC7)", maps_to: "thesis-broken T4"}
   - {id: "P5", commitment: "net-debt-free", date: "FY28", cite: "call L8 (FC1)"}
@@ -687,7 +689,7 @@ monitorables:
   - {item: "H1FY27 cash-flow statement (Reg 33 mandatory at Q2) — resolves INDETERMINATE cap", implied_date: "Q2FY27 filing", source_ref: "call L36 / Step 5"}
   - {item: "Permanent CFO appointment (pre-condition 3 FAILING)", implied_date: "undated - request", source_ref: "deck L248-249 / FN8"}
   - {item: "FY27 revenue vs 'definitely beat' Rs 3,100 Cr (P1/P3)", implied_date: "FY27", source_ref: "call L28/L67"}
-  - {item: "FY27 adj EBITDA margin vs raised 22-23% (P2 / trigger T3)", implied_date: "FY27", source_ref: "call L28"}
+  - {item: "FY27 adj EBITDA margin vs raised 22-23% (P2 / trigger T3) — watch implied H2 step-down from 24.6% Q1 peak", implied_date: "FY27", source_ref: "call L28"}
   - {item: "Distribution double-digit growth (P4 / trigger T4)", implied_date: "end-FY27", source_ref: "call L91"}
   - {item: "Sojern cumulative synergies vs <$15m (trigger T2)", implied_date: "FY27 end", source_ref: "FN7"}
   - {item: "Net-debt-free by FY28 vs new USD 65M guarantee (P5 vs FN9)", implied_date: "FY28", source_ref: "call L8 / res L42-44"}
@@ -697,6 +699,7 @@ monitorables:
 flags:
   - "CONCALL NET POSITIVE ON GROWTH/GUIDANCE: first organic-growth disclosure (combined 17.5% / MK 18.2%, call L34/L56/L98) + dual guidance RAISE (rev ~3,100 Cr; adj margin 22-23%)"
   - "Organic 17.5% and MK 18.2% are NEW, management-only, UNVERIFIABLE against audited statements (call L56/L98)"
+  - "Margin-guide raise is +50bps/bound (21.5-22.5% -> 22-23%), NOT the '~100bps' management asserted (GARBLED_FIGURE, ledger #23); and the 22-23% FY guide sits BELOW the 24.6% Q1 adj print, embedding an implied Q2-Q4 ~21.1-22.5% step-down (FIFA one-off reverses, FN5)"
   - "Thesis-broken trigger 3 base RESET UPWARD to 22-23% adj EBITDA margin (management moved the bar up)"
   - "Pre-condition 3 (permanent CFO) STILL FAILING — call silent, deck confirms Interim + Deputy CFO (FN8)"
   - "Cash conversion INDETERMINATE — 78.8% FCF-conversion reasserted on call with no cash-flow statement/bridge (FN10/FN12); cap holds to H1FY27"

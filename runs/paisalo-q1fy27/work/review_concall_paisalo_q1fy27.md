@@ -8,6 +8,8 @@
 **Reviewed:** 2026-08-06.
 **First Role 5 under protocol:** yes. No prior concall log exists, so the trailing-4-quarter credibility ratio is not yet computable; the promise-vs-delivery log begins this quarter. The promise-vs-delivery audit this run is run against the **11 pre-committed management questions from Role 4 Step 8.5** (the questions this call was convened to answer), per the cross-protocol rule.
 
+> **A5 ADVERSARY RECONCILIATION (loop 1):** central claim survives — trigger (d) fired, gate (i) failed, AVOID correctly FLAGGED for operator ratification (not decided). Two adversarial counters grafted in: (GRAFT 1) the opex-drop framing is corrected from "not explained" to "explained only generically/unquantified and CFO-unconfirmed"; (GRAFT 2) the co-lending de-scope governance framing is balanced (openly disclosed when asked, plausible external cause, preserved as genuine optionality) while the thesis-level fact (co-lending fees not contributing → gate (ii) unmet) and the AVOID recommendation are unchanged.
+
 ---
 
 ## LEDGER-RECONCILIATION PREAMBLE (contractual, stated before Step 1)
@@ -90,7 +92,7 @@ All from T3 / line 14 (single opening-remarks turn) unless noted. Every value li
 | 12 | **NCD public issue Rs 300 Cr under Rs 900 Cr shelf, opens 7-Aug-2026** | Forward Guidance (dated) | YES | T3/14 |
 | 13 | 5,995 touchpoints across "23 states" (NUMBER_CONFLICT vs filing 22 states & UTs, F10) | Operational | YES | T3/14 |
 | 14 | BC franchise crossed USD 1 bn gross transaction value | Operational | YES | T3/14 |
-| 15 | Six-pillar-two: expanded into mobility, industrial equipment, medical equipment, agri equipment, alt-fuel | Strategic | NO (segments named, no sizing) | T3/14 |
+| 15 | Product pillar: expanded into mobility, industrial equipment, medical equipment, agri equipment, alt-fuel | Strategic | NO (segments named, no sizing) | T3/14 |
 | 16 | AI: onboarding ~1.8L (vs 1.6L Q4); voice-to-data ~5L (vs 3.5L); outbound ~2L/day (vs 1.5L); bots 7→18 | Operational | YES | T3/14 |
 | 17 | AI branch/BC platform revamp "in advanced stages" | Forward Soft | NO | T3/14 |
 | 18 | "expect these initiatives to support operating leverage ... growth at a faster pace than growth in cost" | Forward Soft | NO | T3/14 |
@@ -125,12 +127,12 @@ Seeded by the A3 commitment register (F03-F08). "This Q" = Q1 FY27 call. Prior-q
 
 **Step 2L diagnostics:**
 - **Widened or tightened?** No prior concall log to compare; but the ONE hard number that matters — Cost-to-Income — was **guided to stay elevated** ("slightly on the higher side"), i.e. the efficiency gate stays breached. That is a forward LOWERING of the efficiency case relative to the thesis requirement (≤35%).
-- **Prior guidance dropped/withdrawn?** The SBI co-lending expansion — a Q1/Q2 active-expansion catalyst last quarter (per the Q1 analyst's framing, T5, and Notion) — has **regressed to "an optionality ... not contributing", excluded from the doubling base** (F03/T31). This is a **DROPPED-equivalent** move on a catalyst (governance-flag territory; see Step 3C/8E). A lender that de-scopes a named co-lending catalyst without a clean acknowledgment is the concealment archetype the DROPPED rule targets.
+- **Prior guidance dropped/withdrawn?** The SBI co-lending expansion — a Q1/Q2 active-expansion catalyst last quarter (per the Q1 analyst's framing, T5, and Notion) — has **regressed to "an optionality ... not contributing", excluded from the doubling base** (F03/T31). **Balancing note (A5 GRAFT 2):** this is NOT quiet concealment — management disclosed the stall openly when asked twice (T6/Q1 and T31/Q7), attributed it to an external, temporary bank-side compliance step ("we are still awaiting the compliance to be completed at the bank's side ... hopefully we'll be progressing soon", T6/line 21), preserved co-lending as genuine upside optionality that could accelerate the plan ("if we see that also kicking in, we might see an expedited achievement of this timeline", T31/line 58), and framed the RBI Rs20L circular as a co-lending tailwind (T29/line 54). So this is an **open de-scope with a plausible external cause**, not a DROPPED-style concealment. It is nonetheless **logged** as a catalyst regression: repeat de-scoping/evasion of co-lending economics across a second concall would trip the lender asset-mix / cash-conversion evasion diagnostic (negative for FTTCP lender Transition 3).
 - **Internally consistent?** The doubling ambition (~FY30) explicitly **excludes** co-lending, so it does not rely on the stalled catalyst — internally coherent, but it means the thesis's co-lending fee engine (gate ii / tripwire b) is now outside management's own base case.
 - **Vs Four-Pillar projections:** the projectable metric (PAT annualised Rs 245.2 Cr) sits at Notion Base (Rs244 Cr) per Role 4 — between bear and base on trajectory, **but the two gating spread-quality inputs (C/I, fees) resolve BEAR** (C/I fails; fees not contributing).
-- **What did analysts press for that management refused/failed to give?** Fee & commission income (never given); own-book vs off-book disbursement split (never given); PCR / write-offs (never given); standalone-vs-consolidated basis (never given); a concrete SBI co-lending gating date (not given — "hopefully soon"). Refusal/omission on fee income specifically is the lender asset-mix analogue and is itself information.
+- **What did analysts press for that management refused/failed to give?** Fee & commission income (never given); own-book vs off-book disbursement split (never given); PCR / write-offs (never given); standalone-vs-consolidated basis (never given); a concrete SBI co-lending gating date (not given — "hopefully soon"). Omission on fee income specifically is the lender asset-mix analogue and is itself information.
 
-🛑 Step 2L is the critical artifact: the guidance table confirms the efficiency gate is guided to stay breached and the co-lending catalyst is de-scoped.
+🛑 Step 2L is the critical artifact: the guidance table confirms the efficiency gate is guided to stay breached and the co-lending catalyst is openly de-scoped to optionality.
 
 ---
 
@@ -148,7 +150,7 @@ The 11 pre-committed management questions from **Role 4 Step 8.5** (the question
 | 1 | Cost-to-Income > 35%? (hard gate i; trigger d) | **ANSWERED SPECIFICALLY** | "Roughly it is at about 40% right now" + "will remain slightly on the higher side" (T13/line 30) | **GATE (i) FAILS; trigger (d) FIRES** (2nd consecutive Q >35%). The decisive answer of the call. |
 | 2 | Fees & commission income Rs Cr & share? (hard gate ii; trigger b) | **NOT ADDRESSED** | No fee/commission figure spoken anywhere on the call. Co-lending fee engine explicitly "not contributing" (T31/58) | Gate (ii) remains unquantified; the fee engine it depends on is management-confirmed **not contributing**. Effectively unmet. |
 | 3 | Standalone or consolidated basis & S-vs-C gap? | **NOT ADDRESSED** | Basis never stated on the call (F14, whole transcript) | Highest-value structural silence persists (recurring ≥2 sources). RoA/RoE/NIM/GNPA carry no basis label. |
-| 4 | Drivers of PAT −15% / NIM −26bps / RoA −20bps QoQ? | **PARTIALLY ANSWERED** | Interest/opex QoQ addressed as "lag between debt issuance and deployment ... transient impact in Q1"; reframed to "NII/PAT up ~30%/~16% YoY" (T18/37). **NIM −26bps and RoA −20bps QoQ not specifically addressed** | Mechanism offered for interest/opex; the margin/return compression itself was reframed to YoY, not explained QoQ. |
+| 4 | Drivers of PAT −15% / NIM −26bps / RoA −20bps QoQ? | **PARTIALLY ANSWERED** | Interest/opex QoQ addressed as one shared-cause "lag between debt issuance and deployment ... transient impact in Q1"; reframed to "NII/PAT up ~30%/~16% YoY" (T18/37). **NIM −26bps and RoA −20bps QoQ not specifically addressed** | Generic mechanism offered for interest/opex; the margin/return compression itself was reframed to YoY, not explained QoQ. |
 | 5 | Own-book vs co-lending/off-book split of +128% disbursement? | **NOT ADDRESSED** | +128% attributed to touchpoint expansion / deeper penetration (T10/25); no own-book vs off-book split given | The margin-dilution (off-book) question — central to NIM-flat-despite-CoB-down — is unanswered. |
 | 6 | Which new verticals & SBI co-lending AUM/spread? | **PARTIALLY ANSWERED** | Verticals named (mobility/industrial/medical/agri equip/alt-fuel; AUM mix food&hosp 23%, agri 15%, street vendors 16%, T20/41). **SBI co-lending AUM/spread NOT given — stalled and de-scoped to optionality** (T6/21, T31/58) | Verticals/mix disclosed; the co-lending economics (the thesis's fee engine) explicitly not quantified and not contributing. |
 | 7 | Credit cost / PCR / write-offs / collection efficiency? | **PARTIALLY ANSWERED** | Credit-cost narrative (below 2% ex-COVID, below 1% 5yr, deck p.14; T18/37); collection efficiency 97.5% (T3/14), analyst-noted ~1% QoQ dip not reaffirmed; loan-loss −10% YoY, +120% QoQ framed seasonal. **No PCR, no write-offs quantified** | Collection efficiency and narrative credit-cost given; PCR and write-offs — needed to confirm the Elite asset-quality band and to test whether GNPA is flattered by write-offs — **still ND**. |
@@ -159,7 +161,7 @@ The 11 pre-committed management questions from **Role 4 Step 8.5** (the question
 
 **Answered-rate on the pre-committed set: 1 ANSWERED SPECIFICALLY / 3 PARTIALLY / 0 EVADED (classic) / 7 NOT ADDRESSED.** The only question given a specific answer is the one that **fires the tripwire**. The two other decision-critical transparency items — **fee income (Q2) and standalone-vs-consolidated basis (Q3) — were NOT ADDRESSED.** Seven of eleven not addressed is a low delivery rate against the questions the call existed to resolve; note that several (Q8-Q11) were not raised by any analyst (analyst-coverage gap, not management evasion), while the load-bearing ones (Q2, Q3, Q5) were raised in substance and went unanswered.
 
-**Governance-signal note (feeds Promoter Verdict):** the SBI co-lending regression from active catalyst → "optionality ... not contributing" is a **DROPPED-equivalent** on a named catalyst. As the first logged instance it does not yet trigger the two-DROPPED automatic downgrade, but it is logged and repeat de-scoping/evasion of co-lending economics across a second concall would trip the lender asset-mix / cash-conversion evasion diagnostic (negative for FTTCP lender Transition 3).
+**Governance-signal note (feeds Promoter Verdict):** the SBI co-lending regression from active catalyst → "optionality ... not contributing" is a **catalyst de-scope, logged**. Per A5 GRAFT 2 it is NOT scored as a concealment-style DROPPED: management acknowledged the stall openly when asked (T6, T31) with a plausible external cause (bank-side compliance). As the first logged instance it does not trigger any automatic downgrade; repeat de-scoping/evasion of co-lending economics across a second concall would trip the lender asset-mix / cash-conversion evasion diagnostic (negative for FTTCP lender Transition 3).
 
 ### 3C. Pattern recognition (single-quarter, provisional)
 - Specific and candid on **backward** metrics (AUM, disbursement, asset quality, promoter buying, leverage history) and on the **live-red metric when directly asked** (C/I ~40% — credit for candor, even though the answer is bad).
@@ -167,7 +169,7 @@ The 11 pre-committed management questions from **Role 4 Step 8.5** (the question
 - **Boilerplate-deflection tell:** the four-pillar script is redeployed near-verbatim to answer two pointed "what are the drivers / what is the timeline" questions (T27 to Aditya Singh's "key drivers"; T31 to Lokesh's "FY29 vs FY30 timeline"), rather than giving the driver decomposition or the internal target year. Repetition of scripted framing in place of a specific answer is the deflection pattern to watch next quarter.
 
 ### 3D. Management grade (provisional, this quarter only)
-No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — candid on backward numbers and on the C/I level when pressed (pulls toward B), but CFO absent, co-lending catalyst de-scoped without clean acknowledgment, fee income and S-vs-C basis not disclosed, boilerplate-deflection on driver/timeline questions (pull toward C). **Role 1 track-record input: Mixed** (discount management commentary 30-50%; anchor to filing numbers). Formal trailing-4 ratio to accrue from next quarter.
+No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — candid on backward numbers and on the C/I level when pressed, and open about the co-lending stall (pulls toward B), but CFO absent, fee income and S-vs-C basis not disclosed, opex swing explained only generically/unconfirmed, boilerplate-deflection on driver/timeline questions (pull toward C). **Role 1 track-record input: Mixed** (discount management commentary 30-50%; anchor to filing numbers). Formal trailing-4 ratio to accrue from next quarter.
 
 🛑 Step 3 complete: the questions-answered tracker is the primary artifact — 7 of 11 pre-committed questions not addressed; the one specifically answered fires the tripwire.
 
@@ -179,18 +181,18 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 
 | # | Analyst & Firm | Question (1-line) | Category | Resp. Quality | Substance |
 |---|---|---|---|---|---|
-| Q1 | Sandip Mehta / Evaluate Research | SBI co-lending tie-up status | Strategic | **C** (partial; "status remains as last quarter ... compliance pending at bank ... disbursements slow") T6/21 | Catalyst stalled |
+| Q1 | Sandip Mehta / Evaluate Research | SBI co-lending tie-up status | Strategic | **C** (partial; "status remains as last quarter ... compliance pending at bank ... disbursements slow") T6/21 | Catalyst stalled, openly disclosed |
 | Q1b | Sandip Mehta | Iran-war/commodity impact on borrowers & NPLs | Macro | B ("impact relatively limited ... sequential increase in LLP but sub-1%") T8/23 | Modest |
 | Q1c | Sandip Mehta | Disbursement-growth sustainability into Q2 | Forward Guidance | B ("may normalize from exceptionally high base ... healthy momentum through FY27") T10/25 | Directional |
 | Q2 | Ruti Doohi / Crestline Value Fund | **Cost-to-income trend + AI efficiency unlock** | Financial | B (specific level, hedged: "~40% ... will remain slightly on higher side") T13/30 | **DECISIVE — trigger d fires** |
 | Q2b | Ruti Doohi | Resolution rate on 200k AI outbound calls vs traditional | Operational | C (describes 3-pillar AI infra; no resolution-rate number; new-customer conversion "end of Q3") T15/32 | No metric given |
-| Q3 | Lokesh Jaganath / individual | **Interest +32% QoQ (87→115cr) & opex −32% (69→46cr); collection dip 1%; LLP +120% QoQ; pledge; promoter headroom** | Financial | C (interest/opex reframed as debt-deployment lag; LLP seasonal, −10% YoY; **opex −32% not specifically explained**) T18/37 | **PAT-support mechanism (F08)** |
+| Q3 | Lokesh Jaganath / individual | **Interest +32% QoQ (87→115cr) & opex −32% (69→46cr); collection dip 1%; LLP +120% QoQ; pledge; promoter headroom** | Financial | C (interest/opex given one generic shared-cause debt-deployment-lag story; opex figure/line unconfirmed; LLP seasonal, −10% YoY) T18/37 | **PAT-support mechanism (F08)** |
 | Q4 | Amit Kumar / individual | Target AUM mix for new segments & risks | Strategic | B (25% concentration cap rule; current mix given; "difficult to answer right now, products 3 months old") T20/41 | Framework, no targets |
 | Q4b | Amit Kumar | D/E 1.64x→2.61x; internal ceiling & headroom | Financial | B (internal cap ~3.5x; regulatory 7x; FCCB $44mn conversion will add headroom) T22/43 | Leverage frame |
 | Q4c | Amit Kumar | Promoter stake-increase rationale/signal | Governance | B (capital-history narrative; "take your own call on how strongly promoters believe") T24/45 | Conviction signal |
 | Q5 | Aditya Singh / Alpha Capital | Key drivers of AUM-doubling | Forward Guidance | **C** (four-pillar boilerplate re-read; "see slides 10 and 18") T27/50 | **Boilerplate deflection** |
-| Q6 | Sandip Mehta (follow-up) | RBI Rs20L collateral-free circular finalization & co-lending impact | Macro | B (explains threshold shift; 93% secured/7% unsecured; STP integration faster) T29/54 | Sector color |
-| Q7 | Lokesh Jaganath (follow-up) | Touchpoint jump driver; internal doubling timeline FY29 vs FY30 | Forward Guidance | **C** (four-pillar boilerplate again; "three fiscal years"; co-lending "optionality ... not contributing") T31/58 | **Boilerplate + co-lending de-scope (F03/F07)** |
+| Q6 | Sandip Mehta (follow-up) | RBI Rs20L collateral-free circular finalization & co-lending impact | Macro | B (explains threshold shift; 93% secured/7% unsecured; STP integration faster; co-lending tailwind) T29/54 | Sector color |
+| Q7 | Lokesh Jaganath (follow-up) | Touchpoint jump driver; internal doubling timeline FY29 vs FY30 | Forward Guidance | **C** (four-pillar boilerplate again; "three fiscal years"; co-lending "optionality ... not contributing", could accelerate if it kicks in) T31/58 | **Boilerplate + open co-lending de-scope (F03/F07)** |
 | Q8 | Harshit Singla / 8K Capital | Where top brass spends time; non-PAT KPI | Governance | B ("collection side ... collection-first mindset over 30 years") T33/62 | Qualitative |
 | Q8b | Harshit Singla | Biggest business fear/risk | Governance | B ("employees/staff ... true asset not on any balance sheet") T35/64 | Qualitative |
 
@@ -198,7 +200,7 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 
 ### 4B. Question-pattern analysis
 - **Most-repeated topic (REPEAT_QUESTION):** (1) co-lending / co-origination — Q1 and Q6 (same asker, two angles); (2) AUM-doubling drivers/timeline — Q5 and Q7 (two different askers — the market pressing because Q5's answer was boilerplate); (3) promoter stake — Q3(f) and Q4c (two askers). Doubling asked twice by different analysts = the first (boilerplate) answer was not trusted → thesis-relevant signal.
-- **Topics management consistently graded C:** co-lending economics/status and the drivers/timeline of the doubling ambition. Co-lending is the topic management least wants to quantify — and it is exactly the thesis's fee engine (gate ii / tripwire b). Per the lender rule, evasion/de-scope on the asset-mix/fee topic is a negative diagnostic; log for the 2-concall test.
+- **Topics management consistently graded C:** co-lending economics/status and the drivers/timeline of the doubling ambition. Co-lending is the topic management least wants to quantify — and it is exactly the thesis's fee engine (gate ii / tripwire b). Note the balance: management does disclose the co-lending STATUS openly; it is the ECONOMICS (AUM, spread, fee) it does not quantify. Per the lender rule, non-quantification on the asset-mix/fee topic is a negative diagnostic; log for the 2-concall test.
 - **Buy-side vs sell-side split:** buy-side (Crestline) asked the single most decisive question (C/I). Retail/individual investors asked the sharpest financial-mechanics questions (interest/opex inversion, D/E). Sell-side/host asked softer strategic/macro questions. No no-buy-side flag.
 - **House-broker softball?** No — the host did not lead with a softball; the opening question (Evaluate Research) was substantive (co-lending status). Not an orchestrated opener.
 - **Pushback?** No analyst overtly pushed back on an answer, but the doubling question being re-asked by a second analyst (Q7 after Q5) is implicit market skepticism of the boilerplate answer.
@@ -216,21 +218,21 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 **Exchange 2 — SBI co-lending stall & de-scope (Q1 → Q6 → Q7, Sandip Mehta & Lokesh Jaganath).**
 - Q (T5/20): "co-lending with SBI was going to expand during Q1 and Q2 ... what is the status?"
 - A (T6/21): "the lending status ... remains as that of last quarter ... still awaiting the compliance to be completed at the bank's side ... disbursements have been slow ... hopefully we'll be progressing soon."
-- A (T31/58): "we have put co-lending as an optionality ... for providing incremental growth. How we are not contributing on it ... for the time being, we'll require three fiscal years [ex co-lending]."
-- **Said specifically:** SBI co-lending is stalled on bank-side compliance; disbursements slow; it is now upside optionality, excluded from the doubling base and not currently contributing.
+- A (T31/58): "we have put co-lending as an optionality ... for providing incremental growth. How we are not contributing on it ... for the time being, we'll require three fiscal years [ex co-lending] ... if we see that also kicking in, we might see an expedited achievement of this timeline."
+- **Said specifically:** SBI co-lending is stalled on bank-side compliance; disbursements slow; it is now upside optionality, excluded from the doubling base and not currently contributing — but it was **disclosed openly when asked, with an external, temporary cause, and retained as genuine upside** (could accelerate the plan if it kicks in).
 - **Did NOT say:** any concrete gating step, date, co-lending AUM, spread, or fee economics.
-- **Thesis implication:** the thesis's co-lending fee engine (gate ii / tripwire b) is management-confirmed **not contributing** and is de-scoped — a named catalyst regressed to optionality. Bears on gate (ii) and on trigger (b) (co-lending fees <5% of income by Q4FY28).
+- **Thesis implication:** the thesis's co-lending fee engine (gate ii / tripwire b) is management-confirmed **not contributing** and is de-scoped — a named catalyst regressed to optionality. Bears on gate (ii) and on trigger (b) (co-lending fees <5% of income by Q4FY28). The openness of the disclosure is a governance positive (Promoter Verdict held); the economic fact (fees not contributing) is the negative that keeps gate (ii) unmet.
 - **Follow-up we would have asked:** "What is the specific bank-side compliance step outstanding, the expected date, and the target co-lending spread — 1-1.5% or 3-4%?" (the UGRO analogue).
 
 **Exchange 3 — Interest +32% / opex −32% QoQ inversion (Q3, Lokesh Jaganath / individual). THE PAT-SUPPORT MECHANISM (F08).**
 - Q (T17/36): "interest expense QoQ up 32% (87cr→115cr) ... at the same time operating expense down 32% (69cr→46cr). How are we able to scale down ... within a quarter?"
 - A (T18/37): "when ... interest expense and opex ... work in an inverse proportionate matter [it] typically happen[s] when there is an expedited raise of funds and a lag between the deployment of funds ... transient impact in quarter 1 ... in quarter two ... the SC conversion is also likely which will help normalize the interest cost and opex."
-- **Said specifically:** the interest-up side is explained by raising funds ahead of deployment (a timing lag). NII/PAT framed as +30%/+16% YoY.
-- **Did NOT say:** why **opex fell 32% QoQ (69→46cr)** in a single quarter while the book grew +10% QoQ and touchpoints grew +13% QoQ. The debt-deployment-lag story explains interest UP; it does not explain opex DOWN. **Arithmetic:** Q4 interest 87 + opex 69 = 156cr; Q1 interest 115 + opex 46 = 161cr (combined +5cr, +3%). Interest +28cr was **nearly offset by opex −23cr**; had opex held at 69cr, pre-tax profit would be ~Rs23cr lower and PAT would have fallen far more than the reported −15% QoQ. **The −32% opex swing is the load-bearing item holding PAT up — it is ANALYST-sourced and was NOT confirmed by the (absent) CFO.**
-- **Thesis implication:** the sequential PAT print rests on an unexplained opex compression, disclosed by an analyst, unverified by the finance chief. THE key ambiguous item (F08). This is where CFO absence (F15) bites hardest.
+- **Said specifically (A5 GRAFT 1 — corrected):** the DMD gave a single, unified **shared-cause** explanation that folds opex in with interest — an expedited fund-raise plus a deployment lag producing the inverse interest-up/opex-down move, "said to normalize in Q2" via the SC/FCCB conversion. Opex was therefore NOT left unaddressed; it was covered by the same generic mechanism as the interest move.
+- **The weakness is thinness/unverifiability of the proffered explanation, not an unaddressed question.** Management gave only a generic, unquantified, CFO-unconfirmed shared-cause story: it **did not confirm the Rs46cr opex figure** (analyst-sourced), **did not name which opex line moved**, gave **no line-level decomposition**, and did **not explain how a ~33% single-quarter opex drop is mechanically possible** while the book grew +10% QoQ and touchpoints +13% QoQ. **Arithmetic:** Q4 interest 87 + opex 69 = 156cr; Q1 interest 115 + opex 46 = 161cr (combined +5cr, +3%). Interest +28cr was **nearly offset by opex −23cr**; had opex held at 69cr, pre-tax profit would be ~Rs23cr lower and PAT would have fallen far more than the reported −15% QoQ. **The −32% opex swing is the load-bearing item holding PAT up; it is ANALYST-sourced, management confirmed no number, and the CFO who owns this line was absent.**
+- **Thesis implication:** the sequential PAT print rests on an opex compression that management explained only generically and without confirming the figure or the mechanics — disclosed by an analyst, unverified by the finance chief. THE key ambiguous item (F08). This is where CFO absence (F15) bites hardest.
 - **Follow-up we would have asked:** "Confirm the exact Q1FY27 opex figure and the mgmt-basis Cost-to-Income; if opex fell 32% QoQ, why is Cost-to-Income still ~40% — which line moved, and is the drop sustainable in Q2?"
 
-🛑 Step 4 complete: zero grade-A answers; the C answers cluster on the thesis-critical topics; the three key exchanges are the trigger firing, the co-lending de-scope, and the unexplained opex swing.
+🛑 Step 4 complete: zero grade-A answers; the C answers cluster on the thesis-critical topics; the three key exchanges are the trigger firing, the co-lending de-scope, and the thinly-explained opex swing.
 
 ---
 
@@ -243,7 +245,7 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 | **Cost-to-Income ~40%** (T13/30) | Negative surprise / metric | **YES** | **Gate (i) fails; trigger (d) fires.** The decisive new disclosure. |
 | **Collection efficiency 97.5%** (T3/14) | Metric (asset quality) | YES | Fills a Role 4 ND; healthy level; analyst notes ~1% QoQ dip (unreaffirmed). |
 | **Interest expense Q4 87cr → Q1 115cr (+32% QoQ)** (T17, analyst) | Metric | YES | Debt-raise-ahead-of-deployment; feeds F08. |
-| **Opex Q4 69cr → Q1 46cr (−32% QoQ)** (T17, analyst) | Metric | **YES** | **The PAT-support swing; unexplained; CFO-unconfirmed (F08/F15).** |
+| **Opex Q4 69cr → Q1 46cr (−32% QoQ)** (T17, analyst) | Metric | **YES** | **The PAT-support swing; explained only generically/unconfirmed; CFO absent (F08/F15).** |
 | Loan-loss provisions +120% QoQ / −10% YoY (T17/T18) | Metric | YES | Framed Q1-seasonal (Q4 settlements vs Q1 provisioning). |
 | **D/E ~2.5x mgmt / 2.61x analyst; internal cap ~3.5x; reg 7x** (T22/43) | Metric | YES | Leverage approaching internal cap; FCCB conversion the named relief lever. |
 | **FCCB ~$44mn pending conversion; committee meeting scheduled** (T22/43) | New capital action | **YES** | Pending equity dilution AND leverage reduction; dated for tracker (F04/F05). |
@@ -264,12 +266,13 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 | **Fees & commission income (Rs Cr)** | Hard gate (ii); Role 4 pre-committed question; co-lending fee thesis | **AMBER→RED** — the fee line the thesis gates on, and the co-lending engine behind it, both go unquantified while co-lending is de-scoped. Conspicuous. |
 | **Standalone vs consolidated basis** | Every headline metric (RoA/RoE/NIM/GNPA/PAT) needs a basis label; recurring silence ≥2 sources | **AMBER** — no basis stated on the entire call (F14); blocks S-vs-C decomposition. |
 | **PCR % and write-offs in the quarter** | Needed to confirm Elite asset-quality band; GNPA can be flattered by write-offs | **AMBER** — collection efficiency and narrative credit-cost given, but PCR/write-offs withheld. |
+| **Exact opex figure / which line moved (−32% QoQ)** | The PAT-support swing; management gave only a generic shared-cause explanation, no figure confirmed, no line named | **AMBER** — thin, unverifiable, CFO-unconfirmed (F08). |
 | **Which quarter C/I returns <35% (mgmt-basis definition)** | The gate/trigger metric; management guided only "slightly higher side ... long-term normalization" | **AMBER** — no dated path back under the gate. |
 | Reg-33 limited-reviewed results filing date | Board Outcome carried no results-approval item | Neutral-to-AMBER — not raised; timing open. |
 | FY25-26 dividend quantum / DMD remuneration | Dated cash commitment + RPT-governance | Neutral — not raised by any analyst (coverage gap, not evasion). |
 | Rating action (tripwire f) | Standing tripwire | Neutral — silence, not deterioration; no downgrade signalled. |
 
-**Silence interpretation:** the silences that matter (fee income, S-vs-C basis, PCR/write-offs, dated C/I recovery) are all on **thesis-critical, previously-flagged** items — AMBER, "something the thesis needs remains withheld", and one (co-lending fee economics) is RED-adjacent because the catalyst behind it was simultaneously de-scoped.
+**Silence interpretation:** the silences that matter (fee income, S-vs-C basis, PCR/write-offs, exact opex, dated C/I recovery) are all on **thesis-critical, previously-flagged** items — AMBER, "something the thesis needs remains withheld", and one (co-lending fee economics) is RED-adjacent because the catalyst behind it was simultaneously de-scoped (openly, per GRAFT 2).
 
 🛑 Step 5 complete: the decisive new disclosure (C/I ~40%) fires the trigger; the operative silences are the fee line and the reporting basis.
 
@@ -281,7 +284,7 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 | Topic | Prior framing (filing/Notion) | This call | Direction |
 |---|---|---|---|
 | Cost-to-Income | Filing OMITTED the ratio; touted "AI-led efficiencies, headcount −2%" | "~40% ... will remain slightly on the higher side" (T13) | **DOWNGRADED** (from implied-efficiency PR to admitted-elevated, guided-to-stay-elevated) |
-| SBI co-lending | Active Q1/Q2 expansion catalyst (Notion / Q1 analyst framing) | "optionality ... not contributing", excluded from base (T31) | **DOWNGRADED / DROPPED-equivalent** |
+| SBI co-lending | Active Q1/Q2 expansion catalyst (Notion / Q1 analyst framing) | "optionality ... not contributing", excluded from base but retained as upside, openly disclosed (T31) | **DOWNGRADED** (openly de-scoped to optionality) |
 | Asset quality | "pristine and stable" | "pristine and stable"; GNPA 0.70%; collection 97.5% | MAINTAINED |
 | Growth ambition | Base PAT +3% YoY | "double AUM/income/PAT in ~3 years" (~FY30) | UPGRADED (ambition), but ex-co-lending |
 | Leverage | Not a filing focus | D/E ~2.5x approaching internal ~3.5x cap; FCCB relief pending | New / neutral-cautionary |
@@ -292,12 +295,13 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 - **Specificity ratio ≈ 5.5 / 19 ≈ 0.29 → <0.3 threshold = HEAVY HEDGE LANGUAGE.** (Dragged down partly by four-pillar boilerplate; even excluding boilerplate, the forward economics are directional.)
 
 ### 6C. Defensive-language patterns
-- Classic evasions ("let me take this offline" / "we'll get back to you" / "bilateral" / "cannot comment") — **0 occurrences.** Management did not overtly dodge.
+- Classic evasions ("let me take this offline" / "we'll get back to you" / "bilateral" / "cannot comment") — **0 occurrences.** Management did not overtly dodge, and disclosed the co-lending stall openly when asked.
 - **Boilerplate-deflection (the actual pattern):** the four-pillar script re-deployed near-verbatim as the answer to two pointed driver/timeline questions (T27, T31), plus "see slides 10 and 18". Counts as substitution-of-script-for-answer, not classic evasion, but the same information deficit.
 - Hedge-verb density: "we believe / we expect / hopefully / likely / slightly" recur heavily (19 forward/hedge phrases logged). >5 threshold cleared → hedge-heavy call.
 
 ### 6D. Confidence indicators (the genuine positives)
 - Candid on the live-red metric when asked (gave ~40% rather than dodging) — credit for honesty even though the number is bad.
+- Open disclosure of the co-lending stall with a plausible external cause, retained as genuine optionality (T6, T31).
 - Specific, dated capital actions (NCD 7-Aug; FCCB committee scheduled).
 - Promoter-family DMD on the line answering directly; promoter buying disclosed with the SEBI-cap context.
 - Asset-quality candor (sequential LLP increase acknowledged; sub-1% context).
@@ -305,7 +309,7 @@ No trailing ratio yet. Provisional single-quarter read: **Grade C (Mixed)** — 
 ### 6E. Management archetype (Specificity × Credibility 2×2)
 - Specificity ratio ≈ 0.29 (**≤0.5**).
 - Credibility ratio: **not computable** (first Role 5). Provisional single-quarter grade **C (Mixed)**.
-- Placement: low specificity × (provisional) sub-60% credibility → **EVASIVE quadrant (provisional).** Caveat: not the classic hyperbolic-guidance EVASIVE — this management is candid on backward numbers and even on the bad C/I level; the EVASIVE placement is driven by boilerplate-deflection on forward economics, the de-scoped catalyst, and low forward specificity. **Not the OVERPROMISER danger quadrant** (they did not pair hyper-specific guidance with poor delivery — guidance is soft). Track the archetype next quarter once a credibility ratio exists; a shift toward specific-but-undelivered would be the flag.
+- Placement: low specificity × (provisional) sub-60% credibility → **EVASIVE quadrant (provisional).** Caveat: not the classic hyperbolic-guidance EVASIVE — this management is candid on backward numbers, open on the bad C/I level, and open about the co-lending stall; the EVASIVE placement is driven by boilerplate-deflection on forward economics, low forward specificity, and unquantified/unconfirmed answers on the fee line and the opex swing. **Not the OVERPROMISER danger quadrant** (they did not pair hyper-specific guidance with poor delivery — guidance is soft). Track the archetype next quarter once a credibility ratio exists; a shift toward specific-but-undelivered would be the flag.
 
 🛑 Step 6 complete: hedge-heavy call (specificity ~0.29), boilerplate-deflection tell, tone DOWNGRADED on C/I and co-lending; provisional EVASIVE archetype.
 
@@ -341,23 +345,23 @@ Headline numbers fully reconcile call-to-filing — no narrative-vs-numbers dive
 | **Collection efficiency 97.5%** (T3/14) | UNVERIFIABLE (no filing figure) — fills Role 4 ND | Analyst asserts ~1% QoQ dip (Q3); mgmt did not reaffirm/deny |
 | **C/I ~40%** (T13/30) | CONFIRMED-negative vs Notion memory (Q4FY26 39.7%) | Fires trigger (d) |
 | **Interest exp 87→115cr (+32% QoQ)** (analyst, T17) | PARTIALLY CONFIRMED — mgmt accepts direction (debt-lag), not the exact cr figures | ANALYST-SOURCED |
-| **Opex 69→46cr (−32% QoQ)** (analyst, T17) | **UNVERIFIED — mgmt did not confirm the −32% or the mechanism; CFO absent (F08/F15)** | The PAT-support swing |
+| **Opex 69→46cr (−32% QoQ)** (analyst, T17) | **PARTIALLY CONFIRMED (direction only) — mgmt folded opex into a generic shared-cause debt-deployment-lag story but confirmed no figure, named no line, gave no mechanics; CFO absent (F08/F15)** | The PAT-support swing; thin/unverified explanation |
 | **D/E 2.61x** (analyst) vs **~2.5x** (mgmt) | **NUMBER_CONFLICT** — mgmt rounded down 2.61→~2.5 (F13) | Approaching internal ~3.5x cap |
 | **"23 states"** (T3/14) vs filing **"22 states & UTs"** | **NUMBER_CONFLICT (F10)** — reconcile at deck/Reg-33 | Small governance data point |
 | **"6 new product lines"** (T10) vs **"3 new development products launching Q3-end"** (T15) | **NUMBER_CONFLICT (F11)** — subset or distinct? | Reconcile vs deck |
 | Warrant "185 or 180 crores / 3 or 4 years ago" (T24) | **NUMBER_CONFLICT (internal/self, F12)** | Imprecision; cumulative governance note |
 | FCCB ~$44mn; internal cap ~3.5x; 93/7 secured mix; segment mix | UNVERIFIABLE (call-only) — logged | — |
 
-**The interest-up / opex-down inversion flag (F08):** interest +32% QoQ (87→115cr) while opex −32% QoQ (69→46cr); combined cost +3% QoQ (156→161cr). The opex −23cr QoQ is what holds PAT to a −15% QoQ decline rather than a far larger one. **It is ANALYST-sourced and was NOT confirmed by the absent CFO;** the DMD's "debt-deployment lag" explains only the interest side. Flagged as the key ambiguous item; verify exact opex and its mgmt-basis in Q2.
+**The interest-up / opex-down inversion flag (F08):** interest +32% QoQ (87→115cr) while opex −32% QoQ (69→46cr); combined cost +3% QoQ (156→161cr). The opex −23cr QoQ is what holds PAT to a −15% QoQ decline rather than a far larger one. **It is ANALYST-sourced and was NOT confirmed by the absent CFO;** the DMD offered one generic shared-cause explanation folding both moves into an expedited-raise/deployment-lag story (said to normalize in Q2 via SC/FCCB conversion) but did not confirm the Rs46cr opex figure, name the line that moved, or explain the mechanics of a ~33% single-quarter opex fall. Flagged as the key ambiguous item; verify exact opex and its mgmt-basis in Q2.
 
 ### 7B. Peer concall cross-check
 **No peer concall transcript was supplied in the ±4-week window for a live cross-check** (state explicitly, per non-negotiable). Standing cross-reference from Notion prior work: the **UGRO co-lending analogue** — UGRO's experience that co-lending spreads can run 1-1.5% rather than the hoped 3-4%. This quarter's SBI co-lending **stall + de-scope to "not contributing"** is directionally consistent with that analogue (co-lending economics thinner/slower than the bull case). Provenance: Notion/prior peer work; the de-scope itself is this call (F03). When a peer NBFC (UGRO, Northern Arc, Aye, Satin, IIFL) concall lands in-window next cycle, cross-check state-level MSME stress and co-lending-spread commentary.
 
 ### 7C. Concall vs external channel checks
-- **RBI Rs20L collateral-free MSME circular** — management framed it as finalized/"decisive" (T3, T29). Reconciliation: UNVERIFIABLE from the transcript alone; treat as management characterization pending the actual circular text. Sector read in the plain-language brief.
+- **RBI Rs20L collateral-free MSME circular** — management framed it as finalized/"decisive" and a co-lending tailwind (T3, T29). Reconciliation: UNVERIFIABLE from the transcript alone; treat as management characterization pending the actual circular text. Sector read in the plain-language brief.
 - No rating-agency or industry-body data supplied this run to cross-check credit-cost/collection claims. Provenance-flag: management-stated, unverified.
 
-🛑 Step 7 complete: headline numbers reconcile call-to-filing; the material additions are the fired-trigger C/I and the unverified opex swing; four NUMBER_CONFLICTs logged; no in-window peer transcript.
+🛑 Step 7 complete: headline numbers reconcile call-to-filing; the material additions are the fired-trigger C/I and the thinly-explained opex swing; four NUMBER_CONFLICTs logged; no in-window peer transcript.
 
 ---
 
@@ -366,7 +370,7 @@ Headline numbers fully reconcile call-to-filing — no narrative-vs-numbers dive
 ### 8A. Growth-trigger status update
 | Trigger | Pre-concall | Concall evidence | Post-concall |
 |---|---|---|---|
-| SBI MSME co-lending economics | DELAYED / margin-dilutive risk | Stalled (bank compliance pending, disbursements slow); de-scoped to "optionality ... not contributing", excluded from base (T6, T31) | **WEAKENED → effectively removed as an active catalyst** (demoted to optionality) |
+| SBI MSME co-lending economics | DELAYED / margin-dilutive risk | Stalled (bank compliance pending, disbursements slow); openly de-scoped to "optionality ... not contributing", excluded from base but retained as upside (T6, T31) | **WEAKENED → removed as an active catalyst** (demoted to optionality; disclosed openly) |
 | AUM scale-up | AMBER→GREEN (+28%) | +28% YoY reaffirmed on call | **ON TRACK (GREEN)** |
 | Cost-efficiency / operating leverage | RED (C/I 36.4% FY26 / 39.7% Q4) | C/I ~40%, guided "slightly higher side" (T13) | **CONFIRMED NEGATIVE — trigger (d) fired** |
 | Product diversification | — | 6 new lines added; 3 more launch Q3-end; segment mix under 25% cap | NEW / ON TRACK (unquantified targets) |
@@ -375,7 +379,7 @@ Headline numbers fully reconcile call-to-filing — no narrative-vs-numbers dive
 | Watchlist item | This-call reading | Status |
 |---|---|---|
 | Cost-to-Income (mgmt basis) | ~40% (T13) | **RED — confirmed above gate; trigger (d) fired** |
-| Co-lending fees % of income | fee line unquantified; co-lending "not contributing" (T31) | **UNKNOWN→adverse** (engine de-scoped) |
+| Co-lending fees % of income | fee line unquantified; co-lending "not contributing" (T31) | **UNKNOWN→adverse** (engine de-scoped, openly) |
 | Collection efficiency | 97.5%; analyst-noted ~1% QoQ dip (T3/T17) | GREEN (healthy), monitor QoQ dip |
 | Promoter pledge / selling | pledge "come down" QoQ; promoters BUYING ~4.6-4.7%, SEBI 5% cap exhausted (T18) | GREEN (buying, not selling; trigger (e) not fired) |
 | Leverage / D/E | ~2.5-2.61x vs internal ~3.5x cap; FCCB relief pending (T22) | AMBER (approaching cap; monitor) |
@@ -418,7 +422,7 @@ No pillar upgrades. The confirmed cost drag (C/I ~40%, guided to persist) and th
 **RECOMMENDED position action (FLAG for operator ratification — this review does not decide):**
 > **Recommended Decision Status change: WATCHLIST → AVOID.** Basis: pre-committed thesis-broken trigger (d) has formally fired (C/I ~40% = 2nd consecutive Q >35%), hard gate (i) failed, and the co-lending fee engine behind gate (ii) is de-scoped/not contributing. Pre-committed consequence is DEPRECATE to AVOID on both applicable branches. **Operator to ratify.** Per CLAUDE.md ("flag, do not decide") the Notion Decision Status is NOT changed by this review; the recommendation is surfaced prominently for the operator/Notion save step.
 - **No initiation** under any branch (nothing held; and the entry gate has failed). Entry zone at Notion Rs30-38 is **withdrawn pending ratification** — a dip into the zone caused by the C/I RED confirming is a value trap, not an opportunity (anti-value-trap).
-- **Promoter Verdict:** hold at TRUSTWORTHY for now (promoters are buying, disclosed candidly; asset quality candid), but **log the co-lending DROPPED-equivalent** as the first governance de-scope; a second co-lending evasion/de-scope next concall trips the downgrade rule.
+- **Promoter Verdict:** hold at TRUSTWORTHY (promoters are buying, disclosed candidly; asset quality candid; the co-lending stall was disclosed openly with a plausible external cause, per GRAFT 2). **Log** the co-lending de-scope as the first catalyst regression; a second co-lending evasion/de-scope next concall trips the downgrade rule.
 
 ### 8F. Updated NEW Questions for Management (forward — for Reg-33 / next concall)
 The still-unanswered, thesis-critical set (each ties to an unresolved A3 FORWARD-SIGNAL/AMBIGUOUS finding or a NOT-ADDRESSED pre-committed question).
@@ -430,7 +434,7 @@ The still-unanswered, thesis-critical set (each ties to an unresolved A3 FORWARD
 | N3 | PCR % and write-offs in the quarter (to confirm the asset-quality band and test whether GNPA is flattered)? | F09 / Step 5L | PCR >70%; minimal write-offs |
 | N4 | Which quarter (and on what mgmt-basis definition) does Cost-to-Income return below 35%? | F02 | A dated path back under 35%; FY27 exit-quarter C/I |
 | N5 | Concrete SBI co-lending gating step and date at the bank; target co-lending spread (1-1.5% vs 3-4%)? | F03 | A specific compliance milestone/date; quantified spread |
-| N6 | Confirm the exact Q1FY27 opex figure and mgmt-basis; if opex fell 32% QoQ, which line moved and is it sustainable in Q2? | F08 | CFO-confirmed opex; sustainability; whether interest-cost normalizes post-FCCB/SC conversion |
+| N6 | Confirm the exact Q1FY27 opex figure, which line moved for the −32% QoQ drop, and is it sustainable in Q2? | F08 | CFO-confirmed opex; line-level mechanics; whether interest-cost normalizes post-FCCB/SC conversion |
 | N7 | Reconcile "23 states" vs filing "22 states & UTs"; and "6 new product lines" vs "3 launching Q3-end" (subset or distinct)? | F10 / F11 | Clean reconciliation vs the deck |
 | N8 | Will the CFO be present next quarter, and confirm the financial-detail answers given by the DMD this quarter? | F15 | CFO return; verification of opex/interest/provisioning |
 
@@ -440,14 +444,14 @@ The still-unanswered, thesis-critical set (each ties to an unresolved A3 FORWARD
 
 ## STEP 9 — NOTION SAVE (handled by orchestrator / operator)
 
-Not executed by A4 (this agent writes the review artifact; the orchestrator/operator performs the Notion save and the Decision Status ratification). **Recommended row-property changes for operator to ratify at save:** Decision Status WATCHLIST → **AVOID** (trigger (d) fired); Management Grade → provisional **C (Mixed)** (first Role 5; trailing ratio to accrue); Key Notes prepend: "6-Aug-26 concall: C/I ~40% → trigger (d) FIRED (2nd consecutive Q >35%); SBI co-lending stalled+de-scoped; CFO absent; RECOMMEND AVOID." Concall archetype (provisional): EVASIVE (low specificity 0.29; boilerplate-deflection). Net concall impact on thesis: **WEAKENED → BROKEN (pre-committed trigger fired).**
+Not executed by A4 (this agent writes the review artifact; the orchestrator/operator performs the Notion save and the Decision Status ratification). **Recommended row-property changes for operator to ratify at save:** Decision Status WATCHLIST → **AVOID** (trigger (d) fired); Management Grade → provisional **C (Mixed)** (first Role 5; trailing ratio to accrue); Key Notes prepend: "6-Aug-26 concall: C/I ~40% → trigger (d) FIRED (2nd consecutive Q >35%); SBI co-lending stalled+openly de-scoped; CFO absent; RECOMMEND AVOID." Concall archetype (provisional): EVASIVE (low specificity 0.29; boilerplate-deflection). Net concall impact on thesis: **WEAKENED → BROKEN (pre-committed trigger fired).**
 
 ---
 
 # CONCALL VERDICT BLOCK
 
 - **Management credibility (this quarter, provisional):** Grade **C (Mixed)**. Trailing-4 ratio not computable (first Role 5 under protocol).
-- **Management archetype (6E, provisional):** **EVASIVE** (specificity ~0.29 ≤0.5; provisional credibility <60%) — driven by boilerplate-deflection on forward economics and the de-scoped catalyst, NOT the OVERPROMISER quadrant (guidance is soft, not hyper-specific). Candor on backward numbers and the bad C/I level noted as offsetting.
+- **Management archetype (6E, provisional):** **EVASIVE** (specificity ~0.29 ≤0.5; provisional credibility <60%) — driven by boilerplate-deflection on forward economics and unquantified/unconfirmed answers on the fee line and opex swing, NOT the OVERPROMISER quadrant (guidance is soft, not hyper-specific). Candor on backward numbers, on the bad C/I level, and on the co-lending stall noted as offsetting.
 - **Role 1 track-record input (mapped):** **Mixed** (discount management commentary 30-50%; anchor to filing numbers).
 - **Net concall impact on thesis:** **WEAKENED → BROKEN** (pre-committed thesis-broken trigger (d) fired; hard gate (i) failed; co-lending fee engine de-scoped).
 - **Position decision:** **Recommended WATCHLIST → AVOID (trigger (d) fired). Operator to ratify.** 0% held; no initiation; entry zone withdrawn pending ratification.
@@ -462,9 +466,9 @@ Not executed by A4 (this agent writes the review artifact; the orchestrator/oper
 
 On the call, management said its cost-to-income ratio is "roughly ... about 40% right now" and will "remain slightly on the higher side" for a while (T13). That single sentence is the whole quarter for us. Our rule said we would only ever buy this stock if cost-to-income came in at 35% or below; at ~40% it fails. Worse, last quarter it was 39.7%, so ~40% this quarter is the **second quarter in a row above 35%** — which trips our pre-set "thesis-broken" trigger (d). [C/I from this call; 39.7% from Notion memory.]
 
-The headline numbers were strong and match the filing exactly: loan book Rs6,707 crore (+28% YoY), disbursement Rs1,731 crore (+128% YoY), profit Rs61.3 crore (+30% YoY), gross bad loans 0.70%, collection efficiency 97.5% (a new figure not in the filing), capital adequacy 33.1%, cost of borrowing down to 10.1%. [This call, T3.] But profit still fell 15% from the prior quarter, and the reason profit did not fall further is that operating expense apparently dropped 32% in a single quarter (Rs69cr to Rs46cr) while interest cost jumped 32% (Rs87cr to Rs115cr) — a swing raised by a retail investor, not by management, and **not confirmed by the CFO, who was absent** (T17, T18). Management explained the interest rise (funds raised ahead of lending them out) but not the opex drop, which is the piece actually holding profit up. [This call; opex figure analyst-sourced.]
+The headline numbers were strong and match the filing exactly: loan book Rs6,707 crore (+28% YoY), disbursement Rs1,731 crore (+128% YoY), profit Rs61.3 crore (+30% YoY), gross bad loans 0.70%, collection efficiency 97.5% (a new figure not in the filing), capital adequacy 33.1%, cost of borrowing down to 10.1%. [This call, T3.] But profit still fell 15% from the prior quarter, and the reason profit did not fall further is that operating expense apparently dropped 32% in a single quarter (Rs69cr to Rs46cr) while interest cost jumped 32% (Rs87cr to Rs115cr) — a swing raised by a retail investor, not by management, and **not confirmed by the CFO, who was absent** (T17, T18). Management did address it, but only with a single generic explanation covering both moves at once — an expedited fund-raise plus a lag before that money is lent out, which it said should normalize in Q2 once the convertible bonds convert. It did **not confirm the Rs46 crore opex figure, did not say which cost line fell, and did not explain how a one-third drop in operating cost is possible in a single quarter while the book and the branch network both grew.** The problem is not that the question went unanswered; it is that the answer was thin, unquantified and unverified by the finance chief who owns that line. [This call; opex figure analyst-sourced.]
 
-Two other things weakened the case. The SBI co-lending partnership — the fee engine our thesis relied on — is **stalled** (waiting on bank-side compliance, "disbursements have been slow") and has been **quietly demoted** to "an optionality ... not contributing", explicitly left out of management's own 3-year doubling plan (T6, T31). And the second number we needed — fee & commission income of at least Rs12 crore — was **never given** anywhere on the call. So one gate fails outright and the other cannot be confirmed and its engine is switched off. [This call.]
+Two other things weakened the case. The SBI co-lending partnership — the fee engine our thesis relied on — is **stalled** (waiting on bank-side compliance, "disbursements have been slow") and has been **openly demoted** to "an optionality ... not contributing", explicitly left out of management's own 3-year doubling plan (T6, T31). To be fair, management disclosed this plainly when asked twice, blamed a temporary external bank-side step, and kept it as genuine upside that could speed the plan up. But the thesis-level fact is unchanged: co-lending fees are not contributing now. And the second number we needed — fee & commission income of at least Rs12 crore — was **never given** anywhere on the call. So one gate fails outright and the other cannot be confirmed and its engine is switched off. [This call.]
 
 Decision: our pre-set rule says cost-to-income above 35% means DEPRECATE to AVOID. **We recommend changing the status from WATCHLIST to AVOID, and flag it for the operator to ratify — we do not change it ourselves.** Nothing is held, so there is nothing to sell; the recommendation is simply not to buy and to move this off the watchlist to avoid. The company did announce useful funding steps (a Rs300 crore bond issue opening 7 August under a Rs900 crore shelf, a second raise planned in Q2, and a ~$44 million convertible-bond conversion pending that will lower leverage), promoters are still buying (about 4.6-4.7%, near the 5% annual limit), and three new products launch at the end of Q3 — but none of that offsets a fired thesis-broken trigger. [This call.]
 
@@ -478,13 +482,13 @@ The read for Paisalo specifically: its book is **93% secured / 7% unsecured** (T
 
 Paisalo makes money two ways: net interest income (borrow ~10.1%, lend higher, NIM 6.6%, NII Rs144.7 crore) and fee/commission income (mainly co-lending origination fees). This quarter exposes real **model drift**. First, the **AI transition is a cost drag, not yet a cost saver**: management explicitly said cost-to-income is ~40% and "will remain slightly on the higher side" while it converts from a "high-tech high-touch" model to an "AI-led lending franchise", with efficiencies only "eventually" and "long-term" (T13). The AI activity metrics are up (bots 7→18, 2 lakh outbound calls/day, 5 lakh voice-to-data conversions), but management admitted the AI outbound engine only reaches **existing** customers today; new-customer conversion waits until the Q3-end product launches (T15). So the AI spend is being incurred now and the payback is deferred — that is the cost drag. [This call.]
 
-Second, the **co-lending fee engine is switched off for now**: stalled at the bank and de-scoped to optionality outside the base plan (T6, T31). That matters because a healthy co-lending model is what lifts fee income and return on equity by growing assets off the NBFC's own capital — and RoE here is only 13.4%. Third, **leverage is climbing** (D/E ~2.5x by management, 2.61x by an analyst) toward an internal ~3.5x cap; management's relief valve is the pending **~$44 million FCCB conversion** (which cuts leverage but dilutes equity) plus fresh debt — the **Rs300 crore NCD (opens 7 Aug, under a Rs900 crore shelf)** and a second Q2 raise (T18, T22). The business is funding growth with more borrowing while its efficiency ratio stays elevated and its fee engine is idle — the model is being stretched, not yet re-rated. [This call; UGRO co-lending-spread analogue: Notion prior work.]
+Second, the **co-lending fee engine is switched off for now**: stalled at the bank and openly de-scoped to optionality outside the base plan (T6, T31). That matters because a healthy co-lending model is what lifts fee income and return on equity by growing assets off the NBFC's own capital — and RoE here is only 13.4%. Third, **leverage is climbing** (D/E ~2.5x by management, 2.61x by an analyst) toward an internal ~3.5x cap; management's relief valve is the pending **~$44 million FCCB conversion** (which cuts leverage but dilutes equity) plus fresh debt — the **Rs300 crore NCD (opens 7 Aug, under a Rs900 crore shelf)** and a second Q2 raise (T18, T22). The business is funding growth with more borrowing while its efficiency ratio stays elevated and its fee engine is idle — the model is being stretched, not yet re-rated. [This call; UGRO co-lending-spread analogue: Notion prior work.]
 
 ## 4. Competition Intelligence
 
 Where Paisalo looks structurally strong versus peers: **asset quality** (GNPA 0.70% / NNPA 0.49%, better than most microfinance-adjacent lenders like Satin that have run higher stress), **capital** (CAR 33.1%, far above leveraged peers), and **funding cost** (10.1% and falling, competitive for a mid-size NBFC, though large diversified players like Muthoot and IIFL still fund cheaper on stronger ratings). Promoters actively buying (near the 5% annual SEBI limit) is a conviction signal few peers match right now. [Peer positioning: Notion/prior peer work; Paisalo metrics: this call.]
 
-Where it is structurally weaker or unproven: **efficiency** — the ~40% cost-to-income it finally disclosed is the competitive tell. Tech-led competitors such as **Aye Finance and Northern Arc** lean on genuinely lower cost ratios; Paisalo is spending on AI now and admits the efficiency payoff is "long-term", so on the one metric where the best digital lenders win, it is behind and guiding to stay behind for a while. **Co-lending economics** are unproven and now de-scoped — exactly the area where **UGRO** has shown co-lending spreads can run 1-1.5% rather than the hoped 3-4% (our Notion "co-lending trap" flag), and Paisalo's stall is directionally consistent with that. **Return on equity** at 13.4% is modest versus best-in-class NBFCs and below what earns a premium price-to-book. The competitive risk to watch: Paisalo is buying rapid growth (disbursement +128%) and funding it with more leverage while its cost base stays high and its fee engine is idle — strong on the balance sheet, unproven on the P&L efficiency where the leading peers actually differentiate. [Competitive read: Notion/prior peer work reconciled with this call's disclosed and withheld metrics.]
+Where it is structurally weaker or unproven: **efficiency** — the ~40% cost-to-income it finally disclosed is the competitive tell. Tech-led competitors such as **Aye Finance and Northern Arc** lean on genuinely lower cost ratios; Paisalo is spending on AI now and admits the efficiency payoff is "long-term", so on the one metric where the best digital lenders win, it is behind and guiding to stay behind for a while. **Co-lending economics** are unproven and now de-scoped — exactly the area where **UGRO** has shown co-lending spreads can run 1-1.5% rather than the hoped 3-4% (our Notion "co-lending trap" flag), and Paisalo's stall is directionally consistent with that. **Return on equity** at 13.4% is modest versus best-in-class NBFCs and below what would earn a premium price-to-book. The competitive risk to watch: Paisalo is buying rapid growth (disbursement +128%) and funding it with more leverage while its cost base stays high and its fee engine is idle — strong on the balance sheet, unproven on the P&L efficiency where the leading peers actually differentiate. [Competitive read: Notion/prior peer work reconciled with this call's disclosed and withheld metrics.]
 
 ---
 
@@ -502,19 +506,22 @@ ledger_reconciliation:
   all_reviewed: true
   a3_findings_incorporated: [F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11, F12, F13, F14, F15]
 protocol_verdict: "PROCEED WITH FLAGS"
-cash_conversion: "INDETERMINATE"   # earnings-quality: opex -32% QoQ swing (PAT-support) analyst-sourced & CFO-unconfirmed; PCR/write-offs/fees/PBT/tax still ND. C/I now confirmed ~40%. INDETERMINATE would alone cap at PROCEED WITH CAVEATS; confirmed trigger firing raises the surfaced verdict to PROCEED WITH FLAGS.
+cash_conversion: "INDETERMINATE"   # earnings-quality: opex -32% QoQ swing (PAT-support) analyst-sourced, explained only generically & CFO-unconfirmed (figure/line not confirmed); PCR/write-offs/fees/PBT/tax still ND. C/I now confirmed ~40%. INDETERMINATE would alone cap at PROCEED WITH CAVEATS; confirmed trigger firing raises the surfaced verdict to PROCEED WITH FLAGS.
 decision_status_verified: "WATCHLIST"
 position_branch: "8A-W"
 sc_gap_pat_pct: ["Q1FY27: ND (standalone/consolidated basis never stated on the call, F14)", "Q4FY26: ND", "Q1FY26: ND"]
 recommended_decision_status_change: "WATCHLIST -> AVOID (pre-committed trigger (d) fired: Cost-to-Income ~40% = 2nd consecutive quarter >35%; hard gate (i) failed; co-lending fee engine de-scoped/not contributing). FLAG for operator ratification; review does NOT change Notion status."
 thesis_broken_triggers_fired: ["(d) Cost-to-Income >35% for 2 consecutive quarters — FIRED (~40% Q1FY27 vs 39.7% Q4FY26)"]
+a5_adversary_grafts:
+  - "GRAFT 1 (opex): reframed from 'management did not explain the opex drop' to 'management gave one generic, unquantified, CFO-unconfirmed shared-cause explanation (expedited raise + deployment lag, said to normalize in Q2) without confirming the Rs46cr figure or naming the line' — bear substance (analyst-sourced, no number confirmed, no decomposition, ~33% single-qtr drop unexplained mechanically, CFO absent) preserved."
+  - "GRAFT 2 (co-lending governance): softened 'DROPPED-equivalent/concealment without clean acknowledgment' to 'open de-scope with plausible external cause' (disclosed twice when asked T6/T31, bank-side compliance, retained as optionality, RBI Rs20L tailwind) — thesis fact (fees not contributing, gate (ii) unmet) and AVOID recommendation unchanged; Promoter Verdict held at TRUSTWORTHY, item LOGGED."
 questions_answered_tracker:
   - {q: "1 Cost-to-Income >35%?", status: "ANSWERED SPECIFICALLY", cite: "T13/line30 (~40%)", result: "gate(i) FAILS; trigger(d) FIRES"}
   - {q: "2 Fees & commission income Rs Cr & share?", status: "NOT ADDRESSED", cite: "never quantified; co-lending 'not contributing' T31/58"}
   - {q: "3 Standalone or consolidated basis & S-vs-C gap?", status: "NOT ADDRESSED", cite: "F14 whole transcript"}
-  - {q: "4 Drivers of PAT -15%/NIM -26bps/RoA -20bps QoQ?", status: "PARTIALLY ANSWERED", cite: "T18/37 (interest/opex lag; NIM/RoA QoQ not addressed)"}
+  - {q: "4 Drivers of PAT -15%/NIM -26bps/RoA -20bps QoQ?", status: "PARTIALLY ANSWERED", cite: "T18/37 (one shared-cause interest/opex lag; NIM/RoA QoQ not addressed)"}
   - {q: "5 Own-book vs co-lending/off-book split of +128% disb?", status: "NOT ADDRESSED", cite: "T10/25 (touchpoints only; no split)"}
-  - {q: "6 New verticals & SBI co-lending AUM/spread?", status: "PARTIALLY ANSWERED", cite: "T20/41 verticals+mix; co-lending economics NOT given, de-scoped T31/58"}
+  - {q: "6 New verticals & SBI co-lending AUM/spread?", status: "PARTIALLY ANSWERED", cite: "T20/41 verticals+mix; co-lending economics NOT given, openly de-scoped T31/58"}
   - {q: "7 Credit cost/PCR/write-offs/collection efficiency?", status: "PARTIALLY ANSWERED", cite: "T18/37 credit-cost narrative + coll.eff 97.5% T3/14; PCR/write-offs NOT given"}
   - {q: "8 When Reg-33 limited-reviewed results filed?", status: "NOT ADDRESSED", cite: "not raised on call"}
   - {q: "9 DMD term forward-dating & NRC remuneration?", status: "NOT ADDRESSED", cite: "not raised on call"}
@@ -522,7 +529,7 @@ questions_answered_tracker:
   - {q: "11 Why Total Income QoQ dashed?", status: "NOT ADDRESSED", cite: "not raised on call"}
 questions_answered_summary: "1 ANSWERED SPECIFICALLY / 3 PARTIALLY / 0 EVADED / 7 NOT ADDRESSED; the only specific answer is the one firing trigger (d); fee income (Q2) and S-vs-C basis (Q3) NOT ADDRESSED; CFO absent on the financial-detail quarter."
 management_grade_this_qtr: "C (Mixed) — provisional; trailing-4 credibility ratio not computable (first Role 5 under protocol)"
-management_archetype: "EVASIVE (provisional) — specificity ~0.29; boilerplate-deflection; NOT Overpromiser"
+management_archetype: "EVASIVE (provisional) — specificity ~0.29; boilerplate-deflection; NOT Overpromiser; candor offsets noted (backward numbers, C/I level, open co-lending stall)"
 role1_track_record_input: "Mixed"
 questions_for_management:
   - {q: "Standalone or consolidated basis for RoA/RoE/NIM/GNPA/PAT and the S-vs-C PAT gap?", from_finding_id: "F14"}
@@ -530,7 +537,7 @@ questions_for_management:
   - {q: "PCR % and write-offs in the quarter (confirm asset-quality band; test GNPA flattering)?", from_finding_id: "F09"}
   - {q: "Which quarter, on what mgmt-basis definition, does Cost-to-Income return below 35%?", from_finding_id: "F02"}
   - {q: "Concrete SBI co-lending gating step and date at the bank; target co-lending spread (1-1.5% vs 3-4%)?", from_finding_id: "F03"}
-  - {q: "Confirm exact Q1FY27 opex and mgmt-basis; if opex fell 32% QoQ which line moved and is it sustainable in Q2?", from_finding_id: "F08"}
+  - {q: "Confirm exact Q1FY27 opex, which line moved for the -32% QoQ drop, and is it sustainable in Q2?", from_finding_id: "F08"}
   - {q: "Reconcile 23 vs 22 states and 6 new product lines vs 3 launching Q3-end (subset or distinct)?", from_finding_id: "F10/F11"}
   - {q: "Will the CFO be present next quarter to confirm the financial-detail answers given by the DMD?", from_finding_id: "F15"}
 monitorables:
@@ -540,16 +547,16 @@ monitorables:
   - {item: "Three new development products launch", implied_date: "2026-Q3FY27-end", source_ref: "F06 / T15 line32"}
   - {item: "AI branch/BC application platform revamp rollout", implied_date: "upcoming (advanced stages)", source_ref: "T3 line14"}
   - {item: "Double AUM/income/PAT (base excludes co-lending)", implied_date: "~FY30 (3 fiscal years)", source_ref: "F07 / T3 line14, T31 line58"}
-  - {item: "SBI co-lending disbursements (bank compliance pending; STALLED/de-scoped)", implied_date: "indefinite", source_ref: "F03 / T6 line21, T31 line58"}
+  - {item: "SBI co-lending disbursements (bank compliance pending; STALLED/openly de-scoped)", implied_date: "indefinite", source_ref: "F03 / T6 line21, T31 line58"}
   - {item: "Reg-33 limited-reviewed Q1FY27 results (still pending; not raised on call)", implied_date: "undated-chase (~pre-AGM)", source_ref: "Role4 F13-a"}
   - {item: "34th AGM / FY25-26 dividend", implied_date: "2026-09-21", source_ref: "Role4 F6-a"}
 flags:
   - "TRIGGER (d) FIRED: Cost-to-Income ~40% (T13/line30) = 2nd consecutive Q >35% (Q4FY26 39.7%); hard gate (i) FAILS. RECOMMEND WATCHLIST->AVOID, operator to ratify."
   - "Hard gate (ii) unmet-in-substance: fees & commission income never quantified on the call; co-lending fee engine 'not contributing' and de-scoped (T31/58)."
-  - "SBI co-lending STALLED (bank compliance pending, disbursements slow, T6) and DE-SCOPED to optionality excluded from doubling base (T31) — DROPPED-equivalent on a named catalyst; log for 2-concall lender-evasion test."
-  - "Interest +32% QoQ (87->115cr) vs opex -32% QoQ (69->46cr) inversion (F08): opex swing is the PAT-support mechanism, ANALYST-sourced and NOT confirmed by the absent CFO; DMD's debt-lag story explains interest-up only, not opex-down."
+  - "SBI co-lending STALLED (bank compliance pending, disbursements slow, T6) and DE-SCOPED to optionality excluded from doubling base (T31) — but disclosed OPENLY when asked twice, with plausible external cause and retained as upside (A5 GRAFT 2); catalyst regression LOGGED, not scored as concealment; Promoter Verdict held TRUSTWORTHY. Repeat de-scope next concall trips the lender-evasion test."
+  - "Interest +32% QoQ (87->115cr) vs opex -32% QoQ (69->46cr) inversion (F08): opex swing is the PAT-support mechanism; management gave ONE generic shared-cause explanation (expedited raise + deployment lag, normalize in Q2) but confirmed no figure, named no line, and did not explain the mechanics of a ~33% single-qtr opex drop; analyst-sourced; CFO absent. Weakness is thinness/unverifiability of a proffered explanation, not an unaddressed question (A5 GRAFT 1)."
   - "CFO Harish Singh ABSENT (personal exigency) on a financial-detail quarter; single DMD voice fielded all interest/opex/D-E/provisioning questions, reframing rather than confirming (F15)."
-  - "Standalone-vs-consolidated basis NOT ADDRESSED on the entire call (F14); fee income, PCR, write-offs also not disclosed."
+  - "Standalone-vs-consolidated basis NOT ADDRESSED on the entire call (F14); fee income, PCR, write-offs, exact opex also not disclosed."
   - "NUMBER_CONFLICTs: 23 states (call) vs 22 states & UTs (filing) F10; 6 new product lines vs 3 launching Q3-end F11; D/E 2.61x analyst vs ~2.5x mgmt F13; warrant 185/180 cr self-conflict F12."
   - "Headline numbers reconcile call-to-filing (AUM/disbursement/PAT/NII/NIM/GNPA/net worth/CAR/CoB/borrowings all CONFIRMED)."
   - "Call hedge-heavy: specificity ~0.29 (<0.3); four-pillar boilerplate re-deployed as deflection on driver/timeline questions (T27, T31); provisional archetype EVASIVE."

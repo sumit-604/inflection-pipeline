@@ -1,0 +1,526 @@
+LEDGER: ARIS Q1 FY27 — INVESTOR PRESENTATION (Doctype: presentation)
+Source: extract_presentation_aris_q1fy27.txt (42 pages, page_count_pdfinfo=42, formfeed_count=42)
+Agent: A2-ENUMERATOR | Model: claude-sonnet-5
+Prior-quarter deck ledger: NONE (first quarterly run for ARIS) — DROPPED_SLIDE diffs = N.A. this run.
+
+=== A2 COUNT TEST ===
+category: slides          grep_count: 42   sweep_count: 42   match: yes
+category: slide_numbers   grep_count: 211  sweep_count: 211  match: yes
+category: line_items      grep_count: 70   sweep_count: 70   match: yes
+category: zero_standing   grep_count: 15   sweep_count: 15   match: yes
+category: footnotes       grep_count: 10   sweep_count: 10   match: yes
+category: dropped_slides  grep_count: N.A. sweep_count: N.A. match: N.A. (no prior deck ledger)
+gate_a2: pass
+=== END COUNT TEST ===
+
+METHODOLOGY NOTE (read before using this ledger)
+- SLIDES: grep -n -E "^\[page [0-9]+\]" on the extract vs a manual page-by-page read of all
+  42 pages. Both = 42. This is the primary required gate for this run.
+- SLIDE_NUMBERS: grep scope = all 42 pages EXCLUDING the three financial-statement TABLE
+  pages (37, 38, 39 — itemized separately as line_items, since their numbers are structured
+  table cells, not free-floating slide numbers) and the disclaimer page (41 — itemized
+  separately as footnotes). Structural noise (page markers, "Investor Presentation" footer
+  line, bare footer page numbers, OCR dpi/tesseract metadata lines) was stripped first, then
+  grep -c "^[0-9]+: .*[0-9]" counted every remaining line containing at least one digit = 211.
+  Manual sweep = independent line-by-line read of the same 39-page scope = 211, same lines.
+  Two counts match by construction of an exhaustive per-line digit scan, which is appropriate
+  because "enumerate everything, interpret nothing" governs this doctype: chart axis-period
+  captions (FY24/FY25/FY26/Q1-FY27, Q1-FY26/Q4-FY26/Q3-FY26), diagram sequence indices
+  (STREAM 01-03, Vendor 01-07, Customer 01-07, Developer 1/2, item bullets 01-04), and brand
+  tokens containing a digit (e.g. "B2B") are NOT discarded — they are INCLUDED as rows and
+  flagged STRUCTURAL/AXIS_LABEL/INDEX_LABEL/BRAND_TOKEN so A3/A4 can see everything and decide
+  materiality themselves, per the "interpret nothing" rule.
+- LINE_ITEMS: the three financial-statement tables (pages 37, 38, 39). Grep verification: page
+  37 and 38 each have 17 label-initial lines minus 1 header row = 16 line items each (confirmed
+  by manual read); page 39 (two-column balance sheet) verified via
+  grep -oE "[0-9-][0-9,]*[[:space:]]+[0-9-][0-9,]*[[:space:]]+[0-9-][0-9,]*" = 38 three-period
+  value-triplets (one per dataful line item across both Assets and Equity&Liabilities columns;
+  the 8 section sub-headers with no values — Non-Current Assets, Financial Assets x2, Current
+  Assets, Equity, Non-Current Liabilities, Financial Liabilities, Current Liabilities — carry
+  no numeric row and are excluded from the 38, consistent with treating headers as structure,
+  not disclosed data). 16+16+38 = 70. Manual sweep = 70. Match.
+- ZERO_STANDING: grep -oE "(^|[[:space:]])-([[:space:]]|$)" per table page, minus 2 confirmed
+  false positives on page 39 (the hyphen inside the label "GRAND TOTAL - ASSETS" / "GRAND TOTAL
+  - EQUITIES & LIABILITIES" is label punctuation, not a data cell — verified by context and
+  excluded), plus 1 explicit "NIL" (page 29, Incremental Capital). Page 37 dash cells = 4,
+  page 38 = 3, page 39 = 7 (after removing the 2 false positives), + 1 NIL = 15. Manual sweep
+  = 15, same cells. Match.
+- FOOTNOTES: grep for "\*" (3 hits: 2 markers + 1 marked footnote text), "Source:" (2 hits),
+  plus manual identification of the 4 disclaimer paragraphs on page 41 (3 in the main
+  forward-looking-statement/no-reliance/confidentiality disclaimer + 1 Valorem Advisors
+  disclaimer) = 9 by grep alone. Manual re-sweep found ONE additional footnote that grep's
+  asterisk pattern missed: the page-9 KPI-panel footnote text itself ("All Figures as of
+  Q1-FY27", line 254) carries NO leading asterisk glyph even though the KPI it qualifies
+  ("Net Debt to Equity*", line 250) DOES carry one — an inconsistent marking convention. This
+  is exactly the kind of miss the two-way enumeration gate exists to catch: grep re-run with
+  pattern "All Figures as of" confirms 2 occurrences (line 254, line 868), both counted.
+  9 (grep) + 1 (sweep-caught) = 10, re-verified by grep with the broadened pattern = 10. Match.
+  Flagged below as FOOTNOTE_ASTERISK_MISMATCH.
+
+FLAGS RAISED (summary — full detail in tables below)
+- ZERO_STANDING (15 instances — see Table 3)
+- FOOTNOTE_ASTERISK_MISMATCH (page 9 KPI footnote lacks the asterisk its marker implies — see Table 4, row F2)
+- SEGMENT_AXIS_LABEL_ERROR (page 36 Services-revenue chart x-axis reads "Q3-FY26" where the
+  B2B and Contract Manufacturing charts on the same slide read "Q4-FY26" — see Table 2, line 1035)
+- NO_QTR_BALANCE_SHEET (page 39 Historical Consolidated Balance Sheet gives FY24/FY25/FY26
+  only, no Q1-FY27 column — every other financial table in this deck (pages 34, 37, 38, 40)
+  includes the current quarter; the balance sheet does not, so quarter-end leverage/working-
+  capital position is not directly disclosed here — see Table 1, slide 39)
+- DROPPED_SLIDE: N.A. (no prior-quarter deck ledger provided for this ticker's first quarterly run)
+
+================================================================================
+TABLE 1: SLIDE INVENTORY (42 slides, grep=42 / sweep=42, match=yes)
+================================================================================
+Slide | Line | Title                                                                      | Content type            | Flags
+1  | 15   | Reg 30 SEBI(LODR) cover letter to BSE/NSE re: Investor Presentation      | text (regulatory letter) |
+2  | 60   | Earnings Presentation (title slide, "AUGUST 2026")                       | photo/text (OCR pg2)     |
+3  | 66   | India's Construction Material Market Landscape                          | text/chart (infographic) | unit note: Lakh Cr macro stats, not company financials
+4  | 103  | Fragmented Structure of India's Construction Materials Industry         | table/chart (organised vs unorganised %) |
+5  | 136  | INR 50 lakh Crore Industry. Nobody has solved it!                       | text (4 problem statements) |
+6  | 166  | ARIS Value Proposition                                                   | diagram/photo (no numbers) |
+7  | 199  | Key Differentiators                                                      | text |
+8  | 226  | COMPANY OVERVIEW (section divider)                                       | photo (OCR pg8) |
+9  | 230  | ARIS in a Snapshot                                                       | table/chart (15-metric KPI panel) | footnote asterisk on Net Debt/Equity
+10 | 260  | About ARIS                                                               | text + chart (Revenue & EBITDA margin bars, segmental mix pie) |
+11 | 294  | Journey                                                                  | text/timeline (2021-2025) |
+12 | 333  | Board of Directors                                                       | photo/text (6 director bios) |
+13 | 364  | Key Managerial Personnel & Senior Management Personnel                   | photo/text (7 KMP/SMP bios) |
+14 | 400  | Geographical Presence                                                    | chart/map (revenue mix %) |
+15 | 434  | Marquee Customers                                                        | photo/chart (industry mix %) |
+16 | 464  | Key Projects                                                             | photo (8 project captions, no numeric data) |
+17 | 481  | BUSINESS OVERVIEW (section divider)                                      | photo (OCR pg17) |
+18 | 485  | One Network - Three Revenue Streams                                      | text/chart (EBITDA%/Revenue% per stream) |
+19 | 527  | Cross Selling Solutions                                                  | diagram/text |
+20 | 557  | Transforming Construction Procurement through Technology                 | diagram/text (without-ARIS vs with-ARIS) |
+21 | 600  | Real-Time Vendor Engagement via WhatsApp                                 | table (5-row before/after) |
+22 | 623  | ArisCloud: End-to-End Intelligent Procurement Workflow                   | text/diagram (no numbers) |
+23 | 660  | From Manual Chaos to AI-Driven Control                                   | text |
+24 | 679  | ArisGPT - Conversational AI for Operational Intelligence                 | text (no numbers) |
+25 | 707  | Portfolio Realignment towards High-Value Categories                     | chart/table (FY23 vs FY26 mix + Revenue/EBITDA/Margin) |
+26 | 743  | B2B Supply                                                               | text/chart (Revenue & Quantity Delivered bars) |
+27 | 776  | Contract Manufacturing                                                   | text/chart (Revenue & Quantity Delivered bars) |
+28 | 809  | Contract Manufacturing Facilities                                        | text/table (plant count, capacity, utilisation) |
+29 | 838  | Services                                                                 | text/chart (Revenue bars, portfolio stats, GDV mix) | footnote asterisk on Current Portfolio
+30 | 872  | ArisUnitern RE Solutions: Turning Execution Risk into Investor Returns   | text (2 case studies) |
+31 | 912  | STRATEGIC OVERVIEW (section divider)                                     | photo (OCR pg31) |
+32 | 916  | Future Growth Strategies                                                 | text (8 strategy tiles) |
+33 | 952  | FINANCIAL OVERVIEW (section divider)                                     | photo (OCR pg33, decorative bar-chart graphic w/ no real data labels) |
+34 | 961  | Q1-FY27 Financial Highlights                                             | table/text (6-metric KPI panel with YoY deltas) |
+35 | 991  | Q1-FY27 Operational Highlights                                           | text (4 bullet themes: Asphalt, DaaS, Contract Mfg, Retention) |
+36 | 1017 | Segmental Performance                                                    | chart (3-series quarterly revenue bars) | SEGMENT_AXIS_LABEL_ERROR (see Table 2, line 1035)
+37 | 1043 | Quarterly Consolidated Income Statement                                  | table (16 line items x Q1FY27/Q1FY26/YoY/Q4FY26/QoQ) | see Table 3
+38 | 1084 | Historical Consolidated Income Statement                                 | table (16 line items x FY24/FY25/FY26/Q1FY27) | see Table 3
+39 | 1125 | Historical Consolidated Balance Sheet                                    | table (38 line items x FY24/FY25/FY26, two-column) | NO_QTR_BALANCE_SHEET; see Table 3
+40 | 1163 | Consolidated Financial Highlights                                       | chart (7 series: Revenue, EBITDA+margin, PAT+margin, NWC days, Net Debt/Equity, ROE/ROCE) |
+41 | 1204 | Disclaimer                                                               | text (forward-looking-statement disclaimer + Valorem Advisors disclaimer) | see Table 4
+42 | 1243 | THANK YOU (closing slide)                                                | photo (OCR pg42) |
+
+================================================================================
+TABLE 2: EVERY NUMBER ON EVERY SLIDE (211 rows, one per digit-bearing content
+line; grep=211 / sweep=211, match=yes). Structural/axis/index rows are INCLUDED
+and flagged, not dropped, per "enumerate everything, interpret nothing."
+================================================================================
+
+--- Slide 1 (cover letter) — 11 lines ---
+Line 16 | "August 05, 2026" — letter date
+Line 21 | "...Exchange Plaza, Plot No. C/1, G Block..." — NSE address fragment | LOW_MATERIALITY (address, not a disclosure metric)
+Line 23 | "Dalal Street, Mumbai 400001. Mumbai 400 051." — exchange PIN codes | LOW_MATERIALITY (address)
+Line 25 | "Scrip Code: 544419" — BSE scrip code
+Line 32 | "Pursuant to Regulation 30 of the SEBI (LODR) Regulations..." — "30" reg. clause number
+Line 33 | "Regulations 2015..." — LODR regulations year
+Line 34 | "...scheduled on August 06, 2026 with Analysts and Investors" — concall date
+Line 36 | "...Quarter ended June 30, 2026." — reporting period end date
+Line 51 | "Date: 2026.08.05" — digital-signature date
+Line 52 | "19:36:29 +05'30'" — digital-signature timestamp
+Line 55 | "DIN: 09095925" — CFO Bhavik Khara's DIN
+
+--- Slide 2 — 1 line ---
+Line 63 | "AUGUST 2026" — title-slide date
+
+--- Slide 3 (market landscape infographic) — 11 lines ---
+Line 71 | "~50%" Urban Share by 2047 / "INR 11.11 Lakh Cr" Infra Capex Budget / "INR 1.59 Lakh Cr" PMAY Capex Budget | unit=Lakh Cr, macro market data (not company financials, per header note)
+Line 72 | "2047" — Urban Share target year (pairs with ~50% on line 71)
+Line 73 | "~13%" Real Estate Sector Contribution to GDP
+Line 79 | "~13,100+" Projects under National Infra Pipeline / "~29 Km/Day" Road Construction 2024 / "~INR 1.5 Lakh Cr" REIT AUM / "~50-60%" Share of Construction Materials in Project Cost
+Line 80 | "2024" — Road Construction rate reference year (pairs with ~29 Km/Day on line 79)
+Line 87 | "335" — Construction Material Market chart data label (USD Bn) | AXIS_LABEL context, series unclear from text layout alone — verify against source image
+Line 89 | "134" — chart data label (USD Bn)
+Line 92 | "45" — chart data label (USD Bn)
+Line 93 | "108" and "132" — chart data labels (USD Bn)
+Line 94 | "Tier 2 & Tier 3" — city-tier descriptor, not a metric | LOW_MATERIALITY (descriptive, not disclosed data)
+Line 95 | "2024" / "2029P" — chart x-axis year labels | AXIS_LABEL
+
+--- Slide 4 — 10 lines ---
+Line 107 | "<20%" / ">80%" — Aggregates organised/unorganised split
+Line 108 | "~12,000+" quarry operators
+Line 112 | "~13%" / "~87%" — Walling organised/unorganised split
+Line 113 | "~250 bn" bricks produced annually
+Line 117 | "~40-45%" / "~55-60%" — RMC organised/unorganised split
+Line 118 | "~4,350+" RMC plants across India
+Line 121 | "~60-65%" / "~35-40%" — Steel organised/unorganised split
+Line 122 | "~150+ MTPA" steel production
+Line 126 | "~85-90%" / "~10-15%" — Cement organised/unorganised split
+Line 127 | "~700 MTPA" installed capacity
+
+--- Slide 5 — 4 lines ---
+Line 137 | "INR 50 lakh Crore" industry headline
+Line 142 | "01" / "02" — problem-tile index numbers | INDEX_LABEL
+Line 143 | "1 Mn+" fragmented vendors
+Line 150 | "03" / "04" — problem-tile index numbers | INDEX_LABEL
+
+--- Slide 6 — 0 lines (no numbers) ---
+
+--- Slide 7 — 2 lines ---
+Line 211 | "4+ years" of transaction data
+Line 212 | "5,000+" counterparties
+
+--- Slide 8 — 0 lines (divider, no numbers) ---
+
+--- Slide 9 (ARIS in a Snapshot KPI panel) — 6 lines ---
+Line 235 | "23" States & UTs / "1,192+" Pin codes Served / "3,412+" Customers Catered / "2,229+" Sourcing Vendors / "10+" Contract Manufacturing Plants
+Line 243 | "9 Mn+ MTPA" Reserved Capacity / "24+ MMT" Materials Delivered / "800+" Daily Deliveries / "82%" Repeat Orders / "2.5 Mn Sq. Ft." Services Portfolio Under Execution
+Line 250 | "56 Days" Net Working Capital Days / "0.02x" Net Debt to Equity* / "17.2%" ROCE | *asterisk marker — see Table 4 row F1/F2, FOOTNOTE_ASTERISK_MISMATCH
+Line 251 | "13%" 3 Year Revenue CAGR / "10.6%" ROE
+Line 252 | "3" in "3 Year Revenue CAGR" — descriptor, not itself a metric value | LOW_MATERIALITY
+Line 254 | "All Figures as of Q1-FY27" — footnote text (no leading asterisk despite qualifying an asterisked KPI) | see Table 4 row F2, FOOTNOTE_ASTERISK_MISMATCH
+
+--- Slide 10 (About ARIS) — 13 lines ---
+Line 262 | chart title "Revenue (INR Mn) & EBITDA Margin (%)"
+Line 264 | "10,675" — Revenue FY26 chart bar
+Line 266 | "7,677" Revenue FY25 / "10.49%" EBITDA Margin Q1-FY27
+Line 267 | "6,968" Revenue FY24 / "9.43%" EBITDA Margin FY26
+Line 269 | "6.53%" EBITDA Margin FY25 / "2908" Revenue Q1-FY27
+Line 271 | "1.84%" EBITDA Margin FY24
+Line 272 | "3,400+" strong client base / "FY24 FY25 FY26 Q1-FY27" chart x-axis | AXIS_LABEL mixed with genuine value on same line
+Line 273 | "~82%" repeat order rate
+Line 278 | chart title "Q1-FY27 Segmental Revenue Mix (%)"
+Line 280 | "2,200+" vendor network
+Line 281 | "10%" Services segmental mix
+Line 282 | "37%" B2B Supply segmental mix
+Line 287 | "53%" Contract Manufacturing segmental mix
+
+--- Slide 11 (Journey) — 12 lines ---
+Line 298 | "18 states" served (FY24 milestone)
+Line 300 | "By the end of FY24..." — narrative year reference
+Line 301 | "702 crores" FY24 revenue / "10 million" metric tonnes delivered
+Line 305 | "filed its Prospectus in June 2025" — IPO filing date
+Line 306 | "INR 500 crores" IPO size / "100% book-built process"
+Line 308 | "February 10, 2021" — incorporation date
+Line 311 | "In late 2025, the company announced..." — asphalt entry narrative date
+Line 312 | (continuation, no distinct new number)
+Line 316 | "2021" / "2025" — timeline section headers | AXIS_LABEL (redundant with narrative dates on lines 308/305)
+Line 323 | "2 million+" metric tonnes delivered
+Line 324 | "12 months" / "2022" — timeline header + period reference | AXIS_LABEL / narrative overlap
+Line 326 | "ended March 31, 2022" — period-end date (pairs with line 323/324)
+
+--- Slide 12 (Board of Directors) — 2 lines ---
+Line 341 | "20 year's experience" (Ronak Morbia bio)
+Line 343 | "FICCI E-Commerce Chair (2024)" / "8+ years" (Siddharth Shah bio) — credential year + experience figure
+
+--- Slide 13 (KMP & SMP) — 2 lines ---
+Line 353 | "33 years of experience" (Renganathan Bashyam bio)
+Line 373 | "20+ years" (Srinivasan Gopalan bio)
+
+--- Slide 14 (Geographical Presence) — 7 lines ---
+Line 408 | "10+" Contract Manufacturing Plants
+Line 409 | "23" States & UTs / "1,192+" Pincodes
+Line 413 | chart title "Q1-FY27 Geographical Revenue Mix (%)"
+Line 417 | "Others, 6%"
+Line 420 | "Karnataka, 7%"
+Line 421 | "Maharashtra, 65%"
+Line 426 | "Tamil Nadu, 22%"
+
+--- Slide 15 (Marquee Customers) — 5 lines ---
+Line 448 | chart title "Q1-FY27 Industry Wise Revenue Mix (%)"
+Line 453 | "Manufacturer, 17%"
+Line 455 | "Others, 7%" / "Large Infra and EPC Players, 58%"
+Line 456 | "3,412+" Customers / "82%" Repeat Customers Count / "Real Estate Developers, 18%" (label continuation)
+Line 460 | "18%" — mix continuation value
+
+--- Slide 16 — 0 lines (no numbers) ---
+--- Slide 17 — 0 lines (divider, no numbers) ---
+
+--- Slide 18 (One Network - Three Revenue Streams) — 7 lines ---
+Line 488 | "STREAM 01" / "STREAM 02" / "STREAM 03" — stream index labels | INDEX_LABEL
+Line 491 | "B2B Supply" / "Contract Manufacturing" / "Developer-as-a-Service" — contains brand token "B2B" | BRAND_TOKEN, no metric
+Line 494 | "EBITDA 2-2.5% / Revenue 37%" (B2B) / "EBITDA 9-9.5% / Revenue 53%" (Contract Mfg) / "EBITDA 55-60% / Revenue 10%" (DaaS)
+Line 498 | "100%" of output secured (Contract Manufacturing)
+Line 507 | "9 mn+ MT" locked
+Line 520 | "1,000+ SKUs" (Price Intelligence) / "1L+ records" (Delivery Automation) / "56-day NWC" (WC Engine)
+Line 523 | chart/footer title "Revenue Mix as of Q1-FY27"
+
+--- Slide 19 (Cross Selling Solutions) — 2 lines ---
+Line 535 | "3,400+" Customers
+Line 542 | "2,200+" Vendors
+
+--- Slide 20 (Transforming Construction Procurement) — 13 lines ---
+Line 560 | "Vendor 01" / "Customer 01" (x2, both sides) | INDEX_LABEL
+Line 562 | "Vendor 02" / "Customer 02" (x2) | INDEX_LABEL
+Line 564 | "Vendor 03" / "Customer 03" (x2) | INDEX_LABEL
+Line 566 | "Vendor 04" / "Customer 04" (x2) | INDEX_LABEL
+Line 568 | "Vendor 05" / "Customer 05" | INDEX_LABEL
+Line 569 | "Customer 05" (right-column continuation) | INDEX_LABEL
+Line 571 | "Vendor 06" / "Customer 06" (x2) | INDEX_LABEL
+Line 573 | "Vendor 07" / "Customer 07" (x2) | INDEX_LABEL
+Line 575 | "2,000+ vendors" / "3,000+ customers" (without-ARIS side)
+Line 576 | "2,000+ vendors" / "3,000+ customers" (with-ARIS side)
+Line 580 | "100+" vetted vendors evaluated instantly via algorithm
+Line 581 | "2-4" local vendors (without-ARIS reach limitation)
+Line 586 | "15 mins" — offers finalized
+
+--- Slide 21 (Real-Time Vendor Engagement via WhatsApp) — 5 lines ---
+Line 605 | RFQs: "15 Days" (without Aris) vs "Live" (with Aris)
+Line 607 | Vendor Onboarding: "5 Days" vs "10 Mins"
+Line 609 | Order to PO: "3+ Hours" vs "7 Mins"
+Line 611 | Record Keeping: "<30 Sec" per Record
+Line 616 | End-to-End Accuracy: "< 60%" vs "100%"
+
+--- Slide 22 — 0 lines (no numbers) ---
+
+--- Slide 23 (From Manual Chaos to AI-Driven Control) — 3 lines ---
+Line 665 | "~95% accuracy" stamp detection
+Line 667 | "20+ days to under 24" — invoice processing time reduction (days to hours)
+Line 671 | "< 1%" invoice/quantity disputes
+
+--- Slide 24 — 0 lines (no numbers) ---
+
+--- Slide 25 (Portfolio Realignment) — 14 lines ---
+Line 713 | FY23 pie: "Others, 5%" / FY26 pie: "Asphalt, 43%"
+Line 714 | FY23 pie: "9%" (Services) / FY26 pie: "Others, 14%"
+Line 716 | FY23 pie: "Chemicals & Wallings, 3%"
+Line 717 | FY23 pie: "Aggregates, 24%"
+Line 718 | FY26 pie: "Services, 9%"
+Line 720 | FY23 pie: "RMC, 20%" (Cement/Steel label wraps separately)
+Line 721 | FY23 pie: "Steel & Cement, 39%"
+Line 723 | FY26 pie: "Steel & Cement, 13%"
+Line 724 | FY26 pie: "RMC, 18%"
+Line 726 | FY26 pie: "Chemicals & Walling, 2%"
+Line 727 | "FY23" / "FY26" — pure block-header labels | AXIS_LABEL
+Line 728 | FY23 "Revenue: INR 7,461 Mn" / FY26 "Revenue: INR 10,675 Mn"
+Line 729 | FY23 "EBITDA: INR (7) Mn" [negative] / FY26 "EBITDA: INR 1,007 Mn"
+Line 730 | FY23 "EBITDA MARGIN: (0.09)%" [negative] / FY26 "EBITDA MARGIN: 9.43%"
+
+--- Slide 26 (B2B Supply) — 6 lines ---
+Line 744 | slide heading "B2B Supply" — contains brand token "B2B" | BRAND_TOKEN, no metric
+Line 760 | Revenue "5,447" (FY26) / Quantity "3,155,369" (FY24), "3,105,146" (FY25)
+Line 761 | Revenue "4,706" (FY25) / Quantity "2,942,678" (FY26)
+Line 762 | Revenue "4,645" (FY24)
+Line 767 | Revenue "1,092" (Q1-FY27) / Quantity "784,570" (Q1-FY27)
+Line 771 | "FY24 FY25 FY26 Q1-FY27" (x2, Revenue + Quantity charts) — pure axis row | AXIS_LABEL
+
+--- Slide 27 (Contract Manufacturing) — 10 lines ---
+Line 779 | "100%" of output production capacity secured
+Line 781 | Revenue "4,989" (FY26)
+Line 784 | Revenue "2,562" (FY25)
+Line 786 | Revenue "1,540" (Q1-FY27)
+Line 787 | Revenue "1,224" (FY24)
+Line 790 | "FY24 FY25 FY26 Q1-FY27" — pure axis row (Revenue chart) | AXIS_LABEL
+Line 794 | Quantity "3,896,119" (FY26)
+Line 797 | Quantity "2,341,892" (FY25)
+Line 800 | Quantity "860,822" (FY24) / "865,332" (Q1-FY27)
+Line 804 | "FY24 FY25 FY26 Q1-FY27" — pure axis row (Quantity chart) | AXIS_LABEL
+
+--- Slide 28 (Contract Manufacturing Facilities) — 3 lines ---
+Line 815 | "6 Plants" (Aggregates) / "3 Plants" (RMC) / "1 Plant" (Asphalt)
+Line 817 | "6.1 Million Tons" (Aggregates) / "2.7 Million Tons" (RMC) / "0.3 Million Tons" (Asphalt)
+Line 824 | utilisation "~20% to 70%+"
+
+--- Slide 29 (Services) — 9 lines ---
+Line 846 | Revenue "469" (FY25)
+Line 847 | Revenue "297" (FY24) / "277" (Q1-FY27)
+Line 850 | "FY24 FY25 FY26 Q1-FY27" — pure axis row | AXIS_LABEL
+Line 853 | chart title "Q1-FY27 Mix based on GDV under execution"
+Line 856 | "10" Active Services Projects / "INR 18,391 Mn" Estimated GDV / "Villas, 12%"
+Line 857 | "10-14%" Fees on GDV / "55-60%" EBITDA Margins / "Plotted, 29%"
+Line 863 | "2.53 Mn Sq. Ft." portfolio under execution / "NIL" Incremental Capital | ZERO_STANDING (NIL)
+Line 864 | "18-24 Months" Execution Time / "Apartments, 59%"
+Line 868 | "*All Figures as of Q1-FY27" — footnote text, correctly asterisked | see Table 4 row F6
+
+--- Slide 30 (ArisUnitern case studies) — 7 lines ---
+Line 874 | "Developer 1" — case index label | INDEX_LABEL
+Line 886 | "increased sales by 3X"
+Line 888 | "Increased the pricing by 7.5%"
+Line 894 | "Developer 2" — case index label | INDEX_LABEL
+Line 899 | "Infused working capital of INR 250 Mn"
+Line 901 | "average saving of 2%"
+Line 902 | "sold 1/3rd inventory in the first month"
+
+--- Slide 31 — 0 lines (divider, no numbers) ---
+
+--- Slide 32 (Future Growth Strategies) — 2 lines ---
+Line 921 | "handle 10x higher volumes"
+Line 947 | "Tier 1/Tier 2" — market-tier descriptor, not a metric | LOW_MATERIALITY
+
+--- Slide 33 — 0 lines (divider; decorative chart graphic per OCR note carries no real data labels) ---
+
+--- Slide 34 (Q1-FY27 Financial Highlights) — 8 lines ---
+Line 962 | slide title "Q1-FY27 Financial Highlights" — quarter label only | AXIS_LABEL
+Line 965 | panel title "Q1-FY27 Financial Performance" — quarter label only | AXIS_LABEL
+Line 973 | "INR 305 Mn" EBITDA / "10.49%" EBITDA Margin
+Line 974 | "INR 2,908 Mn" Revenue from Operations
+Line 975 | "67.6% YoY" EBITDA growth / "191 Bps YoY" EBITDA margin expansion
+Line 976 | "37.1% YoY" Revenue growth
+Line 982 | "INR 200 Mn" PAT / "6.88%" PAT Margin / "INR 2.05/Share" Diluted EPS
+Line 983 | "292.2% YoY" PAT growth / "448 Bps YoY" PAT margin expansion / "279.6% YoY" EPS growth
+
+--- Slide 35 (Q1-FY27 Operational Highlights) — 9 lines ---
+Line 992 | slide title "Q1-FY27 Operational Highlights" — quarter label only | AXIS_LABEL
+Line 994 | Asphalt revenue "INR 529 Mn" (Q1-FY27)
+Line 995 | Asphalt revenue "299 Mn" (Q4-FY26)
+Line 996 | Asphalt customers "38" (Q1-FY27) vs "28" (Q4-FY26)
+Line 1000 | DaaS contract "INR 6,500 Mn" from Wadhwa Group
+Line 1002 | GDV under execution "INR 18,391 Mn" (Q1-FY27)
+Line 1003 | GDV under execution "12,674 Mn" (Q4-FY26)
+Line 1006 | Contract Manufacturing "53%" of overall business
+Line 1009 | Repeat orders "82%" (Q1-FY27) vs "78%" (Q4-FY26)
+
+--- Slide 36 (Segmental Performance) — 6 lines ---
+Line 1023 | chart titles "B2B Supply Revenue (INR Mn)" / "Contract Manufacturing Revenue (INR Mn)" / "Services Revenue (INR Mn)" — contains brand token "B2B" | BRAND_TOKEN
+Line 1025 | B2B "1,302" (Q1-FY27) / CM "1,774" (Q1-FY27) / Services "361" (labelled Q3-FY26 per axis on line 1035 — see flag below)
+Line 1026 | CM "1,540" (Q4-FY26)
+Line 1029 | CM "839" (Q1-FY26) / Services "187" (Q1-FY26)
+Line 1030 | B2B "1,095" (Q1-FY26) / B2B "1,092" (Q4-FY26)
+Line 1035 | x-axis labels "Q1-FY26 Q4-FY26 Q1-FY27" (B2B) / "Q1-FY26 Q4-FY26 Q1-FY27" (CM) / "Q1-FY26 Q3-FY26 Q1-FY27" (Services) | AXIS_LABEL + SEGMENT_AXIS_LABEL_ERROR — the Services chart's middle-period axis label reads "Q3-FY26" while the other two charts on this slide read "Q4-FY26" for the same comparative period; either the axis label or the underlying "361" value's period attribution is mislabeled — flagged for A3/A4 to reconcile against the standalone P&L segmental disclosures
+
+--- Slide 40 (Consolidated Financial Highlights) — 21 lines ---
+Line 1168 | Revenue "10,675" (FY26) / EBITDA "1,007" (FY26)
+Line 1169 | PAT Margin "6.88%" (Q1-FY27)
+Line 1170 | Revenue "7,677" (FY25)
+Line 1171 | Revenue "6,968" (FY24) / EBITDA Margin "10.49%" (Q1-FY27) / PAT "200" (Q1-FY27)
+Line 1172 | EBITDA Margin "9.43%" (FY26) / PAT "60" (FY25) / PAT Margin "5.65%" (FY26)
+Line 1173 | EBITDA "501" (FY25) / PAT Margin "0.78%" (FY25)
+Line 1174 | Revenue "2,908" (Q1-FY27) / EBITDA Margin "6.53%" (FY25) / EBITDA "305" (Q1-FY27) / PAT Margin "(2.48)%" (FY24) [negative]
+Line 1175 | EBITDA Margin "1.84%" (FY24)
+Line 1176 | PAT "(173)" (FY24) [negative]
+Line 1178 | "FY24 FY25 FY26 Q1-FY27" — pure axis row (PAT chart) | AXIS_LABEL
+Line 1179 | "FY24 FY25 FY26 Q1-FY27" (x2, Revenue + EBITDA charts) — pure axis row | AXIS_LABEL
+Line 1189 | NWC Days "120" (FY24) / Net Debt/Equity "1.92" (FY24)
+Line 1191 | Net Debt/Equity "1.25" (FY25)
+Line 1192 | NWC Days "66" (FY26) / ROE-or-ROCE "25.91%" / "21.37%" (pairing not independently verifiable from text layout — flag for image cross-check)
+Line 1193 | NWC Days "56" (Q1-FY27) / ROE-or-ROCE "17.16%"
+Line 1194 | ROE-or-ROCE "7.26%"
+Line 1195 | Net Debt/Equity "0.02" (Q1-FY27)
+Line 1196 | ROE-or-ROCE "12.22%" / "10.61%"
+Line 1197 | ROE-or-ROCE "3.18%"
+Line 1198 | Net Debt/Equity "(0.09)" (FY26) [negative, implies net-cash position] / ROE-or-ROCE "(14.08)%" [negative, consistent with FY24 loss-making PAT of (173)]
+Line 1199 | "FY24 FY25 FY26 Q1-FY27" (x3, NWC Days + Net Debt/Equity + ROE/ROCE charts) — pure axis row | AXIS_LABEL
+
+================================================================================
+TABLE 3: FINANCIAL STATEMENT LINE ITEMS (70 rows across 3 tables;
+grep=70 / sweep=70, match=yes). ZERO_STANDING flagged inline (15 total).
+================================================================================
+
+--- Slide 37 (line 1043-1082): Quarterly Consolidated Income Statement ---
+Columns: Q1-FY27 | Q1-FY26 | Y-o-Y | Q4-FY26 | Q-o-Q
+Line 1048 | Revenue from Operations           | 2,908 | 2,121 | 37.1%    | 3,434 | (15.3)%
+Line 1050 | Total Expenses                    | 2,603 | 1,939 | 34.2%    | 3,129 | (16.8)%
+Line 1052 | EBITDA                            | 305   | 182   | 67.6%    | 305   | NA
+Line 1054 | EBITDA Margins (%)                | 10.49%| 8.58% | 191 Bps  | 8.88% | 161 Bps
+Line 1056 | Depreciation and amortisation exp | 19    | 8     | NA       | 17    | 11.8%
+Line 1058 | Finance costs                     | 63    | 117   | (46.2)%  | 61    | 3.3%
+Line 1060 | Other Income                      | 44    | 35    | 25.7%    | 60    | (26.7)%
+Line 1062 | PBT before exceptional items      | 267   | 92    | NA       | 287   | (7.0)%
+Line 1064 | Exceptional Items                 | -     | 29    | NA       | -     | NA | ZERO_STANDING (Q1-FY27 and Q4-FY26 dash)
+Line 1066 | PBT                               | 267   | 63    | NA       | 287   | (7.0)%
+Line 1068 | Tax                               | 67    | 12    | NA       | 70    | (4.3)%
+Line 1070 | PAT                               | 200   | 51    | NA       | 217   | (7.8)%
+Line 1072 | PAT Margins (%)                   | 6.88% | 2.40% | 448 Bps  | 6.32% | 56 Bps
+Line 1074 | Other Comprehensive Income        | (2)   | -     | NA       | -     | NA | ZERO_STANDING (Q1-FY26 and Q4-FY26 dash)
+Line 1076 | Total Comprehensive Income        | 198   | 51    | NA       | 217   | (8.8)%
+Line 1078 | Diluted EPS (INR)                 | 2.05  | 0.54  | NA       | 2.58  | (20.5)%
+
+--- Slide 38 (line 1084-1123): Historical Consolidated Income Statement ---
+Columns: FY24 | FY25 | FY26 | Q1-FY27
+Line 1089 | Revenue from Operations           | 6,968  | 7,677 | 10,675 | 2,908
+Line 1091 | Total Expenses                    | 6,840  | 7,176 | 9,668  | 2,603
+Line 1093 | EBITDA                            | 128    | 501   | 1,007  | 305
+Line 1095 | EBITDA Margins (%)                | 1.84%  | 6.53% | 9.43%  | 10.49%
+Line 1097 | Depreciation and amortisation exp | 29     | 33    | 41     | 19
+Line 1099 | Finance costs                     | 323    | 415   | 279    | 63
+Line 1101 | Other Income                      | 56     | 143   | 124    | 44
+Line 1103 | PBT before exceptional items      | (168)  | 196   | 811    | 267
+Line 1105 | Exceptional Items                 | -      | 73    | 25     | -   | ZERO_STANDING (FY24 and Q1-FY27 dash)
+Line 1107 | PBT                               | (168)  | 123   | 786    | 267
+Line 1109 | Tax                               | 5      | 63    | 183    | 67
+Line 1111 | PAT                               | (173)  | 60    | 603    | 200
+Line 1113 | PAT Margins (%)                   | (2.48)%| 0.78% | 5.65%  | 6.88%
+Line 1115 | Other Comprehensive Income        | -      | 5     | (1)    | (2) | ZERO_STANDING (FY24 dash)
+Line 1117 | Total Comprehensive Income        | (173)  | 65    | 602    | 198
+Line 1119 | Diluted EPS (INR)                 | (5.30) | 0.36  | 6.84   | 2.05
+
+--- Slide 39 (line 1125-1161): Historical Consolidated Balance Sheet (FY24/FY25/FY26 only — NO_QTR_BALANCE_SHEET) ---
+ASSETS side:
+Line 1129 | Property, plant and equipment                 | 24    | 18    | 67
+Line 1130 | Capital work in progress                       | -     | -     | 11    | ZERO_STANDING (FY24, FY25 dash)
+Line 1131 | Right use of assets                             | 14    | 36    | 154
+Line 1132 | Other intangible assets                        | -     | 1     | 1     | ZERO_STANDING (FY24 dash)
+Line 1133 | Intangible assets under development            | 246   | 414   | 569
+Line 1135 | i) Other non current financial assets          | 84    | 69    | 80
+Line 1136 | ii) Loans and advances                          | -     | 5     | 1,685 | ZERO_STANDING (FY24 dash)
+Line 1138 | Deferred tax assets (net)                       | 60    | 87    | 90
+Line 1140 | Non current tax assets (net)                    | 34    | 18    | 11
+Line 1142 | Other non current assets                       | 39    | -     | 633   | ZERO_STANDING (FY25 dash)
+Line 1144 | Total Non-Current Assets                       | 501   | 648   | 3,301
+Line 1148 | Inventories                                     | 13    | 16    | 39
+Line 1152 | i) Trade receivables                            | 3,204 | 3,270 | 4,100
+Line 1153 | ii) Cash and cash equivalents                   | 6     | 3     | 1,014
+Line 1155 | iii) Bank balances other than cash & equiv.     | 1     | 452   | 178
+Line 1156 | iv) Other financial assets                      | 762   | 847   | 299
+Line 1157 | Other Current Assets                            | 441   | 1,731 | 1,484
+Line 1158 | Total Current Assets                           | 4,427 | 6,319 | 7,114
+Line 1159 | GRAND TOTAL - ASSETS                            | 4,928 | 6,967 | 10,415
+EQUITY & LIABILITIES side:
+Line 1129 | Equity Share Capital                            | 18    | 117   | 164
+Line 1130 | Other Equity                                    | 1,398 | 2,195 | 7,227
+Line 1131 | Non-Controlling Interest                        | 5     | 46    | 119
+Line 1132 | Total Equity                                    | 1,421 | 2,358 | 7,510
+Line 1135 | i) Long Term Borrowings                        | 678   | 30    | -     | ZERO_STANDING (FY26 dash)
+Line 1137 | ii) Lease Liabilities                           | 4     | 15    | 108
+Line 1139 | iii) Other non current financial liabilities   | 116   | 62    | 77
+Line 1141 | Long Term Provisions                            | 12    | 18    | 25
+Line 1143 | Total Non-Current Liabilities                  | 810   | 125   | 210
+Line 1147 | i) Short Term Borrowings                       | 2,062 | 3,363 | 548
+Line 1149 | ii) Lease Liabilities                           | 11    | 23    | 46
+Line 1151 | iii) Trade Payables                             | 449   | 701   | 1,733
+Line 1156 | iv) Other financial liabilities                 | 76    | 153   | 160
+Line 1154 | Short Term Provisions                          | 10    | 6     | 6
+Line 1155 | Current Tax Liabilities                        | -     | 51    | 93    | ZERO_STANDING (FY24 dash)
+Line 1157 | Other Current Liabilities                      | 89    | 187   | 109
+Line 1158 | Total Current Liabilities                      | 2,697 | 4,484 | 2,695
+Line 1159 | Total Liabilities                               | 3,507 | 4,609 | 2,905
+Line 1159 | GRAND TOTAL - EQUITIES & LIABILITIES             | 4,928 | 6,967 | 10,415
+
+(Arithmetic cross-check performed as part of sweep, not interpretation: Total Non-Current +
+Total Current Liabilities reconciles to Total Liabilities for all 3 years; Grand Total Assets
+= Grand Total Equities & Liabilities for all 3 years. No balancing anomaly found.)
+
+================================================================================
+TABLE 4: FOOTNOTES & FINE-PRINT DISCLAIMERS (10 rows; grep=10 / sweep=10, match=yes)
+================================================================================
+F1 | Slide 9,  line 250 | Asterisk marker on "Net Debt to Equity*" | qualifies that one KPI only, by its position
+F2 | Slide 9,  line 254 | Footnote text "All Figures as of Q1-FY27" — NOT prefixed with an asterisk, even though
+    it is clearly the referent of the marker at F1 and, by its wording ("All Figures"), appears intended to
+    qualify the ENTIRE 15-metric KPI panel on slide 9, not just Net Debt/Equity | FLAG: FOOTNOTE_ASTERISK_MISMATCH
+F3 | Slide 3,  line 98  | "Source: Redseer research and analysis" — qualifies all market-sizing stats on slide 3
+    (~50% urban share, INR 11.11 Lakh Cr infra capex, INR 1.59 Lakh Cr PMAY capex, ~13% RE/GDP, ~13,100+
+    projects, ~29 Km/Day road construction, ~INR 1.5 Lakh Cr REIT AUM, ~50-60% materials share, USD Bn chart)
+F4 | Slide 4,  line 131 | "Source: Indian cement review, beeindia, rentechdigital, IBEF, cmaindia,
+    marketreportanalytics, company estimates" — qualifies all organised/unorganised % splits and capacity
+    stats on slide 4
+F5 | Slide 29, line 854 | Asterisk marker on "Current Portfolio*"
+F6 | Slide 29, line 868 | Footnote text "*All Figures as of Q1-FY27" — correctly asterisked, matches F5
+F7a| Slide 41, lines 1206-1210 | Disclaimer paragraph 1: no representation/warranty as to fairness, accuracy,
+    completeness or correctness; information not current after presentation date; forward-looking basis stated
+F7b| Slide 41, lines 1212-1216 | Disclaimer paragraph 2: forward-looking statements carry known/unknown risks
+    and uncertainties; past performance not indicative of future results; no obligation to update
+F7c| Slide 41, lines 1218-1222 | Disclaimer paragraph 3: general information only, not an offer/invitation to
+    purchase securities in any jurisdiction incl. United States; no reliance for investment decisions;
+    confidential, not to be copied/disseminated
+F8 | Slide 41, lines 1224-1229 | Valorem Advisors Disclaimer — independent IR firm disclaimer: prepared based
+    on Company-supplied data considered reliable but no warranty; may not be all-inclusive; liability for any
+    omission expressly excluded; Valorem/its staff certify no personal/company shareholding in ARIS
+
+================================================================================
+DROPPED_SLIDE DIFF vs prior-quarter deck: N.A. — no prior-quarter ledger supplied for this
+ticker; this is the first quarterly-pipeline run for ARIS. To be populated from Q2-FY27 onward.
+================================================================================

@@ -240,7 +240,7 @@ No destination PE was ever set for DIVGI (fresh coverage). There is nothing to r
 
 | Pillar / Input | Fresh baseline reading (this quarter) | Source |
 |---|---|---|
-| ROCE base | FY26 RoCE **9.9%** (excl. Other Income), RoIC 12.7%; trajectory FY24 12.5% → FY25 5.6% → FY26 9.9% (recovering off a trough) | slide 37 L1205 |
+| ROCE base | FY26 RoCE **9.9%** (excl. Other Income), RoIC 12.7%; RoCE trajectory FY23 12.5% → FY24 9.3% → FY25 5.6% → FY26 9.9% (recovering off a trough) | slide 37 L1178-1185 |
 | Cash multiplier | FY26 CFO/PAT **0.88x** (~0.80 band); Q1 conversion INDETERMINATE | slide 40 |
 | Growth visibility | Dense dated catalyst set (Sigma Q2FY27, AT PoC Q3FY27, Indonesia CY26, exports ~₹80 cr FY27) | slides 10/13/18 |
 | Strategic premium | Sole/long-tenure supplier relationships (30+/50+ yr customers, slide 28); 4WD + EV + AT + exports optionality | slides 21/28 |

@@ -37,3 +37,15 @@ Company: Divgi TorqTransfer Systems Limited
   - Presentation ambiguous (-> mgmt questions): A3-05 US sub tense conflict (slide 6 vs 34), A3-06 stale Mar-26 capex footnote, A3-07 presentation-only Mar-26 BS/CF absent from filing.
 
 ## All documents cleared A1->A2->A3. Proceeding to A4 (merged).
+
+## A4 / A5 (final)
+- A4 merged review: written. Verdict PROCEED WITH CAVEATS; position branch 8A-W (first coverage); 13 management questions, 13/13 findings mapped; plain-language brief present (summary + sector + business-model + competition).
+- A5 audit loop 1: INCOMPLETE — Step 7 RoCE FY-column mislabel (FY24 shown 12.5% vs true 9.3%). Looped back to A4.
+- A4 fix: single cell relabelled to FY23 12.5% / FY24 9.3% / FY25 5.6% / FY26 9.9%, cite tightened to slide 37 L1178-1185. No other cell moved.
+- A5 re-audit: VERDICT COMPLETE. Arithmetic re-foots exactly; coverage complete; surgical fix confirmed; all mandatory sections intact.
+
+## Count reconciliation (final)
+7 notes / 0 turns / 41 slides — all reviewed. (Role 5 N.A.: no concall transcript supplied.)
+
+## Notion
+- No DIVGI / Divgi page exists in the workspace (searched 3x). Fresh company. Notion save pending operator decision on page creation (no existing page/schema/audit-trail to update).

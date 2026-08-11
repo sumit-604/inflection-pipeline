@@ -1,0 +1,1203 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_venuspipes_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 37
+formfeed_count: 37
+line_count: 1203
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (deck states "INR Cr unless specified" on data slides; cover letter and title/divider slides carry no numeric figures)
+ocr_pages: [4, 7, 16, 29]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-11
+=== END HEADER ===
+
+NOTES ON METHOD:
+- Primary extraction: pdftotext -layout on the 37-page PDF. All 37 pages yielded a
+  form-feed-delimited page boundary (formfeed_count 37 = page_count_pdfinfo 37).
+- 4 pages returned under 100 extracted characters (pages 4, 7, 16, 29). Each was
+  rasterised at 200 DPI (pdftoppm -jpeg) and OCR'd (tesseract). All four are pure
+  section-divider slides (full-bleed factory photograph + short title only); OCR
+  confirmed no additional machine-readable text beyond the title pdftotext already
+  captured. No data loss on these pages.
+- Deck is chart-heavy but charts are native vector/text objects (not rasterised
+  images), so all axis labels and data labels were captured natively by pdftotext
+  in their correct on-slide position. Inline [CHART, page N, ...] flags below
+  restate the chart's data points as a single-line index for downstream ease of
+  citation; the authoritative numbers remain in the page body text beneath each flag.
+- Page footer numbers printed on the slides themselves run one behind the actual
+  PDF page index (e.g. the slide footer reads "7" on PDF page 8) because the BSE/NSE
+  covering letter (PDF page 1) precedes the deck's own title page. [page N] markers
+  below use the actual PDF page index (pdfinfo/pdftotext), not the printed footer.
+
+[page 1]
+                                                                     Date: August 10, 2026
+
+ To,                                         To,
+ Department of Corporate Services            Listing Department
+ BSE Limited                                 National Stock Exchange of India Ltd
+ Phiroze Jeejeebhoy Towers,                  Exchange Plaza, Plot No. C/1, G Block, Bandra
+ Dalal Street,                               Kurla Complex, Bandra (East), Mumbai –
+ Mumbai - 400001                             400051
+
+Scrip Code: 543528                ISIN- INE0JA001018                 Symbol: VENUSPIPES
+
+Sub: Q1 FY27 Investor Presentation.
+
+With reference to above captioned subject, please find attached Q1 FY27 Investor
+Presentation. The Presentation will be uploaded on the company’s website at
+www.venuspipes.com.
+
+Request you to kindly take the same on record.
+
+Thanking you,
+Yours faithfully,
+
+For Venus Pipes & Tubes Limited
+ Pavan       Digitally signed
+             by Pavan Kumar
+ Kumar       Jain
+             Date: 2026.08.10
+ Jain        13:51:32 +05'30'
+
+CS Pavan Kumar Jain
+Company Secretary and Compliance Officer
+Membership No. A66752
+
+[page 2]
+Venus Pipes & Tubes Limited
+From Stainless-Steel Pipe Manufacturer to an
+Integrated Piping Solutions Partner
+
+Q1FY27 Investor Presentation – August 2026
+
+[page 3]
+                                 Safe Harbour
+                              This presentation and the accompanying slides (the “Presentation”), which have been prepared by Venus Pipes & Tubes
+                              Limited (the “Company”), have been prepared solely for information purposes and do not constitute any offer, recommendation
+                              or invitation to purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any
+                              contract or binding commitment whatsoever. No offering of securities of the Company will be made except by means of a
+                              statutory offering document containing detailed information about the Company.
+                              This Presentation has been prepared by the Company based on information and data which the Company considers reliable,
+                              but the Company makes no representation or warranty, express or implied, whatsoever, and no reliance shall be placed on, the
+Venus Pipes & Tubes Limited
+
+
+
+
+                              truth, accuracy, completeness, fairness and reasonableness of the contents of this Presentation. This Presentation may not be all
+                              inclusive and may not contain all of the information that you may consider material. Any liability in respect of the contents of, or
+                              any omission from, this Presentation is expressly excluded.
+                              Certain matters discussed in this Presentation may contain statements regarding the Company’s market opportunity and
+                              business prospects that are individually and collectively forward-looking statements. Such forward-looking statements are not
+                              guarantees of future performance and are subject to known and unknown risks, uncertainties and assumptions that are difficult
+                              to predict. These risks and uncertainties include, but are not limited to, the performance of the Indian economy and of the
+                              economies of various international markets, the performance of the industry in India and world-wide, competition, the
+                              company’s ability to successfully implement its strategy, the Company’s future levels of growth and expansion, technological
+                              implementation, changes and advancements, changes in revenue, income or cash flows, the Company’s market preferences
+                              and its exposure to market risks, as well as other risks. The Company’s actual results, levels of activity, performance or
+                              achievements could differ materially and adversely from results expressed in or implied by this Presentation. The Company
+                              assumes no obligation to update any forward-looking information contained in this Presentation. Any forward-looking
+                              statements and projections made by third parties included in this Presentation are not adopted by the Company and the
+                              Company is not responsible for such third-party statements and projections.
+                              All Maps used in the presentation are not to scale. All data, information, and maps are provided "as is" without warranty or any
+                              representation of accuracy, timeliness or completeness
+
+                                                                                                                                                               2
+
+[page 4]
+[OCR page 4: rasterised and OCR'd (150 DPI, tesseract) - divider slide, background factory photograph only; no machine-readable text beyond the title already captured by pdftotext. OCR output was image-noise artifacts from photo texture, no additional data.]
+Capex – Forward
+Integration into
+Pipe Spooling
+
+[page 5]
+                              Forward Integration into Pipe Spooling Backed by Anchor
+                              Customer
+
+                                  LOI received for INR 185 Cr Order                            Adding Spooling Capabilities
+                                                                                                                                                       Forward integration &
+                                                                                                                                                    Transitioning from Stainless
+                                                                                                                                                      Steel Pipes to Engineered
+                                                                                                                                                          Piping Solutions
+                                                                                                                                                      Moving Up the Value Chain
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                                                                                     Enhancing Value Addition
+                                                                                      Pipe spools are pre-fabricated piping assemblies comprising
+                              Secured LOI from leading Data Centre player              pipes, fittings, flanges and valves — manufactured, welded      Spooling enables higher
+                                                                                                    and tested before onsite installation              realization and stronger
+                                                                                                                                                                margins
+                              Order includes supply of SS Spool for cooling
+                                      application in Data Centers                                 ~INR 70 Crores Capex
+                                                                                                             Towards -
+
+                                Win achieved on the back of company’s
+                               established Welded Pipes capacity across                                                            Fitting          Utilization Improvement
+                              major SKUs, combined with fittings capability             Spooling           Fabrication
+                                                                                                                                 Machines &
+                                  demonstrating customer trust in our                    Plant                Plant                                   Better Utilization of Welded
+                                                                                                                                   Others
+                                   execution & technical capabilities                                                                                 Pipes & Fittings capacities
+
+                                                                                           Building end-to-end spooling infrastructure
+
+
+
+                                                           Order-led investment accelerates transition into high-value engineered solutions
+
+                                                                                                                                                                                     4
+
+[page 6]
+                              Moving up the Value Chain – Pipe Spooling
+
+                                        Entering Pipe Spooling business – Extending capabilities from product manufacturing to engineered piping solutions
+
+                                                       Why Pipe Spooling ?                                                             Strategic Benefits
+
+
+
+
+                              Strong Customer Validation                                                Higher Value Addition                               Leverages Existing
+                                                                                                                                                            Strength
+                                                                                                        Significantly better
+Venus Pipes & Tubes Limited
+
+
+
+
+                              Letter of Intent (LOI) secured for a Data Centre project, validating
+                              customer demand for integrated piping solutions.                          realization than standalone                         Across Welded Pipes,
+                                                                                                        pipes                                               Seamless Pipes & Fittings
+                                                                                                                                01                    04
+
+
+                              Ready-to-Install Engineered Solutions
+                              Prefabrication, welding, assembly, testing and delivery of ready-to-
+                              install piping modules, reducing installation time and improving
+                              execution efficiency at project sites.
+
+
+                                                                                                                                02                     03
+                              Industry Shift, better execution
+                              Similar to how Pre-Engineered Buildings (PEBs) transformed                Complete Piping Package                             Attractive End Markets
+                              structural steel construction, pipe spooling shifts on-site fabrication   Opportunities for end to end                        Data Centers, Oil & Gas,
+                              to a controlled factory environment, enabling faster execution,           solutions instead of                                Process Plants, Chemicals
+                              improved quality and lower project risks.                                 individual product sales                            and Power
+
+
+                                                    Pipe Spooling strengthens our integrated offering, enhances customer value and positions Venus for higher
+                                                    growth and profitability
+
+                                                                                                                                                                                        5
+
+[page 7]
+[OCR page 7: rasterised and OCR'd (150 DPI, tesseract) - divider slide, background factory photograph only; no machine-readable text beyond the title already captured by pdftotext. OCR output was image-noise artifacts from photo texture, no additional data.]
+Operational &
+Financial
+Highlights
+
+[page 8]
+                                Key Highlights
+                                                                        Q1 FY27 Financial Highlights
+                                                                  All time high revenues of INR 320.5 Cr in Q1 FY27
+
+
+                                                                                       Q1FY27
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                   Revenue                              EBITDA                                 PAT
+
+
+                                        INR 320.5 Cr (+16.0% YoY)            INR 51.5 Cr (+14.7% YoY)                 INR 26.4 Cr (+6.5% YoY)
+                                                                                   16.1% EBITDA Margins                    8.2% PAT Margins
+
+
+
+
+                              Operational Highlights :
+
+                              ✓ Revenue from Welded Pipes / Tubes witnessed a growth of 21% and Seamless Pipes / Tubes witnessed growth of 15% for
+                               Q1FY27 on year-on-year basis
+
+                              ✓ Domestic growth stood robust at 31% with strong demand from end user industries, while exports continued to remain around
+                                30% of as a share of our revenues standing at INR 94 Cr for the quarter
+
+                              ✓ Forward integration into Pipe spooling remains on track for commencement by end of year
+
+
+
+                                                                                                                                                       7
+
+[page 9]
+[CHART, page 9, OCR text: bar chart 'Inventory (INR Crores)' FY23=167, FY24=226, FY25=343, FY26=387; paired dashed-box series 'Inventory Days' FY23=110 Days, FY24=103 Days, FY25=131 Days, FY26=121 Days. Values also present as text below.]
+                                   Inventory Days Stable Despite Significant Scale-Up in
+                                   Business Operations
+                                Inventory & Inventory Days Movement from FY23 to FY26…                       Inventory days remain stable despite rising inventory → Rise in
+                                                                                                              inventory is proportional to the growth in Business Operations
+
+                                            110                103                 131                 121
+                                           Days               Days                Days                Days    Strong Order Book Visibility
+                                                                                                              ✓ Execution visibility increased from ~60 days to 5–6 months
+                                                                                                              ✓ Inventory maintained for products with longer lead times
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                                      387
+                                                                                  343
+                                                               226                                            Export-Led Growth
+                                            167
+                                                                                                              ✓ Exports require longer inventory holding due to shipping
+                                           FY23                FY24               FY25                FY26      timelines and delivery commitments
+
+                                                      Inventory (INR Crores)         Inventory Days
+                                                                                                              Increase in Product Portfolio + Backward Integration
+                                                                                                              ✓ Significant increase in sizes, SKUs and grades across welded
+                                During the Same Period…                                                         and seamless pipes to service diversified customer
+                                                                                                                requirements & specifications
+                                                                                                              ✓ Addition of hollow pipe manufacturing increasing raw material
+                                                                                                                and semi-finished inventories
+                                   Order Book          Increased ~2.5 times to INR 450 Crores
+                                                                                                              ✓ Inventory stocking to mitigate raw material price volatility
+
+
+                                                                                                              Inspection & Approval-Based Orders
+                                    Revenue             Grew by 28% CAGR to INR 1,167 Crores                  ✓ Dispatches linked to customer/TPI approvals leading to longer
+                                                                                                                inventory holding periods
+
+                                     Exports            Increased ~13 times to INR 400 Crores
+                                                                                                                 Inventory Built-up reflective of business expansion, export
+                                                                                                                            growth and product diversification
+
+
+                              Inventory Day Calculated on Revenue → (Inventory / Revenue)*365                                                                                   8
+
+[page 10]
+[CHART, page 10, OCR text: three bar charts (INR Cr unless specified) - EBITDA FY23=69, FY24=146, FY25=168, FY26=191 (+176% FY23->FY26 callout); Cashflow From Operations FY23=9, FY24=52, FY25=69, FY26=112 (+1,144% callout); Cash Conversion Ratio FY23=13%, FY24=36%, FY25=41%, FY26=59%. Values also present as text below.]
+                                 Operation Stabilization post Capex Driving Better Cash
+                                 Conversion
+                                 EBITDA                                       Cashflow From Operations                        Cash Conversion Ratio
+
+                                                        +176%                                                                                             59%
+                                                                                               +1,144%
+                                                                       191
+                                                                168                                           112
+                                                  146                                                                                             41%
+                                                                                                                                         36%
+                                                                                                         69
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                          52
+                                     69
+                                                                                                                                13%
+                                                                                 9
+
+                                    FY23         FY24           FY25   FY26     FY23     FY24        FY25     FY26             FY23     FY24     FY25     FY26
+
+
+
+                              Improving Cash Conversion Ratio…
+
+                              ✓ Demonstrated consistent improvement in cash conversion over the last four years, driven by tighter working capital management
+                                and stabilization in expanded operations
+
+                              ✓ Operating Cashflow growth significantly outpaced EBITDA growth
+
+                              ✓ Cash conversion improved from 13% in FY23 to 59% in FY26, reflecting stronger alignment between profitability and cash flows
+
+                              ✓ Focus on inventory optimization, receivables management and disciplined execution continues to strengthen operating cash flows
+
+                              ✓ With major capacity expansion largely completed, the Company expects healthy cash conversion and stronger free cash flow
+                                generation going forward
+
+                              INR Cr unless specified                                                                                                            9
+
+[page 11]
+[CHART, page 11, OCR text: four paired bar charts Q1FY26 vs Q1FY27 (INR Cr) - Seamless Pipes 153.0 -> 176.1 (+15%); Welded Pipes 103.6 -> 125.3 (+21%); Others 19.8 -> 19.1 (-3%); Total 276.4 -> 320.5 (+16%). Donut charts Revenue Contribution (%): Q1FY26 Seamless 55% / Welded 38% / Others 7%; Q1FY27 Seamless 55% / Welded 39% / Others 6%. Values also present as text below.]
+                                 Revenue Split across Segment – Q1 FY27
+                                Seamless Pipes                                Welded Pipes                              Others                             Total
+
+
+                                                 +15%                                      +21%                                         -3%                                +16%
+
+                                                         176.1                                      125.3                       19.8              19.1                            320.5
+                                        153.0                                      103.6                                                                           276.4
+Venus Pipes & Tubes Limited
+
+
+
+
+                                       Q1FY26           Q1FY27                    Q1FY26          Q1FY27                    Q1FY26               Q1FY27        Q1FY26             Q1FY27
+
+
+
+                                                                 Revenue Contribution (%)
+
+
+                                                                                 7%                                                    6%
+
+
+
+
+                                                                        38%      Q1 FY26                                  39%          Q1 FY27
+                                                                                              55%                                                    55%
+
+
+
+
+                                                                                                    Seamless   Welded     Others
+
+
+                              INR Cr unless specified                                                                                                                                      10
+
+[page 12]
+[CHART, page 12, OCR text: three paired bar charts Q1FY26 vs Q1FY27 (INR Cr) - Domestic 173.3 -> 226.8 (+31%); Exports 103.1 -> 93.7 (-9%); Total 276.4 -> 320.5 (+16%). Donut charts Revenue Contribution (%): Q1FY26 Domestic 63% / Exports 37%; Q1FY27 Domestic 71% / Exports 29%. Values also present as text below.]
+                                 Revenue Split across Geographies – Q1 FY27
+                                   Domestic                                            Exports                                               Total
+
+
+                                                        +31%                                                                                                  +16%
+                                                                                                           -9%
+                                                                226.8                            103.1                                                               320.5
+                                                                                                                      93.7                           276.4
+                                              173.3
+Venus Pipes & Tubes Limited
+
+
+
+
+                                            Q1FY26             Q1FY27                           Q1FY26               Q1FY27                          Q1FY26          Q1FY27
+
+
+
+                                                               Revenue Contribution (%)
+
+
+
+
+                                                                                                                        29%
+                                                                        37%
+
+                                                                              Q1FY26                                          Q1FY27
+
+                                                                                          63%
+                                                                                                                                       71%
+
+
+
+                                                                                                Domestic   Exports
+
+
+                              INR Cr unless specified                                                                                                                         11
+
+[page 13]
+[CHART, page 13, OCR text: five paired bar charts Q1FY26 vs Q1FY27 - Revenue 276.4 -> 320.5 (+16%); EBITDA 44.9 -> 51.5 (+15%); PAT 24.8 -> 26.4 (+6%); EBITDA Margin 16.2% -> 16.1%; PAT Margin 9.0% -> 8.2%. Values also present as text below.]
+                                 Key Financial Highlights – Q1 FY27
+                                   Revenue                                       EBITDA                                     PAT
+
+
+                                                        +16%                                       +15%                                       +6%
+                                                                320.5                                      51.5                                      26.4
+                                                                                                                                      24.8
+                                              276.4                                        44.9
+Venus Pipes & Tubes Limited
+
+
+
+
+                                             Q1FY26            Q1FY27                     Q1FY26          Q1FY27                     Q1FY26         Q1FY27
+
+
+
+                                                               EBITDA Margin                              PAT Margin
+
+
+
+                                                                        16.2%     16.1%                             9.0%
+                                                                                                                             8.2%
+
+
+
+
+                                                                        Q1FY26    Q1FY27                           Q1FY26   Q1FY27
+
+
+                              INR Cr unless specified                                                                                                        12
+
+[page 14]
+                                 Profit & Loss Account
+                              Profit and Loss Statement   Q1FY27   Q1FY26   YoY     Q4FY26   QoQ
+
+                              Revenue from Operations     320.5    276.4    16.0%   302.2    6.1%
+
+                              Cost of Goods Sold          207.7    185.6             194.9
+
+                              Gross Profit                 112.8    90.8    24.2%    107.3   5.1%
+
+                              Employee Cost                15.7     11.7             13.5
+Venus Pipes & Tubes Limited
+
+
+
+
+                              Other Expenses               45.6     34.2             44.4
+
+                              EBITDA                       51.5     44.9    14.7%    49.4    4.3%
+
+                              EBITDA Margins (%)          16.1%    16.2%            16.3%
+
+                              Other Income                  2.7     3.9               2.1
+
+                              Depreciation                  7.2     5.2               6.3
+
+                              EBIT                         47.0     43.6    7.8%     45.2    4.0%
+
+                              Finance Cost                 11.3     9.8              10.5
+
+                              Exceptional Items            0.0      0.0              -0.2
+
+                              Profit before Tax            35.7     33.8    5.6%     34.9    2.3%
+
+                              Tax                          9.3      9.0              9.5
+
+                              Profit After Tax             26.4     24.8    6.5%     25.4    3.9%
+
+                              PAT Margins (%)              8.2%     9.0%             8.4%
+
+                              INR Cr unless specified                                               13
+
+[page 15]
+                              From MD’s Desk
+
+                                                  Commenting on the Q1 FY27 performance of the company Mr. Arun Kothari, Managing Director
+                                                  for Venus Pipes & Tubes Limited said,
+                                                  “We have entered FY27 on a strong note, delivering our highest-ever quarterly revenue of Rs. 320.5
+                                                  crores, representing a healthy growth of 16% year-on-year. This performance reflects sustained
+                                                  demand across our key domestic end markets, supported by our diversified presence across industries
+                                                  and strong customer relationships. We continue to see healthy enquiry levels and remain well
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                  positioned to capitalize on emerging opportunities across our addressable markets.
+                                                  Our expansion into fittings and other value-added pipes and tubes has received an encouraging
+                              Arun Kothari        response from customers. Over the medium term, we intend to steadily increase the contribution of
+                              Managing Director   these higher-value products to our overall revenue mix, strengthening our product portfolio and further
+                                                  differentiating Venus Pipes from its peers. In parallel, our forward integration into the spooling business
+                                                  is progressing as planned, with the capex execution on track.
+                                                  Looking ahead, demand continues to remain robust across both traditional industrial sectors and
+                                                  emerging applications. New-age sectors such as data centers, clean energy and other segments are
+                                                  opening up new opportunities for stainless steel pipes and tubes, providing us with strong visibility for
+                                                  the years ahead.
+                                                  On the export front, the geopolitical situation remains an area of watch. In addition, freight rates
+                                                  continue to remain a factor that we are monitoring closely. While these external factors may create
+                                                  near-term uncertainty, we remain focused on operational efficiency and maintaining close
+                                                  engagement with our customers.
+                                                  Overall, we remain confident in the underlying demand environment and our ability to leverage our
+                                                  expanding product portfolio, new growth opportunities and execution capabilities to sustain our growth
+                                                  momentum and create long-term value for all stakeholders.”
+                                                                                                                                                          14
+
+[page 16]
+[OCR page 16: rasterised and OCR'd (150 DPI, tesseract) - divider slide, background factory photograph only; no machine-readable text beyond the title already captured by pdftotext. OCR output was image-noise artifacts from photo texture, no additional data.]
+Company
+Overview
+
+[page 17]
+                              About US - Venus Pipes & Tubes Limited
+
+
+                                        80+ Clientele base out of Fortune 500
+                                        Companies in India
+
+                                            48,000 MT p.a. total installed capacity, along                     Mission
+Venus Pipes & Tubes Limited
+
+
+
+
+                                            with Backward Integration of ~20,400 MT p.a.       To provide quality and flawless service for
+                                                                                                 dealing with customer / supplier and
+                                                                                                              distributors
+
+                                              Forward Integrated into
+                                              Fittings & Pipe Spooling (upcoming)
+
+                                                                                                             Core Values
+                                            Diversified End user Industries &                       Working with the highest ethical
+                                            Exports to more than 30+ Countries                  standards in all aspects of our activities
+
+
+
+
+                                        34% PAT CAGR from FY22 to FY26
+
+                                         Manufacturer and Exporter of Stainless-Steel Tubes & Pipes in India
+                                                                                                                                       16
+
+[page 18]
+                              Building an Integrated Piping Solutions Platform
+                              C O M P A N Y ’ S E V O L U TI O N I N P I P I N G
+Venus Pipes & Tubes Limited
+
+
+
+
+                                          Seamless & Welded                                                                                          Spooling &
+                                                                                                     Fittings
+                                              Pipes / Tubes                                                                                         Fabrication
+                                           OUR CORE STRENGTH                                 FORWARD INTEGRATION                             UPCOMING CAPABILITIES
+
+
+                                                                          One Integrated Piping Solutions Platform
+                                                     Seamless Pipes • Welded Pipes • Fittings • Pipe Spools • Prefabricated Modules & Skids
+
+
+
+                                  Customer Benefits                                    Business Impact                                   Strategic Positioning
+
+                              ✓   Single-window supply for EPCs & OEMs             ✓   Larger share of piping scope per project      ✓   Pipes manufacturer → solutions partner
+                              ✓   Less interface risk across vendors               ✓   Higher wallet share, stickier relationships   ✓   Pipes & tubes + fittings +
+                                                                                                                                         spooling/fabrication
+                              ✓   Shorter project lead times                       ✓   Favorable margin mix vs. commodity
+                                                                                       supply                                        ✓   Comprehensive, end-to-end portfolio
+                              ✓   Consistent quality & lifecycle reliability
+                                                                                   ✓   From one-of-many to embedded partner          ✓   One, single accountable partner
+
+                                                                                                                                                                                  17
+
+[page 19]
+                              Diversified Product Range used across Industries
+
+                                                                    Pipes & Tubes                                                                 Fittings & Flanges
+
+
+
+                              Stainless Steel High Precision   Stainless Steel Hydraulic and      Stainless Steel Seamless
+                               and Heat Exchanger Tubes           Instrumentation Tubes                     Pipes
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                                                                 Added Fittings & Flanges to portfolio, with an aim to
+                              Stainless Steel Welded Pipes      Stainless Steel LSAW Pipe      Stainless Steel Condenser Tubes      become one stop Piping Solutions provider
+
+
+
+                                                                                                                                                Spooling - Upcoming
+
+
+
+
+                                 Capability to manufacture Higher Grade of Pipes & Tubes, used in critical
+                                                              applications
+
+
+                                                                                                                                                                                    18
+
+[page 20]
+[CHART, page 20, OCR text: stacked bar chart 'Capacity Addition for Finished Products (MTPA)' Welded/Seamless split by year - FY19: Seamless 2,100 + Welded 4,800 = 6,900; FY20: 2,100 + 7,200 = 9,300; FY21: 3,600 + 7,200 = 10,800; FY22: 3,600 + 7,200 = 10,800; FY23: 3,600 + 8,400 = 12,000; FY24: 14,400 + 24,000 = 38,400; FY25: 14,400 + 24,000 = 38,400; FY26: 16,200 + 27,600 = 43,800; Current: 20,400 + 27,600 = 48,000. Callouts '~7x Capacity Expansion from FY19 to Current' and '4x' bracket on right. Values also present as text below.]
+                               Continuous Capacity Addition to Serve Growing Demand
+
+                                            Capacity Addition for Finished Products (MTPA)
+
+
+                                                                                                                                                                               4x
+                                                                                                                                            Welded       Seamless
+                                                                                                                                                                     48,000
+                                                                                                                                                         43,800
+                                     ~7x Capacity Expansion from FY19 to Current                                       38,400           38,400
+
+                                                                                                                                                                      27,600
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                                                                                          27,600
+                                                                                                                       24,000            24,000
+
+
+
+                                                                     10,800              10,800       12,000
+                                                    9,300
+                                   6,900                                                                                                                              20,400
+                                                                      7,200              7,200        8,400            14,400            14,400           16,200
+                                   4,800            7,200
+                                   2,100            2,100             3,600              3,600        3,600
+                                    FY19            FY20              FY21               FY22          FY23             FY24              FY25            FY26       Current
+
+                                   To Cater to increasing demand in the Domestic & Export Markets
+
+
+                                    Seamless Pipes                                                Welded Pipes
+                              01    Increased SKUs by adding capacity for higher dia       02     Increased SKUs by adding capacity for higher dia                       Upcoming
+                                    pipes from 6mm to 114.3 mm to 6mm to 219.3 mm                 pipes from 6mm to 219.3 mm to 6mm to 1,422.4 mm
+                                                                                                                                                                        Forward
+                                   Backward Integration                                           Fittings
+                                                                                                                                                                    Integration into
+                              03   Installed Piercing line for manufacturing of Mother     04     Expanded Product Portfolio into Fittings with an aim               Pipe Spooling
+                                   Hollow Pipes with current capacity of 20,400 MTPA              to become one stop Piping Solutions provider
+                                   which is backward integration for Seamless Pipes
+
+                                                                                                                                                                                       19
+
+[page 21]
+                                Integrated State of Art Manufacturing Facility
+Venus Pipes & Tubes Limited
+
+
+
+
+                              ✓ Total land bank of 2,66,282 sq. mt., comprising existing manufacturing facilities and future expansion area
+
+                              ✓ Strategically located Manufacturing facility at Dhaneti (Kutch) within proximity of Kandla & Mundra ports
+
+                              ✓ Equipped with Acid Regeneration Plant for reduction of acid consumption
+
+
+
+                                        Facility is in line as per International Standards with all necessary approvals to cater to clients globally
+
+
+                                                                                                                                                       20
+
+[page 22]
+[CHART, page 22, OCR text: world map with export destination markers (30+ countries incl. USA, Brazil, UK, Belgium, France, Spain, Italy, Poland, Romania, Austria, Slovenia, Russia, Iran, Israel, UAE, Oman, Ethiopia, Sri Lanka, South Korea, Thailand, Vietnam, Indonesia). Bar/line chart 'Exports Revenue (INR Cr)': FY20=6, FY21=15, FY22=40, FY23=30, FY24=99, FY25=338, FY26=400, with '~67x' growth callout FY20->FY26. Row 'Revenue Contribution': FY20=3.4%, FY21=4.8%, FY22=10.5%, FY23=5.4%, FY24=12.3%, FY25=35.3%, FY26=34.3%. Values also present as text below.]
+                               Presence Across the Globe
+
+
+                                                                                                             Strong Dealership
+                                                                                                                  Network
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                                              Quality Products
+
+
+
+
+                              Exports in More                                                               Dedicated Expansion
+                                   than                                                                            Team
+                              30+ Countries
+
+
+                                                                            ~67x
+                                                                                            338    400
+
+                                Exports Revenue                                    99                      Geographical Expansion
+                                                       6      15     40     30
+                                      (INR Cr)
+                                                      FY20   FY21   FY22    FY23   FY24    FY25    FY26
+
+                               Revenue Contribution   3.4%   4.8%   10.5%   5.4%   12.3%   35.3%   34.3%
+
+                                                                                                                                  21
+
+[page 23]
+                               End User Industry
+
+                                                          Traditional Sectors                                  New Age Sectors
+Venus Pipes & Tubes Limited
+
+
+
+
+                                 Chemical       Engineering                Fertilizers      Heat Exchanger      Data Centers
+
+
+
+
+                              Pharmaceuticals     Power                Food Processing          Nuclear      Solar Manufacturing
+
+
+
+
+                                   Paper         Oil & Gas                Aerospace          Automobiles      Semi Conductors
+
+
+                                                    Presence across Industries with critical application
+                                                                                                                                   22
+
+[page 24]
+                                  Marquee Clientele
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                                  23
+                              Logos Are The Property Of Their Respective Owners
+
+[page 25]
+                                Awards & Accolades
+
+                              Calendar                    Certifications & Accreditations
+                               Years
+
+                                         Our manufacturing facilities at Dhaneti have been accredited with
+                                2016     management system standards certificate for compliance with ISO
+                                         9001: 2015 & ISO 14001:2015 requirements
+
+                                         Our Company has been verified and recognized as material
+Venus Pipes & Tubes Limited
+
+
+
+
+                                2017     manufacturer according to AD 2000 - Merkblatt W0 by The TÜV
+                                         NORD Systems GmbH & Co. KG.
+
+                                         Our Company has been certified as quality-assurance system
+                                2017
+                                         related to the material by The TÜV NORD Systems GmbH & Co. KG.
+
+                                         Our Company has received approval for manufacturing of Carbon           IBR Certificate       TUV – AD 200 Merkblatt W0          ISO Certificate
+                                         Steel, Alloy Steel, Stainless Steel Welded & Seamless Pipes up to 400
+                                2018     mm NB / Tubes up to 101.60 mm O.D. & U-Tubes under inspection of
+                                         Indian Boiler Regulations – 1950 from the Office of the Director of
+                                         Boiler, Gujarat.
+
+                                         Our manufacturing facilities at Dhaneti have been accredited with
+                                2018     management system standards certificate for compliance with ISO
+                                         45001: 2018
+
+                                         Our company received approval of Bureau of Indian Standard (BIS)
+                                2022
+                                         for Stainless steel Seamless and Welded Pipes and Tubes
+
+                                         Accredited in accordance with the standard ISO/IEC 17025:2017,
+                                         Venus’ manufacturing facilities at Dhaneti received the NABL
+                                2025
+                                         accreditation for Competence of Testing & Calibration Laboratories in
+                                         the field of Testing.                                                       BIS Certification for Seamless Pipes   BIS Certification for Welded Pipes
+
+
+
+
+                                                                                                                                                                                         24
+
+[page 26]
+                              Board of Directors
+
+
+
+
+                                         Arun Kothari                        Jayantiram M Choudhary                      Megharam S Choudhary                                  Dhruv M Patel
+                               Chairman & Managing Director                    Whole Time Director                          Whole Time Director                            Whole Time Director
+Venus Pipes & Tubes Limited
+
+
+
+
+                               Associated with the Company since        Associated with the Company since its        Associated with our Company since its          Associated with the Company since
+                                  2021 as a Director. A qualified           incorporation. Over 14 years of              incorporation. Over 19 years of              2015. Holds a bachelor’s degree in
+                               Chartered Accountant and holds a            experience in the steel industry             experience in the stainless-steel            engineering from University of Pune
+                              bachelor’s degree in commerce from                                                        welded pipes and tubes industry             and a master’s degree in technology
+                                      Rajasthan University                                                                                                                   from CEPT University
+
+
+
+
+                                   Kailash Nath Bhandari                        Pranay Ashok Surana                       Komal Lokesh Khadaria                             Shyam Agarwal
+                                    Independent Director                        Independent Director                        Independent Director                           Independent Director
+                              Bachelor’s degree in law from Jodhpur      Masters in engineering from the Indian        Member of Institute of Companies          Doctorate in law from University of Rajasthan
+                                University and has over 22 years of    Institute of Technology, Bombay. Founder      Secretaries of India (“ICSI”) and holds a      and has over 19 years of experience. A
+                              experience in the insurance sector. On    of Flyrobe and has been featured on the         bachelor’s degree in commerce.            member of the quality review board of the
+                               the Board in one of the company’s of    coveted Forbes 30 under 30 in the Asia list   Holding 13 years of experience and has          ICAI, New Delhi; and Chairman and
+                                Hindalco Group as an independent             (2017) and in the India list (2019)       held the position of Chairperson of        independent director of ICMAI Registered
+                                              director                                                                        Surat Chapter of ICSI                    Valuers Organization, New Delhi
+
+
+
+                                                                                                                                                                                                           25
+
+[page 27]
+                              Strong Management at Helm
+
+
+
+                                        Arun Kothari                         Jayantiram M Choudhary                     Megharam S Choudhary                          Dhruv M Patel
+                               Chairman & Managing Director                     Whole Time Director                       Whole Time Director                       Whole Time Director
+                               Associated with the Company since        Associated with the Company since its     Associated with our Company since its      Associated with the Company since
+                                  2021 as a Director. A qualified           incorporation. Over 14 years of           incorporation. Over 19 years of          2015. Holds a bachelor’s degree in
+Venus Pipes & Tubes Limited
+
+
+
+
+                               Chartered Accountant and holds a            experience in the steel industry          experience in the stainless-steel        engineering from University of Pune
+                              bachelor’s degree in commerce from                                                     welded pipes and tubes industry         and a master’s degree in technology
+                                      Rajasthan University                                                                                                            from CEPT University
+
+
+
+
+                                                       Kunal Bubna                                    Pavan Kumar Jain                             Kumar Shishir C Sinha
+                                                 Chief Financial Officer                        CS and Compliance Officer                          President (Marketing)
+
+                                             Associated with the Company since              Associated with us as manager (finance             With our Company since March 01,
+                                              July 2021. Is a fellow member of the            and accounts) since August 2020. A              2021. Holds a degree of bachelors in
+                                            Institute of Chartered Accountants of            qualified company secretary holding 7            arts from Magadh University and has
+                                             India and the ICSI with more than 18          years of experience in finance, accounting           over 34 years of experience in the
+                                                      years of experience.                             and secretarial work                      stainless-steel pipes and tubes
+
+
+
+
+                                                                                                                                                                                                    26
+
+[page 28]
+                              Vision & Way Forward
+
+                                                           Vision                                                           Way Forward
+
+
+                                                                                                              Become an end-to-end integrated
+                                                                                                              piping solutions provider
+
+                              Making ourselves as first reference and preference in
+Venus Pipes & Tubes Limited
+
+
+
+
+                                 stainless steel pipes and tubes manufacturer
+                                                                                                              Enter new sectors with high growth potential
+                                                                                                              Auto and other underpenetrated sectors
+
+
+
+                                                                                                              Expand our geographic footprint
+                                                                                                              Across domestic & international markets
+                                             Be the most trusted partner
+                               delivering superior quality, reliability and innovative solutions
+
+                                                                                                              Enhance portfolio towards
+                                                                                                              value added products
+
+
+
+                                       Create sustainable long-term value                                     Become differentiated than competition
+                                for our customers, employees, partners and shareholders                       through capacity expansion and product diversification
+
+
+                              Venus is among the early movers in India’s stainless steel pipes and tubes industry to expand beyond pipes and tubes into fittings and
+                                                                  spooling, building an integrated portfolio of piping solutions
+                                                                                                                                                                       27
+
+[page 29]
+[OCR page 29: rasterised and OCR'd (150 DPI, tesseract) - divider slide, background factory photograph only; no machine-readable text beyond the title already captured by pdftotext. OCR output was image-noise artifacts from photo texture, no additional data.]
+Annexures
+
+[page 30]
+[CHART, page 30, OCR text: five-year bar charts FY22-FY26 - Revenue: 387, 552, 802, 959, 1167 (+32% CAGR callout); EBITDA: 49, 69, 146, 168, 191 (+40% callout); PAT: 32, 44, 86, 93, 102 (+34% callout); EBITDA Margin %: 12.7%, 12.5%, 18.2%, 17.5%, 16.3%; PAT Margin %: 8.2%, 8.0%, 10.7%, 9.7%, 8.7%. Values also present as text below.]
+                                 Key Historical Financials
+                                   Revenue                                                EBITDA                                                      PAT
+
+
+
+                                                                                                                                                                           +34%
+                                                                      1167                                   +40%                191                                                     102
+                                                        +32%                                                        168                                                           93
+                                                               959                                                                                                          86
+                                                                                                             146
+                                                        802
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                 552                                                                                                                 44
+                                       387                                                             69                                                    32
+                                                                                              49
+
+
+                                      FY22      FY23    FY24   FY25   FY26                   FY22     FY23   FY24   FY25     FY26                        FY22       FY23   FY24   FY25   FY26
+
+
+
+                                                               EBITDA Margin (%)                                    PAT Margin (%)
+
+
+
+
+                                                                                  18.2%   17.5%                                               10.7%
+                                                                                                   16.3%                                              9.7%
+                                                                                                                          8.2%                                    8.7%
+                                                                  12.7%                                                                8.0%
+                                                                          12.5%
+
+
+
+
+                                                                  FY22    FY23    FY24    FY25     FY26                   FY22         FY23   FY24    FY25        FY26
+
+
+                              INR Cr unless specified                                                                                                                                           29
+
+[page 31]
+                                 Historical Profit & Loss Account
+                              Profit and Loss           FY26      FY25     FY24    FY23    FY22    CAGR
+
+                              Revenue from Operations   1,166.8   958.5    802.2   552.4   386.9    31.8%
+
+                              Cost of Goods Sold        770.5     639.5    575.3   444.6   315.0
+
+                              Gross Profit              396.3     319.0    226.9   107.8   71.9    53.2%
+
+                              Employee Cost              50.4     38.0     22.4    10.2     6.2
+Venus Pipes & Tubes Limited
+
+
+
+
+                              Other Expenses            155.3     113.4    58.2    28.5    16.4
+
+                              EBITDA                    190.6     167.6    146.3   69.1    49.3    40.2%
+
+                              EBITDA Margins (%)        16.3%     17.5%    18.2%   12.5%   12.7%   360 bps
+
+                              Depreciation               23.6       18.5    11.8    1.9     1.4
+
+                              Other Income               11.6       10.7    3.2     2.4     2.1
+
+                              EBIT                      178.6     159.8    137.7   69.5    49.9     37.6%
+
+                              Finance Cost               40.8     34.4     22.1     9.8     7.1
+
+                              Exceptional item           0.5        0.0     0.0     0.0     0.0
+
+                              Profit before Tax         137.3     125.4    115.6   59.7    42.9    33.8%
+
+                              Tax                        35.4     32.5     29.7    15.5     11.2
+
+                              Profit After Tax           101.9    92.9     85.9    44.2    31.7    34.0%
+
+                              PAT Margins (%)            8.7%     9.7%     10.7%   8.0%    8.2%    50 bps
+
+                              INR Cr unless specified                                                        30
+
+[page 32]
+                                 Historical Balance Sheet
+                              Assets                               Mar-26    Mar-25    Mar-24   Mar-23   Mar-22   Equity & Liabilities               Mar-26 Mar-25 Mar-24 Mar-23         Mar-22
+
+                              Non - Current Assets                 560.6     395.7     302.2    206.6     30.4    Total Equity                       668.5     531.4     406.1   322.2   128.5
+
+                              Property Plant & Equipment            396.1    308.8      281.0    59.8     21.3    Share Capital                       20.7      20.4     20.3    20.3     15.2
+
+                                                                                                                  Reserves & Surplus                 647.8      511.0    385.8   301.9    113.3
+                              Right-of-Use Assets                    1.7       0.0      0.0      0.0      0.0
+                                                                                                                  Non-Current Liabilities             112.1     42.1     42.5    26.8     15.6
+                              CWIP                                  123.7     66.5       12.1    121.6     7.4
+                                                                                                                  Financial Liabilities
+Venus Pipes & Tubes Limited
+
+
+
+
+                              Intangible assets                      1.1       0.7      0.9       0.1      0.1
+                                                                                                                  (i) Borrowings                      90.6      28.0     34.0    24.7     14.3
+                              Other Financial Assets                4.9        5.3       2.6      2.1      1.7
+                                                                                                                  (ii) Lease Liabilities               1.5       0.0      0.0     0.0      0.2
+                              Other Non - Current Assets (Net)      33.1      14.4      5.6      23.0      -
+                                                                                                                  Provisions                           1.8       1.8      1.1     0.6      0.3
+                              Current Assets                       739.0      612.6    455.3    300.9     217.5
+                                                                                                                  Deferred Tax Liabilities            18.2      12.3      7.4     1.5      0.7
+                              Inventories                          386.9     342.8     226.0     166.9    93.5    Current Liabilities                519.0     434.8     308.9   158.5    103.7
+                              Financial Assets                                                                    Financial Liabilities
+                              (i) Investments                       0.8        3.4       3.1      2.9      1.4    (i) Borrowings                      195.0     163.5    115.3   65.8     54.4
+
+                              (ii) Trade receivables               259.9      192.0     177.1    70.5     73.5    (ii) Lease Liabilities               0.1       0.0      0.0     0.0      0.0
+
+                              (iii) Cash and cash equivalents        6.2       2.9       1.0     10.8      -      (iii) Trade Payables               297.3     240.0     173.8   74.1     33.5
+
+                              (iv) Bank balances other than cash                                                  (iv) Other Financial Liabilities     6.2       7.3      5.4     6.3      0.2
+                                                                    22.8       10.1     6.6      15.2      7.3
+                              and cash equivalents                                                                Other Current Liabilities                      5.0      4.6     6.1      5.5
+                                                                                                                                                      4.6
+                              Other Financial Assets                 8.1       2.6       2.2      0.1      0.7    Current tax liabilities (net)       15.5      18.9      9.7     6.2     10.2
+                              Other Current Assets                  54.3      58.8      39.3     34.5     41.1    Provisions                           0.3       0.1      0.1     0.0      0.0
+                              Total Assets                         1,299.6   1,008.3   757.5    507.5    247.9    Total Equity & Liabilities         1,299.6   1,008.3   757.5   507.5   247.9
+
+
+                              INR Cr unless specified                                                                                                                                        31
+
+[page 33]
+                                 Historical Abridged Cash Flow Statement
+
+                               Particulars                                                        Mar-26   Mar-25   Mar-24   FY23     FY22
+
+                               Net Profit Before Tax                                               137.3    125.4    115.6   59.7     42.9
+                               Adjustments for: Non -Cash Items / Other Investment or Financial
+                                                                                                   59.0     44.4     29.7     7.1      5.6
+                               Items
+                               Operating profit before working capital changes                     196.3   169.8    145.3    66.8     48.5
+Venus Pipes & Tubes Limited
+
+
+
+
+                               Changes in working capital                                         -50.8    -82.8     -73.0   -39.4    -97.4
+
+                               Cash generated from Operations                                     145.5     87.0     72.3    27.4     -49.0
+
+                               Direct taxes paid (net of refund)                                   33.1     18.3     20.1     18.7     11.0
+
+                               Net Cash from Operating Activities                                  112.4    68.7     52.2     8.7     -60.0
+
+                               Net Cash from Investing Activities                                 -202.8   -114.2   -99.7    -167.4   34.1
+
+                               Net Cash from Financing Activities                                  93.7     47.4     37.8    169.4    25.8
+
+                               Net Increase / (Decrease) in Cash and Cash equivalents               3.3      1.9     -9.7     10.7     0.0
+
+                               Add: Cash & Cash equivalents at the beginning of the period          2.9      1.0     10.7     0.0      0.1
+
+                               Cash & Cash equivalents at the end of the period                     6.2      2.9      1.0     10.7     0.0
+
+
+
+
+                              INR Cr unless specified                                                                                         32
+
+[page 34]
+[CHART, page 34, OCR text: three five-year bar charts FY22-FY26 - RoE*: 25.0%, 21.0%, 21.0%, 19.0%, 17.0%; Debt/Equity Ratio: 0.5, 0.3, 0.4, 0.4, 0.5; ROCE^: 34.7%, 31.0%, 32.0%, 30.7%, 27.0%. Footnotes: *Excluding Rs.107.9 Cr raised via IPO for FY22-23 capacity expansion and Rs.35.06 Cr via Share Warrant for FY24-25; ^Excluding CWIP from Total Capital Employed FY23-FY26. Values also present as text below.]
+                                      Key Return Ratios
+
+
+
+
+                                         RoE*                                                                Debt / Equity Ratio                                                 ROCE^
+Venus Pipes & Tubes Limited
+
+
+
+
+                                            25.0%                                                                0.5                                                                 34.7%
+                                                                                                                                                          0.5                                  31.0%     32.0%     30.7%
+                                                      21.0%     21.0%
+                                                                          19.0%                                                                                                                                             27.0%
+                                                                                    17.0%                                             0.4       0.4
+                                                                                                                           0.3
+
+
+
+
+                                            FY22      FY23      FY24       FY25      FY26                       FY22      FY23       FY24      FY25      FY26                         FY22     FY23      FY24      FY25      FY26
+
+
+
+
+                              ROE = PAT / Shareholder’s Equity
+                              D/E = Total Debt / Shareholder’s Equity                    *Excluding Rs. 107.9 crores raised via IPO for Capacity expansions for FY 2022-23 and Rs. 35.06 crores raised via Share Warrant for FY 2024-25
+                                                                                                                                                                                                                                        33
+                              ROCE = EBIT / Tangible Net worth + Non-Current Liabilities ^Excluding CWIP from Total Capital Employed from FY23 to FY26
+
+[page 35]
+                              CSR Initiatives
+
+
+
+
+                               Installed 200 LPH RO water purification systems at Kumar Shala and         Donated computer systems to an institution in Bhuj supporting
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                  Kanya Shala in Dhaneti village                                              Divyang children
+
+
+
+
+                              Distributed sets of school dresses and sweatshirts to students of Kumar     Provided sweatshirts to students of Ukhadmora Primary School
+                                                   Shala and Kanya Shala, Dhaneti
+
+
+                                                                                                        ✓ Venus Pipes and Tubes Limited continues to focus on student
+                                                                                                          welfare and social development through impactful CSR activities
+                                                                                                          in nearby communities
+                                                                                                        ✓ Further, company has also undertaken several CSR activities at
+                                                                                                          colleges, hospitals, and other community development
+                                                                                                          initiatives aimed at supporting education, healthcare, and social
+                                                                                                          welfare
+
+                              Served nutritious meals to children at Akwada KV Shala in Bhavnagar in
+                                           association with The Akshay Patra Foundation
+                                                                                                                                                                              34
+
+[page 36]
+                              Sustainability Initiatives
+
+                                                  Hazardous Waste Management through Co-processing -
+                                                  We ensure that 98% of hazardous waste is disposed of through co-processing in the cement industry in line
+                                                  with EPR guidelines, while only 2% is sent to landfill disposal
+
+
+
+                                                                 ARP (Acid Regeneration Plant)
+                                                                 With the implementation of advanced ARP technology, Venus became the one among few
+Venus Pipes & Tubes Limited
+
+
+
+
+                                                                 stainless steel pipe company in India to adopt this innovative system, marking a major step
+                                                                 towards its greener vision and long-term goal of achieving zero carbon emissions
+
+
+
+
+                                                                       Miyawaki Forest Initiative
+                                                                       Venus has proudly developed a Miyawaki Forest by planting more than 17,000 native trees
+                                                                       within its manufacturing premises, demonstrating a strong commitment towards
+                                                                       biodiversity enhancement, ecological balance, and green environmental practices
+
+
+
+
+                                                                  Solar Energy Utilization
+                                                                  Installation in progress for additional 6.1 MW in-house solar power unit reinforcing focus on
+                                                                  renewable energy adoption and carbon footprint reduction. Currently 1.3 MW already installed.
+
+
+
+
+                                                   Energy-Efficient Infrastructure
+                                                   The company has implemented a 100% daylight system in the shed area along with energy-efficient LED lighting
+                                                   systems, significantly contributing towards energy conservation and reduction in greenhouse gas emissions
+
+
+
+                                                                                                                                                                  35
+
+[page 37]
+                                        Thankyou
+
+                               For further Information, please connect :
+
+
+
+
+      Venus Pipes & Tubes Limited                        Strategic Growth Advisors Private Limited
+
+         CIN: L24311GJ2015PLC082306                               CIN: U74140MH2010PTC204285
+            cs@venuspipes.com                                   Mr. Sagar Shroff / Mr. Ayush Haria
+                                                         sagar.shroff@sgapl.net / ayush.haria@sgapl.net
+For more information visit www.venuspipes.com                  +91 98205 19303 / +91 98204 62966

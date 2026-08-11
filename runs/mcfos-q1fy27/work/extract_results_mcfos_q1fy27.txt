@@ -1,0 +1,686 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: mcfos_q1fy27_results.pdf
+doctype: results
+page_count_pdfinfo: 12
+formfeed_count: 7
+line_count: 666
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01
+ocr_pages: [3, 4, 6, 7, 8]
+page_coverage: 100%
+detected_quarter: Q1 FY27
+extraction_date: 2026-08-11
+=== END HEADER ===
+NOTE (extraction quality, mechanical observation only): Pages 1, 2, 5, 9,
+10, 11, 12 carry a text layer but the source PDF (Creator: Online2PDF.com)
+renders each glyph as a separately spaced text-show operation, so
+pdftotext -layout reproduces every word with single spaces inserted
+between individual letters (e.g. "M a c f o s L im it e d"). This is
+preserved verbatim per the no-reflow rule; downstream agents reading
+numeric values on these pages should strip internal spaces within a
+token when parsing figures. Pages 3, 4, 6, 7, 8 (the standalone and
+consolidated Limited Review Reports) were image-based (1 char extracted
+via pdftotext) and were OCR'd via pdftoppm -r 200 + tesseract; OCR text
+retains normal word spacing. Page 8 OCR emitted a "line cannot be
+recognized" warning for one small image region but yielded 1265 usable
+characters, above the 100-char threshold.
+[page 1]
+                                                                                           11-08-2026
+
+To,
+The General Manager DCS-CRD
+(Corporate Relationship Department)
+BSE Ltd. Rotunda Building P.J. Tower,
+Dalal Street,
+Fort Mumbai-400001
+
+BSE SCRIP Code: ROBU | 543787
+
+Subject: Outcome of the meeting of the board of directors of Macfos Limited ("the company”)
+held on August 11, 2026.
+
+Ref: Intimation of Board Meeting vide letter dated 03/08/2026
+
+
+This is to inform you that the Board of Directors of the Company, at its meeting held today, i.e., 11th
+August 2026, has, inter alia, considered and approved the following Agendas:
+
+
+ ITEM
+                                                  PARTICULARS
+  NO.
+         To voluntarily adopt IND AS for the preparation of financial statements from the financial
+   1
+         year 2026–27 onwards.
+         To consider and approve the Unaudited Standalone and Consolidated Financial Results of
+   2     the Company for the first quarter ended 30th June 2026, prepared in accordance with IND
+         AS, along with the Auditor’s Limited Review Report.
+         To Approve the Annual Report for Financial Year 2025-26 and Draft Notice for Calling of
+   3
+         9th Annual General Meeting.
+         To Appoint M/s CZ & Associates LLP as Scrutinizer for the ensuing Annual General Meeting
+   4
+         to conduct eVoting.
+         To appoint a director in place of Mr. Nileshkumar Purushottam Chavhan (DIN: 07936897),
+   5     who retires by rotation at the upcoming Annual General Meeting and, being eligible, offers
+         himself for re-appointment.
+         To consider if any outstanding statutory liability is pending for more than 3 months,
+         specifically indicating to the
+         a) TDS
+         b) TCS
+   6
+         c) GST
+         d) Employee share of PF & ESIC
+         e) Employer's share of PF & ESIC
+         f) Professional Tax
+         To take note of the quarter-end (30th June 2026) listing compliances of the company for
+   7
+         the period ended on 30th June 2026.
+         To take note of MSME Vendors with the Company and list of cases of non-payment of any
+   8
+         of their invoices within 45 days, which will attract tax disallowances. If any
+         To receive an Update on Unsettled litigation as of the end of the quarter and discuss all
+   9
+         cases with amounts involved exceeding 1 lakh. If any
+
+[page 2]
+          To identify Investor Grievances received, if any, during the quarter, resolved and pending
+  10
+          as on the end of the quarter.
+          To take note of any delay in compliance of the following periodic Statutory Returns
+          a. GSTR 3B, GSTR1, GSTR9 and GSTR9C as and when applicable
+  11
+          b. TDS/TCS Quarterly Return
+          c. PF/ESIC/PT Return
+          To take note of the Quarter ended listing compliances of the company for the period ended
+  12
+          on 30th June 2026.
+  13      To Authorize to Directors for filing of e-Forms with the Registrar of Companies (ROC)
+
+
+The Meeting of the Board of Directors of the Company commenced at 04.15 P.M. (IST) and
+concluded at 06.30 p.m. (IST).
+
+This intimation is also being uploaded on the website of the Company and can be accessed at
+the website: www.robu.in
+
+We request you to kindly take the same on record. Thanking you.
+
+For, MACFOS LIMITED
+SAGAR          Digitally signed by SAGAR
+               SUBHASH GULHANE
+SUBHASH        Date: 2026.08.11 19:18:09
+GULHANE        +05'30'
+
+CS DCG(ICSI)SAGAR GULHANE
+Company Secretary and Compliance Officer
+Membership No: - A67610
+Date: 11/08/2026
+Place: Pune
+
+[OCR page 3]
+. KISHOR GUJAR & ASSOCIATES °°’ 2,3, 3A 1st FLOOR, MAHALAXMI HEIGHTS,
+C& NEAR BANK OF MAHARASHTRA (PIMPRI BRANCH),
+ee te: CHARTERED ACCOUNTANTS MUMBAI-PUNE ROAD, PIMPRI, PUNE - 411 018.
+GSTIN : 27AAFFK2703H1ZL
+a
+E-mail : info.kgapune@gmail.com www.kishorgujarandassociates.in Tel. : 020-27478224, 27472930 Mob.: 7447448424
+; Limited Review Report on unaudited Standalone Financial Results for the
+Quarter ended June 30%, 2026, Financial Results of Macfos Limited pursuant
+H to the Regulation 33 of the Securities and Exchange Board of India (Listing
+Obligations and Disclosure Requirements) Regulations, 2015.
+To, 7
+The Board of Directors
+Macfos Limited
+S. No. 78/1, Dighi,
+; Bhosari Alandi Road,
+Pune Maharashtra - 411015
+CIN: - L29309PN2017PLC172718
+1) We have reviewed the accompanying statement of unaudited standalone financial
+3 results of Macfos Limited (“the Company”) for the quarter ended June 30", 2026 (“the ~
+Statement”) attached herewith being prepared and submitted by the Company pursuant to
+i the requirements of Regulation 33 of the Securities and Exchange Board of India (Listing
+. Obligations and Disclosure Requirements) Regulations, 2015, as amended (the “Listing
+Regulations”).
+2) This Statement, which is the responsibility of the Company's Management and
+| approved by the Company’s Board of Directors, has been prepared in accordance with the
+recognition and measurement principles laid down in Indian Accounting Standard —
+(nd AS) 34 Interim Financial Reporting, prescribed under Section 133 of the
+: Companies Act, 2013 (‘the Act’) read with relevant rules issued thereunder and other
+: recognized accounting principles generally accepted in India and in compliance with the
+Regulation 33 of the Listing Regulations. Our responsibility is to express a conclusion on
+the Statement based on our review.
+3) We conducted our review of the Statement in accordance with the Standard on Review
+' Engagement (SRE) 2410, “Review of Interim Financial Information Performed
+by the Independent Auditor of the Entity” issued by the Institute of Chartered
+, Accountants of India. This standard requires that we plan and perform the review to
+obtain moderate assurance as to whether the Statement is free of material misstatement. A
+review consists of making inquiries, primarily of persons responsible for financial and
+accounting matters, and applying analytical and other review procedures. A review is
+' substantially less in scope than an audit conducted in accordance with Standards on
+Auditing and consequently does not enable us to obtain assurance that we would become
+aware of all significant matters that might be identified in an audit. Accordingly, we do not
+: express an audit opinion.
+te cuasrered \*
+tee
+
+[OCR page 4]
+4) Based on our review conducted as stated in paragraph 3 above, nothing has come to our
+: attention that causes us to believe that the accompanying Statement of unaudited financial
+results prepared in accordance with the recognition and measurement principles laid
+down in Indian Accounting Standard (Ind AS), prescribed under Section 133 of the Act
+read with relevant rules issued thereunder and other recognized accounting principles
+: generally accepted in India has not disclosed the information required to be disclosed in
+: terms of the Regulations 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 including the manner in which it is to be disclosed, or
+that it contains any material misstatement.
+Other Matter
+| ‘As stated in Note No. - 2 to the accompanying Statement, these are the Company's first
+quarterly standalone financial results prepared in accordance with the Indian Accounting
+i Standards ("Ind AS") prescribed under Section 133 of the Companies Act, 2013, read with
+the Companies (Indian Accounting Standards) Rules, 2015, as amended, and other
+; accounting principles generally accepted in India.
+The comparative standalone financial information for the quarter ended 30" June, 2025
+and the quarter/year ended 31% March, 2026 was previously prepared in accordance with
+: the Accounting Standards specified under Section 133 of the Companies Act, 2013
+, ("IGAAP") and was subjected to Limited Review under the applicable financial reporting
+framework. The management has subsequently converted the comparative financial
+information from IGAAP to Ind AS. These comparative quarterly Ind AS financial results
+; have not been subjected to Limited Review by us. ;
+; The standalone financial statements for the year ended 31 March 2026 were originally
+prepared by the management in accordance with IGAAP and were audited by us.
+, Subsequently, the management prepared Ind AS standalone financial statements for the
+: year ended 31* March 2026 by making the necessary transition and conversion
+adjustments. We have issued a Special Purpose Independent Auditor's Report dated 11"
+i August, 2026 on the Ind AS standalone financial statements for the year ended 31% March
+i 2026. Accordingly, our conclusion on the accompanying Statement is not modified in
+respect of this matter.
+For KISHOR GUJAR & ASSOCIATES
+Chartered Accountants
+Firm Registration No.- 116747W
+Peer Review No.:- 021346
+; =
+Wh Sa RE Q
+. a 5 scoOuNTAN S
+IE CA Laxmi U Rawat (Partner) S) FRNATEIAT
+4 Membership No.: -134752 * ANE
+a Place: -Pimpri, Pune - 411018
+q Date.: - 11» August, 2026
+UDIN: - 26(S4452FVNBEZ2445
+i}
+t
+f
+
+[page 5]
+ M a c f o s L im it e d .
+ C I N : L 2 9 3 09 PN 2 01 7 PL C 1 7 2 7 1 8
+A d d r e s s : S N o 7 8 / 1, D ig h i, B h o s a r i A l a n d i R o a d , Pu n e , M a h a r a s h t r a 4 1 1 01 5
+S t a t e m e n t o f S t a n d a l o n e U n a u d it e d F in a n c ia l R e s u l t f o r t h e Q u a r t e r e n d e d J u n e 3 0, 2 02 6
+( A l l a m o u n t s a r e in R u p e e s L a c s un l e s s s t a t e d o t h e r wis e )
+                                                                                                                                     Q ua r t e r e n d e d                                      Year en ded
+Sr .
+  No.                                              Pa r t ic u l a r s                                J u n e 3 0t h , 2 02 6 | M a r c h 3 1s t , 2 02 6 | J u n e 3 0t h , 2 02 5 M a r c h 3 1s t , 2 02 6
+                                                                                                          U n a u d it e d              U n a u d it e d               U n a u d it e d           A u d it e d
+
+        I n c om e
+                                                                                                                 8, 13 3 . 87                    1 0, 2 1 1 . 1 2            5 , 9 26 . 80            3 0, 8 7 4 . 8 4
+    I R e v e n u e f r o m o p e r a t io n s
+                                                                                                                                                        7 9 . 45                   6 0. 5 4                3 05 . 05
+ I O t h e r in c o m e                                                                                              1 1 2 . 04
+  u T o t a l in c o m e (l + I 1)                                                                               8 , 245 . 9 1                   1 0, 2 9 0. 5 7             5 , 9 87 . 3 4          3 1, 17 9 . 8 9
+
+ I V Ex pe n s e s
+        C o s t o f M a t e r ia l C o n s u m e d                                                                     28. 7 1                          3 0. 1 0                    1 0. 1 8                 7 5 . 21
+        Pu r c h a s e o f S t o c k - in - T r a d e                                                             7 , 9 5 3 . 00                   7 , 7 85 . 6 2            5 , 01 5 . 04            2 6 . 03 2 . 07
+        | C h a n g e s in I n ve n t o r y o f S t o c k - in - T r a d e                                      ( 1, 7 9 1. 3 6 )                      (67.77)                  ( 5 2 3 . 03 )         ( 2, 3 9 7 . 3 8 )
+                                                                                                                     3 6 8. 6 8                       3 6 8 . 06                25 4. 9 8                1, 246 . 84
+        E m p l o ye e b e n e f it s e x p e n s e s
+        F in a n c e c o s t                                                                                         1 00. 4 0                        117 . 19                   5 6 . 05                  3 6 1. 7 2
+                                                                                                                       8 3 . 09                         89 . 9 2                 7 5 . 02                  3 25 . 13
+        D e p r e c ia t io n a n d A m o r t iz a t io n E x p e n s e s
+        O t h e r e x pe n s e s                                                                                     7 11. 27                         633.93                    427 . 83               2, 1 00. 7 8
+        Tot al e x pe n s e s (V )                                                                               7 , 45 3 . 7 8                   8 , 9 5 7 . 05             5 , 3 16 . 07            27 , 7 44. 3 7
+
+  V Pr o f it ( L o s s ) b e f o r e E x c e p t io n a l I t e m a n d T a x ( I 1 - 1V )                          7 9 2. 13                    1, 3 3 3 . 5 2                6 7 1. 27               3 , 43 5 . 5 2
+ V I E x c e p t io n a l I t e m
+ V I I Pr o f it ( L o s s ) b e f o r e t a x ( V - V I )                                                           7 9 2. 13                    1, 3 3 3 . 5 2                6 7 1. 27               3 , 43 5 . 5 2
+
+ V I I llTax e x pe n s e s
+         C ur r e n t t a x                                                                                          2 09 . 7 4                       3 5 4. 49                 17 6 . 9 6                 9 06 . 9 9
+        De fe r r e d t ax                                                                                              0. 4 4                        ( 17 . 5 3 ) |                ( 2. 46 )               ( 29 . 7 9 )
+         S h o r t / ( e x c e s s ) in c o m e t a x o f e a r l ie r ye a r s                                                                                                                               ( 2. 6 5 )
+                                                                                                                                                      336.95                    17 4. 5 0                  87 4. 5 5
+         T o t a l t a x e x p e n s e ( V il l )                                                                    2 1 0. 1 8
+
+
+  I X Pr o f it f o r t h e ye a r ( V l l - V )                                                                     5 81. 9 5                        996.56                    49 6 . 7 7              2 , 5 6 0. 9 7
+
+   x O t h e r C o m p r e h e n s iv e I n c o m e
+      A . I t e m s t h a t wil l n o t b e r e c l a s s if ie d t o p r o f it o r l o s s
+             - R e m e a s ur e r n e n t l o s s e s o f t h e d e f in e d b e n e f it p l a n s                                                   ( 22. 01 )                                            ( 22. 01)
+            - I n c o m e t a x r e l a t in g t o t e m s t h a t wil l n o t b e                                                                        5.54                                                   5.54
+             r e c d a s s if ie d t o p r o f it o r l o s s
+         B . I t e m s t h a t wil l b e r e c l a s s if ie d t o p r o f it o r l o s s
+        T o t a l o t h e r C o m p r e h e n s ive I n c o m e , N e t o f T a x                                                                     ( 16 . 47 )                                           ( 1 6 . 47 )
+
+        T o t a l C o m p r e h e n s ive I n c o m e a n d N e t o f T a x f o r t h e                              5 81. 9 5                        9 8 0. 09                 49 6 . 7 7              2, 5 44. 5 0
+  XI
+         p e r io d ( X + X )
+
+ X I I Pa id - up S h a r e C a p it a l ( F a c e va l ue o f I N R 10 p e r s h a r e )                         1, 03 5 . 8 5                   1 , 03 5 . 8 5                9 41. 6 8               1 , 03 5 . 8 5
+
+ X I I E a r n in g s p e r E q u it y s h a r e
+            N o m in a l v a l u e o f s h a r e s R s 1 0 e a c h
+                B a s ic ( R s . ) ( n o t a n n ua l is e d )                                                           5.62                             9.62                       4. 80                   24. 7 2
+             - D il ut e d ( R s . ) ( n o t a n n u a l is e d )                                                        5.62                             9.62                       4. 80                   24. 7 2
+
+
+ XI V
+         N u m b e r o f S h a r e s u s e d in c o m p u t in g e a r n in g p e r s h a r e
+
+              - B a s ic ( N o s . )                                                                         1 . 03 . 5 8 , 5 03           1 . 03 . 5 8 . 5 03          1 , 03 , 5 8 , 5 03        1 , 03 , 5 8 , 5 03
+             - D il ut e d ( N o s . )                                                                       1 , 03 , 5 8 , 5 03           1, 03 , 5 8 , 5 03           1 , 03 , 5 8 , 5 03        1 , 03 , 5 8 , 5 03
+
+ F o r a n d o n b e h a l f o f t h e B o a r d o f D ir e c t o r s o f M a c f o s L im it e d
+
+
+
+
+ B in o d Pr a s a d
+ W h o l e T im e D ir e c t o r & C F O
+ D I N : 07 9 3 8 8 2 8
+ D a t e :1 1 / 08 / 2 02 6
+ Pl a c e : Pu n e
+
+[OCR page 6]
+a A 3A 1st FLOOR, MAHALAXMI HEIGHTS,
+j KISHOR GUJAR & ASSOCIATES ies Se intaRASSCen (PIMPRI BRANCH),
+CHARTERED ACCOUNTANTS MUMBAI-PUNE ROAD, PIMPRI, PUNE - 411 018.
+. INDIA GSTIN : 27AAFFK2703H1ZL
+: Limited Review Report on unaudited Consolidated Financial Results for the
+quarter ended June got, 2026, Consolidated Financial Results of Macfos
+Limited pursuant to the Regulation 33 of the Securities and Exchange Board
+d of India (Listing Obligations and Disclosure Requirements) Regulations,
+2015.
+| To,
+The Board of Directors,
+Macfos Limited.
+: S. No. 78/1, Dighi, ,
+Bhosari Alandi Road,
+; Pune Maharashtra - 411015
+. CIN: - L29309PN2017PLC172718
+1) We have reviewed the accompanying statement of unaudited Consolidated financial
+results of Macfos Limited (“the Parent”) and its subsidiaries (the Parent and its
+subsidiaries together referred to as “the Group”), and its share of the net profit after tax
+E for the quarter ended on 30t June, 2026 (“the Statement”), being submitted by the
+parent pursuant to the requirements of Regulation 33 of the Securities and Exchange
+Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as
+amended (the “Listing Regulations”).
+2) This Statement, which is the responsibility of the Parent’s Management and approved
+by the Parent’s Board of Directors, has been prepared in accordance with the recognition
+and measurement principles laid down in Indian Accounting Standard ( Ind AS),
+prescribed under Section 133 of the Companies Act, 2013 (‘the Act’) read with relevant
+rules issued thereunder and other recognized accounting principles generally accepted in
+India and in compliance with the Regulations 33 of the Listing Regulations. Our
+responsibility is to express a conclusion on the Statement based on our review.
+3) We conducted our review of the Statement in accordance with the Standard on Review
+Engagement (SRE) 2410, “Review of Interim Financial Information Performed — EAOR
+by the Independent Auditor of the Entity” issued by the Institute of Chartered Ss z SSA
+Accountants of India. This standard requires that we plan and perform the review to €):
+obtain moderate assurance as to whether the Statement is free of material misstatement. A ee 5% 6 />
+review consists of making inquiries, primarily of persons responsible for financial and \ ° = - Kf
+|
+
+[OCR page 7]
+3 accounting matters, and applying analytical and other review procedures. A review is
+substantially less in scope than an audit conducted in accordance with Standards on
+Auditing and consequently does not enable us to obtain assurance that we would become
+. aware of all significant matters that might be identified in an audit. Accordingly, we do not
+. 2 express an audit opinion.
+be The Statement includes the results of the following entities; :
+: Holding/Parent Company - Macfos Limited
+Be Subsidiary Companies - Nuo Zhan Technologies Limited
+= - Macfos Electronics Private Limited
+: ;
+L 4) Based on our review conducted and procedure performed as stated in paragraph 3
+f above and based on the interim Consolidated financial results given by the management :
+of the Parent Company as referred to in paragraph 6 below, nothing has come to our
+: attention that causes us to believe that the accompanying Statement of unaudited
+Consolidated financial results prepared in accordance with the recognition and
+measurement principles laid down in Indian Accounting Standard — (Ind AS),
+: prescribed under Section 133 of the Act read with relevant rules issued thereunder and
+: other recognized accounting principles generally accepted in India has not disclosed the
+information required to be disclosed in terms of the Regulations 33 of the SEBI (Listing 2
+Obligations and Disclosure Requirements) Regulations, 2015 including the manner in
+. which it is to be disclosed, or that it contains any material misstatement. a
+. Other Matters
+; a) As stated in Note No. - 2 to the accompanying Statement, these are the Company's first
+quarterly consolidated financial results prepared in accordance with the Indian
+Accounting Standards ("Ind AS") prescribed under Section 133 of the Companies Act, ;
+2 2013, read with the Companies (Indian Accounting Standards) Rules, 2015, as amended,
+. and other accounting principles generally accepted in India.
+The comparative consolidated financial information for the quarter ended goth June, 2025
+’ and the quarter/year ended 31% March, 2026 was previously prepared in accordance with
+the Accounting Standards specified under Section 133 of the Companies Act, 2013
+i ("IGAAP") and was subjected to Limited Review under the applicable financial reporting
+framework. The management has subsequently converted the comparative financial
+information from IGAAP to Ind AS. These comparative quarterly Ind AS financial results _
+‘ have not been subjected to Limited Review by us.
+: The consolidated financial statements for the year ended 31st March 2026 were originally
+; prepared by the management in accordance with IGAAP and were audited by us.
+: Subsequently, the management prepared Ind AS consolidated financial statements for the
+year ended 31% March 2026 by making the necessary transition and conversion
+: adjustments. We have issued a Special Purpose Independent Auditor's Report dated 11"
+, August, 2026 on the Ind AS consolidated financial statements for the year ended 31*
+March 2026. Accordingly, our conclusion on the accompanying Statement is not modified
+in respect of this matter. ZYAR & 4 SS
+F fey CHARTERED va
+b) We did not review the interim financial results and other financial information of (the ep ss
+: Subsidiary namely Nuo Zhan Technologies Limited included in the Consolidal (ae)
+i PuNE®
+
+[OCR page 8]
+: statement, whose interim financial results and other financial information reflects total
+assets of Rs. 0.99 lakhs as at 30 June 2026 and total revenue of Rs. Nil. This interim
+
+: financial have not been reviewed by us or by any other auditor, have been furnished to us
+
+5 by the management, are certificated by the board of directors of this subsidiary. Our
+
+of conclusion, on the statement in so far as it relates to the amount and disclosures included
+in respect of this subsidiary is based solely on such certified information. In our opinion
+
+: and according to the information and explanations given to us by the Management, this
+information is not material to the Group.
+
+. Similarly, based on our review of quarterly financial results and other financial
+information of Macfos Electronics Private Limited it reflects total assets of Rs.12.23 lakhs :
+as at 30'" June 2026 and total revenue of Rs. 1.16 lakhs.
+
+. For KISHOR GUJAR & ASSOCIATES
+Chartered Accountants
+
+| , Firm Registration No. - 116747W
+- Peer Review No.: - 021346
+at } ©)
+foe / CHARTERED \C \
+S| accounTANTS | |
+SS \ FRNAIBTAT
+! CA Laxmi U Rawat (Partner) ©)
+- Membership No.: -134752 PUNE (2
+| Place: -Pimpri, Pune — 411018s
+: Date.: - 11" August, 2026
+UDIN: -2 6 \3h#52VMOHDV 02S ;
+He
+
+[page 9]
+ M a c f o s L im it e d
+ C I N : L 2 9 3 09 PN 2 01 7 PL C 1 7 2 7 1 8
+    A d d r e s s : S N o 7 8/ 1, D ig h i, B h o s a r i A l a n d i R o a d , Pu n e , M a h a r a s h t r a 4 1 1 01 5
+                                                                                                                                       3 0t h , 2 02 6
+ C o n s o l id a t e d S t a t e m e n t o f U n a u d it e d F in a n c ia l R e s ul t s f o r t h e q ua r t e r e n d e d J u n e
+( A l l a m o un t s a r e in R up e e s in L a c s un l e s s s t a t e d o t h e r wis e )
+                                                                                                                                                                     Q ua r t e r e n d e d                                           Year en ded
+ Sr .
+ No                                                            Pa r t ic u l a r s                                                  J u n e 3 0t h , 2 02 6        M a r c h 3 1s t , 2026         J u n e 3 0t h , 2 02 5        M a r c h 3 1 s t , 2 02 6
+
+                                                                                                                                                                       U n a u d it e d                U n a u d it e d                  A u d it e d
+                                                                                                                                        U n a u d it e d
+
+
+        |I n c o m e                                                                                                                                                                                           5 , 9 26 . 80                 3 0, 8 7 7 . 3 3
+           R e ve n ue f r o m o p e r a t io n s                                                                                               8 , 1 3 4 . 01                1 0, 21 3 . 6 1
+                                                                                                                                                                                      7 9 . 46                       6 0. 4 9                      3 05 . 2 8
+  | | O t h e r in c o m e                                                                                                                         1 1 2 . 04
+                                                                                                                                                8 , 2 4 6 . 05                1 0, 2 9 3 . 07                  5 , 9 87 . 29                 3 1 , 1 8 2. 6 1
+  I L T o t a l in c o m e ( l + I )
+
+  I V Ex pe n s e s                                                                                                                                                                                                                                  75.30
+                                                                                                                                                     28. 7 1                         3 0, 1 9                        1 0. 1 8
+         C o s t o f M a t e r ia l C o n s u m e d
+                                                                                                                                                                                7 , 7 85 . 6 2                 5 , 01 7 . 6 0                2 6 , 03 1 . 9 7
+         Pu r c h a s e o f S t o c k - in - T r a d e                                                                                            7 , 9 5 3 . 00
+                                                                                                                                               ( 1, 7 9 1. 3 6 )                    ( 6 7 . 6 8)                 ( 5 25 . 6 7 )               ( 2, 3 9 7 . 3 0)
+         C h a n g e s in I n ve n t o r y o f S t o c k - in - T r a d e
+                                                                                                                                                   3 6 8. 6 8                      3 6 8 . 06                     25 4. 9 8                    1, 246 . 84
+         E m p l o ye e b e n e f it s e x p e n s e s                                                                                                                                                                                            3 6 1. 7 2
+                                                                                                                                                   1 00. 4 0                       117 . 19                        5 6 . 05
+         F in a n c e c o s t
+                                                                                                                                                     83 . 5 1                        9 0. 08                       7 5 . 18                       3 25 . 7 6
+         D e p r e c ia t io n a n d A m o r t iz a t io n E x p e n s e s
+                                                                                                                                                   7 11. 7 1                       6 3 4. 3 9                     428. 12                      2, 1 03 . 41
+         O t h e r e x pe n s e s
+                                                                                                                                                7 , 45 4. 6 4                   8, 9 5 7 . 84                  5 , 3 16 . 43                 27 , 7 47 . 6 9
+         Tot al e x pe n s e s (V )
+
+   V Pr o f it ( L o s s ) b e f o r e E x c e p t io n a l l t e m a n d T a x ( l l - I V )                                                      7 9 1. 41                    1, 3 3 5 . 23                     6 7 0. 8 6                   3 , 43 4. 9 2
+  V I E x c e p t io n a l I t e m                                                                                                                                                                                6 7 0. 8 6                   3 , 43 4. 9 2
+                                                                                                                                                   7 9 1. 41                    1, 3 3 5 . 23
+   V I l Pr o f it U ( L o s s ) b e f o r e t a x ( V - V I )
+   V I llTax e x pe n s e s                                                                                                                                                                                       17 6 . 9 6                        9 06 . 9 9
+                                                                                                                                                   2 09 . 7 4                      3 5 4. 49
+        C ur r e n t t a x                                                                                                                                                                                           ( 2. 25 )                     ( 29 . 48 )
+         Defer r ed t ax                                                                                                                              0. 5 1                        ( 17 . 28)
+        S h o r t / ( e x c e s s ) in c o m e t a x o f e a r l ie r ye a r s                                                                                                                                                                       ( 2. 6 5 )
+                                                                                                                                                   2 1 0. 2 5                      3 3 7 . 20                     17 4. 7 1                       87 4. 86
+         Tot al t ax e x pe n s e (V I )
+                                                                                                                                                   5 81. 16                        9 9 8 . 02                     49 6 . 15                    2 . 5 6 0. 06
+   I X Pr o f it f o r t h e ye a r ( V I l l - V I I )
+
+   XO t h er            C o m p r e h e n s iv e I n c o m e
+          |A . I t e m s t h a t wil l n o t b e r e c l a s s if ie d t o p r o f it o r l o s s
+               R e m e a s u r e m e n t l o s s e s o f t h e d e f in e d b e n e f it p l a n s                                                                                  ( 22. 01) |                                                    ( 22. 01)
+         |I n c o m e t a x r e l a t in g t o it e n m s t h a t wil l n o t b e r e c l a s s if ie d t o pr o f it o r l o s s                                                      5.54                                                             5.54
+         B . I t e m s t h a t wil l b e r e c l a s s if ie d t o p r o f it o r l o s s                                                              0. 00                          ( 0. 01)                         0. 00                         ( 0. 04)
+          T o t a l o t h e r C o m p r e h e n s iv e I n c o m e , N e t o f T a x                                                                   0. 00                        ( 16 . 48)                        0. 00                        ( 16 . 5 2)
+
+                                                                                                                                                                                                                  49 6 . 15                     2, 5 43 . 5 4|
+   X I T o t a l C o m p r e h e n s ive I n c o m e f o r t h e p e r io d ( |X + X )                                                             5 81. 16                        9 81. 5 4
+
+
+  X I l Pr o f it A t t r ib ut a b l e t o
+         O w n e r s o f t h e H o l d in g C o m p a n y                                                                                          5 81. 16                        9 9 8 . 02                     49 6 . 15                    2, 5 6 0. 06
+         N o n - C o n t r o l l in g I n t e r e s t
+
+ X I l l O t h e r C o m p r e h e n s ive I n c o m e l ( l o s s ) a t t r ib ut a b l e t o                                                                                                                                                     ( 1 6 . 5 2)
+         O w n e r s o f t h e H o l d in g C o m p a n y                                                                                              0. 00                        ( 16 . 48 )                        0. 00
+
+         N o n - C o n t r o l l in g I n t e r e s t
+                                                                                                                                                   5 81. 16                        9 81. 5 4                      49 6 . 15                    2, 5 43 . 5 4
+ X I V C o n t r o l l in g I n t e r e s t
+        N o n C o n t r o l l in g I n t e r e s t
+ X V Pa id - up S h a r e C a p it a l ( F a c e va l ue o f I N R 10 p e r s h a r e )                                                         1 , 03 5 . 8 5                  1 , 03 5 . 8 5                    9 41. 6 8                    1 , 03 5 . 8 5
+
+ X V iE a r n in g s p e r E q uit y s h a r e
+             N o m in a l v a l u e o f s h a r e s R s 1 0 e a c h
+                                                                                                                                                       5.61                            9.63                           4. 7 9                        24. 7 1
+              - B a s ic ( R s . ) ( n o t a n n ua l is e d )
+                                                                                                                                                       5.61                            9.63                           4. 7 9                        24. 7 1
+                D il ut e d ( R s . ) ( n o t a n n ua l is e d )
+  X V I I | N u m b e r o f S h a r e s u s e d in c o m p u t in g e a r n in g p e r s h a r e
+              - B a s ic ( N o s . )                                                                                                       1, 03 , 5 8 , 5 04              1 , 03 , 5 8 , 5 04            1, 03 , 5 8, 5 04               1 , 03 , 5 8 , 5 04
+              - D il ut e d ( N o s . )                                                                                                    1, 03 , 5 8 , 5 04              1 , 03 , 5 8 , 5 04            1 , 03 , 5 8 , 5 04             1 , 03 , 5 8 , 5 04
+
+F o r a n d o n b e h a l f o f t h e B o a r d o f D ir e c t o r s o f M a c f o s L im it e d
+
+
+
+
+B in o d Pr a s a d
+W h o l e T im e D ir e c t o r & C F O
+D I N : 07 9 3 8 8 2 8
+D a t e : 1 1 / 08 / 2 02 6
+                                                                          PU N E
+Pl a c e : Pu n e
+
+[page 10]
+ NN oo tt ee s s :t o - S t a n d a l o n e a n d c o n s o l id a t e d u n a u d it e d f in a n c ia l r e s ul t s f o r t h e Q u a r t e r e n d e d o n
+ 3 0t h J u n e , 2 02 6 :
+        T h e a b o v e f in a n c ia l r e s ul t s a r e a s p e r R e g ul a t io n 3 3 o f t h e S E B I ( L is t in g O b l ig a t io n s a n d
+        D is c l o s ur e R e q uir e m e n t s ) R e g ul a t io n s , 201 5 a n d h a ve b e e n r e vie we d b y t h e A ud it
+  1
+        C o m m it t e e a n d h a v e b e e n a p p r o v e d b y t h e B o a r d o f D ir e c t o r s o f t h e C o m p a n y a t t h e ir
+        r e s p e c t ive m e e t in g h e l d o n 11t h A ug us t , 2026 .
+        T h e s e a r e t h e C o m p a n y' s f ir s t in t e r im f in a n c ia l r e s ul t s p r e p a r e d in a c c o r d a n c e wit h
+        I n d ia n A c c o un t in g S t a n d a r d s ( I n d A S ) p r e s c r ib e d un d e r S e c t io n 13 3 o f t h e C o m p a n ie s
+        A c t , 2013 , r e a d wit h t h e C o m p a n ie s ( I n d ia n A c c o u n t in g S t a n d a r d s ) R ul e s , 2015 , a s
+        a m e n d e d , a n d o t h e r a c c o un t in g p r in c ip l e s g e n e r a l l y a c c e p t e d in I n d ia . A c c o r d in g l y, t h e
+        C o m p a n y h a s p r e p a r e d t h e s e in t e r im f in a n c ia l r e s ul t s in a c c o r d a n c e wit h I n d A S 3 4,
+  2     I n t e r im F in a n c ia l R e p o r t in g , r e a d wit h I n d A S 101, F ir s t - t im e A d o p t io n o f I n d ia n
+        A c c o u n t in g S t a n d a r d s .
+        T h e c o m p a r a t ive f in a n c ia l in f o r m a t io n f o r t h e c o r r e s p o n d in g q ua r t e r e n d e d 3 o t h J u n e
+        2025 , a n d t h e q ua r t e r a n d ye a r e n d e d 3 1s t M a r c h , 2 02 6 h a s b e e n r e s t a t e d b y t h e
+        m a n a g e m e n t in a c c o r d a n c e wit h t h e p r in c ip l e s o f I n d A S 101 t o e n s ur e c o m p a r a b il it y.
+        T h e c o m p a n y is e n g a g e d in o n l y o n e b us in e s s , h e n c e n o s e p a r a t e s e g m e n t in f o r m a t io n
+        h a s b e e n f ur n is h e d in a c c o r d a n c e wit h I n d A S 108 'O pe r a t in g S e g m e n t s ' n o t if ie d un d e r
+        t h e C o m p a n ie s ( I n d ia n A c c o un t in g S t a n d a r d s ) R ul e s , 2015 .
+        T h e s t a t e m e n t in c l ud e s t h e r e s ul t s f o r t h e q u a r t e r e n d e d 3 0t h J u n e 2 02 6 of t h e c u r r e n t
+  4     f in a n c ia l ye a r w h ic h w e r e s ub j e c t t o l im it e d r e vie w b y t h e S t a t ut o r y A ud it o r .
+        T h e f ig ur e s f o r t h e c o r r e s p o n d in g p r e vio us p e r io d h a ve b e e n r e g r o up e d / r e c l a s s if ie d
+        w h e r e v e r n e c e s s a r y, t o m a k e t h e m c o m p a r a b l e .
+          D ur in g t h e f in a n c ia l ye a r 2025 - 26 , o n 1ut h M a r c h 2026 , t h e C o m p a n y is s ue d 9 41, 6 82
+        b o n us e q uit y s h a r e s o f T 10 e a c h , in t h e r a t io o f 1 ( o n e ) e q uit y s h a r e f o r e ve r y 10o ( t e n )
+  6
+        e x is t in g e q uit y s h a r e s h e l d b y t h e s h a r e h o l d e r s .
+        T h us , in Q 1 F Y 2025 - 26 , t h e n um b e r o f e q uit y s h a r e s us e d f o r c o m p ut in g E PS h a s b e e n
+        r e s t a t e d t o 1 0, 3 5 8 , 5 03 ( p o s t - b o n us ) , c o n s is t e n t wit h t h e b o n u s is s ue e f f e c t e d o n 1it h
+           M a r c h , 2026 , in a c c o r d a n c e wit h I n d A S 3 3 'E a r n in g s p e r S h a r e '
+         R e c o n c il ia t io n of T o t a l C o m p r e h e n s ive I n c o m e - S t a n d a l o n e & C o n s o l id a t e d is g ive n
+  7     h e r e un d e r a s A n n e x ur e I
+
+         T h e S t a t us o f I n ve s t o r s C o m p l a in t s d ur in g t h e q ua r t e r e n d e d o n g 0h J un e 2026 is a s
+        un d e r :
+ 8
+        Pe n d in g a t t h e b e g in n in g o f t h e a b o v e p e r io d :- N il
+        R e c e ive d d ur in g t h e a b o ve p e r io d : - N il
+        D is p o s e d t h e a b o v e p e r io d : - N il
+       R e m a in in g U n r e s o l ve d a t t h e e n d o f t h e A b o v e Pe r io d :- N il
+
+F or a n d on b eh alf of t h e b oar d
+M a c f o s L im it e d
+
+
+
+
+M r . B in o d Pr a s a d
+W h o l e T im e D ir e c t o r & C F O
+D I N :- 07 9 3 8 8 2 8
+D a t e : 11/ o 8 / 2026
+Pl a c e : Pu n e
+
+[page 11]
+                                                                                             A n n e x ur e I
+
+M a c f o s L im it e d
+R e c o n c il ia t io n o f T o t a l C o m p r e h e n s iv e I n c o m e - S t a n d a l o n e
+( A l l a m o u n t s a r e in R u p e e s in L a c s u n l e s s s t a t e d o t h e r wis e )
+                                                                                                                                                                                Year
+                                                                                                                                             Q ua r t e r e n d e d            en ded
+                                                                                                                                      M a r c h 3 1,        J u n e 3 0,    M a r c h 3 1,
+                                      Pa r t ic u l a r s                                                        I n d 'A S               2 02 6               2 02 5           2 02 6
+( 1) A s p e r I n d ' A S                                                                                                               9 8 0. 09            49 6 . 7 7      2, 5 44. 5 0
+                                                                                                                                         9 85 . 40            5 04 . 3 4      2, 5 6 4. 88
+( 2) A s p e r A S
+A ) D if f e r e n c e ( 1) - (2)                                                                                                        ( 5 . 3 2)            (7.57)          ( 20. 3 9 )
+
+( B ) D if f e r e n c e R e a s o n
+a) L e a s e I m pa c t                                                                                        I n d A S 116             ( 7 . 3 2)            ( 7 . 86 )      ( 25 . 5 1)
+                                                                                                                                           1. 45                1. 3 1           5 . 45
+b ) I n t e r e s t I n c o m e o n S e c ur it y D e p o s it s                                               I n d A S 1 09
+c ) D e p r e c ia t io n o n L e a s e l a n d ( Pl o t )                                                       I n d A S 16            ( 1. 7 9 )            ( 1. 7 9 )       ( 7 . 15 )
+d ) O t h e r A d j us t m e n t s                                                                                   NA                    0. 8 6               0. 8 6           3 . 45
+                                                                                                                                           1. 48               ( 0. 09 )         3.38
+e ) D e f e r r e d T a x I m p a c t o n I n d A S A d j us t m e n t s                                       I n d A S 12
+                                                                                                                                                               2 2 . 01         2 2 . 01
+f) G r a t uit y I m p a c t - O C I ( E m p l o ye e B e n e f it s E x p e n s e )                           I n d A S 19
+g ) D e f e r r e d T a x - O C i( D e f e r r e d T a x )                                                     I n d A S 12                                    ( 5 . 5 4)       ( 5 . 5 4)
+h ) O t h e r C o m p r e h e n s iv e I n c o m e ( 0C I ) ( N e t o f T a x ) :
+           i) R e m e a s u r e m e n t L o s s o n D e f in e d B e n e f it Pl a n s                                                                        ( 22. 01)        ( 22. 01)
+ ( G r a t uit y)                                                                                              I n d A S 19
+            i) I n c o m e t a x r e l a t in g t o it e m s t h a t wil l n o t b e                                                                            5.54             5.54
+ r e c l a s s if ie d t o p r o f it o r l o s s                                                               I n d A S 12
+
+
+ B ) T o t a l D if f e r e n c e                                                                                                        ( 5 . 3 2)            (7.57)         ( 20. 3 9 )
+
+  ( A ) - (B )                                                                                                                             0. 00               ( 0. 00)        ( 0. 00)
+
+
+ R e c o n c il ia t io n o f T o t a l C o m p r e h e n s iv e I n c o m e - C o n s o l id a t e d
+ ( A l l a m o u n t s a r e in R u p e e s in L a c s u n l e s s s t a t e d o t h e r w is e )
+                                                                                                                                                                            Year
+                                                                                                                                             Q ua r t e r e n d e d         en ded
+                                                                                                                                    M a r c h 3 1,        J u n e 3 0,      M a r c h 3 1,
+                                            Pa r t ic u l a r s                                                      I n d 'A S     2 02 6                2 02 5            2 02 6
+ ( 1) A s p e r I n d ' A S                                                                                                             9 81. 5 4             49 6 . 15      2, 5 43 . 5 4
+ ( 2) A s p e r A S                                                                                                                     9 86 . 89             5 03 . 7 0     2, 5 6 3 . 9 6
+ A ) D if f e r e n c e ( 1) - ( 2)                                                                                                      (5.35)                (7.55)          ( 20. 42)
+
+ ( B ) D if f e r e n c e R e a s o n
+ a) L e a s e I m pa c t                                                                                          I n d A S 116          ( 7 . 3 2)            ( 7 . 86 )      ( 25 . 5 1)
+                                                                                                                   I n d A S 1 09         1. 45                    1. 3 1        5 . 45
+ b ) I n t e r e s t I n c o m e o n S e c ur it y D e p o s it s
+ c ) D e p r e c ia t io n o n L e a s e l a n d ( Pl o t )                                                          I n d A S 16        ( 1. 7 9 )            ( 1. 7 9 )       ( 7 . 15 )
+                                                                                                                        NA                0. 8 3                0. 8 8           3 . 41
+ d ) O t h e r A d j us t m e n t s
+ e ) D e f e r r e d T a x I m p a c t o n I n d A S A d j us t m e n t s                                          I n d A S 12           1. 48                ( 0. 09 )         3.38
+                                                                                                                                                               2 2 . 01
+ ) G r a t uit y I m p a c t - O C I ( E m p l o ye e B e n e f it s E x p e n s e )                               I n d A S 19                                                 2 2 . 01
+ g) Defer r ed Tax - O CI (Defer r ed Tax )                                                                         I n d A S 12                               ( 5 . 5 4)       ( 5 . 5 4)
+ h ) O t h e r C o m p r e h e n s iv e I n c o m e ( 0C I ) ( N e t o f T a x ) :
+          i) R e m e a s u r e m e n t L o s s o n D e f in e d B e n e f it Pl a n s ( G r a t uit y)              I n d A S 19                              ( 22. 01 )       ( 22. 01)
+          ii) I n c o m e t a x r e l a t in g t o it e m s t h a t will n o t b e r e c l a s s if ie d t o                                                    5.54             5.54
+ p r o f it o r l o s s                                                                                             I n d A S 12
+
+  B ) T o t a l D if f e r e n c e                                                                                                       (5.35)                (7.55)          ( 20. 42)
+
+                                                                                                                                         ( 0. 00)                  0. 00        ( 0. 00)
+L A ) - (B)
+
+
+                                                                                                               PN E
+
+[page 12]
+                                   Annexure To The Notice
+
+  DETAILS OF DIRECTORS SEEKING APPOINTMENT/ RE-APPOINTMENT AT THE
+                       ANNUAL GENERAL MEETING
+
+
+
+PARTICULARS                                    MR. NILESHKUMAR PURUSHOTTAM
+                                               CHAVHAN
+DIN                                            07936897
+Date of Birth                                  15/04/1988
+Date of Appointment                            11/01/2023
+Qualifications                                 M.E. - Mechanical, IISc Banglore - 2012
+Expertise in specific functional areas         12 Year Experience in the eld of Electronics,
+                                               Robotics, Thermals and Fluids. Software,
+                                               Electronics Development, Sales
+Directorships held in other public companies   NA
+(excluding foreign companies and Section 8
+companies)
+Memberships / Chairmanships of committees      NA
+of other public companies
+Number of shares held in the Company           21,69,150 (23.04%) Equity Shares
+Inter-se Relationship between Directors        NA
+
+```yaml
+stage: A1-extractor
+company: "MCFOS"
+quarter: "Q1 FY27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+page_count: 12
+formfeed_count: 7
+line_count: 666
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+ocr_pages: [3, 4, 6, 7, 8]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/mcfos-q1fy27/work/extract_results_mcfos_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

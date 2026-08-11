@@ -34,3 +34,13 @@ Note: filenames as uploaded do NOT correspond to their content (the file named
 ## PIPELINE PLAN
 A1→A2→A3 per document on D1 (results), D2 (presentation deck), D3 (press release), D4 (concall).
 Then A4 merged review (Role 4 first, Role 5 second), then A5 adversary, then Notion save + commit.
+
+## RUN CLOSE — 2026-08-11
+- Chain complete: A1 (4 docs extracted) → A2 (4 ledgers, count-tests reconciled) → A3 (4 forensics, 17-check) → A4 (merged Role 4/5 review) → A5 (adversary).
+- A5 VERDICT: COMPLETE. No loop-back required. One advisory (immaterial Rs0.10 Cr consol expense-line OCR gap) logged for next run's A2.
+- A4 verdict: PROCEED WITH FLAGS. Cash-conversion axis INDETERMINATE (no CFS in Reg 33 half-yearly filing) → capped at PROCEED WITH CAVEATS; PROCEED WITH FLAGS is strictly more conservative, cap honoured.
+- Pre-committed print: BEAR (consol quarterly EBITDA −Rs21.9 Cr < −Rs20 Cr threshold). Q4FY26 breakeven reversed.
+- Management archetype: OVERPROMISER-WATCH; credibility held provisional Grade B with formal watch (Q2 miss → C).
+- Decision Status: WATCHLIST hold (flag, not decide). Master gate pushed to Q2 FY27. Human decides.
+- Notion save: page 345bb2b9-d3ab-80a9-8b02-efef533e1865 — Role 4, Role 5, A3 scorecard, silence audit all verified present.
+- LESSONS.md: absent in this clone; no append target. Recurrent PDF-tooling-absent pattern noted in TOOLCHAIN PRECHECK above.

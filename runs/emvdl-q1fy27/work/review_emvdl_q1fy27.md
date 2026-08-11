@@ -412,7 +412,7 @@ From Turns 2 (Aditya, MD), 3 (Sachin, CEO), 4 (Rajesh, CFO). Material claims:
 | 18 | Ongoing dev portfolio (11 assets) ~70% sold by saleable area | Backward | YES | T3/L22 (N24/N25) |
 | 19 | ₹13,630 Cr cumulative unsold inventory (resi + commercial) | Backward | YES | T3/L22 (N26) |
 | 20 | Paradiso + balance Golf City towers OC in FY27; Edge + East Avenue completion FY28 | Forward | YES (dated) | T3/L22 (FC5/FC6) |
-| 21 | Project-level GDVs: Embassy 1 N-Tower 400k sf/₹1,400 Cr; KP villas+apts 80+ac/₹4,450 Cr; Springs front 1.7 msf/₹1,900 Cr; Whitefield JDA 68.5%/₹2,000 Cr; Hub Plot A 1.2 msf/₹2,100 Cr @91%; 109 Comm Ph2 ₹800 Cr/0.5 msf | Operational/Forward | YES | T3/L22 (N32-N45) |
+| 21 | Project-level GDVs: Embassy 1 N-Tower 400k sf/₹1,400 Cr; KP villas+apts 80+ac/₹4,450 Cr; Springs front 1.7 msf/₹1,900 Cr; Whitefield JDA ~68% share (garbled "68 12%" T3/L22 — verify)/₹2,000 Cr; Hub Plot A 1.2 msf/₹2,100 Cr @91%; 109 Comm Ph2 ₹800 Cr/0.5 msf | Operational/Forward | YES | T3/L22 (N32-N45) |
 | 22 | MDC Terazza DM RERA received "last week" | Operational | YES (milestone) | T3/L22 (FC8) |
 | 23 | Beyond-FY27 pipeline 20.3 msf / ~₹23,470 Cr GDV | Forward | YES | T3/L22 (N46/N47) |
 | 24 | Fully-paid 3,000+ acre land bank incl. 1,400+ acre Nasik (seeking amicable MIDC solution) | Strategic | YES | T3/L22 (N48/N49) |

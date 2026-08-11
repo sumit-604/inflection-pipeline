@@ -7,7 +7,7 @@
 
 ## LEDGER-RECONCILIATION PREAMBLE (contractual, before Step 1)
 
-**Results filing ledger** contains: 25 notes (11 standalone + 14 consolidated), 87 financial line items (57 standalone-side rows / 30 consolidated rows per A2 count), 4 Board-outcome agenda items + 2 sub-annexures, 14 auditor paragraphs, 184 consolidation entities, 7 zero-standing cells, 5 signature/timestamp blocks. **All reviewed.**
+**Results filing ledger** contains: 25 notes (11 standalone + 14 consolidated), 57 financial line items (23 standalone + 30 consolidated + 4 Note-10 standalone sub-table rows, per A2 count test = 57), 4 Board-outcome agenda items + 2 sub-annexures, 14 auditor paragraphs, 184 consolidation entities, 7 zero-standing cells, 5 signature/timestamp blocks. **All reviewed.**
 
 **Presentation ledger** contains: 33 slides, 334 enumerated disclosure/data units (74 structured line items, 92 KPI callouts, 30 chart points, 10 cap-table points, 18 footnotes, 12 forward-looking/guidance rows, 6 notes, 56 glossary terms), 11 zero-standing cells. **All reviewed.**
 
@@ -106,6 +106,8 @@ No ledger row is unreviewed. Both A3 files self-report reconciliation = 100% and
 
 Note the OCR-garbled FX-translation OCI cell (A3-07/F9): the Q1FY27 value is illegible at source (3 of 4 periods legible). Reported as ND; verify at Annual Report. Actuarial-remeasurement OCI is nil/dash this quarter (no swing).
 
+**Consolidated total tax line — sign check (feeds Step 4 bridge):** the results "Total tax expense/(credit)" row is POSITIVE in both compared quarters — Q1FY26 +0.842 Cr and Q1FY27 +0.289 Cr are tax CHARGES (expenses), not credits (extract L895-897; ledger L171). Q4FY26 (19.304) and FY26 (23.037) are credits. This sign is load-bearing for the PAT bridge.
+
 ### 1C. Derived metrics (₹ Cr; formulas per protocol)
 
 | Derived metric | Q1FY26 S / C | Q4FY26 S / C | Q1FY27 S / C | FY26 S / C |
@@ -115,7 +117,7 @@ Note the OCR-garbled FX-translation OCI cell (A3-07/F9): the Q1FY27 value is ill
 | Op EBITDA margin (on Rev) | (11.3%) / (1.6%) | (80.0%) / (75.1%) | (567.5%) / (60.3%) | (46.0%) / (27.3%) |
 | Core PBT ex-OI (PBT−OI) | (97.158) / (177.890) | (124.162) / (409.619) | (103.742) / (262.207) | (410.131) / (1,070.610) |
 | Other Income / PBT | n/m (both −) | n/m | n/m | n/m |
-| Effective tax rate (Tax/PBT) | 1.7% charge-on-loss / −0.5% | 3.8% credit / 5.6% credit | −0.8% charge-on-loss / −0.1% charge-on-loss | 4.4% credit / 2.6% credit |
+| Effective tax rate (Tax/PBT) | 1.7% charge-on-loss / −0.5% charge-on-loss | 3.8% credit / 5.6% credit | −0.8% charge-on-loss / −0.1% charge-on-loss | 4.4% credit / 2.6% credit |
 | PAT margin (on Rev) | (74.7%) / (24.3%) | (83.3%) / (94.4%) | (697.5%) / (108.1%) | (68.7%) / (50.4%) |
 
 **Cross-check (feeds Role 5 Step 7A):** consolidated **Reported EBITDA** computed from the results filing reconciles EXACTLY to the presentation's own "EBIDTA [A-B]" line (deck: Q1FY26 +2, Q4FY26 (196), Q1FY27 (106), FY26 (300) — line 702; computed (2.37) / (192.32) / (106.13) / (300.14)). The deck's EBITDA is PBT+D+Finance, i.e. it INCLUDES interest/other income (₹25 Cr Q1FY27) inside "gross profit". CONFIRMED, no discrepancy.
@@ -181,15 +183,17 @@ Accounting rows consolidated (₹ Cr); operating rows from deck (₹ Cr / '000 s
 | Finance cost change | +41.853 (lower) | −26.1% | Recurring (refi/deleverage) — favourable |
 | Other Income change | +11.395 | +86.8% | Mixed (treasury) |
 | JV share change | +3.611 | n/m | Mixed |
-| Tax change | −2.047 (from 0.842 credit to 0.289 charge) | n/m | Mixed (DTA non-recognition) |
+| Tax change | +0.553 (tax expense fell, from a 0.842 charge to a 0.289 charge) | favourable | Mixed (DTA non-recognition) |
 | Exceptional items | 0 (dash both years) | — | NON-RECURRING (none) |
-| **Reported PAT YoY change (loss widened)** | **−68.758** ((165.644)→(234.402)) | **+41.5% loss** | — |
+| **Reported PAT (after-JV) YoY change (loss widened)** | **−68.758** ((165.644)→(234.402)) | **+41.5% loss** | — |
+
+**Bridge reconciliation (re-verified end to end):** components sum to −77.098 − 42.797 − 6.275 + 41.853 + 11.395 + 3.611 + 0.553 + 0 = **−68.758 Cr**, which EQUALS the actual consolidated loss-after-JV change (Q1FY26 (165.644) → Q1FY27 (234.402)). The tax-change cell is corrected: Q1FY26 total tax of +0.842 Cr is a CHARGE (not a credit) and Q1FY27 is a +0.289 Cr charge, so the lower tax expense contributes +0.553 favourable (prior draft had −2.047, which mis-signed Q1FY26 and left the bridge summing to −71.358; now corrected and reconciling).
 
 **Answers:**
 - **% of YoY PAT change from recurring core vs non-recurring?** ~100% recurring/structural. There is no exceptional item, no treasury spike inflating the number. The wider loss is driven by lower completion-method gross profit (−₹77.1 Cr) and higher operating cost (−₹42.8 Cr), only partly cushioned by ₹41.9 Cr finance-cost relief. Non-recurring items are effectively nil.
 - **If Other Income reverts to prior year?** PAT loss would be ~₹11.4 Cr wider — Other Income is a small cushion, not a crutch.
 - **D&A / finance at steady state?** Finance cost is the genuine improving line and should keep falling as the ₹920 Cr refi at ~11% [Notion memory] replaces higher-cost debt; D&A elevated on merged asset base.
-- **Tax adjustments?** Yes — persistent DTA non-recognition: consolidated deferred-tax CREDITS in prior periods ((221.0) Q4, (341.95) FY26) built DTA on losses, but Q1FY27 books a small net tax CHARGE (₹0.29 Cr) on a ₹237.7 Cr pre-tax loss (A3-06/F8-a). Recoverability of accumulated DTA is a live question if losses persist.
+- **Tax adjustments?** Yes — persistent DTA non-recognition: consolidated deferred-tax CREDITS in prior periods ((221.0) Q4, (341.95) FY26) built DTA on losses, but Q1FY27 books a small net tax CHARGE (₹0.29 Cr) on a ₹237.7 Cr pre-tax loss (A3-06/F8-a). Q1FY26 was likewise a small charge (₹0.84 Cr). Recoverability of accumulated DTA is a live question if losses persist.
 
 ---
 
@@ -318,7 +322,7 @@ Not held — no trim ladder. Re-entry gates HOLD as stated. Add one gate-tighten
 
 ## STEP 8.5 — QUESTIONS FOR MANAGEMENT
 
-Channel note: **NO concall was held/供plied** — these go via **IR email / AGM Q&A** (AGM notice pending). Every A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to at least one row (from_finding_id column).
+Channel note: **NO concall was held/supplied** — these go via **IR email / AGM Q&A** (AGM notice pending). Every A3 FORWARD-SIGNAL and AMBIGUOUS finding maps to at least one row (from_finding_id column).
 
 | # | Question | Why it matters | Bull answer | Bear answer | From finding |
 |---|---|---|---|---|---|
@@ -475,4 +479,4 @@ EMVDL competes with large listed developers in its core geographies — most dir
 
 ---
 
-*Reviewed 2026-08-11 | Sources: results_emvdl_q1fy27.pdf (BSE/NSE Reg 33 + Reg 30 board outcome, 20pp) and presentation_emvdl_q1fy27.pdf (Investor Update, 33 slides). No concall transcript supplied — Role 5 presentation-only. Decision Status verified against live Notion context: WATCHLIST / AVOID, EXITED.*
+*Reviewed 2026-08-11 | Sources: results_emvdl_q1fy27.pdf (BSE/NSE Reg 33 + Reg 30 board outcome, 20pp) and presentation_emvdl_q1fy27.pdf (Investor Update, 33 slides). No concall transcript supplied — Role 5 presentation-only. Decision Status verified against live Notion context: WATCHLIST / AVOID, EXITED. A5 corrections applied: Step-4 tax-change sign (+0.553, bridge reconciles to −68.758) and preamble line-item count (57).*

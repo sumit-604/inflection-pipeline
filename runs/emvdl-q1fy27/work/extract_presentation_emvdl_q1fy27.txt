@@ -1,0 +1,1052 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_emvdl_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 33
+formfeed_count: 33
+line_count: 1052
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (all financial figures in this deck are already stated in INR Cr / INR Crore; area figures in msft/sqft and land in acres are non-monetary and require no conversion)
+ocr_pages: [28]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-11
+=== END HEADER ===
+
+NOTES ON EXTRACTION METHOD (mechanical, not interpretive):
+- Primary extraction via `pdftotext -layout` on all 33 pages; page breaks confirmed via form-feed count (33) matching pdfinfo page count (33).
+- Per-page character count check run on all 33 pages. Only page 28 (COMMUNITY OUTREACH section divider) yielded under 100 extracted characters (93 chars); rasterised at 200dpi and OCR'd with tesseract. OCR output matched the pdftotext extraction exactly (both show only "COMMUNITY" / "OUTREACH"); no additional text recovered. Merged and labeled [OCR page 28] below.
+- Three chart-heavy pages (9, 16, 21) were independently rasterised and OCR'd as a cross-check even though each exceeded the 100-character threshold, because axis/data labels on bar and pie charts can carry data not present elsewhere. OCR confirmed all chart values are already present as extractable text in the pdftotext -layout output (matched line for line, modulo OCR noise); flagged inline as [CHART, page N] with no new data merged.
+- Page footer numbering printed inside the deck itself (visible in the extracted text, e.g. "27" on PDF page 28) is the deck's own internal pagination (starts at "2" on PDF physical page 3) and is DISTINCT from the [page N] markers below, which are physical PDF page numbers 1-33 per pdfinfo. Downstream agents should cite the [page N] marker, not the deck's printed footer number.
+
+=== EXTRACTED TEXT (33 pages, [page N] markers = physical PDF page number) ===
+
+[page 1]
+August 10, 2026
+
+Scrip Code: 532832                                      Symbol: EMBDL
+BSE Limited                                             National Stock Exchange of India Limited
+Phiroze Jeejeebhoy Towers,                              Exchange Plaza, C-1, Block G,
+Dalal Street, Mumbai – 400 001                          Bandra Kurla Complex, Mumbai – 400 051
+
+
+Sub: Investor Update for the quarter ended June 30, 2026
+
+Dear Sir/Madam,
+
+Please find enclosed herewith ‘Investor Update’ of Embassy Developments Limited (the “Company”) for the
+quarter ended June 30, 2026, for your information and records.
+
+Yours truly,
+For Embassy Developments Limited
+(Formerly Equinox India Developments Limited)
+           Digitally signed by
+Vikas      Vikas Khandelwal
+
+Khandelwal Date: 2026.08.10
+           20:39:32 +05'30'
+
+Vikas Khandelwal
+Company Secretary
+
+Encl: as above
+
+
+
+
+ EMBASSY DEVELOPMENTS LIMITED
+ (Formerly Equinox India Developments Limited)
+ E: ir@embassyindia.com W: www.embassyindia.com CIN: L45101HR2006PLC095409
+
+ Bengaluru Office:                   Mumbai Office:                     Registered Office:
+ Embassy One-Pinnacle, 14th floor,   One World Center, Tower 2A,        01-1001, WeWork,
+ Bellary Road, Dena Bank Colony,     4th floor, Senapati Bapat Marg,    Blue One Square, Udyog Vihar
+ Bengaluru Karnataka - 560032.       Mumbai – 400013                    Phase 4 Rd, Gurugram, Haryana-122016
+ T : (080) 69354859                  T: (022) 65722233                  T: (0124) 4609559
+
+
+[page 2]
+                                             INVESTOR UPDATE
+                                                Q1 - FY 2027
+Code Name North Yelahanka | Rendered Image
+
+
+[page 3]
+MESSAGE | MANAGING DIRECTOR
+                                                                                                                                                                 Investor Presentation – Q1 FY2027
+
+
+
+
+Dear Shareholders,
+
+We have started FY27 with good momentum.
+
+Pre-sales for Q1 FY27 stood at approximately ₹868 crore, an increase of 338% over the same period last year, while collections grew 54% to approximately ₹496 crore. The quarter
+reflects continued demand for our projects and disciplined execution across the business.
+
+Bengaluru continued to lead our performance, with approximately 72% of launched inventory sold within six months. Across the 4.3 million sq. ft. launched during FY26, nearly 59%
+has already been sold as of June 30, 2026, giving us confidence in the strength of demand across our portfolio.
+
+Execution remains equally important. During the quarter, One 09 in Gurugram received its Occupancy Certificate, bringing us closer to handing over homes to our customers in NCR.
+At Golfcity, Savroli, five towers also received their Occupancy Certificate, reflecting steady progress across our projects.
+
+Our balance sheet continues to strengthen. Net institutional debt stood at approximately ₹3,363 crore as of June 30, 2026, while cash and cash equivalents stood at approximately
+₹1,202 crore. Our leverage remains comfortably within our stated guidance.
+
+The Board has approved a preferential allotment of convertible warrants to Embassy Group at ₹111.51 per share., subject to shareholder approval. The proceeds will be used to repay
+outstanding shareholder debt, further strengthening our balance sheet and lowering our cost of capital. We see this as an important step in preparing the business for its next phase
+of growth. The continued support of our shareholders reflect their confidence in the business we are building.
+
+As we have said before, residential development is a long-cycle business. The investments we are making today—in land, launches and new markets—will progressively translate into
+reported earnings as projects mature through their development lifecycle. This gives us confidence in the long-term trajectory of the company.
+
+Our priorities remain unchanged. We are focused on execution, disciplined capital allocation and delivering a consistently high-quality customer experience. With the momentum we
+have built in the first quarter. With 4 projects out of our overall guidance of 11 projects in FY27 slated to launch in Q2 we remain on track to achieve our FY27 guidance of approximately
+₹6,000 crore in pre-sales from owned developments and ₹2,000 crore from development management projects.
+
+Thank you to our customers, partners, investors and employees for your continued confidence and support. We look forward to updating you on our progress through the year.
+
+
+Best Wishes,
+
+Aditya Virwani
+Managing Director & Promoter
+
+                                                                                                                                                                                                     2
+
+
+[page 4]
+      EDL | SNAPSHOT
+                                                                                                                                                                                   Investor Presentation – Q1 FY2027
+
+
+
+
+         7+ Cities                                 40+                                   38 msf
+
+         Presence                               Projects(1)                              Portfolio
+                                                                                         (Saleable + Leasable)
+
+
+
+
+         ~26 msf                                ~12 msf                                  3,251 acres
+
+         Residential                            Commercial                               Land Bank
+                                                (Retail + Office)                        (excl. Projects)
+
+
+
+
+         ~57k INR Cr                            ~41k INR Cr                              ~16k INR Cr
+
+         Total GDV(2)                           Residential GDV (2)                      Commercial GDV (2)
+
+
+
+
+         ~30k INR Cr                              ~53%                                    ~9.7k INR Cr
+
+         Surplus(3)                               Project Surplus                         Total Equity
+                                                  Margin %
+
+
+
+
+(1) Successive phased launches in a project counted as separate projects
+(2) Management estimates, includes all owned, JDA & DM projects & excludes all landbanks and Embassy Knowledge Park Commercia l
+(3) Management estimates, refers to project level gross realizable value after construction & approvals cost. Includes all the projects & DM
+fees and excludes all landbanks and Embassy Knowledge Park commercial
+                                                                                                                                               Embassy Serenity | Rendered Image                                       3
+
+
+[page 5]
+                                                                          Investor Presentation – Q1 FY2027
+
+                                   CONTENTS
+
+
+                                   •   Q1 FY 2027
+                                   Key Business Updates and Performance
+
+
+
+                                   •   FY 2027
+                                   Outlook and Launch Pipeline
+
+
+
+                                   •   FINANCIAL PERFORMANCE
+                                   Cashflow & Profit & Loss
+
+
+
+                                   •   ANNEXURES
+
+
+
+
+Embassy Citadel | Rendered Image
+                                                                                                              4
+
+
+[page 6]
+                                                                Investor Presentation – Q1 FY2027
+
+
+
+
+                                                                Q1 FY 2027
+                                   KEY BUSINESS UPDATES AND PERFORMANCE
+
+Embassy Terazza | Rendered Image
+                                                                                                    5
+
+
+[page 7]
+                                EDL | Q1 FY 2027 SNAPSHOT                                            Investor Presentation – Q1 FY2027
+
+
+
+
+                                INR 868 Cr
+
+                                Pre-Sales for Q1 FY2027
+
+
+
+
+                                INR 496 Cr
+                                Collections for Q1 FY2027
+
+
+
+
+                                INR 19.8k Cr
+
+                                Launch pipeline GDV for FY2027 (Across 9 owned and 2 DM projects )
+
+
+
+
+                                INR 276 Cr
+
+                                Construction Spend for Q1 FY27
+
+
+
+
+Embassy Eden | Rendered Image                                                                                                            6
+
+
+[page 8]
+       KEY HIGHLIGHTS | Q1 FY2027
+                                                                                                                                   Investor Presentation – Q1 FY2027
+
+
+      • Pre-sales: INR 868 Cr in Q1FY27 vs INR 198 Cr in Q1 FY26, up 338% Y-o-Y
+
+
+
+      • Area Sold: 484k sf in Q1FY27 vs 206k sf in Q1 FY26, up 135% Y-o-Y
+
+
+      • Collections: INR 496 Cr in Q1FY27 vs INR 322 Cr in Q1 FY26, up 54% Y-o-Y
+
+
+      • Construction spend(1): INR 276 Cr in Q1FY27; spends to collections at ~56% for Q1 FY 27
+
+
+      • Possessions in Q1FY27: OC received for One 09 - Phase 1, Gurugram, and for additional 5 towers at Golfcity, Savroli, MMR
+
+
+      • Gross Institutional Debt (2) stood at ~INR 4.5k Cr with 0.47x debt to equity; Total Equity at ~INR 9.7k Cr
+
+
+      • Cash & cash equivalents at ~INR 1.2k Cr, Net institutional debt stood at ~INR 3.3k Cr (0.35x net debt to equity
+
+
+
+
+(1) Construction spends include spends towards OC received, Ongoing and Upcoming Projects
+(2) Excludes shareholders’ debt of INR 1.1k Cr                                                                                                                         7
+
+
+[page 9]
+[CHART, page 9: Area Sold / Pre-Sales / Collections QoQ and YoY bar charts; all axis values and % change labels are rendered as extractable text and are captured verbatim below; OCR cross-check performed, no additional data found]
+Q1 FY 2027 | GROWTH TRAJECTORY
+                                                                                                                                                                                               Investor Presentation – Q1 FY2027
+
+
+                                                                          For the quarter ended 30th Jun 2026
+
+                     Area Sold QoQ ('000 sqft)                                              Pre-Sales QoQ (INR Cr.)                                                Collections QoQ (INR Cr.)
+ 2,000                                                                 3,000                                                                 700
+                                             1,783                                                                 2,632
+ 1,800                                                                                                                                                                                     577
+                                                                                                                                             600
+                                                                       2,500
+ 1,600
+                                                                                                                                                                                                              496
+ 1,400                                                                                                                                       500
+                             1,192                                     2,000                                                                                               414
+ 1,200
+                                                                                                                                             400        359
+ 1,000                                                                 1,500                       1,392
+                                                                                                                                             300
+  800
+                                                                       1,000                                                         868
+  600                                                          484                                                                           200
+           407
+  400                                                                            409
+                                                                        500
+                                                                                                                                             100
+  200
+
+    0                                                                     0                                                                    0
+          Q2FY26            Q3FY26         Q4FY26             Q1FY27            Q2FY26            Q3FY26          Q4FY26            Q1FY27             Q2FY26             Q3FY26          Q4FY26             Q1FY27
+
+
+                 193%                49%             (73%)                               240%               89%              (67%)                              15%                39%             (14%)
+
+
+                                                                                            Year on Year
+                          Area Sold ('000 sqft)                                                   Pre-Sales (INR Cr.)                                                     Collections (INR Cr.)
+  1,000                                                                 1,000                                                                 1,000
+                                                                                                                            868
+
+
+
+
+                                                      484                                                                                                                                             496
+
+
+                                                                                                                                                                  322
+
+                    206                                                                   198
+
+
+
+
+     0                                                                     0                                                                       0
+
+                   Q1FY26                            Q1FY27                              Q1FY26                            Q1FY27                                Q1FY26                             Q1FY27
+
+                                      135%                                                                    338%                                                                       54%                                       8
+
+
+[page 10]
+    Q1 FY 2027 | OC RECEIVED PROJECTS
+                                                                                                    Investor Presentation – Q1 FY2027
+
+
+
+
+                  PROJECT                                            CITY      PRE SALES   SOLD RECIVABLES + INVENTORY
+
+                                                                                  INR Cr                               INR Cr
+
+          1       Embassy Grove                                    Bangalore         22                                     24
+
+                                                       (1)
+         2        Embassy Lake Terraces                            Bangalore        (13)                                    78
+
+         3        Garden plots @ Embassy Springs                   Bangalore          5                                     66
+
+                                                             (2)
+         4        Serene Amara @ Embassy Springs                   Bangalore          8                                      21
+
+         5        Sierra                                             Vizag             -                                      2
+
+         6        Golf City, Phase 1                                Savroli            -                                   203
+
+         7        Embassy Sky Forest                               Mumbai              7                                    32
+
+         8        Embassy One, Phase 1                              Thane              -                                      2
+
+         9        One 09 – Phase 1                                 Gurugram            -                                   104
+
+         10       Others                                                              8                                    153
+
+     OC Received Projects                                                            38                                   683
+
+
+
+
+(1) Embassy economic interest – 63.72% revenue share
+(2) Embassy economic interest – 50% joint venture                                                                                       9
+
+
+[page 11]
+    Q1 FY 2027 | LAUNCHED & UNDER CONSTRUCTION PROJECTS
+                                                                                                                              Investor Presentation – Q1 FY2027
+
+
+
+
+                  PROJECT                                                       TARGET OC      CITY        PRE SALES   SOLD RECIVABLES + INVENTORY
+
+                                                                                                              INR Cr                               INR Cr
+                  Ongoing Projects
+         1        Golf City, Savroli , Phase 2(1)                                FY 2027    Savroli, MMR           2                                   217
+         2        Embassy Edge @ Embassy Springs                                 FY 2028     Bengaluru            53                                  438
+         3        Embassy East Avenue(2)                                         FY 2028     Bengaluru           (1)                                    97
+         4        Embassy Verde @ Embassy Springs                                FY 2029     Bengaluru           93                                   683
+         5        Embassy One, Phase 2                                           FY 2030    Thane, MMR           44                                   533
+         6        Embassy Park, Panvel                                           FY 2030    Panvel, MMR           37                                 1,835
+         7        Paradiso @ Embassy Springs                                     FY 2027     Bengaluru             -                                   172
+         8        Embassy Greenshore                                             FY 2031     Bengaluru           121                                 1,499
+         9        Embassy Eden                                                   FY 2031     Bengaluru            61                                 1,939
+
+        10        Embassy Verde Phase 2 @ Embassy Springs                        FY 2031     Bengaluru            92                                  623
+
+         11       Embassy Citadel, Worli                                         FY 2035    Mumbai, MMR         328                                  8,414
+
+        12        Embassy East Business Park, Phase 1 –2.8 msft Commercial(3)    FY 2031     Bengaluru
+                                                                                                                                                     3,100
+     Launched & under construction project                                                                      830                                19,550
+
+
+
+
+ (1) Partial OC received project
+(2) Embassy economic interest – 67.57% area share
+(3) Commercial project, monetization strategy to be evaluated                                                                                                 10
+
+
+[page 12]
+                                 Investor Presentation – Q1 FY2027
+
+
+
+
+                                    FY 2027
+                                   OUTLOOK
+
+Embassy Verde | Rendered Image
+                                                                     11
+
+
+[page 13]
+                                                         FY 2027 | OUTLOOK
+                                                                                                                               Investor Presentation – Q1 FY2027
+
+
+
+
+                                                                                                     INR 6k Cr(2)
+                                                                                                   FY27 Pre Sales Target
+                                                         INR 19.8k Cr                   (1)
+                                                                                                                                INR 3k Cr(2)
+                                                                                                          +
+                                                            New launch GDV                                                       FY27 collections
+                                                                                                      INR 2k Cr
+                                                                                                FY27 Pre Sales – DM Projects
+
+
+
+
+                                            (1) Including JV, landowner share and DM projects
+Codename North Yelahanka | Rendered Image   (2) From existing projects and FY 27 launches                                                                      12
+
+
+[page 14]
+    FY2027 | NEW LAUNCH PIPELINE
+                                                                                                                                              Investor Presentation – Q1 FY2027
+
+
+
+
+       #               PROJECT                                                                  TYPE             CITY        SALEABLE AREA                   GDV
+
+                                                                                                                                     msft                 INR Cr
+
+       1               Embassy One – North Tower                                            Apartments         Bengaluru               0.4                  1,400
+
+       2               Embassy Knowledge Park – Villas                                          Villas         Bengaluru                1.1                2,500
+
+       3               Embassy Knowledge Park – Apartments (South)                          Apartments         Bengaluru                1.5                 1,950
+
+       4               109 Commercial, Gurgaon – New(1)                                     Commercial            NCR                  0.5                    800
+
+       5               Embassy Serenity, Alibaug                                            Apartments        Alibaug, MMR             0.3                    450
+
+       6               Plots @ Embassy Springs 9 Acres                                          Plots          Bengaluru               0.2                    200
+
+       7               Front Parcel Villas & Apartments @ Embassy Springs                 Apartments/Villas    Bengaluru                1.7                 1,900
+
+       8               Whitefield (JDA Project)(2)                                          Apartments         Bengaluru                1.7                2,000
+
+       9               Embassy Hub (Plot A)(3)                                              Apartments         Bengaluru                1.2                 2,100
+
+                       TOTAL — FY27 – New launches                                                                                     8.7                13,300
+
+       10              Embassy Terazza (Juhu) – DM Project                                  Apartments        Mumbai, MMR              0.3                 3,050
+
+       11              Sky Terraces – DM Project                                            Apartments         Bengaluru                1.5                3,050
+
+                       TOTAL — FY27 – New launches (with DM Projects)                                                                 10.5                19,400
+
+
+
+
+(1) Including retail area of 0.06sft and monetization of same is still under evaluation
+(2) Embassy’s economic interest is 68.5%
+(3) Embassy’s economic interest is 91%                                                                                                                                        13
+
+
+[page 15]
+FUTURE DEVELOPMENTS
+                                                                                                   Investor Presentation – Q1 FY2027
+
+
+
+
+NO.                  PLANNED PROJECTS               CATEGORY          CITY        SALEABLE AREA                        GDV
+
+                                                                                           msft                      INR Cr
+
+1     Embassy One, Thane – Phase 3                  Residential    Thane, MMR                0.5                       1,100
+
+2     103 – Group Housing, Gurugram                 Residential   Gurugram, NCR             0.8                        1,300
+
+3     Panvel - 2 Acres                              Residential    Panvel, MMR              0.4                         500
+
+4     Arivali                                       Residential    Panvel, MMR              0.8                         700
+
+5     Savroli, Plotted                              Residential    Savroli, MMR              1.7                        850
+
+6     Embassy Verde – Phase 3                       Residential     Bengaluru                1.6                       1,500
+
+7     Centrum – Residential                         Residential      Indore                  2.1                       1,400
+
+8     Embassy Residency                             Residential     Chennai                  1.5                       1,200
+
+9     Embassy East Business Park – Phase II         Commercial      Bengaluru                2.8                      3,600
+
+10    Embassy Knowledge Park                        Commercial      Bengaluru          116 Acres      Under evaluation
+
+11    Embassy Tech Valley                             Mix use       Bengaluru               5.8                       8,200
+
+12    Embassy Knowledge Park - Apartments (North)   Residential     Bengaluru                2.4                       3,120
+
+      TOTAL — FY 28 onwards GDV                                                            20.3                     23,470
+
+
+
+
+                                                                                                                                  14
+
+
+[page 16]
+[CHART, page 16: Project Surplus waterfall/bar chart (Inventory / Sold Receivables / Pending Costs / Project Surplus, Own vs DM Projects); all bar values rendered as extractable text and captured verbatim below; OCR cross-check performed, no additional data found]
+    PROJECTS SURPLUS
+                                                                                                                                                  Investor Presentation – Q1 FY2027
+
+
+                                                                      Project Surplus (INR Cr)
+       65,000
+       55,000                  6,100
+       45,000
+        35,000                                                                                                                                  610
+        25,000                50,822
+        15,000                                                                                                                                 29,684
+         5,000                                                6,181
+       (5,000)
+      (15,000)                                                                                        (27,320)
+      (25,000)
+     (35,000)
+                             Inventory                Sold Receivables                              Pending Costs                          Project Surplus
+
+                                                                      Own Projects    DM Projects
+
+
+                                                                                                                                                               All figures in INR cr
+
+
+     Particulars                             GDV/Inventory                Sold Receivables                   Pending Construction Costs                 Project Surplus *
+
+    OC Received                                        422                              261                                        (321)                                    362
+    Launched & Under Construction                    13,630                           5,920                                      (8,030)                                 11,520
+    FY27 Upcoming Projects                           13,300                               -                                      (6,271)                                 7,029
+    Planned Projects (excluding land bank)           23,470                               -                                     (12,698)                                10,772
+     Own Projects Total                             50,822                            6,181                                    (27,320)                              29,684
+     DM Projects                                      6,100                               -                                           -                                      610
+     Total (Incl DM)                                56,922                            6,181                                    (27,320)                               30,294
+
+
+* Excludes all Land bank                                                                                                                                                               15
+
+
+[page 17]
+LAND BANK
+                                                                                                                                                           Investor Presentation – Q1 FY2027
+
+
+Our fully paid land banks of 3,251 acres represent a significant asset, positioning us for substantial future growth and offering strategic flexibility.
+
+
+
+
+  •   Total fully paid-up land bank of 3,251 acres, one of                       Region: North
+
+      the largest amongst listed players                                         Land Area (Acres): 542
+
+
+
+
+  •   Attractive parcels in Panvel near upcoming
+      Navi-Mumbai airport
+
+
+
+
+  •   Provides an option to monetize certain land banks
+      and unlock capital to enhance our presence at                              Region: West
+
+      strategic locations in core markets                                        Land Area (Acres): 2,530
+
+                                                                                                                                                  Region: South
+
+                                                                                                                                                  Land Area (Acres): 178
+
+
+
+
+                                                                                                                                                                                          16
+
+
+[page 18]
+                                                     Investor Presentation – Q1 FY2027
+
+
+
+
+                                                      FINANCIAL
+                                                  PERFORMANCE
+
+Clubhouse at Embassy One Thane | Rendered Image
+                                                                                     17
+
+
+[page 19]
+    FINANCIAL PERFORMANCE | CASH FLOW ABSTRACT (CONSOLIDATED)
+                                                                                                                                  Investor Presentation – Q1 FY2027
+
+
+
+
+      PARTICULARS (INR Cr)                                                                                             Q1 FY27                            FY26
+
+      Opening cash and cash equivalents(1)                                                                                1,165                              501
+
+      Net Operating cash flows(2)                                                                                        (285)                                53
+
+
+
+
+      Net Investing cash flows                                                                                              58                              (23)
+
+
+
+
+      Net Financing cash flows                                                                                             264                              629
+
+
+
+
+      Consolidation adjustment                                                                                               -                                  5
+
+     Closing cash and cash equivalents (1)                                                                               1,202                             1,165
+
+
+
+
+(1)Including investments in mutual funds and fixed deposits
+(2) Net Operating cash flow is a factor of project lifecycle and operating cash flow will improve as projects mature                                                18
+
+
+[page 20]
+FINANCIAL PERFORMANCE | PROFIT & LOSS ABSTRACT (CONSOLIDATED)
+                                                                                                    Investor Presentation – Q1 FY2027
+
+
+
+
+PARTICULARS (INR Cr)                                                  Q1 FY27   Q4 FY26   Q1 FY26                            FY26
+
+Revenue from operations                                                   217      342       681                             1,732
+
+
+Add: Interest and other income                                            25        65         13                              173
+
+
+Total Income                                                             241       407       694                            1,905
+
+
+Less: Construction costs + Other costs inventorised (including IDC)      205       366       593                             1,607
+
+
+Gross Profit [A]                                                          36         41       102                             298
+
+
+Less: Employee costs                                                      77         76       62                              263
+
+
+Less: Other expenses                                                      65        161       37                              335
+
+
+Total Expenses [B]                                                       142       238        99                              598
+
+
+EBIDTA [A-B]                                                            (106)     (196)        2                           (300)
+
+
+PBT                                                                    (238)      (345)     (165)                           (897)
+
+
+PAT                                                                    (234)      (323)     (166)                           (872)
+
+
+
+                                                                                                                                     19
+
+
+[page 21]
+[CHART, page 21: Shareholding Pattern pie chart and Top 5 Investors horizontal bar chart; all percentage labels rendered as extractable text and captured verbatim below; OCR cross-check performed, no additional data found]
+FINANCIAL PERFORMANCE | CAP TABLE
+                                                                                                                                               Investor Presentation – Q1 FY2027
+
+
+
+                 Shareholding Pattern as on Jun 30, 2026                                                 Top 5 Investors as on June 30, 2026
+                                                                                                  0.0%        2.0%        4.0%       6.0%      8.0%       10.0%       12.0%
+
+
+
+
+                                                                            Blackstone Group                                                                      10.6%
+
+  Other Public
+     30.9%
+
+
+                                                                       Florence Investment Ltd                                         6.0%
+                                                           Promoters
+                                                             42.7%
+
+
+
+                                                                          Baillie Gifford Group                               3.6%
+
+
+
+
+                                                                           Quant Mutual Fund                           2.6%
+          FPI
+         6.8%
+
+
+
+                                                                             Vanguard Group                     1.7%
+                                                  DII
+                        FDI
+                                                 3.0%
+                       16.6%
+
+
+
+
+                                                                                                                                                                              20
+
+
+[page 22]
+BOARD OF DIRECTORS
+                     Investor Presentation – Q1 FY2027
+
+
+
+
+                                                     21
+
+
+[page 23]
+LEADERSHIP TEAM
+                  Investor Presentation – Q1 FY2027
+
+
+
+
+                                                 22
+
+
+[page 24]
+                                       Investor Presentation – Q1 FY2027
+
+
+
+
+                                      ANNEXURES
+
+Embassy Greenshore | Rendered Image
+                                                                      23
+
+
+[page 25]
+                                                    Investor Presentation – Q1 FY2027
+
+
+
+
+                                               EMBASSY GROUP
+                                                  OVERVIEW
+Living Room at Embassy Eden | Rendered Image
+                                                                                   24
+
+
+[page 26]
+EMBASSY GROUP | CREDENTIALS
+                                                                                                      Investor Presentation – Q1 FY2027
+
+
+
+
+     30+ Years of       100 Million Sq. Ft.      Presence in                                    Partnerships with
+                                                                    Launched India’s First
+   Excellence in Real     Delivered &         22 cities PAN India                            Private Equity & Global
+                                                                      Publicly Listed REIT         Institutions
+         Estate            Managed            Across Businesses
+
+
+
+
+                                                                                                                                     25
+
+
+[page 27]
+EMBASSY GROUP | COMPANIES
+                                                                   Investor Presentation – Q1 FY2027
+
+
+
+
+EMBASSY GROUP | BUSINESSES
+
+
+
+                                                WeWork
+     Commercial         Residential                                Embassy
+                                                India
+     Completed          Comp leted
+                                                126.9K+ Desks
+                                                                   Services
+     54+M Sq. Ft.       21+M Sq. Ft.                               AUM 130M Sq. Ft.
+                                                76 Centres
+
+
+
+
+                                              Energy
+                      Hospitality             Operational Plant
+                      Comple ted 1,741 Keys   100 MW
+                      Ongoing 307 Keys        Phase II
+                                              100 MW In Progress
+
+                                                                                                  26
+
+
+[page 28]
+[OCR page 28]
+OCR confirms pdftotext extraction below is complete for this page (background-image divider slide, no additional text found via OCR):
+COMMUNITY
+OUTREACH
+[END OCR page 28]
+[original pdftotext extraction:]
+ Investor Presentation – Q1 FY2027
+
+
+
+
+COMMUNITY
+ OUTREACH
+
+                                27
+
+
+[page 29]
+COMMUNITY OUTREACH | IMPACT
+                                                                               Investor Presentation – Q1 FY2027
+
+
+
+
+EDUCATION & COMMUNITY
+
+10,000               113               390                 995
+Students supported   Educators         Scholarships        Students
+in 25 schools, 13    empowered         awarded             supported through
+anganwadis                                                 career guidance
+
+
+
+
+INFRASTRUCTURE
+
+15                   20                04                  28
+Classrooms           Toilets           School projects     Government
+built                                  under               schools receive
+                                       construction        daily maintenance
+
+
+
+
+ENVIRONMENT
+
+5,240                4,10,672          96%                 32
+Waste Generators     Kgs total waste   Segregation level   Students in two
+                     collected                             Threads of Lif e
+                                                           centres
+
+
+
+                                                                                                              28
+
+
+[page 30]
+COMMUNITY OUTREACH | IMPACT
+                                                                    Investor Presentation – Q1 FY2027
+
+
+
+
+PREVENTIVE HEALTH
+
+28                     15              25             282
+Schools receive deep   Solar units     RO units       Repairs and
+cleaning. Hand wash    serviced        serviced       upgrades
+campaigns have                                        conducted
+been carried out
+
+
+
+
+CORPORATE CONNECT
+
+06                     03              08             160+
+Partnered              Embassy         CSR projects   Employees
+Corporates             Engage series   supported      engaged
+
+
+
+
+                                                                                                   29
+
+
+[page 31]
+NOTES & GLOSSARY
+                                                                                                                                                                                                                                     Investor Presentation – Q1 FY2027
+Notes:
+ • All figures in this presentation are as of Jun 30, 2026, unless otherwise stated
+ • Figures has been rounded off to nearest single decimal / integer for ease of presentation
+ • Area (msf) represents unsold residential saleable area including commercial area sold on strata sale basis / leasable commercial area unless otherwise stated
+ • The Hon'ble National Company Law Appellate Tribunal, New Delhi Bench, ("NCLAT") on January 7, 2025 approved the scheme of amalgamation of Nam Estates Private Limited ("NAM") and Embassy One Commercial Property
+   Developments Private Limited ("EOCPDPL") with EDL and their respective shareholders and creditors ("Scheme") pursuant to sec 230 to 232 of the companies Act, 2013 and other applicable provisions of the Act, read with Companies
+   (Compromises, Arrangements and Amalgamations) Rules, 2016. Pursuant to the NCLAT Order, EDL and Nam have filed the certified true copy of the court order with the respective jurisdictional Registrar of Companies on January 24,
+   2025 thereby giving effect to the scheme ("Effective date").
+ • Following the merger, the existing shareholders of NAM—namely JV Holding Private Limited (“JVHPL”) and its subsidiaries—became the largest shareholders of the Company and were classified as the Promoter/Promoter Group. The
+   transaction has been treated as a reverse acquisition under Ind AS 103, with NAM designated as the accounting acquirer (and legal acquiree) and EDL as the accounting acquiree (and legal acquirer), since control of the combined
+   entity vested with the incoming Promoter/Promoter Group upon the Scheme becoming effective. As required under Ind AS 103, a fair value assessment was carried out for the inventory and investment property of the combined entity.
+   The combined entity carries inventory of INR120,998 million and investment property of INR32,874 million as at March 31, 2025.Given the fair valuation undertaken for aforesaid assets, the accounting profit margins in the consolidated
+   P&L are reported lesser to the extent of difference between cost incurred and fair value. However, the cashflow on aforesaid assets are not being negatively impacted.
+ • The Consolidated unaudited financial results issued under the name of EDL (legal acquirer) represents the continuation of the financial results of NAM (accounting acquirer) except for capital structure and reflects the assets and
+   liabilities of NAM along with its 20 subsidiaries/JV measured at their pre-combination carrying value and acquisition date fair value of identified assets and liabilities taken over with respect to EDL along with its 174 subsidiaries. In the
+   view of the above reverse merger accounting treatment, the Financial results for the quarter and year ended March 31, 2025 comprises of the results of two months operation of EDL and its subsidiaries and twelve months operation of
+   NAM and its subsidiaries and joint ventures. Hence the financial results for the quarter ended June 30,2025 , quarter ended March 31, 2025 and quarter ended June 30, 2024 are not comparable.
+
+ Key Terms and Definitions:
+
+ 1. INR / INR – Indian Rupees, the legal currency of the Republic of India                                                       30. MIDC – Maharashtra Industrial Development Corporation
+ 2.Area Delivered – The category of “completed” projects including residential or commercial projects where occupancy            31. MW - Mega Watt
+    certificates have been received from the competent authority for significant majority of units with respect to towers or     32. NCLT – National Company Law Tribunal
+    buildings in the project and the process of handover of such units has commenced                                             33. NCR – National Capital Region, comprising satellite cities of Delhi including Gurgaon, Noida, Sonepat etc.
+ 3.AUM- Asset under maintenance                                                                                                  34. Near Completion Projects – Development in the last mile of finishing, OC for which is expected within 12 months
+ 4.BLR – Bengaluru                                                                                                               35. Net Debt – Total external borrowings excluding related intercompany payables less cash & cash equivalents
+ 5.CBSE - Central Board of Secondary Education                                                                                   36. OC – Occupancy Certificate
+ 6.Collections – Represents net collections towards residential and commercial units and land, excluding, JD partner             37. Ongoing Projects – Projects / phases where construction work has commenced
+    share, rebates given to customers                                                                                            38. PAT - Profit after tax
+ 7.COO - Chief Operating Officer                                                                                                 39. PBT - Profit before tax
+ 8.Cr – cr, equal to 10 million                                                                                                  40. Planned Projects – Projects without active design & planning work; scheduled launch beyond next 12 months
+ 9.CS - Company Secretary                                                                                                        41. PR - Public Relations
+ 10.CSR – Corporate Social Responsibility                                                                                        42. Pre-sales – Refers to the value of gross active residential and commercial units (net of taxes and maintenance
+ 11.Debt-Equity Ratio - Ratio between gross Institutional debt and total equity                                                      deposits) during a period where the booking amount has been received
+ 12.DII - Domestic Institutional Investors                                                                                       43. PSF – Per square feet
+ 13.DM – Development management                                                                                                  44. Q - Quarter (3 months ending on June 30, September 30, December 31 and March 31).
+ 14.EBITDA - Earnings before interest, tax and depreciation                                                                      45. Q-o-Q - Comparison of current quarter with immediate previous quarter
+ 15.EDL – Embassy Developments Limited together with its subsidiaries                                                            46. REIT - Real Estate Investment Trust
+ 16.FII - Foreign Institutional Investor                                                                                         47. Saleable Area – Saleable Area for our residential properties shall mean the total carpet area in relation to each
+ 17.Financial year or FY – Period of 12 months commencing on April 1 of a year & ending on March 31 of the next year                 project along with appropriate loading to adjust for common areas, service and storage area parking area, area
+ 18.FPC - Foreign Portfolio Corporates                                                                                               for amenities and other open areas
+ 19.FY - Financial Year                                                                                                          48. SEBI – Securities and Exchange Board of India
+ 20.GCC - Gobal Captive Centres                                                                                                  49. SEZ – Special Economic Zones
+ 21.GDV – Gross Development Value                                                                                                50. Sold Receivables – Amount pending to be received for booked / sold area for which invoices are generated / yet
+ 22.IB - International Baccalaureate                                                                                                 to be generated and are net of taxes & refunds. Also includes billed and unbilled receivables which are not due
+ 23.Indian Stock Exchanges – BSE and NSE, taken together                                                                         51. Sq. Ft. - Square Feet
+ 24.JV – Joint Venture                                                                                                           52. Unsold Inventory – Estimated value of unsold residential saleable area including commercial area sold on strata
+ 25.JDA – Joint development agreement                                                                                                sale basis
+ 26.K - Thousand                                                                                                                 53. Upcoming Projects – Projects with active design & planning work; scheduled launch within next 12 months
+ 27.Leasable Area – Leasable area for our commercial properties shall mean the total area of the income generating               54. Vizag – Visakhapatnam
+    floor space within the property that can be contracted with tenants under commercial lease agreements                        55. Vs – Versus
+ 28.MMR / Mumbai Metropolitan Region – Mumbai along with satellite cities of Thane, Navi Mumbai, Panvel, etc.                    56. Y-o-Y - Comparison of current quarter with corresponding quarter of previous financial year
+ 29.MSF – Million square feet                                                                                                                                                                                                                                       30
+
+
+[page 32]
+DISCLAIMER
+                                                                                                                                                       Investor Presentation – Q1 FY2027
+
+
+
+
+This presentation (“Presentation”) is for informational purpose only and does not constitute a prospectus, offering memorandum or an offer, or a solicitation of any
+offer, to purchase or sell any securities of Embassy Developments Limited (“Company”) or its existing or future subsidiaries (collectively, the “Group”) in any jurisdiction.
+Any offer or solicitation will be made only by means of definitive offering documents and in accordance with the terms of applicable securities and other laws.
+
+This Presentation should not be considered as a recommendation or advice to any person or investor to invest or subscribe for or purchase any securities of the Group
+or its existing or future subsidiaries (collectively, the “Group”) and should not be used as a basis for any investment decision. Recipients of this Presentation should
+conduct their own independent investigation and diligence, and/or consult their legal, tax, financial or other professional advisors as they deem fit.
+
+This Presentation contains certain forward‐looking statements based on current expectations, projections and assumptions and are subject to risks and uncertainties
+that could cause actual results, performances or events to differ materially from the results contemplated by the relevant forward-looking statement. These risks and
+uncertainties include the effect of economic and political conditions in India and outside India, volatility in interest rates and in securities markets, new regulations and
+government policies, the general state of the Indian economy, any delay in merger and the management’s ability to implement the company’s strategy that might
+impact the Group 's general business plans, its future financial condition and growth prospects.
+
+The information contained in this presentation is only current as on the date hereof and is not indicative of future results. The Group is under no obligation to update
+these forward‐looking statements or to inform the recipient of any changes or developments arising after the date of this Presentation. Moreover, both express or
+implied representation or warranty is made as to, and no reliance should be placed on, the accuracy, fairness or completeness of the information presented or
+contained in this Presentation. Neither the Group nor any of its directors, officer, employees, advisers or representatives accept any liability whatsoever for any loss
+howsoever arising from any information presented or contained in this Presentation. Furthermore, no person is authorized to give any information or make any
+representation which is not contained in, or is inconsistent with, this Presentation. Any such extraneous or inconsistent information or representation, if given or made,
+should not be relied upon as having been authorized by or on behalf of the Group.
+
+
+
+
+                                                                                                                                                                                       31
+
+
+[page 33]
+                                                                                                                                       Investor Presentation – Q1 FY2027
+
+
+
+
+                                                                                                                               THANK YOU
+Website: embassyindia.com | Email: ir@embassyindia.com | Office: +91 22 6572 2233
+
+
+Mumbai Corporate Office: One World Center, Tower 2A, 4th floor, Senapati Bapat Marg, Mumbai – 400013
+Bengaluru Corporate Office: Embassy One – Pinnacle, 14th floor, Bellary Road, Dena Bank Colony, Bengaluru Karnataka – 560032
+Registered Office: WeWork, Blue One Square, 1st floor, Office No 01-1001, Udyog Vihar Phase 4 Rd, Gurugram, Haryana – 122016
+                                                                                                                                                                      32
+

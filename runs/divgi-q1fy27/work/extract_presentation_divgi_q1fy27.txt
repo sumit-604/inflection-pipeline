@@ -1,0 +1,1344 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_divgi_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 41
+formfeed_count: 41
+line_count: 1344
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (figures stated "Rs. In Crores" throughout; no conversion needed)
+ocr_pages: [15, 22, 32]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-11
+=== END HEADER ===
+
+NOTES ON METHOD:
+- Primary extraction: pdftotext -layout, run per-page (page count verified 41/41 via pdfinfo and per-page pdftotext -f N -l N loop; whole-document formfeed_count also 41).
+- Per-page character test applied to all 41 pages. Pages 15, 22, 32 fell under
+  the 100-character threshold (60, 34, 56 chars respectively) - these are
+  section-divider slides (title + page number over a background logo/graphic).
+  OCR fallback run at 300 DPI (pdftoppm -jpeg -r 300 + tesseract) on all three;
+  OCR confirms no additional text beyond the title and page number already
+  captured by the text layer. Labelled inline as [OCR page N].
+- All other 38 pages exceeded the 100-character threshold and were inspected;
+  chart data labels (bar/line values, % YoY/QoQ, margins) are embedded as
+  vector text in the source PDF and were captured directly by pdftotext -layout
+  (verified against rendered images for pages 5, 7, 8, 11, 12, 33, 34, 35, 36,
+  37 - all bar and line chart figures visible in the rendered slide are present
+  in the text-layer extraction).
+- Two pages carry data in graphical form not resolvable as plain text and are
+  flagged inline with a bracketed note rather than silently dropped:
+  page 18 (NVH vibration chart legends, sub-100-char-illegible at source
+  resolution) and page 26 (product-applicability matrix using checkmark icons
+  instead of text; checkmark pattern recorded from visual reading of the
+  rendered slide).
+- Line numbering: page markers "[page N]" are on their own line; every line
+  below is addressable by its line number in this file as read by downstream
+  line-numbered tooling.
+
+[page 1]
+                                                             Divgi TorqTransfer Systems Limited
+                    Divgi TorqTransfer Systems CIN: L32201MH1964PLC013085
+                                               75, General Block, MIDC, Bhosari,
+                                                             Pune 411 026, India
+                                                             Tel: (+91-20) 63110110
+                                                             Web: www.divgi-tts.com
+Ref.: DTTS/Sec/26-27/33
+
+August 11, 2026
+
+ To,                                        To,
+ BSE Limited,                               National Stock Exchange of India Limited,
+ Phiroze Jeejeebhoy Towers,                 "Exchange Plaza" 5th Floor,
+ Dalal Street, Mumbai - 400001              Plot No. C-1, G Block,
+                                            Bandra Kurla Complex, Bandra (East),
+                                            Mumbai – 400051
+
+ BSE Scrip Code – 543812                    NSE Scrip Code - DIVGIITTS
+
+
+Sub: Investor Presentation
+
+Ref.: Regulations 30 of the SEBI LODR Regulations, 2015
+
+Dear Sir / Madam,
+
+Pursuant to Regulation 30 and other applicable provisions of the Securities and Exchange
+Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 (“LODR
+Regulations”), please find enclosed herewith the presentation on performance of the Company
+for the quarter ended June 30, 2026.
+
+This is for your information and records.
+
+Thanking you,
+
+ For Divgi TorqTransfer Systems Limited
+                    Digitally signed by
+ ANIKET ARUN ANIKET ARUN KOKANE
+ KOKANE      Date: 2026.08.11
+             18:58:11 +05'30'
+
+ Aniket Kokane
+ Company Secretary and Compliance Officer
+ M No.: A51571
+
+
+
+ Enclosure: As above
+
+
+[page 2]
+ PREPARING
+FOR THE NEXT
+ ORBIT
+
+
+
+               Divgi TorqTransfer Systems
+                         Limited
+                    Investor Presentation – Q1 FY27
+
+
+[page 3]
+Safe Harbor
+This presentation and the accompanying slides (the “Presentation”), which have been prepared by Divgi TorqTransfer Systems Limited
+(the “Company”), have been prepared solely for information purposes and do not constitute any offer, recommendation or invitation to
+purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any contract or binding
+commitment whatsoever. No offering of securities of the Company will be made except by means of a statutory offering document
+containing detailed information about the Company. This Presentation has been prepared by the Company based on information and
+data which the Company considers reliable, but the Company makes no representation or warranty, express or implied, whatsoever, and
+no reliance shall be placed on, the truth, accuracy, completeness, fairness and reasonableness of the contents of this Presentation. This
+Presentation may not be all inclusive and may not contain all of the information that you may consider material. Any liability in respect
+of the contents of, or any omission from, this Presentation is expressly excluded. Certain matters discussed in this Presentation may
+contain statements regarding the Company’s market opportunity and business prospects that are individually and collectively forward-
+looking statements. Such forward-looking statements are not guarantees of future performance and are subject to known and unknown
+risks, uncertainties and assumptions that are difficult to predict. These risks and uncertainties include, but are not limited to, the
+performance of the Indian economy and of the economies of various international markets, the performance of the industry in India and
+world-wide, competition, the company’s ability to successfully implement its strategy, the Company’s future levels of growth and
+expansion, technological implementation, changes and advancements, changes in revenue, income or cash flows, the Company’s market
+preferences and its exposure to market risks, as well as other risks. The Company’s actual results, levels of activity, performance or
+achievements could differ materially and adversely from results expressed in or implied by this Presentation. The Company assumes no
+obligation to update any forward-looking information contained in this Presentation. Any forward-looking statements and projections
+made by third parties included in this Presentation are not adopted by the Company and the Company is not responsible for such third
+party statements and projections
+
+
+
+
+                                                                                                                                            2
+
+
+[page 4]
+Index
+
+   Sr. No.   Contents                                            Slide No.
+
+     1       Achieving New Quarterly Milestone - Q1FY27             4
+
+     2       Entering the Next Orbit of Growth – FY27 & Beyond      6
+
+     3       Growing Trend Across Key Segments                      7
+
+     4       Highlights from Management                            8–9
+
+     5       Financial Performance                                10 – 13
+
+     6       Future Growth Strategies                             15 – 20
+
+     7       About Divgi                                          22 – 30
+
+     8       Historical Performance                               32 – 39
+
+
+
+
+                                                                             3
+
+
+[page 5]
+      Achieving New Quarterly Milestone – Q1FY27
+Rs. In Crores
+                          Delivered record-breaking quarterly performance, surpassing all historical milestones
+                                                           141.8
+                                                  113.8
+                                         76.8
+                Total Income                                               85% YoY              25% QoQ
+
+                                        Q1FY26   Q4FY26    Q1FY27
+
+                                                                                                                  EBITDA Margin
+                                                            41.6
+
+                                                  27.8
+                                         19.1
+                                                                           118% YoY              cc QoQ
+                                                                                                50%                 29.4%
+                  EBITDA
+
+                                        Q1FY26   Q4FY26    Q1FY27
+
+                                                                                                                   PAT Margin
+                                                            25.2
+
+                                                  15.5
+                                         8.9                               183% YoY              cc QoQ
+                                                                                                63%                 17.8%
+                    PAT
+
+                                        Q1FY26   Q4FY26    Q1FY27
+
+
+
+                                                                                                                                  4
+
+
+[page 6]
+Update on Project Mayflower | US Operations
+
+                   o Strengthen engagement with key customers, Improve RFQ conversion and program execution capability
+Plan Ahead         o Win at new customers
+                   o Create foundation for future manufacturing operations in the U.S.
+
+
+
+
+                        Q1FY27 Progress                                                             Q2FY27 & Beyond
+
+
+  o Wholly owned subsidiary established in South Carolina
+      o Divgi Transmission Technologies and Systems Inc                  o Existing customers - New RFQs: Quote submission, negotiations
+  o Initial headcount on-boarded                                         o New customers: Engage with OEMs, Tier 1s to generate RFQs
+   Customer Responses                                                    o Continue assessing business case for local manufacturing in US.
+
+  o Encouraging feedback from existing customers
+  o New RFQs released by existing customers for potential
+    sourcing from India and requiring manufacturing in U.S.
+
+
+
+
+                                                                                                                                             5
+
+
+[page 7]
+      Entering the Next Orbit of Growth – FY27 & Beyond
+Rs. In Crores   ~Avg. over the year
+                                              FY25                                                       FY26                                                FY27 & Beyond
+
+                                             ~55crs+                                                    ~90crs+
+                                                                    64.1                                                      113.8             141.8
+                       59.4           59.2             57.5                                                       96.3
+                                                                                                 88.3
+                                                                                  76.8                                                                       Performance driven by strong
+                                                                                                                                                             transfer case volumes and
+                                                                                                                                                             healthy exports business
+ Total
+Income                  Q1            Q2               Q3           Q4             Q1             Q2              Q3            Q4               Q1
+
+                        Year of strengthening internal capabilities                     Year of focused execution and growth                 Strategic Shift from Core Passenger Vehicles
+                         and preparing for next phase of growth                                       recovery                                              to Light Vehicles
+
+                  ✓ Strengthened Transfer Case business revenue, driven by    ✓ Increased volumes and strengthened presence across        ✓ Revenue growth expected to be supported by strong
+                    focused efforts to improve volumes and deepen OEM           upgraded platforms in the Transfer Case business.           contract execution, including the Indonesian market
+                    engagement                                                                                                              opportunity in FY27, with recurring business potential.
+                                                                              ✓ Focused on improving Transfer Case realizations through
+                  ✓ Positioned the EV business for the next phase of volume     upgraded technology and product offerings.                ✓ H2 FY27 expected to sustain the revenue momentum
+                    ramp-up, with Proof of Concepts successfully submitted                                                                  driven by new platforms and facelift programs with key
+                    and continued engagement with key OEMs despite            ✓ Secured approval for the Sigma platform in EVs and          OEM customers
+                    industry-wide challenges                                    commenced initial volume supplies, while submitting
+                                                                                prototypes for upcoming platforms.                        ✓ EV business impacted in Q1 due to higher inventory at
+                  ✓ Strengthened EV platform presence by working closely                                                                    OEM in Q4, product mix change at OEM and delay in
+                    with key OEMs to secure opportunities across multiple     ✓ Expanded the Export component business through entry
+                                                                                                                                            Sigma program launch. Expected to see a healthy
+                    upcoming platforms                                          into newer geographies and increased volumes.
+                                                                                                                                            volume trajectory from Q2 onwards for the existing
+                                                                                                                                            programs and launch of new Sigma program in mass
+                  ✓ Successfully secured approvals for export components,                                                                   production
+                    setting the stage for higher volumes and revenue
+                    contribution going forward.                                                                                           ✓ Export growth expected to accelerate through entry
+                                                                                                                                            into newer geographies and increased contribution
+                                                                                                                                            from the components business
+                                                                                                                                          ✓ Strong export outlook from OEM customers, with plans
+                                                                                                                                            to expand globally alongside existing OEM relationships
+
+                                                                                                                                                                                                 6
+
+
+[page 8]
+      Growing Trend Across Key Segments
+Rs. In Crores   ~Avg. over the year
+                                             FY25                                 FY26                                 FY27
+
+
+                                            ~25crs+                             ~45crs+
+                                                                                                         76.0
+                               29.4   28.2                   29.0                                 54.1
+                                                                           42.7            47.0                 Supported by higher volumes from
+                                                      23.9          39.3
+                                                                                                                our OEM customers for domestic
+                                                                                                                and export markets.
+
+ Transfer Case
+                                Q1    Q2              Q3     Q4     Q1     Q2              Q3     Q4     Q1
+                                            ~6crs+                               ~7crs+
+                                7.8                          7.5                                  8.3
+                                                                    7.1                    7.1           5.7    Expected to ramp up to higher
+                                      6.0                                  6.1
+                                                      4.4                                                       volumes on existing platforms, and
+                                                                                                                with approvals on previously
+                                                                                                                submitted prototypes for new
+  E-Gear Drive                                                                                                  programs in the pipeline.
+
+                                Q1    Q2              Q3     Q4     Q1     Q2              Q3     Q4     Q1
+
+                                         ~12crs+                                 ~28crs+
+                                                                                                         34.4
+                                                      13.8   13.8                          30.9   33.4
+                                      11.6                                 29.1
+                               10.9                                                                             Improved realizations driven by a
+                                                                    18.8                                        higher mix of precision components
+                                                                                                                and continued growth in the export
+  Components                                                                                                    business
+
+                                Q1    Q2              Q3     Q4     Q1     Q2              Q3     Q4     Q1
+
+
+                                                                                                                                               7
+
+
+[page 9]
+Highlights from Management
+                    Q1 FY27: Strong Execution, Building Momentum for the Next Phase of Growth
+
+
+                    “This quarter marked a strong start to the year, reflecting improving business momentum, increasing scale and operating leverage. As we move forward, we
+                    remain focused on converting the opportunities built over the past few years into sustainable and profitable growth business”
+
+
+                    Q1FY27 Performance Highlights
+                    • The company delivered its highest-ever quarterly performance, delivering total income of ~Rs. 142 Crs, surpassing all our historical milestones
+ Jitendra Divgi     • This performance was led by a strong transfer case volumes, alongside healthy traction in components and exports, further strengthening the company’s
+Managing Director      revenue mix
+                    • EBITDA stood at ~Rs. 42 Crs, with EBITDA margins at ~30%, supported by favourable product mix, higher margin transfer case products, export contribution and
+                       operating leverage
+
+                    Segmental Highlights
+
+                    1. Transfer Case : Strong Growth Led by Indonesia Program
+                    o Transfer Case remained the primary growth driver, supported by the ramp-up of the Indonesia 4x4 program
+                    o Strong product mix and execution further supported healthy profitability
+
+                    2. Components & Exports : Increasing Global Traction
+                    o Exports remained strong at ~Rs. 23 crore in Q1FY27
+                    o Components continued to witness healthy demand and increasing scale, supported by precision-machined products and exports
+                    o Growing customer engagement is creating opportunities across Transfer Cases, Components and drivetrain systems, with increasing potential for recurring global
+                        business
+
+                    3. EV Transmission – Progressing Despite Timing Delays
+                    o EV revenues remained subdued due to timing delays in platform adoption, parts co-location and customer testing
+                    o Customer programmes continue to progress, supported by Divgi-TTS’ in-house EV transmission design, development and manufacturing capabilities
+                                                                                                                                                                                       8
+
+
+[page 10]
+Highlights from Management
+FY27 & Beyond
+
+1. Transfer Case – Sustaining Growth & Expanding Global Footprint
+
+o   Continued momentum expected from the Indonesia programme, alongside efforts to enter into newer export geographies
+o   Incremental Indonesia volumes are expected to continue for the upcoming quarters of FY27
+o   H2 FY27 expected to witness a ramp-up in the domestic end market volumes with launch of new and facelift programs by key OEM customers
+o   Focus remains on next-generation products, technology enhancement and global expansion
+
+2. Exports – Building a Recurring Global Business
+
+o Exports expected to remain a key growth engine, with FY27 component exports targeted at ~Rs. 80 crore
+o Focus on converting export opportunities into recurring global programmes and moving towards higher-value drivetrain solutions
+o North America expansion expected to strengthen engagement with global customers
+
+3. EV Transmission – Moving Towards Commercialisation
+
+o Sigma production expected to commence in Q2FY27, following customer approval
+o Ongoing localisation and validation programmes are expected to support the transition towards commercial-scale EV transmission business
+o Continued focus on EV, hybrid and emerging transmission technologies continue
+
+4. Components & New Transmission Opportunities
+
+o Components expected to scale further through export programmes and new customer opportunities
+o Automatic Transmission progressing in the Proof-of-Concept stage, while Manual Transmission opportunities are being evaluated
+o Partnership with Toyota Susho and new AWD and PTU programmes provide additional avenues for future growth and product diversification
+
+                                                                                                                                             9
+
+
+[page 11]
+   Revenue Walk – Q1FY27
+                 Total Income                          Transfer Case                           E-Gear Drive                             Components & Exports
+Rs. In Crores
+                Other Income
+                                                               +93%                                 -20%                               +83%                               +4.8x
+                Revenue from Operations                                 76.0                         8.3                               33.4   34.4                                     23.0
+                                                                                                                                                                          21.7
+                                                                                         7.1                                                                     18.8
+                     +85%                                      54.1                                            5.7
+                                                39.3                                                                            18.8
+                                   141.8
+                                    4.7
+
+
+                     113.8
+                      6.2                     Q1FY26       Q4FY26     Q1FY27           Q1FY26      Q4FY26    Q1FY27            Q1FY26 Q4FY26 Q1FY27          Q1FY26 Q4FY26 Q1FY27
+
+                                                   Other Business                                            Geographic Mix (%)                  Total Income Mix (%)
+    76.8                                                   +229%                                Domestic
+     5.1
+                                   137.1                              21.4                      Exports
+                                                                                                                16%                                        18%
+                                                                       1.6
+                     107.6
+                                                                      8.7
+                                                               11.9
+                                                               1.5                                                    Q1FY27                                     Q1FY27
+    71.7                                                                                                                                                                         53%
+                                                   6.5         3.6
+                                                                      7.3                                                                            24%
+                                                   1.2
+                                                         0.9
+                                                             7.1          0.0
+                                                    4.8 0.1       0.1 3.8                                                      84%                           4%
+                                                   -0.5      -0.4
+                                                Q1FY26 Q4FY26 Q1FY27
+  Q1FY26            Q4FY26        Q1FY27
+                                           NexTrac       Synchro          Tooling & Other Operating Income                                           Transfer Case        Components
+                                           ALH           After Market                                                                                E-Gear Drive         Others
+
+                                                                                                                                                                                              10
+
+
+[page 12]
+Financial Snapshot – Q1FY27
+            Total Income (Rs. In Cr.)                                      EBITDA (Rs. In Cr.)                                                Profit After Tax (Rs. In Cr.)
+
+
+                     +78%                                                        +92%                                                                    +189%
+                                    141.8                                                         41.6                                                                    25.2
+
+                     113.8
+                                                                                  27.8
+                                                                                                                                                          15.5
+     76.8
+                                                                   19.1
+                                                                                                                                            8.9
+
+
+
+
+    Q1FY26          Q4FY26         Q1FY27                         Q1FY26        Q4FY26           Q1FY27                                   Q1FY26        Q4FY26          Q1FY27
+
+
+
+                                                     EBITDA (%)                                                    Profit After Tax (%)
+
+
+                                                                  29.4%                                                                   17.8%
+                                            24.9%      24.5%
+                                                                                                                          13.6%
+                                                                                                          11.6%
+
+
+
+
+                                            Q1FY26    Q4FY26      Q1FY27                                  Q1FY26         Q4FY26           Q1FY27
+
+
+                                                                                                                                                                                 11
+
+
+[page 13]
+Key Focus Areas
+                                                                                                                                          Update on Other Focus Areas
+Key Products             Revenue (Rs. In Crores)                                         Focus Areas                                   Automatic Transmission:
+
+                  51%       48%    49%       47%        53%      • Domestic Growth: Collaborating with a leading Indian and Japanese   • Working on feasibility for localization of
+                                                                   automotive OEM on their upcoming platforms.                           globally proven state-of-art Automatic
+                                                                                                                                         Transmission,     commercial        quote
+                                                                 • Export Growth:                                                        submitted to leading Indian OEM
+                                                                    o Engaged with Indian automotive OEM for global vehicle launch
+                  39.3      42.7   47.0      54.1        76.0                                                                          • Pursuing opportunity for Front Wheel
+                                                                    o Secured exclusive order as sole supplier from key OEM customer     and Rear Wheel Auto Transmission
+ Transfer Case   Q1FY26 Q2FY26 Q3FY26 Q4FY26 Q1FY27                   for 4x4 transfer cases for the Indonesian Pik-Up program, with
+                                                                      production expected from CY26                                    • Secured     Customer   contract   to
+                                                                                                                                         demonstrate Proof of Concept on their
+                  9%                                                                                                                     vehicle, estimated completion by Q3
+                            7%     7%         7%                 • Domestic: Ramp-up across key platforms with leading India OEM in      FY27.
+                                                         4%        EV market
+                                                                                                                                       Manual Transmission:
+                  7.1       6.1    7.1        8.3        5.7     • Export: Actively expanding to cater to global OEMs, aligning with
+ E-Gear Drive                                                      evolving platform needs and strengthening our position              • Proposal submitted for 5-speed Manual
+                 Q1FY26 Q2FY26 Q3FY26 Q4FY26 Q1FY27                                                                                      Transmission for commercial truck
+                                                                                                                                         application
+                                                                 • Export:
+                                                                                                                                       • Prototype submitted for Synchronizer
+                            33%    32%       29%                    o Wholly owned subsidiary established in North America to
+                                                         24%                                                                             solution to India’s market leader OEM in
+                  25%                                                 strengthen engagement with global Tier 1 North American            Off highway mobile earth moving
+                                                                      manufacturers of transmissions                                     equipment
+                                                                    o New products at the approval stage, expected to convert into
+                  18.8      29.0   30.9      33.4        34.4         orders soon                                                      Transmission for Hybrids:
+                                                                 • Domestic:
+ Components      Q1FY26 Q2FY26 Q3FY26 Q4FY26 Q1FY27                                                                                    • OEMs assessing upcoming policy,
+                                                                    o Engaged in development projects, responding to request-for-        regulations and customer needs for
+                                                                      quotes (RFQs)                                                      Hybrids to decide on investment for
+                                                                                                                                         mass production
+
+                         Revenue          Total Income Share %                                                                                                                    12
+
+
+[page 14]
+Profit & Loss Statement
+Particulars (Rs. In Cr.)      Q1FY27   Q1FY26   Y-o-Y   Q4FY26   Q-o-Q   FY26    FY25    Y-o-Y
+Revenue From Operations       137.1     71.7            107.6            352.9   218.9
+
+Other Income                   4.6      5.1              6.2             22.3    21.2
+
+Total Income                  141.8     76.8    85%     113.8    25%     375.2   240.1   56%
+
+Raw Materials                  53.2     28.5             40.7            136.8   88.1
+Gross Profit                   88.6     48.3    83%      73.1    21%     238.4   152.0   57%
+Gross Profit Margin (%)       62.5%    62.9%            64.3%            63.5%   63.3%
+
+Employee Benefit Expenses      13.5     8.3              14.3            41.5    25.1
+
+Other Expenses                 33.5     20.9             31.0            104.5   68.4
+EBITDA                         41.6     19.1    118%     27.8    50%     92.3    58.6    58%
+EBITDA Margin (%)             29.4%    24.9%            24.5%            24.6%   24.4%
+
+Depreciation & Amortization    7.8      6.9              7.6             29.2    25.2
+
+EBIT                           33.8     12.1             20.3            63.1    33.4
+
+Interest Expense               0.1      0.1              0.1              0.3     0.4
+Profit Before Tax              33.8     12.1             20.2            62.7    33.0
+Tax Expense                    8.5      3.2              4.7             15.8     8.6
+
+Profit After Tax               25.2     8.9     183%     15.5    63%     46.9    24.4    92%
+
+Profit After Tax Margin (%)   17.8%    11.6%            13.6%            12.5%   10.2%
+
+
+                                                                                                 13
+
+
+[page 15]
+[OCR page 15] confirms: Divgi-TTS (logo) / Future Growth Strategies / 14
+Future Growth Strategies
+
+
+
+
+                           14
+
+
+[page 16]
+      Strategic Partnership in Domestic market – Key growth catalyst
+                                                                                 Trusted Partner for Global & Leading OEMs
+
+
+
+
+                     M&M – Long term strategic                                             TATA – Long term EV ecosystem                         Force Motors – Diversification
+                     relationship                                                          partnership                                           Unlocking New Growth
+
+
+                      o     Go beyond India, opportunity to                                 o     Strategic partnership to develop               o   Platform to develop and offer new
+                            serve Mahindra in global market                                       and execute broad spectrum of EV                   technologies in Transfer Case,
+                            of Indonesia, South Africa, U.S.                                      transmission                                       Manual Transmission solutions
+                      o     Platform to develop and offer                                   o     Divgi TTS is only supplier in India            o   Access to niche segment of Off-
+                            new technologies in Transfer                                          to have inhouse capability to                      road SUVs, Light Commercial
+                            Case, Manual Transmission                                             conceive, design, develop,                         Vehicles
+                            solutions                                                             manufacture and supply grounds                 o   Diversification of customer base in
+                                                                                                  up EV transmission                                 domestic market
+                                                                                            o     Ready for series production, tooled            o   Reinforce leadership in 4x4 systems
+                                                                                                  up transmission ranging from 10kW              o   Platform for future growth
+                                                                                                  to 150kW.
+                                                                                            o     Platform to build technology
+                                                                                                  capability, scale and
+                                                                                                  competitiveness for Global market
+
+
+
+Disclaimer: The Brand Names and Logos mentioned are the property of their respective owners and are used here for identification purposes only                                             15
+
+
+[page 17]
+      Strategic Partnership in Global market – Key growth catalyst
+                                                                                 Trusted Partner for Global & Leading OEMs
+
+
+
+
+                     BorgWarner Partnership – Most                                         MAGNA – Expanding Global                              Toyota Tsusho – Entry into the
+                     Transformational Collaboration                                        Footprint                                             Japanese Ecosystem
+
+                     o     Access to global drive train                                     o     Access to global OEMs and its                  o   Gateway to global footprint of
+                           technology                                                             vehicle platforms thru Magna                       Toyota Tsusho in Japan, South
+                     o     Enhancing credibility with Global                                o     Access to global drive train and                   Korea, Thailand, Indonesia, China
+                           OEMs                                                                   Transmission system                                and other market
+                     o     Open Export & Global Sourcing                                    o     Enhancing global credibility,                  o   Assess to customers in Japanese
+                           Opportunities                                                          validation of technology, quality,                 OEM ecosystem
+                                                                                                  manufacturing capabilities                     o   Providing solutions to Toyota
+                                                                                            o     Open Export & Global Sourcing                      Tsusho Programs
+                                                                                                  Opportunities
+
+
+
+
+Disclaimer: The Brand Names and Logos mentioned are the property of their respective owners and are used here for identification purposes only                                           16
+
+
+[page 18]
+      Progress in Our EV Transmission Business
+                                   Sigma Prototype                                  NVH Quality Report
+
+
+
+
+                Approval has been received from customer for production supplies, SOP expected to commence from Q2 FY27
+
+NVH – Noise, Vibration & Harness
+                                                                                                                          17
+
+[CHART, page 18, OCR/visual read: right-hand 'NVH Quality Report' panel shows 6 line-plot charts (D-TU / D-TD, each with 'Overall Vibration of Order Tracking', 'Input Gear1 Vibration of Order Tracking', 'DIFF Gear1 Vibration of Order Tracking'), Y-axis dB g (re=1u) scaled 40.0-160.0, X-axis RPM scaled 1.0k-8.0k. Each chart has a two-line legend with small numeric readouts in parentheses (e.g. D-TU CH01 O_CH1 O_OT_Overall (110.81), D-TU CH02 O_CH2 O_OT_Overall (108.32)) that are below reliable OCR resolution at source image quality; legend labels and approximate axis ranges are captured, precise legend numeric values are NOT machine verifiable from this extraction. Left-hand panel is a photograph of six 'Sigma Prototype' transfer case/EV transmission units, no embedded text data.]
+
+[page 19]
+   Growth Strategy
+                                           4WD/AWD Products
+
+
+
+
+                                        Electric Vehicle Powertrain
+
+Technology-Led Innovation                                                              Financial Discipline
+Pioneering Research                                                                 Hawk-eye view to Fiscal
+                                                                                             Performance
+
+
+                                  Manual Transmissions and Synchronizers
+
+
+
+Product & Application Diversity                                                    Manufacturing Excellence
+• RWD/ FWD                                                                   Over 20 Years of manufacturing
+• Transmission                                                             precision automotive components
+                                         Automatic Transmissions                                  & systems
+
+
+
+
+Customer & Geographic Diversity         Geographic Diversification                            Collaboration
+• Varied Industry Segments                                                        Best-of-Breed Networking
+• Varied Regions
+
+
+
+
+                                                                                                              18
+
+
+[page 20]
+      Near Term Growth Outlook
+
+
+
+
+                              EV Transmission*                      Component Business                     Core Product Portfolio
+
+
+                      • We expect ramp up in production      • Focus on Exports                      • Transfer Case: Globalization of our
+                        with several models of one of        • Strengthening relationships with        portfolio, evaluate manufacturing
+                        India’s preeminent EV                  global Tier 1 North American            footprint in US market
+                        manufacturer                           manufacturer of Transfer case by      • Automatic Transmission:
+                      • Approval received from customer        expanding our product portfolio         Demonstrate Proof of Concept on
+                        for series production supplies and   • Received final production approval      customer vehicle
+                        manufacturing/ SOP expected to         on all export parts with additional   • Manual Transmission: Complete the
+                        start in Q2 FY27                       revenue potential of ~10 to 12          commercial feasibility on the RFQ
+                                                               crores per month                        for commercial truck application
+
+
+
+
+* Domestic Business
+                                                                                                                                             19
+
+
+[page 21]
+Long Term Growth Outlook
+                                                                                                                                     Annual Revenue Potential
+                      • Strategy: Invest in next gen products, include additional products in driveline system, pre-development
+    4-Wheel Drive
+                        engagement with customers, competitiveness thru localization                                                       ~INR 300 Crores
+    System
+                      • Focus on SUV, LCV applications in India and global market
+
+
+    Manual            • Strategy: Manufacturing solution to OEMs for outsourcing of full manual transmission, offer indigenously
+    Transmission,       developed manual transmission thru flexible industrialization plan, focus on synchronizer system solutions
+                                                                                                                                           ~INR 300 Crores
+    Synchronizer      • Focus on SUV, LCV, Off-Highway applications in India and global market
+    system
+
+                      • Strategy: Tooled up and production ready solution from 10kW to 150kW motor system, assess partnership
+                        with leading Tier 1s having motor + inverter tech but lacking engineering depth on Transmission
+    EV Transmission                                                                                                                        ~INR 250 Crores
+                      • Focus on 3-Wheeler, Pass Cars, SUVs, Off-Highway applications in India and global market
+
+
+    Automatic,
+                      • Strategy: Technology transfer to bring global proven Automatics in India, partner with leading Tier 1s to build
+    Hybrid
+                        local eco-system for sub-systems of Automatic, local capability on software, hardware, validation infrastructure   ~INR 1,000 Crores
+    Transmission
+                      • Focus on SUV, LCV applications in India
+
+
+                      • Strategy: moving up the value chain, system solution offering of 4-Wheel Drive, Manual Transmission,
+    Exports             Synchronizers, EV transmission, footprint in U.S.                                                                  ~INR 200 Crores
+                      • Focus on SUV, LCV, Off-Highway applications in U.S., EU, South Africa, Indonesia, Thailand, etc.
+
+
+                                           Potential Annual Revenues of Rs. 2,000+ Crores
+
+                                                                                                                                                                20
+
+
+[page 22]
+[OCR page 22] confirms: Divgi-TTS (logo/background graphic, low-contrast) / About Divgi / 21
+About Divgi
+
+
+
+
+              21
+
+
+[page 23]
+ Company Overview
+
+      1964                                      60+                            4                                 Our Valued Customers
+   Incorporated                              Years of                     Manufacturing
+                                            experience                      facilities
+
+            Vision
+ To be recognized as a world-class Indian
+ brand    in    automotive     drivetrain
+ components and systems
+
+
+Strategies                                      Product Leadership                        Total Income*            EBITDA*                 PAT*
+• Technology-Led Innovation
+• Product & Application Diversity           •     Continuous Innovation                                                                            Rs. In Crores
+• Customer & Geographic Diversity           •     Superior Solutions
+• Manufacturing excellence                  •     Distinctive Products
+• Financial Discipline                      •     World-Class Product                                                                       -3%
+                                                                                              +7%                    +4%
+• Collaborative teamwork                          Development and                                    240                     59     28
+                                                  Manufacturing                                                                                   24
+                                                                                                            49
+                                                                                      171
+• Solutions in Manual Transmission
+• State-of-the-art 4WD Systems
+• India’s largest EV Transmission
+  manufacturer
+• Pioneer in Automatic Transmission in
+  India
+• Global Presence
+                                                                                      FY20           FY25   FY20             FY25   FY20          FY25
+
+
+                                                                                                                                                             22
+
+
+[page 24]
+Journey so far
+
+
+                                                                 1964                                              1995                                                     2016
+                                                                                                                                                             •       Exit of BorgWarner through buy
+                                                   •       Incorporated as Divgi Metalwares              •   Entered into a JV formation
+                                                                                                                                                                     out of shares
+                                                           Private Limited                                   agreement with BorgWarner
+                                                                                                                                                             •       Investment by NRJN Family Trust
+
+
+
+
+            2017                                                 2018                                              2019                                                     2020
+•   Amalgamation of Divgi TorqTransfer             •       Investment by Oman India Join                 •   Awarded the Transfer Case business from         •       Awarded the NexTrac assembly**
+    Systems Private Limited and Divgi                      Investment Firm II                                Mahindra & Mahindra for the new Generation              business from Mahindra & Mahindra for
+    Metalwares Private Limited (amalgamated                                                                  Scorpio and THAR                                        XUV 700
+    entity was renamed as Divgi TorqTransfer                                                             •   Awarded the Transfer Case business from a       •       Awarded the planetary sun     gear
+    Systems Private Limited)                                                                                 Russian automobile manufacturer                         business from Toyota
+                                                                                                                                                                     Kirloskar Auto Parts
+
+
+
+
+            2021                                                 2022                                              2023                                                     2024
+•   Awarded the Transfer Case business from a          •    Awarded component business for supplies to   •   The company successfully raised Rs. 412.12          •    Commercialisation of Shirwal Plant
+    Chinese automobile manufacturer                         USA and Mexico from BorgWarner                   Crores through its IPO and got listed on both       •    Developed 3 EV transmission products
+                                                                                                             the NSE and BSE in March 2023
+•   Exclusive distribution agreement signed with       •    Awarded the EV transmission                                                                          •    Awarded Gen 5 Gear Planetary Sun
+    Toyota Tsusho for Divgi-TTS products to                 components business from Mahindra                                                                         business for hybrid vehicle by Toyota
+    Japanese companies worldwide                                                                                                                                      Kirloskar
+
+
+
+                                                                                                                                                                                                          23
+
+
+[page 25]
+Manufacturing Capabilities
+
+
+
+
+  Area Located        Sirsi, Uttara Kannada Dist.,      Shivare, Pune Dist.,    Bhosari, Pune, Maharashtra      Shirwal, Satara Dist.,
+                                Karnataka                  Maharashtra                                              Maharashtra
+
+
+
+
+Year of Operations:             1984                          1991                        1996                        2023
+
+
+
+                                                                                                             • EV Assembly
+                           • Components                Precision Grinding and                                • Export Components
+    Products:                                          Honing operations for       4WD Transfer case
+                          • Synchronisers                                                                    • Manual and Automatic
+                                                     transmission components                                   Transmission
+
+
+
+
+                                                                                                                                         24
+
+
+[page 26]
+ Product Portfolio
+
+                                                                                          Automatic/Dual Clutch
+Torque Transfer Systems        Manual Transmissions             Synchronizers                                           EV Transmission   Key Components
+                                                                                              Transmissions
+
+
+
+
+   Category / Product                                 ICE (4WD/AWD)             ICE (Manual)          ICE (Automatic)          Hybrid       BEV
+
+   Torque Transfer Systems                                                           -                      -                    -           -
+   Manual Transmission                                      -                                               -                    -           -
+   Synchronizer Systems                                                                                                          -           -
+   Automatic/Dual Clutch Transmission                       -                        -                                           -           -
+   Transmissions for BEV                                    -                        -                      -                    -
+   Components
+
+
+
+                                                                                                                                                           25
+
+[TABLE/GRAPHIC NOTE, page 26: applicability matrix uses graphical checkmark icons (not extractable as text) crossed against '-' dash characters (extractable). Visual reading of the checkmark pattern, row (Category/Product) x column (ICE 4WD/AWD | ICE Manual | ICE Automatic | Hybrid | BEV):
+  Torque Transfer Systems: CHECK, -, -, -, -
+  Manual Transmission: -, CHECK, -, -, -
+  Synchronizer Systems: CHECK, CHECK, CHECK, -, -
+  Automatic/Dual Clutch Transmission: -, -, CHECK, -, -
+  Transmissions for BEV: -, -, -, -, CHECK
+  Components: CHECK, CHECK, CHECK, CHECK, CHECK]
+
+[page 27]
+Product Application
+
+ 4WD/AWD Products                                 Manual Transmissions and Synchronizers
+
+
+
+
+ Electric Vehicle Transmission   Next generation transmission products (Hybrid/Automatic)
+
+
+
+
+                                                                      Representative Images
+
+
+                                                                                              26
+
+
+[page 28]
+   Marquee Customers
+Few clientele…
+
+
+
+
+         30+               50+                    50+                     10+                     10+              10+
+          Years of         Years of                Years of                Years of                Years of         Years of
+        relationship     relationship            relationship            relationship            relationship     relationship
+
+
+
+                                              MT Components,
+                       EV transmission,
+       Transfer case                         Transfer Cases & EV        Transmission           Transfer Cases,   Engine Timing
+                        Transfer Case,
+       components                            Transmissions, ALH,        Components             Synchronisers      Components
+                        Synchronisers
+                                                   Nextrac
+
+
+
+
+                                                         ..... and many more
+                           Caters to a diverse set of clients across domestic and international markets
+
+
+                                                                                                                                 27
+
+
+[page 29]
+         Presence Across the World
+
+
+
+                                                                                                                                                             UK
+
+
+                                                                                                                                                                                                       China
+                                                                                                    Portugal                                                                                                                                   Japan
+                                                                                                                                                                                                                                         Korea
+                                USA
+                                                                                                                                                                                                                                      Thailand
+                                                                                                                                            Germany
+                                     Mexico
+                                                                                                                                                                                        India                                                                                                     Mark John
+                                                                                                                                                                                                                                                                                         Intl. Comm. Operations
+
+
+
+
+                                                                                                                                                    South Africa                                 Indonesia
+
+
+
+
+                                                              Emerge as one of the fastest growing drivetrain solution companies in the world
+
+Disclaimer: This map is a generalized illustration only for the ease of the reader to understand the locations, and it is not intended to be used for reference purposes. The representation of political boundaries and the names of geographical features/states do not necessarily reflect the actual position. The
+Company or any of its directors, officers or employees, cannot be held responsible for any misuse or misinterpretation of any information or design there of. The Company does not warrant or represent any kind in connection to its accuracy or completeness.                                                          28
+
+
+[page 30]
+Experienced Board Members
+
+
+
+ Our credible
+ Board of
+ Directors                             Praveen Kadle
+                                         Chairman and
+                                                              Jitendra Divgi
+                                                            Managing Director
+                                                                                      Hirendra Divgi
+                                                                                   Executive Director
+                                                                                                              Pradip Dubhashi
+                                                                                                            Independent Director
+                                     Independent Director
+
+ Individuals of proven
+ capability and integrity
+ Bringing diverse competencies to
+ the table
+
+ Committed to uphold
+ governance
+                                    Pundalik Dinkar Kudva       Geeta Tolia            Bharat Divgi              Sanjay Divgi
+                                     Independent Director   Independent Director   Non-Executive Director   Non-Executive Director
+
+
+
+
+                                                                                                                                     29
+
+
+[page 31]
+Strong Leadership Team
+
+
+
+
+                     Satvinder Singh         Zubair Kachi                                    Deepak Vani
+                       Sabharwal                                Prasanna Deshpande      Chief Operating Officer &
+                                           Mktg., Sales & ABD   Engineering & Product
+                    Chief Growth Officer                                                        Purchase
+                                                                    Development
+
+
+
+
+ Jitendra Divgi
+Managing Director
+
+
+
+
+                     Nilesh Shukla                                   Gopal Dalvi               Mark John
+                                           Sudhir Mirjankar
+                    Mfg Engineering &                              Human Resource        Intl. Comm. Operations
+                                                 Finance
+                     Advanced Tech.
+
+
+                                                                                                                    30
+
+
+[page 32]
+[OCR page 32] confirms: Divgi-TTS (logo) / Historical Performance / 31
+Historical Performance
+
+
+
+
+                         31
+
+
+[page 33]
+   Product Diversification – Delivered Strong Results
+                  Total Income                           Transfer Case                            E-Gear Drive                          Components
+Rs. In Crores                            % of Total Income
+
+
+
+                                              190.6                         183.0                                    28.5
+                                                                                                          25.8                                                 112.2
+                                                         155.1                                  24.0
+                                 375.2
+                                                                  110.5
+
+                                                                                                                                                     50.2
+  278.7         273.0                                                                                                          34.1       35.9
+                        240.1
+                                                                                      0.2
+                                              FY23       FY24     FY25      FY26     FY23       FY24      FY25       FY26      FY23       FY24       FY25      FY26
+
+
+                                              68%        57%      46%        49%     0%         9%        11%           8%    12%        13%         21%        30%
+
+
+
+                                             ✓ Indonesia project progressing as     ✓ Secured a major strategic win,          ✓ Strong recovery in export positioning,
+                                               planned, with execution remaining      reinforcing the company’s                 supported by expanding geographies
+   FY23         FY24    FY25     FY26          firmly on track                        competitive positioning in the market     and strong orders flow
+
+                                             ✓ Strong business visibility from      ✓ Executed flawless quality and           ✓ Healthy pipeline of RFQs continues to
+                                               existing customers continues to        delivery ramp-up on new vehicle           strengthen future business visibility
+                                               support future growth momentum         model of India’s leading EV OEM           and growth opportunities
+
+
+
+                                                                                                                                                                         32
+
+
+[page 34]
+         Geographic Diversification – Expanding Global Presence
+
+
+                                                                                                                                                                                                                                                                                           Products
+                                                                                                                                                                                                                                                                      ❑ Transfer Case                        ❑ EV Transmission
+
+                                                                                                                                                                                                                                                                      ❑ Manual Transmission ❑ Components
+                                                                                                Europe
+                                                                                                UK
+                                                                                                Germany                                                                                                                            Asia-Pacific
+   North America                                                                                Portugal                                                                                                                           Indonesia
+   US                                                                                                                                                                                                                              Japan                                             Expanding
+   Mexico
+                                                                                                                                                                                                                                   Thailand                                         Market Reach
+                                                                                                                                                                                                                                   China
+                                                                                                                                                                                                                                                                                                                o Thailand
+                                                                                                                                                                                                                                   South Korea                         o Indonesia
+                                                                                                                                                                                                                                                                                                                o Europe
+                                                                                                                                                                                                                                                                       o South Korea
+       The board has approved setting up                                                                                                                                                                                                                                                                        o USA
+       a 100% wholly owned subsidiary to                                                                                                                                                                                                                               o China
+        strengthen presence and expand                                                                                                                                                                                                                                                                          o Mexico
+         opportunities in the US Markets                                                                                                      South Africa
+                                                                                                                                                                                                                                                                       o Japan
+                                                                                                                                                                                                                                                                                                                o South Africa
+
+
+
+                                                                                                                                                                                                                             FY23                       FY24                        FY25                        FY26
+          Exports Revenue                                     FY23                        FY24                       FY25                       FY26                               Exports Share                                                           1%                           6%
+                                                                                                                                                                                                                                5%                                                                                  18%
+                  (INR Crs)                                   13.55                        3.42                      10.80                      66.90                       (% of Total Revenue)
+                                                                                                                                     6.2x
+
+Disclaimer: This map is a generalized illustration only for the ease of the reader to understand the locations, and it is not intended to be used for reference purposes. The representation of political boundaries and the names of geographical features/states do not necessarily reflect the actual position. The
+Company or any of its directors, officers or employees, cannot be held responsible for any misuse or misinterpretation of any information or design there of. The Company does not warrant or represent any kind in connection to its accuracy or completeness.                                                                  33
+
+
+[page 35]
+P&L – Historical Chart
+
+         Total Income (Rs. In Cr.)                                                             EBITDA (Rs. In Cr.)                                                     Profit After Tax (Rs. In Cr.)
+
+
+
+                                              375                                                                              92                                               51
+                                                                                                     82                                                            46                                    47
+                                                                                         74                 73                                                                            40
+               279       273                                                                                                                             38
+       242                           240                                    60                                       59
+ 195                                                                                                                                                                                               24
+
+
+
+
+FY21   FY22    FY23     FY24     FY25         FY26                         FY21      FY22         FY23     FY24      FY25     FY26                       FY21      FY22       FY23      FY24      FY25   FY26
+
+
+                                                              EBITDA (%)                                                                       PAT (%)
+
+
+
+                                           31.0%     30.5%   29.5%                                                          19.6%    19.1%   18.4%
+                                                                     26.6%
+                                                                                 24.4%        24.6%                                                  14.6%
+                                                                                                                                                                          12.5%
+                                                                                                                                                                10.2%
+
+
+
+
+                                           FY21      FY22    FY23    FY24         FY25        FY26                          FY21     FY22    FY23    FY24       FY25       FY26
+
+                                                                                                                                                                                                                34
+
+
+[page 36]
+Financial Ratios
+
+          Fixed Assets Turnover Ratio (x)                                                                               Working Capital (No. of Days)
+
+
+
+                    1.39
+            1.30
+   1.16
+                                                                              62 days             66 days                   69 days               87 days                   96 days             68 days
+                               0.97                     0.92
+
+                                           0.63
+
+                                                                                                                                                    98                        99
+
+                                                                                                    84                       85
+   FY21     FY22    FY23       FY24        FY25         FY26                    76
+                                                                                                                                                                                                  70
+                                                                                                                                                                                      65
+                                                                                        61                  62                                              60         62
+     Leverage ratios (x) & Net Debt (Rs. In Cr.)                                                                                    58
+                                                                                                                                                                                           50             52
+                                                                                                                                             49
+                                                                         46                  44                        42
+(117.9)   (133.1)    (262.7)     (225.1)      (243.5)          (232.6)
+
+
+
+
+                                                                               FY21                FY22                      FY23                   FY24                     FY25                FY26
+
+  0.0       0.0       0.0         0.0             0.0          0.0
+                                                                                                                 Inventory days       Debtor days          Creditor days
+ FY21      FY22      FY23        FY24         FY25             FY26
+
+
+                                                                                                                                                                                                               35
+
+
+[page 37]
+    Capex and Cash
+                                                                                                           Return on Capital Employed (RoCE %)#
+                                Capital Expenditure and Cash Reserves
+
+                                                                                                 17.8%   18.3%
+                  IPO proceeds capex – Rs. 169.66 crores of which
+                        ~Rs. 96.92* crores already deployed                                                        12.5%
+                                                                                                                                9.3%               9.9%
+                                              311
+                                                                                      295                                                   5.6%
+                                                                           285
+                                                                264
+
+                                                                                                 FY21    FY22       FY23        FY24        FY25   FY26
+
+
+                          173
+        159                                                                                                 Return on Invested Capital (RoIC %)
+
+
+
+                                                                                                 32.4%   33.4%
+                                                                      78
+                                                      68
+                                                                                                                   25.6%
+                                  40                                                        44
+               26                                                                27
+
+                                                                                                                               11.0%               12.7%
+           FY21                FY22              FY23            FY24       FY25       FY26
+                                                                                                                                            4.2%
+                                         Cash Reserves           Capex
+
+                                                                                                 FY21    FY22       FY23        FY24        FY25   FY26
+
+# RoCE excludes Other Income
+                                      * As of 31st March 2026                                                                                              36
+
+
+[page 38]
+Historical P&L Statement
+Particulars (Rs. In Cr.)      FY26    FY25    FY24    FY23    FY22    FY21
+
+Revenue From Operations       352.9   218.9   253.4   271.0   233.8   186.6
+
+Other Income                  22.3    21.2    19.6     7.6     8.1     8.5
+
+Total Income                  375.2   240.1   273.0   278.7   241.9   195.1
+
+Raw Materials                 136.8   88.1    106.2   111.4   93.6    67.0
+
+Gross Profit                  238.4   152.0   166.8   167.3   148.2   128.1
+
+Employee Benefit Expenses     41.5    25.1    24.1    24.5    22.5    21.8
+
+Other Expenses                104.5   68.4    70.0    60.7    52.0    45.9
+
+EBITDA                        92.3    58.6    72.6    82.1    73.7    60.4
+
+Depreciation & Amortization   29.2    25.2    18.7    13.0    11.4     7.6
+
+EBIT                          63.1    33.4    53.9    69.1    62.3    52.8
+
+Interest Expense               0.3     0.4     0.4     0.3     0.2     0.2
+
+Profit Before Tax             62.7    33.0    53.5    68.8    62.2    52.6
+
+Tax Expense                   15.8     8.6    13.8    17.7    16.0    14.3
+
+Profit After Tax              46.9    24.4    39.7    51.2    46.2    38.3
+
+
+
+                                                                              37
+
+
+[page 39]
+Balance Sheet
+Particulars (Rs. In Cr.)              Mar-26   Mar-25   Mar-24   Mar-23   Particulars (Rs In Cr.)            Mar-26   Mar-25   Mar-24   Mar-23
+Assets                                                                    Equity & Liabilities
+Non-Current Assets                                                        Total Equity
+Property, plant and equipment         247.1    243.4    211.7    111.1    Equity Share Capital                15.3     15.3     15.3     15.3
+Capital work-in-progress               17.7     1.6      25.4     80.9    Other Equity                       620.2    581.5    565.1    536.0
+Right-of-use assets                    1.9      1.2      1.5      2.5     Liabilities
+Intangible assets                      9.6      10.9     13.9     3.2     Non-Current Liabilities
+Intangible assets under                                                   Financial Liablities
+                                       1.2      0.2      0.0      11.8
+development
+                                                                          (i) Borrowings                      0.0      0.1      0.3      0.3
+Financial Assets
+                                                                          (ii) Lease Liabilities              0.9      0.4      0.8      1.5
+(i) Non-current investments            0.0      0.0      0.0      0.0
+(ii) Other non-current financial                                          Long-Term Provisions                2.3      2.9      2.7      3.3
+                                       1.9      3.9      3.8      3.7
+assets                                                                    Deferred Tax Liabilities (net)      3.5      3.7      2.6      0.4
+Other non-current assets               1.7      3.8      5.4      1.0     Current Liabilities
+Current Assets                                                            Financial Liabilities
+Inventories                            58.8     38.7     35.7     31.9    (i) Borrowings                      0.1      0.1      0.1      0.1
+Financial Assets                                                          (ii) Lease Liabilities              0.8      0.4      0.4      0.6
+(i) Trade receivables                  79.3     55.5     63.1     73.2    (iii) Trade Payables                60.1     40.3     37.6     46.2
+(ii) Cash and Cash Equivalents         31.5     15.4     31.6     4.8     (iv) Other Financial Liabilities    17.7     8.9      8.9      27.5
+(iii) Bank Balances other than Cash   263.0    269.4    232.7    306.6    Other Current Liabilities           1.1      0.9      2.0      2.3
+(ii) Other Financial Assets            11.4     13.3     13.5     4.3     Provisions                          4.0      1.9      2.1      2.2
+Other Current Assets                   6.3      3.1      2.6      7.1     Current Tax Liabilities (Net)       5.5      4.1      3.5      6.2
+Total Assets                          731.4    660.5    641.4    642.0    Total Equity & Liabilities         731.4    660.5    641.4    642.0
+
+
+                                                                                                                                                 38
+
+
+[page 40]
+Cashflow
+Particulars (Rs. In Cr.)                                      Mar-26   Mar-25   Mar-24   Mar-23
+
+Profit Before Tax                                              62.7     33.0     53.5     68.8
+
+Adjustments for: Non -Cash Items / Other Investment or         9.7      5.1      0.0      6.3
+Financial Items
+
+Operating profit before working capital changes                72.4     38.1     53.5     75.2
+
+Changes in working capital                                    (16.8)    4.0      (6.7)   (16.9)
+
+Cash generated from Operations                                 55.6     42.1     46.8     58.2
+
+Direct taxes paid (net of refund)                             (14.5)    (6.9)   (14.3)   (17.4)
+
+Net Cash from Operating Activities                             41.1     35.2     32.5     40.8
+
+Net Cash from Investing Activities                            (16.1)   (42.5)    6.1     (213.1)
+
+Net Cash from Financing Activities                             (8.9)    (8.8)   (11.7)   159.7
+
+Net Decrease in Cash and Cash equivalents                      16.1    (16.1)    26.8    (12.6)
+
+Add: Cash & Cash equivalents at the beginning of the period    15.4     31.6     4.8      17.4
+
+Cash & Cash equivalents at the end of the period               31.5     15.4     31.6     4.8
+
+
+                                                                                                   39
+
+
+[page 41]
+             Contact Information
+Company :
+
+Divgi TorqTransfer Systems Limited
+CIN: L32201MH1964PLC013085
+
+Mr. Aniket Kokane                                   PRODUCT LEADERSHIP
+E: companysecretary@divgi-tts.com
+T: +91 89566 65262
+                                                       LIKE NO OTHER
+www.divgi-tts.com
+
+
+
+Investor Relations Advisor :
+
+Strategic Growth Advisors Pvt. Ltd.
+CIN: U74140MH2010PTC204285
+
+Ms. Neha Shroff / Mr. Dhruvil Jani
+E: neha.shroff@sgapl.net / dhruvil.jani@sgapl.net
+T: +91 77380 73466 / +91 97025 54569
+www.sgapl.net
+
+
+
+
+                                                                         40
+

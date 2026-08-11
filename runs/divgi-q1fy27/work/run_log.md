@@ -31,3 +31,9 @@ Company: Divgi TorqTransfer Systems Limited
   - LEDGER CORRECTION by A3: FY26 "changes in inventories" confirmed (80.76), not A2's (807.60). Footing to total expenses 3,124.22 proves it. Affects FY26 comparative only, not any Q1 FY27 figure. A4 must use corrected value.
   - Findings feeding mandatory A4 mgmt questions: FORWARD-SIGNAL {A3-F2 new foreign entity, A3-F6a, A3-F13b AGM/AR incoming, A3-F15}; AMBIGUOUS {A3-F6b IPO capex 60.7% deployed, A3-F13a statutory auditor change independence}.
 - GATE A3 presentation: pending.
+- GATE A3 presentation: PASS (17/17 statused; 3 PASS / 6 FINDING / 8 N.A.).
+  - LEDGER CORRECTIONS by A3 (presentation): slide 35 PAT series = 38/46/51/40/24/47; slide 37 Cash Reserves = 159/173/311/264/285/295 (FY23=311); slide 11 revenue mix = TC 53 / Comp 24 / Others 18 / EGD 4. A4 must use corrected values.
+  - Presentation forward-signals: A3-01..04 (US sub funding line, dated commitments Sigma SOP Q2FY27 / AT PoC Q3FY27 / Indonesia CY26, EV/Sigma Q1 miss re-dated to Q2).
+  - Presentation ambiguous (-> mgmt questions): A3-05 US sub tense conflict (slide 6 vs 34), A3-06 stale Mar-26 capex footnote, A3-07 presentation-only Mar-26 BS/CF absent from filing.
+
+## All documents cleared A1->A2->A3. Proceeding to A4 (merged).

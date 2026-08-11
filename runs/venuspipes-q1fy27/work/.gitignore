@@ -1,0 +1,4 @@
+# transient OCR rasterisation artifacts
+*.png
+pageimages/
+page-*-ocr.txt

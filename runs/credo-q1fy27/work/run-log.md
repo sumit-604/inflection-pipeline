@@ -44,3 +44,17 @@ runs/credo-q1fy27/ with inputs/ (4 PDFs copied) and work/. Quarter detected = Q1
 - A1 × 4 (parallel, sonnet) → A2 × 4 (parallel, sonnet) → A3 × 4 (parallel, opus)
 - A4 × 1 (opus, merged) → A5 × 1 (opus)
 - Gates validated between phases.
+
+## PIPELINE COMPLETION (all gates passed)
+| Agent | Doc(s) | Gate | Result |
+|---|---|---|---|
+| A1 x4 | results / board-outcome / presentation / media-release | page coverage 100% | PASS (pres. OCR pp 4,10,13,22,32,34) |
+| A2 x4 | same | count test | PASS (results reconciled 8/8 notes after OCR artifact; pres. footnotes 15->18 re-swept) |
+| A3 x4 | same | all F1-F17 status + line cites | PASS (35 findings total) |
+| A4 x1 | merged Role 4 (Role 5 N.A., no concall) | ledger reconciliation + brief | PROCEED WITH CAVEATS; cash INDETERMINATE |
+| A5 x1 | adversary | COMPLETE | COMPLETE (0 orphan rows, 0 arithmetic mismatches, 0 surviving bear counters) |
+
+Verdict: PROCEED WITH CAVEATS | Cash conversion: INDETERMINATE | Decision Status: WATCHLIST maintained (8A-W, first coverage, no trigger can fire).
+Reconciliation line: 8 notes / 13+10 board-agenda items / 9 auditor paras / 38 slides / 78 media rows / 863 deck numbers — all reviewed. Concall turns: 0 (Role 5 N.A.).
+Notion: page 345bb2b9-d3ab-801f-bf8b-d2dc94e0ebbf updated (properties + full review + forensic scorecard + A5 verdict). Decision Status unchanged (WATCHLIST).
+Next gate: post-Q2 FY27 (Nov 2026) + FY25-26 Annual Report deep-dive (Role 6, pre 11-Sep-2026 AGM).

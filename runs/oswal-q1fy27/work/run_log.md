@@ -95,4 +95,5 @@ not disclosed. (Strengthened 14-Jun-26 after 63 MW Bihar RESCO award.)
 - GATE A1 (concall): PASS — 100% line coverage, 150 lines, conversion x1 (Rs Cr). 2026-08-11.
 - GATE A2 (concall): PASS — 145/145 turns, 9/9 Q-rounds, 53/53 number universe (30 mgmt-spoken), 28 consolidated sub-Qs, 14 AMBIGUOUS_ASR rows. 2026-08-11.
 - GATE A3 (concall): PASS — all 17 checks marked (F1,F6,F7,F13,F16,F17 = FINDING; rest N.A. per concall doctype), 100% ledger reconciled, 11 findings (3 forward-signal, 6 ambiguous). 2026-08-11.
+- A4 review: written. Verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE; Decision Status held WATCHLIST (flags only). 2026-08-11.
 - GATE A5: pending

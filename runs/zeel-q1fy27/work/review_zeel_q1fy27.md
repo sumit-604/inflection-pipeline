@@ -163,7 +163,7 @@ extracted, auditor opinion verified (unmodified + EoM = AMBER), business type st
 | Advertisement & publicity | 275.2 | 432.4 | 446.8 | 1,425.1 | L973 |
 | Other expenses | 130.5 | 164.2 | 137.3 | 625.7 | L974 |
 | Total expenses | 1,652.7 | 2,341.8 | 1,864.4 | 7,962.2 | L975 |
-| PBT before JV share, exceptional & tax | 197.1 (OCR "21"/garble; = 1,972 line) | (240.7) (OCR "2aozy") | 78.1 | 482.8 | L977 |
+| PBT before JV share, exceptional & tax | 197.1 (OCR "21"/garble; = 1,972 line) | (240.7) (OCR "2aozy") | 74.1 (printed "781", OCR-suspect; = Total income 19,385 L965 − Total expenses 18,644 L975 = 741 Mn, confirmed by L979) | 482.8 | L977 |
 | Share of profit of JV & associate | 0.1 | 0.0 | 0.0 | 0.2 | L978 |
 | PBT before exceptional & tax | 197.2 | (240.7) | 74.1 | 283.0 | L979 |
 | Exceptional items | ND (garble "»") | ND (dash) | ND (dash) | (9.4) | L980 |

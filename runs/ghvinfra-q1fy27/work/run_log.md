@@ -25,7 +25,20 @@
 - Monitoring frame passed inline to A3/A4: test whether anything this quarter fires a re-entry trigger or deepens an AVOID driver (RPT concentration, cash conversion, governance stability).
 
 ## GATES
-- GATE A1 (page coverage 100%): pending
-- GATE A2 (count reconciliation): pending
-- GATE A3 (F1-F17 all statused, findings line-cited): pending
-- GATE A5 (verdict COMPLETE): pending
+- GATE A1 (page coverage 100%): PASS — 3/3 pages, no OCR needed, 182-line extract.
+- GATE A2 (count reconciliation): PASS — 59 positive-count rows reconcile grep vs sweep; 15 absence flags; flags NAME_CHANGE, DATE_DISCREPANCY, TABLE_OMISSION, INCOMPLETE_COMPARATIVE.
+- GATE A3 (F1-F17 all statused, findings line-cited): PASS — 5 FINDING, 2 PASS, 10 N.A.; findings A3-01..A3-05.
+- GATE A5 (verdict COMPLETE): PASS — 59/59 rows reproduced, 22 metrics recompute within rounding, brief complete, no surviving bear counters.
+
+## OUTCOME
+- Protocol verdict (v1.2): INSUFFICIENT EVIDENCE (media release only, not Reg 33 statement).
+- Cash conversion: INDETERMINATE. Position branch: 8A-W.
+- Decision Status: AVOID UNCHANGED. None of the 3 re-entry triggers fired or advanced.
+- Notion saved (2026-08-11): full Q1FY27 review + forensics table + 6 management questions + monitorables + plain-language brief + A5 verdict appended to GHV Infra page; Key Notes audit trail prepended with dated entry; Decision Status untouched (no trigger fired).
+
+## WORK FILES
+- work/extract_results_ghvinfra_q1fy27.txt (A1)
+- work/ledger_results_ghvinfra_q1fy27.md (A2)
+- work/forensics_ghvinfra_q1fy27.md (A3)
+- work/review_ghvinfra_q1fy27.md (A4 merged review)
+- work/audit_ghvinfra_q1fy27.md (A5)

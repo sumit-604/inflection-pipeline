@@ -166,7 +166,7 @@ denominator the deck avoids.
 |----------------|---------|---------|---------|------|
 | **Core Operating EBITDA (ex-Other Income, ex-JV)** | 22.42 | 90.57 | **(4.84)** | 91.04 |
 | **Core Operating EBITDA margin** (/Rev from ops) | 9.3% | 14.1% | **(2.2%)** | 7.2% |
-| Reported EBITDA (PBT + D + Finance, after JV) | 46.45 | 91.36 | 38.05 | 174.65 |
+| Reported EBITDA (PBT + D + Finance, after JV) | 46.45 | 91.36 | 38.05 | 174.29 |
 | Deck-basis "EBITDA" (PBT-before-JV + D + Finance, incl. Other Income) | 41.59 | 108.87 | 41.90 | 176.88 |
 | Core PBT ex-Other Income (PBT − Other Income) | 2.63 | 48.00 | **(32.52)** | (11.49) |
 | Other Income / PBT | 88.0% | 31.3% | **328.4%** | 114.7% |
@@ -208,7 +208,7 @@ dividends/interest that wash out on consolidation (A3-F2, A3-F3, A3-F11).
 | Core Operating EBITDA (ex-OI, ex-JV) | 22.42 | (4.84) | swing to loss | **Operations turned EBITDA-negative** |
 | Core Operating EBITDA margin | 9.3% | (2.2%) | **−1150 bps** | Collapse, not "flat" |
 | Depreciation | 2.34 | 2.61 | +11.5% | Immaterial |
-| Finance Costs | 22.26 | 21.20 | −4.8% | Modest relief (GoWB royalty ceased, A3-F1-01) |
+| Finance Costs | 22.26 | 21.20 | −4.8% | **NON-CASH relief only:** fall is entirely the royalty-unwind line 1.5→0 (P-L320); CASH interest ROSE 20.8→21.2 (P-L319) on gross debt up 610→651. No deleveraging (A3-F1-01) |
 | Other Income | 19.22 | 46.76 | **+143.3%** | Masks the operating collapse |
 | Core Operating PBT (PBT − OI) | 2.63 | (32.52) | swing to loss | Clean profitability negative |
 | Share of JV (net) | 4.86 | (3.85) | swing to loss | JV income turned negative (deal-breaker c) |
@@ -232,11 +232,15 @@ dividends/interest that wash out on consolidation (A3-F2, A3-F3, A3-F11).
    real:** the only reason any profit is reported is Other Income +Rs 27.5 Cr.
 4. **What drove the gap between core PBT and reported PAT?** Other Income +27.54
    (almost exactly offsetting the −27.26 core EBITDA collapse), finance cost
-   −1.06 (benefit), JV share −8.71 (drag), tax charge +1.94 (drag). See Step 4
-   bridge. Other Income did the entire job of manufacturing the reported profit.
-5. **Are D&A and finance costs scaling faster than revenue?** No — dep +11.5%,
-   finance −4.8%, both immaterial. No capex-absorption gap signal (asset-light
-   model; no plant).
+   −1.06 (reported, but non-cash only — see below), JV share −8.71 (drag), tax
+   charge +1.94 (drag). See Step 4 bridge. Other Income did the entire job of
+   manufacturing the reported profit.
+5. **Are D&A and finance costs scaling faster than revenue?** Dep +11.5% is
+   immaterial. Finance cost fell 4.8% in reported terms **but this is not
+   deleveraging:** the fall is entirely the non-cash royalty-unwind line going
+   1.5 → 0 (P-L320); **cash interest expense actually ROSE 20.8 → 21.2 (P-L319)**
+   on **gross external debt up 610 → 651 (P-L420)**. No capex-absorption gap
+   (asset-light, no plant), but no cash-cost relief either.
 6. **Is Other Income concentration changing?** Sharply — Other Income is now
    **328% of PBT** (19.2 → 46.8), and its FY26 level (89.5) means Q1 alone is
    52% of the full prior year. Treasury/fair-value timing is masking the
@@ -294,7 +298,7 @@ Bridge from Q1 FY26 PAT (20.59) to Q1 FY27 PAT (11.04); total change −9.55 Cr.
 | — subtotal: Core Operating EBITDA change | **(27.26)** | Recurring |
 | Impairment change | +0.03 | Recurring |
 | Depreciation change | (0.27) | Recurring |
-| Finance cost change | +1.06 | Recurring (GoWB royalty cessation, A3-F1-01) |
+| Finance cost change | +1.06 | **Non-cash only:** royalty-unwind cessation 1.5→0 (P-L320); cash interest actually rose 20.8→21.2 (P-L319) on higher gross debt — NOT deleveraging (A3-F1-01) |
 | **Other Income change** | **+27.54** | **NON-RECURRING (fair value / monetization, P-L330)** |
 | Share of JV change | (8.71) | Recurring but volatile (turned negative) |
 | — subtotal: PBT change (after JV) | (7.61) | |
@@ -311,8 +315,10 @@ Bridge from Q1 FY26 PAT (20.59) to Q1 FY27 PAT (11.04); total change −9.55 Cr.
 - **If Other Income reverts to prior-year level (19.22)?** PBT after JV would be
   ~Rs 46.76−19.22 = Rs 27.5 Cr lower, i.e. **deeply negative** (14.24 − 27.5 ≈
   −13 Cr). Run-rate profitability without fair-value gains is negative.
-- **D&A / finance at steady state?** Yes — no ramp; finance benefits from the
-  permanent GoWB royalty cessation (A3-F1-01).
+- **D&A / finance at steady state?** Dep is flat. The reported finance-cost fall
+  is NON-CASH only — the royalty-unwind line ceased (A3-F1-01), while cash
+  interest rose (20.8 → 21.2, P-L319) on gross debt up 610 → 651 (P-L420). So
+  there is no genuine finance-cost tailwind on a cash basis.
 - **Tax adjustments?** Q1 FY27 consolidated ETR 22.5% on PBT-after-JV (near
   statutory), BUT FY26 full year carried a **Rs 22.78 Cr tax CREDIT** on positive
   PBT (ETR −29.2%) that lifted FY26 PAT (100.81) above PBT (78.03) — the deferred
@@ -341,8 +347,8 @@ statutory H1 CFO due at Q2 FY27.
 | Deck new-project investment | (75) | (88) | −13 | P-L396 |
 | **True FCF (deck CFO − investment)** | (51) | **(34)** | +17 | Negative; ex-financing (P-L381/L396) |
 | Deck "Net Free Cash Flow" (incl. borrowings) | (133) | 47 | +180 | Flattered by +50 net new debt + 48 other financing (P-L386/L390/L398) |
-| Gross external debt | 646 (Mar'25) / 610 (Mar'26) | 651 (Jun'26) | +5 vs Mar'26 | P-L420 |
-| Cash & equivalents | 320 (Mar'25) / 172 (Mar'26) | 219 (Jun'26) | +47 vs Mar'26 | P-L421 |
+| Gross external debt | 646 (Mar'25) / 610 (Mar'26) | 651 (Jun'26) | **+41 QoQ vs Mar'26 (610→651)** | P-L420 (the +5 is only vs the older Mar'25 base of 646) |
+| Cash & equivalents | 320 (Mar'25) / 172 (Mar'26) | 219 (Jun'26) | +47 vs Mar'26 | P-L421 (funded by ~106 loan drawals, P-L382) |
 | Net Debt | 326 (Mar'25) / 438 (Mar'26) | 432 (Jun'26) | −6 vs Mar'26; **+32.5% vs Mar'25** | P-L422 (deal-breaker e) |
 | Net Debt / Equity | 0.24 (Mar'25) / 0.30 (Mar'26) | 0.29 (Jun'26) | flat | P-L424 |
 | Total Equity | 1,356 (Mar'25) / 1,460 (Mar'26) | 1,471 (Jun'26) | +11 (= Q1 PAT) | P-L423; rolls cleanly (F11 deck PASS) |
@@ -365,9 +371,13 @@ statutory H1 CFO due at Q2 FY27.
 - **WC drag structural or growth-induced?** Cannot test at Q1 (no balance
   sheet). Notion FY26 evidence (net FCF −148, net debt +34%, cash −46% in a
   record-revenue year) points structural; unresolved.
-- **Net debt vs projection?** Net debt Rs 432 Cr is roughly flat QoQ (438 →
-  432) but **+32.5% above Mar'25 (326)** — the deal-breaker (e) net-debt build
-  has not reversed.
+- **Net debt vs projection?** Net debt Rs 432 Cr is **only optically flat QoQ
+  (438 → 432)** — and that flatness is **debt-funded liquidity, not
+  deleveraging.** Cash rose 172 → 219 (+47) funded by ~Rs 106 Cr of fresh loan
+  drawals (P-L382), while **gross external debt rose +41 QoQ (610 → 651,
+  P-L420)**. Net debt is still **+32.5% above Mar'25 (326)** — the deal-breaker
+  (e) net-debt build has not reversed; the company took on more gross debt this
+  quarter and parked it as cash.
 
 **Cash conversion classification: INDETERMINATE.**
 
@@ -406,7 +416,7 @@ weights on the page).
 | (b) Tax-flattered PAT (FY26 crossed Rs 100 Cr only via Rs 22.9 Cr DTA credit) | ETR anomaly | FY26 tax CREDIT Rs 22.78 Cr confirmed (R-L437); standalone Q1 nil current tax | **STILL FIRED** |
 | (c) JV/associate income negative (−2.6 FY26 vs +23.5 FY25) | JV share <0 | Q1 FY27 JV share **−3.85 Cr** (R-L431), vs +4.86 Q1 FY26 | **STILL FIRED (deteriorated)** |
 | (d) Full-year operating EBITDA margin compression −540 bps | margin falling | Q1 core operating EBITDA margin −2.2% vs 9.3% YoY | **STILL FIRED (Q1 deepened)** |
-| (e) Net FCF −148 & net debt +34% in record-rev FY26; cash −46% | FCF<0, net debt rising | Q1 true FCF −34 Cr; net debt +32.5% vs Mar'25 | **STILL FIRED** |
+| (e) Net FCF −148 & net debt +34% in record-rev FY26; cash −46% | FCF<0, net debt rising | Q1 true FCF −34 Cr; gross external debt rose +41 QoQ (610→651); net debt flat only via ~106 loan drawals parked as cash; net debt still +32.5% vs Mar'25 | **STILL FIRED (debt-funded, not deleveraging)** |
 
 **All five deal-breakers remain live; none reversed; several deteriorated this
 quarter.** No reopen-trigger fired. AVOID stands. (Flag, do not decide — Decision
@@ -461,7 +471,8 @@ trim/exit mechanics; output is updated entry zone / gate / status).
   the Rs 3,300 Cr full-year credible; (iv) statutory H1 CFO/PAT healthy on the
   Ind AS basis.
 - Tighten: treat any repeat of the "revenue +4%" framing on falling recognised
-  revenue, and any further JV-loss deepening, as evidence AGAINST reopening.
+  revenue, any further JV-loss deepening, and any further debt-funded liquidity
+  presented as "free cash flow", as evidence AGAINST reopening.
 
 ### 8C. Single cleanest metric for next quarter (Q2 FY27)
 **Consolidated CORE OPERATING EBITDA ex-Other Income (and the statutory H1 CFO
@@ -489,12 +500,12 @@ the `From finding` column shows coverage (all 24 flagged findings mapped).
 | 4 | Consolidated JV share swung to a **−Rs 3.85 Cr loss** (from +Rs 4.86 Cr), attributed to "122 West" S&A (P-L349). When do the JVs return to positive contribution, and what is the FY27 JV P&L guidance? | Deal-breaker (c) monitoring | Dated recovery | Open-ended | A3-F2, A3-F11 |
 | 5 | 70% of consolidated PAT (Rs 7.71 Cr of Rs 11.04 Cr) comes from 4 JVs NOT reviewed by the principal auditor, and 18 of 26 subsidiaries are unreviewed (R-L333). Which JVs/subsidiaries, and why is profit so concentrated in unreviewed entities? | Earnings reliance on component auditors | Named, immaterial | Vague | A3-F4 |
 | 6 | Standalone Q1 shows NIL current tax on positive PBT of Rs 14.55 Cr, and FY26 consolidated carried a Rs 22.78 Cr tax CREDIT. What is the remaining DTA balance and the expected effective tax rate for FY27-FY28 as the shield normalises? | Tax-flattered-PAT runway (deal-breaker b) | Small DTA, ETR near statutory soon | Large undisclosed DTA masking normalised earnings | A3-F8, A3-F8-01 |
-| 7 | The GoWB royalty / 4% Kolkata non-compete unwinding line went to zero this quarter (P-L320, cessation confirmed P-L352). Is this a permanent removal of the ~Rs 5-6 Cr/yr non-cash finance charge, and does it signal the Kolkata arrangement is fully resolved? | Permanent finance-cost delta + Kolkata resolution | Permanent, resolved | Temporary/partial | A3-F1-01 |
+| 7 | The GoWB royalty / 4% Kolkata non-compete unwinding line went to zero this quarter (P-L320, cessation confirmed P-L352), yet cash interest rose 20.8 → 21.2 (P-L319) on gross debt up 610 → 651 (P-L420). Is the royalty removal permanent, is the Kolkata arrangement fully resolved, and what is the FY27 cash-interest trajectory? | Permanent non-cash delta vs rising cash interest; Kolkata resolution | Permanent, resolved, cash interest stabilising | Temporary/partial; cash interest still climbing | A3-F1-01 |
 | 8 | On the ~272-acre Uttarpara land freed by the FY26 GoWB settlement — what is the disclosed monetisation structure, acreage phasing, expected realisation and timeline? (The Southbrook 16-acre plotted launch is a product, not the monetisation.) | Sole NAV watch-item (watch-condition 2) | Concrete plan with numbers | "momentum" narrative only | A3-F17-01, F17-1 |
 | 9 | FY27 guidance (sales Rs 3,300-3,500 Cr, collections Rs 2,100-2,200 Cr, handovers 3,750-3,800, volume 5.0-5.5 msf) is reaffirmed unchanged, yet Q1 delivered only ~14-18% across every metric. What is the quarter-by-quarter H2 path, and what happens to guidance if the Bangalore approvals slip? | H2 hockey-stick credibility | Dated, de-risked H2 schedule | "H2-weighted, confident" | A3-F6-01, F16-2, F6-1 |
 | 10 | Manjari (Pune) slipped Q2 → Q3 with launch area cut 2.30 → 1.00 msf (P-L494), leaving Gateway C Zone as the only Q2 launch ("Approvals awaited"). What is the current Q2 launch book, and what are the specific approval milestones? | Near-term launch book is thin/approval-gated | Firm Q2 launches | Approval-dependent, unscheduled | A3-F6-01 |
 | 11 | The deck pre-emptively cites "e-Khata buffers already factored" and "approval-delay insulation" (P-L526, P-L506). Quantify the FY27 sales/handover value exposed to Karnataka e-Khata and Bangalore approval timing (6 of 11 FY27 launches are Bangalore). | Telegraphed slippage vector | Small, buffered | Large, unquantified | A3-F7-01 |
-| 12 | The deck's "Net Free Cash Flow +Rs 47 Cr" includes Rs 50 Cr net new borrowings and Rs 48 Cr "other financing cashflows" (P-L386/L390); operating cash Rs 54 Cr minus new-project investment Rs 88 Cr is **−Rs 34 Cr**. What are the "other financing cashflows", and what is FY27 net-debt guidance? | Cash-quality / true FCF (deal-breaker e) | Named, one-off inflow; deleveraging plan | Recurring debt-funded "FCF" | (Step 5 cash finding) |
+| 12 | The deck's "Net Free Cash Flow +Rs 47 Cr" includes Rs 50 Cr net new borrowings and Rs 48 Cr "other financing cashflows" (P-L386/L390); operating cash Rs 54 Cr minus new-project investment Rs 88 Cr is **−Rs 34 Cr**, and gross debt rose +41 QoQ (610→651). What are the "other financing cashflows", and what is FY27 net-debt guidance? | Cash-quality / true FCF (deal-breaker e) | Named, one-off inflow; deleveraging plan | Recurring debt-funded "FCF" | (Step 5 cash finding) |
 | 13 | "MISSION 1234 / Quadruple Profit" and the FY28 target PBT Rs 250+ Cr (P-L558) sit against a quarter where PAT fell 46% and core operating EBITDA was negative. What is the year-by-year PBT bridge from the Rs 18 Cr Q1 run-rate to Rs 250+ Cr, and is the horizon FY28 or "5-7 years" (P-L562)? | Aspirational frame vs run-rate | Credible bridge | No baseline/bridge | A3-F16-02 |
 | 14 | The Financial Highlights table (PR-L100-103) is unlabeled as to standalone vs consolidated though the cover letter promises both (PR-L29); footers read "Page X of 3" on a 4-page PDF. Are the Rs 271.1 Cr / Rs 18.1 Cr figures consolidated, and will future releases label the basis? | Disclosure clarity given the JV/consol thesis | Labels basis | Leaves ambiguous | F14-1 |
 | 15 | Consolidated Other Equity (Rs 1,289 Cr) is Rs 138 Cr BELOW standalone (Rs 1,428 Cr, R-L215/L463) — the reverse of normal subsidiary-profit accretion. Please bridge standalone to consolidated reserves (accumulated sub/JV losses, negative JV net worth, intra-group dividend elimination). | Where value actually sits (deal-breaker c) | Small, explained | Large accumulated JV losses | A3-F11 |
@@ -578,7 +589,7 @@ become the input for next quarter's answer-status audit.
 
 | Disclosure | Type | Material? | Thesis impact |
 |------------|------|-----------|---------------|
-| GoWB royalty / 4% non-compete unwinding ceased (P-L320/L352) | Cost item | YES | Permanent ~Rs 5-6 Cr/yr finance relief; Kolkata resolution signal |
+| GoWB royalty / 4% non-compete unwinding ceased (P-L320/L352) | Cost item | YES | Permanent removal of a ~Rs 5-6 Cr/yr NON-CASH charge; but cash interest rose (P-L319) — no cash relief; Kolkata resolution signal |
 | New subsidiary Shrivision Upscale Spaces w.e.f. 09 Feb 2026 (R-L390) | New entity | Maybe | Purpose undisclosed (Q17) |
 | ~Rs 650 Cr GDV project added; 7+ msf at advanced closure (P-L278) | Pipeline | Modest | Forward pipeline, unclosed |
 | Manjari slip + downsize (P-L494) | Negative | YES | First execution regression |
@@ -593,17 +604,19 @@ become the input for next quarter's answer-status audit.
 | Statutory PBT after JV (Rs 14.24 Cr, −34.8%) | Headline uses pre-JV Rs 18 Cr | **AMBER-RED** — selective |
 | Net Profit YoY decline (−46%) | Material; headline emphasises PBT | **AMBER-RED** — omitted from narrative |
 | Margins as % (only Rs absolutes given in PR) | Standard disclosure | **AMBER** — computed 20.7%/15.5% miss thresholds |
+| Gross-debt increase (+41 QoQ) behind "flat net debt" | Cash is debt-funded | **AMBER** — the deleveraging framing is not supported |
 | Standalone P&L (cover letter promised both) | Promised, not in deck | **AMBER** — consolidated-only deck |
 | DTA composition / ETR normalisation | FY26 PAT crossed Rs 100 Cr via DTA credit | **AMBER** — unaddressed |
 
 ### B6. Tone & specificity
 Specificity ratio moderate (quantified guidance present) but paired with the
 **selective-framing pattern** (revenue +4% on falling recognised revenue; PBT
-pre-JV headlined; PAT decline unnarrated; margins in Rs not %; MISSION 1234
-aspiration vs PAT −46%). No safe-harbour clause on 8 forward statements (PR
-NO_SAFE_HARBOR_CLAUSE). Defensive/pre-emptive hedges appear ("e-Khata buffers
-already factored", "approval delay insulation"). Tone is uniformly upbeat
-against materially weaker numbers.
+pre-JV headlined; PAT decline unnarrated; margins in Rs not %; net debt "flat"
+while gross debt rose +41 QoQ; MISSION 1234 aspiration vs PAT −46%). No
+safe-harbour clause on 8 forward statements (PR NO_SAFE_HARBOR_CLAUSE).
+Defensive/pre-emptive hedges appear ("e-Khata buffers already factored",
+"approval delay insulation"). Tone is uniformly upbeat against materially weaker
+numbers.
 
 ### B6E. Management archetype (provisional — no credibility history yet)
 Highly specific guidance (Rs 3,300-3,500 Cr etc.) + FY28 "Quadruple Profit"
@@ -622,9 +635,10 @@ pre-committed thresholds (Step 8B), not commentary, for any reopen.**
 | "Revenues up +4% YoY" | Rev from ops −7.4% (242.32 → 224.28, R-L415); +4% only on total operating revenue incl Rs 39.3 Cr fair-value gains | **PARTIALLY CONFIRMED / MISLEADING** |
 | "EBITDA flat Rs 42 Cr" | Reported EBITDA roughly flat; core operating EBITDA −Rs 4.84 Cr (negative) | **PARTIALLY CONFIRMED / MISLEADING** |
 | "Pre-tax profits marginally higher Rs 18 Cr" | Statutory PBT after JV Rs 14.24 Cr, **−34.8%** (R-L432) | **CONTRADICTED** (statutory PBT fell) |
+| "Finance costs remained flat / lower" | Reported finance −4.8% but only via non-cash royalty-unwind cessation; cash interest ROSE 20.8→21.2 (P-L319) on gross debt +41 QoQ | **PARTIALLY CONFIRMED / MISLEADING** |
 | "Margins a product-mix issue, not structural" | Core operating EBITDA negative in Q1 AND core PBT ex-OI negative in FY26 | **UNVERIFIABLE → leans CONTRADICTED** |
 | "Strong operating cashflows Rs 54 Cr" | True FCF (CFO − investment) −Rs 34 Cr; "+47 FCF" propped by Rs 50 Cr new debt | **PARTIALLY CONFIRMED / MISLEADING** |
-| "Net debt Rs 432 Cr, D/E 0.3x" | P-L422/L424 | **CONFIRMED** |
+| "Net debt Rs 432 Cr, D/E 0.3x" (implying deleveraging) | Net debt flat only via ~106 loan drawals parked as cash; gross debt rose +41 QoQ (610→651, P-L420) | **CONFIRMED (figure) / MISLEADING (framing)** |
 | "Net Profit Rs 11 Cr" | R-L438; but −46% YoY, undisclosed | **CONFIRMED (number), selective** |
 
 **Peer concall cross-check:** No peer real-estate concall transcript was
@@ -644,11 +658,13 @@ filing supports, which is itself the governance signal. Position: remains
 ### Combined verdict
 - **Filing-derived signal:** core operating EBITDA turned negative (−Rs 4.84
   Cr), recognised revenue −7.4%, statutory PBT −34.8%, PAT −46%, JV income
-  negative, reported profit carried entirely by Other Income (328% of PBT). All
-  five AVOID deal-breakers remain live; several deteriorated.
+  negative, reported profit carried entirely by Other Income (328% of PBT); the
+  reported finance-cost fall is non-cash only while cash interest rose on higher
+  gross debt. All five AVOID deal-breakers remain live; several deteriorated.
 - **Narrative-derived signal:** upbeat framing (record Q1 sales, +4% revenue,
-  flat EBITDA, guidance reaffirmed) that the filing does not support; one launch
-  already slipped; no safe-harbour; Overpromiser characteristics.
+  flat EBITDA, "flat" net debt, guidance reaffirmed) that the filing does not
+  support; one launch already slipped; no safe-harbour; Overpromiser
+  characteristics.
 - **Reconciliation:** filing wins. No reopen-trigger fired; no Decision Status
   change is warranted. **AVOID stands (flag, do not decide).**
 - **Protocol verdict: PROCEED WITH FLAGS.** Cash conversion is INDETERMINATE
@@ -672,16 +688,19 @@ filing supports, which is itself the governance signal. Position: remains
 | FY27 full-year KPIs vs guidance (sales 3,300-3,500 / coll 2,100-2,200 / handovers 3,750-3,800 / vol 5.0-5.5) | FY27 close | P-L461 (F16-2) |
 | ED search resolution (Emphasis of Matter) | undated — watch | R-L147/L325 (A3-F5) |
 | FY28 "Mission 1234" targets (Sales 5,000+/Rev 2,500+/PBT 250+) | FY28 | P-L555-558 (A3-F16-02) |
-| GoWB royalty cessation confirmed permanent (finance-cost delta) | verify at Q2 | P-L320/L352 (A3-F1-01) |
+| GoWB royalty cessation confirmed permanent + FY27 cash-interest trajectory | verify at Q2 | P-L319/L320/L352 (A3-F1-01) |
 
 ### Flags (propagate to human; decision stays human)
 - **EARNINGS-QUALITY:** reported profit carried entirely by Other Income /
   fair-value gains; core operating EBITDA negative (A3-F16-01).
 - **SELECTIVE-DISCLOSURE:** revenue +4% on falling recognised revenue; PBT
   pre-JV headlined vs statutory PBT −34.8%; PAT −46% unnarrated; margins in Rs
-  not % (F16-1, F8-1).
+  not %; net debt "flat" while gross debt rose +41 QoQ (F16-1, F8-1).
+- **NON-CASH FINANCE RELIEF ONLY:** reported finance cost fell via the royalty
+  unwind cessation; cash interest rose 20.8 → 21.2 on gross debt up 610 → 651.
+  No deleveraging (A3-F1-01).
 - **CASH-CONVERSION INDETERMINATE:** no statutory Q1 CFO; true FCF −Rs 34 Cr;
-  "+47 FCF" debt-propped (Step 5).
+  "+47 FCF" debt-propped; cash build is loan-drawn (Step 5).
 - **GOVERNANCE-TIMING:** four of five signatures predate board's stated
   conclusion (A3-F14); no safe-harbour on 8 forward statements (F7-1).
 - **AUDIT SCOPE:** 70% of consolidated PAT from unreviewed JVs (A3-F4);
@@ -706,21 +725,26 @@ group would have been loss-making before tax. Net profit itself fell 46% year on
 year, a fact the press release does not mention — it highlights "pre-tax profit
 marginally higher at Rs 18 Cr", which is the figure measured before a Rs 3.9 Cr
 joint-venture loss; the actual statutory pre-tax profit was Rs 14 Cr, down 35%.
-Cash flow cannot be judged properly at Q1 (no statutory cash-flow statement is
-required), but the company's own numbers show operating cash of Rs 54 Cr against
-Rs 88 Cr of new-project investment — a real cash outflow of about Rs 34 Cr that
-its slide reframes as "positive free cash flow" only by adding new borrowings.
-Net debt is Rs 432 Cr, still about a third higher than two years ago. Management
-kept its full-year guidance unchanged (sales Rs 3,300-3,500 Cr and so on) even
-though the first quarter delivered only 14-18% of every target, and it is leaning
-entirely on a big second-half of launches and completions — while already
-slipping and shrinking one Pune launch. The company sits at AVOID on our page,
-and nothing this quarter changes that: all five reasons for the AVOID (thin
-returns, tax-flattered profit, negative JV income, margin compression, weak free
-cash flow and rising debt) are still live and several got worse. This is a
-review that PROCEEDS WITH FLAGS: the numbers are fully extracted, but cash
-conversion is indeterminate and the gap between the story and the statements is
-the story. No trigger to change the decision fired; we flag, we do not decide.
+Even the finance-cost "saving" is not real: reported finance cost fell only
+because a non-cash royalty charge stopped, while actual cash interest rose (Rs
+20.8 Cr to Rs 21.2 Cr) on higher gross debt. Cash flow cannot be judged properly
+at Q1 (no statutory cash-flow statement is required), but the company's own
+numbers show operating cash of Rs 54 Cr against Rs 88 Cr of new-project
+investment — a real cash outflow of about Rs 34 Cr that its slide reframes as
+"positive free cash flow" only by adding new borrowings. Net debt looks flat at
+Rs 432 Cr, but that is because the company drew about Rs 106 Cr of fresh loans
+and parked the money as cash; gross debt actually rose Rs 41 Cr in the quarter,
+so this is debt-funded liquidity, not deleveraging. Management kept its full-year
+guidance unchanged (sales Rs 3,300-3,500 Cr and so on) even though the first
+quarter delivered only 14-18% of every target, and it is leaning entirely on a
+big second-half of launches and completions — while already slipping and
+shrinking one Pune launch. The company sits at AVOID on our page, and nothing
+this quarter changes that: all five reasons for the AVOID (thin returns,
+tax-flattered profit, negative JV income, margin compression, weak free cash flow
+and rising debt) are still live and several got worse. This is a review that
+PROCEEDS WITH FLAGS: the numbers are fully extracted, but cash conversion is
+indeterminate and the gap between the story and the statements is the story. No
+trigger to change the decision fired; we flag, we do not decide.
 
 ## 2. SECTOR INTELLIGENCE
 - Indian residential real estate (mid-market / mid-premium; Bengaluru, Chennai,
@@ -827,12 +851,12 @@ questions_for_management:
   - {q: "When do JVs return to positive contribution; FY27 JV P&L guidance?", from_finding_id: "A3-F2"}
   - {q: "Which JVs/subs drive 70% of PAT via unreviewed entities and why the concentration?", from_finding_id: "A3-F4"}
   - {q: "Remaining DTA balance and expected FY27-FY28 ETR as the tax shield normalises?", from_finding_id: "A3-F8"}
-  - {q: "Is the GoWB royalty / 4% non-compete cessation permanent; Kolkata arrangement fully resolved?", from_finding_id: "A3-F1-01"}
+  - {q: "Is the GoWB royalty cessation permanent and Kolkata resolved, given cash interest rose on higher gross debt?", from_finding_id: "A3-F1-01"}
   - {q: "Uttarpara ~272-acre monetisation structure, acreage phasing, price and timeline?", from_finding_id: "A3-F17-01"}
   - {q: "Quarter-by-quarter H2 path to the reaffirmed FY27 guidance given Q1 at ~14-18%?", from_finding_id: "F16-2"}
   - {q: "Current Q2 launch book after Manjari slipped Q2->Q3 and was downsized 2.30->1.00 msf?", from_finding_id: "A3-F6-01"}
   - {q: "Quantify FY27 sales/handover value exposed to e-Khata and Bangalore approval timing?", from_finding_id: "A3-F7-01"}
-  - {q: "What are the Rs 48 Cr 'other financing cashflows'; FY27 net-debt guidance (true FCF -34 Cr)?", from_finding_id: "A3-F16-01"}
+  - {q: "What are the Rs 48 Cr 'other financing cashflows'; FY27 net-debt guidance (true FCF -34 Cr; gross debt +41 QoQ)?", from_finding_id: "A3-F16-01"}
   - {q: "Year-by-year PBT bridge from Rs 18 Cr Q1 to FY28 Rs 250+ Cr; horizon FY28 or 5-7 years?", from_finding_id: "A3-F16-02"}
   - {q: "Are the Financial Highlights figures standalone or consolidated; will future releases label basis?", from_finding_id: "F14-1"}
   - {q: "Bridge standalone-to-consolidated reserves (consol Other Equity Rs 138 Cr below standalone)?", from_finding_id: "A3-F11"}
@@ -853,11 +877,12 @@ monitorables:
   - {item: "FY27 full-year KPIs vs reaffirmed guidance", implied_date: "FY27 close", source_ref: "P-L461 (F16-2)"}
   - {item: "ED search resolution (Emphasis of Matter)", implied_date: "undated - watch", source_ref: "R-L147/L325 (A3-F5)"}
   - {item: "FY28 Mission 1234 targets (Sales 5,000+/Rev 2,500+/PBT 250+)", implied_date: "FY28", source_ref: "P-L555-558 (A3-F16-02)"}
-  - {item: "Confirm GoWB royalty cessation permanent (finance-cost delta)", implied_date: "Q2 FY27", source_ref: "P-L320/L352 (A3-F1-01)"}
+  - {item: "Confirm GoWB royalty cessation permanent + FY27 cash-interest trajectory", implied_date: "Q2 FY27", source_ref: "P-L319/L320/L352 (A3-F1-01)"}
 flags:
   - "EARNINGS-QUALITY: reported profit carried entirely by Other Income; core operating EBITDA negative (-4.84 Cr)"
-  - "SELECTIVE-DISCLOSURE: revenue +4% on falling recognised revenue; pre-JV PBT headlined vs statutory PBT -34.8%; PAT -46% unnarrated"
-  - "CASH-CONVERSION INDETERMINATE: no statutory Q1 CFO; true FCF -34 Cr; +47 FCF debt-propped"
+  - "SELECTIVE-DISCLOSURE: revenue +4% on falling recognised revenue; pre-JV PBT headlined vs statutory PBT -34.8%; PAT -46% unnarrated; net debt 'flat' while gross debt rose +41 QoQ"
+  - "NON-CASH FINANCE RELIEF ONLY: reported finance cost fell via royalty-unwind cessation; cash interest rose 20.8->21.2 on gross debt 610->651"
+  - "CASH-CONVERSION INDETERMINATE: no statutory Q1 CFO; true FCF -34 Cr; +47 FCF debt-propped; cash build loan-drawn"
   - "GOVERNANCE-TIMING: 4 of 5 signatures predate board's stated conclusion; no safe-harbour on 8 forward statements"
   - "AUDIT SCOPE: 70% of consolidated PAT from unreviewed JVs; ED-search Emphasis of Matter persists ~21 months"
   - "ALL FIVE AVOID DEAL-BREAKERS REMAIN LIVE; JV income and operating margin deteriorated this quarter"

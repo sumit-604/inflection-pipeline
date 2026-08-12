@@ -1,0 +1,36 @@
+stage: B07-emoat
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["investor presentation not provided", "concall transcripts not provided (no-concall mode; F2 substituted AR capex-completion evidence per orchestrator degradation rule)", "prospectus/rating reports/announcements/shareholding/research not provided", "no disclosed 3-year revenue mix target percentages (1C)", "no disclosed commissioning dates for Bawana/Kakinada/Nellore/Okhla expansion/SIPCOT HAM", "Rs5,000cr RPT financing framework (operator lead) not located anywhere in the AR"]
+flags: ["FLAG-EMOAT-EXEC-PACE: FY27 completion target (11) vs FY26 delivered (3) unproven at scale", "FLAG-EMOAT-LEVERAGE: G1 war-chest evidence contradicted by rising net debt (JWIL Rs118.80cr to Rs214.84cr YoY) and Gate 0 ND/EBITDA 6.71x deal-breaker", "FLAG-EMOAT-WC: working capital trend deteriorating (receivables +51.8% YoY, contract liabilities -18.6% YoY), opposite of G2 definition", "FLAG-EMOAT-DILUTION: large in-the-money JWIL ESOP grant (Rs10 strike vs Rs400 fair value) carries minority-dilution risk alongside genuine retention value"]
+em_score: 17.7
+em_classification: "MODEST"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "mixed documented/claim", time_to_materialise: "24-36m"}
+  - {id: "E1", name: "Geographic first-mover", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing"}
+  - {id: "F1", name: "Talent density", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12m"}
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Strong", evidence_type: "documented", time_to_materialise: "12-36m"}
+evidence_mix: {documented: 18, claim: 6, inference: 3}
+completionist_recount: "18 documented items across 6 categories; 6 active (Strong/Moderate) categories against a 3-6 realistic base rate, at the top of the band, not over it"
+catalysts_12m:
+  - {catalyst: "Jodhpur WtE (10MW) commercial operation date", window: "on/before Oct 2026", evidence_type: "documented", anchor: "Board's Report p.6"}
+  - {catalyst: "FY27 target of 11 JWIL project completions vs 3 delivered FY26", window: "through Mar 2027", evidence_type: "claim", anchor: "MD&A p.84"}
+  - {catalyst: "Kakinada/Nellore WtE groundwork progress toward commissioning", window: "12-24m", evidence_type: "documented", anchor: "Note 15 items 8-9, p.234-235"}
+  - {catalyst: "HAM financing template replication (Chambal-Alwar Rs6,958cr, Chittorgarh)", window: "12m", evidence_type: "claim", anchor: "MD&A p.84"}
+capex_embedded_growth_pct: 25.1
+optionality_register:
+  - {optionality: "Rs5,000cr RPT financing framework with JWIL reportedly approved 6 May 2026", converting_evidence: "signed definitive financing/RPT agreement or shareholder-approved RPT disclosure", first_appears: "exchange filing or FY27 AR related-party note", window: "6-12m"}
+  - {optionality: "Desalination vertical (Tuticorin Desal Pvt Ltd, incorporated 29.09.2025)", converting_evidence: "first signed project contract/concession with disclosed capex", first_appears: "exchange filing or FY27 AR subsidiary note", window: "12-24m"}
+  - {optionality: "Smart water metering (Chennai Smart Water Meters Pvt Ltd, w.e.f. 16.03.2026)", converting_evidence: "first metering contract or municipal order announcement", first_appears: "exchange filing or FY27 AR", window: "12-24m"}
+  - {optionality: "CBG/compost/RDF resource-recovery diversification", converting_evidence: "signed offtake agreement or disclosed capex commitment", first_appears: "AR capex note or exchange filing", window: "24-36m"}
+  - {optionality: "HAM template replication - Chambal-Alwar cluster and Chittorgarh", converting_evidence: "financial closure / debt tie-up announcement analogous to SIPCOT NABFID", first_appears: "exchange filing or FY27 MD&A", window: "12m"}
+  - {optionality: "Industrial water wins (NTPC, Mahagenco, SIPCOT, West Bengal, Gujarat AMC, Odisha)", converting_evidence: "signed contract or letter of award", first_appears: "exchange filing", window: "12-24m"}
+  - {optionality: "Africa expansion beyond existing Tanzania project", converting_evidence: "signed new African-market contract", first_appears: "exchange filing or FY27 AR", window: "24-36m"}
+  - {optionality: "Working capital improvement (currently deteriorating)", converting_evidence: "disclosed reduction in receivable/DSO days or trend reversal", first_appears: "FY27 AR ageing schedules", window: "12m"}
+combined_assessment: "AVOID"
+combined_reasoning: "MODEST forward moat evidence (17.7/80, 6 categories) cannot offset Gate 0 deal-breakers of negative net worth in all 10 years, 5.34% median ROCE and 6.71x ND/EBITDA; this is credible operational progress inside a structurally weak balance sheet, not a GOOD/AVERAGE-plus-EXPANSION transition setup."
+top_moat_risks: ["Execution pace mismatch: 3 completions delivered FY26 vs 11 targeted FY27, unproven at required scale", "G1 war-chest evidence contradicted by rising net debt at both JWIL and consolidated level", "Working capital deteriorating (receivables +51.8% YoY) opposite of a genuine G2 improvement signal", "E1 scale/market-share claim (~50%) is self-reported with no independent verification", "R1 grant tailwind tied to a policy window (SBM-Urban 2.0) disclosed as running only through FY2025-26 with no confirmed successor"]

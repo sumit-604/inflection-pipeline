@@ -1,0 +1,31 @@
+stage: B06-peers
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus absent", "rating absent", "announcements absent", "shareholding absent", "research absent", "presentation absent", "main-company concalls absent (concalls_available:false)"]
+flags: ["Q6 contradicted: JWIL cost-of-borrowing improvement reads as company-specific, not sector-wide easing — peers show diverging financing trajectories (WABAG near-debt-free structural trend; EMS tightening with rising promoter pledge)", "no peer across 16 transcripts names JITF/JWIL/JUIL — notable silence given claimed scale of Rs11,352cr order book", "Q1, Q3, Q4 rest on figures no peer discloses in comparable terms — unanchored to peer evidence, not falsified"]
+peers_provided: 4
+verified: []
+partially_verified:
+  - {claim: "JWIL order-book +123% YoY to Rs11,352cr matched by peers, or outlier", peers: ["EIEL", "WABAG", "EMSLIMITED"]}
+  - {claim: "18-25% margin premium for Integrated (DBOOT/HAM/O&M) vs EPC-only", peers: ["WABAG", "EIEL", "AWHCL"]}
+  - {claim: "Peers executing named CBG/compost/RDF resource-recovery projects at scale", peers: ["AWHCL", "WABAG"]}
+contradicted:
+  - {claim: "JWIL rating upgrade and falling cost of borrowing (10.19%->9.16%) reflects sector-wide easing", contradicting_peer: "EMSLIMITED (rising interest costs, promoter pledge 11%->28%); WABAG (rating reaffirmed not upgraded, near-debt-free so not comparable)", quote_anchor: "EMSLIMITED Feb 2026 call, Ashish Tomar: 'interest costs have ballooned because of a loan... against the HAM project'; WABAG Feb 2026 call, Skandaprasad S.: rating 'reaffirmed at AA-/Stable'"}
+unverifiable:
+  - {claim: "India water treatment market ~10.6% CAGR, USD2.3bn (2024) to USD7.0bn (2035)", peers_checked: ["WABAG", "EMSLIMITED"]}
+  - {claim: "JUIL holds ~50% share of India's operational MSW-to-energy processing capacity", peers_checked: ["AWHCL"]}
+  - {claim: "WtE potential-vs-installed gap: 5,690MW potential vs 522MW installed", peers_checked: ["AWHCL"]}
+peer_coverage_map:
+  - {peer: "WABAG", quarter: "Q1-Q4 FY26 (Aug 2025-Jun 2026)", usage: "SUBSTANTIVE", contribution: "Order book trend (Q2), margin-premium qualitative confirmation (Q5), CBG-from-sludge project (Q7), rating reaffirmed not upgraded (Q6), India market-size framing mismatch (Q1)"}
+  - {peer: "EMSLIMITED", quarter: "Q1-Q4 FY26 (Sep 2025-May 2026)", usage: "SUBSTANTIVE", contribution: "Order-book contraction and revenue decline directly contradicting Q2 and demand narrative; WABAG named non-competitor (2D); financing-stress evidence for Q6; missing-risks source (2E)"}
+  - {peer: "EIEL", quarter: "Q1-Q4 FY26 (Aug 2025-May 2026)", usage: "SUBSTANTIVE", contribution: "Closest peer match to JWIL's order-book growth magnitude in comparable water segment (Q2); quantified O&M/HAM margin premium (Q5); FY27 commodity-cost margin guidance cut (2B)"}
+  - {peer: "AWHCL", quarter: "Q1-Q4 FY26 (Aug 2025-May 2026)", usage: "SUBSTANTIVE", contribution: "RDF/compost tonnage confirms Q7 at scale; WtE segment margin premium cross-read for Q5; silence on national MSW capacity share and MW gap informs Q3/Q4 as unverifiable; new AP WtE capex confirms capacity race (2C)"}
+industry_cross_read:
+  demand: "Three of four peers (WABAG, EIEL, AWHCL) confirm a genuine broad-based growth phase; EMS is a sharp outlier with FY26 revenue down 36-37% YoY on weather, elections and government payment-cycle delays — a live execution risk JITF's narrative omits."
+  pricing_inputs: "No peer reports pricing power gains; EIEL explicitly cut FY27 EBITDA guidance (22-24% to 21-22%) on global commodity cost pressure, a headwind absent from JITF's framing."
+  capex_cycle: "Genuine sector-wide capacity race, not a lone expander — WABAG, EIEL and AWHCL all expanding into new geographies/segments/concessions; only EMS is capital-constrained by explicit debt-averse policy."
+peer_mentions_of_company: []
+risks_peers_raise: ["government payment-cycle/disbursement delay risk (EMS, SPARSH portal transition)", "election-driven work stoppages on underground works (EMS, West Bengal)", "commodity/input cost pressure compressing forward margins (EIEL FY27 guidance cut)", "promoter share pledging as funding mechanism and governance concern (EMS pledge 11%->28%)", "monsoon/underground-execution risk as structural, recurring, sector-wide feature (EMS, all quarters)", "geopolitical/currency volatility affecting international project economics (WABAG)", "working-capital/receivables intensity of municipal-funded projects (WABAG retention-clause structures)"]
+net_narrative_effect: "complicates"

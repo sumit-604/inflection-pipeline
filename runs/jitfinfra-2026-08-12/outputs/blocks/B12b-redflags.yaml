@@ -1,0 +1,22 @@
+stage: B12b
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 12
+caught: 10
+partially_caught: 1
+missed:
+  - {severity: "MAJOR", item: "Trade-receivables surge / cash-conversion risk absent from B05 2D: consol. current trade receivables Rs1,271cr (Rs1,27,107.48L) vs Rs837cr PY, +52% vs +24% revenue; +Rs434cr receivables drain in consol. cash flow; against management's own 'tighten working capital' priority and a peer (EIEL) analyst flagging identical state-gov receivable risk", anchor: "FY26 Results, consolidated balance sheet + consolidated cash flow statement"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 3, confirmed: 3, wrong: 0}
+credibility_grade_concur: "concur — C is correct: NO-CONCALL rule caps at C, and the merits (negative consol net worth, Rs434cr receivables drain, interest ~66% of EBITDA, two going-concern subs) argue against anything higher, not lower"
+findings:
+  - {severity: "MAJOR", location: "B05 Section 2D / 4D", claimed: "'What they are NOT saying' covers net worth and group borrowings", source_truth: "Consol. trade receivables +52% to Rs1,271cr vs +24% revenue; Rs434cr CF drain; not surfaced", note: "Thesis-relevant cash-conversion miss; may be covered by B02/B03 (outside my inputs) - and it is: B02 receivables_trend and B03 FLAG-CASH both capture it"}
+  - {severity: "MINOR", location: "B05 Section 4D (ESOP row)", claimed: "Q4 loss Rs783.80L 'larger than' full-year loss Rs993.47L", source_truth: "783.80 < 993.47 — comparative inverted", note: "ESOP-driven Q4 weakness point stands; comparative wrong"}
+  - {severity: "MINOR", location: "B05 Sections 2C/4D/1C", claimed: "'going-concern qualification' on Naya Raipur/Bathinda", source_truth: "Opinion unmodified; para 3 = material uncertainty re going concern, para 4 = emphasis of matter", note: "Label imprecision; flag validity intact"}
+  - {severity: "MINOR", location: "B05 Section 2D/4D vs FY26 Results P&L", claimed: "Leverage flagged via JWIL D/E and group borrowings", source_truth: "Group finance costs Rs40,128.90L ~66% of EBITDA ~Rs604cr; interest paid ~= CFO-before-interest", note: "Interest-coverage burden under-weighted (partially caught)"}
+critical_count: 0
+major_count: 1
+minor_count: 3
+acceptance_rate: 83

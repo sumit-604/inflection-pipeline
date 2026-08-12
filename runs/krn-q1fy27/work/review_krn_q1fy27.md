@@ -17,7 +17,14 @@ row is reviewed, the run proceeds.
 
 **A3 findings incorporated (all dispositioned):** F1, F2, F4, F6, F8, F9, F12, F13, F14
 (FINDING); F3, F5, F7, F10, F11, F15 (PASS); F16, F17 (N.A. — no presentation, no transcript).
-Carry-forward A2 flags incorporated: FIGURE_MISMATCH x4 (all resolved into F14/F8),
+Carry-forward A2 flags incorporated: FIGURE_MISMATCH x4 — **all four dispositioned into F14/F8**:
+(i) consolidated PAT prints 3,269.56 vs true 3,289.56 (F14); (ii) standalone prior-period/
+exceptional-item sign flip vs consolidated (F14); (iii) Income Tax short/excess sign flip, consol
++302.65 vs standalone (302.65) (F8/F14); (iv) **standalone segment-note pre-exceptional FY26
+9,191.08 lakh (L564) vs standalone P&L pre-exceptional FY26 9,111.66 lakh (L434)** — a Rs 0.79 Cr
+(79.42 lakh) gap whose root cause is the segment note **double-counting the 39.71 lakh exceptional
+item** (79.42 = 2 x 39.71); both statements still reconcile down to PBT 9,151.37 (L566 = L436),
+immaterial in rupees, a genuine drafting-control instance. Also incorporated:
 UNAUDITED_SUBSIDIARY_RELIANCE (F4), INCOMPLETE_SIGNATURE x2 (neutral), HEADER_MISCOUNT
 (neutral), NO_PRIOR_LEDGER (limitation on F5/F15 diffs).
 
@@ -131,8 +138,11 @@ PBT 18.29 − 5.87 = 12.42 = reported PAT, so **5.87 Cr is the true total tax an
 is a 0.20 Cr typo**. Separately, **FY26** consolidated "Income Tax short/excess" prints +3.03 Cr
 but must be a **credit (−3.03)** for PBT 97.96 − total tax 21.49 to reconcile to PAT 76.47 —
 matching the standalone sign (negative) and confirming the consolidated sign is the error (F8/F14).
-Three independent tax-line inconsistencies, all same drafting-control weakness; none change the
-PBT or the true PAT anchors.
+These three tax/PAT-line inconsistencies, together with the fourth F14 instance — the standalone
+segment-note pre-exceptional FY26 double-count (9,191.08 lakh at L564 vs standalone P&L 9,111.66
+lakh at L434, a Rs 0.79 Cr gap = 2 x the 39.71 lakh exceptional item, both still reconciling to
+PBT 9,151.37) — make **four** F14 drafting-control instances in one filing; none change the PBT or
+the true PAT anchors.
 
 ### 1B. CONSOLIDATED derived metrics (Rs Cr / %)
 
@@ -439,7 +449,7 @@ quarters. **Not triggered** — no metric is below bear. No re-weighting.
 | Thesis-broken condition | Threshold | Current reading | FIRED? |
 |---|---|---|---|
 | (i) No new data-centre customer / DC revenue absent | binary | Filing discloses no product/customer segment (geographic only); DC neither confirmed nor denied. Notion 24-Jul-26 Rs 43.11 Cr subsidiary order exists but customer unnamed and unreferenced here | **NOT FIRED — UNTESTABLE this doctype** (concall/AR needed; do NOT resolve to broken or intact) |
-| (ii) HVAC plant utilisation stall | utilisation stall | Utilisation not disclosed; consol run-rate stepped up sharply (252.32) which is inconsistent with a stall, but the direct metric is UNKNOWN | **NOT FIRED — UNTESTABLE** (subsidiary revenue ramp argues against a stall; verify utilisation on concall) |
+| (ii) HVAC plant utilisation stall | utilisation stall | Utilisation not disclosed; consol run-rate stepped up (252.32) which is inconsistent with a stall, but the direct metric is UNKNOWN | **NOT FIRED — UNTESTABLE** (subsidiary revenue ramp argues against a stall; verify utilisation on concall) |
 
 Neither thesis-broken condition has FIRED. Both are untestable from a results filing alone; they
 are carried to the concall as monitorables, not silently resolved.
@@ -536,7 +546,7 @@ with a number, date, or yes/no.
 | 10 | Both Cost Auditor and Internal Auditor were freshly "appointed" (not "reappointed") in one 29-minute board meeting. Were the predecessors replaced, and if so why? | Back-to-back auditor changes during a MONITOR promoter verdict warrant probing | L53-64, L667, L699; F13 (AMBIGUOUS) |
 | 11 | Is there any Daikin relationship or Daikin backward-integration/in-house capex development this quarter? | Daikin evasion is the standing x3 governance pattern behind the MONITOR verdict | Notion open item 1; checklist 5 |
 | 12 | Did the promoter sell any of the up-to-10-lakh shares signalled into/around the QIP window (closed ~26-Jul-26)? Please confirm exact quantity and dates. | Promoter selling at peak valuation into a dilutive raise is the core MONITOR trigger | Notion open item 3 |
-| 13 | The headline consolidated PAT prints Rs 32.70 Cr on one line and Rs 32.90 Cr on two others; Q1 FY26 total tax and the FY26 short/excess sign also fail to foot. What drafting/review controls will be added? | Three internal arithmetic inconsistencies in one filing = drafting-control weakness | L139 vs L150/L160; F14 (CONFIRMATORY-NEGATIVE) |
+| 13 | The headline consolidated PAT prints Rs 32.70 Cr on one line and Rs 32.90 Cr on two others; Q1 FY26 total tax and the FY26 short/excess sign fail to foot; and the standalone segment note double-counts the FY26 exceptional item (pre-exceptional 9,191.08 vs P&L 9,111.66). What drafting/review controls will be added? | Four internal arithmetic inconsistencies in one filing = drafting-control weakness | L139 vs L150/L160; L564 vs L434; F14 (CONFIRMATORY-NEGATIVE) |
 
 **Top 3 by likelihood of thesis-changing information:**
 1. **Q5 (utilisation)** — a 50%+ disclosure would confirm the bull case; non-disclosure or <35%
@@ -602,10 +612,10 @@ of its own subsidiary's output to resell (a trading line that appeared only in F
 unexplained), which inflates each entity's headline revenue. Rs 143.18 Cr of the Rs 350 Cr QIP money
 is sitting idle in fixed deposits and bonds while the company-level table calls it "Nil" unutilised.
 The overseas segment shows more liabilities than assets and never discloses its profit. The filing
-also contains three separate arithmetic inconsistencies (a Rs 0.20 Cr PAT typo and two tax-line
-sign/footing errors), which point to weak drafting controls. There is no cash-flow statement at Q1,
-so cash quality is INDETERMINATE, and there is no concall, so plant utilisation and any data-centre
-customer remain unknown.
+also contains four separate arithmetic inconsistencies (a Rs 0.20 Cr PAT typo, two tax-line
+sign/footing errors, and a segment-note double-count of the FY26 exceptional item), which point to
+weak drafting controls. There is no cash-flow statement at Q1, so cash quality is INDETERMINATE, and
+there is no concall, so plant utilisation and any data-centre customer remain unknown.
 
 For the thesis: no pre-committed trigger has fired. The soft-trim cannot fire because revenue growth
 is strongly above 30% (one of its two legs) and the cash leg is untestable. Neither thesis-broken
@@ -711,7 +721,7 @@ questions_for_management:
   - {q: "Cost + Internal Auditor freshly appointed (not reappointed) same meeting; predecessors replaced and why?", from_finding_id: "F13"}
   - {q: "Any Daikin relationship / backward-integration development this quarter?", from_finding_id: "governance-Daikin"}
   - {q: "Did the promoter sell any of the up-to-10L shares signalled around the QIP window?", from_finding_id: "governance-promoter-sale"}
-  - {q: "Headline PAT prints 32.70 vs 32.90; Q1FY26 tax and FY26 short/excess sign fail to foot; drafting controls?", from_finding_id: "F14"}
+  - {q: "Headline PAT prints 32.70 vs 32.90; Q1FY26 tax and FY26 short/excess sign fail to foot; standalone segment note double-counts FY26 exceptional (9191.08 vs 9111.66) = four F14 instances; drafting controls?", from_finding_id: "F14"}
 monitorables:
   - {item: "Rs 143.18 Cr QIP proceeds undeployed in FDs/Bonds", implied_date: "2026-Q2FY27", source_ref: "note8/L234-236/F6"}
   - {item: "Neemrana HVAC plant utilisation % (red <50% at Q2 FY27)", implied_date: "2026-Q2FY27", source_ref: "Notion-checklist1/F2"}
@@ -730,7 +740,7 @@ flags:
   - "Thesis-broken (ii) utilisation stall: NOT FIRED — UNTESTABLE this doctype (no concall)"
   - "43.2% of consolidated PAT unaudited/management-furnished (F4)"
   - "Cash conversion INDETERMINATE — no Q1 cash flow; caps clean PROCEED"
-  - "Drafting-control weakness: PAT typo + two tax-line footing/sign errors (F14)"
+  - "Drafting-control weakness: PAT typo + two tax-line footing/sign errors + segment-note FY26 exceptional double-count = four F14 instances"
   - "Promoter Verdict MONITOR persists; Daikin/Stock-in-trade/promoter-sale open"
   - "Decision Status unchanged: HELD"
 plain_language_brief_included: true

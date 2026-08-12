@@ -1,0 +1,24 @@
+stage: B12c
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-opus-4-8
+status: complete
+phase_1_scope: true            # Gate0 + Emerging Moat only; valuation adherence deferred to phase 3
+gate0:
+  rules_checked: 47
+  fails:
+    - {severity: "MINOR", rule: "ROCE formula (ln 34-35)", detail: "ROCE computed on proxy denominator (Equity+Reserves+Borrowings) for FY17-FY24 instead of the literal EBIT/(Total Assets-Current Liabilities) or screener's own ROCE; stated openly and cross-checked to within 0.4pp on FY26 audited data. Immaterial to every band and to the AVOID classification."}
+emoat:
+  rules_checked: 34
+  fails: []
+valuation: {rules_checked: 0, fails: []}   # DEFERRED to phase 3 (B10/B11 not yet produced)
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {severity: "MINOR", location: "B01 Block A / ROCE formula", note: "Proxy capital-employed denominator used in place of the rulebook formula / source ROCE; validated within 0.4pp on FY26, no band or classification impact."}
+  - {severity: "MINOR", location: "B01 M5 Scale & Dominance", note: "Scored 0; literal 'top 5 mcap = 1' band would arguably give 1 (JITF is 5th of 5 named comps). Conservative direction, cannot change M5 <3 'not present' status or any classification."}
+  - {severity: "MINOR", location: "B07 G1 War chest", note: "LL=1 retained though the 'net cash growing' definition is unmet; rests on documented rating upgrade + cost-of-debt fall (within category's look-for list). Zeroing it yields em_score 16.7, still MODEST."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 99            # 80 of 81 phase-1 rules passed clean

@@ -1,0 +1,21 @@
+stage: B12a
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 13
+findings:
+  - {severity: "MAJOR", location: "B01 Block D1, Net Debt/EBITDA", claimed: "6.71x (post-exceptional EBITDA Rs558.46 Cr)", source_truth: "6.19x (pre-exceptional normalized EBITDA Rs604.43 Cr, FY26 Results P&L audited)", note: "Post-exceptional vs pre-exceptional methodology choice. Both exceed 3x threshold; verdict AVOID unchanged. Standard practice uses pre-exceptional figures.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Block D2, Interest Coverage", claimed: "1.14x (post-exceptional PBT Rs55.38 Cr)", source_truth: "1.251x (pre-exceptional EBIT Rs501.89 Cr, FY26 Results P&L audited)", note: "Post-exceptional vs pre-exceptional calculation. Both fail <3x threshold; verdict AVOID unchanged. Non-standard methodology.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Block D, Current Ratio", claimed: "1.47x (Rs2,503.09 Cr CA / Rs1,703.27 Cr CL)", source_truth: "1.345x (Rs2,740.28 Cr CA / Rs2,037.72 Cr CL per FY26 Results Consolidated Balance Sheet, audited)", note: "Claimed figures not found in audited balance sheets. Source of B01's figures is ANCHOR NOT FOUND. Correct ratio from audited statements is 1.345x.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B01 Block A, Median ROCE 10 years", claimed: "5.34% (avg of sorted ROCE FY17-FY26)", source_truth: "Cannot independently verify. FY17-FY24 rely on screener-data (non-audited source). Only FY26 verifiable: audited ROCE 15.25% (not screener's 13.31%). Historical series unverifiable.", note: "Screener data used for FY17-FY24 (not provided as audited source); claim unanchored to audited documents. FY26 alone shows divergence. Material data-quality gap.", source_fidelity: false}
+  - {severity: "MINOR", location: "B01 Block C, Revenue CAGR", claimed: "20.03% (FY17-FY26, 9-year)", source_truth: "20.03% verified. (2,808.02/542.95)^(1/9)-1 = 0.2003. Both endpoints audited (FY26 Results P&L, FY17 from screener cross-checked to AR).", note: "Calculation correct; both endpoints anchored.", source_fidelity: false}
+  - {severity: "MINOR", location: "B01 Block D, Net Debt", claimed: "Rs3,745.06 Cr (Borrowings Rs3,945.48 Cr - Cash Rs200.42 Cr)", source_truth: "Rs3,745.06 Cr verified. Borrowings Rs3,94,547.85 lakh (audited CBS), Cash Rs20,042.23 lakh (audited CBS), Net Debt Rs3,745.06 Cr correct.", note: "All components verified against FY26 Results Consolidated Balance Sheet. Arithmetic correct.", source_fidelity: false}
+  - {severity: "MINOR", location: "B01 Block D, Finance Costs", claimed: "Rs401.29 Cr", source_truth: "Rs40,128.90 Lakh = Rs401.29 Cr exact. FY26 Results Consolidated P&L audited.", note: "Exact match to audited P&L line.", source_fidelity: false}
+  - {severity: "MINOR", location: "B01 Block C, Revenue FY26 vs FY25", claimed: "Rs2,808.02 Cr (FY26) vs Rs2,264.81 Cr (FY25)", source_truth: "Both verified exact. FY26 Rs2,80,802.29 Lakh; FY25 Rs2,26,481.04 Lakh per FY26 Results Consolidated P&L audited comparatives.", note: "Both endpoints match audited P&L to the rupee.", source_fidelity: false}
+  - {severity: "MINOR", location: "B01 Block D, Consolidated Net Worth (owners)", claimed: "Rs(51,327.81) Lakh", source_truth: "Rs(51,327.81) Lakh verified. Equity Share Capital Rs514.07 + Other Equity Rs(51,841.88) = Rs(51,327.81) per FY26 Results Consolidated Balance Sheet audited.", note: "Component reconciliation confirmed. Negative equity fact verified.", source_fidelity: false}
+critical_count: 0
+major_count: 4
+minor_count: 4
+acceptance_rate: 69
+coverage_note: "13 material numbers checked across B01 verdict card and primary scorecard inputs (Net Debt/EBITDA, Interest Coverage, Current Ratio, Median ROCE, Revenue CAGR, net worth, finance costs). Two leverage ratios show methodology divergence (post- vs pre-exceptional); three source-fidelity gaps identified (Current Ratio anchor not found, Median ROCE unverifiable, Gearing Ratio note not extracted). Revenue CAGR, Finance Costs, Net Debt, and consolidated net worth all verified clean against audited FY26 Results and Annual Report. Coverage concentrated on B01 (verdict-card determinant) rather than B02-B09 (supporting analyses); historical data quality (FY17-FY24 screener) unverifiable from audited sources provided."

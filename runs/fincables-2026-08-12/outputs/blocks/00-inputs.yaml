@@ -1,0 +1,45 @@
+stage: B00-inputs
+company: FINCABLES
+run_date: 2026-08-12
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: true
+inventory:
+  prospectus: 0        # absent; company long-listed (CIN since 1967, listed 1990s) -> expected, NOT a gap
+  annual_report: 1     # Annual_Report.pdf -> FY2019-20 vintage (STALE, ~6 years old vs run_date)
+  results: 0           # ABSENT
+  rating: 0            # ABSENT
+  concalls: 4          # Aug2025(Q1FY26), Nov2025(Q2FY26), Feb2026(Q3FY26), Jun2026(Q4/FY26); contract caps at 3 -> Stage 5 uses 3 most recent (Q2,Q3,Q4 FY26)
+  peer_concalls: 12    # KEI x4, PARACABLES x4, RRKABEL x4
+  announcements: 0     # ABSENT
+  shareholding: 0      # ABSENT (filing)
+  research: 0          # ABSENT
+  screening: present   # FINCABLES + KEI + PARACABLES + RRKABEL + UNIVCABLES; see screener_data_note
+  presentation: 1      # Investor_Presentation_1.pdf -> Q4FY26/FY26 vintage (CURRENT)
+  other: 0
+concall_quarter_map:
+  Concall_Aug_2025_Transcript.pdf: Q1 FY26 (quarter ended 30 Jun 2025), meet 14 Aug 2025
+  Concall_Nov_2025_Transcript.pdf: Q2 FY26 (quarter ended 30 Sep 2025), meet 14 Nov 2025
+  Concall_Feb_2026_Transcript.pdf: Q3 FY26 (quarter ended 31 Dec 2025), meet 12 Feb 2026
+  Concall_Jun_2026_Transcript.pdf: Q4/FY26 (year ended 31 Mar 2026), meet 29 May 2026
+  stage5_selection: [Nov_2025, Feb_2026, Jun_2026]   # 3 most recent per contract cap; Aug_2025 (Q1) dropped
+screener_data_note: >
+  Only screener-Data_Sheet.csv (63 rows) carries usable 10-year financials
+  (FY2017-FY2026). screener-Profit_Loss/Balance_Sheet/Cash_Flow/Quarters CSVs
+  are label-only (year-value columns empty) -- a collection artifact.
+  Anchorable numeric sources this run: screener-Data_Sheet.csv (current),
+  FY2019-20 Annual_Report.pdf (historical), FY26 presentation + concalls.
+input_gaps:
+  - "annual-report STALE: provided AR is FY2019-20, ~6 years old vs run_date 2026-08-12. Stages 2/3/4/7/8 read AR content -> notes, deep-dive, governance reflect FY20, not current. HIGH-severity staleness; current financials come from screener Data_Sheet + FY26 concalls/presentation only."
+  - "results: ABSENT -- no quarterly results PDFs; Gate 0 ran from screener Data_Sheet + AR per degradation map; Stage 10 latest-period fields will be unresolved."
+  - "rating: ABSENT -- Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative."
+  - "shareholding: ABSENT (filing) -- Gate 0 Block E scored 0/20; Stage 10 FII+DII unresolved; Stage 11 UA withheld (all-three-qualifier rule). Operator provided a screener.in shareholding screenshot as NON-ANCHORED cross-check only (promoters 35.86% stable, FII 9.65%, DII 16.71% as of Jun 2026)."
+  - "announcements: ABSENT -- Stages 5/7/8 lose the documented-ACTION record; intent-vs-action runs on concall/AR only; Stage 8 relies on web search. Operator pasted GST-order/CEO-CFO-change/CS-cessation context as NON-ANCHORED only."
+  - "research: ABSENT -- no effect on anchored evidence."
+  - "screener P&L/BS/CF/Quarters CSVs label-only (empty) -- only Data_Sheet.csv usable."
+  - "peer/industry comparator data thin for some Gate 0 moat tests (M2, M5, M9)."
+  - "prospectus: ABSENT -- expected (long-listed), NOT a gap."
+operator_authorization: "Operator instructed 'continue with whatever inputs I have given' after the empty-folder pause; run proceeds with gaps recorded, degraded per orchestrator DEGRADATION MAP."
+manifest_warning: "manifest.sector_cap_row='Pharma / CDMO' is WRONG for a wires & cables company; auto-picked. Must be corrected before Phase 3 (Stage 11) valuation; no effect on Phase 1."
+flags: []

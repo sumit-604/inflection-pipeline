@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: ABSENT — no dedicated quarterly results PDFs; Gate 0 run from screening CSVs + AR financial statements per degradation map"
+  - "rating: ABSENT"
+  - "announcements: ABSENT"
+  - "shareholding: ABSENT (filing) — caused Block E (E1-E4) to score 0/20 entirely"
+  - "research: ABSENT"
+  - "prospectus: ABSENT — expected, company long-listed since the 1990s, not a gap"
+  - "annual report provided is FY2019-20 vintage, 5+ years stale vs FY2026 screener data; no current AR/results PDF"
+  - "Trade Payables absent from all provided files — caused B4 and M12 to score 0/N-A"
+  - "current asset/liability split absent for FY2026 (any recent year) — caused D4 to score 0/N-A"
+  - "peer/industry comparator data absent — caused M2, M5, M9 to score 0/PEER DATA NEEDED"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVOID (core 37/100, moat THIN). Genuine depressors: ROCE decline 23.71%->15.24% FY17-FY26 (A4=0), EBITDA margin compression 16.2%->9.8% (M1=0), cash conversion deteriorating to 6.9% CFO/PAT in FY26 (B1/B3 weak), PAT CAGR trailing revenue CAGR by 4.5pp (C4=1). Separately, 30 of 100 core points (all Block E, plus B4, D4) and 15 of 60 moat points (M2, M5, M9) are unscored purely for data-absence reasons (no shareholding filing, no trade payables line, no current AR/results, no peer data), not confirmed weakness -- ex-Block E core score is 37/80 (46.3%, AVERAGE tier). Do not treat AVOID as final without shareholding history and a current annual report/results filing."
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 8, B: 6, C: 8, D: 15, E: 0}
+core_score: 37
+moat_score: 6
+grand_total: 43
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVOID"
+deal_breakers:
+  - "Block B <8 (scored 6/20) -> cap max GOOD (non-binding, classification already AVOID via Core<40 rule)"
+history_downgrade: false
+data_notes:
+  - "No PAT loss-to-profit swing FY2017-FY2026; PAT positive all 10 years"
+  - "ROCE and ROE computed (screener's own ROCE/ROE rows blank in this export); EBIT = PBT + Interest; Capital Employed = Equity Share Capital + Reserves + Borrowings (proxy, current-liability split absent)"
+  - "FY2017 ROE uses closing Net Worth only, no FY2016 opening balance available"
+  - "Capex: actuals from AR p.103 for FY2019 (44.32) and FY2020 (32.33) only; all other years computed proxy = Delta(Net Block+CWIP)+Depreciation, cross-checked reasonably close to the two AR actuals; FY2017 capex not computable"
+  - "CFO discrepancy: AR p.102 shows FY2020 CFO=259.02 vs screener Data_Sheet's 308.80 for same year; screener figure used throughout for consistency, discrepancy unresolved"
+  - "M8 Distribution scored from stale FY2019-20 AR narrative (5,000+ distributors; retailers 30,000->50,000), not FY2026 reality"
+  - "M9 Brand: informational GM proxy computed (19.69% FY2017 vs 10.94% FY2026, declining) but not scored -- no peer data"
+  - "PEER DATA NEEDED: M2, M5, M9"
+block_b_trend: "deteriorating - CFO/PAT cash conversion fell from 88.6% in FY2024 (CFO 576.90/PAT 651.69) to 6.9% in FY2026 (CFO 49.08/PAT 713.72); FCF turned negative in FY2025 (-21.25) and FY2026 (-171.40) after 7 consecutive positive years"

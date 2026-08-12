@@ -3,10 +3,10 @@ source_filename: scodatubes_q1fy27_results.pdf
 doctype: results
 page_count_pdfinfo: 3
 formfeed_count: 3
-line_count: 185
+line_count: 289 (204 header+body, unchanged line numbering through line 204; +85 appended corrections/footing-proof lines)
 unit_convention: Millions
 conversion_factor_to_cr: Millions -> x0.1
-ocr_pages: none
+ocr_pages: [1, 2]
 page_coverage: 100%
 detected_quarter: Q1 FY27
 extraction_date: 2026-08-12
@@ -48,7 +48,7 @@ Thanking You,
 
 
 
-Jagrutk
+Jagrutkushar Rameshbhai [OCR page 1, 400dpi]
 Man aging Director
 DIN: 06785595
 
@@ -80,28 +80,28 @@ Sr. No.
    1      Income from Operations
   a)      Revenue fr om operat ions                                                                    1,243.45                       1,235.69                 974.17             5, 186.50
   b)      Other Income                                                                                    16.30                          44.03                  17.61               105.71
-          Total Income                                                                                 1,259.15                   1, 219.12                    991.18             5,292.21
+          Total Income                                                                                 1,259.75                   1,279.72                    991.78             5,292.21
   2       Expenses
-          a Cost of raw materials and components consumed                                              1,001.65                       1,001.13                 142.49             4,143.75
+          a Cost of raw materials and components consumed                                              1,001.65                       1,007.73                 742.49             4,143.75
           b Changes in inventories of finished goods and work-In-progress                                  (156.14)                   (183.41)                 (52.47)                (611.44)
           c Employee benefit s expenses                                                                      24.62                      26.34                   24.20                 104.54
           d Finance costs                                                                                   64.81                       81.39                   51.04                 248.66
-          e Depreciation and amortization expenses                                                          41.31                       36. 12                  15,12                  92.17
-          r Other expenses                                                                               213.53                        211.98                  118.05                 787.21
-          Total Expenses                                                                               1,189.78                   1,186.15                     899.03             4,164.89
+          e Depreciation and amortization expenses                                                          41.31                       36.12                  15.72                  92.17
+          r Other expenses                                                                               213.53                        217.98                  118.05                 787.21
+          Total Expenses                                                                               1,189.78                   1,186.15                     899.03             4,764.89
   3       Profit I (l oss) before exceptional items and ta x                                              69.97                      93.57                      92.75               527.32
   4       Except ional items
-  5       Profit I (loss) before tax                                                                        69.91                       93 .51                  92.75                 521.32
+  5       Profit I (loss) before tax                                                                        69.97                       93.57                  92.75                 527.32
   6       Tax Expense
-          a Current tax                                                                                       6.25                      25.12                   18.90                 116.33
+          a Current tax                                                                                       6.25                      25.72                   18.90                 116.33
           b Earlier year taxes                                                                                                            -
           c Deferred tax liability / (asset)                                                                 11.22                       4.66                    3.02                  22.56
-  7       Profit / (l oss) for t he perfod                                                                  52.50                       63.19                   10.83                 388.43
+  7       Profit / (l oss) for t he perfod                                                                  52.50                       63.19                   70.83                 388.43
   8       Other comprehensIve Income I (expenses)
           (i) items tha t wi ll not be reclassified to profit or loss
               Re-measu rements of t he defined benefit s plans                                                1.71                      (1.47)                   1.47                    1.18
-              Income tax effects on the above                                                                (0.43)                      0.31                   (0.37)                  (0.30)
-  9       Tot al comprehensi\le income/ (loss) for the period                                               53 .18                      62 .09                  11.93                 389.31
+              Income tax effects on the above                                                                (0.43)                      0.37                   (0.37)                  (0.30)
+  9       Tot al comprehensi\le income/ (loss) for the period                                               53.78                      62.09                  71.93                 389.31
 
           Paid-up equity share capital (face va lue of Rs. 10 per share)                                   599.09                     599.09                   599.09                 599.09
           Other Equity                                                                                                                                                            3,304.00
@@ -202,3 +202,88 @@ IN D I A
            Phone : (079) 2640 3325/26 I Website : www.dbsgroup.in I E-Mail : info@dbsgroup.in
 Head Office: 4th Floor, Aditya Building, Near Sardar Patel Seva Samaj, Mithakhali Six Roads, Ellisbridge, Ahmedabad - 380006.
                  Bran~h Offir:p : ?n4 .\ n i<"nr ~nmnlp l( (')nn A h~ Tnw pr (,)Irl Pnrlrn i;>nnrl Vnrlnrlnrn _ .' Qnm "
+
+=== A1 INTEGRITY RESTORATION NOTE ===
+This extract supersedes a prior pass that used only the embedded (Adobe Paper
+Capture OCR) text layer of the source PDF. That text layer carries a
+systematic "7 rendered as 1" digit substitution across the Q1FY27, Q4FY26
+and Q1FY26 comparative columns of the results table on page 2 (flagged by
+A3 finding F14). This pass reconciles every cell against: (a) the embedded
+pdftotext -layout text, (b) a 400 DPI page-image OCR pass (tesseract,
+ocr_p2-2.png / ocr_p2.txt and ocr_p1-1.png / ocr_p1.txt, this directory),
+and (c) the five arithmetic footing identities (Total income, Total
+expenses, PBT, PAT, Total comprehensive income). Corrected digit values are
+written in place on their original line numbers (line count unchanged, all
+pre-existing line cites into this file remain valid). Page 3 (auditor's
+review report) is prose with no comparative financial figures requiring
+footing verification; its embedded text layer was spot-checked and is
+legible without garbling, so it was not re-OCR'd. Page 1 was OCR'd at 400
+DPI to resolve the Managing Director's signatory name, which OCR could only
+partially resolve: rendered as "Jagrutkushar Rameshbhai" -- this is the
+tesseract output verbatim; the first name is unusual for a standard Gujarati
+naming convention (possibly "Jagrutkumar") and is NOT independently
+confirmed elsewhere in this document, so treat with residual uncertainty
+rather than as fully resolved. DIN 06785595 (embedded text layer, page 1)
+is clean and not in question.
+
+=== A1 CORRECTIONS (text-layer vs OCR+footing) ===
+Row label                                  | Period      | Embedded(corrupt) | Corrected | Method
+Total Income                               | Q1FY27      | 1,259.15          | 1,259.75  | OCR+footing (Rev+OthInc)
+Total Income                               | Q4FY26      | 1,219.12          | 1,279.72  | OCR+footing (Rev+OthInc)
+Total Income                               | Q1FY26      | 991.18            | 991.78    | OCR+footing (Rev+OthInc)
+Cost of raw materials and components       | Q4FY26      | 1,001.13          | 1,007.73  | OCR (ocr_p2.txt line 13) + footing
+Cost of raw materials and components       | Q1FY26      | 142.49            | 742.49    | OCR (ocr_p2.txt line 13) + footing
+Depreciation and amortization expenses     | Q1FY26      | 15.12 (rendered "15,12") | 15.72 | Footing (Total Expenses residual)
+Other expenses                             | Q4FY26      | 211.98            | 217.98    | OCR (ocr_p2.txt line 18) + footing
+Total Expenses                             | FY26        | 4,164.89          | 4,764.89  | Footing (sum of components) + OCR (ocr_p2.txt line 19)
+Profit before tax                          | Q1FY27      | 69.91             | 69.97     | Footing (Total income - Total expenses)
+Profit before tax                          | Q4FY26      | 93.51             | 93.57     | Footing (Total income - Total expenses)
+Profit before tax                          | FY26        | 521.32            | 527.32    | Footing (Total income - Total expenses); OCR (ocr_p2.txt line 21)
+Current tax                                | Q4FY26      | 25.12             | 25.72     | Footing (PBT - Deferred tax - PAT)
+Profit for the period (PAT)                | Q1FY26      | 10.83             | 70.83     | Footing (PBT - Current tax - Deferred tax); OCR (ocr_p2.txt line 26)
+Income tax effects on OCI                  | Q4FY26      | 0.31              | 0.37      | Footing (TCI - PAT - OCI remeasurement)
+Total comprehensive income                 | Q1FY27      | 53.18             | 53.78     | Footing (PAT + OCI remeasurement + OCI tax effect)
+Total comprehensive income                 | Q1FY26      | 11.93             | 71.93     | Footing (PAT + OCI remeasurement + OCI tax effect)
+Depreciation and amortization expenses     | Q4FY26      | "36. 12" (stray space, value 36.12) | 36.12 | Layout artifact only, value unchanged, spacing cleaned
+Signatory name, page 1 (MD)                | n/a         | "Jagrutk" (truncated) | "Jagrutkushar Rameshbhai" (OCR, residual uncertainty on first name) | OCR page 1, 400dpi
+
+All other cells on the page 2 comparative table (Revenue from operations,
+Other income, Changes in inventories, Employee benefit expenses, Finance
+costs, Current tax Q1FY27/Q1FY26/FY26, Deferred tax all periods, OCI
+remeasurement all periods, OCI tax effect Q1FY27/Q1FY26/FY26, Paid-up
+equity capital, Other Equity, EPS all periods) matched cleanly across
+embedded text, OCR and footing with no correction required.
+
+=== A1 FOOTING PROOF (all figures Rs Millions) ===
+Column: Q1FY27
+  Total income = 1,243.45 (Revenue) + 16.30 (Other income) = 1,259.75  [matches corrected Total Income 1,259.75]
+  Total expenses = 1,001.65 - 156.14 + 24.62 + 64.81 + 41.31 + 213.53 = 1,189.78  [matches reported 1,189.78]
+  PBT = 1,259.75 - 1,189.78 = 69.97  [matches corrected PBT 69.97]
+  PAT = 69.97 - 6.25 - 11.22 = 52.50  [matches reported PAT 52.50]
+  TCI = 52.50 + 1.71 - 0.43 = 53.78  [matches corrected TCI 53.78]
+
+Column: Q4FY26
+  Total income = 1,235.69 + 44.03 = 1,279.72  [matches corrected Total Income 1,279.72]
+  Total expenses = 1,007.73 - 183.41 + 26.34 + 81.39 + 36.12 + 217.98 = 1,186.15  [matches reported 1,186.15]
+  PBT = 1,279.72 - 1,186.15 = 93.57  [matches corrected PBT 93.57]
+  PAT = 93.57 - 25.72 - 4.66 = 63.19  [matches reported PAT 63.19]
+  TCI = 63.19 - 1.47 + 0.37 = 62.09  [matches reported TCI 62.09]
+
+Column: Q1FY26
+  Total income = 974.17 + 17.61 = 991.78  [matches corrected Total Income 991.78]
+  Total expenses = 742.49 - 52.47 + 24.20 + 51.04 + 15.72 + 118.05 = 899.03  [matches reported 899.03]
+  PBT = 991.78 - 899.03 = 92.75  [matches reported PBT 92.75]
+  PAT = 92.75 - 18.90 - 3.02 = 70.83  [matches corrected PAT 70.83]
+  TCI = 70.83 + 1.47 - 0.37 = 71.93  [matches corrected TCI 71.93]
+
+Column: FY26 (full year)
+  Total income = 5,186.50 + 105.71 = 5,292.21  [matches reported 5,292.21]
+  Total expenses = 4,143.75 - 611.44 + 104.54 + 248.66 + 92.17 + 787.21 = 4,764.89  [matches corrected Total Expenses 4,764.89]
+  PBT = 5,292.21 - 4,764.89 = 527.32  [matches corrected PBT 527.32]
+  PAT = 527.32 - 116.33 - 22.56 = 388.43  [matches reported PAT 388.43]
+  TCI = 388.43 + 1.18 - 0.30 = 389.31  [matches reported TCI 389.31]
+
+RESULT: All four columns foot cleanly (Total income, Total expenses, PBT,
+PAT, TCI) on the corrected grid. GATE A1 re-passed: page_coverage 100%,
+footing 100% (4/4 columns, 5/5 identities each = 20/20 checks pass).
+=== END A1 CORRECTIONS AND FOOTING PROOF ===

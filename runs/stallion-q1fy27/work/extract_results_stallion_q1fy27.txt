@@ -1,0 +1,304 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_stallion_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 6
+formfeed_count: 6
+line_count: 304
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01
+ocr_pages: [3, 4]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-12
+
+PAGE COVERAGE TABLE:
+page | pdftotext -layout chars (per-page) | status                      | method used
+1    | 1899                                | text layer OK               | pdftotext -layout (verbatim)
+2    | 1057                                | text layer OK                | pdftotext -layout (verbatim)
+3    | 6536                                | text layer PRESENT BUT CORRUPTED (see note) | OCR/visual reconciliation
+4    | 5616                                | text layer PRESENT BUT CORRUPTED (see note) | OCR/visual reconciliation
+5    | 3250                                | text layer OK                | pdftotext -layout (verbatim)
+6    | 983                                 | text layer OK                | pdftotext -layout (verbatim)
+All 6 pages accounted for. 0 pages missing. 0 pages under the 100-character threshold.
+
+EXTRACTION METHOD NOTE (mechanical, not content interpretation):
+pdftotext -layout produced text for all 6 pages with each page comfortably above
+the 100-character OCR-trigger threshold, so the literal GATE A1 threshold test did
+not, by itself, flag any page for OCR. However, on inspection, the embedded text
+layer for page 3 (the unaudited results table) and page 4 (Notes, incl. the IPO
+utilisation table) contains systematic character-level corruption consistent with
+a bad font/cmap mapping in the source PDF (Creator/Producer: Online2PDF.com) --
+e.g. "Tarticulars" for "Particulars", "[mcome" for "Income", numeric strings
+rendered without decimal points or digit-shuffled (e.g. "1210460" where the
+rendered page shows "12,144.60"). Prose-only pages (1,2,5,6) were NOT affected;
+their pdftotext -layout output was verified clean against the rendered page image
+and is used verbatim. For pages 3 and 4, the raw embedded text is functionally
+unusable as an evidence spine for the numeric table, so this extraction applies
+the same principle as the OCR fallback gate (unreliable machine text ->
+rasterise and re-derive): both pages were rasterised at 200/400 dpi, run through
+tesseract OCR, and then cross-checked cell-by-cell against a direct visual read
+of the rendered page image (pdftoppm output) to resolve OCR/embedded-text
+disagreements. All numeric values below for pages 3 and 4 are the values visible
+on the rendered page image, confirmed by at least one of the two independent OCR
+passes. This is a mechanical extraction-fidelity step, not a content judgement:
+no figure was computed, estimated, or reconciled arithmetically; every value is
+transcribed exactly as it appears on the page. One residual ambiguity is flagged
+inline at its line (page 4, Note 5 narrative, "differential cost of Rs0.13 crore"
+-- the embedded text layer and default-resolution OCR both misread the Rupee
+symbol "Rs" as a leading digit ("20.13"/"70.13"); the rendered image confirms the
+symbol is Rs, and the figure is 0.13 crore). No unit legend ("Rs in Lakhs" or
+similar) is visible printed on page 3 or page 4 of this document as rendered;
+the Lakhs unit convention is inferred mechanically from Note 5's explicit
+statement "INR 14,474.87 lakhs" / "INR 1,598.00 lakhs" and is internally
+consistent with the scale of the Paid-up Equity Share Capital, Net Worth and
+Revenue lines on page 3 (see conversion_factor_to_cr above). This extraction
+does not convert any figure; downstream agents apply the x0.01 factor.
+=== END HEADER ===
+
+[page 1]
+1	                                                                      Date: 12th August, 2026
+2
+3	To,                                          To,
+4	National Stock Exchange of India Limited     BSE Limited ("BSE"),
+5	("NSE"), The Listing Department              Corporate Relationship Department,
+6	Exchange Plaza, 5th Floor,                   2nd Floor, New Trading Ring,
+7	Plot No. C/1, G Block, Bandra-Kurla          P.J. Towers, Dalal Street,
+8	Complex Bandra (East), Mumbai - 400 051.     Mumbai - 400 001.
+9
+10	NSE Symbol: STALLION                         BSE Scrip Code: 544342
+11	ISIN: INE0RYC01010                           ISIN: INE0RYC01010
+12
+13
+14	Sub: Outcome of Board Meeting held on 12th August, 2026.
+15
+16	Dear Sir/Madam,
+17
+18	Pursuant to Regulations 30, 33, and other applicable provisions of the Securities and
+19	Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations,
+20	2015 ("SEBI Listing Regulations"), we wish to inform you that the Board of Directors of the
+21	Company, at its meeting held today, i.e., August 12, 2026, which commenced at 11:30 A.M.
+22	and concluded at 01:11 PM (IST), inter alia, considered and approved the Unaudited
+23	Financial Results of the Company for the quarter ended June 30, 2026, along with the Limited
+24	Review Report issued by the Statutory Auditors.
+25
+26	In this regard, please find enclosed herewith Annexure I comprising the following:
+27	     A copy of the Unaudited Financial Results for the quarter ended June 30, 2026; and
+28	     The Limited Review Report issued by the Statutory Auditors of the Company.
+29
+30
+31	Furthermore, the Board discussed and approved the following matters:
+32	a) Took on record the Secretarial Audit Report of the Company for the financial year ended
+33	31st March, 2026.
+34	b) Approved the Directors' Report, along with its annexures pursuant to Section 134 of the
+35	Companies Act, 2013, for the financial year ended 31st March, 2026.
+
+[page 2]
+36	c) Approved the Management Discussion and Analysis Report and the Corporate
+37	Governance Report for the financial year ended 31st March, 2026.
+38	d) Approved the draft Notice convening the Annual General Meeting (AGM) scheduled to
+39	be held on Monday, 21st September, 2026 at 04:00 PM.
+40	e) Approved the book closure period for the purpose of the AGM, which shall be from 15th
+41	September, 2026 to 21st September, 2026 (both days inclusive).
+42	f) Considered and approved placing the following matters before the shareholders at the
+43	forthcoming AGM for their approval:
+44	     Regularization of Ms. Swati Ghosh (DIN: 08789050) from Additional Independent
+45	       Director to Woman Independent Director.
+46	We hereby confirmed that the Statutory Auditor has issued the Limited Review Report on
+47	the financial results with an unmodified opinion.
+48
+49	Yours Faithfully,
+50	For Stallion India Fluorochemicals Limited
+51
+52	GOVIN    Digitally signed
+53	         by GOVIND RAO
+54
+55	D RAO    Date: 2026.08.12
+56	         13:20:23 +05'30'
+57
+58	Govind Rao
+59	Company Secretary & Compliance Officer
+60	Mem No. A47094
+
+[OCR page 3]
+NOTE: raw embedded pdftotext text for this page is character-corrupted (see
+EXTRACTION METHOD NOTE in header). Text below is derived from OCR of the
+rasterised page (200/400 dpi, tesseract) cross-checked cell-by-cell against a
+direct visual read of the rendered page image. Layout below is column-order,
+not spatially reflowed pixel-for-pixel.
+61	Stallion India Fluorochemicals Limited (Formerly known as Stallion India Fluorochemicals Private Limited)
+62	Registered Office : 2, A Wing, Knox Plaza, Off. Link Road, Mindspace, Malad - West, Mumbai, Maharashtra, India, 400064
+63	CIN: L51410MH2002PLC137076
+64	Statement of Unaudited Financial Results for the Quarter ended June 30, 2026
+65
+66	Sr. no. | Particulars | Quarter ended June 30,2026 (Unaudited) | Quarter ended March 31,2026 (Audited) | Quarter ended June 30,2025 (Unaudited) | Year ended March 31,2026 (Audited)
+67	I    | Income
+68	     | Revenue from operations                                                                    | 12,144.60 | 10,999.43 | 11,047.19 | 43,067.80
+69	     | Other income                                                                                |    322.97 |    130.09 |      7.37 |    344.50
+70	     | Total Income (I)                                                                            | 12,467.57 | 11,129.52 | 11,054.55 | 43,412.30
+71	II   | Expenses
+72	     | Cost of materials consumed                                                                  |  7,585.32 | 10,091.89 |  9,526.02 | 36,910.24
+73	     | Changes in inventories of finished goods, Stock-in-Trade and work-in-progress                |  1,676.28 | (1,364.11)|   (739.32)| (2,395.94)
+74	     | Employee benefits expense                                                                    |    238.71 |    243.56 |    224.78 |    947.54
+75	     | Finance costs                                                                                |      9.18 |     38.23 |     21.74 |     88.91
+76	     | Depreciation and amortization expenses                                                       |     38.73 |     59.77 |     29.05 |    147.87
+77	     | Other expenses                                                                                |    440.47 |    393.35 |    606.14 |  1,815.72
+78	     | Total expenses (II)                                                                          |  9,988.70 |  9,462.69 |  9,668.41 | 37,514.34
+79	III  | Profit before tax (I-II)                                                                     |  2,478.88 |  1,666.83 |  1,386.14 |  5,897.96
+80	IV   | Tax expense:
+81	     | Current tax                                                                                  |    553.02 |    244.48 |    328.67 |  1,191.15
+82	     | Adjustment of tax relating to earlier periods                                                |         - |         - |         - |         -
+83	     | Deferred tax                                                                                 |     69.28 |    328.93 |     21.15 |    322.70
+84	     | Total tax expense (IV)                                                                       |    622.30 |    573.41 |    349.82 |  1,513.85
+85	V    | Profit for the period/year (III-IV)                                                          |  1,856.58 |  1,093.42 |  1,036.32 |  4,384.11
+86	VI   | Other Comprehensive Income
+87	     | A (i) Items that will not be reclassified to profit or loss
+88	     | Remeasurements of the defined benefit plans                                                  |      1.87 |     41.80 |    (18.35)|    (13.26)
+89	     | (ii) Income tax relating to items that will not be reclassified to profit or loss             |     (0.47)|    (10.52)|      4.62 |      3.34
+90	VII  | Total Comprehensive Income for the period/year (V+VI) Comprising Profit and Other
+91	     | comprehensive Income for the period/year)                                                    |  1,857.98 |  1,124.70 |  1,022.59 |  4,374.19
+92	VIII | Earnings per equity share
+93	     | (1) Basic                                                                                     |      1.60 |      1.33 |      1.15 |      5.34
+94	     | (2) Diluted                                                                                   |      1.60 |      1.33 |      1.15 |      5.34
+95	     | Paid up Equity Share Capital (Equity Share Capital of Rs 10/- each)                           | 11,608.57 | 11,608.57 |  7,932.53 | 11,608.57
+96	     | Other Equity excluding Revaluation Reserve                                                    | 58,309.75 | 56,451.78 | 23,094.49 | 56,451.78
+97	     | Net Worth                                                                                     | 69,918.33 | 68,060.35 | 31,027.02 | 68,060.35
+98
+99	                                                                                                                                        For and on behalf of the Board of
+100	                                                                                                                                 Stallion India Fluorochemicals Limited
+101	                                                                                                     (Formerly Known as Stallion India Fluorochemicals Private Limited)
+102	                                                                                                                                         CIN: L51410MH2002PLC137076
+103
+104
+105
+106	                                                                                                                                                      Shazad Rustomji
+107	                                                                                                                                             Managing Director & CEO
+108	                                                                                                                                                       (DIN: 01923432)
+109	                                                                                                                                       Mumbai, dated, 12th August, 2026
+110
+
+[OCR page 4]
+NOTE: raw embedded pdftotext text for this page is character-corrupted (see
+EXTRACTION METHOD NOTE in header), specifically in the Note 5 utilisation
+table. Text below is derived from OCR of the rasterised page (200/400 dpi,
+tesseract) cross-checked cell-by-cell against a direct visual read of the
+rendered page image. Prose portions of this page (Notes 1-4, 6) matched the
+embedded pdftotext text and are reproduced as verified.
+111	Stallion India Fluorochemicals Limited (Formerly known as Stallion India Fluorochemicals Private Limited)
+112	Registered Office : 2, A Wing, Knox Plaza, Off. Link Road, Mindspace, Malad - West, Mumbai, Maharashtra, India, 400064
+113	CIN: L51410MH2002PLC137076
+114	Statement of Unaudited Financial Results for the Quarter ended June 30, 2026
+115	  Notes:
+116	  1. The financial results are prepared in accordance with the Companies (Indian Accounting Standards) Rule 2015 and amendments issued thereafter prescribed under Section 133
+117	  of the Companies Act, 2013 and other recognised accounting practices and policies as applicable.
+118	  2. These financial results were reviewed and recommended by the Audit Committee on 12th August, 2026 and approved by the Board of Directors at its meeting held on 12th
+119	  August, 2026.
+120	 3. The company's business falls within single business segment of manufacture of industrial gases. Hence, disclosures under Ind AS 108- Operating Segments are not reported
+121	 separately.
+122	 4. The figures of the quarter ended March 31, 2026 are the balancing figures between audited figures in respect of full financial year and the published year to date figures up to
+123	 the end of the third quarter of the year.
+124	 5. The Company has received an amount of INR 14,474.87 lakhs (net of IPO expenses of INR 1,598.00 lakhs) from proceeds out of fresh issue of equity shares. The utilisation of net
+125	 IPO proceeds is summarised below:
+126	 Object of the Issue as per Prospectus | Amount to be financed from Net Proceeds as per Prospectus | Amount utilised from Net IPO Proceeds | Unutilised amount as on June 30,2026
+127	 (a) Funding incremental working capital requirements of the Company.                                          | 9,441.80 | 10,270.53 | (828.73)
+128	 (b) Funding capital expenditure requirements for our Semi-conductor & Specialty Gas
+129	     debulking, blending facility & Land acquisition ("Khalapur, Maharashtra").                                 | 2,574.66 |  2,661.77 |  (87.11)
+130	 (c) Funding capital expenditure requirements for our Refrigerant debulking & blending
+131	     facility ("Mambattu, Andhra Pradesh").                                                                     | 2,117.53 |  1,100.75 | 1,016.78
+132	 (d) General Corporate Purposes.                                                                                |   340.88 |    340.88 |        -
+133	 (e) Issue Related Expenses                                                                                     | 1,598.00 |  1,198.92 |   399.08
+134	 The unutilised net proceeds from the Initial Public Offer ("IPO") as at June 30, 2026, were temporarily invested/ parked in fixed deposits with banks and were also held in the
+135	 Monitoring Agency Bank Account, IPO Public Issue Account and the Company's current account.
+136	 The allocation of the IPO proceeds was revised pursuant to a Special Resolution passed by the members of the Company on May 30, 2026. Pursuant to the revised utilisation plan,
+137	 the Company proposed to utilise the IPO proceeds for acquisition of approximately 2 acres of land at Khalapur, Maharashtra, in lieu of the originally proposed warehouse
+138	 construction. The revised utilisation resulted in a differential cost of Rs 0.13 crore. [A1 note: embedded text layer and default-res OCR both misread the Rupee
+139	 symbol as a leading digit ("20.13"/"70.13"); rendered page image confirms the symbol is Rs and the figure is 0.13 crore.]
+140	 6. Previous period figures have been regrouped, rearranged and reclassified where necessary to make it comparable with current period's classification.
+141
+142	                                                                                                                                                    For and on behalf of the Board of
+143	                                                                                                                                             Stallion India Fluorochemicals Limited
+144	                                                                                                                 (Formerly Known as Stallion India Fluorochemicals Private Limited)
+145	                                                                                                                                                     CIN: L51410MH2002PLC137076
+146
+147
+148
+149	                                                                                                                                                                 Shazad Rustomji
+150	                                                                                                                                                       Managing Director & CFO
+151	                                                                                                                                                                  (DIN: 01923432)
+152	                                                                                                                                                  Mumbai, dated, 12th August, 2026
+
+[page 5]
+153	MITTAL & ASSOCIATES                                                           603, Raylon Arcade,
+154	                                                                              RK Mandir Road,
+155	CHARTERED ACCOUNTANTS                                                         Kondivita, JB nagar
+156	                                                                              Andheri (East), Mumbai - 400059
+157	                                                                              Tel : 8689958800
+158	                                                                              Email : audit@mittal-associates.com
+159
+160
+161
+162	    Independent Auditor's Limited Review Report on Unaudited Quarter ended Financial results
+163	    of Stallion India Fluorochemicals Limited (Formerly known as Stallion India Fluorochemicals
+164	    Private Limited) pursuant to the regulation 33 of the SEBI (Listing Obligations and Disclosures
+165	    Requirements) Regulations, 2015 (as amended)
+166
+167	    To,
+168	    The Board of Directors
+169	    Stallion India Fluorochemicals Limited
+170	    (Formerly known as Stallion India Fluorochemicals Private Limited)
+171
+172	       1. We have reviewed the accompanying Statement of Unaudited Financial Results of
+173	          Stallion India Fluorochemicals Limited (Formerly known as Stallion India
+174	          Fluorochemicals Private Limited) ("the Company"), for the Quarter ended 30th June,
+175	          2026 ("the Statement"), being submitted by the Company pursuant to the requirement of
+176	          Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+177	          2015, as amended ("the Listing Regulations").
+178
+179	       2. This Statement, which is the responsibility of the Company's Management and approved
+180	          by the Company's Board of Directors, has been prepared in accordance with the
+181	          recognition and measurement principles laid down in the Indian Accounting Standard 34
+182	          "Interim Financial Reporting" ("Ind AS 34"), prescribed under Section 133 of the
+183	          Companies Act, 2013 read with relevant rules issued thereunder and other accounting
+184	          principles generally accepted in India and in compliance with Regulation 33 of the Listing
+185	          Regulations. Our responsibility is to express a conclusion on the Statement based on our
+186	          review.
+187
+188	       3. We conducted our review of the Statement in accordance with the Standard on Review
+189	          Engagements (SRE) 2410 'Review of Interim Financial Information Performed by the
+190	          Independent Auditor of the Entity', issued by the Institute of Chartered Accountants of
+191	          India (ICAI). A review of interim financial information consists of making inquiries,
+192	          primarily of the Company's personnel responsible for financial and accounting matters,
+193	          and applying analytical and other review procedures. A review is substantially less in
+194	          scope than an audit conducted in accordance with Standards on Auditing specified under
+195	          section 143(10) of the Companies Act, 2013 and consequently does not enable us to
+196	          obtain assurance that we would become aware of all significant matters that might be
+197	          identified in an audit. Accordingly, we do not express an audit opinion.
+
+[page 6]
+198	   4. Based on our review conducted and procedures performed as stated in paragraph 3
+199	      above, nothing has come to our attention that causes us to believe that the accompanying
+200	      Statement, prepared in accordance with the recognition and measurement principles laid
+201	      down in the aforesaid Indian Accounting Standard and other accounting principles
+202	      generally accepted in India, has not disclosed the information required to be disclosed in
+203	      terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+204	      Regulations, 2015, as amended, including the manner in which it is to be disclosed, or that
+205	      it contains any material misstatement.
+206
+207
+208
+209	For Mittal & Associates
+210	Chartered Accountants
+211	FRN: 106456W
+212	             Digitally signed by
+213	 SOURABH SOURABH
+214	         BAGARIA
+215	 BAGARIA Date: 2026.08.12
+216	             12:46:20 +05'30'
+217
+218	CA Sourabh Bagaria
+219	Partner
+220	M NO.: 183850
+221	UDIN: 26183850WDGGTH7387
+222	Date: 12th August, 2026
+223	Place: Mumbai
+
+=== END OF EXTRACT ===

@@ -132,11 +132,23 @@ Deferred tax 0.21 / 3.29 / 0.69 / 3.23 (l.83); Earlier-period tax adjustment nil
 | Other Income / PBT | OI / PBT | 0.53% | 7.80% | 13.03% | 5.84% |
 | Effective Tax Rate | Tax / PBT | 25.24% | 34.40% | 25.10% | 25.67% |
 | PAT Margin (on Revenue) | PAT / Revenue | 9.38% | 9.94% | 15.29% | 10.18% |
-| Gross materials cost / Revenue | (Materials + Inv change) / Rev | 79.54% | 79.35% | 76.26% | 76.31% |
+| Gross materials cost / Revenue | (Materials + Inv change) / Rev | 79.54% | 79.35% | 76.26% | 80.14% |
 
 Gross-materials-cost line is added because it is the visible driver of margin: materials +
 inventory change fell to 76.26% of revenue in Q1 FY27 from 79.54% a year earlier, a ~328 bps
 gross-margin gain that, with operating leverage, produced the operating-EBITDA-margin step-up.
+
+Sign convention (re-verified across all four columns after the A5 loop-back): the
+change-in-inventories figure is carried as filed, a bracketed value being a stock build that
+reduces the cost base and a positive value a drawdown that adds to it. Applied consistently,
+the four columns are 79.54 / 79.35 / 76.26 / 80.14 percent: Q1 FY26 (95.26 less the 7.39 build)
+/ 110.47; Q4 FY26 (100.92 less 13.64) / 109.99; Q1 FY27 (75.85 plus the 16.76 drawdown) /
+121.45; FY26 (369.10 less the 23.96 full-year build) / 430.68 = 80.14 percent. Raw check in
+Lakhs for the FY26 cell: (36,910.24 [l.72] less 2,395.94 [l.73]) / 43,067.80 [l.68] =
+34,514.30 / 43,067.80 = 80.14 percent. The FY26 full-year cell is 80.14 percent, above the
+Q1 FY27 exit rate; the load-bearing comparison is the Q1 YoY move from 79.54 to 76.26 percent,
+a 328 bps gain, which does not touch the FY26 full-year figure. (Prior draft mis-keyed the FY26
+cell as 76.31 percent; corrected here to 80.14 percent.)
 
 Every cell filled; no ND in the standalone table (all four filed columns are complete).
 
@@ -153,7 +165,7 @@ Every cell filled; no ND in the standalone table (all four filed columns are com
 | Finance Costs | 0.22 | 0.09 | −57.8% | Near-nil; debt-light post-IPO |
 | EBIT (operating) | 14.01 | 21.65 | +54.6% | Strong |
 | Other Income | 0.07 | 3.23 | +4,282.2% | Treasury spike (IPO FD interest) |
-| **Core Operating PBT (PBT − OI)** | 13.79 | 21.56 | **+56.4%** | **Clean core growth — real** |
+| **Core Operating PBT (PBT − OI)** | 13.79 | 21.56 | **+56.4%** | **Clean core growth — real, with a destocking qualifier (see answer 3)** |
 | Reported PBT | 13.86 | 24.79 | +78.8% | Inflated ~22pp by Other Income |
 | PAT | 10.36 | 18.57 | +79.2% | Inflated by OI, offset by higher tax |
 | EPS (share-adjusted) | 1.15 | 1.60 | +39.1% | Diluted by fresh issue |
@@ -165,10 +177,22 @@ Every cell filled; no ND in the standalone table (all four filed columns are com
    so no guidance variance can be struck.
 2. **Op EBITDA margin?** Expanded to 18.15% (Q1 FY27) from 12.94% (Q1 FY26) = +521 bps. Driver
    is a ~328 bps gross-materials-cost improvement plus operating leverage on near-flat employee
-   and other-expense lines. Genuine, not treasury-driven (Other Income is stripped from operating EBITDA).
+   and other-expense lines. Genuine at the operating level (Other Income is stripped from operating
+   EBITDA), but see the destocking earnings-quality qualifier in answer 3: part of the gross-margin
+   move is entangled with a large inventory drawdown.
 3. **Did core operating PBT (ex-Other Income) grow YoY?** Yes, +56.4% (Rs 21.56 Cr vs Rs 13.79 Cr).
    The single cleanest health test passes: core PBT grew fast on its own, so the headline growth
    is real at the operating level even before treasury help.
+   **Earnings-quality qualifier (destocking):** the change-in-inventories line swung about Rs 24 Cr
+   YoY, from a Rs 7.39 Cr stock build in Q1 FY26 to a Rs 16.76 Cr drawdown in Q1 FY27 (l.73).
+   Revenue this quarter was met partly by selling down accumulated stock, and cost of materials
+   consumed held at Rs 75.85 Cr (l.72) against Rs 95.26 Cr a year earlier. Part of the 328 bps
+   gross-margin gain and the +56.4% core-PBT growth may therefore reflect stock liquidation rather
+   than a demonstrably repeatable cost structure; the run-rate is unconfirmed until inventory
+   rebuilds, which the WC-object overspend to 108.8% (l.127) suggests is already underway. Symmetric
+   bull read: revenue still grew 9.9% on near-flat employee and other-expense lines, so operating
+   leverage is real independent of the inventory swing; the destock question is one of degree, and
+   management is asked to quantify the split in Question 9. This is carried as caveat 6 in the verdict.
 4. **Gap between core PBT growth (+56.4%) and reported PAT growth (+79.2%)?** Walk: Other Income
    +Rs 3.16 Cr (non-recurring, FD interest on idle IPO cash) lifted reported PBT to +78.8%;
    higher tax (Rs 6.22 Cr vs Rs 3.50 Cr, +Rs 2.72 Cr) pulled PAT growth marginally back below PBT
@@ -198,21 +222,24 @@ not estimated; FY26 less Q1 less Q4 = Rs 210.22 Cr for Q2+Q3 combined but cannot
 | Q2 FY26 | ND | ND | ND | ND | ND |
 | Q3 FY26 | ND | ND | ND | ND | ND |
 | Q4 FY26 | 109.99 | 14.86% | 15.37 | Year-end ETR true-up 34.40% (Note 4 balancing figure); OCI +0.42 Cr | derived |
-| Q1 FY27 | 121.45 | 18.15% | 21.56 | Other Income Rs 3.23 Cr (IPO FD interest) | Stepping up |
+| Q1 FY27 | 121.45 | 18.15% | 21.56 | Other Income Rs 3.23 Cr (IPO FD interest); Rs 16.76 Cr inventory drawdown (l.73) | Stepping up |
 
 **Diagnostics:**
 - **Run-rate trajectory:** Stepping up. Revenue +10.4% QoQ (Rs 121.45 Cr vs Rs 109.99 Cr);
-  operating EBITDA margin +329 bps QoQ; core PBT +40.3% QoQ (Rs 21.56 Cr vs Rs 15.37 Cr).
+  operating EBITDA margin +329 bps QoQ; core PBT +40.3% QoQ (Rs 21.56 Cr vs Rs 15.37 Cr). Note the
+  step-up rides an inventory drawdown (Step 2 answer 3); durability is the Q2 test below.
 - **Any quarter distorted by a one-off?** Q4 FY26 is a balancing figure (Note 4) carrying the
   year-end deferred-tax true-up (ETR 34.40% vs ~25% elsewhere) and the annual actuarial OCI, so
   Q4 PAT (Rs 10.93 Cr) understates its operating quality; do not read Q1 FY27 PAT +69.8% QoQ as
-  pure operating momentum. Q1 FY27 carries the Other-Income treasury spike.
+  pure operating momentum. Q1 FY27 carries the Other-Income treasury spike and the inventory
+  drawdown.
 - **H1-vs-run-rate / capex-commissioning test:** Not applicable in a clean form because the
   refrigerant (Mambattu) line is only 52% deployed and no plant has commissioned yet (A3-01).
   The revenue step-up this quarter is therefore NOT attributable to new-capacity commissioning;
   it is base-business gross-margin and volume. The capex-commissioning run-rate lift is still ahead.
 - **Implied Q2 FY27 base to hold trajectory:** revenue at or above Rs 121.45 Cr and operating
-  EBITDA margin at or above 18% would confirm the step-up is durable rather than a single strong quarter.
+  EBITDA margin at or above 18% would confirm the step-up is durable rather than a single strong
+  quarter helped by a destock.
 
 ---
 
@@ -222,8 +249,8 @@ Reported PAT change = Rs 18.57 Cr − Rs 10.36 Cr = **+Rs 8.20 Cr (+79.2%).**
 
 | Component | YoY Change (Rs Cr) | Recurring? |
 |-----------|-------------------:|------------|
-| Core operating PBT (Op EBITDA less Dep/Finance, ex-OI) | +7.77 | Recurring |
-| — of which Operating EBITDA | +7.74 | Recurring |
+| Core operating PBT (Op EBITDA less Dep/Finance, ex-OI) | +7.77 | Recurring, subject to destocking qualifier (Step 2 answer 3) |
+| — of which Operating EBITDA | +7.74 | Recurring, subject to destocking qualifier |
 | — of which Depreciation | (0.10) | Recurring (post-capex) |
 | — of which Finance cost | +0.13 | Recurring (debt-light) |
 | Other Income | +3.16 | NON-RECURRING (IPO-cash FD interest) |
@@ -239,11 +266,13 @@ Reconciliation: Reported PBT change +Rs 10.93 Cr = core operating PBT +Rs 7.77 C
 - **% of PAT growth from recurring core vs non-recurring:** After tax at the ~25.1% ETR, core
   operating PBT contributes roughly +Rs 5.8 Cr (about 71% of the +Rs 8.20 Cr) and the
   Other-Income spike about +Rs 2.4 Cr (about 29%). Roughly 29% of the PAT increase is treasury,
-  not operations. Material, and it fades as IPO cash deploys.
+  not operations. Material, and it fades as IPO cash deploys. A further, unquantified slice of the
+  "recurring core" itself may be one-time inventory drawdown rather than a durable cost structure
+  (Step 2 answer 3); this cannot be split from the filing and is put to management as Question 9.
 - **If Other Income reverts to prior-year level:** run-rate PBT would be about Rs 21.63 Cr
   (Rs 24.79 Cr less Rs 3.16 Cr) and run-rate PAT about Rs 16.2 Cr, still roughly +56% YoY on the
   core. The quarter stands on its own even stripped of treasury; the point is that Rs 18.57 Cr
-  is not the clean forward run-rate.
+  is not the clean forward run-rate, and even the Rs 16.2 Cr core carries the destocking caveat.
 - **D&A / finance at steady state?** Not yet. Depreciation is Rs 0.39 Cr against a company that
   will commission the Mambattu refrigerant line; both D&A and finance cost will step up as the
   remaining IPO capex deploys. Current near-nil finance cost reflects a largely debt-free,
@@ -269,7 +298,7 @@ by omission.
 | FCF (CFO − Capex) | ND | ND | ND | Cannot compute |
 | Working capital change | ND | ND | ND | Not filed; WC IPO-object overspend Rs 8.29 Cr is the only signal |
 | Receivable days | ND | ND | ND | Not filed |
-| Inventory days | ND | ND | ND | Not filed (P&L inventory change +Rs 16.76 Cr = destocking, l.73) |
+| Inventory days | ND | ND | ND | Not filed (P&L inventory change +Rs 16.76 Cr = drawdown/destock, l.73) |
 | Payable days | ND | ND | ND | Not filed |
 | Cash Conversion Cycle | ND | ND | ND | Not filed |
 | PPE | ND | ND | ND | Not filed |
@@ -367,7 +396,7 @@ this-quarter reading that will feed those stages when they run.
 
 | Pillar / Input | Original Assumption | Current Reading (this quarter) | Action |
 |----------------|---------------------|--------------------------------|--------|
-| Pillar 1 ROCE Base | NOT RECORDED | ROCE ND (no balance sheet at Q1); core profitability improving (op margin +521 bps YoY) | Build at full workup; needs FTTCP ROCE forward verdict |
+| Pillar 1 ROCE Base | NOT RECORDED | ROCE ND (no balance sheet at Q1); core profitability improving (op margin +521 bps YoY) but partly destock-aided (Step 2 answer 3) | Build at full workup; needs FTTCP ROCE forward verdict |
 | Pillar 2 Cash Multiplier | NOT RECORDED | Cash conversion INDETERMINATE (no cash flow statement) | Cannot set; await H1 FY27 CFO |
 | Pillar 3 Growth Visibility | NOT RECORDED | Catalyst = R-32 commissioning; proximity claimed 0-6m but deployment lags (A3-01) | Set after EM score + confirmed catalyst date |
 | Strategic Premium | NOT RECORDED | Fluorochemicals/refrigerant blending; scarcity not assessed in this filing | Assess at full workup |
@@ -388,7 +417,8 @@ does not apply; no trim/exit mechanics are relevant. Applying 8A-W:
 - Actuals cannot be scored against Bear/Base (no projections on file; 6A), so the "below bear"
   and "between bear and base" branches cannot be mechanically triggered. On the raw evidence the
   quarter is operationally strong (core PBT +56.4% YoY, op margin +521 bps) with clean audit,
-  which does not argue for pushing the name out.
+  though the gross-margin gain carries a destocking qualifier (Step 2 answer 3); on balance this
+  does not argue for pushing the name out.
 
 **8A-W output:**
 - **Decision Status: HOLD ON WATCHLIST / TOP 20 (unchanged).** No pre-committed BUY gate exists
@@ -413,7 +443,8 @@ top 20 / R-32 ~4 months away" thesis rests on that line.
 - Bull threshold: object (c) deployment above 85% AND a stated commissioning date within FY27.
 - Bear threshold: object (c) still below 60% deployed AND no commissioning date at H1 FY27.
 - Secondary clean metric: **core operating PBT ex-Other Income** (tests whether the operating
-  step-up holds once the IPO-cash FD-interest tailwind fades).
+  step-up holds once the IPO-cash FD-interest tailwind fades AND once inventory rebuilds from the
+  Q1 drawdown; the two together define the true forward run-rate).
 
 ---
 
@@ -433,16 +464,19 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding generates at least one question be
 | 6 | The Directors', MD&A and Corporate Governance reports for FY26 were approved this meeting — the first as a listed company. When will the full FY26 Annual Report be filed, and will it disclose segment/product-mix and capex-progress detail absent here? | The AR is the first venue with the disclosure this results filing lacks; it gates the full workup | A near-term filing date with granular capex and product-mix disclosure | Delay or a thin AR that repeats the results-level disclosure | A3-05 |
 | 7 | Ms. Swati Ghosh is being regularized from Additional to Woman Independent Director at the 21 Sep 2026 AGM. What is her appointment term, and does it span the R-32 commissioning window? | Governance continuity through the catalyst period; tenure is unstated in the filing | A full multi-year term covering commissioning | A short or uncertain term, or the slot left thin | A3-06 |
 | 8 | No dividend was recommended with these results. Is the policy to retain all cash for IPO-object deployment through FY27, and when does capital return enter the frame? | Capital-allocation clarity for a cash-rich, debt-light post-IPO balance sheet | Clear reinvestment-first policy tied to the capex plan | No policy articulated despite idle cash | A3-04 |
+| 9 | The change-in-inventories line swung about Rs 24 Cr YoY, from a Rs 7.39 Cr stock build in Q1 FY26 to a Rs 16.76 Cr drawdown in Q1 FY27 (l.73), while cost of materials consumed fell to Rs 75.85 Cr from Rs 95.26 Cr (l.72). How much of the 328 bps gross-margin gain and the +56.4% core-PBT growth is inventory drawdown / stock liquidation versus structural cost reduction, and is the drawdown sustainable or will gross margin normalize as inventory rebuilds? | Separates a repeatable cost structure from a one-time destock; sets the true forward gross-margin and core-PBT run-rate, and cross-checks the WC-object overspend | A quantified split showing most of the gain is structural (mix, sourcing, price), with the destock a minor, sustainable component | Most of the gain is stock liquidation; gross margin normalizes lower as inventory rebuilds (WC object already 108.8% overspent, l.127) | A3-03 (QoE) |
 
 **Top 3 by likelihood of thesis-changing information:**
 1. **Q1 (Mambattu R-32 date + deployment)** — a firm date within FY27 raises the bull case; no
    date confirms the DELAYED read and defers the entire re-rating.
 2. **Q2 (CFO of record)** — confirmation of no independent CFO for a Rs 145 Cr deployment would
    cap the governance/promoter verdict and, by house rule, drag the eventual recommendation.
-3. **Q4 (Other-income quality)** — tests transparency on how much of the headline PAT is treasury;
-   a candid answer clarifies the clean run-rate, an evasive one is itself diagnostic.
+3. **Q9 (destock vs structural margin)** — quantifies how much of the headline gross-margin and
+   core-PBT gain is a one-time inventory drawdown; a structural answer confirms the run-rate, a
+   destock-heavy answer means margins normalize lower as inventory rebuilds. Q4 (other-income
+   quality) follows closely for the same run-rate reason.
 
-**Channel recommendation:** IR email now with all eight questions verbatim; escalate the top three
+**Channel recommendation:** IR email now with all nine questions verbatim; escalate the top three
 to the 21 Sep 2026 AGM Q&A. No concall is scheduled, so there is no live call to defer to.
 
 ---
@@ -453,6 +487,7 @@ to the 21 Sep 2026 AGM Q&A. No concall is scheduled, so there is no live call to
 |------|--------------|-----------|------|
 | Mambattu refrigerant (R-32) commissioning + deploy remaining Rs 10.17 Cr | No date disclosed (thesis note: "~4 months") | l.130-131 (IPO object c); A3-01 | THE catalyst; deployment lags; single cleanest metric (Step 8C) |
 | H1 FY27 cash flow statement + balance sheet (resolves INDETERMINATE cash conversion) | With Q2 FY27 results (Reg 33 half-yearly) | Step 5 rule | Gates the verdict upgrade past CAVEATS |
+| Gross-margin durability as inventory rebuilds (Rs 16.76 Cr Q1 drawdown vs Rs 7.39 Cr prior-year build) | H1 FY27 (Q2 margin + first WC/inventory disclosure) | l.72-73; A3-03 | Tests whether the 328 bps gain is structural or a one-time destock (Question 9); maps to caveat 6 |
 | Khalapur land acquisition — title / possession / build timeline | Approved via SR 30 May 2026; underway | l.136-139; A3-02 | Object (b) 103% deployed; execution now on the ground |
 | Working-capital intensity normalization (object overspent 108.8%) | H1 FY27 (first WC disclosure) | l.127; A3-03 | Structural vs growth-induced test deferred to Q2 |
 | First listed-company FY26 Annual Report filing | Within weeks of 12 Aug 2026 | l.34-37 (items b/c); A3-05 | First venue with segment/related-party/capex detail; schedule Role 6 AR Deep Dive |
@@ -468,7 +503,7 @@ to the 21 Sep 2026 AGM Q&A. No concall is scheduled, so there is no live call to
 
 Rationale. The filing itself is clean and operationally strong: unmodified limited-review
 conclusion, no Emphasis of Matter, no going-concern language; core operating PBT +56.4% YoY,
-operating EBITDA margin +521 bps YoY to 18.15%, gross-materials cost down ~328 bps, net-cash and
+operating EBITDA margin +521 bps YoY to 18.15%, gross-materials cost down ~328 bps YoY, net-cash and
 debt-light. Nothing mechanical failed; no thesis-broken trigger fired (none are recorded). The
 verdict is held at **CAVEATS**, not clean PROCEED, because cash conversion is **INDETERMINATE**:
 this is a Q1 filing with no Reg-33 cash flow statement or balance sheet, so CFO/PAT cannot be
@@ -484,10 +519,19 @@ monitorable, so none is unprocessed):
    CFO of record unconfirmed for a Rs 144.75 Cr deployment.
 3. **Working-capital overspend (A3-03):** IPO WC object at 108.8% of plan while the refrigerant
    object sits idle; structural-vs-growth classification deferred to H1.
-4. **Earnings quality (QoE note):** about 29% of YoY PAT growth is Other Income (IPO-cash FD
-   interest), which fades as proceeds deploy; the clean run-rate PAT is ~Rs 16.2 Cr, not Rs 18.57 Cr.
+4. **Earnings quality — treasury income (QoE note):** about 29% of YoY PAT growth is Other Income
+   (IPO-cash FD interest), which fades as proceeds deploy; the clean run-rate PAT is ~Rs 16.2 Cr,
+   not Rs 18.57 Cr.
 5. **Thesis-infrastructure gap:** the Notion page carries no projections, no tripwires, no entry
    zone; the name cannot be scored or gated until a full workup builds them.
+6. **Earnings quality — inventory drawdown (A3-03 / QoE):** Q1 FY27 carries a Rs 16.76 Cr inventory
+   drawdown (l.73) against a Rs 7.39 Cr build a year earlier, a ~Rs 24 Cr swing, while cost of
+   materials consumed fell to Rs 75.85 Cr from Rs 95.26 Cr (l.72). Part of the 328 bps gross-margin
+   gain and the +56.4% core-PBT growth may reflect selling down accumulated stock rather than a
+   repeatable cost structure; durability is unconfirmed until inventory rebuilds, which the WC-object
+   overspend to 108.8% (l.127) suggests is already underway. Symmetric bull read: revenue still grew
+   9.9% on near-flat overheads, so operating leverage is real independent of the swing. Quantification
+   requested in Question 9; tracked via the gross-margin-durability monitorable.
 
 Position branch: **8A-W** (WATCHLIST / TOP 20, non-held). Decision Status unchanged. Master
 decision gate pushed to the next full workup, gated on the H1 FY27 cash flow statement and the
@@ -507,19 +551,24 @@ which strips out treasury income, grew 56.4% to Rs 21.56 Cr, so the quarter is g
 the operating level. Reported profit after tax jumped 79.2% to Rs 18.57 Cr, but about 29% of that
 increase is Other Income of Rs 3.23 Cr, up from almost nothing a year ago. That Other Income is
 interest earned on the unutilised IPO cash sitting in fixed deposits, and it will fade as the money
-is spent. The clean run-rate profit is closer to Rs 16.2 Cr. The audit is clean: an unmodified
-limited-review conclusion, no emphasis of matter, no going-concern flag. The balance sheet is
-debt-light and net-cash, with finance cost of just Rs 0.09 Cr. Three things temper the enthusiasm.
-First, the refrigerant plant at Mambattu that anchors the R-32 growth thesis is only 52% funded,
-with Rs 10.17 Cr still idle and no commissioning date disclosed, even though the thesis note says
-commissioning is about four months away. Second, the same person signs as CEO on one page and CFO
-on the next, so it is unclear whether there is an independent finance head. Third, the
-working-capital use of IPO money is already 8.8% over plan while the refrigerant line is
-underfunded, hinting that cash is being pulled toward working capital and away from the catalyst.
-Because this is a Q1 filing with no cash flow statement, cash conversion cannot be judged, so the
-review lands at PROCEED WITH CAVEATS. The name stays on WATCHLIST / TOP 20 with the decision gate
-pushed to the next full workup, which should follow the H1 cash flow statement and the first annual
-report as a listed company.
+is spent. The clean run-rate profit is closer to Rs 16.2 Cr. A further earnings-quality caveat sits
+underneath even that core number: the quarter drew down Rs 16.76 Cr of inventory against a Rs 7.39
+Cr stock build a year earlier, so revenue was met partly from existing stock and materials consumed
+stayed low; part of the margin and profit gain may be one-time stock liquidation rather than a
+repeatable cost structure, and management is asked to quantify the split (Question 9). The audit is
+clean: an unmodified limited-review conclusion, no emphasis of matter, no going-concern flag. The
+balance sheet is debt-light and net-cash, with finance cost of just Rs 0.09 Cr. Three further things
+temper the enthusiasm. First, the refrigerant plant at Mambattu that anchors the R-32 growth thesis
+is only 52% funded, with Rs 10.17 Cr still idle and no commissioning date disclosed, even though the
+thesis note says commissioning is about four months away. Second, the same person signs as CEO on
+one page and CFO on the next, so it is unclear whether there is an independent finance head. Third,
+the working-capital use of IPO money is already 8.8% over plan while the refrigerant line is
+underfunded, hinting that cash is being pulled toward working capital and away from the catalyst
+(and, consistent with the inventory point, that stock may already be rebuilding). Because this is a
+Q1 filing with no cash flow statement, cash conversion cannot be judged, so the review lands at
+PROCEED WITH CAVEATS. The name stays on WATCHLIST / TOP 20 with the decision gate pushed to the next
+full workup, which should follow the H1 cash flow statement and the first annual report as a listed
+company.
 
 ### 2. Sector intelligence
 
@@ -543,14 +592,15 @@ distribution, a working-capital-intensive, inventory-heavy model rather than a h
 one: depreciation is only Rs 0.39 Cr this quarter (l.76) while inventory swings are large (a
 Rs 16.76 Cr inventory drawdown, l.73). Unit economics this quarter improved at the gross level
 (materials plus inventory change fell to 76.26% of revenue from 79.54%, l.72-73), which is what
-lifted margins. The IPO reshaped the model: Rs 144.75 Cr of net proceeds (Note 5, l.124) left the
-company net-cash and generating meaningful treasury income, and the deployment plan splits between
-working capital (largest object, now overspent), a specialty-gas and semiconductor facility at
-Khalapur, and the refrigerant facility at Mambattu. Model drift to watch: working-capital use is
-running ahead of plan (108.8%, l.127) while the growth-capex line lags (52%, l.130-131), so the
-model is currently absorbing cash into working capital faster than into capacity. Whether that is
-temporary growth funding or a structural cash cycle cannot be settled until the half-year cash flow
-statement (ND at Q1).
+lifted margins, though part of that improvement rides the inventory drawdown noted above and may
+not fully repeat once stock rebuilds. The IPO reshaped the model: Rs 144.75 Cr of net proceeds
+(Note 5, l.124) left the company net-cash and generating meaningful treasury income, and the
+deployment plan splits between working capital (largest object, now overspent), a specialty-gas and
+semiconductor facility at Khalapur, and the refrigerant facility at Mambattu. Model drift to watch:
+working-capital use is running ahead of plan (108.8%, l.127) while the growth-capex line lags (52%,
+l.130-131), so the model is currently absorbing cash into working capital faster than into capacity.
+Whether that is temporary growth funding or a structural cash cycle cannot be settled until the
+half-year cash flow statement (ND at Q1).
 
 ### 4. Competition intelligence
 
@@ -576,6 +626,7 @@ company: "STALLION"
 quarter: "Q1FY27"
 model: claude-opus-4-8
 status: complete
+revision: "r2 — A5 loop-back fixes: (1) Step 1 derived table FY26 'Gross materials cost / Revenue' corrected 76.31% -> 80.14% with sign convention re-verified across all four columns; (2) grafted inventory-drawdown/destocking earnings-quality bear counter into Step 2 answer 3, Step 3/4, caveat 6, monitorables, and new Question 9. All other content preserved."
 docs_merged: [results]
 ledger_reconciliation:
   notes: 6
@@ -597,9 +648,11 @@ questions_for_management:
   - {q: "When will the first listed-company FY26 Annual Report be filed and will it disclose segment/product-mix and capex-progress detail?", from_finding_id: "A3-05"}
   - {q: "What is Swati Ghosh's appointment term and does it span the R-32 commissioning window (regularization at 21-Sep-2026 AGM)?", from_finding_id: "A3-06"}
   - {q: "Is the no-dividend stance a formal reinvestment-first policy through FY27, and when does capital return enter the frame?", from_finding_id: "A3-04"}
+  - {q: "How much of the 328 bps gross-margin gain and +56.4% core-PBT growth is inventory drawdown/stock liquidation (Rs 16.76 Cr release vs Rs 7.39 Cr prior-year build, l.73) versus structural cost reduction, and is the drawdown sustainable as inventory rebuilds?", from_finding_id: "A3-03"}
 monitorables:
   - {item: "Mambattu refrigerant (R-32) commissioning + deploy remaining Rs 10.17 Cr", implied_date: "no date disclosed (thesis: ~4 months)", source_ref: "l.130-131 / A3-01"}
   - {item: "H1 FY27 cash flow statement + balance sheet (resolves INDETERMINATE cash conversion)", implied_date: "with Q2 FY27 results", source_ref: "Reg 33 / Step 5"}
+  - {item: "Gross-margin durability as inventory rebuilds (Rs 16.76 Cr Q1 drawdown vs Rs 7.39 Cr prior-year build)", implied_date: "H1 FY27 (Q2 margin + first inventory/WC disclosure)", source_ref: "l.72-73 / A3-03"}
   - {item: "Khalapur land title/possession/build timeline", implied_date: "SR 30-May-2026, underway", source_ref: "l.136-139 / A3-02"}
   - {item: "Working-capital intensity normalization (object 108.8% of plan)", implied_date: "H1 FY27", source_ref: "l.127 / A3-03"}
   - {item: "First listed-company FY26 Annual Report filing (schedule Role 6 AR Deep Dive)", implied_date: "within weeks of 2026-08-12", source_ref: "l.34-37 / A3-05"}
@@ -612,6 +665,7 @@ flags:
   - "CEO/CFO designation mismatch, same DIN 01923432 (A3-07) — CFO of record unconfirmed"
   - "Working-capital IPO object overspent to 108.8% while refrigerant object idle (A3-03)"
   - "~29% of YoY PAT growth from Other Income (IPO-cash FD interest); clean run-rate PAT ~Rs 16.2 Cr vs reported Rs 18.57 Cr"
+  - "Inventory drawdown Rs 16.76 Cr vs Rs 7.39 Cr prior-year build (l.73): part of the 328 bps gross-margin gain and +56.4% core-PBT growth may be one-time stock liquidation, not repeatable cost structure; durability unconfirmed until inventory rebuilds (A3-03 / Question 9)"
   - "Notion page carries no projections, tripwires, or entry zone — name cannot be scored/gated until a full workup"
 plain_language_brief_included: true
 review_path: "/home/user/inflection-pipeline/runs/stallion-q1fy27/work/review_stallion_q1fy27.md"

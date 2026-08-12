@@ -1,13 +1,13 @@
 stage: B12a
 company: "FINCABLES"
 run_date: "2026-08-12"
-model: "claude-haiku-4-5"
+model: "claude-haiku-4-5-20251001"
 status: complete
-numbers_checked: 111
+numbers_checked: 18
 findings: []
 critical_count: 0
 major_count: 0
 minor_count: 0
 acceptance_rate: 100
-coverage_note: "All Gate 0 verdict-card and Block-score calculations verified to screener CSV and Annual Report. Stages 1-7 fully auditable; all 111 traceable numbers match source exactly. Stages 8-9 web-sourced (out-of-scope per instructions). Zero source-fidelity violations found."
-source_fidelity_gate: "PASS"
+coverage_note: "Re-verification of B01 v2 (Gate 0 audited re-run, 13 figures) and B05 v2 (Concall four-transcript re-run, 5 figures) against Q4 FY26 Audited Results, Q1 FY27 Limited Review Filing, and Q4 FY26 Concall Transcript. All 18 newly-introduced/flagged material figures verified exact to source documents. Zero mismatches, zero anchor-not-found, zero material unanchored claims. Two information gaps correctly flagged by reports themselves (screener Other Income discrepancy noted by B01; receivables build silence noted by B05); neither is a scoring error in the reports. All verdict-card and Block-score anchors verified to audited statements. Acceptance rate 100%. NOTE: prior v1 pass audited all nine stage reports (111 numbers) at 100%; this re-run covers only the two changed reports (B01 v2, B05 v2)."
+source_fidelity_gate: PASS

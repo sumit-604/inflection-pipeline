@@ -1,206 +1,196 @@
-# STAGE 12B: VERIFIER B — INDEPENDENT CONCALL RED-FLAG AUDIT — FINCABLES
-Run date: 2026-08-12 | Model: claude-opus-4-8 | Emits: B12b
+# Verifier B — Independent Concall Red-Flag Audit (RE-VERIFICATION)
+## FINCABLES | Revised four-transcript B05 (v2) | Run date 2026-08-12
 
-Scope: independent fresh read of all FOUR Finolex Cables concall transcripts
-(Q1 FY26 Aug-2025, Q2 FY26 Nov-2025, Q3 FY26 Feb-2026, Q4/FY26 May-2026),
-then comparison against B05 (concall analysis) and B06 (peer verification).
-B05 formally covered only the three most recent calls; the Q1 FY26 (Aug-2025)
-call was dropped by its 3-transcript cap. I read that dropped call too — and it
-carries the single most consequential item B05 could not have seen.
+Scope: fresh independent read of all four FY26 FINCABLES concall transcripts
+(Q1 Aug 2025, Q2 Nov 2025, Q3 Feb 2026, Q4 May 2026), then comparison against the
+revised B05 (`outputs/reports/05-concall.md`), which was re-run to restore the
+previously-dropped Q1 FY26 call. Primary charge: confirm whether the four prior-audit
+gaps are now captured, enumerate any red flags still missed, flag any overstated B05
+red flag, and issue an updated redflag_coverage.
 
-Anchor convention: (call quarter, transcript page).
-
----
-
-## PART 1 — INDEPENDENT RED-FLAG LIST (from raw transcripts, fresh)
-
-### From the DROPPED Q1 FY26 (Aug-2025) call — B05 never saw these
-
-**IR-1. Promoter/family control dispute, conceded to have impacted results.**
-Manoj Gori (Equirus) asks directly "whether the dispute within the promoter
-family has impacted the results of the business." Management: "I wouldn't say
-too much. Yes, there would be some impact, but not overall." (Q1 FY26, p4).
-The same underlying dispute is raised again the next quarter — Darshika Khemka:
-"status of the current case... between two shareholders" → "At the company
-level, I have really nothing to say." (Q2 FY26, p8). Two consecutive quarters,
-governance-grade topic, minimal/closing answers, and in Q1 management CONCEDED
-a results impact. This is a governance/related-party red flag with a
-repeated-under-answered-question character.
-
-**IR-2. Multi-year underperformance directly raised and tied to a management
-root cause.** Manoj Gori: over "4-5 years or even 6 years... underperformance by
-Finolex Cables versus the industry," "management related issues also started
-around 6-6.5 years back," gross margin fallen from "27%-28%... to around 19%"
-(FY25), EBITDA "came down to below 10%" (Q1 FY26, p3-4). Management partially
-engages: "we have been quite subdued on the power cable side... competition has
-been a little more aggressive on the pricing, while we have not been that
-aggressive" (p3). The multi-year decline WAS put to management and partly
-addressed — directly relevant to how B05 framed the same decline.
-
-**IR-3. Preform trial slip is older and larger than the 3-call window shows.**
-Q1 FY26 (p7): preform facility "ready, we are waiting for the trials to be
-completed, and there has been a small hitch with the power supply which should
-be sorted out in the next 1 month or so, after which the trials will commence"
-(→ ~Sept 2025). Q2 (p3): "next couple of weeks" (→ ~Dec 2025). Q4 recap (p3):
-trials "likely to begin February... mid-March, we commissioned." Net slip from
-the original Q1 promise ≈ 5 months across three calls; the "power supply hitch"
-reason was never referenced again.
-
-**IR-4. Rs6,500cr electrical peak-capacity figure is sourced here.** Achal
-Lohade / management: electrical cables "at current prices could go up to INR
-6,500 crore," gross block "around INR 700 crore – INR 750 crore, so about 8x"
-(Q1 FY26, p6). This is the antecedent B05 could only flag as "NOT VERIFIABLE /
-pre-window." It is verifiable: it originates in this Q1 call, and management DID
-give it (Q2 only declined to update it).
-
-**IR-5. No copper hedging; inventory-price-fall risk self-disclosed early.**
-"we do not buy copper on spot. We only buy on the month average" — no formal
-hedge; "if you are stuck with a fairly large inventory and the price falls, then
-you have a problem" (Q1 FY26, p8). This is exactly the risk that materialized in
-Q4 (Rs300cr Middle-East-driven inventory build).
-
-### From the three B05-covered calls (independent confirmation + nuance)
-
-**IR-6. Fiber-draw completion date, unacknowledged slippage** — Mar'26 (Q2 p3)
-→ end-Q1 FY27 (Q3 p3) → "by July" (Q4 p4). Note an additional intra-Q4
-inconsistency B05 did not surface: within the SAME Q4 call the date is given as
-"July" (p4), "end of second quarter" i.e. Q2 FY27 (p10), and "July or August"
-(p15). Slip is real and if anything fuzzier than B05 states.
-
-**IR-7. FMEG Rs500cr-by-2028 target quietly dropped** — reaffirmed "still
-within reach" (Q2 p6), silent Q3, "under par... we realize and appreciate," no
-restated target (Q4 p11). Confirmed.
-
-**IR-8. Germanium/preform raw-material dependency** — "germanium... supplies
-have to come from China or from Europe. Both have put serious restrictions,"
-inventory "sufficient to run a few months," "faced by many people in the
-industry" (Q4 p11, p15). Confirmed.
-
-**IR-9. Comms 6% EBIT quality is partly non-repeatable.** The FY26 comms EBIT
-of ~6% (vs 2.5% earlier) is attributed to "a few orders besides the long-term
-contract which were taken at current prices, that improved the numbers" (Q4
-p7); fixed long-term domestic contracts mean the fiber-price tailwind does not
-reach the P&L "until those contracts run out... next year when we renegotiate"
-(Q4 p3, p10). The uplift is thus part spot-order, part deferred.
-
-**IR-10. New labour-code gratuity one-off.** "after the announcement of the new
-labor code going live effective 21st of November, we have reassessed the
-obligations towards gratuity and have taken a provision of INR 6 crores, which
-has been booked in this current quarter" (Q3 p3). A disclosed one-off depressing
-Q3 EBITDA, with possible ongoing employee-cost implications. Absent from B05.
-
-**IR-11. EHV JV single-contract concentration.** "one major contract, which will
-come up for renewal in end of June... takes up slightly more than half of the
-capacity" (Q4 p15). Confirmed.
-
-**IR-12. Multi-year cash-conversion / CFO-PAT collapse never addressed as such**
-— no full cash-flow bridge on any of the four calls; only the acute Q4 inventory
-piece explained (Q4 p4). Confirmed (see caveat in Part 3 re IR-2).
-
-**IR-13. BharatNet: no direct win Q1–Q3, dropped from Q4 agenda.** "not
-successful in any of the tenders" (Q2 p5), "have not secured a direct position"
-(Q3 p4), absent from Q4. Confirmed.
-
-**IR-14. CFO succession unmentioned.** No incoming CFO named on any call (brief-
-dependent; confirmed absent across all four transcripts).
-
-**IR-15. Guidance-refusal inconsistency.** Refuses guidance ("I actually do not
-give out any guidance," Q4 p14; "we have never given out any guidance," Q2 p7)
-while supplying OFC revenue-potential ranges, margin bands, FMEG and JV targets,
-and conceding "internally, we have targets... we made our budgets 2 months ago"
-(Q4 p14). Confirmed.
+Peer report (B06) is not in scope for this re-verification and was not provided; the
+peer_questions handoff in B05 is noted but not audited here (that is Verifier D's lane).
 
 ---
 
-## PART 2 — COMPARISON TABLE (my items vs B05/B06)
+## PART 1 — INDEPENDENT RED-FLAG LIST (from raw transcripts, with anchors)
 
-| # | Item | B05 verdict | My read |
+Read cold, before re-reading B05's flags. Each anchored to (call, speaker/section, page).
+
+1. **Structural multi-year margin decline explicitly tied to "management issues ~6-6.5
+   years back."** Q1 FY26, Manoj Gori (Equirus), p.3-4: "over last 4-5 years or even 6
+   years, we have seen some underperformance... all the management related issues also
+   started around 6-6.5 years back." He quantifies gross margin "close to around 27%-28%
+   mark today, in FY '25 we ended close to around 19%," EBITDA "came down to below 10%."
+   Management reframes to power-cable/wire pricing mix and concedes only "some impact"
+   from the promoter dispute; the causal claim is never engaged. **Thesis-critical.**
+
+2. **Promoter/family shareholder dispute — narrowing candor.** Q1 FY26, Manoj Gori, p.4:
+   "the dispute within the promoter family... I wouldn't say too much. Yes, there would be
+   some impact, but not overall." Q2 FY26, Darshika Khemka, p.9 (asking case status /
+   settlement timeline): "it is between two shareholders. At the company level, I have
+   really nothing to say or talk about." Concession → flat refusal, then not asked again
+   Q3/Q4. **Repeated (2 quarters), governance overhang.**
+
+3. **Preform trial-start slippage, ~5-6 months from the Q1 promise, across 3 consecutive
+   quarters.** Q1 FY26, p.7: "the preform facility is ready... small hitch with the power
+   supply which should be sorted out in the next 1 month or so, after which the trials will
+   commence." Q2, p.3: "awaiting production trials which should start in the next couple of
+   weeks." Q3, p.3: "under production trials, we expect to commission it within this fiscal."
+   Q4, p.3: trials began Feb 2026, commissioned mid-March 2026, "another 2-3 months to
+   settle down." **Repeated slip.**
+
+4. **Fiber-draw 8mn km capacity — repeated slippage + internal date inconsistency inside
+   the Q4 call.** Q2, p.3: "completed by March '26." Q3, p.3: "8 million kilometers by end
+   of Q1 [FY27]." Q4 opening remarks, p.4: "fiber draw capacity expansion should get
+   completed by July"; but Q4 Q&A, p.7 and p.10: "commissioned towards the end of quarter
+   2... 8 million capacity will be available from beginning third quarter." July vs Sep/Oct
+   unreconciled in the same call.
+
+5. **BharatNet — zero direct conversion, ever-receding horizon.** Q1, p.7: pickup "maybe
+   from end of this year." Q2, p.5: 16 tenders floated, 12 ordered to others, 4 retender,
+   "we were not successful in any." Q3, p.4: "not secured a direct position... hopeful there
+   will be adequate business for us over the next two years." Named priority trigger
+   throughout.
+
+6. **FY26 cash-conversion collapse with no advance warning.** Q3, p.3: 9M CFO Rs220cr (vs
+   Rs75cr prior-year 9M), Q3 alone Rs78cr — strong. Q4, p.4 (unprompted): "cash flow from
+   operations was about INR 50 crores lower than last year"; inventory "up by about INR
+   300-odd crores" from Middle East pre-buying. The Q3→Q4 swing implies a large negative
+   Q4 CFO. No advance flag in the Q3 call.
+
+7. **Receivables never addressed.** Only receivables commentary in four calls is Q2, p.5
+   ("15 days," low). The FY26 receivables build is never discussed, including in Q4 where
+   cash flow and inventory were volunteered.
+
+8. **Germanium/glass single-point raw-material dependency, newly disclosed Q4 only.** Q4,
+   p.11: buffer "sufficient to run a few months"; p.15: China/Europe export restrictions,
+   defense-use concerns, "faced by many people in the industry." Directly gates the
+   comm-cable margin-recovery thesis.
+
+9. **FMEG Rs500cr-by-2028 target dropped, replaced by "under par."** Reaffirmed Q2, p.6
+   ("still within reach"). Not mentioned Q3 or Q4. Q4, p.11: "performance has been under par
+   there... we realize and appreciate," portfolio review underway.
+
+10. **Two large new entrants (UltraTech/Aditya Birla group, Adani) + timeline discrepancy.**
+    Q2, p.4 (Vidit Trivedi, citing UltraTech's own call): "by January next year they are
+    anticipated to get into the market." Q3, p.5 (management on the Birla/cement-group
+    entity): "likely to get into production... second or third quarter next calendar year"
+    (~CY2027) — a roughly one-year gap vs the analyst-cited figure.
+
+11. **Rs6cr one-off gratuity provision (new labour code).** Q3, p.3, volunteered in opening
+    remarks: "after the announcement of the new labor code going live effective 21st of
+    November, we have reassessed the obligations towards gratuity and have taken a provision
+    of INR 6 crores, booked in this current quarter."
+
+12. **CEO/CFO transition surfaced only via analyst congratulations.** Q4: Manoj Gori (p.4),
+    Pathanjali Srinivasan (p.7), Tushar Dhonde (p.8), Sushil C Choksey (p.12), Prateek
+    Shrivastava (p.14) all congratulate MV on a "new role/designation." Management offers no
+    continuity/transition commentary in the transcript.
+
+13. **[NEW — not in B05] Earnings-quality: large other income.** Q4, p.9 (Tushar Dhonde
+    exchange): "at company level, other income is around INR 32 crores [for the quarter]...
+    total that is around INR 237 crores for the year," Rs224cr shown as unallocable. Rs237cr
+    of other income is a material share of FY26 profit and is excluded from segment EBIT.
+    Not dodged — but not surfaced anywhere in B05 as a quality-of-earnings observation.
+
+14. **[Under-weighted in B05] Q2 working-capital deterioration, soft explanation.** Q2, p.4
+    (Balasubramanian): net working capital days rose to 33 (H1 FY26) from 22. Management
+    attributes it to payables having "come down drastically... a cyclical thing." This is the
+    first visible crack that culminates in the Q4 cash-conversion collapse; B05 notes the
+    "33-day NWC" in 1C but does not flag the early-warning value or scrutinize the
+    payables-timing explanation.
+
+---
+
+## PART 2 — PRIOR-AUDIT GAP CHECK (the explicit charge)
+
+All four items the prior audit found missing in v1 are now captured in the revised v2:
+
+| Prior-audit gap | Status in v2 B05 | Where |
+|---|---|---|
+| Promoter dispute recurring Q1+Q2, Q1 "some impact" concession + Q2 refusal | **CAUGHT** | 2E repeated-question tracker (verbatim quotes), 3C (Darshika Khemka row), 4D flag 3, 4C |
+| Multi-year margin-decline root-cause discussion in Q1 (management-issues framing) | **CAUGHT** | 4D flag 4, 2E row 1, 3C (Manoj Gori row), credibility_basis |
+| ~5-6 month preform trial-start slippage measured from the Q1 promise | **CAUGHT** | 2A row 1, 1C, 4D flag 2, timeline_slippages (states "5-6 months late," measured from 14 Aug 2025) |
+| One-off provisions (labour-code gratuity charge) | **CAUGHT** | 1B (Rs6cr, Q3 p.3), 3B, 2B (cited as volunteered/proactive) |
+
+Every prior-audit gap is closed, with correct anchors and correct direction. The re-run
+achieved its purpose.
+
+---
+
+## PART 3 — COMPARISON TABLE (independent flag → B05 treatment)
+
+| # | Independent flag | Verdict | Note |
 |---|---|---|---|
-| IR-1 | Promoter/family dispute, conceded impact, repeated Q1+Q2 | Logged Q2 only, Medium, "raised once, never revisited" | **PARTIALLY CAUGHT** — missed Q1 concession + 2-quarter repeated-evasion nature; under-weighted |
-| IR-2 | Multi-year decline directly asked & partly addressed (Q1) | B05 states no analyst asked; "never addressed as multi-year" | **MISSED** — contradicts B05 2D/3C for the full 4-call set |
-| IR-3 | Preform trial slip ~5 months from Q1 origin | Caught, but measured ~2 months from Q2 | **PARTIALLY CAUGHT** — understated magnitude/origin |
-| IR-4 | Rs6,500cr peak-capacity figure sourced to Q1 | Flagged "NOT VERIFIABLE / pre-window" | **PARTIALLY CAUGHT** — now resolvable; minor correction |
-| IR-5 | No copper hedge / inventory-price risk (Q1) | Covered Q4 inventory event only | **PARTIALLY CAUGHT** |
-| IR-6 | Fiber-draw slip (+ intra-Q4 date inconsistency) | Caught (Medium) | **CAUGHT** (B05 slightly understates fuzziness) |
-| IR-7 | FMEG target dropped | Caught (Medium) | **CAUGHT** |
-| IR-8 | Germanium dependency | Caught (Medium-High) | **CAUGHT** |
-| IR-9 | Comms 6% margin quality (spot orders / fixed contracts) | Noted 6% + FY27 renegotiation; not the spot-order quality | **PARTIALLY CAUGHT** |
-| IR-10 | Labour-code gratuity Rs6cr one-off | Not mentioned | **MISSED** (minor) |
-| IR-11 | EHV JV >50% single-contract concentration | Caught (3D, trigger-4 kill) | **CAUGHT** |
-| IR-12 | Multi-year cash-conversion never bridged | Caught (High, #1 flag) | **CAUGHT** |
-| IR-13 | BharatNet dropped, no wins | Caught (Low-Med) | **CAUGHT** |
-| IR-14 | CFO succession unmentioned | Caught (Medium) | **CAUGHT** |
-| IR-15 | Guidance-refusal inconsistency | Caught (2B/2E) | **CAUGHT** |
+| 1 | Structural margin decline + management-issues framing | CAUGHT | 4D-4, 2E-1, 3C |
+| 2 | Promoter dispute narrowing candor | CAUGHT | 4D-3, 2E-2 |
+| 3 | Preform 5-6 month slippage | CAUGHT | 4D-2, 2A, timeline_slippages |
+| 4 | Fiber-draw slippage + Q4 internal date inconsistency | CAUGHT | 4D-2, 2A, 2D, input_gaps |
+| 5 | BharatNet zero-conversion, receding horizon | CAUGHT | 4D-5, 2E-3 |
+| 6 | FY26 cash-conversion collapse, no advance warning | CAUGHT | 4D-1 (HIGH) |
+| 7 | Receivables never addressed | CAUGHT | 2D, 4D-1 tail, input_gaps |
+| 8 | Germanium single-point dependency | CAUGHT | 4D-6, 1C, 3B |
+| 9 | FMEG target dropped / under par | CAUGHT | 4D-7, 1C, dropped_triggers |
+| 10 | New entrants + timeline discrepancy | CAUGHT | 4D-8, 3A, peer_questions |
+| 11 | Rs6cr gratuity one-off | CAUGHT | 1B, 3B, 2B |
+| 12 | CEO/CFO transition unaddressed | CAUGHT | 4D-9, 2D, header note |
+| 13 | Large other income (~Rs237cr FY26) | **MISSED** | Not surfaced anywhere; MINOR (earnings-quality, primarily a financials/valuation-stage concern; surfaced in Q4 p.9 but not dodged) |
+| 14 | Q2 NWC deterioration (33 vs 22 days), soft explanation | **PARTIALLY CAUGHT** | Mentioned as datapoint in 1C, not flagged as early-warning of the Q4 collapse; MINOR |
 
-Tally: fully CAUGHT 9 · PARTIALLY CAUGHT 5 · MISSED 2 (using IR-1 as partial;
-for the strict acceptance denominator below I fold IR-4/IR-5 as the two weakest
-partials). B06 (peers) is not the target of this audit but correctly leaves the
-OFC/germanium/Aditya-Birla claims UNVERIFIABLE on peer-set mismatch — consistent
-with my read; no peer contradicts a Finolex red flag.
+Independent flags found: 14 | Caught: 12 | Partially caught: 1 | Missed: 1.
 
----
+### B05 flags I did NOT independently raise — support check
+Every one of B05's nine 4D red flags is supported by transcript evidence at the anchors
+given; none is NOT SUPPORTED or invented. No overstated flag rises to a finding:
 
-## PART 3 — PIPELINE FLAGS I DID NOT INDEPENDENTLY RAISE
-
-All seven B05 red flags are **SUPPORTED** by transcript evidence. None is
-invented or NOT SUPPORTED. One nuance:
-
-- B05 flag "germanium dependency (Medium-High)": SUPPORTED, though management
-  twice softens it ("we do not require massive amounts," "faced by many people
-  in the industry," Q4 p11/p15). Medium-High sits at the top of the defensible
-  range but is not overstated given it directly gates the preform thesis.
-- B05's broader **2D narrative** ("multi-year decline never addressed... single
-  question most aligned with the Gate-0 red flag was never put to management")
-  is **partially overstated** once Q1 FY26 is included: the multi-year
-  underperformance WAS put to management (IR-2). The cash-conversion RATIO
-  specifically was never bridged — that part stands.
-
-`pipeline_flags_not_supported: []`
+- Flag 1 (HIGH): the "~Rs171cr negative Q4 CFO" arithmetic leans on the Gate 0 audited
+  Rs49.08cr figure (a cross-artifact number Verifier A owns), not on the transcript alone;
+  B05 states this dependency openly. The transcript independently supports the direction
+  ("Rs50cr lower," Rs300cr inventory build, strong 9M then reversal). Not overstated.
+- Flag 8 (new entrants): the Jan-2026 vs Q2/Q3-CY2027 gap is real (Q2 p.4 vs Q3 p.5) and
+  correctly routed to peer verification. Supported.
+- 2E grouping of the margin question across Q1/Q2/Q3 is slightly loose — the Q2 instance
+  (Balasubramanian, comm-cable EBITDA -51%) is segment-specific, not the whole-company
+  structural-decline question — but B05 flags that distinction itself. MINOR imprecision,
+  not a finding.
 
 ---
 
 ## PART 4 — PROMISE-DELIVERY SPOT CHECKS (5 checked)
 
-1. **Preform trials "next couple of weeks" (Q2 p3) → began ~Feb 2026 (Q4 p3).**
-   Direction confirmed; ~2-month slip on the Q2 promise (≈5 months on the Q1
-   origin). **CONFIRMED.**
-2. **Fiber-draw "completed by March '26" (Q2 p3) → "by July" (Q4 p4).**
-   Slip confirmed; intra-Q4 date inconsistency noted. **CONFIRMED.**
-3. **FMEG Rs500cr by 2028 "still within reach" (Q2 p6) → "under par," no
-   restated target (Q4 p11).** **CONFIRMED.**
-4. **OFC revenue potential Rs600-700cr (Q3 p7) → "beyond Rs750cr" (Q4 p8/p12).**
-   **CONFIRMED.**
-5. **Solar 80-85% utilization (Q3 p2) → "nearing capacity... increasing the
-   capacity," FY27 doubling funded (Q4 p3/p12).** **CONFIRMED.**
+| Promise (call) | Later outcome claim | Direction verified? |
+|---|---|---|
+| Preform trials ~1 month (Q1 p.7) | Slipped, delivered ~March 2026 (Q4 p.3-4) | ✓ confirmed |
+| Segment margin ~12% in a couple of quarters (Q1 p.10-11) | Missed; 11.5%→dipped→under pressure (Q3 p.8, Q4 p.2) | ✓ confirmed |
+| Preform + fiber draw both complete by March '26 (Q2 p.3) | Partial; fiber draw missed, re-guided (Q4 p.4,7) | ✓ confirmed |
+| Fiber draw 8mn km by end Q1 FY27 (Q3 p.3) | Missed; re-guided to end Q2 FY27 (Q4 p.7,10) | ✓ confirmed |
+| Sumitomo EHV JV turnaround (FY25 ongoing) | Delivered; Rs21cr PBT on Rs450cr (Q4 p.4-5) | ✓ confirmed |
 
-Result: checked 5, confirmed 5, wrong 0. B05's promise-delivery table is
-directionally accurate.
+Checked 5, confirmed 5, wrong 0. The promise-delivery table's direction is reliable.
 
 ---
 
-## PART 5 — CONSOLIDATED FINDINGS
+## PART 5 — CREDIBILITY GRADE
 
-| Sev | Location | Finding |
-|---|---|---|
-| CRITICAL | Q1 FY26 p4 + Q2 FY26 p8; B05 §2D/§4D | Missed repeated governance evasion: the promoter/family control dispute was raised in TWO consecutive quarters (Q1 conceded "some impact" on results; Q2 "nothing to say"). B05, lacking Q1, logged only the Q2 instance as a single Medium flag "raised once, never revisited," missing both the management concession of a results impact and the 2-quarter repeated-under-answered-question pattern (rubric: missed repeated evasion = CRITICAL). |
-| MAJOR | Q1 FY26 p3-4; B05 §2D/§3C | B05's claim that no analyst asked about — and management never addressed — the multi-year decline is contradicted by the dropped Q1 call, where the 4-6yr underperformance, gross margin 27-28%→19%, sub-10% EBITDA, and a "management issues 6.5 years back" root cause were put to management directly and partly engaged. |
-| MAJOR | Q1 FY26 p7 → Q2 p3 → Q4 p3 | Preform trial-start slip understated: original Q1 promise was trials "~1 month" out (~Sept 2025) pending a "power supply hitch"; actual start ~Feb 2026 ≈ 5-month slip across three calls, never acknowledged. B05 measured only ~2 months from Q2. |
-| MINOR | Q3 FY26 p3 | Missed disclosed one-off: Rs6cr gratuity provision on the new labour code (eff. 21-Nov-2025) booked in Q3, depressing Q3 EBITDA, with possible ongoing employee-cost impact. |
-| MINOR | Q4 FY26 p3/p7/p10 | Under-weighted margin quality: the FY26 comms ~6% EBIT is partly non-repeatable ("a few orders... taken at current prices"); fixed long-term contracts defer any fiber-price benefit to FY27 renegotiation. |
-| MINOR | Q1 FY26 p6; B05 §1B/§2D | Completeness: the Rs6,500cr electrical peak-capacity figure B05 tagged "NOT VERIFIABLE" is sourced to Q1 (gross block ~Rs700-750cr, ~8x); Q2 only declined to update it. |
-| MINOR | Q1 FY26 p8; B05 §2D | No copper hedging policy and a self-disclosed inventory-price-fall risk in Q1 that materialized as the Q4 Rs300cr inventory build; B05 covered the Q4 event but not the earlier self-disclosure. |
+**Concur with C.** Genuine mixed record: clean delivery on solar, e-beam, exports and the
+Sumitomo JV turnaround, against a three-quarter preform/fiber-draw slippage, narrowing
+candor on the promoter dispute, and an FY26 cash-conversion collapse disclosed only after
+the fact. Not higher (the repeated slips and governance overhang are real and documented);
+not lower (management volunteers hard items — gratuity provision, inventory build — refuses
+to over-promise, and is candid on execution wins). C (35/45/20) is the right feed to Role 1.
 
-**Credibility grade:** B05 grade **C (Mixed)** — CONCUR. If anything, the Q1-only
-promoter-dispute governance overhang plus the management-rooted multi-year
-underperformance argue for the LOW end of C, not a downgrade below it.
+## Updated redflag_coverage
 
-**Bottom line:** B05's substantive work on the three calls it read is sound —
-promise-delivery, timeline slips, FMEG, germanium, cash-conversion and guidance
-inconsistency all hold up on independent read, and no flag is invented. The gap
-is structural: the 3-transcript cap dropped the Q1 FY26 call, which is precisely
-where the promoter-dispute governance overhang (conceded impact, repeated the
-next quarter) and the earliest management-acknowledged multi-year-decline Q&A
-live. That is a material coverage hole, not an analytical error by B05.
+**~90% — comprehensive.** All four prior-audit gaps are closed with correct anchors and
+direction; 12 of 14 independent flags fully caught, the remaining two being MINOR residuals
+(other-income earnings quality; Q2 NWC early-warning framing) that do not change the verdict
+or the C grade. No CRITICAL or MAJOR gaps; no unsupported/invented B05 flags. Coverage is
+materially better than the v1 three-transcript version, whose omission of Q1 FY26 dropped
+the two thesis-critical items (promoter concession, management-issues margin framing) that
+v2 now carries.
+
+---
 
 ```yaml
 stage: B12b
@@ -208,27 +198,26 @@ company: "FINCABLES"
 run_date: "2026-08-12"
 model: claude-opus-4-8
 status: complete
-independent_flags_found: 15
-caught: 9
-partially_caught: 4
+independent_flags_found: 14
+caught: 12
+partially_caught: 1
 missed:
-  - {severity: "CRITICAL", item: "Promoter/family control dispute raised in TWO consecutive quarters (Q1 FY26 management concedes 'some impact' on results; Q2 FY26 'nothing to say') — B05 logged only the Q2 instance as a single Medium flag, missing the concession and the repeated-evasion pattern", anchor: "Q1 FY26 p4 + Q2 FY26 p8"}
-  - {severity: "MAJOR", item: "Multi-year underperformance (4-6yr, GM 27-28%->19%, sub-10% EBITDA, 'management issues 6.5yr back') was directly asked and partly addressed in the dropped Q1 FY26 call, contradicting B05's 'no analyst asked / never addressed' framing", anchor: "Q1 FY26 p3-4"}
-  - {severity: "MINOR", item: "Rs6cr new-labour-code gratuity provision booked in Q3 FY26 (one-off depressing EBITDA, possible ongoing cost impact) — absent from B05", anchor: "Q3 FY26 p3"}
+  - {severity: "MINOR", item: "Earnings-quality: large other income (~Rs237cr FY26; Rs32cr Q4) excluded from segment EBIT, a material share of profit, not surfaced anywhere in B05", anchor: "Q4 FY26 call, Tushar Dhonde exchange, p.9"}
 pipeline_flags_not_supported: []
 promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
-credibility_grade_concur: "concur — C (Mixed) is fair; the Q1-only promoter-dispute overhang and management-rooted multi-year decline argue for the low end of C"
-redflag_coverage: "60% fully caught (9/15); 87% at least partially surfaced (13/15); 2 genuinely missed, both traceable to the dropped Q1 FY26 call"
+credibility_grade_concur: "concur — C is fair; genuine mixed record, all thesis-critical red flags (incl. all four prior-audit gaps) now captured with correct anchors"
 findings:
-  - {severity: "CRITICAL", location: "Q1 FY26 p4 + Q2 FY26 p8; B05 2D/4D", description: "Missed repeated governance evasion — promoter/family control dispute raised two consecutive quarters, Q1 concedes results impact, Q2 declines comment; B05 caught only one instance as Medium 'raised once'"}
-  - {severity: "MAJOR", location: "Q1 FY26 p3-4; B05 2D/3C", description: "B05 'no analyst asked about / never addressed the multi-year decline' is contradicted by the dropped Q1 call where it was raised directly and tied to a 6.5-year management-issue root cause"}
-  - {severity: "MAJOR", location: "Q1 FY26 p7 -> Q2 p3 -> Q4 p3", description: "Preform trial-start slip understated: ~5-month slip from the original Q1 '~1 month' promise (power-supply hitch) to the ~Feb-2026 actual, across three calls, unacknowledged; B05 measured only ~2 months from Q2"}
-  - {severity: "MINOR", location: "Q3 FY26 p3", description: "Missed disclosed one-off Rs6cr labour-code gratuity provision booked in Q3, with possible ongoing employee-cost impact"}
-  - {severity: "MINOR", location: "Q4 FY26 p3/p7/p10", description: "Under-weighted comms 6% EBIT quality — partly non-repeatable spot orders at current prices; fixed long-term contracts defer fiber-price benefit to FY27"}
-  - {severity: "MINOR", location: "Q1 FY26 p6; B05 1B/2D", description: "Rs6,500cr electrical peak-capacity figure B05 tagged NOT VERIFIABLE is sourced to Q1 FY26 (gross block ~Rs700-750cr, ~8x); Q2 only declined to update it"}
-  - {severity: "MINOR", location: "Q1 FY26 p8; B05 2D", description: "No copper-hedging policy and self-disclosed inventory-price-fall risk in Q1 that materialized as the Q4 Rs300cr inventory build; B05 covered only the Q4 event"}
-critical_count: 1
-major_count: 2
-minor_count: 4
-acceptance_rate: 60
+  - {severity: "MINOR", location: "B05 4D / red_flags (whole)", issue: "Large other income (~Rs237cr FY26, Q4 p.9) never surfaced as a quality-of-earnings observation; primarily a financials/valuation-stage concern but did appear in the concall", disposition: "MISSED (minor)"}
+  - {severity: "MINOR", location: "B05 1C / 4D", issue: "Q2 NWC deterioration (33 vs 22 days, p.4) noted only as a datapoint, not flagged as the early-warning precursor to the Q4 cash-conversion collapse nor scrutinized for the payables-timing explanation", disposition: "PARTIALLY CAUGHT (under-weighted)"}
+  - {severity: "MINOR", location: "B05 2E row 1 / 3C", issue: "Margin-decline repeated-question grouping mixes the whole-company structural-decline framing (Q1) with a segment-specific comm-cable EBITDA -51% question (Q2); B05 discloses the distinction but the grouping is loose", disposition: "imprecision, not a defect"}
+prior_audit_gaps_closed:
+  - {gap: "Promoter dispute recurring Q1+Q2 (Q1 'some impact' concession, Q2 refusal)", status: "CAUGHT", anchor: "Q1 p.4; Q2 p.9; B05 2E/3C/4D-3"}
+  - {gap: "Multi-year margin-decline root-cause (management-issues framing) in Q1", status: "CAUGHT", anchor: "Q1 p.3-4; B05 4D-4/2E-1/3C"}
+  - {gap: "~5-6 month preform trial-start slippage from Q1 promise", status: "CAUGHT", anchor: "Q1 p.7 to Q4 p.3-4; B05 2A/timeline_slippages/4D-2"}
+  - {gap: "One-off labour-code gratuity provision (Rs6cr)", status: "CAUGHT", anchor: "Q3 p.3; B05 1B/3B/2B"}
+redflag_coverage: "~90% — comprehensive; all four prior-audit gaps closed, 12/14 independent flags fully caught, 2 minor residuals, no unsupported B05 flags"
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 86    # caught 12 / independent flags found 14
 ```

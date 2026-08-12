@@ -1,0 +1,753 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_ecosmobility_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 28
+formfeed_count: 28
+line_count: 753
+unit_convention: Millions (labelled "Rs Mn" on all company financial slides, pages 7-11, 25)
+conversion_factor_to_cr: Millions -> x0.1 (Rs Mn / 10 = Rs Cr). NOTE: page 13 industry TAM figures are
+  in a SEPARATE unit, "INR Bn" (Billions), not Rs Mn -- do not apply the x0.1 factor to page 13 numbers;
+  INR Bn -> Rs Cr factor is x100 (1 INR Bn = 100 Rs Cr). Flagged inline at page 13 below.
+ocr_pages: [5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 25, 26]
+  (all 28 pages were rasterised at 300dpi with pdftoppm and OCR'd with tesseract; the pages listed above
+  are those where the native pdftotext -layout text layer was either under the 100-character gate
+  (pure image slides: 5, 12, 14, 18, 26) or contained numeric corruption from overlapping chart-label
+  text elements, requiring cross-check of the tesseract OCR output against a direct visual read of the
+  rasterised page image to recover the correct figures. Pages 1,2,3,4,6,17,24,27,28 are reproduced
+  from the native pdftotext -layout text layer, which was clean and verified against the page image.)
+page_coverage: 100% (28 of 28 pages accounted for, verified below)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026)
+extraction_date: 2026-08-12
+=== END HEADER ===
+
+NOTE ON SOURCE PDF STRUCTURE: page 1 of this PDF is a BSE/NSE Regulation-30 covering letter dated
+August 11, 2026 (not a deck slide); the investor-presentation deck proper begins at PDF page 2 (deck
+title slide) and its own internal Table of Contents (PDF page 4) lists 6 sections whose slide numbers
+do not match PDF page numbers 1:1 because of this leading letter page. All page markers below are PDF
+page numbers (matching pdfinfo/pdftoppm/tesseract page numbering), not the deck's own slide numbers.
+
+PAGE COVERAGE PROOF: pdftotext -layout produced 28 form-feed-delimited pages, matching pdfinfo Pages: 28.
+All 28 pages were additionally rasterised (pdftoppm -jpeg -r 300) and OCR'd (tesseract). Pages 1-28 are
+all present and transcribed below in order. No gaps.
+
+################################################################################
+[page 1]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: SEBI Regulation 30 intimation letter (BSE/NSE cover letter), not a deck slide
+################################################################################
+
+[ECO MOBILITY logo]
+
+August 11, 2026
+
+To                                          |  To
+The General Manager                        |  The General Manager
+Department of Corporate Services,          |  Department of Corporate Services,
+BSE Limited                                |  National Stock Exchange of India
+Phiroze Jee Jee Bhoy Tower                 |  Limited Exchange Plaza,
+Dalal Street, Fort                         |  Bandra Kurla Complex,
+Mumbai - 400001                            |  Bandra (East), Mumbai - 400051
+Scrip Code: 544239                         |  Symbol: ECOSMOBLTY
+
+Sub: Investor Presentation on Unaudited Financial Results of Ecos (India) Mobility & Hospitality
+Limited for the First Quarter ended on June 30, 2026 for FY 2026-27
+
+Dear Sir/Ma'am,
+
+Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations,
+2015 in continuation to Outcome of Board Meeting held on August 11, 2026 regarding Unaudited
+Standalone & Consolidated financial results of Ecos (India) Mobility & Hospitality Limited for the
+First Quarter of Financial Year 2026-27 ended on June 30, 2026, we submit herewith the Investor
+Presentation on the same.
+
+The above information is also available on the Company's website at www.ecosmobility.com
+
+This is for your information and record.
+
+Thanking You,
+For Ecos (India) Mobility & Hospitality Limited
+
+[digitally signed]
+Shweta Bhardwaj
+(Company Secretary & Compliance Officer)
+Digitally signed by SHWETA BHARDWAJ, Date: 2026.08.11 23:59:57 +05'30'
+
+Providing Ground Transportation in 100+ Cities in India & 30+ Countries Worldwide
+[footer banner]
+ECOS (INDIA) MOBILITY & HOSPITALITY LIMITED
+24X7 RESERVATION : (+91) 11 4079 4079 | CARS@ECORENTACAR.COM | WWW.ECOSMOBILITY.COM
+REGD. & CORP OFFICE: 45, 1ST FLOOR, CORNER MARKET, MALVIYA NAGAR, NEW DELHI - 110017
+CIN: L74999DL1996PLC076375
+
+################################################################################
+[page 2]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Deck title slide
+################################################################################
+
+[ECO MOBILITY logo]
+
+ECOS (India)
+Mobility and Hospitality Limited
+
+Q1 FY27 Investor Presentation
+
+www.ecosmobility.com
+
+################################################################################
+[page 3]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Disclaimer slide (verbatim)
+################################################################################
+
+Disclaimer
+
+This presentation has been prepared by ECOS (India) Mobility and Hospitality Limited, solely to
+provide information about the Company to its stakeholders. No representation or warranty, express
+or implied is made as to, and no reliance should be placed on, the fairness, accuracy, completeness
+or correctness of such information or opinions contained herein. None of the Company nor any of its
+respective affiliates, advisers or representatives, shall have any liability whatsoever (in negligence
+or otherwise) for any loss howsoever arising from any use of this presentation or its contents or
+otherwise arising in connection with this presentation.
+
+The information contained in this presentation is only current as of its date. The Company may alter,
+modify or otherwise change in any manner the content of this presentation, without obligation to
+notify any person of such revision or changes. Certain statements made in this presentation may not
+be based on historical information or facts and may be "forward-looking statements", including those
+relating to the Company's general business plans and strategy, its future financial condition and
+growth prospects, and future developments in its industry and its competitive and regulatory
+environment. Actual results may differ materially from these forward-looking statements due to
+number of factors, including future changes or developments in the Company's business, its
+competitive environment, information technology and political, economic, legal and social conditions
+in India.
+
+Please note that this presentation is based on the publicly available information including but not
+limited to Company's website and Annual Reports.
+
+This communication is for general information purposes only, without regard to specific objectives,
+financial situations and needs of any particular person. Please note that investments in securities
+are subject to risks including loss of principal amount.
+
+This presentation does not constitute an offer or invitation to purchase or subscribe for any shares
+in the company and neither any part of it shall form the basis of or be relied upon in connection with
+any contract or commitment whatsoever.
+
+################################################################################
+[page 4]
+SOURCE: pdftotext -layout, cross-checked against rasterised image (native text fragmented by layout
+columns; item order below verified visually)
+CONTENT TYPE: Table of Contents
+################################################################################
+
+TABLE OF CONTENTS
+
+01  Q1 FY27 Result Highlights
+02  Historical Financials
+03  Industry Overview
+04  Company Overview
+05  Business Overview
+06  Outlook
+
+################################################################################
+[page 5]
+SOURCE: [OCR page 5] tesseract OCR FAILED (26 chars extracted; white text on red-tinted photo
+background, low contrast) -- content below is a direct visual read of the rasterised page image.
+OCR QUALITY FLAG: POOR -- downstream agents should treat this page's content as vision-verified,
+not machine-OCR'd.
+CONTENT TYPE: Section divider slide
+################################################################################
+
+[Section divider, red-tinted photo of a chauffeur in a car]
+Q1 FY27
+Result Highlights
+
+################################################################################
+[page 6]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Management quote slide
+################################################################################
+
+Management Comment on the results
+
+Mr. Rajesh Loomba
+Chairman and Managing Director
+[photo of Mr. Rajesh Loomba]
+
+"Q1 FY27 saw healthy operating momentum, with revenue from operations growing 16.7% year-on-year and
+trip volumes increasing 27%. We added 61 new clients during the quarter, taking our active client base
+to approximately 1,400, while expanding our pan-India presence to 151 cities. While margins during the
+quarter reflected changes in business mix and the operating cost environment, we remain focused on
+disciplined profitable growth and improving operating efficiency as we scale. We continue to
+strengthen our technology platform and deepen our capabilities to support the next phase of growth.
+
+During the quarter, we continued to strengthen our platform, with the launch of our new technology
+for CCR and further progress in our SIXT partnership. These initiatives expand the ways in which we
+can serve customers while remaining focused on our core enterprise business.
+
+As we look ahead, our priorities remain adding high-quality enterprise relationships, deepening
+engagement with existing customers and selectively expanding into new markets. We believe the scale
+and capabilities we have built position ECO Mobility well to capture the long-term opportunity in
+organized corporate mobility."
+
+################################################################################
+[page 7]
+SOURCE: [OCR page 7] pdftotext -layout text is numerically CORRUPTED where chart data-labels and
+growth-arrow percentage labels overlap (e.g. raw layout text shows "53%" and "2832" which are not
+real values on the slide -- artifacts of overlapping text-run extraction). Figures below are
+vision-verified against the rasterised page image (bar labels are printed, unambiguous).
+OCR QUALITY FLAG: MODERATE -- native text layer unreliable for this page's numbers; use the
+vision-verified figures below.
+CONTENT TYPE: Chart slide -- FY26 full-year performance vs FY25 (comparatives)
+UNIT: Rs Mn (stated on each chart, top-left of each panel)
+################################################################################
+
+FY26 Performance Highlights
+
+[CHART, page 7, title: Revenue from Operations, Rs Mn]
+  FY25: 6,540      FY26: 8,082      growth arrow label: 23.58%
+
+[CHART, page 7, title: Total Revenue, Rs Mn]
+  FY25: 6,639      FY26: 8,194      growth arrow label: 23.43%
+
+[CHART, page 7, title: EBITDA (Excl. Other Income), Rs Mn]
+  FY25: 924        FY26: 939        growth arrow label: 1.67%
+
+[CHART, page 7, title: PAT, Rs Mn]
+  FY25: 601        FY26: 576        growth arrow label: (4.19%)
+
+################################################################################
+[page 8]
+SOURCE: [OCR page 8] pdftotext -layout for this page follows the same layout/panel structure as page 7
+and is likewise unreliable for the printed bar values (chart-label collisions). Figures below are
+vision-verified against the rasterised page image.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Chart slide -- Q1 FY27 vs Q1 FY26 (quarterly comparatives)
+UNIT: Rs Mn (stated on each chart, top-left of each panel)
+################################################################################
+
+Q1 FY27 Performance Highlights
+
+[CHART, page 8, title: Revenue from Operations, Rs Mn]
+  Q1 FY26: 1,811   Q1 FY27: 2,114   growth arrow label: 16.70%
+
+[CHART, page 8, title: Total Revenue, Rs Mn]
+  Q1 FY26: 1,840   Q1 FY27: 2,151   growth arrow label: 16.94%
+
+[CHART, page 8, title: EBITDA (Excl. Other Income), Rs Mn]
+  Q1 FY26: 219     Q1 FY27: 218     growth arrow label: (0.03)%
+
+[CHART, page 8, title: PAT, Rs Mn]
+  Q1 FY26: 133     Q1 FY27: 146     growth arrow label: 10.28%
+
+################################################################################
+[page 9]
+SOURCE: [OCR page 9] pdftotext -layout captured most of this table but with several cell-level
+digit/decimal corruptions from column-alignment overlap (raw layout shows "21855" for what is really
+"218.55", "01-" for "133", "277" for "2.77", "175" for "1.75", "242"/"221"/"263" for "2.42"/"2.21"/
+"2.63", "02" for "0.2"). Table below is vision-verified cell-by-cell against the rasterised page image.
+OCR QUALITY FLAG: MODERATE (numeric-only corruption) -- use the vision-verified table below.
+CONTENT TYPE: Financial statement table
+UNIT: Rs Mn (column header "Particulars (Rs. Mn)")
+################################################################################
+
+Q1 FY27 Consolidated Income Statement
+
+Particulars (Rs. Mn)                        | Q1FY27   | Q1FY26   | YoY%      | Q4FY26   | QoQ(%)
+Revenue from operations                     | 2,113.72 | 1,811.19 | 16.70%    | 2,067.6  | 2.23%
+Other income                                | 37.48    | 28.75    |           | 36.18    |
+Total income                                | 2,151.20 | 1,839.94 | 16.92%    | 2,103.78 | 2.25%
+Total Cost of Service                       | 1,587.29 | 1,315.58 |           | 1,507.33 |
+Purchase of Stock                           | -        | 0.64     |           | 8.96     |
+Change in stock-in trade                    | -        | (0.02)   |           | 0.2      |
+Employee benefit expense                    | 237.63   | 194.90   |           | 219.71   |
+Other expense                               | 70.32    | 81.54    |           | 89.87    |
+EBITDA (Excl. of Other Income)              | 218.47   | 218.55   | (0.03)%   | 241.53   | (9.54)%
+EBITDA Margins (%)                          | 10.34%   | 12.07%   | (173) Bps | 11.68%   | (134) Bps
+Depreciation & amortisation expense         | 61.55    | 58.30    |           | 79.43    |
+Finance Cost                                | 2.77     | 2.32     |           | 1.75     |
+Profit Before Tax for the period/year       | 191.64   | 186.68   | 2.65%     | 196.53   | (2.49)%
+Tax Expense                                 | 46.14    | 53.81    |           | 39.16    |
+Profit after tax for the period/year        | 145.50   | 132.87   | 9.50%     | 157.37   | (7.54)%
+PAT Margins (%)                             | 6.76%    | 7.22%    | (46) Bps  | 7.22%    | (72) Bps
+EPS (Rs)                                    | 2.42     | 2.21     |           | 2.63     |
+
+################################################################################
+[page 10]
+SOURCE: [OCR page 10] pdftotext -layout captured most of this table but with digit/decimal
+corruptions on several rows from column overlap (raw layout shows "376" for "3.76", "2244" for
+"22.44", "6846" for "68.46", "70116" for "701.16", "13423" for "134.23", "12277" for "122.77",
+"20574" for "205.74", "413493" for "4,134.93"). Table below is vision-verified cell-by-cell against
+the rasterised page image.
+OCR QUALITY FLAG: MODERATE (numeric-only corruption) -- use the vision-verified table below.
+CONTENT TYPE: Financial statement table
+UNIT: Rs Mn (column header "Particulars (Rs Mn)")
+################################################################################
+
+Consolidated Balance Sheet for FY26
+
+ASSETS side:
+Particulars (Rs Mn)                    | As on 31-Mar-26 | As on 31-Mar-25
+Non-current assets
+  Property, plant and equipment        | 533.65          | 500.81
+  Investment property                  | 3.76            | 3.73
+  Intangible assets                    | (blank)         | (blank)
+  Intangible assets under development  | 22.44           | 8.00
+  Right of use assets                  | 68.46           | 75.57
+  Financial assets:
+    Investments                        | 4.26            | 4.42
+    Other financial assets             | 3.98            | 72.33
+  Other non-current assets             | 9.16            | 8.45
+  Deferred tax assets (net)            | 64.98           | 27.85
+Total non-current assets               | 710.69          | 701.16
+
+Current assets
+  Inventories                          | 0.50            | 0.96
+  Financial assets:
+    Investments                        | 1,060.79        | 849.95
+    Trade receivables                  | 1,070.21        | 827.49
+    Cash and cash equivalents          | 241.88          | 238.00
+    Other bank balances                | 69.86           | 24.90
+    Loans                              | 4.05            | 3.43
+    Other financial assets             | 752.09          | 548.72
+  Current tax assets (net)             | 30.74           | 20.41
+  Other current assets                 | 192.29          | 198.17
+  Assets held-for-sale                 | 1.83            | 0.83
+Total current assets                   | 3,424.24        | 2,712.86
+
+Total assets                           | 4,134.93        | 3,414.02
+
+EQUITY AND LIABILITIES side:
+Particulars (Rs Mn)                    | As on 31-Mar-26 | As on 31-Mar-25
+Equity
+  Equity share capital                 | 120.00          | 120.00
+  Other equity                         | 2,529.37        | 2,097.52
+Total equity                           | 2,649.36        | 2,217.52
+
+Non-controlling interest               | 1.35            | -
+
+Liabilities
+Non-current liabilities
+  Financial liabilities:
+    Borrowings                         | -               | 1.08
+    Lease liability                    | 61.04           | 66.15
+  Provisions                           | 73.19           | 55.54
+Total non-current liabilities          | 134.23          | 122.77
+
+Current liabilities
+  Financial liabilities:
+    Borrowings                         | 1.07            | 58.99
+    Lease liability                    | 15.68           | 17.72
+    Trade payables                     | 880.07          | 715.59
+    Other financial liabilities        | 346.19          | 205.74
+  Provisions                           | 21.17           | 19.03
+  Other current liabilities            | 85.80           | 56.66
+Total current liabilities              | 1,349.97        | 1,073.73
+
+Total liabilities                      | 1,484.20        | 1,196.50
+
+Total equity and liabilities           | 4,134.93        | 3,414.20
+
+[NOTE: total assets (4,134.93) vs total equity and liabilities (4,134.93 as printed for FY26 column
+and 3,414.20 for FY25 column) -- FY25 column shows 3,414.02 on the assets side and 3,414.20 on the
+equity+liabilities side as printed on the slide; both figures transcribed exactly as printed, not
+reconciled or corrected here per NEVER-estimate rule.]
+
+################################################################################
+[page 11]
+SOURCE: [OCR page 11] pdftotext -layout captured axis labels/some bar values but is fragmented and
+missing several data points (chart rendered largely as vector graphics with text overlays). Figures
+below are vision-verified against the rasterised page image.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Chart slide -- 6-year historical financial trend (FY21-FY26)
+UNIT: Rs Mn (stated on each chart, top-left of each panel)
+################################################################################
+
+Historical Financials - Year-on-year Healthy Performance
+
+[CHART, page 11, title: Revenue from Operations, Rs Mn]
+  FY21: 1,038   FY22: 1,473   FY23: 4,227   FY24: 5,544   FY25: 6,540   FY26: 8,082
+
+[CHART, page 11, title: EBITDA & EBITDA Margin (Excl. Other Income), Rs Mn]
+  EBITDA (Rs Mn):    FY21: 157    FY22: 181    FY23: 697    FY24: 900    FY25: 924    FY26: 939
+  EBITDA Margin (%): FY21: 15.2%  FY22: 12.3%  FY23: 16.5%  FY24: 16.2%  FY25: 14.1%  FY26: 11.6%
+
+[CHART, page 11, title: PAT & PAT Margin, Rs Mn]
+  PAT (Rs Mn):    FY21: 30    FY22: 99    FY23: 436    FY24: 625*   FY25: 601    FY26: 576
+  PAT Margin (%): FY21: 2.7%  FY22: 6.5%  FY23: 10.3%  FY24: 11.0%  FY25: 9.1%   FY26: 7.0%
+  Footnote on slide: "* ECOs got listed in FY25"
+
+[CHART, page 11, title: Return Metrics]
+  ROCE: FY21: 9.1%   FY22: 19.1%  FY23: 40.9%   FY24: 42.9%   FY25: 35.78%  FY26: 29.4%
+  ROE:  FY21: 5.0%   FY22: 14.8%  FY23: 46.7%   FY24: 42.8%   FY25: 30.1%   FY26: 23.7%
+
+################################################################################
+[page 12]
+SOURCE: [OCR page 12] tesseract OCR FAILED (16 chars extracted; white text on dark-tinted photo
+background). Content below is a direct visual read of the rasterised page image.
+OCR QUALITY FLAG: POOR -- vision-verified content, not machine-OCR'd.
+CONTENT TYPE: Section divider slide
+################################################################################
+
+[Section divider, dark-tinted photo]
+Industry
+Overview
+
+################################################################################
+[page 13]
+SOURCE: [OCR page 13] pdftotext -layout captured most labels but chart bubble/percentage values are
+fragmented and partly missing (e.g. raw layout shows "CAGR_" and "11 8%!" for garbled fragments of
+"CAGR: 11.8%"). Figures below are vision-verified against the rasterised page image.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Industry market-size infographic (bubble charts) + growth-driver bullets
+UNIT: *** INR Bn (Billions) -- NOT Rs Mn. Do not apply the Rs-Mn-to-Cr conversion factor to these
+numbers. INR Bn -> Rs Cr conversion factor is x100. ***
+################################################################################
+
+Well-Positioned to Tap the Industry Growth (unorganized to organized)
+
+Market Size (INR Bn):
+[CHART, page 13, title: Total CCR Market, INR Bn]     2023e: 392.4   2030f: 731.8   CAGR: 9.3%
+[CHART, page 13, title: Organized CCR Market, INR Bn] 2023e: 98.10  2030f: 226.87  CAGR: 12.7%
+[CHART, page 13, title: Total ETS Market, INR Bn]     2023e: 503.5  2030f: 1,097.6 CAGR: 11.8%
+[CHART, page 13, title: Organized ETS Market, INR Bn] 2023e: 78.04  2030f: 197.57  CAGR: 14.2%
+
+Bullets under bubble charts:
+  - Corporate need for reliability & accountability
+  - Operational efficiency & safety
+  - Scale & resources required
+
+Key Industry Growth Drivers (circular infographic, 6 items):
+  - Tier II & III city expansion
+  - Improved road networks drive ground travel
+  - Huge expansion of GCCs in India
+  - Increased Airport Connectivity fuels demand for chauffeur driven mobility
+  - Business travel expected to reach pre covid level by CY2025
+  - Formalization fuels growth
+
+Global Capability Centers Bolstered by Well Established Indian IT & ITES Sector:
+[CHART, page 13, title: GCCs (#)]  2023: 1,580   2025: 1,800   2030: 2,400
+  Bullet: "Increasing employee expectations for convenient commutes"
+
+Source: F&S Report
+
+################################################################################
+[page 14]
+SOURCE: [OCR page 14] tesseract OCR FAILED (16 chars extracted; white text on dark-red-tinted photo
+background). Content below is a direct visual read of the rasterised page image.
+OCR QUALITY FLAG: POOR -- vision-verified content, not machine-OCR'd.
+CONTENT TYPE: Section divider slide
+################################################################################
+
+[Section divider, dark-red-tinted photo]
+Company
+Overview
+
+################################################################################
+[page 15]
+SOURCE: [OCR page 15] tesseract OCR is heavily fragmented/garbled on this dense infographic
+(overlapping icon circles). Figures below are vision-verified against the rasterised page image.
+OCR QUALITY FLAG: POOR-MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Company snapshot infographic
+Footnote on slide: "*as of Q1 FY27"
+################################################################################
+
+ECOS Mobility - A Snapshot
+
+Left panel (two service lines):
+  Chauffeured Car Rentals                    | Employee Transportation Services
+  Description: Providing economy to luxury   | Description: Caters to daily home-office-home
+  cars with professionally trained chauffeurs| transportation requirements of corporate customers
+                                              | with 24x7 multi shift operations
+  Service Offerings (supported by full stacked software):
+    Corporates & Institutions, Events, B2B2C travel | GCCs, IT & ITES, Manufacturing
+  Scale & Presence:
+    151+ cities Pan-India & 30+ countries worldwide  | 11 Major cities across India
+
+Right panel (3x4 stat grid):
+  30+          Years of experience
+  19,500+      One of the largest fleet size in India
+  90%+         Vendor owned fleet - Asset light business model
+  70+          Fortune 500 companies
+  75+          BSE 500 companies
+  1,400+       Organizations*
+  151          Cities - widest PAN India presence
+  1,300+       Employees
+  5.23 Mn      Trips as on FY26
+  (icon only)  Partnerships with major credit card companies and commercial real estate players
+
+################################################################################
+[page 16]
+SOURCE: [OCR page 16] pdftotext -layout captured this timeline's text reasonably well (verified
+against image; minor label ordering differences due to non-linear road-graphic layout).
+OCR QUALITY FLAG: GOOD (text) -- cross-checked against image.
+CONTENT TYPE: Company history timeline infographic
+################################################################################
+
+Journey Over the Years
+
+1996  Incorporation
+2001  Contract to provide transportation services at a prestigious NCR hotel
+2006  Included on the panel of transporter of MEA
+2008  Designed & developed exclusive software for business operations
+2012  Establishment of vendor network across India
+2015  Crossed Rs 1,000 Mn of revenue mark for the first time
+2017  Launched online booking tool & integrated APIs to digitize reservations
+2018  Winner of the Today's Traveler award for Best Luxury Ground Handler
+2019  Expanded network outside India and "ECO driver application"
+2020  Crossed Rs 4,000 Mn of revenue mark for the first time
+2023  Provided premium transport to G20 delegates
+2024  Got listed on NSE and BSE on 4th September
+2025  Reached a revenue milestone of Rs 650 Crs
+2026  Reached a revenue milestone of Rs 800 Crs
+
+################################################################################
+[page 17]
+SOURCE: pdftotext -layout (native text, minor OCR-typo-style artifacts in tesseract's alternate pass
+e.g. "Leaming" for "Learning" -- pdftotext -layout version used here is clean and verified against
+rasterised image)
+CONTENT TYPE: Management team bios
+################################################################################
+
+Seasoned Management
+
+Rajesh Loomba - Chairman and Managing Director
+  - Bachelor's degree in Commerce from University of Delhi
+  - Inducted into the 'Global Hall of Fame' in 2019 by the World Auto Forum
+
+Aditya Loomba - Joint Managing Director
+  - PGM from S.P. Jain Institute of Management & Research
+  - Won 'Leadership Excellence Award' in 2014 by Brands Academy
+
+Deepali Dev - Chief Operating Officer
+  - Completed her Bachelor's degree in Arts (specialist course) from University of Delhi
+  - Previously associated with Idea Cellular Limited and Sistema Shyam TeleServices Limited.
+
+Hem Kumar Upadhyay - Chief Financial Officer
+  - Member of ICAI
+  - Previously associated with Carzonrent (India) Private Limited, Rahul Cargo Private Limited and
+    DHTC
+
+Sanjay Kumar Sharma - Chief Business Officer - ETS
+  - Bachelor's degree in Commerce from Chirawa College, University of Rajasthan
+  - Previously associated with Detta Vehicle Support Private Limited, Deneb and Pollex Tours and
+    Travels Limited
+
+Rini Ajeet - Head - Human Resources
+  - Post graduate Diploma in Business Administration from Symbiosis Centre for Distance Learning,
+    Pune.
+  - Previously associated with Bureau Veritas Global Shared Service Centre
+
+Rajnish Sharma - Senior VP - Sales
+  - Post graduate Diploma in Business Administration from Symbiosis Centre for Distance Learning,
+    Pune.
+  - Previously associated with Avis India Mobility Solutions Private Limited, Tex Corp Limited.
+
+Shweta Bhardwaj - Company Secretary & Compliance Officer
+  - She is a member of ICSI and holds a bachelor degree in law from Chaudhary Charan Singh University
+  - Previously associated with Vivo Mobile India Private Limited
+
+################################################################################
+[page 18]
+SOURCE: [OCR page 18] tesseract OCR FAILED (25 chars extracted; white text on red-tinted photo
+background). Content below is a direct visual read of the rasterised page image.
+OCR QUALITY FLAG: POOR -- vision-verified content, not machine-OCR'd.
+CONTENT TYPE: Section divider slide
+################################################################################
+
+[Section divider, red-tinted photo]
+Business
+Overview
+
+################################################################################
+[page 19]
+SOURCE: [OCR page 19] pdftotext -layout captured the pie-chart percentage labels but scrambled their
+reading order relative to the legend (raw layout text shows fragments like "319 18% 20%" which are
+"3.1% 1.8% 2.0%" run together). Figures below are vision-verified against the rasterised page image,
+matched to the legend colour order.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Map + pie chart
+################################################################################
+
+Pan-India Presence with Operations in 151 Cities in India
+
+Map legend:
+  14 Cities (Own Offices)
+  137 Cities (Presence through Vendor Vehicles)
+  [14 + 137 = 151 cities total, consistent with slide title and other slides]
+
+[CHART, page 19, title: Q1 FY27 Revenue Mix (pie chart, by city)]
+  Bangalore: 22.3%   Gurgaon: 14.1%   Delhi: 14.6%   Mumbai: 11.2%   Hyderabad: 10.6%
+  Pune: 6.7%   Chennai: 6.8%   Noida: 6.8%   Kolkatta: 3.1%   Jaipur: 1.8%   Ahmedabad: 2.0%
+  [sum check: 22.3+14.1+14.6+11.2+10.6+6.7+6.8+6.8+3.1+1.8+2.0 = 100.0%]
+
+################################################################################
+[page 20]
+SOURCE: [OCR page 20] pdftotext -layout is heavily fragmented (many single-character/punctuation
+artifacts from the fleet-category graphic). Content below is vision-verified against the rasterised
+page image.
+OCR QUALITY FLAG: POOR-MODERATE -- use the vision-verified content below.
+CONTENT TYPE: Fleet composition infographic
+################################################################################
+
+Fleet of Vehicles
+
+Premium: Toyota Innova Hycross, Honda City, Toyota Innova Crysta, Toyota Fortuner
+Luxury: Mercedes Benz E class, BMW 5 series, Audi A6, Range Rover
+Economy: Maruti Suzuki Dzire, Maruti Suzuki Ciaz
+Buses & Vans: Mercedes V class, Toyota Commuter, Volvo
+Hybrid/EV Vehicles: BYD E6, MG ZS, Tata Tigor
+
+[CHART, page 20, title: Q1 FY27 Vehicle Ownership Mix]
+  Owned: 5%   Vendor Operated: 95%
+
+################################################################################
+[page 21]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Business drivers infographic (VRQSR framework)
+################################################################################
+
+Business Drivers
+
+V - Variety   - Comprehensive solutions for corporate transportation requirements with a fleet of
+                 economy to luxury cars, mini vans & buses/vans
+R - Reach     - PAN India operations in 151 cities with a direct presence in 30 cities
+Q - Quality   - High service quality, with comprehensive technology enabling operational superiority
+                 and an established brand built over years
+S - Safety    - Professionally trained & verified chauffeurs with best-in-class quality control,
+                 testing and certifications leading to long standing relationships with customers
+R - Reliability - Largest and most profitable chauffeur driven mobility provider to corporates in
+                 India
+
+################################################################################
+[page 22]
+SOURCE: [OCR page 22] pdftotext -layout captured most of the text but the awards-strip row is
+fragmented (icon/spacing artifacts). Content below is vision-verified against the rasterised page
+image.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified content below.
+CONTENT TYPE: Business drivers / quality & awards infographic
+################################################################################
+
+Business Drivers: High Quality of Service Leading to Strong Brand
+
+Quality Control and testing:
+  - High standards of safety & hygiene
+  - Stringent specifications of customers
+  - Panic Buttons
+  - GPS Tracking
+
+Professionally Trained & Verified Chauffeurs:
+  "Manage the entire cycle of logistics and to ensure operational efficiency"
+  "Seamless Integration across front end applications & back end systems"
+  Learning & Development (L&D) Team: Induction, Skill Development, Behavioral Training
+
+Exceptional Customer Satisfaction:
+  FY26 Average Rating: 4.8
+
+Awards & Recognition (10 items, left to right):
+  1. National Tourism Award by GoI, FY14, FY15, FY16 and FY17
+  2. Dun & Bradstreet, SME Business Excellence Award in 2017
+  3. Today's Traveler award for Best Luxury Ground Handler in 2018
+  4. India's Best Employee Transportation Company award by Workplace Partner Conference & Awards,
+     iNFHRA 2021
+  5. Most innovative and fastest growing transportation & car rental company award, Annual
+     International Awards, 2012
+  6. Best Luxury Ground Transportation Company, Annual International Awards, 2013 & 2014
+  7. Winner of the TV9 Network Leaders of Road Transport Awards 2022
+  8. Service Provider of the year by ET Travel & Tourism Annual awards, 2023
+  9. Luxury Car Tourist Transport Operator of the Year, SATTE Awards 2024
+
+################################################################################
+[page 23]
+SOURCE: [OCR page 23] pdftotext -layout captured labels well; verified against rasterised image.
+OCR QUALITY FLAG: GOOD -- cross-checked against image.
+CONTENT TYPE: Technology stack infographic
+################################################################################
+
+Business Drivers: Technology Enablers for Operational Excellence
+
+"Seamless integrations across front end applications and back-end systems"
+
+Customer Facing: Customer App, CabDrive Pro, Online Booking Tool
+Internal Control Tools: Driver App, 24x7 contact center
+Center: RentNet - Central Transport Management Systems
+APIs connect: Software as a Service Tools <-> Corporate Travel Tools of Clients
+Outcome arrow: -> High operational efficiency
+
+################################################################################
+[page 24]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Competitive positioning table
+################################################################################
+
+Competitive Advantage
+
+PAN-India Corporate Mobility Providers          | FOCUS                        | App-Based Aggregators
+B2B segment (Corporate travel demands)          |                              | Primarily B2C segment
+Extensive dedicated Fleets and experienced      | RESOURCES & SERVICE LEVELS   | Limited dedicated fleet
+  drivers                                       |                              |   and drivers
+Established FMS for efficient operations        | TECHNOLOGY                  | Less investment in fleet
+                                                 |                              |   management systems (FMS)
+Consistent and reliable service tailored to     | SERVICE DIFFERENTIATION     | Inconsistent service
+  corporate needs                               |                              |   experience
+Professional and well-trained drivers           | DRIVER PROFESSIONALISM      | Concerns regarding driver
+                                                 |                              |   professionalism & conduct
+
+################################################################################
+[page 25]
+SOURCE: [OCR page 25] pdftotext -layout captured axis text but the per-year bar values and %-line
+values are largely missing from the native text layer (rendered as chart image elements). Figures
+below are vision-verified against the rasterised page image.
+OCR QUALITY FLAG: MODERATE -- use the vision-verified figures below.
+CONTENT TYPE: Chart slide -- customer tenure / revenue concentration
+UNIT: Rs Mn
+################################################################################
+
+Customers with Long Standing Relationships
+
+[CHART, page 25, title: Nurtured Relationships With Customers Over Years -- Revenue from Customers
+with ECOs > 5 Years (Rs Mn), and As % of total Revenue]
+  FY21: 355 (34%)   FY22: 561 (38%)   FY23: 2,313 (55%)   FY24: 3,168 (57%)   FY25: 3,806 (61%)
+  FY26: 4,266 (55%)  [FY26 bar is highlighted/boxed on the slide, i.e. called out as the latest year]
+
+################################################################################
+[page 26]
+SOURCE: [OCR page 26] tesseract OCR FAILED (7 chars extracted; white text on near-black-tinted photo
+background). Content below is a direct visual read of the rasterised page image.
+OCR QUALITY FLAG: POOR -- vision-verified content, not machine-OCR'd.
+CONTENT TYPE: Section divider slide
+################################################################################
+
+[Section divider, near-black-tinted photo]
+Outlook
+
+################################################################################
+[page 27]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Forward outlook / strategic priorities
+################################################################################
+
+Way Ahead
+
+  - Increasing wallet share: from existing customers
+  - Acquisition of new customers: Expanding skilled sales team
+  - Expanding presence: In Tier-II and Tier-III cities in India and entering new geographies
+  - Focus on: brand building strategies
+  - Strengthen on: technology and talent pool for scale and operational excellence
+  - Expanding services: In existing networks
+
+################################################################################
+[page 28]
+SOURCE: pdftotext -layout (native text, clean, verified against rasterised image)
+CONTENT TYPE: Closing / contacts slide
+################################################################################
+
+THANK YOU
+
+ECOS (India) Mobility & Hospitality Limited          | Adfactors PR
+Ms. Shweta Bhardwaj                                  | Hashika Mutreja / Kashmira Parkar
+Company Secretary & Compliance Officer               | hashika.mutreja@adfactorspr.com /
+legal@ecosmobility.com                               | kashmira.parkar@adfactorspr.com
+
+################################################################################
+END OF EXTRACTION -- 28 of 28 pages transcribed. GATE A1: page_coverage = 100%.
+################################################################################

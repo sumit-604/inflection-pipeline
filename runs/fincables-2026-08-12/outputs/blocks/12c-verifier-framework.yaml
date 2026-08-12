@@ -4,25 +4,41 @@ run_date: "2026-08-12"
 model: claude-opus-4-8
 status: complete
 phase: 1
-scope: "gate0 + emerging-moat only; valuation deferred to phase 3"
+scope: "gate0 (B01) + emerging moat (B07); valuation deferred to phase 3"
 gate0:
-  rules_checked: 45
-  fails:
-    - {severity: "MINOR", rule: "M8 Distribution", note: "scored 1 on ~6-year-stale FY2019-20 AR distribution narrative with no current FY26 confirmation; conservative and flagged, within tolerance"}
+  rules_checked: 51
+  fails: []
+  findings:
+    - {severity: "MINOR", ref: "M3", note: "framework unspecified on latest-vs-median ROCE for M3; report uses latest-year FY26 ROCE (14.16%), internally consistent with latest-year FAT and v1 convention; median reading (17.95%) would give M3=3/THIN but would not change AVERAGE classification or B07 combined; no destination impact"}
+    - {severity: "MINOR", ref: "cash-flag", note: "cash-flag labelled 'not INDETERMINATE' while CLAUDE.md rule is framed around INDETERMINATE; treatment applied (missing evidence named, capped at caveated read, no silent resolution to clean) is exactly rule-compliant; labelling nuance only"}
+  check_results:
+    current_ratio_D4: "CONFIRMED — 3,531.97/419.61 = 8.42x -> band >=2.0 -> 5/5; Block D 15->20 is a data-completeness fix, band applied correctly"
+    m3_cascade: "CONFIRMED — FAT 7.44x, ROCE 14.16% audited: not >20, not >15, but >12 -> M3=1; ROCE = EBIT/(Total Assets - Current Liabilities) is framework-consistent; 3->1 cascade correct; moat 6->4, THIN->NONE correct"
+    classification_matrix: "CONFIRMED — core 42 -> 40-59 -> AVERAGE (moat-insensitive tier); prior core 37 -> <40 -> AVOID; boundary exact and correctly applied"
+    cash_flag_vs_claudemd: "COMPLIANT — does not silently resolve to clean; names missing FY27 cash flow evidence; caps at PROCEED WITH CAVEATS-equivalent"
+    data_absence_zeros: "CORRECT — Block E, M2/M5/M9, full-history B4/M12 handled per missing-data rule, not conflated with measured weakness"
+    deal_breakers: "all 9 tested; only B<8 (rule 2, non-binding cap) and none forcing AVOID; AVERAGE survives"
 emoat:
-  rules_checked: 27
-  fails:
-    - {severity: "MINOR", rule: "F2 execution moat", note: "self-derived from four FY26 transcripts because B05 promise-delivery record unavailable (Stage 5 did not run); framework intends F2 to cross-reference injected B05; disclosed workaround, score within tolerance"}
-    - {severity: "MINOR", rule: "evidence-factor resolution (A1/B1/H2)", note: "three mixed documented/claim categories each take the full 1.0 documented factor; each individually justified by a documented core fact"}
-valuation: {status: pending-phase-3}
-recomputed_destination_pe: ""   # n/a in phase 1 (valuation deferred)
-recomputed_decision: ""         # concur: Gate 0 = AVOID, EM = MODEST both reproduce
-framework_adherence: 96         # % for the Gate 0 + EM portion only
+  rules_checked: 28
+  fails: []
+  findings:
+    - {severity: "MINOR", ref: "6C/6D", note: "B07 cites superseded v1 Gate 0 figures (core 37/moat 6/THIN/AVOID); expected pre-revision staleness; combined_assessment AVERAGE unaffected and reinforced by revised inputs; reconcile at synthesis"}
+  check_results:
+    score_recount: "CONFIRMED — adjusted total re-derives to 22.0; band 12-24 -> MODEST"
+    multiplier_discipline: "CONFIRMED — no 🎙️-only category credited at 1.0x; claim/stale rows correctly 0.7/0.5"
+    completionist_recount: "PERFORMED — 7 active rows < 12 hard trigger; 📄 recount (9 items/6 categories) present and justified"
+    all_21_addressed: true
+    combined_assessment: "CONFIRMED AVERAGE — holds under revised Gate 0 (core formally AVERAGE, moat NONE); forward MODEST fails STRENGTHENING/EXPANSION bar for HIGH POTENTIAL/TURNAROUND; existing moat 0/NONE fails GOOD/GOOD+ bar"
+valuation: {status: pending-phase-3, rules_checked: 0, fails: []}
+recomputed_destination_pe: ""        # deferred to phase 3
+recomputed_decision: ""              # concur — AVERAGE (core 42), no re-derivation delta
+recomputed_moat_class: ""            # concur — NONE (0 of 12 tests confirmed)
 findings:
-  - {severity: "MINOR", location: "B01 Block F / M8", note: "moat score of 1 rests on ~6yr-stale AR distribution data; flagged by maker"}
-  - {severity: "MINOR", location: "B07 Section 3 / F2", note: "F2 self-derived without B05; transparent input-gap workaround"}
-  - {severity: "MINOR", location: "B07 Section 5 / A1,B1,H2", note: "mixed-evidence rows all resolved to 1.0 documented factor; each defensible"}
+  - {severity: "MINOR", location: "B01 M3", note: "M3 ROCE basis (latest vs median) unspecified by framework; latest-year use is internally consistent and non-destination-changing"}
+  - {severity: "MINOR", location: "B07 6C/6D", note: "stale v1 Gate 0 figures cited; combined_assessment AVERAGE unaffected"}
+  - {severity: "MINOR", location: "B01 cash-flag", note: "'not INDETERMINATE' labelling nuance; treatment is rule-compliant (evidence named, capped, not resolved clean)"}
 critical_count: 0
 major_count: 0
 minor_count: 3
-acceptance_rate: 96             # rules passed (69) / rules checked (72), %
+framework_adherence: 100
+acceptance_rate: 100

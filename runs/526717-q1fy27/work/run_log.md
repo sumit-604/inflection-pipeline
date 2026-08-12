@@ -52,7 +52,16 @@ No companies/526717.md file exists (never /finalize-d). Prior run folder: runs/5
 - 12-Aug-2026: CFO Mr. Dhrumil PranavKumar Shah resigns (THIS RUN, D3). **Directly touches monitoring item 6.** Orchestrator flags; A4 assesses; decision stays human.
 
 ## Gate log
-- GATE A1 (per doc): pending
-- GATE A2 (count test): pending
-- GATE A3 (F1-F17 status + line cites): pending
-- GATE A5 (COMPLETE): pending
+- GATE A1 (per doc): PASS all 4 (100% page coverage: 18+3+3+1 pp). Units: results filing Lakhs (/100 -> Cr).
+- GATE A2 (count test): PASS all 4 (results reconciled after tracing OCR undercounts on agenda_items 17->18 and line_items 143->149).
+- GATE A3 (F1-F17 status + line cites): PASS all 4, 0 blank checks. 24 findings across 4 forensics files.
+- A4: merged review PROCEED WITH FLAGS; cash conversion INDETERMINATE; Decision Status AVOID (flagged, not decided); 17 QFM rows; plain-language brief included.
+- A5: loop 1 INCOMPLETE (JV Lakhs->Cr conversion error in PAT bridge; missing QFM row for A3-06) -> A4 fixed in place -> A5 re-audit COMPLETE (coverage/arithmetic/adversarial all PASS). GATE A5 PASS within 2-loop limit.
+- Notion save: DONE (full review + plain-language brief + A3 forensics summary + A5 verdict appended; Key Notes prepended, prior entries preserved; Decision Status unchanged = AVOID).
+
+## Monitoring-checklist firings this quarter
+- ITEM 6 FIRED (RED): CFO resigned 12-Aug-2026 immediate/no successor = 3rd KMP exit in 7 months.
+- ITEM 5 RED (non-disclosure): capacity utilisation not disclosed.
+- ITEM 8 RED (continued silence): unnamed JV silent, Malaysia LLP dissolved, no Saudi JV update.
+- ITEM 2 AMBER: coverage GREEN 5.68x but segment liabilities +Rs 183 cr QoQ, Net Debt/EBITDA ND.
+- Thesis-broken trigger: NOT FIRED (cash-flow inputs unobservable at Q1). Re-test at Q2 FY27 half-year.

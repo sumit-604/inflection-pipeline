@@ -67,7 +67,7 @@
 | **Revised on this call** | CFO L23 | **~10%** |
 | Actual delivered Q1 FY27 | CFO L21 (reconciled) | **10.34%** |
 
-Our Notion record carried the recovery band as **13-15%**; management now retro-frames the "initial" FY27 guide as **11-13%**, then cuts to **~10%**. Whether 11-13% was a genuine FY27-specific guide (partly corroborated by analyst Jani independently citing "11-13%" at L32) or a retro-lowered anchor, **the reference point has been walked down 13-15 → 11-13 → 10 in one direction.** AMBIGUOUS, lean bear (F7-01). Pinned as Question 14 below.
+Our Notion record carried the recovery band as **13-15%**; management now retro-frames the "initial" FY27 guide as **11-13%**, then cuts to **~10%**. Whether 11-13% was a genuine FY27-specific guide (partly corroborated by analyst Jani independently citing "11-13%" at L32) or a retro-lowered anchor, **the reference point has been walked down 13-15 → 11-13 → 10 in one direction.** AMBIGUOUS, lean bear (F7-01). Pinned as Question 4 below.
 
 ---
 

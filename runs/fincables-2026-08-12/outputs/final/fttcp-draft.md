@@ -292,6 +292,25 @@ The tension in one line: this is a copper pass through cyclical whose revenue an
 
 ---
 
+## EXTERNAL RESEARCH CROSS CHECK, NON ANCHORED LEAD
+
+An operator supplied broker note was added after the draft was first written: Anand Rathi, 24 November 2025, BUY, target Rs 975 against a then price of Rs 750. House rule holds: a research note is a lead, never an anchor, so nothing below changes a single one of the 23 rulings. It is read here only for where an independent outside party agrees or disagrees with this draft.
+
+**Where it corroborates the draft.**
+
+- It values Finolex sum of the parts, which is exactly the genuinely uncertain call in ruling 19. It puts the core business on 20x September 2027 expected earnings and values the 32% Finolex Industries stake separately at its market cap of Rs 11,122cr with a 40% holding discount, so Rs 6,673cr. An independent desk treating the associate stake and the operating business as two things to value apart is the strongest outside signal yet that Phase 3 should run the sum of the parts, and it lifts ruling 19 from a lone internal doubt to a reading the market actually uses. It does not resolve the call, which stays the operator's at the Phase 3 gate.
+- Its shareholding table reads promoters 35.9%, foreign institutions 10.7%, domestic institutions 15.6% for September 2025, so institutions about 26.3%. That is a second non filing source agreeing with the operator screenshot and it confirms rulings 22 and 23, meaning Undiscovered Alpha does not apply and the return tier is A. The pledged row is blank, consistent with the zero pledge in B08.
+- It discounts Finolex hard against peers, putting the core on 20x against Polycab at 40x and KEI at 38x. A near half turn discount to the sector leaders sits comfortably with the AVERAGE Gate 0 read and the cash and governance flags, rather than against them.
+- On Q2 FY26 it records communication cable revenue down 21.4% year on year and electrical up 7.6%, which matches the soft backward picture in this draft.
+
+**Where it diverges, and why the draft does not move.**
+
+- It carries a BUY and a Rs 975 target while this is a first workup that does not produce an investment verdict at all, since Role 1 has not run. The two are not comparable. The broker target is built forward on September 2027 earnings and a specific holding discount, both of which are Phase 3 inputs the operator has not yet fixed.
+- Its post tax RoCE of 5.7% to 6.6% looks alarming next to this draft's 14.2%, but the two are different measures. The broker runs a post tax return on the whole balance sheet including the Rs 4,195cr investment book, which is the same denominator drag ruling 15 and the operating ROCE note already dissect. It is not a contradiction, it is the consolidated versus operating gap seen from the other side.
+- Its peer growth line is a mild negative the draft should carry: Finolex electrical cable grew 7.6% in Q2 FY26 while Polycab, KEI and Havells grew 21%, 23% and 12%. Finolex is lagging the core wires peers on volume even as it leads on the fibre story. This tempers, without breaking, the revenue STARTING call, since Q1 FY27 at plus 44% is both later and stronger.
+
+Net effect on the verdict: none. The composite stays 3 out of 8 and DEEP WATCH. The one thing this note genuinely advances is the sum of the parts question, which it pushes from an internal what if to a documented market practice for Phase 3 to weigh.
+
 ## SOURCE AVAILABILITY AND CONFIDENCE
 
 | Required input | Available | Effect |
@@ -303,7 +322,8 @@ The tension in one line: this is a copper pass through cyclical whose revenue an
 | Exchange announcements, last 90 days | **No.** inputs/announcements is empty | Step 2E cannot grade recent documented action. Confidence lowered |
 | Latest credit rating report | **No.** inputs/rating is empty | No rating agency working capital opinion, which the framework normally gives precedence on the structural cash test. Confidence lowered on ruling 11 |
 | Peer comparable data | Yes, 12 transcripts across 3 peers | No peer carries optical fibre exposure, so the fibre thesis is un peer verifiable |
+| Equity research | Yes, one note, added mid review | Anand Rathi, 24 Nov 2025. A LEAD only, per house rule. Cross checks the calls, most usefully the sum of the parts. Does not lift confidence on any anchored number |
 
-Two of seven required inputs are missing, under the three that would force an inconclusive call. The annual report in this run is FY2019-20 and roughly six years stale, so it was used only as historical baseline and never as current fact. Phase 1 confidence was 86 out of 100.
+Two of the seven required inputs are still missing, exchange announcements and the credit rating, under the three that would force an inconclusive call. The equity research note that just arrived is neither of those two, it is a lead, and it does not close the rating gap, since a broker note is not a rating agency working capital opinion, nor the announcements gap that Step 2E needs. The annual report in this run is FY2019-20 and roughly six years stale, so it was used only as historical baseline and never as current fact. Phase 1 confidence was 86 out of 100.
 
 Deliberation ran 5 iterations against the cap of 8. No call was left open.

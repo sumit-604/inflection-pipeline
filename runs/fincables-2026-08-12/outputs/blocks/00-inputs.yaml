@@ -36,7 +36,7 @@ input_gaps:
   - "rating: ABSENT -- Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative."
   - "shareholding: ABSENT (filing) -- Gate 0 Block E scored 0/20; Stage 10 FII+DII unresolved; Stage 11 UA withheld (all-three-qualifier rule). Operator provided a screener.in shareholding screenshot as NON-ANCHORED cross-check only (promoters 35.86% stable, FII 9.65%, DII 16.71% as of Jun 2026)."
   - "announcements: ABSENT -- Stages 5/7/8 lose the documented-ACTION record; intent-vs-action runs on concall/AR only; Stage 8 relies on web search. Operator pasted GST-order/CEO-CFO-change/CS-cessation context as NON-ANCHORED only."
-  - "research: ABSENT -- no effect on anchored evidence."
+  - "research: RESOLVED mid-run (operator upload). One equity research note present: Anand Rathi, 24 Nov 2025, BUY, TP Rs975, SOTP (core 20x Sep27e EPS + Finolex Industries stake at 40% holding discount). Treated as a LEAD per house rule (research notes are leads, never anchored figures); cross-checks the FTTCP calls, changes no anchored verdict. NOT a credit rating, so the FLAG-CASH rating gap stays open."
   - "screener P&L/BS/CF/Quarters CSVs label-only (empty) -- only Data_Sheet.csv usable."
   - "peer/industry comparator data thin for some Gate 0 moat tests (M2, M5, M9)."
   - "prospectus: ABSENT -- expected (long-listed), NOT a gap."

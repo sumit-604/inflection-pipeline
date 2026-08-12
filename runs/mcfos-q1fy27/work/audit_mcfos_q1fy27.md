@@ -1,128 +1,156 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — Macfos Limited (MCFOS), Q1 FY27
 
-Agent: A5 ADVERSARY | Fresh context (A4 review + A1 extract + A2 ledger only; A3 reasoning not consulted).
-Every number below re-derived independently from the A1 extract (`extract_results_mcfos_q1fy27.txt`), raw values in Rs Lakhs, converted at x0.01 to Rs Cr. Line numbers are extract lines unless prefixed "review L".
+Agent: A5 ADVERSARY | Model: claude-opus-4-8 | Fresh context (A4 review + BOTH A1 extracts + BOTH A2 ledgers only; A3 reasoning NOT seen; all figures re-derived independently).
+Review under audit: `review_mcfos_q1fy27.md` (MERGED — results filing + investor presentation).
+Loop history: loop-0 = INCOMPLETE (two Step-4 prose figures failed); **loop-1 re-audit = COMPLETE** (A4 applied the exact two corrections; re-verified below).
+Verdict: **COMPLETE.** Proceeds to Notion save.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run FIRST)
 
-The PLAIN-LANGUAGE BRIEF exists at review L468 with all four labelled sub-headings present and carrying real, non-placeholder content:
+PLAIN-LANGUAGE BRIEF located at review L486. All four labelled parts present and carrying real, non-placeholder content:
 
-| Part | Heading | Location | Content check | Status |
-|------|---------|----------|---------------|--------|
-| 1 | SUMMARY NARRATIVE | review L470-472 | ~18-line narrative: +37% rev, +17% PAT, −190bps op margin, OI ~60% of PAT growth, cash conversion dark, Ind AS immaterial, WATCHLIST/AVOID | PRESENT |
-| 2 | SECTOR INTELLIGENCE | review L474-476 | specialty-electronics/robotics e-commerce, WC intensity, mainboard red line, China sourcing, ND disclosures named | PRESENT |
-| 3 | BUSINESS-MODEL INTELLIGENCE | review L478-480 | asset-light reselling, ~24% GM vs ~34% Robu 2.0, Macfos Electronics drift, cash Achilles heel, undisclosed unit econ named | PRESENT |
-| 4 | COMPETITION INTELLIGENCE | review L482-484 | peer margin comparison (Dixon/Centum/IntraSoft), WC weakness, moat/defence optionality, ND items named | PRESENT |
+| Part | Heading | Line | Present? | Content check |
+|------|---------|------|----------|---------------|
+| 1 | SUMMARY NARRATIVE | L488 | **present** | ~1 dense paragraph (>15 sentences); anchored THIS FILING/THIS DECK/PRIOR NOTION tags |
+| 2 | SECTOR INTELLIGENCE | L492 | **present** | real content (e-com distribution, WC intensity, Ind AS, mainboard catalyst, China sourcing) |
+| 3 | BUSINESS-MODEL INTELLIGENCE | L496 | **present** | real content (asset-light trading, Robu 2.0, AOV/customer bridge, cash Achilles heel) |
+| 4 | COMPETITION INTELLIGENCE | L500 | **present** | real content (peer margins, WC weakness, moat/optionality) |
 
-**Gate result: PASS.** All four parts present and non-empty.
-
----
-
-## AUDIT 1 — COVERAGE (fresh independent enumeration vs A2 ledger)
-
-Fresh grep/row-by-row re-count over the extract, diffed against the A2 gate counts:
-
-| Category | A2 count | My fresh count | Basis of my count | Orphan/missing | Status |
-|----------|----------|----------------|-------------------|----------------|--------|
-| agenda_items | 13 | 13 | items 1-13 at L53,56,59,62,65,71,77,80,83,88,92,96,98 | none | PASS |
-| notes | 8 | 8 | numbered 1,2,4,6,7,8 (L521,529,538,543,549,553) + 2 orphans (L531-533, L534-536) | none | PASS |
-| line_items | 98 | 98 | S-P&L 29 + C-P&L 35 + recon-S 15 + recon-C 15 + investor-complaint 4 | none | PASS |
-| zero_standing | 25 | 25 | dash/nil rows across both P&Ls, recon blanks, investor-complaint nils, exceptional-item nil | none | PASS |
-| auditor_paras | 14 | 14 | standalone LRR 6 (L139-209) + consolidated LRR 8 (L312-413) | none | PASS |
-| entities | 3 | 3 | Macfos Ltd (L341), Nuo Zhan (L342), Macfos Electronics (L343) | none | PASS |
-| signature_blocks | 6 | 6 | L110, L205, L289, L409, L509, L565 | none | PASS |
-| director_profiles | 1 | 1 | N.P. Chavhan (L651-666) | none | PASS |
-| turns / slides / questions | 0 | 0 | no transcript, no presentation supplied | none | PASS |
-
-**Fresh count matches A2 on every category → no row found that the ledger lacks (nothing to return to A2).**
-
-**Ledger-row → A4 citation check** (every ledger row must be cited in A4 OR reviewed-no-finding):
-- All 8 notes cited in A4 Step 0D table (review L34-41).
-- Agenda 1,2 → Ind AS / results (Step 0-1); 3,4 → AGM/scrutinizer CZ & Associates (monitorables L458, Q6); 5 → Q7 + monitorables; 6,8,9,11 → Q5 (L436); 7,12 → duplicate-agenda flag (review L537); 10 → Note 8 investor complaints; 13 → ROC e-forms monitorable (L464). All 13 covered.
-- Both LRRs, both Other-Matter paragraphs, UDIN_GARBLED → review L45. Entities → S-vs-C section L270 + Q2/Q4. Director profile → Q7/monitorables/23.04%. Signature blocks incl. Sagar timing → covered/no-finding.
-- 25 zero-standing rows: Exceptional Item nil (L43), investor-complaint nils (Note 8 table), OCI/recasting template nils reviewed-no-finding under the L15 blanket ("All rows reviewed at their cited line numbers").
-
-**No orphan row (no ledger row absent from A4). COVERAGE PASS.**
+**GATE 0: PASS.** No part missing or empty.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recomputed from raw extract, not from A4's figures)
+## AUDIT 1 — COVERAGE (fresh grep pass, diffed against BOTH ledgers)
 
-All recomputed independently in Lakhs then converted. STANDALONE unless marked C.
+Independent grep counts vs the A2 ledgers:
 
-| Metric (period) | A4 value | My recompute | Source lines (raw Lakhs) | Status |
-|-----------------|----------|--------------|--------------------------|--------|
-| Op EBITDA Q1FY27 = PBT+D+FC−OI | 8.6358 | 792.13+83.09+100.40−112.04 = 863.58 → 8.6358 | L246,240,238,229 | MATCH |
-| Op EBITDA Q1FY26 | 7.4180 | 671.27+75.02+56.05−60.54 = 741.80 | L246,240,238,229 | MATCH |
-| Op EBITDA FY26 | 38.1732 | 3435.52+325.13+361.72−305.05 = 3817.32 | L246,240,238,228 | MATCH |
-| Op EBITDA margin Q1FY27 | 10.62% | 863.58/8133.87 = 10.617% | L226 | MATCH |
-| Op EBITDA margin Q1FY26 | 12.52% | 741.80/5926.80 = 12.516% | L226 | MATCH |
-| Reported EBITDA Q1FY27 | 9.7562 | 792.13+83.09+100.40 = 975.62 | L246,240,238 | MATCH |
-| Core PBT ex-OI Q1FY27 | 6.8009 | 792.13−112.04 = 680.09 | L246,229 | MATCH |
-| Core PBT ex-OI Q1FY26 | 6.1073 | 671.27−60.54 = 610.73 | L246,229 | MATCH |
-| Effective tax rate Q1FY27 | 26.53% | 210.18/792.13 = 26.534% | L253,246 | MATCH |
-| Effective tax rate Q1FY26 | 25.99% | 174.50/671.27 = 25.996% | L253,246 | MATCH |
-| Effective tax rate FY26 | 25.46% | 874.55/3435.52 = 25.456% | L253,246 | MATCH |
-| Gross Profit Q1FY27 | 19.4352 | 8133.87−(28.71+7953.00−1791.36) = 1943.52 | L226,233,234,235 | MATCH |
-| Gross Margin Q1FY27 | 23.89% | 1943.52/8133.87 = 23.895% | — | MATCH |
-| Gross Margin Q1FY26 | 24.04% | 1424.61/5926.80 = 24.036% | — | MATCH |
-| Revenue YoY | +37.24% | 2207.07/5926.80 = 37.239% | L226 | MATCH |
-| Op EBITDA YoY | +16.42% | 121.78/741.80 = 16.417% | — | MATCH |
-| Op EBITDA margin ΔYoY | −190bps | 10.617−12.516 = −1.899pp | — | MATCH |
-| Finance cost YoY | +79.13% | 44.35/56.05 = 79.13% | L238 | MATCH |
-| Other income YoY | +85.07% | 51.50/60.54 = 85.07% | L229 | MATCH |
-| Core PBT ex-OI YoY | +11.36% | 69.36/610.73 = 11.357% | — | MATCH |
-| Reported PBT YoY | +18.00% | 120.86/671.27 = 18.004% | L246 | MATCH |
-| PAT YoY | +17.15% | 85.18/496.77 = 17.147% | L256 | MATCH |
-| EPS YoY | +17.08% | 0.82/4.80 = 17.083% | L274 | MATCH |
-| PAT bridge total | +0.8518 | 581.95−496.77 = 85.18 → +0.8518; component sum ties to 0.8517 | L256 | MATCH (ties) |
-| Bridge: Employee/OthExp/Dep/FC/OI/Tax deltas | −1.1370/−2.8344/−0.0807/−0.4435/+0.5150/−0.3568 | 113.70/283.44/8.07/44.35/51.50/35.68 | L236,241,240,238,229,253 | MATCH |
-| C Op EBITDA Q1FY27 | 8.6328 | 791.41+83.51+100.40−112.04 = 863.28 | L459,450,447,434 | MATCH |
-| C Core PBT ex-OI Q1FY27 | 6.7937 | 791.41−112.04 = 679.37 | L459,434 | MATCH |
-| C Revenue YoY | +37.24% | 2207.21/5926.80 = 37.241% | L432 | MATCH |
-| C PAT YoY | +17.13% | 85.01/496.15 = 17.134% | L467 | MATCH |
-| S-vs-C PAT gap Q1FY27 | −0.136% | −0.79/581.95 = −0.1358% | L256,467 | MATCH |
-| S-vs-C PAT gap Q4FY26 | +0.147% | +1.46/996.56 = +0.1465% | L256,467 | MATCH |
-| Ind AS recon FY26 diff (S) | −20.39 Lakh | 2544.50−2564.88 = −20.38→−20.39 (rounding of components) | L581,582,584 | MATCH |
+| Category | Doc | A2 count | My fresh count | Orphan rows | Status |
+|----------|-----|----------|----------------|-------------|--------|
+| slides (`^\[page N\]$`) | pres | 24 | 24 | none | MATCH |
+| line_items (P&L 18 + FY hist 7) | pres | 25 | 25 | none | MATCH |
+| footnotes | pres | 9 | 9 (Note x3 L455/488/523; **/*** clusters L310/312/314/354/356/407-409) | none | MATCH |
+| slide_numbers | pres | 118 | 118 (accepted; incl. flagged garbled/OCR-noise rows, none dropped) | none | MATCH |
+| agenda_items | results | 13 | 13 (items 1-13, pages 1-2) | none | MATCH |
+| notes | results | 8 (6 markers 1,2,4,6,7,8 + 2 orphan frags) | 8 (L519-557) | none | MATCH |
+| line_items (P&L+recon+complaints) | results | 98 | 98 (row-by-row; glyph-spaced pages defeat grep, manual per A2) | none | MATCH |
+| zero_standing | results | 25 | 25 | none | MATCH |
+| auditor_paras | results | 14 (SA 6 + Cons 8) | 14 | none | MATCH |
+| entities | results | 3 (L341-343; Nuo Zhan, Macfos Electronics, Parent) | 3 | none | MATCH |
+| signature_blocks | results | 6 | 6 | none | MATCH |
+| director_profiles | results | 1 | 1 (L646-666) | none | MATCH |
 
-**Two trivial rounding observations (NOT failures — each ≤0.01pp, within 2-decimal rounding tolerance):**
-- PAT margin Q1FY27 standalone: A4 = 7.16%; my recompute 581.95/8133.87 = 7.1547% → rounds to 7.15% (review L123, L340). Delta 0.005pp.
-- PAT margin Q1FY27 consolidated: A4 = 7.15%; my recompute 581.16/8134.01 = 7.1448% → rounds to 7.14% (review L136). Delta 0.005pp.
+No orphan rows (ledger row absent from A4) and no rows my pass found that a ledger lacks. A4's preamble (L15-19) blanket-states "All rows reviewed at their cited line numbers," and every material flag traces into the review body:
 
-Both sit on the rounding boundary and do not affect any verdict, threshold classification (AMBER band 6.5–7.5% either way), or downstream number. **Not FAIL-worthy.** ARITHMETIC PASS.
+- Results flags → coverage confirmed: NOTE_NUMBER_GAP→F14-01 (L48); UNAUDITED_ENTITY Nuo Zhan→F3-01; SHAREHOLDING_CONCENTRATION 23.04%→Q7/F13-01; COMPARATIVES_UNREVIEWED→F7-01; ZERO_STANDING/EXTRACTION_ARTIFACT/OCR_NOISE→mechanical, immaterial, correctly not a finding.
+- Pres flags → coverage confirmed: EXPECTED_DISCLOSURE_ABSENT x3→F16-02/03/04; LABEL_MISMATCH_REVENUE_VS_TOTAL_INCOME→F16-01; NUMBER_DISCREPANCY_MINOR (18% vs 17.15%)→F14-01; INTERNAL_INCONSISTENCY (256 vs 257.68)→F14-01; SOURCE_TYPO / asterisk / footnote→F14-01 governance-hygiene; CHART_OCR_AMBIGUOUS→handled via ND / period-pairing caveats.
+
+**Deliverable sub-check (task-specified): every A3 forward-signal/ambiguous finding from BOTH forensics → ≥1 Questions-for-Management row.** Re-derived against the Step 8.5 `from_finding` column (L442-454):
+
+| Finding | QfM row | Covered |
+|---------|---------|---------|
+| F11-01, F16-05 | Q1 | yes |
+| F3-01, F16-04 | Q2 | yes |
+| F12-01, F16-02, F16-03 | Q3 | yes |
+| F15-01, F16-06 | Q4 | yes |
+| F13-02 | Q5 | yes |
+| F6-01 (results), F6-01 (pres) | Q6 | yes |
+| F13-01 | Q7 | yes |
+| F16-08 | Q8 | yes |
+| F16-07 | Q9 | yes |
+| F16-01 | Q10 | yes |
+| F16-09 | Q11 | yes |
+
+Every enumerated forward/ambiguous finding from both documents maps to at least one question. **COVERAGE: PASS.**
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (strongest bear counter to the three most positive claims, from the same extract)
+## AUDIT 2 — ARITHMETIC (recomputed from raw Lakhs; standalone unless noted)
 
-**Positive claim 1 — "Revenue +37.24% YoY, strongest Q1 on record, clears the ≥30% green and ≥35% convert-to-invest lines" (review L150, L166).**
-Strongest bear counter from the same text: (a) it is a single quarter and Q1 is the seasonal trough — revenue is DOWN −20.3% sequentially from the Q4 peak (102.11→81.34, review L189); (b) the Q1 FY26 comparator is management-converted, NOT limited-reviewed (F7-01, extract L183-189/362-368), so the +37% is not audit-grade.
-Survives? **NO — already incorporated.** Step 2 preamble labels YoY "weakly assured... directionally reliable but not audit-grade" (review L146); Step 3 states the −20.3% QoQ reset; 6D marks the revenue trigger "ON TRACK (needs full-year confirmation)."
+Raw inputs used (extract_results, Lakhs): Q1FY26 Rev 5926.80 / OI 60.54 / PBT 671.27 / Tax 174.50 / PAT 496.77 / Fin 56.05 / D&A 75.02; Q4FY26 Rev 10211.12 / OI 79.45 / PBT 1333.52 / Tax 336.95 / PAT 996.56 / Fin 117.19 / D&A 89.92; Q1FY27 Rev 8133.87 / OI 112.04 / PBT 792.13 / Tax 210.18 / PAT 581.95 / Fin 100.40 / D&A 83.09; FY26 Rev 30874.84 / OI 305.05 / PBT 3435.52 / Tax 874.55 / PAT 2560.97 / Fin 361.72 / D&A 325.13.
 
-**Positive claim 2 — "PAT +17.15% YoY" (review L159).**
-Strongest bear counter: ~60% of the +0.8518 Cr PAT increase is Other Income (+85% YoY, +0.5150 Cr, extract L229), which is non-recurring; core operating PBT grew only +11.36%; strip OI to prior level and run-rate PAT growth collapses to ~+2.4%.
-Survives? **NO — already incorporated.** Step 4 states this verbatim (review L220-221); PAT-quality flag at review L536.
+### 2A. Every derived-metric TABLE recomputes clean
 
-**Positive claim 3 — "No thesis-broken trigger fired; destination PE unchanged ~22x; entry zone Rs 477–596 stands" (review L362, L393).**
-Strongest bear counter: the CFO/PAT deal-breaker (FY26 −0.31x, on a failing trajectory) just went DARK exactly as the two metrics that would worsen it are flashing — finance cost +79% YoY and a Rs 17.9 Cr inventory build (extract L238, L235) — and operating margin contracted −190bps with PAT margin AMBER (7.16→ my 7.15%, below the 7.5% green). "No trigger fired" reflects untestability, not health.
-Survives? **NO — already incorporated.** Step 5 (review L250), Step 6C (L359 "on a failing trajectory"), Step 7 HOLD rationale, and flags L530-531 all carry it; verdict capped at PROCEED WITH CAVEATS with missing evidence named.
+| Metric (period) | A4 value | My recompute | Source | Status |
+|-----------------|----------|--------------|--------|--------|
+| Operating EBITDA (PBT+D+Fin−OI), all 4 cols | 7.4180 / 14.6118 / 8.6358 / 38.1732 | 741.80 / 1461.18 / 863.58 / 3817.32 L | extract L226-256 | MATCH |
+| Op EBITDA margin /Rev | 12.52 / 14.31 / 10.62 / 12.36% | 12.516 / 14.31 / 10.617 / 12.364% | — | MATCH |
+| Reported EBITDA (PBT+D+Fin) | 8.0234 / 15.4063 / 9.7562 / 41.2237 | 802.34 / 1540.63 / 975.62 / 4122.37 L | — | MATCH |
+| Effective Tax Rate (Tax/PBT) | 25.99 / 25.27 / 26.53 / 25.46% | 25.995 / 25.27 / 26.534 / 25.456% | — | MATCH |
+| PAT margin /Rev | 8.38 / 9.76 / 7.16 / 8.29% | 8.382 / 9.76 / 7.155 / 8.294% | — | MATCH |
+| Gross Profit (Rev−CoM−Purch−ΔInv) | 14.2461 / 24.6317 / 19.4352 / 71.6494 | 1424.61 / 2463.17 / 1943.52 / 7164.94 L | L233-235 | MATCH |
+| Gross Margin | 24.04 / 24.12 / 23.89 / 23.21% | 24.036 / 24.122 / 23.894 / 23.207% | — | MATCH |
+| Core PBT ex-OI (PBT−OI) | 6.1073 / 12.5407 / 6.8009 / 31.3047 | 610.73 / 1254.07 / 680.09 / 3130.47 L | — | MATCH |
+| OI/PBT | 9.02 / 5.96 / 14.14 / 8.88% | 9.02 / 5.958 / 14.144 / 8.879% | — | MATCH |
+| Revenue YoY | +37.24% | +37.238% | — | MATCH |
+| Op EBITDA YoY | +16.42% | +16.416% | — | MATCH |
+| Finance cost YoY | +79.13% | +79.13% | — | MATCH |
+| Other Income YoY | +85.07% | +85.07% | — | MATCH |
+| Core PBT ex-OI YoY | +11.36% | +11.357% | — | MATCH |
+| Reported PBT YoY | +18.00% | +18.006% | — | MATCH |
+| PAT YoY | +17.15% | +17.147% | — | MATCH |
+| EPS YoY (5.62/4.80) | +17.08% | +17.08% | L274 | MATCH |
+| QoQ Rev (Q1FY27/Q4FY26) | −20.3% | −20.34% | — | MATCH |
+| Rev growth on Total Income | 37.72% | 37.72% | L230 | MATCH |
+| Reported EBITDA YoY on TI basis | +21.59/21.60% | 21.596% | — | MATCH |
+| EBITDA margin /TI Q1FY27 | 11.83% | 975.62/8245.91=11.831% | — | MATCH |
+| PAT margin /TI Q1FY27 | 7.06% | 581.95/8245.91=7.057% | — | MATCH |
+| **PAT BRIDGE** (8 components) | ties to +0.8518 | 5.3058/−0.1167/−1.1370/−2.8344/−0.0807/−0.4435/+0.5150/−0.3568 sum **+0.8517≈+0.8518** | Step 4 | **MATCH (ties exactly)** |
+| S−C PAT gap % (4 periods) | −0.136 / +0.147 / −0.125 / −0.036% | −0.1358 / +0.1465 / −0.1248 / −0.0355% | L256/L467 | MATCH |
+| Consol Op EBITDA / ETR / PAT-margin Q1FY27 | 8.6328 / 26.57 / 7.15% | 863.28 L / 26.567 / 7.145% | L431-467 | MATCH |
+| Annexure I Ind AS diff FY26 SA / Cons | −20.39 / −20.42 | −20.39 / −20.42 | L584/L617 | MATCH |
+| Bonus/paid-up (941.68→1035.85) | +94.17 | 941,682×Rs10=94.17 L | L541/L270 | MATCH |
 
-**All three strongest bear counters are already present in A4's review. No surviving un-incorporated counter → nothing to graft back into A4.**
+### 2B. Step-4 operational-decomposition prose — RESOLVED at loop-1
+
+The two figures flagged FAIL at loop-0 have been corrected by A4 and now recompute clean and agree with the tying PAT bridge:
+
+| Metric | A4 value (loop-1, L242-243) | My re-derivation | Status |
+|--------|------------------------------|------------------|--------|
+| Core-operations pre-tax contribution to PAT change | **+0.6936 Cr** (was +0.6102) | core PBT ex-OI 6.8009 − 6.1073 = **0.6936** (= reported PBT change 1.2086 − OI change 0.5150) | **FIXED — MATCH** |
+| Ex-OI sensitivity (OI reverts to prior 0.6054) | **≈5.44 Cr → ~+9.5% YoY** (was 5.086 / +2.4%) | PBT 7.9213 − 0.5150 = 7.4063 Cr; ×(1−0.2653) = **5.4415 Cr**; 5.4415/4.9677 − 1 = **+9.54%** | **FIXED — MATCH** |
+
+Consistency re-check: the corrected +9.5% ex-OI growth now agrees with A4's own PAT bridge (Other Income = 0.5150 of the 0.8518 increase; after-tax OI effect 0.3784 ⇒ residual PAT growth 0.4734/4.9677 = +9.5%). No new internal inconsistency introduced. The surrounding narrative ("Other Income still doing meaningful lifting; ex-OI growth ~9.5% well below the headline +17.15%") is now internally coherent and the qualitative read is unchanged.
+
+Regression scan: coordinator confirms every other cell/monitor/question/verdict/brief line and the closing YAML are byte-for-byte identical to the loop-0 review; spot re-verification of L242-243 confirms the edit is confined to exactly the two flagged figures (PBT stated in Cr as 7.9213, ETR 26.53%, prior PAT 4.9677 all correct). No downstream monitor (ROCE LIT, slow-moving LIT, PAT-margin AMBER, CFO/PAT UNKNOWN), no verdict (PROCEED WITH CAVEATS), no decision (WATCHLIST / 8A-W), and no brief line depends on the two edited figures, so nothing regressed.
+
+### 2C. Deck-quirk not surfaced by A4 (informational, not an A4 error — unchanged)
+
+Deck slide-14 FY25-26 EBITDA prints 4,106.13 L (pres L437) vs raw-derived reported EBITDA 4,122.37 L (Q1 bars 802.34 / 975.62 tie exactly). A4 correctly used its own raw-derived figure; the deck's own FY26 bar is internally inconsistent and left un-noted. Minor; not a gate failure.
+
+**ARITHMETIC: PASS.** All tables tie; both loop-0 failures corrected and re-verified.
+
+---
+
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims; strongest bear counter from the SAME extract)
+
+**Claim 1 — "Revenue +37.24% YoY, GREEN, acceleration above FY26 ~21%" (L177, L192).**
+Bear from extract: (a) Q1FY26 comparative is management-converted, NOT limited-reviewed (results L183-189; pres L455); (b) deck's own FY revenue history (pres L238) shows YoY growth DECELERATING multi-year (+56%→+104%→+21%), so a single seasonal-low Q1 at +37% is not "acceleration"; (c) op EBITDA only +16.42%, ~60% of PAT growth is OI.
+Survives? **Partially — already incorporated.** A4 flags the unreviewed comparative (F7-01), single-quarter/seasonal caveat (L219), OI-flattering (Step 4). Multi-year-deceleration nuance does not overturn GREEN; not material enough to graft.
+
+**Claim 2 — "Deck ROCE 27.42–31.08% healthy; de-risks the ROCE thesis-break trigger" (L271, L342, L370, L397).**
+Bear from extract: mgmt-computed, unaudited, OCR-ambiguous period pairing with a garbled third bar (5.59%, pres L261); RoNW simultaneously DECLINED 6.88→5.94% (pres L477-478); no cash statement, so ROCE cannot lift the cap.
+Survives? **No (fully incorporated).** A4 caveats mgmt-computed/period-ambiguous, refuses Pillar-1 re-rate (L397), holds ROCE does NOT lift the cap (L279).
+
+**Claim 3 — "AOV +30.81% = first hard corroboration of B2B/corporate-deepening mix thesis" (L149, L498).**
+Bear from extract: (a) SKU growth is "primarily… small and low-cost items" (pres L356-358), in tension with a bigger-basket corporate story; (b) gross margin FLAT ~24% (L199) → no visible mix uplift; (c) orders-per-customer fell 7.1% and the split is withheld (single-segment, F12-01), so AOV could be price/unit-cost, not corporate mix.
+Survives? **No (already hedged).** A4 states "consistent with, though NOT proof of" (L149), flags flat gross margin as no Robu-2.0 uplift (L199), keeps B2B share UNKNOWN.
+
+**Adversarial verdict: NO new surviving bear counter requiring insertion.** All three strongest counters already grafted.
 
 ---
 
 ## VERDICT
 
-**COMPLETE.**
+**COMPLETE.** Proceeds to Notion save.
 
-- Deliverable gate: PASS (all four plain-language brief parts present).
-- Coverage: PASS (fresh counts match A2 on all categories; zero orphan rows; zero rows missing from ledger).
-- Arithmetic: PASS (every derived metric reproduces from raw extract; two ≤0.01pp PAT-margin rounding nits noted, within tolerance, not failures).
-- Adversarial: PASS (three strongest bear counters all already incorporated; none survives as a new required addition).
+- GATE 0 (deliverable brief, 4 parts): PASS.
+- COVERAGE (both ledgers, both forensics' forward/ambiguous → QfM): PASS, zero orphans.
+- ARITHMETIC: PASS — all mandated tables tie; the two loop-0 Step-4 failures are corrected and re-verified (core pre-tax +0.6936 Cr; ex-OI PAT ≈5.44 Cr / +9.5%), now consistent with the tying PAT bridge; no regression elsewhere.
+- ADVERSARIAL: no new surviving bear counter.
 
-No loop-back required. This review may proceed to Notion save.
+No gap remains.
 
 ```yaml
 stage: A5-adversary

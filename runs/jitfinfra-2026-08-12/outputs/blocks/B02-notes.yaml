@@ -1,0 +1,44 @@
+stage: B02-notes
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus absent","rating absent","announcements absent","shareholding absent","research absent","presentation absent","concalls absent (concalls_available:false)"]
+flags:
+  - type: FLAG-CASH
+    reason: "Working capital cash conversion deteriorating across multiple anchors: consolidated trade receivables +45% YoY vs +24% revenue growth (Note 42.24 p.239); >1yr overdue share of receivables rose from ~4.0% to ~11.2%; ECL coverage only 0.12%; retention money (non-current + embedded current) +33.9% YoY to Rs 32,569.78 lakh (Note 7 p.174, Note 12 p.175); estimated DSO worsened ~157 to ~184 days; unbilled revenue +20% YoY to Rs 51,375.89 lakh while customer advances fell -19% YoY (Note 42.29 p.243); trade payables +58% YoY (Note 27 p.187) consistent with stretching supplier credit to fund the gap. Partial offset: cash and cash-like balances +28.7% YoY, though partly debt-funded (Note 13 p.175, Note 14 p.175)."
+accounting_quality: 4        # /10
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Consolidated net worth attributable to owners negative Rs (51,327.81) lakh; gearing 115.63%", note_ref: "Note 19(B) p.178; Note 42.5 p.212", rating: "RED", why: "Structurally over-levered against negative equity base"}
+  - {rank: 2, finding: "Two subsidiaries carry auditor going-concern language: Material Uncertainty (JITFWIL/NRDA) and Emphasis of Matter (JUWMBL Bathinda)", note_ref: "Auditor's Report p.156; Note 42.26(a),(d) pp.240-241", rating: "RED", why: "Direct auditor doubt on ability to continue as going concern at two operating entities"}
+  - {rank: 3, finding: "Group funding dependent on two promoter-group lenders; combined RPT interest ~45% of total finance cost", note_ref: "Note 20 pp.179-185; Note 42.14 pp.227,229; Note 39 p.189", rating: "RED", why: "Near half of all interest cost flows to related-party lending vehicles"}
+  - {rank: 4, finding: "Non-cash Rs 4,592.17 lakh subsidiary ESOP charge (40x strike discount, front-loaded) is sole driver of net loss for the year", note_ref: "Note 42.36 pp.254-255; P&L p.166", rating: "RED", why: "Headline loss is entirely a one-off assumption-driven non-cash charge"}
+  - {rank: 5, finding: "CARO cross-reference: all 11 listed subsidiaries flagged for cash losses (para 3(xvii)); 2 also flagged short-term funds used long-term (3(ix)(e))", note_ref: "Annexure A to Auditor's Report (Consol.) p.162", rating: "RED", why: "Independently confirms broad subsidiary-level cash weakness, not visible from notes alone"}
+  - {rank: 6, finding: "Trade receivables +45% YoY vs +24% revenue growth; >1yr overdue share roughly tripled to ~11.2%; ECL coverage only 0.12%", note_ref: "Note 42.24 p.239; Note 42.5 p.211", rating: "RED", why: "Clear cash-conversion deterioration with thin provisioning"}
+  - {rank: 7, finding: "Retention money (non-current + embedded current) Rs 32,569.78 lakh, +33.9% YoY", note_ref: "Note 7 p.174; Note 12 p.175", rating: "RED", why: "Sharper anchor for cash-conversion deterioration"}
+  - {rank: 8, finding: "Corporate guarantees to subsidiary lenders Rs 2,22,965.01 lakh, ~4.4x total consolidated assets", note_ref: "Note 42.11 p.222; Balance Sheet p.165", rating: "RED", why: "Very large off-balance-sheet exposure relative to entity size"}
+  - {rank: 9, finding: "JWIL Infra's 45.4% NCI held by promoter-group entity Samarpan Infra Holdings; its dividend is the entire Group NCI dividend for FY26", note_ref: "Note 42.14 pp.225,229; Statement of Changes in Equity p.168", rating: "RED", why: "Minority capital and payout are not truly external; related-party governance concern"}
+  - {rank: 10, finding: "Verified contradiction: loan to WTD/CEO Sinha disclosed in one note, denied in another", note_ref: "Note 18(iii) p.153; Note 24.11.7/8 pp.147,149", rating: "RED", why: "Same-document, unreconciled disclosure-accuracy failure"}
+  - {rank: 11, finding: "Trade payables +58% YoY, outpacing revenue and receivables growth", note_ref: "Note 27 p.187", rating: "YELLOW", why: "Consistent with stretching supplier credit to fund working capital"}
+  - {rank: 12, finding: "Related-party purchases rising fast: Jindal Saw ~24% of consolidated revenue, +45% YoY; no arm's-length benchmarking disclosed", note_ref: "Note 42.14 pp.226-227", rating: "YELLOW", why: "High related-party procurement concentration without pricing-fairness disclosure"}
+  - {rank: 13, finding: "Capex acceleration: Capital WIP +485% YoY, intangibles under development +377% YoY, capital commitments +116% YoY", note_ref: "Note 42.23 p.239; Note 42.27 pp.241-242; Note 42.12 p.222", rating: "RED", why: "Large forward funding need against already stretched balance sheet"}
+  - {rank: 14, finding: "Standalone parent carries JUISL investment at unimpaired cost Rs 32,083.16 lakh unchanged, despite consolidated negative net worth", note_ref: "Note 3 p.121", rating: "YELLOW", why: "Carrying-value realism unverified against consolidated economic reality"}
+  - {rank: 15, finding: "Liquidity counterpoint: cash and cash-like balances +28.7% YoY, though partly debt-funded", note_ref: "Note 13 p.175; Note 14 p.175", rating: "GREEN", why: "Genuine partial offset to the working-capital deterioration narrative"}
+red_flags:
+  - "Front-loaded ESOP fair-value expensing (100% in grant year vs 1-year vesting), 40x strike-to-fair-value discount, unbenchmarked volatility assumption"
+  - "Verified same-document contradiction on whether a loan was granted to a KMP"
+  - "Related-party role concentration: Siddheshwari Tradex is simultaneously top lender, guarantor and 11.68% shareholder; Samarpan Infra Holdings is the entire Group NCI-dividend recipient"
+  - "ECL coverage of only 0.12% against a receivables book where >1yr overdue exposure nearly tripled"
+  - "CARO cross-reference shows cash losses at all 11 listed subsidiaries, not disclosed in the consolidated notes themselves"
+  - "Two unreconciled 'advance from customer' figures across Note 29 and Note 42.29; ambiguous going-concern entity naming (NRDA) repeated in the signed Auditor's Report"
+questions_for_mgmt:
+  - "Reconcile Note 24.11.7/8 (loan to WTD/CEO Sinha) against Note 18(iii) (no loan to any KMP) -- which is accurate?"
+  - "What quantified impairment test supports the standalone unimpaired Rs 32,083.16 lakh JUISL carrying value against consolidated negative net worth of Rs (51,327.81) lakh?"
+  - "What is the basis for expensing the full Rs 4,592.17 lakh ESOP charge in the grant year on a 1-year vesting schedule, and how were the volatility/expected-life assumptions derived?"
+  - "Given all 11 CARO-reported subsidiaries show cash losses, what is the plan to restore subsidiary cash generation, and what covenant headroom exists on Rs 3,94,547.85 lakh of consolidated borrowings?"
+  - "Why is ECL coverage only 0.12% of gross receivables when >1yr overdue exposure nearly tripled to ~11.2%, and does this adequately capture risk in the Rs 51,375.89 lakh of unbilled EPC revenue?"
+receivables_trend: "deteriorating - consolidated gross trade receivables +45% YoY (Rs 97,593.84 lakh to Rs 1,41,932.47 lakh) vs +24% revenue growth; >1yr overdue share of gross receivables rose from ~4.0% to ~11.2%; estimated DSO worsened from ~157 to ~184 days; retention money +33.9% YoY to Rs 32,569.78 lakh; ECL loss-allowance coverage only 0.12% (Note 42.24 p.239, Note 7 p.174, Note 12 p.175, Note 42.5 p.211)"
+restatements_found: []
+going_concern_language: "Material Uncertainty relating to Going Concern for JITF Water Infra (Naya Raipur) Limited (JITFWIL/NRDA) re non-extension of the O&M Concession Agreement beyond 4-Jan-2018; separate Emphasis of Matter for JITF Urban Waste Management (Bathinda) Limited (JUWMBL) re Municipal Corporation default and management's assessment based on the Arbitration Award and promoter support -- both per Independent Auditor's Report on the Consolidated Financial Statements, p.156, cross-referenced to Note 42.26(a) and 42.26(d), pp.240-241"

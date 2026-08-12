@@ -1,0 +1,23 @@
+stage: B01-gate0
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus: absent", "rating: absent", "announcements: absent", "shareholding: absent (no shareholding-pattern filing in inputs)", "research: absent", "presentation: absent", "concalls: absent (concalls_available:false)", "trade payables: not disclosed in screener CSV FY17-FY24, blocks B4/M12", "capex breakdown: only available FY25-FY26 from results filing, blocks B2/B3 for FY17-FY24", "contingent liabilities: not in provided data, blocks E4"]
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID. Core score 15/100 driven by negative net worth in all 10 fiscal years (FY17-FY26), median ROCE 5.3%, cumulative CFO/PAT -0.81x. Deal-breaker #6 (Net Debt/EBITDA 6.71x AND Interest Coverage 1.14x, FY26 audited results filing) independently caps classification at AVOID."}
+  - {type: FLAG-CASH, reason: "Block B trend deteriorating: FCF negative both years capex data exists (FY25 -Rs95.53 Cr, FY26 -Rs45.72 Cr) as capex (Rs244-281 Cr/yr) outpaces CFO (Rs185-199 Cr/yr); funded by borrowings up 12.6% YoY to Rs3946.04 Cr."}
+  - {type: FLAG-SHAREHOLDING, reason: "Block E fully unscored (0/20): no promoter holding, pledge, or contingent-liability data in any provided input. Company memory (unanchored) reports promoter holding 63.03% flat since Sep-2023 but is not anchored to any input source."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 0, C: 8, D: 2, E: 0}
+core_score: 15
+moat_score: 12
+grand_total: 27
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers: ["1: Block A <8 -> max GOOD", "2: Block B <8 -> max GOOD", "3: median ROCE 5.34% <10% -> max AVERAGE", "4: cumulative CFO/PAT -0.81 <0.50 -> max AVERAGE", "6: Net Debt/EBITDA 6.71x AND Interest Coverage 1.14x -> AVOID (triggered, FY26 audited)", "8: PAT negative in FY26 (last 3 years) -> max AVERAGE"]
+history_downgrade: false
+data_notes: ["PAT loss-to-profit swing FY23 to FY24; reverted to loss FY25 to FY26", "ROCE computed with capital-employed proxy (Equity+Reserves+Borrowings) since screener BS lacks current/non-current split; FY26 cross-checked against audited Total Assets-Current Liabilities (13.72% vs 13.31% proxy, immaterial diff)", "ROE N/M: Net Worth negative all 10 years, A3 scored 0 not computed", "FCF/capex only available FY25-FY26 from results filing cash flow statement; FY17-FY24 marked N/A", "Trade Payables undisclosed FY17-FY24; B4 and M12 scored on data-gap basis, not measured", "M9 GM proxy degraded: EMSLIMITED and WABAG have no Raw Material Cost line (PEER DATA NEEDED); AWHCL near-zero material cost not comparable across business models", "M7 PEER DATA NEEDED: total listed-player count in segment not established beyond 4 named comparables", "M5: JITF is smallest of 5 named comparables by market cap (Rs892.83 Cr)", "screener Net Profit confirmed as PAT attributable to owners of parent (post-NCI), reconciled exactly against FY26 consolidated results filing"]
+block_b_trend: "deteriorating - FY26 FCF -Rs45.72 Cr (CFO Rs198.76 Cr less capex Rs244.48 Cr, results filing) vs FY25 FCF -Rs95.53 Cr, both negative; Net Debt/EBITDA 6.71x FY26 confirms leverage-funded capex"

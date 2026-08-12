@@ -1,0 +1,25 @@
+stage: B13-synthesis
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-opus-4-8
+status: complete
+phase: 1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER, FLAG-GOVERNANCE, FLAG-EARNINGS-QUALITY, FLAG-DISCLOSURE]
+confidence_delta: {numerical: 100, redflag: 86, framework: 100, peer: 92, overall: 86}
+valuation_decision: ""          # phase 1 lite: stage 11 valuation not run
+entry_range: {low: 0, high: 0}
+headline: "Debt free cable maker, unproven fibre transition"
+cash_flag_determination: GROWTH-INDUCED
+falsification_metric: "First FY27 cash flow statement shows year end inventory still above ~Rs 1,000cr and standalone CFO/PAT still under 30% with no fresh copper/RM explanation, reclassifying the FY26 cash flag from growth induced to structural"
+monitorables_count: 8
+publish_candidate: false
+files_written:
+  - runs/fincables-2026-08-12/outputs/final/business-narrative.md
+  - runs/fincables-2026-08-12/outputs/final/gate-recommendation.md
+  - runs/fincables-2026-08-12/outputs/final/verifier-summary.md
+notion_save:
+  page_title: "FINCABLES — Finolex Cables — Phase 1 gate (2026-08-12)"
+  summary: "Debt free cable maker, unproven fibre transition. PROCEED WITH FLAGS (rule 3; FLAG-PROMOTER + FLAG-CASH active, cash GROWTH-INDUCED). Gate 0 AVERAGE (core 42), moat NONE, emerging moat MODEST. Confidence 86, +26 post re-run. Phase 1 lite: no valuation decision or entry range."
+  mode: append-never-overwrite-status

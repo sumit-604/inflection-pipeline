@@ -49,3 +49,14 @@
 - Management FY27 guidance (from Q4 FY26): sales value ₹3,300-3,500 Cr (+40-49%), volume
   5.0-5.5 msf (+20-33%), collections ₹2,100-2,200 Cr (+26-32%), handovers 3,750-3,800 units (+8-10%).
 - This context is passed inline to A3 and A4. Subagents do not call Notion themselves.
+
+## Pipeline outcome (2026-08-12)
+- A1 x3: pass (results 10pp Lakhs->Cr; presentation 26pp; press release 4pp; all 100% coverage).
+- A2 x3: pass (17 notes / 26 slides / press-release units; count tests reconciled).
+- A3 x3: pass (all F1-F17 marked, no blanks; 24 flagged findings).
+- A4: PROCEED WITH FLAGS; cash conversion INDETERMINATE; Decision Status AVOID verified (8A-W).
+- A5: COMPLETE after one loop (4 A4 fixes: gross-debt +41 label, EBITDA 174.29,
+  non-cash finance-relief counter, debt-funded net-debt counter).
+- Notion: full review + forensics/audit proof appended to Shriram Properties page;
+  Key Notes audit trail prepended; Decision Status unchanged (AVOID, no trigger fired).
+- clean run (one adversary loop, resolved within gate).

@@ -1,0 +1,60 @@
+stage: B09-tam
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR-STALE (FY20 is the most recent annual report available)"
+  - "Results, rating, announcements, shareholding-detail, and research documents ABSENT from inputs"
+  - "Finolex export revenue % NOT FOUND"
+  - "Water heater / conduit / accessories India market size NOT FOUND (excluded from FMEG TAM rather than estimated)"
+  - "BharatNet cable-cost fraction of total program capex NOT FOUND (assumption used only as an illustrative 5D lever, not in core TAM)"
+  - "Precise FY26 revenue for Polycab and KEI Industries NOT FOUND to full precision (Method 3 peer aggregation is light-touch only)"
+  - "Publisher and exact publication year for the independent HV/EHV cable market figure ($498.9mn, 4.7% CAGR) not independently confirmed (direct fetch blocked)"
+flags:
+  - "Management's EHV cable market claim ($4-5bn in 3-4 years) is ~7.7x an independent conservative projection for the same market ($586mn/₹5,570cr) — read as inflated; excluded from the core TAM/SAM/SOM funnel because the JV (Finolex J-Power Systems, 49% held) is equity-accounted, not consolidated revenue"
+  - "Finolex's OFC market-share figure is unresolved: injected brief cites ~11-12% (behind Sterlite/STL, Birla, HFCL); WebSearch surfaced a different, lower-authority figure set (Birla 20%, Finolex 18%, Vindhya 15%, HFCL 5%) from directory/blog-tier sources; used 11-12% going forward but flagged low-confidence, unverified independently"
+  - "BharatNet Phase 3 budget figure (Rs 1.39 lakh cr) is dated August 2023, >2 years old — flagged STALE per staleness rule, used directionally only in Section 5D, not in core TAM"
+  - "Two top-down electrical W&C market-size estimates (IMARC $7.0bn vs. Samarwealth/FortuneBI-class $10.01bn, both 2025) diverge ~1.4x on the same nominal scope; conservative bias applied, took the lower"
+  - "Current market cap (~Rs 13,333cr) used for the valuation-implication line is sourced from a WebSearch-surfaced financial-media/social-media snapshot, not a primary exchange filing — precision and exact date not independently verified"
+market_definition: "India electrical wires & cables (building/auto/industrial/power/solar) + communication cables (OFC + legacy metallic) + FMEG-narrow (fans, lighting, switchgear-lite); EHV cable (JV-only, equity-accounted) explicitly excluded from the core funnel"
+tam_cr: {conservative: 99600, realistic: 135100}
+sam_cr: 85100
+sam_pct_of_tam: 85.4
+som_3yr_cr: 10529
+som_5yr_cr: 15321
+som_implied_revenue_cagr: {yr3: 18.5, yr5: 19.4}
+current_sam_share_pct: 7.4
+revenue_headroom_x: 13.5
+tam_growth_pct: 11.5
+runway_class: "STRONG"
+mgmt_claim_cr: 42750
+mgmt_claim_ratio: 7.7
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient - B07 capex-embedded growth (~36%) exceeds the ~19% SOM-implied revenue CAGR at yr3/yr5; capacity is not the binding constraint on SOM, competitive share-gain execution is"
+methods_used:
+  - "Top-down industry reports (IMARC vs. Samarwealth/FortuneBI-class, cross-checked against an organized-segment trade estimate)"
+  - "Peer revenue aggregation + organized/unorganized split (Method 3, light-touch, precision-limited)"
+  - "Independent segment benchmark for EHV cable, used specifically to test management's claim (Method 5)"
+stale_data_flags:
+  - {datapoint: "BharatNet Phase 3 budget Rs 1.39 lakh cr", source: "Union Cabinet approval / PIB, via WebSearch", year: "2023"}
+  - {datapoint: "India HV/EHV cable market size $498.9mn, 4.7% CAGR", source: "aggregated WebSearch, Mordor Intelligence-class report, publisher unconfirmed", year: "unspecified, assumed 2024-2025"}
+searches_performed:
+  - "India wires and cables market size 2026 CRISIL ICRA report"
+  - "Finolex Cables optical fibre OFC market share India 11% 12%"
+  - "India EHV cable market size $4-5 billion Finolex Sumitomo JV"
+  - "India FMEG market size 2026 crore fans lighting switchgear"
+  - "India wires and cables market size Rs crore IMARC 2025 organized unorganized"
+  - "Finolex Cables concall EHV market opportunity $4bn $5bn 3-4 years"
+  - "BharatNet Phase 3 optical fiber cable demand India crore"
+  - "India data center AI fiber optic cable demand growth 2026"
+  - "Finolex Cables OFC market share Sterlite Birla HFCL third largest"
+  - "India optical fibre cable market size fiber km million 2025 2026 value"
+  - "USD to INR exchange rate August 2026"
+  - "Finolex Cables Q4 FY26 concall EHV cable market $500m $750m grow"
+  - "India wires and cables market size Rs crore total 2025 current value Mordor Intelligence"
+  - "India high voltage extra high voltage underground power cable market size independent report"
+  - "India cables and wires market samarwealth $5 Trillion Economy size crore"
+  - "India wires cables organized unorganized market share percentage split 35% 40%"
+  - "Polycab KEI Industries RR Kabel Havells cable segment revenue FY26 crore"
+searches_skipped: []

@@ -1,0 +1,15 @@
+confidence_delta:
+  numerical_acceptance: 69      # B12a: 13 material numbers checked, 0 CRITICAL, 4 MAJOR (all on B01 leverage/current-ratio methodology), 4 MINOR
+  redflag_coverage: 83          # B12b: 10 of 12 independent flags caught; 0 CRITICAL; concurs credibility grade C
+  framework_adherence: 99       # B12c Gate0 + Emerging Moat portion ONLY; 80 of 81 phase-1 rules clean; AVOID and MODEST both survive re-derivation
+  peer_utilisation: 100         # B12d (valid re-run): all 4 peers substantive-confirmed, every citation findable, 0 CRITICAL/MAJOR
+  overall: 69                   # min of the four available components
+  band: "60-74 — normal-to-lower; any PROCEED-family verdict downgrades one confidence level"
+  valuation_adherence: pending-phase-3   # B12c valuation half (B10/B11) deferred; recompute in /finalize
+rework_gate:
+  triggered: false
+  reason: "No CRITICAL from Verifier A; no valid verifier acceptance_rate below 60% (B12a 69, B12b 83, B12c 99, B12d 100). The first B12d run's 0% / CRITICAL was a false-premise tooling failure (claimed peer transcripts absent when all 16 are present and readable) and is superseded by the corrected re-run."
+source_fidelity_gate:
+  a_findings_source_fidelity_true: 3
+  disposition: "All 3 are MAJOR (not CRITICAL) and none flips the verdict: (1) B01 ND/EBITDA 6.71x post-exceptional vs 6.19x pre-exceptional standard — both breach 3x; (2) B01 Interest Coverage 1.14x post-exceptional vs 1.251x pre-exceptional — both fail; (3) B01 Current Ratio 1.47x ANCHOR NOT FOUND, correct audited value 1.345x. Synthesis carries the corrected/audited figures with anchors; classification AVOID unchanged, independently re-derived clean by Verifier C. Logged in verifier-disagreement-log.md."
+  driver_of_overall: "numerical_acceptance 69% is the binding component; it reflects Gate 0's post-exceptional leverage methodology and one anchor-not-found current ratio, not any decision-relevant fabrication."

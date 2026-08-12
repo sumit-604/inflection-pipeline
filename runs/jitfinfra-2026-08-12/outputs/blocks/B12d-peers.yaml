@@ -1,0 +1,20 @@
+stage: B12d
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+note: "This is the valid re-run. The first B12d run raised a CRITICAL 'fabrication' finding on the false premise that the peer transcripts did not exist in inputs/; the orchestrator verified all 16 peer-concalls PDFs are present and readable (and Verifier B independently read them), so the first run was a tooling/listing failure and is superseded by this run. Logged in the disagreement log and LESSONS."
+peers_audited: 4
+substantive_confirmed: 4
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 1 Q7 / Part 3 coverage map (WABAG Nov 2025)", claimed: "CBG-from-sludge quote 'we had recently bagged one order...' attributed to both Nov 2025 and Feb 2026 calls", source_truth: "Exact phrase found only in Feb 2026 call; Nov 2025 call discusses a CBG/biogas project but with different wording ('breakthrough project for setting up of Biogas Upgradation Unit... SATAT')", note: "Underlying fact (live CBG project) is corroborated in both quarters; only the literal quoted phrase is over-attributed"}
+  - {severity: "MINOR", location: "B06 Part 1 Q5 (AWHCL Feb 2026 cross-read)", claimed: "~22-23% blended collection-and-transportation margin", source_truth: "22-23% is AWHCL's company-wide blended EBITDA margin guidance (C&T + Processing + Contracts combined); no C&T-only margin is separately disclosed in any of the four AWHCL transcripts", note: "Figure is correctly sourced but mislabeled as segment-specific rather than company-wide"}
+  - {severity: "MINOR", location: "B06 Part 1 Q7 / Part 3 coverage map (AWHCL Q4 FY26)", claimed: "May 2026 call", source_truth: "Transcript dated June 1, 2026 (SEBI filing dated June 4, 2026)", note: "Quarter and figures are correctly identified (Q4/FY26 close, 177,000t RDF, Rs18,000cr order book); only the calendar-month label is off"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

@@ -1,4 +1,17 @@
-=== PAGE 1 chars= 1625 ===
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_sprop_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 26
+formfeed_count: 26
+line_count: 666
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (every rupee figure in this deck is explicitly labeled "₹ Crores" / "₹ Crs" / "(₹ in Crs)"; no Lakhs or Millions currency figures present; "msf" = million square feet is an area unit, not a currency unit, and is left unconverted)
+ocr_pages: [21 (supplemental chart-only OCR; page itself had 2,509 chars of native text but the circular "MISSION 1234" graphic renders as an image), 23 (full-page OCR fallback; native text extraction yielded only 28 characters, below the 100-character threshold)]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-12
+=== END HEADER ===
+[page 1]
 August 12, 2026
 
  National Stock Exchange of India Limited                              BSE Limited
@@ -48,7 +61,7 @@ Encl: a/a
  CIN No. : L72200TN2000PLC044560 Email: cs.spl@shriramproperties.com
 
 
-=== PAGE 2 chars= 160 ===
+[page 2]
     Investor Presentation
     Q1 | FY27 Results
 
@@ -59,7 +72,7 @@ Artist’s impression of Shriram Stellar, Chennai
                                                   August 12,2026
 
 
-=== PAGE 3 chars= 2767 ===
+[page 3]
 This presentation and the accompanying slides (the “Presentation”), which have been prepared by Shriram Properties Limited (the “Company” or “SPL”), have been prepared solely for information purposes and do not constitute any offer, recommendation or invitation to
 purchase or subscribe for any securities, and shall not form the basis or be relied on in connection with any contract or binding commitment whatsoever. No offering of securities of the Company will be made except by means of a statutory offering document containing detailed
 information about the Company.
@@ -75,7 +88,7 @@ The Company assumes no obligation to update any forward-looking information cont
 responsible for such third-party statements and projections.                                                                                                                                                                                                                               1
 
 
-=== PAGE 4 chars= 1377 ===
+[page 4]
                    Shriram Properties Overview
 
 
@@ -96,13 +109,13 @@ Bengaluru, Chennai, Kolkata &    precision and consistency       through trust a
                                                                                                                                 2
 
 
-=== PAGE 5 chars= 171 ===
+[page 5]
                                                      Q1| FY27 Performance Highlights
 Artist’s impression of Shriram Sapphire, Bangalore
                                                                                        3
 
 
-=== PAGE 6 chars= 1509 ===
+[page 6]
 Q1 FY27: Strong Operational Start; Strengthening Growth Visibility
 
          Strong Operational Momentum
@@ -128,7 +141,7 @@ Q1 FY27: Strong Operational Start; Strengthening Growth Visibility
              Q1 performance remained modest, Full year outcome to remain robust with skewed H2 launches and completions                       4
 
 
-=== PAGE 7 chars= 2289 ===
+[page 7]
     KPI Snapshot : Q1| FY27
                           Sales Value                                                     Sales Volume                                                        Collections             Handovers
 
@@ -159,7 +172,7 @@ ________________                                                                
 Note: Data presented herein reflects aggregate for the Company, covering all projects under all development formats viz., Own, JV/JDA and DM; 1 msf = Million Square Feet;
 
 
-=== PAGE 8 chars= 2121 ===
+[page 8]
 Performance Highlights: Q1| FY27
 
               Operational Highlights                           Financial Highlights                                BD Highlights
@@ -190,7 +203,7 @@ Performance Highlights: Q1| FY27
                                                                                                                                                    6
 
 
-=== PAGE 9 chars= 2915 ===
+[page 9]
 Q1 FY27 Launches – Strong Launch Momentum
 Launches – Q1 FY27
                                                                  Area       Launch Area
@@ -222,7 +235,7 @@ Shriram Green Meadows     Chennai      Phase      Apartment       0.2           
                         Premiumization and portfolio diversification led launches, backed by strong customer demand                          7
 
 
-=== PAGE 10 chars= 721 ===
+[page 10]
 High Powered launch highlights in Chennai & Kolkata during Q1
 
 
@@ -236,7 +249,7 @@ Shriram Stellar – Koyambedu, Chennai                            Shriram Southb
                                                                                                                                  8
 
 
-=== PAGE 11 chars= 3613 ===
+[page 11]
 Project Pipeline & Business Development Overview
                                                   Project Pipeline (msf)                                                         BD Pipeline likely addition in next 3-6 months
                                                                                                                          33.7
@@ -279,13 +292,13 @@ Project Pipeline & Business Development Overview
                                                                                                                                                                                                9
 
 
-=== PAGE 12 chars= 168 ===
+[page 12]
                                                     Financial Highlights : Q1|FY27
 Artist’s impression of Shriram Esquire, Bangalore
                                                                                      10
 
 
-=== PAGE 13 chars= 4725 ===
+[page 13]
     Financial Highlights: Profit & Loss – Q1|FY27
                                      Particulars (₹ Crs)                                                    Q1 FY27       Q1 FY26     Q4 FY26      FY26
     Income from Operations                                                                                       224.3        242.3       640.9     1,267.4
@@ -321,7 +334,7 @@ _________________
 •     Margin impact largely attributable to product mix rather than structural factors                                                                                                                 11
 
 
-=== PAGE 14 chars= 1484 ===
+[page 14]
 Financial Highlights: Profit & Loss – Q1|FY27 (continued)
  o Revenue growth remained modest, reflecting limited scheduled project completions during Q1 and continued revenue recognition
    from Kolkata projects
@@ -350,7 +363,7 @@ Financial Highlights: Profit & Loss – Q1|FY27 (continued)
                                                                                                                                               12
 
 
-=== PAGE 15 chars= 4851 ===
+[page 15]
 Consolidated Cash Flows: Q1|FY27 (Excl. DM & JV cashflows)
 
  Particulars (₹ In Crs)                                   Q1 FY27          Q1 FY26         FY26                         Collection Trends (₹ In Crs)
@@ -398,7 +411,7 @@ Consolidated Cash Flows: Q1|FY27 (Excl. DM & JV cashflows)
                           Strategic cash deployment towards project execution and new investments to drive future cash flow generation                                                      13
 
 
-=== PAGE 16 chars= 2688 ===
+[page 16]
     Debt Profile: Healthy Gearing with Competitive Cost
 
       Debt Profile trends - Consolidated
@@ -433,12 +446,12 @@ ________________________________________________________________________________
                                                                                                                                                                                   14
 
 
-=== PAGE 17 chars= 100 ===
+[page 17]
                                                 FY27 Guidance & Outlook
 Artist’s impression of Shriram Spectrum, Pune                             15
 
 
-=== PAGE 18 chars= 1331 ===
+[page 18]
 FY27 Outlook: Guidance Remains Unchanged
       Sales Volume                           Sales Value                            Collections                Handovers
 
@@ -467,7 +480,7 @@ FY27 Outlook: Guidance Remains Unchanged
                                                                                                                               16
 
 
-=== PAGE 19 chars= 2157 ===
+[page 19]
 FY27 New Project Launch Calendar : 10+ New Launch Potential
 New Project Launches – FY27
 
@@ -493,7 +506,7 @@ Sarjapura              Bangalore    Apartment       0.51         0.51       Q4  
  •     With most of the project approval work progressing steadily, approval delay insulation provided to avoid slippages                          17
 
 
-=== PAGE 20 chars= 728 ===
+[page 20]
 FY27 Handovers: High Confidence on FY targets driven by On-track Project Progress
 Revenue recognition from recent completions likely during remainder of FY27
 
@@ -513,7 +526,7 @@ Revenue recognition from recent completions likely during remainder of FY27
        Proactive planning and with e-Khata buffers already factored, FY27 revenue recognition to remain robust   18
 
 
-=== PAGE 21 chars= 2509 ===
+[page 21]
 Our Mission FY28 – On Steady Trajectory for Achieving
 
                                                                  Pipeline Project Revenue Recognition Potential
@@ -549,8 +562,9 @@ Our Mission FY28 – On Steady Trajectory for Achieving
                                   ~₹ 14,000 Crs of Revenue to be recognised in 5-7 years
                                                                                                                                       19
 
+[CHART, page 21, OCR text: circular "MISSION 1234" graphic beside the funnel chart. Visual inspection (tesseract could not render the curved text) reads four ring-labeled segments, clockwise from top: "Oneness", "Doubling Sales", "Tripling Revenue", "Quadruple Profit". Qualitative mission-pillar labels only; no numeric values attached beyond the "1234" sequence marker.]
 
-=== PAGE 22 chars= 229 ===
+[page 22]
                                                                    Thank You
      Artist’s
 Artist’s       impression
@@ -559,7 +573,7 @@ Artist’s       impression
                                        Villas, Kolkata Bangalore               20 20
 
 
-=== PAGE 23 chars= 28 ===
+[page 23]
 Annexures
 
 
@@ -567,8 +581,9 @@ Annexures
 
             21
 
+[OCR page 23: page under 100 extracted characters, rasterised at 150 DPI and OCR'd with tesseract. OCR output: "Annexures" / page footer "21" (printed slide number). Confirms section-divider slide with no additional numeric or textual content beyond what pdftotext already captured.]
 
-=== PAGE 24 chars= 1260 ===
+[page 24]
 Annexure-1: Projects Snapshot by Development Models
 
 
@@ -597,7 +612,7 @@ Annexure-1: Projects Snapshot by Development Models
                                                                                                           22
 
 
-=== PAGE 25 chars= 4145 ===
+[page 25]
 Annexure-2: Consolidated Cash Flows – With and Without JV Cashflows
 
  Particulars                                                                                             SPL Consolidated (CFS)                        SPL Enterprise (100%)1 (Excl DM)
@@ -626,7 +641,7 @@ _________________
                                                                                                                                                                                                          23
 
 
-=== PAGE 26 chars= 765 ===
+[page 26]
 For further information, please contact:
 
 Company :                                  Investor Relations Advisors :
@@ -648,5 +663,4 @@ www.shriramproperties.com                  www.sgapl.net
 
 
                                                                                                24
-
 

@@ -1,0 +1,526 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_sprop_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 10
+formfeed_count: 9
+line_count: 526
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01
+ocr_pages: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+page_coverage: 100%
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026)
+extraction_date: 2026-08-12
+=== END HEADER ===
+
+NOTE ON EXTRACTION METHOD: Page 1 (Reg 30 & 33 Board Outcome letter) extracted
+via pdftotext -layout (native text, 2688 chars, well above the 100-char
+OCR threshold). Pages 2-10 each yielded 1 character from pdftotext -layout
+(image-based/scanned content embedded in the PDF) and were rasterised
+(pdftoppm -jpeg, 200dpi then re-rasterised at 300dpi for verification) and
+processed with tesseract 5.3.4 (--psm 6). For the two full numeric
+financial-statement tables (standalone P&L, page 4; consolidated P&L, page 9),
+tesseract's raw table-grid OCR produced digit/bracket artifacts from
+misread gridlines, so those two pages were transcribed by direct visual
+reading of the 300dpi page image against the source and are reported as
+visually verified, not raw OCR. All other OCR pages (2, 3, 5, 6, 7, 8, 10 --
+review-report prose, notes, signature blocks, and the Annexure 1 entity list)
+are tesseract raw output; pages 7 and 8 were additionally spot-checked against
+the 300dpi image (numeric figures on page 7, full entity list on page 8) and
+found to match exactly with no discrepancies. No numbers were estimated or
+inferred; every figure below is transcribed as it appears on the source page.
+
+[page 1]
+August 12, 2026
+
+  National Stock Exchange of India Limited                         BSE Limited
+  The Listing Department                                           Dept of Corporate Services
+  Exchange Plaza, 5th Floor Plot C 1 – G Block                     Phiroze Jeejeebhoy Towers
+  Bandra-Kurla Complex, Bandra (E)                                 Dalal Street, Fort
+  Mumbai 400 051                                                   Mumbai 400 001
+  Scrip Code: SHRIRAMPPS                                           Scrip Code: 543419
+
+Dear Sir/Madam,
+
+Sub: Outcome of the Board Meeting – August 12, 2026
+
+Pursuant to the provisions of Regulation 30 & 33 of SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015, we herewith inform you that at the meeting of the Board of Directors held today i.e., August 12,
+2026, which commenced at 06:30 P.M. and concluded at 07:20 P.M., have inter-alia considered and approved the
+following:
+
+    1. Unaudited Financial Results (Standalone and Consolidated) for the quarter ended June 30, 2026:
+
+        The Unaudited Financial Results (Standalone & Consolidated) of the Company for the quarter ended June
+        30, 2026, along with the Limited Review Report of the Statutory Auditors of the Company thereon are
+        enclosed herewith.
+
+    2. Convening of the Annual General Meeting:
+
+        The 5th Annual General Meeting ('AGM') post IPO of the Company will be held through video
+        conferencing/other audio-visual means (‘VC/OAVM’) in accordance with the circulars issued by the
+        Ministry of Corporate Affairs (‘MCA’) and Securities and Exchange Board of India (‘SEBI') and other
+        applicable laws.
+
+        The Annual Report along with the Notice of the AGM detailing the procedure for attending the AGM and
+        casting votes by shareholders, shall be shared with the Stock Exchanges and the Members of the Company
+        in due course, within the prescribed timeline.
+
+
+We request you to take the above information on record.
+
+Thanking you
+Regards
+
+For Shriram Properties Limited
+             Digitally signed
+K Rama bySwamy
+           K Rama
+
+
+Swamy Date:   2026.08.12
+       19:28:31 +05'30'
+
+K. Ramaswamy
+Company Secretary & Compliance Of�icer
+ACS 28580
+
+
+
+ Shriram Properties Limited                                  Registered office:
+ ‘Shriram House’, No. 31, T Chowdaiah Road,                  Lakshmi Neela Rite Choice Centre, 1 Floor,
+ Sadashivanagar, Bengaluru - 560 080                         #9, Bazulla Road, T. Nagar, Chennai – 600 017
+
+
+ P: +91-80-40229999 | F: +91-80-41236222 | W: www.shriramproperties.com
+ CIN No. : L72200TN2000PLC044560 Email: cs.spl@shriramproperties.com
+[page 2] [OCR page 2]
+Walker Chandiok & Co LLP
+Walker Chandiok & CoLLP
+5th Floor, No.65/2, Block “A”,
+Bagmane Tridib, Bagmane
+Tech Park, C V Raman Nagar,
+Bengaluru 560093
+T +91 80 4243 0700
+F +91 80 4126 1228
+Independent Auditor's Review Report on Standalone Unaudited Quarterly Financial Results of the
+Company pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 (as amended)
+To the Board of Directors of Shriram Properties Limited
+
+1. We have reviewed the accompanying statement of standalone unaudited financial results (‘the Statement’)
+of Shriram Properties Limited (‘the Company’) for the quarter ended 30 June 2026, being submitted by the
+Company pursuant to the requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 (as amended) (‘Listing Regulations’).
+
+2. The Statement, which is the responsibility of the Company's management and approved by the Company’s Board
+of Directors, has been prepared in accordance with the recognition and measurement principles laid down in
+Indian Accounting Standard 34, Interim Financial Reporting (‘Ind AS 34’), prescribed under section 133 of the
+Companies Act, 2013 (‘the Act’), and other accounting principles generally accepted in India and is in compliance
+with the presentation and disclosure requirements of Regulation 33 of the Listing Regulations. Our responsibility
+is to express a conclusion on the Statement based on our review.
+
+3. We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE)
+2410, Review of Interim Financial Information Performed by the Independent Auditor of the Entity, issued by the
+Institute of Chartered Accountants of India. A review of interim financial information consists of making inquiries,
+primarily of persons responsible for financial and accounting matters, and applying analytical and other review
+procedures. A review is substantially less in scope than an audit conducted in accordance with the Standards on
+Auditing specified under section 143(10) of the Act, and consequently, does not enable us to obtain assurance
+that we would become aware of all significant matters that might be identified in an audit. Accordingly, we do not
+express an audit opinion.
+
+4. Based on our review conducted as above, nothing has come to our attention that causes us to believe that the
+accompanying Statement, prepared in accordance with the recognition and measurement principles laid down in
+Ind AS 34, prescribed under section 133 of the Act, and other accounting principles generally accepted in India,
+has not disclosed the information required to be disclosed in accordance with the requirements of Regulation 33
+of the Listing Regulations, including the manner in which it is to be disclosed, or that it contains any material
+misstatement.
+
+Chartered Accountants Walker Chandiok & Co LLP is registered
+with limited liability with identification
+
+Offices in Bengaluru, Chandigarh, Chennai, Gurugram, Hyderabad, Kochi, Kolkata, Mumbai, New Delhi, Noida and Pune number AAC-2085 and its registered office
+at L-41 Connaught Circus, New Delhi,
+110001, India
+[page 3] [OCR page 3]
+Walker Chandiok & Co LLP
+Emphasis of Matter
+5. We draw attention to note 05 of the standalone financial results in relation to a search operation carried out by
+the Enforcement Directorate at the Company’s business premises in October 2024. There is no communication
+received by the Company as on date regarding any findings from the said search operation and the management
+has reiterated that there is nothing to implicate the Company, its subsidiaries/joint ventures, current or erstwhile,
+or its directors, in connection with the allegations.
+Our conclusion is not modified in respect of this matter
+For Walker Chandiok & Co LLP
+Chartered Accountants
+Firm Registration No: 001076N/N500013
+Digitally signed by
+VISHAL VISHAL SURESH
+Date: 2026.08.12
+SU RESH 19:14:02 +05'30'
+Vishal Suresh
+Partner
+Membership No. 285794
+UDIN: 26285794CQTCAV7292
+Bengaluru
+12 August 2026
+Chartered Accountants
+[page 4] [OCR page 4]
+Shriram Properties Limited
+Corporate Identity Number (CIN) : L72200TN2000PLC044560
+Registered Office: Lakshmi Leela Rite Choice Chamber New No. 9, Bazullah Road, T Nagar, Chennai - 600017
+Corporate Office: Shriram House No. 31, 2nd Main Road, T. Chowdaiah Road, Sadashivanagar, Bengaluru - 560080
+Telephone +91-80-40229999 | Fax +91-80-41236222
+Email ID: cs.spl@shriramproperties.com   Website: www.shriramproperties.com
+
+Statement of standalone unaudited financial results for the quarter ended 30 June 2026
+                                                                                       (₹ in lakhs, unless otherwise stated)
+
+                                                                   Quarter ended                                        Year ended
+Particulars                                     30 June 2026          31 March 2026          30 June 2025          31 March 2026
+                                                 [Unaudited]           [Refer note 6]         [Unaudited]           [Audited]
+
+Revenue
+Revenue from operations                         4,150                 6,477                  2,645                 19,398
+Other income                                     4,811                 7,082                  1,506                 13,219
+Total income                                     8,961                 13,559                 4,151                 32,617
+
+Expenses
+Land cost                                        7,305                 32                     12,712                15,713
+Material and contract cost                       3,387                 1,666                  4,474                 9,941
+Changes in inventories                           (8,542)               1,209                  (16,307)              (14,094)
+Employee benefits expenses                       2,373                 2,202                  2,216                 9,141
+Finance costs                                    1,189                 1,209                  854                   3,841
+Depreciation and amortisation expense            94                    95                     87                    379
+Impairment losses                                2                     64                     3                     74
+Other expenses                                   1,698                 1,855                  1,790                 7,144
+Total expenses                                   7,506                 8,332                  5,829                 32,139
+
+Profit / (loss) before tax                       1,455                 5,227                  (1,678)               478
+
+Tax expense/(credit)
+Current tax (including taxes for earlier years)  -                     -                      (400)                 (400)
+Deferred tax                                     173                   1,366                  (383)                 122
+Total tax expense/(credit)                       173                   1,366                  (783)                 (278)
+
+Profit/ (loss) for the period/ year              1,282                 3,861                  (895)                 756
+
+Other comprehensive (loss)/ income
+(a) Items that will not be reclassified to profit or loss
+(i) Re-measurement (loss)/ gain on defined benefit plans net of taxes   (11)   38   (5)   (43)
+Total other comprehensive (loss)/ income for the period/ year          (11)   38   (5)   (43)
+
+Total comprehensive income/ (loss) for the period/ year                1,271  3,899  (900)  713
+
+Paid up share capital (par value ₹10/- each, fully paid)          [blank]   [blank]   [blank]   17,065
+Other equity                                                       [blank]   [blank]   [blank]   1,42,767
+
+Earnings per share (*)
+(Nominal value ₹ 10 per share)
+Basic (in ₹)                                     0.75                  2.26                   (0.53)                0.44
+Diluted (in ₹)                                   0.75                  2.26                   (0.53)                0.44
+
+(*) EPS for the quarters not annualized
+See accompanying notes to the result
+[page 5] [OCR page 5]
+{{ snriram
+Properties
+Homes that five in you
+
+Notes to standalone unaudited financial results:
+
+1) The above standalone unaudited financial results of Shriram Properties Limited ("the Company"), for the quarter ended 30 June 2026 have been
+prepared in accordance with the recognition and measurement principles laid down in the Indian Accounting Standard 34, Interim Financial Reporting
+(‘Ind AS 34'), prescribed under section 133 of the Companies Act 2013 read with the Companies (Indian Accounting Standards) Rules, 2015 as
+amended, and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015.
+
+2) The statutory auditors of the Company have carried out a limited review of the above standalone unaudited financial results for the quarter ended 30
+June 2026 and they have issued an unmodified review report on the same. The review report of the statutory auditors is being filed with the National
+Stock Exchange of India Limited (‘NSE’) and BSE Limited (‘BSE’) and is also available on the Company's website.
+
+3) These standalone financial results have been reviewed by the Audit Committee and approved by the Board of Directors at their meeting held on 12
+August 2026.
+
+4) The Company is primarily engaged in the business of real estate development, which is considered to be the only reportable segment by the
+management. Further, the operations of the Company is domiciled in India and therefore there are no reportable geographical segment.
+
+5) The Enforcement Directorate conducted a search activity at the Company's business premises on 23 October 2024 and 24 October 2024. The
+management of the Company has extended full co-operation to the officials by responding to their clarifications/details sought and reiterates that there
+is nothing to implicate our subsidiaries/joint ventures, current or erstwhile, or its directors or the Company in connection with the allegations. The
+Company had made the necessary disclosures to the stock exchanges in this regard on 24 October 2024, in accordance with Regulation 30 of the
+SEBI (LODR) Regulations, 2015 (as amended). As on the date of issuance of these financial results, the Company has not received any formal
+communication regarding the findings of their investigation / examination.
+
+The Company after considering all available information and facts as of date, has not identified any material facts/requirements that requires any
+adjustments to the current or prior period financial statements. The auditors of the Company have included Emphasis of Matter paragraph in their
+report in respect of the aforesaid matter.
+
+6) The standalone financial results for the quarter ended 31 March 2026 are the balancing figures between audited results in respect of full financial year
+and the published year to date reviewed figures for the third quarter.
+
+For and behalf of the Board of Directors of Shriram Properties Limited
+Murali Digitally signed
+M | hes
+ray aP Dare 202608:12
+pan 19:02:02 +05°30"
+Murali M
+Chairman and Managing Director
+DIN: 00030096
+Bengaluru
+12 August 2026
+[page 6] [OCR page 6]
+Walker Chandiok & Co LLP
+5th Floor, No.65/2, Block “A”,
+Bagmane Tridib, Bagmane
+Tech Park, C V Raman Nagar,
+Bengaluru 560093
+T +91 80 4243 0700
+F +91 80 4126 1228
+Independent Auditor's Review Report on Consolidated Unaudited Quarterly Financial Results of the Company
+pursuant to the Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015
+(as amended)
+To the Board of Directors of Shriram Properties Limited
+
+1. We have reviewed the accompanying statement of unaudited consolidated financial results (‘the Statement’) of Shriram
+Properties Limited (‘the Holding Company’) and its subsidiaries (the Holding Company and its subsidiaries together
+referred to as ‘the Group’), its joint ventures (refer Annexure 1 for the list of subsidiaries and joint ventures included in
+the Statement) for the quarter ended 30 June 2026, being submitted by the Holding Company pursuant to the
+requirements of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 (as
+amended) (‘Listing Regulations’).
+
+2. This Statement, which is the responsibility of the Holding Company's management and approved by the Holding
+Company's Board of Directors, has been prepared in accordance with the recognition and measurement principles laid
+down in Indian Accounting Standard 34, Interim Financial Reporting (‘Ind AS 34’), prescribed under section 133 of the
+Companies Act, 2013 (‘the Act’), and other accounting principles generally accepted in India and is in compliance with
+the presentation and disclosure requirements of Regulation 33 of the Listing Regulations. Our responsibility is to express
+a conclusion on the Statement based on our review.
+
+3. We conducted our review of the Statement in accordance with the Standard on Review Engagements (SRE) 2410,
+Review of Interim Financial Information Performed by the Independent Auditor of the Entity, issued by the Institute of
+Chartered Accountants of India. A review of interim financial information consists of making inquiries, primarily of
+persons responsible for financial and accounting matters, and applying analytical and other review procedures. A review
+is substantially less in scope than an audit conducted in accordance with the Standards on Auditing specified under
+section 143(10) of the Act, and consequently, does not enable us to obtain assurance that we would become aware of
+all significant matters that might be identified in an audit. Accordingly, we do not express an audit opinion.
+
+We also performed procedures in accordance with the circular issued by the SEBI under Regulation 33 (8) of the Listing
+Regulations, to the extent applicable.
+
+4. Based on our review conducted and procedures performed as stated in paragraph 3 above, nothing has come to our
+attention that causes us to believe that the accompanying Statement, prepared in accordance with the recognition and
+measurement principles laid down in Ind AS 34, prescribed under section 133 of the Act, and other accounting principles
+generally accepted in India, has not disclosed the information required to be disclosed in accordance with the
+requirements of Regulation 33 of the Listing Regulations, including the manner in which it is to be disclosed, or that it
+contains any material misstatement.
+
+Chartered Accountants Walker Chandiok & Co LLP is registered
+with limited liability with identification
+
+Offices in Bengaluru, Chandigarh, Chennai, Gurugram, Hyderabad, Kochi, Kolkata, Mumbai, New Delhi, Noida and Pune number AAC-2085 and its registered office
+at L-41 Connaught Circus, New Delhi,
+110001, India
+[page 7] [OCR page 7]
+Walker Chandiok &Co LLP
+Emphasis of Matter
+
+5. We draw attention to note 5 of the consolidated financial results in relation to a search operation carried out by the
+Enforcement Directorate at the Group’s business premises in October 2024. There is no communication received by
+the Company as on date regarding any findings from the said search operation and management has reiterated that
+there is nothing to implicate the Company, its subsidiaries and joint ventures, current or erstwhile, or its directors, in
+connection with the allegations.
+Our conclusion is not modified in respect of this matter.
+Other Matter
+
+6. We did not review the interim financial results of 18 subsidiaries included in the Statement, whose financial information
+reflect total revenues of = 7,266 lakhs, total net loss after tax of = 274 lakhs, total comprehensive loss of = 274 lakhs,
+for the quarter and ended on 30 June 2026, respectively, as considered in the Statement. The Statement also includes
+the Group’s share of net profit after tax of = 771 lakhs and total comprehensive income of % 771 lakhs, for the quarter
+and ended on 30 June 2026, respectively, as considered in the Statement, in respect of 4 joint ventures, whose interim
+financial results have not been reviewed by us. These interim financial results have been reviewed by other auditors
+whose review reports have been furnished to us by the management, and our conclusion in so far as it relates to the
+amounts and disclosures included in respect of these subsidiaries and joint ventures is based solely on the review
+reports of such other auditors and the procedures performed by us as stated in paragraph 3 above.
+Our conclusion is not modified in respect of this matter with respect to our reliance on the work done by and the reports
+of the other auditors.
+For Walker Chandiok & Co LLP
+Chartered Accountants
+Firm Registration No: 001076N/N500013
+
+Digitally signed by
+VISHAL VISHAL SURESH
+Date: 2026.08.12
+SURESH 6:1425 +05'30
+Vishal Suresh
+Partner
+Membership No. 285794
+UDIN: 26285794ZBFNXN3045
+Bengaluru
+12 August 2026
+Chartered Accountants
+[page 8] [OCR page 8]
+Walker Chandiok &Co LLP
+Annexure 1
+List of entities included in the Statement
+List of entities included in the Statement
+A) Subsidiaries
+1. Bengal Shriram Hitech City Private Limited
+2. SPL Estates Private Limited
+3. Shriprop Developers Private Limited
+4. Global Entropolis (Vizag) Private Limited
+5. Shriprop Structures Private Limited
+6. SPL Constructors Private Limited
+7. Shriprop Constructors Private Limited
+8. Shriprop Homes Private Limited
+9. Shriprop Projects Private Limited
+10. Shriprop Builders Private Limited
+11. SPL Realtors Private Limited
+12. Shrivision Homes Private Limited
+13. Shriram Upscale Spaces Private Limited
+14. Shriprop Properties Private Limited
+15. Shriram Living Space Private Limited
+16. SPL Palms Developers Private Limited
+17. Shrivision Projects Private Limited
+18. Shriprop Infrastructures Private Limited
+19. Shrivision Structures Private Limited
+20. Shrivision Estates Private Limited
+21. Shrivision Malls Private Limited
+22. Shrivision Hitech City Private Limited
+23. Shriprop Malls Private Limited
+24. SPL Homes Private Limited
+25. SPL Housing Projects Private Limited
+26. Shrivision Upscale Spaces Private Limited (*)
+(*) subsidiary with effect from 09 February 2026
+B) Joint Ventures
+1. Shrivision Towers Private Limited
+2. SPL Towers Private Limited
+3. Shriprop Living Space Private Limited
+4. Shriprop Hitech City Private Limited
+5. Shrivision Elevation Private Limited
+Chartered Accountants
+[page 9] [OCR page 9]
+Shriram Properties Limited
+Corporate Identity Number (CIN) : L72200TN2000PLC044560
+Registered Office: Lakshmi Leela Rite Choice Chamber New No. 9, Bazullah Road, T Nagar, Chennai - 600017
+Corporate Office: Shriram House No. 31, 2nd Main Road, T. Chowdaiah Road, Sadashivanagar, Bengaluru - 560080
+Telephone +91-80-40229999 | Fax +91-80-41236222
+Email ID: cs.spl@shriramproperties.com   Website: www.shriramproperties.com
+
+Statement of consolidated unaudited financial results for the quarter ended 30 June 2026
+                                                                                       (₹ in lakhs, unless otherwise stated)
+
+                                                                   Quarter ended                                        Year Ended
+Particulars                                     30 June 2026          31 March 2026          30 June 2025          31 March 2026
+                                                 [Unaudited]           [Refer note 7]         [Unaudited]           [Audited]
+
+Revenue
+Revenue from operations                         22,428                64,088                 24,232                1,26,741
+Other income                                     4,676                 2,185                  1,922                 8,952
+Total income                                     27,104                66,273                 26,154                1,35,693
+
+Expenses
+Land cost                                        7,377                 13,726                 16,972                33,731
+Material and construction cost                   9,609                 9,777                  15,286                49,529
+Changes in inventories                           (156)                 22,484                 (16,185)               6,955
+Employee benefits expense                        2,687                 2,551                  2,503                 10,528
+Finance costs                                    2,120                 1,891                  2,226                 8,621
+Depreciation and amortization expenses           261                   260                    234                   1,005
+Impairment losses                                2                     355                    5                     368
+Other expenses                                   3,395                 6,493                  3,414                 16,894
+Total expenses                                   25,295                57,537                 24,455                1,27,631
+
+Profit before share of (loss)/ profit of joint ventures   1,809         8,736                  1,699                 8,062
+Share of (loss)/ profit of joint ventures (net)            (385)        (1,751)                486                   (259)
+Profit before tax                                          1,424        6,985                  2,185                 7,803
+
+Tax expense / (credit)
+Current tax (including taxes for earlier years)  207                   (1,456)                119                   (591)
+Deferred tax                                     113                   588                    7                     (1,687)
+Total tax expense/ (credit)                      320                   (868)                  126                   (2,278)
+Profit for the period / year                     1,104                 7,853                  2,059                 10,081
+
+Other comprehensive (loss)/ income
+(a) Items that will not be reclassified to profit or loss
+Re-measurement of (losses)/ income on defined benefit plans, net of taxes   (16)   86   (8)   (69)
+Other comprehensive (loss)/ income for the period/ year                    (16)   86   (8)   (69)
+
+Total comprehensive income for the period/ year   1,088   7,939   2,051   10,012
+
+Net profit/ (loss) attributable to:
+Owners of the Holding Company                     1,104                 7,854                  2,059                 10,082
+Non-controlling interest                          (0)                   (1)                    (0)                  (1)
+[subtotal]                                        1,104                 7,853                  2,059                 10,081
+
+Other comprehensive (loss)/ income attributable to:
+Owners of the Holding Company                     (16)                  86                     (8)                  (69)
+Non-controlling interest                          -                     -                      -                    -
+[subtotal]                                        (16)                  86                     (8)                  (69)
+
+Total comprehensive income/ (loss) attributable to:
+Owners of the Holding Company                     1,088                 7,940                  2,051                 10,013
+Non-controlling interest                          -                     (1)                    (0)                  (1)
+[subtotal]                                        1,088                 7,939                  2,051                 10,012
+
+Paid up share capital (par value ₹10/- each, fully paid)   [blank]   [blank]   [blank]   17,065
+Other equity                                                [blank]   [blank]   [blank]   1,28,927
+
+Earnings per share (*)
+Basic (₹)                                        0.65                  4.60                   1.21                  5.91
+Diluted (₹)                                      0.65                  4.60                   1.21                  5.91
+
+(*) EPS for the quarters not annualised
+Certain amounts that are required to be presented and do not appear due to rounding off are expressed as '0'.
+See accompanying notes to results
+[page 10] [OCR page 10]
+| Shriram
+Properties
+Homes that live in you
+
+Notes to consolidated unaudited financial results :
+
+1) The above consolidated unaudited financial results of Shriram Properties Limited (the Holding Company"), its subsidiaries (together referred as “the
+Group”) and its joint ventures for the quarter ended 30 June 2026 have been prepared in accordance with the recognition and measurement principles
+laid down in the applicable Indian Accounting Standards 34, Interim Financial Reporting (‘Ind AS 34'), prescribed under section 133 of the Companies
+Act 2013 read with the Companies (Indian Accounting Standards) Rules, 2015 as amended, and in terms of Regulation 33 of the SEBI (Listing
+Obligations and Disclosure Requirements) Regulations 2015.
+
+2) The statutory auditors of the Holding Company have carried out a limited review of the above consolidated unaudited financial results for the quarter
+ended 30 June 2026 and they have issued an unmodified review report on the same. The review report of the statutory auditors is being filed with the
+National Stock Exchange of India Limited (‘NSE’) and BSE Limited (‘BSE’) and is also available on the Holding Company's website.
+
+3) These consolidated financial results have been reviewed by the Audit Committee and approved by the Board of Directors at their meeting held on 12
+August 2026.
+
+4) The Group is primarily engaged in the business of real estate development, which is considered to be the only reportable segment by the
+management. Further, the operations of the Group is domiciled in India and therefore there are no reportable geographical segment.
+
+5) The Enforcement Directorate conducted a search activity at the Group's business premises on 23 October 2024 and 24 October 2024. The
+management of the Group has extended full co-operation to the officials by responding to their clarifications/details sought and reiterates that there is
+nothing to implicate our subsidiaries/joint ventures, current or erstwhile, or its directors or the Holding Company in connection with the allegations. The
+Group had made the necessary disclosures to the stock exchanges in this regard on 24 October 2024, in accordance with Regulation 30 of the SEBI
+(LODR) Regulations, 2015 (as amended). As on the date of issuance of these financial results, the Group has not received any formal communication
+regarding the findings of their investigation / examination.
+
+The Group after considering all available information and facts as of date, has not identified any material facts/requirements that requires any
+adjustments to the current or prior period financial statements. The auditors of the Group have included Emphasis of Matter paragraph in their report
+in respect of the aforesaid matter.
+
+6) The Holding Company has 26 subsidiaries (including step-down subsidiaries) and 5 Joint-Ventures as on 30 June 2026.
+
+7) The consolidated financial results for the quarter ended 31 March 2026 are the balancing figures between audited results in respect of full financial
+year and the published year to date reviewed figures for the third quarter.
+
+For and behalf of the Board of Directors of Shriram Properties Limited
+
+Murali Disitally signed
+
+Mal by Murali
+
+lalayap Malayappan
+y Pp Date: 2026.08.12
+
+pan 19:02:24 +05'30"
+Murali M
+Chairman & Managing Director
+DIN: 00030096
+Bengaluru
+12 August 2026
+

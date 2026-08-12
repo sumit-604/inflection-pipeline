@@ -1,148 +1,151 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — Scoda Tubes Limited (SCODATUBES), Q1 FY27
 
-**Re-audit (loop 1) of the revised A4 review.** Fresh context: I saw only the A4 review, the A1 extract, and the A2 ledger. Every number below is re-derived independently from the raw CORRECTED extract body (L81-L112, Millions x 0.1 = Rs Crore); I did not defer to A4's or A3's cites.
+**Model:** claude-opus-4-8 | Fresh context. Re-derived independently from the A1 extract and A2 ledger; A4's and A3's cites were checked, not trusted. Final re-audit (loop 2) of the twice-revised A4 review.
+**Inputs audited:** review_scodatubes_q1fy27.md | extract_results_scodatubes_q1fy27.txt (body L1-204, corrections/footing L205-289) | ledger_results_scodatubes_q1fy27.md
+**Units:** source filed Rs Millions; Rs Crore = Millions x 0.1.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
 
-PLAIN-LANGUAGE BRIEF is present (review L430-442) with all four labelled parts, each non-empty and carrying real content:
+PLAIN-LANGUAGE BRIEF located at review L438-450. All four labelled parts present, non-empty, real content (not placeholder):
 
-| Part | Location | Present? | Real content? |
+| Part | Location | Present? | Content check |
 |---|---|---|---|
-| 1. SUMMARY NARRATIVE | L432-433 | YES | Full narrative, ~1 dense paragraph covering revenue, the two-effect margin/PAT split, cash INDETERMINATE, AVOID stance. Meets 10-20 line substance. |
-| 2. SECTOR INTELLIGENCE | L435-436 | YES | Import-substitution / anti-dumping, energy-cost watch, hot-pierced vs hot-extruded, tender silence. |
-| 3. BUSINESS-MODEL INTELLIGENCE | L438-439 | YES | Capex-heavy model, backward integration, above/below-EBITDA stress, deferred-tax shield, cash-conversion Achilles heel. |
-| 4. COMPETITION INTELLIGENCE | L441-442 | YES | Peer scale/margin/working-capital comparison (Venus, Ratnamani, Welspun), disclosure-cadence lag, promoter strength. |
+| 1. SUMMARY NARRATIVE | L440-441 | PRESENT | ~30-line narrative; two-problem structure (above/below EBITDA), every number line-anchored (L81/L99/L110/L90/L89/L88/L86), INDETERMINATE cash flagged, AVOID reaffirmed. Real. |
+| 2. SECTOR INTELLIGENCE | L443-444 | PRESENT | Import-substitution/anti-dumping tailwind, input-cost (gas/PNG) watch, hot-pierced vs hot-extruded axis, tender silence. Real. |
+| 3. BUSINESS-MODEL INTELLIGENCE | L446-447 | PRESENT | Capex-heavy model, backward integration to captive mother-hollow, above/below-EBITDA stress, deferred-tax shield, cash-conversion Achilles heel. Real. |
+| 4. COMPETITION INTELLIGENCE | L449-450 | PRESENT | Peer scale/margin/cash-conversion table (Venus, Ratnamani, Welspun), input-intensity slip, disclosure lag, promoter-quality edge. Real. |
 
-**Gate 0: PASS.**
-
----
-
-## AUDIT 1 — COVERAGE (independent re-enumeration vs A2 ledger)
-
-Fresh grep/sweep of the extract body (L15-204). Zero-standing rows (L93, L97, L111) are counted inside the 25 line-items, consistent with the ledger.
-
-| Category | A2 count | My fresh count | Orphan rows (in ledger, absent from A4) | Status |
-|---|---|---|---|---|
-| Notes | 7 (L115,118,120,122,123,125,127) | 7 | none — all 7 extracted in A4 Step 0D | PASS |
-| Line-items (value-bearing) | 25 (L81-L112 minus 7 header rows) | 25 | none — all in A4 Step 1 table | PASS |
-| Zero-standing | 3 (L93,L97,L111) | 3 | none — all confirmed blank x4 periods in A4 | PASS |
-| Agenda items | 1 (L38-39) | 1 | none — cited A4 preamble + Monitorables | PASS |
-| Auditor paras | 4 (L158-161,162-167,169-178,179-185) | 4 | none — all cited A4 Step 0D + ledger recon | PASS |
-| Entities | 1 (Note 5, L123-124) | 1 | none — Step 4A | PASS |
-| Signatories | 3 (DIN L53, DIN L143, UDIN L197) | 3 | none — cited A4 preamble L51-53/L141-143/L188-197 | PASS |
-
-Header-row exclusions (L80,84,95,100,101,108,109) re-verified as non-value category rows. Stray `*` at L145 re-confirmed as OCR seal artifact, not a note. L112 (EPS continued+discontinued) is an exact duplicate of L110 and is reviewed via L110. No orphan rows; no row my fresh pass found that the ledger lacks.
-
-**Coverage: PASS.** No loop-back to A2 or A3.
+**GATE 0: PASS.** All four parts present and substantive.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recomputed from raw extract, Millions; Cr = x0.1)
+## AUDIT 1 — COVERAGE (fresh independent enumeration vs A2 ledger)
 
-### 2a. Footing — all four columns on the five identities (independently recomputed)
+Fresh grep/sweep over extract body L1-204 (L205-289 are A1 provenance metadata, correctly excluded by A2 from the filing-unit enumeration):
 
-| Column | Total Income | Total Expenses | PBT | PAT | TCI |
+| Category | A2 count | My fresh count | My lines | Orphan rows | Status |
 |---|---|---|---|---|---|
-| Q1FY27 | 1243.45+16.30=**1259.75** ✓ | 1001.65−156.14+24.62+64.81+41.31+213.53=**1189.78** ✓ | 1259.75−1189.78=**69.97** ✓ | 69.97−6.25−11.22=**52.50** ✓ | 52.50+1.71−0.43=**53.78** ✓ |
-| Q4FY26 | 1235.69+44.03=**1279.72** ✓ | 1007.73−183.41+26.34+81.39+36.12+217.98=**1186.15** ✓ | =**93.57** ✓ | 93.57−25.72−4.66=**63.19** ✓ | 63.19−1.47+0.37=**62.09** ✓ |
-| Q1FY26 | 974.17+17.61=**991.78** ✓ | 742.49−52.47+24.20+51.04+15.72+118.05=**899.03** ✓ | =**92.75** ✓ | 92.75−18.90−3.02=**70.83** ✓ | 70.83+1.47−0.37=**71.93** ✓ |
-| FY26 | 5186.50+105.71=**5292.21** ✓ | 4143.75−611.44+104.54+248.66+92.17+787.21=**4764.89** ✓ | =**527.32** ✓ | 527.32−116.33−22.56=**388.43** ✓ | 388.43+1.18−0.30=**389.31** ✓ |
+| Notes | 7 | 7 | L115,118,120,122,123,125,127 | none | MATCH |
+| Line items (value-bearing) | 25 | 25 | L81-83,85-94,96-99,102-104,106-107,110-112 | none | MATCH |
+| Zero-standing | 3 | 3 | L93,97,111 | none | MATCH |
+| Agenda items | 1 | 1 | L38-39 | none | MATCH |
+| Auditor paras | 4 | 4 | L158-161,162-167,169-178,179-185 | none | MATCH |
+| Entities | 1 | 1 | L123-124 (Note 5, standalone only) | none | MATCH |
+| Signatories | 3 | 3 | L51-53 (MD DIN 06785595), L141-143 (Chairman DIN 08036100), L188-197 (auditor M.No.134475 / UDIN 26134475LRVGGI8483) | none | MATCH |
 
-**20/20 footing checks reproduce.** Exceptional items nil all periods (L93). The corrected grid stands.
+**Line-item recount cross-check:** 81,82,83 / 85,86,87,88,89,90,91,92,93,94 / 96,97,98,99 / 102,103,104 / 106,107 / 110,111,112 = 3+10+4+3+2+3 = 25. Category-header rows (80,84,95,100,101,108,109) correctly excluded as value-less. Confirmed.
 
-### 2b. Derived metrics in A4
+**Every ledger row cited in A4 or reviewed-no-finding:**
+- 7 notes: each in Step 0D table (L56-62), Note 4 & 5 also in Step 4A. Cited.
+- 25 line items: all in Step 1 data table (L79-100) with L## anchors. Cited.
+- Zero-standing L93/L97/L111: preamble L23 confirms all three blank in all 4 periods (reviewed-no-finding). Cited.
+- Agenda L38-39: preamble L24 + Step 6/monitorables (sole item, no other resolutions). Cited.
+- 4 auditor paras: L179-185 opinion at Step 0D (L64); L158-161/162-167/169-178 in preamble L25. Cited.
+- Entity Note 5: Step 4A (L198). Cited.
+- 3 signatories: preamble L27 (all three with DIN/UDIN). Cited.
 
-| Metric | A4 value | My recompute | Source lines | Status |
+No orphan row (ledger row absent from A4). No row my fresh pass found that the ledger lacks. The OCR-artifact stray `*` at L145 and the "(Refer Note No 6)" pointer are correctly NOT counted as notes.
+
+**AUDIT 1: PASS.** orphan_rows = []; missing_from_ledger = [].
+
+---
+
+## AUDIT 2 — ARITHMETIC (recomputed from corrected extract body, independently)
+
+### Footing (my own pass, not A1's — 4 columns x 5 identities)
+All 20/20 reproduce exactly (Total Income, Total Expenses, PBT, PAT, TCI). Spot: Q1FY27 TE = 1001.65-156.14+24.62+64.81+41.31+213.53 = 1189.78; PBT = 1259.75-1189.78 = 69.97; PAT = 69.97-6.25-11.22 = 52.50. FY26 TE = 4143.75-611.44+104.54+248.66+92.17+787.21 = 4764.89. Confirmed.
+
+### Derived-metric table (A4 value vs my recompute)
+
+| Metric | A4 value | My recompute | Source | Status |
 |---|---|---|---|---|
-| Op EBITDA Q1FY27 (PBT+D+Fin−OI) | 15.979 | (69.97+41.31+64.81−16.30)/10=15.979 | L94,89,88,82 | PASS |
-| Op EBITDA Q1FY26 | 14.190 | (92.75+15.72+51.04−17.61)/10=14.190 | L94,89,88,82 | PASS |
-| Op EBITDA margin Q1FY27 | 12.85% | 159.79/1243.45=12.851% | L81 | PASS |
-| Op EBITDA margin Q1FY26 | 14.57% | 141.90/974.17=14.566% | L81 | PASS |
-| Reported EBITDA Q1FY27 / margin | 17.609 / 14.16% | 176.09 / 176.09÷1243.45=14.162% | L94,89,88,81 | PASS |
-| Core PBT ex-OI (all cols) | 5.367/4.954/7.514/42.161 | 53.67/49.54/75.14/421.61 Mn | L94,82 | PASS |
-| Other Income / PBT | 23.3/47.1/19.0/20.0% | 23.30/47.05/18.99/20.05% | L82,94 | PASS |
-| Effective tax rate | 24.97/32.47/23.63/26.34% | 17.47/30.38/21.92/138.89 ÷ PBT | L96,98,94 | PASS |
-| Current-tax share of PBT | 8.93/27.49/20.38/22.06% | 6.25/25.72/18.90/116.33 ÷ PBT | L96,94 | PASS |
-| PAT margin | 4.22/5.11/7.27/7.49% | 52.50/63.19/70.83/388.43 ÷ Rev | L99,81 | PASS |
-| Revenue YoY | +27.64% | 1243.45/974.17−1=27.641% | L81 | PASS |
-| Op EBITDA YoY | +12.61% | 159.79/141.90−1=12.607% | derived | PASS |
-| Op EBITDA margin YoY | −172 bps | 14.566−12.851=−1.715 pp | L81 | PASS |
-| Depreciation YoY | +162.8% | 41.31/15.72−1=162.85% | L89 | PASS |
-| Finance YoY | +26.98% | 64.81/51.04−1=26.98% | L88 | PASS |
-| EBIT (OpEBITDA−D) YoY | −6.10% | 118.48/126.18−1=−6.10% | derived | PASS |
-| Core PBT ex-OI YoY | −28.57% | 53.67/75.14−1=−28.57% | L94,82 | PASS |
-| Reported PBT YoY | −24.56% | 69.97/92.75−1=−24.56% | L94 | PASS |
-| PAT YoY | −25.88% | 52.50/70.83−1=−25.88% | L99 | PASS |
-| EPS YoY | −38.89% | 0.88/1.44−1=−38.89% | L110 | PASS |
-| Other Expenses YoY | +80.9% | 213.53/118.05−1=80.88% | L90 | PASS |
-| **Margin decomp — net material** | 70.83%→68.00%, −283 bps | 690.02/974.17=70.83%; 845.51/1243.45=68.00% | L85,86,81 | PASS |
-| **Margin decomp — employee** | 2.484%→1.980%, −50 bps | 24.20/974.17; 24.62/1243.45 | L87,81 | PASS |
-| **Margin decomp — other exp** | 12.117%→17.173%, +505 bps | 118.05/974.17; 213.53/1243.45 | L90,81 | PASS |
-| Decomp reconciliation | +283+50−505=−172 bps | reconciles exactly | — | PASS |
-| Revenue QoQ | +0.63% | 1243.45/1235.69−1=0.628% | L81 | PASS |
-| PAT QoQ | −16.92% | 52.50/63.19−1=−16.92% | L99 | PASS |
-| Δinv build YoY | +198% | 156.14/52.47−1=197.6% | L86 | PASS |
-| PAT bridge (all legs) | see below | reproduced leg-by-leg | L81-99 | PASS |
+| Operating EBITDA Q1FY27 (PBT+D+Fin-OI) | 15.979 | 6.997+4.131+6.481-1.630 = 15.979 | L94/89/88/82 | OK |
+| Operating EBITDA Q1FY26 | 14.190 | 9.275+1.572+5.104-1.761 = 14.190 | L94/89/88/82 | OK |
+| Op EBITDA Q4FY26 / FY26 | 16.705 / 76.244 | 16.705 / 76.244 | L94/89/88/82 | OK |
+| Op EBITDA margin Q1FY27 | 12.85% | 15.979/124.345 = 12.851% | L81 | OK |
+| Op EBITDA margin Q1FY26 | 14.57% | 14.190/97.417 = 14.566% | L81 | OK |
+| Margin change YoY | -172 bps | 12.851-14.566 = -1.715pp | — | OK |
+| Reported EBITDA margin Q1FY27 / Q1FY26 | 14.16% / 16.37% | 17.609/124.345=14.16%; 15.951/97.417=16.37% | L81 | OK |
+| Effective tax rate Q1FY27 | 24.97% | 1.747/6.997 = 24.97% | L96+98/94 | OK |
+| ETR Q1FY26 / Q4FY26 / FY26 | 23.63/32.47/26.34% | 23.63/32.47/26.34% | L96+98/94 | OK |
+| Current-tax share PBT Q1FY27 / Q1FY26 | 8.93% / 20.38% | 0.625/6.997=8.93%; 1.890/9.275=20.38% | L96/94 | OK |
+| Deferred-tax shield / PBT | ~1,603 bps (16.0%) | 11.22/69.97 = 16.04% | L98/94 | OK |
+| **RM consumed / rev** Q1FY26 -> Q1FY27 | 76.22% -> 80.55% (+434 bps) | 742.49/974.17=76.22%; 1001.65/1243.45=80.55% | L85/81 | OK |
+| **FG/WIP build credit / rev** | 5.39% -> 12.56% (+717 bps) | 52.47/974.17=5.39%; 156.14/1243.45=12.56% | L86/81 | OK |
+| **Net material / rev** | 70.83% -> 68.00% (-283 bps) | 690.02/974.17=70.83%; 845.51/1243.45=68.00% | L85+86/81 | OK |
+| Employee / rev | 2.484% -> 1.980% (-50 bps) | 24.20/974.17; 24.62/1243.45 | L87/81 | OK |
+| Other expenses / rev | 12.12% -> 17.17% (+505 bps) | 118.05/974.17=12.116%; 213.53/1243.45=17.173% | L90/81 | OK |
+| **Decomposition sum** | +283+50-505 = -172 bps | -434+717=+283; +283+50-505 = -172 | — | OK (reconciles exactly) |
+| Revenue YoY | +27.64% | 26.928/97.417 = +27.64% | L81 | OK |
+| Op EBITDA YoY | +12.61% | 1.789/14.190 = +12.61% | — | OK |
+| Depreciation YoY | +162.8% | 2.559/1.572 = +162.79% | L89 | OK |
+| Finance YoY | +26.98% | 1.377/5.104 = +26.98% | L88 | OK |
+| Core Op PBT ex-OI YoY | -28.57% | -2.147/7.514 = -28.57% | L94-82 | OK |
+| Reported PBT YoY | -24.56% | -2.278/9.275 = -24.56% | L94 | OK |
+| PAT YoY | -25.88% | -1.833/7.083 = -25.88% | L99 | OK |
+| EPS YoY | -38.89% | -0.56/1.44 = -38.89% | L110 | OK |
+| Revenue QoQ | +0.63% | 0.776/123.569 = +0.63% | L81 | OK |
+| PAT QoQ | -16.92% | -1.069/6.319 = -16.92% | L99 | OK |
+| Other Expenses YoY | +80.9% | 95.48/118.05 = +80.88% | L90 | OK |
+| FG/WIP build YoY | +197.6% | 103.67/52.47 = +197.58% | L86 | OK |
 
-**PAT bridge recomputed leg-by-leg:** gross profit +11.379 (39.794 vs 28.415), employee −0.042, other expenses −9.548 → Op EBITDA change +1.789; depreciation −2.559; finance −1.377; other income −0.131 → PBT change −2.278; current tax +1.265; deferred tax −0.820 → total tax +0.445; exceptional 0.000 → **PAT change −1.833** (5.250−7.083). Every leg reproduces.
+### PAT bridge (recomputed leg by leg)
+Gross profit +11.379 (39.794 vs 28.415) | Employee -0.042 | Other expenses -9.548 | = Op EBITDA +1.789 | Dep -2.559 | Finance -1.377 | Other Income -0.131 | = PBT -2.278 | Current tax +1.265 | Deferred tax -0.820 | = Total tax +0.445 | **PAT change -1.833** (= 5.250-7.083). Every leg reconciles. Incremental build strip 15.614-5.247 = 10.367 ≈ Rs10.37 Cr (matches L229).
 
-**Arithmetic result: no mismatch above rounding in any derived metric, any table, or the bridge.**
+### F10-1 share reconciliation (checked)
+Q1FY26: 7.083 Cr / 1.44 = 49.19M; FY26: 38.843 Cr / 6.79 = 57.21M; Q1FY27: 5.250 Cr / 0.88 = 59.66M ≈ 59.909M paid-up. Non-reconciliation to the flat 59.909M base is real; share-adjusted EPS correctly marked ND. Confirmed.
 
-**One minor non-gating imprecision (noted, not a gate failure):** Step 4 (review L229) states the Q1FY27 deferred-tax charge is "16.0% of PBT, ~1,624 bps." The governing figure 16.0% is correct (11.22/69.97 = 16.04%), but 16.04% = ~1,603 bps, not 1,624. This is a parenthetical restatement of a correct number, affects no table cell, no verdict, and no downstream figure. Flagged for A4 to tidy while it makes the graft below; it does not itself fail the gate.
+**AUDIT 2: PASS.** arithmetic_mismatches = []. No discrepancy above rounding anywhere in the review.
 
 ---
 
 ## AUDIT 3 — ADVERSARIAL READ
 
-### Prior-loop counter (Other Expenses driver) — VERIFICATION
+### A4's three most positive claims, each with strongest bear counter from the same extract
 
-The prior A5 loop's surviving counter was that the −172 bps operating-EBITDA margin miss was mis-diagnosed as a below-EBITDA (depreciation/finance) event, when it is an above-EBITDA event driven by **Other Expenses +80.9% YoY (L90)**. I independently reproduce the decomposition: **net material +283 bps, employee +50 bps, other expenses −505 bps = −172 bps** (exact). I confirm A4 has now incorporated it in full:
-- Step 2 decomposition table (L143-148) and corrected read (L155, L161).
-- Summary-narrative attribution corrected to the Other-Expenses driver (L433).
-- Management question **Q9** added (L385).
-- Monitorable "Other Expenses / revenue ratio normalising <~13%" added (L415).
-- Flags updated (L490-491), verdict paragraph corrected (L426).
+**Claim 1 — Revenue +27.64% YoY (L129), "the one genuinely good number."**
+Bear counter: sequential revenue is flat (+0.63% QoQ vs the Q4FY26 balancing column, L182/186); growth is unprofitable (PAT -25.88%); and part of the "revenue growth" was not sold but built into inventory — production outran dispatch (Rs15.61 Cr FG/WIP build, +197.6% YoY, L86). **Status: ALREADY INCORPORATED** — Step 3 plateau read (L186-188), Step 6D "ON TRACK (top-line) / WEAKENED (quality)" (L323), flags L504-505. Does not survive as new.
 
-**This counter is RESOLVED.** No further loop-back on it.
+**Claim 2 — Net material cost improved -283 bps to 68.0% of revenue (L149), the one favourable cost line.**
+Bear counter = the graft-2 counter (see below): it is an inventory-build cost-deferral artifact; RM-consumed intensity actually WORSENED +434 bps. **Status: RESOLVED/GRAFTED.**
 
-### Three most positive A4 claims, strongest bear counter for each
+**Claim 3 — Absolute Operating EBITDA still grew +12.61% YoY (L130/218).**
+Bear counter: the margin fell -172 bps (graft-1, Other Expenses +80.9%) AND the absolute level is partly propped by the same Rs15.61 Cr inventory build (graft-2). Both are the two grafted counters. **Status: RESOLVED/GRAFTED.**
 
-**Claim 1 (positive): Revenue +27.6% YoY — "the one genuinely good number," lands at/above base (L154, L127).**
-Counter (from extract): revenue is essentially FLAT sequentially, +0.63% QoQ vs Q4FY26 (1243.45 vs 1235.69, L81), while depreciation +162.8% (L89) proves the new plant is already capitalised. A commissioned plant that does not lift the run-rate above the pre-commissioning quarter is the named capex red-flag; the YoY figure is lapping a soft Q1FY26 base, not evidence of live acceleration.
-**Status: DOES NOT SURVIVE as unaddressed** — A4 already grafts this (Step 3 plateau/red-flag L182, monitorables, growth-trigger "DELAYED"). No action.
+### Verification of the two prior-loop grafts (do NOT re-fail if properly incorporated)
 
-**Claim 2 (positive): Absolute Operating EBITDA still GREW +12.6% / +Rs1.789 Cr on volume (L212, L155).**
-Counter: (a) the +1.789 Cr gain is more than consumed below EBITDA by depreciation −2.559 + finance −1.377 = −3.936 Cr, producing PAT −25.9% — A4 fully incorporates this (Step 4 bridge). (b) Part of the absolute EBITDA growth is a **cost-deferral artifact of the inventory build** (see Claim 3) — NOT incorporated.
-**Status: PARTIALLY SURVIVES → merges into Claim 3.**
+**(a) Graft 1 — Other Expenses +80.9% YoY (L90) is the -172 bps driver, not depreciation/finance.**
+- Present: review L10 (graft banner), Step 2 decomposition table L145-152, Step 2 read point 1 L155/L161, diagnostic 5 L164 (explicitly places D&A/finance BELOW EBITDA), Q9 L391, flag L500, monitorable L422.
+- Arithmetic verified: operating EBITDA excludes depreciation & finance by construction, so those cannot move the operating margin; decomposition +283 (net material) +50 (employee) -505 (other expenses) = -172 bps reconciles EXACTLY to my independent recompute. **Properly incorporated. PASS — not re-failed.**
 
-**Claim 3 (positive): "Genuinely favourable +283 bps gross-material improvement" (net material 70.83%→68.00%); the cost problem is confined to Other Expenses, "not a raw-material disadvantage, since Scoda's material ratio actually improved" (L145, L150, L154, Step 4 "recurring" L209/L211, Competition intel L442).**
+**(b) Graft 2 — the +283 bps net-material "gain" is an FG/WIP inventory-build cost-deferral artifact.**
+- Present: review L12 (graft banner), Step 2 read point 2 L156, Step 4B double-scoring reconciliation L229 (gross-profit gain reclassified from "Recurring" to "inventory-inflated, pending H1 CFO + balance-sheet verification"), Step 5 L251/L264 (same build = negative cash proxy), Q10 L392, flags L501-502, monitorable L423.
+- Arithmetic verified: RM consumed/rev +434 bps (76.22%->80.55%, L85/81); FG/WIP build credit +717 bps (5.39%->12.56%, L86/81); -434+717 = +283; the +Rs11.379 Cr gross-profit gain and the Rs15.614 Cr build (+197.6% YoY) are the SAME event Step 5 flags as the negative cash-conversion proxy. Reclassification is explicit and correct. **Properly incorporated. PASS — not re-failed.**
 
-Counter (SURVIVING, extract-supported, L81/L85/L86):
-The +283 bps "net material" improvement is **not a unit-economics gain — it is entirely an inventory-build (cost-deferral) artifact.** Net material cost = raw material consumed (L85) + changes in FG/WIP inventories (L86). Decomposing the two components as a % of revenue:
-- **Raw material actually CONSUMED / revenue ROSE +433 bps**: Q1FY26 742.49/974.17 = 76.22% → Q1FY27 1001.65/1243.45 = 80.55%.
-- The **FG/WIP inventory-build credit tripled, from 5.39% to 12.56% of revenue (+717 bps favourable)**: Q1FY26 52.47/974.17 → Q1FY27 156.14/1243.45.
-- Net: +433 − 717 = **−283 bps** (reconciles exactly to A4's figure).
+### Hunt for any NEW surviving counter (from the extract)
 
-So the "favourable material economics" is production outrunning sales: Rs15.6 Cr of FG/WIP was built (L86), deferring conversion cost onto the balance sheet and flattering current-period gross margin and absolute EBITDA. Underlying raw-material efficiency per rupee of revenue **deteriorated**. Critically, **this is the SAME inventory build A4 flags as the negative cash-conversion signal** (Step 5, L245/L258, "+198% YoY inventory build, pointing the wrong way for CFO"). A4 treats it as a virtue in Step 2/Step 4/Competition and as a vice in Step 5 without reconciling the two — they are one event.
+Swept every remaining extract feature for a material, unincorporated bear point:
+- OCI remeasurement Q1 1.71 > full FY26 1.18, sign-flipping (L102) — captured F9-1 / Q5 / monitorable L424.
+- EPS non-reconciliation to flat 59.909M base (L106/110) — captured F10-1 / Q3 / monitorable L426; my recompute confirms it.
+- Deferred-tax shield, current tax 8.93% of PBT (L96/94) — captured F8-1 / Q2 / flag L507.
+- Note 1 "quarter and year ended June 30, 2026" drafting slip (L115) — captured F14-3, correctly ruled cosmetic.
+- Q4FY26 balancing-figure caveat (Note 6, L125) incl. elevated OI 4.403 — captured; and the operating-margin QoQ slide is OI-independent by construction, so the caveat does not distort it.
+- Depreciation +162.8% / finance +27.0%, capex-absorption deficit, flat QoQ run-rate (L88/89) — captured Step 2 diag 5, Step 3, Step 6D, flag L503.
+- Single-segment non-disclosure (Note 4, L122) — captured trigger 8 RED.
+- Inventory build as CFO negative proxy — captured Step 5, INDETERMINATE cap.
+- Interest-capitalisation / net-debt magnitude / CWIP quantum — genuinely ND in a bare Q1 Reg 33 interim (no BS/CFO filed); correctly named as missing evidence and capped at PROCEED WITH CAVEATS, which is correct protocol handling, not a coverage failure.
 
-Why it is material (not cosmetic): three A4 conclusions rest on the material improvement being genuine — (i) Step 2's "genuinely favourable +283 bps" framing (L150/L154); (ii) Step 4's classification of the +11.379 Cr gross-profit gain as "Recurring" (L209/L211); (iii) the Competition-intelligence claim that the peer-gap widening "is not a raw-material disadvantage since Scoda's material ratio actually improved" (L442). All three are undercut once the improvement is shown to be an inventory-capitalisation artifact tied to the cash-conversion red flag.
+No genuinely new material counter survives from the extract. The only residual items are already grafted or are immaterial/cosmetic (Note-1 slip) or properly-caveated ND (no BS/CFO in a Q1 interim). Per instruction, a marginal counter must not be manufactured to force a fail.
 
-**Status: SURVIVES. Must be grafted into A4 before save. Loop back to A4.**
-
-Required graft: in Step 2, Step 4B, and the Competition-intelligence brief, qualify the +283 bps net-material improvement as substantially an FG/WIP inventory-build (cost-deferral) effect — raw material consumed per revenue rupee rose +433 bps, the build credit rose +717 bps (5.4%→12.6% of revenue), net −283 bps — and note it is the same Rs15.6 Cr build (L86) flagged as the negative cash-conversion proxy; reclassify the gross-profit gain from unqualified "Recurring" to "recurring-but-inventory-inflated (verify at H1 when the balance sheet/CFO arrive)"; and add/extend a management question and monitorable on FG/WIP inventory build vs dispatch (does gross margin hold once production and sales re-align).
-
-### New independent scan beyond the three claims
-No further surviving counter found. The deferred-tax shield (F8-1), single-segment non-disclosure (trigger 8), EPS/share-base non-reconciliation (F10-1), and INDETERMINATE cash are all already surfaced as flags/questions. The inventory-build-vs-material-margin counter above is the one genuinely new, unincorporated, extract-supported bear point.
+**AUDIT 3: PASS.** surviving_bear_counters = [] (both prior counters resolved and correctly incorporated; no new counter survives).
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Deliverable gate PASS, coverage PASS, arithmetic PASS (one non-gating parenthetical bps imprecision noted). The adversarial read surfaces one NEW surviving bear counter that A4 has not incorporated: A4's "genuinely favourable +283 bps gross-material improvement" (relied on in Step 2, Step 4B, and the Competition brief) is substantially an FG/WIP inventory-build cost-deferral artifact — raw material consumed per revenue rupee actually rose +433 bps, and the −283 bps net gain is created entirely by the tripled inventory build (5.4%→12.6% of revenue, L86), which is the same build A4 flags as the negative cash-conversion signal. This must be grafted before save.
-
-**Loop back to: A4.**
+**COMPLETE.** All four audits pass. Deliverable brief complete (4/4 parts). Fresh enumeration matches the A2 ledger exactly (7/25/3/1/4/1/3) with zero orphans and nothing missing. Every derived metric recomputes within rounding — footing 20/20, the -172 bps decomposition reconciles exactly, the PAT bridge foots to -1.833. Both prior-loop bear counters (Other-Expenses driver; inventory-build gross-margin artifact) are correctly grafted into Steps 2/4B/5, Q9/Q10, flags and the briefs, with their arithmetic independently confirmed. No new material counter survives. The verdict cap at PROCEED WITH CAVEATS on INDETERMINATE cash conversion (no CFO/BS in a Q1 interim, missing evidence named) is correct protocol handling. Nothing loops back. Proceeds to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -150,21 +153,17 @@ company: "SCODATUBES"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE             # COMPLETE | INCOMPLETE
-plain_language_brief:           # hard gate — all four present
+verdict: COMPLETE
+plain_language_brief:
   narrative: present
   sector: present
   business_model: present
   competition: present
 coverage:
-  orphan_rows: []               # none — every ledger row cited in A4
-  missing_from_ledger: []       # none — fresh enumeration matched A2 exactly
-arithmetic_mismatches: []       # no derived-metric mismatch above rounding; footing 20/20 reproduced
-                                # (note: Step 4 "~1,624 bps" is an imprecise restatement of the correct 16.0% of PBT (~1,603 bps) — non-gating parenthetical, tidy during graft)
-surviving_bear_counters:
-  - claim: "Genuinely favourable +283 bps gross-material improvement; cost problem confined to Other Expenses, 'not a raw-material disadvantage since Scoda's material ratio actually improved' (Step 2 L145/L150/L154, Step 4B 'Recurring' L209/L211, Competition brief L442)"
-    counter: "The +283 bps net-material gain is an FG/WIP inventory-build cost-deferral artifact, not a unit-economics improvement. Raw material CONSUMED per rupee of revenue ROSE +433 bps (76.22%->80.55%); the net gain comes entirely from the tripled FG/WIP build credit rising +717 bps (5.39%->12.56% of revenue). Production outran sales, deferring conversion cost onto the balance sheet and flattering current-period gross margin and absolute EBITDA. This is the same Rs15.6 Cr build A4 flags as the negative cash-conversion proxy (Step 5) — one event scored as both a virtue and a vice without reconciliation. Undercuts the 'genuinely favourable' framing, the 'Recurring' gross-profit label, and the Competition claim that the peer-gap widening is not a raw-material issue."
-    source_line: "L85 (RM consumed), L86 (change in FG/WIP inventories), L81 (revenue)"
-loop_back_to: "A4"
-gap: "Graft the inventory-build (cost-deferral) qualification of the +283 bps net-material improvement into Step 2, Step 4B, and the Competition-intelligence brief: state that RM consumed/revenue rose +433 bps while the FG/WIP build credit rose +717 bps (5.4%->12.6% of revenue, L86) for a net -283 bps; note it is the SAME Rs15.6 Cr build flagged as the negative cash-conversion proxy (Step 5); reclassify the +11.379 Cr gross-profit gain from unqualified 'Recurring' to inventory-inflated pending H1 CFO/balance-sheet; add a management question + monitorable on FG/WIP build vs dispatch and whether gross margin holds once production and sales re-align. Also tidy the '~1,624 bps' parenthetical to ~1,603 bps (16.0% of PBT)."
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

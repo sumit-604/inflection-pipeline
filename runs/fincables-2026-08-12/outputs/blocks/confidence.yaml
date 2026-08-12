@@ -1,0 +1,28 @@
+stage: confidence-delta
+company: FINCABLES
+run_date: 2026-08-12
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100     # B12a v2 (re-audit of B01 v2 + B05 v2; v1 audited all 9 reports/111 numbers at 100). Source-fidelity gate PASS.
+  redflag_coverage: 86          # B12b v2: 12 of 14 verifier-found flags fully caught upstream (redflag_coverage narrative ~90% incl. partials); 0 CRITICAL/MAJOR after Stage 5 four-call re-run
+  framework_adherence: 100      # B12c v2 (Gate 0 + EM portion only); valuation-adherence component pending phase 3
+  peer_utilisation: 92          # B12d: 11 of 12 peers used substantively (peer set carries no OFC exposure, so the fibre thesis is un-peer-verifiable, not a utilisation miss)
+  overall: 86                   # min of the four -> NORMAL band (75-89): proceed, note specifics; no PROCEED downgrade, well clear of the <60 REWORK line
+valuation_framework_adherence: pending-phase-3
+band: "normal (75-89): note specifics; no verdict downgrade"
+delta_from_pre_rerun:
+  pre_rerun_overall: 60         # min(numerical 100, redflag 60, framework 96, peer 92) -> 60, at the 60-74 PROCEED-downgrade boundary
+  post_rerun_overall: 86
+  change: +26
+  drivers:
+    - "redflag_coverage 60 -> 86: Stage 5 re-run across all four FY26 concalls restored the dropped Q1 FY26 call, closing the CRITICAL promoter-dispute-recurrence miss and the MAJOR multi-year-margin-decline miss"
+    - "framework_adherence 96 -> 100: Gate 0 re-run on audited FY26/FY25 statements resolved the Block D data-completeness gap and the M3 ROCE basis, re-verified clean"
+    - "numerical_acceptance held at 100 across both v1 (111 numbers, all 9 reports) and v2 (18 newly-introduced audited figures)"
+    - "peer_utilisation unchanged at 92 (Stage 6 not re-run; the 2 net-new B05 peer questions are company-specific governance or already covered by B06's margin-band claim)"
+open_verifier_items:
+  - "B12d MAJOR (unresolved, non-verdict-changing): B06 attributes a decisive Paracables OFC-competitiveness quote to the Nov-2024 call; it is actually from the Feb-2025 call. The Claim 2 UNVERIFIABLE verdict is unaffected. Recorded, not re-run (single citation error, no decision impact)."
+  - "B12b 2 MINOR residuals: large FY26 other income (~Rs237cr) not surfaced as a quality-of-earnings note in B05 (primarily a valuation-stage concern); Q2 NWC deterioration under-weighted as the early-warning precursor to the Q4 cash air pocket."
+  - "B12c 3 MINOR advisory: M3 latest-vs-median ROCE basis unspecified by framework (non-destination-changing); B07 internally cites superseded v1 Gate 0 figures (combined AVERAGE unaffected); cash-flag 'not INDETERMINATE' labelling nuance (treatment is rule-compliant)."
+notes:
+  - "Shareholding filing and credit rating absent -> not verification misses; they flow to synthesis as evidence gaps (orchestrator Section on absent-input provenance)."
+  - "Annual report is FY2019-20 (stale); Stages 2/3 are the historical baseline; current financials are audited FY26 results + FY26 concalls/presentation."

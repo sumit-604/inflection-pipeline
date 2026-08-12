@@ -1,0 +1,47 @@
+stage: B06-peers
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["No UNIVCABLES concall transcript supplied (screening data only, not usable for triangulation)"]
+flags:
+  - "Claims 2, 6, 7 (OFC price trajectory, OFC market share, germanium/preform constraint) are structurally unverifiable with this peer set: KEI has zero OFC exposure, RR Kabel has no OFC segment, Paracables self-describes as an uncompetitive/lax OFC player. Proper verification requires OFC-focused peers (Sterlite Technologies, HFCL, Birla Cables) not supplied to this stage."
+  - "Claim 1 (Aditya Birla entry) has zero peer corroboration or disconfirmation across all 12 transcripts including the most recent Aug-2026 calls."
+  - "Claim 3's '15-16% historical margin' framing is not corroborated by any peer; none of KEI, RR Kabel, or Paracables ever operated at that band themselves."
+  - "Claim 5's whipsaw framing is contradicted in severity (not direction) by KEI's own tight channel-inventory discipline (15-20 days); RR Kabel offers only partial, modest corroboration (5-7 day buildup)."
+peers_provided: 12
+verified:
+  - {claim: "FY26 price-hike cadence (~14 hikes, ~24-25% cumulative effective) treated as pass-through", peers: ["KEI Industries", "RR Kabel"], anchor_count: 5}
+partially_verified:
+  - {claim: "Wires/cables sustainable EBIT margin band 11-12% (down from historical 15-16%)", peers: ["KEI Industries", "RR Kabel"]}
+  - {claim: "Channel/trade inventory whipsaw: overstocking ahead of price hikes then retail destocking", peers: ["RR Kabel"]}
+contradicted: []
+unverifiable:
+  - {claim: "Aditya Birla/cement-group-linked cable & wire plant entry timeline (Jan-2026 chatter, revised to CY2027)", peers_checked: ["KEI Industries", "RR Kabel", "Paracables"]}
+  - {claim: "Fibre/OFC price trajectory sub-$3 to ~$5+/km-month driven by data-centre/defence demand and China/Japan capacity constraints", peers_checked: ["KEI Industries", "RR Kabel", "Paracables"]}
+  - {claim: "OFC market share (~11-12% Finolex, behind Sterlite, Birla Cables, HFCL) and ~Rs25,000cr cables sub-segment market size", peers_checked: ["KEI Industries", "RR Kabel", "Paracables"]}
+  - {claim: "Germanium/preform raw-material constraint (China/Europe export restrictions), inventory covers only a few months", peers_checked: ["KEI Industries", "RR Kabel", "Paracables"]}
+peer_coverage_map:
+  - {peer: "KEI Industries", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Baseline margin ~10-11% and 15-day pass-through mechanism inform claims 3 and 4"}
+  - {peer: "KEI Industries", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Price-hike magnitude (10-15% over 2 months) for claim 4; channel inventory discipline (15-20 days) complicates claim 5"}
+  - {peer: "KEI Industries", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "FY26 margin 11.81%, guidance 10.5-11%, confirms margin trajectory for claim 3"}
+  - {peer: "KEI Industries", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Direct 11-12% operating margin confirmation for claim 3; explicit OFC/BharatNet disclaimer informs claims 2, 6, 7 as unverifiable via KEI"}
+  - {peer: "RR Kabel", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Multiple price lists per quarter for claim 4; inventory build context for claim 5; capex context for 2C"}
+  - {peer: "RR Kabel", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Strongest single anchor for claim 4 (20-25% single-quarter move) and claim 5 (5-7 day channel buildup)"}
+  - {peer: "RR Kabel", quarter: "Q4 FY26 (Apr-2026)", usage: "SUBSTANTIVE", contribution: "Independent analyst ground-check on destocking (claim 5); margin guidance (claim 3); EHV capex plan (2C); new-entrant competition (2E)"}
+  - {peer: "RR Kabel", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "~25% cumulative pricing anchor near-matches claim 4; domestic/export margin splits for claim 3; Middle East export risk for 2E"}
+  - {peer: "Paracables", quarter: "Q2 FY25 (Nov-2024)", usage: "SUBSTANTIVE", contribution: "Self-described uncompetitive/lax OFC segment and periodic BharatNet color inform claims 2 and 6; margin band context for claim 3"}
+  - {peer: "Paracables", quarter: "Q3 FY25 (Feb-2025)", usage: "CITED-ONLY", contribution: "Confirms trends already established in prior call; no new decisive evidence on any of the 7 claims"}
+  - {peer: "Paracables", quarter: "Q4 FY25 (May-2025)", usage: "CITED-ONLY", contribution: "Margin compression to 6.6% discussed as strategic trade-off; general working-capital color, not decisive to Part 1"}
+  - {peer: "Paracables", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "US tariff shock (10% to 50%) as major undisclosed-by-Finolex risk for 2E; six-driver demand thesis for 2A; Narmadapuram EHV capex for 2C"}
+industry_cross_read:
+  demand: "Broad cross-peer consensus of strong wires and cables demand (RR Kabel volume growth 17% YoY Q1 FY27, cables outpacing wires; Paracables' structural six-driver thesis covering T&D, renewables, data centres, exports, real estate, railways); no peer contradicts Finolex's macro demand framing, though none corroborates OFC-specific demand claims."
+  pricing_inputs: "Strong consensus that FY26 saw frequent, large, commodity-driven price hikes with pass-through treated as standard mechanism (KEI 15-day repricing; RR Kabel 20-25% cumulative, multiple hikes per quarter); Paracables' firm-price/next-day-metal-booking model is a structural outlier, insulated from spot repricing whipsaws."
+  capex_cycle: "Industry-wide capacity race, not a lone-expander situation: RR Kabel (INR1,200cr, 80% cable-focused, to 220kV EHV), Paracables (Narmadapuram greenfield, EHV to 132kV), KEI (steady scaling implied by margin/volume trends). Simultaneous EHV/specialty capacity building across peers raises a medium-term oversupply risk to the very margin re-rating (11-12%) the sector is chasing."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "RR Kabel: Middle East export/geopolitical disruption cited across all four calls (Nov-2025 through Aug-2026)"
+  - "RR Kabel: new competitive entrants acknowledged for H2 (Apr-2026 call, Tanay Shah question not denied by management)"
+  - "Paracables: US tariff escalation (10% to 25% to 50% including Russia-oil component) collapsed FY26 EBITDA margin to 6% from 9%+ historically (May-2026 call)"
+  - "Paracables: physical space/capacity constraint at existing plants as the binding growth constraint, not demand"
+net_narrative_effect: "complicates"

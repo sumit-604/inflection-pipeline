@@ -1,0 +1,34 @@
+stage: B09-tam
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus, rating, announcements, shareholding, research, presentation, concalls]
+flags:
+  - "WtE peer/capacity-share method (Method 3) rests on JUIL's uncited ~50% national-share claim; excluded from headline TAM, shown only as a low-confidence cross-check (~Rs1,191 Cr implied market, well below the adopted Rs5,487 Cr)"
+  - "Government-budget bottom-up estimate for water (Rs97,494-142,200 Cr, assuming a 45% capital-tender-share) is 4-6x the top-down/peer TAM and excluded from the headline as a scope mismatch (includes non-tendered departmental spend, O&M subsidies, land); retained as directional confirmation of headroom only"
+  - "Consolidated PAT is negative (-Rs9.93 Cr FY26, narrowed from -Rs24.42 Cr FY25); P/E is not meaningful, so the Section 5E valuation-implication line is partially NOT FOUND (no P/E, no company-wide margin target disclosed)"
+  - "CPCB (2021-22) MSW-generation data and an undated NITI Aayog urban-sewage-treatment-gap chart are used for directional growth-driver evidence only (STALENESS rule), never for the headline TAM number"
+  - "SOM_5yr uses a 5pp share-gain assumption (top of the 'aggressive' 3-5pp band); justified by disclosed WtE capacity doubling (110-220MW) and JWIL order book +123% YoY, but flagged as the more execution-dependent scenario"
+market_definition: "India water/wastewater infrastructure EPC+O&M/HAM and municipal solid-waste-to-energy concessions, government/ULB-funded, excluding steel trading and international operations"
+tam_cr: {conservative: 24879, realistic: 38608}
+sam_cr: 14146
+sam_pct_of_tam: 56.9
+som_3yr_cr: 3861
+som_5yr_cr: 4875
+som_implied_revenue_cagr: {yr3: 13.0, yr5: 12.7}
+current_sam_share_pct: 18.9
+revenue_headroom_x: 5.3
+tam_growth_pct: 7.6
+runway_class: "STRONG"
+mgmt_claim_cr: 36290
+mgmt_claim_ratio: 1.46
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient — capex-embedded growth (~25.1%, B07) exceeds SOM-implied 3yr CAGR (13.0%); the capex/order-book plan is the more optimistic side, SOM is the conservative one"
+methods_used: ["top-down (industry reports, 2-3 sources per sub-market)", "bottom-up (govt fiscal outlay proxy for water; MW-capacity x company-disclosed unit economics for WtE)", "peer revenue aggregation + unorganised-sector estimate", "global benchmark (directional only, excluded from headline)"]
+stale_data_flags:
+  - {datapoint: "Broad India wastewater treatment market USD 6.67bn", source: "unattributed web-search aggregator", year: 2024}
+  - {datapoint: "CPCB MSW generation 170,338 TPD / 91,512 TPD collected/treated", source: "AR MD&A p.79, citing CPCB", year: "2021-22"}
+  - {datapoint: "NITI Aayog urban sewage treatment-gap chart (72,368/26,776/20,263 MLD)", source: "AR MD&A p.78, citing NITI Aayog/IndiaSpend", year: "undated, likely ~2021-22"}
+searches_performed: ["India water and wastewater treatment market size 2024 2030 USD billion CAGR", "India municipal solid waste management market size 2025 CRISIL ICRA report", "India waste to energy market size Mordor Intelligence TechSci 2025", "Jal Jeevan Mission AMRUT 2.0 budget allocation FY27 water infrastructure India", "VA Tech Wabag Ion Exchange EMS Limited revenue FY2025 FY2026 water infrastructure India crore", "Antony Waste Handling Essel Infraprojects Ramky Enviro waste to energy revenue India crore", "India water infrastructure EPC market unorganised organised share percentage", "VA Tech Wabag FY26 annual revenue crore consolidated results March 2026", "Ion Exchange India EMS Limited FY2026 annual revenue crore", "EMS Limited wastewater FY2026 revenue crore results", "India water sector top companies market share Wabag Ion Exchange Thermax Va Tech industrial water infrastructure Frost Sullivan 2025", "USD to INR exchange rate August 2026", "global water and wastewater treatment market size 2025 USD billion China per capita", "global waste to energy market size 2025 India share percentage"]
+searches_skipped: []

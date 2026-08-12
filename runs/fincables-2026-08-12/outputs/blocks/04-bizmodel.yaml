@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Annual report is FY2019-20, ~6 years stale (AR-STALE); used only for durable structural facts, labelled FY20-era throughout"
+  - "Current (FY26) manufacturing footprint, plant count, utilisation, distributor/retailer count, and organised market share NOT FOUND (only FY20 AR figures exist)"
+  - "Current credit rating NOT FOUND (last known: CRISIL AA+/stable, A1+, FY20)"
+  - "Volume data (MT/km) for FY26 NOT FOUND — investor presentation discloses value and EBIT only, not units"
+  - "Named competitors NOT FOUND in either source — check investor presentation or concall"
+  - "Results, ratings update, corporate announcements, current shareholding detail beyond the single presentation slide, and equity research reports are ABSENT from the provided input set"
+  - "Prospectus absent but expected per run inputs; not provided to this stage"
+  - "~1.1% (~Rs 69 cr) gap between FY26 total revenue (Rs 6,321 cr) and the sum of the three disclosed segments (Rs 6,252 cr) is unreconciled in the investor presentation"
+flags:
+  - "Electrical Cable segment EBIT margin (~10.3% FY26 YTD) sits well below the FY20 AR-stated 15.3%-16% band; cause (structural vs cyclical/RM-timing) not established in provided documents, flagged for management question and Stage 11 normalization"
+  - "Consolidated EBITDA margin compressed ~60bp YoY (13.7% FY26 YTD vs implied ~14.3% FY25) despite 19% revenue growth; incremental EBITDA margin on Q4FY26 YoY revenue growth was only ~4.2%, well below the ~12% average margin, indicating negative operating leverage YoY even as the presentation frames the quarter as margin-expansionary"
+  - "Large non-operating treasury/investment book (~Rs 2,600+ cr) sits alongside operations; unadjusted P/E, P/B and ROE will be distorted unless a cash-adjusted or SOTP lens is used at Stage 11"
+  - "FY20 AR discloses a sub judice promoter-family governance/NCLT dispute over board composition (AR p.29-30); current status NOT FOUND and should be checked before relying on related-party or capital-allocation disclosures"
+  - "Working capital intensity increased YoY (net WC days ~76 in FY26 vs ~57 in FY25), driven mainly by inventory days rising to 73 from 61 — first deterioration signal to monitor"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Electrical Wires & Cables", type: "manufactured product sales (B2B/distributor + institutional)", pct_of_revenue: 86.9, predictability: "medium"}
+  - {name: "Communication Cables", type: "manufactured product sales (B2B/telecom/PSU)", pct_of_revenue: 7.9, predictability: "low-medium"}
+  - {name: "FMEG / Others (fans, heaters, switchgear, lighting)", type: "branded consumer product sales (B2C)", pct_of_revenue: 4.1, predictability: "medium"}
+asset_intensity: "medium"
+wc_intensity: "medium"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Distribution network (5,000+ distributors, 50,000+ retailers, FY20)", durability: "high"}
+  - {moat: "Backward integration cost/quality advantage (copper rod, PVC compound)", durability: "moderate"}
+  - {moat: "Brand (Superbrand, 5-decade heritage)", durability: "moderate"}
+  - {moat: "BIS regulatory/certification barrier", durability: "moderate"}
+  - {moat: "Technology licensing relationships (AT&T/Lucent, Corning, NSW, Sumitomo, GE)", durability: "low-moderate"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Normalises for the (irrelevant, debt-free) capital structure and for copper-price pass-through noise in revenue and PAT"}
+  secondary: {method: "P/E, cash-adjusted", why: "Useful cross-check once the ~Rs 2,600+ cr non-operating treasury/investment book and JV stake are stripped out"}
+  tertiary: {method: "SOTP (core operations + treasury investments + JV/associate stake)", why: "Unusually large non-operating investment book and an equity-accounted EHV cables JV sit outside consolidated operating revenue"}
+  not_applicable: ["DCF as primary anchor (copper-linked cyclical cash flows unreliable without normalized-margin assumptions)", "Dividend discount model (not a yield-focused security)", "Standalone P/B (book value inflated by large non-operating treasury cash)"]
+irrelevant_ratios:
+  - {ratio: "Standalone revenue growth YoY", why: "Large share of the swing is copper-price pass-through, not real demand"}
+  - {ratio: "Gross/material-cost margin in isolation", why: "Material cost (84-87% of revenue) mechanically tracks LME copper price"}
+  - {ratio: "Debt/equity and interest coverage", why: "Company is effectively debt-free (Rs 0.86 cr borrowings vs Rs 5,098.61 cr equity); never differentiates risk here"}
+  - {ratio: "Unadjusted P/E and ROE", why: "Distorted by a very large non-operating treasury/investment book depressing ROE and skewing headline P/E"}
+  - {ratio: "Receivable days alone as collection-quality signal", why: "Looks excellent partly because retail is enforced cash-and-carry, not necessarily superior collection skill across all customer types"}
+must_track_metrics:
+  - {metric: "Electrical Cable segment EBIT margin", healthy: "trending toward the FY20-era 15-16% band", red_flag: "further decline below 10%"}
+  - {metric: "Consolidated EBITDA margin", healthy: "13-14%+", red_flag: "sustained sub-12% or continued YoY compression"}
+  - {metric: "Inventory days", healthy: "stable/declining toward ~60", red_flag: "rise above ~75-80 days"}
+  - {metric: "Net working capital days (Recv + Inv − Pay)", healthy: "<65 days", red_flag: "sustained >80 days"}
+  - {metric: "Communication Cable segment revenue growth", healthy: "return to positive YoY growth", red_flag: "continued negative YoY for 2+ quarters"}
+unit_economics:
+  unit: "NOT FOUND for FY26 (no MT/km disclosure in investor presentation); FY20 AR volume data is 6 years stale and not usable"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Copper price pass-through and product mix (power/control cables, FMEG) versus underlying volume growth"
+first_deterioration_signals:
+  - {risk: "Telecom/PSU capex slowdown or payment delays", first_signal: "Communication Cables segment revenue decline (already -1% YoY YTD FY26)"}
+  - {risk: "Copper price volatility mismatched with pass-through timing", first_signal: "Electrical Cable segment EBIT margin compression"}
+  - {risk: "Capital allocation/governance ambiguity around treasury book", first_signal: "Unexplained swings in Investments or Other Financial Assets lines, or related-party disclosures"}
+  - {risk: "FMEG scale-up execution risk (BIS norms, price erosion)", first_signal: "Others/FMEG segment EBIT margin decline (already down YoY)"}
+  - {risk: "Secular metal-to-fibre substitution in telecom", first_signal: "Continued softness in Communication Cables segment revenue mix"}
+mgmt_questions:
+  - "Electrical Cable EBIT margin moved from ~15-16% (FY20) to ~10.3% (FY26) — structural or cyclical, and what is the bridge?"
+  - "Q4FY26 EBITDA grew 7% YoY against 22% revenue growth — is this copper pass-through or rising fixed costs?"
+  - "What is the current organised wires & cables market share versus the 22% last disclosed in FY20?"
+  - "What is the capital allocation plan for the ~Rs 2,600+ cr treasury book, and how is it governed given the FY20-era promoter-family board dispute?"
+  - "Communication Cables revenue declined 1% YTD FY26 despite the OFC/5G tailwind narrative — what is the roadmap to capture the fibre transition?"
+  - "How is the FMEG portfolio being repositioned after BIS-driven fan sales disruption, and what is the medium-term segment margin target?"
+  - "What is the current credit rating versus the FY20 CRISIL AA+/stable, A1+?"
+one_line_verdict: "Debt-free, backward-integrated cable maker with copper pass-through pricing and a segment margin gap versus FY20 still unexplained."

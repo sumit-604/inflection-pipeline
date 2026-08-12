@@ -1,0 +1,85 @@
+stage: B08-promoter
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "AR-STALE: only Annual Report supplied is FY2019-20 (~6 years stale); all promoter-action-record and current-shareholding facts below FY20 are web-derived, not primary-document-verified"
+  - "announcements: ABSENT as a supplied input; current board/leadership facts sourced entirely from web search of exchange-filing summaries, not primary BSE/NSE filings directly"
+  - "shareholding: ABSENT as a supplied filing; current promoter % relied on secondary aggregator (Trendlyne-sourced) snippets, primary filing unreachable due to egress block"
+  - "results: ABSENT as a supplied input for this stage"
+  - "rating: current CRISIL rating (AA+/Stable, A1+) confirmed via web (Nov 2024 reaffirmation) but no standalone rating note was supplied"
+  - "research: ABSENT"
+  - "core Orbit Electricals 100,300-share ownership dispute has no confirmed ruling post the August 2024 NCLAT remand to NCLT Mumbai -- current status genuinely unresolved in available sources"
+  - "detailed credentials for the current/incoming independent director slate (Barve, Singh, Billimoria, Raghuraman) not found beyond names and appointment dates"
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CONCERN", top_findings: ["6+ years (2018-2024) of recurring director-reappointment disputes across at least four AGM/board cycles (2019, 2021, 2023, Nov 2024), driven by a Prakash Chhabria vs Deepak Chhabria cousin control fight", "Supreme Court fined then-Executive Chairman Deepak Chhabria Rs.1 crore for misconduct related to AGM voting results (2023-2024); Deepak Chhabria ousted from Executive Chairmanship effective 16 Oct 2023, upheld by NCLAT 28 Aug 2024", "Core share-ownership dispute (100,300 Orbit Electricals shares) remains unresolved, remanded back to NCLT Mumbai Aug 2024, no ruling found", "Strong, dated transition evidence since Oct 2023: professional interim chairman, then permanent non-family Executive Chairman (Sept 2024), internal CEO promotion + external CFO and CS hires (mid-2026), first clean AGM in Sept 2025, zero pledge maintained throughout"]}
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers:
+  - "Multiple mid-term independent director exits within a 3-year rolling window: 2021 AGM (3 of 5 voted-down directors were Independent), Sept 2023 AGM (Executive Chairman's own reappointment defeated), Nov 2024 (3 newly appointed Additional Independent Directors ceased within one month of appointment) -- RECORDED per pipeline rule, not enforced"
+adverse_findings:
+  - {finding: "Multi-year (2018-2024), multi-forum (NCLT/NCLAT/Bombay HC/Supreme Court) control dispute between Prakash P. Chhabria and Deepak K. Chhabria promoter branches, rooted in a 2016 gift-deed inheritance dispute over 100,300 Orbit Electricals shares (~Rs.1,500cr)", evidence_tier: "VERIFIED", source: "Business Standard, NCLAT/Supreme Court order coverage", date: "2019-2024"}
+  - {finding: "Recurring pattern of Orbit Electricals + Finolex Industries corporate promoter votes defeating director-reappointment/appointment resolutions across at least four AGM/board cycles: 2019 AGM (4 directors), 2021 AGM (5 directors), 2023 AGM (Deepak Chhabria's own reappointment, 72.34% against), Nov 2024 (3 newly appointed Additional Independent Directors ceased within one month)", evidence_tier: "VERIFIED / MEDIA REPORTED", source: "Business Today (2021-10-01), Business Standard (2024-09-03), Moneylife (2024, WebSearch synthesis only -- direct fetch egress-blocked)", date: "2019-2024"}
+  - {finding: "Supreme Court fined then-Executive Chairman Deepak Chhabria Rs.1 crore, and the AGM scrutiniser Rs.10 lakh, for misconduct connected to withholding AGM voting results; initiated then closed contempt proceedings against two NCLAT members for defying an SC directive", evidence_tier: "VERIFIED", source: "Outlook Business, India Gazette", date: "2023-2024"}
+  - {finding: "FY20 Annual Report contains a self-contradictory internal account of the 18 Sept 2019 AGM outcome (Board's Report: resolutions 'passed'; Secretarial Audit Report: same resolutions 'were defeated'), plus a certified ~5-month SEBI LODR Woman Director non-compliance and four un-filed ROC e-forms", evidence_tier: "VERIFIED (primary document, Stage 3 read)", source: "Annual_Report.pdf p.26, p.48, p.67; Stage 3 (B03-ardeep) report", date: "2020-08-14 (AR filing date)"}
+  - {finding: "Core share-ownership dispute over 100,300 Orbit Electricals shares (70.4% of Orbit) remanded back to NCLT Mumbai by NCLAT on 28 August 2024 for an expeditious decision; no ruling found as of this run date -- the origin dispute remains open", evidence_tier: "VERIFIED / MEDIA REPORTED", source: "M&A Critique, IBC Laws", date: "2024-08-28"}
+  - {finding: "Secretarial Compliance Report for FY2025-26 (filed 19 May 2026) disclosed designated employees traded during restricted windows / executed opposite trades from FY2023-24 through FY2025-26; company issued warning letters, no SEBI enforcement action found", evidence_tier: "MEDIA REPORTED (single outlet, reporting a company disclosure)", source: "Whalesbook", date: "2026-05"}
+  - {finding: "Recurring routine GST/indirect-tax demand orders through 2025-2026 (~Rs.220.1mn, ~Rs.294.6mn incl. penalty, and smaller ITC/e-way-bill demands), consistent in kind with the FY20 AR's own CARO-disclosed Rs.205.36cr multi-decade disputed-dues pattern -- not an evasion finding", evidence_tier: "VERIFIED (exchange disclosures)", source: "Reuters via TradingView/MarketScreener", date: "2025-2026"}
+  - {finding: "Company Secretary (Siddhesh Mandke) and Assistant Company Secretary (Gayatri Kulkarni) both resigned within an 8-month window (Nov 2025, June 2026), both citing personal reasons; external replacement (Nirnoy Sur) appointed after a gap", evidence_tier: "MEDIA REPORTED", source: "scanx.trade", date: "2025-11 to 2026-08"}
+transition_evidence:
+  - "Deepak K. Chhabria ceased to be Whole-Time Director & Executive Chairman effective 16 October 2023, after 72.34% of votes were cast against his reappointment at the 29 Sept 2023 AGM; NCLAT declined to disturb this outcome on 28 August 2024 (Business Standard, 2024-09-03)"
+  - "Professional, non-family interim Chairman (Nikhil Naik) installed Oct 2023-Sept 2024, followed by permanent Executive Chairman Ratnakar Barve from 4 September 2024 (WebSearch synthesis of board-change filings, 2024)"
+  - "Mahesh Viswanathan, a long-tenured (~17-year) executive who survived the 2019 contested-reappointment episode, promoted to CEO effective 1 June 2026 (TradingView/Reuters, 2026)"
+  - "Sachin Naik, ~30 years' experience (ex-UPL, ex-Supreme Industries), appointed CFO from outside the company effective 1 June 2026 (Exchange4media, 2026)"
+  - "Nirnoy Sur, ex-Kingfa Science & Technology, appointed Company Secretary/Compliance Officer/GM-Legal from outside the company effective 11 August 2026 (scanx.trade, 2026)"
+  - "First AGM cycle since 2019 with no contested or defeated resolution: 57th AGM, 29 September 2025, all resolutions passed with requisite majority (TipRanks, 2025-09)"
+  - "Independent director slate (Vanessa Singh, Zubin Billimoria, Sriraman Raghuraman) reappointed for fresh five-year terms, board-approved 11 August 2026, pending shareholder ratification (WebSearch synthesis, 2026-08)"
+  - "Zero promoter pledge maintained throughout the period reviewed, including Orbit Electricals' fresh FY26 no-encumbrance declaration filed 3 April 2026 (scanx.trade, 2026)"
+pledge_pct_latest: 0
+pledge_trend: "stable at zero -- no pledge disclosed in FY20 AR (31 Mar 2020) through Orbit Electricals' FY26 no-encumbrance declaration (3 Apr 2026); flat throughout, never a positive base to fall from"
+searches_performed:
+  - "Prakash Chhabria Deepak Chhabria Finolex dispute settlement 2025"
+  - "Finolex Cables Bombay High Court director reappointment case status 2024"
+  - "Finolex Cables promoter shareholding pattern 2025"
+  - "Mahesh Viswanathan CEO Finolex Cables 2026"
+  - "IiAS/Institutional Eye Finolex family feud (PDF located, WebFetch attempted, parsing failed)"
+  - "Deepak Chhabria Supreme Court contempt Finolex fine 2024 2025"
+  - "Finolex Cables Sachin Naik CFO appointment 2026"
+  - "Finolex Cables Chairman 2025 2026 board current"
+  - "Orbit Electricals Prakash Chhabria NCLT shares dispute ruling 2025"
+  - "Finolex Cables SEBI order 2024 2025"
+  - "Finolex Cables auditor Deloitte 2024 2025 statutory auditor change"
+  - "Deepak Chhabria Finolex Cables 2025 removed executive chairman current status"
+  - "Finolex Cables promoter pledge shares encumbrance 2025"
+  - "Finolex Cables Glassdoor AmbitionBox employee reviews"
+  - "IiAS Finolex Cables family feud governance recommendation"
+  - "Finolex Cables Lipi Todi Anoop Krishna Sanjay Mathur ceased director November 2024 reason"
+  - "Finolex Cables board of directors 2026 independent directors list"
+  - "Nikhil Naik Finolex Cables independent director background"
+  - "Finolex Cables independent director resignation 2024 2025"
+  - "Orbit Electricals NCLT Mumbai ruling 2025 Chhabria shares"
+  - "moneylife Finolex IDs pawns board game Todi Krishna Mathur"
+  - "Finolex Cables AGM September 2025 voting results resolutions"
+  - "Finolex Industries Chhabria dispute 2026 latest news"
+  - "Finolex Cables Deepak Chhabria 2026 current status Vini Chhabria"
+  - "Finolex Cables SES IiAS proxy advisory report 2024 2025 recommendation against"
+  - "Finolex Cables Orbit Electricals stake percentage 2025 promoter holding breakup"
+  - "Finolex Cables mutual fund FII stake increase 2025 institutional buying"
+  - "Finolex Cables shareholding pattern September 2025 quarter BSE promoter"
+  - "Finolex Cables CRISIL rating 2025 AA+ credit rating"
+  - "Finolex Cables SFIO ED PMLA insider trading investigation"
+  - "Finolex J-Power Systems JV exit closure 2024 2025"
+  - "Finolex Cables related party transaction Orbit Electricals Finolex Industries 2024 2025"
+  - "Finolex Cables Company Secretary resignation 2025 2026 previous"
+  - "Finolex Cables tax demand order 220.1 million rupees details 2025"
+  - "Deepak Chhabria sold shares Finolex Cables exit stake 2024 2025"
+  - "Finolex Cables Finolex Industries surge 13% heavy volumes March 2025 news"
+searches_skipped:
+  - "Direct WebFetch of business-standard.com articles (NCLAT ruling detail, Finolex Cables topic page) -- EGRESS_BLOCKED, relied on WebSearch synthesized snippets instead"
+  - "Direct WebFetch of moneylife.in articles (family feud narrative, 'IDs Pawns in New Board Game') -- EGRESS_BLOCKED, relied on WebSearch synthesized snippets instead"
+  - "Direct WebFetch of boardstewardship.com (independent director appointment/retirement detail) -- EGRESS_BLOCKED, relied on WebSearch synthesized snippets instead"
+  - "Direct WebFetch of trendlyne.com and screener.in (primary shareholding-pattern time series and announcements) -- EGRESS_BLOCKED, relied on WebSearch synthesized snippets instead"
+  - "Direct WebFetch of medial.app article on the two-director ouster -- EGRESS_BLOCKED"
+  - "Full-text extraction of the two IiAS 'Institutional Eye' PDFs (Oct 2023, Nov 2022) -- PDF located via search but binary content not reliably parseable by WebFetch"
+verdict_basis: "A genuine, 6+ year (2018-2024) multi-forum promoter control fight produced recurring director-reappointment defeats across at least four AGM/board cycles and a Supreme Court misconduct fine against the then-Executive Chairman, capping the verdict at CONCERN -- but the dispute has visibly resolved in favour of professional, increasingly external leadership since October 2023, with zero pledge maintained throughout, making this a CONCERN with strong transition evidence rather than a static one."

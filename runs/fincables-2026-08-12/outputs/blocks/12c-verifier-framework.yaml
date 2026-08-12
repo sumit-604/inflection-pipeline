@@ -1,0 +1,28 @@
+stage: B12c
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-opus-4-8
+status: complete
+phase: 1
+scope: "gate0 + emerging-moat only; valuation deferred to phase 3"
+gate0:
+  rules_checked: 45
+  fails:
+    - {severity: "MINOR", rule: "M8 Distribution", note: "scored 1 on ~6-year-stale FY2019-20 AR distribution narrative with no current FY26 confirmation; conservative and flagged, within tolerance"}
+emoat:
+  rules_checked: 27
+  fails:
+    - {severity: "MINOR", rule: "F2 execution moat", note: "self-derived from four FY26 transcripts because B05 promise-delivery record unavailable (Stage 5 did not run); framework intends F2 to cross-reference injected B05; disclosed workaround, score within tolerance"}
+    - {severity: "MINOR", rule: "evidence-factor resolution (A1/B1/H2)", note: "three mixed documented/claim categories each take the full 1.0 documented factor; each individually justified by a documented core fact"}
+valuation: {status: pending-phase-3}
+recomputed_destination_pe: ""   # n/a in phase 1 (valuation deferred)
+recomputed_decision: ""         # concur: Gate 0 = AVOID, EM = MODEST both reproduce
+framework_adherence: 96         # % for the Gate 0 + EM portion only
+findings:
+  - {severity: "MINOR", location: "B01 Block F / M8", note: "moat score of 1 rests on ~6yr-stale AR distribution data; flagged by maker"}
+  - {severity: "MINOR", location: "B07 Section 3 / F2", note: "F2 self-derived without B05; transparent input-gap workaround"}
+  - {severity: "MINOR", location: "B07 Section 5 / A1,B1,H2", note: "mixed-evidence rows all resolved to 1.0 documented factor; each defensible"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 96             # rules passed (69) / rules checked (72), %

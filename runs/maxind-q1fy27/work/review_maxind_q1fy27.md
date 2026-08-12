@@ -214,10 +214,11 @@ Response-quality tally: A x6, B x11, C x3, D x0, **E x1** (the cash-burn refusal
 **Exchange 3 — Capital raise deferral (Q20/Q21, l.107-117).**
 - Q (verbatim, l.107): "since you're making decent amount of losses still and we have raised capital last year... the cash is also limited on the balance sheet. How we look to change the business going forward."
 - A (verbatim, l.109/113/117): "the second fund raise... was supposed to be done June this year but frankly due to better performance and... credit lines... we have been able to push... the number hasn't changed"; "we've also received 40 crores the second branch of the pre isue in July"; "the estimate is around 20 million."
-- Said: second raise deferred from Jun-26; Rs40cr pref-issue tranche received July; ~US$20m (~Rs170cr) still required over next 2 years.
+- Said: second raise deferred from Jun-26; Rs40cr pref-issue tranche received July; ~US$20m (~Rs170cr) still required over next 2 years; peak requirement down from ~US$25m to ~US$20m.
 - NOT said: revised timing of the balance raise, the dilution quantum, or the pricing.
-- Thesis implication (**A3-08, FORWARD-SIGNAL**): dilution overhang plus timing risk against a Rs21cr holdco treasury. The "pushed out due to better performance" framing softens a deferral; read adversarially, a deferred raise with thin holdco cash is a liquidity-management signal, not strength.
-- Follow-up we would ask: at what price and by when is the remaining ~US$20m expected, and what is the holdco (standalone) cash runway at the current burn without it?
+- **The surviving bear counter on the capital pillar (line-supported; graft per A5).** Management framed the deferral as driven by "better performance", but the transcript names the two actual enablers, and neither is structural operating cash. (a) The company "taking some credit lines to manage the working cap capital inventory" (l.109) — that is NEW DEBT, i.e. balance-sheet leverage, not internally generated cash. (b) "the noa position... opened up and therefore gross collections have come in and we able to utilize that" (l.113) — that is a ONE-TIME Antara Noida possession GROSS COLLECTIONS inflow (~Rs169cr demand raised, ~75% collected, l.7), non-recurring by nature, not a repeatable operating cash stream. Set against a Rs21cr standalone holdco treasury (l.7, RED per item 8) and a REFUSED FY27/FY28 cash-burn number (l.101), the "better performance" framing dresses up balance-sheet leverage plus a non-recurring collection as improved funding health. This SHARPENS FLAG-CASH INDETERMINATE. **Symmetric bull read:** the NOA cash is real (residents did pay, ~75% of a Rs169cr demand collected), the Rs40cr pref tranche was in fact received in July (l.111,113), and the stated peak requirement genuinely fell from ~US$25m to ~US$20m (l.113) — so liquidity did improve this quarter in absolute terms, and the deferral is not by itself evidence of distress; it is evidence that the improvement leaned on debt and a one-off, not on the businesses turning cash-generative.
+- Thesis implication (**A3-08, FORWARD-SIGNAL**): dilution overhang plus timing risk against a Rs21cr holdco treasury, with the near-term liquidity bridge built on credit lines and one-time collections rather than operating cash. Read adversarially, a deferred raise financed this way with thin holdco cash is a liquidity-management signal, not underlying strength.
+- Follow-up we would ask: at what price and by when is the remaining ~US$20m expected; how much of the deferral was funded by new credit-line drawdown versus NOA one-time collections; and what is the holdco (standalone) cash runway at the current burn without the raise?
 
 ## STEP 5 — NEW INFORMATION AUDIT
 
@@ -232,6 +233,7 @@ Response-quality tally: A x6, B x11, C x3, D x0, **E x1** (the cash-burn refusal
 | AIWC wellness clinic pilot: Rs15.75 lakh rev, neg contribution margin | New product/capability | LOW (early) | Differentiator narrative; not yet a P&L line |
 | Brand ambassador onboarded (Anupam Kher likely); brand spend flagged | New spend | LOW-MED | Explains part of AGEasy cost; payback claimed in July |
 | Rs40cr pref-issue tranche received July; ~US$20m still needed | Corporate action | YES | A3-08: dilution overhang, deferred raise |
+| Second-raise deferral funded by credit-line drawdown (new debt) + one-time NOA gross collections, NOT operating cash | Negative surprise / capital-quality | YES | Bear counter (A5 graft): "better performance" framing masks balance-sheet leverage (l.109) + non-recurring inflow (l.113) against Rs21cr holdco treasury (l.7 RED) and refused burn (l.101); sharpens FLAG-CASH INDETERMINATE. Bull offset: NOA cash is real and tranche received (l.111,113); peak need fell US$25m -> US$20m (l.113) |
 | DLF ("BLF/DF") senior-living entry (competitor) | Competitive | YES | See COMPETITION brief; management welcomes, notes 6-month delay |
 | Finance-lease re-lease income ~Rs15cr excluded from disclosed gross revenue | Accounting/quality | YES | A3-07: quality-of-revenue; management labels it "exceptional" |
 | Quick-commerce presence (Blinkit, Zepto); 4 patents granted, 3 filed | New channel/IP | MED | Supports AGEasy moat narrative |
@@ -308,7 +310,7 @@ No third-party channel data supplied this run. UNVERIFIABLE. Management's own ex
 |---|---|---|---|
 | Revenue FIRING (+2) | FIRING | +66% YoY consol (l.7); NOA Q2 step-up pending (l.25); AGEasy doubling reaffirmed vs wide run-rate gap (A3-05) | **ON TRACK** (QoQ decline + AGEasy gap temper it) |
 | Margin STARTING (+1) | STARTING | Q1 EBITDA loss widened YoY and QoQ (l.7); AGEasy CM2 improving to -17% mktplace (l.13); loss-ratio <63% "promise" (l.101) | **ON TRACK but unproven** — Q1 print is a loss increase |
-| Cash STARTING (+1) | STARTING | CFO refused (A3-12); standalone treasury Rs21cr RED (A3-02); raise deferred (A3-08) | **WEAKENED** — cash evidence deteriorated |
+| Cash STARTING (+1) | STARTING | CFO refused (A3-12); standalone treasury Rs21cr RED (A3-02); raise deferred on credit lines + one-time NOA collections, not operating cash (A3-08, l.109/113) | **WEAKENED** — cash evidence deteriorated; near-term bridge is debt + non-recurring inflow |
 | ROCE DECLINING (-1) | DECLINING | No support to reverse; only aspirational 23-24%+ care-home ROCE (l.97) | **DECLINING (unchanged)** |
 
 ### 8B. Watchlist items — concall-specific updates (the 9-item checklist)
@@ -343,18 +345,18 @@ Net checklist movement: item 4 AMBER -> GREEN (one improvement); item 8 AMBER ->
 | Pillar input | Pre-concall | Concall evidence | Post-concall adjustment |
 |---|---|---|---|
 | ROCE forward (Pillar 1, FTTCP-owned) | DECLINING (-1) | Only aspirational 23-24%+ care-home ROCE, forward/undated (l.97) | **No change — remains DECLINING**; do not credit the aspiration |
-| Cash conversion (Pillar 2) | Cash STARTING; FLAG-CASH INDETERMINATE | CFO refused (l.101); treasury RED (l.7) | **INDETERMINATE reaffirmed** — cannot resolve to structural or growth-induced; caps valuation cash multiplier at neutral-or-below until disclosed |
+| Cash conversion (Pillar 2) | Cash STARTING; FLAG-CASH INDETERMINATE | CFO refused (l.101); treasury RED (l.7); the second-raise deferral was bridged by DRAWING CREDIT LINES / new debt (l.109) and ONE-TIME NOA gross collections (l.113), NOT structural operating cash | **INDETERMINATE reaffirmed AND SHARPENED** — the "better performance" funding narrative is contradicted by the transcript's own mechanics (leverage + non-recurring inflow); cannot resolve to structural or growth-induced; caps the valuation cash multiplier at neutral-or-below until true operating CFO is disclosed |
 | Emerging moat / catalyst (Pillar 3) | — | Patents (4 granted, 3 filed), quick-commerce, AIWC differentiator (l.7,75) | Marginal positive on narrative; evidence quality mixed (spoken, not filed) |
 | Strategic premium | — | IP/services moat claim (l.75); no rare licence/monopoly | No new strategic-scarcity credit |
 
-Cash-conversion note (house rule): **INDETERMINATE cash conversion must not resolve silently to PROCEED.** It is named here and caps the merged verdict at PROCEED-WITH-FLAGS with the missing evidence (consolidated CFO for Q1 FY27, and FY27 cash-burn) explicitly identified.
+Cash-conversion note (house rule): **INDETERMINATE cash conversion must not resolve silently to PROCEED.** It is named here and caps the merged verdict at PROCEED-WITH-FLAGS with the missing evidence (consolidated CFO for Q1 FY27, and FY27 cash-burn) explicitly identified. **FLAG-CASH INDETERMINATE is not merely carried but SHARPENED this quarter:** the only near-term improvement in funding (deferral of the second raise) was financed by credit-line drawdown (new debt, l.109) plus one-time Antara Noida possession collections (l.113), set against a Rs21cr holdco treasury (l.7, RED) and a refused burn number (l.101) — balance-sheet leverage plus a non-recurring inflow presented as improved health. The symmetric bull read is retained: the NOA collections are real (~75% of Rs169cr demand, l.7), the Rs40cr pref tranche was received in July (l.111,113), and the stated peak requirement fell from ~US$25m to ~US$20m (l.113), so absolute liquidity did improve; the flag is about the QUALITY and durability of that improvement, not its existence.
 
 ### 8E. Position decision (8A-W, non-held)
 Decision Status verified first: **WATCHLIST** (non-held). No HOLD/ADD/TRIM/EXIT framing applies. Concall-specific overrides checked:
 - Credibility ratio <60%? Not computable this run; provisional archetype OVERPROMISER-WATCH -> **discount management commentary; require pre-committed thresholds for any future entry action** (already the ENTRY CONJUNCTION rule).
 - Two+ DROPPED in trailing 4? Not computable (first call). Chandigarh unwind acknowledged, not concealed.
-- Undisclosed material risk revealed? The cash-burn refusal + Rs21cr treasury + deferred raise is a **surfaced (not undisclosed) liquidity concern** — flag, do not trigger action on a non-held name.
-- Narrative vs filing contradiction? Internal contradictions only (no filing); loss "coming down" vs Q1 loss up — noted, credibility discount applied.
+- Undisclosed material risk revealed? The cash-burn refusal + Rs21cr treasury + deferred raise financed by debt and one-time collections is a **surfaced (not undisclosed) liquidity concern** — flag, do not trigger action on a non-held name.
+- Narrative vs filing contradiction? Internal contradictions only (no filing); loss "coming down" vs Q1 loss up, and "better performance" funding vs debt + one-off cash — noted, credibility discount applied.
 
 **Entry-zone update (8A-W):** entry ladder unchanged on A4 authority (MoS <=Rs120 | 25% entry Rs120-150 | fair value Rs150-220 | overvalued >Rs220; SOTP mid ~Rs187). CMP context Rs182 sits inside the fair-value band, above the entry zone -> **WATCHLIST, wait for correction into Rs120-150 AND a Q2 that clears the armed thesis-broken trigger** (ENTRY CONJUNCTION: price-in-zone AND no trigger fired). The liquidity/cash flags argue for patience, not for moving the zone.
 
@@ -368,7 +370,7 @@ Decision Status verified first: **WATCHLIST** (non-held). No HOLD/ADD/TRIM/EXIT 
 | 4 | Given a Q1 net run-rate of ~Rs19cr, what is the quarter-by-quarter path to the FY27 AGEasy Rs150cr (doubling)? | A3-05 | Run-rate-to-guidance gap is wide; miss risk | Q2 AGEasy revenue vs implied ramp |
 | 5 | Ex the exceptional DMP timing, what was the normalised (recurring) consol EBITDA this quarter, and what recurring DMP is expected in Q2? | A3-06 | Distinguishes lumpiness framing from operating deterioration | Q2 EBITDA and DMP disclosure |
 | 6 | Please provide a senior-living revenue bridge excluding the ~Rs15cr finance-lease re-lease income; what is recurring vs exceptional? | A3-07 | Quality-of-revenue; re-lease is non-recurring and excluded from gross revenue | Normalised revenue line |
-| 7 | On what timeline, at what price, and with how much dilution is the remaining ~US$20m raise expected? What is standalone cash runway without it? | A3-08 | Dilution overhang + Rs21cr holdco treasury | Raise timing, standalone treasury trend |
+| 7 | On what timeline, at what price, and with how much dilution is the remaining ~US$20m raise expected? How much of this quarter's deferral was funded by credit-line drawdown vs one-time NOA collections, and what is standalone cash runway without the raise? | A3-08 | Dilution overhang + Rs21cr holdco treasury; the deferral bridge is debt + non-recurring cash | Raise timing, standalone treasury trend, debt drawn |
 | 8 | What is the FY27 equity requirement specifically for care-home bed expansion (at Rs10-12L/bed incl. ops losses), and the Oct-Nov expansion decision criteria? | A3-09 | Capital concentrated in the loss-making, equity-funded segment | Oct-Nov decision; bed-add capex |
 | 9 | Please disclose the standalone AACSL segment loss and segment revenue so the loss/revenue ratio (was 1.03x; band 0.85/1.10) can be marked. | A3-10 | The single cleanest metric is currently not isolable | AACSL loss/rev ratio disclosed |
 | 10 | Was the Chairman/promoter absent by design, and will the FY27-28 Chairman comp resolution and its likely dissent be addressed ahead of Feb-Mar 2027? | A3-13 | Governance/attendance signal; ties to monitoring item 7 | Promoter presence next call; comp resolution |
@@ -378,7 +380,7 @@ Decision Status verified first: **WATCHLIST** (non-held). No HOLD/ADD/TRIM/EXIT 
 
 **Not executed by A4.** Per pipeline design and the task instruction, A4 does not call Notion; the orchestrator/downstream stage owns the save. Decision Status is unchanged (WATCHLIST) because no pre-committed trigger fired; row-property changes to propose downstream: Key Notes one-liner (below), monitoring items 4 -> GREEN, 8 -> RED, 2 -> RED-on-Q1-count, 1/3/9 -> UNKNOWN. Management Grade: hold FLAG-PROMOTER CONCERN; do not upgrade (no credibility ratio yet).
 
-Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev but EBITDA loss WIDENED (Rs25cr vs Rs6.8cr Q4); standalone treasury Rs21cr RED, cash-burn Q refused, 2nd raise (~US$20m) deferred; 340 NOA possession offers -> Q2 recognition; AGEasy Q4 breakeven reaffirmed; DLF senior-living entry noted (delayed 6m); no thesis-broken trigger fired; WATCHLIST held; OVERPROMISER-WATCH archetype."*
+Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev but EBITDA loss WIDENED (Rs25cr vs Rs6.8cr Q4); standalone treasury Rs21cr RED, cash-burn Q refused, 2nd raise (~US$20m) deferred on credit lines + one-time NOA collections not operating cash; 340 NOA possession offers -> Q2 recognition; AGEasy Q4 breakeven reaffirmed; DLF senior-living entry noted (delayed 6m); no thesis-broken trigger fired; WATCHLIST held; OVERPROMISER-WATCH archetype."*
 
 ---
 
@@ -388,7 +390,7 @@ Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev b
 - Trailing 4-Quarter Credibility Ratio: **ND** (log starts this quarter).
 - Management Archetype (6E): **OVERPROMISER-WATCH** (specificity ~0.53 high; delivery unproven; raise deferred).
 - Role 1 Track Record Input: **ND this run** (defaults to prior FLAG-PROMOTER CONCERN treatment until a ratio exists).
-- Net concall impact on thesis: **MAINTAINED with negative cash/liquidity drift** — revenue narrative intact, cash evidence weakened; no trigger fired.
+- Net concall impact on thesis: **MAINTAINED with negative cash/liquidity drift** — revenue narrative intact, cash evidence weakened (near-term funding bridge is debt + one-time NOA collections, not operating cash); no trigger fired.
 - Position decision: **WATCHLIST held** (non-held, 8A-W); entry zone unchanged Rs120-150; ENTRY CONJUNCTION requires a clean Q2.
 - Cash conversion: **INDETERMINATE** (CFO refused; missing evidence named: Q1 FY27 consolidated CFO and FY27 cash burn).
 - Merged protocol verdict: **PROCEED WITH FLAGS** (cash INDETERMINATE caps above a clean PROCEED; three active flags carried: PROMOTER CONCERN, CASH INDETERMINATE, GATE0 AVOID).
@@ -424,6 +426,7 @@ Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev b
 | Revenue delivery | +66% YoY consol; QoQ down (lumpy DM) | 7 |
 | Margin delivery | EBITDA loss WIDENED YoY (23.2->25) and QoQ (6.8->25) | 7 |
 | Cash transparency | RefUSED (E) | 101 |
+| Funding quality | Deferral bridged by credit lines + one-time NOA collections, not operating cash | 109,113 |
 | Guidance specificity | High (~0.53) | Step 6B |
 | Hedge count | 7 ( >5 hedge-heavy) | Step 6C |
 | Promoter presence | Absent (yellow flag) | Table 1 |
@@ -507,6 +510,7 @@ Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev b
 | Standalone-vs-consol PAT gap | ND (no PAT split disclosed) | — |
 | Pref-issue tranche received | Rs40cr (July) | 111,113 |
 | Second raise still required | ~US$20m over 2 yrs (deferred from Jun-26) | 117 |
+| Deferral bridge (quality) | Credit-line drawdown (new debt) + one-time NOA gross collections, NOT operating cash | 109,113 |
 | Peak capital requirement | ~US$25m -> now ~US$20m | 113 |
 
 ---
@@ -521,11 +525,11 @@ Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev b
 | QM-4 | Given ~Rs19cr Q1 net run-rate, what is the quarter-by-quarter path to Rs150cr FY27 AGEasy? | A3-05 | FORWARD-SIGNAL |
 | QM-5 | Ex the exceptional DMP timing, what was normalised consol EBITDA this quarter, and expected recurring DMP in Q2? | A3-06 | AMBIGUOUS |
 | QM-6 | Provide a senior-living revenue bridge excluding the ~Rs15cr finance-lease re-lease income (recurring vs exceptional). | A3-07 | FORWARD-SIGNAL |
-| QM-7 | On what timeline/price/dilution is the remaining ~US$20m raise expected, and what is standalone cash runway without it? | A3-08 | FORWARD-SIGNAL |
+| QM-7 | On what timeline/price/dilution is the remaining ~US$20m raise expected; how much of this quarter's deferral was funded by credit-line drawdown vs one-time NOA collections; and what is standalone cash runway without it? | A3-08 | FORWARD-SIGNAL |
 | QM-8 | What is the FY27 equity requirement for care-home bed expansion (Rs10-12L/bed), and the Oct-Nov decision criteria? | A3-09 | FORWARD-SIGNAL |
 | QM-9 | Disclose standalone AACSL segment loss and revenue so the loss/revenue ratio (was 1.03x; band 0.85/1.10) can be marked — the single cleanest metric is not isolable. | A3-10 | AMBIGUOUS (cleanest-metric non-disclosure) |
 | QM-10 | Was the promoter/Chairman absent by design, and how will the FY27-28 Chairman comp resolution and likely dissent be handled before Feb-Mar 2027? | A3-13 | AMBIGUOUS |
-| QM-11 | What was consolidated CFO / operating cash flow for Q1 FY27, and expected FY27 cash outflow before self-sustaining? (Directly declined on the call.) | A3-12 | CONFIRMATORY-NEGATIVE (declined cash-burn) |
+| QM-11 | What was consolidated CFO / operating cash flow for Q1 FY27, and expected FY27 cash outflow before self-sustaining? (Directly refused this call.) | A3-12 | CONFIRMATORY-NEGATIVE (declined cash-burn) |
 
 ---
 
@@ -535,7 +539,7 @@ Proposed Key Notes one-liner: *"2026-08-12 Q1FY27 concall: +66% YoY consol rev b
 
 Max India ran a Q1 FY27 concall on 12 August 2026 with the MD and CEO and subsidiary CFOs, but no promoter or Chairman on the line, which is worth noting on a call that covered a live capital raise, a new competitor and multi-city expansion. Consolidated revenue was Rs68.6 crore, up 66% from Rs41.3 crore a year earlier, but it slipped slightly versus the prior quarter because development-fee income is lumpy. The headline problem is the loss. Quarterly EBITDA loss was Rs25 crore, worse than the Rs23.2 crore a year ago and much worse than the Rs6.8 crore last quarter. Management reframed that as timing of an exceptional fee received in the prior quarter, and pointed to the full-year loss ratio falling from 95% to 63% as the real story. On a full-year view that is fair, but the Q1 print is a bigger loss, not a smaller one, so treat the improvement as a promise, not a delivered result.
 
-Cash is the pressure point. Standalone (holding-company) treasury fell to Rs21 crore from Rs43 crore, below the Rs30 crore red line, while consolidated cash of Rs372 crore sits down in the subsidiaries. An analyst asked directly for the FY27 and FY28 cash burn and management declined to give it. A Rs40 crore preferential-issue tranche came in during July, and about US$20 million more is still needed over two years, with the second raise having been pushed out from June. Thin holding-company cash plus a deferred raise plus a refused burn number keeps the cash flag firmly open.
+Cash is the pressure point. Standalone (holding-company) treasury fell to Rs21 crore from Rs43 crore, below the Rs30 crore red line, while consolidated cash of Rs372 crore sits down in the subsidiaries. An analyst asked directly for the FY27 and FY28 cash burn and management declined to give it. A Rs40 crore preferential-issue tranche came in during July, and about US$20 million more is still needed over two years, with the second raise having been pushed out from June. Management called that deferral "better performance", but the transcript says the deferral was actually bridged by drawing credit lines (new debt) to manage working capital and by one-time Antara Noida possession collections, not by the businesses generating cash. So absolute liquidity did improve this quarter, but the quality of that improvement is debt plus a one-off, which keeps the cash flag open and sharpened.
 
 The operating milestones are real. Offers of possession went to all 340 Antara Noida residents in June against a Rs169 crore demand, of which about 75% is collected, though the SPV books zero revenue this quarter because recognition waits for Q2 possession and registration. Care-home occupancy is rising home by home (two flagship homes at 41%), AGEasy reaffirmed a Q4 FY27 breakeven, and DLF's senior-living entry was discussed and shrugged off as delayed six months. No pre-committed thesis-broken trigger fired this quarter, so the WATCHLIST status holds; the Q2 compound trigger (Noida handovers and AACSL loss) is armed and should be watched closely. Guidance was very specific, but with an unproven delivery record and the deferred raise, we tag management OVERPROMISER-WATCH and anchor any future entry to the pre-set thresholds, not the narrative.
 
@@ -545,7 +549,7 @@ India's silver-economy thesis (aging population, senior living, assisted care, s
 
 ## 3. BUSINESS-MODEL INTELLIGENCE
 
-Max India is a holding company over three engines [Notion/prior-work]. (a) Senior living / residences is deliberately capital-light: it ties up with land-owning developers rather than buying land, and earns development-management fees, operating revenue and, occasionally, finance-lease re-lease income [concall, l.35,85]. This quarter that split was DMP fee ~Rs7cr + ops ~Rs6-7cr + finance-lease ~Rs15cr, and management explicitly excludes the ~Rs15cr re-lease income from disclosed gross revenue and calls it "exceptional" [concall, l.35] — so reported senior-living revenue quality needs that Rs15cr stripped out. (b) Assisted care / care homes is the capital sink: Rs10-12 lakh per bed including operating losses, sustained segment losses, and it is where most incremental capital will go [concall, l.85]. (c) AGEasy is a consumer-products / e-commerce model driven by return-on-ad-spend, gross margin around 45%, and patents as the intended moat [concall, l.7,75]; it is targeted to double to ~Rs150cr and break even at contribution level by Q4 FY27 [concall, l.53,13]. Model drift this quarter: revenue growing but losses widening at the group EBITDA line, cash held mostly at subsidiaries (Rs372cr consol vs Rs21cr standalone), and a reliance on lumpy development/DMP fees for quarterly EBITDA [concall, l.7]. The single cleanest transition metric, the AACSL segment loss-to-revenue ratio (was 1.03x), was not disclosed in isolable form this quarter [not disclosed, A3-10].
+Max India is a holding company over three engines [Notion/prior-work]. (a) Senior living / residences is deliberately capital-light: it ties up with land-owning developers rather than buying land, and earns development-management fees, operating revenue and, occasionally, finance-lease re-lease income [concall, l.35,85]. This quarter that split was DMP fee ~Rs7cr + ops ~Rs6-7cr + finance-lease ~Rs15cr, and management explicitly excludes the ~Rs15cr re-lease income from disclosed gross revenue and calls it "exceptional" [concall, l.35] — so reported senior-living revenue quality needs that Rs15cr stripped out. (b) Assisted care / care homes is the capital sink: Rs10-12 lakh per bed including operating losses, sustained segment losses, and it is where most incremental capital will go [concall, l.85]. (c) AGEasy is a consumer-products / e-commerce model driven by return-on-ad-spend, gross margin around 45%, and patents as the intended moat [concall, l.7,75]; it is targeted to double to ~Rs150cr and break even at contribution level by Q4 FY27 [concall, l.53,13]. Model drift this quarter: revenue growing but losses widening at the group EBITDA line, cash held mostly at subsidiaries (Rs372cr consol vs Rs21cr standalone), and quarterly funding leaning on credit lines and one-time Antara Noida collections rather than operating cash [concall, l.7,109,113]. The single cleanest transition metric, the AACSL segment loss-to-revenue ratio (was 1.03x), was not disclosed in isolable form this quarter [not disclosed, A3-10].
 
 ## 4. COMPETITION INTELLIGENCE
 
@@ -578,7 +582,7 @@ questions_for_management:
   - {q: "Given ~Rs19cr Q1 net run-rate, what is the quarter-by-quarter path to Rs150cr FY27 AGEasy revenue?", from_finding_id: "A3-05"}
   - {q: "Ex the exceptional DMP timing, what was normalised consol EBITDA this quarter and expected recurring DMP in Q2?", from_finding_id: "A3-06"}
   - {q: "Provide a senior-living revenue bridge excluding the ~Rs15cr finance-lease re-lease income (recurring vs exceptional).", from_finding_id: "A3-07"}
-  - {q: "On what timeline/price/dilution is the remaining ~US$20m raise expected, and standalone cash runway without it?", from_finding_id: "A3-08"}
+  - {q: "On what timeline/price/dilution is the remaining ~US$20m raise expected; how much of this quarter's deferral was funded by credit-line drawdown vs one-time NOA collections; and standalone cash runway without it?", from_finding_id: "A3-08"}
   - {q: "What is the FY27 equity requirement for care-home bed expansion (Rs10-12L/bed) and the Oct-Nov decision criteria?", from_finding_id: "A3-09"}
   - {q: "Disclose standalone AACSL segment loss and revenue so the loss/revenue ratio (was 1.03x; band 0.85/1.10) can be marked.", from_finding_id: "A3-10"}
   - {q: "Was the promoter/Chairman absent by design, and how will the FY27-28 Chairman comp resolution and likely dissent be handled before Feb-Mar 2027?", from_finding_id: "A3-13"}
@@ -587,7 +591,7 @@ monitorables:
   - {item: "NOA SPV revenue recognition on possession/registration (Q2 event; thesis-broken handover leg >=100)", implied_date: "Q2 FY27", source_ref: "line 25 / A3-01"}
   - {item: "AGEasy EBITDA/CM2 breakeven", implied_date: "Q4 FY27", source_ref: "lines 7,13 / item 4 GREEN"}
   - {item: "Care-home bed-expansion (inflection) decision", implied_date: "Oct-Nov 2026", source_ref: "line 13 / A3-09"}
-  - {item: "Second fundraise ~US$20m (Rs40cr pref tranche received Jul; deferred from Jun-26)", implied_date: "over next 2 years", source_ref: "lines 109,113,117 / A3-08"}
+  - {item: "Second fundraise ~US$20m (Rs40cr pref tranche received Jul; deferred from Jun-26; bridge = credit lines + one-time NOA collections, not operating cash)", implied_date: "over next 2 years", source_ref: "lines 109,113,117 / A3-08"}
   - {item: "Consol EBITDA loss ratio below 63% (FY27) - the promise", implied_date: "next-quarter evidence", source_ref: "line 101 / A3-03"}
   - {item: "Standalone treasury trend (Green >Rs50cr / Red <Rs30cr) - now Rs21cr RED", implied_date: "each quarter", source_ref: "line 7 / A3-02 / item 8"}
   - {item: "Consolidated CFO trajectory (Green >-20/Q, Red <-35/Q) - UNKNOWN, declined", implied_date: "Q2 FY27", source_ref: "line 101 / A3-12 / item 1"}
@@ -595,7 +599,7 @@ monitorables:
   - {item: "Bangalore + Dehradun definitive documents / new-geography announcements", implied_date: "next few months", source_ref: "lines 7,79 / A3-04"}
   - {item: "Chairman FY27-28 comp resolution (governance)", implied_date: "Feb-Mar 2027", source_ref: "Notion item 7 / A3-13"}
   - {item: "DLF (BLF/DF) senior-living launch timing (competitive)", implied_date: "delayed 6m; watch", source_ref: "lines 125-131"}
-flags: ["FLAG-PROMOTER CONCERN (carried; promoter absent this call, A3-13)", "FLAG-CASH INDETERMINATE (reaffirmed; CFO refused l.101, standalone treasury Rs21cr RED)", "FLAG-GATE0 AVOID (carried)", "STANDALONE-TREASURY-RED (item 8: Rs21cr, was Rs43cr)", "OVERPROMISER-WATCH archetype (specificity ~0.53, delivery unproven)", "NO thesis-broken trigger fired; Q2 compound trigger ARMED", "NO results filing this run (Role 4 N.A.; sc-gap PAT = ND)"]
+flags: ["FLAG-PROMOTER CONCERN (carried; promoter absent this call, A3-13)", "FLAG-CASH INDETERMINATE (reaffirmed AND SHARPENED; CFO refused l.101, standalone treasury Rs21cr RED, deferral bridged by credit lines l.109 + one-time NOA collections l.113 not operating cash)", "FLAG-GATE0 AVOID (carried)", "STANDALONE-TREASURY-RED (item 8: Rs21cr, was Rs43cr)", "CAPITAL-QUALITY (better-performance framing masks debt drawdown + non-recurring inflow; bull offset: NOA cash real, tranche received, peak need US$25m->US$20m)", "OVERPROMISER-WATCH archetype (specificity ~0.53, delivery unproven)", "NO thesis-broken trigger fired; Q2 compound trigger ARMED", "NO results filing this run (Role 4 N.A.; sc-gap PAT = ND)"]
 plain_language_brief_included: true
 review_path: "runs/maxind-q1fy27/work/review_maxind_q1fy27.md"
 ```

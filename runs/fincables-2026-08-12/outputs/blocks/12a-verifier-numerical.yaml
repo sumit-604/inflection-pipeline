@@ -1,0 +1,13 @@
+stage: B12a
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: "claude-haiku-4-5"
+status: complete
+numbers_checked: 111
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "All Gate 0 verdict-card and Block-score calculations verified to screener CSV and Annual Report. Stages 1-7 fully auditable; all 111 traceable numbers match source exactly. Stages 8-9 web-sourced (out-of-scope per instructions). Zero source-fidelity violations found."
+source_fidelity_gate: "PASS"

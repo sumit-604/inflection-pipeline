@@ -225,24 +225,24 @@ Column key: **Q1FY27** = 30-Jun-2026 (unaudited) · **Q4FY26** = 31-Mar-2026 (un
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION (PAT bridge, YoY, standalone)
 
-Bridge from Q1FY26 PAT (−1.01) to Q1FY27 PAT (+0.23), ₹ Cr:
+Bridge from Q1FY26 PAT (−1.01) to Q1FY27 PAT (+0.23), ₹ Cr. Component figures are rounded from the raw ₹-lakh deltas at the cited lines; the unrounded components foot exactly to +123.83 lakh = +₹1.24 Cr (Cr display carries ±₹0.01 Cr rounding).
 
 | Component | YoY change (₹ Cr) | Recurring? |
 |---|---|---|
 | Revenue growth × prior gross margin (volume/price) | +₹5.32 Cr revenue at ~13.4% Q1FY26 gross margin ≈ +0.71 | Recurring |
 | Gross-margin expansion (13.4%→20.2%) on current revenue | ≈ +1.51 | Recurring (if copper/pricing holds) |
-| — combined gross-profit uplift (memo: GP ₹2.27→₹4.45 Cr) | **+2.18** | Recurring |
+| — combined gross-profit uplift (memo: GP ₹2.27→₹4.49 Cr; 226.57→448.96 lakh) | **+2.22** | Recurring |
 | Employee cost change (1.25→1.45) | (0.20) | Recurring |
 | Other-expense change (1.69→1.76) | (0.07) | Recurring |
-| Depreciation change (0.17→0.23) | (0.06) | Recurring |
+| Depreciation change (0.17→0.23) | (0.05) | Recurring |
 | Finance-cost change (0.48→0.89) | **(0.41)** | Recurring (post-debt) |
 | Other Income change (0.04→0.15) | +0.11 | Non-recurring typically |
 | Deferred-tax swing (credit 0.28 → expense 0.09) | **(0.37)** | Mixed — DTA reversal (F8-a) |
 | Exceptional items | 0.00 | — |
-| **Reported PAT YoY change** | **+1.24** (−1.01 → +0.23) | — |
+| **Reported PAT YoY change** | **+1.24** (−1.01 → +0.23; unrounded components +123.83 lakh) | — |
 
 **Answers:**
-- **% of PAT change from recurring core vs non-recurring:** Essentially all recurring/core. The +₹2.18 Cr gross-profit uplift dominates; non-recurring Other Income (+₹0.11 Cr) is trivial and is more than offset by the adverse deferred-tax swing (−₹0.37 Cr). **The turn is real, not cosmetic.**
+- **% of PAT change from recurring core vs non-recurring:** Essentially all recurring/core. The +₹2.22 Cr gross-profit uplift dominates; non-recurring Other Income (+₹0.11 Cr) is trivial and is more than offset by the adverse deferred-tax swing (−₹0.37 Cr). **The turn is real, not cosmetic.**
 - **If Other Income reverts to prior level:** PAT falls only ~₹0.11 Cr to ~₹0.12 Cr — still positive. Not treasury-dependent.
 - **D&A / finance at steady state?** D&A steady; **finance cost is still rising (+85.5% YoY)** and is the recurring drag to watch — at ₹3.5 Cr annualised it consumes the bulk of a thin operating profit.
 - **Tax adjustments inflating/deflating PAT?** Yes but *deflating*: Q1FY27 carries a deferred-tax **expense** ₹0.09 Cr (ETR 28.3%) where Q1FY26 had a credit. Nil current tax in a positive-PBT quarter (F8-a) means the ₹2.95 Cr DTA recognised during the loss years is now **beginning to reverse**; recoverability depends on sustained profit the FY24–26 record does not yet support.

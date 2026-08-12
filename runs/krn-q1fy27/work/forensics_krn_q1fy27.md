@@ -10,6 +10,11 @@ annexure sub-rows (M1, M2), 5 signature blocks (B). No unread row. All four A2 `
 flags, `UNAUDITED_SUBSIDIARY_RELIANCE`, `INCOMPLETE_SIGNATURE` x2, and `HEADER_MISCOUNT` carried
 forward and dispositioned below.
 
+> **A5 loop-1 update (GATE A5):** F14 now enumerates **four** discrete drafting-control instances.
+> The fourth — standalone segment-note pre-exceptional FY26 (9,191.08, L564) vs standalone P&L
+> pre-exceptional FY26 (9,111.66, L434), a 79.42-Lakh / Rs 0.79 Cr gap — is A2's fourth
+> `FIGURE_MISMATCH`; previously folded into F14 prose, now a distinct sub-finding. No other finding changed.
+
 ---
 
 ## FINDINGS TABLE
@@ -24,7 +29,18 @@ forward and dispositioned below.
 | **F9** | F9 | C-20 | 142 | "Remeasurements of defined benefit plans … 19.18" | AMBIGUOUS | Single-quarter consol OCI remeasurement **+19.18** exceeds the full prior year FY26 (−14.26) and flips sign → actuarial-assumption change (discount rate / plan assets). Immaterial in Rs (Rs 0.19 Cr); verify assumptions at Annual Report. |
 | **F12** | F12 | H1-13..18, H1-7 | 285–291, 275, 561, 571–577 | "Segment Liabilities Overseas 10,851.33 … Segment Asset Overseas 8,102.18" (Overseas result row blank) | AMBIGUOUS | Consol overseas segment carries **liabilities (10,851.33) > assets (8,102.18)** — net negative position; and "Segment Results — Overseas" is **blank in every period**. Overseas profitability is never disclosed while overseas revenue is Rs 52–99 Cr. Concall question on overseas margin + the liability overhang. |
 | **F13** | F13 | Agenda 2 & 3 / M1, M2 | 53–64, 667, 699 | "Appointment of M/s. R S Chauhan & Associates … Cost Auditor" / "M/s. Sharma Shankar & Co. … Internal Auditor" | AMBIGUOUS | **Both** cost auditor and internal auditor appointed in the **same** 29-minute meeting (15:30–15:59, line 79–80), Reg 30 field reads "appointment" not "reappointment". No AR approval / AGM notice / dividend / director / capital-raise item (absent by sweep, line 74–76). Verify whether predecessors were replaced — relevant to the MONITOR promoter verdict. |
-| **F14** | F14 | C-19 vs C-26/C-32; C-13/D-13; I1-10 vs D-12 | 139 vs 150/160; 132 vs 435; 564 vs 434 | "Profit for the period (Vil-VIII) 3,269.56" vs "a) Owner of the company 3,289.56" | CONFIRMATORY-NEGATIVE | Headline consolidated PAT keying error: PBT 4,233.08 − tax 943.52 = **3,289.56**, and EPS 5.20 × 632.57L wtd shares = 3,289.56 — both prove line 139's 3,269.56 is a typo understating quarterly PAT by Rs 0.20 Cr. Plus prior-period-item sign flip (consol +39.71 / SA (39.71)), tax sign flip (F8), and standalone segment pre-exceptional FY26 9,191.08 vs P&L 9,111.66 (double-counts the 39.71). Cumulative drafting-control weakness. |
+| **F14** | F14 | C-19 vs C-26/C-32; C-13/D-13; C-17/D-17; I1-10 vs D-12 | 139 vs 150/160; 132 vs 435; 137 vs 440; **564 vs 434** | "Profit for the period (Vil-VIII) 3,269.56" vs "a) Owner of the company 3,289.56"; **"Profit/(loss) Before Exceptional Items & Tax … 9,191.08" (segment) vs "Profit Before Prior Period and Exceptional Item … 9,111.66" (P&L)** | CONFIRMATORY-NEGATIVE | **Four** discrete drafting-control instances (see scorecard). Cumulatively a control-weakness pattern; individually the PAT typo alone is decision-relevant (understates headline consol PAT), the fourth (Rs 0.79 Cr segment-vs-P&L) is immaterial in rupees but a genuine flagged instance. |
+
+---
+
+## F14 SUB-FINDING ENUMERATION (four instances)
+
+| # | instance | line cites | magnitude | note |
+|---|----------|-----------|-----------|------|
+| F14-1 | Consol "Profit for the period" 3,269.56 vs "Owner of the company" / "Net Profit after Tax & NCI" 3,289.56 | 139 vs 150 & 160 | Rs 0.20 Cr (20 Lakh) | **Keying typo**: PBT 4,233.08 − tax 943.52 = 3,289.56, and EPS 5.20 × 632.57L wtd shares = 3,289.56 — both prove 3,289.56 is correct and line 139 understates. Decision-relevant (headline PAT). |
+| F14-2 | Prior Period / Exceptional Item FY26: consol **+39.71** vs standalone **(39.71)** | 132 (& seg 279) vs 435 (& seg 565) | Rs 0.40 Cr (39.71 Lakh), sign | Sign inconsistency across statements for the same-nature item. |
+| F14-3 | Income Tax (Short/Excess provision) FY26: consol **302.65** vs standalone **(302.65)** | 137 vs 440 | Rs 3.03 Cr (302.65 Lakh), sign | Presentation sign flip (both function as credits); overlaps F8. |
+| F14-4 | Standalone **segment-note** pre-exceptional FY26 **9,191.08** vs standalone **P&L** pre-exceptional FY26 **9,111.66** | **564 vs 434** | **Rs 0.79 Cr (79.42 Lakh)** | Segment note overstates pre-exceptional profit by 79.42 (= 2×39.71), i.e. double-counts the 39.71 exceptional relative to the P&L; both still reconcile down to PBT 9,151.37 (L566 = L436). **Immaterial in rupees but a genuine flagged drafting-control instance** — this is A2's fourth `FIGURE_MISMATCH`, now dispositioned. |
 
 ---
 
@@ -45,7 +61,7 @@ forward and dispositioned below.
 | F11 | **PASS** | FY26 net worth ties: consol Other Equity 51,183.82 + paid-up 6,215.66 = Rs 573.99 Cr; standalone 50,452.30 + 6,215.66 = Rs 566.68 Cr. Q1 Other Equity not disclosed (standard). No third-party net-worth figure inside the filing to reconcile against; no >5% gap detectable. |
 | F12 | **FINDING** | Overseas segment liabilities (10,851.33) > assets (8,102.18); overseas segment result blank every period; quarterly segment BS not disclosed so accretion rate not trendable. |
 | F13 | **FINDING** | Cost + internal auditor both freshly appointed same meeting; no AR/AGM/dividend/director/capital-raise item. Low severity, verify replacement vs reappointment. |
-| F14 | **FINDING** | Headline PAT typo (139 vs 150; arithmetic + EPS confirm 3,289.56), two sign flips, and standalone segment-vs-P&L pre-exceptional mismatch (564 vs 434). Also duplicate/mislabelled OCI sub-heading (consol 141 & 144 both "will not be reclassified"). |
+| F14 | **FINDING** | **Four** drafting-control instances (see enumeration table): F14-1 headline PAT keying typo (139 vs 150; arithmetic + EPS confirm 3,289.56); F14-2 prior-period-item sign flip (132 vs 435); F14-3 income-tax short/excess sign flip (137 vs 440); **F14-4 standalone segment-vs-P&L pre-exceptional FY26 gap of Rs 0.79 Cr (9,191.08 L564 vs 9,111.66 L434)**. Also duplicate/mislabelled OCI sub-heading (consol 141 & 144 both "will not be reclassified"). |
 | F15 | **PASS** | Two subsidiaries — KRN HVAC Products Pvt Ltd, Thermotech Research Laboratory Pvt Ltd (367–368) — internally consistent with Notes 7/8 and the LRR entity list; all-blank NCI confirms both wholly owned. `NO_PRIOR_LEDGER`: add/delete/rename diff not runnable this cycle; carried as a limitation. |
 | F16 | **N.A.** | Doctype = results filing, not a presentation. No slides, baselines, or order-book definitions to diff. |
 | F17 | **N.A.** | Doctype = results filing, not a transcript. Silence audit deferred to the concall document; monitorables tested where the filing permits are noted below for A4. |
@@ -79,9 +95,10 @@ No blank checks. GATE A3 = pass.
 
 ## DISPOSITION OF A2 CARRY-FORWARD FLAGS
 
-- `FIGURE_MISMATCH` (i) PAT 3,269.56 vs 3,289.56 → **resolved**: 3,289.56 is correct (PBT−tax and EPS both confirm); line 139 is a keying typo → F14.
-- `FIGURE_MISMATCH` (ii) prior-period-item sign flip & (iii) tax short/excess sign flip → F8/F14 (drafting).
-- `FIGURE_MISMATCH` (iv) standalone segment pre-exceptional 9,191.08 vs P&L 9,111.66 → F14 (double-counts the 39.71; both still reconcile to PBT 9,151.37).
+- `FIGURE_MISMATCH` (i) PAT 3,269.56 vs 3,289.56 → **resolved**: 3,289.56 is correct (PBT−tax and EPS both confirm); line 139 is a keying typo → F14-1.
+- `FIGURE_MISMATCH` (ii) prior-period-item sign flip → F14-2.
+- `FIGURE_MISMATCH` (iii) tax short/excess sign flip → F8 / F14-3.
+- `FIGURE_MISMATCH` (iv) standalone segment pre-exceptional 9,191.08 (L564) vs P&L 9,111.66 (L434), Rs 0.79 Cr / 79.42 Lakh → **F14-4** (dispositioned per A5 loop-1; segment note double-counts the 39.71 exceptional; both reconcile to PBT 9,151.37). Immaterial in rupees, genuine drafting-control instance.
 - `UNAUDITED_SUBSIDIARY_RELIANCE` → F4 (43.2% of PAT).
 - `INCOMPLETE_SIGNATURE` x2 (458–459, 533–534): unnamed "For and on behalf of Board of Directors" blocks on both P&L pages — OCR/stamp-only, no extractable signatory. CS (88–94) and both auditor blocks (393–403, 637–647) are named with distinct UDINs; no UDIN reuse. Recorded as a NEUTRAL-FACT drafting/OCR gap, not escalated (named signatures exist elsewhere in the filing).
 - `HEADER_MISCOUNT` (header 708 vs body 735): confirmed — page 13 content ends line 735; does not affect any line cite. NEUTRAL-FACT.
@@ -125,7 +142,7 @@ findings:
   - {id: "F9", check: "F9", line: "142", classification: "AMBIGUOUS", implication: "Single-quarter OCI remeasurement 19.18 > full FY26 14.26 with sign flip = actuarial assumption change; verify at AR"}
   - {id: "F12", check: "F12", line: "285-291,275", classification: "AMBIGUOUS", implication: "Overseas segment liabilities > assets and overseas result never disclosed; concall Q on overseas profitability"}
   - {id: "F13", check: "F13", line: "53-64,667,699", classification: "AMBIGUOUS", implication: "Cost + internal auditor both freshly appointed same meeting; verify replacement vs reappointment; no AR/AGM/dividend item"}
-  - {id: "F14", check: "F14", line: "139,150,132,435,564,434", classification: "CONFIRMATORY-NEGATIVE", implication: "Headline consol PAT keying typo (true 3289.56 via PBT-tax and EPS), sign flips, segment-vs-P&L mismatch = drafting-control weakness"}
+  - {id: "F14", check: "F14", line: "139-vs-150; 132-vs-435; 137-vs-440; 564-vs-434", classification: "CONFIRMATORY-NEGATIVE", implication: "FOUR drafting-control instances: F14-1 headline PAT keying typo (true 3289.56 via PBT-tax and EPS, 20 Lakh); F14-2 prior-period-item sign flip (39.71); F14-3 income-tax short/excess sign flip (302.65); F14-4 standalone segment-vs-P&L pre-exceptional FY26 gap Rs 0.79 Cr (9191.08 L564 vs 9111.66 L434, 79.42 Lakh, immaterial but genuine). Instance count = four."}
 forward_signals: ["F2", "F4", "F6"]
 ambiguous: ["F1", "F8", "F9", "F12", "F13"]
 commitments:

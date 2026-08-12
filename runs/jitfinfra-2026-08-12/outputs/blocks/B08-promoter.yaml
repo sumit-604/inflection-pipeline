@@ -1,0 +1,64 @@
+stage: B08-promoter
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: partial               # several confirmatory fetches (bseindia.com, whalesbook, tipranks, scanx, ambitionbox, glassdoor) were network egress-blocked; substituted with corroborated WebSearch snippets where possible
+input_gaps: [prospectus, rating, announcements, shareholding, research, presentation, concalls]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "RPT interest is 45.04% of consolidated finance cost (Rs 18,073.43 lakh of Rs 40,128.90 lakh, AR Note 39 p.189 + Note 14 p.227) to two promoter-group lenders"
+      - "Siddheshwari Tradex Pvt Ltd five-role relationship: 11.68% shareholder, lender owed ~Rs 1,641 crore (up 28.8% YoY), 11% preference shareholder Rs 20,000 lakh, corporate guarantor/letter-of-comfort provider, pledgee of promoter collateral shares"
+      - "Verified same-document contradiction: RPT Note 24.11 names WTD/CEO Sinha as recipient of a Rs 13.50 lakh loan while Note 24.18(iii) denies any loan to directors/KMP exists (AR pp.110,121,147,153)"
+      - "Board independence table overstates independence: 5 claimed vs 3 actual Independent Non-Executive directors (AR p.88)"
+      - "Incoming (31 Jul 2026) independent director Suresh Baid is disclosed in the AR itself as also a director of Jindal Saw Ltd, the group's largest RPT counterparty, deepening rather than resolving the existing Girish Sharma cross-membership concern"
+      - "Sustained multi-year NGT/CPCB/DPCC environmental non-compliance record (2017-2024, incl. 2024 NYT investigation) at two 100%-owned waste-to-energy subsidiaries (Okhla, Bawana)"
+      - "Material RPT (~Rs 5,000cr, JWIL Infra) rejected by shareholders at EGM 30 Mar 2026, re-approved by board 6 Apr 2026, re-voted at EGM 6 May 2026 (final outcome not confirmed in this session) — 3 corroborating aggregator sources, primary BSE filing unreachable"
+      - "Two subsidiaries carry going-concern flags: JITF Water Infra (Naya Raipur) material uncertainty; JITF Urban Waste Management (Bathinda) EOM contingent partly on future promoter support"
+verdict: "CONCERN"
+scorecard: {clean: 4, caution: 3, red: 3}
+deal_breakers: []              # none triggered: no SEBI ban, no economic-offence conviction, no live SFIO, no PMLA attachment, no auditor resignation, pledge is 0% not >40%, no independent-director mid-term exits, no restatement
+adverse_findings:
+  - {finding: "RPT interest = 45.04% of consolidated finance cost (two promoter-group lenders)", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, Note 39 p.189 / Note 14 p.227", date: "2026-05-12"}
+  - {finding: "Siddheshwari Tradex Pvt Ltd five-role relationship (shareholder/lender/preference-shareholder/guarantor/pledgee), group owes ~Rs 1,641cr", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, pp.177,179-181,225-230", date: "2026-05-12"}
+  - {finding: "Same-document contradiction on loan to WTD/CEO Sinha", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, pp.110,121,147,153", date: "2026-05-12"}
+  - {finding: "Board independence table overstates independence (5 claimed vs 3 actual)", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, Corporate Governance Report p.88", date: "2026-05-12"}
+  - {finding: "Incoming independent director Suresh Baid also a director of Jindal Saw Ltd (largest RPT counterparty)", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, AGM Notice p.273", date: "2026-07-31"}
+  - {finding: "Sustained NGT/CPCB/DPCC non-compliance and community protest at Okhla and Bawana waste-to-energy subsidiaries, incl. 2024 NYT investigation on cadmium/lead/arsenic emissions", evidence_tier: "MEDIA REPORTED", source: "Down To Earth, ToxicsWatch, dialogue.earth, NYT (via secondary reporting)", date: "2017-2024"}
+  - {finding: "Rs 5,000cr JWIL Infra Material RPT rejected at EGM 30 Mar 2026, re-approved by board 6 Apr 2026, re-voted 6 May 2026 (final outcome unconfirmed)", evidence_tier: "MEDIA REPORTED", source: "Whalesbook and ScanX corporate-news aggregation of company BSE/NSE Reg. 30 disclosures", date: "2026-03-30 to 2026-05-06"}
+  - {finding: "Two subsidiaries carry going-concern/EOM paragraphs (JITF Water Infra Naya Raipur; JITF Urban Waste Management Bathinda, contingent partly on future promoter support)", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, Note 42.26(a)/(d), pp.231,240-241", date: "2026-05-12"}
+  - {finding: "No parent dividend paid while subsidiary dividends flow to promoter-linked NCI holder Samarpan Infra Holdings (Rs 373.73 lakh)", evidence_tier: "VERIFIED", source: "Annual Report FY2025-26, pp.97,229,256", date: "2026-05-12"}
+  - {finding: "Foreign promoter holding vehicles (~26% combined) with jurisdiction not disclosed in AR", evidence_tier: "VERIFIED (fact of non-disclosure)", source: "Annual Report FY2025-26, shareholding pattern p.177", date: "2026-05-12"}
+transition_evidence:
+  - "New independent director Satyakam Mishra (retired IRS, ex-Pr CCIT International Taxation), no other listed directorships, appointed 31 Jul 2026 (AR pp.259-273)"
+  - "New non-executive director Sandip Dutt, technical/waste-to-energy engineering background, no other listed directorships, appointed 31 Jul 2026 (AR pp.259-273)"
+  - "CAVEAT: third new appointee Suresh Baid simultaneously sits on Jindal Saw Ltd's board, undercutting the board renewal as a clean governance-improvement signal (AR p.273)"
+  - "No institutional investor entry found (FII ~2.08%, DII ~0%, flat)"
+  - "No pledge to reduce (0% throughout period searched)"
+  - "No auditor upgrade (Lodha & Co LLP retained)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% across FY24-FY26; AR shareholding pattern (p.99) and BSE no-encumbrance filing (Siddheshwari Tradex + 42 other promoter entities) both confirm zero pledge; no pledge found in any period searched"
+searches_performed: [
+  "JITFINFRA SEBI adjudication order", "Sminu Jindal/Prithvi Raj Jindal SEBI SAT case",
+  "JITF Infralogistics EGM JWIL Infra rejected shareholders", "board changes Mishra/Baid/Dutt Jul 2026",
+  "EGM 30 Mar 2026 rejected vote against", "pledge/promoter share encumbrance",
+  "CFO/CS/independent director resignation", "IiAS/SES/InGovern proxy advisory",
+  "Naya Raipur/NRDA going concern arbitration", "Glassdoor/AmbitionBox employee reviews",
+  "Jindal ITF ED/CBI/SFIO/income tax raid", "auditor Lodha & Co qualified opinion/resignation",
+  "news 2026 Moneycontrol/ET analysis", "institutional investor FII/DII stake 2026",
+  "Sminu Jindal Svayam philanthropy CSR award", "JITF/Jindal ITF NCLT oppression petition",
+  "JWIL Infra IPO listing plans", "Jindal Urban Waste Management NGT pollution protest",
+  "Prithvi Raj Jindal chairman role at JITFINFRA", "Amarendra Kumar Sinha CEO background",
+  "Timarpur Okhla NGT order/penalty 2023-2025", "Jindal Urban Waste Bawana CPCB non-compliance",
+  "Girish Sharma independent director Jindal Saw background", "Siddheshwari Tradex electoral bonds",
+  "Jindal Rail Infrastructure wagon quality controversy", "promoter pledge historical trend 2023-2025",
+  "full Annual Report FY2025-26 read (pp.1-278)"
+]
+searches_skipped: [
+  "Direct primary-source fetch of BSE corp-announcements page (bseindia.com egress-blocked)",
+  "Direct fetch of whalesbook.com/tipranks.com/scanx.trade EGM articles (egress-blocked; substituted with search snippets)",
+  "Direct fetch of ambitionbox.com/glassdoor.com employee review pages (egress-blocked)",
+  "Exhaustive full-dataset electoral-bond cross-check for promoter-group entities (only targeted search run)"
+]
+verdict_basis: "Clean SEBI/criminal/tax record and 0% pledge sit against a verified same-document loan contradiction, RPT interest at 45% of finance cost concentrated in a five-role promoter lender owed ~Rs 1,641 crore, an overstated board-independence table that the latest board renewal deepens rather than fixes, and a sustained environmental non-compliance record at two operating subsidiaries."

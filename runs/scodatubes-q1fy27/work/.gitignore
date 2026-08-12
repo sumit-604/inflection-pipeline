@@ -1,2 +1,3 @@
-runs/*/work/ocr_*.png
-runs/*/work/*.jpg
+ocr_*
+*.png
+*.jpg

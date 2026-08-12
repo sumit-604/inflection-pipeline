@@ -4,38 +4,44 @@ run_date: "2026-08-12"
 model: claude-sonnet-5
 status: complete
 input_gaps:
-  - "results: ABSENT — no dedicated quarterly results PDFs; Gate 0 run from screening CSVs + AR financial statements per degradation map"
+  - "shareholding: ABSENT (filing) -- only a non-anchored screener.in screenshot supplied (promoters 35.86%, FII 9.65%, DII 16.71%, Jun 2026); Block E (E1-E4) scores 0/20 entirely, per explicit operator instruction not to score on the screenshot"
   - "rating: ABSENT"
   - "announcements: ABSENT"
-  - "shareholding: ABSENT (filing) — caused Block E (E1-E4) to score 0/20 entirely"
   - "research: ABSENT"
-  - "prospectus: ABSENT — expected, company long-listed since the 1990s, not a gap"
-  - "annual report provided is FY2019-20 vintage, 5+ years stale vs FY2026 screener data; no current AR/results PDF"
-  - "Trade Payables absent from all provided files — caused B4 and M12 to score 0/N-A"
-  - "current asset/liability split absent for FY2026 (any recent year) — caused D4 to score 0/N-A"
-  - "peer/industry comparator data absent — caused M2, M5, M9 to score 0/PEER DATA NEEDED"
+  - "annual report provided is FY2019-20 vintage, 5+ years stale vs FY2026 audited results; used only for FY2019/FY2020 capex actuals and the (stale) M8 distribution narrative"
+  - "Trade Payables absent for FY2017-FY2024 in all provided files (only FY25/FY26 now available from the audited balance sheet) -- B4 and M12 scored on a 2-year window only, not the intended full-history latest-vs-earliest window"
+  - "Q1 FY27 filing (11 Aug 2026) is P&L-only, unaudited/limited-review, no cash flow statement -- cannot confirm whether the FY26 working-capital build unwinds in FY27"
+  - "peer/industry comparator data absent -- caused M2, M5, M9 to score 0/PEER DATA NEEDED"
 flags:
   - type: FLAG-GATE0
-    reason: "Classification AVOID (core 37/100, moat THIN). Genuine depressors: ROCE decline 23.71%->15.24% FY17-FY26 (A4=0), EBITDA margin compression 16.2%->9.8% (M1=0), cash conversion deteriorating to 6.9% CFO/PAT in FY26 (B1/B3 weak), PAT CAGR trailing revenue CAGR by 4.5pp (C4=1). Separately, 30 of 100 core points (all Block E, plus B4, D4) and 15 of 60 moat points (M2, M5, M9) are unscored purely for data-absence reasons (no shareholding filing, no trade payables line, no current AR/results, no peer data), not confirmed weakness -- ex-Block E core score is 37/80 (46.3%, AVERAGE tier). Do not treat AVOID as final without shareholding history and a current annual report/results filing."
+    reason: "Classification AVERAGE (core 42/100, moat NONE), up from v1's AVOID -- driven by resolving Block D's Current Ratio gap with audited data (D 15->20/20), partly offset by Block F's Capital Efficiency test dropping out of 'present' status (M3 3->1) once audited FY26 ROCE (14.16%, vs 15.24% proxy) is used. Genuine, evidenced depressors independent of data gaps: ROCE decline 23.71%->14.16% FY17-FY26 audited (A4=0), EBITDA margin compression 16.2%->9.8% (M1=0), PAT CAGR trailing revenue CAGR by 4.5pp (C4=1), and the FY26 cash-conversion air pocket (see FLAG-CASH below). Remaining unscored areas: Block E (shareholding filing absent), M2/M5/M9 (peer data absent), full-history B4/M12 (Trade Payables absent pre-FY25)."
+  - type: FLAG-CASH
+    reason: "FY2026 standalone CFO/PAT collapsed to 7.9% (49.08/622.87) from 38.1% (207.25/544.40) in FY2025, fully traceable in the audited standalone cash flow statement to inventory (+306.14cr) and trade receivables (+127.61cr) build against an IMPROVING operating-profit-before-WC-changes base (640.21 vs 527.91, +21.3%) -- classified as a working-capital-timing event to monitor, not a genuine cash-quality leak and not INDETERMINATE (drivers are evidenced), consistent with but not independently confirmed beyond management's stated Middle East raw-material pre-buying explanation. FY2027 reversal is UNCONFIRMED -- the Q1 FY27 filing has no cash flow statement. Caps confidence at PROCEED WITH CAVEATS-equivalent for any downstream stage relying on cash quality until a subsequent quarter's cash flow statement confirms the unwind."
 data_years: 10
 fy_range: "FY2017 to FY2026"
-blocks: {A: 8, B: 6, C: 8, D: 15, E: 0}
-core_score: 37
-moat_score: 6
-grand_total: 43
-moats_confirmed: 1
-moat_class: "THIN"
-classification: "AVOID"
+blocks: {A: 8, B: 6, C: 8, D: 20, E: 0}
+core_score: 42
+moat_score: 4
+grand_total: 46
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVERAGE"
 deal_breakers:
-  - "Block B <8 (scored 6/20) -> cap max GOOD (non-binding, classification already AVOID via Core<40 rule)"
+  - "Block B <8 (scored 6/20) -> cap max GOOD (non-binding, AVERAGE already below GOOD)"
 history_downgrade: false
 data_notes:
-  - "No PAT loss-to-profit swing FY2017-FY2026; PAT positive all 10 years"
-  - "ROCE and ROE computed (screener's own ROCE/ROE rows blank in this export); EBIT = PBT + Interest; Capital Employed = Equity Share Capital + Reserves + Borrowings (proxy, current-liability split absent)"
+  - "No PAT loss-to-profit swing FY2017-FY2026; PAT positive all 10 years, consolidated and standalone"
+  - "Screener basis mismatch confirmed this run: P&L and Balance Sheet sections of screener-Data_Sheet.csv are CONSOLIDATED (cross-checked exact vs audited FY26/FY25); Cash Flow section is STANDALONE (cross-checked exact vs audited standalone CF, no consolidated CF statement exists in this filing) -- affects B1's cumulative CFO/PAT ratio, which blends standalone CFO against consolidated PAT"
+  - "ROCE computed (screener has no ROCE/ROE rows); EBIT=PBT+Interest, consolidated. Capital Employed FY2017-2024 = proxy (Eq.Cap+Reserves+Borrowings, current-liability split absent for those years); FY2025-2026 = exact audited (Total Assets - Total Current Liabilities, consolidated)"
   - "FY2017 ROE uses closing Net Worth only, no FY2016 opening balance available"
-  - "Capex: actuals from AR p.103 for FY2019 (44.32) and FY2020 (32.33) only; all other years computed proxy = Delta(Net Block+CWIP)+Depreciation, cross-checked reasonably close to the two AR actuals; FY2017 capex not computable"
-  - "CFO discrepancy: AR p.102 shows FY2020 CFO=259.02 vs screener Data_Sheet's 308.80 for same year; screener figure used throughout for consistency, discrepancy unresolved"
-  - "M8 Distribution scored from stale FY2019-20 AR narrative (5,000+ distributors; retailers 30,000->50,000), not FY2026 reality"
+  - "Capex: AR actuals FY2019 (44.32) and FY2020 (32.33); AUDITED actuals FY2025 (236.43) and FY2026 (154.28) this run, replacing v1's proxy for those two years; FY2018/2021-2024 remain computed proxy (Delta Net Block+CWIP + Depreciation); FY2017 capex not computable"
+  - "Trade Payables now available FY2025 (241.72) and FY2026 (221.90) from the audited balance sheet; still absent FY2017-2024 -- B4 and M12 scored on the 2-year window only, stated as a limitation"
+  - "M1 data note: screener's FY26 Other Income (370.17) does not reconcile to either audited standalone (237.98) or consolidated (165.63) Other Income -- unresolved screener-source discrepancy, flagged, not recomputed (outside this run's Block B/D scope, does not change M1's score)"
+  - "M3 changed this run: 3->1, direct cascade of the audited FY26 ROCE correction (14.16% vs 15.24% proxy), crossing below the 15% moat threshold"
+  - "M8 Distribution still scored from stale FY2019-20 AR narrative, not FY2026 reality"
   - "M9 Brand: informational GM proxy computed (19.69% FY2017 vs 10.94% FY2026, declining) but not scored -- no peer data"
   - "PEER DATA NEEDED: M2, M5, M9"
-block_b_trend: "deteriorating - CFO/PAT cash conversion fell from 88.6% in FY2024 (CFO 576.90/PAT 651.69) to 6.9% in FY2026 (CFO 49.08/PAT 713.72); FCF turned negative in FY2025 (-21.25) and FY2026 (-171.40) after 7 consecutive positive years"
+  - "Q1 FY27 context only, not scored: standalone revenue +44.3% YoY (2,013.15 vs 1,395.52), PAT +59.4% YoY (221.28 vs 138.82) -- strong momentum continuing but no cash flow statement in this unaudited quarterly filing, so cannot confirm FY26 working-capital unwind"
+block_b_trend: "deteriorating, now audited-confirmed -- standalone CFO/PAT cash conversion fell from 38.1% in FY2025 (CFO 207.25/PAT 544.40) to 7.9% in FY2026 (CFO 49.08/PAT 622.87), fully traceable to inventory (+306.14cr) and receivables (+127.61cr) build against an improving operating-profit-before-WC base (640.21 vs 527.91); FCF negative both years (-29.18 FY25, -105.20 FY26 on audited actual capex); classified as working-capital-timing to monitor, not a genuine leak, per FLAG-CASH -- FY2027 reversal unconfirmed"
+data_basis: "Blocks B and D are scored from AUDITED FY2026/FY2025 standalone and consolidated financial statements (Q4_FY26_Audited_Results_28May2026.pdf) this run, replacing v1's screener-proxy figures for those two years; Blocks A and C retain the v1 screener-proxy basis for FY2017-2024 (no audited data available for those years) with FY2025/2026 endpoints now audited-confirmed; Block E remains entirely unscored per explicit operator instruction (no shareholding filing supplied)."
+cash_flag_resolution: "NOT INDETERMINATE and NOT a genuine cash-quality leak -- classified as a working-capital-timing event to monitor. Audited evidence: FY2026 standalone CFO/PAT fell to 7.9% (49.08/622.87) from 38.1% (207.25/544.40) in FY2025, entirely traceable to inventory (+306.14cr) and trade receivables (+127.61cr) absorption in the audited standalone cash flow statement, against an IMPROVING operating-profit-before-working-capital-changes base (640.21 vs 527.91, +21.3%). Consistent with, but not independently confirmed beyond, management's stated Middle East raw-material pre-buying explanation. Missing evidence that prevents full resolution: no cash flow statement exists in the Q1 FY27 filing, so the FY2027 unwind (or further build) of this working capital cannot be confirmed from any document in this run. Per CLAUDE.md, this caps at a caveated read (see FLAG-CASH) rather than resolving silently to clean; downstream stages relying on cash-conversion quality should treat FY2026 as an open, evidenced-but-unconfirmed-reversal item pending the next quarterly cash flow statement."

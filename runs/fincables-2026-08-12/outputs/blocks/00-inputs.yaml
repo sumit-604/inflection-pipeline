@@ -8,7 +8,7 @@ concalls_available: true
 inventory:
   prospectus: 0        # absent; company long-listed (CIN since 1967, listed 1990s) -> expected, NOT a gap
   annual_report: 1     # Annual_Report.pdf -> FY2019-20 vintage (STALE, ~6 years old vs run_date)
-  results: 0           # ABSENT
+  results: 2           # ADDED mid-run by operator (11 Aug 2026 upload): audited Q4/FY26 results (28 May 2026) + Q1 FY27 results (11 Aug 2026). Both SCANNED IMAGES (page-image readable only, no text layer). Fill the previously-empty results/ folder; give CURRENT audited FY26 + latest-quarter financials. NOT an annual report (no notes/governance/MD&A).
   rating: 0            # ABSENT
   concalls: 4          # Aug2025(Q1FY26), Nov2025(Q2FY26), Feb2026(Q3FY26), Jun2026(Q4/FY26); contract caps at 3 -> Stage 5 uses 3 most recent (Q2,Q3,Q4 FY26)
   peer_concalls: 12    # KEI x4, PARACABLES x4, RRKABEL x4
@@ -32,7 +32,7 @@ screener_data_note: >
   FY2019-20 Annual_Report.pdf (historical), FY26 presentation + concalls.
 input_gaps:
   - "annual-report STALE: provided AR is FY2019-20, ~6 years old vs run_date 2026-08-12. Stages 2/3/4/7/8 read AR content -> notes, deep-dive, governance reflect FY20, not current. HIGH-severity staleness; current financials come from screener Data_Sheet + FY26 concalls/presentation only."
-  - "results: ABSENT -- no quarterly results PDFs; Gate 0 ran from screener Data_Sheet + AR per degradation map; Stage 10 latest-period fields will be unresolved."
+  - "results: RESOLVED mid-run (operator upload 11 Aug 2026). Now have audited Q4/FY26 filing (28 May 2026: standalone+consolidated P&L, balance sheet, cash flow, segment) + Q1 FY27 filing (11 Aug 2026). Both scanned-image PDFs. Stage 1 Gate 0 re-run on these; they also anchor Phase 3 valuation and RESOLVE FLAG-CASH (FY26 standalone CFO Rs49.08cr driven by inventory +Rs306cr / receivables +Rs128cr working-capital build, management-explained Middle East RM pre-buying)."
   - "rating: ABSENT -- Stage 10 rating_wc_quote unresolved; Stage 11 Pillar 2 defaults conservative."
   - "shareholding: ABSENT (filing) -- Gate 0 Block E scored 0/20; Stage 10 FII+DII unresolved; Stage 11 UA withheld (all-three-qualifier rule). Operator provided a screener.in shareholding screenshot as NON-ANCHORED cross-check only (promoters 35.86% stable, FII 9.65%, DII 16.71% as of Jun 2026)."
   - "announcements: ABSENT -- Stages 5/7/8 lose the documented-ACTION record; intent-vs-action runs on concall/AR only; Stage 8 relies on web search. Operator pasted GST-order/CEO-CFO-change/CS-cessation context as NON-ANCHORED only."

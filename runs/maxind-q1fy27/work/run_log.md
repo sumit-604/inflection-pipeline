@@ -23,4 +23,18 @@ Quarter: Q1 FY27 (quarter ended 30 June 2026)
   - **Single cleanest Q1 FY27 metric:** AACSL segment loss/revenue ratio (FY26 1.03x; target < 0.85x by Q4 FY27); also CBPL Phase 1 handover count.
 
 ## Sequence status
-- A1 concall: PENDING
+- A1 concall: PASS (100% coverage, 141 lines, text source).
+- A2 concall: PASS (count test reconciled: 69 turns / 21 questions / 79 mgmt numbers / 24 fwd-hedge phrases / 1 zero-standing).
+- A3 concall: PASS (F1-F17 all statused; 13 findings line-cited; 6 forward-signal, 4 ambiguous).
+- A4 analyst: complete (concall-only Role 5; Role 4 N.A.). Verdict PROCEED WITH FLAGS; cash INDETERMINATE; WATCHLIST held; OVERPROMISER-WATCH archetype.
+- A5 adversary: loop 1 INCOMPLETE (1 gap: missing surviving bear counter on capital pillar) -> A4 revised -> loop 2 COMPLETE.
+- Notion save: DONE (4 content inserts + Key Notes prepend; Decision Status unchanged WATCHLIST; 3 dated entries preserved).
+
+## Verdict summary
+- Protocol verdict: PROCEED WITH FLAGS. Cash conversion: INDETERMINATE (CFO refused; missing evidence named).
+- No pre-committed thesis-broken trigger fired. Q2 AACSL-loss + Noida-handover compound trigger ARMED.
+- Checklist net-negative: item 4 -> GREEN (AGEasy breakeven reaffirmed); item 8 -> RED (standalone treasury Rs21cr); item 2 -> RED-on-Q1-count (0 completed possessions); items 1/3/9 UNKNOWN.
+- Flags: FLAG-PROMOTER CONCERN (promoter absent), FLAG-CASH INDETERMINATE (sharpened), FLAG-GATE0 AVOID, new STANDALONE-TREASURY-RED, CAPITAL-QUALITY.
+
+## Clean run note
+Clean run mechanically (all gates passed first attempt except A5 loop 1, which is the intended adversarial catch, resolved in 1 loop). No toolchain blocker (text concall, no PDF tools needed). No results filing or presentation supplied this quarter (concall-only); Role 4 deferred.

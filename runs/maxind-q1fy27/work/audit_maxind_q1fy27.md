@@ -1,105 +1,166 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — MAX INDIA (MAXIND) Q1 FY27
-# Model: claude-opus-4-8 | Target: review_maxind_q1fy27.md (A4 merged review)
-# Scope: CONCALL ONLY (Role 5). Role 4 (results review) N.A. this run — expected, not a gap.
-# Independence: re-derived from A1 extract + A2 ledger only. A3 reasoning not consulted.
-# All "l.NN" below are the A1 extract's internal transcript line numbers (1-141).
+# A5 ADVERSARY / COMPLETENESS AUDIT — re-audit loop 2
+# Max India Limited (MAXIND) | Q1 FY27 (quarter ended 30 June 2026)
+# Model: claude-opus-4-8 | Doctype scope: CONCALL ONLY
+# Inputs seen: A4 review, A1 extract, A2 ledger. A3 reasoning NOT seen (re-derived).
+# All line refs are the A1 extract left-column content lines (5-141).
+
+This is the SECOND pass. Loop 1 returned INCOMPLETE with one gap: A4 had
+omitted a supported surviving bear counter on the CAPITAL pillar (the second-raise
+deferral was bridged by drawing credit lines / new debt, l.109, plus one-time
+Antara Noida gross collections, l.113, not operating cash — which sharpens
+FLAG-CASH INDETERMINATE and undercuts the "better performance" framing). This
+pass is a FULL re-audit (all four audits re-run independently), not only a spot
+check of the patch.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run FIRST)
 
-The PLAIN-LANGUAGE BRIEF exists (review l.532) with all four labelled parts present and carrying real, non-placeholder content:
+| Brief part | Location in review | Present / empty |
+|---|---|---|
+| (1) Summary narrative (10-20 lines) | lines 538-544 (three substantive paragraphs) | **PRESENT** — non-placeholder |
+| (2) SECTOR intelligence | lines 546-548 | **PRESENT** — pricing move, regulation, labour codes, China logistics, unit-economics tenor |
+| (3) BUSINESS-MODEL intelligence | lines 550-552 | **PRESENT** — three-engine holdco, capital-light vs capital-sink, finance-lease quality, cash-at-subs, funding-quality drift |
+| (4) COMPETITION intelligence | lines 554-556 | **PRESENT** — IP/services moat, DLF named entrant, repeat-question signal |
 
-| Brief part | Heading in review | Present? | Evidence |
-|---|---|---|---|
-| (1) Summary narrative | "## 1. SUMMARY NARRATIVE" (l.534) | PRESENT | 3 substantive paragraphs (~16 lines): revenue +66% but EBITDA loss widened, cash pressure, operating milestones, WATCHLIST held |
-| (2) Sector intelligence | "## 2. SECTOR INTELLIGENCE" (l.542) | PRESENT | silver-economy tailwind, pricing Rs7-10k→Rs16-18k, labour-code cost, ~18% vs 30% margin, 8-10 quarter bed economics |
-| (3) Business-model intelligence | "## 3. BUSINESS-MODEL INTELLIGENCE" (l.546) | PRESENT | 3 engines: capital-light residences, capital-sink care homes, ROAS-driven AGEasy; finance-lease quality flag; cash-at-subsidiary drift |
-| (4) Competition intelligence | "## 4. COMPETITION INTELLIGENCE" (l.550) | PRESENT | IP/services moat claim, DLF named entrant (delayed 6m), repeat-question signal from two analysts |
-
-**Gate 0 result: PASS** — all four parts present and non-empty.
+All four labelled parts present and carry real content. **Gate 0 PASS.**
 
 ---
 
-## AUDIT 1 — COVERAGE (independent re-enumeration, diffed vs A2 ledger)
+## AUDIT 1 — COVERAGE (independent re-enumeration vs A2 ledger)
 
-Fresh grep + manual sweep of the extract, then diffed against the ledger's five count categories.
+Fresh grep/sweep on the extract (lines 5-141; even lines are blank spacers):
 
-| Category | A2 ledger count | My fresh count | Method | Orphan rows | Status |
+| Category | A2 count | My fresh count | Method | Orphan rows | Status |
 |---|---|---|---|---|---|
-| Speaker turns | 69 | 69 | Odd lines 5-141 inclusive = (141-5)/2+1 = 69; lines 1-3 are title/source/company header, excluded | none | MATCH |
-| Participants | 15 | 15 | 9 mgmt voices (incl. Ishan self-intro'd at l.53) + 5 analysts (Raju Singh queued twice) + 1 operator | none | MATCH |
-| Questions | 21 | 21 | Turn-by-turn: 11(2)+17+25(2)+39+43+45+49+61(3)+67+73+77+83+87+99+107+115+125 = 21 | none | MATCH |
-| Mgmt numbers | 79 | 79 (reconciled) | Every distinct disclosed metric; verified no numeric token inside a mgmt turn is unaccounted (award l.7 row47, NABH row48, diaper-market-size l.75 row66 carried under blanket "79/79 reviewed", l.15 of review) | none | MATCH |
-| Fwd/hedge phrases | 24 | 24 | Commitment verbs + hedge markers across mgmt turns; 9 of the 24 are HEDGE type | none | MATCH |
+| Speaker turns | 69 | 69 | odd lines 5-141 step 2 = (141-5)/2+1 = 69; header lines 1-3 excluded | none | **PASS** |
+| Turn role-split | 9/41/19 | 9/41/19 = 69 | Operator (5,9,23,59,81,105,123,137,141)=9; Analyst 19; Mgmt 41 | none | **PASS** |
+| Participants | 15 | 15 | 9 mgmt (incl. Ishan roster-gap l.53) + 5 analysts + 1 operator | none | **PASS** |
+| Questions | 21 | 21 | turn-by-turn sweep of analyst turns; bundled sub-questions in turns 11/25/61 split correctly | none | **PASS** |
+| Mgmt numbers | 79 | 79 (reconciled) | Table 4 rows spot-verified against source turns 7/13/35/65/69/75/85/95-97/101/109-117/127 | none | **PASS** |
+| Fwd-commit/hedge | 24 | 24 | Table 5 lexical sweep confirmed | none | **PASS** |
+| Zero-standing/nil | 1 | 1 | NOA SPV Q1 revenue = nil (l.25) | none | **PASS** |
 
-**Ledger-row → A4 citation check.** A4's reconciliation preamble (review l.9-22) asserts 69/69 turns, 21/21 questions, 79/79 numbers, 24/24 phrases and 1/1 nil-disclosure reviewed at their cited line, and this holds on inspection: Table 3 questions all appear in Step 4A (Q1-Q21); Table 4 numbers surface across Step 1 (34 claims), the segment walk (T-C, review l.443-510) and Step 8; Table 5 hedges feed Step 6C; the NOA nil-disclosure (ledger ZERO_STANDING) is cited at review l.457/Step 4C Exchange 1. Minor rows (award, NABH accreditation, diaper TAM) are not individually cited but are covered by the explicit blanket "reviewed" reconciliation — acceptable under the "reviewed, no finding" allowance. **No orphan row.**
+**Ledger-row citation check (every row cited in A4 OR reviewed-no-finding):**
+A4 preamble (l.11-22) asserts 69/69 turns, 21/21 questions, 79/79 numbers,
+24/24 hedge phrases, 1/1 nil disclosure reviewed at line, and incorporates all
+thirteen A3 findings (A3-01..A3-13). Substantive numeric rows flow into Step 1
+(34-claim inventory), Step 4A (21-Q table), and the T-C segment walk. The two
+purely qualitative Table-4 rows (row 47 HT award; row 48 NABH accreditation)
+are immaterial and covered under the blanket "79/79 reviewed" as reviewed-no-finding
+— same treatment that passed loop 1; no thesis bearing. **No orphan row. No row
+in my fresh pass is missing from the ledger.**
 
-**Reverse check (my pass vs ledger).** No management-spoken NUMBER in the extract is absent from Table 4. Qualitative items I checked that are NOT numbers (Star Union / IIT-Delhi / SASA partnerships l.7; "first mover advantage" l.127; FY30/FY33 annuity-income year labels l.97; "one or two towers" l.127) are correctly out of a numbers ledger and are otherwise reflected in the review narrative. **No row missing from the ledger.**
-
-**Coverage result: PASS** — counts reconcile 69/21 exactly; no orphan rows to A3; nothing missing to A2.
-
-**A3 forward-signal → question check (task item b).** A4's QM table (review l.517-528) maps 11 questions to A3-01,03,04,05,06,07,08,09,10,12,13. The two uncovered findings, A3-02 (standalone treasury RED — a disclosed number, not a forward signal) and A3-11 (conflicting 3-yr revenue series — a transcription artefact resolved to l.13), correctly require no management question. Every ledger-level forward signal (ZERO_STANDING NOA → QM-1; MGMT_ABSENCE → QM-10; REPEAT_QUESTION moat/DLF → competition brief; TRANSCRIPTION revenue series → resolved) has a question or an appropriate log. **PASS.**
+COVERAGE: **PASS** (loop-1 coverage held; the loop-2 patch added no new
+enumeration and dropped none).
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recomputed from raw extract numbers)
+## AUDIT 2 — ARITHMETIC (recompute every derived metric from raw numbers)
 
 | Metric | A4 value | My recompute | Source line | Status |
 |---|---|---|---|---|
-| Consol revenue YoY | +66% | (68.6−41.3)/41.3 = +66.1% | l.7 ("68.6" vs "40 1.3"=41.3) | MATCH |
-| EBITDA loss YoY direction | WIDENED 23.2→25 | 25 > 23.2 = widened | l.7 | MATCH |
-| EBITDA loss QoQ direction | WIDENED 6.8→25 | 25 > 6.8 = widened | l.7 | MATCH |
-| AGEasy net-rev QoQ decline | ~18% | (23−19)/23 = −17.4% ≈ 18% | l.7 / l.61 | MATCH (rounding) |
-| AGEasy doubling gap | run-rate gap wide | 19×4 = 76 ≈ 77 base vs 150 target | l.49,53 | MATCH |
-| Specificity ratio | ~0.53 | 10/19 = 0.526 | Step 6B | MATCH |
-| Response-quality tally | A6/B11/C3/E1 = 21 | recount of Step 4A = A6,B11,C3,E1 | Step 4A | MATCH |
-| Hedge count (6C subset) | 7 | l.13,l.101,l.47×2,l.7,l.131,l.7 = 7 | Step 6C | MATCH |
-| ARR vs monthly run-rate | 120cr / 10cr per mo | 10×12 = 120 | l.7 | MATCH |
-| US$20m in Rs | ~Rs170cr | 20m × ~85 = Rs170cr | l.117,217 | MATCH |
-| Treasury standalone/consol | Rs21cr / Rs372cr | verbatim | l.7 | MATCH (no PAT split filed — ND correctly stated) |
+| Consol rev YoY growth | +66% | 68.6/41.3 - 1 = +66.1% | l.7 | **MATCH** |
+| Consol rev QoQ | "marginally declined" | direction only (no prior-Q number spoken) | l.7 | **MATCH** (qualitative) |
+| EBITDA loss YoY | widened 23.2 -> 25 | +Rs1.8cr wider loss | l.7 | **MATCH** |
+| EBITDA loss QoQ | widened 6.8 -> 25 | +Rs18.2cr wider loss | l.7 | **MATCH** |
+| Loss ratio 95% -> 63% | management figure, full-year | quoted, not A4-derived | l.101 | **MATCH** (mgmt-spoken, flagged as annual not Q1) |
+| Opening % quantified | ~88% (30/34) | 30/34 = 88.2% | Step 1 | **MATCH** |
+| Specificity ratio | ~0.53 (10/19) | 10/19 = 0.526 | Step 6B | **MATCH** |
+| Hedge count | 7 ( >5 ) | l.13,l.101,l.47(x2),l.7 let's-see,l.131,l.7 hopefully = 7 | Step 6C | **MATCH** |
+| Response-quality tally | A6 B11 C3 D0 E1 = 21 | recount of Q1-Q21 = 6/11/3/0/1 = 21 | Step 4A | **MATCH** |
+| Q&A share of turns | 66 of 69 (~96%) | 66/69 = 95.7% | Table 2 | **MATCH** |
+| US$20m in INR | ~Rs170cr | 20m x ~Rs85/USD = ~Rs170cr | Exchange 3, l.117/113 | **MATCH** (labelled approx; FX reasonable) |
+| Peak capital fall | ~US$25m -> ~US$20m | verbatim | l.113 | **MATCH** |
+| NOA demand / collected | Rs169cr / ~75% | verbatim | l.7 | **MATCH** |
+| Standalone vs consol treasury | Rs21cr / Rs372cr | verbatim | l.7 | **MATCH** |
+| Rs40cr pref tranche (July) | Rs40cr | verbatim | l.111,113 | **MATCH** |
 
-**Note (source-level, not an A4 error):** ledger row 18 (Gurugram 360 ITD collection Rs556cr) and row 21 (total Gurugram collections Rs108.2cr, ~194-197 units) are internally inconsistent in the transcript itself (a 556cr sub-total cannot sit under a 108.2cr total). A4 reproduces both verbatim in T-C without deriving a figure from them, so this is a transcription ambiguity, not an A4 arithmetic fault. Flag for Q2 clarification; **not a FAIL**.
+No PAT bridge / filed YoY-QoQ walk / cash-flow reconciliation exists this run
+(Role 4 N.A., no filing) — A4 correctly marks those cells UNVERIFIABLE / ND
+rather than inventing figures. **No mismatch above rounding. The loop-2 patch
+introduced no new derived metric (all patch content is direct quotation) and no
+new unsupported figure.**
 
-**Arithmetic result: PASS** — no derived metric mismatches above rounding; no hallucinated figure. Every cited number resolves to a real extract line (task items c, d PASS).
-
----
-
-## AUDIT 3 — ADVERSARIAL READ (three most-positive A4 claims, strongest bear from same text)
-
-**Positive claim 1 — "Revenue FIRING; consol +66% YoY" (Step 8A, T-A, brief §1).**
-Bear counter (from extract): QoQ revenue DECLINED (l.7 "sequentially my revenues marginally decline"); the 3-yr series is 175→145→190 (l.13), so FY25 revenue actually FELL and the +66% is off a lumpy/low base; and ~Rs15cr of senior-living income is non-recurring finance-lease re-lease that management excludes from gross revenue (l.35) — strip it and recurring growth is materially lower.
-**Survives? NO — already incorporated.** A4 already carries the QoQ decline (Step 1 claim 9; T-A l.424), the 175→145→190 series (A3-11; Step 7A), and the finance-lease quality flag (A3-07; T-C l.454; brief §3). No new grafting required.
-
-**Positive claim 2 — "AGEasy Q4 FY27 breakeven reaffirmed → checklist item 4 GREEN" (Step 8B l.321).**
-Bear counter: Q1 net revenue Rs19cr vs Rs150cr doubling target (l.49); mgmt refused FY27 specifics (l.13); breakeven is soft "by January or last quarter" (l.7); CM2 still −17% marketplace and −70/−80% other channels (l.13). Marking item 4 GREEN reads generous.
-**Survives? PARTIALLY — but substantively incorporated.** The item's threshold is literally "restated," and it WAS reaffirmed, so GREEN is technically defensible; the substantive gap (run-rate-to-guidance) is already carried as A3-05 / QM-4 / confidence=MEDIUM / OVERPROMISER-WATCH. Note the mild GREEN-vs-caveats tension to A4, but no new counter to graft.
-
-**Positive claim 3 — "Second raise pushed out due to better performance; peak requirement down $25m→$20m; Rs40cr tranche received" (Step 4C Exchange 3, l.214-220; Step 5A; brief §1).**
-Bear counter (from extract): The deferral was enabled by **drawing credit lines** — "we taking some credit lines to manage the working capital inventory... we have been able to push the second fund raise out" (l.109) — and by **one-time NOA possession gross collections** — "the noa position opened up and therefore gross collections have come in and we able to utilize that" (l.113). So the raise was postponed by adding DEBT and deploying a non-recurring cash inflow, against a Rs21cr holdco treasury (l.7) and a refused cash-burn number (l.101). That is balance-sheet leverage plus a one-off, not the "better performance" the framing implies.
-**Survives? YES — supported and NOT analytically incorporated.** A4 quotes the "credit lines" phrase inside the verbatim (review l.216) but never surfaces its implication anywhere: its adversarial read stops at "a deferred raise with thin holdco cash is a liquidity-management signal" (l.219) and its cash pillar (Step 8D) lists treasury RED + CFO refused + raise deferred without naming the incremental debt drawdown or the one-time NOA-collection funding. This is a distinct, thesis-critical adversarial fact that sharpens FLAG-CASH INDETERMINATE and must be grafted before save.
-
-**Adversarial result: ONE surviving bear counter (claim 3) requires incorporation into A4 → loop back to A4.**
+ARITHMETIC: **PASS.**
 
 ---
 
-## TASK-CHECKLIST CONFIRMATION (orchestrator items a-f)
-- (a) Count reconciliation 69 turns / 21 questions — **PASS** (re-derived independently).
-- (b) Every A3 forward-signal/ambiguous finding → a management question — **PASS** (QM-1..11).
-- (c) Every cited management number resolves to a real extract line — **PASS**.
-- (d) No unsupported/hallucinated figure — **PASS**.
-- (e) Plain-language brief with sector/business-model/competition — **PASS** (Gate 0).
-- (f) Decision Status not changed absent a fired trigger — **PASS**: WATCHLIST held (Step 8C/8E), no thesis-broken trigger fired, negative drift flagged not decided.
+## AUDIT 3 — ADVERSARIAL READ (three most positive claims + strongest bear counter)
 
-The review is strong on every mechanical and coverage axis. The single gating defect is the unincorporated surviving bear counter (Audit 3, claim 3), which the protocol requires be added to A4 before save.
+**Claim 1 — "Revenue FIRING / +66% YoY; guidance to double AGEasy and grow consol substantially."**
+Bear counter (same text): consol revenue declined QoQ (l.7); senior-living income
+includes ~Rs15cr one-time finance-lease re-lease that management EXCLUDES from
+gross revenue and calls "exceptional" (l.35); NOA books NIL revenue in Q1 (l.25);
+AGEasy sits at ~Rs19cr net Q1 run-rate against a Rs150cr full-year doubling (l.49).
+Status: **ALREADY INCORPORATED** (Step 1 contradictions, A3-05 run-rate gap, A3-07
+quality flag, Step 8A "ON TRACK, QoQ + AGEasy gap temper it"). Does not survive as
+a new graft.
+
+**Claim 2 — "Losses coming down (95% -> 63%); path to profitability."**
+Bear counter (same text): the Q1 print is a LARGER loss, not a smaller one —
+EBITDA loss widened YoY (23.2 -> 25) and sharply QoQ (6.8 -> 25); the 95% -> 63%
+is a full-year ratio, and the Q1 deterioration is framed away as "exceptional DMP"
+timing (l.7). Status: **ALREADY INCORPORATED** (Step 7A CONTRADICTED-internal,
+A3-06, brief narrative). Does not survive as a new graft.
+
+**Claim 3 — "Second raise deferred due to better performance; liquidity improved, peak need fell US$25m -> US$20m."**
+Bear counter (same text): the deferral was bridged by (a) DRAWING CREDIT LINES —
+new debt to manage working-capital inventory (l.109), and (b) ONE-TIME Antara
+Noida possession GROSS COLLECTIONS (~Rs169cr demand, ~75% collected, l.7) that
+"opened up" and were "utilized" (l.113) — neither is structural operating cash.
+Set against a Rs21cr standalone holdco treasury (l.7, RED) and a REFUSED FY27/28
+burn number (l.101), "better performance" dresses up leverage + a non-recurring
+inflow as improved funding health. Symmetric bull read: NOA cash is real (residents
+paid ~75% of Rs169cr), the Rs40cr pref tranche was in fact received in July
+(l.111,113), and peak requirement genuinely fell to ~US$20m (l.113) — so absolute
+liquidity did improve; the flag is about the QUALITY/durability of the improvement.
+
+Status: **THIS IS THE LOOP-1 SURVIVING COUNTER. VERIFIED NOW GRAFTED** into:
+- Step 4C Exchange 3 (l.219-221) — line-supported with symmetric bull read;
+- Step 5A new-disclosures table (l.236) — dedicated capital-quality row;
+- Step 8A Cash pillar (l.313) — "WEAKENED... bridge is debt + non-recurring inflow";
+- Step 8D Cash-conversion pillar + FLAG-CASH note (l.348, l.352) — "reaffirmed AND SHARPENED", symmetric bull retained;
+- Verdict block (l.393), T-A / Treasury headline tables (l.429, l.513), QM-7 (l.528),
+  brief narrative (l.542) and business-model brief (l.552), and the YAML flags (l.602).
+
+**No NEW surviving bear counter found this pass.** The three most-positive claims
+each already carry their strongest same-text counter. The one that survived in
+loop 1 is now present, correctly line-anchored, and symmetric.
+
+---
+
+## TASK-SPECIFIC VERIFICATION CHECKLIST
+
+1. Grafted counter present and line-supported (l.109 credit lines / l.113 NOA
+   one-time collections + peak US$25m->US$20m / l.7 Rs21cr treasury + Rs169cr/75% /
+   l.101 refused burn) with symmetric bull read — **CONFIRMED** in Step 4C, 5A, 8D
+   (and echoed in 8A, verdict, headline tables, brief, YAML).
+2. Fix introduced no arithmetic error and no new unsupported figure — **CONFIRMED**
+   (all patch content is direct quotation; Audit 2 clean).
+3. Counts still reconcile 69 turns / 21 questions — **CONFIRMED** (Audit 1).
+4. Every A3 FORWARD-SIGNAL / AMBIGUOUS finding maps to a management question —
+   **CONFIRMED**: QM table (l.520-532) carries A3-01, A3-03, A3-04, A3-05, A3-06,
+   A3-07, A3-08, A3-09, A3-10, A3-12, A3-13. The two non-forward/non-ambiguous
+   findings (A3-02 treasury confirmatory-negative; A3-11 revenue-series contradiction,
+   resolved to l.13) correctly do not require a QM row.
+5. Plain-language brief present with sector / business-model / competition
+   intelligence — **CONFIRMED** (Audit 0).
+6. Decision Status still WATCHLIST (no trigger fired; Step 8C l.332-341) and verdict
+   still PROCEED WITH FLAGS (l.396; YAML l.573) — **CONFIRMED**.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Failing agent: **A4**.
-
-**Exact gap:** A4's adversarial treatment of the second-raise deferral (Step 4C Exchange 3, Step 5A "Rs40cr pref-issue tranche" row, and the Step 8D cash pillar) omits a supported surviving bear counter: management funded the deferral by **drawing credit lines (new debt, l.109) and utilizing one-time NOA possession gross collections (l.113)**, not by structural cash generation. Against a Rs21cr holdco treasury and a refused FY27/28 burn number, this is balance-sheet leverage plus a non-recurring inflow that strengthens FLAG-CASH INDETERMINATE and undercuts the "pushed out due to better performance / peak requirement down to $20m" framing. A4 must graft this counter (and may note the mild AGEasy item-4 GREEN-vs-caveats tension) before the review proceeds to Notion save.
+**COMPLETE.** The loop-1 gap is closed: the surviving capital-pillar bear counter
+is grafted into every required section, is line-supported (l.109 / l.113 / l.7 /
+l.101), and retains a symmetric bull read. The full re-audit finds no orphan
+ledger row, no arithmetic mismatch above rounding, no new unsupported figure
+introduced by the patch, intact 69-turn / 21-question reconciliation, complete
+A3 forward/ambiguous-to-question mapping, an intact four-part plain-language brief,
+and unchanged Decision Status (WATCHLIST) / verdict (PROCEED WITH FLAGS). No new
+surviving bear counter. Proceed to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -107,7 +168,7 @@ company: "MAXIND"
 quarter: "Q1 FY27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -117,10 +178,7 @@ coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - claim: "Second raise deferred 'due to better performance'; peak requirement down $25m->$20m; Rs40cr tranche received (positive liquidity read)"
-    counter: "Deferral was funded by drawing credit lines (new debt) and by one-time NOA possession gross collections, not structural cash; against a Rs21cr holdco treasury and a refused FY27/28 burn number this is balance-sheet leverage plus a non-recurring inflow, strengthening FLAG-CASH INDETERMINATE"
-    source_line: "l.109, l.113 (treasury l.7; burn refused l.101)"
-loop_back_to: "A4"
-gap: "A4 omits a supported surviving bear counter: the second-raise deferral was enabled by drawing credit lines (new debt, l.109) and using one-time NOA gross collections (l.113), not structural cash generation. Must be grafted into Step 4C Exchange 3 / Step 5A / Step 8D cash pillar before Notion save; it sharpens FLAG-CASH INDETERMINATE and undercuts the 'better performance' framing. All other audits (deliverable, coverage 69/21, arithmetic, decision-status) PASS."
+surviving_bear_counters: []   # loop-1 counter now grafted; no new survivor this pass
+loop_back_to: ""
+gap: ""
 ```

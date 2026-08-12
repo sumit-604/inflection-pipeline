@@ -1,0 +1,26 @@
+stage: B12d
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported:
+  - "Paracables Q2 FY25 (Nov-2024 call) — decisive OFC-competitiveness quote used in Claim 2/6 is actually from the Feb-2025 call, not this one"
+unused_but_relevant:
+  - {peer: "KEI Industries", missed_item: "Management acknowledgment of 'the Middle East problem' disrupting exports, offered as context for cross-market compensation strategy", anchor: "KEI Aug-2026 (Q1 FY27) call, Rajeev Gupta response to Manoj Gori, p.11"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Part 1 Claim 2 + Part 3 coverage map (Paracables Nov-2024/Feb-2025 rows)", claimed: "OFC 'order book...very lax...not competitive' quote attributed to Q2 FY25 (Nov-2024) call", source_truth: "Quote is from the Feb-2025 (Q3 FY25) call, p.15-16; Nov-2024 only contains the separate '3-4 years/chunky' language", note: "Feb-2025 call consequently mislabeled CITED-ONLY despite holding unique decisive content; does not change the Claim 2 UNVERIFIABLE verdict"}
+  - {severity: "MINOR", location: "B06 Part 2E / risks_peers_raise", claimed: "30% of RR Kabel exports go to Middle East; ~40% of that mix", source_truth: "Exports = 30% of total W&C business; 40% of exports go to Middle East (ME ~12% of total business)", note: "figures present but base/modifier relationship inverted"}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 3 / coverage map, RR Kabel Apr-2026 row", claimed: "9.9% margin (up from 7.6%) sourced to Apr-2026 call", source_truth: "figure is from the Jul-2026 (Q1 FY27) call", note: "adjacent 9.5%/10.5% guidance figures in same sentence are correctly sourced to Apr-2026"}
+  - {severity: "MINOR", location: "B06 Part 2E / risks_peers_raise", claimed: "RR Kabel Middle East risk cited across Nov-2025, Feb-2026, May-2026, Aug-2026 calls", source_truth: "no discernible Middle East/war discussion found in the Feb-2026 transcript on independent read", note: "overstated recurrence for one quarter"}
+  - {severity: "MINOR", location: "B06 Part 1 Claim 3, KEI Aug-2026 citation", claimed: "quoted verbatim: 'now we are in the trajectory...crossed that hurdle actually'", source_truth: "actual text is reordered: 'we have already crossed now a hurdle...we hope that now we will be in the range of 11% to 12% operating margin for the coming year'", note: "substance matches, wording does not"}
+  - {severity: "MINOR", location: "unused-but-relevant", claimed: "n/a", source_truth: "KEI Aug-2026 call, Rajeev Gupta, p.11, corroborates Middle East export disruption", note: "second independent corroboration of RR Kabel's Middle East risk theme not folded into Part 2E"}
+  - {severity: "MINOR", location: "B06 Part 4 / YAML verified", claimed: "Claim 4 graded VERIFIED", source_truth: "B06's own text concedes the specific '14 hikes' count is uncorroborated by any peer", note: "calibration note; does not breach the >=2-anchor rule since aggregate magnitude/cadence are corroborated by 2 peers"}
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 83
+peer_utilisation: 92

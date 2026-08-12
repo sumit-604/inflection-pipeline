@@ -150,7 +150,7 @@ Individual Q2 FY26 and Q3 FY26 P&L are not disclosed in either document (`ND`). 
 | Q1 FY26 | 33.86 | 14.48 | 12.76 | 9.65 | 0.58 | Post-IPO comparative base | base |
 | Q2 FY26 | ND | ND | ND | ND | ND | not separately disclosed | ND |
 | Q3 FY26 | ND | ND | ND | ND | ND | not separately disclosed | ND |
-| Q2+Q3 FY26 (derived) | 75.81 | 40.00 | 26.21 | 19.45 | ND | FY26 minus Q1 minus Q4 | avg ~37.9 NII/qtr |
+| Q2+Q3 FY26 (derived) | 75.81 | 36.00 | 26.21 | 19.45 | ND | FY26 minus Q1 minus Q4 | avg ~37.9 NII/qtr |
 | Q4 FY26 | 52.11 | 29.62 | 27.08 | 20.58 | ND | Year-end origination push; ARC sale 27.93 booked in FY26 | seasonal peak |
 | Q1 FY27 | 47.06 | 25.60 | 21.90 | 16.43 | 0.95 | ECL provision +96.7% QoQ; nil ARC | step-DOWN vs Q4 |
 

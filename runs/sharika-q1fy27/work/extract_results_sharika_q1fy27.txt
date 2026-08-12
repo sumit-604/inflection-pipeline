@@ -3,13 +3,54 @@ source_filename: results_sharika_q1fy27.pdf
 doctype: results
 page_count_pdfinfo: 9
 formfeed_count: 9
-line_count: 539
+line_count: 597
 unit_convention: Lakhs
 conversion_factor_to_cr: Lakhs -> x0.01
-ocr_pages: none
+ocr_pages: [4, 5, 8, 9]
 page_coverage: 100%
 detected_quarter: Q1 FY27 (quarter ended 30 June 2026)
 extraction_date: 2026-08-12
+ocr_verification: pdftotext -layout text layer found unreliable on pages 4, 5, 8, 9 (dropped
+  blocks / digit-letter garbles). All 9 pages rasterized at 300dpi (page 9 signature region
+  also re-rendered at 600dpi for a targeted crop) and re-OCR'd with tesseract (multiple PSM
+  passes: 6, 4, 11) to verify/correct against the pdftotext -layout structural base. Pages
+  1, 2, 3, 6, 7 cross-checked (word counts, all monetary figures in Basis for Qualified
+  Opinion paragraphs) and found consistent with the text layer; no corrections applied there.
+ocr_corrections_applied:
+  - "page 4: RECOVERED auditor sign-off block entirely dropped by text layer (For R D V
+    & Associates / Chartered Accountants / FRN [partially illegible, stamp-obscured] /
+    UDIN [low-confidence, stamp-obscured] / Date: 12-08-2026 / Place: Delhi)."
+  - "page 5, Note 5: 'S The Company Is primarily engaged...' -> '5 The Company Is primarily
+    engaged...' (note-number letter/digit conflation; both text layer and fresh OCR read
+    'S', corrected on unambiguous sequential note numbering 4...6)."
+  - "page 5, Note 6: 'June 20Z6.' -> 'June 2026.' (digit garble Z->2, confirmed by OCR)."
+  - "page 5: RECOVERED Note 10 (joint venture Electromeccanica India Pvt Ltd write-down
+    note) and the full director sign-off block (For and on behalf of the Board of
+    Directors of / SHARIKA ENTERPRISES LIMITED / Rajinder Kaul / Managing Director /
+    DIN - 01609805), all entirely dropped by the text layer; only fragments ('Forand
+    on', 'SHARIKAE', a garbled date/place line) had survived extraction."
+  - "page 8: RECOVERED 'For R D V & Associates,' / 'Chartered Accountants' heading line,
+    entirely dropped by text layer, immediately above the M.No/UDIN/Date/Place lines
+    (which the text layer had already captured correctly except M.No)."
+  - "page 8: 'M.No:~~~' -> 'M.No: 57629' (text layer rendered the membership number as
+    tildes; OCR reads it cleanly across multiple passes)."
+  - "page 9: RECOVERED tail of Note 9 ('...those related to MSME and interest etc...')
+    and all of Note 10 (joint venture Electromeccanica India Pvt Ltd write-down note),
+    both entirely dropped by the text layer."
+  - "page 9: RECOVERED full director sign-off block (For and on behalf of the Board of
+    Directors of / SHARIKA ENTERPRISES LIMITED / Rajinder Kaul / Managing Director /
+    DIN - 01609805), entirely dropped by the text layer (only 'Date: 12 Aug 2026' and
+    a garbled 'Place' line had survived extraction)."
+  - "page 9: 'Place : Naida' -> 'Place : Noida' (letter garble, confirmed by OCR)."
+ocr_correction_declined:
+  - "pages 5 and 9, Note 6: text layer and original pdftotext both read the Spintech
+    accumulated-loss figure as 'Rs. 514.63 lakhs'. Fresh independent 300dpi OCR of both
+    pages confirms '514.63' verbatim (not a garble). This differs from 'Rs. 514.68 lakhs'
+    stated for the same fact in the auditor's qualified-opinion paragraph on pages 4/8
+    (also OCR-confirmed as printed). This is a SOURCE DOCUMENT INCONSISTENCY between the
+    company's own Note 6 and the auditor's report, not an extraction error. Per the
+    zero-interpretation mandate, A1 does NOT harmonize the two figures; both are
+    preserved verbatim at their respective locations for A2/A3 to flag."
 === END HEADER ===
 
 [page 1]
@@ -189,6 +230,14 @@ Chartered Accountants                                                           
         results in respect of the aforesaid investment as at 30 June 2026.
 
   Our opinion is not modified in respect of the aforesaid matters.
+
+[OCR-RECOVERED page 4 - block dropped entirely by pdftotext text layer; tesseract 300/600dpi]
+  For R D V & Associates,
+  Chartered Accountants
+  FRN: 006??8 [ILLEGIBLE - obscured by stamp/seal; OCR reads "006" then unclear digit(s) then "8"]
+  UDIN: 265478T8DARUYA5196 [OCR LOW CONFIDENCE - obscured by stamp; alternate OCR pass read "265479...SDARUYA5196"; exact characters not assured]
+  Date: 12-08-2026
+  Place: Delhi
 [page 5]
                                             SHARIKA ENTERPRISES LIMITED
                                                            CIN : l27102UP1998PLC206404
@@ -257,14 +306,14 @@ Chartered Accountants                                                           
            published results figures upto nine months ended December 31, 2025 which were subjected to limited review. Previous period/year figures
            have been regrouped/ reclassified wherever necessary.
 
-         S The Company Is primarily engaged In Engineering, ProcurelJlent and Construction business (EPC) relating to Electrical and other Cables,
+         5 The Company Is primarily engaged In Engineering, ProcurelJlent and Construction business (EPC) relating to Electrical and other Cables, [OCR-CORRECTED: note number "S" -> "5"; both text layer and fresh 300dpi OCR read "S", corrected on unambiguous sequential note numbering 4...6, not a digit substitution]
            capacitors. Wires and Conductors, etc. and Turnkey Projects predominantly relating thereto. Information Is reported to and evaluated regularly
            bV the Chief Operating Decision Maker (CDDM) for the purpose of resource allocation and assessing performance, focuses on the business as a
            whole and accordingly, there Is a single reportable segment in the context of the Operating Segment as deflned under Ind AS 108.
 
 
          6 The Company's Investment in Sharika Spintech Private Limited ("Spintech"), comprising of equity and loans, amoun~ng Rs. 579.69 Jakhs as at 30
-           June 20Z6. Although Splntech has accumulated losses of ~514.63 lakhs as at 30 June 2026, management believes the carrying value remains
+           June 2026. [OCR-CORRECTED: text layer read "20Z6" -> "2026"] Although Splntech has accumulated losses of ~514.63 lakhs as at 30 June 2026 [NOTE: this Rs.514.63 lakhs figure is NOT a garble - confirmed identical by independent 300dpi OCR on this page; it differs from the Rs.514.68 lakhs figure stated in the auditor's report on page 4/8 for the same fact - flagging as a SOURCE DOCUMENT INCONSISTENCY between the company's own Note 6 and the auditor's qualified opinion paragraph, not corrected/harmonized here per zero-interpretation mandate], management believes the carrying value remains
            appropriate, supported by a Preliminary Agreement with Brazil's SPIN Engenharla for collaboratton on specific smart grid automation solutions
            and Identified projects under negotatlon. Based on these factors, management Is of view that the carrying value of the Investment In Splntech
            as at 30 June 2026 Is appropriate.
@@ -284,13 +333,13 @@ Chartered Accountants                                                           
 
 
 
-           Forand on
-           SHARIKAE
-
-
-
-                                                                                                                        Date ' lZ Aug Zn6
-                                                                                                                        Place : Noida
+         10 The financials of joint venture company, Electtromeccanica [OCR UNCERTAIN spelling - possibly "Electromeccanica"] India Private Limited is not considered as the investment of the Company in its joint venture has been eroded due to accumulated losses.
+[OCR-RECOVERED page 5 - Note 10 and full director sign-off block below were entirely dropped by pdftotext text layer; tesseract 300/600dpi]
+           For and on behalf of the Board of Directors of
+           SHARIKA ENTERPRISES LIMITED
+           Rajinder Kaul                                                                                              Date: 12 Aug 2026
+           Managing Director                                                                                          Place: Noida
+           DIN - 01609805 [OCR: one lower-confidence alternate pass read "01609808"; last digit obscured by stamp]
 [page 6]
                                                                                         709-710, GDITL Tower, B-08,
 R D V & Associates                                                                               Netaji Subhash Place,
@@ -430,7 +479,11 @@ Chartered Accountants                                                           
 
 
 
-  M.No:~~~
+[OCR-RECOVERED page 8 - "For R D V & Associates," / "Chartered Accountants" heading line dropped entirely by pdftotext text layer; tesseract 300/600dpi]
+  For R D V & Associates,
+  Chartered Accountants
+  FRN: [ILLEGIBLE - obscured by stamp/seal, no reliable OCR read]
+  M.No: 57629 [OCR-CORRECTED: text layer rendered this as "~~~", digits unrecoverable from text layer; OCR reads "57629" cleanly]
   UDIN: 26547918ZQNNPE4044
   Date: 12-08-2026
   Place: Delhi
@@ -531,9 +584,14 @@ XIX       Earnings per equity share Rs. (Face Value of Rs. 5/- each)
           considered.
         9 Certain balances including trade and other payables, advances from customers, loans and advances, trade and other receivables, other assets and
           other liabilities are subject to reconciliation with details and balances and confirmation thereof. Adjustments/Impact and related disclosures including
+          those related to MSME and interest etc. if any payable in this respect are currently not ascertainable. [OCR-RECOVERED tail of Note 9, dropped by text layer]
+       10 The financials of joint venture company, Electtromeccanica [OCR UNCERTAIN spelling - possibly "Electromeccanica"] India Private Limited is not considered as the investment of the Company in its joint venture has been eroded due to accumulated losses. [OCR-RECOVERED - entire Note 10 dropped by pdftotext text layer; tesseract 300/600dpi]
 
-
-
-
+[OCR-RECOVERED page 9 - director sign-off block below was entirely dropped by pdftotext text layer; tesseract 300/600dpi]
+                                                                                                                              For and on behalf of the Board of Directors of
+                                                                                                                              SHARIKA ENTERPRISES LIMITED
+                                                                                                                              Rajinder Kaul
+                                                                                                                              Managing Director
+                                                                                                                              DIN - 01609805 [OCR: one lower-confidence alternate pass read "01609808"; last digit obscured by stamp]
                                                                                                                               Date: 12 Aug 2026
-                                                                                                                              Place : Naida
+                                                                                                                              Place : Noida [OCR-CORRECTED: text layer read "Naida" -> "Noida"]

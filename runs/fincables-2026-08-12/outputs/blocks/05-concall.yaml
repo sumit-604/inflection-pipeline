@@ -1,0 +1,77 @@
+stage: B05-concall
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Receivables build (~Rs128cr per Gate 0) never addressed in any of the four transcripts", "Internal date inconsistency within Q4 FY26 call on fiber-draw completion (July vs Sep/Oct) unreconciled"]
+flags: ["v2 four-transcript re-run superseding v1 three-transcript version; Q1 FY26 restored"]
+quarters_analysed: ["Q1 FY26", "Q2 FY26", "Q3 FY26", "Q4 FY26"]
+triggers:
+  - {priority: 1, name: "OFC/preform/fiber-draw structural margin uplift (comm cable EBIT to 8-9%)", type: "margin", timeframe: "medium (H2 FY27 per management)", conviction: "M", confirm_signal: "Comm cable EBIT sustaining above ~8% for 2+ consecutive quarters once fiber draw capacity is fully live and domestic contracts renegotiate", kill_signal: "Further slippage in fiber draw commissioning past Q3 FY27, or germanium/glass supply restriction worsening"}
+  - {priority: 2, name: "Electrical cable segment margin recovery to 11-12% sustainable band", type: "margin", timeframe: "near-medium", conviction: "M", confirm_signal: "Two consecutive quarters back at 11%+ EBIT despite copper volatility", kill_signal: "Continued Middle East/FX-driven cost shock or renewed inventory mismanagement"}
+  - {priority: 3, name: "BharatNet Phase 3 + state tender conversion", type: "volume", timeframe: "medium-long", conviction: "L", confirm_signal: "An actual signed order (direct or indirect via tender winners) disclosed in a future call", kill_signal: "Continued zero-conversion after 4+ quarters of hopeful language"}
+  - {priority: 4, name: "Solar/auto/industrial cable capacity ramp (already delivering)", type: "volume", timeframe: "near (ongoing)", conviction: "H", confirm_signal: "Continued utilization gains and planned solar capacity doubling executing on schedule", kill_signal: "Demand slowdown in EV/solar-linked end markets"}
+  - {priority: 5, name: "Sumitomo (EHV) JV scale-up", type: "volume/margin", timeframe: "medium", conviction: "M", confirm_signal: "Order book growth beyond Rs380cr and continued profitability in FY27", kill_signal: "Cited $4-5bn market TAM failing to materialize, or renewed working-capital drag from project billing"}
+  - {priority: 6, name: "Exports scale-up to 2-3% of revenue", type: "volume", timeframe: "medium", conviction: "M", confirm_signal: "Continued YoY export growth tracking toward the 2-3% target", kill_signal: "Team turnover or global demand pullback"}
+  - {priority: 7, name: "FMEG turnaround / Rs500cr by 2028 target", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "Explicit reaffirmation of the target with a credible portfolio plan", kill_signal: "Continued silence on the target combined with under-par performance language"}
+guidance:
+  - {item: "Electrical cable segment margin target", number: "~12%", timeframe: "couple of quarters from Aug 2025", stated_in: "Q1 FY26 call"}
+  - {item: "Preform trials commencement", number: "trials start", timeframe: "~1 month from 14 Aug 2025", stated_in: "Q1 FY26 call"}
+  - {item: "Optic fiber capex program", number: "Rs500cr total (Rs325-350cr fiber)", timeframe: "within FY26", stated_in: "Q1 FY26 call"}
+  - {item: "FY26 total capex", number: "~Rs300cr", timeframe: "FY26", stated_in: "Q1 FY26 call"}
+  - {item: "Preform + fiber draw completion", number: "both complete", timeframe: "by March 2026", stated_in: "Q2 FY26 call"}
+  - {item: "FMEG revenue target", number: "Rs500cr", timeframe: "by 2028", stated_in: "Q2 FY26 call"}
+  - {item: "Fiber draw capacity", number: "8mn km", timeframe: "end of Q1 FY27 (~Jun 2026)", stated_in: "Q3 FY26 call"}
+  - {item: "Preform commissioning", number: "commission plant", timeframe: "within FY26 (by 31 Mar 2026)", stated_in: "Q3 FY26 call"}
+  - {item: "Electrical cables sustainable segment EBIT margin", number: "11-12%", timeframe: "ongoing", stated_in: "Q3 FY26 call"}
+  - {item: "Comm cable EBIT margin potential", number: "8-9%", timeframe: "not dated, contingent on utilization", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 capex plan", number: "Rs300cr (Rs200cr new capacity + Rs100cr OFC preform)", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Fiber draw 8mn km (re-restated)", number: "8mn km", timeframe: "end Q2 FY27 (~Sep 2026) / beginning Q3 FY27 (~Oct 2026); also stated as July 2026 in same call's opening remarks", stated_in: "Q4 FY26 call"}
+  - {item: "Exports revenue share target", number: "2-3% of revenue", timeframe: "next 2 years", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 4
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "Q1 FY26", promise: "Preform trials commence within ~1 month", outcome: "Partial (delivered ~5-6 months late after two further slipped promises)", explanation: "Power-supply hitch cited initially; no further explanation given for subsequent slips"}
+    - {promised_in: "Q1 FY26", promise: "Segment margin recovery to ~12% within a couple of quarters", outcome: "Missed", explanation: "Mix shift and, later, Middle East RM/FX shock"}
+    - {promised_in: "Q1 FY26", promise: "BharatNet pickup by end of CY2025", outcome: "Missed", explanation: "Government program execution delays (externally consistent pattern since 2010 NOFN announcement)"}
+    - {promised_in: "Q2 FY26", promise: "Preform + fiber draw both complete by March FY26", outcome: "Partial (preform delivered near-deadline; fiber draw missed and re-guided repeatedly)", explanation: "No specific reason for fiber-draw miss beyond general supply-chain commentary"}
+    - {promised_in: "Q3 FY26", promise: "Fiber draw 8mn km by end of Q1 FY27", outcome: "Missed (re-guided to Q2/Q3 FY27, with internal inconsistency)", explanation: "Germanium/glass raw material shortage newly disclosed Q4"}
+    - {promised_in: "Q1-Q4 FY26 (ongoing)", promise: "Solar cable capacity ramp", outcome: "Delivered", explanation: "n/a - clean delivery"}
+    - {promised_in: "Q1-Q4 FY26 (ongoing)", promise: "E-beam cured cable facility ramp", outcome: "Delivered", explanation: "n/a - clean delivery"}
+    - {promised_in: "FY26 (ongoing)", promise: "Sumitomo EHV JV turnaround", outcome: "Delivered", explanation: "Better order mix and utilization above 80% on key machinery"}
+    - {promised_in: "FY26 (ongoing)", promise: "Export revamp", outcome: "Delivered", explanation: "Rs30cr to Rs52cr on a revamped team"}
+    - {promised_in: "Q2 FY26", promise: "FMEG Rs500cr by 2028, still within reach", outcome: "Partial/at risk (not reiterated in Q3 or Q4)", explanation: "No specific reason given for dropping the reaffirmation; general product-line headwinds cited instead"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What's driving the multi-year margin decline, and is it linked to management issues from ~6-6.5 years ago?", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26"], classification: "deflected every time on the causal-link question specifically, though the margin-level numbers themselves are answered each time"}
+  - {question: "Status/impact of the promoter family shareholder dispute", quarters_asked: ["Q1 FY26", "Q2 FY26"], classification: "answer changed between quarters, narrowing from partial concession to full non-engagement"}
+  - {question: "BharatNet meaningful order contribution / tangible pipeline", quarters_asked: ["Q1 FY26", "Q2 FY26", "Q3 FY26"], classification: "answered every time, but specificity degrades and delivery horizon keeps extending"}
+credibility_grade: "C"
+credibility_basis: "Mixed record: real delivery on solar, e-beam, exports and the Sumitomo JV turnaround sits alongside a three-quarter capex-timeline slippage on the core preform/fiber-draw growth catalyst, a governance-adjacent promoter dispute where candor narrowed rather than improved, and an FY26 cash-conversion collapse disclosed candidly after the fact but never flagged in advance, with the receivables component never addressed at all."
+peer_questions:
+  - {question: "Is the fiber/preform price surge from <$3 to ~$5 per km-month (Q3-Q4 FY26), driven by US/Europe data-center demand and Russia/Middle East defense applications, corroborated in Sterlite's, HFCL's, or Birla Cables' own concalls for the same period?", why: "Largest disclosed driver of Finolex's communication-cable margin recovery thesis; a milder or differently timed peer account would weaken the FY27 recovery thesis", check_peers: ["Sterlite Technologies", "HFCL", "Birla Cables"]}
+  - {question: "Do Sterlite/HFCL/Birla Cables also report a germanium/glass raw material supply constraint from China/Europe export restrictions, first disclosed by Finolex only in the Q4 FY26 call?", why: "Tests whether this is a genuine industry-wide new risk or an outlier specific to Finolex's own supply chain", check_peers: ["Sterlite Technologies", "HFCL"]}
+  - {question: "What production start date does UltraTech (Aditya Birla cement group) give for its own wire and cable plant, and does it match the analyst-cited January 2026 figure raised in Finolex's Q2 FY26 call, or Finolex management's own later Q2/Q3 CY2027 estimate?", why: "A full-year discrepancy between an analyst-cited timeline and management's own estimate needs resolving before the competitive-entry risk can be sized", check_peers: ["UltraTech Cement", "Adani group cable entity (if disclosed)"]}
+  - {question: "Do peer cable makers report a similar FY26 channel/trade destocking or pre-buying pattern, and does the industry-wide scale match or exceed Finolex's own ~Rs300cr inventory build?", why: "Tests whether Finolex's FY26 cash-conversion collapse is industry-wide (lower company-specific risk) or an outlier (higher company-specific risk)", check_peers: ["Polycab India", "KEI Industries", "RR Kabel", "Havells"]}
+  - {question: "What market-share and growth-rate figures do peers cite for the domestic OFC market, and do they corroborate Finolex's self-reported ~11-12% share behind Sterlite and ahead of Birla Cables/HFCL?", why: "Any claimed market-share figure needs independent corroboration per house rules", check_peers: ["Sterlite Technologies", "HFCL", "Birla Cables"]}
+  - {question: "Does management's claimed EHV/data-center power cable TAM expansion from $0.5-0.75bn currently to $4-5bn in 3-4 years appear in any independent industry or peer commentary?", why: "Large, unverified, aggressive-sounding claim underpinning the priority-5 Sumitomo JV trigger; needs independent sourcing before use in valuation", check_peers: ["Apar Industries", "KEC International"]}
+red_flags:
+  - {severity: "HIGH", flag: "FY26 cash-conversion collapse: ~Rs300cr inventory build (Middle East pre-buying) and CFO ~Rs50cr lower YoY, consistent with Gate 0 audited standalone CFO of Rs49.08cr; no advance warning in Q3 FY26 call; receivables component (~Rs128cr per Gate 0) never addressed in any transcript"}
+  - {severity: "MEDIUM-HIGH", flag: "Repeated, multi-quarter capex timeline slippage on preform (3 consecutive quarters) and fiber-draw capacity (slipped March 2026 to Sep/Oct 2026, with an internal date inconsistency within the Q4 FY26 call itself)"}
+  - {severity: "MEDIUM", flag: "Governance overhang: promoter/family shareholder dispute raised in 2 of 4 quarters with narrowing management candor (partial concession then flat refusal), then dropped from questioning entirely in Q3 and Q4"}
+  - {severity: "MEDIUM", flag: "Structural margin decline (gross margin ~27-28% to ~19%, EBITDA sub-10%) explicitly linked by an analyst to management issues from ~6-6.5 years ago in Q1 FY26; causal question never resolved in subsequent calls"}
+  - {severity: "MEDIUM", flag: "BharatNet: zero order conversion across all four quarters tracked, with continuously extending delivery horizon (end of CY2025 to next two years), while remaining a named priority trigger"}
+  - {severity: "MEDIUM", flag: "Newly disclosed germanium/glass raw material supply constraint (Q4 FY26 only), only a few months of buffer, tied to China/Europe export restrictions - single-point dependency on the core comm-cable margin recovery thesis"}
+  - {severity: "LOW-MEDIUM", flag: "FMEG Rs500cr-by-2028 target quietly dropped from commentary after Q2 FY26 reaffirmation, replaced by under-par performance language in Q4 FY26"}
+  - {severity: "LOW-MEDIUM", flag: "Confirmed entry of two large, deep-pocketed new competitors (UltraTech/Aditya Birla cement group, Adani) into wires within ~12-30 months; management's own timeline estimate runs roughly a year later than an analyst-cited figure"}
+  - {severity: "LOW", flag: "CEO/CFO transition disclosed only via analyst congratulations inside the Q4 FY26 call, with no management commentary on transition/continuity plan in the transcript"}
+dropped_triggers:
+  - "FMEG Rs500cr revenue by 2028 target (reaffirmed Q2 FY26, not mentioned Q3 or Q4 FY26)"
+  - "Electrical cable segment peak revenue potential of Rs6,500cr (quoted Q1 FY26, explicitly said to have changed by Q2 FY26, never re-quantified since)"
+  - "New entrant competitive threat detail (UltraTech/Birla, Adani) - given specificity in Q3 FY26, not re-addressed in Q4 FY26"
+timeline_slippages:
+  - "Preform plant trials: promised to start ~1 month from 14 Aug 2025 (Q1 FY26); still not started as of 14 Nov 2025 (Q2 FY26, 'next couple of weeks'); still 'under production trials' as of 12 Feb 2026 (Q3 FY26); trials retrospectively confirmed to have begun ~Feb 2026 and plant commissioned mid-March 2026 (Q4 FY26) - roughly 5-6 months late against the original promise"
+  - "Fiber draw capacity to 8mn km: guided to complete by March 2026 (Q2 FY26); re-guided to end of Q1 FY27 / ~Jun 2026 (Q3 FY26); re-guided again to end of Q2 FY27 / ~Sep 2026 or beginning Q3 FY27 / ~Oct 2026, with an internal inconsistency against the same call's own opening remarks stating 'completed by July [2026]' (Q4 FY26) - still not delivered as of the most recent call, cumulative slippage of 6+ months and counting"
+  - "BharatNet meaningful contribution: guided to pick up 'maybe from end of this year' (≈end CY2025, Q1 FY26); pushed to 'hopeful... adequate business over the next two years' by Q3 FY26 - a continuously extending, never-delivered horizon"

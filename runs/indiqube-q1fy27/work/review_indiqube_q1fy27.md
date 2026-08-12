@@ -27,7 +27,7 @@ Five A2 ledgers span this filing set. Aggregate contents, all reviewed:
 - monitoring: FND-2 (FWD), FND-3 (FWD), FND-4 (FWD), FND-1 (AMB), FND-5 (AMB)
 - AGM: FND-01 (FWD), FND-03 (FWD), FND-05 (AMB), FND-07 (AMB)
 
-Every one of these 25 findings is routed to a Questions-for-Management row (Step 8.5) and/or a Monitorable (Step 8C list). NEUTRAL-FACT / CONFIRMATORY-NEGATIVE / PASS / N.A. findings are noted in-line where they bear on a number but do not generate a mandatory question.
+Every one of these 25 findings is routed to a Questions-for-Management row (Step 8.5) and/or a Monitorable (Step 8C list). NEUTRAL-FACT / CONFIRMATORY-NEGATIVE / PASS / N.A. findings are noted in-line where they bear on a number but do not generate a mandatory question (deck A3-F14-01 EBIT 96-vs-97 and deck A3-F14-02 Net-Impact 75-vs-74 are both carried as NEUTRAL-FACT QC lapses in Step 1B).
 
 **Standalone-vs-consolidated gap (A3 F2): N.A.** IndiQube is a standalone-only filer, a single reportable segment ("leasing of managed commercial workspaces", results Note 5, line 249-250), with no subsidiaries, JVs, associates, or consolidation list anywhere in the 285-line results extract. There is no consolidated statement to decompose. The S-vs-C PAT gap is therefore not a blank; it is structurally **N.A.** and is stated as such throughout.
 
@@ -145,11 +145,12 @@ Reproduced from the investor deck (slides 10-12, lines 223-286) and press releas
 | EBIT (IGAAP-eq) | 34 | 47 | 55 | deck L318/325 |
 | PAT margin | 6% | 7% | 8% | deck L255 |
 
-**Internal inconsistencies to carry (A3 press F14-1 / deck A3-F14-01):**
+**Internal inconsistencies to carry (A3 press F14-1 / deck A3-F14-01 / deck A3-F14-02):**
 - Revenue bridge: Ind AS 423 → IGAAP-eq 428 is +5, but the Ind AS Adj cell prints (6) (press L118). Does not foot.
 - PAT: Ind AS PBT (30) less tax credit (7) implies PAT (23); statement shows (24) (press L133-135).
 - Headline "+91%" (press L56): 35 ÷ 19 = **+84.2%**, not +91%; the +91% implies a base of ~₹18.3 Cr, and deck slide 10 prints the Q1FY26 base as **18.5** (L253) while slide 11 prints **19** (L286). The base itself is disclosed two ways. → Q2.
-- Q1FY27 Ind AS EBIT printed as both 96 (deck L318) and 97 (deck L321); correct recompute = 97. ₹1 Cr QC lapse, NEUTRAL-FACT.
+- Q1FY27 Ind AS EBIT printed as both 96 (deck L318) and 97 (deck L321); correct recompute = 97. ₹1 Cr QC lapse, NEUTRAL-FACT (deck A3-F14-01).
+- Q1FY27 **Net Impact on P&L** (Ind AS 116 impact table, deck slide 25) printed as **75** (deck L729) but recomputes to **74** (lease interest 116 [deck L721] + ROU depreciation 148 [deck L723] − payment of lease liabilities 190 [deck L727] = 74). The Q1FY26 comparative column ties exactly at 73 (100 [L721] + 113 [L723] − 140 [L727] = 73, deck L729). ₹1 Cr management-deck internal QC lapse, NEUTRAL-FACT (deck A3-F14-02) — the identical twin of the EBIT 96-vs-97 item above; comparative column foots, so no Question-for-Management row is required and the protocol verdict, flags and decision are unaffected.
 
 🛑 Step 1 complete: every cell a line-anchored number or ND. Ind AS is a LOSS in every period; the IGAAP-equivalent PROFIT is management-constructed and unreviewed.
 
@@ -491,7 +492,7 @@ ledger_reconciliation:
   turns: 0
   slides: 35
   all_reviewed: true
-  a3_findings_incorporated: ["A3-F6-01(results)", "A3-F8-01", "A3-F13-01", "A3-F10-01", "F6-1", "F6-2", "F16-1", "F4-1", "F7-1", "F14-1", "F16-2", "F16-4", "A3-F6-01(deck)", "A3-F16-01", "A3-F7-01", "A3-F14-03", "FND-2", "FND-3", "FND-4", "FND-1", "FND-5", "FND-01", "FND-03", "FND-05", "FND-07"]
+  a3_findings_incorporated: ["A3-F6-01(results)", "A3-F8-01", "A3-F13-01", "A3-F10-01", "F6-1", "F6-2", "F16-1", "F4-1", "F7-1", "F14-1", "F16-2", "F16-4", "A3-F6-01(deck)", "A3-F16-01", "A3-F7-01", "A3-F14-03", "A3-F14-02(deck)", "FND-2", "FND-3", "FND-4", "FND-1", "FND-5", "FND-01", "FND-03", "FND-05", "FND-07"]
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE"
 decision_status_verified: "AVOID (WATCHLIST branch); Position None; verified live 2026-08-12"

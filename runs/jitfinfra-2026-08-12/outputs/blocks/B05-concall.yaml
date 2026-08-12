@@ -1,0 +1,55 @@
+stage: B05-concall
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps: ["prospectus", "rating", "announcements", "shareholding", "research", "presentation", "concalls (concalls_available:false)", "prior-year Annual Report/guidance document"]
+flags: ["consolidated net worth deeply negative (~-Rs513cr) never discussed in MD&A narrative", "going-concern qualification on JITF Water Infra (Naya Raipur) Ltd unresolved across Q3 FY26 and FY26 filings", "going-concern basis for JUWMBL (Bathinda) rests partly on promoter support", "Jalandhar/Ferozepur arbitration unresolved 4+ years, through Supreme Court Feb 2026", "rising JWIL leverage (D/E 0.30 vs 0.21, Net debt nearly doubled) alongside order-book growth", "WtE expansion (Jodhpur/Bawana/Kakinada/Nellore) not yet commissioned at FY26 year-end", "unverified ~50% WtE market-share claim, uncited unlike other TAM figures"]
+quarters_analysed: ["FY2025-26 Annual Report (Board's Report + MD&A)", "Q3 FY26 (9M to 31 Dec 2025) results (06.02.2026)", "FY26 full year (to 31 Mar 2026) results (12.05.2026)"]
+triggers:
+  - {priority: 1, name: "JWIL order-book conversion (Rs11,352cr; 11 FY27 project completions targeted)", type: "VOLUME/REVENUE", timeframe: "FY27", conviction: "M", confirm_signal: "FY27 quarterly completions track toward 11; O&M order book keeps growing", kill_signal: "FY27 completions materially undershoot 11; order book growth stalls/reverses"}
+  - {priority: 2, name: "WtE portfolio scale-up to ~220MW (Jodhpur/Bawana/Kakinada/Nellore)", type: "VOLUME", timeframe: "FY27-FY28", conviction: "M", confirm_signal: "Jodhpur COD by Oct 2026 as guided; firm dates emerge for the other three", kill_signal: "Jodhpur COD slips past Oct 2026; no firm dates emerge within FY27"}
+  - {priority: 3, name: "Integrated segment mix shift (18-25% margin band vs EPC-only)", type: "PRICE-MIX", timeframe: "FY27-FY28", conviction: "M", confirm_signal: "Segment margin trends toward 18-25% as Integrated share of order book rises", kill_signal: "Margin stays pinned near EPC-only levels"}
+  - {priority: 4, name: "Credit rating / cost-of-capital trajectory ('A' Stable, cost of borrowing)", type: "COST/FINANCIAL", timeframe: "Near-term", conviction: "M", confirm_signal: "Rating held/upgraded; cost of borrowing stays below 9.16%", kill_signal: "Rating outlook turns negative; leverage outpaces EBITDA/order-book growth"}
+  - {priority: 5, name: "Resource-recovery diversification (CBG/compost/RDF) and Tanzania expansion", type: "REVENUE/SECTORAL", timeframe: "Long-term", conviction: "L", confirm_signal: "A named CBG/compost project announced with capex/revenue disclosed", kill_signal: "No concrete project materialises beyond aspirational language within FY27"}
+guidance:
+  - {item: "WtE total portfolio target", number: "~220 MW (vs 110 MW operational FY26)", timeframe: "FY27-FY28", stated_in: "AR MD&A p.82-83"}
+  - {item: "Jodhpur 10MW WtE COD", number: "10 MW, 70% civil complete", timeframe: "on/before Oct 2026", stated_in: "Board's Report p.5"}
+  - {item: "JWIL FY27 project-completion target", number: "11 named projects (vs 3 in FY26)", timeframe: "FY27", stated_in: "Board's Report p.4; AR MD&A p.84"}
+  - {item: "JWIL total order book", number: "Rs11,352 crore, +123% YoY", timeframe: "as at 31 Mar 2026", stated_in: "Board's Report p.4; AR MD&A p.84"}
+  - {item: "JWIL entity credit rating", number: "'A' Stable (CARE & CRISIL, upgraded)", timeframe: "FY2025-26", stated_in: "Board's Report p.4; AR MD&A p.84"}
+  - {item: "JWIL Debt/Equity, Gearing, Net debt", number: "0.30 (PY 0.21); 23.15% (PY 17.61%); Rs214.84cr (PY Rs118.80cr)", timeframe: "as at 31 Mar 2026", stated_in: "Board's Report p.4"}
+  - {item: "Dividend", number: "Nil recommended", timeframe: "FY2025-26", stated_in: "Board's Report p.6"}
+  - {item: "Group consolidated revenue/EBITDA/PAT", number: "Rs2,808.02cr (+24%); Rs604.43cr (+35%); Rs(9.93)cr loss (narrowed 58%)", timeframe: "FY2026 vs FY2025", stated_in: "AR MD&A p.85"}
+promise_delivery:
+  delivered: 2
+  partial: 1
+  missed: 0
+  rows:
+    - {promised_in: "implicit FY26 plan (no prior-year target document available)", promise: "Complete Nagapattinam, Guwahati C1, Chittakhupat", outcome: "Delivered (self-reported)", explanation: "Reported complete in Board's Report FY2025-26 p.4; not independently verifiable against an external prior-year target in this input set"}
+    - {promised_in: "ongoing strategic priority, AR MD&A p.84-85", promise: "Improve/maintain credit rating to lower cost of capital", outcome: "Delivered", explanation: "Upgraded to 'A' Stable (CARE & CRISIL); cost of borrowing fell 10.19%->9.16% (Board's Report p.4; AR MD&A p.84)"}
+    - {promised_in: "AR MD&A p.82, Key Strategic Priorities for FY2026-27", promise: "Scale WtE portfolio toward ~220MW via Bawana/Jodhpur/Kakinada/Nellore", outcome: "Partial", explanation: "None of the four commissioned by FY26 year-end; only Jodhpur has a firm target date (Oct 2026); framed by management as a two-year buildout, not a broken promise"}
+excuse_pattern: "insufficient-evidence"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default per rule; only two self-reported (within-document-cycle) delivered items and one in-progress partial item are testable, with no independently anchored prior-year guidance document available to genuinely test promise vs delivery this cycle."
+peer_questions:
+  - {question: "Does India's water treatment market really grow at ~10.6% CAGR (USD2.3bn 2024 to USD7.0bn 2035) as JITF cites?", why: "underpins the entire water-infra growth thesis", check_peers: ["VA Tech Wabag", "EMS Limited", "Ion Exchange (India)"]}
+  - {question: "Is JWIL's +123% YoY order-book growth to Rs11,352cr matched by peer order-book trends, or is it an outlier?", why: "sharp acceleration warrants scrutiny for one-off/related-party award effects", check_peers: ["VA Tech Wabag", "EMS Limited", "Techno Electric & Engineering"]}
+  - {question: "Does JUIL genuinely hold ~50% share of India's operational MSW-to-energy processing capacity, as claimed without a cited source?", why: "unattributed market-share claim in an otherwise well-sourced document", check_peers: ["Antony Waste Handling Cell", "Ramky Enviro Engineers"]}
+  - {question: "Do peers confirm the cited WtE potential-vs-installed gap (5,690MW potential vs 522MW installed)?", why: "validates scale of the 220MW expansion opportunity", check_peers: ["Antony Waste Handling Cell", "Ramky Enviro Engineers"]}
+  - {question: "Do peers report a comparable 18-25% margin premium for Integrated (design-build-O&M/HAM) contracts vs EPC-only work?", why: "tests whether JITF's claimed mix-shift margin benefit is real or optimistic", check_peers: ["VA Tech Wabag", "Ion Exchange (India)", "Techno Electric & Engineering"]}
+  - {question: "Is JWIL's rating upgrade and falling cost of borrowing (10.19%->9.16%) sector-wide easing or JWIL-specific improvement?", why: "distinguishes idiosyncratic credit improvement from a rates/liquidity tailwind", check_peers: ["VA Tech Wabag", "EMS Limited"]}
+  - {question: "Are peers actually executing named CBG/compost/RDF projects at scale, or is this aspirational language across the sector?", why: "tests whether JITF's resource-recovery diversification claim is a real near-term pipeline item", check_peers: ["Antony Waste Handling Cell", "Praj Industries", "Ramky Enviro Engineers"]}
+red_flags:
+  - "Consolidated net worth deeply negative (~Rs-513cr as at 31 Mar 2026), worsening YoY, never discussed in MD&A narrative — HIGH"
+  - "Going-concern qualification on JITF Water Infra (Naya Raipur) Ltd, unresolved across Q3 FY26 and FY26 audit opinions since Jan 2018 — MEDIUM-HIGH"
+  - "Going-concern basis for JUWMBL (Bathinda) partly rests on promoter support — MEDIUM"
+  - "Jalandhar/Ferozepur arbitration (~Rs294.7cr combined awards) unresolved 4+ years, through Supreme Court Feb 2026 — MEDIUM"
+  - "Rising JWIL leverage (Debt/Equity 0.30 vs 0.21, Net debt nearly doubled) alongside order-book growth — MEDIUM"
+  - "WtE expansion (Jodhpur/Bawana/Kakinada/Nellore) not commissioned at FY26 year-end; only Jodhpur dated — LOW-MEDIUM"
+  - "Q4 FY26 consolidated loss exceeded full-year reported loss, driven by an incremental Rs3,562.89 lakh ESOP exceptional charge — LOW (transparent but material to interpretation)"
+  - "Unverified ~50% WtE market-share claim, uncited unlike other TAM figures in the same document — LOW"
+dropped_triggers: []
+timeline_slippages: ["WtE 220MW full buildout framed by management itself as spanning 'the following two years' (FY27-FY28) rather than a single firm date; Jodhpur alone has a committed COD (on/before Oct 2026)"]

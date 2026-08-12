@@ -1,0 +1,57 @@
+stage: B04-bizmodel
+company: "JITFINFRA"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["investor presentation not provided", "prospectus/rating/announcements/shareholding-detail/research absent", "concalls not available", "named competitors not disclosed in AR", "SPV-level cash flows insufficient for standalone concession DCF"]
+flags: ["consolidated net worth negative (~INR -443.81 Cr, AR p.165)", "unsecured related-party borrowings (INR 2,057.15 Cr) exceed secured debt (INR 1,302.38 Cr), AR p.179-181", "going-concern qualification on JITF Water Infra (Naya Raipur), AR p.156/240", "Emphasis of Matter on JUWM Bathinda, AR p.156/241", "rail/logistics segment (JRIL) divested Sept 2024, no longer part of group despite manifest/context describing it as active", "owners' PAT (INR -48.13 Cr) diverges sharply from total consolidated PAT (INR -9.93 Cr) due to NCI allocation, AR p.166"]
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Water Infrastructure EPC (JWIL Infra)", type: "project EPC / emerging HAM annuity", pct_of_revenue: 79.5, predictability: "M"}
+  - {name: "Urban Infrastructure / Waste-to-Energy concessions (JUIL and SPVs)", type: "concession-based power sale + tipping fees", pct_of_revenue: 15.9, predictability: "H"}
+  - {name: "Trading Activity (steel, via Quality Iron and Steel Ltd)", type: "trading", pct_of_revenue: 4.6, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "concession licenses (20-30 yr municipal/PPA exclusivity)", durability: "high for concession life, concession-specific"}
+  - {moat: "group captive input access (Jindal SAW pipe/steel)", durability: "medium"}
+  - {moat: "efficient scale in WtE (~50% claimed share of India's operational MSW-to-energy capacity)", durability: "medium-high"}
+valuation_methods:
+  primary: {method: "SOTP (sum-of-the-parts by segment)", why: "explicit multi-segment structure with differing NCI stakes and risk/return profiles (JWIL 54.60%, JUISL 75%, CETP 51%)"}
+  secondary: {method: "EV/EBITDA (blended and per segment)", why: "cross-check against SOTP, normalized for the one-off ESOP exceptional charge"}
+  tertiary: {method: "concession-level DCF per WtE SPV", why: "theoretically correct for tariff/tenor-visible concessions but AR discloses only summary SPV financials, not full cash-flow detail"}
+  not_applicable: ["P/E (PAT distorted by NCI allocation and exceptional items)", "P/B (consolidated book value negative)", "dividend discount/yield (no parent dividend, FY26)"]
+irrelevant_ratios:
+  - {ratio: "Standalone P/E / EPS", why: "standalone entity is a management-fee shell with trivial revenue (INR 3.51 Cr)"}
+  - {ratio: "Return on Equity", why: "consolidated equity is negative, ROE is mathematically meaningless"}
+  - {ratio: "Price-to-Book", why: "consolidated book value is negative"}
+  - {ratio: "Debt-to-Equity", why: "negative equity denominator inverts the ratio; use Gearing (Net Debt/Capital) instead"}
+  - {ratio: "Headline consolidated EPS/PAT read alone", why: "owners' loss (INR -48.13 Cr) diverges sharply from total consolidated PAT (INR -9.93 Cr) due to NCI split"}
+must_track_metrics:
+  - {metric: "Consolidated EBITDA margin", healthy: "18-22%+, improving toward O&M mix shift", red_flag: "below ~18-19%"}
+  - {metric: "Net Debt / Gearing (Net Debt/Capital)", healthy: "stable to declining from 115.63%", red_flag: "rising, or covenant breach"}
+  - {metric: "JWIL order book and O&M share", healthy: "growing, O&M share rising above 23%", red_flag: "flat or declining order book"}
+  - {metric: "Trade receivables + unbilled revenue (days)", healthy: "stable/improving from ~176 days", red_flag: "rising ageing beyond 1 year"}
+  - {metric: "Interest coverage (EBITDA/finance cost)", healthy: "improving from ~1.5x", red_flag: "falling toward or below 1.2x"}
+unit_economics:
+  unit: "WtE: 1 MW operating capacity per year | Water EPC: INR 1 Cr of order book converted to executed revenue"
+  revenue_per_unit: "WtE ~INR 4.4-4.8 Cr/MW/year (computed from SPV table, MD&A p.83); EPC = INR 1 Cr by definition, paced by execution"
+  margin_per_unit: "WtE SPV EBITDA margins 51.8%-75.1% (MD&A p.83); JWIL EPC segment EBITDA margin 12.7% (MD&A p.84)"
+  key_lever: "WtE: plant load factor and feedstock calorific value; EPC: execution pace and steel/pipe input cost"
+first_deterioration_signals:
+  - {risk: "Revenue model — POC recognition ahead of cash", first_signal: "unbilled revenue (contract assets) growing faster than billed/collected revenue"}
+  - {risk: "Margin — WtE PLF or EPC cost overrun", first_signal: "consolidated EBITDA margin trending below 21.5%"}
+  - {risk: "Balance sheet — negative net worth, high gearing", first_signal: "related-party 'other interest' finance-cost line rising further, or covenant breach disclosure"}
+  - {risk: "Execution — greenfield WtE COD delays", first_signal: "stated COD target dates (e.g., Jodhpur Oct-2026) slipping in subsequent Board's Reports"}
+  - {risk: "Structural — going concern / municipal arbitration", first_signal: "new or expanded Emphasis of Matter paragraphs, or bank guarantee invocation"}
+mgmt_questions:
+  - "Why is consolidated net worth negative, and what is the path back to positive?"
+  - "Why do unsecured related-party borrowings exceed secured institutional debt, and what is the refinancing plan?"
+  - "What is the resolution timeline for going-concern qualifications at JITF Water Infra (Naya Raipur) and JUWM Bathinda?"
+  - "What drove the FY26 divergence between owners' loss and total consolidated loss, and is it structural or one-off?"
+  - "What is the realistic COD timeline for the four greenfield WtE projects and what would delay them?"
+  - "How much of the JWIL order book is HAM/annuity versus fixed-price EPC, and how will that mix evolve?"
+  - "What is the plan to deploy the JRIL disposal gain and improve group liquidity/leverage?"
+one_line_verdict: "A capital-starved holding company riding a real, policy-backed structural growth market, funded on a fragile, related-party-heavy balance sheet with negative consolidated net worth."

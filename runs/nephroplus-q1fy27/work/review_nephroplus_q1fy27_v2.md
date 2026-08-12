@@ -543,12 +543,12 @@ Regulation 30 filing, ref NEPHROPLUS/SE/74, AGM held via VC/OAVM, 74 members att
 
 ## C3. Governance-positive signals
 
+- **Full board present — 4 of 8 independent (50%).** All 8 directors present (AGM L61-72): **1 executive/promoter** — Mr. Vikram Vuppala (Chairman & Managing Director); **3 nominee directors** — Mr. Gaurav Sharma, Mr. Vishal Vijay Gupta, Mr. Sunil Kumar Thakur; **4 independent directors** — Mr. Hemant Sultania, Mr. Om Prakash Manchanda, Ms. Annette Kumlien, Dr. Ajay Bakshi. Total = 8 (all board members attended). Strong independent representation at **4 of 8 (50%)** is a governance-positive, and the independent NRC Chairman (Om Prakash Manchanda) chaired the promoter-interested Items 5-6 (see recusal bullet). No independent-director non-renewal (the bigger negative signal — absent here).
 - **MD recusal.** On Res 5 and 6 (the interested items), Mr. Vikram Vuppala recused himself and **Mr. Om Prakash Manchanda, Independent Director (Chair of the NRC), chaired** those items; the CMD resumed the chair afterward (AGM L123-127, F-07). Proper recusal with an independent director chairing corroborates the Notion **Promoter TRUSTWORTHY** verdict.
 - **Clean audit reconfirmed.** The Chairman recorded the Statutory Auditor's Report carried **no qualifications, reservations, adverse remarks or disclaimers** (AGM L120-121, F-01) — an independent cross-check on the Q1 unmodified conclusion.
-- **Full board present.** All 8 directors present (2 promoter/exec-adjacent, 4 nominee, 4 independent incl. Kumlien and Bakshi); no independent-director non-renewal (the bigger negative signal — absent here).
 - **FY26 Annual Report adopted (Res 1).** The full FY26 AR (standalone + consolidated + Board's Report + Auditors' Report) is now finalised → **schedule a Role 6 AR deep dive** (F-08). The component-auditor coverage, entity-level economics, related-party schedule (which should carry the Promote Agreement detail), and Other-Matters paragraph that the Q1 LRR omitted live in the AR.
 
-**Net AGM read:** governance hygiene intact (recusal, clean audit, full board), but **three undisclosed promoter-economics/dilution items** (ESOP 2026 quantum, MD remuneration amendment substance, Promote Incentive Arrangement terms) are now open watch-items. None fires a tripwire. All three become management questions and monitorables. The FY26 AR and the pending vote tallies are the near-term resolving documents.
+**Net AGM read:** governance hygiene intact (recusal, clean audit, 50%-independent board present), but **three undisclosed promoter-economics/dilution items** (ESOP 2026 quantum, MD remuneration amendment substance, Promote Incentive Arrangement terms) are now open watch-items. None fires a tripwire. All three become management questions and monitorables. The FY26 AR and the pending vote tallies are the near-term resolving documents.
 
 ---
 
@@ -749,7 +749,7 @@ flags:
   - "AGM: Promote Incentive Arrangement (Res 6, Agreement 25-Jul-2025, promoter-CMD with certain shareholders) terms UNDISCLOSED; Ordinary vs Special anomaly (AGM-F06/F11) -> watch, not fired"
   - "AGM: ESOP Scheme 2026 (Res 3-4) dilution quantum UNDISCLOSED; grant extends to a HOLDING COMPANY above the listco (AGM-F03/F04)"
   - "AGM: MD remuneration clarificatory amendment (Res 5) substance UNDISCLOSED (AGM-F05)"
-  - "AGM governance-positive: MD recused on Res 5-6, independent director chaired; FY26 audit reconfirmed clean; FY26 AR adopted -> Role 6 trigger (AGM-F07/F01/F08)"
+  - "AGM governance-positive: full board present, 4 of 8 independent (50%); MD recused on Res 5-6, independent director chaired; FY26 audit reconfirmed clean; FY26 AR adopted -> Role 6 trigger (AGM-F07/F01/F08)"
   - "AGM vote tallies RESULT_PENDING for all 6 resolutions incl. promoter items (AGM-F02)"
   - "Kamal D Shah (co-founder) present but ZERO speaking turns (SILENT_PARTICIPANT); CMD present and answering -> no MGMT_ABSENCE"
   - "Notion memory 'net cash Rs 1,533 Cr' unreconcilable vs total assets Rs 1,470.9 Cr; filed Mar-26 net cash ~Rs 403 Cr"

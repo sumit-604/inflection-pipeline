@@ -1,166 +1,144 @@
-# A5 ADVERSARY / COMPLETENESS AUDIT — IndiQube Spaces Limited (INDIQUBE), Q1FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — IndiQube Spaces Limited (INDIQUBE) — Q1FY27
+# RE-AUDIT (loop 1 of 2). Prior verdict INCOMPLETE; single blocker = deck D222 orphan.
+# Fresh context: derived independently from A1 extracts + A2 ledgers; A4 cites checked, not trusted.
 
-Auditor: A5 (Opus 4.8), fresh context. Inputs seen: A4 review, A1 extracts (5), A2 ledgers (5).
-Re-derived independently; A4/A3 cites were checked, not trusted. Units: results filing +
-monitoring report in Rs millions (×0.1 → ₹ Cr); press release + deck native ₹ Cr. Company is
-standalone-only, single reportable segment (results Note 5, L249-250) → standalone-vs-consolidated
-gap is structurally **N.A.**, not a missed metric (confirmed independently: no subsidiary /
-"consolidat" / "Group" statement anywhere in the 285-line results extract).
+## PRIOR-GAP CLOSURE CHECK (the reason this re-audit exists)
+
+**Prior blocker:** deck ledger row **D222** ("Net Impact on P&L", slide 25 / extract page 26, printed **75** vs recomputed **74**) was enumerated in the deck ledger (ARITHMETIC_VARIANCE, twin of the EBIT 96-vs-97 item) but was ABSENT from A4's review, while its identical twin (EBIT Ind AS 96-vs-97, D108/D109) was present. Asymmetry = orphan row = FAIL to A4.
+
+**Independent recompute of D222 (deck L719-729):**
+- Q1FY27: Interest on Lease Liabilities 116 (D218/L721) + Depreciation on ROU 148 (D219/L723) − Payment of Lease Liabilities 190 (D221/L727) = **74**. Slide prints **75**. ₹1 Cr QC lapse confirmed.
+- Q1FY26 comparative: 100 + 113 − 140 = **73** = printed 73. Comparative column ties exactly. Confirmed.
+- Cross-check: Total Ind AS 116 Impact printed 264 (=116+148 ✓) and 213 (=100+113 ✓); Net Impact = 264−190 = 74 (printed 75), 213−140 = 73 (printed 73). Consistent with above.
+
+**Closure verification in the AMENDED review:**
+- Preamble line 30: "deck A3-F14-01 EBIT 96-vs-97 and deck A3-F14-02 Net-Impact 75-vs-74 are both carried as NEUTRAL-FACT QC lapses in Step 1B." ✓
+- Step 1B inconsistency list line 148: "(A3 press F14-1 / deck A3-F14-01 / deck A3-F14-02)". ✓
+- Step 1B line 153: full treatment — recompute to 74, comparative ties at 73, ₹1 Cr NEUTRAL-FACT, no Question-for-Management row required (comparative foots), verdict/flags/decision unaffected. ✓
+- YAML line 495 `a3_findings_incorporated` now includes "A3-F14-02(deck)". ✓
+
+**D222 GAP: CLOSED.** The amendment placed D222 symmetrically alongside its EBIT twin. No re-derivation disagreement.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run FIRST)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
 
-PLAIN-LANGUAGE BRIEF located at review lines 462-478. All four labelled parts present and carry
-real, non-placeholder content:
+PLAIN-LANGUAGE BRIEF present at review lines 463-479, all four labelled parts present and carrying real content:
 
-| Part | Heading present | Lines | Non-empty / real content | Status |
+| Brief part | Location | Status |
+|---|---|---|
+| (1) Summary narrative | L465-467 (~18 lines prose, numbers-first) | present |
+| (2) SECTOR intelligence | L469-471 | present |
+| (3) BUSINESS-MODEL intelligence | L473-475 | present |
+| (4) COMPETITION intelligence | L477-479 | present |
+
+Gate: **PASS.** None missing, none placeholder.
+
+---
+
+## AUDIT 1 — COVERAGE (fresh independent enumeration diffed against A2 ledgers)
+
+Fresh grep/manual re-count of each extract vs each A2 ledger:
+
+| Category | A2 count | My fresh count | Orphan rows (ledger→absent from A4) | Status |
 |---|---|---|---|---|
-| 1. Summary narrative | "### 1. SUMMARY NARRATIVE" | 464-466 | ~24-line prose narrative, numbers-anchored | PRESENT |
-| 2. Sector intelligence | "### 2. SECTOR INTELLIGENCE" | 468-470 | GCC demand up-cycle, Ind AS 116 sector optics, CRISIL monitoring regime | PRESENT |
-| 3. Business-model intelligence | "### 3. BUSINESS-MODEL INTELLIGENCE" | 472-474 | 3 revenue lines, unit economics, ₹1,650/sqft, VAS drift, IPO redirection | PRESENT |
-| 4. Competition intelligence | "### 4. COMPETITION INTELLIGENCE" | 476-478 | Awfis/Smartworks/EFC/WeWork India, moat, supply-discipline risk, provenance line | PRESENT |
+| results: numbered notes | 6 | 6 (extract L209,211,215,218,249,256) | none — notes table Step 0D | PASS |
+| results: Note-4 footnotes | 4 | 4 (•,••,#,A at L240,241,244,245) | none — Step 0D rows | PASS |
+| results: stmt line items | 29 | 29 (L166-199) | none — Step 1 table | PASS |
+| results: IPO-utilisation rows | 8 | 8 (L230-239) | none — Step 0C/Q5/Q6 | PASS |
+| results: auditor paras | 4 | 4 (L89,95,103,124) | none — Step 0D unmodified | PASS |
+| press: reconciliation rows | 16 | 16 (L118-135) | none — Step 1B | PASS |
+| press: table cells | 96 | 96 (16×6) | none | PASS |
+| press: mgmt-quote numbers | 16 | 16 (L62-82) | none — Step 2B claims | PASS |
+| deck: slides | 35 | 35 ([page 1..35]) | none — slide master reviewed | PASS |
+| deck: data points | 234 | 234 (D001-D234) | **none — D222 now cited (was the sole prior orphan)** | PASS |
+| deck: table line items | 70 | 70 | none | PASS |
+| deck: ARITHMETIC_VARIANCE findings | 2 (D108/D109; D222) | 2 | **both now in Step 1B (L152, L153)** | PASS |
+| monitoring: enumerated units | 155 | 155 (2 bank + 62 FD + 1 total = 65 deployment; +90 others) | none — FND-1..5/OD1 in Q5-Q7, Step 8C | PASS |
+| monitoring: deployment rows | 65 | 65 (L536-606) | none (aggregated; individual FDs immaterial, ledger-flagged) | PASS |
+| AGM: proceeding items | 14 | 14 (L85-176) | none — FND-01/03/05/07 in Q14-Q16 | PASS |
+| AGM: resolutions | 3 | 3 (L145-154) | none — monitorable + Q15 | PASS |
+| AGM: distinct persons | 7 | 7 | none | PASS |
 
-**Gate 0: PASS.** All four brief parts present and substantive.
+**A3-findings incorporation:** 25 FORWARD-SIGNAL/AMBIGUOUS findings enumerated in review L24-28 (results 4 + press 8 + deck 4 + monitoring 5 + AGM 4 = 25), each routed to a Q-for-Management row (Step 8.5, Q1-Q16) and/or Monitorable (Step 8C). NEUTRAL-FACT / CONFIRMATORY-NEGATIVE items (deck A3-F14-01, deck A3-F14-02, press F16-3) handled in-line per L30 — both deck twins now present.
 
----
+**Rows my fresh pass found that the ledger lacks:** none. **Orphan rows (ledger → absent from A4):** none (D222, the sole prior orphan, is now cited).
 
-## AUDIT 1 — COVERAGE (fresh independent enumeration vs A2 ledgers)
+Coverage: **PASS.** No return to A2, no return to A3.
 
-Fresh grep/sweep pass over each A1 extract, diffed against the A2 count tests. My counts reproduce
-every A2 count exactly — **A2 enumeration is clean; nothing my fresh pass found is missing from the
-ledgers** (missing_from_ledger = none).
-
-| Category (doc) | A2 count | My fresh count | Match | Orphan-in-review? |
-|---|---|---|---|---|
-| results: numbered notes | 6 | 6 (Notes 1-6; Note 1 OCR'd "I") | yes | no |
-| results: Note-4 footnotes | 4 | 4 (•, ••, #, A) | yes | no |
-| results: statement line items | 29 | 29 (L166-199) | yes | no |
-| results: IPO-utilisation rows | 8 | 8 (7 objects + total) | yes | no |
-| results: auditor paras | 4 | 4 (L89/95/103/124) | yes | no |
-| press: reconciliation rows / cells | 16 / 96 | 16 / 96 (L118-135) | yes | no |
-| press: mgmt-quote numbers | 16 | 16 | yes | no |
-| deck: slides / chart flags | 35 / 8 | 35 / 8 (OCR pages 2,3,4,5,7,14,24,27) | yes | no |
-| deck: table line items / data points | 70 / 234 | 70 / 234 (spot-reconciled) | yes | **see D222 below** |
-| monitoring: deployment rows | 65 (2 bank + 62 FD + total) | 65 | yes | no |
-| monitoring: cost/progress/delay/new-objects | 10/10/2/4 | 10/10/2/4 | yes | no |
-| agm: proceeding items / resolutions / persons | 14 / 3 / 7 | 14 / 3 / 7 | yes | see NAME_INCONSISTENCY |
-
-**Material flag-class incorporation check (every A2 forensic flag → is it in A4?):**
-- DEVIATION_DECLARED / NEW_OBJECT / DELAY_IN_IMPLEMENTATION / DROPPED_DESCRIPTION (monitoring): all
-  incorporated (Step 0D Note 4, Step 6B #3, Step 8B, Q5-Q7, brief). ✓
-- MGMT_GUIDANCE (deck D133-135: ₹52 Cr deal, 39K D&B, 3.9 Lakh Noida): incorporated (Step 6D, Q8). ✓
-- DIRECTOR_ABSENT + Scrutinizer dual-role (AGM): incorporated (Step 6B #4, Q14, Q15). ✓
-- ARITHMETIC_VARIANCE #1 — EBIT Ind AS 96-vs-97 (deck D108/D109): incorporated (Step 1B, NEUTRAL-FACT). ✓
-- **ARITHMETIC_VARIANCE #2 — Net Impact on P&L 75-vs-74 (deck D222): NOT incorporated. ORPHAN.**
-- NAME_INCONSISTENCY Meghana/Meghna (AGM Table 3): not cited — immaterial spelling variance, acceptable.
-- MINOR_VARIANCE D158 (sourcing mix sums 98%): not cited — immaterial, acceptable.
-
-**COVERAGE FINDING — ONE ORPHAN ROW.** A2 deck ledger row **D222** (page 26 / slide 25, "Net Impact
-on P&L") is explicitly flagged `ARITHMETIC_VARIANCE`: "Q1FY27: 264−190=74, but slide states 75 (off
-by ₹1 Cr)... flagged for A3." I re-derive independently: 116 (interest on lease liabilities, deck
-L721) + 148 (ROU depreciation, deck L723) = 264 (deck L725, ties) − 190 (payment of lease
-liabilities, deck L727) = **74**; the deck prints **75** (deck L729). The Q1FY26 column ties exactly
-(100+113−140 = 73). A4's review surfaces the *twin* ₹1 casting variance (EBIT 96-vs-97) in Step 1B
-as a NEUTRAL-FACT but is silent on this parallel, A2-enumerated variance in the very next slide's
-Ind AS 116-impact table. This is an orphan ledger row absent from A4 → **FAIL, return to A3** (the
-forensic-notes stage that should have carried D222 to A4 alongside D108/D109).
+Note on YAML asymmetry (non-blocking): review YAML L495 lists "A3-F14-02(deck)" but not "A3-F14-01(deck)". This is cosmetic — A3-F14-01 (EBIT twin) is carried in the review body at L30/L148/L152 and was present in the prior version; the incorporation list simply logs the newly-added item. Both twins are substantively covered in the body. Not a coverage defect.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (recompute every derived metric from raw extract numbers)
+## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw extracted numbers)
 
-Every metric A4 itself *computed* is correct to rounding. The task-mandated recomputes:
+Units: results & monitoring Rs millions ×0.1 = Rs Cr; press release & deck native Rs Cr.
 
-| Metric | A4 value | My recompute (source lines) | Status |
+| Metric | A4 value | My recompute (raw source) | Status |
 |---|---|---|---|
-| Ind AS Op EBITDA Q1FY27 | 258.47 | −30.51+187.89+127.22−26.13 = 258.47 (results L180/176/175/168) | MATCH |
-| Ind AS Op EBITDA margin Q1FY27 | 61.1% | 258.47/422.69 = 61.15% | MATCH |
-| Effective tax Q1FY27 / Q4FY26 / FY26 | 21.7% / 5.2% / 21.6% | 6.63/30.51; 1.24/23.90; 29.30/135.65 | MATCH |
-| Revenue YoY | +36.7% | 422.69/309.29−1 = 36.66% | MATCH |
-| PAT loss narrowed YoY | 35.0% | (49.96→23.88): 12.88/36.76 = 35.0% | MATCH |
-| Ind AS→IGAAP PAT bridge (Step 4B) | foots to 35 | +148+116−178−18+5 = +73 pre-tax; PBT −30+73 = 43; 43−8 = 35 (deck L281/275/282/269/268/285/286) | MATCH (within deck whole-₹ rounding; non-foots already flagged F14-1) |
-| "+91%" PAT growth | flagged as +84.2% GAP | 35/19 = 84.2%; base printed 18.5 (L253) AND 19 (L286); 91% needs base ~18.3 | MATCH — A4 flagged (Q2) |
-| EBIT Ind AS 96-vs-97 | flagged, correct = 97 | 449−27−24−188−113 = 97 (deck L305-317); also PBT −30 + FC 127 = 97 | MATCH — A4 flagged |
-| **Net P&L impact 75-vs-74** | **NOT carried** | 116+148−190 = **74** (deck prints 75, L729); Q1FY26 = 73 ties | **SOURCE VARIANCE, un-surfaced by A4 → drives coverage FAIL above** |
-| Unutilised IPO — net | ₹335.42 Cr | 3,354.22M ×0.1 = 335.42 (results L239) | MATCH |
-| Unutilised IPO — gross | ₹340.6 Cr | 3,405.88M ×0.1 = 340.59 (monitoring L616/458) | MATCH (see label note) |
-| Deployed this quarter | ₹38.9 Cr | 389.02M ×0.1 = 38.90 (monitoring L458) | MATCH |
-| Four new IPO objects | ₹187 Cr | 520+550+160+640 = 1,870M ×0.1 = 187 (monitoring L433-448) | MATCH |
-| FY27 new-centre tranche | ₹186.9 Cr | 1,868.68M ×0.1 (monitoring L482-483) | MATCH |
-| FY26 underspend | ₹67.2 Cr | 2,448.73−1,776.97 = 671.76M ×0.1 = 67.18 (monitoring L649-651) | MATCH |
-| Paid-up share bridge | +29.41M vs 27.43M = ~1.98M | 211.99−182.58 = 29.41M face (Re.1) vs fresh issue 27,432,636 → 1.98M gap (results L195/L221) | MATCH — A4 flagged (Q12) |
-| RPA occupancy | 85.97% ≈ 86% | 6.74/7.84 (deck L410-412, glossary L766) | MATCH |
+| Revenue Q1FY27 (Ind AS) | 422.69 | 4,226.85M ×0.1 = 422.69 (L167) | match |
+| Other income Q1FY27 | 26.13 | 261.29 ×0.1 = 26.13 (L168) | match |
+| Finance costs Q1FY27 | 127.22 | 1,272.19 ×0.1 (L175) | match |
+| D&A Q1FY27 | 187.89 | 1,878.93 ×0.1 (L176) | match |
+| PBT Q1FY27 | (30.51) | (305.10) ×0.1 (L180) | match |
+| PAT Q1FY27 | (23.88) | (238.82) ×0.1 (L185) | match |
+| Operating EBITDA Q1FY27 | 258.47 | (30.51)+187.89+127.22−26.13 = 258.47 | match |
+| Op EBITDA margin Q1FY27 | 61.1% | 258.47/422.69 = 61.15% | match |
+| Reported EBITDA Q1FY27 | 284.60 | (30.51)+187.89+127.22 = 284.60 | match |
+| Core PBT ex-OI Q1FY27 | (56.64) | (30.51)−26.13 = (56.64) | match |
+| Effective tax rate Q1FY27 | 21.7% | (6.63)/(30.51) = 21.73% | match |
+| PAT margin Q1FY27 | (5.6%) | (23.88)/422.69 = −5.65% | match |
+| Operating EBITDA Q1FY26 | 188.12 | (49.96)+142.98+109.93−14.83 = 188.12 | match |
+| Op EBITDA margin Q1FY26 | 60.8% | 188.12/309.29 = 60.82% | match |
+| Revenue YoY | +36.7% | 422.69/309.29 − 1 = +36.67% | match |
+| Op EBITDA YoY | +37.4% | 258.47/188.12 − 1 = +37.40% | match |
+| Depreciation YoY | +31.4% | 187.89/142.98 − 1 = +31.41% | match |
+| Finance cost YoY | +15.7% | 127.22/109.93 − 1 = +15.73% | match |
+| EBIT (operating) YoY | 45.14→70.58 +56.4% | 188.12−142.98=45.14; 258.47−187.89=70.58; +56.36% | match |
+| Other income YoY | +76.2% | 26.13/14.83 − 1 = +76.20% | match |
+| Reported PBT narrowed | 38.9% | (49.96−30.51)/49.96 = 38.93% | match |
+| PAT narrowed | 35.0% | (36.76−23.88)/36.76 = 35.04% | match |
+| QoQ revenue (Ind AS) | +5.3% | 422.69/401.45 − 1 = +5.29% | match |
+| IGAAP-eq PAT YoY | +84.2% (vs mgmt +91%) | 35/19 = +84.21% (deck L286) | match — GAP correctly flagged |
+| IGAAP-eq EBITDA YoY | +33.8% | 87/65 = +33.85% | match |
+| IGAAP-eq EBIT YoY | +61.8% | 55/34 = +61.76% | match |
+| IGAAP-eq PBT YoY | +72.0% | 43/25 = +72.0% | match |
+| Adjusted Cash EBIT YoY | +44% | 75/52 = +44.2% (deck L351) | match |
+| AUM YoY | +22% | 10.61/8.7 = +21.95% (deck L379) | match |
+| RPA-basis occupancy | 85.97% | 6.74/7.84 = 85.97% (deck L410-412) | match |
+| VAS total Q1FY27 | ₹72 Cr | 33+39 = 72 (deck L617/L619) | match |
+| **EBIT Ind AS Q1FY27 (twin)** | correct = 97 | 449−27−24−188−113 = 97 (printed 96 is the lapse) | match |
+| **Net Impact on P&L Q1FY27 (D222)** | recompute 74, printed 75 | 116+148−190 = 74; printed 75; ₹1 Cr lapse | match |
+| **Net Impact on P&L Q1FY26 (D222 comp)** | ties at 73 | 100+113−140 = 73 = printed 73 | match |
 
-**A4-computed arithmetic: no mismatch above rounding.** arithmetic_mismatches (of A4's own figures) = none.
+**Arithmetic mismatches above rounding: NONE.** The amendment's added figures (D222: 74 vs printed 75; comparative 73) recompute exactly as A4 states. The ₹1 Cr items are correctly characterised as management-deck internal QC lapses, not pipeline arithmetic errors. Deck-internal ₹1 rounding on net-debt (278−343 = −65 printed −66) and Cash-EBIT expense subtotal are cited-as-source, not re-derived, and fall under the deck's own p34 rounding disclaimer — not A4 arithmetic defects.
 
-Two minor, non-blocking notes (recorded, not FAILs):
-- **Label imprecision (Q5, review L410):** ₹340.6 Cr is described as "net IPO proceeds unutilised."
-  ₹340.6 Cr is the *gross*-proceeds unutilised (3,405.88M); *net*-proceeds unutilised is ₹335.42 Cr
-  (3,354.22M). Both figures are individually correct and used correctly elsewhere; only the one-word
-  basis label ("net") is loose. Recommend A4 relabel to "gross." Not gate-blocking.
-- The deck IGAAP column carries several additional ₹1 whole-crore casting non-foots (e.g. slide 10
-  EBITDA 428−342 = 86 vs printed 87; PBT build 87−11−40+8 = 44 vs printed 43), all inside the deck's
-  own rounding disclaimer (L927) and immaterial. Noted for completeness only.
+Arithmetic: **PASS.** No return to A4.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most positive A4 claims; strongest bear from same text)
+## AUDIT 3 — ADVERSARIAL READ (three most-positive claims; strongest bear from same extract)
 
-| # | A4's positive claim | Strongest bear counter (same extracted text) | Survives? | Already in A4? |
-|---|---|---|---|---|
-| 1 | IGAAP-eq PAT ₹35 Cr, +84% YoY, positive all 3 periods; "genuinely cash-profitable" anchored by current tax ₹8.16 Cr on a book loss | The ₹35 Cr sits ONLY in a management IGAAP-eq column no auditor reviewed (SRE 2410 covered only the Ind AS statement = ₹23.88 Cr LOSS); the bridge does not foot (rev adj (6) vs +5; PAT (24) vs implied (23); +91% vs +84%; base 18.5 vs 19); and the current-tax "proof" is itself printed "Q1FY27 **Estimated**" on deck slide 25 (D214, L689), not audited | YES | YES — flags, Q1, Q2, Step 1B/4B. No new graft needed |
-| 2 | VAS crossed 17% green tripwire; net cash ₹66 Cr, D/E 0.05x = strong balance sheet | VAS 17% is a One-Time artifact: One-Time VAS leapt ₹7→₹39 Cr while recurring rose only ₹27→₹33 Cr (deck L619/623/617); normalise One-Time toward ₹7 Cr and VAS share falls under the 12% RED. "Net cash ₹66 Cr" is inflated by ₹340.6 Cr unspent IPO cash parked in FDs (only ₹38.9 Cr deployed), not operating generation | YES | YES — Step 6B #6, Q9, Step 8C, brief. No new graft needed |
-| 3 | Revenue +37% YoY highest ever; AUM 10.61 Mn sqft +22%; occupancy 86% GREEN; operating leverage | 3.87 Mn sqft (36% of AUM) is NOT yet client-yielding — 2.77 Mn LOI "yet to be Rent Paying" + 1.1 Mn "Rent Paying yet to be Rent Yielding" (deck L408-412); occupancy is 86% only on rent-*paying* area and "90% steady-state" is >12-month mature centers only (glossary L460); growth increasingly financed by postal-ballot-redirected IPO capital, and the ₹190 Cr cash-rent outflow / FCF drag is uncheckable (no Q1 cash flow statement) | YES | YES — Step 6B #1, Q8, Q10, Step 5 INDETERMINATE, brief. No new graft needed |
+**Claim 1 — "Highest ever quarterly revenue ₹428 Cr, +37% YoY; PAT up 91% to ₹35 Cr; profitability strengthening across every metric" (press L55-67).**
+Bear counter (same text): the ₹35 Cr PAT and +91% live only in the management-constructed IGAAP-equivalent column that no auditor reviewed (press F4-1); the statutory Ind AS result is a **₹23.88 Cr LOSS** (results L185). The +91% is arithmetically **+84.2%** (35/19), and the base is printed two ways — ₹19 Cr (deck L286) vs ₹18.5 Cr (deck L253). **Counter survives.** Already grafted: flags block, Q1, Q2, Step 1B L151, Step 2B. No new graft required.
 
-**All three bear counters survive, but each is already materially incorporated in A4's review.** No
-NEW surviving bear counter requires grafting into A4. Adversarial read adds no separate FAIL.
+**Claim 2 — "VAS scaling rapidly, ₹72 Cr, contribution 11%→17%" (press L78-79).**
+Bear counter (same text): the rise is One-Time-driven — VAS One-Time jumped ₹7→₹39 Cr while recurring VAS was roughly flat (₹27→₹33 Cr; recurring ₹34→₹33 QoQ) (deck L617-623); management's own footnote that it is "expected to remain a recurring feature" (deck L636) is aspirational, not contracted. **Counter survives.** Already grafted: Step 8C, VAS flag, Q9, Step 6B #6. No new graft required.
+
+**Claim 3 — "Net cash ₹66 Cr, D/E 0.05x — strong post-IPO balance sheet" (deck L196-200).**
+Bear counter (same text): this is the ex-lease view that by design omits the ~₹4,700-4,900 Cr Ind AS lease liability, and the "net cash" is substantially ₹340.6 Cr of unutilised IPO proceeds parked in FDs (monitoring L606, L616), of which only ₹38.9 Cr was deployed this quarter, with capital redirected via 24-Jun-2026 postal ballot into four undescribed 0%-deployed objects (results Note 4; monitoring N2/P4-P7). **Counter survives.** Already grafted: flags block, Step 5, Step 6B #3, Q5/Q6. No new graft required.
+
+All three bear counters survive from the extract, and **all three are already incorporated** in A4's review. No surviving bear counter is missing. No return to A4.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.**
+**COMPLETE.**
 
-- Gate 0 (deliverable): PASS. Coverage enumeration vs A2: clean (no A2 miss; nothing missing from
-  ledger). Arithmetic of A4's own figures: clean. Adversarial read: three bear counters survive but
-  all already incorporated.
-- **Sole blocking defect — one orphan ledger row.** A2 deck ledger row **D222** ("Net Impact on P&L,"
-  slide 25 / page 26), enumerated and explicitly flagged `ARITHMETIC_VARIANCE` (printed 75 vs correct
-  116+148−190 = 74; Q1FY26 ties at 73), is **absent from A4's review**, while its identical twin (EBIT
-  Ind AS 96-vs-97) IS carried in Step 1B as a NEUTRAL-FACT. Per the coverage rule, an enumerated
-  ledger row not cited in A4 and not marked "reviewed, no finding" is an orphan → FAIL.
+- Deliverable-completeness gate: PASS (all four brief parts present, non-empty).
+- Coverage: PASS. Prior sole orphan **D222 is now cited** (Step 1B L153 + preamble L30 + inconsistency list L148 + YAML L495), placed symmetrically with its EBIT twin. Fresh enumeration matches all five ledgers; no orphan rows, no rows the ledgers lack.
+- Arithmetic: PASS. Every derived metric re-derived from raw numbers matches within rounding; the two twin ₹1 Cr deck lapses (EBIT 96-vs-97 recompute 97; Net Impact 75-vs-74 recompute 74, comparative 73) are arithmetically correct as stated. The amendment introduced no new arithmetic defect.
+- Adversarial: PASS. All three surviving bear counters were already incorporated; nothing to graft.
 
-**loop_back_to: A3** — carry the D222 Net-Impact-on-P&L 75-vs-74 casting variance into the forensic
-findings so A4 can incorporate it as a NEUTRAL-FACT alongside the EBIT 96-vs-97 lapse, giving the
-deck's ₹1 QC lapses symmetric treatment. This is a single, cheap, tightly-scoped fix; everything else
-in the review is verified complete and arithmetically sound. Re-run A5 gate 0/coverage after the graft.
-
-(Non-blocking, fix opportunistically: relabel Q5's ₹340.6 Cr from "net" to "gross" IPO proceeds
-unutilised; net unutilised is ₹335.42 Cr.)
-
-```yaml
-stage: A5-adversary
-company: "INDIQUBE"
-quarter: "Q1FY27"
-model: claude-opus-4-8
-status: complete
-verdict: INCOMPLETE
-plain_language_brief:
-  narrative: present
-  sector: present
-  business_model: present
-  competition: present
-coverage:
-  orphan_rows:
-    - "deck D222 (slide 25/page 26, 'Net Impact on P&L') — ARITHMETIC_VARIANCE flag (printed 75 vs recomputed 116+148-190=74; Q1FY26 ties at 73) enumerated in A2 deck ledger but not cited in A4 review, while its twin EBIT 96-vs-97 is carried in Step 1B"
-  missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Deck 'Net Impact on P&L' Q1FY27 (Ind AS 116 impact table, slide 25)"
-    a4_value: "not carried in review"
-    recomputed: "74 (116 + 148 - 190); deck prints 75"
-    source_line: "deck extract L721/L723/L727/L729 (D222)"
-surviving_bear_counters: []   # all 3 survive but are already incorporated in A4; none require new grafting
-loop_back_to: "A3"
-gap: "A2-enumerated deck row D222 (Net Impact on P&L 75-vs-74 ARITHMETIC_VARIANCE) is absent from A4's review though its identical twin (EBIT Ind AS 96-vs-97) is surfaced in Step 1B; carry D222 into A3 forensic findings so A4 can add it as a NEUTRAL-FACT for symmetric completeness. Sole blocking item; all other coverage, arithmetic, and adversarial checks pass."
-```
+Prior gap confirmed closed; amendment clean. This review proceeds to Notion save.

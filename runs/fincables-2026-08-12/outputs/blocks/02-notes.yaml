@@ -1,0 +1,58 @@
+stage: B02-notes
+company: "FINCABLES"
+run_date: "2026-08-12"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AR-STALE: only Annual Report provided is FY2019-20 (year ended 31 March 2020), ~6 years stale vs run_date 2026-08-12; all notes findings are FY20-era historical context, not current-state facts"
+  - "results: ABSENT — no quarterly results PDFs provided for this run (consistent with B01-gate0 input_gaps)"
+  - "rating: ABSENT"
+  - "announcements: ABSENT"
+  - "shareholding: ABSENT (filing) — no shareholding pattern provided"
+  - "research: ABSENT"
+  - "warranty provision roll-forward (Note 2.16.1 policy exists, no quantified schedule found)"
+  - "counterparty/terms for new Rs.50.00cr 'Deposits with others' (Note 9)"
+  - "ageing/recoverability commentary on Sales Tax/Excise Duty government receivables (Note 10)"
+  - "inventory write-down/obsolescence provision roll-forward (Note 11)"
+  - "explanation for 169% jump in advances from customers (Note 23)"
+  - "quantified ceiling for open-ended JV financial support commitment (Note 32(b)(ii))"
+  - "narrative rationale for September 2019 board reconstitution (Note 35(f))"
+flags:
+  - {type: FLAG-DISCLOSURE, reason: "Note 34.1.3 Level 3 fair value reconciliation mislabelled (headed unquoted-only, reports combined quoted+unquoted FVTOCI movement); JV impairment reported at two different amounts across standalone (Rs.35.10cr) and consolidated (Rs.21.58cr) statements with no cross-reference"}
+  - {type: FLAG-GOVERNANCE, reason: "Four directors' reappointments (incl. two Independent) sub judice before Bombay High Court since Sept 2019 AGM; 45.2% of shareholders voted against; Rs.18.56cr+ remuneration paid/payable pending ruling, no clawback provision recognised (FY20-dated, status as of this stale AR unknown today)"}
+  - {type: FLAG-EARNINGS-QUALITY, reason: "Standalone FY20 PAT +17.0% is a three-mechanism presentational artifact (Associate dividend exceeding equity-method profit share, tax-exempt dividend treatment, one-time Section 115BAA rate-switch benefit) masking a consolidated PBT decline of 16.1% and consolidated PAT decline of 4.0% for the same year"}
+accounting_quality: 6        # /10, assessment of FY2019-20 standalone+consolidated statements only
+pass_2_empty: false
+pass_3_empty: false
+top_findings:                # max 15
+  - {rank: 1, finding: "Consolidated PBT -16.1% and PAT/EPS -4.0% YoY vs standalone PAT +17.0% -- driven by Associate equity-method profit share falling 22.7% while standalone-booked Associate dividend grew +100% and exceeded it, plus tax-exempt dividend treatment and Section 115BAA rate-switch benefit standalone", note_ref: "Consolidated P&L p.159; Note 25 p.132; Note 20.1.3 p.127", rating: "red flag"}
+  - {rank: 2, finding: "Four directors' reappointments (incl. two Independent) sub judice before Bombay High Court since Sept 2019 AGM; 45.2% of shareholders voted against; Rs.18.56cr+ remuneration paid/payable pending ruling, no clawback provision; six new directors appointed around the contested AGM", note_ref: "Note 28.1 p.133; Note 35(f) p.144-145; CARO(xi) p.98", rating: "red flag"}
+  - {rank: 3, finding: "Associate stake (Finolex Industries, 32.39%) carried at cost Rs.151.85cr vs market value Rs.1,570.32cr, >10x hidden value; partially offset by new Rs.19.69cr deferred tax liability on undistributed Associate profits (cumulative Rs.109.93cr) post-DDT abolition", note_ref: "Note 5, 5.1 p.116; Consolidated Note 20.2 p.189", rating: "mixed - positive with quantified caveat"}
+  - {rank: 4, finding: "JV Finolex J-Power Systems: cumulative impairment Rs.135.73cr (Rs.35.10cr standalone vs Rs.21.58cr consolidated for same event, unreconciled); WACC raised to 16%, terminal growth cut to 4%; open-ended unquantified financial support commitment", note_ref: "Note 5.2, 32(b)(ii) p.116/135; Consolidated Note 31(s) p.195", rating: "red flag"}
+  - {rank: 5, finding: "Electoral Bonds expense of Rs.20.00cr, new line item, exceeds entire CSR spend (Rs.12.27cr); recipient undisclosed by scheme design", note_ref: "Note 31(u) p.134", rating: "red flag"}
+  - {rank: 6, finding: "Core segment operating profit fell 10.1% YoY while standalone PBT fell only 5.9% and PAT rose 17.0% -- gap bridged by non-operating income growth and tax benefit", note_ref: "Note 25 p.132; Note 20 p.127; Note 36 p.147", rating: "watch"}
+  - {rank: 7, finding: "Communication cables segment: profit -60.7% YoY, capex collapsed 88.1%, segment liabilities fell 76.8% vs only 5.2% asset decline -- capital pulled from weakest segment", note_ref: "Note 36 p.147-148", rating: "watch"}
+  - {rank: 8, finding: "Note 34.1.3 Level 3 fair value reconciliation mislabelled -- headed unquoted-only but reports combined quoted+unquoted FVTOCI movement; confirmed via direct source re-check", note_ref: "Note 34.1.3 p.141 vs Note 6 p.117", rating: "watch"}
+  - {rank: 9, finding: "Gratuity funded status deteriorated 78%->74% (deficit Rs.4.76cr->Rs.6.91cr); 62% of actuarial loss experience-driven not discount-rate-driven", note_ref: "Note 33 p.136-138", rating: "watch"}
+  - {rank: 10, finding: "Trade receivables: 42% of good balance concentrated in 3 government telecom entities (BSNL/BBNL/TCIL), terms up to 190 days; absolute exposure nearly halved YoY (improving)", note_ref: "Note 12.1 p.123", rating: "watch, improving trend"}
+  - {rank: 11, finding: "Consolidated contingent liabilities (Rs.254.68cr) run Rs.31.65cr above standalone (Rs.223.03cr); consolidated net worth (Rs.3,003.71cr) runs Rs.285.08cr above standalone (Rs.2,718.63cr)", note_ref: "Consolidated Note 32 p.196-197; Consolidated BS p.158", rating: "watch"}
+  - {rank: 12, finding: "Other Expenses +24.4% YoY partly a base-effect artifact -- FY19 had a one-time Rs.22.16cr provision reversal credit that did not repeat; normalised growth ~13.1%", note_ref: "Note 31(f) p.134; Note 36 footnote p.148", rating: "watch"}
+  - {rank: 13, finding: "CSR shortfall catch-up recurred in both FY19 (Rs.1.25cr) and FY20 (Rs.4.10cr) -- a two-year pattern, not one-off", note_ref: "Note 31 note 2 p.135", rating: "watch"}
+  - {rank: 14, finding: "Advances from customers +169% coincide with finished goods +8.4% at COVID-lockdown year-end against a 6.5% revenue decline; neither disclosure explains or cross-references the other", note_ref: "Note 23 p.130; Note 11 p.122", rating: "watch"}
+  - {rank: 15, finding: "Mark-to-market equity losses through OCI (not P&L): quoted FVTOCI book fell Rs.77.74cr->Rs.21.98cr, ~91% driven by IndusInd Bank fall on an unchanged share count", note_ref: "Note 6 p.117", rating: "watch"}
+red_flags:
+  - "Standalone PAT growth (+17.0%) is a three-mechanism presentational artifact (dividend exceeding equity-pickup, tax-exempt dividend treatment, one-time Section 115BAA rate-switch benefit) masking a 16.1% consolidated PBT decline and a genuine fall in the Associate's own profitability"
+  - "Electoral Bonds of Rs.20.00cr, new, undisclosed-recipient political donation exceeding entire CSR spend"
+  - "Four directors' reappointments sub judice with continuing, unprovisioned remuneration payments pending a Court ruling"
+  - "Note 34.1.3 Level 3 fair value reconciliation table mislabelled -- confirmed disclosure defect"
+  - "Same JV impairment event reported at two different amounts (Rs.35.10cr standalone, Rs.21.58cr consolidated) with no cross-reference"
+  - "Open-ended, unquantified financial support commitment to a loss-making JV already carrying Rs.135.73cr cumulative impairment"
+questions_for_mgmt:
+  - "Given consolidated PBT fell 16.1% and consolidated PAT fell 4.0% while standalone PAT rose 17.0%, which measure does management consider representative of underlying earnings, and why did the Associate dividend exceed that year's equity-method profit share?"
+  - "What is the expected quantum or ceiling of the open-ended financial support commitment to Finolex J-Power Systems, and at what point would continued support be reassessed as unrecoverable?"
+  - "What is the status of the Bombay High Court proceedings on the four directors' reappointment, and what is the clawback exposure on the Rs.18.56cr+ remuneration paid/payable pending that ruling?"
+  - "What drove the 169% jump in advances from customers and the 8.4% rise in finished goods inventory against a 6.5% revenue decline in the same COVID-affected quarter?"
+  - "Can management clarify the counterparty, tenure and rate for the new Rs.50cr 'Deposits with others', and correct the Note 34.1.3 Level 3 fair value reconciliation table?"
+receivables_trend: "improving -- considered-good receivables fell Rs.210.88cr to Rs.187.02cr, receivable days improved ~25.0 to ~23.7, and government-entity (BSNL/BBNL/TCIL) concentration nearly halved Rs.142.87cr to Rs.78.38cr YoY, even though the ECL provisioning rate rose from 4.5% to 7.8% of gross receivables (prudent conservatism, not deterioration) (Note 12, 12.1, p.123)"
+restatements_found: []
+going_concern_language: "NONE -- no explicit going concern doubt language found in standalone or consolidated notes; Note 38 (COVID-19, p.149) is a standard forward-uncertainty disclosure, not a going concern qualification; auditor opinion clean and unmodified both standalone and consolidated with no Emphasis of Matter (p.96, p.157)"

@@ -1,3 +1,29 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: reg30_cfo_resignation_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 3
+formfeed_count: 3
+line_count: 120  # wc -l of raw pdftotext -layout output (2 genuine inter-page form-feeds + 1 trailing EOF form-feed with no following content, confirmed via od -c; 3 real pages per pdfinfo, none under 100 chars, no OCR needed)
+unit_convention: N/A (no financial figures in this document)
+conversion_factor_to_cr: N/A
+ocr_pages: none
+page_coverage: 100%
+detected_quarter: Q1 FY27 (event dated 12 August 2026, disclosed in Q2 FY27 calendar window but filed as an event disclosure attached to Q1FY27 run inputs)
+extraction_date: 2026-08-12
+=== END HEADER ===
+
+NOTE (mechanical): This is a Regulation 30 event disclosure (CFO resignation
+letter to BSE + Annexure A resignation-detail table + the CFO's personal
+resignation letter), not a financial results filing. It carries no P&L /
+balance sheet figures, hence unit_convention/conversion_factor above are N/A.
+pdftotext -layout produced 3 form-feed characters: 2 are genuine inter-page
+breaks (before page 2, before page 3) and 1 is a trailing end-of-document
+marker with no content after it (confirmed via od -c: file ends "...TO!\n\f").
+pdfinfo confirms 3 pages; content was split into exactly 3 page blocks
+(1435 / 1540 / 1269 characters respectively, all well above the 100-character
+OCR threshold), so no OCR fallback was required. [page N] markers below were
+inserted at the genuine page boundaries only.
+
 [page 1]
            HCP Plastene
            Bulkpack Limited
@@ -123,4 +149,3 @@ Dhrumil Shah                                                       I
                                                                                     g
 Chief Financial Officer
                                                                              DIRECTO!
-

@@ -122,6 +122,8 @@ Periods printed in the filing: **Q1 FY27** (30 Jun 2026, unaudited) · **Q4 FY26
 | Effective Tax Rate | Tax / PBT | 29.26% | 22.58% | **33.68%** | 26.70% |
 | PAT Margin | PAT / Rev | 9.13% | 10.78% | 10.60% | 10.07% |
 
+*(Standalone ETR shown here is the charge-based reading of the ₹162.67 lakh deferred-tax line, per A3 FF6. See the Step 4A reconciliation footnote: the printed PAT of ₹1,593.80 lakh only foots if that line is a **credit**, which would put the true standalone ETR at ~16.7%. Sign to be confirmed with management — flagged, not silently overwritten here.)*
+
 ### 1D. Derived Metrics — CONSOLIDATED (₹ Cr / %)
 
 | Derived Metric | Formula | Q1 FY26 | Q4 FY26 | Q1 FY27 | FY26 |
@@ -153,7 +155,7 @@ Periods printed in the filing: **Q1 FY27** (30 Jun 2026, unaudited) · **Q4 FY26
 | Other Income | 1.59 | 0.47 | -1.12 | -70.4% | Fell |
 | **Core Operating PBT (PBT − OI)** | 16.87 | 18.65 | +1.79 | **+10.59%** | Modest — the honest read |
 | Reported PBT | 18.46 | 19.12 | +0.66 | +3.60% | Flat-ish |
-| PAT | 13.06 | 15.94 | +2.88 | +22.04% | Flattered by low tax base effect |
+| PAT | 13.06 | 15.94 | +2.88 | +22.04% | Flattered by deferred-tax credit (see Step 4A) |
 | EPS (share-adjusted) | 5.69 | 6.95 | +1.26 | +22.14% | Tracks PAT |
 
 ### 2B. CONSOLIDATED — Q1 FY27 vs Q1 FY26 (₹ Cr)
@@ -180,7 +182,7 @@ Periods printed in the filing: **Q1 FY27** (30 Jun 2026, unaudited) · **Q4 FY26
 
 3. **Did core operating PBT (ex-OI) grow YoY?** Standalone **+10.59%** (16.87→18.65) — the cleanest operational read, and it is **modest, roughly double the +5.05% revenue growth on margin, but far below the +22% reported PAT and +59% Op EBITDA headlines**. The headline PAT growth is NOT matched by core operating strength; the gap is real and named here. Consolidated core PBT +40.15% is inorganic (MIPL).
 
-4. **What drove the gap between core operating PBT and reported PAT?** Standalone reported PAT +22.04% vs core operating PBT +10.59%: the gap is NOT from Other Income (which FELL −70.4%, −₹1.12 Cr, a drag) and NOT from a lower tax rate (standalone ETR actually ROSE to 33.68% from 29.26%, a further drag). The reported PAT growth is essentially the core operating improvement (+₹1.79 Cr) minus the OI drag (−₹1.12 Cr) — i.e., reported PAT +₹2.88 Cr is arithmetically explained but the "+22%" optics overstate a ~10.6% core story on a low prior-quarter base. Consolidated: the tax line is the flatterer — a deferred-tax **credit of −₹1.63 Cr** (FF7) cut consolidated ETR to 18.84%, adding profit.
+4. **What drove the gap between core operating PBT and reported PAT?** Standalone reported PAT +22.04% vs core operating PBT +10.59%: the gap is NOT from Other Income (which FELL −70.4%, −₹1.12 Cr, a drag). The remaining lift is a **tax benefit** — the ₹162.67 lakh deferred-tax line reads as a credit against the printed PAT (Step 4A reconciliation), cutting standalone tax to ~₹3.19 Cr from ₹5.40 Cr a year ago. So the "+22%" optic rests on a ~10.6% core story plus a deferred-tax credit, not on operating strength. Consolidated: the same force — a deferred-tax **credit of −₹1.63 Cr** (FF7) cut consolidated ETR to 18.84%, adding profit.
 
 5. **Are D&A and finance costs scaling faster than revenue?** **Yes, dramatically.** Standalone depreciation +318.5% and finance costs +215.9% against revenue +5.05%. This is a textbook **capex-absorption gap**: the asset base and debt stepped up (MIPL consolidation + own capex) while organic volume did not follow. Mathematically ROCE compresses until volume catches up. ROCE itself is **ND** this quarter (no balance sheet), so the compression cannot be measured — but the D&A/finance-cost trajectory is the early-warning signal the protocol names.
 
@@ -214,7 +216,7 @@ Only three quarters are printed in this first filing (Q1 FY26, Q4 FY26, Q1 FY27)
 | Q4 FY26 | 445.75 | 16.69% | 64.45 | MIPL consolidated from 01-Oct-2025 (per Notion); Q4 first full MIPL quarter | peak |
 | Q1 FY27 | 196.26 | 19.44% | 23.29 | deferred-tax credit −₹1.63 Cr (FF7); no NCI line (FF3) | reset off Q4 peak |
 
-**Diagnostics:** (a) Trajectory: construction revenue is Q4-loaded (project billing/stage completion concentrates at year-end), so the Q4→Q1 fall (std 312→150; consol 446→196) is **seasonal, not deterioration** — the meaningful comparison is Q1-on-Q1 (Step 2), which is +5.05% standalone. (b) One-offs: Q1 FY27 margin lift and the consolidated deferred-tax credit are the flagged distortions. (c) H1-vs-Q4 run-rate capex test: **cannot be completed** — no plant-commissioning disclosure and no balance sheet; MIPL is an acquisition (inorganic step-up), not an organic capex commissioning, so the classic test does not cleanly apply. (d) Implied Q2 FY27 base to hold organic trajectory: standalone ≥ ~₹150 Cr with margin normalising toward the 15–16% FY26 band.
+**Diagnostics:** (a) Trajectory: construction revenue is Q4-loaded (project billing/stage completion concentrates at year-end), so the Q4→Q1 fall (std 312→150; consol 446→196) is **seasonal, not deterioration** — the meaningful comparison is Q1-on-Q1 (Step 2), which is +5.05% standalone. (b) One-offs: Q1 FY27 margin lift and the deferred-tax credits are the flagged distortions. (c) H1-vs-Q4 run-rate capex test: **cannot be completed** — no plant-commissioning disclosure and no balance sheet; MIPL is an acquisition (inorganic step-up), not an organic capex commissioning, so the classic test does not cleanly apply. (d) Implied Q2 FY27 base to hold organic trajectory: standalone ≥ ~₹150 Cr with margin normalising toward the 15–16% FY26 band.
 
 🛑 QoQ table and diagnostics complete.
 
@@ -226,18 +228,24 @@ Only three quarters are printed in this first filing (Q1 FY26, Q4 FY26, Q1 FY27)
 
 | Component | YoY Δ (₹ Cr) | Recurring? |
 |---|---|---|
-| Gross profit change (Rev − COGS − Direct Exp) | +18.35* | Recurring |
-| Employee cost increase | −2.12 | Recurring |
-| Other expenses change | −0.22 | Recurring |
-| — subtotal to Operating EBITDA | +12.25 | (ties to Op EBITDA Δ) |
+| Gross profit change (Rev − COGS − Direct Exp) | +14.22 | Recurring |
+| Employee cost increase | −2.11 | Recurring |
+| Other expenses change (expense fell) | +0.14 | Recurring |
+| **— subtotal to Operating EBITDA** | **+12.25** | (ties to Op EBITDA Δ; 14.22 − 2.11 + 0.14 = 12.25) |
 | Depreciation increase | −7.63 | Recurring (post-capex) |
 | Finance cost increase | −2.83 | Recurring (post-debt) |
 | Other Income change | −1.12 | Non-recurring typically |
-| Effective tax-rate/tax change | −1.79** | Mixed (ETR rose to 33.7%) |
+| Tax change (benefit) | +2.21 | Mixed — deferred-tax credit driven |
 | Exceptional items | 0.00 (nil) | — |
-| **Reported PAT YoY change** | **+2.88** | — |
+| **Reported PAT YoY change** | **+2.88** | (12.25 − 7.63 − 2.83 − 1.12 + 2.21 = 2.88) |
 
-*Gross profit: Q1FY27 150.32−92.68−12.57 = 45.07; Q1FY26 143.09−101.49−10.75 = 30.85; Δ +14.22 at the GP line, +18.35 includes the materials-intensity swing net of direct-cost step-up; reconciles into Op EBITDA Δ +12.25 after employee/other. **Tax: total tax rose from 5.40 to 6.44 Cr (+1.05), a drag; the −1.79 line here nets the tax drag into the PAT walk. Bridge ties to +2.88.*
+**Footing / reconciliation (every line traced to printed figures):**
+- **Gross profit:** Q1FY27 150.32 − 92.68 − 12.57 = 45.07; Q1FY26 143.09 − 101.49 − 10.75 = 30.85; Δ = **+14.22** (matches its own formula).
+- **Employee:** 10.00 − 7.89 = +2.11 increase → **−2.11** drag.
+- **Other expenses:** using the balancing figure to the printed Total Expenses (the printed "2614" / ₹2.61 Cr cell is OCR-garbled, flagged in Step 1A), Other Expenses ≈ ₹2.25 Cr in Q1FY27 vs ₹2.39 Cr in Q1FY26 → the expense **fell** ₹0.14 Cr, a **+0.14** benefit. The three lines foot to the **+12.25** Operating-EBITDA subtotal (14.22 − 2.11 + 0.14 = 12.25).
+- **Subtotal → PBT:** from +12.25, less depreciation +7.63 and finance costs +2.83, less the Other-Income decline of 1.12 → reported PBT change **+0.67** (18.46 → 19.12, rounding).
+- **Tax (the +2.21 benefit):** the printed standalone PAT of ₹1,593.80 lakh foots as **PBT 1,912.46 − current tax 481.33 + deferred-tax credit 162.67 = 1,593.80**, i.e., net standalone tax of ₹3.19 Cr vs ₹5.40 Cr a year ago = a **−₹2.21 Cr (benefit)**. Adding it: 0.67 + 2.21 = **+2.88**, which ties to the reported PAT change. Column foots end-to-end.
+- **Reconciliation flag (ties to A3 FF6/FF7):** this credit reading of the ₹162.67 lakh deferred-tax line is the **only sign that foots the printed PAT**, and it differs from the charge-based standalone ETR (33.68%) carried in Step 1C/Step 2 diagnostic; if the credit reading is correct the true standalone ETR is ~16.7% and standalone aligns with the consolidated deferred-tax credit (−163.49, FF7) rather than contrasting with it. The deferred-tax sign is therefore an item to confirm with management (see Questions #3 and #4); the bridge above is footed to the printed PAT, which is the authoritative figure.
 
 ### 4B. CONSOLIDATED — Reported PAT (pre-NCI) YoY change +₹6.96 Cr (12.75 → 19.71), +54.63%
 
@@ -256,9 +264,9 @@ Only three quarters are printed in this first filing (Q1 FY26, Q4 FY26, Q1 FY27)
 | **Reported PAT YoY change (pre-NCI)** | **+6.96** | — |
 | **Less: NCI (49% of MIPL profit)** | **ND — LINE ABSENT (FF3)** | Owner PAT overstated |
 
-**Mandatory answers:** (a) % of PAT change from recurring core: standalone ~all of it is recurring but modest (+10.6% core); the +22% optic is a low-base effect, not treasury. Consolidated growth is recurring but **inorganic** (MIPL) and **pre-NCI** (overstated). (b) If OI reverts to prior level: negligible effect — OI is tiny and already fell. (c) D&A/finance costs are NOT at steady state — they stepped up ~3x YoY and will keep pressuring ROCE until organic volume absorbs them; steady-state margin will be lower than this quarter's flattered print. (d) Tax adjustment inflating PAT: **yes, consolidated** — the deferred-tax credit of −₹1.63 Cr (subsidiary-level DTA recognition, ~₹3.26 Cr sub-level swing vs standalone, FF7) cut ETR to 18.84%, ~633 bps below the 25.17% statutory rate. This is a **one-time shield that reverses to a future ETR step-up.** Standalone shows the opposite — an **unexplained ETR of 33.68%** (FF6).
+**Mandatory answers:** (a) % of PAT change from recurring core: standalone ~all recurring at the operating line but the +22% optic leans on a deferred-tax credit, not operating strength (core operating PBT only +10.6%). Consolidated growth is recurring but **inorganic** (MIPL) and **pre-NCI** (overstated). (b) If OI reverts to prior level: negligible effect — OI is tiny and already fell. (c) D&A/finance costs are NOT at steady state — they stepped up ~3x YoY and will keep pressuring ROCE until organic volume absorbs them; steady-state margin will be lower than this quarter's flattered print. (d) Tax adjustments inflating PAT: **yes, on both bases** — a deferred-tax credit (std ₹162.67 lakh per the Step 4A reconciliation; consol −₹163.49 lakh, FF7) lowered tax this quarter; consolidated ETR fell to 18.84%, ~633 bps below the 25.17% statutory rate. This is a **one-time shield that reverses to a future ETR step-up.**
 
-🛑 Bridge tables and answers complete.
+🛑 Bridge tables and answers complete. Both bridges foot.
 
 ---
 
@@ -302,7 +310,7 @@ Notion carries FY26 audited baselines and an FY27 watch band, but no explicit Be
 | Revenue growth YoY (std) | <10% (red) | ~15–20% | >20% (green) | **+5.05%** | **Below Bear / red zone** (organic) |
 | Revenue growth YoY (consol) | — | — | — | +37.83% (inorganic, MIPL) | N.M. — not organic |
 | Op EBITDA Margin | ND | ~15–16% (FY26 band) | ND | std 21.83% / consol 19.44% | Above band — but unverified (timing risk) |
-| PAT (std, ₹ Cr) | ND | ND | ND | 15.94 | ND grid — +22% YoY on low base |
+| PAT (std, ₹ Cr) | ND | ND | ND | 15.94 | ND grid — +22% YoY, tax-credit aided |
 | EPS (consol, ₹) | ND | ND | ND | 8.59 (pre-NCI, overstated FF3) | ND grid |
 | Net Debt / gearing | ND | 0.35x (FY26) | ND | **ND** (no balance sheet) | Cannot place |
 | ROCE | <12% (exit) | ~15% | >15% (green) | **ND** (no capital-employed) | **Un-testable** |
@@ -359,7 +367,7 @@ Section 1B v3.3 is the sole exit-multiple authority. **No pillar input is re-der
 | Cash Multiplier | 0.65–0.80x (payables-financed) | Upgrade to 0.90x was CONDITIONAL on Q1 contract-asset days → data absent | **Hold at 0.65–0.80x; upgrade GATED-OUT this quarter** (INDETERMINATE cash conversion) |
 | Growth Visibility Premium | + per EM 35.4 (MOAT STRENGTHENING) | No EM-relevant new disclosure in filing | Hold |
 | Strategic Premium | + per moat; single-credit state | Single-credit rule: ROCE recovery NOT credited (ROCE un-testable) | Hold — no new credit taken |
-| UA Multiplier | per Amendment 3 (min(Raw×1.25, Sector Cap)) | No change in the three qualifiers this filing | Hold |
+| UA Multiplier | 1.25x applies (Amendment 3: min(Raw×1.25, Sector Cap)) | No change in the three qualifiers this filing | Hold |
 | Sector Cap | EPC sector cap | No reclassification | Hold |
 | Hurdle Ratio recheck | HR = (1+EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | EPS CAGR not re-derivable from one P&L quarter; current market PE **ND** (no price passed) | **Cannot recompute — Hold prior; recheck at H1 with balance sheet + price** |
 
@@ -379,7 +387,7 @@ Section 1B v3.3 is the sole exit-multiple authority. **No pillar input is re-der
 - Between bear and base? The one clean, testable operating metric (organic revenue +5.05%) sits at/below the bear edge; margins printed above band but are **unverified** pending the balance sheet. On balance the quarter lands **at the weak end of between-bear-and-base, with the decisive cash/WC evidence ABSENT.**
 
 **DECISION: HOLD Tranche-1. Do NOT add. Do NOT advance Tranche-2.**
-Rationale: (1) No thesis-broken trigger fired — no basis for exit/trim under pre-committed discipline. (2) The single binding disclosure the thesis was waiting for (contract-asset / WC days) is **absent** — the 0.90x cash-multiplier upgrade is gated out and the position cannot be upgraded on this filing. (3) Cash conversion is **INDETERMINATE**, capping the analytical verdict at PROCEED WITH CAVEATS. (4) Tranche-2 gate needs CFO/PAT>30% + Gate-0 GOOD + SEBI Reg 23(4) closure + MPL–MIPL RPT quantum — **none are met or even testable** this quarter; Tranche-2 stays locked. Governance texture (no NCI line overstating EPS; duplicate UDIN; unexplained standalone ETR; single-segment post-MIPL) adds caution but does not, individually, fire a pre-committed trigger — they are flagged for the human, not auto-acted.
+Rationale: (1) No thesis-broken trigger fired — no basis for exit/trim under pre-committed discipline. (2) The single binding disclosure the thesis was waiting for (contract-asset / WC days) is **absent** — the 0.90x cash-multiplier upgrade is gated out and the position cannot be upgraded on this filing. (3) Cash conversion is **INDETERMINATE**, capping the analytical verdict at PROCEED WITH CAVEATS. (4) Tranche-2 gate needs CFO/PAT>30% + Gate-0 GOOD + SEBI Reg 23(4) closure + MPL–MIPL RPT quantum — **none are met or even testable** this quarter; Tranche-2 stays locked. Governance texture (no NCI line overstating EPS; duplicate UDIN; deferred-tax-sign ambiguity; single-segment post-MIPL) adds caution but does not, individually, fire a pre-committed trigger — they are flagged for the human, not auto-acted.
 
 ### 8B. Add-back / Trim trigger refinement
 - Original add-back trigger (Notion): cash-multiplier upgrade to 0.90x on contract-asset days behaving → **retained, but explicitly deferred to H1 FY27** (Q2 balance sheet). Tighten: require the H1 balance sheet to show GCA days NOT above the FY26 192-day level AND CFO/PAT within/above the 0.65–0.80x band before any add.
@@ -402,8 +410,8 @@ Every A3 FORWARD-SIGNAL (FF1, FF3, FF7) and every AMBIGUOUS finding (FF4, FF5, F
 |---|---|---|---|---|---|
 | 1 | Is consolidated PAT of ₹1,971.25 lakh and EPS of ₹8.59 struck **before or after** non-controlling interest? MIPL is 51%-owned; where is the 49% minority-interest line, and what is owner EPS? | **FF3 (FS)** | The consolidated statement carries no NCI line; owner EPS may be overstated ~9% (A3 rough est.). This is the single highest-value question. | "EPS is post-NCI; MIPL minority is separately captured" (with the line shown) | "PAT is total group profit; NCI not yet split out" → EPS overstated, restatement risk |
 | 2 | What were the **contract-asset, gross-current-asset, receivable, and average-creditor days at 30-Jun-2026**? FY26 closed at GCA 192 days and creditor 90 days; this filing has no balance sheet. | **FF12 (CN)** | The binding thesis metric; the whole cash-multiplier upgrade hinges on it. | GCA days flat/down vs 192; CFO positive | GCA days up toward 200+; payables-financed cycle worsening |
-| 3 | The consolidated deferred-tax line is a **credit of −₹163.49 lakh** while standalone is a +₹162.67 lakh charge — a ~₹326 lakh sub-level swing. Which subsidiary recognised the DTA, on what basis, and what is the expected ETR normalisation path? | **FF7 (FS)** | Consolidated ETR fell to 18.84%, ~633 bps below statutory; a one-time shield that reverses. | DTA on genuine MIPL timing differences; ETR normalises gradually | DTA aggressive/one-off; sharp ETR step-up next year |
-| 4 | Standalone ETR was **33.68% this quarter vs 25.17% statutory and 29.26% a year ago**, with the prior-year-tax line nil. What drove the elevated current-tax charge? | **FF6 (A)** | Unexplained tax volatility on the standalone base clouds the true after-tax run-rate. | Specific disallowance/timing, one-off | Vague — signals weak tax governance/estimation |
+| 3 | The consolidated deferred-tax line is a **credit of −₹163.49 lakh** (and the standalone ₹162.67 lakh line reads as a credit against the printed PAT). Which subsidiary/entity recognised the DTA, on what basis, and what is the expected ETR normalisation path? | **FF7 (FS)** | Consolidated ETR fell to 18.84%, ~633 bps below statutory; a one-time shield that reverses. | DTA on genuine MIPL timing differences; ETR normalises gradually | DTA aggressive/one-off; sharp ETR step-up next year |
+| 4 | Confirm the **sign of the ₹162.67 lakh standalone deferred-tax line**: the printed standalone PAT of ₹1,593.80 lakh only foots if it is a credit (implying a ~16.7% ETR), yet it is presented without a negative sign (implying a 33.68% ETR). Which is correct, and what drove it? | **FF6 (A)** | The sign swings standalone ETR by ~17pp and changes the true after-tax run-rate; unresolved, it is an accounting-integrity flag. | Clear reconciliation, credit on genuine timing difference | Vague/inconsistent — signals weak tax presentation and estimation |
 | 5 | The MIPL acquisition has a **final tranche of ~₹19 Cr due in Q2 FY27**, yet this filing is silent — no acquisition note, no PPA, no exceptional item. What is the payment timing, funding source, and will any bargain-purchase gain or goodwill be recognised? | **FF1 (FS) + disclosure gap** | Exceptional-items line sits empty during active integration; Q2 accounting could be material. | Clear timeline, funded from CFO, PPA disclosed | Debt-funded, undisclosed goodwill/gain, delayed |
 | 6 | What is the **MPL–MIPL gabion related-party supply quantum** for Q1 FY27 (and cumulative against the ₹400 Cr RPT-utilisation trigger)? The filing carries no RPT note. | **disclosure gap (trigger #2)** | RPT utilisation is a pre-committed reduce-trigger; the filing discloses nothing. | Small, arm's-length, well below ₹400 Cr | Large/undisclosed related-party dependence |
 | 7 | Why is the Group reported as a **single segment** under Ind AS 108 now that it consolidates MIPL's gabion **manufacturing** alongside SRM's civil **construction**? Can you provide segment revenue/margin/asset splits? | **FF8 (A)** | Combining two dissimilar businesses under one segment hides mix, margin, and capital-intensity differences. | Committed segment split from H1 | Refusal — reduces transparency into MIPL economics |
@@ -414,7 +422,7 @@ Every A3 FORWARD-SIGNAL (FF1, FF3, FF7) and every AMBIGUOUS finding (FF4, FF5, F
 **Top 3 by likelihood of producing thesis-changing information:**
 1. **Q1 (NCI / EPS 8.59)** — a "pre-NCI" answer forces a downward EPS restatement and directly changes the destination-PE math (Bull-case probability down).
 2. **Q2 (contract-asset / WC days at H1)** — the answer resolves the entire cash-multiplier upgrade and confirms or kills the structural-WC bear case (Bear-case probability).
-3. **Q9 (duplicate UDIN) + Q10 (governance texture)** — vague or evasive answers are themselves the diagnostic on management transparency and filing integrity.
+3. **Q4 (deferred-tax sign) + Q9/Q10 (governance texture)** — vague or evasive answers are themselves the diagnostic on management transparency and filing integrity.
 
 **Channel recommendation:** No concall in `--docs` and none evident as scheduled. **Formal IR email with all 10 questions verbatim, and table Q1/Q2/Q3 for AGM Q&A** once the (awaited) AGM notice is issued. Pre-commit: track answer status of every question at the H1 FY27 review; repeated non-addressing of Q1/Q2/Q6 across quarters escalates the Promoter Verdict (already CONCERN).
 
@@ -433,7 +441,7 @@ Seeded by A3 commitment register (F6 — empty of stated commitments) and Board-
 | 3 | **MPL–MIPL gabion RPT quantum** disclosure (vs ₹400 Cr trigger) | Next filing with RPT note / H1 | disclosure gap; trigger #2 | Undisclosed this filing |
 | 4 | **SEBI Reg 23(4) closure** (Tranche-2 gate component) | pending | Notion structure watch | Not addressed in filing |
 | 5 | **NCI line / owner-EPS restatement** in consolidated results | H1 FY27 | FF3 | If EPS 8.59 is pre-NCI, expect restatement |
-| 6 | **Consolidated ETR normalisation** as the MIPL DTA shield exhausts | FY27–FY28 | FF7 | 18.84% this quarter, ~633 bps below statutory |
+| 6 | **Deferred-tax sign + consolidated ETR normalisation** as the MIPL DTA shield exhausts | FY27–FY28 | FF6 / FF7 | Consol 18.84% this quarter, ~633 bps below statutory; standalone sign to confirm |
 | 7 | **AGM notice + annual report** (absent by mid-Aug for a March-FY co.) | imminent | FF9 (F13) | Expect a separate Board Outcome soon |
 | 8 | **Segment split** (construction vs gabion manufacturing) | H1 FY27 (if provided) | FF8 | Single-segment maintained post-MIPL |
 | 9 | **Order-book confirmation** (~₹3,500 Cr claimed; Tier-3 mix >25%) | Next disclosure | Notion order book | Not in this filing (prior-work basis) |
@@ -446,7 +454,7 @@ Commitment register (A3 F6): **empty** — no forward-commitment lexicon hits in
 ## PLAIN-LANGUAGE BRIEF (standing deliverable)
 
 ### 1. SUMMARY NARRATIVE
-SRM filed only a profit-and-loss account this quarter — no balance sheet and no cash-flow statement (both stop at EPS, lines 196 and 391). That single fact dominates everything. The one number our whole thesis was waiting on — how many days cash is tied up in unbilled work and receivables — cannot be calculated. On the numbers we do have: standalone revenue grew just 5.05% year-on-year (₹143.09 Cr to ₹150.32 Cr), which is weak and sits in the "red" zone of our own checklist. Standalone profit rose 22% to ₹15.94 Cr, but the cleaner measure — operating profit before other income — grew only about 10.6%, so the 22% headline flatters a modest quarter off a low base. The consolidated line looks much stronger (revenue +37.8%, profit +54.6%), but almost all of that is because the newly-bought MIPL and project subsidiaries are consolidated for the first time; a year ago the subsidiaries were immaterial. Two accounting issues matter: the consolidated accounts show no minority-interest line even though MIPL is only 51% owned, so the reported EPS of ₹8.59 is probably overstated; and a one-off deferred-tax credit of ₹1.63 Cr cut the consolidated tax rate to just 18.8%, boosting profit in a way that reverses later. Depreciation and interest both roughly tripled year-on-year while revenue barely moved — an early sign that the asset base and debt have grown faster than the work to absorb them. On the good side, the audit is clean on both statements, with no qualification and the same auditor as before, so the most important exit trigger (an audit red flag) did not fire. Four of the other five exit triggers simply cannot be tested from a P&L-only filing, so we say so rather than pretend they passed. The decision is to HOLD the small Tranche-1 position: nothing broke, but nothing that would let us add or upgrade was disclosed either. The cash-quality picture is INDETERMINATE, which caps our verdict at "proceed with caveats." The next real test is the half-year result, when the balance sheet becomes mandatory and the working-capital days finally show up.
+SRM filed only a profit-and-loss account this quarter — no balance sheet and no cash-flow statement (both stop at EPS, lines 196 and 391). That single fact dominates everything. The one number our whole thesis was waiting on — how many days cash is tied up in unbilled work and receivables — cannot be calculated. On the numbers we do have: standalone revenue grew just 5.05% year-on-year (₹143.09 Cr to ₹150.32 Cr), which is weak and sits in the "red" zone of our own checklist. Standalone profit rose 22% to ₹15.94 Cr, but the cleaner measure — operating profit before other income — grew only about 10.6%, and much of the headline lift comes from a deferred-tax credit rather than from operations, so the 22% flatters a modest quarter off a low base. The consolidated line looks much stronger (revenue +37.8%, profit +54.6%), but almost all of that is because the newly-bought MIPL and project subsidiaries are consolidated for the first time; a year ago the subsidiaries were immaterial. Two accounting issues matter: the consolidated accounts show no minority-interest line even though MIPL is only 51% owned, so the reported EPS of ₹8.59 is probably overstated; and the deferred-tax line lowered the tax charge this quarter in a way that reverses later (consolidated tax rate fell to just 18.8%). Depreciation and interest both roughly tripled year-on-year while revenue barely moved — an early sign that the asset base and debt have grown faster than the work to absorb them. On the good side, the audit is clean on both statements, with no qualification and the same auditor as before, so the most important exit trigger (an audit red flag) did not fire. Four of the other five exit triggers simply cannot be tested from a P&L-only filing, so we say so rather than pretend they passed. The decision is to HOLD the small Tranche-1 position: nothing broke, but nothing that would let us add or upgrade was disclosed either. The cash-quality picture is INDETERMINATE, which caps our verdict at "proceed with caveats." The next real test is the half-year result, when the balance sheet becomes mandatory and the working-capital days finally show up.
 
 ### 2. SECTOR INTELLIGENCE
 - Civil-construction / EPC in Jammu & Kashmir and North India; government/quasi-government counterparties (roads, hydro, rail) dominate the order book. *(Provenance: Notion prior work — order book ~₹2,250–2,300 Cr at 31-Mar-26, +₹501 Cr of wins post-quarter: MSIDC Tier-3 ₹211 Cr, NF Railway ₹230 Cr, MoRT&H ₹60 Cr; company claims ~₹3,500 Cr.)*
@@ -462,7 +470,7 @@ SRM filed only a profit-and-loss account this quarter — no balance sheet and n
 
 ### 4. COMPETITION INTELLIGENCE
 - Where SRM wins: entrenched regional position in J&K civil construction with a large, growing order book and a moat assessed as STRENGTHENING (EM 35.4); the MIPL deal adds a differentiated gabion-manufacturing capability that most pure contractors lack. *(Provenance: Notion — EM score, moat status, order book; MIPL capability from this filing's entity list, lines 408–417.)*
-- Where structurally weaker: Gate-0 is only AVERAGE (~75/160) and the Promoter Verdict is CONCERN; governance texture in this very filing (no NCI line, duplicate UDIN, self-contradicting reliance paragraph, unexplained standalone tax rate, 30-minute board meeting for the first consolidated quarter with no acquisition note) is the competitive/quality vulnerability — larger listed EPC peers file fuller, cleaner disclosures. *(Provenance: Gate-0/Promoter from Notion; the filing-quality specifics from this quarter — FF3, FF5–FF11.)*
+- Where structurally weaker: Gate-0 is only AVERAGE (~75/160) and the Promoter Verdict is CONCERN; governance texture in this very filing (no NCI line, duplicate UDIN, self-contradicting reliance paragraph, deferred-tax-sign ambiguity on the standalone statement, 30-minute board meeting for the first consolidated quarter with no acquisition note) is the competitive/quality vulnerability — larger listed EPC peers file fuller, cleaner disclosures. *(Provenance: Gate-0/Promoter from Notion; the filing-quality specifics from this quarter — FF3, FF5–FF11.)*
 - Competitive risk to watch: working-capital intensity is the battleground in government EPC; a peer that collects faster compounds faster. SRM's FY26 WC deterioration plus this quarter's silence on WC is the risk to monitor at H1. *(Provenance: Notion baseline + this filing's silence.)* Named peer benchmarking was not passed in this run's Notion context and is not fabricated here — flagged as a gap to fill at the next full workup.
 
 ---
@@ -492,8 +500,8 @@ sc_gap_pat_pct:
 questions_for_management:
   - {q: "Is consolidated PAT 1971.25 lakh / EPS 8.59 pre- or post-NCI, and where is the 49% MIPL minority line?", from_finding_id: "FF3"}
   - {q: "Contract-asset/GCA/receivable/creditor days at 30-Jun-2026 vs FY26 (GCA 192, creditor 90)?", from_finding_id: "FF12"}
-  - {q: "Which subsidiary recognised the DTA behind the consolidated deferred-tax credit -163.49, and the ETR normalisation path?", from_finding_id: "FF7"}
-  - {q: "What drove standalone ETR of 33.68% vs 25.17% statutory, with prior-year-tax line nil?", from_finding_id: "FF6"}
+  - {q: "Which entity recognised the DTA behind the consolidated deferred-tax credit -163.49 (and the standalone credit), and the ETR normalisation path?", from_finding_id: "FF7"}
+  - {q: "Confirm the sign of the standalone 162.67 lakh deferred-tax line: printed PAT 1593.80 only foots if it is a credit (~16.7% ETR) vs the 33.68% charge reading?", from_finding_id: "FF6"}
   - {q: "MIPL final tranche ~Rs19 Cr timing/funding and any PPA/bargain-purchase/exceptional-item accounting?", from_finding_id: "FF1"}
   - {q: "MPL-MIPL gabion related-party supply quantum for Q1 FY27 vs the Rs400 Cr RPT trigger?", from_finding_id: "disclosure-gap-RPT"}
   - {q: "Why single-segment post-MIPL (construction + gabion manufacturing); can you give a segment split?", from_finding_id: "FF8"}
@@ -506,15 +514,15 @@ monitorables:
   - {item: "MPL-MIPL gabion RPT quantum vs Rs400 Cr trigger", implied_date: "next RPT disclosure/H1", source_ref: "disclosure-gap"}
   - {item: "SEBI Reg 23(4) closure (Tranche-2 gate)", implied_date: "pending", source_ref: "Notion-structure"}
   - {item: "NCI line / owner-EPS restatement", implied_date: "H1 FY27", source_ref: "FF3"}
-  - {item: "Consolidated ETR normalisation as MIPL DTA shield exhausts", implied_date: "FY27-FY28", source_ref: "FF7"}
+  - {item: "Deferred-tax sign + consolidated ETR normalisation as MIPL DTA shield exhausts", implied_date: "FY27-FY28", source_ref: "FF6/FF7"}
   - {item: "AGM notice + annual report (absent by mid-Aug)", implied_date: "imminent", source_ref: "FF9"}
   - {item: "Segment split (construction vs gabion manufacturing)", implied_date: "H1 FY27", source_ref: "FF8"}
   - {item: "Promoter holding / pledge status", implied_date: "quarterly shareholding pattern", source_ref: "trigger#4"}
 flags:
   - "P&L-only filing: no balance sheet, no cash-flow — binding contract-asset/WC-days metric NOT derivable (FF12); cash conversion INDETERMINATE"
   - "No NCI line despite 51% MIPL; consolidated EPS 8.59 likely overstated on full group profit (FF3)"
-  - "Consolidated deferred-tax credit -163.49 cuts ETR to 18.84%, ~633bps below statutory; reverses future (FF7)"
-  - "Standalone ETR 33.68% unexplained vs 25.17% statutory (FF6)"
+  - "Deferred-tax credits both bases in Q1FY27: consol -163.49 cuts ETR to 18.84% (~633bps below statutory); standalone 162.67 sign must be a credit for printed PAT to foot (FF6/FF7); reverses future"
+  - "Standalone deferred-tax sign ambiguity: printed PAT foots at ~16.7% ETR (credit) vs 33.68% charge reading — confirm with management (FF6)"
   - "Duplicate UDIN 26517197VKSZFF5162 on both review reports (FF10)"
   - "Single-segment maintained post-MIPL construction+manufacturing consolidation (FF8)"
   - "17.6% of consolidated revenue on management-certified numbers; reliance paragraph self-contradicts (FF5/FF4)"

@@ -22,3 +22,6 @@
 
 ## GATE A1 — PASS
 - 13/13 pages, 13 formfeeds, 804 lines, unit=Millions (x0.1 -> Cr), no OCR needed, coverage 100%.
+
+## GATE A2 — PASS
+- 16 notes, 52 line items, 7 zero_standing, 4 Board agenda items, 13 auditor paras, 11 entities. Count test reconciled. Flags: ZERO_STANDING, ENTITY_COVERAGE_GAP, TEXT_ANOMALY.

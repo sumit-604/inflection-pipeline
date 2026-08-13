@@ -47,4 +47,5 @@ Quarter: Q1 FY27 (quarter ended 30-Jun-2026)
 - A1 extractor: PASS (6/6 pages, no OCR, units Lakhs x0.01). Cybercons Infosec Pvt Ltd named as subsidiary in consolidated LRR.
 - A2 enumerator: PASS (7 count tests reconciled: 5 notes, 2 agenda, 3 entities, 13 segment rows, 11 auditor paras, 36 line items, 5 sigs). Flagged page-5 OCR_MISALIGNMENT (column-to-value scramble), new segment "Technology Workforce Augmentation Services" w/ restated priors, Consol-LRR paras 2/4/5 dropped, unlabeled OCI row, no balance sheet/receivables in filing.
 - ORCHESTRATOR OCR FALLBACK (rule 4): page-5 combined P&L re-extracted via 400dpi tesseract + 200dpi image Read + arithmetic reconciliation. Verified reference at work/scratch_page5_verified.md. A1 re-invoked to append corrected page-5 block + recover Consol-LRR paragraph list + label OCI B(i) row.
-- A1 (correction pass): dispatched.
+- A1 (correction pass): DONE. Appended corrected page-5 block (extract lines 411-560, lakh+crore, both books, all nil rows). 27/28 rows reconciled. ONE genuine filing inconsistency flagged: CON Q1FY26 "TCI attrib to Shareholders" 1,966.53 lakh fails internal tie by 9.58 lakh (prior-year comparative). Consol-LRR paras 2/4/5/6 recovered (text-layer drop, not content gap). Crore figures tie to Notion FY26 baseline (net sales 1,424.28cr, PAT 84.81cr).
+- A3 forensics: dispatched.

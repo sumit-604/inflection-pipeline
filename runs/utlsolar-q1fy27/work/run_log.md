@@ -30,4 +30,9 @@ Orchestrator session start: 2026-08-13
   KEY: first-ever consolidation; 2 new 31% associates Zayo Cables + Zayo Energy (eff 25 Apr 2026).
   Flags: FIRST_TIME_CONSOLIDATION, ENTITY_CHANGE, EOM (fire), DATE_DISCREPANCY (Note3 fire "06 May
   2025" vs auditor EoM "06 May 2026"), AMBIGUOUS_CELL (A1-resolved), SIGNATURE_TIMESTAMP_ILLEGIBLE.
-- A3 results: PENDING
+- A3 results: DONE — GATE A3 PASS. F1-F17: 11 FINDING / 4 PASS / 2 N.A., no blanks.
+  Top: Bawal fire EoM both reports (Rs 143.58 Cr exceptional, unmodified); Zayo associates
+  consideration undisclosed; Q1FY27 PAT Rs 57.795 Cr/EPS 1.88 (fire exceptional masked strong
+  operating qtr); rev +125.3% YoY; EBITDA ~19%. NO thesis-broken/red trigger fires.
+  forward_signals A3-01,02,04,09,11; ambiguous A3-05,07,08,10.
+- A4 analyst: PENDING

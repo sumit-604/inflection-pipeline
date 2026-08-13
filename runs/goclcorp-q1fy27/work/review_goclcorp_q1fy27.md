@@ -28,7 +28,7 @@ Count reconciliation against the A2 ledger (`ledger_results_goclcorp_q1fy27.md`,
 
 **A3 findings incorporated:** FND-F2, FND-F3, FND-F4, FND-F5, FND-F6, FND-F7, FND-F8, FND-F12, FND-F15 (the 9 A3 FINDING rows), plus the 6 A3 PASS checks (F1, F9, F10, F11, F13, F14) and the 2 N.A. checks (F16, F17). A3 GATE: PASS, ledger reconciled 100% (A3 line 7).
 
-**Extraction-fidelity note (carried forward, not re-litigated):** pages 4, 5, 6, 7, 8, 10, 11, 12 carried cmap-corrupt text layers (font-encoding defect, not an image/low-density page). A1 appended 300dpi OCR supplements and then a render-adjudicated A1-ADDENDUM (Read-tool page render at native + 400dpi crop zoom) that fixes every previously-conflicted numeric cell. All A2 `NUMBER_DISCREPANCY` / `OCR_ROW_MISSING` flags are RESOLVED by that addendum and are therefore not re-raised as analytical findings; the analytical question here is what the now-clean numbers mean. One residual arithmetic note is flagged in Step 1 below (consolidated Q1FY26 Total income).
+**Extraction-fidelity note (carried forward, not re-litigated):** pages 4, 5, 6, 7, 8, 10, 11, 12 carried cmap-corrupt text layers (font-encoding defect, not an image/low-density page). A1 appended 300dpi OCR supplements and then a render-adjudicated A1-ADDENDUM (Read-tool page render at native + 400dpi crop zoom) that fixes every previously-conflicted numeric cell. All A2 `NUMBER_DISCREPANCY` / `OCR_ROW_MISSING` flags are RESOLVED by that addendum and are therefore not re-raised as analytical findings; the analytical question here is what the now-clean numbers mean. One residual arithmetic note is flagged in Step 1 below (consolidated Q1FY26 Total income). **A5-triggered loop-1 correction (A1-ADDENDUM CORRECTION, extract lines 1129-1134) additionally adjudicated one cell A2 had carried UNFLAGGED — consolidated Q1FY26 "4. Exceptional items (net)", a cmap 1→4 misread that printed 4,220.09 lakh where the page prints 1,220.09 lakh (Rs 12.20 Cr, NOT Rs 42.20 Cr) — plus the addendum's Total-income convenience-line typo (8,849.63 → 8,649.63). Both are corrected here and every dependent line, ratio and narrative sentence has been re-derived.**
 
 ---
 
@@ -54,7 +54,7 @@ Consolidated Notes 1-9 (page 6-7) and Standalone Notes 1-9 (page 11-12). Consol 
 | Note # | Subject | What it says (1 sentence) | Rs Cr impact | Period affected | Comparability impact |
 |---|---|---|---|---|---|
 | Consol N1 / Std N1 | Basis of preparation | Ind AS 34, Reg 33; reviewed by AC and approved by Board Aug-13-2026; auditor unmodified conclusion (extract 469-473 / 961-965) | — | All | None; confirms limited review not audit |
-| Consol N2 | Put-option derivative (HGHL / ACHT / 57 Whitehall SARL) | GBP/USD FX on ACHT buyback put option booked as **exceptional item**: gain 351.65 / loss (209.83) / gain 1,220.09 / gain 1,300.43 lakh (extract 475-480) | +3.52 / (2.10) / +42.20 / +13.00 | All four | **Exceptional line is non-operating FX markup; strip before core read.** Q1FY26 exceptional was Rs 42.20 Cr — large |
+| Consol N2 | Put-option derivative (HGHL / ACHT / 57 Whitehall SARL) | GBP/USD FX on ACHT buyback put option booked as **exceptional item**: gain 351.65 / loss (209.83) / gain 1,220.09 / gain 1,300.43 lakh (extract 475-480; Q1FY26 col adjudicated by A1-ADDENDUM CORRECTION line 1131) | +3.52 / (2.10) / +12.20 / +13.00 | All four | **Exceptional line is non-operating FX markup; strip before core read.** Q1FY26 exceptional was Rs 12.20 Cr (corrected from a cmap 4,220.09 misread; see ADDM-CORR) |
 | Consol N3 / Std N8 | Kukatpally land + detonator cessation + IDL reclassification | 264.50 acre Kukatpally MoU (Squarespace, Mar-27-2024) total Rs 3,41,800 lakh; **157.21 acres sold to date, NO further sale this quarter**; Q1FY26 recognised gain 1,955.18 lakh (continuing) + 1,37,121.69 lakh (discontinued); detonator cessation decided Nov-28-2024; IDL sold Nov-15-2025 (extract 482-496 / 1053-1058) | Q1FY26 land gain: +19.55 (cont.) + **+1,371.22 (disc.)**; Q1FY27 land gain: **0** | Q1FY26 hugely; Q1FY27 nil | **Q1FY26 base is inflated by a one-time Rs 1,390.77 Cr Kukatpally land gain; do NOT read YoY without stripping it.** Realty is 100% lumpy land-event income |
 | Consol N4 / Std N5 | **Corporate-guarantee RPT non-compliance (EoM matter)** | Guarantees **Rs 1,31,610 lakh** (HNPCL 1,09,610 + Hinduja Energy India 22,000) **not processed as RPTs**; prior AC/Board/shareholder approval NOT obtained; ratified May-29-2026; post-facto postal-ballot approval Jul-07-2026; "**secured by charge on the Company's immovable properties**"; regulatory applications in process (extract 583-591 / 974-982; line 520/585) | Guarantee exposure **Rs 1,316.10 Cr** (contingent, off-P&L) | Baseline (new EoM) | Governance AMBER; no P&L restatement this quarter but live regulatory exposure |
 | Consol N5 / Std N6 | **HNPCL Scheme of Merger by Absorption** | Board approved scheme Dec-15-2025; filed with NCLT; **"On July 30, 2026, Hon'ble NCLT while not acceding approval has made certain observations"**; Company appealing to NCLAT; **no scheme effect in results** (extract addm item 8, line 1105; 592-597 / 984-988) | Rs 0 in results (scheme not effective) | Subsequent event | Merger NOT consolidated; would import ~Rs 6,400 Cr debt if approved (Notion) |
@@ -95,7 +95,7 @@ Numbers are the reported **continuing-operations** P&L unless a row is explicitl
 | Other Expenses | 5.43 | 7.87 | 6.90 | 32.03 | C11, extract 298 |
 | Total Expenses | 10.40 | 15.01 | 35.72 | 92.07 | ADDM item 1, line 1097 |
 | Profit before exceptional & tax | 52.73 | 63.59 | 50.78 | 333.51 | C13/ADDM line 1123 |
-| Exceptional items (net, put option) | 3.52 | (2.10) | 42.20 | 13.00 | C14, extract 301 |
+| Exceptional items (net, put option) | 3.52 | (2.10) | 12.20 | 13.00 | ADDM-CORR line 1131 (supersedes C14) |
 | PBT (continuing) | 56.24 | 61.49 | 62.98 | 346.51 | C15, extract 302 |
 | Tax Expense (continuing) | 12.39 | 21.57 | 9.26 | 66.92 | C19, extract 306 |
 | PAT (continuing) | 43.85 | 39.93 | 53.72 | 279.59 | C20, extract 307 |
@@ -107,7 +107,9 @@ Numbers are the reported **continuing-operations** P&L unless a row is explicitl
 | EPS total (Rs) | 8.15 | 15.15 | 246.62 | 307.01 | ADDM item 4, line 1100 |
 | EPS (share-adjusted) | 8.15 | 15.15 | 246.62 | 307.01 | no share change (0C) — reported = adjusted |
 
-\* **Residual arithmetic flag (consolidated Q1FY26 Total income):** the A1-ADDENDUM *bonus/convenience* line 1122 prints Q1FY26 Total income as "8,849.63" lakh, but this is NOT one of the render-adjudicated flagged cells and is arithmetically inconsistent: render-verified Profit-before-exceptional 5,078.01 (line 1123) + render-verified Total expenses 3,571.62 (item 1, line 1097) = **8,649.63**, which also equals the component rows Revenue 339.18 + Other income 8,310.45 = 8,649.63. The consistent value is **Rs 86.50 Cr (8,649.63 lakh)**; the convenience-line "8,849.63" is a single-digit (6->8) misread on an explicitly incidental anchor. Used 8,649.63; not estimated — derived by two independent arithmetic checks and flagged.
+\* **Residual arithmetic flag (consolidated Q1FY26 Total income):** the A1-ADDENDUM *bonus/convenience* line 1122 prints Q1FY26 Total income as "8,849.63" lakh, but this is NOT one of the render-adjudicated flagged cells and is arithmetically inconsistent: render-verified Profit-before-exceptional 5,078.01 (line 1123) + render-verified Total expenses 3,571.62 (item 1, line 1097) = **8,649.63**, which also equals the component rows Revenue 339.18 + Other income 8,310.45 = 8,649.63. The consistent value is **Rs 86.50 Cr (8,649.63 lakh)**; the convenience-line "8,849.63" is a single-digit (6->8) misread on an explicitly incidental anchor, now adjudicated in the A1-ADDENDUM CORRECTION (line 1133). Used 8,649.63; not estimated — derived by two independent arithmetic checks and flagged.
+
+\*\* **Exceptional-item correction (consolidated Q1FY26):** the A2 ledger row C14 / corrupt primary pdftotext carried Q1FY26 exceptional as 4,220.09 lakh (Rs 42.20 Cr) — a cmap 1→4 misread that A2 did not flag. The A1-ADDENDUM CORRECTION (loop 1, line 1131) render-adjudicates the true printed value as **1,220.09 lakh (Rs 12.20 Cr)**. It foots: C13 5,078.01 + C14 1,220.09 = C15 6,298.10 (PBT continuing 62.98), and equals the Note 2 put-option value. The prior 42.20 broke the Step 1 footing (50.78 + 42.20 = 92.98 ≠ 62.98); the corrected 12.20 restores it (50.78 + 12.20 = 62.98). PBT continuing, PAT, EPS and tax were already correct at 62.98 / 53.72 / 10.84 / 9.26, so this correction is contained to the exceptional split and its YoY/bridge cascades.
 
 ### 1.2 STANDALONE (extract page 10; A1-ADDENDUM authoritative where cited)
 
@@ -138,13 +140,15 @@ Numbers are the reported **continuing-operations** P&L unless a row is explicitl
 
 | Derived (Rs Cr / %) | Basis | Q1FY27 C | Q1FY26 C | Q1FY27 S | Q1FY26 S |
 |---|---|---|---|---|---|
-| Operating EBITDA (PBT-ex-exceptional + D + Fin − Other Income) | continuing | **(5.25)** | **(32.32)** | **(5.19)** | **(5.33)** |
+| Operating EBITDA (PBT-ex-exceptional + D + Fin − Other Income) | continuing | **(5.25)** | **(6.00)** | **(5.19)** | **(5.33)** |
 | Operating EBITDA margin (/Rev from ops) | continuing | neg | neg | neg | neg |
 | Reported EBITDA (PBT + D + Fin) | continuing, incl. exceptional | 57.10 | 89.30 | 47.36 | 42.13 |
 | Core PBT ex-Other Income | PBT(cont, ex-except.) − OI | (6.11) | (32.32) | (6.05) | (6.13) |
 | Other Income / PBT (continuing) | OI / PBT | 105% | 132% | 113% | 115% |
 | Effective Tax Rate (continuing) | Tax / PBT | 22.0% | 14.7% | 23.5% | 20.0% |
 | PAT margin on revenue (continuing) | PAT / Rev | 1,023% | 1,584% | 829% | 976% |
+
+**Note on the two operating cuts:** "Operating EBITDA (ex-OI)" adds back D&A and finance cost; "Core PBT ex-Other Income" does not. For Q1FY26 consolidated the two diverge widely — (6.00) vs (32.32) — precisely because that quarter carried Rs 25.79 Cr of finance cost (0.53 D&A + 25.79 finance = 26.32 add-back; −32.32 + 26.32 = −6.00). For Q1FY27, finance cost is ~nil and D&A is 0.86, so the two cuts nearly coincide (−5.25 vs −6.11). Both cuts are negative in every period on both bases; the divergence is the deleveraging story, not an operating one.
 
 **Read:** operating EBITDA is **negative in every period, on both bases** once treasury/other income is stripped. Continuing "profit" is entirely non-operating (Other Income = 105%-132% of continuing PBT). PAT-margin-on-revenue exceeds 800% because revenue from operations is trivial (Rs 4.29 Cr) relative to treasury income (Rs 52-59 Cr) — the continuing entity is a treasury/holding vehicle, not an operating company. This is A3 FND-F2 confirmed with numbers.
 
@@ -161,13 +165,13 @@ Two views are mandatory here because the reported PAT is dominated by a one-time
 | Metric (Rs Cr) | Q1FY26 | Q1FY27 | YoY % | Verdict |
 |---|---|---|---|---|
 | Revenue from Operations | 3.39 | 4.29 | +26.4% | Up off a tiny base; absolute +Rs 0.90 Cr |
-| Operating EBITDA (ex-OI) | (32.32) | (5.25) | loss narrowed | Both negative; "improvement" is lower other-expense/finance drag, not operations |
+| Operating EBITDA (ex-OI) | (6.00) | (5.25) | loss ~flat (+0.75) | Both negative; the +0.75 improvement is marginal — operations still lose money. Finance cost is add-backed in this cut and shown separately below |
 | Depreciation | 0.53 | 0.86 | +62.3% | Small absolute (Rs 0.33 Cr) |
 | Finance Costs | 25.79 | 0.004 | −100.0% | **Collapse** — deleveraging post explosives exit (ties unallocable-liab −60% YoY) |
 | Other Income | 83.10 | 58.84 | −29.2% | Treasury income fell Rs 24.26 Cr |
 | **Core Operating PBT (PBT − OI)** | (32.32) | (6.11) | loss narrowed | **Negative both years — no core operating profit exists** |
 | PBT before exceptional | 50.78 | 52.73 | +3.8% | Roughly flat |
-| Exceptional (put option) | 42.20 | 3.52 | −91.7% | Non-operating FX markup; not comparable |
+| Exceptional (put option) | 12.20 | 3.52 | −71.1% | Non-operating FX markup; not comparable |
 | PBT continuing | 62.98 | 56.24 | −10.7% | Down, driven by lower exceptional + lower OI |
 | PAT continuing | 53.72 | 43.85 | −18.4% | Down; higher ETR (14.7%→22.0%) compounds |
 | EPS continuing (Rs) | 10.84 | 8.85 | −18.4% | Down |
@@ -188,8 +192,8 @@ Consolidated Net PAT Rs 40.40 Cr (Q1FY27) vs Rs 1,222.55 Cr (Q1FY26) = **−96.7
 
 ### Six mandatory diagnostics
 1. **Did revenue grow YoY?** Yes, +26.4% (Rs 3.39→4.29 Cr, both S and C). But revenue from operations is trivial versus treasury income; the growth is off a Rs 3-4 Cr base and is not thesis-moving.
-2. **Operating EBITDA margin YoY?** Negative in both years on both bases; a margin percentage is not meaningful because operations lose money before other income. Stated explicitly: Q1FY27 operating EBITDA (ex-OI) = −Rs 5.25 Cr consol / −Rs 5.19 Cr standalone vs Q1FY26 −Rs 32.32 Cr / −Rs 5.33 Cr.
-3. **Core operating PBT (ex-OI) YoY?** Negative both years (consol −32.32→−6.11; standalone −6.13→−6.05). **The single cleanest test of operational health shows no core operating profit in either year.** Reported continuing PBT is positive only because Other Income (treasury) carries it.
+2. **Operating EBITDA margin YoY?** Negative in both years on both bases; a margin percentage is not meaningful because operations lose money before other income. Stated explicitly: Q1FY27 operating EBITDA (ex-OI) = −Rs 5.25 Cr consol / −Rs 5.19 Cr standalone vs Q1FY26 −Rs 6.00 Cr / −Rs 5.33 Cr. The consolidated YoY move is a marginal +Rs 0.75 Cr — operations did not turn.
+3. **Core operating PBT (ex-OI) YoY?** Negative both years (consol −32.32→−6.11; standalone −6.13→−6.05). **The single cleanest test of operational health shows no core operating profit in either year.** Reported continuing PBT is positive only because Other Income (treasury) carries it. (The consol Core-PBT-ex-OI move −32.32→−6.11 looks large but is driven by the Rs 25.79 Cr finance cost that this cut, unlike Operating EBITDA ex-OI, does not add back; strip finance and operations barely moved.)
 4. **What drove the gap between core operating PBT and reported PAT?** Entirely non-operating: Other Income Rs 58.84 Cr (consol) / Rs 52.55 Cr (standalone), the put-option exceptional Rs 3.52 Cr, finance-cost collapse Rs 25.79→0.004 Cr, and ETR step-up 14.7%→22.0% (consol). Each delta named; none is operating.
 5. **Are D&A and finance costs scaling faster than revenue?** D&A +62% on a Rs 0.33 Cr absolute move — immaterial. Finance cost collapsed −100% (deleveraging). No capex-absorption gap read; this is not a capex-commissioning story.
 6. **Is Other Income concentration changing?** Consol Other Income fell −29.2% YoY (Rs 83.10→58.84 Cr) while standalone rose +10.7%. The consol fall is the HGHL FX-translation/put-option swing; the standalone rise is domestic treasury on the enlarged cash pile from prior land sales. Concentration remains extreme: Other Income is 105%-132% of continuing PBT.
@@ -204,13 +208,13 @@ Only three discrete quarters are present in this filing (Q1FY27, Q4FY26, Q1FY26)
 
 | Quarter | Revenue from ops (Rs Cr) | Op EBITDA margin (ex-OI) | Core PBT ex-OI (Rs Cr, consol cont.) | One-offs flagged | QoQ run-rate |
 |---|---|---|---|---|---|
-| Q1FY26 | 3.39 | negative | (32.32) | Kukatpally land gain (disc.) Rs 1,371.22 Cr; exceptional +Rs 42.20 Cr | base |
+| Q1FY26 | 3.39 | negative | (32.32) | Kukatpally land gain (disc.) Rs 1,371.22 Cr; exceptional +Rs 12.20 Cr | base |
 | Q2FY26 | ND | ND | ND | ND (not in filing) | ND |
 | Q3FY26 | ND | ND | ND | ND (not in filing) | ND |
-| Q4FY26 | 2.33 | negative | (23.30)approx (see note) | balancing-figure quarter (Note 6); exceptional (Rs 2.10) Cr | derived |
+| Q4FY26 | 2.33 | negative | (12.68) | balancing-figure quarter (Note 6); exceptional (Rs 2.10) Cr | derived |
 | Q1FY27 | 4.29 | negative | (6.11) | NO land sale this quarter; exceptional +Rs 3.52 Cr | see below |
 
-Note: Q4FY26 core PBT ex-OI (consol) = Profit-before-exceptional 63.59 − Other income 76.27 = **(12.68)** Cr; the "(23.30)approx" placeholder is withdrawn — the correct figure is **Rs (12.68) Cr** (C13 63.59, C3 76.27). Negative, consistent with the pattern.
+Note: the Core-PBT-ex-OI column is Profit-before-exceptional − Other Income (it does NOT add back finance cost, so it differs from Operating EBITDA ex-OI). Q1FY26 = 50.78 − 83.10 = (32.32); Q4FY26 = 63.59 − 76.27 = (12.68) (C13 63.59, C3 76.27); Q1FY27 = 52.73 − 58.84 = (6.11). Negative every quarter, consistent with the pattern.
 
 **Diagnostics:**
 - **Run-rate trajectory:** operating run-rate is structurally flat-to-negative every quarter; the visible movement is entirely treasury-income timing and one-off land/derivative events. There is no operating step-up to detect. Stepping up / plateau / dipping does not apply to a core that is negative each period.
@@ -228,19 +232,22 @@ Because the reported-net YoY is dominated by a discontinued one-off, the analyti
 
 ### 4A. Continuing-operations PAT bridge, consolidated (Q1FY26 → Q1FY27)
 
+The bridge is built at the Operating-EBITDA-ex-OI level so that the finance-cost collapse is counted ONCE. Operating EBITDA ex-OI moved (6.00)→(5.25) = +0.75 total; that +0.75 already embeds the +0.90 revenue line, so the operating-cost line is shown net of revenue as (0.15). Finance, D&A, Other Income and the exceptional are then separate lines. Components foot to the actual continuing-PAT change of (9.87).
+
 | Component | YoY change (Rs Cr) | Recurring? | Note |
 |---|---|---|---|
 | Revenue contribution | +0.90 | Recurring | Rev 3.39→4.29 |
-| Operating cost / other-expense change | +26.17 (favourable) | Recurring | Op EBITDA loss narrowed (32.32)→(5.25); mostly lower other-expense & finance-adjacent items |
+| Operating cost / other-expense change (net of revenue) | (0.15) | Recurring | Op EBITDA ex-OI (6.00)→(5.25) = +0.75 total; net of the +0.90 revenue line, operating costs moved (0.15). Finance collapse is booked separately below — NOT double-counted here |
 | D&A change | (0.33) | Recurring | 0.53→0.86 |
-| Finance cost change | +25.79 (favourable) | Recurring (post-deleverage) | 25.79→0.004; explosives-exit deleveraging |
+| Finance cost change | +25.79 | Recurring (post-deleverage) | 25.79→0.004; explosives-exit deleveraging (counted once) |
 | Other Income change | (24.26) | NON-RECURRING (treasury) | 83.10→58.84 |
-| Exceptional (put option) change | (38.68) | NON-RECURRING | 42.20→3.52 |
-| Pre-tax net change (PBT continuing) | **(6.74)** | | 62.98→56.24 |
-| Tax change | (3.13) | Mixed | ETR 14.7%→22.0%; higher tax on lower base |
+| **Subtotal: PBT before exceptional** | **+1.95** | | 50.78→52.73 (foots: +0.90 −0.15 −0.33 +25.79 −24.26 = +1.95) |
+| Exceptional (put option) change | (8.68) | NON-RECURRING | 12.20→3.52 |
+| Pre-tax net change (PBT continuing) | **(6.74)** | | 62.98→56.24 (+1.95 − 8.68 = −6.73, ties −6.74 to rounding) |
+| Tax change | (3.13) | Mixed | ETR 14.7%→22.0%; tax 9.26→12.39 |
 | **Continuing PAT YoY change** | **(9.87)** | | 53.72→43.85 |
 
-**% of the continuing-PAT change from recurring core operations vs non-recurring:** the two large favourable moves (finance-cost collapse +25.79, cost/other-expense +26.17) are recurring/structural; the two large unfavourable moves (Other Income −24.26, exceptional −38.68) are non-recurring. Net, the continuing-PAT decline of Rs 9.87 Cr is dominated by **non-recurring** items (lower treasury income and lower FX markup) offsetting recurring deleveraging gains. **There is no recurring core profit to bridge — the base and the current period both lack operating profit.**
+**% of the continuing-PAT change from recurring core operations vs non-recurring:** the one large favourable move is the finance-cost collapse (+25.79, recurring/structural post-deleveraging); revenue added a trivial +0.90 and operating costs ex-revenue were roughly flat ((0.15)) — Operating EBITDA ex-OI barely moved, (6.00)→(5.25). The two large unfavourable moves are non-recurring: Other Income −24.26 (treasury) and the exceptional put-option markup −8.68 (FX). Net, the continuing-PAT decline of Rs 9.87 Cr is lower treasury income and lower FX markup (−32.94 combined, non-recurring) outweighing the recurring deleveraging gain (+25.79), with the tax step-up (−3.13) on top. **There is no recurring core profit to bridge — the base and the current period both lack operating profit (Operating EBITDA ex-OI negative both years, −6.00 → −5.25).**
 
 ### 4B. Reported-net PAT bridge (View B, explained not relied upon)
 Consolidated net PAT Rs 1,222.55 → Rs 40.40 Cr (−Rs 1,182.15 Cr) is essentially the **discontinued-operations line**: Rs 1,168.82 Cr (Q1FY26, the Kukatpally land gain) → Rs (3.45) Cr (Q1FY27) = −Rs 1,172.27 Cr, i.e. **99.2% of the reported-net decline is the one-time land gain rolling off**. Non-recurring by definition.
@@ -431,10 +438,11 @@ Every A3 FORWARD-SIGNAL and AMBIGUOUS finding produces at least one question. Co
 **PROCEED WITH FLAGS.**
 
 Rationale (permitted verdict set; never STOP; flags propagate; the human decides):
-- The filing is mechanically complete and internally reconciled (A2/A3 GATE PASS, 100% ledger reconciliation); no mechanical failure → not REWORK, not INSUFFICIENT EVIDENCE. The extraction defects were resolved by the render-adjudicated A1-ADDENDUM.
+- The filing is mechanically complete and internally reconciled (A2/A3 GATE PASS, 100% ledger reconciliation); no mechanical failure → not REWORK, not INSUFFICIENT EVIDENCE. The extraction defects were resolved by the render-adjudicated A1-ADDENDUM and its loop-1 CORRECTION (the Q1FY26 exceptional-item cmap misread, now 1,220.09 lakh / Rs 12.20 Cr, footing confirmed).
 - **Cash conversion is INDETERMINATE** (CFO/BS not disclosed at Q1 per Reg 33 half-yearly). Per house rule this **caps the verdict at PROCEED WITH CAVEATS** with the missing evidence named (CFO, WC, net debt — deferred to Q2FY27). It cannot silently resolve to PROCEED.
 - **Governance and disclosure flags push one notch more conservative to PROCEED WITH FLAGS**, surfaced prominently for the human: (1) dual (standalone + consolidated) **Emphasis of Matter** on a **Rs 1,316.10 Cr RPT non-compliance**, guarantees secured on immovable property, regulatory applications live (FND-F5; tripwires #2/#4/#5); (2) **20.5% of consolidated PAT unreviewed by the principal auditor**, management-furnished and management-converted (FND-F4); (3) **HNPCL merger declined by NCLT Jul-30-2026**, on appeal to NCLAT (FND-F15); (4) continuing operations carry **no core operating profit** ex-treasury (FND-F2); (5) tripwires **#1 (APTEL) and #6 (Swiss conviction) SILENT** in the filing.
 - **This review informs EXIT FRAMING only.** Decision Status stays **HELD (momentum, Chandelier-governed)**; no conversion to a value view; no pre-committed trigger has formally fired.
+- **Correction-pass note:** the Q1FY26 exceptional-item fix (Rs 42.20 Cr → Rs 12.20 Cr) and the Operating-EBITDA-ex-OI fix (Rs (32.32) Cr → Rs (6.00) Cr) do NOT move the verdict. PBT continuing (62.98), PAT continuing (53.72), net PAT (40.40 vs 1,222.55) and every S-vs-C gap were already correct; the corrected numbers shrink the *apparent* operating "improvement" in the base but leave operations negative in every period and the thesis (treasury/land vehicle, AVOID fundamentals, governance overhang) intact. Verdict **unchanged: PROCEED WITH FLAGS.**
 
 ---
 
@@ -485,9 +493,9 @@ GOCL earned Rs 40.40 Cr consolidated net profit this quarter, down 96.7% from Rs
 - Metric the filing did NOT disclose: any demand/pricing/utilisation data for EMS, and any HNPCL/power-sector operating data (HNPCL is unconsolidated).
 
 ### 3. Business-model intelligence
-- [Filing Q1FY27] The company makes almost no money from operations. Continuing revenue Rs 4.29 Cr vs Other Income Rs 52.55 Cr standalone (12.3x); operating EBITDA excluding other income is negative in every period on both standalone and consolidated bases. The model is: hold cash and land, earn treasury income, and realise lumpy one-off gains when land parcels sell.
+- [Filing Q1FY27] The company makes almost no money from operations. Continuing revenue Rs 4.29 Cr vs Other Income Rs 52.55 Cr standalone (12.3x); operating EBITDA excluding other income is negative in every period on both standalone and consolidated bases (Q1FY27 −Rs 5.25 Cr consol, Q1FY26 −Rs 6.00 Cr consol). The model is: hold cash and land, earn treasury income, and realise lumpy one-off gains when land parcels sell.
 - [Filing Q1FY27] The sole subsidiary, HGHL Holdings (UK), is a non-operating shell (Rs Nil revenue; cost, staff and depreciation lines identical standalone vs consolidated). Its entire contribution is a foreign-exchange markup on a put option (Rs 8.29 Cr this quarter = 20.5% of consolidated PAT), unreviewed by the principal auditor.
-- [Filing Q1FY27] Deleveraging is visible: finance cost fell from Rs 25.79 Cr to near zero year on year and unallocable liabilities dropped 60% (Rs 976 Cr → Rs 389 Cr), consistent with the explosives/IDL exit — though the filing does not split debt-repayment from working-capital unwind, and net debt is not disclosed at Q1.
+- [Filing Q1FY27] Deleveraging is visible: finance cost fell from Rs 25.79 Cr to near zero year on year and unallocable liabilities dropped 60% (Rs 976 Cr → Rs 389 Cr), consistent with the explosives/IDL exit — though the filing does not split debt-repayment from working-capital unwind, and net debt is not disclosed at Q1. That finance-cost collapse (+Rs 25.79 Cr) is the single largest favourable swing in the continuing-PAT bridge; the operating losses themselves barely moved (−6.00 → −5.25).
 - [Notion/prior] The "cheap" 0.47x book is contaminated by a Rs 5,020 Cr contingent LPSC receivable and Rs 2,480 Cr of inter-corporate-deposit leakage to the group at Mar-25; adjusted tangible net worth is negative per a rating agency. This quarter's Rs 1,316 Cr guarantee-RPT breach is the same leakage pattern surfacing in the auditor's Emphasis of Matter.
 - Metrics the filing did NOT disclose: CFO, net debt, receivable/inventory days, promoter pledge, the ICD balance, and the institutional vote split on the RPT.
 
@@ -497,7 +505,7 @@ GOCL earned Rs 40.40 Cr consolidated net profit this quarter, down 96.7% from Rs
 - [Filing Q1FY27] The competitive risk to watch is execution and governance, not market share: land deals slipping (Realty zero this quarter), the merger appeal, and the RPT/guarantee overhang. A land buyer's willingness to complete (Tata Realty on Ecopolis) is the nearest thing to a competitive counterparty, and only Rs 1 Cr of Rs 815 Cr has moved.
 - Peer cross-check the filing did NOT permit: no peer concall or presentation was supplied, so no peer-narrative reconciliation (Role 5 7B) could be run this quarter; flag for the next cycle.
 
-*Reviewed 2026-08-13 | Source: BSE/NSE Reg 33 filing, GOCL Corporation Limited, quarter ended June 30, 2026 (results only; no concall, no presentation).*
+*Reviewed 2026-08-13 | Source: BSE/NSE Reg 33 filing, GOCL Corporation Limited, quarter ended June 30, 2026 (results only; no concall, no presentation). Loop-1 arithmetic correction applied: Q1FY26 consolidated exceptional Rs 12.20 Cr (was Rs 42.20 Cr) and Operating EBITDA ex-OI Rs (6.00) Cr (was Rs (32.32) Cr); all dependent lines re-derived; verdict unchanged.*
 
 ```yaml
 stage: A4-analyst
@@ -540,7 +548,7 @@ monitorables:
   - {item: "Next Kukatpally land-sale tranche (~107 acres remaining)", implied_date: "undated, per-quarter watch", source_ref: "Note 3, extract 487"}
   - {item: "Q2FY27 half-yearly CFO/BS/net debt (resolves INDETERMINATE cash conversion)", implied_date: "~2026-11", source_ref: "Reg 33 half-yearly; protocol Step 5"}
   - {item: "HGHL component-auditor identity + put-option FX sensitivity", implied_date: "undated", source_ref: "Other Matter para, extract 183-202"}
-flags: ["DUAL_EOM_RPT_NONCOMPLIANCE_Rs1316Cr","GUARANTEE_SECURED_ON_IMMOVABLE_PROPERTY_TRIPWIRE2","20.5PCT_CONSOL_PAT_UNREVIEWED_HGHL","HNPCL_MERGER_DECLINED_NCLT_APPEAL_PENDING","CONTINUING_OPS_NO_CORE_OPERATING_PROFIT","OTHER_INCOME_105-132PCT_OF_CONTINUING_PBT","DEFERRED_TAX_CREDIT_4_CONSECUTIVE_PERIODS","REALTY_ZERO_LAND_SALE_THIS_QUARTER","CASH_CONVERSION_INDETERMINATE_Q1_NO_CFO","TRIPWIRE1_APTEL_SILENT","TRIPWIRE6_SWISS_SILENT","NO_CONCALL_HELD_FOR_EOM_QUARTER","INSTITUTIONAL_VOTE_SPLIT_UNDISCLOSED"]
+flags: ["DUAL_EOM_RPT_NONCOMPLIANCE_Rs1316Cr","GUARANTEE_SECURED_ON_IMMOVABLE_PROPERTY_TRIPWIRE2","20.5PCT_CONSOL_PAT_UNREVIEWED_HGHL","HNPCL_MERGER_DECLINED_NCLT_APPEAL_PENDING","CONTINUING_OPS_NO_CORE_OPERATING_PROFIT","OTHER_INCOME_105-132PCT_OF_CONTINUING_PBT","DEFERRED_TAX_CREDIT_4_CONSECUTIVE_PERIODS","REALTY_ZERO_LAND_SALE_THIS_QUARTER","CASH_CONVERSION_INDETERMINATE_Q1_NO_CFO","TRIPWIRE1_APTEL_SILENT","TRIPWIRE6_SWISS_SILENT","NO_CONCALL_HELD_FOR_EOM_QUARTER","INSTITUTIONAL_VOTE_SPLIT_UNDISCLOSED","LOOP1_ARITH_CORRECTION_EXCEPTIONAL_12.20CR_AND_OPEBITDA_6.00CR"]
 plain_language_brief_included: true
 review_path: "/home/user/inflection-pipeline/runs/goclcorp-q1fy27/work/review_goclcorp_q1fy27.md"
 ```

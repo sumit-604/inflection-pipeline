@@ -30,3 +30,6 @@
 - All 17 checks statused, no blanks, 100% ledger reconciliation. 10 findings.
 - Forward-signals: A3-F1-01 (standalone zero tax/finite shield), A3-F6-01 (MOA enables equity raise), A3-F8-01 (consol ETR ~16% latent shield), A3-F13-01 (Board capital-raising + MD reappt agenda).
 - Ambiguous: A3-F2-01 (sub PAT -25% QoQ), A3-F4-02 (entity coverage gap), A3-F7-01 (going-concern-ish tax hedge), A3-F9-01 (actuarial OCI loss 29.86 > full FY26 7.21).
+
+## A4 — complete
+- Verdict PROCEED WITH CAVEATS; cash conversion INDETERMINATE (capped correctly). Decision Status verified WATCHLIST/AVOID (not held), UNCHANGED (no tripwire fired). 9 mgmt questions, 8 monitorables, 8 flags. Plain-language brief included.

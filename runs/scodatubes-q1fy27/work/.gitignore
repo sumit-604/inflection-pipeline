@@ -1,3 +1,10 @@
-ocr_*
+# A1 extraction scratch intermediates (not deliverables)
 *.png
 *.jpg
+*.jpeg
+*.tif
+*.tiff
+ocr_*.txt
+out_layout.txt
+*_layout.txt
+page-*.txt

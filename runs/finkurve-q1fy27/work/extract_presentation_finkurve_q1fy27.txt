@@ -1,0 +1,1189 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: presentation_finkurve_q1fy27.pdf
+source_path: /home/user/inflection-pipeline/runs/finkurve-q1fy27/inputs/presentation_finkurve_q1fy27.pdf
+doctype: presentation
+page_count_pdfinfo: 37
+formfeed_count: 37
+line_count: 1100
+unit_convention: Crores (Rs./INR cr, stated explicitly on slide "Performance Highlights" -- "In Rs. crore" -- and on every P&L/Balance Sheet table header, e.g. "Particulars (INR cr)", "Liabilities (INR Cr)")
+conversion_factor_to_cr: Crores -> x1 (primary convention, all AUM/PAT/P&L/Balance Sheet figures already in Cr, do not convert)
+conversion_factor_to_cr_exceptions:
+  - "Average Ticket Size (INR in 'Lakh)" chart, page 26: unit is Lakhs -> x0.01 to Cr (do not convert the extracted text; downstream applies factor)
+  - "Household Gold Wealth" macro figure "Rs. 394 Lakh Cr" and "Current Total Gold Loan Market ~Rs 17 Lakh Cr" / "~Rs 10 lakh Cr", page 21: these are sector-level macro figures already expressed as Lakh Crore (=Cr x 100,000); not company financials, no conversion needed, flagged for downstream awareness only
+
+TOOLCHAIN
+  1. pdftotext -layout presentation_finkurve_q1fy27.pdf pres_layout.txt
+  2. pdfinfo presentation_finkurve_q1fy27.pdf   (page count = 37)
+  3. grep -c $'\f' pres_layout.txt   (formfeed count = 37, matches pdfinfo page count)
+  4. Per-page character count computed by splitting pres_layout.txt on form-feed and counting stripped chars per page (table below). Threshold per protocol: any page under 100 characters triggers mandatory OCR fallback (pdftoppm -r 200/300 + tesseract). No page in this deck fell under 100 characters (minimum = 123, page 2); GATE A1's page-coverage text test is satisfied by pdftotext alone for all 37 pages.
+  5. OCR fallback attempted anyway on the three lowest-density pages (2, 6, 22) as a diligence check because this deck is chart/logo-heavy and low character counts on a 37-slide institutional deck are atypical. Visual render (pdftoppm -jpeg -r 200, and again at -r 100) confirmed pages 2, 6 and 22 do carry additional graphic-only content beyond their extracted text layer (a company logo lockup, a "Phases of Life" marketing infographic, and a grid of ~40 lender-logo images respectively).
+  6. tesseract OCR was then run against the rendered images for these pages (and, in a broader batch, against all 37 rendered pages) using multiple settings: default, --psm 6, --psm 11, at 200dpi, 150dpi and 100dpi, full-page and quadrant-cropped. Every attempt exceeded a 100s window without completing (page 2, page 22 direct attempts; and pages 1-5 of a full-deck batch run, all timed out/hung and were killed) -- tesseract is empirically non-functional in this environment within a practical time budget. No tesseract text output was recoverable for any page.
+  7. Given (6), the supplementary content for pages 2, 6 and 22 below is transcribed by direct visual reading of the rendered page image (pdftoppm output), not machine OCR. It is labelled inline as [VISUAL page N ...] rather than [OCR page N ...] to record this provenance accurately. This is a deviation from the letter of the OCR-fallback instruction (tesseract could not be made to complete) but not from its intent (no chart/logo/footnote content is left uncaptured); it is disclosed here for downstream awareness. No numeric KPI, table or P&L figure in this deck required this treatment -- all numeric content extracted natively via pdftotext -layout (verified against source render for pages 24, 25, 26, 27, 28 chart data labels, which matched).
+
+PER-PAGE CHARACTER COUNT TABLE (pdftotext -layout, stripped)
+page | chars_extracted_pdftotext | note
+-----|---------------------------|-----
+   1 | 1264 | 
+   2 |  123 | graphic title slide (logo); supplemented VISUAL
+   3 | 2100 | 
+   4 | 3121 | 
+   5 | 1745 | 
+   6 |  163 | marketing infographic (Phases of Life); supplemented VISUAL
+   7 |  939 | 
+   8 | 1430 | 
+   9 | 3131 | 
+  10 | 1120 | 
+  11 | 4526 | 
+  12 | 4914 | 
+  13 | 2463 | 
+  14 | 3107 | 
+  15 | 2290 | 
+  16 | 2969 | 
+  17 | 2334 | 
+  18 | 2394 | 
+  19 | 1878 | 
+  20 | 1297 | 
+  21 | 1713 | 
+  22 |  127 | lender logo grid; supplemented VISUAL
+  23 | 1005 | 
+  24 |  636 | 
+  25 | 1480 | 
+  26 | 1670 | 
+  27 | 1862 | 
+  28 | 2045 | 
+  29 | 1187 | 
+  30 | 1439 | 
+  31 | 1075 | 
+  32 | 2595 | 
+  33 |  416 | 
+  34 |  297 | 
+  35 |  313 | 
+  36 |  968 | 
+  37 |  468 | 
+
+ocr_pages: [2, 6, 22]  (OCR attempted per diligence check above; tesseract did not complete -- content supplied via visual transcription instead, labelled [VISUAL page N] in the body, not [OCR page N])
+page_coverage: 100% (37/37 pages present, page markers [page 1] through [page 37] confirmed sequential and complete, no gaps)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026; deck cover states "Investor Deck -June'26 (Q1 FY27)")
+extraction_date: 2026-08-13
+=== END HEADER ===
+
+1	[page 1]
+2	August 13, 2026
+3	
+4	To,                                         To,
+5	Listing Department                          The Manager – Compliance Department
+6	BSE Limited                                 National Stock Exchange of India Limited
+7	Phiroze Jeejeebhoy Towers, Dalal Street,    ‘Exchange Plaza’ Bandra Kurla Complex,
+8	Mumbai – 400 001                            Bandra (East) Mumbai 400051
+9	
+10	Scrip Code: 508954                          NSE Symbol: FINKURVE
+11	
+12	
+13	Dear Sir/Madam,
+14	
+15	Sub: Presentation for Schedule of Analyst/Institutional Investor Meet
+16	
+17	In continuation of our Intimation Letter dated August 10, 2026, and pursuant Regulation 30 read with
+18	Para A of Part A of Schedule III of the Securities Exchange Board of India (Listing Obligations and
+19	Disclosure Requirements) Regulations, 2015 we, enclose herewith a copy of presentation for
+20	Analyst/Institutional Investor Meet to be held on August 13, 2026.
+21	
+22	This information is also available on the Company’s website at www.arvog.com.
+23	Thanking you,
+24	Yours truly,
+25	For Finkurve Financial Services Limited
+26	Kajal       Digitally signed
+27	            by Kajal Kunal
+28	Kunal       Parmar
+29	            Date: 2026.08.13
+30	Parmar      13:21:13 +05'30'
+31	
+32	Kajal Parmar
+33	Company Secretary & Compliance Officer
+34	Membership No. A65484
+35	
+36	Encl: a/a
+37	
+38	
+39	[page 2]
+40	                            Investor Deck –June’26 (Q1 FY27)
+41	
+42	
+43	
+44	
+45	NBFC License No. 13.00316                                      Website - www.arvog.com
+46	
+47	
+48	[VISUAL page 2 -- image-only content not present in the PDF text layer. Tesseract OCR was attempted (pdftoppm 200-300dpi + tesseract, multiple settings/resolutions/crops) and did not complete within a practical time budget in this environment (each attempt exceeded 100s and was killed; empirically confirmed non-functional this run on pages 1-5 and 22 of this deck). Content below transcribed by direct visual reading of the rendered page image.]
+49	FINKURVE FINANCIAL SERVICES LIMITED  (tagline text rendered under the Arvog logo graphic)
+50	
+51	[page 3]
+52	Augmont Group: Leading Pioneers Of Gold In India
+53	
+54	Scale Of Operations: Among The
+55	Largest                                                                                          One Of India’s Largest Gold &
+56	                                                                                                 Silver SPOT Platform
+57	4 Cr+           210+
+58	                                                                                                 Traded: ~53 Tonnes Of Gold &
+59	Customers               Partners
+60	                                                                                                 1,049 Tonnes Of Silver In FY26
+61	
+62	118                     900+
+63	Gold For All Centers    People Employed
+64	                                                                                                 Among India’s Leading
+65	                                                                                                 Gold Refinery
+66	5,000+                  20+                                                                      Capacity: 280+ Tonnes
+67	Jewelers &              SPOT Delivery
+68	Agents                  Centers
+69	
+70	
+71	                                          Accreditations & Accomplishments
+72	                                                          •   The Responsible Minerals Initiative Compliance Assures Responsible Sourcing Of Gold
+73	                                                          •   Ranked Amongst The Top 150 Unlisted Companies In India By Dun & Bradstreet, 2021
+74	                                                          •   Authorized Economic Operator (Aeo) T-2 Entity By Directorate Of International Customs
+75	                                                          •   Capable Of Distributing Bullion From 0.1 Grams Coins To 1 Kg Bars Across India
+76	                                                          •   Leading Creator And Redeemer Of Gold Exchange Traded Fund (ETF) Units In India On All Gold
+77	                                             INDIA GOOD       ETF Schemes
+78	      ISO              BIS         NABL
+79	                                               DELIVERY
+80	
+81	
+82	[page 4]
+83	       Augmont’s                                                                                     Unlisted - AUGMONT ENTERPRISES LTD
+84	                                                                                                     Gold Refinery & Digital Platform For Gold
+85	       Journey So Far                                                                                Products
+86	                                                                                                     Turnover (FY26): INR 94,186 Cr
+87	
+88	
+89	                                                                                                      Listed - FINKURVE FINANCIAL SERVICES LTD
+90	                                                                                                      Tech Enabled NBFC
+91	                                                                                                      AUM (Q1 FY27): INR 1,271 Cr
+92	
+93	
+94	2002           2003         2008            2012        2013           2019           2020           2021           2023            2024          2025            2026
+95	
+96	
+97	
+98	
+99	Paper Gold     Gold         SPOT            EMI         Digi Gold      Gold For All   Gold Loans     India's Top    Gold Lease      LGD           DRHP Filing Approval for
+100	(Gold ETF      Futures      Infrastructur   Jewelery    Augmont        Platform       Introduced     150 Unlisted   Launched        Platform      filed its      DRHP
+101	Concept)       Introduced   e built real-   Launched    pioneered      Established    gold loans     Companies      gold            Launched      DRHP with Received
+102	Conceptua      Introduced   time spot       EMI-based   online         a unified      to unlock      Ranked         leasing         a Lab-        SEBI, a key approval for
+103	lized paper    gold         trading         jewellery   digital gold   platform to    liquidity      among          solutions for   Grown         milestone in DRHP,
+104	gold and       futures,     capabilities    financing   buying and     democratiz     against        India’s Top    businesses      Diamond       its journey Signed MOU
+105	filed one of   advised      .                           selling.       e gold         gold assets.   150 Unlisted   and             platform to   toward         with NSE for
+106	the earliest   commodity                                               access                        Companies      institutions.   address       becoming Electronic
+107	gold ETF       exchanges                                               across                        by Dun &                       evolving      a publicly Gold
+108	proposals                                                              consumer                      Bradstreet.                    market        listed entity. Receipts
+109	with SEBI.                                                             segments.                                                    demand.                      (EGRs)
+110	
+111	         With A Debt-free Status [Excluding NBFC], Augmont Group Stands As A Beacon Of Trust And Excellence In The
+112	                                                    Precious Metals Industry
+113	
+114	
+115	[page 5]
+116	Vision & Mission
+117	
+118	
+119	
+120	                          VISION
+121	                                                                                           MISSION
+122	 Becoming India's Most Trusted Technology-led
+123	           Gold Lending Institution.                                  Delivering Fast, Secure & Responsible Credit
+124	                                                                                         Solutions
+125	 To redefine secured retail lending by combining technology, deep
+126	  gold expertise and responsible lending practices, making formal     Committed to creating a seamless lending experience that is
+127	credit accessible to every household while creating long-term value    customer-centric, technology-enabled and future-ready.
+128	              for customers, partners and shareholders
+129	
+130	
+131	
+132	                          Building unshakeable trust with every            Strong Risk       Robust frameworks to protect
+133	        Trusted           promise we keep.                                                   customers and strengthen trust.
+134	                                                                           Management
+135	
+136	
+137	
+138	                          Leveraging technology and                        Seamless          Simple, fast and intuitive journeys
+139	        Technology
+140	                          intelligence to lead the future.                 Digital           powered by technology.
+141	        Driven
+142	                                                                           Experience
+143	
+144	
+145	
+146	        Financial         Enabling access to formal credit for             Responsible       Ethical lending practices for
+147	        Inclusion         every household.                                 Lending           sustainable and inclusive growth.
+148	
+149	
+150	[page 6]
+151	We Brings The Entire Gold Ecosystem Under One Roof Making Gold Loans A Cornerstone Of Its End-to-end Gold
+152	                                                Offering.
+153	
+154	
+155	[VISUAL page 6 -- image-only content not present in the PDF text layer. Tesseract OCR was attempted (pdftoppm 200-300dpi + tesseract, multiple settings/resolutions/crops) and did not complete within a practical time budget in this environment (each attempt exceeded 100s and was killed; empirically confirmed non-functional this run on pages 1-5 and 22 of this deck). Content below transcribed by direct visual reading of the rendered page image.]
+156	PHASES OF LIFE
+157	Our 'Gold for All' vision ensures accessible and reliable solutions for every stage of life.
+158	We glitter lives through the power of Gold!
+159	[Infographic spells GOLD FOR ALL with photo-filled letters, each letter tagged to a product with a callout label and caption:]
+160	SELL OLD GOLD -- To unlock value and secure your child's future
+161	DIGITAL GOLD -- Buy from the convenience of your home
+162	GOLD JEWELLERY -- To mark the birth with love that lasts forever
+163	GOLD ETF -- To stay prepared for life's uncertainties & retirement
+164	GOLD LOAN -- To fund your dreams when you need it the most
+165	EMI Gold -- To make special occasions stress-free
+166	Gold SIPs -- To celebrate new beginnings
+167	GOLD COINS & BARS -- To celebrate milestones & moments
+168	
+169	[page 7]
+170	   Performance Highlights
+171	                                                                                   In Rs. crore
+172	
+173	
+174	              Metric                      Q1FY27    Q1FY26    YoY      Q4FY26     QoQ
+175	
+176	              Assets Under Management*    1,270.4   541.8    ▲134.5%   1,096.1   ▲15.9%
+177	
+178	              Gold Kgs under management   1,167.5   796.2    ▲46.6%    1,076.2   ▲8.5%
+179	
+180	              Branches                     118        83     ▲42.2%     105      ▲12.4%
+181	
+182	              Active Customers (GL)       31,522    19,516   ▲61.5%    28,506    ▲10.6%
+183	
+184	              Leverage                     2.88      0.73    ▲295.0%    2.42     ▲19.2%
+185	
+186	              PAT (Rs. Cr)                  8.4      5.1     ▲65.8%      8.0     ▲4.9%
+187	
+188	              Net Worth                   354.4     322.3    ▲10.0%    344.9     ▲2.7%
+189	
+190	              NNPA (%)                    0.48%     0.17%    ▲31 bps   0.09%     ▲39 bps
+191	*Includes Off book AUM
+192	
+193	
+194	[page 8]
+195	Strategic Foundation
+196	
+197	         Technology-Led                                      Gold Ecosystem Strength
+198	         Operating Platform                                  & Promoter Legacy
+199	   • Proprietary Loan Origination & Management          • 100-year leadership in India’s gold industry,
+200	     System                                               including the first Gold ETF filing
+201	   • Built in RBI compliant controls and audit trails   • India’s leading digital gold ecosystem and
+202	   • API ready architecture for analytics and future      largest investible gold jewellery platform
+203	     integrations                                         globally
+204	                                                        • Gold expertise powering fintech-led lending
+205	                                                          solutions
+206	
+207	
+208	
+209	
+210	         Promoter & Leadership                                Risk
+211	         Strength                                             Management
+212	   • Strong governance first mindset with proven        • Capital protection embedded across
+213	     execution credibility                                origination and monitoring
+214	   • Long term institution building approach            • Integrated operational and fraud-risk controls
+215	     backed by domain depth                             • Continuous portfolio surveillance with early-
+216	                                                          warning indicators
+217	
+218	
+219	[page 9]
+220	 What sets Finkurve Apart?
+221	
+222	
+223	
+224	      Built on India's                                Purpose-built                                  Scalable Capital &
+225	                                                                                                                                                   Proven Execution
+226	  Largest Gold Ecosystem                        Gold Intelligence Platform                          Governance Platform
+227	
+228	• 100+ years of family legacy in gold          • Proprietary Loan Origination &               • Strong governance framework
+229	• 25+ years of institutional bullion             Management System                                                                             ₹1,271 Cr           118
+230	                                                                                              • Diversified funding relationships
+231	  leadership through Augmont                   • AI-powered gold appraisal & fraud
+232	  Group                                                                                       • Co-lending partnerships with                AUM                 Branches
+233	                                                 detection
+234	• Presence across the entire gold                                                               leading institutions
+235	  value chain: Bullion, Refining,              • Centralized underwriting & risk
+236	                                                 monitoring                                   • Scalable operating model
+237	  Digital Gold & Lending                                                                                                                          31,500+          0.5%
+238	• Deep relationships across the                • RBI-compliant digital infrastructure         • Trusted promoter reputation
+239	  jewellery ecosystem                                                                                                                       Customers           NNPA
+240	• Decades of proprietary gold                  • Continuous learning from
+241	                                                 ecosystem-wide data
+242	  domain expertise
+243	                                                                                                                                               ~25 mins            Nearly 10x
+244	                                                                                                                                            Average             AUM growth
+245	                                                                                                                                            Disbursal TAT       since FY23
+246	
+247	
+248	
+249	
+250	               >                    >                     >                   >                     >                   >               >                   >
+251	
+252	  Gold             Superior Gold        Better Customer       Lower Risk           Stronger Asset       Lower Cost             Faster              More           Even Better
+253	Ecosystem           Intelligence          Experience           & Fraud                 Quality           of Capital            Growth              Data           Intelligence
+254	
+255	
+256	[page 10]
+257	Promoter Group Legacy
+258	
+259	                         Over 25+ year of gold industry experience
+260	                    25   • Build flagship brand “Augmont” over the past 2 and a half decade
+261	                         • Filed worlds first Gold ETF with SEBI
+262	                         • Expanded into India’s largest digital gold platform serving 37+ mn customers
+263	
+264	                         India’s lending digital gold ecosystem
+265	                         • Refinery to retail tech driven platform
+266	                         • Worlds largest investable gold jewellery product
+267	                         • Extending expertise into gold backed retail lending via “Arvog”
+268	
+269	
+270	                         Proven track record & institutional credibility
+271	                         • Deep domain across gold, finance and risk
+272	                         • Long term institutional building approach with governance first mindset
+273	
+274	
+275	                         Positioned to scale modern fintech lending
+276	                         • Leveraging unique domain knowledge and fintech innovation
+277	                         • Executing gold backed lending with discipline
+278	
+279	
+280	[page 11]
+281	Promoter & Board of Directors
+282	
+283	          Ketan Kothari                              Priyank Kothari                          Nishant                                        Himadri
+284	          Promoter – Director                        Director                                 Ranka                                          Bhattacharya
+285	                                                                                     •   CA with over 18 years of                   •   Portfolio and risk
+286	•   MBA from Nottingham                                                                  experience in                                  management expert with
+287	    University, UK                        •   Masters in Entrepreneurship,
+288	                                              Innovation and Enterprise                  Accountancy and                                over three decades of
+289	•   Over 20 years of                                                                     Finance.                                       experience
+290	    experience in precious                    Development.
+291	                                          •   5+ years as credit and risk            •   As Non-Executive                           •   Worked as central banker
+292	    Metals and Finance.                                                                  Independent Director,                          with the Reserve Bank of
+293	•   Serves as Joint National                  underwriter at Arvog.
+294	                                          •   Key contributor to                         he brings a wealth of                          India and senior positions
+295	    Secretary of the Indian                                                              expertise in financial                         in the Tata Group.
+296	    Bullion & Jewelers                        Company’s product
+297	                                              expansion and                              management and                             •   Currently external
+298	    Association (IBJA).                                                                  compliance.                                    consultant to IMF and
+299	                                              diversification.
+300	                                                                                                                                        the African Development
+301	                                                                                                                                        Bank.
+302	
+303	
+304	
+305	                               Aastha                                    Raghu                                       Mr. CV
+306	                               Solanki                                   Cavale                                      Rajendran
+307	                     •   CS and LLB graduate                    •   Technology professional
+308	                                                                                                           •   With an incredible career
+309	                         with around 5 years of                     with 40 years of cross
+310	                                                                                                               spanning 44 years in the
+311	                         experience in secretarial                  sector experience in                       banking & financial sectors, He
+312	                         compliance and legal                       power, manufacturing,                      brings a wealth of knowledge
+313	                         matters.                                   IT and education                           and invaluable experience.
+314	                     •   Specializes in regulatory              •   Holds engineering, and
+315	                                                                                                           •   Leadership journey includes
+316	                         frameworks and                             management, degree
+317	                                                                                                               serving as the CEO of CSB Bank,
+318	                         corporate governance,                  •   Awarded as honorary                        Chairman & Managing Director
+319	                         providing expert support                   doctorate                                  of Andhra Bank, & CEO of the
+320	                         in these areas.                                                                       (AMFI).
+321	
+322	
+323	[page 12]
+324	Key Managerial Personnel
+325	
+326	          Naveen Kottala,                                   Aakash Jain,                                Kajal Parmar,
+327	          CEO:                                              CFO:                                        CS:
+328	
+329	• 15+ years of experience in gold              • 12+ years of experience across
+330	                                                                                               • ~5 years of experience in
+331	                                                                                                                                      Advisory Board
+332	  loan and MSME lending                          finance, investment banking
+333	                                                 and corporate advisory                          secretarial and regulatory
+334	• Expertise in retail lending, MSME
+335	                                               • Expertise in corporate finance,                 compliance
+336	  products, analytics and
+337	                                                 valuations, fundraising and                   • Expertise in corporate secretarial
+338	  technology-led sourcing
+339	                                                 governance                                      matters and regulatory
+340	• Formerly held leadership roles at
+341	                                               • Spent 7 years at PwC, followed                  compliance
+342	  Unimoni and Augmont; also
+343	                                                                                               • Company Secretary and
+344	  served as Head of Analytics at                 by a role at a SEBI-registered                                                                Dr. Anup Shah
+345	                                                 merchant bank.                                  Compliance Officer of the
+346	  CARE
+347	                                               • Chartered Accountant and                        company
+348	• Analytics. MBA, IIM Lucknow;
+349	                                                 Company Secretary                             • Qualified Company Secretary
+350	  B.Tech, NIT Bhopal                                                                                                                  • 19+ years of experience in tax
+351	                                                                                                 from ICSI
+352	                                                                                                                                        advisory, restructuring and
+353	                                                                                                                                        international tax
+354	                                                                                                                                      • Expertise in taxation, business
+355	                                                                                                                                        restructuring and corporate
+356	                                 Raju Shah,                                        Husain Pittalwala                                    finance
+357	                                 CRO:                                              Head of Compliance                                 • Senior Partner at M/s. Pravin P
+358	                                                                                                                                        Shah & Co., Mumbai
+359	                      • 20+ years of experience in risk                • 5+ years of experience in                                    • Serves on the boards of Adani
+360	                        management across NBFCs and                      secretarial and regulatory                                     Wilmar and JM Financial
+361	                        financial services                               compliance.                                                    Services; author of finance and
+362	                                                                       • Expertise in corporate                                         taxation publications
+363	                      • Expertise in credit risk, digital                governance, regulatory reporting
+364	                        lending, fraud risk and                          and compliance.
+365	                        governance                                     • Former senior roles at Hiranandani
+366	                      • Former Head of Risk & Policy at                  Financial Services and Svamaan
+367	                        Capri Global Capital, with                       Financial Services.
+368	                        leadership roles across leading                • Company Secretary, Lawyer &
+369	                        NBFCs                                            Cost and Management
+370	                                                                         Accountant.
+371	
+372	
+373	[page 13]
+374	  Arvog: Journey So Far                                                                                         FY26
+375	                                                                                                               INR 111.5 cr
+376	                                                                                                               raised through
+377	  From Legacy Leasing To on NSE-listed Retail Financial Force                                  FY25            preferential
+378	                                                                                               Partnered       issue of equity
+379	                                                                              FY23-24                          shares
+380	                                                              FY22                             with RBL Bank
+381	                                                              Divested        Shifted focus    for co-         Listed on NSE
+382	                                                              from Arvog      on retail loan   lending of
+383	                                                                              book and         gold loans      Transition to
+384	                                                              Forex to
+385	                                              FY21                            disbursed INR                    MLNBFC
+386	                                                              focus on                         Entered debt
+387	1984 - 2010                                   Partnered       core            500 cr                           Partnership
+388	                            FY20                                                               capital
+389	Company                                       with            segments,       Disbursed INR                    with Godrej for
+390	was            FY12         Raised INR                                                         markets with
+391	                                              'Augmont        used the        1,200+ cr        INR 49 cr       co-lending
+392	incorporate    Name         113 cr through    Gold for All'   proceeds to                      maiden NCD
+393	d in 1984 as   changed to   preferential      for retail      expand gold                      raise
+394	Sanjay         Finkurve     issue of equity   Gold Loans      loan services
+395	Leasing Ltd.   Financial    shares
+396	               Services
+397	And was
+398	acquired by
+399	Kothari
+400	Family in
+401	2010
+402	
+403	
+404	[page 14]
+405	  Operates within India’s Integrated Gold Ecosystem
+406	
+407	                             Augmont’s Integrated Gold Ecosystem                                                                    WIDE ECOSYSTEM REACH
+408	
+409	                                                                                                                                Augmont’s deep presence across
+410	                                                                                                                                the gold value chain connects
+411	   Gold               Refining               Bullion                Digital                  Gold                               with millions of customers and
+412	                                                                                                                   Jewellery
+413	  Import                                   Distribution             Gold                      ETF                               partners at multiple touchpoints
+414	                                                                                                                  Marketplace
+415	
+416	
+417	
+418	                                             Insights on gold purity, pricing, customer behaviour, transactions and lifecycle
+419	     CUSTOMER & GOLD INTELLIGENCE            across the ecosystem
+420	                                                                                                                                 FINKURVE FINANCIALS
+421	
+422	                                                                                                                                       Increased Gold Loan
+423	                                 Opportunity Pools For Finkurve Financials                                                             Origination
+424	
+425	       Wider Customer                Lower-friction                  Better Customer                   Higher Customer                 Stronger Customer
+426	       Access                        Sourcing                        Intelligence                      Monetization                    Growth
+427	                                                                                               Engagement across the gold
+428	Access to a large base      Leverage existing                Deeper understanding of
+429	                                                                                               lifecycle enables multiple              Cross-sell & Long-term
+430	of customers across         relationships and                gold ownership,
+431	                                                                                               lending and cross-sell                  Customer Relationships
+432	Augmont’s ecosystem         distribution channels for        behaviour and capability
+433	                                                                                               opportunities beyond a single
+434	creates a broad pool of     scalable, relationship-led       strengthens targeting
+435	                                                                                               loan
+436	potential borrowers         customer sourcing                and underwriting
+437	
+438	
+439	[page 15]
+440	  From Traditional Gold Lender to Integrated Gold Platform
+441	   Why Finkurve is Structurally Different from Conventional Gold Loan NBFCs
+442	
+443	
+444	                                                     Traditional Gold Loan NBFC                                          Finkurve Financial Services
+445	
+446	
+447	        Business Model                           Operates primarily as lender                             Integrated participant across gold ecosystem
+448	
+449	
+450	
+451	        Customer Acquisition                    Origination creates the first customer touchpoint         Access to customers through multiple platforms
+452	
+453	
+454	                                                                                                          Connected with refining, bullion, digital gold, jewellery
+455	        Ecosystem Connectivity                   Limited ecosystem connectivity
+456	                                                                                                          and lending
+457	
+458	
+459	                                                                                                          Built on decades of gold domain expertise and
+460	        Foundation                               Focused on lending products
+461	                                                                                                          infrastructure
+462	
+463	
+464	                                                                                                          Proprietary gold knowledge supported by technology-
+465	        Underwriting                             Conventional underwriting
+466	                                                                                                          driven processes
+467	
+468	
+469	                                                                                                          Multiple engagement opportunities across the
+470	        Customer Relationship                    Single-product customer relationship
+471	                                                                                                          customer lifecycle
+472	
+473	
+474	Finkurve combines technology, gold domain expertise and ecosystem integration to build a differentiated lending franchise in one of India's fastest-growing secured lending
+475	                                                                             segments
+476	
+477	
+478	[page 16]
+479	          India's Gold Economy is Creating a Multi-Decade Lending Opportunity
+480	
+481	           India's Vast Gold Wealth Continues to Unlock a Rapidly Expanding Lending Opportunity
+482	
+483	                                                                                                       Growth Drivers
+484	                Household Gold Wealth
+485	
+486	             Rs. 394 Lakh Cr                                        Penetration Expansion                                Shift Towards Organized Lending
+487	                            ▼                                       Only a small portion of household                    ~60% of the market remains with
+488	                                                                    gold is monetized today, leaving                     informal lenders, creating a long
+489	                 Eligible Gold Collateral
+490	                                                                    significant room for increased                       runway for organized NBFCs.
+491	             ~27,000 tonnes                                         adoption.
+492	
+493	                            ▼                                       Opportunity: ~ Rs 40,000 Cr annually                 Opportunity: ~Rs 10,000+ Cr annually
+494	            Current Total Gold Loan Market
+495	
+496	              ~Rs 17 Lakh Cr
+497	                                                                                                                         Gold Price Appreciation
+498	                            ▼                                       Fresh Gold Added Every Year
+499	                                                                                                                         Rising gold prices enhance collateral
+500	                       Penetration
+501	                                                                    India imports ~600–700 tonnes of                     value, increasing lending capacity
+502	                       ~4.3%                                        gold annually, continually                           without additional customer
+503	                                                                                                                         acquisition.
+504	                                                                    expanding the collateral pool.
+505	                            ▼
+506	                                                                                                                        ~Rs 10 lakh Cr Current organized player
+507	                                                                    Potential lending opportunity:                      market share
+508	              Massive Headroom Ahead                                ~Rs 34,000 Cr annually                              Rise in price creates additional opportunity
+509	
+510	
+511	              Incremental Annual Lending
+512	                     Opportunity                                                           ~Rs. 93,150 Cr Annually
+513	Source: HDFC Securities – Sector Thematic: Gold Loan NBFCs Report
+514	
+515	
+516	[page 17]
+517	  Shifting focus to Retail Gold Loans
+518	 A decisive strategic transformation moving away from corporate lending toward a retail-first gold loan model that now dominates the loan book.
+519	
+520	                                                                                                           Gold Loan %
+521	   Corporate Loans                        Strategic Shift
+522	   Legacy focus — high-value,             A deliberate pivot toward                                       91%            91%   93%   95%     96%
+523	                                                                                                89%
+524	   lower-volume institutional lending     accessible, asset-backed retail
+525	   with concentrated risk exposure.       products anchored by gold                  75%
+526	                                          collateral.
+527	
+528	   Retail Gold Loans                                                                             Product Mix: Gold Loans as % of Loan Book
+529	   Now the dominant product, high-volume, low-risk, and deeply
+530	   embedded in the loan book.                                                39%
+531	
+532	
+533	
+534	
+535	           Lower                Faster              Scalable                  FY23     FY24      FY25    Q1FY26 Q2FY26 Q3FY26 Q4FY26 Q1FY27
+536	            Risk               Capital                Retail
+537	                               Rotation              Growth
+538	                                                                                                                Period
+539	
+540	
+541	
+542	
+543	                          39%                                                                             96%
+544	                        Starting Point                                                                  Current Share
+545	         Gold loans began at just 39% of the book,                                         Retail Gold Loans now represent 96% of the
+546	       reflecting a predominantly corporate lending                                        total loan book, a near-complete portfolio
+547	                         posture.                                                                        transformation.
+548	Retail Gold Loans now dominate the loan book, a strategic realignment that has fundamentally reshaped the institution's risk profile, revenue mix,
+549	                                                            and customer base.
+550	
+551	
+552	[page 18]
+553	  Key Offerings with Retail Focus
+554	  A dual-engine lending strategy combining the security of physical collateral with the agility of cash-flow underwriting.
+555	
+556	
+557	
+558	                   SECURED                                                                  UNSECURED
+559	
+560	
+561	                  Asset-Backed Secured Credit                                             Cash-Flow Based Credit
+562	                  Gold loans secured against physical gold collateral,
+563	                  with loan amounts determined by asset value and RBI-
+564	                  prescribed LTV norms.
+565	                     Origination Model                                                       Origination Model
+566	                     Direct, branch-led operations drive operational control,                Partnership led approach enables capital
+567	                     faster disbursement, and consistent asset quality.                      efficient expansion and diversified retail portfolio
+568	
+569	
+570	
+571	                     Underwriting Approach                                                   Underwriting Approach
+572	                     Conservative, collateral-led underwriting with                          Credit assessment via bureau, bank statements, and
+573	                     continuous monitoring of asset coverage                                 affordability checks
+574	                     throughout the loan lifecycle.
+575	
+576	
+577	                     Risk Driver                                                             Risk Driver
+578	                                                                                             Customer cash flow, credit behavior, and repayment
+579	                     Asset value and collateral coverage
+580	                                                                                             capacity serve as key determinants of loan
+581	                     loan exposure is always anchored to the
+582	                                                                                             eligibility and portfolio quality
+583	                     underlying physical gold.
+584	
+585	
+586	
+587	
+588	    High Velocity                                Collateral Coverage                        RBI-Compliant LTV                              Capital Efficient
+589	Fast disbursement for immediate liquidity   Physical gold as primary security buffer   Loan sizing governed by regulatory norms       Partnership model scales without heavy capex
+590	
+591	
+592	[page 19]
+593	Gold Loan Strengths
+594	
+595	
+596	STRONG CENTRALIZED SYSTEM                                   LOWEST FRAUD LEVELS                             DUAL-CHECKING MECHANISM
+597	  All branches operate on a centralized                   Continuous video monitoring and in-person            Maker checker framework ensures that every
+598	  platform with real-time tracking of loans,              verification reduce unauthorized access and          transaction and vault access is verified by
+599	  disbursals, and repayments.                                                                                  two independent parties.
+600	                                                          operational lapses.
+601	
+602	  Vault access requires dual OTPs from both               AI tools like face detection, crowd                  Head office approval combined with branch
+603	  branch and head office, ensuring central                monitoring & object detection minimize               verification strengthens security and
+604	  oversight and accountability.                           internal and external fraud risk.                    compliance.
+605	
+606	  AI driven monitoring and video surveillance             AI driven image processing screens and               Supports consistent, safe, and disciplined
+607	  reinforce centralized control and operational           assesses gold, enhancing precision and               operations across all branches.
+608	  transparency.                                           preventing valuation error.
+609	
+610	
+611	
+612	
+613	                                                  Our Gold Loan Journey – Secure. Simple. Swift.
+614	
+615	
+616	
+617	
+618	  Customer                                KYC                          Gold                             Disbursal                       25 min
+619	  Sourcing                              Approvals                    Appraisal                                                         Avg. TAT
+620	
+621	
+622	[page 20]
+623	Pan India Presence
+624	
+625	
+626	                                                             Arvog Gold Loan Branches & Avg. GL AUM (Rs. Cr)
+627	               Gold Loan states
+628	               & No of Touchpoints
+629	                                                                                                     118
+630	
+631	                                                                                            105
+632	                                         118 Branches
+633	                                         Digital presence                          73
+634	
+635	                                                                         60
+636	
+637	                                                                                             9.9     10.3
+638	
+639	                                                               31
+640	          57
+641	                             Telangana                  17
+642	                                                                                  5.3
+643	          41           Andhra Pradesh
+644	    13                                                  3      2.8        3.2
+645	                 Karnataka
+646	
+647	         07          Tamil Nadu                       FY22    FY23       FY24    FY25       FY26    Q1FY27
+648	
+649	                                                                     Branch     Avg Gold loan AUM
+650	
+651	
+652	[page 21]
+653	 Expansion Strategy
+654	               Branch Expansion:
+655	               •       Cluster-led expansion in high gold-ownership Tier-2/3 markets to drive repeat borrowing, operating leverage, and predictable AUM
+656	                       growth.
+657	               •       Expand branches in regions with high household gold holdings to drive secured credit growth.
+658	               •       Enter underbanked locations to formalize credit and replace informal lending with organized gold loans.
+659	
+660	                   Technology Enablement:
+661	                   •   End-to-end digitized origination and servicing to drive faster turnaround and higher throughput.
+662	                   •   Data-driven underwriting, pricing, and monitoring to optimize risk-adjusted yields and portfolio quality.
+663	                   •   Centralized risk, compliance, and analytics to enhance governance, branch productivity, repeat rates, and customer lifetime
+664	                       value.
+665	
+666	
+667	                   Execution:
+668	                   •   Digitized loan origination and servicing for faster turnaround and higher throughput.
+669	                   •   Data-driven underwriting and pricing to maximize risk-adjusted yields.
+670	                   •   Centralized risk, compliance, and analytics to ensure strong governance, productivity, and repeat business.
+671	
+672	
+673	
+674	
+675	IMPACT:     Augmont’s standardized, tech-led model enables rapid branch rollout (30–45 days from planning to launch), allowing fast,
+676	            capital-efficient scaling in Tier-2/3 cities where gold ownership is high and competition remains fragmented.
+677	
+678	
+679	
+680	
+681	     Augmont Delivers predictable, high-quality AUM growth through faster market entry, repeat borrowing, and disciplined risk governance
+682	
+683	
+684	[page 22]
+685	Lenders Profile
+686	          NBFCs                              Banks
+687	
+688	
+689	
+690	
+691	                  Co-lending of Gold Loans           AIF
+692	
+693	
+694	[VISUAL page 22 -- image-only content not present in the PDF text layer. Tesseract OCR was attempted (pdftoppm 200-300dpi + tesseract, multiple settings/resolutions/crops) and did not complete within a practical time budget in this environment (each attempt exceeded 100s and was killed; empirically confirmed non-functional this run on pages 1-5 and 22 of this deck). Content below transcribed by direct visual reading of the rendered page image.]
+695	[Diagram: grid of lender logo tiles grouped under four headers -- NBFCs, Banks, Co-lending of Gold Loans, AIF. Logos transcribed by name below.]
+696	NBFCs: Ambit Finvest; Bajaj Finance Limited; Shriram Finance; Oxyzo; Maanaveeya; Credit Saison India; Paul Merchants; Anand Rathi Global Finance; STCI Finance Limited; Tourism Finance Corporation of India Ltd.; IKF Finance; Northern Arc; MAS Financial; Nabkisan; SMC Finance
+697	Banks: State Bank of India; ICICI Bank; AU Small Finance Bank; Suryoday Small Finance Bank (A Bank of Smiles); City Union Bank (CUB); Capital Small Finance Bank; RBL Bank; CSB Bank; DCB Bank; Bandhan Bank
+698	Co-lending of Gold Loans: Godrej Finance; RBL Bank
+699	AIF: Franklin Templeton Investments
+700	
+701	[page 23]
+702	Co-Lending Partnership With Godrej
+703	
+704	
+705	                                 Company has entered a strategic co-lending
+706	                                 partnership with Godrej Finance to jointly offer
+707	                                 gold loan products under the Reserve Bank of
+708	                                 India’s co-lending framework.
+709	
+710	                                 The co-lending model enables Arvog to scale its
+711	                                 gold loan portfolio efficiently, enhancing capital
+712	                                 rotation and liquidity management while
+713	                                 maintaining disciplined and conservative risk
+714	                                 practices.
+715	
+716	                                 This milestone marks a major advancement in
+717	                                 Arvog’s commitment to delivering accessible,
+718	                                 technology-driven gold loan solutions while
+719	                                 strengthening institutional partnerships.
+720	
+721	
+722	[page 24]
+723	Funding Mix & Cost of Borrowing
+724	
+725	
+726	                 Funding Mix                                     Cost of borrowing (%)
+727	            13.8%
+728	                                                                     11.5    11.2     11.1
+729	                                                          10.2
+730	                                 37.6%
+731	
+732	
+733	
+734	
+735	         48.6%
+736	                                                         FY24        FY25   FY26    Q1 FY27
+737	      Term Loans    NCD   OD/WCDL/ICDs
+738	
+739	
+740	
+741	
+742	Diversified borrowing mix driving reduction in average cost of funds, ensuring a stable, quality
+743	                                         funding base
+744	
+745	
+746	[page 25]
+747	Overall Portfolio Analysis - Quarterly
+748	
+749	                          Total AUM (INR cr)                                            Collection Efficiency
+750	
+751	    14               10                14         21           38
+752	                                                                           92.3%      93.5%      94.9%      97.9%      98.0%
+753	                                                              1,270
+754	                                                 1,096
+755	                                     833
+756	                     671
+757	    542
+758	
+759	
+760	
+761	   Q1FY26         Q2FY26          Q3FY26         Q4FY26       Q1FY27       Q1FY26     Q2FY26     Q3FY26     Q4FY26     Q1FY27
+762	    Off book AUM included in the over all AUM
+763	
+764	
+765	
+766	
+767	                                GNPA (%)                                                       NNPA (%)
+768	
+769	                          1.1%                                                            0.9%
+770	
+771	                                                                    0.5%                                                   0.5%
+772	                                          0.7%                                                       0.5%
+773	         0.4%                                          0.1%                                                     0.1%
+774	                                                                               0.2%
+775	
+776	   Q1FY26         Q2FY26          Q3FY26         Q4FY26       Q1FY27       Q1FY26     Q2FY26     Q3FY26     Q4FY26     Q1FY27
+777	
+778	
+779	[page 26]
+780	        AUM Breakup
+781	
+782	                         AUM Breakup (Including off book)                                                   AUM Composition (%)
+783	
+784	
+785	
+786	
+787	                                                                           9             2.9%             2.2%            1.6%            1.0%            0.8%
+788	                                                                                  42                              6.7%                            3.8%            3.3%
+789	                                                                                                  5.6%                            4.9%
+790	                                                            11
+791	                                                                    42
+792	
+793	                                              14
+794	                                                     41
+795	                                14
+796	                                       45                                 1,219                                           93.4%           95.2%           95.9%
+797	                 16                                                                     91.5%             91.1%
+798	                         30                                1,043
+799	                                             778
+800	                               612
+801	                496
+802	
+803	
+804	
+805	
+806	              Q1FY26          Q2FY26        Q3FY26        Q4FY26         Q1FY27        Q1FY26            Q2FY26          Q3FY26          Q4FY26          Q1FY27
+807	
+808	
+809	
+810	                      Other            Personal Loan               Gold Loan                    Others             Personal Loan                 Gold Loan
+811	
+812	
+813	
+814	
+815	*Includes Off book AUM
+816	
+817	
+818	[page 27]
+819	        Segment Wise Loan Yields
+820	
+821	                                 Interest Income (in Crs)                             Interest Income Composition (%)
+822	
+823	
+824	
+825	                                                                      0.1
+826	                                                                               1.5%         1.2%         1.0%        0.7%          0.2%
+827	                                                         0.5
+828	                                                                      18.2                                                         24.4%
+829	                                                                                                         28.1%       30.1%
+830	                                                                                            40.4%
+831	                                             0.5         19.9                 45.3%
+832	                                 0.6
+833	
+834	                 0.6                         14.4
+835	                                19.3
+836	                17.8                                                  56.4
+837	                                                                                                         70.9%                     75.4%
+838	                                                                                                                     69.2%
+839	                                                         45.8                               58.4%
+840	                                             36.3                             53.3%
+841	                                27.9
+842	                21.0
+843	
+844	
+845	
+846	              Q1FY26           Q2FY26      Q3FY26       Q4FY26      Q1FY27   Q1FY26        Q2FY26      Q3FY26       Q4FY26       Q1FY27
+847	
+848	
+849	
+850	                       Other            Personal Loan           Gold Loan         Others            Personal Loan           Gold Loan
+851	
+852	
+853	
+854	
+855	*Includes Off book AUM
+856	
+857	
+858	[page 28]
+859	        Gold Loan Analysis - Quarterly
+860	
+861	                                        Gold Loan                                               Gold Holdings (Kg)
+862	        1400                                                                 22%                                              1,167
+863	                                               20.9%
+864	        1200                    20.1%                                                                                1,076
+865	                                                         20.1%      20.0%
+866	        1000                                                                                              971
+867	                                                                             20%
+868	                  19.0%
+869	         800                                                                                 889
+870	         600                                                                        796
+871	                                                                             18%
+872	         400
+873	         200
+874	                   496            612           778      1,043      1,219
+875	           0                                                                 16%
+876	                 Q1FY26        Q2FY26         Q3FY26    Q4FY26     Q1FY27          Q1FY26   Q2FY26      Q3FY26       Q4FY26   Q1FY27
+877	                         GL (incl Off book)            Yield on Avg book
+878	
+879	
+880	                           Average Ticket Size (INR in ‘Lakh)                                        LTV Ratio (%)
+881	                                                          1.81        1.87
+882	                                               1.52
+883	                1.31            1.34                                                                                 72.2%    77.3%
+884	                                                                                   69.1%    64.4%        65.8%
+885	
+886	
+887	
+888	
+889	               Q1FY26         Q2FY26          Q3FY26     Q4FY26     Q1FY27         Q1FY26   Q2FY26      Q3FY26       Q4FY26   Q1FY27
+890	
+891	
+892	*Includes Off book AUM
+893	
+894	
+895	[page 29]
+896	Key Ratios
+897	
+898	                Capital Adequacy                                Return on Average Equity
+899	
+900	
+901	   57.3%                                                                                   9.4%    9.7%
+902	                                                     8.1%                   8.4%
+903	             47.1%                                             7.3%
+904	                       39.1%
+905	                                 31.0%     26.6%
+906	
+907	
+908	
+909	
+910	  Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26    Q1FY27   Q1 FY26   Q2 FY26     Q3 FY26     Q4 FY26     Q1FY27
+911	
+912	
+913	            Return on Average Loan Asset                              Debt to Equity (x)
+914	
+915	   4.2%      3.9%      3.7%                                                                        2.88
+916	                                 3.3%
+917	                                            2.9%                                           2.42
+918	                                                                             1.67
+919	                                                               1.15
+920	                                                     0.73
+921	
+922	
+923	  Q1 FY26   Q2 FY26   Q3 FY26   Q4 FY26    Q1FY27   Q1 FY26   Q2 FY26     Q3 FY26     Q4 FY26     Q1FY27
+924	
+925	
+926	[page 30]
+927	  Profit & Loss Statement – Q1 FY27
+928	
+929	Particulars (INR cr)                  Q1 FY27   Q4 FY26   QoQ (%)   Q1 FY26   YoY (%)
+930	Revenue From Operations
+931	 Interest Income                       74.79     66.08               26.60
+932	 Fees And Commission Income             0.06      0.16               13.24
+933	 Net Gain On Fair Value Changes         0.26      1.09                0.05
+934	Total Revenue From Operations          75.10     67.33    11.54%     39.88    88.32%
+935	Other Income                            0.72      1.89                0.16
+936	Total Income                           75.82     69.21    9.55%      40.04    89.37%
+937	Finance Costs                          26.72     19.89                7.08
+938	Fees And Commission Expenses           19.70     22.78               12.73
+939	Net Loss On Fair Value Changes                    0.00
+940	Impairment On Financial Instruments     0.20      7.10                4.78
+941	Employee Benefits Expense              13.47      5.37                3.96
+942	Depreciation                            1.13      1.34                0.75
+943	Other Expenses                          3.39      2.32                3.90
+944	Total Expenses                         64.62     58.79               33.20
+945	Profit Before Tax                      11.21     10.42    7.54%       6.83    64.06%
+946	Tax Expense                             2.77      2.38                1.74
+947	Profit For The Period                   8.44      8.04    4.95%       5.09    65.78%
+948	
+949	
+950	[page 31]
+951	Profit & Loss Statement – Annual
+952	
+953	 Particulars (INR Cr)                 FY26     FY25     YOY (%)
+954	Revenue From Operations
+955	 Interest Income                      204.35   134.72
+956	 Fees And Commission Income             1.02     4.06
+957	 Net Gain On Fair Value Changes         1.85     1.73
+958	Total Revenue From Operations         207.22   140.51   47.48%
+959	Other Income                            2.65     0.58
+960	Total Income                          209.86   141.09   48.75%
+961	Finance Costs                          48.92    16.36
+962	Fees And Commission Expenses           69.73    61.93
+963	Net Loss On Fair Value Changes          0.00     0.00
+964	Impairment On Financial Instruments    22.17    17.96
+965	Employee Benefits Expense              18.23    11.49
+966	Depreciation                            3.42     1.05
+967	Other Expenses                         12.79     8.66
+968	Total Expenses                        175.27   117.44
+969	Profit Before Tax                      34.60    23.65   46.31%
+970	Tax Expense                             8.56     6.21
+971	Profit For The Period                  26.03    17.43   49.33%
+972	
+973	
+974	[page 32]
+975	 Balance Sheet as on 31st March 2026
+976	
+977	                                      As On 31st   As On 31st                                    As On 31st   As On 31st
+978	 Liabilities (INR Cr)                                            Assets (INR Cr)
+979	                                       Mar’26       Mar’25                                        Mar’26       Mar’25
+980	Financial Liabilities                                           Financial Assets
+981	  Total O/S Dues Of Micro                                        Cash And Cash Equivalents        102.12        15.45
+982	                                        13.50        10.05
+983	  Enterprises And Small Enterprises
+984	  Total O/S Dues Of Creditors Other                              Bank Balance Other Than Above                    -
+985	                                         6.90         6.55
+986	  Than Above                                                     Loans                            1,070.34     426.02
+987	  Borrowings (Debt Security)           293.25        55.88
+988	                                                                 Investments                        7.41         5.3
+989	  Borrowings (Other Than Debt
+990	                                       542.68       181.29       Other Financial Assets            24.95        13.84
+991	  Security)
+992	  Lease Liability                       11.21         3.91
+993	 Other Financial Liabilities            16.29         10.7      Non-financial Assets
+994	Non-financial Liabilities                                        Current Tax Assets (Net)           0.30          -
+995	 Current Tax Liabilities (Net)                        0.55       Deferred Tax Assets (Net)                       0.16
+996	 Provisions                              0.41         0.67       Property, Plant And Equipment     15.66         3.63
+997	 Deferred tax liabilities (net)          1.87
+998	                                                                 Capital Work-in-progress                        7.56
+999	 Other Non-financial Liabilities         2.01         0.94
+1000	                                                                 Right Of Use Assets               10.78         3.88
+1001	Equity
+1002	                                                                 Other Intangible Assets            0.08         0.13
+1003	 Equity Share Capital                   14.01        12.69
+1004	                                                                 Other Non Financial Assets         1.40         0.97
+1005	 Other Equity                          330.90        193.7
+1006	Total Liabilities And Equity          1,233.04      476.94      Total Assets                     1,233.04      476.94
+1007	
+1008	
+1009	[page 33]
+1010	CSR
+1011	
+1012	
+1013	
+1014	
+1015	      As part of our ongoing CSR initiatives,
+1016	      we conducted a distribution program
+1017	      at Balasadan in Kamareddy. District
+1018	      Child Protection Officer Smt. Sravanthi
+1019	      and     Child   Welfare    Committee
+1020	      member Smt. Swarnalatha distributed
+1021	      laptops and school bags to the
+1022	      children, reinforcing our continued
+1023	      commitment to supporting their
+1024	      education and well-being.
+1025	
+1026	
+1027	[page 34]
+1028	CSR
+1029	
+1030	
+1031	
+1032	
+1033	      As part of our CSR initiative, we had the
+1034	      privilege of distributing laptops and school
+1035	      bags to children at Adarsha Foundation for
+1036	      Boys and Girls, Hyderabad, contributing to
+1037	      their educational journey and empowering
+1038	      them with essential learning resources.
+1039	
+1040	
+1041	[page 35]
+1042	CSR
+1043	
+1044	
+1045	
+1046	
+1047	Nizamabad District Collector Smt. Ila Tripathi distributed laptops
+1048	and school bags to children of Manavatha Sadan orphanage. This
+1049	initiative was carried out as part of a CSR program. The support will
+1050	help enhance their learning opportunities.
+1051	A meaningful step towards empowering underprivileged children.
+1052	
+1053	
+1054	[page 36]
+1055	Stakeholders as on 30th June 2026
+1056	
+1057	              Shareholding (%)
+1058	                                                        BSE Ticker                    508954
+1059	
+1060	
+1061	
+1062	   30.6%                                                NSE Symbol                   FINKURVE
+1063	
+1064	
+1065	
+1066	                                                        No. of Shares outstanding   14,01,43,988
+1067	
+1068	
+1069	                                              56.2%     No. of Shareholders           3,500+
+1070	
+1071	
+1072	   13.2%
+1073	                                                        No. of Bondholders            24,000+
+1074	
+1075	
+1076	                                                                                    Non Banking
+1077	                                                        Industry                     Financial
+1078	   Promoters Group (Ketan Kothari & Others)
+1079	                                                                                     Company
+1080	   Thomas John Muthoot (On behalf of Muthoot Bankers)
+1081	   Other Public Shareholders
+1082	
+1083	
+1084	[page 37]
+1085	                                            Thank You!
+1086	
+1087	
+1088	
+1089	For more information please contact:
+1090	                                       Adfactors PR – Investor Relations
+1091	Finkurve Financial Services Ltd.
+1092	                                       Mr. Smit Shah / Ms. Forum Goshar
+1093	Mr. Aakash Jain
+1094	                                       Email id –
+1095	Email id –
+1096	                                       smit.shah@adfactorspr.com /
+1097	investorrelations@arvog.com
+1098	                                       forum.goshar@adfactorspr.com
+1099	
+1100	
+
+```yaml
+stage: A1-extractor
+company: "finkurve"
+quarter: "q1fy27"
+doctype: "presentation"
+model: claude-sonnet-5
+status: complete
+page_count: 37
+formfeed_count: 37
+line_count: 1100
+unit_convention: "Crores (Rs./INR cr); one chart (Average Ticket Size, page 26) in Lakhs; sector macro figures on page 21 in Lakh Crore"
+conversion_factor_to_cr: "Crores -> x1 (primary); Lakhs -> x0.01 (Average Ticket Size chart only)"
+ocr_pages: [2, 6, 22]
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/finkurve-q1fy27/work/extract_presentation_finkurve_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

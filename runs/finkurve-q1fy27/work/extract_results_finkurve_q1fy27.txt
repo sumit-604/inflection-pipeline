@@ -1,0 +1,784 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_finkurve_q1fy27.pdf
+source_path: /home/user/inflection-pipeline/runs/finkurve-q1fy27/inputs/results_finkurve_q1fy27.pdf
+doctype: results (Reg 33 Unaudited Financial Results + Board Outcome + Limited Review Report + Security Cover Certificate + Annexures)
+company: Finkurve Financial Services Ltd (Arvog), NBFC gold-loan lender
+ticker: finkurve
+quarter_label_filing: quarter ended 30th June 2026 (as printed in source; company/statutory FY convention: Q1 FY27)
+page_count_pdfinfo: 13
+tool_primary: pdftotext -layout (poppler 24.02.0)
+tool_ocr_fallback: pdftoppm -jpeg -r 300 (poppler) + tesseract 5.3.4 (eng) for rasterisation;
+  pages 10 and 11 additionally required 90-degree rotation (content authored landscape
+  within a portrait page canvas; pdfinfo Page rot=0, i.e. no rotation flag was set at the
+  PDF level, but the drawn content itself is rotated) and, because dense-table automated
+  OCR output remained unreliable even after rotation and resolution tuning (150dpi and
+  300dpi both tried), final transcription of pages 10-11 was produced by direct visual
+  inspection of the rotated 300dpi rasterisation (and zoomed crops thereof) rather than by
+  trusting raw tesseract text. This is disclosed per-line below with [OCR page N] markers.
+unit_convention: Lakhs (Rs in Lakhs, stated explicitly in the Statement of Unaudited
+  Financial Results header: "Rs in Lakhs"; Annexure 3/4 fund-raising tables and the CLA
+  loan-performance table in Note 4 are stated in Rs Crores as printed - see inline units)
+conversion_factor_to_cr: Lakhs -> x0.01 (divide by 100) to reach Rs Crores. Text below is
+  NOT converted; every downstream reader must apply x0.01 to any figure sourced from a
+  table headed "Rs in Lakhs" (Statement of Unaudited Financial Results, Note 7 Ratios,
+  Note 4 CLA table sub-items in Lakhs, Annexure A security-cover Rs in Lakhs figures, and
+  the Appendix I table on pages 10-11 which is also in Rs Lakhs per "Book Value" column
+  figures matching the Annexure A INR Lakhs figures on page 9). Figures already printed in
+  "Rs in crores" (Note 4 "Performance of loans under CLA (Rs in crores)" sub-table, and
+  Annexure 3 / Annexure 4 fund-utilisation tables) require no conversion (factor x1).
+ocr_pages: [10, 11]
+page_coverage: 100% (pages 1-13 of 13 all accounted for; see per-page character-count
+  table below)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026, per Statement of Unaudited
+  Financial Results heading and Board Outcome letter dated August 13, 2026)
+extraction_date: 2026-08-13
+
+PER-PAGE CHARACTER-COUNT TABLE (pdftotext -layout text layer, chars after strip(),
+counted before any OCR substitution):
+  page 1  : 3984 chars - text layer sufficient (Board Outcome cover letter to
+            exchanges, agenda items 1-7 begin)
+  page 2  : 1917 chars - text layer sufficient (Board Outcome agenda items 8-11,
+            meeting close, signature)
+  page 3  : 3976 chars - text layer sufficient (Limited Review Report para 1-4)
+  page 4  :  533 chars - text layer sufficient (Limited Review Report para 5,
+            auditor sign-off; low count is genuine - short page, not image-based)
+  page 5  : 6577 chars - text layer sufficient (Statement of Unaudited Financial
+            Results table + Note 4 CLA table start)
+  page 6  : 5017 chars - text layer sufficient (Notes 5-8, Ratios table, director
+            sign-off)
+  page 7  : 5246 chars - text layer sufficient (Security Cover Certificate letter
+            paras 1-7)
+  page 8  : 2309 chars - text layer sufficient (Security Cover Certificate paras
+            7-9, Restriction on Use, auditor sign-off) - NOTE: pdftotext -layout
+            garbled the column order on this page (text extracted in a scrambled
+            reading order relative to the two-column justified paragraph layout);
+            content below has been reordered into correct reading sequence by
+            comparing against the visible line fragments; no words were added or
+            removed, only sequence corrected. Flagged for downstream awareness.
+  page 9  : 1445 chars - text layer sufficient (Annexure A - security cover
+            narrative certificate, asset cover 110%)
+  page 10 : 1522 chars (raw) - RAW TEXT LAYER IS GARBLED / UNUSABLE despite passing
+            the 100-character threshold; content is Appendix I Security Cover
+            table rendered as rotated content within the page, rasterised at
+            300dpi, rotated -90 degrees, then transcribed by direct visual
+            inspection (tesseract OCR also attempted at 150dpi and 300dpi, both
+            outputs unusable for this dense table and discarded) -> OCR-FALLBACK
+            page, see [OCR page 10] block below
+  page 11 :    0 chars (raw) - EMPTY TEXT LAYER, below 100-char threshold ->
+            OCR-FALLBACK page; rasterised at 300dpi, rotated -90 degrees,
+            transcribed by direct visual inspection (same table header repeated,
+            blank data rows, plus footnotes i-ix) -> see [OCR page 11] block below
+  page 12 : 4796 chars - text layer sufficient (Annexure 3 - deviation/variation
+            statement, Preferential Issue)
+  page 13 : 3193 chars - text layer sufficient (Annexure 4 - deviation/variation
+            statement, NCDs)
+
+OCR-fallback pages: [10, 11] (see methodology note above; both required 90-degree
+  rotation of the rasterised image before content was legible/readable at all,
+  because the printed table content on these two pages is drawn in landscape
+  orientation within a portrait page, with no PDF-level rotation flag set)
+page_coverage: 100%, pages 1-13 of 13, no gaps
+=== END HEADER ===
+
+    1	[page 1]
+    2	          August 13, 2026
+    3	
+    4	          To,                                                                          To,
+    5	          BSE Limited                                                                  National Stock Exchange of India Limited
+    6	          Phiroze Jeejeebhoy Towers, Dalal Street,                                     ‘Exchange Plaza’ Bandra Kurla Complex,
+    7	          Mumbai — 400 001                                                             Bandra (East) Mumbai 400051
+    8	
+    9	          Scrip Code: 508954                                                           NSE Symbol: FINKURVE
+   10	
+   11	
+   12	
+   13	
+   14	           Subject: Outcome of Board Meeting held on August 13, 2026:
+   15	
+   16	          Dear Sii(s) / Madam(s),
+   17	
+   18	          In terms of Regulations 30, 33, 52 and 54 read with Schedule III of SEBI (Listing Obligations and
+   19	          Disclosure Requirements) Regulations, 2015 (“SEBI LODR Regulations”), as amended from time to
+   20	          time we would like to inform that the Board of Directors of the Company, at their meeting held today,
+   21	          ie., August 13, 2026 have inter- alia considered and approved the following:
+   22	
+   23	           1. Unaudited Financial Results of the Company pursuant to Regulation 33 and 52 of LODR for the
+   24	                quarter ended June 30, 2026.
+   25	
+   26	                A copy of the said results along with the Limited Review Report thereon issued by the Statutory
+   27	                Auditors of the Company M/s Ladha Singhal & Associates, Chartered Accountants are enclosed
+   28	                herewith as “Annexure 1” and will be uploaded on the Company’s website i.e. www.arvog.com;
+   29	
+   30	           2. Security Cover Certificate issued by M/s. Ladha Singhal & Associates, Chartered Accountants,
+   31	              Statutory Auditors, pursuant to Regulation 54 of LODR, read with SEBI Master Circular
+   32	                SEBIVHO/DDHS-PoD-1/P/CIR/2025/117 dated August 13, 2025, as amended, for the quarter ended
+   33	                June 30, 2026, and is enclosed herewith as “Annexure 2”;
+   34	
+   35	           3. A statement indicating utilization of issue proceeds and deviation or variation in use of issue proceeds
+   36	              of Preferential Issue of Equity Shares and Share Warrant on Private Placement Basis from the objects
+   37	              of the issue under Regulation 32 (1) and is enclosed herewith as “Annexure 3”
+   38	
+   39	          4. A statement indicating utilization of issue proceeds and deviation or variation in use of issue proceeds
+   40	             of non-convertible securities from the objects of the issue under Regulation 52(7) & 52(7A) r/w SEBI
+   41	                Master Circular dated 21% May, 2024 and is enclosed herewith as “Annexure 4”;
+   42	
+   43	           5. Approved Material Related Party Transactions pertaining to grant of loans to Related Parties from
+   44	              the conclusion of 42° Annual General Meeting till the conclusion of 43 Annual General Meeting
+   45	              to be held in the Year 2027 subject to shareholders approval.
+   46	
+   47	           6. Approved Material Related Party Transactions pertaining to acceptance of loans from Related Parties
+   48	              from the conclusion of 42° Annual General Meeting to the conclusion of 43 Annual General
+   49	              Meeting to be held in the Year 2027 subject to shareholders approval.
+   50	
+   51	           7. Approved Material Related Party Transactions pertaining to making payment/receiving payment
+   52	              towards Service Fees, Commission and Other Charges (including Brand Usage and Tech Support)
+   53	              to/from M/s. Augmont Goldtech Private Limited from the conclusion of 42* Annual General
+   54	              Meeting till the conclusion of 43" Annual General Meeting to be held in the Year 2027 subject to
+   55	
+   56	
+   57	Arvog
+   58	Finkurve Financicl Services Limited   Registered Office: Unit No. 1, Trads Garden, 1st Floor, Building No. A, Kamlo Mils Compound, Lower Forel, Delisle Road, Mumboi — 400013, Maharashi, Indic
+   59	CIN. L63990MH1984P1C032403            Tel: 491 224 2441200 | Email: mail@arvog.com / nkurvefinancial@gmail.com | Web: www.arvog.com
+   60	
+   61	[page 2]
+   62	                shareholders approval.
+   63	
+   64	           8. Approved the power to borrow funds pursuant to the provisions of Section 180(1)(c) & 180(1)(a) of
+   65	              the Companies Act, 2013, not exceeding X 5000 Crore (Rupees Five Thousand Crore Only) subject
+   66	              to shareholders approval.
+   67	
+   68	           9. Approved the increase in threshold of loans/ guarantees, providing of securities and making of
+   69	              investments in securities under section 186 of the Companies Act, 2013 subject to shareholders
+   70	              approval.
+   71	
+   72	           10.Approved the issue of Non — Convertible Debentures on Private Placement Basis subject to
+   73	              shareholders approval.
+   74	
+   75	           1 . Approved the continuation of Directorship of Mr. Himadri Bhattacharya (DIN: 02331474), as Non-
+   76	                Executive Independent Director of the Company, Post Attaining the Age of 75 (Seventy-Five) Year
+   77	                subject to shareholders approval.
+   78	
+   79	           The meeting of Board of Directors commenced at 10:31 A.M. and concluded at 12:09 P.M. (IST)
+   80	
+   81	          Kindly take this information on record.
+   82	
+   83	           Thanking you.
+   84	
+   85	          Yours truly,
+   86	
+   87	          For Finkurve Financial Services Limited
+   88	           Kajal        Digitally signed
+   89	                        by Kajal Kunal
+   90	           Kunal        Parmar
+   91	                        Date: 2026.08.13
+   92	           Parmar       12:17:01 +05'30'
+   93	
+   94	
+   95	          Kajal Parmar
+   96	          Company Secretary & Compliance Officer
+   97	          Membership No. A65484
+   98	
+   99	
+  100	
+  101	
+  102	Arvog
+  103	Finkurve Financicl Services Limited        Registered Office: Unit No. 1, Trads Garden, 1st Floor, Building No. A, Kamlo Mils Compound, Lower Forel, Delisle Road, Mumboi — 400013, Maharashi, Indic
+  104	CIN. L63990MH1984P1C032403                 Tel: 491 224 2441200 | Email: mail@arvog.com
+  105	                                                                              / nkurvefinancial@gmail.com | Web: www.arvog.com
+  106	
+  107	[page 3]
+  108	                                                         LADHA SINGHAL & ASSOCIATES
+  109	              Independent Auditor's Review Report on the ngr?eﬁ§Tlﬁl§Eﬁteﬁ%xEHcﬁ?—ANTS
+  110	              Results of the Company Pursuant to the Regulation 33 of the SEBI (Listing
+  111	              Obligations and Disclosure Requirements) Regulations, 2015, as amended
+  112	
+  113	
+  114	              Review Report to
+  115	              The Board of Directors
+  116	              Finkurve Financial Services Limited,
+  117	
+  118	
+  119	               1. We have reviewed the accompanying statement of unaudited financial results of
+  120	                  Finkurve Financial Services Limited (the “Company”) for the quarter ended June
+  121	                  30, 2026 which are included in the accompanying “Statement of Unaudited
+  122	                  Financial Results for the quarter ended June 30, 2026 together with the relevant
+  123	                  notes thereon (‘the Statement’). The statement has been prepared by the Company
+  124	                  pursuant to Regulation 33 of the SEBI (Listing Obligation & Disclosure
+  125	                  Requirements) Regulations, 2015 (the “Listing Regulations, 2015”) read with SEBI
+  126	                  Circular No. CIR/CFD/FAC/62/2016 dated July 05, 2016.
+  127	
+  128	
+  129	              2, The Statement, which is the responsibility of the Company’s Management and
+  130	                 approved by the Company’s Board of Directors, has been prepared in accordance
+  131	                 with the recognition and measurements principles laid down in Indian Accounting
+  132	                 Standard 34, (Ind AS 34) “Interim Financial Reporting” prescribed under Section
+  133	                 133 of the Companies Act, 2013 as amended, read with relevant rules issued there
+  134	                  under and     other accounting principles       generally accepted in       India.   Our
+  135	                  responsibility is to issue a report on the Statement based on our review.
+  136	
+  137	
+  138	              3. We conducted our review of the Statement in accordance with the Standard on
+  139	                 Review Engagement (SRE) 2410 “Review of Interim Financial Information Performed
+  140	                 by the Independent Auditor of the Entity”, issued by the Institute of Chartered
+  141	                 Accountants of India. This Standard requires that we plan and perform the review
+  142	                 to obtain moderate assurance as to whether the Statement is free of material
+  143	                 misstatement. A review of interim financial information consists of making
+  144	                 inquiries, primarily of persons responsible for financial and accounting matters,
+  145	                 and applying analytical and other review procedures. A review is substantial less in
+  146	                 scope than an audit conducted in accordance with standards on Auditing and
+  147	                 consequently does not enable us to obtain assurance that we would became aware
+  148	                 of all significant matters that might be identified in an audit. Accordingly, we do
+  149	                 not express an audit opinion.
+  150	
+  151	
+  152	              4. Based on our review conducted as above, nothing has come to our attention that
+  153	                 causes us to believe that the accompanying statement of unaudited financial
+  154	                 results, prepared in accordance with the recognition and measurement principles
+  155	                 laid down in the aforesaid Indian Accounting Standard (‘Ind AS’) specified under
+  156	                 section 133 of the Companies Act, 2013 as amended, read with relevant rules
+  157	                 issued thereunder and other accounting principles generally accepted in India, has
+  158	                 not disclosed the information required to be disclosed in terms of Listing
+  159	                 Regulations, including the manner in which it is to be disclosed, or that it contains
+  160	                 any material misstatement.
+  161	
+  162	
+  163	
+  164	
+  165	202, METRO AVENUE, PEREIRA HILL ROAD, OFF ANDHERI KURLA ROAD, NEAR WEH METRO STATION, ANDHERI (E), MUMBALI - 400 099
+  166	                             TEL. (0) : +91 224961 5476/ 9769225215 EMAIL : info@ladhasinghal.com
+  167	
+  168	[page 4]
+  169	5. The unaudited financial results of the Company for the quarter ended 30t June
+  170	   2025, included in the Statement, were reviewed by predecessor auditor whose
+  171	   report dated 13% August, 2025 expressed an unmodified conclusion on those
+  172	   unaudited financial results.
+  173	
+  174	   Our conclusion is not modified in respect of these matters.
+  175	
+  176	
+  177	For Ladha Singhal Associates
+  178	Chartered Accountants
+  179	(Firm Registration No. 12024 1W)
+  180	
+  181	
+  182	
+  183	Py Songd L)
+  184	(Ajay Singhal)
+  185	Partner
+  186	M. No. 104451
+  187	UDIN : 26104451ECLQRV5660
+  188	Place: Mumbai
+  189	Date: 13t August, 2026
+  190	
+  191	[page 5]
+  192	                                                         FINKURVE FINANCIAL SERVICES LIMITED
+  193	                                                             CIN: L65990MH1984PLC032403
+  194	Regd. Office :Unit No 1, 1t Floor, Building No. A, Trade Garden , Kamala Mills Compound, .. Marg, Lower Parel West, Mumbai, Maharashtra 400013
+  195	                                    Tel No: 022-42441200;
+  196	                                                      Email id: finkurvefinancial @gmail.com; Website: www.arvog.com
+  197	
+  198	                                  STATEMENT OF UNAUDITED FINANCIAL RESULTS FOR THE QUARTER ENDED 30TH JUNE, 2026
+  199	                                                                                                                                       % in Lakhs
+  200	 ':; Particulars                                                                                      Quarter ended                 Year ended
+  201	                                                                                 300un26_|             31Mar26        30-un-25      31Mar-26
+  202	                                                                                 Unaudited              Audited       Unaudited      Audited
+  203	   1     Revenue From Operations
+  204	      Interest income                                                                  7,478.68            6,607.67      265983        2043525
+  205	      - Fees and commission income                                                         584                16.00      132351           10172
+  206	      - Net gain on fair value changes                                                    2579               109.28          451          18486
+  207	     Total Revenue from operations                                                     7,510.30            673295        3,987.88      2072183
+  208	  U other income                                                                          7187               18851          1589          26653
+  209	  1t [Total Income (1+11                                                               7,582.18            652146        4,003.73      20,986.36
+  210	  v [expenses
+  211	    Finance costs                                                                      267231              198883         707.82        489210
+  212	    Fees and commission expenses                                                       1363.74             227765        1272564        697262
+  213	    Net loss on fair value changes                                                          =                  =             =               -
+  214	    impairment/ (Reversal of Impairment) on financial nstruments                         2038               71014         478.30        2217.18
+  215	         Employee benefits expense                                                     1,347.08             536.56         396.45       1,823.40
+  216	         Depreciation and smortization expense                                          113.18               13398         7504           30212
+  217	         Other expenses                                                                 33898               23210         39007         127942
+  218	         Total expenses (IV)                                                           646166              587932        332042        17,526.84
+  219	  v [Profit before tax                                                                 112052              1,042.14        683.31       345952
+  220	  VI     |Tax expense                                                                        276.71         238.05         174.20         856.11
+  221	 Vil     |Profit for the period                                                          843.81             804.09         509.11       2,603.41
+  222	 Vil |Other Comprehensive Income                                                                )            37.49            -            3749
+  223	  IX     |Total comprehensive income for the year                                        843.81             841.58         509.11       2,640.91
+  224	
+  225	
+  226	  X |Paid up equity share capital                                                       140128             1,40050       140019         1,40050
+  227	  Xt |Other Equity                                                                                        33,089.57                    33,089.57
+  228	 Xil |Earnings per equity share : (Face value of INR 1 per equity share)
+  229	      Basic (INR)                                                                             050             058            038            189
+  230	      Diluted (INR)                                                                           058             056            038            186
+  231	Notes:
+  232	1. The above results have been reviewed by the Audit Committee and approved by the Board of Directors at its meetings held on 13th August, 2026
+  233	and the Statutory Auditors of the Company has carried out the Limited review of the same.
+  234	
+  235	2. These financial results have been prepared in accordance with Indian Accounting Standards (Ind AS) notified under the Companies (Indian
+  236	Accounting Standards) Rules, 2015 as amended by the Companies (Indian Accounting Standards) (Amendments) Rules, 2016.
+  237	
+  238	3. These financial results have been has been stated in accordance with the modified format as per SEBI's Circular - CIR/ CFD/FAC/62//2016 dated
+  239	July 05, 2016 and in accordance with Ind AS 101 and Schedule Iif (Division Il) to the Companies Act, 2013 as applicable to the Ind AS compliant
+  240	companies.
+  241	
+  242	4. Details of Co-Lending Arrangements (CLA) during the quarter ended June 30, 2026 :
+  243	
+  244	                                                                               Quarter ended
+  245	Sr.No|Particulars                                                              June 30, 2026
+  246	       Co-lending 2s Originating RE
+  247	  1 |Number of CLAs                                                                         2
+  248	  2 |Weighted average rate of interest (per annum)                                     19.96%
+  249	  3 |Fees charged/paid                                                                    ,
+  250	  4 [Broad Sector in which CLA was made                                          Gold Loan
+  251	  5 _|Performance of loans under CLA (Rs in crores)
+  252	         Total Disbursement till June 30, 2026                                               44.23
+  253	         Outstanding* on above Disbursement as on June 30,2026                               37.86
+  254	         Write Off done till June 30, 2026                                                     -
+  255	         Net NPA as on June 30,2026                                                           0.01
+  256	  6      _|Details related to default loss guarantee                                   Nil
+  257	
+  258	[page 6]
+  259	5.The Company has maintained requisite full security cover as per the terms of Offer Document / Information Memorandum and / or Debenture Trust
+  260	Deed sufficient to discharge the principal amount and the interest thereon by way of mortgage of Exclusive/ paripassu charge on current assets, book
+  261	debts, loans & advances and receivables including gold loan receivables of the Company on its Secured Listed Non - Convertible Debentures
+  262	aggregating to Rs. 49,312.37 lakhs as at June 30, 2026.
+  263	
+  264	6. The Company has only single reportable business segment i.¢. ‘financial services ' in terms of requirements of Indian Accounting Standards 108 and
+  265	has its operations located in India.
+  266	
+  267	7. Ratios
+  268	
+  269	
+  270	       Particulars
+  271	                                                                                                  Asat30thiune
+  272	                                                                                                      2026
+  273	                                                                                                               | Endex;:zo:un:-
+  274	                                                                                                                  Forthe period
+  275	
+  276	       (a) Debt-Equity Ratio                                                                                 288
+  277	       (o) Debt service coverage Ratio                                                                                           0.41
+  278	       (c) Interest Service Coverage Ratio                                                                                       138
+  279	       (d) Outstanding Redeemable Preference Shares (quantity and value)                           Not Apolicatle
+  280	       (e ) Capital Redemption Reserve/Debenture Redemption Reserve                                Not Applicable.
+  281	       (f) Net Worth (in lakhs)                                                                        35,436.80
+  282	       (g) Net profit after Tax (in lakhs)                                                                                    84381
+  283	       (h) Earnings per Share (EPS)
+  284	             Basic EPS                                                                                                           060
+  285	             Diluted EPS                                                                                                         059
+  286	       (i) Current Ratio                                                                                     115
+  287	       (i) Long Term debt to warking Capital                                                                 9.33
+  288	       (j) Bad debts to Accounts Receivable Ratio                                                           (0.00)
+  289	       (k) Current Liability Ratio                                                                           031
+  290	       (1 Total debts to Total Assets                                                                        071
+  291	       (m) Debtors Turnover Ratio                                                                                     Not Asplicable
+  292	       (n) Inventory Ratio                                                                                           Not Applicable
+  293	       (0 ) Operating Margin Ratio                                                                                             15.24
+  294	       (p) Net Profit Margin ratio                                                                                             11.27
+  295	       (a) Sector Specific Ratios :
+  296	            (ia) Gross NPA (INR in lacs)                                                                  665.65
+  297	            (ib) Gross NPA ratio (%)                                                                       0.54%
+  298	            (iia) Net NPA (INR in lacs)                                                                   596.11
+  299	            (iib) Net NPA ratio (%)                                                                        0.48%
+  300	            (ii) Provision Coverage Ratio (%)                                                             10.45%|
+  301	            (iv) Capital to risk-weighted assets ratio (CRAR)                                             26.63%|
+  302	
+  303	8. Previous periods’ figures have been regrouped/ rearranged wherever necessary to conform to the current period’s classification.
+  304	
+  305	
+  306	
+  307	
+  308	                                                                                                By order of the Board of Directors
+  309	                                                                                                For Finkurve Financial Services Limited
+  310	
+  311	
+  312	
+  313	
+  314	Date: 13.08.2026
+  315	                                                                                             (Quovr—
+  316	                                                                                                Friyank Kothari
+  317	                                                                                                Whole-time Director
+  318	Place: Mumbai                                                                                   (DIN: 07676104)
+  319	
+  320	[page 7]
+  321	                                                       LADHA SINGHAL & ASSOGIATES
+  322	                                                                       CHARTERED ACCOUNTANTS
+  323	
+  324	
+  325	
+  326	
+  327	             To,
+  328	             The Board of Directors,
+  329	             Finkurve Financial Services Limited
+  330	
+  331	                                                               t of Listed Secured and
+  332	             Statement Certifying the Security Cover in respec
+  333	                                                                          at June 30, 2026.
+  334	             Unsecured Redeemable Non-Convertible Debentures as
+  335	                                                                                       ance with the
+  336	                 1. This certificate is issued at the request of the Company in accord
+  337	                                                                                   red office at Unit
+  338	                    terms of our engagement with the Company having its registe
+  339	                                                                          Mills Compound, S. B.
+  340	                    No 1, 1st Floor, Building No. A, Trade Garden, Kamala
+  341	                                                                        013.
+  342	                    Marg, Lower Parel West, Mumbai, Maharashtra - 400
+  343	
+  344	                                                                              Unsecured
+  345	                2. The statement certifying the security cover on Secured and
+  346	                                                                                2026 duly signed by
+  347	                    Redeemable Non-Convertible Debentures as at June 30,
+  348	                                                                                  Appendix - I which
+  349	                    authorized signatory is attached as Anncxure A along with
+  350	                                                                                   ance with para 3.1
+  351	                    we have initial for the identification purpose only. In accord
+  352	                                                                                   dated
+  353	                    (@) of Circular no, SEBI/HO/MIRSD / MIRSD_CRADT/CIR/P/ 2022/67
+  354	                                                                                     16,
+  355	                    May 19, 2022 and SEBI/HO/DDHS-FoD3/P/CIR/2024/46 dated May
+  356	                                                                         provided in this
+  357	                    2024, we have verified only book value of the assets
+  358	                    certificate.
+  359	
+  360	
+  361	             Management's Responsibility
+  362	                                                                           of the Management of
+  363	                 3. The preparation of the Statement is the responsibility
+  364	                                                                                 of all accounting
+  365	                    the Company including the preparation and maintenance
+  366	                                                                               This responsibility
+  367	                    and other relevant supporting records and documents.
+  368	                                                                         of internal control
+  369	                     includes the design, implementation and maintenance
+  370	                                                                                ent and applying an
+  371	                     relevant to the preparation and presentation of the Statem
+  372	                                                                             that are reasonable in
+  373	                     appropriate basis of preparation; and making estimates
+  374	                     the circumstances.
+  375	
+  376	                                                                    adher      ence that the details in
+  377	                 4. The Management is also responsible for ensuring
+  378	                    the statement are correct.
+  379	
+  380	
+  381	              Auditor's Responsibility
+  382	                                                                   assurance that the details as
+  383	                 5. It is our responsibility to provide reasonable
+  384	                                                                          cted from the Books of
+  385	                    referred to in "Annexure A" have been correctly extra
+  386	                                                                             produced before us.
+  387	                     Account and other records which we have verified as
+  388	
+  389	                                                                   in            accordance with the
+  390	                  6. We conducted our examination of the Statement
+  391	                                                                         l Purposes (Revised 2016)
+  392	                     Guidance Note on Reports or Certificates for Specia
+  393	                                                                     of Chartered Accountants of
+  394	                     (the "Guidance Note") issued by the Institute
+  395	                                                                             Section 143(10) of the
+  396	                     India (ICAI) and Standards on Auditing specified under
+  397	
+  398	
+  399	
+  400	
+  401	202, METRO AVENUE, PEREIRA HILL ROAD, OFF ANDHERI KURLA ROAD, NEAR WEH METRO STATION, ANDHERI (E), MUMBAI - 400 099
+  402	                             TEL. (O) : 491 22 2820 1044/ 2820 1055 EMAIL : info@ladhasinghal.com
+  403	
+  404	[page 8]
+  405	                                                        res that we comply with the
+  406	     Companies Act 2013. The Guidance Note requi
+  407	                                                       d by the ICAL
+  408	     ethical requirements of the Code of Ethics issue
+  409	
+  410	                                                                       of the Standard
+  411	  7. We have complied with the relevant applicable requirements
+  412	                                                        Firms that Perform Audits and
+  413	     on Quality Control (SQC) 1, Quality Control for
+  414	                                                                       nce and Related
+  415	     Reviews of Historical Financial Information, and Other Assura
+  416	     Services Engagements.
+  417	
+  418	
+  419	
+  420	  Conclusion
+  421	                                                          ed to us and examination of
+  422	  3. Based on the information and explanations provid
+  423	                                                         nt and other relevant
+  424	     records of the Company including Books of Accou
+  425	                                                              and relevant debts
+  426	     documents, we hereby conclude that bock value of assets
+  427	                                                       part of Annexure A) and
+  428	     given in Column "A" to "J" of Appendix-1 (forming
+  429	                                                               .
+  430	     other details provided in Annexure A are frue and correct
+  431	
+  432	
+  433	
+  434	  Restriction on Use
+  435	                                                     solely for submission to the
+  436	  9. The certificate is provided to the Company
+  437	                                                        d not be used by any other
+  438	     Debenture Trustees/ Stock Exchanges and shoul
+  439	                                                   we do not accept or assume any
+  440	     person or for any other purpose. Accordingly,
+  441	                                                       se or to any other person to
+  442	     liability or any duty of care for any other purpo
+  443	                                                    hands it may come without our
+  444	     whom this certificate is shown or into whose
+  445	     prior consent in writing.
+  446	
+  447	
+  448	
+  449	For Ladha Singhal Associates
+  450	Chartered Accountants
+  451	(Firm Registration No. 120241W]
+  452	                             gt s
+  453	
+  454	
+  455	(Ajay Singhal)
+  456	Partner
+  457	M. No. 104451
+  458	UDIN : 26104451WFVWFJ6704
+  459	Place: Mumbai
+  460	Date: 13th August, 2026
+  461	
+  462	[page 9]
+  463	                                       Annexure A
+  464	
+  465	
+  466	
+  467	STATEMENT CERTIFYING THE SECURITY COVER IN RESPECT OF SECURED
+  468	REDEEMABLE NON-CONVERTIBLE DEBENTURES AS AT JUNE 30, 2026
+  469	
+  470	
+  471	
+  472	We hereby confirm that as at June 30, 2026, Finkurve Financial Services Limited (the
+  473	‘Company') having its registered office at Unit Unit No 1, 1st Floor, Building No. A, Trade
+  474	Garden , Kamala Mills Compound, S.B. Marg, Lower Parel West, Mumbai, Maharashtra
+  475	400013,has an asset cover of 110% of outstanding principal amount of Secured
+  476	Redeemable Non-Convertible Debentures amounting to INR 48,900.00 Lakhs and
+  477	accrued interest amounting to INR 412.37 Lakhs
+  478	
+  479	
+  480	
+  481	The Company has complied with all the covenants in respect of outstanding Secured
+  482	Redeemable Non-Convertible Debentures as on June 30, 2026 amounting to INR
+  483	49,312.37 Lakhs [Excludes IND-AS amortization impact of INR 795.01 Lakhs]
+  484	
+  485	
+  486	
+  487	Working of Security Cover (for secured Debentures) as per SEBI Circular
+  488	SEBI/HO/MIRSD/MIRSD_CRADT/CIR/P/2022/67 dated May 19, 2022 and Circular no
+  489	SEBI/HO/DDHS-PoD3/P/CIR/2024/46 dated May 16, 2024 is attached.
+  490	
+  491	
+  492	
+  493	
+  494	Authorized Signatory
+  495	                                *
+  496	Name: Aakash N Jain
+  497	                                                              £         "..;
+  498	Designation: Chief Financial Officer
+  499	Place: Mumbai                                                2     '&     :)
+  500	Date: 13" August, 2026                                        :
+  501	                                                              \”L’J“/
+  502	
+  503	[page 10]
+  504	Appendix "I" attached with and forming part of Security Cover Certificate of even date issued for Finkurve Financial Services Limited
+  505	[OCR page 10 - manually verified transcription from rotated 300dpi rasterisation; raw tesseract output was unusable on this dense table, table read directly from image]
+  506	
+  507	TABLE HEADER ROW:
+  508	Column A | Column B | Column C(i) | Column D(ii) | Column E(iii) | Column F(iv) | Column G(v) | Column H(vi) | Column I(vii) | Column J | Column K | Column L | Column M | Column N | Column O
+  509	
+  510	TABLE SUB-HEADER ROW:
+  511	Particulars | [blank] | Exclusive Charge | Exclusive Charge | Pari-Passu Charge | Pari-Passu Charge | Pari-Passu Charge | Assets not offered as Security | Elimination (amount in negative) | (Total C to H) | Related to only those items covered by this certificate [this label spans columns K to O]
+  512	
+  513	COLUMN DESCRIPTION ROW:
+  514	Column B: Description of asset for which this certificate relate
+  515	Column C(i): Debt for which this certificate being issued
+  516	Column D(ii): Other Secured Debt
+  517	Column E(iii): Debt for which this certificate being issued
+  518	Column F(iv): Assets shared by pari passu debt holder (includes debt for which this certificate is issued & other debt with pari-passu charge)
+  519	Column G(v): Other assets on which there is pari-passu charge (excluding items covered in column F)
+  520	Column H(vi): [no sub-label; corresponds to "Assets not offered as Security"]
+  521	Column I(vii): debt amount considered more than once (due to exclusive plus pari passu charge) [corresponds to "Elimination (amount in negative)"]
+  522	Column J: (Total C to H)
+  523	Column K: Market Value for Assets charged on Exclusive basis
+  524	Column L: Carrying/book value for exclusive charge assets where market value is not ascertainable or applicable (For Eg. Bank Balance, DSRA market value is not applicable)
+  525	Column M: Market Value for Pari passu charge Assets [footnote marker vii]
+  526	Column N: Carrying value/book value for pari passu charge assets where market value is not ascertainable or applicable (For Eg. Bank Balance, DSRA market value is not applicable)
+  527	Column O: Total Value (=K+L+M+N)
+  528	
+  529	UNIT ROW: Column C=Book Value | Column D=Book Value | Column E=Yes/No | Column F=Book Value | Column G=Book Value | [Columns K-O sub-label:] Relating to Column F
+  530	
+  531	ASSETS
+  532	Property, Plant and Equipment                                    | Col H(vi)=1,575.77 | Col J=1,575.77
+  533	Capital Work-in-Progress                                          | Col J=-
+  534	Right of Use Assets                                                | Col H(vi)=1,093.96 | Col J=1,093.96
+  535	Goodwill                                                           | Col J=-
+  536	Intangible Assets                                                  | Col H(vi)=6.68 | Col J=6.68
+  537	Intangible Assets under Development                                | Col J=-
+  538	Investments                                                        | Col H(vi)=7,458.34 | Col J=7,458.34 | Col N=7,740.76 | Col O=7,740.76
+  539	Loans                                                              | Col D(ii)=94,647.63 | Col F(iv)=7,740.76 | Col H(vi)=20,306.94 | Col J=1,22,695.32
+  540	Inventories                                                        | Col J=-
+  541	Trade Receivables                                                  | Col H(vi)=5,590.33 | Col J=5,590.33
+  542	Cash and Cash Equivalents                                          | Col J=-
+  543	Bank Balances other than Cash and Cash Equivalents                 | Col J=-
+  544	Others                                                             | Col D(ii)=4,664.77 | Col H(vi)=615.20 | Col J=5,279.97 | Col N=7,740.76 | Col O=7,740.76
+  545	Total                                                              | Col D(ii)=99,312.40 | Col F(iv)=7,740.76 | Col H(vi)=36,647.22 | Col J=1,43,700.38
+  546	
+  547	LIABILITIES
+  548	Debt securities to which this certificate pertains                | Col D(ii)=42,275.32 | Col F(iv)=7,037.05 | Col J=49,312.37
+  549	Other debt sharing pari-passu charge with above debt               | Col C(i)="not to be filled" | Col J=-
+  550	Other Debt                                                         | Col J=-
+  551	    Subordinated debt                                              | Col J=21,559.28
+  552	    Borrowings                                                     | Col J=22,589.02
+  553	    Bank                                                           | Col J=767.73
+  554	    Debt Securities                                                | Col H(vi)=8,752.53 | Col J=8,752.53
+  555	    Others                                                         | Col H(vi)=1,561.24 | Col J=1,561.24
+  556	Trade payables                                                     | Col H(vi)=1,155.27 | Col J=1,155.27
+  557	Lease Liabilities                                                  | Col H(vi)=52.98 | Col J=52.98
+  558	Provisions                                                         | Col H(vi)=187.40 | Col J=187.40
+  559	Deferred tax liabilities (net)                                     | Col H(vi)=2,325.74 | Col J=2,325.74
+  560	Others                                                             | [row present, no additional values legible beyond Total row below]
+  561	Total                                                              | Col D(ii)=87,191.35 | Col F(iv)=7,037.05 | Col H(vi)=14,035.17 | Col J=1,08,263.57
+  562	
+  563	Cover on Book Value                                                | [row header only, values not legible in this rasterisation]
+  564	Cover on Market Value [footnote marker h]                          | Col C(i) label="Exclusive Security Cover Ratio" value=1.14 | Col F(iv) label="Pari-Passu Security Cover Ratio" value=1.10
+  565	
+  566	[Signature block, left:] N Aakash [signature] / seal: "Finkurve Financial Services Limited" / Mumbai / Authorized Signatory
+  567	[Signature block, right:] [signature] Ladha Singhal & Associates / Chartered Accountants seal
+  568	
+  569	[page 11]
+  570	[OCR page 11 - manually verified transcription from rotated 300dpi rasterisation; raw tesseract output was unusable, footnotes read directly from image at 3x-5x zoom]
+  571	
+  572	This page repeats the same Appendix I table header (Column A through Column O, same sub-headers and column-description row as page 10) with all data rows blank (continuation/footnote page of Annexure A Appendix I). Footnotes below the table (numbered i through ix, roman numerals as printed, small italic font):
+  573	
+  574	i.   This column shall include book value of assets having exclusive charge and outstanding book value of debt for which this certificate is issued
+  575	ii.  This column shall include book value of assets having exclusive charge and outstanding book value of all corresponding debt other than column (i)
+  576	iii. This column shall include debt for which this certificate is issued having any pari passu charge - Mention Yes, else No
+  577	iv.  This column shall include book value of assets having pari-passu charge by outstanding book value of debt for which this certificate is issued and/or other debt sharing pari-passu charge along with debt for which certificate is issued
+  578	v.   This column shall include book value of all other assets having pari passu charge and outstanding book value of corresponding debt
+  579	vi.  This column shall include all those assets which are not charged and shall include all unsecured borrowings including subordinated debt and shall include only those assets which are pari-passu [remainder of this footnote not fully legible in source scan]
+  580	vii. In order to match the liability amount with book assets, it is necessary to eliminate the debt which has been counted more than once (included under exclusive charge column as also under pari passu). On the assets side, there shall not be elimination as there is no overlap
+  581	viii. Assets which are considered at Market Value: like Land, Building, Residential/Commercial Real Estate to be stated at Market Value. Other assets having charge to be stated at book value/Carrying Value
+  582	ix.  The market value shall be calculated as per the total value of assets mentioned in Column O
+  583	
+  584	[Signature block, left:] N Aakash [signature] / seal: "Finkurve Financial Services Limited" / Mumbai / Authorized Signatory
+  585	[Signature block, right:] [signature] Ladha Singhal & Associates / Chartered Accountants seal
+  586	
+  587	[page 12]
+  588	                                                                                  Annexure 3
+  589	
+  590	           Statement on deviation or variation for proceeds of public issue, rights issue, preferential issue, qualified
+  591	           institutions placement etc.
+  592	            Name of listed entity                           Finkurve Financial Services Limited
+  593	            Mode of Fund Raising                            Preferential Issue of Equity Shares and Share
+  594	                                                            ‘Warrants on Private Placement Basis
+  595	             Date of Raising Funds                                                       May 21, 2025, and May 27, 2025
+  596	             Amount Raised                                                               Rs. 141.50 Crore
+  597	             Report filed for Quarter ended                                              June 30,2026
+  598	             Monitoring Agency                            Applicable
+  599	             Monitoring Agency Name, if applicable        CRISIL Rating Limited
+  600	             Is there a Deviation / Variation in use of | No
+  601	             funds raised
+  602	             If yes, whether the same is pursuant to| -
+  603	             change in terms of a contract or objects,
+  604	             which was approved by the shareholders
+  605	             If Yes, Date of shareholder Approval        -
+  606	             Explanation for the Deviation / Variation | -
+  607	             Comments of the Audit Committee after | -
+  608	             review
+  609	             Comments of the auditors, if any                                            -
+  610	             Objects for which funds have been raised | Not Applicable
+  611	             and where there has been a deviation, in
+  612	             the following table
+  613	              Original | Modified | Original         Modified                                            Funds                 Amount of | Remarks if any
+  614	               Object     Object, if | Allocation | allocation,                                         Utilised               Deviation/
+  615	                             any         (Rs. In       if any                                            (Rs. In               Variation
+  616	                                         Crore)                                                          Crore)                  for the
+  617	                                                                                                                                quarter
+  618	                                                                                                                               according
+  619	                                                                                                                                       to
+  620	                                                                                                                               applicable
+  621	                                                                                                                                 object
+  622	               Onward                 NA                  141.50                    NA                    111.50                  NA                              NA
+  623	               lending
+  624	                 and                                                                                 (Rs.     30cr
+  625	             investment                                                                              being 75%
+  626	                 and                                                                                 of the share
+  627	              repayment                                                                              ‘warrants
+  628	                  of                                                                                 subscription
+  629	              borrowing                                                                              amount yet
+  630	               obtained                                                                              to        be
+  631	                  by                                                                                 received)
+  632	               company
+  633	             in ordinary
+  634	              course of
+  635	              business
+  636	
+  637	          Deviation or variation could mean:
+  638	          (a) Deviation in the objects or purposes for which the funds have been raised or
+  639	          (b) Deviation in the amount of funds actually utilized as against what was originally disclosed or
+  640	          (c) Change in terms of a contract referred to in the fund-raising document i.e. prospectus, letter of
+  641	                   offer, etc.
+  642	
+  643	
+  644	Arvog
+  645	Finkurve Financicl Services Limited   Registered Office: Unit No. 1, Trade Garden, 15 Floor, Bulding No. A, Kamolo Mills Compound, Lower Forel, Delsle Road, Mumboi — 400013, Maharashira, ndia
+  646	CIN. L63990MH1984P1C032403            Tel: 491 224 2441200 | Email: mail@arvog.com / nkurvefinancial@gmail.com | Web: www.arvog.com
+  647	
+  648	[page 13]
+  649	                                                                                  Annexure 4
+  650	
+  651	           Statement on deviation or variation for proceeds of public issue, rights issue, preferential issue, qualified
+  652	           institutions placement etc.
+  653	
+  654	             Name of listed entity                                                      Finkurve Financial Services Limited
+  655	             Mode of Fund Raising                                                       Non-Convertible Debentures
+  656	             Date         of     Raising     Funds          ie.      Date        of| May 14, 2026, June 16, 2026, and June 29, 2026
+  657	             Allotment
+  658	             Amount Raised (In Crore)                                                   Rs. 199
+  659	             Report filed for Quarter ended                                             June 2026
+  660	             Monitoring Agency                            Not Applicable
+  661	             Monitoring Agency Name, if applicable        Not Applicable
+  662	             Is there a Deviation / Variation in use of | No
+  663	             funds raised
+  664	             If yes, whether the same is pursuant to| -
+  665	             change in terms of a contract or objects,
+  666	             which was approved by the shareholders
+  667	             If Yes, Date of shareholder Approval        -
+  668	             Explanation for the Deviation / Variation | -
+  669	             Comments of the Audit Committee after | -
+  670	             review
+  671	             Comments of the auditors, if any                                           -
+  672	             Objects for which funds have been raised | Not Applicable
+  673	             and where there has been a deviation, in
+  674	             the following table
+  675	              Original | Modified     Original     Modified      Funds     Amount of | Remarks if any
+  676	               Object | Object, if | Allocation | allocation, | Utilised | Deviation/
+  677	                            any        (Rs. In       if any      (Rs. In   Variation
+  678	                                       Crore)                    Crore)      for the
+  679	                                                                            quarter
+  680	                                                                          according to
+  681	                                                                           applicable
+  682	                                                                             object
+  683	                For         NA           135          NA           199         NA           NA
+  684	               lending
+  685	              business
+  686	                of the
+  687	             Company
+  688	
+  689	
+  690	          Deviation or variation could mean:
+  691	          (d) Deviation in the objects or purposes for which the funds have been raised or
+  692	          (e) Deviation in the amount of funds actually utilized as against what was originally disclosed or
+  693	          Change in terms of a contract referred to in the fund-raising document i.e. prospectus, letter of offer,
+  694	           etc.
+  695	
+  696	
+  697	
+  698	
+  699	Arvog
+  700	Finkurve Financicl Services Limited   Registered Office: Unit No. 1, Trads Garden, 1st Floor, Building No. A, Kamlo Mils Compound, Lower Forel, Delisle Road, Mumboi — 400013, Maharashi, Indic
+  701	CIN. L63990MH1984P1C032403            Tel: 491 224 2441200 | Email: mail@arvog.com / nkurvefinancial@gmail.com | Web: www.arvog.com
+  702	

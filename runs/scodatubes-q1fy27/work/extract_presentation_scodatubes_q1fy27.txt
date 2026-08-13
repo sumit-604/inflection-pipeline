@@ -1,0 +1,1425 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: scodatubes_q1fy27_presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 40
+formfeed_count: 40
+line_count: 1425
+unit_convention: Crores
+conversion_factor_to_cr: Crores -> x1 (figures already stated "In INR crores" / "INR Crores Unless Otherwise Mentioned" throughout; no lakhs or millions convention used in this document)
+ocr_pages: [2, 4, 9, 13, 16, 26, 28, 32, 35, 37]
+page_coverage: 100% (all 40 pages per pdfinfo accounted for; pdftotext -layout produced a 41st trailing form-feed-delimited segment that is empty/0 characters -- a known extraction artifact, not an unaccounted content page; see [page 41 - NOTE] at end of extract)
+detected_quarter: Q1 FY27 (quarter ended 30 June 2026), with FY26 and prior-year (FY23-FY25) comparatives and select FY28/FY29/CY28 forward estimates from management/industry slides
+extraction_date: 2026-08-13
+=== END HEADER ===
+
+NOTES ON THIS EXTRACTION (mechanical, not interpretive):
+- Source is an investor presentation (image-heavy deck). pdftotext -layout captured
+  data labels within most charts successfully (the deck appears built with live text
+  boxes over chart shapes rather than flattened images), so most bar/donut charts on
+  pages 7, 8, 10, 21, 22, 23, 24, 25, 29, 30, 33, 34, 36 already carry their numeric
+  values in the text layer without requiring OCR.
+- Pages 2, 4, 9, 13, 26, 32, 35, 37 are section-divider slides with sparse text
+  layers (title + section number over full-bleed photographic/illustrative
+  backgrounds). Per the OCR-fallback rule (any slide under ~100 extracted
+  characters, plus page 35 as a borderline case), these were rasterised at 300dpi
+  and OCR'd. OCR output is noisy (photographic backgrounds) and added no numeric or
+  factual content beyond the text-layer heading already captured; OCR text is
+  retained inline and labelled [OCR page N] for audit purposes.
+- Pages 16 and 28 are graphic/chart-dense pages flagged and OCR'd at 400dpi despite
+  having text-layer content, because page 16 is a certification-badge collage (badge
+  names not otherwise in the body text of that page) and page 28 is a production-
+  capacity bar chart whose axis-label-to-value mapping could not be reliably
+  resolved from the text layer alone (rotated/diagonal labels). Both are flagged
+  inline as [CHART, page N, OCR text: ...] with an explicit note on what remains
+  unresolved. No interpretation of the ambiguous chart-28 sequence is made here;
+  downstream agents should treat the FY-to-value mapping on page 28 as unresolved
+  and, if needed, verify against the company's capacity-expansion press releases.
+
+[page 1]
+                                                                                                        Date: August 13, 2026
+
+ To,                                                              To,
+ National Stock Exchange of India Limited                         BSE Limited,
+ Exchange Plaza,                                                  Phiroze Jeejeebhoy Towers,
+                                                                  Dalal Street,
+ Bandra Kurla Complex
+                                                                  Mumbai – 400 001
+ Bandra East, Mumbai – 400051
+                                                                  BSE SCRIP Code – “544411”
+ Symbol: “SCODATUBES”
+
+
+Dear Sir / Madam,
+
+Subject: Investor Presentation on Q1 FY27 Earnings Update for the Unaudited Standalone Financial Results
+of the Company for the Quarter ended on June 30, 2026
+
+With reference to the captioned subject, kindly find enclose Investor Presentation on Q1 FY27 Earnings Update
+for the Unaudited Standalone Financial Results of the Company for the Quarter ended on June 30, 2026.
+
+The above information will also be available on the website of the company at www.scodatubes.com
+
+Kindly take the same on record and acknowledge.
+For, SCODA TUBES LIMITED
+PATEL      Digitally signed by
+           PATEL
+JAGRUTKUM JAGRUTKUMAR
+AR         RAMESHBHAI
+           Date: 2026.08.13
+RAMESHBHAI 10:38:36 +05'30'
+
+Jagrutkumar Rameshbhai Patel
+Managing Director
+DIN: 06785595
+
+
+
+
+                                                    Scoda Tubes Limited
+Survey Nos.: 2437, 2442, 2443, 2446, Ahmedabad-Mehsana highway, Village: Rajpur, Tal. Kadi, Dist. Mehsana, Gujarat, India, 384440.
+         Phone: + 91 2764 278 278 | Email: info@scodatubes.com | sales@scodatubes.com Web: www.scodatubes.com
+                                       THE BRAND YOU CAN TRUST                             CIN NO.: U28110GJ2008PLC055392
+
+[page 2]
+Investor Presentation
+  Q1 FY27 Earnings Update
+[OCR page 2]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+Upoo ba
+& a
+oY) 7
+Scoda Tubes fear
+—a Lf: \ en
+ee I
+. — ee 7]
+Investor Presentation eee
+QI FY27 Earnings Update Se 7 e~TIP\ »,
+Va ws
+— »
+r
+
+[page 3]
+                   Agenda
+              01   Performance Update
+
+
+              02   About Scoda Tubes Limited
+
+
+              03   Sustainable Moats
+
+
+              04   Growth Strategy
+
+
+              05   Industry Overview
+
+
+
+Shaping a     06   Select Financial Information
+
+SUSTAINABLE
+TOMORROW      07   Annexure
+
+[page 4]
+SCODA TUBES LTD
+
+
+
+                       Performance
+                       Update
+                  01
+[OCR page 4]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+WI \
+8
+—
+-— / 7 = gs ,
+~ | > j |
+Performance’ | ~ ei €
+
+[page 5]
+     Performance Snapshot – Q1 FY27
+
+                  Revenue from                           INR 124.3 crores          Cashflow from          INR -13.8 crores
+                   Operations                               (+27.6% y-o-y)          Operations          (vs 18.4 crores in FY25)
+
+
+
+
+                    Gross Profit
+                                                          INR 39.8 crores        Gross Profit Margin
+                                                                                                                32.0%
+                                                            (+40.0% y-o-y)                               (vs 29.2% in Q1 FY26)
+
+
+
+
+                       EBITDA1
+                                                          INR 16.0 crores                                       12.9%
+                                                                                   EBITDA Margin
+                                                            (+12.6% y-o-y)                                (vs 14.6% Q1 FY26)
+
+
+
+
+                                                           INR 5.3 crores            PAT Margin
+                                                                                                                 4.2%
+             Profit After Tax (PAT)
+                                                            (-25.9% y-o-y)                               (vs 7.3% in Q1 FY26)
+
+
+
+
+           Return on Equity (ROE)
+                                                                     9.9%          Net Debt/Equity
+                                                                                                                 0.3x
+                                                           (vs 21.1% in FY25)                               (vs 1.1x in FY25)
+
+
+
+                                                                 97 days                                       211 days
+                   Debtor Days                                                  Cash Conversion Cycle
+                                                        (vs 76 days in FY25)                               (vs 164 in FY25)
+
+
+                                                                                                                                   4
+1. Earnings before interest, taxes, depreciation, and amortization
+
+[page 6]
+Chairperson & Executive Director’s Commentary
+
+“During the quarter, our performance was impacted by a series of temporary operational and external challenges arising from an evolving
+geopolitical environment. Global supply chain disruptions resulted in increased freight costs and volatility in raw material prices, while our
+advance order booking cycle of approximately three to four months limited our ability to immediately pass on higher input costs to
+customers.
+
+Operationally, our manufacturing facility also experienced a temporary disruption in gas supply during April, affecting production for a
+couple of weeks. In addition, manpower availability remained challenging during the quarter, further impacting operational efficiency.
+
+While these headwinds weighed on our quarterly performance, they were largely transient in nature. We have taken the necessary
+corrective measures to stabilize operations, and with gas supply restored, supply chains normalizing, and execution gaining momentum,
+we remain confident in our ability to improve operational performance in the coming quarters.
+
+We remain committed to achieving our FY27 guidance as operations continue to stabilize and production ramps up at our seamless
+facility. Additionally, our capacity expansion in the welded segment is progressing as planned and is expected to be commissioned during
+H2 FY27, further strengthening our manufacturing capabilities and supporting future growth.
+Our long-term fundamentals remain robust, underpinned by a healthy order pipeline, a diversified customer base, and our continued
+focus on operational excellence, capacity expansion, and creating sustainable value for all stakeholders.”
+
+
+
+                                                                                                                   Mr. Samarth B Patel
+                                                                                                                 Chairman & Executive Director
+
+
+
+
+                                                                                                                                                 5
+
+[page 7]
+Revenue Split Across Geographies – Q1 FY27
+In INR crores
+
+
+
+
+     Domestic                                                        Exports                         Revenue - Mix
+
+                    +1.5%                                                         +81.5%
+                                                                                            57.9
+
+
+
+            65.5             66.5
+                                                                         31.9
+
+                                                                                                           32.8%
+
+                                                                                                                          46.6%
+
+          Q1 FY26           Q1 FY27                                     Q1 FY26            Q1 FY27
+
+
+
+
+                                      Revenue                                                              67.2%
+
+                                                                                                                          53.4%
+                                                  +27.6%
+
+                                                            124.3
+
+                                         97.4
+                                                                                                          Q1 FY26         Q1 FY27
+
+                                                                                                              Domestic   Exports
+
+
+
+
+                                        Q1 FY26            Q1 FY27
+
+                                                                                                                                    6
+
+[page 8]
+Key Financial Highlights – Q1 FY27
+In INR crores
+
+
+
+     Revenue From Operations                 EBITDA                              Profit After Tax (PAT)
+
+                        +27.6%                             +12.6%                              -25.9%
+                                    124.3
+
+                97.4                                                     16.0
+                                                  14.2
+
+                                                                                       7.1
+                                                                                                            5.3
+
+
+
+
+            Q1 FY26                Q1 FY27       Q1 FY26               Q1 FY27       Q1 FY26              Q1 FY27
+
+
+
+
+     Gross Profit Margin                     EBITDA Margin                       PAT Margin
+
+                        +283 bps                           -172 bps
+                                                                                               -305 bps
+                                                                                       7.3%
+
+                                   32.0%
+                                                 14.6%
+                                                                       12.9%
+                                                                                                           4.2%
+
+                29.2%
+
+
+
+
+            Q1 FY26                Q1 FY27      Q1 FY26               Q1 FY27        Q1 FY26              Q1 FY27
+                                                                                                                    7
+
+[page 9]
+SCODA TUBES LTD
+
+
+
+                       About Scoda
+                       Tubes Ltd
+                  02
+[OCR page 9]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+Ow, \yY
+PASSIONATE
+FOR
+
+STAINLESS
+
+__ STEEL
+f Mi G = |
+About Scoda ||\\, AS ===> =
+TubesLtcd = Qe
+
+ys \A Ad a
+
+[page 10]
+ Scoda Tubes Limited At a Glimpse
+   •      Fully integrated manufacturer of SS1 seamless and SS welded
+          products
+                                                                                                          37,156+                                               20,000
+                                                                                                          Sq. mtrs                                                      MTPA
+            •     These products are further categorised into: SS seamless                                Plot size of manufacturing                Mother hollow capacity for
+                  pipes, SS seamless tubes, SS seamless "U" tubes, SS                                     facility                                         seamless products
+                  instrumentation tubes, SS welded tubes and "U" tubes
+          Supplies to customers engaging in multiple sectors like: Oil & gas,
+   •
+          chemicals, fertilisers, power, pharmaceuticals, automotive, and
+                                                                                                          20,068                                                        334
+                                                                                                          MTPA2                                   Production lines for seamless
+          transportation3                                                                                                                                              products
+                                                                                                          Seamless production capacity
+   •      Dedicated seamless and welded divisions at its manufacturing
+          facility in Gujarat
+   •      Certifications: ISO 9001:2015, ISO 14001:2015 and ISO 45001:20182                               1,020                                                                 2
+                                                                                                          MTPA                                      Production lines for welded
+   •      Follow internationally recognized standard                              manufacturing           Welded production capacity                                   products
+          practises, incl. ASTM, ASME and EN standards
+            •     Products sold to Europe are certified under PED 2014/68/EU                                                                                        In INR crores
+                  and ADW/AD 2000 - Merkblatt – WO
+                                                                                                           Particulars                   FY26    FY25      FY24        FY23
+            •     Additional accreditation: DNV-CP-0252, DNV Marine and
+                  Indian Boiler Regulation                                                                 Revenue from operations       518.7   484.9     399.9       305.1
+
+                                                                                                           Y-o-Y growth                  7.0%    21.3%      31.0%
+
+                           3 YEAR CAGR (FY23-FY26)                                                         Gross profit                  165.4   148.5      137.9       92.5
+
+                                                                                                           Gross margin                  31.9%   30.6%     34.5%       30.3%
+
+                                                                                                           EBITDA                        76.2    78.1       58.8        34.8
+                     19%                              30%                             55%
+                     Revenue                          EBITDA                          PAT                  EBITDA margin                 14.7%   16.1%      14.7%       11.4%
+                     from
+                     operations
+                                                                                                           PAT                           38.8    31.7       18.3        10.3
+
+                                                                                                           PAT margin                    7.5%    6.5%       4.6%        3.4%
+                                                                                                                                                                                    9
+1. Stainless steel | 2. Metric tonnes per annum | 3. Includes railways | 4. 25 Pilgers & 8 Draw Benches
+
+[page 11]
+     A Compounding Story With Significant Milestones (1/2)
+
+                                                                                  Received        vendor
+                                                                                  approval from BHEL’s1                                                    Received     vendor
+                                                                                  HEEP2 Haridwar facility                                                  approval from EIL7
+                   Incorporated
+                                                                                  for product supply                                                       for product supply
+                   the company
+
+
+
+
+                                                             2010                                                                 2013                                                                 2017
+
+
+                          2008                                                                  2012                                                                 2014
+
+
+
+
+                                                      Commenced                                         • Received vendor approvals from                                                • Started product supplies
+                                                      exports of our                                      GNFC3 and IFFCO4 for product supply                                             to Department of Atomic
+                                                      products                                            at their Kandla and Kalol units                                                 Energy, GoI8
+                                                                                                        • Registered as KRIBHCO’s5 approved                                             • Received         vendor
+                                                                                                          vendor for product supply                                                       approval from BHEL’s
+                                                                                                        • Received HPCL’s6 approval for product                                           Hyderabad facility for
+                                                                                                          supply                                                                          product supply
+
+
+
+
+1. Bharat Heavy Electricals Limited | 2. Heavy Electrical Equipment Plant | 3. Gujarat Narmada Valley Fertilizers and Chemicals Limited | 4. Indian Farmers Fertilizer Cooperative Limited | 5. Krishak Bharati Cooperative
+                                                                                                                                                                                                                              10
+Limited | 6. Hindustan Petroleum Corporation Limited | 7. Engineers India Limited | 8. Government of India
+
+[page 12]
+     A Compounding Story With Significant Milestones (2/2)
+     • Started product supplies to                           • Started supplying products to
+       Triveni Turbine                                         Laxmi Organics                                                          • Started supplying products to                                 • Increased
+     • Received BEML’s1 approval for                         • Started product supplies to key                                           key     entities   under Indian                                 total
+       product supply                                          entities under Indian Railways:                                           Railways:        Eastern   and                                  seamless
+     • Received vendor approval from                           Banaras Locomotive Works,                                                 Northeastern Railways                                           capacity   to
+       BHEL’s Bhopal and Jhansi                                Rail Coach Factory, Western                                             • Achieved production capacity                                    20,000 MTPA
+       facility for product supply                             Railway and Central Railway                                               of 11,088 MT/year
+
+
+
+
+                                           2019                                                                      2023                                                            2025
+
+
+            2018                                                                 2022                                                                   2024
+                                                                                                                                                                                                            2026
+
+
+                                   Trademarked                           • Started supplying products to NTPC3, Bilaspur
+                                                                                                                                                                          • Listed on NSE & BSE
+                                   ‘Scoda      Tubes                     • Started supplying products to key entities under Indian
+                                                                                                                                                                          • Raised    INR   220
+                                   Limited’ to build                       Railways: Modern Coach Factory & Chittaranjan
+                                                                                                                                                                            crores      through
+                                   brand equity and                        Locomotive Works
+                                                                                                                                                                            public issue
+                                   protect IP2                           • Received certificate for implementing QMS4 in
+                                                                           accordance with ISO 9001:2015
+                                                                         • Received certificate for implementing EMS5 in
+                                                                           accordance with ISO 14001:2015
+                                                                         • Received certificate for implementing OHSMS6 in
+                                                                           accordance with ISO 45001:2018
+
+1. Bharat Earth Movers Limited | 2. Intellectual property | 3. National Thermal Power Corporation | 4. Quality management system | 5. Environmental management system | 6. Occupational health and safety
+                                                                                                                                                                                                                         11
+management system
+
+[page 13]
+SCODA TUBES LTD
+
+
+
+                       Sustainable
+                       Moats
+                  03
+[OCR page 13]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+“Sy
+| 7
+WiZ4
+WES
+Sustainable v { -
+Moats Wz, |
+
+[page 14]
+      Sustainable Moats
+                                                         Extensive and Effective Quality
+                                                                    Control
+                                                                      04
+                                                  03                                       05
+                        Strategic Location of Facility                                     International Accreditations and
+                     and Fully Integrated Production                                       Product Approvals
+
+
+                                        02                                                          06
+           Customer Diversification and                                                             Experienced and
+                International Presence                                                              Qualified Team
+
+
+
+                                     01                                                                07
+            Specialized Production of                                                                  Consistent Financial
+                 SS1 Tubes and Pipes                                                                   Performance
+
+
+
+
+                                                                                                                              13
+1. Stainless steel
+
+[page 15]
+      Specialized Production of SS Tubes and Pipes
+
+
+
+
+                                                                          SS Seamless “U”              SS Instrumentation         SS Welded Tubes /
+                 SS1 Seamless Pipes          SS Seamless Tubes
+                                                                          Tubes                        Tubes                      “U” Tubes
+
+                 OD: 1/8” NB to 6” NB        OD:    6.00mm          to    OD:   6.00mm           to    OD:   6.00mm          to   OD:   6.00mm      to
+                                             101.6mm                      50.80mm                      50.80mm                    60.30mm
+                 THK: Sch10s to Sch80s
+                                             THK:   0.70mm          to    THK:   0.70mm          to    THK:   0.80mm         to   THK:   0.80mm     to
+                 Length: Single random
+                                             6.00mm                       4.00mm                       6.00mm                     4.00mm
+                 length   and    double
+                 random length               Length: Up to 22 Mtr         Length: Up to 22 Mtr         Length: Up to 18.000 Mtr   Length: Up to 18.000
+                                                                                                                                  Mtr
+                 Application:                Application:                 Application:                 Application:               Application:
+                 By industries having        In heat exchangers, Air      In heat exchangers, Air      By industries having       By industries having
+                 high         pressure       fin Coolers, Condensers,     fin Coolers, Condensers,     high         pressure      low          pressure
+                 application                 LP/HP heaters & boilers      LP/HP heaters & boilers      application                application
+
+
+
+
+               Razor sharp focus in SS segment has enabled Scoda Tubes to:
+               • Build an expertise around production process, inventory management and sale of products.
+               • Accurately assess and respond to customer preferences in terms of length, thickness, and grades.
+               • Attract and retain customers with specialised and high-quality SS pipes and tubes requirements.
+
+                                                                                                                                                          14
+1. Stainless steel
+
+[page 16]
+International Accreditations and Product Approvals
+
+
+
+
+        • Currently applied for Bureau Veritas Marine (France) and Rina Marine (Italy) standards.
+        • Company’s capabilities and accreditations have enabled Scoda Tubes to cater to 349 clients globally till date.
+
+
+                                                                                                                           15
+[CHART, page 16, OCR text: see below]
+(Certification/accreditation badge collage. OCR at 400dpi identifies badge/logo text not present in the body text layer above.)
+@ @ @
+International Accreclitations and Product Approvals
+we ~% We % “ ~ ~ oa ~%
+% ADWO % ISO 45001-2018 ¥ ISO 9001-2015 ¥ %% ISO 14001-2015 ¥ PED
+*w* *w* — *w* ; - *w* . *w*
+2 2 @
+— ay CERTIFICATE = CERTIFICATE my CERTIFICATE chee
+CERTIFICATE : ae : co BEE ee BEE ane CERTIFICATE
+aie = =n a
+nn ecdon 804 scion i
+Over reana 38278 : soa res meg : scooa,1ees aren : scooa,1yses aren ~ eo
+co Percent male ae Sesame eer Stee
+—— —_= —— = = =
+cm a. 1. & 7. & —_—
+ee 2 === 020 4s =S:- O20 1 <= 020 niall
+ea ~% oF ~% We yy ef yy We ~%
+% Norsok M650 % DNV % IBR *& % BIS A ee
+* * * * * * * * * * * * * * *
+cena songumccwe z hee
+° TOV SOD South Asia Pvt Lid. Een SS ee —e wan
+1. ee meee ic<canlalalian = a ee |
+meen eeumten “— 2 Beinicetin Ses
+conven a a 3 ee Se
+ie =. «- WES == Series seen ase
+eye ‘junta a ‘San none unne tvone cca tanmntegpeeeeneuec commey ome _——- ——" enee atte!
+a rc - — — OG Sep Sie SE
+* Currently applied for Bureau Veritas Marine (France) and Rina Marine (Italy) standards.
+* Company's capabilities and accreditations have enabled Scoda Tubes to cater to 349 clients globally till date.
+- ) (( -
+
+[page 17]
+     Customer Diversification and International Presence
+          Strong Presence in 32 Countries1                                              Catering to Clients Across Multiple Sectors
+
+
+                                          67%
+                                                                                        Oil & Gas                Chemicals               Fertilizers             Power
+
+                                       INR
+                          1%
+                                     124.3
+                         11%         crores
+
+
+                                      45%
+
+
+               India       Europe         Americas          Others
+
+
+
+                                                                                        Pharmaceuticals          Automotive               Transportation2
+          Revenue Split Across Geographies1
+
+
+
+
+                        53.4%
+                                                 46.6%
+
+
+
+
+                       Domestic                 Exports                                 • Greater diversification has hedged Scoda from sector/geography specific risks
+
+
+                                                                                                                                                                          16
+1. Based on Q1 FY27 nos. | 2. Includes railways | Note: Nos. might not add up due to rounding off
+
+[page 18]
+Extensive and Effective Quality Control
+  •   Dedicated quality control division comprising of a team of 14 personnel capable of all mandatory tests and
+      supplementary tests.
+  •   Follow high-quality standards across all the manufacturing stages, from raw material to cold rolling, until the final
+      tubular product is ready to dispatch.
+
+
+  Mandatory Tests                                             Supplementary Tests
+  • PMI                • Chemical test                        • EDDY current test             • Dye penetrant test
+  • Hydrostatic test   • Micro test                           • Ultrasonic test               • Impact test
+  • Tensile test       • Hardness test                        • IGC practice “A”, “C” & “E”   • Boroscopic examination
+  • Mechanical test                                           • Air under water test
+
+
+
+
+                                                                                                                              17
+
+[page 19]
+Strategic Location of Facility and Fully Integrated Production
+
+     Strategically                  Land Available for Future                                                 Sustainable
+     Located                        Expansion                                                                 Production
+
+  On     Ahmedabad-Mehsana       • Available land parcel of 74,699 sq. mts., with only 37,156              Installed solar panels on our
+  highway, 360 kms from            sq. mts. currently developed for manufacturing.                         rooftops, generating 1 MW of
+  Mundra port and 23 kms                                                                                   clean energy to support
+                                 • 30,064 sq. mts. reserved for welded products.
+  from Inland Container Depot.                                                                             manufacturing process.
+
+
+
+
+  Continuously Increasing Efficiency Through Backward Integration
+
+                                                                          •   Hot piercing mill to produce mother
+                                                                              hollow with a production capacity of
+                                                                              20,000 MTPA.1
+                                                                          •   Focus on further adding production
+                                                                              capacity by leveraging our strong
+                                                                              execution capabilities in a capital
+                                                                              efficient manner.
+
+
+
+
+                                                                                                                                           18
+                                                                              1. Metric tonnes per annum
+
+[page 20]
+     Experienced and Qualified Team
+
+
+
+
+       SAMARTH B PATEL                      JAGRUT R PATEL             SAURABH A PATEL              RAVI R PATEL                          VIPUL A PATEL
+
+       Chairperson & ED1                    Managing Director          Non-Executive Director       Chief Financial Officer               President
+
+       •   10+     years     of             •   10+      years    of   •   10+     years     of     •   10+ years of Experience           •   10+ years of Experience
+           Experience                           Experience                 Experience               •   Bachelor's degree in IT           •   Bachelor's degree in Computer
+       •   Bachelor of Science              •   Bachelor’s degree in   •   Bachelor's degree in         Engineering                           Science Engineering
+       •   He oversees export                   Computer Engineering       Commerce                 •   Responsible        for            •   Before joining the company, he
+           sales and marketing              •   Oversees    domestic   •   Oversees    project          accounts,   payments                  was associated with Maxim
+           in our Company                       sales and marketing        development                  and           banking                 Tubes Company Pvt. Ltd. as
+                                                in our Company             processes in our             operations   in   the                 planning     and     production
+                                                                           Company                      company                               executive
+
+
+
+
+                                  PIYUSH SHAH (CA)                               VIPUL PATEL                              NEHA SONI (CS & LLB)
+                                  Independent Director                       Independent Director                           Independent Director
+
+                                                                                                                                                                                19
+1. Executive Director
+
+[page 21]
+Consistent Financial Performance (1/2)
+                                                                                                             In INR crores
+
+
+
+     Revenue from Operations          EBITDA                                Profit After Tax (PAT)
+
+                                         CAGR: 30%
+                                                       78.1    76.2             CAGR: 56%                     38.8
+       CAGR: 19%                                                       40
+                     484.9    518.7                                                                  31.7
+                                               58.8
+             399.9                                                     30
+    305.1                                                                                18.3
+                                       34.8                            20
+                                                                               10.3
+                                                                       10
+
+                                                                       0
+     FY23    FY24     FY25     FY26    FY23    FY24    FY25    FY26            FY23      FY24     FY25        FY26
+
+
+
+
+   Gross
+   Gross Profit
+         Profit Margin
+                Margin                EBITDA Margin                         PAT Margin
+
+                                                                                                            7.5%
+            34.5%
+            34.5%                                      16.1%                                    6.5%
+                                               14.7%           14.7%
+                                       11.4%                                          4.6%
+                              31.9%                                          3.4%
+    30.3%            30.6%
+                     30.6%   30.6%
+    30.3%
+
+
+
+
+    FY23
+    FY23    FY24
+            FY24     FY25
+                     FY25    FY26
+                             FY26      FY23    FY24    FY25    FY26          FY23     FY24      FY25        FY26
+
+
+                                                                                                                             20
+
+[page 22]
+Consistent Financial Performance (2/2)
+                                                                                             In INR crores
+
+
+
+   Return on Equity (RoE)           Net Debt/Equity                 Inventory Days
+
+                                     2.8     2.8
+                                                                                            217
+            28.8%
+    22.8%                                                             171            163
+                    21.1%                                                    156
+
+                                                       1.1
+                            9.9%
+
+                                                             0.3
+
+
+    FY23    FY24    FY25    FY26     FY23    FY24     FY25   FY26    FY23    FY24    FY25   FY26
+
+
+
+
+   Return on Capital Employed       Debtor Days                     Cash Conversion Cycle
+   (RoCE)
+
+                    16.6%                                    97                             211
+            15.9%
+                                              82                             162     164
+    12.6%                                             76             151
+                            11.6%
+                                      62
+
+
+
+
+    FY23    FY24    FY25    FY26     FY23    FY24     FY25   FY26    FY23    FY24    FY25   FY26
+
+
+                                                                                                             21
+
+[page 23]
+Historic Income Statement
+
+  INR Crores Unless Otherwise Mentioned
+  Particulars                                                            FY26    FY25    FY24    FY23    3-year CAGR
+  Revenue from operations                                                518.7   484.9   399.9   305.1      19.3%
+
+  Cost of materials consumed (incl. changes in WIP and finished goods)   353.2   336.4   262.0   212.6
+  Gross profit                                                           165.4   148.5   137.9   92.5       21.4%
+  Gross profit margin                                                    31.9%   30.6%   34.5%   30.3%
+  Employee benefit expenses                                               10.5    8.1     7.4     5.5
+  Other expenses                                                         78.7    62.4     71.7   52.3
+
+  EBITDA                                                                 76.2    78.1    58.8    34.8       29.9%
+  EBITDA margin                                                          14.7%   16.1%   14.7%   11.4%
+  Other income                                                            10.6    4.0     2.6     2.7
+  Depreciation & amortization expenses                                    9.2     18.1    16.4    11.5
+  Finance costs                                                          24.9    22.0     19.1    11.6
+  Profit before tax                                                      52.7    41.9    25.9    14.4       54.2%
+  Tax expenses                                                            13.9    10.2    7.6     4.0
+
+  Profit after tax                                                       38.8     31.7   18.3    10.3      55.4%
+
+  PAT margin                                                             7.5%    6.5%    4.6%    3.4%
+  EPS (INR)                                                               6.8     7.6     4.6     2.6       37.8%
+
+
+
+                                                                                                                       22
+
+[page 24]
+Historic Balance Sheet
+
+  INR Crores Unless Otherwise Mentioned
+  Assets                                  FY26    FY25    FY24     FY23
+  Fixed assets                            194.0   103.5    81.6     62.1
+
+  Other non-current assets                49.4    34.2    22.8      12.2
+  Inventories                             209.8   149.8    111.9   99.5
+
+  Trade receivables                       138.0   101.0   89.3     51.6
+
+  Cash and bank balances                  74.2    43.9    22.4     10.4
+
+  Other current assets                    22.5     13.8    2.4      2.5
+
+  Total                                   687.9   446.4   330.4    238.3
+
+  Equity and Liabilities
+  Equity capital and reserves             390.3   150.4   63.6     45.3
+  Borrowings                              185.3   210.2   202.7    139.3
+
+  Trade payables                          99.4    68.5    53.9     47.5
+
+  Other non-current liabilities            3.6     0.9     1.3      0.8
+
+  Other current liabilities                9.2     16.4    9.0      5.4
+
+  Total                                   687.9   446.4   330.4    238.3
+
+
+
+
+                                                                           23
+
+[page 25]
+Historic Cashflow Statement
+
+  INR Crores Unless Otherwise Mentioned
+
+  Particulars                                                            FY26     FY25    FY24    FY23
+
+  Net profit before tax                                                   52.7     41.9   25.9     14.4
+
+  Adjustments for: Non-cash items and other investment/financial items    30.0    37.6    34.2    22.8
+
+  Operating profit before working capital changes                         82.8    79.5     60.1   37.2
+
+  Changes in working capital                                             -78.9    -54.6   -54.5   -15.0
+
+  Direct taxes paid (net of refund)                                      -17.6    -6.5    -3.4     -1.9
+
+  Cashflow from operations                                               -13.8    18.4     2.2    20.3
+
+  Cashflow from investing activities                                     -149.9   -43.9   -46.6   -38.5
+
+  Cashflow from financing activities                                     152.7    40.6    44.3    17.9
+
+  Change in cash and cash equivalents                                     -11.0    15.1    -0.1   -0.2
+
+  Cash and cash equivalents at the beginning of the period                15.1      -      0.1     0.3
+
+  Cash and cash equivalents at the end of the period                      4.1     15.1     0.0     0.1
+
+
+
+
+                                                                                                          24
+
+[page 26]
+SCODA TUBES LTD
+
+
+
+                       Key
+                       Strategies
+                  04
+[OCR page 26]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+~syY
+A
+Strategies y
+
+[page 27]
+Key Strategies
+                                 Strategies
+                 Increase Our Existing Production Capacity
+
+
+
+
+                 Geographic Expansion of Customer Base
+
+
+
+
+                       Strengthen Our Brand Value
+
+
+
+
+                                                             26
+
+[page 28]
+Increase Our Existing Production Capacity
+
+Production capacity (MTPA1)                                                                      Capacity comparison
+
+                                                                                                       Product        Existing      Post expansion
+
+
+
+
+                                                                8,000
+                                                                                                       capacity       capacity         capacity
+         23x capacity expansion
+
+
+
+
+                                                       12,130
+                                                                                                       Seamless      10,068 MTPA     20,068 MTPA
+
+
+
+
+                                                                33,218
+
+
+
+                                                                         12,130
+                                                                                                       Welded        1,020 MTPA       21,150 MTPA
+
+
+
+
+                                              21,088
+
+
+
+                                                       21,088
+  1,800
+
+
+
+
+                                                                                                     Mother hollow           20,000 MTPA
+
+
+
+
+                                                       FY27
+   Inception
+
+
+
+
+                         FY20
+
+
+
+                                FY22
+
+
+
+                                       FY25
+
+
+
+                                              FY26
+
+
+
+
+                                                                FY28
+               FY18
+
+
+
+
+1. Metric tonnes per annum
+
+
+
+
+                      Beneﬁts of large-scale production                                       Focus on high value-added products
+
+
+                                                                Capitalize on backward integration
+
+
+                      Leveraging existing customer-base                                                  Targeting end-users
+
+
+                                                                                                                                                     27
+[CHART, page 28, OCR text: see below]
+(Production capacity bar chart with rotated/diagonal axis labels and data labels; pdftotext -layout captured the numeric values above but their left-to-right sequence relative to the x-axis year labels (Inception, FY18, FY20, FY22, FY25, FY26, FY27, FY28) is not reliably resolvable from the text layer alone due to label rotation. OCR at 400dpi below is provided as a supplementary raw capture; exact year-to-value mapping is NOT asserted by this extraction and should be treated as unresolved/ambiguous by downstream agents.)
+Increase Our Existing Procluction Capacity
+Production capacity (MTPA') Capacity comparison
+r-> |
+! S | Product Existing Post expansion
+i. > / capacity capacity capacity
+23x capacity expansion > =
+| ik Seamless 10,.068MTPA > 20,068 MTPA
+& Ce
+--»> =
+N
+M
+% o Welded 1020MTPA > 21,150 MTPA
+Oo oO oO
+cee lie
+= e Mother hollow << 20,000 MTPA >>
+Cc ioe) oO N LO ice) ™ (oo) &,
+S$ F S$ g§ 28 2 Fg Se
+ay ~ ~ ~ ~ ~ ~ 8-6~20 se
+£ es 34 se
+1. Metric tonnes per annum eo e
+Benefits of large-scale production . Focus on high value-added products
+Capitalize on backward integration
+Leveraging existing customer-base Targeting end-users
+
+[page 29]
+Captive Solar Project
+
+                                                                            Ground Mounted Solar Plant
+                                                                            Gujarat
+
+                                                                             Capacity (Per Plant)
+                                                                             3.9 MW(AC) / 4.99 MW(DC)
+
+                                                                             Annual Generation
+                                                                             7.74 Million KWH
+
+                                                                             Annual Saving in Electricity Bill
+                                                                             ₹ 4.87 crores
+
+
+
+
+                                      Reduces power cost volatility
+
+
+        Strengthens ESG positioning                          Improves long-term operation margins
+
+                                                                                                                 28
+
+[page 30]
+     Geographic Expansion of Customer Base
+     Curated     a    strategic  plan    by
+     leveraging extensive network of
+     distributors, robust back-end, sound
+     track-record, key product approvals
+     & registrations, wide product portfolio
+     and domain expertise.
+
+
+
+
+       Exported to 32 countries since inception
+
+          Exporting countries             Headquarter-India
+
+
+
+
+                                                                                             (INR crores)                                                                                    (INR crores)
+
+       Export revenue country split (Q1 FY27)                                                                           Revenue from exports
+
+
+             21.6                                                                                                                                                         179.5
+
+                                                                                                                                                          129.1
+
+                              11.3            12.2                                                                         94.1
+                                                                                               10.7                                        83.2
+                                                                                                                                  30.8%
+                                                                                                                                                                  26.6%                   57.0
+                                                                                                                                                  20.8%
+                                                                                                                                                                                                 45.8%
+                                                                                                                                                                                  33.2%
+                                                               0.2             1.1
+
+
+         Germany           United            Italy      Netherlands          Spain          Others*                         FY23            FY24           FY25             FY26          Q1 FY27
+                           States                                                                                                         Export revenue (in INR crores)
+                                                                                                                                          % of the total revenue from operations
+
+
+                                                                                                                                                                                                            29
+* includes Estonia, UK, Denmark, UAE, Romania, Czech Republic, Brazil, Sweden, Australia, Saudi Arabia, Poland, Qatar
+
+[page 31]
+Strengthen Our Brand Value
+
+ Participation in Key Exhibitions and Expos
+
+ •   Chemtech – Mumbai
+
+ •   GSSE – Mumbai
+
+ •   Stainless Steel World - Maastricht, Netherlands
+
+ •   Tube & Wire - Dusseldorf, Germany
+
+ •   Heat Exchanger World - Rotterdam, Netherlands
+
+ •   Heat Exchanger World - Houston, Texas, USA
+
+ •   Stainless Show, Brno, Czech Republic
+
+
+
+ •   Trademarked “Scoda Tubes Limited” to build brand
+     equity, increase market recognition, and protect IP.
+ •   20 personnel in quality check and customer
+     servicing team to further improve brand positioning
+     and brand recall value, supporting overall growth
+     strategy.
+
+
+
+                                                            30
+
+[page 32]
+SCODA TUBES LTD
+
+
+
+                       Industry
+                       Overview
+                  05
+[OCR page 32]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+a ae
+Pr pmeeroent NWN AS
+ft is S| : \ =o na” eeeat eee Ng ANNARR WanEy
+Pt ts Sc eaees they Sas
+m 4 ws bee | = Ge a BS =
+PPT | | ia
+= —— Tae aRee Ruane waa wy
+a —— oe gegeanssaBes a : ee 5 oa Waaay sunny >
+_— EES Gee, — nue a = —
+| Se fe
+j - # i fF EE Pe ara os = ue _———men | —— ¥
+a 7 RW
+:. za ae sae SERRE n
+Indust “a in a | |
+; fis, EEE EEEr) caneeeseeees eo ee
+stry / a = i
+| _saaan oe, any GHEE) ganenaceeest GEREEERgEEEE Pe =
+e ~~ gegz eee Sy npn SEEceee it ue, a
+Overvie _ fied tat nan HHEEreeees SRSeyEene ii =\\ te
+WN ae |)
+am ce i bl . ie , \
+—_—_
+gescecagasee —
+oa} —— a)
+| HEEREEEG ay i
+om ° —
+
+[page 33]
+     Global Demand Contribution
+              Stainless Steel Tubes and Pipes – Global Demand Split
+
+
+                    CY 2023                                                                                 Oil and gas                                                 CY 2028E1
+                                               15-17%                                                                                            15-17%
+                                                                                                            Process industries
+                                      6-8%                  23-26%                                                                                            24-27%
+                                                                                                            ART                             5-7%
+                                     6-8%                                                                                                 6-8%
+                                                                                                            ABC
+
+                                       11-13%                  18-21%                                       Water treatment                 10-12%             19-22%
+                                                                                                            Pharmaceuticals
+                                                 14-16%                                                                                              14-16%
+                                                                                                            Others
+
+
+
+
+              Global Demand of SS Tubes and Pipes (in mn tonnes)
+
+                                                                                                      3.7            •    Oil & gas and process industries continue to dominate
+                                                                 3.1                                                      global demand for SS pipes and tubes.
+                                           3            3
+                   2.7         2.7
+                                                                                                                     •    ART2 and ABC3 industries are accelerating SS pipes and
+                                                                                                                          tubes consumption due to their high corrosion resistance,
+                                                                                                                          strength to weigh ratio and wide range of applications.
+
+                                                                                                                     •    Demand for SS pipes and tubes grew at a CAGR of ~3%
+                                                                                                                          from CY19-CY23 and is expected to grow at a CAGR of 3-4%
+                                                                                                                          between CY23-CY28.
+                  CY19       CY20        CY21       CY22       CY23                              CY28E
+
+
+                                                                                                                                                                                      32
+1. Estimates 2. Automobile, railways, and transportation 3. Architecture, building and construction
+
+[page 34]
+     Stainless Steel Tubes and Pipes – India Outlook
+        •    Strong growth in end-user industries like building and                                    Stainless steel tubes and pipes demand (in 000’ tonnes)
+             construction, automobile, oil and gas, manufacturing and food
+             and beverage will drive the demand of SS pipes and tubes.                                                                                  450
+
+                                                                                                                                 300      322
+        •    Policy protection through imposition of anti-dumping duties on                                 226
+                                                                                                                          263
+                                                                                                                   208
+             Chinese imports will provide further fillip to local producers.
+
+        •    Indian exports of SS pipes and tubes continue to grow as
+             domestic players compete at global prices, supported by
+             efficiencies in their manufacturing process.                                                  FY20    FY21   FY22   FY23   FY24           FY29E
+
+
+        •    Mirroring global end-user industries, India’s demand for SS pipes
+                                                                                                       Import to India (in 000’ tonnes)
+             and tubes is driven by:
+                                                                                                             90
+                                                                                         CAGR: 6-8%                                                    56
+            Process industry                     28-32% of demand
+                                                                                          (FY24-29)
+
+
+                                                                                         CAGR: 6-8%
+                  Oil & gas                      22-25% of demand
+                                                                                          (FY24-29)         FY20                                      FY24
+
+
+                                                                                         CAGR: 8-10%
+                      ART1                       20-23% of demand                                      Export from India (in 000’ tonnes)
+                                                                                          (FY24-29)
+                                                                                                                                                       64
+                                                                                         CAGR: 6-8%          41
+                     ABC2                         18-21% of demand
+                                                                                          (FY24-29)
+
+
+
+                                                                                                            FY20                                      FY24
+                                                                                                                                                                 33
+1. Automobile, railways, and transportation 2. Architecture, building and construction
+
+[page 35]
+SCODA TUBES LTD
+
+
+                       Select
+                       Financial
+                       Information
+                  06
+[OCR page 35]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+a
+Select tl
+Financial | —_ =
+Information — Sa -,
+
+[page 36]
+Income statement
+
+  INR Crores Unless Otherwise Mentioned
+  Particulars
+                                                                         Income
+                                                                          Q1 FY27   Q1 FY26   YoY change
+  Revenue from operations                                                  124.3     97.4       27.6%
+  Cost of materials consumed (incl. changes in WIP and finished goods)     84.6      69.0       22.5%
+  Gross profit                                                             39.8      28.4       40.0%
+  Gross profit margin                                                     32.0%     29.2%      +283 bps
+  Employee benefit expenses                                                 2.5       2.4        1.7%
+  Other expenses                                                           21.4       11.8      80.9%
+
+  EBITDA                                                                   16.0      14.2       12.6%
+
+  EBITDA margin                                                            12.9%     14.6%     -172 bps
+
+  Other income                                                              1.6       1.8       -7.4%
+  Depreciation & amortization expenses                                      4.1       1.6       162.8%
+  Finance costs                                                             6.5       5.1       27.0%
+  Profit before tax                                                         7.0       9.3       -24.6%
+  Tax expenses                                                              1.7       2.2       -20.3%
+
+  Profit after tax                                                          5.3       7.1       -25.9%
+
+  PAT margin                                                               4.2%      7.3%      -305 bps
+
+  EPS (INR)                                                                 0.9       1.4       -39.1%
+
+
+                                                                                                           35
+
+[page 37]
+SCODA TUBES LTD
+
+
+
+
+   07
+        Annexure
+[OCR page 37]
+(Sparse-text section-divider slide; background is a full-bleed industrial photograph/illustration with no additional data content. OCR performed at 300dpi to confirm; OCR output below is noisy due to photographic background but corroborates the text-layer heading already captured above. No numeric or factual content beyond what pdftotext -layout extracted.)
+= ‘<~—™
+Dt ——= =
+— ———. —
+ure SS = SS
+E ee
+
+[page 38]
+Process Flow
+                            SS Round bars                    Raw material             SS Coils
+
+
+                                                              Inspection
+
+
+
+    Welded                                                                                                       Seamless      1
+
+    Roll forming and                                                                                       Peeling process     1
+    TIG welding
+                                         “U” bending     1                                             Hot piercing process    1
+    Solution annealing                                                      Bright annealing      Hot finish pipe annealing    1
+                         “U” bending by cold process     1
+    Straightening                                                           Straightening        Coating & pickling process    1
+                             Stress relieving at bend    1                                        Cold drawing & pilgering     1
+    Cutting                                                                 Cutting
+                                               portion   1
+                                                                                                        Solution annealing     1
+    Deburring                                                               Deburring
+                              Cutting and deburring      1
+                                                                                                             Straightening     1
+    Final pickling                                                          Hydrotesting
+                                            Cleaning     1                                                         Cutting     1
+    Passivation                                                             Inspection                           Deburring     1
+                                        Hydrotesting     1
+    Hydrotesting                                                            Marking                           Final pickling   1
+    Inspection               Inspection and marking      1
+                                                                            Packing                                     VDI    1
+
+    Marking                                  Packing     1                                                      Passivation    1
+
+    Packing                                                                                                        Marking     1
+
+                                                                                                                   Packing     1
+
+
+
+
+ANNEXURE                                                                                                                           37
+
+[page 39]
+Safe Harbor Statement
+This presentation is for information purposes only and does not constitute an offer or invitation to sell or the solicitation of an offer or invitation to
+purchase any securities ("Securities") of Scoda Tubes Limited (“Scoda" or the "Company") in India or any other jurisdiction. This presentation
+should not, nor should anything contained in it, form the basis of, or be relied upon in any connection with any contract or commitment
+whatsoever. The information contained in this presentation is strictly confidential and is intended solely for your reference and shall not be
+reproduced (in whole or in part), retransmitted, summarized or distributed to any other persons without Company's prior written consent. The
+Company may alter, modify or otherwise change in any manner the contents of this presentation, without obligation to notify you or any person
+of such revision or changes. This presentation may contain forward-looking statements that involve risks and uncertainties. Forward-looking
+statements are based on certain assumptions and expectations of future events. Actual future performance, outcomes and results may differ
+materially from those expressed in forward-looking statements assumptions and assumptions and risks, uncertainties and assumptions.
+Although Company believes that such forward-looking statements are based on reasonable assumptions, it can give no assurance that your
+expectations will be met. Representative examples of factors that could affect the accuracy of forward-looking statements include (without
+limitation) the condition of and changes in India's political and economic status, government policies, applicable laws, the steel and pipes sector
+in India, international and domestic events having a bearing on Company's business, particularly assumptions and the regulatory changes that
+are applicable to our sector in India, and such other factors beyond our control. You are cautioned not to place undue reliance on these forward-
+looking statements, which are based on knowledge, experience and current view of Company's management based on relevant facts and
+circumstances. The data herein with respect to Scoda is based on several assumptions and is subject to several known and unknown risks, which
+may cause Scoda’s actual results or performance to differ materially from any projected future results or performance expressed or implied by
+such statements. Forecasts and hypothetical examples are subject to uncertainty and contingencies outside Company's control. Past
+performance is not a reliable indication of future performance. This presentation has been prepared by the Company. No representation,
+warranty, expressor implied, is made as to, and no reliance should be placed on, the fairness, accuracy, completeness or correctness of the
+information and opinions in this presentation. None of Company or any of its directors, officers, employees, agents or advisers, or any of their
+respective affiliates, advisers or representatives, undertake to update or revise any forward-looking statements, whether and you new
+information, future events or otherwise and none of them shall have any liability (in negligence or otherwise) for any loss howsoever arising from
+any use of this presentation or its contents or otherwise arising in connection with this presentation. Further, nothing in this presentation should
+be construed as constituting legal, business, tax or financial advice or a recommendation regarding the securities. Before acting on any
+information you should consider the appropriateness of the information having regard to these matters, and you should seek independent
+financial advice.
+
+
+
+
+Statement
+
+[page 40]
+For Any Further Information/Queries, Please Contact:
+
+       Company                                     Investor Relations Consultant
+
+
+
+
+ Scoda Tubes Limited                       Capital Bridge Advisory Service Pvt. Ltd
+
+        Ravi Patel                            Raj Shah, CFA         Hrishit Jhaveri, CFA
+   Chief Financial Officer                   raj@capbridge.in        hrishit@capbridge.in
+  cs@scodatubes.com                           +91 99259 11296         +91 90999 94345
+
+
+
+
+                   Scan to view state of the art production
+                     facility for stainless steel pipes, tubes
+                    and U-Tubes by Scoda Tubes Limited
+
+[page 41 - NOTE]
+pdftotext -layout produced a 41st form-feed-delimited segment beyond pdfinfo's reported 40 pages. This segment is empty (0 characters) and is a trailing extraction artifact, not a real content page. pdfinfo confirms the PDF has exactly 40 pages. Page coverage is 100% across the 40 real pages (1-40); this note exists solely to account for the artifact and avoid it being mistaken for a coverage gap.

@@ -1,3 +1,56 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: results_goclcorp_q1fy27.pdf
+source_path: /home/user/inflection-pipeline/runs/goclcorp-q1fy27/inputs/results_goclcorp_q1fy27.pdf
+doctype: results
+page_count_pdfinfo: 12
+formfeed_count: 12
+line_count: 1092
+unit_convention: Lakhs
+conversion_factor_to_cr: Lakhs -> x0.01 (stated explicitly on statements: "Rs. in Lakhs", e.g. line "Rs. in Lakhs" heading on Consolidated P&L, Segment Information, Standalone P&L and Discontinued Operations tables)
+tool_versions: pdftotext (poppler) 24.02.0; tesseract 5.3.4; pdftoppm -r 300 for OCR rasterisation
+ocr_pages: [4, 5, 6, 7, 8, 10, 11, 12] (appended as OCR SUPPLEMENT blocks, not substitutions -- see deviation note below)
+page_coverage: 100% (12 of 12 pages present, formfeed_count 12 matches pdfinfo page_count 12; per-page char counts all far exceed the 100-char OCR trigger threshold, see PER-PAGE COVERAGE PROOF below)
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-13
+
+DEVIATION NOTE (mechanical, not interpretive): pdftotext -layout produced a solid text layer on every
+page (all page chunks 1,483-8,820 chars, none under the 100-char OCR trigger), so per the letter of the
+protocol OCR was not required. However, visual inspection of the extracted text on pages 4, 5, 6, 7, 8,
+10, 11 and 12 showed character-level corruption in numeric/tabular content consistent with a font
+cmap/encoding defect in the source PDF (e.g. page 4 pdftotext renders "Total income ... 631287 785599"
+where digits/decimals/commas are dropped or transposed; OCR of the same cell renders "Total income
+6,312.87 | 7,859.99"). This is NOT a low-density or image-based page problem (both fail modes the
+protocol anticipates) -- it is a text-layer fidelity problem the char-count gate does not catch. Pages 1,
+2, 3 and 9 (prose-only review report paragraphs, board outcome letter) were visually verified clean and
+consistent between pdftotext and OCR extractions, so no supplement was appended for those. For the 8
+affected pages, the pdftotext -layout block is retained as the PRIMARY extraction (per protocol, "never
+reflow") and a 300dpi OCR (tesseract, psm 6) block is APPENDED immediately after each affected page's
+primary block, clearly delimited "[OCR SUPPLEMENT page N ... ]" / "[END OCR SUPPLEMENT page N]". No
+numbers were corrected, estimated, or merged by this extractor -- both raw representations of the same
+page are provided so the downstream agent can resolve numeric evidence from the OCR block where the
+primary block is illegible. The OCR blocks themselves are not perfectly gridded (tesseract occasionally
+drops a row label when two adjacent table rows visually merge, e.g. page 10 OCR loses the "Total
+expenses" and "3. Profit before tax (1-2)" row labels while keeping their values) -- downstream agents
+citing OCR-supplement numbers should anchor to the OCR block and note the row-label gap explicitly
+rather than infer the label.
+
+PER-PAGE COVERAGE PROOF (pdftotext -layout chunk, split on form-feed, page = chunk index + 1):
+page 1  : 2195 chars (Board Outcome / Reg 30 letter)
+page 2  : 3901 chars (Consolidated Review Report, para 1-5)
+page 3  : 3133 chars (Consolidated Review Report, para 6-7 EOM/Other Matter, signature)
+page 4  : 8820 chars (Statement of Unaudited Consolidated Financial Results)
+page 5  : 6000 chars (Segment Information, consolidated)
+page 6  : 5497 chars (Consolidated Notes 1-3 + Discontinued Operations table)
+page 7  : 6529 chars (Consolidated Notes 4-9, signature block)
+page 8  : 5207 chars (Standalone Review Report, para 1-4)
+page 9  : 1483 chars (Standalone Review Report, para 5 EOM, signature)
+page 10 : 8378 chars (Statement of Unaudited Standalone Financial Results)
+page 11 : 5405 chars (Standalone Notes 1-7)
+page 12 : 4787 chars (Standalone Notes 8-9, Discontinued Operations table, signature block)
+All 12 chunks exceed the 100-character OCR trigger; formfeed_count (12) equals pdfinfo Pages (12); no
+page unaccounted for. GATE A1: PASS.
+=== END HEADER ===
+
 [page 1]
                                             GOCL Corporation Limited
 
@@ -218,6 +271,70 @@ Date: August 13, 2026
          17. Eamings per share for continuing and discontinued operations                                                                  |
     >        Basic and Diksted (Rs.)                                                                               8.15              1515               24662            307.01
 N                                                                                                      (not annualised) | (not annualised) | _(not annualised) | (Annualised)
+
+[OCR SUPPLEMENT page 4 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+GOCL Corporation Limited
+PROS CIN -L24292AP1951PLC125084
+GOCL Registered Office: Plot No. 63-56, AIE Industrial Park, Pedagantyada, Gajuwaka,Pedagantyada, Visakhapatnam- 530044, Andhra Pradesh, India
+Corporate Office: URJA HEIGHTS, 2nd Floor, 7-1-21/A/204, Sy No, 3444, Raj Bhavan Road, Begumpet,
+Hyderabad-500 016, Ph: 040-23610671-9 Fax: 040-23813860
+Website: www.gocicorp.com; Email ID: info@gocicorp.com
+STATEMENT OF UNAUDITED CONSOLIDATED FINANCIAL RESULTS FOR THE QUARTER ENDED JUNE 30, 2026.
+Rs. in Lakhs
+Quarter ended | Year Ended
+ssid June 30,2026 | “a3! oe June 30,2025 | Mar3t, 2026
+(Unaudited) R efer Note 6) (Unaudited) (Audited)
+Continued Operations | | |
+1. Income
+(a) Revenue from operations 428.51 233.29 | 339.18 976.31
+(b) Other income (Refer note 3 and 4) | 5,884.36 7,626.70 | 8,310.45 41,581.03
+Total income 6,312.87 | 7.859.99 | 6,845.63 42,557.34
+2. Expenses | |
+a) Cost of materials consumed 95.19 47.54) $4.26 193.90
+b} Changes in inventories of finished goods, work-in-pregress and stock-in-trade | 32.00 (9.03) 3.00 (58.84)
+c) Employee benefits expense 283.19 219.94 160.71 777.40
+d) Finance cost 0.36 384.67 2,578.84 4,853.77
+e) Depreciation and amortisation expense 86.39 70,75 §3,10 | 237.70
+f} Other expense 543.08 786.82 689.71 3,202.71
+Total expenses ; 1,040.21 1,500.69 | 3,571.62 | 9,206.64
+3. Profit before exceptional items and tax (1-2) yea §,272.66 6,359.30 ~~ 5,078.01 33,350.70
+4, Exceptional items (net} (Refer note 2) 351.65 | (209.83), 4,220.09 1,300.43
+5, Profit before tax {3+4) | 5,624.31 | 6,149.47 | 6258.10 34,651.13
+6. Tax expense: |
+a) Current tax 4,314.74 | 2,334.87 1,144.32 6,979.29
+b) Deferred tax Credit I (75.63) (178.00); (218.70)! (286.95)
+Total tax expense | 1.239.11 | 2,156.87 | $25.62 | 6,692.34
+7. Profit from continuing operations (5-6) 4,385.20 | 3,992.60 _ 5,372.48 | 27,958.79
+8. Discontinued Operations (Refer note 3) | |
+a) (Loss) / Profit before tax from discontinued operations | (337.33)) 5,722.07 | 436,241.16 | 1,48,051.39
+b) Tax expense of discontinued operations : | 8.00 2.200.00 | 19,359.05 23,815.48
+§, (Loss) / Profit after tax from discontinued operations [(8a)-(8b) (345.33) 3,522.07 116,882.05 124,235.91
+$410, Net profit after tax (7+9) 4,039.87 | 7,514.67 122,254.53 1,52.194,70
+Ti, Other comprenensive income ]
+{i) Items that will not be reclassified to profit or loss |
+- Remezsurement (loss)/gain on defined benefit plans (2.13), (29.02) (6.51), (8.50)
+~ Income tax relating to remeasurement of defined benefit plans 0.54 | 7.30 1.64 | 2.14
+(ll) Items that will be reclassified to profit or loss | |
+(175.20)| 5,090.15 | 28746 | 9,505.74
+Other comprehensive income, net of tax | {176.73}, §.068.43 | 282,29 9,499.38
+42. Total comprehensive income (10+141) j 3,863.08 | 12,583.10 | 1,22,536.82 1,61,694.08
+13. Paid up equity share capital (Face value of Rs. 2 each) j 991.45 | 981.45 991.45 991.45
+44, Reserves i.e other equity | | 3,13,302,40
+15. Earnings per share for continuing operations } 8.85 8.05 10.84 56.40
+Basic and Diluted (Rs.) |
+16. Earnings per share for discontinued operations |
+Basic and Diuted (Rs.) (0.70), 7.10 235.78 250.61
+“} 47. Eamings per share for continuing and discontinued operations |
+ApS OA Basic and Diuted (Rs.) 8.45 15.15 | 246,62 307.01
+NU | (not annualised) | (not annualised) | _(not annualised) (Annualised)
+f AbD): l). 4 § ory,
+JE}, CF) "2
+AK | aYP ©
+wi? BL 4 | vA 3
+ae
+o. v
+
+[END OCR SUPPLEMENT page 4]
 [page 5]
    SEGMENT INFORMATION UNDER REGULATION 33 OF THE SEBI (LISTING OBLIGATIONS AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2015
                                             FOR THE QUARTER ENDED JUNE 30, 2026
@@ -259,6 +376,51 @@ N                                                                               
 | d. Discontinued Operations #                               I                                   100.00          100.00                 16.639.33 |           100.00
    Total Liabilities                                                                         41,254.30        4121777 |               1,17,024.89 |        41.217.77
  Note : #Pertaining to Energelics Division and IDL Explosives Limited, both being classified as Discontinued Operations
+
+[OCR SUPPLEMENT page 5 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+FOR THE QUARTER ENDED JUNE 30, 2026
+Rs. in Lakhs
+ear Demers Quarter ended Year Ended
+June 30, 2026 pel a | June 30,2025 | Mar 31, 2026
+(Unaudited) (Refer Note 6) (Unaudited) (Audited)
+41. Segment income | j
+a. Electronics Manufacturing Services } 262.33 68.96 174,76 326.37
+b. Realty 164.35 2,017.70 2,123.55 4,417.88
+c. Unallocable income 5,886.19 5,773.33 6,351.32 37,813.09
+Total 6,312.87 7,859.99 6,649.63 42,557.34
+Less: Inter segment revenue - | - | - | -
+Total Segment Revenue i 6,312.87 | 7,859.99 | 6,649.63 | 42,557.34
+Discontinued Operations # i 34,21 | 6,079.79 | 1.48.851.05 | 1.75.394.44
+Total income _ | 6,347.08 | 13,939.78 | 4.57.500.68 2,17,951.78
+2. Segment results (Profit before tax and finance costs) j i |
+a. Electronics Manufacturing Services {110.94) (146.16) | 3.82 (280.62)
+b. Realty (4.58) 1,782.62 1,847.59 | 3,295.17
+Total (145.52) 1,636.46 1,851.41 | 3,014.55
+Less: |
+(i) Finance costs 036 384.67 2,578.84 4,853.77
+(ii) Other Unallocable expenditure net off (un-allocable income) | 5,740.19)) Penna papel sh (36,490.35)
+5,624.31 | 6,149.47 | 6,298.10 34,651.13
+Discontinued Operations # | (337.33) 5,722.07 1.36,241.10 1.48,051.39
+Total profit before tax ae eee | 5,286.98 11,871.54! ——_1,42,539.20 | 1,82,702.52
+3. Segment assets |
+a. Electronics Manufacturing Services | 1,583.72 | 1,817.66 1,955.67 | 1,817.66
+b. Realty 12,879.46 14,897.62 16,133.81 | 14,897.62
+c. Unallocable assets 3,37,109.48 | 3,32,942.12 3,48,271.57 3,32,942.12
+d. Discontinued Operations # 7,838.55 5,854.22 30.879.54 5,854.22
+4. Segment liabilities | | |
+a. Electronics Manufacturing Services 530.21 | 832.50 944.17 832.50
+b. Realty 1,746.63 | 4,719.07 | 4,834.26 1,719.07
+c. Unallocable liabilities 38,877.36 38,566.20 | 97,607.13 | 38,566.20
+d. Discontinued Operations # 100.00 | 100.00 | 16.639.33 100.00
+ZS a
+‘A fy a.
+a <> i, oF Mo \
+x f G \ 2 *\
+We | e “
+WAAL] i) }
+— Nd k YY
+
+[END OCR SUPPLEMENT page 5]
 [page 6]
 Nots es:
       The above unaudited consolidated financial results have been prepared in accordance with Indian Accounting Standards (Ind AS') prescribed under Section 133 of the.
@@ -300,6 +462,57 @@ N                                                                               
     3. (Loss) / Profit before tax (1-2)                                                          |              (337.33)]         5,722.07          13624110             14805139
     4. Tax expense                                                                               |                 200            220000 |            19,359.05 |          23,815.48
     5. (Loss) / Profit after tax (3-4)                                                           |              (345.33)          3.522.07          116,882.05 |         1,24.23591
+
+[OCR SUPPLEMENT page 6 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+Notes:
+
+{ The above unaudited consolidated financial results have been prepared in accordance with Indian Accounting Standards (‘Ind AS’) prescribed under Section 133 of the
+Companies Act, 2013 and other accounting principles generally accepted in India and in terms of Regulation 33 of the SEB! (Listing Obligations and Disclosure
+Requirements) Regulations, 2015. These unaudited consolidated financial results for the quarter ended June 30, 2026 have been reviewed by the Audit Committee
+meeting and approved by the Board of Directors of the Company at their meeting held on August 13, 2026. These unaudited consolidated financial results have been
+subjected to limited review by the Statutory Auditors of the Company and the Statutory Auditors have expressed an unmodified Conclusion.
+
+2 On 1 March 2022, HGHL Holdings Limited (wholly owned subsidiary) has entered into Addendum to share purchase agreement with ACHT Investment Limited (ACHT)
+whereby ACHT has given a firm commitment to buyback the shares of 57 Whitehall Investments SARL from the subsidiary Company. The put option in the above
+agreement is accounted as a derivative in accordance with Ind AS 109. Due to exceptional currency fluctuation between GBP and USD, the unrealised exchange Gain
+on the put option of Rs. 351.65 lakhs, Loss of Rs. 209.83 lakhs, gain of Rs. 1,220.09 lakhs and gain of Rs. 1,300.43 lakhs has been classified as an exceptional item in
+the unaudited consolidated financial results for the quarter ended June 30, 2026, March 31, 2026 and June 30, 2025 and in the audited financial results for year ended
+March 31, 2026, respectively.
+
+3 The Company had entered into a Memorandum of Understanding on March 27, 2024 with Squarespace Builders Private Limited, Hyderabad for sale of the Company's
+Scheduled Property of 264.50 acres of land situated at Kukatpally, Hyderabad, for a total consideration of Rs. 3,41,800 lakhs [out of which 32 acres of land was under
+joint development agreement (JDA)]. During the year ended March 31, 2026, the Company had sold 7.71 acres of land forming part of JDA and 126 acres out of
+remaining portion of land and recognised gain of Rs. 3,745.48 lakhs (June 30, 2025 quarter Rs. 1,955.18 lakhs) and Rs. 1,50,266.01 lakhs (June 30, 2025 quarter Rs.
+1,37,121.69 lakhs) which forms part of other Income under Income from continuing operations and Income from discontinued operations, respectively. During current
+quarter, no further sale of land has taken place and till June 30, 2026, total of 157.21 acres of land have been sold by the Company.
+
+The board of directors on November 28, 2024 decided to cease the detonators and other blasting devices manufacturing operations at Kukatpally, Hyderabad and
+initiated the requisite approval for the same.
+As at June 30, 2026 and March 31, 2026, the Company has presented the detonators and other blasting devices manufacturing operations as “Discontinued operation”
+and its related assets as “assets held for sale” and liability as “Liabilities directly associated with the assets held for sale” and valued it at lower of carrying value and fair
+value less cost to sell in accordance with the IND AS 105 (Non-current assets held for sale and discontinued operations).
+Pursuant to approval by the Board of Directors and shareholders. the Company has reclassified the operations of IDL under Discontinued business operations fill date
+of sale, i.e., November 15, 2025, and accordingly the figures of unaudited consolidated financial results for the year/ quarter ended March 31, 2026 have been
+regrouped / reclassified to make them comparable.
+The results of discontinued operations are presented below: Rs. in Lakhs
+| Quarter ended | Year Ended
+Particulars | |
+June 30, 2026 rah — June 30,2025  Mar31, 2026
+(Unaudited) (Refer Note 6) (Unaudited) (Audited)
+4. Income (Refer note 3) | 34.24 | 6,079.79 | 4,48,851.05 | 1,75,394.44
+2.Expenses _ | 371.54 | 357.72 | 12,609.95 27,343.05
+3. (Loss) / Profit before tax (1-2) | (337.33), 5,722.07 | 1,36,241.10 | 1,48,051,39
+ZRCTI ess 4, Tax expense | 8.00 2,200.00 | 19,369.05, 23,815.48
+f SY ; 5. (Loss) / Profit after tax (3-4) (345,33) 3,522.07 1,16,882.05 | 1,24,235.91
+teh ate IGABAL | ZsoPt Mo
+“ =\ /§ : '@) oy 2
+, A | fe c
+ORCOY | 2. 3
+fs ~.
+Sat - “2
+a Y - 2
+
+[END OCR SUPPLEMENT page 6]
 [page 7]
                                                                   e meetings held on May 29, 2026, had ratfied Corporat         e Guarariees extended by the Company to Hinduja
     The Audit committes and Board of Difectors at thelr respectiv       (given in earler year) and Hinduja     Energy  India Limited  Rs. 22,000 Lakhs (given in December 2025),
@@ -365,6 +578,49 @@ N                                                                               
                                                                                                                        Whole Time Director and C               f Financial Officer
      Mumbai                                                                                                                                                        DIN : 09184688
      August 13, 2026
+
+[OCR SUPPLEMENT page 7 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+4 The Audit committee and Board of Directors at their respective meetings held on May 29, 2026, had ratified Corporate Guarantees extended by the Company to Hinduja
+National Power Corporation Limited (HNPCL) Rs. 109,610 Lakhs (given in earlier year) and Hinduja Energy India Limited Rs. 22,000 Lakhs (given in December 2025),
+secured by charge on the Company's immovable properties, in respect of borrowings availed by those entities from banks/ financial institutions. These guarantees,
+though approved by the Board of Directors and disclosed to stock exchanges at the time of execution, were not processed as Related Party Transactions and
+accordingly, prior approval of the Audit Committee, Board of Directors and shareholders were not obtained. The Company has obtained post facto shareholders’
+approval on July 07, 2026 through pestal ballot and is in process of making necessary applications to the regulatory authorities.
+Based on internal assessment and legal advice from subject matter expert, necessary adjustments/ disclosure have been made in the unaudited consolidated financial
+results to the extent considered appropriate and the outcome of the said matter is not expected to have a material impact on the unaudited consolidated financial
+results.
+5 The Board of Directors of the Company at their meeting held on December 15, 2028, inter alia had approved a ‘Scheme of Merger by Absorption’ (“scheme”) of Hinduja
+National Power Corporation Limited (‘HNPCL’) with and into the Company subject to requisite statutory and regulatory approvals and sanction of the Hon'ble National
+Company Law Tribunal (NCLT). During the quarter, the Company received no objection letters from the Stock Exchanges and filed scheme with Hon’ble NCLT. On July
+20, 2026, Hon'ble NCLT while not acceding approval has made certain observations. The Company is in the process of preferring an appeal before Hon'ble National
+Company Law Appellate Tribunal (NCLAT). Pending the requisite regulatory approvals, no effect of the scheme has been given in the unaudited consolidated financial
+results.
+6 ‘The figures for the quarter ended March 31, 2026 are the balancing figures between the audited consolidated financial results for the year ended March 31, 2026 and
+the published unaudited consolidated financial results for the period ended December 31, 2025 which were subjected to limited review.
+7 Pursuant to the approval of the Board of Directors at its meeting held on March 23, 2026, the Company ertered into an Agreement to Sell on March 27, 2026 with the
+SPVs of Tata Realty and Infrastructure Limited for the sale of the Company’s property situated at Yelahanka, Bengaluru, known as “Ecopolis.” The property is presently
+held under a Joint Development Agreement (JDA) with Hinduja Realty Ventures Limited. The Company shall be entitled to receive consideration of approximately Rs.
+81,500 lakhs from the transaction. During FY 2025-26, the Company had received an advance of Rs. 400 lakhs towards the proposed sale. Accordingly, the property
+has been reclassified as “Non-current Assets Held for Sale’, and the advance received has been classified under “Liabilities Associated with Nor-current Assets Held
+for Sale". The Company is in process of completing conditions precedent to sale deed and pending completion of formalities, no sale has been executed.
+8 The figures for the previous quarter/ year have been regrouped/rearranged wherever necessary to conform to the current quarter classification.
+9 The above unaudited consolidated financial results are also available on the Stock Exchanges website iLe.www.bseindia.com, www.nseindia.com and the Company's
+website www.goclcomp.com.
+By Order of the Board
+For GOCL Corporation Limited = 9-0 Sy
+C fi <olaty \
+oe. \ ii. 2 a \
+a \ a f VY
+a ans <\
+Zor & ¢ | ~~ VK 1 5]
+pr" NON i{ s S) 1
+fey YA ae * Ravi Jain Yo =.
+Mumbai (ed Me ee 1\ ) Whole Time Director and Chief Financial Officer i) * v 4
+August 13, 2026 We | MUO DIN : 09184688 SF
+On KY |
+SED ACO
+
+[END OCR SUPPLEMENT page 7]
 [page 8]
     HARIBHAKTI & CO. LLP
     Chartered Accountants
@@ -442,6 +698,60 @@ Haribhakti & Co. LLP, Chartered Accountants (LLPIN: AAC-3768)
 Registered office: 904A, 9" Floor, R Square, Andheri-Kurla Road, Near Chakala Metro Station, J. B. Nagar, Mumbai-40005
 www.haribhakti.co.in | info@haribhakti.co.in | Tel: +91 22 6672 9998                                                   9.
 Other offices: Ahmedabad, Bengaluru, Chennai, Kolkata.
+
+[OCR SUPPLEMENT page 8 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+HARIBHAKTI & CO. LLP
+
+Chartered Accountants
+
+Independent Auditor’s Review Report on quarterly Unaudited Standalone Financial Results of
+GOCL_ Corporation Limited pursuant to-the Resor ee standalone Financial Results of
+
+Disclosures Requirements) Regulations: 2015 (spose oe See Listing Obligations and
+
+To the Board of Directors
+
+GOCL Corporation Limited
+
+1. We have reviewed the accompanying Statement of Unaudited Standalone Financial Results of
+GOCL Corporation Limited (“the Company”) for the quarter ended June 30, 2026 (“the
+Statement”), being submitted by the Company pursuant to the requirements of Regulation 33
+of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended
+(‘Listing Regulations’).
+
+2. This Statement, which is the responsibility of the Company’s Management and approved by the
+Company’s Board of Directors, has been prepared in accordance with the recognition and
+measurement principles laid down in Indian Accounting Standard 34 “interim Financial
+Reporting” prescribed under Section 133 of the Companies Act, 2013 (“Act”) read with relevant
+rules issued thereunder (hereinafter referred to as “the said Indian Accounting Standard”) and
+other accounting principles generally accepted in India. Our responsibility is to issue a report
+on the Statement based on our review.
+
+3. We conducted our review of the Statement in accordance with the Standard on Review
+Engagements (SRE) 2410, “Review of Interim Financial Information Performed by the
+Independent Auditor of the Entity” issued by the Institute of Chartered Accountants of India.
+This standard requires that we plan and perform the review to obtain moderate assurance as
+to whether the Statement is free of material misstatement. A review is limited primarily to
+inquiries of the Company personnel and analytical procedures applied to financial data and
+thus provide less assurance than an audit. We have not performed an audit and accordingly,
+we do not express an audit opinion.
+
+4. Based on our review conducted and procedures performed as stated in paragraph 3 above,
+nothing has come to our attention that causes us to believe that the accompanying Statement,
+prepared in accordance with the recognition and measurement principles laid down in the said
+Indian Accounting Standard and other accounting principles generally accepted in India, has
+not disclosed the information required to be disclosed in terms of Regulation 33 of the Listing
+Regulations, including the manner in which it is to be disclosed, or that it contains any material
+misstatement.
+
+Haribhakti & Co. LLP, Chartered Accountants (LLPIN: AAC-3768)
+
+Registered office: 904A, 9'* Floor, R Square, Andheri-Kurla Road, Near Chakala Metro Station, J. B. Nagar, Mumbai-400059.
+www.haribhakti.co.in | info@haribhakti.co.in | Tel: +91 22 6672 9998
+
+Other offices: Anmedabad, Bengaluru, Chennai, Kolkata.
+
+[END OCR SUPPLEMENT page 8]
 [page 9]
 HARIBHAKTI & CO. LLP
 Chartered Accountants
@@ -533,6 +843,61 @@ i Tax expense:                                                                  
    Basic and Diluted (Rs.)                                                                                     (0.70)’          7.10                       236.81 |                25541
 15.Eamings per share for continuing and discontinued operations                                     (notannualised) | (notannualised)              (notannualised)]          (annualised)
    Basic and Diluted (Rs.)                                                                        |             647            1537 |                      24348 |                29168
+
+[OCR SUPPLEMENT page 10 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+GOCL Corporation Limited
+45> CIN - L24292AP1961PLC126081.
+Registered Office: Plot No. 63-66, AIE Industrial Park, Pedagantyada, Gajuwaka,Pedagantyada, Visakhapatnam- 530044,Andhra Pradesh, India
+Corporate Office : URJA HEIGHTS, 2nd Floor, 7-1-21/A/201, Sy No. 341/1, Raj Bhavan Road, Begumpet,
+Hyderabad-500 016, India Ph: 040-23810671-9 Fax: 040-23813860.Website: www.gocicorp.com; Email ID: info@gocicorp.com
+STATEMENT OF UNAUDITED STANDALONE FINANCIAL RESULTS FOR THE QUARTER ENDED JUNE 30, 2026
+Rs. in Lakhs
+Quarter ended |___ Year ended
+Particulars June 30, 2026 | March 31, 2026 June 30, 2025 | March 31, 2026
+| (Unaudited) (Audited) (Unaudited) (Audited)
+(Refer Note 3) |
+Continuing Operations |
+1, Income
+a) Revenue from operations 428.51 233.29 339.18 976.31
+6) Other income (Refer note 5 and 3} 5,254.59 7,026.99 4,745.76 27,398.73
+Total income 5,683.10 | 7,260.28 5,084.94 28,375.04
+2. Expenses |
+a) Cost of materials consumed 95.19 47.54 54.26 193.90
+b) Changes in inventories of finished goods, work-in-progress and stock-in-trade 32.00 (9.03), 35.00 (58.84)
+c) Employee benefits expense 283.19 219.94 | 160.71 777.40
+d) Finance cost 0.36 0.73 | 27.29 31.71
+e) Depreciation and amortisation expense 86.39 70.75 | 53.10 237.79
+f\ Other expense | 535.50 710.82 | 621.81 2,796.98
+952.17 3,978.85
+6,219.53 | 4,132.77 | 24,396.19
+4. Tax expense: |
+a) Current tax 1,170.00 2,300.00 1,044.01 | 6,712.33
+b) Deferred tax Credit (75.63) (178.00) (218.70)! (286.95)
+5. Profit from continuing operations (3-4 i 3,556.10 4,097.53
+6. Discontinued Operations {Reier note 8) | |
+| a) (Loss) / Profit before tax from discontinued operations (337.33) 5,722.07 1,36,748.16 1,49,737.05
+¢) Tax expense of discontinued operations | 8.00 2,200.00 19,355.99 | 23,123.32
+7. (Loss) / Profit after tax from discontinued operations [6/a}-6(b)] i (345.33
+$. Other comprehensive income i |
+Items that will not be reclassified to profit or loss |
+Remeasurement (loss)/gain on defined benefit plans | {2.13)) (29.02)
+Income tax relating to remeasurement of defined benefit pians 0.54 7.30 0.03 | 2.14
+Other comprehensive income, net of tax {1.59)) (21.72) 0.10); (6,36}
+11.Paid up equity share capital - (face value of Rs. 2 each) | 991.45 991.45 991.45 | 991.45
+12.Reserves i.e. other equity | 1 2,16,389.43
+13.Eamings per share for continuing operations | |
+Basic and Diluted (Rs.) 7.17 | 8.27 6.67 | 36.25
+spretcivin 14.Earnings per share for discontinued operations |
+ANIL eS. Basic and Diluted (Rs.) | (0.70) 7.10 236.81 25541
+poy" “SO\\_ |15.Eamings per share for continuing and discontinued operations | (not annualised) (not annualised)) —_ (not annualised)} ( annualised) oe
+I</ \c\ Basic and Diluted (Rs.) | 6.47 15.37 | 243.48 291.66 ofaz,
+Ii WANTNADA TV? fi 3° “0
+Ve MINMBAL) fic %
+AN eS, J} 8
+Cy : Ao, 5
+eo , :
+
+[END OCR SUPPLEMENT page 10]
 [page 11]
 Notes:
     1 The above unaudited standalone financial results have been prepared in accordance with Indian Accounting Standards (Ind
@@ -589,6 +954,59 @@ E
      During FY 2025-26, the Company had received an advance of Rs. 100 lakhs towards the proposed sale. Accordingly, the property has been reclassified
      for Sale " and the advance received has been ciassified under “Liabiliies Associated with Non-current Assets Held for Sale". The Company s in process  as “Non-current Assets Held
      precedent to sale deed and pending completion of formalities, no sale has been executed.                                                                   of completing conditions
+
+[OCR SUPPLEMENT page 11 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+Notes:
+
+1 The above unaudited standalone financial results have been prepared in accordance with Indian Accounting Standards (‘Ind AS’) prescribed under Section 133 of the Companies Act,
+2013 and other accounting principles generally accepted in India and in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.
+These unaudited standalone financial results for the Quarter ended June 30, 2026 have been reviewed by the Audit Committee and approved by the Board of Directors of the
+Company at their meeting held on August 13, 2026. These unaudited standalone financial results have been subjected to limited review by the Statutory Auditors of the Company and
+the Statutory Auditors have expressed an unmodified conclusion.
+
+2 As per Ind AS 108 ‘Operating segments’, the Company has disclosed the segment information only as part of the unaudited consolidated financial results.
+
+3 The figures for the Quarter ended March 31, 2026 are the balancing figures between the audited standalone financial results for the year ended March 31, 2026 and the published
+unaudited standalone financial results for the period ended December 31, 2025 which were subjected to limited review.
+
+4 The figures for the previous quarter/ year have been regrouped/rearranged wherever necessary to conform to the current quarter classification.
+
+5 The Audit committee and Board of Directors at their respective meetings held on May 29, 2026, had ratified Corporate Guarantees extended by the Company to Hinduja National
+Power Corporation Limited (HNPCL) Rs. 109,610 Lakhs (given in earlier year) and Hinduja Energy India Limited Rs. 22,000 Lakhs (given in December 2025), secured by charge on
+the Company's immovable properties, in respect of borrowings availed by those entities from banks/ financial institutions. These guarantees, though approved by the Board of
+Directors and disclosed to stock exchanges at the time of execution, were not processed as Related Party Transactions and accordingly, prior approval of the Audit Committee, Board
+of Directors and shareholders were not obtained. The Company has obtained post facto shareholders' approval on July 07, 2026 through postal ballot and is in process of making
+necessary applications to the regulatory authorities.
+
+Based on internal assessment and legal advice from subject matter expert, necessary adjustments/ disclosure have been made in the Unaudited Standalone Financial Results to the
+extent considered appropriate and the outcome of the said matter is not expected to have a material impact on the Unaudited Standalone Financial Results.
+
+6 The Board of Directors of the Company at their meeting held on December 15, 2025, inter alia had approved a ‘Scheme of Merger by Absorption’ (“scheme”) of Hinduja National
+Power Corporation Limited (‘HNPCL’) with and into the Company subject to fequisite statutory and regulatory approvals and sanction of the Hon'ble National Company Law Tribunal
+(NCLT). During the quarter, the Company received no objection letters from the Stack Exchanges and filed scheme with Hon’ble NCLT. On duly 30, 2026, Hon'ble NCLT while not
+acceding approval has made certain observations. The Company is in the process of preferring an appeal before Hon'ble National Company Law Appellate Tribunal (NCLAT).
+Pending the requisite regulatory approvals, no effect of the scheme has been given in the Un-audited Standalone Financial Results.
+
+7 Pursuant to the approval of the Board of Directors at their meeting held on March 23, 2026, the Company entered into an Agreement to Sell on March 27, 2026 with the SPVs of Tata
+Realty and Infrastructure Limited for the sale of the Company's property situated at Yelahanka, Bengaluru, known as “Ecopolis.” The property is presently held under a Joint
+Development Agreement (JDA) with Hinduja Realty Ventures Limited. The Company shall be entitled to receive consideration of approximately Rs. 81,500 lakhs from the transaction,
+During FY 2025-26, the Company had received an advance of Rs. 100 lakhs towards the Proposed sale. Accordingly, the property has been reclassified as “Non-curent Assets Held
+for Sale ,” and the advance received has been classified under “Liabilities Associated with Non-current Assets Held for Sale". The Company is in process of completing conditions
+precedent to sale deed and pending completion of formalities, no sale has been executed. oa
+
+Va <? tg Oe
+f FP ca : o, \
+i \/\ Ef]
+—— \O ea 3}
+cence a \o- Y osy
+Za Wo 1 wy
+APSE AS ONY % * 4
+por NO’ ad
+: / 2 \e\
+=| MUNBAT) =}
+NY
+
+[END OCR SUPPLEMENT page 11]
 [page 12]
 8 The Company had entered into a Memorandum of Understanding on March 27, 2024 with Squarespac
   Property of 264.50 acres of land situated at Kukatpally, Hyderabad, for a total consideration          e Builders Private Limited, Hyderabad for sale of the Company’s Scheduled
@@ -630,3 +1048,45 @@ E
 
     Mumbai
     August 13, 2026
+
+[OCR SUPPLEMENT page 12 -- primary pdftotext text layer for this page shows font-encoding/cmap corruption in numeric and tabular content (verified by visual comparison against 300dpi OCR); OCR text below provided for cross-reference per downstream evidence resolution. Do not treat divergence between the two blocks as two different facts -- they represent the same source page.]
+8 The Company had entered into a Memorandum of Understanding on March 27, 2024 with Squarespace Builders Private Limited, Hyderabad for sale of the Company's Scheduled
+Property of 264.50 acres of land situated at Kukatpally, Hyderabad, for a total consideration of Rs. 3.41,800 lakhs [out of which 32 acres of land was under joint development
+agreement (JDA)]. During the year ended March 31, 2026, the Company had sold 7.71 acres of land forming part of JDA and 126 acres out of remaining portion of land and
+fecognised gain of Rs. 3,745.48 lakhs (June 30, 2025 quarter Rs. 1,955.18 lakhs) and Rs. 1,50,266.01 lakhs (June 30, 2025 quarter Rs. 1,37,121.69 lakhs) which forms part of other
+Income under Income from continuing Operations and Income from discontinued operations, respectively. During the quarter, no further sale of land has taken place and till June 30,
+2026, a total of 157.21 acres of land have been sold by the Company.
+
+The board of directors on November 28, 2024 decided to cease the detonators and other blasting devices manufacturing operations at Kukatpally, Hyderabad and initiated the
+requisite approval for the same.
+As at June 30, 2026 and March 31, 2026, the Company has presented the detonators and other blasting devices manufacturing operations as “Discontinued operation” and its related
+assets as “assets held for sale” and liability as “Liabilities directly associated with the assets held for sale” and valued it at lower of carrying value and fair value less cost to sell in
+accordance with the IND AS 105 (Non-current assets held for sale and discontinued operations).
+The results of discontinued operations are presented below: Rs. in Lakhs
+Particulars | Quarter ended | _ Year ended
+| June 30, 2026 | March 31, 2026 June 30, 2025 March 31, 2026
+(Unaudited) (Audited) (Unaudited) | (Audited)
+1. Income (Refer note 8) 34.21 | 6,079.79 1,37,325.35 | 1,51,081.22
+2. Expenses | 371.54 357.72 | 877.19 | 1,344,147
+5. (Loss) / Profit before tax {7-2} (337.33) 5,722.07 | 1.36,748.16 1,49.737.05
+4. Tax expense a‘ j 8.00 2,200.00 19,355.99 23,123.32
+5. (Loss) / Profit after tax (3-4) | (345.33) 3,522.07 1,17,392.17 1,26,613.73
+9 The above unaudited standalone financials results are also available on the Stock Exchanges website i.e.www.bseindia.com, www.nseindia.com and the Company's website
+www.goclcorp.com.
+ForGOCL Corporation Limited
+{ j \
+Kk AR \y Fa PRR
+| mm ViKS
+Noe ae Ravi Jain
+Mumbai Teas Whole Time Director and ‘Shief Financia! Officer
+August 13, 2026 we * DIN : 09184688
+Pare & A | >
+AS ™L ON J
+ff NA f.. Pra
+IS) hem pd fv 2 \
+\=,| MUMBAT) 4) Bi c
+\ Hi AY &
+CF | WV, &
+SD ACO ta, *
+
+[END OCR SUPPLEMENT page 12]

@@ -1,123 +1,133 @@
 # A5 ADVERSARY / COMPLETENESS AUDIT — Gem Aromatics Limited (GEMAROMA), Q1 FY27
 
 **Agent:** A5 ADVERSARY | **Model:** claude-opus-4-8 | **Date:** 2026-08-13
-**Under audit:** review_gemaroma_q1fy27.md (A4, loop 1 of 2)
-**Method:** fresh context — re-derived independently from the three A1 extracts and diffed against the three A2 ledgers; A4's and A3's cites were checked, not trusted. Results extract is in **Rs Millions, x0.1 → Rs Cr**; deck and press release already in Rs Cr.
+**Under audit:** review_gemaroma_q1fy27.md (A4 analyst)
+**Method:** fresh context. I re-derived every derived metric independently from the A1 extracts (results in Rs Millions, x0.1 → Rs Cr; deck/PR in Rs Cr), re-ran the A2 enumeration by my own read of the extracts, and did not defer to A4's or A3's cites.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate)
 
-| Brief part | Location | Present / Empty | Note |
+PLAIN-LANGUAGE BRIEF located at review L491-507. All four labelled parts present and carry real, non-placeholder content:
+
+| Part | Heading | Line | Status |
 |---|---|---|---|
-| (1) Summary narrative | L470-472 | **PRESENT** | ~22 lines, substantive; carries the two-problem split, INDETERMINATE cash, WATCHLIST call |
-| (2) SECTOR intelligence | L474-476 | **PRESENT** | provenance-flagged (Frost & Sullivan company-commissioned), Madagascar clove RM, positioning shares |
-| (3) BUSINESS-MODEL intelligence | L478-480 | **PRESENT** | feedstock→derivative model, FY26 mix, named customers, undisclosed-metric list |
-| (4) COMPETITION intelligence | L482-484 | **PRESENT** | integration edge, small-cap scale weakness, input-cost non-control, thin institutional ownership (not a risk) |
+| 1. Summary narrative | "1. SUMMARY NARRATIVE" | L493-495 | PRESENT (one dense ~25-line paragraph: standalone-vs-consol split, FY26 prior contraction, gross-margin break, depreciation, non-operational standalone PAT, INDETERMINATE cash, WATCHLIST verdict, next checkpoint) |
+| 2. Sector intelligence | "2. SECTOR INTELLIGENCE" | L497-499 | PRESENT (specialty ingredients, Madagascar clove RM cyclicality, forward-integration tailwind, Frost & Sullivan provenance caveat, 15% tax claim) |
+| 3. Business-model intelligence | "3. BUSINESS-MODEL INTELLIGENCE" | L501-503 | PRESENT (segment/geography mix, named customers, flat-ratio-but-shrinking-base qualification, consol<standalone inversion, non-disclosed metrics) |
+| 4. Competition intelligence | "4. COMPETITION INTELLIGENCE" | L505-507 | PRESENT (leadership claims, small-cap vs global players, input-cost weakness, execution risk, thin institutional ownership per Amendment 3) |
 
-**Gate 0 = PASS.** All four labelled parts present and non-placeholder.
+**Gate 0: PASS.** No part missing or empty.
 
 ---
 
-## AUDIT 1 — COVERAGE (fresh grep re-enumeration vs A2 ledgers)
+## AUDIT 1 — COVERAGE (fresh enumeration vs A2 ledgers, then A4 citation check)
 
-### Results ledger (Reg 33 filing)
-| Category | A2 count | My fresh count | Orphan / missing | Status |
+I re-counted each category from the extracts directly. My fresh counts equal every A2 ledger count and every figure A4 restated in its ledger-reconciliation preamble (L16-18).
+
+### Results ledger (Reg 33)
+| Category | A2 count | My fresh count | Orphan rows | Status |
 |---|---|---|---|---|
-| Notes (numbered + asterisk footnotes) | 17 | 17 (std 7+1, con 8+1) | none | PASS |
-| Line items (std 29 + con 30) | 59 | 59 | none | PASS |
-| Zero-standing rows | 1 | 1 (std "tax relating to prior years", L194) | none | PASS |
-| Agenda items | 1 | 1 (results approval) | none | PASS |
-| Auditor paragraphs (std 5 + con 6) | 11 | 11 | none | PASS |
-| Consolidation entities | 2 | 2 (Gem Aromatics LLC, Krystal Ingredients) | none | PASS |
-| Signature blocks | 5 | 5 | none | PASS |
+| Notes (15 numbered + 2 EPS footnotes) | 17 | 17 (std L227/231/234/236/253/256/257 =7; con L425/428/431/435/437/452/455/457 =8; footnotes L219/L417 =2) | none | PASS — covered in Step 0D notes table |
+| Line items (29 std + 30 con) | 59 | 59 (extra con row = FX-translation L400) | none | PASS — Steps 1A/1B |
+| Zero-standing (std prior-yr tax L194) | 1 | 1 | none material | PASS — nil template row, reviewed no-finding |
+| Agenda items | 1 | 1 | none | PASS — note N1 board approval |
+| Auditor paras (5 std + 6 con) | 11 | 11 | none | PASS — auditor-opinion + FIND-02 EoM |
+| Consolidation entities | 2 | 2 (LLC, Krystal) | none | PASS — Con N3 / FIND-04 |
+| Signature blocks | 5 | 5 | none | PASS — FIND-05 drafting note |
 
 ### Presentation ledger (33-slide deck)
-| Category | A2 count | My fresh count | Status |
-|---|---|---|---|
-| Slides / OCR pages | 33 / 7 | 33 / 7 | PASS |
-| Financial-table line items | 88 | 88 (51 P&L + 24 BS + 13 CF) | PASS |
-| Slide KPIs / charts / footnotes | 95 / 3 / 13 | 95 / 3 / 13 | PASS |
-| Guidance / capex-capacity / strategic | 11 / 14 / 17 | 11 / 14 / 17 | PASS |
+| Category | A2 count | My fresh count | Orphan rows | Status |
+|---|---|---|---|---|
+| Slides | 33 | 33 | none | PASS |
+| Financial-table line items | 88 (17×3 P&L + 24 BS + 13 CF) | 88 | none | PASS — Steps 1-5 |
+| Slide KPIs | 95 | 95 | none material | PASS — sector/business/competition brief |
+| Charts | 3 | 3 | none | PASS — geography, shareholding, dashboard |
+| Guidance statements | 11 | 11 | none | PASS — Monitorables + Questions |
+| Capex/capacity (incl 2 DATA_ABSENT) | 14 | 14 | none | PASS — capacity+order-book silences named in business-model brief |
+| Strategic claims | 17 | 17 | none | PASS — competition brief + Step 7 |
+| Footnotes | 13 | 13 | none | PASS |
 
-### Press-release ledger (Reg 30 release)
-| Category | A2 count | My fresh count | Status |
-|---|---|---|---|
-| Pages/sections | 5 | 5 | PASS |
-| Financial line items / narrative facts | 18 / 21 | 18 / 21 | PASS |
-| MD quotes / forward stmts / regulatory / call-detail | 5 / 13 / 8 / 12 | 5 / 13 / 8 / 12 | PASS |
+### Press-release ledger (5-page Reg 30)
+| Category | A2 count | My fresh count | Orphan rows | Status |
+|---|---|---|---|---|
+| Pages/sections | 5 | 5 | none | PASS |
+| Financial line items (9 std + 9 con) | 18 | 18 | none | PASS |
+| Narrative facts | 21 | 21 | none | PASS — customers/certs/16,171 MTPA in brief |
+| MD-quote paragraphs | 5 | 5 | none | PASS — Section B |
+| Forward statements | 13 | 13 | none | PASS — Monitorables |
+| Regulatory items | 8 | 8 | none | PASS — board/Brazil |
+| Earnings-call detail | 12 | 12 | none | PASS — Section B participants/date |
 
-**Orphan-row test (ledger row present, A4 absent):** every materially-flagged ledger row is cited in A4 — FIFO/EoM (FIND-02), balancing figures (N5, Step 3), consol Notes 1-2 mis-headed "Standalone" (FIND-05), consol depreciation OCR line (A4 data-integrity flag/Q11), blank standalone partner name vs "Abhinav Chhajed" (FIND-05), 15% tax "till perpetuity" (A3-04/Q4), DATA_ABSENT capacity + order book (business-model brief), 9% vs 8.6% revenue reframe (A3-07), 199%-YoY framing (F16-1/Q10), three-vs-two facilities / Daman & Diu label (F14-2), Brazil WOS new entity (flag 10/Q9). Immaterial rows (Diamond Pass link with no URL; Rest-of-World footnote listing Uganda/Switzerland absent from the map; the zero-standing prior-year-tax template row; the 16.9% vs 17.0% Q1FY26 consol-EBITDA-margin deck rounding) are covered by A4's blanket "All reviewed. No ledger row is unreviewed" (L22) as reviewed-no-finding, and my recompute confirms each is immaterial (see Audit 2 on 16.9/17.0).
-
-**Missing-from-ledger test (my fresh pass found, ledger lacks):** none. My enumeration reproduced every A2 count 1:1.
-
-**Coverage verdict: PASS — no orphan rows, no missing rows.**
+**Coverage verdict: PASS — zero orphan rows, zero rows my fresh pass found that the ledger lacks.** Three immaterial A2 internal-consistency micro-notes were NOT individually restated by A4 but do not constitute orphaned substantive findings and change nothing: (i) deck consol Q1FY26 EBITDA-margin comparator 16.9% (p7) vs 17.0% (p10 table) — a 0.1pt rounding gap; A4 correctly used 17.0% (my recompute = 16.96%); (ii) Rest-of-World footnote lists Uganda/Switzerland not shown as map markers (p23); (iii) "Diamond Pass Link" with no captured URL (PR E12). All immaterial; reviewed, no finding.
 
 ---
 
-## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw; Millions x0.1 applied)
+## AUDIT 2 — ARITHMETIC (recomputed from raw millions; x0.1 conversion applied)
 
-All figures below recomputed from the raw extract lines. "✓" = ties within rounding.
+Every raw line in the results extract converts cleanly (e.g. Rev 829.86M→82.99; PBT 97.31M→9.73; con Rev 988.50M→98.85). All A4 derived metrics recomputed independently. Representative recomputation (all periods checked; showing Q1FY27 unless noted):
 
-### Standalone (source: results extract L167-218, x0.1)
-| Metric | A4 value | My recompute | Source | Status |
+| Metric | A4 value | My recompute | Source lines | Status |
 |---|---|---|---|---|
-| Gross Profit Q1FY27 = Rev − (Mat+ΔInv) | 14.69 | 82.99 − (70.81 + (−2.51)) = 14.69 | L168/175/177 | ✓ |
-| Gross Margin Q1FY27 | 17.7% | 14.69/82.99 = 17.70% | — | ✓ |
-| Gross Margin Q1FY26 / YoY | 25.0% / −734 bps | 19.13/76.40 = 25.04%; Δ = −734 bps | L168/175/177 | ✓ |
-| Operating EBITDA Q1FY27 = PBT+D+Fin−OI | 8.51 | 9.73+1.61+1.33−4.16 = 8.51 | L187/182/180/170 | ✓ |
-| Operating EBITDA Q1FY26 | 10.51 | 8.729+1.439+2.928−2.582 = 10.51 | — | ✓ |
-| Op EBITDA margin YoY | −350 bps | 10.25% − 13.76% = −351 bps | — | ✓ |
-| Effective Tax Rate Q1FY27 | 25.5% | 2.48/9.73 = 25.49% | L196/187 | ✓ |
-| Core PBT ex-OI Q1FY27 / YoY | 5.57 / −9.3% | 9.73−4.16 = 5.57; 5.574/6.147−1 = −9.3% | — | ✓ |
-| Reported PBT / PAT YoY | +11.5% / +11.2% | 9.731/8.729−1 = +11.5%; 7.252/6.523−1 = +11.2% | — | ✓ |
-| PAT bridge (GP −4.44 / opex +2.44 / D −0.17 / Fin +1.59 / OI +1.58 / tax −0.27 → PAT +0.73) | as stated | each leg reproduced; subtotal PBT +1.00, PAT +0.73 | — | ✓ |
+| Std Gross Profit Q1FY27 | 14.69 | 82.99−(70.81+(−2.51))=14.69 | L168/175/177 | MATCH |
+| Std Gross Margin Q1FY27 | 17.7% | 14.69/82.99=17.70% | " | MATCH |
+| Std Op EBITDA Q1FY27 | 8.51 | 9.731+1.606+1.334−4.157=8.51 | L187/182/180/170 | MATCH |
+| Std Core PBT ex-OI Q1FY27 | 5.57 | 9.73−4.16=5.57 | L187/170 | MATCH |
+| Std ETR (all periods) | 25.3/25.8/25.5/25.5% | 2.21/8.73…2.48/9.73=25.3…25.5% | L196/187 | MATCH |
+| Std Rev YoY | +8.6% | (82.99−76.40)/76.40=8.63% | L168 | MATCH |
+| Std Gross Profit YoY | −23.2% | (14.69−19.13)/19.13=−23.2% | derived | MATCH |
+| Std Core PBT YoY | −9.3% | (5.574−6.147)/6.147=−9.3% | derived | MATCH |
+| Std PAT bridge (sum) | +0.73 | −2.00−0.17+1.59+1.58−0.27=+0.73 (=7.25−6.52) | L199 | MATCH |
+| Con Gross Profit Q1FY27 | 16.51 | 98.85−(99.04+(−16.70))=16.51 | L370/376/377 | MATCH |
+| Con Gross Margin Q1FY27 | 16.7% | 16.51/98.85=16.70% | " | MATCH |
+| Con Op EBITDA Q1FY27 (dep 9.13) | 3.31 | −8.54+9.13+2.88−0.16=3.31 | L385/380*/379/371 | MATCH |
+| Con Op EBITDA margin Q1FY27 | 3.3% | 3.31/98.85=3.35% | derived | MATCH |
+| Con Gross Margin YoY | −1,282 bps | 29.52%→16.70% | derived | MATCH |
+| Con Op EBITDA YoY | −77.7% | (3.31−14.86)/14.86=−77.7% | derived | MATCH |
+| Con Dep YoY | +401% | (9.13−1.82)/1.82=+401.6% | reconciled/L380 | MATCH |
+| Con PBT YoY | −179.2% | (−8.54−10.79)/10.79=−179.2% | L385 | MATCH |
+| Con PAT YoY | −198.6% | (−7.87−7.98)/7.98=−198.7% | L395 | MATCH |
+| Con ETR FY26 | 77.6% | 4.94/6.36=77.6% | L392/385 | MATCH |
+| Con PAT bridge (sum) | −15.86 | −11.55−7.31+0.64−1.11+3.47=−15.86 (=−7.87−7.98) | L395 | MATCH |
+| S→C PAT gap Q1FY27 | (15.13) | −7.874−7.252=−15.13 | L199/395 | MATCH |
+| S→C gap % std PAT Q1FY27 | −208.6% | −15.126/7.252=−208.6% | derived | MATCH |
+| FY26 walk: Rev/EBITDA/PAT | −27.3/−54/−97% | (366.5−504)/504=−27.3; (40.8−88.5)/88.5=−53.9; (1.4−53.4)/53.4=−97.4 | deck L922/929/938 | MATCH |
+| Trailing P/E (con FY26 EPS 0.28) | ~625x | 174.90/0.28=624.6x | deck L1056/L940 | MATCH |
 
-### Consolidated (source: results extract L369-416, x0.1; depreciation reconciled — see below)
-| Metric | A4 value | My recompute | Source | Status |
-|---|---|---|---|---|
-| Gross Profit Q1FY27 | 16.51 | 98.85 − (99.04 + (−16.70)) = 16.51 | L370/376/377 | ✓ |
-| Gross Margin Q1FY27 / YoY | 16.7% / −1,282 bps | 16.51/98.85 = 16.70%; vs 29.52% = −1,282 bps | — | ✓ |
-| COGS-materials > revenue | 99.04 > 98.85 | 990.38 Mn vs 988.50 Mn — confirmed | L376/370 | ✓ |
-| Operating EBITDA Q1FY27 (D=9.13) | 3.31 | −8.54+9.13+2.88−0.16 = 3.31 | L385/380*/379/371 | ✓ |
-| Op EBITDA margin YoY | −1,361 bps | 3.35% − 16.96% = −1,361 bps | — | ✓ |
-| Effective Tax Rate FY26 | 77.6% | 4.939/6.364 = 77.6% | L392/385 | ✓ |
-| Reported PBT / PAT YoY | −179.2% / −198.6% | −19.33/10.79 = −179.2%; −15.85/7.98 = −198.6% | — | ✓ |
-| PAT bridge (GP −9.36 / opex −2.18 / D −7.31 / Fin +0.64 / OI −1.11 → PBT −19.33; tax +3.47 → PAT −15.86) | as stated | each leg reproduced | — | ✓ |
-| S→C PAT gap Q1FY27 / % of std | −15.13 / −208.6% | −7.874−7.252 = −15.13; /7.252 = −208.6% | L199/395 | ✓ |
+**Depreciation reconciliation independently verified (load-bearing):** the results extract L380 OCR-reads con Q1FY27 depreciation as "5127" (5.13 Cr) and BOTH the A1 extract and A2 results ledger (row 10, section 3) faithfully carry that misread. I balanced the stated con total expenses independently: 990.38 − 167.02 + 70.64 + 28.83 + **X** + 61.44 = 1,075.54 ⟹ X = **91.27M = 9.13 Cr**, not 51.27. A4's reconciliation to Rs 9.13 Cr is therefore ARITHMETICALLY CORRECT and confirmed three ways (balancing figure, deck p10 "9.1", cash-PAT bridge). PBT (−8.54) and PAT (−7.87) reconcile independently (Total income 990.11 − Total expenses 1,075.54 = −85.43M ✓). **This is an A1/A2 transcription defect that A4 caught and handled transparently (Q11), not an A4 arithmetic error.** Recommend A1 correct extract L380 and A2 update ledger row; does not affect this gate.
 
-**Depreciation reconciliation (A4 data-integrity flag) — independently verified.** The consol Q1FY27 depreciation line (L380) reads "5127" (Rs 5.13 Cr). My check: summing the six expense lines with D=5.127 gives Rs 103.55 Cr, but the printed Total Expenses is Rs 107.55 Cr (L382) — a gap of **exactly Rs 4.00 Cr**, which is 9.127 − 5.127. With D=**9.13 Cr (91.27 Mn)** the expense stack ties to 107.55 and PBT ties to −8.54. Third confirmation: the deck's own **Cash PAT of Rs 1.3 Cr** (L366) = PAT (−7.87) + D; this requires D = +9.13 (with 5.13, Cash PAT would be −2.7). A4's reconciliation to 9.13 is correct; the "5127" is an OCR "9"→"5" misread. PBT/PAT unaffected. **No arithmetic FAIL** — but this remains an A1-source correction item, correctly routed (Q11).
-
-**Minor rounding notes (within tolerance, not FAILs):** (a) A4 L207 states standalone gross margin "down 570 bps QoQ"; precise is 17.70% − 23.35% = −565 bps (deck prints −566). ~4-5 bps, immaterial. (b) A4 uses consol Q1FY26 EBITDA margin 17.0% (table L348); raw = 14.86/87.63 = 16.96% → 17.0%; the deck's page-7 "16.9%" is its own rounding. A4 is correct.
-
-**Arithmetic verdict: PASS — every derived metric ties within rounding; the depreciation reconciliation is well-founded on three independent cross-checks.**
+**Arithmetic verdict: PASS — zero mismatches above rounding.** Every derived cell ties to within ±0.01 Cr / ±0.1pt rounding.
 
 ---
 
-## AUDIT 3 — ADVERSARIAL READ (three most-positive claims; strongest bear counter each, same extract)
+## AUDIT 3 — ADVERSARIAL READ (three most positive A4 claims; strongest same-text bear counter each)
 
-**Claim 1 (most bullish thread).** "The depreciation step-up (~Rs 9.1 Cr/qtr) is a genuine transitional fixed-cost-absorption story — the legitimate transition-alpha portion — which higher utilisation absorbs" (Step 4B Problem 2; Step 8).
-- **Bear counter (same extract):** the only two quarters carrying full Dahej depreciation both go the wrong way. Q4FY26 carried Rs 9.0 Cr depreciation on Rs 110.41 Cr consol revenue and still made only Rs 1.0 Cr PAT; Q1FY27 revenue (98.85) is **below** Q4FY26 (110.41). Two data points, both with the fixed cost live, show revenue *falling*, not utilisation rising — the "utilisation will absorb it" thesis has zero corroborating evidence in the filing.
-- **Survives?** **NO — already incorporated.** A4 Step 3 (L223) states verbatim the plant "commissioned but NOT lifted the run-rate above pre-commissioning levels… consolidated revenue Q1FY27 (98.85) is BELOW Q4FY26 (110.41)."
+**Mandated-present prior counters — confirmed present and adequate (NOT re-raised):**
+- Gross-margin-collapse-above-depreciation (loop 1): present and thorough — Steps 1C/1D/2A/2B/4B, flag 2, Q2/Q6/Q13, plain-language. Adequate.
+- FY26 −27% rev / −54% EBITDA / −97% PAT contraction + consol(366.5)<standalone(370.9) inversion (loop 2): present — Step 3C, flag 3, Q14, business-model brief. Adequate.
 
-**Claim 2.** "Standalone revenue grew +8.6% and PAT +11%; the parent stayed profitable throughout" (Step 2A; Step 8).
-- **Bear counter:** strip Other Income (+Rs 1.58 Cr) and finance-cost relief (+Rs 1.59 Cr) and standalone core PBT ex-OI **fell 9.3%**; the +Rs 1.00 Cr PBT gain is entirely treasury + deleveraging; if OI reverts to the prior Rs 2.58 Cr, standalone PBT is ~Rs 8.15 Cr, below last year.
-- **Survives?** **NO — already incorporated.** Fully built into Step 2A diagnostics 4-6, Step 4A, and Q12.
+### Positive claim 1 — "The parent made a profit, PAT +11% YoY on revenue +8.6%" (review L495, L389, Step 2A)
+**Strongest bear counter:** strip the Rs 4.16 Cr Other Income (up +61% YoY, now 42.7% of PBT, source undisclosed) and the Rs 1.59 Cr finance-cost fall, and standalone CORE PBT ex-OI fell −9.3%; on OI reverting to Rs 2.58 Cr, standalone PBT ≈ Rs 8.15 Cr, below prior year.
+**Survives?** NO — already fully stated by A4 (Step 2A diag 4-6, Step 4A, Q12, plain-language). Adequate; no graft needed.
 
-**Claim 3.** "Unit economics historically were sound and, importantly, STABLE at the gross line — group gross margin held 24.6-25.3% across FY23-FY26 — so the Q1FY27 drop to 16.7% is a fresh break, not a long decline" (Step 3 L219; Business-Model brief L480).
-- **Bear counter (same extract, deck p27 L922-938):** the gross-margin *ratio* held, but the business under it had **already broken a full year before Q1FY27**: consolidated revenue fell from Rs 504.0 Cr (FY25) to Rs 366.5 Cr (FY26), **−27.3%**; EBITDA Rs 88.5 → 40.8 Cr (−54%); PAT Rs 53.4 → 1.4 Cr (−97%). A "stable gross margin" sitting on a top line that contracted 27% is not a healthy base, and the FY26 revenue fall **cannot be explained by the Dahej depreciation** to which A4's brief attributes the FY26 break (depreciation sits below both the revenue and EBITDA lines). Q1FY27's gross-margin collapse therefore compounds an already-shrinking business rather than interrupting a stable one. Supporting: FY26 consolidated revenue (366.47) is itself **below standalone** revenue (370.94) — the subsidiary layer was net-negative to consolidated top line in FY26 while net-positive in Q1FY27, a swing A4 does not diagnose.
-- **Survives?** **YES.** A4 lists the FY26 annual figures (L219) but never diagnoses the −27% FY26 revenue contraction, and the Business-Model brief (L480) attributes the FY26 break solely to Dahej depreciation — leaving the top-line collapse unaddressed and the "sound / stable base" framing un-qualified. **Must be grafted into A4.**
+### Positive claim 2 — "The Dahej depreciation step-up is genuinely transitional fixed-cost absorption, the legitimate transition-alpha portion utilisation will cure" (Step 4B Problem 2, Step 8 component 3)
+**Strongest bear counter:** the "transitional" label presumes absorbing volume arrives, yet every absorbing vertical is pre-revenue and back-end-loaded with hedges — Cooling Agents revenue only Q3FY27, Safranal end-Q2/Q3FY27, Phenol commercial "subject to completion of required approvals and quality processes" with revenue only Q4FY27 (PR L138-148, deck L277-280); the in-year absorbing base is tiny (Phenol Rs 5 Cr/~1%, Citral-Other Rs 36 Cr/~10%, deck L542/572); and ~Rs 265 of Rs 270 Cr is already capitalised (deck L243), so the ~Rs 9.1 Cr/qtr depreciation is locked in NOW regardless of whether volumes land.
+**Survives?** NO (substantially covered) — A4 conditions the transitional read on "if the Q3-Q4 FY27 Krystal volume ramp arrives," flags all three catalysts as hedged/undated (Monitorables 1-5, Q5/Q7/Q8), and states "nothing in the filing quantifies when" (Step 3). The "depreciation already 98% locked in" framing is a marginal sharpening, not a materially new counter. No mandatory graft.
 
-**Surviving bear counters: 1.** → loop back to A4.
+### Positive claim 3 — "Finance costs fell (deleveraging / IPO); net debt fell ~Rs 86 Cr on IPO proceeds; adequate near-term liquidity" (Step 2A, Step 4A "+1.59 recurring post-deleveraging", Step 5)
+**Strongest bear counter (SURVIVES):** the deleveraging read is too benign once interest is set against collapsed operating profit. At consolidated level this quarter operating EBIT is NEGATIVE (−5.82 Cr, A4's own Step 2B) and operating EBITDA is only Rs 3.31 Cr against finance cost Rs 2.88 Cr (L379) — interest cover ≈ 1.15x, i.e. operations did NOT cover interest this quarter. And gross finance cost actually ROSE +57% in FY26 (Rs 8.1 → Rs 12.7 Cr, deck L932) despite the Aug-2025 IPO, with short-term borrowings still Rs 128.1 Cr against cash of only Rs 15.9 Cr at Mar-26 (deck L965/L967) on a group that just swung to a loss. So finance-cost reduction is a recent, partial, quarterly move, not a structural de-risking, and the interest burden is now nearly (con) or fully (con operating EBIT) uncovered by operations.
+**Survives?** YES. Materially supported by the extracts and NOT stated anywhere in A4 — A4 never computes interest coverage, never notes operations fail to cover interest at consol, and never surfaces the FY26 +57% finance-cost rise; it presents finance-cost reduction only as an unqualified recurring positive. **Must be grafted into A4** (Step 5 and the Step 2A/4A "post-deleveraging" framing, plus a flag), and it strengthens the bear case, so it loops back to A4 before save.
 
 ---
 
 ## VERDICT
 
-**INCOMPLETE.** Gates 0 (deliverable), 1 (coverage) and 2 (arithmetic) all PASS — the brief is complete, my fresh enumeration reproduces every A2 count with no orphan or missing rows, and every derived metric (including the 9.13 depreciation reconciliation) ties within rounding. Audit 3 surfaces **one surviving bear counter** that is not yet in the review.
+**INCOMPLETE.**
 
-- **Failing agent:** **A4.**
-- **Exact gap:** graft the surviving counter to the "historically sound / stable gross margin = fresh break" framing (Step 3 L219; Business-Model brief L480): the FY26 consolidated top line already contracted **−27.3% (Rs 504.0 → 366.5 Cr)** with EBITDA −54% and PAT −97%, so Q1FY27 compounds an already-broken base rather than interrupting a stable one, and the FY26 break is **not** attributable to Dahej depreciation alone. Add the supporting fact that FY26 consolidated revenue (366.47) sits **below** standalone (370.94), inverting the Q1FY27 relationship, and carry the point into the flags/Questions-for-Management. Re-emit for A5 loop 2.
+- **Failing agent:** A4.
+- **Exact gap:** one surviving bear counter is not incorporated. A4 must graft the interest-burden / interest-coverage counter to positive-claim 3: at consolidated Q1FY27, operating EBIT is −5.82 Cr and operating EBITDA (3.31) barely exceeds finance cost (2.88) → interest cover ≈1.15x, operations do not cover interest; and FY26 gross finance cost rose +57% (8.1→12.7 Cr, deck L932) despite the IPO, with ST borrowings 128.1 vs cash 15.9 at Mar-26 (deck L965/L967). A4 currently frames finance-cost reduction only as a clean recurring positive (Steps 2A/4A) and calls liquidity "adequate" (Step 5) without this qualification. Graft into Step 5 + qualify Steps 2A/4A + add a flag, then re-submit.
+
+Audits 0 (deliverable), 1 (coverage) and 2 (arithmetic) all PASS. The only bar to save is the unincorporated surviving bear counter above. (Separately, non-gating: recommend A1 correct results extract L380 depreciation 51.27→91.27 and A2 update the results ledger row; A4 already reconciled the true 9.13 Cr correctly.)
 
 ```yaml
 stage: A5-adversary
@@ -136,9 +146,9 @@ coverage:
   missing_from_ledger: []
 arithmetic_mismatches: []
 surviving_bear_counters:
-  - claim: "Historically sound / STABLE gross margin (24.6-25.3% FY23-FY26) so Q1FY27 drop to 16.7% is a fresh break, not a long decline (Step 3 L219; Business-Model brief L480)"
-    counter: "The gross-margin ratio held, but the business under it already broke in FY26: consolidated revenue -27.3% (Rs 504.0 -> 366.5 Cr), EBITDA -54% (88.5 -> 40.8), PAT -97% (53.4 -> 1.4). The FY26 revenue collapse is not explained by Dahej depreciation (below the revenue and EBITDA lines), so Q1FY27 compounds an already-shrinking base rather than interrupting a stable one. Supporting: FY26 consol revenue 366.47 < standalone 370.94, inverting the Q1FY27 relationship - undiagnosed."
-    source_line: "deck p27 L922 / L925-938 (extract_presentation); results L370/L168"
+  - claim: "Finance costs fell (deleveraging/IPO); net debt fell ~Rs 86 Cr; adequate near-term liquidity"
+    counter: "Consolidated operating EBIT is negative (-5.82 Cr) and operating EBITDA (3.31) barely exceeds finance cost (2.88) -> interest cover ~1.15x; operations did not cover interest this quarter. FY26 gross finance cost ROSE +57% (8.1->12.7 Cr) despite the Aug-2025 IPO, with ST borrowings 128.1 vs cash 15.9 at Mar-26. Deleveraging is recent/partial, not structural; interest burden now near-uncovered by operations on a loss-making group."
+    source_line: "results L379 (con finance cost 2.88); A4 Step 2B con EBIT -5.82; deck L932 (FY26 fin cost 12.7 vs FY25 8.1); deck L965/L967 (ST borrowings 128.1, cash 15.9)"
 loop_back_to: "A4"
-gap: "A4 states the FY26 annual figures but never diagnoses the -27.3% FY26 consolidated revenue contraction; the Business-Model brief attributes the FY26 break solely to Dahej depreciation, leaving the 'sound/stable base = fresh break' framing un-qualified. Graft the surviving bear counter (FY26 -27% revenue / -54% EBITDA / -97% PAT, plus the FY26 consol<standalone revenue inversion) into Step 3, the flags, and the Questions-for-Management table, then re-emit for A5 loop 2."
+gap: "Unincorporated surviving bear counter: graft the interest-coverage/finance-burden counter (con operating EBIT -5.82 and op EBITDA 3.31 vs finance cost 2.88 = ~1.15x cover; FY26 finance cost +57% to 12.7 Cr despite IPO; ST borrowings 128.1 vs cash 15.9) into Step 5 and qualify the 'post-deleveraging positive' framing in Steps 2A/4A, add a flag, then re-submit. Non-gating: A1 fix results L380 dep 51.27->91.27 and A2 update ledger; A4's 9.13 Cr reconciliation is already correct."
 ```

@@ -1,0 +1,171 @@
+=== A2 ENUMERATOR LEDGER ===
+company: Rathi Steel and Power Ltd (rathist, BSE 504903)
+quarter: Q1 FY27 (quarter ended 30.06.2026)
+doctype: results
+source_extract: extract_results_rathist_q1fy27.txt (4 pages, 268 lines, unit: Rs. Lacs)
+prior_ledger: none provided — no diff performed for ENTITY_CHANGE / DROPPED_SLIDE checks
+
+METHODOLOGY NOTE (read before the tables): this filing's embedded OCR text
+layer garbles numeral markers, decimal separators and roman-numeral row
+labels in a pattern concentrated in the Q4FY26 / Q1FY26 / FY26 columns and
+in the Notes section's leading digits. Two independent counting passes were
+run per category: (1) a mechanical grep pass using digit/marker/keyword
+regex, and (2) a manual line-by-line sweep of the same line range. Where the
+raw single-pass grep undercounted because a numeral marker was OCR-corrupted
+into a stray glyph or lost entirely (Notes 3-5; auditor report paragraphs
+that run together without a blank-line break), the manual sweep is recorded
+as authoritative and the grep pass was re-run/broadened to confirm the same
+total before the row was emitted, per GATE A2. Every such case is flagged
+GARBLE_SUSPECT at its specific row; values are recorded exactly as they
+appear, never silently corrected.
+
+=== A2 COUNT TEST ===
+category: notes          grep_count: 5   sweep_count: 5   match: yes
+category: line_items     grep_count: 35  sweep_count: 35  match: yes
+category: zero_standing  grep_count: 10  sweep_count: 10  match: yes
+category: agenda_items   grep_count: 5   sweep_count: 5   match: yes
+category: auditor_paras  grep_count: 11  sweep_count: 11  match: yes
+category: entities        grep_count: 1   sweep_count: 1   match: yes
+gate_a2: pass
+=== END COUNT TEST ===
+
+Reconciliation detail (how each match above was reached):
+- notes: baseline grep `^\s*[0-9]+\.\s` = 0 (this doc's notes are not
+  period-punctuated). Broadened marker grep (digit-start OR lone stray-glyph
+  line) inside lines 236-257 caught markers "1"(237), "2"(238), "w"(242,
+  displaced marker for note 3) = 3 raw hits; it missed the guillemet glyph
+  "»"(248, displaced marker for note 4) on a character-class/encoding
+  mismatch, and it structurally cannot catch note 5 (253-257) because that
+  note's leading numeral is fully absent from the OCR text, not merely
+  displaced. Manual sweep read all five paragraph blocks in the Notes:
+  section by content boundary (topic shift + task brief confirming "5
+  numbered Notes") = 5. Re-swept and reconciled: final count is 5/5, with
+  notes 3, 4 and 5 individually flagged GARBLE_SUSPECT on their markers.
+- line_items: `sed -n '188,223p' | grep -vc "^\s*$"` = 35 (one physical line
+  = one table row in this pdftotext -layout dump; only line 215, a blank
+  spacer inside the OCI block, is excluded). Manual line-by-line sweep of
+  188-223 confirms 35 populated rows. Match on first pass, no re-sweep
+  needed.
+- zero_standing: grep for 3+ dash-tokens strung across a row inside 188-223
+  found 10 rows (193, 201, 203, 205, 206, 207, 208, 210, 211, 212). Manual
+  sweep of the same range confirms the identical 10 rows are all-dash
+  (nil) across every period column they show. Match, no re-sweep needed.
+- agenda_items: targeted keyword grep (`considered and approved`,
+  `enclosed herewith as Annexure`, `commenced at`/`concluded at`, `take the
+  above information on record`, `Digitally signed`) against lines 33-89
+  returned 5 matching lines (63, 67, 72, 74, 81). Manual sweep of the full
+  cover letter confirms these are the only 5 lines carrying a distinct
+  board-outcome data point; line 72 carries two facts (meeting start AND
+  end time) on one physical line, recorded as one ledger row with two facts
+  noted. Match, no re-sweep needed.
+- auditor_paras: blank-line-delimited grep of lines 96-168 found 8 raw
+  blocks. Manual sweep found that three of those blocks (108-121, 123-135,
+  137-156) each run two distinct semantic paragraphs together with no blank
+  line between them (continuous prose, not an OCR artifact — a genuine
+  formatting feature of this auditor's report template), i.e. 8 raw blocks
+  = 5 single-paragraph blocks + 3 two-paragraph blocks = 11 discrete
+  paragraphs. Re-swept and reconciled: final count is 11/11.
+- entities: exactly one structural disclosure — Note 3 (line 241) states
+  no subsidiary / associate / joint venture exists for the period, so no
+  consolidated statement exists in this filing. Grep for
+  "subsidiary|associate|joint venture" against the full extract returns
+  exactly 1 hit (line 241); manual sweep of the whole document confirms no
+  other entity is named anywhere. Match.
+
+--------------------------------------------------------------------------
+TABLE 1 — NOTES (5 numbered notes, Notes: section, page 4, lines 236-257)
+--------------------------------------------------------------------------
+# | line(s)   | note text (verbatim opening) / marker status                                   | flags
+1 | 237       | "1   The Company's operations fall under single segment namely 'Steel"           | clean marker
+2 | 238-240   | "2    The above standalone Financial Results were reviewed and recommended by the Audit Committee and subsequently approved..." | clean marker
+3 | 241 (marker displaced to 242 "w") | "Company does not have any subsidiary associate joint venture entity(ics) for the respective period." | GARBLE_SUSPECT (numeral "3" rendered as stray glyph "w", positioned AFTER the note text rather than before it — table/column reflow artifact)
+4 | 247 (marker displaced to 248 "»") | "Corresponding figures of previous periods have been re-grouped to make them comparable wherever necessary." | GARBLE_SUSPECT (numeral "4" rendered as stray guillemet glyph "»", positioned after the text)
+5 | 253-257   | "'The Results have been prepared in accordance with the recognition and measurement principles of applicable Accounting Indian Standards ('IND AS')..." | GARBLE_SUSPECT (leading numeral "5" fully absent from OCR text — no residual glyph at all; note boundary identified purely by content/paragraph-break, not by a marker)
+
+--------------------------------------------------------------------------
+TABLE 2 — FINANCIAL RESULTS LINE ITEMS (Unaudited Standalone, Rs. in Lacs,
+page 3, lines 184-223). Columns: Q1FY27 (30.06.2026, Unaudited) |
+Q4FY26 (31.03.2026, Audited) | Q1FY26 (30.06.2025, Unaudited) |
+FY26 (31.3.2026, Audited). Single reportable segment: "Steel" (Note 1).
+--------------------------------------------------------------------------
+line | row label as printed | Q1FY27 | Q4FY26 | Q1FY26 | FY26 | flags
+184  | [table header] "Particulars / Quarter ended / Year Ended"          | -- | -- | -- | -- | header row, not a data line item
+186-187 | [column header] period dates + Unaudited/Audited labels          | -- | -- | -- | -- | header rows
+188  | I  Revenue from operations                                         | 19,341.04 | 2444408 | 15529.43 | 71,605.13 | GARBLE_SUSPECT Q4FY26 cell (missing thousands/decimal separator, likely 24,444.08); GARBLE_SUSPECT Q1FY26 cell missing thousands comma (likely 15,529.43, value itself parseable)
+189  | II  Other Income                                                   | 2621 | 1245 | 10.71 | 4420 | GARBLE_SUSPECT on Q1FY27 (likely 26.21), Q4FY26 (likely 12.45), FY26 (likely 44.20) — all three missing decimal point; label garbled "1I_" for "II"
+190  | III  Total Revenue (I+II)                                          | 19,367.25 | 24,456.52 | 15,540.14 | 71,649.32 | clean values; label heavily garbled "[I_|Total Revenue (1+11)" for "III Total Revenue (I+II)" — GARBLE_SUSPECT on label only
+191  | IV  Expenses [section header, no values]                          | -- | -- | -- | -- | header row; label garbled "1V" for "IV"
+192  | a) Cost of Materials consumed                                      | 16,074.74 | 2108243 | 12,880.08 | 5842399 | GARBLE_SUSPECT Q4FY26 (likely 21,082.43) and FY26 (likely 58,423.99) — both missing separators (FY26 value flagged verbatim in task brief)
+193  | b) Purchase of stock-in-trade                                      | - | - | - | - | ZERO_STANDING (nil in all four periods; template line present because this cost category could apply to a trading operation, currently none)
+194  | c) Changes in inventories of finished goods, WIP and stock in trade | 167.02 | (197.52) | (395.73)) | (1,174.59) | GARBLE_SUSPECT Q1FY26 cell has a stray extra closing parenthesis "(395.73))" — value itself readable
+195  | d) Employee benefits expenses                                      | 431.19 | 464.06 | 37121 | 1,626.95 | GARBLE_SUSPECT Q1FY26 (likely 371.21, missing decimal)
+196  | e) Finance cost                                                    | 208.70 | 167.36 | 174.93 | 742.06 | clean
+197  | f) Depreciation and amortisation expenses                          | 220.70 | 71.04 | 259.26 | 86125 | GARBLE_SUSPECT FY26 cell (likely 861.25, missing decimal — flagged verbatim in task brief)
+198  | g) Other expenses                                                  | 191691 | 2,718.58 | 2,061.84 | 9,883.17 | GARBLE_SUSPECT Q1FY27 cell (likely 1,916.91, missing separators)
+199  | Total Expenses                                                     | 19,019.26 | 23,711.95 | 15351.59 | 70,362.83 | GARBLE_SUSPECT Q1FY26 cell missing thousands comma (likely 15,351.59, value parseable)
+200  | V  Profit/(Loss) before Exceptional and Extraordinary Items (I - V) [self-referential formula, should read III - IV] | 347.99 | 744.57 | * 188.55 (printed "* 18855") | 1,286.49 | GARBLE_SUSPECT: (a) formula parenthetical "(I - V)" is impossible/self-referential, roman numerals corrupted, should read "(III - IV)"; (b) Q1FY26 cell carries a stray leading asterisk with no footnote defined anywhere in the Notes and a missing decimal (likely 188.55)
+201  | VI  Exceptional Items                                              | - | - | - | - | ZERO_STANDING
+202  | VII  Profit/(Loss) before Extraordinary Item (V - VI)              | 347.99 | 74457 | 188.55 | 1,286.49 | GARBLE_SUSPECT Q4FY26 cell (likely 744.57, missing decimal); row's own leading roman numeral printed as "VI" instead of "VII" — GARBLE_SUSPECT on label
+203  | VIII  Extraordinary Item                                           | - | - | [blank/missing] | - | ZERO_STANDING; GARBLE_SUSPECT — only 3 dash tokens visible, the Q1FY26 column dash appears dropped by OCR rather than genuinely absent; label printed "Vil" (lowercase L) instead of "VIII"
+204  | IX  Profit/(Loss) before Tax (VII - VIII)                          | 341.99 | 744.57 | 188.55 | 1,286.49 | GARBLE_SUSPECT / ARITHMETIC FLAG for A3-A4: Q1FY27 cell reads 341.99 here but every other row carrying the same Q1FY27 PBT figure (rows 200, 202, 209, 213) reads 347.99 — likely an isolated OCR digit substitution (347.99 -> 341.99); do not silently correct, reconcile against press release / arithmetic in A3; label numeral printed "1X" instead of "IX"
+205  | X  Tax expenses [section header]                                   | - | - | - | [blank/missing] | ZERO_STANDING; GARBLE_SUSPECT — only 3 dash tokens visible, FY26 annual column value is missing entirely (Total Tax row below, line 208, shows a 4th-column dash, so this is very likely a dropped "-" not a true blank)
+206  | a) Current Tax                                                     | - | - | - | - | ZERO_STANDING
+207  | b) Deferred Tax/MAT Credit                                         | - | - | - | - | ZERO_STANDING; label garbled "Ta/MAT" for "Tax/MAT"
+208  | Total Tax                                                          | - | - | - | - | ZERO_STANDING
+209  | XI  Profit/(Loss) for the period from continuing operations (IX - X) | 347.99 | 744.57 | 188.55 | 1,286.49 | clean values; label clean
+210  | XII  Profit/(Loss) from discontinuing operations                  | - | - | - | - | ZERO_STANDING (company has no discontinuing operations to report; template line retained)
+211  | XIII  Tax Expenses on discontinuing operations                    | - | - | - | - | ZERO_STANDING; label heavily garbled, printed "X1" for "XIII"
+212  | XIV  Profit/(Loss) from discontinuing operations (after tax) (XII-XIII) | - | - | - | - | ZERO_STANDING; label heavily garbled, printed "TVX" for "XIV" and "XIIT" for "XIII" in the formula parenthetical
+213  | XV  Profit/(Loss) for the period (XI +/- XIV)                     | 347.99 | 744.57 | 188.55 | 1,286.49 | clean values; formula parenthetical garbled, printed "( XI +/- IVX)" for "(XI +/- XIV)"
+214  | XVI  Other Comprehensive Income [section header, no values]        | -- | -- | -- | -- | header row
+215  | [blank spacer line]                                                | -- | -- | -- | -- | blank, excluded from the 35-row count
+216  | [OCI sub-line, label and all four values unreadable]               | "2" | "n\|" | "nw" | "i" | GARBLE_SUSPECT — entire row is unrecoverable from the extract as printed ("i o" ... "2" ... "n\|" ... "nw" ... "i"); likely the single OCI sub-item "Items that will not be reclassified to P&L" or similar with near-zero values (Total Comprehensive Income at line 217 is only marginally above Profit for the period at line 213, implying this OCI line is small); flag for A3/A4 to source from the press release or company website copy rather than infer
+217  | XVII  Total Comprehensive Income (XV + XVI)                       | 360.78 | 754.29 | 20139 | 120621 | GARBLE_SUSPECT Q1FY26 cell (likely 201.39, missing decimal) and FY26 cell (likely 1,206.21, missing separator — flagged verbatim in task brief)
+218  | [Paid-up Equity Share Capital line, label unreadable — likely "XVIII Paid-up Equity Share Capital (Face value of Rs. 5/- each)"] | 863630 | B,63630 | 863630 | 863630 | GARBLE_SUSPECT on label (printed as "I    e e    s ocadh 5", unrecoverable as-is) and on all four values (all read as "863630"/"B,63630" — likely 8,636.30 in each period, i.e. share capital unchanged QoQ/YoY; note the Q4FY26 cell additionally substitutes the letter "B" for the digit "8" — a distinct OCR character-confusion within an already-garbled cell)
+219  | Redeemable Preference Shares (Face Value of Rs. 10/- each)         | 889.40 | 889.40 | 889.40 | 889.40 | clean, unchanged across all four periods
+220  | Reserves & Surplus as per last Audited Balance Sheet               | [blank] | [blank] | [blank] | 5,273.00 | not ZERO_STANDING — this is a balance-sheet item conventionally disclosed only in the annual (FY26) column under SEBI results format; the three quarter columns are structurally blank by convention, not nil/dash; recorded here for completeness per the never-drop-a-nil-row rule even though this is a blank-by-convention row rather than a dash row
+221  | XX  Earnings Per Equity Share [section header, no values]          | -- | -- | -- | -- | header row; label garbled "1XX" for "XX"
+222  | (a) Basic                                                          | 040 | 0.86 | 022 | 1.49 | GARBLE_SUSPECT Q1FY27 (likely 0.40) and Q1FY26 (likely 0.22), both missing decimal point
+223  | (b) Diluted                                                        | 040 | 0.86 | 022 | 1.49 | GARBLE_SUSPECT Q1FY27 (likely 0.40) and Q1FY26 (likely 0.22), both missing decimal point; Basic = Diluted in every period (no dilutive instruments), consistent both rows
+
+Additional sign-off row appended to the results statement, NOT counted in
+the 35-row line_items total (kept separate, still carries a line number):
+line 262-263 | "Managing Director / DIN: 00174146", Dated 13/08/2026, Place New Delhi | flag: signatory's printed NAME is absent from the extract — only the designation "Managing Director" and DIN 00174146 appear; no digital-signature block or timestamp accompanies this line (unlike the cover letter's Whole Time Director signature), consistent with a physical/wet signature on the source page not carrying OCR-legible name text. GARBLE_SUSPECT / DATA GAP for A3 to note (name not retrievable from this extract).
+
+--------------------------------------------------------------------------
+TABLE 3 — BOARD OUTCOME / COVER LETTER AGENDA & ADMINISTRATIVE ITEMS
+(Reg 30/33 letter to BSE, page 1, lines 33-93)
+--------------------------------------------------------------------------
+# | line(s) | item | flags
+1 | 40-41   | Reference RSPL/BSE/2026-27, dated August 13, 2026 (same-day as board meeting and letter) | clean
+2 | 53-55   | Subject line: "OQOutcome of Board Meeting under Regulations 30 and 33..." | GARBLE_SUSPECT — "OQOutcome" for "Outcome" and a stray trademark-like glyph after "Regulations" (pre-flagged generically by A1's extraction header as a known OCR artifact class in this document)
+3 | 59-64   | Sole substantive board resolution: Board, on Audit Committee recommendation, "considered and approved the Unaudited Standalone Financial Results for the quarter ended June 30, 2026 and noted the Limited Review Auditor's Report" | no other agenda item present in this letter — no AR approval, AGM notice, record date, dividend, director appointment/resignation, auditor change, scrutinizer appointment, ESOP grant, or capital-raising resolution appears anywhere in the filing; single-item results-only board meeting (a fact worth carrying forward, not a gap)
+4 | 66-67   | Enclosure reference: Financial Results + Limited Review Report enclosed as "Annexure A" | clean
+5 | 72      | Board Meeting timing: commenced 3.30 pm (IST), concluded 5.05 pm (IST) — duration 1 hr 35 min for a single-item results meeting | two distinct facts (start, end) recorded on one physical line; duration flagged as informational context for A3/A4, not a defined flag code
+--  | 74      | Closing clause: "We request you to take the above information on record." | boilerplate, not a separate agenda item, folded into item 3's context, not separately numbered in the count test
+--  | 80-87   | Digital signature block: Abhishek Verma, Whole Time Director, DIN 08104325; "Digitally signed by Abhishek Verma", Date: 2026.08.13 17:43:11 +05'30' | signed 38 minutes AFTER the board meeting concluded (5:05 pm / 17:05 vs signature timestamp 17:43:11) — normal sequencing, explicitly checked, NO flag (a signature timestamp BEFORE the meeting concluded would be the flag condition per instructions; not triggered here)
+
+--------------------------------------------------------------------------
+TABLE 4 — INDEPENDENT AUDITOR'S LIMITED REVIEW REPORT PARAGRAPHS
+(M. Lal & Co., Chartered Accountants; page 2, lines 96-168)
+--------------------------------------------------------------------------
+# | line(s) | paragraph | flags
+1  | 96-101  | Firm letterhead: M. LAL & CO., Chartered Accountants, 111 A-49 Nehru Nagar, Ghaziabad (U.P.), phone, email | clean (minor stray OCR glyphs "O", "N", "T" scattered in the letterhead margin, decorative/logo artifacts, not data-bearing)
+2  | 103     | Title: "INDEPENDENT AUDITOR'S LIMITED REVIEW REPORT" | clean
+3  | 105-106 | Addressee: "TO THE BOARD OF DIRECTORS OF RATHI STEEL AND POWER LIMITED" | clean
+4  | 108-115 | Engagement scope paragraph: reviewed the standalone unaudited financial results for the quarter ended 30 June 2026, submitted pursuant to Regulation 33; results are management's responsibility, auditor's responsibility is to issue a report | clean; entity reviewed = standalone only (consistent with Table 5 below), no other entity named
+5  | 116-121 | Management-responsibility paragraph: financial results prepared on the basis of interim financial statements, management's responsibility, approved by the Board | clean; this paragraph and paragraph 4 run together without a blank-line break in the source (continuous prose), separated here on content grounds
+6  | 123-130 | Review-standard paragraph: review conducted per SRE 2410 ("Review of Interim Financial Information Performed by the Independent Auditor of the Entity"), ICAI standard, moderate assurance | clean
+7  | 131-135 | Nature/limitation-of-review paragraph: "A review is limited primarily to inquiries...we do not express an audit opinion." — explicit no-audit-opinion disclosure | clean; runs together with paragraph 6 in source, separated here on content grounds
+8  | 137-143 | EMPHASIS-OF-MATTER paragraph: "Attention is drawn to the fact that figures for the quarter ended 31st March 2026...are the balancing figures between audited figures...and the published year to date figures up to the end of third quarter...which were subject to limited review by us." | EMPHASIS_OF_MATTER — flagged per task brief as the key auditor caveat; this is the standard Q4-as-balancing-figure disclosure (Q4FY26 = FY26 audited annual minus 9M-FY26 reviewed YTD, not independently reviewed/audited in isolation) — directly relevant to reconciling the GARBLE_SUSPECT Q4FY26 column cells in Table 2
+9  | 144-156 | Conclusion paragraph: "nothing has come to our attention that causes us to believe that the accompanying statement...has not disclosed the information required...or that it contains any material misstatement." — unmodified/negative-assurance conclusion | clean; runs together with paragraph 8 in source, separated here on content grounds; conclusion type = UNMODIFIED (no qualification, no going-concern paragraph, no other-matters paragraph beyond the Emphasis of Matter above)
+10 | 158-160 | Firm sign-off: "For M. LAL & CO., Chartered Accountants", "Firm Registration [number not legible]" | GARBLE_SUSPECT — Firm Registration Number is not recoverable from the extract (line cuts off after "irm Registration" with no digits captured)
+11 | 163-168 | Partner sign-off: M. L. Agrawal, Proprietor, Membership No. "011148" (printed "MNo.: 011148"), UDIN "262))149 y1AR M ¢ 240" (illegible/unparseable as printed), Place: New Delhi, Date: 13/08/2026 | GARBLE_SUSPECT — UDIN string is not recoverable in valid format from the extract (a valid ICAI UDIN is a fixed-length alphanumeric string; the printed characters do not resolve to one); Membership No. flagged as low-confidence given the surrounding garble even though "011148" itself parses cleanly; no digital-signature timestamp accompanies this block (physical/wet signature or stamp implied, unlike the cover letter's digitally-signed block)
+
+--------------------------------------------------------------------------
+TABLE 5 — CONSOLIDATION / ENTITY LIST
+--------------------------------------------------------------------------
+# | line | entity | relationship | flags
+1  | 241  | NONE — Company states it "does not have any subsidiary associate joint venture entity(ics) for the respective period" | N/A | structural fact, not a gap: there is no consolidated financial statement in this filing by design; only the standalone column set exists (confirmed also by A1 extraction header, and by the auditor's engagement scope in Table 4 row 4 which reviews the standalone statement only); no prior-quarter entity list was supplied to this run so ENTITY_CHANGE cannot be evaluated — flag as a gap for A3/A4 if a prior-quarter comparison is needed
+
+=== END LEDGER ===

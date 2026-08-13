@@ -33,3 +33,9 @@
 
 ## A4 — complete
 - Verdict PROCEED WITH CAVEATS; cash conversion INDETERMINATE (capped correctly). Decision Status verified WATCHLIST/AVOID (not held), UNCHANGED (no tripwire fired). 9 mgmt questions, 8 monitorables, 8 flags. Plain-language brief included.
+
+## GATE A5 — PASS (verdict COMPLETE, first pass, no loops)
+- Coverage PASS (fresh grep = ledger: 16/52/7/4/13/11, no orphans). Arithmetic PASS (only <=0.1pp rounding variances). Adversarial: 3 strongest bear counters all already in A4. No surviving counters.
+
+## COUNT RECONCILIATION LINE
+- 16 notes / 52 line items / 7 zero-standing / 4 Board agenda items / 13 auditor paras / 11 entities — all reviewed. (0 concall turns, 0 slides — none supplied.)

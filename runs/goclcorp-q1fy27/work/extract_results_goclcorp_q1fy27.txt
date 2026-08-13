@@ -1125,3 +1125,10 @@ BONUS CROSS-ANCHORS (not on the flagged list, captured incidentally while render
 
 PAGES RENDERED FOR THIS ADDENDUM: 4, 5, 6, 7, 10, 11, 12 (all seven listed in task; page 6 and 12 rendered for completeness/cross-validation of discontinued-operations detail tables and contained no additional flagged cells beyond what is captured above -- page 6 supplied the consolidated discontinued-operations cross-check used in item 2 and item 15's consolidated counterpart; page 12 supplied the standalone discontinued-operations cross-check used in item 15).
 [END A1-ADDENDUM]
+
+[A1-ADDENDUM CORRECTION — loop 1, A5-triggered — 2026-08-13]
+Method: Read-tool page-4 render (page image pixel-clean; text layer cmap-corrupt). Adjudicates one cell A2 carried unflagged (C14) and one convenience-line typo in the addendum above.
+- page 4 | Consolidated Statement | 4. Exceptional items (net) (Refer note 2) | 351.65 | (209.83) | 1,220.09 | 1,300.43
+    -> Q1FY26 (col 3) TRUE PRINTED value is 1,220.09 lakh (Rs 12.20 Cr), NOT the 4,220.09 in ledger row C14 / corrupt primary. Foots: C13 5,078.01 + C14 1,220.09 = C15 6,298.10 (PBT), and equals the Note 2 put-option value. Corrupt reading was a 1->4 misread. AUTHORITATIVE.
+- page 4 | Consolidated Statement | Total income | Q1FY26 (col 3) is 8,649.63 lakh (Rs 86.50 Cr). The addendum "Total income ... 8,849.63" line above is a 6->8 transcription typo; correct value 8,649.63 foots on two checks (5,078.01 + 3,571.62 = 8,649.63; and 339.18 + 8,310.45 = 8,649.63). Use 8,649.63.
+[END A1-ADDENDUM CORRECTION]

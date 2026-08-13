@@ -102,7 +102,7 @@ All values Rs Lakhs, four columns: Q1FY27 (Jun 30 2026, unaudited) | Q4FY26 (Mar
 | C11 | f) Other expense | 298 | 543.08 | 786.82 | 689.71 | 3,202.71 | — |
 | C12 | Total expenses | 299 | 1,040.21 | 1,500.69 | 3,571.62 (OCR shows "3,571.62"; primary line 243 shows "1,500.69" for Q1FY26 col — cross-check needed) | 9,206.64 | NUMBER_DISCREPANCY — flagged for A3/A4 (see note below table) |
 | C13 | 3. Profit before exceptional items and tax (1-2) | 300 | 5,272.66 | 6,359.30 | 5,078.01 | 33,350.70 | — |
-| C14 | 4. Exceptional items (net) (Refer note 2) | 301 | 351.65 | (209.83) | 4,220.09 | 1,300.43 | — |
+| C14 | 4. Exceptional items (net) (Refer note 2) | 301 | 351.65 | (209.83) | 1,220.09 | 1,300.43 | NUMBER_DISCREPANCY (resolved loop 1): Q1FY26 primary/OCR read 4,220.09 breaks the C13+C14=C15 identity (5,078.01+4,220.09=9,298.10 != 6,298.10) and conflicts with Note 2 (1,220.09); render-adjudicated to 1,220.09 (Rs 12.20 Cr) in A1-ADDENDUM CORRECTION. A2-missed on first pass, A5-caught. |
 | C15 | 5. Profit before tax (3+4) | 302 | 5,624.31 | 6,149.47 | 6,298.10 | 34,651.13 | — |
 | C16 | 6. Tax expense: [header] | 303 | — | — | — | — | SECTION_HEADER |
 | C17 | a) Current tax | 304 | 1,314.74 | 2,334.87 | 1,144.32 | 6,979.29 | — |

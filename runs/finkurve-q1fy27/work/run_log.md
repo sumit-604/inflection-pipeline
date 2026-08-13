@@ -37,10 +37,17 @@ Monitorables: NIM/CoF (~11.2% flat), LTV 72%, gold-price-driven growth, FY29 AUM
 Base FY27 model: AUM Rs 1,480 Cr, PAT Rs 43 Cr, EPS Rs 2.95, BV Rs 29.4, ROE ~11%
 
 ## STAGE STATUS
-- [ ] A1 extract x3 (results / presentation / reg32)
-- [ ] A2 ledger x3
-- [ ] A3 forensics x3
-- [ ] A4 merged review
-- [ ] A5 adversary audit
-- [ ] Notion save
-- [ ] commit
+- [x] A1 extract x3 (results / presentation / reg32)
+- [x] A2 ledger x3
+- [x] A3 forensics x3
+- [x] A4 merged review (loop-2, all A5 gaps closed)
+- [x] A5 adversary audit — verdict COMPLETE (loop 2 of 2)
+- [x] Notion save (full review inserted at page end; Key Notes prepended, prior entry preserved)
+- [x] commit + push
+
+## CLOSE
+A5 COMPLETE. Pipeline verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE
+(Stage-ECL absent). Decision Status UNCHANGED WATCHLIST / AVOID (flags raised,
+no tripwire fired; two moved toward firing). 21 management questions logged.
+Count reconciliation: 176 results units / 253 deck numbers (37 slides) / 41
+reg32 units / 0 concall turns — all reviewed; 29/29 A3 findings incorporated.

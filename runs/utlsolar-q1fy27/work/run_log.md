@@ -20,4 +20,9 @@ Orchestrator session start: 2026-08-13
 - No local companies/UTLSOLAR.md yet.
 
 ## Sequence
-- A1 results: PENDING
+- A1 results: DONE — GATE A1 PASS (100% coverage, 11/11 pages). Units Rs million (x0.1 to Cr).
+  DATA-QUALITY FLAG: source PDF text layer degraded/garbled on pp.7-8 (Online2PDF converter).
+  A1 did a manual 300dpi fidelity pass; resolved 1 ambiguous tax cell (Consol current tax FY26)
+  to 885.52 by arithmetic reconciliation vs printed Total tax 1,039.04. Auditor EoM paragraph
+  (fire-related) present. Board Outcome items 1-4 enumerated.
+- A2 results: PENDING

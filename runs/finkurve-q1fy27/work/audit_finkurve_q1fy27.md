@@ -1,128 +1,138 @@
-# QUARTERLY PIPELINE A5 — ADVERSARY / COMPLETENESS AUDIT — Finkurve (Arvog) Q1 FY27
+# A5 ADVERSARY / COMPLETENESS AUDIT — Finkurve Financial Services Ltd (Arvog) — Q1 FY27 (LOOP 2, FINAL)
 
-**Agent:** A5 ADVERSARY | **Model:** claude-opus-4-8 | Fresh context (A4 review + A1 extracts + A2 ledgers only; A3 reasoning not seen; all figures re-derived).
-**Target:** `review_finkurve_q1fy27.md`. Line convention checked and adopted: results `L###` = OS file line of `extract_results_*` (= embedded +84); deck `S##/L###` where `L###` = deck embedded body line (1-1100); reg32 `R-L###` = reg32 embedded line.
+Independent re-derivation. Inputs seen: A4 review + A1 extracts (results / presentation / reg32) + A2 ledgers only. Every number below re-footed from the cited raw line; A4's and A3's cites were checked, not trusted.
+
+Line-anchor convention verified: results `L###` = extract cat-n file line (= extract embedded line + 84); deck `S##/L###` = extract embedded line; reg32 `R-L##` = extract embedded line. Cross-checked on Interest income (L288 → 7,478.68), fee expense (S30/L938 → 19.70), reg32 (R-L54 → 141.50). Consistent.
 
 ---
 
-## AUDIT 0 — DELIVERABLE-COMPLETENESS (hard gate, run first)
+## 0. DELIVERABLE-COMPLETENESS AUDIT (hard gate) — PASS
 
-Plain-Language Brief (review Section 6) — all four labelled parts present and carrying real, non-placeholder content:
-
-| Part | Present? | Evidence |
+| Brief part | Location | Status |
 |---|---|---|
-| (1) Summary narrative | PRESENT | Section 6 "Summary narrative", ~18 lines, substantive (PAT 8.44, provision holiday, GNPA 6x, LTV 77.3, D/E ramp, disclosure gaps) |
-| (2) SECTOR intelligence | PRESENT | "SECTOR INTELLIGENCE" heading; gold-loan macro (394 lakh Cr wealth, 17 lakh Cr market, 60% informal), LTV cyclicality, provenance-tagged |
-| (3) BUSINESS-MODEL intelligence | PRESENT | "BUSINESS-MODEL INTELLIGENCE" heading; wholesale-borrow/gold-lend spread, 96% gold, Augmont RPT pass-through, Godrej off-book, cost-to-income drift |
-| (4) COMPETITION intelligence | PRESENT | "COMPETITION INTELLIGENCE" heading; sub-scale challenger, LTV vs peer 57-61%, ROE trail, Muthoot-affiliated holder |
+| (1) Summary narrative (10-20 lines) | review L315-317 (~15 lines) | present, real content |
+| (2) SECTOR INTELLIGENCE | review L319-321 | present, real content |
+| (3) BUSINESS-MODEL INTELLIGENCE | review L323-325 | present, real content |
+| (4) COMPETITION INTELLIGENCE | review L327-329 | present, real content |
 
-**Gate 0: PASS** — no missing/empty brief part.
+All four labelled headings exist and carry substantive, non-placeholder content. Gate PASSES.
 
 ---
 
-## AUDIT 1 — COVERAGE (independent re-enumeration, diffed vs A2 ledgers)
+## 1. LOOP-1 GAP CLOSURE — re-derived from raw lines (all four CLOSED)
 
-Fresh grep/sweep counts vs A2:
+**Gap 1 — Fee-and-commission expense / expense-stack footing / "ties exactly" retraction / Q21.**
+Re-footed the Q1 FY27 expense stack from the filing's own raw Lakhs (L295-L301), using the deck's 19.70 (1,970 L) in place of the filing's printed 1,363.74 (13.64, L296):
+2,672.31 + 1,970.00 + 20.38 + 1,347.08 + 113.18 + 338.98 = **6,461.93 L ≈ 6,461.66 L (Total Expenses, L302)** — foots (0.27 L = deck 2-dp rounding). Exact residual that makes the filing's own total foot = 6,461.66 − (2,672.31+20.38+1,347.08+113.18+338.98) = 1,969.73 L = **19.70 Cr**. PBT check: Total Income 7,582.18 (L293) − Total Expenses 6,461.66 (L302) = 1,120.52 L = **11.21 Cr (L303)** — ties. Footing the same stack with the printed 13.64 sums to 5,855.67 L = 58.56 Cr, a 6.06 Cr shortfall — confirming the localisation.
+Corroboration that 19.70 (not 13.64) is correct: deck independently prints Total Expenses 64.62 AND PBT 11.21 AND fee expense 19.70 (S30/L938/L944/L945); and the OTHER three fee-expense periods tie filing-to-deck (Q1FY26 12.73, Q4FY26 22.78, FY26 69.73). The divergence is isolated to the single Q1FY27 cell. A4's "filing misprint" call is sound and is NOT an estimate (it is the exact residual + cross-document print), and it is not silently "fixed" — it is flagged to management. Preamble "ties exactly" claim is explicitly RETRACTED (review L27). Q21 exists (review L261; YAML questions_for_management #21). **CLOSED.**
 
-| Category | A2 count | My fresh count | Orphan rows (ledger→absent from A4) | Status |
+**Gap 2 — RoALA Q1 FY27 = 2.9%.** Deck slide 29 RoALA series (S29/L915-917): 4.2% / 3.9% / 3.7% / 3.3% / **2.9%** (Q1FY26→Q1FY27, declining). Review cell = 2.9% (review L104); tripwire text "RoALA declining 4.2->2.9%" (review L273/L278). Value confirmed on the slide; A4's line cites match A2's line attribution. **CLOSED.**
+
+**Gap 3 — Net-worth decomposition period-matched to Jun'26.** Net Worth (Jun'26) = 35,436.80 L = 354.37 Cr (L365). Paid-up equity (Jun'26) = 1,401.28 L = 14.01 Cr (L310). Implied Other Equity (Jun'26) = 354.37 − 14.01 = **340.36 Cr** (review L187, correctly labelled "implied"). The Mar'26 audited Other Equity 33,089.57 L = 330.90 Cr (L311 / deck S32/L1005) is explicitly kept as a Mar'26 component and is **NOT** added to the Jun'26 total. No period mismatch remains. **CLOSED.**
+
+**Gap 4 — CRAR halved 57.3%→26.6%.** Deck slide 29 Capital Adequacy series (S29/L901-905): 57.3% / 47.1% / 39.1% / 31.0% / **26.6%** (Q1FY26→Q1FY27); filing CRAR 26.63% (L385). 57.3→26.6 is more than a halving; over-5-qtr drop = 3,070 bps; QoQ (31.0→26.63) = 437 bps — all re-verified. Present in Step 5L (review L175/L179), Capital & Leverage (L187), and bear framing (brief L317, competition L329, flags L387). **CLOSED.**
+
+---
+
+## 2. COVERAGE AUDIT (fresh enumeration vs A2 ledgers vs A4 review)
+
+| Category | A2 count | My fresh count | Orphan rows (ledger not in A4) | Status |
 |---|---|---|---|---|
-| RESULTS agenda items | 11 | 11 | none — all 11 in Step 0D table (L107-159) | PASS |
-| RESULTS Limited-Review paras | 5 | 5 | none — para 4 (unmodified, L236) + para 5 (predecessor, L253-256) diffed; 1-3 boilerplate reviewed-no-finding | PASS |
-| RESULTS Security-Cover paras | 9 | 9 | none — conclusion + cover ratios 1.14x/1.10x (L555) cited; responsibility paras reviewed-no-finding | PASS |
-| Auditor paras total | 14 | 14 (5+9) | none | PASS |
-| RESULTS notes | 8 | 8 | none — all 8 in Step 0D (L316-387) | PASS |
-| RESULTS statement line items | 23 | 23 | none — Step 1L reproduces all | PASS |
-| RESULTS ratios rows | 26 | 26 | none — D/E, DSCR, ISCR, NW, EPS x2, GNPA/NNPA/PCR/CRAR all used | PASS |
-| CLA sub-table | 10 | 10 | none — WAR 19.96%, 44.23/37.86, NNPA 0.01 cited | PASS |
-| Annexure 3 fields | 15 | 15 | none — 141.50/111.50/30, CRISIL cited | PASS |
-| Annexure 4 fields | 15 | 15 | none — 199/135, dev "No", MA N/A cited | PASS |
-| Appendix I asset/liab/cover rows | 30 | 30 | none material — Loans/Goodwill-nil/DTL 23.26 used; blank OCR rows correctly NOT_FOUND | PASS |
-| PRES slides | 37 | 37 | none | PASS |
-| PRES mgmt numbers | 253 | 253 | none material — headline KPIs, P&L, BS, ratios all used | PASS |
-| PRES zero-standing | 7 | 7 | none | PASS |
-| PRES footnotes (off-book) | 5 | 5 | none — F16-2 covers all 5 | PASS |
-| PRES entities | 78 | 78 (79 boundary) | none material — Augmont, Godrej, Muthoot, RBL used | PASS |
-| PRES guidance | 1 | 1 | none — 30-45 day rollout (S21/L675) used | PASS |
-| REG32 disclosure units | 41 | 41 | none — 141.50/111.50/30 warrant, CRISIL, dev "No" cited | PASS |
+| RESULTS — agenda items | 11 | 11 (L107-159) | none | ok |
+| RESULTS — review-report paras | 5 | 5 (L203-256) | none | ok |
+| RESULTS — security-cover paras | 9 | 9 (L420-515) | none | ok |
+| RESULTS — notes | 8 | 8 (L316-387) | none | ok |
+| RESULTS — P&L line items | 23 | 23 (L288-314) | none | ok |
+| RESULTS — CLA sub-table rows | 10 | 10 (L331-340) | none | ok |
+| RESULTS — ratios rows | 26 | 26 (L360-385) | none | ok |
+| RESULTS — Appendix I rows | 30 | 30 (14 asset + 14 liab + 2 cover) | none (data-legibility NOT_FOUNDs disclosed) | ok |
+| RESULTS — Appendix I footnotes | 9 | 9 | none | ok |
+| RESULTS — Annexure 3 fields | 15 | 15 | none | ok |
+| RESULTS — Annexure 4 fields | 15 | 15 | none | ok |
+| RESULTS — signature blocks | 7 | 7 | none | ok |
+| RESULTS — total disclosure units | 176 | 176 | none | ok |
+| PRESENTATION — slides | 37 | 37 ([page 1]-[page 37]) | none | ok |
+| PRESENTATION — mgmt numbers | 253 | 253 | none | ok |
+| PRESENTATION — named entities | 78 | 78 | none | ok |
+| PRESENTATION — zero-standing | 7 | 7 | none | ok |
+| PRESENTATION — footnotes | 5 | 5 | none | ok |
+| PRESENTATION — guidance statements | 1 | 1 (S21/L675) | none | ok |
+| REG32 — disclosure units | 41 | 41 (16+14+7+4) | none | ok |
 
-**No orphan rows. No enumeration category my fresh pass found is missing from a ledger.**
-Standalone-only verified independently: full-text sweep of `extract_results` confirms no "consolidated/subsidiary/standalone" token; Note 6 single segment (L348); Goodwill nil (L526). A4's N/A S-vs-C treatment is correct — no consolidated PAT gap silently present.
-Every AMBIGUOUS/FORWARD-SIGNAL A3 finding produced a management question (20 Q's map to the 29 findings; NEUTRAL-FACT RES-F13-2/F14-4 correctly parked in governance register, not as questions).
+Review preamble counts (176 / 37 / 253 / 78 / 7 / 5 / 1 / 41) reconcile exactly to the three ledgers. All 29 A3 findings are individually listed as incorporated (review L21-23) — RESULTS ×13, PRESENTATION ×13, REG32 ×3 = 29 — and each maps to a Step, an earnings-quality item, a management question, a monitorable, or a flag. Every material ledger flag (STANDALONE_ONLY, AUDITOR_CHANGE, RELATED_PARTY/Augmont, DIRECTOR_AGE_75, EPS anomaly + cross-table mismatch, Annexure-4 199>135, monitoring-agency inconsistency, Stage-ECL NOT_FOUND, deferred-tax sign-flip, off-book AUM footnote, CRAR/RoALA/LTV trends) is addressed in A4.
+My fresh grep pass surfaced **no row the ledger lacks** and **no ledger row absent from A4**.
 
-**Two A2 ledger data-quality defects found (non-blocking — A4 overrode #1 correctly, #2 is a reconciliation A4 owns):**
-- **A2 results ledger, line-item #2 (Fees & commission INCOME, L289):** ledger recorded Q1FY27 = **58.4 Lakhs (0.58 Cr)** and flagged it "suspect". Correct value = **5.84 Lakhs (0.06 Cr)**: the revenue subtotal ties only at 5.84 (7,478.68 + 5.84 + 25.79 = 7,510.31 = L291's 7,510.30). **A4 used 0.06 Cr correctly** via subtotal reconciliation, so no thesis impact — but the A2 ledger figure is wrong and should be corrected to 5.84 L (loop A2, cosmetic).
-- **Neither ledger flagged the deck-vs-filing fee-EXPENSE cross-document mismatch** (each transcribed its own source faithfully). Reconciliation is A4's job — see Audit 2/3. This is the material item and loops to A4, not A2.
-
-**Coverage verdict: PASS (0 orphan rows, 0 missing enumeration units).**
+**Coverage gaps: 0. Orphan rows: 0. Missing-from-ledger: 0.**
 
 ---
 
-## AUDIT 2 — ARITHMETIC (every derived metric recomputed from raw extract lines)
+## 3. ARITHMETIC AUDIT (recomputed from raw extracted numbers)
 
-Ties confirmed (recomputed independently, all within rounding):
-
-| Metric | A4 value | My recompute | Source | Status |
+| Metric | A4 value | My recompute | Source lines | Status |
 |---|---|---|---|---|
-| Interest income YoY | +181.2% | 7,478.68/2,659.83 = 2.812 → +181.2% | L288 | TIE |
-| Finance cost YoY | +277.4% | 2,672.31/707.82 = 3.774 → +277.4% | L295 | TIE |
-| NII Q1FY27 / YoY | 48.07 / +146.3% | 74.79−26.72=48.07; 48.07/19.52=2.463 | L288/L295 | TIE |
-| PPOP flat | 11.41 vs 11.61, −1.7% | 11.21+0.20=11.41; 6.83+4.78=11.61; −1.72% | L303/L298 | TIE |
-| PAT bridge | +4.38 PBT (prov +4.58, PPOP −0.20) | −0.20+4.58=+4.38; PBT 11.21−6.83=4.38 | L303/L298 | TIE |
-| Reported PAT change | +3.35 (5.09→8.44) | 8.44−5.09=3.35 | L305 | TIE |
-| Provision-normalised PBT haircut | ~47.6% | (11.21−5.87)/11.21=47.6%; 5.87=11.41−5.54; 5.54=2,217.18/4 | L298/L303 | TIE |
-| GNPA / NNPA | 0.54% / 6.66 Cr; 0.48% / 5.96 Cr | 665.65 L=6.66; 596.11 L=5.96 | L380-383 | TIE |
-| PCR / CRAR / D/E | 10.45% / 26.63% / 2.88 | as printed | L384/L385/L360 | TIE |
-| DSCR / ISCR | 0.41 / 1.38 | as printed | L361/L362 | TIE |
-| ETR Q1FY27 / Q1FY26 | 24.7% / 25.5% | 2.77/11.21=24.7%; 1.74/6.83=25.5% | L304/L303 | TIE |
-| EPS anomaly (Basic<Diluted) | 0.50 < 0.58 | as printed; cross-table 0.60/0.59 | L313-314/L368-369 | TIE (real anomaly) |
-| Employee YoY / QoQ | +240% / +150.8% | 1,347.08/396.45=+240%; /536.56=+151.1% | L299 | TIE (QoQ ~151%, rounding) |
-| Total revenue YoY | +88.3% | 7,510.30/3,987.88=+88.3% | L291 | TIE (deck 88.32%) |
-| Expense-line under-sum | ~6.06 Cr | 6,461.66−5,855.67=605.99 L=6.06 Cr | L295-302 | TIE (arithmetic correct — but mislocated, see Audit 3) |
-| reg32 warrant reconciliation | 141.50−30=111.50 | 141.50−30.00=111.50 | R-L54/R-L77 | TIE |
-| Annexure 4 excess | 199−135=64 | 199−135=64, dev "No" | L733/L758 | TIE |
+| NII Q1FY27 | 48.07 | 74.79 − 26.72 = 48.07 | L288/L295 | ok |
+| NII Q1FY26 / Q4FY26 / FY26 | 19.52 / 46.19 / 155.43 | 19.52 / 46.19 / 155.43 | L288/L295 | ok |
+| Interest income YoY | +181.2% | (74.79−26.60)/26.60 = 181.2% | L288 | ok |
+| NII YoY | +146.3% | 28.55/19.52 = 146.3% | calc | ok |
+| Finance cost YoY | +277.4% | 19.64/7.08 = 277.4% | L295 | ok |
+| Total rev-from-ops YoY | +88.3% | 35.22/39.88 = 88.3% (deck 88.32) | L291/S30 | ok |
+| PBT YoY | +64.1% | 4.38/6.83 = 64.1% (deck 64.06) | L303/S30 | ok |
+| PAT YoY | +65.8% | 3.35/5.09 = 65.8% (deck 65.78) | L305/S30 | ok |
+| Fee-exp YoY (corrected) | +54.8% | (19.70−12.73)/12.73 = 54.7% | S30/L938 vs L296 | ok |
+| PPOP Q1FY27 / FY26 / Q4 / Q1FY26 | 11.41 / 56.77 / 17.52 / 11.61 | 11.21+0.20 / 34.60+22.17 / 10.42+7.10 / 6.83+4.78 | L303/L298 | ok |
+| PPOP YoY | −1.7% | −0.20/11.61 = −1.7% | calc | ok |
+| Expense-stack foot (corrected) | 64.61≈64.62 | 6,461.93 L ≈ 6,461.66 L | L295-302 | ok |
+| PBT foot | 11.21 | 7,582.18 − 6,461.66 = 1,120.52 L | L293/L302/L303 | ok |
+| ETR Q1FY27 / Q1FY26 | 24.7% / 25.5% | 2.77/11.21 / 1.74/6.83 | L304/L303 | ok |
+| PAT bridge (NII +28.55; oth/fee −12.41; opex −16.35; prov +4.58; tax −1.03) | PAT +3.35 | 28.55−12.41−16.35+4.58−1.03 = 3.34≈3.35 | Step 4 | ok |
+| Opex Q1FY27 (corrected) | 37.69 | 19.70+13.47+1.13+3.39 = 37.69 | S30/L938,L299-301 | ok |
+| Normalised PBT / haircut | ~5.87 / ~47.6% | 11.41−5.54 = 5.87; 5.34/11.21 = 47.6% | L298/L303 | ok |
+| Credit cost Q1FY27 annualised | ~0.06% | 0.20×4/1,270.4 = 0.063% | L298/S7 | ok |
+| Cost-to-income Q1FY27 / Q1FY26 | 76.8% / 64.8% | 37.69/49.11 = 76.7%; 21.34/32.97 = 64.7% | calc | ok (proxy) |
+| AUM YoY / tonnage YoY | +134.5% / +46.6% | 728.6/541.8; 371.3/796.2 | S7/L176,178 | ok |
+| Employee YoY / QoQ | +240% / +150.8% | 9.51/3.96; 8.10/5.37 | L299 | ok |
+| CRAR halving / 5-qtr / QoQ bps | 57.3→26.6; −3,070; −437 | 30.7pt; 31.0−26.63=4.37pt | S29/L901-905, L385 | ok |
+| RoALA Q1FY27 | 2.9% | slide 29 last point | S29/L917 | ok |
+| LTV QoQ | +510 bps (72.2→77.3) | 5.1 pt | S28/L881-884 | ok |
+| Net-worth decomposition | 14.01 + 340.36 = 354.37 | 14.01 + (354.37−14.01) | L310/L365 | ok |
+| NCD excess / reg32 gap | 199−135 = 64; 141.50−30 = 111.50 | 64; 111.50 | L737/L758; R-L54/L77 | ok |
+| GNPA / NNPA (Cr) | 6.66 / 5.96 | 665.65 L / 596.11 L ×0.01 | L380/L382 | ok |
 
-**MISMATCHES (fail — return to A4):**
+Every derived metric ties to its cited raw line within rounding. **Arithmetic errors: 0.**
 
-| # | Metric | A4 value | My recompute | Source | Severity |
-|---|---|---|---|---|---|
-| M1 | Fees & commission EXPENSE, Q1FY27 | **13.64 Cr** (L296), propagated through Step 1L, Step 4 opex, §3.2 ("13.64 Cr/qtr") | **19.70 Cr** — the filing's own total foots only at 19.70: 64.62 − (26.72+0.20+13.47+1.13+3.39) = **19.70**; and the **deck states 19.70 directly (S30/L938)**. Filing's printed "1,363.74"/13.64 (L296) is the erroneous line, and the 6.06 Cr difference (19.70−13.64) **is exactly A4's unexplained under-sum**. | L296 vs S30/L938 + L302/L303 | **MATERIAL** — A4 both used the wrong figure and, in the preamble, affirmatively claimed deck/filing "tie exactly … divergences are framing/omission, not arithmetic," which this falsifies. Augmont RPT pass-through this quarter is 19.70 Cr, not 13.64. |
-| M2 | RoALA, Q1FY27 (derived-metrics table, review line 101) | **4.2%** (cited S29/L915) | **2.9%** — S29/L917 is the last/current point of the 4.2→3.9→3.7→3.3→**2.9** series; independent check PAT 8.44×4 / avg loan assets ≈ 2.9%. 4.2% is the **Q1FY26** value. A4 grabbed the wrong end of the series. | S29/L917 | Minor — A4's own tripwire text (review L267) already says "declining 4.2→2.9%", so the table cell self-contradicts. Correct the cell. |
-| M3 | Net-worth decomposition | "Other Equity 330.90 (L311) + paid-up 14.01 (L310)" = 344.91, offered against Net worth **354.37** (L365) | Does not tie: 330.90 is **Mar'26** Other Equity (annual, L311 / deck S32/L1005), not Jun'26. Jun'26 implied Other Equity = 354.37−14.01 = 340.36. | L311 vs L365 | Minor — period-mixing; net-worth headline 354.37 itself is correct. |
-
-Note: **RoAE 9.4% (S29/L901) for Q1FY27 was tested and stands.** Independent check PAT 8.44×4 / avg equity (344.9+354.4)/2 ≈ 9.7%, within rounding of 9.4%; the RoAE series is non-chronological in the linearised extract, but 9.4% is corroborated by computation (Q1FY26 RoAE computes to ~6.5%, so 9.4% cannot be the Q1FY26 point). No error — A4's ROE read is defensible.
-
----
-
-## AUDIT 3 — ADVERSARIAL READ (three most positive claims; strongest bear counter from the SAME extract)
-
-**Positive claim A — "The deck's audited headline KPIs all tie exactly to the filing; the deck's numbers are the filing's numbers; divergences are framing/omission, not arithmetic."** (Preamble, review L24.)
-Bear counter: Deck fee-and-commission expense = **19.70 Cr (S30/L938)**; filing prints **13.64 Cr (L296)** — a **6.06 Cr arithmetic divergence**, not framing. The filing's total expenses (64.62, L302), reported PBT (11.21, L303), and the deck all corroborate **19.70** as the true figure, so the filing's 13.64 line is a genuine data error and the "tie exactly / not arithmetic" claim is false. This divergence is identically the size of A4's own unreconciled expense under-sum.
-**SURVIVES → must be grafted into A4:** replace the "ties exactly / not arithmetic" language, set Q1FY27 fee expense = 19.70 Cr, and resolve the data-integrity question (Q18) by localising the error to the filing's fee-expense line rather than leaving it an open mystery.
-
-**Positive claim B — "Capital is ample (CRAR 26.63%) … healthy capital headroom."** (Step 5L / narrative.)
-Bear counter: On the deck's own Capital Adequacy series (S29/L901-905), the ratio **halved from 57.3% to 26.6% across five quarters** while D/E ran 0.73→2.88, and Board resolutions target Rs 5,000 Cr borrowing and a 4-4.5x D/E (L148). "Ample" describes the level but omits the trajectory: on a thin-PCR (10.45%), rising-GNPA book, a capital buffer that halved in a year is a diminishing, not a static, cushion.
-**SURVIVES (moderate) → graft the CRAR trend (57.3→26.6) into Step 5L; the level-only framing understates the drawdown.**
-
-**Positive claim C — "Interest income +181% / total revenue +88% = real book and leverage growth."** (Step 2 answer 1.)
-Bear counter: Growth is provision-flattered — PPOP flat YoY (11.61→11.41), 100% of PBT growth is the 4.58 Cr provision release, normalised PAT ~4.4 Cr < prior 5.09 (Step 4).
-**DOES NOT SURVIVE as new — already fully incorporated** (Step 2 answer 3, Step 4 bridge, §3.1). No graft needed.
-
-Two surviving counters (A, B) require incorporation before save.
+Non-material notes (not failures): deck chart-label line cites for RoALA/RoAE/CRAR are approximate (A2 itself flagged those charts `CHART_LABEL_AMBIGUOUS`), but the *values* A4 uses are correct and on-slide. A4's assignment of RoAE 9.4% to Q1FY27 sits on an A2-flagged ambiguous chart; the review's independent "annualised ~10%" (8.44×4 / 354.37 ≈ 9.5%) corroborates it, so it does not affect any conclusion.
 
 ---
 
-## VERDICT
+## 4. ADVERSARIAL READ (strongest bear counter to A4's three most positive claims, from the same extract)
 
-**INCOMPLETE.** Loop back to **A4**.
+The review is already predominantly bearish; the test is whether any bear counter to its residual positives SURVIVES and is NOT yet incorporated (which would force a graft back to A4).
 
-Blocking gap (primary): **M1 / Adversarial claim A** — the review's Fees & commission EXPENSE for Q1FY27 is stated as 13.64 Cr (L296) and the preamble claims deck and filing "tie exactly … divergences are framing/omission, not arithmetic," but the deck states **19.70 Cr (S30/L938)** and the filing's own total (L302) and PBT (L303) foot only at **19.70**; the 6.06 Cr gap is exactly the review's unexplained expense under-sum. A4 must (i) correct Q1FY27 fee expense to 19.70 Cr in Step 1L / Step 4 / §3.2, (ii) resolve Q18 by localising the data-integrity error to the filing's printed fee-expense line (deck reconciles the total), and (iii) retract the "ties exactly / not arithmetic" claim.
-Secondary graft: **Adversarial claim B** — add the CRAR trend (57.3%→26.6%, S29/L901-905) to the "ample capital" read.
-Minor corrections (fix, non-thesis): **M2** RoALA Q1FY27 derived cell 4.2%→2.9% (S29/L917); **M3** net-worth decomposition mixes Mar'26 Other Equity (330.90) with Jun'26 net worth (354.37).
-Ledger housekeeping (loop A2, cosmetic): results ledger fee-INCOME L289 Q1FY27 should read 5.84 L (0.06 Cr), not 58.4 L — A4 already used the correct 0.06.
+1. **Positive: "CRAR 26.63% — capital ample, above regulatory minimum" (L175/L187).**
+   Bear counter (same extract): CRAR HALVED 57.3%→26.6% in a year (S29/L901-905) while D/E ran 0.73→2.88 (S7/L184; L360), the board enabled Rs 5,000 Cr borrowing power (L148) toward a 4-4.5x target, and PCR is only 10.45% on a rising GNPA. "Ample" describes the level, not the drawdown. **SURVIVES — already grafted** (Step 5L, Capital & Leverage, brief, competition, flags). No new graft required.
 
-**Counts:** coverage gaps = 0 orphan / 0 missing-enumeration (2 A2 value-accuracy notes); arithmetic mismatches = 3 (1 material M1, 2 minor M2/M3); surviving bear counters = 2 (A material, B moderate).
+2. **Positive: "Cost of borrowing improved to 10.2%, −90 bps" (L174/L183).**
+   Bear counter: the 10.2% is a single unbasised charted point (S24/L729); on the filing's own numbers finance cost rose +277% vs interest income +181%, so NII grew only +146% and the blended/weighted cost of the incremental leverage is RISING as the marginal-rate print falls. **SURVIVES — already incorporated** (Step 3.3, spread analysis, Q2). No new graft required.
 
-Coverage is complete and the core earnings-quality thesis (provision-flattered PAT, PPOP flat, spread compression, GNPA/LTV deterioration, disclosure gaps, INDETERMINATE cash-conversion → PROCEED WITH FLAGS) is sound and correctly anchored. It cannot proceed to Notion because A4 made an affirmative arithmetic-integrity claim that the same extract falsifies, and used the wrong fee-expense figure. Fix M1 + graft counters A and B, then re-verify.
+3. **Positive: "Collection efficiency 98.0% holding / the only counter-signal" (L168/L179).**
+   Bear counter: on a 96%-gold, bullet/renewal book, collection efficiency does not capture the price/LTV lever; GNPA still rose ~6x and LTV hit 77.3% (highest in series) despite 98% collection, so a stable collection print gives no comfort on the actual risk driver. **SURVIVES — substantially incorporated** (Step 5L(c)/(d) explicitly subordinates the 98% to the LTV/price risk). No new graft required.
+
+Adversarial challenges constructed: 3. Surviving counters requiring NEW incorporation into A4: **0** (all three already present in the review).
+
+---
+
+## 5. VERDICT
+
+**COMPLETE.**
+
+- All four loop-1 gaps independently re-derived and confirmed CLOSED.
+- Deliverable-completeness gate: PASS (all four plain-language-brief parts present and substantive).
+- Coverage gaps: **0** (176 + 37/253/78/7/5/1 + 41 all reconcile; no orphan rows, none missing from ledger; all 29 A3 findings incorporated).
+- Arithmetic errors: **0** (every derived metric re-footed to its cited raw line within rounding; the corrected expense stack foots to Total Expenses 64.62 and PBT 11.21).
+- Adversarial challenges: **3 constructed, 0 surviving un-incorporated** (all three bear counters already in A4).
+- No new error was introduced by the loop-2 edits, and no other material gap is uncovered.
+
+Confirmation: every material unit across the three documents is covered, and every number in A4's tables ties to its cited line (the sole cross-document divergence — the filing's 13.64 fee-expense print — is correctly localised to that one cell, resolved to 19.70 by the filing's own foot and the deck, and put to management as Q21). This review may proceed to Notion save.
 
 ```yaml
 stage: A5-adversary
@@ -130,7 +140,7 @@ company: "finkurve"
 quarter: "q1fy27"
 model: claude-opus-4-8
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -139,13 +149,8 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "Fees & commission expense Q1FY27", a4_value: "13.64 Cr", recomputed: "19.70 Cr", source_line: "L296 vs deck S30/L938; foots via L302/L303 residual = 19.70; 6.06 Cr = A4 under-sum"}
-  - {metric: "RoALA Q1FY27 (derived table)", a4_value: "4.2%", recomputed: "2.9%", source_line: "S29/L917 (4.2 is Q1FY26 endpoint); A4 tripwire text already says 2.9"}
-  - {metric: "Net worth decomposition", a4_value: "330.90 + 14.01 = 344.91 vs NW 354.37", recomputed: "330.90 is Mar'26 Other Equity, not Jun'26", source_line: "L311 (Mar'26) vs L365 (Jun'26)"}
-surviving_bear_counters:
-  - {claim: "Deck KPIs tie exactly to filing; divergences framing/omission, not arithmetic (preamble)", counter: "Deck fee expense 19.70 != filing 13.64; 6.06 Cr arithmetic divergence = the review's own unexplained under-sum; filing 13.64 line is the error", source_line: "S30/L938 vs L296; L302/L303"}
-  - {claim: "Capital ample (CRAR 26.63%), healthy headroom", counter: "CRAR halved 57.3%->26.6% in five quarters as D/E ran 0.73->2.88 with 5,000 Cr borrowing / 4-4.5x target; buffer eroding on thin-PCR rising-GNPA book", source_line: "S29/L901-905; L148/L360"}
-loop_back_to: "A4"
-gap: "A4 preamble claims deck/filing 'tie exactly, not arithmetic' and uses Q1FY27 fee expense 13.64 (L296); deck states 19.70 (S30/L938) and filing total (L302)/PBT (L303) foot only at 19.70 — the 6.06 Cr gap IS the review's unexplained expense under-sum. A4 must set fee expense=19.70, localise the data-integrity error to the filing fee line (Q18), retract 'ties exactly', graft CRAR-halved trend, and fix RoALA cell 4.2->2.9 (S29/L917)."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop_back_to: ""
+gap: ""
 ```

@@ -39,3 +39,13 @@
 
 ## COUNT RECONCILIATION LINE
 - 16 notes / 52 line items / 7 zero-standing / 4 Board agenda items / 13 auditor paras / 11 entities — all reviewed. (0 concall turns, 0 slides — none supplied.)
+
+## NOTION SAVE — done (2026-08-13)
+- AMAGI had NO existing row in COMPANIES MASTER (never created despite July local run). Per operator instruction, created the row.
+- Parent page: AMAGI (Amagi Media Labs Ltd) — https://app.notion.com/p/3bbbb2b9d3ab81d7877fed1f5dfa66cd
+  - Decision Status WATCHLIST / AVOID; CMP 580; Entry 155; MoS 87; Analysis Date Aug-26/2026-08-13; Key Notes date-stamped (Q1FY27 line prepended + 2026-07-12 baseline preserved).
+- Child page: Q1 FY27 — Results Review — https://app.notion.com/p/3bbbb2b9d3ab81d48411c5392e8cde5e
+  - Full merged review + Questions-for-Management + monitorables + A3 forensics table/scorecard + A5 audit verdict (completeness proof).
+
+## STATUS: COMPLETE
+- A5 verdict COMPLETE (first pass, no loops). Protocol verdict PROCEED WITH CAVEATS. Decision Status UNCHANGED WATCHLIST/AVOID.

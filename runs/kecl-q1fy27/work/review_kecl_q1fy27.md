@@ -6,6 +6,7 @@
 **Doctype in scope:** RESULTS (Board Outcome + Ind AS unaudited standalone & consolidated results + both limited-review reports + Annexures 2-3). No concall/transcript in scope.
 **Coverage status:** INITIATION-context read. KECL is a NEW name to coverage. There is NO Notion page, NO prior Decision Status, NO entry zone, NO active tripwires, NO monitoring checklist. This review therefore frames the quarter as a first read, not a position update. No HOLD/ADD/TRIM/EXIT framing is applied.
 **Revision note (loop 1):** two A5 adversarial counters grafted — (GAP 1) finance-cost −17.3% reframed as likely payable-stretch / lower WC drawdown, NOT clean net-debt deleveraging (Step 2B ans 4-5, Step 4 bridge + answer, Question 8, Verdict, brief); (GAP 2) gross-margin "improvement" qualified as an inventory-build artifact with the materials-consumed basis shown alongside the net-materials basis (Step 1C note v, Step 2B ans 7, Step 4 bridge + answer, brief). Verdict UNCHANGED: PROCEED WITH FLAGS.
+**Revision note (loop 2):** mechanical arithmetic fix to two supplementary Step 1C "Gross margin — NET-materials basis" cells (Q4 FY26 3.99% → 33.2%; FY26 28.4% → 30.5%) and removal of the incoherent Q4 asterisk footnote. No other cell moved; the load-bearing GM pairs are untouched. Verdict UNCHANGED: PROCEED WITH FLAGS.
 
 ---
 
@@ -135,14 +136,14 @@ All figures Rs Crores (Lakhs x 0.01). Line anchors in [brackets]. Standalone is 
 | Operating EBITDA Margin | OpEBITDA / Rev | 5.23% | 3.94% | (0.36)% | 6.04% (ex-exc) |
 | Reported EBITDA | PBT + D + Fin | 7.87 | 7.26 | 0.31 | 38.57 |
 | Reported EBITDA Margin | RepEBITDA / Rev | 5.95% | 4.44% | 0.30% | 6.54% |
-| Gross margin — NET-materials basis | (Rev − materials − Δinv) / Rev | 28.1% | 3.99%* | 30.9% | 28.4% |
+| Gross margin — NET-materials basis | (Rev − materials − Δinv) / Rev | 28.1% | 33.2% | 30.9% | 30.5% |
 | Gross margin — CONSUMED basis | (Rev − materials consumed) / Rev | 26.9% | 30.9% | 22.2% | 29.4% |
 | Core PBT (ex-OI) | PBT − OI | (0.51) | (1.34) | (6.63) | (2.31) / 5.78 (ex-exc) |
 | Other Income / PBT | OI / PBT | 2.13x | n.m. (PBT<0) | n.m. (PBT<0) | 1.26x |
 | Effective Tax Rate | Tax / PBT | 0% (nil) | n.m. (PBT<0) | n.m. (tax on loss) | 3.4% |
 | PAT Margin | PAT / Rev | 0.34% | (0.38)% | (5.77)% | 1.43% |
 
-**Notes on derived metrics:** (i) FY26 operating EBITDA is shown ex-exceptional (adding back the Rs8.09 Cr Labour-Code one-off, Note 11) because the exceptional is non-recurring and depresses the reported figure; both readings are given. (ii) FY26 Other Income (Rs11.06 Cr) is itself inflated by one-off property-sale profits (Note 10) — FY26 core PBT ex-OI ex-exceptional is only Rs5.78 Cr, i.e. FY26's headline PBT of Rs8.75 Cr is almost entirely non-operating. (iii) Q1FY27 shows tax of Rs0.04 Cr charged despite a pre-tax LOSS — a MAT/pocket-taxable item (F8). (iv) Consolidated operating EBITDA is within ~Rs0.03-0.07 Cr of standalone every period (Kirsons BV adds essentially nothing — see the S-vs-C section). **(v) [GAP 2 GRAFT — inventory-build artifact] The two gross-margin rows disagree by design and the reader must see both.** The press-touted "material cost improved to 69.1% of revenue from 71.9%" (l.826) is a NET-materials figure — it nets the Rs9.12 Cr inventory BUILD (change in inventories (912) lakhs [101]) against materials consumed, which mechanically FLATTERS the ratio. On the like-for-like CONSUMED basis (materials consumed only, which is what actually hit COGS), Q1 FY27 gross margin **DETERIORATED to 22.2% from 26.9% a year ago — a ~470 bps decline**, because the Rs9.12 Cr inventory build (vs only Rs1.59 Cr a year ago, l.101) parked cost on the balance sheet rather than the P&L. So the "margin improvement" is an inventory-timing artifact, not clean input-cost discipline; and a Rs9.12 Cr inventory build INTO a −21.5% revenue quarter is itself a working-capital red flag (connected to the auditor's overdue-creditor / eroded-net-worth flags in Step 5). *Q4 FY26 net-materials margin (3.99%) is depressed by that quarter's large "other expenses" being irrelevant here and by its own inventory swing; the consumed-basis series is the cleaner cross-quarter comparison.
+**Notes on derived metrics:** (i) FY26 operating EBITDA is shown ex-exceptional (adding back the Rs8.09 Cr Labour-Code one-off, Note 11) because the exceptional is non-recurring and depresses the reported figure; both readings are given. (ii) FY26 Other Income (Rs11.06 Cr) is itself inflated by one-off property-sale profits (Note 10) — FY26 core PBT ex-OI ex-exceptional is only Rs5.78 Cr, i.e. FY26's headline PBT of Rs8.75 Cr is almost entirely non-operating. (iii) Q1FY27 shows tax of Rs0.04 Cr charged despite a pre-tax LOSS — a MAT/pocket-taxable item (F8). (iv) Consolidated operating EBITDA is within ~Rs0.03-0.07 Cr of standalone every period (Kirsons BV adds essentially nothing — see the S-vs-C section). **(v) [GAP 2 GRAFT — inventory-build artifact] The two gross-margin rows disagree by design and the reader must see both.** The press-touted "material cost improved to 69.1% of revenue from 71.9%" (l.826) is a NET-materials figure — it nets the Rs9.12 Cr inventory BUILD (change in inventories (912) lakhs [101]) against materials consumed, which mechanically FLATTERS the ratio. On the like-for-like CONSUMED basis (materials consumed only, which is what actually hit COGS), Q1 FY27 gross margin **DETERIORATED to 22.2% from 26.9% a year ago — a ~470 bps decline**, because the Rs9.12 Cr inventory build (vs only Rs1.59 Cr a year ago, l.101) parked cost on the balance sheet rather than the P&L. So the "margin improvement" is an inventory-timing artifact, not clean input-cost discipline; and a Rs9.12 Cr inventory build INTO a −21.5% revenue quarter is itself a working-capital red flag (connected to the auditor's overdue-creditor / eroded-net-worth flags in Step 5). Cross-quarter, the CONSUMED-basis series (26.9% → 30.9% → 22.2%) is the cleaner comparison because it is immune to inventory-timing swings; the NET-materials series (28.1% → 33.2% → 30.9%) moves partly with the size of each quarter's inventory build/draw and should not be read as pure margin.
 
 🛑 Every cell filled or explicitly ND. Proceeding.
 
@@ -377,7 +378,7 @@ Treated as a standing metric per instruction. The gap is the diagnostic, not an 
 
 ## VERDICT
 
-**PROTOCOL VERDICT: PROCEED WITH FLAGS.** (Unchanged after loop-1 adversarial grafts.)
+**PROTOCOL VERDICT: PROCEED WITH FLAGS.** (Unchanged after loop-1 adversarial grafts and loop-2 arithmetic fix.)
 
 The extraction is clean (GATE A2 pass, GATE A3 pass, 100% ledger reconciliation) and there is no mechanical failure — so the pipeline proceeds. But the flags are substantial, named, and propagate to every downstream stage (concall, FTTCP, Role 1 valuation):
 
@@ -437,6 +438,10 @@ sc_gap_pat_pct:
 adversarial_grafts_loop1:
   - "GAP1 finance-cost -17.3% reframed as likely payable-stretch/lower WC drawdown not net-debt deleveraging (Step 2B ans 4-5, Step 4 bridge+answer, Step 5, Question 8, Verdict, brief)"
   - "GAP2 gross-margin improvement qualified as inventory-build artifact; consumed-basis GM 22.2% vs 26.9% shown alongside net-materials 30.9% vs 28.1% (Step 1C note v, Step 2B ans 7, Step 4 bridge+answer, Question 9, brief)"
+arithmetic_fix_loop2:
+  - "Step 1C 'Gross margin — NET-materials basis' Q4FY26 3.99% -> 33.2% (was a mis-paste of adjacent Op-EBITDA margin 3.94%)"
+  - "Step 1C 'Gross margin — NET-materials basis' FY26 28.4% -> 30.5%"
+  - "Removed incoherent Q4 asterisk footnote (referenced other-expenses, which sit below the gross-margin line); load-bearing GM pairs 30.9%/28.1% and 22.2%/26.9% untouched"
 questions_for_management:
   - {q: "Exact revaluation-reserve balance inside Other Equity and real net worth ex-revaluation in Rs", from_finding_id: "F11,F5"}
   - {q: "Quantify the auditor-flagged overdue payments to creditors: amount, ageing, cure timeline", from_finding_id: "F5"}

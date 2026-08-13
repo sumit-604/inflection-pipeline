@@ -35,4 +35,10 @@ Orchestrator session start: 2026-08-13
   consideration undisclosed; Q1FY27 PAT Rs 57.795 Cr/EPS 1.88 (fire exceptional masked strong
   operating qtr); rev +125.3% YoY; EBITDA ~19%. NO thesis-broken/red trigger fires.
   forward_signals A3-01,02,04,09,11; ambiguous A3-05,07,08,10.
-- A4 analyst: PENDING
+- A4 analyst: DONE. Role 4 verdict PROCEED WITH CAVEATS (cash conversion INDETERMINATE; capped
+  correctly). Role 5 N.A. (no concall). Rev Q1FY27 Rs 1,345.7 Cr (+125.3% YoY, +49.4% QoQ; beat
+  ~Rs 900 Cr guide). Op EBITDA Rs 254.8 Cr (18.94%). Reported PAT Rs 57.795 Cr after Rs 143.58 Cr
+  fire exceptional; PAT-before-exceptional normalised ~Rs 164.8 Cr (EPS ~5.37, ~12.25%, in band).
+  14 Questions-for-Mgmt rows. NO tripwire/thesis-broken fired. Decision Status unchanged WATCHLIST.
+  Plain-Language Brief written.
+- A5 adversary: PENDING

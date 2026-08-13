@@ -4,3 +4,7 @@ _download/
 canary/state.json
 canary/DRIFT.flag
 canary/canary.log
+
+# quarterly pipeline A1 OCR/scratch temp dirs
+runs/*/work/ocr/
+runs/*/work/*_tmp/

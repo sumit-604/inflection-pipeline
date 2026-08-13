@@ -41,4 +41,9 @@ Orchestrator session start: 2026-08-13
   fire exceptional; PAT-before-exceptional normalised ~Rs 164.8 Cr (EPS ~5.37, ~12.25%, in band).
   14 Questions-for-Mgmt rows. NO tripwire/thesis-broken fired. Decision Status unchanged WATCHLIST.
   Plain-Language Brief written.
-- A5 adversary: PENDING
+- A5 adversary: DONE — GATE A5 COMPLETE. Coverage/arithmetic/adversarial all PASS; no loop-back.
+  Independent recount 29/8/4/13/12/3/8 confirmed; both reconciliations tie exactly.
+- Notion save: DONE (inline). Page 367bb2b9-d3ab-81a1-b741-e2d8bab5fbad. 5 review inserts +
+  A3 scorecard + A5 verdict appended at end; Key Notes audit trail prepended with dated line;
+  Decision Status UNCHANGED (WATCHLIST) — no trigger fired.
+- Verdict: PROCEED WITH CAVEATS. Count line: 8 notes / 0 turns / 0 slides, all reviewed.

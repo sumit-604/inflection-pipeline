@@ -45,4 +45,6 @@ Quarter: Q1 FY27 (quarter ended 30-Jun-2026)
 
 ## Agent progress
 - A1 extractor: PASS (6/6 pages, no OCR, units Lakhs x0.01). Cybercons Infosec Pvt Ltd named as subsidiary in consolidated LRR.
-- A2 enumerator: dispatched.
+- A2 enumerator: PASS (7 count tests reconciled: 5 notes, 2 agenda, 3 entities, 13 segment rows, 11 auditor paras, 36 line items, 5 sigs). Flagged page-5 OCR_MISALIGNMENT (column-to-value scramble), new segment "Technology Workforce Augmentation Services" w/ restated priors, Consol-LRR paras 2/4/5 dropped, unlabeled OCI row, no balance sheet/receivables in filing.
+- ORCHESTRATOR OCR FALLBACK (rule 4): page-5 combined P&L re-extracted via 400dpi tesseract + 200dpi image Read + arithmetic reconciliation. Verified reference at work/scratch_page5_verified.md. A1 re-invoked to append corrected page-5 block + recover Consol-LRR paragraph list + label OCI B(i) row.
+- A1 (correction pass): dispatched.

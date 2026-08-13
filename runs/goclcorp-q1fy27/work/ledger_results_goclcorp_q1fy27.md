@@ -333,3 +333,10 @@ flags_raised: [ZERO_STANDING, SECTION_HEADER, ROW_LABEL_GAP, OCR_ROW_MISSING, NU
 gate_a2: pass
 mismatch_note: "Raw grep undercounted notes_consolidated (8 vs 9) and line_items_all_tables (88 vs 94) relative to manual sweep. Both gaps are fully explained and reconciled: consolidated Note 1's leading numeral is lost in both primary and OCR blocks alike (identified by position, flag NUMERAL_OCR_LOSS); the 6-row line-item gap is explained by 2 OCR-missing rows in Consolidated Segment Info (Total Assets, Total Liabilities), 3 OCR-missing rows in Standalone P&L (Total tax expense, Net profit after tax, Total comprehensive income), and 1 correctly-excluded dash-valued ZERO_STANDING row (Less: Inter segment revenue). See full reconciliation_note in the COUNT TEST header of the ledger file. No disclosure unit was dropped; every gap row is individually anchored and flagged in the ledger body."
 ```
+
+--------------------------------------------------------------------------------
+## A5 ADVISORY FIDELITY NOTES (loop-1, non-blocking; zero derived-metric impact)
+--------------------------------------------------------------------------------
+Two additional cmap-corrupt display cells surfaced by A5 re-audit, resolvable from the extract, immaterial (A4 anchored all totals to render-verified values so nothing downstream changed):
+1. Consolidated Q1FY26 "Changes in inventories of finished goods, WIP, stock-in-trade" (C7): reads 0.03 Cr but must be 0.35 Cr (35.00 lakh) — render-adjudicated Total expenses 3,571.62 lakh foots only with 35.00 lakh (delta exactly 32.00), and the standalone twin (G7) is 35.00. Review Step 1.1 cell corrected to 0.35.
+2. Consolidated Segment "Total income" Q1FY26 (D5/D7): reads 6,649.63 lakh but its own components and the P&L both give 8,649.63 (8->6 misread). A4 derives nothing from it; no correction needed to any analytical line.

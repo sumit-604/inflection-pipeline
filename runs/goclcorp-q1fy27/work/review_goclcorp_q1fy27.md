@@ -88,7 +88,7 @@ Numbers are the reported **continuing-operations** P&L unless a row is explicitl
 | Other Income | 58.84 | 76.27 | 83.10 | 415.81 | C3, extract 290 |
 | Total Income | 63.13 | 78.60 | **86.50** | 425.57 | C4, extract 291; see note* |
 | Cost of Materials Consumed | 0.95 | 0.48 | 0.54 | 1.94 | C6, extract 293 |
-| Change in Inventories | 0.32 | (0.09) | 0.03 | (0.59) | C7, extract 294 |
+| Change in Inventories | 0.32 | (0.09) | 0.35 | (0.59) | C7, extract 294 (Q1FY26 render-adjudicated 35.00 lakh = 0.35 Cr, matches std twin; foots Total Expenses 35.72) |
 | Employee Benefits Expense | 2.83 | 2.20 | 1.61 | 7.77 | C8, extract 295 |
 | Finance Costs | 0.004 | 3.85 | 25.79 | 48.54 | C9, extract 296 |
 | Depreciation & Amortisation | 0.86 | 0.71 | 0.53 | 2.38 | C10, extract 297 |

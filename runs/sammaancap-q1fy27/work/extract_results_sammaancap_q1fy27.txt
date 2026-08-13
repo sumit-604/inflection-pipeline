@@ -1733,3 +1733,51 @@ extract_path: "/home/user/inflection-pipeline/runs/sammaancap-q1fy27/work/extrac
 gate_a1: pass
 gap_note: ""
 ```
+
+=== A1 ADDENDUM: 400dpi RE-OCR OF PAGES 39-42 (Security Cover Certificate) ===
+=== Orchestrator-added higher-resolution OCR pass (psm 6) to reduce OCR uncertainty on the ===
+=== image-based Security Cover matrix. Original 200dpi OCR remains above at [OCR page 39-42]. ===
+=== These figures still require source-PDF confirmation where marked; the complex multi-column ===
+=== matrix is OCR-fragile. Cleanly-readable notes and ratios are reproduced verbatim below. ===
+
+[ADDENDUM page 39]
+Statement of Security Cover Certificate as per Regulation 54(3), SEBI LODR, as at June 30, 2026. Rs. In Crore.
+(Multi-column matrix: Exclusive Charges / Pari-Passu Charges / Assets not offered as security / Elimination / Total)
+Property Plant and Equipment: 89.00 / 89.00
+
+[ADDENDUM page 40]
+Capital Work-in-Progress: 36.89 / 36.89
+Right of Use / Intangible Assets: 12.75 / 12.75
+(Investment row): 7,777.39 | 11,046.86 | 18,824.25 | 18,824.25
+Loans: 37,021.94 | 37,021.94 | 37,021.94
+Trade receivables: 3.56 | 3.55 | 3.55
+Cash and cash equivalents: 4,320.61 | 355.00 | 4,675.61 | 4,320.61 | 4,320.61
+Bank Balances other than cash and cash equivalents: 439.28 | 439.28
+
+[ADDENDUM page 41]
+Total (assets): 49,119.94 | 16,687.23 | 2,481.60 | 65,807.17 | 65,807.17
+Debt securities to which this certificate pertains: 14,031.1x (exclusive col) | Yes | 44,031.17 (total col)  [FIGURES OCR-UNCERTAIN, confirm vs source]
+Other debt sharing pari-passu charges with above debt: 26,691.11
+(Other/borrowings): 49.12
+Subordinated debt: 2,982.71 | 2,982.71
+Other liabilities: 485.33 / 185.33  [OCR-UNCERTAIN]
+
+[ADDENDUM page 42]
+Total (liabilities side): 40,722.27 | 2,267.17 | 3,031.82
+Cover on Book Value: 1.21
+Cover on Market Value: 1.62
+Exclusive Security Cover Ratio: NA
+Pari-Passu Security Cover Ratio: 1.18  [OCR rendered "4.18"; cross-check — likely 1.18]
+Notes (verbatim):
+ 1. The Security Cover ratio pertains to only listed secured debt securities.
+ 2. Total assets stated above are restricted to the extent of minimum-security coverage required under the respective Debenture trust deeds. IND-AS adjustment for effective interest rate on secured NCDs is excluded from assets cover computation.
+ 3. Assets considered for pari passu charge is calculated based on assets cover requirement as per respective information memorandum for securities and as per sanction for respective loans.
+ 4. The Company has complied with all financial and non financial covenants as specified in the respective debenture trust deeds pertaining to the debt securities to which this certificate pertains for the quarter ended June 30, 2026.
+ 5. Other debt sharing pari-passu charges with above debt includes the impact of Rs. 908 crores on account of revaluation of external commercial borrowings, Foreign Currency Bonds.
+ 6. Investment includes assets held for sales.
+ 7. Management has deducted balances in respect of overdraft facilities and temporary overdraft as per books and cash and cash equivalents of Rs. 355 crores representing High Quality Liquid Assets (HQLAs) as at June 30, 2026, considered for calculation of Liquidity Coverage Ratio as per applicable RBI notification.
+ 8. The above figures have been extracted from the Un-Audited Standalone financial results/information as at and for the quarter ended June 30, 2026.
+ 9. Cover on Book Value represents coverage for all pari-passu debt holders (including borrowings other than debt securities).
+ 10. Pari-Passu Security Cover Ratio Required represents coverage for debt securities for which this certificate being issued.
+Signed: Sachin Chaudhary, Executive Director and Chief Operating Officer. Date: August 13, 2026.
+=== END A1 ADDENDUM ===

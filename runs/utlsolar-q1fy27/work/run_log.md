@@ -25,4 +25,9 @@ Orchestrator session start: 2026-08-13
   A1 did a manual 300dpi fidelity pass; resolved 1 ambiguous tax cell (Consol current tax FY26)
   to 885.52 by arithmetic reconciliation vs printed Total tax 1,039.04. Auditor EoM paragraph
   (fire-related) present. Board Outcome items 1-4 enumerated.
-- A2 results: PENDING
+- A2 results: DONE — GATE A2 PASS. Counts: 8 notes / 29 P&L line items / 4 agenda items /
+  13 auditor paras / 3 entities. Standalone-vs-consol PAT gap Q1FY27 ~nil (57.795 vs 57.794 Cr).
+  KEY: first-ever consolidation; 2 new 31% associates Zayo Cables + Zayo Energy (eff 25 Apr 2026).
+  Flags: FIRST_TIME_CONSOLIDATION, ENTITY_CHANGE, EOM (fire), DATE_DISCREPANCY (Note3 fire "06 May
+  2025" vs auditor EoM "06 May 2026"), AMBIGUOUS_CELL (A1-resolved), SIGNATURE_TIMESTAMP_ILLEGIBLE.
+- A3 results: PENDING

@@ -1,0 +1,128 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: reg32decl_finkurve_q1fy27.pdf
+doctype: results (reg32 supporting filing -- Regulation 32(1) use-of-proceeds declaration for preferential issue of equity shares and share warrants)
+page_count_pdfinfo: 2
+formfeed_count: 2
+line_count: 95
+unit_convention: Crores (stated natively as "Rs. Crore" throughout Annexure 1; no lakhs/millions conversion needed)
+conversion_factor_to_cr: Crores -> x1 (source figures already in Rs Crore; no conversion applied)
+ocr_pages: none (page 1: 1695 chars extracted; page 2: 2977 chars extracted; both pass the >100 char test)
+page_coverage: 100% (pages 1-2 of 2 accounted for; formfeed_count 2 matches pdfinfo page_count 2, one formfeed marking the page 1/page 2 boundary and one trailing formfeed at end of pdftotext output)
+detected_quarter: Q1 FY27 (quarter ended June 30, 2026)
+extraction_date: 2026-08-13
+=== END HEADER ===
+1	[page 1]
+2	August 13, 2026
+3	
+4	To,                                              To,
+5	Listing Department                               The Manager – Compliance Department
+6	BSE Limited                                      National Stock Exchange of India
+7	                                                 Limited
+8	Phiroze Jeejeebhoy Towers, Dalal Street,         ‘Exchange Plaza’ Bandra Kurla Complex,
+9	Mumbai – 400 001                                 Bandra (East) Mumbai 400051
+10	
+11	Scrip Code:                                      NSE Symbol: FINKURVE
+12	Equity: 508954
+13	
+14	Subject: Declaration in respect of Regulation 32(1) of Securities and Exchange Board of India (Listing
+15	Obligations and Disclosure Requirements) Regulations 2015
+16	
+17	Dear Sir/Madam,
+18	
+19	Pursuant to Regulation 32(1) of the SEBI (LODR) Regulations, 2015 we hereby declare that the proceeds
+20	of the issue of Preferential Issue of Equity Shares and Share Warrants on private placement basis issued by
+21	the Company during the Quarter ended June 30, 2026, were used for the purpose stated in the offer
+22	document and further there is no material deviation in use of proceeds of such issue from the objects stated
+23	in the offer document of the issue.
+24	
+25	The aforementioned statement in “Annexure 1” for the quarter ended June 30, 2026 is annexed herewith
+26	has been reviewed and noted by the Audit Committee at its Meeting held on August 13, 2026.
+27	
+28	You are requested to take note of the same.
+29	
+30	Thanking you
+31	For Finkurve Financial Services Limited
+32	Kajal    Digitally signed
+33	         by Kajal Kunal
+34	Kunal    Parmar
+35	         Date: 2026.08.13
+36	Parmar   12:49:38 +05'30'
+37	
+38	
+39	Kajal Parmar
+40	Company Secretary & Compliance Officer
+41	Membership No: ACS65484
+42	
+43	Encl: as above
+44	[page 2]
+45	                                                 Annexure 1
+46	
+47	Statement on deviation or variation for proceeds of public issue, rights issue, preferential issue, qualified
+48	institutions placement etc.
+49	
+50	 Name of listed entity                            Finkurve Financial Services Limited
+51	 Mode of Fund Raising                             Preferential Issue of Equity Shares and Share Warrant on
+52	                                                  Private Placement Basis
+53	 Date of Raising Funds                            May 21, 2025 and May 27, 2025
+54	 Amount Raised                                    Rs. 141.50 Crore
+55	 Report filed for Quarter ended                   June 30, 2026
+56	 Monitoring Agency                                Applicable
+57	 Monitoring Agency Name, if applicable            CRISIL Rating Limited
+58	 Is there a Deviation / Variation in use of funds No
+59	 raised
+60	 If yes, whether the same is pursuant to change -
+61	 in terms of a contract or objects, which was
+62	 approved by the shareholders
+63	 If Yes, Date of shareholder Approval             -
+64	 Explanation for the Deviation / Variation        -
+65	 Comments of the Audit Committee after review -
+66	 Comments of the auditors, if any                 -
+67	 Objects for which funds have been raised and Not Applicable
+68	 where there has been a deviation, in the
+69	 following table
+70	   Original     Modified       Original       Modified        Funds       Amount of       Remarks if any
+71	    Object      Object, if   Allocation allocation, if       Utilised      Deviation/
+72	                   any          (Rs. In         any          (Rs. In    Variation for
+73	                                Crore)                       Crore)       the quarter
+74	                                                                         according to
+75	                                                                           applicable
+76	                                                                             object
+77	    Onward         NA           141.50          NA           111.50           NA               NA
+78	    lending
+79	      and                                                 (Rs. 30cr
+80	 investment                                               Being 75%
+81	      and                                                 of the share
+82	  repayment                                               warrants
+83	       of                                                 subscription
+84	  borrowing                                               amount yet
+85	   obtained                                               to be
+86	       by                                                 received)
+87	   company
+88	 in ordinary
+89	   course of
+90	   business
+91	
+92	Deviation or variation could mean:
+93	(a) Deviation in the objects or purposes for which the funds have been raised or
+94	(b) Deviation in the amount of funds actually utilized as against what was originally disclosed or
+95	(c) Change in terms of a contract referred to in the fund raising document i.e. prospectus, letter of offer, etc.
+
+```yaml
+stage: A1-extractor
+company: "finkurve"
+quarter: "q1fy27"
+doctype: "results"
+model: claude-sonnet-5
+status: complete
+page_count: 2
+formfeed_count: 2
+line_count: 95
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1 (source stated natively in Rs Crore; no conversion applied)"
+ocr_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q1 FY27"
+extract_path: "/home/user/inflection-pipeline/runs/finkurve-q1fy27/work/extract_reg32_finkurve_q1fy27.txt"
+gate_a1: pass
+gap_note: ""
+```

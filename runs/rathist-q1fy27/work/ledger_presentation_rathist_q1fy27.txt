@@ -1,0 +1,203 @@
+=== A2 ENUMERATION LEDGER ===
+company: Rathi Steel and Power Limited (RATHIST)
+quarter: Q1 FY27
+doctype: presentation (Reg 30 press release, enumerated under investor-presentation discipline per task notes)
+source: /home/user/inflection-pipeline/runs/rathist-q1fy27/work/extract_presentation_rathist_q1fy27.txt
+prior-quarter ledger: NOT PROVIDED — DROPPED_SLIDE comparison not applicable this run (flag: NO_PRIOR_LEDGER)
+
+=== A2 COUNT TEST ===
+category: pages (slide-equiv, [page N] markers)     grep_count: 4   sweep_count: 4   match: yes
+category: table_cells (Key Financial Highlights)    grep_count: 18  sweep_count: 18  match: yes
+category: footnotes (asterisk notes)                grep_count: 2   sweep_count: 2   match: yes
+category: section_headers (narrative sub-heads)      grep_count: 6   sweep_count: 6   match: yes
+category: numeric_claims (non-table numbers, whole doc) grep_count: 23  sweep_count: 23  match: yes
+category: forward_hedge_phrases (mgmt comment)       grep_count: 6   sweep_count: 6   match: yes
+category: identifier_items (dates/DIN/scrip/contact) grep_count: 14  sweep_count: 14  match: yes
+gate_a2: pass
+=== END COUNT TEST ===
+
+Grep commands used for reconciliation (all run against the extract file):
+1. grep -n -E "^\[page [0-9]+\]"                                              -> 4 page markers
+2. manual count of Particulars rows (lines 88-93) x 3 columns                 -> 18 cells
+3. grep -n "^\*"                                                              -> 2 footnote lines
+4. grep -n -E "^(Key Performance Highlights and Development|Strong Volume...|TMT Rebar...|Diversified Product...|Resilient Growth...|Focused on Sustaining...)" -> 6
+5. grep -o -E "[0-9]+(\.[0-9]+)?%|[0-9,]+\.?[0-9]* MT|[0-9,]+\.?[0-9]* ?Cr|acres|tonnes per annum|1971|five decades|more than doubled" over lines 77 and 99-179 -> 23
+6. joined lines 132-146, grep -o -E on the six pre-identified hedge/forward sentence fragments -> 6
+7. grep -o -E "504903|August 13, 2026|June 30, 2026|2026\.08\.13|08104325|17:57:37|Quarter Ended June 30|13th August 2026|sunil@kirinadvisors\.com|\+91 98692 75849|www\.kirinadvisors\.com|^2026$" -> 14
+
+============================================================
+TABLE A — CONTENT-SECTION MAP ("slides" — 4 physical pages, 13 disclosure blocks)
+============================================================
+Slide# | Page | Line(s) | Title / Content type                                             | Flags
+1      | 1    | 15-54   | BSE Reg 30 covering letter (text) — subject, scrip code, sign-off | -
+2      | 2    | 56-74   | Cover graphic (photo/OCR) "GROWING STRONGER — Quarter Ended June 30 2026" | OCR_PAGE
+3      | 3    | 76-77   | Headline + subtitle (text) — "Reports Strong Q1 FY27 Performance / Revenue Grows 25% YoY To 194 Cr; PAT Rises 85% YoY" | -
+4      | 3    | 85-96   | Key Financial Highlights table + 2 footnotes                     | ZERO_STANDING (row 3, see Table B)
+5      | 3    | 99-104  | Section header "Key Performance Highlights and Development" + sub-head 1 "Strong Volume and Revenue Growth in Q1 FY27" (text) | -
+6      | 3    | 106-109 | Sub-head 2 "TMT Rebar Segment Drives Strong Volume Expansion" (text) | -
+7      | 3    | 111-115 | Sub-head 3 "Diversified Product Portfolio Supports Performance" (text, no numbers) | -
+8      | 3    | 117-121 | Sub-head 4 "Resilient Growth Amid a Challenging Operating Environment" (text, no numbers) | -
+9      | 3    | 123-127 | Sub-head 5 "Focused on Sustaining Growth and Operational Discipline" (text, no numbers) | -
+10     | 4    | 130-146 | Management Comment — Mr. Udit Rathi, Promoter (text, quote)      | FORWARD_COMMITMENT, HEDGE_LANGUAGE (see Table F)
+11     | 4    | 149-165 | ABOUT RATHI STEEL AND POWER LIMITED (text)                        | UNVERIFIED_SUPERLATIVE (see Table G)
+12     | 4    | 167-171 | Disclaimer — forward-looking statements (text)                   | -
+13     | 4    | 175-179 | IR Contact block — Kirin Advisors / Sunil Mudgal (text)           | -
+
+============================================================
+TABLE B — KEY FINANCIAL HIGHLIGHTS TABLE (18 cells: 6 line items x 3 columns)
+============================================================
+Row | Line | Particulars (₹ Cr)      | Q1 FY27 | Q1 FY26 | YoY Change | Flags
+1   | 88   | Total Income            | 193.67  | 155.40  | 24.63%     | -
+2   | 89   | EBITDA                  | 7.77    | 6.23    | 24.83%     | -
+3   | 90   | EBITDA Margin (%)       | 4.01%   | 4.01%   | "-"        | ZERO_STANDING (dash-valued YoY change cell — margin unchanged; template signal, not dropped)
+4   | 91   | PAT                     | 3.48    | 1.89    | 84.56%     | -
+5   | 92   | PAT Margin (%)          | 1.80%   | 1.21%   | 58 BPS     | -
+6   | 93   | Diluted EPS (₹)         | 0.40    | 0.22    | 81.82%     | -
+
+Cross-check: headline (line 77) states "Revenue Grows 25% YoY To 194 Cr; PAT Rises 85% YoY" vs table's exact
+24.63% / 193.67 / 84.56%. Rounding is directionally consistent (194≈193.67, 25%≈24.63%, 85%≈84.56%) — no
+arithmetic contradiction found, flagged only as HEADLINE_ROUNDING for A3 to confirm no restatement.
+
+============================================================
+TABLE C — FOOTNOTES (2)
+============================================================
+Note# | Line | Text
+1     | 95   | "* EBIDTA includes other income, excludes extraordinary and exceptional items" [sic — "EBIDTA" typo in source]
+2     | 96   | "* PAT includes other income, excludes extraordinary and exceptional items"
+
+============================================================
+TABLE D — SECTION / NARRATIVE HEADERS (6: 1 section title + 5 sub-heads, per task-note count of "six")
+============================================================
+Header# | Line | Header text                                                  | Numbers under this header (cross-ref Table E)
+1       | 99   | "Key Performance Highlights and Development" (section title) | none directly (umbrella header)
+2       | 101  | "Strong Volume and Revenue Growth in Q1 FY27"                 | E1-E4 (30%, 28,372 MT, 21,864 MT, ~193 Cr, >24%)
+3       | 106  | "TMT Rebar Segment Drives Strong Volume Expansion"            | E5, E6, E7 (18,677 MT, 8,295 MT, "more than doubled")
+4       | 111  | "Diversified Product Portfolio Supports Performance"          | none — qualitative only (lines 112-115)
+5       | 117  | "Resilient Growth Amid a Challenging Operating Environment"   | none — qualitative only (lines 118-121)
+6       | 123  | "Focused on Sustaining Growth and Operational Discipline"     | none — qualitative only (lines 124-127)
+
+============================================================
+TABLE E — OPERATIONAL / VOLUME / OTHER NUMERIC CLAIMS OUTSIDE THE TABLE (23)
+============================================================
+#   | Line     | Claim
+E-a1| 77       | Headline: Revenue Grows 25% YoY
+E-a2| 77       | Headline: Revenue "To 194 Cr"
+E-a3| 77       | Headline: PAT Rises 85% YoY
+E1  | 102      | Total sales volumes increased ~30% YoY
+E2  | 102      | Total sales volumes Q1 FY27: 28,372 MT
+E3  | 102      | Total sales volumes Q1 FY26: 21,864 MT
+E4a | 103      | Quarterly revenue ~₹193 Cr
+E4b | 103      | Quarterly revenue growth "over 24% YoY"
+E5  | 107      | TMT rebar volumes "more than doubled" (qualitative characterization)
+E6  | 107      | TMT rebar sales volumes Q1 FY27: 18,677 MT
+E7  | 107      | TMT rebar sales volumes Q1 FY26: 8,295 MT
+E8  | 134-135  | Mgmt comment (restated): sales volumes grew ~30% YoY to 28,372 MT
+E9  | 135      | Mgmt comment (restated): revenue exceeded ₹193 Cr, growth over 24% YoY [note: 30%/28,372MT/193Cr/24% each individually restated — see Table F for full quote mapping]
+E10 | 153      | Established 1971
+E11 | 154      | "five decades" of legacy claimed
+E12 | 158      | Facility ~12.5 acres, NCR region
+E13 | 159      | Steel melting capacity ~85,000 tonnes per annum
+E14 | 159      | Rolling capacity 2,00,000 tonnes per annum
+E15 | 164      | FY26 Total Income ₹716.49 Cr
+E16 | 164      | FY26 EBITDA ₹28.90 Cr
+E17 | 164      | FY26 PAT ₹12.87 Cr
+
+Note: E8/E9 collapse four atomic restated numbers (30%, 28,372 MT, 193 Cr, 24%) into two rows for readability;
+the grep reconciliation (23) counts these as four atomic tokens matching E1-E4 values exactly (verbatim
+repeat, not new information) — see Table F row-level mapping for the atomic count used in GATE A2.
+
+============================================================
+TABLE F — MANAGEMENT COMMENT: Mr. Udit Rathi, Promoter (lines 130-146)
+============================================================
+Sub-part | Line(s)  | Text (quantified or forward/hedge)                                                        | Flag
+F1       | 133-135  | "Total sales volumes grew approximately 30% YoY to 28,372 MT" (restates E1/E2)           | REPEAT_NUMBER
+F2       | 135      | "revenue exceeded ₹193 Cr, registering growth of over 24% YoY" (restates E4a/E4b)         | REPEAT_NUMBER
+F3       | 137-139  | "this growth was achieved against an operating environment characterised by softer steel realisations and continued volatility in energy and input costs" | HEADWIND_ACKNOWLEDGED
+F4       | 138-140  | "The ability to scale volumes in such an environment underscores the importance of our evolving product mix, wider market reach and disciplined execution." | INTERPRETIVE_CLAIM (self-attribution, not a hard number)
+F5       | 140-141  | "Recent moderation in certain raw-material prices provides a relatively more constructive cost backdrop" | HEDGE_LANGUAGE
+F6       | 141      | "although geopolitical and energy-market volatility remain key variables"                 | HEDGE_LANGUAGE
+F7       | 143-144  | "our focus remains firmly on scaling volumes, deepening market penetration, optimising our product mix and maintaining cost discipline" | FORWARD_COMMITMENT
+F8       | 144-146  | "Our presence across Stainless Steel products and MS TMT rebars provides us with greater flexibility to navigate evolving market conditions while pursuing sustainable and profitable growth." | FORWARD_COMMITMENT, HEDGE_LANGUAGE
+
+(F3-F8 = the 6 forward/hedge phrases reconciled in GATE A2; F1-F2 = the 2 restated-number sub-parts folded
+into Table E's numeric-claims count as verbatim repeats, not incremental disclosure.)
+
+============================================================
+TABLE G — ABOUT RATHI STEEL AND POWER LIMITED (lines 149-165)
+============================================================
+Item | Line     | Fact                                                                                       | Flag
+G1   | 152-153  | Headquartered Ghaziabad, Uttar Pradesh; "leading manufacturer of stainless steel and mild steel long products" | -
+G2   | 153      | Established 1971 (= E10)                                                                  | -
+G3   | 154      | "renowned Rathi legacy built over five decades" (= E11)                                   | -
+G4   | 158      | Facility ~12.5 acres, NCR region (= E12)                                                  | -
+G5   | 159      | Steel melting capacity ~85,000 tpa (= E13)                                                | -
+G6   | 159      | Rolling capacity 2,00,000 tpa (= E14)                                                     | -
+G7   | 160      | Product portfolio: "stainless steel billets, wire rods, and TMT bars"                     | -
+G8   | 160-162  | "India's only stainless-steel wire rod manufacturer using direct billet charging technology, ensuring superior energy efficiency and lower carbon emissions" | UNVERIFIED_SUPERLATIVE (exclusivity claim not independently sourced in this document)
+G9   | 164      | FY26 Total Income ₹716.49 Cr (= E15)                                                      | -
+G10  | 164      | FY26 EBITDA ₹28.90 Cr (= E16)                                                             | -
+G11  | 164      | FY26 PAT ₹12.87 Cr (= E17)                                                                | -
+
+============================================================
+TABLE H — IDENTIFIER / ADMINISTRATIVE ITEMS (14)
+============================================================
+#  | Line   | Item
+H1 | 17     | Covering letter date: August 13, 2026
+H2 | 25     | Scrip Code: 504903
+H3 | 29     | "quarter ended June 30, 2026" (subject line)
+H4 | 34     | "quarter ended June 30, 2026" (body repeat)
+H5 | 46     | Digital signature date: 2026.08.13
+H6 | 47     | Digital signature time: 17:57:37 +05'30'
+H7 | 50     | DIN: 08104325 (Abhishek Verma, Whole Time Director)
+H8 | 69     | Cover page year: 2026
+H9 | 73     | Cover page subtitle: "Quarter Ended June 30"
+H10| 80     | Release dateline: "New Delhi, 13th August 2026"
+H11| 80     | Scrip code repeat in body text: "(BSE – 504903)"
+H12| 178    | Email: sunil@kirinadvisors.com
+H13| 178    | Phone: +91 98692 75849
+H14| 179    | Website: www.kirinadvisors.com
+
+Signature-timing check: this document is a Reg 30 press-release covering letter, not a Board Outcome letter —
+no board meeting start/end time is disclosed anywhere in the extract to compare against the 17:57:37 signature
+timestamp. Flag: BOARD_TIMING_NOT_IN_DOC (informational; not a mechanical failure).
+
+============================================================
+TABLE I — DISCLAIMER (1)
+============================================================
+Item | Line(s)  | Text
+I1   | 168-171  | Standard forward-looking-statements disclaimer (government actions, political/economic developments, technological risks, etc.; company disclaims responsibility and undertakes no obligation to update)
+
+============================================================
+TABLE J — IR CONTACT BLOCK (1)
+============================================================
+Item | Line(s)  | Text
+J1   | 175-179  | "For Further Information, Please Contact: Kirin Advisors Private Limited, Sunil Mudgal – Director" + email/phone/website (= H12-H14)
+
+============================================================
+TABLE K — DROPPED-SLIDE / PRIOR-QUARTER COMPARISON
+============================================================
+No prior-quarter ledger path was supplied in the task inputs. DROPPED_SLIDE comparison could not be performed
+this run. Flag: NO_PRIOR_LEDGER (A3/A4 should source the Q4 FY26 or Q1 FY26 equivalent release independently
+if a slide-drop check is required).
+
+============================================================
+SUMMARY COUNTS (feeding YAML block)
+============================================================
+pages (slides):                 4
+table_cells (line_items core):  18
+footnotes (notes):              2
+zero_standing:                  1  (Table B row 3, EBITDA Margin YoY "-")
+section_headers:                6
+numeric_claims (non-table):     23
+mgmt-comment quantified sub-parts (mgmt_numbers): 4  (F1/F2 restate E1/E2/E4a/E4b — 4 atomic numbers: 30%, 28,372 MT, 193 Cr, 24%)
+forward_hedge_phrases:          6  (F3-F8)
+identifier_items:               14
+disclaimer blocks:              1
+IR contact blocks:              1
+
+line_items (total, sum of table_cells + numeric_claims + section_headers + identifier_items
+            + disclaimer + IR contact = 18+23+6+14+1+1):  63
+
+flags_raised: [ZERO_STANDING, FORWARD_COMMITMENT, HEDGE_LANGUAGE, UNVERIFIED_SUPERLATIVE,
+               HEADLINE_ROUNDING, NO_PRIOR_LEDGER, BOARD_TIMING_NOT_IN_DOC, REPEAT_NUMBER,
+               HEADWIND_ACKNOWLEDGED, INTERPRETIVE_CLAIM]

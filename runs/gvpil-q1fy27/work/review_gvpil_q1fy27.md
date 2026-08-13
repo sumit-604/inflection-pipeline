@@ -158,7 +158,7 @@ Standalone, continuing operations, Rs Crores.
 
 3. **Did core operating PBT (ex-OI) grow YoY?** Yes — and this is the headline. Core operating PBT swung from Rs (9.08) Cr LOSS to Rs +36.94 Cr profit, a +Rs 46.02 Cr swing. Unusually for a small-cap, reported PAT growth is BACKED by core improvement rather than treasury.
 
-4. **What drove the gap between core-operating-PBT growth and reported-PAT growth?** The gap runs the OPPOSITE of the usual failure mode. Core PBT improved +Rs 46.02 Cr, but Other Income FELL Rs 21.22 Cr (a drag), finance costs helped +Rs 1.07 Cr, depreciation +Rs 0.16 Cr, tax was a Rs 2.83 Cr drag (ETR rose 0% → 4.1%), and discontinued-ops loss widened Rs 1.03 Cr. Net continuing-PBT change +Rs 24.80 Cr = core +46.02 less OI 21.22. The headline PAT growth UNDERSTATES the operational improvement because Other Income shrank.
+4. **What drove the gap between core-operating-PBT growth and reported-PAT growth?** The gap runs the OPPOSITE of the usual failure mode. Core operating PBT (already struck after D&A and finance costs) improved +Rs 46.02 Cr, while Other Income FELL Rs 21.22 Cr (a drag), tax was a Rs 2.83 Cr drag (ETR rose 0% → 4.1%), and discontinued-ops loss widened Rs 1.03 Cr. Net continuing-PBT change +Rs 24.80 Cr = core +46.02 less OI 21.22. The headline PAT growth UNDERSTATES the operational improvement because Other Income shrank.
 
 5. **Are D&A and finance costs scaling faster than revenue?** No. Depreciation −4.7% and finance costs −19.2% against revenue +7.66%. No capex-absorption gap; consistent with the lighter-working-capital, shorter-cycle pivot and the Durgapur depreciation halt (note 2(i)).
 
@@ -192,14 +192,14 @@ Bridge from Q1 FY26 Net Profit Rs 31.61 Cr to Q1 FY27 Net Profit Rs 52.55 Cr (st
 
 | Component | YoY change (Rs Cr) | YoY change (%) | Recurring? |
 |---|---|---|---|
-| Core operating PBT (revenue + margin + cost, ex-OI) | +46.02 | loss → profit | Recurring |
-| Depreciation change | +0.16 | −4.7% | Recurring |
-| Finance cost change | +1.07 | −19.2% | Recurring |
+| Core operating PBT (ex-OI: revenue + margin + cost — already net of D&A and finance costs) | +46.02 | loss → profit | Recurring |
 | Other Income change | (21.22) | −40.0% | NON-RECURRING (typically) |
 | Effective tax rate change | (2.83) | 0% → 4.1% | Mixed (see F8) |
 | Exceptional items | 0.00 | — | Non-recurring (nil both) |
 | Discontinued ops (Durgapur) change | (1.03) | wider loss | Recurring drag until demerger completes |
 | **Reported Net Profit YoY change** | **+20.94** | **+66.2%** | — |
+
+*Footing note (corrected per A5 audit): the Core operating PBT row is struck from Profit Before Tax, which is ALREADY net of depreciation and finance costs, so the YoY favourability in depreciation (+Rs 0.16 Cr, expense −4.7%) and finance cost (+Rs 1.07 Cr, expense −19.2%) is embedded inside the +Rs 46.02 Cr and is NOT added again as separate rows — doing so would double-count. Components foot exactly: 46.02 − 21.22 − 2.83 + 0.00 − 1.03 = +20.94, matching the reported net-profit swing and Step 2 diagnostic 4.*
 
 **Mandatory questions:**
 - **% of YoY PAT change from recurring core vs non-recurring?** More than 100% from recurring core: core operating PBT contributed +Rs 46.02 Cr while the largest single mover, Other Income, was a Rs 21.22 Cr DRAG. This is the healthiest possible composition — the opposite of treasury-inflated growth.

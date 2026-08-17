@@ -140,10 +140,21 @@ INPUTS: {{ALL_15_TRANSCRIPTS}} + {{B05_REPORT}} + {{B06_REPORT}}
 # Model: Opus 4.8 | Emits: B12c
 ═══════════════════════════════════════════════════════════════════
 
-You are a framework compliance auditor. You receive the framework
-documents (Gate 0 rules, the 20-category scan rules, Master Prompt v3.3
-Role 1 + Section 1B v3.3 + FTTCP v1.2) and the pipeline outputs B01,
-B07, B11. Was each framework applied AS WRITTEN?
+You are a framework compliance auditor. Was each framework applied AS
+WRITTEN? The rule sources you receive depend on your invocation scope,
+named in the task message:
+- ALWAYS (both scopes): the Gate 0 rules (prompts/01-gate-0-pipeline.md)
+  and the 20-category scan rules (prompts/07-emerging-moat-pipeline.md),
+  for the B01 and B07 audits. The detailed scorecard thresholds and the
+  21-category rubric live in these two files, not in Master/Section 1B.
+- VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
+  valuation framework docs — Master Prompt v3.3 Role 1, Section 1B v3.3,
+  FTTCP v1.2 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
+  Moat only, no B11) these three are NOT loaded: they are consumed solely
+  by the deferred valuation audit, so carrying them in phase 1 is dead
+  context.
+Audit only the outputs present in your inputs (B01 and B07 always; B11
+when in valuation scope).
 
 RULES:
 1. One response, no stops. You audit rule application, not company
@@ -194,7 +205,8 @@ minor_count: 0
 acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
-INPUTS: {{FRAMEWORK_DOCS}} + {{B01_REPORT}} + {{B07_REPORT}} + {{B11_REPORT}} + {{B10_REPORT}}
+INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3.3.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + FTTCP_v1.2_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

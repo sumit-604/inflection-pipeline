@@ -1,0 +1,49 @@
+stage: B11-valuation
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Owned-asset depreciation ex-ROU not disclosed (only total D&A incl Ind AS 116 ROU given); conservative assumption used, does not change STOP verdict"
+  - "Peer EV/EBITDA medians UNRESOLVED (no peer CSVs); destination 9.4x is framework-internal, not peer-validated"
+flags:
+  - "FLAG-CASH: cash multiplier applied 1.15x, GROWTH-INDUCED (not structural); falsifier net debt >Rs 102 cr while stores grow"
+  - "SHARED-CATALYST: store rollout + SSSG recovery drives both Pillar 1 ROCE and Pillar 3a; single point of failure; Role 3 must stress-test"
+  - "FLAG-ACCOUNTING-QUALITY: Rule 11(g) audit-trail limitation, MENA impairment inconsistency, Note 25b FY24 reconciliation gap"
+  - "FLAG-EMOAT: EM 9.1 (NONE); digital/captive-channel moat unproven at scale"
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "25.0x additive (operator-selected governing exit multiple; one-year-forward pre-Ind AS basis)"
+destination_pe:
+  track1_rrm: {low: 16.2, mid: 17.5, high: 18.8, r_used: 16, rrm: 0.70}
+  track2_additive: {low: 23.1, mid: 25.0, high: 26.9}
+  divergence_pct: 30.0
+  governing_track: "additive Track 2 (operator override of RRM per deliberation); RRM more conservative but does not govern"
+pillar_detail:
+  roce_used: 25.0
+  roce_base: 20.0
+  roce_recovery_route: "pillar1-midpoint"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.15
+  structural_or_growth: "growth-induced"
+  growth_offset: 0
+  growth_premium: 2.0
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 30.0
+hurdle_ratio: {base: 0.82, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 160, base: 445, bull: 759}
+  track2: {bear: 229, base: 635, bull: 1084}
+expected_cagr_prob_weighted: -8.5
+entry_range: {low: 289, high: 325}
+mos_price: 260
+upside_downside_ratio: 0.57
+decision: "AVOID (on valuation)"
+unresolved_inputs_used:
+  - "Owned-asset depreciation ex-ROU: assumed Rs 100 cr FY27 / Rs 120-145 cr FY30 (conservative; higher dep lowers EPS/FV); STOP robust to this input"
+  - "Financial interest: Rs 14 cr FY27 / Rs 12 cr FY30 on ~Rs 134 cr borrowings, net debt held ~Rs 100 cr per guidance"
+  - "Tax 25.17% normalised full rate; accumulated-loss carryforward not credited (conservative)"
+som_cagr_crosscheck: "consistent (base revenue CAGR 15% below SOM-implied 20.6%)"
+one_line_thesis: "At Rs 772 UFBL fails the Tier A 25% hurdle: forward pre-Ind AS EPS ~Rs 6.5 (FY27) to ~Rs 25 (FY30) at the approved 25.0x destination PE gives a Rs 635 base target below today's price, and even bull earnings clear only +12% CAGR; AVOID on valuation, revisit Rs 289-325."

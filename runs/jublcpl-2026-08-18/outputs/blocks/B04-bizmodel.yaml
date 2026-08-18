@@ -1,0 +1,61 @@
+stage: B04-bizmodel
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Investor presentation provided is a Q1 FY27 earnings deck (11-Aug-2026), not a full FY26 annual investor presentation", "sales volumes (MT/kg) not disclosed anywhere in provided docs, so unit economics are qualitative only", "dividend policy/history NOT FOUND"]
+flags: ["Material internal AR inconsistency: PP&C FY26 segment revenue growth stated as 10% in MD&A narrative (AR p.20) vs ~27.6% implied by AR's own segment note table (p.19, Rs12,386mn vs Rs9,704mn), vs a third figure implied by Inv. Pres. historical chart (Rs11,988mn FY26 vs Rs11,042mn FY25, slide 7) - not reconciled, flagged for downstream numeric verification", "Demerger scheme not yet effective as of run date (NCLT order 08-Aug-2026; shareholder/creditor meetings scheduled 05-Sep-2026) - RETAINED vs DEMERGING framing describes intended post-scheme structure only", "Corporate Overview page rounds PP&C/Agri split to 63%/37% vs segment note's precise 65.5%/34.5% - minor"]
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Performance Polymers & Chemicals (Adhesives, Latex, Food Polymers) - RETAINED", type: "manufacturing, hybrid B2B/B2B2C", pct_of_revenue: 65.5, predictability: "M"}
+  - {name: "P&K Fertilizers (SSP + bulk NPK) - DEMERGING", type: "manufacturing, commodity, subsidy-linked", pct_of_revenue: 36.0, predictability: "L"}
+  - {name: "Agri Nutrients - DEMERGING", type: "manufacturing, branded agri-input", pct_of_revenue: 0.6, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Distribution (~1,450 distributors, ~31,000 retailers)", durability: "medium"}
+  - {moat: "Brand (Jivanjor/Charmwood/Ultra Italia, Ramban)", durability: "medium"}
+  - {moat: "Switching costs / long-standing industrial customer relationships (Latex/PVAc)", durability: "medium"}
+  - {moat: "Cost advantage via Jubilant Group backward integration", durability: "medium"}
+  - {moat: "Efficient scale in niche global segments (VP Latex #1 India/#2 global ex-China; PVAc #1 India/top-3 global)", durability: "medium-high"}
+valuation_methods:
+  primary: {method: "SOTP (sum-of-the-parts)", why: "Company is mid-demerger into two structurally different businesses (branded/industrial polymers vs subsidy-linked commodity fertiliser); a single blended multiple would misprice both halves"}
+  secondary: {method: "EV/EBITDA, segment-level", why: "Segment EBIT/EBITDA disclosed in AR p.19, enabling per-segment multiple application consistent with each business's true economics"}
+  tertiary: {method: "P/E", why: "Only cleanly applicable to the retained PP&C entity once standalone post-demerger; pre-demerger consolidated EPS is not comparable to any peer set"}
+  not_applicable: ["P/B or NAV/replacement cost (no asset-revaluation data disclosed)", "Dividend Discount Model (dividend policy/history NOT FOUND)"]
+irrelevant_ratios:
+  - {ratio: "Consolidated blended gross/EBITDA margin (single number)", why: "blends a subsidy-linked commodity business with a branded/industrial polymer business moving for unrelated reasons"}
+  - {ratio: "Consolidated ROCE pre-demerger", why: "includes capital tied to the Agri business about to leave the balance sheet"}
+  - {ratio: "Same-store/like-for-like sales", why: "not a retail business; sells through distributors/dealers, not owned stores"}
+  - {ratio: "Blended days-of-inventory", why: "SSP inventory is seasonal/monsoon-driven while polymer inventory reflects normal industrial turnover; blending hides seasonality"}
+  - {ratio: "Consolidated EPS trend as valuation anchor", why: "demerger will mechanically split the earnings base; pre/post-demerger EPS not comparable"}
+must_track_metrics:
+  - {metric: "PP&C segment revenue growth", healthy: "sustained double-digit", red_flag: "deceleration into single digits"}
+  - {metric: "Adhesives sub-segment EBIT margin", healthy: "expanding (FY26 ~9.2%, Inv. Pres. slide 10-11)", red_flag: "compression despite revenue growth"}
+  - {metric: "Net working capital / revenue", healthy: "stable or declining (FY26 ~21.8%, author calc from AR balance sheet)", red_flag: "rising materially, esp. post-demerger"}
+  - {metric: "Net debt/equity", healthy: "near FY26's 0.06 (AR p.7)", red_flag: "re-leveraging above ~0.3-0.5x"}
+  - {metric: "Interest coverage ratio", healthy: "well above 10x (FY26: 23.91x, AR p.7)", red_flag: "below 5x"}
+unit_economics:
+  unit: "NOT FOUND (no MT/kg sales volumes disclosed in provided documents; only value in Rs mn and installed capacity in MTPA)"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "raw-material pass-through pricing (VAM, butadiene, rock phosphate) vs distribution/volume growth"
+first_deterioration_signals:
+  - {risk: "Adhesives growth deceleration against entrenched competition", first_signal: "Adhesives sub-segment revenue growth rate (Inv. Pres. segment slide)"}
+  - {risk: "SSP demand/subsidy-timing volatility (until demerger effective)", first_signal: "P&K Fertilizers segment revenue (AR p.19)"}
+  - {risk: "Raw-material inflation outpacing pricing action", first_signal: "Segment EBIT margin, PP&C and P&K Fertilizers (AR p.19)"}
+  - {risk: "Regulatory/FCO norm changes hitting Agri Nutrients again", first_signal: "Agri Nutrients segment EBIT (AR p.19)"}
+  - {risk: "Working capital deployment staying high pre-demerger", first_signal: "Trade receivables / net working capital (AR balance sheet)"}
+  - {risk: "Demerger execution delay", first_signal: "Timeline disclosures in subsequent stock-exchange filings"}
+mgmt_questions:
+  - "The AR segment note implies ~27.6% PP&C revenue growth in FY26 but MD&A text says 10%, and Inv. Pres. shows a third figure - which is correct and why do the three disclosures disagree?"
+  - "What is the expected effective/listing date for Jubilant Agri Solutions Ltd, and what happens to FY26/Q1FY27 comparatives once effective?"
+  - "What was actual SSP/NPK sales volume (tonnes) in FY26, and what is capacity utilisation across the 400,000 MTPA SSP and 80,000 MTPA polymers capacity?"
+  - "What specific share of PP&C raw material is captively sourced from the Jubilant Group, and on what pricing terms?"
+  - "What is management's target margin/growth trajectory for Adhesives, now called out as the core long-term growth engine?"
+  - "Why did Agri Nutrients revenue/margin fall so much more than P&K Fertilizers recovered, given both cite the same regulatory/agri environment?"
+  - "Given no derivative hedging is used (AR p.36), how large is net unhedged currency exposure?"
+one_line_verdict: "A niche global polymer/adhesives franchise sits obscured inside a subsidy-exposed fertiliser business until the pending demerger clarifies both."
+analyst_note: "Three separate documents (AR narrative text, AR segment note table, and the company's own Investor Presentation) give three different PP&C segment revenue figures for FY25/FY26, with growth rates ranging from 10% to ~28% depending on source. This is not resolved here by design (never estimate) and should be treated as a numeric-verification priority before any valuation work proceeds, since PP&C is the entity that survives the demerger. Separately, the demerger scheme is not yet legally effective as of the run date - all RETAINED/DEMERGING framing describes the intended, not current, structure. Unit-level volume data (MT/kg) is absent from every provided document, which materially limits Section 3D physics-of-the-business analysis to qualitative statements only."

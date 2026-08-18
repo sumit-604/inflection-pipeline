@@ -1,0 +1,33 @@
+stage: B07-emoat
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["no-concall-mode-F2-substituted-with-AR-and-Reg30-capex-timeline", "R&D-headcount-and-PhD-counts-NOT-FOUND", "per-facility-utilisation-percentages-NOT-FOUND", "Dubai-MEA-branch-revenue-NOT-FOUND", "packaging-adhesives-launch-date-and-revenue-NOT-FOUND", "revenue-mix-split-discrepancy-between-Inv-Pres-slide2-(73/27)-and-AR-p19-segment-table-(65.5/36.6)-unresolved"]
+flags: ["G2 working-capital/cash-conversion trend is deteriorating (B01: FY26 CFO/PAT 0.59x vs 1.49x FY25) and directly counterweights the G1 war-chest read", "R1 regulatory tailwind (NPK bulk fertiliser) sits in the Agri segment being demerged out, not the retained emerging-moat entity", "F2 execution moat capped at Moderate not Strong because the injected B05 promise-delivery sample carries credibility grade C (mixed: 1 delivered / 1 partial / 1 missed)"]
+em_score: 22.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "G1", name: "War chest", strength: "Strong", evidence_type: "documented", time_to_materialise: "already occurring, multi-year"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already occurring"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "already occurring"}
+  - {id: "H3", name: "ESG moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 8, claim: 6, inference: 1}
+completionist_recount: "recount performed: 5 documented items across 5 categories (G1 war chest — D/E and interest-coverage trend; A3 process innovation — R&D capex nearly quadrupled YoY; A4 product platform — Jubipaste/JubiQuik/Vamicol Superfast/Esperto launches; H3 ESG moat — EcoVadis Bronze scores plus quantified GHG cut; F2 execution moat — Samlaya Phase-1 delivered on-guided-timeline with independent Reg 30 corroboration). No category inflated from claim to documented."
+catalysts_12m:
+  - {catalyst: "SBR Latex Phase-2 / construction-chemicals entry completion", window: "end Q3 FY27", evidence_type: "documented", anchor: "Inv. Pres. Q1/FY27 slide 5, 9"}
+  - {catalyst: "Samlaya full-capacity ramp beyond partial June 2026 start", window: "~6-8 months from 3-Jun-2026", evidence_type: "documented", anchor: "Reg 30 3-Jun-2026; Inv. Pres. Q1/FY27"}
+  - {catalyst: "Agri Division demerger — shareholder/creditor meetings then NCLT final order and JASL listing", window: "meetings 5-Sep-2026, then NCLT final order", evidence_type: "documented", anchor: "NCLT First Motion Order 8-Jul-2026; AR p.5, p.41"}
+  - {catalyst: "Packaging adhesives commercial launch (post market trials)", window: "12-24m, undated", evidence_type: "claim", anchor: "AR p.21; Annexure 3, AR p.53"}
+capex_embedded_growth_pct: 25.2
+optionality_register:
+  - {optionality: "SBR Latex construction-chemicals customer qualification converts from claim to contract", converting_evidence: "Named customer order/contract or Reg 30 disclosure of first commercial dispatch", first_appears: "Reg 30 filing or investor deck", window: "2-4 quarters"}
+  - {optionality: "Butadiene storage capacity increase converts from exploring to committed capex", converting_evidence: "Capex approval and Reg 30/AR disclosure", first_appears: "Next AR MD&A/Risk section or Reg 30 filing", window: "12-24 months"}
+  - {optionality: "Water-Base Packaging Adhesives convert from market trials to commercial revenue line", converting_evidence: "Disclosed revenue or commercial launch announcement", first_appears: "Next AR MD&A or investor deck segment note", window: "12-24 months"}
+  - {optionality: "R&D talent density becomes verifiable rather than qualitative", converting_evidence: "Disclosed R&D headcount, PhD/specialist count, or technical-staff ESOP grants", first_appears: "Future AR HR/R&D section", window: "uncertain"}
+  - {optionality: "Dubai (MEA) branch converts from set-up entity to revenue-generating market entry", converting_evidence: "Disclosed Middle East revenue or order win", first_appears: "Future AR segment note or investor deck", window: "12-24 months"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Backward GOOD+ (moat STRONG, core 71) pairs with a genuine but MODEST forward scan (22.5, dominated by balance-sheet strength and incremental execution, not category-defining expansion), which keeps the combined read at GOOD+ rather than elevating to HIGH POTENTIAL."
+top_moat_risks: ["FY26 working-capital/cash-conversion deterioration (CFO/PAT 0.59x vs 1.49x) directly counterweights the G1 war-chest read if it persists into FY27 for the retained PP&C entity", "SBR Latex Phase-2 and packaging adhesives customer traction rest on unverified management claims, not contracts", "Credibility grade C on the small promise-delivery sample caps confidence that Phase-2 will land on the guided end-Q3-FY27 date"]
+analyst_note: "The 25.2% capex_embedded_growth_pct is a mechanical output of company-wide blended fixed-asset turnover (9.53x) applied to the Rs50 Cr Samlaya capex; it almost certainly overstates true incremental revenue since latex/adhesive plants are more capital-intensive per revenue rupee than the group average, which blends in lower-capex SSP/trading revenue. Also note the unresolved revenue-mix discrepancy between Inv. Pres. slide 2 (73%/27% PP&C/Agri) and the AR's own FY26 segment table (65.5%/36.6%, AR p.19) — both are anchored but not reconciled in source documents; downstream stages should use the AR segment table as primary since it is audited."

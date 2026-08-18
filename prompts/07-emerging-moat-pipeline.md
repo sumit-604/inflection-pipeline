@@ -186,6 +186,10 @@ optionality_register:          # scored 0 or 🎙️/🔍-only; watched, never s
 combined_assessment: ""        # from 6D
 combined_reasoning: ""         # one line
 top_moat_risks: []
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning a downstream stage
+                               # cannot reconstruct from the fields above.
+                               # Blank if nothing would otherwise be lost.
 ```
 
 ---

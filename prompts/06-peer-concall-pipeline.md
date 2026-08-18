@@ -153,6 +153,10 @@ industry_cross_read:
 peer_mentions_of_company: []   # quotes with anchors, if any
 risks_peers_raise: []          # feeds missing-risks in synthesis
 net_narrative_effect: ""       # supports | complicates | undercuts
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning a downstream stage
+                               # cannot reconstruct from the fields above.
+                               # Blank if nothing would otherwise be lost.
 ```
 
 ---

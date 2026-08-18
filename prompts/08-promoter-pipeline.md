@@ -141,6 +141,10 @@ pledge_trend: ""               # rising | stable | falling, with numbers
 searches_performed: []
 searches_skipped: []
 verdict_basis: ""              # one line: the decisive evidence
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning a downstream stage
+                               # cannot reconstruct from the fields above.
+                               # Blank if nothing would otherwise be lost.
 ```
 
 ---

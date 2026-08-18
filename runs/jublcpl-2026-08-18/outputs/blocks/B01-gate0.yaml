@@ -1,0 +1,29 @@
+stage: B01-gate0
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: [prospectus-HIGH-empty-recent-listing, announcements-MEDIUM-empty, shareholding-MEDIUM-empty-used-AR-note-instead, research-LOW]
+flags: []
+data_years: 5
+fy_range: "FY2022 to FY2026"
+blocks: {A: 20, B: 16, C: 6, D: 18, E: 11}
+core_score: 71
+moat_score: 15
+grand_total: 86
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "GOOD+"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "FY24 standalone ROCE/WC-days/FCF NOT FOUND (screener Data_Sheet gives only aggregate liabilities, no current/non-current split, no capex line) — Block A instead scored on AR's self-reported 5yr consolidated ROCE chart (p.7)."
+  - "PAT for FY22-24 reconstructed as standalone EPS (AR p.6-7) x year-end shares; cross-validated to <0.3% against confirmed audited FY25/FY26 PAT."
+  - "Block C scored on 5yr window (FY22-26) not the shorter FY24-26 window, because only the longer window shows the real FY24 revenue/PAT trough (2yr-only view would have scored Block C near-max on an artifact of starting the clock post-trough)."
+  - "E3 promoter pledge NOT FOUND (no disclosure either way; borrowings secured only via company PP&E/inventories/book debts, not promoter shares) — scored 0 per N/A rule, not assumed zero."
+  - "E2 promoter-holding change measured over 1 year only (FY25->FY26), not 3, since JACPL listed 14-Feb-2025 post demerger-merger scheme; no pre-listing comparable data exists."
+  - "E4 contingent liabilities = Guarantees + quantified claims table + two named civil suits at claim value (Note 41); both suits relate to the Retail business, since divested."
+  - "M2, M5, M6, M7, M9 scored 0 PEER DATA NEEDED / NOT FOUND — no peer financial set supplied this run."
+  - "A further JACPL-internal Agri Division demerger (into Jubilant Agri Solutions Ltd) is pending NCLT approval per AR Note 32 — forward-looking, noted but not scored."
+block_b_trend: "deteriorating - FY26 standalone CFO/PAT fell to 0.59x from 1.49x in FY25, driven by trade receivables +40.4% YoY against 20.5% revenue growth"
+analyst_note: "Two things a downstream stage cannot see from the numeric fields alone. First, Block C's weakness is not noise: the FY24 trough (revenue -14.6%, PAT reconstructed at roughly half FY22-23 levels) is real and coincides with the JIL-JACPL merger scheme window, not just a restatement quirk - treat the 'strong recent growth' narrative in the two most recent years with that context attached. Second, E3 (pledge) is a genuine data gap, not a confirmed zero - no security disclosure anywhere in the reviewed notes points to promoter shares being pledged, which is reassuring circumstantially, but the pipeline rule against estimating means it scores 0 rather than 5, understating alignment if pledge is in fact nil. Classification GOOD+ is earned mechanically (Core 71, Moat STRONG, no deal-breakers) but rests on a genuinely high-ROCE, low-leverage business whose growth path is choppier than either the 2-year or the headline 5-year CAGR alone would suggest."

@@ -1,0 +1,51 @@
+stage: B08-promoter
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Complete promoter-group SAST shareholding-entity list not read directly (only KMP-interest RPT note in AR available)"
+  - "Direct SEBI.gov.in PDF for the 2018 adjudication order blocked by network egress proxy; corroborated via secondary sources instead"
+  - "Promoter pledge percentage not itemized in shareholding panel supplied; 0%/no-new-encumbrance claim is secondary-sourced (TipRanks/Globe and Mail summary of SAST filing), not read from the primary filing"
+  - "AmbitionBox employee-review data not located (Glassdoor/Indeed only)"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "SEBI adjudication order 31-Jan-2018: Rs 10 lakh penalty each on Jubilant Life Sciences Ltd, Jubilant Stock Holding Pvt Ltd, Shyam Sunder Bhartia, Hari Shankar Bhartia, Amit Arora for PIT Regulations violation (trading in possession of UPSI, 2013-2014); Jubilant Life Sciences also fined for delayed disclosure. SAT reduced Jubilant Life Sciences' penalty to Rs 5 lakh (07-Nov-2019); Jubilant Stock Holding's appeal dismissed. Different listed entity (predecessor of Jubilant Pharmova/Ingrevia), not JACPL, but names JACPL's ultimate promoter individuals.", evidence_tier: "VERIFIED", source: "SEBI enforcement order page + SAT order, corroborated by Business Standard (31-Jan-2018) and Medical Dialogues", date: "2018-01-31 / 2019-11-07"}
+  - {finding: "Finance Committee (delegated authority to borrow up to Rs 1,250 crore, give ICDs/guarantees/investments) comprises only Priyavrat Bhartia (Chairman), Shamit Bhartia (Member), Mohandeep Singh (Member) — zero independent directors", evidence_tier: "VERIFIED", source: "JACPL Annual Report 2025-26, Corporate Governance Report p.67", date: "2026-05-26 (AR sign-off)"}
+  - {finding: "CSR spend 100% routed through Jubilant Bhartia Foundation, the promoter family's not-for-profit vehicle: Rs 15.60mn FY26 vs Rs 12.73mn FY25", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Board's Report p.45 and Note 40 RPT disclosure p.152-154", date: "2026-05-26"}
+  - {finding: "KMP total remuneration +63.6% YoY (Rs 96.86mn FY26 vs Rs 59.20mn FY25) vs 9.80% average employee increase; CEO/WTD remuneration-to-median-salary ratio 99.91x", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Note 40 p.152-154 and Annexure 4 (Section 197 disclosure) p.55", date: "2026-05-26"}
+  - {finding: "Special resolution at the 15th AGM: 'Waiver of excess remuneration paid to Mr Manu Ahuja, CEO & Whole-time Director' — prior CEO's pay exceeded Schedule V limits, needed retrospective shareholder ratification", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Corporate Governance Report, table of special resolutions p.70", date: "2023-09-20 (15th AGM)"}
+  - {finding: "Kids Kemp civil suit (OS No. 5549/2013), Bengaluru City Civil Court, claim ~Rs 132.23mn plus monthly rental/damages, inherited via 2024 merger of erstwhile Jubilant Industries Ltd into JACPL, unresolved as of FY26", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Note 41 Contingent Liabilities p.155", date: "2013-07-30 filed / unresolved as of 2026-03-31"}
+  - {finding: "Aug-2026: Maharashtra FDA suspended food licences of 4 Domino's outlets operated by sister listed entity Jubilant FoodWorks Ltd (Shamit Bhartia is non-exec director) for hygiene/food-safety violations — group-reputation context, operationally unrelated to JACPL", evidence_tier: "MEDIA REPORTED", source: "ANI, Indiantelevision.com", date: "2026-08 (inspection window 10 Jul-11 Aug 2026)"}
+transition_evidence:
+  - {item: "New professional CEO from outside the family: Mohandeep Singh (ex-Business Head Visual Display Division, Samsung India), appointed CEO & Whole-time Director w.e.f. 27-Jun-2024, replacing internal WTD Jagat Sharma (moved to Chief of Manufacturing)", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26 p.42, p.70, p.150; CXOLanes/RocketReach bio", date: "2024-06-27"}
+  - {item: "No independent director resigned before completing tenure during FY26", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Corporate Governance Report p.62", date: "2026-03-31 (FY end)"}
+  - {item: "Committee of Independent Directors reviewed the Agri-division demerger scheme and recommended it as 'not detrimental to the shareholders' ahead of NCLT/exchange clearance", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26, Corporate Governance Report p.68", date: "2025-11 (Committee formed) / 2026-05-26 (AR)"}
+  - {item: "Auditor continuity (BGJC & Associates LLP re-appointed for 2nd 5-year term, no qualification/resignation) with internal audit run by Ernst & Young LLP (Big-4)", evidence_tier: "VERIFIED", source: "JACPL AR 2025-26 p.3, p.43-44", date: "2024-09-23 (16th AGM re-appointment) / 2026-05-26 (AR)"}
+  - {item: "0% pledge / no new encumbrances created on promoter shareholding in FY2026; promoter holding essentially flat 74.77%->74.36% over six quarters, no distress-sale pattern", evidence_tier: "MEDIA REPORTED (secondary SAST-filing summary) + primary shareholding panel for the holding %", source: "TipRanks/Globe and Mail summary of SAST filing; screener.in shareholding pattern panel", date: "2026 (FY2026)"}
+pledge_pct_latest: 0
+pledge_trend: "stable at ~0%, no new encumbrances created in FY2026 (secondary-sourced SAST filing summary; AR/screener panel does not itemize pledge directly)"
+searches_performed:
+  - "Jubilant Bhartia Group / Shyam Sunder Bhartia / Hari Shankar Bhartia SEBI order"
+  - "Priyavrat Bhartia / Shamit Bhartia biography"
+  - "Jubilant Life Sciences SEBI insider-trading SAT appeal outcome 2018-2019"
+  - "Jubilant Pharmova SEBI/USFDA warning letter/governance controversy"
+  - "JACPL pledge/promoter shares (Trendlyne)"
+  - "Jubilant Ingrevia IiAS proxy-advisory RPT concern"
+  - "Jubilant group income-tax raid / ED / PMLA"
+  - "JACPL Glassdoor/AmbitionBox employee reviews"
+  - "Kids Kemp v. Jubilant Agri Consumer Products lawsuit"
+  - "Jubilant SEBI adjudication order 2020-2024 site search"
+  - "JACPL demerger investor/analyst reaction"
+  - "Jubilant FoodWorks food safety controversy (Domino's India)"
+  - "Shobhana Bhartia / HT Media SEBI order/controversy"
+  - "Bhartia family Jubilant succession dispute"
+  - "Mohandeep Singh (JACPL CEO) background/career"
+  - "Shyam Sunder Bhartia / Hari Shankar Bhartia founding history (VAM Organic/Jubilant Organosys)"
+searches_skipped:
+  - "Direct SEBI.gov.in PDF fetch for the 2018 adjudication order (blocked by network egress proxy; substituted with secondary corroboration, not left unresolved)"
+verdict_basis: "No red-flag/deal-breaker dimension found, but four caution-level findings cluster on the same governance-concentration theme: a dated (2018, SAT-adjusted 2019) SEBI PIT-regulation fine on the two founding promoters at a different group entity; a Finance Committee with Rs 1,250cr borrowing authority and zero independent directors; KMP pay +63.6% YoY against 9.8% average and a 99.91x CEO:median ratio; and CSR spend 100% routed through the promoter family's own foundation — offset by genuine 2024-2026 transition evidence (external professional CEO, independent-director demerger fairness review, clean auditor relationship, no ID exits)."
+analyst_note: "The 2018 SEBI matter is the single item most likely to be over- or under-weighted downstream: it is real (SAT-adjusted, not dismissed) and names the two individuals who remain the Jubilant Bhartia Group's ultimate authority, but it attaches to a different listed entity's 2013-14 conduct, not to JACPL, its current board, or its post-2024 corporate form. Treat as promoter-level (not JACPL-level) history. The Finance Committee independence gap and the KMP pay spike are the two items with live, current-year relevance and are where a synthesis stage should focus if capping the verdict."

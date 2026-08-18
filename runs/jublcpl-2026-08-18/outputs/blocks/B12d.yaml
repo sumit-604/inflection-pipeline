@@ -1,0 +1,25 @@
+stage: B12d
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+peers_audited: 16
+substantive_confirmed: 14
+peer_utilisation: 87.5   # 14 substantive / 16 provided
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "NOCIL", missed_item: "Q3 FY26 (Feb-2026) call independently corroborates US-tariff-driven export softness ('lower orders from the U.S. on account of tariffs'), paralleling APCOTEXIND's Q3 tariff finding but never cross-referenced in Part 2E despite being marked CITED-ONLY", anchor: "NOCIL-Concall_Feb_2026_Transcript.pdf, V.S. Anand opening remarks"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q3: weak/uneven monsoon blamed for Q1 FY27 Agri weakness", verdict_given: "VERIFIED", issue: "rests on a single peer (KRISHANA) only, per B06's own block (peers: [KRISHANA]); Rule 4 requires >=2 independent peer anchors for VERIFIED status; should be PARTIALLY VERIFIED with the single-peer limitation stated, notwithstanding the high quality of KRISHANA's own evidence"}
+findings:
+  - {severity: "MAJOR", location: "B06 Part 3 coverage map / Part 1 Q3, verdict card", description: "Q3 monsoon claim marked VERIFIED but anchored by a single peer (KRISHANA) only, violating the >=2-independent-peer rule for VERIFIED status"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q1 peer evidence / Part 3 coverage map, APCOTEXIND Q3 FY26 (Feb-2026) row", description: "B06 labels APCOTEXIND's quarterly (Q3-only) figures of +10% volume YoY and +61% EBITDA YoY as '9M volumes up 10% YoY; 9M EBITDA up 61% YoY'; the transcript's actual 9-month figures are +15% volume YoY and +42% EBITDA YoY, stated explicitly in the same call. Understates the true 9M EBITDA growth and conflates two different reporting periods."}
+  - {severity: "MINOR", location: "B06 Part 1 Q1 peer evidence, APCOTEXIND Q2 FY26 (Nov-2025)", description: "B06 states 'volumes up 11% QoQ' but the transcript's surrounding context (all adjacent comparisons in the same paragraph are explicitly YoY) indicates the 11% figure is most likely a YoY comparison, not QoQ; no QoQ label appears in the transcript"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, APCOTEXIND Q4 FY26 (~May-2026) row", description: "B06 characterizes this call's West Asia disclosure as a raw-material risk only ('not a demand-side one'), but the transcript states the same crisis caused 'some moderation in export demand across select markets' -- a demand-side effect the summary omits"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, NOCIL Q3 FY26 (Feb-2026) row", description: "Marked CITED-ONLY with 'no incremental decisive evidence,' but the call independently corroborates the US-tariff export-softness theme also found in APCOTEXIND's Q3 call, which is not cross-referenced anywhere in the report"}
+  - {severity: "MINOR", location: "B06 Part 3 coverage map, KRISHANA Q4 FY26 (Apr-2026) row", description: "B06 attributes the '94% of the long period average' Skymet figure to management; the transcript shows the analyst cited that figure and management responded with its own '95% of normal' figure. Substance (management downplayed monsoon risk pre-season) is correct; attribution of who said the specific number is not."}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 69

@@ -1,0 +1,61 @@
+stage: B05-concall
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concall transcripts exist for this run; guidance-vs-delivery built from AR MD&A + audited FY26 results + unaudited Q1 FY27 results + Q1/FY27 deck only"
+  - "Only one investor-presentation PDF was provided in inputs/presentation/ and it is the Q1/FY27 deck (11-Aug-2026); the Q4/FY26 deck (26-May-2026) referenced by the operator summary was not itself provided as a primary PDF"
+  - "No explicit FY27 numeric revenue/EBITDA guidance found anywhere in the sources"
+  - "SBR Latex Phase-2 delivery unverifiable — target (end Q3 FY27) not yet due as of the latest results (Q1 FY27)"
+  - "2E repeated-question tracker, 3C toughest analyst questions, analyst Q&A tone: no source, not assessable"
+flags:
+  - "Agri inventory liquidation target (guided by Q1 FY27) missed; no replacement date given"
+  - "P&K Fertilisers segment EBIT -62% YoY Q1 FY27 without magnitude-commensurate explanation"
+  - "No FY27 numeric guidance disclosed anywhere"
+quarters_analysed: ["FY26 (audited, year+Q4)", "Q1 FY27 (unaudited)"]
+triggers:
+  - {priority: 1, name: "Phase-2 SBR Latex / construction-chemicals entry", type: "VOLUME", timeframe: "near (end Q3 FY27)", conviction: "M", confirm_signal: "Reg 30 or deck confirmation of on-time completion by ~Dec-2026", kill_signal: "delay beyond Q3 FY27 or scale-back of the plan"}
+  - {priority: 2, name: "Agri Division demerger / JASL listing", type: "REGULATORY-POLICY", timeframe: "medium (meetings 5-Sep-2026, then NCLT final order)", conviction: "M-H", confirm_signal: "NCLT final sanction + JASL listing on BSE/NSE", kill_signal: "scheme withdrawal, adverse creditor vote, prolonged NCLT delay"}
+  - {priority: 3, name: "Samlaya full capacity ramp-up beyond partial 3-Jun-2026 start", type: "VOLUME", timeframe: "near (~6-8 months from 3-Jun-2026)", conviction: "M", confirm_signal: "Reg 30 update or deck confirmation of full-capacity operation", kill_signal: "no update or continued partial-only production past guided window"}
+  - {priority: 4, name: "Adhesives segment double-digit growth + margin expansion", type: "PRICE-MIX/VOLUME", timeframe: "near", conviction: "H", confirm_signal: "continued double-digit growth in Q2 FY27", kill_signal: "growth deceleration below high-single-digit"}
+  - {priority: 5, name: "Agri working-capital normalisation", type: "COST/cash-conversion", timeframe: "near", conviction: "L", confirm_signal: "visible inventory drawdown in Q2/Q3 FY27 results", kill_signal: "working capital stays elevated 3+ consecutive quarters"}
+guidance:
+  - {item: "Samlaya adhesive plant commissioning", number: "Phase-1 Adhesives", timeframe: "Q1 FY27", stated_in: "AR p.25 MD&A; Q4/FY26 deck 26-May-2026 (operator summary, secondary)"}
+  - {item: "Samlaya brownfield capex", number: "Rs 50 crore sanctioned", timeframe: "ongoing", stated_in: "Q1/FY27 investor deck p.5 (11-Aug-2026)"}
+  - {item: "Combined capacity addition Phase-1+Phase-2", number: "30,000 MTPA", timeframe: "full run-rate, no date given", stated_in: "Q1/FY27 investor deck p.5"}
+  - {item: "SBR Latex Phase-2 completion", number: "n/a (date only)", timeframe: "end Q3 FY27", stated_in: "Q1/FY27 investor deck p.5, p.9"}
+  - {item: "Agri inventory liquidation", number: "n/a", timeframe: "expected by Q1 FY27", stated_in: "Q4/FY26 deck via operator summary sec.4 (secondary)"}
+  - {item: "Demerger shareholder/creditor meetings", number: "n/a", timeframe: "5-Sep-2026", stated_in: "NCLT First Motion Order 8-Jul-2026 (Reg 30, 9-Jul-2026, operator summary)"}
+  - {item: "Dividend FY26", number: "NIL, none recommended", timeframe: "FY26", stated_in: "AR p.41, Board's Report item 3"}
+  - {item: "Total installed capacity", number: "Polymers & Chemicals 80,000 MTPA; SSP 400,000 MTPA", timeframe: "as of Q1 FY27", stated_in: "Q1/FY27 deck p.4"}
+  - {item: "FY27 revenue/EBITDA numeric guidance", number: "NOT FOUND", timeframe: "n/a", stated_in: "n/a — outlook language throughout AR is qualitative only"}
+promise_delivery:
+  delivered: 1
+  partial: 1
+  missed: 1
+  rows:
+    - {promised_in: "AR p.25 MD&A / Q4FY26 deck (26-May-2026)", promise: "Commission Samlaya Polymer (Adhesive) facility in Q1 FY27", outcome: "delivered", explanation: "Reg 30 3-Jun-2026 partial commercial production; Q1DECK confirms commissioned end of Q1 FY27; AR Risk 4 (p.36) independently corroborates. Full capacity ramp separately guided 6-8 months out, not itself a slippage."}
+    - {promised_in: "Q4/FY26 deck via operator summary sec.4", promise: "Agri off-season inventory liquidated by Q1 FY27", outcome: "missed", explanation: "Q1DECK: demand subdued (weak/uneven monsoon), working capital deployment remained high, no new target date given"}
+    - {promised_in: "Board approval 4-Nov-2025; NCLT order 8-Jul-2026", promise: "Agri Division demerger through NOC -> NCLT -> shareholder/creditor approval -> JASL listing", outcome: "partial", explanation: "every disclosed regulatory gate cleared on time through this run's cutoff; meetings (5-Sep-2026) and final listing still pending"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "One promise delivered exactly as guided with third-party (Reg 30) corroboration (Samlaya); one promise missed with an externally-attributed, unverified-by-us explanation (Agri liquidation); one commitment in progress with no slippage yet (demerger). Sample too small and mixed to clear the bar for B; per no-concall mode rules grade cannot rise to A."
+peer_questions:
+  - {question: "Management says synthetic/VP latex markets grow 3-4% CAGR yet also says global latex demand was 'subdued' in FY26, resulting in lower volumes — industry-wide or company-specific?", why: "tests whether subdued demand reflects share loss vs sector-wide softness", check_peers: ["APCOTEXIND", "NOCIL"]}
+  - {question: "JACPL cites sharp sulphur/rock-phosphate cost rises (Agri) and Butadiene supply risk (Latex) — do peers report the same input-cost spikes?", why: "verifies whether cost pressure is sector-wide or JACPL-specific procurement/timing", check_peers: ["KRISHANA", "APCOTEXIND", "NOCIL"]}
+  - {question: "Management blames Q1 FY27 Agri weakness on a 'weak and uneven monsoon' — do UP/Rajasthan/MP-exposed peers report similar softness?", why: "independently verifiable macro claim; if peers don't corroborate, the excuse looks company-specific", check_peers: ["KRISHANA"]}
+  - {question: "Management claims FY26 revenue growth was driven by 'market share gains across all businesses' — do peers show share loss in the same period?", why: "checkable market-share claim", check_peers: ["APCOTEXIND", "NOCIL", "KRISHANA"]}
+  - {question: "JACPL is deploying Rs 50 crore brownfield capex for 30,000 MTPA capacity — is this part of a broader sector capex up-cycle or an outlier?", why: "tests capex-cycle claim against sector capacity discipline", check_peers: ["APCOTEXIND", "BALAMINES", "NOCIL"]}
+  - {question: "Q1DECK cites export volumes hit by geopolitical/logistics disruption — is this company-specific export mix or an industry-wide Red Sea/logistics headwind?", why: "tests whether the export miss is idiosyncratic or sectoral", check_peers: ["BALAMINES", "NOCIL", "APCOTEXIND"]}
+red_flags:
+  - {severity: "Medium", flag: "Agri inventory liquidation target missed; working capital remains high with no replacement date"}
+  - {severity: "Medium", flag: "P&K Fertilisers segment EBIT -62% YoY Q1 FY27 without magnitude-commensurate explanation"}
+  - {severity: "Low", flag: "No FY27 revenue/EBITDA numeric guidance disclosed anywhere"}
+  - {severity: "Low/Informational", flag: "No dividend recommended FY26 despite 49% PBT growth — plausibly capex/demerger-related, flagged for cash-return tracking"}
+dropped_triggers: []
+timeline_slippages:
+  - "Agri inventory liquidation slipped from 'expected by Q1 FY27' to indefinitely 'expected to remain high' with no new target date"
+analyst_note: "No-concall mode: grading rests on AR MD&A, audited FY26 results, unaudited Q1FY27 results, and the Q1/FY27 deck only; no Q&A, tone, or repeated-question evidence exists. Two testable promise/delivery pairs plus one in-progress item were found — too small a sample to support B. Samlaya commissioning was delivered exactly as guided with independent Reg 30 corroboration; Agri inventory liquidation was missed and blamed on monsoon (external, plausible, unverified by us); the Agri demerger has cleared every announced regulatory gate on time through Aug-2026 but remains unresolved pending the 5-Sep-2026 meetings. P&K Fertilisers segment EBIT fell 62% YoY in Q1 FY27 without magnitude-level explanation in the written disclosures — worth probing once concalls resume. Group EBITDA margin also compressed 135bps YoY in Q1 FY27 despite 18% revenue growth, driven mainly by the fertiliser-segment weakness rather than the core Performance Polymers & Chemicals business, which grew EBIT 20% YoY and Adhesives EBIT 40% YoY."

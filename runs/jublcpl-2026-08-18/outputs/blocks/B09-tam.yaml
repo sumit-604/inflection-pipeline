@@ -1,0 +1,37 @@
+stage: B09-tam
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+source_fidelity_correction: "Corrected against Verifier A (B12a) findings; market-share base fixed to Note 39 AR p.150 external-customer revenue Rs 1,164.84 Cr; demerging aggregate fixed to Rs 692.34 Cr. Disposition: GATE HELD - figures corrected at source (correct anchor shown)."
+input_gaps: ["bottom-up unit economics (Method 2) - no MT/product split or utilisation % disclosed", "capacity utilisation % - NOT FOUND", "current market price/P/E - outside stage 9 document set, left for stage 11"]
+flags:
+  - "Revenue-mix discrepancy: Inv. Pres. 73%/27% PP&C/Agri vs audited Note 39 (AR p.150) 62.7%/37.3% (ext-customer) / 63.5%/36.5% (total-segment) - wider gap than previously stated, flagged for verification"
+  - "Peer-aggregation adhesives TAM (~Rs 10,000-11,000 Cr) diverges ~3x from top-down (Rs 31,324-35,245 Cr); top-down retained as primary"
+  - "SBR-Latex-construction-chemicals and packaging adhesives excluded from quantified TAM/SAM/SOM - only mis-scoped finished-goods ceilings found; carried as unquantified optionality"
+  - "VP Latex global market-size estimates diverge ~2x across vendor sources; conservative low end used"
+  - "3C capacity cross-check: SOM exceeds linear-scaled capacity ceiling by ~Rs 633 Cr (yr3) / ~Rs 1,865 Cr (yr5); SOM is the optimistic side"
+  - "Management's constructed TAM aggregate implies ~15.2x conservative TAM - read as inflated (mechanical, from two downstream/global-scope citations vs pre-revenue/one-step-removed businesses)"
+  - "NEW: withdrawn 27.6% PP&C YoY growth figure (untraceable to Note 39) replaced with audited 7.48%/8.75% FY25-FY26 growth, which is materially below the 24.3-24.4% SOM-implied CAGR handed to stage 11; Q1 FY27's 27.5% YoY print is a single quarter, not yet confirmed by a full audited year"
+market_definition: "Retained PP&C entity: India-primary branded adhesives/wood finishes + globally-addressable VP Latex (tyre-cord dipping) and PVAc gum base, excluding pre-revenue SBR-Latex-construction-chemicals and packaging adhesives lines"
+tam_cr: {conservative: 50143, realistic: 61259}
+sam_cr: 47132
+sam_pct_of_tam: 94.0
+som_3yr_cr: 2235
+som_5yr_cr: 3467
+som_implied_revenue_cagr: {yr3: 24.3, yr5: 24.4}
+current_sam_share_pct: 2.47
+revenue_headroom_x: 40.5
+tam_growth_pct: 6.1
+runway_class: "STRONG"
+mgmt_claim_cr: 764000
+mgmt_claim_ratio: 15.2
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ~Rs 633 Cr (yr3) widening to ~Rs 1,865 Cr (yr5); SOM is the optimistic side"
+methods_used: ["top-down (primary)", "peer-revenue-aggregation (corroboration/caution)", "global-benchmark (directional only)"]
+stale_data_flags:
+  - {datapoint: "VP Latex global market size (0.5bn/2022 base)", source: "VerifiedMarketReports", year: 2022}
+  - {datapoint: "VP Latex global market size (1.17bn/2023 base)", source: "ResearchAndMarkets", year: 2023}
+searches_performed: ["India adhesives and sealants market size 2026", "India construction chemicals/waterproofing market size 2026", "India synthetic latex/VP/SBR latex market size", "India SSP fertiliser market size 2026", "USD/INR exchange rate August 2026", "India construction chemicals market size in Rs crore", "Pidilite/Astral/Apcotex India adhesives revenue and market share", "India wood adhesive market size/organised-unorganised split", "global chewing gum base/PVAc market size", "India per-capita adhesive consumption vs China/global benchmark", "India rock phosphate/phosphatic fertiliser import dependence", "vinyl pyridine latex market size 2026", "tyre cord fabric dipping latex market size global", "China share of global tyre production 2025"]
+searches_skipped: ["India-specific packaging adhesives market size (pre-revenue for JUBLCPL, would not change anchored numbers)", "India-specific SBR-Latex-construction-chemicals input-supply market size (proxies searched, correctly-scoped figure not found)"]
+analyst_note: "Correction against Verifier A: market-share base fixed to Note 39 (AR p.150) external-customer revenue Rs 1,164.84 Cr; demerging aggregate fixed to Rs 692.34 Cr. This also surfaced that the prior 27.6% PP&C growth figure was untraceable; the audited replacement (7.48-8.75% FY25-26) sits below the 24.3-24.4% SOM-implied CAGR, reversing the earlier conservative-direction claim. Stage 11 should treat the SOM CAGR as an upper-range figure pending confirmation the Q1 FY27 acceleration (27.5% YoY) persists across a full year, and should treat Section 3C capacity (not TAM) as the binding near-term constraint."

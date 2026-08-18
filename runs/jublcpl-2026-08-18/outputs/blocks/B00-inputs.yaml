@@ -1,0 +1,80 @@
+stage: B00-inputs
+company: JUBLCPL
+run_date: 2026-08-18
+model: orchestrator
+status: complete
+run_type: full
+concalls_available: false
+no_concall_mode: true
+sector_cap_row: "Specialty chemicals"
+cmp: 2342.0
+market_cap_cr: 3549.0
+inventory:
+  prospectus: 0
+  annual-report: 1
+  results: 2
+  rating: 1
+  concalls: 0        # declared absent (concalls_available: false)
+  peer-concalls: 16  # APCOTEXIND x4, BALAMINES x4, KRISHANA x4, NOCIL x4 (nominal cap 12; all passed grouped by peer)
+  announcements: 1   # operator-supplied 6-month operational/announcement summary (2026-08-18)
+  shareholding: 1    # operator-supplied screener.in shareholding pattern Mar2025-Jun2026 (2026-08-18)
+  research: 0        # broker notes absent; MNCL notes present under presentation/ as non-anchored leads
+  screening: 24      # screener-* (JUBLCPL) + peer CSVs
+  presentation: 4    # Investor_Presentation_1 + PeTechKnowledge + 2 MNCL notes (initiating + 4QFY26 update)
+  other: 0
+input_gaps:
+  - type: prospectus
+    priority: HIGH
+    note: >
+      Empty. JACPL is a Jubilant Bhartia Group entity mid-demerger of its agri
+      business (per CARE rating Oct 2025) with an MNCL initiating-coverage note
+      present, consistent with a recently listed/restructured name. Backward
+      baseline, promoter/group-company map, and restated pre-IPO financials
+      built from the annual report alone (fewer years). Stage 8 sources
+      promoter/group background from web search + AR governance; group-company
+      map flagged web-derived not filing-anchored.
+  - type: announcements
+    priority: LOW
+    resolution: PARTIALLY FILLED (operator, 2026-08-18)
+    note: >
+      Folder was empty; operator supplied a six-month operational/announcement
+      summary (inputs/announcements/operational-updates-6m-operator-2026-08-18.md)
+      compiled from Reg 30 filings + the Q4/FY26 and Q1/FY27 investor
+      presentations. Documented-ACTION dates now available (Samlaya commissioning
+      3-Jun-2026; NCLT first motion 8/9-Jul-2026; demerger scheme). It is a
+      SECONDARY operator summary, not a primary filing: numbers anchor to the
+      investor-presentation PDFs in inputs/presentation/ where available. Primary
+      Reg 30 PDFs still absent, so the record is dated-events + presentation
+      anchored, not filing-anchored.
+  - type: shareholding
+    priority: LOW
+    resolution: FILLED (operator, 2026-08-18)
+    note: >
+      Folder was empty; operator supplied the screener.in quarterly shareholding
+      pattern Mar2025-Jun2026 (inputs/shareholding/shareholding-pattern-screener-2026-08-18.md).
+      FII+DII now resolvable (Jun2026: 0.22%+0.23%=0.45%, negligible institutional
+      across all six quarters -> supports UA institutional-absence qualifier).
+      Promoter holding trend resolvable (74.77%->74.36%, broadly stable). PLEDGE %
+      is NOT in this panel, so the pledge trend still falls back to the AR
+      figure with staleness noted.
+  - type: research
+    priority: LOW
+    note: >
+      No dedicated broker notes folder. No effect on anchored evidence (research
+      is never anchored). Two MNCL notes present under presentation/ available as
+      non-anchored leads only.
+degradation_applied:
+  - "NO-CONCALL MODE: stage 5 degraded (reads AR MD&A + chairman letter + results commentary); credibility_grade defaults C, may rise to B on documented AR-guidance-vs-results delivery, never A. B05 gains no_concall_mode: true."
+  - "Stage 6 runs: peer-concalls present (16). Verifier B audits communication analysis vs AR + results (no main-company transcripts)."
+  - "Stage 7 F2 test uses capex-completion evidence across AR timeline in place of promise-delivery record."
+  - "No prospectus: stages 2/3 build notes + backward history from AR alone; FTTCP backward baseline on available AR years, said so."
+  - "Announcements PARTIALLY FILLED (operator summary): documented-ACTION dates now present; stage 8 still web-search-corroborated; primary Reg 30 PDFs absent."
+  - "Shareholding FILLED (operator screener.in panel): stage 10 FII+DII resolved; UA institutional-absence qualifier now evidenceable; pledge % still from AR (not in panel)."
+listed_recently: true    # inferred (demerger + initiating coverage); no listed_date in manifest
+operator_ruling:
+  empty_folder_confirmation: "Proceed with gaps (operator, 2026-08-18)."
+flags: []
+analyst_note: >
+  Peer-concalls exceed nominal 12-cap (16 present, 4 peers x 4 quarters). All
+  passed to stage 6 / verifier D grouped by peer; they prioritise. PDF stack
+  verified readable (poppler-utils + pypdf repaired at session start).

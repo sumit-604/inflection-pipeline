@@ -1,0 +1,16 @@
+stage: B12a
+company: JUBLCPL
+run_date: "2026-08-18"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 27
+findings:
+  - {severity: CRITICAL, location: "B09 TAM, Section 1/2 (Method 1)", claimed: "PP&C FY26 segment revenue Rs 12,386 Mn (Rs 1,238.6 Cr)", source_truth: "Note 39 Segment Information p.150: Rs 12,046.73 Mn (Rs 1,204.67 Cr total segment revenue) or Rs 11,648.41 Mn (Rs 1,164.84 Cr from external customers). Claimed figure does not appear in audited segment table.", note: "2.8% overstatement of PP&C base. Directly impacts SAM share calculation (2.63% claimed vs 2.54% corrected) and ripples to SOM 3yr/5yr. Requires B09 rework. Mismatch anchored to Note 39 p.150 vs claimed AR p.19 source.", source_fidelity: true, disposition: "GATE HELD - B09 re-invoked to correct against Note 39 p.150 and recompute SAM/SOM with correct anchor"}
+  - {severity: MAJOR, location: "B09 TAM, Section 1 (demerging segment aggregate)", claimed: "P&K Fertilizers + Agri Nutrients FY26 = Rs 702.3 Cr", source_truth: "Note 39 p.150: Rs 6,811.92 Mn + Rs 111.47 Mn = Rs 6,923.39 Mn = Rs 692.34 Cr", note: "1.4% arithmetic error in aggregation. Minor but represents imprecision in source tracing.", source_fidelity: true, disposition: "GATE HELD - corrected in B09 re-run"}
+critical_count: 1
+major_count: 1
+minor_count: 0
+acceptance_rate: 92.6
+numerical_acceptance: 92.6
+coverage_note: "27 material figures verified across B01-B09 (verdict cards, scorecard inputs, segment revenues). B01 Gate 0 all 25 metrics verified clean; no source-fidelity gates breached at verdict-card level. B09 TAM contains 2 material sourcing errors. All other stage reports (B02-B08) contain primarily qualitative/judgment content outside numerical audit scope. Report written to outputs/reports/12a-verifier-numerical.md"
+orchestrator_note: "Both source-fidelity findings sit in B09 (TAM), a supporting stage, not a phase-1 verdict-card or Section 1B pillar input (valuation is phase 3). Per the source-fidelity gate, the flagged figures are corrected against the audited source (Note 39 p.150) with the correct anchor shown via a stage-9 re-invocation rather than forcing a whole-run REWORK; the disagreement is logged GATE HELD - figure corrected at source. Verdict-card inputs (B01 Gate 0) verified clean."

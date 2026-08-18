@@ -1,0 +1,48 @@
+stage: B06-peers
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "JACPL is in no-concall mode; claims verified originate from AR MD&A/results/deck (B05), not a JACPL transcript"
+  - "NOCIL manufactures rubber process chemicals, not latex directly; its Q1 evidence is adjacent-market, not a direct latex comparator"
+peers_provided: 16
+verified:
+  - {claim: "Sharp sulphur/rock-phosphate cost rises (Agri) and Butadiene/petrochemical supply risk (Latex) are industry-wide, not JACPL-specific", peers: ["KRISHANA", "APCOTEXIND", "NOCIL", "BALAMINES"], anchor_count: 6}
+  - {claim: "Q1 FY27 Agri weakness attributable to a genuine, IMD-confirmed weak/uneven monsoon (40% rainfall deficit through June, recovery from early July)", peers: ["KRISHANA"], anchor_count: 2}
+  - {claim: "Rs 50 crore / 30,000 MTPA brownfield capex is part of a broader sector capex up-cycle, not an outlier", peers: ["APCOTEXIND", "BALAMINES", "KRISHANA"], anchor_count: 3}
+  - {claim: "Q1 FY27 export volume miss attributable to industry-wide West Asia/Strait of Hormuz geopolitical and logistics disruption, not company-specific export mix", peers: ["APCOTEXIND", "NOCIL", "KRISHANA", "BALAMINES"], anchor_count: 5}
+partially_verified: []
+contradicted:
+  - {claim: "Global synthetic/VP latex demand was 'subdued' in FY26, resulting in lower volumes", contradicting_peer: "APCOTEXIND", quote_anchor: "APCOTEXIND Q2/Q3/Q4 FY26 calls: 'highest ever' export volumes, EBITDA +48-61% YoY, 9M volumes +10% YoY — record growth throughout the same period JACPL frames as demand-subdued"}
+unverifiable:
+  - {claim: "FY26 revenue growth was driven by 'market share gains across all businesses'", peers_checked: ["APCOTEXIND", "NOCIL", "KRISHANA"]}
+peer_coverage_map:
+  - {peer: "APCOTEXIND", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Record volumes/EBITDA contradicts 'subdued' latex demand claim; confirms Valia capacity expansion"}
+  - {peer: "APCOTEXIND", quarter: "Q3 FY26 (Feb-2026 call)", usage: "SUBSTANTIVE", contribution: "Continued record 9M growth; names US tariffs (not logistics) as driver of specific export-line softness"}
+  - {peer: "APCOTEXIND", quarter: "Q4 FY26 (~May-2026 call)", usage: "SUBSTANTIVE", contribution: "First peer flag of West Asia/Strait of Hormuz raw-material disruption and Butadiene sourcing"}
+  - {peer: "APCOTEXIND", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Near-verbatim, same-quarter match to JACPL's export/logistics claim with matching volume magnitude"}
+  - {peer: "NOCIL", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "Adjacent-market softness attributed to Chinese dumping/competition, not demand"}
+  - {peer: "NOCIL", quarter: "Q3 FY26 (Feb-2026 call)", usage: "CITED-ONLY", contribution: "Continuation of Q2 themes; no incremental decisive evidence"}
+  - {peer: "NOCIL", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Confirms West Asia crisis, crude-linked raw-material and freight/logistics volatility"}
+  - {peer: "NOCIL", quarter: "Q1 FY27 (Aug-2026 call)", usage: "SUBSTANTIVE", contribution: "Same-quarter corroboration of geopolitical logistics disruption plus distinct cooking-gas demand hit"}
+  - {peer: "BALAMINES", quarter: "Q2 FY25 (Nov-2024 call)", usage: "CITED-ONLY", contribution: "Pre-period baseline/China-dumping context; predates JACPL's claims window"}
+  - {peer: "BALAMINES", quarter: "Q4 FY25 (Jun-2025 call)", usage: "SUBSTANTIVE", contribution: "Agrochemical demand volatility; early Israel-Iran war raw-material pressure"}
+  - {peer: "BALAMINES", quarter: "Q2 FY26 (Nov-2025 call)", usage: "SUBSTANTIVE", contribution: "'Moderated demand in select agrichem segments'; explicit export freight-hit language"}
+  - {peer: "BALAMINES", quarter: "Q4 FY26 (May-2026 call)", usage: "SUBSTANTIVE", contribution: "Production briefly impacted by geopolitical disruption; raw materials 2.5-3x normal prices"}
+  - {peer: "KRISHANA", quarter: "Q2 FY26 (Oct-2025 call)", usage: "SUBSTANTIVE", contribution: "Favorable monsoon/record volumes baseline; sulphur price trajectory begins"}
+  - {peer: "KRISHANA", quarter: "Q3 FY26 (Jan-2026 call)", usage: "SUBSTANTIVE", contribution: "Granular quarter-by-quarter sulphur/sulphuric-acid pricing"}
+  - {peer: "KRISHANA", quarter: "Q4 FY26 (Apr-2026 call)", usage: "SUBSTANTIVE", contribution: "Management's own (subsequently under-shot) monsoon-risk downplaying; West Asia named as sector outlook risk"}
+  - {peer: "KRISHANA", quarter: "Q1 FY27 (Jul-2026 call)", usage: "SUBSTANTIVE", contribution: "Exact-quarter match; strongest single verification for monsoon and sulphur/West Asia claims"}
+industry_cross_read:
+  demand: "Strong/record demand at KRISHANA and APCOTEXIND through FY26 into Q1 FY27; NOCIL softness attributed to Chinese competition and a domestic cooking-gas shortage, not demand destruction; BALAMINES shows the softest language ('moderated demand in select pharma/agrichem segments') but is a loosely comparable chemicals-intermediate business"
+  pricing_inputs: "Consistent across all four peers: sulphur, sulphuric acid, ammonia, methanol and monoethanolamine all spiked sharply Apr-Jul 2026, uniformly attributed to the West Asia conflict/Strait of Hormuz disruption; KRISHANA shows sulphur rising from ~Rs27,500/tonne (Apr-2025) to ~Rs1,00,000/tonne (Jun-Jul 2026)"
+  capex_cycle: "Sector-wide capacity up-cycle: APCOTEXIND, BALAMINES and KRISHANA all mid-expansion at scale larger than JACPL's project in the same window; NOCIL silent on new capex. This is an industry-wide capacity race, not a lone-expander situation — JACPL's Rs50cr project is a small participant, not an outlier"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Chinese dumping/import competition named as a live, ongoing risk by NOCIL (rubber chemicals) and BALAMINES (EDA/DMF, subject to antidumping investigations) — no equivalent import-competition risk surfaced in JACPL's B05 record for Latex/Adhesives"
+  - "US tariff exposure specifically (distinct from West Asia logistics) named by APCOTEXIND as driving carpet/textile/tyre-linked export softness in Q3 FY26 — JACPL's Q1 deck attributes its export miss only to generic 'geopolitical/logistics disruption' without isolating a tariff-specific channel"
+  - "KRISHANA's credit-rating agency frames ammonia-supply/gas-availability risk tied to the West Asia conflict as a structural, multi-quarter industry risk, more forward-looking than JACPL's apparent one-quarter treatment of the same shock"
+net_narrative_effect: "complicates"
+analyst_note: "Peer evidence is asymmetric across time horizons: it strongly supports JACPL's near-term Q1 FY27 excuses (monsoon, West Asia export/logistics) with independent, same-quarter, quantified data from KRISHANA and APCOTEXIND — these read as genuine sector shocks, not manufactured excuses. But it undercuts JACPL's longer-horizon FY26 narrative: APCOTEXIND's record latex-adjacent growth directly contradicts 'subdued global latex demand,' and the 'market share gains across all businesses' claim is unverifiable because the two closest peers were themselves growing very fast in the same period, consistent with a rising market rather than proof of share capture. Recommend synthesis treat the FY26 growth-attribution language with more skepticism than the Q1 FY27 excuse language."

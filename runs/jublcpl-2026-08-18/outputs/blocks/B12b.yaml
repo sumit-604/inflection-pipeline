@@ -1,0 +1,24 @@
+stage: B12b
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-opus-4-8
+status: complete
+no_concall_mode: true
+audit_basis: "AR MD&A + Chairman/Board letter + audited FY26 results + unaudited Q1 FY27 results + Q1 deck (no transcripts exist)"
+independent_flags_found: 9
+caught: 6
+partially_caught: 2
+redflag_coverage: 67
+missed:
+  - {severity: "MINOR", item: "FY26 exceptional item Rs 34.65mn unexplained; AR p.5 states NCLT First Motion order dated 08-Aug-2026 while primary Q1 results notes and Q1DECK slide 26 state 08-Jul-2026 (self-inconsistent disclosure)", anchor: "AR p.5 vs Q1R note 3 (standalone+consolidated) vs Q1DECK slide 26; exceptional-item line AR p.40 / Q1R P&L"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 3, confirmed: 3, wrong: 0}
+credibility_grade_concur: "concur — C is defensible; added cash-conversion flag reinforces caution and the no-concall floor bars A"
+findings:
+  - {severity: "MAJOR", location: "B05 2D/4D + analyst_note (cash-conversion framing)", description: "Consolidated cash-conversion deterioration under-weighted: FY26 trade receivables +42% (2,875->4,088 mn) vs revenue +21%, cash flat at 57 mn, debtors turnover 5.66->5.28, Q1 FY27 inventory build of 6,069 lakh; pipeline flagged Agri working-capital only and did not surface the group receivables surge. Thesis-relevant (gated cash-conversion concern). Anchors: Q1DECK slide 24, AR p.20, Q1R P&L change-in-inventories, Q1R consolidated segment-assets table"}
+  - {severity: "MINOR", location: "B05 4D red flags", description: "FY26 full-year Performance Polymers & Chemicals segment EBIT flat (1,650->1,663 mn, +0.8%) on ~+28% segment revenue = ~360bps margin compression in the largest segment, not surfaced; pipeline captured only the Q1 group -135bps EBITDA margin move. Anchor: AR p.19 segment results"}
+  - {severity: "MINOR", location: "B05 2D what-they-are-not-saying / 2A demerger row", description: "Unexplained FY26 exceptional item (Rs 34.65mn) not listed among non-disclosures; and AR p.5 vs primary Q1 results NCLT-order date inconsistency (08-Aug-2026 vs 08-Jul-2026) not surfaced. Anchors: AR p.5, p.40; Q1R note 3; Q1DECK slide 26"}
+critical_count: 0
+major_count: 1
+minor_count: 2
+acceptance_rate: 67

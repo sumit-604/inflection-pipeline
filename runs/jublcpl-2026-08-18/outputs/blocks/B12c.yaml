@@ -1,0 +1,27 @@
+stage: B12c
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-opus-4-8
+status: complete
+scope: phase-1 (gate0 + emerging-moat only; valuation deferred to phase 3)
+gate0:
+  rules_checked: 50
+  fails:
+    - {rule: "M10 Switching Costs", issue: "band-3 'stable' applied to receivables +11.4 days, exceeding the >10-day proxy band 5 uses to define stable; defensible but classification-relevant", scored: 3, strict_reading: "below 3 -> moats present 3 -> moat MODERATE -> classification GOOD", severity: MAJOR}
+emoat:
+  rules_checked: 30
+  fails: []
+valuation: pending-phase-3
+recomputed_destination_pe: ""
+recomputed_decision: "Gate0 GOOD+ stands under maker's M10 reading; strict M10 (<=10-day 'stable') reading drops M10 below 'present' -> moat class MODERATE -> classification GOOD. Emerging Moat MODEST (22.5) confirmed unchanged."
+findings:
+  - {severity: MAJOR, location: "B01 report Block F, M10 Switching Costs", description: "M10 scored 3 on a receivables move of +11.4 days that exceeds the <=10-day figure band 5 uses to quantify 'stable'; band 1 does not fit (only 1 decline year), so a strict reading gives 0/else. At 3, moats present = 4 (STRONG) and classification GOOD+; below 3, moats present = 3 (MODERATE) and classification GOOD. The tier hinges on this single boundary call. Defensible and disclosed by the maker, hence MAJOR not CRITICAL, but must be surfaced."}
+  - {severity: MINOR, location: "B01 report Block B, B2", description: "FCF-positive proportion scored 100% (=5) on a 2-of-2 computable window; FY24 FCF sign unknown. Disclosed, permitted by the 'use whatever history is available' rule, no score impact; recorded as generosity observation."}
+  - {severity: MINOR, location: "B01 report Block F, M6", description: "M6 scored 0 as 'R&D/Rev not located', but B07 locates R&D at 1.17% of turnover; the ==1% band still needs peer-median margin (not provided), so 0 is correct regardless. Characterisation imprecise, rule application correct."}
+  - {severity: MINOR, location: "B07 report Section 3 summary table vs Section 5 scorecard, H1", description: "H1 marked 'Yes/Weak/claim' in the summary table but scored raw 0 / 0.0 in the scorecard (no-evidence). Scorecard is consistent with the H1 narrative; summary row is the outlier. Alternate 0.7 scoring would give 23.2, still MODEST. Presentational only."}
+  - {severity: MINOR, location: "B07 YAML evidence_mix vs completionist_recount", description: "evidence_mix documented:8 (all documented-tagged scored categories) vs recount '5 documented items' (Strong/Moderate active only) use two different definitions; both internally valid but read as inconsistent without the definitions stated."}
+critical_count: 0
+major_count: 1
+minor_count: 4
+framework_adherence: 94
+acceptance_rate: 94

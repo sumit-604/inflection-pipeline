@@ -14,6 +14,14 @@ from audited filings, quarterly results, exchange announcements, or the
 investor deck. Confidence is materially reduced and I say so again in the
 verdict.
 
+**OPERATOR DIRECTION (18 August 2026):** treat this as a demerger special
+situation and analyse the two businesses separately to see the investment
+opportunity. Recorded and acted on. Section 6 below is the sum of the parts,
+built from the audited segment note; the P/E base card in section 5 is now a
+two part card, one per business. The blended entity analysis in sections 1 to 4
+still stands, because the FTTCP protocol scores the whole company that exists
+today, but the investment read now lives in section 6.
+
 ---
 
 ## 1. MY RULINGS
@@ -446,7 +454,8 @@ engaged, cash catalyst is not none. Trim rule: not engaged.
 | Pillar 1 normalization route | NONE. Route A fails (CWIP Rs 27.04 Cr plus advances is 5.3% of capital employed, under the 20% test). Route B unavailable (verdict is not TEMPORARILY DEPRESSED or RECOVERING) |
 | ROCE recovery credited via | Not credited. There is no recovery to credit; 36% is the current and highest level on record. Strategic Premium ROCE re-rating route therefore stays barred as well |
 | Pillar 2 cash multiplier | 1.15x, tagged STRUCTURAL and located in the demerging division |
-| Sector cap phase 3 must use | 29.5x blended pre demerger; 35x if valuing the retained entity alone. No quality uplift |
+| Sector cap phase 3 must use | SOTP per operator direction: Business A polymers Specialty chemicals 35x; Business B agri Agri processing 20x. Blended 29.5x only for the pre demerger entity. No quality uplift |
+| Valuation method | Sum of the parts (per B04 primary and operator direction 18-Aug-2026): value polymers and agri separately, do not apply one blended multiple to consolidated earnings |
 | Return tier | Tier A, hurdle 25% |
 | SHARED CATALYST flag | YES. Samlaya commissioning underpins both the revenue STARTING verdict and the ROCE FIRING verdict. Role 3 must stress test it as one point of failure, not two |
 
@@ -458,6 +467,21 @@ This is a preview of the exit multiple phase 3 will inherit, computed from
 Section 1B on what is known now. It is not the valuation. Role 1 still runs the
 full dual track exercise in phase 3. I need your approval on the base and your
 choice on the earnings basis before this run can close.
+
+Per your direction, the base is now a TWO PART card. The blended card below
+values the company as it trades today, and it is what phase 3 uses if it values
+JACPL pre demerger. The per business destination multiples, which are the ones
+that matter for the special situation, are:
+
+| Business | Sector cap | Destination PE (Section 1B) | Illustrative equity value |
+|---|---|---|---|
+| A. Polymers (retained, Jubilant Industries) | Specialty chemicals 35x | 30x to 35x | Rs 3,180 to 3,710 Cr |
+| B. Agri (JASL) | Agri processing 20x | 12x to 15x on normalized earnings | Rs 264 to 330 Cr |
+| Blended, as it trades today | 29.5x (revenue weighted) | 29.5x, cap binds | matches the sum of the parts |
+
+Full derivation of both per business numbers is in section 6. Phase 3 should
+carry BOTH: 29.5x for the pre demerger entity, and the split 35x / 20x caps
+with the per business pillar inputs for the post demerger sum of the parts.
 
 | Step | Input | Value |
 |---|---|---|
@@ -539,6 +563,132 @@ One line on fit: for a company splitting in two, trailing earnings describe a
 perimeter that will not exist and forward earnings require a perimeter nobody
 has published yet, so whichever you pick, phase 3 should state the perimeter
 explicitly alongside the number.
+
+---
+
+## 6. THE SPECIAL SITUATION: TWO BUSINESSES ANALYSED SEPARATELY
+
+The whole point of this stock is that it is two businesses wearing one share
+price, and the demerger is about to hand you both as separate listed shares,
+one for one. So the question is not "what is JACPL worth" but "what are these
+two things worth, and which one am I actually buying." All segment figures
+below are audited FY26 from Note 39 (AR p.150), with Q1 FY27 from the results
+filed 11 August 2026. The demerger maths: the residual company keeps the
+polymer business and is renamed Jubilant Industries Ltd, and the agri business
+moves into Jubilant Agri Solutions Ltd (JASL) which lists separately. Hold one
+JACPL share today and you end up holding one of each.
+
+### The two businesses side by side (FY26 audited, standalone Note 39)
+
+| Measure | Business A: Polymers (retained, becomes Jubilant Industries) | Business B: Agri / fertilizer (leaves as JASL) |
+|---|---|---|
+| What it is | Wood adhesives (Jivanjor, Charmwood), vinyl pyridine and SBR latex, PVAc food polymer, sulphuric acid | Single super phosphate, bulk NPK fertilizer, agri nutrients |
+| External revenue FY26 | Rs 1,164.84 Cr | Rs 692.34 Cr |
+| Revenue growth FY25 to FY26 | +7.5% | +52% (P&K Fert), Agri Nutrients -27% |
+| Segment PBIT FY26 | Rs 165.46 Cr | Rs 46.84 Cr |
+| PBIT margin | 14.2% | 6.8% |
+| Segment PBIT FY25 | Rs 164.67 Cr (flat, +0.5%) | Rs -5.71 Cr (a loss) |
+| Capital employed (seg assets minus seg liab) | Rs 245.23 Cr | Rs 234.87 Cr |
+| Segment ROCE FY26 | 67.5% | 19.9% |
+| Q1 FY27 revenue YoY | +29.8% (Rs 394.0 Cr vs 303.7 Cr) | -2.6% (P&K Fert Rs 135.5 Cr vs 139.1 Cr) |
+| Q1 FY27 PBIT YoY | +22.9% (Rs 64.8 Cr vs 52.7 Cr) | -52% (Rs 6.4 Cr vs 13.5 Cr) |
+| Cash character | Clean. Segment assets grew 9.85% on revenue up 8.75% | The whole problem. Subsidy receivable up 92.2%, overdue bucket tripled |
+| Cyclicality | Low, branded plus industrial | High, monsoon and subsidy and input cost driven |
+
+Read that table and the investment case writes itself. Nearly identical capital
+sits in each business, Rs 245 Cr against Rs 235 Cr. One turns it into Rs 165 Cr
+of profit before interest and tax, the other into Rs 47 Cr. One grew profit 23%
+last quarter, the other shrank it 52%. One had a clean cash year, the other
+generated the entire working capital drag. The demerger is not a financial
+engineering trick here, it is separating a genuinely excellent business from a
+mediocre cyclical one that has been diluting it.
+
+### If I ran FTTCP on each business alone
+
+This is the part the blended score in section 4 hides. The composite 3 is an
+average of a very good business and a poor one.
+
+**Business A, polymers.** Revenue STARTING to FIRING (Q1 FY27 up 29.8%, three
+year segment history too short post scheme to confirm FIRING). Margin STARTING
+(segment PBIT up 22.9% in Q1 even with a 100 bps margin dip, the profit is
+compounding). Cash likely FIRING once seen on its own, because this segment is
+not where the drag lives. ROCE FIRING at 67.5%. That is plausibly a composite 6
+to 7, a BUY-candidate, not a DEEP WATCH. The catch is that no such standalone
+account has ever been published, so the 67.5% is a segment disclosure, not an
+audited company.
+
+**Business B, agri.** Revenue VOLATILE, a loss in FY25 and a strong FY26 on
+better SSP placement, then down again in Q1 FY27 on a weak monsoon. Margin
+STAGNANT to DECLINING. Cash DETERIORATING and structural, the subsidy book.
+ROCE STAGNANT at 19.9%. On its own this is a composite 1 to 2, DEEP WATCH
+leaning AVOID, a subsidy linked commodity cyclical you buy only at a hard
+discount to book or normalized earnings, never on last year's peak.
+
+The blended FTTCP score of 3 is arithmetically correct and analytically
+misleading. You are not buying a mediocre three of eight business. You are
+buying a six or seven business stapled to a one or two business, and the staple
+is being cut.
+
+### Sum of the parts valuation
+
+Anchored inputs are the segment PBIT, ROCE, revenue and capital employed above.
+The PAT split and the per business equity values are ILLUSTRATIVE, because the
+scheme has not published standalone accounts and the allocation of interest,
+unallocable corporate cost and tax across the two entities is not yet disclosed.
+I state every assumption so you can move it.
+
+**Business A, polymers, illustrative.**
+- Start from segment PBIT Rs 165.46 Cr. Assume it carries about two thirds of
+  the Rs 30.91 Cr unallocable corporate cost (Rs 20 Cr) and almost none of the
+  Rs 8.89 Cr interest (Rs 2 Cr), since the debt funds agri working capital.
+  Illustrative PBT about Rs 143 Cr, tax at 25.7%, illustrative PAT about Rs 106
+  Cr.
+- Multiple: this is a Specialty chemicals business, cap 35x. ROCE well above 33%
+  puts the Pillar 1 base at its 30x formula ceiling; a clean cash multiplier and
+  the niche latex and PVAc scarcity premium push the raw number into the cap.
+  Destination 30x to 35x.
+- Illustrative equity value: Rs 106 Cr times 30x to 35x = **Rs 3,180 Cr to Rs
+  3,710 Cr.**
+
+**Business B, agri, illustrative.**
+- Start from segment PBIT Rs 46.84 Cr. Assume it carries about one third of
+  unallocable cost (Rs 11 Cr) and most of the interest (Rs 6 Cr). Illustrative
+  PBT about Rs 30 Cr, tax at 25.7%, illustrative PAT about Rs 22 Cr. And note
+  FY26 was a strong year for this segment; FY25 was a loss, so Rs 22 Cr is a
+  near peak, not a mid cycle number.
+- Multiple: Agri processing, cap 20x, but a subsidy linked cyclical that lost
+  money one year ago does not earn its cap. Pillar 1 base at 19.9% ROCE is
+  17.5x, a structural cash multiplier of 0.80x pulls the quality base to about
+  14x, no growth or moat premium. Destination 12x to 15x on normalized, not peak,
+  earnings.
+- Illustrative equity value: Rs 22 Cr times 12x to 15x = **Rs 264 Cr to Rs 330
+  Cr**, and lower if you normalize earnings below the FY26 peak.
+
+**Sum of the parts: roughly Rs 3,450 Cr to Rs 4,040 Cr**, against today's market
+capitalization of Rs 3,549 Cr (Rs 2,342.40 times 1.515 Cr shares).
+
+### What the SOTP actually tells you
+
+The demerger unlock is largely priced already. Six months ago, at the FY26 year
+end market cap of Rs 2,247 Cr, the polymer business alone was plausibly worth
+more than the whole company, and you were getting the fertilizer business and
+some for free. The stock has since re-rated 58%, and at Rs 3,549 Cr the sum of
+the parts midpoint of about Rs 3,750 Cr is only modestly above the price. The
+easy money in the gross mispricing has been made.
+
+What is left is a narrower, higher quality bet: that the polymer business, once
+it reports as a standalone company, proves the 67.5% return and the Q1
+acceleration are real and re-rates to the top of the specialty chemicals range,
+while the agri stub is a small and separable cyclical you can keep, sell, or
+ignore. That is a real opportunity but it is a show-me one, and it keys off the
+exact trigger the blended verdict already named: the first standalone polymer
+account. It is why the position stays DEEP WATCH and not BUY today, even though
+the business underneath is better than a three of eight makes it sound.
+
+The clean way to own this, if you want it, is to accept both shares at the
+demerger and decide on each separately once each reports on its own. The polymer
+share is the one to want. The agri share is the one to size small or exit into
+strength.
 
 ---
 

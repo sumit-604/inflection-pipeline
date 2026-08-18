@@ -274,7 +274,11 @@ prompt anchors every promise/delivery pair to named quarters.
 
 Every stage ends its output with a fenced YAML block. The orchestrator
 extracts it to `outputs/blocks/`. Prose above the block is the full report
-for `outputs/reports/`. Common fields on every block:
+for `outputs/reports/`. The block is the handoff downstream stages read; the
+prose report is the archive and Verifier A's source-fidelity audit target
+(it must stay complete and anchored, never stripped). Reader-facing narrative
+is written once, at stage 13, not at every stage. Common fields on every
+block:
 
 ```yaml
 stage: B01-gate0
@@ -284,6 +288,11 @@ model: claude-sonnet-5
 status: complete          # complete | partial | failed
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
+analyst_note: ""          # optional, <=200 words (strict cap, excess
+                          # truncated). Reasoning a downstream stage cannot
+                          # reconstruct from the structured fields alone: why
+                          # a flagged number matters, not just the number.
+                          # Blank if nothing would otherwise be lost.
 ```
 
 Stage-specific payload fields (the fields downstream stages actually read):

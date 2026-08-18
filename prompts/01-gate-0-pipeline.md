@@ -191,6 +191,11 @@ data_notes: []             # loss-to-profit swings, proxy bases used,
                            # PEER DATA NEEDED items
 block_b_trend: ""          # improving | stable | deteriorating, with the
                            # one number that shows it (feeds FLAG-CASH)
+analyst_note: ""           # optional, <=200 words (strict cap, excess
+                           # truncated). Reasoning a downstream stage cannot
+                           # reconstruct from the fields above: why a low/high
+                           # score or a depressor matters, not just the value.
+                           # Blank if nothing would otherwise be lost.
 ```
 
 ---

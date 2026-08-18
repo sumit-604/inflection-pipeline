@@ -34,14 +34,33 @@ Do not upgrade a stage's model without editing its agent file.
 - "anchored" = every number followed by (source, page/note)
 - "flag" = surfaced prominently in the verdict, decision stays human
 
+## SESSION DISCIPLINE (prompt cache)
+- Model and effort are fixed at session start and never changed mid-session:
+  switching either busts the prompt cache and re-prefills the whole
+  conversation at full price. This governs the session's own model and is
+  separate from subagent DISPATCH (each stage runs its own agent at its
+  frontmatter model, which is not a mid-session switch). If a different
+  session model is needed, start a fresh session.
+- Run commands quiet by default so their output does not flood context on
+  every use: git commit -q, git status --short, git log --oneline -n N
+  (never a bare git log / git diff over a large range); pip install -q;
+  apt-get install -y -qq; redirect verbose PDF-extraction output. The
+  collect_to_repo.py collector runs on the operator's machine, out of
+  session; in-session it appears only as collect_to_repo.py --push-again.
+
 ## MEMORY
-/run-pipeline, /fttcp, /finalize, and /compost sessions read LESSONS.md at
-start (it carries operational run history and is ~18k tokens; lighter sessions
-that do not touch pipeline operations skip it to keep context lean). Every
-/run-pipeline, /fttcp, and /finalize session appends one dated entry at close:
-what broke or dragged this run, in one line each; write 'clean run' if nothing.
-Never delete
-entries; promotion to a prompt file gets noted under PROMOTED TO LAW.
+/run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
+LESSONS.md at start (the lean working memory, hard budget under 1,500 tokens:
+named failure catalogue, recurring patterns, promoted-to-law fixes, open
+actions). Lighter sessions that do not touch pipeline operations skip it. The
+full dated run history lives in LESSONS_ARCHIVE.md (never deleted), read only
+by /compost and by humans. Every /run-pipeline, /fttcp, and /finalize session
+appends one dated entry at close to LESSONS_ARCHIVE.md, NOT to the active
+file: what broke or dragged this run, one line each; write 'clean run' if
+nothing. LESSONS.md is orchestrator-session memory only; no stage or verifier
+subagent receives it. When /compost promotes a pattern into the active
+LESSONS.md, one old active lesson is reviewed for archiving so the token
+budget holds; the promotion is noted under PROMOTED TO LAW.
 
 Per-company memory lives in companies/<TICKER>.md, written or updated at
 /finalize close and read as COMPANY MEMORY by /run-pipeline stage 0 and by
@@ -58,8 +77,10 @@ weigh, never anchored evidence.
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
-- LESSONS.md     operational memory, read by pipeline commands at start,
-                 appended at close
+- LESSONS.md     ACTIVE operational memory (lean, <1,500 tokens), read by
+                 pipeline commands at start
+- LESSONS_ARCHIVE.md   full dated run history (never deleted), appended at
+                 close, read only by /compost and humans
 - anti-ai-writing-style.md   house style for all reader facing prose
                  (synthesis narratives, recommendations, X posts); the
                  STYLE authority the orchestrator and stage 13 cite

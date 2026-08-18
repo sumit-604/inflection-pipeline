@@ -126,6 +126,10 @@ peer_questions:                # from 4B, consumed by stage 6
 red_flags: []
 dropped_triggers: []           # from 1C
 timeline_slippages: []         # from 1C
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning a downstream stage
+                               # cannot reconstruct from the fields above.
+                               # Blank if nothing would otherwise be lost.
 ```
 
 ---

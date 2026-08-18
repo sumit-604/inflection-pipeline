@@ -129,6 +129,10 @@ methods_used: []
 stale_data_flags: []           # each: {datapoint, source, year}
 searches_performed: []
 searches_skipped: []
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Reasoning a downstream stage
+                               # cannot reconstruct from the fields above.
+                               # Blank if nothing would otherwise be lost.
 ```
 
 ---

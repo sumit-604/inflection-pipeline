@@ -117,6 +117,10 @@ first_deterioration_signals:  # from 4A last column, feeds monitorables
   - {risk: "", first_signal: ""}
 mgmt_questions: []            # from 4D, feeds concall stage context
 one_line_verdict: ""
+analyst_note: ""              # optional, <=200 words (strict cap, excess
+                              # truncated). Reasoning a downstream stage cannot
+                              # reconstruct from the fields above. Blank if
+                              # nothing would otherwise be lost.
 ```
 
 ---

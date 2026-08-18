@@ -198,6 +198,10 @@ strengths_top3: []
 red_flags_top3: []
 best_fit_strategy: ""
 one_line_verdict: ""
+analyst_note: ""              # optional, <=200 words (strict cap, excess
+                              # truncated). Reasoning a downstream stage cannot
+                              # reconstruct from the fields above. Blank if
+                              # nothing would otherwise be lost.
 ```
 
 ---

@@ -79,6 +79,11 @@ rating_wc_quote: ""            # verbatim, with agency and page
 ua_qualifiers: {listed_12m: null, gate0_or_em: null, fii_dii_lt3: null,
                 all_met: null}
 credibility_grade: ""          # copied from B05
+analyst_note: ""               # optional, <=200 words (strict cap, excess
+                               # truncated). Assembly caveat only (e.g. why a
+                               # field is unresolved or which of two sources
+                               # was used); stage 10 stays copy-and-anchor,
+                               # no new judgment. Blank if none.
 ```
 
 ---

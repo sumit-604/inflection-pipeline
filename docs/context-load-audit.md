@@ -28,10 +28,22 @@ it. Changed in CLAUDE.md (MEMORY section).
 
 `CLAUDE.md` itself is small (~850 tokens) and stays always-on. That is correct.
 
-## One thing to watch later (not fixed here)
+## Done: LESSONS.md split (token-optimization Phase 2)
 
-`LESSONS.md` grows forever. Even for the heavy commands, ~18k tokens will keep
-climbing. When it gets uncomfortable, the clean move is: keep the full file as
-the permanent archive, but split a short "active lessons" head (the
-PROMOTED-TO-LAW rules plus the last ~10 entries) that the commands read, and let
-`/compost` work the full archive. Left as a future step to avoid bundling it in.
+`LESSONS.md` grew forever (~18k tokens, never deleted) and was read at the
+start of every heavy command. Fixed by splitting: the active `LESSONS.md` is
+now a lean head (named failure catalogue, recurring patterns, promoted-to-law
+fixes, open actions) under a hard 1,500-token budget (~1.1k actual), and the
+full dated run history moved to `LESSONS_ARCHIVE.md` (never deleted). The
+orchestrator commands read the lean active file; new dated entries append to
+the archive; `/compost` mines the archive and reviews one active lesson for
+archiving on each promotion. Every pattern-match preserved (the
+INDETERMINATE-cash guard stays law in `prompts/00-orchestrator.md`).
+
+## Done: session and cache discipline (Phase 3)
+
+Added a SESSION DISCIPLINE section to `CLAUDE.md` (model/effort fixed per
+session, quiet-by-default command flags) and a SESSION HYGIENE section to
+`prompts/00-orchestrator.md` (`/clear` between companies; @-mention the
+orchestrator's own stable project reads, per-company sources still travel to
+subagents as paths).

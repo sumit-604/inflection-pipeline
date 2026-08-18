@@ -274,7 +274,11 @@ prompt anchors every promise/delivery pair to named quarters.
 
 Every stage ends its output with a fenced YAML block. The orchestrator
 extracts it to `outputs/blocks/`. Prose above the block is the full report
-for `outputs/reports/`. Common fields on every block:
+for `outputs/reports/`. The block is the handoff downstream stages read; the
+prose report is the archive and Verifier A's source-fidelity audit target
+(it must stay complete and anchored, never stripped). Reader-facing narrative
+is written once, at stage 13, not at every stage. Common fields on every
+block:
 
 ```yaml
 stage: B01-gate0
@@ -284,6 +288,11 @@ model: claude-sonnet-5
 status: complete          # complete | partial | failed
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
+analyst_note: ""          # optional, <=200 words (strict cap, excess
+                          # truncated). Reasoning a downstream stage cannot
+                          # reconstruct from the structured fields alone: why
+                          # a flagged number matters, not just the number.
+                          # Blank if nothing would otherwise be lost.
 ```
 
 Stage-specific payload fields (the fields downstream stages actually read):
@@ -506,3 +515,20 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 - Never writes X posts. Publish candidates are flagged in synthesis with a
   📤 PUBLISH CANDIDATE block or the explicit line "No publish candidate
   this analysis." Drafting happens in the Dhruva Research Public project.
+
+---
+
+## 10. SESSION HYGIENE (prompt cache)
+
+- Run /clear between company analyses. Never carry one company's context
+  into the next; each company starts from a clean session so no prior
+  company's sources, blocks, or narrative can leak into its evidence or
+  bias its verdict.
+- @-mention the stable project files this orchestrator session itself reads
+  (the relevant prompts/ stage files, a frameworks/ doc when it must be
+  cited, the active LESSONS.md) rather than issuing a mid-conversation Read:
+  the @-mention attaches the file to the first message and puts it in cache
+  from turn one. This applies to the orchestrator's OWN reads only.
+  Per-company source documents still reach subagents as file PATHS in the
+  task message, never pasted (JIT law, section 9); @-mention is not a route
+  to inline a PDF into a subagent.

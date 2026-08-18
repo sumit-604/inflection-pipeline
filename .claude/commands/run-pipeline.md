@@ -125,9 +125,15 @@ handoff schemas, flag rules, and error handling. Then:
      - verifier-d-peers (B12d): peer coverage audit of B06.
      - verifier-c-framework (B12c), PHASE 1 SCOPE ONLY: in the task
        message, instruct it to run its Gate 0 (B01) and Emerging Moat
-       (B07) compliance checks only. Its valuation-adherence audit (B11,
-       B10) is deferred to PHASE 3 and must NOT run here; it emits the
-       gate0 and emoat sections of B12c with valuation left blank/pending.
+       (B07) compliance checks only, and pass it ONLY the two rule
+       sources those checks need — prompts/01-gate-0-pipeline.md and
+       prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
+       NOT pass the valuation framework docs (Master Prompt v3.3, Section
+       1B, FTTCP v1.2): they are consumed only by the B11 valuation
+       audit, which is deferred to PHASE 3, so in phase 1 they are dead
+       context. Its valuation-adherence audit (B11, B10) must NOT run
+       here; it emits the gate0 and emoat sections of B12c with valuation
+       left blank/pending.
    Collect B12a, B12b, B12c (partial), B12d into outputs/blocks/.
 
 5. COMPUTE the phase-1 confidence delta from the available verifier blocks

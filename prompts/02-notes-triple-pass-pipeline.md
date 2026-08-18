@@ -194,4 +194,9 @@ receivables_trend: ""        # improving | stable | deteriorating, with
                              # the ageing numbers (feeds FLAG-CASH)
 restatements_found: []
 going_concern_language: ""   # NONE | quote with note ref
+analyst_note: ""             # optional, <=200 words (strict cap, excess
+                             # truncated). Reasoning a downstream stage cannot
+                             # reconstruct from the fields above: why a finding
+                             # matters beyond its rating. Blank if nothing
+                             # would otherwise be lost.
 ```

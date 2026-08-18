@@ -3,25 +3,35 @@ company: "JUBLCPL"
 run_date: "2026-08-18"
 model: claude-sonnet-5
 status: complete
-input_gaps: ["Per-product MT/kg volume and capacity-utilisation split (Adhesives vs Latex vs PVAc vs Acid) not disclosed anywhere in provided documents - bottom-up (Method 2) TAM not constructed to avoid estimating", "No India-specific (vs global) VP Latex or SBR-Latex-for-construction-chemicals market size found in any searched source", "Current market price / P/E not available at stage 9 (out of scope) - Section 5E valuation-implication line left incomplete for stage 11"]
-flags: ["Revenue-mix/growth-rate discrepancy across AR MD&A text (10%), AR segment table (27.6%), and Inv Pres chart (~10-15%) for PP&C FY26 growth - this stage uses audited AR segment table per task instruction; Q1 FY27 growth (27.5% YoY) corroborates the higher AR-table read", "Peer-aggregation (Pidilite-implied India adhesives market ~Rs10,000-11,000cr) diverges ~3x from top-down TAM (Rs31,324-35,245cr); top-down retained as primary, peer check flagged as material downside caution", "SBR-Latex-for-construction-chemicals and packaging adhesives could not be quantified in TAM/SAM/SOM (no input-supplier-level market size found, only mis-scoped finished-goods ceilings); excluded from headline math, tracked as unquantified optionality", "VP Latex global market-size estimates diverge ~2x across vendor sources; conservative low end used", "Capacity cross-check: SOM exceeds what committed capacity can physically support on linear scaling (gap ~Rs623cr yr3, ~Rs1,866cr yr5) - SOM is the optimistic side", "Management states no single TAM figure (a positive); constructed aggregate of its own citations implies ~15x conservative TAM, driven by two downstream/global-scope citations against pre-revenue or one-step-removed businesses - read as inflated with this caveat"]
-market_definition: "Retained PP&C entity: India branded adhesives/wood finishes + global VP Latex (tyre-cord/industrial, ex-China) + global PVAc/gum-base supply; excludes SSP/NPK/Agri Nutrients (demerging) and unquantified SBR-latex-for-construction-chemicals optionality"
+source_fidelity_correction: "Corrected against Verifier A (B12a) findings; market-share base fixed to Note 39 AR p.150 external-customer revenue Rs 1,164.84 Cr; demerging aggregate fixed to Rs 692.34 Cr. Disposition: GATE HELD - figures corrected at source (correct anchor shown)."
+input_gaps: ["bottom-up unit economics (Method 2) - no MT/product split or utilisation % disclosed", "capacity utilisation % - NOT FOUND", "current market price/P/E - outside stage 9 document set, left for stage 11"]
+flags:
+  - "Revenue-mix discrepancy: Inv. Pres. 73%/27% PP&C/Agri vs audited Note 39 (AR p.150) 62.7%/37.3% (ext-customer) / 63.5%/36.5% (total-segment) - wider gap than previously stated, flagged for verification"
+  - "Peer-aggregation adhesives TAM (~Rs 10,000-11,000 Cr) diverges ~3x from top-down (Rs 31,324-35,245 Cr); top-down retained as primary"
+  - "SBR-Latex-construction-chemicals and packaging adhesives excluded from quantified TAM/SAM/SOM - only mis-scoped finished-goods ceilings found; carried as unquantified optionality"
+  - "VP Latex global market-size estimates diverge ~2x across vendor sources; conservative low end used"
+  - "3C capacity cross-check: SOM exceeds linear-scaled capacity ceiling by ~Rs 633 Cr (yr3) / ~Rs 1,865 Cr (yr5); SOM is the optimistic side"
+  - "Management's constructed TAM aggregate implies ~15.2x conservative TAM - read as inflated (mechanical, from two downstream/global-scope citations vs pre-revenue/one-step-removed businesses)"
+  - "NEW: withdrawn 27.6% PP&C YoY growth figure (untraceable to Note 39) replaced with audited 7.48%/8.75% FY25-FY26 growth, which is materially below the 24.3-24.4% SOM-implied CAGR handed to stage 11; Q1 FY27's 27.5% YoY print is a single quarter, not yet confirmed by a full audited year"
+market_definition: "Retained PP&C entity: India-primary branded adhesives/wood finishes + globally-addressable VP Latex (tyre-cord dipping) and PVAc gum base, excluding pre-revenue SBR-Latex-construction-chemicals and packaging adhesives lines"
 tam_cr: {conservative: 50143, realistic: 61259}
 sam_cr: 47132
 sam_pct_of_tam: 94.0
-som_3yr_cr: 2326
-som_5yr_cr: 3569
-som_implied_revenue_cagr: {yr3: 23.4, yr5: 23.6}
-current_sam_share_pct: 2.63
-revenue_headroom_x: 38.1
-tam_growth_pct: 6.0
+som_3yr_cr: 2235
+som_5yr_cr: 3467
+som_implied_revenue_cagr: {yr3: 24.3, yr5: 24.4}
+current_sam_share_pct: 2.47
+revenue_headroom_x: 40.5
+tam_growth_pct: 6.1
 runway_class: "STRONG"
 mgmt_claim_cr: 764000
 mgmt_claim_ratio: 15.2
 mgmt_claim_read: "inflated"
-capacity_check: "gap of ~Rs623 Cr (3yr) widening to ~Rs1,866 Cr (5yr) between market-share-derived SOM and linear-scaled committed capacity (110,000 MTPA post Samlaya Phase 1&2); SOM is the optimistic side of the pair"
-methods_used: ["top-down (primary)", "peer revenue aggregation (triangulation/flag)", "import substitution (qualitative only, Agri-side note)", "global benchmark (directional only)", "bottom-up: NOT FOUND, no unit volume data"]
-stale_data_flags: [{datapoint: "VP Latex global market size base years", source: "VerifiedMarketReports/ResearchAndMarkets vendor reports", year: "2022-2023"}, {datapoint: "India SSP market size base year", source: "ExpertMarketResearch", year: "2024"}, {datapoint: "China share of global tyre production", source: "Fricotyre/UAE Tyre Auto", year: "2024"}]
-searches_performed: ["India adhesives and sealants market size 2026 CAGR crore", "India construction chemicals waterproofing market size 2026 CRISIL Mordor", "India synthetic latex vinyl pyridine SBR latex market size India", "India single super phosphate SSP fertilizer market size 2026", "USD INR exchange rate August 2026", "India construction chemicals market crore rupees 2026 Mordor CRISIL value", "Pidilite Astral Apcotex revenue India adhesives market share crore", "India wood adhesive market size crore Pidilite Fevicol competitors organized unorganized", "global chewing gum base PVAc SPVA market size manufacturers", "India per capita adhesive consumption kg China global benchmark", "India rock phosphate phosphatic fertilizer import dependence DAP SSP", "vinyl pyridine latex market size billion 2026 Fortune Business Insights", "tyre cord fabric dipping latex market size global RFL", "China share of global tyre production percentage 2025"]
-searches_skipped: ["India-specific packaging adhesives market size - not pursued, product still pre-revenue/market-trial, would not change any anchored number", "India-specific SBR-Latex-for-construction-chemicals input-supply market size - searched via proxies, correctly-scoped figure does not appear to exist in public vendor research"]
-analyst_note: "SBR Latex/construction chemicals and packaging adhesives were deliberately excluded from quantified TAM/SAM/SOM because only finished-goods market sizes exist, not the raw-material/component-supply tier JUBLCPL sells into; forcing an unsourced input-share % was avoided. This makes the handed-off SOM (23.4%/23.6% CAGR) a conservative floor on true optionality, not a ceiling - but Section 3C shows it already runs ahead of disclosed/committed capacity, which stage 11 should treat as the binding near-term constraint rather than TAM."
+capacity_check: "gap of ~Rs 633 Cr (yr3) widening to ~Rs 1,865 Cr (yr5); SOM is the optimistic side"
+methods_used: ["top-down (primary)", "peer-revenue-aggregation (corroboration/caution)", "global-benchmark (directional only)"]
+stale_data_flags:
+  - {datapoint: "VP Latex global market size (0.5bn/2022 base)", source: "VerifiedMarketReports", year: 2022}
+  - {datapoint: "VP Latex global market size (1.17bn/2023 base)", source: "ResearchAndMarkets", year: 2023}
+searches_performed: ["India adhesives and sealants market size 2026", "India construction chemicals/waterproofing market size 2026", "India synthetic latex/VP/SBR latex market size", "India SSP fertiliser market size 2026", "USD/INR exchange rate August 2026", "India construction chemicals market size in Rs crore", "Pidilite/Astral/Apcotex India adhesives revenue and market share", "India wood adhesive market size/organised-unorganised split", "global chewing gum base/PVAc market size", "India per-capita adhesive consumption vs China/global benchmark", "India rock phosphate/phosphatic fertiliser import dependence", "vinyl pyridine latex market size 2026", "tyre cord fabric dipping latex market size global", "China share of global tyre production 2025"]
+searches_skipped: ["India-specific packaging adhesives market size (pre-revenue for JUBLCPL, would not change anchored numbers)", "India-specific SBR-Latex-construction-chemicals input-supply market size (proxies searched, correctly-scoped figure not found)"]
+analyst_note: "Correction against Verifier A: market-share base fixed to Note 39 (AR p.150) external-customer revenue Rs 1,164.84 Cr; demerging aggregate fixed to Rs 692.34 Cr. This also surfaced that the prior 27.6% PP&C growth figure was untraceable; the audited replacement (7.48-8.75% FY25-26) sits below the 24.3-24.4% SOM-implied CAGR, reversing the earlier conservative-direction claim. Stage 11 should treat the SOM CAGR as an upper-range figure pending confirmation the Q1 FY27 acceleration (27.5% YoY) persists across a full year, and should treat Section 3C capacity (not TAM) as the binding near-term constraint."

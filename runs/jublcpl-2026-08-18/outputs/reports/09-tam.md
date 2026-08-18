@@ -1,6 +1,69 @@
 # Stage 9 — TAM / SAM / SOM Market Sizing: Jubilant Agri & Consumer Products Ltd (JUBLCPL)
 
 Run date: 2026-08-18 | Model: claude-sonnet-5 | Status: complete
+**Revision: source-fidelity correction per Verifier A audit (see log below).**
+
+## SOURCE-FIDELITY CORRECTION LOG (2026-08-18, post Verifier A audit)
+
+This revision corrects two Verifier A findings against the audited source
+(re-read directly, Note 39 Segment Information, AR p.150,
+`593644c3-68a7-47e1-8955-1cabf256f448.pdf`):
+
+1. **CRITICAL**: the market-share base of Rs 12,386 Mn (Rs 1,238.6 Cr),
+   previously attributed to "AR p.19," does not appear in the audited
+   segment table. Corrected to Note 39 (AR p.150): PP&C **total segment
+   revenue** Rs 12,046.73 Mn = **Rs 1,204.67 Cr**; PP&C **revenue from
+   external customers** Rs 11,648.41 Mn = **Rs 1,164.84 Cr**. Per the
+   correction instruction, external-customer revenue is used as the
+   market-share/revenue-headroom anchor (the correct denominator for
+   external market share; inter-segment revenue is not externally
+   captured share); the total-segment figure is shown alongside for
+   reference throughout.
+2. **MAJOR**: the demerging-segment aggregate (P&K Fertilizers + Agri
+   Nutrients, FY26) was stated as Rs 702.3 Cr. Corrected to Note 39 (AR
+   p.150): Rs 6,811.92 Mn + Rs 111.47 Mn = **Rs 6,923.39 Mn = Rs 692.34
+   Cr**.
+
+Recomputed on the corrected base: `current_sam_share_pct` (2.63% →
+2.47%), `som_3yr_cr` (2,326 → 2,235), `som_5yr_cr` (3,569 → 3,467),
+`som_implied_revenue_cagr` (23.4%/23.6% → 24.3%/24.4%),
+`revenue_headroom_x` (38.1x → 40.5x), the Section 3C capacity-ceiling and
+gap figures, the Section 5A funnel, the Section 5B/5C runway inputs, and
+the Section 5E output card.
+
+A further, downstream consequence of correction #1: the FY25→FY26 PP&C
+YoY growth figure previously stated as "27.6%" (built on the erroneous
+Rs 1,238.6 Cr figure and an unverified Rs 970.4 Cr FY25 comparator,
+neither of which traces to Note 39 or any other located audited table)
+is **withdrawn** and replaced with the audited Note 39 comparison:
+external-customer revenue grew **7.48%** (Rs 1,083.74 Cr → Rs 1,164.84
+Cr) and total segment revenue grew **8.75%** (Rs 1,107.79 Cr → Rs
+1,204.67 Cr), FY25→FY26 (AR p.150). This changes the direction of the
+Section 3B growth cross-check materially — see revised 3B and new Flag 7
+below. All TAM, SAM, market-size sourcing, `runway_class` tier,
+`mgmt_claim` figures, and Section 4 content are unchanged, as they do not
+depend on the PP&C revenue base. The prior version of this report was
+also missing its closing YAML block; that is supplied at the end of this
+revision.
+
+**Reconciliation (p.19 MD&A vs p.150 audited Note 39):** AR p.19 (MD&A
+commentary/Consolidated Financial Results narrative) does not itself
+tabulate a PP&C segment-revenue figure matching the Rs 1,238.6 Cr / Rs
+702.3 Cr previously cited to it; those figures could not be traced to any
+audited table and are superseded. The audited **Note 39 Segment
+Information (AR p.150)** is the primary, controlling source for all
+segment-revenue figures in this report — it is the Ind AS 108 statutory
+segment disclosure, subject to audit, versus MD&A narrative text, which
+is not. Consolidated Revenue from Operations Rs 18,911 Mn = Rs 1,891.1
+Cr (AR p.19, audited, Consolidated Financial Results) is a separate,
+group-consolidated-level line (not a standalone-segment breakup) and is
+retained unchanged from the prior report; it is close to, but not
+identical with, Note 39's standalone total segment revenue sum of Rs
+18,970.12 Mn = Rs 1,897.01 Cr (a ~Rs 6 Cr difference plausibly from
+consolidation adjustments/other operating income, not material to this
+report's conclusions).
+
+---
 
 Scope decision (per task brief and B04 SOTP framing): JUBLCPL is mid-demerger.
 The **RETAINED** entity — Performance Polymers & Chemicals (Adhesives, Wood
@@ -10,14 +73,17 @@ the SOTP survivor. The **DEMERGING** Agri entity (SSP + bulk NPK + Agri
 Nutrients) is noted separately and briefly, not carried through the full
 five-section treatment, since it is leaving the listed shell.
 
-Revenue anchor used throughout: **audited AR segment-note table (AR p.19)**,
-per explicit task instruction, over the Investor Presentation's 73%/27%
-PP&C/Agri split (slide 2), which is flagged as an internal discrepancy
-(see Flags). AR segment table, FY26: PP&C (retained) Rs 12,386 mn = **Rs
-1,238.6 Cr**; P&K Fertilisers Rs 6,812 mn + Agri Nutrients Rs 111 mn =
-**Rs 702.3 Cr** (demerging); consolidated Revenue from Operations Rs
-18,911 mn = **Rs 1,891.1 Cr** (AR p.19, audited, Consolidated Financial
-Results).
+Revenue anchor used throughout: **audited Note 39 Segment Information
+(AR p.150)**, the primary audited source, per the correction above. Note
+39, FY26: PP&C (retained) total segment revenue Rs 12,046.73 Mn = **Rs
+1,204.67 Cr**; PP&C revenue from external customers Rs 11,648.41 Mn =
+**Rs 1,164.84 Cr** (used as the market-share/revenue-headroom base); P&K
+Fertilisers Rs 6,811.92 Mn + Agri Nutrients Rs 111.47 Mn = **Rs 6,923.39
+Mn = Rs 692.34 Cr** (demerging). Consolidated Revenue from Operations Rs
+18,911 Mn = **Rs 1,891.1 Cr** (AR p.19, audited, Consolidated Financial
+Results) is the group-level figure, unchanged from before. This still sits
+against the Investor Presentation's 73%/27% PP&C/Agri split (slide 2),
+which remains flagged as an internal discrepancy (see Flags, updated).
 
 ---
 
@@ -236,8 +302,12 @@ favourable market access.
 
 ### 3B SOM at 3 and 5 years
 
-Current SAM share = PP&C FY26 revenue ÷ SAM = Rs 1,238.6 Cr ÷ Rs 47,132
-Cr = **2.63%**.
+**[CORRECTED]** Current SAM share = PP&C FY26 revenue from external
+customers ÷ SAM = Rs 1,164.84 Cr ÷ Rs 47,132 Cr = **2.47%** (Note 39, AR
+p.150). For reference, on total segment revenue (Rs 1,204.67 Cr,
+inter-segment-inclusive), the ratio would be 2.56%; external-customer
+revenue is used as the primary anchor since external market share is
+the relevant construct here.
 
 Share-gain rules applied: the adhesives sub-market is **highly
 organised already** (top-5 >90% share per Method 3 — no >40%
@@ -250,32 +320,46 @@ modest step-up by year 5 justified narrowly by the committed Samlaya
 brownfield capacity (+37.5% MTPA, Phase-1 already commissioned Q1
 FY27).
 
-- **3yr**: +1.5pp → 4.13% share. SAM grows at a blended weighted CAGR
-  of 6.11% (Adhesives 6.9% × Rs31,324 wt. + VP Latex 3.5% [AR p.16 own
-  cited 3–4%, midpoint] × Rs3,011 wt. + Gum Base 4.8% × Rs12,797 wt.) →
-  SAM(yr3) ≈ Rs 56,300 Cr. **SOM 3yr = 4.13% × 56,300 = Rs 2,326 Cr.**
+- **3yr**: +1.5pp → **3.97%** share (corrected from 2.47% base). SAM
+  grows at a blended weighted CAGR of 6.11% (Adhesives 6.9% × Rs31,324
+  wt. + VP Latex 3.5% [AR p.16 own cited 3–4%, midpoint] × Rs3,011 wt. +
+  Gum Base 4.8% × Rs12,797 wt.) → SAM(yr3) ≈ Rs 56,300 Cr (unchanged;
+  independent of the PP&C revenue correction). **SOM 3yr = 3.97% ×
+  56,300 = Rs 2,235 Cr.**
 - **5yr**: +3.0pp (low end of the "aggressive, capacity+execution"
-  band, capped there by Moderate execution-moat grade) → 5.63% share.
-  SAM(yr5) ≈ Rs 63,380 Cr. **SOM 5yr = 5.63% × 63,380 = Rs 3,569 Cr.**
+  band, capped there by Moderate execution-moat grade) → **5.47%**
+  share. SAM(yr5) ≈ Rs 63,380 Cr (unchanged). **SOM 5yr = 5.47% ×
+  63,380 = Rs 3,467 Cr.**
 
-**Implied revenue CAGR** (from FY26 PP&C base of Rs 1,238.6 Cr):
-- 3yr: (2,326/1,238.6)^(1/3) − 1 = **23.4%**
-- 5yr: (3,569/1,238.6)^(1/5) − 1 = **23.6%**
+**Implied revenue CAGR** (from FY26 PP&C external-customer base of Rs
+1,164.84 Cr, Note 39, AR p.150):
+- 3yr: (2,235/1,164.84)^(1/3) − 1 = **24.3%**
+- 5yr: (3,467/1,164.84)^(1/5) − 1 = **24.4%**
 
-Cross-check against actual observed growth: AR segment table shows
-27.6% PP&C YoY growth FY25→FY26 (Rs 970.4 Cr → Rs 1,238.6 Cr, AR p.19);
-Q1 FY27 PP&C net sales grew 27.5% YoY (Rs 299.3 Cr → Rs 381.5 Cr, Inv.
-Pres. slide 8). Both independently land close to each other (~27–28%)
-and **above** this stage's 23–24% SOM-implied CAGR — i.e., the
-share-gain-derived SOM sits modestly **below** the two most recent
-actual growth prints, which is the conservative direction intended.
-Separately, the Investor Presentation's own FY24–26 bar chart (Rs
-957.7 → 1,104.2 → 1,198.8 Cr, slide 7) and the AR MD&A narrative text
-("10% growth") are the low outliers — both already flagged in B04/B07
-as an unreconciled three-way internal discrepancy. This stage's SOM
-math uses the audited AR segment table per the task's explicit
-instruction, and the Q1 FY27 print corroborates that basis over the
-Inv. Pres. chart / narrative text.
+**[CORRECTED] Cross-check against actual observed growth**: audited Note
+39 (AR p.150) shows PP&C revenue from external customers grew **7.48%**
+FY25→FY26 (Rs 1,083.74 Cr → Rs 1,164.84 Cr), and total segment revenue
+grew **8.75%** (Rs 1,107.79 Cr → Rs 1,204.67 Cr). The prior version of
+this report cited a "27.6%" PP&C YoY growth figure attributed to "AR
+p.19," built on the erroneous Rs 1,238.6 Cr figure and an unverified Rs
+970.4 Cr FY25 comparator; neither traces to Note 39 or any other located
+audited table, and both are withdrawn. On the corrected, audited annual
+figures, growth (7.5–8.75%) sits **below**, not above, this stage's
+24.3–24.4% SOM-implied CAGR — the opposite of the prior report's
+"conservative direction" claim; on a full-year audited basis the SOM
+math now implies materially *faster* growth than the company has
+recently delivered. Separately, and notably, the Investor Presentation's
+own FY24–26 bar chart (Rs 1,104.2 → Rs 1,198.8 Cr, slide 7, +8.57% YoY)
+and the AR MD&A narrative text ("10% growth") now closely corroborate
+the corrected Note 39 audited growth rate (7.5–8.75% vs 8.57%) — what
+the prior report treated as an unreconciled three-way discrepancy is
+resolved: the audited-table figure and the Investor Presentation/MD&A
+figures converge; only the withdrawn "27.6%" figure was the outlier. Q1
+FY27 (27.5% YoY, Rs 299.3 Cr → Rs 381.5 Cr, Inv. Pres. slide 8) remains a
+genuine strong single-quarter print, but on the evidence now in front of
+this stage it reads as a recent acceleration not yet corroborated by a
+full audited year — flagged as a new caution (Flag 7) rather than
+treated as confirming the SOM-implied CAGR is conservative.
 
 ### 3C Capacity cross-check
 
@@ -290,14 +374,15 @@ barred. As an illustrative, explicitly-flagged linear scaling only
 (assumes constant utilisation and product mix, which may understate or
 overstate the true ceiling):
 
-Capacity-scaled revenue ceiling ≈ Rs 1,238.6 Cr × (110,000/80,000) =
-**≈ Rs 1,703 Cr** (flat, since no further capacity beyond the announced
-30,000 MTPA is disclosed for either the 3yr or 5yr horizon).
+**[CORRECTED]** Capacity-scaled revenue ceiling ≈ Rs 1,164.84 Cr (Note
+39, external-customer base) × (110,000/80,000) = **≈ Rs 1,602 Cr**
+(flat, since no further capacity beyond the announced 30,000 MTPA is
+disclosed for either the 3yr or 5yr horizon).
 
-- **Gap at 3yr**: SOM (Rs 2,326 Cr) − capacity ceiling (Rs 1,703 Cr) =
-  **≈ Rs 623 Cr shortfall**.
-- **Gap at 5yr**: SOM (Rs 3,569 Cr) − capacity ceiling (Rs 1,703 Cr,
-  unchanged, no further capex disclosed) = **≈ Rs 1,866 Cr shortfall**.
+- **Gap at 3yr**: SOM (Rs 2,235 Cr) − capacity ceiling (Rs 1,602 Cr) =
+  **≈ Rs 633 Cr shortfall**.
+- **Gap at 5yr**: SOM (Rs 3,467 Cr) − capacity ceiling (Rs 1,602 Cr,
+  unchanged, no further capex disclosed) = **≈ Rs 1,865 Cr shortfall**.
 
 This directly corroborates B07's own flag on `capex_embedded_growth_pct
 = 25.2%` being "likely overstated" (blended group fixed-asset
@@ -310,7 +395,7 @@ capacity beyond the announced Phase-1/2, which the company itself
 frames as operationally easy ("Manufacturing leverage: Expansion is
 brownfield at Vadodara, adding capacity without greenfield land or
 approval lead-time," Inv. Pres. slide 5) but which is not currently
-committed. **capacity_check: gap of ≈₹623 Cr (yr3) widening to ≈₹1,866
+committed. **capacity_check: gap of ≈₹633 Cr (yr3) widening to ≈₹1,865
 Cr (yr5); SOM is the optimistic side.**
 
 ---
@@ -379,24 +464,41 @@ Cr (yr5); SOM is the optimistic side.**
 ```
 TAM (conservative)  Rs 50,143 Cr  (realistic: Rs 61,259 Cr)
    -> SAM            Rs 47,132 Cr  (94.0% of TAM)
-        -> SOM 3yr    Rs  2,326 Cr  (4.13% of SAM-yr3, 4.9% of current SAM)
-        -> SOM 5yr    Rs  3,569 Cr  (5.63% of SAM-yr5, 7.6% of current SAM)
-Current PP&C revenue (FY26, AR p.19): Rs 1,238.6 Cr = 2.63% of current SAM
+        -> SOM 3yr    Rs  2,235 Cr  (3.97% of SAM-yr3, 4.7% of current SAM)
+        -> SOM 5yr    Rs  3,467 Cr  (5.47% of SAM-yr5, 7.4% of current SAM)
+Current PP&C revenue, external customers (FY26, Note 39, AR p.150):
+Rs 1,164.84 Cr = 2.47% of current SAM
+(total segment revenue Rs 1,204.67 Cr = 2.56% of current SAM, reference only)
 ```
 
 ### 5B Runway assessment
 
-- Revenue headroom = SAM ÷ current revenue = 47,132 / 1,238.6 = **38.1x**
-- TAM growth rate (blended, weighted) ≈ **6.0%/yr**
-- Company CAGR vs TAM: recent actual PP&C growth (27.6% AR FY26 YoY;
-  27.5% Q1 FY27 YoY) vastly outpaces the ~6% underlying TAM growth —
-  JUBLCPL is **gaining share**, not merely riding the market, though
-  from a very small (2.6%) base.
-- Years to saturate SAM at current company growth rate (~23.5% SOM-
-  implied CAGR) vs SAM's own ~6% growth: solving 1,238.6×(1.235)^n =
-  47,132×(1.06)^n → **≈ 24 years**. A long runway on the numbers, but
-  this assumes both growth rates hold constant for two decades-plus,
-  which is not a forecast, only an arithmetic illustration.
+**[CORRECTED]**
+- Revenue headroom = SAM ÷ current revenue (external-customer basis) =
+  47,132 / 1,164.84 = **40.5x** (reference, total-segment basis: 47,132
+  / 1,204.67 = 39.1x)
+- TAM growth rate (blended, weighted) ≈ **6.1%/yr**
+- Company CAGR vs TAM: **[CORRECTED]** full-year audited PP&C growth per
+  Note 39 (external-customer revenue Rs 1,083.74 Cr → Rs 1,164.84 Cr,
+  **7.48%** YoY; total segment revenue Rs 1,107.79 Cr → Rs 1,204.67 Cr,
+  **8.75%** YoY, both AR p.150, FY25→FY26) sits only modestly above the
+  ~6.1% underlying blended TAM growth rate — a materially different,
+  more cautious picture than the prior version of this report's
+  withdrawn 27.6% figure. The much stronger Q1 FY27 print (27.5% YoY,
+  Inv. Pres. slide 8) is a single-quarter figure and should not be
+  extrapolated to a full-year rate without further data. On the audited
+  full-year figure, JUBLCPL's PP&C growth is closer to riding the market
+  than materially outpacing it; whether the strong Q1 FY27 quarter marks
+  a genuine inflection is not yet confirmed by a full audited year — new
+  flag (Flag 7).
+- Years to saturate SAM at current company growth rate (~24.35%
+  SOM-implied CAGR, midpoint) vs SAM's own ~6.1% growth: solving
+  1,164.84×(1.2435)^n = 47,132×(1.061)^n → **≈ 23 years**. A long
+  runway on the numbers, but this assumes both growth rates hold
+  constant for two decades-plus, which is not a forecast, only an
+  arithmetic illustration; it is also now in tension with the audited
+  full-year growth print above, which is far below the SOM-implied
+  CAGR used in this calculation.
 
 ### 5C Runway classification: **STRONG**
 
@@ -404,13 +506,15 @@ Not MASSIVE: the underlying product markets (adhesives, VP Latex, gum
 base) are individually mature, single-digit-growth categories by their
 own vendor reports and by the company's own language ("modest but
 reliable growth," "steady," AR p.17) — not a structurally
-fast-growing TAM. Not GOOD/MODERATE/LIMITED either: the 38x headroom
-and heavy market concentration (meaning absolute room to grow even at
-modest relative share-gain) plus a genuinely global (not just India)
-addressable footprint for two of three components support a
+fast-growing TAM. Not GOOD/MODERATE/LIMITED either: the **[CORRECTED]
+40.5x** headroom and heavy market concentration (meaning absolute room
+to grow even at modest relative share-gain) plus a genuinely global (not
+just India) addressable footprint for two of three components support a
 classification above the middle tiers. STRONG reflects large headroom
 capped by mature-market growth character, high incumbent concentration
-(Pidilite/top-5), and the Section 3C capacity gap.
+(Pidilite/top-5), and the Section 3C capacity gap; the corrected
+audited-growth cross-check (Flag 7) is a fresh caution on how quickly
+that headroom converts, not a change to the tier itself.
 
 ### 5D SAM expansion levers actually being pursued (unquantified)
 
@@ -426,7 +530,7 @@ capped by mature-market growth character, high incumbent concentration
   register; "possible exports to neighbouring countries," AR p.16): no
   target disclosed — not added.
 
-All three would raise headroom further above the 38.1x base case if
+All three would raise headroom further above the 40.5x base case if
 and when they convert from claim/trial to disclosed revenue (per B07's
 optionality register), but per the NEVER-estimate rule none is
 quantified here.
@@ -436,42 +540,48 @@ quantified here.
 ```
 TAM (conservative / realistic):  Rs 50,143 Cr / Rs 61,259 Cr
 SAM:                              Rs 47,132 Cr (94.0% of TAM)
-SOM 3yr / 5yr:                    Rs 2,326 Cr / Rs 3,569 Cr
-SOM-implied revenue CAGR:         23.4% (3yr) / 23.6% (5yr)
-Current SAM share:                2.63%
-Revenue headroom:                 38.1x
+SOM 3yr / 5yr:                    Rs 2,235 Cr / Rs 3,467 Cr            [CORRECTED]
+SOM-implied revenue CAGR:         24.3% (3yr) / 24.4% (5yr)            [CORRECTED]
+Current SAM share:                2.47% (external-customer basis)      [CORRECTED]
+Revenue headroom:                 40.5x                                 [CORRECTED]
 Runway class:                     STRONG
-Capacity check:                   gap of ~Rs 623 Cr (3yr) / ~Rs 1,866 Cr (5yr);
+Capacity check:                   gap of ~Rs 633 Cr (3yr) / ~Rs 1,865 Cr (5yr);  [CORRECTED]
                                    SOM is the optimistic side of the pair
 Management claim vs conservative: ~15.2x -> inflated (mechanically; caveat: no
                                    single stated claim, arises from citing
                                    downstream/global scope for two of six items)
 ```
 
-**Valuation implication line**: At 23–24% revenue CAGR implied by SOM,
-with a margin trajectory that is mixed and worth stage-11 scrutiny —
-whole-PP&C EBIT margin **compressed** FY25→FY26 (17.0%→13.4%, AR p.19)
-even as the specifically-called-out Adhesives sub-segment EBIT margin
-**expanded** (8.9% FY26 → 12.7% Q1 FY27 YoY, Inv. Pres. slides 10–11) —
-the earnings-growth trajectory embedded here is approximately **23–24%
-CAGR if margins hold flat at the blended level**, or higher if the
+**Valuation implication line**: At **24.3–24.4%** revenue CAGR implied
+by SOM, with a margin trajectory that is mixed and worth stage-11
+scrutiny — whole-PP&C EBIT margin **compressed** FY25→FY26 (17.0%→13.4%,
+AR p.19) even as the specifically-called-out Adhesives sub-segment EBIT
+margin **expanded** (8.9% FY26 → 12.7% Q1 FY27 YoY, Inv. Pres. slides
+10–11) — the earnings-growth trajectory embedded here is approximately
+**24% CAGR if margins hold flat at the blended level**, or higher if the
 Adhesives-led mix-shift toward higher-margin branded revenue continues.
-Whether this **supports or does not support** the current valuation of
-**[NOT FOUND — current market price/P/E is outside stage 9's document
-set; this comparison is left for stage 11, which has access to market
-data]** x P/E cannot be completed at this stage.
+This SOM-implied CAGR should now be read alongside the corrected 3B/5B
+finding that full-year audited PP&C growth (7.5–8.75%, Note 39, AR
+p.150) sits well below it — stage 11 should treat the SOM-implied CAGR
+as the upper end of a plausible range, not a base case, pending
+confirmation that the Q1 FY27 acceleration (27.5% YoY) holds for a full
+year. Whether this **supports or does not support** the current
+valuation of **[NOT FOUND — current market price/P/E is outside stage
+9's document set; this comparison is left for stage 11, which has
+access to market data]** x P/E cannot be completed at this stage.
 
 ---
 
 ## FLAGS
 
-1. Revenue-mix discrepancy (Inv. Pres. slide 2, 73%/27% PP&C/Agri vs AR
-   segment table, 65.5%/34.5–36.6%, AR p.19) — carried from B04/B07,
-   resolved here by using the audited AR table per task instruction;
-   Q1 FY27 growth print (27.5% YoY) corroborates the AR table's higher
-   growth read over the Investor Presentation's own historical bar
-   chart and MD&A narrative text (three-way discrepancy, unresolved by
-   design, flagged for numeric verification).
+1. Revenue-mix discrepancy (Inv. Pres. slide 2, 73%/27% PP&C/Agri vs
+   audited Note 39, AR p.150, **[CORRECTED]** 62.7%/37.3%
+   external-customer basis, or 63.5%/36.5% total-segment basis) —
+   carried from B04/B07, resolved here by using the audited Note 39
+   table per Verifier A's source-fidelity correction; the corrected gap
+   (62.7–63.5% vs 73%) is wider than the prior version of this report
+   stated (65.5% vs 73%), a materially larger internal discrepancy,
+   flagged for numeric verification with the company.
 2. Peer-aggregation (Pidilite-implied ~Rs 10,000–11,000 Cr) diverges
    ~3x from the top-down adhesives TAM (Rs 31,324–35,245 Cr); top-down
    retained as primary (multi-source + AR corroboration), peer check
@@ -486,13 +596,26 @@ data]** x P/E cannot be completed at this stage.
    sources; conservative low end used throughout.
 5. Section 3C capacity cross-check: the market-share-derived SOM sits
    above what announced/committed capacity can physically support on
-   a naive linear-scaling basis (gap ~Rs 623 Cr yr3, ~Rs 1,866 Cr yr5)
-   — the SOM, not the capex plan, is the optimistic side of this pair.
+   a naive linear-scaling basis (gap ~Rs 633 Cr yr3, ~Rs 1,865 Cr yr5,
+   **[CORRECTED]** figures) — the SOM, not the capex plan, is the
+   optimistic side of this pair.
 6. Management does not state a single consolidated TAM figure (a point
    in its favour); a constructed aggregate of its own six citations
    implies ~15x the conservative TAM, driven mechanically by two
    downstream/broad-scope global citations against pre-revenue or
    one-step-removed businesses — read as "inflated" with this caveat.
+7. **[NEW, from correction]** The prior version of this report's
+   "27.6% PP&C YoY growth" figure (attributed to "AR p.19") does not
+   trace to Note 39 or any other located audited table and is
+   withdrawn. The audited FY25→FY26 growth rate (7.48% external-customer
+   / 8.75% total-segment, Note 39, AR p.150) is materially lower than
+   the 24.3–24.4% SOM-implied CAGR this stage hands to stage 11, and
+   corroborates (rather than contradicts) the Investor Presentation's
+   own bar chart and MD&A "10% growth" narrative — previously treated
+   as the discrepant "low outliers." The strong Q1 FY27 print (27.5%
+   YoY, Inv. Pres. slide 8) remains real but is a single quarter;
+   stage 11 should not treat the SOM-implied CAGR as already validated
+   by a full audited year of growth.
 
 ## SEARCH LOG
 
@@ -515,8 +638,9 @@ anchored number); India-specific SBR-Latex-for-construction-chemicals
 input-supply market size — searched via proxies (waterproofing
 finished-goods, broad global SBR latex) but the correctly-scoped figure
 does not appear to exist in public vendor research; not pursued
-further given diminishing returns. No search errors occurred; status
-is complete, not partial.
+further given diminishing returns. This revision performed no new web
+searches (source-fidelity correction against the already-injected
+audited annual report only); status is complete, not partial.
 
 ## ANALYST NOTE
 
@@ -529,9 +653,14 @@ unsourced "input share of finished-goods value" percentage, this stage
 excluded those two lines from the quantified TAM/SAM/SOM and carried
 them as named, sourced-but-unquantified optionality — consistent with
 B07's own "claim, not contract" framing for the same catalysts. This
-means the SOM figures handed to stage 11 (23.4%/23.6% CAGR) are a
-**conservative floor** on the retained entity's true growth optionality,
-not a ceiling — but they are also, per Section 3C, already running
-ahead of what disclosed/committed capacity can physically support,
-which stage 11 should treat as the binding near-term constraint rather
-than the TAM ceiling.
+means the SOM figures handed to stage 11 (**[CORRECTED] 24.3%/24.4%**
+CAGR) exclude real upside optionality on the SAM side, but — per the
+Section 3B/5B correction — they are simultaneously running well *ahead*
+of the audited full-year PP&C growth rate (7.5–8.75%, Note 39) and
+already ahead of what disclosed/committed capacity can physically
+support (Section 3C). Stage 11 should therefore treat the SOM-implied
+CAGR as neither a clean floor nor ceiling: it is optimistic relative to
+both the audited annual growth trend and near-term capacity, but
+conservative relative to unquantified SAM-expansion optionality (SBR
+Latex, packaging adhesives) that would raise the true addressable base
+if realised. The binding near-term constraint is capacity, not TAM.

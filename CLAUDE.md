@@ -34,6 +34,20 @@ Do not upgrade a stage's model without editing its agent file.
 - "anchored" = every number followed by (source, page/note)
 - "flag" = surfaced prominently in the verdict, decision stays human
 
+## SESSION DISCIPLINE (prompt cache)
+- Model and effort are fixed at session start and never changed mid-session:
+  switching either busts the prompt cache and re-prefills the whole
+  conversation at full price. This governs the session's own model and is
+  separate from subagent DISPATCH (each stage runs its own agent at its
+  frontmatter model, which is not a mid-session switch). If a different
+  session model is needed, start a fresh session.
+- Run commands quiet by default so their output does not flood context on
+  every use: git commit -q, git status --short, git log --oneline -n N
+  (never a bare git log / git diff over a large range); pip install -q;
+  apt-get install -y -qq; redirect verbose PDF-extraction output. The
+  collect_to_repo.py collector runs on the operator's machine, out of
+  session; in-session it appears only as collect_to_repo.py --push-again.
+
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
 LESSONS.md at start (the lean working memory, hard budget under 1,500 tokens:

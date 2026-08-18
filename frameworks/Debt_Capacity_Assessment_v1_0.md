@@ -1,6 +1,6 @@
 # DEBT CAPACITY ASSESSMENT v1.0
 
-*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP v2.0 and after Role 5 (and Role 5.5 if present). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
+*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP v2.0 and after Role 5.5 (Downstream Signal Identification). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
 
 ## WHY THIS SECTION EXISTS
 
@@ -11,7 +11,7 @@ The judgment here is backward only. It asks what coverage this company has actua
 ## THE PLACEMENT
 
 ```
-Role 5 (concall) → Role 5.5 (if present) →
+Role 5 (concall) → Role 5.5 (Downstream Signal Identification) →
 DEBT CAPACITY ASSESSMENT (this section) →
 FTTCP v2.0 → Market-Implied Assumptions → Role 1 → Role 2 → Role 3
 ```

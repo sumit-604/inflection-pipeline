@@ -8,11 +8,13 @@
 
 | Document | Highest existing | New version created |
 |---|---|---|
-| FTTCP | v1.2 file (v1.3 content) | **v2.0** — `FTTCP_v2.0_Consolidated.md` |
-| Master Project Prompt | v3.3 | **v3.4** — `Master_Project_Prompt_v3.4.md` |
+| FTTCP | v1.2 file (v1.3 content) | **v2.0** — `FTTCP_v2.0_Consolidated.md` (reconciled 18-Aug to the union of both v1.3 lineages, see the RECONCILIATION section) |
+| Master Project Prompt | v3.3 | **v3.5** — `Master_Project_Prompt_v3.5.md` (renumbered from v3.4 on 18-Aug during the v3.4-collision reconciliation, see the RECONCILIATION section) |
 | Section 1B (exit multiple authority) | v3.5.1 (Reconciliation) | **v3.6** — `Section_1B_v3_6_Amendments.md` (new amendment layer) |
 
 No standalone valuation-framework-v4 draft exists in the repo, so the Role 1 valuation amendments (Tasks 4 and 5) were applied to the Master Project Prompt, per the directive's fallback instruction.
+
+> **NOTE (18-Aug reconciliation):** the Damodaran-integration Master was first created as `v3.4`. A version collision was then found: a separate, earlier `v3.4` (the 11-August ValuePickr integration) existed with six amendments that never reached the repo. The two were reconciled into **`Master_Project_Prompt_v3.5.md`**, and FTTCP was reconciled to the union of its two v1.3 lineages. See the RECONCILIATION section near the end of this file. References to `Master_Project_Prompt_v3.4.md` in the dated task narrative below describe the state at 18-Aug creation time and are retained as history.
 
 ---
 
@@ -23,7 +25,7 @@ No standalone valuation-framework-v4 draft exists in the repo, so the Role 1 val
 | `frameworks/Debt_Capacity_Assessment_v1_0.md` | Task 1 | New standalone section, runs before FTTCP |
 | `frameworks/FTTCP_v2.0_Consolidated.md` | Task 2 | Copy of v1.2, everything preserved as PART A, PART B added |
 | `frameworks/Market_Implied_Assumptions_v1_0.md` | Task 3 | New standalone section, runs after FTTCP, before Role 1 |
-| `frameworks/Master_Project_Prompt_v3.4.md` | Tasks 4, 5 | Copy of v3.3, Role 1 and conclusion amended, sequence updated |
+| `frameworks/Master_Project_Prompt_v3.5.md` (created as v3.4, renumbered 18-Aug) | Tasks 4, 5 + ValuePickr reconciliation | Copy of v3.3, Role 1 and conclusion amended, sequence updated, then merged with the six ValuePickr v3.4 amendments |
 | `frameworks/Section_1B_v3_6_Amendments.md` | Gates A/B/C/D + Task 4 exit-PE mechanics | New amendment layer (Amendments 11-16) |
 | `macro-sheet.md` | Task 6 | New standing monthly data sheet (repo root) |
 
@@ -122,6 +124,40 @@ Each gate was presented to the operator as a question; only confirmed outcomes w
 
 ---
 
+## RECONCILIATION — v3.4 COLLISION (18-Aug-2026)
+
+After the Damodaran integration above was committed as Master `v3.4`, a version collision surfaced: a separate, earlier `v3.4` produced on 11/12-August (the ValuePickr integration session) carried six amendments that never reached the repo. The operator supplied that file plus two protocol files and a standalone FTTCP v1.3 (via `frameworks/incoming/`). The two `v3.4` drafts were reconciled into a single **`Master_Project_Prompt_v3.5.md`**, preserving every amendment from both, and a third collision (two divergent FTTCP v1.3 lineages) was reconciled inside FTTCP v2.0.
+
+### Renumber
+
+- `Master_Project_Prompt_v3.4.md` → **`Master_Project_Prompt_v3.5.md`** (via `git mv`). Every cross-reference updated: FTTCP v2.0, Debt Capacity Assessment, Market-Implied Assumptions, Section 1B v3.6, both restored protocols, and CHANGES.md. In-file Damodaran amendment tags moved from `(v3.4 …)` to `(v3.5 …)`. The one legitimate reference to Section 1B's own v3.4 amendment was disambiguated to "Section 1B v3.4 Amendment 4.4". The two v3.4 drafts are recorded as history in the header and footer changelog.
+
+### Six ValuePickr amendments merged into v3.5 (verbatim, adapted only for version pointers)
+
+- **(a) Sector Literacy Track** — new section between Investment Criteria and Pipeline Position. 3-book gate before any Medium/Large position; 5-book gate for the Conviction Outlier tier; methodology books (Damodaran, Marks, Klarman, …) logged separately and do not count toward the sector gate.
+- **(b) Category-Break Override** — in Section 1B, the sole mechanism to raise a sector cap. Four mandatory qualifying conditions (first-mover in a new category; explicit customer/partner commitment; capex commissioning timeline; competitor absence, all must hold); three-source 📄 evidence bar (management sources count as zero); magnitude cap Sector Cap × 1.40 with a 45x absolute ceiling; 4-quarter sunset with forced re-underwriting; mandatory Role 3 stress-test; Notion documentation. Four-Pillar Summary gains rows **G2** (override assessment) and **G3** (effective cap = min(G × 1.40, 45x) if qualified); final formula **H = min(F2, G3)**.
+- **(c) Conviction Outlier tier (12-15%)** — in Role 2 Section 7. All-four gating (Gate 0 ≥130 AND EM EXPANSION AND catalyst ≤6mo mostly 📄 AND CMP < MoS) plus additional gates: Sector Literacy ≥5 books, Role 3 SURVIVES, Promoter TRUSTWORTHY+, and Hurdle Ratio passing on the BASELINE sector cap (never the override-adjusted cap).
+- **(d) INSUFFICIENT CONVICTION** — the fourth verdict alongside BUY/WATCHLIST/AVOID. For thesis gaps a named resolving event will close; requires an explicit resolving event and review date. Verdict box and decision rules updated.
+- **(e) Conviction Test** — Role 3 Section 10 (the 3x sizing question), running after the Final Devil's Verdict. Can escalate sizing only within existing framework gates; can reduce sizing without restriction; Notion audit-trail line required.
+- **(f) Role 5.5 (Downstream Signal Identification)** — a full role, inserted between Role 5 and the Debt Capacity Assessment. Five-step protocol plus the consolidated monthly refresh workflow and the Downstream Signal Tracker (Notion database peer to COMPANIES MASTER). Pipeline sequence is now **Role 5 → Role 5.5 → Debt Capacity → FTTCP v2.0 → Market-Implied → Role 1**.
+
+### FTTCP v2.0 reconciled to the union of both v1.3 lineages
+
+The repo's v1.2 file (base of v2.0) carried **Step 2E** (Management Intent-and-Action Ledger, 12-July v1.3). The incoming standalone **v1.3 (11-August)** carried the **Category-Break Override**, the **Signal Gate rule**, and the **Role 5.5 pipeline position**, but NOT Step 2E. Neither was a superset. FTTCP v2.0 now carries all of it: Step 2E plus the Category-Break Override (in the Pillar 1 Integration section), the Signal Gate rule, the Role 5.5 sequence, and Part B. The Master's Category-Break Override cross-reference points to FTTCP v2.0.
+
+### Interaction rules stated explicitly in v3.5 (Section 1B reconciliation note)
+
+1. **Category-Break Override vs quality uplift are DIFFERENT mechanisms.** Quality uplift (×1.25 and up on UA + durability/governance evidence) is routine; the Category-Break Override (×1.40) is exceptional and needs its four conditions. Where both could apply, the higher effective cap governs but both are shown (rows G and G3), and the 45x absolute ceiling binds everything.
+2. **Dispersion-capped sizing binds the Conviction Outlier tier.** A fair value range width above 80% bars Conviction Outlier sizing regardless of the other gates.
+3. **Evidence-scaled margin of safety supersedes any flat MoS language.** The 20%/30%/40% schedule governs wherever the ValuePickr or base text says "20% below" or "20-30% below."
+
+### Protocols restored (step 4)
+
+- `frameworks/Quarterly_Results_Review_Protocol_v1_3.md` — Step 5.5 Downstream Signal reconciliation against the consolidated tracker. (v1.2 retained for history.)
+- `frameworks/Annual_Report_Analysis_Protocol_v1_2.md` — Step 10.5 Downstream Signal annual cross-check against the consolidated tracker. (New to the repo.)
+- Both reference Role 5.5 (now defined in Master v3.5); their internal cross-references were updated to v3.5.
+- The incoming source files remain in `frameworks/incoming/` (the ValuePickr master, the standalone FTTCP v1.3, and the two protocols) as the merge provenance; they are not part of the live framework set and can be removed once the merge is accepted.
+
 ## PARKED — NOT IMPLEMENTED (awaiting operator placement)
 
 Listed verbatim so nothing is silently dropped:
@@ -146,9 +182,11 @@ Listed verbatim so nothing is silently dropped:
 
 The pipeline wrapper injects framework documents by name at run time. Its version references still point at the superseded versions and are the operator's routine promotion step, sequenced deliberately because it moves the prompt-cache boundary. When these new documents are promoted into the injection set, update:
 
-- `prompts/11-valuation-pipeline.md` — the `{{...}}` injection markers and the version banner (currently Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2), and the `framework_versions` YAML field, to add FTTCP v2.0, Master v3.4, Section 1B v3.6, the Debt Capacity Assessment, the Market-Implied Assumptions block, and macro-sheet.md.
-- `frameworks/README.txt` — the "copy these files here" list and the current-version note.
+- `prompts/11-valuation-pipeline.md` — the `{{...}}` injection markers and the version banner (currently Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2), and the `framework_versions` YAML field, to point at **Master v3.5**, Section 1B v3.6, **FTTCP v2.0** (which now carries the Category-Break Override, the Signal Gate, and Part B), and to add the Debt Capacity Assessment, the Market-Implied Assumptions block, and macro-sheet.md.
+- The pipeline needs a **Role 5.5 stage** (Downstream Signal Identification) and a **Debt Capacity stage** wired between the concall stage and FTTCP, plus a Market-Implied stage after FTTCP; the quarterly and AR pipelines need their Step 5.5 / Step 10.5 reconciliation wired to the consolidated Downstream Signal Tracker. New `.claude/agents/*` and `prompts/*` may be required. This is orchestration work beyond the framework-document scope.
+- `frameworks/README.txt` — the "copy these files here" list and the current-version note (now Master v3.5 / Section 1B v3.6 / FTTCP v2.0, plus Debt Capacity, Market-Implied, macro-sheet, Quarterly v1.3, AR v1.2).
 - `.claude/agents/stage-11-valuation.md` — the description line naming the framework versions.
+- `frameworks/incoming/` — the merge-source files (ValuePickr master, standalone FTTCP v1.3, the two protocols) can be deleted once this reconciliation is accepted; they are provenance, not live framework documents.
 - `VERSIONING.md` "rules right now" block and a new `fw-2026-08-18` bookmark after this branch merges to main.
 
 These are pipeline-plumbing edits, not framework-document edits, and were left for the operator per the documents-only scope of this directive. The framework documents themselves are complete and internally consistent.

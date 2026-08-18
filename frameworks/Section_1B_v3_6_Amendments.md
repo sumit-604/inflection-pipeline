@@ -66,7 +66,7 @@ Flat CAGR lines through the projection assume a business grows at one rate and t
 | Modest | Fades to industry growth by Year 3 |
 | None | Fades immediately (industry growth from Year 1) |
 
-"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master v3.4 Role 1: the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.4.
+"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master v3.5 Role 1: the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.5.
 
 ---
 

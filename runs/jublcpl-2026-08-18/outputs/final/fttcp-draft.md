@@ -457,7 +457,8 @@ engaged, cash catalyst is not none. Trim rule: not engaged.
 | Sector cap phase 3 must use | SOTP per operator direction: Business A polymers Specialty chemicals 35x; Business B agri Agri processing 20x. Blended 29.5x only for the pre demerger entity. No quality uplift |
 | Valuation method | Sum of the parts (per B04 primary and operator direction 18-Aug-2026): value polymers and agri separately, do not apply one blended multiple to consolidated earnings |
 | Return tier | Tier A, hurdle 25% |
-| SHARED CATALYST flag | YES. Samlaya commissioning underpins both the revenue STARTING verdict and the ROCE FIRING verdict. Role 3 must stress test it as one point of failure, not two |
+| Per business FTTCP verdicts (sections 6A, 6B) | Business A polymers composite +3 DEEP WATCH, upgrades to BUY-candidate on first standalone accounts; Business B agri composite -2 AVOID with Kernex cash cap engaged. Phase 3 SOTP inherits both |
+| SHARED CATALYST flag | YES. Samlaya commissioning underpins both the revenue STARTING verdict and the ROCE FIRING verdict, in the blended run and in Business A. Role 3 must stress test it as one point of failure, not two |
 
 ---
 
@@ -473,15 +474,16 @@ values the company as it trades today, and it is what phase 3 uses if it values
 JACPL pre demerger. The per business destination multiples, which are the ones
 that matter for the special situation, are:
 
-| Business | Sector cap | Destination PE (Section 1B) | Illustrative equity value |
-|---|---|---|---|
-| A. Polymers (retained, Jubilant Industries) | Specialty chemicals 35x | 30x to 35x | Rs 3,180 to 3,710 Cr |
-| B. Agri (JASL) | Agri processing 20x | 12x to 15x on normalized earnings | Rs 264 to 330 Cr |
-| Blended, as it trades today | 29.5x (revenue weighted) | 29.5x, cap binds | matches the sum of the parts |
+| Business | FTTCP composite | Sector cap | Destination PE (Section 1B) | Illustrative equity value |
+|---|---|---|---|---|
+| A. Polymers (retained, Jubilant Industries) | +3, DEEP WATCH (upgrades to 6-7 on first standalone accounts) | Specialty chemicals 35x | 35x, cap binds | Rs 3,180 to 3,710 Cr |
+| B. Agri (JASL) | -2, AVOID (Kernex cap also engages) | Agri processing 20x | 14x to 17.5x on normalized, not peak, earnings | Rs 264 to 330 Cr |
+| Blended, as it trades today | +3, DEEP WATCH | 29.5x (revenue weighted) | 29.5x, cap binds | matches the sum of the parts |
 
-Full derivation of both per business numbers is in section 6. Phase 3 should
-carry BOTH: 29.5x for the pre demerger entity, and the split 35x / 20x caps
-with the per business pillar inputs for the post demerger sum of the parts.
+Full derivation of both per business runs and multiples is in sections 6A and
+6B. Phase 3 should carry BOTH: 29.5x for the pre demerger entity, and the split
+35x and 20x caps with the per business pillar inputs for the post demerger sum
+of the parts.
 
 | Step | Input | Value |
 |---|---|---|
@@ -603,31 +605,161 @@ generated the entire working capital drag. The demerger is not a financial
 engineering trick here, it is separating a genuinely excellent business from a
 mediocre cyclical one that has been diluting it.
 
-### If I ran FTTCP on each business alone
+### A note on the segment data, before the two runs
 
-This is the part the blended score in section 4 hides. The composite 3 is an
-average of a very good business and a poor one.
+Both runs below use the audited segment note (Note 39, AR p.150), which gives
+FY25 and FY26 on the current three segment basis, plus the quarterly segment
+tables from the Q1 FY27 filing (11 August 2026). The P&K Fertilizers segment
+was only carved out from 18 January 2024, so no segment split exists on this
+basis before FY25. That means each business has a TWO YEAR audited annual
+window, not three, and there is NO segment level cash flow statement for either
+one, because cash flow is reported only for the whole company. So the cash
+transition below is assessed on working capital and balance sheet movement, not
+on a segment CFO to PAT number, which does not exist. Segment ROCE uses segment
+assets minus segment liabilities as capital employed, which excludes allocated
+borrowings and therefore runs higher than a whole company ROCE would. I flag
+that on every ROCE line. This thin evidence base is itself the finding: neither
+business has ever reported as a standalone company, so the protocol can only
+confirm so much until they do.
 
-**Business A, polymers.** Revenue STARTING to FIRING (Q1 FY27 up 29.8%, three
-year segment history too short post scheme to confirm FIRING). Margin STARTING
-(segment PBIT up 22.9% in Q1 even with a 100 bps margin dip, the profit is
-compounding). Cash likely FIRING once seen on its own, because this segment is
-not where the drag lives. ROCE FIRING at 67.5%. That is plausibly a composite 6
-to 7, a BUY-candidate, not a DEEP WATCH. The catch is that no such standalone
-account has ever been published, so the 67.5% is a segment disclosure, not an
-audited company.
+---
 
-**Business B, agri.** Revenue VOLATILE, a loss in FY25 and a strong FY26 on
-better SSP placement, then down again in Q1 FY27 on a weak monsoon. Margin
-STAGNANT to DECLINING. Cash DETERIORATING and structural, the subsidy book.
-ROCE STAGNANT at 19.9%. On its own this is a composite 1 to 2, DEEP WATCH
-leaning AVOID, a subsidy linked commodity cyclical you buy only at a hard
-discount to book or normalized earnings, never on last year's peak.
+### 6A. FTTCP ON BUSINESS A — POLYMERS (retained, to be renamed Jubilant Industries Ltd)
 
-The blended FTTCP score of 3 is arithmetically correct and analytically
-misleading. You are not buying a mediocre three of eight business. You are
-buying a six or seven business stapled to a one or two business, and the staple
-is being cut.
+**Step 1, backward baseline.**
+
+| Transition | FY25 | FY26 | Q1 FY27 YoY | Backward verdict |
+|---|---|---|---|---|
+| Revenue | Rs 1,083.74 Cr | Rs 1,164.84 Cr (+7.5%) | +29.8% | STAGNANT. Annual growth 7.5% is in the 0 to 10% band. The 3 year CAGR that FIRING needs cannot be computed on a 2 year window, so I do not award it |
+| Margin (PBIT) | 15.2% | 14.2% (-100 bps) | PBIT +22.9% | SUSTAINED. The move is inside the plus or minus 150 bps band, at a healthy level |
+| Cash conversion | no segment CFO | no segment CFO | n/a | NOT ASSESSABLE at segment level. Balance sheet proxy is benign: segment assets grew 9.85% on revenue up 8.75%. Treated as not positive because I cannot confirm it |
+| ROCE (segment basis) | 65.9% | 67.5% | n/a | SUSTAINED at an extreme premium. Segment basis, so inflated, but even halved it clears every threshold |
+
+Backward composite: 2 of 4 positive (margin and ROCE), which is BACKWARD WEAK.
+
+**Step 2, forward catalysts.**
+
+| Transition | Main catalyst and evidence | Probability | Forward verdict | Score |
+|---|---|---|---|---|
+| Revenue | Samlaya adhesive line commissioned, exchange filing 3 June 2026 (documented); SBR latex phase 2 due end Q3 FY27 (documented); Q1 already +29.8% | ~70% (3-6m) | STARTING. Cannot be FIRING because the backward verdict is not positive | +1 |
+| Margin | operating leverage as Samlaya ramps, against a sector wide input cost spike that four peers independently confirm | ~40% (3-6m) | STAGNANT, rounded down. Up case is STARTING on the 22.9% Q1 profit growth | 0 |
+| Cash conversion | the demerger removes the group drag from this entity, but there is no factoring facility, no debtor target, and no segment CFO to confirm | ~40% (3-6m) | STAGNANT. Cannot confirm FIRING without a standalone cash statement | 0 |
+| ROCE | 67.5% and stable; Samlaya capex moving from spent to earning | ~70% (12m) | FIRING | +2 |
+
+**Step 2E, intent and action ledger.** Revenue and ROCE both carry documented
+action, Samlaya commissioned on the promised date, so the verdicts already
+credit it. Margin has cost programme talk with no documented programme, so the
+ledger confirms the conservative call. Nothing loosens.
+
+**Step 3 and 4, scorecard and verdict.**
+
+| Transition | Backward | Forward | Score |
+|---|---|---|---|
+| Revenue | STAGNANT | STARTING | +1 |
+| Margin | SUSTAINED | STAGNANT | 0 |
+| Cash | NOT ASSESSABLE | STAGNANT | 0 |
+| ROCE | SUSTAINED | FIRING | +2 |
+| | | **COMPOSITE** | **+3 / 8** |
+
+**Business A verdict: composite +3, DEEP WATCH. Up case +4 if margin is scored
+STARTING.** Kernex cap not engaged. Trim rule not engaged.
+
+Read the score correctly. This +3 is not a verdict on the business, it is a
+verdict on the evidence. A business earning 67.5% on capital with revenue
+accelerating 30% is not a three of eight. It scores three because two of its
+four transitions cannot be confirmed on the data that exists: revenue is held
+at STAGNANT by a two year window that hides its real rate, and cash cannot be
+scored at all because no standalone cash flow statement has ever been
+published. The moment this business reports as a company, both very likely
+resolve upward. On the first standalone annual, revenue almost certainly
+confirms FIRING (+2 instead of +1) and cash becomes assessable and, given where
+the drag actually sits, probably FIRING too. That alone moves the composite to
+6 or 7, a BUY-candidate. This is a DEEP WATCH whose upgrade is mechanical and
+whose trigger is one filing, not a DEEP WATCH waiting on the business to
+improve.
+
+**Step 5, what to watch on Business A.** First standalone polymer accounts
+(confirms revenue and cash and the 67.5% return); group polymer segment margin
+up year on year in Q2 FY27; SBR latex phase 2 on time by end Q3 FY27; polymer
+segment revenue holding double digit growth.
+
+**Pillar 1 handoff, Business A.** ROCE forward FIRING, so Pillar 1 uses current
+ROCE. The formula caps at 30x well before 67.5%. Cash multiplier clean but
+unconfirmable at segment level, so a conservative 1.15x. Normalization route
+NONE. Sector cap Specialty chemicals 35x. UA applies, because the residual
+company keeps JACPL's own listing history of more than 12 months. Destination
+lands on the 35x cap.
+
+---
+
+### 6B. FTTCP ON BUSINESS B — AGRI (leaves as Jubilant Agri Solutions Ltd)
+
+**Step 1, backward baseline.**
+
+| Transition | FY25 | FY26 | Q1 FY27 YoY | Backward verdict |
+|---|---|---|---|---|
+| Revenue | Rs 456.81 Cr | Rs 692.34 Cr (+51.6%) | -0.6% | VOLATILE. The 52% is off a depressed base and Q1 has already reversed |
+| Margin (PBIT) | -1.25% | +6.8% | PBIT -52% | VOLATILE. It swung from a loss to a profit and is now falling again |
+| Cash conversion | subsidy receivable base | +92.2% receivable, overdue bucket 2.67% to 7.86%, capital employed +77% | worsening | DETERIORATING, and structural. This is where the whole group's cash problem lives |
+| ROCE (segment basis) | -4.3% | 19.9% | n/a | VOLATILE. It swung from negative, on a capital base that grew 77% in one year |
+
+Backward composite: 0 of 4 positive, which is BACKWARD FAIL.
+
+**Step 2, forward catalysts.**
+
+| Transition | Main catalyst and evidence | Probability | Forward verdict | Score |
+|---|---|---|---|---|
+| Revenue | SSP placement gains, against a weak monsoon that peers confirm and that already hit Q1 | ~30% (3-6m) | STAGNANT | 0 |
+| Margin | sulphur up roughly fourfold and monsoon weakness; Q1 profit already down 52% | <20% (3-6m) | DECLINING | -1 |
+| Cash conversion | the receivable is a Government of India subsidy on the government's own timetable; NO factoring, NO debtor target, and a missed inventory sell down promise | catalyst NONE | DECLINING | -1 |
+| ROCE | cyclical, just recovered from negative, monsoon exposed | ~25% (12m) | STAGNANT | 0 |
+
+**Step 2E, intent and action ledger.** On cash there is no documented action at
+all, a missed promise, and explicit guidance that working capital stays high.
+The ledger confirms the DECLINING read and does not lift the cap.
+
+**Step 3 and 4, scorecard and verdict.**
+
+| Transition | Backward | Forward | Score |
+|---|---|---|---|
+| Revenue | VOLATILE | STAGNANT | 0 |
+| Margin | VOLATILE | DECLINING | -1 |
+| Cash | DETERIORATING | DECLINING | -1 |
+| ROCE | VOLATILE | STAGNANT | 0 |
+| | | **COMPOSITE** | **-2 / 8** |
+
+**Business B verdict: composite minus 2, AVOID.** And the Kernex cap engages on
+top, because cash is DECLINING with catalyst strength NONE, which independently
+caps the verdict at DEEP WATCH. The score is already below that cap, so AVOID
+stands. Either route reaches the same place.
+
+This is a subsidy linked commodity cyclical. It lost money at the segment level
+as recently as FY25, its one good year was driven by fertilizer placement and
+subsidy timing rather than any durable edge, and it carries the entire cash
+problem that drags the group. You do not underwrite it on FY26 peak earnings.
+If you end up holding the JASL share, size it small or sell it into any agri up
+cycle. It is not a business this strategy buys.
+
+**Step 5, what to watch on Business B.** Monsoon and the kharif and rabi
+placement; the subsidy receivable overdue bucket, above 8% is collection
+failure; any factoring facility or debtor target ever being filed; whether FY27
+segment profit holds or reverts toward the FY25 loss.
+
+**Pillar 1 handoff, Business B.** ROCE forward STAGNANT, so Pillar 1 uses
+current ROCE of 19.9%, but it must be normalized below the FY26 peak given the
+FY25 loss. Cash multiplier 0.80x, structural. No growth or moat or strategic
+premium. Normalization route NONE. Sector cap Agri processing 20x. UA does not
+apply, because JASL is a fresh listing under 12 months. Destination lands well
+below its cap.
+
+---
+
+### What the two runs together tell you
+
+The blended composite of 3 in section 4 is the exact average of a plus 3
+business and a minus 2 business, near enough. That average is arithmetically
+right and analytically useless, because the demerger is about to stop averaging
+them.
 
 ### Sum of the parts valuation
 

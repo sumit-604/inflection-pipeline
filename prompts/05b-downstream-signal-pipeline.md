@@ -56,6 +56,22 @@ narrative.
    lower confidence explicitly.
 7. All figures in ₹ Crores, Indian context; counterparty figures in the
    counterparty's reporting currency, labelled.
+8. INPUT PRESENCE vs READABILITY (do not confuse the two). Before writing
+   any `input_gaps` entry, confirm what actually exists: list the run
+   folder's `inputs/` subfolders. A folder or file is "absent" ONLY when a
+   directory listing shows it is not there. A PDF that exists but will not
+   render or extract is "UNREADABLE", never "absent": flag it UNREADABLE,
+   set status partial, and try the fallbacks below before giving up. Never
+   conclude "zero dependencies" or "thesis not externally verifiable"
+   because documents were unread; that verdict is reserved for documents
+   that were READ and genuinely name no external dependency.
+9. PDF READING RESILIENCE. Read PDFs with the Read tool. If the run folder
+   contains an `inputs/_extracted/` directory of `.txt` files (one per
+   source PDF, named after it), READ THOSE instead — they are the
+   authoritative text and avoid any render dependency. If neither the Read
+   tool nor a pre-extracted `.txt` yields text for a document that a
+   listing shows exists, mark that document UNREADABLE in `input_gaps` and
+   proceed on whatever else is readable, status partial.
 
 ## STEP 1 — SIGNAL DISCOVERY FOR THIS COMPANY
 

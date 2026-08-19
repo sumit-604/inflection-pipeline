@@ -21,6 +21,25 @@ one line before you start. If nothing matches, list the available runs under
 runs/ and stop. If more than one matches at the same latest date, list the
 matches and pick the latest; if still tied, ask.
 
+## PDF READING PREFLIGHT (do this before dispatching, using Bash)
+
+The stage reads PDFs. This container may lack the renderer, which silently
+turns readable inputs into a false "inputs absent" verdict. Prevent that:
+
+1. List `inputs/` so you know what actually exists. Never report a folder
+   absent unless the listing proves it.
+2. Test-read one inputs PDF with the Read tool. If it renders, proceed.
+3. If the Read tool cannot render PDFs (no poppler/pdftoppm), fall back to
+   text extraction: ensure pypdf imports (`python3 -c "import pypdf"`; if it
+   fails with a cffi/_rust error, run `pip install -q --force-reinstall cffi`
+   then retry), and extract every PDF under `inputs/` to
+   `inputs/_extracted/<same-name>.txt`. Point the stage at `_extracted/`.
+4. If neither path yields text for a PDF that the listing shows exists, mark
+   that PDF UNREADABLE (not absent) and continue on what is readable.
+
+A stage that reports "zero dependencies" must have READ the documents first;
+unread documents are a tooling gap to fix here, never a company finding.
+
 ## WHAT TO READ
 
 - `manifest.yaml` (company, ticker, run_date, run_type).

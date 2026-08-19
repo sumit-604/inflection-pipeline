@@ -1,0 +1,14 @@
+stage: B12a
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 101
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "100% acceptance across 101+ material figures spanning financial statements (revenue, PAT, CFO, leverage, margins), balance sheet, subsidiary financials (Quantum Magnetics revenue/loss/assets/ECB), contingencies, working-capital metrics, growth rates (CAGR, YoY%), and market data (RDSS, export split). All figures sourced to AR-FY26.txt, RESULTS-Q4FY26.txt, RESULTS-Q1FY27.txt; no mismatches, unsupported anchors, or material unanchored claims."
+source_fidelity_gate: "PASS"
+analyst_note: "All upstream stages show rigorous numerical discipline. Every major figure in B01-B09 sourceable to primary documents with zero fabrication or misreading. Cross-checks (standalone-vs-consolidated subsidiary revenue reconciliation, ROCE recomputation from EBIT, FCF derivations) arithmetically sound."

@@ -1,9 +1,10 @@
 COPY THESE FOUR FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
 FIRST RUN (stage 11 halts without them):
-  Master_Project_Prompt_v3.3.md
+  Master_Project_Prompt_v3_6.md
   Section_1B_v3.3_Amendments.md
   Section_1B_v3_5_1_Reconciliation.md
-  FTTCP_v1.2_Consolidated.md
+  Section_1B_v3_6_Amendments.md
+  FTTCP_v2_1_Consolidated.md
 Section_1B_v3_5_1_Reconciliation.md is the Pillar 1 normalization
 authority for capital-cycle names. Its consolidated Amendment 9
 SUPERSEDES the standalone Amendment 4.5 that still appears in
@@ -14,7 +15,7 @@ at run time, so amendments propagate with no pipeline edits.
 
 QUARTERLY PIPELINE (/run-quarterly) ALSO NEEDS THESE TWO PROTOCOL FILES
 HERE (the A4 analyst halts without the one its docs require):
-  Quarterly_Results_Review_Protocol_v1_2.md   (Role 4, for results filings)
+  Quarterly_Results_Review_Protocol_v1_4.md   (Role 4, for results filings)
   Quarterly_Concall_Analysis_Protocol_v1_1.md (Role 5, for concalls)
 These are the analytical authority for the quarterly review; the
 /run-quarterly extraction agents (A1-A3) govern extraction and reconcile

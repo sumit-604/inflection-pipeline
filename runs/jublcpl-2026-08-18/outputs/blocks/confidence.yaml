@@ -1,35 +1,40 @@
 stage: confidence-delta
 company: JUBLCPL
 run_date: 2026-08-18
-phase: 1
+phase: 3
 confidence_delta:
-  numerical_acceptance: 92.6      # B12a (Verifier A). 27 material figures; B01 verdict-card inputs clean.
-  redflag_coverage: 67            # B12b (Verifier B, no-concall). 6 caught + 2 partial of 9 independent flags.
-  framework_adherence: 94         # B12c (Verifier C) Gate-0 + Emerging-Moat portion only.
-  peer_utilisation: 87.5          # B12d (Verifier D). 14 substantive / 16 peer transcripts provided.
-  overall: 67                     # min of the four
-band: "60-74 (normal-low). Interpretation: PROCEED-type verdicts downgrade one level."
-valuation_framework_adherence: pending-phase-3   # B12c valuation half deferred to /finalize
+  numerical_acceptance: 92.6
+  redflag_coverage: 67
+  framework_adherence: 92
+  peer_utilisation: 87.5
+  overall: 67
+band: '60-74 (normal-low). redflag_coverage (67) binds. Interpretation: BUY/PROCEED verdicts downgrade one level; supports WATCHLIST not BUY.'
+valuation_framework_adherence: 91
 source_fidelity:
   status: GATE HELD
-  detail: >
-    Verifier A raised 1 CRITICAL + 1 MAJOR source-fidelity MISMATCH, both in B09 (TAM),
-    a supporting stage (not a phase-1 verdict-card or Section 1B pillar input; valuation is
-    phase 3). Both were corrected at source against the audited Note 39 (AR p.150) via a
-    stage-9 re-invocation with the correct anchors shown (PP&C external-customer revenue
-    Rs 1,164.84 Cr; demerging aggregate Rs 692.34 Cr). Disposition: GATE HELD - figures
-    corrected at source. No standing CRITICAL remains, so the REWORK gate is not triggered.
-    B01 Gate-0 verdict-card inputs verified clean.
+  detail: 'Verifier A raised 1 CRITICAL + 1 MAJOR source-fidelity MISMATCH, both in B09 (TAM), a supporting stage (not a phase-1 verdict-card or Section 1B pillar input; valuation is phase 3). Both were
+    corrected at source against the audited Note 39 (AR p.150) via a stage-9 re-invocation with the correct anchors shown (PP&C external-customer revenue Rs 1,164.84 Cr; demerging aggregate Rs 692.34 Cr).
+    Disposition: GATE HELD - figures corrected at source. No standing CRITICAL remains, so the REWORK gate is not triggered. B01 Gate-0 verdict-card inputs verified clean.
+
+    '
 rework_triggered: false
-rework_check: "No standing CRITICAL numerical finding (B09 corrected at source); no verifier acceptance_rate below 60 (B12a 92.6, B12b 67, B12c 94, B12d 69). Overall 67 in the 60-74 band -> one-level downgrade of any PROCEED verdict, not REWORK."
+rework_check: No standing CRITICAL numerical finding (B09 corrected at source); no verifier acceptance_rate below 60 (B12a 92.6, B12b 67, B12c 94, B12d 69). Overall 67 in the 60-74 band -> one-level downgrade
+  of any PROCEED verdict, not REWORK.
 disagreement_log:
-  - {number: "PP&C FY26 segment revenue base (market-share denominator)", verifier_a_verdict: "MISMATCH - claimed Rs 12,386 Mn not in audited Note 39 p.150 (true: Rs 11,648.41 Mn external / Rs 12,046.73 Mn total)", downstream_step: "B09 stage-9 maker used it for SAM share / SOM", disposition: "GATE HELD - figure corrected at source (Note 39 AR p.150 external-customer revenue); SAM share 2.63->2.47%, SOM/CAGR recomputed", note: "Correction also withdrew an untraceable 27.6% PP&C growth figure; audited growth 7.48-8.75% FY25-26"}
-  - {number: "Demerging segment aggregate (P&K Fert + Agri Nutrients FY26)", verifier_a_verdict: "MISMATCH - claimed Rs 702.3 Cr; true Rs 692.34 Cr (Note 39 p.150)", downstream_step: "B09 stage-9", disposition: "GATE HELD - figure corrected at source", note: "1.4% aggregation error, corrected"}
-notes: >
-  redflag_coverage (67) is the binding constraint on overall confidence. Verifier B's misses
-  are framing/under-weighting (consolidated receivables surge flagged as Agri-only; PP&C
-  segment EBIT margin compression not surfaced; an NCLT-order-date self-inconsistency
-  08-Jul vs 08-Aug-2026), not fabricated numbers. Verifiers C and D found only defensible
-  boundary/verdict-discipline calls (M10 switching-cost band; single-peer VERIFIED on the
-  monsoon claim; a 9M-vs-quarterly mislabel). These feed the phase-1 verifier summary and
-  should be weighed at FTTCP.
+- number: PP&C FY26 segment revenue base (market-share denominator)
+  verifier_a_verdict: 'MISMATCH - claimed Rs 12,386 Mn not in audited Note 39 p.150 (true: Rs 11,648.41 Mn external / Rs 12,046.73 Mn total)'
+  downstream_step: B09 stage-9 maker used it for SAM share / SOM
+  disposition: GATE HELD - figure corrected at source (Note 39 AR p.150 external-customer revenue); SAM share 2.63->2.47%, SOM/CAGR recomputed
+  note: Correction also withdrew an untraceable 27.6% PP&C growth figure; audited growth 7.48-8.75% FY25-26
+- number: Demerging segment aggregate (P&K Fert + Agri Nutrients FY26)
+  verifier_a_verdict: MISMATCH - claimed Rs 702.3 Cr; true Rs 692.34 Cr (Note 39 p.150)
+  downstream_step: B09 stage-9
+  disposition: GATE HELD - figure corrected at source
+  note: 1.4% aggregation error, corrected
+notes: 'redflag_coverage (67) is the binding constraint on overall confidence. Verifier B''s misses are framing/under-weighting (consolidated receivables surge flagged as Agri-only; PP&C segment EBIT margin
+  compression not surfaced; an NCLT-order-date self-inconsistency 08-Jul vs 08-Aug-2026), not fabricated numbers. Verifiers C and D found only defensible boundary/verdict-discipline calls (M10 switching-cost
+  band; single-peer VERIFIED on the monsoon claim; a 9M-vs-quarterly mislabel). These feed the phase-1 verifier summary and should be weighed at FTTCP.
+
+  '
+phase3_note: 'framework_adherence now combines phase-1 gate0+EM (94) and phase-3 valuation-adherence (91) = 92. Verifier C phase-3: 0 CRIT/0 MAJ/4 MINOR, destination PE and WATCHLIST/Small decision concurred.
+  Overall unchanged at 67 (redflag-bound).'

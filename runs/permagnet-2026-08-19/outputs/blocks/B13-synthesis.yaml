@@ -1,0 +1,24 @@
+stage: B13-synthesis
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+phase: 1
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+rework_gate: "tripped mechanically (overall 57 < 60); adjudicated and not escalated to rerun - coverage artifact, source-fidelity PASS, driving omission carried by B02/B03/B08"
+flags_active: ["FLAG-GATE0", "FLAG-PROMOTER", "FLAG-CASH"]
+flag_cash_determination: "GROWTH-INDUCED"
+confidence_delta: {numerical: 100, redflag: 57, framework: 97, peer: 100, overall: 57}
+valuation_decision: ""          # PHASE 3 - not decided
+entry_range: {low: 0, high: 0}  # PHASE 3 - not decided
+headline: "Magnet maker funds two unproven growth bets"
+falsification_metric: "Q2 FY27 standalone PAT down YoY on positive revenue growth"
+monitorables_count: 8
+publish_candidate: false
+notion_save:
+  run: "PHASE 1 - no Notion save executed"
+  page_title: "PERMAGNET - Permanent Magnets Ltd (run 2026-08-19)"
+  summary: "PROCEED WITH FLAGS (phase 1). Magnet maker funds two unproven growth bets. FLAG-PROMOTER CAUTION, FLAG-CASH GROWTH-INDUCED. Valuation deferred to phase 3."
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

@@ -249,6 +249,7 @@ support this override?" and leaves the answer to Keerti.
 | 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR + inv. pres. | `B04-bizmodel` |
 | 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5 | 3 transcripts (oldest first) | `B05-concall` |
 | 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
+| 5b | Downstream Signal Identification (Role 5.5) | 05b-downstream-signal-pipeline.md | Sonnet 5 + web search | B03/B04/B05/B06 + inputs; web for primary sources only | `B05b-downstream` |
 | 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR + concalls + pres. + B01 | `B07-emoat` |
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
@@ -261,8 +262,20 @@ support this override?" and leaves the answer to Keerti.
 | 13 | Synthesis | 13-synthesis-pipeline.md | Opus 4.8 | everything | final outputs |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
-after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
-12a-12d run in parallel after stage 11. Stage 13 requires all.
+after stage 3. Stage 6 requires stage 5. Stage 5b (Downstream Signal
+Identification, Role 5.5) requires stages 3, 4, 5, and 6, and runs after
+stage 6; it is web-search-heavy like stages 8 and 9 and follows the same
+search-log discipline. Stage 7 requires stage 1. Stages 12a-12d run in
+parallel after stage 11. Stage 13 requires all.
+
+Stage 5b feeds the valuation stage's FTTCP Signal Gate (a forward catalyst
+with no downstream-signal anchor is capped at MODERATE magnitude; a company
+with zero verified signals caps the FTTCP composite at DEEP WATCH). That gate
+lives in FTTCP v2.0; it takes effect once stage 11 injects Master v3.5 /
+Section 1B v3.6 / FTTCP v2.0 in place of the v3.3 / v1.2 set it names today
+(see CHANGES.md propagation follow-up). Until then, B05b is produced and
+carried, and the operator applies the gate by hand at the FTTCP step. Stage 5b
+can also be run on demand outside a full pipeline via the /downstream command.
 
 Chronology rule for stage 5: transcripts are passed oldest first and each
 call is prefixed with an ordered list mapping filename to quarter. The stage
@@ -312,6 +325,12 @@ Stage-specific payload fields (the fields downstream stages actually read):
   credibility_grade (A/B/C/D), repeated_evasions[], peer_questions[]
 - `B06-peers`: verified[], contradicted[], unverifiable[], peer_coverage_map
   (per peer: substantive | cited-only | unused)
+- `B05b-downstream`: signals[] (each: name, signal_type, primary_source_url,
+  cadence, current_value, bull_element, falsifying_observation,
+  anchors_transition, tracker_case), unanchored_transitions[],
+  b05_triggers_without_signal[], signal_gate_effect,
+  thesis_externally_verifiable (bool), insufficient_conviction_candidate (bool),
+  searches_performed, searches_skipped[]
 - `B07-emoat`: em_score, em_classification, active_categories[],
   evidence_mix{documented, claim, inference}, catalysts_12m[],
   combined_assessment (with B01)

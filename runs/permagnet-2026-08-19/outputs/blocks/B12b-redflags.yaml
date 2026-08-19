@@ -1,0 +1,23 @@
+stage: B12b
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+independent_flags_found: 7
+caught: 4
+partially_caught: 2
+missed:
+  - {severity: "MAJOR", item: "Un-discharged Bombay HC winding-up order (15-Apr-2015), interim stay only, auditor Emphasis of Matter in both FY26 audit reports and both Q1FY27 review reports - absent from B05", anchor: "RESULTS-Q4FY26 p.8/p.11/p.16; RESULTS-Q1FY27 p.5/p.6"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C justified; mixed delivery + fresh unexplained Q1FY27 profit fall + disclosed ROCE decline preclude a rise to B; missed winding-up item is disclosed legacy litigation, not grounds to drop below C"
+findings:
+  - {severity: "MAJOR", location: "B05 concall report (omission)", description: "MISSED red flag: live winding-up order with interim stay, auditor Emphasis of Matter across all filings, never mentioned by B05", anchor: "RESULTS-Q4FY26 p.8/p.11/p.16; RESULTS-Q1FY27 p.5/p.6"}
+  - {severity: "MAJOR", location: "B05 growth/credibility sections", description: "PARTIALLY CAUGHT: FY26 ROCE 11.20% vs 13.81% (-18.93%) and D/E 0.23 vs 0.14 (+64.28%) not surfaced by B05; only the capex driver discussed", anchor: "AR-FY26 p.19"}
+  - {severity: "MINOR", location: "B05 growth sections", description: "PARTIALLY CAUGHT: consolidated net profit -4% (15.07 vs 15.74 cr) vs headlined standalone +36% divergence not flagged by B05", anchor: "AR-FY26 p.19"}
+  - {severity: "MINOR", location: "B05 scope note", description: "Promoter-family board concentration not noted (governance-stage territory, logged for completeness)", anchor: "AR-FY26 p.21"}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 57
+orchestrator_note: "acceptance_rate here is redflag COVERAGE (share of verifier-found flags B05 already caught), NOT accuracy: verifier B found ZERO unsupported/fabricated B05 flags and 5/5 promise-delivery spot-checks confirmed, so B05's analysis is accurate. The single MAJOR miss driving 57% (2015 winding-up order) was NOT missed pipeline-wide - it was independently and prominently caught by B02 (going-concern EoM), B03 (missing_risks / going-concern linkage), and B08 (2015 Bombay HC winding-up order). Verifier independence means B12b only sees B05 and cannot credit those catches. Pipeline-wide coverage of the item is complete; the isolated B05 coverage metric is low. Flagged for the confidence delta and the synthesis REWORK-gate assessment."

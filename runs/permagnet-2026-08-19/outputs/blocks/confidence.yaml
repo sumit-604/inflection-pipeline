@@ -1,0 +1,19 @@
+confidence_delta:
+  numerical_acceptance: 100     # B12a: 101 figures checked, 0 findings, source-fidelity gate PASS
+  redflag_coverage: 57          # B12b: 4 of 7 verifier-found flags caught by B05 (isolated scope)
+  framework_adherence: 97       # B12c: gate0 100% + emoat ~93%; VALUATION HALF PENDING PHASE 3
+  peer_utilisation: 100         # B12d: 12 of 12 provided peers used substantively
+  overall: 57                   # min of the four
+  framework_adherence_status: "partial - Gate0 + Emerging Moat only; valuation-adherence (B10/B11) deferred to phase 3"
+
+band: "<60 -> forced-REWORK band per orchestrator Section 5; see adjudication note"
+
+rework_gate_adjudication:
+  triggered_by: "B12b redflag_coverage 57% (<60) AND overall 57% (<60)"
+  verifier_a_critical: false    # no CRITICAL numerical finding; source-fidelity gate PASS
+  context_for_synthesis:
+    - "The 57% is a COVERAGE metric (share of verifier-B-found flags that B05 caught), NOT an accuracy/fabrication metric. Verifier B found ZERO unsupported or fabricated B05 flags (pipeline_flags_not_supported: []) and confirmed 5/5 promise-delivery spot-checks. B05's analysis is accurate."
+    - "The single MAJOR miss driving 57% is the 2015 Bombay HC winding-up order (auditor Emphasis of Matter). It was NOT missed pipeline-wide: B02 (going-concern EoM red flag), B03 (missing_risks / going-concern linkage), and B08 (2015 Bombay HC winding-up order, adverse_findings) all independently and prominently caught it. Verifier independence means B12b sees only B05 and cannot credit those catches."
+    - "The other three verifiers are strong: numerical 100% (source-fidelity PASS), framework(gate0+EM) 97%, peer_utilisation 100%."
+    - "B12d MAJOR is a correctable B06 citation-page error (TDPOWERSYS RM-basket quote at p.13 not p.11); claim genuine and independently confirmed. Not a source-fidelity matter, not a REWORK trigger."
+  orchestrator_read: "Mechanically the min is 57 and the REWORK gate is tripped by B05's isolated coverage. Substantively, the analysis is trustworthy (numbers 100% clean, framework 97%, peers 100%, zero fabricated flags) and the one driving omission is fully present in the evidence base via B02/B03/B08 and will flow to the gate recommendation and FTTCP handoff regardless. Stage 13 must adjudicate the verdict explicitly per the five-verdict rules, weighing the hard <60 gate against this mitigation, and name the winding-up order in the flags either way."

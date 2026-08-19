@@ -1,0 +1,27 @@
+stage: B08-promoter
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: partial
+input_gaps: ["no shareholding-pattern (SHP) filing supplied", "no exchange-announcements folder supplied", "WebFetch blocked on trendlyne.com, screener.in, zaubacorp.com, exportersindia.com (egress proxy)", "no prior-year ARs supplied for 5-yr CXO turnover lookback"]
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Taparia Magnetics Pvt Ltd (same-sector private entity, MD-controlled) not disclosed as RPT vehicle in FY26 AR", "Independent Director Kamal Binani cross-membered with family entity Pregna International Ltd", "50% of board is promoter-family (Sharad, Mukul, Sunaina Taparia)", "MD remuneration grew 28.01% vs 13.69% average employee increase, 34.01x median-employee ratio"]}
+verdict: "CAUTION"
+scorecard: {clean: 7, caution: 3, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Taparia Magnetics Pvt Ltd, a same-sector (magnet manufacturing) private entity directed by MD Sharad Taparia, is not named in the FY26 AR related-party disclosure list", evidence_tier: "MEDIA REPORTED", source: "Zaubacorp/IndiaFilings/ExportersIndia director search aggregation", date: "2026 (search-current)"}
+  - {finding: "Independent Director Kamal Binani also serves as director/authorised signatory of Pregna International Ltd, a Taparia-family-controlled company", evidence_tier: "MEDIA REPORTED", source: "Tofler DIN search; Pregna International leadership page", date: "2026 (search-current)"}
+  - {finding: "MD Sharad Taparia FY26 remuneration rose 28.01% vs 13.69% average non-managerial employee increase; pay ratio to median employee 34.01x", evidence_tier: "VERIFIED", source: "AR-FY26.txt, Annexure C", date: "FY2025-26 Annual Report"}
+  - {finding: "2015 Bombay High Court winding-up order over a disputed Rs 12.95 lakh vendor claim; interim stay obtained on appeal", evidence_tier: "MEDIA REPORTED", source: "Business Standard 2015-06-26", date: "2015-06-26"}
+  - {finding: "Legacy Central Excise interest-free loan scheme dispute over compound interest; Board states no material liability expected", evidence_tier: "VERIFIED", source: "AR-FY26.txt Board explanation on Auditor comment", date: "FY2025-26 Annual Report"}
+transition_evidence:
+  - {finding: "Nirmal Kumar Jain appointed Independent Director/Chairman (Chairman/Vice-Chairman roles across JSW Group listed entities, FCA/FCS, 40+ yrs finance/M&A)", evidence_tier: "VERIFIED", source: "AR-FY26.txt; JSW Group governance pages", date: "appointed FY2023-24"}
+  - {finding: "Fresh Secretarial Auditor appointment (Dash Dwivedi & Associates LLP) for a new 5-year term commencing FY26", evidence_tier: "VERIFIED", source: "AR-FY26.txt", date: "FY2025-26"}
+  - {finding: "MD remuneration revision (w.e.f. 1-Apr-2025) put through shareholder-approved special resolution", evidence_tier: "VERIFIED", source: "AR-FY26.txt", date: "FY2024-25 AGM"}
+pledge_pct_latest: 0
+pledge_trend: "stable - 0% pledged per web-aggregator data and no pledge disclosure in FY26 AR; one historical (1995-2024) pledge of 31,290 shares tied to a personal loan repaid 1998 was only recently unwound due to a demat procedural delay, now resolved"
+searches_performed_count: 22
+searches_skipped: ["WebFetch on trendlyne.com/screener.in/zaubacorp.com/exportersindia.com (egress proxy blocked)", "dedicated IiAS/SES/InGovern named-report search (none returned)", "5-year historical CXO turnover check beyond FY26 AR (no prior-year ARs supplied)"]
+verdict_basis: "No SEBI, criminal, tax, SFIO/PMLA, auditor-resignation or pledge red flags found despite extensive search (deal-breakers all NOT TRIGGERED, pledge 0%); CAUTION rests on three disclosed-but-unresolved governance structure items, partially offset by a credible new independent Chairman."
+analyst_note: "Clean legal/regulatory record is genuinely clean, not merely unsearched. CAUTION earned on governance structure, not conduct. Two items for operator attention: (1) whether Taparia Magnetics Pvt Ltd actually competes with PML's core magnet business (only existence + MD-direction established); (2) egress block meant multi-quarter pledge/holding trend was not independently verified beyond the FY26 AR snapshot -- worth a direct BSE SHP pull if pledge trend matters."

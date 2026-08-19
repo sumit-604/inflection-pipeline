@@ -1,0 +1,24 @@
+stage: B14-thesis
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-opus-4-8
+status: complete
+verdict: "WATCHLIST"
+entry_range: {low: 1766, high: 2208}
+mos_price: 1766
+position_size: "Small"
+position_size_override: ""
+one_line_thesis: "WATCHLIST / BUY-on-dips JACPL at Rs 2,342.40 because the retained polymer business (67.5% segment ROCE, VP-latex and food-grade PVAc scarcity, branded adhesives compounding high-teens) grows forward EPS from ~Rs 83 (FY27) to ~Rs 114 (FY30) at a 35x specialty-chemicals destination PE, giving a Business-A 3-year target of ~Rs 3,990 and a combined-package base target of ~Rs 4,155 = ~20% probability-weighted CAGR; Samlaya is a SHARED CATALYST carrying revenue, margin and ROCE at once (one point of failure), Hurdle Ratio 1.87 CONDITIONAL so BUY-on-dips not BUY-now."
+thesis_broken_conditions:
+  - "Samlaya full-capacity ramp not confirmed by ~Dec-2026 or scaled back (SHARED-CATALYST single point of failure across revenue, margin, ROCE)"
+  - "First standalone Jubilant Industries accounts show retained CFO:PAT below 0.70x for two consecutive quarters (with >6m subsidy receivable bucket >8%) — cash-location falsification invalidating the 1.15x multiplier and 35x base"
+  - "PP&C segment EBIT margin below 14% for two consecutive quarters (margin reversal; the EBIT bridge is margin-led)"
+  - "Demerger scheme withdrawn, rejected, or adverse creditor vote (5-Sep-2026 meetings / NCLT final order)"
+monitoring_checklist:
+  - "First standalone Jubilant Industries accounts: segment ROCE >=60% confirmed as company ROCE and CFO:PAT >=0.70x (red: CFO:PAT <0.70x two consecutive quarters)"
+  - "Samlaya full-capacity ramp confirmed by Reg 30/deck by ~Dec-2026 (6-8 months from 3-Jun-2026 partial start); red if still partial-only past window"
+  - "Adhesives segment revenue >= double-digit YoY and EBIT growth positive (Q1 FY27 was +19% rev / +40% EBIT); red below high-single-digit"
+  - "PP&C segment EBIT margin held >=14% (FY26 13.9%, Q1 FY27 17.1%); red below 14% two consecutive quarters"
+  - "Demerger scheme: creditor/shareholder meetings 5-Sep-2026 pass, NCLT final sanction and JASL listing; red on withdrawal/adverse vote/prolonged delay"
+  - "SBR Latex Phase-2 completion on time by ~end Q3 FY27 (Dec-2026); red on delay beyond Q3 FY27"
+  - "Governance/RPT drift (Promoter CAUTION monitor): no new related-party expansion, no fresh excess-pay resolution, no independent-director resignation"

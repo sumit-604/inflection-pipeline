@@ -1,0 +1,104 @@
+stage: B10-valinputs
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - {source: "prospectus", severity: "HIGH", note: "JACPL listed via composite merger scheme (not IPO); no prospectus available; backward baseline built from AR alone"}
+  - {source: "concalls", severity: "N/A", note: "absent; no-concall mode applied to B05; peer concalls (16 quarters) reviewed instead"}
+  - {source: "unit_economics", severity: "HIGH", note: "no MT/kg volumes disclosed anywhere in provided docs; unit-level validation of growth assumptions cannot be performed"}
+  - {source: "forward_guidance", severity: "MEDIUM", note: "no numeric FY27 revenue/EBITDA guidance published; forward earnings are operator-engaged illustrative projections, not guided"}
+  - {source: "rating_pdf", severity: "MEDIUM", note: "rating letter WC/cash commentary not extracted into assembly; rating_wc_quote NOT FOUND at assembly"}
+  - {source: "standalone_accounts", severity: "MEDIUM", note: "no standalone accounts exist pre-demerger; per-entity PAT, cash flow, ROCE figures are illustrative allocations only"}
+flags:
+  - {type: "FLAG-CASH", reason: "STRUCTURAL, located in demerging division. FY26 CFO/PAT 0.59x (CFO 75.314 Cr vs PAT 127.636 Cr) vs 1.49x FY25, driven by +92.2% YoY fertilizer subsidy receivable surge, >6m bucket 7.86%. Pre-WC OCF grew +34% YoY. Falsification: retained-entity CFO:PAT <0.70x two consecutive quarters with subsidy >6m bucket >8%.", source: "fttcp-deliberation.md, B02-notes.yaml, AR Note 21 p.133"}
+  - {type: "SHARED-CATALYST", reason: "Samlaya adhesive plant (Phase 1 partial 3-Jun-2026; full run-rate end Q1 FY27; Phase 2 SBR Latex end Q3 FY27) drives BOTH revenue STARTING and ROCE FIRING for Business A. Credibility grade C. Stage 11 must stress-test Samlaya delay as single point of failure.", source: "fttcp-deliberation.md, B05-concall.yaml, valuation-sotp.md"}
+  - {type: "DEMERGER-EXECUTION", reason: "NCLT First Motion 08-Jul-2026; shareholder/creditor meetings 5-Sep-2026; final order and JASL listing pending at run date. Both business valuations hang on demerger execution and post-demerger accounting visibility.", source: "AR Note 32 p.138-139, Reg 30 9-Jul-2026"}
+table:
+  company: "Jubilant Agri and Consumer Products Limited"
+  ticker: "JUBLCPL"
+  cmp: "Rs 2,342.40 (18-Aug-2026, B00-inputs)"
+  shares_outstanding_diluted_cr: "1.5152 (B00-inputs)"
+  market_cap_cr: "3,549 (B00-inputs)"
+  revenue_fy26_cr: "1,895.01 (AR Financial Highlights external revenue; Note 39 segment revenue before inter-segment)"
+  ebit_fy26_cr: "212.30 (AR Note 39 p.150 segment EBIT; USE THIS not the 195.99 headline 'EBITDA' which is Rs Cr-mislabelled Mn)"
+  pat_fy26_cr: "127.636 (audited standalone FY26, B02-notes)"
+  diluted_eps_fy26: "83.16 (Q1 FY27 results year-ended column); basic 84.49"
+  cfo_fy26_cr: "75.314 (continuing ops, AR Note 50 p.163; CFO/PAT 0.59x vs 1.49x FY25)"
+  roce_latest_fy26_pct: "36 (consolidated group, AR p.7)"
+  revenue_cagr_3yr_pct: "7.48 to 8.75 (audited, corrected per Verifier A; prior untraceable 27.6% withdrawn)"
+  # Per-Business Forward (operator-engaged SOTP base, unguided illustrative)
+  business_a_name: "Performance Polymers & Chemicals (retained, becomes Jubilant Industries Ltd)"
+  business_a_fy26_revenue_cr: "1,164.84 (external, AR Note 39 p.150)"
+  business_a_fy27_proj_revenue_cr: "1,367 (operator, unguided)"
+  business_a_fy28_proj_revenue_cr: "1,545 (operator)"
+  business_a_fy26_ebit_cr: "165.46 (segment EBIT, AR Note 39)"
+  business_a_fy27_proj_pat_cr: "125 (operator allocation, illustrative)"
+  business_a_fy28_proj_pat_cr: "149 (operator allocation, illustrative)"
+  business_a_fy27_forward_eps: "83 (125 Cr / 1.5152 Cr, illustrative)"
+  business_a_roce_verdict: "FIRING (deliberation; Pillar1 current ROCE, formula caps 30x; route NONE)"
+  business_a_cash_multiplier: "1.15x (clean at segment level, unconfirmable)"
+  business_a_destination_pe: "35x (Specialty chemicals cap binds both tracks after UA)"
+  business_a_destination_pe_range: "32.5x to 35x"
+  business_b_name: "Agri Division (P&K Fertilizers + Agri Nutrients, demerges as Jubilant Agri Solutions Ltd)"
+  business_b_fy26_revenue_cr: "692.34 (P&K Fert 681.19 + Agri Nuts 11.15, AR Note 39 p.150)"
+  business_b_fy27_proj_revenue_cr: "727 (operator, unguided)"
+  business_b_fy26_ebit_cr: "46.8 (peak; includes P&K Fert swing +57.17 Cr from FY25 loss)"
+  business_b_fy27_proj_pat_cr: "15 (operator; steps down from peak on weak monsoon Q1)"
+  business_b_normalized_pat_cr: "16 to 18 (mid-cycle, valuation-sotp.md)"
+  business_b_roce_verdict: "STAGNANT (deliberation; current ROCE 19.9% normalized below peak; route NONE)"
+  business_b_cash_multiplier: "0.80x (STRUCTURAL subsidy receivable)"
+  business_b_destination_pe: "14x to 17.5x (on NORMALIZED earnings; Agri processing 20x cap not binding)"
+  blended_entity_fy26_pat_cr: "127.636"
+  blended_entity_destination_pe: "29.5x (revenue-weighted 62.7% at 35x + 37.3% at 20x; no quality uplift)"
+  blended_entity_destination_pe_range: "27.5x to 31.5x"
+  # Pillars (operator-approved, deliberation.md)
+  pillar1_base_business_a: "30.0x (ROCE FIRING; formula caps; route NONE)"
+  pillar1_base_business_b: "17.5x (ROCE STAGNANT 19.9% normalized; route NONE)"
+  pillar2_cash_business_a: "1.15x"
+  pillar2_cash_business_b: "0.80x"
+  pillar3_business_a: "+0x (EM 22.5<25; growth visibility 1 of 2; grade C)"
+  pillar3_business_b: "+0x"
+  strategic_premium_business_a: "+2x (VP latex #1 India/#2 global ex-China; PVAc sole food-grade India)"
+  strategic_premium_business_b: "+0x"
+  ua_business_a: "applies (JACPL >12m listed; FII+DII 0.45%)"
+  ua_business_b: "does not apply (JASL fresh listing <12m)"
+  return_tier: "A, hurdle 25% (FII+DII 0.45% <3%)"
+  earnings_basis: "ONE-YEAR FORWARD (blended), operator choice; build polymer-only forward as primary value driver"
+  valuation_method: "SUM OF THE PARTS (operator direction 18-Aug-2026): value A and B separately; blended 29.5x for pre-demerger entity only"
+  credibility_grade: "C (1 delivered Samlaya, 1 missed Agri liquidation, 1 partial demerger; no-concall floor bars A)"
+  em_score: "22.5 (MODEST, below 25 gate)"
+  gate0_core_score: "71 (GOOD+, moat STRONG, no deal-breakers)"
+  accounting_quality_score: "5.5 (15 findings, structural not fraud)"
+  promoter_verdict: "CAUTION (no deal-breakers; offset by external CEO, 0% pledge)"
+  promoter_pledge_pct: "0 (secondary SAST-sourced)"
+  fii_dii_pct: "0.45 (Jun-2026)"
+  tam_conservative_cr: "50,143"
+  sam_cr: "47,132"
+  current_sam_share_pct: "2.47"
+  som_implied_revenue_3yr_cagr_pct: "24.3 (upper-range; above audited 7.5%; Q1 FY27 25.5% unaudited)"
+  runway_class: "STRONG (40.5x headroom)"
+  capacity_constraint_yr3_gap_cr: "633 (SOM exceeds linear capacity ceiling; SOM optimistic)"
+  peer_monsoon_verified: "yes (KRISHANA Q1 FY27)"
+  peer_west_asia_verified: "yes (APCOTEXIND/NOCIL/KRISHANA/BALAMINES Q1 FY27)"
+  peer_latex_subdued_contradicted: "yes (APCOTEXIND record FY26 volumes/EBITDA)"
+  peer_share_gains_unverifiable: "yes"
+  sotp_fair_value_today_cr: "~4,625 (polymer ~4,375 + agri ~250); ~30% above CMP; ~88% in polymers"
+  sotp_tier_a_entry_cr: "~3,345 (polymer ~3,095 + agri ~250); CMP ~6% above entry"
+ua_qualifiers:
+  listed_12m: true
+  gate0_or_em: true
+  fii_dii_lt3: true
+  all_met: true   # Business A only; Business B (JASL fresh listing) does NOT qualify
+rating_wc_quote: "NOT FOUND - rating WC commentary not extracted into assembly"
+unresolved:
+  - {field: "per_entity_standalone_cash_flow", why: "no standalone accounts pre-demerger", where: "post-demerger first standalone accounts", status: "illustrative for stage 11"}
+  - {field: "per_entity_fcf_fy26", why: "per-entity capex detail insufficient in extracts", where: "full AR capex schedule / Note 39 detail", status: "unresolved"}
+  - {field: "per_entity_roce_post_demerger", why: "segment ROCE (PP&C 67.5%, agri 19.9%) inflated by segment allocation", where: "post-demerger standalone accounts", status: "group ROCE 36% authoritative; route NONE"}
+  - {field: "unit_economics_mt_kg", why: "no volumes disclosed", where: "future post-demerger investor decks", status: "NOT FOUND"}
+  - {field: "forward_guidance_fy27_numeric", why: "no numeric guidance published", where: "post-Q2/Q3 FY27 decks if given", status: "forward earnings illustrative, not guided"}
+  - {field: "rating_wc_commentary", why: "rating WC/cash analysis not carried into assembly", where: "inputs/rating/ CARE letter (present in folder; extract in phase 3 if needed)", status: "unresolved at assembly"}
+conflicts:
+  - {field: "ebitda_margin_fy26", value_a: "103.4% (headline 'EBITDA' 195.99 mislabelled Cr vs revenue)", value_b: "11.2% segment EBIT 212.30 Cr / revenue 1,895 Cr", used: "11.2% segment EBIT basis; headline figure is Rs 195.99 Cr (Mn-mislabel), not Cr", anchor: "AR p.7 vs Note 39 p.150"}
+  - {field: "pp_c_fy26_revenue_growth", value_a: "27.6% (withdrawn, untraceable)", value_b: "7.48-8.75% audited", used: "7.48-8.75% audited (Note 39 p.150)", anchor: "Verifier A B09-tam"}
+analyst_note: "Demerger SOTP per operator direction (deliberation.md 18-Aug-2026). Earnings basis ONE-YEAR FORWARD blended. Per-entity PAT allocation illustrative (no standalone accounts). Destination PE both tracks: A 35x (Specialty chemicals cap), B 14-17.5x (normalized, Agri processing cap 20x), Blended 29.5x. Copy-and-anchor only; forward earnings copied from valuation-sotp.md. Stage 11: build polymer-only forward as primary value driver; run (a) polymer standalone 35x and (b) full SOTP split; stress Samlaya as single point of failure; state earnings perimeter (contains agri until scheme effective); treat SOM CAGR 24.3% as upper-range with capacity binding yr3+. SOTP fair value ~4,625 Cr (~30% above CMP, 88% polymers); Tier A entry ~3,345 Cr, CMP ~6% above."

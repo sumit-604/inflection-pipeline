@@ -84,6 +84,10 @@ weigh, never anchored evidence.
 - anti-ai-writing-style.md   house style for all reader facing prose
                  (synthesis narratives, recommendations, X posts); the
                  STYLE authority the orchestrator and stage 13 cite
+- Narrative_Writing_Style_v1.md   STE (ASD-STE100 Simplified Technical
+                 English) plus Zinsser; the operator voice authority cited
+                 by OPERATOR VOICE below and by the closing narrative
+                 section of every analysis
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
 - /run-quarterly TICKER --docs ...   quarterly review pipeline (Role 4/5):
@@ -91,6 +95,28 @@ weigh, never anchored evidence.
                  forensic notes -> A4 analyst -> A5 adversary; enumeration
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
+
+## OPERATOR VOICE (STE — all conversation, not only outputs)
+Every reply to the operator uses Simplified Technical English (ASD-STE100,
+codename STE) plus Zinsser. This governs ordinary chat, diagnosis, and
+status updates, not only synthesis outputs. Full spec:
+Narrative_Writing_Style_v1.md. The load-bearing rules, always on:
+- One idea per sentence. 20 words or fewer. Split a long thought in two.
+- Active voice. The subject does the action.
+- One meaning per word per reply. Plain word over jargon. Gloss a term the
+  first time it must appear.
+- Cut every word that carries no information ("it is worth noting that",
+  "in terms of", "at this point in time").
+- No em-dashes or en-dashes as punctuation. Use a full stop, a comma, or
+  restructure the sentence.
+- No hedging filler (arguably, somewhat, essentially, fundamentally,
+  significantly). No AI tells ("not just X but Y", participial openers like
+  "Looking at...", empty -ly adverbs, robust/holistic/seamless,
+  journey/landscape/ecosystem).
+- Numbers first. Say the thing the simplest way that still says it.
+Structured blocks keep their format. Tables, scorecards, Section 1B math,
+FTTCP verdict cards, YAML, and Notion payloads are not prose. This rule is
+silent on them.
 
 ## STYLE (synthesis outputs only)
 No em-dashes or en-dashes as punctuation. No hyphens in compound

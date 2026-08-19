@@ -1,0 +1,103 @@
+stage: B11-valuation
+company: "JUBLCPL"
+run_date: "2026-08-18"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - {source: "standalone_accounts", severity: "MEDIUM", note: "no standalone accounts pre-demerger; per-entity PAT/ROCE/cash are illustrative allocations"}
+  - {source: "forward_guidance", severity: "MEDIUM", note: "no numeric FY27 guidance; forward EPS is operator-engaged illustrative, built off Q1 FY27 annualized"}
+  - {source: "unit_economics", severity: "HIGH", note: "no MT/kg volumes; unit-level growth validation not performed"}
+  - {source: "rating_pdf", severity: "MEDIUM", note: "rating_wc_quote NOT FOUND; cash multipliers applied on deliberation-approved structural determination"}
+flags:
+  - {type: "FLAG-CASH", applied_multiplier: "0.80x (Business B agri, STRUCTURAL subsidy receivable); Business A 1.15x with structural drag located in the demerging division", falsification: "retained-entity CFO:PAT <0.70x two consecutive quarters with >6m subsidy bucket >8%"}
+  - {type: "SHARED-CATALYST", note: "Samlaya drives Business A revenue STARTING AND ROCE FIRING; stress-tested as single point of failure (report Section 6)"}
+  - {type: "DEMERGER-EXECUTION", note: "scheme not yet effective; forward earnings still contain agri; per-entity PAT illustrative-allocated"}
+framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "Business A 35x (specialty chemicals cap) / Business B 14x (normalized, agri cap 20x not binding) / Blended 29.5x (context)"
+method: "SUM OF THE PARTS (operator direction 18-Aug-2026)"
+earnings_perimeter: "Forward earnings still contain the agri division until the scheme is effective; per-entity PAT is illustrative-allocated (no standalone accounts exist)."
+businesses:
+  business_a_polymer:
+    name: "Performance Polymers & Chemicals (retained -> Jubilant Industries Ltd)"
+    destination_pe_track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 13.5, rrm: 1.00}
+    destination_pe_track2_additive: {low: 32.5, mid: 35.0, high: 35.0}
+    divergence_pct: 0
+    governing_track: "either; specialty-chemicals 35x cap binds identically on both tracks"
+    pillar_detail:
+      roce_used: 67.5
+      roce_base: 30.0
+      roce_recovery_route: "not-credited"
+      pillar1_normalization_route: "none"
+      cash_multiplier: 1.15
+      structural_or_growth: "clean-at-segment (structural FLAG-CASH drag located in demerging Business B)"
+      growth_offset: 0
+      growth_premium: 0
+      strategic_premium: 2
+      shared_catalyst_flag: true
+      ua_applied: true
+      sector_cap_used: 35
+    fair_values_3yr_target_per_share:
+      track1: {bear: 3360, base: 3990, bull: 4375}
+      track2: {bear: 3360, base: 3990, bull: 4375}
+    fair_value_today_cr: 4375
+    hurdle_ratio: {base: 1.87, bull: 2.13, bull_used: true, verdict: "CONDITIONAL"}
+    entry_range_per_share: {low: 1634, high: 2043}
+    mos_price_per_share: 1634
+    decision: "WATCHLIST"
+  business_b_agri:
+    name: "Agri (P&K Fertilizers + Agri Nutrients -> Jubilant Agri Solutions Ltd)"
+    destination_pe_track1_rrm: {low: 13.0, mid: 13.2, high: 13.2, r_used: 14.0, rrm: 0.94}
+    destination_pe_track2_additive: {low: 13.0, mid: 14.0, high: 15.0}
+    divergence_pct: 6
+    governing_track: "value stub, not a compounder; Track 1 (13.2x) more conservative but moot"
+    pillar_detail:
+      roce_used: 19.9
+      roce_base: 17.5
+      roce_recovery_route: "not-credited"
+      pillar1_normalization_route: "none"
+      cash_multiplier: 0.80
+      structural_or_growth: "STRUCTURAL (NBS subsidy receivable); no growth offset"
+      growth_premium: 0
+      strategic_premium: 0
+      shared_catalyst_flag: false
+      ua_applied: false
+      sector_cap_used: 20
+    fair_values_today_per_jasl_share:
+      track1: {bear: 79, base: 165, bull: 264}
+      track2: {bear: 79, base: 165, bull: 264}
+    fair_value_today_cr: 250
+    hurdle_ratio: {base: 1.09, bull_used: false, verdict: "STOP"}
+    decision: "AVOID"
+  blended_context:
+    destination_pe_track1_rrm: {low: 27.5, mid: 29.5, high: 31.5, r_used: 13.5, rrm: 1.00}
+    destination_pe_track2_additive: {low: 27.5, mid: 29.5, high: 31.5}
+    sector_cap_used: 29.5
+    hurdle_ratio: {base: 1.64, verdict: "CONDITIONAL"}
+    note: "pre-demerger entity only; SOTP is the primary lens"
+combined_sotp:
+  fair_value_today_cr: 4625
+  market_cap_cr: 3549
+  premium_to_cmp_pct: 30
+  tier_a_entry_cr: 3345
+  tier_a_entry_per_share: 2208
+  mos_per_share: 1766
+  cmp_vs_entry: "CMP Rs 3,549 Cr ~6% ABOVE Tier A entry; wants a 6-15% dip or first standalone accounts"
+hurdle_ratio: {base: 1.87, bull_used: true, verdict: "CONDITIONAL"}
+fair_values:
+  track1: {bear: 3439, base: 4155, bull: 4639}
+  track2: {bear: 3439, base: 4155, bull: 4639}
+expected_cagr_prob_weighted: 20
+entry_range: {low: 1766, high: 2208}
+mos_price: 1766
+upside_downside_ratio: 2.6
+decision: "WATCHLIST"
+destination_pe_track1_rrm: 35.0
+destination_pe_track2_additive: 35.0
+hurdle_verdict: "CONDITIONAL"
+cash_multiplier_used: "A 1.15x / B 0.80x"
+structural_or_growth: "STRUCTURAL (located in demerging agri division)"
+ua_applied: "A yes / B no"
+sector_cap_used: "A 35x / B 20x / blended 29.5x"
+som_cagr_crosscheck: "consistent"
+one_line_thesis: "WATCHLIST JACPL at Rs 2,342 -- SOTP fair value ~Rs 4,625 Cr sits ~30% above the Rs 3,549 Cr market cap with ~88% in the retained polymer business (67.5% ROCE, VP-latex/PVAc scarcity, adhesives compounding high-teens) at a 35x specialty-chemicals cap on ~Rs 125 Cr FY27 forward PAT; but the imputed ~27x forward PE gives Hurdle Ratio 1.87 (CONDITIONAL), so BUY-on-dips at zone not BUY now, with Samlaya delay a single point of failure across revenue, margin and ROCE."

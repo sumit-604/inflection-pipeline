@@ -150,7 +150,100 @@ that number is un-guided, built from one quarter.
 
 ---
 
-## BUSINESS B — THE AGRI BUSINESS
+## BUSINESS B — THE AGRI BUSINESS (leaves as Jubilant Agri Solutions Ltd)
 
-To follow. Method identical, applied to the fertilizer and agri nutrients
-segments, valued on normalized not FY26 peak earnings.
+### Downstream / demand analysis
+
+| Sub-business | FY26 revenue | FY26 PBIT | Character |
+|---|---|---|---|
+| P&K Fertilizers (SSP + bulk NPK 20:20:0:13) | Rs 681 Cr | Rs 46.2 Cr | Subsidy-linked commodity, thin margin |
+| Agri Nutrients (bio-stimulants, Ramban brand) | Rs 11 Cr | Rs 0.7 Cr | Small, faster-growing, premium |
+| Combined | Rs 692 Cr | Rs 46.8 Cr | 6.8% margin, a peak year |
+
+Customers and cash: farmers via a dealer network, but the cash comes two ways,
+the farmer pays a small MRP portion and the Government of India pays the Nutrient
+Based Subsidy on SSP and NPK. That GoI subsidy is the Rs 400 Cr-plus receivable
+that is the whole cash problem. JACPL is a top-3 SSP producer and No.1 in Uttar
+Pradesh, also selling in Rajasthan and MP under the Ramban brand. Competes with
+Coromandel, Chambal.
+
+Why demand moves: it is a cycle, not secular growth. Monsoon (a weak uneven
+monsoon subdued Q1 FY27), crop acreage and kharif/rabi seasons, GoI subsidy
+policy, and DAP economics (SSP gains when DAP is short or costly). Input costs
+swing it hard: sulphur up roughly fourfold, rock phosphate import-dependent.
+Bio-stimulants hit by FCO regulatory changes.
+
+Indicators: FY26 was a placement peak (P&K Fert swung from a Rs 11 Cr loss FY25
+to a Rs 46 Cr profit), then Q1 FY27 EBIT fell 62% YoY. Thin-margin cyclical, not
+a compounder. Specialty fertilizer market grows ~4% a year; only the tiny Agri
+Nutrients piece grows double-digit. (Market framing from the MNCL note, a
+non-anchored lead; segment revenue/PBIT and the Q1 print are anchored.)
+
+### Earnings base (valued on normalized, not FY26 peak)
+
+FY26 anchored; FY27 and FY28 projected. Interest is loaded here (agri funds the
+fertilizer working capital), corporate cost split by segment PBIT, tax 25.7%.
+
+| Rs Cr | FY26 actual (peak) | FY27 proj | FY28 proj |
+|---|---|---|---|
+| Revenue | 692 | 727 (+5%) | 771 (+6%) |
+| Segment EBIT | 46.8 | 37 | 42 |
+| EBIT margin | 6.8% | 5.1% | 5.4% |
+| Less allocated interest | (5) | (6) | (6) |
+| Less corporate | (11) | (11) | (12) |
+| PBT | 31 | 20 | 24 |
+| **PAT (25.7% tax)** | **~23** | **~15** | **~18** |
+
+FY27 steps down from the FY26 peak because Q1 already signalled margin reversion
+on the weak monsoon; FY28 partially normalizes. Normalized mid-cycle PAT ~Rs 16
+to 18 Cr, against a Rs 23 Cr peak and a FY25 loss.
+
+### Destination PE and value
+
+| Step | Input | Value |
+|---|---|---|
+| Pillar 1 base | ROCE ~19.9% (segment), STAGNANT, normalized below peak | 17.5x |
+| Pillar 2 cash | structural (subsidy receivable) | 0.80x |
+| Quality-adjusted base | 17.5 x 0.80 | 14.0x |
+| Pillar 3 / strategic | commodity, no moat, no scarcity | +0x |
+| UA | fresh listing under 12 months | not applied |
+| Sector cap | Agri processing 20x, not binding | 20x |
+| **Destination PE** | on NORMALIZED earnings | **14x** |
+
+| Case | Normalized PAT | Multiple | Equity value | Per JASL share (1.515 Cr) |
+|---|---|---|---|---|
+| Bear (trough) | ~Rs 10 Cr | 12x | ~Rs 120 Cr | ~Rs 79 |
+| Base | ~Rs 18 Cr | 14x | ~Rs 250 Cr | ~Rs 165 |
+| Bull (near peak) | ~Rs 23 Cr | 17.5x | ~Rs 400 Cr | ~Rs 264 |
+
+Agri fails the 25% Tier A hurdle by nature, revenue grows 5 to 6% and earnings
+are cyclical. It is a value / monetization stub, not a transition-alpha buy. Hold
+small if received in the demerger, sell into an agri up-cycle. Consistent with
+the FTTCP composite of minus 2, AVOID.
+
+---
+
+## COMBINED SUM OF THE PARTS
+
+Two lenses, because they answer different questions.
+
+**Intrinsic fair value today** (destination PE on FY27 projected PAT):
+- Polymer: 35x x Rs 125 Cr = ~Rs 4,375 Cr
+- Agri: 14x x ~Rs 18 Cr normalized = ~Rs 250 Cr
+- **SOTP fair value ~Rs 4,625 Cr**, against a market cap of Rs 3,549 Cr, about
+  30% above the current price. On this lens the whole company is undervalued, and
+  essentially all of the value and all of the undervaluation sit in the polymer
+  business.
+
+**25% CAGR entry basis** (what the strategy pays for a 25% three-year return):
+- Polymer entry zone ~Rs 3,095 Cr (Rs 2,043 per share x 1.515 Cr)
+- Agri ~Rs 250 Cr (no growth premium, value ~ fair, not an entry discount)
+- **Combined entry ~Rs 3,345 Cr.** CMP Rs 3,549 Cr sits about 6% ABOVE this, so
+  on a strict 25% hurdle the package is slightly rich and wants a 6 to 15% dip.
+
+Reconciled read: the demerger is not a free fertilizer business any more, the
+58% re-rating priced the gross mispricing. What remains is a good polymer
+business at roughly fair value on forward earnings, a small cyclical stub thrown
+in, and a clean 25% entry available on a modest pullback or on the first
+standalone polymer accounts. DEEP WATCH at zone, BUY-on-dips, the polymer share
+is the one to want and the agri share the one to size small or exit.

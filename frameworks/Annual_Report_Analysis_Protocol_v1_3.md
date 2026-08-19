@@ -2,7 +2,7 @@
 
 *Companion to Role 1 (Valuation), Role 2 (Investment Thesis), Role 3 (Devil's Advocate), Role 4 (Quarterly Results Review), Role 5 (Concall Analysis), and Role 7 (FTTCP). Use this protocol every time an Annual Report is released for any company in the active portfolio or watchlist. The AR is the only document of the year where financial, governance, legal, ESG, strategic, and audited disclosures are stitched together. It is also the only document where the Notice of AGM (shareholder resolutions, RPT caps, ESOP grants, special business) is on the record. The AR is therefore the single most important annual artefact for testing — and updating — the investment thesis, and the richest audited evidence feed into the FTTCP catalyst tables.*
 
-*Version 1.2 | Updated August 2026 | Replaces v1.1 in full. Do not use v1.1 or earlier alongside this document.*
+*Version 1.3 | Updated 19 August 2026 | Replaces v1.1 and v1.2 in full. Do not use v1.1, v1.2, or earlier alongside this document.*
 
 ## INVOCATION
 
@@ -32,7 +32,7 @@ The AR is released 2–3 months after the financial year-end. By the time it arr
   - MD&A with industry outlook, strategy, and forward-looking commentary
 - If Role 4 has NOT been run for Q4, run Role 4 FIRST, then Role 6. Audited consolidated numbers in the AR will supersede the Q4 filing on any reconciliation difference.
 - If a fresh concall happens after the AR is released, run Role 5 after Role 6 and treat any concall commitments as audited (or not) by the AR data.
-- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v1.2).
+- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v2.1).
 
 ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
 
@@ -922,7 +922,9 @@ Discrepancies across peer ARs are diagnostic — if two peers in a sector say "d
 
 ## STEP 10.5 — DOWNSTREAM SIGNAL TRACKER — ANNUAL CROSS-CHECK (v1.2 addition)
 
-The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.4 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.3 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
+The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.6 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.4 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
+
+**Tracker coordinates (LIVE — use directly, do not search):** Database URL https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 | Data source ID `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`
 
 The annual cross-check catches three failure modes the monthly and quarterly cadences alone can miss:
 
@@ -996,7 +998,7 @@ Walk the four transitions (or the lender transition set) against the AR evidence
 | Cash Conversion (lenders: Asset Quality) | | e.g., audited CFO/PAT, WC forensics, ageing schedule / provisioning data | Y/N |
 | ROCE (lenders: RoA/RoE) | | e.g., audited capital base, CWIP capitalisation, capital raise resolutions | Y/N |
 
-- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v1.2 sole-authority table.
+- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v2.1 sole-authority table.
 - If all rows are N → state so explicitly, carry the existing FTTCP verdicts forward, and proceed.
 - Either way, new documented (📄) catalysts from the AR (RPT caps, commissioning evidence, sanctioned facilities) are appended to the FTTCP catalyst tables — the AR is the highest-quality evidence source in the annual cycle.
 
@@ -1012,7 +1014,7 @@ Walk through each pillar with the audited full-year data:
 
 | Pillar / Input | Original Assumption (Notion) | AR-supported reading | Action |
 | --- | --- | --- | --- |
-| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v1.2 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
+| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v2.1 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
 | 2. Cash Multiplier (lenders: Asset-Quality Multiplier) | ___x (structural / growth-induced) | Cumulative 3-yr audited CFO/PAT: ___; structural test reaffirmed? (Lenders: 5L band evidence) | Hold / Revise per audited band |
 | 3. Growth Visibility Premium | +___x (EM ___, catalyst ___) | RPT cap signal / catalyst evidence / new customer disclosures | Hold / Adjust |
 | 4. Strategic Premium | +___x | Reinforced / Maintained / Eroded by AR; single-credit state: "ROCE recovery credited via ___" | Hold / Adjust |
@@ -1367,4 +1369,6 @@ Role 4, Role 5, Role 6, and FTTCP are designed to run as a sequence around the a
 
 *This protocol exists because the AR is the only document of the year where audited financials, full notes, auditor's report, Notice of AGM, governance disclosures, and strategy commentary are all in one place. Without a structured protocol, AR reviews default to summarising what management said in the MD&A — which is the least useful analysis. The protocol forces extraction of what was audited (the only verified truth), what was disclosed in notes (the deep quality signals), what was requested in the AGM Notice (the forward intent), what was flagged by the auditor (the management judgement risks), and what was silent (information by absence).*
 
-*Version 1.2 | Updated August 2026 — Step 10.5 (Downstream Signal Tracker annual cross-check) added between Step 10 (Strategic Signals) and Step 11-PRE (FTTCP Refresh Gate). References the consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.4 Role 5.5). Three sub-tasks: (10.5A) pull tracker rows relevant to this company and cross-check for signal decay against the AR's own text; (10.5B) capture new downstream signals disclosed for the first time in this AR (segment note, RPT, Board's Report subsidiary paragraphs, Notice of AGM, MD&A) via Role 5.5 Case A/B procedure; (10.5C) reconcile the tracker against the audited customer-concentration disclosure and add any 10%+ customer that was missing; (10.5D) update tracker rows in place — retire, add, refresh direction, update Per-Company Thesis Element. The annual pruning flows forward into the next monthly refresh cycle and next quarterly Step 5.5 reconciliations. Step 14 Notion save format updated to include the Step 10.5 output. v1.1 (Jul 2026) added FTTCP refresh gate (Step 11-PRE), Step 11A sync to Section 1B v3.3, full lender variant (Steps 0F/3L/4L/5L), Promise-vs-Delivery reconciliation in Step 12A, Step 13 H/W branches with annual probability re-weighting rule. v1.0 created June 2026.*
+*Version 1.2 | Updated August 2026 — Step 10.5 (Downstream Signal Tracker annual cross-check) added between Step 10 (Strategic Signals) and Step 11-PRE (FTTCP Refresh Gate). References the consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.5 Role 5.5). Three sub-tasks: (10.5A) pull tracker rows relevant to this company and cross-check for signal decay against the AR's own text; (10.5B) capture new downstream signals disclosed for the first time in this AR (segment note, RPT, Board's Report subsidiary paragraphs, Notice of AGM, MD&A) via Role 5.5 Case A/B procedure; (10.5C) reconcile the tracker against the audited customer-concentration disclosure and add any 10%+ customer that was missing; (10.5D) update tracker rows in place — retire, add, refresh direction, update Per-Company Thesis Element. The annual pruning flows forward into the next monthly refresh cycle and next quarterly Step 5.5 reconciliations. Step 14 Notion save format updated to include the Step 10.5 output. v1.1 (Jul 2026) added FTTCP refresh gate (Step 11-PRE), Step 11A sync to Section 1B v3.3, full lender variant (Steps 0F/3L/4L/5L), Promise-vs-Delivery reconciliation in Step 12A, Step 13 H/W branches with annual probability re-weighting rule. v1.0 created June 2026.*
+
+*Version 1.3 | 19 August 2026 — reconciliation of the parallel framework streams. The v1.2 base already carried Step 10.5 DOWNSTREAM SIGNAL TRACKER — ANNUAL CROSS-CHECK (sub-tasks 10.5A signal-decay check, 10.5B new-signal capture, 10.5C audited customer-concentration reconciliation with the 10%+ customer rule, 10.5D in-place tracker update); all of it is preserved unchanged. Two forks of the v1.2 file existed (identical except one cited Master v3.4 and the other Master v3.5); they are collapsed into this single file. v1.3 adds the live tracker coordinates (Database URL plus data source ID 926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f) to Step 10.5 so the annual cross-check writes to the same physical tracker as Role 5.5, and re-points cross-references to the merged canonical documents: Role 5.5 now cited as Master Project Prompt v3.6 (was v3.4/v3.5), the quarterly reconciliation as Role 4 v1.4 (was v1.3), and the FTTCP ROCE sole-authority table as FTTCP v2.1 (was v1.2). No step logic or math changed.*

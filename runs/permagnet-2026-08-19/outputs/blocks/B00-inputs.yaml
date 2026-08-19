@@ -1,0 +1,83 @@
+stage: B00-inputs
+company: PERMAGNET
+run_date: 2026-08-19
+model: orchestrator
+status: complete
+run_type: full
+no_concall_mode: true          # manifest concalls_available: false
+
+manifest:
+  parses: true
+  company: Permagnet
+  ticker: PERMAGNET
+  cmp: 0.0                      # DEFECT: not populated (collect_to_repo v3)
+  market_cap_cr: 0.0           # DEFECT: not populated
+  sector_cap_row: "Agri processing"   # DEFECT: auto-picked, WRONG for a
+                               # magnets / electro-mechanical / alloys company.
+                               # Override for phase-3 stage-11; evidence-
+                               # maximizing default is an electrical-equipment /
+                               # components row, NOT agri. Flagged, confirm in P3.
+  listed_date: ""              # absent; rating confirms PML incorporated 1960,
+                               # public/long-listed -> prospectus NOT a HIGH gap.
+
+identity_confirmed:
+  annual_report: "Permanent Magnets Ltd, Annual Report FY2025-26 (BSE 504132, pmlindia.com); 157pp text layer"
+  results_q1fy27: "PML unaudited standalone+consolidated results, quarter ended 30-Jun-2026, board 04-Aug-2026; 7pp"
+  results_q4fy26: "PML board outcome 13-May-2026 (Q4/FY26 audited results); 18pp"
+  rating: "Acuite Ratings press release 20-Feb-2026. UPGRADED to ACUITE BBB / Stable (LT) and A3+ (ST) from BBB-/A3 on Rs 34.48 Cr bank facilities. Full consolidation PML+QMPL. SCANNED (no text layer) -> image-render read only."
+
+inputs_present:
+  annual-report: 1
+  results: 2
+  rating: 1
+  peer-concalls: 12            # MIDHANI x4, SALZERELEC x4, TDPOWERSYS x4
+  screening: 18_files_BUT_peer_only   # see input_gaps
+
+input_gaps:
+  - type: prospectus
+    status: absent
+    severity: LOW
+    note: "PML incorporated 1960, long-listed. Prospectus not expected; not a HIGH gap. Backward baseline builds from AR FY26 restated multi-year statements."
+  - type: concalls
+    status: declared-absent
+    severity: NONE
+    note: "manifest concalls_available: false. NO-CONCALL MODE. Not a gap. Stage 5 degraded (reads AR MD&A / chairman letter / results commentary); credibility_grade defaults C, max B."
+  - type: screening
+    status: wrong-company
+    severity: MEDIUM
+    note: "screening/ holds only PEER CSVs (MIDHANI, SALZERELEC, TDPOWERSYS). NO PERMAGNET screener data. Gate 0 (stage 1) runs 'No screening data' degraded mode: extract from results PDFs + AR financial statements."
+  - type: announcements
+    status: absent
+    severity: MEDIUM
+    note: "No Reg 30 filings folder. Intent-and-action cross-check runs on AR + results only; recent documented ACTIONS cannot be graded from filings. Stage 8 relies on web search. FTTCP Step 0C input weakened -> flag, lower confidence. Operator provided a 6-month operational summary in chat (ECMS approvals, capex/borrowing plan, furnace ramp) = NON-ANCHORED leads only, not filing-anchored."
+  - type: shareholding
+    status: absent
+    severity: MEDIUM
+    note: "No shareholding PDF. Stage 10 FII+DII unresolved; stage 11 cannot affirm UA institutional-absence qualifier from a filing. Operator supplied a screener shareholding screenshot (Promoters 58.01% flat Sep'23->Jun'26; FII ~0.00%; DII ~0.01%; Public ~41.98%; ~17,574 holders) = NON-ANCHORED context."
+  - type: research
+    status: absent
+    severity: LOW
+    note: "No broker notes. No effect on anchored evidence."
+  - type: presentation
+    status: absent
+    severity: LOW
+    note: "No investor presentation PDF. Stage 4 runs from AR + results commentary. Operator chat summary references an FY26 investor presentation (not in inputs)."
+
+peer_set:
+  MIDHANI: "Mishra Dhatu Nigam - specialty alloys/superalloys, aerospace/defence -> maps to PML Alloys division"
+  SALZERELEC: "Salzer Electronics - electrical/metering/electronics -> maps to PML electro-mechanical/relays/meter components"
+  TDPOWERSYS: "TD Power Systems - motors/generators -> maps to PML magnets/motors"
+
+degradation_active:
+  - "NO-CONCALL MODE (stage 5 degraded, credibility C max B; stage 6 runs since peer-concalls present)"
+  - "No PERMAGNET screening -> Gate 0 from results PDFs + AR"
+  - "No announcements -> stage 8 web-search led; intent/action from AR+results only; flag"
+  - "No shareholding filing -> UA qualifier withheld at stage 11 (all-three-qualifier rule); FII+DII unresolved at stage 10"
+  - "No presentation -> stage 4 from AR + results"
+
+pdf_tooling:
+  status: resolved
+  note: "pypdf cffi backend broken; poppler-utils installed. Text-layer PDFs (AR, both results, 12 peer concalls) pre-extracted to page-marked .txt under work/txt/ (reliable-default per LESSONS). Rating PDF is scanned -> passed as PDF for image-render read."
+
+flags: []
+analyst_note: "collect_to_repo v3 defects recur exactly as LESSONS predicts: cmp/mcap zero, sector_cap_row wrong (Agri for a magnets co), and the screening folder carries peer CSVs only with no PERMAGNET screener. Gate 0 therefore extracts financials directly from the two results PDFs and the AR. Rating (scanned, image-render) confirms working-capital-intensive operations + RM-price volatility as the rating constraint -> pre-loads FLAG-CASH scrutiny for phase 1."

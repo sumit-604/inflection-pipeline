@@ -1,0 +1,91 @@
+stage: B09-tam
+company: "BIRLACABLE"
+run_date: "2026-08-20"
+model: claude-sonnet-5
+status: partial               # Method 5 and granular peer OFC-segment revenue skipped
+input_gaps: ["investor presentation", "corporate announcements", "shareholding pattern", "sell-side research", "prospectus/DRHP", "concalls/transcripts"]
+flags:
+  - "Management's implicit TAM claim (India telecom services market, $159.8-193.34Bn) is ~11x the conservative cable-market TAM - category mismatch (services market, not cable market), read as inflated/broad"
+  - "Zero capacity-expansion capex in flight (B07) caps SOM-implied CAGR at 2.5-2.9%, converging closely with B07's independently-derived 3% embedded-growth figure"
+  - "BCL order book only Rs 24 Cr as of 31-Dec-25 (CARE) - thin near-term revenue visibility, especially for the OFC recovery the AR says began only 'since late March 2026'"
+  - "OFC segment declined -8.25% YoY in FY26 even as company revenue grew 16.54% on LAN cable strength - growth is single-segment-driven, not broad-based"
+  - "Standalone BCL SOM analysis is moot beyond the Vindhya Telelinks amalgamation's expected NCLT sanction (~Jan-Mar 2027, within the 3-year SOM window)"
+  - "Top-down and bottom-up India-OFC estimates diverge ~9x; conservative (top-down) figure used per instruction, bottom-up and BharatNet-implied figures held as directional upside only"
+  - "SAM/LAN cable-content share (35% of full structured-cabling market value) is an unsourced industry rule-of-thumb assumption, not a cited report figure"
+market_definition: "Global market for standard telecom-grade optical fibre cable, plus India-only market for copper telecom and structured LAN cable (cable content only, excluding connectors/active gear/power cables)."
+tam_cr: {conservative: 139210, realistic: 153690}
+sam_cr: 6060
+sam_pct_of_tam: 4.35
+som_3yr_cr: 830
+som_5yr_cr: 890
+som_implied_revenue_cagr: {yr3: 2.5, yr5: 2.9}
+current_sam_share_pct: 12.69
+revenue_headroom_x: 7.86
+tam_growth_pct: 10.5
+runway_class: "GOOD"
+mgmt_claim_cr: 1528970
+mgmt_claim_ratio: 10.98
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient - existing single-plant capacity (~60 lakh F-km/yr OFC, CARE Nov-2024) supports the SOM's 2.5-2.9% CAGR without new capex, consistent with B07's near-zero embedded-growth capex figure"
+methods_used: ["top-down (India + global OFC, India structured-cabling cable-content)", "bottom-up (India OFC F-km x implied ASP, directional only)", "peer aggregation (partial - competitor count/concentration, not sized)", "import substitution (BharatNet Phase 3 outlay x assumed cable-content share)"]
+stale_data_flags:
+  - {datapoint: "India OFC market USD 1.66Bn by 2026", source: "Allied Market Research", year: "base year 2018"}
+  - {datapoint: "India structured cabling market base year (USD 739.9M)", source: "PS Market Research", year: "2024, borderline 2yr threshold"}
+  - {datapoint: "BCL OFC capacity 60 lakh F-km/yr (and inconsistent 3.6M F-km total capacity figure)", source: "CARE Ratings press release", year: "Nov-2024, ~21 months old"}
+searches_performed:
+  - "India optical fibre cable market size 2026 CAGR crore"
+  - "India structured cabling LAN cable market size 2026 crore"
+  - "India wire and cable industry market size 2026 CRISIL ICRA telecom cables"
+  - "BharatNet Phase 3 tender value crore optical fibre cable order"
+  - "BharatNet Phase 3 total project cost budget crore all circles 2025 2026"
+  - "India copper telecom cable market size crore Sterlite HFCL Polycab OFC revenue FY26"
+  - "India data centre cabling market size structured cabling demand 2026"
+  - "India optical fibre cable exports global market share Sterlite HFCL Finolex Birla Cable export"
+  - "Birla Cable CARE rating December 2025 order book capacity Rewa OFC F-km"
+  - "USD INR exchange rate August 2026"
+  - "India optical fibre cable installed capacity million fibre km 2025 2026 demand supply"
+  - "global optical fibre cable market size 2026 USD billion CAGR"
+  - "Indian wire and cable industry unorganised sector share percent"
+searches_skipped:
+  - "Method 5 global benchmark: per-capita fibre/cabling comparison vs China, SE Asia - skipped, 4 other methods already satisfied triangulation requirement"
+  - "Granular OFC-segment-only FY26 revenue for Sterlite Technologies and Finolex Cables - search returned only consolidated/blended figures, segment split not resolved"
+  - "BCL export destination countries for OFC - not found in AR extract, not separately searched"
+downstream_candidates:
+  - signal: "BharatNet Phase 3 circle-wise tender awards and rollout progress"
+    entity_type: "regulatory"
+    demand_link: "Largest single named OFC demand driver in AR; direct government-funded fibre rollout"
+    likely_source: "Bharat Broadband Network Ltd (BBNL) / DoT press releases, PIB"
+    cadence: "event-driven"
+    shared: false
+  - signal: "BSNL 4G/5G site rollout (target 100,000 sites by Mar-2027)"
+    entity_type: "end-customer"
+    demand_link: "Drives copper backhaul and OFC demand from BCL's largest addressable government customer"
+    likely_source: "DoT Year-End Review, BSNL press releases"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Union Budget DoT telecom allocation"
+    entity_type: "macro"
+    demand_link: "Sets ceiling on government telecom capex feeding cable-linked tenders (Rs 74,000 Cr FY26-27)"
+    likely_source: "Union Budget documents, DoT Annual Report"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Private telco capex guidance (Bharti Airtel, Reliance Jio fiberisation spend)"
+    entity_type: "end-customer"
+    demand_link: "Drives OFC and, indirectly, enterprise LAN cabling demand from BCL's private-sector pool"
+    likely_source: "Company quarterly investor presentations/concalls"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Global OFC demand/price trackers cited by AR"
+    entity_type: "macro"
+    demand_link: "Signals global OFC pricing cycle driving BCL's export realisations (74% of OFC revenue)"
+    likely_source: "Industry trade publications (Lightwave, Wire & Cable India) / CRU Group"
+    cadence: "quarterly"
+    shared: false
+  - signal: "BCL's single largest customer order flow (name NOT FOUND in extracts, ~45% of revenue)"
+    entity_type: "counterparty"
+    demand_link: "Customer concentration means this one relationship drives most of non-OFC revenue"
+    likely_source: "BCL related-party transaction disclosures / AR top-customer note"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "SOM is sized for standalone BCL per the prompt's instruction to size the market anyway, but the Scheme of Amalgamation into Vindhya Telelinks (appointed date 1-Apr-2026, NCLT sanction expected ~Jan-Mar 2027) falls inside the 3-year SOM window. Every number in Section 3B describes an entity that is scheduled to stop existing as a standalone listed company partway through the period it measures. Two independent cross-checks converged tightly: the SOM-implied CAGR (2.5-2.9%) and B07's capex-embedded-growth figure (3%), both pointing to a low-single-digit growth ceiling absent new capacity decisions BCL is not currently making. The Rs 24 Cr order book (CARE, 31-Dec-25) is thin against this trajectory and against a much larger, likely misattributed Rs 7,124.51 Cr 'Birla Cable' order book figure surfaced in search (almost certainly Vindhya Telelinks or a different entity, disregarded)."

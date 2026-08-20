@@ -1,0 +1,56 @@
+stage: B11-valuation
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+input_gaps:
+  - "Segment-level core-vs-relay operating cost split NOT SEPARATELY DISCLOSED (single IND AS 108 segment); relay strip assumed Rs 2.0 Cr pre-tax, flagged"
+  - "Relay mature revenue/earnings NOT FOUND (not sized in B09 TAM); conservative option assumptions used"
+  - "QMPL/NdFeB mature revenue/earnings NOT FOUND; deep-OTM option assumptions used"
+  - "FY27 forward revenue/margin guidance NOT QUANTIFIED (no-concall mode)"
+  - "Market PE denominator for relative-PE expression NOT FOUND (no macro-sheet.md in inputs)"
+  - "ECB Rs 47.81 Cr sanctioned vs ~Rs 28.86 Cr drawn at FY26; undrawn ~Rs 19 Cr will raise forward net debt"
+flags:
+  - "FLAG-CASH (MAJOR): receivables +39.4% vs revenue +13.0%; consol CFO -55% vs PAT -6%; cash multiplier 1.00x APPLIED"
+  - "FLAG-SUBSIDIARY (MAJOR): QMPL revenue -85.5%, Rs 47.81 Cr ECB, D/E +238%, negative net worth"
+  - "FLAG-EXECUTION (MAJOR): relay H2FY27 (slipped once); QMPL Phase 2 Q3FY27 - both pre-commercial"
+  - "FLAG-GOING-CONCERN (MODERATE): 2015 Bombay HC winding-up EoM; Rs 22.01 Cr disputed excise interest"
+  - "SHARED-CATALYST: MOOT (Pillar 3 +0x, no double-count)"
+framework_versions: "Master v3.5 / Section 1B v3.6 (Amdts 11-16) via v3.5.1 route rule / FTTCP v1.2"
+pe_basis: "forward"
+exit_pe_base_approved: "Core additive 17.3x (16.0-18.5x) / RRM 14.1x (13.0-15.0x); Pillar 3 +0x; v3.6 Damodaran, operator-approved 2026-08-19"
+destination_pe:
+  track1_rrm: {low: 13.0, mid: 14.1, high: 15.0, r_used: 15.0, rrm: 0.82}
+  track2_additive: {low: 16.0, mid: 17.3, high: 18.5}
+  divergence_pct: 22.4
+  governing_track: "RRM 14.1x - more conservative, correct for subsidiary opacity/going-concern complexity; sets entry zone per operator"
+pillar_detail:
+  roce_used: 12.54
+  roce_base: 13.8
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  structural_or_growth: "growth-induced (operator-confirmed)"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: true
+  sector_cap_used: 25
+hurdle_ratio: {base: 0.52, bull_used: true, verdict: "STOP"}
+fair_values:
+  track1: {bear: 268, base: 330, bull: 392}
+  track2: {bear: 330, base: 404, bull: 471}
+expected_cagr_prob_weighted: -14.5
+entry_range: {low: 118, high: 169}
+mos_price: 118
+upside_downside_ratio: 0
+decision: "AVOID (on-valuation)"
+unresolved_inputs_used:
+  - "Relay slice: mature rev NOT FOUND -> conservative Rs 40 Cr rev / 8% margin / 30% prob / 0.60 discount = ~Rs 8 Cr base (RRM multiple)"
+  - "QMPL slice: mature rev NOT FOUND -> deep-OTM Rs 60 Cr rev / 10% margin / 12% prob / 0.50 discount = ~Rs 6 Cr base; bear Rs 0"
+  - "Relay cost strip: NOT DISCLOSED -> Rs 2.0 Cr pre-tax (+Rs 1.49 Cr after tax) added back to core, held deliberately small"
+  - "Net debt: balance-sheet Rs 7.72 Cr used (drawn ECB); undrawn ECB ~Rs 19 Cr flagged as QMPL bear overlay"
+  - "Current forward PE: CMP 882 / FY27 base core EPS 22.9 = 38.5x (forward-core basis for HR)"
+som_cagr_crosscheck: "consistent (base core revenue growth 12% below SOM-implied 3yr 20.1%)"
+one_line_thesis: "AVOID PERMAGNET at Rs 882: core at 12.54% ROCE (below cost of capital) earns only 17.3x/14.1x on ~Rs 22.9 FY27 forward core EPS for a base SOTP fair value Rs 330-404 incl small option slices, vs a 38.5x forward price -> Hurdle STOP, negative expected CAGR; transformation priced-we-are-late, option value in the safe box not the entry."

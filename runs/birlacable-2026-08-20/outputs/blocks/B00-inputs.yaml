@@ -1,0 +1,49 @@
+stage: B00-inputs
+company: BIRLACABLE
+run_date: 2026-08-20
+model: orchestrator-inline
+status: complete
+input_gaps:
+  - "prospectus: absent. Company incorporated 1992 (CIN L31300MP1992PLC007190), long listed. Normal gap, not HIGH."
+  - "announcements: absent. Documented-ACTION record lost for stages 5, 7, 8. Material this run: the Vindhya Telelinks amalgamation scheme (board approval 2026-03-21, NSE/BSE observation letters 2026-08-14) is filed there. Merger evidence must come from rating PDF, AR, and stage 8 web search. Operator confirmed proceed 2026-08-20."
+  - "shareholding: absent. FII+DII UA qualifier and pledge trend fall back to AR and rating evidence. Stage 11 UA affirmation deferred to phase 3 evidence check."
+  - "research: absent. No effect on anchored evidence."
+  - "presentation: absent. Stage 4 runs from AR + results commentary. Stage 7 loses presentation evidence."
+  - "concalls: none, DECLARED via manifest concalls_available: false. NO-CONCALL MODE, not a gap. Stage 5 degraded to AR MD&A + results commentary; credibility grade defaults C, max B."
+  - "collector defect: screener P&L/BS/CF/Quarters CSVs are label-only for company and all 4 peers. Data_Sheet CSVs are populated (FY23-FY26). Gate 0 uses Data_Sheet + results PDFs + AR."
+  - "collector defect: manifest sector_cap_row 'Specialty chemicals' is wrong for a telecom/optical fibre cable maker. Flag for phase-3 sector cap confirmation before stage 11."
+inventory:
+  manifest: valid
+  prospectus: 0
+  annual_report: 1  # FY2025-26 AR, filed 2026-07-10, 165 pages
+  results: 3  # Q3 FY26 (2026-01-29), FY26 audited (2026-05-22), Q1 FY27 (2026-08-02)
+  rating: 1  # CARE press release 2026-04-01 (revised), 11 pages
+  concalls: 0  # declared unavailable
+  peer_concalls: 12  # HFCL x4 (Oct25,Feb26,May26,Jul26), PARACABLES x4 (Nov24,Feb25,May25,May26), STLTECH x4 (Nov25,Jan26,May26,Jul26)
+  announcements: 0
+  shareholding: 0
+  research: 0
+  screening: 30  # company + HFCL, PARACABLES, STLTECH, UNIVCABLES; Data_Sheet populated, rest label-only
+  presentation: 0
+  other: 0
+  extracted_text: "inputs/_extracted/*.txt, page-marked, all 17 PDFs extracted clean"
+no_concall_mode: true
+company_memory: "none (companies/BIRLACABLE.md does not exist; first run for this ticker)"
+operator_context: >
+  NON-ANCHORED operator-supplied context, 2026-08-20 chat: (1) six-month
+  announcement summary covering the Vindhya Telelinks amalgamation (board
+  approval 2026-03-21, exchange ratio 10 VTL shares per 115 BCL shares,
+  NSE no-objection and BSE no-adverse-observations letters 2026-08-14,
+  NCLT approval pending), the CARE rating action of 2026-04-01, FY26
+  results, and the Manager & CFO appointment of 2026-05-22; (2) a
+  shareholding-pattern screenshot: promoters 66.35% flat Sep 2023 to Jun
+  2026, FII 0.02%, DII 0.01%, public 33.62% at Jun 2026, no pledge data
+  shown. Stages weigh this as leads only; every reported number must come
+  from this run's inputs or a stage's own verified web search.
+flags: []
+analyst_note: >
+  The amalgamation into Vindhya Telelinks is the dominant fact of this
+  run: if sanctioned, BIRLACABLE shareholders receive VTL shares at
+  10:115 and the company dissolves. Evidence stages must treat merger
+  progress as a first-order catalyst/risk even though the announcements
+  folder is empty; the rating PDF and web search carry it.

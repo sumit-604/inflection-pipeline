@@ -47,9 +47,9 @@ input_gaps:
     severity: MEDIUM
     note: "screening/ holds only PEER CSVs (MIDHANI, SALZERELEC, TDPOWERSYS). NO PERMAGNET screener data. Gate 0 (stage 1) runs 'No screening data' degraded mode: extract from results PDFs + AR financial statements."
   - type: announcements
-    status: absent
-    severity: MEDIUM
-    note: "No Reg 30 filings folder. Intent-and-action cross-check runs on AR + results only; recent documented ACTIONS cannot be graded from filings. Stage 8 relies on web search. FTTCP Step 0C input weakened -> flag, lower confidence. Operator provided a 6-month operational summary in chat (ECMS approvals, capex/borrowing plan, furnace ramp) = NON-ANCHORED leads only, not filing-anchored."
+    status: PARTIALLY-CLOSED-in-fttcp-review
+    severity: LOW
+    note: "Empty at Phase-1 run time. During /fttcp review the operator supplied two primary Reg 30 filings, now saved to inputs/announcements/: PML-ECMS-Relays-2026-03-30.pdf (ECMS approval, PML standalone, Electro-mechanicals/Relays) and QMPL-ECMS-NdFeB-2026-08-18.pdf (ECMS approval, subsidiary QMPL, Neodymium/NdFeB magnets). Both are the 📄 documented-ACTION feed FTTCP Step 2E needs; both anchored in the FTTCP draft. Remaining absent from filings: the 13-May-2026 board outcome on the Rs100->300cr borrowing limit (present in AR notice, not as a standalone Reg 30 PDF) and any order/customer announcements. Operator 6-month summary remains NON-ANCHORED for its other claims."
   - type: shareholding
     status: absent
     severity: MEDIUM

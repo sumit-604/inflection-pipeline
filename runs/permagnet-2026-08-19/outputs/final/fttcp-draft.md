@@ -8,11 +8,22 @@ First workup. No prior company memory file exists and the manifest run type is f
 every Role 1 derived field (destination PE, prior thesis, prior devil's advocate) is N/A
 because FTTCP runs before Role 1.
 
-Ran in NO-CONCALL MODE. No earnings call transcript exists for this company. Three of the
-seven required pre flight sources are missing (concall transcript, investor presentation,
-exchange announcements of the last 90 days). Under the protocol's own rule that is the
-threshold at which FTTCP either declares itself inconclusive or proceeds with a declared
-low confidence verdict. I proceeded, and this verdict carries declared low confidence.
+Ran in NO-CONCALL MODE. No earnings call transcript exists for this company. Under the
+protocol's own rule, three or more missing pre flight sources is the threshold at which
+FTTCP proceeds with a declared low confidence verdict. I proceeded, and this verdict
+carries declared low confidence.
+
+> **REVIEW UPDATE (operator, during /fttcp review).** Two primary Reg 30 filings were
+> supplied and are now in inputs/announcements/: the ECMS approval for Relays (PML
+> standalone, 30-Mar-2026) and the ECMS approval for Neodymium magnets (subsidiary QMPL,
+> 18-Aug-2026). Both are 📄 documented action and are worked into sections 5, 6 and 9
+> below. They CONFIRM the direction and lift confidence; they do NOT move any transition
+> score. **Composite stays +1.** Separately, the operator directed that Phase 3 valuation
+> use the **v3.6 Damodaran basis** (Section 1B v3.6 Amendments 11-16, via Master v3.5), not
+> the v3.3 basis the first draft priced. Section 8, the P/E base card, is restated on that
+> basis below, and the framework ruling is recorded in MY RULINGS. The single most
+> consequential v3.6 effect: Pillar 3 pays +0x here, because return on capital sits below
+> the cost of capital (Amendment 16).
 
 ---
 
@@ -22,6 +33,29 @@ Every call below is made. None of them is a question. Each carries a confidence 
 the single fact that would prove it wrong.
 
 ### Setup calls
+
+**Valuation framework basis: v3.6 Damodaran, operator directed during review.** Phase 3
+stage 11 must apply Section 1B v3.6 Amendments 11-16 (via Master v3.5), not the v3.3 basis
+the first draft priced. The material bites on this name: Pillar 3 gated to +0x until return
+on capital crosses the cost of capital (Amendment 16); a +0.5 complexity charge in the
+discount rate for the subsidiary opacity, the going concern emphasis of matter, and the
+unreconciled figures (Amendment 13); the growth fade horizon set by the STRENGTHENING
+emerging moat class, fading by Year 4 (Amendment 14); the r table single credit fixes so
+cash conversion is priced in Pillar 2 only and the old-listing short record carries no
+surcharge (Amendment 12); operating earnings only in every multiple (Module B4); and the
+destination also expressed as a relative PE (Amendment 15). The 30x Pillar 1 ceiling
+(Amendment 11) does not bind here.
+Confidence: `sure` that this is the operator's instruction. The framework itself is a
+choice, not a fact that can be wrong; what it changes is set out in section 8.
+
+**Valuation shape: sum of the parts, not one blended multiple.** This business has a mature,
+below cost of capital core and three young bets in different life cycle stages. Under the
+Damodaran lens Phase 3 should value the mature core on its own operating earnings at a
+modest, no growth premium multiple, value the alloys line on its ramp, and value relays and
+neodymium as small policy backed options, then net the subsidiary debt and losses in the
+equity bridge. The single multiple card in section 8 is the CORE preview only.
+Confidence: `fairly sure`. Wrong if Keerti prefers a single blended multiple on consolidated
+operating earnings, which is simpler but buries the loss making subsidiary inside the core.
 
 **Forward window: 3 months primary, 6 months secondary, 12 months for capital efficiency.**
 The company reports quarterly and filed for the June 2026 quarter on 04 August 2026, so
@@ -357,23 +391,31 @@ content per meter, which is exactly what the relay is meant to do and has not do
 
 | Transition | Best catalyst | Evidence | Probability over the window | Magnitude |
 |---|---|---|---|---|
-| Revenue | Alloys furnace ramp, commercialised and in the sales mix | Documented, AR p.4 and p.9, Q4 and Q1 prints | ~60% over 3 to 6 months | Moderate to high |
+| Revenue | Alloys furnace ramp, commercialised and in the sales mix | 📄 Documented, AR p.4 and p.9, Q4 and Q1 prints | ~60% over 3 to 6 months | Moderate to high |
+| Revenue / margin | Relays ECMS approval, a documented policy backed de-risking of the H2 FY27 line | 📄 Documented, Reg 30 filing 30-Mar-2026 (inputs/announcements/PML-ECMS-Relays). Approval and incentive eligibility, not yet revenue or a customer | Enabling milestone, revenue still guided H2 FY27 | Low near term, moderate to high on eventual commercialisation |
 | Margin | Operating leverage on alloys volume | Management claim, offset by lower alloy margin and a compressing June quarter | ~30% over 3 to 6 months | Moderate |
 | Cash conversion | NONE FOUND | No facility, no target, no programme, no commentary | Not applicable | Not applicable |
-| Capital efficiency | Deployed capital starting to earn, alloys furnace | Documented for alloys; relay and rare earth still consuming | ~30% over 12 months | Moderate |
+| Capital efficiency | Deployed capital starting to earn, alloys furnace | 📄 Documented for alloys; relay and rare earth still consuming | ~30% over 12 months | Moderate |
+| Capital efficiency / revenue | Neodymium ECMS approval, a documented policy backed de-risking of the NdFeB option | 📄 Documented, Reg 30 filing 18-Aug-2026 (inputs/announcements/QMPL-ECMS-NdFeB). Approval and incentive eligibility, not yet revenue; Phase 2 guided Q3 FY27, first sales Q4 FY27 | Enabling milestone | Low near term, high only if commercialised |
 
 **Management intent and action ledger.** This is the cross check that asks whether real
 documented action makes any of the verdicts above too harsh.
 
 | Transition | Stated vision | Documented action | Too conservative? | Adjustment |
 |---|---|---|---|---|
-| Revenue | Stronger footing across alloys, relays, Quantum | Furnace commercialised, mix 1% to 3% to 10%, two positive quarters | Already at the maximum a stagnant backward allows | None |
-| Margin | Mix shift up the value chain | None at group level; alloys currently lower margin; June quarter compressed | No, vision without matching action | None, stagnant holds |
-| Cash conversion | None stated anywhere | NONE | No, and the absence is itself the finding | None, and the cap cannot be lifted |
-| Capital efficiency | Scale up alloys, relays, rare earth | Furnace earning is real; borrowing limit tripled and capex continuing cut the other way | Net holds | None, stagnant holds |
+| Revenue | Stronger footing across alloys, relays, Quantum | Furnace commercialised, mix 1% to 3% to 10%, two positive quarters; 📄 relays ECMS approval 30-Mar-2026 | Already at the maximum a stagnant backward allows | None |
+| Margin | Mix shift up the value chain | 📄 relays ECMS approval de-risks the H2 FY27 line, but it is scheme eligibility not commercialisation, and the margin uplift is beyond the 3 to 6 month window | No, action is enabling not earning; June quarter compressed | None, stagnant holds |
+| Cash conversion | None stated anywhere | NONE. Neither ECMS filing touches working capital | No, and the absence is itself the finding | None, and the cap cannot be lifted |
+| Capital efficiency | Scale up alloys, relays, rare earth | Furnace earning is real; 📄 neodymium ECMS approval 18-Aug-2026 de-risks the option; borrowing limit tripled and capex continuing cut the other way | No, approval is eligibility not capital earning | None, stagnant holds |
 
-The ledger confirms the verdicts rather than loosening any of them. That is the same
-pattern the protocol's own AIMTRON example describes.
+The ledger confirms the verdicts rather than loosening any of them, exactly the pattern the
+protocol's own AIMTRON example describes: real 📄 action that validates the direction without
+moving a transition, because none of it is yet capital earning, revenue, or a working
+capital fix. Both ECMS approvals are genuine de-risking of the two policy backed options and
+they raise confidence and the option slice weight in the valuation below, but a scheme
+approval is the start of an option, not its exercise, and the standing kill signals (relays
+slipping past H2 FY27, neodymium still near zero after Q4 FY27, further China tightening)
+are unchanged.
 
 ---
 
@@ -440,68 +482,103 @@ FTTCP re run.
 | Pillar 1 ROCE implied | Current ROCE, 12.54% consolidated statutory (AR-FY26 p.156) |
 | Pillar 1 normalization route | NONE. Route A fails the 20% test at 11.2% and fails the documentary gate, no commissioning timeline disclosed. Route B barred, v3.5.1 forbids either route on a declining verdict |
 | ROCE recovery credited via | Not credited. Neither Pillar 1 nor the Strategic Premium |
+| Pillar 3 eligibility gate (v3.6 Amendment 16) | FAIL. Return on capital 12.54% is below the cost of capital and the forward verdict is STAGNANT, so growth premium eligible reads NO. Pillar 3 pays +0x regardless of moat score or capex embedded growth |
+| Complexity charge (v3.6 Amendment 13) | +0.5 to r. Triggers: subsidiary opacity, going concern emphasis of matter, unreconciled internal figures |
+| Growth fade horizon (v3.6 Amendment 14) | STRENGTHENING emerging moat class, growth fades to industry by Year 4; project to Year 5 |
 | Sector cap row Phase 3 must use | Cables / Industrial products, 25x. NOT the manifest's Agri processing 20x |
 | Hurdle tier | Tier A, 25%, divisor 1.953. Tier B fails at the first gate, institutional holding is 0.01% not 3% or more |
-| SHARED CATALYST flag | YES. The alloys furnace commissioning supports both the Pillar 3a growth visibility premium and the revenue transition. Role 3 must stress test it as a single point of failure |
+| SHARED CATALYST flag | MOOT under v3.6. With Pillar 3 gated to +0x and no forward ROCE credited in Pillar 1, neither premium is paid, so the alloys furnace catalyst is not double counted. Role 3 still stress tests it as the revenue single point of failure |
 | Credibility grade for Role 1 | C, mixed. Bull case earnings may not be used at face value in the Hurdle check |
+| Valuation shape | SOTP. Mature core on operating earnings at the card multiple below; alloys, relays, neodymium valued as separate slices; subsidiary debt and losses in the equity bridge |
 
 ---
 
 ## 8. THE P/E BASE CARD, FOR OPERATOR APPROVAL
 
-This is a preview of the exit multiple base computed from Section 1B on what is known now.
-It is not the valuation. Role 1 still runs the full dual track exercise in Phase 3. Approve
-or adjust the base, and choose the earnings basis.
+Restated on the **v3.6 Damodaran basis** the operator directed. This is a preview of the
+CORE exit multiple, the multiple that applies to the mature business on operating earnings.
+It is not the valuation. Role 1 runs the full dual track exercise, and the SOTP, in Phase 3.
+Approve or adjust the base, and choose the earnings basis.
 
 | Step | Input | Value | Anchor |
 |---|---|---|---|
-| A. Pillar 1, ROCE base | ROCE 12.54%, formula 0.5 x ROCE + 7.5 | **13.8x** | AR-FY26 p.156; Section 1B Amendment 5 |
+| A. Pillar 1, ROCE base | ROCE 12.54%, formula 0.5 x ROCE + 7.5, ceiling 30x (Amendment 11, non binding) | **13.8x** | AR-FY26 p.156; Section 1B v3.6 Amendment 11 |
 | B. Pillar 2, cash multiplier | Volatile band, see note | **1.00x** | AR-FY26 p.121 and p.122 |
 | C. Quality adjusted base | A x B | **13.8x** | |
-| D. Pillar 3, total | 3a +2x, 3b +1x, 3c +0x | **+3.0x** | see note |
-| E. Strategic premium | None applicable | **+0.0x** | |
-| F. Raw destination PE | C + D + E | **16.8x** | |
-| F2. Undiscovered Alpha adjusted | F x 1.25, all three qualifiers hold | **21.0x** | Amendment 3 |
+| D. Pillar 3, total | **+0x, gated OFF.** Return on capital is below the cost of capital, so the growth premium eligibility gate reads NO | **+0.0x** | v3.6 Amendment 16 (FTTCP Module B2) |
+| E. Strategic premium | None applicable, ROCE recovery not credited anywhere | **+0.0x** | |
+| F. Raw destination PE | C + D + E | **13.8x** | |
+| F2. Undiscovered Alpha adjusted | F x 1.25, all three qualifiers hold | **17.3x** | Amendment 3 |
 | G. Sector cap | Cables / Industrial products, no quality uplift | **25x** | Section 1B cap table |
-| **H. Final destination PE, additive track** | **min(F2, G)** | **21.0x** | |
-| **Track 1, RRM** | F 16.8 x RRM 0.82, then x 1.25, capped | **17.2x** | Amendment 4.4 |
+| **H. Final destination PE, additive track** | **min(F2, G)** | **17.3x** | |
+| **Track 1, RRM** | F 13.8 x RRM 0.82, then x 1.25, capped | **14.1x** | Amendment 4.4 |
 
-Destination PE range, plus or minus 7.5%: additive **19.5x to 22.5x**; RRM **16.0x to 18.5x**.
+Destination PE range, plus or minus 7.5%: additive **16.0x to 18.5x**; RRM **13.0x to 15.0x**.
 The RRM track is the more conservative and therefore sets the entry zone.
 
-**Pillar 2 note, the softest input on the card.** Consolidated cash to profit was 1.19x in
+**What changed versus the first, v3.3, card, and why it matters.** The additive destination
+fell from 21.0x to 17.3x and the RRM track from 17.2x to 14.1x. The whole move is Pillar 3.
+On the v3.3 basis it paid +3x for documented growth and a forming moat. On the v3.6 basis it
+pays nothing, because Amendment 16 refuses any growth premium while return on capital sits
+below the cost of capital: growth that earns below the cost of capital destroys value as it
+compounds, so the market should not, and this framework will not, pay a premium for it. That
+is the single most important Damodaran correction on this name. It says the quality base is
+roughly 13.8x, the company is not yet earning the right to a growth multiple, and everything
+above the base has to come from the options, valued separately, not from a premium bolted
+onto a sub cost of capital core.
+
+**Pillar 2 note, still the softest single input.** Consolidated cash to profit was 1.19x in
 FY26 and 1.86x cumulative, both far above the 70% threshold, which argues against any
 penalty. But free cash flow was negative Rs 25.75 Cr in FY26, which blocks the 1.30x elite
 band because that band requires free cash flow positive. The volatile band at 1.00x is the
-honest fit. The conservative alternative is to read the growth induced determination as
-assigning 0.80x plus a 0.05 growth offset, giving 0.85x, which would take the additive
-destination to 18.5x and the RRM track to 15.1x. **This is the single largest lever on the
-card and it is Keerti's call.**
+honest fit. The conservative alternative reads the growth induced determination as 0.80x
+plus a 0.05 growth offset, giving 0.85x, which would take the additive destination to about
+14.7x and the RRM track to about 12.0x. Under v3.6 the cash defect is priced HERE and only
+here: Amendment 12A removed the old cash conversion charge in the discount rate, so it is
+not double counted.
 
-**Pillar 3 note.** 3a pays +2x because two of four qualifiers hold: capital expenditure
-embedded growth of 32.7% and a market implied revenue CAGR of 20.1% with the capacity cross
-check passing. The delivery grade is C, which independently caps 3a at +2x. Both qualifying
-inputs are soft: the 32.7% is derived from balance sheet residuals rather than a published
-capital expenditure programme, and the 20.1% only just clears its threshold. 3b pays +1x on
-an emerging moat score of 26.0, which sits in the 25 to 29 band. 3c pays nothing because no
-order book is disclosed anywhere.
+**Pillar 3 note, the gate.** Under v3.6 Amendment 16 the growth premium eligibility gate is
+checked first, before any evidence gate. Return on capital is 12.54%, below a cost of capital
+of roughly 12 to 14%, and the forward ROCE verdict is STAGNANT, so Module B2 reads growth
+premium eligible NO. Pillar 3 therefore pays +0x, and the inputs that would have earned it on
+the old basis, the 32.7% capex embedded growth and the 20.1% market implied revenue CAGR and
+the emerging moat score of 26.0, do not enter. They are not wrong, they are simply not paid
+for until the capital starts earning above its cost. If a future year's projected ROCE
+crosses the cost of capital, Module B2 turns the gate to YES from that year and the premium
+becomes eligible from then, not before.
 
-**RRM note.** Base discount rate 14% for a small company, adjusted up one point to 15% for
-governance and accounting quality: the promoter verdict is CAUTION, accounting quality
-scores 4 out of 10, the auditor carries a going concern emphasis of matter tied to an
-unresolved 2015 winding up order, and the annual report contains several unreconciled
-internal figures. RRM = 1 + (13.5 - 15) x 0.12 = 0.82.
+**RRM note, decomposed under v3.6 Amendment 12 and 13.** Base discount rate 14% for a small
+company. Governance and durability adjustment +0.5 (promoter CAUTION, accounting quality 4 of
+10). Complexity charge +0.5 (Amendment 13: subsidiary opacity, the going concern emphasis of
+matter, the unreconciled internal figures), a distinct opacity charge. No cash conversion
+charge (Amendment 12A, Pillar 2 owns it). No short record charge (Amendment 12C, listed since
+1960). Cyclicality folded into the moderate durability band, not added again (Amendment 12B).
+Final r = 15.0%, bounded within [9%, 18%]. RRM = 1 + (13.5 - 15) x 0.12 = 0.82.
 
-**What this base implies, and it matters.** The current market price is not in this run, so
-no Hurdle Ratio is computed here. But B09 found a market price to earnings ratio of roughly
-36x on standalone earnings as of 21 July 2026, non anchored and volatile across sources
-between 31x and 50x. If something near 36x is right, then a destination of 17.2x to 21.0x
-is a substantial de rating, and clearing a 25% compound return would require earnings to
-compound at roughly 50% or more per year. On those numbers the Hurdle would very likely
-fail. **Phase 3 must recompute this with a live market price, and the manifest must be
-filled first.** Note also that the 31x to 50x spread is exactly the standalone versus
-consolidated earnings difference: standalone profit is Rs 20.39 Cr, consolidated is
-Rs 14.77 Cr.
+**The SOTP the core card sits inside.** The 17.3x additive or 14.1x RRM is the multiple for
+the mature core only, on its operating earnings with treasury and other income stripped
+(Module B4). Around it, Phase 3 should value three slices separately: the alloys line on its
+ramp, and relays and neodymium as small, policy backed options, each now carrying a 📄 ECMS
+approval that raises its probability weight without yet earning anything. The subsidiary's
+Rs 47.81 Cr borrowing and Rs 5.62 Cr loss do not belong inside the core multiple; they enter
+through the equity bridge. Read as a whole, this is a cheap to fair mature core plus policy
+backed optionality, which is why the SOTP shape fits the business and a single blended
+growth multiple does not.
+
+**What this base implies, and the v3.6 basis makes it starker.** The current market price is
+not in this run, so no Hurdle Ratio is computed here. But B09 found a market price to earnings
+ratio of roughly 36x on standalone earnings as of 21 July 2026, non anchored and volatile
+across sources between 31x and 50x. Against a core destination of 14.1x to 17.3x that is a
+severe de rating, worse than the first card showed, and clearing a 25% compound return on the
+core alone would need earnings to compound well above 50% per year, which the core cannot do.
+On those numbers the Hurdle fails on the mature core, and the entire investment case rests on
+the option slices being worth enough to bridge the gap. That is the honest Damodaran reading:
+at 36x the market is already paying a growth multiple for a business earning below its cost
+of capital, so the margin of safety, if it exists, is in the options, not the core.
+**Phase 3 must recompute this with a live market price, and the manifest must be filled
+first.** Note also that the 31x to 50x spread is exactly the standalone versus consolidated
+earnings difference: standalone profit is Rs 20.39 Cr, consolidated is Rs 14.77 Cr, which is
+itself why the SOTP treatment, not a blended multiple, is the right frame.
 
 ### THE EARNINGS BASIS QUESTION, for Keerti to decide
 
@@ -528,19 +605,21 @@ I am not choosing either. Both are yours at the gate.
 
 ## 9. CONFIDENCE STATEMENT
 
-Declared LOW confidence, for reasons that are structural to the inputs and not to the
-analysis:
+Declared LOW confidence, raised one notch by the two filings supplied in review, for reasons
+that are structural to the inputs and not to the analysis:
 
 - No earnings call transcript exists, so no management catalyst commentary could be tested
   against analyst questioning, and no promise versus delivery record across quarters could
   be built. Ran in NO-CONCALL MODE throughout.
-- No exchange announcements were collected, which the protocol lists as a required input.
-  This is the documented action feed for the intent and action ledger, so recent documented
-  actions could not be graded. The government scheme approvals for relays in March 2026 and
-  neodymium magnets in August 2026 that the operator described are NOT anchorable to any
-  document in this run and were therefore not scored as catalysts anywhere above.
+- Exchange announcements were partly closed in review. Two primary Reg 30 filings are now
+  anchored in inputs/announcements/: the relays ECMS approval (PML, 30-Mar-2026) and the
+  neodymium ECMS approval (QMPL, 18-Aug-2026). Both are worked in above as 📄 documented
+  action. They CONFIRM the direction of the two option lines and lift confidence; they do
+  not move any transition score. Still missing from filings: any order or customer
+  announcement, and the 13-May-2026 borrowing limit board outcome as a standalone Reg 30 PDF.
 - No investor presentation was collected.
-- Three of seven required pre flight sources missing is the protocol's own threshold for
-  declaring low confidence.
 - Phase 1 confidence was 57 overall, bounded by red flag coverage on a single stage, with
   numerical acceptance at 100 and source fidelity passing.
+- Cross family FTTCP grader did not run (no provider key), so this verdict carries no
+  independent third family read and confidence is held one notch below where it would
+  otherwise sit.

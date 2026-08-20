@@ -5,7 +5,8 @@ analysis. Operator: Keerti Kaushik. Strategy: transition alpha, 25% CAGR
 target, 3-5 year holds.
 
 ## NEVER
-- Never use any exit PE from outside Section 1B v3.3 (frameworks/). It is
+- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 + v3.6
+  amendment layers in frameworks/; v3.6 governs overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
 - Never halt a run on company quality. Flags propagate; only mechanical
   failures halt. There is no STOP verdict; the verdict set is PROCEED /
@@ -71,9 +72,13 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
+- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6),
+                 FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
-                 propagate with zero pipeline edits)
+                 propagate with zero pipeline edits), plus
+                 Downstream_Source_Discovery_Protocol_v1_0.md (source
+                 registry for downstream signal candidates; Role 5.5
+                 verifies against it in claude.ai)
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp

@@ -18,7 +18,7 @@ TAM = SAM = growth runway is being dishonest.
 
 ## PIPELINE OPERATING RULES
 
-1. Execute ALL FIVE SECTIONS in one response. No stops.
+1. Execute ALL SIX SECTIONS in one response. No stops.
 2. Use web search for industry reports (IBEF, CRISIL, ICRA, CARE, Mordor,
    Ken, RedSeer and similar), government and ministry data, trade body
    statistics, and peer disclosures.
@@ -98,9 +98,29 @@ revenue CAGR implied by SOM, with margin trajectory of __%, the earnings
 growth embedded here is __% CAGR, which [supports / does not support]
 the current valuation of __x P/E."
 
+## SECTION 6: DOWNSTREAM SIGNAL CANDIDATES
+
+For every entity named anywhere in the TAM decomposition (end-customers,
+counterparties, platforms, regulated approvals, macro variables), produce
+one candidate row. These are CANDIDATES: verification happens later at
+Role 5.5 (claude.ai) per Downstream_Source_Discovery_Protocol_v1_0
+(frameworks/). Do not verify URLs here; do name the LIKELY primary source
+per that protocol's Source Registry (entity type -> source map).
+
+| # | Candidate Signal | Entity Type | Why It Drives Demand | Likely Primary Source | Expected Cadence |
+
+Entity Type: End-customer / Counterparty / Regulatory / Macro
+Expected Cadence: Monthly / Quarterly / Event-driven
+
+Minimum 3 rows, maximum 8. Fewer than 3 externally observable demand
+drivers: state exactly "DEMAND IS NOT EXTERNALLY VERIFIABLE — thesis
+relies on company-reported numbers only." Shared dependencies (one
+entity serving multiple revenue streams) are flagged SHARED — they are
+correlated catalysts and FTTCP counts them once.
+
 ## OUTPUT
 
-Full five-section report, then end with exactly this fenced YAML block:
+Full six-section report, then end with exactly this fenced YAML block:
 
 ```yaml
 stage: B09-tam
@@ -129,6 +149,14 @@ methods_used: []
 stale_data_flags: []           # each: {datapoint, source, year}
 searches_performed: []
 searches_skipped: []
+downstream_candidates:            # list, 3-8 items, or []
+  - signal: ""
+    entity_type: ""               # end-customer|counterparty|regulatory|macro
+    demand_link: ""               # <=20 words
+    likely_source: ""             # named source per registry, not a URL
+    cadence: ""                   # monthly|quarterly|event-driven
+    shared: false                 # true if serves multiple revenue streams
+demand_externally_verifiable: true   # false triggers the exact sentence above
 analyst_note: ""               # optional, <=200 words (strict cap, excess
                                # truncated). Reasoning a downstream stage
                                # cannot reconstruct from the fields above.

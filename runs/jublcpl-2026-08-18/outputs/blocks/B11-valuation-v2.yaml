@@ -2,131 +2,85 @@ stage: B11-valuation-v2
 company: "JUBLCPL"
 run_date: "2026-08-18"
 recompute_date: "2026-08-20"
-model: claude-opus-5
+model: claude-opus-4-8
 status: complete
-supersedes_arithmetic_of: "outputs/reports/11-valuation.md, outputs/blocks/B11-valuation.yaml (19-Aug, pre-Damodaran stack; left untouched as the audit record)"
-scope: "SURGICAL RE-RUN. Business A Section 1B arithmetic recomputed on the v3.6 stack. Business B carried forward verbatim per operator instruction. FTTCP verdicts held from the 18-Aug gate. Signal Gate not applied."
-input_gaps:
-  - {source: "standalone_accounts", severity: "MEDIUM", note: "no standalone accounts pre-demerger; per-entity PAT/ROCE/cash are illustrative allocations"}
-  - {source: "forward_guidance", severity: "MEDIUM", note: "no numeric FY27 guidance; forward EPS operator-engaged illustrative, built off Q1 FY27 annualized"}
-  - {source: "unit_economics", severity: "HIGH", note: "no MT/kg volumes; unit-level growth validation not performed"}
-  - {source: "rating_pdf", severity: "MEDIUM", note: "rating_wc_quote NOT FOUND; cash multipliers applied on the deliberation-approved structural determination"}
-  - {source: "macro_sheet", severity: "MEDIUM", note: "no macro-sheet.md in repo; market PE NOT FOUND; v3.6 Amendment 15 relative destination PE not computable"}
-  - {source: "fttcp_part_b", severity: "MEDIUM", note: "run used FTTCP v1.2; Modules B2 and B8 NOT FOUND; Amendment 16 gate not-applicable, Amendment 15 uncomputable"}
-  - {source: "market_implied_block", severity: "MEDIUM", note: "Market-Implied Assumptions block NOT FOUND; no OPPORTUNITY / FAIRLY PRICED / PRICED-WE-ARE-LATE flag cited"}
-flags:
-  - {type: "PILLAR1-BASE-PENDING-OPERATOR-APPROVAL", note: "Business A Pillar 1 base 30.0x now rests on v3.6 Amendment 11 (elite extension, 30x cap). The 18-Aug gate approved it while the declared stack was Amendment 5 (24x cap), which could not produce it. Supersession does not auto-approve. Blended context base 24.9x carries the same defect. Downstream figures affected: NONE, the 35x sector cap absorbs the uplift (break-even Pillar 1 base 22.6x). Verdict card PROVISIONAL until approved."}
-  - {type: "FLAG-CASH", applied_multiplier: "0.80x (Business B agri, STRUCTURAL subsidy receivable); Business A 1.15x with the structural drag located in the demerging division", falsification: "retained-entity CFO:PAT <0.70x two consecutive quarters with >6m subsidy bucket >8%"}
-  - {type: "SHARED-CATALYST", note: "Samlaya drives Business A revenue STARTING and ROCE FIRING; one point of failure across revenue, margin and ROCE"}
-  - {type: "DEMERGER-EXECUTION", note: "scheme not yet effective; forward earnings still contain agri; per-entity PAT illustrative-allocated"}
-  - {type: "SIGNAL-GATE-NOT-APPLIED", note: "FTTCP verdict held from the 18-Aug gate; v2.1 Signal Gate not applied (no candidates block exists in this run's B09/B10); full FTTCP v2.1 re-deliberation is an open action"}
-  - {type: "CASH-CONVERSION-INDETERMINATE", note: "Business A entity-level CFO/PAT unconfirmable without a standalone cash flow statement; caps the reading at PROCEED WITH CAVEATS with the missing evidence named"}
-framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1 (verdict held from 18-Aug gate)"
+supersedes_arithmetic_of: "outputs/reports/11-valuation.md and outputs/blocks/B11-valuation.yaml (18-Aug v3.3 stack). Prior artifacts preserved as the audit record."
+scope: "FULL v3.6 recompute per operator order: both Damodaran pre-steps run (Debt Capacity; Market-Implied), Amendment 14 fade horizon rebuilt year-by-year, Amendment 13 dense-RPT trigger re-decided ON, Amendment 15 relative PE computed against the market PE."
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / Debt Capacity v1.0 / Market-Implied v1.0 / FTTCP verdicts held from 18-Aug gate"
 pe_basis: "forward"
-exit_pe_base_approved: "Business A 35x (specialty chemicals cap) / Business B 14x (normalized, agri cap 20x not binding) / Blended 29.5x (context)"
 method: "SUM OF THE PARTS (operator direction 18-Aug-2026)"
-earnings_perimeter: "Forward earnings still contain the agri division until the scheme is effective; per-entity PAT is illustrative-allocated (no standalone accounts exist)."
-verdict_card_status: "PROVISIONAL pending operator approval of the Pillar 1 base"
+flags:
+  - {type: "FLAG-CASH", applied_multiplier: "0.80x Business B (STRUCTURAL subsidy receivable); 1.15x Business A, drag located in demerging division", falsification: "retained-entity CFO:PAT <0.70x two consecutive quarters with >6m subsidy bucket >8%"}
+  - {type: "SHARED-CATALYST", note: "Samlaya drives Business A revenue + margin + ROCE; one point of failure"}
+  - {type: "DEMERGER-EXECUTION", note: "scheme not yet effective; forward earnings still contain agri; per-entity PAT illustrative"}
+  - {type: "CASH-CONVERSION-INDETERMINATE", note: "Business A entity CFO/PAT unconfirmable without a standalone cash statement; caps that read at PROCEED WITH CAVEATS with missing evidence named"}
+  - {type: "COMPLEXITY-TRIGGER-ON", note: "Amendment 13 dense-RPT trigger ON (CSR 100% via promoter foundation, KMP +63.6%, Finance Committee no independents); +0.5 r both entities; pending operator confirmation"}
+  - {type: "RE-RATING-EXHAUSTED", note: "B8-proxy MODERATE-to-NONE; JACPL +58% in 5 months; the ~29% intrinsic premium is a spent re-rating bet"}
+debt_capacity_verdict: "COMFORTABLE (mid-cycle EBIT ~180 Cr, cost of debt 9.0% assumed, max debt 667 Cr, net debt 45 Cr, headroom 93.3%, coverage 8.93x->23.91x IMPROVING)"
+market_implied_flag: "FAIRLY PRICED (leaning PRICED-WE-ARE-LATE); price implies ~15.4% EPS CAGR to be fair (25% to clear hurdle) vs ~13% evidence faded; re-rating largely spent"
+fade_horizon_applied: "true - EM MODEST -> fade to industry ~8% by Year 3; Business A base FY28 +13.5% / FY29 +10% / FY30 +8%, 3yr CAGR 10.5%; base FY30 EPS 114->112 (vs clean-flat-13% 120, -6.7%); Business B cyclical/normalized, no fade"
+relative_pe:
+  business_a_absolute_h: 35.0
+  market_pe_nifty50_ttm: 20.5
+  market_pe_smallcap250: 34.4
+  relative_vs_nifty: 1.71
+  current_relative_vs_nifty: 1.36
+  b8_proxy_rerating: "MODERATE-to-NONE (+58% in 5 months already banked)"
+  conclusion: "destination sits at LOW end (32.5x) on the relative read; absolute 35x cap remains the binding ceiling; MoS widened"
+r_worksheet:
+  business_a: "r base 14.0%; durability 0 (Unproven, <2yr, short-record owned per 12C, v3.3 -0.5 credit removed); governance +0.25; cyclical 0 (12B N/A); complexity +0.5 (Amdt 13 dense RPT); cash-conversion r-UP none (12A); short-record r-UP none (12C); final r 14.75%; RRM 0.85; destination still 35x (cap absorbs, binds until r>15.44%)"
+  business_b: "r base 14.0%; durability 0 (docked for cyclicality); governance +0.25; cyclical +0.75 (CAPPED per 12B); complexity +0.5 (Amdt 13); cash-conversion r-UP none (12A, Pillar 2 0.80x); short-record r-UP none (12C); final r 15.5%; RRM 0.76; Track 1 destination 10.6x (was 13.2x v3.3)"
 destination_pe:
-  track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 13.5, rrm: 1.00}
+  track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 14.75, rrm: 0.85}
   track2_additive: {low: 32.5, mid: 35.0, high: 35.0}
-  divergence_pct: 0
-  governing_track: "either; the 35x Specialty chemicals cap binds identically on both tracks, and is insensitive to r below 15.44%"
+  governing_track: "either; 35x specialty-chemicals cap binds identically and is insensitive to r below 15.44%; relative-PE lean places realized exit toward 32.5x"
 pillar_detail:
   roce_used: 67.5
   roce_base: 30.0
-  roce_base_authority: "v3.6 Amendment 11 elite extension: 24 + 0.3 x (67.5 - 33) = 34.35 -> capped 30x. PENDING OPERATOR APPROVAL."
-  roce_base_under_superseded_amendment_5: 24.0
-  roce_recovery_route: "not-credited"
-  pillar1_normalization_route: "none"
+  roce_base_authority: "Amendment 11 elite extension 24+0.3*(67.5-33)=34.35 capped 30x"
   cash_multiplier: 1.15
-  structural_or_growth: "clean-at-segment (structural FLAG-CASH drag located in demerging Business B)"
-  growth_offset: 0
-  growth_premium: 0
   strategic_premium: 2
-  shared_catalyst_flag: true
+  growth_premium: 0
   ua_applied: true
   sector_cap_used: 35
-  category_break_override: false
-  amendment_12a_cash_conversion_r_up: "none applied; no change"
-  amendment_12b_cyclical_surcharge: "none applied; band not docked for cyclicality; cap N/A"
-  amendment_12c_short_record_r_up: "none applied; no change"
-  amendment_13_complexity_adj: 0.0
-  amendment_13_trigger_evidence: "2 subsidiaries (one dormant shell); RPT 3.84% of FY26 revenue, no RP borrowings; unmodified audit opinion, no EoM. No trigger."
-  amendment_14_fade_horizon: "EM 22.5 MODEST -> fade to industry growth by Year 3; the 19-Aug EPS ladder already fades (+18% FY27-28, then ~7.9%/yr to FY30). Does not bite."
-  amendment_15_relative_pe: "NOT FOUND (no macro-sheet market PE, no Module B8 rating). Not computed, not estimated."
-  amendment_16_growth_premium_gate: "not-applicable; Pillar 3 already +0x on the evidence gates; Module B2 NOT FOUND"
+  amendment_13_complexity_adj: 0.5
+  amendment_13_decision: "trigger ON (dense RPT); +0.5 r both entities; absorbed by cap for A, live for B"
+  amendment_16_growth_gate: "satisfied (ROCE >> min) but EM<25 bars premium; net +0x"
+hurdle_ratio: {base: 1.75, bull: 2.00, bull_used: true, verdict: "CONDITIONAL"}
+fair_values:
+  track1: {bear: 4026, base: 4566, bull: 5020}
+  track2: {bear: 4080, base: 4625, bull: 5090}
 businesses:
   business_a_polymer:
-    name: "Performance Polymers & Chemicals (retained -> Jubilant Industries Ltd)"
-    destination_pe_track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 13.5, rrm: 1.00}
-    destination_pe_track2_additive: {low: 32.5, mid: 35.0, high: 35.0}
-    fair_values_3yr_target_per_share: {bear: 3360, base: 3990, bull: 4375}
+    destination_pe: {low: 32.5, mid: 35.0, high: 35.0}
+    faded_fy30_eps: {bear: 93, base: 112, bull: 132}
+    faded_3yr_eps_cagr: {bear: 7.9, base: 10.5, bull: 14.0}
+    target_3yr_per_share: {bear: 3255, base: 3920, bull: 4620}
     fair_value_today_cr: 4375
-    hurdle_ratio: {base: 1.87, bull: 2.13, bull_used: true, verdict: "CONDITIONAL"}
-    entry_range_per_share: {low: 1634, high: 2043}
-    mos_price_per_share: 1634
+    entry_range_per_share: {low: 1667, base: 2007, high: 2366}
+    mos_price_per_share_20pct: 1606
+    hurdle_ratio: {base: 1.75, bull: 2.00, verdict: "CONDITIONAL"}
     decision: "WATCHLIST"
-    changed_vs_19aug: "no output figure changed; Pillar 1 base authority changed only"
   business_b_agri:
-    name: "Agri (P&K Fertilizers + Agri Nutrients -> Jubilant Agri Solutions Ltd)"
-    status: "UNCHANGED per operator instruction; 19-Aug derivation carried forward verbatim (ROCE 19.9% < 33%, elite extension cannot reach it)"
-    destination_pe_track1_rrm: {low: 13.0, mid: 13.2, high: 13.2, r_used: 14.0, rrm: 0.94}
-    destination_pe_track2_additive: {low: 13.0, mid: 14.0, high: 15.0}
-    pillar_detail: {roce_used: 19.9, roce_base: 17.5, cash_multiplier: 0.80, growth_premium: 0, strategic_premium: 0, ua_applied: false, sector_cap_used: 20}
-    fair_value_today_cr: 250
-    hurdle_ratio: {base: 1.09, bull_used: false, verdict: "STOP"}
+    destination_pe_track1_rrm: {low: 10.6, mid: 10.6, high: 10.6, r_used: 15.5, rrm: 0.76}
+    destination_pe_track2_additive: {low: 12.0, mid: 14.0, high: 17.5}
+    value_cr: {bear_t1: 106, base_t1: 191, bull_t1: 244, base_t2: 250}
+    hurdle_ratio: {base: 1.09, verdict: "STOP"}
     decision: "AVOID"
-  blended_context:
-    pillar1_base: 24.9
-    pillar1_base_under_superseded_amendment_5: 24.0
-    destination_pe_track1_rrm: {low: 27.5, mid: 29.5, high: 31.5, r_used: 13.5, rrm: 1.00}
-    destination_pe_track2_additive: {low: 27.5, mid: 29.5, high: 31.5}
-    sector_cap_used: 29.5
-    hurdle_ratio: {base: 1.64, verdict: "CONDITIONAL"}
-    note: "pre-demerger entity only; the printed 31.5x top sits above the 29.5x weighted cap and is context, not a usable multiple; band held as operator-approved"
 combined_sotp:
-  fair_value_today_cr: 4625
+  fair_value_today_cr: 4566
+  fair_value_today_relative_informed_cr: 4254
   market_cap_cr: 3549
-  premium_to_cmp_pct: 30
-  tier_a_entry_cr: 3345
-  tier_a_entry_per_share: 2208
-  mos_per_share: 1766
-  cmp_vs_entry: "CMP Rs 2,342 sits 14.6% above the Business A entry top of Rs 2,043; market cap Rs 3,549 Cr sits ~6% above the combined Tier A entry"
-delta_vs_19aug:
-  pillar1_base_business_a: {old: 30.0, new: 30.0, delta: 0.0, driver: "Amendment 11 supplies the authority for a number already printed; declared-stack arithmetic would have been 24.0x"}
-  quality_base_business_a: {old: 34.5, new: 34.5, delta: 0.0, driver: "30.0 x 1.15, cash multiplier held"}
-  track1_rrm: {old: 35.0, new: 35.0, delta: 0.0, driver: "r unchanged at 13.5%; Amdts 12 and 13 remove and add nothing; cap binds"}
-  track2_additive: {old: 35.0, new: 35.0, delta: 0.0, driver: "min(45.6, 35); break-even Pillar 1 base is 22.6x"}
-  blended_context_pe: {old: 29.5, new: 29.5, delta: 0.0, driver: "blended Pillar 1 24.0x -> 24.9x, but the 29.5x weighted cap binds on both stacks"}
-  destination_range: {old: "32.5 / 35.0 / 35.0", new: "32.5 / 35.0 / 35.0", delta: "0 / 0 / 0", driver: "H unchanged, Amendment 6 band untouched; the expected rise in the LOW does NOT occur"}
-  bear_fair_value_per_share: {old: 3360, new: 3360, delta: 0, driver: "35.0x x bear FY30 EPS 96, both held"}
-  entry_zone_per_share: {old_low: 1634, old_high: 2043, new_low: 1634, new_high: 2043, delta: 0, driver: "3,990 / 1.953 then -20% MoS; nothing upstream moved"}
-  hurdle_ratio: {old: 1.87, new: 1.87, delta: 0.00, driver: "destination mid 35.0x and imputed current PE 27x both unchanged"}
-hurdle_ratio: {base: 1.87, bull_used: true, verdict: "CONDITIONAL"}
-fair_values:
-  track1: {bear: 3439, base: 4155, bull: 4639}
-  track2: {bear: 3439, base: 4155, bull: 4639}
-expected_cagr_prob_weighted: 19.9
-entry_range: {low: 1766, high: 2208}
-mos_price: 1766
-mos_pct_applied: 20
-dispersion_width_pct: 25.4
-dispersion_sizing_cap: "Normal from dispersion; Small binds from the promoter CAUTION cap"
-upside_downside_ratio: 2.6
-decision: "WATCHLIST (PROVISIONAL pending operator approval of the Pillar 1 base)"
-unresolved_inputs_used:
-  - "per-entity PAT/ROCE/cash: illustrative allocations, no standalone accounts (stated at every use, not estimated)"
-  - "forward FY27/FY28 PAT: operator-engaged illustrative, un-guided (used as the approved earnings base, labelled provisional)"
-  - "rating WC commentary NOT FOUND: cash multipliers rest on the deliberation-approved structural determination alone"
-  - "market PE NOT FOUND: Amendment 15 relative expression omitted, not estimated"
-som_cagr_crosscheck: "consistent"
-edge_claimed: "process, because the pipeline reads the audited segment note and the scheme filings on a name with 0.45% institutional ownership and no earnings calls"
-open_actions:
-  - "OA-1 full FTTCP v2.1 re-deliberation including Part B Modules B1-B8 and the Signal Gate"
-  - "OA-2 add a downstream-candidates block to B09/B10 for this name"
-  - "OA-3 rule on the evidence-scaled margin of safety (30% row would move the Business A entry low to Rs 1,430)"
-  - "OA-4 rule on the Pillar 1 ROCE basis, segment 67.5% versus group 36% (5.1x of Pillar 1 base, immaterial only while the cap binds)"
-  - "OA-5 produce macro-sheet.md with the market PE"
-  - "OA-6 produce the Market-Implied Assumptions block"
-one_line_thesis: "WATCHLIST JACPL at Rs 2,342 on the v3.6 recompute: the SOTP fair value of ~Rs 4,625 Cr sits ~30% above the Rs 3,549 Cr market cap with ~88% in the retained polymer business at a 35x specialty-chemicals cap on ~Rs 125 Cr FY27 forward PAT, and the Amendment 11 elite extension changes no output number because the cap absorbs it, so the Hurdle Ratio stays 1.87 CONDITIONAL and CMP stays 14.6% above the Rs 2,043 entry top."
+  premium_to_cmp_pct: 28.6
+  tier_a_entry_cr: 3232
+  tier_a_entry_per_share: 2133
+  cmp_vs_entry: "market cap ~9.8% above combined Tier A entry; CMP ~9.8% above Rs 2,133/sh entry, ~14.6% above the Rs 2,007 polymer-only entry"
+expected_cagr_prob_weighted: 19.1
+entry_range: {low: 2007, high: 2133}
+mos_price: 1706
+upside_downside_ratio: 2.5
+dispersion_sizing_cap: "Normal from dispersion; Small binds from promoter CAUTION"
+decision: "WATCHLIST (CONDITIONAL, BUY-ON-DIPS at zone; size Small)"
+som_cagr_crosscheck: "consistent (faded 10.5% base well below the 24.3% upper-range SOM CAGR, capacity-bound from Yr3)"
+v3_3_vs_v3_6_delta: "Decision held at WATCHLIST/CONDITIONAL but more marginal on every metric. Amdt 14 fade cut base 3yr CAGR 13->10.5%, base FY30 EPS 114->112 (-6.7%), base Hurdle 1.87->1.75, polymer entry 2,043->2,007, combined CMP-vs-entry gap ~6%->~9.8%. Amdt 13 dense-RPT ON (+0.5 r both) - absorbed by 35x cap for A, live for B. Amdt 12 removed A's -0.5 durability credit and added B cyclical +0.75 (capped) -> B RRM track 13.2->10.6x. Amdt 11 formalized 30x Pillar-1 (no output change). Amdt 15 relative PE 1.71x, re-rating MODERATE-to-NONE, exit at low end. Debt Capacity COMFORTABLE (no FV change); Market-Implied FAIRLY PRICED (the ~29% premium is a spent re-rating bet). Business A destination unchanged at 35x because the sector cap absorbs Amendments 11/12/13; the bite is on the projection path, the hurdle, and the entry gap, not the exit multiple."
+one_line_thesis: "WATCHLIST JACPL at Rs 2,342 on the full v3.6 recompute: SOTP fair value ~Rs 4,566 Cr still ~29% above the Rs 3,549 Cr market cap with ~88% in the 35x-capped polymer business, but Amendment 14 fade cuts base 3yr CAGR to 10.5% and base Hurdle to 1.75 (CONDITIONAL), Market-Implied reads FAIRLY PRICED with the +58% re-rating banked, and CMP now sits ~9.8% above the 25% entry - same WATCHLIST as v3.3, weaker on every margin, still wanting a ~10-15% dip or the first standalone polymer accounts."

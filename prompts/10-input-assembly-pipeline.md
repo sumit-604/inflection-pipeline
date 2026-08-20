@@ -54,6 +54,9 @@ all-three-met yes/no), SOM-implied revenue CAGR (B09), downstream signal
 candidates and demand_externally_verifiable (B09.downstream_candidates,
 copied as summary rows: signal, entity type, demand link, likely source,
 cadence, shared flag; candidates are unverified, carry them as given),
+first-time AR downstream entities (B03.ar_new_downstream_entities,
+copied as given: name, where in AR, entity type; feed for Step 10.5B at
+Role 5.5),
 peer medians if
 peer financial data was provided (P/E, EV/EBITDA, P/B, growth, ROCE),
 else unresolved.
@@ -87,6 +90,8 @@ downstream_candidates: []      # copied from B09, summary rows only:
                                # {signal, entity_type, demand_link,
                                #  likely_source, cadence, shared}
 demand_externally_verifiable: true   # copied from B09
+ar_new_downstream_entities: [] # copied from B03: {name, where_in_ar,
+                               #  entity_type}; Step 10.5B feed
 analyst_note: ""               # optional, <=200 words (strict cap, excess
                                # truncated). Assembly caveat only (e.g. why a
                                # field is unresolved or which of two sources

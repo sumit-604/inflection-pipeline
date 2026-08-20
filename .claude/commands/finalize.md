@@ -168,6 +168,9 @@ phase 3), then:
    One row per candidate: signal name | entity type | demand link |
    likely source | cadence | shared flag | falsifying observation if
    already stateable
+   Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
+   B10), one per entity: name | entity type | where in AR — the Step
+   10.5B feed for the AR annual cross-check at Role 5.5.
 
    This file is a payload, not an action. Do not write to Notion from this
    session; the pipeline never writes to the tracker, Role 5.5 does after

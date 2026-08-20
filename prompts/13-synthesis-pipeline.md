@@ -253,6 +253,9 @@ claude.ai after source verification, NOT from this pipeline)
 One row per candidate: signal name | entity type | demand link |
 likely source | cadence | shared flag | falsifying observation if
 already stateable
+Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
+B10), one per entity: name | entity type | where in AR — the Step
+10.5B feed for the AR annual cross-check at Role 5.5.
 
 This second payload block follows the COMPANIES MASTER payload in the
 notion-payload output. Like the rest of that file, it is a payload, not

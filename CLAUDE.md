@@ -40,7 +40,7 @@ Do not upgrade a stage's model without editing its agent file.
 
 ## SESSION DISCIPLINE (prompt cache)
 - SESSION START, MANDATORY: before reading any framework, run
-  `git fetch origin main && git merge origin/main`, then print the
+  `git fetch origin main && git merge --no-edit origin/main`, then print the
   frameworks/ file list with SHAs. If the merge conflicts on
   frameworks/, prompts/, or .claude/, resolve keeping origin/main —
   session branches never legitimately edit those paths. A session that

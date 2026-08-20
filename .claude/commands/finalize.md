@@ -84,7 +84,7 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the FIVE framework file paths from frameworks/
+   existing wrapper: pass the SIX framework file paths from frameworks/
    as its stable prefix plus B10, in this order —
    Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
@@ -92,10 +92,12 @@ phase 3), then:
    Section_1B_v3_5_1_Reconciliation.md ({{SECTION_1B_V351_RECONCILIATION}},
    the Pillar 1 normalization authority, which supersedes the standalone
    Amendment 4.5), Section_1B_v3_6_Amendments.md
-   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration; governs the items
-   it names where the layers overlap), and FTTCP_v2_1_Consolidated.md
+   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration),
+   Section_1B_v3_7_Amendments.md ({{SECTION_1B_V37_AMENDMENTS}}, commodity
+   converter integration; later layers govern the items they name where
+   the layers overlap), and FTTCP_v2_1_Consolidated.md
    ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the five files, STOP and tell the user which to add. The FTTCP ROCE
+   any of the six files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. Collect B11.
 
@@ -201,7 +203,7 @@ phase 3), then:
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1"
+     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6+v3.7 / FTTCP v2.1"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message

@@ -54,11 +54,13 @@ Read, in this order:
    verdict, Step 5 monitoring triggers, Pillar 1 integration).
 2. frameworks/Section_1B_v3.3_Amendments.md, then
    frameworks/Section_1B_v3_5_1_Reconciliation.md, then
-   frameworks/Section_1B_v3_6_Amendments.md — read ALL THREE layers in this
+   frameworks/Section_1B_v3_6_Amendments.md, then
+   frameworks/Section_1B_v3_7_Amendments.md — read ALL FOUR layers in this
    order; together they are the sole exit-multiple and Pillar authority the
    FTTCP verdict hands off to, and the source of truth for the sector cap
-   table. Where they overlap, v3.6 governs the items it names, then v3.5.1,
-   then v3.3.
+   table. Where they overlap, v3.7 governs the items it names, then v3.6,
+   then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
+   transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
    start (full run history is LESSONS_ARCHIVE.md).

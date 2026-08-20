@@ -1,64 +1,66 @@
-# COMPANY MEMORY — JUBLCPL (Jubilant Agri and Consumer Products Ltd)
+# JUBLCPL — Jubilant Agri & Consumer Products Ltd
 
-Durable per-company memory. Weigh it, do not anchor to it: every figure is
-re-verified against that run's own inputs. Jubilant Bhartia Group entity,
-listed 14-Feb-2025 via reverse composite scheme (no IPO prospectus).
+Created 2026-08-20 at the v3.6 stage 11 recompute, ahead of /finalize.
+/finalize will carry this file forward and complete it.
 
 ## THESIS (one line)
-Demerger special situation: the retained polymer/adhesive business (Jivanjor,
-VP latex, food-grade PVAc; 67.5% segment ROCE, adhesives compounding high
-teens) is the value, worth a 35x specialty-chemicals multiple; the agri
-(SSP fertilizer) division leaving as JASL is an AVOID cyclical stub. Good
-business, but at CMP Rs 2,342 priced above the 25% entry.
+WATCHLIST at Rs 2,342: SOTP fair value ~Rs 4,625 Cr sits ~30% above the
+Rs 3,549 Cr market cap, ~88% of it the retained polymer business at the
+35x specialty-chemicals cap; Hurdle 1.87 CONDITIONAL; CMP 14.6% above
+the Rs 2,043 Business A entry top.
 
 ## DECISION STATUS AND ENTRY ZONE
-- 2026-08-18: WATCHLIST (buy on dips). Position size Small. Evidence gate
-  PROCEED WITH FLAGS. Business A polymer WATCHLIST, Business B agri AVOID.
-- Entry Rs 1,766 to Rs 2,208 per JACPL share, MoS Rs 1,766 (Tier A, 25%).
-- Destination PE: A 35x (both tracks), B 13.2x/14x, blended 29.5x. Earnings
-  basis one-year forward. Hurdle 1.87 CONDITIONAL (forward-earnings dependent;
-  trailing polymer ~33x is STOP). CMP ~6% above entry, ~33% above MoS.
-- Zone reachable: stock traded at Rs 1,483 (FY26 close, Mar 2026) below the
-  whole zone before a 58% re-rating to CMP.
+WATCHLIST, PROVISIONAL, as of the 2026-08-20 v3.6 recompute. Business A
+entry zone Rs 1,634-2,043, MoS Rs 1,634. Combined Tier A entry Rs 2,208
+per share, MoS Rs 1,766. The verdict card stays PROVISIONAL until the
+operator approves the Pillar 1 base (next section).
 
 ## OPERATOR RULINGS
-- 2026-08-18: Proceed with the empty input-folder gaps (prospectus HIGH,
-  announcements/shareholding/research) rather than pausing — evidence-maximizing.
-- 2026-08-18: Supplied the shareholding pattern (screener.in) and a six-month
-  operational/announcement summary directly, filling two gaps.
-- 2026-08-18: Treat as a demerger special situation; run the FULL FTTCP
-  protocol and a valuation separately on each business (SOTP). Reasoning:
-  "it is a special situation, and we need to analyse both businesses separately
-  to understand the investment opportunity."
-- 2026-08-18: Approved the exit-multiple base as drafted (A 35x, B 14-17.5x
-  normalized, blended 29.5x, no quality uplift).
-- 2026-08-18: Chose ONE-YEAR-FORWARD (blended) earnings basis. (Analyst caveat
-  recorded: weakest anchor for a mid-split entity with no guidance; phase 3
-  states the perimeter and builds a polymer-only forward number.)
-- 2026-08-18: Directed a downstream demand analysis before accepting the
-  growth rate; grounded PP&C forward to ~13-14% revenue CAGR (adhesives ~18%
-  easing to 15% on 28% of mix, industrial backbone ~10%).
+- 2026-08-18: demerger special-situation treatment; FTTCP run separately
+  per business, SOTP is the primary method — blended numbers are
+  analytically useless mid-split.
+- 2026-08-18: PE base approved as drafted (A 35x specialty-chem cap
+  binds, B 14x normalized, blended 29.5x context); earnings basis
+  ONE-YEAR-FORWARD blended, flagged least-anchored for a mid-split
+  entity.
+- 2026-08-20: stage 11 re-run ordered on the v3.6 stack after the
+  injection-gap audit; FTTCP verdict held from the 18-Aug gate; Signal
+  Gate not applied retroactively; output versioned as 11-valuation-v2,
+  19-Aug B11 preserved as the audit record.
+- PENDING OPERATOR APPROVAL: Business A Pillar 1 base 30.0x under v3.6
+  Amendment 11 (elite extension; superseded Amendment 5 arithmetic gives
+  24.0x). The 18-Aug gate approved the number under the old declared
+  stack. Supersession does not auto-approve. No output figure moves
+  either way: the 35x sector cap absorbs it (break-even Pillar 1 base
+  22.6x).
 
 ## ACTIVE TRIPWIRES
-- Samlaya full-capacity ramp not confirmed by ~Dec-2026 or scaled back (shared
-  catalyst across revenue, margin, ROCE).
-- First standalone Jubilant Industries accounts: CFO:PAT below 0.70x two
-  consecutive quarters with over-6-month subsidy bucket above 8%.
-- Standalone polymer ROCE near group 36% (not segment 67.5%) — collapses the
-  35x base and 1.15x cash multiplier together.
-- PP&C segment EBIT margin below 14% for two consecutive quarters.
-- Demerger scheme withdrawn, rejected, or adverse creditor vote (5-Sep-2026
-  meetings, NCLT final order).
+- Retained-entity CFO:PAT < 0.70x two consecutive quarters with the >6m
+  subsidy bucket > 8% (FLAG-CASH falsifier; the structural drag lives in
+  demerging Business B).
+- Samlaya is the SHARED catalyst across Business A revenue, margin and
+  ROCE; one point of failure, counted once.
+- Demerger scheme not yet effective; forward earnings still contain
+  agri; per-entity figures are illustrative allocations until standalone
+  accounts print. First standalone accounts upgrade Business A
+  mechanically (2-year segment window held it at DEEP WATCH).
 
 ## OPTIONALITY REGISTER (summary)
-- SBR latex construction-chemicals customer qualification converts to contract
-  -> named order / Reg 30 first dispatch, 2-4 quarters.
-- Butadiene storage capacity converts exploring -> committed capex -> AR
-  MD&A/Reg 30, 12-24 months.
-- Water-based packaging adhesives convert market-trials -> commercial revenue
-  -> AR MD&A / deck segment note, 12-24 months.
-- R&D talent density becomes disclosed (headcount/PhD) -> future AR, uncertain.
-- Dubai (MEA) branch converts set-up -> revenue -> future AR/deck, 12-24 months.
+Not yet distilled; take from B07.optionality_register at /finalize.
+
+## OPEN ACTIONS
+- Full FTTCP v2.1 re-deliberation (Part B Modules B1-B8 + Signal Gate)
+  at /finalize or first standalone accounts, whichever first. This run's
+  B09/B10 carry no downstream-candidates block.
+- Add downstream signal candidates for this name (stage 9 SECTION 6 now
+  exists; this run predates it).
+- Operator to rule: evidence-scaled MoS (a 30% row moves Business A
+  entry low to Rs 1,430); Pillar 1 ROCE basis, segment 67.5% vs group
+  36% (immaterial while the 35x cap binds).
+- macro-sheet.md and the Market-Implied Assumptions block do not exist;
+  Amendment 15 relative PE not computable until they do.
 
 ## RUN FOLDERS
-- runs/jublcpl-2026-08-18/
+- runs/jublcpl-2026-08-18/  (phase 1 + /fttcp 18-Aug + stage 11 19-Aug +
+  v3.6 recompute 20-Aug: reports/11-valuation-v2.md,
+  blocks/B11-valuation-v2.yaml)

@@ -9,12 +9,20 @@ priced it today.
 
 Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
 
-## The rules right now (18 July 2026)
+## The rules right now (20 August 2026)
 
-- Master Project Prompt: **v3.3**
-- Section 1B (exit multiple): **v3.5.1** (this is the current one; it replaced
-  the standalone Amendment 4.5)
-- FTTCP: **v1.2** file, amended to **v1.3** content
+- Master Project Prompt: **v3.6**
+- Section 1B (exit multiple): the **three-layer set** — v3.3 Amendments +
+  v3.5.1 Reconciliation + v3.6 Amendments. Where they overlap, v3.6 governs
+  the items it names, then v3.5.1, then v3.3.
+- FTTCP: **v2.1** Consolidated
+- Quarterly Results Review Protocol: **v1.4** (Concall protocol: v1.1)
+- Annual Report Analysis Protocol: **v1.3**
+- Debt Capacity Assessment: **v1.0**
+- Market-Implied Assumptions: **v1.0**
+- Downstream Source Discovery Protocol: **v1.0**
+- macro-sheet.md: referenced by the v3.6 stage 11 reads, NOT yet committed
+  (open action; Amendment 15 relative PE is not computable until it lands)
 
 ## How each run remembers its rules
 

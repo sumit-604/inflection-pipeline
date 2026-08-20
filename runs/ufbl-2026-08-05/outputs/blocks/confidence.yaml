@@ -1,13 +1,13 @@
 confidence_delta:
   numerical_acceptance: 100      # B12a
-  redflag_coverage: 62          # B12b (binding component)
-  framework_adherence: 91       # B12c Gate 0 + Emerging Moat portion only
-  peer_utilisation: 93          # B12d (14/15 substantive)
-  overall: 62              # min of the four; band 60-74 -> PROCEED verdicts downgrade one level; redflag-bound
-  valuation_adherence: pending_phase_3   # B12c valuation half (B10/B11) deferred to phase 3
-  band: "60-74 (normal-minus): a PROCEED verdict downgrades one level; REWORK floor (<60) not breached"
+  redflag_coverage: 62           # B12b (binding component)
+  framework_adherence: 93       # B12c FULL: phase-1 Gate0+EM (91%) + phase-3 valuation-adherence (95%, 0 CRIT/MAJ, CONCUR AVOID)
+  peer_utilisation: 93           # B12d
+  overall: 62                    # min of the four; band 60-74; redflag-bound
+  band: "60-74 (normal-minus): a PROCEED-family verdict downgrades one level; REWORK floor (<60) not breached"
   binding_component: redflag_coverage
+  phase: 3-complete
   notes:
-    - "Redflag coverage 62% is a direct consequence of the 3-most-recent concall rule excluding the Q1 FY26 (Aug-2025) trough call; Verifier B (reading all 4) caught the misses. The missed items (repeated peer-lag deflection; UFBL's own Q1 admission of competitor price drops contradicting the 'unchanged competitive intensity' claim) are surfaced in the gate recommendation."
-    - "Verifier A source fidelity: 0 findings, 100% - no REWORK trigger."
-    - "Verifier C framework CRITICAL (B07 non-framework +1.5/cat bump) does NOT force REWORK (not a Verifier-A numerical/source-fidelity finding, acceptance 91% >= 60); corrected values adopted: em_score 9.1 NONE, combined AVOID."
+    - "Phase-3 valuation-adherence (Verifier C, 42 rules, 0 CRITICAL/0 MAJOR, 2 MINOR cosmetic) CONCURS with 25.0x additive governing PE and the AVOID decision; SFL mixed-basis trap confirmed NOT present."
+    - "Verifier A source fidelity: 0 findings, 100%. No REWORK trigger anywhere in the run (0 Verifier-A CRITICAL; all acceptances >=60)."
+    - "Redflag coverage 62% remains the binding component (Q1 FY26 trough call excluded from stage 5; Verifier B caught the misses)."

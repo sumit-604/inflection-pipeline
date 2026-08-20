@@ -2,8 +2,9 @@
 ## Sonnet 5 Primary Pipeline with Claude Verification Layer
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
-Valuation authority: Master Project Prompt v3.3, Section 1B v3.3 (Four-Pillar
-Framework, RRM dual-track, Hurdle Ratio), FTTCP v1.2. No other exit PE source
+Valuation authority: Master Project Prompt v3.6, Section 1B layer set (v3.3
+Amendments + v3.5.1 + v3.6; v3.6 governs overlaps) (Four-Pillar
+Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.1. No other exit PE source
 is permitted anywhere in the pipeline.
 
 ---
@@ -253,7 +254,7 @@ support this override?" and leaves the answer to Keerti.
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
-| 11 | Role 1 valuation (v3.3) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.3 Section 1B + FTTCP v1.2 | `B11-valuation` |
+| 11 | Role 1 valuation (v3.6) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.6 + Section 1B layers + FTTCP v2.1 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
 | 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 4.8 | 15 transcripts + B05 + B06 | `B12b` |
 | 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 4.8 | B01, B07, B11 + framework docs | `B12c` |
@@ -490,7 +491,7 @@ folder.
 Every stage prompt is ordered: [framework and rules, stable] then
 [company inputs, variable]. Stable prefixes are marked for prompt caching.
 Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
-20-category moat scan, FTTCP v1.2) is paid once and read at 10% thereafter.
+20-category moat scan, FTTCP v2.1) is paid once and read at 10% thereafter.
 
 Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
 $5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,
@@ -505,7 +506,8 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
   tables (B10) exist so downstream stages consume summaries, not archives.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
-- Never lets any exit PE enter from outside Section 1B v3.3.
+- Never lets any exit PE enter from outside the Section 1B layer set (v3.3
+  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps).
 - Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
   inside stage 11's framework inputs as final synthesis, per project
   taxonomy.

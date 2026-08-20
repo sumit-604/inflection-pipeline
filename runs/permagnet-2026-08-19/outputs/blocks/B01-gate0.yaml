@@ -1,0 +1,38 @@
+stage: B01-gate0
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no PERMAGNET screener CSV this run; all financials extracted directly from AR-FY26 / RESULTS-Q4FY26 / RESULTS-Q1FY27"
+  - "no announcements folder provided"
+  - "NO-CONCALL MODE"
+  - "no shareholding filing: E2 (3-yr promoter change) and E3 (pledge %) not in provided documents, scored N/A/0"
+  - "no peer/competitor financial data provided: 10 of 12 moat tests blocked, scored 0 PEER DATA NEEDED where applicable"
+  - "full audited BS/CF line-item detail available for only 2 years (FY25-FY26); FY22-FY24 only via the AR 5-yr KPI-chart aggregates (standalone)"
+  - "sector_cap_row in manifest ('Agri processing') is a known collect_to_repo defect, not used in this scorecard"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE (Core 47/100). Historical depressors: A4 ROCE decline latest-vs-earliest (31%->16%, -15pp, score 0); C2/C4 PAT CAGR 2.5% vs Revenue CAGR 14.9% (score 0 both); Block E lost 10/20 pts to genuine data gaps (E2, E3 both N/A, not adverse); Block B computed on only a 2-yr consolidated window and shows FY26 FCF swinging to -25.75cr, driven by the pre-revenue Quantum Magnetics subsidiary's debt-funded capex ramp (assets 46.58cr, FY26 net loss 5.62cr, RESULTS-Q4FY26 p.18) rather than the parent, which stayed FCF-positive standalone both years."
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 11, B: 10, C: 6, D: 15, E: 5}
+core_score: 47
+moat_score: 10
+grand_total: 57
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "C1/C2 CAGR computed on Total Income (proxy for Revenue, includes ~2-3% Other Income) for FY22-FY24; AR-FY26 p.12."
+  - "PAT chart values (FY22-FY24) reconcile to Total Comprehensive Income basis, not pre-OCI 'Profit for the period'; difference immaterial (<=0.30cr)."
+  - "Block D debt figure includes lease liabilities, matching the company's own Total Debt/Equity KPI methodology."
+  - "Net debt nets only Cash & Cash Equivalents, not 'Other Bank Balances' (~23.49cr consol.); if netted, ND/EBITDA ~0.85x (D1 score 4) instead of 1.40x (score 3) -- basis stated for downstream re-check."
+  - "Block B (B1-B3) computed on CONSOLIDATED FY25-FY26 only (2 yrs, below 3-yr min); B4 uses STANDALONE 5-yr WC-days series -- basis mismatch flagged."
+  - "M4/M10 stability sub-criteria not independently verifiable; scored on verifiable growth-year-count criterion."
+  - "E2: available 1-yr promoter-holding comparison shows group flat ~58.00%->58.01%; not scored (never estimate), context only."
+loss_to_profit_swings: []
+block_b_trend: "deteriorating -- consolidated FCF swung from +10.07cr (FY25) to -25.75cr (FY26) as capex more than doubled to 43.34cr against CFO of only 17.59cr, driven by Quantum Magnetics subsidiary buildout; standalone-only FCF stayed positive both years (+8.70 FY25, +3.63 FY26)."
+analyst_note: "Low Core/Moat scores read worse than the underlying parent business: Block E lost half its points to genuine disclosure gaps (no shareholding filing), and 10 of 12 moat tests are peer-data-blocked, not fundamentally failed. The one real fundamental depressor is growth quality -- PAT decoupled from revenue (CAGR 2.5% vs 14.9%) and ROCE/ROE have not re-approached FY22-23 peak, which itself may reflect a post-recovery/one-off alloys-furnace-ramp base rather than sustainable run-rate. FY26 consolidated cash/leverage deterioration is entirely the pre-revenue Quantum Magnetics subsidiary (46.58cr assets, 0.78cr revenue, 5.62cr loss) funded by 61.48cr new consolidated long-term borrowing -- standalone parent stayed FCF-positive and under 0.25x D/E. Downstream stages should treat the subsidiary capex/loss trajectory as a distinct, separately trackable risk from the core business."

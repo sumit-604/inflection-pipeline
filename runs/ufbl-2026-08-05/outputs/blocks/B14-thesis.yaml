@@ -1,0 +1,18 @@
+stage: B14-thesis
+company: "UFBL"
+run_date: "2026-08-05"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 289, high: 325}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Consolidated SSSG falls to low single digit for 2 consecutive quarters while gross margin stays below 66%, OR consolidated interest-bearing net debt breaches Rs 102 cr while store count grows"
+monitoring_checklist:
+  - "Consolidated SSSG >= double digit in Q2/Q3 FY27 without incremental discounting (red: low single digit/negative for 2 consecutive quarters)"
+  - "Gross margin >= 66% for two consecutive quarters (red: below 66% again in FY27)"
+  - "Pre-Ind AS adjusted operating EBITDA margin tracking toward 9-10% (Q1 FY27 8.1%; red: stuck below 8% / back-end cost fails to compress 7.1% to 6.5%)"
+  - "Consolidated interest-bearing net debt <= Rs 102 cr while store count grows toward 300+ (red: >Rs 102 cr while stores grow, FLAG-CASH falsifier)"
+  - "Store count to 300+ by FY27 end and new-store ROM narrowing toward 17-18% (red: FY23-style non-performing store closures)"
+  - "Price re-enters Rs 289-325 AND checklist items 1-4 all green before any buy (red: above Rs 325, or in-zone because a trigger fired)"
+one_line_thesis: "NOT buying UFBL at Rs 772: the four transitions are turning (FTTCP +4) and forward pre-Ind AS EPS grows ~Rs 6.5 (FY27) to ~Rs 25 (FY30), but at the approved 25.0x destination PE that is only a Rs 635 base target below today's price, so the Tier A 25% hurdle fails even on bull earnings (HR 0.82 base/1.40 bull, STOP); re-enter only at Rs 289-325 with the SSSG-plus-margin catalyst still firing."

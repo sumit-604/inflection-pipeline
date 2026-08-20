@@ -23,11 +23,11 @@ a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
 
 b. PROTOCOL-FILE CHECK: verify these exist. If any is absent, STOP and report
    which — never reconstruct a protocol from memory:
-   - frameworks/Quarterly_Results_Review_Protocol_v1_2.md (needed if a results
+   - frameworks/Quarterly_Results_Review_Protocol_v1_4.md (needed if a results
      filing is in --docs)
    - frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (needed if a
      concall is in --docs)
-   - frameworks/Master_Project_Prompt_v3.3.md (framework context)
+   - frameworks/Master_Project_Prompt_v3_6.md (framework context)
 
 c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdftoppm, tesseract. If
    missing, attempt install (poppler-utils, tesseract-ocr). If that fails,

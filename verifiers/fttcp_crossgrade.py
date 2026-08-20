@@ -11,7 +11,7 @@ Opus — same family, same training priors, same aesthetic about what a good
 FTTCP verdict looks like. That is the softest link in the chain. This script
 adds a grader from a DIFFERENT model family (Gemini by default; GPT-5.6/OpenAI
 selectable) whose only job is to grade the written FTTCP draft against the
-FTTCP v1.2 rubric.
+FTTCP v2.1 rubric.
 
 Grader-only, never a maker
 --------------------------
@@ -54,14 +54,14 @@ import ssl
 from datetime import datetime, timezone
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RUBRIC_PATH = os.path.join(REPO, "frameworks", "FTTCP_v1.2_Consolidated.md")
+RUBRIC_PATH = os.path.join(REPO, "frameworks", "FTTCP_v2_1_Consolidated.md")
 
 # The fixed rubric the cross-family model grades against. Derived from the
-# FTTCP v1.2 DISCIPLINE rules and the CLAUDE.md NEVER list. Kept explicit so the
+# FTTCP v2.1 DISCIPLINE rules and the CLAUDE.md NEVER list. Kept explicit so the
 # grade is structured and comparable across runs even if the model does not
 # fully parse the framework file (which is also supplied, as the authority).
 CRITERIA = [
-    ("exit_pe_source", "Every exit / destination PE comes only from Section 1B v3.3; no round-number defaults."),
+    ("exit_pe_source", "Every exit / destination PE comes only from the Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6; v3.6 governs overlaps); no round-number defaults."),
     ("single_credit_roce", "ROCE recovery credited via Pillar 1 OR Strategic Premium, never both; the route is stated in writing."),
     ("no_hybrid_labels", "No hybrid transition labels; where a transition falls between two states it is rounded DOWN."),
     ("kernex_cap", "Where a transition is missing with no observable catalyst, the conservative (Kernex) cap is applied, not loosened."),
@@ -76,7 +76,7 @@ CRITERIA = [
 ]
 
 GRADER_SYSTEM = (
-    "You are a cross-family compliance grader for an equity-research protocol called FTTCP v1.2. "
+    "You are a cross-family compliance grader for an equity-research protocol called FTTCP v2.1. "
     "You grade ADHERENCE of an already-written analysis to a fixed rubric. You are NOT an analyst. "
     "You must NOT re-run the analysis, produce your own FTTCP verdict, change any number, or invent "
     "any figure or catalyst. You judge only what is written in the supplied draft against the rubric. "
@@ -102,7 +102,7 @@ def build_prompt(rubric_text, artifact_text):
     }
     return (
         "RUBRIC CRITERIA (grade each):\n" + crit_lines +
-        "\n\nYou also have the full FTTCP v1.2 framework as the governing authority:\n"
+        "\n\nYou also have the full FTTCP v2.1 framework as the governing authority:\n"
         "<<<FRAMEWORK\n" + rubric_text[:60000] + "\nFRAMEWORK>>>\n\n"
         "THE DRAFT TO GRADE (this is the maker's written output; grade only what is here):\n"
         "<<<DRAFT\n" + artifact_text[:120000] + "\nDRAFT>>>\n\n"

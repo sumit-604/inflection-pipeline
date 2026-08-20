@@ -148,9 +148,10 @@ named in the task message:
   for the B01 and B07 audits. The detailed scorecard thresholds and the
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
-  valuation framework docs — Master Prompt v3.3 Role 1, Section 1B v3.3,
-  FTTCP v1.2 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
-  Moat only, no B11) these three are NOT loaded: they are consumed solely
+  valuation framework docs — Master Prompt v3.6 Role 1, the Section 1B
+  layer set (v3.3 Amendments + v3.5.1 + v3.6; v3.6 governs overlaps),
+  FTTCP v2.1 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
+  Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
   context.
 Audit only the outputs present in your inputs (B01 and B07 always; B11
@@ -183,6 +184,12 @@ RULES:
 5. Any misapplication that changes the destination PE by >1x or flips
    the Hurdle verdict or the decision is CRITICAL; changes within
    tolerance are MAJOR; presentational gaps are MINOR.
+6. Downstream signal candidates: B09 contains downstream_candidates with
+   >=3 items OR demand_externally_verifiable=false with the exact
+   sentence present ("DEMAND IS NOT EXTERNALLY VERIFIABLE — thesis
+   relies on company-reported numbers only."). Stage 11 catalysts each
+   cite a candidate or carry the MODERATE cap. Missing block = REWORK
+   for stage 9.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:
@@ -206,7 +213,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3.3.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + FTTCP_v1.2_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + FTTCP_v2_1_Consolidated.md) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

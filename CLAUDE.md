@@ -5,7 +5,8 @@ analysis. Operator: Keerti Kaushik. Strategy: transition alpha, 25% CAGR
 target, 3-5 year holds.
 
 ## NEVER
-- Never use any exit PE from outside Section 1B v3.3 (frameworks/). It is
+- Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 + v3.6
+  amendment layers in frameworks/; v3.6 governs overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
 - Never halt a run on company quality. Flags propagate; only mechanical
   failures halt. There is no STOP verdict; the verdict set is PROCEED /
@@ -71,9 +72,13 @@ weigh, never anchored evidence.
 
 ## STRUCTURE
 - prompts/       stage instructions, single source of truth
-- frameworks/    Master v3.3, Section 1B v3.3, FTTCP v1.2 (Keerti
+- frameworks/    Master v3.6, Section 1B layer set (v3.3/v3.5.1/v3.6),
+                 FTTCP v2.1, Quarterly v1.4, AR v1.3 (Keerti
                  maintains; stage 11 reads at run time; amendments here
-                 propagate with zero pipeline edits)
+                 propagate with zero pipeline edits), plus
+                 Downstream_Source_Discovery_Protocol_v1_0.md (source
+                 registry for downstream signal candidates; Role 5.5
+                 verifies against it in claude.ai)
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
@@ -84,6 +89,10 @@ weigh, never anchored evidence.
 - anti-ai-writing-style.md   house style for all reader facing prose
                  (synthesis narratives, recommendations, X posts); the
                  STYLE authority the orchestrator and stage 13 cite
+- Narrative_Writing_Style_v1.md   STE (ASD-STE100 Simplified Technical
+                 English) plus Zinsser; the operator voice authority cited
+                 by OPERATOR VOICE below and by the closing narrative
+                 section of every analysis
 - .claude/agents/         subagent definitions with model routing
 - /run-pipeline runs/<folder>   executes everything
 - /run-quarterly TICKER --docs ...   quarterly review pipeline (Role 4/5):
@@ -91,6 +100,28 @@ weigh, never anchored evidence.
                  forensic notes -> A4 analyst -> A5 adversary; enumeration
                  before interpretation; writes runs/<ticker>-<quarter>/work/;
                  needs the two Quarterly_*_Protocol files in frameworks/
+
+## OPERATOR VOICE (STE — all conversation, not only outputs)
+Every reply to the operator uses Simplified Technical English (ASD-STE100,
+codename STE) plus Zinsser. This governs ordinary chat, diagnosis, and
+status updates, not only synthesis outputs. Full spec:
+Narrative_Writing_Style_v1.md. The load-bearing rules, always on:
+- One idea per sentence. 20 words or fewer. Split a long thought in two.
+- Active voice. The subject does the action.
+- One meaning per word per reply. Plain word over jargon. Gloss a term the
+  first time it must appear.
+- Cut every word that carries no information ("it is worth noting that",
+  "in terms of", "at this point in time").
+- No em-dashes or en-dashes as punctuation. Use a full stop, a comma, or
+  restructure the sentence.
+- No hedging filler (arguably, somewhat, essentially, fundamentally,
+  significantly). No AI tells ("not just X but Y", participial openers like
+  "Looking at...", empty -ly adverbs, robust/holistic/seamless,
+  journey/landscape/ecosystem).
+- Numbers first. Say the thing the simplest way that still says it.
+Structured blocks keep their format. Tables, scorecards, Section 1B math,
+FTTCP verdict cards, YAML, and Notion payloads are not prose. This rule is
+silent on them.
 
 ## STYLE (synthesis outputs only)
 No em-dashes or en-dashes as punctuation. No hyphens in compound

@@ -22,19 +22,19 @@ enumeration before interpretation.
 
 ## PIPELINE POSITION AND PROTOCOL AUTHORITY
 
-This pipeline implements Role 4 (Quarterly Results Review Protocol v1.2) and
+This pipeline implements Role 4 (Quarterly Results Review Protocol v1.4) and
 Role 5 (Quarterly Concall Analysis Protocol v1.1), and pre-processes investor
 presentations for both. It feeds Role 4 and Role 5. It does NOT run
-valuation. Enforced downstream sequence per protocol v1.2:
+valuation. Enforced downstream sequence per protocol v1.4:
 Gate 0 -> Role 4 (filing numbers) -> Role 5 (concall) -> FTTCP -> Role 1 ->
 Role 2 -> Role 3 -> Notion save. This pipeline produces the Role 4 / Role 5
 review that seeds that chain.
 
 Required protocol files (the orchestrator checks these exist BEFORE any
 analysis agent runs; absence is a hard STOP, never reconstruct from memory):
-- `frameworks/Quarterly_Results_Review_Protocol_v1_2.md`
+- `frameworks/Quarterly_Results_Review_Protocol_v1_4.md`
 - `frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md`
-- `frameworks/Master_Project_Prompt_v3.3.md` (framework context, already present)
+- `frameworks/Master_Project_Prompt_v3_6.md` (framework context, already present)
 
 All figures in Rs Crores. Filing units (Lakhs / Crores / Millions) are
 detected and converted AT EXTRACTION, with the conversion factor stated in
@@ -150,6 +150,13 @@ After all documents pass A1-A3:
    merged review. Every A3 finding classified AMBIGUOUS or FORWARD-SIGNAL must
    produce at least one Questions-for-Management row.
 
+   SIGNAL CONTEXT input note: if the operator supplies tracker rows for this
+   ticker (from the DOWNSTREAM SIGNAL TRACKER), pass them to A4 as SIGNAL
+   CONTEXT for the Step 5.5 reconciliation per
+   Quarterly_Results_Review_Protocol_v1_4. If absent, A4 states "tracker rows
+   not supplied" in the Step 5.5 output rather than skipping the section
+   silently.
+
 5. Invoke A5 (quarterly-a5-adversary) with the A4 review path plus every A1
    extract and A2 ledger path (for its independent coverage and arithmetic
    re-run). Collect the audit.
@@ -213,7 +220,7 @@ Per Role 4 Step 9 and existing save mechanics:
 10. Conservative bias on interpretation, zero bias on extraction.
 11. Pipeline summaries never substitute for primary documents; on conflict the
     primary text wins and the contradiction is logged.
-12. Lending businesses use the 1L/5L variants per protocol v1.2; the forensic
+12. Lending businesses use the 1L/5L variants per protocol v1.4; the forensic
     checklist still runs in full (F4, F5, F12 especially).
 
 ## RULES FOR THE ORCHESTRATOR SESSION

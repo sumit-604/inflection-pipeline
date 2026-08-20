@@ -149,7 +149,7 @@ time; it is the standing data on whether Haiku catches what Opus misses.
 
 ## DELIVERABLE 4: fttcp-handoff.md
 
-Purpose: a self-sufficient input package for manual FTTCP v1.2
+Purpose: a self-sufficient input package for manual FTTCP v2.1
 deliberation in a separate Opus session that will NOT have the source
 PDFs. That session sees only this file, so it must carry every figure,
 quote, and finding the deliberation needs. Density over brevity: this
@@ -245,6 +245,22 @@ verdict line + decision + entry range), the Drive folder link, and the
 explicit instruction set: fetch the live company page first if it
 exists; NEVER overwrite Decision Status from a pipeline run; append,
 do not replace.
+
+## DOWNSTREAM SIGNAL TRACKER PAYLOAD (candidates for Role 5.5 verification)
+Target database: DOWNSTREAM SIGNAL TRACKER, data_source_id
+926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f (write happens at Role 5.5 in
+claude.ai after source verification, NOT from this pipeline)
+One row per candidate: signal name | entity type | demand link |
+likely source | cadence | shared flag | falsifying observation if
+already stateable
+Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
+B10), one per entity: name | entity type | where in AR — the Step
+10.5B feed for the AR annual cross-check at Role 5.5.
+
+This second payload block follows the COMPANIES MASTER payload in the
+notion-payload output. Like the rest of that file, it is a payload, not
+an action: the pipeline never writes to the tracker; Role 5.5 does,
+after verification.
 
 ## OUTPUT ORDER
 

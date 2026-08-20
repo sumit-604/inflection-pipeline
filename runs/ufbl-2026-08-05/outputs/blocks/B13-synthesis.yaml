@@ -3,13 +3,19 @@ company: UFBL
 run_date: 2026-08-05
 model: claude-opus-4-8
 status: complete
-phase: 1-lite
-verdict: PROCEED WITH FLAGS
+phase: 3-finalize
+gate_verdict: PROCEED WITH FLAGS
 verdict_rule_applied: 3
-flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER-CAUTION]
-flag_cash_determination: GROWTH-INDUCED
-flag_cash_falsifier: "Consolidated interest-bearing net debt printing above Rs 102 Cr in any quarterly balance sheet"
-confidence_delta: {numerical: 100, redflag: 62, framework: 91, peer: 93, overall: 62}
-headline: "Lease optics mask a recovering restaurant chain"
+valuation_decision: AVOID (on valuation)
+entry_range: {low: 289, high: 325}
+mos_price: 260
+destination_pe: {additive_governing: 25.0, rrm: 17.5}
+hurdle: {ratio_base: 0.82, verdict: STOP, tier: A}
+prob_weighted_3yr_cagr: -8.5
+devil_overall: SURVIVES
+flags_active: [FLAG-GATE0, FLAG-CASH, FLAG-PROMOTER, FLAG-ACCOUNTING-QUALITY, SHARED-CATALYST, FLAG-EMOAT]
+confidence_delta: {numerical: 100, redflag: 62, framework: 93, peer: 93, overall: 62}
+zone_reachability: "reachable; entry top 325 is +66% above lowest tested annual close 195.30 (Mar-2026); MARKET-UNLIKELY does not fire; Tier B barred"
+headline: "United Foodbrands recovery real, valuation not yet"
 publish_candidate: false
-files: [outputs/final/business-narrative.md, outputs/final/gate-recommendation.md, outputs/final/verifier-summary.md]
+deliverables: [business-narrative.md, fttcp-recommendation.md, verifier-summary.md, verifier-disagreement-log.md, fttcp-handoff.md]

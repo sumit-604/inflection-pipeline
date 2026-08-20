@@ -39,6 +39,12 @@ Do not upgrade a stage's model without editing its agent file.
 - "flag" = surfaced prominently in the verdict, decision stays human
 
 ## SESSION DISCIPLINE (prompt cache)
+- SESSION START, MANDATORY: before reading any framework, run
+  `git fetch origin main && git merge origin/main`, then print the
+  frameworks/ file list with SHAs. If the merge conflicts on
+  frameworks/, prompts/, or .claude/, resolve keeping origin/main —
+  session branches never legitimately edit those paths. A session that
+  skips this runs on a stale framework snapshot silently.
 - Model and effort are fixed at session start and never changed mid-session:
   switching either busts the prompt cache and re-prefills the whole
   conversation at full price. This governs the session's own model and is

@@ -1,0 +1,50 @@
+stage: B08-promoter
+company: "BIRLACABLE"
+run_date: "2026-08-20"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["prospectus, announcements, shareholding, research, presentation absent; concalls declared unavailable (carried from B00)", "multi-year pledge trend prior to FY26 not independently confirmed beyond AR's 'Nil change' language", "no proxy-advisory (IiAS/SES/InGovern) coverage found for the BCL-VTL merger", "no BCL-specific Glassdoor/AmbitionBox data found"]
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "Unresolved 22-year Priyamvada Devi Birla estate/succession dispute still live; Supreme Court appeals pending against ruling allowing Harsh V. Lodha to continue as MP Birla Group chairman (AR p.46, corroborated by court records to March 2026)"
+      - "CEO R. Sridharan resigned 19 Jan 2026 after ~21 years, no reason disclosed anywhere in AR; ~4-month gap before internal CFO Somesh Laddha promoted to combined Manager & CFO role (22 May 2026)"
+      - "BCL-into-VTL amalgamation (10:115 swap) is a related-party transaction with promoters (VTL 19.33%, UCL 13.00%) on both sides of the deal; no independent proxy-advisory coverage found; market pricing reflects skepticism (BCL shares down 25-39% over 6-12 months around announcement)"
+      - "Director Dhan Raj Bansal, age 87, attended only 1 of 5 board meetings (20%) in FY26, yet is proposed for re-appointment via special resolution"
+      - "VTL corporate guarantee backs BCL's secured borrowings with no fee disclosed in AR; separately VTL has pledged 12.5 lakh BCL shares (4.17% of BCL equity) with SBI for VTL's own working capital, stable/unchanged in FY26"
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 3, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Unresolved Priyamvada Devi Birla estate/succession dispute underlying promoter chairmanship, still live with Supreme Court appeals pending", evidence_tier: "MEDIA REPORTED / court record", source: "AR p.46 (company disclosure); indiankanoon.org case record dated 12 March 2026; LawChakra", date: "ongoing, latest development March 2026"}
+  - {finding: "CEO R. Sridharan resigned 19 Jan 2026 after ~21 years' service with no reason disclosed in AR", evidence_tier: "VERIFIED", source: "AR Directors' Report p.26", date: "2026-01-19"}
+  - {finding: "BCL-VTL amalgamation (10:115 swap) structured as RPT with promoter entities on both sides; no independent proxy advisory coverage found", evidence_tier: "VERIFIED (structure) / MEDIA REPORTED (market reaction, absence of proxy coverage)", source: "AR p.11-12, p.26; NSE/BSE observation letters 2026-08-14 (media reported)", date: "2026-03-21 board approval; 2026-08-14 exchange NOCs"}
+  - {finding: "Director Dhan Raj Bansal, age 87, 1 of 5 (20%) board meeting attendance in FY26, proposed for re-appointment via special resolution", evidence_tier: "VERIFIED", source: "AR Corporate Governance Report p.46; AR Notice Item 4, p.15", date: "FY2025-26"}
+  - {finding: "VTL corporate guarantee on BCL secured borrowings with no fee disclosed", evidence_tier: "VERIFIED", source: "AR Notes 17(i), 21(ii), p.93-94", date: "FY2025-26"}
+  - {finding: "VTL pledge of 12.5 lakh BCL shares (4.17% of BCL total equity) with SBI for VTL's own working capital, stable/unchanged in FY26", evidence_tier: "MEDIA REPORTED", source: "Exchange Regulation 31(4) disclosure via scanx.trade", date: "FY2025-26, pledge pre-existing"}
+transition_evidence: []
+pledge_pct_latest: 4.17
+pledge_trend: "stable, no fresh encumbrance created in FY26 per exchange disclosure; 12,50,000 BCL shares held pledged by Vindhya Telelinks with SBI, unchanged year over year"
+searches_performed:
+  - "Priyamvada Devi Birla estate case Harsh Vardhan Lodha Supreme Court 2025 2026"
+  - "Harsh Vardhan Lodha M.P. Birla group probate case Calcutta High Court status"
+  - "SEBI order Birla Cable OR Vindhya Telelinks OR Universal Cables OR Harsh Vardhan Lodha adjudication"
+  - "Birla Cable Vindhya Telelinks merger swap ratio minority shareholders objection 2026"
+  - "Birla Cable Vindhya Telelinks merger fairness opinion valuation report independent"
+  - "Birla Corporation Harsh Vardhan Lodha SEBI insider trading OR fraud OR investigation"
+  - "Yash Birla group SEBI barred market different from MP Birla Group Harsh Vardhan Lodha"
+  - "Birla Cable promoter pledge shares NSDL CDSL 2024 2025 2026"
+  - "Vindhya Telelinks pledge Birla Cable shares SBI encumbrance"
+  - "Vindhya Telelinks 12,50,000 shares pledged Birla Cable percentage total promoter holding"
+  - "Birla Cable IiAS OR SES OR InGovern proxy advisory report merger swap ratio"
+  - "Vindhya Telelinks encumbrance Birla Cable shares 2023 2024 regulation 31 disclosure"
+  - "Birla Cable Glassdoor OR AmbitionBox employee reviews rating"
+  - "Hindustan Medical Institution Birla Cable promoter shareholder"
+  - "Punjab Produce OR Baroda Agents OR East India Investment OR Gwalior Webbing MCA struck off Lodha director"
+  - "V. Sankar Aiyar chartered accountants reputation SEBI NFRA action"
+  - "Birla Corporation OR Vindhya Telelinks electoral bonds political donation"
+  - "Birla Cable NSE BSE no objection no adverse observation letter scheme amalgamation August 2026"
+searches_skipped: []
+verdict_basis: "No SEBI/criminal/tax/auditor red flags and stable, small pledge, but promoter control rests on an unresolved 22-year estate dispute still active in courts, an unexplained CEO exit, and an imminent RPT-structured merger with no independent proxy coverage; net CAUTION with zero transition evidence of improvement."
+analyst_note: "Two WebFetch calls (trendlyne.com, scanx.trade) were blocked by the environment's egress proxy; pledge and shareholding figures were triangulated via WebSearch snippets from the same underlying sources instead, so confidence on the pledge figure is MEDIA REPORTED tier rather than VERIFIED tier. The AR extract itself does not carry a standalone pledge disclosure table, only the shareholding pattern and RPT notes. Also flag for synthesis: post-merger, BCL shareholders become VTL shareholders, so VTL's own promoter-quality profile (not run here) becomes directly relevant to any PROCEED decision on BCL; stage 11/13 should consider whether a VTL promoter check is warranted given the pending amalgamation."

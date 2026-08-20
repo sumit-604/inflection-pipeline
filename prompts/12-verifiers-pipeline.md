@@ -164,7 +164,7 @@ RULES:
    using the stated thresholds; check the classification matrix,
    confidence adjustment, and deal-breaker application; check the CAGR
    edge rules were honoured.
-3. Emerging Moat (B07): all 21 categories addressed or explicitly NO
+3. Emerging Moat (B07): all 23 categories addressed or explicitly NO
    EVIDENCE; evidence multipliers applied correctly; the completionist
    recount performed; scores consistent with the stated evidence tiers
    (a 🎙️-only category scoring as if 📄 is a finding).
@@ -190,6 +190,12 @@ RULES:
    relies on company-reported numbers only."). Stage 11 catalysts each
    cite a candidate or carry the MODERATE cap. Missing block = REWORK
    for stage 9.
+7. Stage 7 categories 21 and 22 present in B07 output. Category 21
+   (TALENT ASYMMETRY, I1) scored above 0 only if both legs (talent +
+   competitor-economics) are evidenced with the (b) leg carrying >=1
+   documented (📄) source. Category 22 (CANNIBALIZATION BARRIER, I2)
+   scored above 0 only if the named sacrifice is specific. Missing
+   categories = REWORK for stage 7.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:

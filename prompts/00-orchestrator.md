@@ -491,7 +491,7 @@ folder.
 Every stage prompt is ordered: [framework and rules, stable] then
 [company inputs, variable]. Stable prefixes are marked for prompt caching.
 Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
-20-category moat scan, FTTCP v2.1) is paid once and read at 10% thereafter.
+22-category moat scan, FTTCP v2.1) is paid once and read at 10% thereafter.
 
 Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
 $5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,

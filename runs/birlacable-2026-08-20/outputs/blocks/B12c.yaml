@@ -1,0 +1,50 @@
+stage: B12c
+company: "BIRLACABLE"
+run_date: "2026-08-20"
+model: claude-opus-4-8
+status: complete
+scope: phase-1
+gate0:
+  rules_checked: 50
+  rules_passed: 46
+  adherence_pct: 92
+  fails:
+    - {id: "G-10", severity: "MAJOR", rule: "A4 ROCE trend, latest vs earliest", detail: "scored 5 on a 1-year FY25-FY26 window; FY23 earliest ROCE is N/A, rule 5 scores it 0 and rule 6 sets a 3-year floor", recomputed: "A4 = 0"}
+    - {id: "G-14", severity: "MAJOR", rule: "B2 FCF-positive years as proportion", detail: "denominator is the 2 assessable years, not the 4-year history", recomputed: "1 of 4 = 25% -> B2 = 0"}
+    - {id: "G-15", severity: "MAJOR", rule: "B3 cumulative FCF / cumulative PAT", detail: "computed on FY25-FY26 subset while B1 used the full 4 years; excludes the two weak CFO years", recomputed: "B3 = 0; core_score 39 -> 27, classification AVOID unchanged"}
+    - {id: "G-05", severity: "MINOR", rule: "use the source's own ROCE if provided", detail: "report computes ROCE and labels it computed, but never states whether the screener source carried a ROCE row that was checked first", recomputed: ""}
+emoat:
+  rules_checked: 37
+  rules_passed: 32
+  adherence_pct: 86
+  fails:
+    - {id: "E-17", severity: "MAJOR", rule: "likelihood x impact matrix correct per row", detail: "H2 scored HH=4 for an amalgamation in which BCL is dissolved; category fit is a stretch and the High impact leg rests on Scheme synergy language the report itself labels 🎙️/aspirational in 6B, while a 📄 1.0x multiplier is applied", recomputed: "em_score 10.0 -> 9.0 (HM) or 6.0 (out of category); classification NONE unchanged in both"}
+    - {id: "E-12", severity: "MINOR", rule: "Section 3 summary table columns", detail: "required 'time to materialise' column absent from all family tables; present only for H2 in the block", recomputed: ""}
+    - {id: "E-22", severity: "MINOR", rule: "registered options are watched, never scored", detail: "three optionality-register rows are the same merger synergies that supply H2's scored impact leg", recomputed: ""}
+    - {id: "E-30", severity: "MINOR", rule: "catalyst evidence typing", detail: "catalyst 3 typed documented on third-party industry data, inconsistent with the report's own exclusions at 1A and E2; stage 11 must not read it as a company-specific documented catalyst", recomputed: ""}
+    - {id: "E-31", severity: "MINOR", rule: "evidence_mix reports item counts", detail: "reports scored-category counts (6/0/0); 🎙️ and 🔍 items appear in 1A, 1C, C1 and 6B but are recorded as zero", recomputed: ""}
+valuation: {status: pending-phase-3}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0_core_score: "39 as published; 27 under strict rule-5 recomputation; classification AVOID unchanged"
+recomputed_em_score: "10.0 as published; 9.0 or 6.0 under the H2 recomputation; classification NONE unchanged"
+no_conflation_check: "PASS - B07 states explicitly it is the Emerging Competitive Advantages scan and not FTTCP; no FTTCP content appears"
+downstream_candidates_check: "NOT RUN - B09 is not a phase-1 input; deferred to phase 3"
+findings:
+  - {severity: "MAJOR", location: "B01 Block A, A4", issue: "1-year ROCE trend window scored 5 where the earliest endpoint is N/A", recomputed: "A4 = 0"}
+  - {severity: "MAJOR", location: "B01 Block B, B2", issue: "FCF-positive proportion on a 2-year denominator", recomputed: "B2 = 0"}
+  - {severity: "MAJOR", location: "B01 Block B, B3", issue: "cumulative FCF/PAT window inconsistent with B1", recomputed: "B3 = 0, core 27"}
+  - {severity: "MAJOR", location: "B07 Section 5, H2", issue: "dissolution event scored HH=4 under strategic partnerships; impact leg rests on 🎙️ synergy language", recomputed: "em 6.0 to 9.0"}
+  - {severity: "MINOR", location: "B01 formula note", issue: "source-ROCE precedence rule not documented", recomputed: ""}
+  - {severity: "MINOR", location: "B07 Section 3 tables", issue: "time-to-materialise column omitted", recomputed: ""}
+  - {severity: "MINOR", location: "B07 optionality register", issue: "three rows overlap H2's scored impact leg", recomputed: ""}
+  - {severity: "MINOR", location: "B07 catalysts_12m item 3", issue: "industry data typed as documented", recomputed: ""}
+  - {severity: "MINOR", location: "B07 evidence_mix", issue: "category counts reported as item counts", recomputed: ""}
+critical_count: 0
+major_count: 4
+minor_count: 5
+rules_checked_total: 87
+rules_passed_total: 78
+acceptance_rate: 90
+acceptance_note: "covers the two audited sections only (Gate 0 50 rules, Emerging Moat 37 rules); the valuation audit is deferred to phase 3 and is excluded from this rate"
+rework_trigger: false

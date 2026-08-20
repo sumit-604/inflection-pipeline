@@ -1,0 +1,12 @@
+stage: B12a
+company: "BIRLACABLE"
+run_date: "2026-08-20"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 73
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+acceptance_rate: 100
+coverage_note: "All major financial statement line items verified (B&S, P&L, CF, Note figures). Seventy-three distinct numerical claims checked across all nine stage reports. Screener data matched to AR FY26 figures. Customer concentration, inventory growth, payables growth, and other derived calculations spot-checked for arithmetic correctness. Peer concall and web-sourced figures marked OUT OF SCOPE per instruction. Zero mismatches, zero anchor-not-found, zero material unanchored claims."

@@ -1,0 +1,25 @@
+confidence_delta:
+  phase: 1
+  numerical_acceptance: 100      # B12a: 73 claims checked, 0 findings
+  redflag_coverage: 15.4         # B12b strict: 4 of 26 verifier-found flags caught upstream
+                                 # (half-credit variant 21.2; both far below the 60 floor)
+  framework_adherence: 90        # B12c phase-1 portion only: Gate 0 (92%) + Emerging Moat (86%),
+                                 # 78 of 87 rules passed. Valuation component PENDING PHASE 3.
+  peer_utilisation: 100          # B12d: 12 of 12 provided peer-quarters used substantively
+  overall: 15.4                  # min of the four
+  interpretation: >
+    Overall 15.4 sits below 60. Per orchestrator Section 5 interpretation
+    bands and the REWORK flag rule (any verifier acceptance_rate below 60%),
+    the phase-1 gate verdict is forced to REWORK regardless of company
+    quality. The failing component is red-flag coverage: Verifier B found
+    26 independent red flags across the company documents and peer
+    transcripts of which stages 5 and 6 caught 4. Verifier B names the
+    rework scope: B05-concall (sections 2C/2D/4D re-audited against the
+    FY26 audited cash flow and balance sheet) and B06-peers (claims 2, 3,
+    4 verdicts plus the Part 2B/2C cross-reads).
+  valuation_component: pending-phase-3
+notes:
+  - "Verifier A: zero findings at 100% acceptance; no source-fidelity gate triggered; no false-CRITICAL sanity pass needed."
+  - "Verifier D: 2 MAJOR attribution findings in B06 (STL order-intake quote spliced into an HFCL bullet; EPC warranty-loss mechanic attributed to BharatNet instead of the Army NFS network), independently corroborated by Verifier B."
+  - "Verifier C: 4 MAJOR scoring recomputations. Gate 0 core 39 -> 27 under strict short-history rules and em_score 10 -> 6-9 under the H2 recomputation; classifications AVOID and NONE unchanged in every variant."
+  - "Verifier disagreement log: none. Verifier A raised no source-fidelity finding, so no downstream step conflicted with one."

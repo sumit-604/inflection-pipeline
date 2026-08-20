@@ -1,0 +1,21 @@
+stage: B01-gate0
+company: "BIRLACABLE"
+run_date: "2026-08-20"
+model: claude-sonnet-5
+status: complete
+input_gaps: [shareholding pattern filing not provided (AR category table used instead), FY23/FY24 Current Liabilities breakdown not in provided data (ROCE limited to FY25-FY26), FY23/FY24 capex not in provided data (FCF limited to FY25-FY26), FY23/FY24 Trade Payables not in provided data (WC Days limited to FY25-FY26), promoter pledge disclosure not found in any provided source, peer/sector comparison data not provided (M2/M5/M9 moat tests)]
+flags: [{type: FLAG-GATE0, reason: "Core score 39 (AVOID); depressors are revenue CAGR -0.89% and PAT CAGR -19.94% FY23-FY26, revenue declined in 2 of 3 YoY periods (FY24, FY25), median ROCE 7.55% (FY25-FY26 subset, formula-accurate years only), zero of 12 moat tests scored >=3 (moat_score 0/60). Board-approved amalgamation of BCL into parent Vindhya Telelinks Ltd (announced 21-Mar-2026, ~10-12mo to complete) is a structural event that may supersede standalone valuation before entry."}]
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 5, B: 13, C: 0, D: 11, E: 10}
+core_score: 39
+moat_score: 0
+grand_total: 39
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers: ["Block A <8 (Block A=5): max GOOD, driven by FY25-FY26 ROCE and FY23-FY26 ROE both sub-12% median", "median ROCE <10% (7.55%, FY25-FY26 subset): max AVERAGE", "revenue declined in majority of years (FY24, FY25 of 3 YoY transitions): max AVERAGE"]
+history_downgrade: true
+data_notes: ["EBITDA derived as Sales - (RM+Power&Fuel+OtherMfr+Employee+SellAdmin+OtherExp) + Change in Inventory; exact match to reported PBT all 4 years, confirms sign convention", "ROCE formula-accurate (Total Assets - Current Liabilities) only computable FY25/FY26 from AR two-year comparative; FY23/FY24 marked N/A, no approximation substituted", "FCF (capex from AR cash flow statement) only computable FY25/FY26; FY23/FY24 capex N/A", "WC Days with payables leg only computable FY25/FY26 (AR Note 22 Trade Payables); FY23/FY24 N/A. Revenue basis used for all WC day components, no explicit COGS line available", "FY23 ROE uses closing Net Worth only, no FY22 opening figure in provided data", "E1 promoter holding 66.35% sourced from AR table labelled 'as on March 31, 2025' but positioned/sized as FY26 data - date label ambiguous, treated as latest available", "PEER DATA NEEDED for M2, M5, M9 (no sector/peer comparison data provided)", "No loss-to-profit swing occurred; PAT positive all 4 years (FY24/FY25/FY26 confirmed, so deal-breaker 8 not triggered)"]
+block_b_trend: "deteriorating: FCF swung from +Rs84.66cr (FY25) to -Rs23.42cr (FY26); WC days rose 104.2 to 118.9 (+14.7 days) over the same period"
+analyst_note: "Classification is driven by genuine business contraction (revenue and PAT both declined FY23-FY26), not by data gaps, though data gaps limit ROCE/FCF/WC-days to a 2-year formula-accurate subset (FY25-FY26) rather than the full 4-year window - flag this when comparing Block A/B sub-scores across companies with fuller histories. The dominant fact for downstream stages is the pending BCL-into-VTL amalgamation (Board approved, CARE placed ratings on Positive Watch), which converts this from a standalone equity thesis into a merger-arbitrage-adjacent one; Section 1B exit-multiple work and position sizing should treat this as a near-term catalyst/ceiling on the investment horizon, not a multi-year GARP hold in its own right."

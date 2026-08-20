@@ -50,7 +50,11 @@ trend, rating PDF language: quote the rating agency WC commentary
 verbatim with page), strategic asset / monopoly position (B07 A1/H2 and
 B04 moats, yes-with-description or no), UA qualifier check (listed ≥12
 months?, Gate 0 ≥60 OR EM ≥25?, FII+DII <3%? each with anchor,
-all-three-met yes/no), SOM-implied revenue CAGR (B09), peer medians if
+all-three-met yes/no), SOM-implied revenue CAGR (B09), downstream signal
+candidates and demand_externally_verifiable (B09.downstream_candidates,
+copied as summary rows: signal, entity type, demand link, likely source,
+cadence, shared flag; candidates are unverified, carry them as given),
+peer medians if
 peer financial data was provided (P/E, EV/EBITDA, P/B, growth, ROCE),
 else unresolved.
 
@@ -79,6 +83,10 @@ rating_wc_quote: ""            # verbatim, with agency and page
 ua_qualifiers: {listed_12m: null, gate0_or_em: null, fii_dii_lt3: null,
                 all_met: null}
 credibility_grade: ""          # copied from B05
+downstream_candidates: []      # copied from B09, summary rows only:
+                               # {signal, entity_type, demand_link,
+                               #  likely_source, cadence, shared}
+demand_externally_verifiable: true   # copied from B09
 analyst_note: ""               # optional, <=200 words (strict cap, excess
                                # truncated). Assembly caveat only (e.g. why a
                                # field is unresolved or which of two sources

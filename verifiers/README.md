@@ -8,7 +8,7 @@ chain. This directory holds the out-of-family checks.
 
 ## `fttcp_crossgrade.py` — cross-family FTTCP grader
 
-Grades the written FTTCP draft against the FTTCP v1.2 rubric using a model from a
+Grades the written FTTCP draft against the FTTCP v2.1 rubric using a model from a
 **different family** (Gemini by default; GPT-5.6 / OpenAI selectable).
 
 **Grader-only, never a maker.** It does not re-run the analysis, produce a

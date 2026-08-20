@@ -10,13 +10,13 @@
 
 ---
 
-## BANNER — PENDING OPERATOR APPROVAL
+## BANNER — RATIFIED 20-AUG-2026
 
-**The Business A Pillar 1 base of 30.0x is PENDING OPERATOR APPROVAL.** The 18-Aug gate approved a Pillar 1 base while the pipeline's declared authority was Section 1B v3.3 Amendment 5, whose cap is 24x. The 30.0x figure is now produced by v3.6 Amendment 11 (elite extension, 30x cap). Supersession does not auto-approve the number. The base, and every figure that moves because of it, carries PENDING OPERATOR APPROVAL below.
+**The Business A Pillar 1 base of 30.0x was PENDING OPERATOR APPROVAL; the operator RATIFIED it on 20-Aug-2026 (register items P-1 and P-2 both approved).** The 18-Aug gate approved a Pillar 1 base while the pipeline's declared authority was Section 1B v3.3 Amendment 5, whose cap is 24x. The 30.0x figure is now produced by v3.6 Amendment 11 (elite extension, 30x cap). Supersession does not auto-approve the number. The base, and every figure that moves because of it, carried PENDING OPERATOR APPROVAL below until the 20-Aug ratification.
 
 **Figures that move because of it: NONE.** The 35x Specialty chemicals sector cap absorbs the entire Amendment 11 uplift (math in §4.3). The pending set therefore contains exactly one item: the authority and the value of the Pillar 1 base itself. No fair value, no entry price, no Hurdle Ratio changes.
 
-**The verdict card in §10 is PROVISIONAL until the operator approves the delta.**
+**The verdict card in §10 is FINAL; the operator approved the delta on 20-Aug-2026.**
 
 **FTTCP verdict held from the 18-Aug gate; v2.1 Signal Gate not applied (no candidates block exists in this run's B09/B10); full FTTCP v2.1 re-deliberation is an open action.**
 
@@ -30,7 +30,7 @@ Three guardrails set by the operator govern what may move.
 |---|---|
 | 1. Hold the FTTCP verdicts | Blended +3 DEEP WATCH, Business A +3 DEEP WATCH, Business B −2 AVOID with the Kernex cash cap, exactly as approved 18-Aug (fttcp-deliberation.md §3). No re-deliberation. Signal Gate not fired. |
 | 2. Recompute Business A Section 1B only | Amendment 11 on Pillar 1; Amendments 12 and 13 tested against the r build; Amendments 14, 15, 16 tested for bite. Business B carried forward verbatim from 19-Aug. Operator-approved bases (A 35x, B 14x, blended 29.5x, ONE-YEAR FORWARD basis) fixed. |
-| 3. Pending approval | New Pillar 1 base and anything downstream of it marked PENDING OPERATOR APPROVAL. Verdict card PROVISIONAL. |
+| 3. Pending approval | New Pillar 1 base and anything downstream of it was marked PENDING OPERATOR APPROVAL; ratified 20-Aug-2026. Verdict card final. |
 
 ### Held-constant register (not re-derived in this run)
 
@@ -84,7 +84,7 @@ Performance Polymers and Chemicals, retained, becomes Jubilant Industries Ltd. F
             = 24 + 10.35
             = 34.35x
             -> capped at 30x
-    Pillar 1 base = 30.0x   [PENDING OPERATOR APPROVAL]
+    Pillar 1 base = 30.0x   [RATIFIED 20-Aug-2026]
 
 **What the superseded stack produced.** Amendment 5 (v3.3): Base PE = 0.5 x 67.5 + 7.5 = 41.25x, capped at 24x, so **24.0x**. The 19-Aug report printed 30.0x while declaring v3.3 as its authority (11-valuation.md §2.1). The number it printed was the Amendment 11 number. The authority it cited could not produce that number.
 
@@ -259,7 +259,7 @@ OLD column is what `11-valuation.md` and `B11-valuation.yaml` printed on 19-Aug.
 | 23 | Blended HR | 1.64 | 1.64 | **1.64** | 0.00 | (1.12)³ x (29.5 ÷ 25.35) | §6 |
 | 24 | Expected CAGR, prob-weighted | 19.9% | 19.9% | **19.9%** | 0.0 pp | Grade C weights 35/45/20 on unchanged scenario CAGRs | Amdt 4.3; B10 |
 | 25 | Combined SOTP fair value | Rs 4,625 Cr | Rs 4,625 Cr | **Rs 4,625 Cr** | Rs 0 | 35x x Rs 125 Cr polymer + 14x x Rs 18 Cr agri | B10 sotp_fair_value_today_cr |
-| 26 | Decision | WATCHLIST | WATCHLIST | **WATCHLIST** (PROVISIONAL) | none | HR CONDITIONAL; CMP above entry | §10 |
+| 26 | Decision | WATCHLIST | WATCHLIST | **WATCHLIST** | none | HR CONDITIONAL; CMP above entry | §10 |
 
 ### 7.1 The three checks the operator asked to verify, answered
 
@@ -306,16 +306,16 @@ The INDETERMINATE cash-conversion row is named, not resolved. It caps the readin
 
 ---
 
-## 10. PROVISIONAL VERDICT CARD (dual track, SOTP)
+## 10. VERDICT CARD (dual track, SOTP)
 
-**PROVISIONAL. Pending operator approval of the Pillar 1 base of 30.0x under v3.6 Amendment 11.**
+**Pillar 1 base 30.0x under v3.6 Amendment 11: RATIFIED by the operator 20-Aug-2026.**
 **FTTCP verdict held from the 18-Aug gate. FTTCP v2.1 Signal Gate not applied.**
 
 **Tier: A | Hurdle: 25% | Method: SOTP | Framework: Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1 (verdict held)**
 
 | Field | Business A (Polymer) | Business B (Agri) | Combined SOTP |
 |---|---|---|---|
-| Pillar 1 base | **30.0x [PENDING APPROVAL]** (Amdt 11, ROCE 67.5% FIRING) | 17.5x (unchanged, ROCE 19.9% STAGNANT) | n/a |
+| Pillar 1 base | **30.0x [RATIFIED 20-Aug]** (Amdt 11, ROCE 67.5% FIRING) | 17.5x (unchanged, ROCE 19.9% STAGNANT) | n/a |
 | Cash multiplier | 1.15x, drag located in B | 0.80x STRUCTURAL | 1.15x |
 | Pillar 3 / Strategic | +0x / +2x | +0x / +0x | +0x / +2x |
 | Destination PE, Track 2 additive | 35.0x (32.5 to 35.0) | 14.0x | 29.5x context |
@@ -343,14 +343,14 @@ The INDETERMINATE cash-conversion row is named, not resolved. It caps the readin
 
 ---
 
-## 11. PENDING OPERATOR APPROVAL REGISTER
+## 11. OPERATOR APPROVAL REGISTER (RESOLVED 20-AUG-2026)
 
 | # | Item | Old authority | New authority | Value before | Value after | Downstream figures affected |
 |---|---|---|---|---|---|---|
 | P-1 | Business A Pillar 1 base | None valid. The 19-Aug run printed 30.0x while declaring v3.3 Amendment 5, whose cap is 24x | v3.6 Amendment 11, elite extension, 30x cap, Gate D confirmed 13-Aug-2026 | 30.0x printed (24.0x under the declared stack) | **30.0x** | **None.** The 35x cap absorbs the uplift; break-even base is 22.6x |
 | P-2 | Blended context Pillar 1 base | Same defect, 24.9x printed under a 24x-capped formula | v3.6 Amendment 11 | 24.9x printed (24.0x under the declared stack) | **24.9x** | None. The 29.5x weighted cap binds on both |
 
-Approve or reject P-1 and P-2. Until then the verdict card is PROVISIONAL.
+P-1 and P-2 both APPROVED by the operator on 20-Aug-2026 (ruling: ratified; both caps kept as they are). The verdict card is final.
 
 ---
 
@@ -399,7 +399,7 @@ input_gaps:
   - {source: "fttcp_part_b", severity: "MEDIUM", note: "run used FTTCP v1.2; Modules B2 and B8 NOT FOUND; Amendment 16 gate not-applicable, Amendment 15 uncomputable"}
   - {source: "market_implied_block", severity: "MEDIUM", note: "Market-Implied Assumptions block NOT FOUND; no OPPORTUNITY / FAIRLY PRICED / PRICED-WE-ARE-LATE flag cited"}
 flags:
-  - {type: "PILLAR1-BASE-PENDING-OPERATOR-APPROVAL", note: "Business A Pillar 1 base 30.0x now rests on v3.6 Amendment 11 (elite extension, 30x cap). The 18-Aug gate approved it while the declared stack was Amendment 5 (24x cap), which could not produce it. Supersession does not auto-approve. Blended context base 24.9x carries the same defect. Downstream figures affected: NONE, the 35x sector cap absorbs the uplift (break-even Pillar 1 base 22.6x). Verdict card PROVISIONAL until approved."}
+  - {type: "PILLAR1-BASE-RATIFIED-20AUG2026", note: "Business A Pillar 1 base 30.0x rests on v3.6 Amendment 11 (elite extension, 30x cap); blended context base 24.9x same authority. Operator RATIFIED both on 20-Aug-2026 (register P-1, P-2), and ruled both caps kept as they are. Downstream figures affected: NONE, the 35x sector cap absorbs the uplift (break-even Pillar 1 base 22.6x). Verdict card final."}
   - {type: "FLAG-CASH", applied_multiplier: "0.80x (Business B agri, STRUCTURAL subsidy receivable); Business A 1.15x with the structural drag located in the demerging division", falsification: "retained-entity CFO:PAT <0.70x two consecutive quarters with >6m subsidy bucket >8%"}
   - {type: "SHARED-CATALYST", note: "Samlaya drives Business A revenue STARTING and ROCE FIRING; one point of failure across revenue, margin and ROCE"}
   - {type: "DEMERGER-EXECUTION", note: "scheme not yet effective; forward earnings still contain agri; per-entity PAT illustrative-allocated"}
@@ -410,7 +410,7 @@ pe_basis: "forward"
 exit_pe_base_approved: "Business A 35x (specialty chemicals cap) / Business B 14x (normalized, agri cap 20x not binding) / Blended 29.5x (context)"
 method: "SUM OF THE PARTS (operator direction 18-Aug-2026)"
 earnings_perimeter: "Forward earnings still contain the agri division until the scheme is effective; per-entity PAT is illustrative-allocated (no standalone accounts exist)."
-verdict_card_status: "PROVISIONAL pending operator approval of the Pillar 1 base"
+verdict_card_status: "FINAL; Pillar 1 base ratified by the operator 20-Aug-2026"
 destination_pe:
   track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 13.5, rrm: 1.00}
   track2_additive: {low: 32.5, mid: 35.0, high: 35.0}
@@ -419,7 +419,7 @@ destination_pe:
 pillar_detail:
   roce_used: 67.5
   roce_base: 30.0
-  roce_base_authority: "v3.6 Amendment 11 elite extension: 24 + 0.3 x (67.5 - 33) = 34.35 -> capped 30x. PENDING OPERATOR APPROVAL."
+  roce_base_authority: "v3.6 Amendment 11 elite extension: 24 + 0.3 x (67.5 - 33) = 34.35 -> capped 30x. RATIFIED by the operator 20-Aug-2026."
   roce_base_under_superseded_amendment_5: 24.0
   roce_recovery_route: "not-credited"
   pillar1_normalization_route: "none"
@@ -498,7 +498,7 @@ mos_pct_applied: 20
 dispersion_width_pct: 25.4
 dispersion_sizing_cap: "Normal from dispersion; Small binds from the promoter CAUTION cap"
 upside_downside_ratio: 2.6
-decision: "WATCHLIST (PROVISIONAL pending operator approval of the Pillar 1 base)"
+decision: "WATCHLIST"
 unresolved_inputs_used:
   - "per-entity PAT/ROCE/cash: illustrative allocations, no standalone accounts (stated at every use, not estimated)"
   - "forward FY27/FY28 PAT: operator-engaged illustrative, un-guided (used as the approved earnings base, labelled provisional)"

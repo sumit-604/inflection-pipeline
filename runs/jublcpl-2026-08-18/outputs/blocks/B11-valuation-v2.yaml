@@ -15,7 +15,7 @@ input_gaps:
   - {source: "fttcp_part_b", severity: "MEDIUM", note: "run used FTTCP v1.2; Modules B2 and B8 NOT FOUND; Amendment 16 gate not-applicable, Amendment 15 uncomputable"}
   - {source: "market_implied_block", severity: "MEDIUM", note: "Market-Implied Assumptions block NOT FOUND; no OPPORTUNITY / FAIRLY PRICED / PRICED-WE-ARE-LATE flag cited"}
 flags:
-  - {type: "PILLAR1-BASE-PENDING-OPERATOR-APPROVAL", note: "Business A Pillar 1 base 30.0x now rests on v3.6 Amendment 11 (elite extension, 30x cap). The 18-Aug gate approved it while the declared stack was Amendment 5 (24x cap), which could not produce it. Supersession does not auto-approve. Blended context base 24.9x carries the same defect. Downstream figures affected: NONE, the 35x sector cap absorbs the uplift (break-even Pillar 1 base 22.6x). Verdict card PROVISIONAL until approved."}
+  - {type: "PILLAR1-BASE-RATIFIED-20AUG2026", note: "Business A Pillar 1 base 30.0x rests on v3.6 Amendment 11 (elite extension, 30x cap); blended context base 24.9x same authority. Operator RATIFIED both on 20-Aug-2026 (register P-1, P-2), and ruled both caps kept as they are. Downstream figures affected: NONE, the 35x sector cap absorbs the uplift (break-even Pillar 1 base 22.6x). Verdict card final."}
   - {type: "FLAG-CASH", applied_multiplier: "0.80x (Business B agri, STRUCTURAL subsidy receivable); Business A 1.15x with the structural drag located in the demerging division", falsification: "retained-entity CFO:PAT <0.70x two consecutive quarters with >6m subsidy bucket >8%"}
   - {type: "SHARED-CATALYST", note: "Samlaya drives Business A revenue STARTING and ROCE FIRING; one point of failure across revenue, margin and ROCE"}
   - {type: "DEMERGER-EXECUTION", note: "scheme not yet effective; forward earnings still contain agri; per-entity PAT illustrative-allocated"}
@@ -26,7 +26,7 @@ pe_basis: "forward"
 exit_pe_base_approved: "Business A 35x (specialty chemicals cap) / Business B 14x (normalized, agri cap 20x not binding) / Blended 29.5x (context)"
 method: "SUM OF THE PARTS (operator direction 18-Aug-2026)"
 earnings_perimeter: "Forward earnings still contain the agri division until the scheme is effective; per-entity PAT is illustrative-allocated (no standalone accounts exist)."
-verdict_card_status: "PROVISIONAL pending operator approval of the Pillar 1 base"
+verdict_card_status: "FINAL; Pillar 1 base ratified by the operator 20-Aug-2026"
 destination_pe:
   track1_rrm: {low: 32.5, mid: 35.0, high: 35.0, r_used: 13.5, rrm: 1.00}
   track2_additive: {low: 32.5, mid: 35.0, high: 35.0}
@@ -35,7 +35,7 @@ destination_pe:
 pillar_detail:
   roce_used: 67.5
   roce_base: 30.0
-  roce_base_authority: "v3.6 Amendment 11 elite extension: 24 + 0.3 x (67.5 - 33) = 34.35 -> capped 30x. PENDING OPERATOR APPROVAL."
+  roce_base_authority: "v3.6 Amendment 11 elite extension: 24 + 0.3 x (67.5 - 33) = 34.35 -> capped 30x. RATIFIED by the operator 20-Aug-2026."
   roce_base_under_superseded_amendment_5: 24.0
   roce_recovery_route: "not-credited"
   pillar1_normalization_route: "none"
@@ -114,7 +114,7 @@ mos_pct_applied: 20
 dispersion_width_pct: 25.4
 dispersion_sizing_cap: "Normal from dispersion; Small binds from the promoter CAUTION cap"
 upside_downside_ratio: 2.6
-decision: "WATCHLIST (PROVISIONAL pending operator approval of the Pillar 1 base)"
+decision: "WATCHLIST"
 unresolved_inputs_used:
   - "per-entity PAT/ROCE/cash: illustrative allocations, no standalone accounts (stated at every use, not estimated)"
   - "forward FY27/FY28 PAT: operator-engaged illustrative, un-guided (used as the approved earnings base, labelled provisional)"

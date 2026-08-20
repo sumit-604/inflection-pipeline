@@ -10,10 +10,9 @@ Rs 3,549 Cr market cap, ~88% of it the retained polymer business at the
 the Rs 2,043 Business A entry top.
 
 ## DECISION STATUS AND ENTRY ZONE
-WATCHLIST, PROVISIONAL, as of the 2026-08-20 v3.6 recompute. Business A
-entry zone Rs 1,634-2,043, MoS Rs 1,634. Combined Tier A entry Rs 2,208
-per share, MoS Rs 1,766. The verdict card stays PROVISIONAL until the
-operator approves the Pillar 1 base (next section).
+WATCHLIST as of the 2026-08-20 v3.6 recompute, verdict card FINAL
+(Pillar 1 base ratified 20-Aug). Business A entry zone Rs 1,634-2,043,
+MoS Rs 1,634. Combined Tier A entry Rs 2,208 per share, MoS Rs 1,766.
 
 ## OPERATOR RULINGS
 - 2026-08-18: demerger special-situation treatment; FTTCP run separately
@@ -27,12 +26,15 @@ operator approves the Pillar 1 base (next section).
   injection-gap audit; FTTCP verdict held from the 18-Aug gate; Signal
   Gate not applied retroactively; output versioned as 11-valuation-v2,
   19-Aug B11 preserved as the audit record.
-- PENDING OPERATOR APPROVAL: Business A Pillar 1 base 30.0x under v3.6
-  Amendment 11 (elite extension; superseded Amendment 5 arithmetic gives
-  24.0x). The 18-Aug gate approved the number under the old declared
-  stack. Supersession does not auto-approve. No output figure moves
-  either way: the 35x sector cap absorbs it (break-even Pillar 1 base
+- 2026-08-20: RATIFIED the Business A Pillar 1 base 30.0x under v3.6
+  Amendment 11 (and the blended 24.9x context base, same authority);
+  register items P-1 and P-2 approved, verdict card final. No output
+  figure moved: the 35x sector cap absorbs it (break-even Pillar 1 base
   22.6x).
+- 2026-08-20: keep both caps as they are — the Pillar 1 30x elite
+  ceiling AND the sector cap. Cap-removal proposal considered and
+  declined (the base cap reserves premium room, fades extreme measured
+  ROCE, and backstops wrong sector rows).
 
 ## ACTIVE TRIPWIRES
 - Retained-entity CFO:PAT < 0.70x two consecutive quarters with the >6m

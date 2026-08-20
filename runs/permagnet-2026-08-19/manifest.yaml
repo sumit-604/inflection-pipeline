@@ -1,9 +1,9 @@
 company: Permagnet
 ticker: PERMAGNET
-cmp: 0.0
-market_cap_cr: 0.0
+cmp: 882.0            # operator-supplied live price, screener.in, 20-Aug-2026 14:15 IST
+market_cap_cr: 758.0  # operator-supplied, screener.in, 20-Aug-2026
 run_date: 2026-08-19
 run_type: full
 concalls_available: false
-sector_cap_row: "Agri processing"
-notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+sector_cap_row: "Agri processing"   # collector defect; CORRECTED to "Cables / Industrial products" 25x in outputs/final/fttcp-deliberation.md (authoritative for Phase 3)
+notes: "Collected from screener.in by collect_to_repo.py v3. cmp/market_cap were 0.0 at collection, filled from operator screenshot during /fttcp review. sector_cap_row auto-picked wrong (Agri processing for a magnets/electrical/alloys maker); corrected in the deliberation file."

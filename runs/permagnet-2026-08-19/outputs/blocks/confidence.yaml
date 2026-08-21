@@ -1,0 +1,29 @@
+confidence_delta:
+  numerical_acceptance: 100     # B12a: 101 figures checked, 0 findings, source-fidelity gate PASS
+  redflag_coverage: 57          # B12b: 4 of 7 verifier-found flags caught by B05 (isolated scope)
+  framework_adherence: 96       # FULL (phase1 gate0+EM 97% over 76 rules + phase3 valuation 92% over 38 rules = 109/114 = 95.6%)
+  peer_utilisation: 100         # B12d: 12 of 12 provided peers used substantively
+  overall: 57                   # min of the four
+  framework_adherence_status: "complete - gate0 + emerging-moat (phase 1, B12c-framework) + valuation-adherence (phase 3, B12c-valuation, 92%, 0 CRITICAL/0 MAJOR)"
+
+phase3_valuation_adherence:
+  acceptance_rate: 92
+  critical: 0
+  major: 0
+  minor: 3
+  destination_pe_applied_faithfully: true
+  silent_rederivation_detected: false
+  outside_exit_pe_introduced: false
+  note: "B11 applied the operator-approved v3.6 base (17.3x additive / 14.1x RRM, Pillar 3 +0x) faithfully; every pillar check PASS; concurs AVOID. 3 MINOR findings all decision-invariant."
+
+band: "<60 -> forced-REWORK band per orchestrator Section 5; adjudicated in phase 1, unchanged in phase 3"
+
+rework_gate_adjudication:
+  triggered_by: "B12b redflag_coverage 57% (<60) AND overall 57% (<60)"
+  verifier_a_critical: false
+  status: "ADJUDICATED (phase 1) and NOT escalated; nothing in phase 3 changes it"
+  context_for_synthesis:
+    - "The 57% is a COVERAGE metric, not accuracy. Verifier B found ZERO unsupported/fabricated B05 flags and 5/5 promise-delivery spot-checks confirmed."
+    - "The single MAJOR miss driving 57% (2015 Bombay HC winding-up order) was caught pipeline-wide by B02, B03, B08; verifier independence means B12b saw only B05."
+    - "Numerical 100% (source-fidelity PASS), framework 96% (incl phase-3 valuation 92%, 0 CRITICAL/MAJOR), peer_utilisation 100%."
+  orchestrator_read: "Mechanically overall = 57 (redflag-coverage-bound). Substantively the analysis is trustworthy: numbers 100% clean, valuation adherence clean (no silent re-derivation, approved base applied), peers 100%, and the one driving omission is fully present in the evidence base and flows to the deliverables. Gate recommendation remains PROCEED WITH FLAGS on evidence; the AVOID is the separate valuation decision."

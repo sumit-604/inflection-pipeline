@@ -1,0 +1,43 @@
+stage: B07-emoat
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No investor presentation provided this run"
+  - "NO-CONCALL mode: no earnings-call transcripts; F2 run on AR capex-completion evidence per orchestrator degradation"
+  - "B05 promise-delivery record not yet available (Stage 5 runs later)"
+  - "No customer concentration disclosure (top 5/10 customer %) anywhere in the AR"
+  - "REL Developments Ltd (UK) licensing agreement: commercial/royalty terms not disclosed"
+  - "Quantum Magnetics described once as a 'joint venture agreement' in shareholder letter but elsewhere confirmed 100%-owned subsidiary with no external JV partner; unreconciled in source"
+  - "No itemised capex programme table; Section 2 figures built from balance-sheet residuals (CWIP + capital advances + commitments)"
+flags:
+  - "ECMS approvals and relays ramp referenced in operator background context could NOT be anchored to any AR/results text; ECMS returns zero hits in the source document -> NOT FOUND, not scored"
+  - "F2 execution moat evidence net unfavourable: Relays and Quantum Magnetics both explicitly documented as behind management's own original timelines"
+  - "E2 China+1 beneficiary thesis is real and capitalised (ECB committed) but FY26 evidence shows the same export controls disrupted PML's own rare-earth assemblies revenue this year"
+  - "G1 war chest shows opposite signal: standalone D/E rose 0.14x to 0.23x FY25-FY26; consolidated long-term borrowings jumped ~13x on the Quantum Magnetics ECB"
+em_score: 26.0
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "1-3 yr"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "1-3 yr (Quantum Magnetics Phase 2, Q3FY27)"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "present (certs already held)"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "documented/claim", time_to_materialise: "1-5 yr, thesis not yet paying off in FY26"}
+  - {id: "H2", name: "Strategic partnerships (REL Developments Ltd, UK relay licence)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12m (relay ramp guided H2FY27)"}
+  - {id: "R1", name: "Regulatory/policy tailwind (RDSS)", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing through FY28"}
+evidence_mix: {documented: 18, claim: 6, inference: 2}
+completionist_recount: "18 documented items across 9 categories; well under 12-category alarm threshold; scan honestly sparse"
+catalysts_12m:
+  - {catalyst: "Relay commercial production start", window: "H2FY27 (guided, already slipped once)", evidence_type: "documented target / mgmt claim on timing", anchor: "AR Letter to Shareholders p.4; MD&A Outlook p.31-32"}
+  - {catalyst: "Quantum Magnetics Phase 2 commissioning (block cutting, machining, surface treatment)", window: "Q3FY27 (guided)", evidence_type: "documented capex (ECB) / mgmt claim on timing", anchor: "AR MD&A Outlook p.32; Note 16 Borrowings p.132"}
+  - {catalyst: "Alloys aerospace/oil & gas enquiries converting to signed orders", window: "FY27, not precisely dated", evidence_type: "management claim", anchor: "AR MD&A Outlook p.31"}
+  - {catalyst: "RDSS installation pace (65M of 250M installed as of Apr-2026) continuing to accelerate", window: "ongoing through FY28", evidence_type: "documented", anchor: "AR MD&A p.28-29"}
+capex_embedded_growth_pct: 32.7
+combined_assessment: "GOOD+"
+combined_reasoning: "AVERAGE backward (Gate 0 grand_total 57) plus STRENGTHENING not EXPANSION forward (26.0) because the two largest emerging-moat claims, Relays and Quantum Magnetics, are both documented as behind management's own timelines and the China+1 thesis cut against FY26 results; well-anchored elements (RDSS tailwind, named licensing partner) are narrower than the headline story, sitting on a deteriorating consolidated FCF trend."
+top_moat_risks:
+  - "Relay commercialisation slips a second time past H2FY27, eroding the ~5x/20-25x value-multiplier thesis most of the forward score depends on"
+  - "Quantum Magnetics: renewed rare-earth export-restriction volatility disrupts inputs again; unsecured FX-exposed ECB (Rs.47.81cr) funds a subsidiary carrying negative net worth (Rs.5.62cr FY26 loss on Rs.1.23cr turnover)"
+  - "RDSS installation pace decelerates on DISCOM non-compliance or central disbursal delay"
+  - "Execution track record is the clearest documented risk: two of three flagship pillars already behind plan per management's own words"
+analyst_note: "F2 (execution moat) run per NO-CONCALL substitute using AR capex-completion evidence; finding is materially unfavourable (Relays and Quantum Magnetics both behind original timelines, mgmt's own words) and is the single most load-bearing fact in the scan. E2 (China+1) scored Moderate despite FY26 results cutting against it because real capex (ECB) is committed; do not read Moderate as evidence the thesis has started paying off. 32.7% capex_embedded_growth_pct built from balance-sheet residuals, indicative only. IMPORTANT for synthesis: ECMS approvals in operator context are NOT anchored to this run's documents (would be in un-provided exchange announcements)."

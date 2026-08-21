@@ -1,0 +1,58 @@
+stage: B05-concall
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings-call transcripts exist (concalls_available: false); Sections 2C, 2E, 3C structurally unavailable"
+  - "No prior-year Annual Report (AR-FY25) provided; original pre-slip Relay timeline cannot be located or quantified"
+  - "No MD&A/commentary accompanies the Q1FY27 results filing; YoY profit decline that quarter is unexplained in the documents reviewed"
+  - "Quantum Magnetics ECB size/terms not stated in the concall-substitute documents (size Rs.47.81cr is in the Notes per B02)"
+  - "No quantified FY27 revenue or margin guidance exists in the documents reviewed"
+flags:
+  - "Q1FY27 profit fell 13-38% YoY despite double-digit revenue growth, driven by higher finance cost and depreciation; no management explanation available"
+  - "Relay commercialisation self-disclosed as behind original timeline; magnitude of slip unquantifiable (original date NOT FOUND)"
+  - "Quantum Magnetics FY26: revenue Rs0.78cr, net loss Rs5.62cr"
+quarters_analysed: ["AR-FY26 (Letter, MD&A, Directors' Report)", "Q4FY26 Results (board 13-May-2026)", "Q1FY27 Results (board 04-Aug-2026)"]
+triggers:
+  - {priority: 1, name: "Alloys division ramp (furnace commercialised Q4FY26, aerospace/oil&gas/industrial)", type: "VOLUME/PRICE-MIX", timeframe: "near/medium", conviction: "M-H", confirm_signal: "Continued Alloys share-of-sales growth in FY27; named aerospace/oil&gas wins", kill_signal: "Alloys revenue share stalls or reverses; furnace utilisation issues"}
+  - {priority: 2, name: "Latching Relay commercialisation (H2FY27)", type: "VOLUME/PRICE-MIX", timeframe: "medium", conviction: "L-M", confirm_signal: "Named customer qualification completed; Relay revenue line appears in FY27 filings", kill_signal: "Further slippage beyond H2FY27; no named customer win by Q2FY27"}
+  - {priority: 3, name: "Quantum Magnetics NdFeB localisation (Phase 2 Q3FY27; 5,000t by FY31)", type: "INORGANIC/REGULATORY-POLICY", timeframe: "long", conviction: "L", confirm_signal: "Phase 2 commissioned on schedule; any revenue recognition begins", kill_signal: "Delay beyond Q3FY27; continued zero subsidiary revenue into FY28; further China export-control tightening"}
+  - {priority: 4, name: "RDSS/smart-metering structural tailwind (65mn of 250mn installed)", type: "SECTORAL/REGULATORY-POLICY", timeframe: "long", conviction: "M", confirm_signal: "Installation pace continues toward 250m target; PML wins incremental content per meter", kill_signal: "RDSS funding or DISCOM payment disruption"}
+  - {priority: 5, name: "Manufacturing consolidation to single site (land acquired)", type: "COST", timeframe: "medium/long", conviction: "L", confirm_signal: "Capex figure and completion timeline disclosed in a future filing", kill_signal: "No progress disclosed in next Annual Report"}
+guidance:
+  - {item: "Relay commercial ramp-up start", number: "H2FY27", stated_in: "AR-FY26 p.4, p.19"}
+  - {item: "Quantum Magnetics Phase 2 investment", number: "Next phase", timeframe: "Q3FY27", stated_in: "AR-FY26 p.4"}
+  - {item: "Quantum Magnetics long-term capacity", number: "5,000 tonnes", timeframe: "by FY31", stated_in: "AR-FY26 p.4, p.11"}
+  - {item: "FY26 standalone revenue", number: "Rs225.46cr, +13% YoY", stated_in: "AR-FY26 p.4, p.19; RESULTS-Q4FY26 p.6"}
+  - {item: "FY26 standalone EBITDA margin", number: "17% vs 14% FY25", stated_in: "AR-FY26 p.4, p.19"}
+  - {item: "FY26 standalone PAT", number: "Rs20.69cr, +36% YoY", stated_in: "AR-FY26 p.4; RESULTS-Q4FY26 p.6"}
+  - {item: "Final dividend FY26", number: "Rs2.20/share", stated_in: "RESULTS-Q4FY26 p.1-2; AR-FY26 p.22"}
+  - {item: "Borrowing limit increase", number: "Rs100cr to Rs300cr", stated_in: "AR-FY26 Notice p.32; RESULTS-Q4FY26 p.2"}
+promise_delivery_score: {delivered: 1, partial: 1, missed: 2}
+promise_delivery_rows:
+  - {promise: "Improved operational momentum across Alloys/Relay/Quantum into FY27", outcome: "Partial - Q1FY27 standalone revenue +19.1% delivered; standalone net profit -14.1%, consolidated net profit -38.4% missed", explanation: "Higher finance cost (standalone +96%) and depreciation (+48%) from capex; no Q1FY27 mgmt commentary"}
+  - {promise: "Alloys furnace commercialised Q4FY26 near optimum capacity", outcome: "Delivered", explanation: "Alloys sales-mix ~1% FY24 -> ~3% FY25 -> ~10% FY26 (AR p.9); continued Q1FY27 growth"}
+  - {promise: "Original Relay commercialisation timeline", outcome: "Missed", explanation: "Self-disclosed: customer endurance-testing longer than anticipated (honest-admission); original date NOT FOUND"}
+  - {promise: "Revenue from Quantum Magnetics existing assemblies", outcome: "Missed", explanation: "China rare-earth export controls (external-blame, corroborated in same AR); FY26 subsidiary revenue Rs0.78cr, loss Rs5.62cr"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Mixed AR-guidance-vs-results delivery: Alloys ramp delivered and corroborated; Relay timeline and QMPL assemblies revenue both missed but proactively self-disclosed with specific, partly externally-corroborated causes; the one testable forward quarter (Q1FY27) delivered on revenue but missed on profit with no explanation on file - stays at NO-CONCALL default C."
+peer_questions:
+  - {question: "PML says Alloys demand (oil & gas, aerospace, industrial) is strengthening, supported by AS9100D:2016 cert (AR p.4). Does MIDHANI corroborate strengthening aerospace/industrial alloys demand and margins over the same period?", check_peers: ["MIDHANI"]}
+  - {question: "PML describes a Latching Relay opportunity (~5x its shunt/CT basket) but is behind original timeline (now H2FY27) due to customer endurance-testing. Does SALZERELEC corroborate relay/metering qualification cycles as an industry-wide reality vs a PML execution problem?", check_peers: ["SALZERELEC"]}
+  - {question: "PML cites only 65mn of 250mn RDSS meters installed as of Apr-2026 (long runway). Does SALZERELEC's RDSS order inflow/pipeline corroborate this pace?", check_peers: ["SALZERELEC"]}
+  - {question: "PML attributes QMPL near-zero FY26 revenue and Phase 2 delay to China rare-earth export controls. Does TDPOWERSYS (NdFeB consumer) report similar rare-earth sourcing disruption or input cost inflation?", check_peers: ["TDPOWERSYS"]}
+  - {question: "PML cites global NdFeB demand ~119kt (2020) to ~387kt (2030) and China ~92% of NdFeB capacity (AR p.18). Does TDPOWERSYS corroborate this magnitude and China-concentration?", check_peers: ["TDPOWERSYS"]}
+  - {question: "PML's competitive-risk disclosure is generic alongside a ~50% tier-1 auto OEM penetration claim. Do peer disclosures indicate real margin/pricing pressure in comparable component categories?", check_peers: ["MIDHANI", "SALZERELEC", "TDPOWERSYS"]}
+red_flags:
+  - {severity: "Medium", flag: "Q1FY27 profit fell 13-38% YoY despite double-digit revenue growth, driven by higher finance cost/depreciation from capex; no management commentary"}
+  - {severity: "Medium", flag: "Relay commercialisation self-disclosed behind original timeline; magnitude unquantifiable (original date NOT FOUND)"}
+  - {severity: "Low-Medium", flag: "Quantum Magnetics FY26 revenue Rs0.78cr, net loss Rs5.62cr"}
+  - {severity: "Low", flag: "No quantified FY27 revenue/margin guidance, only qualitative language"}
+  - {severity: "Structural/Low", flag: "NO-CONCALL MODE: management credibility cannot be tested against real-time analyst scrutiny"}
+timeline_slippages:
+  - "Relay commercial ramp: self-disclosed behind original timelines; original date NOT FOUND, revised to H2FY27 (AR p.4)"
+analyst_note: "Only one post-AR quarter (Q1FY27) exists to test forward guidance; too early to score the two dated guidance items (Relay H2FY27, QMPL Phase 2 Q3FY27). The one scorable signal is mixed: revenue +19% YoY but profit -13% to -38% YoY with no explanation on file (results filing carries no MD&A). This profit reversal is the single most important thing for Stage 6/11 to watch in the next filing: transient capex-driven noise, or first sign the 'improved operational momentum' framing was premature."

@@ -1,0 +1,47 @@
+stage: B03-ardeep
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated CFO fell 55.1% (Rs.39.15 Cr to Rs.17.59 Cr) against only 6.2% consolidated PAT decline, driven by Rs.9.01 Cr Other Assets outflow and Rs.14.87 Cr trade receivables build; standalone receivables +39.4% vs revenue +13.0%, days +5.33%; confirms and extends B02 FLAG-CASH (AR-FY26 p.78, p.82-83, p.112, p.122)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter holding 58.01% at FY26 year-end with no YoY comparison or pledge disclosure in the AR (NOT FOUND for both); MD remuneration increase disclosed inconsistently as +68.6% (Note 8 p.106) vs +28.01% (Annexure C p.44), unreconciled; full verdict in B08"}
+phase_verdicts: {p1: "Red Flag", p2: "Red Flag", p3: "Watch (tipping Red at consolidated level)", p4: "Watch", p5: "Watch", p6: "Watch", p7_best_fit: "GARP/Turnaround - both Watchlist"}
+overall_quality: 5.3
+quality_components: {governance: 6.5, accounting: 4, balance_sheet: 5, earnings: 5.5}
+kill_switch_notes:
+  - "Phase 1: Directors' Report denies any auditor qualification/adverse remark; the group auditor's own consolidated CARO clause xxi names three adverse remarks (iii(a), vii(b), ix(a)) in the standalone CARO report (AR-FY26 p.35 vs p.117). Informational only."
+  - "Phase 2: volume/pattern of unreconciled internal figures (KPI ROCE vs Ratios ROCE; MD remuneration 68.6% vs 28.01%; actuarial discount rate mismatch; Directors' Report vs CARO) suggests note-preparation/internal-review control weakness."
+  - "Phase 3: consolidated CFO down 55% vs 6% PAT decline; interest coverage down ~a third; ROE now leverage-assisted; no hard covenant breached in this AR."
+  - "Phase 4: the Rs.47.81 Cr ECB drawn into a subsidiary whose core revenue simultaneously collapsed 85.5% is the least well-explained major decision; root cause (China rare-earth export controls) is at least named."
+triple_pass_verification: {verified: 15, discrepancies: []}
+missing_risks:
+  - {risk: "Going-concern linkage to unresolved 2015 Bombay HC winding-up order", evidence: "Auditor EoM p.66/p.113; Note 3 p.104/p.148"}
+  - {risk: "Rs.22.01 Cr disputed Central Excise interest contingency (~13-14% of net worth), unresolved since 2013", evidence: "Note 2(f) p.103-104/p.147-148"}
+  - {risk: "Standalone working-capital/receivables deterioration (days +5.33%, growth +39.4% vs revenue +13.0%)", evidence: "Note 9 p.82-83; Ratios Note 22 p.112"}
+  - {risk: "Absence of any Key Audit Matter despite subsidiary revenue collapse, going concern EoM, large contingency", evidence: "Auditor Report both levels p.66, p.113"}
+  - {risk: "Cash Flow PBT tie-out mechanical error at both levels", evidence: "P&L p.77/p.121 vs Cash Flow p.78/p.122"}
+guidance_table:
+  - {claim: "Relay commercial ramp-up", number: "NA", timeframe: "H2FY27", credibility: "Low-moderate - one prior deadline already missed, self-disclosed"}
+  - {claim: "Quantum Magnetics Phase 2 (block cutting, machining, surface treatment)", number: "NA", timeframe: "Q3FY27", credibility: "Unverifiable - new commitment, no prior track record"}
+  - {claim: "Quantum Magnetics integrated NdFeB capacity", number: "5,000 tonnes", timeframe: "By FY31", credibility: "Unverifiable - 5-yr-out target, no interim milestones"}
+  - {claim: "Manufacturing facility consolidation to single site", number: "NA", timeframe: "Over time (no date)", credibility: "Low specificity"}
+monitorables:
+  - {metric: "Quantum Magnetics/Cast Magnets subsidiary revenue", threshold: "Any further YoY decline vs return to growth", where: "Consolidated Note 26 minus standalone Note 25, next filing", why: "Tests whether FY26 85.5% collapse was a one-off China shock or structural"}
+  - {metric: "Consolidated CWIP (Rs.8.08 Cr) conversion to commissioned PPE", threshold: "Conversion within FY27-28 with revenue attribution", where: "Balance sheet CWIP line + MD&A capacity commentary", why: "Tests whether ECB-funded capex is absorbed productively or idle"}
+  - {metric: "Consolidated interest coverage (EBIT/Interest)", threshold: "Further decline below ~6x", where: "Consolidated Ratios note, next AR/quarterly", why: "ECB interest is fixed from FY27; further decline signals servicing strain"}
+  - {metric: "Standalone trade receivable days", threshold: "Further rise above 76.03 days", where: "Standalone Ratios/Trade Receivables note", why: "Tests whether FY26 WC deterioration is blip or trend"}
+  - {metric: "Relay commercial ramp actual vs stated H2FY27", threshold: "Any further slip", where: "MD&A Outlook/Chairman letter, next AR", why: "Second miss on same initiative materially weakens guidance credibility"}
+  - {metric: "Rs.22.01 Cr Central Excise contingency and 2015 winding-up status", threshold: "Any resolution/escalation/reassessment", where: "Notes 2/3, next filing; presence/absence of auditor EoM", why: "Tests whether going-concern-adjacent legacy overhangs are closing"}
+strengths_top3:
+  - "Standalone operating performance genuinely improving with verified drivers - revenue +13.0%, EBITDA margin +300bps (14% to 17%), PAT +34.4%"
+  - "Unusually candid management disclosure of execution misses (Relay delay self-described as behind original timelines; China export-control impact named); no silent drops found (Phase 6E)"
+  - "Clean governance mechanics: no whistleblower complaints, no fraud, no SEBI/exchange penalties, full CSR compliance, non-audit fees below audit fees"
+red_flags_top3:
+  - "Subsidiary Cast Magnets revenue collapsed ~85.5% (Rs.5.37 to Rs.0.78 Cr) same year it drew Rs.47.81 Cr unsecured ECB and built ~Rs.15.5 Cr unconverted CWIP/advances, with no disclosed utilisation plan or commissioning date"
+  - "Multiple unreconciled internal inconsistencies in one filing: Directors' Report denies adverse remark while CARO names three; KPI ROCE rising vs Ratios ROCE falling; MD remuneration +68.6% vs +28.01%; actuarial discount rate mismatch"
+  - "Consolidated cash/leverage deterioration masked by one-off ECB proceeds: CFO down 55.1% vs 6.2% PAT decline, D/E up 238%, interest coverage down ~a third, current ratio improved only on undeployed ECB cash"
+best_fit_strategy: "GARP (watchlisted) - standalone growth/margin story real and reasonably priced-for-quality on its face, but consolidated leverage/cash deterioration must be underwritten before actionable"
+one_line_verdict: "Standalone recovery is real and well-explained; consolidated leverage and cash quality are deteriorating behind it."
+analyst_note: "Independently re-derived and exactly verified all 15 of B02's Top 15 from primary statements/notes - zero discrepancies. Surfaced three new internal inconsistencies: (1) front-matter KPI dashboard ROCE rising vs compliance Ratios note falling; (2) MD remuneration +68.6% (Note 8 RPT) vs +28.01% (Section 197 Annexure C); (3) Directors' Report blanket denial of auditor adverse remark contradicts group auditor consolidated CARO clause xxi naming three. Consistent directional bias (front matter reads better than back matter) should weigh on confidence in any single disclosed metric without cross-checking primary notes."

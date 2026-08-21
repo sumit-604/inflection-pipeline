@@ -1,0 +1,18 @@
+stage: B15-devil
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+dimensions:
+  growth_triggers: "survives"
+  moat_durability: "survives"
+  management_trust: "survives"
+  valuation_safety: "survives"
+overall: "SURVIVES"
+top_counters:
+  - "Consolidated-ROCE double-count: core multiple (13.8x) and cash band (1.00x) are set off CONSOLIDATED ROCE 12.54% and consolidated FCF -25.75 Cr, both entirely the QMPL subsidiary the SOTP already quarantines into Slice 3; standalone core ROCE ~16% (>13.5%) and standalone FCF is positive. Fair value understated ~35% (Rs 330-404 -> ~Rs 450-614). STRONG on the number, does not reach the verdict."
+  - "Government ECMS approvals (relay 30-Mar-2026; NdFeB 18-Aug-2026) + China+1 rare-earth scarcity + 5,000t-by-FY31 roadmap are a genuine sovereign-backed optionality the 3-year/FY27-forward-core lens structurally cannot capture; market discounts FY29-31."
+  - "Alloys ramp 1%->3%->10% of sales is a delivered, accelerating inflection, not one-off; core EPS may compound above the conservative 12% base."
+  - "Decisive rebuttal to all counters: even relaxing Pillar 3, crediting the ROCE crossover, upgrading cash to 1.15x, and running the core to the 25x sector-cap ceiling yields fair value ~Rs 614 and Hurdle 0.91 (STOP); clearing 25% CAGR at Rs 882 needs ~44% EPS CAGR vs ~12-17% supportable. AVOID survives every relaxation."
+valuation_safety_read: "Fair-value POINT ESTIMATE weakened (~35% too low due to the consolidated-ROCE/FCF double-count of the QMPL subsidiary; corrected base ~Rs 450-550, generous ceiling ~Rs 614). DECISION safety intact: CMP Rs 882 is ~30% above even the maximum-generosity fair value and fails the Hurdle at the sector cap. Corrected 25%-CAGR entry ~Rs 230-314 (vs B14 Rs 169); MoS floor Rs 118-145 unchanged as deep-value floor. AVOID robust; SHARED-CATALYST becomes live (not moot) only if Pillar 3 is relaxed, which then concentrates all incremental value on two pre-revenue options and strengthens the gate-off."
+orchestrator_note: "The core-ROCE double-count is a genuine methodological tension with the operator-approved base, which mandated CONSOLIDATED 12.54% for Pillar 1 while also quarantining the QMPL subsidiary into a separate SOTP slice with its debt in the bridge. Economically consistent treatment would feed the core multiple with CORE (ex-subsidiary) ROCE ~16%, which also could flip the Amendment 16 Pillar-3 gate for the core. NOT silently overridden here (operator approved 12.54%); flagged for synthesis to present both the approved-base fair value (Rs 330-404) and the devil-corrected fair value (~Rs 450-614) as the load-bearing caveat, and for the operator to decide at the next refresh. Decision AVOID is unchanged and robust either way."

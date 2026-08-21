@@ -1,0 +1,19 @@
+stage: B14-thesis
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+status: complete
+verdict: "AVOID"
+entry_range: {low: 118, high: 169}
+position_size: "None"
+position_size_override: ""
+thesis_broken_if: "Durable ROCE crossover above the ~13.5% cost of capital prints in audited financials (FTTCP Module B2 turns growth-premium eligible) AND relay or NdFeB revenue appears in a filing AND price is inside Rs 118-169 - the conjunction that would flip AVOID to investable; none has printed"
+monitoring_checklist:
+  - "Q2FY27 standalone core operating PAT down YoY on positive revenue growth (falsification metric)"
+  - "Consolidated ROCE stays below ~13.5% cost of capital / STAGNANT (keeps Pillar 3 gated at +0x)"
+  - "Latching relay: named customer qualification + relay revenue line by H2FY27; red if slips a second time"
+  - "QMPL NdFeB Phase 2 commissioned Q3FY27 + first sales Q4FY27; red if delayed or revenue stays ~zero into FY28"
+  - "Cash conversion: receivables growth <= revenue growth and consolidated FCF turns positive; red if receivables outpace revenue again"
+  - "Net debt below ~Rs 27 Cr; red if full Rs 47.81 Cr ECB drawn or going-concern EoM persists"
+  - "Price enters Rs 118-169 entry zone AND checklist otherwise green (entry conjunction); no entry above Rs 169"
+  - "2015 winding-up EoM removed and Rs 22.01 Cr excise interest dispute closed with no liability"

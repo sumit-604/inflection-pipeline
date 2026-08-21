@@ -1,0 +1,35 @@
+stage: B06-peers
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "TDPOWERSYS RM basket (copper, forgings, electrical steel, mild steel, insulating materials) shows no rare-earth/NdFeB exposure across 4 quarters; the peer assigned to test PML rare-earth/China claims is a weak match. Rare-earth questions remain untested by this peer set; verify via independent industry sources."
+  - "Relay-qualification-cycle claim has only adjacent SALZERELEC evidence (own temperature-sensor validation slippage, AMISP eligibility friction), not relay-specific evidence."
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Alloys demand (oil & gas, aerospace, industrial) strengthening, AS9100D-supported", peers: ["MIDHANI"]}
+  - {claim: "Only 65mn of 250mn RDSS meters installed as of Apr-2026 - long runway remains", peers: ["SALZERELEC"]}
+contradicted: []
+unverifiable:
+  - {claim: "Latching Relay delay to H2FY27 due to customer endurance-testing is an industry-wide qualification-cycle reality", peers_checked: ["SALZERELEC"]}
+  - {claim: "QMPL near-zero FY26 revenue / Phase 2 delay attributed to China rare-earth export controls", peers_checked: ["TDPOWERSYS"]}
+  - {claim: "Global NdFeB demand ~119kt (2020) to ~387kt (2030); China ~92% of NdFeB capacity", peers_checked: ["TDPOWERSYS"]}
+  - {claim: "Generic competitive-risk disclosure alongside ~50% tier-1 auto OEM penetration masks real margin/pricing pressure", peers_checked: ["MIDHANI", "SALZERELEC", "TDPOWERSYS"]}
+peer_coverage_map:
+  - {peer: "MIDHANI", usage: "substantive", quarters: 4, contribution: "Order book/margin trend, import-dependency risk, NADCAP progress, record Q4 - corroborates Alloys demand-strengthening"}
+  - {peer: "SALZERELEC", usage: "substantive", quarters: 4, contribution: "RDSS sanctioned/installed/addressable figures; AMISP new-entrant qualification friction; margin compression framed industry-wide"}
+  - {peer: "TDPOWERSYS", usage: "substantive", quarters: 4, contribution: "No-rare-earth RM basket baseline; commodity narrative; weak cash conversion during growth - but weak fit to test PML rare-earth claims"}
+industry_cross_read:
+  demand: "Strong secular demand across all three peers' verticals (defense/aerospace, India electrification/infra, global gas-turbine/data-center); soft spot is RDSS smart-metering execution pace, which lags industry-wide despite bullish macro framing."
+  pricing_inputs: "SALZERELEC and TDPOWERSYS both hit by copper/silver/aluminium/plastics inflation with pass-through lag FY26-27; MIDHANI benefited from falling RM costs most of FY26 before new energy-cost pressure by mid-2026."
+  capex_cycle: "Not a lone expander - all three peers running simultaneous, largely debt/WC-funded multi-year capacity expansions against unrelated secular demand stories; a cross-sector capacity race, not isolated."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "MIDHANI: 75-80% import dependency on super-alloy elements exposed to geopolitical disruption; energy/LPG cost pressure FY27"
+  - "SALZERELEC: severe single-commodity spikes (silver ~3x) causing 200bps+ margin hits with multi-month pass-through lag; structural new-entrant disadvantage in AMISP/DISCOM qualification; demerger pressure on sub-scale debt-funded wires & cables"
+  - "TDPOWERSYS: global machine-tool capacity constraint delaying own capex (15-16 month lead times); persistently weak cash conversion (CFO/EBITDA <10-21%) during high-growth from WC build"
+net_narrative_effect: "supports"
+analyst_note: "Peer set is symmetric and non-hostile: strongly corroborates PML's Alloys-demand story (MIDHANI) and the RDSS total-pool/slow-pace story (SALZERELEC), contradicts nothing. Gaps are peer-mapping-fit gaps, not evidence against PML: TDPOWERSYS's own RM-basket disclosure suggests it may not be a material NdFeB consumer, weakening the value of its silence on rare-earth. Synthesis should flag this peer-mapping limitation explicitly rather than treating TDPOWERSYS silence as confirming or undermining PML's rare-earth disclosures. Cross-read positive: PML's own receivables/cash-conversion deterioration is not idiosyncratic - the whole peer set is in a debt/WC-funded capex race with strained cash conversion."

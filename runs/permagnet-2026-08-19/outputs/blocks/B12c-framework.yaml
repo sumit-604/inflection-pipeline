@@ -1,0 +1,23 @@
+stage: B12c
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+phase: 1
+status: complete
+gate0: {rules_checked: 48, fails: []}
+emoat:
+  rules_checked: 28
+  fails:
+    - "completionist_recount states '9 categories' but enumerates 10 (A3,A4,B1,B2,E2,F2,G2,H2,H3,R1); MINOR internal count inconsistency, no effect on the <12 guard outcome or classification"
+    - "H2 rated H/H (raw 4) while the same relay-ramp is rated L/H (raw 2) under F2 and documented behind schedule; MINOR consistency tension, em_score would be 25.0 (still STRENGTHENING) if H2 were MH=3"
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+recomputed_destination_pe: ""   # pending phase 3, valuation not run
+recomputed_decision: "concur: Gate 0 AVERAGE, Emerging Moat STRENGTHENING, combined GOOD+"
+findings:
+  - {severity: "MINOR", location: "B07 completionist_recount", description: "Recount says '18 documented items across 9 categories' but lists 10 categories. Framework-mandated recount step internally inconsistent on category count; guard outcome (well under 12) and classification unaffected."}
+  - {severity: "MINOR", location: "B07 scorecard F2/H2", description: "H2 relay-licensing scored H/H (raw 4) while F2 scores the same relay-ramp execution L/H (raw 2), which the AR documents as behind management's own timeline. Mild internal likelihood tension; defensible (partnership existence vs execution track record) and decision-neutral (re-rating H2 to MH=3 gives em_score 25.0, still STRENGTHENING, GOOD+ unchanged)."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 97             # rules passed (74) / rules checked (76); gate0 100%, emoat ~93%
+framework_adherence_phase1: 97

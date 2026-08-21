@@ -1,0 +1,38 @@
+stage: B12c-valuation
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+phase: 3
+scope: "valuation-only (phase 3); gate0 + emerging-moat recorded in phase-1 B12c-framework.yaml, not redone"
+valuation:
+  rules_checked: 38
+  fails:
+    - "MINOR rule14: Amdt 14 fade horizon named but projection runs only to Year 3 (FY29), no year-by-year step-down to Year 5 [B11 3.2/6.5]"
+    - "MINOR rule31: SOTP option-slice values loosely rounded off stated inputs; flagged as assumptions, immaterial to AVOID [B11 4]"
+    - "MINOR rule38: B10 mislabels Hurdle divisor rationale as 1/(1-0.25)=1.333; correct 1.953=1.25^3 is the value actually used [B10]"
+destination_pe_applied_faithfully: true
+silent_rederivation_detected: false
+outside_exit_pe_introduced: false
+recomputed_destination_pe: "concur 17.3x additive / 14.1x RRM"
+recomputed_decision: "concur AVOID"
+adherence_checks:
+  pillar1_roce_base: "PASS 13.8x (Amdt 11, 30x ceiling non-binding)"
+  pillar1_fttcp_stagnant_consistency: "PASS no recovery credited; Route NONE"
+  cash_multiplier: "PASS 1.00x growth-induced; FCF -25.75 blocks elite; cash priced in Pillar2 not r (12A)"
+  pillar3_gate_amdt16: "PASS +0x; ROCE below cost of capital, STAGNANT, B2 eligible=NO"
+  ua_ordering: "PASS min(13.8x1.25, 25)=17.3x"
+  rrm_decomposition: "PASS r=14.0+0.5 gov+0.5 complexity=15.0; no cash/short-record r-UP (12A/12C); cyclical folded (12B); RRM=0.82"
+  hurdle: "PASS Tier A divisor 1.953; base 0.52, bull(capped) 0.59 -> STOP"
+  evidence_scaled_mos: "PASS Mixed -> 30% (Master 4H-pre)"
+  entry_and_mos_price: "PASS entry=FV/1.953; MoS=entry x0.70"
+  sotp_consistency: "PASS bridge -7.72 net debt incl ECB; slices disclosed as NOT-FOUND assumptions not estimated-as-fact"
+  b14_decision_rule: "PASS AVOID forced by Gate0 AVERAGE + U/D<2x + Hurdle STOP"
+  b14_position_sizing: "PASS None at CMP; future-case Small ceiling; no unlogged override"
+findings:
+  - {severity: "MINOR", location: "B11 3.2/6.5", note: "Amdt 14 fade horizon named but not modeled year-by-year to Year 5; immaterial to AVOID", rule: "Section 1B v3.6 Amendment 14"}
+  - {severity: "MINOR", location: "B11 4 SOTP slices", note: "option-slice values loosely rounded off stated inputs; flagged as assumptions; <Rs6/share, cannot flip AVOID", rule: "Master v3.5 4H-pre / NEVER-estimate"}
+  - {severity: "MINOR", location: "B10 divisor label", note: "Hurdle divisor rationale mislabeled 1.333; correct 1.953 is the value used", rule: "Master v3.5 Hurdle Ratio"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 92

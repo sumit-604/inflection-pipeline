@@ -1,0 +1,21 @@
+stage: B12d
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+peers_provided: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 RM-basket citation", claimed: "RM basket quote anchored at PEER-TDPOWERSYS_May_2026 p.11", source_truth: "Quote is real but at extraction marker PAGE 13 (internal footer 'Page 12 of 15'); PAGE 11 contains an unrelated NPCIL/trade-receivables exchange", note: "B06's own stated 'key anchor' for its single most consequential finding (TDPOWERSYS weak rare-earth peer match); citation as given not findable at stated page, but claim genuine and independently confirmed", anchor: "PEER-TDPOWERSYS_May_2026 p.13 (correct)"}
+  - {severity: "MINOR", location: "B06 Q6", claimed: "quoted 'everyone is full'", source_truth: "Actual: 'everyone is expanding... all the machine tool manufacturers worldwide are full with orders' (p.9)", note: "Paraphrase presented in quotation marks; substance accurate, page anchor correct", anchor: "PEER-TDPOWERSYS_May_2026 p.9"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 92
+peer_utilisation: 100
+orchestrator_note: "peer_utilisation = 12/12 provided peers used substantively. The one MAJOR is a correctable citation-page error in B06 (TDPOWERSYS RM-basket quote is at p.13 not p.11); the underlying weak-peer-match claim is genuine and independently confirmed (zero rare-earth/NdFeB mentions across all 4 TDPOWERSYS transcripts). Not a source-fidelity (Verifier A) matter and not a REWORK trigger; correct the B06 anchor to p.13 in the record. Verdict discipline clean throughout."

@@ -1,0 +1,6 @@
+run: permagnet-2026-08-19
+produced_at: 2026-08-19
+framework_git_commit: 33c18564dd6e6f56af22fd5fcd67d5e58694013c
+framework_tag: 33c1856
+framework_versions: "Master v3.5 / Section 1B v3.6 (Damodaran, Amendments 11-16) via v3.5.1 route rule / FTTCP v1.2"
+framework_versions_note: "This run was priced on the v3.6 Damodaran basis per operator directive during /fttcp review (13-Aug-2026 amendment set). The standalone-pipeline default is Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2; the v3.6 exit-PE mechanics (Pillar 1 30x ceiling, RRM r-table single-credit fixes, complexity charge, growth fade horizon, Pillar 3 ROCE-crossover eligibility gate) governed the valuation. Recorded here as the exact rulebook state the exit multiple was priced under."

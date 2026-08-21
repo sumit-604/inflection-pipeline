@@ -1,0 +1,54 @@
+stage: B04-bizmodel
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation not provided; sourced from AR-FY26 + RESULTS-Q4FY26/Q1FY27 only"
+  - "Alloys/Relays/Quantum Magnetics revenue contribution not separately disclosed (single IND AS 108 segment)"
+  - "Named competitors and market-share data not found"
+  - "Customer concentration percentage not disclosed"
+  - "Per-unit revenue/cost economics not disclosed"
+flags:
+  - "Standalone trade receivables rose 39.3% (Rs39.24cr to Rs54.68cr) against 13% revenue growth, absorbing Rs14.87cr cash in FY26 (AR-FY26 p.76, p.78); OCF fell (Rs36.3cr to Rs31.4cr) even as PBT rose 38%"
+  - "Consolidated D/E rose 238% (0.17x to 0.56x) via ECB at Quantum Magnetics (AR-FY26 p.156); FX exposure/hedging not disclosed"
+  - "Company ROCE KPI infographic (p.12, rising 14% to 16%) conflicts with statutory ROCE ratio (p.19, falling 13.81% to 11.20%) - track the statutory figure"
+  - "Relay and Quantum Magnetics timelines already slipped once (AR-FY26 p.4)"
+  - "Legacy 2015 winding-up order under interim Bombay HC stay (RESULTS-Q4FY26 p.8)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Electricity Meters (shunts, CTs, flux concentrators, relays)", type: "build-to-spec OEM component", pct_of_revenue: 40, predictability: "M"}
+  - {name: "Automobiles (magnetic/current/torque sensing)", type: "build-to-spec OEM component", pct_of_revenue: 23, predictability: "M"}
+  - {name: "CT (Current Transformers)", type: "build-to-spec OEM component", pct_of_revenue: 9, predictability: "M"}
+  - {name: "Alloys (Nickel/Cobalt/ZAMAK, AS9100D)", type: "new-vertical, order-book driven", pct_of_revenue: 10, predictability: "L"}
+  - {name: "Others (renewables, electrical, medical, aerospace, F&B)", type: "mixed build-to-spec", pct_of_revenue: 16, predictability: "L"}
+  - {name: "Gas Meters", type: "legacy build-to-spec, declining", pct_of_revenue: 2, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "Capex-heavy ramp distorts P/E via fast D&A and finance costs; EBITDA cleanest read on core operating improvement"}
+  secondary: {method: "P/E on normalised standalone PAT", why: "Cross-check vs peers after stripping exceptionals and reconciling standalone-vs-consolidated gap"}
+  tertiary: {method: "SOTP / growth-option overlay", why: "Separates mature base from pre-commercial Alloys/Relay/Quantum Magnetics optionality not yet in consolidated earnings"}
+  not_applicable:
+    - "DCF as sole/primary method (unreliable long-run FCF during multi-year capex ramp)"
+    - "Dividend Discount Model (modest payout, capital to growth capex)"
+    - "Asset-based/Book value (understates qualification-cycle switching-cost moat)"
+    - "Replacement cost (moat is qualification history, not physical assets)"
+irrelevant_ratios:
+  - "Same-store/like-for-like sales growth (not retail)"
+  - "NIM, NPA/credit-cost (not a lender)"
+  - "ARPU, churn, take rate (not subscription/platform)"
+  - "Company ROCE KPI infographic AR p.12 (conflicts with statutory ROCE p.19; non-standard capital-employed definition)"
+  - "Trade receivables 'days' ratio alone (understates FY26 build; revenue was H2-weighted - track absolute Rs growth vs revenue)"
+  - "Consolidated EPS growth alone (distorted by Quantum Magnetics investment losses and exceptionals)"
+must_track_metrics:
+  - {metric: "Trade receivables (Rs cr) growth vs revenue growth", healthy: "receivables growth <= revenue growth", red_flag: "receivables growth >1.5x revenue growth"}
+  - {metric: "Standalone EBITDA margin", healthy: "15-20%", red_flag: "<12% for two consecutive quarters"}
+  - {metric: "Consolidated Debt-Equity", healthy: "<0.35x", red_flag: ">0.6x sustained"}
+  - {metric: "Cost of materials % of revenue", healthy: "50-56%", red_flag: ">60% sustained"}
+  - {metric: "Operating cash flow vs PBT", healthy: "OCF >= ~80% of PBT", red_flag: "OCF declining while PBT rises"}
+must_track_metrics_note: "FY26 breached the cash-conversion metric (OCF fell while PBT rose 38%)"
+one_line_verdict: "Trusted niche component maker funding two unproven growth bets with rising leverage and a receivables build."
+analyst_note: "Two anchored discrepancies matter downstream. (1) Company KPI-page ROCE (rising, p.12) conflicts with statutory ROCE (falling, p.19/p.156); statutory figure feeds valuation/monitoring. (2) Standalone OCF fell in FY26 even as PBT rose 38%, driven by a 39% receivables build against 13% revenue growth - a genuine cash-conversion flag not in the headline growth story. Consolidated leverage rose sharply (D/E 0.17x to 0.56x) via an unhedged ECB at Quantum Magnetics funding a venture that booked zero revenue in FY26. Weigh against genuine core operating leverage (EBITDA margin 14% to 17%). SECTOR for stage 11: electrical / auto-ancillary components multi-segment industrial (manifest 'Agri processing' is a collect_to_repo defect, do not use)."

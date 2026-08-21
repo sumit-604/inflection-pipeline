@@ -1,0 +1,28 @@
+stage: B13-synthesis
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-opus-4-8
+phase: 3
+status: complete
+verdict: "PROCEED WITH FLAGS"           # evidence gate (five-verdict set)
+verdict_rule_applied: 3
+valuation_decision: "AVOID"              # separate investment decision at CMP 882
+flags_active: ["FLAG-GATE0", "FLAG-PROMOTER", "FLAG-CASH", "FLAG-SUBSIDIARY", "FLAG-EXECUTION", "FLAG-GOING-CONCERN"]
+confidence_delta: {numerical: 100, redflag: 57, framework: 96, peer: 100, overall: 57}
+entry_range: {low: 118, high: 169}
+mos_price: 118
+destination_pe: {additive: 17.3, rrm: 14.1}
+fair_value: {rrm_base: 330, additive_base: 404, devil_corrected: "450-614"}
+hurdle: "STOP (Tier A, HR 0.52)"
+expected_cagr_prob_weighted: -14.5
+devil_overall: "SURVIVES"
+zone_reachability: "MARKET-UNLIKELY (entry top 169 is 72.7% below 52-wk low 619; devil-corrected entry 230-314 also market-unlikely); classify DEEP WATCH not actionable WATCHLIST"
+headline: "Magnet maker funds two unproven growth bets"
+falsification_metric: "Q2 FY27 standalone core operating PAT down YoY on positive revenue growth"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Standalone accounts look healthy (PAT +36%, FCF positive) while consolidated is dragged by a pre-revenue subsidiary that drew a Rs 47.81 Cr unsecured ECB the same year its own revenue fell 85.5%; teaching case on consolidated reality overriding a flattering standalone headline."
+notion_save:
+  page_title: "PERMAGNET - Permanent Magnets Ltd (run 2026-08-19)"
+  drive_link: "NOT PROVIDED"
+  mode: append-never-overwrite-status

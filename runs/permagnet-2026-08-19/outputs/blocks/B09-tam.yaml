@@ -1,0 +1,45 @@
+stage: B09-tam
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Segment-level export/domestic revenue split not disclosed; used company-wide FOB export ratio (47%) as proxy"
+  - "No sourced BOM component-cost % for shunts/CT within smart meter device value; used analyst-derived 2-4% range (LOW confidence)"
+  - "No sourced automotive assembly-vs-IC value split; used analyst-derived 15% product-fit retention (LOW confidence)"
+  - "No India-specific specialty-alloys market at PML's exact niche; used investment-casting market as nearest proxy"
+  - "No listed pure-play component peer found for Method 3 in any segment - NOT FOUND, not estimated"
+  - "Current PE ratio volatile across 2026 sources (31x-50x); most recent found 36.33x (21-Jul-2026) may not equal run-date price"
+flags:
+  - "NdFeB/Quantum Magnetics (5,000t by FY31) excluded from headline TAM/SAM/SOM per pipeline rule - separate far-dated optionality; FY26 predecessor-line revenue was zero due to China export restrictions"
+  - "Latching relays pre-commercial (H2FY27 guided, already behind original timelines) - excluded from headline, treated only as SAM-expansion lever"
+  - "Segment C TAM sized on India investment-casting proxy (narrower than PML's true niche); global specialty-alloys $62.68bn figure explicitly rejected as scope-mismatched"
+  - "Segment A and B product-fit/component-content ratios analyst-derived, not sourced at PML granularity - LOW confidence on precision"
+  - "Management's cited $35.13bn global smart-meter figure is total device-market context, not a PML-specific TAM claim; 10.7x ratio reflects scope mismatch, not necessarily inflation"
+  - "Segment B methods diverge >1.5x (auto current sensor USD 2.34bn vs USD 3.63bn implied 2026) - lower taken, not averaged"
+tam_cr: {conservative: 31368, realistic: 49361}
+sam_cr: 5574
+sam_pct_of_tam: 17.8
+som_3yr_cr: 328
+som_5yr_cr: 484
+som_implied_revenue_cagr: {yr3: 20.1, yr5: 20.6}
+current_sam_share_pct: 3.4
+revenue_headroom_x: 29.4
+tam_growth_pct: 6.3
+runway_class: "STRONG"
+mgmt_claim_cr: 336194
+mgmt_claim_ratio: 10.7
+mgmt_claim_read: "inflated (scope-mismatch context figure, not a PML-specific TAM claim)"
+capacity_check: "sufficient - capex-embedded growth (~32.7%) exceeds SOM-implied CAGR (~20%); capex likely aimed at excluded relay/NdFeB optionality rather than baseline Segment A/B/C demand"
+methods_used: ["top-down", "bottom-up", "peer-aggregation", "import-substitution", "global-benchmark"]
+analyst_note: "FX USD/INR 95.70 (Fed H.10, 18-Aug-2026), materially higher than a ~87 default - roughly doubles Cr conversions of USD figures vs a stale FX assumption, called out explicitly. Segment B (71% of conservative TAM) carries the heaviest SAM discount because PML sits at the magnetic-assembly layer, not the semiconductor-IC layer, of automotive current-sensing; most of that TAM is structurally uncapturable by PML's current product set. Runway held STRONG not MASSIVE despite 29.4x headroom for that reason plus excluded relay/NdFeB execution risk. Valuation line uses flat FY26 margin (17%) as no-guidance convention; earnings CAGR = revenue CAGR (~20%)."
+
+# --- SECTION 6 addendum, added post-hoc 2026-08-21 on the merged framework stack (Downstream_Source_Discovery_Protocol_v1_0); valuation verdict NOT re-run ---
+downstream_candidates:
+  - {signal: "India RDSS smart-meter rollout progress", entity_type: "regulatory", demand_link: "185mn of 250mn RDSS target still to install (Apr-2026 base); direct driver of Segment A metering-component demand", likely_source: "Ministry of Power / REC (RDSS nodal agency) official rollout dashboard + PIB releases", cadence: "monthly", shared: true}
+  - {signal: "Genus Power Infrastructures Ltd (India largest listed AMISP, ~30% share)", entity_type: "counterparty", demand_link: "Order-book and installation run-rate is the closest listed proxy for India smart-meter component pull-through", likely_source: "Genus BSE/NSE corporate announcements + concall transcripts + annual report", cadence: "quarterly", shared: false}
+  - {signal: "Global light-vehicle & EV production volumes (Western Tier-1 OEM base)", entity_type: "macro", demand_link: "PML supplies ~50% of tier-1 global auto manufacturers; production volumes proxy Segment B sensing demand", likely_source: "SIAM monthly production data + S&P Global Mobility / LMC Automotive", cadence: "monthly", shared: false}
+  - {signal: "China NdFeB rare-earth export-licence regime (MOFCOM)", entity_type: "regulatory", demand_link: "China ~92% of NdFeB capacity; licence policy gates whether Quantum Magnetics NdFeB line can ship at all", likely_source: "MOFCOM export-licence announcements, cross-checked via Reuters/Argus/S&P Global Commodity Insights", cadence: "event-driven", shared: false}
+  - {signal: "REL Developments Ltd (UK) - latching-relay technology licensor", entity_type: "counterparty", demand_link: "UK licensor whose IP/contract status gates PML guided H2FY27 relay ramp, already behind original timelines", likely_source: "UK Companies House filings + REL Developments corporate/press disclosures", cadence: "event-driven", shared: false}
+  - {signal: "Top-3 global electricity-meter manufacturers (identity unconfirmed in filings)", entity_type: "end-customer", demand_link: "PML largest disclosed customer class by its own claim; drives both Electricity Meters and CT revenue lines", likely_source: "Identity not independently named in filings; once identified, SEC EDGAR / foreign-listed OEM 10-K supplier commentary", cadence: "quarterly", shared: true}
+demand_externally_verifiable: true

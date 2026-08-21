@@ -1,0 +1,47 @@
+stage: B02-notes
+company: "PERMAGNET"
+run_date: "2026-08-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-CASH, reason: "Standalone trade receivables +39.4% vs revenue +13.0%; receivable days +5.3% (standalone) to +7.9% (consolidated); standalone current ratio deteriorating -15.87% even as consolidated liquidity is temporarily cushioned by one-off ECB cash (Note 9 standalone p.82-83; Ratios Note 22 standalone p.112, Note 20 consolidated p.156)"}
+accounting_quality: 4        # /10
+top_findings:
+  - {rank: 1, finding: "Subsidiary Cast Magnets revenue collapsed ~85.5% YoY (~Rs.5.37 Cr to ~Rs.0.78 Cr) same year subsidiary drew Rs.47.81 Cr unsecured ECB and built ~Rs.15.5 Cr capex-in-progress", note_ref: "Note 25 standalone p.90 vs Note 26 consolidated p.128", rating: "Red Flag"}
+  - {rank: 2, finding: "Standalone PAT +36.5% (Rs.20.69 Cr) vs Consolidated PAT -4.3% (Rs.15.07 Cr); standalone ROE 13.31% up vs consolidated ROE 9.57% down", note_ref: "Ratios standalone p.85-86/112; consolidated p.131-132/156", rating: "Red Flag"}
+  - {rank: 3, finding: "New Rs.47.81 Cr unsecured ECB at subsidiary (5% simple interest, ~$5m) drives consolidated debt-equity 0.17x to 0.56x (+238%); invisible in standalone", note_ref: "Note 16 consolidated p.131-132; Ratios Note 20 consolidated p.156", rating: "Red Flag"}
+  - {rank: 4, finding: "Cash Flow PBT fails to tie to P&L PBT by exactly Rs.0.30 Cr OCI remeasurement amount, identically at standalone and consolidated level", note_ref: "P&L p.77/p.121 vs Cash Flow p.78/p.122", rating: "Red Flag"}
+  - {rank: 5, finding: "Mandatory Schedule III consolidated Additional Information table (net assets/profit share by entity) absent from the notes", note_ref: "Searched Notes 1-36 consolidated, not found", rating: "Red Flag"}
+  - {rank: 6, finding: "New unsupported CWIP line (Rs.3.37 Cr standalone, Rs.8.08 Cr consolidated, FY25 Nil) with no CWIP ageing schedule anywhere", note_ref: "Balance Sheets p.76/p.120", rating: "Red Flag"}
+  - {rank: 7, finding: "Consolidated Capital Advances rose Rs.1.05 Cr to Rs.15.81 Cr (+1406%), ~Rs.10.83 Cr at subsidiary alone", note_ref: "Note 7 consolidated p.126", rating: "Red Flag"}
+  - {rank: 8, finding: "Auditor EoM ties going concern to Note 3, a 2015 Bombay HC winding-up order (Rs.0.13 Cr) under interim stay since 2015, unresolved", note_ref: "Auditor EOM standalone p.66, consolidated p.113; Note 3 p.104/p.148", rating: "Red Flag"}
+  - {rank: 9, finding: "Rs.22.01 Cr disputed Central Excise interest contingency ~13-14% of net worth, unresolved since 2013; CARO 12% simple interest Oct2002-Nov2017", note_ref: "Note 2(f) standalone p.103-104, consolidated p.147-148; CARO Annexure A", rating: "Red Flag"}
+  - {rank: 10, finding: "Actuarial discount rate differs: standalone 7.25% vs consolidated 6.75% for identical FY26 date", note_ref: "Note 9A standalone p.106, consolidated p.150", rating: "Red Flag"}
+  - {rank: 11, finding: "No geography-wise revenue disclosure despite exports ~47% (Rs.106 Cr FOB)", note_ref: "Note 25/26 vs Note 14D/13D", rating: "Red Flag"}
+  - {rank: 12, finding: "Trade receivables +39.4% vs revenue +13.0%; standalone current ratio -15.87% while consolidated +6.44% on one-off ECB cash", note_ref: "Note 9 standalone p.82-83; Ratios p.112/p.156", rating: "Watch"}
+  - {rank: 13, finding: "ROCE declined both levels (standalone -18.93%, consolidated -9.24%) despite rising standalone ROE; two incompatible Capital Employed definitions used", note_ref: "Note 22(j) standalone p.112, Note 20(j) consolidated p.156", rating: "Watch"}
+  - {rank: 14, finding: "Rs.1.47 Cr gratuity Past Service Cost (New Labour Code) booked as Exceptional Item, excluding an unavoidable statutory cost from before-exceptional profit", note_ref: "Note 9B(iii) p.106-107; Note 33/34 p.93/p.152", rating: "Watch"}
+  - {rank: 15, finding: "Pattern of drafting/QC errors (ROU WDV vs SLM; subsidiary share face value Rs.1 vs Rs.10; duplicated note; gratuity PSC Rs.1.74 vs Rs.1.75 Cr)", note_ref: "Note 1 p.97 vs Note 7 p.104; Note 3 p.81 vs p.125", rating: "Watch"}
+red_flags:
+  - "Subsidiary Cast Magnets revenue collapse ~85.5% YoY concurrent with Rs.47.81 Cr unsecured ECB draw and unconverted capex (Note 25/26)"
+  - "Standalone-vs-consolidated PAT/ROE divergence: parent improving, group deteriorating (Note 15/Ratios)"
+  - "New Rs.47.81 Cr unsecured ECB pushes consolidated debt-equity up 238%, invisible in standalone (Note 16 consolidated)"
+  - "Cash Flow PBT tie-out failure of Rs.0.30 Cr at both levels"
+  - "Missing Schedule III consolidated Additional Information table"
+  - "New CWIP line with no ageing schedule anywhere"
+  - "Consolidated Capital Advances +1406%, ~Rs.10.83 Cr unconverted at subsidiary"
+  - "Going concern language explicitly tied to unresolved 2015 winding-up order"
+  - "Rs.22.01 Cr disputed Central Excise interest contingency ~13-14% of net worth, unresolved over a decade"
+  - "Actuarial discount rate mismatch: standalone 7.25% vs consolidated 6.75%"
+  - "No geography-wise revenue disclosure despite ~47% export revenue"
+questions_for_mgmt:
+  - "What caused the subsidiary Cast Magnets revenue to collapse ~85.5% YoY in the same year it drew a Rs.47.81 Cr unsecured ECB and built ~Rs.15.5 Cr capex, and what is the commissioning timeline?"
+  - "Why does the Cash Flow PBT not tie to P&L PBT by exactly Rs.0.30 Cr OCI remeasurement at both levels, and will it be corrected?"
+  - "Why does the actuarial discount rate differ between standalone (7.25%) and consolidated (6.75%) for the same 31-Mar-2026 date?"
+  - "Status of the 2015 Bombay HC winding-up petition cited as going-concern basis, and of the Rs.22.01 Cr disputed Central Excise interest unresolved since 2013?"
+  - "Why are the Schedule III consolidated Additional Information table and the CWIP ageing schedule absent, and when will they be added?"
+receivables_trend: "deteriorating: standalone trade receivables +39.4% (Rs.39.24 to Rs.54.68 Cr net) vs revenue +13.0%; receivable days +5.3% standalone (72.19 to 76.03) and +7.9% consolidated (70.25 to 75.77); ageing quality high (99.3% under 6 months) but growth-rate and days trend both adverse for a second consecutive comparison point"
+restatements_found: []
+going_concern_language: "Auditor EoM (standalone p.66, consolidated p.113): financials prepared on Going Concern Basis for reasons in Note 3. Note 3 (p.104/p.148) describes a 2015 Bombay HC winding-up order on a Rs.0.13 Cr petition, interim stay since 2015, unresolved."
+analyst_note: "The two most important facts sit in different notes and only connect when standalone and consolidated notes are read side by side: the subsidiary's core revenue line effectively disappeared (Cast Magnets ~85.5% down) in the exact year it drew Rs.47.81 Cr new unsecured debt and built Rs.15.5 Cr unconverted capex. Neither the clean-looking standalone accounts nor any single consolidated note states this outright. Downstream stages should treat standalone-only profitability as materially incomplete and weight the consolidated numbers as the operative reality for risk. Cash Flow PBT tie-out failure corroborates a broader note-preparation quality concern."

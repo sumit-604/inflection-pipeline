@@ -1,0 +1,120 @@
+stage: B10-valinputs
+company: PERMAGNET
+run_date: 2026-08-19
+model: claude-haiku-4-5
+status: complete
+input_gaps:
+  - shareholding_pattern_filing: "No filed BSE shareholding pattern PDF; operator-supplied screener context only (FII ~0.00%, DII ~0.01%)"
+  - fy27_forward_guidance: "No quantified FY27 revenue or margin guidance in provided documents (NO-CONCALL MODE)"
+  - segment_level_operating_earnings: "NOT SEPARATELY DISCLOSED; relay and QMPL pre-commercial costs embedded in consolidated line-items; single segment per IND AS 108"
+  - peer_median_financials: "Peer concalls provided; financials not computed into summary medians (B06 conclusion-level cross-read only)"
+flags:
+  - {type: FLAG-CASH, severity: MAJOR, description: "Standalone receivables +39.4% vs revenue +13.0%; days +5.3% standalone/+7.9% consol; Q1FY27 consol profit -38% YoY on +19% revenue, no MD&A; consol CFO -55% vs -6% PAT; rating cites working-capital-intensive operations + RM volatility", anchor: "B02,B03; AR-FY26 p.82-83,p.112,p.122; RESULTS-Q1FY27 p.3; ratings p.2-3"}
+  - {type: FLAG-SUBSIDIARY, severity: MAJOR, description: "QMPL revenue -85.5% YoY (5.37->0.78 Cr) same year it drew Rs47.81 Cr unsecured ECB and built ~15.5 Cr CWIP/advances; consol D/E +238% (0.17->0.56x); negative net worth, going-concern EoM", anchor: "B02 rank1,3; AR-FY26 Note26 p.128; Note16 p.131-132; EoM p.113"}
+  - {type: FLAG-EXECUTION, severity: MAJOR, description: "Relay ramp behind original timeline (now H2FY27); QMPL Phase 2 Q3FY27; both pre-commercial pre-revenue", anchor: "B05 promise_delivery; B07 catalysts/top_moat_risks"}
+  - {type: FLAG-GOING-CONCERN, severity: MODERATE, description: "Auditor EoM ties going-concern to unresolved 2015 Bombay HC winding-up order (Rs0.13 Cr, interim stay since 2015); Rs22.01 Cr disputed Central Excise interest contingency (~13-14% net worth) unresolved since 2013", anchor: "B02 rank8,9; B03; RESULTS-Q4FY26 p.8,11,16; AR-FY26 Note2(f) p.103-104, Note3 p.104"}
+company_identity:
+  company: "Permanent Magnets Limited (PERMAGNET) | BSE 504132 | NSE PERMAGN"
+  sector: "Cables / Industrial products (corrected from manifest 'Agri processing' defect) (fttcp-deliberation)"
+  cmp_rs: 882
+  market_cap_cr: 758
+  shares_diluted_cr: 0.86
+  enterprise_value_cr: "765.72 (consol; 758 + net debt 7.72)"
+latest_financials_standalone_fy26:
+  revenue_from_operations_cr: "225.46 (FY26) | 63.23 Q1FY27"
+  other_income_cr: 6.20
+  ebitda_cr: 38.78
+  ebitda_margin_pct: 17.2
+  pat_cr: "20.69 (+36% YoY)"
+  diluted_eps_rs: 24.06
+  cfo_cr: 31.44
+  fcf_cr: 3.63
+  cfo_pat_ratio: 1.52
+  roe_pct: 13.31
+  roce_pct: 12.54
+  book_value_per_share_rs: 20.11
+  net_cash_cr: -0.75
+latest_financials_consolidated_fy26:
+  revenue_from_operations_cr: 226.24
+  ebitda_cr: 39.66
+  ebitda_margin_pct: 17.5
+  pat_cr: "15.07 (-4.3% YoY)"
+  diluted_eps_rs: 17.52
+  cfo_cr: "17.59 (-55.1% YoY)"
+  fcf_cr: -25.75
+  cfo_pat_ratio: 1.17
+  book_value_per_share_rs: 15.86
+  net_debt_cr: 7.72
+  debt_equity_ratio: "0.56 (+238% from 0.17x)"
+  interest_coverage: "5.6x FY26; 2.5x Q1FY27"
+  roe_pct: 9.57
+  roce_pct: "12.54 (AUTHORITATIVE Pillar 1)"
+  capex_cr: 43.34
+  subsidiary_qmpl_revenue_cr: 0.78
+  subsidiary_qmpl_loss_cr: -5.62
+  subsidiary_qmpl_assets_cr: 46.58
+  subsidiary_qmpl_ecb_cr: 47.81
+management_credibility:
+  credibility_grade: C
+  promise_delivery_score: "1 delivered / 1 partial / 2 missed"
+  fy27_guidance: "NOT QUANTIFIED (no-concall mode)"
+emerging_moat:
+  em_score: 26.0
+  em_classification: STRENGTHENING
+  capex_embedded_growth_pct: 32.7
+  som_implied_revenue_cagr_3yr: 20.1
+  tam_cr_conservative: 31368
+  sam_cr: 5574
+  som_3yr_cr: 328
+  runway_class: STRONG
+accounting_quality_score: "4/10"
+promoter_governance:
+  verdict: CAUTION
+  promoter_holding_pct: "58.01 (screener, non-anchored to filing)"
+  pledge_pct: 0
+  deal_breakers: none
+rating:
+  agency: "Acuite Ratings & Research"
+  rating_lt: "ACUITE BBB / Stable (upgraded 20-Feb-2026 from BBB-)"
+  rating_st: "ACUITE A3+ (upgraded from A3)"
+  facilities_cr: 34.48
+  wc_quote: "ratings.pdf p.2-3: 'Working capital intensive operations... high Gross Current Assets (GCA) of 196 days as on 31 March 2025... Inventory days 114 (FY25) vs 121 (FY24), typical 130-150; Debtor days ~73 (FY25) vs 75 (FY24); credit period 60-90 days; imports via LCs up to 180 days; fund-based WC limit utilisation ~6.20%, non-fund-based ~36.41% for 6M ended Dec 2025.'"
+  rm_volatility_quote: "ratings.pdf p.3: 'Susceptibility of profitability to volatility in raw material prices in a highly competitive and fragmented industry... Fluctuations in forex... natural hedge provides partial mitigation.'"
+valuation_pillar_authoritative:
+  pillar_1_roce_base: "12.54% -> 0.5*12.54+7.5 = 13.8x; no normalization route (Route A fails 11.2%<20%; Route B barred on STAGNANT)"
+  pillar_1_fttcp_verdict: STAGNANT
+  pillar_2_cash_multiplier: "1.00x (growth-induced, operator-confirmed; FCF -25.75 blocks elite band)"
+  pillar_3_growth_premium: "+0.0x GATED OFF (Amendment 16, ROCE<CoC; transformation priced as option slices)"
+  strategic_premium: "+0.0x"
+  raw_destination_pe: "13.8x"
+  ua_applied: "YES x1.25 (all 3 qualifiers)"
+  sector_cap: "Cables / Industrial products 25x (non-binding)"
+  destination_pe_additive: "17.3x (PRIMARY)"
+  destination_pe_rrm: "14.1x (conservative, SETS ENTRY ZONE)"
+  discount_rate_r: "15.0% (base 14 + governance 0.5 + complexity 0.5; Amdt 12/13)"
+  rrm: 0.82
+  destination_pe_range_additive: "16.0x-18.5x"
+  destination_pe_range_rrm: "13.0x-15.0x"
+  earnings_basis: "ONE-YEAR-FORWARD FY27 CORE operating earnings (Module B4 stripped); build conservatively (grade C)"
+  valuation_shape: "SOTP: Slice1 CORE (meters/auto/CT/gas/alloys) at 17.3x/14.1x on FY27 forward core OE; Slice2 RELAY option (PML, ECMS 30-Mar-2026, H2FY27, pre-commercial); Slice3 QMPL/NdFeB option (subsidiary, ECMS 18-Aug-2026, Q3FY27, pre-revenue, deep OTM); equity bridge nets Rs47.81 Cr ECB + non-op cash/investments"
+  hurdle_tier: "A (25%, divisor 1.953)"
+ua_qualifiers: {listed_12m: true, gate0_or_em: "EM 26>=25 (Gate0 47<60)", fii_dii_lt3: true, all_met: true}
+credibility_grade: C
+conflicts: []
+unresolved:
+  - "FY27 forward revenue/margin guidance NOT QUANTIFIED (no-concall)"
+  - "Segment-level operating earnings (core vs relay cost split) NOT SEPARATELY DISCLOSED (single IND AS 108 segment)"
+  - "Standalone vs consolidated FCFE bridge NOT SEPARATELY DISCLOSED (subsidiary attribution)"
+  - "Peer financial medians not tabulated (B06 conclusion-read only)"
+  - "Shareholding FII/DII not filing-anchored (screener context only)"
+analyst_note: "Assembly complete, every value anchored, B12a verified 101+ figures 100%. Phase-3 build items: (1) FY27 CORE operating earnings have NOT printed; Q1FY27 profit -38% YoY on +19% revenue, no MD&A -> build FY27 conservatively per deliberation, not face-value. (2) Cash flag live (receivables, CFO collapse, rating WC-intensive). (3) SOTP slices require explicit Phase-3 computation; RRM 14.1x sets entry zone. (4) No hidden estimation; every gap marked NOT SEPARATELY DISCLOSED / NOT FOUND."
+
+# --- SECTION 6 addendum, added post-hoc 2026-08-21 on the merged framework stack (Downstream_Source_Discovery_Protocol_v1_0); valuation verdict NOT re-run ---
+downstream_candidates:
+  - {signal: "India RDSS smart-meter rollout progress", entity_type: "regulatory", demand_link: "185mn of 250mn RDSS target still to install (Apr-2026 base); direct driver of Segment A metering-component demand", likely_source: "Ministry of Power / REC (RDSS nodal agency) official rollout dashboard + PIB releases", cadence: "monthly", shared: true}
+  - {signal: "Genus Power Infrastructures Ltd (India largest listed AMISP, ~30% share)", entity_type: "counterparty", demand_link: "Order-book and installation run-rate is the closest listed proxy for India smart-meter component pull-through", likely_source: "Genus BSE/NSE corporate announcements + concall transcripts + annual report", cadence: "quarterly", shared: false}
+  - {signal: "Global light-vehicle & EV production volumes (Western Tier-1 OEM base)", entity_type: "macro", demand_link: "PML supplies ~50% of tier-1 global auto manufacturers; production volumes proxy Segment B sensing demand", likely_source: "SIAM monthly production data + S&P Global Mobility / LMC Automotive", cadence: "monthly", shared: false}
+  - {signal: "China NdFeB rare-earth export-licence regime (MOFCOM)", entity_type: "regulatory", demand_link: "China ~92% of NdFeB capacity; licence policy gates whether Quantum Magnetics NdFeB line can ship at all", likely_source: "MOFCOM export-licence announcements, cross-checked via Reuters/Argus/S&P Global Commodity Insights", cadence: "event-driven", shared: false}
+  - {signal: "REL Developments Ltd (UK) - latching-relay technology licensor", entity_type: "counterparty", demand_link: "UK licensor whose IP/contract status gates PML guided H2FY27 relay ramp, already behind original timelines", likely_source: "UK Companies House filings + REL Developments corporate/press disclosures", cadence: "event-driven", shared: false}
+  - {signal: "Top-3 global electricity-meter manufacturers (identity unconfirmed in filings)", entity_type: "end-customer", demand_link: "PML largest disclosed customer class by its own claim; drives both Electricity Meters and CT revenue lines", likely_source: "Identity not independently named in filings; once identified, SEC EDGAR / foreign-listed OEM 10-K supplier commentary", cadence: "quarterly", shared: true}
+demand_externally_verifiable: true

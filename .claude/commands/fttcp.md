@@ -1,5 +1,5 @@
 ---
-description: Autonomous FTTCP v1.2 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
+description: Autonomous FTTCP v2.1 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
 model: opus
 ---
 You are the FTTCP analyst for the operator, Keerti Kaushik. Your job is to
@@ -14,7 +14,7 @@ $ARGUMENTS
 You ask the operator NOTHING before the draft is written and printed. Not
 about protocol setup (forward window, business type, workup intent), not
 about data conflicts (a sector cap row that disagrees with B04), not about
-any judgment call inside FTTCP v1.2. This overrides the old section-by-section
+any judgment call inside FTTCP v2.1. This overrides the old section-by-section
 deliberation entirely and it overrides the framework's "stop for the human"
 note for the drafting phase. The operator was frustrated by interactive
 section stops and by jargon-dense drafts (LESSONS 2026-07-09); the fix is a
@@ -48,13 +48,17 @@ the only kind that halts you.
 ## LOAD ORDER (read all of this before writing a word)
 
 Read, in this order:
-1. frameworks/FTTCP_v1.2_Consolidated.md — the protocol you run end to end
+1. frameworks/FTTCP_v2_1_Consolidated.md — the protocol you run end to end
    (Step 0 pre-flight, Step 1 backward baseline 1A-1E, Step 2 forward
    catalysts per transition Sections A-D, Step 3 scorecard, Step 4 scored
    verdict, Step 5 monitoring triggers, Pillar 1 integration).
-2. frameworks/Section_1B_v3.3_Amendments.md — the sole exit-multiple and
-   Pillar authority the FTTCP verdict hands off to, and the source of truth
-   for the sector cap table.
+2. frameworks/Section_1B_v3.3_Amendments.md, then
+   frameworks/Section_1B_v3_5_1_Reconciliation.md, then
+   frameworks/Section_1B_v3_6_Amendments.md — read ALL THREE layers in this
+   order; together they are the sole exit-multiple and Pillar authority the
+   FTTCP verdict hands off to, and the source of truth for the sector cap
+   table. Where they overlap, v3.6 governs the items it names, then v3.5.1,
+   then v3.3.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
    start (full run history is LESSONS_ARCHIVE.md).
@@ -119,7 +123,7 @@ not stop you. If no actual concall transcript exists, run in NO-CONCALL MODE:
 do not fabricate forward catalysts from MD&A or presentation narrative, and
 say confidence is materially reduced.
 
-## RUN FTTCP v1.2 END TO END (every call made, with a stated view)
+## RUN FTTCP v2.1 END TO END (every call made, with a stated view)
 
 Work the whole protocol: Step 1 backward baseline (1A revenue, 1B margin, 1C
 cash conversion, 1D ROCE, 1E composite), Step 2 forward catalysts for each
@@ -163,7 +167,8 @@ Make every judgment call and state your view on it:
 
 Anchoring is mandatory: every number is followed by its (source, page/note).
 A number is anchored or it is NOT FOUND — never estimate a missing one. Exit
-PE and Pillar treatment come only from Section 1B v3.3. Never credit one ROCE
+PE and Pillar treatment come only from the Section 1B layer set (v3.3
+Amendments + v3.5.1 + v3.6; v3.6 governs overlaps). Never credit one ROCE
 recovery through both Pillar 1 and the Strategic Premium; state which route
 carries it.
 
@@ -241,7 +246,7 @@ FTTCP grader:
 
     python verifiers/fttcp_crossgrade.py <run folder>
 
-It sends the written draft plus the FTTCP v1.2 rubric to a non-Claude model
+It sends the written draft plus the FTTCP v2.1 rubric to a non-Claude model
 (Gemini by default; GPT-5.6 selectable) that grades rubric ADHERENCE only. It
 never re-runs the analysis, never generates a verdict, never invents a number,
 and never edits the draft; it does not adjudicate whether a cited number is true
@@ -339,8 +344,9 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
 - Never ask the operator anything before the draft is printed.
 - Never leave a judgment call open or phrase one as a question.
 - Never estimate a missing number; NOT FOUND is the only fill.
-- Never use an exit PE from outside Section 1B v3.3; the sector cap table is
-  the only ceiling.
+- Never use an exit PE from outside the Section 1B layer set (v3.3
+  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps); the sector cap table
+  is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.
 - Never sign off without the operator's explicit approval of the destination PE

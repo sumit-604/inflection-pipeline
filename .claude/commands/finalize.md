@@ -84,18 +84,24 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the FOUR framework file paths from frameworks/
-   as its stable prefix plus B10 — Master_Project_Prompt_v3.3.md,
-   Section_1B_v3.3_Amendments.md, Section_1B_v3_5_1_Reconciliation.md (the
-   Pillar 1 normalization authority, which supersedes the standalone
-   Amendment 4.5), and FTTCP_v1.2_Consolidated.md. If frameworks/ is missing
-   any of the four files, STOP and tell the user which to add. The FTTCP ROCE
+   existing wrapper: pass the FIVE framework file paths from frameworks/
+   as its stable prefix plus B10, in this order —
+   Master_Project_Prompt_v3_6.md (resolves
+   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
+   Section_1B_v3.3_Amendments.md ({{SECTION_1B_V33_AMENDMENTS}}),
+   Section_1B_v3_5_1_Reconciliation.md ({{SECTION_1B_V351_RECONCILIATION}},
+   the Pillar 1 normalization authority, which supersedes the standalone
+   Amendment 4.5), Section_1B_v3_6_Amendments.md
+   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration; governs the items
+   it names where the layers overlap), and FTTCP_v2_1_Consolidated.md
+   ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
+   any of the five files, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. Collect B11.
 
 3. STAGE 14 — ROLE 2 INVESTMENT THESIS. Invoke stage-14-thesis (model
    opus, thin wrapper reading its Role 2 section from
-   frameworks/Master_Project_Prompt_v3.3.md, pipeline mode, source
+   frameworks/Master_Project_Prompt_v3_6.md, pipeline mode, source
    anchors). Pass B01..B11, the Role 1 valuation report, and the
    deliberation record. Its output ends with the B14-thesis YAML block
    (verdict, entry range, position size with any documented override,
@@ -103,7 +109,7 @@ phase 3), then:
 
 4. STAGE 15 — ROLE 3 DEVIL'S ADVOCATE. Invoke stage-15-devil (model opus,
    thin wrapper reading its Role 3 section from
-   frameworks/Master_Project_Prompt_v3.3.md, pipeline mode, source
+   frameworks/Master_Project_Prompt_v3_6.md, pipeline mode, source
    anchors). Pass Role 2's output (B14 report) PLUS all blocks. Its output
    ends with the B15-devil YAML block (per-dimension survives / weakened /
    destroyed, overall, top counters). Collect B15.
@@ -152,8 +158,23 @@ phase 3), then:
 
    "Execute via the claude.ai project; never overwrite Decision Status."
 
+   The notion-payload gains a second block after the COMPANIES MASTER
+   payload:
+
+   ## DOWNSTREAM SIGNAL TRACKER PAYLOAD (candidates for Role 5.5 verification)
+   Target database: DOWNSTREAM SIGNAL TRACKER, data_source_id
+   926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f (write happens at Role 5.5 in
+   claude.ai after source verification, NOT from this pipeline)
+   One row per candidate: signal name | entity type | demand link |
+   likely source | cadence | shared flag | falsifying observation if
+   already stateable
+   Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
+   B10), one per entity: name | entity type | where in AR — the Step
+   10.5B feed for the AR annual cross-check at Role 5.5.
+
    This file is a payload, not an action. Do not write to Notion from this
-   session; the operator executes the save in the project. When the operator
+   session; the pipeline never writes to the tracker, Role 5.5 does after
+   verification. The operator executes the save in the project. When the operator
    executes the save, the rows in outputs/final/verifier-disagreement-log.md
    are appended to the "Verifier Disagreement Log" Notion page (skip if the
    log says "none"); this is separate from the company page save and never
@@ -180,7 +201,7 @@ phase 3), then:
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+     framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1"
    This is a plain record, not a decision. It gets committed with the rest.
 
 9. COMMIT all outputs and the updated companies/<TICKER>.md with message
@@ -210,7 +231,8 @@ Rules for you, the orchestrator session:
 - You coordinate; you do not analyse. Every judgment comes from a subagent.
 - Deliberation conclusions supersede earlier pipeline determinations
   wherever they conflict; this is the phase-3 authority rule.
-- Never let any exit PE enter from outside Section 1B v3.3.
+- Never let any exit PE enter from outside the Section 1B layer set (v3.3
+  Amendments + v3.5.1 + v3.6; v3.6 governs overlaps).
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.

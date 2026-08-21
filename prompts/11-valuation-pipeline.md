@@ -1,10 +1,11 @@
 # STAGE 11: ROLE 1 MULTI-MODAL VALUATION (PIPELINE MODE)
 # Model: Opus 4.8 | Emits: B11-valuation
 # DESIGN: this file is a THIN WRAPPER. The framework itself is injected
-# from project knowledge at run time: Master Project Prompt v3.3 (Role 1
+# from project knowledge at run time: Master Project Prompt v3.6 (Role 1
 # sections), Section 1B v3.3 Amendments, Section 1B v3.5.1 Reconciliation
 # (Pillar 1 normalization authority, supersedes standalone Amendment 4.5),
-# FTTCP v1.2 Consolidated. The
+# Section 1B v3.6 Amendments (Damodaran integration; governs the items it
+# names where the layers overlap), FTTCP v2.1 Consolidated. The
 # framework is deliberately NOT copied into this file, so that Keerti's
 # amendments propagate to the pipeline the moment the project files
 # change, with no pipeline edit. If the injected framework and anything
@@ -33,10 +34,19 @@ mode:
    because [rule]." Never pull a number from general knowledge.
 4. SOURCE ANCHORS: carry the B10 anchors through into your tables the
    first time each input is used.
+5. FTTCP v2.1 Signal Gate: every Step 2 forward catalyst must cite a
+   downstream candidate from B10 (B10.downstream_candidates) where one
+   applies. A catalyst with no candidate anchor is graded evidence-thin
+   and its magnitude caps at
+   MODERATE. If demand_externally_verifiable is false, the FTTCP
+   composite caps at DEEP WATCH. Candidates are unverified; cite them as
+   (candidate, unverified) — verification and tracker write happen at
+   Role 5.5 outside this pipeline.
 
-## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per v3.3, non-negotiable)
+## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 
-- Section 1B v3.3 is the SOLE exit multiple authority. No exit PE from
+- The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6; v3.6 governs
+  overlaps) is the SOLE exit multiple authority. No exit PE from
   any other source, no round-number defaults.
 - OPERATOR-APPROVED BASE (from the deliberation record via B10, authoritative):
   the destination (exit) PE base and the earnings basis (FORWARD or TRAILING)
@@ -50,7 +60,9 @@ mode:
   the verdict card: Track 1 (RRM) and Track 2 (additive Four-Pillar).
   Where they diverge >15%, state which track fits this company and why;
   the more conservative track sets the entry zone.
-- Continuous Pillar 1 formula (0.5 × ROCE% + 7.5, floor 9x, cap 24x),
+- Continuous Pillar 1 formula (0.5 × ROCE% + 7.5, floor 9x; above 33%
+  ROCE the elite extension per v3.6 Amendment 11, Base PE = 24 + 0.3 ×
+  (ROCE% − 33), cap 30x; the old 24x cap is superseded),
   with the FTTCP ROCE forward verdict as sole Pillar 1 authority and the
   single-credit rule for ROCE recovery (Pillar 1 midpoint OR Strategic
   Premium, never both; state which route, flag shared catalysts).
@@ -109,7 +121,7 @@ status: complete
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.3 / Section 1B v3.5.1 / FTTCP v1.2"
+framework_versions: "Master v3.6 / Section 1B v3.3+v3.5.1+v3.6 / FTTCP v2.1"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -148,15 +160,19 @@ one_line_thesis: ""
 ## INJECTED INPUTS (framework = stable cache prefix; table = variable)
 
 FRAMEWORK (verbatim from project knowledge):
-{{MASTER_PROJECT_PROMPT_V33_ROLE1_SECTIONS}}
+{{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}
 {{SECTION_1B_V33_AMENDMENTS}}
 {{SECTION_1B_V351_RECONCILIATION}}
-{{FTTCP_V12_CONSOLIDATED}}
+{{SECTION_1B_V36_AMENDMENTS}}
+{{FTTCP_V21_CONSOLIDATED}}
 
-PRECEDENCE (Pillar 1 normalization): Section 1B v3.5.1 GOVERNS. Its
-consolidated Amendment 9 supersedes the standalone Amendment 4.5 (v3.5) that
-appears in the amendments file above; Amendment 4.5 is RETIRED as a number and
-survives only as Route B inside v3.5.1's route-selection rule. Never apply
+PRECEDENCE: where the Section 1B layers overlap, v3.6 governs the items it
+names (Damodaran integration, operator directive 13-Aug-2026), then v3.5.1
+(Pillar 1 normalization), then v3.3. FTTCP v2.1 ROCE forward verdict is sole
+Pillar 1 authority. Within the v3.5.1 layer: its consolidated Amendment 9
+supersedes the standalone Amendment 4.5 (v3.5) that appears in the
+amendments file above; Amendment 4.5 is RETIRED as a number and survives
+only as Route B inside v3.5.1's route-selection rule. Never apply
 Amendment 4.5 on its own. For any capital-cycle name, normalize Pillar 1 ROCE
 through EXACTLY ONE route per v3.5.1 (A operational / B pre-cycle, A governs
 where both conditions hold, else none) and declare the route in the worksheet.

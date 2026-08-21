@@ -1,7 +1,10 @@
 # STAGE 3: ANNUAL REPORT DEEP DIVE, BACKWARD READ (PIPELINE MODE)
 # Model: Sonnet 5 | Emits: B03-ardeep
 # Requires: B02-notes output (injected below)
-# Protocol version: 1.2 (aligns with Annual Report Analysis Protocol v1.2)
+# Protocol version: 1.3 (aligned with AR Protocol v1.3; Step 10.5
+#   (tracker cross-check) executes at Role 5.5 outside this pipeline,
+#   fed by ar_new_downstream_entities below.)
+#   1.3 — ar_new_downstream_entities YAML feed for Step 10.5B added.
 #   1.2 — Phase 6E Quiet Abandonment Check (mandatory) added.
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
@@ -194,6 +197,12 @@ triple_pass_verification:     # Phase 2 reconciliation result
 missing_risks: []             # Phase 4B items, each with evidence anchor
 guidance_table: []            # Phase 4C rows: {claim, number, timeframe, credibility}
 monitorables: []              # Phase 8 rows: {metric, threshold, where, why}
+ar_new_downstream_entities:    # entities disclosed for the FIRST
+  - name: ""                   # time in THIS AR: customers >10% of
+    where_in_ar: ""            # revenue, new JV partners, RPT
+    entity_type: ""            # counterparties, named platforms
+    # [] if none               # (segment note, RPT note, Board's
+                               # Report, AGM notice, MD&A)
 strengths_top3: []
 red_flags_top3: []
 best_fit_strategy: ""

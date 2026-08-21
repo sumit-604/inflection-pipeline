@@ -60,5 +60,19 @@ the core. Decision AVOID survives either way. Operator to decide the core-ROCE i
 - Single-site manufacturing consolidation on acquired land → NOT FOUND (no timeline).
 - Customer concentration trend → NOT FOUND (top-5/10 undisclosed).
 
+## DOWNSTREAM SIGNAL CANDIDATES (added post-hoc 2026-08-21, for Role 5.5 verification)
+Added after syncing to origin/main (20-Aug framework wiring); the AVOID valuation verdict was
+NOT re-run. Six externally-verifiable demand drivers (demand_externally_verifiable: true), in
+outputs/reports/09-tam-section6-addendum.md and the tracker payload in notion-payload.md:
+RDSS rollout (REC/PIB, monthly, SHARED); Genus Power order-book (quarterly); global auto
+production (SIAM/S&P, monthly); China MOFCOM NdFeB export licences (event-driven); REL
+Developments UK relay licensor (Companies House, event-driven); top-3 meter OEMs (SHARED, not
+yet falsifiable until identity discovered).
+
+## POST-HOC PROVENANCE NOTE
+- 2026-08-21: Branch synced to origin/main (SECTION 6 / Signal Gate / v3.x downstream wiring).
+  Downstream Signal Candidates addendum added; valuation verdict (PROCEED WITH FLAGS / AVOID,
+  SOTP fair value Rs 330-404, Hurdle STOP) NOT re-run and unchanged.
+
 ## RUN FOLDERS
 - runs/permagnet-2026-08-19/  (first workup; NO-CONCALL MODE; PROCEED WITH FLAGS / AVOID)

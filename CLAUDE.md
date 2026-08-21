@@ -8,6 +8,9 @@ target, 3-5 year holds.
 - Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 + v3.6
   amendment layers in frameworks/; v3.6 governs overlaps). It is
   the sole exit multiple authority. No round-number defaults, ever.
+- Never produce a Role 1 valuation without the Section 1A Method
+  Suitability Matrix and method triangulation; the Section 1B destination
+  PE governs the exit multiple, it does not replace method selection.
 - Never halt a run on company quality. Flags propagate; only mechanical
   failures halt. There is no STOP verdict; the verdict set is PROCEED /
   PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT

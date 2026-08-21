@@ -42,6 +42,14 @@ mode:
    composite caps at DEEP WATCH. Candidates are unverified; cite them as
    (candidate, unverified) — verification and tracker write happen at
    Role 5.5 outside this pipeline.
+6. METHOD PLURALITY: the Section 1A Method Suitability Matrix is
+   MANDATORY OUTPUT before any Section 1B math. B11 must contain: the
+   matrix, at least TWO applied methods with a primary/secondary
+   weighting, and the weighted triangulation table. Single-method output
+   is permitted only with an explicit one-paragraph justification of why
+   no second method fits this business, stated in the matrix. The exit
+   multiple is the framework's default PRIMARY, not the framework's only
+   method.
 
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the injected layers, non-negotiable)
 

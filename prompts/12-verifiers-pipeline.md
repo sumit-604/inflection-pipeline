@@ -190,6 +190,9 @@ RULES:
    relies on company-reported numbers only."). Stage 11 catalysts each
    cite a candidate or carry the MODERATE cap. Missing block = REWORK
    for stage 9.
+7. Method plurality (B11): B11 contains the Section 1A matrix + >=2
+   methods + triangulation weights, OR the justified single-method
+   exception. Missing = REWORK for stage 11.
 
 OUTPUT: per-framework compliance tables with rule-by-rule PASS/FAIL and
 the recomputed value beside any FAIL; then:

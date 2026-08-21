@@ -2,22 +2,23 @@
 
 Durable per-company memory. Weigh it, do not anchor to it. Jubilant Bhartia
 Group entity, listed 14-Feb-2025 via reverse composite scheme (no IPO
-prospectus). Updated 2026-08-20 at the completed v3.6 recompute + Role 5.5
-downstream.
+prospectus). Updated 2026-08-21 at the complete latest-framework run
+(v3.6 + FTTCP v2.1 Part B).
 
 ## THESIS (one line)
-WATCHLIST at Rs 2,342 (v3.6): SOTP fair value ~Rs 4,566 Cr sits ~29% above the
-Rs 3,549 Cr market cap, ~88% of it the retained polymer business at the 35x
-specialty-chemicals cap; Amendment 14 fade cuts base 3yr CAGR to 10.5% and the
-base Hurdle to 1.75 CONDITIONAL; Market-Implied FAIRLY PRICED (re-rating
-banked); CMP ~9.8% above the Rs 2,133 combined entry.
+WATCHLIST at Rs 2,342 (v3.6 + FTTCP Part B): SOTP fair value ~Rs 4,320 Cr sits
+~22% above the Rs 3,549 Cr market cap, ~88% of it the retained polymer
+business; FTTCP Part B hardens the polymer destination to 32.5x (B8 re-rating
+NONE, +58% re-rating banked), shows deleveraging spent (B7 net cash), keeps the
+growth premium +0x (EM 22.5<25); Market-Implied FAIRLY PRICED; CMP ~16% above
+the Rs 2,016 combined entry.
 
 ## DECISION STATUS AND ENTRY ZONE
-WATCHLIST / buy on dips, Small, as of the 2026-08-20 v3.6 recompute (held from
-the 18-Aug v3.3 gate, weaker on every margin). Business A polymer entry
-Rs 1,667-2,007, MoS Rs 1,606. Combined Tier A entry Rs 2,133/sh, MoS Rs 1,706.
-Business B agri AVOID (Hurdle STOP). Buy trigger: ~10-15% dip or the first
-standalone polymer accounts.
+WATCHLIST / buy on dips, Small, as of the 2026-08-21 Part B run (held from the
+18-Aug v3.3 gate and 20-Aug v3.6 recompute, weaker on every margin at each
+layer). Business A polymer entry Rs 1,548-1,864, MoS Rs 1,491. Combined Tier A
+entry Rs 2,016/sh, MoS Rs 1,613. Business B agri AVOID (Hurdle STOP). Buy
+trigger: ~15% dip or the first standalone polymer accounts.
 
 ## OPERATOR RULINGS
 - 2026-08-18: demerger special-situation treatment; FTTCP run separately per
@@ -29,6 +30,11 @@ standalone polymer accounts.
   ~10%).
 - 2026-08-20: ordered the full v3.6 recompute after merging origin/main
   (Master v3.6, Section 1B v3.6, Debt Capacity, Market-Implied, Role 5.5). DONE.
+- 2026-08-21: ordered the complete latest-framework valuation. Ran FTTCP v2.1
+  PART B (Modules B1-B8, both businesses) that the v2 recompute scoped out;
+  Role 1 consumed the two output sheets. DONE. B8 NONE hardened Business A
+  destination 35x->32.5x; B7 confirmed deleveraging spent. Decision held
+  WATCHLIST, entry cut to Rs 2,016.
 - RESOLVED: Pillar 1 base 30.0x — Amendment 11 (elite extension) is now the
   declared v3.6 authority; the 24x Amendment-5 arithmetic is superseded. 35x cap
   absorbs it (break-even base 22.6x); no output moves.
@@ -80,6 +86,8 @@ standalone polymer accounts.
 
 ## RUN FOLDERS
 - runs/jublcpl-2026-08-18/  (phase 1 + /fttcp 18-Aug + /finalize v3.3 18-Aug +
-  v3.6 recompute 20-Aug). Audit record: reports/11-valuation.md,
-  blocks/B11-valuation.yaml. v3.6: reports/11-valuation-v2.md,
-  blocks/B11-valuation-v2.yaml, reports/downstream-signals-v3.6.md.
+  v3.6 recompute 20-Aug + FTTCP Part B run 21-Aug). Audit record:
+  reports/11-valuation.md, blocks/B11-valuation.yaml (v3.3);
+  reports/11-valuation-v2.md, blocks/B11-valuation-v2.yaml (v3.6, no Part B).
+  Current: reports/11-valuation-v3.md, blocks/B11-valuation-v3.yaml,
+  reports/fttcp-partB-normalization.md, reports/downstream-signals-v3.6.md.

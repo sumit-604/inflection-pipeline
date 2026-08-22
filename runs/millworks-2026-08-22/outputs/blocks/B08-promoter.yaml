@@ -1,0 +1,33 @@
+stage: B08-promoter
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "no standalone Annual Report (RHP substitutes)"
+  - "no announcements folder"
+  - "no post-listing shareholding-pattern filing (Reg 31 SAST) available to confirm current pledge/holding %"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN"
+    top_findings:
+      - "Section 185 self-dealing loan to director-promoters (Rashmi Sridhar Acharya, Sowmya Madhu), repeated across FY24 and FY25, compounding application filed 2026-02-07 (RHP p.27)"
+      - "V3 Technologies (promoter partnership) RPT circularity: simultaneous landlord + PPE/materials vendor + customer + lender + advance-recipient (Rs503.58L FY26) + corporate guarantor + disclosed common-pursuits competitor (RHP p.56-57, 179, 221-224)"
+      - "Quick Pay Private Limited: 47.02% FY26 revenue concentration + Rs575.06L equity investment by issuer + common shareholders, disclosed as NOT an AS-18 related party (RHP p.25)"
+      - "MSME Section 43B(h) disallowance escalated ~10x YoY: Rs0.64L (FY24) -> Rs101.64L (FY25) -> Rs1,009.68L (FY26)"
+      - "Bank drawing-power/stock-statement discrepancies recurring across FY24, FY25, FY26 and two lenders, repeatedly attributed to clerical error"
+verdict: "CONCERN"
+scorecard: {clean: 5, caution: 2, red: 3}
+deal_breakers: []
+transition_evidence:
+  - "New Company Secretary (Srivathsan K N) externally hired with real credentials (ICSI+CA+CMA), 2025-10-01 (RHP p.166)"
+  - "Two new independent directors with domain-relevant credentials appointed 2025-11-22: Maniyil Indrabalan (retired Major General) and S Ganesan (practicing CS), no adverse record found (RHP p.164)"
+  - "Institutional anchor entry at IPO: 9 funds, Rs43.86cr (INTI Capital VCC, Saint Capital Fund, Evergrow, Abundantia) — SME-IPO-focused funds, not marquee long-only"
+  - "CAVEAT: all items are standard SME-IPO-readiness formalities installed in the final ~8 months pre-listing; the compliance-lapse pattern continued and worsened into calendar 2026 after the new oversight was seated — weak-to-moderate, not strong, transition evidence"
+pledge_pct_latest: 0
+pledge_trend: "0% at RHP date (2026-07-07), explicitly confirmed no promoter pledge; no post-listing shareholding-pattern filing in inputs to verify current status; no pledge news in web search as of run date"
+searches_skipped:
+  - "WebFetch of one substack article blocked by network egress proxy (EGRESS_BLOCKED); substituted with WebSearch summary of same source"
+  - "SEBI/exchange post-listing shareholding-pattern lookup for pledge/holding confirmation — not present in inputs, not independently retrievable in scope"
+verdict_basis: "Clean SEBI/criminal/civil record and 0% pledge, offset by a repeated Section 185 self-dealing loan violation, deep V3 Technologies RPT circularity, a Quick Pay quasi-related-party structure kept outside AS-18, and a worsening MSME-payment/bank-drawing-power compliance pattern through FY26 — concrete and trend-negative, not resolved, as of RHP date."
+analyst_note: "First-generation founders carved Millworks out of their 2003-vintage family firm V3 Technologies in 2021; explains but does not resolve the RPT circularity. Quick Pay is the item most worth independent follow-up: 47% concentration + issuer equity stake + common shareholders, held outside AS-18. Governance apparatus is real on paper but installed only in the last 8 months pre-listing and unproven; the lapses it should prevent were still worsening at RHP date. Status partial: one web source egress-blocked, no post-listing shareholding filing to confirm pledge independently."

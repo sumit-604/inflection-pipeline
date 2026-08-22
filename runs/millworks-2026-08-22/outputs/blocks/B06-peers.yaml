@@ -1,0 +1,41 @@
+stage: B06-peers
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Q2 CONTRADICTED: peer receivable/collection metrics (Apsis 45-day stable, Airfloa 24-day improvement) show no comparable geopolitical/war-driven spike; Millworks' 178-day/93%-of-revenue figure reads idiosyncratic to Quick Pay, not sector-wide"
+  - "Q4 UNVERIFIABLE: no peer offers a structural analog to the Quick Pay non-related-party classification; comparable peer affiliate relationships (Unimech-Dheya, Airfloa-Big Bang Boom) are disclosed, consolidated equity structures, the opposite pattern"
+peers_provided: 7
+verified: []
+partially_verified:
+  - {claim: "India defence budget growth ~9.53% YoY / Rs1.12 lakh crore domestic-procurement earmark tailwind", peers: ["UNIMECH", "APSISAERO", "AIRFLOA"]}
+  - {claim: "Capacity utilization near 72-77% ahead of major capex vs Rs6,103.25L machinery / Rs67-122cr order book", peers: ["UNIMECH", "AIRFLOA", "APSISAERO"]}
+  - {claim: "Millworks Railways revenue +134% FY26 vs peer rail supplier growth or base effect", peers: ["AIRFLOA"]}
+contradicted:
+  - {claim: "Peers report comparable FY26 receivable-day spikes attributed to geopolitical/war-like conditions matching Millworks' 178-day/93%-of-revenue outlier", contradicting_peer: "APSISAERO, AIRFLOA", quote_anchor: "Apsis Jun 2026 p.4 'average collection period ~45 days...reduced from 18.38% (24-25) to 13.14% (25-26)'; Airfloa Jun 2026 p.4-5 'receivable days improved by 24 days'"}
+unverifiable:
+  - {claim: "RHP-cited Unimech receivable days 44/76/92 (FY24/FY25/H1FY26) and industry P/E ~92x confirmed by Unimech disclosures, with customer concentration parallel to Quick Pay 47%", peers_checked: ["UNIMECH"], reason: "Unimech discloses working-capital days not receivable days; no P/E discussion in any call"}
+  - {claim: "Peer drone/UAV component supply arrangement with common-shareholder customer not classified as related-party, analogous to Millworks-Quick Pay", peers_checked: ["UNIMECH", "APSISAERO", "AIRFLOA"]}
+peer_coverage_map:
+  - {peer: "UNIMECH", quarter: "Q3 FY26 (Feb 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Acquisition update (Apr 2026, Hobel)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Q4 FY26 (May 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "UNIMECH", quarter: "Q1 FY27 (Aug 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "AIRFLOA", quarter: "H1 FY26 (Nov 2025)", usage: "SUBSTANTIVE"}
+  - {peer: "AIRFLOA", quarter: "H2/FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+  - {peer: "APSISAERO", quarter: "H2/FY26 (Jun 2026)", usage: "SUBSTANTIVE"}
+peers_used_substantive: 7
+industry_cross_read:
+  demand: "All three peers describe a constructive FY26-27 demand backdrop after a tariff-driven dip at export-heavy Unimech; Airfloa and Apsis show continuous order-book growth without a comparable dip."
+  pricing_inputs: "Airfloa and Apsis cite geopolitically-linked raw-material inflation (aluminium/steel, FX) compressing FY26 margins; Unimech's pressure traces to US tariffs, a different channel than the one in Millworks' question set."
+  capex_cycle: "Industry-wide capacity race: Unimech (Rs450cr Hobel + Saudi JV), Airfloa (debt-funded facility), Apsis (Unit 2/3) all expanding through FY26-27."
+risks_peers_raise:
+  - "US tariff whiplash and fresh 100% tariff threat (Unimech, export-exposed)"
+  - "Geopolitically-linked raw material cost inflation, aluminium +80% / steel +60-65% (Airfloa)"
+  - "China export-control delays on precision capital equipment (Airfloa)"
+  - "Proactive, disclosed customer-concentration reduction as governance benchmark (Apsis: 52%->35% top customer)"
+  - "Negative operating/free cash flow funded by bank debt at 8.25% during rapid growth (Airfloa)"
+net_narrative_effect: "complicates"
+analyst_note: "Peer set strongest at macro level (genuine sector-wide capex/demand upcycle, all three peers confirm) and weakest at company-specific level (no peer corroborates Millworks' receivable-spike causation or the Quick Pay non-related-party structure; two peers show the opposite receivable trend). Treat Q2 as a priority synthesis flag: it weakens the geopolitical explanation for Millworks' working-capital deterioration and points back to Quick Pay concentration. Apsis's disclosed 52%->35% concentration reduction is the governance contrast Millworks fails. Q4's absence of a peer analog is inference from silence, not confirmed impropriety."

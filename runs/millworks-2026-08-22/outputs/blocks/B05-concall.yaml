@@ -1,0 +1,55 @@
+stage: B05-concall
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No earnings call transcripts exist (just-listed SME, no post-listing concall as of run date); NO-CONCALL MODE substituted RHP management-narrative chapters and one post-listing Reg 30 filing/press release."
+  - "presentation/ folder actually held a Reg 30 exchange filing + press release dated 20-Aug-2026, not an investor deck (collect_to_repo misfiling)."
+  - "RHP MD&A is largely a restatement of Risk Factors and accounting policy, with no separate qualitative outlook."
+  - "Reg 30 order-book counterparties withheld under NDA; not verifiable against RHP top-10 customer table."
+  - "No document post-dating the RHP confirms capex purchase-order placement for the Rs6,103.25L machinery plan."
+flags:
+  - {severity: MAJOR, item: "Trade receivables at 93.22% of FY26 revenue, explained by a single unverifiable external-blame (geopolitical) claim that does not address the Quick Pay collection dependency disclosed in the same document", source: "RHP p.25, p.89"}
+  - {severity: MAJOR, item: "Customer concentration: Quick Pay (quasi-related) = 47.02% of FY26 revenue; top-5 = 81.07%; top-10 = 92.06%", source: "RHP p.24, p.28-29, p.121"}
+  - {severity: MAJOR, item: "Negative operating cash flow FY25 (-Rs291.89L) and FY26 (-Rs1,076.29L) despite rising reported PAT", source: "RHP p.25-26"}
+  - {severity: MODERATE, item: "Entire IPO net proceeds scheduled for single-year FY27 deployment, unappraised, capex POs not yet placed as of RHP date", source: "RHP p.83, p.88-89, Risk Factor 14"}
+  - {severity: MODERATE, item: "FY27 working-capital projection implies two different revenue-growth figures (~+133% vs ~+89%) by method, unreconciled", source: "RHP p.87-88, derived"}
+quarters_analysed: []
+triggers:
+  - {priority: 1, name: "Machinery capex under Objects of the Issue (Rs6,103.25L)", type: "VOLUME", timeframe: "near (FY27)", conviction: "M", confirm_signal: "POs placed and machinery commissioned per quarterly Reg 32(3) utilization disclosure", kill_signal: "FY27 ends with capex materially unspent or utilization below 50%"}
+  - {priority: 2, name: "Quick Pay drone-component captive relationship", type: "VOLUME/SECTORAL", timeframe: "near-medium", conviction: "M", confirm_signal: "Quick Pay revenue share stabilizes and receivable days trend toward RHP's 147-day FY27 projection", kill_signal: "Quick Pay share keeps rising with no receivables improvement, or arrangement renegotiated/terminated"}
+  - {priority: 3, name: "Post-listing order-book momentum (Rs67cr to Rs122cr)", type: "VOLUME", timeframe: "near (FY27 execution)", conviction: "M", confirm_signal: "Continued order intake and rising work-executed vs pending in subsequent filings", kill_signal: "Order-book growth stalls or a large named order cancelled/delayed"}
+  - {priority: 4, name: "Defence revenue-mix shift (6.8% to 69.4%)", type: "SECTORAL/POLICY", timeframe: "medium", conviction: "M", confirm_signal: "Defence share sustains above 50% in FY27 across customers beyond Quick Pay", kill_signal: "Defence share reverts toward FY25 levels or concentrates further in Quick Pay alone"}
+  - {priority: 5, name: "Spring manufacturing diversification (Unit IV)", type: "VOLUME/PRICE-MIX", timeframe: "near", conviction: "L", confirm_signal: "Nonzero, growing FY27 spring-segment revenue", kill_signal: "Remains trial-only through FY27"}
+  - {priority: 6, name: "Export/geographic expansion", type: "VOLUME/SECTORAL", timeframe: "medium-long", conviction: "L", confirm_signal: "Export revenue share and absolute value both rise in FY27", kill_signal: "Export share keeps shrinking as domestic defence concentration deepens"}
+guidance:
+  - {item: "Machinery capex (Objects of the Issue)", number: "Up to Rs6,103.25L, 100% from Net Proceeds", timeframe: "FY2026-27", stated_in: "RHP p.83-89"}
+  - {item: "Working capital funding from IPO proceeds", number: "Up to Rs8,150.00L of Rs16,427.00L total projected FY27 WC requirement", timeframe: "FY2026-27", stated_in: "RHP p.87"}
+  - {item: "Proposed installed capacity post-capex", number: "6,71,499 hours, up from 3,83,019 hours FY26 (+75.3%)", timeframe: "FY27", stated_in: "RHP p.84"}
+  - {item: "Projected FY27 trade receivables", number: "Rs14,015.00L at 147 days (down from 178 days FY26)", timeframe: "FY2026-27", stated_in: "RHP p.87-88"}
+  - {item: "Implied FY27 revenue (DERIVED, receivables/inventory methods, NOT management-stated)", number: "~Rs346cr (~+133% YoY)", timeframe: "FY2026-27", stated_in: "Derived from RHP p.87-88 CA-certified WC table"}
+  - {item: "Implied FY27 revenue (DERIVED, payables method, NOT management-stated)", number: "~Rs281cr (~+89% YoY)", timeframe: "FY2026-27", stated_in: "Derived from RHP p.87-88 CA-certified WC table"}
+  - {item: "Confirmed order book, post-listing", number: "Rs121.88cr, of which Rs53.74cr added 21-Jul to 19-Aug-2026", timeframe: "FY2026-27", stated_in: "Reg 30 filing p.1, p.3, 20-Aug-2026"}
+promise_delivery_score: "1 delivered / 2 partial / 0 missed / 1 unresolved (thin, first-filing base)"
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 0
+  unresolved: 1
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Executed strategy-to-action evidence (spring acquisitions, Quick Pay investment) and real post-listing order growth are genuine but thin and unverifiable at counterparty level; the one quantified forward-guidance artifact (FY27 WC table) is not internally consistent (~+133% vs ~+89% implied revenue growth), so B is not met; A unreachable in NO-CONCALL MODE."
+peer_questions:
+  - {question: "Does the ~9.53% YoY India defence budget growth / Rs1.12 lakh crore domestic-procurement earmark (RHP p.108) match what peer managements describe as the sector tailwind?", why: "Millworks' 69.43% defence concentration depends on this macro claim", check_peers: ["Unimech Aerospace", "Apsis Aero"]}
+  - {question: "Do peers report comparable FY26 receivable-day spikes, and do any attribute it to geopolitical/war-like conditions, or is Millworks' 178-day/93%-of-revenue spike an outlier tied to Quick Pay?", why: "Tests whether the external-blame explanation is sector-wide or counterparty-specific", check_peers: ["Unimech Aerospace", "Airfloa Rail", "Apsis Aero"]}
+  - {question: "The RHP cites Unimech's receivable days (44/76/92 FY24/FY25/H1FY26) as comparator; do Unimech's own disclosures confirm these and discuss customer concentration the way Millworks discloses Quick Pay at 47%?", why: "Cross-checks the RHP's benchmarking claim and whether concentration is unusually high", check_peers: ["Unimech Aerospace"]}
+  - {question: "Does any peer discuss a drone/UAV component supply arrangement with a common-shareholder customer NOT classified as a related party, similar to Millworks-Quick Pay? How is arm's-length pricing handled?", why: "Tests whether this quasi-related structure is a known pattern or Millworks-specific", check_peers: ["Unimech Aerospace", "Apsis Aero"]}
+  - {question: "Do peers report capacity utilization near Millworks' 72-77% (FY26) ahead of major capex, and how does their capex-to-order-book ratio compare to Rs6,103.25L machinery against a Rs67-122cr order book?", why: "Benchmarks capex-to-visibility ratio", check_peers: ["Unimech Aerospace", "Airfloa Rail"]}
+  - {question: "Millworks' Railways revenue grew Rs1,503.60L (FY25) to Rs3,517.19L (FY26), ~+134%; do peer rail suppliers report comparable growth, or is this a base effect?", why: "Railways is the largest non-Quick-Pay growth segment", check_peers: ["Airfloa Rail"]}
+timeline_slippages:
+  - "Spring manufacturing (Unit IV): capacity installed by FY26 but trial-run only as of 31-Mar-2026, no commercial production date (RHP p.126, p.132-133)"
+  - "Machinery capex: no POs placed as of RHP date (07-Jul-2026) against a full-year FY27 deployment plan (RHP p.88-89, Risk Factor 14)"
+analyst_note: "The most useful no-concall data point is the 20-Aug-2026 Reg 30 filing (post-dates RHP by six weeks): order book Rs67.14cr -> Rs121.88cr, genuine post-listing evidence but not cross-checkable to named customers. The FY27 WC table's implied-revenue methods disagree by ~20pp of growth (89% vs 133%); downstream valuation should treat any FY27 revenue from this filing as a RANGE, not a point estimate, and cite the derivation rather than restate a single number as management-stated."

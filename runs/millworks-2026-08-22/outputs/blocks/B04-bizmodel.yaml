@@ -1,0 +1,48 @@
+stage: B04-bizmodel
+company: "MILLWORKS"
+run_date: "2026-08-22"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor presentation substitute is a 4-page BSE Reg. 30 filing/press release, not a full IR deck; no unit-economics or segment detail beyond the RHP"
+  - "FY26 Average Order Value not disclosed (only FY24/FY25 given)"
+  - "Peers Sika Interplant, Airfloa Rail, Apsis Aero named in the brief have no data in either source document"
+  - "Trade receivables/revenue disclosed three inconsistent ways in the RHP (93.22% closing-basis, 48.90% average-basis, 178-day narrative); not reconcilable from documents provided"
+flags:
+  - "Single customer Quick Pay Pvt Ltd = 47.02% of FY26 revenue; Millworks also holds a Rs 5.75cr equity stake in Quick Pay and Quick Pay's own fund receipt gates part of FY26 receivable collection (RHP p.25, p.90, p.130)"
+  - "Operating cash flow negative and worsening: Rs (1,076.29)L FY26 vs Rs (291.89)L FY25, against PAT of Rs 3,706.39L FY26 — accrual profit not converting to cash"
+  - "Top supplier concentration jumped to 44.05% of FY26 purchases from 12.77% FY25 (RHP p.31)"
+  - "Promoter-group entity V3 Technologies operates in an identical line of business; non-compete exists but customer/supplier overlap acknowledged (RHP p.40)"
+  - "Manifest sector tag (Pharma/CDMO) incorrect; company is a Defence/Railways/Aerospace/Semiconductor precision components manufacturer"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Defence sector components", type: "contract manufacturing (BTP/BTS)", pct_of_revenue: 69.43, predictability: "L"}
+  - {name: "Railways sector components", type: "contract manufacturing (BTP/BTS)", pct_of_revenue: 23.65, predictability: "M"}
+  - {name: "Semiconductor Machinery components", type: "contract manufacturing (BTP/BTS)", pct_of_revenue: 5.94, predictability: "M"}
+  - {name: "Aerospace sector components", type: "contract manufacturing (BTP/BTS)", pct_of_revenue: 0.99, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "AS9100D/ISO 9001:2015 multi-site certification + program-level switching costs", durability: "moderate"}
+  - {moat: "Ecosystem/relationship lock-in via Quick Pay equity stake and Big Bang Boom Solutions execution partnership", durability: "fragile"}
+valuation_methods:
+  primary: {method: "P/E vs listed peers (Unimech Aerospace, Azad Engineering)", why: "RHP itself uses this basis (peer P/E 87.87x-96.45x, industry avg 92.16x); Section 1B destination multiple governs the actual exit multiple downstream"}
+  secondary: {method: "DCF", why: "Justified by underlying cash-generation potential, but must explicitly model receivables-normalisation given current negative OCF"}
+  tertiary: {method: "EV/EBITDA vs peers", why: "Cross-check given disclosed peer EBITDA margins, limited by scale mismatch (Millworks at 1/4 to 1/16th peer revenue)"}
+  not_applicable: ["Asset-based/NAV", "Sum-of-the-parts", "Replacement cost"]
+irrelevant_ratios:
+  - {ratio: "Inventory turnover (standalone)", why: "FY26 improvement is a mix-shift artefact from new non-inventory-intensive service revenue"}
+  - {ratio: "PAT margin without cash flow", why: "PAT margin rose to 24.91% while operating cash flow was negative Rs (1,076.29)L same year"}
+  - {ratio: "RoE in isolation", why: "69.94% RoE mechanically inflated by a small fast-growing equity base, not steady-state"}
+  - {ratio: "Debt-Equity alone", why: "Real leverage is off-balance-sheet via extended customer credit funded by stretched payables"}
+  - {ratio: "Fixed asset turnover", why: "Net PP&E ~13.4% of revenue today but capacity about to nearly double via Rs 61.03cr capex"}
+must_track_metrics:
+  - {metric: "Top 5 / Top 10 customer concentration", healthy: "trending down from 81.07%/92.06%", red_flag: "flat or rising"}
+  - {metric: "Trade receivables / revenue (closing)", healthy: "falling from 93.22%", red_flag: "flat or rising"}
+  - {metric: "Operating cash flow", healthy: "turning positive", red_flag: "staying negative beyond 1-2 more quarters"}
+  - {metric: "EBITDA margin", healthy: "at/above 36.71%, closing gap to peer 41-42%", red_flag: "compression below ~30%"}
+  - {metric: "Top supplier concentration", healthy: "falling from 44.05%", red_flag: "further rise or disruption"}
+one_line_verdict: "Fast-growing precision manufacturer whose growth, margin and cash story are still mostly one customer deep."
+analyst_note: "The most important number is not FY26 revenue growth (573%) but Rs 3,706L PAT against Rs (1,076)L operating cash flow (RHP p.256/p.30). That gap, plus 93.22% receivables/revenue and 47.02% single-customer concentration where the customer is also a part-owned investee, means FY26 margin/growth should not be extrapolated without evidence the concentration is normalising. Three RHP receivables ratios disagree (93.22% closing, 48.90% average, 178-day narrative) — downstream must not silently pick the most favourable."

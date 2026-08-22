@@ -58,6 +58,9 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+- Any session that commits a framework or prompt amendment must end by
+  opening a PR to main the same day. Run outputs and framework amendments
+  go in SEPARATE commits so recovery stays surgical.
 
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
